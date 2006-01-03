@@ -1,0 +1,13 @@
+$OpenBSD: patch-interfaces_kscript_Makefile_in,v 1.1 2006/01/03 09:10:56 espie Exp $
+--- interfaces/kscript/Makefile.in.orig	Mon Jan  2 14:04:28 2006
++++ interfaces/kscript/Makefile.in	Mon Jan  2 14:06:21 2006
+@@ -539,7 +539,8 @@ lib_LTLIBRARIES = libkscript.la
+ libkscript_la_SOURCES = scriptmanager.cpp
+ #>- libkscript_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -no-undefined
+ #>+ 1
+-libkscript_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -no-undefined $(KDE_NO_UNDEFINED)
++LIBkscript_LTVERSION=
++libkscript_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -no-undefined $(KDE_NO_UNDEFINED) $(LIBkscript_LTVERSION)
+ libkscript_la_LIBADD = $(LIB_KIO)
+ kscriptinclude_HEADERS = scriptinterface.h scriptclientinterface.h scriptmanager.h
+ kscriptincludedir = $(includedir)

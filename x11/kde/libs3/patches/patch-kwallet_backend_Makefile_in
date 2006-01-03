@@ -1,0 +1,13 @@
+$OpenBSD: patch-kwallet_backend_Makefile_in,v 1.1 2006/01/03 09:10:56 espie Exp $
+--- kwallet/backend/Makefile.in.orig	Mon Jan  2 14:04:33 2006
++++ kwallet/backend/Makefile.in	Mon Jan  2 17:39:50 2006
+@@ -515,7 +515,8 @@ INCLUDES = -I$(srcdir)/../client $(all_i
+ lib_LTLIBRARIES = libkwalletbackend.la
+ #>- libkwalletbackend_la_LDFLAGS = $(KDE_RPATH) $(all_libraries) -version-info 1:0 -no-undefined
+ #>+ 1
+-libkwalletbackend_la_LDFLAGS = $(KDE_RPATH) $(all_libraries) -version-info 1:0 -no-undefined $(KDE_NO_UNDEFINED)
++LIBkwalletbackend_LTVERSION = -version-info 1:0
++libkwalletbackend_la_LDFLAGS = $(KDE_RPATH) $(all_libraries) $(LIBkwalletbackend_LTVERSION) -no-undefined $(KDE_NO_UNDEFINED)
+ libkwalletbackend_la_LIBADD = $(LIB_QT) ../../kdecore/libkdecore.la
+ libkwalletbackend_la_SOURCES = blockcipher.cc		\
+ 			       blowfish.cc		\

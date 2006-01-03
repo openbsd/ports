@@ -1,0 +1,13 @@
+$OpenBSD: patch-libkmid_Makefile_in,v 1.1 2006/01/03 09:10:56 espie Exp $
+--- libkmid/Makefile.in.orig	Mon Jan  2 14:04:36 2006
++++ libkmid/Makefile.in	Mon Jan  2 18:10:16 2006
+@@ -536,7 +536,8 @@ libkmid_la_SOURCES = midiout.cc player.c
+ 
+ #>- libkmid_la_LDFLAGS = $(KDE_MT_LDFLAGS) -version-info 0:95  -no-undefined
+ #>+ 1
+-libkmid_la_LDFLAGS = $(KDE_MT_LDFLAGS) -version-info 0:95  -no-undefined $(KDE_NO_UNDEFINED)
++LIBkmid_LTVERSION=-version-info 0:95
++libkmid_la_LDFLAGS = $(KDE_MT_LDFLAGS) $(LIBkmid_LTVERSION)  -no-undefined $(KDE_NO_UNDEFINED)
+ libkmid_la_LIBADD = $(LIBASOUND) ../kdecore/libkdecore.la
+ DOXYGEN_REFERENCES = kdecore
+ #>- all: all-am

@@ -1,0 +1,13 @@
+$OpenBSD: patch-interfaces_ktexteditor_Makefile_in,v 1.1 2006/01/03 09:10:56 espie Exp $
+--- interfaces/ktexteditor/Makefile.in.orig	Mon Jan  2 14:04:28 2006
++++ interfaces/ktexteditor/Makefile.in	Mon Jan  2 14:07:20 2006
+@@ -593,7 +593,8 @@ libktexteditor_la_SOURCES=ktexteditor.cp
+      selectioninterfaceext.cpp  \
+     texthintinterface.cpp editinterfaceext.cpp variableinterface.cpp templateinterface.cpp editdcopinterface_skel.cpp clipboarddcopinterface_skel.cpp selectiondcopinterface_skel.cpp searchdcopinterface_skel.cpp blockselectiondcopinterface_skel.cpp documentdcopinfo_skel.cpp encodingdcopinterface_skel.cpp printdcopinterface_skel.cpp undodcopinterface_skel.cpp viewcursordcopinterface_skel.cpp viewstatusmsgdcopinterface_skel.cpp selectionextdcopinterface_skel.cpp editorchooser_ui.cpp
+ 
+-libktexteditor_la_LDFLAGS = $(all_libraries) $(KDE_RPATH)
++LIBktexteditor_LTVERSION=
++libktexteditor_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIBktexteditor_LTVERSION)
+ libktexteditor_la_LIBADD = $(LIB_KPARTS) $(top_builddir)/dcop/libDCOP.la $(top_builddir)/kabc/libkabc.la
+ ktexteditorinclude_HEADERS = document.h view.h editor.h plugin.h editinterface.h undointerface.h \
+                              selectioninterface.h cursorinterface.h \

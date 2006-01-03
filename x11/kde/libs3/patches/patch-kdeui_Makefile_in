@@ -1,0 +1,19 @@
+$OpenBSD: patch-kdeui_Makefile_in,v 1.1 2006/01/03 09:10:56 espie Exp $
+--- kdeui/Makefile.in.orig	Mon Jan  2 14:04:36 2006
++++ kdeui/Makefile.in	Mon Jan  2 18:11:30 2006
+@@ -633,11 +633,13 @@ AM_LDFLAGS = $(LDFLAGS_AS_NEEDED) $(LDFL
+ lib_LTLIBRARIES = libkdeui.la libkspell.la
+ #>- libkdeui_la_LDFLAGS = $(KDE_MT_LDFLAGS) -no-undefined -version-info 6:0:2
+ #>+ 1
+-libkdeui_la_LDFLAGS = $(KDE_MT_LDFLAGS) -no-undefined $(KDE_NO_UNDEFINED) -version-info 6:0:2
++LIBkdeui_LTVERSION=-version-info 6:0:2
++libkdeui_la_LDFLAGS = $(KDE_MT_LDFLAGS) -no-undefined $(KDE_NO_UNDEFINED) $(LIBkdeui_LTVERSION)
+ libkdeui_la_LIBADD = ../kdecore/libkdecore.la
+ #>- libkspell_la_LDFLAGS = $(KDE_MT_LDFLAGS) -version-info 6:0:2 -no-undefined
+ #>+ 1
+-libkspell_la_LDFLAGS = $(KDE_MT_LDFLAGS) -version-info 6:0:2 -no-undefined $(KDE_NO_UNDEFINED)
++LIBkspell_LTVERSION=-version-info 6:0:2
++libkspell_la_LDFLAGS = $(KDE_MT_LDFLAGS) $(LIBkspell_LTVERSION) -no-undefined $(KDE_NO_UNDEFINED)
+ libkspell_la_LIBADD = libkdeui.la
+ libkspell_la_SOURCES = dummy.cpp
+ picsdir = $(kde_datadir)/kdeui/pics

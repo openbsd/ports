@@ -1,0 +1,13 @@
+$OpenBSD: patch-kate_interfaces_Makefile_in,v 1.1 2006/01/03 09:10:56 espie Exp $
+--- kate/interfaces/Makefile.in.orig	Mon Jan  2 14:04:29 2006
++++ kate/interfaces/Makefile.in	Mon Jan  2 21:50:44 2006
+@@ -516,7 +516,8 @@ libkatepartinterfaces_la_SOURCES = inter
+ libkatepartinterfaces_la_LIBADD = $(top_builddir)/interfaces/ktexteditor/libktexteditor.la
+ #>- libkatepartinterfaces_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -no-undefined
+ #>+ 1
+-libkatepartinterfaces_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -no-undefined $(KDE_NO_UNDEFINED)
++LIBkatepartinterfaces_LTVERSION=
++libkatepartinterfaces_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -no-undefined $(KDE_NO_UNDEFINED) $(LIBkatepartinterfaces_LTVERSION)
+ kateinclude_HEADERS = document.h view.h
+ kateincludedir = $(includedir)/kate
+ INCLUDES = -I$(top_srcdir)/interfaces -I$(top_srcdir)/kparts -I$(top_srcdir) $(all_includes)

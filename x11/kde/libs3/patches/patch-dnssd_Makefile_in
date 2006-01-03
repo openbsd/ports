@@ -1,0 +1,13 @@
+$OpenBSD: patch-dnssd_Makefile_in,v 1.1 2006/01/03 09:10:56 espie Exp $
+--- dnssd/Makefile.in.orig	Mon Jan  2 14:04:36 2006
++++ dnssd/Makefile.in	Mon Jan  2 18:09:13 2006
+@@ -534,7 +534,8 @@ dnssdinclude_HEADERS = domainbrowser.h q
+ 	publicservice.h servicebase.h servicebrowser.h settings.h
+ 
+ libkdnssd_la_LIBADD = ../kdecore/libkdecore.la $(LIB_DNSSD)
+-libkdnssd_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -version-info 1:0
++LIBkdnssd_LTVERSION=-version-info 1:0
++libkdnssd_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIBkdnssd_LTVERSION)
+ #>- all: all-am
+ #>+ 1
+ all: docs-am  all-am

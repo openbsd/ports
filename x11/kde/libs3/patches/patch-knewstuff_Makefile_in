@@ -1,0 +1,13 @@
+$OpenBSD: patch-knewstuff_Makefile_in,v 1.1 2006/01/03 09:10:56 espie Exp $
+--- knewstuff/Makefile.in.orig	Mon Jan  2 14:04:33 2006
++++ knewstuff/Makefile.in	Mon Jan  2 18:00:58 2006
+@@ -547,7 +547,8 @@ xdg_menudir = @xdg_menudir@
+ INCLUDES = $(all_includes)
+ #>- METASOURCES = AUTO
+ lib_LTLIBRARIES = libknewstuff.la
+-libknewstuff_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -version-info 1:0
++LIBknewstuff_LTVERSION= -version-info 1:0
++libknewstuff_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIBknewstuff_LTVERSION)
+ libknewstuff_la_LIBADD = $(LIB_KIO)
+ libknewstuff_la_SOURCES = engine.cpp entry.cpp downloaddialog.cpp \
+   uploaddialog.cpp providerdialog.cpp provider.cpp knewstuff.cpp \

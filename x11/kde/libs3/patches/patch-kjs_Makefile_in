@@ -1,0 +1,13 @@
+$OpenBSD: patch-kjs_Makefile_in,v 1.1 2006/01/03 09:10:56 espie Exp $
+--- kjs/Makefile.in.orig	Mon Jan  2 14:04:33 2006
++++ kjs/Makefile.in	Mon Jan  2 18:00:33 2006
+@@ -585,7 +585,8 @@ noinst_HEADERS = internal.h collector.h 
+ #>- libkjs_la_LDFLAGS = -version-info 3:0:2 -no-undefined $(VSCRIPT) \
+ #>-           $(USER_LDFLAGS) $(all_libraries)
+ #>+ 2
+-libkjs_la_LDFLAGS = -version-info 3:0:2 -no-undefined $(KDE_NO_UNDEFINED) $(VSCRIPT) \
++LIBkjs_LTVERSION=-version-info 3:0:2
++libkjs_la_LDFLAGS = $(LIBkjs_LTVERSION) -no-undefined $(KDE_NO_UNDEFINED) $(VSCRIPT) \
+           $(USER_LDFLAGS) $(all_libraries)
+ 
+ libkjs_la_LIBADD = -lm $(LIBPCRE)

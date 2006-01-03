@@ -1,0 +1,13 @@
+$OpenBSD: patch-kio_misc_kntlm_Makefile_in,v 1.1 2006/01/03 09:10:56 espie Exp $
+--- kio/misc/kntlm/Makefile.in.orig	Mon Jan  2 14:04:30 2006
++++ kio/misc/kntlm/Makefile.in	Mon Jan  2 14:15:30 2006
+@@ -517,7 +517,8 @@ kntlminclude_HEADERS = kntlm.h
+ libkntlm_la_SOURCES = kntlm.cpp des.cpp
+ #>- libkntlm_la_LDFLAGS = $(all_libraries) -version-info 0:0:0 -no-undefined
+ #>+ 1
+-libkntlm_la_LDFLAGS = $(all_libraries) -version-info 0:0:0 -no-undefined $(KDE_NO_UNDEFINED)
++LIBkntlm_LTVERSION=-version-info 0:0:0
++libkntlm_la_LDFLAGS = $(all_libraries) $(LIBkntlm_LTVERSION) -no-undefined $(KDE_NO_UNDEFINED)
+ libkntlm_la_LIBADD = $(LIB_KDECORE)
+ #>- all: all-am
+ #>+ 1

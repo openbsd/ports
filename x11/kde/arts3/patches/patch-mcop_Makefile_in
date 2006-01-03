@@ -1,0 +1,13 @@
+$OpenBSD: patch-mcop_Makefile_in,v 1.1 2006/01/03 09:10:55 espie Exp $
+--- mcop/Makefile.in.orig	Fri Dec 30 16:49:30 2005
++++ mcop/Makefile.in	Fri Dec 30 16:54:06 2005
+@@ -405,7 +405,8 @@ libmcop_la_SOURCES = buffer.cc connectio
+ libmcop_la_LIBADD = $(LIBSOCKET) $(GLIB_LIBADD) $(top_builddir)/libltdl/libltdlc.la
+ #>- libmcop_la_LDFLAGS = -no-undefined -version-info 1:0 $(GLIB_LDFLAGS) $(all_libraries)
+ #>+ 1
+-libmcop_la_LDFLAGS = -no-undefined $(KDE_NO_UNDEFINED) -version-info 1:0 $(GLIB_LDFLAGS) $(all_libraries)
++LIBmcop_LTVERSION= -version-info 1:0
++libmcop_la_LDFLAGS = -no-undefined $(KDE_NO_UNDEFINED) $(LIBmcop_LTVERSION) $(GLIB_LDFLAGS) $(all_libraries)
+ artsincludedir = $(includedir)/arts
+ artsinclude_HEADERS = arts_export.h buffer.h common.h connection.h core.h dispatcher.h \
+   factory.h flowsystem.h idlfilereg.h ifacerepo_impl.h iomanager.h \

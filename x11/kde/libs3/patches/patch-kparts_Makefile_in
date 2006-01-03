@@ -1,0 +1,13 @@
+$OpenBSD: patch-kparts_Makefile_in,v 1.1 2006/01/03 09:10:56 espie Exp $
+--- kparts/Makefile.in.orig	Mon Jan  2 14:04:36 2006
++++ kparts/Makefile.in	Mon Jan  2 18:10:39 2006
+@@ -527,7 +527,8 @@ INCLUDES = -I$(srcdir)/../ -I$(top_srcdi
+ 
+ #>- libkparts_la_LDFLAGS = $(KDE_MT_LDFLAGS) -version-info 3:0:1 -no-undefined
+ #>+ 1
+-libkparts_la_LDFLAGS = $(KDE_MT_LDFLAGS) -version-info 3:0:1 -no-undefined $(KDE_NO_UNDEFINED)
++LIBkparts_LTVERSION=-version-info 3:0:1
++libkparts_la_LDFLAGS = $(KDE_MT_LDFLAGS) $(LIBkparts_LTVERSION) -no-undefined $(KDE_NO_UNDEFINED)
+ libkparts_la_LIBADD = $(LIB_KIO)
+ 
+ ####### Files

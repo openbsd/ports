@@ -1,0 +1,13 @@
+$OpenBSD: patch-kunittest_Makefile_in,v 1.1 2006/01/03 09:10:56 espie Exp $
+--- kunittest/Makefile.in.orig	Mon Jan  2 14:04:29 2006
++++ kunittest/Makefile.in	Mon Jan  2 14:10:27 2006
+@@ -533,7 +533,8 @@ INCLUDES = $(all_includes)
+ #>- METASOURCES = AUTO
+ lib_LTLIBRARIES = libkunittest.la
+ libkunittest_la_SOURCES = runner.cpp tester.cpp
+-libkunittest_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -version-info 1:0:0
++LIBkunittest_LTVERSION=-version-info 1:0:0
++libkunittest_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIBkunittest_LTVERSION)
+ libkunittest_la_LIBADD = $(LIB_KDECORE)
+ libkunittestinclude_HEADERS = runner.h tester.h module.h
+ libkunittestincludedir = $(includedir)/kunittest

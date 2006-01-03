@@ -1,0 +1,13 @@
+$OpenBSD: patch-kabc_plugins_net_Makefile_in,v 1.1 2006/01/03 09:10:56 espie Exp $
+--- kabc/plugins/net/Makefile.in.orig	Mon Jan  2 14:04:33 2006
++++ kabc/plugins/net/Makefile.in	Mon Jan  2 17:38:15 2006
+@@ -528,7 +528,8 @@ lib_LTLIBRARIES = libkabc_net.la
+ libkabc_net_la_SOURCES = resourcenet.cpp resourcenetconfig.cpp
+ #>- libkabc_net_la_LDFLAGS = $(KDE_RPATH) $(all_libraries) -version-info 1:0:0 -no-undefined
+ #>+ 1
+-libkabc_net_la_LDFLAGS = $(KDE_RPATH) $(all_libraries) -version-info 1:0:0 -no-undefined $(KDE_NO_UNDEFINED)
++LIBkabc_net_LTVERSION=-version-info 1:0:0
++libkabc_net_la_LDFLAGS = $(KDE_RPATH) $(all_libraries) $(LIBkabc_net_LTVERSION) -no-undefined $(KDE_NO_UNDEFINED)
+ libkabc_net_la_LIBADD = $(top_builddir)/kabc/libkabc.la $(LIB_KIO)
+ libkabc_net_la_COMPILE_FIRST = $(top_builddir)/kabc/addressee.h
+ kde_module_LTLIBRARIES = kabc_net.la

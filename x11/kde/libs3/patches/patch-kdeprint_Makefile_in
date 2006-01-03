@@ -1,0 +1,13 @@
+$OpenBSD: patch-kdeprint_Makefile_in,v 1.1 2006/01/03 09:10:56 espie Exp $
+--- kdeprint/Makefile.in.orig	Mon Jan  2 14:04:36 2006
++++ kdeprint/Makefile.in	Mon Jan  2 18:07:45 2006
+@@ -626,7 +626,8 @@ libkdeprint_la_SOURCES=kmfactory.cpp kmj
+ 
+ #>- libkdeprint_la_LDFLAGS = $(all_libraries) -version-info 6:0:2 -no-undefined
+ #>+ 1
+-libkdeprint_la_LDFLAGS = $(all_libraries) -version-info 6:0:2 -no-undefined $(KDE_NO_UNDEFINED)
++LIBkdeprint_LTVERSION=-version-info 6:0:2
++libkdeprint_la_LDFLAGS = $(all_libraries) $(LIBkdeprint_LTVERSION) -no-undefined $(KDE_NO_UNDEFINED)
+ libkdeprint_la_LIBADD = $(LIB_KPARTS) $(LIBZ)
+ libkdeprint_la_DEPENDENCIES = $(LIB_KPARTS) 
+ #>- libkdeprint_la_METASOURCES = AUTO

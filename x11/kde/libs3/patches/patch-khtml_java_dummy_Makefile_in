@@ -1,0 +1,13 @@
+$OpenBSD: patch-khtml_java_dummy_Makefile_in,v 1.1 2006/01/03 09:10:56 espie Exp $
+--- khtml/java/dummy/Makefile.in.orig	Mon Jan  2 14:04:34 2006
++++ khtml/java/dummy/Makefile.in	Mon Jan  2 18:02:22 2006
+@@ -503,7 +503,8 @@ xdg_directorydir = @xdg_directorydir@
+ xdg_menudir = @xdg_menudir@
+ lib_LTLIBRARIES = libkjava.la
+ libkjava_la_SOURCES = dummy.cpp
+-libkjava_la_LDFLAGS = -version-info 1:0
++LIBkjava_LTVERSION = -version-info 1:0
++libkjava_la_LDFLAGS = $(LIBkjava_LTVERSION)
+ #>- all: all-am
+ #>+ 1
+ all: docs-am  all-am

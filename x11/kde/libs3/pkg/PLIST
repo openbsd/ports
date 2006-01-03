@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2005/11/29 14:00:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.36 2006/01/03 09:10:57 espie Exp $
 @conflict kdebase-<3.5
 @conflict kdeartwork-<3.4
 @conflict kdeaddons-<3.4
@@ -930,28 +930,28 @@ ${KDE}/plugins/styles/light.so
 ${KDE}/plugins/styles/plastik.la
 ${KDE}/plugins/styles/plastik.so
 lib/libDCOP.la
-@lib lib/libDCOP.so.6.0
+@lib lib/libDCOP.so.${LIBDCOP_VERSION}
 lib/libartskde.la
-@lib lib/libartskde.so.3.0
+@lib lib/libartskde.so.${LIBartskde_VERSION}
 lib/libkabc.la
-@lib lib/libkabc.so.3.0
+@lib lib/libkabc.so.${LIBkabc_VERSION}
 lib/libkabc_dir.la
-@lib lib/libkabc_dir.so.1.0
+@lib lib/libkabc_dir.so.${LIBkabc_dir_VERSION}
 lib/libkabc_file.la
-@lib lib/libkabc_file.so.1.0
+@lib lib/libkabc_file.so.${LIBkabc_file_VERSION}
 lib/libkabc_ldapkio.la
-@lib lib/libkabc_ldapkio.so.1.0
+@lib lib/libkabc_ldapkio.so.${LIBkabc_ldapkio_VERSION}
 lib/libkabc_net.la
-@lib lib/libkabc_net.so.1.0
+@lib lib/libkabc_net.so.${LIBkabc_net_VERSION}
 lib/libkatepartinterfaces.la
-@lib lib/libkatepartinterfaces.so.0.0
+@lib lib/libkatepartinterfaces.so.${LIBkatepartinterfaces_VERSION}
 lib/libkdecore.la
-@lib lib/libkdecore.so.6.0
+@lib lib/libkdecore.so.${LIBkdecore_VERSION}
 lib/libkdefakes.la
-@lib lib/libkdefakes.so.6.0
+@lib lib/libkdefakes.so.${LIBkdefakes_VERSION}
 lib/libkdefakes_nonpic.a
 lib/libkdefx.la
-@lib lib/libkdefx.so.6.0
+@lib lib/libkdefx.so.${LIBkdefx_VERSION}
 lib/libkdeinit_dcopserver.la
 lib/libkdeinit_dcopserver.so
 lib/libkdeinit_kaddprinterwizard.la
@@ -973,63 +973,63 @@ lib/libkdeinit_kio_uiserver.so
 lib/libkdeinit_klauncher.la
 lib/libkdeinit_klauncher.so
 lib/libkdeprint.la
-@lib lib/libkdeprint.so.6.0
+@lib lib/libkdeprint.so.${LIBkdeprint_VERSION}
 lib/libkdeprint_management.la
-@lib lib/libkdeprint_management.so.6.0
+@lib lib/libkdeprint_management.so.${LIBkdeprint_management_VERSION}
 lib/libkdesasl.la
-@lib lib/libkdesasl.so.3.0
+@lib lib/libkdesasl.so.${LIBkdesasl_VERSION}
 lib/libkdesu.la
-@lib lib/libkdesu.so.6.0
+@lib lib/libkdesu.so.${LIBkdesu_VERSION}
 lib/libkdeui.la
-@lib lib/libkdeui.so.6.0
+@lib lib/libkdeui.so.${LIBkdeui_VERSION}
 lib/libkdnssd.la
-@lib lib/libkdnssd.so.1.0
+@lib lib/libkdnssd.so.${LIBkdnssd_VERSION}
 lib/libkhtml.la
-@lib lib/libkhtml.so.6.0
+@lib lib/libkhtml.so.${LIBkhtml_VERSION}
 lib/libkimproxy.la
-@lib lib/libkimproxy.so.0.0
+@lib lib/libkimproxy.so.${LIBkimproxy_VERSION}
 lib/libkio.la
-@lib lib/libkio.so.6.0
+@lib lib/libkio.so.${LIBkio_VERSION}
 lib/libkjava.la
-@lib lib/libkjava.so.1.0
+@lib lib/libkjava.so.${LIBkjava_VERSION}
 lib/libkjs.la
-@lib lib/libkjs.so.3.0
+@lib lib/libkjs.so.${LIBkjs_VERSION}
 lib/libkmdi.la
-@lib lib/libkmdi.so.1.0
+@lib lib/libkmdi.so.${LIBkmdi_VERSION}
 lib/libkmdi2.la
-@lib lib/libkmdi2.so.1.0
+@lib lib/libkmdi2.so.${LIBkmdi2_VERSION}
 lib/libkmediaplayer.la
-@lib lib/libkmediaplayer.so.0.0
+@lib lib/libkmediaplayer.so.${LIBkmediaplayer_VERSION}
 lib/libkmid.la
-@lib lib/libkmid.so.0.95
+@lib lib/libkmid.so.${LIBkmid_VERSION}
 lib/libknewstuff.la
-@lib lib/libknewstuff.so.1.0
+@lib lib/libknewstuff.so.${LIBknewstuff_VERSION}
 lib/libkntlm.la
-@lib lib/libkntlm.so.0.0
+@lib lib/libkntlm.so.${LIBkntlm_VERSION}
 lib/libkparts.la
-@lib lib/libkparts.so.3.0
+@lib lib/libkparts.so.${LIBkparts_VERSION}
 lib/libkresources.la
-@lib lib/libkresources.so.3.0
+@lib lib/libkresources.so.${LIBkresources_VERSION}
 lib/libkscreensaver.la
-@lib lib/libkscreensaver.so.6.0
+@lib lib/libkscreensaver.so.${LIBkscreensaver_VERSION}
 lib/libkscript.la
-@lib lib/libkscript.so.0.0
+@lib lib/libkscript.so.${LIBkscript_VERSION}
 lib/libkspell.la
-@lib lib/libkspell.so.6.0
+@lib lib/libkspell.so.${LIBkspell_VERSION}
 lib/libkspell2.la
-@lib lib/libkspell2.so.1.0
+@lib lib/libkspell2.so.${LIBkspell2_VERSION}
 lib/libktexteditor.la
-@lib lib/libktexteditor.so.0.0
+@lib lib/libktexteditor.so.${LIBktexteditor_VERSION}
 lib/libkunittest.la
-@lib lib/libkunittest.so.1.0
+@lib lib/libkunittest.so.${LIBkunittest_VERSION}
 lib/libkutils.la
-@lib lib/libkutils.so.3.0
+@lib lib/libkutils.so.${LIBkutils_VERSION}
 lib/libkwalletbackend.la
-@lib lib/libkwalletbackend.so.1.0
+@lib lib/libkwalletbackend.so.${LIBkwalletbackend_VERSION}
 lib/libkwalletclient.la
-@lib lib/libkwalletclient.so.1.1
+@lib lib/libkwalletclient.so.${LIBkwalletclient_VERSION}
 lib/libvcard.la
-@lib lib/libvcard.so.0.0
+@lib lib/libvcard.so.${LIBvcard_VERSION}
 @man man/man1/artsmessage.1
 @man man/man1/cupsdconf.1
 @man man/man1/dcop.1

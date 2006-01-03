@@ -1,17 +1,17 @@
-@comment $OpenBSD: PFRAG.shared,v 1.11 2004/08/10 13:53:37 espie Exp $
-@lib lib/libartsc.so.0.0
-@lib lib/libartscbackend.so.0.0
-@lib lib/libartsdsp.so.0.0
-@lib lib/libartsdsp_st.so.0.0
-@lib lib/libartsflow.so.1.0
-@lib lib/libartsflow_idl.so.1.0
-@lib lib/libartsgslplayobject.so.0.0
-@lib lib/libartswavplayobject.so.0.0
-@lib lib/libgmcop.so.1.0
-@lib lib/libkmedia2.so.1.0
-@lib lib/libkmedia2_idl.so.1.0
-@lib lib/libmcop.so.1.0
-@lib lib/libmcop_mt.so.1.0
-@lib lib/libqtmcop.so.1.0
-@lib lib/libsoundserver_idl.so.1.0
-@lib lib/libx11globalcomm.so.1.0
+@comment $OpenBSD: PFRAG.shared,v 1.12 2006/01/03 09:10:55 espie Exp $
+@lib lib/libartsc.so.${LIBartsc_VERSION}
+@lib lib/libartscbackend.so.${LIBartscbackend_VERSION}
+@lib lib/libartsdsp.so.${LIBartsdsp_VERSION}
+@lib lib/libartsdsp_st.so.${LIBartsdsp_st_VERSION}
+@lib lib/libartsflow.so.${LIBartsflow_VERSION}
+@lib lib/libartsflow_idl.so.${LIBartsflow_idl_VERSION}
+@lib lib/libartsgslplayobject.so.${LIBartsgslplayobject_VERSION}
+@lib lib/libartswavplayobject.so.${LIBartswavplayobject_VERSION}
+@lib lib/libgmcop.so.${LIBgmcop_VERSION}
+@lib lib/libkmedia2.so.${LIBkmedia2_VERSION}
+@lib lib/libkmedia2_idl.so.${LIBkmedia2_idl_VERSION}
+@lib lib/libmcop.so.${LIBmcop_VERSION}
+@lib lib/libmcop_mt.so.${LIBmcop_mt_VERSION}
+@lib lib/libqtmcop.so.${LIBqtmcop_VERSION}
+@lib lib/libsoundserver_idl.so.${LIBsoundserver_idl_VERSION}
+@lib lib/libx11globalcomm.so.${LIBx11globalcomm_VERSION}

@@ -1,0 +1,13 @@
+$OpenBSD: patch-x11_Makefile_in,v 1.1 2006/01/03 09:10:55 espie Exp $
+--- x11/Makefile.in.orig	Fri Dec 30 16:49:30 2005
++++ x11/Makefile.in	Fri Dec 30 16:57:56 2005
+@@ -372,7 +372,8 @@ x_libraries = @x_libraries@
+ @include_x11_TRUE@lib_LTLIBRARIES = libx11globalcomm.la
+ @include_x11_TRUE@libx11globalcomm_la_SOURCES = x11globalcomm.cc x11globalcomm_impl.cc
+ @include_x11_TRUE@libx11globalcomm_la_LIBADD = $(top_builddir)/mcop/libmcop.la $(LIB_X11)
+-@include_x11_TRUE@libx11globalcomm_la_LDFLAGS = -no-undefined -module -version-info 1:0 $(X_LDFLAGS) $(all_libraries)
++@include_x11_TRUE@LIBx11globalcomm_LTVERSION= -version-info 1:0
++@include_x11_TRUE@libx11globalcomm_la_LDFLAGS = -no-undefined -module $(LIBx11globalcomm_LTVERSION) $(X_LDFLAGS) $(all_libraries)
+ @include_x11_TRUE@DISTCLEANFILES = x11globalcomm.cc x11globalcomm.h \
+ @include_x11_TRUE@                 x11globalcomm.mcoptype x11globalcomm.mcopclass
+ 

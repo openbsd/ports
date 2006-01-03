@@ -1,0 +1,13 @@
+$OpenBSD: patch-kio_misc_kdesasl_Makefile_in,v 1.1 2006/01/03 09:10:56 espie Exp $
+--- kio/misc/kdesasl/Makefile.in.orig	Mon Jan  2 14:04:30 2006
++++ kio/misc/kdesasl/Makefile.in	Mon Jan  2 14:15:56 2006
+@@ -515,7 +515,8 @@ kdesaslinclude_HEADERS = kdesasl.h
+ libkdesasl_la_SOURCES = kdesasl.cpp
+ #>- libkdesasl_la_LDFLAGS = $(all_libraries) -version-info 3:0:2 -no-undefined
+ #>+ 1
+-libkdesasl_la_LDFLAGS = $(all_libraries) -version-info 3:0:2 -no-undefined $(KDE_NO_UNDEFINED)
++LIBkdesasl_LTVERSION=-version-info 3:0:2
++libkdesasl_la_LDFLAGS = $(all_libraries) $(LIBkdesasl_LTVERSION) -no-undefined $(KDE_NO_UNDEFINED)
+ libkdesasl_la_LIBADD = $(LIB_KDECORE)
+ #>- all: all-am
+ #>+ 1
