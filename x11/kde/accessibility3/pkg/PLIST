@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/11/30 11:25:17 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/01/03 16:42:47 espie Exp $
 bin/kmag
 bin/kmousetool
 bin/kmouth
@@ -37,9 +37,9 @@ ${KDE}/libkttsd_xmltransformerplugin.so
 ${KDE}/libkttsjobmgrpart.la
 ${KDE}/libkttsjobmgrpart.so
 lib/libKTTSD_Lib.la
-@lib lib/libKTTSD_Lib.so.0.1
+@lib lib/libKTTSD_Lib.so.${LIBKTTSD_Lib_VERSION}
 lib/libkttsd.la
-@lib lib/libkttsd.so.1.0
+@lib lib/libkttsd.so.${LIBkttsd_VERSION}
 share/applications/kde/kcmkttsd.desktop
 share/applications/kde/ksayit.desktop
 share/applications/kde/kttsmgr.desktop

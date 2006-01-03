@@ -1,0 +1,13 @@
+$OpenBSD: patch-ksayit_KTTSD_Lib_Makefile_in,v 1.1 2006/01/03 16:42:47 espie Exp $
+--- ksayit/KTTSD_Lib/Makefile.in.orig	Tue Jan  3 17:17:49 2006
++++ ksayit/KTTSD_Lib/Makefile.in	Tue Jan  3 17:18:11 2006
+@@ -403,7 +403,8 @@ INCLUDES = \
+ #>- METASOURCES = AUTO
+ #>- libKTTSD_Lib_la_LDFLAGS = -no-undefined $(all_libraries) -version-info 0:1
+ #>+ 1
+-libKTTSD_Lib_la_LDFLAGS = -no-undefined $(KDE_NO_UNDEFINED) $(all_libraries) -version-info 0:1
++LIBKTTSD_Lib_LTVERSION=-version-info 0:1
++libKTTSD_Lib_la_LDFLAGS = -no-undefined $(KDE_NO_UNDEFINED) $(all_libraries) $(LIBKTTSD_Lib_LTVERSION)
+ lib_LTLIBRARIES = libKTTSD_Lib.la
+ libKTTSD_Lib_la_LIBADD = $(LIB_KDEUI) $(LIB_KDECORE)
+ noinst_HEADERS = kttsdlib.h kttsdlibsetupimpl.h kttsdlibtalker2.h kdeexportfix.h

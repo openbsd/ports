@@ -1,0 +1,13 @@
+$OpenBSD: patch-kttsd_libkttsd_Makefile_in,v 1.1 2006/01/03 16:42:47 espie Exp $
+--- kttsd/libkttsd/Makefile.in.orig	Tue Jan  3 17:18:19 2006
++++ kttsd/libkttsd/Makefile.in	Tue Jan  3 17:18:38 2006
+@@ -444,7 +444,8 @@ libkttsd_la_SOURCES=\
+ 
+ #>- libkttsd_la_LDFLAGS = -version-info 1:0:0 $(all_libraries) -no-undefined
+ #>+ 1
+-libkttsd_la_LDFLAGS = -version-info 1:0:0 $(all_libraries) -no-undefined $(KDE_NO_UNDEFINED)
++LIBkttsd_LTVERSION=-version-info 1:0:0
++libkttsd_la_LDFLAGS = $(LIBkttsd_LTVERSION) $(all_libraries) -no-undefined $(KDE_NO_UNDEFINED)
+ libkttsd_la_LIBADD = $(LIB_KIO)
+ 
+ # Header files that should not be installed.
