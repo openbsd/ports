@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared-gnome,v 1.2 2004/11/17 18:23:50 espie Exp $
-@lib lib/libglade-gnome.so.5.0
+@comment $OpenBSD: PFRAG.shared-gnome,v 1.3 2006/01/03 14:55:19 bernd Exp $
+@lib lib/libglade-gnome.so.${LIBglade-gnome_VERSION}

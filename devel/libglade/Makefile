@@ -1,8 +1,15 @@
-# $OpenBSD: Makefile,v 1.18 2004/11/23 21:34:27 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2006/01/03 14:55:18 bernd Exp $
 
 COMMENT=		"library for loading GLADE interface files at runtime"
 
 DISTNAME=		libglade-0.17
+PKGNAME=		${DISTNAME}p0
+SHARED_LIBS=		glade		5.0 \
+			glade-gnome	5.0
+MODGNU_SHARED_LIBS=	glade		'' \
+			glade-gnome	''
+LIBglade-gnome_ALIAS=	glade_gnome
+
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org
@@ -26,6 +33,7 @@ LIB_DEPENDS=		xml.9::textproc/libxml1 \
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= 	--disable-gnomedb
@@ -36,7 +44,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 LIB_DEPENDS+=		gnome.36,art_lgpl,gnomesupport,gnomeui::x11/gnome/libs
 WANTLIB+=		ICE SM audiofile esd gdk_imlib jpeg png tiff ungif
 CONFIGURE_ARGS+=	--with-gnome
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 .else
 CONFIGURE_ARGS+=	--without-gnome
 .endif

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2003/05/12 08:23:46 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2006/01/03 14:55:18 bernd Exp $
 
 COMMENT=	"simple library designed for DVD navigation"
 
 DISTNAME=	libdvdplay-1.0.1
+PKGNAME=	${DISTNAME}p0
+SHARED_LIBS=	dvdplay 0.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.videolan.org/pub/libdvdplay/1.0.1/
 
@@ -17,6 +19,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 LIB_DEPENDS=	dvdread::devel/libdvdread
+
+USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
