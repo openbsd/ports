@@ -1,0 +1,20 @@
+$OpenBSD: patch-gtk_Makefile_in,v 1.7 2006/01/03 07:33:37 marcm Exp $
+--- gtk/Makefile.in.orig	Fri Dec 30 22:54:45 2005
++++ gtk/Makefile.in	Fri Dec 30 22:55:33 2005
+@@ -347,7 +347,6 @@ $(am__append_2)
+ 
+ # common options for the various packages.
+ libtool_opts = \
+-  -version-info $(LT_VERSION_INFO)				\
+   -export-dynamic $(no_undefined) $(LIBTOOL_EXPORT_OPTIONS)	\
+   -rpath $(libdir) $(libgtk_target_ldflags)
+ 
+@@ -868,7 +867,7 @@ libgtk_x11_2_0_la_SOURCES = $(gtk_c_sour
+ libgtk_linux_fb_2_0_la_SOURCES = $(gtk_c_sources)
+ libgtk_win32_2_0_la_SOURCES = $(gtk_c_sources)
+ 
+-libgtk_x11_2_0_la_LDFLAGS = $(libtool_opts)
++libgtk_x11_2_0_la_LDFLAGS = $(libtool_opts) $(LIBgtk-x11-2.0_LTVERSION)
+ libgtk_linux_fb_2_0_la_LDFLAGS = $(libtool_opts)
+ libgtk_win32_2_0_la_LDFLAGS = $(libtool_opts)
+ 

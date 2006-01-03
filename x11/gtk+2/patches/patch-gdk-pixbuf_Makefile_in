@@ -1,6 +1,15 @@
-$OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.8 2005/11/13 06:23:58 marcm Exp $
---- gdk-pixbuf/Makefile.in.orig	Sat Aug 13 06:21:42 2005
-+++ gdk-pixbuf/Makefile.in	Tue Aug 23 22:16:42 2005
+$OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.9 2006/01/03 07:33:37 marcm Exp $
+--- gdk-pixbuf/Makefile.in.orig	Fri Dec  9 10:28:12 2005
++++ gdk-pixbuf/Makefile.in	Fri Dec 30 22:57:56 2005
+@@ -550,7 +550,7 @@ libgdk_pixbuf_2_0_la_SOURCES = \
+ 
+ libgdk_pixbuf_2_0_la_LDFLAGS = \
+ 	$(gdk_pixbuf_win32_res_ldflag)		\
+-	-version-info $(LT_VERSION_INFO)	\
++	$(LIBgdk_pixbuf-2.0_LTVERSION)		\
+ 	$(LIBTOOL_EXPORT_OPTIONS)		\
+ 	$(no_undefined)				\
+ 	$(gdk_pixbuf_symbols)
 @@ -1604,13 +1604,6 @@ install-data-hook: install-ms-lib instal
  	@if $(RUN_QUERY_LOADER_TEST) ; then \
  	  $(mkinstalldirs) $(DESTDIR)$(sysconfdir)/gtk-2.0 ; \

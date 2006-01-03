@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.14 2005/11/13 06:23:58 marcm Exp $
+@comment $OpenBSD: PLIST-docs,v 1.15 2006/01/03 07:33:37 marcm Exp $
 @conflict gtk+2-<2.4.9
 share/gtk-doc/
 share/gtk-doc/html/
@@ -29,6 +29,7 @@ share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-refcounting.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-scaling.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-util.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf.devhelp
+share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf.devhelp2
 share/gtk-doc/html/gdk-pixbuf/home.png
 share/gtk-doc/html/gdk-pixbuf/index.html
 share/gtk-doc/html/gdk-pixbuf/index.sgml
@@ -101,6 +102,7 @@ share/gtk-doc/html/gdk/gdk-Visuals.html
 share/gtk-doc/html/gdk/gdk-Windows.html
 share/gtk-doc/html/gdk/gdk-X-Window-System-Interaction.html
 share/gtk-doc/html/gdk/gdk.devhelp
+share/gtk-doc/html/gdk/gdk.devhelp2
 share/gtk-doc/html/gdk/gobbler.png
 share/gtk-doc/html/gdk/gumby.png
 share/gtk-doc/html/gdk/hand1.png
@@ -394,6 +396,7 @@ share/gtk-doc/html/gtk/gtk-update-icon-cache.html
 share/gtk-doc/html/gtk/gtk-windows.html
 share/gtk-doc/html/gtk/gtk-x11.html
 share/gtk-doc/html/gtk/gtk.devhelp
+share/gtk-doc/html/gtk/gtk.devhelp2
 share/gtk-doc/html/gtk/gtk.html
 share/gtk-doc/html/gtk/gtkbase.html
 share/gtk-doc/html/gtk/gtkfilechooser-installing-extra-widgets.html
