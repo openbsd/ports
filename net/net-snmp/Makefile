@@ -1,11 +1,16 @@
-# $OpenBSD: Makefile,v 1.13 2005/11/12 00:30:48 bernd Exp $
+# $OpenBSD: Makefile,v 1.14 2006/01/03 17:37:18 steven Exp $
 
 COMMENT=	"extendable SNMP implementation"
 COMMENT-perl=	"SNMP modules for Perl"
 
 DISTNAME=	net-snmp-5.1.3
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 FULLPKGNAME-perl= p5-SNMP-5.1.3p0
+SHARED_LIBS=	netsnmp		6.3	\
+		netsnmpagent	6.3	\
+		netsnmphelpers	6.3	\
+		netsnmpmibs	6.3	\
+		netsnmptrapd	6.3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=net-snmp/}
 
@@ -32,6 +37,7 @@ LIB_DEPENDS+=	netsnmpmibs,netsnmphelpers,netsnmpagent,netsnmp::net/net-snmp
 
 NET_SNMP_MIB_LIST= host disman/event-mib smux mibII/mta_sendmail
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --with-libwrap --with-perl-modules \
 	--with-copy-persistent-files="no" \

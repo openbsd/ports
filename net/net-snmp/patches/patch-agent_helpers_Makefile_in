@@ -1,0 +1,22 @@
+$OpenBSD: patch-agent_helpers_Makefile_in,v 1.1 2006/01/03 17:37:18 steven Exp $
+--- agent/helpers/Makefile.in.orig	Tue Jan  3 16:40:36 2006
++++ agent/helpers/Makefile.in	Tue Jan  3 16:41:10 2006
+@@ -4,7 +4,7 @@ top_builddir=../..
+ # What to install
+ #
+ 
+-INSTALLLIBS=libnetsnmphelpers.$(LIB_EXTENSION)$(LIB_VERSION)
++INSTALLLIBS=libnetsnmphelpers.$(LIB_EXTENSION)$(LIBnetsnmphelpers_VERSION)
+ INCLUDESUBDIR=agent
+ INCLUDESUBDIRHEADERS=all_helpers.h \
+ 	baby_steps.h \
+@@ -109,6 +109,6 @@ LOBJS = all_helpers.lo \
+ 
+ all: standardall
+ 
+-libnetsnmphelpers.$(LIB_EXTENSION)$(LIB_VERSION):    ${LOBJS}
+-	$(LIB_LD_CMD) libnetsnmphelpers.$(LIB_EXTENSION)$(LIB_VERSION) ${LOBJS}  $(LIB_LD_LIBS)
+-	$(RANLIB) libnetsnmphelpers.$(LIB_EXTENSION)$(LIB_VERSION)
++libnetsnmphelpers.$(LIB_EXTENSION)$(LIBnetsnmphelpers_VERSION):    ${LOBJS}
++	$(LIB_LD_CMD) libnetsnmphelpers.$(LIB_EXTENSION)$(LIBnetsnmphelpers_VERSION) $(LIBnetsnmphelpers_LTVERSION) ${LOBJS}  $(LIB_LD_LIBS)
++	$(RANLIB) libnetsnmphelpers.$(LIB_EXTENSION)$(LIBnetsnmphelpers_VERSION)

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2005/11/05 19:09:38 bernd Exp $
-@lib lib/libnetsnmp.so.6.3
-@lib lib/libnetsnmpagent.so.6.3
-@lib lib/libnetsnmphelpers.so.6.3
-@lib lib/libnetsnmpmibs.so.6.3
-@lib lib/libnetsnmptrapd.so.6.3
+@comment $OpenBSD: PFRAG.shared,v 1.5 2006/01/03 17:37:18 steven Exp $
+@lib lib/libnetsnmp.so.${LIBnetsnmp_VERSION}
+@lib lib/libnetsnmpagent.so.${LIBnetsnmpagent_VERSION}
+@lib lib/libnetsnmphelpers.so.${LIBnetsnmphelpers_VERSION}
+@lib lib/libnetsnmpmibs.so.${LIBnetsnmpmibs_VERSION}
+@lib lib/libnetsnmptrapd.so.${LIBnetsnmptrapd_VERSION}

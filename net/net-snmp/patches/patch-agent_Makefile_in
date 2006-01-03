@@ -1,0 +1,48 @@
+$OpenBSD: patch-agent_Makefile_in,v 1.1 2006/01/03 17:37:18 steven Exp $
+--- agent/Makefile.in.orig	Tue Jan  3 16:33:23 2006
++++ agent/Makefile.in	Tue Jan  3 16:36:08 2006
+@@ -10,8 +10,8 @@ top_builddir	= ..
+ SUBDIRS=helpers mibgroup
+ 
+ INSTALLSBINPROGS= snmpd$(EXEEXT)
+-INSTALLLIBS	= libnetsnmpagent.$(LIB_EXTENSION)$(LIB_VERSION) \
+-		libnetsnmpmibs.$(LIB_EXTENSION)$(LIB_VERSION)
++INSTALLLIBS	= libnetsnmpagent.$(LIB_EXTENSION)$(LIBnetsnmpagent_VERSION) \
++		libnetsnmpmibs.$(LIB_EXTENSION)$(LIBnetsnmpmibs_VERSION)
+ 
+ INCLUDESUBDIR=agent
+ INCLUDESUBDIRHEADERS=agent_read_config.h \
+@@ -62,10 +62,10 @@ INSTALLUCDHEADERS= \
+ #
+ # how to build it info
+ #
+-USELIBS		= ../snmplib/libnetsnmp.$(LIB_EXTENSION)$(LIB_VERSION)
+-HELPERLIB	= helpers/libnetsnmphelpers.$(LIB_EXTENSION)$(LIB_VERSION)
++USELIBS		= ../snmplib/libnetsnmp.$(LIB_EXTENSION)$(LIBnetsnmp_VERSION)
++HELPERLIB	= helpers/libnetsnmphelpers.$(LIB_EXTENSION)$(LIBnetsnmphelpers_VERSION)
+ LOCAL_LIBS	= 
+-LIBS		= ../snmplib/libnetsnmp.$(LIB_EXTENSION)$(LIB_VERSION) @AGENTLIBS@
++LIBS		= ../snmplib/libnetsnmp.$(LIB_EXTENSION)$(LIBnetsnmp_VERSION) @AGENTLIBS@
+ OUR_AGENT_LIBS	= $(INSTALLLIBS) $(HELPERLIB) @WRAPLIBS@ $(LIBS)
+ CPPFLAGS	= -I../include -I$(top_srcdir)/include \
+ 		  -I.. -I$(srcdir)/.. -I$(srcdir)/../snmplib \
+@@ -119,13 +119,13 @@ snmpd$(EXEEXT):	${LAGENTOBJS} $(USELIBS)
+ 	$(LINK) $(CFLAGS) -o $@ ${LAGENTOBJS} $(LOCAL_LIBS) ${LDFLAGS} ${OUR_AGENT_LIBS}
+ 
+ 
+-libnetsnmpagent.$(LIB_EXTENSION)$(LIB_VERSION):    ${LLIBAGENTOBJS} libnetsnmpmibs.$(LIB_EXTENSION)$(LIB_VERSION)
+-	$(LIB_LD_CMD) libnetsnmpagent.$(LIB_EXTENSION)$(LIB_VERSION) ${LLIBAGENTOBJS}  $(LIB_LD_LIBS)
+-	$(RANLIB) libnetsnmpagent.$(LIB_EXTENSION)$(LIB_VERSION)
++libnetsnmpagent.$(LIB_EXTENSION)$(LIBnetsnmpagent_VERSION):    ${LLIBAGENTOBJS} libnetsnmpmibs.$(LIB_EXTENSION)$(LIBnetsnmpmibs_VERSION)
++	$(LIB_LD_CMD) libnetsnmpagent.$(LIB_EXTENSION)$(LIBnetsnmpagent_VERSION) $(LIBnetsnmpagent_LTVERSION) ${LLIBAGENTOBJS}  $(LIB_LD_LIBS)
++	$(RANLIB) libnetsnmpagent.$(LIB_EXTENSION)$(LIBnetsnmpagent_VERSION)
+ 
+-libnetsnmpmibs.$(LIB_EXTENSION)$(LIB_VERSION):    ${LMIBOBJS}
+-	$(LIB_LD_CMD) libnetsnmpmibs.$(LIB_EXTENSION)$(LIB_VERSION) ${LMIBOBJS}  $(LIB_LD_LIBS)
+-	$(RANLIB) libnetsnmpmibs.$(LIB_EXTENSION)$(LIB_VERSION)
++libnetsnmpmibs.$(LIB_EXTENSION)$(LIBnetsnmpmibs_VERSION):    ${LMIBOBJS}
++	$(LIB_LD_CMD) libnetsnmpmibs.$(LIB_EXTENSION)$(LIBnetsnmpmibs_VERSION) $(LIBnetsnmpmibs_LTVERSION) ${LMIBOBJS}  $(LIB_LD_LIBS)
++	$(RANLIB) libnetsnmpmibs.$(LIB_EXTENSION)$(LIBnetsnmpmibs_VERSION)
+ 
+ embedperlinstall:
+ 	  @$(SHELL) $(srcdir)/../mkinstalldirs $(INSTALL_PREFIX)$(snmplibdir)

@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_top,v 1.1.1.1 2004/08/03 17:47:12 danh Exp $
---- Makefile.top.orig	Tue Feb 17 12:50:00 2004
-+++ Makefile.top	Tue Aug  3 09:41:11 2004
+$OpenBSD: patch-Makefile_top,v 1.2 2006/01/03 17:37:18 steven Exp $
+--- Makefile.top.orig	Mon Jun 20 15:37:46 2005
++++ Makefile.top	Tue Jan  3 16:37:29 2006
 @@ -34,7 +34,9 @@ INSTALL_PREFIX  = @INSTALL_PREFIX@
  #
  INSTALL		= $(LIBTOOL) --mode=install @INSTALL@
@@ -12,3 +12,12 @@ $OpenBSD: patch-Makefile_top,v 1.1.1.1 2004/08/03 17:47:12 danh Exp $
  SED		= @SED@
  LN_S		= @LN_S@
  AUTOCONF	= @AUTOCONF@
+@@ -74,7 +76,7 @@ LIBREVISION = 3
+ # generally, LIBCURRENT should stay the same unless major changes occur.
+ # Increment REVISION every release.  
+ # Increment AGE if new stuff is available.
+-LIB_LD_CMD      = $(LIBTOOL) --mode=link $(CC) $(CFLAGS) -rpath $(libdir) -version-info $(LIBCURRENT):$(LIBREVISION):$(LIBAGE) -o
++LIB_LD_CMD      = $(LIBTOOL) --mode=link $(CC) $(CFLAGS) -rpath $(libdir) -o
+ LIB_EXTENSION   = la
+ LIB_VERSION     =
+ LIB_LDCONFIG_CMD = $(LIBTOOL) --mode=finish $(libdir)

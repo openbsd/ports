@@ -1,0 +1,25 @@
+$OpenBSD: patch-snmplib_Makefile_in,v 1.1 2006/01/03 17:37:18 steven Exp $
+--- snmplib/Makefile.in.orig	Fri May 20 23:34:42 2005
++++ snmplib/Makefile.in	Tue Jan  3 16:59:32 2006
+@@ -114,7 +114,7 @@ INSTALLUCDHEADERS= asn1.h \
+ 	transform_oids.h
+ 
+ # libraries
+-INSTALLLIBS=libnetsnmp.$(LIB_EXTENSION)$(LIB_VERSION)
++INSTALLLIBS=libnetsnmp.$(LIB_EXTENSION)$(LIBnetsnmp_VERSION)
+ INSTALLUCDLIBS=libsnmp.$(LIB_EXTENSION)$(LIB_VERSION)
+ 
+ #
+@@ -177,9 +177,9 @@ CPPFLAGS = -I$(top_srcdir)/include -I../
+ all: standardall
+ 
+ # how to build the libraries.
+-libnetsnmp.$(LIB_EXTENSION)$(LIB_VERSION):    ${TOBJS}
+-	$(LIB_LD_CMD) libnetsnmp.$(LIB_EXTENSION)$(LIB_VERSION) ${TOBJS}
+-	$(RANLIB) libnetsnmp.$(LIB_EXTENSION)$(LIB_VERSION)
++libnetsnmp.$(LIB_EXTENSION)$(LIBnetsnmp_VERSION):    ${TOBJS}
++	$(LIB_LD_CMD) libnetsnmp.$(LIB_EXTENSION)$(LIBnetsnmp_VERSION) $(LIBnetsnmp_LTVERSION) ${TOBJS}
++	$(RANLIB) libnetsnmp.$(LIB_EXTENSION)$(LIBnetsnmp_VERSION)
+ 
+ libsnmp.$(LIB_EXTENSION)$(LIB_VERSION):    ${TOBJS}
+ 	$(LIB_LD_CMD) libsnmp.$(LIB_EXTENSION)$(LIB_VERSION) ${TOBJS}
