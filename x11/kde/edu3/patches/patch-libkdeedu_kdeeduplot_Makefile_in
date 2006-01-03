@@ -1,0 +1,13 @@
+$OpenBSD: patch-libkdeedu_kdeeduplot_Makefile_in,v 1.1 2006/01/03 12:27:24 espie Exp $
+--- libkdeedu/kdeeduplot/Makefile.in.orig	Tue Jan  3 10:56:19 2006
++++ libkdeedu/kdeeduplot/Makefile.in	Tue Jan  3 10:56:35 2006
+@@ -435,7 +435,8 @@ libkdeeduplotinclude_HEADERS = kplotobje
+ libkdeeduplot_la_SOURCES = kplotobject.cpp kplotaxis.cpp kplotwidget.cpp
+ #>- libkdeeduplot_la_LDFLAGS = $(all_libraries) -no-undefined -version-info 3:0:2
+ #>+ 1
+-libkdeeduplot_la_LDFLAGS = $(all_libraries) -no-undefined $(KDE_NO_UNDEFINED) -version-info 3:0:2
++LIBkdeeduplot_LTVERSION=-version-info 3:0:2
++libkdeeduplot_la_LDFLAGS = $(all_libraries) -no-undefined $(KDE_NO_UNDEFINED) $(LIBkdeeduplot_LTVERSION)
+ libkdeeduplot_la_LIBADD = $(LIB_KDECORE) $(LIB_QT)
+ #>- METASOURCES = AUTO
+ #>- all: all-recursive

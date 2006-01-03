@@ -1,0 +1,13 @@
+$OpenBSD: patch-libkdeedu_kdeeducore_Makefile_in,v 1.1 2006/01/03 12:27:24 espie Exp $
+--- libkdeedu/kdeeducore/Makefile.in.orig	Tue Jan  3 10:55:53 2006
++++ libkdeedu/kdeeducore/Makefile.in	Tue Jan  3 10:56:09 2006
+@@ -429,7 +429,8 @@ lib_LTLIBRARIES = libkdeeducore.la
+ libkdeeducore_la_SOURCES = keduvocdata.cpp
+ #>- libkdeeducore_la_LDFLAGS = $(all_libraries) -no-undefined -version-info 3:0:2
+ #>+ 1
+-libkdeeducore_la_LDFLAGS = $(all_libraries) -no-undefined $(KDE_NO_UNDEFINED) -version-info 3:0:2
++LIBkdeeducore_LTVERSION=-version-info 3:0:2
++libkdeeducore_la_LDFLAGS = $(all_libraries) -no-undefined $(KDE_NO_UNDEFINED) $(LIBkdeeducore_LTVERSION)
+ libkdeeducode_includedir = $(includedir)/libkdeedu
+ libkdeeducode_include_HEADERS = keduvocdata.h
+ libkdeeducore_la_LIBADD = $(LIB_KDECORE)

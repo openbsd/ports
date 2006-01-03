@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2005/11/29 14:11:33 espie Exp $
+@comment $OpenBSD: PLIST,v 1.20 2006/01/03 12:27:25 espie Exp $
 bin/apmount
 bin/blinken
 bin/celestrongps
@@ -63,17 +63,17 @@ ${KDE}/libkigpart.so
 ${KDE}/libkmplotpart.la
 ${KDE}/libkmplotpart.so
 lib/libextdate.la
-@lib lib/libextdate.so.3.0
+@lib lib/libextdate.so.${LIBextdate_VERSION}
 lib/libkdeeducore.la
-@lib lib/libkdeeducore.so.3.0
+@lib lib/libkdeeducore.so.${LIBkdeeducore_VERSION}
 lib/libkdeeduplot.la
-@lib lib/libkdeeduplot.so.3.0
+@lib lib/libkdeeduplot.so.${LIBkdeeduplot_VERSION}
 lib/libkdeeduui.la
-@lib lib/libkdeeduui.so.3.5
+@lib lib/libkdeeduui.so.${LIBkdeeduui_VERSION}
 lib/libkiten.la
-@lib lib/libkiten.so.1.0
+@lib lib/libkiten.so.${LIBkiten_VERSION}
 lib/libkvoctraincore.la
-@lib lib/libkvoctraincore.so.0.0
+@lib lib/libkvoctraincore.so.${LIBkvoctraincore_VERSION}
 share/applications/kde/blinken.desktop
 share/applications/kde/kalzium.desktop
 share/applications/kde/kanagram.desktop

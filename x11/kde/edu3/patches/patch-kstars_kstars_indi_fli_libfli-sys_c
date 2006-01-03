@@ -1,7 +1,7 @@
-$OpenBSD: patch-kstars_kstars_indi_fli_libfli-sys_c,v 1.1 2004/09/18 09:36:43 espie Exp $
---- kstars/kstars/indi/fli/libfli-sys.c.orig	Mon Sep  6 14:39:15 2004
-+++ kstars/kstars/indi/fli/libfli-sys.c	Mon Sep  6 14:39:23 2004
-@@ -256,7 +256,7 @@ long unix_fli_lock(flidev_t dev)
+$OpenBSD: patch-kstars_kstars_indi_fli_libfli-sys_c,v 1.2 2006/01/03 12:27:24 espie Exp $
+--- kstars/kstars/indi/fli/libfli-sys.c.orig	Sat Sep 10 10:17:35 2005
++++ kstars/kstars/indi/fli/libfli-sys.c	Tue Jan  3 10:52:51 2006
+@@ -267,7 +267,7 @@ long unix_fli_lock(flidev_t dev)
    if (snprintf(lockf, PATH_MAX, PUBLIC_DIR "/libfli%s.lock",
  	       name) >= PATH_MAX)
    {
@@ -10,7 +10,7 @@ $OpenBSD: patch-kstars_kstars_indi_fli_libfli-sys_c,v 1.1 2004/09/18 09:36:43 es
      goto done;
    }
  
-@@ -324,7 +324,7 @@ long unix_fli_unlock(flidev_t dev)
+@@ -335,7 +335,7 @@ long unix_fli_unlock(flidev_t dev)
  
    if (snprintf(lockf, PATH_MAX, PUBLIC_DIR "/libfli%s.lock",
  	       name) >= PATH_MAX)
