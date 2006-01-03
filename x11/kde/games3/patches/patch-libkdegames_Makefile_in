@@ -1,0 +1,13 @@
+$OpenBSD: patch-libkdegames_Makefile_in,v 1.1 2006/01/03 16:55:50 espie Exp $
+--- libkdegames/Makefile.in.orig	Tue Jan  3 17:24:26 2006
++++ libkdegames/Makefile.in	Tue Jan  3 17:24:41 2006
+@@ -445,7 +445,8 @@ xdg_menudir = @xdg_menudir@
+ lib_LTLIBRARIES = libkdegames.la
+ #>- libkdegames_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -no-undefined -version-info 3:0:2
+ #>+ 1
+-libkdegames_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -no-undefined $(KDE_NO_UNDEFINED) -version-info 3:0:2
++LIBkdegames_LTVERSION=-version-info 3:0:2
++libkdegames_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -no-undefined $(KDE_NO_UNDEFINED) $(LIBkdegames_LTVERSION)
+ libkdegames_la_LIBADD = highscore/libkhighscore.la kgame/libkgame.la kgame/dialogs/libkgamedialogs.la \
+ 		$(LIB_KSYCOCA) $(LIB_KDNSSD)
+ 

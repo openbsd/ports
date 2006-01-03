@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2005/11/29 14:11:33 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2006/01/03 16:55:50 espie Exp $
 bin/atlantik
 bin/kasteroids
 bin/katomic
@@ -108,17 +108,17 @@ ${KDE}/kio_atlantik.so
 ${KDE}/kolf.la
 ${KDE}/kolf.so
 lib/libatlantic.la
-@lib lib/libatlantic.so.3.0
+@lib lib/libatlantic.so.${LIBatlantic_VERSION}
 lib/libatlantikclient.la
-@lib lib/libatlantikclient.so.3.0
+@lib lib/libatlantikclient.so.${LIBatlantikclient_VERSION}
 lib/libatlantikui.la
-@lib lib/libatlantikui.so.3.0
+@lib lib/libatlantikui.so.${LIBatlantikui_VERSION}
 lib/libkdegames.la
-@lib lib/libkdegames.so.3.0
+@lib lib/libkdegames.so.${LIBkdegames_VERSION}
 lib/libkdeinit_kolf.la
 lib/libkdeinit_kolf.so
 lib/libkolf.la
-@lib lib/libkolf.so.3.0
+@lib lib/libkolf.so.${LIBkolf_VERSION}
 share/applications/kde/KGoldrunner.desktop
 share/applications/kde/atlantik.desktop
 share/applications/kde/kasteroids.desktop

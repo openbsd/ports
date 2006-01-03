@@ -1,0 +1,13 @@
+$OpenBSD: patch-kolf_Makefile_in,v 1.5 2006/01/03 16:55:50 espie Exp $
+--- kolf/Makefile.in.orig	Tue Jan  3 17:24:46 2006
++++ kolf/Makefile.in	Tue Jan  3 17:25:02 2006
+@@ -486,7 +486,8 @@ libkolf_la_SOURCES = \
+ 
+ #>- libkolf_la_LDFLAGS = $(all_libraries) -no-undefined -version-info 3:0:2
+ #>+ 1
+-libkolf_la_LDFLAGS = $(all_libraries) -no-undefined $(KDE_NO_UNDEFINED) -version-info 3:0:2
++LIBkolf_LTVERSION=-version-info 3:0:2
++libkolf_la_LDFLAGS = $(all_libraries) -no-undefined $(KDE_NO_UNDEFINED) $(LIBkolf_LTVERSION)
+ libkolf_la_LIBADD = $(LIB_KDEGAMES) $(LIB_KDEPRINT) $(LIB_KIO) -lartskde
+ libkolf_la_DEPENDENCIES = $(LIB_KDEGAMES_DEP)
+ 

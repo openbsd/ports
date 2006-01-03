@@ -1,0 +1,13 @@
+$OpenBSD: patch-atlantik_libatlantikui_Makefile_in,v 1.1 2006/01/03 16:55:50 espie Exp $
+--- atlantik/libatlantikui/Makefile.in.orig	Tue Jan  3 17:24:04 2006
++++ atlantik/libatlantikui/Makefile.in	Tue Jan  3 17:24:20 2006
+@@ -432,7 +432,8 @@ INCLUDES = -I$(top_srcdir)/atlantik/liba
+ lib_LTLIBRARIES = libatlantikui.la
+ #>- libatlantikui_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -no-undefined -version-info 3:0:2
+ #>+ 1
+-libatlantikui_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -no-undefined $(KDE_NO_UNDEFINED) -version-info 3:0:2
++LIBatlantikui_LTVERSION=-version-info 3:0:2
++libatlantikui_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -no-undefined $(KDE_NO_UNDEFINED) $(LIBatlantikui_LTVERSION)
+ libatlantikui_la_LIBADD = ../libatlantic/libatlantic.la $(LIB_KIO)
+ libatlantikui_la_SOURCES = auction_widget.cpp board.cpp estatedetails.cpp \
+ 	estateview.cpp kwrappedlistviewitem.cpp portfolioestate.cpp \
