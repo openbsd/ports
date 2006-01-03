@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2005/10/24 05:11:01 fgsch Exp $
+# $OpenBSD: Makefile,v 1.34 2006/01/03 15:15:43 steven Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -6,7 +6,9 @@ COMMENT=	"system to store and display time-series data"
 
 RRDVERSION=	1.0.49
 DISTNAME=	rrdtool-${RRDVERSION}
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
+SHARED_LIBS=		rrd	0.0
+MODGNU_SHARED_LIBS=	rrd	''
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}pub/rrdtool-1.0.x/ \
 		http://ftp.sunet.se/pub/network/monitoring/rrdtool/rrdtool-1.0.x/
@@ -33,7 +35,7 @@ FLAVOR?=
 LIB_DEPENDS=	gd.18::graphics/gd
 
 USE_X11=	Yes
-
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} --enable-static \
 		--enable-local-libpng \
