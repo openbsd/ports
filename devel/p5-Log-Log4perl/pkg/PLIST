@@ -1,12 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/14 23:43:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2006/01/03 10:06:35 steven Exp $
 ${P5SITE}/Log/
 ${P5SITE}/Log/Log4perl/
 ${P5SITE}/Log/Log4perl.pm
 ${P5SITE}/Log/Log4perl/Appender/
 ${P5SITE}/Log/Log4perl/Appender.pm
+${P5SITE}/Log/Log4perl/Appender/Buffer.pm
 ${P5SITE}/Log/Log4perl/Appender/DBI.pm
 ${P5SITE}/Log/Log4perl/Appender/File.pm
+${P5SITE}/Log/Log4perl/Appender/Limit.pm
+${P5SITE}/Log/Log4perl/Appender/RRDs.pm
 ${P5SITE}/Log/Log4perl/Appender/Screen.pm
+${P5SITE}/Log/Log4perl/Appender/ScreenColoredLevels.pm
 ${P5SITE}/Log/Log4perl/Appender/Socket.pm
 ${P5SITE}/Log/Log4perl/Appender/Synchronized.pm
 ${P5SITE}/Log/Log4perl/Appender/TestArrayBuffer.pm
@@ -14,6 +18,7 @@ ${P5SITE}/Log/Log4perl/Appender/TestBuffer.pm
 ${P5SITE}/Log/Log4perl/Appender/TestFileCreeper.pm
 ${P5SITE}/Log/Log4perl/Config/
 ${P5SITE}/Log/Log4perl/Config.pm
+${P5SITE}/Log/Log4perl/Config/BaseConfigurator.pm
 ${P5SITE}/Log/Log4perl/Config/DOMConfigurator.pm
 ${P5SITE}/Log/Log4perl/Config/PropertyConfigurator.pm
 ${P5SITE}/Log/Log4perl/Config/Watch.pm
@@ -43,17 +48,23 @@ ${P5SITE}/Log/Log4perl/Level.pm
 ${P5SITE}/Log/Log4perl/Logger.pm
 ${P5SITE}/Log/Log4perl/MDC.pm
 ${P5SITE}/Log/Log4perl/NDC.pm
+${P5SITE}/Log/Log4perl/Util.pm
 @man man/man3p/Log::Log4perl.3p
 @man man/man3p/Log::Log4perl::Appender.3p
+@man man/man3p/Log::Log4perl::Appender::Buffer.3p
 @man man/man3p/Log::Log4perl::Appender::DBI.3p
 @man man/man3p/Log::Log4perl::Appender::File.3p
+@man man/man3p/Log::Log4perl::Appender::Limit.3p
+@man man/man3p/Log::Log4perl::Appender::RRDs.3p
 @man man/man3p/Log::Log4perl::Appender::Screen.3p
+@man man/man3p/Log::Log4perl::Appender::ScreenColoredLevels.3p
 @man man/man3p/Log::Log4perl::Appender::Socket.3p
 @man man/man3p/Log::Log4perl::Appender::Synchronized.3p
 @man man/man3p/Log::Log4perl::Appender::TestArrayBuffer.3p
 @man man/man3p/Log::Log4perl::Appender::TestBuffer.3p
 @man man/man3p/Log::Log4perl::Appender::TestFileCreeper.3p
 @man man/man3p/Log::Log4perl::Config.3p
+@man man/man3p/Log::Log4perl::Config::BaseConfigurator.3p
 @man man/man3p/Log::Log4perl::Config::DOMConfigurator.3p
 @man man/man3p/Log::Log4perl::Config::PropertyConfigurator.3p
 @man man/man3p/Log::Log4perl::Config::Watch.3p
@@ -80,3 +91,4 @@ ${P5SITE}/Log/Log4perl/NDC.pm
 @man man/man3p/Log::Log4perl::Logger.3p
 @man man/man3p/Log::Log4perl::MDC.3p
 @man man/man3p/Log::Log4perl::NDC.3p
+@man man/man3p/Log::Log4perl::Util.3p
