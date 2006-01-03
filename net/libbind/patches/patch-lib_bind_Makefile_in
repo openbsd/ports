@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_bind_Makefile_in,v 1.1 2006/01/03 17:16:18 steven Exp $
+--- lib/bind/Makefile.in.orig	Thu Oct  9 08:47:52 2003
++++ lib/bind/Makefile.in	Tue Jan  3 18:05:57 2006
+@@ -101,7 +101,7 @@ libbind.@SA@: ${OBJS}
+ libbind.la: ${OBJS}
+ 	${LIBTOOL} --mode=link \
+ 	${CC} ${ALL_CFLAGS} -o libbind.la -rpath ${libdir} \
+-		-version-info ${LIBINTERFACE}:${LIBREVISION}:${LIBAGE} \
++		$(LIBbind_LTVERSION) \
+ 		${OBJS} ${LIBS}
+ 
+ timestamp: libbind.@A@

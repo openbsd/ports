@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2005/08/17 16:10:03 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/01/03 17:16:18 steven Exp $
 
 COMMENT=	"BIND 8 compatible stub resolver library"
 
 VERSION=	9.2.3
 DISTNAME=	bind-${VERSION}
-PKGNAME=	libbind-${VERSION}p0
+PKGNAME=	libbind-${VERSION}p1
+SHARED_LIBS=	bind	2.0
 CATEGORIES=	net
 
 MASTER_SITES+=	ftp://ftp.isc.org/isc/bind9/${VERSION}/ \
@@ -30,6 +31,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-libtool \
 			${CONFIGURE_SHARED} \
 			--with-randomdev=/dev/arandom
+USE_LIBTOOL=		Yes
 
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}
 

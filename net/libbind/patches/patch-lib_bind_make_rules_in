@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_bind_make_rules_in,v 1.1 2006/01/03 17:16:18 steven Exp $
+--- lib/bind/make/rules.in.orig	Tue Jan  3 18:00:30 2006
++++ lib/bind/make/rules.in	Tue Jan  3 18:00:50 2006
+@@ -115,7 +115,7 @@ ALL_CFLAGS = ${EXT_CFLAGS} ${CFLAGS} \
+ 	${ALWAYS_WARNINGS} ${STD_CWARNINGS} ${CWARNINGS}
+ 
+ .c.@O@:
+-	${LIBTOOL} ${CC} ${ALL_CFLAGS} -c $<
++	${LIBTOOL} --mode=compile ${CC} ${ALL_CFLAGS} -c $<
+ 
+ SHELL = @SHELL@
+ LIBTOOL = @LIBTOOL@
