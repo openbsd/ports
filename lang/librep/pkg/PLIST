@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 19:16:08 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2006/01/03 22:19:26 alek Exp $
 bin/rep
 bin/rep-config
 bin/rep-remote
@@ -62,8 +62,6 @@ libexec/rep/${GNU_ARCH}/libtool
 libexec/rep/${GNU_ARCH}/rep_config.h
 libexec/rep/${GNU_ARCH}/rules.mk
 share/aclocal/rep.m4
-share/emacs/
-share/emacs/site-lisp/
 share/emacs/site-lisp/rep-debugger.el
 share/rep/
 share/rep/${VERSION}/

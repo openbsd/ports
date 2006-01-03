@@ -1,6 +1,6 @@
---- src/numbers.c.orig	Tue Nov 14 06:52:02 2000
-+++ src/numbers.c	Sun Feb  4 10:38:00 2001
-@@ -68,7 +68,7 @@ DEFSTRING(domain_error, "Domain error");
+--- src/numbers.c.orig	Mon Oct  7 09:42:09 2002
++++ src/numbers.c	Mon Jan  2 23:17:26 2006
+@@ -70,7 +70,7 @@ DEFSTRING(domain_error, "Domain error");
  #  define LONG_LONG_MIN LONGLONG_MIN
  #  define LONG_LONG_MAX LONGLONG_MAX
  # elif defined (LLONG_MIN)

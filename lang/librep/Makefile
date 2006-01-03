@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.21 2005/02/22 13:53:16 alek Exp $
+# $OpenBSD: Makefile,v 1.22 2006/01/03 22:19:26 alek Exp $
 
 COMMENT=	"Emacs Lisp-like runtime library"
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 VERSION=	0.16.2
 DISTNAME=	librep-${VERSION}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
+SHARED_LIBS=	rep 12.0
 CATEGORIES=	lang
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=librep/}
@@ -27,9 +28,11 @@ GNU_ARCH=	${MACHINE_ARCH:S/amd64/x86_64/}-unknown-openbsd${OPSYS_VER}
 SUBST_VARS=	GNU_ARCH VERSION
 
 USE_GMAKE=	Yes
-CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED} --enable-static
-CONFIGURE_ARGS+= --without-gmp
+USE_LIBTOOL=	Yes
+MAKE_FLAGS=	rep_LIBTOOL=${LIBTOOL}
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS+=${CONFIGURE_SHARED} --enable-static
+CONFIGURE_ARGS+=--without-gmp
 # Don't try to run aclocal
 CONFIGURE_ARGS+=--with-aclocaldir='$${datadir}/aclocal'
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

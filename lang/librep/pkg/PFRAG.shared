@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2004/09/15 19:16:08 espie Exp $
-@lib lib/librep.so.12.0
+@comment $OpenBSD: PFRAG.shared,v 1.6 2006/01/03 22:19:26 alek Exp $
+@lib lib/librep.so.${LIBrep_VERSION}
 libexec/rep/${VERSION}/${GNU_ARCH}/gdbm.so
 libexec/rep/${VERSION}/${GNU_ARCH}/gettext.so
 libexec/rep/${VERSION}/${GNU_ARCH}/readline.so
