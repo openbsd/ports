@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2005/05/25 23:28:16 marcm Exp $
-@lib lib/libgtop-2.0.so.5.0
+@comment $OpenBSD: PFRAG.shared,v 1.10 2006/01/03 18:07:28 bernd Exp $
+@lib lib/libgtop-2.0.so.${LIBgtop-2.0_VERSION}

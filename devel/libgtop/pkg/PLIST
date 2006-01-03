@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/09 15:00:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2006/01/03 18:07:28 bernd Exp $
 bin/libgtop-config
 bin/libgtop_daemon
 @mode 2755
@@ -72,8 +72,6 @@ lib/libgtop_sysdeps_suid.la
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/libgtop.mo
-share/locale/ca/
-share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/libgtop.mo
 share/locale/da/LC_MESSAGES/libgtop.mo
 share/locale/de/LC_MESSAGES/libgtop.mo
@@ -102,8 +100,6 @@ share/locale/es_SV/LC_MESSAGES/
 share/locale/es_SV/LC_MESSAGES/libgtop.mo
 share/locale/fi/LC_MESSAGES/libgtop.mo
 share/locale/fr/LC_MESSAGES/libgtop.mo
-share/locale/ga/
-share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/libgtop.mo
 share/locale/gl/LC_MESSAGES/libgtop.mo
 share/locale/hu/LC_MESSAGES/libgtop.mo

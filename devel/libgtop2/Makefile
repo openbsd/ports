@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.15 2005/05/25 23:28:16 marcm Exp $
+# $OpenBSD: Makefile,v 1.16 2006/01/03 18:07:28 bernd Exp $
 
 COMMENT=		"portable library for obtaining system information"
 
 V=			2.10.1
 DISTNAME=		libgtop-${V}
-PKGNAME=		libgtop2-${V}
+PKGNAME=		libgtop2-${V}p0
+SHARED_LIBS=		gtop-2.0 5.0
+MODGNU_SHARED_LIBS=	gtop-2.0 '-export-symbols-regex "^[^_].*"'
+LIBgtop-2.0_ALIAS=	gtop_2_0
+
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org
@@ -25,6 +29,7 @@ LIB_DEPENDS=		glib-2.0.0.0::devel/glib2 \
 			popt::devel/popt
 
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

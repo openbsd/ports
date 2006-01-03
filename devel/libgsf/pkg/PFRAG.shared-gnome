@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared-gnome,v 1.4 2004/12/10 20:33:59 marcm Exp $
-@lib lib/libgsf-gnome-1.so.12.1
+@comment $OpenBSD: PFRAG.shared-gnome,v 1.5 2006/01/03 18:07:28 bernd Exp $
+@lib lib/libgsf-gnome-1.so.${LIBgsf-gnome-1_VERSION}

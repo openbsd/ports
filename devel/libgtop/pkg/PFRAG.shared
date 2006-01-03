@@ -1,10 +1,10 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2004/08/09 15:00:56 espie Exp $
-@comment @lib lib/libgnomesupport.so.0.0
-@lib lib/libgtop.so.1.12
-@lib lib/libgtop_common.so.1.12
-@comment @lib lib/libgtop_guile.so.1.12
-@comment @lib lib/libgtop_guile_names.so.1.12
-@lib lib/libgtop_names.so.1.12
-@lib lib/libgtop_suid_common.so.1.12
-@lib lib/libgtop_sysdeps.so.1.12
-@lib lib/libgtop_sysdeps_suid.so.1.12
+@comment $OpenBSD: PFRAG.shared,v 1.5 2006/01/03 18:07:28 bernd Exp $
+@comment @lib lib/libgnomesupport.so.${LIBgnomesupport_VERSION}
+@lib lib/libgtop.so.${LIBgtop_VERSION}
+@lib lib/libgtop_common.so.${LIBgtop_common_VERSION}
+@comment @lib lib/libgtop_guile.so.${LIBgtop_guile_VERSION}
+@comment @lib lib/libgtop_guile_names.so.${LIBgtop_guile_names_VERSION}
+@lib lib/libgtop_names.so.${LIBgtop_names_VERSION}
+@lib lib/libgtop_suid_common.so.${LIBgtop_suid_common_VERSION}
+@lib lib/libgtop_sysdeps.so.${LIBgtop_sysdeps_VERSION}
+@lib lib/libgtop_sysdeps_suid.so.${LIBgtop_sysdeps_suid_VERSION}

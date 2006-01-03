@@ -1,12 +1,19 @@
-# $OpenBSD: Makefile,v 1.9 2005/09/16 09:51:27 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/01/03 18:07:27 bernd Exp $
 
 COMMENT=		"GNOME Structured File library"
 COMMENT-gnome=		"GNOME specific extensions to libgsf"
 
 VERSION=		1.11.1
 DISTNAME=		libgsf-${VERSION}
-PKGNAME=		${DISTNAME}p1
-PKGNAME-gnome=		libgsf-gnome-${VERSION}p0
+PKGNAME=		${DISTNAME}p2
+PKGNAME-gnome=		libgsf-gnome-${VERSION}p1
+SHARED_LIBS=		gsf-1		12.1 \
+			gsf-gnome-1	12.1
+MODGNU_SHARED_LIBS=	gsf-1		'' \
+			gsf-gnome-1	''
+LIBgsf-1_ALIAS=		gsf_1
+LIBgsf-gnome-1_ALIAS=	gsf_gnome_1
+
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/
@@ -32,6 +39,7 @@ LIB_DEPENDS=		bz2.10.2::archivers/bzip2 \
 			glib-2.0.0.11,gobject-2.0.0.11::devel/glib2
 
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--disable-gtk-doc
