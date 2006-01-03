@@ -1,9 +1,9 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2005/11/03 15:10:20 mbalmer Exp $
-@lib lib/libsmbclient.so.0.1
+@comment $OpenBSD: PFRAG.shared,v 1.3 2006/01/03 21:21:52 steven Exp $
+@lib lib/libsmbclient.so.${LIBsmbclient_VERSION}
 lib/samba/charset/
 lib/samba/charset/CP437.so
 lib/samba/charset/CP850.so
-@lib lib/samba/libsmbclient.so.0.1
+@lib lib/samba/libsmbclient.so.${LIBsmbclient_VERSION}
 lib/samba/vfs/
 lib/samba/vfs/audit.so
 lib/samba/vfs/cap.so

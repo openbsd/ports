@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2005/11/03 15:10:20 mbalmer Exp $
---- Makefile.in.orig	Thu Nov  3 13:59:45 2005
-+++ Makefile.in	Thu Nov  3 15:17:03 2005
+$OpenBSD: patch-Makefile_in,v 1.4 2006/01/03 21:21:52 steven Exp $
+--- Makefile.in.orig	Wed Oct 12 19:03:23 2005
++++ Makefile.in	Tue Jan  3 18:26:33 2006
 @@ -93,9 +93,10 @@ LOCKDIR = @lockdir@
  # the directory where pid files go
  PIDDIR = @piddir@
@@ -9,7 +9,7 @@ $OpenBSD: patch-Makefile_in,v 1.3 2005/11/03 15:10:20 mbalmer Exp $
  LIBSMBCLIENT_MAJOR=0
  LIBSMBCLIENT_MINOR=1
 +LIBSMBCLIENT=bin/libsmbclient.a \
-+	@LIBSMBCLIENT_SHARED@.${LIBSMBCLIENT_MAJOR}.${LIBSMBCLIENT_MINOR}
++	@LIBSMBCLIENT_SHARED@.$(LIBsmbclient_VERSION)
  
  LIBSMBSHAREMODES=bin/libsmbsharemodes.a @LIBSMBSHAREMODES_SHARED@
  LIBSMBSHAREMODES_MAJOR=0
@@ -18,7 +18,7 @@ $OpenBSD: patch-Makefile_in,v 1.3 2005/11/03 15:10:20 mbalmer Exp $
  		@SONAMEFLAG@`basename $@`
  
 -bin/libsmbclient.@SHLIBEXT@: $(LIBSMBCLIENT_PICOBJS)
-+bin/libsmbclient.@SHLIBEXT@.${LIBSMBCLIENT_MAJOR}.${LIBSMBCLIENT_MINOR}: $(LIBSMBCLIENT_PICOBJS)
++bin/libsmbclient.@SHLIBEXT@.$(LIBsmbclient_VERSION): $(LIBSMBCLIENT_PICOBJS)
  	@echo Linking libsmbclient shared library $@
  	@$(SHLD) $(LDSHFLAGS) -o $@ $(LIBSMBCLIENT_PICOBJS) $(LDFLAGS) $(LIBS) \
 -		$(KRB5LIBS) $(LDAP_LIBS) \
@@ -32,7 +32,7 @@ $OpenBSD: patch-Makefile_in,v 1.3 2005/11/03 15:10:20 mbalmer Exp $
  installclientlib: installdirs libsmbclient
  	@$(SHELL) $(srcdir)/script/installdirs.sh $(DESTDIR)$(LIBDIR)
 -	-$(INSTALLCLIENTCMD_SH) bin/libsmbclient.@SHLIBEXT@ $(DESTDIR)$(LIBDIR)
-+	-$(INSTALLCLIENTCMD_SH) bin/libsmbclient.@SHLIBEXT@.${LIBSMBCLIENT_MAJOR}.${LIBSMBCLIENT_MINOR} $(DESTDIR)$(LIBDIR)
++	-$(INSTALLCLIENTCMD_SH) bin/libsmbclient.@SHLIBEXT@.$(LIBsmbclient_VERSION) $(DESTDIR)$(LIBDIR)
  	-$(INSTALLCLIENTCMD_A) bin/libsmbclient.a $(DESTDIR)$(LIBDIR)
  	@$(SHELL) $(srcdir)/script/installdirs.sh $(DESTDIR)${prefix}/include
  	-$(INSTALLCMD) $(srcdir)/include/libsmbclient.h $(DESTDIR)${prefix}/include

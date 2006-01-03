@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2005/11/03 19:52:18 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.62 2006/01/03 21:21:52 steven Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 COMMENT-docs=	"documentation and examples for samba"
@@ -6,6 +6,7 @@ COMMENT-docs=	"documentation and examples for samba"
 DISTNAME=		samba-3.0.20b
 PKGNAME=		${DISTNAME}p1
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
+SHARED_LIBS=		smbclient 0.1
 
 CATEGORIES=	net
 
@@ -28,8 +29,10 @@ MODULES= 	converters/libiconv
 
 LIB_DEPENDS=	popt::devel/popt
 
-MAKE_FLAGS=	PASSWD_PROGRAM="/usr/bin/passwd"
-FAKE_FLAGS=	DESTDIR="${DESTDIR}"
+MAKE_FLAGS=	PASSWD_PROGRAM="/usr/bin/passwd" \
+		LIBsmbclient_VERSION=${LIBsmbclient_VERSION}
+FAKE_FLAGS=	DESTDIR="${DESTDIR}" \
+		LIBsmbclient_VERSION=${LIBsmbclient_VERSION}
  
 CONFDIR=        ${SYSCONFDIR}/samba
 SAMBA_LOGDIR=   /var/log
@@ -120,8 +123,8 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/script/mksmbpasswd.sh \
 	 ${PREFIX}/bin/mksmbpasswd
 	@chown ${BINOWN}:${BINGRP} ${PREFIX}/bin/smbpasswd
-	#@rm ${PREFIX}/lib/libsmbclient.so.0.1
-	@ln -s samba/libsmbclient.so.0.1 \
-	 ${PREFIX}/lib/libsmbclient.so.0.1
+	#@rm ${PREFIX}/lib/libsmbclient.so.${LIBsmbclient_VERSION}
+	@ln -s samba/libsmbclient.so.${LIBsmbclient_VERSION} \
+	 ${PREFIX}/lib/libsmbclient.so.${LIBsmbclient_VERSION}
 
 .include <bsd.port.mk>
