@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.9 2006/01/03 10:40:09 bernd Exp $
+--- configure.orig	Mon Jan  2 22:19:22 2006
++++ configure	Mon Jan  2 22:20:14 2006
+@@ -23198,7 +23198,7 @@ fi
+ if test "$pango_os_win32" != yes; then
+     # libtool option to control which symbols are exported
+     # right now, symbols starting with _ are not exported
+-    LIBRARY_LIBTOOL_OPTIONS="-version-info $LT_VERSION_INFO "'-export-symbols-regex "^pango_.*"'
++    LIBRARY_LIBTOOL_OPTIONS='-export-symbols-regex "^pango_.*"'
+     MODULE_LIBTOOL_OPTIONS="-export-dynamic -avoid-version "'-export-symbols-regex "^script_engine_.*"'
+ else
+     # We currently use .def files on Windows
