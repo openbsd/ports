@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2005/12/29 14:35:07 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2006/01/03 09:06:14 espie Exp $
 
 COMMENT=	"designer for qt2"
 
 VERSION=	3.2
 DISTNAME=	qt-designer-2.${VERSION}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11 devel
 SHARED_LIBS=	qutil	1.0
-SHARED_LIBS=	qutil	4.0
 
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 DISTFILES=	qt-x11-2.${VERSION}.tar.gz
