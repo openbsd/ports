@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2005/02/24 13:20:41 alek Exp $
+# $OpenBSD: Makefile,v 1.19 2006/01/04 20:26:58 alek Exp $
 # $FreeBSD: ports/lang/otcl/Makefile,v 1.6 1999/11/28 18:31:28 steve Exp $
 
 COMMENT=	"MIT Object Tcl"
 
 DISTNAME=	otcl-1.0a8
+SHARED_LIBS=	otcl 1.0
 CATEGORIES=	lang
 
 HOMEPAGE=	http://www.isi.edu/nsnam/otcl/index.html
@@ -23,6 +24,7 @@ CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+=--includedir=${PREFIX}/include/tcl8.3/generic \
 		--with-tcl-ver=8.3 \
 		--with-tk-ver=8.3
+CONFIGURE_ENV=	LIBotcl_VERSION=${LIBotcl_VERSION}
 
 NO_REGRESS=	Yes
 
