@@ -1,9 +1,9 @@
-#	$OpenBSD: Makefile,v 1.2 2005/12/03 09:03:45 steven Exp $
+#	$OpenBSD: Makefile,v 1.3 2006/01/04 17:09:37 steven Exp $
 
 COMMENT=	"graph data structures in perl"
 
 PKG_ARCH=	*
-DISTNAME=	Graph-0.68
+DISTNAME=	Graph-0.69
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	perl5 devel
 
