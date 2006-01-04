@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_output-plugins_spo_database_c,v 1.1 2006/01/04 04:15:19 david Exp $
+--- src/output-plugins/spo_database.c.orig	Mon Sep 13 12:44:49 2004
++++ src/output-plugins/spo_database.c	Tue Jan  3 16:26:09 2006
+@@ -1910,9 +1910,23 @@ int CheckDBVersion(DatabaseData * data)
+    else
+ #endif
+    {
+-      snprintf(select0, MAX_QUERY_LENGTH,
++#if defined(ENABLE_MYSQL)
++      if (data->shared->dbtype_id == DB_MYSQL)
++      {
++         /* "schema" is a keyword in MYSQL, so use `schema`
++          *  to indicate that we are referring to the table
++          */
++         snprintf(select0, MAX_QUERY_LENGTH,
+                "SELECT vseq "
++               "FROM `schema`");
++      }
++      else
++#endif
++      {
++         snprintf(select0, MAX_QUERY_LENGTH,
++               "SELECT vseq "
+                "FROM schema");
++      }
+    }
+ 
+    schema_version = Select(select0,data);
