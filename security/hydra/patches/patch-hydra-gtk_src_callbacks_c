@@ -1,6 +1,6 @@
-$OpenBSD: patch-hydra-gtk_src_callbacks_c,v 1.1 2005/02/11 19:46:22 sturm Exp $
---- hydra-gtk/src/callbacks.c.orig	Fri Feb 11 20:35:37 2005
-+++ hydra-gtk/src/callbacks.c	Fri Feb 11 20:37:22 2005
+$OpenBSD: patch-hydra-gtk_src_callbacks_c,v 1.2 2006/01/04 02:03:46 pvalchev Exp $
+--- hydra-gtk/src/callbacks.c.orig	Tue Feb  1 07:56:25 2005
++++ hydra-gtk/src/callbacks.c	Tue Jan  3 18:06:55 2006
 @@ -34,7 +34,7 @@ char tasks[10];
  char timeout[10];
  char smbntparm[4];
@@ -10,3 +10,41 @@ $OpenBSD: patch-hydra-gtk_src_callbacks_c,v 1.1 2005/02/11 19:46:22 sturm Exp $
  char passLoginNull[4];
   
  
+@@ -482,9 +482,9 @@ static void close_pipe(int *pipe) {
+ int *popen_re_unbuffered(char *command) {
+ 	static int p_r[2] = {-1, -1}, p_e[2] = {-1, -1};
+ 	static int *pfd = NULL;
+-	hydra_pid = 0;
+ 	char *options[128];
+ 
++	hydra_pid = 0;
+ 	update_statusbar();
+ 
+ 	/* only allocate once */
+@@ -504,6 +504,7 @@ int *popen_re_unbuffered(char *command) 
+ 		g_warning("popen_rw_unbuffered: Error forking!");
+ 		return NULL;
+ 	} else if (hydra_pid == 0) { /* child */
++		int k;
+ 		if (setpgid(getpid(), getpid()) < 0)
+ 			g_warning("popen_rw_unbuffered: setpgid() failed");
+ 		if (close(p_r[0]) < 0)
+@@ -527,7 +528,6 @@ int *popen_re_unbuffered(char *command) 
+ 		execv(HYDRA_BIN, options);
+ 
+ 		g_warning("%s %i: popen_rw_unbuffered: execv() returned", __FILE__, __LINE__);
+-		int k;
+ 		for ( k = 0; options[k] != NULL; k++ ){
+ 			g_warning(options[k]);
+ 		}
+@@ -679,8 +679,9 @@ void
+ on_chkColon_toggled                    (GtkToggleButton *togglebutton,
+                                         gpointer         user_data)
+ {
+-	GtkWidget *user =  lookup_widget(GTK_WIDGET(wndMain), "frmUsername");;	
++	GtkWidget *user;
+ 	GtkWidget *pass =  lookup_widget(GTK_WIDGET(wndMain), "frmPass");
++	user = lookup_widget(GTK_WIDGET(wndMain), "frmUsername");;	
+ 
+ 	if (gtk_toggle_button_get_active(togglebutton)){
+ 		gtk_widget_set_sensitive(user, FALSE);
