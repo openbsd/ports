@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2005/11/29 16:00:58 espie Exp $
+@comment $OpenBSD: PLIST,v 1.20 2006/01/05 19:36:56 espie Exp $
 @conflict kdelibs-<3.4
 @conflict kdebase-<3.4
 @conflict kpilot-*
@@ -542,117 +542,117 @@ ${KDE}/resourcecalendarexchange.so
 lib/libakregatorprivate.la
 lib/libakregatorprivate.so
 lib/libgpgme++.la
-@lib lib/libgpgme++.so.2.0
+@lib lib/libgpgme++.so.${LIBgpgme++_VERSION}
 lib/libindex.la
-@lib lib/libindex.so.0.0
+@lib lib/libindex.so.${LIBindex_VERSION}
 lib/libkabc_groupdav.la
-@lib lib/libkabc_groupdav.so.1.0
+@lib lib/libkabc_groupdav.so.${LIBkabc_groupdav_VERSION}
 lib/libkabc_groupwise.la
-@lib lib/libkabc_groupwise.so.1.0
+@lib lib/libkabc_groupwise.so.${LIBkabc_groupwise_VERSION}
 lib/libkabc_newexchange.la
-@lib lib/libkabc_newexchange.so.1.0
+@lib lib/libkabc_newexchange.so.${LIBkabc_newexchange_VERSION}
 lib/libkabc_slox.la
-@lib lib/libkabc_slox.so.0.0
+@lib lib/libkabc_slox.so.${LIBkabc_slox_VERSION}
 lib/libkabc_xmlrpc.la
-@lib lib/libkabc_xmlrpc.so.1.0
+@lib lib/libkabc_xmlrpc.so.${LIBkabc_xmlrpc_VERSION}
 lib/libkabckolab.la
-@lib lib/libkabckolab.so.0.0
+@lib lib/libkabckolab.so.${LIBkabckolab_VERSION}
 lib/libkabckonnector.la
 lib/libkabckonnector.so
 lib/libkabinterfaces.la
-@lib lib/libkabinterfaces.so.1.0
+@lib lib/libkabinterfaces.so.${LIBkabinterfaces_VERSION}
 lib/libkaddressbook.la
-@lib lib/libkaddressbook.so.0.0
+@lib lib/libkaddressbook.so.${LIBkaddressbook_VERSION}
 lib/libkcal.la
-@lib lib/libkcal.so.2.0
+@lib lib/libkcal.so.${LIBkcal_VERSION}
 lib/libkcal_blogging.la
-@lib lib/libkcal_blogging.so.1.0
+@lib lib/libkcal_blogging.so.${LIBkcal_blogging_VERSION}
 lib/libkcal_groupdav.la
-@lib lib/libkcal_groupdav.so.1.0
+@lib lib/libkcal_groupdav.so.${LIBkcal_groupdav_VERSION}
 lib/libkcal_groupwise.la
-@lib lib/libkcal_groupwise.so.1.0
+@lib lib/libkcal_groupwise.so.${LIBkcal_groupwise_VERSION}
 lib/libkcal_newexchange.la
-@lib lib/libkcal_newexchange.so.1.0
+@lib lib/libkcal_newexchange.so.${LIBkcal_newexchange_VERSION}
 lib/libkcal_resourcefeatureplan.la
-@lib lib/libkcal_resourcefeatureplan.so.1.0
+@lib lib/libkcal_resourcefeatureplan.so.${LIBkcal_resourcefeatureplan_VERSION}
 lib/libkcal_resourceremote.la
-@lib lib/libkcal_resourceremote.so.1.0
+@lib lib/libkcal_resourceremote.so.${LIBkcal_resourceremote_VERSION}
 lib/libkcal_slox.la
-@lib lib/libkcal_slox.so.0.0
+@lib lib/libkcal_slox.so.${LIBkcal_slox_VERSION}
 lib/libkcal_xmlrpc.la
-@lib lib/libkcal_xmlrpc.so.1.0
+@lib lib/libkcal_xmlrpc.so.${LIBkcal_xmlrpc_VERSION}
 lib/libkcalkolab.la
-@lib lib/libkcalkolab.so.0.0
+@lib lib/libkcalkolab.so.${LIBkcalkolab_VERSION}
 lib/libkcalkonnector.la
 lib/libkcalkonnector.so
 lib/libkdepim.la
-@lib lib/libkdepim.so.1.0
+@lib lib/libkdepim.so.${LIBkdepim_VERSION}
 lib/libkgantt.la
-@lib lib/libkgantt.so.0.2
+@lib lib/libkgantt.so.${LIBkgantt_VERSION}
 lib/libkgroupwarebase.la
-@lib lib/libkgroupwarebase.so.0.0
+@lib lib/libkgroupwarebase.so.${LIBkgroupwarebase_VERSION}
 lib/libkgroupwaredav.la
-@lib lib/libkgroupwaredav.so.0.0
+@lib lib/libkgroupwaredav.so.${LIBkgroupwaredav_VERSION}
 lib/libkholidays.la
-@lib lib/libkholidays.so.1.0
+@lib lib/libkholidays.so.${LIBkholidays_VERSION}
 lib/libkitchensyncui.la
-@lib lib/libkitchensyncui.so.0.0
+@lib lib/libkitchensyncui.so.${LIBkitchensyncui_VERSION}
 lib/libkleopatra.la
-@lib lib/libkleopatra.so.1.0
+@lib lib/libkleopatra.so.${LIBkleopatra_VERSION}
 lib/libkmailprivate.la
 lib/libkmailprivate.so
 lib/libkmime.la
-@lib lib/libkmime.so.4.0
+@lib lib/libkmime.so.${LIBkmime_VERSION}
 lib/libknodecommon.la
 lib/libknodecommon.so
 lib/libknotes_xmlrpc.la
-@lib lib/libknotes_xmlrpc.so.1.0
+@lib lib/libknotes_xmlrpc.so.${LIBknotes_xmlrpc_VERSION}
 lib/libknoteskolab.la
-@lib lib/libknoteskolab.so.0.0
+@lib lib/libknoteskolab.so.${LIBknoteskolab_VERSION}
 lib/libkocorehelper.la
-@lib lib/libkocorehelper.so.1.0
+@lib lib/libkocorehelper.so.${LIBkocorehelper_VERSION}
 lib/libkode.la
-@lib lib/libkode.so.1.0
+@lib lib/libkode.so.${LIBkode_VERSION}
 lib/libkonnector.la
-@lib lib/libkonnector.so.0.0
+@lib lib/libkonnector.so.${LIBkonnector_VERSION}
 lib/libkontact.la
-@lib lib/libkontact.so.1.0
+@lib lib/libkontact.so.${LIBkontact_VERSION}
 lib/libkorg_stdprinting.la
-@lib lib/libkorg_stdprinting.so.1.0
+@lib lib/libkorg_stdprinting.so.${LIBkorg_stdprinting_VERSION}
 lib/libkorganizer.la
-@lib lib/libkorganizer.so.1.0
+@lib lib/libkorganizer.so.${LIBkorganizer_VERSION}
 lib/libkorganizer_calendar.la
-@lib lib/libkorganizer_calendar.so.1.0
+@lib lib/libkorganizer_calendar.so.${LIBkorganizer_calendar_VERSION}
 lib/libkorganizer_eventviewer.la
-@lib lib/libkorganizer_eventviewer.so.1.0
+@lib lib/libkorganizer_eventviewer.so.${LIBkorganizer_eventviewer_VERSION}
 lib/libkpgp.la
-@lib lib/libkpgp.so.4.0
+@lib lib/libkpgp.so.${LIBkpgp_VERSION}
 lib/libkpilot.la
-@lib lib/libkpilot.so.0.0
+@lib lib/libkpilot.so.${LIBkpilot_VERSION}
 lib/libkpimexchange.la
-@lib lib/libkpimexchange.so.1.0
+@lib lib/libkpimexchange.so.${LIBkpimexchange_VERSION}
 lib/libkpimidentities.la
-@lib lib/libkpimidentities.so.1.0
+@lib lib/libkpimidentities.so.${LIBkpimidentities_VERSION}
 lib/libkpinterfaces.la
-@lib lib/libkpinterfaces.so.1.0
+@lib lib/libkpinterfaces.so.${LIBkpinterfaces_VERSION}
 lib/libksieve.la
-@lib lib/libksieve.so.0.0
+@lib lib/libksieve.so.${LIBksieve_VERSION}
 lib/libkslox.la
-@lib lib/libkslox.so.0.0
+@lib lib/libkslox.so.${LIBkslox_VERSION}
 lib/libksync.la
-@lib lib/libksync.so.1.0
+@lib lib/libksync.so.${LIBksync_VERSION}
 lib/libksync2.la
-@lib lib/libksync2.so.0.0
+@lib lib/libksync2.so.${LIBksync2_VERSION}
 lib/libktnef.la
-@lib lib/libktnef.so.1.0
+@lib lib/libktnef.so.${LIBktnef_VERSION}
 lib/liblocalkonnector.la
 lib/liblocalkonnector.so
 lib/libmimelib.la
-@lib lib/libmimelib.so.1.1
+@lib lib/libmimelib.so.${LIBmimelib_VERSION}
 lib/libmultisynk.la
-@lib lib/libmultisynk.so.0.0
+@lib lib/libmultisynk.so.${LIBmultisynk_VERSION}
 lib/libqgpgme.la
-@lib lib/libqgpgme.so.0.0
+@lib lib/libqgpgme.so.${LIBqgpgme_VERSION}
 lib/libqtopiakonnector.la
 lib/libqtopiakonnector.so
 lib/libremotekonnector.la
