@@ -1,0 +1,22 @@
+$OpenBSD: patch-engines_crux_src_crux-draw_c,v 1.1 2006/01/05 05:36:12 pvalchev Exp $
+--- engines/crux/src/crux-draw.c.orig	Tue Jan  3 17:23:36 2006
++++ engines/crux/src/crux-draw.c	Tue Jan  3 17:24:27 2006
+@@ -2324,6 +2324,9 @@ draw_extension (GtkStyle *style,
+ 
+     eazel_theme_data *theme_data;
+ 
++    GtkWidget* parent_widget;
++    gint relative_x;
++
+     g_return_if_fail (style != NULL);
+     g_return_if_fail (window != NULL);
+ 
+@@ -2334,8 +2337,6 @@ draw_extension (GtkStyle *style,
+ 	    detail, state_type, shadow_type, x, y, width, height);
+ 
+ 	/* Get x relative to parent widget, not window */
+-	GtkWidget* parent_widget;
+-	gint relative_x;
+ 	if (widget != NULL)
+ 	{
+ 		parent_widget = gtk_widget_get_parent(widget);
