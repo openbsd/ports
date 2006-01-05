@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.43 2005/08/17 16:22:34 robert Exp $
+@comment $OpenBSD: PLIST,v 1.44 2006/01/05 22:11:37 steven Exp $
 bin/gaim
 bin/gaim-remote
 include/gaim/
@@ -73,205 +73,148 @@ include/gaim/value.h
 include/gaim/version.h
 include/gaim/xmlnode.h
 lib/gaim/
+lib/gaim/autorecon.a
 @comment lib/gaim/autorecon.la
 lib/gaim/autorecon.so
+lib/gaim/docklet.a
 @comment lib/gaim/docklet.la
 lib/gaim/docklet.so
+lib/gaim/extplacement.a
 @comment lib/gaim/extplacement.la
 lib/gaim/extplacement.so
+lib/gaim/gaim-remote.a
 @comment lib/gaim/gaim-remote.la
 lib/gaim/gaim-remote.so
+lib/gaim/gestures.a
 @comment lib/gaim/gestures.la
 lib/gaim/gestures.so
+lib/gaim/history.a
 @comment lib/gaim/history.la
 lib/gaim/history.so
+lib/gaim/iconaway.a
 @comment lib/gaim/iconaway.la
 lib/gaim/iconaway.so
+lib/gaim/idle.a
 @comment lib/gaim/idle.la
 lib/gaim/idle.so
+lib/gaim/libgg.a
 @comment lib/gaim/libgg.la
 lib/gaim/libgg.so
+lib/gaim/libirc.a
 @comment lib/gaim/libirc.la
 lib/gaim/libirc.so
+lib/gaim/libjabber.a
 @comment lib/gaim/libjabber.la
 lib/gaim/libjabber.so
+lib/gaim/libmsn.a
 @comment lib/gaim/libmsn.la
 lib/gaim/libmsn.so
+lib/gaim/libnapster.a
 @comment lib/gaim/libnapster.la
 lib/gaim/libnapster.so
+lib/gaim/libnovell.a
 @comment lib/gaim/libnovell.la
 lib/gaim/libnovell.so
+lib/gaim/liboscar.a
 @comment lib/gaim/liboscar.la
 lib/gaim/liboscar.so
+lib/gaim/libsilcgaim.a
 @comment lib/gaim/libsilcgaim.la
 lib/gaim/libsilcgaim.so
+lib/gaim/libyahoo.a
 @comment lib/gaim/libyahoo.la
 lib/gaim/libyahoo.so
+lib/gaim/libzephyr.a
 @comment lib/gaim/libzephyr.la
 lib/gaim/libzephyr.so
+lib/gaim/notify.a
 @comment lib/gaim/notify.la
 lib/gaim/notify.so
+lib/gaim/relnot.a
 @comment lib/gaim/relnot.la
 lib/gaim/relnot.so
+lib/gaim/spellchk.a
 @comment lib/gaim/spellchk.la
 lib/gaim/spellchk.so
+lib/gaim/ssl-gnutls.a
 @comment lib/gaim/ssl-gnutls.la
 lib/gaim/ssl-gnutls.so
+lib/gaim/ssl-nss.a
 @comment lib/gaim/ssl-nss.la
 lib/gaim/ssl-nss.so
+lib/gaim/ssl-openssl.a
 @comment lib/gaim/ssl-openssl.la
 lib/gaim/ssl-openssl.so
+lib/gaim/ssl.a
 @comment lib/gaim/ssl.la
 lib/gaim/ssl.so
+lib/gaim/statenotify.a
 @comment lib/gaim/statenotify.la
 lib/gaim/statenotify.so
+lib/gaim/ticker.a
 @comment lib/gaim/ticker.la
 lib/gaim/ticker.so
+lib/gaim/timestamp.a
 @comment lib/gaim/timestamp.la
 lib/gaim/timestamp.so
+lib/libgaim-remote.a
 lib/libgaim-remote.la
-@lib lib/libgaim-remote.so.0.0
-lib/pkgconfig/
+@lib lib/libgaim-remote.so.${LIBgaim-remote_VERSION}
 lib/pkgconfig/gaim.pc
 @man man/man1/gaim-remote.1
 @man man/man1/gaim.1
 share/applications/
 share/applications/gaim.desktop
-share/locale/
-share/locale/am/
-share/locale/am/LC_MESSAGES/
 share/locale/am/LC_MESSAGES/gaim.mo
-share/locale/az/
-share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/gaim.mo
-share/locale/bg/
-share/locale/bg/LC_MESSAGES/
 share/locale/bg/LC_MESSAGES/gaim.mo
-share/locale/ca/
-share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/gaim.mo
-share/locale/cs/
-share/locale/cs/LC_MESSAGES/
 share/locale/cs/LC_MESSAGES/gaim.mo
-share/locale/da/
-share/locale/da/LC_MESSAGES/
 share/locale/da/LC_MESSAGES/gaim.mo
-share/locale/de/
-share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/gaim.mo
 share/locale/en_AU/
 share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/gaim.mo
-share/locale/en_CA/
-share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/gaim.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gaim.mo
-share/locale/es/
-share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/gaim.mo
-share/locale/et/
-share/locale/et/LC_MESSAGES/
 share/locale/et/LC_MESSAGES/gaim.mo
-share/locale/fi/
-share/locale/fi/LC_MESSAGES/
 share/locale/fi/LC_MESSAGES/gaim.mo
-share/locale/fr/
-share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/gaim.mo
-share/locale/he/
-share/locale/he/LC_MESSAGES/
 share/locale/he/LC_MESSAGES/gaim.mo
-share/locale/hi/
-share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/gaim.mo
-share/locale/hu/
-share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/gaim.mo
-share/locale/it/
-share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/gaim.mo
-share/locale/ja/
-share/locale/ja/LC_MESSAGES/
 share/locale/ja/LC_MESSAGES/gaim.mo
 share/locale/ka/
 share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/gaim.mo
-share/locale/ko/
-share/locale/ko/LC_MESSAGES/
 share/locale/ko/LC_MESSAGES/gaim.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/gaim.mo
-share/locale/mk/
-share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/gaim.mo
 share/locale/my_MM/
 share/locale/my_MM/LC_MESSAGES/
 share/locale/my_MM/LC_MESSAGES/gaim.mo
-share/locale/nb/
-share/locale/nb/LC_MESSAGES/
 share/locale/nb/LC_MESSAGES/gaim.mo
-share/locale/nl/
-share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/gaim.mo
-share/locale/nn/
-share/locale/nn/LC_MESSAGES/
 share/locale/nn/LC_MESSAGES/gaim.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/gaim.mo
-share/locale/pl/
-share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/gaim.mo
-share/locale/pt/
-share/locale/pt/LC_MESSAGES/
 share/locale/pt/LC_MESSAGES/gaim.mo
-share/locale/pt_BR/
-share/locale/pt_BR/LC_MESSAGES/
 share/locale/pt_BR/LC_MESSAGES/gaim.mo
-share/locale/ro/
-share/locale/ro/LC_MESSAGES/
 share/locale/ro/LC_MESSAGES/gaim.mo
-share/locale/ru/
-share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/gaim.mo
-share/locale/sk/
-share/locale/sk/LC_MESSAGES/
 share/locale/sk/LC_MESSAGES/gaim.mo
-share/locale/sl/
-share/locale/sl/LC_MESSAGES/
 share/locale/sl/LC_MESSAGES/gaim.mo
-share/locale/sq/
-share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/gaim.mo
-share/locale/sr/
-share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/gaim.mo
-share/locale/sr@Latn/
-share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/gaim.mo
-share/locale/sv/
-share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/gaim.mo
-share/locale/tr/
-share/locale/tr/LC_MESSAGES/
 share/locale/tr/LC_MESSAGES/gaim.mo
-share/locale/uk/
-share/locale/uk/LC_MESSAGES/
 share/locale/uk/LC_MESSAGES/gaim.mo
-share/locale/vi/
-share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/gaim.mo
-share/locale/xh/
-share/locale/xh/LC_MESSAGES/
 share/locale/xh/LC_MESSAGES/gaim.mo
-share/locale/zh_CN/
-share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_CN/LC_MESSAGES/gaim.mo
-share/locale/zh_TW/
-share/locale/zh_TW/LC_MESSAGES/
 share/locale/zh_TW/LC_MESSAGES/gaim.mo
 share/pixmaps/
 share/pixmaps/gaim/
