@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.84 2005/12/28 14:56:54 steven Exp $
+# $OpenBSD: Makefile,v 1.85 2006/01/05 20:11:15 espie Exp $
 
 COMMENT=	"image processing tools"
 
 VER=		6.2.3
 DASHVER=	3
 DISTNAME=	ImageMagick-${VER}-${DASHVER}
-PKGNAME=	ImageMagick-${VER}.${DASHVER}p0
+PKGNAME=	ImageMagick-${VER}.${DASHVER}p1
 SHARED_LIBS=		Magick++	8.3	\
 			Magick		8.3	\
 			Wand		8.3
@@ -27,7 +27,7 @@ LIB_DEPENDS+=	bz2.10::archivers/bzip2 \
 		xml2.9::textproc/libxml \
 		lcms.1::graphics/lcms \
 		jasper.1::graphics/jasper \
-		ltdl.4::devel/libtool
+		ltdl.4::devel/libtool,-ltdl
 
 RUN_DEPENDS=	::graphics/mpeg-lib
 BUILD_DEPENDS=	${RUN_DEPENDS}

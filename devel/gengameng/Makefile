@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2005/02/27 09:38:11 alek Exp $
+# $OpenBSD: Makefile,v 1.14 2006/01/05 20:11:15 espie Exp $
 
 COMMENT=	"X11 game engine library"
 
 VERSION=	4.1
 DISTNAME=	gengameng-${VERSION}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	devel x11
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
@@ -19,7 +19,7 @@ MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 
 LIB_DEPENDS=	SDL::devel/sdl
 BUILD_DEPENDS=	::devel/sdl-image
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	::devel/sdl-image
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
