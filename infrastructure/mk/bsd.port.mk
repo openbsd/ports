@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.742 2005/12/29 12:48:04 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.743 2006/01/05 19:33:17 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -642,6 +642,7 @@ SHARED_LIBS?=
 LIB${_n}_VERSION=${_v}
 SUBST_VARS+=LIB${_n}_VERSION
 _lt_libs+=LIB${_n}_LTVERSION='-version-info ${_v:S/./:/}:0'
+_lt_libs+=lib${_n:S/+/_/g:S/-/_/g:S/./_/g}_ltversion=${_v}
 .endfor
 
 # Create the generic variable substitution list, from subst vars
