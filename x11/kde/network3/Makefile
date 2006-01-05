@@ -1,12 +1,17 @@
-# $OpenBSD: Makefile,v 1.33 2005/11/29 14:11:33 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2006/01/05 21:59:07 espie Exp $
 
 COMMENT= 		"K Desktop Environment, network applications"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.0
 DISTNAME=		kdenetwork-${VERSION}
-PKGNAME=		${DISTNAME}
+PKGNAME=		${DISTNAME}p0
 MODKDE_VERSION=		3.5
 FLAVORS=debug
+SHARED_LIBS=		kopete			1.0 \
+			kopete_msn_shared	0.0 \
+			kopete_oscar		2.0 \
+			kopete_videodevice	0.0 \
+			rss			1.0
 
 LIB_DEPENDS= kdecore.6,DCOP,kabc,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kparts,kresources,ktexteditor,kutils,kwalletclient,vcard,kspell,kdnssd,knewstuff::x11/kde/libs3 \
 	xmms::audio/xmms
@@ -17,6 +22,8 @@ WANTLIB=	ICE SM X11 Xext Xi Xrender Xss Xtst Xxf86vm art_lgpl_2 c \
 		crypto gdk glib gmodule gtk iconv intl jpeg m pcre pcreposix \
 		png pthread ssl stdc++ util xml2 xslt z glib-2.0.0.0
 
+USE_LIBTOOL=	Yes
+LIBTOOL_FLAGS+=	--tag=disable-static
 post-configure:
 	@touch ${WRKSRC}/Makefile.in
 	@touch ${WRKBUILD}/Makefile

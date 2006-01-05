@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2005/11/29 14:11:33 espie Exp $
+@comment $OpenBSD: PLIST,v 1.28 2006/01/05 21:59:07 espie Exp $
 @conflict sirc-*
 bin/dsirc
 bin/feedbrowser
@@ -224,15 +224,15 @@ lib/libkdeinit_kdict.so
 lib/libkdeinit_ksirc.la
 lib/libkdeinit_ksirc.so
 lib/libkopete.la
-@lib lib/libkopete.so.1.0
+@lib lib/libkopete.so.${LIBkopete_VERSION}
 lib/libkopete_msn_shared.la
-@lib lib/libkopete_msn_shared.so.0.0
+@lib lib/libkopete_msn_shared.so.${LIBkopete_msn_shared_VERSION}
 lib/libkopete_oscar.la
-@lib lib/libkopete_oscar.so.2.0
+@lib lib/libkopete_oscar.so.${LIBkopete_oscar_VERSION}
 lib/libkopete_videodevice.la
-@lib lib/libkopete_videodevice.so.0.0
+@lib lib/libkopete_videodevice.so.${LIBkopete_videodevice_VERSION}
 lib/librss.la
-@lib lib/librss.so.1.0
+@lib lib/librss.so.${LIBrss_VERSION}
 share/applications/kde/Kppp.desktop
 share/applications/kde/fileshare.desktop
 share/applications/kde/kcmkrfb.desktop
