@@ -1,0 +1,12 @@
+$OpenBSD: patch-client_SymuxClient_pm,v 1.1 2006/01/05 21:45:39 aanriot Exp $
+--- client/SymuxClient.pm.orig	Mon Jan  2 09:11:14 2006
++++ client/SymuxClient.pm	Mon Jan  2 09:11:27 2006
+@@ -67,7 +67,7 @@ my $streamitem =
+      io     => {total_rxfers => 1, total_wxfers => 2, total_seeks => 3,
+ 		total_rbytes => 4, total_rbytes => 5 },
+      pfq    => {sent_bytes => 1, sent_packets => 2, drop_bytes => 3,
+-		drop_packets => 4}
++		drop_packets => 4},
+      df     => {blocks => 1, bfree => 2, bavail => 3, files => 4, ffree => 5,
+ 		syncwrites => 6, asyncwrites => 7}};
+ sub new {
