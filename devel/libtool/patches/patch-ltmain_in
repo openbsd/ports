@@ -1,6 +1,6 @@
-$OpenBSD: patch-ltmain_in,v 1.16 2005/12/22 11:36:00 espie Exp $
+$OpenBSD: patch-ltmain_in,v 1.17 2006/01/05 19:36:16 espie Exp $
 --- ltmain.in.orig	Wed Aug 31 20:25:28 2005
-+++ ltmain.in	Mon Dec 19 09:47:01 2005
++++ ltmain.in	Wed Jan  4 20:02:52 2006
 @@ -352,6 +352,8 @@ func_extract_archives ()
  # Darwin sucks
  eval std_shrext=\"$shrext_cmds\"
@@ -147,7 +147,21 @@ $OpenBSD: patch-ltmain_in,v 1.16 2005/12/22 11:36:00 espie Exp $
  	      add="$libdir/$linklib"
  	    elif test "$hardcode_minus_L" = yes; then
  	      add_dir="-L$libdir"
-@@ -5932,40 +5971,6 @@ relink_command=\"$relink_command\""
+@@ -3257,6 +3296,13 @@ EOF
+ 	  fi
+ 	fi
+ 
++	# XXX
++	tmp=`echo $libname|sed -e 's,+,_,g' -e 's,-,_,g' -e 's,\.,_,g'`
++	eval tmp=\$${tmp}_ltversion
++	if test -n "$versuffix" && test -n "$tmp"; then
++	    versuffix=".$tmp"
++	fi
++	
+ 	# Remove version info from name if versioning should be avoided
+ 	if test "$avoid_version" = yes && test "$need_version" = no; then
+ 	  major=
+@@ -5932,40 +5978,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit $EXIT_SUCCESS
  
@@ -188,7 +202,7 @@ $OpenBSD: patch-ltmain_in,v 1.16 2005/12/22 11:36:00 espie Exp $
      exit $EXIT_SUCCESS
      ;;
  
-@@ -6516,12 +6521,11 @@ exit $?
+@@ -6516,12 +6528,11 @@ exit $?
  # configuration.  But we'll never go from static-only to shared-only.
  
  # ### BEGIN LIBTOOL TAG CONFIG: disable-shared
