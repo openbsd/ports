@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2005/12/01 10:18:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2006/01/05 23:01:02 espie Exp $
 bin/adddebug
 bin/build-progress.sh
 bin/catalogmanager
@@ -180,11 +180,11 @@ ${KDE}/pothumbnail.so
 ${KDE}/quithumbnail.la
 ${KDE}/quithumbnail.so
 lib/libcvsservice.la
-@lib lib/libcvsservice.so.0.1
+@lib lib/libcvsservice.so.${LIBcvsservice_VERSION}
 lib/libkbabelcommon.la
-@lib lib/libkbabelcommon.so.5.0
+@lib lib/libkbabelcommon.so.${LIBkbabelcommon_VERSION}
 lib/libkbabeldictplugin.la
-@lib lib/libkbabeldictplugin.so.3.0
+@lib lib/libkbabeldictplugin.so.${LIBkbabeldictplugin_VERSION}
 lib/libkdeinit_cervisia.la
 lib/libkdeinit_cervisia.so
 lib/libkdeinit_cvsaskpass.la
@@ -192,11 +192,11 @@ lib/libkdeinit_cvsaskpass.so
 lib/libkdeinit_cvsservice.la
 lib/libkdeinit_cvsservice.so
 lib/libkompareinterface.la
-@lib lib/libkompareinterface.so.0.0
+@lib lib/libkompareinterface.so.${LIBkompareinterface_VERSION}
 lib/libkspy.la
-@lib lib/libkspy.so.3.0
+@lib lib/libkspy.so.${LIBkspy_VERSION}
 lib/libkunittestgui.la
-@lib lib/libkunittestgui.so.0.0
+@lib lib/libkunittestgui.so.${LIBkunittestgui_VERSION}
 @man man/man1/cervisia.1
 @man man/man1/cvsblame.1
 @man man/man1/cvscheck.1
