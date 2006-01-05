@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/12/26 13:23:41 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2006/01/05 05:34:34 pvalchev Exp $
 
 COMMENT=		"ssh through https proxy tunnel"
 
-DISTNAME=		gotthard-1.2
+DISTNAME=		gotthard-1.3
 CATEGORIES=		net
 MASTER_SITES=		http://www.nazgul.ch/dev/
 
