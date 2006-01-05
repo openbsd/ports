@@ -1,24 +1,7 @@
-Opera is a fast and customizable WWW browser.  Features:
-- HTML 4.01
-- XML
-- CSS1 and CSS2
-- HTTP 1.1
-- 128-bit encryption, TLS 1.0, SSL 2 and 3
-- ECMAScript, JavaScript 1.3
-- partial DOM and WAP/WML
-- support for Netscape plug-ins
-- fast rendering of pages
-- instant toggling of image and documents settings
-- extensive drag-and-drop features
-- easy keyboard navigation and early implementation of Opera's
-  unique mouse gestures
-- multiple windows support
-- resume interrupted download sessions
-- high quality zooming; Opera can zoom in on a page up to 1000%
-- a powerful search capability with the added possibility of searching
-  the user's own Hotlist
+Opera is a fast and customizable WWW browser, with support for Netscape
+compatible plug-ins.
 
 Issues:
-- there is a soft dependency on redhat_motif
+- some plug-ins might need the redhat_motif package
 - opera 8 might segfault with your old opera 7 configuration, in that
   case remove ~/.opera and start over
