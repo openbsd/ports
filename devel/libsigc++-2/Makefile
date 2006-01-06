@@ -1,11 +1,17 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/11/02 23:50:01 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2006/01/06 12:24:55 bernd Exp $
 
 COMMENT=		"callback framework for C++"
 COMMENT-docs=		"callback framework for C++ documentation"
 
 VERSION=		2.0.16
 DISTNAME=		libsigc++-${VERSION}
+PKGNAME=		${DISTNAME}p0
 PKGNAME-docs=		libsigc++-docs-${VERSION}
+V=			2.0
+SUBST_VARS=		V
+SHARED_LIBS=		sigc-2.0 0.0
+MODGNU_SHARED_LIBS=	sigc-2.0 ''
+LIBsigc-2.0_ALIAS=	sigc_2_0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://libsigc.sourceforge.net/
@@ -37,8 +43,5 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		M4='m4 -g'
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/scripts
-
-V=			2.0
-SUBST_VARS=		V
 
 .include <bsd.port.mk>

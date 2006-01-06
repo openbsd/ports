@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2005/10/02 08:22:33 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2006/01/06 12:24:55 bernd Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
 BROKEN=		"signal-related bug? any program linked with this hangs"
@@ -7,7 +7,10 @@ BROKEN=		"signal-related bug? any program linked with this hangs"
 COMMENT=	"callback framework for C++"
 
 DISTNAME=	libsigc++-1.0.4
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
+SHARED_LIBS=		sigc 0.0
+MODGNU_SHARED_LIBS=	sigc '-no-undefined'
+
 CATEGORIES=	devel
 
 HOMEPAGE=	http://libsigc.sf.net/
@@ -18,18 +21,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/scripts
 
 DOCDIR=		${PREFIX}/share/doc/libsigc++/
 MAKE_FLAGS=	M4=/usr/bin/m4
-
-post-patch:
-	@cd ${WRKSRC}/scripts; \
-	${PATCH} --forward --quiet -E < \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig && \
-	${PATCH} --forward --quiet -E < \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}

@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/13 00:00:34 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2006/01/06 12:24:55 bernd Exp $
 
 COMMENT=	"library of optimized inner loops"
 DISTNAME=	liboil-0.2.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
+SHARED_LIBS=	oil-0.2 0.0 \
+		oiltmp1 0.0
+
 CATEGORIES=	devel
 MASTER_SITES=	${HOMEPAGE}download/
 
@@ -19,6 +22,7 @@ BUILD_DEPENDS+=	:pkgconfig->=0.15.0:devel/pkgconfig \
 
 WANTLIB=m
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 
 post-patch:
