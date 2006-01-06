@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2005/01/20 18:48:54 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2006/01/06 13:14:28 bernd Exp $
 
 COMMENT=	"Apache Portable Runtime"
 
 DISTNAME=	apr-1.0.1
-PKGNAME=	apr-1.0.1p1
+PKGNAME=	apr-1.0.1p2
+SHARED_LIBS=	apr-1 0.1
+
 CATEGORIES=	devel
 
 MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
@@ -19,6 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://www.apache.org/dist/apr/ \
 		http://www.eu.apache.org/dist/apr/
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-installbuilddir=${LOCALBASE}/lib/apr-1/ \

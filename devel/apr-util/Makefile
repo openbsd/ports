@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2005/01/24 14:44:24 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2006/01/06 13:14:28 bernd Exp $
 
 COMMENT=	"companion library to APR"
 
 DISTNAME=	apr-util-1.0.1
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
+SHARED_LIBS=	aprutil-1 0.1
+
 CATEGORIES=	devel
 
 MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
@@ -25,7 +27,7 @@ BUILD_DEPENDS=	lib/db4/db.=4:db-4.*:databases/db/v4 \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MODULES=	converters/libiconv		
-
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-apr=${LOCALBASE} \
 		--with-dbm=db4 \
