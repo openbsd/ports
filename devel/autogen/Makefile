@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/03/12 22:13:27 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/01/06 13:38:06 bernd Exp $
 
 COMMENT='automatic text creation from templates'
 CATEGORIES=devel
 
 DISTNAME=	autogen-5.6.5
+SHARED_LIBS=	guileopts	0.1 \
+		opts		23.1
 MASTER_SITES=${MASTER_SITE_SOURCEFORGE:=autogen/}
 
 # GPL
