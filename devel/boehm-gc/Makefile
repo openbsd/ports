@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.30 2005/09/05 11:41:56 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2006/01/06 14:42:59 bernd Exp $
 # $FreeBSD: Makefile,v 1.4 1999/01/10 20:12:06 steve Exp $
 
 COMMENT=	"garbage collection and memory leak detection for C and C++"
 
 VERSION=	6.2
 DISTNAME=	gc${VERSION}
-PKGNAME=	boehm-gc-${VERSION}p0
+PKGNAME=	boehm-gc-${VERSION}p1
+SHARED_LIBS=	gc 1.2
+
 CATEGORIES=	devel
 MASTER_SITES=	${HOMEPAGE}gc_source/
 
@@ -25,6 +27,7 @@ MAKE_ENV=	CP="cp" \
 		INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_MAN="${INSTALL_MAN}"
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=autoconf no-autoheader
 AUTOCONF_VERSION=2.54
 CONFIGURE_ARGS= ${CONFIGURE_SHARED} --enable-full-debug

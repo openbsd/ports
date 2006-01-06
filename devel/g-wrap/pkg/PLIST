@@ -1,12 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/24 01:42:47 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/01/06 14:42:59 bernd Exp $
 bin/g-wrap-config
 include/g-wrap/
 include/g-wrap/g-wrap-compatibility.h
 include/g-wrap/g-wrap-glib.h
 include/g-wrap/g-wrap-wct.h
 @info info/g-wrap.info
+lib/libgw-glib.a
 lib/libgw-glib.la
+lib/libgw-standard.a
 lib/libgw-standard.la
+lib/libgw-wct.a
 lib/libgw-wct.la
 lib/libgwrap-glib.a
 lib/libgwrap-glib.la
