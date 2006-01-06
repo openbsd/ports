@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2005/10/17 15:15:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2006/01/06 12:07:27 espie Exp $
 bin/karbon
 bin/kchart
 bin/kexi
@@ -451,13 +451,11 @@ ${KDE}/stdwidgets.so
 ${KDE}/straight_connector.la
 ${KDE}/straight_connector.so
 lib/libkarbonbase.la
-@lib lib/libkarbonbase.so.2.0
-lib/libkarboncommon.la
-@lib lib/libkarboncommon.so.0.0
+@lib lib/libkarbonbase.so.${LIBkarbonbase_VERSION}
 lib/libkchartcommon.la
-@lib lib/libkchartcommon.so.2.0
+@lib lib/libkchartcommon.so.${LIBkchartcommon_VERSION}
 lib/libkdchart.la
-@lib lib/libkdchart.so.0.0
+@lib lib/libkdchart.so.${LIBkdchart_VERSION}
 lib/libkdeinit_karbon.la
 lib/libkdeinit_karbon.so
 lib/libkdeinit_kchart.la
@@ -485,37 +483,37 @@ lib/libkdeinit_kugar.so
 lib/libkdeinit_kword.la
 lib/libkdeinit_kword.so
 lib/libkexicore.la
-@lib lib/libkexicore.so.0.8
+@lib lib/libkexicore.so.${LIBkexicore_VERSION}
 lib/libkexidatatable.la
-@lib lib/libkexidatatable.so.0.8
+@lib lib/libkexidatatable.so.${LIBkexidatatable_VERSION}
 lib/libkexidb.la
-@lib lib/libkexidb.so.0.0
+@lib lib/libkexidb.so.${LIBkexidb_VERSION}
 lib/libkexidbparser.la
-@lib lib/libkexidbparser.so.0.8
+@lib lib/libkexidbparser.so.${LIBkexidbparser_VERSION}
 lib/libkexiextendedwidgets.la
-@lib lib/libkexiextendedwidgets.so.0.8
+@lib lib/libkexiextendedwidgets.so.${LIBkexiextendedwidgets_VERSION}
 lib/libkexiformutils.la
-@lib lib/libkexiformutils.so.0.8
+@lib lib/libkexiformutils.so.${LIBkexiformutils_VERSION}
 lib/libkexiguiutils.la
-@lib lib/libkexiguiutils.so.0.8
+@lib lib/libkexiguiutils.so.${LIBkexiguiutils_VERSION}
 lib/libkeximain.la
-@lib lib/libkeximain.so.0.8
+@lib lib/libkeximain.so.${LIBkeximain_VERSION}
 lib/libkeximigrate.la
-@lib lib/libkeximigrate.so.0.8
+@lib lib/libkeximigrate.so.${LIBkeximigrate_VERSION}
 lib/libkexipropertyeditor.la
-@lib lib/libkexipropertyeditor.so.0.8
+@lib lib/libkexipropertyeditor.so.${LIBkexipropertyeditor_VERSION}
 lib/libkexirelationsview.la
-@lib lib/libkexirelationsview.so.0.8
+@lib lib/libkexirelationsview.so.${LIBkexirelationsview_VERSION}
 lib/libkexisql2.la
-@lib lib/libkexisql2.so.2.8
+@lib lib/libkexisql2.so.${LIBkexisql2_VERSION}
 lib/libkexisql3.la
-@lib lib/libkexisql3.so.3.0
+@lib lib/libkexisql3.so.${LIBkexisql3_VERSION}
 lib/libkformdesigner.la
-@lib lib/libkformdesigner.so.0.8
+@lib lib/libkformdesigner.so.${LIBkformdesigner_VERSION}
 lib/libkformulalib.la
-@lib lib/libkformulalib.so.3.0
+@lib lib/libkformulalib.so.${LIBkformulalib_VERSION}
 lib/libkiviocommon.la
-@lib lib/libkiviocommon.so.0.0
+@lib lib/libkiviocommon.so.${LIBkiviocommon_VERSION}
 lib/libkivioconnectortool.la
 lib/libkivioconnectortool.so
 lib/libkivioselecttool.la
@@ -527,35 +525,35 @@ lib/libkiviotexttool.so
 lib/libkiviozoomtool.la
 lib/libkiviozoomtool.so
 lib/libkochart.la
-@lib lib/libkochart.so.1.0
+@lib lib/libkochart.so.${LIBkochart_VERSION}
 lib/libkofficecore.la
-@lib lib/libkofficecore.so.2.0
+@lib lib/libkofficecore.so.${LIBkofficecore_VERSION}
 lib/libkofficeui.la
-@lib lib/libkofficeui.so.2.0
+@lib lib/libkofficeui.so.${LIBkofficeui_VERSION}
 lib/libkopainter.la
-@lib lib/libkopainter.so.1.0
+@lib lib/libkopainter.so.${LIBkopainter_VERSION}
 lib/libkoscript.la
-@lib lib/libkoscript.so.2.0
+@lib lib/libkoscript.so.${LIBkoscript_VERSION}
 lib/libkotext.la
-@lib lib/libkotext.so.2.0
+@lib lib/libkotext.so.${LIBkotext_VERSION}
 lib/libkowmf.la
-@lib lib/libkowmf.so.1.0
+@lib lib/libkowmf.so.${LIBkowmf_VERSION}
 lib/libkritacommon.la
-@lib lib/libkritacommon.so.1.0
+@lib lib/libkritacommon.so.${LIBkritacommon_VERSION}
 lib/libkspreadcommon.la
-@lib lib/libkspreadcommon.so.0.0
+@lib lib/libkspreadcommon.so.${LIBkspreadcommon_VERSION}
 lib/libkstore.la
-@lib lib/libkstore.so.2.0
+@lib lib/libkstore.so.${LIBkstore_VERSION}
 lib/libkudesignercore.la
 lib/libkudesignercore.so
 lib/libkugarlib.la
-@lib lib/libkugarlib.so.1.2
+@lib lib/libkugarlib.so.${LIBkugarlib_VERSION}
 lib/libkwmailmerge_interface.la
-@lib lib/libkwmailmerge_interface.so.4.0
+@lib lib/libkwmailmerge_interface.so.${LIBkwmailmerge_interface_VERSION}
 lib/libkwmf.la
-@lib lib/libkwmf.so.2.0
+@lib lib/libkwmf.so.${LIBkwmf_VERSION}
 lib/libkwordexportfilters.la
-@lib lib/libkwordexportfilters.so.1.1
+@lib lib/libkwordexportfilters.so.${LIBkwordexportfilters_VERSION}
 share/applications/kde/kexi.desktop
 share/applications/kde/kformdesigner.desktop
 share/applications/kde/kivio.desktop
@@ -4083,6 +4081,7 @@ share/icons/hicolor/128x128/
 share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/koshell.png
 share/icons/hicolor/128x128/apps/krita.png
+share/icons/hicolor/16x16/
 share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/karbon.png
 share/icons/hicolor/16x16/apps/kchart.png
@@ -4095,6 +4094,7 @@ share/icons/hicolor/16x16/apps/krita.png
 share/icons/hicolor/16x16/apps/kspread.png
 share/icons/hicolor/16x16/apps/kugar.png
 share/icons/hicolor/16x16/apps/kword.png
+share/icons/hicolor/22x22/
 share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/karbon.png
 share/icons/hicolor/22x22/apps/kexi.png
@@ -4106,6 +4106,7 @@ share/icons/hicolor/22x22/apps/krita.png
 share/icons/hicolor/22x22/apps/kspread.png
 share/icons/hicolor/22x22/apps/kugar.png
 share/icons/hicolor/22x22/apps/kword.png
+share/icons/hicolor/32x32/
 share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/karbon.png
 share/icons/hicolor/32x32/apps/kchart.png
