@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2006/01/06 08:36:18 steven Exp $
+--- Makefile.in.orig	Fri Jan  6 09:24:05 2006
++++ Makefile.in	Fri Jan  6 09:24:54 2006
+@@ -127,7 +127,6 @@ libSDL_sound_la_SOURCES = \
+ @USE_MPGLIB_FALSE@MPGLIB_LIB = 
+ 
+ libSDL_sound_la_LDFLAGS = \
+-	-release $(LT_RELEASE)	\
+ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ 
+ libSDL_sound_la_LIBADD = \

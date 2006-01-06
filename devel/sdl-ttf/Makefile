@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2004/11/24 00:11:04 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2006/01/06 08:36:18 steven Exp $
 
 COMMENT=	"SDL TrueType fonts library"
 
 DISTNAME=	SDL_ttf-2.0.6
-PKGNAME=	${DISTNAME:L:S/_/-/}
+PKGNAME=	${DISTNAME:L:S/_/-/}p0
+SHARED_LIBS=	SDL_ttf 6.0
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_ttf/release/
 
@@ -21,6 +22,7 @@ WANTLIB=		X11 Xext freetype usbhid
 LIB_DEPENDS=	SDL::devel/sdl
 
 USE_X11=	Yes
+USE_LIBTOOL=	Yes
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu

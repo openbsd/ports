@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2004/09/14 23:44:01 espie Exp $
-@lib lib/libSDL_net.so.0.5
+@comment $OpenBSD: PFRAG.shared,v 1.7 2006/01/06 08:36:18 steven Exp $
+@lib lib/libSDL_net.so.${LIBSDL_net_VERSION}

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2004/11/24 00:11:03 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2006/01/06 08:36:18 steven Exp $
 
 COMMENT=	"SDL cross-platform networking library"
 
 DISTNAME=	SDL_net-1.2.5
-PKGNAME=	${DISTNAME:L:S/_/-/}
+PKGNAME=	${DISTNAME:L:S/_/-/}p0
+SHARED_LIBS=	SDL_net 0.5
 CATEGORIES=	devel net
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_net/release/
 
@@ -21,6 +22,7 @@ WANTLIB=		X11 Xext usbhid
 LIB_DEPENDS=	SDL::devel/sdl
 
 USE_X11=	Yes
+USE_LIBTOOL=	Yes
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu

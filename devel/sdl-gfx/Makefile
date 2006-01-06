@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2004/09/28 01:36:32 jolan Exp $
+# $OpenBSD: Makefile,v 1.6 2006/01/06 08:36:18 steven Exp $
 
 COMMENT=	"primitives drawing/other support functions for SDL"
 DISTNAME=	SDL_gfx-2.0.12
-PKGNAME=	${DISTNAME:L:S/_/-/}
+PKGNAME=	${DISTNAME:L:S/_/-/}p0
+SHARED_LIBS=	SDL_gfx 11.0
 CATEGORIES=	devel graphics x11
 MASTER_SITES=	${HOMEPAGE}
 
@@ -14,6 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
+USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 USE_X11=	Yes
 
