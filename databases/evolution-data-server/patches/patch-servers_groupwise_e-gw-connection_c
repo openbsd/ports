@@ -1,0 +1,13 @@
+$OpenBSD: patch-servers_groupwise_e-gw-connection_c,v 1.1 2006/01/06 00:10:41 pvalchev Exp $
+--- servers/groupwise/e-gw-connection.c.orig	Thu Jan  5 12:35:48 2006
++++ servers/groupwise/e-gw-connection.c	Thu Jan  5 12:36:10 2006
+@@ -1764,8 +1764,8 @@ e_gw_connection_get_categories (EGwConne
+ 	EGwConnectionPrivate *priv;
+         SoupSoapParameter *param, *subparam, *second_level_child;
+ 	char *id, *name;
+-        g_return_val_if_fail (E_IS_GW_CONNECTION (cnc), E_GW_CONNECTION_STATUS_INVALID_OBJECT);
+ 	static GStaticMutex connecting = G_STATIC_MUTEX_INIT;
++        g_return_val_if_fail (E_IS_GW_CONNECTION (cnc), E_GW_CONNECTION_STATUS_INVALID_OBJECT);
+ 
+ 	priv = cnc->priv;
+ 	g_static_mutex_lock (&connecting);
