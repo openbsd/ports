@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2005/09/15 22:52:01 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2006/01/06 04:26:09 cathcart Exp $
 bin/john
 bin/mailer
 bin/unafs
@@ -14,7 +14,6 @@ share/doc/john/FAQ
 share/doc/john/INSTALL
 share/doc/john/LICENSE
 share/doc/john/MODES
-@comment share/doc/john/NEWS
 share/doc/john/OPTIONS
 share/doc/john/README
 share/doc/john/RULES
@@ -23,6 +22,8 @@ share/examples/john/john.conf
 @sample ${SYSCONFDIR}/john.conf
 share/john/
 share/john/all.chr
+share/john/alnum.chr
 share/john/alpha.chr
 share/john/digits.chr
 share/john/lanman.chr
+share/john/password.lst

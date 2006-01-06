@@ -1,51 +1,54 @@
-# $OpenBSD: Makefile,v 1.33 2005/09/15 22:52:01 aanriot Exp $
+# $OpenBSD: Makefile,v 1.34 2006/01/06 04:26:09 cathcart Exp $
 
 COMMENT=		"extremely fast password cracker"
 
-DISTNAME=		john-1.6.39
+DISTNAME=		john-1.6.40
 CATEGORIES=		security
 
 HOMEPAGE=		http://www.openwall.com/john/
+
+MAINTAINER=		David Cathcart <cathcart@openbsd.org>
 
 # GPL & Public Domain
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m
+WANTLIB=		c
 
 MASTER_SITES=		${HOMEPAGE}c/
-DISTFILES=		${DISTNAME}.tar.gz \
-			john-1.6.tar.gz
 
 NO_REGRESS=		Yes
 
 WRKSRC=			${WRKDIST}/src
+
 MAKE_FLAGS=		CC=${CC} AS=${CC} LD=${CC} \
-			CFLAGS="${CFLAGS} -c"
+			CFLAGS="${CFLAGS} -c" LDFLAGS="${LDFLAGS}"
 
 .if ${MACHINE_ARCH} == "i386"
 FLAVORS=		no_mmx
 FLAVOR?=
-.if ${FLAVOR:L:Mno_mmx}
-ALL_TARGET=		openbsd-x86-any-elf
-.else
-ALL_TARGET=		openbsd-x86-mmx-elf
-.endif
+.  if ${FLAVOR:L:Mno_mmx}
+ALL_TARGET=		openbsd-x86-any
+.  else
+ALL_TARGET=		openbsd-x86-mmx
+.  endif
+.elif ${MACHINE_ARCH} == "amd64"
+ALL_TARGET=		openbsd-x86-64
 .elif ${MACHINE_ARCH} == "sparc"
 ALL_TARGET=		openbsd-sparc
 .elif ${MACHINE_ARCH} == "vax"
 ALL_TARGET=		openbsd-vax
 .elif ${MACHINE_ARCH} == "alpha"
-ALL_TARGET=		linux-alpha
+ALL_TARGET=		openbsd-alpha
 .elif ${MACHINE_ARCH} == "powerpc"
-ALL_TARGET=		linux-ppc32
+ALL_TARGET=		openbsd-ppc32
 .elif ${MACHINE_ARCH} == "powerpc64"
-ALL_TARGET=		linux-ppc64
+ALL_TARGET=		openbsd-ppc64
 .elif ${MACHINE_ARCH} == "hppa"
-ALL_TARGET=		hpux-pa-risc-${CC}
+ALL_TARGET=		openbsd-pa-risc
 .elif ${MACHINE_ARCH} == "sparc64"
-ALL_TARGET=		"openbsd-sparc64"
+ALL_TARGET=		openbsd-sparc64
 .else
 ALL_TARGET=		generic
 .endif
@@ -58,6 +61,9 @@ do-configure:
 		${WRKDIST}/run/john.conf
 
 do-install:
+	@grep -h -v '^#!comment:' ${WRKDIST}/run/password.lst \
+		/usr/share/dict/words | \
+		${WRKDIST}/run/unique ${WRKDIST}/run/words.lst
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/john
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/john
 	${INSTALL_DATA_DIR} ${PREFIX}/share/john
@@ -68,8 +74,8 @@ do-install:
 		ln -sf john unafs && \
 		ln -sf john unique
 	${INSTALL_DATA} ${WRKDIST}/run/john.conf ${PREFIX}/share/examples/john
-	${INSTALL_DATA} ${WRKDIR}/john-1.6/doc/* ${PREFIX}/share/doc/john
 	${INSTALL_DATA} ${WRKDIST}/doc/* ${PREFIX}/share/doc/john
-	${INSTALL_DATA} ${WRKDIR}/john-1.6/run/*.chr ${PREFIX}/share/john
+	${INSTALL_DATA} ${WRKDIST}/run/*.chr ${PREFIX}/share/john
+	${INSTALL_DATA} ${WRKDIST}/run/words.lst ${PREFIX}/share/john/password.lst
 
 .include <bsd.port.mk>
