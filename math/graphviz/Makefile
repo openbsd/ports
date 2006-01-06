@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2005/12/26 16:11:29 steven Exp $
-
+# $OpenBSD: Makefile,v 1.17 2006/01/06 18:58:31 steven Exp $
 
 COMMENT=	"graph drawing software"
 
@@ -26,25 +25,6 @@ SHARED_LIBS=	agraph		0.0 \
 		tclplan		0.0 \
 		tkspline	0.0 \
 		twopigen	0.0
-MODGNU_SHARED_LIBS=	agraph		'' \
-			cdt		'' \
-			circogen	'' \
-			common		'' \
-			dotgen		'' \
-			dotneato	'' \
-			expr		'' \
-			fdpgen		'' \
-			gdtclft		'' \
-			graph		'' \
-			gvgd		'' \
-			gvrender	'' \
-			neatogen	'' \
-			pack		'' \
-			pathplan	'' \
-			tcldot		'' \
-			tclplan		'' \
-			tkspline	'' \
-			twopigen	''
 
 HOMEPAGE=	http://www.graphviz.org/
 
