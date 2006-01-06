@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2005/07/03 21:35:23 jolan Exp $
+# $OpenBSD: Makefile,v 1.19 2006/01/06 07:57:01 steven Exp $
 
 COMMENT=	"mpeg video player library with sound support"
 
 DISTNAME=	smpeg-0.4.4
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
+SHARED_LIBS=	smpeg 1.3
 CATEGORIES=	devel graphics
 
 HOMEPAGE=       http://www.lokigames.com/development/smpeg.php3
@@ -23,6 +24,7 @@ MASTER_SITES=	ftp://ftp.lokigames.com/pub/open-source/smpeg/ \
 LIB_DEPENDS=	SDL::devel/sdl
 
 USE_X11=	Yes
+USE_LIBTOOL=	Yes
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
