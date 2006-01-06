@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2005/12/01 10:18:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2006/01/06 08:56:48 espie Exp $
 @conflict quanta-*
 @pkgpath x11/kde/quanta
 bin/kfilereplace
@@ -27,11 +27,11 @@ ${KDE}/quantadebuggerdbgp.so
 ${KDE}/quantadebuggergubed.la
 ${KDE}/quantadebuggergubed.so
 lib/libkommanderplugin.la
-@lib lib/libkommanderplugin.so.0.0
+@lib lib/libkommanderplugin.so.${LIBkommanderplugin_VERSION}
 lib/libkommanderwidget.la
-@lib lib/libkommanderwidget.so.0.0
+@lib lib/libkommanderwidget.so.${LIBkommanderwidget_VERSION}
 lib/libkommanderwidgets.la
-@lib lib/libkommanderwidgets.so.0.0
+@lib lib/libkommanderwidgets.so.${LIBkommanderwidgets_VERSION}
 share/applications/kde/kfilereplace.desktop
 share/applications/kde/kimagemapeditor.desktop
 share/applications/kde/klinkstatus.desktop
