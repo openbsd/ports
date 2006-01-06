@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:43:55 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/01/06 17:23:25 bernd Exp $
 include/gal-1.0/
 include/gal-1.0/gal/
 include/gal-1.0/gal/e-paned/
@@ -199,8 +199,6 @@ share/gal/0.24/pixmaps/categories/category_time-and-expenses_16.png
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/gal-0.24.mo
-share/locale/ca/
-share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/gal-0.24.mo
 share/locale/cs/LC_MESSAGES/gal-0.24.mo
 share/locale/da/LC_MESSAGES/gal-0.24.mo

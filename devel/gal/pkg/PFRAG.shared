@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2005/05/11 19:40:20 alek Exp $
-@lib lib/libgal.so.24.0
+@comment $OpenBSD: PFRAG.shared,v 1.7 2006/01/06 17:23:25 bernd Exp $
+@lib lib/libgal.so.${LIBgal_VERSION}

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2005/05/11 19:40:20 alek Exp $
+# $OpenBSD: Makefile,v 1.12 2006/01/06 17:23:25 bernd Exp $
 
 COMMENT=		"GNOME Application Libs"
 
 DISTNAME=		gal-0.24
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
+SHARED_LIBS=		gal 24.0
+
 CATEGORIES=    		devel x11/gnome
 HOMEPAGE=		http://www.gnome.org/
 
@@ -32,6 +34,7 @@ LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+ \
 
 SEPARATE_BUILD= 	concurrent
 USE_X11=		Yes
+USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}

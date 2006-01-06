@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.14 2005/11/13 16:52:12 marcm Exp $
+# $OpenBSD: Makefile,v 1.15 2006/01/06 17:23:25 bernd Exp $
 
 COMMENT=		"GNOME Application Libs"
 
 VERSION=		2.4.3
+API_VERSION=		2.4
 DISTNAME=		gal-${VERSION}
-PKGNAME=		gal2-${VERSION}p0
+PKGNAME=		gal2-${VERSION}p1
+SHARED_LIBS=		gal-${API_VERSION}	0.0 \
+			gal-a11y-${API_VERSION}	0.0
+
 CATEGORIES=    		devel x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
@@ -48,7 +52,6 @@ CONFIGURE_ARGS+=	--disable-gtk-doc
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-API_VERSION=		2.4
 SUBST_VARS=		VERSION API_VERSION
 
 .include <bsd.port.mk>
