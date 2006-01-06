@@ -1,6 +1,6 @@
-$OpenBSD: patch-gettext-runtime_intl_Makefile_in,v 1.1 2005/11/05 23:47:58 naddy Exp $
+$OpenBSD: patch-gettext-runtime_intl_Makefile_in,v 1.2 2006/01/06 21:16:16 bernd Exp $
 --- gettext-runtime/intl/Makefile.in.orig	Fri May 20 22:05:54 2005
-+++ gettext-runtime/intl/Makefile.in	Wed Nov  2 21:56:23 2005
++++ gettext-runtime/intl/Makefile.in	Fri Jan  6 19:17:23 2006
 @@ -154,7 +154,7 @@ libintl.a libgnuintl.a: $(OBJECTS)
  libintl.la libgnuintl.la: $(OBJECTS)
  	$(LIBTOOL) --mode=link \
@@ -10,16 +10,3 @@ $OpenBSD: patch-gettext-runtime_intl_Makefile_in,v 1.1 2005/11/05 23:47:58 naddy
  	  -version-info $(LTV_CURRENT):$(LTV_REVISION):$(LTV_AGE) \
  	  -rpath $(libdir) \
  	  -no-undefined
-@@ -164,9 +164,9 @@ libintl.la libgnuintl.la: $(OBJECTS)
- # according to the libtool documentation, section "Library interface versions".
- # Maintainers of other packages that include the intl directory must *not*
- # change these values.
--LTV_CURRENT=7
--LTV_REVISION=3
--LTV_AGE=4
-+LTV_CURRENT=3
-+LTV_REVISION=0
-+LTV_AGE=0
- 
- .SUFFIXES:
- .SUFFIXES: .c .y .o .lo .sin .sed
