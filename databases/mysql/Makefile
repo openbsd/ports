@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2005/12/26 21:32:01 sturm Exp $
+# $OpenBSD: Makefile,v 1.114 2006/01/06 00:13:26 brad Exp $
 # Uses pthreads
 
 .if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "m88k"
@@ -9,15 +9,15 @@ COMMENT=	"multithreaded SQL database (client)"
 COMMENT-server=	"multithreaded SQL database (server)"
 COMMENT-tests=	"multithreaded SQL database (regression test suite)"
 
-VERSION=	4.1.15
+VERSION=	5.0.18
 DISTNAME=	mysql-${VERSION}
-FULLPKGNAME=	mysql-client-${VERSION}p0
+FULLPKGNAME=	mysql-client-${VERSION}
 PKGNAME-server=	mysql-server-${VERSION}
 FULLPKGNAME-tests= mysql-tests-${VERSION}
 CATEGORIES=	databases
-V=		MySQL-4.1
-SHARED_LIBS=	mysqlclient	14.0 \
-		mysqlclient_r	14.0
+V=		MySQL-5.0
+SHARED_LIBS=	mysqlclient	15.0 \
+		mysqlclient_r	15.0
 
 MASTER_SITES=	http://mysql.mirrors.pair.com/Downloads/$V/
 
@@ -50,6 +50,7 @@ AUTOCONF_VERSION= 2.59
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-thread-safe-client \
 		 --localstatedir="${DB_DIR}" \
+		 --with-big-tables \
 		 --with-comment='OpenBSD port: ${FULLPKGNAME-server}' \
 		 --with-libwrap \
 		 --with-low-memory \
@@ -80,7 +81,7 @@ MULTI_PACKAGES=	-server -tests
 SUBPACKAGE?=
 
 .if ${SUBPACKAGE} == "-server"
-RUN_DEPENDS=	:mysql-client-4.1.*:databases/mysql \
+RUN_DEPENDS=	:mysql-client-5.0.*:databases/mysql \
 		:p5-DBD-mysql-*:databases/p5-DBD-mysql
 WANTLIB+=	wrap		
 .elif empty(SUBPACKAGE)

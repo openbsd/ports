@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_mysqld_safe_sh,v 1.9 2005/10/07 22:48:12 brad Exp $
---- scripts/mysqld_safe.sh.orig	Wed Aug 17 17:06:29 2005
-+++ scripts/mysqld_safe.sh	Fri Oct  7 15:51:03 2005
-@@ -84,50 +84,12 @@ parse_arguments() {
+$OpenBSD: patch-scripts_mysqld_safe_sh,v 1.10 2006/01/06 00:13:26 brad Exp $
+--- scripts/mysqld_safe.sh.orig	Wed Dec 14 18:33:33 2005
++++ scripts/mysqld_safe.sh	Sun Dec 18 17:36:00 2005
+@@ -107,72 +107,12 @@ parse_arguments() {
  }
  
  
@@ -38,7 +38,7 @@ $OpenBSD: patch-scripts_mysqld_safe_sh,v 1.9 2005/10/07 22:48:12 brad Exp $
 -if test -d $MY_BASEDIR_VERSION/data/mysql
 -then
 -  DATADIR=$MY_BASEDIR_VERSION/data
--  if test -z "$defaults"
+-  if test -z "$defaults" -a -r "$DATADIR/my.cnf"
 -  then
 -    defaults="--defaults-extra-file=$DATADIR/my.cnf"
 -  fi
@@ -51,13 +51,35 @@ $OpenBSD: patch-scripts_mysqld_safe_sh,v 1.9 2005/10/07 22:48:12 brad Exp $
 -  DATADIR=@localstatedir@
 -fi
 -
+-if test -z "$MYSQL_HOME"
+-then 
+-  if test -r "$MY_BASEDIR_VERSION/my.cnf" && test -r "$DATADIR/my.cnf"
+-  then
+-    echo "WARNING: Found two instances of my.cnf -"
+-    echo "$MY_BASEDIR_VERSION/my.cnf and"
+-    echo "$DATADIR/my.cnf"
+-    echo "IGNORING $DATADIR/my.cnf"
+-    echo
+-    MYSQL_HOME=$MY_BASEDIR_VERSION
+-  elif test -r "$DATADIR/my.cnf"
+-  then
+-    echo "WARNING: Found $DATADIR/my.cnf"
+-    echo "Datadir is deprecated place for my.cnf, please move it to $MY_BASEDIR_VERSION"
+-    echo
+-    MYSQL_HOME=$DATADIR
+-  else
+-    MYSQL_HOME=$MY_BASEDIR_VERSION
+-  fi
+-fi
+-export MYSQL_HOME
+-
 -user=@MYSQLD_USER@
 +user=_mysql
 +group=_mysql
  niceness=0
  
- # Use the mysqld-max binary by default if the user doesn't specify a binary
-@@ -173,7 +135,8 @@ mysql_unix_port_dir=`dirname $safe_mysql
+ # these rely on $DATADIR by default, so we'll set them later on
+@@ -210,7 +150,8 @@ mysql_unix_port_dir=`dirname $safe_mysql
  if [ ! -d $mysql_unix_port_dir ]
  then
    mkdir $mysql_unix_port_dir
@@ -66,8 +88,8 @@ $OpenBSD: patch-scripts_mysqld_safe_sh,v 1.9 2005/10/07 22:48:12 brad Exp $
 +  chmod 711 $mysql_unix_port_dir
  fi
  
- 
-@@ -320,12 +283,6 @@ fi
+ # Use the mysqld-max binary by default if the user doesn't specify a binary
+@@ -367,12 +308,6 @@ fi
  
  echo "Starting $MYSQLD daemon with databases from $DATADIR"
  
@@ -80,7 +102,7 @@ $OpenBSD: patch-scripts_mysqld_safe_sh,v 1.9 2005/10/07 22:48:12 brad Exp $
  echo "`date +'%y%m%d %H:%M:%S  mysqld started'`" >> $err_log
  while true
  do
-@@ -342,35 +299,6 @@ do
+@@ -389,35 +324,6 @@ do
      break
    fi
  

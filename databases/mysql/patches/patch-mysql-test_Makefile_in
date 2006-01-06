@@ -1,12 +1,12 @@
-$OpenBSD: patch-mysql-test_Makefile_in,v 1.8 2005/09/04 22:51:24 brad Exp $
---- mysql-test/Makefile.in.orig	Fri Jul 15 06:40:10 2005
-+++ mysql-test/Makefile.in	Tue Jul 26 10:22:14 2005
-@@ -363,7 +363,7 @@ zlib_dir = @zlib_dir@
+$OpenBSD: patch-mysql-test_Makefile_in,v 1.9 2006/01/06 00:13:26 brad Exp $
+--- mysql-test/Makefile.in.orig	Wed Dec 14 18:34:55 2005
++++ mysql-test/Makefile.in	Sun Dec 18 17:36:12 2005
+@@ -382,7 +382,7 @@ zlib_dir = @zlib_dir@
  @HAVE_NDBCLUSTER_DB_TRUE@DIST_SUBDIRS = ndb
  @HAVE_NDBCLUSTER_DB_FALSE@USE_NDBCLUSTER = \"\"
  @HAVE_NDBCLUSTER_DB_TRUE@USE_NDBCLUSTER = \"--ndbcluster\"
 -benchdir_root = $(prefix)
 +benchdir_root = $(datadir)
  testdir = $(benchdir_root)/mysql-test
- EXTRA_SCRIPTS = mysql-test-run.sh mysql-test-run.pl install_test_db.sh
+ EXTRA_SCRIPTS = mysql-test-run.sh mysql-test-run.pl install_test_db.sh valgrind.supp
  EXTRA_DIST = $(EXTRA_SCRIPTS) 
