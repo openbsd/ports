@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2005/10/08 09:47:36 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.14 2006/01/06 17:42:01 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"clone of S, a powerful math/statistics/graphics language"
 DISTNAME=	R-2.1.1
+SHARED_LIBS=	Rlapack 21.1
 CATEGORIES=    	math
 HOMEPAGE=	http://www.r-project.org/
 
@@ -39,9 +40,11 @@ CONFIGURE_ENV=	FFLAGS="${FFLAGS}"
 MAKE_FLAGS=	INSTALL='install -c' \
 		INSTALL_DATA='install -c -m 644' \
 		INSTALL_PROGRAM='install -c -s -m 555' \
-		INSTALL_SCRIPT='install -c -m 555'
+		INSTALL_SCRIPT='install -c -m 555' \
+		LIBRlapack_VERSION=${LIBRlapack_VERSION}
 
-FAKE_FLAGS=	PREFIX=${PREFIX} DESTDIR=${WRKINST}
+FAKE_FLAGS=	PREFIX=${PREFIX} DESTDIR=${WRKINST} \
+		LIBRlapack_VERSION=${LIBRlapack_VERSION}
 
 post-install:
 	perl -i -pe 's:^R_HOME_DIR=.*:R_HOME_DIR=${TRUEPREFIX}/lib/R:' \

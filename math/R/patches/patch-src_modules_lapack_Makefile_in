@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_modules_lapack_Makefile_in,v 1.1 2006/01/06 17:42:01 steven Exp $
+--- src/modules/lapack/Makefile.in.orig	Mon Apr 18 13:34:36 2005
++++ src/modules/lapack/Makefile.in	Fri Jan  6 17:49:04 2006
+@@ -11,6 +11,8 @@ R_HOME = $(top_builddir)
+ 
+ include $(top_builddir)/Makeconf
+ 
++DYLIB_EXT=.so.$(LIBRlapack_VERSION)
++
+ SOURCES_C = Lapack.c
+ SOURCES_F = @USE_EXTERNAL_LAPACK_FALSE@ rgeev.f rsyev.f
+ 
