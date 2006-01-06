@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2004/09/14 23:43:55 espie Exp $
-@lib lib/libgengameng.so.4.1
+@comment $OpenBSD: PFRAG.shared,v 1.5 2006/01/06 18:57:01 bernd Exp $
+@lib lib/libgengameng.so.${LIBgengameng_VERSION}
