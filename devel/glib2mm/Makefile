@@ -1,12 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2005/11/09 20:04:08 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2006/01/06 19:41:24 bernd Exp $
 
 COMMENT=		"C++ interface for glib2"
 COMMENT-docs=		"C++ interface for glib2 documentation"
 
 VERSION=		2.6.1
+V=			2.4
 DISTNAME=		glibmm-${VERSION}
 PKGNAME=		glib2mm-${VERSION}p1
 PKGNAME-docs=		glib2mm-docs-${VERSION}
+SHARED_LIBS=		glibmm-${V} 			1.13 \
+			glibmm_generate_extra_defs-${V}	1.13
+
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gtkmm.org/
@@ -43,8 +47,6 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=		M4='m4 -g'
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/scripts
-
-V=			2.4
 SUBST_VARS=		V
 
 .include <bsd.port.mk>

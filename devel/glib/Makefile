@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.55 2005/10/30 00:10:40 fgsch Exp $
+# $OpenBSD: Makefile,v 1.56 2006/01/06 19:41:24 bernd Exp $
 # Uses pthreads
 
 COMMENT=	"useful routines for C programming"
 
 DISTNAME=	glib-1.2.10
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
+SHARED_LIBS=	glib	1.2 \
+		gmodule	1.2 \
+		gthread	1.2
+
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/glib/1.2/}
 
@@ -21,11 +25,8 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
-		patch-*
-
 NO_REGRESS=	Yes
+USE_LIBTOOL=	Yes
 
 post-extract:
 	@rm -f ${WRKSRC}/docs/glib.info*

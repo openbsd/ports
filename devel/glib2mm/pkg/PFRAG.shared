@@ -1,3 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/11/02 23:51:51 wilfried Exp $
-@lib lib/libglibmm-${V}.so.1.13
-@lib lib/libglibmm_generate_extra_defs-${V}.so.1.13
+@comment $OpenBSD: PFRAG.shared,v 1.2 2006/01/06 19:41:24 bernd Exp $
+@lib lib/libglibmm-${V}.so.${LIBglibmm-${V}_VERSION}
+@lib lib/libglibmm_generate_extra_defs-${V}.so.${LIBglibmm_generate_extra_defs-${V}_VERSION}
