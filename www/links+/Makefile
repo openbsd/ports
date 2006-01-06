@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2005/10/12 04:02:22 fgsch Exp $
+# $OpenBSD: Makefile,v 1.24 2006/01/06 11:28:33 fgsch Exp $
 
 COMMENT=	"graphics and text browser with javascript support"
 
-VER=		2.1pre19
+VER=		2.1pre20
 DISTNAME=	links-${VER}
 PKGNAME=	links+-${VER}
 CATEGORIES=	www
