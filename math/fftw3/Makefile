@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/12/23 19:56:50 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/01/06 18:30:40 steven Exp $
 
 COMMENT=	"C routines for computing the Discrete Fourier Transform"
 
@@ -6,7 +6,6 @@ V=		3.0.1
 DISTNAME=	fftw-${V}
 PKGNAME=	fftw3-${V}
 SHARED_LIBS=	fftw3	3.1
-MODGNU_SHARED_LIBS=	fftw3	''
 CATEGORIES=	math
 
 HOMEPAGE=	http://www.fftw.org/

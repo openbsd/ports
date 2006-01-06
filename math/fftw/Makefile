@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2005/12/25 18:54:32 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2006/01/06 18:30:40 steven Exp $
 # $FreeBSD: ports/math/fftw/Makefile,v 1.11 2000/06/16 21:51:38 asami Exp $
 # Original from: Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
 
@@ -7,9 +7,6 @@ COMMENT=	"C routines for computing the Discrete Fourier Transform"
 DISTNAME=	fftw-2.1.5
 SHARED_LIBS=	fftw	2.7 \
 		rfftw	2.7
-MODGNU_SHARED_LIBS=	fftw	'' \
-			rfftw	''
-
 CATEGORIES=	math
 
 HOMEPAGE=	http://www.fftw.org/
