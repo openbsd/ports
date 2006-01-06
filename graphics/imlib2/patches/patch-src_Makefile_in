@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2004/09/21 22:40:36 brad Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.3 2006/01/06 21:57:00 brad Exp $
 --- src/Makefile.in.orig	Mon Aug 30 23:23:10 2004
-+++ src/Makefile.in	Sun Sep 19 05:26:22 2004
++++ src/Makefile.in	Fri Jan  6 16:00:32 2006
 @@ -114,7 +114,7 @@ AUTOMAKE_OPTIONS = 1.4 foreign
  # A list of all the files in the current directory which can be regenerated
  MAINTAINERCLEANFILES = Makefile.in
@@ -10,3 +10,14 @@ $OpenBSD: patch-src_Makefile_in,v 1.2 2004/09/21 22:40:36 brad Exp $
  INCLUDES = -I. -I$(top_srcdir) -I$(top_srcdir)/src 		       -I$(top_builddir)/src                        -I$(top_srcdir)/loaders                        $(freetype_cflags) -I/usr/X11R6/include $(X_CFLAGS)                        -I$(prefix)/include -I$(includedir) @XMISS@
  
  MMX_SRCS = asm_blend.S asm_rgba.S asm_scale.S asm_rotate.S 		       asm_blend_cmod.S
+@@ -129,8 +129,8 @@ libImlib2_la_SOURCES = scale.c image.c b
+ EXTRA_libImlib2_la_SOURCES = rend.c ximage.c rgba.c color.c grab.c draw.c 			     context.c color.h context.h draw.h grab.h rend.h 			     rgba.h ximage.h $(MMX_SRCS)
+ 
+ libImlib2_la_LDFLAGS = -version-info 2:2:1
+-@HAVE_MMX_TRUE@libImlib2_la_LIBADD = $(X_OBJS) @DLLDFLAGS@ $(MMX_OBJS)                        -lltdl                        $(x_libs) $(freetype_libs) $(LDFLAGS) -lm
+-@HAVE_MMX_FALSE@libImlib2_la_LIBADD = $(X_OBJS) @DLLDFLAGS@                        -lltdl                        $(x_libs) $(freetype_libs) $(LDFLAGS) -lm
++@HAVE_MMX_TRUE@libImlib2_la_LIBADD = $(X_OBJS)  $(MMX_OBJS)                        -lltdl                        $(x_libs) $(freetype_libs) $(LDFLAGS) -lm
++@HAVE_MMX_FALSE@libImlib2_la_LIBADD = $(X_OBJS)                         -lltdl                        $(x_libs) $(freetype_libs) $(LDFLAGS) -lm
+ @HAVE_MMX_TRUE@libImlib2_la_DEPENDENCIES = $(top_builddir)/config.h $(X_OBJS) $(MMX_OBJS)
+ @HAVE_MMX_FALSE@libImlib2_la_DEPENDENCIES = $(top_builddir)/config.h $(X_OBJS)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

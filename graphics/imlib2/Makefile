@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2005/12/26 14:35:52 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2006/01/06 21:57:00 brad Exp $
 
 COMMENT=	"image manipulation library"
 
 DISTNAME=	imlib2-1.1.2
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SHARED_LIBS=		Imlib2	2.2
 MODGNU_SHARED_LIBS=	Imlib2	''
 CATEGORIES=	graphics
@@ -38,6 +38,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
 
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+= --enable-mmx
+.else
+CONFIGURE_ARGS+= --disable-mmx
 .endif
 
 .include <bsd.port.mk>
