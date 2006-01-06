@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2005/12/22 07:35:20 canacar Exp $
+# $OpenBSD: Makefile,v 1.19 2006/01/06 20:30:26 bernd Exp $
 
 COMMENT=	"GNU Scientific Library"
 
 DISTNAME=	gsl-1.7
+SHARED_LIBS=	gsl		8.0 \
+		gslcblas	0.0
+
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE:=gsl/}
 HOMEPAGE=	http://sources.redhat.com/gsl/

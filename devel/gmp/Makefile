@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2005/01/06 19:52:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2006/01/06 20:30:26 bernd Exp $
 
 COMMENT=	"library for arbitrary precision arithmetic"
 
 DISTNAME=	gmp-4.1.4
+PKGNAME=	${DISTNAME}p0
+SHARED_LIBS=	gmp 6.3
 CATEGORIES=	devel math
 
 HOMEPAGE=	http://www.swox.com/gmp/
@@ -17,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU:=gmp/}
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 # Don't try to optimize for the local CPU submodel
