@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2005/12/23 16:12:24 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/01/06 21:10:44 brad Exp $
 
 COMMENT=	"multi-platform cd player development library"
 DISTNAME=	libcdaudio-0.99.6
@@ -21,10 +21,6 @@ MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=libcdaudio/}
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static
-
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
-		patch-*
 
 # Workaround compiler bug with cddb.c, otherwise we get a sig11
 .if ${MACHINE_ARCH} == "powerpc"
