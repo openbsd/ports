@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2006/01/06 04:20:32 brad Exp $
+# $OpenBSD: Makefile,v 1.40 2006/01/06 04:22:06 brad Exp $
 
 COMMENT=	"highly flexible sniffer/NIDS"
 
@@ -21,6 +21,7 @@ CONFIGURE_STYLE= gnu
 
 LIB_DEPENDS=     pcre::devel/pcre
 
+# gcc 3.3.5, Bus errors
 .if ${MACHINE_ARCH} == "sparc64"
 CFLAGS+=	-O0
 .endif
