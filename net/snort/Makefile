@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2006/01/04 04:15:18 david Exp $
+# $OpenBSD: Makefile,v 1.39 2006/01/06 04:20:32 brad Exp $
 
 COMMENT=	"highly flexible sniffer/NIDS"
 
 DISTNAME=	snort-2.3.3
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	net security
 MASTER_SITES=	${HOMEPAGE}/dl/current/
 
@@ -20,6 +20,10 @@ SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 
 LIB_DEPENDS=     pcre::devel/pcre
+
+.if ${MACHINE_ARCH} == "sparc64"
+CFLAGS+=	-O0
+.endif
 
 FLAVORS=	postgresql mysql smbalert flexresp
 FLAVOR?=	
