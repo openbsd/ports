@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/09/04 23:48:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/01/06 08:20:20 sturm Exp $
 bin/scribus
 include/scribus/
 include/scribus/alignselect.h
@@ -111,72 +111,72 @@ lib/scribus/import.prolog
 lib/scribus/libs/
 lib/scribus/libs/libabout.a
 lib/scribus/libs/libabout.la
-@lib lib/scribus/libs/libabout.so.0.0
+lib/scribus/libs/libabout.so
 lib/scribus/libs/libpdf.a
 lib/scribus/libs/libpdf.la
-@lib lib/scribus/libs/libpdf.so.0.0
+lib/scribus/libs/libpdf.so
 lib/scribus/libs/libpostscript.a
 lib/scribus/libs/libpostscript.la
-@lib lib/scribus/libs/libpostscript.so.0.0
+lib/scribus/libs/libpostscript.so
 lib/scribus/libs/libpreferences.a
 lib/scribus/libs/libpreferences.la
-@lib lib/scribus/libs/libpreferences.so.0.0
+lib/scribus/libs/libpreferences.so
 lib/scribus/plugins/
 lib/scribus/plugins/gettext/
 lib/scribus/plugins/gettext/libcsvim.a
 lib/scribus/plugins/gettext/libcsvim.la
-@lib lib/scribus/plugins/gettext/libcsvim.so.0.0
+lib/scribus/plugins/gettext/libcsvim.so
 lib/scribus/plugins/gettext/libhtmlim.a
 lib/scribus/plugins/gettext/libhtmlim.la
-@lib lib/scribus/plugins/gettext/libhtmlim.so.0.0
+lib/scribus/plugins/gettext/libhtmlim.so
 lib/scribus/plugins/gettext/libodtimplugin.a
 lib/scribus/plugins/gettext/libodtimplugin.la
-@lib lib/scribus/plugins/gettext/libodtimplugin.so.0.0
+lib/scribus/plugins/gettext/libodtimplugin.so
 lib/scribus/plugins/gettext/libsxwimplugin.a
 lib/scribus/plugins/gettext/libsxwimplugin.la
-@lib lib/scribus/plugins/gettext/libsxwimplugin.so.0.0
+lib/scribus/plugins/gettext/libsxwimplugin.so
 lib/scribus/plugins/gettext/libtextfilterplugin.a
 lib/scribus/plugins/gettext/libtextfilterplugin.la
-@lib lib/scribus/plugins/gettext/libtextfilterplugin.so.0.0
+lib/scribus/plugins/gettext/libtextfilterplugin.so
 lib/scribus/plugins/gettext/libtxtim.a
 lib/scribus/plugins/gettext/libtxtim.la
-@lib lib/scribus/plugins/gettext/libtxtim.so.0.0
+lib/scribus/plugins/gettext/libtxtim.so
 lib/scribus/plugins/libcharselect.a
 lib/scribus/plugins/libcharselect.la
-@lib lib/scribus/plugins/libcharselect.so.0.0
+lib/scribus/plugins/libcharselect.so
 lib/scribus/plugins/libfontpreview.a
 lib/scribus/plugins/libfontpreview.la
-@lib lib/scribus/plugins/libfontpreview.so.0.0
+lib/scribus/plugins/libfontpreview.so
 lib/scribus/plugins/libimportps.a
 lib/scribus/plugins/libimportps.la
-@lib lib/scribus/plugins/libimportps.so.0.0
+lib/scribus/plugins/libimportps.so
 lib/scribus/plugins/libnewfromtemplateplugin.a
 lib/scribus/plugins/libnewfromtemplateplugin.la
-@lib lib/scribus/plugins/libnewfromtemplateplugin.so.0.0
+lib/scribus/plugins/libnewfromtemplateplugin.so
 lib/scribus/plugins/liboodrawimp.a
 lib/scribus/plugins/liboodrawimp.la
-@lib lib/scribus/plugins/liboodrawimp.so.0.0
+lib/scribus/plugins/liboodrawimp.so
 lib/scribus/plugins/libpreview.a
 lib/scribus/plugins/libpreview.la
-@lib lib/scribus/plugins/libpreview.so.0.0
+lib/scribus/plugins/libpreview.so
 lib/scribus/plugins/libsaveastemplateplugin.a
 lib/scribus/plugins/libsaveastemplateplugin.la
-@lib lib/scribus/plugins/libsaveastemplateplugin.so.0.0
+lib/scribus/plugins/libsaveastemplateplugin.so
 lib/scribus/plugins/libscribusexportpixmap.a
 lib/scribus/plugins/libscribusexportpixmap.la
-@lib lib/scribus/plugins/libscribusexportpixmap.so.0.0
+lib/scribus/plugins/libscribusexportpixmap.so
 lib/scribus/plugins/libscribusshortwords.a
 lib/scribus/plugins/libscribusshortwords.la
-@lib lib/scribus/plugins/libscribusshortwords.so.0.0
+lib/scribus/plugins/libscribusshortwords.so
 lib/scribus/plugins/libscriptplugin.a
 lib/scribus/plugins/libscriptplugin.la
-@lib lib/scribus/plugins/libscriptplugin.so.0.0
+lib/scribus/plugins/libscriptplugin.so
 lib/scribus/plugins/libsvgexplugin.a
 lib/scribus/plugins/libsvgexplugin.la
-@lib lib/scribus/plugins/libsvgexplugin.so.0.0
+lib/scribus/plugins/libsvgexplugin.so
 lib/scribus/plugins/libsvgimplugin.a
 lib/scribus/plugins/libsvgimplugin.la
-@lib lib/scribus/plugins/libsvgimplugin.so.0.0
+lib/scribus/plugins/libsvgimplugin.so
 lib/scribus/profiles/
 lib/scribus/profiles/ReadMe
 lib/scribus/rgbscribus.txt

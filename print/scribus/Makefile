@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2006/01/05 21:07:45 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2006/01/06 08:20:20 sturm Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"DTP program"
 DISTNAME=	scribus-1.2.2.1
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	print
 
 HOMEPAGE=	http://www.scribus.org.uk/
@@ -55,5 +55,13 @@ CONFIGURE_ARGS+=--enable-debug=Yes
 CFLAGS+=-g
 CXXFLAGS+=-g
 .endif
+
+PLUGINS=about charselect csvim fontpreview htmlim importps \
+	newfromtemplateplugin odtimplugin oodrawimp pdf postscript preferences \
+	preview saveastemplateplugin scribusexportpixmap scribusshortwords \
+	scriptplugin svgexplugin svgimplugin sxwimplugin textfilterplugin txtim 
+.for _n in ${PLUGINS}
+MAKE_FLAGS+=	lib${_n}_la_LDFLAGS='-module -avoid-version'
+.endfor
 
 .include <bsd.port.mk>
