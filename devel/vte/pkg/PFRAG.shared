@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2004/09/14 23:44:02 espie Exp $
-@lib lib/libvte.so.8.0
+@comment $OpenBSD: PFRAG.shared,v 1.5 2006/01/06 08:49:35 sturm Exp $
+@lib lib/libvte.so.${LIBvte_VERSION}
