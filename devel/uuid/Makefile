@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2005/12/20 08:34:07 robert Exp $
+# $OpenBSD: Makefile,v 1.13 2006/01/06 09:05:50 sturm Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,9 +7,10 @@ COMMENT-perl=	"UUID modules for Perl"
 
 VERSION=		1.3.2
 DISTNAME=		uuid-${VERSION}
-FULLPKGNAME=		uuid-${VERSION}
-FULLPKGNAME-perl= 	p5-UUID-${VERSION}
+FULLPKGNAME=		uuid-${VERSION}p0
+FULLPKGNAME-perl= 	p5-UUID-${VERSION}p0
 CATEGORIES=		devel
+SHARED_LIBS=		uuid	13.22
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -32,6 +33,8 @@ CATEGORIES=		devel perl5
 LIB_DEPENDS+=		uuid.12::devel/uuid
 .  endif
 .endif
+
+USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-perl
