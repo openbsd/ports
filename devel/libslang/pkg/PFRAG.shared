@@ -1,4 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.10 2004/08/10 00:52:44 espie Exp $
-@comment lib/libslang.so
-@comment lib/libslang.so.14
-@lib lib/libslang.so.14.9
+@comment $OpenBSD: PFRAG.shared,v 1.11 2006/01/07 14:19:29 bernd Exp $
+@lib lib/libslang.so.${LIBslang_VERSION}
