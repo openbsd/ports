@@ -1,0 +1,24 @@
+$OpenBSD: patch-gdk-pixbuf_io-xpm_c,v 1.2 2006/01/07 07:14:52 pvalchev Exp $
+--- gdk-pixbuf/io-xpm.c.orig	Sun Nov 20 21:19:29 2005
++++ gdk-pixbuf/io-xpm.c	Sun Nov 20 21:20:06 2005
+@@ -1167,7 +1167,8 @@ file_buffer (enum buf_op op, gpointer ha
+ 		/* Fall through to the xpm_read_string. */
+ 
+ 	case op_body:
+-		xpm_read_string (h->infile, &h->buffer, &h->buffer_size);
++		if (!xpm_read_string (h->infile, &h->buffer, &h->buffer_size))
++			return NULL;
+ 		return h->buffer;
+ 
+ 	default:
+@@ -1262,7 +1263,9 @@ pixbuf_create_from_xpm (const gchar * (*
+                              _("XPM has invalid number of chars per pixel"));
+ 		return NULL;
+ 	}
+-	if (n_col <= 0 || n_col >= G_MAXINT / (cpp + 1)) {
++	if (n_col <= 0 ||
++	    n_col >= G_MAXINT / (cpp + 1) ||
++	    n_col >= G_MAXINT / sizeof (XPMColor)) {
+                 g_set_error (error,
+                              GDK_PIXBUF_ERROR,
+                              GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
