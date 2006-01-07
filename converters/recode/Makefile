@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2005/12/24 15:03:42 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2006/01/07 22:26:07 brad Exp $
 
 COMMENT=	"convert files between character sets and usages"
 
 DISTNAME=	recode-3.6
 PKGNAME=	${DISTNAME}p3
 SHARED_LIBS=	recode	0.0
-MODGNU_SHARED_LIBS=	recode ''
 
 CATEGORIES=	converters textproc
 
@@ -13,7 +12,7 @@ HOMEPAGE=	http://www.gnu.org/software/recode/
 
 MODULES=	devel/gettext
 
-# License: GPL
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -27,10 +26,6 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--without-included-gettext
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
-		patch-*
 
 REGRESS_DEPENDS=	:python-2.3*:lang/python/2.3
 
