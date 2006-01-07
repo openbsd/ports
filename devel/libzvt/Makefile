@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2005/11/14 09:58:31 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2006/01/07 15:10:53 bernd Exp $
 
 COMMENT=		"library for handling pseudo terminals"
 
 DISTNAME=		libzvt-2.0.1
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
+SHARED_LIBS=		zvt-2.0 0.1
+
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/
@@ -25,6 +27,7 @@ BUILD_DEPENDS=		:pkgconfig->=0.12.0p1:devel/pkgconfig
 LIB_DEPENDS=		gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
 			art_lgpl_2.5::graphics/libart
 
+USE_LIBTOOL=		Yes
 SEPARATE_BUILD= 	concurrent
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}

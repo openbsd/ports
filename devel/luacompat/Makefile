@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2005/09/06 13:09:27 pedro Exp $
+# $OpenBSD: Makefile,v 1.4 2006/01/07 15:10:53 bernd Exp $
 
 COMMENT=	"compatibility module for lua 5.1"
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 DISTNAME=	compat-5.1r4
 PKGNAME=	luacompat-5.1r4
+SHARED_LIBS=	luacompat 5.1
 DIST_SUBDIR=	luacompat-5.1r4
 CATEGORIES=	devel
 
@@ -29,13 +30,15 @@ post-extract:
 
 do-build:
 	cd ${WRKSRC};\
-	${CC} -o libluacompat.so.5.1 -I${LOCALBASE}/include -shared -fPIC compat-5.1.c
+	${CC} -o libluacompat.so.${LIBluacompat_VERSION} \
+		-I${LOCALBASE}/include -shared -fPIC compat-5.1.c
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lua/luacompat
 	${INSTALL_DATA} ${WRKSRC}/init.lua ${PREFIX}/lua/luacompat
 	${INSTALL_DATA} ${WRKSRC}/compat-5.1.lua ${PREFIX}/lua/luacompat
 	${INSTALL_DATA} ${WRKSRC}/compat-5.1.h ${PREFIX}/include/luacompat.h
-	${INSTALL_DATA} ${WRKSRC}/libluacompat.so.5.1 ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libluacompat.so.${LIBluacompat_VERSION} \
+		${PREFIX}/lib
 
 .include <bsd.port.mk>

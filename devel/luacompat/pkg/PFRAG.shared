@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/04/19 14:48:09 pedro Exp $
-@lib lib/libluacompat.so.5.1
+@comment $OpenBSD: PFRAG.shared,v 1.2 2006/01/07 15:10:53 bernd Exp $
+@lib lib/libluacompat.so.${LIBluacompat_VERSION}
