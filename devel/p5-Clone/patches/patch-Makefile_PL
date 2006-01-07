@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile_PL,v 1.1 2006/01/07 10:56:11 steven Exp $
+--- Makefile.PL.orig	Sat Jan  7 11:52:01 2006
++++ Makefile.PL	Sat Jan  7 11:52:05 2006
+@@ -8,7 +8,5 @@ WriteMakefile(
+     'LIBS'	=> [''],   # e.g., '-lm' 
+     'DEFINE'	=> '',     # e.g., '-DHAVE_SOMETHING' 
+     'INC'	=> '',     # e.g., '-I/usr/include/other' 
+-#    'OPTIMIZE'	=> '-g',     # e.g., '-I/usr/include/other' 
+-    'OPTIMIZE'	=> '-O3',     # e.g., '-I/usr/include/other' 
+ );
+ 
