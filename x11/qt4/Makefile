@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2005/12/31 15:59:50 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2006/01/07 11:22:53 espie Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples for qt4"
@@ -104,7 +104,9 @@ CONFIGURE_ARGS+= -I${LOCALBASE}/include/mysql -L${LOCALBASE}/lib/mysql \
 	-plugin-sql-mysql
 .if !defined(PACKAGING) || ${SUBPACKAGE} == "-mysql"
 LIB_DEPENDS+=mysqlclient_r::databases/mysql
+.  if defined(PACKAGING)
 LIB_DEPENDS+=	QtCore.4,QtSql::x11/qt4
+.  endif
 WANTLIB+=	m z
 .endif
 
@@ -116,7 +118,9 @@ CONFIGURE_ARGS+= -I${LOCALBASE}/include/postgresql \
 	    -I${LOCALBASE}/include -plugin-sql-psql
 .if !defined(PACKAGING) || ${SUBPACKAGE} == "-postgresql" 
 LIB_DEPENDS+=pq.2:postgresql-client-*:databases/postgresql
+.  if defined(PACKAGING)
 LIB_DEPENDS+=	QtCore.4,QtSql::x11/qt4
+.  endif
 WANTLIB+=	m z
 .endif
 
