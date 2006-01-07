@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2004/07/04 23:40:05 mjc Exp $
+# $OpenBSD: Makefile,v 1.3 2006/01/07 20:21:16 steven Exp $
 
 COMMENT=	"smart return-value object"
 
-DISTNAME=	Class-ReturnValue-0.52
+DISTNAME=	Class-ReturnValue-0.53
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
-HOMEPAGE=	http://search.cpan.org/dist/Class-ReturnValue/
 MAINTAINER=	Michael Coulter <mjc@openbsd.org>
 
 BUILD_DEPENDS=	:p5-Devel-StackTrace-*:devel/p5-Devel-StackTrace
@@ -19,7 +18,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Class/}
 
-CONFIGURE_STYLE=perl
-CONFIGURE_ARGS=	--no-prompts
+CONFIGURE_STYLE= 	perl
+CONFIGURE_ARGS= 	--no-prompts
+
+PKG_ARCH=	*
 
 .include <bsd.port.mk>
