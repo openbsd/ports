@@ -1,0 +1,11 @@
+$OpenBSD: patch-panel-plugin_Makefile_in,v 1.1 2006/01/07 09:50:14 brad Exp $
+--- panel-plugin/Makefile.in.orig	Fri Jan  6 17:00:38 2006
++++ panel-plugin/Makefile.in	Fri Jan  6 17:00:53 2006
+@@ -228,7 +228,6 @@ libnetload_la_CFLAGS = \
+ 	@XFCE4_PANEL_CFLAGS@
+ 
+ libnetload_la_LIBADD = \
+-	@LIBGTOP_LIBS@							    \
+     @SOLLIBS@                                   \
+ 	@XFCE4_PANEL_LIBS@
+ 
