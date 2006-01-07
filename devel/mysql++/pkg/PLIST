@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/10/07 13:24:53 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/01/07 17:58:49 bernd Exp $
 %%SHARED%%
 include/mysql++/
 include/mysql++/coldata.h
@@ -32,4 +32,5 @@ include/mysql++/string_util.h
 include/mysql++/tiny_int.h
 include/mysql++/type_info.h
 include/mysql++/vallist.h
+lib/libmysqlpp.a
 lib/libmysqlpp.la
