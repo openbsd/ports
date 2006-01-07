@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2005/11/18 16:14:36 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2006/01/07 14:48:47 bernd Exp $
 
 COMMENT=	"basic utility library for xfce4"
 V=		4.2.3.2
 DISTNAME=	libxfce4util-${V}
+SHARED_LIBS=	xfce4util 1.9
+
 CATEGORIES=	devel
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
 DIST_SUBDIR=	xfce4

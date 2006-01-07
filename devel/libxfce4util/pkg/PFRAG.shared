@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2005/11/18 16:14:36 jolan Exp $
-@lib lib/libxfce4util.so.1.9
+@comment $OpenBSD: PFRAG.shared,v 1.5 2006/01/07 14:48:47 bernd Exp $
+@lib lib/libxfce4util.so.${LIBxfce4util_VERSION}
