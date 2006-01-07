@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2005/12/31 13:03:39 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.83 2006/01/07 11:11:17 mbalmer Exp $
 
 COMMENT=	"PostgreSQL RDBMS (client)"
 COMMENT-server=	"PostgreSQL RDBMS (server)"
@@ -11,6 +11,10 @@ PKGNAME-server=	postgresql-server-${VERSION}p0
 PKGNAME-docs=	postgresql-docs-${VERSION}p1
 
 CATEGORIES=	databases
+SHARED_LIBS=	ecpg		5.1 \
+		ecpg_compat	2.1 \
+		pgtypes		2.1 \
+		pq		4.1
 
 HOMEPAGE=	http://www.postgresql.org/
 
@@ -80,6 +84,16 @@ WANTLIB=
 PKG_ARCH=	*
 .  endif
 .endif
+
+MAKE_ENV=	LIBpq_MAJOR=${LIBpq_VERSION:R} \
+		LIBpq_MINOR=${LIBpq_VERSION:E} \
+		LIBecpg_MAJOR=${LIBecpg_VERSION:R} \
+		LIBecpg_MINOR=${LIBecpg_VERSION:E} \
+		LIBecpg_compat_MAJOR=${LIBecpg_compat_VERSION:R} \
+		LIBecpg_compat_MINOR=${LIBecpg_compat_VERSION:E} \
+		LIBpgtypes_MAJOR=${LIBpgtypes_VERSION:R} \
+		LIBpgtypes_MINOR=${LIBpgtypes_VERSION:E}
+		
 
 # Regression tests must be done manually and not as root. Successful
 # runs have been achieved on the i386 using the following:
