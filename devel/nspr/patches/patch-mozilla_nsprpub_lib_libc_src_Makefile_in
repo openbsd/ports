@@ -1,0 +1,11 @@
+$OpenBSD: patch-mozilla_nsprpub_lib_libc_src_Makefile_in,v 1.1 2006/01/07 19:45:35 bernd Exp $
+--- mozilla/nsprpub/lib/libc/src/Makefile.in.orig	Sat Jan  7 19:57:53 2006
++++ mozilla/nsprpub/lib/libc/src/Makefile.in	Sat Jan  7 19:56:04 2006
+@@ -65,6 +65,7 @@ CSRCS =\
+ 
+ LIBRARY_NAME	= plc
+ LIBRARY_VERSION	= $(MOD_MAJOR_VERSION)
++SHARED_LIBRARY_VERSION = $(LIB$(LIBRARY_NAME)$(LIBRARY_VERSION)_VERSION)
+ 
+ RELEASE_LIBS = $(TARGETS)
+ 

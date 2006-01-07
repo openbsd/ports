@@ -1,0 +1,12 @@
+$OpenBSD: patch-mozilla_nsprpub_config_rules_mk,v 1.1 2006/01/07 19:45:35 bernd Exp $
+--- mozilla/nsprpub/config/rules.mk.orig	Wed May 14 03:23:49 2003
++++ mozilla/nsprpub/config/rules.mk	Sat Jan  7 19:41:37 2006
+@@ -122,7 +122,7 @@ ifeq ($(OS_ARCH)$(OS_RELEASE), AIX4.1)
+ SHARED_LIBRARY	= $(OBJDIR)/lib$(LIBRARY_NAME)$(LIBRARY_VERSION)_shr.a
+ else
+ ifdef MKSHLIB
+-SHARED_LIBRARY	= $(OBJDIR)/lib$(LIBRARY_NAME)$(LIBRARY_VERSION).$(DLL_SUFFIX)
++SHARED_LIBRARY	= $(OBJDIR)/lib$(LIBRARY_NAME)$(LIBRARY_VERSION).$(DLL_SUFFIX).$(SHARED_LIBRARY_VERSION)
+ endif
+ endif
+ 

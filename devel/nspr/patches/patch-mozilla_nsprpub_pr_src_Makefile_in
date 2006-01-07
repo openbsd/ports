@@ -1,0 +1,11 @@
+$OpenBSD: patch-mozilla_nsprpub_pr_src_Makefile_in,v 1.1 2006/01/07 19:45:35 bernd Exp $
+--- mozilla/nsprpub/pr/src/Makefile.in.orig	Sat Jan  7 20:27:01 2006
++++ mozilla/nsprpub/pr/src/Makefile.in	Sat Jan  7 20:26:47 2006
+@@ -326,6 +326,7 @@ endif
+ 
+ LIBRARY_NAME = nspr
+ LIBRARY_VERSION = $(MOD_MAJOR_VERSION)
++SHARED_LIBRARY_VERSION = $(LIB$(LIBRARY_NAME)$(LIBRARY_VERSION)_VERSION)
+ 
+ RELEASE_LIBS = $(TARGETS)
+ 

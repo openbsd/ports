@@ -1,0 +1,11 @@
+$OpenBSD: patch-mozilla_nsprpub_lib_ds_Makefile_in,v 1.1 2006/01/07 19:45:35 bernd Exp $
+--- mozilla/nsprpub/lib/ds/Makefile.in.orig	Sat Jan  7 19:31:56 2006
++++ mozilla/nsprpub/lib/ds/Makefile.in	Sat Jan  7 19:33:04 2006
+@@ -120,6 +120,7 @@ endif
+ 
+ LIBRARY_NAME	= plds
+ LIBRARY_VERSION	= $(MOD_MAJOR_VERSION)
++SHARED_LIBRARY_VERSION = $(LIB$(LIBRARY_NAME)$(LIBRARY_VERSION)_VERSION)
+ 
+ RELEASE_HEADERS = $(HEADERS)
+ RELEASE_HEADERS_DEST = $(RELEASE_INCLUDE_DIR)

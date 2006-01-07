@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/10/25 09:02:53 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2006/01/07 19:45:35 bernd Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/devel/nspr/Makefile,v 1.13 2003/12/13 21:30:19 peter Exp $
 
 # currently only supporting i386, but alpha sparc sparc64 are possible
@@ -8,6 +8,11 @@ COMMENT=		"Netscape Portable Runtime"
 
 VER=			4.4.1
 DISTNAME=		nspr-${VER}
+PKGNAME=		${DISTNAME}p0
+SHARED_LIBS=		nspr4	1.0 \
+			plc4	1.0 \
+			plds4	1.0
+
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.mozilla.org/projects/nspr/index.html
@@ -29,6 +34,10 @@ AUTOCONF_VERSION=	2.13
 CONFIGURE_STYLE=	autoconf no-autoheader
 CONFIGURE_ARGS+=	--disable-debug \
 			--with-pthreads
+
+MAKE_ENV=		LIBnspr4_VERSION=${LIBnspr4_VERSION} \
+			LIBplc4_VERSION=${LIBplc4_VERSION} \
+			LIBplds4_VERSION=${LIBplds4_VERSION}
 
 NO_REGRESS=		Yes
 
