@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2005/12/23 15:29:08 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/01/07 22:35:17 brad Exp $
 
 COMMENT=	"mikmod sound library"
 
@@ -6,7 +6,6 @@ VERSION=	3.1.10
 DISTNAME=	libmikmod-${VERSION}
 PKGNAME=	${DISTNAME}p4
 SHARED_LIBS=	mikmod	2.4
-MODGNU_SHARED_LIBS=	mikmod	''
 CATEGORIES=    	audio devel
 
 HOMEPAGE=	http://mikmod.raphnet.net/
@@ -20,10 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/files/libmikmod/ \
 		${MASTER_SITE_SUNSITE:=apps/sound/libs/}
-
-PATCH_LIST=     ${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
-                ${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
-                patch-*
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
