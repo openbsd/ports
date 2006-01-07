@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2005/12/25 16:15:36 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2006/01/07 10:17:12 steven Exp $
 
 COMMENT=	"gtk2 spelling checker"
 DISTNAME=	gtkspell-2.0.5
 PKGNAME=	${DISTNAME}p1
-SHARED_LIBS=		gtkspell	0.0
-MODGNU_SHARED_LIBS=	gtkspell	''
+SHARED_LIBS=	gtkspell 0.0
 CATEGORIES=	textproc x11
 MASTER_SITES=	${HOMEPAGE}download/
 

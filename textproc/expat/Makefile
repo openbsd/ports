@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2005/12/25 16:08:25 steven Exp $
+# $OpenBSD: Makefile,v 1.27 2006/01/07 10:17:12 steven Exp $
 # $FreeBSD: Makefile,v 1.2 1999/08/31 02:09:14 peter Exp $
 
 COMMENT=	"XML 1.0 parser written in C"
 
 DISTNAME=	expat-1.95.6
 PKGNAME=	${DISTNAME}p1
-SHARED_LIBS=		expat	4.0
-MODGNU_SHARED_LIBS=	expat	''
+SHARED_LIBS=	expat	4.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=expat/}
 
