@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2005/11/20 07:20:23 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.24 2006/01/07 07:10:19 pvalchev Exp $
 bin/gdk-pixbuf-csource
 bin/gdk-pixbuf-query-loaders
 bin/gtk-demo
@@ -17,13 +17,11 @@ include/gtk-2.0/gdk-pixbuf/gdk-pixbuf-features.h
 include/gtk-2.0/gdk-pixbuf/gdk-pixbuf-io.h
 include/gtk-2.0/gdk-pixbuf/gdk-pixbuf-loader.h
 include/gtk-2.0/gdk-pixbuf/gdk-pixbuf-marshal.h
-include/gtk-2.0/gdk-pixbuf/gdk-pixbuf-simple-anim.h
 include/gtk-2.0/gdk-pixbuf/gdk-pixbuf-transform.h
 include/gtk-2.0/gdk-pixbuf/gdk-pixbuf.h
 include/gtk-2.0/gdk-pixbuf/gdk-pixdata.h
 include/gtk-2.0/gdk/gdk.h
 include/gtk-2.0/gdk/gdkalias.h
-include/gtk-2.0/gdk/gdkcairo.h
 include/gtk-2.0/gdk/gdkcolor.h
 include/gtk-2.0/gdk/gdkcursor.h
 include/gtk-2.0/gdk/gdkdisplay.h
@@ -337,7 +335,6 @@ share/gtk-2.0/demo/gnu-keys.png
 share/gtk-2.0/demo/gtk-logo-rgb.gif
 share/gtk-2.0/demo/hypertext.c
 share/gtk-2.0/demo/iconview.c
-share/gtk-2.0/demo/iconview_edit.c
 share/gtk-2.0/demo/images.c
 share/gtk-2.0/demo/list_store.c
 share/gtk-2.0/demo/menus.c
@@ -462,10 +459,6 @@ share/locale/ja/LC_MESSAGES/gtk20-properties.mo
 share/locale/ja/LC_MESSAGES/gtk20.mo
 share/locale/ko/LC_MESSAGES/gtk20-properties.mo
 share/locale/ko/LC_MESSAGES/gtk20.mo
-share/locale/ku/
-share/locale/ku/LC_MESSAGES/
-share/locale/ku/LC_MESSAGES/gtk20-properties.mo
-share/locale/ku/LC_MESSAGES/gtk20.mo
 share/locale/li/
 share/locale/li/LC_MESSAGES/
 share/locale/li/LC_MESSAGES/gtk20-properties.mo
@@ -558,10 +551,6 @@ share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/gtk20-properties.mo
 share/locale/ta/LC_MESSAGES/gtk20.mo
-share/locale/te/
-share/locale/te/LC_MESSAGES/
-share/locale/te/LC_MESSAGES/gtk20-properties.mo
-share/locale/te/LC_MESSAGES/gtk20.mo
 share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/gtk20-properties.mo
@@ -602,14 +591,13 @@ share/locale/zh_TW/LC_MESSAGES/gtk20-properties.mo
 share/locale/zh_TW/LC_MESSAGES/gtk20.mo
 share/themes/
 share/themes/Default/
+share/themes/Default/gtk-2.0/
 share/themes/Default/gtk-2.0-key/
 share/themes/Default/gtk-2.0-key/gtkrc
+share/themes/Default/gtk-2.0/gtkrc
 share/themes/Emacs/
 share/themes/Emacs/gtk-2.0-key/
 share/themes/Emacs/gtk-2.0-key/gtkrc
-share/themes/Raleigh/
-share/themes/Raleigh/gtk-2.0/
-share/themes/Raleigh/gtk-2.0/gtkrc
 %%SHARED%%
 @exec mkdir -p /var/db/gtk-2.0
 @exec %D/bin/gdk-pixbuf-query-loaders > /var/db/gtk-2.0/gdk-pixbuf.loaders

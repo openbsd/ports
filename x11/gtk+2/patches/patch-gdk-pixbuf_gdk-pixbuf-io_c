@@ -1,7 +1,7 @@
-$OpenBSD: patch-gdk-pixbuf_gdk-pixbuf-io_c,v 1.4 2005/11/13 06:23:58 marcm Exp $
---- gdk-pixbuf/gdk-pixbuf-io.c.orig	Fri Jul 22 08:34:32 2005
-+++ gdk-pixbuf/gdk-pixbuf-io.c	Tue Aug 23 22:16:42 2005
-@@ -276,7 +276,7 @@ gdk_pixbuf_get_module_file (void)
+$OpenBSD: patch-gdk-pixbuf_gdk-pixbuf-io_c,v 1.5 2006/01/07 07:10:19 pvalchev Exp $
+--- gdk-pixbuf/gdk-pixbuf-io.c.orig	Sun Dec  5 04:43:47 2004
++++ gdk-pixbuf/gdk-pixbuf-io.c	Wed Mar 30 21:27:26 2005
+@@ -258,7 +258,7 @@ gdk_pixbuf_get_module_file (void)
    gchar *result = g_strdup (g_getenv ("GDK_PIXBUF_MODULE_FILE"));
  
    if (!result)

@@ -1,7 +1,7 @@
-$OpenBSD: patch-gtk_stock-icons_Makefile_in,v 1.6 2005/11/13 06:23:58 marcm Exp $
---- gtk/stock-icons/Makefile.in.orig	Sat Aug 13 06:21:44 2005
-+++ gtk/stock-icons/Makefile.in	Tue Aug 23 22:16:42 2005
-@@ -662,7 +662,7 @@ noinst_DATA = gtkstockpixbufs.h
+$OpenBSD: patch-gtk_stock-icons_Makefile_in,v 1.7 2006/01/07 07:10:19 pvalchev Exp $
+--- gtk/stock-icons/Makefile.in.orig	Mon Aug  1 10:38:54 2005
++++ gtk/stock-icons/Makefile.in	Sun Jul 31 22:56:10 2005
+@@ -655,7 +655,7 @@ noinst_DATA = gtkstockpixbufs.h
  CLEANFILES = $(noinst_DATA)
  
  @CROSS_COMPILING_TRUE@pixbuf_csource = $(GDK_PIXBUF_CSOURCE)
