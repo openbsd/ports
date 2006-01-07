@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2005/11/30 19:45:07 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2006/01/07 01:10:11 steven Exp $
 
 COMMENT=	"subversion revision control system"
 COMMENT-perl=	"perl interface to subversion"
@@ -9,6 +9,22 @@ DISTNAME=	subversion-${VERSION}
 PKGNAME=	${DISTNAME}p1
 PKGNAME-perl=	p5-SVN-${VERSION}
 PKGNAME-python=	py-subversion-${VERSION}
+SHARED_LIBS=	svn_client-1	0.0	\
+		svn_delta-1	0.0	\
+		svn_diff-1	0.0	\
+		svn_fs-1	0.0	\
+		svn_fs_base-1	0.0	\
+		svn_fs_fs-1	0.0	\
+		svn_ra-1	0.0	\
+		svn_ra_dav-1	0.0	\
+		svn_ra_local-1	0.0	\
+		svn_ra_svn-1	0.0	\
+		svn_repos-1	0.0	\
+		svn_subr-1	0.0	\
+		svn_swig_perl-1	0.0	\
+		svn_swig_py-1	0.0	\
+		svn_wc-1	0.0
+
 CATEGORIES=	devel
 
 HOMEPAGE=	http://subversion.tigris.org/
@@ -97,18 +113,24 @@ pre-build:
 
 .if !${FLAVOR:L:Mno_bindings}
 post-build: 
-	@cd ${WRKBUILD} && ${MAKE_PROGRAM} swig-py
-	@cd ${WRKBUILD} && ${MAKE_PROGRAM} swig-pl
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
+		${MAKE_FLAGS} swig-py
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
+		${MAKE_FLAGS} swig-pl
 
 post-regress:
-	@cd ${WRKBUILD} && ${MAKE_PROGRAM} ${REGRESS_FLAGS} check FSTYPE=bdb
-	@cd ${WRKBUILD} && ${MAKE_PROGRAM} ${REGRESS_FLAGS} check-swig-pl
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
+		${REGRESS_FLAGS} check FSTYPE=bdb
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
+		${REGRESS_FLAGS} check-swig-pl
 .endif
 
 post-install:
 .if !${FLAVOR:L:Mno_bindings}
-	@cd ${WRKBUILD} && ${MAKE_PROGRAM} install-swig-py
-	@cd ${WRKBUILD} && ${MAKE_PROGRAM} install-swig-pl
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
+		${FAKE_FLAGS} install-swig-py
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
+		${FAKE_FLAGS} install-swig-pl
 .endif
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/backup

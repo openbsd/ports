@@ -1,14 +1,14 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/12/01 16:47:54 alek Exp $
-@lib lib/libsvn_client-1.so.0.0
-@lib lib/libsvn_delta-1.so.0.0
-@lib lib/libsvn_diff-1.so.0.0
-@lib lib/libsvn_fs-1.so.0.0
-@lib lib/libsvn_fs_base-1.so.0.0
-@lib lib/libsvn_fs_fs-1.so.0.0
-@lib lib/libsvn_ra-1.so.0.0
-@lib lib/libsvn_ra_dav-1.so.0.0
-@lib lib/libsvn_ra_local-1.so.0.0
-@lib lib/libsvn_ra_svn-1.so.0.0
-@lib lib/libsvn_repos-1.so.0.0
-@lib lib/libsvn_subr-1.so.0.0
-@lib lib/libsvn_wc-1.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.2 2006/01/07 01:10:11 steven Exp $
+@lib lib/libsvn_client-1.so.${LIBsvn_client-1_VERSION}
+@lib lib/libsvn_delta-1.so.${LIBsvn_delta-1_VERSION}
+@lib lib/libsvn_diff-1.so.${LIBsvn_diff-1_VERSION}
+@lib lib/libsvn_fs-1.so.${LIBsvn_fs-1_VERSION}
+@lib lib/libsvn_fs_base-1.so.${LIBsvn_fs_base-1_VERSION}
+@lib lib/libsvn_fs_fs-1.so.${LIBsvn_fs_fs-1_VERSION}
+@lib lib/libsvn_ra-1.so.${LIBsvn_ra-1_VERSION}
+@lib lib/libsvn_ra_dav-1.so.${LIBsvn_ra_dav-1_VERSION}
+@lib lib/libsvn_ra_local-1.so.${LIBsvn_ra_local-1_VERSION}
+@lib lib/libsvn_ra_svn-1.so.${LIBsvn_ra_svn-1_VERSION}
+@lib lib/libsvn_repos-1.so.${LIBsvn_repos-1_VERSION}
+@lib lib/libsvn_subr-1.so.${LIBsvn_subr-1_VERSION}
+@lib lib/libsvn_wc-1.so.${LIBsvn_wc-1_VERSION}

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.shared-python,v 1.1.1.1 2004/12/01 16:47:54 alek Exp $
-@lib lib/libsvn_swig_py-1.so.0.0
+@comment $OpenBSD: PFRAG.shared-python,v 1.2 2006/01/07 01:10:11 steven Exp $
+@lib lib/libsvn_swig_py-1.so.${LIBsvn_swig_py-1_VERSION}
 lib/python${PYTHON_VER}/site-packages/libsvn/_client.so
 lib/python${PYTHON_VER}/site-packages/libsvn/_core.so
 lib/python${PYTHON_VER}/site-packages/libsvn/_delta.so
