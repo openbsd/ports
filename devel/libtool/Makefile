@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.50 2006/01/05 19:36:16 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2006/01/07 09:58:39 brad Exp $
 # $FreeBSD: Makefile,v 1.2 1998/09/23 16:15:53 vanilla Exp $
 
 COMMENT=	"generic shared library support script"
 COMMENT-ltdl=	"GNU libtool system independent dlopen wrapper"
 
-VERSION=	1.5.20
+VERSION=	1.5.22
 DISTNAME=	libtool-${VERSION}
-PKGNAME=	${DISTNAME}p5
-PKGNAME-ltdl=	libltdl-${VERSION}p1
-SHARED_LIBS=		ltdl 4.2
+PKGNAME-ltdl=	libltdl-${VERSION}
+SHARED_LIBS=		ltdl 4.3
 MODGNU_SHARED_LIBS=	ltdl '-no-undefined'
 
 CATEGORIES=	devel
@@ -28,7 +27,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
+		 --infodir=${PREFIX}/info
 FAKE_FLAGS=	 ${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 MULTI_PACKAGES=	-ltdl
