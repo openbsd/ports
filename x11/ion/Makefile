@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2005/12/10 21:35:06 pedro Exp $
+# $OpenBSD: Makefile,v 1.30 2006/01/08 21:03:49 pedro Exp $
 
 COMMENT=	"light, keyboard friendly window manager"
 
-DISTNAME=	ion-3ds-20051210
+DISTNAME=	ion-3ds-20060107
 CATEGORIES=	x11
 
 HOMEPAGE=	http://modeemi.cs.tut.fi/~tuomov/ion/
