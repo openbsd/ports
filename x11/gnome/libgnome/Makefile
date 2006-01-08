@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2005/05/24 21:57:26 marcm Exp $
+# $OpenBSD: Makefile,v 1.13 2006/01/08 14:35:20 steven Exp $
 
 COMMENT=		"libraries for the GNOME project"
 
 DISTNAME=		libgnome-2.10.0
+PKGNAME=		${DISTNAME}p0
+SHARED_LIBS=		gnome-2	1000.0
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
@@ -29,6 +31,7 @@ LIB_DEPENDS=		esd.2.26::audio/esound \
 			audiofile::devel/libaudiofile
 
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu old
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}/gnome"
