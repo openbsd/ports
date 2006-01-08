@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.3 2006/01/08 01:14:19 brad Exp $
+--- src/Makefile.in.orig	Sat Jan  7 20:08:52 2006
++++ src/Makefile.in	Sat Jan  7 20:09:08 2006
+@@ -75,7 +75,7 @@ VERSION = @VERSION@
+ 
+ lib_LTLIBRARIES = libdivxdecore.la
+ 
+-libdivxdecore_la_LDFLAGS = -module -avoid-version
++libdivxdecore_la_LDFLAGS = -module
+ 
+ libdivxdecore_la_SOURCES =  basic_prediction.c basic_prediction.h decore.c decore.h getbits.c global.h idct.c idct.h mp4_block.c mp4_block.h mp4_decoder.c mp4_decoder.h mp4_header.c mp4_header.h mp4_mblock.c mp4_mblock.h mp4_picture.c mp4_predict.c mp4_predict.h mp4_recon.c mp4_vld.c mp4_vld.h portab.h postprocess.c postprocess.h transferIDCT.c transferIDCT.h yuv2rgb.h
+ 
