@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.50 2005/12/23 17:37:03 todd Exp $
+# $OpenBSD: Makefile,v 1.51 2006/01/08 10:27:14 steven Exp $
 
 COMMENT=	"get files from FTP, Gopher, HTTP or HTTPS servers"
 
 DISTNAME=	curl-7.15.1
+SHARED_LIBS=	curl	3.2
 CATEGORIES=	net
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		ftp://ftp.sunet.se/pub/www/utilities/curl/ \
@@ -12,8 +13,6 @@ MASTER_SITES=	http://curl.haxx.se/download/ \
 		http://www.cubic.ch/mirror/curl/ \
 		http://curl.webmeta.com/ \
 		ftp://gd.tuwien.ac.ut/utils/archivers/curl/
-SHARED_LIBS=	curl	3.2
-MODGNU_SHARED_LIBS=curl	''
 
 HOMEPAGE=	http://curl.haxx.se/
 
