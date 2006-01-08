@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2005/09/05 20:05:03 marcm Exp $
+# $OpenBSD: Makefile,v 1.22 2006/01/08 21:44:11 alek Exp $
 
 COMMENT=		"GNOME Virtual File System"
 
 DISTNAME=		gnome-vfs-1.0.5
 PKGNAME=		${DISTNAME}p1
+SHARED_LIBS=		gnomevfs 0.2
 CATEGORIES=		devel x11/gnome
 HOMEPAGE=		http://www.gnome.org/
 
@@ -32,6 +33,8 @@ CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV= 		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-pthread" \
 			CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include"
+
+USE_LIBTOOL=		Yes
 
 # writes to $HOME and other brokenness
 NO_REGRESS=		Yes
