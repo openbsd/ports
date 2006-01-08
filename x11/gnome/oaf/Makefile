@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2005/09/05 20:05:02 marcm Exp $
+# $OpenBSD: Makefile,v 1.18 2006/01/08 22:49:25 alek Exp $
 
 COMMENT=		"Object Activation Framework for GNOME"
 
 DISTNAME=		oaf-0.6.10
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
+SHARED_LIBS=		oaf 1.0
 CATEGORIES=		devel x11/gnome
 HOMEPAGE=		http://www.gnome.org/
 
@@ -23,6 +24,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c glib gmodule m wrap z
 
 USE_X11=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--disable-orbittest # XXX problems with warnings
