@@ -1,9 +1,18 @@
-# $OpenBSD: Makefile,v 1.27 2005/11/03 18:28:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2006/01/08 12:44:10 steven Exp $
 
 COMMENT=		"libraries for the GNOME project"
 
 DISTNAME=		gnome-libs-1.4.2
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
+SHARED_LIBS=		art_lgpl	4.0	\
+			gnome		36.3	\
+			gnomesupport	0.0	\
+			gnomeui		47.0	\
+			gnorba		28.8	\
+			gnorbagtk	0.0	\
+			gtkxmhtml	1.1	\
+			zvt		6.0
+
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
@@ -28,6 +37,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xi Xpm audiofile c glib gmodule gtk \
 			iconv intl jpeg m png tiff ungif util wrap z
 
+USE_LIBTOOL=		Yes
 USE_X11=		Yes
 USE_GMAKE=		Yes
 AUTOCONF_VERSION=	2.13

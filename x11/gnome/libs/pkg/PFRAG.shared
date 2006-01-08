@@ -1,9 +1,9 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2005/05/11 19:05:20 alek Exp $
-@lib lib/libart_lgpl.so.4.0
-@lib lib/libgnome.so.36.3
-@lib lib/libgnomesupport.so.0.0
-@lib lib/libgnomeui.so.47.0
-@lib lib/libgnorba.so.28.8
-@lib lib/libgnorbagtk.so.0.0
-@lib lib/libgtkxmhtml.so.1.1
-@lib lib/libzvt.so.6.0
+@comment $OpenBSD: PFRAG.shared,v 1.6 2006/01/08 12:44:10 steven Exp $
+@lib lib/libart_lgpl.so.${LIBart_lgpl_VERSION}
+@lib lib/libgnome.so.${LIBgnome_VERSION}
+@lib lib/libgnomesupport.so.${LIBgnomesupport_VERSION}
+@lib lib/libgnomeui.so.${LIBgnomeui_VERSION}
+@lib lib/libgnorba.so.${LIBgnorba_VERSION}
+@lib lib/libgnorbagtk.so.${LIBgnorbagtk_VERSION}
+@lib lib/libgtkxmhtml.so.${LIBgtkxmhtml_VERSION}
+@lib lib/libzvt.so.${LIBzvt_VERSION}
