@@ -1,15 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2005/12/27 12:46:51 steven Exp $
+# $OpenBSD: Makefile,v 1.28 2006/01/08 01:38:36 steven Exp $
 # Uses pthreads
 
 COMMENT=	"General Input Library (used by libggi)"
 DISTNAME=	libgii-0.9.0
 PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=		gg	0.9	\
-			gii	0.9
-MODGNU_SHARED_LIBS=	gg	''	\
-			gii	''
-LIBgg_ALIAS=		realgg
-LIBgii_ALIAS=		realgii
+SHARED_LIBS=	gg	0.9	\
+		gii	0.9
 
 CATEGORIES=	graphics
 

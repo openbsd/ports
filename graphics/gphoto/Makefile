@@ -1,43 +1,26 @@
-# $OpenBSD: Makefile,v 1.17 2005/12/30 12:14:40 steven Exp $
+# $OpenBSD: Makefile,v 1.18 2006/01/08 01:38:37 steven Exp $
 
 COMMENT=	"universal digital camera picture control tool"
 
 DISTNAME=	gphoto-0.4.3
 PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=		gphoto_canon		0.0	\
-			gphoto_casio_qv		0.0	\
-			gphoto_coolpix600	0.0	\
-			gphoto_dimage_v		0.0	\
-			gphoto_dir		0.0	\
-			gphoto_fuji		0.0	\
-			gphoto_kodak_dc2x	0.0	\
-			gphoto_kodak_generic	0.0	\
-			gphoto_konica_qm100	0.0	\
-			gphoto_konica_qmxxx	0.0	\
-			gphoto_mustek_mdc800	1.0	\
-			gphoto_philips		0.5	\
-			gphoto_photopc		0.0	\
-			gphoto_ricoh300z	0.0	\
-			gphoto_samsung		0.0	\
-			gphoto_sony_dscf1	0.0	\
-			gphoto_sony_dscf55	0.0
-MODGNU_SHARED_LIBS=	gphoto_canon		''	\
-			gphoto_casio_qv		''	\
-			gphoto_coolpix600	''	\
-			gphoto_dimage_v		''	\
-			gphoto_dir		''	\
-			gphoto_fuji		''	\
-			gphoto_kodak_dc2x	''	\
-			gphoto_kodak_generic	''	\
-			gphoto_konica_qm100	''	\
-			gphoto_konica_qmxxx	''	\
-			gphoto_mustek_mdc800	''	\
-			gphoto_philips		''	\
-			gphoto_photopc		''	\
-			gphoto_ricoh300z	''	\
-			gphoto_samsung		''	\
-			gphoto_sony_dscf1	''	\
-			gphoto_sony_dscf55	''
+SHARED_LIBS=	gphoto_canon		0.0	\
+		gphoto_casio_qv		0.0	\
+		gphoto_coolpix600	0.0	\
+		gphoto_dimage_v		0.0	\
+		gphoto_dir		0.0	\
+		gphoto_fuji		0.0	\
+		gphoto_kodak_dc2x	0.0	\
+		gphoto_kodak_generic	0.0	\
+		gphoto_konica_qm100	0.0	\
+		gphoto_konica_qmxxx	0.0	\
+		gphoto_mustek_mdc800	1.0	\
+		gphoto_philips		0.5	\
+		gphoto_photopc		0.0	\
+		gphoto_ricoh300z	0.0	\
+		gphoto_samsung		0.0	\
+		gphoto_sony_dscf1	0.0	\
+		gphoto_sony_dscf55	0.0
 
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.gphoto.org/dist/

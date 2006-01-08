@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2005/12/27 15:20:20 steven Exp $
+# $OpenBSD: Makefile,v 1.26 2006/01/08 01:38:36 steven Exp $
 
 COMMENT=	"color font rendering library for X"
 
 DISTNAME=	fnlib-0.5
 PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=		Fnlib	5.0
-MODGNU_SHARED_LIBS=	Fnlib	''
+SHARED_LIBS=	Fnlib	5.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=enlightenment/}
 
