@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2005/12/26 15:44:01 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2006/01/08 11:04:59 steven Exp $
 
 COMMENT=	"reference implementation of JPEG-2000"
 
 DISTNAME=	jasper-1.701.0
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=		jasper	1.0
-MODGNU_SHARED_LIBS=	jasper	''
+PKGNAME=	${DISTNAME}p1
+SHARED_LIBS=	jasper		1.0 \
+		jasper-1.701	1.0
 
 CATEGORIES=	graphics
 MASTER_SITES=	${HOMEPAGE}software/
