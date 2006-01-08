@@ -1,0 +1,12 @@
+$OpenBSD: patch-cdplayer_cc,v 1.1 2006/01/08 15:44:50 alek Exp $
+--- cdplayer.cc.orig	Sun Jan  8 15:56:08 2006
++++ cdplayer.cc	Sun Jan  8 15:56:14 2006
+@@ -29,7 +29,7 @@ private:
+ public:
+     button (char *s) {state=0; strcpy (name, s);}
+     ~button () {}
+-    set (int i) {
++    void set (int i) {
+ 	if (state != i) {
+ 	    state = i;
+ 	    if (state == 0)

@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:16:56 espie Exp $
-bin/cdplayer
+@comment $OpenBSD: PLIST,v 1.6 2006/01/08 15:44:50 alek Exp $
 bin/xcd
 lib/xcd/
+lib/xcd/cdplayer
 lib/xcd/eject.xbm
 lib/xcd/eject_s.xbm
 lib/xcd/ff.xbm
@@ -18,5 +18,4 @@ lib/xcd/rewind.xbm
 lib/xcd/rewind_s.xbm
 lib/xcd/stop.xbm
 lib/xcd/stop_s.xbm
-@man man/man1/cdplayer.1
 @man man/man1/xcd.1

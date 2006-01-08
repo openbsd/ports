@@ -1,0 +1,9 @@
+$OpenBSD: patch-xcd_in,v 1.1 2006/01/08 15:44:50 alek Exp $
+--- xcd.in.orig	Sun Jan  8 16:15:06 2006
++++ xcd.in	Sun Jan  8 16:15:18 2006
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/wish8.0 -f
++#!!!WISH!! -f
+ # -*- tcl -*-
+ 
+ #  Copyright (C) 1998 by Jean-Marc Zucconi (jmz@FreeBSD.ORG)
