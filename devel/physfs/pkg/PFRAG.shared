@@ -1,2 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2004/08/10 08:36:46 espie Exp $
-@lib lib/libphysfs.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.4 2006/01/08 10:58:46 bernd Exp $
+@lib lib/libphysfs-1.0.so.${LIBphysfs-1.0_VERSION}
+@lib lib/libphysfs.so.${LIBphysfs_VERSION}
