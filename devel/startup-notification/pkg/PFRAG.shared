@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/14 23:44:02 espie Exp $
-@lib lib/libstartup-notification-1.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.3 2006/01/08 11:16:00 aanriot Exp $
+@lib lib/libstartup-notification-1.so.${LIBstartup-notification-1_VERSION}
