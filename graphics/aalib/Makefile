@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2005/12/26 15:14:11 steven Exp $
+# $OpenBSD: Makefile,v 1.24 2006/01/08 01:01:17 steven Exp $
 
 COMMENT=	"ascii art library"
 
 DISTNAME=	aalib-1.2
 PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=		aa	1.3
-MODGNU_SHARED_LIBS=	aa	''
+SHARED_LIBS=	aa	1.3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
 
