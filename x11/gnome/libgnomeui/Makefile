@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2005/11/13 06:29:04 marcm Exp $
+# $OpenBSD: Makefile,v 1.11 2006/01/08 15:23:32 steven Exp $
 
 COMMENT=		"user interface components for GNOME"
 
 DISTNAME=		libgnomeui-2.10.1
+PKGNAME=		${DISTNAME}p0
+SHARED_LIBS=		gnomeui-2	1000.1
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2005/05/24 22:02:45 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.10 2006/01/08 15:23:32 steven Exp $
 include/libgnomeui-2.0/
 include/libgnomeui-2.0/gnome.h
 include/libgnomeui-2.0/libgnomeui/
@@ -169,8 +169,6 @@ share/locale/ar/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/libgnomeui-2.0.mo
-share/locale/be/
-share/locale/be/LC_MESSAGES/
 share/locale/be/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/bg/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/bn/
@@ -182,8 +180,6 @@ share/locale/br/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/bs/
 share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/libgnomeui-2.0.mo
-share/locale/ca/
-share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/cs/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/cy/
@@ -209,8 +205,6 @@ share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/fi/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/fr/LC_MESSAGES/libgnomeui-2.0.mo
-share/locale/ga/
-share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/gl/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/gu/
@@ -283,8 +277,6 @@ share/locale/sl/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/sq/
 share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/libgnomeui-2.0.mo
-share/locale/sr/
-share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/sr@Latn/
 share/locale/sr@Latn/LC_MESSAGES/
@@ -304,8 +296,6 @@ share/locale/tk/LC_MESSAGES/
 share/locale/tk/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/tr/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/uk/LC_MESSAGES/libgnomeui-2.0.mo
-share/locale/vi/
-share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/wa/
 share/locale/wa/LC_MESSAGES/
