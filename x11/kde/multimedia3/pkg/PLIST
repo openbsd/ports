@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2005/10/17 11:28:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.21 2006/01/08 16:03:28 espie Exp $
 bin/artsbuilder
 bin/artscontrol
 bin/juk
@@ -288,7 +288,7 @@ ${KDE}/noatun_winskin.so
 ${KDE}/noatunsimple.la
 ${KDE}/noatunsimple.so
 lib/libakode.la
-@lib lib/libakode.so.1.0
+@lib lib/libakode.so.${LIBakode_VERSION}
 lib/libakode_mpc_decoder.la
 lib/libakode_mpc_decoder.so
 lib/libakode_mpeg_decoder.la
@@ -299,45 +299,45 @@ lib/libakode_xiph_decoder.la
 lib/libakode_xiph_decoder.so
 lib/libarts_akode.la
 lib/libarts_akode.so
-@lib lib/libarts_mpeglib-0.3.0.so.0.3
+@lib lib/libarts_mpeglib-0.3.0.so.${LIBarts_mpeglib-0.3.0_VERSION}
 lib/libarts_mpeglib.la
-@lib lib/libarts_mpeglib.so.0.3
+@lib lib/libarts_mpeglib.so.${LIBarts_mpeglib_VERSION}
 lib/libarts_splay.la
-@lib lib/libarts_splay.so.0.0
+@lib lib/libarts_splay.so.${LIBarts_splay_VERSION}
 lib/libartsbuilder.la
-@lib lib/libartsbuilder.so.0.0
+@lib lib/libartsbuilder.so.${LIBartsbuilder_VERSION}
 lib/libartscontrolapplet.la
-@lib lib/libartscontrolapplet.so.1.0
+@lib lib/libartscontrolapplet.so.${LIBartscontrolapplet_VERSION}
 lib/libartscontrolsupport.la
-@lib lib/libartscontrolsupport.so.1.0
+@lib lib/libartscontrolsupport.so.${LIBartscontrolsupport_VERSION}
 lib/libartseffects.la
 lib/libartseffects.so
 lib/libartsgui.la
-@lib lib/libartsgui.so.0.0
+@lib lib/libartsgui.so.${LIBartsgui_VERSION}
 lib/libartsgui_idl.la
-@lib lib/libartsgui_idl.so.0.0
+@lib lib/libartsgui_idl.so.${LIBartsgui_idl_VERSION}
 lib/libartsgui_kde.la
-@lib lib/libartsgui_kde.so.0.0
+@lib lib/libartsgui_kde.so.${LIBartsgui_kde_VERSION}
 lib/libartsmidi.la
-@lib lib/libartsmidi.so.0.0
+@lib lib/libartsmidi.so.${LIBartsmidi_VERSION}
 lib/libartsmidi_idl.la
-@lib lib/libartsmidi_idl.so.0.0
+@lib lib/libartsmidi_idl.so.${LIBartsmidi_idl_VERSION}
 lib/libartsmodules.la
-@lib lib/libartsmodules.so.0.0
+@lib lib/libartsmodules.so.${LIBartsmodules_VERSION}
 lib/libartsmodulescommon.la
-@lib lib/libartsmodulescommon.so.0.0
+@lib lib/libartsmodulescommon.so.${LIBartsmodulescommon_VERSION}
 lib/libartsmoduleseffects.la
-@lib lib/libartsmoduleseffects.so.0.0
+@lib lib/libartsmoduleseffects.so.${LIBartsmoduleseffects_VERSION}
 lib/libartsmodulesmixers.la
-@lib lib/libartsmodulesmixers.so.0.0
+@lib lib/libartsmodulesmixers.so.${LIBartsmodulesmixers_VERSION}
 lib/libartsmodulessynth.la
-@lib lib/libartsmodulessynth.so.0.0
+@lib lib/libartsmodulessynth.so.${LIBartsmodulessynth_VERSION}
 lib/libaudiocdplugins.la
-@lib lib/libaudiocdplugins.so.1.0
+@lib lib/libaudiocdplugins.so.${LIBaudiocdplugins_VERSION}
 lib/libaudiofilearts.la
 lib/libaudiofilearts.so
 lib/libkcddb.la
-@lib lib/libkcddb.so.1.0
+@lib lib/libkcddb.so.${LIBkcddb_VERSION}
 lib/libkdeinit_kmix.la
 lib/libkdeinit_kmix.so
 lib/libkdeinit_kmixctrl.la
@@ -347,24 +347,24 @@ lib/libkdeinit_krec.so
 lib/libkdeinit_noatun.la
 lib/libkdeinit_noatun.so
 lib/libkmidlib.la
-@lib lib/libkmidlib.so.0.0
+@lib lib/libkmidlib.so.${LIBkmidlib_VERSION}
 lib/libmpeg-0.3.0.so
 @comment lib/libmpeg.la
 lib/libmpeg.so
 lib/libnoatun.la
-@lib lib/libnoatun.so.3.0
+@lib lib/libnoatun.so.${LIBnoatun_VERSION}
 lib/libnoatunarts.la
 lib/libnoatunarts.so
 lib/libnoatuncontrols.la
-@lib lib/libnoatuncontrols.so.3.0
+@lib lib/libnoatuncontrols.so.${LIBnoatuncontrols_VERSION}
 lib/libnoatuntags.la
-@lib lib/libnoatuntags.so.3.0
+@lib lib/libnoatuntags.so.${LIBnoatuntags_VERSION}
 lib/libwinskinvis.la
 lib/libwinskinvis.so
 lib/libyafcore.la
-@lib lib/libyafcore.so.0.0
+@lib lib/libyafcore.so.${LIByafcore_VERSION}
 lib/libyafxplayer.la
-@lib lib/libyafxplayer.so.0.0
+@lib lib/libyafxplayer.so.${LIByafxplayer_VERSION}
 lib/mcop/Arts/ArtsBuilderLoader.mcopclass
 lib/mcop/Arts/Button.mcopclass
 lib/mcop/Arts/EffectRackGuiFactory.mcopclass
@@ -1259,7 +1259,6 @@ share/icons/crystalsvg/scalable/actions/artsenvironment.svg
 share/icons/crystalsvg/scalable/actions/artsfftscope.svg
 share/icons/crystalsvg/scalable/actions/artsmediatypes.svg
 share/icons/crystalsvg/scalable/actions/artsmidimanager.svg
-share/icons/crystalsvg/scalable/apps/
 share/icons/crystalsvg/scalable/apps/artsbuilder.svgz
 share/icons/crystalsvg/scalable/apps/artscontrol.svg
 share/icons/locolor/
