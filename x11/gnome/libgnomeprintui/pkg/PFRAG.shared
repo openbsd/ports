@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/15 21:48:23 espie Exp $
-@lib lib/libgnomeprintui-2-2.so.1.0
+@comment $OpenBSD: PFRAG.shared,v 1.3 2006/01/08 14:05:04 steven Exp $
+@lib lib/libgnomeprintui-2-2.so.${LIBgnomeprintui-2-2_VERSION}

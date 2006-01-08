@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2005/11/14 15:05:00 wilfried Exp $
+# $OpenBSD: Makefile,v 1.11 2006/01/08 14:05:04 steven Exp $
 
 COMMENT=		"user interface components for libgnomeprint"
 
 DISTNAME=		libgnomeprintui-2.10.2
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
+SHARED_LIBS=		gnomeprintui-2-2	1.0
 CATEGORIES=		x11/gnome devel
 
 HOMEPAGE=		http://www.gnome.org/projects/gnome-print/
@@ -32,6 +33,7 @@ LIB_DEPENDS=		gnomecanvas-2::x11/gnome/libgnomecanvas \
 			gnomeprint-2-2::x11/gnome/libgnomeprint
 
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--disable-gtk-doc
