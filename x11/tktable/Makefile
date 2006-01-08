@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2004/12/19 17:27:02 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2006/01/08 20:56:08 naddy Exp $
 
 COMMENT=	"tk extension"
 
 DISTNAME=	Tktable2.9
 PKGNAME=	Tktable-2.9
+SHARED_LIBS=	Tktable29 1.0
 CATEGORIES=	x11
 
 HOMEPAGE= 	http://tktable.sourceforge.net/
@@ -27,6 +28,7 @@ CONFIGURE_ARGS=	--with-tcl=${PREFIX}/lib/tcl8.4 \
 		--with-tk=${PREFIX}/lib/tk8.4 \
 		--with-tclinclude=${PREFIX}/include/tcl8.4 \
 		--with-tkinclude=${PREFIX}/include/tk8.4
+CONFIGURE_ENV=	LIBTktable29_VERSION=${LIBTktable29_VERSION}
 
 MAKE_ENV=	DISPLAY="${DISPLAY}" XAUTHORITY="${XAUTHORITY}"
 REGRESS_TARGET=	test

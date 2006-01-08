@@ -1,6 +1,6 @@
-$OpenBSD: patch-unix_configure,v 1.1 2006/01/08 17:20:11 naddy Exp $
+$OpenBSD: patch-unix_configure,v 1.2 2006/01/08 20:56:08 naddy Exp $
 --- unix/configure.orig	Tue Mar  9 07:53:50 1999
-+++ unix/configure	Sun Jan  8 18:09:42 2006
++++ unix/configure	Sun Jan  8 21:51:05 2006
 @@ -880,8 +880,8 @@ fi
  if test ! -d $TCL_BIN_DIR; then
      { echo "configure: error: Tcl directory $TCL_BIN_DIR doesn't exist" 1>&2; exit 1; }
@@ -21,9 +21,12 @@ $OpenBSD: patch-unix_configure,v 1.1 2006/01/08 17:20:11 naddy Exp $
  LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
  
  # If Tcl and Tk are installed in different places, adjust the library
-@@ -2389,12 +2391,11 @@ if test "$ok" = "yes" -a "${SHLIB_SUFFIX
+@@ -2387,14 +2389,13 @@ fi
+ if test "$ok" = "yes" -a "${SHLIB_SUFFIX}" != ""; then
+     TK_SHARED_BUILD=1
      TK_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
-     TK_LIB_FILE=libtk${TCL_SHARED_LIB_SUFFIX}
+-    TK_LIB_FILE=libtk${TCL_SHARED_LIB_SUFFIX}
++    TK_LIB_FILE="libtk`echo ${VERSION} | tr -d .`${DBGX}.so.${LIBtk80_VERSION}"
      MAKE_LIB="\${SHLIB_LD} -o \${TK_LIB_FILE} \${OBJS} \$(TK_LD_SEARCH_FLAGS) ${SHLIB_LD_LIBS}"
 -    RANLIB=":"
  else

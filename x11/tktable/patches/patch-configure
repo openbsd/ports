@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure,v 1.1 2006/01/08 20:56:08 naddy Exp $
+--- configure.orig	Sun Jan  8 21:04:29 2006
++++ configure	Sun Jan  8 21:05:15 2006
+@@ -8600,11 +8600,11 @@ if (eval "$ac_cpp conftest.$ac_ext") 2>&
+   $EGREP "yes" >/dev/null 2>&1; then
+   echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
+-		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.0'
++		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.${LIBTktable29_VERSION}'
+ else
+   echo "$as_me:$LINENO: result: no" >&5
+ echo "${ECHO_T}no" >&6
+-		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.0'
++		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.${LIBTktable29_VERSION}'
+ 
+ fi
+ rm -f conftest*

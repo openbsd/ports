@@ -23,12 +23,12 @@
    rm -rf conftest*
    echo "$ac_t""yes" 1>&6
 -		    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so'
-+		    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.3'
++		    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.${LIBtk83_VERSION}'
  else
    rm -rf conftest*
    echo "$ac_t""no" 1>&6
 -		    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.0'
-+		    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.3'
++		    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.${LIBtk83_VERSION}'
  		
  fi
  rm -f conftest*
