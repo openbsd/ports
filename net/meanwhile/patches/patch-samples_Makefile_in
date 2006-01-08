@@ -1,0 +1,12 @@
+$OpenBSD: patch-samples_Makefile_in,v 1.1.1.1 2006/01/08 15:27:25 alek Exp $
+--- samples/Makefile.in.orig	Sun Jan  8 15:50:58 2006
++++ samples/Makefile.in	Sun Jan  8 15:51:42 2006
+@@ -188,7 +188,7 @@ sample_DATA = \
+ 	README \
+ 	$(SAMPLES_SRC)
+ 
+-sampledir = $(datadir)/doc/@PACKAGE@-doc-@VERSION@/samples
++sampledir = $(datadir)/examples/@PACKAGE@
+ EXTRA_DIST = $(sample_DATA) $(sample_SCRIPTS)
+ all: all-am
+ 

@@ -1,0 +1,7 @@
+Meanwhile library provides the basic Lotus Sametime session
+functionality along with the core services; Presence Awareness, Instant
+Messaging, Multi-user Conferencing, Preferences Storage, Identity
+Resolution, and File Transfer. This extensible client interface allows
+additional services to be added to a session at runtime, allowing for
+simple integration of future service handlers such as the user directory
+and whiteboard and screen-sharing.
