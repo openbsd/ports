@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/01/06 08:36:18 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2006/01/08 03:02:09 brad Exp $
 
 COMMENT=	"SDL TrueType fonts library"
 
@@ -28,8 +28,5 @@ SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		LDFLAGS="-L${X11BASE}/lib"
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
-		patch-*
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/01/06 08:36:18 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2006/01/08 03:02:09 brad Exp $
 
 COMMENT=	"SDL cross-platform networking library"
 
@@ -30,8 +30,5 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
 CONFIGURE_ARGS+=	--disable-gui \
 			${CONFIGURE_SHARED}
-
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
-		patch-*
 
 .include <bsd.port.mk>
