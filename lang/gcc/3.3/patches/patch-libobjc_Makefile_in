@@ -1,0 +1,24 @@
+$OpenBSD: patch-libobjc_Makefile_in,v 1.1 2006/01/08 21:35:09 espie Exp $
+--- libobjc/Makefile.in.orig	Sun Jan  8 19:03:31 2006
++++ libobjc/Makefile.in	Sun Jan  8 20:45:30 2006
+@@ -261,15 +261,18 @@ $(OBJC_THREAD_FILE)_gc.lo: $(OBJC_THREAD
+ 
+ doc: info dvi html
+ 
++include $(toplevel_srcdir)/libversions
++
++
+ libobjc.la: $(OBJS)
+ 	$(LIBTOOL_LINK) $(CC) -o $@ $(OBJS) \
+ 		-rpath $(glibcpp_toolexeclibdir) \
+-		-version-info $(LIBOBJC_VERSION)
++		$(LIBobjc_LTVERSION)
+ 
+ libobjc_gc.la: $(OBJS_GC)
+ 	$(LIBTOOL_LINK) $(CC) -o $@ $(OBJS_GC) \
+ 		-rpath $(glibcpp_toolexeclibdir) \
+-		-version-info $(LIBOBJC_GC_VERSION)
++		$(LIBobjc_gc_LTVERSION)
+ 
+ #
+ # FIXME -- The following part does not fit in the libtool context. 

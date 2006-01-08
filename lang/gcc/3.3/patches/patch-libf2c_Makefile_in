@@ -1,0 +1,15 @@
+$OpenBSD: patch-libf2c_Makefile_in,v 1.1 2006/01/08 21:35:09 espie Exp $
+--- libf2c/Makefile.in.orig	Sun Jan  8 19:27:21 2006
++++ libf2c/Makefile.in	Sun Jan  8 20:30:22 2006
+@@ -150,9 +150,10 @@ i77 f77 u77: g2c.h
+ # library.  The point of breaking them up is to avoid command-line
+ # length limitations.
+ 
++include $(toplevel_srcdir)/libversions
+ $(LIBG2C): s-libi77 s-libf77 s-libu77 s-libe77
+ 	$(LIBTOOL) --mode=link $(CC) -o $@ \
+-	  -version-info $(VERSION_MAJOR):$(VERSION_MINOR):$(VERSION_SUB) \
++	  $(LIBg2c_LTVERSION) \
+ 	  -rpath $(glibcpp_toolexeclibdir) \
+ 	  -objectlist s-libe77 \
+ 	  -objectlist s-libf77 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2005/10/30 19:24:11 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2006/01/08 21:35:08 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
@@ -12,6 +12,13 @@ PKGNAME-estdc=	libstdc++-${FULL_PKGVERSION}
 PKGNAME-g77=	g77-${FULL_PKGVERSION}
 PKGNAME-java=	gcj-${FULL_PKGVERSION}
 PKGNAME-objc=	gobjc-${FULL_PKGVERSION}
+SHARED_LIBS=	estdc++		5.7 \
+		g2c		0.0 \
+		-org-w3c-dom	0.0 \
+		-org-xml-sax	0.0 \
+		gcj		4.0 \
+		objc		1.0 \
+		objc_gc		1.0
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
@@ -109,6 +116,10 @@ post-extract:
 	echo 'GNAT_ROOT=${WRKDIR}/bootstrap GCC_ROOT=${WRKDIR}/bootstrap exec ${WRKDIR}/bootstrap/bin/$f "$$@"' >>${WRKDIR}/bin/$f
 	chmod a+x ${WRKDIR}/bin/$f
 .endfor
+	echo "# This file automatically generated" >> ${WRKSRC}/libversions
+.for l v in ${SHARED_LIBS}
+	echo "LIB$l_LTVERSION = -version-info ${v:S/./:/}" >> ${WRKSRC}/libversions
+.endfor
 
 post-build:
 	cd ${WRKBUILD}/gcc && ${MAKE_PROGRAM} gnatlib_and_tools
@@ -146,9 +157,6 @@ USE_GMAKE= yes
 # you shouldn't skip bootstrap unless you know what you're doing
 # use bootstrap-lean if you're pressed for space
 ALL_TARGET=bootstrap
-
-MAKE_FLAGS=libstdc___la_LDFLAGS='-version-info 31:0:0 -lm'
-
 
 .if ${MACHINE_ARCH} == "m68k" || ${MACHINE_ARCH} == "sparc"
 PKG_ARGS+=-DPIC=1
