@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/02/09 23:41:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2006/01/08 23:48:36 jakemsr Exp $
 # $FreeBSD: ports/multimedia/libquicktime/Makefile,v 1.19 2004/03/16 04:23:53 edwin Exp $
 
 SHARED_ONLY=		Yes
@@ -7,6 +7,7 @@ COMMENT=		library for reading and writing quicktime files
 DISTNAME=		libquicktime-0.9.3
 PKGNAME=		${DISTNAME}p0
 CATEGORIES=		multimedia
+SHARED_LIBS=		quicktime	1.0
 
 HOMEPAGE=		http://libquicktime.sourceforge.net/
 
@@ -31,6 +32,8 @@ LIB_DEPENDS=		vorbis.3,vorbisfile.4,vorbisenc.2::audio/libvorbis \
 			avcodec.4::graphics/ffmpeg
 
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
+LIBTOOL_FLAGS+=		--tag=disable-static
 VMEM_WARNING=		Yes
 
 CONFIGURE_STYLE=	gnu

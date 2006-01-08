@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/12/04 21:44:35 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2006/01/08 23:48:37 jakemsr Exp $
 bin/libquicktime_config
 bin/lqt-config
 bin/lqt_transcode
@@ -20,7 +20,7 @@ include/quicktime/qtprivate.h
 include/quicktime/quicktime.h
 lib/libquicktime/
 lib/libquicktime.la
-@lib lib/libquicktime.so.1.0
+@lib lib/libquicktime.so.${LIBquicktime_VERSION}
 @comment lib/libquicktime/lqt_audiocodec.la
 lib/libquicktime/lqt_audiocodec.so
 @comment lib/libquicktime/lqt_dv.la
