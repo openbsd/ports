@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/11/02 23:51:51 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/01/08 12:48:37 bernd Exp $
 %%SHARED%%
 include/glibmm-${V}/
 include/glibmm-${V}/glibmm/
@@ -129,5 +129,18 @@ lib/libglibmm_generate_extra_defs-${V}.a
 lib/libglibmm_generate_extra_defs-${V}.la
 lib/pkgconfig/
 lib/pkgconfig/glibmm-${V}.pc
-share/aclocal/
 share/aclocal/glibmm_check_perl.m4
+share/doc/glibmm-${V}/examples/
+share/doc/glibmm-${V}/examples/iochannel_stream/
+share/doc/glibmm-${V}/examples/iochannel_stream/fdstream.cc
+share/doc/glibmm-${V}/examples/iochannel_stream/fdstream.h
+share/doc/glibmm-${V}/examples/iochannel_stream/main.cc
+share/doc/glibmm-${V}/examples/markup/
+share/doc/glibmm-${V}/examples/markup/parser.cc
+share/doc/glibmm-${V}/examples/options/
+share/doc/glibmm-${V}/examples/options/main.cc
+share/doc/glibmm-${V}/examples/thread/
+share/doc/glibmm-${V}/examples/thread/dispatcher.cc
+share/doc/glibmm-${V}/examples/thread/dispatcher2.cc
+share/doc/glibmm-${V}/examples/thread/thread.cc
+share/doc/glibmm-${V}/examples/thread/threadpool.cc

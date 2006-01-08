@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/01/06 19:41:24 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2006/01/08 12:48:36 bernd Exp $
 
 COMMENT=		"C++ interface for glib2"
 COMMENT-docs=		"C++ interface for glib2 documentation"
@@ -6,10 +6,10 @@ COMMENT-docs=		"C++ interface for glib2 documentation"
 VERSION=		2.6.1
 V=			2.4
 DISTNAME=		glibmm-${VERSION}
-PKGNAME=		glib2mm-${VERSION}p1
+PKGNAME=		glib2mm-${VERSION}p2
 PKGNAME-docs=		glib2mm-docs-${VERSION}
-SHARED_LIBS=		glibmm-${V} 			1.13 \
-			glibmm_generate_extra_defs-${V}	1.13
+SHARED_LIBS=		glibmm-2.4 			1.13 \
+			glibmm_generate_extra_defs-2.4	1.13
 
 CATEGORIES=		devel
 
