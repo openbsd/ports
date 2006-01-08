@@ -1,4 +1,4 @@
-$OpenBSD: patch-agent_Makefile_in,v 1.1 2006/01/03 17:37:18 steven Exp $
+$OpenBSD: patch-agent_Makefile_in,v 1.2 2006/01/08 11:36:04 steven Exp $
 --- agent/Makefile.in.orig	Tue Jan  3 16:33:23 2006
 +++ agent/Makefile.in	Tue Jan  3 16:36:08 2006
 @@ -10,8 +10,8 @@ top_builddir	= ..
@@ -34,14 +34,14 @@ $OpenBSD: patch-agent_Makefile_in,v 1.1 2006/01/03 17:37:18 steven Exp $
 -	$(LIB_LD_CMD) libnetsnmpagent.$(LIB_EXTENSION)$(LIB_VERSION) ${LLIBAGENTOBJS}  $(LIB_LD_LIBS)
 -	$(RANLIB) libnetsnmpagent.$(LIB_EXTENSION)$(LIB_VERSION)
 +libnetsnmpagent.$(LIB_EXTENSION)$(LIBnetsnmpagent_VERSION):    ${LLIBAGENTOBJS} libnetsnmpmibs.$(LIB_EXTENSION)$(LIBnetsnmpmibs_VERSION)
-+	$(LIB_LD_CMD) libnetsnmpagent.$(LIB_EXTENSION)$(LIBnetsnmpagent_VERSION) $(LIBnetsnmpagent_LTVERSION) ${LLIBAGENTOBJS}  $(LIB_LD_LIBS)
++	$(LIB_LD_CMD) libnetsnmpagent.$(LIB_EXTENSION)$(LIBnetsnmpagent_VERSION) ${LLIBAGENTOBJS}  $(LIB_LD_LIBS)
 +	$(RANLIB) libnetsnmpagent.$(LIB_EXTENSION)$(LIBnetsnmpagent_VERSION)
  
 -libnetsnmpmibs.$(LIB_EXTENSION)$(LIB_VERSION):    ${LMIBOBJS}
 -	$(LIB_LD_CMD) libnetsnmpmibs.$(LIB_EXTENSION)$(LIB_VERSION) ${LMIBOBJS}  $(LIB_LD_LIBS)
 -	$(RANLIB) libnetsnmpmibs.$(LIB_EXTENSION)$(LIB_VERSION)
 +libnetsnmpmibs.$(LIB_EXTENSION)$(LIBnetsnmpmibs_VERSION):    ${LMIBOBJS}
-+	$(LIB_LD_CMD) libnetsnmpmibs.$(LIB_EXTENSION)$(LIBnetsnmpmibs_VERSION) $(LIBnetsnmpmibs_LTVERSION) ${LMIBOBJS}  $(LIB_LD_LIBS)
++	$(LIB_LD_CMD) libnetsnmpmibs.$(LIB_EXTENSION)$(LIBnetsnmpmibs_VERSION) ${LMIBOBJS}  $(LIB_LD_LIBS)
 +	$(RANLIB) libnetsnmpmibs.$(LIB_EXTENSION)$(LIBnetsnmpmibs_VERSION)
  
  embedperlinstall:

@@ -1,4 +1,4 @@
-$OpenBSD: patch-apps_Makefile_in,v 1.1 2006/01/03 17:37:18 steven Exp $
+$OpenBSD: patch-apps_Makefile_in,v 1.2 2006/01/08 11:36:04 steven Exp $
 --- apps/Makefile.in.orig	Tue Jan  3 16:31:37 2006
 +++ apps/Makefile.in	Tue Jan  3 16:36:59 2006
 @@ -28,7 +28,7 @@ INSTALLBINPROGS	= snmpget$(EXEEXT) 			\
@@ -29,7 +29,7 @@ $OpenBSD: patch-apps_Makefile_in,v 1.1 2006/01/03 17:37:18 steven Exp $
 -	$(LIB_LD_CMD) libnetsnmptrapd.$(LIB_EXTENSION)$(LIB_VERSION) ${LLIBTRAPD_OBJS}  $(LIB_LD_LIBS)
 -	$(RANLIB) libnetsnmptrapd.$(LIB_EXTENSION)$(LIB_VERSION)
 +libnetsnmptrapd.$(LIB_EXTENSION)$(LIBnetsnmptrapd_VERSION): $(LLIBTRAPD_OBJS)
-+	$(LIB_LD_CMD) libnetsnmptrapd.$(LIB_EXTENSION)$(LIBnetsnmptrapd_VERSION) $(LIBnetsnmptrapd_LTVERSION) ${LLIBTRAPD_OBJS}  $(LIB_LD_LIBS)
++	$(LIB_LD_CMD) libnetsnmptrapd.$(LIB_EXTENSION)$(LIBnetsnmptrapd_VERSION) ${LLIBTRAPD_OBJS}  $(LIB_LD_LIBS)
 +	$(RANLIB) libnetsnmptrapd.$(LIB_EXTENSION)$(LIBnetsnmptrapd_VERSION)
  
  snmpinforminstall:
