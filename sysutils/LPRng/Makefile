@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2005/12/23 19:54:17 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.32 2006/01/08 02:48:34 brad Exp $
 
 COMMENT=	"enhanced printer spooler"
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto ssl util
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	--with-sbindir=${PREFIX}/sbin \
 		--with-filterdir=${PREFIX}/libexec/filters \
@@ -29,18 +30,12 @@ CONFIGURE_ARGS=	--with-sbindir=${PREFIX}/sbin \
 		--with-ldopts=-L${LOCALBASE}/lib \
 		--disable-nls
 
-USE_LIBTOOL=	Yes
-
 CFLAGS+=	-Dlog=mylog
 FAKE_FLAGS=	DESTDIR=${WRKINST} POSTINSTALL=NO prefix=${TRUEPREFIX} \
 		FILTER_DIR=${TRUEPREFIX}/libexec/filters \
 		LPD_PERMS_PATH=${TRUEPREFIX}${CONFDIR}/lpd.perms \
 		LPD_CONF_PATH=${TRUEPREFIX}${CONFDIR}/lpd.conf \
 		PRINTCAP_PATH=${TRUEPREFIX}${CONFDIR}/printcap
-
-PATCH_LIST=     ${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
-                patch-*
 
 CONFDIR=	${SYSCONFDIR}/LPRng
 HTMLFILES=	LPRng-HOWTO.html 
