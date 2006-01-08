@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2005/12/26 21:32:05 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/01/08 10:04:16 steven Exp $
 
 COMMENT=		"OpenGL image compositing library"
 
 DISTNAME=		glitz-0.4.4
 SHARED_LIBS=		glitz-glx	1.0	\
 			glitz		1.0
-MODGNU_SHARED_LIBS=	glitz-glx	'-no-undefined'	\
-			glitz		'-no-undefined'
-LIBglitz-glx_ALIAS=	glitz_glx
 
 CATEGORIES=		graphics
 
