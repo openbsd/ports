@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2004/09/15 04:12:56 marcm Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2006/01/08 13:25:22 steven Exp $
 lib/bonobo/monikers/libmoniker_std_2.so
-@lib lib/libbonobo-2.so.0.0
-@lib lib/libbonobo-activation.so.4.0
+@lib lib/libbonobo-2.so.${LIBbonobo-2_VERSION}
+@lib lib/libbonobo-activation.so.${LIBbonobo-activation_VERSION}
 lib/orbit-2.0/Bonobo_module.so

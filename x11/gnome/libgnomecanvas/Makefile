@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2005/11/13 06:29:04 marcm Exp $
+# $OpenBSD: Makefile,v 1.13 2006/01/08 13:29:54 steven Exp $
 
 COMMENT=		"graphics library for GNOME"
 
 DISTNAME=		libgnomecanvas-2.10.2
+PKGNAME=		${DISTNAME}p0
+SHARED_LIBS=		gnomecanvas-2	1000.2
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org

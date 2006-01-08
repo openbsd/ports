@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2005/05/24 21:51:32 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.11 2006/01/08 13:29:54 steven Exp $
 include/libgnomecanvas-2.0/
 include/libgnomecanvas-2.0/libgnomecanvas/
 include/libgnomecanvas-2.0/libgnomecanvas/gnome-canvas-bpath.h
@@ -35,8 +35,6 @@ share/locale/ar/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/libgnomecanvas-2.0.mo
-share/locale/be/
-share/locale/be/LC_MESSAGES/
 share/locale/be/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/bg/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/bn/
@@ -45,8 +43,6 @@ share/locale/bn/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/bs/
 share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/libgnomecanvas-2.0.mo
-share/locale/ca/
-share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/cs/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/cy/
@@ -72,8 +68,6 @@ share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/fi/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/fr/LC_MESSAGES/libgnomecanvas-2.0.mo
-share/locale/ga/
-share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/gu/
 share/locale/gu/LC_MESSAGES/
@@ -136,8 +130,6 @@ share/locale/sl/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/sq/
 share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/libgnomecanvas-2.0.mo
-share/locale/sr/
-share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/sr@Latn/
 share/locale/sr@Latn/LC_MESSAGES/
@@ -151,8 +143,6 @@ share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/tr/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/uk/LC_MESSAGES/libgnomecanvas-2.0.mo
-share/locale/vi/
-share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/wa/
 share/locale/wa/LC_MESSAGES/
