@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.398 2005/12/30 04:45:01 jolan Exp $
+# $OpenBSD: Makefile,v 1.399 2006/01/08 15:38:07 alek Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -125,6 +125,7 @@
      SUBDIR += libtorrent
      SUBDIR += luasocket
      SUBDIR += maradns
+     SUBDIR += meanwhile
      SUBDIR += mbrowse
      SUBDIR += micq
      SUBDIR += mirror
