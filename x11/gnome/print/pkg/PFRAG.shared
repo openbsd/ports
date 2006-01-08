@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2005/05/11 19:01:39 alek Exp $
-@lib lib/libgnomeprint.so.17.0
+@comment $OpenBSD: PFRAG.shared,v 1.4 2006/01/08 22:27:02 alek Exp $
+@lib lib/libgnomeprint.so.${LIBgnomeprint_VERSION}

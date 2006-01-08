@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2005/09/05 20:05:03 marcm Exp $
+# $OpenBSD: Makefile,v 1.10 2006/01/08 22:27:02 alek Exp $
 
 COMMENT=		"printing framework for GNOME"
 
 DISTNAME=		gnome-print-0.36
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
+SHARED_LIBS=		gnomeprint 17.0
 CATEGORIES=		x11/gnome print
 HOMEPAGE=		http://www.gnome.org/projects/gnome-print/
 
@@ -31,6 +32,7 @@ WANTLIB=		ICE SM X11 Xext Xi audiofile c esd freetype gdk \
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
