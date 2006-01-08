@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2005/12/01 08:02:16 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/01/08 09:45:12 steven Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"event loop processing"
 
 DISTNAME=	Event-1.06
-PKGNAME=	p5-${DISTNAME}
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel perl5
 
-MAINTAINER=	Waldemar Brodkorb <wbx@openbsd.de>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
 
 # Artistic/GPL
 PERMIT_PACKAGE_CDROM=	Yes

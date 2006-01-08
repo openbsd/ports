@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/08 19:00:49 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2006/01/08 09:45:12 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"interface to gettext() internationalization function"
 
 DISTNAME=	gettext-1.03
-PKGNAME=	p5-Locale-${DISTNAME}
+PKGNAME=	p5-Locale-${DISTNAME}p0
 CATEGORIES=	converters perl5
 
-MAINTAINER=	Waldemar Brodkorb <wbx@openbsd.de>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
