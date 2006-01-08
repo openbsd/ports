@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2005/11/13 06:29:05 marcm Exp $
+# $OpenBSD: Makefile,v 1.17 2006/01/08 16:03:26 steven Exp $
 
 COMMENT=		"SAX-based render library for SVG files"
 
 VERSION=		2.9.5
 DISTNAME=		librsvg-${VERSION}
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
+SHARED_LIBS=		rsvg-2	11.5
 CATEGORIES=		devel x11/gnome
 
 HOMEPAGE=		http://www.gnome.org
@@ -38,6 +39,7 @@ LIB_DEPENDS=		art_lgpl_2.5::graphics/libart \
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	--disable-gtk-doc
 CONFIGURE_ARGS+= 	--with-svgz
