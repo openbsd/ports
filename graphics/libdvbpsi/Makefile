@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2005/12/26 22:08:31 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2006/01/08 00:29:37 steven Exp $
 
 COMMENT=	"library for decoding/generating MPEG TS/DVB PSI tables"
 VER=		0.1.4
 DISTNAME=	libdvbpsi3-${VER}
 PKGNAME=	libdvbpsi-${VER}p1
-SHARED_LIBS=		dvbpsi	3.0
-MODGNU_SHARED_LIBS=	dvbpsi	''
+SHARED_LIBS=	dvbpsi	3.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.videolan.org/pub/libdvbpsi/${VER}/ \
 		http://www.fr.videolan.org/pub/libdvbpsi/${VER}/

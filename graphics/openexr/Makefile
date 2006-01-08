@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2005/12/26 20:25:39 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2006/01/08 00:29:38 steven Exp $
 
 COMMENT=	'high dynamic range image format'
 COMMENT-tools=	'image viewing tools for OpenEXR'
@@ -14,14 +14,10 @@ MULTI_PACKAGES=	-tools -doc
 PKGNAME=	OpenEXR-$Vp1
 PKGNAME-tools=  OpenEXR-tools-$V
 PKGNAME-doc=	OpenEXR-doc-$V
-SHARED_LIBS=		Half	2.2	\
-			Iex	2.2	\
-			IlmImf	2.2	\
-			Imath	2.2	
-MODGNU_SHARED_LIBS=	Half	''	\
-			Iex	''	\
-			IlmImf	''	\
-			Imath	''
+SHARED_LIBS=	Half	2.2	\
+		Iex	2.2	\
+		IlmImf	2.2	\
+		Imath	2.2	
 
 # Almost BSD
 # `name of ILM not to be used for advertizing without written agreement'

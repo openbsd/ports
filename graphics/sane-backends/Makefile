@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2005/12/26 14:09:47 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2006/01/08 00:29:38 steven Exp $
 
 COMMENT=	"API for accessing scanners, backends"
 
 DISTNAME=	sane-backends-1.0.16
 PKGNAME=	${DISTNAME}p2
-SHARED_LIBS=		sane	1.16
-MODGNU_SHARED_LIBS=	sane	''
+SHARED_LIBS=	sane 1.16
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.sane-project.org/

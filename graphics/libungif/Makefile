@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2005/12/26 19:38:06 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2006/01/08 00:29:38 steven Exp $
 
 COMMENT=	"tools and library routines for working with GIF images"
 
 DISTNAME=	libungif-4.1.4
-SHARED_LIBS=		gif	5.4	\
-			ungif	5.4
-MODGNU_SHARED_LIBS=	gif	''	\
-			ungif	''
+SHARED_LIBS=	gif	5.4 \
+		ungif	5.4
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libungif/}
 

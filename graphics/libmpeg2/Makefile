@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2005/12/28 13:09:38 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2006/01/08 00:29:37 steven Exp $
 
 COMMENT=	"free MPEG-2 video stream decoder"
 DISTNAME=	mpeg2dec-0.4.0b
 PKGNAME=	${DISTNAME:S/mpeg2dec/libmpeg2/}p0
-SHARED_LIBS=		mpeg2		0.0	\
-			mpeg2convert	0.0
-MODGNU_SHARED_LIBS=	mpeg2		'-no-undefined'	\
-			mpeg2convert	'-no-undefined'
+SHARED_LIBS=	mpeg2		0.0 \
+		mpeg2convert	0.0
 CATEGORIES=	graphics x11
 MASTER_SITES=	${HOMEPAGE}files/
 
