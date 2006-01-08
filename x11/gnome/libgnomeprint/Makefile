@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2005/05/24 21:52:35 marcm Exp $
+# $OpenBSD: Makefile,v 1.11 2006/01/08 13:48:31 steven Exp $
 
 COMMENT=		"printing framework for GNOME"
 
 VERSION=		2.10.3
 DISTNAME=		libgnomeprint-${VERSION}
+PKGNAME=		${DISTNAME}p0
+SHARED_LIBS=		gnomeprint-2-2	1.0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/projects/gnome-print/
@@ -29,6 +31,7 @@ LIB_DEPENDS=		art_lgpl_2.5::graphics/libart \
 			xml2.6::textproc/libxml
 
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--disable-gtk-doc
