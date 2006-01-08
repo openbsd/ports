@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2005/11/14 23:03:45 wilfried Exp $
+# $OpenBSD: Makefile,v 1.11 2006/01/08 15:39:45 steven Exp $
 
 COMMENT=		"lightweight HTML rendering/printing/editing engine"
 
 DISTNAME=		libgtkhtml-2.6.3
 PKGNAME=		${DISTNAME}p0
+SHARED_LIBS=		gtkhtml-2	0.0
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
