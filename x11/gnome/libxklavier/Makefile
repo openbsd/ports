@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2005/05/26 03:39:31 marcm Exp $
+# $OpenBSD: Makefile,v 1.5 2006/01/08 15:43:35 steven Exp $
 
 COMMENT=		"utility library for XKB"
 
 DISTNAME=		libxklavier-2.0
+PKGNAME=		${DISTNAME}p0
+SHARED_LIBS=		xklavier	10.0
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
@@ -21,6 +23,7 @@ BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		xml2::textproc/libxml
 
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
