@@ -1,6 +1,7 @@
---- ../generic/tkTextBTree.c.orig	Mon Sep 14 14:23:18 1998
-+++ ../generic/tkTextBTree.c	Wed Jan  5 23:20:55 2000
-@@ -2427,6 +2427,132 @@
+$OpenBSD: patch-generic_tkTextBTree_c,v 1.1 2006/01/08 17:20:11 naddy Exp $
+--- generic/tkTextBTree.c.orig	Mon Sep 14 20:23:18 1998
++++ generic/tkTextBTree.c	Sun Jan  8 18:09:42 2006
+@@ -2427,6 +2427,132 @@ TkBTreeGetTags(indexPtr, numTagsPtr)
      }
      return tagInfo.tagPtrs;
  }

@@ -1,6 +1,7 @@
---- configure.orig	Tue Mar  9 01:53:50 1999
-+++ configure	Thu Jan 13 20:27:11 2000
-@@ -880,8 +880,8 @@
+$OpenBSD: patch-unix_configure,v 1.1 2006/01/08 17:20:11 naddy Exp $
+--- unix/configure.orig	Tue Mar  9 07:53:50 1999
++++ unix/configure	Sun Jan  8 18:09:42 2006
+@@ -880,8 +880,8 @@ fi
  if test ! -d $TCL_BIN_DIR; then
      { echo "configure: error: Tcl directory $TCL_BIN_DIR doesn't exist" 1>&2; exit 1; }
  fi
@@ -11,7 +12,7 @@
  fi
  
  #--------------------------------------------------------------------
-@@ -922,6 +922,8 @@
+@@ -922,6 +922,8 @@ CFLAGS_DEBUG=$TCL_CFLAGS_DEBUG
  CFLAGS_OPTIMIZE=$TCL_CFLAGS_OPTIMIZE
  EXTRA_CFLAGS=$TCL_EXTRA_CFLAGS
  
@@ -20,7 +21,7 @@
  LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
  
  # If Tcl and Tk are installed in different places, adjust the library
-@@ -2389,12 +2391,11 @@
+@@ -2389,12 +2391,11 @@ if test "$ok" = "yes" -a "${SHLIB_SUFFIX
      TK_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
      TK_LIB_FILE=libtk${TCL_SHARED_LIB_SUFFIX}
      MAKE_LIB="\${SHLIB_LD} -o \${TK_LIB_FILE} \${OBJS} \$(TK_LD_SEARCH_FLAGS) ${SHLIB_LD_LIBS}"
@@ -34,7 +35,7 @@
  fi
  
  DBGX='${TK_DBGX}'
-@@ -2600,6 +2601,7 @@
+@@ -2600,6 +2601,7 @@ s%@TCL_BIN_DIR@%$TCL_BIN_DIR%g
  s%@TCL_BUILD_LIB_SPEC@%$TCL_BUILD_LIB_SPEC%g
  s%@TCL_DBGX@%$TCL_DBGX%g
  s%@TCL_LIB_FLAG@%$TCL_LIB_FLAG%g

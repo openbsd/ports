@@ -1,6 +1,7 @@
---- ../generic/tkText.c.orig	Mon Sep 14 14:23:17 1998
-+++ ../generic/tkText.c	Wed Jan  5 23:20:54 2000
-@@ -866,6 +866,7 @@
+$OpenBSD: patch-generic_tkText_c,v 1.1 2006/01/08 17:20:11 naddy Exp $
+--- generic/tkText.c.orig	Mon Sep 14 20:23:17 1998
++++ generic/tkText.c	Sun Jan  8 18:09:42 2006
+@@ -866,6 +866,7 @@ ConfigureText(interp, textPtr, argc, arg
  	    || (textPtr->selTagPtr->spacing2String != NULL)
  	    || (textPtr->selTagPtr->spacing3String != NULL)
  	    || (textPtr->selTagPtr->tabString != NULL)
@@ -8,7 +9,7 @@
  	    || (textPtr->selTagPtr->underlineString != NULL)
  	    || (textPtr->selTagPtr->wrapMode != NULL)) {
  	textPtr->selTagPtr->affectsDisplay = 1;
-@@ -1413,7 +1414,7 @@
+@@ -1413,7 +1414,7 @@ TextFetchSelection(clientData, offset, b
  		    }
  		}
  	    }
@@ -17,7 +18,7 @@
  		memcpy((VOID *) buffer, (VOID *) (segPtr->body.chars
  			+ offsetInSeg), (size_t) chunkSize);
  		buffer += chunkSize;
-@@ -1554,7 +1555,7 @@
+@@ -1554,7 +1555,7 @@ TextSearchCmd(textPtr, interp, argc, arg
      int argc;			/* Number of arguments. */
      char **argv;		/* Argument strings. */
  {
@@ -26,7 +27,7 @@
      size_t length;
      int numLines, startingLine, startingChar, lineNum, firstChar, lastChar;
      int code, matchLength, matchChar, passes, stopLine, searchWholeText;
-@@ -1565,6 +1566,7 @@
+@@ -1565,6 +1566,7 @@ TextSearchCmd(textPtr, interp, argc, arg
      Tcl_DString line, patDString;
      TkTextSegment *segPtr;
      TkTextLine *linePtr;
@@ -34,7 +35,7 @@
      Tcl_RegExp regexp = NULL;		/* Initialization needed only to
  					 * prevent compiler warning. */
  
-@@ -1573,6 +1575,8 @@
+@@ -1573,6 +1575,8 @@ TextSearchCmd(textPtr, interp, argc, arg
       */
  
      exact = 1;
@@ -43,7 +44,7 @@
      backwards = 0;
      noCase = 0;
      varName = NULL;
-@@ -1586,7 +1590,7 @@
+@@ -1586,7 +1590,7 @@ TextSearchCmd(textPtr, interp, argc, arg
  	    badSwitch:
  	    Tcl_AppendResult(interp, "bad switch \"", arg,
  		    "\": must be -forward, -backward, -exact, -regexp, ",
@@ -52,7 +53,7 @@
  	    return TCL_ERROR;
  	}
  	c = arg[1];
-@@ -1601,6 +1605,8 @@
+@@ -1601,6 +1605,8 @@ TextSearchCmd(textPtr, interp, argc, arg
  	    varName = argv[i];
  	} else if ((c == 'e') && (strncmp(argv[i], "-exact", length) == 0)) {
  	    exact = 1;
@@ -61,7 +62,7 @@
  	} else if ((c == 'f') && (strncmp(argv[i], "-forwards", length) == 0)) {
  	    backwards = 0;
  	} else if ((c == 'n') && (strncmp(argv[i], "-nocase", length) == 0)) {
-@@ -1702,9 +1708,10 @@
+@@ -1702,9 +1708,10 @@ TextSearchCmd(textPtr, interp, argc, arg
  	 */
  
  	linePtr = TkBTreeFindLine(textPtr->tree, lineNum);

@@ -1,6 +1,7 @@
---- ../generic/tkTextTag.c.orig	Mon Sep 14 14:23:19 1998
-+++ ../generic/tkTextTag.c	Wed Jan  5 23:20:56 2000
-@@ -63,6 +63,9 @@
+$OpenBSD: patch-generic_tkTextTag_c,v 1.1 2006/01/08 17:20:11 naddy Exp $
+--- generic/tkTextTag.c.orig	Mon Sep 14 20:23:19 1998
++++ generic/tkTextTag.c	Sun Jan  8 18:09:42 2006
+@@ -63,6 +63,9 @@ static Tk_ConfigSpec tagConfigSpecs[] = 
      {TK_CONFIG_STRING, "-underline", (char *) NULL, (char *) NULL,
  	(char *) NULL, Tk_Offset(TkTextTag, underlineString),
  	TK_CONFIG_NULL_OK},
@@ -10,7 +11,7 @@
      {TK_CONFIG_UID, "-wrap", (char *) NULL, (char *) NULL,
  	(char *) NULL, Tk_Offset(TkTextTag, wrapMode),
  	TK_CONFIG_NULL_OK},
-@@ -378,6 +381,12 @@
+@@ -378,6 +381,12 @@ TkTextTagCmd(textPtr, interp, argc, argv
  		    return TCL_ERROR;
  		}
  	    }
@@ -23,7 +24,7 @@
  	    if ((tagPtr->wrapMode != NULL)
  		    && (tagPtr->wrapMode != tkTextCharUid)
  		    && (tagPtr->wrapMode != tkTextNoneUid)
-@@ -419,6 +428,7 @@
+@@ -419,6 +428,7 @@ TkTextTagCmd(textPtr, interp, argc, argv
  		    || (tagPtr->spacing3String != NULL)
  		    || (tagPtr->tabString != NULL)
  		    || (tagPtr->underlineString != NULL)
@@ -31,7 +32,7 @@
  		    || (tagPtr->wrapMode != NULL)) {
  		tagPtr->affectsDisplay = 1;
  	    }
-@@ -811,6 +821,8 @@
+@@ -811,6 +821,8 @@ TkTextCreateTag(textPtr, tagName)
      tagPtr->tabArrayPtr = NULL;
      tagPtr->underlineString = NULL;
      tagPtr->underline = 0;
@@ -40,7 +41,7 @@
      tagPtr->wrapMode = NULL;
      tagPtr->affectsDisplay = 0;
      textPtr->numTags++;
-@@ -934,6 +946,9 @@
+@@ -934,6 +946,9 @@ TkTextFreeTag(textPtr, tagPtr)
      }
      if (tagPtr->underlineString != NULL) {
  	ckfree(tagPtr->underlineString);

@@ -1,6 +1,7 @@
---- Makefile.in.orig	Tue Mar  9 01:53:50 1999
-+++ Makefile.in	Tue Jul 18 05:26:36 2000
-@@ -112,7 +112,7 @@
+$OpenBSD: patch-unix_Makefile_in,v 1.1 2006/01/08 17:20:11 naddy Exp $
+--- unix/Makefile.in.orig	Tue Mar  9 07:53:50 1999
++++ unix/Makefile.in	Sun Jan  8 18:09:42 2006
+@@ -112,7 +112,7 @@ X11_LIB_SWITCHES =	@XLIBSW@
  
  # Libraries to use when linking.  This definition is determined by the
  # configure script.
@@ -9,7 +10,7 @@
  
  # To turn off the security checks that disallow incoming sends when
  # the X server appears to be insecure, reverse the comments on the
-@@ -302,14 +302,18 @@
+@@ -302,15 +302,19 @@ HDRS = bltList.h \
  
  DEMOPROGS = browse hello ixset rmt rolodex square tcolor timer widget
  
@@ -22,15 +23,16 @@
  	rm -f ${TK_LIB_FILE}
  	@MAKE_LIB@
 -	$(RANLIB) ${TK_LIB_FILE}
-+
+ 
 +libtk80.a: ${OBJS}
 +	rm -f libtk80.a
 +	ar cr libtk80.a ${OBJS}
 +	$(RANLIB) libtk80.a
- 
++
  # Make target which outputs the list of the .o contained in the Tk lib
  # usefull to build a single big shared library containing Tcl/Tk and other
-@@ -365,7 +369,7 @@
+ # extensions.  used for the Tcl Plugin.  -- dl
+@@ -365,7 +369,7 @@ install: install-binaries install-librar
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
@@ -39,7 +41,7 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -377,15 +381,19 @@
+@@ -377,15 +381,19 @@ install-binaries: $(TK_LIB_FILE) wish
  	    done;
  	@echo "Installing $(TK_LIB_FILE)"
  	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
@@ -61,7 +63,7 @@
  		$(SCRIPT_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)/images; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -395,8 +403,18 @@
+@@ -395,8 +403,18 @@ install-libraries:
  		else true; \
  		fi; \
  	    done;

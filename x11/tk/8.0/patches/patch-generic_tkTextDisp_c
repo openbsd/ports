@@ -1,6 +1,7 @@
---- ../generic/tkTextDisp.c.orig	Mon Sep 14 14:23:18 1998
-+++ ../generic/tkTextDisp.c	Wed Jan  5 23:20:56 2000
-@@ -55,6 +55,7 @@
+$OpenBSD: patch-generic_tkTextDisp_c,v 1.1 2006/01/08 17:20:11 naddy Exp $
+--- generic/tkTextDisp.c.orig	Mon Sep 14 20:23:18 1998
++++ generic/tkTextDisp.c	Sun Jan  8 18:09:42 2006
+@@ -55,6 +55,7 @@ typedef struct StyleValues {
  				 * be NULL). */
      int underline;		/* Non-zero means draw underline underneath
  				 * text. */
@@ -8,7 +9,7 @@
      Tk_Uid wrapMode;		/* How to handle wrap-around for this tag.
  				 * One of tkTextCharUid, tkTextNoneUid,
  				 * or tkTextWordUid. */
-@@ -311,6 +312,21 @@
+@@ -311,6 +312,21 @@ static int		CharMeasureProc _ANSI_ARGS_(
  			    int x));
  static void		CharUndisplayProc _ANSI_ARGS_((TkText *textPtr,
  			    TkTextDispChunk *chunkPtr));
@@ -30,7 +31,7 @@
  static void		DisplayDLine _ANSI_ARGS_((TkText *textPtr,
  			    DLine *dlPtr, DLine *prevPtr, Pixmap pixmap));
  static void		DisplayLineBackground _ANSI_ARGS_((TkText *textPtr,
-@@ -479,7 +495,7 @@
+@@ -479,7 +495,7 @@ GetStyle(textPtr, indexPtr)
  
      int borderPrio, borderWidthPrio, reliefPrio, bgStipplePrio;
      int fgPrio, fontPrio, fgStipplePrio;
@@ -39,7 +40,7 @@
      int lMargin1Prio, lMargin2Prio, rMarginPrio;
      int spacing1Prio, spacing2Prio, spacing3Prio;
      int overstrikePrio, tabPrio, wrapPrio;
-@@ -494,7 +510,7 @@
+@@ -494,7 +510,7 @@ GetStyle(textPtr, indexPtr)
      tagPtrs = TkBTreeGetTags(indexPtr, &numTags);
      borderPrio = borderWidthPrio = reliefPrio = bgStipplePrio = -1;
      fgPrio = fontPrio = fgStipplePrio = -1;
@@ -48,7 +49,7 @@
      lMargin1Prio = lMargin2Prio = rMarginPrio = -1;
      spacing1Prio = spacing2Prio = spacing3Prio = -1;
      overstrikePrio = tabPrio = wrapPrio = -1;
-@@ -612,6 +628,11 @@
+@@ -612,6 +628,11 @@ GetStyle(textPtr, indexPtr)
  	    styleValues.underline = tagPtr->underline;
  	    underlinePrio = tagPtr->priority;
  	}
@@ -60,7 +61,7 @@
  	if ((tagPtr->wrapMode != NULL)
  		&& (tagPtr->priority > wrapPrio)) {
  	    styleValues.wrapMode = tagPtr->wrapMode;
-@@ -768,7 +789,7 @@
+@@ -768,7 +789,7 @@ LayoutDLine(textPtr, indexPtr)
  					 * lines with numChars > 0.  Used to
  					 * drop 0-sized chunks from the end
  					 * of the line. */
@@ -69,12 +70,12 @@
      StyleValues *sValuePtr;
  
      /*
-@@ -786,6 +807,34 @@
+@@ -786,7 +807,35 @@ LayoutDLine(textPtr, indexPtr)
      dlPtr->nextPtr = NULL;
      dlPtr->flags = NEW_LAYOUT;
  
 +
-+    /*
+     /*
 +	* special case entirely elide line as there may be 1000s or more
 +	*/
 +	elide = TkTextIsElided(textPtr, indexPtr);		/* save a malloc */
@@ -101,10 +102,11 @@
 +
 +
 +
-     /*
++    /*
       * Each iteration of the loop below creates one TkTextDispChunk for
       * the new display line.  The line will always have at least one
-@@ -797,6 +846,7 @@
+      * chunk (for the newline character at the end, if there's nothing
+@@ -797,6 +846,7 @@ LayoutDLine(textPtr, indexPtr)
      lastChunkPtr = NULL;
      chunkPtr = NULL;
      noCharsYet = 1;
@@ -112,7 +114,7 @@
      breakChunkPtr = NULL;
      breakCharOffset = 0;
      justify = TK_JUSTIFY_LEFT;
-@@ -821,6 +871,31 @@
+@@ -821,6 +871,31 @@ LayoutDLine(textPtr, indexPtr)
      }
  
      while (segPtr != NULL) {
@@ -144,7 +146,7 @@
  	if (segPtr->typePtr->layoutProc == NULL) {
  	    segPtr = segPtr->nextPtr;
  	    offset = 0;
-@@ -831,6 +906,7 @@
+@@ -831,6 +906,7 @@ LayoutDLine(textPtr, indexPtr)
  	    chunkPtr->nextPtr = NULL;
  	}
  	chunkPtr->stylePtr = GetStyle(textPtr, &curIndex);
@@ -152,7 +154,7 @@
  
  	/*
  	 * Save style information such as justification and indentation,
-@@ -864,7 +940,7 @@
+@@ -864,7 +940,7 @@ LayoutDLine(textPtr, indexPtr)
  
  	gotTab = 0;
  	maxChars = segPtr->size - offset;
@@ -161,7 +163,7 @@
  	    if (segPtr->typePtr == &tkTextCharType) {
  		char *p;
  
-@@ -877,8 +953,21 @@
+@@ -877,8 +953,21 @@ LayoutDLine(textPtr, indexPtr)
  		}
  	    }
  	}
@@ -184,7 +186,7 @@
  	code = (*segPtr->typePtr->layoutProc)(textPtr, &curIndex, segPtr,
  		offset, maxX-tabSize, maxChars, noCharsYet, wrapMode,
  		chunkPtr);
-@@ -950,6 +1039,7 @@
+@@ -950,6 +1039,7 @@ LayoutDLine(textPtr, indexPtr)
  	    offset = 0;
  	    segPtr = segPtr->nextPtr;
  	}
@@ -192,7 +194,7 @@
  	chunkPtr = NULL;
      }
      if (noCharsYet) {
-@@ -998,6 +1088,7 @@
+@@ -998,6 +1088,7 @@ LayoutDLine(textPtr, indexPtr)
  	wholeLine = 0;
      }
  
@@ -200,7 +202,7 @@
      /*
       * Make tab adjustments for the last tab stop, if there is one.
       */
-@@ -1321,6 +1412,7 @@
+@@ -1321,6 +1412,7 @@ UpdateDisplayInfo(textPtr)
  	    index.linePtr = TkBTreeFindLine(textPtr->tree, lineNum);
  	    index.charIndex = 0;
  	    lowestPtr = NULL;
@@ -208,7 +210,7 @@
  	    do {
  		dlPtr = LayoutDLine(textPtr, &index);
  		dlPtr->nextPtr = lowestPtr;
-@@ -1554,6 +1646,8 @@
+@@ -1554,6 +1646,8 @@ DisplayDLine(textPtr, dlPtr, prevPtr, pi
      Display *display;
      int height, x;
  
@@ -217,7 +219,7 @@
      /*
       * First, clear the area of the line to the background color for the
       * text widget.
-@@ -1620,12 +1714,16 @@
+@@ -1620,12 +1714,16 @@ DisplayDLine(textPtr, dlPtr, prevPtr, pi
  	     * something is off to the right).
  	     */
  
@@ -234,7 +236,7 @@
  	    (*chunkPtr->displayProc)(chunkPtr, x, dlPtr->spaceAbove,
  		    dlPtr->height - dlPtr->spaceAbove - dlPtr->spaceBelow,
  		    dlPtr->baseline - dlPtr->spaceAbove, display, pixmap,
-@@ -1714,6 +1812,7 @@
+@@ -1714,6 +1812,7 @@ DisplayLineBackground(textPtr, dlPtr, pr
      StyleValues *sValuePtr;
      Display *display;
  
@@ -242,7 +244,7 @@
      /*
       * Pass 1: scan through dlPtr from left to right.  For each range of
       * chunks with the same style, draw the main background for the style
-@@ -1787,7 +1886,7 @@
+@@ -1787,7 +1886,7 @@ DisplayLineBackground(textPtr, dlPtr, pr
  	rightX = maxX;
      }
      chunkPtr2 = NULL;
@@ -251,7 +253,7 @@
  	/*
  	 * Find the chunk in the previous line that covers leftX.
  	 */
-@@ -1908,7 +2007,8 @@
+@@ -1908,7 +2007,8 @@ DisplayLineBackground(textPtr, dlPtr, pr
  	rightX = maxX;
      }
      chunkPtr2 = NULL;
@@ -261,7 +263,7 @@
  	/*
  	 * Find the chunk in the previous line that covers leftX.
  	 */
-@@ -2299,6 +2399,7 @@
+@@ -2299,6 +2399,7 @@ DisplayText(clientData)
  	for (prevPtr = NULL, dlPtr = textPtr->dInfoPtr->dLinePtr;
  		(dlPtr != NULL) && (dlPtr->y < dInfoPtr->maxY);
  		prevPtr = dlPtr, dlPtr = dlPtr->nextPtr) {
@@ -269,7 +271,7 @@
  	    if (dlPtr->oldY != dlPtr->y) {
  		if (tkTextDebug) {
  		    char string[TK_POS_CHARS];
-@@ -2315,6 +2416,7 @@
+@@ -2315,6 +2416,7 @@ DisplayText(clientData)
  		dlPtr->oldY = dlPtr->y;
  		dlPtr->flags &= ~NEW_LAYOUT;
  	    }
@@ -277,7 +279,7 @@
  	}
  	Tk_FreePixmap(Tk_Display(textPtr->tkwin), pixmap);
      }
-@@ -3369,6 +3471,7 @@
+@@ -3369,6 +3471,7 @@ ScrollByLines(textPtr, offset)
  		dlPtr = LayoutDLine(textPtr, &index);
  		dlPtr->nextPtr = lowestPtr;
  		lowestPtr = dlPtr;
@@ -285,7 +287,7 @@
  		TkTextIndexForwChars(&index, dlPtr->count, &index);
  		charsToCount -= dlPtr->count;
  	    } while ((charsToCount > 0)
-@@ -3381,7 +3484,7 @@
+@@ -3381,7 +3484,7 @@ ScrollByLines(textPtr, offset)
  		    break;
  		}
  	    }
@@ -294,7 +296,7 @@
  	    /*
  	     * Discard the display lines, then either return or prepare
  	     * for the next display line to lay out.
-@@ -3410,12 +3513,14 @@
+@@ -3410,12 +3513,14 @@ ScrollByLines(textPtr, offset)
  		TkBTreeNumLines(textPtr->tree));
  	for (i = 0; i < offset; i++) {
  	    dlPtr = LayoutDLine(textPtr, &textPtr->topIndex);
@@ -309,7 +311,7 @@
  	    textPtr->topIndex = new;
  	}
      }
-@@ -3949,7 +4054,7 @@
+@@ -3949,7 +4054,7 @@ TkTextPixelIndex(textPtr, x, y, indexPtr
  				 * index of the character nearest to (x,y). */
  {
      TextDInfo *dInfoPtr = textPtr->dInfoPtr;
@@ -318,7 +320,7 @@
      register TkTextDispChunk *chunkPtr;
  
      /*
-@@ -3982,8 +4087,9 @@
+@@ -3982,8 +4087,9 @@ TkTextPixelIndex(textPtr, x, y, indexPtr
       * Find the display line containing the desired y-coordinate.
       */
  
@@ -329,16 +331,17 @@
  	if (dlPtr->nextPtr == NULL) {
  	    /*
  	     * Y-coordinate is off the bottom of the displayed text.
-@@ -3994,6 +4100,8 @@
+@@ -3994,7 +4100,9 @@ TkTextPixelIndex(textPtr, x, y, indexPtr
  	    break;
  	}
      }
 +    if (dlPtr->chunkPtr == NULL) dlPtr = validdlPtr;
-+
  
++
      /*
       * Scan through the line's chunks to find the one that contains
-@@ -4005,12 +4113,12 @@
+      * the desired x-coordinate.  Before doing this, translate the
+@@ -4005,12 +4113,12 @@ TkTextPixelIndex(textPtr, x, y, indexPtr
      *indexPtr = dlPtr->index;
      x = x - dInfoPtr->x + dInfoPtr->curPixelOffset;
      for (chunkPtr = dlPtr->chunkPtr; x >= (chunkPtr->x + chunkPtr->width);
@@ -354,7 +357,7 @@
      }
  
      /*
-@@ -4166,6 +4274,7 @@
+@@ -4166,6 +4274,7 @@ TkTextDLineInfo(textPtr, indexPtr, xPtr,
  {
      TextDInfo *dInfoPtr = textPtr->dInfoPtr;
      DLine *dlPtr;
@@ -362,7 +365,7 @@
  
      /*
       * Make sure that all of the screen layout information is up to date.
-@@ -4184,8 +4293,9 @@
+@@ -4184,8 +4293,9 @@ TkTextDLineInfo(textPtr, indexPtr, xPtr,
  	return -1;
      }
  
@@ -374,7 +377,7 @@
      *yPtr = dlPtr->y;
      if ((dlPtr->y + dlPtr->height) > dInfoPtr->maxY) {
  	*heightPtr = dInfoPtr->maxY - dlPtr->y;
-@@ -4196,6 +4306,41 @@
+@@ -4196,6 +4306,41 @@ TkTextDLineInfo(textPtr, indexPtr, xPtr,
      return 0;
  }
  
@@ -416,7 +419,7 @@
  /*
   *--------------------------------------------------------------
   *
-@@ -4421,7 +4566,7 @@
+@@ -4421,7 +4566,7 @@ CharDisplayProc(chunkPtr, x, y, height, 
       * Draw the text, underline, and overstrike for this chunk.
       */
  

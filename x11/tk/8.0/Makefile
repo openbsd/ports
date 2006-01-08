@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2004/12/19 17:27:01 alek Exp $
+# $OpenBSD: Makefile,v 1.20 2006/01/08 17:20:11 naddy Exp $
 # $FreeBSD: Makefile,v 1.7 1997/12/01 16:50:58 pst Exp $
 
 COMMENT=	"graphical toolkit for Tcl"
@@ -34,7 +34,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --with-tcl="${LOCALBASE}/lib/tcl8.0"
 CONFIGURE_ENV=	PORTSDIR="${PORTSDIR}"
 
-WRKDIST=	${WRKDIR}/${DISTNAME}/unix
+WRKSRC=		${WRKDIST}/unix
 
 REGRESS_TARGET=	test
 REGRESS_DEPENDS=::lang/tcl/8.3:regress

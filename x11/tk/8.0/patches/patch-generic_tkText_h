@@ -1,6 +1,7 @@
---- ../generic/tkText.h.orig	Mon Sep 14 14:23:18 1998
-+++ ../generic/tkText.h	Wed Jan  5 23:20:55 2000
-@@ -370,6 +370,10 @@
+$OpenBSD: patch-generic_tkText_h,v 1.1 2006/01/08 17:20:11 naddy Exp $
+--- generic/tkText.h.orig	Mon Sep 14 20:23:18 1998
++++ generic/tkText.h	Sun Jan  8 18:09:42 2006
+@@ -370,6 +370,10 @@ typedef struct TkTextTag {
  				 * Must be tkTextCharUid, tkTextNoneUid,
  				 * tkTextWordUid, or NULL to use wrapMode
  				 * for whole widget. */
@@ -11,7 +12,7 @@
      int affectsDisplay;		/* Non-zero means that this tag affects the
  				 * way information is displayed on the screen
  				 * (so need to redisplay if tag changes). */
-@@ -800,6 +804,8 @@
+@@ -800,6 +804,8 @@ extern void		TkTextLostSelection _ANSI_A
  			    ClientData clientData));
  extern TkTextIndex *	TkTextMakeIndex _ANSI_ARGS_((TkTextBTree tree,
  			    int lineIndex, int charIndex,
