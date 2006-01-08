@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2005/12/03 12:36:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2006/01/08 12:37:50 espie Exp $
 bin/embedjs
 bin/jsaccess
 bin/kjscmd
@@ -53,22 +53,26 @@ ${KDE}/libjsconsoleplugin.so
 ${KDE}/libqprocessplugin.la
 ${KDE}/libqprocessplugin.so
 lib/libkjsembed.la
-@lib lib/libkjsembed.so.1.0
+@lib lib/libkjsembed.so.${LIBkjsembed_VERSION}
 lib/libsmokekde.la
-@lib lib/libsmokekde.so.3.2
+@lib lib/libsmokekde.so.${LIBsmokekde_VERSION}
 lib/libsmokeqt.la
-@lib lib/libsmokeqt.so.3.2
+@lib lib/libsmokeqt.so.${LIBsmokeqt_VERSION}
 lib/python2.4/
 lib/python2.4/pydcop.py
 lib/python2.4/site-packages/
 lib/python2.4/site-packages/pcop.la
 lib/python2.4/site-packages/pcop.so
+lib/ruby/
+lib/ruby/site_ruby/
+lib/ruby/site_ruby/1.8/
 lib/ruby/site_ruby/1.8/KDE/
 lib/ruby/site_ruby/1.8/KDE/korundum.rb
 lib/ruby/site_ruby/1.8/Korundum.rb
 lib/ruby/site_ruby/1.8/Qt/
 lib/ruby/site_ruby/1.8/Qt.rb
 lib/ruby/site_ruby/1.8/Qt/qtruby.rb
+lib/ruby/site_ruby/1.8/${GNU_ARCH}-openbsd${OSREV}/
 lib/ruby/site_ruby/1.8/${GNU_ARCH}-openbsd${OSREV}/korundum.la
 lib/ruby/site_ruby/1.8/${GNU_ARCH}-openbsd${OSREV}/korundum.so.0.0
 lib/ruby/site_ruby/1.8/${GNU_ARCH}-openbsd${OSREV}/qtruby.la

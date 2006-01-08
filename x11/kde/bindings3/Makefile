@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2006/01/01 09:51:58 alek Exp $
+# $OpenBSD: Makefile,v 1.28 2006/01/08 12:37:50 espie Exp $
 
 .if ${MACHINE_ARCH} == "powerpc"
 BROKEN=			"gcc spins on x_20.cpp"
@@ -8,8 +8,11 @@ COMMENT= 		"K Desktop Environment, extra language support"
 CATEGORIES=		x11 x11/kde devel
 VERSION=		3.5.0
 DISTNAME=		kdebindings-${VERSION}
-PKGNAME=		${DISTNAME}
+PKGNAME=		${DISTNAME}p0
 MODKDE_VERSION=		3.5
+SHARED_LIBS=		kjsembed	1.0 \
+			smokekde	3.2 \
+			smokeqt		3.2
 
 LIB_DEPENDS=DCOP,kdecore.6,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kmdi,knewstuff,kparts,kscript,kspell,kutils,kwalletclient::x11/kde/libs3 \
 	qui-mt::x11/qt3,mt \
@@ -30,5 +33,7 @@ CONFIGURE_ENV+=DO_NOT_COMPILE=python
 
 GNU_ARCH=${MACHINE_ARCH:S/amd64/x86_64/}
 SUBST_VARS=GNU_ARCH OSREV
+USE_LIBTOOL=	Yes
+LIBTOOL_FLAGS+=	--tag=disable-static
 
 .include <bsd.port.mk>
