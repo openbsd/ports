@@ -1,4 +1,0 @@
-vtun is insecure due to design flaws, see:
-http://www.mit.edu:8008/bloom-picayune/crypto/14238
-
-$OpenBSD: SECURITY,v 1.1 2003/09/28 17:45:36 naddy Exp $
