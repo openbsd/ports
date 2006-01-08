@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2005/12/31 09:46:56 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2006/01/08 10:23:02 steven Exp $
 
 COMMENT=	"zeroconf networking implementation"
 DISTNAME=	howl-1.0.0
 PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=		howl		0.0	\
-			mDNSResponder	0.0
-MODGNU_SHARED_LIBS=	howl		''	\
-			mDNSResponder	''
+SHARED_LIBS=	howl		0.0 \
+		mDNSResponder	0.0
 
 CATEGORIES=	net
 MASTER_SITES=	http://www.porchdogsoft.com/download/
