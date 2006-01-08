@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/14 23:43:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2006/01/08 16:20:49 steven Exp $
 ${P5ARCH}/
 ${P5ARCH}/Attribute/
 ${P5ARCH}/Attribute/Params/
 ${P5ARCH}/Attribute/Params/Validate.pm
 ${P5ARCH}/Params/
 ${P5ARCH}/Params/Validate.pm
-@comment ${P5ARCH}/Params/Validate.pm.orig
 ${P5ARCH}/Params/ValidatePP.pm
 ${P5ARCH}/Params/ValidateXS.pm
 ${P5ARCH}/auto/
