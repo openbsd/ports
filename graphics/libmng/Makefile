@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2005/12/26 15:07:55 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2006/01/08 00:32:16 steven Exp $
 
 COMMENT=	"Multiple-image Network Graphics (MNG) reference library"
 
@@ -23,11 +23,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FAKE_FLAGS=	DESTDIR="${WRKINST}" PREFIX="${PREFIX}"
 
-SHLIB_MAJOR=	${LIBmng_VERSION:R}
-SHLIB_MINOR=	${LIBmng_VERSION:E}
-
 MAKE_ENV=	CC="${CC}" \
-		SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR}
+		SHLIB_MAJOR=${LIBmng_VERSION:R} \
+		SHLIB_MINOR=${LIBmng_VERSION:E}
 MAKE_FILE=	makefiles/makefile.openbsd
 
 WRKDIST=	${WRKDIR}/libmng
