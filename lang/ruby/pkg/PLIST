@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2005/12/29 17:27:32 msf Exp $
+@comment $OpenBSD: PLIST,v 1.13 2006/01/08 10:39:31 alek Exp $
 bin/erb
 bin/irb
 bin/rdoc
@@ -7,7 +7,7 @@ bin/ruby
 bin/testrb
 lib/libruby-static.a
 lib/libruby.so
-@lib lib/libruby.so.${REV}4
+@lib lib/libruby.so.${LIBruby_VERSION}
 lib/ruby/
 lib/ruby/${REV}/
 lib/ruby/${REV}/English.rb
@@ -1089,6 +1089,7 @@ share/ri/${REV}/system/Dir/rewind-i.yaml
 share/ri/${REV}/system/Dir/rmdir-c.yaml
 share/ri/${REV}/system/Dir/seek-i.yaml
 share/ri/${REV}/system/Dir/tell-i.yaml
+share/ri/${REV}/system/Dir/tmpdir-c.yaml
 share/ri/${REV}/system/Dir/unlink-c.yaml
 share/ri/${REV}/system/EOFError/
 share/ri/${REV}/system/EOFError/cdesc-EOFError.yaml
@@ -2898,6 +2899,11 @@ share/ri/${REV}/system/Time/zone_offset-c.yaml
 share/ri/${REV}/system/Time/zone_utc%3f-c.yaml
 share/ri/${REV}/system/TimeExtentionTest/
 share/ri/${REV}/system/TimeExtentionTest/cdesc-TimeExtentionTest.yaml
+share/ri/${REV}/system/Timeout/
+share/ri/${REV}/system/Timeout/Error/
+share/ri/${REV}/system/Timeout/Error/cdesc-Error.yaml
+share/ri/${REV}/system/Timeout/cdesc-Timeout.yaml
+share/ri/${REV}/system/Timeout/timeout-i.yaml
 share/ri/${REV}/system/TrueClass/
 share/ri/${REV}/system/TrueClass/%26-i.yaml
 share/ri/${REV}/system/TrueClass/%5e-i.yaml

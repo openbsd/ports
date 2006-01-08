@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2005/12/29 17:27:31 msf Exp $
+# $OpenBSD: Makefile,v 1.35 2006/01/08 10:39:31 alek Exp $
 
 COMMENT=		"object oriented script language with threads"
 COMMENT-iconv=		"libiconv interface for ruby"
@@ -8,6 +8,8 @@ COMMENT-tk=		"tk interface for ruby"
 SHARED_ONLY=		Yes
 VERSION=		1.8.4
 DISTNAME=		ruby-${VERSION}
+SHARED_LIBS=		ruby 1.84
+PKGNAME=		${DISTNAME}p0
 PKGNAME-iconv=		ruby-iconv-${VERSION}
 PKGNAME-gdbm=		ruby-gdbm-${VERSION}
 PKGNAME-tk=		ruby-tk-${VERSION}
@@ -47,7 +49,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-ipv6 \
 			--with-dbm-type=bogus \
 			--with-opt-dir="${LOCALBASE}"
-CONFIGURE_ENV+=		PREFIX="${PREFIX}"
+CONFIGURE_ENV+=		PREFIX="${PREFIX}" \
+			LIBruby_VERSION=${LIBruby_VERSION}
 
 .if !${FLAVOR:L:Mno_x11}
 USE_X11=		Yes
