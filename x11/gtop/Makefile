@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/12/17 15:18:33 alek Exp $
+# $OpenBSD: Makefile,v 1.14 2006/01/08 02:49:47 brad Exp $
 
 COMMENT=		"GNOME version of top"
 
@@ -9,10 +9,6 @@ MAINTAINER=		Jim Geovedi <jim@corebsd.or.id>
 HOMEPAGE=		http://www.gnome.org
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gtop/1.0/}
-
-PATCH_LIST=             ${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
-                        ${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
-                        patch-*
 
 LIB_DEPENDS=		gnome.36,art_lgpl,gnomeui::x11/gnome/libs \
 			gtop,gtop_common,gtop_sysdeps::devel/libgtop,gnome
@@ -27,6 +23,7 @@ WANTLIB=		ICE SM X11 Xext Xi audiofile c esd gdk gdk_imlib glib \
 			ungif z
 
 USE_X11=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
