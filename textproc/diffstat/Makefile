@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2005/02/08 18:32:20 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2006/01/08 15:17:02 steven Exp $
 
 COMMENT=		"accumulates and displays statistics from a diff file"
 
-DISTNAME=		diffstat-1.38
+DISTNAME=		diffstat-1.41
 CATEGORIES=		textproc
 MASTER_SITES=		ftp://invisible-island.net/diffstat/
 EXTRACT_SUFX=		.tgz
@@ -16,8 +16,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c 
-
-NO_REGRESS=		Yes	# 'testing' directory not present
 
 CONFIGURE_STYLE=	gnu
 
