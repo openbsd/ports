@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/11/28 22:41:17 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/01/08 01:04:33 brad Exp $
 
 COMMENT=	"Settlers of Catan for GNOME/Gtk"
 
@@ -22,13 +22,10 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gnocatan/}
 LIB_DEPENDS=	art_lgpl.4,gnome.36,gnomeui.46,gnomesupport.0::x11/gnome/libs
 
 USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
 USE_X11=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
-		patch-*
 
 .include <bsd.port.mk>
