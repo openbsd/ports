@@ -1,0 +1,11 @@
+$OpenBSD: patch-source_vmmon_openbsd_drv_c,v 1.1 2006/01/08 01:44:38 aaron Exp $
+--- source/vmmon/openbsd/drv.c.orig	Sat Jan  7 08:02:50 2006
++++ source/vmmon/openbsd/drv.c	Sat Jan  7 08:27:00 2006
+@@ -414,6 +414,7 @@
+ #endif 
+ 
+ 	p->p_dupfd = fd;
++	p->p_descfd = p->p_dupfd;	/* XXX */
+ 
+ 	return ENXIO;
+ }

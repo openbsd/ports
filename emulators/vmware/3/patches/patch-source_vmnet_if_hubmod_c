@@ -1,0 +1,11 @@
+$OpenBSD: patch-source_vmnet_if_hubmod_c,v 1.1 2006/01/08 01:44:38 aaron Exp $
+--- source/vmnet/if_hubmod.c.orig	Sat Jan  7 08:27:56 2006
++++ source/vmnet/if_hubmod.c	Sat Jan  7 08:27:18 2006
+@@ -604,6 +604,7 @@
+ #endif
+ 
+ 	p->p_dupfd = fd;
++	p->p_descfd = p->p_dupfd;	/* XXX */
+ 
+ 	return ENXIO;
+ }
