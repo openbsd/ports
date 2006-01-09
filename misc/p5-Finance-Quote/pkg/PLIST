@@ -1,45 +1,69 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 17:54:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/01/09 23:13:12 steven Exp $
 ${P5SITE}/Finance/
 ${P5SITE}/Finance/Quote/
 ${P5SITE}/Finance/Quote.pm
 ${P5SITE}/Finance/Quote/AEX.pm
+${P5SITE}/Finance/Quote/ASEGR.pm
 ${P5SITE}/Finance/Quote/ASX.pm
 ${P5SITE}/Finance/Quote/BMONesbittBurns.pm
 ${P5SITE}/Finance/Quote/Cdnfundlibrary.pm
 ${P5SITE}/Finance/Quote/DWS.pm
 ${P5SITE}/Finance/Quote/FTPortfolios.pm
 ${P5SITE}/Finance/Quote/Fidelity.pm
+${P5SITE}/Finance/Quote/FinanceCanada.pm
 ${P5SITE}/Finance/Quote/Fool.pm
 ${P5SITE}/Finance/Quote/IndiaMutual.pm
+${P5SITE}/Finance/Quote/ManInvestments.pm
+${P5SITE}/Finance/Quote/NZX.pm
+${P5SITE}/Finance/Quote/Platinum.pm
+${P5SITE}/Finance/Quote/SEB.pm
+${P5SITE}/Finance/Quote/TSP.pm
+${P5SITE}/Finance/Quote/Tdefunds.pm
 ${P5SITE}/Finance/Quote/Tdwaterhouse.pm
 ${P5SITE}/Finance/Quote/Tiaacref.pm
 ${P5SITE}/Finance/Quote/Troweprice.pm
 ${P5SITE}/Finance/Quote/Trustnet.pm
+${P5SITE}/Finance/Quote/Union.pm
 ${P5SITE}/Finance/Quote/UserAgent.pm
 ${P5SITE}/Finance/Quote/VWD.pm
 ${P5SITE}/Finance/Quote/Yahoo/
 ${P5SITE}/Finance/Quote/Yahoo/Asia.pm
 ${P5SITE}/Finance/Quote/Yahoo/Australia.pm
 ${P5SITE}/Finance/Quote/Yahoo/Base.pm
+${P5SITE}/Finance/Quote/Yahoo/Brasil.pm
 ${P5SITE}/Finance/Quote/Yahoo/Europe.pm
+${P5SITE}/Finance/Quote/Yahoo/NZ.pm
 ${P5SITE}/Finance/Quote/Yahoo/USA.pm
+${P5SITE}/Finance/Quote/ZI.pm
 @man man/man3p/Finance::Quote.3p
 @man man/man3p/Finance::Quote::AEX.3p
+@man man/man3p/Finance::Quote::ASEGR.3p
 @man man/man3p/Finance::Quote::ASX.3p
 @man man/man3p/Finance::Quote::BMONesbittBurns.3p
 @man man/man3p/Finance::Quote::Cdnfundlibrary.3p
 @man man/man3p/Finance::Quote::DWS.3p
 @man man/man3p/Finance::Quote::FTPortfolios.3p
 @man man/man3p/Finance::Quote::Fidelity.3p
+@man man/man3p/Finance::Quote::FinanceCanada.3p
 @man man/man3p/Finance::Quote::Fool.3p
 @man man/man3p/Finance::Quote::IndiaMutual.3p
+@man man/man3p/Finance::Quote::ManInvestments.3p
+@man man/man3p/Finance::Quote::NZX.3p
+@man man/man3p/Finance::Quote::Platinum.3p
+@man man/man3p/Finance::Quote::SEB.3p
+@man man/man3p/Finance::Quote::TSP.3p
+@man man/man3p/Finance::Quote::Tdefunds.3p
 @man man/man3p/Finance::Quote::Tdwaterhouse.3p
 @man man/man3p/Finance::Quote::Tiaacref.3p
 @man man/man3p/Finance::Quote::Troweprice.3p
 @man man/man3p/Finance::Quote::Trustnet.3p
+@man man/man3p/Finance::Quote::Union.3p
 @man man/man3p/Finance::Quote::VWD.3p
 @man man/man3p/Finance::Quote::Yahoo::Asia.3p
 @man man/man3p/Finance::Quote::Yahoo::Australia.3p
 @man man/man3p/Finance::Quote::Yahoo::Base.3p
+@man man/man3p/Finance::Quote::Yahoo::Brasil.3p
 @man man/man3p/Finance::Quote::Yahoo::Europe.3p
+@man man/man3p/Finance::Quote::Yahoo::NZ.3p
 @man man/man3p/Finance::Quote::Yahoo::USA.3p
+@man man/man3p/Finance::Quote::ZI.3p
