@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/05/16 11:14:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/01/09 12:16:35 espie Exp $
 bin/ecpp
 bin/egcc
 bin/egccbug
 bin/egcov
 bin/${CONFIG}-egcc
-bin/${CONFIG}-egcj
 bin/${CONFIG}-gcc-${V}
 @info info/cpp.info
 @info info/cppinternals.info
@@ -16,6 +15,7 @@ lib/gcc/${CONFIG}/
 lib/gcc/${CONFIG}/${V}/
 lib/gcc/${CONFIG}/${V}/include/
 lib/gcc/${CONFIG}/${V}/include/README
+lib/gcc/${CONFIG}/${V}/include/com_err.h
 lib/gcc/${CONFIG}/${V}/include/limits.h
 lib/gcc/${CONFIG}/${V}/include/math.h
 lib/gcc/${CONFIG}/${V}/include/rpc/
@@ -27,7 +27,6 @@ lib/gcc/${CONFIG}/${V}/include/sys/
 lib/gcc/${CONFIG}/${V}/include/sys/limits.h
 lib/gcc/${CONFIG}/${V}/include/sys/types.h
 lib/gcc/${CONFIG}/${V}/include/syslimits.h
-lib/gcc/${CONFIG}/${V}/include/unistd.h
 lib/gcc/${CONFIG}/${V}/install-tools/
 lib/gcc/${CONFIG}/${V}/install-tools/gsyslimits.h
 lib/gcc/${CONFIG}/${V}/install-tools/include/

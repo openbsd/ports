@@ -1,17 +1,20 @@
-# $OpenBSD: Makefile,v 1.8 2005/09/26 09:47:33 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/01/09 12:16:35 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
-V=3.4.5
-FULL_VERSION=3.4-20050913
-FULL_PKGVERSION=3.4.20050913
+V=3.4.6
+FULL_VERSION=3.4-20060103
+FULL_PKGVERSION=3.4.20060103
+SHARED_LIBS=	g2c	0.0 \
+		objc	1.0 \
+		objc_gc	1.0
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 MAKE_GXX=Yes
 MAKE_FORTRAN=Yes
 MAKE_OBJC=Yes
-MAKE_JAVA=Yes
+#MAKE_JAVA=Yes
 #MAKE_ADA=Yes
 
 MAKE_GXX?=No
@@ -62,8 +65,10 @@ DISTNAME=	gcc-${FULL_VERSION}
 
 
 DISTFILES=  ${DISTNAME}.tar.bz2
+SUPDISTFILES=adastrap-i386-3.3.6-2.tgz:0
 
 MASTER_SITES=	${MASTER_SITE_GCC:=snapshots/$(FULL_VERSION)/}
+MASTER_SITES0=	ftp://quatramaran.ens.fr/pub/espie/
 
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/gcc
@@ -89,12 +94,11 @@ CONFIGURE_ARGS+=--enable-java-gc=system-boehm
 .if ${MAKE_ADA:L} == "yes"
 LANGS:=${LANGS},ada
 MULTI_PACKAGES+=-ada
-
-CONFIGURE_ENV=ADAC=${LOCALBASE}/bin/egcc GNATBIND=${LOCALBASE}/bin/gnatbind
-MAKE_ENV=ADAC=${LOCALBASE}/bin/egcc GNATBIND=${LOCALBASE}/bin/gnatbind
-CC=${LOCALBASE}/bin/egcc
-BUILD_DEPENDS+=:gnat-*:lang/egcs/stable,-ada
+DISTFILES+=adastrap-${MACHINE_ARCH}-3.3.6-2.tgz:0
+CONFIGURE_ENV+=CC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
+MAKE_ENV+=CC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 .endif
+
 CONFIGURE_ENV+=am_cv_func_iconv=no
 
 # Note: the configure target passes CFLAGS to the configure script anyways.
@@ -102,7 +106,7 @@ CONFIGURE_ENV+=am_cv_func_iconv=no
 CFLAGS=-O2 -g
 
 
-CONFIGURE_ARGS= \
+CONFIGURE_ARGS+= \
 	--verbose \
 	--program-transform-name=s,^,e, \
 	--disable-nls  \
@@ -133,9 +137,6 @@ USE_GMAKE= yes
 # use bootstrap-lean if you're pressed for space
 ALL_TARGET=bootstrap
 
-MAKE_FLAGS=libstdc___la_LDFLAGS='-version-info 31:0:0 -lm'
-
-
 .if ${MACHINE_ARCH} == "m68k" || ${MACHINE_ARCH} == "sparc"
 PKG_ARGS+=-DPIC=1
 .else
@@ -156,6 +157,17 @@ RUN_DEPENDS+=:gcc-${FULL_PKGVERSION}:${PKGPATH}
 RUN_DEPENDS+=::${PKGPATH},-estdc
 .  endif
 .endif
+
+post-extract:
+.for f in egcc gnatbind gnatmake gnatlink gnatls
+	echo "#! /bin/sh" >${WRKDIR}/bin/$f
+	echo 'GNAT_ROOT=${WRKDIR}/bootstrap GCC_ROOT=${WRKDIR}/bootstrap exec ${WRKDIR}/bootstrap/bin/$f "$$@"' >>${WRKDIR}/bin/$f
+	chmod a+x ${WRKDIR}/bin/$f
+.endfor
+	echo "# This file automatically generated" >> ${WRKSRC}/libversions
+.for l v in ${SHARED_LIBS}
+	echo "LIB$l_LTVERSION = -version-info ${v:S/./:/}" >> ${WRKSRC}/libversions
+.endfor
 
 .include <bsd.port.mk>
 
