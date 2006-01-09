@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2006/01/09 23:38:18 naddy Exp $
+--- configure.orig	Mon Jan  9 12:41:55 2006
++++ configure	Mon Jan  9 12:42:27 2006
+@@ -1774,7 +1774,7 @@ rm -f conftest*
+     # must not use .so.1.0 here
+     ;;
+   *bsd*)
+-    CONF_SOEXT=so.1.0
++    CONF_SOEXT=so.${LIB_VERSION}
+     ;;
+   *cygwin32*)
+     have_cdk=yes;

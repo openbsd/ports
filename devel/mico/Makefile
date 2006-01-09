@@ -1,9 +1,18 @@
-# $OpenBSD: Makefile,v 1.7 2004/11/24 00:11:03 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/01/09 23:38:18 naddy Exp $
 
 COMMENT=	"free and complete CORBA-compliant implementation"
 
 DISTNAME=	mico-2.3.6
+#PKGNAME=	# see below
 CATEGORIES=	devel
+
+# The build framework accommodates only a single shared lib extension.
+SHARED_LIBS=	mico2.3.6	${LIB_VERSION} \
+		micoaux2.3.6	${LIB_VERSION} \
+		micocoss2.3.6	${LIB_VERSION} \
+		micoir2.3.6	${LIB_VERSION} \
+		micox2.3.6	${LIB_VERSION}
+LIB_VERSION=	1.0
 
 HOMEPAGE=	http://www.mico.org/
 MASTER_SITES=	${HOMEPAGE}
@@ -18,6 +27,7 @@ WANTLIB=		c m ncurses readline stdc++
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV=		LIB_VERSION=${LIB_VERSION}
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
 
@@ -25,27 +35,32 @@ FAKE_FLAGS=		prefix="${WRKINST}${PREFIX}"
 WRKDIST=        	${WRKDIR}/mico
 NO_REGRESS=		Yes
 
-FLAVORS=ssl qt gtk tcl
+FLAVORS=		ssl	# qt gtk tcl
 FLAVOR?=
 
 .if ${FLAVOR:L:Mssl}
+PKGNAME=		${DISTNAME}p0
 CONFIGURE_ARGS+=	--with-ssl
+WANTLIB+=		crypto ssl
 .endif
 
-.if ${FLAVOR:L:Mqt}
-LIB_DEPENDS+=		qt.2::x11/qt2
-CONFIGURE_ARGS+=	--with-qt
-.endif
+# XXX no Qt parts built
+#.if ${FLAVOR:L:Mqt}
+#LIB_DEPENDS+=		qt.2::x11/qt2
+#CONFIGURE_ARGS+=	--with-qt
+#.endif
 
-.if ${FLAVOR:L:Mgtk}
-LIB_DEPENDS+=		gtk.1.2::x11/gtk+
-CONFIGURE_ARGS+=	--with-gtk
-.endif
+# XXX no GTK parts built
+#.if ${FLAVOR:L:Mgtk}
+#LIB_DEPENDS+=		gtk.1.2::x11/gtk+
+#CONFIGURE_ARGS+=	--with-gtk
+#.endif
 
-.if ${FLAVOR:L:Mtcl}
-LIB_DEPENDS+=		tcl.8::lang/tcl
-CONFIGURE_ARGS+=	--with-tcl
-.endif
+# XXX wrong dependency
+#.if ${FLAVOR:L:Mtcl}
+#LIB_DEPENDS+=		tcl.8::lang/tcl
+#CONFIGURE_ARGS+=	--with-tcl
+#.endif
 
 pre-build:
 	cd ${WRKSRC}/idl && ${GMAKE} generate

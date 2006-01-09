@@ -1,8 +1,8 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2004/09/26 13:05:27 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2006/01/09 23:38:18 naddy Exp $
 bin/mico-shc++
 bin/mico-shld
-@lib lib/libmico2.3.6.so.1.0
-@lib lib/libmicoaux2.3.6.so.1.0
-@lib lib/libmicocoss2.3.6.so.1.0
-@lib lib/libmicoir2.3.6.so.1.0
-@lib lib/libmicox2.3.6.so.1.0
+@lib lib/libmico2.3.6.so.${LIBmico2.3.6_VERSION}
+@lib lib/libmicoaux2.3.6.so.${LIBmicoaux2.3.6_VERSION}
+@lib lib/libmicocoss2.3.6.so.${LIBmicocoss2.3.6_VERSION}
+@lib lib/libmicoir2.3.6.so.${LIBmicoir2.3.6_VERSION}
+@lib lib/libmicox2.3.6.so.${LIBmicox2.3.6_VERSION}
