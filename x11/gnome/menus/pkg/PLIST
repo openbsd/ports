@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/11/13 06:29:05 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/01/09 07:11:22 alek Exp $
 %%SHARED%%
 bin/gnome-menu-spec-test
 include/gnome-menus/
@@ -38,8 +38,6 @@ share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/gnome-menus.mo
 share/locale/bg/LC_MESSAGES/gnome-menus.mo
-share/locale/ca/
-share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/gnome-menus.mo
 share/locale/cs/LC_MESSAGES/gnome-menus.mo
 share/locale/cy/
@@ -109,8 +107,6 @@ share/locale/sl/LC_MESSAGES/gnome-menus.mo
 share/locale/sq/
 share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/gnome-menus.mo
-share/locale/sr/
-share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/gnome-menus.mo
 share/locale/sr@Latn/
 share/locale/sr@Latn/LC_MESSAGES/
@@ -121,8 +117,6 @@ share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/gnome-menus.mo
 share/locale/tr/LC_MESSAGES/gnome-menus.mo
 share/locale/uk/LC_MESSAGES/gnome-menus.mo
-share/locale/vi/
-share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/gnome-menus.mo
 share/locale/xh/
 share/locale/xh/LC_MESSAGES/

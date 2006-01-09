@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2005/11/13 06:29:05 marcm Exp $
+# $OpenBSD: Makefile,v 1.3 2006/01/09 07:11:22 alek Exp $
 
 COMMENT=		"Implementation of the FreeDesktop Desktop Menu Spec"
 
 VERSION=		2.10.2
 DISTNAME=		gnome-menus-${VERSION}
-#PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p0
+SHARED_LIBS=		gnome-menu 0.0
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
@@ -31,7 +32,7 @@ BUILD_DEPENDS=		:pkgconfig->=0.12.0p1:devel/pkgconfig \
 LIB_DEPENDS=		gnomevfs-2::x11/gnome/vfs2
 
 USE_GMAKE=		Yes
-USE_LIBTOL=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 # Note to those who follow:
 # Don't jack with SYSCONFDIR here unless you fully grok the

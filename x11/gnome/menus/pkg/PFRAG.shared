@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/04/12 21:20:02 marcm Exp $
-@lib lib/libgnome-menu.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.2 2006/01/09 07:11:22 alek Exp $
+@lib lib/libgnome-menu.so.${LIBgnome-menu_VERSION}
