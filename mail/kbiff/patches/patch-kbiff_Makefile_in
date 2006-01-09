@@ -1,0 +1,46 @@
+$OpenBSD: patch-kbiff_Makefile_in,v 1.1 2006/01/09 22:40:02 alek Exp $
+--- kbiff/Makefile.in.orig	Fri Mar 26 02:47:41 2004
++++ kbiff/Makefile.in	Mon Jan  9 13:19:13 2006
+@@ -249,7 +249,7 @@ SUBDIRS = pics
+ ####### This part is very kbiff specific
+ # you can add here more. This one gets installed 
+ bin_PROGRAMS = kbiff
+-lib_LTLIBRARIES = kbiff.la
++lib_LTLIBRARIES = libkbiff.la
+ 
+ #>- METASOURCES = AUTO
+ 
+@@ -261,13 +261,13 @@ kbiff_la_SOURCES = setupdlg.cpp kbiff.cp
+ kbiff_SOURCES = dummy.cpp
+ 
+ # the library search path
+-kbiff_la_LDFLAGS = $(all_libraries) -module -avoid-version
++kbiff_la_LDFLAGS = $(all_libraries)
+ kbiff_LDFLAGS = $(all_libraries) $(KDE_RPATH)
+ 
+ # the libraries to link against. Be aware of the order. First the libraries,
+ # that depend on the following ones.
+ kbiff_la_LIBADD = $(LIB_KFILE) $(LIB_KIO)
+-kbiff_LDADD = kbiff.la
++kbiff_LDADD = libkbiff.la
+ 
+ # this option you can leave out. Just, if you use "make dist", you need it
+ noinst_HEADERS = setupdlg.h kbiff.h kbiffmonitor.h notify.h kbiffurl.h \
+@@ -299,7 +299,7 @@ am_kbiff_OBJECTS = dummy.$(OBJEXT)
+ #>- kbiff_OBJECTS = $(am_kbiff_OBJECTS)
+ #>+ 1
+ kbiff_OBJECTS = dummy.$(OBJEXT)
+-kbiff_DEPENDENCIES = kbiff.la
++kbiff_DEPENDENCIES = libkbiff.la
+ 
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/admin/depcomp
+@@ -400,7 +400,7 @@ clean-libLTLIBRARIES:
+ 	  echo "rm -f \"$${dir}/so_locations\""; \
+ 	  rm -f "$${dir}/so_locations"; \
+ 	done
+-kbiff.la: $(kbiff_la_OBJECTS) $(kbiff_la_DEPENDENCIES) 
++libkbiff.la: $(kbiff_la_OBJECTS) $(kbiff_la_DEPENDENCIES) 
+ 	$(CXXLINK) -rpath $(libdir) $(kbiff_la_LDFLAGS) $(kbiff_la_OBJECTS) $(kbiff_la_LIBADD) $(LIBS)
+ binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
+ install-binPROGRAMS: $(bin_PROGRAMS)

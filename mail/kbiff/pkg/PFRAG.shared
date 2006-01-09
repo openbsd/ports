@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2004/09/15 09:09:42 espie Exp $
-@lib lib/libkbiff.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.5 2006/01/09 22:40:03 alek Exp $
+@lib lib/libkbiff.so.${LIBkbiff_VERSION}

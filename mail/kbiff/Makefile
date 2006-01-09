@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2005/01/02 12:56:05 alek Exp $
+# $OpenBSD: Makefile,v 1.20 2006/01/09 22:40:02 alek Exp $
 
 COMMENT=		"new mail notification utility for KDE"
 
 DISTNAME=		kbiff-3.7.1
+PKGNAME=		${DISTNAME}p0
+SHARED_LIBS=		kbiff 0.0
 CATEGORIES=		mail
 EXTRACT_SUFX=		.tar.bz2
 
@@ -30,6 +32,8 @@ MAKE_FLAGS=		${MODKDE_MAKE_FLAGS}
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
+LIBTOOL_FLAGS+=		--tag=disable-static
 CONFIGURE_STYLE= 	autoconf
 AUTOCONF_VERSION=	2.57
 MODGNU_CONFIG_GUESS_DIRS= ${MODKDE_CONFIG_GUESS_DIRS}

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/10/24 14:21:32 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2006/01/09 22:40:03 alek Exp $
 bin/kbiff
-@comment lib/kbiff.la
+lib/libkbiff.la
 @man man/man1/kbiff.1
 share/applnk/
 share/applnk/Internet/
