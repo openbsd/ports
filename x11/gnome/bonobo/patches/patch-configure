@@ -1,102 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2004/10/24 07:39:31 alek Exp $
---- configure.orig	Sat Nov 30 18:32:08 2002
-+++ configure	Fri Jan 24 16:10:19 2003
-@@ -3910,6 +3910,16 @@ newos6*)
-   lt_cv_file_magic_test_file=/usr/lib/libnls.so
-   ;;
- 
-+openbsd*)
-+  lt_cv_file_magic_cmd=/usr/bin/file
-+  lt_cv_file_magic_test_file=`echo /usr/lib/libc.so.*`
-+  if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
-+    lt_cv_deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
-+  else
-+    lt_cv_deplibs_check_method='file_magic OpenBSD.* shared library'
-+  fi
-+  ;;
-+
- osf3* | osf4* | osf5*)
-   # this will be overridden with pass_all, but let us keep it just in case
-   lt_cv_deplibs_check_method='file_magic COFF format alpha shared library'
-@@ -4656,8 +4666,15 @@ old_postinstall_cmds='chmod 644 $oldlib'
- old_postuninstall_cmds=
- 
- if test -n "$RANLIB"; then
-+  case $host_os in
-+  openbsd*)
-+    old_postinstall_cmds="\$RANLIB -t \$oldlib~$old_postinstall_cmds"
-+    ;;
-+  *)
-+    old_postinstall_cmds="\$RANLIB \$oldlib~$old_postinstall_cmds"
-+    ;;
-+  esac
-   old_archive_cmds="$old_archive_cmds~\$RANLIB \$oldlib"
--  old_postinstall_cmds="\$RANLIB \$oldlib~$old_postinstall_cmds"
- fi
- 
- # Allow CC to be a program name with arguments.
-@@ -5216,7 +5233,9 @@ cygwin* | mingw* | pw32* )
-     with_gnu_ld=no
-   fi
-   ;;
--
-+openbsd*)
-+  with_gnu_ld=no
-+  ;;
- esac
- 
- ld_shlibs=yes
-@@ -5620,10 +5639,24 @@ else
-     ;;
- 
-   openbsd*)
--    archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
--    hardcode_libdir_flag_spec='-R$libdir'
-     hardcode_direct=yes
-     hardcode_shlibpath_var=no
-+    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
-+      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
-+      hardcode_libdir_flag_spec='${wl}-R$libdir'
-+      export_dynamic_flag_spec='${wl}-E'
-+    else
-+      case "$host_os" in
-+      openbsd[01].* | openbsd2.[0-7] | openbsd2.[0-7].*)
-+	archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
-+	hardcode_libdir_flag_spec='-R$libdir'
-+        ;;
-+      *)
-+        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
-+        hardcode_libdir_flag_spec='${wl}-R$libdir'
-+        ;;
-+      esac
-+    fi
-     ;;
- 
-   os2*)
-@@ -6104,9 +6137,19 @@ newsos6)
- 
- openbsd*)
-   version_type=sunos
--  if test "$with_gnu_ld" = yes; then
--    need_lib_prefix=no
--    need_version=no
-+  need_lib_prefix=no
-+  need_version=no
-+  if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
-+    case "$host_os" in
-+    openbsd2.[89] | openbsd2.[89].*)
-+      shlibpath_overrides_runpath=no
-+      ;;
-+    *)
-+      shlibpath_overrides_runpath=yes
-+      ;;
-+    esac
-+  else
-+    shlibpath_overrides_runpath=yes
-   fi
-   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
-   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
-@@ -9628,7 +9671,7 @@ if test "${ac_cv_lib_intl_bindtextdomain
+$OpenBSD: patch-configure,v 1.6 2006/01/09 16:31:52 naddy Exp $
+--- configure.orig	Sat Nov 30 19:32:08 2002
++++ configure	Mon Jan  9 08:45:38 2006
+@@ -9628,7 +9628,7 @@ if test "${ac_cv_lib_intl_bindtextdomain
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -105,7 +10,7 @@ $OpenBSD: patch-configure,v 1.5 2004/10/24 07:39:31 alek Exp $
  cat >conftest.$ac_ext <<_ACEOF
  #line 9633 "configure"
  #include "confdefs.h"
-@@ -9683,7 +9726,7 @@ if test "${ac_cv_lib_intl_gettext+set}" 
+@@ -9683,7 +9683,7 @@ if test "${ac_cv_lib_intl_gettext+set}" 
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -114,7 +19,7 @@ $OpenBSD: patch-configure,v 1.5 2004/10/24 07:39:31 alek Exp $
  cat >conftest.$ac_ext <<_ACEOF
  #line 9688 "configure"
  #include "confdefs.h"
-@@ -9738,6 +9781,10 @@ echo "${ECHO_T}$gt_cv_func_gettext_libin
+@@ -9738,6 +9738,10 @@ echo "${ECHO_T}$gt_cv_func_gettext_libin
  fi
  
  	   fi

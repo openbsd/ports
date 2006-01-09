@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/10/11 04:27:23 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.8 2006/01/09 16:31:52 naddy Exp $
 bin/bonobo-application-x-mines
 bin/bonobo-audio-ulaw
 bin/bonobo-echo
@@ -147,8 +147,6 @@ share/libefs/html/libefs/
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/bonobo.mo
-share/locale/ca/
-share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/bonobo.mo
 share/locale/da/LC_MESSAGES/bonobo.mo
 share/locale/de/LC_MESSAGES/bonobo.mo
@@ -162,8 +160,6 @@ share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/bonobo.mo
 share/locale/fi/LC_MESSAGES/bonobo.mo
 share/locale/fr/LC_MESSAGES/bonobo.mo
-share/locale/ga/
-share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/bonobo.mo
 share/locale/gl/LC_MESSAGES/bonobo.mo
 share/locale/hu/LC_MESSAGES/bonobo.mo

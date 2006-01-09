@@ -1,11 +1,16 @@
-# $OpenBSD: Makefile,v 1.12 2005/09/05 20:05:02 marcm Exp $
+# $OpenBSD: Makefile,v 1.13 2006/01/09 16:31:52 naddy Exp $
 
 COMMENT=		"architecture for creating reusable software components"
 COMMENT-docs=		"documentation for the bonobo architecture"
 
 VERSION=		1.0.22
 DISTNAME=		bonobo-${VERSION}
+PKGNAME=		${DISTNAME}p0
 PKGNAME-docs=		bonobo-docs-${VERSION}p0
+SHARED_LIBS=		bonobo-print	2.1 \
+			bonobo		2.1 \
+			bonobox		2.1 \
+			efs		1.0
 CATEGORIES=    		x11/gnome
 HOMEPAGE=		http://developer.gnome.org/arch/component/bonobo.html
 
@@ -36,6 +41,7 @@ LIB_DEPENDS=		art_lgpl.4,gnome.36,gnomesupport,gnomeui.46::x11/gnome/libs \
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
