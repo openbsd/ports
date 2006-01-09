@@ -1,0 +1,13 @@
+$OpenBSD: patch-libgfortran_Makefile_in,v 1.1 2006/01/09 15:31:47 espie Exp $
+--- libgfortran/Makefile.in.orig	Mon Jan  9 16:25:06 2006
++++ libgfortran/Makefile.in	Mon Jan  9 16:25:55 2006
+@@ -309,7 +309,8 @@ toolexecdir = @toolexecdir@
+ toolexeclibdir = @toolexeclibdir@
+ ACLOCAL_AMFLAGS = -I ../config
+ toolexeclib_LTLIBRARIES = libgfortran.la libgfortranbegin.la
+-libgfortran_la_LDFLAGS = -version-info `grep -v '^\#' $(srcdir)/libtool-version` -lm $(extra_ldflags_libgfortran)
++include $(top_srcdir)/../libversions
++libgfortran_la_LDFLAGS = $(LIBgfortran_LTVERSION) -lm $(extra_ldflags_libgfortran)
+ libgfortranbegin_la_SOURCES = fmain.c
+ libgfortranbegin_la_LDFLAGS = -static
+ AM_CPPFLAGS = -iquote$(srcdir)/io

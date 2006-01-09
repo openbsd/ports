@@ -1,0 +1,22 @@
+$OpenBSD: patch-libmudflap_Makefile_in,v 1.1 2006/01/09 15:31:47 espie Exp $
+--- libmudflap/Makefile.in.orig	Mon Jan  9 16:21:46 2006
++++ libmudflap/Makefile.in	Mon Jan  9 16:23:00 2006
+@@ -236,7 +236,8 @@ libmudflap_la_SOURCES = \
+ 
+ libmudflap_la_LIBADD = 
+ libmudflap_la_DEPENDENCIES = $(libmudflap_la_LIBADD)
+-libmudflap_la_LDFLAGS = -version-info `grep -v '^\#' $(srcdir)/libtool-version`
++include $(top_srcdir)/../libversions
++libmudflap_la_LDFLAGS = $(LIBmudflap_LTVERSION)
+ libmudflapth_la_SOURCES = 
+ libmudflapth_la_LIBADD = \
+ 	pth/mf-runtime.lo \
+@@ -246,7 +247,7 @@ libmudflapth_la_LIBADD = \
+ 	pth/mf-hooks3.lo
+ 
+ libmudflapth_la_DEPENDENCIES = $(libmudflapth_la_LIBADD)
+-libmudflapth_la_LDFLAGS = -version-info `grep -v '^\#' $(srcdir)/libtool-version`
++libmudflapth_la_LDFLAGS = $(LIBmudflapth_LTVERSION)
+ 
+ # XXX hack alert
+ # From libffi/Makefile.am

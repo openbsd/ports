@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/05/16 11:14:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/01/09 15:31:48 espie Exp $
 %%SHARED%%
 bin/ecpp
 bin/egcc
@@ -17,8 +17,6 @@ lib/gcc/${CONFIG}/
 lib/gcc/${CONFIG}/${V}/
 lib/gcc/${CONFIG}/${V}/include/
 lib/gcc/${CONFIG}/${V}/include/README
-lib/gcc/${CONFIG}/${V}/include/arpa/
-lib/gcc/${CONFIG}/${V}/include/arpa/nameser.h
 lib/gcc/${CONFIG}/${V}/include/com_err.h
 lib/gcc/${CONFIG}/${V}/include/limits.h
 lib/gcc/${CONFIG}/${V}/include/math.h
@@ -30,7 +28,6 @@ lib/gcc/${CONFIG}/${V}/include/stdlib.h
 lib/gcc/${CONFIG}/${V}/include/sys/
 lib/gcc/${CONFIG}/${V}/include/sys/types.h
 lib/gcc/${CONFIG}/${V}/include/syslimits.h
-lib/gcc/${CONFIG}/${V}/include/unistd.h
 lib/gcc/${CONFIG}/${V}/install-tools/
 lib/gcc/${CONFIG}/${V}/install-tools/gsyslimits.h
 lib/gcc/${CONFIG}/${V}/install-tools/include/

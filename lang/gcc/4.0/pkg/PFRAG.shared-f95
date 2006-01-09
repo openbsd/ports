@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared-f95,v 1.1 2005/01/06 19:36:29 espie Exp $
-@lib lib/libgfortran.so.0.0
+@comment $OpenBSD: PFRAG.shared-f95,v 1.2 2006/01/09 15:31:48 espie Exp $
+@lib lib/libgfortran.so.${LIBgfortran_VERSION}

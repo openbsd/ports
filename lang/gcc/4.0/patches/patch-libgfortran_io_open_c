@@ -1,7 +1,7 @@
-$OpenBSD: patch-libgfortran_io_open_c,v 1.1 2005/06/16 18:04:41 espie Exp $
---- libgfortran/io/open.c.orig	Thu Jun 16 19:33:08 2005
-+++ libgfortran/io/open.c	Thu Jun 16 19:35:41 2005
-@@ -316,7 +316,7 @@ new_unit (unit_flags * flags)
+$OpenBSD: patch-libgfortran_io_open_c,v 1.2 2006/01/09 15:31:47 espie Exp $
+--- libgfortran/io/open.c.orig	Fri Nov 18 13:40:42 2005
++++ libgfortran/io/open.c	Mon Jan  9 13:36:29 2006
+@@ -317,7 +317,7 @@ new_unit (unit_flags * flags)
  	break;
  
        ioparm.file = tmpname;

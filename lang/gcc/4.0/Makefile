@@ -1,12 +1,18 @@
-# $OpenBSD: Makefile,v 1.20 2005/10/20 23:28:02 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2006/01/09 15:31:47 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
 V=4.0.3
-FULL_VERSION=4.0-20050929
-FULL_PKGVERSION=4.0.20050929
+FULL_VERSION=4.0-20060105
+FULL_PKGVERSION=4.0.20060105
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
+SHARED_LIBS=	mudflap		0.0 \
+		mudflapth	0.0 \
+		estdc++		6.7 \
+		gfortran	0.0 \
+		objc		1.0 \
+		objc_gc		1.0
 
 MAKE_GXX=Yes
 MAKE_FORTRAN=Yes
@@ -100,7 +106,7 @@ MAKE_ENV=ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 CC=${WRKDIR}/bin/egcc
 
 post-extract:
-.for f in egcc gnatbind gnatmake gnatlink
+.for f in egcc gnatbind gnatmake gnatlink gnatls
 	echo "#! /bin/sh" >${WRKDIR}/bin/$f
 	echo 'GNAT_ROOT=${WRKDIR}/bootstrap GCC_ROOT=${WRKDIR}/bootstrap exec ${WRKDIR}/bootstrap/bin/$f "$$@"' >>${WRKDIR}/bin/$f
 	chmod a+x ${WRKDIR}/bin/$f

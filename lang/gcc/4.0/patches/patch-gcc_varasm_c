@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_varasm_c,v 1.5 2005/10/20 23:28:02 espie Exp $
---- gcc/varasm.c.orig	Fri Jul 22 21:32:58 2005
-+++ gcc/varasm.c	Tue Oct  4 02:01:18 2005
-@@ -1220,7 +1220,7 @@ assemble_start_function (tree decl, cons
+$OpenBSD: patch-gcc_varasm_c,v 1.6 2006/01/09 15:31:47 espie Exp $
+--- gcc/varasm.c.orig	Thu Oct  6 20:54:12 2005
++++ gcc/varasm.c	Mon Jan  9 13:36:29 2006
+@@ -1226,7 +1226,7 @@ assemble_start_function (tree decl, cons
    unlikely_text_section_name = NULL;
    
    unlikely_section_label = reconcat (unlikely_section_label, 
