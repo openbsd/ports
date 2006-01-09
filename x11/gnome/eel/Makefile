@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2005/11/13 06:29:03 marcm Exp $
+# $OpenBSD: Makefile,v 1.17 2006/01/09 11:32:23 alek Exp $
 
 COMMENT=		"Eazel Extensions Library"
 
 DISTNAME=		eel-2.10.1
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
+SHARED_LIBS=		eel-2 12.1
 CATEGORIES=		devel x11/gnome
 
 HOMEPAGE=		http://www.gnome.org
