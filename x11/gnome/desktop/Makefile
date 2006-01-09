@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2005/11/13 06:29:03 marcm Exp $
+# $OpenBSD: Makefile,v 1.15 2006/01/09 12:17:01 alek Exp $
 
 COMMENT=		"components for the GNOME desktop"
 
 DISTNAME=		gnome-desktop-2.10.2
+PKGNAME=		${DISTNAME}p0
+SHARED_LIBS=		gnome-desktop-2 4.3
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
