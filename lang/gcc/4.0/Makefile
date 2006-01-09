@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2006/01/09 15:31:47 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2006/01/09 21:12:57 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
@@ -110,6 +110,10 @@ post-extract:
 	echo "#! /bin/sh" >${WRKDIR}/bin/$f
 	echo 'GNAT_ROOT=${WRKDIR}/bootstrap GCC_ROOT=${WRKDIR}/bootstrap exec ${WRKDIR}/bootstrap/bin/$f "$$@"' >>${WRKDIR}/bin/$f
 	chmod a+x ${WRKDIR}/bin/$f
+.endfor
+	echo "# This file automatically generated" >> ${WRKSRC}/libversions
+.for l v in ${SHARED_LIBS}
+	echo "LIB$l_LTVERSION = -version-info ${v:S/./:/}" >> ${WRKSRC}/libversions
 .endfor
 
 .endif
