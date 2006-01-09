@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2005/11/13 06:29:03 marcm Exp $
+# $OpenBSD: Makefile,v 1.12 2006/01/09 10:20:28 alek Exp $
 
 COMMENT=		"GNOME Accessibility Implementation Library"
 
 DISTNAME=		gail-1.8.5
+PKGNAME=		${DISTNAME}p0
+SHARED_LIBS=		gailutil 17.3
 CATEGORIES=		devel x11/gnome
 
 HOMEPAGE=		http://www.gnome.org

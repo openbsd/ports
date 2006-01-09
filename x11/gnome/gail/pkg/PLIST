@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2005/11/13 06:29:03 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.11 2006/01/09 10:20:29 alek Exp $
 include/gail-1.0/
 include/gail-1.0/libgail-util/
 include/gail-1.0/libgail-util/gail-util.h
@@ -23,8 +23,6 @@ share/locale/as/LC_MESSAGES/gail.mo
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/gail.mo
-share/locale/be/
-share/locale/be/LC_MESSAGES/
 share/locale/be/LC_MESSAGES/gail.mo
 share/locale/bg/LC_MESSAGES/gail.mo
 share/locale/bn/
@@ -33,8 +31,6 @@ share/locale/bn/LC_MESSAGES/gail.mo
 share/locale/bs/
 share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/gail.mo
-share/locale/ca/
-share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/gail.mo
 share/locale/cs/LC_MESSAGES/gail.mo
 share/locale/cy/
@@ -59,8 +55,6 @@ share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/gail.mo
 share/locale/fi/LC_MESSAGES/gail.mo
 share/locale/fr/LC_MESSAGES/gail.mo
-share/locale/ga/
-share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/gail.mo
 share/locale/gl/LC_MESSAGES/gail.mo
 share/locale/gu/
@@ -116,8 +110,6 @@ share/locale/sk/LC_MESSAGES/gail.mo
 share/locale/sq/
 share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/gail.mo
-share/locale/sr/
-share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/gail.mo
 share/locale/sr@Latn/
 share/locale/sr@Latn/LC_MESSAGES/
