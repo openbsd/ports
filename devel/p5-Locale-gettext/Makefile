@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/01/08 09:45:12 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/01/09 14:01:14 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,7 +20,7 @@ MASTER_SITES=   ${MASTER_SITE_PERL_CPAN:=Locale/}
 
 MODULES=	gettext
 
-DIST_SUBDIR=	${PKGNAME}
+DIST_SUBDIR=	p5-Locale-${DISTNAME}
 
 NO_REGRESS= 	Yes
 
