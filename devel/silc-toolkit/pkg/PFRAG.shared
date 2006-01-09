@@ -1,3 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2005/12/26 04:05:43 brad Exp $
-@lib lib/libsilc.so.6.1
-@lib lib/libsilcclient.so.4.2
+@comment $OpenBSD: PFRAG.shared,v 1.6 2006/01/09 15:08:14 aanriot Exp $
+@lib lib/libsilc-1.0.so.${LIBsilc-1.0_VERSION}
+@lib lib/libsilc.so.${LIBsilc_VERSION}
+@lib lib/libsilcclient-1.0.so.${LIBsilcclient-1.0_VERSION}
+@lib lib/libsilcclient.so.${LIBsilcclient_VERSION}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/12/14 03:21:53 brad Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/01/09 15:08:14 aanriot Exp $
 @conflict silc-client-<=1.0.1
 include/silc/
 include/silc/aes.h
@@ -96,6 +96,7 @@ lib/libsilcclient.la
 lib/pkgconfig/
 lib/pkgconfig/silc.pc
 lib/pkgconfig/silcclient.pc
+@comment @man man/man1/silc.1
 @comment modules/
 share/doc/silc/
 @comment share/doc/silc/BSD
@@ -117,6 +118,7 @@ share/doc/silc/draft-riikonen-silc-flags-payloads-04.txt
 share/doc/silc/draft-riikonen-silc-ke-auth-08.txt
 share/doc/silc/draft-riikonen-silc-pp-09.txt
 share/doc/silc/draft-riikonen-silc-spec-08.txt
+@comment share/doc/silc/example_silc.conf
 share/doc/silc/toolkit/
 share/doc/silc/toolkit/arch.gif
 share/doc/silc/toolkit/box.gif
