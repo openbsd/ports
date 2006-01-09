@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2005/11/13 06:29:04 marcm Exp $
+# $OpenBSD: Makefile,v 1.7 2006/01/09 12:43:37 alek Exp $
 
 COMMENT=		"password agent for the GNOME project"
 
 DISTNAME=		gnome-keyring-0.4.4
+PKGNAME=		${DISTNAME}p0
+SHARED_LIBS=		gnome-keyring 0.1
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
