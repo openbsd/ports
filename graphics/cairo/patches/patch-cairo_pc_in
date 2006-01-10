@@ -1,0 +1,11 @@
+$OpenBSD: patch-cairo_pc_in,v 1.1 2006/01/10 08:59:17 matthieu Exp $
+--- cairo.pc.orig	Thu Aug 18 00:57:45 2005
++++ cairo.pc.in	Mon Jan  2 22:51:03 2006
+@@ -8,5 +8,5 @@
+ Version: @VERSION@
+ 
+ @PKGCONFIG_REQUIRES@: @FREETYPE_REQUIRES@ @XRENDER_REQUIRES@ @PNG_REQUIRES@ @GLITZ_REQUIRES@
+-Libs: @FREETYPE_CONFIG_LIBS@ -L${libdir} -lcairo 
+-Cflags: @FREETYPE_CONFIG_CFLAGS@ -I${includedir}/cairo
++Libs: @FREETYPE_LIBS@ -L${libdir} -lcairo 
++Cflags: @FREETYPE_CFLAGS@ -I${includedir}/cairo
