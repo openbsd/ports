@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/11/08 07:19:07 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.6 2006/01/10 17:58:47 naddy Exp $
 bin/minimo
 minimo/
 minimo/LICENSE
@@ -270,34 +270,34 @@ minimo/components/jsconsole.xpt
 minimo/components/layout_base.xpt
 minimo/components/layout_printing.xpt
 minimo/components/layout_xul.xpt
-@lib minimo/components/libcaps.so.${SO_VERSION}
-@lib minimo/components/libchrmlite.so.${SO_VERSION}
-@lib minimo/components/libdocshell.so.${SO_VERSION}
-@lib minimo/components/libeditor.so.${SO_VERSION}
-@lib minimo/components/libembedcomponents.so.${SO_VERSION}
-@lib minimo/components/libgfx_gtk.so.${SO_VERSION}
-@lib minimo/components/libgklayout.so.${SO_VERSION}
-@lib minimo/components/libhtmlpars.so.${SO_VERSION}
-@lib minimo/components/libi18n.so.${SO_VERSION}
-@lib minimo/components/libimglib2.so.${SO_VERSION}
-@lib minimo/components/libjar50.so.${SO_VERSION}
-@lib minimo/components/libmork.so.${SO_VERSION}
-@lib minimo/components/libnecko.so.${SO_VERSION}
-@lib minimo/components/libnsappshell.so.${SO_VERSION}
-@lib minimo/components/liboji.so.${SO_VERSION}
-@lib minimo/components/libpipboot.so.${SO_VERSION}
-@lib minimo/components/libpipnss.so.${SO_VERSION}
-@lib minimo/components/libpopuplite.so.${SO_VERSION}
-@lib minimo/components/libpref.so.${SO_VERSION}
-@lib minimo/components/libremoteservice.so.${SO_VERSION}
-@lib minimo/components/libsearchservice.so.${SO_VERSION}
-@lib minimo/components/libsoftkey.so.${SO_VERSION}
-@lib minimo/components/libtxmgr.so.${SO_VERSION}
-@lib minimo/components/libuconv.so.${SO_VERSION}
-@lib minimo/components/libwebbrwsr.so.${SO_VERSION}
-@lib minimo/components/libwidget_gtk2.so.${SO_VERSION}
-@lib minimo/components/libxpcom_compat_c.so.${SO_VERSION}
-@lib minimo/components/libxpconnect.so.${SO_VERSION}
+@lib minimo/components/libcaps.so.${LIBcaps_VERSION}
+@lib minimo/components/libchrmlite.so.${LIBchrmlite_VERSION}
+@lib minimo/components/libdocshell.so.${LIBdocshell_VERSION}
+@lib minimo/components/libeditor.so.${LIBeditor_VERSION}
+@lib minimo/components/libembedcomponents.so.${LIBembedcomponents_VERSION}
+@lib minimo/components/libgfx_gtk.so.${LIBgfx_gtk_VERSION}
+@lib minimo/components/libgklayout.so.${LIBgklayout_VERSION}
+@lib minimo/components/libhtmlpars.so.${LIBhtmlpars_VERSION}
+@lib minimo/components/libi18n.so.${LIBi18n_VERSION}
+@lib minimo/components/libimglib2.so.${LIBimglib2_VERSION}
+@lib minimo/components/libjar50.so.${LIBjar50_VERSION}
+@lib minimo/components/libmork.so.${LIBmork_VERSION}
+@lib minimo/components/libnecko.so.${LIBnecko_VERSION}
+@lib minimo/components/libnsappshell.so.${LIBnsappshell_VERSION}
+@lib minimo/components/liboji.so.${LIBoji_VERSION}
+@lib minimo/components/libpipboot.so.${LIBpipboot_VERSION}
+@lib minimo/components/libpipnss.so.${LIBpipnss_VERSION}
+@lib minimo/components/libpopuplite.so.${LIBpopuplite_VERSION}
+@lib minimo/components/libpref.so.${LIBpref_VERSION}
+@lib minimo/components/libremoteservice.so.${LIBremoteservice_VERSION}
+@lib minimo/components/libsearchservice.so.${LIBsearchservice_VERSION}
+@lib minimo/components/libsoftkey.so.${LIBsoftkey_VERSION}
+@lib minimo/components/libtxmgr.so.${LIBtxmgr_VERSION}
+@lib minimo/components/libuconv.so.${LIBuconv_VERSION}
+@lib minimo/components/libwebbrwsr.so.${LIBwebbrwsr_VERSION}
+@lib minimo/components/libwidget_gtk2.so.${LIBwidget_gtk2_VERSION}
+@lib minimo/components/libxpcom_compat_c.so.${LIBxpcom_compat_c_VERSION}
+@lib minimo/components/libxpconnect.so.${LIBxpconnect_VERSION}
 minimo/components/locale.xpt
 minimo/components/lwbrk.xpt
 minimo/components/mimetype.xpt
@@ -354,22 +354,22 @@ minimo/components/xuldoc.xpt
 minimo/greprefs/
 minimo/greprefs/all.js
 minimo/greprefs/security-prefs.js
-@lib minimo/libgkgfx.so.${SO_VERSION}
-@lib minimo/libgtkembedmoz.so.${SO_VERSION}
-@lib minimo/libgtkxtbin.so.${SO_VERSION}
-@lib minimo/libjsj.so.${SO_VERSION}
-@lib minimo/libmozjs.so.${SO_VERSION}
-@lib minimo/libnspr4.so.${SO_VERSION}
-@lib minimo/libnss3.so.${SO_VERSION}
-@lib minimo/libnssckbi.so.${SO_VERSION}
-@lib minimo/libplc4.so.${SO_VERSION}
-@lib minimo/libplds4.so.${SO_VERSION}
-@lib minimo/libsmime3.so.${SO_VERSION}
-@lib minimo/libsoftokn3.so.${SO_VERSION}
-@lib minimo/libssl3.so.${SO_VERSION}
-@lib minimo/libxpcom.so.${SO_VERSION}
-@lib minimo/libxpcom_compat.so.${SO_VERSION}
-@lib minimo/libxpcom_core.so.${SO_VERSION}
+@lib minimo/libgkgfx.so.${LIBgkgfx_VERSION}
+@lib minimo/libgtkembedmoz.so.${LIBgtkembedmoz_VERSION}
+@lib minimo/libgtkxtbin.so.${LIBgtkxtbin_VERSION}
+@lib minimo/libjsj.so.${LIBjsj_VERSION}
+@lib minimo/libmozjs.so.${LIBmozjs_VERSION}
+@lib minimo/libnspr4.so.${LIBnspr4_VERSION}
+@lib minimo/libnss3.so.${LIBnss3_VERSION}
+@lib minimo/libnssckbi.so.${LIBnssckbi_VERSION}
+@lib minimo/libplc4.so.${LIBplc4_VERSION}
+@lib minimo/libplds4.so.${LIBplds4_VERSION}
+@lib minimo/libsmime3.so.${LIBsmime3_VERSION}
+@lib minimo/libsoftokn3.so.${LIBsoftokn3_VERSION}
+@lib minimo/libssl3.so.${LIBssl3_VERSION}
+@lib minimo/libxpcom.so.${LIBxpcom_VERSION}
+@lib minimo/libxpcom_compat.so.${LIBxpcom_compat_VERSION}
+@lib minimo/libxpcom_core.so.${LIBxpcom_core_VERSION}
 minimo/minimo-bin
 minimo/regxpcom
 minimo/res/

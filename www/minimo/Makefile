@@ -1,16 +1,26 @@
-# $OpenBSD: Makefile,v 1.12 2005/11/16 11:45:33 wilfried Exp $
+# $OpenBSD: Makefile,v 1.13 2006/01/10 17:58:47 naddy Exp $
+
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc64
 SHARED_ONLY=	Yes
 
 COMMENT=	"mini mozilla"
 DISTNAME=	minimo-20050802
 PKGNAME=	${DISTNAME}p2
-CATEGORIES=	www
-MASTER_SITES=	http://mirrors.protection.cx/~jolan/
-
+SO_VERSION=	1.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
-SO_VERSION=	1.0
+.for _lib in DebugRobot MyService caps chrmlite docshell editor \
+	embedcomponents gfx_gtk gkgfx gklayout gtkembedmoz gtkxtbin htmlpars \
+	i18n imglib2 jar50 jsj mork mozjs necko nsappshell nspr4 nss3 nssckbi \
+	oji pipboot pipnss plc4 plds4 popuplite pref remoteservice \
+	searchservice smime3 softkey softokn3 ssl3 testdynamic txmgr uconv \
+	webbrwsr widget_gtk2 xpcom xpcom_compat xpcom_compat_c xpcom_core \
+	xpcomsample xpconnect xpctest
+SHARED_LIBS+=	${_lib} ${SO_VERSION}
+.endfor
+
+CATEGORIES=	www
+MASTER_SITES=	http://mirrors.protection.cx/~jolan/
  
 HOMEPAGE=	http://www.mozilla.org/projects/minimo/
 
