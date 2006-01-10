@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2005/09/23 20:44:00 ian Exp $
+# $OpenBSD: Makefile,v 1.25 2006/01/10 05:29:12 bernd Exp $
 #
 # If you are getting compile errors like these:
 #     Undefined symbol `_postOutOfMemory' referenced from text segment
@@ -8,11 +8,34 @@
 COMMENT=	"Transvirtual's Java JDK1.1 compiler, runtime and libs"
 
 DISTNAME=	kaffe-1.0.6
+PKGNAME=	${DISTNAME}p0
+SHARED_LIBS=	awt			0.0 \
+		awt-1.0.6		0.0 \
+		io			0.0 \
+		io-1.0.6		0.0 \
+		kaffevm			0.0 \
+		kaffevm-1.0.6		0.0 \
+		kaffexprof		0.0 \
+		kaffexprof-1.0.6	0.0 \
+		management		0.0 \
+		management-1.0.6	0.0 \
+		math			0.0 \
+		math-1.0.6		0.0 \
+		microsoft		0.0 \
+		microsoft-1.0.6		0.0 \
+		native			0.0 \
+		native-1.0.6		0.0 \
+		net			0.0 \
+		net-1.0.6		0.0 \
+		security		0.0 \
+		security-1.0.6		0.0 \
+		zip			0.0 \
+		zip-1.0.6		0.0
+
 CATEGORIES=	lang
 
 MASTER_SITES=	ftp://ftp.kaffe.org/pub/kaffe/
 
-BUILD_DEPENDS=	::devel/libtool
 # Note that "lesstif" is NOT a dependency: Kaffe has its own, Motifless, AWT.
 # You must have the X11 client packages installed; no good way to DEPEND this
 # (if you don't, I think it will build a command-line-only Java--untested).
@@ -35,6 +58,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m z X11 SM Xext ICE
+
+USE_LIBTOOL=	Yes
 
 # build/configuration variables
 CONFIGURE_STYLE=gnu

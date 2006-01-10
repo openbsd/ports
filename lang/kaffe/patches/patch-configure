@@ -1,0 +1,25 @@
+$OpenBSD: patch-configure,v 1.1 2006/01/10 05:29:12 bernd Exp $
+--- configure.orig	Mon Jul 24 21:47:29 2000
++++ configure	Tue Jan 10 05:39:34 2006
+@@ -7498,17 +7498,17 @@ done
+ 
+ 
+ if test "$dynamic_libraries" = no; then
+-	KLIBFLAGS=-static
++	KLIBFLAGS="-static -version-info 0:0:0"
+ else
+-	KLIBFLAGS=
++	KLIBFLAGS="-version-info 0:0:0"
+ fi
+ 
+ 
+ 
+ if test "$vm_dynamic_library" = no; then
+-	KVMLIBFLAGS=-static
++	KVMLIBFLAGS="-static -version-info 0:0:0"
+ else
+-	KVMLIBFLAGS=
++	KVMLIBFLAGS="-version-info 0:0:0"
+ fi
+ 
+ 

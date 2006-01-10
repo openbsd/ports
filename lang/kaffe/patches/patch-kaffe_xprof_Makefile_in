@@ -1,0 +1,12 @@
+$OpenBSD: patch-kaffe_xprof_Makefile_in,v 1.1 2006/01/10 05:29:12 bernd Exp $
+--- kaffe/xprof/Makefile.in.orig	Tue Jan 10 05:44:25 2006
++++ kaffe/xprof/Makefile.in	Tue Jan 10 05:45:06 2006
+@@ -142,7 +142,7 @@ INCLUDES = -I$(top_srcdir)/kaffe/kaffevm
+ 
+ lib_LTLIBRARIES = libkaffexprof.la
+ 
+-libkaffexprof_la_LDFLAGS = -export-dynamic -release $(KVER)
++libkaffexprof_la_LDFLAGS = $(KLIBFLAGS) -export-dynamic -release $(KVER)
+ libkaffexprof_la_DEPENDENCIES = \
+ 	$(LIBLTDL)
+ 
