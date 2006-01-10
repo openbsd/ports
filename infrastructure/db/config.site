@@ -1,4 +1,4 @@
-# $OpenBSD: config.site,v 1.8 2005/04/20 22:18:04 mjc Exp $
+# $OpenBSD: config.site,v 1.9 2006/01/10 18:31:02 espie Exp $
 # Quick start macros for autoconf.
 # XXX kludge for a function we don't actually have.
 #ac_cv_func_getservbyname_r=${ac_cv_func_getservbyname_r=no}
@@ -670,9 +670,9 @@ ac_cv_header_locale_h=${ac_cv_header_locale_h=yes}
 ac_cv_header_machine_endian_h=${ac_cv_header_machine_endian_h=yes}	
 ac_cv_header_machine_limits_h=${ac_cv_header_machine_limits_h=yes}	
 ac_cv_header_machine_param_h=${ac_cv_header_machine_param_h=yes}	
-ac_cv_header_machine_types_h=${ac_cv_header_machine_types_h=yes}	
-ac_cv_header_malloc_h=${ac_cv_header_malloc_h=no}
-ac_cv_header_malloc_h=${ac_cv_header_malloc_h=yes}
+#ac_cv_header_machine_types_h=${ac_cv_header_machine_types_h=yes}	
+#ac_cv_header_malloc_h=${ac_cv_header_malloc_h=no}
+#ac_cv_header_malloc_h=${ac_cv_header_malloc_h=yes}
 ac_cv_header_math_h=${ac_cv_header_math_h=yes}	
 ac_cv_header_memory_h=${ac_cv_header_memory_h=yes}
 ac_cv_header_net_bpf_h=${ac_cv_header_net_bpf_h=yes}	
@@ -740,7 +740,7 @@ ac_cv_header_signal_h=${ac_cv_header_signal_h=yes}
 ac_cv_header_stat_h=${ac_cv_header_stat_h=no}
 ac_cv_header_stdarg_h=${ac_cv_header_stdarg_h=yes}
 ac_cv_header_stdc=${ac_cv_header_stdc=yes}
-ac_cv_header_stdint_h=${ac_cv_header_stdint_h=no}
+#ac_cv_header_stdint_h=${ac_cv_header_stdint_h=yes}
 ac_cv_header_stdio_h=${ac_cv_header_stdio_h=yes}
 ac_cv_header_stddef_h=${ac_cv_header_stddef_h=yes}
 ac_cv_header_stdlib_h=${ac_cv_header_stdlib_h=yes}
