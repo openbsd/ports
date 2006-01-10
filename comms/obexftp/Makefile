@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/12/23 14:16:00 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2006/01/10 11:31:00 espie Exp $
 
 COMMENT=		"file copying over the OBEX protocol"
 DISTNAME=		obexftp-0.10.4
@@ -6,9 +6,6 @@ PKGNAME=		${DISTNAME}p0
 SHARED_LIBS=		bfb		0.4 \
 			cobexbfb	0.8 \
 			obexftp		0.11
-MODGNU_SHARED_LIBS=	bfb 		'' \
-			cobexbfb 	'' \
-			obexftp 	''
 
 CATEGORIES=		comms
 HOMEPAGE=		http://triq.net/obex/
