@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2005/12/23 15:29:08 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/01/10 11:21:21 espie Exp $
 
 COMMENT=	"audio sample rate conversion library"
 
 DISTNAME=	libsamplerate-0.1.2
 SHARED_LIBS=	samplerate	1.1
-MODGNU_SHARED_LIBS=	samplerate	''
 CATEGORIES=	audio
 
 HOMEPAGE=	http://mega-nerd.com/SRC/

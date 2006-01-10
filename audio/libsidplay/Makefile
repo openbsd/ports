@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2005/12/23 15:03:09 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/01/10 11:21:21 espie Exp $
 
 COMMENT=	"C64 music player and SID chip emulator library"
 
@@ -7,7 +7,6 @@ PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
 HOMEPAGE=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/
 SHARED_LIBS=	sidplay	1.3
-MODGNU_SHARED_LIBS=	sidplay	''
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 

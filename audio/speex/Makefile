@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2005/12/23 15:05:18 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/01/10 11:26:09 espie Exp $
 
 COMMENT=	"patent-free speech codec"
 
@@ -7,7 +7,6 @@ PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
 HOMEPAGE=	http://www.speex.org/
 SHARED_LIBS=	speex	4.0
-MODGNU_SHARED_LIBS=	speex	''
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
