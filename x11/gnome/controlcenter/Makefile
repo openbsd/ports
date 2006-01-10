@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2005/09/05 20:05:02 marcm Exp $
+# $OpenBSD: Makefile,v 1.24 2006/01/10 05:45:54 bernd Exp $
 
 COMMENT=		"GNOME control center"
 
 DISTNAME=		control-center-1.4.0.5
+PKGNAME=		${DISTNAME}p0
+SHARED_LIBS=		capplet 0.0
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
@@ -30,6 +32,7 @@ WANTLIB=		ICE IIOP Imlib ORBit ORBitCosNaming ORBitutil SM X11 \
 			oaf png pthread tiff ungif wrap xml z
 
 USE_X11=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
