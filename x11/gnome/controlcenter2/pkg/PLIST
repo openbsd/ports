@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2005/05/26 03:39:30 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.13 2006/01/10 06:04:54 bernd Exp $
 bin/gnome-accessibility-keyboard-properties
 bin/gnome-at-properties
 bin/gnome-background-properties
@@ -166,8 +166,6 @@ share/locale/ar/LC_MESSAGES/control-center-2.0.mo
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/control-center-2.0.mo
-share/locale/be/
-share/locale/be/LC_MESSAGES/
 share/locale/be/LC_MESSAGES/control-center-2.0.mo
 share/locale/bg/LC_MESSAGES/control-center-2.0.mo
 share/locale/bn/
@@ -176,8 +174,6 @@ share/locale/bn/LC_MESSAGES/control-center-2.0.mo
 share/locale/bs/
 share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/control-center-2.0.mo
-share/locale/ca/
-share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/control-center-2.0.mo
 share/locale/cs/LC_MESSAGES/control-center-2.0.mo
 share/locale/cy/
@@ -202,8 +198,6 @@ share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/control-center-2.0.mo
 share/locale/fi/LC_MESSAGES/control-center-2.0.mo
 share/locale/fr/LC_MESSAGES/control-center-2.0.mo
-share/locale/ga/
-share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/control-center-2.0.mo
 share/locale/gl/LC_MESSAGES/control-center-2.0.mo
 share/locale/gu/
@@ -264,8 +258,6 @@ share/locale/sl/LC_MESSAGES/control-center-2.0.mo
 share/locale/sq/
 share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/control-center-2.0.mo
-share/locale/sr/
-share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/control-center-2.0.mo
 share/locale/sr@Latn/
 share/locale/sr@Latn/LC_MESSAGES/
@@ -279,8 +271,6 @@ share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/control-center-2.0.mo
 share/locale/tr/LC_MESSAGES/control-center-2.0.mo
 share/locale/uk/LC_MESSAGES/control-center-2.0.mo
-share/locale/vi/
-share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/control-center-2.0.mo
 share/locale/wa/
 share/locale/wa/LC_MESSAGES/

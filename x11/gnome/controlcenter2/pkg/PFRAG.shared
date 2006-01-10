@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2005/05/26 03:39:30 marcm Exp $
-@lib lib/libgnome-window-settings.so.1.0
+@comment $OpenBSD: PFRAG.shared,v 1.4 2006/01/10 06:04:54 bernd Exp $
+@lib lib/libgnome-window-settings.so.${LIBgnome-window-settings_VERSION}
 lib/nautilus/extensions-1.0/libnautilus-fontilus.so
 lib/nautilus/extensions-1.0/libnautilus-themus.so
