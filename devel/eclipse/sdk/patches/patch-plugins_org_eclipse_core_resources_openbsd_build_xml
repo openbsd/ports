@@ -1,6 +1,6 @@
-$OpenBSD: patch-plugins_org_eclipse_core_resources_openbsd_build_xml,v 1.1 2005/08/09 14:49:09 kurt Exp $
---- plugins/org.eclipse.core.resources.openbsd/build.xml.orig	Tue Aug  2 15:19:43 2005
-+++ plugins/org.eclipse.core.resources.openbsd/build.xml	Tue Aug  2 16:09:53 2005
+$OpenBSD: patch-plugins_org_eclipse_core_resources_openbsd_build_xml,v 1.2 2006/01/10 13:29:57 bernd Exp $
+--- plugins/org.eclipse.core.resources.openbsd/build.xml.orig	Mon Jan  9 16:11:13 2006
++++ plugins/org.eclipse.core.resources.openbsd/build.xml	Mon Jan  9 16:15:14 2006
 @@ -19,7 +19,21 @@
  		</fileset>
  	</path>
@@ -17,7 +17,7 @@ $OpenBSD: patch-plugins_org_eclipse_core_resources_openbsd_build_xml,v 1.1 2005/
  
 +<!-- sets the properties -->
 +<property name="library-name" value="libcore_3_1_0"/>  
-+<property name="library-platform" value="so.2.0"/>    
++<property name="library-platform" value="so.%%LIBcore_3_1_0_VERSION%%"/>    
 +<property name="library-file" value="${library-name}.${library-platform}"/>
 +
  	<target name="init" depends="properties">

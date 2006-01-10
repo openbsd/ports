@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/01/02 03:49:58 kurt Exp $
+# $OpenBSD: Makefile,v 1.13 2006/01/10 13:29:57 bernd Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -8,9 +8,17 @@ COMMENT-mozilla=	"mozilla integration library for eclipse HTML Browser Widget"
 
 ECLIPSE_VER=		3.1
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
-PKGNAME=		eclipse-sdk-${ECLIPSE_VER}p3
-PKGNAME-gnome=		eclipse-sdk-gnome-${ECLIPSE_VER}p3
-PKGNAME-mozilla=	eclipse-sdk-mozilla-${ECLIPSE_VER}p3
+PKGNAME=		eclipse-sdk-${ECLIPSE_VER}p4
+PKGNAME-gnome=		eclipse-sdk-gnome-${ECLIPSE_VER}p4
+PKGNAME-mozilla=	eclipse-sdk-mozilla-${ECLIPSE_VER}p4
+SHARED_LIBS=		core_3_1_0		2.0 \
+			swt-atk-gtk-3138	2.0 \
+			swt-awt-gtk-3138	2.0 \
+			swt-gtk-3138		2.0 \
+			swt-pi-gtk-3138		2.0 \
+			swt-gnome-gtk-3138	2.0 \
+			swt-mozilla-gtk-3138	2.0
+
 CATEGORIES=		devel/eclipse java 
 
 HOMEPAGE=		http://www.eclipse.org/
@@ -99,7 +107,13 @@ MAKE_ENV=		ECLIPSE_BUILD=${ECLIPSE_BUILD} \
 			ECLIPSE_WS=${ECLIPSE_WS} \
 			JAVA_HOME=${JAVA_HOME} \
 			MOZILLA_HOME=${MOZILLA_HOME} \
-			CC="${CC}" CXX="${CXX}"
+			CC="${CC}" CXX="${CXX}" \
+			LIBswt_atk_gtk_VERSION=${LIBswt-atk-gtk-3138_VERSION} \
+			LIBswt_awt_gtk_VERSION=${LIBswt-awt-gtk-3138_VERSION} \
+			LIBswt_gtk_VERSION=${LIBswt-gtk-3138_VERSION} \
+			LIBswt_pi_gtk_VERSION=${LIBswt-pi-gtk-3138_VERSION} \
+			LIBswt_gnome_gtk_VERSION=${LIBswt-gnome-gtk-3138_VERSION} \
+			LIBswt_mozilla_gtk_VERSION=${LIBswt-mozilla-gtk-3138_VERSION}
 
 FAKE_FLAGS=		${MAKE_ENV}
 
@@ -123,6 +137,11 @@ pre-patch:
 .for file in ${FIXUP_FILES}
 	@echo >> ${WRKSRC}/${file}
 .endfor
+
+# Needed for SHARED_LIBS support.
+pre-build:
+	@perl -pi -e s,%%LIBcore_3_1_0_VERSION%%,${LIBcore_3_1_0_VERSION},g \
+		${WRKSRC}/plugins/org.eclipse.core.resources.openbsd/build.xml
 
 do-build:
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
