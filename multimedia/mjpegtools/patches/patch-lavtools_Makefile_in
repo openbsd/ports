@@ -1,6 +1,6 @@
-$OpenBSD: patch-lavtools_Makefile_in,v 1.1.1.1 2004/07/09 11:58:39 sturm Exp $
---- lavtools/Makefile.in.orig	2004-02-03 14:58:30.000000000 -0800
-+++ lavtools/Makefile.in	2004-05-12 13:12:32.000000000 -0700
+$OpenBSD: patch-lavtools_Makefile_in,v 1.2 2006/01/10 02:23:37 jakemsr Exp $
+--- lavtools/Makefile.in.orig	Tue Feb  3 14:58:30 2004
++++ lavtools/Makefile.in	Sun Jan  8 16:35:12 2006
 @@ -241,12 +241,12 @@ LAV_ALL_LIB_OPTS = \
  
  
@@ -16,6 +16,45 @@ $OpenBSD: patch-lavtools_Makefile_in,v 1.1.1.1 2004/07/09 11:58:39 sturm Exp $
  
  liblavrec_la_SOURCES = liblavrec.c audiolib.c frequencies.c
  liblavrec_la_LDFLAGS = $(LAV_ALL_LIB_OPTS)
+@@ -323,7 +323,7 @@ ypipe_LDADD = $(top_builddir)/utils/libm
+ 
+ yuv2lav_SOURCES = yuv2lav.c
+ yuv2lav_LDADD = $(top_builddir)/utils/libmjpegutils.a \
+-		 liblavfile.la liblavjpeg.la ${LIBM_LIBS}
++		 liblavfile.la $(PTHREAD_LIBS) liblavjpeg.la ${LIBM_LIBS}
+ 
+ 
+ transist_flt_SOURCES = transist.flt.c
+@@ -371,17 +371,17 @@ yuvmedianfilter_LDADD = $(top_builddir)/
+ 
+ lav2wav_SOURCES = lav2wav.c
+ lav2wav_LDADD = $(top_builddir)/utils/libmjpegutils.a \
+-	 liblavfile.la
++	 liblavfile.la $(PTHREAD_LIBS)
+ 
+ 
+ lavtrans_SOURCES = lavtrans.c
+ lavtrans_LDADD = $(top_builddir)/utils/libmjpegutils.a \
+-	 liblavfile.la
++	 liblavfile.la $(PTHREAD_LIBS)
+ 
+ 
+ lavaddwav_SOURCES = lavaddwav.c
+ lavaddwav_LDADD = $(top_builddir)/utils/libmjpegutils.a \
+-	 liblavfile.la
++	 liblavfile.la $(PTHREAD_LIBS)
+ 
+ 
+ glav_SOURCES = glav.c glav_main.c
+@@ -415,7 +415,7 @@ y4mcolorbars_LDADD = $(top_builddir)/uti
+ 
+ lavinfo_SOURCES = lavinfo.c
+ lavinfo_LDADD = $(top_builddir)/utils/libmjpegutils.a \
+-	liblavfile.la
++	liblavfile.la $(PTHREAD_LIBS)
+ 
+ 
+ y4mshift_SOURCES = y4mshift.c
 @@ -1507,7 +1507,7 @@ am_png2yuv_OBJECTS = png2yuv.$(OBJEXT) c
  	subsample.$(OBJEXT)
  png2yuv_OBJECTS = $(am_png2yuv_OBJECTS)

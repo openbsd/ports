@@ -1,10 +1,22 @@
-# $OpenBSD: Makefile,v 1.2 2005/02/25 15:22:51 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2006/01/10 02:23:37 jakemsr Exp $
 
 COMMENT=		"tools to edit/modify/encode video streams"
 
 DISTNAME=		mjpegtools-1.6.2
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		multimedia
+SHARED_LIBS=		lavfile		2.2 \
+			lavfile-1.6	2.2 \
+			lavjpeg		2.2 \
+			lavjpeg-1.6	2.2 \
+			lavplay		2.2 \
+			lavplay-1.6	2.2 \
+			mpeg2enc	2.2 \
+			mpeg2enc-1.6	2.2 \
+			mpeg2encpp	2.2 \
+			mpeg2encpp-1.6	2.2 \
+			mplex2		2.2 \
+			mplex2-1.6	2.2
 
 HOMEPAGE=		http://mjpeg.sourceforge.net/
 
@@ -29,6 +41,7 @@ LIB_DEPENDS=		SDL.2:sdl-*-!no_x11:devel/sdl \
 
 SEPARATE_BUILD=		concurrent
 
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-x --enable-xfree-ext \

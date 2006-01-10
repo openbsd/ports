@@ -1,6 +1,11 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/15 18:04:35 espie Exp $
-@lib lib/liblavfile.so.2.2
-@lib lib/liblavjpeg.so.2.2
-@lib lib/liblavplay.so.2.2
-@lib lib/libmpeg2encpp.so.2.2
-@lib lib/libmplex2.so.2.2
+@comment $OpenBSD: PFRAG.shared,v 1.3 2006/01/10 02:23:37 jakemsr Exp $
+@lib lib/liblavfile-1.6.so.${LIBlavfile-1.6_VERSION}
+@lib lib/liblavfile.so.${LIBlavfile_VERSION}
+@lib lib/liblavjpeg-1.6.so.${LIBlavjpeg-1.6_VERSION}
+@lib lib/liblavjpeg.so.${LIBlavjpeg_VERSION}
+@lib lib/liblavplay-1.6.so.${LIBlavplay-1.6_VERSION}
+@lib lib/liblavplay.so.${LIBlavplay_VERSION}
+@lib lib/libmpeg2encpp-1.6.so.${LIBmpeg2encpp-1.6_VERSION}
+@lib lib/libmpeg2encpp.so.${LIBmpeg2encpp_VERSION}
+@lib lib/libmplex2-1.6.so.${LIBmplex2-1.6_VERSION}
+@lib lib/libmplex2.so.${LIBmplex2_VERSION}

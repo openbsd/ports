@@ -1,15 +1,6 @@
-$OpenBSD: patch-mpeg2enc_Makefile_in,v 1.1.1.1 2004/07/09 11:58:39 sturm Exp $
+$OpenBSD: patch-mpeg2enc_Makefile_in,v 1.2 2006/01/10 02:23:37 jakemsr Exp $
 --- mpeg2enc/Makefile.in.orig	Tue Feb  3 14:58:31 2004
-+++ mpeg2enc/Makefile.in	Wed Jun 30 15:03:55 2004
-@@ -326,7 +326,7 @@ libmpeg2encpp_la_DEPENDENCIES = \
- 
- 
- libmpeg2encpp_la_LIBADD = \
--	$(top_builddir)/utils/libmjpegutils.a \
-+	-L$(top_builddir)/utils -lmjpegutils \
- 	$(top_builddir)/utils/libcpuaccel.la \
- 	$(top_builddir)/utils/libmotion.la \
- 	$(LIBSIMDASM_LIB)
++++ mpeg2enc/Makefile.in	Sun Jan  8 16:42:20 2006
 @@ -634,7 +634,7 @@ distclean-compile:
  	$(CCASCOMPILE) -c `if test -f '$<'; then $(CYGPATH_W) '$<'; else $(CYGPATH_W) '$(srcdir)/$<'; fi`
  
