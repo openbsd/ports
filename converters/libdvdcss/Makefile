@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2005/12/24 15:03:42 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2006/01/10 11:35:14 espie Exp $
 
 COMMENT=	"descramble scrambled DVDs"
 
 VER=		1.2.8
 DISTNAME=	libdvdcss-${VER}
 SHARED_LIBS=	dvdcss	2.7
-MODGNU_SHARED_LIBS=	dvdcss '-no-undefined'
 CATEGORIES=	converters
 MASTER_SITES=	http://www.videolan.org/pub/videolan/libdvdcss/${VER}/ \
 		http://www.fr.videolan.org/pub/videolan/vlc/${VER}/
