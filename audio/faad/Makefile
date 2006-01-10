@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2005/12/30 16:41:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2006/01/10 11:14:49 espie Exp $
 
 COMMENT=	"MPEG2 and MPEG-4 AAC decoder"
 COMMENT-xmms=	"XMMS input plugin for AAC files"
@@ -10,10 +10,6 @@ MASTER_SITES=	http://users.codefusionis.com/~jolan/
 SHARED_LIBS=	faad	0.0 \
 		mp4ff	0.0 \
 		mp4v2	0.0
-
-MODGNU_SHARED_LIBS=	faad	'' \
-			mp4ff	'' \
-			mp4v2	''
 
 HOMEPAGE=	http://faac.sourceforge.net/
 

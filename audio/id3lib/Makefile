@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2005/12/23 15:03:06 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/01/10 11:14:49 espie Exp $
 
 COMMENT=		"library for manipulating ID3v1 and ID3v2 tags"
 
@@ -7,7 +7,6 @@ DISTNAME=		id3lib-${VERSION}.3
 PKGNAME=		${DISTNAME}p0
 CATEGORIES=     	audio
 SHARED_LIBS=		id3	3.8
-MODGNU_SHARED_LIBS=	id3	'-export-dynamic'
 
 HOMEPAGE=		http://id3lib.sourceforge.net/
 
