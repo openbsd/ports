@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/01/05 21:45:39 aanriot Exp $
+# $OpenBSD: Makefile,v 1.20 2006/01/10 18:17:36 bernd Exp $
 
 COMMENT=		"active monitoring tool"
 V=			2.72
@@ -30,7 +30,7 @@ COMMENT-mux=		"symon data gatherer"
 MUX_LIBDEPENDS=		rrd:rrdtool-*:net/rrdtool
 
 .for i in ${MULTI_PACKAGES}
-FULLPKGNAME${i}=        symon${i}-${V}
+FULLPKGNAME${i}=        symon${i}-${V}p0
 .endfor
 
 .if defined(PACKAGING) && !empty(SUBPACKAGE)
