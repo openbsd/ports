@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.3 2005/11/05 19:09:38 bernd Exp $
+$OpenBSD: patch-configure,v 1.4 2006/01/10 19:08:21 steven Exp $
 --- configure.orig	Thu Jun 30 04:45:09 2005
-+++ configure	Thu Nov  3 23:55:00 2005
++++ configure	Mon Jan  9 23:42:41 2006
 @@ -7452,6 +7452,7 @@ openbsd*)
    need_lib_prefix=no
    need_version=no
@@ -78,3 +78,11 @@ $OpenBSD: patch-configure,v 1.3 2005/11/05 19:09:38 bernd Exp $
  do
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
  echo "$as_me:$LINENO: checking for $ac_header" >&5
+@@ -20777,7 +20752,6 @@ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ 
+-#include <machine/types.h>
+ #include <sys/disklabel.h>
+ 
+ _ACEOF
