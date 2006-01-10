@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.16 2005/12/28 08:50:09 steven Exp $
+# $OpenBSD: Makefile.inc,v 1.17 2006/01/10 18:47:50 espie Exp $
 
 COMMENT=	"Berkeley DB package, revision ${REVISION}"
 COMMENT-tcl=	"TCL bindings for Berkeley DB, revision ${REVISION}"
@@ -28,10 +28,6 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--libdir=$$\{prefix}/lib/db${DEST_SUBDIR}
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/dist
-
-MODGNU_SHARED_LIBS=db	'' \
-		db_cxx	'' \
-		db_tcl	''
 
 MAKE_FLAGS=	DBVERSION=${LIBdb_VERSION} \
 		DBCXXVERSION=${LIBdb_cxx_VERSION} \

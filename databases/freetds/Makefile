@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2005/12/26 19:15:22 sturm Exp $
+# $OpenBSD: Makefile,v 1.27 2006/01/10 18:47:51 espie Exp $
 
 V=		0.63
 DISTNAME=	freetds-$V
@@ -8,13 +8,6 @@ SHARED_LIBS=	ct	3.0 \
 		sybdb	5.0 \
 		tds	4.0 \
 		tdssrv	2.0
-MODGNU_SHARED_LIBS=ct	'' \
-		sybdb	'' \
-		tds	'' \
-		tdssrv	''
-LIBct_ALIAS=	realct
-LIBsybdb_ALIAS=	realsybdb
-LIBtds_ALIAS=	realtds
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

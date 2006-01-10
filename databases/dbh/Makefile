@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2005/12/26 19:15:21 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2006/01/10 18:47:51 espie Exp $
 
 COMMENT=	"library to create disk based hashtables"
 DISTNAME=	dbh-1.0.24
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	databases
 SHARED_LIBS=	dbh	1.0
-MODGNU_SHARED_LIBS=dbh	'-export-dynamic'
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dbh/}
 

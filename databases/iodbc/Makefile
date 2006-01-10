@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2005/12/26 21:32:00 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2006/01/10 18:47:52 espie Exp $
 
 COMMENT=	"ODBC 2.x driver manager"
 
@@ -6,8 +6,6 @@ DISTNAME=	libiodbc-2.50.3
 PKGNAME=	iodbc-2.50.3p0
 CATEGORIES=	databases
 SHARED_LIBS=	iodbc	2.50
-MODGNU_SHARED_LIBS=iodbc ''
-LIBiodbc_ALIAS=	realiodbc
 
 HOMEPAGE=	http://www.iodbc.org/
 
