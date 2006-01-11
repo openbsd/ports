@@ -1,0 +1,67 @@
+$OpenBSD: patch-Interface_xs,v 1.1 2006/01/11 20:12:45 steven Exp $
+--- Interface.xs.orig	Wed Jan 11 08:24:31 2006
++++ Interface.xs	Wed Jan 11 08:25:51 2006
+@@ -317,7 +317,7 @@ not_there:
+     return 0;
+ }
+ 
+-int Ioctl (InputStream sock,int operation,void* result) {
++int Ioctl (InputStream sock,unsigned long operation,void* result) {
+   int fd = PerlIO_fileno(sock);
+   return ioctl(fd,operation,result) == 0;
+ }
+@@ -383,7 +383,7 @@ if_addr(sock, name, ...)
+      PROTOTYPE: $$;$
+      PREINIT:
+      STRLEN        len;
+-     int           operation;
++     unsigned long operation;
+      struct ifreq  ifr;
+      char*         newaddr;
+      CODE:
+@@ -421,7 +421,7 @@ if_broadcast(sock, name, ...)
+      PROTOTYPE: $$;$
+      PREINIT:
+      STRLEN        len;
+-     int           operation;
++     unsigned long operation;
+      struct ifreq  ifr;
+      char*         newaddr;
+      CODE:
+@@ -455,7 +455,7 @@ if_netmask(sock, name, ...)
+      PROTOTYPE: $$;$
+      PREINIT:
+      STRLEN         len;
+-     int            operation;
++     unsigned long  operation;
+      struct ifreq   ifr;
+      char*          newaddr;
+      CODE:
+@@ -489,7 +489,7 @@ if_dstaddr(sock, name, ...)
+      PROTOTYPE: $$;$
+      PREINIT:
+      STRLEN         len;
+-     int            operation;
++     unsigned long  operation;
+      struct ifreq   ifr;
+      char*          newaddr;
+      CODE:
+@@ -523,7 +523,7 @@ if_hwaddr(sock, name, ...)
+      PROTOTYPE: $$;$
+      PREINIT:
+      STRLEN	    len;
+-     int            operation;
++     unsigned long  operation;
+      struct ifreq   ifr;
+      char           *newaddr,hwaddr[128];
+      CODE:
+@@ -555,7 +555,8 @@ if_flags(sock, name, ...)
+      char*       name
+      PROTOTYPE: $$;$
+      PREINIT:
+-     int            operation,flags;
++     unsigned long  operation;
++     int            flags;
+      struct ifreq   ifr;
+      CODE:
+    {
