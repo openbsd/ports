@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/01/02 17:49:48 bernd Exp $
+# $OpenBSD: Makefile,v 1.10 2006/01/11 12:26:36 espie Exp $
 
 COMMENT=	"C++ reference implementation of the Atlas protocol"
 
@@ -13,14 +13,6 @@ SHARED_LIBS=		Atlas			1.1 \
 			AtlasObjects		1.1 \
 			AtlasObjectsEntity	1.1 \
 			AtlasObjectsOperation	1.1
-MODGNU_SHARED_LIBS=	Atlas			'' \
-			AtlasCodecs		'' \
-			AtlasFunky		'' \
-			AtlasMessage		'' \
-			AtlasNet		'' \
-			AtlasObjects		'' \
-			AtlasObjectsEntity	'' \
-			AtlasObjectsOperation	''
 CATEGORIES=	devel
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>

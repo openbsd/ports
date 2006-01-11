@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2005/12/25 17:13:29 bernd Exp $
+# $OpenBSD: Makefile,v 1.15 2006/01/11 12:26:35 espie Exp $
 
 COMMENT=		"accessibility toolkit used by gtk+"
 
 DISTNAME=		atk-1.10.3
 PKGNAME=		${DISTNAME}p1
 SHARED_LIBS=		atk-1.0 1011.3
-MODGNU_SHARED_LIBS=	atk-1.0 ''
-LIBatk-1.0_ALIAS=	atk_1_0
 
 CATEGORIES=		devel
 

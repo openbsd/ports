@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2005/12/29 13:56:07 bernd Exp $
+# $OpenBSD: Makefile,v 1.40 2006/01/11 12:26:35 espie Exp $
 
 COMMENT=	"high-performance CORBA ORB with support for the C language"
 
@@ -9,11 +9,6 @@ SHARED_LIBS=	IDL		4.4 \
 		ORBit		5.13 \
 		ORBitCosNaming	5.13 \
 		ORBitutil	5.13
-MODGNU_SHARED_LIBS=	IDL		'' \
-			IIOP		'' \
-			ORBit		'' \
-			ORBitCosNaming	'' \
-			ORBitutil	''
 
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/ORBit/0.5/}
