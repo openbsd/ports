@@ -1,0 +1,4 @@
+dmassage parses your system's dmesg to learn which devices are
+succesfully detected by the kernel.  This information can be used for
+three purposes: to make the kernel boot faster, to help build a smaller
+kernel or to show all the devices in a tree-like hierarchy.
