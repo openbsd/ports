@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sparse_c,v 1.1 2006/01/11 16:40:52 naddy Exp $
+--- src/sparse.c.orig	Wed Jan 11 17:33:48 2006
++++ src/sparse.c	Wed Jan 11 17:34:29 2006
+@@ -182,7 +182,7 @@ sparse_scan_file (struct tar_sparse_file
+ {
+   static char buffer[BLOCKSIZE];
+   size_t count;
+-  size_t offset = 0;
++  off_t offset = 0;
+   struct sp_array sp = {0, 0};
+ 
+   if (!lseek_or_error (file, 0, SEEK_SET))
