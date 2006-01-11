@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2006/01/08 15:44:50 alek Exp $
+# $OpenBSD: Makefile,v 1.21 2006/01/11 19:42:15 jolan Exp $
 
 COMMENT=	"Tcl/Tk CD player"
 DISTNAME=	xcd-1.7
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,7 +23,7 @@ FAKE_FLAGS=	BINDIR=${WRKINST}${PREFIX}/bin \
 WRKDIST=	${WRKDIR}/xcd
 
 TK_VERSION=	8.4
-RUN_DEPENDS=	:tk-${TK_VERSION}:x11/tk/${TK_VERSION}
+RUN_DEPENDS=	:tk-${TK_VERSION}.*:x11/tk/${TK_VERSION}
 
 NO_REGRESS=	Yes
 
