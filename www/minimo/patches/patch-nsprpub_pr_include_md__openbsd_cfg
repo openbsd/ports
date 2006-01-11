@@ -1,0 +1,12 @@
+$OpenBSD: patch-nsprpub_pr_include_md__openbsd_cfg,v 1.1 2006/01/11 00:58:56 pvalchev Exp $
+--- nsprpub/pr/include/md/_openbsd.cfg.orig	Sat Oct 22 23:41:38 2005
++++ nsprpub/pr/include/md/_openbsd.cfg	Sat Oct 22 23:41:46 2005
+@@ -48,7 +48,7 @@
+ 
+ #define PR_AF_INET6 24  /* same as AF_INET6 */
+ 
+-#if defined(__i386__)
++#if defined(__i386__) || defined(__arm__)
+ 
+ #define IS_LITTLE_ENDIAN 1
+ #undef  IS_BIG_ENDIAN

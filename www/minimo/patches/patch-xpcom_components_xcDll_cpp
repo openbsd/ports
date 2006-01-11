@@ -1,0 +1,11 @@
+$OpenBSD: patch-xpcom_components_xcDll_cpp,v 1.4 2006/01/11 00:58:56 pvalchev Exp $
+--- xpcom/components/xcDll.cpp.orig	Tue Aug  2 13:27:07 2005
++++ xpcom/components/xcDll.cpp	Sat Oct  8 18:35:56 2005
+@@ -67,7 +67,6 @@
+ 
+ #include "nsTraceRefcntImpl.h"
+ 
+-#define UNLOAD_DEPENDENT_LIBS
+ #ifdef HPUX
+ #undef UNLOAD_DEPENDENT_LIBS
+ #endif
