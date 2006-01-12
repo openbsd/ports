@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2005/12/27 12:33:42 aanriot Exp $
+# $OpenBSD: Makefile,v 1.23 2006/01/12 14:33:36 aanriot Exp $
 
 COMMENT=	"easy to use, graphical editor"
 
@@ -8,8 +8,7 @@ HOMEPAGE= 	ftp://ftp.ibiblio.org/pub/Linux/apps/editors/X/cooledit/
 DISTNAME=	cooledit-3.17.14
 PKGNAME=	${DISTNAME}p0
 
-SHARED_LIBS=		Cw	1.0
-MODGNU_SHARED_LIBS=	Cw	''
+SHARED_LIBS=	Cw	1.0
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
