@@ -1,6 +1,7 @@
---- doc/www.lesstif.org/Makefile.in.orig	Thu Dec 21 07:42:41 2000
-+++ doc/www.lesstif.org/Makefile.in	Sun Jan 21 18:22:06 2001
-@@ -125,14 +125,14 @@
+$OpenBSD: patch-doc_www.lesstif.org_Makefile.in,v 1.4 2006/01/12 00:08:47 naddy Exp $
+--- doc/www.lesstif.org/Makefile.in.orig	Thu Dec 21 13:42:41 2000
++++ doc/www.lesstif.org/Makefile.in	Thu Jan 12 00:58:07 2006
+@@ -125,14 +125,14 @@ SUBDIRS = images
  # Lets put the informational stuff in a sub directory to avoid 
  # polluting /usr/local for default installs.
  #

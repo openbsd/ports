@@ -1,6 +1,7 @@
---- doc/lessdox/widgets/Makefile.in.orig	Thu Dec 21 07:42:41 2000
-+++ doc/lessdox/widgets/Makefile.in	Sun Jan 21 14:14:47 2001
-@@ -118,10 +118,10 @@
+$OpenBSD: patch-doc_lessdox_widgets_Makefile.in,v 1.3 2006/01/12 00:08:47 naddy Exp $
+--- doc/lessdox/widgets/Makefile.in.orig	Thu Dec 21 13:42:41 2000
++++ doc/lessdox/widgets/Makefile.in	Thu Jan 12 00:58:07 2006
+@@ -118,10 +118,10 @@ MAINTAINERCLEANFILES = Makefile.in
  EXTRA_DIST = $(man1_DATA) $(man3_DATA) $(man5_DATA)
  SUFFIXES = .1 .3 .5 .html
  
@@ -15,7 +16,7 @@
  
  man1_DATA = 
  man3_DATA =  	XmClipboard.3 LessTifInternals.3 	XmArrowButton.3 XmArrowButtonGadget.3 XmBulletinBoard.3 	XmCascadeButton.3 XmCascadeButtonGadget.3 	XmComboBox.3 XmCommand.3 XmDesktop.3 	XmDialogShell.3 XmDialogShellExt.3 XmDisplay.3 	XmDragContext.3 XmDragIcon.3 XmDragOverShell.3 	XmDrawingArea.3 XmDrawnButton.3 XmDropSiteManager.3 	XmDropTransfer.3 XmFileSelectionBox.3 XmForm.3 	XmFrame.3 XmGadget.3 XmGrabShell.3 	XmIconGadget.3 XmLabel.3 	XmLabelGadget.3 XmList.3 	XmMainWindow.3 XmManager.3 XmMenuShell.3 	XmMessageBox.3 XmNotebook.3 XmPanedWindow.3 	XmPrimitive.3 XmProtocol.3 XmPushButton.3 	XmPushButtonGadget.3 XmRowColumn.3 	XmSash.3 XmScale.3 XmScreen.3 	XmScrollBar.3 XmScrolledWindow.3 XmSelectionBox.3 	XmSeparator.3 XmSeparatorGadget.3 	XmSpinBox.3 XmTearOffButton.3 XmText.3 	XmTextField.3 XmToggleButton.3 	XmToggleButtonGadget.3 XmVendorShell.3 XmWorld.3
-@@ -137,7 +137,7 @@
+@@ -137,7 +137,7 @@ man3_DATA =  	XmClipboard.3 LessTifInter
  
  man5_DATA = 
  
@@ -24,7 +25,7 @@
  
  html_DATA = ${man1_DATA:.1=.html} ${man3_DATA:.3=.html}                 ${man5_DATA:.5=.html}
  
-@@ -352,7 +352,7 @@
+@@ -352,7 +352,7 @@ $(html_DATA): $(MAN2HTML)
  # in both the http://www.lesstif.org and the locally installed case.
  #
  install-data-hook:
