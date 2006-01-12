@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2006/01/12 20:53:35 naddy Exp $
+--- src/Makefile.in.orig	Thu Jan 12 21:43:40 2006
++++ src/Makefile.in	Thu Jan 12 21:43:57 2006
+@@ -202,7 +202,6 @@ dbhincludedir = $(includedir)
+ dbhinclude_HEADERS = dbh.h dbh_config.h dbh_functions.h
+ libdbh_la_LDFLAGS = \
+ 	-version-info @DBH_VERSION_MAJOR@:@DBH_VERSION_MINOR@:0	\
+-	-release @DBH_VERSION_MAJOR@.@DBH_VERSION_MINOR@	\
+ 	-export-dynamic
+ 
+ pkgconfigdir = $(libdir)/pkgconfig
