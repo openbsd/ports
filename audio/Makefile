@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.133 2005/11/04 02:21:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.134 2006/01/12 09:01:24 steven Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
      SUBDIR += ac3dec
      SUBDIR += amarok
      SUBDIR += ascd
+     SUBDIR += audacity
      SUBDIR += aumix
      SUBDIR += bladeenc
      SUBDIR += bmp
