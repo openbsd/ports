@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.22 2005/12/27 12:35:15 aanriot Exp $
+# $OpenBSD: Makefile,v 1.23 2006/01/12 14:32:28 aanriot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"XML editor for KDE"
 
 DISTNAME=	kxmleditor-1.1.3
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	editors x11 x11/kde
 
-SHARED_LIBS=		kxmleditorpart	1.0
-MODGNU_SHARED_LIBS=	kxmleditorpart	''
+SHARED_LIBS=	kxmleditorpart	1.0
 
 HOMEPAGE=	http://kxmleditor.sourceforge.net/
 
@@ -36,6 +36,9 @@ MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
+LIBTOOL_FLAGS+=	--tag=disable-static
+
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.57
 MODGNU_CONFIG_GUESS_DIRS= ${MODKDE_CONFIG_GUESS_DIRS}
