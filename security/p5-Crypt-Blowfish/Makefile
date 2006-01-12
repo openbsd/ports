@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2004/01/17 15:58:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2006/01/12 08:36:21 steven Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"interface to the Blowfish encryption algorithm"
 
-DISTNAME=	Crypt-Blowfish-2.09
+DISTNAME=	Crypt-Blowfish-2.10
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
 
