@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2004/01/17 15:58:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2006/01/12 08:39:56 steven Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT= 	"interface to the DES encryption algorithm"
 
-VERSION=	2.03
-DISTNAME=	Crypt-DES-${VERSION}
+DISTNAME=	Crypt-DES-2.05
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Crypt/}
