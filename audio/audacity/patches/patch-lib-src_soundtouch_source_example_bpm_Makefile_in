@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib-src_soundtouch_source_example_bpm_Makefile_in,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
+--- lib-src/soundtouch/source/example/bpm/Makefile.in.orig	Sat Nov 26 18:33:40 2005
++++ lib-src/soundtouch/source/example/bpm/Makefile.in	Mon Dec 26 18:07:33 2005
+@@ -149,7 +149,7 @@ lib_LTLIBRARIES = libBPM.la
+ libBPM_la_SOURCES = BPMDetect.cpp PeakFinder.cpp
+ 
+ # other compiler flags to add
+-AM_CXXFLAGS = -O3 -I../../../include
++AM_CXXFLAGS = -I../../../include
+ subdir = source/example/bpm
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs

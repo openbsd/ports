@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib-src_portmixer_px_unix_oss_Makefile,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
+--- lib-src/portmixer/px_unix_oss/Makefile.orig	Mon Dec 26 18:29:36 2005
++++ lib-src/portmixer/px_unix_oss/Makefile	Mon Dec 26 18:29:43 2005
+@@ -2,7 +2,7 @@
+ 
+ CC = gcc
+ 
+-override CFLAGS += -g -I../px_common -I../../portaudio/pa_common
++override CFLAGS += -I../px_common -I../../portaudio/pa_common
+ PASRC = px_unix_oss.c
+ PAINC = ../px_common/portmixer.h
+ PAOBJ = px_unix_oss.o 

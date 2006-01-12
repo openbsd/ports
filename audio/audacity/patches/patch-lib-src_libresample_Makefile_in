@@ -1,0 +1,20 @@
+$OpenBSD: patch-lib-src_libresample_Makefile_in,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
+--- lib-src/libresample/Makefile.in.orig	Thu Nov 18 07:17:33 2004
++++ lib-src/libresample/Makefile.in	Tue Jan 11 08:56:46 2005
+@@ -7,6 +7,7 @@ CC = @CC@
+ CFLAGS = @CFLAGS@ -Wall
+ 
+ LIBS = @LIBS@ -lm
++LDFLAGS = @LDFLAGS@
+ 
+ AR = @AR@
+ RANLIB = @RANLIB@
+@@ -37,7 +38,7 @@ tests/compareresample: libresample.a tes
+ tests/resample-sndfile: libresample.a tests/resample-sndfile.c
+ 	$(CC) -o tests/resample-sndfile \
+ 		$(CFLAGS) tests/resample-sndfile.c \
+-		libresample.a -lsndfile $(LIBS)
++		libresample.a $(LDFLAGS) -lsndfile $(LIBS)
+ 
+ clean:
+ 	rm -f $(TARGETS) $(OBJS)

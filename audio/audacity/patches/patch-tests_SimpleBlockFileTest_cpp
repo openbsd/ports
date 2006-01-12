@@ -1,0 +1,14 @@
+$OpenBSD: patch-tests_SimpleBlockFileTest_cpp,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
+--- tests/SimpleBlockFileTest.cpp.orig	Sat Nov 26 18:33:32 2005
++++ tests/SimpleBlockFileTest.cpp	Mon Dec 26 21:19:17 2005
+@@ -37,8 +37,8 @@ public:
+       for(i = 0; i < dataLen; i++)
+       {
+          // These have no significance, it's just random data
+-         int16Data[i] = (i*i);
+-         int24Data[i] = (i*i*i) & 0x00FFFFFF;
++         int16Data[i] = ((short)i*i);
++         int24Data[i] = (i*i*i) & 0x000FFFFF;
+          float j = (float) i;
+          floatData[i] = j/((j*j)+1);
+       }

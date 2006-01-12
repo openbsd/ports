@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
+--- Makefile.in.orig	Thu Nov 18 07:17:29 2004
++++ Makefile.in	Tue Jan 11 08:56:46 2005
+@@ -37,9 +37,9 @@ install: audacity
+ 
+ 	# install manpage
+ 	$(INSTALL) -d $(DESTDIR)$(MANDIR)/man1
+-	-test -f help/audacity.1.gz && \
+-		$(INSTALL) -m 644 help/audacity.1.gz \
+-		$(DESTDIR)$(MANDIR)/man1/$(AUDACITY_NAME).1.gz
++	-test -f help/audacity.1 && \
++		$(INSTALL) -m 644 help/audacity.1 \
++		$(DESTDIR)$(MANDIR)/man1/$(AUDACITY_NAME).1
+ 
+ 	# install nyquist
+ 	$(INSTALL) -d $(DESTDIR)$(DATADIR)/$(AUDACITY_NAME)/nyquist

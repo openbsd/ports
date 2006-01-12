@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib-src_portmixer_px_tests_Makefile,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
+--- lib-src/portmixer/px_tests/Makefile.orig	Tue Jan 11 20:41:32 2005
++++ lib-src/portmixer/px_tests/Makefile	Tue Jan 11 20:41:51 2005
+@@ -1,6 +1,6 @@
+ all: px_test
+ 
+-CFLAGS = -g -Wall -O -I../../portaudio/pa_common -I../px_common
++CFLAGS = -Wall -I../../portaudio/pa_common -I../px_common
+ 
+ px_test: px_test.o px_unix_oss.o ../px_common/portmixer.h
+ 	gcc -g -o px_test px_test.o px_unix_oss.o -lm \

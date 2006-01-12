@@ -1,0 +1,49 @@
+$OpenBSD: patch-lib-src_portaudio_pa_unix_oss_pa_unix_c,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
+--- lib-src/portaudio/pa_unix_oss/pa_unix.c.orig	Thu Nov 18 07:17:34 2004
++++ lib-src/portaudio/pa_unix_oss/pa_unix.c	Tue Jan 11 08:56:46 2005
+@@ -399,6 +399,7 @@ static int PaHost_CanaryProc( PaHostSoun
+     return result;
+ }
+ 
++#if 0
+ /*******************************************************************************************
+  * Monitor audio thread and lower its it if it hogs the CPU.
+  * To prevent getting killed, the audio thread must update a
+@@ -598,6 +599,7 @@ static PaError PaHost_BoostPriority( int
+ 
+     return result;
+ }
++#endif  /* Watchdog */
+ 
+ /*******************************************************************************************/
+ static PaError Pa_AudioThreadProc( internalPortAudioStream   *past )
+@@ -613,8 +615,10 @@ static PaError Pa_AudioThreadProc( inter
+     GSRegisterCurrentThread(); /* SB20010904 */
+ #endif
+ 
++#if 0
+     result = PaHost_BoostPriority( past );
+     if( result < 0 ) goto error;
++#endif
+ 
+     past->past_IsActive = 1;
+     DBUG(("entering thread.\n"));
+@@ -680,7 +684,9 @@ static PaError Pa_AudioThreadProc( inter
+     DBUG(("Pa_AudioThreadProc: left audio loop.\n"));
+ 
+     past->past_IsActive = 0;
++#if 0
+     PaHost_StopWatchDog( pahsc );
++#endif
+ 
+ error:
+     DBUG(("leaving audio thread.\n"));
+@@ -810,7 +816,7 @@ PaError PaHost_OpenStream( internalPortA
+                            past->past_NumUserBuffers, past->past_FramesPerUserBuffer,
+                            past->past_NumOutputChannels );
+             result = Pa_SetupDeviceFormat( pahsc->pahsc_OutputHandle,
+-                                           past->past_NumOutputChannels, (int)past->past_SampleRate );
++                                           past->past_NumOutputChannels, (int)past->past_SampleRate, 2 );
+         }
+     }
+     else

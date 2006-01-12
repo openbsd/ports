@@ -1,0 +1,67 @@
+$OpenBSD: patch-src_export_ExportMP3_cpp,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
+--- src/export/ExportMP3.cpp.orig	Sun Nov 27 03:33:32 2005
++++ src/export/ExportMP3.cpp	Sat Dec 31 12:30:31 2005
+@@ -130,28 +130,6 @@ bool MP3Exporter::FindLibrary(wxWindow *
+          
+          if (extension != "")
+             baseName += "." + extension;
+-         
+-         if (baseName.CmpNoCase(GetLibraryName())) {
+-         
+-            wxString question;
+-            question.Printf(_("Audacity was expecting a library named \"%s\".  "
+-                              "Are you sure you want to attempt to export MP3 "
+-                              "files using \"%s\"?"),
+-                            (const char *)GetLibraryName(),
+-                            (const char *)baseName);
+-
+-            int action = wxMessageBox(question,
+-                                      _("Export MP3"),
+-                                      wxYES_NO | wxICON_EXCLAMATION,
+-                                      parent);
+-            
+-            if (action != wxYES) {
+-               mLibPath = "";
+-               gPrefs->Write("/MP3/MP3LibPath", mLibPath);
+-            
+-               return false;
+-            }
+-         }
+       }
+       else {
+          mLibPath = "";
+@@ -242,7 +220,7 @@ bool MP3Exporter::FindLibrary(wxWindow *
+          
+       wxString GetLibraryPath()
+       {
+-         return "/usr/lib";
++         return "!!LOCALBASE!!/lib";
+       }
+ 
+          wxString GetLibraryName()
+@@ -252,7 +230,7 @@ bool MP3Exporter::FindLibrary(wxWindow *
+          
+          wxString GetLibraryTypeString()
+          {
+-            return wxString(_("Only libmp3lame.so|libmp3lame.so|Primary Shared Object files (*.so)|*.so|Extended Libraries (*.so*)|*.so*|All Files (*)|*"));
++            return wxString(_("Only libmp3lame.so.X.Y|libmp3lame.so.*|Extended Libraries (*.so.*)|*.so.*|Primary Shared Object files (*.so)|*.so|All Files (*)|*"));
+          }
+          
+          wxString GetLibraryMessage()
+@@ -260,10 +238,12 @@ bool MP3Exporter::FindLibrary(wxWindow *
+             /* i18n-hint: This message is used on Unix/Linux */
+             return _("Audacity does not export MP3 files directly, but instead uses the \n"
+                    "freely available LAME library to handle MP3 file encoding.  You must \n"
+-                   "obtain libmp3lame.so separately, either by downloading it or building \n"
+-                   "it from the sources, and then locate the file for Audacity.  You only \n"
+-                   "need to do this once.\n\n"
+-                   "Would you like to locate libmp3lame.so now?");
++                   "install the lame package on your OpenBSD system using pkg_add(1), or\n"
++                   "alternatively you can install the port from the audio/lame subdirectory\n"
++                   "of the ports tree.\n\n"
++                   "The library is usually located under /usr/local/lib and its filename\n"
++                   "should be libmp3lame.so.X.Y, where X and Y are version numbers.\n"
++                   "If you are ready, click Yes to locate the library file on your system.\n");
+          }
+ 
+          bool  LoadLibrary() {

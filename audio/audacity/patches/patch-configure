@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
+--- configure.orig	Tue Jan 11 19:37:11 2005
++++ configure	Tue Jan 11 19:42:24 2005
+@@ -7901,7 +7901,7 @@ echo "$as_me: WARNING: no configuration 
+       { echo "$as_me:$LINENO: running $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_srcdir" >&5
+ echo "$as_me: running $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_srcdir" >&6;}
+       # The eval makes quoting arguments work.
+-      eval $ac_sub_configure $ac_sub_configure_args \
++      eval $ac_sub_configure $ac_sub_configure_args CFLAGS='"$CFLAGS"' CXXFLAGS='"$CXXFLAGS"' LDFLAGS='"$LDFLAGS"' \
+ 	   --cache-file=$ac_sub_cache_file --srcdir=$ac_srcdir ||
+ 	{ { echo "$as_me:$LINENO: error: $ac_sub_configure failed for $ac_dir" >&5
+ echo "$as_me: error: $ac_sub_configure failed for $ac_dir" >&2;}

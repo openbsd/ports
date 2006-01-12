@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib-src_soundtouch_source_example_SoundStretch_Makefile_in,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
+--- lib-src/soundtouch/source/example/SoundStretch/Makefile.in.orig	Sat Nov 26 18:33:39 2005
++++ lib-src/soundtouch/source/example/SoundStretch/Makefile.in	Mon Dec 26 18:07:33 2005
+@@ -153,7 +153,7 @@ soundstretch_LDADD = ../../SoundTouch/li
+ 
+ soundstretch_LDFLAGS = -s
+ 
+-soundstretch_CXXFLAGS = -O3 -I../bpm
++soundstretch_CXXFLAGS = -I../bpm
+ subdir = source/example/SoundStretch
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs

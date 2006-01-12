@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib-src_allegro_mfallegro_cpp,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
+--- lib-src/allegro/mfallegro.cpp.orig	Tue Jan 11 20:31:25 2005
++++ lib-src/allegro/mfallegro.cpp	Tue Jan 11 20:31:25 2005
+@@ -121,7 +121,7 @@ void Allegro_midifile_reader::Mf_starttr
+ void Allegro_midifile_reader::Mf_endtrack()
+ {
+     tracks.append(track);
+-    printf("finished track, length %d number %d\n", track->len, track_num / 100);
++    printf("finished track, length %ld number %d\n", track->len, track_num / 100);
+     track_num += 100;
+     track = NULL;
+ }

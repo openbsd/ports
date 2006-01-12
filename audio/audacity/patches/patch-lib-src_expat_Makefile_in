@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib-src_expat_Makefile_in,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
+--- lib-src/expat/Makefile.in.orig	Tue Jan 11 20:15:55 2005
++++ lib-src/expat/Makefile.in	Tue Jan 11 20:16:15 2005
+@@ -1,6 +1,6 @@
+ CC = @CC@
+ 
+-override CFLAGS += @CFLAGS@ -Ixmlparse -Ixmltok
++override CFLAGS += -Ixmlparse -Ixmltok
+ 
+ OBJS = xmlparse/xmlparse.o xmltok/xmlrole.o xmltok/xmltok.o
+ 

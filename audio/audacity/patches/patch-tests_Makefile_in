@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_Makefile_in,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
+--- tests/Makefile.in.orig	Mon Dec 26 18:18:46 2005
++++ tests/Makefile.in	Mon Dec 26 18:19:21 2005
+@@ -20,7 +20,7 @@ TESTS = \
+ 	SimpleBlockFileTest \
+ 
+ $(TESTS): %: %.cpp ../src/libaudacity.a
+-	$(CXX) -o $@ $< $(CXXFLAGS) $(CPPFLAGS) $(LIBS)
++	$(CXX) -o $@ $< $(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS) $(LIBS)
+ 
+ run_tests: $(TESTS)
+ 	tests='$(TESTS)'; for test in $$tests ; do \

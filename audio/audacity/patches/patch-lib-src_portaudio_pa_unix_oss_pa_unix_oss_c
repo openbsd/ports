@@ -1,0 +1,85 @@
+$OpenBSD: patch-lib-src_portaudio_pa_unix_oss_pa_unix_oss_c,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
+--- lib-src/portaudio/pa_unix_oss/pa_unix_oss.c.orig	Thu Nov 18 07:17:34 2004
++++ lib-src/portaudio/pa_unix_oss/pa_unix_oss.c	Tue Jan 11 08:56:46 2005
+@@ -43,7 +43,8 @@
+ #ifdef __linux__
+ #include <linux/soundcard.h>
+ #else
+-#include <machine/soundcard.h> /* JH20010905 */
++#include <soundcard.h> /* JH20010905 */
++#include <sys/audioio.h>
+ #endif
+ 
+ 
+@@ -217,11 +218,15 @@ error:
+ }
+ 
+ /*******************************************************************************************/
+-PaError Pa_SetupDeviceFormat( int devHandle, int numChannels, int sampleRate )
++PaError Pa_SetupDeviceFormat( int devHandle, int numChannels, int sampleRate, int input )
+ {
+     PaError result = paNoError;
+     int     tmp;
+ 
++#ifdef __OpenBSD__
++    audio_info_t audio_if;
++#endif
++
+     /* Set format, channels, and rate in this order to keep OSS happy. */
+     /* Set data format. FIXME - handle more native formats. */
+     tmp = AFMT_S16_NE;
+@@ -271,18 +276,52 @@ PaError Pa_SetupDeviceFormat( int devHan
+            return paHostError;
+         }
+     }
++
++#ifdef __OpenBSD__
++
++    AUDIO_INITINFO(&audio_if);
++
++    switch(input) {
++    case 2:
++        audio_if.record.open = 1;
++        audio_if.record.pause = 0;
++        audio_if.play.open = 1;
++        audio_if.play.pause = 0;
++        break;
++
++    case 1:
++        audio_if.record.open = 1;
++        audio_if.record.pause = 0;
++        break;
++
++    case 0:
++        audio_if.play.open = 1;
++        audio_if.play.pause = 0;
++        break;
++
++    default:
++       break;
++    }
++
++    if (ioctl(devHandle, AUDIO_SETINFO, &audio_if) == -1)
++    {
++        ERR_RPT(("Pa_SetupDeviceFormat: could not AUDIO_SETINFO for recording on OpenBSD\n" ));
++        return paHostError;
++    }
++
++#endif
+     
+     return result;
+ }
+ 
+ PaError Pa_SetupOutputDeviceFormat( int devHandle, int numChannels, int sampleRate )
+ {
+-  return Pa_SetupDeviceFormat(devHandle, numChannels, sampleRate);
++  return Pa_SetupDeviceFormat(devHandle, numChannels, sampleRate, 0);
+ }
+ 
+ PaError Pa_SetupInputDeviceFormat( int devHandle, int numChannels, int sampleRate )
+ {
+-  return Pa_SetupDeviceFormat(devHandle, numChannels, sampleRate);
++  return Pa_SetupDeviceFormat(devHandle, numChannels, sampleRate, 1);
+ }
+ 
+ 

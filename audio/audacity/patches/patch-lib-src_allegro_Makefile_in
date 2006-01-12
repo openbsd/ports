@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib-src_allegro_Makefile_in,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
+--- lib-src/allegro/Makefile.in.orig	Tue Jan 11 19:26:53 2005
++++ lib-src/allegro/Makefile.in	Tue Jan 11 19:27:33 2005
+@@ -3,7 +3,8 @@
+ CC = @CC@
+ CCC = @CXX@
+ 
+-CFLAGS = -g -O
++CFLAGS = @CFLAGS@ 
++# CFLAGS = -g -O
+ OBJ = \
+ 	allegro.cpp.o \
+ 	allegrord.cpp.o \

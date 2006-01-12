@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib-src_portaudio_pa_unix_oss_pa_unix_h,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
+--- lib-src/portaudio/pa_unix_oss/pa_unix.h.orig	Tue Jan 11 13:52:20 2005
++++ lib-src/portaudio/pa_unix_oss/pa_unix.h	Tue Jan 11 13:52:53 2005
+@@ -133,7 +133,7 @@ PaHostSoundControl;
+ internalPortAudioDevice *Pa_GetInternalDevice( PaDeviceID id );
+ PaError Pa_QueryDevices( void );
+ PaError Pa_QueryDevice( const char *deviceName, internalPortAudioDevice *pad );
+-PaError Pa_SetupDeviceFormat( int devHandle, int numChannels, int sampleRate );
++PaError Pa_SetupDeviceFormat( int devHandle, int numChannels, int sampleRate, int input );
+ PaError Pa_SetupInputDeviceFormat( int devHandle, int numChannels, int sampleRate );
+ PaError Pa_SetupOutputDeviceFormat( int devHandle, int numChannels, int sampleRate );
+ void Pa_SetLatency( int devHandle, int numBuffers, int framesPerBuffer, int channelsPerFrame  );

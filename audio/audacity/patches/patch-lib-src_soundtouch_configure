@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib-src_soundtouch_configure,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
+--- lib-src/soundtouch/configure.orig	Sat Nov 26 18:33:39 2005
++++ lib-src/soundtouch/configure	Mon Dec 26 18:07:33 2005
+@@ -1938,7 +1938,8 @@ fi
+ 
+ 
+ 
+-CXXFLAGS= ac_ext=cc
++# CXXFLAGS=
++ac_ext=cc
+ ac_cpp='$CXXCPP $CPPFLAGS'
+ ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_ext >&5'
+ ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
