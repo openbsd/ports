@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2005/12/27 23:12:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2006/01/12 01:05:22 naddy Exp $
 
 COMMENT=		"Text widget that extends GTK2's GtkTextView widget"
 DISTNAME=		gtksourceview-1.2.0
 PKGNAME=		${DISTNAME}p2
 SHARED_LIBS=		gtksourceview-1.0 1.0
-MODGNU_SHARED_LIBS=	gtksourceview-1.0 ''
-LIBgtksourceview-1.0_ALIAS=	gtksourceview_1_0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.gnome.org/softwaremap/projects/gtksourceview	

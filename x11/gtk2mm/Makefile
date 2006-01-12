@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2005/12/30 00:35:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2006/01/12 01:05:22 naddy Exp $
 
 COMMENT=		"C++ interface for gtk2+"
 COMMENT-docs=		"C++ interface for gtk2+ documentation"
@@ -13,14 +13,6 @@ SHARED_LIBS=		atkmm-1.6	1.21 \
 			gdkmm-2.4	1.21 \
 			gtkmm-2.4	1.21 \
 			pangomm-1.4	1.21
-MODGNU_SHARED_LIBS=	atkmm-1.6	'' \
-			gdkmm-2.4	'' \
-			gtkmm-2.4	'' \
-			pangomm-1.4	''
-LIBatkmm-1.6_ALIAS=	atkmm_1_6
-LIBgdkmm-2.4_ALIAS=	gdkmm_2_4
-LIBgtkmm-2.4_ALIAS=	gtkmm_2_4
-LIBpangomm-1.4_ALIAS=	pangomm_1_4
 
 HOMEPAGE=		http://www.gtkmm.org/
 

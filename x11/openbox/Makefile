@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2005/12/26 18:45:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2006/01/12 01:05:23 naddy Exp $
 
 COMMENT=	"small, fast & usable window manager"
 
@@ -30,11 +30,6 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	PKG_CONFIG_PATH="${X11BASE}/lib/pkgconfig"
-
-# MODGNU_SHARED_LIBS can't handle idiosyncratic naming convention
-.for n v in ${SHARED_LIBS}
-MAKE_FLAGS+=	${n:S/^ob//}_lib$n_la_LDFLAGS='-version-info ${v:S/./:/}:0'
-.endfor
 
 NO_REGRESS=	Yes
 

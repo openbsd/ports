@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Mrm_Makefile_in,v 1.1 2006/01/12 01:05:23 naddy Exp $
+--- lib/Mrm/Makefile.in.orig	Thu Jan 12 00:52:22 2006
++++ lib/Mrm/Makefile.in	Thu Jan 12 00:54:00 2006
+@@ -366,7 +366,7 @@ mostlyclean distclean maintainer-clean
+ 
+ install-data-hook:
+ @Version_1_2_TRUE@@LibtoolShared_TRUE@	-rm -f $(DESTDIR)$(prefix)/lib/libMrm.so.1*
+-@Version_1_2_TRUE@@LibtoolShared_TRUE@	(cd $(DESTDIR)$(prefix)/lib && $(LN_S) ../LessTif/Motif1.2/lib/libMrm.so.1* .)
++@Version_1_2_TRUE@@LibtoolShared_TRUE@	(cd $(DESTDIR)$(prefix)/lib && $(LN_S) ../LessTif/Motif1.2/lib/libMrm.so.* .)
+ @Version_1_2_TRUE@@DefaultVersion12_TRUE@	-rm -f $(DESTDIR)$(prefix)/lib/libMrm.la
+ @Version_1_2_TRUE@@DefaultVersion12_TRUE@	(cd $(DESTDIR)$(prefix)/lib && $(LN_S) ../LessTif/Motif1.2/lib/libMrm.la .)
+ @Version_1_2_TRUE@@DefaultVersion12_TRUE@@LibtoolShared_TRUE@	-rm -f $(DESTDIR)$(prefix)/lib/libMrm.so

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2005/12/26 16:45:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2006/01/12 01:05:23 naddy Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 powerpc sparc64 amd64
 
@@ -9,8 +9,6 @@ DISTNAME=	ogle-0.9.2
 PKGNAME=	${DISTNAME}p2
 SHARED_LIBS=	dvdcontrol	11.0 \
 		msgevents	8.0
-MODGNU_SHARED_LIBS=	dvdcontrol	'' \
-			msgevents	''
 HOMEPAGE=	http://www.dtek.chalmers.se/groups/dvd/
 # Authors can be reached at dvd@dtek.chalmers.se
 MASTER_SITES=	${HOMEPAGE}dist/

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2005/12/31 16:33:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2006/01/12 01:05:23 naddy Exp $
 
 COMMENT=		"widgets library"
 
 DISTNAME=		Mowitz-0.2.2
 PKGNAME=		${DISTNAME:L}p0
 SHARED_LIBS=		Mowitz 2.2
-MODGNU_SHARED_LIBS=	Mowitz ''
 CATEGORIES=		x11 devel
 
 HOMEPAGE=		http://siag.nu/mowitz/

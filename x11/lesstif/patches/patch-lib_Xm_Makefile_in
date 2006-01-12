@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Xm_Makefile_in,v 1.1 2006/01/12 01:05:23 naddy Exp $
+--- lib/Xm/Makefile.in.orig	Thu Jan 12 00:52:52 2006
++++ lib/Xm/Makefile.in	Thu Jan 12 00:54:17 2006
+@@ -404,7 +404,7 @@ mostlyclean distclean maintainer-clean
+ 
+ install-data-hook:
+ @Version_1_2_TRUE@@LibtoolShared_TRUE@	-rm -f $(DESTDIR)$(prefix)/lib/libXm.so.1*
+-@Version_1_2_TRUE@@LibtoolShared_TRUE@	(cd $(DESTDIR)$(prefix)/lib && $(LN_S) ../LessTif/Motif1.2/lib/libXm.so.1* .)
++@Version_1_2_TRUE@@LibtoolShared_TRUE@	(cd $(DESTDIR)$(prefix)/lib && $(LN_S) ../LessTif/Motif1.2/lib/libXm.so.* .)
+ @Version_1_2_TRUE@@DefaultVersion12_TRUE@	-rm -f $(DESTDIR)$(prefix)/lib/libXm.la
+ @Version_1_2_TRUE@@DefaultVersion12_TRUE@	(cd $(DESTDIR)$(prefix)/lib && $(LN_S) ../LessTif/Motif1.2/lib/libXm.la .)
+ @Version_1_2_TRUE@@DefaultVersion12_TRUE@@LibtoolShared_TRUE@	-rm -f $(DESTDIR)$(prefix)/lib/libXm.so

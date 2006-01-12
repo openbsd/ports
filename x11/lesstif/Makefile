@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2005/12/26 18:45:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.53 2006/01/12 01:05:22 naddy Exp $
 # $FreeBSD: Makefile,v 1.17 1998/03/28 14:12:55 steve Exp $
 
 COMMENT=	"API-compatible clone of the Motif toolkit"
@@ -8,9 +8,6 @@ PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	Mrm	1.2 \
 		Uil	1.2 \
 		Xm	1.2
-MODGNU_SHARED_LIBS=	Mrm	'' \
-			Uil	'' \
-			Xm	''
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/ \
 		ftp://ftp.hungry.com/pub/hungry/lesstif/srcdist/ \
