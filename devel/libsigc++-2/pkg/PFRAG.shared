@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2006/01/06 12:24:55 bernd Exp $
-@lib lib/libsigc-${V}.so.${LIBsigc-${V}_VERSION}
+@comment $OpenBSD: PFRAG.shared,v 1.3 2006/01/13 16:40:20 bernd Exp $
+@lib lib/libsigc-${V}.so.${LIBsigc-2.0_VERSION}

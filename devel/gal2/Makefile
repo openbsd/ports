@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/01/06 17:23:25 bernd Exp $
+# $OpenBSD: Makefile,v 1.16 2006/01/13 16:40:20 bernd Exp $
 
 COMMENT=		"GNOME Application Libs"
 
@@ -6,8 +6,8 @@ VERSION=		2.4.3
 API_VERSION=		2.4
 DISTNAME=		gal-${VERSION}
 PKGNAME=		gal2-${VERSION}p1
-SHARED_LIBS=		gal-${API_VERSION}	0.0 \
-			gal-a11y-${API_VERSION}	0.0
+SHARED_LIBS=		gal-2.4		0.0 \
+			gal-a11y-2.4	0.0
 
 CATEGORIES=    		devel x11/gnome
 
