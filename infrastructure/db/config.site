@@ -1,4 +1,4 @@
-# $OpenBSD: config.site,v 1.9 2006/01/10 18:31:02 espie Exp $
+# $OpenBSD: config.site,v 1.10 2006/01/13 15:34:06 naddy Exp $
 # Quick start macros for autoconf.
 # XXX kludge for a function we don't actually have.
 #ac_cv_func_getservbyname_r=${ac_cv_func_getservbyname_r=no}
@@ -671,8 +671,7 @@ ac_cv_header_machine_endian_h=${ac_cv_header_machine_endian_h=yes}
 ac_cv_header_machine_limits_h=${ac_cv_header_machine_limits_h=yes}	
 ac_cv_header_machine_param_h=${ac_cv_header_machine_param_h=yes}	
 #ac_cv_header_machine_types_h=${ac_cv_header_machine_types_h=yes}	
-#ac_cv_header_malloc_h=${ac_cv_header_malloc_h=no}
-#ac_cv_header_malloc_h=${ac_cv_header_malloc_h=yes}
+ac_cv_header_malloc_h=${ac_cv_header_malloc_h=no}
 ac_cv_header_math_h=${ac_cv_header_math_h=yes}	
 ac_cv_header_memory_h=${ac_cv_header_memory_h=yes}
 ac_cv_header_net_bpf_h=${ac_cv_header_net_bpf_h=yes}	
