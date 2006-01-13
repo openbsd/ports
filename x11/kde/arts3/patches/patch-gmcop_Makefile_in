@@ -1,4 +1,4 @@
-$OpenBSD: patch-gmcop_Makefile_in,v 1.8 2006/01/03 09:10:55 espie Exp $
+$OpenBSD: patch-gmcop_Makefile_in,v 1.9 2006/01/13 11:34:06 espie Exp $
 --- gmcop/Makefile.in.orig	Sun Nov 20 20:55:24 2005
 +++ gmcop/Makefile.in	Fri Dec 30 16:54:56 2005
 @@ -140,7 +140,7 @@ F77 = @F77@
@@ -10,13 +10,3 @@ $OpenBSD: patch-gmcop_Makefile_in,v 1.8 2006/01/03 09:10:55 espie Exp $
  GLIB_LIBADD = @GLIB_LIBADD@
  GSL_CFLAGS = @GSL_CFLAGS@
  GSL_HAVE_LIBMAD = @GSL_HAVE_LIBMAD@
-@@ -364,7 +364,8 @@ libgmcop_la_SOURCES = giomanager.cc
- libgmcop_la_LIBADD = $(top_builddir)/mcop/libmcop.la $(GLIB_LIBADD)
- #>- libgmcop_la_LDFLAGS = -no-undefined -version-info 1:0 $(GLIB_LDFLAGS) $(all_libraries)
- #>+ 1
--libgmcop_la_LDFLAGS = -no-undefined $(KDE_NO_UNDEFINED) -version-info 1:0 $(GLIB_LDFLAGS) $(all_libraries)
-+LIBgmcop_LTVERSION= -version-info 1:0
-+libgmcop_la_LDFLAGS = -no-undefined $(KDE_NO_UNDEFINED) $(LIBgmcop_LTVERSION) $(GLIB_LDFLAGS) $(all_libraries)
- artsincludedir = $(includedir)/arts
- artsinclude_HEADERS = giomanager.h
- #>- all: all-am
