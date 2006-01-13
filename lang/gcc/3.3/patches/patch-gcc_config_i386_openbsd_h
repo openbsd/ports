@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_i386_openbsd_h,v 1.1.1.1 2005/01/03 15:21:26 espie Exp $
+$OpenBSD: patch-gcc_config_i386_openbsd_h,v 1.2 2006/01/13 20:07:53 espie Exp $
 --- gcc/config/i386/openbsd.h.orig	Mon Oct 21 00:37:10 2002
-+++ gcc/config/i386/openbsd.h	Mon Jan  3 10:17:43 2005
-@@ -29,11 +29,7 @@ Boston, MA 02111-1307, USA.  */
++++ gcc/config/i386/openbsd.h	Fri Jan 13 20:44:05 2006
+@@ -29,22 +29,18 @@ Boston, MA 02111-1307, USA.  */
  #define TARGET_OS_CPP_BUILTINS()		\
    do						\
      {						\
@@ -14,3 +14,17 @@ $OpenBSD: patch-gcc_config_i386_openbsd_h,v 1.1.1.1 2005/01/03 15:21:26 espie Ex
      }						\
    while (0)
  
+ /* Layout of source language data types.  */
+ 
+-/* This must agree with <machine/ansi.h> */
++/* This must agree with <machine/_types.h> */
+ #undef SIZE_TYPE
+-#define SIZE_TYPE "unsigned int"
++#define SIZE_TYPE "long unsigned int"
+ 
+ #undef PTRDIFF_TYPE
+-#define PTRDIFF_TYPE "int"
++#define PTRDIFF_TYPE "long int"
+ 
+ #undef WCHAR_TYPE
+ #define WCHAR_TYPE "int"

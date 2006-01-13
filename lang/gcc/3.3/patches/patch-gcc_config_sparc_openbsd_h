@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_sparc_openbsd_h,v 1.1.1.1 2005/01/03 15:21:27 espie Exp $
+$OpenBSD: patch-gcc_config_sparc_openbsd_h,v 1.2 2006/01/13 20:07:53 espie Exp $
 --- gcc/config/sparc/openbsd.h.orig	Mon Oct 21 00:37:13 2002
-+++ gcc/config/sparc/openbsd.h	Mon Jan  3 10:17:43 2005
-@@ -19,11 +19,17 @@ the Free Software Foundation, 59 Temple 
++++ gcc/config/sparc/openbsd.h	Fri Jan 13 20:47:27 2006
+@@ -19,26 +19,49 @@ the Free Software Foundation, 59 Temple 
  Boston, MA 02111-1307, USA.  */
  
  /* Get generic OpenBSD definitions.  */
@@ -21,7 +21,18 @@ $OpenBSD: patch-gcc_config_sparc_openbsd_h,v 1.1.1.1 2005/01/03 15:21:27 espie E
  
  /* Layout of source language data types */
  
-@@ -39,6 +45,23 @@ Boston, MA 02111-1307, USA.  */
+-/* This must agree with <machine/ansi.h> */
++/* This must agree with <machine/_types.h> */
+ #undef SIZE_TYPE
+-#define SIZE_TYPE "unsigned int"
++#define SIZE_TYPE "long unsigned int"
+ 
+ #undef PTRDIFF_TYPE
+-#define PTRDIFF_TYPE "int"
++#define PTRDIFF_TYPE "long int"
+ 
+ #undef WCHAR_TYPE
+ #define WCHAR_TYPE "int"
  
  #undef WCHAR_TYPE_SIZE
  #define WCHAR_TYPE_SIZE 32

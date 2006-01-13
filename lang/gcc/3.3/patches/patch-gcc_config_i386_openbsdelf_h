@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_i386_openbsdelf_h,v 1.1.1.1 2005/01/03 15:21:26 espie Exp $
---- gcc/config/i386/openbsdelf.h.orig	Mon Jan  3 10:17:43 2005
-+++ gcc/config/i386/openbsdelf.h	Mon Jan  3 10:17:43 2005
+$OpenBSD: patch-gcc_config_i386_openbsdelf_h,v 1.2 2006/01/13 20:07:53 espie Exp $
+--- gcc/config/i386/openbsdelf.h.orig	Fri Jan 13 20:30:20 2006
++++ gcc/config/i386/openbsdelf.h	Fri Jan 13 20:44:39 2006
 @@ -0,0 +1,134 @@
 +/* Configuration for an OpenBSD i386 target.
 +   
@@ -56,12 +56,12 @@ $OpenBSD: patch-gcc_config_i386_openbsdelf_h,v 1.1.1.1 2005/01/03 15:21:26 espie
 +
 +/* Layout of source language data types.  */
 +
-+/* This must agree with <machine/ansi.h> */
++/* This must agree with <machine/_types.h> */
 +#undef SIZE_TYPE
-+#define SIZE_TYPE "unsigned int"
++#define SIZE_TYPE "long unsigned int"
 +
 +#undef PTRDIFF_TYPE
-+#define PTRDIFF_TYPE "int"
++#define PTRDIFF_TYPE "long int"
 +
 +#undef WCHAR_TYPE
 +#define WCHAR_TYPE "int"

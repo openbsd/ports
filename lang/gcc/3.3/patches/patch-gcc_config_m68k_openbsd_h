@@ -1,0 +1,19 @@
+$OpenBSD: patch-gcc_config_m68k_openbsd_h,v 1.1 2006/01/13 20:07:53 espie Exp $
+--- gcc/config/m68k/openbsd.h.orig	Fri Jan 13 20:44:48 2006
++++ gcc/config/m68k/openbsd.h	Fri Jan 13 20:44:58 2006
+@@ -42,12 +42,12 @@ Boston, MA 02111-1307, USA.  */
+ 
+ /* Layout of source language data types.  */
+ 
+-/* This must agree with <machine/ansi.h> */
++/* This must agree with <machine/_types.h> */
+ #undef SIZE_TYPE
+-#define SIZE_TYPE "unsigned int"
++#define SIZE_TYPE "long unsigned int"
+ 
+ #undef PTRDIFF_TYPE
+-#define PTRDIFF_TYPE "int"
++#define PTRDIFF_TYPE "long int"
+ 
+ #undef WCHAR_TYPE
+ #define WCHAR_TYPE "int"

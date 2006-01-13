@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_rs6000_openbsd_h,v 1.1.1.1 2005/01/03 15:21:27 espie Exp $
---- gcc/config/rs6000/openbsd.h.orig	Mon Jan  3 10:17:43 2005
-+++ gcc/config/rs6000/openbsd.h	Mon Jan  3 10:17:43 2005
-@@ -0,0 +1,95 @@
+$OpenBSD: patch-gcc_config_rs6000_openbsd_h,v 1.2 2006/01/13 20:07:53 espie Exp $
+--- gcc/config/rs6000/openbsd.h.orig	Fri Jan 13 20:30:20 2006
++++ gcc/config/rs6000/openbsd.h	Fri Jan 13 20:47:10 2006
+@@ -0,0 +1,105 @@
 +/* Configuration file for an rs6000 OpenBSD target.
 +   Copyright (C) 1999 Free Software Foundation, Inc.
 +
@@ -97,3 +97,13 @@ $OpenBSD: patch-gcc_config_rs6000_openbsd_h,v 1.1.1.1 2005/01/03 15:21:27 espie 
 +
 +/* Some code gets optimized incorrectly by move_movables() in loop.c */
 +#define	BROKEN_MOVE_MOVABLES_P
++/* This must agree with <machine/_types.h> */
++#undef SIZE_TYPE
++#define SIZE_TYPE "long unsigned int"
++
++#undef PTRDIFF_TYPE
++#define PTRDIFF_TYPE "long int"
++
++#undef WCHAR_TYPE
++#define WCHAR_TYPE     "int"
++
