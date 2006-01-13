@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2006/01/07 17:58:49 bernd Exp $
+# $OpenBSD: Makefile,v 1.21 2006/01/13 23:40:23 espie Exp $
 
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
@@ -7,9 +7,9 @@ COMMENT-docs=		"C++ API for MySQL documentation"
 
 VERSION=		2.0.6
 DISTNAME=		mysql++-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 PKGNAME-docs=		mysql++-docs-${VERSION}
-SHARED_LIBS=		mysqlpp 2.6
+SHARED_LIBS=		mysqlpp 3.0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://tangentsoft.net/mysql++/

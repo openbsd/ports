@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2006/01/06 09:07:58 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2006/01/13 23:40:24 espie Exp $
 
 COMMENT=	"C++ wrapper for the Simple DirectMedia Layer"
 COMMENT-docs=	"SDLmm documentation"
 
 VERSION=	0.1.8
 DISTNAME=	SDLmm-${VERSION}
-PKGNAME=	${DISTNAME:L}p0
+PKGNAME=	${DISTNAME:L}p1
 PKGNAME-docs=	${PKGNAME:S,-,-docs-,}
-SHARED_LIBS=	SDLmm 8.0
+SHARED_LIBS=	SDLmm 9.0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://sdlmm.sourceforge.net/

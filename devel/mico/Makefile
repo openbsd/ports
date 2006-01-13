@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2006/01/09 23:38:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2006/01/13 23:40:23 espie Exp $
 
 COMMENT=	"free and complete CORBA-compliant implementation"
 
 DISTNAME=	mico-2.3.6
-#PKGNAME=	# see below
+PKGNAME=	$(DISTNAME)p1
 CATEGORIES=	devel
 
 # The build framework accommodates only a single shared lib extension.
@@ -12,7 +12,7 @@ SHARED_LIBS=	mico2.3.6	${LIB_VERSION} \
 		micocoss2.3.6	${LIB_VERSION} \
 		micoir2.3.6	${LIB_VERSION} \
 		micox2.3.6	${LIB_VERSION}
-LIB_VERSION=	1.0
+LIB_VERSION=	2.0
 
 HOMEPAGE=	http://www.mico.org/
 MASTER_SITES=	${HOMEPAGE}
@@ -39,7 +39,6 @@ FLAVORS=		ssl	# qt gtk tcl
 FLAVOR?=
 
 .if ${FLAVOR:L:Mssl}
-PKGNAME=		${DISTNAME}p0
 CONFIGURE_ARGS+=	--with-ssl
 WANTLIB+=		crypto ssl
 .endif

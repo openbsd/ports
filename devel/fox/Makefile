@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2005/12/29 13:56:07 bernd Exp $
+# $OpenBSD: Makefile,v 1.7 2006/01/13 23:40:22 espie Exp $
 
 COMMENT='C++ toolkit for GUI'
 CATEGORIES=devel
 
 DISTNAME=fox-1.4.17
-PKGNAME=${DISTNAME}
-SHARED_LIBS=		CHART-1.4	0.17 \
-			FOX-1.4		0.17
+PKGNAME=${DISTNAME}p0
+SHARED_LIBS=		CHART-1.4	1.0 \
+			FOX-1.4		1.0
 MODGNU_SHARED_LIBS=	CHART-1.4	'-export-dynamic' \
 			FOX-1.4		'-export-dynamic'
 LIBCHART-1.4_ALIAS=	CHART_1_4

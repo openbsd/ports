@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2006/01/06 08:36:18 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2006/01/13 23:40:24 espie Exp $
 
 COMMENT=	"SDL image library"
 DISTNAME=	SDL_image-1.2.4
-PKGNAME=	${DISTNAME:L:S/_/-/}
-SHARED_LIBS=	SDL_image 1.3
+PKGNAME=	${DISTNAME:L:S/_/-/}p0
+SHARED_LIBS=	SDL_image 2.0
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_image/release/
 

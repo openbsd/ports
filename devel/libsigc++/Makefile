@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2006/01/06 12:24:55 bernd Exp $
+# $OpenBSD: Makefile,v 1.17 2006/01/13 23:40:23 espie Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
 BROKEN=		"signal-related bug? any program linked with this hangs"
@@ -7,8 +7,8 @@ BROKEN=		"signal-related bug? any program linked with this hangs"
 COMMENT=	"callback framework for C++"
 
 DISTNAME=	libsigc++-1.0.4
-PKGNAME=	${DISTNAME}p1
-SHARED_LIBS=		sigc 0.0
+PKGNAME=	${DISTNAME}p2
+SHARED_LIBS=		sigc 1.0
 MODGNU_SHARED_LIBS=	sigc '-no-undefined'
 
 CATEGORIES=	devel

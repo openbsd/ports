@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2006/01/06 21:16:16 bernd Exp $
+# $OpenBSD: Makefile,v 1.41 2006/01/13 23:40:22 espie Exp $
 
 COMMENT=	"GNU gettext"
 
 DISTNAME=	gettext-0.14.5
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=	asprintf	0.0 \
+PKGNAME=	${DISTNAME}p1
+SHARED_LIBS=	asprintf	1.0 \
 		gettextlib	0.0 \
 		gettextpo	1.0 \
 		gettextsrc	0.0 \

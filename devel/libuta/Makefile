@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2005/12/23 17:02:47 bernd Exp $
+# $OpenBSD: Makefile,v 1.19 2006/01/13 23:40:23 espie Exp $
 
 COMMENT=	"graphical user interface library for C++"
 
 DISTNAME=	libuta-0.4.4
-PKGNAME=	${DISTNAME}p1
-SHARED_LIBS=		uta 41.0
+PKGNAME=	${DISTNAME}p2
+SHARED_LIBS=		uta 42.0
 MODGNU_SHARED_LIBS=	uta ''
 
 CATEGORIES=	devel

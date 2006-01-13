@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2006/01/08 10:58:46 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2006/01/13 23:40:23 espie Exp $
 
 COMMENT=	"library to provide abstract access to various archives"
 DISTNAME=	physfs-1.0.0
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=	physfs-1.0 	0.0 \
-		physfs		0.0
+PKGNAME=	${DISTNAME}p1
+SHARED_LIBS=	physfs-1.0 	1.0 \
+		physfs		1.0
 
 CATEGORIES=	devel
 MASTER_SITES=	${HOMEPAGE}downloads/
