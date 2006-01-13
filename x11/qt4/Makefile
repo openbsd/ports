@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2006/01/07 11:22:53 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2006/01/13 19:18:50 espie Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples for qt4"
@@ -7,22 +7,22 @@ COMMENT-postgresql=	"PostgresSQL plugin for qt4"
 COMMENT-mysql=		"MySQL plugin for qt4"
 
 PKGNAME=		qt4-${VERSION}
-PKGNAME-mysql=		qt4-mysql-${VERSION}
-PKGNAME-postgresql=	qt4-postgresql-${VERSION}
+PKGNAME-mysql=		qt4-mysql-${VERSION}p0
+PKGNAME-postgresql=	qt4-postgresql-${VERSION}p0
 PKGNAME-examples=	qt4-examples-${VERSION}
-FULLPKGNAME=		qt4-${VERSION}
+FULLPKGNAME=		qt4-${VERSION}p0
 FULLPKGNAME-html=	qt4-html-${VERSION}
-SHARED_LIBS=	Qt3Support 4.2 \
-		QtCore 4.2 \
-		QtDesigner 4.2 \
-		QtDesignerComponents 4.2 \
-		QtGui 4.2 \
-		QtNetwork 4.2 \
-		QtOpenGL 4.2 \
-		QtSql 4.2 \
-		QtXml 4.2 \
-		QtSvg 4.1 \
-		QtTest 4.1
+SHARED_LIBS=	Qt3Support 5.0 \
+		QtCore 5.0 \
+		QtDesigner 5.0 \
+		QtDesignerComponents 5.0 \
+		QtGui 5.0 \
+		QtNetwork 5.0 \
+		QtOpenGL 5.0 \
+		QtSql 5.0 \
+		QtXml 5.0 \
+		QtSvg 5.0 \
+		QtTest 5.0
 
 VERSION=	4.1.0
 DISTNAME=	qt-x11-opensource-src-4.1.0
