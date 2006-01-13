@@ -1,36 +1,36 @@
-# $OpenBSD: Makefile,v 1.32 2006/01/08 16:03:28 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2006/01/13 22:49:56 espie Exp $
 
 COMMENT= 		"K Desktop Environment, multimedia applications"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.4.3
 DISTNAME=		kdemultimedia-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 MODKDE_VERSION=		3.4
-SHARED_LIBS=		akode			1.0 \
-			arts_mpeglib-0.3.0	0.3 \
-			arts_mpeglib		0.3 \
-			arts_splay		0.0 \
-			artsbuilder		0.0 \
-			artscontrolapplet	1.0 \
-			artscontrolsupport	1.0 \
-			artsgui			0.0 \
-			artsgui_idl		0.0 \
-			artsgui_kde		0.0 \
-			artsmidi		0.0 \
-			artsmidi_idl		0.0 \
-			artsmodules		0.0 \
-			artsmodulescommon	0.0 \
-			artsmoduleseffects	0.0 \
-			artsmodulesmixers	0.0 \
-			artsmodulessynth	0.0 \
-			audiocdplugins		1.0 \
-			kcddb			1.0 \
-			kmidlib			0.0 \
-			noatun			3.0 \
-			noatuncontrols		3.0 \
-			noatuntags		3.0 \
-			yafcore			0.0 \
-			yafxplayer		0.0
+SHARED_LIBS=		akode			2.0 \
+			arts_mpeglib-0.3.0	1.0 \
+			arts_mpeglib		1.0 \
+			arts_splay		1.0 \
+			artsbuilder		1.0 \
+			artscontrolapplet	2.0 \
+			artscontrolsupport	2.0 \
+			artsgui			1.0 \
+			artsgui_idl		1.0 \
+			artsgui_kde		1.0 \
+			artsmidi		1.0 \
+			artsmidi_idl		1.0 \
+			artsmodules		1.0 \
+			artsmodulescommon	1.0 \
+			artsmoduleseffects	1.0 \
+			artsmodulesmixers	1.0 \
+			artsmodulessynth	1.0 \
+			audiocdplugins		2.0 \
+			kcddb			2.0 \
+			kmidlib			1.0 \
+			noatun			4.0 \
+			noatuncontrols		4.0 \
+			noatuntags		4.0 \
+			yafcore			1.0 \
+			yafxplayer		1.0
 
 FLAVORS=		debug
 LIB_DEPENDS= DCOP,kdecore.6,kdefakes,kdefx,kdesu,kdeui,kio,khtml,kmid,kparts,kmediaplayer,kjs,kutils,kwalletclient,kdeprint::x11/kde/libs3 \

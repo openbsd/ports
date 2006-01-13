@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2006/01/03 14:10:51 espie Exp $
+# $OpenBSD: Makefile,v 1.55 2006/01/13 22:49:56 espie Exp $
 
 COMMENT=		"K Desktop Environment, graphic applications"
 COMMENT-kamera=		"KDE interface to digital cameras"
@@ -12,17 +12,17 @@ MODKDE_VERSION=		3.5
 FLAVORS=debug
 SEPARATE_BUILD=flavored
 MULTI_PACKAGES=-kpov -kamera -sane
-PKGNAME=${DISTNAME}p0
+PKGNAME=${DISTNAME}p1
 PKGNAME-kamera=kamera-${VERSION}p0
-PKGNAME-kpov=kpovmodeller-${VERSION}p0
-PKGNAME-sane=ksane-${VERSION}p0
-SHARED_LIBS=		kghostviewlib	0.0 \
-			kimageviewer	0.0 \
-			kmultipage	0.0 \
-			ksvg		0.1 \
-			text2path	0.0 \
-			kpovmodeler	0.0 \
-			kscan		1.0
+PKGNAME-kpov=kpovmodeller-${VERSION}p1
+PKGNAME-sane=ksane-${VERSION}p1
+SHARED_LIBS=		kghostviewlib	1.0 \
+			kimageviewer	1.0 \
+			kmultipage	1.0 \
+			ksvg		1.0 \
+			text2path	1.0 \
+			kpovmodeler	1.0 \
+			kscan		2.0
 SUBPACKAGE?=
 
 BUILD_DEPENDS+=	::print/teTeX/base \

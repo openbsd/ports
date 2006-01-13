@@ -1,53 +1,53 @@
-# $OpenBSD: Makefile,v 1.61 2006/01/03 09:10:55 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2006/01/13 22:49:56 espie Exp $
 
 COMMENT=		"K Desktop Environment, libraries"
 COMMENT-cups=		"K Desktop Environment, cups support"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.0
 DISTNAME=		kdelibs-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 PKGNAME-cups=		kdecups-${VERSION}p0
 MODKDE_VERSION?=	3.5
-SHARED_LIBS=		DCOP			6.0 \
-			artskde			3.0 \
-			kabc			3.0 \
-			kabc_dir		1.0 \
-			kabc_file		1.0 \
-			kabc_ldapkio		1.0 \
-			kabc_net		1.0 \
-			katepartinterfaces	0.0 \
-			kdecore			6.0 \
-			kdefakes		6.0 \
-			kdefx			6.0 \
-			kdeprint		6.0 \
-			kdeprint_management	6.0 \
-			kdesasl			3.0 \
-			kdesu			6.0 \
-			kdeui			6.0 \
-			kdnssd			1.0 \
-			khtml			6.0 \
-			kimproxy		0.0 \
-			kio			6.0 \
-			kjava			1.0 \
-			kjs			3.0 \
-			kmdi			1.0 \
-			kmdi2			1.0 \
-			kmediaplayer		0.0 \
-			kmid			0.95 \
-			knewstuff		1.0 \
-			kntlm			0.0 \
-			kparts			3.0 \
-			kresources		3.0 \
-			kscreensaver		6.0 \
-			kscript			0.0 \
-			kspell			6.0 \
-			kspell2			1.0 \
-			ktexteditor		0.0 \
-			kunittest		1.0 \
-			kutils			3.0 \
-			kwalletbackend		1.0 \
-			kwalletclient		1.1 \
-			vcard			0.0
+SHARED_LIBS=		DCOP			7.0 \
+			artskde			4.0 \
+			kabc			4.0 \
+			kabc_dir		2.0 \
+			kabc_file		2.0 \
+			kabc_ldapkio		2.0 \
+			kabc_net		2.0 \
+			katepartinterfaces	1.0 \
+			kdecore			7.0 \
+			kdefakes		7.0 \
+			kdefx			7.0 \
+			kdeprint		7.0 \
+			kdeprint_management	7.0 \
+			kdesasl			4.0 \
+			kdesu			7.0 \
+			kdeui			7.0 \
+			kdnssd			2.0 \
+			khtml			7.0 \
+			kimproxy		1.0 \
+			kio			7.0 \
+			kjava			2.0 \
+			kjs			4.0 \
+			kmdi			2.0 \
+			kmdi2			2.0 \
+			kmediaplayer		1.0 \
+			kmid			1.0 \
+			knewstuff		2.0 \
+			kntlm			1.0 \
+			kparts			4.0 \
+			kresources		4.0 \
+			kscreensaver		7.0 \
+			kscript			1.0 \
+			kspell			7.0 \
+			kspell2			2.0 \
+			ktexteditor		1.0 \
+			kunittest		2.0 \
+			kutils			4.0 \
+			kwalletbackend		2.0 \
+			kwalletclient		2.0 \
+			vcard			1.0
 
 FLAVORS=debug
 VMEM_WARNING=	Yes

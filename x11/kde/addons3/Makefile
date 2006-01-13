@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2005/10/17 11:28:23 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2006/01/13 22:49:54 espie Exp $
 
 COMMENT=		"K Desktop Environment, addons"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.4.3
 DISTNAME=		kdeaddons-${VERSION}
 MODKDE_VERSION=		3.4
+BROKEN=			'needs an update to kdemultimedia first'
 
 LIB_DEPENDS= kdecore.6,kdnssd,kmdi2.1.0,knewstuff,DCOP,artskde,kabc,katepartinterfaces,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kmediaplayer,kparts,kresources,kscript,ktexteditor,kutils,kwalletclient,vcard::x11/kde/libs3 \
 	SDL.1:sdl-*-!no_x11:devel/sdl \

@@ -1,63 +1,63 @@
-# $OpenBSD: Makefile,v 1.29 2006/01/05 19:36:56 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2006/01/13 22:49:56 espie Exp $
 
 COMMENT= 		"KDE personal information applications"
 COMMENT-kpilot=		"KDE interface to sync with Palm Pilot"
 CATEGORIES=		x11 x11/kde productivity
 VERSION=		3.5.0
 DISTNAME=		kdepim-${VERSION}
-PKGNAME=		${DISTNAME}
+PKGNAME=		${DISTNAME}p0
 MODKDE_VERSION=		3.5
-SHARED_LIBS=		gpgme++				2.0 \
-			index				0.0 \
-			kabc_groupdav			1.0 \
-			kabc_groupwise			1.0 \
-			kabc_newexchange		1.0 \
-			kabc_slox			0.0 \
-			kabc_xmlrpc			1.0 \
-			kabckolab			0.0 \
-			kabinterfaces			1.0 \
-			kaddressbook			0.0 \
-			kcal				2.0 \
-			kcal_blogging			1.0 \
-			kcal_groupdav			1.0 \
-			kcal_groupwise			1.0 \
-			kcal_newexchange		1.0 \
-			kcal_resourcefeatureplan	1.0 \
-			kcal_resourceremote		1.0 \
-			kcal_slox			0.0 \
-			kcal_xmlrpc			1.0 \
-			kcalkolab			0.0 \
-			kdepim				1.0 \
-			kgantt				0.2 \
-			kgroupwarebase			0.0 \
-			kgroupwaredav			0.0 \
-			kholidays			1.0 \
-			kitchensyncui			0.0 \
-			kleopatra			1.0 \
-			kmime				4.0 \
-			knotes_xmlrpc			1.0 \
-			knoteskolab			0.0 \
-			kocorehelper			1.0 \
-			kode				1.0 \
-			konnector			0.0 \
-			kontact				1.0 \
-			korg_stdprinting		1.0 \
-			korganizer			1.0 \
-			korganizer_calendar		1.0 \
-			korganizer_eventviewer		1.0 \
-			kpgp				4.0 \
-			kpilot				0.0 \
-			kpimexchange			1.0 \
-			kpimidentities			1.0 \
-			kpinterfaces			1.0 \
-			ksieve				0.0 \
-			kslox				0.0 \
-			ksync				1.0 \
-			ksync2				0.0 \
-			ktnef				1.0 \
-			mimelib				1.1 \
-			multisynk			0.0 \
-			qgpgme				0.0
+SHARED_LIBS=		gpgme++				3.0 \
+			index				1.0 \
+			kabc_groupdav			2.0 \
+			kabc_groupwise			2.0 \
+			kabc_newexchange		2.0 \
+			kabc_slox			1.0 \
+			kabc_xmlrpc			2.0 \
+			kabckolab			1.0 \
+			kabinterfaces			2.0 \
+			kaddressbook			1.0 \
+			kcal				3.0 \
+			kcal_blogging			2.0 \
+			kcal_groupdav			2.0 \
+			kcal_groupwise			2.0 \
+			kcal_newexchange		2.0 \
+			kcal_resourcefeatureplan	2.0 \
+			kcal_resourceremote		2.0 \
+			kcal_slox			1.0 \
+			kcal_xmlrpc			2.0 \
+			kcalkolab			1.0 \
+			kdepim				2.0 \
+			kgantt				1.0 \
+			kgroupwarebase			1.0 \
+			kgroupwaredav			1.0 \
+			kholidays			2.0 \
+			kitchensyncui			1.0 \
+			kleopatra			2.0 \
+			kmime				5.0 \
+			knotes_xmlrpc			2.0 \
+			knoteskolab			1.0 \
+			kocorehelper			2.0 \
+			kode				2.0 \
+			konnector			1.0 \
+			kontact				2.0 \
+			korg_stdprinting		2.0 \
+			korganizer			2.0 \
+			korganizer_calendar		2.0 \
+			korganizer_eventviewer		2.0 \
+			kpgp				5.0 \
+			kpilot				1.0 \
+			kpimexchange			2.0 \
+			kpimidentities			2.0 \
+			kpinterfaces			2.0 \
+			ksieve				1.0 \
+			kslox				1.0 \
+			ksync				2.0 \
+			ksync2				1.0 \
+			ktnef				2.0 \
+			mimelib				2.1 \
+			multisynk			1.0 \
+			qgpgme				1.0
 
 
 

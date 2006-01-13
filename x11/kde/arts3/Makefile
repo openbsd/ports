@@ -1,27 +1,27 @@
-# $OpenBSD: Makefile,v 1.46 2006/01/03 09:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2006/01/13 22:49:55 espie Exp $
 
 COMMENT=		"K Desktop Environment, aRTs"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.0
 DISTNAME=		arts-1.5.0
 MODKDE_VERSION?=	3.5
-PKGNAME=		${DISTNAME}p1
-SHARED_LIBS=		artsc			0.0 \
-			artscbackend		0.0 \
-			artsdsp			0.0 \
-			artsdsp_st		0.0 \
-			artsflow		1.0 \
-			artsflow_idl		1.0 \
-			artsgslplayobject	0.0 \
-			artswavplayobject	0.0 \
-			gmcop			1.0 \
-			kmedia2			1.0 \
-			kmedia2_idl		1.0 \
-			mcop			1.0 \
-			mcop_mt			1.0 \
-			qtmcop			1.0 \
-			soundserver_idl		1.0 \
-			x11globalcomm		1.0
+PKGNAME=		${DISTNAME}p2
+SHARED_LIBS=		artsc			1.0 \
+			artscbackend		1.0 \
+			artsdsp			1.0 \
+			artsdsp_st		1.0 \
+			artsflow		2.0 \
+			artsflow_idl		2.0 \
+			artsgslplayobject	1.0 \
+			artswavplayobject	1.0 \
+			gmcop			2.0 \
+			kmedia2			2.0 \
+			kmedia2_idl		2.0 \
+			mcop			2.0 \
+			mcop_mt			2.0 \
+			qtmcop			2.0 \
+			soundserver_idl		2.0 \
+			x11globalcomm		2.0
 
 SHARED_ONLY=		No
 LIB_DEPENDS= 	audiofile::devel/libaudiofile \

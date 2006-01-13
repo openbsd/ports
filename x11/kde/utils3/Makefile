@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.34 2006/01/06 09:28:32 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2006/01/13 22:49:57 espie Exp $
 
 COMMENT= 		"K Desktop Environment, utilities"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.0
 DISTNAME=		kdeutils-${VERSION}
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 MODKDE_VERSION=		3.5
-SHARED_LIBS=		kcmlaptop		0.0 \
-			khexeditcommon		0.0 \
-			kmilo			1.0 \
-			kregexpeditorcommon	1.0 \
-			ksimcore		1.0
+SHARED_LIBS=		kcmlaptop		1.0 \
+			khexeditcommon		1.0 \
+			kmilo			2.0 \
+			kregexpeditorcommon	2.0 \
+			ksimcore		2.0
 
 LIB_DEPENDS=	DCOP,kabc,kdecore.6,kdefx,kdeprint,kdesu,kdeui,kio,knewstuff,kparts,kresources,kutils,kwalletclient,vcard::x11/kde/libs3 \
 		netsnmp::net/net-snmp \

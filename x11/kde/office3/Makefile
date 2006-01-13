@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2006/01/06 12:07:26 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2006/01/13 22:49:56 espie Exp $
 
 COMMENT=		"office suite for KDE"
 
@@ -7,40 +7,40 @@ VMEM_WARNING=		Yes
 MASTER_SITES?=		${MASTER_SITE_KDE:S@$@stable/koffice-1.4.2/src/@}
 
 DISTNAME=	koffice-1.4.2
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=	karbonbase		2.0 \
-		kchartcommon		2.0 \
-		kdchart			0.0 \
-		kexicore		0.8 \
-		kexidatatable		0.8 \
-		kexidb			0.0 \
-		kexidbparser		0.8 \
-		kexiextendedwidgets	0.8 \
-		kexiformutils		0.8 \
-		kexiguiutils		0.8 \
-		keximain		0.8 \
-		keximigrate		0.8 \
-		kexipropertyeditor	0.8 \
-		kexirelationsview	0.8 \
-		kexisql2		2.8 \
-		kexisql3		3.0 \
-		kformdesigner		0.8 \
-		kformulalib		3.0 \
-		kiviocommon		0.0 \
-		kochart			1.0 \
-		kofficecore		2.0 \
-		kofficeui		2.0 \
-		kopainter		1.0 \
-		koscript		2.0 \
-		kotext			2.0 \
-		kowmf			1.0 \
-		kritacommon		1.0 \
-		kspreadcommon		0.0 \
-		kstore			2.0 \
-		kugarlib		1.2 \
-		kwmailmerge_interface	4.0 \
-		kwmf			2.0 \
-		kwordexportfilters	1.1
+PKGNAME=	${DISTNAME}p1
+SHARED_LIBS=	karbonbase		3.0 \
+		kchartcommon		3.0 \
+		kdchart			1.0 \
+		kexicore		1.0 \
+		kexidatatable		1.0 \
+		kexidb			1.0 \
+		kexidbparser		1.0 \
+		kexiextendedwidgets	1.0 \
+		kexiformutils		1.0 \
+		kexiguiutils		1.0 \
+		keximain		1.0 \
+		keximigrate		1.0 \
+		kexipropertyeditor	1.0 \
+		kexirelationsview	1.0 \
+		kexisql2		3.0 \
+		kexisql3		4.0 \
+		kformdesigner		1.0 \
+		kformulalib		4.0 \
+		kiviocommon		1.0 \
+		kochart			2.0 \
+		kofficecore		3.0 \
+		kofficeui		3.0 \
+		kopainter		2.0 \
+		koscript		3.0 \
+		kotext			3.0 \
+		kowmf			2.0 \
+		kritacommon		2.0 \
+		kspreadcommon		1.0 \
+		kstore			3.0 \
+		kugarlib		2.0 \
+		kwmailmerge_interface	5.0 \
+		kwmf			3.0 \
+		kwordexportfilters	2.0
 
 FLAVORS=debug
 FAKE_FLAGS=	${MAKE_FLAGS} TAR=tar DESTDIR=${WRKINST}
