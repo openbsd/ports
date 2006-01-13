@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2006/01/06 00:13:26 brad Exp $
+# $OpenBSD: Makefile,v 1.115 2006/01/13 19:12:16 espie Exp $
 # Uses pthreads
 
 .if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "m88k"
@@ -11,13 +11,13 @@ COMMENT-tests=	"multithreaded SQL database (regression test suite)"
 
 VERSION=	5.0.18
 DISTNAME=	mysql-${VERSION}
-FULLPKGNAME=	mysql-client-${VERSION}
+FULLPKGNAME=	mysql-client-${VERSION}p0
 PKGNAME-server=	mysql-server-${VERSION}
 FULLPKGNAME-tests= mysql-tests-${VERSION}
 CATEGORIES=	databases
 V=		MySQL-5.0
-SHARED_LIBS=	mysqlclient	15.0 \
-		mysqlclient_r	15.0
+SHARED_LIBS=	mysqlclient	16.0 \
+		mysqlclient_r	16.0
 
 MASTER_SITES=	http://mysql.mirrors.pair.com/Downloads/$V/
 

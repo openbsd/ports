@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2006/01/10 10:58:15 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/01/13 19:12:15 espie Exp $
 
 COMMENT=	"java-like zip interface"
 DISTNAME=	zipios++-0.1.5.9+cvs.2004.02.07
-PKGNAME=	zipios++-0.1.5.9
+PKGNAME=	zipios++-0.1.5.9p0
 CATEGORIES=	devel archivers
 MASTER_SITES=	http://http.us.debian.org/debian/pool/main/z/zipios++/
 MASTER_SITES0=	${MASTER_SITE_GNU:=automake/}
-SHARED_LIBS=	zipios	0.0
+SHARED_LIBS=	zipios	1.0
 
 DISTFILES=	zipios++_0.1.5.9+cvs.2004.02.07.orig.tar.gz \
 		automake-1.7.tar.gz:0
