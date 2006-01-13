@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2005/09/05 12:46:15 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/01/13 16:30:01 pvalchev Exp $
 
 COMMENT=		"morse player"
 
-DISTNAME=		morseplayer-1.3
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		morseplayer-1.4
 CATEGORIES=		audio
 HOMEPAGE=		http://www.thought.net/jason/radio/morseplayer.html
 MAINTAINER=		Jason Wright <jason@openbsd.org>
