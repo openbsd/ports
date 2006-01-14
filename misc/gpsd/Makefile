@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/01/14 00:28:45 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/01/14 20:05:49 steven Exp $
 
 COMMENT=		"service daemon that monitors one or more GPSes"
 COMMENT-motif=		"motif-based test apps using gpsd"
@@ -8,7 +8,6 @@ DISTNAME=		gpsd-${VERSION}
 PKGNAME=		gpsd-${VERSION}p2
 PKGNAME-motif=		gpsd-motif-${VERSION}p0
 SHARED_LIBS=		gps	16.0
-MODGNU_SHARED_LIBS=	gps	''
 CATEGORIES=		misc
 
 HOMEPAGE=		http://gpsd.berlios.de/

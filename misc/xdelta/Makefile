@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2005/12/25 23:44:30 steven Exp $
+# $OpenBSD: Makefile,v 1.18 2006/01/14 20:05:49 steven Exp $
 # $FreeBSD: Makefile,v 1.10 1998/09/03 00:05:11 jmacd Exp $
 
 COMMENT=	"binary delta generator and prototype RCS replacement"
 
 DISTNAME=	xdelta-1.1.1
 PKGNAME=	${DISTNAME}p1
-SHARED_LIBS=		edsio	0.0 \
-			xdelta	11.1
-MODGNU_SHARED_LIBS=	edsio	'' \
-			xdelta	''
+SHARED_LIBS=	edsio	0.0 \
+		xdelta	11.1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.xcf.berkeley.edu/pub/xdelta/
 
