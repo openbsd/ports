@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/18 12:55:53 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2006/01/14 20:27:11 steven Exp $
 @conflict rpm2cpio-*
 bin/gendiff
 bin/rpm
@@ -94,8 +94,6 @@ share/locale/pt_BR/LC_MESSAGES/rpm.mo
 share/locale/ru/LC_MESSAGES/rpm.mo
 share/locale/sk/LC_MESSAGES/rpm.mo
 share/locale/sl/LC_MESSAGES/rpm.mo
-share/locale/sr/
-share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/rpm.mo
 share/locale/sv/LC_MESSAGES/rpm.mo
 share/locale/tr/LC_MESSAGES/rpm.mo
@@ -104,7 +102,7 @@ src/redhat/
 src/redhat/BUILD/
 src/redhat/RPMS/
 @comment src/redhat/RPMS/athlon/
-src/redhat/RPMS/i386/
+src/redhat/${RPM_INTEL}/
 @comment src/redhat/RPMS/i486/
 @comment src/redhat/RPMS/i586/
 @comment src/redhat/RPMS/i686/

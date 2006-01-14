@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2005/12/28 21:46:04 naddy Exp $
-@comment @lib lib/libpopt.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.10 2006/01/14 20:27:11 steven Exp $
+@comment @lib lib/libpopt.so.${LIBpopt_VERSION}
 @lib lib/librpm.so.${LIBrpm_VERSION}
 @lib lib/librpmbuild.so.${LIBrpmbuild_VERSION}

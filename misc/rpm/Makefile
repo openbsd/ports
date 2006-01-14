@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2005/12/25 23:42:09 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2006/01/14 20:27:11 steven Exp $
 
 COMMENT=	"redhat package manager"
 
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 DISTNAME=	rpm-3.0.6
-SHARED_LIBS=		rpm		0.1 \
-			rpmbuild	0.0
-MODGNU_SHARED_LIBS=	rpm		'' \
-			rpmbuild	''
+SHARED_LIBS=	rpm		0.1 \
+		rpmbuild	0.0
 CATEGORIES=	misc archivers emulators
 
 PERMIT_DISTFILES_FTP=	Yes
@@ -28,6 +26,9 @@ LIB_DEPENDS+=	bz2.::archivers/bzip2 \
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/popt
+
+RPM_INTEL=	RPMS/i386
+SUBST_VARS=	RPM_INTEL
 
 # Enforce check for pgp, so no build-time depend is needed
 CONFIGURE_ENV=		PGPBIN=$(LOCALBASE)/bin/pgp
