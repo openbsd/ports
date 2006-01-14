@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2005/12/30 23:25:56 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2006/01/14 00:28:45 espie Exp $
 
 COMMENT=	"filemanager for X Window"
 
 DISTNAME=	xnc-4.4.7
+PKGNAME=	$(DISTNAME)p0
 DISTFILES=	${DISTNAME}.src${EXTRACT_SUFX}
-SHARED_LIBS=	xncaqua	0.0 \
-		xncfive	0.0
+SHARED_LIBS=	xncaqua	1.0 \
+		xncfive	1.0
 
 CATEGORIES=	misc x11
 

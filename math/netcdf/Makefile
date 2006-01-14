@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2005/12/29 21:14:48 naddy Exp $ 
+# $OpenBSD: Makefile,v 1.9 2006/01/14 00:28:45 espie Exp $ 
 # $FreeBSD: ports/math/netcdf/Makefile,v 1.7 2000/06/16 21:51:39 asami Exp $
 #
 
 COMMENT=	"library for machine-independent, array-oriented data access"
 
 DISTNAME=	netcdf-3.5.0
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	math
 
 SHARED_LIBS=	netcdf		1.0 \
-		netcdf_c++	1.0
+		netcdf_c++	2.0
 
 HOMEPAGE=	http://www.unidata.ucar.edu/packages/netcdf/
 
