@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2006/01/11 12:19:43 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2006/01/14 20:03:36 espie Exp $
 
 COMMENT=	"Open source LDAP software (client)"
 COMMENT-server=	"Open source LDAP software (server)"
@@ -12,6 +12,12 @@ SHARED_LIBS=		lber-2.3	8.1 \
 			ldap		8.1 \
 			ldap_r-2.3	8.1 \
 			ldap_r		8.1
+MODGNU_SHARED_LIBS=	lber-2.3	'' \
+			lber		'' \
+			ldap-2.3	'' \
+			ldap		'' \
+			ldap_r-2.3	'' \
+			ldap_r		''
 CATEGORIES=	databases net
 
 HOMEPAGE=	http://www.openldap.org/
