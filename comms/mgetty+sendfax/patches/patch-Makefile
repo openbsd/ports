@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1 2005/09/25 18:18:23 aanriot Exp $
---- Makefile.orig	Sun Mar 13 18:59:34 2005
-+++ Makefile	Tue Aug  9 12:47:46 2005
+$OpenBSD: patch-Makefile,v 1.2 2006/01/14 11:59:39 steven Exp $
+--- Makefile.orig	Sun Nov 27 09:16:49 2005
++++ Makefile	Sat Jan 14 12:04:26 2006
 @@ -4,7 +4,7 @@
  #
  # this is the C compiler to use (on SunOS, the standard "cc" does not
@@ -96,7 +96,7 @@ $OpenBSD: patch-Makefile,v 1.1 2005/09/25 18:18:23 aanriot Exp $
  
  # a few C files need extra compiler arguments
  
-@@ -583,7 +583,7 @@ bindist: all doc-all sedscript
+@@ -576,7 +576,7 @@ bindist: all doc-all sedscript
  	cd bindist; gtar cvvfz mgetty$(MR).$(SR)-bin.tgz *
  
  
@@ -105,7 +105,7 @@ $OpenBSD: patch-Makefile,v 1.1 2005/09/25 18:18:23 aanriot Exp $
  
  install.bin: mgetty sendfax newslock \
  		login.config mgetty.config sendfax.config 
-@@ -591,30 +591,31 @@ install.bin: mgetty sendfax newslock \
+@@ -584,30 +584,31 @@ install.bin: mgetty sendfax newslock \
  # binaries
  #
  	-test -d $(BINDIR)  || ( ./mkidirs $(BINDIR)  ; chmod 755 $(BINDIR)  )
@@ -154,7 +154,7 @@ $OpenBSD: patch-Makefile,v 1.1 2005/09/25 18:18:23 aanriot Exp $
  #
  # test for outdated stuff
  #
-@@ -628,28 +629,28 @@ install.bin: mgetty sendfax newslock \
+@@ -621,28 +622,28 @@ install.bin: mgetty sendfax newslock \
  #
  # fax spool directories
  #
@@ -197,7 +197,7 @@ $OpenBSD: patch-Makefile,v 1.1 2005/09/25 18:18:23 aanriot Exp $
  				FAX_OUT_USER=$(FAX_OUT_USER) \
  				BINDIR=$(BINDIR) SBINDIR=$(SBINDIR) \
  				LIBDIR=$(LIBDIR) CONFDIR=$(CONFDIR)
-@@ -659,14 +660,14 @@ install.bin: mgetty sendfax newslock \
+@@ -652,14 +653,14 @@ install.bin: mgetty sendfax newslock \
  	if [ ! -z "$(INSTALL_MECHO)" ] ; then \
  	    cd compat ; \
  	    $(CC) $(CFLAGS) -o mg.echo mg.echo.c && \
@@ -214,7 +214,7 @@ $OpenBSD: patch-Makefile,v 1.1 2005/09/25 18:18:23 aanriot Exp $
  				MAN1DIR=$(MAN1DIR) \
  				MAN4DIR=$(MAN4DIR) \
  				MAN5DIR=$(MAN5DIR) \
-@@ -677,7 +678,7 @@ install.doc:
+@@ -670,7 +671,7 @@ install.doc:
  # WWW frontend stuff
  #
  install.www:

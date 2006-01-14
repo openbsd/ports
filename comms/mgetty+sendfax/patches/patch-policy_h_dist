@@ -1,6 +1,6 @@
-$OpenBSD: patch-policy_h_dist,v 1.1 2005/09/25 18:18:24 aanriot Exp $
---- policy.h-dist.orig	Tue Dec 16 12:43:07 2003
-+++ policy.h-dist	Sun Jun 26 16:15:01 2005
+$OpenBSD: patch-policy_h_dist,v 1.2 2006/01/14 11:59:39 steven Exp $
+--- policy.h-dist.orig	Wed Nov 30 09:47:42 2005
++++ policy.h-dist	Sat Jan 14 12:04:26 2006
 @@ -48,7 +48,7 @@
   * Normally, this is "/bin/login", just a few systems put "login"
   * elsewhere (e.g. Free/NetBSD in "/usr/bin/login").
@@ -19,7 +19,7 @@ $OpenBSD: patch-policy_h_dist,v 1.1 2005/09/25 18:18:24 aanriot Exp $
  
  /* access mode for the line while getty has it - it should be accessible
   * by uucp / uucp, but not by others (imagine someone dialing into your
-@@ -264,7 +264,7 @@
+@@ -249,7 +249,7 @@
  # ifdef linux
  #  define LOCK	"/var/lock/LCK..%s"
  # endif
@@ -28,7 +28,7 @@ $OpenBSD: patch-policy_h_dist,v 1.1 2005/09/25 18:18:24 aanriot Exp $
  #  define LOCK "/var/spool/lock/LCK..%s"
  # endif 
  #endif
-@@ -591,7 +591,7 @@
+@@ -576,7 +576,7 @@
  #endif
  
  #ifndef MAILER

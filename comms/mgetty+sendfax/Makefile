@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2005/12/22 16:28:10 steven Exp $
+# $OpenBSD: Makefile,v 1.29 2006/01/14 11:59:39 steven Exp $
 
 COMMENT=	"handle external logins, send and receive faxes"
 
 VERSION=	1.1.34
 RELEASE=	Nov30
 DISTNAME=	mgetty${VERSION}-${RELEASE}
-PKGNAME=	mgetty+sendfax-${VERSION}p2
+PKGNAME=	mgetty+sendfax-${VERSION}p3
 CATEGORIES=	comms
 
 HOMEPAGE=	http://mgetty.greenie.net
@@ -61,6 +61,7 @@ post-install:
 		${PREFIX}/share/examples/mgetty+sendfax/samples/new_fax.all
 	${INSTALL_SCRIPT} ${WRKSRC}/voice/scripts/*.{sh,pl} \
 		${PREFIX}/share/examples/mgetty+sendfax/voice/scripts
+	@mv ${PREFIX}/man/man1/fax.1 ${PREFIX}/man/man7/fax.7
 
 REGRESS_TARGET=		check
 TESTS_ENVIRONMENT=	MAKE=${GMAKE}

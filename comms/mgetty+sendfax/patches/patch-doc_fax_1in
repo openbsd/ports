@@ -1,0 +1,9 @@
+$OpenBSD: patch-doc_fax_1in,v 1.1 2006/01/14 11:59:39 steven Exp $
+--- doc/fax.1in.orig	Sat Jan 14 12:14:50 2006
++++ doc/fax.1in	Sat Jan 14 12:15:06 2006
+@@ -1,4 +1,4 @@
+-.TH fax 1 "23 Nov 02" "greenie" "mgetty+sendfax manual"
++.TH fax 7 "23 Nov 02" "greenie" "mgetty+sendfax manual"
+ .IX fax
+ .SH NAME
+ fax \- fax sending and receiving with mgetty+sendfax

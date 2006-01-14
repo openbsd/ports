@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2005/12/22 16:28:10 steven Exp $
+@comment $OpenBSD: PLIST,v 1.10 2006/01/14 11:59:39 steven Exp $
 @conflict hylafax-*
 bin/autopvf
 bin/basictopvf
@@ -41,7 +41,6 @@ lib/mgetty+sendfax/cour25n.pbm
 lib/mgetty+sendfax/faxq-helper
 lib/mgetty+sendfax/setup
 @man man/man1/coverpg.1
-@man man/man1/fax.1
 @man man/man1/faxq.1
 @man man/man1/faxrm.1
 @man man/man1/faxrunq.1
@@ -54,6 +53,7 @@ lib/mgetty+sendfax/setup
 @man man/man1/zplay.1
 @comment @man man/man4/mgettydefs.4
 @man man/man5/faxqueue.5
+@man man/man7/fax.7
 @man man/man8/callback.8
 @man man/man8/faxrunqd.8
 @man man/man8/mgetty.8

@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_mgetty_texi_in,v 1.1 2005/09/25 18:18:23 aanriot Exp $
---- doc/mgetty.texi-in.orig	Tue Feb 15 11:28:37 2005
-+++ doc/mgetty.texi-in	Sun Sep 11 13:26:33 2005
+$OpenBSD: patch-doc_mgetty_texi_in,v 1.2 2006/01/14 11:59:39 steven Exp $
+--- doc/mgetty.texi-in.orig	Sat Nov 26 14:25:52 2005
++++ doc/mgetty.texi-in	Sat Jan 14 12:04:26 2006
 @@ -17,6 +17,11 @@ This is the online documentation for the
  package.
  
@@ -13,7 +13,7 @@ $OpenBSD: patch-doc_mgetty_texi_in,v 1.1 2005/09/25 18:18:23 aanriot Exp $
  @end ifinfo
  
  @titlepage
-@@ -1458,7 +1463,7 @@ FAX_NOTIFY_PROGRAM @var{<hangup code>} '
+@@ -1480,7 +1485,7 @@ FAX_NOTIFY_PROGRAM @var{<hangup code>} '
  
  @var{<hangup code>} is 0 if the receive was successful, non-zero
  otherwise.  @var{<sender id>} is the fax identification string received
