@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2005/12/31 15:24:26 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2006/01/14 00:07:28 espie Exp $
 
 COMMENT=		"digital image kde application"
 CATEGORIES=		graphics x11 x11/kde
 V=			0.7.4
 DISTNAME=		digikam-$V
-PKGNAME=		${DISTNAME}p0
-SHARED_LIBS=		digikam	0.0
+PKGNAME=		${DISTNAME}p1
+SHARED_LIBS=		digikam	1.0
 HOMEPAGE=		http://extragear.kde.org/apps/kipi/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=digikam/}
 DISTFILES=		${DISTNAME}.tar.bz2

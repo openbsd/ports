@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2006/01/01 16:02:36 sturm Exp $
+# $OpenBSD: Makefile,v 1.99 2006/01/14 00:07:31 espie Exp $
 
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64 amd64 powerpc
 
@@ -7,10 +7,10 @@ COMMENT-devel=	"devel files for Gecko"
 
 VER=		1.7.12
 DISTNAME=	mozilla
-PKGNAME=	mozilla-${VER}p6
-PKGNAME-devel=	mozilla-devel-${VER}p6
+PKGNAME=	mozilla-${VER}p7
+PKGNAME-devel=	mozilla-devel-${VER}p7
 DISTFILES=	mozilla-${VER}-source.tar.bz2
-SO_VERSION=	5.0
+SO_VERSION=	6.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 .for _lib in accessibility addrbook appcomps autoconfig bayesflt caps chrome \

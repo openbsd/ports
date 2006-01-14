@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2005/12/26 13:20:11 steven Exp $
+# $OpenBSD: Makefile,v 1.37 2006/01/14 00:07:30 espie Exp $
 # $NetBSD: Makefile,v 1.2 1998/07/04 09:19:04 mycroft Exp $
 # $RuOBSD: Makefile,v 1.4 2002/05/18 04:21:36 form Exp $
 
@@ -6,8 +6,9 @@ COMMENT=		"xforms-based mail application for Unix"
 
 V=			1.5.3
 DISTNAME=       	xfmail-${V}
-SHARED_LIBS=		editor	0.0 \
-			mail	0.0
+PKGNAME=		$(DISTNAME)p0
+SHARED_LIBS=		editor	1.0 \
+			mail	1.0
 MODGNU_SHARED_LIBS=	editor	'' \
 			mail	''
 CATEGORIES=     	mail x11

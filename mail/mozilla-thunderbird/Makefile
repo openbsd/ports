@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2006/01/01 16:03:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.33 2006/01/14 00:07:30 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -6,8 +6,8 @@ COMMENT=	"redesign of the integrated Mozilla App-Suite mail component"
 
 VER=		1.0.7
 DISTNAME=	mozilla
-PKGNAME=	mozilla-thunderbird-${VER}p2
-SO_VERSION=	4.0
+PKGNAME=	mozilla-thunderbird-${VER}p3
+SO_VERSION=	5.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 .for _lib in accessibility appcomps caps chrome composer docshell editor \

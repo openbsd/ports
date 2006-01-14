@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2005/12/31 18:35:56 sturm Exp $
+# $OpenBSD: Makefile,v 1.46 2006/01/14 00:07:31 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -6,8 +6,8 @@ COMMENT=	"redesign of Mozilla's browser component"
 
 VER=		1.5
 DISTNAME=	mozilla
-PKGNAME=	mozilla-firefox-${VER}p1
-SO_VERSION=	8.0
+PKGNAME=	mozilla-firefox-${VER}p2
+SO_VERSION=	9.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 .for _lib in accessibility appcomps auth autoconfig browsercomps \
