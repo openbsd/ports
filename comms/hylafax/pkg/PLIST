@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.10 2005/09/05 12:27:30 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2006/01/14 12:05:34 steven Exp $
+@conflict mgetty+sendfax-*
 @conflict p5-SendPage-*
 bin/faxalter
 bin/faxcover
