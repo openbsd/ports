@@ -1,12 +1,13 @@
-$OpenBSD: patch-lib_parser_inst_m4,v 1.2 2004/05/15 14:54:24 naddy Exp $
---- lib/parser_inst.m4.orig	1999-10-14 09:26:20.000000000 +0200
-+++ lib/parser_inst.m4	2004-05-15 16:48:34.000000000 +0200
-@@ -164,7 +164,7 @@ __instantiate(Vector<NamedResourceTable<
+$OpenBSD: patch-lib_parser_inst_m4,v 1.3 2006/01/14 15:49:48 espie Exp $
+--- lib/parser_inst.m4.orig	Thu Oct 14 09:26:20 1999
++++ lib/parser_inst.m4	Sat Jan 14 16:45:13 2006
+@@ -164,9 +164,7 @@ __instantiate(Vector<NamedResourceTable<
  __instantiate(Vector<ContentModelAmbiguity>)
  __instantiate(Vector<Transition>)
  __instantiate(Vector<LeafContentToken*>)
 -#if 0
-+#if defined(__LP64__)
  __instantiate(Vector<size_t>)
- #endif
+-#endif
  __instantiate(Vector<unsigned int>)
+ 
+ __instantiate(NamedTable<Id>)
