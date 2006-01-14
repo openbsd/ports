@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2004/06/20 17:45:07 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2006/01/14 10:05:10 steven Exp $
 
 COMMENT=	"perl interface to the SASL auth framework"
 
-DISTNAME=	Authen-SASL-2.08
+DISTNAME=	Authen-SASL-2.09
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
+
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
 
 # same license as perl
 PERMIT_PACKAGE_CDROM=	Yes
@@ -13,8 +15,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Authen/}
-MAINTAINER=	Tom Cosgrove <tom@openbsd.org>
 
 CONFIGURE_STYLE= perl
+
+PKG_ARCH=	*
 
 .include <bsd.port.mk>

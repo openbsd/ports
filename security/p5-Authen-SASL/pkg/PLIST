@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:36:01 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/01/14 10:05:10 steven Exp $
 ${P5SITE}/Authen/
 ${P5SITE}/Authen/SASL/
 ${P5SITE}/Authen/SASL.pm
@@ -7,6 +7,7 @@ ${P5SITE}/Authen/SASL/CRAM_MD5.pm
 ${P5SITE}/Authen/SASL/EXTERNAL.pm
 ${P5SITE}/Authen/SASL/Perl/
 ${P5SITE}/Authen/SASL/Perl.pm
+${P5SITE}/Authen/SASL/Perl.pod
 ${P5SITE}/Authen/SASL/Perl/ANONYMOUS.pm
 ${P5SITE}/Authen/SASL/Perl/CRAM_MD5.pm
 ${P5SITE}/Authen/SASL/Perl/DIGEST_MD5.pm
@@ -14,4 +15,10 @@ ${P5SITE}/Authen/SASL/Perl/EXTERNAL.pm
 ${P5SITE}/Authen/SASL/Perl/LOGIN.pm
 ${P5SITE}/Authen/SASL/Perl/PLAIN.pm
 @man man/man3p/Authen::SASL.3p
+@man man/man3p/Authen::SASL::Perl.3p
+@man man/man3p/Authen::SASL::Perl::ANONYMOUS.3p
+@man man/man3p/Authen::SASL::Perl::CRAM_MD5.3p
 @man man/man3p/Authen::SASL::Perl::DIGEST_MD5.3p
+@man man/man3p/Authen::SASL::Perl::EXTERNAL.3p
+@man man/man3p/Authen::SASL::Perl::LOGIN.3p
+@man man/man3p/Authen::SASL::Perl::PLAIN.3p
