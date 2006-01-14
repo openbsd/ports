@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2005/12/30 20:27:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2006/01/14 11:46:15 espie Exp $
 
 COMMENT=	"Library for direct-connect protocol"
 
 DISTNAME=	dclib-0.3.7
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net
-SHARED_LIBS=	dc	0.1
+SHARED_LIBS=	dc	1.0
 
 HOMEPAGE=	http://dcgui.berlios.de/
 

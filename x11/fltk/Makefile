@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.30 2005/12/25 20:23:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2006/01/14 11:46:16 espie Exp $
 
 COMMENT=	"Fast-Light Tool Kit"
 
 VER=		1.1.4
 DISTNAME=	fltk-${VER}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
-SHARED_LIBS=	fltk		4.0 \
-		fltk_forms	4.0 \
-		fltk_gl		4.0 \
-		fltk_images	4.0
+SHARED_LIBS=	fltk		5.0 \
+		fltk_forms	5.0 \
+		fltk_gl		5.0 \
+		fltk_images	5.0
 
 HOMEPAGE=	http://www.fltk.org/
 

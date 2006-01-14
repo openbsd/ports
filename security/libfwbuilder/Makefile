@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2005/12/28 22:52:30 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2006/01/14 11:46:15 espie Exp $
 
 COMMENT=	'libraries for fwbuilder'
 DISTNAME=	libfwbuilder-2.0.7
+PKGNAME=	$(DISTNAME)p0
 CATEGORIES=	net security
-SHARED_LIBS=	fwbuilder	6.30 \
-		fwcompiler	6.30
+SHARED_LIBS=	fwbuilder	7.0 \
+		fwcompiler	7.0
 
 HOMEPAGE=	http://www.fwbuilder.org/
 

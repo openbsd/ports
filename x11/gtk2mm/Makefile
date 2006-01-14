@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.7 2006/01/12 01:05:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2006/01/14 11:46:16 espie Exp $
 
 COMMENT=		"C++ interface for gtk2+"
 COMMENT-docs=		"C++ interface for gtk2+ documentation"
 
 VERSION=		2.6.4
 DISTNAME=		gtkmm-${VERSION}
-PKGNAME=		gtk2mm-${VERSION}p3
+PKGNAME=		gtk2mm-${VERSION}p4
 PKGNAME-docs=		gtk2mm-docs-${VERSION}
 CATEGORIES=		devel x11
 
-SHARED_LIBS=		atkmm-1.6	1.21 \
-			gdkmm-2.4	1.21 \
-			gtkmm-2.4	1.21 \
-			pangomm-1.4	1.21
+SHARED_LIBS=		atkmm-1.6	2.0 \
+			gdkmm-2.4	2.0 \
+			gtkmm-2.4	2.0 \
+			pangomm-1.4	2.0
 
 HOMEPAGE=		http://www.gtkmm.org/
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2005/12/31 15:18:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2006/01/14 11:46:16 espie Exp $
 
 COMMENT=	"C++ cross-platform GUI toolkit - lesstif version"
 # Note the package name must conflict with motif until these can be installed side-by-side
-PKGNAME=		wxWidgets-motif-${VERSION}p1-lesstif
-SHARED_LIBS=		wx_motif 2.4
+PKGNAME=		wxWidgets-motif-${VERSION}p2-lesstif
+SHARED_LIBS=		wx_motif 3.0
 
 CONFIGURE_ARGS+=	--with-motif
 CONFIGURE_ENV+=		WX_CURRENT=${LIBwx_motif_VERSION:R} \

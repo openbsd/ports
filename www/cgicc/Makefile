@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2005/12/30 22:26:50 sturm Exp $
+# $OpenBSD: Makefile,v 1.12 2006/01/14 11:46:15 espie Exp $
 
 COMMENT=	"c++ compliant CGI applications libraries"
 
 DISTNAME=	cgicc-3.2.1
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=     www devel
-SHARED_LIBS=	cgicc	4.0
+SHARED_LIBS=	cgicc	5.0
 MODGNU_SHARED_LIBS=cgicc ''
 
 MASTER_SITES=	${MASTER_SITE_GNU:=cgicc/}

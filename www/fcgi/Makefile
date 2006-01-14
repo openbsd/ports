@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2005/12/30 22:26:50 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2006/01/14 11:46:15 espie Exp $
 
 COMMENT=		"FastCGI Development Kit"
 
 DISTNAME=		fcgi-2.4.0
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		www
-SHARED_LIBS=		fcgi++	0.0 \
+SHARED_LIBS=		fcgi++	1.0 \
 			fcgi	0.0
 
 HOMEPAGE=		http://www.fastcgi.com/

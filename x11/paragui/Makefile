@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2006/01/12 01:05:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2006/01/14 11:46:16 espie Exp $
 
 COMMENT=	"cross-platform high-level application framework"
 
 DISTNAME=	paragui-0.7.2
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=	paragui 2.0
+PKGNAME=	${DISTNAME}p1
+SHARED_LIBS=	paragui 3.0
 CATEGORIES=	x11 devel
 
 HOMEPAGE=	http://www.bms-austria.com/projects/paragui/

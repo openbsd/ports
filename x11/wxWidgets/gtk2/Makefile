@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2005/12/31 15:18:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2006/01/14 11:46:16 espie Exp $
 
 COMMENT=	"C++ cross-platform GUI toolkit - GTK2 version"
-PKGNAME=	wxWidgets-gtk2-${VERSION}p2
-SHARED_LIBS=	wx_gtk2 2.4
+PKGNAME=	wxWidgets-gtk2-${VERSION}p3
+SHARED_LIBS=	wx_gtk2 3.0
 
 CONFIGURE_ARGS=	--enable-gtk2
 CONFIGURE_ENV+=	WX_CURRENT=${LIBwx_gtk2_VERSION:R} \

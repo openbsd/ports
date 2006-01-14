@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2005/12/31 15:18:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2006/01/14 11:46:16 espie Exp $
 
 COMMENT=	"C++ cross-platform GUI toolkit - base (no GUI) version"
-PKGNAME=	wxWidgets-base-${VERSION}p0
-SHARED_LIBS=	wx_base 2.4
+PKGNAME=	wxWidgets-base-${VERSION}p1
+SHARED_LIBS=	wx_base 3.0
 
 NO_REGRESS=	Yes
 
