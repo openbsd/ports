@@ -1,21 +1,22 @@
-$OpenBSD: patch-sample-config_httpd_conf_in,v 1.1.1.1 2005/07/25 16:32:05 sturm Exp $
---- sample-config/httpd.conf.in.orig	Fri Oct 29 20:03:42 2004
-+++ sample-config/httpd.conf.in	Sun Jul 17 13:43:34 2005
-@@ -10,23 +10,23 @@ ScriptAlias @cgiurl@ "@sbindir@"
+$OpenBSD: patch-sample-config_httpd_conf_in,v 1.2 2006/01/15 13:37:44 sturm Exp $
+--- sample-config/httpd.conf.in.orig	Sun Jan 15 14:08:18 2006
++++ sample-config/httpd.conf.in	Sun Jan 15 14:11:15 2006
+@@ -11,16 +11,15 @@ ScriptAlias @cgiurl@ "@sbindir@"
  <Directory "@sbindir@">
- #   SSLRequireSSL
+ #  SSLRequireSSL
     Options ExecCGI
--   AllowOverride AuthConfig
+-   AllowOverride None
 -   Order allow,deny
 -   Allow from all
--#   Order deny,allow
--#   Deny from all
--#   Allow from 127.0.0.1
+-#  Order deny,allow
+-#  Deny from all
+-#  Allow from 127.0.0.1
 +
-+   AuthName "Nagios Access"
-+   AuthType Basic
+    AuthName "Nagios Access"
+    AuthType Basic
+-   AuthUserFile @sysconfdir@/htpasswd.users
 +   AuthUserFile %%SYSCONFDIR%%/nagios/htpasswd.users
-+   require valid-user
+    Require valid-user
 +
 +   Order deny,allow
 +   Deny from all
@@ -23,15 +24,22 @@ $OpenBSD: patch-sample-config_httpd_conf_in,v 1.1.1.1 2005/07/25 16:32:05 sturm 
  </Directory>
  
  Alias @htmurl@ "@datadir@"
- <Directory "@datadir@">
- #   SSLRequireSSL
+@@ -29,14 +28,14 @@ Alias @htmurl@ "@datadir@"
+ #  SSLRequireSSL
     Options None
--   AllowOverride AuthConfig
+    AllowOverride None
 -   Order allow,deny
 -   Allow from all
--#   Order deny,allow
--#   Deny from all
--#   Allow from 127.0.0.1
+-#  Order deny,allow
+-#  Deny from all
+-#  Allow from 127.0.0.1
++
+    AuthName "Nagios Access"
+    AuthType Basic
+-   AuthUserFile @sysconfdir@/htpasswd.users
++   AuthUserFile %%SYSCONFDIR%%/nagios/htpasswd.users
+    Require valid-user
++
 +   Order deny,allow
 +   Deny from all
 +   Allow from 127.0.0.1

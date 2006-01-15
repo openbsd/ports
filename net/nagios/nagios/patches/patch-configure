@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.4 2005/11/20 21:20:25 sturm Exp $
---- configure.orig	Tue Nov 15 05:23:35 2005
-+++ configure	Sat Nov 19 19:49:54 2005
+$OpenBSD: patch-configure,v 1.5 2006/01/15 13:37:44 sturm Exp $
+--- configure.orig	Tue Jan 10 17:57:20 2006
++++ configure	Sun Jan 15 14:11:40 2006
 @@ -571,7 +571,7 @@ do
      ac_prev=sysconfdir ;;
    -sysconfdir=* | --sysconfdir=* | --sysconfdi=* | --sysconfd=* | --sysconf=* \
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.4 2005/11/20 21:20:25 sturm Exp $
  
    -target | --target | --targe | --targ | --tar | --ta | --t)
      ac_prev=target_alias ;;
-@@ -4283,13 +4283,13 @@ if test $ac_cv_lib_cma_pthread_create = 
+@@ -4284,13 +4284,13 @@ if test $ac_cv_lib_cma_pthread_create = 
  	have_pthreads="yes"
  fi
  
@@ -27,7 +27,7 @@ $OpenBSD: patch-configure,v 1.4 2005/11/20 21:20:25 sturm Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -4348,19 +4348,19 @@ fi
+@@ -4349,19 +4349,19 @@ fi
  echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
  echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6
  if test $ac_cv_lib_pthread_pthread_create = yes; then
@@ -51,7 +51,7 @@ $OpenBSD: patch-configure,v 1.4 2005/11/20 21:20:25 sturm Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -4419,7 +4419,7 @@ fi
+@@ -4420,7 +4420,7 @@ fi
  echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_mutex_init" >&5
  echo "${ECHO_T}$ac_cv_lib_pthread_pthread_mutex_init" >&6
  if test $ac_cv_lib_pthread_pthread_mutex_init = yes; then
@@ -60,7 +60,7 @@ $OpenBSD: patch-configure,v 1.4 2005/11/20 21:20:25 sturm Exp $
  fi
  
  	if test $ac_cv_lib_pthread_pthread_mutex_init = yes; then
-@@ -4809,7 +4809,7 @@ cat >>confdefs.h <<_ACEOF
+@@ -4810,7 +4810,7 @@ cat >>confdefs.h <<_ACEOF
  #define DEFAULT_NAGIOS_GROUP "$nagios_grp"
  _ACEOF
  
@@ -69,7 +69,7 @@ $OpenBSD: patch-configure,v 1.4 2005/11/20 21:20:25 sturm Exp $
  
  
  
-@@ -5132,7 +5132,7 @@ echo $ECHO_N "checking for gdImagePng in
+@@ -5133,7 +5133,7 @@ echo $ECHO_N "checking for gdImagePng in
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_save_LIBS="$LIBS"
@@ -78,7 +78,7 @@ $OpenBSD: patch-configure,v 1.4 2005/11/20 21:20:25 sturm Exp $
  	cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -5191,7 +5191,7 @@ fi
+@@ -5192,7 +5192,7 @@ fi
  echo "${ECHO_T}yes" >&6
  
  			GDLIBFOUND=yep

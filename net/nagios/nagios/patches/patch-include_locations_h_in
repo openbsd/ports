@@ -1,7 +1,7 @@
-$OpenBSD: patch-include_locations_h_in,v 1.1.1.1 2005/07/25 16:32:05 sturm Exp $
---- include/locations.h.in.orig	Mon Jan 24 16:57:11 2005
-+++ include/locations.h.in	Mon Jan 24 16:57:37 2005
-@@ -21,8 +21,8 @@
+$OpenBSD: patch-include_locations_h_in,v 1.2 2006/01/15 13:37:44 sturm Exp $
+--- include/locations.h.in.orig	Wed Nov 16 09:49:35 2005
++++ include/locations.h.in	Sun Jan 15 14:11:40 2006
+@@ -20,8 +20,8 @@
  
  #define DEFAULT_TEMP_FILE			"@localstatedir@/tempfile"
  #define DEFAULT_STATUS_FILE			"@localstatedir@/status.dat"
