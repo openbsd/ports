@@ -1,0 +1,2 @@
+This module is responsible for parsing email content type
+headers according to section 5.1 of RFC 2045.
