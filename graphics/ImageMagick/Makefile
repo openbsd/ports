@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2006/01/14 00:07:28 espie Exp $
+# $OpenBSD: Makefile,v 1.87 2006/01/15 14:24:21 steven Exp $
 
 COMMENT=	"image processing tools"
 
@@ -6,13 +6,9 @@ VER=		6.2.3
 DASHVER=	3
 DISTNAME=	ImageMagick-${VER}-${DASHVER}
 PKGNAME=	ImageMagick-${VER}.${DASHVER}p2
-SHARED_LIBS=		Magick++	9.0	\
-			Magick		8.3	\
-			Wand		8.3
-MODGNU_SHARED_LIBS=	Magick++	''	\
-			Magick		'-no-undefined'	\
-			Wand		'-no-undefined'
-
+SHARED_LIBS=	Magick++	9.0	\
+		Magick		8.3	\
+		Wand		8.3
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.imagemagick.org

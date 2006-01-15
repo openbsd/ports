@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2005/12/28 14:56:54 steven Exp $
+$OpenBSD: patch-Makefile_in,v 1.4 2006/01/15 14:24:22 steven Exp $
 --- Makefile.in.orig	Fri Jun 24 06:07:35 2005
 +++ Makefile.in	Wed Dec 28 11:39:40 2005
 @@ -1914,7 +1914,7 @@ EXTRA_DIST = \
@@ -10,32 +10,3 @@ $OpenBSD: patch-Makefile_in,v 1.3 2005/12/28 14:56:54 steven Exp $
  
  # Where architecture-independent configuration files get installed
  # (share/ImageMagick-version)
-@@ -2802,8 +2802,7 @@ LIBMAGICK = magick/libMagick.la
- @WITH_MODULES_FALSE@magick_libMagick_la_LIBADD = $(MAGICK_DEP_LIBS) $(LIBLTDL)
- @WITH_MODULES_TRUE@magick_libMagick_la_LIBADD = $(MAGICK_DEP_LIBS) $(LIBLTDL)
- magick_libMagick_la_CPPFLAGS = -I$(top_builddir)/ltdl -I$(top_srcdir)/ltdl $(LIBRARY_EXTRA_CPPFLAGS)
--magick_libMagick_la_LDFLAGS = -no-undefined \
--	-version-info $(LIBRARY_CURRENT):$(LIBRARY_REVISION):$(LIBRARY_AGE)
-+magick_libMagick_la_LDFLAGS = $(libMagick_la_LDFLAGS)
- 
- 
- # Library base sources
-@@ -3161,8 +3160,7 @@ WAND_BUILT_SRCS = \
- 
- LIBWAND = wand/libWand.la
- wand_libWand_la_SOURCES = $(WAND_SOURCES)
--wand_libWand_la_LDFLAGS = -no-undefined \
--	-version-info $(LIBRARY_CURRENT):$(LIBRARY_REVISION):$(LIBRARY_AGE)
-+wand_libWand_la_LDFLAGS = $(libWand_la_LDFLAGS)
- 
- wand_libWand_la_LIBADD = $(LIBMAGICK) $(LIB_MATH)
- WAND_EXTRA_DIST = \
-@@ -3317,7 +3315,7 @@ WAND_CLEANFILES = \
- @WITH_MAGICK_PLUS_PLUS_TRUE@	Magick++/lib/Magick++/TypeMetric.h
- 
- @WITH_MAGICK_PLUS_PLUS_TRUE@Magick___lib_libMagick___la_LDFLAGS = \
--@WITH_MAGICK_PLUS_PLUS_TRUE@	-version-info $(LIBRARY_CURRENT):$(LIBRARY_REVISION):$(LIBRARY_AGE)
-+@WITH_MAGICK_PLUS_PLUS_TRUE@	$(libMagick++_la_LDFLAGS)
- 
- @WITH_MAGICK_PLUS_PLUS_TRUE@Magick___lib_libMagick___la_LIBADD = $(LIBMAGICK) $(LIBWAND)
- @WITH_MAGICK_PLUS_PLUS_TRUE@MAGICKPP_CHECK_PGRMS = \
