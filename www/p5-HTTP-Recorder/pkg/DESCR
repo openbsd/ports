@@ -1,0 +1,2 @@
+HTTP::Recorder acts as a web proxy that records interactions with
+web pages for use with WWW:Mechanize.

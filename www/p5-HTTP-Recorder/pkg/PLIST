@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/01/15 16:21:47 sturm Exp $
+${P5SITE}/HTTP/Recorder/
+${P5SITE}/HTTP/Recorder.pm
+${P5SITE}/HTTP/Recorder/Logger.pm
+@man man/man3p/HTTP::Recorder.3p
