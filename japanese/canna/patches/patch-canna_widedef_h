@@ -1,17 +1,18 @@
-$OpenBSD: patch-canna_widedef_h,v 1.1.1.1 2000/04/22 11:50:30 espie Exp $
+$OpenBSD: patch-canna_widedef_h,v 1.2 2006/01/15 14:41:31 espie Exp $
 --- canna/widedef.h.orig	Fri Nov 29 14:00:55 1996
-+++ canna/widedef.h	Sat Apr 22 03:10:08 2000
-@@ -36,5 +36,5 @@
- #endif
-      
--#if defined(__FreeBSD__) || defined(__NetBSD__)
-+#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
- # include <machine/ansi.h>
- #endif
-@@ -62,5 +62,5 @@
++++ canna/widedef.h	Sun Jan 15 15:32:57 2006
+@@ -62,5 +62,13 @@
  #endif /* HAVE_WCHAR_OPERATION */
  
 -#if defined(__FreeBSD__) || defined(__NetBSD__)
-+#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
++#if defined(__OpenBSD__)
++#define _WCHAR_T_DEFINED_
++# ifdef WCHAR16
++typedef unsigned short wchar_t;
++# else
++typedef unsigned long wchar_t;
++# endif
++# define _WCHAR_T
++#elif defined(__FreeBSD__) || defined(__NetBSD__)
  # ifdef _BSD_WCHAR_T_
  #  undef _BSD_WCHAR_T_
