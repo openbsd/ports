@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.50 2005/08/27 15:57:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.51 2006/01/15 13:06:42 sturm Exp $
 
 COMMENT=	"Flexible mail transfer agent"
-DISTNAME=	exim-4.44
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	exim-4.60
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/exim4/ \
-		http://ftp.planetmirror.com/pub/exim/exim4/ \
-		ftp://ftp.planetmirror.com/pub/exim/exim4/
-MASTER_SITES0=	http://duncanthrax.net/exiscan-acl/
-				
+MASTER_SITES=	ftp://ftp.exim.org/pub/exim/exim4/ \
+		http://mirror.switch.ch/ftp/mirror/exim/exim/exim4/ \
+		ftp://mirror.switch.ch/mirror/exim/exim/exim4/
+
 HOMEPAGE=	http://www.exim.org/
 
-MAINTAINER=	ilya voronin <ivoronin@ivoronin.pp.ru>
+MAINTAINER=	Andreas Voegele <voegelas@gmx.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes
@@ -20,14 +18,14 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		c crypto perl ssl util wrap m
 
-FLAVORS=no_exiscan no_x11 mysql postgresql ldap iconv
+FLAVORS=no_exiscan no_x11 mysql postgresql sqlite3 ldap iconv sasl
 FLAVOR?=
 
 NO_REGRESS=Yes
 
 .if !${FLAVOR:L:Mno_exiscan}
-PATCHFILES=		exiscan-acl-4.44-28.patch:0
-PATCH_DIST_STRIP=	-p1
+EXIM_MAKECAT+=		"WITH_CONTENT_SCAN=yes\n"
+EXIM_MAKECAT+=		"WITH_OLD_DEMIME=yes\n"
 .endif
 
 .if !${FLAVOR:L:Mno_x11}
@@ -50,6 +48,13 @@ EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib/ -lpq
 LIB_DEPENDS+=		pq.2:postgresql-client-*:databases/postgresql
 .endif
 
+.if ${FLAVOR:L:Msqlite3}
+EXIM_MAKECAT+=		"LOOKUP_SQLITE=yes\n"
+EXIM_LOOKUP_INCLUDE+=	-I${LOCALBASE}/include
+EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib/ -lsqlite3
+LIB_DEPENDS+=		sqlite3.8::databases/sqlite3
+.endif
+
 .if ${FLAVOR:L:Mldap}
 EXIM_MAKECAT+=		"LOOKUP_LDAP=yes\n"
 EXIM_MAKECAT+=		"LDAP_LIB_TYPE=OPENLDAP2\n"
@@ -65,11 +70,11 @@ EXIM_EXTRA_LIBS+=	-L${LOCALBASE}/lib -liconv
 EXIM_CFLAGS+=		-I${LOCALBASE}/include
 .endif
 
-.if ${FLAVOR:L:Mpostgresql}
-LIB_DEPENDS+=	pq.2:postgresql-client-*:databases/postgresql
-EXIM_MAKECAT+=	"LOOKUP_PGSQL=yes\n"
-EXIM_LOOKUP_INCLUDE+=	-I${LOCALBASE}/include/postgresql
-EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib -lpq
+.if ${FLAVOR:L:Msasl}
+EXIM_MAKECAT+=		"AUTH_CYRUS_SASL=yes\n"
+EXIM_EXTRA_LIBS+=	-L${LOCALBASE}/lib -lsasl2
+EXIM_CFLAGS+=		-I${LOCALBASE}/include
+LIB_DEPENDS+=		sasl2::security/cyrus-sasl2
 .endif
 
 EXIM_EXTRA_LIBS+=	-lwrap
@@ -98,10 +103,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/README.SIEVE ${PREFIX}/share/doc/exim
 	${INSTALL_DATA} ${WRKSRC}/doc/filter.txt ${PREFIX}/share/doc/exim
 	${INSTALL_MAN} ${WRKSRC}/doc/exim.8 ${PREFIX}/man/man8
-
-.if !${FLAVOR:L:Mno_exiscan}
-	${INSTALL_DATA} ${WRKSRC}/doc/exiscan-acl-examples.txt ${PREFIX}/share/doc/exim
-	${INSTALL_DATA} ${WRKSRC}/doc/exiscan-acl-spec.txt ${PREFIX}/share/doc/exim
-.endif
 
 .include <bsd.port.mk>

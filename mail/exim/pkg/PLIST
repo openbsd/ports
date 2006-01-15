@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.14 2005/01/26 19:37:22 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.15 2006/01/15 13:06:43 sturm Exp $
 @newgroup _exim:521
 @newuser _exim:521:_exim:daemon:Exim Account:/var/spool/exim:/sbin/nologin
 bin/exicyclog
 bin/exigrep
 bin/exim
-bin/exim-4.44
+bin/exim-4.60
 bin/exim_checkaccess
 bin/exim_dbmbuild
 bin/exim_dumpdb
@@ -28,7 +28,6 @@ share/examples/exim/configure
 @sample ${SYSCONFDIR}/exim/configure
 share/examples/exim/convert4r4
 !%%no_x11%%
-!%%no_exiscan%%
 @owner _exim
 @group _exim
 @sample /var/spool/exim/

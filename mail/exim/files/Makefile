@@ -1,3 +1,5 @@
+# $Cambridge: exim/exim-src/src/EDITME,v 1.16 2005/10/12 15:45:38 ph10 Exp $
+
 ##################################################
 #          The Exim mail transport agent         #
 ##################################################
@@ -48,7 +50,7 @@
 # By default the code assumes ndbm; this often works with gdbm or DB, provided
 # they are correctly installed, via their compatibility interfaces. However,
 # Exim can also be configured to use the native calls for Berkeley DB (obsolete
-# versions 1.85 and 2.x, or the current 3.x version) and also for gdbm.
+# versions 1.85, 2.x, 3.x, or the current 4.x version) and also for gdbm.
 
 # For some operating systems, a default DBM library (other than ndbm) is
 # selected by a setting in the OS-specific Makefile. Most modern OS now have
@@ -182,6 +184,12 @@ SPOOL_DIRECTORY=/var/spool/exim
 #           THESE ARE THINGS YOU PROBABLY WANT TO SPECIFY                     #
 ###############################################################################
 
+# If you need extra header file search paths on all compiles, put the -I
+# options in INCLUDE.  If you want the extra searches only for certain
+# parts of the build, see more specific xxx_INCLUDE variables below.
+
+# INCLUDE=-I/example/include
+
 # You need to specify some routers and transports if you want the Exim that you
 # are building to be capable of delivering mail. You almost certainly need at
 # least one type of lookup. You should consider whether you want to build
@@ -264,6 +272,7 @@ LOOKUP_NIS=yes
 # LOOKUP_ORACLE=yes
 LOOKUP_PASSWD=yes
 # LOOKUP_PGSQL=yes
+# LOOKUP_SQLITE=yes
 # LOOKUP_WHOSON=yes
 
 # These two settings are obsolete; all three lookups are compiled when
@@ -297,10 +306,11 @@ LOOKUP_PASSWD=yes
 # the command for linking Exim itself, not on any auxiliary programs. You
 # don't need to set LOOKUP_INCLUDE if the relevant directories are already
 # specified in INCLUDE. The settings below are just examples; -lpq is for
-# PostgreSQL, -lgds is for Interbase.
+# PostgreSQL, -lgds is for Interbase, -lsqlite3 is for SQLite.
 
 # LOOKUP_INCLUDE=-I /usr/local/ldap/include -I /usr/local/mysql/include -I /usr/local/pgsql/include
-# LOOKUP_LIBS=-L/usr/local/lib -lldap -llber -lmysqlclient -lpq -lgds
+# LOOKUP_LIBS=-L/usr/local/lib -lldap -llber -lmysqlclient -lpq -lgds -lsqlite3
+
 
 #------------------------------------------------------------------------------
 # Compiling the Exim monitor: If you want to compile the Exim monitor, a
@@ -313,6 +323,54 @@ LOOKUP_PASSWD=yes
 # EXIM_MONITOR=eximon.bin
 
 
+#------------------------------------------------------------------------------
+# Compiling Exim with content scanning support: If you want to compile Exim
+# with support for message body content scanning, set WITH_CONTENT_SCAN to
+# the value "yes". This will give you malware and spam scanning in the DATA ACL,
+# and the MIME ACL. Please read the documentation to learn more about these
+# features.
+
+# WITH_CONTENT_SCAN=yes
+
+# If you want to use the deprecated "demime" condition in the DATA ACL,
+# uncomment the line below. Doing so will also explicitly turn on the
+# WITH_CONTENT_SCAN option. If possible, use the MIME ACL instead of
+# the "demime" condition.
+
+# WITH_OLD_DEMIME=yes
+
+#------------------------------------------------------------------------------
+# Compiling Exim with experimental features. These are documented in
+# experimental-spec.txt. "Experimental" means that the way these features are
+# implemented may still change. Backward compatibility is not guaranteed.
+
+# Uncomment the following lines to add SPF support. You need to have libspf2
+# installed on your system (www.libspf2.org). Depending on where it is installed
+# you may have to edit the CFLAGS and LDFLAGS lines.
+
+# EXPERIMENTAL_SPF=yes
+# CFLAGS  += -I/usr/local/include
+# LDFLAGS += -lspf2
+
+# Uncomment the following lines to add SRS (Sender rewriting scheme) support.
+# You need to have libsrs_alt installed on your system (srs.mirtol.com).
+# Depending on where it is installed you may have to edit the CFLAGS and
+# LDFLAGS lines.
+
+# EXPERIMENTAL_SRS=yes
+# CFLAGS  += -I/usr/local/include
+# LDFLAGS += -lsrs_alt
+
+# Uncomment the following lines to add Brightmail AntiSpam support. You need
+# to have the Brightmail client SDK installed. Please check the experimental
+# documentation for implementation details. You need to edit the CFLAGS and
+# LDFLAGS lines.
+
+# EXPERIMENTAL_BRIGHTMAIL=yes
+# CFLAGS  += -I/opt/brightmail/bsdk-6.0/include
+# LDFLAGS += -lxml2_single -lbmiclient_single -L/opt/brightmail/bsdk-6.0/lib
+
+
 
 ###############################################################################
 #                 THESE ARE THINGS YOU MIGHT WANT TO SPECIFY                  #
@@ -320,7 +378,7 @@ LOOKUP_PASSWD=yes
 
 # The items in this section are those that are commonly changed according to
 # the sysadmin's preferences, but whose defaults are often acceptable. The
-# first for are concerned with security issues, where differing levels of
+# first five are concerned with security issues, where differing levels of
 # paranoia are appropriate in different environments. Sysadmins also vary in
 # their views on appropriate levels of defence in these areas. If you do not
 # understand these issues, go with the defaults, which are used by many sites.
@@ -334,9 +392,38 @@ LOOKUP_PASSWD=yes
 # cannot be overridden at runtime. This guards against problems caused by
 # unauthorized changes to the runtime configuration. You are advised not to
 # remove "root" from this option, but you can add other users if you want. The
-# list is colon-separated.
+# list is colon-separated. It must NOT contain any spaces.
 
+# FIXED_NEVER_USERS=root:bin:daemon
 FIXED_NEVER_USERS=root
+
+
+#------------------------------------------------------------------------------
+# By default, Exim insists that its configuration file be owned either by root
+# or by the Exim user. You can specify one additional permitted owner here.
+
+# CONFIGURE_OWNER=
+
+# If the configuration file is group-writeable, Exim insists by default that it
+# is owned by root or the Exim user. You can specify one additional permitted
+# group owner here.
+
+# CONFIGURE_GROUP=
+
+# If you specify CONFIGURE_OWNER or CONFIGURE_GROUP as a name, this is looked
+# up at build time, and the uid or gid number is built into the binary.
+# However, you can specify that the lookup is deferred until runtime. In this
+# case, it is the name that is built into the binary. You can do this by a
+# setting of the form:
+
+# CONFIGURE_OWNER=ref:mail
+# CONFIGURE_GROUP=ref:sysadmin
+
+# In other words, put "ref:" in front of the user or group name. Although this
+# costs a bit of resource at runtime, it is convenient to use this feature when
+# building binaries that are to be run on multiple systems where the names may
+# refer to different uids or gids. It also allows you to build Exim on a system
+# where the relevant user or group is not defined.
 
 
 #------------------------------------------------------------------------------
@@ -362,7 +449,7 @@ FIXED_NEVER_USERS=root
 # configuration. Uncommenting this line restricts what can be done with these
 # options. A call to receive a message (either one-off or via a daemon) cannot
 # successfully continue to deliver it, because the re-exec of Exim to regain
-# root privilege will fail, owing to the use of -C of -D by the Exim user.
+# root privilege will fail, owing to the use of -C or -D by the Exim user.
 # However, you can still use -C for testing (as root) if you do separate Exim
 # calls for receiving a message and subsequently delivering it.
 
@@ -387,8 +474,17 @@ ALT_CONFIG_ROOT_ONLY=yes
 # configuration to make use of the mechanism(s) selected.
 
 AUTH_CRAM_MD5=yes
+# AUTH_CYRUS_SASL=yes
 AUTH_PLAINTEXT=yes
 AUTH_SPA=yes
+
+
+#------------------------------------------------------------------------------
+# If you specified AUTH_CYRUS_SASL above, you should ensure that you have the
+# Cyrus SASL library installed before trying to build Exim, and you probably
+# want to uncomment the following line:
+
+# AUTH_LIBS=-lsasl2
 
 
 #------------------------------------------------------------------------------
@@ -512,9 +608,9 @@ TLS_LIBS=-lssl -lcrypto
 # with the extension "texinfo" in the doc directory. You may find that the
 # version number of the texinfo files is different to your Exim version number,
 # because the main documentation isn't updated as often as the code. For
-# example, if you have Exim version 4.03, the source tarball upacks into a
-# directory called exim-4.03, but the texinfo tarball unpacks into exim-4.00.
-# In this case, move the contents of exim-4.00/doc into exim-4.03/doc after you
+# example, if you have Exim version 4.43, the source tarball upacks into a
+# directory called exim-4.43, but the texinfo tarball unpacks into exim-4.40.
+# In this case, move the contents of exim-4.40/doc into exim-4.43/doc after you
 # have unpacked them. Then set INFO_DIRECTORY to the location of your info
 # directory. This varies from system to system, but is often /usr/share/info.
 # Once you have done this, "make install" will build the info files and
@@ -533,7 +629,7 @@ TLS_LIBS=-lssl -lcrypto
 # %s. This will be replaced by one of the strings "main", "panic", or "reject"
 # to form the final file names. Some installations may want something like this:
 
-# LOG_FILE_PATH=/var/log/exim_%slog
+LOG_FILE_PATH=/var/spool/exim/logs/%s.log
 
 # which results in files with names /var/log/exim_mainlog, etc. The directory
 # in which the log files are placed must exist; Exim does not try to create
@@ -545,7 +641,7 @@ TLS_LIBS=-lssl -lcrypto
 # files, by settings such as these
 
 # LOG_FILE_PATH=syslog
-LOG_FILE_PATH=/var/spool/exim/logs/%s.log
+# LOG_FILE_PATH=syslog:/var/log/exim_%slog
 
 # The first of these uses only syslog; the second uses syslog and also writes
 # to log files. Do not include white space in such a setting as it messes up
@@ -603,6 +699,16 @@ EXIM_PERL=perl.o
 
 
 #------------------------------------------------------------------------------
+# Support for dynamically-loaded string expansion functions via ${dlfunc. If
+# you are using gcc the dynamically-loaded object must be compiled with the
+# -shared option, and you will need to add -export-dynamic to EXTRALIBS so
+# that the local_scan API is made available by the linker. You may also need
+# to add -ldl to EXTRALIBS so that dlopen() is available to Exim.
+
+# EXPAND_DLFUNC=yes
+
+
+#------------------------------------------------------------------------------
 # Exim has support for PAM (Pluggable Authentication Modules), a facility
 # which is available in the latest releases of Solaris and in some GNU/Linux
 # distributions (see http://ftp.kernel.org/pub/linux/libs/pam/). The Exim
@@ -622,6 +728,28 @@ EXIM_PERL=perl.o
 # location of your Radius configuration file:
 
 # RADIUS_CONFIG_FILE=/etc/radiusclient/radiusclient.conf
+# RADIUS_CONFIG_FILE=/etc/radius.conf
+
+# If you have set RADIUS_CONFIG_FILE, you should also set one of these to
+# indicate which RADIUS library is used:
+
+# RADIUS_LIB_TYPE=RADIUSCLIENT
+# RADIUS_LIB_TYPE=RADIUSCLIENTNEW
+# RADIUS_LIB_TYPE=RADLIB
+
+# RADIUSCLIENT is the radiusclient library; you probably need to add
+#   -lradiusclient to EXTRALIBS.
+#
+# The API for the radiusclient library was changed at release 0.4.0.
+# Unfortunately, the header file does not define a version number that clients
+# can use to support both the old and new APIs. If you are using version 0.4.0
+# or later of the radiusclient library, you should use RADIUSCLIENTNEW.
+#
+# RADLIB is the Radius library that comes with FreeBSD (the header file is
+#   called radlib.h); you probably need to add -lradius to EXTRALIBS.
+#
+# If you do not set RADIUS_LIB_TYPE, Exim assumes the radiusclient library,
+# using the original API.
 
 
 #------------------------------------------------------------------------------
@@ -655,7 +783,7 @@ EXIM_PERL=perl.o
 # group. Once you have installed saslauthd, you should arrange for it to be
 # started by root at boot time.
 
-# CYRUS_SASLAUTHD_SOCKET=/var/state/saslauthd/mux
+CYRUS_SASLAUTHD_SOCKET=/var/sasl2/mux
 
 
 #------------------------------------------------------------------------------
@@ -679,7 +807,7 @@ USE_TCP_WRAPPERS=yes
 #------------------------------------------------------------------------------
 # The default action of the exim_install script (which is run by "make
 # install") is to install the Exim binary with a unique name such as
-# exim-4.20-1, and then set up a symbolic link called "exim" to reference it,
+# exim-4.43-1, and then set up a symbolic link called "exim" to reference it,
 # moving the symbolic link from any previous version. If you define NO_SYMLINK
 # (the value doesn't matter), the symbolic link is not created or moved. You
 # will then have to "turn Exim on" by setting up the link manually.
@@ -697,6 +825,29 @@ USE_TCP_WRAPPERS=yes
 # location for the system alias file.
 
 SYSTEM_ALIASES_FILE=/etc/mail/aliases
+
+
+#------------------------------------------------------------------------------
+# There are some testing options (-be, -bt, -bv) that read data from the
+# standard input when no arguments are supplied. By default, the input lines
+# are read using the standard fgets() function. This does not support line
+# editing during interactive input (though the terminal's "erase" character
+# works as normal). If your operating system has the readline() function, and
+# in addition supports dynamic loading of library functions, you can cause
+# Exim to use readline() for the -be testing option (only) by uncommenting the
+# following setting. Dynamic loading is used so that the library is loaded only
+# when the -be testing option is given; by the time the loading occurs,
+# Exim has given up its root privilege and is running as the calling user. This
+# is the reason why readline() is NOT supported for -bt and -bv, because Exim
+# runs as root or as exim, respectively, for those options. When USE_READLINE
+# is "yes", as well as supporting line editing, a history of input lines in the
+# current run is maintained.
+
+# USE_READLINE=yes
+
+# You may need to add -ldl to EXTRA_LIBS when you set USE_READLINE=yes.
+# Note that this option adds to the size of the Exim binary, because the
+# dynamic loading library is not otherwise included.
 
 
 

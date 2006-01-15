@@ -1,7 +1,6 @@
-$OpenBSD: patch-src_pcre_pcre_c,v 1.1 2005/08/27 15:57:31 naddy Exp $
---- src/pcre/pcre.c.orig	Tue Jan 11 13:54:54 2005
-+++ src/pcre/pcre.c	Fri Aug 26 19:59:53 2005
-@@ -1245,14 +1245,30 @@ read_repeat_counts(const uschar *p, int 
+--- src/pcre/pcre.c.orig	Mon Nov 28 11:57:32 2005
++++ src/pcre/pcre.c	Tue Nov 29 11:57:24 2005
+@@ -1247,14 +1247,30 @@
  int min = 0;
  int max = -1;
  
@@ -32,7 +31,7 @@ $OpenBSD: patch-src_pcre_pcre_c,v 1.1 2005/08/27 15:57:31 naddy Exp $
      if (max < min)
        {
        *errorptr = ERR4;
-@@ -1261,16 +1277,11 @@ if (*p == '}') max = min; else
+@@ -1263,16 +1279,11 @@
      }
    }
  
