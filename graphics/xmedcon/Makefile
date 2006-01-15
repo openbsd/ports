@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2005/12/26 20:10:49 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2006/01/15 13:56:15 steven Exp $
 
 COMMENT=	"medical image conversion"
 
 DISTNAME=	xmedcon-0.5.2
 PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=		mdc	0.0
-MODGNU_SHARED_LIBS=	mdc	''
+SHARED_LIBS=	mdc	0.0
 CATEGORIES=	graphics
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xmedcon/}
