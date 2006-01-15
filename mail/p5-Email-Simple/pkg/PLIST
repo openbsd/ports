@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/01/15 15:29:52 sturm Exp $
+${P5SITE}/Email/
+${P5SITE}/Email/Simple.pm
+@man man/man3p/Email::Simple.3p
