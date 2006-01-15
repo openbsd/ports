@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_datalink_c,v 1.1 2006/01/15 12:42:31 sturm Exp $
+--- src/datalink.c.orig	Fri Jan  6 16:07:13 2006
++++ src/datalink.c	Fri Jan  6 16:08:29 2006
+@@ -188,6 +188,7 @@ pcap_handler find_handler(int datalink_t
+ #endif
+     { dl_ethernet, DLT_EN10MB },
+     { dl_ethernet, DLT_IEEE802 },
++    { dl_null, DLT_LOOP },
+     { dl_ppp, DLT_PPP },
+ #ifdef DLT_LINUX_SLL
+     { dl_linux_sll, DLT_LINUX_SLL },
