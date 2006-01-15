@@ -1,7 +1,7 @@
-$OpenBSD: patch-host_defs,v 1.1 2004/10/11 02:08:53 jolan Exp $
---- host.defs.orig	Sat Feb  8 14:03:25 2003
-+++ host.defs	Sun Oct 10 21:06:53 2004
-@@ -500,6 +500,35 @@ machtype: defined(vax)					: "vax"
+$OpenBSD: patch-host_defs,v 1.2 2006/01/15 13:58:39 sturm Exp $
+--- host.defs.orig	Thu Mar  3 19:49:15 2005
++++ host.defs	Sun Dec 18 22:00:52 2005
+@@ -510,6 +510,36 @@
  machtype: defined(alpha)				: "alpha"
  enddef	:
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-host_defs,v 1.1 2004/10/11 02:08:53 jolan Exp $
 +vendor : defined(__alpha__)                            : "digital"
 +vendor : defined(__amd64__)                            : "amd"
 +vendor : defined(__arm__)                              : "arm"
-+vendor : defined(__hppa__)                             : "hp"
++vendor : defined(__hppa__) || defined(__hppa64__)      : "hp"
 +vendor : defined(M_intel)                              : "intel"
 +vendor : defined(__m68k__)                             : "motorola"
 +vendor : defined(__m88k__)                             : "motorola"
@@ -24,6 +24,7 @@ $OpenBSD: patch-host_defs,v 1.1 2004/10/11 02:08:53 jolan Exp $
 +machtype: defined(__amd64__)                           : "amd64"
 +machtype: defined(__arm__)                             : "arm"
 +machtype: defined(__hppa__)                            : "hppa"
++machtype: defined(__hppa64__)                          : "hppa64"
 +machtype: defined(M_i386)                              : "i386"
 +machtype: defined(__m68k__)                            : "m68k"
 +machtype: defined(__m88k__)                            : "m88k"

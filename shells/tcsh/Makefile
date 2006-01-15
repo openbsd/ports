@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2005/12/13 19:56:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2006/01/15 13:58:39 sturm Exp $
 
 COMMENT=	"extended C-shell with many useful features"
 
-DISTNAME=	tcsh-6.13.00
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	tcsh-6.14.00
 CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/
 
@@ -37,6 +36,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/tcsh.italian.cat ${PREFIX}/share/nls/it_CH.ISO_8859-1/tcsh.cat
 	${INSTALL_DATA} ${WRKSRC}/tcsh.italian.cat ${PREFIX}/share/nls/it_IT.ISO_8859-1/tcsh.cat
 	${INSTALL_DATA} ${WRKSRC}/tcsh.ja.cat ${PREFIX}/share/nls/ja_JP.EUC/tcsh.cat
+	${INSTALL_DATA} ${WRKSRC}/tcsh.russian.cat ${PREFIX}/share/nls/ru_RU.KOI8-R/tcsh.cat
 	${INSTALL_DATA} ${WRKSRC}/tcsh.ukrainian.cat ${PREFIX}/share/nls/uk_UA.KOI8-U/tcsh.cat
 
 .include <bsd.port.mk>
