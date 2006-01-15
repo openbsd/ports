@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/01/15 16:02:30 sturm Exp $
+${P5SITE}/Email/MIME/Modifier.pm
+@man man/man3p/Email::MIME::Modifier.3p
