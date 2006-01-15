@@ -1,7 +1,7 @@
-$OpenBSD: patch-new_curse_c,v 1.1 2002/12/13 07:52:10 pvalchev Exp $
---- new_curse.c.orig	Thu Dec 12 00:18:31 2002
-+++ new_curse.c	Thu Dec 12 00:18:47 2002
-@@ -2324,7 +2324,7 @@ int first_char;				/* first character of
+$OpenBSD: patch-new_curse_c,v 1.2 2006/01/15 01:01:29 brad Exp $
+--- new_curse.c.orig	Fri Sep 20 20:48:03 2002
++++ new_curse.c	Sat Jan 14 19:47:28 2006
+@@ -2328,7 +2328,7 @@ int first_char;				/* first character of
  {
  	int in_char;
  	int Count;
