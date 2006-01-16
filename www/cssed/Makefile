@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2005/11/26 17:05:55 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2006/01/16 07:24:18 steven Exp $
 
 COMMENT=	"CSS editor"
 
 DISTNAME=	cssed-0.4.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www editors
 
 HOMEPAGE=	http://cssed.sourceforge.net/
@@ -17,10 +18,10 @@ PERMIT_DISTFILES_FTP=	yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cssed/}
 
-WANTLIB=	c freetype pthread stdc++ m X11 fontconfig \
+WANTLIB=	c freetype pthread stdc++ m X11 Xrender Xext Xft fontconfig \
 		z gthread-2.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 \
-		gobject-2.0.0.0 pangoft2-1.0.0.0 cairo \
-		pangocairo-1.0.0.0 pango-1.0.0.0 atk-1.0.0.0
+		gobject-2.0.0.0 pangoft2-1.0.0.0 pango-1.0.0.0 atk-1.0.0.0 \
+		pangox-1.0.0.0 pangoxft-1.0.0.0 
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gtk-x11-2.0.600.10,gdk_pixbuf-2.0.600.0,gdk-x11-2.0.600.0::x11/gtk+2 \
