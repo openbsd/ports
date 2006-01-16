@@ -1,0 +1,9 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2006/01/16 21:32:59 brad Exp $
+lib/dovecot/imap/lib01_quota_plugin.so
+lib/dovecot/imap/lib01_zlib_plugin.so
+lib/dovecot/imap/lib02_imap_quota_plugin.so
+lib/dovecot/imap/lib02_trash_plugin.so
+lib/dovecot/lda/lib01_quota_plugin.so
+lib/dovecot/lda/lib02_trash_plugin.so
+lib/dovecot/lib01_quota_plugin.so
+lib/dovecot/lib02_trash_plugin.so

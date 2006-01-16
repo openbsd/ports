@@ -1,10 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.11 2005/10/06 17:03:22 brad Exp $
+@comment $OpenBSD: PLIST,v 1.12 2006/01/16 21:32:59 brad Exp $
 @newgroup _dovecot:518
 @newuser _dovecot:518:_dovecot:daemon:Dovecot Account:/nonexistent:/sbin/nologin
+%%SHARED%%
+lib/dovecot/
+lib/dovecot/imap/
+@comment lib/dovecot/imap/lib01_zlib_plugin.a
+@comment lib/dovecot/imap/lib01_zlib_plugin.la
+@comment lib/dovecot/imap/lib02_imap_quota_plugin.a
+@comment lib/dovecot/imap/lib02_imap_quota_plugin.la
+lib/dovecot/lda/
+@comment lib/dovecot/lib01_quota_plugin.a
+@comment lib/dovecot/lib01_quota_plugin.la
+@comment lib/dovecot/lib02_trash_plugin.a
+@comment lib/dovecot/lib02_trash_plugin.la
 libexec/dovecot/
 libexec/dovecot/checkpassword-reply
-libexec/dovecot/deliver
+libexec/dovecot/dict
 libexec/dovecot/dovecot-auth
+libexec/dovecot/gdbhelper
 libexec/dovecot/imap
 libexec/dovecot/imap-login
 libexec/dovecot/pop3

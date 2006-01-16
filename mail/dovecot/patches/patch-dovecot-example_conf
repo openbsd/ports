@@ -1,6 +1,6 @@
-$OpenBSD: patch-dovecot-example_conf,v 1.11 2005/10/20 18:28:48 brad Exp $
---- dovecot-example.conf.orig	Sun Oct 16 11:48:53 2005
-+++ dovecot-example.conf	Thu Oct 20 14:02:48 2005
+$OpenBSD: patch-dovecot-example_conf,v 1.12 2006/01/16 21:32:59 brad Exp $
+--- dovecot-example.conf.orig	Sun Jan 15 22:00:08 2006
++++ dovecot-example.conf	Mon Jan 16 15:29:53 2006
 @@ -5,13 +5,12 @@
  # value inside quotes, eg.: key = "# char and trailing whitespace  "
  
@@ -27,16 +27,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.11 2005/10/20 18:28:48 brad Exp $
 +ssl_cert_file = /etc/ssl/dovecotcert.pem
  #ssl_key_file = /etc/ssl/private/dovecot.pem
  
- # File containing trusted SSL certificate authorities. Usually not needed.
-@@ -48,7 +47,7 @@
- 
- # SSL parameter file. Master process generates this file for login processes.
- # It contains Diffie Hellman and RSA parameters.
--#ssl_parameters_file = /var/run/dovecot/ssl-parameters.dat
-+ssl_parameters_file = /var/dovecot/ssl-parameters.dat
- 
- # How often to regenerate the SSL parameters file. Generation is quite CPU
- # intensive operation. The value is in hours, 0 disables regeneration
+ # If key file is password protected, give the password here. Alternatively
 @@ -62,7 +61,7 @@
  # SSL/TLS is used (LOGINDISABLED capability). Note that 127.*.*.* and
  # IPv6 ::1 addresses are considered secure, this setting has no effect if
@@ -46,7 +37,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.11 2005/10/20 18:28:48 brad Exp $
  
  # Use this logfile instead of syslog(). /dev/stderr can be used if you want to
  # use stderr for logging (ONLY /dev/stderr - otherwise it is closed).
-@@ -83,7 +82,7 @@
+@@ -88,7 +87,7 @@
  # which login needs to be able to connect to. The sockets are created when
  # running as root, so you don't have to worry about permissions. Note that
  # everything in this directory is deleted when Dovecot is started.
@@ -55,7 +46,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.11 2005/10/20 18:28:48 brad Exp $
  
  # chroot login process to the login_dir. Only reason not to do this is if you
  # wish to run the whole Dovecot without roots.
-@@ -95,7 +94,7 @@
+@@ -100,7 +99,7 @@
  # only it has access, it's used to control access for authentication process.
  # Note that this user is NOT used to access mails.
  # http://wiki.dovecot.org/UserIds
@@ -64,7 +55,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.11 2005/10/20 18:28:48 brad Exp $
  
  # Set max. process size in megabytes. If you don't use
  # login_process_per_connection you might need to grow this.
-@@ -303,7 +302,7 @@
+@@ -311,7 +310,7 @@
  
  # Don't write() to mmaped files. This is required for some operating systems
  # which use separate caches for them, such as OpenBSD.
@@ -73,23 +64,31 @@ $OpenBSD: patch-dovecot-example_conf,v 1.11 2005/10/20 18:28:48 brad Exp $
  
  # Locking method for index files. Alternatives are fcntl, flock and dotlock.
  # Dotlocking uses some tricks which may create more disk I/O than other locking
-@@ -391,12 +390,12 @@
+@@ -411,19 +410,19 @@
  
  protocol imap {
    # Login executable location.
 -  #login_executable = /usr/libexec/dovecot/imap-login
 +  #login_executable = /usr/local/libexec/dovecot/imap-login
  
-   # IMAP executable location
+   # IMAP executable location. Changing this allows you to execute other
+   # binaries before the imap process is executed.
+   #
+   # This would write rawlogs into ~/dovecot.rawlog/ directory:
+-  #   mail_executable = /usr/libexec/dovecot/rawlog /usr/libexec/dovecot/imap
++  #   mail_executable = /usr/local/libexec/dovecot/rawlog /usr/local/libexec/dovecot/imap
+   #
+   # This would attach gdb into the imap process and write backtraces into
+   # /tmp/gdbhelper.* files:
+-  #   mail_executable = /usr/libexec/dovecot/gdbhelper /usr/libexec/dovecot/imap
++  #   mail_executable = /usr/local/libexec/dovecot/gdbhelper /usr/local/libexec/dovecot/imap
+   #
 -  #mail_executable = /usr/libexec/dovecot/imap
 +  #mail_executable = /usr/local/libexec/dovecot/imap
-   # This would write rawlogs into ~/dovecot.rawlog/ directory:
--  #mail_executable = /usr/libexec/dovecot/rawlog /usr/libexec/dovecot/imap
-+  #mail_executable = /usr/local/libexec/dovecot/rawlog /usr/local/libexec/dovecot/imap
  
    # Maximum IMAP command line length in bytes. Some clients generate very long
    # command lines with huge mailboxes, so you may need to raise this if you get
-@@ -444,10 +443,10 @@ protocol imap {
+@@ -472,10 +471,10 @@ protocol imap {
  
  protocol pop3 {
    # Login executable location.
@@ -102,16 +101,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.11 2005/10/20 18:28:48 brad Exp $
  
    # Don't try to set mails non-recent or seen with POP3 sessions. This is
    # mostly intended to reduce disk I/O. With maildir it doesn't move files
-@@ -484,7 +483,7 @@ protocol pop3 {
-   # installations. %08Xu%08Xv will be the new default, so use it for new
-   # installations.
-   #
--  #pop3_uidl_format = 
-+  pop3_uidl_format = %08Xv%08Xu
- 
-   # POP3 logout format string:
-   #  %t - number of TOP commands
-@@ -515,7 +514,7 @@ protocol pop3 {
+@@ -544,7 +543,7 @@ protocol pop3 {
  ##
  
  # Executable location
@@ -120,18 +110,18 @@ $OpenBSD: patch-dovecot-example_conf,v 1.11 2005/10/20 18:28:48 brad Exp $
  
  # Set max. process size in megabytes.
  #auth_process_size = 256
-@@ -596,7 +595,7 @@ auth default {
+@@ -629,7 +628,7 @@ auth default {
    # Note that PAM can only be used to verify if user's password is correct,
    # so it can't be used as userdb. If you don't want to use a separate user
    # database (passwd usually), you can use static userdb.
 -  passdb pam {
 +  #passdb pam {
-     # [-session] [cache_key=<key>] [<service name>]
+     # [session=yes] [cache_key=<key>] [<service name>]
      #
-     # -session makes Dovecot open and immediately close PAM session. Some
-@@ -616,13 +615,13 @@ auth default {
-     # If service name is "*", it means the authenticating service name
-     # is used, eg. pop3 or imap.
+     # session=yes makes Dovecot open and immediately close PAM session. Some
+@@ -653,13 +652,13 @@ auth default {
+     #   args = session=yes *
+     #   args = cache_key=%u dovecot
      #args = dovecot
 -  }
 +  #}

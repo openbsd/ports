@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2005/11/11 14:53:27 bernd Exp $
+# $OpenBSD: Makefile,v 1.27 2006/01/16 21:32:59 brad Exp $
 
 COMMENT= 	"compact IMAP/POP3 server"
 
-DISTNAME=	dovecot-1.0.alpha4
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	dovecot-1.0.beta1
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/
 
@@ -40,9 +39,12 @@ CONFIGURE_ARGS+=	--with-pgsql
 LIB_DEPENDS+=		pq.4::databases/postgresql
 .endif
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.59
 CONFIGURE_ARGS+=--localstatedir=/var \
+		--with-ioloop=kqueue \
+		--with-notify=kqueue \
 		--with-ssl=openssl \
 		--with-ssldir=/etc/ssl \
 		--without-pam \
