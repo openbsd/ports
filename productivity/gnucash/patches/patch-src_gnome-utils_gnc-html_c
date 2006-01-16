@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gnome-utils_gnc-html_c,v 1.1 2006/01/16 16:08:37 espie Exp $
+--- src/gnome-utils/gnc-html.c.orig	Mon Jan 16 17:01:38 2006
++++ src/gnome-utils/gnc-html.c	Mon Jan 16 17:02:01 2006
+@@ -1315,7 +1315,7 @@ gnc_html_set_button_cb(gnc_html * html, 
+ static gboolean 
+ raw_html_receiver (gpointer     engine,
+                    const gchar *data,
+-                   guint        len,
++                   size_t       len,
+                    gpointer     user_data)
+ {
+   FILE *fh = (FILE *) user_data;
