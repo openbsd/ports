@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/03/08 01:47:26 kurt Exp $
+# $OpenBSD: Makefile,v 1.2 2006/01/16 01:05:27 brad Exp $
 
 # consertive setting. macppc found to have some issues.
-ONLY_FOR_ARCHS=		i386
+ONLY_FOR_ARCHS=		amd64 i386
 
 COMMENT=		"control and monitor storage systems using SMART"
 
