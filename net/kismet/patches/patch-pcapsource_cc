@@ -1,0 +1,27 @@
+$OpenBSD: patch-pcapsource_cc,v 1.1 2006/01/16 21:28:19 sturm Exp $
+--- pcapsource.cc.orig	Tue Aug 16 03:22:51 2005
++++ pcapsource.cc	Fri Jan 13 23:26:52 2006
+@@ -2085,6 +2085,7 @@ int monitor_openbsd_prism2(const char *i
+         close(s);
+         snprintf(in_err, 1024, "Power management ioctl failed: %s",
+                  strerror(errno));
++        return -1;
+     }
+ 
+     // Lower AP density, better radio threshold settings? 
+@@ -2097,6 +2098,7 @@ int monitor_openbsd_prism2(const char *i
+         close(s);
+         snprintf(in_err, 1024, "AP Density ioctl failed: %s",
+                  strerror(errno));
++        return -1;
+     }
+ 
+     // Enable driver processing of 802.11b frames
+@@ -2122,6 +2124,7 @@ int monitor_openbsd_prism2(const char *i
+         close(s);
+         snprintf(in_err, 1024, "Roaming disable ioctl failed: %s",
+                  strerror(errno));
++        return -1;
+     }
+ 
+     // Enable monitor mode

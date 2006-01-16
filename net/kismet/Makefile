@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2005/10/07 14:13:57 bernd Exp $
+# $OpenBSD: Makefile,v 1.8 2006/01/16 21:28:19 sturm Exp $
 # Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
 
@@ -7,7 +7,7 @@ COMMENT-gpsmap=	"reads GPS and Network XML datafiles and plots networks"
 
 V=		2005-08-R1
 DISTNAME=	kismet-${V}
-PKGNAME=	kismet-${V:S,-,,g}p0
+PKGNAME=	kismet-${V:S,-,,g}p1
 PKGNAME-gpsmap=	kismet-gpsmap-${V:S,-,,g}
 CATEGORIES=	net security
 
