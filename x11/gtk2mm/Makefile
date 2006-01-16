@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2006/01/14 11:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/01/16 17:07:21 steven Exp $
 
 COMMENT=		"C++ interface for gtk2+"
 COMMENT-docs=		"C++ interface for gtk2+ documentation"
 
 VERSION=		2.6.4
 DISTNAME=		gtkmm-${VERSION}
-PKGNAME=		gtk2mm-${VERSION}p4
+PKGNAME=		gtk2mm-${VERSION}p5
 PKGNAME-docs=		gtk2mm-docs-${VERSION}
 CATEGORIES=		devel x11
 
@@ -34,11 +34,11 @@ BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
 PKG_ARCH=	*
 .else
-WANTLIB=		X11 Xext Xrender atk-1.0.0.0 cairo fontconfig freetype \
-			glib-2.0.0.0 glitz gmodule-2.0.0.0 gobject-2.0.0.0 m \
-			pango-1.0.0.0 pangocairo-1.0.0.0 pangoft2-1.0.0.0 png \
-			sigc-2.0.0.0 z
-MODULES=		gettext
+WANTLIB=		X11 Xext Xft Xrender atk-1.0.0.0 fontconfig freetype \
+			glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 m \
+			pango-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 \
+			pangoft2-1.0.0.0 sigc-2.0.0.0
+MODULES=		devel/gettext
 LIB_DEPENDS=		glibmm-2.4.0.0:glib2mm->=2.4:devel/glib2mm \
 			gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0:gtk+2->=2.4:x11/gtk+2
 .endif
