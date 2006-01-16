@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2006/01/08 12:22:17 alek Exp $
+# $OpenBSD: Makefile,v 1.60 2006/01/16 12:23:52 steven Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
@@ -6,7 +6,7 @@ COMMENT-lang=	"vi clone, NLS subpackage"
 DISTNAME=	vim-6.4
 REVISION=	6
 VERSION=	6.4.${REVISION}
-PKGNAME=	vim-${VERSION}
+PKGNAME=	vim-${VERSION}p0
 P=		${DISTNAME:C/[-\.]//g}
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unix/ \
@@ -100,10 +100,9 @@ WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xpm Xt
 LIB_DEPENDS+=	gdk-x11-2.0.0.11,gdk_pixbuf-2.0.0.11,gtk-x11-2.0.0.11::x11/gtk+2
 BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 CONFIGURE_ARGS+=--enable-gui="gtk2" --with-x --enable-fontset --enable-xim --disable-gtk-check --enable-gtk2-check
-WANTLIB+=	ICE SM X11 Xt atk-1.0.0.0 cairo pangocairo-1.0.0.0 \
-		fontconfig freetype glib-2.0.0.0 gmodule-2.0.0.0 \
-		gobject-2.0.0.0 m pango-1.0.0.0 \
-		pangoft2-1.0.0.0
+WANTLIB+=	ICE SM X11 Xext Xft Xrender Xt fontconfig freetype m \
+	 	atk-1.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 \
+		pango-1.0.0.0 pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0
 .else
 ERRORS=		"Fatal: You must select one GUI interface: no_x11, gtk2, athena or motif"
 .endif
