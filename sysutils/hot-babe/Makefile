@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2005/11/15 19:02:43 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2006/01/16 12:57:11 steven Exp $
 
 COMMENT=	"small utility which displays system activity."
 
 DISTNAME=	hot-babe-0.2.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://dindinx.net/hotbabe/
@@ -15,13 +15,13 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	X11 c cairo fontconfig freetype glib-2.0.0.0 gmodule-2.0.0.0 \
-		gobject-2.0.0.0 iconv intl m pango-1.0.0.0 pangocairo-1.0.0.0 \
-		pangoft2-1.0.0.0
+WANTLIB=	X11 Xext Xft Xrender c fontconfig freetype m \
+		glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 pango-1.0.0.0 \
+		pangox-1.0.0.0 pangoft2-1.0.0.0 pangoxft-1.0.0.0
 
 MASTER_SITES=	${HOMEPAGE}/downloads/
 
-
+MODULES=	devel/gettext
 LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0::x11/gtk+2
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
