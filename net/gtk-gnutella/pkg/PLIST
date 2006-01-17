@@ -1,19 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.12 2005/08/07 21:27:52 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.13 2006/01/17 20:50:46 sturm Exp $
 bin/gtk-gnutella
 @man man/man1/gtk-gnutella.1
 share/applications/
 share/applications/gtk-gnutella.desktop
 share/gtk-gnutella/
 share/gtk-gnutella/bogons.txt
+share/gtk-gnutella/el/
+share/gtk-gnutella/el/FAQ
+share/gtk-gnutella/en/
+share/gtk-gnutella/en/FAQ
+share/gtk-gnutella/favicon.png
 share/gtk-gnutella/geo-ip.txt
 share/gtk-gnutella/gwcache.boot
 share/gtk-gnutella/hostiles.txt
+share/gtk-gnutella/ja/
+share/gtk-gnutella/ja/FAQ
 share/gtk-gnutella/pixmaps/
 share/gtk-gnutella/pixmaps/arrow_down.xpm
 share/gtk-gnutella/pixmaps/arrow_up.xpm
 share/gtk-gnutella/pixmaps/booklib.xpm
 share/gtk-gnutella/pixmaps/booksha.xpm
 share/gtk-gnutella/pixmaps/bookshav.xpm
+share/gtk-gnutella/pixmaps/chip.xpm
 share/gtk-gnutella/pixmaps/clanbomber_red.xpm
 share/gtk-gnutella/pixmaps/clanbomber_yellow.xpm
 share/gtk-gnutella/pixmaps/download.xpm
@@ -38,10 +46,14 @@ share/gtk-gnutella/pixmaps/thaw.xpm
 share/gtk-gnutella/pixmaps/ultra.xpm
 share/gtk-gnutella/pixmaps/upload.xpm
 share/gtk-gnutella/pixmaps/warning.xpm
+share/gtk-gnutella/robots.txt
 share/locale/
 share/locale/de/
 share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/gtk-gnutella.mo
+share/locale/el/
+share/locale/el/LC_MESSAGES/
+share/locale/el/LC_MESSAGES/gtk-gnutella.mo
 share/locale/es/
 share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/gtk-gnutella.mo
@@ -57,6 +69,12 @@ share/locale/ja/LC_MESSAGES/gtk-gnutella.mo
 share/locale/nl/
 share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/gtk-gnutella.mo
+share/locale/uk/
+share/locale/uk/LC_MESSAGES/
+share/locale/uk/LC_MESSAGES/gtk-gnutella.mo
+share/locale/zh_CN/
+share/locale/zh_CN/LC_MESSAGES/
+share/locale/zh_CN/LC_MESSAGES/gtk-gnutella.mo
 share/pixmaps/
 share/pixmaps/gtk-gnutella.png
 share/pixmaps/gtk-gnutella.svg

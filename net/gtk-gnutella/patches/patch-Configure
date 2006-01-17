@@ -1,16 +1,16 @@
-$OpenBSD: patch-Configure,v 1.6 2005/08/07 21:27:52 sturm Exp $
---- Configure.orig	Sun Jul 31 20:46:26 2005
-+++ Configure	Sun Aug  7 20:58:26 2005
-@@ -307,7 +307,7 @@ d_isascii=''
- d_memcpy=''
+$OpenBSD: patch-Configure,v 1.7 2006/01/17 20:50:46 sturm Exp $
+--- Configure.orig	Tue Nov 22 22:46:57 2005
++++ Configure	Sat Nov 26 18:53:22 2005
+@@ -321,7 +321,7 @@ d_memcpy=''
+ d_msghdr_msg_flags=''
  d_nls=''
  d_open3=''
 -d_portable=''
 +d_portable='define'
  d_random=''
+ d_rusage=''
  d_sendfile=''
- d_srandom=''
-@@ -1026,7 +1026,7 @@ for file in $*; do
+@@ -1078,7 +1078,7 @@ for file in $*; do
  			dir=`expr X$file : 'X\(.*\)/'`
  			file=`expr X$file : 'X.*/\(.*\)'`
  			./mkdirp $dir
@@ -19,7 +19,16 @@ $OpenBSD: patch-Configure,v 1.6 2005/08/07 21:27:52 sturm Exp $
  			;;
  		*)
  			sh <"$SRC/$file"
-@@ -6524,15 +6524,6 @@ If you'd like to make any changes to the
+@@ -5207,7 +5207,7 @@ main(void) {
+   static struct kevent changes[1], events[1];
+   static struct timespec ts;
+   static unsigned long filters[] = { EVFILT_READ, EVFILT_WRITE,
+-    EVFILT_TIMER, EVFILT_SIGNAL, EVFILT_PROC, EVFILT_VNODE };
++    EVFILT_SIGNAL, EVFILT_PROC, EVFILT_VNODE };
+   int kq = kqueue();
+   int fd = 0;
+   unsigned long flags;
+@@ -7664,15 +7664,6 @@ If you'd like to make any changes to the
  to configure things, do it as a shell escape now (e.g. !vi config.sh).
  
  EOM
