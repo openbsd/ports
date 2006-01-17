@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2005/07/06 23:18:11 jolan Exp $
+# $OpenBSD: Makefile,v 1.12 2006/01/17 06:37:06 steven Exp $
 
 COMMENT=	"Apache ASP support"
 
-VERSION=	2.57
-DISTNAME=	Apache-ASP-${VERSION}
+DISTNAME=	Apache-ASP-2.59
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Apache/}
@@ -19,5 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= perl
+
+PKG_ARCH=	*
 
 .include <bsd.port.mk>
