@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.3 2005/10/17 15:15:40 espie Exp $
+$OpenBSD: patch-configure_in,v 1.4 2006/01/17 15:08:08 naddy Exp $
 --- configure.in.orig	Tue Jul 19 21:55:34 2005
 +++ configure.in	Tue Sep 20 23:07:48 2005
 @@ -845,8 +845,8 @@ dnl ====================================
@@ -18,8 +18,8 @@ $OpenBSD: patch-configure_in,v 1.3 2005/10/17 15:15:40 espie Exp $
    pqxx_libdirs="$ac_pqxx_libdir /usr/lib /usr/local/lib /usr/local/pqxx/lib"
 -  AC_FIND_FILE(libpqxx.so, $pqxx_libdirs, pqxx_libdir)
 -  if test ! -r $pqxx_libdir/libpqxx.so; then
-+  AC_FIND_FILE(libpqxx.so.0.0, $pqxx_libdirs, pqxx_libdir)
-+  if test ! -r $pqxx_libdir/libpqxx.so.0.0; then
++  AC_FIND_FILE(libpqxx.so.1.0, $pqxx_libdirs, pqxx_libdir)
++  if test ! -r $pqxx_libdir/libpqxx.so.1.0; then
      compile_pgsql_plugin="no"
      AC_MSG_RESULT([not found])
    else
@@ -28,7 +28,7 @@ $OpenBSD: patch-configure_in,v 1.3 2005/10/17 15:15:40 espie Exp $
  ac_knewstuff_includes="$knewstuff_incdir"
  
 -AC_FIND_FILE(libknewstuff.so, $kde_libdirs, knewstuff_libdir)
-+AC_FIND_FILE(libknewstuff.so.1.0, $kde_libdirs, knewstuff_libdir)
++AC_FIND_FILE(libknewstuff.so.2.0, $kde_libdirs, knewstuff_libdir)
  ac_knewstuff_libraries="$knewstuff_libdir"
  
  if test "$ac_knewstuff_includes" = NO || test "$ac_knewstuff_libraries" = NO; then
