@@ -1,0 +1,14 @@
+$OpenBSD: patch-libmpdemux_tv_c,v 1.1 2006/01/17 07:41:58 jakemsr Exp $
+--- libmpdemux/tv.c.orig	Sat Jan 29 04:24:43 2005
++++ libmpdemux/tv.c	Sun Dec 25 19:34:31 2005
+@@ -286,6 +286,10 @@ static int open_tv(tvi_handle_t *tvh)
+ 	mp_msg(MSGT_TV, MSGL_V, "Selected channel list: %s (including %d channels)\n",
+ 	    chanlists[tvh->chanlist].name, chanlists[tvh->chanlist].count);
+ 
++#ifdef HAVE_TV_BSDBT848
++    funcs->control(tvh->priv, TVI_CONTROL_TUN_SET_CHANLIST, &tvh->chanlist);
++#endif
++
+     if (tv_param_freq && tv_param_channel)
+     {
+ 	mp_msg(MSGT_TV, MSGL_WARN, "You can't set frequency and channel simultaneously!\n");

@@ -1,0 +1,11 @@
+$OpenBSD: patch-libmpdemux_tv_h,v 1.1 2006/01/17 07:41:58 jakemsr Exp $
+--- libmpdemux/tv.h.orig	Sat Jan 29 04:24:43 2005
++++ libmpdemux/tv.h	Sun Dec 25 17:32:08 2005
+@@ -145,6 +145,7 @@ extern char *tv_channel_last_real;
+ #define TVI_CONTROL_TUN_SET_TUNER	0x204	/* update priv->tuner struct for used input */
+ #define TVI_CONTROL_TUN_GET_NORM	0x205
+ #define TVI_CONTROL_TUN_SET_NORM	0x206
++#define TVI_CONTROL_TUN_SET_CHANLIST	0x207
+ 
+ /* AUDIO controls */
+ #define TVI_CONTROL_AUD_GET_FORMAT	0x301

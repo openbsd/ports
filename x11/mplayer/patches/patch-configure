@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.36 2005/11/23 00:05:39 biorn Exp $
---- configure.orig	Wed Apr 13 13:46:35 2005
-+++ configure	Wed Nov 23 00:41:37 2005
+$OpenBSD: patch-configure,v 1.37 2006/01/17 07:41:58 jakemsr Exp $
+--- configure.orig	Wed Apr 13 04:46:35 2005
++++ configure	Sun Dec 25 17:31:12 2005
 @@ -475,6 +475,9 @@ if test -z "$_target" ; then
          if [ "`$_cc -dumpmachine | grep x86_64 | cut -d- -f1`" = "x86_64" -a \
               -z "`echo $CFLAGS | grep -- -m32`"  ]; then
@@ -75,6 +75,15 @@ $OpenBSD: patch-configure,v 1.36 2005/11/23 00:05:39 biorn Exp $
    fi
    # internal faad: check if our dear gcc is able to compile it...
    cp "`pwd`/libfaad2/cfft.c" $TMPC
+@@ -6115,7 +6128,7 @@ if test "$_tv_bsdbt848" = auto ; then
+  if test "$_tv" = yes ; then
+     cat > $TMPC <<EOF
+ #include <sys/types.h>
+-#if defined(__NetBSD__)
++#if defined(__NetBSD__) || defined(__OpenBSD__)
+ #include <dev/ic/bt8xx.h>
+ #else
+ #include <machine/ioctl_bt848.h>
 @@ -6775,7 +6788,7 @@ CACA_LIB = $_ld_caca
  # audio output
  ALSA_LIB = $_ld_alsa
