@@ -1,0 +1,17 @@
+$OpenBSD: patch-j2se_src_share_native_java_util_zip_Inflater_c,v 1.1 2006/01/17 14:28:19 millert Exp $
+--- j2se/src/share/native/java/util/zip/Inflater.c.orig	Wed Sep 10 21:53:39 2003
++++ j2se/src/share/native/java/util/zip/Inflater.c	Thu Jan 12 19:34:45 2006
+@@ -19,13 +19,6 @@
+ #include "jni_util.h"
+ #include "zlib.h"
+ 
+-#ifndef _LP64
+-/* avoid platform-dependent include files */
+-
+-extern int read(int fildes, void *buf, size_t nbyte);
+-#endif
+-
+-
+ #include "java_util_zip_Inflater.h"
+ 
+ #define ThrowDataFormatException(env, msg) \
