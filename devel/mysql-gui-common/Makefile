@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/11/20 12:54:05 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2006/01/17 09:26:19 steven Exp $
 
 COMMENT=	"common libraries and data for the MySQL GUI Suites"
 
@@ -16,8 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://na.mirror.garr.it/mirrors/MySQL/Downloads/MySQLAdministrationSuite/ \
-		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MySQLAdministrationSuite/ \
+MASTER_SITES=	ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MySQLAdministrationSuite/ \
 		ftp://sunsite.dk/mirrors/mysql/Downloads/MySQLAdministrationSuite/ \
 		ftp://gd.tuwien.ac.at/db/mysql/Downloads/MySQLAdministrationSuite/ \
 		ftp://mysql.secsup.org/pub/software/mysql/Downloads/MySQLAdministrationSuite/
