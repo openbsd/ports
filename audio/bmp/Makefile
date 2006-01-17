@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2006/01/10 11:14:49 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2006/01/17 07:26:53 steven Exp $
 
 COMMENT=	"gtk+2 media player based on XMMS"
 COMMENT-mp3=	"MP3 input plugin for bmp"
 COMMENT-vorbis=	"Ogg Vorbis input plugin for bmp"
 V=		0.9.7
 DISTNAME=	bmp-$V
-PKGNAME=	bmp-$Vp5
-PKGNAME-mp3=	bmp-mp3-$Vp5
-PKGNAME-vorbis=	bmp-vorbis-$Vp4
+PKGNAME=	bmp-$Vp6
+PKGNAME-mp3=	bmp-mp3-$Vp6
+PKGNAME-vorbis=	bmp-vorbis-$Vp5
 SHARED_LIBS=	beep	2.0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=beepmp/}
@@ -29,13 +29,13 @@ USE_X11=	Yes
 
 MODULES=	devel/gettext
 
-WANTLIB=	X11 Xext Xrender fontconfig freetype m z
+WANTLIB=	X11 Xext Xft Xrender fontconfig freetype m \
+		gmodule-2.0.0.0 atk-1.0.0.0 gobject-2.0.0.0 \
+		pango-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 pangoft2-1.0.0.0
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk_pixbuf-2.0.400.3,gdk-x11-2.0.400.3,gtk-x11-2.0.0.5::x11/gtk+2 \
 		glib-2.0.400.2,gthread-2.0.400.2::devel/glib2
-WANTLIB+=	cairo glitz gmodule-2.0.0.0 atk-1.0.0.0 gobject-2.0.0.0 \
-		pango-1.0.0.0 pangocairo-1.0.0.0 pangoft2-1.0.0.0 png
 
 MULTI_PACKAGES=
 PSEUDO_FLAVORS=	no_mp3 no_vorbis
@@ -78,7 +78,7 @@ WANTLIB+=	gthread-2.0.0.0 gtk-x11-2.0.0.0 gdk-x11-2.0.0.0 glib-2.0.0.0 \
 		ogg gdk_pixbuf-2.0.0.0
 RUN_DEPENDS=	::audio/bmp
 . else
-WANTLIB+=	pthread ICE audiofile c SM
+WANTLIB+=	pthread ICE audiofile c z SM
 . endif
 .endif
 
