@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/04/24 20:03:17 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2006/01/17 11:09:29 steven Exp $
 
 COMMENT=	"taint checking and input validation from web forms"
 
-DISTNAME=	CGI-Untaint-1.25
+DISTNAME=	CGI-Untaint-1.26
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
 
