@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2006/01/16 12:23:52 steven Exp $
+# $OpenBSD: Makefile,v 1.61 2006/01/17 19:43:10 espie Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
@@ -6,8 +6,7 @@ COMMENT-lang=	"vi clone, NLS subpackage"
 DISTNAME=	vim-6.4
 REVISION=	6
 VERSION=	6.4.${REVISION}
-PKGNAME=	vim-${VERSION}p0
-P=		${DISTNAME:C/[-\.]//g}
+PKGNAME=	vim-${VERSION}p1
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unix/ \
 		ftp://ftp.home.vim.org/pub/vim/unix/ \
@@ -46,7 +45,7 @@ MULTI_PACKAGES=	-lang
 SUBPACKAGE?=
 
 .for i in ${MULTI_PACKAGES}
-PKGNAME$i=	vim$i-${VERSION}
+PKGNAME$i=	vim$i-${VERSION}p0
 .endfor
 
 FLAVORS=	huge gtk2 athena motif no_x11 perl python ruby
