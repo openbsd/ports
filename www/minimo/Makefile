@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2006/01/14 00:07:31 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2006/01/17 17:47:26 steven Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc64 arm
 SHARED_ONLY=	Yes
 
 COMMENT=	"mini mozilla"
 DISTNAME=	minimo-20050802
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 SO_VERSION=	2.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -41,10 +41,11 @@ BUILD_DEPENDS=	:zip->=2.3:archivers/zip \
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		png.3::graphics/png \
 		gdk-x11-2.0.600.0,gdk_pixbuf-2.0.600.0,gtk-x11-2.0.600.0::x11/gtk+2
-WANTLIB=	ICE SM X11 Xft Xrender Xt c fontconfig freetype m pthread z \
-		atk-1.0.1011.0 cairo glib-2.0.600.0 gmodule-2.0.600.0 \
-		gobject-2.0.600.0 pango-1.0.800.0 pangocairo-1.0.0.0 \
-		pangoft2-1.0.0.0
+WANTLIB=	ICE SM X11 Xext Xft Xrender Xt \
+		c fontconfig freetype m pthread z \
+		atk-1.0.1011.0 glib-2.0.600.0 gmodule-2.0.600.0 \
+		gobject-2.0.600.0 pango-1.0.800.0 pangox-1.0.0.0 \
+		pangoxft-1.0.0.0 pangoft2-1.0.0.0
 .if empty(MACHINE_ARCH:Malpha)
 WANTLIB+=	stdc++
 .endif
