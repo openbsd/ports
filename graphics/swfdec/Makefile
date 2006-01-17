@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2006/01/08 10:11:59 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2006/01/17 18:55:23 steven Exp $
 
 COMMENT=	"flash rendering library"
 DISTNAME=	swfdec-0.2.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS=	swfdec	0.0
 CATEGORIES=	graphics www/mozilla
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=swfdec/}
@@ -16,10 +16,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-WANTLIB=	X11 Xext Xrender atk-1.0.0.0 c fontconfig \
+WANTLIB=	X11 Xext Xft Xrender atk-1.0.0.0 c fontconfig \
 		freetype glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 iconv \
-		pango-1.0.0.0 pangocairo-1.0.0.0 pangoft2-1.0.0.0 \
-		pthread usbhid z intl m cairo glitz png
+		pango-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 pangoft2-1.0.0.0 \
+		pthread usbhid z intl m
 
 BUILD_DEPENDS+=	:pkgconfig->=0.12.0p1:devel/pkgconfig
 
