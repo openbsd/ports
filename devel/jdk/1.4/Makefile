@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/01/02 03:48:40 kurt Exp $
+# $OpenBSD: Makefile,v 1.10 2006/01/18 15:08:16 kurt Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/java/jdk14/Makefile,v 1.79 2004/08/18 07:06:03 glewis Exp $
 
 ONLY_FOR_ARCHS= 	i386
@@ -7,8 +7,8 @@ COMMENT=		"Java2(TM) Standard Edition Dev Kit v${V}"
 COMMENT-jre=		"Java2(TM) Standard Edition Runtime Environment v${V}"
 V=			1.4.2
 DISTNAME=		j2sdk-1_4_2
-PKGNAME=		jdk-${V}p4
-PKGNAME-jre=		jre-${V}p4
+PKGNAME=		jdk-${V}p5
+PKGNAME-jre=		jre-${V}p5
 
 CATEGORIES=		devel/jdk java
 
@@ -163,6 +163,9 @@ post-patch:
 		ln -s bootscript ${prog}
 .endfor
 .endif
+
+pre-build:
+	@${SYSCTL}=1
 
 post-build:
 	@rm -rf ${JDKIMAGEDIR}/demo/jfc/SwingSet2/resources \

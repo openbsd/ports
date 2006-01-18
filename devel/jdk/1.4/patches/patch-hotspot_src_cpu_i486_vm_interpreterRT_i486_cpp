@@ -1,0 +1,20 @@
+$OpenBSD: patch-hotspot_src_cpu_i486_vm_interpreterRT_i486_cpp,v 1.1 2006/01/18 15:08:16 kurt Exp $
+--- hotspot/src/cpu/i486/vm/interpreterRT_i486.cpp.orig	Wed Sep 10 21:40:12 2003
++++ hotspot/src/cpu/i486/vm/interpreterRT_i486.cpp	Wed Jan 18 09:26:07 2006
+@@ -8,6 +8,8 @@
+ 
+ #include "incls/_precompiled.incl"
+ #include "incls/_interpreterRT_i486.cpp.incl"
++#include <sys/types.h>
++#include <sys/mman.h>
+ 
+ 
+ #define __ _masm->
+@@ -83,6 +85,7 @@ class SignatureHandlerLibrary: public Al
+           InterpreterRuntime::SignatureHandlerGenerator(method, buffer).generate(fingerprint);
+           // copy into C-heap allocated memory location
+           address handler = (address)NEW_C_HEAP_ARRAY(u_char, buffer->code_size());
++          mprotect(handler, buffer->code_size(), PROT_READ|PROT_WRITE|PROT_EXEC);
+           memcpy(handler, buffer->code_begin(), buffer->code_size());
+           // debugging suppport
+           if (PrintSignatureHandlers) {
