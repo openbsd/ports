@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2005/11/15 15:35:40 wilfried Exp $
+# $OpenBSD: Makefile,v 1.12 2006/01/18 17:31:54 steven Exp $
 
 COMMENT=		"lightweight GTK+ based mail/news client"
 COMMENT-dillo=		"dillo plugin for sylpheed-claws"
@@ -10,7 +10,7 @@ COMMENT-trayicon=	"system tray icon plugin for sylpheed-claws"
 
 VERSION=		1.9.6
 DISTNAME=		sylpheed-claws-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 THEMEFILE=		sylpheed-iconset-20040929
 CATEGORIES=		mail news x11
 
@@ -30,11 +30,12 @@ MODULES=		devel/gettext
 
 LIB_DEPENDS=		gdk_pixbuf-2.0.0.0::x11/gtk+2
 
-WANTLIB=		X11 crypto \
+WANTLIB=		X11 Xext Xft Xrender crypto \
 			fontconfig freetype m ssl \
 			atk-1.0.0.0 gdk-x11-2.0.0.0 glib-2.0.0.0 \
 			gmodule-2.0.0.0 gobject-2.0.0.0 gtk-x11-2.0.0.0 \
-			pango-1.0.0.0 pangocairo-1.0.0.0 cairo
+			pango-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 \
+			pangoft2-1.0.0.0
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS=		--program-suffix="-claws" \
@@ -54,9 +55,10 @@ FLAVOR?=
 MULTI_PACKAGES=		-dillo -docs -imageviewer -spamassassin -themes \
 			-trayicon
 
-FULLPKGNAME-docs=	sylphee-claws${i}-${VERSION}p0
+FULLPKGNAME-docs=	sylpheed-claws-docs-${VERSION}p0
+FULLPKGNAME-themes=	sylpheed-claws-themes-${VERSION}p0
 .for i in ${MULTI_PACKAGES}
-FULLPKGNAME$i?=		sylpheed-claws${i}-${VERSION}p0
+FULLPKGNAME$i?=		sylpheed-claws${i}-${VERSION}p1
 .endfor
 
 SUBPACKAGE?=
@@ -103,7 +105,7 @@ CONFIGURE_ARGS+=	--enable-ldap
 .endif
 
 .if empty(SUBPACKAGE)
-WANTLIB+=		ICE SM Xext Xrender c pthread z glitz gthread-2.0.0.0 pangoft2-1.0.0.0 png
+WANTLIB+=		ICE SM c pthread gthread-2.0.0.0
 .endif
 
 .if defined(PACKAGING) && !empty(SUBPACKAGE)
@@ -112,20 +114,16 @@ RUN_DEPENDS=            ::mail/sylpheed-claws
 
 .if !defined(PACKAGING) || ${SUBPACKAGE} == "-dillo"
 RUN_DEPENDS+=		:dillo-*:www/dillo
-WANTLIB+=		pangoft2-1.0.0.0
 .endif
 
 .if !defined(PACKAGING) || ${SUBPACKAGE} == "-imageviewer"
-WANTLIB+=		pangoft2-1.0.0.0
 .endif
 
 .if !defined(PACKAGING) || ${SUBPACKAGE} == "-spamassassin"
 RUN_DEPENDS+=		:p5-Mail-SpamAssassin-*:mail/p5-Mail-SpamAssassin
-WANTLIB+=		pangoft2-1.0.0.0
 .endif
 
 .if !defined(PACKAGING) || ${SUBPACKAGE} == "-trayicon"
-WANTLIB+=		Xrender Xext z pangoft2-1.0.0.0 glitz png
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-themes"
