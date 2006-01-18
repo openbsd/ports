@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_lib_lbaselib_c,v 1.1 2006/01/18 11:17:03 pedro Exp $
+--- src/lib/lbaselib.c.orig	Tue Jan 17 13:44:57 2006
++++ src/lib/lbaselib.c	Tue Jan 17 13:45:42 2006
+@@ -340,17 +340,17 @@ static int luaB_tostring (lua_State *L) 
+       lua_pushstring(L, (lua_toboolean(L, 1) ? "true" : "false"));
+       return 1;
+     case LUA_TTABLE:
+-      sprintf(buff, "table: %p", lua_topointer(L, 1));
++      snprintf(buff, sizeof(buff), "table: %p", lua_topointer(L, 1));
+       break;
+     case LUA_TFUNCTION:
+-      sprintf(buff, "function: %p", lua_topointer(L, 1));
++      snprintf(buff, sizeof(buff), "function: %p", lua_topointer(L, 1));
+       break;
+     case LUA_TUSERDATA:
+     case LUA_TLIGHTUSERDATA:
+-      sprintf(buff, "userdata: %p", lua_touserdata(L, 1));
++      snprintf(buff, sizeof(buff), "userdata: %p", lua_touserdata(L, 1));
+       break;
+     case LUA_TTHREAD:
+-      sprintf(buff, "thread: %p", (void *)lua_tothread(L, 1));
++      snprintf(buff, sizeof(buff), "thread: %p", (void *)lua_tothread(L, 1));
+       break;
+     case LUA_TNIL:
+       lua_pushliteral(L, "nil");

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_lib_liolib_c,v 1.1 2006/01/18 11:17:03 pedro Exp $
+--- src/lib/liolib.c.orig	Tue Jan 17 13:46:10 2006
++++ src/lib/liolib.c	Tue Jan 17 13:46:46 2006
+@@ -178,9 +178,9 @@ static int io_tostring (lua_State *L) {
+   char buff[128];
+   FILE **f = topfile(L, 1);
+   if (*f == NULL)
+-    strcpy(buff, "closed");
++    strlcpy(buff, "closed", sizeof(buff));
+   else
+-    sprintf(buff, "%p", lua_touserdata(L, 1));
++    snprintf(buff, sizeof(buff), "%p", lua_touserdata(L, 1));
+   lua_pushfstring(L, "file (%s)", buff);
+   return 1;
+ }
