@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.8 2005/10/24 10:36:02 aanriot Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2006/01/18 05:15:48 steven Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -9,7 +9,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITE_REDHAT=ftp://ftp.redhat.com/pub/ \
+MASTER_SITE_REDHAT=ftp://archive.download.redhat.com/pub/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.redhat.com/pub/ \
 		ftp://ftp.uni-bayreuth.de/pub/redhat.com/
 
