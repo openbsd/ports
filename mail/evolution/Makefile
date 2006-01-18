@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2005/12/28 22:43:19 steven Exp $
+# $OpenBSD: Makefile,v 1.25 2006/01/18 17:15:22 steven Exp $
 
 COMMENT=		"integrated email and PIM software for GNOME"
 
 PARENT_VERS=		2.2
 VERSION=		${PARENT_VERS}.3
 DISTNAME=		evolution-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=    		mail x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/projects/evolution/
@@ -62,7 +62,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 Xft Xrender \
+WANTLIB=		ICE SM X11 Xext Xft Xrender \
 			c crypto fontconfig freetype pthread m ssl z \
 			ORBit-2 ORBitCosNaming-2 art_lgpl_2.5 atk-1.0.0.0 \
 			audiofile bonobo-2 bonobo-activation.4.0 bonoboui-2 \
@@ -72,7 +72,7 @@ WANTLIB=		ICE SM X11 Xft Xrender \
 			gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 gtk-x11-2.0.0.0 \
 			gnome-2 gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 \
 			gnomeprint-2-2 gnomeprintui-2-2 \
-			jpeg popt soup-2.2.7.0 xml2
+			jpeg popt sasl2 soup-2.2.7.0 xml2
 
 MASTER_SITES=		${MASTER_SITE_GNOME:S@$@sources/evolution/${PARENT_VERS}/@}
 EXTRACT_SUFX=           .tar.bz2
