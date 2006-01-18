@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.86 2006/01/05 22:11:37 steven Exp $
+# $OpenBSD: Makefile,v 1.87 2006/01/18 22:01:17 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"Gtk AIM, ICQ, IRC, Jabber, MSN, Yahoo, SILC and Zephyr client"
 
 DISTNAME=	gaim-1.5.0
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 SHARED_LIBS=	gaim-remote 0.0
 CATEGORIES=	net
 
@@ -18,10 +18,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		glib-2.0.0.0 ICE SM X11 Xext Xrender Xss \
+WANTLIB=		glib-2.0.0.0 ICE SM X11 Xext Xft Xrender Xss \
 			atk-1.0.0.0 c crypto fontconfig freetype \
 			gmodule-2.0.0.0 gobject-2.0.0.0 m pango-1.0.0.0 \
-			ssl stdc++ z cairo glitz png pangocairo-1.0.0.0 \
+			ssl stdc++ pangox-1.0.0.0 pangoxft-1.0.0.0 \
 			pangoft2-1.0.0.0
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gaim/}
@@ -35,6 +35,7 @@ BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
+LIBTOOL_FLAGS+=	--tag=disable-static
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --disable-gevolution \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.44 2006/01/05 22:11:37 steven Exp $
+@comment $OpenBSD: PLIST,v 1.45 2006/01/18 22:01:18 steven Exp $
 bin/gaim
 bin/gaim-remote
 include/gaim/
@@ -73,91 +73,62 @@ include/gaim/value.h
 include/gaim/version.h
 include/gaim/xmlnode.h
 lib/gaim/
-lib/gaim/autorecon.a
 @comment lib/gaim/autorecon.la
 lib/gaim/autorecon.so
-lib/gaim/docklet.a
 @comment lib/gaim/docklet.la
 lib/gaim/docklet.so
-lib/gaim/extplacement.a
 @comment lib/gaim/extplacement.la
 lib/gaim/extplacement.so
-lib/gaim/gaim-remote.a
 @comment lib/gaim/gaim-remote.la
 lib/gaim/gaim-remote.so
-lib/gaim/gestures.a
 @comment lib/gaim/gestures.la
 lib/gaim/gestures.so
-lib/gaim/history.a
 @comment lib/gaim/history.la
 lib/gaim/history.so
-lib/gaim/iconaway.a
 @comment lib/gaim/iconaway.la
 lib/gaim/iconaway.so
-lib/gaim/idle.a
 @comment lib/gaim/idle.la
 lib/gaim/idle.so
-lib/gaim/libgg.a
 @comment lib/gaim/libgg.la
 lib/gaim/libgg.so
-lib/gaim/libirc.a
 @comment lib/gaim/libirc.la
 lib/gaim/libirc.so
-lib/gaim/libjabber.a
 @comment lib/gaim/libjabber.la
 lib/gaim/libjabber.so
-lib/gaim/libmsn.a
 @comment lib/gaim/libmsn.la
 lib/gaim/libmsn.so
-lib/gaim/libnapster.a
 @comment lib/gaim/libnapster.la
 lib/gaim/libnapster.so
-lib/gaim/libnovell.a
 @comment lib/gaim/libnovell.la
 lib/gaim/libnovell.so
-lib/gaim/liboscar.a
 @comment lib/gaim/liboscar.la
 lib/gaim/liboscar.so
-lib/gaim/libsilcgaim.a
 @comment lib/gaim/libsilcgaim.la
 lib/gaim/libsilcgaim.so
-lib/gaim/libyahoo.a
 @comment lib/gaim/libyahoo.la
 lib/gaim/libyahoo.so
-lib/gaim/libzephyr.a
 @comment lib/gaim/libzephyr.la
 lib/gaim/libzephyr.so
-lib/gaim/notify.a
 @comment lib/gaim/notify.la
 lib/gaim/notify.so
-lib/gaim/relnot.a
 @comment lib/gaim/relnot.la
 lib/gaim/relnot.so
-lib/gaim/spellchk.a
 @comment lib/gaim/spellchk.la
 lib/gaim/spellchk.so
-lib/gaim/ssl-gnutls.a
 @comment lib/gaim/ssl-gnutls.la
 lib/gaim/ssl-gnutls.so
-lib/gaim/ssl-nss.a
 @comment lib/gaim/ssl-nss.la
 lib/gaim/ssl-nss.so
-lib/gaim/ssl-openssl.a
 @comment lib/gaim/ssl-openssl.la
 lib/gaim/ssl-openssl.so
-lib/gaim/ssl.a
 @comment lib/gaim/ssl.la
 lib/gaim/ssl.so
-lib/gaim/statenotify.a
 @comment lib/gaim/statenotify.la
 lib/gaim/statenotify.so
-lib/gaim/ticker.a
 @comment lib/gaim/ticker.la
 lib/gaim/ticker.so
-lib/gaim/timestamp.a
 @comment lib/gaim/timestamp.la
 lib/gaim/timestamp.so
-lib/libgaim-remote.a
 lib/libgaim-remote.la
 @lib lib/libgaim-remote.so.${LIBgaim-remote_VERSION}
 lib/pkgconfig/gaim.pc
