@@ -1,0 +1,12 @@
+$OpenBSD: patch-j2sdk1_3_1_src_share_native_java_util_zip_Inflater_c,v 1.1 2006/01/18 15:12:55 kurt Exp $
+--- j2sdk1.3.1/src/share/native/java/util/zip/Inflater.c.orig	Tue Jan 17 21:40:32 2006
++++ j2sdk1.3.1/src/share/native/java/util/zip/Inflater.c	Tue Jan 17 21:41:00 2006
+@@ -24,8 +24,6 @@
+ 
+ /* avoid platform-dependent include files */
+ 
+-extern int read(int fildes, void *buf, size_t nbyte);
+-
+ 
+ #include "java_util_zip_Inflater.h"
+ 

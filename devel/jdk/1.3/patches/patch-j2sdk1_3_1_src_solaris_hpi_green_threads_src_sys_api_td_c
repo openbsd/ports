@@ -1,0 +1,22 @@
+$OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_green_threads_src_sys_api_td_c,v 1.1 2006/01/18 15:12:55 kurt Exp $
+--- j2sdk1.3.1/src/solaris/hpi/green_threads/src/sys_api_td.c.orig	Tue Jan 17 21:34:26 2006
++++ j2sdk1.3.1/src/solaris/hpi/green_threads/src/sys_api_td.c	Tue Jan 17 21:37:24 2006
+@@ -451,14 +451,14 @@ sysGetProtoByName(char* name) {
+  */
+ 
+ ssize_t
+-sysSendTo(int fd, char *buf, int len, 
+-	  int flags, struct sockaddr *to, int tolen) {
++sysSendTo(int fd, char *buf, size_t len, 
++	  int flags, struct sockaddr *to, socklen_t tolen) {
+     INTERRUPT_IO(ssize_t, sendto(fd, buf, len, flags, to, tolen))
+ }
+ 
+ ssize_t
+-sysRecvFrom(int fd, char *buf, int nBytes, 
+-	    int flags, struct sockaddr *from, int *fromlen) {
++sysRecvFrom(int fd, char *buf, size_t nBytes, 
++	    int flags, struct sockaddr *from, socklen_t *fromlen) {
+     INTERRUPT_IO(ssize_t, recvfrom(fd, buf, nBytes, flags, from, fromlen))
+ }
+ 

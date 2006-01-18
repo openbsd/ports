@@ -1,0 +1,18 @@
+$OpenBSD: patch-j2sdk1_3_1_src_share_hpi_include_hpi_impl_h,v 1.1 2006/01/18 15:12:55 kurt Exp $
+--- j2sdk1.3.1/src/share/hpi/include/hpi_impl.h.orig	Tue Jan 17 21:31:02 2006
++++ j2sdk1.3.1/src/share/hpi/include/hpi_impl.h	Tue Jan 17 21:37:27 2006
+@@ -123,10 +123,10 @@ int sysConnect(int fd, struct sockaddr *
+ int sysBind(int fd, struct sockaddr *him, int len);
+ int sysAccept(int fd, struct sockaddr *him, int *len);
+ int sysGetSockName(int fd, struct sockaddr *him, int *len);
+-int sysSendTo(int fd, char *buf, int len, int flags, struct sockaddr *to,
+-	      int tolen);
+-int sysRecvFrom(int fd, char *buf, int nbytes, int flags,
+-                struct sockaddr *from, int *fromlen);
++ssize_t sysSendTo(int fd, char *buf, size_t len, int flags,
++	          struct sockaddr *to, socklen_t tolen);
++ssize_t sysRecvFrom(int fd, char *buf, size_t nbytes, int flags,
++                    struct sockaddr *from, socklen_t *fromlen);
+ int sysListen(int fd, long count);
+ int sysRecv(int fd, char *buf, int nBytes, int flags);
+ int sysSend(int fd, char *buf, int nBytes, int flags);
