@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.80 2006/01/18 17:43:14 steven Exp $
+# $OpenBSD: network.conf.template,v 1.81 2006/01/18 21:23:14 steven Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -163,7 +163,7 @@ MASTER_SITE_PERL_CPAN+=	\
 	ftp://sunsite.org.uk/package/cpan/modules/by-module/ \
 	ftp://ftp.chg.ru/pub/lang/perl/CPAN/modules/by-module/ \
 	http://www.cpan.dk/modules/by-module/ \
-	ftp://mirrors.dotsrc.org/cpan/
+	ftp://mirrors.dotsrc.org/cpan/modules/by-module/
 
 MASTER_SITE_TEX_CTAN+=	\
 	ftp://ftp.funet.fi/pub/TeX/CTAN/ \
