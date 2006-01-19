@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.81 2006/01/18 21:23:14 steven Exp $
+# $OpenBSD: network.conf.template,v 1.82 2006/01/19 19:53:21 steven Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -243,20 +243,19 @@ MASTER_SITE_FREEBSD_LOCAL+=	\
 
 MASTER_SITE_PACKETSTORM+=	\
 	http://packetstorm.linuxsecurity.com/ \
-	http://packetstorm.defcon.tv/ \
+	http://packetstorm.orion-hosting.co.uk/ \
 	http://packetstormsecurity.nl/ \
-	http://packetstorm.acm.miami.edu/ \
+	http://packetstorm.linuxexposed.com/ \
 	http://packetstormsecurity.org.pk/ \
+	http://packetstormsecurity.org.uk/ \
 	http://packetstorm.security-guide.de/ \
-	http://packetstormsecurity.com.ar/ \
-	http://packetstormsecurity.packetstorm.org/ \
-	http://packetstorm.digitallinx.com/ \
 	http://packetstorm.icx.fr/ \
 	http://packetstorm.digital-network.net/ \
 	http://packetstorm.troop218.org/ \
 	http://packetstorm.dyn.org/ \
 	http://packetstorm.blackroute.net/ \
-	http://packetstorm.trustica.cz/
+	http://packetstorm.ussrback.com/ \
+	http://packetstorm.rlz.cl/
 
 MASTER_SITE_HORDE+=		\
 	ftp://ftp.horde.org/pub/ \
