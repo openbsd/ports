@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2006/01/17 20:50:46 sturm Exp $
+# $OpenBSD: Makefile,v 1.26 2006/01/19 19:23:42 steven Exp $
 
 COMMENT=		"Gtk-based GUI client for the Gnutella Network"
 
 DISTNAME=		gtk-gnutella-0.96b
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=     	net 
 
 HOMEPAGE=		http://gtk-gnutella.sourceforge.net/
@@ -14,9 +15,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	X11 atk-1.0.0.0 c cairo fontconfig.2 freetype.13 \
-		glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 iconv intl m \
-		pango-1.0.0.0 pangocairo-1.0.0.0 pangoft2-1.0.0.0 z
+WANTLIB=	X11 Xext Xft Xrender atk-1.0.0.0 c fontconfig.2 freetype.13 \
+		glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 m z \
+		pango-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 pangoft2-1.0.0.0
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtk-gnutella/}
 EXTRACT_SUFX=	.tar.bz2
@@ -24,6 +25,8 @@ EXTRACT_SUFX=	.tar.bz2
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
 		xml2::textproc/libxml
+
+MODULES=	devel/gettext
 
 CONFIGURE_STYLE= simple
 CONFIGURE_SCRIPT=Configure

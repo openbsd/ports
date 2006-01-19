@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2006/01/17 20:50:46 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.14 2006/01/19 19:23:42 steven Exp $
 bin/gtk-gnutella
 @man man/man1/gtk-gnutella.1
 share/applications/
@@ -47,33 +47,14 @@ share/gtk-gnutella/pixmaps/ultra.xpm
 share/gtk-gnutella/pixmaps/upload.xpm
 share/gtk-gnutella/pixmaps/warning.xpm
 share/gtk-gnutella/robots.txt
-share/locale/
-share/locale/de/
-share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/gtk-gnutella.mo
-share/locale/el/
-share/locale/el/LC_MESSAGES/
 share/locale/el/LC_MESSAGES/gtk-gnutella.mo
-share/locale/es/
-share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/gtk-gnutella.mo
-share/locale/fr/
-share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/gtk-gnutella.mo
-share/locale/hu/
-share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/gtk-gnutella.mo
-share/locale/ja/
-share/locale/ja/LC_MESSAGES/
 share/locale/ja/LC_MESSAGES/gtk-gnutella.mo
-share/locale/nl/
-share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/gtk-gnutella.mo
-share/locale/uk/
-share/locale/uk/LC_MESSAGES/
 share/locale/uk/LC_MESSAGES/gtk-gnutella.mo
-share/locale/zh_CN/
-share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_CN/LC_MESSAGES/gtk-gnutella.mo
 share/pixmaps/
 share/pixmaps/gtk-gnutella.png
