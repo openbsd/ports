@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2005/09/16 09:51:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.19 2006/01/19 17:22:42 steven Exp $
 @pkgpath x11/gnome/applets2,no_battstat
 bin/gswitchit-plugins-capplet
 include/libgswitchit/
@@ -930,8 +930,6 @@ share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/fi/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/fr/LC_MESSAGES/gnome-applets-2.0.mo
-share/locale/ga/
-share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/gl/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/gu/
