@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2005/12/25 23:40:43 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2006/01/19 10:38:01 aanriot Exp $
 
 COMMENT=	"hfsplus filesystem access tool"
 
@@ -35,7 +35,6 @@ CONFIGURE_ENV=	LIBS="-lutf8" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}
 SHARED_LIBS=	hfsp	0.0
-MODGNU_SHARED_LIBS=	hfsp	''
 
 pre-configure:
 	@cd ${WRKDIST} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
