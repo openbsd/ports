@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/01/18 15:08:16 kurt Exp $
+# $OpenBSD: Makefile,v 1.11 2006/01/19 22:02:48 kurt Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/java/jdk14/Makefile,v 1.79 2004/08/18 07:06:03 glewis Exp $
 
 ONLY_FOR_ARCHS= 	i386
@@ -162,10 +162,10 @@ post-patch:
 	@cd ${WRKDIR}/bin && \
 		ln -s bootscript ${prog}
 .endfor
-.endif
 
 pre-build:
 	@${SYSCTL}=1
+.endif
 
 post-build:
 	@rm -rf ${JDKIMAGEDIR}/demo/jfc/SwingSet2/resources \
