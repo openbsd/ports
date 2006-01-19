@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2005/09/10 07:02:05 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.9 2006/01/19 13:13:08 steven Exp $
 bin/galeon
 bin/galeon-bin
 bin/galeon-config-tool
@@ -184,15 +184,11 @@ share/locale/am/LC_MESSAGES/galeon-2.0.mo
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/galeon-2.0.mo
-share/locale/be/
-share/locale/be/LC_MESSAGES/
 share/locale/be/LC_MESSAGES/galeon-2.0.mo
 share/locale/bg/LC_MESSAGES/galeon-2.0.mo
 share/locale/bs/
 share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/galeon-2.0.mo
-share/locale/ca/
-share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/galeon-2.0.mo
 share/locale/cs/LC_MESSAGES/galeon-2.0.mo
 share/locale/da/LC_MESSAGES/galeon-2.0.mo
@@ -211,8 +207,6 @@ share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/galeon-2.0.mo
 share/locale/fi/LC_MESSAGES/galeon-2.0.mo
 share/locale/fr/LC_MESSAGES/galeon-2.0.mo
-share/locale/ga/
-share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/galeon-2.0.mo
 share/locale/gl/LC_MESSAGES/galeon-2.0.mo
 share/locale/hr/LC_MESSAGES/galeon-2.0.mo
@@ -248,13 +242,14 @@ share/locale/pt/LC_MESSAGES/galeon-2.0.mo
 share/locale/pt_BR/LC_MESSAGES/galeon-2.0.mo
 share/locale/ro/LC_MESSAGES/galeon-2.0.mo
 share/locale/ru/LC_MESSAGES/galeon-2.0.mo
+share/locale/rw/
+share/locale/rw/LC_MESSAGES/
+share/locale/rw/LC_MESSAGES/galeon-2.0.mo
 share/locale/sk/LC_MESSAGES/galeon-2.0.mo
 share/locale/sl/LC_MESSAGES/galeon-2.0.mo
 share/locale/sq/
 share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/galeon-2.0.mo
-share/locale/sr/
-share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/galeon-2.0.mo
 share/locale/sr@Latn/
 share/locale/sr@Latn/LC_MESSAGES/
@@ -265,8 +260,6 @@ share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/galeon-2.0.mo
 share/locale/tr/LC_MESSAGES/galeon-2.0.mo
 share/locale/uk/LC_MESSAGES/galeon-2.0.mo
-share/locale/vi/
-share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/galeon-2.0.mo
 share/locale/wa/
 share/locale/wa/LC_MESSAGES/
