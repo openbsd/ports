@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/12/10 20:36:43 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2006/01/19 08:41:08 steven Exp $
 bin/ggv
 lib/bonobo/
 lib/bonobo/servers/
@@ -110,8 +110,6 @@ share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/ggv.mo
 share/locale/fi/LC_MESSAGES/ggv.mo
 share/locale/fr/LC_MESSAGES/ggv.mo
-share/locale/ga/
-share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/ggv.mo
 share/locale/gl/LC_MESSAGES/ggv.mo
 share/locale/gu/
