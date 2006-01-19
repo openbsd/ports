@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2005/12/24 09:14:42 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2006/01/19 14:20:17 mbalmer Exp $
 
 COMMENT=	"format ascii files for printing on PostScript printers"
 
 DISTNAME=	a2ps-4.13b
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 WRKDIST=	${WRKDIR}/a2ps-4.13
 CATEGORIES=	print
 SHARED_LIBS=	a2ps	2.0
@@ -26,12 +26,14 @@ USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/auxdir
 
-FLAVORS=	a4 letter letterdj
+FLAVORS=	a4 a4dj letter letterdj
 FLAVOR?=	letter
 
 .if defined(FLAVOR)
 .if ${FLAVOR:L} == "a4"
 PAPERSIZE=	A4
+.elif ${FLAVOR:L} == "a4dj"
+PAPERSIZE=	A4dj
 .elif ${FLAVOR:L} == "letterdj"
 PAPERSIZE=	Letterdj
 .elif ${FLAVOR:L} == "letter"
