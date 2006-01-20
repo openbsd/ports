@@ -1,0 +1,3 @@
+Libgpod is a shared library to access the contents of an iPod.  This
+library is based on code used in the gtkpod project.  It supports
+playlists, smart playlists, playcounts, ratings and podcasts.

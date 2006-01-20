@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_db-parse-context_c,v 1.1.1.1 2006/01/20 06:23:51 jolan Exp $
+--- src/db-parse-context.c.orig	Fri Jan  6 13:19:48 2006
++++ src/db-parse-context.c	Fri Jan  6 13:20:05 2006
+@@ -23,9 +23,9 @@
+  */
+ 
+ 
++#include <sys/types.h>
+ #include <sys/mman.h>
+ #include <sys/stat.h>
+-#include <sys/types.h>
+ #include <errno.h>
+ #include <fcntl.h>
+ #include <string.h>
