@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_file_export_c,v 1.1 2005/03/06 18:29:08 jcs Exp $
---- src/file_export.c.orig	Sun Aug 22 04:33:43 2004
-+++ src/file_export.c	Sun Mar  6 12:12:51 2005
-@@ -77,7 +77,7 @@ const gchar *EXPORT_FILES_TPL_DFLT="%o;%
+$OpenBSD: patch-src_file_export_c,v 1.2 2006/01/20 06:27:28 jolan Exp $
+--- src/file_export.c.orig	Sat Dec 10 10:04:28 2005
++++ src/file_export.c	Fri Jan  6 15:45:20 2006
+@@ -78,7 +78,7 @@ const gchar *EXPORT_FILES_TPL_DFLT="%o;%
  /**
   * READ_WRITE_BLOCKSIZE - how many bytes we read per fread/fwrite call
   */

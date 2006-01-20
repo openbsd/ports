@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/04/18 23:42:00 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/01/20 06:27:28 jolan Exp $
 bin/gtkpod
 share/gtkpod/
+share/gtkpod/gtkpod.glade
+share/gtkpod/gtkpod.gladep
 share/gtkpod/pixmaps/
 share/gtkpod/pixmaps/gtkpod-add-dirs.png
 share/gtkpod/pixmaps/gtkpod-add-files.png
@@ -15,14 +17,21 @@ share/gtkpod/pixmaps/gtkpod-logo.png
 share/gtkpod/pixmaps/gtkpod-new-playlist.png
 share/gtkpod/pixmaps/gtkpod-read.png
 share/gtkpod/pixmaps/gtkpod-sync.png
+share/gtkpod/pixmaps/gtkpod.glade
+share/gtkpod/pixmaps/gtkpod.gladep
 share/gtkpod/scripts/
+share/gtkpod/scripts/mab2vcard
+share/gtkpod/scripts/sync-abook.sh
 share/gtkpod/scripts/sync-evocalendar.sh
 share/gtkpod/scripts/sync-evolution.sh
 share/gtkpod/scripts/sync-kaddressbook.sh
 share/gtkpod/scripts/sync-korganizer.sh
 share/gtkpod/scripts/sync-notes.sh
+share/gtkpod/scripts/sync-thunderbird.sh
+share/gtkpod/scripts/sync-webcalendar.sh
 share/locale/de/LC_MESSAGES/gtkpod.mo
 share/locale/fr/LC_MESSAGES/gtkpod.mo
+share/locale/he/LC_MESSAGES/gtkpod.mo
 share/locale/it/LC_MESSAGES/gtkpod.mo
 share/locale/ja/LC_MESSAGES/gtkpod.mo
 share/locale/sv/LC_MESSAGES/gtkpod.mo

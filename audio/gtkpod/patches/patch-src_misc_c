@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_misc_c,v 1.1 2006/01/20 06:27:28 jolan Exp $
+--- src/misc.c.orig	Sat Dec 10 10:04:28 2005
++++ src/misc.c	Fri Jan  6 15:45:20 2006
+@@ -400,7 +400,7 @@ mount_ipod(void)
+ 	switch (pid)
+ 	{
+ 	    case 0: /* child */
+-		execl(MOUNT_BIN, "mount", str, NULL);
++		execl(MOUNT_BIN, "mount", str, (void *)NULL);
+ 		exit (1);
+ 		break;
+ 	    case -1: /* parent and error */
+@@ -435,7 +435,7 @@ unmount_ipod(void)
+ 	switch (pid)
+ 	{
+ 	    case 0: /* child */
+-		execl (UMOUNT_BIN, "umount", mp, NULL);
++		execl (UMOUNT_BIN, "umount", mp, (void *)NULL);
+ 		exit (1); /* this is only reached in case of an error */
+ 		break;
+ 	    case -1: /* parent and error */
+@@ -476,7 +476,7 @@ unmount_ipod(void)
+ 	    switch (pid)
+ 	    {
+ 	    case 0: /* child */
+-		execl (eject_bin, "eject", ipod_device, NULL);
++		execl (eject_bin, "eject", ipod_device, (void *)NULL);
+ 		exit (1); /* this is only reached in case of an error */
+ 		break;
+ 	    case -1: /* parent and error */
+@@ -513,7 +513,7 @@ static void do_script (gchar *script)
+ 	switch (pid)
+ 	{
+ 	case 0: /* child */
+-	    execl("/bin/sh", "sh", script, NULL);
++	    execl("/bin/sh", "sh", script, (void *)NULL);
+ 	    exit(0);
+ 	break;
+ 	case -1: /* parent and error */
