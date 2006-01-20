@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/05/23 20:29:45 marius Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/01/20 13:12:03 steven Exp $
 %%SHARED%%
 bin/sawfish
 bin/sawfish-client
 bin/sawfish-ui
 @info info/sawfish.info
-libexec/rep/
-libexec/rep/${GNU_ARCH}/
 libexec/rep/${GNU_ARCH}/sawfish/
 libexec/rep/${GNU_ARCH}/sawfish/client.a
 libexec/rep/${GNU_ARCH}/sawfish/client.la
@@ -35,9 +33,6 @@ libexec/sawfish/${VERSION}/${GNU_ARCH}/selection.a
 libexec/sawfish/${VERSION}/${GNU_ARCH}/selection.la
 libexec/sawfish/${VERSION}/${GNU_ARCH}/x.a
 libexec/sawfish/${VERSION}/${GNU_ARCH}/x.la
-share/locale/
-share/locale/no/
-share/locale/no/LC_MESSAGES/
 share/locale/no/LC_MESSAGES/sawfish.mo
 share/pixmaps/
 share/pixmaps/sawfish-logo.png

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2005/01/31 19:01:47 couderc Exp $
+@comment $OpenBSD: PLIST,v 1.15 2006/01/20 13:12:03 steven Exp $
 bin/rox
 @man man/man1/ROX-Filer.1
 @man man/man1/rox.1
@@ -7,6 +7,7 @@ rox/ROX-Filer/
 rox/ROX-Filer/.DirIcon
 rox/ROX-Filer/AppInfo.xml
 rox/ROX-Filer/AppRun
+@comment rox/ROX-Filer/AppRun.orig
 rox/ROX-Filer/Help/
 rox/ROX-Filer/Help/COPYING
 rox/ROX-Filer/Help/Changes
@@ -22,6 +23,7 @@ rox/ROX-Filer/Messages/cs.gmo
 rox/ROX-Filer/Messages/da.gmo
 rox/ROX-Filer/Messages/de.gmo
 rox/ROX-Filer/Messages/es.gmo
+rox/ROX-Filer/Messages/fi.gmo
 rox/ROX-Filer/Messages/fr.gmo
 rox/ROX-Filer/Messages/hu.gmo
 rox/ROX-Filer/Messages/it.gmo
@@ -237,6 +239,7 @@ rox/ROX-Filer/src/po/da.po
 rox/ROX-Filer/src/po/de.po
 rox/ROX-Filer/src/po/dist
 rox/ROX-Filer/src/po/es.po
+rox/ROX-Filer/src/po/fi.po
 rox/ROX-Filer/src/po/fr.po
 rox/ROX-Filer/src/po/hu.po
 rox/ROX-Filer/src/po/it.po

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2005/11/15 22:14:51 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2006/01/20 13:12:03 steven Exp $
 
 COMMENT=		"graphical ports system frontend"
 
 DISTNAME=	 	pb-browser-0.4	
-PKGNAME=	 	${DISTNAME}p0
+PKGNAME=	 	${DISTNAME}p1
 CATEGORIES=		x11 sysutils
 
 MAINTAINER=		Igor Boehm <igor@bytelabs.org>	
@@ -14,9 +14,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	X11 atk-1.0.0.0 c cairo fontconfig freetype glib-2.0.0.0 \
-		gmodule-2.0.0.0 gobject-2.0.0.0 gthread-2.0.0.0 m pango-1.0.0.0 \
-		pangocairo-1.0.0.0 pangoft2-1.0.0.0 pthread util
+WANTLIB=	X11 Xext Xft Xrender c fontconfig freetype m glib-2.0.0.0 \
+		gmodule-2.0.0.0 gobject-2.0.0.0 gthread-2.0.0.0 \
+		atk-1.0.0.0 pango-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 \
+		pangoft2-1.0.0.0 pthread util
 
 MASTER_SITES=		http://www.bytelabs.org/	
 EXTRACT_SUFX=		.tgz

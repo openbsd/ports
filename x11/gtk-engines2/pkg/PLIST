@@ -1,11 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.13 2005/12/12 14:29:30 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2006/01/20 13:12:02 steven Exp $
 @conflict gtk-thinice-engine-*
 @conflict gtk2-clearlooks-engine-*
 @conflict gnome-themes-<2.10
 %%SHARED%%
-lib/gtk-2.0/
-lib/gtk-2.0/2.4.0/
-lib/gtk-2.0/2.4.0/engines/
 lib/gtk-2.0/2.4.0/engines/libclearlooks.a
 lib/gtk-2.0/2.4.0/engines/libclearlooks.la
 lib/gtk-2.0/2.4.0/engines/libcrux-engine.a
@@ -26,9 +23,7 @@ lib/gtk-2.0/2.4.0/engines/libsmooth.a
 lib/gtk-2.0/2.4.0/engines/libsmooth.la
 lib/gtk-2.0/2.4.0/engines/libthinice.a
 lib/gtk-2.0/2.4.0/engines/libthinice.la
-lib/pkgconfig/
 lib/pkgconfig/gtk-engines-2.pc
-share/themes/
 share/themes/Clearlooks/
 share/themes/Clearlooks/gtk-2.0/
 share/themes/Clearlooks/gtk-2.0/gtkrc
