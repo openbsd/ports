@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2005/11/16 10:34:23 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2006/01/20 23:17:56 steven Exp $
 
 COMMENT=	"essential utilities and scripts for xfce4"
 V=		4.2.3
 DISTNAME=	xfce-utils-${V}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
 
 HOMEPAGE=	http://www.xfce.org/
@@ -21,11 +21,10 @@ LIB_DEPENDS=	dbh.1.0::databases/dbh \
 		xfcegui4.3.4::x11/xfce4/libxfcegui4 \
 		xfce4mcs-client.2.3,xfce4mcs-manager.2.3::x11/xfce4/libxfce4mcs
 RUN_DEPENDS=	:xfce-mcs-manager-*:x11/xfce4/xfce-mcs-manager
-WANTLIB=	ICE SM X11 Xext Xrender c fontconfig \
-		freetype m z \
+WANTLIB=	ICE SM X11 Xext Xft Xrender c fontconfig freetype m \
 		atk-1.0.0.0 gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 glib-2.0.0.0 \
 		gmodule-2.0.0.0 gobject-2.0.0.0 gtk-x11-2.0.0.0 pango-1.0.0.0 \
-		pangocairo-1.0.0.0 pangoft2-1.0.0.0 cairo glitz png \
+		pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 \
 		startup-notification-1.0.0 xfce4util.1
 
 CONFIGURE_ARGS+=--with-browser="xterm -e lynx"
