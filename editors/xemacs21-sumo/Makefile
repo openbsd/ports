@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2005/11/03 15:55:07 aanriot Exp $
+# $OpenBSD: Makefile,v 1.12 2006/01/20 18:48:59 aanriot Exp $
 
-VERSION=		2005-07-15
+VERSION=		2005-12-08
 PKGNAME=		xemacs-sumo-21.${VERSION:S/-//g}
 EXTRACT_SUFX=		.tar.gz
 DISTFILES=		xemacs-sumo-${VERSION}${EXTRACT_SUFX}

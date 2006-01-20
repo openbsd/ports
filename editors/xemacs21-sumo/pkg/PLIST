@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2005/11/03 15:55:07 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2006/01/20 18:48:59 aanriot Exp $
 lib/xemacs/
 lib/xemacs/xemacs-packages/
 lib/xemacs/xemacs-packages/etc/
@@ -1137,9 +1137,18 @@ lib/xemacs/xemacs-packages/etc/reftex/
 lib/xemacs/xemacs-packages/etc/reftex/CHANGES
 lib/xemacs/xemacs-packages/etc/reftex/NUTSHELL
 lib/xemacs/xemacs-packages/etc/riece/
+lib/xemacs/xemacs-packages/etc/riece/AUTHORS
+lib/xemacs/xemacs-packages/etc/riece/HACKING
+lib/xemacs/xemacs-packages/etc/riece/HACKING.ja
+lib/xemacs/xemacs-packages/etc/riece/NEWS
+lib/xemacs/xemacs-packages/etc/riece/NEWS.ja
+lib/xemacs/xemacs-packages/etc/riece/README
+lib/xemacs/xemacs-packages/etc/riece/README.ja
+lib/xemacs/xemacs-packages/etc/riece/aproxy.rb
 lib/xemacs/xemacs-packages/etc/riece/riece-command-next-channel.xpm
 lib/xemacs/xemacs-packages/etc/riece/riece-command-previous-channel.xpm
 lib/xemacs/xemacs-packages/etc/riece/riece-submit-bug-report.xpm
+lib/xemacs/xemacs-packages/etc/riece/server.rb
 lib/xemacs/xemacs-packages/etc/slider/
 lib/xemacs/xemacs-packages/etc/slider/bar-left.xpm
 lib/xemacs/xemacs-packages/etc/slider/bar-right.xpm
@@ -1893,6 +1902,7 @@ lib/xemacs/xemacs-packages/lisp/ada/custom-load.el
 lib/xemacs/xemacs-packages/lisp/ada/custom-load.elc
 lib/xemacs/xemacs-packages/lisp/apel/
 lib/xemacs/xemacs-packages/lisp/apel/ChangeLog
+lib/xemacs/xemacs-packages/lisp/apel/ChangeLog.upstream
 lib/xemacs/xemacs-packages/lisp/apel/README.en
 lib/xemacs/xemacs-packages/lisp/apel/README.ja
 lib/xemacs/xemacs-packages/lisp/apel/_pkg.el
@@ -2602,6 +2612,8 @@ lib/xemacs/xemacs-packages/lisp/edit-utils/compare-w.el
 lib/xemacs/xemacs-packages/lisp/edit-utils/compare-w.elc
 lib/xemacs/xemacs-packages/lisp/edit-utils/completion.el
 lib/xemacs/xemacs-packages/lisp/edit-utils/completion.elc
+lib/xemacs/xemacs-packages/lisp/edit-utils/crm.el
+lib/xemacs/xemacs-packages/lisp/edit-utils/crm.elc
 lib/xemacs/xemacs-packages/lisp/edit-utils/custom-load.el
 lib/xemacs/xemacs-packages/lisp/edit-utils/custom-load.elc
 lib/xemacs/xemacs-packages/lisp/edit-utils/dabbrev.el
@@ -4901,6 +4913,8 @@ lib/xemacs/xemacs-packages/lisp/riece/riece-400.el
 lib/xemacs/xemacs-packages/lisp/riece/riece-400.elc
 lib/xemacs/xemacs-packages/lisp/riece/riece-500.el
 lib/xemacs/xemacs-packages/lisp/riece/riece-500.elc
+lib/xemacs/xemacs-packages/lisp/riece/riece-addon-modules.el
+lib/xemacs/xemacs-packages/lisp/riece/riece-addon-modules.elc
 lib/xemacs/xemacs-packages/lisp/riece/riece-addon.el
 lib/xemacs/xemacs-packages/lisp/riece/riece-addon.elc
 lib/xemacs/xemacs-packages/lisp/riece/riece-alias.el
@@ -4911,6 +4925,8 @@ lib/xemacs/xemacs-packages/lisp/riece/riece-biff.el
 lib/xemacs/xemacs-packages/lisp/riece/riece-biff.elc
 lib/xemacs/xemacs-packages/lisp/riece/riece-button.el
 lib/xemacs/xemacs-packages/lisp/riece/riece-button.elc
+lib/xemacs/xemacs-packages/lisp/riece/riece-cache.el
+lib/xemacs/xemacs-packages/lisp/riece/riece-cache.elc
 lib/xemacs/xemacs-packages/lisp/riece/riece-channel.el
 lib/xemacs/xemacs-packages/lisp/riece/riece-channel.elc
 lib/xemacs/xemacs-packages/lisp/riece/riece-coding.el
@@ -4927,11 +4943,15 @@ lib/xemacs/xemacs-packages/lisp/riece/riece-ctlseq.el
 lib/xemacs/xemacs-packages/lisp/riece/riece-ctlseq.elc
 lib/xemacs/xemacs-packages/lisp/riece/riece-debug.el
 lib/xemacs/xemacs-packages/lisp/riece/riece-debug.elc
+lib/xemacs/xemacs-packages/lisp/riece/riece-develop.el
+lib/xemacs/xemacs-packages/lisp/riece/riece-develop.elc
 lib/xemacs/xemacs-packages/lisp/riece/riece-display.el
 lib/xemacs/xemacs-packages/lisp/riece/riece-display.elc
 lib/xemacs/xemacs-packages/lisp/riece/riece-doctor.el
 lib/xemacs/xemacs-packages/lisp/riece/riece-doctor.elc
 lib/xemacs/xemacs-packages/lisp/riece/riece-emacs.el
+lib/xemacs/xemacs-packages/lisp/riece/riece-eval-ruby.el
+lib/xemacs/xemacs-packages/lisp/riece/riece-eval-ruby.elc
 lib/xemacs/xemacs-packages/lisp/riece/riece-eval.el
 lib/xemacs/xemacs-packages/lisp/riece/riece-eval.elc
 lib/xemacs/xemacs-packages/lisp/riece/riece-filter.el
@@ -4984,12 +5004,17 @@ lib/xemacs/xemacs-packages/lisp/riece/riece-mode.el
 lib/xemacs/xemacs-packages/lisp/riece/riece-mode.elc
 lib/xemacs/xemacs-packages/lisp/riece/riece-naming.el
 lib/xemacs/xemacs-packages/lisp/riece/riece-naming.elc
+lib/xemacs/xemacs-packages/lisp/riece/riece-ndcc.el
 lib/xemacs/xemacs-packages/lisp/riece/riece-options.el
 lib/xemacs/xemacs-packages/lisp/riece/riece-options.elc
 lib/xemacs/xemacs-packages/lisp/riece/riece-rdcc.el
 lib/xemacs/xemacs-packages/lisp/riece/riece-rdcc.elc
+lib/xemacs/xemacs-packages/lisp/riece/riece-ruby.el
+lib/xemacs/xemacs-packages/lisp/riece/riece-ruby.elc
 lib/xemacs/xemacs-packages/lisp/riece/riece-server.el
 lib/xemacs/xemacs-packages/lisp/riece/riece-server.elc
+lib/xemacs/xemacs-packages/lisp/riece/riece-shrink-buffer.el
+lib/xemacs/xemacs-packages/lisp/riece/riece-shrink-buffer.elc
 lib/xemacs/xemacs-packages/lisp/riece/riece-signal.el
 lib/xemacs/xemacs-packages/lisp/riece/riece-signal.elc
 lib/xemacs/xemacs-packages/lisp/riece/riece-skk-kakutei.el
@@ -5008,10 +5033,10 @@ lib/xemacs/xemacs-packages/lisp/riece/riece-xemacs.el
 lib/xemacs/xemacs-packages/lisp/riece/riece-xemacs.elc
 lib/xemacs/xemacs-packages/lisp/riece/riece-xface.el
 lib/xemacs/xemacs-packages/lisp/riece/riece-xface.elc
+lib/xemacs/xemacs-packages/lisp/riece/riece-xfaceb.el
+lib/xemacs/xemacs-packages/lisp/riece/riece-xfaceb.elc
 lib/xemacs/xemacs-packages/lisp/riece/riece-yank.el
 lib/xemacs/xemacs-packages/lisp/riece/riece-yank.elc
-lib/xemacs/xemacs-packages/lisp/riece/riece.el
-lib/xemacs/xemacs-packages/lisp/riece/riece.elc
 lib/xemacs/xemacs-packages/lisp/riece/url-riece.el
 lib/xemacs/xemacs-packages/lisp/rmail/
 lib/xemacs/xemacs-packages/lisp/rmail/ChangeLog
