@@ -1,6 +1,6 @@
-$OpenBSD: patch-dovecot-example_conf,v 1.12 2006/01/16 21:32:59 brad Exp $
---- dovecot-example.conf.orig	Sun Jan 15 22:00:08 2006
-+++ dovecot-example.conf	Mon Jan 16 15:29:53 2006
+$OpenBSD: patch-dovecot-example_conf,v 1.13 2006/01/20 02:04:19 brad Exp $
+--- dovecot-example.conf.orig	Sun Jan 15 18:55:57 2006
++++ dovecot-example.conf	Thu Jan 19 21:00:29 2006
 @@ -5,13 +5,12 @@
  # value inside quotes, eg.: key = "# char and trailing whitespace  "
  
@@ -88,6 +88,15 @@ $OpenBSD: patch-dovecot-example_conf,v 1.12 2006/01/16 21:32:59 brad Exp $
  
    # Maximum IMAP command line length in bytes. Some clients generate very long
    # command lines with huge mailboxes, so you may need to raise this if you get
+@@ -463,7 +462,7 @@ protocol imap {
+   #     but not both. Thunderbird separates these two by forcing server to
+   #     accept '/' suffix in mailbox names in subscriptions list.
+   # The list is space-separated.
+-  #imap_client_workarounds = outlook-idle
++  imap_client_workarounds = delay-newmail outlook-idle netscape-eoh tb-extra-mailbox-sep
+ }
+   
+ ##
 @@ -472,10 +471,10 @@ protocol imap {
  
  protocol pop3 {
@@ -101,6 +110,24 @@ $OpenBSD: patch-dovecot-example_conf,v 1.12 2006/01/16 21:32:59 brad Exp $
  
    # Don't try to set mails non-recent or seen with POP3 sessions. This is
    # mostly intended to reduce disk I/O. With maildir it doesn't move files
+@@ -512,7 +511,7 @@ protocol pop3 {
+   # installations. %08Xu%08Xv will be the new default, so use it for new
+   # installations.
+   #
+-  #pop3_uidl_format = 
++  pop3_uidl_format = %08Xu%08Xv
+ 
+   # POP3 logout format string:
+   #  %t - number of TOP commands
+@@ -536,7 +535,7 @@ protocol pop3 {
+   #     Outlook Express and Netscape Mail breaks if end of headers-line is
+   #     missing. This option simply sends it if it's missing.
+   # The list is space-separated.
+-  #pop3_client_workarounds = 
++  pop3_client_workarounds = outlook-no-nuls oe-ns-eoh
+ }
+ 
+ ##
 @@ -544,7 +543,7 @@ protocol pop3 {
  ##
  
