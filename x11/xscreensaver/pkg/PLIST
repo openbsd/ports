@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2005/09/04 19:53:33 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2006/01/20 21:10:24 steven Exp $
 bin/xscreensaver
 bin/xscreensaver-command
 bin/xscreensaver-demo
@@ -417,6 +417,7 @@ libexec/xscreensaver/zoom
 @man man/man1/zoom.1
 share/applications/
 share/applications/gnome-screensaver-properties.desktop
+share/locale/ca/LC_MESSAGES/xscreensaver.mo
 share/locale/da/LC_MESSAGES/xscreensaver.mo
 share/locale/de/LC_MESSAGES/xscreensaver.mo
 share/locale/es/LC_MESSAGES/xscreensaver.mo
@@ -432,11 +433,10 @@ share/locale/nl/LC_MESSAGES/xscreensaver.mo
 share/locale/no/LC_MESSAGES/xscreensaver.mo
 share/locale/pl/LC_MESSAGES/xscreensaver.mo
 share/locale/pt/LC_MESSAGES/xscreensaver.mo
+share/locale/pt_BR/LC_MESSAGES/xscreensaver.mo
 share/locale/ru/LC_MESSAGES/xscreensaver.mo
 share/locale/sk/LC_MESSAGES/xscreensaver.mo
 share/locale/sv/LC_MESSAGES/xscreensaver.mo
-share/locale/vi/
-share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/xscreensaver.mo
 share/locale/wa/
 share/locale/wa/LC_MESSAGES/
