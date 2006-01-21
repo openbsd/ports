@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2005/11/26 13:46:56 pedro Exp $
+# $OpenBSD: Makefile,v 1.6 2006/01/21 01:32:40 jolan Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"network support for the lua language"
 DISTNAME=	luasocket-2.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 MASTER_SITES=	http://luaforge.net/frs/download.php/1097/
