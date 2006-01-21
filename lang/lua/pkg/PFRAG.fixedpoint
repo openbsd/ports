@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.fixedpoint,v 1.1 2006/01/21 01:29:40 jolan Exp $
+include/luser_fixedpoint.h

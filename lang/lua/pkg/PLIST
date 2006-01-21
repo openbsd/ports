@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/12/16 13:04:07 pedro Exp $
+@comment $OpenBSD: PLIST,v 1.9 2006/01/21 01:29:40 jolan Exp $
 bin/bin2c
 bin/lua
 bin/luac
 include/lauxlib.h
 include/lua.h
 include/lualib.h
+include/luser.h
+%%fixedpoint%%
 lib/liblua.a
 lib/liblualib.a
 @man man/man1/lua.1

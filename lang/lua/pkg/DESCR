@@ -1,37 +1,7 @@
 Lua is a powerful, light-weight programming language designed for
-extending applications. Lua is also frequently used as a general-purpose,
-stand-alone language.
+extending applications.  Lua is also frequently used as a
+general-purpose, stand-alone language.
 
-Lua combines simple procedural syntax (similar to Pascal) with
-powerful data description constructs based on associative arrays
-and extensible semantics. Lua is dynamically typed, interpreted
-from bytecodes, and has automatic memory management with garbage
-collection, making it ideal for configuration, scripting, and rapid
-prototyping.
+FLAVORs:
 
-A fundamental concept in the design of Lua is to provide meta-mechanisms
-for implementing features, instead of providing a host of features
-directly in the language. For example, although Lua is not a pure
-object-oriented language, it does provide meta-mechanisms for
-implementing classes and inheritance. Lua's meta-mechanisms bring
-an economy of concepts and keep the language small, while allowing
-the semantics to be extended in unconventional ways. Extensible
-semantics is a distinguishing feature of Lua.
-
-Lua is a language engine that you can embed into your application.
-This means that, besides syntax and semantics, Lua has an API that
-allows the application to exchange data with Lua programs and also
-to extend Lua with C functions. In this sense, Lua can be regarded
-as a language framework for building domain-specific languages.
-
-Lua is implemented as a small library of C functions, written in
-ANSI C, and compiles unmodified in all known platforms. The
-implementation goals are simplicity, efficiency, portability, and
-low embedding cost. The result is a fast language engine with small
-footprint, making it ideal in embedded systems too.
-
-Lua was designed and implemented at TeCGraf, the Computer Graphics
-Technology Group of PUC-Rio (the Pontifical Catholic University of
-Rio de Janeiro in Brazil). TeCGraf is a laboratory of the Department
-of Computer Science. The authors can be contacted by email at
-lua@tecgraf.puc-rio.br.
+	fixedpoint - use integers instead of doubles for numbers

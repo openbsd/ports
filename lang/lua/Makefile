@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2006/01/18 11:17:03 pedro Exp $
+# $OpenBSD: Makefile,v 1.19 2006/01/21 01:29:40 jolan Exp $
 
 COMMENT=	"powerful, light-weight programming language"
 
 DISTNAME=	lua-5.0.2
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 SHARED_LIBS=	lua 5.0 \
 		lualib 5.0
 CATEGORIES=     lang
@@ -28,12 +28,15 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	c m edit curses
 NO_REGRESS=	Yes
 
+FLAVORS=fixedpoint
+FLAVOR?=
+
 .if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
 CFLAGS+=	-fPIC
 ALL_TARGET+=	all so sobin
 .endif
 
-MAKE_FLAGS=	LIBlua_VERSION=${LIBlua_VERSION} \
+MAKE_FLAGS+=	LIBlua_VERSION=${LIBlua_VERSION} \
 		LIBlualib_VERSION=${LIBlualib_VERSION}
 
 post-extract:
@@ -45,6 +48,11 @@ post-extract:
 post-patch:
 	@perl -pi -e 's:\@initconf@:${SYSCONFDIR}/lua/init.lua:g;' \
 		${WRKSRC}/src/lua/lua.c
+	@touch ${WRKSRC}/include/luser.h
+.if ${FLAVOR:L:Mfixedpoint}
+	@cp -p ${FILESDIR}/luser_fixedpoint.h ${WRKSRC}/include
+	@echo '#include "luser_fixedpoint.h"' >> ${WRKSRC}/include/luser.h
+.endif
 
 post-build:
 	cd ${WRKDIST} && ${CC} ${CFLAGS} -o bin/bin2c etc/bin2c.c
