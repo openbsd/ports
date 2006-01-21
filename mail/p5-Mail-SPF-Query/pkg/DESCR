@@ -1,0 +1,2 @@
+The Mail::SPF::Query module is used to query Sender Policy Framework
+(SPF) records.

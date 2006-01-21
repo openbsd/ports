@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/01/21 23:35:16 steven Exp $
+bin/spfd
+bin/spfquery
+${P5SITE}/Mail/
+${P5SITE}/Mail/SPF/
+${P5SITE}/Mail/SPF/Query.pm
+@man man/man1/spfd.1
+@man man/man1/spfquery.1
+@man man/man3p/Mail::SPF::Query.3p
