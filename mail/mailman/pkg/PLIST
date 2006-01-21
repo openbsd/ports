@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2005/06/23 07:34:56 djm Exp $
+@comment $OpenBSD: PLIST,v 1.13 2006/01/21 15:03:32 jakob Exp $
 @newgroup _mailman:504
 @newuser _mailman:504:_mailman:daemon:Mailing List Manager:${PREFIX}/lib/mailman:/sbin/nologin
 @mode 775
@@ -477,7 +477,15 @@ lib/mailman/messages/hu/LC_MESSAGES/
 lib/mailman/messages/hu/LC_MESSAGES/mailman.mo
 lib/mailman/messages/hu/LC_MESSAGES/mailman.po
 lib/mailman/messages/hu/README.hu
+@owner
+@group
+lib/mailman/messages/ia/
+lib/mailman/messages/ia/LC_MESSAGES/
+lib/mailman/messages/ia/LC_MESSAGES/mailman.mo
+lib/mailman/messages/ia/LC_MESSAGES/mailman.po
 @mode 775
+@owner _mailman
+@group _mailman
 lib/mailman/messages/it/
 lib/mailman/messages/it/LC_MESSAGES/
 @mode
@@ -1315,7 +1323,56 @@ lib/mailman/templates/hu/unsub.txt
 lib/mailman/templates/hu/unsubauth.txt
 lib/mailman/templates/hu/userpass.txt
 lib/mailman/templates/hu/verify.txt
+@owner
+@group
+lib/mailman/templates/ia/
+lib/mailman/templates/ia/admindbdetails.html
+lib/mailman/templates/ia/admindbpreamble.html
+lib/mailman/templates/ia/admindbsummary.html
+lib/mailman/templates/ia/adminsubscribeack.txt
+lib/mailman/templates/ia/adminunsubscribeack.txt
+lib/mailman/templates/ia/admlogin.html
+lib/mailman/templates/ia/approve.txt
+lib/mailman/templates/ia/archidxentry.html
+lib/mailman/templates/ia/archidxfoot.html
+lib/mailman/templates/ia/archidxhead.html
+lib/mailman/templates/ia/archlistend.html
+lib/mailman/templates/ia/archliststart.html
+lib/mailman/templates/ia/archtoc.html
+lib/mailman/templates/ia/archtocentry.html
+lib/mailman/templates/ia/archtocnombox.html
+lib/mailman/templates/ia/article.html
+lib/mailman/templates/ia/bounce.txt
+lib/mailman/templates/ia/checkdbs.txt
+lib/mailman/templates/ia/convert.txt
+lib/mailman/templates/ia/cronpass.txt
+lib/mailman/templates/ia/disabled.txt
+lib/mailman/templates/ia/emptyarchive.html
+lib/mailman/templates/ia/headfoot.html
+lib/mailman/templates/ia/help.txt
+lib/mailman/templates/ia/invite.txt
+lib/mailman/templates/ia/listinfo.html
+lib/mailman/templates/ia/masthead.txt
+lib/mailman/templates/ia/newlist.txt
+lib/mailman/templates/ia/nomoretoday.txt
+lib/mailman/templates/ia/options.html
+lib/mailman/templates/ia/postack.txt
+lib/mailman/templates/ia/postauth.txt
+lib/mailman/templates/ia/postheld.txt
+lib/mailman/templates/ia/private.html
+lib/mailman/templates/ia/probe.txt
+lib/mailman/templates/ia/refuse.txt
+lib/mailman/templates/ia/roster.html
+lib/mailman/templates/ia/subauth.txt
+lib/mailman/templates/ia/subscribe.html
+lib/mailman/templates/ia/subscribeack.txt
+lib/mailman/templates/ia/unsub.txt
+lib/mailman/templates/ia/unsubauth.txt
+lib/mailman/templates/ia/userpass.txt
+lib/mailman/templates/ia/verify.txt
 @mode 775
+@owner _mailman
+@group _mailman
 lib/mailman/templates/it/
 @mode
 lib/mailman/templates/it/admindbdetails.html
@@ -2169,8 +2226,8 @@ lib/mailman/tests/test_safedict.py
 lib/mailman/tests/test_security_mgr.py
 lib/mailman/tests/test_smtp.py
 lib/mailman/tests/testall.py
-@group
 @owner
+@group
 share/doc/mailman/
 share/doc/mailman/FAQ
 share/doc/mailman/NEWS
@@ -2181,9 +2238,9 @@ share/doc/mailman/README.NETSCAPE
 share/doc/mailman/README.OpenBSD
 share/doc/mailman/README.USERAGENT
 share/doc/mailman/UPGRADING
+@mode 0775
 @owner _mailman
 @group _mailman
-@mode 0775
 @sample /var/spool/mailman/
 @sample /var/spool/mailman/archives/
 @mode 0771
