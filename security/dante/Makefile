@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2005/12/24 20:52:58 sturm Exp $
+# $OpenBSD: Makefile,v 1.33 2006/01/21 11:14:44 jakob Exp $
 
 COMMENT=	"SOCKS client and server"
 
-DISTNAME=	dante-1.1.18
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	dante-1.1.19
+PKGNAME=	${DISTNAME}
 CATEGORIES=	security
+
 SHARED_LIBS=	dsocks	1.1 \
 		socks	1.1
 MODGNU_SHARED_LIBS=dsocks	'-all-dynamic' \

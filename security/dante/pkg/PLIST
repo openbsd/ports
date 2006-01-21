@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2005/12/24 20:52:58 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.14 2006/01/21 11:14:44 jakob Exp $
 @conflict socks5-*
 bin/socksify
 include/socks.h
@@ -11,7 +11,6 @@ lib/libsocks.la
 @man man/man8/sockd.8
 sbin/sockd
 share/doc/dante/
-share/doc/dante/README.msproxy
 share/doc/dante/README.socksify
 share/doc/dante/README.survey
 share/doc/dante/README.usage
@@ -21,6 +20,7 @@ share/doc/dante/rfc1928.txt
 share/doc/dante/rfc1929.txt
 share/examples/dante/
 share/examples/dante/sockd-basic.conf
+share/examples/dante/sockd-chaining.conf
 share/examples/dante/sockd.conf
 share/examples/dante/socks-simple-withoutnameserver.conf
 share/examples/dante/socks-simple.conf
