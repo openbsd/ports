@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/01/21 22:23:21 steven Exp $
+${P5SITE}/Sys/
+${P5SITE}/Sys/Hostname/
+${P5SITE}/Sys/Hostname/Long.pm
+@comment ${P5SITE}/Sys/Hostname/Long.pm.orig
+${P5SITE}/Sys/Hostname/testall.pl
+@man man/man3p/Sys::Hostname::Long.3p

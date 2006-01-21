@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Sys_Hostname_Long_pm,v 1.1.1.1 2006/01/21 22:23:21 steven Exp $
+--- lib/Sys/Hostname/Long.pm.orig	Sat Jan 21 23:03:20 2006
++++ lib/Sys/Hostname/Long.pm	Sat Jan 21 23:03:42 2006
+@@ -45,7 +45,7 @@ $VERSION = '1.4';
+ 	},
+ 
+ 	'uname' => {
+-		'title' => 'POSIX::unae',
++		'title' => 'POSIX::uname',
+ 		'description' => '',
+ 		'exec' => sub {
+ 			return eval {
