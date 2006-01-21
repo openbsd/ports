@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.15 2005/02/14 23:00:49 couderc Exp $
+@comment $OpenBSD: PLIST,v 1.16 2006/01/21 23:43:38 steven Exp $
 bin/bluefish
+share/application-registry/
+share/application-registry/bluefish.applications
 share/applications/
 share/applications/bluefish.desktop
 share/bluefish/
@@ -37,12 +39,13 @@ share/locale/pl/LC_MESSAGES/bluefish.mo
 share/locale/pt/LC_MESSAGES/bluefish.mo
 share/locale/pt_BR/LC_MESSAGES/bluefish.mo
 share/locale/ru/LC_MESSAGES/bluefish.mo
-share/locale/sr/
-share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/bluefish.mo
 share/locale/sv/LC_MESSAGES/bluefish.mo
 share/locale/zh_CN/LC_MESSAGES/bluefish.mo
 share/mime/
+share/mime-info/
+share/mime-info/bluefish.keys
+share/mime-info/bluefish.mime
 share/mime/packages/
 share/mime/packages/bluefish.xml
 share/pixmaps/
