@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2005/12/26 15:35:01 steven Exp $
+# $OpenBSD: Makefile,v 1.37 2006/01/22 10:38:55 steven Exp $
 
 COMMENT=	"GdkPixbuf graphics library"
 COMMENT-gnome=	"GdkPixbuf graphics library (GNOME Canvas)"
@@ -7,15 +7,9 @@ VERSION=	0.22.0
 DISTNAME=	gdk-pixbuf-${VERSION}
 PKGNAME=	${DISTNAME}p4
 PKGNAME-gnome=	gdk-pixbuf-gnome-${VERSION}p0
-SHARED_LIBS=		gdk_pixbuf		2.0	\
-			gdk_pixbuf_xlib		2.0	\
-			gnomecanvaspixbuf	1.0
-MODGNU_SHARED_LIBS=	gdk_pixbuf		''	\
-			gdk_pixbuf_xlib		''	\
-			gnomecanvaspixbuf	''
-LIBgdk_pixbuf_ALIAS=		realgdk_pixbuf
-LIBgdk_pixbuf_xlib_ALIAS=	realgdk_pixbuf_xlib
-LIBgnomecanvaspixbuf_ALIAS=	realgnomecanvaspixbuf
+SHARED_LIBS=	gdk_pixbuf		2.0	\
+		gdk_pixbuf_xlib		2.0	\
+		gnomecanvaspixbuf	1.0
 
 CATEGORIES=	graphics
 

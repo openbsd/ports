@@ -1,21 +1,12 @@
-$OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.11 2005/12/26 15:35:01 steven Exp $
+$OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.12 2006/01/22 10:38:55 steven Exp $
 --- gdk-pixbuf/Makefile.in.orig	Wed Dec 18 23:19:32 2002
 +++ gdk-pixbuf/Makefile.in	Mon Dec 26 16:25:51 2005
-@@ -124,7 +124,7 @@ lib_LTLIBRARIES = \
- 	$(CANVAS_PIXBUF_LIB)
- 
- 
--libgnomecanvaspixbuf_la_LDFLAGS = -version-info 1:0:0 $(EXTRA_GNOME_LIBS)
-+libgnomecanvaspixbuf_la_LDFLAGS = $(librealgnomecanvaspixbuf_la_LDFLAGS) $(EXTRA_GNOME_LIBS)
- 
- libexecdir = $(libdir)/gdk-pixbuf/loaders
- 
 @@ -287,7 +287,7 @@ libgdk_pixbuf_la_SOURCES = \
  	$(extra_sources)
  
  
 -libgdk_pixbuf_la_LDFLAGS = -version-info 2:0:0 -export-dynamic $(GLIB_LIBS) $(GTK_LIBS)
-+libgdk_pixbuf_la_LDFLAGS = $(librealgdk_pixbuf_la_LDFLAGS) -export-dynamic $(GLIB_LIBS) $(GTK_LIBS) $(LIBPNG) $(LIBJPEG) $(LIBTIFF)
++libgdk_pixbuf_la_LDFLAGS = -version-info 2:0:0 -export-dynamic $(GLIB_LIBS) $(GTK_LIBS) $(LIBPNG) $(LIBJPEG) $(LIBTIFF)
  libgdk_pixbuf_la_LIBADD = pixops/libpixops.la
  
  #
@@ -24,7 +15,7 @@ $OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.11 2005/12/26 15:35:01 steven Exp $
  
  
 -libgdk_pixbuf_xlib_la_LDFLAGS = -version-info 2:0:0 -export-dynamic $(GLIB_LIBS) $(X11_LIBS)
-+libgdk_pixbuf_xlib_la_LDFLAGS = $(librealgdk_pixbuf_xlib_la_LDFLAGS) -export-dynamic $(GLIB_LIBS) $(X11_LIBS) $(LIBPNG) $(LIBJPEG) $(LIBTIFF)
++libgdk_pixbuf_xlib_la_LDFLAGS = -version-info 2:0:0 -export-dynamic $(GLIB_LIBS) $(X11_LIBS) $(LIBPNG) $(LIBJPEG) $(LIBTIFF)
  libgdk_pixbuf_xlib_la_LIBADD = pixops/libpixops.la libgdk_pixbuf.la $(GTK_LIBS)
  
  libgdk_pixbufinclude_HEADERS = \

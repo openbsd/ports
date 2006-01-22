@@ -1,3 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2005/12/26 21:34:09 steven Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.6 2006/01/22 10:38:55 steven Exp $
+@lib lib/libwmf-0.2.so.${LIBwmf-0.2_VERSION}
 @lib lib/libwmf.so.${LIBwmf_VERSION}
+@lib lib/libwmflite-0.2.so.${LIBwmflite-0.2_VERSION}
 @lib lib/libwmflite.so.${LIBwmflite_VERSION}

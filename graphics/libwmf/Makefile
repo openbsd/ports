@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2005/12/26 21:34:09 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2006/01/22 10:38:55 steven Exp $
 
 COMMENT=	"WMF handling and conversion library"
 
 DISTNAME=	libwmf-0.2.8.3
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=		wmf	8.0	\
-			wmflite	7.1
-MODGNU_SHARED_LIBS=	wmf	'-no-undefined -export-dynamic'	\
-			wmflite	'-no-undefined -export-dynamic'
+PKGNAME=	${DISTNAME}p1
+SHARED_LIBS=	wmf		8.0	\
+		wmf-0.2		8.0	\
+		wmflite		7.1	\
+		wmflite-0.2	7.1
 
 CATEGORIES=	graphics devel
 
