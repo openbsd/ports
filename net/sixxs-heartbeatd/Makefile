@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/12/16 00:31:25 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2006/01/22 18:40:36 jolan Exp $
 
 COMMENT=	"SixXS IPv6 tunnel broker heartbeat client"
 
@@ -8,8 +8,6 @@ CATEGORIES=	net
 
 HOMEPAGE=	http://www.sixxs.net/tools/heartbeat/
 MASTER_SITES=	http://www.sixxs.net/archive/sixxs/heartbeat/unix/
-
-MAINTAINER=	Waldemar Brodkorb <wbx@openbsd.de>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes
