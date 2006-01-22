@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_lib_ioloop-kqueue_c,v 1.1 2006/01/22 15:35:43 brad Exp $
+--- src/lib/ioloop-kqueue.c.orig	Fri Dec 30 15:46:28 2005
++++ src/lib/ioloop-kqueue.c	Sun Jan 22 00:54:23 2006
+@@ -12,6 +12,7 @@
+ /* @UNSAFE: whole file */
+ 
+ #include "lib.h"
++#include "fd-close-on-exec.h"
+ #include "ioloop-internal.h"
+ 
+ #ifdef IOLOOP_KQUEUE
+@@ -53,6 +54,7 @@ void io_loop_handler_init(struct ioloop 
+         ctx->kq = kqueue();
+         if (ctx->kq < 0)
+                 i_fatal("kqueue(): %m");
++        fd_close_on_exec(ctx->kq, TRUE);
+ 
+         ctx->fds_size = INITIAL_BUF_SIZE;
+         ctx->fds = p_new(ioloop->pool, struct fdrecord, ctx->fds_size);
+@@ -74,6 +76,7 @@ void io_loop_handle_add(struct ioloop *i
+         struct kevent ev = { fd, 0, EV_ADD | EV_EOF, 0, 0, NULL };
+         enum io_condition condition = io->condition & MASK;
+ 
++        i_assert(io->callback);
+         /* grow ctx->fds array if necessary */
+         if ((size_t)fd >= ctx->fds_size) {
+                 size_t old_size = ctx->fds_size;
+@@ -114,7 +117,6 @@ void io_loop_handle_remove(struct ioloop
+         const enum io_condition condition = io->condition & MASK;
+ 
+         i_assert((size_t)fd < ctx->fds_size);
+-        i_assert(fds[fd].mode != 0);
+ 
+         if (condition & IO_ERROR)
+                 fds[fd].errio = NULL;
