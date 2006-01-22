@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2005/11/15 19:13:00 wilfried Exp $
+# $OpenBSD: Makefile,v 1.24 2006/01/22 00:09:30 steven Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -7,8 +7,8 @@ COMMENT-client=	"single process stack of system monitors for GTK+2"
 
 V=		2.2.4
 DISTNAME=	gkrellm-${V}
-PKGNAME=	gkrellm-server-${V}p3
-PKGNAME-client=	gkrellm-${V}p3
+PKGNAME=	gkrellm-server-${V}p4
+PKGNAME-client=	gkrellm-${V}p4
 CATEGORIES=	sysutils sysutils/gkrellm
 
 HOMEPAGE=	http://www.gkrellm.net/
@@ -46,9 +46,9 @@ INSTALL_TARGET=	install_openbsd
 USE_X11=	Yes
 .  if !defined(PACKAGING) || !empty(SUBPACKAGE)
 LIB_DEPENDS+=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
-WANTLIB+=	ICE SM X11 atk-1.0.0.0 cairo crypto fontconfig freetype \
-		gobject-2.0.0.0 m pango-1.0.0.0 pangocairo-1.0.0.0 \
-		pangoft2-1.0.0.0 ssl
+WANTLIB+=	ICE SM X11 Xext Xft Xrender crypto fontconfig freetype \
+		atk-1.0.0.0 gobject-2.0.0.0 m pango-1.0.0.0 pangox-1.0.0.0 \
+		pangoft2-1.0.0.0 pangoxft-1.0.0.0 ssl
 .  endif
 .else
 WRKBUILD=	${WRKDIST}/server

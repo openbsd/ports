@@ -1,21 +1,15 @@
-$OpenBSD: patch-wireless_h,v 1.2 2004/11/28 00:00:51 fgsch Exp $
---- wireless.h.orig	Sat Dec  6 10:19:55 2003
-+++ wireless.h	Sat Nov 27 20:04:37 2004
-@@ -49,6 +49,19 @@
+--- wireless.h.orig	Sat Dec  6 14:19:55 2003
++++ wireless.h	Fri Jan 20 13:20:14 2006
+@@ -49,6 +49,14 @@
    #include <sys/ioctl.h>
  #endif
  
 +#ifdef __OpenBSD__
++  #include <sys/types.h>
 +  #include <sys/socket.h>
-+  #include <sys/sockio.h>
++  #include <sys/ioctl.h>
 +  #include <net/if.h>
-+  #include <net/if_dl.h>
-+  #include <netinet/in.h>
-+  #include <netinet/if_ether.h>
-+  #include <net/if_media.h>
-+  #include <net80211/ieee80211.h>
 +  #include <dev/ic/if_wi_ieee.h>
-+  #include <dev/ic/anvar.h>
 +#endif
 +
  #define PLUGIN_CONFIG_KEYWORD "gkrellmwireless"
