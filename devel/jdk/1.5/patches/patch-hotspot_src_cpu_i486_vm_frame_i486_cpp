@@ -1,0 +1,118 @@
+$OpenBSD: patch-hotspot_src_cpu_i486_vm_frame_i486_cpp,v 1.1 2006/01/22 22:46:31 kurt Exp $
+--- hotspot/src/cpu/i486/vm/frame_i486.cpp.orig	Thu Jan 19 22:40:01 2006
++++ hotspot/src/cpu/i486/vm/frame_i486.cpp	Thu Jan 19 22:14:37 2006
+@@ -13,8 +13,8 @@
+ // Profiling/safepoint support
+ 
+ bool JavaThread::get_top_frame(frame* _fr, ExtendedPC* _addr, bool for_profile_only) {
+-  jint*   sp;
+-  jint*   fp;
++  intptr_t*   sp;
++  intptr_t*   fp;
+ 
+   ExtendedPC addr = os::fetch_top_frame(this, &sp, &fp);
+ 
+@@ -70,14 +70,14 @@ bool frame::is_entry_frame() const {
+ 
+ // sender_sp
+ 
+-jint* frame::interpreter_frame_sender_sp() const {
++intptr_t* frame::interpreter_frame_sender_sp() const {
+   assert(is_interpreted_frame(), "interpreted frame expected");
+-  return (jint*) at(interpreter_frame_sender_sp_offset);
++  return (intptr_t*) at(interpreter_frame_sender_sp_offset);
+ }
+ 
+-void frame::set_interpreter_frame_sender_sp(jint* sender_sp) {
++void frame::set_interpreter_frame_sender_sp(intptr_t* sender_sp) {
+   assert(is_interpreted_frame(), "interpreted frame expected");
+-  int_at_put(interpreter_frame_sender_sp_offset, (jint) sender_sp);
++  int_at_put(interpreter_frame_sender_sp_offset, (intptr_t) sender_sp);
+ }
+ 
+ 
+@@ -117,7 +117,7 @@ frame frame::sender_for_interpreter_fram
+   // This basically makes sp in a frame the original sp before the interpreter
+   // adjusted it. This is handled by _interpreter_sp_adjustment handling on
+   // sparc. This is much less visible.
+-  jint* sp = (jint*) at(interpreter_frame_sender_sp_offset);
++  intptr_t* sp = (intptr_t*) at(interpreter_frame_sender_sp_offset);
+   // We do not need to update the callee-save register mapping because above
+   // us is either another interpreter frame or a converter-frame, but never
+   // directly a compiled frame.
+@@ -173,7 +173,7 @@ frame frame::sender_for_compiled_frame(R
+   assert(map != NULL, "map must be set");
+ 
+   // frame owned by optimizing compiler 
+-  jint* sender_sp = NULL;
++  intptr_t* sender_sp = NULL;
+ #ifdef COMPILER1
+   sender_sp = fp() + frame::sender_sp_offset;
+   assert(sender_sp == sp() + cb->frame_size() || cb->frame_size() == -1, "must match");
+@@ -183,7 +183,7 @@ frame frame::sender_for_compiled_frame(R
+   sender_sp = sp() + cb->frame_size();
+   if( cb->is_i2c_adapter()) {
+     // Sender's SP is stored at the end of the frame
+-    sender_sp = (jint*)*(sender_sp-1)+1;
++    sender_sp = (intptr_t*)*(sender_sp-1)+1;
+   }
+ #endif
+ 
+@@ -197,16 +197,16 @@ frame frame::sender_for_compiled_frame(R
+   // Move this here for C1 and collecting oops in arguments (According to Rene)
+   COMPILER1_ONLY(map->set_include_argument_oops(cb->caller_must_gc_arguments(map->thread()));)
+ 
+-  jint *saved_fp = (jint*)*(sender_sp - frame::sender_sp_offset);
++  intptr_t *saved_fp = (intptr_t*)*(sender_sp - frame::sender_sp_offset);
+ #ifdef COMPILER1
+-  assert(saved_fp == (jint*) (*fp()), "should match");
++  assert(saved_fp == (intptr_t*) (*fp()), "should match");
+ #endif
+ #ifdef COMPILER2
+   if (!cb->is_osr_adapter()) {
+     int llink_offset = cb->link_offset();
+     if (llink_offset >= 0) {    
+       // Restore base-pointer, since next frame might be an interpreter frame.    
+-      jint* fp_addr = sp() + llink_offset;
++      intptr_t* fp_addr = sp() + llink_offset;
+ #ifdef ASSERT
+       // Check to see if regmap has same info
+       if (map->update_map()) {
+@@ -214,7 +214,7 @@ frame frame::sender_for_compiled_frame(R
+         assert(fp2_addr == NULL || fp2_addr == (address)fp_addr, "inconsistent framepointer info.");          
+       }
+ #endif       
+-      saved_fp = (jint*)*fp_addr;
++      saved_fp = (intptr_t*)*fp_addr;
+     }
+   }
+ #endif // COMPILER2
+@@ -227,8 +227,8 @@ frame frame::sender_for_compiled_frame(R
+     // This is different from normal, because the current interpreter frame
+     // (which has been mangled into an OSR-adapter) pushed a bunch of space
+     // on the caller's frame to make space for Java locals.  
+-    jint* sp_addr = (sender_sp - frame::sender_sp_offset) + frame::interpreter_frame_sender_sp_offset;
+-    sender_sp = (jint*)*sp_addr;    
++    intptr_t* sp_addr = (sender_sp - frame::sender_sp_offset) + frame::interpreter_frame_sender_sp_offset;
++    sender_sp = (intptr_t*)*sp_addr;    
+   }
+ 
+ #ifndef CORE
+@@ -269,7 +269,7 @@ frame frame::sender(RegisterMap* map, Co
+ }
+ 
+ 
+-bool frame::interpreter_frame_equals_unpacked_fp(jint* fp) {
++bool frame::interpreter_frame_equals_unpacked_fp(intptr_t* fp) {
+   assert(is_interpreted_frame(), "must be interpreter frame");
+   methodOop method = interpreter_frame_method();
+   // When unpacking an optimized frame the frame pointer is
+@@ -329,7 +329,7 @@ int frame::pd_compute_variable_size(int 
+     // This is different from normal, because the current interpreter frame
+     // (which has been mangled into an OSR-adapter) pushed a bunch of space
+     // on the caller's frame to make space for Java locals.
+-    jint* sp_addr = (sender_sp - frame::sender_sp_offset) + frame::interpreter_frame_sender_sp_offset;
++    intptr_t* sp_addr = (sender_sp - frame::sender_sp_offset) + frame::interpreter_frame_sender_sp_offset;
+     intptr_t* new_sp    = (intptr_t*)*sp_addr;
+     frame_size_in_words = new_sp - sp();    
+   }

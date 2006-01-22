@@ -1,0 +1,12 @@
+$OpenBSD: patch-hotspot_src_cpu_i486_vm_runtime_i486_cpp,v 1.1 2006/01/22 22:46:31 kurt Exp $
+--- hotspot/src/cpu/i486/vm/runtime_i486.cpp.orig	Fri Jan 20 09:37:03 2006
++++ hotspot/src/cpu/i486/vm/runtime_i486.cpp	Fri Jan 20 09:37:15 2006
+@@ -333,7 +333,7 @@ void SharedRuntime::generate_deopt_blob(
+   { Label L;
+     __ cmpl(Address(ecx,
+ 		    JavaThread::last_Java_fp_offset()),
+-		    (intptr_t) 0);
++		    (int) 0);
+     __ jcc(Assembler::equal, L);
+     __ stop("OptoRuntime::generate_deopt_blob: last_Java_fp not cleared");
+     __ bind(L);

@@ -1,0 +1,12 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_awt_multi_font_c,v 1.1 2006/01/22 22:46:31 kurt Exp $
+--- j2se/src/solaris/native/sun/awt/multi_font.c.orig	Sat Jan 21 11:25:12 2006
++++ j2se/src/solaris/native/sun/awt/multi_font.c	Sat Jan 21 11:25:39 2006
+@@ -330,7 +330,7 @@ awtJNI_IsMultiFontMetrics(JNIEnv * env, 
+     return JNI_TRUE;
+ }
+ #ifndef XAWT
+-#if defined(__linux__) || defined(_ALLBSD_SOURCE)
++#ifdef __linux__
+ XmString 
+ unicodeXmStringCreate(char* text, char* tag, int len) {
+     XmString ret_val;

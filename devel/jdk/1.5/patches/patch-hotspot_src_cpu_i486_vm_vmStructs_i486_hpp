@@ -1,0 +1,12 @@
+$OpenBSD: patch-hotspot_src_cpu_i486_vm_vmStructs_i486_hpp,v 1.1 2006/01/22 22:46:31 kurt Exp $
+--- hotspot/src/cpu/i486/vm/vmStructs_i486.hpp.orig	Thu Jan 19 22:42:45 2006
++++ hotspot/src/cpu/i486/vm/vmStructs_i486.hpp	Thu Jan 19 22:25:03 2006
+@@ -18,7 +18,7 @@
+   /******************************/                                                                                                   \
+   /* JavaFrameAnchor            */                                                                                                   \
+   /******************************/                                                                                                   \
+-  volatile_nonstatic_field(JavaFrameAnchor,     _last_Java_fp,                                    jint*)                              \
++  volatile_nonstatic_field(JavaFrameAnchor,     _last_Java_fp,                                    intptr_t*)                         \
+                                                                                                                                      \
+                                                                                                                                      
+   /* NOTE that we do not use the last_entry() macro here; it is used  */

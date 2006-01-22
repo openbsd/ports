@@ -1,0 +1,12 @@
+$OpenBSD: patch-hotspot_src_cpu_i486_vm_c2_init_i486_cpp,v 1.1 2006/01/22 22:46:31 kurt Exp $
+--- hotspot/src/cpu/i486/vm/c2_init_i486.cpp.orig	Thu Jan 19 22:39:17 2006
++++ hotspot/src/cpu/i486/vm/c2_init_i486.cpp	Thu Jan 19 21:58:28 2006
+@@ -22,7 +22,7 @@ void Compile::pd_compiler2_init() {  
+   if( UseSSE > 2 ) UseSSE=2;
+   if( UseSSE < 0 ) UseSSE=0;
+   if( !VM_Version::supports_sse2() ) // Drop to 1 if no SSE2 support
+-    UseSSE = MIN2(1,UseSSE);
++    UseSSE = MIN2((intx)1,UseSSE);
+   if( !VM_Version::supports_sse () ) // Drop to 0 if no SSE  support
+     UseSSE = 0;
+ #ifndef PRODUCT

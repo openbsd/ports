@@ -1,0 +1,74 @@
+$OpenBSD: patch-hotspot_src_cpu_i486_vm_frame_i486_inline_hpp,v 1.1 2006/01/22 22:46:31 kurt Exp $
+--- hotspot/src/cpu/i486/vm/frame_i486.inline.hpp.orig	Tue Oct 19 14:41:30 2004
++++ hotspot/src/cpu/i486/vm/frame_i486.inline.hpp	Thu Jan 19 23:13:07 2006
+@@ -67,30 +67,30 @@ inline address  frame::sender_pc()      
+ // return address of param, zero origin index.
+ inline address* frame::native_param_addr(int idx) const { return (address*) addr_at( native_frame_initial_param_offset+idx); }
+ 
+-inline jint*    frame::sender_sp()        const { return            addr_at(   sender_sp_offset); }
++inline intptr_t*    frame::sender_sp()        const { return            addr_at(   sender_sp_offset); }
+ 
+ inline int frame::pd_oop_map_offset_adjustment() const {
+   return 0;
+ }
+ 
+-inline jint** frame::interpreter_frame_locals_addr() const { 
+-  return (jint**)addr_at(interpreter_frame_locals_offset); 
++inline intptr_t** frame::interpreter_frame_locals_addr() const { 
++  return (intptr_t**)addr_at(interpreter_frame_locals_offset); 
+ }
+ 
+ 
+-inline jint* frame::interpreter_frame_bcx_addr() const {
+-  return (jint*)addr_at(interpreter_frame_bcx_offset);
++inline intptr_t* frame::interpreter_frame_bcx_addr() const {
++  return (intptr_t*)addr_at(interpreter_frame_bcx_offset);
+ }
+ 
+ 
+ #ifndef CORE
+-inline jint* frame::interpreter_frame_mdx_addr() const {
+-  return (jint*)addr_at(interpreter_frame_mdx_offset);
++inline intptr_t* frame::interpreter_frame_mdx_addr() const {
++  return (intptr_t*)addr_at(interpreter_frame_mdx_offset);
+ }
+ #endif // !CORE
+ 
+ 
+-inline jint& frame::interpreter_frame_local_at(int index) const {
++inline intptr_t& frame::interpreter_frame_local_at(int index) const {
+   return  (*interpreter_frame_locals_addr()) [ -index];
+ }
+ 
+@@ -103,13 +103,13 @@ inline int frame::interpreter_frame_moni
+ // expression stack
+ // (the max_stack arguments are used by the GC; see class FrameClosure)
+ 
+-inline jint* frame::interpreter_frame_expression_stack() const {
+-  jint* monitor_end = (jint*) interpreter_frame_monitor_end();
++inline intptr_t* frame::interpreter_frame_expression_stack() const {
++  intptr_t* monitor_end = (intptr_t*) interpreter_frame_monitor_end();
+   return monitor_end-1; 
+ }
+ 
+ 
+-inline jint& frame::interpreter_frame_expression_stack_at(jint offset) const {
++inline intptr_t& frame::interpreter_frame_expression_stack_at(jint offset) const {
+   return interpreter_frame_expression_stack()[-offset];
+ }
+ 
+@@ -117,12 +117,12 @@ inline jint& frame::interpreter_frame_ex
+ inline jint frame::interpreter_frame_expression_stack_direction() { return -1; }
+ 
+ // top of expression stack
+-inline jint* frame::interpreter_frame_tos_address() const {
++inline intptr_t* frame::interpreter_frame_tos_address() const {
+   return sp();
+ }
+ 
+ 
+-inline jint& frame::interpreter_frame_tos_at(jint offset) const { 
++inline intptr_t& frame::interpreter_frame_tos_at(jint offset) const { 
+   return interpreter_frame_tos_address()[offset];
+ }
+ 

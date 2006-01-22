@@ -1,0 +1,11 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_awt_awt_MToolkit_c,v 1.1 2006/01/22 22:46:31 kurt Exp $
+--- j2se/src/solaris/native/sun/awt/awt_MToolkit.c.orig	Sat Jan 21 11:58:50 2006
++++ j2se/src/solaris/native/sun/awt/awt_MToolkit.c	Sat Jan 21 13:06:02 2006
+@@ -47,6 +47,7 @@ extern JavaVM *jvm;
+ #ifndef HEADLESS
+ #if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ extern void statusWindowEventHandler(XEvent event);
++Boolean awt_dnd_process_event(XEvent* event);
+ #endif
+ #endif /* !HEADLESS */
+ 

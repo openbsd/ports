@@ -1,0 +1,30 @@
+$OpenBSD: patch-hotspot_src_os_cpu_bsd_i486_vm_thread_bsd_i486_hpp,v 1.1 2006/01/22 22:46:31 kurt Exp $
+--- hotspot/src/os_cpu/bsd_i486/vm/thread_bsd_i486.hpp.orig	Thu Jan 19 22:46:01 2006
++++ hotspot/src/os_cpu/bsd_i486/vm/thread_bsd_i486.hpp	Thu Jan 19 22:29:18 2006
+@@ -21,21 +21,21 @@
+ 
+  public:
+   // Mutators are highly dangerous....
+-  jint* last_Java_fp()                           { return _anchor.last_Java_fp(); }
+-  void  set_last_Java_fp(jint* fp)               { _anchor.set_last_Java_fp(fp);   }
++  intptr_t* last_Java_fp()                           { return _anchor.last_Java_fp(); }
++  void  set_last_Java_fp(intptr_t* fp)               { _anchor.set_last_Java_fp(fp);   }
+ 
+-  void set_base_of_stack_pointer(jint* base_sp)  {}
++  void set_base_of_stack_pointer(intptr_t* base_sp)  {}
+ 
+   static ByteSize last_Java_fp_offset()          { 
+     return byte_offset_of(JavaThread, _anchor) + JavaFrameAnchor::last_Java_fp_offset();
+   }
+ 
+-  jint* base_of_stack_pointer()                  { return NULL; }
++  intptr_t* base_of_stack_pointer()                  { return NULL; }
+   void record_base_of_stack_pointer()            {}
+ 
+   // debugging support
+   static frame current_frame_guess() { 
+-    jint* fp = (*CAST_TO_FN_PTR( jint* (*)(void), StubRoutines::i486::get_previous_fp_entry()))();
++    intptr_t* fp = (*CAST_TO_FN_PTR( intptr_t* (*)(void), StubRoutines::i486::get_previous_fp_entry()))();
+     // fp points to the frame of the ps stub routine
+     frame f(NULL, fp, (address)NULL);
+     RegisterMap map(JavaThread::current(), false);

@@ -1,0 +1,25 @@
+$OpenBSD: patch-j2se_src_share_hpi_include_hpi_impl_h,v 1.1 2006/01/22 22:46:31 kurt Exp $
+--- j2se/src/share/hpi/include/hpi_impl.h.orig	Fri Jan 20 11:36:05 2006
++++ j2se/src/share/hpi/include/hpi_impl.h	Fri Jan 20 11:38:33 2006
+@@ -120,21 +120,12 @@ int sysConnect(int fd, struct sockaddr *
+ int sysBind(int fd, struct sockaddr *him, int len);
+ int sysAccept(int fd, struct sockaddr *him, int *len);
+ int sysGetSockName(int fd, struct sockaddr *him, int *len);
+-#ifdef _LP64
+ ssize_t sysSendTo(int fd, char *buf, int len, int flags, struct sockaddr *to,
+ 	      int tolen);
+ ssize_t sysRecvFrom(int fd, char *buf, int nbytes, int flags,
+                 struct sockaddr *from, int *fromlen);
+ ssize_t sysRecv(int fd, char *buf, int nBytes, int flags);
+ ssize_t sysSend(int fd, char *buf, int nBytes, int flags);
+-#else
+-int sysSendTo(int fd, char *buf, int len, int flags, struct sockaddr *to,
+-	      int tolen);
+-int sysRecvFrom(int fd, char *buf, int nbytes, int flags,
+-                struct sockaddr *from, int *fromlen);
+-int sysRecv(int fd, char *buf, int nBytes, int flags);
+-int sysSend(int fd, char *buf, int nBytes, int flags);
+-#endif
+ int sysListen(int fd, int count);
+ int sysTimeout(int fd, long timeout); 
+ int sysGetHostName(char* name, int namelen);
