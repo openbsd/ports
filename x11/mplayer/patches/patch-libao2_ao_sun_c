@@ -1,0 +1,144 @@
+$OpenBSD: patch-libao2_ao_sun_c,v 1.1 2006/01/22 06:28:25 biorn Exp $
+--- libao2/ao_sun.c.orig	Thu Jan  6 23:56:54 2005
++++ libao2/ao_sun.c	Thu Jan 19 18:00:16 2006
+@@ -66,7 +66,57 @@ static enum {
+ 
+ extern int verbose;
+ 
++#if defined(__OpenBSD__) || defined(__NetBSD__)
++int sun_mixer_get_dev(int fd, int *dev, char *id)
++{
++	mixer_devinfo_t info;
+ 
++	for (info.index = 0; ioctl(fd, AUDIO_MIXER_DEVINFO, &info) >= 0;
++	     info.index++) {
++		if (!strcmp(id, info.label.name)) {
++			*dev = info.index;
++			return 0;
++		}
++	}
++	return -1;
++}
++
++int sun_get_volume(int fd, int *l, int *r)
++{
++	mixer_ctrl_t mixer;
++
++	if (sun_mixer_get_dev(fd, &mixer.dev, "master") < 0)
++		return -1;
++
++	mixer.type = AUDIO_MIXER_VALUE;
++	mixer.un.value.num_channels = 2;
++	if (ioctl(fd, AUDIO_MIXER_READ, &mixer) < 0)
++		return -1;
++	*l = mixer.un.value.level[AUDIO_MIXER_LEVEL_LEFT];
++	*r = mixer.un.value.level[AUDIO_MIXER_LEVEL_RIGHT];
++
++	return 0;
++}
++
++int sun_set_volume(int fd, int l, int r)
++{
++	mixer_ctrl_t mixer;
++
++	if (sun_mixer_get_dev(fd, &mixer.dev, "master") < 0)
++		return -1;
++
++	mixer.type = AUDIO_MIXER_VALUE;
++	mixer.un.value.num_channels = 2;
++	mixer.un.value.level[AUDIO_MIXER_LEVEL_LEFT] = l;
++	mixer.un.value.level[AUDIO_MIXER_LEVEL_RIGHT] = r;
++
++	if (ioctl(fd, AUDIO_MIXER_WRITE, &mixer) < 0)
++		return -1;
++
++	return 0;
++}
++#endif
++
+ // convert an OSS audio format specification into a sun audio encoding
+ static int af2sunfmt(int format)
+ {
+@@ -366,13 +416,21 @@ static void setup_device_paths()
+ 	    audio_dev = "/dev/audio";
+     }
+ 
++#if defined(__OpenBSD__) || defined(__NetBSD__)
+     if (sun_mixer_device == NULL) {
++	if (mixer_device == NULL)
++	    mixer_device = strdup("/dev/mixer");
++	sun_mixer_device = mixer_device;
++    }
++#else
++    if (sun_mixer_device == NULL) {
+ 	if ((sun_mixer_device = mixer_device) == NULL || !sun_mixer_device[0]) {
+ 	    sun_mixer_device = malloc(strlen(audio_dev) + 4);
+ 	    strcpy(sun_mixer_device, audio_dev);
+ 	    strcat(sun_mixer_device, "ctl");
+ 	}
+     }
++#endif
+ 
+     if (ao_subdevice) audio_dev = ao_subdevice;
+ }
+@@ -396,6 +454,14 @@ static int control(int cmd,void *arg){
+ 	if ( fd != -1 )
+ 	{
+ 	    ao_control_vol_t *vol = (ao_control_vol_t *)arg;
++#if defined(__OpenBSD__) || defined(__NetBSD__)
++	    int r, l;
++	    if (sun_get_volume(fd, &r, &l) < 0) {
++		    close(fd);
++		    goto cgerr;
++	    }
++	    vol->right = vol->left = (float)(r * 100. / AUDIO_MAX_GAIN);
++#else
+ 	    float volume;
+ 	    struct audio_info info;
+ 	    ioctl( fd,AUDIO_GETINFO,&info);
+@@ -410,9 +476,11 @@ static int control(int cmd,void *arg){
+ 							/ AUDIO_MID_BALANCE;
+ 		vol->right = volume;
+ 	    }
++#endif
+ 	    close( fd );
+ 	    return CONTROL_OK;
+-	}	
++	}
++cgerr:
+ 	return CONTROL_ERROR;
+     }
+     case AOCONTROL_SET_VOLUME:
+@@ -423,10 +491,18 @@ static int control(int cmd,void *arg){
+ 	if ( !sun_mixer_device )    /* control function is used before init? */
+ 	    setup_device_paths();
+ 
+-	fd=open( sun_mixer_device,O_RDONLY );
++	fd=open( sun_mixer_device,O_RDWR );
+ 	if ( fd != -1 )
+ 	{
+ 	    struct audio_info info;
++#if defined(__OpenBSD__) || defined(__NetBSD__)
++	    int r;
++	    r = (int)(vol->right * AUDIO_MAX_GAIN / 100);
++	    if (sun_set_volume(fd, r, r) < 0) {
++		    close(fd);
++		    goto cserr;
++	    }
++#else
+ 	    float volume;
+ 	    AUDIO_INITINFO(&info);
+ 	    volume = vol->right > vol->left ? vol->right : vol->left;
+@@ -441,9 +517,11 @@ static int control(int cmd,void *arg){
+ 	    info.output_muted = (volume == 0);
+ #endif
+ 	    ioctl( fd,AUDIO_SETINFO,&info );
++#endif
+ 	    close( fd );
+ 	    return CONTROL_OK;
+-	}	
++	}
++cserr:
+ 	return CONTROL_ERROR;
+     }
+     }
