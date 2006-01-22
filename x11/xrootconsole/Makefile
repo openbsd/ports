@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2006/01/01 15:12:06 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2006/01/22 15:11:48 sturm Exp $
 
 COMMENT=		"writes any log live onto the background"
-DISTNAME=		xrootconsole-0.6
+V=			0.6
+DISTNAME=		xrootconsole-${V}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11	
 
 MAINTAINER=		Sebastian Trahm <inthisdefiance@gmx.net>
@@ -25,9 +27,9 @@ OBJS = main.o util.o
 
 do-build:
 	cd ${WRKSRC} && \
-	${CC} ${CFLAGS} -c main.c -DXROOTCONSOLE_VERSION=\"RELEASE-0_6\"; \
-	${CC} ${CFLAGS} -c util.c -DXROOTCONSOLE_VERSION=\"RELEASE-0_6\"; \
-	${CC} ${OBJS} -L$(X11BASE)/lib -lX11 -lutil -o xrootconsole; 
+	${CC} ${CFLAGS} -c main.c -DXROOTCONSOLE_VERSION=\"${V}\"; \
+	${CC} ${CFLAGS} -c util.c -DXROOTCONSOLE_VERSION=\"${V}\"; \
+	${CC} ${LDFLAGS} ${OBJS} -L$(X11BASE)/lib -lX11 -lutil -o xrootconsole; 
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xrootconsole ${PREFIX}/bin
