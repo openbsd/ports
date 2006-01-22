@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/11/23 21:34:27 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2006/01/22 17:49:33 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -22,6 +22,7 @@ MODULES=	x11/kde
 
 LIB_DEPENDS=	kdecore.4,DCOP,kdefx,kdesu,kdeui,kio,kwalletclient::x11/kde/libs3
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf autoheader
 CONFIGURE_ARGS+= ${MODKDE_CONFIGURE_ARGS}
 CONFIGURE_ARGS+= --with-kde-version=3
