@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/01/14 00:28:45 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2006/01/22 23:21:47 sturm Exp $
 
 NOT_FOR_ARCHS=	vax
 
@@ -6,7 +6,7 @@ COMMENT=	"high-level language for numerical computations"
 
 VERSION=	2.1.72
 DISTNAME=	octave-${VERSION}
-PKGNAME=	$(DISTNAME)p0
+PKGNAME=	$(DISTNAME)p1
 CATEGORIES=	math
 
 SHARED_LIBS=	cruft		3.0 \

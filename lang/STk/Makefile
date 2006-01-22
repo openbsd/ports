@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2005/02/08 21:17:20 alek Exp $
+# $OpenBSD: Makefile,v 1.18 2006/01/22 23:21:46 sturm Exp $
 
 COMMENT=	"Scheme interpreter with Tk interface"
 
 STK_VERSION=	4.0.1
 STK_ARCH=	$(OPSYS)-$(OPSYS_VER)-$(MACHINE)
 DISTNAME=       STk-${STK_VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	lang
 
 MASTER_SITES=	ftp://kaolin.unice.fr/pub/STk/
