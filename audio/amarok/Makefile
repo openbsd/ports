@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2005/11/11 14:21:22 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/01/22 16:07:44 espie Exp $
 
 CATEGORIES=	audio x11 x11/kde
 COMMENT=	'music player for kde'
@@ -6,6 +6,7 @@ COMMENT=	'music player for kde'
 HOMEPAGE=	http://amarok.kde.org/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=amarok/}
 DISTNAME=	amarok-1.3.6
+PKGNAME=	${DISTNAME}p0
 EXTRACT_SUFX=	.tar.bz2
 
 LIB_DEPENDS+=	lib/qt3/qt-mt.3.33::x11/qt3,mt \
@@ -30,7 +31,8 @@ WANTLIB+=	gtk gmodule gdk glib
 
 SHARED_ONLY=Yes
 MODULES=	x11/kde
-MODKDE_LIBTOOL=		Yes
+USE_LIBTOOL=		Yes
+LIBTOOL_FLAGS=		--tag=disable-static
 MODKDE_VERSION=		3.5
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
