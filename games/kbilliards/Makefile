@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/08/10 15:49:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2006/01/22 17:59:07 espie Exp $
 
 COMMENT= 		"billiard game"
 CATEGORIES=		x11 x11/kde games
@@ -24,6 +24,7 @@ MAKE_FLAGS+=		${MODKDE_MAKE_FLAGS}
 MODCONFIG_GUESS_DIRS+=	${MODKDE_CONFIG_GUESS_DIRS}
 AUTOCONF_VERSION=	2.59
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
