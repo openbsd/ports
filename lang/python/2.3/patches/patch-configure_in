@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.7 2005/08/10 02:14:13 jolan Exp $
+$OpenBSD: patch-configure_in,v 1.8 2006/01/22 11:33:32 alek Exp $
 --- configure.in.orig	Fri May  7 21:13:47 2004
 +++ configure.in	Wed Aug 11 09:55:49 2004
 @@ -136,7 +136,7 @@ case $ac_sys_system/$ac_sys_release in
@@ -6,7 +6,7 @@ $OpenBSD: patch-configure_in,v 1.7 2005/08/10 02:14:13 jolan Exp $
    # even though select is a POSIX function. Reported by J. Ribbens.
    # Reconfirmed for OpenBSD 3.3 by Zachary Hamm, for 3.4 by Jason Ish.
 -  OpenBSD/2.* | OpenBSD/3.@<:@01234@:>@) 
-+  OpenBSD/2.* | OpenBSD/3.@<:@012345678@:>@) 
++  OpenBSD/2.* | OpenBSD/3.@<:@0123456789@:>@) 
      define_xopen_source=no;;
    # On Solaris 2.6, sys/wait.h is inconsistent in the usage
    # of union __?sigval. Reported by Stuart Bishop.
