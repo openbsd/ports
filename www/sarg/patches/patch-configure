@@ -1,7 +1,6 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2005/09/27 13:03:45 alek Exp $
---- configure.orig	Tue Sep 27 13:48:07 2005
-+++ configure	Tue Sep 27 13:48:21 2005
-@@ -2331,12 +2331,6 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+--- configure.orig	Sat Jan  7 14:40:01 2006
++++ configure	Sat Jan  7 14:40:40 2006
+@@ -2331,12 +2331,6 @@
  ;;
  esac
  

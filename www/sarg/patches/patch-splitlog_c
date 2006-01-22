@@ -1,0 +1,25 @@
+$OpenBSD: patch-splitlog_c,v 1.1 2006/01/22 11:05:02 aanriot Exp $
+--- splitlog.c.orig	Sun Jan 22 10:09:07 2006
++++ splitlog.c	Sun Jan 22 10:09:28 2006
+@@ -52,7 +52,7 @@ void splitlog(char *arq, char *df, int d
+       t=localtime(&tt);
+ 
+       if(dfrom) {
+-         strftime(wdata, 127, "%Y%m%d", t);
++         strftime(wdata, sizeof(wdata), "%Y%m%d", t);
+          idata=atoi(wdata);
+ 	 if(idata < dfrom || idata > duntil)
+          continue;
+@@ -64,9 +64,9 @@ void splitlog(char *arq, char *df, int d
+       }
+ 
+       if(strncmp(df,"e",1) == 0)
+-         strftime(dia, 127, "%d/%m/%Y", t);
++         strftime(dia, sizeof(dia), "%d/%m/%Y", t);
+        else
+-         strftime(dia, 127, "%m/%d/%Y", t);
++         strftime(dia, sizeof(dia), "%m/%d/%Y", t);
+ 
+       sprintf(hora,"%02d:%02d:%02d",t->tm_hour,t->tm_min,t->tm_sec);
+       printf("%s %s %s",dia,hora,buf);
+

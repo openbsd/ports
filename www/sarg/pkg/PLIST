@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/27 13:03:45 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/01/22 11:05:02 aanriot Exp $
 bin/sarg
 @man man/man1/sarg.1
 share/examples/sarg/
 @sample ${SYSCONFDIR}/sarg/
 share/examples/sarg/css.tpl
 share/examples/sarg/exclude_codes
+@sample ${SYSCONFDIR}/sarg/exclude_codes
 share/examples/sarg/fonts/
 share/examples/sarg/fonts/FreeSans.ttf
 share/examples/sarg/images/
@@ -29,6 +30,7 @@ share/examples/sarg/languages/Latvian
 share/examples/sarg/languages/Polish
 share/examples/sarg/languages/Portuguese
 share/examples/sarg/languages/Romanian
+share/examples/sarg/languages/Russian_UTF-8
 share/examples/sarg/languages/Russian_koi8
 share/examples/sarg/languages/Russian_windows1251
 share/examples/sarg/languages/Serbian
@@ -56,6 +58,7 @@ share/examples/sarg/sarg-php/locale/ru/LC_MESSAGES/
 share/examples/sarg/sarg-php/locale/ru/LC_MESSAGES/messages.mo
 share/examples/sarg/sarg-php/locale/ru/LC_MESSAGES/messages.po
 share/examples/sarg/sarg-php/sarg-block-it.php
+share/examples/sarg/sarg-php/sarg-realtime.php
 share/examples/sarg/sarg-php/sarg-squidguard-block.php
 share/examples/sarg/sarg-php/sarg-squidguard-block2.php
 share/examples/sarg/sarg-php/style.php

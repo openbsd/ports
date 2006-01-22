@@ -1,0 +1,24 @@
+$OpenBSD: patch-convlog_c,v 1.1 2006/01/22 11:05:02 aanriot Exp $
+--- convlog.c.orig	Sun Jan 22 10:07:20 2006
++++ convlog.c	Sun Jan 22 10:09:00 2006
+@@ -52,16 +52,16 @@ void convlog(char *arq, char *df, int df
+       t=localtime(&tt);
+ 
+       if(dfrom) {
+-         strftime(wdata, 127, "%Y%m%d", t);
++         strftime(wdata, sizeof(wdata), "%Y%m%d", t);
+          idata=atoi(wdata);
+ 	 if(idata < dfrom || idata > duntil)
+          continue;
+       }
+ 
+       if(strncmp(df,"e",1) == 0)
+-         strftime(dia, 127, "%d/%m/%Y", t);
++         strftime(dia, sizeof(dia), "%d/%m/%Y", t);
+        else
+-         strftime(dia, 127, "%m/%d/%Y", t);
++         strftime(dia, sizeof(dia), "%m/%d/%Y", t);
+       sprintf(hora,"%02d:%02d:%02d",t->tm_hour,t->tm_min,t->tm_sec);
+ 
+       printf("%s %s %s",dia,hora,buf);
+
