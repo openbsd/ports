@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2006/01/11 08:20:25 jolan Exp $
+# $OpenBSD: Makefile,v 1.4 2006/01/22 13:25:34 alek Exp $
 
 COMMENT=	"provides HTTP Basic authentication via bsd auth"
-DISTNAME=	bsdauth-0.8.1
+DISTNAME=	bsdauth-0.8.2
 EXTRACT_SUFX=	.tgz
 PKGNAME=	${DISTNAME:L:S/bsdauth/mod_auth_bsd/}
 CATEGORIES=	www
