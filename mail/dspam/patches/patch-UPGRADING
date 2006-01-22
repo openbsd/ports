@@ -1,7 +1,7 @@
-$OpenBSD: patch-UPGRADING,v 1.1 2005/11/23 08:52:49 jakob Exp $
---- UPGRADING.orig	Tue Oct 25 14:32:09 2005
-+++ UPGRADING	Tue Nov  8 23:44:49 2005
-@@ -8,8 +8,10 @@ UPGRADING FROM < 3.6.1
+$OpenBSD: patch-UPGRADING,v 1.2 2006/01/22 04:10:42 brad Exp $
+--- UPGRADING.orig	Tue Jan 17 15:49:08 2006
++++ UPGRADING	Sat Jan 21 22:54:40 2006
+@@ -13,8 +13,10 @@ UPGRADING FROM < 3.6.1
  
  - For users of hash_drv: A cssconvert tool has been provided to convert all
    v3.6.0 databases to the correct, 8-byte aligned format used in all newer

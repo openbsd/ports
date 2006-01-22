@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2005/12/26 13:17:35 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2006/01/22 04:10:42 brad Exp $
 
 COMMENT=	"anti-spam filter"
 
-VERSION=	3.6.2
+VERSION=	3.6.3
 DISTNAME=	dspam-${VERSION}
 SHARED_LIBS=		dspam	7.0
 MODGNU_SHARED_LIBS=	dspam	''
