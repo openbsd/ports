@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2005/11/03 15:51:05 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2006/01/22 21:20:48 aanriot Exp $
 %%mule%%
 bin/ellcc
 bin/gnuattach
@@ -15,7 +15,6 @@ bin/xemacs-rcs-checkin
 info/xemacs-${VERSION}/
 @info info/xemacs-${VERSION}/cl.info
 @info info/xemacs-${VERSION}/custom.info
-@comment info/xemacs-${VERSION}/dir
 @info info/xemacs-${VERSION}/emodules.info
 @comment info/xemacs-${VERSION}/emodules.info.orig
 @info info/xemacs-${VERSION}/external-widget.info
@@ -30,6 +29,8 @@ info/xemacs-${VERSION}/
 @info info/xemacs-${VERSION}/widget.info
 @info info/xemacs-${VERSION}/xemacs-faq.info
 @info info/xemacs-${VERSION}/xemacs.info
+@comment no checksum
+info/xemacs-${VERSION}/dir
 lib/xemacs/
 lib/xemacs-${VERSION}/
 lib/xemacs-${VERSION}/etc/

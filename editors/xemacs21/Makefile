@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2006/01/22 15:59:22 sturm Exp $
+# $OpenBSD: Makefile,v 1.34 2006/01/22 21:20:48 aanriot Exp $
 
 COMMENT=	"heavily customizable and extensible editor"
 
 VERSION=	21.4.17
 DISTNAME=	xemacs-${VERSION}
 # see below as well
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	editors
 
 HOMEPAGE=	http://www.xemacs.org/
@@ -21,9 +21,6 @@ MASTER_SITES= 	ftp://ftp.xemacs.org/pub/xemacs/xemacs-21.4/ \
 		ftp://ftp.oleane.net/pub/xemacs/xemacs-21.4/ \
 		ftp://ftp.pasteur.fr/pub/computing/xemacs/xemacs-21.4/ \
 		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/xemacs-21.4/ \
-		ftp://ftp.usyd.edu.au/pub/Xemacs/xemacs-21.4/ \
-		ftp://ftp.lab.kdd.co.jp/xemacs/xemacs-21.4/ \
-		ftp://ftp.th-darmstadt.de/pub/editors/xemacs/xemacs-21.4/ \
       		ftp://ftp.funet.fi/pub/mirrors/ftp.xemacs.org/pub/tux/xemacs/xemacs-21.4/
 
 GCCARCH=        ${MACHINE_ARCH}-unknown-openbsd${OSREV}
@@ -85,7 +82,7 @@ CONFIGURE_ARGS+=--with-xim=xlib
 .endif
 
 .if ${FLAVOR:L:Mmule}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 MODULES=	devel/gettext
 CONFIGURE_ARGS+=--with-mule
 
