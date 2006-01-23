@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2005/01/24 17:51:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2006/01/23 17:09:36 naddy Exp $
 
 COMMENT=	"text console audio player with an interactive interface"
 
-DISTNAME=	mp3blaster-3.2.0
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	mp3blaster-3.2.1
 CATEGORIES=	audio
 HOMEPAGE=	http://www.stack.nl/~brama/mp3blaster/
 
@@ -17,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c m ncurses ogg ossaudio pthread stdc++
 
-MASTER_SITES=	${HOMEPAGE}src/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mp3blaster/}
 
 LIB_DEPENDS=	sidplay.1::audio/libsidplay \
 		vorbis.1,vorbisfile.2::audio/libvorbis
