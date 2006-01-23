@@ -1,0 +1,22 @@
+$OpenBSD: patch-tvtypes_h,v 1.1 2006/01/23 04:07:26 jakemsr Exp $
+--- tvtypes.h.orig	Sun Jan 22 17:37:47 2006
++++ tvtypes.h	Sun Jan 22 17:39:51 2006
+@@ -34,12 +34,12 @@
+ #include <math.h>
+ #include <string.h>
+ 
+-typedef unsigned char  TV_UINT8;
+-typedef signed   char  TV_INT8;
+-typedef unsigned short TV_UINT16;
+-typedef short          TV_INT16;
+-typedef unsigned long  TV_UINT32;
+-typedef long           TV_INT32;
++typedef uint8_t  TV_UINT8;
++typedef int8_t   TV_INT8;
++typedef uint16_t TV_UINT16;
++typedef int16_t  TV_INT16;
++typedef uint32_t TV_UINT32;
++typedef int32_t  TV_INT32;
+ 
+ typedef TV_INT32       TV_BOOL;
+ 
