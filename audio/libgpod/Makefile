@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/01/20 06:23:51 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2006/01/23 21:27:49 jolan Exp $
 
 COMMENT=	"library to access the contents of an iPod"
 DISTNAME=	libgpod-0.3.0
@@ -20,7 +20,8 @@ USE_LIBTOOL=	Yes
 
 MODULES=	gettext
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
+BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
+		:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=	glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0::devel/glib2 \
 		gdk_pixbuf-2.0.0.0::x11/gtk+2
 WANTLIB=	m
