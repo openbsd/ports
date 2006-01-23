@@ -1,13 +1,24 @@
-$OpenBSD: patch-modules_plugin_base_public_nptypes_h,v 1.1 2004/12/27 21:21:39 wilfried Exp $
---- modules/plugin/base/public/nptypes.h.orig	Wed Sep  1 18:59:55 2004
-+++ modules/plugin/base/public/nptypes.h	Fri Sep 17 19:54:12 2004
-@@ -78,7 +78,9 @@
-     typedef int bool;
-   #endif
-   #else /* OPENBSD is defined, so use its bool */
-+  #if !defined(__cplusplus)
-     #include <stdbool.h>
-+  #endif
+$OpenBSD: patch-modules_plugin_base_public_nptypes_h,v 1.2 2006/01/23 12:34:06 wilfried Exp $
+--- modules/plugin/base/public/nptypes.h.orig	Thu May 19 23:49:42 2005
++++ modules/plugin/base/public/nptypes.h	Sat Sep 10 09:27:13 2005
+@@ -67,10 +67,8 @@
+ 
+   /*
+    * BSD/OS ships no header that defines uint32_t, nor bool (for C)
+-   * OpenBSD ships no header that defines uint32_t and using its bool macro is
+-   * unsafe.
+    */
+-  #if defined(bsdi) || defined(OPENBSD)
++  #if defined(bsdi)
+   typedef u_int32_t uint32_t;
+ 
+   #if !defined(__cplusplus)
+@@ -78,7 +76,7 @@
    #endif
    #else
    /*
+-   * FreeBSD defines uint32_t and bool.
++   * FreeBSD, and OpenBSD defines uint32_t and bool.
+    */
+     #include <inttypes.h>
+     #include <stdbool.h>

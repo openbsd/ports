@@ -1,8 +1,11 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2006/01/01 16:03:53 sturm Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.7 2006/01/23 12:34:06 wilfried Exp $
 @lib mozilla-thunderbird/components/libaccessibility.so.${LIBaccessibility_VERSION}
 @lib mozilla-thunderbird/components/libappcomps.so.${LIBappcomps_VERSION}
+@lib mozilla-thunderbird/components/libauth.so.${LIBauth_VERSION}
+@lib mozilla-thunderbird/components/libautoconfig.so.${LIBautoconfig_VERSION}
 @lib mozilla-thunderbird/components/libcaps.so.${LIBcaps_VERSION}
 @lib mozilla-thunderbird/components/libchrome.so.${LIBchrome_VERSION}
+@lib mozilla-thunderbird/components/libcommandlines.so.${LIBcommandlines_VERSION}
 @lib mozilla-thunderbird/components/libcomposer.so.${LIBcomposer_VERSION}
 @lib mozilla-thunderbird/components/libdocshell.so.${LIBdocshell_VERSION}
 @lib mozilla-thunderbird/components/libeditor.so.${LIBeditor_VERSION}
@@ -10,7 +13,6 @@
 @lib mozilla-thunderbird/components/libfileview.so.${LIBfileview_VERSION}
 @lib mozilla-thunderbird/components/libgfx_gtk.so.${LIBgfx_gtk_VERSION}
 @lib mozilla-thunderbird/components/libgfxps.so.${LIBgfxps_VERSION}
-@lib mozilla-thunderbird/components/libgfxxprint.so.${LIBgfxxprint_VERSION}
 @lib mozilla-thunderbird/components/libgklayout.so.${LIBgklayout_VERSION}
 @lib mozilla-thunderbird/components/libhtmlpars.so.${LIBhtmlpars_VERSION}
 @lib mozilla-thunderbird/components/libi18n.so.${LIBi18n_VERSION}
@@ -33,9 +35,13 @@
 @lib mozilla-thunderbird/components/libpippki.so.${LIBpippki_VERSION}
 @lib mozilla-thunderbird/components/libpref.so.${LIBpref_VERSION}
 @lib mozilla-thunderbird/components/librdf.so.${LIBrdf_VERSION}
+@lib mozilla-thunderbird/components/libremoteservice.so.${LIBremoteservice_VERSION}
 @lib mozilla-thunderbird/components/libspellchecker.so.${LIBspellchecker_VERSION}
+@lib mozilla-thunderbird/components/libsystem-pref.so.${LIBsystem-pref_VERSION}
+@lib mozilla-thunderbird/components/libtoolkitcomps.so.${LIBtoolkitcomps_VERSION}
 @lib mozilla-thunderbird/components/libtxmgr.so.${LIBtxmgr_VERSION}
 @lib mozilla-thunderbird/components/libuconv.so.${LIBuconv_VERSION}
+@lib mozilla-thunderbird/components/libuniversalchardet.so.${LIBuniversalchardet_VERSION}
 @lib mozilla-thunderbird/components/libwallet.so.${LIBwallet_VERSION}
 @lib mozilla-thunderbird/components/libwalletviewers.so.${LIBwalletviewers_VERSION}
 @lib mozilla-thunderbird/components/libwebbrwsr.so.${LIBwebbrwsr_VERSION}
@@ -45,8 +51,7 @@
 @lib mozilla-thunderbird/components/libxpcom_compat_c.so.${LIBxpcom_compat_c_VERSION}
 @lib mozilla-thunderbird/components/libxpconnect.so.${LIBxpconnect_VERSION}
 @lib mozilla-thunderbird/components/libxpinstall.so.${LIBxpinstall_VERSION}
-@lib mozilla-thunderbird/components/libxremote_client.so.${LIBxremote_client_VERSION}
-@lib mozilla-thunderbird/components/libxremoteservice.so.${LIBxremoteservice_VERSION}
+@lib mozilla-thunderbird/libgfxpsshar.so.${LIBgfxpsshar_VERSION}
 @lib mozilla-thunderbird/libgkgfx.so.${LIBgkgfx_VERSION}
 @lib mozilla-thunderbird/libgtkembedmoz.so.${LIBgtkembedmoz_VERSION}
 @lib mozilla-thunderbird/libgtkxtbin.so.${LIBgtkxtbin_VERSION}
@@ -61,7 +66,7 @@
 @lib mozilla-thunderbird/libsmime3.so.${LIBsmime3_VERSION}
 @lib mozilla-thunderbird/libsoftokn3.so.${LIBsoftokn3_VERSION}
 @lib mozilla-thunderbird/libssl3.so.${LIBssl3_VERSION}
-@lib mozilla-thunderbird/libxlibrgb.so.${LIBxlibrgb_VERSION}
 @lib mozilla-thunderbird/libxpcom.so.${LIBxpcom_VERSION}
 @lib mozilla-thunderbird/libxpcom_compat.so.${LIBxpcom_compat_VERSION}
+@lib mozilla-thunderbird/libxpcom_core.so.${LIBxpcom_core_VERSION}
 @lib mozilla-thunderbird/libxpistub.so.${LIBxpistub_VERSION}

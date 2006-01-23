@@ -1,7 +1,7 @@
-$OpenBSD: patch-mail_app_mozilla_in,v 1.5 2005/10/25 21:08:41 wilfried Exp $
---- mail/app/mozilla.in.orig	Tue Sep 20 23:10:29 2005
-+++ mail/app/mozilla.in	Mon Oct 24 21:49:38 2005
-@@ -73,6 +73,7 @@ moz_pis_startstop_scripts()
+$OpenBSD: patch-mail_app_mozilla_in,v 1.6 2006/01/23 12:34:06 wilfried Exp $
+--- mail/app/mozilla.in.orig	Tue Sep 20 23:13:05 2005
++++ mail/app/mozilla.in	Sat Oct 22 14:26:20 2005
+@@ -93,6 +93,7 @@ moz_pis_startstop_scripts()
  #set -x
  
  moz_libdir=%MOZAPPDIR%
@@ -9,7 +9,7 @@ $OpenBSD: patch-mail_app_mozilla_in,v 1.5 2005/10/25 21:08:41 wilfried Exp $
  MRE_HOME=%MREDIR%
  
  # Use run-mozilla.sh in the current dir if it exists
-@@ -109,6 +110,7 @@ if [ $found = 0 ]; then
+@@ -129,6 +130,7 @@ if [ $found = 0 ]; then
    # Check default compile-time libdir
    if [ -x "$moz_libdir/run-mozilla.sh" ]; then
      dist_bin="$moz_libdir"
@@ -17,7 +17,7 @@ $OpenBSD: patch-mail_app_mozilla_in,v 1.5 2005/10/25 21:08:41 wilfried Exp $
    else 
      echo "Cannot find mozilla runtime directory. Exiting."
      exit 1
-@@ -228,7 +230,11 @@ do
+@@ -170,7 +172,11 @@ do
    esac
  done
  

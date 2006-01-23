@@ -1,0 +1,12 @@
+$OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/23 12:34:06 wilfried Exp $
+--- nsprpub/pr/src/misc/prdtoa.c.orig	Thu Aug 18 19:24:37 2005
++++ nsprpub/pr/src/misc/prdtoa.c	Thu Nov  3 10:46:07 2005
+@@ -855,7 +855,7 @@ mult
+ 	wc = wa + wb;
+ 	if (wc > a->maxwds)
+ 		k++;
+-	c = Balloc(k);
++	c = Balloc(k+2);
+ 	for(x = c->x, xa = x + wc; x < xa; x++)
+ 		*x = 0;
+ 	xa = a->x;

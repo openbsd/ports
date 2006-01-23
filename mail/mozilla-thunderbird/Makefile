@@ -1,24 +1,25 @@
-# $OpenBSD: Makefile,v 1.33 2006/01/14 00:07:30 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2006/01/23 12:34:06 wilfried Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
 COMMENT=	"redesign of the integrated Mozilla App-Suite mail component"
 
-VER=		1.0.7
+VER=		1.5
 DISTNAME=	mozilla
-PKGNAME=	mozilla-thunderbird-${VER}p3
-SO_VERSION=	5.0
+PKGNAME=	mozilla-thunderbird-${VER}
+SO_VERSION=	6.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
-.for _lib in accessibility appcomps caps chrome composer docshell editor \
-	embedcomponents fileview gfx_gtk gfxps gfxxprint gkgfx gklayout \
-	gtkembedmoz gtkxtbin htmlpars i18n imglib2 import jar50 jsd ldap50 \
-	mail mailcomps mork mozfind mozjs mozldap msgsmime myspell necko \
-	necko2 nsappshell nspr4 nss3 nssckbi pipboot pipnss pippki plc4 plds4 \
-	pref prldap50 rdf smime3 softokn3 spellchecker ssl3 txmgr uconv wallet \
-	walletviewers webbrwsr websrvcs widget_gtk2 xlibrgb xmlextras xpcom \
-	xpcom_compat xpcom_compat_c xpconnect xpinstall xpistub \
-	xremote_client xremoteservice
+.for _lib in accessibility appcomps auth autoconfig caps chrome commandlines \
+	composer docshell editor embedcomponents fileview gfx_gtk gfxps \
+	gfxpsshar gkgfx gklayout gtkembedmoz gtkxtbin htmlpars i18n imglib2 \
+	import jar50 jsd ldap50 mail mailcomps mork mozfind mozjs mozldap \
+	msgsmime myspell necko necko2 nsappshell nspr4 nss3 nssckbi pipboot \
+	pipnss pippki plc4 plds4 pref prldap50 rdf remoteservice smime3 \
+	softokn3 spellchecker ssl3 system-pref toolkitcomps txmgr uconv \
+	universalchardet wallet walletviewers webbrwsr websrvcs widget_gtk2 \
+	xmlextras xpcom xpcom_compat xpcom_compat_c xpcom_core xpconnect \
+	xpinstall xpistub
 SHARED_LIBS+=	${_lib} ${SO_VERSION}
 .endfor
 
@@ -31,19 +32,19 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xft Xp Xrender Xt c cairo fontconfig freetype \
-			m pthread z atk-1.0.0.0 glib-2.0.0.0 \
-			gmodule-2.0.0.0 gobject-2.0.0.0 jpeg pango-1.0.0.0 \
-			pangoft2-1.0.0.0 pangocairo-1.0.0.0 png
+WANTLIB=	X11 Xft Xrender Xinerama Xt c fontconfig freetype m pthread z \
+		atk-1.0.0.0 cairo glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 \
+		jpeg pango-1.0.0.0 pangoft2-1.0.0.0 pangox-1.0.0.0 \
+		pangoxft-1.0.0.0 png
 .if empty(MACHINE_ARCH:Malpha)
-WANTLIB+=		stdc++
+WANTLIB+=	stdc++
 .endif
 
 MASTER_SITES=	http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/${VER}/source/ \
 		http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/${VER}/source/
 DISTFILES=	thunderbird-${VER}-source.tar.bz2
 
-MODULES=	gcc3 devel/gettext
+MODULES=	gcc3 gettext
 MODGCC3_ARCHES=	alpha
 MODGCC3_LANGS=	C++
 RUN_DEPENDS=	:esound-*:audio/esound
@@ -77,37 +78,29 @@ CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 		--disable-debug			\
 		--disable-tests			\
 		--disable-pedantic		\
-		--disable-installer
+		--disable-installer		\
+		--disable-updater		\
+		--disable-gnomeui		\
+		--disable-gnomevfs		\
+		--enable-xinerama		\
+		--enable-svg			\
+		--enable-svg-renderer=cairo	\
+		--enable-system-cairo		\
+		--enable-canvas
 
 #  from mail/config/mozconfig
-CONFIGURE_ARGS+=--enable-crypto			\
-		--disable-mathml		\
-		--disable-activex		\
-		--disable-activex-scripting	\
-		--disable-tests			\
-		--disable-oji			\
-		--disable-plugins		\
-		--disable-necko-disk-cache	\
-		--enable-single-profile		\
-		--disable-profilesharing	\
-		--enable-extensions=wallet,spellcheck,xmlextras,webservices \
-		--enable-necko-protocols=http,file,jar,viewsource,res,data \
-		--enable-image-decoders=default,-xbm
+CONFIGURE_ARGS+=--enable-application=mail
 
-CONFIGURE_ENV=	MOZ_THUNDERBIRD=1 \
-		PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig" \
-		BUILD_OFFICIAL=1 \
-		MOZILLA_OFFICIAL=1 \
-		SO_VERSION="${SO_VERSION}"
-MAKE_ENV=	MOZ_THUNDERBIRD=1 \
+MAKE_ENV=	MOZ_CO_PROJECT=mail \
 		LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
 		BUILD_OFFICIAL=1 \
 		MOZILLA_OFFICIAL=1 \
 		SO_VERSION="${SO_VERSION}"
+CONFIGURE_ENV=	${MAKE_ENV} \
+		PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig" \
 
 MOB=		${WRKSRC}/dist/bin
 MOZ=		${PREFIX}/mozilla-thunderbird
-MAGIC=		{972ce4c6-7e08-4474-a285-3208198ce6fd}
 
 post-extract:
 	@cp ${FILESDIR}/xptc* ${WRKSRC}/xpcom/reflect/xptcall/src/md/unix/
@@ -122,7 +115,7 @@ pre-configure:
 		${WRKSRC}/xpcom/components/nsNativeComponentLoader.cpp
 
 do-install:
-.for dir in chrome components defaults greprefs res
+.for dir in chrome components defaults extensions greprefs res
 	${INSTALL_DATA_DIR} ${MOZ}/${dir}
 	@cd ${MOB} && ${TAR} -chf - ${dir} | \
 		${TAR} -xf - -C ${MOZ}
@@ -131,18 +124,12 @@ do-install:
 		${TAR} -xf - -C ${MOZ}
 	@chmod 444 ${MOZ}/*.so.?.? ${MOZ}/components/*.so.?.? ${MOZ}/components/*.js
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${MOZ}
-	${INSTALL_DATA} ${WRKSRC}/mail/app/mozicon16.xpm ${WRKSRC}/mail/app/mozicon50.xpm ${MOZ}
-	${INSTALL_SCRIPT} ${MOB}/thunderbird ${PREFIX}/bin/mozilla-thunderbird
-	ln -f ${PREFIX}/bin/mozilla-thunderbird ${PREFIX}/bin/thunderbird
-	${INSTALL_SCRIPT} ${MOB}/thunderbird-config ${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOZ}
-	${INSTALL_PROGRAM} ${MOB}/regchrome ${MOB}/regxpcom ${MOB}/thunderbird-bin ${MOB}/mozilla-xremote-client ${MOZ}
-	ln -f ${MOZ}/thunderbird-bin ${MOZ}/mozilla-thunderbird-bin
 
-	${INSTALL_DATA_DIR} ${MOZ}/extensions
-	${INSTALL_DATA} ${FILESDIR}/Extensions.rdf ${MOZ}/extensions/
-	${INSTALL_DATA_DIR} ${MOZ}/extensions/${MAGIC}
-	${INSTALL_DATA} ${MOZ}/defaults/profile/extensions/installed-extensions.txt ${MOZ}/extensions/installed-extensions-processed.txt
-	${INSTALL_DATA} ${MOZ}/defaults/profile/extensions/${MAGIC}/install.rdf ${MOZ}/extensions/${MAGIC}/
+	${INSTALL_DATA} ${WRKSRC}/mail/app/mozicon16.xpm ${WRKSRC}/mail/app/mozicon50.xpm ${MOZ}
+	${INSTALL_SCRIPT} ${MOB}/thunderbird ${MOB}/thunderbird-config ${PREFIX}/bin/
+	ln -f ${PREFIX}/bin/thunderbird ${PREFIX}/bin/mozilla-thunderbird
+	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOZ}
+	${INSTALL_PROGRAM} ${MOB}/regxpcom ${MOB}/thunderbird-bin ${MOB}/mozilla-xremote-client ${MOZ}
+	ln -f ${MOZ}/thunderbird-bin ${MOZ}/mozilla-thunderbird-bin
 
 .include <bsd.port.mk>

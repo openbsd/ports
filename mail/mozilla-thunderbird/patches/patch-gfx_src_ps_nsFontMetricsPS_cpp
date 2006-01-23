@@ -1,61 +1,27 @@
-$OpenBSD: patch-gfx_src_ps_nsFontMetricsPS_cpp,v 1.2 2004/12/27 21:21:39 wilfried Exp $
---- gfx/src/ps/nsFontMetricsPS.cpp.orig	Thu Feb  5 02:57:05 2004
-+++ gfx/src/ps/nsFontMetricsPS.cpp	Wed Nov 10 21:50:23 2004
-@@ -1141,10 +1141,10 @@ nsFontPSFreeType::Init(nsITrueTypeFontCa
-   
-   mPixelSize = NSToIntRound(app2dev * mFont->size);
+$OpenBSD: patch-gfx_src_ps_nsFontMetricsPS_cpp,v 1.3 2006/01/23 12:34:06 wilfried Exp $
+--- gfx/src/ps/nsFontMetricsPS.cpp.orig	Tue Dec 20 11:16:58 2005
++++ gfx/src/ps/nsFontMetricsPS.cpp	Tue Dec 20 11:17:37 2005
+@@ -1033,8 +1033,10 @@ nsFontPSXft::Init(nsXftEntry* aEntry,
  
--  mImageDesc.font.face_id    = (void*)mEntry;
--  mImageDesc.font.pix_width  = mPixelSize;
--  mImageDesc.font.pix_height = mPixelSize;
--  mImageDesc.image_type = 0;
-+  mImageDesc->face_id = (FTC_FaceID)&mEntry;
-+  mImageDesc->width  = mPixelSize;
-+  mImageDesc->height = mPixelSize;
-+  mImageDesc->flags = 0;
+ nsFontPSXft::~nsFontPSXft()
+ {
+-  if (mEntry->mFace) 
++  if (mEntry->mFace) {
+     FT_Done_Face(mEntry->mFace);
++    mEntry->mFace = nsnull;
++  }
  
-   nsresult rv;
-   mFt2 = do_GetService(NS_FREETYPE2_CONTRACTID, &rv);
-@@ -1190,7 +1190,7 @@ nsFontPSFreeType::GetWidth(const PRUnich
-   if (!face)
-     return 0;
- 
--  FTC_Image_Cache iCache;
-+  FTC_ImageCache iCache;
-   nsresult rv = mFt2->GetImageCache(&iCache);
-   if (NS_FAILED(rv)) {
-     NS_ERROR("Failed to get Image Cache");
-@@ -1228,8 +1228,8 @@ nsFontPSFreeType::getFTFace()
-   
-   FTC_Manager cManager;
-   mFt2->GetFTCacheManager(&cManager);
--  nsresult rv = mFt2->ManagerLookupSize(cManager, &mImageDesc.font,
--                                        &face, nsnull);
-+  nsresult rv = mFt2->ManagerLookupFace(cManager, mImageDesc->face_id,
-+                                        &face);
-   NS_ASSERTION(rv==0, "failed to get face/size");
-   if (rv)
-     return nsnull;
-@@ -1622,16 +1622,16 @@ void nsFT2Type8Generator::GeneratePSFont
-   mEntry->GetFamilyName(fontName);
-   mEntry->GetStyleName(styleName);
-   
--  mImageDesc.font.face_id    = (void*)mEntry;
-+  mImageDesc->face_id = (FTC_FaceID)&mEntry;
-   // TT glyph has no relation to size
--  mImageDesc.font.pix_width  = 16;
--  mImageDesc.font.pix_height = 16;
--  mImageDesc.image_type = 0;
-+  mImageDesc->width  = 16;
-+  mImageDesc->height = 16;
-+  mImageDesc->flags = 0;
-   FT_Face face = nsnull;
-   FTC_Manager cManager;
-   mFt2->GetFTCacheManager(&cManager);
--  nsresult rv = mFt2->ManagerLookupSize(cManager, &mImageDesc.font,
--                                        &face, nsnull);
-+  nsresult rv = mFt2->ManagerLookupFace(cManager, mImageDesc->face_id,
-+                                        &face);
-   if (NS_FAILED(rv))
+   if (FT_Done_FreeType(mFreeTypeLibrary))
      return;
-  
+@@ -2323,8 +2325,10 @@ nsXftType1Generator::Init(nsXftEntry* aE
+ 
+ nsXftType1Generator::~nsXftType1Generator()
+ {
+-  if (mEntry->mFace) 
++  if (mEntry->mFace) {
+     FT_Done_Face(mEntry->mFace);
++    mEntry->mFace = nsnull;
++  }
+ 
+   if (FT_Done_FreeType(mFreeTypeLibrary))
+     return;

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.6 2005/10/25 21:08:41 wilfried Exp $
---- configure.in.orig	Sun Oct 31 08:17:58 2004
-+++ configure.in	Tue Oct 25 16:39:58 2005
-@@ -1349,7 +1349,7 @@ case "$target" in
+$OpenBSD: patch-configure_in,v 1.7 2006/01/23 12:34:06 wilfried Exp $
+--- configure.in.orig	Tue Oct  4 07:53:49 2005
++++ configure.in	Thu Jan 12 13:20:59 2006
+@@ -1801,7 +1801,7 @@ case "$target" in
  	;;
  
  *-openbsd*)
@@ -10,16 +10,16 @@ $OpenBSD: patch-configure_in,v 1.6 2005/10/25 21:08:41 wilfried Exp $
      DSO_CFLAGS=''
      DSO_PIC_CFLAGS='-fPIC'
      DSO_LDOPTS='-shared -fPIC'
-@@ -3103,7 +3103,7 @@ _SAVE_LIBS=$LIBS
+@@ -3582,7 +3582,7 @@ _SAVE_LIBS=$LIBS
  CFLAGS="$ZLIB_CFLAGS $CFLAGS"
  LDFLAGS="$ZLIB_LIBS -lz $LDFLAGS"
- if test -n "${PNG_DIR}"; then
+ if test -n "${PNG_DIR}" -a "${PNG_DIR}" != "yes"; then
 -    CFLAGS="-I${PNG_DIR}/include $CFLAGS"
 +    CFLAGS="-I${PNG_DIR}/include/libpng $CFLAGS"
      LDFLAGS="-L${PNG_DIR}/lib $LDFLAGS"
  fi
  if test -z "$PNG_DIR" -o "$PNG_DIR" = no; then
-@@ -3133,7 +3133,7 @@ LDFLAGS=$_SAVE_LDFLAGS
+@@ -3612,7 +3612,7 @@ LDFLAGS=$_SAVE_LDFLAGS
  LIBS=$_SAVE_LIBS
  
  if test "${PNG_DIR}" -a -d "${PNG_DIR}" -a "$SYSTEM_PNG" = 1; then
@@ -28,15 +28,3 @@ $OpenBSD: patch-configure_in,v 1.6 2005/10/25 21:08:41 wilfried Exp $
      PNG_LIBS="-L${PNG_DIR}/lib ${PNG_LIBS}"
  fi
  
-@@ -3526,9 +3526,9 @@ then
-     dnl GTK2 toolkit is in use.
-     if test "$MOZ_ENABLE_GTK2"
-     then
--        MOZ_ENABLE_GNOMEVFS=1
-+        MOZ_ENABLE_GNOMEVFS=
-         MOZ_ENABLE_GCONF=1
--        MOZ_ENABLE_LIBGNOME=1
-+        MOZ_ENABLE_LIBGNOME=
-     fi
- 
-     MOZ_ARG_DISABLE_BOOL(gnomevfs,

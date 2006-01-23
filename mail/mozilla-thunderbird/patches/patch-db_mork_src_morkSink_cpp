@@ -1,0 +1,22 @@
+$OpenBSD: patch-db_mork_src_morkSink_cpp,v 1.1 2006/01/23 12:34:06 wilfried Exp $
+--- db/mork/src/morkSink.cpp.orig	Sat Apr 17 17:49:24 2004
++++ db/mork/src/morkSink.cpp	Tue Dec 20 21:47:21 2005
+@@ -115,15 +115,10 @@ morkSpool::SpillPutc(morkEnv* ev, int c)
+           coil->mBuf_Fill = fill;
+           if ( at >= end ) // need to grow the coil?
+           {
+-            if ( size > 2048 ) // grow slower over 2K?
+-              size += 512;
++            if ( size > 65536 )
++              size += 65536;
+             else
+-            {
+-              mork_size growth = ( size * 4 ) / 3; // grow by 33%
+-              if ( growth < 64 ) // grow faster under (64 * 3)?
+-                growth = 64;
+-              size += growth;
+-            }
++              size *= 2;
+             if ( coil->GrowCoil(ev, size) ) // made coil bigger?
+             {
+               body = (mork_u1*) coil->mBuf_Body;

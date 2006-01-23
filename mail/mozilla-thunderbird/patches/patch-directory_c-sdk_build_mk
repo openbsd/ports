@@ -1,7 +1,7 @@
-$OpenBSD: patch-directory_c-sdk_build_mk,v 1.1 2004/12/27 21:21:39 wilfried Exp $
---- directory/c-sdk/build.mk.orig	Tue Sep 14 22:59:40 2004
-+++ directory/c-sdk/build.mk	Wed Nov 10 21:50:22 2004
-@@ -410,10 +410,10 @@ else
+$OpenBSD: patch-directory_c-sdk_build_mk,v 1.2 2006/01/23 12:34:06 wilfried Exp $
+--- directory/c-sdk/build.mk.orig	Tue Jun 14 23:27:32 2005
++++ directory/c-sdk/build.mk	Sat Sep 10 09:08:27 2005
+@@ -411,10 +411,10 @@ else
  LINK_LIB        = $(RM) $@; $(AR) $(AR_FLAGS) $(OBJS); $(RANLIB) $@
  LINK_LIB2       = $(RM) $@; $(AR) $@ $(OBJS2); $(RANLIB) $@
  ifdef SONAMEFLAG_PREFIX

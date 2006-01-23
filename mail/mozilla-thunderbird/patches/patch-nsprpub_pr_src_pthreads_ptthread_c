@@ -1,7 +1,7 @@
-$OpenBSD: patch-nsprpub_pr_src_pthreads_ptthread_c,v 1.1 2005/03/26 19:04:13 wilfried Exp $
---- nsprpub/pr/src/pthreads/ptthread.c.orig	Wed Aug 28 16:42:52 2002
-+++ nsprpub/pr/src/pthreads/ptthread.c	Sun Mar 20 08:53:15 2005
-@@ -48,6 +48,7 @@
+$OpenBSD: patch-nsprpub_pr_src_pthreads_ptthread_c,v 1.2 2006/01/23 12:34:06 wilfried Exp $
+--- nsprpub/pr/src/pthreads/ptthread.c.orig	Thu Aug 18 19:24:38 2005
++++ nsprpub/pr/src/pthreads/ptthread.c	Sat Sep 10 09:08:28 2005
+@@ -51,6 +51,7 @@
  #include <unistd.h>
  #include <string.h>
  #include <signal.h>

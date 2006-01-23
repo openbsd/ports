@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_rules_mk,v 1.2 2004/12/27 21:21:39 wilfried Exp $
---- config/rules.mk.orig	Wed Aug 11 21:44:17 2004
-+++ config/rules.mk	Fri Sep 17 19:47:41 2004
+$OpenBSD: patch-config_rules_mk,v 1.3 2006/01/23 12:34:06 wilfried Exp $
+--- config/rules.mk.orig	Tue Oct 11 01:16:39 2005
++++ config/rules.mk	Mon Dec 26 14:07:02 2005
 @@ -667,7 +667,7 @@ ifdef SHARED_LIBRARY
  ifdef IS_COMPONENT
  ifdef GRE_MODULE
@@ -10,21 +10,16 @@ $OpenBSD: patch-config_rules_mk,v 1.2 2004/12/27 21:21:39 wilfried Exp $
  	$(ELF_DYNSTR_GC) $(GRE_DIST)/components/$(SHARED_LIBRARY)
  ifdef BEOS_ADDON_WORKAROUND
  	( cd $(GRE_DIST)/components && $(CC) -nostart -o $(SHARED_LIBRARY).stub $(SHARED_LIBRARY) )
-@@ -677,11 +677,11 @@ endif # GRE_MODULE
- ifeq ($(OS_ARCH),OS2)
- 	$(INSTALL) $(IFLAGS2) $(IMPORT_LIBRARY) $(DIST)/lib/components
- else
--	$(INSTALL) $(IFLAGS2) $(SHARED_LIBRARY) $(DIST)/lib/components
-+	$(INSTALL) $(IFLAGS1) $(SHARED_LIBRARY) $(DIST)/lib/components
- 	$(ELF_DYNSTR_GC) $(DIST)/lib/components/$(SHARED_LIBRARY)
+@@ -675,7 +675,7 @@ endif
  endif
+ endif # GRE_MODULE
  ifndef _SKIP_OLD_GRE_INSTALL
--	$(INSTALL) $(IFLAGS2) $(SHARED_LIBRARY) $(DIST)/bin/components
-+	$(INSTALL) $(IFLAGS1) $(SHARED_LIBRARY) $(DIST)/bin/components
- 	$(ELF_DYNSTR_GC) $(DIST)/bin/components/$(SHARED_LIBRARY)
+-	$(INSTALL) $(IFLAGS2) $(SHARED_LIBRARY) $(FINAL_TARGET)/components
++	$(INSTALL) $(IFLAGS1) $(SHARED_LIBRARY) $(FINAL_TARGET)/components
+ 	$(ELF_DYNSTR_GC) $(FINAL_TARGET)/components/$(SHARED_LIBRARY)
  ifdef BEOS_ADDON_WORKAROUND
- 	( cd $(DIST)/bin/components && $(CC) -nostart -o $(SHARED_LIBRARY).stub $(SHARED_LIBRARY) )
-@@ -690,7 +690,7 @@ endif # ! _SKIP_OLD_GRE_INSTALL
+ 	( cd $(FINAL_TARGET)/components && $(CC) -nostart -o $(SHARED_LIBRARY).stub $(SHARED_LIBRARY) )
+@@ -684,7 +684,7 @@ endif # ! _SKIP_OLD_GRE_INSTALL
  else # ! IS_COMPONENT
  ifdef GRE_MODULE
  ifndef DISABLE_DIST_GRE
@@ -33,20 +28,20 @@ $OpenBSD: patch-config_rules_mk,v 1.2 2004/12/27 21:21:39 wilfried Exp $
  ifdef BEOS_ADDON_WORKAROUND
  	( cd $(GRE_DIST) && $(CC) -nostart -o $(SHARED_LIBRARY).stub $(SHARED_LIBRARY) )
  endif
-@@ -699,10 +699,10 @@ endif # GRE_MODULE
- ifneq (,$(filter OS2 WINNT,$(OS_ARCH)))
+@@ -694,10 +694,10 @@ endif # GRE_MODULE
+ ifneq (,$(filter OS2 WINNT WINCE,$(OS_ARCH)))
  	$(INSTALL) $(IFLAGS2) $(IMPORT_LIBRARY) $(DIST)/lib
  else
 -	$(INSTALL) $(IFLAGS2) $(SHARED_LIBRARY) $(DIST)/lib
 +	$(INSTALL) $(IFLAGS1) $(SHARED_LIBRARY) $(DIST)/lib
  endif
  ifndef _SKIP_OLD_GRE_INSTALL
--	$(INSTALL) $(IFLAGS2) $(SHARED_LIBRARY) $(DIST)/bin
-+	$(INSTALL) $(IFLAGS1) $(SHARED_LIBRARY) $(DIST)/bin
+-	$(INSTALL) $(IFLAGS2) $(SHARED_LIBRARY) $(FINAL_TARGET)
++	$(INSTALL) $(IFLAGS1) $(SHARED_LIBRARY) $(FINAL_TARGET)
  ifdef BEOS_ADDON_WORKAROUND
- 	( cd $(DIST)/bin && $(CC) -nostart -o $(SHARED_LIBRARY).stub $(SHARED_LIBRARY) )
+ 	( cd $(FINAL_TARGET) && $(CC) -nostart -o $(SHARED_LIBRARY).stub $(SHARED_LIBRARY) )
  endif
-@@ -766,15 +766,15 @@ ifndef NO_INSTALL
+@@ -765,15 +765,15 @@ ifndef NO_INSTALL
  ifdef SHARED_LIBRARY
  ifdef IS_COMPONENT
  ifdef MRE_DIST
@@ -66,9 +61,9 @@ $OpenBSD: patch-config_rules_mk,v 1.2 2004/12/27 21:21:39 wilfried Exp $
  endif
  endif
  endif # SHARED_LIBRARY
-@@ -1023,7 +1023,6 @@ endif # NO_LD_ARCHIVE_FLAGS
+@@ -1043,7 +1043,6 @@ endif # NO_LD_ARCHIVE_FLAGS
  else # os2 vacpp
- 	$(MKSHLIB) /O:$@ /DLL /INC:_dllentry $(LDFLAGS) $(OBJS) $(LOBJS) $(EXTRA_DSO_LDOPTS) $(OS_LIBS) $(EXTRA_LIBS) $(DEF_FILE)
+ 	$(MKSHLIB) -O:$@ -DLL -INC:_dllentry $(LDFLAGS) $(OBJS) $(LOBJS) $(EXTRA_DSO_LDOPTS) $(OS_LIBS) $(EXTRA_LIBS) $(DEF_FILE)
  endif # !os2 vacpp
 -	chmod +x $@
  ifndef NO_COMPONENT_LINK_MAP

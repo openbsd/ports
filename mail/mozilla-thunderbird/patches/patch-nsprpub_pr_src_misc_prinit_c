@@ -1,7 +1,7 @@
-$OpenBSD: patch-nsprpub_pr_src_misc_prinit_c,v 1.1.1.1 2004/01/18 11:47:42 wilfried Exp $
---- nsprpub/pr/src/misc/prinit.c.orig	2003-01-20 21:13:09.000000000 +0100
-+++ nsprpub/pr/src/misc/prinit.c	2003-12-12 11:07:27.000000000 +0100
-@@ -430,6 +430,12 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
+$OpenBSD: patch-nsprpub_pr_src_misc_prinit_c,v 1.2 2006/01/23 12:34:06 wilfried Exp $
+--- nsprpub/pr/src/misc/prinit.c.orig	Wed Apr 28 02:34:07 2004
++++ nsprpub/pr/src/misc/prinit.c	Sat Sep 10 09:08:28 2005
+@@ -433,6 +433,12 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
  	    _PR_LogCleanup();
  
          /*
@@ -14,7 +14,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prinit_c,v 1.1.1.1 2004/01/18 11:47:42 wilfr
           * This part should look like the end of _PR_NativeRunThread
           * and _PR_UserRunThread.
           */
-@@ -441,6 +447,7 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
+@@ -444,6 +450,7 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
              PR_DELETE(me->stack);
              PR_DELETE(me);
          }
@@ -22,7 +22,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prinit_c,v 1.1.1.1 2004/01/18 11:47:42 wilfr
  
          /*
           * XXX: We are freeing the heap memory here so that Purify won't
-@@ -449,8 +456,6 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
+@@ -452,8 +459,6 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
           * Ideally, for each _PR_InitXXX(), there should be a corresponding
           * _PR_XXXCleanup() that we can call here.
           */

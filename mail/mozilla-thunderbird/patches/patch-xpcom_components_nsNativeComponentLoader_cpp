@@ -1,7 +1,7 @@
-$OpenBSD: patch-xpcom_components_nsNativeComponentLoader_cpp,v 1.1 2005/04/09 08:48:11 wilfried Exp $
---- xpcom/components/nsNativeComponentLoader.cpp.orig	Mon Jun  7 19:12:08 2004
-+++ xpcom/components/nsNativeComponentLoader.cpp	Wed Apr  6 22:50:29 2005
-@@ -656,7 +656,7 @@ nsNativeComponentLoader::AutoRegisterCom
+$OpenBSD: patch-xpcom_components_nsNativeComponentLoader_cpp,v 1.2 2006/01/23 12:34:06 wilfried Exp $
+--- xpcom/components/nsNativeComponentLoader.cpp.orig	Thu Jul 14 20:42:57 2005
++++ xpcom/components/nsNativeComponentLoader.cpp	Sat Sep 10 19:48:15 2005
+@@ -668,7 +668,7 @@ nsNativeComponentLoader::AutoRegisterCom
          ".shlb",    /* Mac ? */
          ".dso",     /* Unix ? */
          ".dylib",   /* Unix: Mach */
