@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2005/05/31 18:47:12 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.10 2006/01/23 03:27:52 jolan Exp $
 
 COMMENT=	"compiler cache"
 
 DISTNAME=	ccache-2.4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 HOMEPAGE=	http://ccache.samba.org/
 
