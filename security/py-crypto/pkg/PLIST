@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/11/27 15:20:42 alek Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/01/23 08:52:55 alek Exp $
 lib/python${MODPY_VERSION}/site-packages/Crypto/
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/AES.so
@@ -38,6 +38,7 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/RSA.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/RSA.pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_fastmath.so
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/pubkey.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/pubkey.pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/qNEW.py

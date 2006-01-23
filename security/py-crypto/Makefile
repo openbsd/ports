@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2005/11/27 15:20:42 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2006/01/23 08:52:55 alek Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	"cryptographic tools for Python"
 
 VERSION=	2.0.1
 DISTNAME=	pycrypto-${VERSION}
-PKGNAME=	py-crypto-${VERSION}
+PKGNAME=	py-crypto-${VERSION}p1
 CATEGORIES=    	security devel
 
 HOMEPAGE=	http://www.amk.ca/python/code/crypto.html
@@ -22,8 +22,12 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://www.amk.ca/files/python/crypto/
 
 MODULES=	lang/python
+LIB_DEPENDS=	gmp.6::devel/gmp
 
 DOCSDIR=	${PREFIX}/share/doc/py-crypto
+
+pre-build:
+	perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' ${WRKSRC}/setup.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCSDIR}
