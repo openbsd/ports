@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/11/28 22:41:18 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/01/23 09:03:46 espie Exp $
 
 COMMENT=	"puzzle game for KDE"
 
@@ -36,6 +36,7 @@ CONFIGURE_ARGS=	 ${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+= --with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+= --with-extra-includes=${LOCALBASE}/include/libpng:${LOCALBASE}/include
 CONFIGURE_ENV=	KDEDIR=${LOCALBASE} 
+USE_LIBTOOL=	Yes
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
 
