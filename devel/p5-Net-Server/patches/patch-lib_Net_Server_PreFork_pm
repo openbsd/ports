@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Net_Server_PreFork_pm,v 1.1 2006/01/23 17:58:41 steven Exp $
+--- lib/Net/Server/PreFork.pm.orig	Mon Jan 23 18:38:54 2006
++++ lib/Net/Server/PreFork.pm	Mon Jan 23 18:39:14 2006
+@@ -665,7 +665,7 @@ will be the open socket to the child.
+ 
+ =back
+ 
+-=BUGS
++=head1 BUGS
+ 
+ Tests don't seem to work on Win32.  Any ideas or patches would be welcome.
+ 

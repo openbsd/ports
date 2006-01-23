@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Net_Server_PreForkSimple_pm,v 1.1 2006/01/23 17:58:41 steven Exp $
+--- lib/Net/Server/PreForkSimple.pm.orig	Mon Jan 23 18:39:01 2006
++++ lib/Net/Server/PreForkSimple.pm	Mon Jan 23 18:39:27 2006
+@@ -594,7 +594,7 @@ check_for_dequeue setting.
+ 
+ =back
+ 
+-=BUGS
++=head1 BUGS
+ 
+ Tests don't seem to work on Win32.  Any ideas or patches would be welcome.
+ 
