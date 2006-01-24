@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/07/17 18:00:30 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2006/01/24 21:07:28 steven Exp $
 
 COMMENT=	"mailing list manager"
 
-DISTNAME=	mlmmj-1.2.8
+DISTNAME=	mlmmj-1.2.11
 CATEGORIES=    	mail
 
 HOMEPAGE=	http://mlmmj.mmj.dk/
@@ -27,5 +27,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mlmmj
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/mlmmj
 	mv ${PREFIX}/bin/mlmmj-make-ml.sh ${PREFIX}/bin/mlmmj-make-ml
+	mv ${PREFIX}/man/man1/mlmmj-make-ml.sh.1 \
+		${PREFIX}/man/man1/mlmmj-make-ml.1
 
 .include <bsd.port.mk>
