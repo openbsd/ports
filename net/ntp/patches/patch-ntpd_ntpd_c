@@ -1,6 +1,6 @@
-$OpenBSD: patch-ntpd_ntpd_c,v 1.1.1.1 2004/06/05 04:34:19 danh Exp $
---- ntpd/ntpd.c.orig	2004-02-25 00:58:13.000000000 -0500
-+++ ntpd/ntpd.c	2004-06-04 09:39:45.000000000 -0400
+$OpenBSD: patch-ntpd_ntpd_c,v 1.2 2006/01/24 19:58:58 sturm Exp $
+--- ntpd/ntpd.c.orig	Wed Feb 25 06:58:13 2004
++++ ntpd/ntpd.c	Tue Jan 24 20:53:43 2006
 @@ -399,11 +399,16 @@ ntpdmain(
  	}
  #endif
@@ -19,3 +19,12 @@ $OpenBSD: patch-ntpd_ntpd_c,v 1.1.1.1 2004/06/05 04:34:19 danh Exp $
  		if (uid)
  		{
  			msyslog(LOG_ERR, "ntpd: must be run as root, not uid %ld", (long)uid);
+@@ -881,7 +886,7 @@ getuser:	
+ 			} else {
+ getgroup:	
+ 				if ((gr = getgrnam(group)) != NULL) {
+-					sw_gid = pw->pw_gid;
++					sw_gid = gr->gr_gid;
+ 				} else {
+ 					errno = 0;
+ 					msyslog(LOG_ERR, "Cannot find group `%s'", group);

@@ -1,7 +1,7 @@
-$OpenBSD: patch-ntpdc_ntpdc_ops_c,v 1.1.1.1 2004/06/05 04:34:19 danh Exp $
---- ntpdc/ntpdc_ops.c.orig	2004-05-25 07:02:25.000000000 -0400
-+++ ntpdc/ntpdc_ops.c	2004-06-04 09:51:19.000000000 -0400
-@@ -9,22 +9,22 @@
+$OpenBSD: patch-ntpdc_ntpdc_ops_c,v 1.2 2006/01/24 19:58:58 sturm Exp $
+--- ntpdc/ntpdc_ops.c.orig	Tue May 25 13:02:25 2004
++++ ntpdc/ntpdc_ops.c	Tue Jan 24 20:52:44 2006
+@@ -9,21 +9,21 @@
  #include <stdio.h>
  #include <stddef.h>
  
@@ -21,12 +21,11 @@ $OpenBSD: patch-ntpdc_ntpdc_ops_c,v 1.1.1.1 2004/06/05 04:34:19 danh Exp $
  #endif
  
  #include <arpa/inet.h>
- 
++
 +#include "ntpdc.h"
 +#include "ntp_control.h"
 +#include "ntp_refclock.h"
 +#include "ntp_stdlib.h"
-+
+ 
  /*
   * Declarations for command handlers in here
-  */
