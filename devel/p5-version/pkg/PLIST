@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/01/24 07:29:11 steven Exp $
+${P5ARCH}/
+${P5ARCH}/auto/
+${P5ARCH}/auto/version/
+${P5ARCH}/auto/version/vxs/
+${P5ARCH}/auto/version/vxs/vxs.bs
+${P5ARCH}/auto/version/vxs/vxs.so
+${P5ARCH}/version/
+${P5ARCH}/version.pm
+${P5ARCH}/version.pod
+${P5ARCH}/version/vxs.pm
+@man man/man3p/version.3p
