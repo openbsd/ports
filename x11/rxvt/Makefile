@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.32 2004/12/19 17:36:33 alek Exp $
+# $OpenBSD: Makefile,v 1.33 2006/01/24 19:14:18 steven Exp $
 
 COMMENT=	"color, low memory usage, xterm replacement"
 COMMENT-clock=	"analog clock for X11 w/appoint. reminder and mail notif"
 
 VER=		2.7.10
 DISTNAME=	rxvt-${VER}
-PKGNAME-clock=	rclock-${VER}
+PKGNAME=	rxvt-${VER}p0
+PKGNAME-clock=	rclock-${VER}p0 
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/ \
 		ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/rxvt/ \

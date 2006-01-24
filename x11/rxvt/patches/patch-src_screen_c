@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_screen_c,v 1.1 2006/01/24 19:14:18 steven Exp $
+
+There is an underflow condition in rxvt_selection_adjust_kanji triggered
+when one drags the mouse holding left button along the left side of the
+window (c1 == 0). The added check prevents reading memory before the
+allocated buffer. This seems to also be semantically correct as there is
+no need to extend selection when there is nothing selected on the line.
+
+--- src/screen.c.orig	Sat Dec 10 18:58:35 2005
++++ src/screen.c	Sat Dec 10 19:05:48 2005
+@@ -3211,9 +3211,9 @@ rxvt_selection_adjust_kanji(rxvt_t *r)
+ 	    && IS_MULTI1(r->screen.rend[r1][c1 - 1]))
+ 	    r->selection.beg.col--;
+     }
+-    if (r->selection.end.col < r->TermWin.ncol) {
++    c1 = r->selection.end.col;
++    if (0 < c1 && c1 < r->TermWin.ncol) {
+ 	r1 = r->selection.end.row + r->TermWin.saveLines;
+-	c1 = r->selection.end.col;
+ 	if (IS_MULTI1(r->screen.rend[r1][c1 - 1])
+ 	    && IS_MULTI2(r->screen.rend[r1][c1]))
+ 	    r->selection.end.col++;
