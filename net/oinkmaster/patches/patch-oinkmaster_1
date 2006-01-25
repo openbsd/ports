@@ -1,6 +1,6 @@
-$OpenBSD: patch-oinkmaster_1,v 1.1 2004/12/05 18:22:57 robert Exp $
---- oinkmaster.1.orig	Sun Dec  5 19:05:14 2004
-+++ oinkmaster.1	Sun Dec  5 19:05:51 2004
+$OpenBSD: patch-oinkmaster_1,v 1.2 2006/01/25 04:30:58 david Exp $
+--- oinkmaster.1.orig	Sat Apr 16 02:29:41 2005
++++ oinkmaster.1	Tue Jan  3 23:05:36 2006
 @@ -8,7 +8,7 @@
  .B oinkmaster
  \- update Snort signatures
@@ -10,7 +10,7 @@ $OpenBSD: patch-oinkmaster_1,v 1.1 2004/12/05 18:22:57 robert Exp $
  .I outdir
  [options]
  .SH DESCRIPTION
-@@ -154,14 +154,14 @@
+@@ -182,14 +182,14 @@ Download rules archive from default loca
  and put the new rules in /etc/rules/:
  .PP
  .nf
@@ -27,7 +27,7 @@ $OpenBSD: patch-oinkmaster_1,v 1.1 2004/12/05 18:22:57 robert Exp $
  .fi
  .PP
  Download rules archive from default location, make backup of old rules if
-@@ -172,7 +172,7 @@
+@@ -200,7 +200,7 @@ passwords, you should of course not send
  first encrypting the content.) 
  .PP
  .nf
@@ -36,7 +36,7 @@ $OpenBSD: patch-oinkmaster_1,v 1.1 2004/12/05 18:22:57 robert Exp $
  \fB    mail -s "subject" user@example.com
  .fi
  .PP
-@@ -184,7 +184,7 @@
+@@ -212,7 +212,7 @@ command is available on the system:
  .PP
  .nf
  \fB    TMP=`mktemp /tmp/oinkmaster.XXXXXX` && \fP\\
