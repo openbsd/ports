@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2004/12/19 17:36:33 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2006/01/25 09:13:14 sturm Exp $
 
 COMMENT=		"Ruby extension library for GTK Toolkit"
 
 VERSION=		0.34
 DISTNAME=		ruby-gtk-${VERSION}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11 devel
 
 HOMEPAGE=		http://ruby-gnome.sourceforge.net
