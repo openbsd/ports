@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2005/12/22 11:42:02 bernd Exp $
---- Makefile.in.orig	Tue Nov 29 18:14:55 2005
-+++ Makefile.in	Thu Dec 22 12:18:01 2005
+$OpenBSD: patch-Makefile_in,v 1.3 2006/01/25 16:03:35 bernd Exp $
+--- Makefile.in.orig	Sat Jan 14 18:01:14 2006
++++ Makefile.in	Wed Jan 25 12:21:31 2006
 @@ -24,7 +24,7 @@ LIBREV = @LIBREV@
  # Targets
  MYHEADS = depot.h curia.h relic.h hovel.h cabin.h villa.h vista.h odeum.h
@@ -10,7 +10,13 @@ $OpenBSD: patch-Makefile_in,v 1.2 2005/12/22 11:42:02 bernd Exp $
  MYBINS = dpmgr dptest dptsv crmgr crtest crtsv rlmgr rltest hvmgr hvtest \
    cbtest cbcodec vlmgr vltest vltsv odmgr odtest odidx
  MYMAN1S = dpmgr.1 dptest.1 dptsv.1 crmgr.1 crtest.1 crtsv.1 rlmgr.1 rltest.1 hvmgr.1 hvtest.1 \
-@@ -50,21 +50,21 @@ MYPCDIR = @libdir@/pkgconfig
+@@ -45,26 +45,26 @@ MYLIBDIR = @libdir@
+ MYBINDIR = @bindir@
+ MYMAN1DIR = @mandir@/man1
+ MYMAN3DIR = @mandir@/man3
+-MYDATADIR = @datadir@/$(PACKAGE)
++MYDATADIR = @datadir@/doc/$(PACKAGE)
+ MYPCDIR = @libdir@/pkgconfig
  DESTDIR =
  
  # Building binaries
@@ -51,31 +57,31 @@ $OpenBSD: patch-Makefile_in,v 1.2 2005/12/22 11:42:02 bernd Exp $
 -	mkdir -p $(DESTDIR)$(MYBINDIR)
 -	cp -Rf $(MYBINS) $(DESTDIR)$(MYBINDIR)
 -	mkdir -p $(DESTDIR)$(MYMAN1DIR)
--	cd $(srcdir)/man1 && cp -Rf $(MYMAN1S) $(DESTDIR)$(MYMAN1DIR)
+-	cd $(srcdir)/man && cp -Rf $(MYMAN1S) $(DESTDIR)$(MYMAN1DIR)
 -	mkdir -p $(DESTDIR)$(MYMAN3DIR)
--	cd $(srcdir)/man3 && cp -Rf $(MYMAN3S) $(DESTDIR)$(MYMAN3DIR)
+-	cd $(srcdir)/man && cp -Rf $(MYMAN3S) $(DESTDIR)$(MYMAN3DIR)
 -	mkdir -p $(DESTDIR)$(MYDATADIR)
 -	cd $(srcdir) && cp -Rf $(MYDOCS) $(DESTDIR)$(MYDATADIR)
 -	mkdir -p $(DESTDIR)$(MYPCDIR)
 -	cd $(srcdir) && cp -Rf $(MYPCS) $(DESTDIR)$(MYPCDIR)
-+	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(MYHEADDIR)/
++	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(MYHEADDIR)
 +	cd $(srcdir) && ${BSD_INSTALL_DATA} $(MYHEADS) $(DESTDIR)$(MYHEADDIR)
 +	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(MYLIBDIR)
 +	${BSD_INSTALL_DATA} $(MYLIBS) $(DESTDIR)$(MYLIBDIR)
 +	${BSD_INSTALL_PROGRAM_DIR} $(DESTDIR)$(MYBINDIR)
 +	${BSD_INSTALL_PROGRAM} $(MYBINS) $(DESTDIR)$(MYBINDIR)
 +	${BSD_INSTALL_MAN_DIR} $(DESTDIR)$(MYMAN1DIR)
-+	cd $(srcdir)/man1 && ${BSD_INSTALL_MAN} $(MYMAN1S) $(DESTDIR)$(MYMAN1DIR)
++	cd $(srcdir)/man && ${BSD_INSTALL_MAN} $(MYMAN1S) $(DESTDIR)$(MYMAN1DIR)
 +	${BSD_INSTALL_MAN_DIR} $(DESTDIR)$(MYMAN3DIR)
-+	cd $(srcdir)/man3 && ${BSD_INSTALL_MAN} $(MYMAN3S) $(DESTDIR)$(MYMAN3DIR)
-+#	mkdir -p $(DESTDIR)$(MYDATADIR)
-+#	cd $(srcdir) && cp -Rf $(MYDOCS) $(DESTDIR)$(MYDATADIR)
++	cd $(srcdir)/man && ${BSD_INSTALL_MAN} $(MYMAN3S) $(DESTDIR)$(MYMAN3DIR)
++	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(MYDATADIR)
++	cd $(srcdir) && ${BSD_INSTALL_DATA} $(MYDOCS) $(DESTDIR)$(MYDATADIR)
 +	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(MYPCDIR)
 +	cd $(srcdir) && ${BSD_INSTALL_DATA} $(MYPCS) $(DESTDIR)$(MYPCDIR)
  	@printf '\n'
  	@printf '#================================================================\n'
  	@printf '# Thanks for using QDBM.\n'
-@@ -436,12 +436,12 @@ libqdbm.a : $(MYLIBOBJS)
+@@ -444,12 +444,12 @@ libqdbm.a : $(MYLIBOBJS)
  	$(AR) $(ARFLAGS) $@ $(MYLIBOBJS)
  
  

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/07/23 16:58:49 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/01/25 16:03:35 bernd Exp $
 %%SHARED%%
 bin/cbcodec
 bin/cbtest
@@ -60,3 +60,10 @@ lib/pkgconfig/qdbm.pc
 @man man/man3/villa.3
 @man man/man3/vista.3
 @man man/man3/vlopen.3
+share/doc/qdbm/
+share/doc/qdbm/COPYING
+share/doc/qdbm/ChangeLog
+share/doc/qdbm/NEWS
+share/doc/qdbm/THANKS
+share/doc/qdbm/spex-ja.html
+share/doc/qdbm/spex.html
