@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.117 2006/01/14 01:05:02 brad Exp $
+# $OpenBSD: Makefile,v 1.118 2006/01/25 06:21:09 brad Exp $
 
-VERSION=	2.3-20060112
+VERSION=	2.3-20060123
 
 MASTER_SITES=	${MASTER_SITE_POSTFIX:=experimental/}
 
