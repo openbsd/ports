@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.ordered,v 1.1 2005/11/10 22:57:37 jolan Exp $
+# $OpenBSD: Makefile.ordered,v 1.2 2006/01/25 00:04:23 jolan Exp $
 #
 # The following ports are also dependencies:
 # 
@@ -30,6 +30,7 @@
      SUBDIR+= xfce4-datetime
      SUBDIR+= xfce4-diskperf
      SUBDIR+= xfce4-fsguard
+     SUBDIR+= xfce4-lua-graph
      SUBDIR+= xfce4-minicmd
      SUBDIR+= xfce4-netload
      SUBDIR+= xfce4-notes
