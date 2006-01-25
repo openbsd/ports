@@ -1,0 +1,9 @@
+$OpenBSD: patch-data_styles_Twice,v 1.1 2006/01/25 03:57:44 david Exp $
+--- data/styles/Twice.orig	Mon Nov 15 14:40:53 2004
++++ data/styles/Twice	Mon Jan 23 02:57:27 2006
+@@ -100,4 +100,4 @@ handleWidth:                    4
+ *textColor:                     grey85
+ *Font:                          lucidasans-10
+ 
+-rootCommand:                    bsetroot -solid grey20
++rootCommand:                    fbsetroot -solid grey20

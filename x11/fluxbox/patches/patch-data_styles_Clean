@@ -1,0 +1,9 @@
+$OpenBSD: patch-data_styles_Clean,v 1.1 2006/01/25 03:57:44 david Exp $
+--- data/styles/Clean.orig	Mon Nov 15 14:40:52 2004
++++ data/styles/Clean	Mon Jan 23 02:56:52 2006
+@@ -114,4 +114,4 @@ bevelWidth:                          1
+ borderWidth:                         1
+ handleWidth:                         2
+ 
+-rootCommand:                         bsetroot -solid rgb:9A/9A/90
++rootCommand:                         fbsetroot -solid rgb:9A/9A/90

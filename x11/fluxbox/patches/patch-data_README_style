@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_README_style,v 1.1 2006/01/25 03:57:44 david Exp $
+--- data/README.style.orig	Mon Nov 15 14:40:53 2004
++++ data/README.style	Mon Jan 23 03:19:26 2006
+@@ -315,7 +315,7 @@ handleWidth:                    4
+ menuFont:                       lucidasans-10
+ titleFont:                      lucidasans-bold-10
+ 
+-rootCommand:                    bsetroot -mod 4 4 -fg rgb:6/6/5c -bg grey20
++rootCommand:                    fbsetroot -mod 4 4 -fg rgb:6/6/5c -bg grey20
+ ...
+ 
+ Alright!  Our style is finished.  Let's see how the sucker looks.  First we

@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_styles_Operation,v 1.1 2006/01/25 03:57:44 david Exp $
+--- data/styles/Operation.orig	Mon Nov 15 14:40:53 2004
++++ data/styles/Operation	Mon Jan 23 02:57:11 2006
+@@ -83,7 +83,7 @@ handleWidth:                    4
+ *textColor:                     grey85
+ *Font:                          lucidasans-10
+ 
+-rootCommand:                    bsetroot -gradient flatcrossdiagonalgradient -from rgb:4/6/8 -to rgb:3/48/6
++rootCommand:                    fbsetroot -gradient flatcrossdiagonalgradient -from rgb:4/6/8 -to rgb:3/48/6
+ 
+ bbpager.desktop.focus:          flat interlaced crossdiagonal gradient
+ bbpager.desktop.focus.color:    rgb:6/9/c

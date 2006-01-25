@@ -1,15 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.14 2005/01/23 12:44:10 matthieu Exp $
-@conflict blackbox-*
-@conflict openbox-*
-bin/bsetroot
+@comment $OpenBSD: PLIST,v 1.15 2006/01/25 03:57:44 david Exp $
 bin/fbrun
 bin/fbsetbg
+bin/fbsetroot
 bin/fluxbox
 bin/fluxbox-generate_menu
 bin/startfluxbox
-@man man/man1/bsetroot.1
 @man man/man1/fbrun.1
 @man man/man1/fbsetbg.1
+@man man/man1/fbsetroot.1
 @man man/man1/fluxbox.1
 @man man/man1/fluxstyle.1
 @man man/man1/startfluxbox.1

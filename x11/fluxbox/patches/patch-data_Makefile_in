@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_Makefile_in,v 1.3 2006/01/25 03:57:44 david Exp $
+--- data/Makefile.in.orig	Wed Sep 14 15:27:20 2005
++++ data/Makefile.in	Wed Oct  5 16:54:18 2005
+@@ -535,7 +535,7 @@ install-pkgdataDATA:
+ 	$(INSTALL_DATA) menu $(DESTDIR)$(DEFAULT_MENU)
+ 	@echo "Installing keys file in $(DESTDIR)$(DEFAULT_KEYS)"
+ 	$(mkinstalldirs) $(DESTDIR)$(dir $(DEFAULT_KEYS))
+-	$(INSTALL_DATA) keys $(DESTDIR)$(DEFAULT_KEYS)
++	$(INSTALL_DATA) $(srcdir)/keys $(DESTDIR)$(DEFAULT_KEYS)
+ 	@echo "Installing init file in $(DESTDIR)$(DEFAULT_INIT)"
+ 	$(mkinstalldirs) $(DESTDIR)$(dir $(DEFAULT_INIT))
+ 	$(INSTALL_DATA) init $(DESTDIR)$(DEFAULT_INIT)

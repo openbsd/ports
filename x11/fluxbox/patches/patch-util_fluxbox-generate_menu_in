@@ -1,54 +1,12 @@
-$OpenBSD: patch-util_fluxbox-generate_menu_in,v 1.5 2005/06/19 03:55:50 david Exp $
---- util/fluxbox-generate_menu.in.orig	Thu Apr 28 05:21:09 2005
-+++ util/fluxbox-generate_menu.in	Sat Jun 18 22:32:37 2005
-@@ -38,6 +38,7 @@
- # - don't use id -u or $UID, use whoami
- # - getopts won't work on all platforms, but the config-file can
- #   compensate for that.
-+# - OpenBSD and Solaris grep do not have the -m option
- # - various software like grep/sed/perl may be not present or not
- #   the version you have. for example grep '\W' only works on gnu-grep.
- #   Keep this in mind, use bare basic defaults.
-@@ -271,7 +272,7 @@ doSearch(){
-     # $dnlamVERBOSE "# Searching for icon $temp_icon for $execname" >> $ICONMAPPING
- 
-     # check in $ICONMAPPING before searching directories
--    entry_icon=`grep -m 1 "^\"${execname}\"" $ICONMAPPING | grep -o '<.*>'`
-+    entry_icon=`grep "^\"${execname}\"" $ICONMAPPING | head -n 1 | grep -o '<.*>'`
-     if [ -n "$entry_icon" ]; then
-         entry_icon=`replaceWithinString "$entry_icon" "<"`
-         entry_icon=`replaceWithinString "$entry_icon" ">"`
-@@ -365,16 +366,16 @@ createIconMapping(){
-             # >> $ICONMAPPING
-             find "$DIR" -type f -name "*.desktop" | while read DESKTOP_FILE; do 
-                 # echo $DESKTOP_FILE; 
--                #entry_name=`grep -m 1 '^[ ]*Name=' $DESKTOP_FILE`
-+                #entry_name=`grep '^[ ]*Name=' $DESKTOP_FILE | head -n 1`
-                 #entry_name=${entry_name##*=}
--                entry_exec=`grep -m 1 '^[ ]*Exec=' "$DESKTOP_FILE"`
-+                entry_exec=`grep '^[ ]*Exec=' "$DESKTOP_FILE" | head -n 1`
-                 entry_exec=${entry_exec##*=}
-                 entry_exec=`replaceWithinString "$entry_exec" "\""`
-                 if [ -z "$entry_exec" ]; then
-                     entry_exec=${DESKTOP_FILE%%.desktop*}
-                 fi
- 
--                entry_icon=`grep -m 1 '^[ ]*Icon=' "$DESKTOP_FILE"`
-+                entry_icon=`grep '^[ ]*Icon=' "$DESKTOP_FILE" | head -n 1`
-                 entry_icon=${entry_icon##*=}
- 
-                 # $dnlamVERBOSE echo "--- $entry_exec $entry_icon" >&2
-@@ -407,11 +408,11 @@ lookupIcon() {
-     execname=`removePath "$execname"`
- 
-     #echo "grepping ${execname}"
--    iconString=`grep -m 1 "^\"${execname}\"" $ICONMAPPING | grep -o '<.*>'`
-+    iconString=`grep "^\"${execname}\"" $ICONMAPPING | head -n 1 | grep -o '<.*>'`
-     # $dnlamVERBOSE "lookupIcon $execname, $iconString" >&2
- 
-     if [ -z "$iconString" ] ; then
--        iconString=`grep -m 1 "^\"${execname%% *}" $ICONMAPPING | grep -o '<.*>'`
-+        iconString=`grep "^\"${execname%% *}" $ICONMAPPING | head -n 1 | grep -o '<.*>'`
-     fi
- 
-     if [ -z "$iconString" ] && [ -z "$PARSING_DESKTOP" ] ; then
+$OpenBSD: patch-util_fluxbox-generate_menu_in,v 1.6 2006/01/25 03:57:44 david Exp $
+--- util/fluxbox-generate_menu.in.orig	Thu Aug 25 11:52:50 2005
++++ util/fluxbox-generate_menu.in	Mon Jan 23 03:36:56 2006
+@@ -343,7 +343,7 @@ searchForIcon(){
+     # echo "^.${entry_exec}.[[:space:]]*<.*/${icon_base}\....>" 
+     if [ -f "$entry_icon" ]; then
+     # if icon exists and entry does not already exists, add it
+-        if ! grep -q -m 1 "^.${entry_exec}.[[:space:]]*<.*/${icon_base}\....>" $ICONMAPPING 2> /dev/null; then
++        if ! grep -q "^.${entry_exec}.[[:space:]]*<.*/${icon_base}\....>" $ICONMAPPING 2> /dev/null; then
+             echo -e "\"${entry_exec}\" \t <${entry_icon}>" >> $ICONMAPPING
+         else 
+             : echo "#    mapping already exists for ${entry_exec}" >> $ICONMAPPING

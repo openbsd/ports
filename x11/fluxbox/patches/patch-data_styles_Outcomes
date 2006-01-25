@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_styles_Outcomes,v 1.1 2006/01/25 03:57:44 david Exp $
+--- data/styles/Outcomes.orig	Mon Nov 15 14:40:53 2004
++++ data/styles/Outcomes	Mon Jan 23 02:57:14 2006
+@@ -107,7 +107,7 @@ borderWidth:                    1
+ bevelWidth:                     2
+ handleWidth:                    4
+ 
+-rootCommand:                    bsetroot -mod 4 4 -fg rgb:54/6/6 -bg grey20
++rootCommand:                    fbsetroot -mod 4 4 -fg rgb:54/6/6 -bg grey20
+ 
+ ! for the bbtools
+ menuFont:                       lucidasans-10

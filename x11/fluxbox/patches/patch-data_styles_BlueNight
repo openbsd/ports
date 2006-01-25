@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_styles_BlueNight,v 1.1 2006/01/25 03:57:44 david Exp $
+--- data/styles/BlueNight.orig	Mon Nov 15 14:40:52 2004
++++ data/styles/BlueNight	Mon Jan 23 02:56:47 2006
+@@ -5,7 +5,7 @@ style.credits:
+ style.comments:                      Modified/tweaked by skypher
+ 
+ 
+-rootCommand:                         bsetroot -solid rgb:6A/9A/AF
++rootCommand:                         fbsetroot -solid rgb:6A/9A/AF
+ 
+ ! Toolbar settings...
+ toolbar.button:                      Gradient Diagonal

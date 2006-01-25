@@ -1,0 +1,10 @@
+$OpenBSD: patch-data_styles_Meta,v 1.1 2006/01/25 03:57:44 david Exp $
+--- data/styles/Meta.orig	Mon Nov 15 14:40:53 2004
++++ data/styles/Meta	Mon Jan 23 02:57:03 2006
+@@ -124,5 +124,5 @@ bevelWidth:                          1
+ frameWidth:                          1
+ handleWidth:                         4
+ 
+-rootCommand:                         bsetroot -solid "#d6d7e7"
++rootCommand:                         fbsetroot -solid "#d6d7e7"
+ *font:                               glisp

@@ -1,0 +1,11 @@
+$OpenBSD: patch-doc_fluxstyle_1_in,v 1.1 2006/01/25 03:57:44 david Exp $
+--- doc/fluxstyle.1.in.orig	Tue Nov 30 14:25:11 2004
++++ doc/fluxstyle.1.in	Mon Jan 23 03:16:18 2006
+@@ -548,6 +548,6 @@ Numerous other languages could be availa
+ .SH SEE ALSO
+ .IR fluxbox(1) 
+ .IR fbsetbg(1)
+-.IR bsetroot(1)
++.IR fbsetroot(1)
+ 
+ .\" ADDITIONS TO MAKE
