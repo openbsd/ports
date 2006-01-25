@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2005/02/20 06:57:14 david Exp $
+@comment $OpenBSD: PLIST,v 1.18 2006/01/25 03:27:40 david Exp $
 bin/micq
 man/de/
 man/de/man1/
@@ -63,6 +63,7 @@ man/uk/man7/
 share/micq/
 share/micq/C.i18n
 share/micq/bg.i18n
+share/micq/cs.i18n
 share/micq/de.i18n
 share/micq/de_CH.i18n
 share/micq/en.i18n
