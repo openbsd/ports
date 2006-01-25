@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2006/01/19 19:23:42 steven Exp $
+# $OpenBSD: Makefile,v 1.27 2006/01/25 21:27:31 sturm Exp $
 
 COMMENT=		"Gtk-based GUI client for the Gnutella Network"
 
-DISTNAME=		gtk-gnutella-0.96b
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		gtk-gnutella-0.96
 CATEGORIES=     	net 
 
 HOMEPAGE=		http://gtk-gnutella.sourceforge.net/
@@ -42,9 +41,11 @@ CONFIGURE_ARGS=	-d  -e \
 		-D ldflags="-L${LOCALBASE}/lib -liconv" \
 		-D official="true" \
 		-D yacc="yacc" \
+		-U d_gnutls \
 		-U optimize
 
-FAKE_FLAGS=	INSTALL_PREFIX=${DESTDIR}
+MAKE_FLAGS=	GNUTLS_LDFLAGS= GNUTLS_CFLAGS=
+FAKE_FLAGS=	${MAKE_FLAGS} INSTALL_PREFIX=${DESTDIR}
 INSTALL_TARGET=	install install.man
 
 NO_REGRESS=	Yes

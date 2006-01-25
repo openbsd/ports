@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2006/01/19 19:23:42 steven Exp $
+@comment $OpenBSD: PLIST,v 1.15 2006/01/25 21:27:32 sturm Exp $
 bin/gtk-gnutella
 @man man/man1/gtk-gnutella.1
 share/applications/
@@ -53,6 +53,7 @@ share/locale/es/LC_MESSAGES/gtk-gnutella.mo
 share/locale/fr/LC_MESSAGES/gtk-gnutella.mo
 share/locale/hu/LC_MESSAGES/gtk-gnutella.mo
 share/locale/ja/LC_MESSAGES/gtk-gnutella.mo
+share/locale/nb/LC_MESSAGES/gtk-gnutella.mo
 share/locale/nl/LC_MESSAGES/gtk-gnutella.mo
 share/locale/uk/LC_MESSAGES/gtk-gnutella.mo
 share/locale/zh_CN/LC_MESSAGES/gtk-gnutella.mo
