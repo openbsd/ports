@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/01/25 00:01:27 jolan Exp $
+%%SHARED%%
+lib/xfce4/panel-plugins/libluagraph.a
+lib/xfce4/panel-plugins/libluagraph.la
+share/doc/xfce4-lua-graph/
+share/doc/xfce4-lua-graph/README
+share/examples/xfce4-lua-graph/
+share/examples/xfce4-lua-graph/battery.lua
+share/examples/xfce4-lua-graph/counter.lua
+share/examples/xfce4-lua-graph/temperature.lua

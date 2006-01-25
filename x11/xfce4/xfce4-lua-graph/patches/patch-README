@@ -1,0 +1,19 @@
+$OpenBSD: patch-README,v 1.1.1.1 2006/01/25 00:01:27 jolan Exp $
+--- README.orig	Wed Dec 21 18:54:15 2005
++++ README	Tue Jan 24 13:55:25 2006
+@@ -24,7 +24,7 @@ data on your computer, until a fully-fle
+ Lua Details
+ ======================
+ Lua (http://www.lua.org) is a light-weight programming language designed for 
+-extending applications. The Lua library is GPLed, ANSI compatible, portable 
++extending applications. The Lua library is ANSI compatible, portable,
+ and easy to use.
+ 
+ The current version of Lua (5.0) supports:
+@@ -274,4 +274,4 @@ Installation Notes
+ 		
+ 		
+ 
+-Copyright © 2005 A. Gordon <agordon88@gmail.com>
+\ No newline at end of file
++Copyright © 2005 A. Gordon <agordon88@gmail.com>

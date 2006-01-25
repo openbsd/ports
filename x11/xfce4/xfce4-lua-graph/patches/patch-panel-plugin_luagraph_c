@@ -1,0 +1,16 @@
+$OpenBSD: patch-panel-plugin_luagraph_c,v 1.1.1.1 2006/01/25 00:01:27 jolan Exp $
+--- panel-plugin/luagraph.c.orig	Wed Dec 21 17:28:13 2005
++++ panel-plugin/luagraph.c	Tue Jan 24 13:46:34 2006
+@@ -49,9 +49,9 @@
+ #include <panel/icons.h>
+ #include <panel/plugins.h>
+ 
+-#include <lua50/lua.h>
+-#include <lua50/lauxlib.h>
+-#include <lua50/lualib.h>
++#include <lua.h>
++#include <lauxlib.h>
++#include <lualib.h>
+ 
+ const char *demo_script = 
+ "function init() \n" \

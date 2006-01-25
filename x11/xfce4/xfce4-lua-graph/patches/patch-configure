@@ -1,0 +1,39 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2006/01/25 00:01:27 jolan Exp $
+--- configure.orig	Tue Dec 20 16:50:14 2005
++++ configure	Tue Jan 24 13:43:33 2006
+@@ -21030,7 +21030,7 @@ if test "${ac_cv_lib_lua50_lua_open+set}
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-llua50  $LIBS"
++LIBS="-llua $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -21092,7 +21092,7 @@ if test $ac_cv_lib_lua50_lua_open = yes;
+ #define HAVE_LIBLUA50 1
+ _ACEOF
+ 
+-  LIBS="-llua50 $LIBS"
++  LIBS="-llua $LIBS"
+ 
+ else
+   { { echo "$as_me:$LINENO: error: Please install the lua library development suite (lua50 library not found" >&5
+@@ -21107,7 +21107,7 @@ if test "${ac_cv_lib_lualib50_luaopen_ba
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-llualib50  $LIBS"
++LIBS="-llualib -lm $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -21169,7 +21169,7 @@ if test $ac_cv_lib_lualib50_luaopen_base
+ #define HAVE_LIBLUALIB50 1
+ _ACEOF
+ 
+-  LIBS="-llualib50 $LIBS"
++  LIBS="-llualib $LIBS"
+ 
+ else
+   { { echo "$as_me:$LINENO: error: Please install the lualib library development suite (lualib50 library not found" >&5
