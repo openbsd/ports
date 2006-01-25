@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.39 2005/12/14 05:59:47 jolan Exp $
+$OpenBSD: user.list,v 1.40 2006/01/25 03:36:35 david Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -12,7 +12,7 @@ id  user		group		port options
 500 _opennap		_opennap	audio/opennap
 501 _gnats				databases/gnats
 502 _mysql		_mysql		databases/mysql,-server
-503 _postgresql		_postgresql	databases/postgresql noauto
+503 _postgresql		_postgresql	databases/postgresql,-server
 504 _mailman		_mailman	mail/mailman
 506 _spamdaemon		_spamdaemon	mail/p5-Mail-SpamAssassin noauto
 507 _postfix		_postfix	mail/postfix/{snapshot,stable}
@@ -29,7 +29,7 @@ id  user		group		port options
 518 _dovecot		_dovecot	mail/dovecot
 519 _news				news/leafnode
 520 _majordomo		_majordomo	mail/majordomo
-521 _exim		_exim		mail/exim noauto
+521 _exim		_exim		mail/exim
 522 _xcept		_xcept		comms/xcept
 523 _ffproxy		_ffproxy	www/ffproxy
 524			_mail		mail/openwebmail
