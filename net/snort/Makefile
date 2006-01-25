@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2006/01/06 04:22:06 brad Exp $
+# $OpenBSD: Makefile,v 1.41 2006/01/25 04:14:39 david Exp $
 
 COMMENT=	"highly flexible sniffer/NIDS"
 
@@ -26,7 +26,7 @@ LIB_DEPENDS=     pcre::devel/pcre
 CFLAGS+=	-O0
 .endif
 
-FLAVORS=	postgresql mysql smbalert flexresp
+FLAVORS=	postgresql mysql flexresp
 FLAVOR?=	
 
 .if ${FLAVOR:L:Mflexresp}
@@ -46,12 +46,6 @@ CONFIGURE_ARGS+= --with-postgresql="${LOCALBASE}"
 LIB_DEPENDS+=	lib/mysql/mysqlclient.10::databases/mysql
 CONFIGURE_ARGS+= --with-mysql="${LOCALBASE}"
 WANTLIB+=	z
-.endif
-
-.if ${FLAVOR:L:Msmbalert}
-BUILD_DEPENDS+=	:samba-*:net/samba
-RUN_DEPENDS+=	:samba-*:net/samba
-CONFIGURE_ARGS+= --enable-smbalerts
 .endif
 
 post-install:
