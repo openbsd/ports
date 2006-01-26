@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.51 2006/01/16 17:28:00 steven Exp $
+# $OpenBSD: Makefile,v 1.52 2006/01/26 19:34:53 couderc Exp $
 
 COMMENT=	"GTK+2 IRC client"
 
-MAJOR=		2.4
-VERSION=	${MAJOR}.5
+MAJOR=		2.6
+VERSION=	${MAJOR}.1
 DISTNAME=	xchat-${VERSION}
-PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net x11
 
 HOMEPAGE=	http://www.xchat.org/
@@ -21,7 +20,7 @@ WANTLIB=		X11 Xext Xft Xrender atk-1.0.0.0 c crypto \
 			gobject-2.0.0.0 m pango-1.0.0.0 pangoft2-1.0.0.0 \
 			pangox-1.0.0.0 pangoxft-1.0.0.0 ssl
 
-MASTER_SITES=	${HOMEPAGE}files/source/2.4/
+MASTER_SITES=	${HOMEPAGE}files/source/${MAJOR}/
 MASTER_SITES0=	${MASTER_SITE_SOURCEFORGE:=xchat/}
 
 EXTRACT_SUFX=	.tar.bz2
