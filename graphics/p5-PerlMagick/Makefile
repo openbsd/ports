@@ -1,40 +1,41 @@
-# $OpenBSD: Makefile,v 1.10 2005/06/28 18:08:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2006/01/27 17:40:05 bernd Exp $
 
-SHARED_ONLY=	Yes
+SHARED_ONLY=		Yes
 
-COMMENT=	"object-oriented Perl interface to ImageMagick"
+COMMENT=		"object-oriented Perl interface to ImageMagick"
 
-VER=		6.2.3
-DASHVER=	3
-DISTNAME=	ImageMagick-${VER}-${DASHVER}
-PKGNAME=	p5-PerlMagick-${VER}.${DASHVER}
-CATEGORIES=	graphics devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=imagemagick/}
+VER=			6.2.6
+DASHVER=		0
+DISTNAME=		ImageMagick-${VER}-${DASHVER}
+PKGNAME=		p5-PerlMagick-${VER}.${DASHVER}
+CATEGORIES=		graphics devel
 
-HOMEPAGE=	http://www.imagemagick.org
+HOMEPAGE=		http://www.imagemagick.org
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=imagemagick/}
 
-BUILD_DEPENDS=	:ImageMagick-${VER}.${DASHVER}:graphics/ImageMagick
-RUN_DEPENDS=	:ImageMagick-${VER}.${DASHVER}:graphics/ImageMagick
-LIB_DEPENDS=	Magick.8::graphics/ImageMagick
-
-MAINTAINER=	Bernd Ahlers <b.ahlers@ba-net.org>
+MAINTAINER=		Bernd Ahlers <bernd@openbsd.org>
 
 # http://www.imagemagick.org/www/Copyright.html
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 Xext bz2 freetype iconv jasper jbig jpeg \
-			lcms m png tiff xml2 z
+WANTLIB=		ICE SM X11 Xext bz2 freetype jasper jbig jpeg \
+			lcms m png tiff xml2 z Xt
 
-CONFIGURE_STYLE= perl
+RUN_DEPENDS=		:ImageMagick-${VER}.${DASHVER}:graphics/ImageMagick
+BUILD_DEPENDS=		${RUN_DEPENDS}
+LIB_DEPENDS=		Magick.10::graphics/ImageMagick
+USE_X11=		Yes
+CONFIGURE_STYLE=	perl
 
-WRKDIST=	${WRKDIR}/${DISTNAME:S/-${DASHVER}$//}
-WRKSRC=		${WRKDIST}/PerlMagick
+WRKDIST=		${WRKDIR}/${DISTNAME:S/-${DASHVER}$//}
+WRKSRC=			${WRKDIST}/PerlMagick
 
-post-patch:
+pre-configure:
 	@perl -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g; \
-		s|%%X11BASE%%|${X11BASE}|g;' ${WRKSRC}/Makefile.PL
+		s|%%X11BASE%%|${X11BASE}|g; \
+		s|%%CFLAGS%%|${CFLAGS}|g;' ${WRKSRC}/Makefile.PL
 
 pre-regress:
 	@perl -pi -e 's|\@abs_top_srcdir\@|${WRKDIST}|g; \

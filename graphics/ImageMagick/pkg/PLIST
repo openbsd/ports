@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2005/06/28 18:08:23 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.33 2006/01/27 17:40:05 bernd Exp $
 !%%no_x11%%
 %%SHARED%%
 bin/Magick++-config
@@ -27,6 +27,7 @@ include/Magick++/STL.h
 include/Magick++/TypeMetric.h
 include/magick/
 include/magick/ImageMagick.h
+include/magick/MagickCore.h
 include/magick/PreRvIcccm.h
 include/magick/animate.h
 include/magick/annotate.h
@@ -43,9 +44,7 @@ include/magick/compare.h
 include/magick/composite.h
 include/magick/compress.h
 include/magick/configure.h
-include/magick/conjure.h
 include/magick/constitute.h
-include/magick/convert.h
 include/magick/decorate.h
 include/magick/delegate.h
 include/magick/deprecate.h
@@ -60,7 +59,6 @@ include/magick/geometry.h
 include/magick/hashmap.h
 include/magick/identify.h
 include/magick/image.h
-include/magick/import.h
 include/magick/list.h
 include/magick/locale_.h
 include/magick/log.h
@@ -71,7 +69,6 @@ include/magick/magick.h
 include/magick/memory_.h
 include/magick/methods.h
 include/magick/module.h
-include/magick/mogrify.h
 include/magick/monitor.h
 include/magick/montage.h
 include/magick/option.h
@@ -80,6 +77,7 @@ include/magick/pixel.h
 include/magick/prepress.h
 include/magick/profile.h
 include/magick/quantize.h
+include/magick/quantum.h
 include/magick/random_.h
 include/magick/registry.h
 include/magick/resize.h
@@ -99,15 +97,28 @@ include/magick/type.h
 include/magick/utility.h
 include/magick/version.h
 include/magick/widget.h
+include/magick/xml-tree.h
 include/magick/xwindow.h
 include/wand/
+include/wand/MagickWand.h
+include/wand/animate.h
+include/wand/compare.h
+include/wand/composite.h
+include/wand/conjure.h
+include/wand/convert.h
+include/wand/display.h
 include/wand/drawing-wand.h
+include/wand/identify.h
+include/wand/import.h
 include/wand/magick-attribute.h
 include/wand/magick-image.h
 include/wand/magick-wand.h
 include/wand/magick_wand.h
+include/wand/mogrify.h
+include/wand/montage.h
 include/wand/pixel-iterator.h
 include/wand/pixel-wand.h
+include/wand/wand-config.h
 lib/ImageMagick/
 lib/ImageMagick/config/
 lib/ImageMagick/config/colors.xml
@@ -123,8 +134,11 @@ lib/ImageMagick/config/type.xml
 @comment lib/ImageMagick/modules-Q16/coders/
 @comment lib/ImageMagick/modules-Q16/filters/
 lib/libMagick++.a
+lib/libMagick++.la
 lib/libMagick.a
+lib/libMagick.la
 lib/libWand.a
+lib/libWand.la
 lib/pkgconfig/
 lib/pkgconfig/ImageMagick++.pc
 lib/pkgconfig/ImageMagick.pc
@@ -150,6 +164,7 @@ share/ImageMagick/config/log.xml
 share/ImageMagick/config/magic.xml
 share/doc/ImageMagick/
 share/doc/ImageMagick/images/
+share/doc/ImageMagick/images/arc.png
 share/doc/ImageMagick/images/background.jpg
 share/doc/ImageMagick/images/button.gif
 share/doc/ImageMagick/images/configure.jpg
@@ -163,8 +178,10 @@ share/doc/ImageMagick/images/fuzzy-magick.png
 share/doc/ImageMagick/images/georeviews.gif
 share/doc/ImageMagick/images/granite.png
 share/doc/ImageMagick/images/label.gif
+share/doc/ImageMagick/images/logo.eps
 share/doc/ImageMagick/images/logo.jpg
 share/doc/ImageMagick/images/montage.jpg
+share/doc/ImageMagick/images/piechart.png
 share/doc/ImageMagick/images/reconstruct.jpg
 share/doc/ImageMagick/images/red-ball.png
 share/doc/ImageMagick/images/red-circle.png
@@ -177,6 +194,7 @@ share/doc/ImageMagick/images/smile.gif
 share/doc/ImageMagick/images/sponsor.jpg
 share/doc/ImageMagick/images/sprite.jpg
 share/doc/ImageMagick/images/travelsur.gif
+share/doc/ImageMagick/images/wand.ico
 share/doc/ImageMagick/images/white-highlight.png
 share/doc/ImageMagick/index.html
 share/doc/ImageMagick/www/
@@ -283,10 +301,12 @@ share/doc/ImageMagick/www/examples.html
 share/doc/ImageMagick/www/formats.html
 share/doc/ImageMagick/www/identify.html
 share/doc/ImageMagick/www/import.html
+share/doc/ImageMagick/www/index.html
 share/doc/ImageMagick/www/install-source.html
 share/doc/ImageMagick/www/license.html
 share/doc/ImageMagick/www/links.html
 share/doc/ImageMagick/www/magick-core.html
+share/doc/ImageMagick/www/magick-vector-graphics.html
 share/doc/ImageMagick/www/magick-wand.html
 share/doc/ImageMagick/www/magick.css
 share/doc/ImageMagick/www/mailing-list.html
@@ -298,3 +318,4 @@ share/doc/ImageMagick/www/quantize.html
 share/doc/ImageMagick/www/resources.html
 share/doc/ImageMagick/www/search.html
 share/doc/ImageMagick/www/sponsors.html
+share/doc/ImageMagick/www/subversion.html

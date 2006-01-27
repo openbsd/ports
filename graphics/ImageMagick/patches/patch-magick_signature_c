@@ -1,7 +1,7 @@
-$OpenBSD: patch-magick_signature_c,v 1.3 2005/06/04 14:39:21 naddy Exp $
---- magick/signature.c.orig	Tue May 24 00:32:49 2005
-+++ magick/signature.c	Sun May 29 20:00:07 2005
-@@ -369,8 +369,19 @@ static void TransformSignature(Signature
+$OpenBSD: patch-magick_signature_c,v 1.4 2006/01/27 17:40:05 bernd Exp $
+--- magick/signature.c.orig	Sun Oct  9 03:55:52 2005
++++ magick/signature.c	Tue Jan 17 13:16:17 2006
+@@ -366,8 +366,19 @@ static void TransformSignature(Signature
      T2,
      W[64];
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-magick_signature_c,v 1.3 2005/06/04 14:39:21 naddy Exp $
    if (signature_info->lsb_first == MagickFalse)
      {
        if (sizeof(unsigned long) <= 4)
-@@ -381,12 +392,11 @@ static void TransformSignature(Signature
+@@ -378,12 +389,11 @@ static void TransformSignature(Signature
            W[i]=Trunc32(T);
          }
        else
@@ -38,7 +38,7 @@ $OpenBSD: patch-magick_signature_c,v 1.3 2005/06/04 14:39:21 naddy Exp $
          }
      }
    else
-@@ -399,15 +409,12 @@ static void TransformSignature(Signature
+@@ -396,15 +406,12 @@ static void TransformSignature(Signature
            ((T >> 8) & 0x0000ff00) | ((T >> 24) & 0x000000ff);
        }
      else

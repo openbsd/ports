@@ -1,7 +1,20 @@
-$OpenBSD: patch-configure_ac,v 1.1 2005/06/04 14:39:21 naddy Exp $
---- configure.ac.orig	Sun May 29 20:01:17 2005
-+++ configure.ac	Sun May 29 20:01:46 2005
-@@ -1908,7 +1908,7 @@ AC_SUBST(PERLMAINCC)
+$OpenBSD: patch-configure_ac,v 1.2 2006/01/27 17:40:05 bernd Exp $
+--- configure.ac.orig	Thu Jan  5 11:02:55 2006
++++ configure.ac	Mon Jan 23 12:38:27 2006
+@@ -351,9 +351,9 @@ AM_CONDITIONAL(WITH_MODULES, test "$with
+ # Enable building/use of libltdl if we are building shared libraries regardless
+ # of whether modules are built or not.
+ with_ltdl='no'
+-if test "$libtool_build_shared_libs" != 'no' ; then
+-  with_ltdl='yes'
+-fi
++#if test "$libtool_build_shared_libs" != 'no' ; then
++#  with_ltdl='yes'
++#fi
+ 
+ AM_CONDITIONAL(WITH_LTDL, test "$with_ltdl" != 'no')
+ if test "$with_ltdl" != 'no' ; then
+@@ -1984,7 +1984,7 @@ AC_SUBST(PERLMAINCC)
  #
  
  # Subdirectory under lib to place ImageMagick lib files
@@ -10,7 +23,7 @@ $OpenBSD: patch-configure_ac,v 1.1 2005/06/04 14:39:21 naddy Exp $
  AC_DEFINE_UNQUOTED(MagickLibSubdir,"$MagickLibSubdir",Subdirectory of lib where ImageMagick architecture dependent files are installed)
  
  # Path to ImageMagick bin directory
-@@ -1971,7 +1971,7 @@ AC_SUBST(MagickFilterModulesPath)
+@@ -2047,7 +2047,7 @@ AC_SUBST(MagickFilterModulesPath)
  
  #
  # Path to ImageMagick document files
@@ -19,7 +32,7 @@ $OpenBSD: patch-configure_ac,v 1.1 2005/06/04 14:39:21 naddy Exp $
  MagickDocumentPath="${DATA_DIR}/doc/${MagickDocumentSubdir}"
  MagickDocumentPathDefine="${MagickDocumentPath}/"
  if test "$native_win32_build" = 'yes'
-@@ -1983,7 +1983,7 @@ AC_SUBST(MagickDocumentPath)
+@@ -2059,7 +2059,7 @@ AC_SUBST(MagickDocumentPath)
  
  #
  # Path to ImageMagick share files
