@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2004/11/24 11:08:02 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/01/27 22:45:52 brad Exp $
 
 COMMENT=		"easy to use text editor"
 
 VERSION=		1.4.6
 DISTNAME=		ee-${VERSION}
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=     	editors
 
 HOMEPAGE=		http://mahon.cwx.net/
@@ -24,7 +25,7 @@ MAKE_ENV=		SYSCONFDIR=${SYSCONFDIR}
 NO_REGRESS=		Yes
 
 do-install:
-	perl -i -pe 's:%%SYSCONFDIR%%:${SYSCONFDIR}:g' ${WRKSRC}/ee.1
+	@perl -i -pe 's:%%SYSCONFDIR%%:${SYSCONFDIR}:g' ${WRKSRC}/ee.1
 	${INSTALL} ${WRKDIST}/ee ${PREFIX}/bin/ee
 	${INSTALL_DATA} ${WRKDIST}/ee.1	${PREFIX}/man/man1/ee.1
 
