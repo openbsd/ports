@@ -1,10 +1,10 @@
-$OpenBSD: patch-plug-ins_common_url_c,v 1.2 2005/07/08 07:50:56 fgsch Exp $
---- plug-ins/common/url.c.orig	Fri Jun 24 12:22:21 2005
-+++ plug-ins/common/url.c	Fri Jun 24 12:22:28 2005
-@@ -187,7 +187,7 @@ load_image (const gchar       *filename,
- #endif
+$OpenBSD: patch-plug-ins_common_url_c,v 1.3 2006/01/27 07:28:41 steven Exp $
+--- plug-ins/common/url.c.orig	Sun Jan 22 11:41:00 2006
++++ plug-ins/common/url.c	Sun Jan 22 11:41:29 2006
+@@ -188,7 +188,7 @@ load_image (const gchar       *filename,
  
-       execlp ("wget", "wget", "-e", "server-response=off", "-T", TIMEOUT,
+       execlp ("wget",
+               "wget", "-v", "-e", "server-response=off", "-T", TIMEOUT,
 -              filename, "-O", tmpname, NULL);
 +              filename, "-O", tmpname, (char *)NULL);
        g_message ("exec() failed: wget: %s", g_strerror (errno));
