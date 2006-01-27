@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.2 2005/11/19 13:15:21 bernd Exp $
---- configure.orig	Sun Oct 23 19:47:45 2005
-+++ configure	Tue Nov 15 01:00:52 2005
-@@ -9897,7 +9897,6 @@ openbsd*)
+$OpenBSD: patch-configure,v 1.3 2006/01/27 16:41:06 bernd Exp $
+--- configure.orig	Fri Jan 20 13:36:16 2006
++++ configure	Sat Jan 21 12:26:54 2006
+@@ -10030,7 +10030,6 @@ openbsd*)
      *)                         need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure,v 1.2 2005/11/19 13:15:21 bernd Exp $
    shlibpath_var=LD_LIBRARY_PATH
    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case $host_os in
-@@ -13695,7 +13694,6 @@ openbsd*)
+@@ -13995,7 +13994,6 @@ openbsd*)
      *)                         need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
@@ -17,7 +17,7 @@ $OpenBSD: patch-configure,v 1.2 2005/11/19 13:15:21 bernd Exp $
    shlibpath_var=LD_LIBRARY_PATH
    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case $host_os in
-@@ -16972,7 +16970,6 @@ openbsd*)
+@@ -16602,7 +16600,6 @@ openbsd*)
      *)                         need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
@@ -25,7 +25,7 @@ $OpenBSD: patch-configure,v 1.2 2005/11/19 13:15:21 bernd Exp $
    shlibpath_var=LD_LIBRARY_PATH
    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case $host_os in
-@@ -19457,7 +19454,6 @@ openbsd*)
+@@ -19217,7 +19214,6 @@ openbsd*)
      *)                         need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
@@ -33,7 +33,7 @@ $OpenBSD: patch-configure,v 1.2 2005/11/19 13:15:21 bernd Exp $
    shlibpath_var=LD_LIBRARY_PATH
    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case $host_os in
-@@ -28094,10 +28090,10 @@ s,@AMDEPBACKSLASH@,$AMDEPBACKSLASH,;t t
+@@ -27348,10 +27344,10 @@ s,@AMDEPBACKSLASH@,$AMDEPBACKSLASH,;t t
  s,@CCDEPMODE@,$CCDEPMODE,;t t
  s,@am__fastdepCC_TRUE@,$am__fastdepCC_TRUE,;t t
  s,@am__fastdepCC_FALSE@,$am__fastdepCC_FALSE,;t t

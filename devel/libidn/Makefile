@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2006/01/06 12:24:55 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2006/01/27 16:41:06 bernd Exp $
 
 COMMENT=		"internationalized string handling"
 
-DISTNAME=		libidn-0.5.20
-PKGNAME=		${DISTNAME}p1
-SHARED_LIBS=		idn 16.13
-MODGNU_SHARED_LIBS=	idn '-export-symbols-regex "^(idn|pr29_|punycode_|stringprep|tld_).*"'
+DISTNAME=		libidn-0.6.1
+SHARED_LIBS=		idn 16.15
 
 CATEGORIES=		devel
 HOMEPAGE=		http://www.gnu.org/software/libidn/
