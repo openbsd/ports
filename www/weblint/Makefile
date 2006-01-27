@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2004/02/01 20:22:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.13 2006/01/27 20:57:02 alek Exp $
 
 COMMENT=	"perl lint program for html"
 
 DISTNAME=	weblint-1.020	
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 
 MASTER_SITES=	http://www.perl.com/CPAN/authors/id/NEILB/

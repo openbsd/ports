@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/12/20 22:06:00 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2006/01/27 20:57:02 alek Exp $
 # Original from: Andy Lester <andy@petdance.com>
 
 COMMENT=		"check for HTML errors in a string or file"
 
 DISTNAME=		HTML-Lint-2.02
-PKGNAME=		p5-${DISTNAME}
+PKGNAME=		p5-${DISTNAME}p0
 CATEGORIES=		www perl5
 
 MAINTAINER=		Alexander von Gernler <grunk@pestilenz.org>

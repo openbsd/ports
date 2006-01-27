@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:49:53 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/01/27 20:57:02 alek Exp $
+@conflict p5-HTML-Lint-*
 bin/weblint
 @man man/man1/weblint.1
 share/examples/weblint/
