@@ -1,7 +1,7 @@
-$OpenBSD: patch-subversion_clients_cmdline_main_c,v 1.1 2005/11/30 19:45:08 sturm Exp $
---- subversion/clients/cmdline/main.c.orig	Tue Nov 29 14:25:04 2005
-+++ subversion/clients/cmdline/main.c	Tue Nov 29 14:25:22 2005
-@@ -758,7 +758,7 @@ error_exit (svn_error_t *err, FILE *stre
+$OpenBSD: patch-subversion_clients_cmdline_main_c,v 1.2 2006/01/27 10:20:56 alek Exp $
+--- subversion/clients/cmdline/main.c.orig	Sun Jan  8 14:06:11 2006
++++ subversion/clients/cmdline/main.c	Sun Jan  8 14:06:43 2006
+@@ -769,7 +769,7 @@ const svn_opt_subcommand_desc_t svn_cl__
  static svn_error_t *
  check_lib_versions (void)
  {

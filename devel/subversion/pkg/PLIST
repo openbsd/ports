@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/10/02 09:02:05 alek Exp $
+@comment $OpenBSD: PLIST,v 1.6 2006/01/27 10:20:56 alek Exp $
 @pkgpath devel/subversion,no_bindings
 %%SHARED%%
 bin/svn
@@ -25,6 +25,7 @@ include/subversion-1/svn_fs.h
 include/subversion-1/svn_hash.h
 include/subversion-1/svn_io.h
 include/subversion-1/svn_md5.h
+include/subversion-1/svn_nls.h
 include/subversion-1/svn_opt.h
 include/subversion-1/svn_path.h
 include/subversion-1/svn_pools.h
@@ -36,7 +37,6 @@ include/subversion-1/svn_repos.h
 include/subversion-1/svn_sorts.h
 include/subversion-1/svn_string.h
 include/subversion-1/svn_subst.h
-include/subversion-1/svn_test.h
 include/subversion-1/svn_time.h
 include/subversion-1/svn_types.h
 include/subversion-1/svn_utf.h

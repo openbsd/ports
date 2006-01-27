@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2006/01/07 01:10:11 steven Exp $
+# $OpenBSD: Makefile,v 1.17 2006/01/27 10:20:56 alek Exp $
 
 COMMENT=	"subversion revision control system"
 COMMENT-perl=	"perl interface to subversion"
 COMMENT-python=	"python interface to subversion"
 
-VERSION=	1.2.3
+VERSION=	1.3.0
 DISTNAME=	subversion-${VERSION}
-PKGNAME=	${DISTNAME}p1
 PKGNAME-perl=	p5-SVN-${VERSION}
 PKGNAME-python=	py-subversion-${VERSION}
 SHARED_LIBS=	svn_client-1	0.0	\
@@ -65,6 +64,7 @@ WANTLIB+=	aprutil-1
 .    if ${SUBPACKAGE} == "-python"
 RUN_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 LIB_DEPENDS+=	svn_diff-1,svn_ra-1,svn_delta-1,svn_subr-1,svn_fs-1,svn_repos-1,svn_wc-1,svn_client-1,svn_fs_fs-1,svn_ra_svn-1,svn_ra_local-1,svn_fs_base-1,svn_ra_dav-1::devel/subversion
+LIB_DEPENDS+=	python2.3.0.0:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 WANTLIB+=	neon xml2 m ssl crypto
 .    endif
 .  endif
@@ -101,15 +101,12 @@ CONFIGURE_ARGS+=--disable-swig-bindings \
 
 REGRESS_DEPENDS=::lang/python/${PYTHON_VER} \
 		::devel/p5-IO-String
-REGRESS_FLAGS=	LD_LIBRARY_PATH=`find ${WRKBUILD} -name .libs | tr '\012' :`
 
 pre-configure:
 	@perl -pi -e "s,!!LOCALBASE!!,${LOCALBASE}," ${WRKSRC}/configure
-	@perl -pi -e "s,!!LOCALBASE!!,${LOCALBASE}," ${WRKSRC}/configure.in
 
 pre-build: 
 	@perl -pi -e "s,!!PYTHON_VER!!,${PYTHON_VER}," ${WRKBUILD}/Makefile
-	@perl -pi -e "s,!!WRKBUILD!!,${WRKBUILD}," ${WRKBUILD}/Makefile
 
 .if !${FLAVOR:L:Mno_bindings}
 post-build: 

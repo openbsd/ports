@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2005/07/04 22:22:00 alek Exp $
---- Makefile.in.orig	Mon May  9 07:56:09 2005
-+++ Makefile.in	Wed Jun 22 02:08:50 2005
+$OpenBSD: patch-Makefile_in,v 1.3 2006/01/27 10:20:56 alek Exp $
+--- Makefile.in.orig	Tue Nov 15 16:56:15 2005
++++ Makefile.in	Sun Jan  8 17:31:33 2006
 @@ -66,8 +66,8 @@ swig_pl_libdir = @libdir@
  swig_rb_libdir = @libdir@
  
@@ -12,37 +12,14 @@ $OpenBSD: patch-Makefile_in,v 1.2 2005/07/04 22:22:00 alek Exp $
  swig_pldir = @libdir@/svn-perl
  swig_rbdir = $(SWIG_RB_SITE_ARCH_DIR)/svn/ext
  
-@@ -143,7 +143,23 @@ MKDIR = @MKDIR@
- # the EXTRA_ exist so that extra flags can be passed at 'make' time
- CFLAGS = @CFLAGS@ $(EXTRA_CFLAGS)
- CPPFLAGS = @CPPFLAGS@ $(EXTRA_CPPFLAGS)
--LDFLAGS = @LDFLAGS@ $(EXTRA_LDFLAGS)
-+LDFLAGS = -L!!WRKBUILD!!/subversion/libsvn_client/.libs \
-+	-L!!WRKBUILD!!/subversion/libsvn_delta/.libs \
-+	-L!!WRKBUILD!!/subversion/libsvn_diff/.libs \
-+	-L!!WRKBUILD!!/subversion/libsvn_fs/.libs \
-+	-L!!WRKBUILD!!/subversion/libsvn_fs_base/.libs \
-+	-L!!WRKBUILD!!/subversion/libsvn_fs_fs/.libs \
-+	-L!!WRKBUILD!!/subversion/libsvn_ra/.libs \
-+	-L!!WRKBUILD!!/subversion/libsvn_ra_dav/.libs \
-+	-L!!WRKBUILD!!/subversion/libsvn_ra_local/.libs \
-+	-L!!WRKBUILD!!/subversion/libsvn_ra_svn/.libs \
-+	-L!!WRKBUILD!!/subversion/libsvn_repos/.libs \
-+	-L!!WRKBUILD!!/subversion/libsvn_subr/.libs \
-+	-L!!WRKBUILD!!/subversion/libsvn_wc/.libs \
-+	-L!!WRKBUILD!!/subversion/bindings/swig/perl/libsvn_swig_perl/.libs \
-+	-L!!WRKBUILD!!/subversion/bindings/swig/python/libsvn_swig_py/.libs \
-+	-L!!WRKBUILD!!/subversion/bindings/swig/python/.libs \
-+	@LDFLAGS@ $(EXTRA_LDFLAGS)
+@@ -94,8 +94,8 @@ EXEEXT = @EXEEXT@
  
- COMPILE = $(CC) $(CPPFLAGS) $(CFLAGS) $(INCLUDES)
- COMPILE_CXX = $(CXX) $(CPPFLAGS) $(CFLAGS) $(CXXFLAGS) $(INCLUDES)
-@@ -321,7 +337,7 @@ local-install: @INSTALL_RULES@
- 
- ### HACK!! Find a better way to do this
- revision-install:
--	subversion/svnversion/svnversion $(top_srcdir) /repos/svn/trunk > $(DESTDIR)$(includedir)/subversion-1/svn-revision.txt
-+	env LD_LIBRARY_PATH=${PREFIX}/lib subversion/svnversion/svnversion $(top_srcdir) /repos/svn/trunk > $(DESTDIR)$(includedir)/subversion-1/svn-revision.txt
- 
- install-static: @INSTALL_STATIC_RULES@
- 
+ SHELL = @SHELL@
+ LIBTOOL = @SVN_LIBTOOL@
+-LTFLAGS = @SVN_LT_CCTAG@ --silent
+-LTCXXFLAGS = @SVN_LT_CXXTAG@ --silent
++LTFLAGS = @SVN_LT_CCTAG@
++LTCXXFLAGS = @SVN_LT_CXXTAG@
+ LT_LDFLAGS = @LT_LDFLAGS@
+ LT_NO_UNDEFINED = @LT_NO_UNDEFINED@
+ LT_CXX_LIBADD = @LT_CXX_LIBADD@

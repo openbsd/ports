@@ -1,7 +1,7 @@
-$OpenBSD: patch-subversion_svnversion_main_c,v 1.1 2005/11/30 19:45:08 sturm Exp $
---- subversion/svnversion/main.c.orig	Tue Nov 29 14:28:43 2005
-+++ subversion/svnversion/main.c	Tue Nov 29 14:28:58 2005
-@@ -171,7 +171,7 @@ help(const apr_getopt_option_t *options,
+$OpenBSD: patch-subversion_svnversion_main_c,v 1.2 2006/01/27 10:20:56 alek Exp $
+--- subversion/svnversion/main.c.orig	Sun Jan  8 14:14:17 2006
++++ subversion/svnversion/main.c	Sun Jan  8 14:14:28 2006
+@@ -141,7 +141,7 @@ help(const apr_getopt_option_t *options,
  static svn_error_t *
  check_lib_versions (void)
  {

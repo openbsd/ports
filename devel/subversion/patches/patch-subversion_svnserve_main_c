@@ -1,7 +1,7 @@
-$OpenBSD: patch-subversion_svnserve_main_c,v 1.1 2005/11/30 19:45:08 sturm Exp $
---- subversion/svnserve/main.c.orig	Tue Nov 29 14:28:06 2005
-+++ subversion/svnserve/main.c	Tue Nov 29 14:28:15 2005
-@@ -213,7 +213,7 @@ static void * APR_THREAD_FUNC serve_thre
+$OpenBSD: patch-subversion_svnserve_main_c,v 1.2 2006/01/27 10:20:56 alek Exp $
+--- subversion/svnserve/main.c.orig	Sun Jan  8 14:11:28 2006
++++ subversion/svnserve/main.c	Sun Jan  8 14:13:38 2006
+@@ -215,7 +215,7 @@ static void * APR_THREAD_FUNC serve_thre
  static svn_error_t *
  check_lib_versions(void)
  {

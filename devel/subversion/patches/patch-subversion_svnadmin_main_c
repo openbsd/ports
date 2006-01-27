@@ -1,6 +1,6 @@
-$OpenBSD: patch-subversion_svnadmin_main_c,v 1.1 2005/11/30 19:45:08 sturm Exp $
---- subversion/svnadmin/main.c.orig	Tue Nov 29 14:25:56 2005
-+++ subversion/svnadmin/main.c	Tue Nov 29 14:26:09 2005
+$OpenBSD: patch-subversion_svnadmin_main_c,v 1.2 2006/01/27 10:20:56 alek Exp $
+--- subversion/svnadmin/main.c.orig	Sun Jan  8 14:07:39 2006
++++ subversion/svnadmin/main.c	Sun Jan  8 14:07:52 2006
 @@ -161,7 +161,7 @@ open_repos (svn_repos_t **repos,
  static svn_error_t *
  check_lib_versions (void)
