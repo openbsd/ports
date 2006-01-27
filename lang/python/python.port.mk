@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.10 2004/08/06 07:33:19 xsa Exp $
+# $OpenBSD: python.port.mk,v 1.11 2006/01/27 17:50:54 bernd Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -37,14 +37,16 @@ _MODPY_CMD=	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 SUBST_VARS+=	MODPY_VERSION
 
 # dirty way to do it with no modifications in bsd.port.mk
-.if !target(do-build)
+.if empty(CONFIGURE_STYLE)
+.  if !target(do-build)
 do-build:
 	${_MODPY_CMD} ${MODPY_DISTUTILS_BUILD} ${MODPY_DISTUTILS_BUILDARGS}
-.endif
+.  endif
 
 # extra documentation or scripts should be installed via post-install
-.if !target(do-install)
+.  if !target(do-install)
 do-install:
 	${_MODPY_CMD} ${MODPY_DISTUTILS_BUILD} ${MODPY_DISTUTILS_BUILDARGS} \
 		${MODPY_DISTUTILS_INSTALL} ${MODPY_DISTUTILS_INSTALLARGS}
+.  endif
 .endif
