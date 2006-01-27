@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2006/01/17 06:47:56 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2006/01/27 06:54:50 steven Exp $
 
 COMMENT=		"Nostromo webserver"
 
-DISTNAME=		nostromo-1.7.7
+DISTNAME=		nostromo-1.7.8
 CATEGORIES=		www
 MASTER_SITES=		http://www.nazgul.ch/dev/
 
@@ -32,7 +32,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/README ${PREFIX}/share/doc/nostromo
 	${INSTALL_DATA} ${WRKDIST}/TODO ${PREFIX}/share/doc/nostromo
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nostromo
-	${INSTALL_DATA} ${WRKDIST}/cgi-bin/printenv \
+	${INSTALL_DATA} ${WRKDIST}/htdocs/cgi-bin/printenv \
 		${PREFIX}/share/examples/nostromo
 	${INSTALL_DATA} ${WRKDIST}/conf/mimes \
 		${PREFIX}/share/examples/nostromo
