@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/01/20 07:46:29 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2006/01/27 19:08:06 alek Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -40,12 +40,6 @@ CONFIGURE_ENV=	PYTHON=${MODPY_BIN}
 REGRESS_FLAGS=	DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-gtk2
-
-do-build:
-	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} ${ALL_TARGET}
-
-do-install:
-	@cd ${WRKBUILD} && exec ${SUDO} ${SETENV} ${MAKE_ENV} ${_FAKE_SETUP} ${MAKE_PROGRAM} ${FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
