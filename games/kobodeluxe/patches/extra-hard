@@ -1,6 +1,6 @@
---- manage.cpp.orig	Sat Apr 12 16:33:29 2003
-+++ manage.cpp	Sat Apr 12 16:33:35 2003
-@@ -455,7 +455,6 @@ void _manage::add_score(int sc)
+--- manage.cpp.orig	Sun Apr 27 15:58:04 2003
++++ manage.cpp	Thu Jan 26 17:49:18 2006
+@@ -505,7 +505,6 @@ void _manage::add_score(int sc)
  		if(score >= bonus_next)
  		{
  			bonus_next += BONUS_EVERY;

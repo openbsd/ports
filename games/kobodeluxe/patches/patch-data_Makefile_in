@@ -1,29 +1,22 @@
-$OpenBSD: patch-data_Makefile_in,v 1.1.1.1 2003/04/12 15:22:10 espie Exp $
---- data/Makefile.in.orig	Fri Jun 14 19:18:20 2002
-+++ data/Makefile.in	Thu Apr 10 03:30:34 2003
-@@ -124,10 +124,10 @@ KOBOSFX_OBJECTS = *.raw *.agw *.mid *.h
- #	*.h
- @BUILD_MACOSX_BUNDLE_TRUE@kobogfxdir = $(srcdir)/../@PACKAGE@.app/Contents/Resources/gfx
- @BUILD_MACOSX_BUNDLE_FALSE@@BUILD_SIMPLE_BUNDLE_TRUE@kobogfxdir = $(srcdir)/../@PACKAGE@/gfx
+$OpenBSD: patch-data_Makefile_in,v 1.2 2006/01/27 01:12:23 jolan Exp $
+--- data/Makefile.in.orig	Sun Feb  9 22:27:09 2003
++++ data/Makefile.in	Thu Jan 26 17:44:08 2006
+@@ -149,12 +149,12 @@ target_vendor = @target_vendor@
+ KOBOGFX_OBJECTS = *.png *.pcx
+ 
+ KOBOSFX_OBJECTS = *.raw *.agw *.mid *.h
 -@BUILD_MACOSX_BUNDLE_FALSE@@BUILD_SIMPLE_BUNDLE_FALSE@kobogfxdir = $(datadir)/games/kobo-deluxe/gfx
 +@BUILD_MACOSX_BUNDLE_FALSE@@BUILD_SIMPLE_BUNDLE_FALSE@kobogfxdir = $(datadir)/kobodeluxe/gfx
- @BUILD_MACOSX_BUNDLE_TRUE@kobosfxdir = $(srcdir)/../@PACKAGE@.app/Contents/Resources/sfx
- @BUILD_MACOSX_BUNDLE_FALSE@@BUILD_SIMPLE_BUNDLE_TRUE@kobosfxdir = $(srcdir)/../@PACKAGE@/sfx
+ 
+ @BUILD_MACOSX_BUNDLE_TRUE@kobogfxdir = $(srcdir)/../@PACKAGE@.app/Contents/Resources/gfx
+ 
+ @BUILD_MACOSX_BUNDLE_FALSE@@BUILD_SIMPLE_BUNDLE_TRUE@kobogfxdir = $(srcdir)/../@PACKAGE@/gfx
 -@BUILD_MACOSX_BUNDLE_FALSE@@BUILD_SIMPLE_BUNDLE_FALSE@kobosfxdir = $(datadir)/games/kobo-deluxe/sfx
 +@BUILD_MACOSX_BUNDLE_FALSE@@BUILD_SIMPLE_BUNDLE_FALSE@kobosfxdir = $(datadir)/kobodeluxe/sfx
+ @BUILD_MACOSX_BUNDLE_TRUE@kobosfxdir = $(srcdir)/../@PACKAGE@.app/Contents/Resources/sfx
+ @BUILD_MACOSX_BUNDLE_FALSE@@BUILD_SIMPLE_BUNDLE_TRUE@kobosfxdir = $(srcdir)/../@PACKAGE@/sfx
  
- kobogfx_DATA = $(KOBOGFX_OBJECTS)
- kobosfx_DATA = $(KOBOSFX_OBJECTS)
-@@ -176,7 +176,7 @@ uninstall-kobogfxDATA:
- 	done
- install-koboscoreDATA: $(koboscore_DATA)
- 	@$(NORMAL_INSTALL)
--	$(mkinstalldirs) $(DESTDIR)$(koboscoredir)
-+	$(mkinstalldirs) $(DESTDIR)$(kboscoredir)
- 	@list='$(koboscore_DATA)'; for p in $$list; do \
- 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
- 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
-@@ -279,8 +279,7 @@ info: info-am
+@@ -323,8 +323,7 @@ info: info-am
  
  info-am:
  
