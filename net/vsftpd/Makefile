@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2005/09/16 16:40:19 aanriot Exp $
+# $OpenBSD: Makefile,v 1.16 2006/01/28 21:57:51 aanriot Exp $
 
 COMMENT=		"Ftp daemon which aims to be secure"
 
-VERSION=		2.0.3
-DISTNAME=		vsftpd-${VERSION}
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		vsftpd-2.0.4
 CATEGORIES=		net
 
 HOMEPAGE=		http://vsftpd.beasts.org/
@@ -22,7 +20,7 @@ MASTER_SITES=		ftp://vsftpd.beasts.org/users/cevans/
 
 ALL_TARGET=		vsftpd
 
-MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS} -Wall -W -Wshadow"
+MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}"
 
 NO_REGRESS=		Yes
 
@@ -31,6 +29,9 @@ do-configure:
 	@perl -pi -e "s,/usr/share/ssl/certs/,/etc/ssl/private/,g" \
 		${WRKSRC}/tunables.c \
 		${WRKSRC}/README.ssl
+	@perl -pi -e "s,/etc/vsftpd,${SYSCONFDIR}/vsftpd,g" \
+		${WRKSRC}/vsftpd.conf.5 \
+		${WRKSRC}/vsftpd.8
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/vsftpd

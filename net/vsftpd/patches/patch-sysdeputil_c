@@ -1,19 +1,21 @@
-$OpenBSD: patch-sysdeputil_c,v 1.1 2005/03/13 20:40:38 couderc Exp $
---- sysdeputil.c.orig	Tue Sep 14 03:18:54 2004
-+++ sysdeputil.c	Sun Mar 13 09:01:50 2005
-@@ -74,6 +74,11 @@
+$OpenBSD: patch-sysdeputil_c,v 1.2 2006/01/28 21:57:51 aanriot Exp $
+--- sysdeputil.c.orig	Tue May 24 00:34:23 2005
++++ sysdeputil.c	Thu Jan 26 06:39:07 2006
+@@ -74,6 +74,13 @@
    #endif
  #endif
  
 +#if defined(__OpenBSD__)
 +  #undef VSF_BUILD_PAM
 +  #undef VSF_SYSDEP_HAVE_SHADOW
++  #include <stdlib.h>
++  #define VSF_SYSDEP_HAVE_SETPROCTITLE
 +#endif
 +
  #if (defined(__FreeBSD__) && __FreeBSD__ >= 3)
    #define VSF_SYSDEP_HAVE_FREEBSD_SENDFILE
    #define VSF_SYSDEP_HAVE_SETPROCTITLE
-@@ -622,13 +627,13 @@ static int do_sendfile(const int out_fd,
+@@ -623,13 +630,13 @@ static int do_sendfile(const int out_fd,
    static char* p_recvbuf;
    unsigned int total_written = 0;
    int retval;
