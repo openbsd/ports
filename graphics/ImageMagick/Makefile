@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.88 2006/01/27 17:40:05 bernd Exp $
+# $OpenBSD: Makefile,v 1.89 2006/01/28 19:56:16 bernd Exp $
 
 COMMENT=		"image processing tools"
 
 VER=			6.2.6
 DASHVER=		0
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
-PKGNAME=		ImageMagick-${VER}.${DASHVER}
+PKGNAME=		ImageMagick-${VER}.${DASHVER}p0
 SHARED_LIBS=		Magick++	10.0	\
 			Magick		10.0	\
 			Wand		10.0
@@ -74,6 +74,9 @@ WANTLIB+=		ICE SM X11 Xext Xt freetype
 .endif
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S/-${DASHVER}$//}
+
+post-extract:
+	@rm -f ${WRKDIST}/utilities/*.1
 
 post-install:
 	@perl -pi -e s#'-L${WRKBUILD}/(magick|wand)/.libs '#''#g \
