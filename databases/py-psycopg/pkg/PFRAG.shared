@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2004/10/24 20:44:36 alek Exp $
-lib/python${PYTHON_VER}/lib-dynload/psycopgmodule.so

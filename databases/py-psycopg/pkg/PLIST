@@ -1,3 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/09/16 09:51:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/01/28 11:18:52 alek Exp $
 @pkgpath databases/py-psycopg,no_zope
-%%SHARED%%
+lib/python${MODPY_VERSION}/lib-dynload/psycopgmodule.so
+share/examples/py-psycopg/
+share/examples/py-psycopg/binary.py
+share/examples/py-psycopg/bool.py
+share/examples/py-psycopg/bounded.py
+share/examples/py-psycopg/commit.py
+share/examples/py-psycopg/copy_from.py
+share/examples/py-psycopg/copy_from2.py
+share/examples/py-psycopg/copy_to.py
+share/examples/py-psycopg/dictfetch.py
+share/examples/py-psycopg/dt.py
+share/examples/py-psycopg/first.py
+share/examples/py-psycopg/integrity.py
+share/examples/py-psycopg/interval.py
+share/examples/py-psycopg/notify.py
+share/examples/py-psycopg/oid.py
+share/examples/py-psycopg/somehackers.jpg
+share/examples/py-psycopg/threads.py
+share/examples/py-psycopg/usercast.py
+share/examples/py-psycopg/whereareyou.jpg
+share/examples/py-psycopg/work.py
