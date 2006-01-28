@@ -1,6 +1,6 @@
-$OpenBSD: patch-squidguard_log_c,v 1.1 2006/01/22 11:05:02 aanriot Exp $
---- squidguard_log.c.orig	Sun Jan 22 10:10:50 2006
-+++ squidguard_log.c	Sun Jan 22 10:11:54 2006
+$OpenBSD: patch-squidguard_log_c,v 1.2 2006/01/28 21:22:07 aanriot Exp $
+--- squidguard_log.c.orig	Tue Nov 29 17:39:45 2005
++++ squidguard_log.c	Thu Jan 26 21:31:44 2006
 @@ -105,7 +105,7 @@ void read_log(char *wentp, FILE *fp_ou)
  
        if (strcmp(user,"-") == 0) {
@@ -10,4 +10,3 @@ $OpenBSD: patch-squidguard_log_c,v 1.1 2006/01/22 11:05:02 aanriot Exp $
        }
        sprintf(tmp6,"%s %s%s%s %s %s %s %s\n",user,year,mon,day,hour,ip,url,list);
        fputs(tmp6, fp_ou);
-

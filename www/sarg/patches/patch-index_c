@@ -1,0 +1,14 @@
+--- index.c.orig	Tue Nov 29 17:39:45 2005
++++ index.c	Thu Jan 26 21:31:44 2006
+@@ -369,9 +369,9 @@ void make_index()
+       unlink(wdir_tmp2);
+    } else {
+       if(strcmp(IndexSortOrder,"A") == 0)
+-         sprintf(warea,"sort -t';' +6.5n +6.2M +6.0n '%s' -o '%s'", wdir_tmp, wdir_tmp2);
++      	 sprintf(warea,"sort -t';' -k 7,7 %s -o %s", wdir_tmp, wdir_tmp2);
+       else
+-         sprintf(warea,"sort -t';' +6.5nr +6.2Mr +6.0nr '%s' -o '%s'", wdir_tmp, wdir_tmp2);
++      	 sprintf(warea,"sort -t';' -r -k 7,7 %s -o %s", wdir_tmp, wdir_tmp2);
+       system(warea);
+       unlink(wdir_tmp);
+       if((fp_ou=fopen(wdir,"w"))==NULL) {

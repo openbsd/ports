@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2006/01/22 11:05:01 aanriot Exp $
+# $OpenBSD: Makefile,v 1.5 2006/01/28 21:22:07 aanriot Exp $
 
 COMMENT=		"Squid Analysis Report Generator"
 
 DISTNAME=		sarg-2.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		www
 
 HOMEPAGE=	 	http://sarg.sourceforge.net/
@@ -34,10 +35,9 @@ post-extract:
 
 post-build:
 	@perl -pi -e \
-		"s,/usr/local/sarg,${SYSCONFDIR}/sarg," \
+		"s,%%SYSCONFDIR%%,${SYSCONFDIR},g" \
+		${WRKSRC}/sarg.conf \
 		${WRKSRC}/sarg.1
-	@perl -pi -e \
-		"s,/usr/local/squid,/var/squid," ${WRKSRC}/sarg.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sarg ${PREFIX}/bin

@@ -1,0 +1,65 @@
+--- sarg.conf.orig	Tue Nov 29 17:39:45 2005
++++ sarg.conf	Thu Jan 26 21:31:44 2006
+@@ -32,7 +32,7 @@
+ #       Where is the access.log file
+ #       sarg -l file
+ #
+-#access_log /usr/local/squid/var/logs/access.log
++#access_log /var/squid/logs/access.log 
+ 
+ # TAG: graphs yes|no
+ #	Use graphics where is possible.
+@@ -139,7 +139,7 @@
+ #       The reports will be saved in that directory
+ #       sarg -o dir
+ #
+-#output_dir /var/www/html/squid-reports
++#output_dir /var/www/htdocs/sarg 
+ 
+ # TAG:  output_email
+ #       Email address to send the reports. If you use this tag, no html reports will be generated.
+@@ -269,7 +269,7 @@
+ # TAG: exclude_codes file
+ #      Ignore records with these codes. Eg.: NONE/400
+ #
+-#exclude_codes /usr/local/sarg/exclude_codes
++#exclude_codes %%SYSCONFDIR%%/sarg/exclude_codes 
+ 
+ # TAG: replace_index string
+ #      Replace "index.html" in the main index file with this string
+@@ -493,7 +493,7 @@ max_elapsed 28800000
+ # TAG: parsed_output_log_compress /bin/gzip|/usr/bin/bzip2|nocompress
+ #      sarg logs compress util
+ #
+-#parsed_output_log_compress /bin/gzip
++#parsed_output_log_compress /usr/bin/gzip 
+ 
+ # TAG: displayed_values bytes|abbreviation
+ #      how the values will be displayed in reports.
+@@ -526,7 +526,7 @@ max_elapsed 28800000
+ #     Sarg will create sarg-php directory with some PHP modules:
+ #     - sarg-squidguard-block.php - add urls from user reports to squidGuard DB
+ #
+-#www_document_root /var/www/html
++#www_document_root /var/www/htdocs 
+ 
+ # TAG: block_it module_url
+ #     This tag allow you to pass urls from user reports to a cgi or php module,
+@@ -534,7 +534,7 @@ max_elapsed 28800000
+ #
+ #     Eg.: block_it /sarg-php/sarg-block-it.php
+ #     sarg-block-it is a php that will append a url to a flat file.
+-#     You must change /var/www/html/sarg-php/sarg-block-it to point to your file
++#     You must change /var/www/htdocs/sarg-php/sarg-block-it to point to your file
+ #     in $filename variable, and chown to a httpd owner.
+ #
+ #     sarg will pass http://module_url?url=url
+@@ -555,7 +555,7 @@ max_elapsed 28800000
+ #	.data2		table text class, align:right, border colors
+ #	.link  		link class
+ #
+-#     There is a sample in /usr/local/sarg/etc/css.tpl
++#     There is a sample in %%SYSCONFDIR%%/sarg/css.tpl
+ #
+ #external_css_file none
+ 

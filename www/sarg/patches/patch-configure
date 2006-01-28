@@ -1,6 +1,6 @@
---- configure.orig	Sat Jan  7 14:40:01 2006
-+++ configure	Sat Jan  7 14:40:40 2006
-@@ -2331,12 +2331,6 @@
+--- configure.orig	Tue Nov 29 17:39:45 2005
++++ configure	Thu Jan 26 21:31:44 2006
+@@ -2331,12 +2331,6 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  ;;
  esac
  

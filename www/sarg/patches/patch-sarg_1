@@ -1,0 +1,15 @@
+$OpenBSD: patch-sarg_1,v 1.1 2006/01/28 21:22:07 aanriot Exp $
+--- sarg.1.orig	Tue Nov 29 17:39:45 2005
++++ sarg.1	Fri Jan 27 22:47:44 2006
+@@ -131,9 +131,9 @@ Convert the logfile's date/time field to
+ .B \-split
+ Split the log file by date in \fB-d\fP parameter.
+ .SH FILES
+-.BR /usr/local/sarg/sarg.conf
++.BR %%SYSCONFDIR%%/sarg/sarg.conf
+ .br
+-.B /usr/local/squid/logs/access.log
++.B /var/squid/logs/access.log
+ .br
+ .B /usr/local/squidGuard/logs/squidGuard.log
+ .SH SEE ALSO

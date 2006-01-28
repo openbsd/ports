@@ -1,0 +1,20 @@
+--- log.c.orig	Tue Nov 29 17:39:45 2005
++++ log.c	Thu Jan 26 21:31:44 2006
+@@ -148,7 +148,7 @@ int main(argc,argv)
+    SquidGuardLogFormat[0]='\0';
+    SquidGuardLogAlternate[0]='\0';
+ 
+-   strcpy(AccessLog,"/usr/local/squid/var/logs/access.log");
++   strcpy(AccessLog,"/var/squid/logs/access.log");
+    sprintf(ExcludeCodes,"%s/exclude_codes",SYSCONFDIR);
+    strcpy(GraphDaysBytesBarColor,"orange");
+    strcpy(BgColor,"#ffffff");
+@@ -163,7 +163,7 @@ int main(argc,argv)
+    strcpy(LogoTextColor,"#006699");
+    strcpy(FontSize,"9px");
+    strcpy(TempDir,"/tmp");
+-   strcpy(OutputDir,"/usr/local/etc/httpd/htdocs/squid-reports");
++   strcpy(OutputDir,"/var/www/htdocs/sarg");
+    strcpy(Ip2Name,"no");
+    strcpy(DateFormat,"u");
+    strcpy(OverwriteReport,"no");

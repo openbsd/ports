@@ -1,6 +1,14 @@
-$OpenBSD: patch-splitlog_c,v 1.1 2006/01/22 11:05:02 aanriot Exp $
---- splitlog.c.orig	Sun Jan 22 10:09:07 2006
-+++ splitlog.c	Sun Jan 22 10:09:28 2006
+--- splitlog.c.orig	Tue Nov 29 17:39:45 2005
++++ splitlog.c	Thu Jan 26 21:31:44 2006
+@@ -39,7 +39,7 @@ void splitlog(char *arq, char *df, int d
+    struct tm *t;
+ 
+    if(arq[0] == '\0')
+-      strcpy(arq,"/usr/local/squid/logs/access.log");
++      strcpy(arq,"/var/squid/logs/access.log");
+ 
+    if((fp_in=fopen(arq,"r"))==NULL) {
+       fprintf(stderr, "SARG: (splitlog) %s: %s\n",text[8],arq);
 @@ -52,7 +52,7 @@ void splitlog(char *arq, char *df, int d
        t=localtime(&tt);
  
@@ -22,4 +30,3 @@ $OpenBSD: patch-splitlog_c,v 1.1 2006/01/22 11:05:02 aanriot Exp $
  
        sprintf(hora,"%02d:%02d:%02d",t->tm_hour,t->tm_min,t->tm_sec);
        printf("%s %s %s",dia,hora,buf);
-
