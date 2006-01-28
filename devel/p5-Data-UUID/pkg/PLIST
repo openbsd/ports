@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/09 05:15:56 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/01/28 09:51:45 alek Exp $
+@conflict uuid-perl-*
 ${P5ARCH}/
 ${P5ARCH}/Data/
 ${P5ARCH}/Data/UUID.pm
