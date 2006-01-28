@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2005/02/14 00:35:53 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2006/01/28 10:11:33 mbalmer Exp $
 
-COMMENT=		"POP3-server virtual domain support"
+COMMENT=		"POP3-server with virtual domain support"
 
-VERSION=		0.3.5
-DISTNAME=		teapop-${VERSION}
+DISTNAME=		teapop-0.3.8
 CATEGORIES=		mail
 
 HOMEPAGE=		http://www.toontown.org/teapop/
