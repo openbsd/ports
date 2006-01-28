@@ -1,5 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.12 2006/01/21 11:14:44 jakob Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.13 2006/01/28 15:59:06 sturm Exp $
 @conflict dsocks-*
-lib/libdsocks.so
 @lib lib/libdsocks.so.${LIBdsocks_VERSION}
 @lib lib/libsocks.so.${LIBsocks_VERSION}
