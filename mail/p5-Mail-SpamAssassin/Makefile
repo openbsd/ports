@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2005/10/09 09:05:43 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.36 2006/01/28 21:27:17 steven Exp $
 
 COMMENT=		"mailfilter to identify and mark spam"
 
 DISTNAME=		Mail-SpamAssassin-3.1.0
-PKGNAME=		p5-${DISTNAME}
+PKGNAME=		p5-${DISTNAME}p0
 CATEGORIES=		mail perl5
 
 MAINTAINER=		Ben Lovett <ben@tilderoot.com>
@@ -22,7 +22,7 @@ MASTER_SITES=		${MASTER_SITE_APACHE:=spamassassin/source/}
 BUILD_DEPENDS=		:p5-HTML-Parser-*:www/p5-HTML-Parser \
 			:p5-Digest-SHA1-*:security/p5-Digest-SHA1 \
 			:p5-Net-DNS-*:net/p5-Net-DNS \
-			:p5-HTML-Parser-*:www/p5-HTML-Parser \
+			:p5-Mail-SPF-Query-*:mail/p5-Mail-SPF-Query \
 			:p5-IO-INET6-*:net/p5-IO-INET6 \
 			:p5-IO-Socket-SSL-*:security/p5-IO-Socket-SSL \
 			:p5-libwww-*:www/p5-libwww \
@@ -52,10 +52,10 @@ FAKE_FLAGS=		${DESTDIRNAME}=${WRKINST} \
 # regress insists on creating files in $HOME
 PORTHOME=		${WRKDIR}/temp-home
 
-FAQ=	OpenBSD-SpamAssassin-mini-howto.html
-DOCS=	README UPGRADE LICENSE procmailrc.example \
-	sample-nonspam.txt sample-spam.txt
-LOCALCF=	rules/local.cf
+FAQ=		OpenBSD-SpamAssassin-mini-howto.html
+DOCS=		README UPGRADE LICENSE procmailrc.example \
+		sample-nonspam.txt sample-spam.txt
+LOCALCF=	local.cf init.pre v310.pre
 
 post-patch:
 	@perl -pi -e "s#\@\@LOCAL_RULES_DIR\@\@#${CONFDIR}#" ${WRKSRC}/rules/*
@@ -66,9 +66,9 @@ post-install:
 	@sed -e "s|@SYSCONFDIR@|${SYSCONFDIR}|" \
 	    -e "s|@PREFIX@|${TRUEPREFIX}|" \
 	    ${FILESDIR}/${FAQ} > ${WRKSRC}/${FAQ}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${FAQ} ${PREFIX}/share/doc/SpamAssassin
-	cd ${WRKSRC} && ${INSTALL_DATA} ${LOCALCF} ${SAMPLE_CONFDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/SpamAssassin
+	cd ${WRKSRC} && ${INSTALL_DATA} ${FAQ} ${DOCS} \
+		${PREFIX}/share/doc/SpamAssassin
+	cd ${WRKSRC}/rules && ${INSTALL_DATA} ${LOCALCF} ${SAMPLE_CONFDIR}
 	cd ${WRKSRC} && pod2man --section=1 spamc/spamc.pod > \
 	    ${PREFIX}/man/man1/spamc.1
 	cd ${WRKSRC} && pod2man --section=8 spamd/spamd > \

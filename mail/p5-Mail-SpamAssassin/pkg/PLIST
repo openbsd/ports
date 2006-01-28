@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.16 2005/10/09 09:05:43 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.17 2006/01/28 21:27:17 steven Exp $
 bin/sa-learn
 bin/sa-update
 bin/spamassassin
 bin/spamc
 bin/spamd
-${P5SITE}/Mail/
 ${P5SITE}/Mail/SpamAssassin/
 ${P5SITE}/Mail/SpamAssassin.pm
 ${P5SITE}/Mail/SpamAssassin/ArchiveIterator.pm
@@ -150,8 +149,12 @@ share/doc/SpamAssassin/sample-nonspam.txt
 share/doc/SpamAssassin/sample-spam.txt
 @sample ${CONFDIR}/
 share/examples/SpamAssassin/
+share/examples/SpamAssassin/init.pre
+@sample ${CONFDIR}/init.pre
 share/examples/SpamAssassin/local.cf
 @sample ${CONFDIR}/local.cf
+share/examples/SpamAssassin/v310.pre
+@sample ${CONFDIR}/v310.pre
 share/spamassassin/
 share/spamassassin/10_misc.cf
 share/spamassassin/20_advance_fee.cf
