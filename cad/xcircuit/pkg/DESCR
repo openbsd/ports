@@ -1,0 +1,12 @@
+XCircuit is a program for drawing publishable-quality electrical circuit
+schematic diagrams and related figures, and produce circuit netlists
+through schematic capture.  XCircuit regards circuits as inherently
+hierarchical, and writes both hierarchical PostScript output and
+hierarchical SPICE netlists.  Circuit components are saved in and
+retrieved from libraries which are fully editable.
+
+XCircuit is flexible enough to be used as a generic program for drawing
+just about anything, and is competitive with powerful programs such as
+"xfig". It is especially good for any task requiring repeated use of a
+standard set of graphical objects, including architectural drawing,
+printed circuit board layouts, and even music typography.
