@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2004/12/07 00:23:24 alek Exp $
+# $OpenBSD: Makefile,v 1.12 2006/01/29 14:46:14 sturm Exp $
 
 COMMENT=	"curses-based URL ripper"
 
 DISTNAME=	urlview-0.9
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/contrib/ \
 		ftp://ftp.cs.hmc.edu/pub/me/ \
