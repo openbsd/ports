@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.36 2005/04/17 08:13:00 robert Exp $
+# $OpenBSD: Makefile,v 1.37 2006/01/29 20:41:02 sturm Exp $
 
 COMMENT=	"Z shell, Bourne shell-compatible, release flavor"
 COMMENT-zftp=	"Z shell embedded ftp client"
 
-VERSION=	4.2.5
+VERSION=	4.2.6
 DISTNAME=	zsh-${VERSION}
 CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
 		${HOMEPAGE}pub/ \
-		ftp://ftp.sterling.com/zsh/ \
-		ftp://ftp.rge.com/pub/zsh/ \
-		ftp://ftp.cenatls.cena.dgac.fr/pub/shells/zsh/ \
-		ftp://mrrl.lut.ac.uk/zsh/ \
-		ftp://ftp.ips.oz.au/pub/packages/zsh/ \
-		ftp://ftp.uit.no/pub/unix/shells/zsh/
+		http://mirrors.dotsrc.org/zsh/ \
+		ftp://ftp.fu-berlin.de/pub/unix/shells/zsh/ \
+		http://www.math.technion.ac.il/pub/zsh/ \
+		ftp://ftp.demon.nl/pub/mirrors/zsh/ \
+		ftp://sunsite.icm.edu.pl/pub/unix/shells/zsh/ \
+		ftp://sunsite.org.uk/package/zsh/ \
+		http://zsh.open-mirror.com/
 
 HOMEPAGE=	http://www.zsh.org/
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2005/04/17 08:13:00 robert Exp $
+@comment $OpenBSD: PLIST,v 1.18 2006/01/29 20:41:02 sturm Exp $
 @shell bin/zsh
 bin/zsh-${VERSION}
 @info info/zsh.info
@@ -40,6 +40,8 @@ share/zsh/${VERSION}/functions/_apt
 share/zsh/${VERSION}/functions/_apt-move
 share/zsh/${VERSION}/functions/_apt-show-versions
 share/zsh/${VERSION}/functions/_aptitude
+share/zsh/${VERSION}/functions/_arch_archives
+share/zsh/${VERSION}/functions/_arch_namespace
 share/zsh/${VERSION}/functions/_arg_compile
 share/zsh/${VERSION}/functions/_arguments
 share/zsh/${VERSION}/functions/_arp
@@ -62,6 +64,7 @@ share/zsh/${VERSION}/functions/_bts
 share/zsh/${VERSION}/functions/_bug
 share/zsh/${VERSION}/functions/_builtin
 share/zsh/${VERSION}/functions/_bzip2
+share/zsh/${VERSION}/functions/_bzr
 share/zsh/${VERSION}/functions/_cache_invalid
 share/zsh/${VERSION}/functions/_cal
 share/zsh/${VERSION}/functions/_call_function
@@ -88,6 +91,7 @@ share/zsh/${VERSION}/functions/_correct
 share/zsh/${VERSION}/functions/_correct_filename
 share/zsh/${VERSION}/functions/_correct_word
 share/zsh/${VERSION}/functions/_cpio
+share/zsh/${VERSION}/functions/_cplay
 share/zsh/${VERSION}/functions/_cvs
 share/zsh/${VERSION}/functions/_cvsup
 share/zsh/${VERSION}/functions/_cygcheck
@@ -96,6 +100,8 @@ share/zsh/${VERSION}/functions/_cygrunsrv
 share/zsh/${VERSION}/functions/_cygserver
 share/zsh/${VERSION}/functions/_cygstart
 share/zsh/${VERSION}/functions/_darcs
+share/zsh/${VERSION}/functions/_date
+share/zsh/${VERSION}/functions/_dchroot
 share/zsh/${VERSION}/functions/_dcop
 share/zsh/${VERSION}/functions/_dd
 share/zsh/${VERSION}/functions/_deb_packages
@@ -116,8 +122,10 @@ share/zsh/${VERSION}/functions/_directory_stack
 share/zsh/${VERSION}/functions/_dirs
 share/zsh/${VERSION}/functions/_disable
 share/zsh/${VERSION}/functions/_dispatch
+share/zsh/${VERSION}/functions/_dlocate
 share/zsh/${VERSION}/functions/_domains
 share/zsh/${VERSION}/functions/_dpkg
+share/zsh/${VERSION}/functions/_dpkg-cross
 share/zsh/${VERSION}/functions/_dpkg_source
 share/zsh/${VERSION}/functions/_dput
 share/zsh/${VERSION}/functions/_du
@@ -160,6 +168,7 @@ share/zsh/${VERSION}/functions/_getclip
 share/zsh/${VERSION}/functions/_getconf
 share/zsh/${VERSION}/functions/_getent
 share/zsh/${VERSION}/functions/_getfacl
+share/zsh/${VERSION}/functions/_git
 share/zsh/${VERSION}/functions/_global
 share/zsh/${VERSION}/functions/_global_tags
 share/zsh/${VERSION}/functions/_gnome-gv
@@ -223,6 +232,7 @@ share/zsh/${VERSION}/functions/_lynx
 share/zsh/${VERSION}/functions/_lzop
 share/zsh/${VERSION}/functions/_mac_applications
 share/zsh/${VERSION}/functions/_mac_files_for_application
+share/zsh/${VERSION}/functions/_madison
 share/zsh/${VERSION}/functions/_mail
 share/zsh/${VERSION}/functions/_mailboxes
 share/zsh/${VERSION}/functions/_main_complete
@@ -239,6 +249,7 @@ share/zsh/${VERSION}/functions/_mh
 share/zsh/${VERSION}/functions/_mime_types
 share/zsh/${VERSION}/functions/_mkshortcut
 share/zsh/${VERSION}/functions/_mkzsh
+share/zsh/${VERSION}/functions/_module-assistant
 share/zsh/${VERSION}/functions/_modutils
 share/zsh/${VERSION}/functions/_mondo
 share/zsh/${VERSION}/functions/_most_recent_file
@@ -291,6 +302,7 @@ share/zsh/${VERSION}/functions/_physical_volumes
 share/zsh/${VERSION}/functions/_pick_variant
 share/zsh/${VERSION}/functions/_pids
 share/zsh/${VERSION}/functions/_pine
+share/zsh/${VERSION}/functions/_piuparts
 share/zsh/${VERSION}/functions/_pkgtool
 share/zsh/${VERSION}/functions/_ports
 share/zsh/${VERSION}/functions/_postfix
@@ -307,6 +319,7 @@ share/zsh/${VERSION}/functions/_pspdf
 share/zsh/${VERSION}/functions/_psutils
 share/zsh/${VERSION}/functions/_putclip
 share/zsh/${VERSION}/functions/_python
+share/zsh/${VERSION}/functions/_quilt
 share/zsh/${VERSION}/functions/_raggle
 share/zsh/${VERSION}/functions/_rar
 share/zsh/${VERSION}/functions/_rcs
@@ -369,6 +382,7 @@ share/zsh/${VERSION}/functions/_tilde_files
 share/zsh/${VERSION}/functions/_time_zone
 share/zsh/${VERSION}/functions/_tin
 share/zsh/${VERSION}/functions/_tla
+share/zsh/${VERSION}/functions/_toolchain-source
 share/zsh/${VERSION}/functions/_trap
 share/zsh/${VERSION}/functions/_ttyctl
 share/zsh/${VERSION}/functions/_typeset
@@ -382,6 +396,7 @@ share/zsh/${VERSION}/functions/_update-alternatives
 share/zsh/${VERSION}/functions/_update-rc.d
 share/zsh/${VERSION}/functions/_urls
 share/zsh/${VERSION}/functions/_urpmi
+share/zsh/${VERSION}/functions/_urxvt
 share/zsh/${VERSION}/functions/_user_admin
 share/zsh/${VERSION}/functions/_user_at_host
 share/zsh/${VERSION}/functions/_users
@@ -431,6 +446,7 @@ share/zsh/${VERSION}/functions/_xfig
 share/zsh/${VERSION}/functions/_xloadimage
 share/zsh/${VERSION}/functions/_xmlsoft
 share/zsh/${VERSION}/functions/_xmodmap
+share/zsh/${VERSION}/functions/_xpdf
 share/zsh/${VERSION}/functions/_xset
 share/zsh/${VERSION}/functions/_xt_arguments
 share/zsh/${VERSION}/functions/_xt_session_id

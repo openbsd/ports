@@ -1,6 +1,6 @@
-$OpenBSD: patch-Completion_BSD_Command__bsd_pkg,v 1.1 2004/07/12 19:46:52 lebel Exp $
---- Completion/BSD/Command/_bsd_pkg.orig	Tue Oct 15 13:59:37 2002
-+++ Completion/BSD/Command/_bsd_pkg	Fri May 23 10:13:59 2003
+$OpenBSD: patch-Completion_BSD_Command__bsd_pkg,v 1.2 2006/01/29 20:41:02 sturm Exp $
+--- Completion/BSD/Command/_bsd_pkg.orig	Wed Jan 21 14:53:28 2004
++++ Completion/BSD/Command/_bsd_pkg	Mon Jan 23 21:30:02 2006
 @@ -6,15 +6,19 @@ _bsd_pkg_pkgfiles() {
  
    case $OSTYPE in
@@ -8,11 +8,11 @@ $OpenBSD: patch-Completion_BSD_Command__bsd_pkg,v 1.1 2004/07/12 19:46:52 lebel 
 -    portsdir=/usr/pkgsrc
 +    portsdir=${PORTSDIR:-/usr/pkgsrc}
 +    pkgsdir=${PACKAGES:-$portsdir/packages}/All
-+    ;;
+     ;;
 +  openbsd*)
 +    portsdir=${PORTSDIR:-/usr/ports}
 +    pkgsdir=${PACKAGES:-$portsdir/packages}/$(arch -s)/All
-     ;;
++    ;;
    *)
      portsdir=${PORTSDIR:-/usr/ports}
 +    pkgsdir=${PACKAGES:-$portsdir/packages}/All
@@ -22,8 +22,8 @@ $OpenBSD: patch-Completion_BSD_Command__bsd_pkg,v 1.1 2004/07/12 19:46:52 lebel 
 -  pkgsdir=${PACKAGES:-$portsdir/packages}/All
 -
    paths=( "${(@)${(@s.:.)PKG_PATH}:#}" )
-   _files "$@" -g '*.t[bg]z' && ret=0
-   (( $#path )) && _files "$@" -W paths -g '*.t[bg]z' && ret=0
+   _files "$@" -g '*.t[bg]z(-.)' && ret=0
+   (( $#path )) && _files "$@" -W paths -g '*.t[bg]z(-.)' && ret=0
 @@ -25,7 +29,7 @@ _bsd_pkg_pkgfiles() {
  
  (( $+functions[_bsd_pkg_pkgs] )) ||
