@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/11/10 21:46:56 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2006/01/29 11:20:00 sturm Exp $
 
 COMMENT=		"removes entries from pf tables based on their age"
 
-DISTNAME=		expiretable-0.5
+DISTNAME=		expiretable-0.6
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://expiretable.fnord.se/
