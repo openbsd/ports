@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/12/08 09:16:10 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.6 2006/01/29 04:05:26 kevlo Exp $
 mediawiki/
 mediawiki/AdminSettings.sample
 mediawiki/COPYING
@@ -218,6 +218,7 @@ mediawiki/languages/.htaccess
 mediawiki/languages/Language.php
 mediawiki/languages/LanguageAf.php
 mediawiki/languages/LanguageAr.php
+mediawiki/languages/LanguageArc.php
 mediawiki/languages/LanguageAs.php
 mediawiki/languages/LanguageAst.php
 mediawiki/languages/LanguageBe.php
@@ -232,6 +233,7 @@ mediawiki/languages/LanguageCsb.php
 mediawiki/languages/LanguageCy.php
 mediawiki/languages/LanguageDa.php
 mediawiki/languages/LanguageDe.php
+mediawiki/languages/LanguageDv.php
 mediawiki/languages/LanguageDz.php
 mediawiki/languages/LanguageEl.php
 mediawiki/languages/LanguageEn.php
@@ -259,6 +261,7 @@ mediawiki/languages/LanguageKa.php
 mediawiki/languages/LanguageKm.php
 mediawiki/languages/LanguageKn.php
 mediawiki/languages/LanguageKo.php
+mediawiki/languages/LanguageKs.php
 mediawiki/languages/LanguageKu.php
 mediawiki/languages/LanguageLa.php
 mediawiki/languages/LanguageLi.php
@@ -283,6 +286,7 @@ mediawiki/languages/LanguagePt.php
 mediawiki/languages/LanguageRo.php
 mediawiki/languages/LanguageRu.php
 mediawiki/languages/LanguageSc.php
+mediawiki/languages/LanguageSd.php
 mediawiki/languages/LanguageSk.php
 mediawiki/languages/LanguageSl.php
 mediawiki/languages/LanguageSq.php
@@ -294,6 +298,7 @@ mediawiki/languages/LanguageTh.php
 mediawiki/languages/LanguageTlh.php
 mediawiki/languages/LanguageTr.php
 mediawiki/languages/LanguageTt.php
+mediawiki/languages/LanguageUg.php
 mediawiki/languages/LanguageUk.php
 mediawiki/languages/LanguageUr.php
 mediawiki/languages/LanguageUtf8.php
@@ -432,9 +437,6 @@ mediawiki/maintenance/parserTests.inc
 mediawiki/maintenance/parserTests.php
 mediawiki/maintenance/parserTests.txt
 mediawiki/maintenance/portal.php
-mediawiki/maintenance/postgresql/
-mediawiki/maintenance/postgresql/pg_tables.sql
-mediawiki/maintenance/postgresql/pg_users.sql
 mediawiki/maintenance/rebuildImages.php
 mediawiki/maintenance/rebuildInterwiki.inc
 mediawiki/maintenance/rebuildInterwiki.php
@@ -447,6 +449,7 @@ mediawiki/maintenance/rebuildtextindex.php
 mediawiki/maintenance/redundanttrans.php
 mediawiki/maintenance/refreshLinks.inc
 mediawiki/maintenance/refreshLinks.php
+mediawiki/maintenance/removeUnusedAccounts.php
 mediawiki/maintenance/splitLanguageFiles.inc
 mediawiki/maintenance/splitLanguageFiles.php
 mediawiki/maintenance/stats.php
@@ -468,6 +471,7 @@ mediawiki/maintenance/updaters.inc
 mediawiki/maintenance/upgrade1_5.php
 mediawiki/maintenance/userDupes.inc
 mediawiki/maintenance/userDupes.php
+mediawiki/maintenance/userFunctions.inc
 mediawiki/maintenance/users.sql
 mediawiki/maintenance/wikipedia-interwiki.sql
 mediawiki/maintenance/wiktionary-interwiki.sql
