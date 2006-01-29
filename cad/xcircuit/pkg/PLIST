@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/01/29 09:44:23 sturm Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2006/01/29 09:49:57 sturm Exp $
 bin/xcircuit
 lib/xcircuit-${BASEVER}/
 lib/xcircuit-${BASEVER}/analog.lps
