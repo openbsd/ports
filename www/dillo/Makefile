@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2004/12/11 13:29:21 alek Exp $
+# $OpenBSD: Makefile,v 1.21 2006/01/29 00:21:56 couderc Exp $
+
+BROKEN=			"broken memory allocation in dpi"
 
 COMMENT=		"Fast and light gtk-based web browser"
 
