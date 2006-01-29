@@ -1,23 +1,23 @@
-$OpenBSD: patch-src_libnids_c,v 1.1 2005/10/15 03:21:13 brad Exp $
---- src/libnids.c.orig	Fri Oct 10 13:41:32 2003
-+++ src/libnids.c	Fri Oct 14 22:58:32 2005
-@@ -198,6 +198,7 @@ static void pcap_hand(u_char * par, stru
- 	break;
+$OpenBSD: patch-src_libnids_c,v 1.2 2006/01/29 21:27:52 brad Exp $
+--- src/libnids.c.orig	Sat Jan 29 05:03:24 2005
++++ src/libnids.c	Sun Jan 29 13:43:53 2006
+@@ -214,6 +214,7 @@ static void pcap_hand(u_char * par, stru
+ #endif
  #ifdef DLT_IEEE802_11
      case DLT_IEEE802_11:
 +    case DLT_IEEE802_11_RADIO:
  	/* I don't know why frame control is always little endian, but it 
  	 * works for tcpdump, so who am I to complain? (wam)
  	 */
-@@ -441,6 +442,7 @@ int nids_init()
-     switch ((linktype = pcap_datalink(desc))) {
- #ifdef DLT_IEEE802_11
+@@ -462,6 +463,7 @@ int nids_init()
+     case DLT_PRISM_HEADER:
+ #endif
      case DLT_IEEE802_11:
 +    case DLT_IEEE802_11_RADIO:
  	/* wireless, need to calculate offset per frame */
  	break;
  #endif
-@@ -448,7 +450,12 @@ int nids_init()
+@@ -469,7 +471,12 @@ int nids_init()
      case DLT_NULL:
          linkoffset = 4;
          break;
