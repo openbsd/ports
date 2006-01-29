@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2005/12/09 13:28:40 kevlo Exp $ 
+# $OpenBSD: Makefile,v 1.14 2006/01/29 03:58:03 kevlo Exp $ 
 
 COMMENT=	"tool to handle the administration of MySQL over the web"
 
 V=		2.7.0
-DISTNAME=	phpMyAdmin-${V}-pl1
-PKGNAME=	phpMyAdmin-${V:S/-/./}
+DISTNAME=	phpMyAdmin-${V}-pl2
+PKGNAME=	phpMyAdmin-${V:S/-/./}p0
 CATEGORIES=	www
 HOMEPAGE=	http://www.phpmyadmin.net/
 
@@ -33,6 +33,6 @@ RUN_DEPENDS=	:php5-mysql-*:www/php5/extensions,-mysql \
 
 do-install:
 	@cd ${PREFIX} && tar zxf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
-	@mv ${INSTDIR}-${V}-pl1 ${INSTDIR}
+	@mv ${INSTDIR}-${V}-pl2 ${INSTDIR}
 
 .include <bsd.port.mk>
