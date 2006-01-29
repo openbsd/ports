@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1 2006/01/29 15:41:00 sturm Exp $
+--- configure.orig	Sun Jan  1 11:39:43 2006
++++ configure	Wed Jan  4 14:18:10 2006
+@@ -22496,10 +22496,6 @@ ALL_CFLAGS="$CFLAGS $CPPFLAGS"
+ 
+ 
+ 
+-if test $(`which tput` colors) -ge 4; then
+-	MAKE_COLOR=1
+-
+-fi
+ 
+ 
+                                                                       ac_config_files="$ac_config_files Makefile.config contrib/elinks.spec contrib/lua/hooks.lua contrib/conv/w3m2links.awk doc/man/man1/elinks.1 src/intl/gettext/ref-add.sed src/intl/gettext/ref-del.sed"

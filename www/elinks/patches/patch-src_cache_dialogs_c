@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_cache_dialogs_c,v 1.1 2006/01/29 15:41:00 sturm Exp $
+--- src/cache/dialogs.c.orig	Sun Jan  1 11:39:36 2006
++++ src/cache/dialogs.c	Wed Jan  4 13:28:54 2006
+@@ -82,9 +82,9 @@ get_cache_entry_info(struct listbox_item
+ 		}
+ 	}
+ 
+-	add_format_to_string(&msg, "\n%s: %" PRId64, _("Size", term),
++	add_format_to_string(&msg, "\n%s: %lld", _("Size", term),
+ 	                     cached->length);
+-	add_format_to_string(&msg, "\n%s: %" PRId64, _("Loaded size", term),
++	add_format_to_string(&msg, "\n%s: %lld", _("Loaded size", term),
+ 						cached->data_size);
+ 	if (cached->content_type) {
+ 		add_format_to_string(&msg, "\n%s: %s", _("Content type", term),

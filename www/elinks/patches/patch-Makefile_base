@@ -1,9 +1,0 @@
-$OpenBSD: patch-Makefile_base,v 1.1 2005/07/22 04:21:30 marco Exp $
---- Makefile.base.orig	Thu Apr 29 10:17:12 2004
-+++ Makefile.base	Wed May 25 11:29:47 2005
-@@ -13,4 +13,4 @@ COMPILE = $(CC) @DEFS@ $(INCLUDES) $(AM_
- # Rule for getting test dependencies right. This is a workaround since
- # automake doesn't support defining subdirs sources.
- testutils:
--	make -C $(top_builddir)/src/util CPPFLAGS="-DDEBUG"
-+	$(MAKE) -C $(top_builddir)/src/util CPPFLAGS="-DDEBUG"

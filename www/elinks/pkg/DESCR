@@ -4,6 +4,5 @@ customizable and can be extended via Lua or Guile scripts. It is very
 portable and runs on a variety of platforms.
 
 Flavors:
-        gopher     - build with gopher support
         lua        - build with Lua support
         no_x11     - build without X11 support

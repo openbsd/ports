@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_dialogs_document_c,v 1.1 2006/01/29 15:41:00 sturm Exp $
+--- src/dialogs/document.c.orig	Wed Jan  4 13:29:51 2006
++++ src/dialogs/document.c	Wed Jan  4 13:30:05 2006
+@@ -152,7 +152,7 @@ document_info_dialog(struct session *ses
+ 	if (cached) {
+ 		unsigned char *a;
+ 
+-		add_format_to_string(&msg, "\n%s: %" PRId64,
++		add_format_to_string(&msg, "\n%s: %lld",
+ 				     _("Size", term), cached->length);
+ 
+ 		if (cached->incomplete) {

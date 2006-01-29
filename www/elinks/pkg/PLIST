@@ -1,15 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1 2005/07/22 04:21:30 marco Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/01/29 15:41:00 sturm Exp $
 bin/elinks
 @comment lib/charset.alias
 @man man/man1/elinks.1
 @man man/man5/elinks.conf.5
 @man man/man5/elinkskeys.5
-@comment share/locale/be/
-@comment share/locale/be/LC_MESSAGES/
 share/locale/be/LC_MESSAGES/elinks.mo
 share/locale/bg/LC_MESSAGES/elinks.mo
-@comment share/locale/ca/
-@comment share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/elinks.mo
 share/locale/cs/LC_MESSAGES/elinks.mo
 share/locale/da/LC_MESSAGES/elinks.mo
@@ -31,14 +27,15 @@ share/locale/it/LC_MESSAGES/elinks.mo
 @comment share/locale/lt/
 @comment share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/elinks.mo
+share/locale/nb/LC_MESSAGES/elinks.mo
 share/locale/nl/LC_MESSAGES/elinks.mo
-share/locale/no/LC_MESSAGES/elinks.mo
 share/locale/pl/LC_MESSAGES/elinks.mo
 share/locale/pt/LC_MESSAGES/elinks.mo
 share/locale/pt_BR/LC_MESSAGES/elinks.mo
 share/locale/ro/LC_MESSAGES/elinks.mo
 share/locale/ru/LC_MESSAGES/elinks.mo
 share/locale/sk/LC_MESSAGES/elinks.mo
+share/locale/sr/LC_MESSAGES/elinks.mo
 share/locale/sv/LC_MESSAGES/elinks.mo
 share/locale/tr/LC_MESSAGES/elinks.mo
 share/locale/uk/LC_MESSAGES/elinks.mo
