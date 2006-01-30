@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.4 2006/01/29 19:25:36 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2006/01/30 17:24:26 sturm Exp $
 
-NOT_FOR_ARCHS=	LP64_ARCHS
+NOT_FOR_ARCHS=	${LP64_ARCHS}
 
 DISTNAME=	xview3.2p1-X11R6
 MASTER_SITES=	${MASTER_SITE_LOCAL}
