@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2005/07/25 10:35:46 jsg Exp $
+# $OpenBSD: Makefile,v 1.27 2006/01/30 13:29:14 steven Exp $
 # $FreeBSD: Makefile,v 1.19 1997/11/20 08:21:26 tg Exp $
 
      SUBDIR += arc
@@ -15,6 +15,7 @@
 #    SUBDIR += hpack.non-usa.only
      SUBDIR += lha
      SUBDIR += lxsplit
+     SUBDIR += lzma
      SUBDIR += lzo
      SUBDIR += lzop
      SUBDIR += macutil
