@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2006/01/13 23:40:24 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2006/01/30 10:22:11 jsg Exp $
 
 COMMENT=	"SDL multi-channel audio mixer library"
 DISTNAME=	SDL_mixer-1.2.6
-PKGNAME=	${DISTNAME:L:S/_/-/}p2
+PKGNAME=	${DISTNAME:L:S/_/-/}p3
 SHARED_LIBS=	SDL_mixer 3.0
 CATEGORIES=	devel audio
 MASTER_SITES=	${HOMEPAGE}release/
@@ -29,6 +29,10 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -Dunix=1" \
 		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
+
+pre-build:
+	@perl -pi -e 's,_SYSCONFDIR_,${SYSCONFDIR},g' \
+		${WRKSRC}/timidity/config.h
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/.libs/play{mus,wave} ${PREFIX}/bin
