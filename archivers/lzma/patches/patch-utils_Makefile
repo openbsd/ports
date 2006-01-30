@@ -1,0 +1,14 @@
+$OpenBSD: patch-utils_Makefile,v 1.1.1.1 2006/01/30 13:29:00 steven Exp $
+--- utils/Makefile.orig	Sun Jan 22 16:45:05 2006
++++ utils/Makefile	Sun Jan 22 16:45:32 2006
+@@ -2,8 +2,8 @@
+ ## -D_LZMA_SYSTEM_SIZE_T should keep it working also on 64-bit arch.
+ ## -D_LZMA_PROB32 is a speed optimization.
+ 
+-CC = gcc -D_LZMA_IN_CB -D_LZMA_OUT_READ -D_LZMA_SYSTEM_SIZE_T -D_LZMA_PROB32
+-LD = gcc
++CC = $(MYCC) -D_LZMA_IN_CB -D_LZMA_OUT_READ -D_LZMA_SYSTEM_SIZE_T -D_LZMA_PROB32
++LD = $(MYCC)
+ LDFLAGS = $(CFLAGS)
+ RM = rm -f
+ LZMA_C = ../sdk/SRC/7zip/Compress/LZMA_C
