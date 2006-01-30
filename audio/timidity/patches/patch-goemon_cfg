@@ -1,0 +1,12 @@
+$OpenBSD: patch-goemon_cfg,v 1.1 2006/01/30 10:13:11 jsg Exp $
+--- goemon.cfg.orig	Wed Jan 11 22:39:35 2006
++++ goemon.cfg	Wed Jan 11 22:39:47 2006
+@@ -6,8 +6,6 @@
+ # Only a partial GS drum set.
+ # Anyone got a GS map so I can do the rest?
+ #
+-dir goemon
+-
+ bank 0
+ 
+ # Accoustic grand

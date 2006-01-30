@@ -1,55 +1,68 @@
-# $OpenBSD: Makefile,v 1.28 2005/06/11 00:15:14 jaredy Exp $
+# $OpenBSD: Makefile,v 1.29 2006/01/30 10:13:11 jsg Exp $
 
 COMMENT=	"MIDI to WAV renderer and player"
-DISTNAME=	timidity-0.2i
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	TiMidity++-2.13.2
+PKGNAME=	${DISTNAME:L:S/++//}
 CATEGORIES=	audio
 
-MASTER_SITES=	http://sca.uwaterloo.ca/www.cgs.fi/tt/timidity/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=timidity/}
 MASTER_SITES0=	ftp://ftp.kiarchive.ru/pub/misc/hardware/soundcard/gus/
-TIINS=	goemon.tgz
+TIINS=		goemon.tgz
 DISTFILES=	${TIINS}:0 ${DISTNAME}.tar.gz
-EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
-PERMIT_PACKAGE_CDROM=	"copyrighted patches"
-PERMIT_PACKAGE_FTP=	"copyrighted patches"
-PERMIT_DISTFILES_CDROM=	"copyrighted patches"
-PERMIT_DISTFILES_FTP=	"copyrighted patches"
-WANTLIB=		c m ossaudio
+HOMEPAGE=	http://timidity.sourceforge.net/
 
+# GPL, copyrighted patches in goemon patchset
+PERMIT_PACKAGE_CDROM=   "copyrighted patches"
+PERMIT_PACKAGE_FTP=     "copyrighted patches"
+PERMIT_DISTFILES_CDROM= "copyrighted patches"
+PERMIT_DISTFILES_FTP=   "copyrighted patches"
+WANTLIB=		c m ncurses 
 
-FLAVORS=motif curses slang
-FLAVOR?=motif
+CONFIGURE_STYLE=gnu
+CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS= --enable-audio=sun \
+		--enable-vt100 \
+		--enable-ncurses \
+		--enable-server \
+		--with-default-path=${SYSCONFDIR}
 
-.if ${FLAVOR:L:Mcurses}
-MAKE_FLAGS+=-DCURSES
-WANTLIB+=		curses
+FLAVORS=	gtk2
+FLAVOR?=
+
+.if ${FLAVOR:L:Mgtk2}
+CONFIGURE_ARGS+=--enable-gtk
+MODULES=	devel/gettext
+USE_X11=	Yes
+LIB_DEPENDS+=	gdk-x11-2.0.0.11,gdk_pixbuf-2.0.0.11,gtk-x11-2.0.0.11::x11/gtk+2
+BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
+WANTLIB+=	X11 Xext Xft Xrender atk-1.0.0.0 fontconfig freetype \
+		glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 pango-1.0.0.0 \
+		pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 
+.else
+CONFIGURE_ARGS+=--without-x
 .endif
-.if ${FLAVOR:L:Mmotif} || ${FLAVOR:L:Mlesstif}
-MAKE_FLAGS+=-DMOTIF
-USE_MOTIF=	any
-WANTLIB+=		X11 Xext Xt
-.endif
-.if ${FLAVOR:L:Mslang}
-MAKE_FLAGS+=-DSLANG
-LIB_DEPENDS+=slang.::devel/libslang
-WANTLIB+=		curses
-.endif
 
-MAKE_ENV=	CC="${CC}"
-
+USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 
-INSTALL_TARGET= install.all
-FAKE_FLAGS=PREFIX=${PREFIX} DESTDIR=${WRKINST} ${MAKE_FLAGS}
+WRKDIST=	${WRKDIR}
+WRKSRC=		${WRKDIR}/${DISTNAME}
+DATA_DIRS=	gsdrum00 gsdrum08 gsdrum40
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/timidity.1 ${PREFIX}/man/man1
-	@cd ${PREFIX}/lib/timidity && \
-	${TAR} zxf ${FULLDISTDIR}/${TIINS} && \
-	cp goemon.cfg goemon.cfg.bak && \
-	sed 's=dir goemon=dir ${TRUEPREFIX}/lib/timidity/goemon=' \
-	   < goemon.cfg.bak > goemon.cfg && \
-	rm -f goemon.cfg.bak
+	${INSTALL_DATA_DIR} ${PREFIX}/share/timidity/goemon
+	${INSTALL_DATA} ${WRKDIST}/goemon/*.* ${PREFIX}/share/timidity/goemon
+.for DDIR in ${DATA_DIRS}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/timidity/goemon/${DDIR}
+	${INSTALL_DATA} ${WRKDIST}/goemon/${DDIR}/*.* \
+	    ${PREFIX}/share/timidity/goemon/${DDIR}
+.endfor
+	${INSTALL_DATA} ${WRKDIST}/goemon.cfg ${PREFIX}/share/timidity/goemon
+	@echo -e "dir ${TRUEPREFIX}/share/timidity/goemon\nsource goemon.cfg" \
+	    >> ${WRKDIR}/timidity.cfg
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/timidity
+	${INSTALL_DATA} ${WRKDIR}/timidity.cfg ${PREFIX}/share/examples/timidity
 
 .include <bsd.port.mk>

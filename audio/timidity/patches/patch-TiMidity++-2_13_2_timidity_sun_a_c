@@ -1,0 +1,21 @@
+$OpenBSD: patch-TiMidity++-2_13_2_timidity_sun_a_c,v 1.1 2006/01/30 10:13:11 jsg Exp $
+--- TiMidity++-2.13.2/timidity/sun_a.c.orig	Mon Sep 27 09:40:14 2004
++++ TiMidity++-2.13.2/timidity/sun_a.c	Sat Jan 21 01:06:52 2006
+@@ -54,7 +54,7 @@
+ #include "output.h"
+ #include "controls.h"
+ 
+-#if defined(__NetBSD__) /* NetBSD */
++#if defined(__NetBSD__) || defined(__OpenBSD__)
+ #ifdef LITTLE_ENDIAN
+ #define AUDIO_LINEAR_TAG	AUDIO_ENCODING_SLINEAR_LE
+ #else
+@@ -331,7 +331,7 @@ static int acntl(int request, void *arg)
+       case PM_REQ_GETFILLED:
+ 	if(ioctl(audioctl_fd, AUDIO_GETINFO, &auinfo) < 0)
+ 	    return -1;
+-#ifdef __NetBSD__
++#if defined(__NetBSD__) || defined(__OpenBSD__)
+ 	*((int *)arg) = auinfo.play.seek;
+ #else
+ 	if(auinfo.play.samples == play_samples_offset)

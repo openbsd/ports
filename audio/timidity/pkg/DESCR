@@ -1,10 +1,8 @@
-TiMidity  is  a MIDI to WAVE converter using Gravis Ultra-
-sound-compatible patch files  to  generate  digital  audio
-data from General MIDI files.  The data can be stored in a
-file for processing, or played in  real  time  through  an
-audio device.
+TiMidity is a MIDI to WAVE converter using Gravis Ultrasound-compatible
+patch files or soundfonts to generate digital audio data from General
+MIDI files.  The data can be stored in a file for processing, or played
+in real time through an audio device.
 
-Flavors (non exclusive):
-	motif, lesstif: motif interface
-	slang: 		text interface
-	curses:		ncurses interface, currently non functional)
+FLAVORs:
+
+	gtk2 - build gtk+2 interface which may be used via 'timidity -ig'
