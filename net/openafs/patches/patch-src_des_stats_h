@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_des_stats_h,v 1.1.1.1 2006/01/31 02:49:24 marco Exp $
+--- src/des/stats.h.orig	Tue Dec 27 01:49:31 2005
++++ src/des/stats.h	Tue Dec 27 01:49:56 2005
+@@ -110,9 +110,6 @@ extern int rxkad_stats_agg(rxkad_stats_t
+     BEGIN \
+         rxkad_stats_t * rxkad_stats; \
+         rxkad_stats = ((rxkad_stats_t*)pthread_getspecific(rxkad_stats_key)); \
+-        if (rxkad_stats == NULL) { \
+-            assert(((rxkad_stats) = rxkad_thr_stats_init()) != NULL); \
+-        } \
+         rxkad_stats->stats_elem += inc_value; \
+     END
+ #define SUB_RXKAD_STATS(stats_elem, dec_value) \

@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_rxkad_domestic_crypt_conn_c,v 1.1.1.1 2006/01/31 02:49:24 marco Exp $
+--- src/rxkad/domestic/crypt_conn.c.orig	Sun May 29 23:57:38 2005
++++ src/rxkad/domestic/crypt_conn.c	Thu Dec 15 17:24:47 2005
+@@ -62,7 +62,8 @@ rxkad_DecryptPacket(const struct rx_conn
+ 
+     obj = rx_SecurityObjectOf(conn);
+     tp = (struct rxkad_cprivate *)obj->privateData;
+-    ADD_RXKAD_STATS(bytesDecrypted[rxkad_TypeIndex(tp->type)],len);
++/* need to debug why the next line segfaults on openbsd 3.8 */
++    /* ADD_RXKAD_STATS(bytesDecrypted[rxkad_TypeIndex(tp->type)],len); */
+     memcpy((void *)xor, (void *)ivec, sizeof(xor));
+     for (i = 0; len; i++) {
+ 	data = rx_data(packet, i, tlen);
+@@ -96,7 +97,7 @@ rxkad_EncryptPacket(const struct rx_conn
+ 
+     obj = rx_SecurityObjectOf(conn);
+     tp = (struct rxkad_cprivate *)obj->privateData;
+-    ADD_RXKAD_STATS(bytesEncrypted[rxkad_TypeIndex(tp->type)],len);
++    /* ADD_RXKAD_STATS(bytesEncrypted[rxkad_TypeIndex(tp->type)],len); */
+     /*
+      * afs_int32 cksum;
+      * cksum = htonl(0);                

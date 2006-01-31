@@ -1,0 +1,39 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2006/01/31 02:49:24 marco Exp $
+--- Makefile.in.orig	Mon Jul 11 14:29:31 2005
++++ Makefile.in	Thu Dec 15 15:30:45 2005
+@@ -221,7 +221,7 @@ viced: cmd comerr vlserver audit
+ 
+ tviced: cmd comerr viced vlserver libafsrpc libafsauthent
+ 	case ${SYS_NAME} in \
+-	alpha_dux*|sgi_*|sun*_5*|rs_aix*|*linux*|hp_ux11*|ia64_hpux*|*fbsd*|*nbsd2*) \
++	alpha_dux*|sgi_*|sun*_5*|rs_aix*|*linux*|hp_ux11*|ia64_hpux*|*fbsd*|*nbsd2*|*obsd*) \
+ 		${COMPILE_PART1} tviced ${COMPILE_PART2} ;; \
+ 	*_darwin_[1-6][0-9]) \
+ 		echo Not building MT viced for ${SYS_NAME} ;; \
+@@ -236,7 +236,7 @@ volser: cmd comerr tviced usd kauth audi
+ 
+ tvolser: project tviced usd libafsrpc libafsauthent
+ 	case ${SYS_NAME} in                                             \
+-	alpha_dux*|sgi_*|sun*_5*|rs_aix*|*linux*|hp_ux11*|ia64_hpux*)   \
++	alpha_dux*|sgi_*|sun*_5*|rs_aix*|*linux*|hp_ux11*|ia64_hpux*|*obsd*)   \
+ 		${COMPILE_PART1} tvolser  ${COMPILE_PART2} ;;           \
+ 	*_darwin_[1-6][0-9])                                            \
+ 		echo Not building MT volser for ${SYS_NAME} ;;          \
+@@ -482,7 +482,7 @@ tests: rxtests ubiktests
+ # pthread based user space RX library
+ libafsrpc: rx rxkad des
+ 	case ${SYS_NAME} in \
+-	alpha_dux*|sgi_*|sun4x_*|sunx86_*|rs_aix*|*linux*|hp_ux11*|ia64_hpux*|*fbsd*|*nbsd2*) \
++	alpha_dux*|sgi_*|sun4x_*|sunx86_*|rs_aix*|*linux*|hp_ux11*|ia64_hpux*|*fbsd*|*nbsd2*|*obsd*) \
+ 	${COMPILE_PART1} libafsrpc ${COMPILE_PART2} ;; \
+ 	*_darwin_[1-6][0-9]) \
+ 		echo Not building MT libafsrpc for ${SYS_NAME} ;; \
+@@ -494,7 +494,7 @@ libafsrpc: rx rxkad des
+ 
+ libafsauthent: ubik auth kauth libafsrpc
+ 	case ${SYS_NAME} in \
+-	alpha_dux*|sgi_*|sun4x_*|sunx86_*|rs_aix*|*linux*|hp_ux11*|ia64_hpux*|*fbsd*|*nbsd2*) \
++	alpha_dux*|sgi_*|sun4x_*|sunx86_*|rs_aix*|*linux*|hp_ux11*|ia64_hpux*|*fbsd*|*nbsd2*|*obsd*) \
+ 	${COMPILE_PART1} libafsauthent ${COMPILE_PART2} ;; \
+ 	*_darwin_[1-6][0-9]) \
+ 		echo Not building MT libafsauthent for ${SYS_NAME} ;; \

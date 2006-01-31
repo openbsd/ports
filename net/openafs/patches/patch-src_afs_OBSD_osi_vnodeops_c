@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_afs_OBSD_osi_vnodeops_c,v 1.1.1.1 2006/01/31 02:49:24 marco Exp $
+--- src/afs/OBSD/osi_vnodeops.c.orig	Sun Jan 30 22:18:25 2005
++++ src/afs/OBSD/osi_vnodeops.c	Wed Nov 30 15:03:35 2005
+@@ -933,8 +933,7 @@ afs_nbsd_lock(void *v)
+ 
+     if (!vc)
+ 	panic("afs_nbsd_lock: null vcache");
+-    return lockmgr(&vc->rwlock, ap->a_flags | LK_CANRECURSE, &vp->v_interlock,
+-		   ap->a_p);
++    return lockmgr(&vc->rwlock, ap->a_flags | LK_CANRECURSE, &vp->v_interlock);
+ }
+ 
+ int
+@@ -950,8 +949,7 @@ afs_nbsd_unlock(void *v)
+ 
+     if (!vc)
+ 	panic("afs_nbsd_unlock: null vcache");
+-    return lockmgr(&vc->rwlock, ap->a_flags | LK_RELEASE, &vp->v_interlock,
+-		   ap->a_p);
++    return lockmgr(&vc->rwlock, ap->a_flags | LK_RELEASE, &vp->v_interlock);
+ }
+ 
+ int

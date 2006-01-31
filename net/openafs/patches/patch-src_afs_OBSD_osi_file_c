@@ -1,0 +1,11 @@
+--- src/afs/OBSD/osi_file.c.orig	Wed Jan  4 22:47:28 2006
++++ src/afs/OBSD/osi_file.c	Wed Jan  4 22:47:00 2006
+@@ -48,7 +48,7 @@
+     }
+     VOP_UNLOCK(vp, 0, curproc);
+     afile->vnode = vp;
+-    afile->size = VTOI(vp)->i_ffs_size;
++    afile->size = VTOI(vp)->i_ffs1_size;
+     afile->offset = 0;
+     afile->proc = NULL;
+     afile->inum = ainode;	/* for hint validity checking */

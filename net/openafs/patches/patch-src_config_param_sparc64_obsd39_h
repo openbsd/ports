@@ -1,0 +1,65 @@
+$OpenBSD: patch-src_config_param_sparc64_obsd39_h,v 1.1.1.1 2006/01/31 02:49:24 marco Exp $
+--- src/config/param.sparc64_obsd39.h.orig	Thu Dec  8 17:28:59 2005
++++ src/config/param.sparc64_obsd39.h	Thu Dec  8 17:28:54 2005
+@@ -0,0 +1,61 @@
++/* This section for kernel libafs compiles only */
++
++/* 
++ * Copyright 2000, International Business Machines Corporation and others.
++ * All Rights Reserved.
++ * 
++ * This software has been released under the terms of the IBM Public
++ * License.  For details, see the LICENSE file in the top-level source
++ * directory or online at http://www.openafs.org/dl/license10.html
++ */
++
++
++#ifndef AFS_PARAM_H
++#define AFS_PARAM_H
++
++#ifndef IGNORE_STDS_H
++#include <sys/param.h>
++#endif
++
++#define SYS_NAME		"sparc64_obsd39"
++#define SYS_NAME_ID		SYS_NAME_ID_sparc64_obsd39
++
++#define AFS_XBSD_ENV		1	/* {Free,Open,Net}BSD */
++#define AFS_X86_XBSD_ENV	1
++
++#define AFS_NAMEI_ENV		1	/* User space interface to file system */
++
++#define AFS_64BIT_ENV		1
++#define AFS_64BIT_CLIENT	1
++#define AFS_64BIT_IOPS_ENV	1	/* Needed for NAMEI */
++#define AFS_64BIT_USR_ENV       1
++#define AFS_OBSD_ENV		1
++#define AFS_OBSD38_ENV		1
++#define AFS_NONFSTRANS		1
++#define AFS_VM_RDWR_ENV		1
++#define AFS_VFS_ENV		1
++#define AFS_VFSINCL_ENV		1
++#define AFS_SYSCALL		51
++#define AFS_MOUNT_AFS		"afs"
++
++#define AFS_64BITPOINTER_ENV	1	/* pointers are 64 bits. */
++
++#define AFS_GCPAGS		0	/* if nonzero, garbage collect PAGs */
++
++#define AFSBIG_ENDIAN    	1
++
++#ifndef IGNORE_STDS_H
++#include <afs/afs_sysnames.h>
++#endif
++
++#ifdef _KERNEL
++#define AFS_GLOBAL_SUNLOCK	1
++#define AFS_SHORTGID		0
++
++#if	!defined(ASSEMBLER) && !defined(__LANGUAGE_ASSEMBLY__)
++enum vmexcl { NONEXCL, EXCL };
++#endif
++
++#endif /* _KERNEL */
++
++#endif /* AFS_PARAM_H */

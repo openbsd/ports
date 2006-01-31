@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_afs_OBSD_osi_machdep_h,v 1.1.1.1 2006/01/31 02:49:24 marco Exp $
+--- src/afs/OBSD/osi_machdep.h.orig	Wed Nov 30 14:50:21 2005
++++ src/afs/OBSD/osi_machdep.h	Wed Nov 30 14:49:53 2005
+@@ -114,7 +114,7 @@ extern struct lock afs_global_lock;
+ #define AFS_GLOCK() \
+     do { \
+         osi_Assert(curproc); \
+- 	lockmgr(&afs_global_lock, LK_EXCLUSIVE, 0, curproc); \
++ 	lockmgr(&afs_global_lock, LK_EXCLUSIVE, 0); \
+         osi_Assert(afs_global_owner == NULL); \
+    	afs_global_owner = curproc; \
+     } while (0)
+@@ -123,7 +123,7 @@ extern struct lock afs_global_lock;
+         osi_Assert(curproc); \
+  	osi_Assert(afs_global_owner == curproc); \
+         afs_global_owner = NULL; \
+-        lockmgr(&afs_global_lock, LK_RELEASE, 0, curproc); \
++        lockmgr(&afs_global_lock, LK_RELEASE, 0); \
+     } while(0)
+ #define ISAFS_GLOCK() (afs_global_owner == curproc && curproc)
+ #else

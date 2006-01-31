@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_afsmonitor_afsmonitor_c,v 1.1.1.1 2006/01/31 02:49:24 marco Exp $
+--- src/afsmonitor/afsmonitor.c.orig	Thu Aug 11 23:34:05 2005
++++ src/afsmonitor/afsmonitor.c	Thu Aug 11 23:34:33 2005
+@@ -272,7 +272,7 @@ extern char *cm_categories[];	/* cache m
+ 
+ 
+ 
+-#if !defined(AFS_FBSD_ENV) && !defined(AFS_DARWIN70_ENV) && !defined(AFS_NBSD20_ENV)
++#if !defined(AFS_FBSD_ENV) && !defined(AFS_DARWIN70_ENV) && !defined(AFS_NBSD20_ENV) && !defined(AFS_OBSD_ENV)
+ /*	
+         strcasestr(): Return first occurence of pattern s2 in s1, case 
+ 	insensitive. 

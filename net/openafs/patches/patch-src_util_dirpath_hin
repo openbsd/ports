@@ -1,0 +1,29 @@
+--- src/util/dirpath.hin.orig	Wed Jan 11 20:22:11 2006
++++ src/util/dirpath.hin	Wed Jan 11 20:17:06 2006
+@@ -102,17 +102,17 @@
+ /* -----------------  Directory/file name macros ------------------ */
+ 
+ /* afs installation dir names */
++#define AFSDIR_SERVER_ETC_DIR   "/etc/openafs/server"
++#define AFSDIR_CLIENT_ETC_DIR "/etc/openafs"
++#define AFSDIR_DB_DIR    "/var/openafs/db"
++#define AFSDIR_LOGS_DIR  "/var/openafs/logs"
++#define AFSDIR_LOCAL_DIR "/var/openafs"
++#define AFSDIR_BACKUP_DIR "/var/openafs/backup"
++#define AFSDIR_MIGR_DIR  "/var/openafs/migrate"
++#define AFSDIR_BIN_FILE_DIR  "/var/openafs/migrate/bin_files"
++#define AFSDIR_BOSCONFIG_DIR "/etc/openafs/"
+-#define AFSDIR_SERVER_ETC_DIR   "@afsconfdir"
+-#define AFSDIR_CLIENT_ETC_DIR "@viceetcdir"
+ #define AFSDIR_SERVER_BIN_DIR   "@afssrvlibexecdir"
+ #define AFSDIR_CORES_DIR "cores"
+-#define AFSDIR_DB_DIR    "@afsdbdir"
+-#define AFSDIR_LOGS_DIR  "@afslogsdir"
+-#define AFSDIR_LOCAL_DIR "@afslocaldir"
+-#define AFSDIR_BACKUP_DIR "@afsbackupdir"
+-#define AFSDIR_MIGR_DIR  "@afslocaldir/migrate"
+-#define AFSDIR_BIN_FILE_DIR  "@afslocaldir/migrate/bin_files"
+-#define AFSDIR_BOSCONFIG_DIR "@afsbosconfigdir"
+ #define AFSDIR_BOSSERVER_DIR "@afssrvsbindir"
+ 
+ /* file names */ 

@@ -1,0 +1,36 @@
+$OpenBSD: patch-aclocal_m4,v 1.1.1.1 2006/01/31 02:49:24 marco Exp $
+--- aclocal.m4.orig	Thu Oct 20 22:57:26 2005
++++ aclocal.m4	Sat Dec 10 19:52:09 2005
+@@ -2255,22 +2255,22 @@ return 0;
+ AC_DEFUN([OPENAFS_OSCONF], [
+ 
+ dnl defaults, override in case below as needed
+-XCFLAGS='${DBG} ${OPTMZ}'
++XCFLAGS='${CFLAGS:-${DBG} ${OPTMZ}}'
+ SHLIB_SUFFIX="so"
+-CC="cc"
+-CCOBJ="cc"
+-MT_CC="cc"
++CC="${CC:-cc}"
++CCOBJ="${CC:-cc}"
++MT_CC="${CC:-cc}"
+ XLIBS="${LIB_AFSDB}"
+ 
+ dnl debugging and optimization flag defaults
+ dnl Note, these are all the defaults for if debug/optimize turned on, and
+ dnl the arch cases below do not override
+-KERN_DBG=-g
+-KERN_OPTMZ=-O
+-DBG=-g
+-OPTMZ=-O
+-LWP_DBG=-g
+-LWP_OPTMZ=-O
++dnl KERN_DBG=-g
++dnl KERN_OPTMZ=-O
++dnl DBG=-g
++dnl OPTMZ=-O
++dnl LWP_DBG=-g
++dnl LWP_OPTMZ=-O
+ 
+ dnl standard programs
+ AC_PROG_RANLIB

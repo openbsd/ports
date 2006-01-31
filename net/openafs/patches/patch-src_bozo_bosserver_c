@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_bozo_bosserver_c,v 1.1.1.1 2006/01/31 02:49:24 marco Exp $
+--- src/bozo/bosserver.c.orig	Tue Dec 27 01:48:57 2005
++++ src/bozo/bosserver.c	Tue Dec 27 02:07:01 2005
+@@ -1056,6 +1056,8 @@ bozo_Log(char *a, char *b, char *c, char
+ 	}
+ 
+ 	/* close so rm BosLog works */
+-	fclose(bozo_logFile);
++	if (bozo_logFile) {
++		fclose(bozo_logFile);
++	}
+     }
+ }
