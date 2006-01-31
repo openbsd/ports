@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2005/11/25 21:06:58 sturm Exp $
-
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+# $OpenBSD: Makefile,v 1.4 2006/01/31 22:06:57 steven Exp $
 
 COMMENT=	"perl module for parsing huge XML documents"
 
-DISTNAME=	XML-Twig-3.22
+DISTNAME=	XML-Twig-3.23
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 
@@ -22,16 +20,19 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= perl
 
-BUILD_DEPENDS=	::textproc/p5-XML-Parser
-RUN_DEPENDS=	::textproc/p5-XML-Parser
-REGRESS_DEPENDS=::textproc/p5-XML-Simple \
-		::www/p5-libwww \
-		::textproc/p5-XML-XPath \
-		::textproc/p5-XML-SAX \
+RUN_DEPENDS=	::textproc/p5-XML-Parser	
+BUILD_DEPENDS=	${RUN_DEPENDS}
+REGRESS_DEPENDS=::converters/p5-Text-Iconv \
 		::converters/p5-Unicode-Map \
 		::converters/p5-Unicode-Map8 \
 		::converters/p5-Unicode-String \
 		::devel/p5-Test-Pod \
-		::converters/p5-Text-Iconv
+		::textproc/p5-XML-SAX \
+		::textproc/p5-XML-Simple \
+		::textproc/p5-XML-XPath \
+		::www/p5-libwww \
+		::www/p5-HTML-Tree
+		
+PKG_ARCH=	*		
 
 .include <bsd.port.mk>
