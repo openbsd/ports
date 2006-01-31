@@ -1,30 +1,36 @@
-$OpenBSD: patch-configure,v 1.7 2005/02/19 21:27:35 alek Exp $
---- configure.orig	Fri Oct 10 10:39:54 2003
-+++ configure	Sat Feb 19 14:04:10 2005
-@@ -8735,7 +8735,7 @@ if test "${ac_cv_lib_intl_gettext+set}" 
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lintl  $LIBS"
-+LIBS="-lintl -liconv $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- /* confdefs.h.  */
-@@ -8784,7 +8784,7 @@ fi
- echo "$as_me:$LINENO: result: $ac_cv_lib_intl_gettext" >&5
- echo "${ECHO_T}$ac_cv_lib_intl_gettext" >&6
- if test $ac_cv_lib_intl_gettext = yes; then
--  LIBS="$LIBS -lintl"
-+  LIBS="$LIBS -lintl -liconv"
- fi
- 
- 
-@@ -12795,7 +12795,7 @@ _ACEOF
+$OpenBSD: patch-configure,v 1.8 2006/01/31 14:30:35 bernd Exp $
+--- configure.orig	Mon Dec 19 11:42:24 2005
++++ configure	Tue Dec 20 12:50:48 2005
+@@ -11436,7 +11436,7 @@ cat >>confdefs.h <<\_ACEOF
  _ACEOF
  
    CEFLAGS="$CEFLAGS -I/usr/include/kerberosV"
 -  LIBS="$LIBS -lasn1 -lkrb5 -lcom_err -lkafs"
 +  LIBS="$LIBS -lkrb5"
- else
-   if test "$with_kerberos5" != "yes"
-   then
+ elif krb5-config 2> /dev/null >/dev/null ; then
+   krb5_prefix=`krb5-config --prefix krb5`
+   echo "$as_me:$LINENO: result: krb5-config points to kerberosV under $krb5_prefix" >&5
+@@ -14843,8 +14843,8 @@ s,@pythondir@,$pythondir,;t t
+ s,@pkgpythondir@,$pkgpythondir,;t t
+ s,@pyexecdir@,$pyexecdir,;t t
+ s,@pkgpyexecdir@,$pkgpyexecdir,;t t
+-s,@HAVE_PYTHON_TRUE@,$HAVE_PYTHON_TRUE,;t t
+-s,@HAVE_PYTHON_FALSE@,$HAVE_PYTHON_FALSE,;t t
++s,@HAVE_PYTHON_TRUE@,#,;t t
++s,@HAVE_PYTHON_FALSE@,#,;t t
+ s,@CC@,$CC,;t t
+ s,@CFLAGS@,$CFLAGS,;t t
+ s,@LDFLAGS@,$LDFLAGS,;t t
+@@ -14876,10 +14876,10 @@ s,@GMSGFMT@,$GMSGFMT,;t t
+ s,@XGETTEXT@,$XGETTEXT,;t t
+ s,@MSGMERGE@,$MSGMERGE,;t t
+ s,@INTL_MACOSX_LIBS@,$INTL_MACOSX_LIBS,;t t
+-s,@LIBICONV@,$LIBICONV,;t t
++s,@LIBICONV@,$LTLIBICONV,;t t
+ s,@LTLIBICONV@,$LTLIBICONV,;t t
+ s,@INTLLIBS@,$INTLLIBS,;t t
+-s,@LIBINTL@,$LIBINTL,;t t
++s,@LIBINTL@,$LTLIBINTL,;t t
+ s,@LTLIBINTL@,$LTLIBINTL,;t t
+ s,@POSUB@,$POSUB,;t t
+ s,@LIBOBJS@,$LIBOBJS,;t t

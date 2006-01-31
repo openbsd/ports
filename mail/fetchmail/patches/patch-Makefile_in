@@ -1,27 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2005/02/19 21:27:35 alek Exp $
---- Makefile.in.orig	Thu Oct 16 00:38:18 2003
-+++ Makefile.in	Sat Feb 19 22:10:08 2005
-@@ -133,19 +133,19 @@ dummy:
+$OpenBSD: patch-Makefile_in,v 1.6 2006/01/31 14:30:34 bernd Exp $
+--- Makefile.in.orig	Sun Jan 22 12:49:46 2006
++++ Makefile.in	Thu Jan 26 13:41:37 2006
+@@ -1357,7 +1357,7 @@ info: info-recursive
  
- # Tester for address parsing
- rfc822: rfc822.c
--	gcc -DMAIN -g rfc822.c -o rfc822
-+	$(CC) -DMAIN -g -o $@ $?
+ info-am:
  
- # Stand-alone MIME decoder
- unmime: unmime.c base64.c rfc822.c xmalloc.c report.c
--	$(CC) -DSTANDALONE -DHAVE_CONFIG_H -I. -g -o $@ $^
-+	$(CC) -DSTANDALONE -DHAVE_CONFIG_H -I. -g -o $@ $?
+-install-data-am: install-man install-pythonPYTHON
++install-data-am: install-man
  
+ install-exec-am: install-binPROGRAMS install-nodist_binSCRIPTS
  
- # Stand-alone netrc tester
- netrc: netrc.c xmalloc.o report.o
--	$(CC) -DSTANDALONE -DHAVE_CONFIG_H -I. -g -o $@ $^
-+	$(CC) -DSTANDALONE -DHAVE_CONFIG_H -I. -g -o $@ $?
- 
- .c.o:
--	$(CC) $(defines) -c $(CPFLAGS) -I. -I$(srcdir) -I$(top_builddir)/intl -I$(top_srcdir)/intl $(CEFLAGS) $(CFLAGS) $<
-+	$(CC) $(defines) -c $(CPFLAGS) -I. -I$(srcdir) $(CEFLAGS) $(CFLAGS) $<
- 
- # For some losing Unix makes.
- SHELL = /bin/sh
