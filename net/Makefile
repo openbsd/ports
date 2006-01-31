@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.402 2006/01/21 22:27:32 steven Exp $
+# $OpenBSD: Makefile,v 1.403 2006/01/31 02:58:52 marco Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -164,6 +164,7 @@
      SUBDIR += oidentd
      SUBDIR += oinkmaster
      SUBDIR += olsrd
+     SUBDIR += openafs
      SUBDIR += openh323
      SUBDIR += openvpn
      SUBDIR += p5-Chatbot-Eliza
