@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/01/21 23:35:16 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2006/02/01 20:51:17 steven Exp $
 
 COMMENT=		"perl module to query Sender Policy Framework"
 
 DISTNAME=		Mail-SPF-Query-1.998
-PKGNAME=		p5-${DISTNAME}
+PKGNAME=		p5-${DISTNAME}p0
 CATEGORIES=		mail perl5
 
 MAINTAINER=		David Hill <dhill@mindcry.org>
@@ -26,5 +26,11 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 CONFIGURE_STYLE=	perl
 
 PKG_ARCH=		*
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-Mail-SPF-Query
+	${INSTALL_DATA} ${WRKSRC}/examples/* \
+		${PREFIX}/share/examples/p5-Mail-SPF-Query
+
 
 .include <bsd.port.mk>
