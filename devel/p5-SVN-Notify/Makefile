@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2005/10/02 15:13:22 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2006/02/01 16:43:46 msf Exp $
 
 COMMENT=	"subversion activity notification"
 
-DISTNAME=	SVN-Notify-2.46
+DISTNAME=	SVN-Notify-2.51
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
