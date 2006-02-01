@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2005/11/22 07:45:21 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2006/02/01 13:32:19 kevlo Exp $
 
 COMMENT=	"run a subprocess in batch mode"
 
-DISTNAME=	IPC-Run3-0.033
+DISTNAME=	IPC-Run3-0.034
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
@@ -16,5 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=IPC/}
 
 CONFIGURE_STYLE= perl
+
+PKG_ARCH=	*
 
 .include <bsd.port.mk>
