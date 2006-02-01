@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2005/02/05 01:11:48 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2006/02/01 13:42:21 kevlo Exp $
 
 COMMENT=	"data tables useful for parsing HTML"
 
-DISTNAME=	HTML-Tagset-3.04
+DISTNAME=	HTML-Tagset-3.10
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
 
@@ -17,5 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=HTML/}
 
 CONFIGURE_STYLE= perl
+
+PKG_ARCH=	*
 
 .include <bsd.port.mk>
