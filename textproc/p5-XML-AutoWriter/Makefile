@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/09 06:01:36 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2006/02/01 13:36:23 kevlo Exp $
 
 COMMENT=	"module for DOCTYPE based XML output"
 
-DISTNAME=	XML-AutoWriter-0.38
+DISTNAME=	XML-AutoWriter-0.39
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
@@ -15,5 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= perl
+
+PKG_ARCH=	*
 
 .include <bsd.port.mk>
