@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure_in,v 1.6 2006/02/01 14:57:06 fgsch Exp $
+--- configure.in.orig	Wed Feb  1 13:57:03 2006
++++ configure.in	Wed Feb  1 13:57:25 2006
+@@ -213,8 +213,8 @@ AC_MSG_RESULT($cf_use_javascript)
+ if test "$cf_use_javascript" = yes; then
+ 	AC_DEFINE(JS)
+ 	reg_exp_mode="NONE"
+-	AC_CHECK_LIB(pcre, pcre_compile)
+-	AC_CHECK_HEADERS(pcre.h)
++	#AC_CHECK_LIB(pcre, pcre_compile)
++	#AC_CHECK_HEADERS(pcre.h)
+ 	if test "$ac_cv_lib_pcre_pcre_compile" = yes && test "$ac_cv_header_pcre_h" = yes; then
+ 		AC_DEFINE(HAVE_PCRE)
+ 		reg_exp_mode="PCRE"
