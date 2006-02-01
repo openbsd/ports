@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_PL,v 1.1 2006/02/01 13:07:59 kevlo Exp $
+--- Makefile.PL.orig	Wed Feb  1 21:02:06 2006
++++ Makefile.PL	Wed Feb  1 21:02:20 2006
+@@ -5,7 +5,7 @@ all_from       'lib/Class/Autouse.pm';
+ requires       'Carp'       => 0;
+ requires       'base'       => 0;
+ requires       'File::Spec' => '0.80';
+-requires       'List::Util' => '1.17';
++requires       'List::Util' => '1.14';
+ build_requires 'Test::More' => '0.47';
+ 
+ auto_install;
