@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2005/02/08 23:38:12 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2006/02/01 16:29:47 robert Exp $
 
 COMMENT=	"log colorizer"
 
 DISTNAME=	ccze-0.2.1	
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	misc
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -25,5 +25,9 @@ USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-builtins=all
+
+pre-fake:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ccze
+	${WRKSRC}/src/ccze-dump > ${PREFIX}/share/examples/ccze/cczerc
 
 .include <bsd.port.mk>

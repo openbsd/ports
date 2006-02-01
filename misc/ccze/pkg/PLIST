@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/08/03 14:43:39 robert Exp $
+@comment $OpenBSD: PLIST,v 1.4 2006/02/01 16:29:47 robert Exp $
 bin/ccze
 bin/ccze-cssdump
 @comment include/ccze.h
 @man man/man1/ccze-cssdump.1
 @man man/man1/ccze.1
 @man man/man7/ccze-plugin.7
+share/examples/ccze/
+share/examples/ccze/cczerc
