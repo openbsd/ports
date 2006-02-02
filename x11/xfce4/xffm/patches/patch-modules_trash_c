@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_trash_c,v 1.1 2006/02/02 22:15:54 steven Exp $
+--- modules/trash.c.orig	Thu Feb  2 23:45:38 2006
++++ modules/trash.c	Thu Feb  2 23:46:31 2006
+@@ -144,7 +144,7 @@ static
+ void rm_directory (gchar *fullpath){
+ 	char *argument[4];
+ 	argument[0]="rm";
+-	argument[1]="-rfv";
++	argument[1]="-rf";
+ 	argument[2]=fullpath;
+ 	argument[3]=(char *)0;
+ 		    

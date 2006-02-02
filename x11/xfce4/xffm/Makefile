@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2006/01/20 23:17:57 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2006/02/02 22:15:54 steven Exp $
 
 COMMENT=	"xfce4 file manager"
 V=		4.2.3
 DISTNAME=	xffm-${V}
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 SHARED_LIBS=	xffm_actions	1.0 \
 		xffm_basic	1.0 \
 		xffm_calls	1.0 \
