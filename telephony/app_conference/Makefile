@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/11/10 21:13:11 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2006/02/02 04:42:43 jolan Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	"conferencing application for asterisk"
-DISTNAME=	app_conference-20051110
+DISTNAME=	app_conference-20060201
 CATEGORIES=	telephony
 MASTER_SITES=	http://mirrors.protection.cx/~jolan/
 
