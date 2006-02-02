@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/10/28 09:53:49 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2006/02/02 09:25:47 xsa Exp $
 
 COMMENT=	"RSS and Atom feeds parser written in Python"
 
-DISTNAME=	feedparser-3.3
+DISTNAME=	feedparser-4.1
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.feedparser.org/
 
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
+MAINTAINER=	Romain Gaillegue <romain@biscotte.net>
 
 # PSF license <http://www.python.org/2.1/license.html>
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,14 +23,19 @@ MODULES=	lang/python
 
 NO_REGRESS=	Yes
 
-WRKDIST=	${WRKDIR}/feedparser
+WRKDIST=	${WRKDIR}
 
+EXAMPLESDIR=	${PREFIX}/share/examples/py-feedparser
 # GNU Free Documentation License
 DOCSDIR=	${PREFIX}/share/doc/py-feedparser
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.{css,html} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${DOCSDIR}
+	${INSTALL_DATA_DIR} ${DOCSDIR}/css
+	${INSTALL_DATA} ${WRKSRC}/docs/css/feedparser.css ${DOCSDIR}/css
+	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/examples/*.{rdf,xml} ${EXAMPLESDIR}
 	${INSTALL_DATA_DIR} ${DOCSDIR}/images
 	${INSTALL_DATA} ${WRKSRC}/docs/images/*.{gif,png} ${DOCSDIR}/images
 
