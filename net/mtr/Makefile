@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2005/03/23 19:45:31 alek Exp $
+# $OpenBSD: Makefile,v 1.30 2006/02/02 18:49:17 jakob Exp $
 
 COMMENT=	"Matt's traceroute - network diagnostic tool"
 
-VERSION=	0.67
+VERSION=	0.69
 DISTNAME=	mtr-${VERSION}
 CATEGORIES=	net
 
