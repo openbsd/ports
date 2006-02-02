@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/02/02 03:41:36 todd Exp $
+# $OpenBSD: Makefile,v 1.7 2006/02/02 16:12:24 jolan Exp $
 
 COMMENT=	"open source PBX"
 DISTNAME=	asterisk-1.2.4
@@ -18,8 +18,6 @@ WANTLIB=		c crypto m ncurses ossaudio pthread ssl
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
-
-BUILD_DEPENDS=	:bison-*:devel/bison
 
 MAKE_ENV+=	SYSCONFDIR='${SYSCONFDIR}' MAKEFLAGS+=-DWITHOUT_ZAPTEL
 
