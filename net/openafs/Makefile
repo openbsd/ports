@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/01/31 02:49:24 marco Exp $
+# $OpenBSD: Makefile,v 1.2 2006/02/02 02:10:11 todd Exp $
 
 COMMENT=		"OpenAFS"
 
@@ -32,11 +32,16 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 COPTS+= -ggdb
 WRKDIST=		${WRKDIR}/${PKGNAME}
 
+.if !exists(/usr/src/sys/lib/libkern/libkern.h)
+ERRORS += "Fatal: You cannot build this port without kernel sources"
+.endif
+
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/
 .for file in openafs-setup
 	@sed s,%LOCALBASE%,${LOCALBASE},g < ${FILESDIR}/${file} > \
 	${PREFIX}/sbin/${file}
+	@chmod u+x ${PREFIX}/sbin/${file}
 .endfor
  
 .include <bsd.port.mk>
