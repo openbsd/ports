@@ -1,7 +1,7 @@
-$OpenBSD: patch-smbd_chgpasswd_c,v 1.1 2005/05/27 04:54:40 sturm Exp $
---- smbd/chgpasswd.c.orig	Thu May 26 14:42:51 2005
-+++ smbd/chgpasswd.c	Thu May 26 14:43:09 2005
-@@ -218,7 +218,7 @@ static int dochild(int master, const cha
+$OpenBSD: patch-smbd_chgpasswd_c,v 1.2 2006/02/02 09:40:43 mbalmer Exp $
+--- smbd/chgpasswd.c.orig	Wed Jan 25 00:46:32 2006
++++ smbd/chgpasswd.c	Tue Jan 31 10:01:07 2006
+@@ -222,7 +222,7 @@ static int dochild(int master, const cha
  	       passwordprogram));
  
  	/* execl() password-change application */

@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_smbrun_c,v 1.1 2005/05/27 04:54:40 sturm Exp $
---- lib/smbrun.c.orig	Thu May 26 14:43:30 2005
-+++ lib/smbrun.c	Thu May 26 14:43:54 2005
-@@ -172,7 +172,7 @@ int smbrun(char *cmd, int *outfd)
+$OpenBSD: patch-lib_smbrun_c,v 1.2 2006/02/02 09:40:43 mbalmer Exp $
+--- lib/smbrun.c.orig	Tue Oct 18 04:45:00 2005
++++ lib/smbrun.c	Wed Dec 21 10:25:13 2005
+@@ -172,7 +172,7 @@ int smbrun(const char *cmd, int *outfd)
  	}
  #endif
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-lib_smbrun_c,v 1.1 2005/05/27 04:54:40 sturm Exp $
  	
  	/* not reached */
  	exit(82);
-@@ -293,7 +293,7 @@ int smbrunsecret(char *cmd, char *secret
+@@ -299,7 +299,7 @@ int smbrunsecret(const char *cmd, const 
  	}
  #endif
  

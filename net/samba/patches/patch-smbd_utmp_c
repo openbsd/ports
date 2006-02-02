@@ -1,4 +1,4 @@
-$OpenBSD: patch-smbd_utmp_c,v 1.3 2005/11/03 15:10:20 mbalmer Exp $
+$OpenBSD: patch-smbd_utmp_c,v 1.4 2006/02/02 09:40:43 mbalmer Exp $
 --- smbd/utmp.c.orig	Fri Feb 25 18:59:26 2005
 +++ smbd/utmp.c	Wed Jun 15 19:36:32 2005
 @@ -245,6 +245,7 @@ static void uw_pathname(pstring fname, c

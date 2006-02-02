@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.24 2006/01/14 14:06:45 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.25 2006/02/02 09:40:43 mbalmer Exp $
+bin/eventlogadm
 bin/findsmb
 bin/mksmbpasswd
 bin/net
@@ -11,6 +12,7 @@ bin/smbcacls
 bin/smbclient
 bin/smbcontrol
 bin/smbcquotas
+bin/smbget
 bin/smbpasswd
 bin/smbspool
 bin/smbstatus
@@ -20,6 +22,7 @@ bin/tdbbackup
 bin/tdbdump
 bin/tdbtool
 bin/testparm
+include/libmsrpc.h
 include/libsmbclient.h
 lib/samba/
 lib/samba/auth/
@@ -40,7 +43,6 @@ lib/samba/valid.dat
 libexec/nmbd
 libexec/smbd
 libexec/swat
-@man man/man1/editreg.1
 @man man/man1/findsmb.1
 @man man/man1/log2pcap.1
 @man man/man1/nmblookup.1
@@ -52,24 +54,22 @@ libexec/swat
 @man man/man1/smbcontrol.1
 @man man/man1/smbcquotas.1
 @man man/man1/smbget.1
-@man man/man1/smbsh.1
 @man man/man1/smbstatus.1
 @man man/man1/smbtar.1
 @man man/man1/smbtree.1
 @man man/man1/testparm.1
-@man man/man1/testprns.1
 @man man/man1/vfstest.1
 @man man/man1/wbinfo.1
 @man man/man5/lmhosts.5
 @man man/man5/smb.conf.5
 @man man/man5/smbgetrc.5
 @man man/man5/smbpasswd.5
+@man man/man7/libsmbclient.7
+@man man/man7/pam_winbind.7
 @man man/man7/samba.7
-@man man/man8/libsmbclient.8
 @man man/man8/mount.cifs.8
 @man man/man8/net.8
 @man man/man8/nmbd.8
-@man man/man8/pam_winbind.8
 @man man/man8/pdbedit.8
 @man man/man8/smbd.8
 @man man/man8/smbmnt.8
@@ -82,7 +82,6 @@ libexec/swat
 @man man/man8/tdbdump.8
 @man man/man8/umount.cifs.8
 @man man/man8/winbindd.8
-share/examples/samba/
 share/examples/samba/smb.conf.default
 @sample ${SYSCONFDIR}/samba/
 @sample ${SYSCONFDIR}/samba/smb.conf
