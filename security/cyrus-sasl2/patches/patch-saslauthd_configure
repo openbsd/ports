@@ -1,6 +1,6 @@
-$OpenBSD: patch-saslauthd_configure,v 1.10 2005/12/19 18:11:27 jakob Exp $
+$OpenBSD: patch-saslauthd_configure,v 1.11 2006/02/02 18:41:20 jakob Exp $
 --- saslauthd/configure.orig	Sun May 15 07:59:04 2005
-+++ saslauthd/configure	Mon Dec 19 15:56:57 2005
++++ saslauthd/configure	Tue Jan 24 19:33:31 2006
 @@ -753,10 +753,10 @@ ac_env_CC_set=${CC+set}
  ac_env_CC_value=$CC
  ac_cv_env_CC_set=${CC+set}
@@ -44,6 +44,15 @@ $OpenBSD: patch-saslauthd_configure,v 1.10 2005/12/19 18:11:27 jakob Exp $
      *)
        { echo "$as_me:$LINENO: WARNING: The system type is not recognized. If you believe that CyberSafe GSSAPI works on this platform, please update the configure script" >&5
  echo "$as_me: WARNING: The system type is not recognized. If you believe that CyberSafe GSSAPI works on this platform, please update the configure script" >&2;}
+@@ -6391,7 +6394,7 @@ echo "$as_me: error: CyberSafe was force
+   cmu_saved_CPPFLAGS=$CPPFLAGS
+ 
+   if test -d ${gssapi}; then
+-    CPPFLAGS="$CPPFLAGS -I$gssapi/include"
++    CPPFLAGS="$CPPFLAGS -I$gssapi/include/kerberosV"
+ # We want to keep -I in our CPPFLAGS, but only if we succeed
+     cmu_saved_CPPFLAGS=$CPPFLAGS
+     LDFLAGS="$LDFLAGS -L$gssapi/lib"
 @@ -6702,7 +6705,7 @@ if test "${ac_cv_lib_resolv_res_search+s
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
