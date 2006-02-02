@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2006/02/02 18:41:20 jakob Exp $
+# $OpenBSD: Makefile,v 1.35 2006/02/02 22:23:28 steven Exp $
 
 COMMENT=	"RFC 2222 SASL (Simple Authentication and Security Layer)"
 
 VERSION=	2.1.21
 
 DISTNAME=	cyrus-sasl-${VERSION}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	security
 SHARED_LIBS=	anonymous	2.21 \
 		crammd5		2.21 \
@@ -17,17 +17,6 @@ SHARED_LIBS=	anonymous	2.21 \
 		sasl2		2.21 \
 		sasldb		2.21 \
 		sql		2.21
-MODGNU_SHARED_LIBS=anonymous	'' \
-		crammd5		'' \
-		digestmd5	'' \
-		gssapiv2	'' \
-		login		'' \
-		otp		'' \
-		plain		'' \
-		sasl2		'' \
-		sasldb		'' \
-		sql		''
-LIBsql_ALIAS=	realsql
 
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/OLD-VERSIONS/sasl/
@@ -112,7 +101,10 @@ CONFIGURE_ARGS+=	--enable-sql \
 			--without-pgsql \
 			--with-sqlite
 .endif
- 
+
+post-extract:
+	perl -pi -e "s,/usr/local/etc,${SYSCONFDIR},g" \
+		${WRKSRC}/saslauthd/saslauthd.mdoc
 
 post-build:
 	cd ${WRKBUILD}/saslauthd; \
