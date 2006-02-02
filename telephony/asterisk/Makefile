@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2005/08/15 17:36:06 jolan Exp $
+# $OpenBSD: Makefile,v 1.6 2006/02/02 03:41:36 todd Exp $
 
 COMMENT=	"open source PBX"
-DISTNAME=	asterisk-1.0.9
+DISTNAME=	asterisk-1.2.4
 CATEGORIES=	telephony
-MASTER_SITES=	http://www.asterisk.org/html/downloads/ \
-		ftp://ftp.asterisk.org/pub/telephony/asterisk/
+MASTER_SITES=	ftp://ftp.digium.com/pub/asterisk/
 
 HOMEPAGE=	http://www.asterisk.org/
+
+MAINTAINER=	Stuart Henderson <stu@spacehopper.org>
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes
@@ -20,7 +21,7 @@ USE_GMAKE=	Yes
 
 BUILD_DEPENDS=	:bison-*:devel/bison
 
-MAKE_ENV+=	SYSCONFDIR='${SYSCONFDIR}'
+MAKE_ENV+=	SYSCONFDIR='${SYSCONFDIR}' MAKEFLAGS+=-DWITHOUT_ZAPTEL
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/asterisk

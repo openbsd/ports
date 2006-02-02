@@ -1,0 +1,15 @@
+$OpenBSD: patch-db1-ast_Makefile,v 1.1 2006/02/02 03:41:36 todd Exp $
+--- db1-ast/Makefile.orig	Thu Jan 26 18:03:04 2006
++++ db1-ast/Makefile	Thu Jan 26 18:03:15 2006
+@@ -8,9 +8,11 @@
+ SOVER=2
+ endif
+ #Added support for UltraSparc - Belgarath
++ifneq (${OSARCH},OpenBSD)
+ ifeq ($(ARCH),sparc64)
+ PROC=ultrasparc
+ CFLAGS += -mtune=$(PROC) -O3 -pipe -fomit-frame-pointer -mcpu=v8
++endif
+ endif
+ 
+ LIBDBSO=libdb.so.$(SOVER)

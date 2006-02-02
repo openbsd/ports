@@ -1,12 +1,19 @@
---- codecs/Makefile.orig	Wed Mar 30 13:33:49 2005
-+++ codecs/Makefile	Wed Mar 30 13:32:50 2005
-@@ -19,7 +19,9 @@
- #MODG723=codec_g723_1.so codec_g723_1b.so
- MODG723=$(shell [ -f g723.1/coder.c ] && echo "codec_g723_1.so")
- MODG723+=$(shell [ -f g723.1b/coder2.c ] && echo "codec_g723_1b.so")
+$OpenBSD: patch-codecs_Makefile,v 1.3 2006/02/02 03:41:36 todd Exp $
+--- codecs/Makefile.orig	Tue Nov 29 13:24:39 2005
++++ codecs/Makefile	Wed Dec 28 13:31:23 2005
+@@ -28,6 +28,7 @@ ifneq ($(wildcard g723.1b/coder2.c),)
+   LIBG723B=g723.1b/libg723b.a
+ endif
+ 
 +ifneq (${OSARCH},OpenBSD)
- MODSPEEX=$(shell [ -f /usr/include/speex.h ] || [ -f /usr/include/speex/speex.h ] || [ -f /usr/local/include/speex.h ] || [ -f /usr/local/include/speex/speex.h ] && echo "codec_speex.so")
+ UI_SPEEX=$(wildcard $(CROSS_COMPILE_TARGET)/usr/include/speex.h)
+ UIS_SPEEX=$(wildcard $(CROSS_COMPILE_TARGET)/usr/include/speex/speex.h)
+ ULI_SPEEX=$(wildcard $(CROSS_COMPILE_TARGET)/usr/local/include/speex.h)
+@@ -52,6 +53,7 @@ ifneq (${ULIS_SPEEX},)
+   CFLAGS+=-I$(CROSS_COMPILE_TARGET)/usr/local/include/speex
+   LIBSPEEX=-L$(CROSS_COMPILE_TARGET)/usr/local/lib
+   LIBSPEEX+=-lspeex -lm
 +endif
- MODILBC=$(shell [ -f ilbc/iLBC_decode.h ] && echo "codec_ilbc.so")
- CFLAGS+=-fPIC
- CFLAGS+=$(shell [ -f /usr/local/include/speex.h ] && echo "-I/usr/local/include")
+ endif
+ 
+ ifneq ($(wildcard ilbc/iLBC_decode.h),)

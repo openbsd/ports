@@ -1,0 +1,15 @@
+$OpenBSD: patch-include_asterisk_endian_h,v 1.1 2006/02/02 03:41:36 todd Exp $
+--- include/asterisk/endian.h.orig	Mon Jan 16 15:18:00 2006
++++ include/asterisk/endian.h	Mon Jan 16 15:16:52 2006
+@@ -33,10 +33,7 @@
+ #ifdef __linux__
+ #include <endian.h>
+ #elif defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__NetBSD__) || defined(__APPLE__)
+-#if defined(__OpenBSD__)
+-#include <machine/types.h>
+-#endif /* __OpenBSD__ */
+-#include <machine/endian.h>
++#include <sys/types.h>
+ #define __BYTE_ORDER BYTE_ORDER
+ #define __LITTLE_ENDIAN LITTLE_ENDIAN
+ #define __BIG_ENDIAN BIG_ENDIAN

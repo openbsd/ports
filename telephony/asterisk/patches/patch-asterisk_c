@@ -1,25 +1,25 @@
-$OpenBSD: patch-asterisk_c,v 1.3 2005/08/15 17:36:07 jolan Exp $
---- asterisk.c.orig	Sun May 15 22:04:58 2005
-+++ asterisk.c	Sun Aug 14 21:11:29 2005
-@@ -193,7 +193,7 @@ int ast_safe_system(const char *s)
- 		for (x=STDERR_FILENO + 1; x<4096;x++) {
+$OpenBSD: patch-asterisk_c,v 1.4 2006/02/02 03:41:36 todd Exp $
+--- asterisk.c.orig	Tue Nov 29 13:24:39 2005
++++ asterisk.c	Wed Dec 28 13:18:17 2005
+@@ -433,7 +433,7 @@ int ast_safe_system(const char *s)
+ 		/* Close file descriptors and launch system command */
+ 		for (x = STDERR_FILENO + 1; x < 4096; x++)
  			close(x);
- 		}
--		res = execl("/bin/sh", "/bin/sh", "-c", s, NULL);
-+		res = execl("/bin/sh", "/bin/sh", "-c", s, (void *)NULL);
+-		execl("/bin/sh", "/bin/sh", "-c", s, NULL);
++		execl("/bin/sh", "/bin/sh", "-c", s, (void*)NULL);
  		exit(1);
  	} else if (pid > 0) {
  		for(;;) {
-@@ -1580,7 +1580,7 @@ int main(int argc, char *argv[])
- 	sigset_t sigs;
+@@ -1927,7 +1927,7 @@ int main(int argc, char *argv[])
  	int num;
+ 	int is_child_of_nonroot=0;
  	char *buf;
 -	char *runuser=NULL, *rungroup=NULL;
 +	char *runuser = "_asterisk", *rungroup = "_asterisk";
- 	struct pollfd silly_macos[1];	
  
  	/* Remember original args for restart */
-@@ -1693,6 +1693,8 @@ int main(int argc, char *argv[])
+ 	if (argc > sizeof(_argv) / sizeof(_argv[0]) - 1) {
+@@ -2065,6 +2065,8 @@ int main(int argc, char *argv[])
  			ast_log(LOG_WARNING, "Unable to disable core size resource limit: %s\n", strerror(errno));
  		}
  	}

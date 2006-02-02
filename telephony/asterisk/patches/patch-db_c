@@ -1,0 +1,12 @@
+$OpenBSD: patch-db_c,v 1.1 2006/02/02 03:41:36 todd Exp $
+--- db.c.orig	Wed Dec 28 14:16:55 2005
++++ db.c	Wed Dec 28 14:10:59 2005
+@@ -64,7 +64,7 @@ static int dbinit(void) 
+ {
+ 	if (!astdb) {
+ 		if (!(astdb = dbopen((char *)ast_config_AST_DB, O_CREAT | O_RDWR, 0664, DB_BTREE, NULL))) {
+-			ast_log(LOG_WARNING, "Unable to open Asterisk database\n");
++			ast_log(LOG_WARNING, "Unable to open Asterisk database %s\n", ast_config_AST_DB);
+ 		}
+ 	}
+ 	if (astdb)

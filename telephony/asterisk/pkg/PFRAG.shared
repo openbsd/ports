@@ -1,19 +1,24 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2005/05/01 02:12:47 jcs Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.3 2006/02/02 03:41:37 todd Exp $
 lib/asterisk/modules/app_adsiprog.so
 lib/asterisk/modules/app_alarmreceiver.so
 lib/asterisk/modules/app_authenticate.so
 lib/asterisk/modules/app_cdr.so
 lib/asterisk/modules/app_chanisavail.so
+lib/asterisk/modules/app_chanspy.so
 lib/asterisk/modules/app_controlplayback.so
 lib/asterisk/modules/app_cut.so
 lib/asterisk/modules/app_db.so
 lib/asterisk/modules/app_dial.so
+lib/asterisk/modules/app_dictate.so
+lib/asterisk/modules/app_directed_pickup.so
 lib/asterisk/modules/app_directory.so
 lib/asterisk/modules/app_disa.so
+lib/asterisk/modules/app_dumpchan.so
 lib/asterisk/modules/app_echo.so
 lib/asterisk/modules/app_enumlookup.so
 lib/asterisk/modules/app_eval.so
 lib/asterisk/modules/app_exec.so
+lib/asterisk/modules/app_externalivr.so
 lib/asterisk/modules/app_festival.so
 lib/asterisk/modules/app_forkcdr.so
 lib/asterisk/modules/app_getcpeid.so
@@ -21,20 +26,23 @@ lib/asterisk/modules/app_groupcount.so
 lib/asterisk/modules/app_hasnewvoicemail.so
 lib/asterisk/modules/app_ices.so
 lib/asterisk/modules/app_image.so
-@comment lib/asterisk/modules/app_intercom.so
 lib/asterisk/modules/app_lookupblacklist.so
 lib/asterisk/modules/app_lookupcidname.so
 lib/asterisk/modules/app_macro.so
+lib/asterisk/modules/app_math.so
+lib/asterisk/modules/app_md5.so
 lib/asterisk/modules/app_milliwatt.so
+lib/asterisk/modules/app_mixmonitor.so
 lib/asterisk/modules/app_mp3.so
 lib/asterisk/modules/app_nbscat.so
 lib/asterisk/modules/app_parkandannounce.so
 lib/asterisk/modules/app_playback.so
 lib/asterisk/modules/app_privacy.so
-lib/asterisk/modules/app_qcall.so
 lib/asterisk/modules/app_queue.so
 lib/asterisk/modules/app_random.so
 lib/asterisk/modules/app_read.so
+lib/asterisk/modules/app_readfile.so
+lib/asterisk/modules/app_realtime.so
 lib/asterisk/modules/app_record.so
 lib/asterisk/modules/app_sayunixtime.so
 lib/asterisk/modules/app_senddtmf.so
@@ -43,10 +51,11 @@ lib/asterisk/modules/app_setcallerid.so
 lib/asterisk/modules/app_setcdruserfield.so
 lib/asterisk/modules/app_setcidname.so
 lib/asterisk/modules/app_setcidnum.so
+lib/asterisk/modules/app_setrdnis.so
+lib/asterisk/modules/app_settransfercapability.so
 lib/asterisk/modules/app_sms.so
 lib/asterisk/modules/app_softhangup.so
-lib/asterisk/modules/app_striplsd.so
-lib/asterisk/modules/app_substring.so
+lib/asterisk/modules/app_stack.so
 lib/asterisk/modules/app_system.so
 lib/asterisk/modules/app_talkdetect.so
 lib/asterisk/modules/app_test.so
@@ -57,17 +66,17 @@ lib/asterisk/modules/app_userevent.so
 lib/asterisk/modules/app_verbose.so
 lib/asterisk/modules/app_voicemail.so
 lib/asterisk/modules/app_waitforring.so
+lib/asterisk/modules/app_waitforsilence.so
+lib/asterisk/modules/app_while.so
 lib/asterisk/modules/app_zapateller.so
 lib/asterisk/modules/cdr_csv.so
+lib/asterisk/modules/cdr_custom.so
 lib/asterisk/modules/cdr_manager.so
 lib/asterisk/modules/chan_agent.so
+lib/asterisk/modules/chan_features.so
 lib/asterisk/modules/chan_iax2.so
 lib/asterisk/modules/chan_local.so
 lib/asterisk/modules/chan_mgcp.so
-@comment lib/asterisk/modules/chan_modem.so
-@comment lib/asterisk/modules/chan_modem_aopen.so
-@comment lib/asterisk/modules/chan_modem_bestdata.so
-@comment lib/asterisk/modules/chan_modem_i4l.so
 @comment lib/asterisk/modules/chan_oss.so
 lib/asterisk/modules/chan_sip.so
 lib/asterisk/modules/chan_skinny.so
@@ -79,6 +88,8 @@ lib/asterisk/modules/codec_gsm.so
 lib/asterisk/modules/codec_ilbc.so
 lib/asterisk/modules/codec_lpc10.so
 lib/asterisk/modules/codec_ulaw.so
+lib/asterisk/modules/format_au.so
+lib/asterisk/modules/format_g723.so
 lib/asterisk/modules/format_g726.so
 lib/asterisk/modules/format_g729.so
 lib/asterisk/modules/format_gsm.so
@@ -91,9 +102,16 @@ lib/asterisk/modules/format_sln.so
 lib/asterisk/modules/format_vox.so
 lib/asterisk/modules/format_wav.so
 lib/asterisk/modules/format_wav_gsm.so
+lib/asterisk/modules/func_callerid.so
+lib/asterisk/modules/func_enum.so
+lib/asterisk/modules/func_uri.so
+lib/asterisk/modules/pbx_ael.so
 lib/asterisk/modules/pbx_config.so
+lib/asterisk/modules/pbx_dundi.so
+lib/asterisk/modules/pbx_functions.so
+lib/asterisk/modules/pbx_loopback.so
+lib/asterisk/modules/pbx_realtime.so
 lib/asterisk/modules/pbx_spool.so
-lib/asterisk/modules/pbx_wilcalu.so
 lib/asterisk/modules/res_adsi.so
 lib/asterisk/modules/res_agi.so
 lib/asterisk/modules/res_crypto.so

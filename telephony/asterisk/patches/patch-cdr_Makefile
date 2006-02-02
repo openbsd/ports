@@ -1,14 +1,14 @@
-$OpenBSD: patch-cdr_Makefile,v 1.1.1.1 2004/09/26 00:38:24 jolan Exp $
---- cdr/Makefile.orig	Tue Aug 31 11:33:00 2004
-+++ cdr/Makefile	Thu Sep 23 16:44:54 2004
-@@ -29,26 +29,33 @@ endif
+$OpenBSD: patch-cdr_Makefile,v 1.2 2006/02/02 03:41:36 todd Exp $
+--- cdr/Makefile.orig	Tue Nov 29 13:24:39 2005
++++ cdr/Makefile	Wed Dec 28 13:30:25 2005
+@@ -30,21 +30,26 @@ endif
  #A ultrasparc cpu is really v9 but the stock debian stable 3.0 gcc doesn.t support it.
  #So we go lowest common available by gcc and go a step down, still a step up from
  #the default as we now have a better instruction set to work with. - Belgarath
 +ifneq (${OSARCH},OpenBSD)
  ifeq ($(PROC),sparc64)
- PROC=ultrasparc
- CFLAGS += -mtune=$(PROC) -O3 -pipe -fomit-frame-pointer -mcpu=v8
+  PROC=ultrasparc
+   CFLAGS += -mtune=$(PROC) -O3 -pipe -fomit-frame-pointer -mcpu=v8
  endif
 +endif
  
@@ -16,37 +16,43 @@ $OpenBSD: patch-cdr_Makefile,v 1.1.1.1 2004/09/26 00:38:24 jolan Exp $
  # unixODBC stuff...
  #
 +ifneq (${OSARCH},OpenBSD)
- MODS+=$(shell if [ -f "/usr/include/odbcinst.h" ]; then echo "cdr_odbc.so"; fi)
- MODS+=$(shell if [ -f "/usr/local/include/odbcinst.h" ]; then echo "cdr_odbc.so"; fi) 
+ ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/odbcinst.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/local/include/odbcinst.h),)
+   MODS+=cdr_odbc.so
+ endif
 +endif
  
  #
  # FreeTDS stuff...
  #
 +ifneq (${OSARCH},OpenBSD)
- MODS+=$(shell if [ -f "/usr/include/tds.h" ]; then echo "cdr_tds.so"; fi)
- MODS+=$(shell if [ -f "/usr/local/include/tds.h" ]; then echo "cdr_tds.so"; fi)
+ ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/tds.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/local/include/tds.h),)
+   ifeq ($(shell grep -s TDS_VERSION_NO $(CROSS_COMPILE_TARGET)/usr/include/tdsver.h $(CROSS_COMPILE_TARGET)/usr/local/include/tdsver.h | grep -c 0.63),1)
+     CFLAGS += -DFREETDS_0_63
+@@ -57,13 +62,16 @@ ifneq ($(wildcard $(CROSS_COMPILE_TARGET
+   endif
+   MODS+=cdr_tds.so
+ endif
 +endif
  
  #
  # PGSQL stuff...  Autoconf anyone??
  #
 +ifneq (${OSARCH},OpenBSD)
- MODS+=$(shell if [ -d /usr/local/pgsql/include ] || [ -d /usr/include/pgsql ] || [ -d /usr/local/include/pgsql ] || [ -d /opt/pgsql/include ] || [ -f /usr/include/libpq-fe.h ] ; then echo "cdr_pgsql.so"; fi)
- CFLAGS+=$(shell if [ -d /usr/local/pgsql/include ]; then echo "-I/usr/local/pgsql/include"; fi)
- CFLAGS+=$(shell if [ -d /usr/include/pgsql ]; then echo "-I/usr/include/pgsql"; fi)
-@@ -62,11 +69,14 @@ MLFLAGS+=$(shell if [ -d /usr/local/pgsq
- MLFLAGS+=$(shell if [ -d /usr/local/lib/pgsql ]; then echo "-L/usr/local/lib/pgsql"; fi)
- MLFLAGS+=$(shell if [ -d /opt/pgsql/lib ]; then echo "-L/opt/pgsql/lib"; fi)
- MLFLAGS+=$(shell if [ -f /usr/lib/libpq.so ]; then echo "-L/usr/lib"; fi)
+ ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/postgresql)$(wildcard $(CROSS_COMPILE_TARGET)/usr/local/pgsql/include)$(wildcard $(CROSS_COMPILE_TARGET)/usr/include/pgsql)$(wildcard $(CROSS_COMPILE_TARGET)/usr/local/include/pgsql)$(wildcard $(CROSS_COMPILE_TARGET)/opt/pgsql/include)$(wildcard $(CROSS_COMPILE_TARGET)/usr/include/libpq-fe.h),)
+   MODS+=cdr_pgsql.so
+ endif
 +endif
  
+ MLFLAGS=
+ 
+@@ -103,8 +111,10 @@ endif
  #
- # SQLIte stuff...
+ # SQLite stuff...
  #
 +ifneq (${OSARCH},OpenBSD)
- MODS+=$(shell if [ -f "/usr/include/sqlite.h" ]; then echo "cdr_sqlite.so"; fi)
+ ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/sqlite.h),)
+   MODS+=cdr_sqlite.so
 +endif
+ endif
  
  all: depend $(MODS)
- 
