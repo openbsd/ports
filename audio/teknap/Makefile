@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/11/21 17:51:47 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2006/02/03 20:21:07 steven Exp $
 
 COMMENT=	"console napster client"
 
@@ -6,7 +6,7 @@ VERSION=	1.3g
 DISTNAME=	TekNap-${VERSION}
 PKGNAME=	teknap-${VERSION}
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.teknap.com/pub/TekNap/
+MASTER_SITES=	http://bwap.clawz.com/downloads/
 
 HOMEPAGE=	http://www.TekNap.com/
 
