@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2005/11/04 08:06:53 xsa Exp $
+# $OpenBSD: Makefile,v 1.7 2006/02/03 21:02:21 steven Exp $
 
 COMMENT=        "Zope documentation"
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/2_6Edition/
+MASTER_SITES=	http://www.zope.org/Documentation/Books/ZopeBook/2_6Edition/
 DISTFILES=	${DISTNAME}.pdf
 EXTRACT_ONLY=
 
