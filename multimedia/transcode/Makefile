@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/02/03 05:13:05 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.7 2006/02/03 05:25:21 jakemsr Exp $
 
 COMMENT=		"video stream processing tools"
 
@@ -102,7 +102,7 @@ PKG_ARGS+=		-Dlzo=0
 
 .if ${FLAVOR:L:Mmjpegtools}
 CONFIGURE_ARGS+=	--enable-mjpegtools
-LIB_DEPENDS+=		mjpegutils.4::multimedia/mjpegtools
+LIB_DEPENDS+=		mjpegutils.3::multimedia/mjpegtools
 RUN_DEPENDS+=		::multimedia/mjpegtools
 PKG_ARGS+=		-Dmjpegtools=1
 .else
