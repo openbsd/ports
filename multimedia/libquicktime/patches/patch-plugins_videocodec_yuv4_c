@@ -1,0 +1,11 @@
+$OpenBSD: patch-plugins_videocodec_yuv4_c,v 1.1 2006/02/03 04:55:56 jakemsr Exp $
+--- plugins/videocodec/yuv4.c.orig	Sun Jul 31 15:18:07 2005
++++ plugins/videocodec/yuv4.c	Sun Jul 31 15:18:19 2005
+@@ -1,6 +1,6 @@
+ #include "funcprotos.h"
+ #include <quicktime/colormodels.h>
+-#include "quicktime.h"
++#include <quicktime/quicktime.h>
+ #include "yuv4.h"
+ 
+ /* U V values are signed but Y R G B values are unsigned! */

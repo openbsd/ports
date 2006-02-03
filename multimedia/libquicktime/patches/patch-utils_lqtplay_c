@@ -1,24 +1,12 @@
-$OpenBSD: patch-utils_lqtplay_c,v 1.2 2004/12/04 21:44:34 sturm Exp $
---- utils/lqtplay.c.orig	Tue Jan 20 20:32:30 2004
-+++ utils/lqtplay.c	Mon Aug  9 02:56:37 2004
-@@ -19,8 +19,10 @@
- #include <sys/ipc.h>
- #include <sys/shm.h>
- #include <sys/ioctl.h>
--#ifdef	HAVE_SOUNDCARD_H
-+#ifdef	HAVE_SYS_SOUNDCARD_H
- #include <sys/soundcard.h>
-+#else
-+#include <soundcard.h>
- #endif
- 
- #include <X11/Xlib.h>
-@@ -656,7 +658,7 @@ static void qt_init(FILE *fp, char *file
- 	qt_hasaudio = 1;
- 	if (quicktime_track_channels(qt,0) > 1)
- 	    qt_stereo = 1;
--	if (-1 == oss_init("/dev/dsp", qt_stereo ? 2 : 1,
-+	if (-1 == oss_init("/dev/audio", qt_stereo ? 2 : 1,
- 			   quicktime_sample_rate(qt,0)))
- 	    qt_hasaudio = 0;
-     }
+$OpenBSD: patch-utils_lqtplay_c,v 1.3 2006/02/03 04:55:56 jakemsr Exp $
+--- utils/lqtplay.c.orig	Mon May 23 06:33:55 2005
++++ utils/lqtplay.c	Sun Jul 31 14:26:54 2005
+@@ -912,7 +912,7 @@ static void qt_init(FILE *fp, char *file
+            qt_hasaudio = 0;}
+   }
+   else {
+-  	if (-1 == oss_init("/dev/dsp", qt_channels,
++  	if (-1 == oss_init("/dev/audio", qt_channels,
+                            qt_sample_rate))
+            qt_hasaudio = 0;
+   }

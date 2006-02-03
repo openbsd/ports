@@ -1,0 +1,91 @@
+$OpenBSD: patch-configure_ac,v 1.1 2006/02/03 04:55:56 jakemsr Exp $
+--- configure.ac.orig	Thu May 26 06:35:22 2005
++++ configure.ac	Mon Dec  5 23:30:21 2005
+@@ -104,8 +104,10 @@ AC_CHECK_LIB(dl, dlopen)
+ AC_CHECK_LIB(z, inflateEnd)
+ AC_CHECK_LIB(m, cos)
+ 
+-AC_SEARCH_LIBS(pthread_create, [gthread pthread c_r])
++dnl AC_SEARCH_LIBS(pthread_create, [gthread pthread c_r])
+ 
++LIBS="$LIBS -pthread"
++
+ AC_SUBST(LIBS)
+ 
+ AC_CHECK_HEADERS(fcntl.h sys/time.h unistd.h linux/videodev.h sys/soundcard.h soundcard.h stddef.h)
+@@ -138,6 +140,9 @@ VORBIS_REQUIRED="1.0"
+  
+ have_vorbis=false
+ AH_TEMPLATE([HAVE_VORBIS], [Vorbis libraries are there])
++
++OLD_LIBS="$LIBS"
++LIBS="$LIBS -logg"
+   
+ XIPH_PATH_VORBIS(have_vorbis=true)
+ AM_CONDITIONAL(HAVE_VORBIS, test x$have_vorbis = xtrue)
+@@ -145,7 +150,9 @@ AM_CONDITIONAL(HAVE_VORBIS, test x$have_
+ if test x$have_vorbis = xtrue; then
+ AC_DEFINE(HAVE_VORBIS)
+ fi
+- 
++
++LIBS="$OLD_LIBS"
++
+ AC_SUBST(VORBIS_REQUIRED)
+ 
+ dnl
+@@ -159,7 +166,7 @@ OLD_CFLAGS=$CFLAGS
+ OLD_LIBS=$LIBS
+ 
+ if test x$have_vorbis = xtrue; then
+-LIBS="$LIBS -lmp3lame -lvorbis -lm"
++LIBS="$LIBS -lmp3lame -lvorbis -logg -lm"
+ else
+ LIBS="$LIBS -lmp3lame -lm"
+ fi
+@@ -235,9 +242,9 @@ fi
+ ALSA_CFLAGS="$ALSA_CFLAGS"
+ AC_SUBST(ALSA_CFLAGS)
+ 
+-# NetBSD 2.0 (for whatever reason) moved the audio routines to a new place
+-AH_TEMPLATE([HAVE_LIBOSSAUDIO], [Have -lossaudio for NetBSD 2.x?])
+-AC_CHECK_LIB(ossaudio, _oss_ioctl)
++# NetBSD and OpenBSD have an OSS compatability library
++AH_TEMPLATE([HAVE_LIBOSSAUDIO], [Have -lossaudio for NetBSD and OpenBSD])
++AC_CHECK_LIB(ossaudio, _oss_ioctl, [have_libossaudio=true])
+ if test x$have_libossaudio = xtrue; then
+ AC_DEFINE(HAVE_LIBOSSAUDIO,1)
+ OSSAUDIO_LIBS=-lossaudio
+@@ -457,9 +464,14 @@ have_libavcodec=false
+ 
+ AVCODEC_BUILD="4734"
+ 
++OLD_LIBS="$LIBS"
++LIBS="$LIBS -lvorbis -lvorbisenc -logg -la52 -lmp3lame"
++
+ dnl PKG_CHECK_MODULES(AVCODEC, avcodec_acl = $AVCODEC_REQUIRED, have_libavcodec="true", have_libavcodec="false")
+ ACL_PATH_AVCODEC($AVCODEC_BUILD , have_libavcodec="true", have_libavcodec="false")
+ 
++LIBS="$OLD_LIBS"
++
+ AVCODEC_REQUIRED=$AVCODEC_VERSION
+ 
+ AM_CONDITIONAL(HAVE_LIBAVCODEC, test x$have_libavcodec = xtrue)
+@@ -581,7 +593,7 @@ COMMON_CFLAGS="-finline-functions -Wall 
+ 
+ dnl Optimizing flags
+ 
+-LQT_OPT_CFLAGS($host_cpu, ["-O3 -funroll-all-loops -fomit-frame-pointer"])
++dnl LQT_OPT_CFLAGS($host_cpu, ["-O3 -funroll-all-loops -fomit-frame-pointer"])
+ 
+ AH_TEMPLATE([NDEBUG],
+             [Causes debug code to e removed])
+@@ -590,7 +602,7 @@ if test x$LQT_DEBUG != xtrue; then
+ AC_DEFINE(NDEBUG)
+ fi
+ 
+-CFLAGS="$OPT_CFLAGS $COMMON_CFLAGS"
++CFLAGS="$CFLAGS $OPT_CFLAGS $COMMON_CFLAGS"
+ 
+ # -L is required so that linker can find libquicktime when DESTDIR is used.
+ # libtool bug, documented at: http://www.geocrawler.com/mail/thread.php3?subject=install+phase+fails&list=404

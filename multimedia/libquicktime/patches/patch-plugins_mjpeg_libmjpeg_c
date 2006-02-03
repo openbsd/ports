@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_mjpeg_libmjpeg_c,v 1.1 2006/02/03 04:55:56 jakemsr Exp $
+--- plugins/mjpeg/libmjpeg.c.orig	Sun Jul 31 15:19:29 2005
++++ plugins/mjpeg/libmjpeg.c	Sun Jul 31 15:19:49 2005
+@@ -19,7 +19,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>	/* for memcpy & bzero prototypes */
+-#include "colormodels.h"
++#include <quicktime/colormodels.h>
+ #include "libmjpeg.h"
+ 
+ /* JPEG MARKERS */

@@ -1,8 +1,9 @@
-$OpenBSD: patch-utils_yuv4toyuv_c,v 1.1 2004/12/04 21:44:34 sturm Exp $
---- utils/yuv4toyuv.c.orig	Fri Aug 29 08:48:22 2003
-+++ utils/yuv4toyuv.c	Mon Aug  9 03:47:49 2004
-@@ -1,4 +1,5 @@
- #include <quicktime/quicktime.h>
+$OpenBSD: patch-utils_yuv4toyuv_c,v 1.2 2006/02/03 04:55:56 jakemsr Exp $
+--- utils/yuv4toyuv.c.orig	Mon Dec  6 09:15:48 2004
++++ utils/yuv4toyuv.c	Sun Jan 16 18:44:29 2005
+@@ -1,5 +1,6 @@
+ #include <quicktime/lqt.h>
+ #include <lqt_funcprotos.h>
 +#include "funcprotos.h"
  
  int usage(void)

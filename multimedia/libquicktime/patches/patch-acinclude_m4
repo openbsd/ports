@@ -1,0 +1,13 @@
+$OpenBSD: patch-acinclude_m4,v 1.1 2006/02/03 04:55:56 jakemsr Exp $
+--- acinclude.m4.orig	Sun Jan 22 22:33:47 2006
++++ acinclude.m4	Sun Jan 22 22:41:38 2006
+@@ -427,7 +427,8 @@ dnl
+ 
+ if test "x$avcodec_prefix" != x; then
+ AVCODEC_CFLAGS="-I$avcodec_prefix/include"
+-AVCODEC_LIBS="-L$avcodec_prefix/lib -lavcodec"
++dnl AVCODEC_LIBS="-L$avcodec_prefix/lib -lavcodec"
++AVCODEC_LIBS="$AVCODEC_LIBS"
+ ACL_CHECK_AVCODEC([$1])
+   if test "x$avcodec_ok" = "xtrue"; then
+     avcodec_done="true"
