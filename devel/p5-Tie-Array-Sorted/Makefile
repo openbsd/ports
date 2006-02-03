@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/30 03:16:15 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2006/02/03 16:36:36 msf Exp $
 
 COMMENT=	"an array which is kept ordered"
 
-DISTNAME=	Tie-Array-Sorted-1.3
+DISTNAME=	Tie-Array-Sorted-1.4
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
