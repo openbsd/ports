@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/21 03:57:55 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2006/02/03 16:29:57 msf Exp $
 
 COMMENT=	"refresh perl %INC files when updated on disk"
 
-DISTNAME=	Module-Refresh-0.05
+DISTNAME=	Module-Refresh-0.09
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
