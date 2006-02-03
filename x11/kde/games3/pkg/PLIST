@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2006/01/03 16:55:50 espie Exp $
+@comment $OpenBSD: PLIST,v 1.18 2006/02/03 15:06:12 espie Exp $
 bin/atlantik
 bin/kasteroids
 bin/katomic
@@ -2305,14 +2305,26 @@ share/doc/HTML/en/klickety/
 share/doc/HTML/en/klickety/common
 share/doc/HTML/en/klickety/index.cache.bz2
 share/doc/HTML/en/klickety/index.docbook
+share/doc/HTML/en/klickety/screenshot.png
 share/doc/HTML/en/klines/
 share/doc/HTML/en/klines/common
 share/doc/HTML/en/klines/index.cache.bz2
 share/doc/HTML/en/klines/index.docbook
 share/doc/HTML/en/kmahjongg/
+share/doc/HTML/en/kmahjongg/background.png
+share/doc/HTML/en/kmahjongg/boardeditor.png
 share/doc/HTML/en/kmahjongg/common
+share/doc/HTML/en/kmahjongg/config.png
+share/doc/HTML/en/kmahjongg/gamescreen.png
+share/doc/HTML/en/kmahjongg/highscore.png
 share/doc/HTML/en/kmahjongg/index.cache.bz2
 share/doc/HTML/en/kmahjongg/index.docbook
+share/doc/HTML/en/kmahjongg/layout.png
+share/doc/HTML/en/kmahjongg/numbered.png
+share/doc/HTML/en/kmahjongg/shortcuts.png
+share/doc/HTML/en/kmahjongg/showremoved.png
+share/doc/HTML/en/kmahjongg/theme.png
+share/doc/HTML/en/kmahjongg/tileset.png
 share/doc/HTML/en/kmines/
 share/doc/HTML/en/kmines/common
 share/doc/HTML/en/kmines/index.cache.bz2
@@ -2347,6 +2359,7 @@ share/doc/HTML/en/kreversi/
 share/doc/HTML/en/kreversi/common
 share/doc/HTML/en/kreversi/index.cache.bz2
 share/doc/HTML/en/kreversi/index.docbook
+share/doc/HTML/en/kreversi/kreversi-configuration.png
 share/doc/HTML/en/kreversi/kreversi1.png
 share/doc/HTML/en/ksame/
 share/doc/HTML/en/ksame/common
@@ -2356,6 +2369,7 @@ share/doc/HTML/en/kshisen/
 share/doc/HTML/en/kshisen/common
 share/doc/HTML/en/kshisen/index.cache.bz2
 share/doc/HTML/en/kshisen/index.docbook
+share/doc/HTML/en/kshisen/kshisen-configuration.png
 share/doc/HTML/en/kshisen/score-formula.png
 share/doc/HTML/en/kshisen/score-formula.tex
 share/doc/HTML/en/ksirtet/
@@ -2404,6 +2418,7 @@ share/doc/HTML/en/ktuberling/menu-game.png
 share/doc/HTML/en/ktuberling/menu-help.png
 share/doc/HTML/en/ktuberling/menu-playground.png
 share/doc/HTML/en/ktuberling/menu-raw.png
+share/doc/HTML/en/ktuberling/menu-settings.png
 share/doc/HTML/en/ktuberling/menu-speech.png
 share/doc/HTML/en/ktuberling/technical-reference.docbook
 share/doc/HTML/en/ktuberling/toolbar.png
