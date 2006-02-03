@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2005/12/25 16:33:47 steven Exp $
+@comment $OpenBSD: PLIST,v 1.39 2006/02/03 14:14:36 bernd Exp $
 %%SHARED%%
 bin/xml2-config
 bin/xmlcatalog
@@ -187,7 +187,7 @@ share/doc/libxml2/html/tutorial/ix01.html
 share/doc/libxml2/html/tutorial/xmltutorial.pdf
 share/doc/libxml2/html/w3c.png
 share/doc/libxml2/html/xml.html
-@exec %D/share/libxml2/rebuild
 share/libxml2/
 share/libxml2/rebuild
+@exec %D/share/libxml2/rebuild
 @extra /var/db/xmlcatalog
