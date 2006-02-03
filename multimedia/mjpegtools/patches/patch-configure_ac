@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure_ac,v 1.1 2006/02/03 05:08:41 jakemsr Exp $
+--- configure.ac.orig	Sun Sep 18 18:58:48 2005
++++ configure.ac	Thu Dec 22 02:14:18 2005
+@@ -446,7 +446,8 @@ dnl done with the helper script cpuinfo.
+ dnl correctly is complex and lengthy (about as long as the entire configure.ac
+ dnl file).
+ 
+-if test x$have_x86cpu = xtrue -o x$have_ppccpu = xtrue; then
++# if test x$have_x86cpu = xtrue -o x$have_ppccpu = xtrue; then
++if false ; then
+   if test x$host_alias != x; then
+     dnl This is to allow cross compiling
+     AC_MSG_CHECKING(sub-architecture settings)

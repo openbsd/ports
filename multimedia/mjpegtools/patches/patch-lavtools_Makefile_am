@@ -1,0 +1,30 @@
+$OpenBSD: patch-lavtools_Makefile_am,v 1.1 2006/02/03 05:08:41 jakemsr Exp $
+--- lavtools/Makefile.am.orig	Thu Jun 16 10:09:37 2005
++++ lavtools/Makefile.am	Sat Dec 24 02:41:33 2005
+@@ -41,12 +41,13 @@ LAV_ALL_LIB_OPTS = \
+ 
+ liblavfile_la_SOURCES = editlist.c lav_io.c avilib.c
+ liblavfile_la_CPPFLAGS = $(AM_CPPFLAGS) $(LIBDV_CFLAGS) $(JPEG_CFLAGS) $(LIBQUICKTIME_CFLAGS)
+-liblavfile_la_LDFLAGS = $(LAV_ALL_LIB_OPTS) \
+-	$(LIBQUICKTIME_LIBS) $(JPEG_LIBS) $(LIBDV_LIBS)
++liblavfile_la_LDFLAGS = $(LAV_ALL_LIB_OPTS)
++liblavfile_la_LIBADD = $(LIBQUICKTIME_LIBS) $(JPEG_LIBS) $(LIBDV_LIBS)
+ 
+ liblavjpeg_la_SOURCES = jpegutils.c
+ liblavjpeg_la_CPPFLAGS = $(AM_CPPFLAGS) $(JPEG_CFLAGS)
+-liblavjpeg_la_LDFLAGS = $(LAV_ALL_LIB_OPTS) $(JPEG_LIBS)
++liblavjpeg_la_LDFLAGS = $(LAV_ALL_LIB_OPTS)
++liblavjpeg_la_LIBADD = $(JPEG_LIBS)
+ 
+ liblavrec_la_SOURCES = liblavrec.c audiolib.c frequencies.c
+ liblavrec_la_CPPFLAGS = $(AM_CPPFLAGS) # so automake doesn't complain about audiolib & frequencies
+@@ -165,7 +166,8 @@ jpeg2yuv_CPPFLAGS = $(AM_CPPFLAGS) $(JPE
+ jpeg2yuv_LDADD = $(LIBMJPEGUTILS) liblavjpeg.la $(JPEG_LIBS)
+ 
+ png2yuv_SOURCES = png2yuv.c colorspace.c subsample.c
+-png2yuv_LDADD = $(LIBMJPEGUTILS) -lpng -lz -lm
++png2yuv_CPPFLAGS = $(AM_CPPFLAGS) $(LIBPNG_CFLAGS)
++png2yuv_LDADD = $(LIBMJPEGUTILS) $(LIBPNG_LIBS)
+ 
+ lavpipe_SOURCES = lavpipe.c pipelist.c
+ lavpipe_LDADD = $(LIBMJPEGUTILS)
