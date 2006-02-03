@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/21 11:33:16 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2006/02/03 16:56:58 msf Exp $
 
 COMMENT=	"Perl module for aliasing class names"
 
-DISTNAME=	UNIVERSAL-moniker-0.07
-PKGNAME=	p5-Universal-moniker-0.07
+DISTNAME=	UNIVERSAL-moniker-0.08
+PKGNAME=	p5-Universal-moniker-0.08
 CATEGORIES=	devel perl5
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=UNIVERSAL/}
