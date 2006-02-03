@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/30 01:53:55 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2006/02/03 17:01:21 msf Exp $
 
 COMMENT=	"object-oriented wrapper around vec()"
 
-DISTNAME=	Bit-Vector-Minimal-1.1
+DISTNAME=	Bit-Vector-Minimal-1.3
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
