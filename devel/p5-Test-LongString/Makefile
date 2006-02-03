@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/04/13 00:19:20 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2006/02/03 16:58:31 msf Exp $
 
 COMMENT= 	"tests strings for equality"
 
-DISTNAME=	Test-LongString-0.07
+DISTNAME=	Test-LongString-0.09
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
