@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2005/12/19 09:54:29 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2006/02/03 13:31:32 espie Exp $
 
 COMMENT= 		"K Desktop Environment, additional artwork"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.0
+VERSION=		3.5.1
 DISTNAME=		kdeartwork-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}
 MODKDE_VERSION=		3.5
 
 LIB_DEPENDS=kdecore.6,DCOP,kdefx,kdesu,kdeui,kio,kparts,kscreensaver::x11/kde/libs3 \

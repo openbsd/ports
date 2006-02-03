@@ -1,6 +1,6 @@
-$OpenBSD: patch-kscreensaver_kdesavers_rotation_cpp,v 1.1 2004/09/22 21:22:28 espie Exp $
---- kscreensaver/kdesavers/rotation.cpp.orig	Mon Sep  6 15:27:19 2004
-+++ kscreensaver/kdesavers/rotation.cpp	Mon Sep  6 15:32:19 2004
+$OpenBSD: patch-kscreensaver_kdesavers_rotation_cpp,v 1.2 2006/02/03 13:31:32 espie Exp $
+--- kscreensaver/kdesavers/rotation.cpp.orig	Sat Sep 10 10:14:48 2005
++++ kscreensaver/kdesavers/rotation.cpp	Sun Jan 29 00:20:16 2006
 @@ -80,6 +80,9 @@ extern "C"
  // EulerOdeSolver implementation
  //-----------------------------------------------------------------------------
@@ -9,5 +9,5 @@ $OpenBSD: patch-kscreensaver_kdesavers_rotation_cpp,v 1.1 2004/09/22 21:22:28 es
 +#undef _C
 +
  EulerOdeSolver::EulerOdeSolver(
-    const double &_t,
-    const double &_dt,
+    const double &t_,
+    const double &dt_,

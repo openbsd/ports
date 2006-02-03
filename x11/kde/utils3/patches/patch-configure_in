@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure_in,v 1.1 2005/12/06 07:06:20 espie Exp $
---- configure.in.orig	Fri Nov 25 10:58:41 2005
-+++ configure.in	Fri Nov 25 10:59:06 2005
-@@ -508,7 +508,7 @@ AC_SUBST(XMMS_LIBS)
- AC_SUBST(XMMS_LDFLAGS)
+$OpenBSD: patch-configure_in,v 1.2 2006/02/03 13:31:33 espie Exp $
+--- configure.in.orig	Sat Jan 21 21:10:56 2006
++++ configure.in	Fri Jan 27 12:31:45 2006
+@@ -509,7 +509,7 @@ AC_SUBST(XMMS_LDFLAGS)
  AC_SUBST(XMMS_INCLUDES)
  
--KDE_CHECK_LIB(knewstuff, main, [MY_LIBKNEWSTUFF="-lknewstuff"])
-+KDE_CHECK_LIB(knewstuff, main, [MY_LIBKNEWSTUFF="-lknewstuff"],, -lstdc++)
- AC_SUBST(MY_LIBKNEWSTUFF)
- 
- AC_CHECK_LIB(kvm, main, [LIBKVM="-lkvm"])
+ kde_have_knewstuff=yes
+-KDE_CHECK_LIB(knewstuff, main, [MY_LIBKNEWSTUFF="-lknewstuff"], kde_have_knewstuff=no)
++KDE_CHECK_LIB(knewstuff, main, [MY_LIBKNEWSTUFF="-lknewstuff"], kde_have_knewstuff=no, -lstdc++)
+ if test "$kde_have_knewstuff" = "yes"; then
+   AC_DEFINE(HAVE_KNEWSTUFF, 1, [Define if you have knewstuff])
+   AC_SUBST(MY_LIBKNEWSTUFF)

@@ -1,7 +1,7 @@
-$OpenBSD: patch-superkaramba_src_misc_python_cpp,v 1.1 2005/12/06 07:06:20 espie Exp $
---- superkaramba/src/misc_python.cpp.orig	Fri Nov 25 09:22:25 2005
-+++ superkaramba/src/misc_python.cpp	Fri Nov 25 09:22:51 2005
-@@ -425,7 +425,7 @@ PyObject* py_hide(PyObject *, PyObject *
+$OpenBSD: patch-superkaramba_src_misc_python_cpp,v 1.2 2006/02/03 13:31:33 espie Exp $
+--- superkaramba/src/misc_python.cpp.orig	Sat Jan 21 21:07:34 2006
++++ superkaramba/src/misc_python.cpp	Fri Jan 27 12:30:21 2006
+@@ -617,7 +617,7 @@ PyObject* py_hide(PyObject *, PyObject *
  #include <sys/ioctl.h>
  #include <net/if.h>
  #include <arpa/inet.h>
