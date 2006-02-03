@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2005/11/13 21:11:13 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.6 2006/02/03 05:13:05 jakemsr Exp $
 
 COMMENT=		"video stream processing tools"
 
 DISTNAME=		transcode-1.0.2
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://www.transcoding.org/
@@ -101,7 +102,7 @@ PKG_ARGS+=		-Dlzo=0
 
 .if ${FLAVOR:L:Mmjpegtools}
 CONFIGURE_ARGS+=	--enable-mjpegtools
-BUILD_DEPENDS+=		::multimedia/mjpegtools
+LIB_DEPENDS+=		mjpegutils.4::multimedia/mjpegtools
 RUN_DEPENDS+=		::multimedia/mjpegtools
 PKG_ARGS+=		-Dmjpegtools=1
 .else
