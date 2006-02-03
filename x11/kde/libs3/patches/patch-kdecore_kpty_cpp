@@ -1,0 +1,67 @@
+$OpenBSD: patch-kdecore_kpty_cpp,v 1.1 2006/02/03 12:23:58 espie Exp $
+--- kdecore/kpty.cpp.orig	Sat Jan 21 13:32:13 2006
++++ kdecore/kpty.cpp	Mon Jan 23 18:56:28 2006
+@@ -95,20 +95,20 @@ extern "C" {
+ # endif
+ #endif
+ 
+-#if defined (__FreeBSD__) || defined (__NetBSD__) || defined (__OpenBSD__) || defined (__bsdi__) || defined(__APPLE__)
++#if defined (__FreeBSD__) || defined (__NetBSD__) || defined (__bsdi__) || defined(__APPLE__)
+ # define _tcgetattr(fd, ttmode) ioctl(fd, TIOCGETA, (char *)ttmode)
+ #else
+-# if defined(_HPUX_SOURCE) || defined(__Lynx__) || defined (__CYGWIN__)
++# if defined(_HPUX_SOURCE) || defined(__Lynx__) || defined (__CYGWIN__) || defined(__OpenBSD__)
+ #  define _tcgetattr(fd, ttmode) tcgetattr(fd, ttmode)
+ # else
+ #  define _tcgetattr(fd, ttmode) ioctl(fd, TCGETS, (char *)ttmode)
+ # endif
+ #endif
+ 
+-#if defined (__FreeBSD__) || defined (__NetBSD__) || defined (__OpenBSD__) || defined (__bsdi__) || defined(__APPLE__)
++#if defined (__FreeBSD__) || defined (__NetBSD__) || defined (__bsdi__) || defined(__APPLE__)
+ # define _tcsetattr(fd, ttmode) ioctl(fd, TIOCSETA, (char *)ttmode)
+ #else
+-# if defined(_HPUX_SOURCE) || defined(__CYGWIN__)
++# if defined(_HPUX_SOURCE) || defined(__CYGWIN__) || defined(__OpenBSD__)
+ #  define _tcsetattr(fd, ttmode) tcsetattr(fd, TCSANOW, ttmode) 
+ # else
+ #  define _tcsetattr(fd, ttmode) ioctl(fd, TCSETS, (char *)ttmode)
+@@ -201,6 +201,19 @@ bool KPty::open()
+   if (d->masterFd >= 0)
+     return true;
+ 
++
++#if defined(__OpenBSD__)
++
++  char cpty[16];
++
++  if (openpty(&d->masterFd, &d->slaveFd, cpty, NULL, &d->winSize) == 0) {
++    d->ttyName = cpty;
++  } else {
++    kdWarning(175) << "Can't open slave pseudo teletype" << endl;
++    return false;
++  }
++
++#else
+   QCString ptyName;
+ 
+   // Find a master pty that we can open ////////////////////////////////
+@@ -314,6 +327,7 @@ bool KPty::open()
+   ioctl(d->slaveFd, I_PUSH, "ldterm");
+ #endif
+ 
++#endif /* OpenBSD */
+     // set xon/xoff & control keystrokes
+   // without the '::' some version of HP-UX thinks, this declares
+   // the struct in this class, in this method, and fails to find
+@@ -529,8 +543,10 @@ int KPty::slaveFd() const
+ // private
+ bool KPty::chownpty(bool grant)
+ {
++#if !defined(__OpenBSD__)
+   KProcess proc;
+   proc << locate("exe", BASE_CHOWN) << (grant?"--grant":"--revoke") << QString::number(d->masterFd);
+   return proc.start(KProcess::Block) && proc.normalExit() && !proc.exitStatus();
++#endif
+ }
+ 
