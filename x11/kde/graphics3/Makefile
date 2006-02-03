@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.55 2006/01/13 22:49:56 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2006/02/03 18:42:01 espie Exp $
 
 COMMENT=		"K Desktop Environment, graphic applications"
 COMMENT-kamera=		"KDE interface to digital cameras"
 COMMENT-kpov=		"KDE modeller for povray"
 COMMENT-sane=		"KDE interface to scanners"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.0
+VERSION=		3.5.1
 DISTNAME=		kdegraphics-${VERSION}
 MODKDE_VERSION=		3.5
 
 FLAVORS=debug
 SEPARATE_BUILD=flavored
 MULTI_PACKAGES=-kpov -kamera -sane
-PKGNAME=${DISTNAME}p1
-PKGNAME-kamera=kamera-${VERSION}p0
-PKGNAME-kpov=kpovmodeller-${VERSION}p1
-PKGNAME-sane=ksane-${VERSION}p1
+PKGNAME=${DISTNAME}
+PKGNAME-kamera=kamera-${VERSION}
+PKGNAME-kpov=kpovmodeller-${VERSION}
+PKGNAME-sane=ksane-${VERSION}
 SHARED_LIBS=		kghostviewlib	1.0 \
 			kimageviewer	1.0 \
 			kmultipage	1.0 \
