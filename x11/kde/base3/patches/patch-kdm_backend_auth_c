@@ -1,6 +1,6 @@
-$OpenBSD: patch-kdm_backend_auth_c,v 1.4 2005/03/29 21:18:35 espie Exp $
---- kdm/backend/auth.c.orig	Wed Feb 23 12:25:59 2005
-+++ kdm/backend/auth.c	Wed Mar 23 11:54:51 2005
+$OpenBSD: patch-kdm_backend_auth_c,v 1.5 2006/02/03 12:23:15 espie Exp $
+--- kdm/backend/auth.c.orig	Thu Jan 19 18:03:14 2006
++++ kdm/backend/auth.c	Tue Jan 24 12:11:35 2006
 @@ -41,6 +41,9 @@ from the copyright holder.
  #include <sys/stat.h>
  #include <fcntl.h>
@@ -35,5 +35,5 @@ $OpenBSD: patch-kdm_backend_auth_c,v 1.4 2005/03/29 21:18:35 espie Exp $
 +    }
 +#endif
  	Debug( "file: %s  auth: %p\n", d->authFile, auths );
- 	ret = TRUE;
  	for (i = 0; i < count; i++) {
+ 		/*

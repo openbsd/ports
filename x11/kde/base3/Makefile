@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.52 2006/01/13 22:49:55 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2006/02/03 12:23:15 espie Exp $
 
 COMMENT= 		"K Desktop Environment, basic applications"
 COMMENT-plugins=	"Konqueror nsplugins, essentially native JDK"
 COMMENT-samba=		"K Desktop Environment, samba support"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.0
+VERSION=		3.5.1
 DISTNAME=		kdebase-${VERSION}
-PKGNAME=		${DISTNAME}p1
-PKGNAME-samba=		kdesamba-${VERSION}p0
+PKGNAME=		${DISTNAME}
+PKGNAME-samba=		kdesamba-${VERSION}
 MODKDE_VERSION?=	3.5
 SHARED_LIBS=		kasbar			2.0 \
 			kateinterfaces		1.0 \
@@ -44,7 +44,7 @@ WANTLIB+=	Xcursor Xrandr Xss Xt Xtst Xxf86misc \
 		pcre pcreposix qtmcop soundserver_idl ssl stdc++ \
 		vorbis vorbisenc vorbisfile xkbfile GLU fontenc \
 		Xinerama Xft Xfixes fontconfig GL Xcomposite Xdamage \
-		Half Imath IlmImf Iex
+		Half Imath IlmImf Iex Xdmcp Xau
 
 .endif
 

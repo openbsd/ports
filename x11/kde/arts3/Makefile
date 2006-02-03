@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.47 2006/01/13 22:49:55 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2006/02/03 12:23:14 espie Exp $
 
 COMMENT=		"K Desktop Environment, aRTs"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.0
-DISTNAME=		arts-1.5.0
+VERSION=		3.5.1
+DISTNAME=		arts-1.5.1
 MODKDE_VERSION?=	3.5
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}
 SHARED_LIBS=		artsc			1.0 \
 			artscbackend		1.0 \
 			artsdsp			1.0 \

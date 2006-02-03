@@ -1,9 +1,9 @@
-$OpenBSD: patch-kcontrol_kfontinst_configure_in_in,v 1.1 2005/03/30 19:25:23 espie Exp $
---- kcontrol/kfontinst/configure.in.in.orig	Wed Mar 30 13:00:20 2005
-+++ kcontrol/kfontinst/configure.in.in	Wed Mar 30 13:00:38 2005
-@@ -89,6 +89,7 @@ if test "$KFI_FOUND_FREETYPE" -eq 1; the
-             *-*-linux*) UNAME='Linux' ;;
+$OpenBSD: patch-kcontrol_kfontinst_configure_in_in,v 1.2 2006/02/03 12:23:15 espie Exp $
+--- kcontrol/kfontinst/configure.in.in.orig	Thu Jan 19 18:00:50 2006
++++ kcontrol/kfontinst/configure.in.in	Tue Jan 24 12:12:05 2006
+@@ -90,6 +90,7 @@ if test "$KFI_FOUND_FREETYPE" -eq 1; the
              *-*-freebsd*) UNAME='FreeBSD' ;;
+             *-*-kfreebsd-gnu*) UNAME='GNU/kFreeBSD' ;;
              *-*-netbsd*) UNAME='NetBSD' ;;
 +	    *-*-openbsd*) UNAME='OpenBSD' ;;
              *-*-solaris*) UNAME='Solaris' ;;

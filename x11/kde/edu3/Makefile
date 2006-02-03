@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2006/01/13 22:49:55 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2006/02/03 12:23:15 espie Exp $
 
 COMMENT=		"K Desktop Environment, edutainment"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.0
+VERSION=		3.5.1
 DISTNAME=		kdeedu-${VERSION}
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}
 MODKDE_VERSION?=	3.5
 FLAVORS=debug
 SHARED_LIBS=		extdate		4.0 \
