@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_graphics_x11_x11_c,v 1.1 2006/02/03 21:49:59 aaron Exp $
+--- src/graphics/x11/x11.c.orig	Fri Feb  3 17:26:41 2006
++++ src/graphics/x11/x11.c	Fri Feb  3 17:25:30 2006
+@@ -631,7 +631,7 @@
+ 			ASPECT_RATIO(GFX_HEIGHT) : GFX_HEIGHT) * scale);
+ 
+ 		shminfo.shmid = shmget (IPC_PRIVATE, ximage->bytes_per_line *
+-			ximage->height, IPC_CREAT | 0600);                              
++			ximage->height, IPC_CREAT | 0666);                              
+ 		if (shminfo.shmid == -1) {
+ 			fprintf (stderr,
+ 				"x11: can't allocate X shared memory\n");
