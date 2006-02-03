@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/11/21 18:01:03 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2006/02/03 20:45:40 steven Exp $
 
 COMMENT=	"Network performance benchmark"
 
@@ -9,7 +9,7 @@ MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
 #MASTER_SITES=	ftp://ftp.cup.hp.com/dist/networking/benchmarks/netperf/ \
 #		ftp://ftp.cup.hp.com/dist/networking/benchmarks/netperf/archive/ \
-MASTER_SITES= \
+MASTER_SITES=	ftp://ftp.netperf.org/netperf/archive/ \
 		http://ftp.sunet.se/pub/network/monitoring/netperf/ \
 		http://ftp.sunet.se/pub/network/monitoring/netperf/archive/
 
