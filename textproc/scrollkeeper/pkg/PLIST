@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2005/12/30 08:14:33 steven Exp $
+@comment $OpenBSD: PLIST,v 1.14 2006/02/03 16:00:09 bernd Exp $
 %%SHARED%%
 bin/scrollkeeper-config
 bin/scrollkeeper-extract
@@ -36,9 +36,6 @@ share/examples/scrollkeeper/
 share/examples/scrollkeeper/scrollkeeper.conf
 @sample ${SYSCONFDIR}/scrollkeeper.conf
 share/libxml2/scrollkeeper.spec
-@exec %D/share/libxml2/rebuild
-@exec %D/bin/scrollkeeper-rebuilddb -q
-@unexec %D/share/libxml2/rebuild
 share/locale/am/
 share/locale/am/LC_MESSAGES/
 share/locale/am/LC_MESSAGES/scrollkeeper.mo
@@ -160,5 +157,8 @@ share/xml/scrollkeeper/
 share/xml/scrollkeeper/dtds/
 share/xml/scrollkeeper/dtds/scrollkeeper-cl.dtd
 share/xml/scrollkeeper/dtds/scrollkeeper-omf.dtd
+@exec %D/share/libxml2/rebuild
+@exec %D/bin/scrollkeeper-rebuilddb -q
+@unexec %D/share/libxml2/rebuild
 @extraunexec rm -rf /var/db/scrollkeeper/
 @extraunexec rm -f /var/log/scrollkeeper.log*
