@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/11/21 17:51:45 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2006/02/03 19:57:32 steven Exp $
 
 COMMENT=	"curses-based mp3 player"
 
@@ -18,7 +18,7 @@ WANTLIB=		X11 Xext c curses iberty m pthread usbhid
 LIB_DEPENDS=	SDL::devel/sdl \
 		smpeg.1.3:smpeg-*:devel/smpeg
 
-MASTER_SITES=	http://www.xanadunet.net/ksmp3play/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ksmp3play/}
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
