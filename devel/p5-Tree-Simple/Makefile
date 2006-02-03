@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/22 02:18:40 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2006/02/03 16:52:38 msf Exp $
 
 COMMENT=	"A simple tree object"
 
-DISTNAME=	Tree-Simple-1.14
+DISTNAME=	Tree-Simple-1.15
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
@@ -18,8 +18,9 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Tree/}
 
 CONFIGURE_STYLE= perl
 
-REGRESS_DEPENDS=	::devel/p5-Test-Exception \
-			::devel/p5-Test-Memory-Cycle
+BUILD_DEPENDS=	::devel/p5-Test-Exception \
+		:p5-Test-Memory-Cycle->=1.02:devel/p5-Test-Memory-Cycle
+REGRESS_DEPENDS= ${BUILD_DEPENDS}
 
 PKG_ARCH=	*
 
