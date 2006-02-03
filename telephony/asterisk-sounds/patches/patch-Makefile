@@ -1,0 +1,22 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2006/02/03 16:35:04 ian Exp $
+# These aren't ifdeffed OpenBSD as they're too trivial to feed back...
+--- Makefile.orig	Thu Dec  1 18:20:51 2005
++++ Makefile	Tue Jan 31 18:36:41 2006
+@@ -16,7 +16,7 @@
+ PWD=$(shell pwd)
+ # Where to install asterisk after compiling
+ # Default -> leave empty
+-INSTALL_PREFIX=
++INSTALL_PREFIX=${TRUEPREFIX}
+ 
+ # Staging directory
+ # Files are copied here temporarily during the install process
+@@ -25,7 +25,7 @@ INSTALL_PREFIX=
+ DESTDIR=
+ 
+ ASTLIBDIR=$(INSTALL_PREFIX)/usr/lib/asterisk
+-ASTVARLIBDIR=$(INSTALL_PREFIX)/var/lib/asterisk
++ASTVARLIBDIR=$(INSTALL_PREFIX)/share/asterisk
+ ASTETCDIR=$(INSTALL_PREFIX)/etc/asterisk
+ ASTSPOOLDIR=$(INSTALL_PREFIX)/var/spool/asterisk
+ ASTLOGDIR=$(INSTALL_PREFIX)/var/log/asterisk
