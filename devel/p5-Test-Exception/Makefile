@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/21 02:10:54 msf Exp $
+# $OpenBSD: Makefile,v 1.3 2006/02/03 16:21:00 msf Exp $
 
 COMMENT= 	"test functions for exception based code"
 
-DISTNAME=	Test-Exception-0.20
+DISTNAME=	Test-Exception-0.21
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
