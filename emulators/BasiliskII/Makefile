@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2005/11/03 18:28:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2006/02/04 10:12:53 steven Exp $
 # $RuOBSD: Makefile,v 1.4 2002/04/29 11:07:18 grange Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2001/12/29 00:22:02 abs Exp $
 
 COMMENT=		"open source 68k Macintosh emulator"
 
 DISTNAME=		BasiliskII_src_31052001
-PKGNAME=		BasiliskII-0.9.1
+PKGNAME=		BasiliskII-0.9.1p0
 CATEGORIES=		emulators
 
-HOMEPAGE=		http://www.uni-mainz.de/~bauec002/B2Main.html
+HOMEPAGE=		http://basilisk.cebix.net/
 
 MAINTAINER=		Alexander Yurchenko <grange@openbsd.org>
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xi Xxf86dga Xxf86vm audiofile c \
 			glib gmodule iconv intl m pthread stdc++
 
-MASTER_SITES=		http://iphcip1.physik.uni-mainz.de/~cbauer/
+MASTER_SITES=		http://basilisk.cebix.net/downloads/
 
 LIB_DEPENDS=		gtk.1.2,gdk::x11/gtk+ \
 			esd.2::audio/esound

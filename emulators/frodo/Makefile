@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.14 2004/11/27 10:39:14 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2006/02/04 10:15:51 steven Exp $
 
 COMMENT=	"Commodore 64 emulator"
 
 DISTNAME=	FrodoV4_1b.Src
-PKGNAME=	frodo-4.1bp1
+PKGNAME=	frodo-4.1bp2
 DISTFILES=	FrodoV4_1b.Src${EXTRACT_SUFX}
 
 CATEGORIES=	emulators games
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-HOMEPAGE=	http://www.uni-mainz.de/~bauec002/FRMain.html
+HOMEPAGE=	http://frodo.cebix.net/
 
 # FreeWare
 PERMIT_PACKAGE_FTP=	Yes
@@ -33,7 +33,7 @@ CONFIGURE_ENV=		CFLAGS='${CFLAGS} -O3 -D__unix -DX_USE_SHM -fno-exceptions'
 
 MAKE_ENV=WISH=${WISH} FRODOLIBDIR=${FRODOLIBDIR}
 
-MASTER_SITES=	http://iphcip1.physik.uni-mainz.de/~cbauer/ \
+MASTER_SITES=	http://frodo.cebix.net/downloads/ \
  ftp://sunsite.unc.edu/pub/micro/commodore/crossplatform/emulators/unix/
 
 WRKDIST=${WRKDIR}/Frodo-4.1b
