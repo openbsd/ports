@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2006/01/08 12:37:50 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2006/02/04 16:39:47 espie Exp $
 bin/embedjs
 bin/jsaccess
 bin/kjscmd
@@ -63,16 +63,12 @@ lib/python2.4/pydcop.py
 lib/python2.4/site-packages/
 lib/python2.4/site-packages/pcop.la
 lib/python2.4/site-packages/pcop.so
-lib/ruby/
-lib/ruby/site_ruby/
-lib/ruby/site_ruby/1.8/
 lib/ruby/site_ruby/1.8/KDE/
 lib/ruby/site_ruby/1.8/KDE/korundum.rb
 lib/ruby/site_ruby/1.8/Korundum.rb
 lib/ruby/site_ruby/1.8/Qt/
 lib/ruby/site_ruby/1.8/Qt.rb
 lib/ruby/site_ruby/1.8/Qt/qtruby.rb
-lib/ruby/site_ruby/1.8/${GNU_ARCH}-openbsd${OSREV}/
 lib/ruby/site_ruby/1.8/${GNU_ARCH}-openbsd${OSREV}/korundum.la
 lib/ruby/site_ruby/1.8/${GNU_ARCH}-openbsd${OSREV}/korundum.so.0.0
 lib/ruby/site_ruby/1.8/${GNU_ARCH}-openbsd${OSREV}/qtruby.la

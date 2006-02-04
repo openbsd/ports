@@ -1,7 +1,7 @@
-$OpenBSD: patch-qtruby_rubylib_designer_uilib_Makefile_in,v 1.4 2005/10/17 11:28:24 espie Exp $
---- qtruby/rubylib/designer/uilib/Makefile.in.orig	Wed Oct  5 21:43:48 2005
-+++ qtruby/rubylib/designer/uilib/Makefile.in	Mon Oct 17 12:02:11 2005
-@@ -407,7 +407,7 @@ rubylibdir = $(RUBY_SITEARCHDIR)
+$OpenBSD: patch-qtruby_rubylib_designer_uilib_Makefile_in,v 1.5 2006/02/04 16:39:47 espie Exp $
+--- qtruby/rubylib/designer/uilib/Makefile.in.orig	Fri Jan 20 18:26:38 2006
++++ qtruby/rubylib/designer/uilib/Makefile.in	Sat Feb  4 15:56:16 2006
+@@ -411,7 +411,7 @@ rubylibdir = $(RUBY_SITEARCHDIR)
  rubylib_LTLIBRARIES = qui.la
  qui_la_SOURCES = qui.cpp
  qui_la_LDFLAGS = -module -export-dynamic $(all_libraries) -version-info 0:0:0
