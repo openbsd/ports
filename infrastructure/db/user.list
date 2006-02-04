@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.40 2006/01/25 03:36:35 david Exp $
+$OpenBSD: user.list,v 1.41 2006/02/04 13:21:27 david Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -64,3 +64,5 @@ id  user		group		port options
 553 _saned		_saned		graphics/sane-backends
 554 _avenger				mail/avenger
 555			_akpop3d	mail/akpop3d
+556 _nrpe		_nrpe		net/nagios/nrpe
+557 _snort		_snort		net/snort
