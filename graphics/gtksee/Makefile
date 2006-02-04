@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2004/11/30 01:06:36 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2006/02/04 20:25:46 steven Exp $
 
 COMMENT=	"image viewer similar to ACDSee for Windows"
 
 DISTNAME=	gtksee-0.5.0
 CATEGORIES=	graphics
 
-MASTER_SITES=	http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
+MASTER_SITES=	http://download.berlios.de/gtksee/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
