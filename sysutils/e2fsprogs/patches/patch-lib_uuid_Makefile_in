@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_uuid_Makefile_in,v 1.1 2006/02/04 18:37:36 bernd Exp $
+--- lib/uuid/Makefile.in.orig	Sat Feb  4 19:06:20 2006
++++ lib/uuid/Makefile.in	Sat Feb  4 19:06:38 2006
+@@ -54,7 +54,7 @@ DLL_STUB = libuuid
+ DLL_MYDIR = uuid
+ DLL_INSTALL_DIR = $(root_libdir)
+ 
+-ELF_VERSION = 1.2
++ELF_VERSION = $(LIBuuid_VERSION)
+ ELF_SO_VERSION = 1
+ ELF_IMAGE = libuuid
+ ELF_MYDIR = uuid

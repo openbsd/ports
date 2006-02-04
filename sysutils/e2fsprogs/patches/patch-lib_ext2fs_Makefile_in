@@ -1,7 +1,13 @@
-$OpenBSD: patch-lib_ext2fs_Makefile_in,v 1.1.1.1 2004/02/20 19:54:58 espie Exp $
---- lib/ext2fs/Makefile.in.orig	2003-11-17 01:02:03.000000000 +0100
-+++ lib/ext2fs/Makefile.in	2003-11-17 01:02:13.000000000 +0100
-@@ -144,7 +144,7 @@ ELF_SO_VERSION = 2
+$OpenBSD: patch-lib_ext2fs_Makefile_in,v 1.2 2006/02/04 18:37:36 bernd Exp $
+--- lib/ext2fs/Makefile.in.orig	Fri Mar  8 06:05:02 2002
++++ lib/ext2fs/Makefile.in	Sat Feb  4 19:04:53 2006
+@@ -139,12 +139,12 @@ DLL_LIBS = -L../.. -lcom_err
+ DLL_MYDIR = ext2fs
+ DLL_INSTALL_DIR = $(root_libdir)
+ 
+-ELF_VERSION = 2.4
++ELF_VERSION = $(LIBext2fs_VERSION)
+ ELF_SO_VERSION = 2
  ELF_IMAGE = libext2fs
  ELF_MYDIR = ext2fs
  ELF_INSTALL_DIR = $(root_libdir)

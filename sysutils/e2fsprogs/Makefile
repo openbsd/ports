@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2005/12/23 16:43:08 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.6 2006/02/04 18:37:36 bernd Exp $
 # $FreeBSD: ports/sysutils/e2fsprogs/Makefile,v 1.8 2003/02/20 19:00:47 knu Exp $
 
 COMMENT=		"utilities to manipulate ext2 filesystems"
 
 DISTNAME=		e2fsprogs-1.27
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		sysutils
 SHARED_LIBS=		e2p		2.3 \
 			ext2fs		2.4 \
@@ -30,6 +30,13 @@ SEPARATE_BUILD= 	concurrent
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-elf-shlibs
 USE_GMAKE=		Yes
+
+MAKE_FLAGS=		LIBe2p_VERSION=${LIBe2p_VERSION} \
+			LIBext2fs_VERSION=${LIBext2fs_VERSION} \
+			LIBext2fs_com_err_VERSION=${LIBext2fs_com_err_VERSION} \
+			LIBss_VERSION=${LIBss_VERSION} \
+			LIBuuid_VERSION=${LIBuuid_VERSION}
+FAKE_FLAGS=		${MAKE_FLAGS}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/ext2fs

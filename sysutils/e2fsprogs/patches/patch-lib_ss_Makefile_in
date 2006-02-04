@@ -1,7 +1,13 @@
-$OpenBSD: patch-lib_ss_Makefile_in,v 1.1.1.1 2004/02/20 19:54:58 espie Exp $
---- lib/ss/Makefile.in.orig	2003-11-17 01:05:46.000000000 +0100
-+++ lib/ss/Makefile.in	2003-11-17 01:05:55.000000000 +0100
-@@ -29,7 +29,7 @@ ELF_SO_VERSION = 2
+$OpenBSD: patch-lib_ss_Makefile_in,v 1.2 2006/02/04 18:37:36 bernd Exp $
+--- lib/ss/Makefile.in.orig	Sun Feb 24 21:04:00 2002
++++ lib/ss/Makefile.in	Sat Feb  4 19:06:07 2006
+@@ -24,12 +24,12 @@ DLL_LIBS = -L../.. -lcom_err
+ DLL_MYDIR = ss
+ DLL_INSTALL_DIR = $(root_libdir)
+ 
+-ELF_VERSION = 2.0
++ELF_VERSION = $(LIBss_VERSION)
+ ELF_SO_VERSION = 2
  ELF_IMAGE = libss
  ELF_MYDIR = ss
  ELF_INSTALL_DIR = $(root_libdir)

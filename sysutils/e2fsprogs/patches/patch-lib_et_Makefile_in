@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_et_Makefile_in,v 1.1.1.1 2004/02/20 19:54:58 espie Exp $
---- lib/et/Makefile.in.orig	2003-11-17 00:50:20.000000000 +0100
-+++ lib/et/Makefile.in	2003-11-17 00:53:01.000000000 +0100
+$OpenBSD: patch-lib_et_Makefile_in,v 1.2 2006/02/04 18:37:36 bernd Exp $
+--- lib/et/Makefile.in.orig	Sun Feb 24 21:03:59 2002
++++ lib/et/Makefile.in	Sat Feb  4 19:05:39 2006
 @@ -22,7 +22,7 @@ SRCS = $(srcdir)/error_message.c $(srcdi
  HFILES= com_err.h
  SHARE_FILES= et_c.awk et_h.awk
@@ -19,7 +19,8 @@ $OpenBSD: patch-lib_et_Makefile_in,v 1.1.1.1 2004/02/20 19:54:58 espie Exp $
  DLL_MYDIR = et
  DLL_INSTALL_DIR = $(root_libdir)
  
- ELF_VERSION = 2.0
+-ELF_VERSION = 2.0
++ELF_VERSION = $(LIBext2fs_com_err_VERSION)
  ELF_SO_VERSION = 2
 -ELF_IMAGE = libcom_err
 +ELF_IMAGE = libext2fs_com_err
