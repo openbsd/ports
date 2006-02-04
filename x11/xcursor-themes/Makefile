@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.1.1.1 2006/02/04 10:32:21 matthieu Exp $
+#	$OpenBSD: Makefile,v 1.2 2006/02/04 23:11:02 naddy Exp $
 
 COMMENT=	"X11 Cursors themes"
 VERSION=	1.0.1
@@ -19,7 +19,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yrs
 
-MASTER_SITES=		ftp://ftp.x.org/pub/X11R7.0/src/data/
+MASTER_SITES=	ftp://ftp.x.org/pub/X11R7.0/src/data/ \
+		ftp://x.mirrors.skynet.be/pub/x.org/pub/X11R7.0/src/data/
 
 SEPARATE_BUILD= 	concurrent
 USE_X11=		Yes

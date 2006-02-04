@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/02/04 10:30:52 matthieu Exp $
+# $OpenBSD: Makefile,v 1.11 2006/02/04 23:11:02 naddy Exp $
 
 COMMENT=	"X11 Cursors themes generator"
 DISTNAME=	xcursorgen-X11R7.0-1.0.0
@@ -18,7 +18,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES= 		ftp://ftp.x.org/pub/X11R7.0/src/app/
+MASTER_SITES=	ftp://ftp.x.org/pub/X11R7.0/src/app/ \
+		ftp://x.mirrors.skynet.be/pub/x.org/pub/X11R7.0/src/app/
 
 WANTLIB=		X11 Xcursor c m z
 
