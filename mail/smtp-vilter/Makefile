@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2006/01/20 14:58:52 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.14 2006/02/04 17:33:25 bernd Exp $
 
 COMMENT=	"sendmail milter to scan messages for viruses and spam"
 
 DISTNAME=	smtp-vilter-1.2.5
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=    	mail
 SHARED_LIBS=	vilter-attachment	5.1 \
@@ -25,6 +26,12 @@ WANTLIB=		c m pthread milter
 
 MASTER_SITES=  	ftp://ftp.etc.msys.ch/pub/sources/smtp-vilter/
 EXTRACT_SUFX=	.tgz
+
+MAKE_FLAGS=	LIBvilter-attachment_VERSION=${LIBvilter-attachment_VERSION} \
+		LIBvilter-clamd_VERSION=${LIBvilter-clamd_VERSION} \
+		LIBvilter-icap_VERSION=${LIBvilter-icap_VERSION} \
+		LIBvilter-spamd_VERSION=${LIBvilter-spamd_VERSION}
+FAKE_FLAGS=	${MAKE_FLAGS}
 
 NO_REGRESS=	Yes
 
