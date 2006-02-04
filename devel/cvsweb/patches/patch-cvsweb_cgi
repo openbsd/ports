@@ -1,6 +1,6 @@
-$OpenBSD: patch-cvsweb_cgi,v 1.11 2003/08/16 23:18:41 naddy Exp $
---- cvsweb.cgi.orig	2002-09-26 22:56:05.000000000 +0200
-+++ cvsweb.cgi	2003-08-17 01:07:29.000000000 +0200
+$OpenBSD: patch-cvsweb_cgi,v 1.12 2006/02/04 17:01:36 naddy Exp $
+--- cvsweb.cgi.orig	Thu Sep 26 22:56:05 2002
++++ cvsweb.cgi	Sat Feb  4 17:33:35 2006
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -wT
 +#!/usr/bin/perl -w
@@ -37,10 +37,11 @@ $OpenBSD: patch-cvsweb_cgi,v 1.11 2003/08/16 23:18:41 naddy Exp $
  );
  
  @LOGSORTKEYS = qw(cvs date rev);
-@@ -2014,20 +2009,6 @@ sub doDiff($$$$$$) {
+@@ -2013,20 +2008,6 @@ sub doDiff($$$$$$) {
+ 
  	my @difftype       = @{$difftype->{'opts'}};
  	my $human_readable = $difftype->{'colored'};
- 
+-
 -	# apply special options
 -	if ($showfunc) {
 -		push @difftype, '-p' if $f ne 's';
@@ -54,7 +55,6 @@ $OpenBSD: patch-cvsweb_cgi,v 1.11 2003/08/16 23:18:41 naddy Exp $
 -			}
 -		}
 -	}
--
+ 
  	if ($human_readable) {
  		if ($hr_ignwhite) {
- 			push @difftype, '-w';

@@ -1,6 +1,15 @@
-$OpenBSD: patch-cvsweb_conf,v 1.9 2003/08/16 18:12:10 naddy Exp $
---- cvsweb.conf.orig	2002-09-23 07:30:17.000000000 +0200
-+++ cvsweb.conf	2003-08-16 18:25:42.000000000 +0200
+$OpenBSD: patch-cvsweb_conf,v 1.10 2006/02/04 17:01:36 naddy Exp $
+--- cvsweb.conf.orig	Mon Sep 23 07:30:17 2002
++++ cvsweb.conf	Sat Feb  4 17:51:39 2006
+@@ -82,7 +82,7 @@ $cvstreedefault = $CVSrepositories[2 * 0
+ # Manual gateway
+ ##############
+ $mancgi =
+-    "http://www.FreeBSD.org/cgi/man.cgi?apropos=0&sektion=%s&query=%s&manpath=FreeBSD+5.0-current&format=html";
++    "http://www.OpenBSD.org/cgi-bin/man.cgi?apropos=0&sektion=%s&query=%s&manpath=OpenBSD+Current&arch=i386&format=html";
+ 
+ ##############
+ # Defaults for UserSettings
 @@ -115,7 +115,6 @@ $mancgi =
  	#   h      Human readable
  	#   u      Unified diff

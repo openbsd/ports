@@ -1,0 +1,12 @@
+$OpenBSD: patch-cvsweb_conf-netbsd,v 1.1 2006/02/04 17:01:36 naddy Exp $
+--- cvsweb.conf-netbsd.orig	Sat Feb  4 17:41:58 2006
++++ cvsweb.conf-netbsd	Sat Feb  4 17:42:17 2006
+@@ -65,7 +65,7 @@ $prcgi = "http://www.NetBSD.org/cgi-bin/
+ 
+ $prkeyword = "PR";
+ 
+-$mancgi = "http://www.flame.org/cgi-bin/uncgi/hman?sect=%s&page=%s&arch=i386";
++$mancgi = 'http://man.netbsd.org/cgi-bin/man-cgi?%2$s+%1$s+NetBSD-current';
+ 
+ # Allow downloading a tarball of a pkgsrc
+ $allow_tar = ($where =~ m,^pkgsrc/[^/]+/[^/]+/,);
