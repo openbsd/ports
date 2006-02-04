@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.1.1.1 2005/11/02 23:51:52 wilfried Exp $
+@comment $OpenBSD: PLIST-docs,v 1.2 2006/02/04 15:29:30 bernd Exp $
 share/doc/glibmm-${V}/
 share/doc/glibmm-${V}/docs/
 share/doc/glibmm-${V}/docs/images/
@@ -519,3 +519,17 @@ share/doc/glibmm-${V}/docs/reference/html/value_8h.html
 share/doc/glibmm-${V}/docs/reference/html/value__basictypes_8h.html
 share/doc/glibmm-${V}/docs/reference/html/value__custom_8h.html
 share/doc/glibmm-${V}/docs/reference/html/wrap_8h.html
+share/doc/glibmm-${V}/examples/
+share/doc/glibmm-${V}/examples/iochannel_stream/
+share/doc/glibmm-${V}/examples/iochannel_stream/fdstream.cc
+share/doc/glibmm-${V}/examples/iochannel_stream/fdstream.h
+share/doc/glibmm-${V}/examples/iochannel_stream/main.cc
+share/doc/glibmm-${V}/examples/markup/
+share/doc/glibmm-${V}/examples/markup/parser.cc
+share/doc/glibmm-${V}/examples/options/
+share/doc/glibmm-${V}/examples/options/main.cc
+share/doc/glibmm-${V}/examples/thread/
+share/doc/glibmm-${V}/examples/thread/dispatcher.cc
+share/doc/glibmm-${V}/examples/thread/dispatcher2.cc
+share/doc/glibmm-${V}/examples/thread/thread.cc
+share/doc/glibmm-${V}/examples/thread/threadpool.cc
