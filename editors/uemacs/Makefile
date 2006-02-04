@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/11/24 11:08:03 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2006/02/04 09:11:21 steven Exp $
 
 COMMENT=	"full screen simple editor"
 
@@ -14,8 +14,7 @@ PERMIT_DISTFILES_CDROM=	"weird no fee license"
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c termcap
 
-MASTER_SITES=	${HOMEPAGE} \
-		ftp://aquest.com/pub/uemacs400/disk2/
+MASTER_SITES=	ftp://aquest.com/pub/uemacs400/disk2/
 DISTFILES=	ue400dev.zip
 
 EXTRACT_CASES=	*.zip) ${UNZIP} -Laq ${FULLDISTDIR}/$$archive -d ${WRKDIR};;
