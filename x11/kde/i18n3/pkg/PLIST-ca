@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ca,v 1.5 2005/12/01 22:27:37 espie Exp $
+@comment $OpenBSD: PLIST-ca,v 1.6 2006/02/04 14:49:51 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.ca.xml
 share/apps/khangman/
@@ -90,6 +90,17 @@ ${DOC}kappfinder/man-kappfinder.1.docbook
 ${DOC}kapptemplate/
 ${DOC}kapptemplate/man-kapptemplate.1.docbook
 ${DOC}kate/
+${DOC}kate-plugins/
+${DOC}kate-plugins/common
+${DOC}kate-plugins/filetemplates.docbook
+${DOC}kate-plugins/htmltools.docbook
+${DOC}kate-plugins/${C}
+${DOC}kate-plugins/${I}
+${DOC}kate-plugins/insertcommand.docbook
+${DOC}kate-plugins/openheader.docbook
+${DOC}kate-plugins/textfilter.docbook
+${DOC}kate-plugins/xmlcheck.docbook
+${DOC}kate-plugins/xmltools.docbook
 ${DOC}kate/advanced.docbook
 ${DOC}kate/common
 ${DOC}kate/configuring.docbook
@@ -494,6 +505,12 @@ ${DOC}khelpcenter/visualdict/${I}
 ${DOC}khelpcenter/welcome.docbook
 ${DOC}khelpcenter/whatiskde.docbook
 ${DOC}kicker/
+${DOC}kicker-applets/
+${DOC}kicker-applets/common
+${DOC}kicker-applets/${C}
+${DOC}kicker-applets/${I}
+${DOC}kicker-applets/kolourpicker.docbook
+${DOC}kicker-applets/ktimemon.docbook
 ${DOC}kicker/common
 ${DOC}kicker/${C}
 ${DOC}kicker/${I}
@@ -565,6 +582,9 @@ ${DOC}klipper/common
 ${DOC}klipper/${C}
 ${DOC}klipper/${I}
 ${DOC}kmag/
+${DOC}kmag/common
+${DOC}kmag/${C}
+${DOC}kmag/${I}
 ${DOC}kmag/man-kmag.1.docbook
 ${DOC}kmail/
 ${DOC}kmail/common
@@ -591,8 +611,14 @@ ${DOC}kmoon/common
 ${DOC}kmoon/${C}
 ${DOC}kmoon/${I}
 ${DOC}kmousetool/
+${DOC}kmousetool/common
+${DOC}kmousetool/${C}
+${DOC}kmousetool/${I}
 ${DOC}kmousetool/man-kmousetool.1.docbook
 ${DOC}kmouth/
+${DOC}kmouth/common
+${DOC}kmouth/${C}
+${DOC}kmouth/${I}
 ${DOC}kmouth/man-kmouth.1.docbook
 ${DOC}kompare/
 ${DOC}kompare/common
@@ -796,6 +822,10 @@ ${DOC}ktouch/
 ${DOC}ktouch/common
 ${DOC}ktouch/${C}
 ${DOC}ktouch/${I}
+${DOC}kttsd/
+${DOC}kttsd/common
+${DOC}kttsd/${C}
+${DOC}kttsd/${I}
 ${DOC}kturtle/
 ${DOC}kturtle/glossary.docbook
 ${DOC}kuser/
@@ -1217,6 +1247,7 @@ ${LOC}konnector_qtopia.mo
 ${LOC}konnector_remote.mo
 ${LOC}konqsidebar_delicious.mo
 ${LOC}konqsidebar_mediaplayer.mo
+${LOC}konqsidebar_metabar.mo
 ${LOC}konqsidebar_news.mo
 ${LOC}konqueror.mo
 ${LOC}konquest.mo

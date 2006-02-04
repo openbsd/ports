@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ru,v 1.3 2005/12/01 22:27:39 espie Exp $
+@comment $OpenBSD: PLIST-ru,v 1.4 2006/02/04 14:49:52 espie Exp $
 share/apps/katepart/syntax/logohighlightstyle.ru.xml
 share/apps/khangman/
 share/apps/khangman/data/
@@ -1007,6 +1007,10 @@ ${DOC}knetattach/
 ${DOC}knetattach/common
 ${DOC}knetattach/${C}
 ${DOC}knetattach/${I}
+${DOC}knetworkconf/
+${DOC}knetworkconf/common
+${DOC}knetworkconf/${C}
+${DOC}knetworkconf/${I}
 ${DOC}knewsticker/
 ${DOC}knewsticker/common
 ${DOC}knewsticker/${C}

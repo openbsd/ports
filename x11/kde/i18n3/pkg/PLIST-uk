@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-uk,v 1.4 2005/12/01 22:27:39 espie Exp $
+@comment $OpenBSD: PLIST-uk,v 1.5 2006/02/04 14:49:52 espie Exp $
 share/doc/HTML/uk/
 ${DOC}common/
 ${DOC}common/1.png
@@ -103,6 +103,7 @@ ${LOC}audiocd_encoder_vorbis.mo
 ${LOC}audiorename_plugin.mo
 ${LOC}autorefresh.mo
 ${LOC}babelfish.mo
+${LOC}blinken.mo
 ${LOC}cervisia.mo
 ${LOC}charlatanui.mo
 ${LOC}clockapplet.mo
@@ -449,6 +450,7 @@ ${LOC}konnector_qtopia.mo
 ${LOC}konnector_remote.mo
 ${LOC}konqsidebar_delicious.mo
 ${LOC}konqsidebar_mediaplayer.mo
+${LOC}konqsidebar_metabar.mo
 ${LOC}konqsidebar_news.mo
 ${LOC}konqueror.mo
 ${LOC}konquest.mo
@@ -534,6 +536,7 @@ ${LOC}ktimemon.mo
 ${LOC}ktimer.mo
 ${LOC}ktip.mo
 ${LOC}ktnef.mo
+${LOC}ktouch.mo
 ${LOC}ktron.mo
 ${LOC}kttsd.mo
 ${LOC}ktuberling.mo
@@ -628,6 +631,7 @@ ${LOC}tippecanoe.mo
 ${LOC}trashapplet.mo
 ${LOC}tyler.mo
 ${LOC}uachangerplugin.mo
+${LOC}umbrello.mo
 ${LOC}useraccount.mo
 ${LOC}validatorsplugin.mo
 ${LOC}wakeup.mo

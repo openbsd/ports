@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-sl,v 1.5 2005/12/01 22:27:39 espie Exp $
+@comment $OpenBSD: PLIST-sl,v 1.6 2006/02/04 14:49:52 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.sl.xml
 share/apps/khangman/
@@ -494,6 +494,7 @@ ${LOC}katexmlcheck.mo
 ${LOC}katexmltools.mo
 ${LOC}katomic.mo
 ${LOC}kaudiocreator.mo
+${LOC}kay.mo
 ${LOC}kbabel.mo
 ${LOC}kbackgammon.mo
 ${LOC}kbattleship.mo
@@ -558,6 +559,7 @@ ${LOC}kcmlayout.mo
 ${LOC}kcmlilo.mo
 ${LOC}kcmlirc.mo
 ${LOC}kcmlocale.mo
+${LOC}kcmmedia.mo
 ${LOC}kcmnic.mo
 ${LOC}kcmnotify.mo
 ${LOC}kcmperformance.mo
@@ -602,6 +604,7 @@ ${LOC}kdgantt.mo
 ${LOC}kdialog.mo
 ${LOC}kdict.mo
 ${LOC}kdictapplet.mo
+${LOC}kdjview.mo
 ${LOC}kdmconfig.mo
 ${LOC}kdmgreet.mo
 ${LOC}kdvi.mo
@@ -609,6 +612,7 @@ ${LOC}kedit.mo
 ${LOC}keduca.mo
 ${LOC}kenolaba.mo
 ${LOC}kfax.mo
+${LOC}kfaxview.mo
 ${LOC}kfifteenapplet.mo
 ${LOC}kfile_au.mo
 ${LOC}kfile_avi.mo
@@ -635,6 +639,7 @@ ${LOC}kfile_m3u.mo
 ${LOC}kfile_mhtml.mo
 ${LOC}kfile_mp3.mo
 ${LOC}kfile_mpc.mo
+${LOC}kfile_mpeg.mo
 ${LOC}kfile_ogg.mo
 ${LOC}kfile_palm.mo
 ${LOC}kfile_pcx.mo
@@ -667,6 +672,7 @@ ${LOC}kfontinst.mo
 ${LOC}kfouleggs.mo
 ${LOC}kgamma.mo
 ${LOC}kgantt.mo
+${LOC}kgeography.mo
 ${LOC}kget.mo
 ${LOC}kghostview.mo
 ${LOC}kgoldrunner.mo
@@ -692,7 +698,9 @@ ${LOC}kio_fish.mo
 ${LOC}kio_floppy.mo
 ${LOC}kio_groupwise.mo
 ${LOC}kio_help.mo
+${LOC}kio_home.mo
 ${LOC}kio_imap4.mo
+${LOC}kio_jabberdisco.mo
 ${LOC}kio_lan.mo
 ${LOC}kio_ldap.mo
 ${LOC}kio_mac.mo
@@ -711,6 +719,8 @@ ${LOC}kio_smb.mo
 ${LOC}kio_smtp.mo
 ${LOC}kio_svn.mo
 ${LOC}kio_system.mo
+${LOC}kio_tar.mo
+${LOC}kio_thumbnail.mo
 ${LOC}kio_trash.mo
 ${LOC}kio_zeroconf.mo
 ${LOC}kioexec.mo
@@ -802,13 +812,16 @@ ${LOC}krdc.mo
 ${LOC}kreadconfig.mo
 ${LOC}krec.mo
 ${LOC}kregexpeditor.mo
+${LOC}kres_birthday.mo
 ${LOC}kres_blogging.mo
 ${LOC}kres_bugzilla.mo
 ${LOC}kres_exchange.mo
 ${LOC}kres_featureplan.mo
+${LOC}kres_groupware.mo
 ${LOC}kres_groupwise.mo
 ${LOC}kres_kolab.mo
 ${LOC}kres_remote.mo
+${LOC}kres_tvanytime.mo
 ${LOC}kres_xmlrpc.mo
 ${LOC}kreversi.mo
 ${LOC}krfb.mo
@@ -884,6 +897,7 @@ ${LOC}kwin.mo
 ${LOC}kwin4.mo
 ${LOC}kwin_art_clients.mo
 ${LOC}kwin_clients.mo
+${LOC}kwin_lib.mo
 ${LOC}kwireless.mo
 ${LOC}kwordquiz.mo
 ${LOC}kworldclock.mo
@@ -896,10 +910,10 @@ ${LOC}libdmctl.mo
 ${LOC}libkaddrbk_geo_xxport.mo
 ${LOC}libkaddrbk_gmx_xxport.mo
 ${LOC}libkcal.mo
-${LOC}libkcalsystem.mo
 ${LOC}libkcddb.mo
 ${LOC}libkdegames.mo
 ${LOC}libkdepim.mo
+${LOC}libkfaximgage.mo
 ${LOC}libkholidays.mo
 ${LOC}libkicker.mo
 ${LOC}libkickermenu_kdeprint.mo
@@ -942,6 +956,7 @@ ${LOC}rellinks.mo
 ${LOC}searchbarplugin.mo
 ${LOC}secpolicy.mo
 ${LOC}spy.mo
+${LOC}superkaramba.mo
 ${LOC}synaescope.mo
 ${LOC}timezones.mo
 ${LOC}tippecanoe.mo

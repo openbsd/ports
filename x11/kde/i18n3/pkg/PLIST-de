@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-de,v 1.6 2005/12/01 22:27:37 espie Exp $
+@comment $OpenBSD: PLIST-de,v 1.7 2006/02/04 14:49:52 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.de_DE.xml
 share/apps/khangman/
@@ -545,8 +545,18 @@ ${DOC}kdelibs/
 ${DOC}kdelibs/man-artsmessage.1.docbook
 ${DOC}kdelibs/man-checkXML.1.docbook
 ${DOC}kdelibs/man-dcop.1.docbook
+${DOC}kdelibs/man-kbuildsycoca.8.docbook
 ${DOC}kdelibs/man-kdeoptions.7.docbook
 ${DOC}kdelibs/man-qtoptions.7.docbook
+${DOC}kdelirc/
+${DOC}kdelirc/irkick/
+${DOC}kdelirc/irkick/common
+${DOC}kdelirc/irkick/${C}
+${DOC}kdelirc/irkick/${I}
+${DOC}kdelirc/kcmlirc/
+${DOC}kdelirc/kcmlirc/common
+${DOC}kdelirc/kcmlirc/${C}
+${DOC}kdelirc/kcmlirc/${I}
 ${DOC}kdeprint/
 ${DOC}kdeprint/add-printer-wiz.docbook
 ${DOC}kdeprint/common
@@ -622,6 +632,7 @@ ${DOC}kfloppy/${C}
 ${DOC}kfloppy/${I}
 ${DOC}kfouleggs/
 ${DOC}kfouleggs/common
+${DOC}kfouleggs/gamescreen.png
 ${DOC}kfouleggs/${C}
 ${DOC}kfouleggs/${I}
 ${DOC}kgamma/
@@ -643,8 +654,11 @@ ${DOC}kghostview/${C}
 ${DOC}kghostview/${I}
 ${DOC}kgoldrunner/
 ${DOC}kgoldrunner/common
+${DOC}kgoldrunner/editbar.png
 ${DOC}kgoldrunner/${C}
 ${DOC}kgoldrunner/${I}
+${DOC}kgoldrunner/select.png
+${DOC}kgoldrunner/tute008.png
 ${DOC}kgpg/
 ${DOC}kgpg/common
 ${DOC}kgpg/editor.png
@@ -808,6 +822,7 @@ ${DOC}kiconedit/
 ${DOC}kiconedit/common
 ${DOC}kiconedit/${C}
 ${DOC}kiconedit/${I}
+${DOC}kiconedit/kiconedit-configuration.png
 ${DOC}kig/
 ${DOC}kig/common
 ${DOC}kig/constructed_a_point.png
@@ -990,10 +1005,6 @@ ${DOC}klettres/klettres2.png
 ${DOC}klettres/klettres3.png
 ${DOC}klettres/klettres4.png
 ${DOC}klettres/klettres5.png
-${DOC}klickety/
-${DOC}klickety/common
-${DOC}klickety/${C}
-${DOC}klickety/${I}
 ${DOC}klines/
 ${DOC}klines/common
 ${DOC}klines/${C}
@@ -1012,10 +1023,6 @@ ${DOC}kmag/${C}
 ${DOC}kmag/${I}
 ${DOC}kmag/man-kmag.1.docbook
 ${DOC}kmag/screenshot.png
-${DOC}kmahjongg/
-${DOC}kmahjongg/common
-${DOC}kmahjongg/${C}
-${DOC}kmahjongg/${I}
 ${DOC}kmail/
 ${DOC}kmail/common
 ${DOC}kmail/configure.docbook
@@ -1297,6 +1304,14 @@ ${DOC}konsole/common
 ${DOC}konsole/${C}
 ${DOC}konsole/${I}
 ${DOC}konsole/konsole.png
+${DOC}konsolekalendar/
+${DOC}konsolekalendar/common
+${DOC}konsolekalendar/${C}
+${DOC}konsolekalendar/${I}
+${DOC}kontact/
+${DOC}kontact/common
+${DOC}kontact/${C}
+${DOC}kontact/${I}
 ${DOC}kooka/
 ${DOC}kooka/common
 ${DOC}kooka/${C}
@@ -1337,6 +1352,7 @@ ${DOC}kpat/man-kpat.6.docbook
 ${DOC}kpat/man.docbook
 ${DOC}kpdf/
 ${DOC}kpdf/common
+${DOC}kpdf/configure.png
 ${DOC}kpdf/${C}
 ${DOC}kpdf/${I}
 ${DOC}kpercentage/
@@ -1366,6 +1382,8 @@ ${DOC}kpoker/
 ${DOC}kpoker/common
 ${DOC}kpoker/${C}
 ${DOC}kpoker/${I}
+${DOC}kpoker/kpoker1.png
+${DOC}kpoker/kpoker2.png
 ${DOC}kpovmodeler/
 ${DOC}kpovmodeler/common
 ${DOC}kpovmodeler/defaultviewlayout.png
@@ -1435,6 +1453,7 @@ ${DOC}kreversi/
 ${DOC}kreversi/common
 ${DOC}kreversi/${C}
 ${DOC}kreversi/${I}
+${DOC}kreversi/kreversi-configuration.png
 ${DOC}kreversi/kreversi1.png
 ${DOC}krfb/
 ${DOC}krfb/common
@@ -1463,6 +1482,7 @@ ${DOC}kshisen/
 ${DOC}kshisen/common
 ${DOC}kshisen/${C}
 ${DOC}kshisen/${I}
+${DOC}kshisen/kshisen-configuration.png
 ${DOC}ksim/
 ${DOC}ksim/common
 ${DOC}ksim/${C}
@@ -1475,6 +1495,11 @@ ${DOC}ksirtet/
 ${DOC}ksirtet/common
 ${DOC}ksirtet/${C}
 ${DOC}ksirtet/${I}
+${DOC}ksmiletris/
+${DOC}ksmiletris/common
+${DOC}ksmiletris/gamescreen.png
+${DOC}ksmiletris/${C}
+${DOC}ksmiletris/${I}
 ${DOC}ksnake/
 ${DOC}ksnake/common
 ${DOC}ksnake/${C}
@@ -1654,6 +1679,13 @@ ${DOC}ktuberling/
 ${DOC}ktuberling/common
 ${DOC}ktuberling/${C}
 ${DOC}ktuberling/${I}
+${DOC}ktuberling/menu-edit.png
+${DOC}ktuberling/menu-game.png
+${DOC}ktuberling/menu-help.png
+${DOC}ktuberling/menu-playground.png
+${DOC}ktuberling/menu-raw.png
+${DOC}ktuberling/menu-settings.png
+${DOC}ktuberling/menu-speech.png
 ${DOC}ktuberling/technical-reference.docbook
 ${DOC}kturtle/
 ${DOC}kturtle/common
@@ -1708,6 +1740,8 @@ ${DOC}kview/
 ${DOC}kview/common
 ${DOC}kview/${C}
 ${DOC}kview/${I}
+${DOC}kview/kview-application-configuration.png
+${DOC}kview/kview-viewer-configuration.png
 ${DOC}kvoctrain/
 ${DOC}kvoctrain/art-query-dlg.png
 ${DOC}kvoctrain/common
@@ -1830,6 +1864,10 @@ ${DOC}kxsldbg/templates.docbook
 ${DOC}kxsldbg/templates_window.png
 ${DOC}kxsldbg/variables.docbook
 ${DOC}kxsldbg/walk_window.png
+${DOC}lilo-config/
+${DOC}lilo-config/common
+${DOC}lilo-config/${C}
+${DOC}lilo-config/${I}
 ${DOC}lisa/
 ${DOC}lisa/common
 ${DOC}lisa/${C}
@@ -2281,6 +2319,7 @@ ${LOC}konnector_qtopia.mo
 ${LOC}konnector_remote.mo
 ${LOC}konqsidebar_delicious.mo
 ${LOC}konqsidebar_mediaplayer.mo
+${LOC}konqsidebar_metabar.mo
 ${LOC}konqsidebar_news.mo
 ${LOC}konqueror.mo
 ${LOC}konquest.mo

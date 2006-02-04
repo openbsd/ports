@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-zh_CN,v 1.3 2005/12/01 22:27:39 espie Exp $
+@comment $OpenBSD: PLIST-zh_CN,v 1.4 2006/02/04 14:49:52 espie Exp $
 share/doc/HTML/zh_CN/
 ${DOC}common/
 ${DOC}common/1.png
@@ -387,7 +387,6 @@ ${LOC}kmathapplet.mo
 ${LOC}kmcop.mo
 ${LOC}kmenuapplet.mo
 ${LOC}kmenuedit.mo
-${LOC}kmessedwords.mo
 ${LOC}kmid.mo
 ${LOC}kmilo_delli8k.mo
 ${LOC}kmilo_generic.mo
@@ -423,6 +422,7 @@ ${LOC}konnector_qtopia.mo
 ${LOC}konnector_remote.mo
 ${LOC}konqsidebar_delicious.mo
 ${LOC}konqsidebar_mediaplayer.mo
+${LOC}konqsidebar_metabar.mo
 ${LOC}konqsidebar_news.mo
 ${LOC}konqueror.mo
 ${LOC}konquest.mo

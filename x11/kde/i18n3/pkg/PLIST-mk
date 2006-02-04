@@ -1,22 +1,27 @@
-@comment $OpenBSD: PLIST-mk,v 1.4 2005/12/01 22:27:38 espie Exp $
+@comment $OpenBSD: PLIST-mk,v 1.5 2006/02/04 14:49:52 espie Exp $
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
 ${LOC}ark.mo
+${LOC}ark_plugin.mo
 ${LOC}artsbuilder.mo
 ${LOC}artscontrol.mo
 ${LOC}artsmodules.mo
 ${LOC}atlantik.mo
 ${LOC}audiocd_encoder_lame.mo
 ${LOC}audiocd_encoder_vorbis.mo
+${LOC}audiorename_plugin.mo
+${LOC}autorefresh.mo
 ${LOC}clockapplet.mo
 ${LOC}cupsdconf.mo
 ${LOC}dcoprss.mo
+${LOC}dirfilterplugin.mo
 ${LOC}display.mo
 ${LOC}dockbarextension.mo
 ${LOC}drkonqi.mo
 ${LOC}extensionproxy.mo
 ${LOC}filetypes.mo
 ${LOC}htmlsearch.mo
+${LOC}imagerename_plugin.mo
 ${LOC}irkick.mo
 ${LOC}joystick.mo
 ${LOC}juk.mo
@@ -31,6 +36,7 @@ ${LOC}kabcformat_binary.mo
 ${LOC}kaboodle.mo
 ${LOC}kaccess.mo
 ${LOC}kaddressbook.mo
+${LOC}kalarm.mo
 ${LOC}kalzium.mo
 ${LOC}kappfinder.mo
 ${LOC}karm.mo
@@ -40,6 +46,7 @@ ${LOC}kate.mo
 ${LOC}katepart.mo
 ${LOC}katomic.mo
 ${LOC}kaudiocreator.mo
+${LOC}kay.mo
 ${LOC}kbabel.mo
 ${LOC}kbackgammon.mo
 ${LOC}kbattleship.mo
@@ -75,6 +82,7 @@ ${LOC}kcmioslaveinfo.mo
 ${LOC}kcmkamera.mo
 ${LOC}kcmkclock.mo
 ${LOC}kcmkded.mo
+${LOC}kcmkdnssd.mo
 ${LOC}kcmkeys.mo
 ${LOC}kcmkicker.mo
 ${LOC}kcmkio.mo
@@ -82,6 +90,7 @@ ${LOC}kcmkonq.mo
 ${LOC}kcmkonqhtml.mo
 ${LOC}kcmkonsole.mo
 ${LOC}kcmktalkd.mo
+${LOC}kcmkuick.mo
 ${LOC}kcmkurifilt.mo
 ${LOC}kcmkvaio.mo
 ${LOC}kcmkwallet.mo
@@ -95,6 +104,7 @@ ${LOC}kcmlayout.mo
 ${LOC}kcmlilo.mo
 ${LOC}kcmlirc.mo
 ${LOC}kcmlocale.mo
+${LOC}kcmmedia.mo
 ${LOC}kcmnic.mo
 ${LOC}kcmnotify.mo
 ${LOC}kcmperformance.mo
@@ -144,19 +154,27 @@ ${LOC}kfifteenapplet.mo
 ${LOC}kfile_au.mo
 ${LOC}kfile_avi.mo
 ${LOC}kfile_bmp.mo
+${LOC}kfile_cert.mo
 ${LOC}kfile_cpp.mo
 ${LOC}kfile_dds.mo
 ${LOC}kfile_deb.mo
+${LOC}kfile_desktop.mo
 ${LOC}kfile_diff.mo
 ${LOC}kfile_dvi.mo
 ${LOC}kfile_exr.mo
 ${LOC}kfile_flac.mo
+${LOC}kfile_folder.mo
 ${LOC}kfile_gif.mo
+${LOC}kfile_html.mo
 ${LOC}kfile_ico.mo
+${LOC}kfile_ics.mo
 ${LOC}kfile_jpeg.mo
+${LOC}kfile_lnk.mo
 ${LOC}kfile_m3u.mo
+${LOC}kfile_mhtml.mo
 ${LOC}kfile_mp3.mo
 ${LOC}kfile_mpc.mo
+${LOC}kfile_mpeg.mo
 ${LOC}kfile_ogg.mo
 ${LOC}kfile_palm.mo
 ${LOC}kfile_pcx.mo
@@ -173,6 +191,7 @@ ${LOC}kfile_tga.mo
 ${LOC}kfile_theora.mo
 ${LOC}kfile_tiff.mo
 ${LOC}kfile_torrent.mo
+${LOC}kfile_txt.mo
 ${LOC}kfile_vcf.mo
 ${LOC}kfile_wav.mo
 ${LOC}kfile_xbm.mo
@@ -190,11 +209,13 @@ ${LOC}kghostview.mo
 ${LOC}kgoldrunner.mo
 ${LOC}kgpg.mo
 ${LOC}kgreet_classic.mo
+${LOC}kgreet_winbind.mo
 ${LOC}khangman.mo
 ${LOC}khelpcenter.mo
 ${LOC}khexedit.mo
 ${LOC}khexedit2part.mo
 ${LOC}khotkeys.mo
+${LOC}khtmlkttsd.mo
 ${LOC}kicker.mo
 ${LOC}kiconedit.mo
 ${LOC}kinetd.mo
@@ -204,7 +225,9 @@ ${LOC}kio_finger.mo
 ${LOC}kio_fish.mo
 ${LOC}kio_floppy.mo
 ${LOC}kio_help.mo
+${LOC}kio_home.mo
 ${LOC}kio_imap4.mo
+${LOC}kio_jabberdisco.mo
 ${LOC}kio_lan.mo
 ${LOC}kio_ldap.mo
 ${LOC}kio_mac.mo
@@ -221,6 +244,8 @@ ${LOC}kio_sftp.mo
 ${LOC}kio_smb.mo
 ${LOC}kio_smtp.mo
 ${LOC}kio_system.mo
+${LOC}kio_tar.mo
+${LOC}kio_thumbnail.mo
 ${LOC}kio_trash.mo
 ${LOC}kio_zeroconf.mo
 ${LOC}kioexec.mo
@@ -255,6 +280,7 @@ ${LOC}kmplot.mo
 ${LOC}kmrml.mo
 ${LOC}knetattach.mo
 ${LOC}knewsticker.mo
+${LOC}knode.mo
 ${LOC}knotes.mo
 ${LOC}knotify.mo
 ${LOC}kodo.mo
@@ -264,7 +290,10 @@ ${LOC}kompare.mo
 ${LOC}konqueror.mo
 ${LOC}konquest.mo
 ${LOC}konsole.mo
+${LOC}kontact.mo
 ${LOC}kooka.mo
+${LOC}kopete.mo
+${LOC}korganizer.mo
 ${LOC}kpackage.mo
 ${LOC}kpager.mo
 ${LOC}kpat.mo
@@ -272,6 +301,7 @@ ${LOC}kpdf.mo
 ${LOC}kpercentage.mo
 ${LOC}kpersonalizer.mo
 ${LOC}kpf.mo
+${LOC}kpilot.mo
 ${LOC}kpoker.mo
 ${LOC}kpovmodeler.mo
 ${LOC}kppp.mo
@@ -346,10 +376,13 @@ ${LOC}kwifimanager.mo
 ${LOC}kwin.mo
 ${LOC}kwin4.mo
 ${LOC}kwin_clients.mo
+${LOC}kwin_lib.mo
 ${LOC}kwireless.mo
 ${LOC}kworldclock.mo
 ${LOC}kwriteconfig.mo
 ${LOC}kxkb.mo
+${LOC}libdmctl.mo
+${LOC}libkcal.mo
 ${LOC}libkcalsystem.mo
 ${LOC}libkcddb.mo
 ${LOC}libkdegames.mo
@@ -359,6 +392,7 @@ ${LOC}libkickermenu_kdeprint.mo
 ${LOC}libkickermenu_konsole.mo
 ${LOC}libkickermenu_prefmenu.mo
 ${LOC}libkickermenu_recentdocs.mo
+${LOC}libkickermenu_remotemenu.mo
 ${LOC}libkickermenu_systemmenu.mo
 ${LOC}libkickermenu_tom.mo
 ${LOC}libkonq.mo

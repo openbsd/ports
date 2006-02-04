@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ja,v 1.3 2005/12/01 22:27:38 espie Exp $
+@comment $OpenBSD: PLIST-ja,v 1.4 2006/02/04 14:49:52 espie Exp $
 share/doc/HTML/ja/
 ${DOC}common/
 ${DOC}common/1.png
@@ -287,6 +287,7 @@ ${DOC}kinfocenter/xserver/common
 ${DOC}kinfocenter/xserver/${C}
 ${DOC}kinfocenter/xserver/${I}
 ${LOC}akregator.mo
+${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
@@ -302,6 +303,7 @@ ${LOC}audiocd_encoder_vorbis.mo
 ${LOC}audiorename_plugin.mo
 ${LOC}autorefresh.mo
 ${LOC}babelfish.mo
+${LOC}blinken.mo
 ${LOC}cervisia-elf.mo
 ${LOC}cervisia.mo
 ${LOC}charlatanui.mo
@@ -343,6 +345,7 @@ ${LOC}kaccess.mo
 ${LOC}kaddressbook.mo
 ${LOC}kalarm.mo
 ${LOC}kalzium.mo
+${LOC}kanagram.mo
 ${LOC}kandy.mo
 ${LOC}kappfinder.mo
 ${LOC}karm.mo
@@ -371,6 +374,7 @@ ${LOC}katexmlcheck.mo
 ${LOC}katexmltools.mo
 ${LOC}katomic.mo
 ${LOC}kaudiocreator.mo
+${LOC}kay.mo
 ${LOC}kbabel.mo
 ${LOC}kbackgammon.mo
 ${LOC}kbattleship.mo
@@ -442,6 +446,7 @@ ${LOC}kcmperformance.mo
 ${LOC}kcmprintmgr.mo
 ${LOC}kcmsamba.mo
 ${LOC}kcmscreensaver.mo
+${LOC}kcmshell.mo
 ${LOC}kcmsmartcard.mo
 ${LOC}kcmsmserver.mo
 ${LOC}kcmsocks.mo
@@ -516,6 +521,7 @@ ${LOC}kfile_lnk.mo
 ${LOC}kfile_m3u.mo
 ${LOC}kfile_mp3.mo
 ${LOC}kfile_mpc.mo
+${LOC}kfile_mpeg.mo
 ${LOC}kfile_ogg.mo
 ${LOC}kfile_palm.mo
 ${LOC}kfile_pcx.mo
@@ -529,6 +535,7 @@ ${LOC}kfile_rgb.mo
 ${LOC}kfile_rpm.mo
 ${LOC}kfile_sid.mo
 ${LOC}kfile_tga.mo
+${LOC}kfile_theora.mo
 ${LOC}kfile_tiff.mo
 ${LOC}kfile_ts.mo
 ${LOC}kfile_txt.mo
@@ -573,6 +580,7 @@ ${LOC}kio_fish.mo
 ${LOC}kio_floppy.mo
 ${LOC}kio_groupwise.mo
 ${LOC}kio_help.mo
+${LOC}kio_home.mo
 ${LOC}kio_imap4.mo
 ${LOC}kio_lan.mo
 ${LOC}kio_ldap-elf.mo
@@ -609,6 +617,7 @@ ${LOC}kjobviewer.mo
 ${LOC}kjots.mo
 ${LOC}kjumpingcube.mo
 ${LOC}klaptopdaemon.mo
+${LOC}klatin.mo
 ${LOC}klegacyimport.mo
 ${LOC}kleopatra.mo
 ${LOC}klettres.mo
@@ -645,6 +654,7 @@ ${LOC}kmouth.mo
 ${LOC}kmplot.mo
 ${LOC}kmrml.mo
 ${LOC}knetattach.mo
+${LOC}knetwalk.mo
 ${LOC}knewsticker.mo
 ${LOC}knode.mo
 ${LOC}knotes.mo
@@ -662,7 +672,9 @@ ${LOC}konnector_kcal.mo
 ${LOC}konnector_local.mo
 ${LOC}konnector_qtopia.mo
 ${LOC}konnector_remote.mo
+${LOC}konqsidebar_delicious.mo
 ${LOC}konqsidebar_mediaplayer.mo
+${LOC}konqsidebar_metabar.mo
 ${LOC}konqsidebar_news.mo
 ${LOC}konqueror.mo
 ${LOC}konquest.mo
@@ -695,14 +707,17 @@ ${LOC}krdc.mo
 ${LOC}kreadconfig.mo
 ${LOC}krec.mo
 ${LOC}kregexpeditor.mo
+${LOC}kres_birthday.mo
 ${LOC}kres_blogging.mo
 ${LOC}kres_bugzilla.mo
 ${LOC}kres_exchange.mo
 ${LOC}kres_featureplan.mo
+${LOC}kres_groupware.mo
 ${LOC}kres_groupwise.mo
 ${LOC}kres_kolab.mo
 ${LOC}kres_opengroupware.mo
 ${LOC}kres_remote.mo
+${LOC}kres_tvanytime.mo
 ${LOC}kres_xmlrpc.mo
 ${LOC}kreversi.mo
 ${LOC}krfb.mo
@@ -755,6 +770,7 @@ ${LOC}ktouch.mo
 ${LOC}ktron.mo
 ${LOC}kttsd.mo
 ${LOC}ktuberling.mo
+${LOC}kturtle.mo
 ${LOC}ktux.mo
 ${LOC}kuick_plugin.mo
 ${LOC}kuickshow.mo
@@ -780,7 +796,9 @@ ${LOC}kwin.mo
 ${LOC}kwin4.mo
 ${LOC}kwin_art_clients.mo
 ${LOC}kwin_clients.mo
+${LOC}kwin_lib.mo
 ${LOC}kwireless.mo
+${LOC}kwordquiz.mo
 ${LOC}kworldclock.mo
 ${LOC}kwriteconfig.mo
 ${LOC}kxkb.mo
@@ -793,6 +811,7 @@ ${LOC}libkaddrbk_geo_xxport.mo
 ${LOC}libkcal.mo
 ${LOC}libkcalsystem.mo
 ${LOC}libkcddb.mo
+${LOC}libkdeedu.mo
 ${LOC}libkdegames.mo
 ${LOC}libkdehighscores.mo
 ${LOC}libkdepim.mo
@@ -808,7 +827,9 @@ ${LOC}libkickermenu_remotemenu.mo
 ${LOC}libkickermenu_systemmenu.mo
 ${LOC}libkickermenu_tom.mo
 ${LOC}libkleopatra.mo
+${LOC}libkmime.mo
 ${LOC}libkonq.mo
+${LOC}libkpgp.mo
 ${LOC}libkpimexchange.mo
 ${LOC}libkscan.mo
 ${LOC}libkscreensaver.mo
@@ -823,6 +844,7 @@ ${LOC}lyrics.mo
 ${LOC}mediaapplet.mo
 ${LOC}mediacontrol.mo
 ${LOC}minitoolsplugin.mo
+${LOC}multisynk.mo
 ${LOC}naughtyapplet-elf.mo
 ${LOC}naughtyapplet.mo
 ${LOC}nexscope.mo

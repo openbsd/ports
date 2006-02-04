@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-en_GB,v 1.3 2005/12/01 22:27:37 espie Exp $
+@comment $OpenBSD: PLIST-en_GB,v 1.4 2006/02/04 14:49:52 espie Exp $
 share/apps/katepart/syntax/logohighlightstyle.en_GB.xml
 share/apps/kturtle/
 share/apps/kturtle/data/
@@ -803,6 +803,7 @@ ${LOC}kaccess.mo
 ${LOC}kaddressbook.mo
 ${LOC}kalarm.mo
 ${LOC}kalzium.mo
+${LOC}kanagram.mo
 ${LOC}kandy.mo
 ${LOC}kappfinder.mo
 ${LOC}karm.mo
@@ -1119,6 +1120,7 @@ ${LOC}konnector_qtopia.mo
 ${LOC}konnector_remote.mo
 ${LOC}konqsidebar_delicious.mo
 ${LOC}konqsidebar_mediaplayer.mo
+${LOC}konqsidebar_metabar.mo
 ${LOC}konqsidebar_news.mo
 ${LOC}konqueror.mo
 ${LOC}konquest.mo
@@ -1248,6 +1250,7 @@ ${LOC}libkaddrbk_geo_xxport.mo
 ${LOC}libkaddrbk_gmx_xxport.mo
 ${LOC}libkcal.mo
 ${LOC}libkcddb.mo
+${LOC}libkdeedu.mo
 ${LOC}libkdegames.mo
 ${LOC}libkdepim.mo
 ${LOC}libkfaximgage.mo

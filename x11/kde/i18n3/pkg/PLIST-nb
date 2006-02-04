@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-nb,v 1.5 2005/12/01 22:27:38 espie Exp $
+@comment $OpenBSD: PLIST-nb,v 1.6 2006/02/04 14:49:52 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/khangman/
 share/apps/khangman/data/
@@ -20,6 +20,7 @@ ${LOC}artscontrol.mo
 ${LOC}artsmodules.mo
 ${LOC}atlantik.mo
 ${LOC}atlantikdesigner.mo
+${LOC}audiocd_encoder_lame.mo
 ${LOC}audiocd_encoder_vorbis.mo
 ${LOC}audiorename_plugin.mo
 ${LOC}autorefresh.mo
@@ -197,6 +198,7 @@ ${LOC}kdgantt.mo
 ${LOC}kdialog.mo
 ${LOC}kdict.mo
 ${LOC}kdictapplet.mo
+${LOC}kdjview.mo
 ${LOC}kdmconfig.mo
 ${LOC}kdmgreet.mo
 ${LOC}kdvi.mo
@@ -204,6 +206,7 @@ ${LOC}kedit.mo
 ${LOC}keduca.mo
 ${LOC}kenolaba.mo
 ${LOC}kfax.mo
+${LOC}kfaxview.mo
 ${LOC}kfifteenapplet.mo
 ${LOC}kfile_au.mo
 ${LOC}kfile_avi.mo
@@ -230,6 +233,7 @@ ${LOC}kfile_m3u.mo
 ${LOC}kfile_mhtml.mo
 ${LOC}kfile_mp3.mo
 ${LOC}kfile_mpc.mo
+${LOC}kfile_mpeg.mo
 ${LOC}kfile_ogg.mo
 ${LOC}kfile_palm.mo
 ${LOC}kfile_pcx.mo
@@ -262,6 +266,7 @@ ${LOC}kfontinst.mo
 ${LOC}kfouleggs.mo
 ${LOC}kgamma.mo
 ${LOC}kgantt.mo
+${LOC}kgeography.mo
 ${LOC}kget.mo
 ${LOC}kghostview.mo
 ${LOC}kgoldrunner.mo
@@ -288,6 +293,7 @@ ${LOC}kio_groupwise.mo
 ${LOC}kio_help.mo
 ${LOC}kio_home.mo
 ${LOC}kio_imap4.mo
+${LOC}kio_jabberdisco.mo
 ${LOC}kio_lan.mo
 ${LOC}kio_ldap.mo
 ${LOC}kio_mac.mo
@@ -501,6 +507,7 @@ ${LOC}libkcddb.mo
 ${LOC}libkdeedu.mo
 ${LOC}libkdegames.mo
 ${LOC}libkdepim.mo
+${LOC}libkfaximgage.mo
 ${LOC}libkholidays.mo
 ${LOC}libkicker.mo
 ${LOC}libkickermenu_kdeprint.mo
@@ -544,6 +551,7 @@ ${LOC}rellinks.mo
 ${LOC}searchbarplugin.mo
 ${LOC}secpolicy.mo
 ${LOC}spy.mo
+${LOC}superkaramba.mo
 ${LOC}synaescope.mo
 ${LOC}timezones.mo
 ${LOC}tippecanoe.mo

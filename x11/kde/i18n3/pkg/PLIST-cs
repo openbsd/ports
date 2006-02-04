@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-cs,v 1.5 2005/12/01 22:27:37 espie Exp $
+@comment $OpenBSD: PLIST-cs,v 1.6 2006/02/04 14:49:51 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/khangman/
 share/apps/khangman/cs.txt
@@ -645,6 +645,7 @@ ${LOC}konnector_qtopia.mo
 ${LOC}konnector_remote.mo
 ${LOC}konqsidebar_delicious.mo
 ${LOC}konqsidebar_mediaplayer.mo
+${LOC}konqsidebar_metabar.mo
 ${LOC}konqsidebar_news.mo
 ${LOC}konqueror.mo
 ${LOC}konquest.mo
@@ -793,6 +794,7 @@ ${LOC}libkcddb.mo
 ${LOC}libkdeedu.mo
 ${LOC}libkdegames.mo
 ${LOC}libkdepim.mo
+${LOC}libkfaximgage.mo
 ${LOC}libkholidays.mo
 ${LOC}libkicker.mo
 ${LOC}libkickermenu_kdeprint.mo

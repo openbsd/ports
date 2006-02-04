@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pt,v 1.5 2005/12/01 22:27:38 espie Exp $
+@comment $OpenBSD: PLIST-pt,v 1.6 2006/02/04 14:49:52 espie Exp $
 @conflict kdeedu-<3.4
 @conflict kde-i18n-de-<3.4
 share/apps/khangman/
@@ -2047,6 +2047,7 @@ ${LOC}konnector_qtopia.mo
 ${LOC}konnector_remote.mo
 ${LOC}konqsidebar_delicious.mo
 ${LOC}konqsidebar_mediaplayer.mo
+${LOC}konqsidebar_metabar.mo
 ${LOC}konqsidebar_news.mo
 ${LOC}konqueror.mo
 ${LOC}konquest.mo

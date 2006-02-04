@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-it,v 1.5 2005/12/01 22:27:38 espie Exp $
+@comment $OpenBSD: PLIST-it,v 1.6 2006/02/04 14:49:52 espie Exp $
 @conflict kde-i18n-ca-<3.4
 share/apps/kanagram/
 share/apps/kanagram/data/
@@ -482,6 +482,10 @@ ${DOC}kcontrol/kcmfontinst/
 ${DOC}kcontrol/kcmfontinst/common
 ${DOC}kcontrol/kcmfontinst/${C}
 ${DOC}kcontrol/kcmfontinst/${I}
+${DOC}kcontrol/kcmkonsole/
+${DOC}kcontrol/kcmkonsole/common
+${DOC}kcontrol/kcmkonsole/${C}
+${DOC}kcontrol/kcmkonsole/${I}
 ${DOC}kcontrol/kcmktalkd/
 ${DOC}kcontrol/kcmktalkd/common
 ${DOC}kcontrol/kcmktalkd/${C}
@@ -506,6 +510,14 @@ ${DOC}kcontrol/kcmsmserver/
 ${DOC}kcontrol/kcmsmserver/common
 ${DOC}kcontrol/kcmsmserver/${C}
 ${DOC}kcontrol/kcmsmserver/${I}
+${DOC}kcontrol/kcmstyle/
+${DOC}kcontrol/kcmstyle/common
+${DOC}kcontrol/kcmstyle/${C}
+${DOC}kcontrol/kcmstyle/${I}
+${DOC}kcontrol/kcmtaskbar/
+${DOC}kcontrol/kcmtaskbar/common
+${DOC}kcontrol/kcmtaskbar/${C}
+${DOC}kcontrol/kcmtaskbar/${I}
 ${DOC}kcontrol/kdm/
 ${DOC}kcontrol/kdm/common
 ${DOC}kcontrol/kdm/${C}
@@ -543,6 +555,10 @@ ${DOC}kcontrol/netpref/
 ${DOC}kcontrol/netpref/common
 ${DOC}kcontrol/netpref/${C}
 ${DOC}kcontrol/netpref/${I}
+${DOC}kcontrol/panel/
+${DOC}kcontrol/panel/common
+${DOC}kcontrol/panel/${C}
+${DOC}kcontrol/panel/${I}
 ${DOC}kcontrol/panelappearance/
 ${DOC}kcontrol/panelappearance/common
 ${DOC}kcontrol/panelappearance/${C}
@@ -616,6 +632,7 @@ ${DOC}kdelirc/kcmlirc/common
 ${DOC}kdelirc/kcmlirc/${C}
 ${DOC}kdelirc/kcmlirc/${I}
 ${DOC}kdeprint/
+${DOC}kdeprint/cups-config.docbook
 ${DOC}kdeprint/extensions.docbook
 ${DOC}kdeprint/external-command.docbook
 ${DOC}kdeprint/getting-started.docbook
@@ -833,6 +850,7 @@ ${DOC}khelpcenter/userguide/burning-cds.docbook
 ${DOC}khelpcenter/userguide/control-center.docbook
 ${DOC}khelpcenter/userguide/creating-graphics.docbook
 ${DOC}khelpcenter/userguide/credits-and-license.docbook
+${DOC}khelpcenter/userguide/file-sharing.docbook
 ${DOC}khelpcenter/userguide/first-impressions.docbook
 ${DOC}khelpcenter/userguide/font-installation.docbook
 ${DOC}khelpcenter/userguide/getting-started.docbook
@@ -851,6 +869,7 @@ ${DOC}khelpcenter/userguide/kdepim-apps.docbook
 ${DOC}khelpcenter/userguide/kdetoys-apps.docbook
 ${DOC}khelpcenter/userguide/kdeutils-apps.docbook
 ${DOC}khelpcenter/userguide/koffice-apps.docbook
+${DOC}khelpcenter/userguide/konsole-intro.docbook
 ${DOC}khelpcenter/userguide/migrator-dictionary.docbook
 ${DOC}khelpcenter/userguide/more-help.docbook
 ${DOC}khelpcenter/userguide/pdf-files.docbook
@@ -865,6 +884,7 @@ ${DOC}khelpcenter/userguide/shared-sessions.docbook
 ${DOC}khelpcenter/userguide/shortcuts.docbook
 ${DOC}khelpcenter/userguide/staff.docbook
 ${DOC}khelpcenter/userguide/switching-sessions.docbook
+${DOC}khelpcenter/userguide/troubleshooting-no-open.docbook
 ${DOC}khelpcenter/userguide/ug-faq.docbook
 ${DOC}khelpcenter/userguide/usenet.docbook
 ${DOC}khelpcenter/userguide/where-next.docbook
@@ -1260,6 +1280,10 @@ ${DOC}konsole/${C}
 ${DOC}konsole/${I}
 ${DOC}konsole/konsole.png
 ${DOC}konsole/tabbar.png
+${DOC}kontact/
+${DOC}kontact/common
+${DOC}kontact/${C}
+${DOC}kontact/${I}
 ${DOC}kooka/
 ${DOC}kooka/common
 ${DOC}kooka/${C}
@@ -1329,9 +1353,12 @@ ${DOC}kpoker/${I}
 ${DOC}kppp/
 ${DOC}kppp/accounting.docbook
 ${DOC}kppp/callback.docbook
+${DOC}kppp/chap.docbook
 ${DOC}kppp/getting-online.docbook
 ${DOC}kppp/global-settings.docbook
 ${DOC}kppp/security.docbook
+${DOC}kppp/tricks.docbook
+${DOC}kppp/wizard.docbook
 ${DOC}krdc/
 ${DOC}krdc/common
 ${DOC}krdc/${C}
@@ -1349,6 +1376,10 @@ ${DOC}kreversi/
 ${DOC}kreversi/common
 ${DOC}kreversi/${C}
 ${DOC}kreversi/${I}
+${DOC}krfb/
+${DOC}krfb/common
+${DOC}krfb/${C}
+${DOC}krfb/${I}
 ${DOC}kruler/
 ${DOC}kruler/common
 ${DOC}kruler/${C}
@@ -1518,6 +1549,10 @@ ${DOC}ksysv/
 ${DOC}ksysv/common
 ${DOC}ksysv/${C}
 ${DOC}ksysv/${I}
+${DOC}ktalkd/
+${DOC}ktalkd/common
+${DOC}ktalkd/${C}
+${DOC}ktalkd/${I}
 ${DOC}kteatime/
 ${DOC}kteatime/common
 ${DOC}kteatime/${C}
@@ -1621,6 +1656,10 @@ ${DOC}kweather/
 ${DOC}kweather/common
 ${DOC}kweather/${C}
 ${DOC}kweather/${I}
+${DOC}kwifimanager/
+${DOC}kwifimanager/common
+${DOC}kwifimanager/${C}
+${DOC}kwifimanager/${I}
 ${DOC}kwin4/
 ${DOC}kwin4/common
 ${DOC}kwin4/${C}
@@ -2099,6 +2138,7 @@ ${LOC}konnector_qtopia.mo
 ${LOC}konnector_remote.mo
 ${LOC}konqsidebar_delicious.mo
 ${LOC}konqsidebar_mediaplayer.mo
+${LOC}konqsidebar_metabar.mo
 ${LOC}konqsidebar_news.mo
 ${LOC}konqueror.mo
 ${LOC}konquest.mo

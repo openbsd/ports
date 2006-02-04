@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hu,v 1.4 2005/12/01 22:27:38 espie Exp $
+@comment $OpenBSD: PLIST-hu,v 1.5 2006/02/04 14:49:52 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/khangman/
 share/apps/khangman/data/
@@ -739,6 +739,7 @@ ${LOC}kedit.mo
 ${LOC}keduca.mo
 ${LOC}kenolaba.mo
 ${LOC}kfax.mo
+${LOC}kfaxview.mo
 ${LOC}kfifteenapplet.mo
 ${LOC}kfile_au.mo
 ${LOC}kfile_avi.mo
@@ -910,6 +911,7 @@ ${LOC}konnector_qtopia.mo
 ${LOC}konnector_remote.mo
 ${LOC}konqsidebar_delicious.mo
 ${LOC}konqsidebar_mediaplayer.mo
+${LOC}konqsidebar_metabar.mo
 ${LOC}konqsidebar_news.mo
 ${LOC}konqueror.mo
 ${LOC}konquest.mo
@@ -940,13 +942,16 @@ ${LOC}krdc.mo
 ${LOC}kreadconfig.mo
 ${LOC}krec.mo
 ${LOC}kregexpeditor.mo
+${LOC}kres_birthday.mo
 ${LOC}kres_blogging.mo
 ${LOC}kres_bugzilla.mo
 ${LOC}kres_exchange.mo
 ${LOC}kres_featureplan.mo
+${LOC}kres_groupware.mo
 ${LOC}kres_groupwise.mo
 ${LOC}kres_kolab.mo
 ${LOC}kres_remote.mo
+${LOC}kres_tvanytime.mo
 ${LOC}kres_xmlrpc.mo
 ${LOC}kreversi.mo
 ${LOC}krfb.mo
@@ -1039,6 +1044,7 @@ ${LOC}libkcddb.mo
 ${LOC}libkdeedu.mo
 ${LOC}libkdegames.mo
 ${LOC}libkdepim.mo
+${LOC}libkfaximgage.mo
 ${LOC}libkholidays.mo
 ${LOC}libkicker.mo
 ${LOC}libkickermenu_kdeprint.mo
@@ -1082,6 +1088,7 @@ ${LOC}rellinks.mo
 ${LOC}searchbarplugin.mo
 ${LOC}secpolicy.mo
 ${LOC}spy.mo
+${LOC}superkaramba.mo
 ${LOC}synaescope.mo
 ${LOC}timezones.mo
 ${LOC}tippecanoe.mo

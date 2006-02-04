@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-af,v 1.3 2005/12/01 22:27:37 espie Exp $
+@comment $OpenBSD: PLIST-af,v 1.4 2006/02/04 14:49:51 espie Exp $
 share/locale/af/
 share/locale/af/LC_MESSAGES/
 ${LOC}alsaplayerui.mo
@@ -56,6 +56,7 @@ ${LOC}katetextfilter.mo
 ${LOC}katexmltools.mo
 ${LOC}katomic.mo
 ${LOC}kaudiocreator.mo
+${LOC}kay.mo
 ${LOC}kbabel.mo
 ${LOC}kbackgammon.mo
 ${LOC}kbattleship.mo
@@ -106,6 +107,7 @@ ${LOC}kcmlaunch.mo
 ${LOC}kcmlayout.mo
 ${LOC}kcmlilo.mo
 ${LOC}kcmlocale.mo
+${LOC}kcmmedia.mo
 ${LOC}kcmnic.mo
 ${LOC}kcmnotify.mo
 ${LOC}kcmperformance.mo
@@ -202,6 +204,7 @@ ${LOC}kio_finger.mo
 ${LOC}kio_fish.mo
 ${LOC}kio_floppy.mo
 ${LOC}kio_help.mo
+${LOC}kio_home.mo
 ${LOC}kio_imap4.mo
 ${LOC}kio_lan.mo
 ${LOC}kio_ldap.mo
@@ -218,6 +221,8 @@ ${LOC}kio_sftp.mo
 ${LOC}kio_smb.mo
 ${LOC}kio_smtp.mo
 ${LOC}kio_system.mo
+${LOC}kio_tar.mo
+${LOC}kio_thumbnail.mo
 ${LOC}kio_trash.mo
 ${LOC}kioexec.mo
 ${LOC}kiten.mo
@@ -299,6 +304,7 @@ ${LOC}ksplashthemes.mo
 ${LOC}kstars.mo
 ${LOC}kstart.mo
 ${LOC}kstartperf.mo
+${LOC}kstyle_highcontrast_config.mo
 ${LOC}kstyle_keramik_config.mo
 ${LOC}kstyle_plastik_config.mo
 ${LOC}ksync.mo

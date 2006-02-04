@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-nn,v 1.4 2005/12/01 22:27:38 espie Exp $
+@comment $OpenBSD: PLIST-nn,v 1.5 2006/02/04 14:49:52 espie Exp $
 share/apps/khangman/
 share/apps/khangman/data/
 share/apps/khangman/data/nn/
@@ -47,6 +47,7 @@ ${LOC}kaboodle.mo
 ${LOC}kaccess.mo
 ${LOC}kaddressbook.mo
 ${LOC}kalarm.mo
+${LOC}kalzium.mo
 ${LOC}kandy.mo
 ${LOC}kappfinder.mo
 ${LOC}karm.mo
@@ -73,6 +74,7 @@ ${LOC}kbackgammon.mo
 ${LOC}kbattleship.mo
 ${LOC}kblackbox.mo
 ${LOC}kbounce.mo
+${LOC}kbruch.mo
 ${LOC}kcalc.mo
 ${LOC}kcharselect.mo
 ${LOC}kcharselectapplet.mo
@@ -223,6 +225,7 @@ ${LOC}kfontinst.mo
 ${LOC}kfouleggs.mo
 ${LOC}kgamma.mo
 ${LOC}kgantt.mo
+${LOC}kgeography.mo
 ${LOC}kget.mo
 ${LOC}kghostview.mo
 ${LOC}kgreet_classic.mo
@@ -235,6 +238,7 @@ ${LOC}khtmlkttsd.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
 ${LOC}kiconedit.mo
+${LOC}kig.mo
 ${LOC}kinetd.mo
 ${LOC}kio.mo
 ${LOC}kio_audiocd.mo
@@ -402,6 +406,7 @@ ${LOC}kwin4.mo
 ${LOC}kwin_clients.mo
 ${LOC}kwin_lib.mo
 ${LOC}kwireless.mo
+${LOC}kwordquiz.mo
 ${LOC}kworldclock.mo
 ${LOC}kwriteconfig.mo
 ${LOC}kxkb.mo

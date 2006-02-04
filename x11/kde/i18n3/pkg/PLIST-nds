@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-nds,v 1.4 2005/12/01 22:27:38 espie Exp $
+@comment $OpenBSD: PLIST-nds,v 1.5 2006/02/04 14:49:52 espie Exp $
 share/locale/nds/
 share/locale/nds/LC_MESSAGES/
+${LOC}akregator.mo
 ${LOC}alsaplayerui.mo
 ${LOC}appletproxy.mo
 ${LOC}ark.mo
@@ -33,6 +34,7 @@ ${LOC}kabc_dir.mo
 ${LOC}kabc_file.mo
 ${LOC}kabc_ldapkio.mo
 ${LOC}kabc_net.mo
+${LOC}kabc_slox.mo
 ${LOC}kabc_sql.mo
 ${LOC}kabcformat_binary.mo
 ${LOC}kaccess.mo
@@ -104,6 +106,7 @@ ${LOC}kcmlayout.mo
 ${LOC}kcmlilo.mo
 ${LOC}kcmlirc.mo
 ${LOC}kcmlocale.mo
+${LOC}kcmmedia.mo
 ${LOC}kcmnic.mo
 ${LOC}kcmnotify.mo
 ${LOC}kcmperformance.mo
@@ -161,9 +164,11 @@ ${LOC}kgantt.mo
 ${LOC}kgeography.mo
 ${LOC}kgpg.mo
 ${LOC}kgreet_classic.mo
+${LOC}kgreet_winbind.mo
 ${LOC}khelpcenter.mo
 ${LOC}khexedit.mo
 ${LOC}khotkeys.mo
+${LOC}khtmlkttsd.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
 ${LOC}kio.mo
@@ -173,6 +178,7 @@ ${LOC}kio_floppy.mo
 ${LOC}kio_help.mo
 ${LOC}kio_home.mo
 ${LOC}kio_imap4.mo
+${LOC}kio_ldap.mo
 ${LOC}kio_mac.mo
 ${LOC}kio_man.mo
 ${LOC}kio_media.mo
@@ -189,6 +195,8 @@ ${LOC}kio_smb.mo
 ${LOC}kio_smtp.mo
 ${LOC}kio_system.mo
 ${LOC}kio_tar.mo
+${LOC}kio_thumbnail.mo
+${LOC}kio_trash.mo
 ${LOC}kioexec.mo
 ${LOC}kjobviewer.mo
 ${LOC}kjots.mo
@@ -213,6 +221,7 @@ ${LOC}kmobile.mo
 ${LOC}kmoon.mo
 ${LOC}kmousetool.mo
 ${LOC}kmouth.mo
+${LOC}knetattach.mo
 ${LOC}knode.mo
 ${LOC}knotes.mo
 ${LOC}knotify.mo
@@ -248,6 +257,7 @@ ${LOC}ksplash.mo
 ${LOC}ksplashthemes.mo
 ${LOC}kstars.mo
 ${LOC}kstart.mo
+${LOC}kstyle_highcontrast_config.mo
 ${LOC}kstyle_keramik_config.mo
 ${LOC}kstyle_plastik_config.mo
 ${LOC}ksync.mo
@@ -261,6 +271,7 @@ ${LOC}ktexteditor_docwordcompletion.mo
 ${LOC}ktexteditor_insertfile.mo
 ${LOC}ktexteditor_isearch.mo
 ${LOC}ktexteditor_kdatatool.mo
+${LOC}kthememanager.mo
 ${LOC}ktimemon.mo
 ${LOC}ktimer.mo
 ${LOC}ktip.mo
@@ -272,9 +283,11 @@ ${LOC}kwalletmanager.mo
 ${LOC}kweather.mo
 ${LOC}kwin.mo
 ${LOC}kwin_clients.mo
+${LOC}kwin_lib.mo
 ${LOC}kwriteconfig.mo
 ${LOC}kxkb.mo
 ${LOC}kxsconfig.mo
+${LOC}libdmctl.mo
 ${LOC}libkaddrbk_geo_xxport.mo
 ${LOC}libkcal.mo
 ${LOC}libkcalsystem.mo
@@ -284,6 +297,7 @@ ${LOC}libkickermenu_kdeprint.mo
 ${LOC}libkickermenu_konsole.mo
 ${LOC}libkickermenu_prefmenu.mo
 ${LOC}libkickermenu_recentdocs.mo
+${LOC}libkickermenu_remotemenu.mo
 ${LOC}libkickermenu_systemmenu.mo
 ${LOC}libkickermenu_tom.mo
 ${LOC}libkonq.mo
@@ -311,6 +325,7 @@ ${LOC}spy.mo
 ${LOC}synaescope.mo
 ${LOC}timezones.mo
 ${LOC}tippecanoe.mo
+${LOC}trashapplet.mo
 ${LOC}tyler.mo
 ${LOC}uachangerplugin.mo
 ${LOC}useraccount.mo
