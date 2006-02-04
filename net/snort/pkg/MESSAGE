@@ -1,1 +1,11 @@
-The Snort rule examples have been installed in ${PREFIX}/share/examples/snort
+An up-to-date set of rules is needed for Snort to be useful as an IDS.
+These can be downloaded manually or net/oinkmaster can be used to
+download the latest rules from several different sources.
+
+It is recommended that snort be run as an unprivileged chrooted user.
+An _snort user/group and log directory has been created for this
+purpose.  You should start snort with the following options to take
+advantage of this:
+	-u _snort -g _snort -t /var/snort
+and if you want to log:
+	-l /var/snort/log

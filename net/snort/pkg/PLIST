@@ -1,58 +1,29 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/09/15 18:17:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2006/02/04 13:15:42 david Exp $
+@newgroup _snort:557
+@newuser _snort:557:_snort:daemon:Snort Account:/nonexistent:/sbin/nologin
 bin/snort
 @man man/man8/snort.8
 share/examples/snort/
-share/examples/snort/attack-responses.rules
-share/examples/snort/backdoor.rules
-share/examples/snort/bad-traffic.rules
-share/examples/snort/chat.rules
+@sample ${SYSCONFDIR}/snort/
 share/examples/snort/classification.config
-share/examples/snort/ddos.rules
-share/examples/snort/deleted.rules
-share/examples/snort/dns.rules
-share/examples/snort/dos.rules
-share/examples/snort/experimental.rules
-share/examples/snort/exploit.rules
-share/examples/snort/finger.rules
-share/examples/snort/ftp.rules
-share/examples/snort/icmp-info.rules
-share/examples/snort/icmp.rules
-share/examples/snort/imap.rules
-share/examples/snort/info.rules
-share/examples/snort/local.rules
-share/examples/snort/misc.rules
-share/examples/snort/multimedia.rules
-share/examples/snort/mysql.rules
-share/examples/snort/netbios.rules
-share/examples/snort/nntp.rules
-share/examples/snort/oracle.rules
-share/examples/snort/other-ids.rules
-share/examples/snort/p2p.rules
-share/examples/snort/policy.rules
-share/examples/snort/pop2.rules
-share/examples/snort/pop3.rules
-share/examples/snort/porn.rules
+@sample ${SYSCONFDIR}/snort/classification.config
+share/examples/snort/gen-msg.map
+@sample ${SYSCONFDIR}/snort/gen-msg.map
+share/examples/snort/generators
+@sample ${SYSCONFDIR}/snort/generators
 share/examples/snort/reference.config
-share/examples/snort/rpc.rules
-share/examples/snort/rservices.rules
-share/examples/snort/scan.rules
-share/examples/snort/shellcode.rules
+@sample ${SYSCONFDIR}/snort/reference.config
+share/examples/snort/sid
+@sample ${SYSCONFDIR}/snort/sid
 share/examples/snort/sid-msg.map
-share/examples/snort/smtp.rules
-share/examples/snort/snmp.rules
+@sample ${SYSCONFDIR}/snort/sid-msg.map
 share/examples/snort/snort.conf
-share/examples/snort/sql.rules
-share/examples/snort/telnet.rules
-share/examples/snort/tftp.rules
+@sample ${SYSCONFDIR}/snort/snort.conf
 share/examples/snort/threshold.conf
+@sample ${SYSCONFDIR}/snort/threshold.conf
 share/examples/snort/unicode.map
-share/examples/snort/virus.rules
-share/examples/snort/web-attacks.rules
-share/examples/snort/web-cgi.rules
-share/examples/snort/web-client.rules
-share/examples/snort/web-coldfusion.rules
-share/examples/snort/web-frontpage.rules
-share/examples/snort/web-iis.rules
-share/examples/snort/web-misc.rules
-share/examples/snort/web-php.rules
-share/examples/snort/x11.rules
+@sample ${SYSCONFDIR}/snort/unicode.map
+@sample /var/snort/
+@owner _snort
+@group _snort
+@sample /var/snort/log/

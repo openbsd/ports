@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2006/01/25 04:14:39 david Exp $
+# $OpenBSD: Makefile,v 1.42 2006/02/04 13:15:42 david Exp $
 
 COMMENT=	"highly flexible sniffer/NIDS"
 
-DISTNAME=	snort-2.3.3
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	snort-2.4.3
 CATEGORIES=	net security
 MASTER_SITES=	${HOMEPAGE}/dl/current/
 
@@ -48,16 +47,13 @@ CONFIGURE_ARGS+= --with-mysql="${LOCALBASE}"
 WANTLIB+=	z
 .endif
 
+CONFIGS=	classification.config gen-msg.map generators reference.config \
+		sid sid-msg.map snort.conf threshold.conf unicode.map
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/snort
-	${INSTALL_DATA} ${WRKSRC}/etc/snort.conf ${PREFIX}/share/examples/snort
-	${INSTALL_DATA} ${WRKSRC}/etc/threshold.conf ${PREFIX}/share/examples/snort
-	${INSTALL_DATA} ${WRKSRC}/etc/unicode.map ${PREFIX}/share/examples/snort
-	${INSTALL_DATA} ${WRKSRC}/etc/sid-msg.map ${PREFIX}/share/examples/snort
-	${INSTALL_DATA} ${WRKSRC}/etc/classification.config \
-		 ${PREFIX}/share/examples/snort
-	${INSTALL_DATA} ${WRKSRC}/etc/reference.config \
-		 ${PREFIX}/share/examples/snort
-	${INSTALL_DATA} ${WRKSRC}/rules/*.rules ${PREFIX}/share/examples/snort
+.for i in ${CONFIGS}
+	${INSTALL_DATA} ${WRKSRC}/etc/${i} ${PREFIX}/share/examples/snort
+.endfor
 
 .include <bsd.port.mk>

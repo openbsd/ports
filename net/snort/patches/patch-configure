@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2005/05/24 04:39:05 mjc Exp $
---- configure.orig	Wed Mar 31 13:31:57 2004
-+++ configure	Mon May 23 18:11:16 2005
-@@ -6575,20 +6575,20 @@ fi;
+$OpenBSD: patch-configure,v 1.2 2006/02/04 13:15:42 david Exp $
+--- configure.orig	Mon Oct 17 08:50:23 2005
++++ configure	Tue Jan  3 23:41:30 2006
+@@ -7884,20 +7884,20 @@ fi
  # Check whether --enable-flexresp or --disable-flexresp was given.
  if test "${enable_flexresp+set}" = set; then
    enableval="$enable_flexresp"
@@ -27,7 +27,7 @@ $OpenBSD: patch-configure,v 1.1 2005/05/24 04:39:05 mjc Exp $
      { echo "$as_me:$LINENO: WARNING: are using a precompiled package please notify the" >&5
  echo "$as_me: WARNING: are using a precompiled package please notify the" >&2;}
      { echo "$as_me:$LINENO: WARNING: maintainer." >&5
-@@ -6732,7 +6732,7 @@ echo $ECHO_N "checking for libnet versio
+@@ -8069,7 +8069,7 @@ echo $ECHO_N "checking for libnet versio
        libnet_dir="/usr/include /usr/local/include /sw/include"
      fi
    else

@@ -1,14 +1,17 @@
-Snort is a fairly intelligent sniffer/NIDS, with a very strong rule set.
+Snort is an open source network intrusion detection and prevention system.  It
+is capable of performing real-time traffic analysis, alerting, blocking and
+packet logging on IP networks.  It utilizes a combination of protocol analysis
+and pattern matching in order to detect a anomalies, misuse and attacks.
+Snort uses a flexible rules language to describe activity that can be considered
+malicious or anomalous as well as an analysis engine that incorporates a
+modular plugin architecture.  Snort is capable of detecting and responding in
+real-time, sending alerts, performing session sniping, logging packets, or
+dropping sessions/packets when deployed in-line.
 
-Snort can perform protocol analysis, content searching/matching and can be used
-to detect a variety of attacks and probes, such as buffer overflows, stealth
-port scans, CGI attacks, SMB probes, OS fingerprinting attempts, and much more. 
-
-Snort uses a flexible rules language to describe traffic that it should collect
-or pass, as well as a detection engine that utilizes a modular plugin
-architecture.  Snort has a real-time alerting capability as well, incorporating
-alerting mechanisms for syslog, a user specified file, a UNIX socket, or
-WinPopup messages to Windows clients using Samba's smbclient. 
+Snort has three primary functional modes.  It can be used as a packet sniffer
+like tcpdump(1), a packet logger (useful for network traffic
+debugging, etc), or as a full blown network intrusion detection and prevention
+system.
 
 Available flavors:
 	postgresql - enable postgresql database logging support
