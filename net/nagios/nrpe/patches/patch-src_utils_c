@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_utils_c,v 1.1.1.1 2006/02/04 13:16:08 david Exp $
+--- src/utils.c.orig	Wed Oct 15 18:14:27 2003
++++ src/utils.c	Thu Feb  2 00:42:42 2006
+@@ -90,8 +90,8 @@ void randomize_buffer(char *buffer,int b
+ 	   ends and the rest of the buffer (padded randomly) starts.
+ 	***************************************************************/
+ 
+-	/* try to get seed value from /dev/urandom, as its a better source of entropy */
+-	fp=fopen("/dev/urandom","r");
++	/* try to get seed value from /dev/arandom, as its a better source of entropy */
++	fp=fopen("/dev/arandom","r");
+ 	if(fp!=NULL){
+ 		seed=fgetc(fp);
+ 		fclose(fp);

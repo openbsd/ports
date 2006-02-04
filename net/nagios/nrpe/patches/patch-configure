@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2006/02/04 13:16:08 david Exp $
+--- configure.orig	Mon Jan 23 10:36:50 2006
++++ configure	Wed Jan 25 13:46:20 2006
+@@ -5594,6 +5594,8 @@ _ACEOF
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++int allow_severity;
++int deny_severity;
+ 
+ 
+ int

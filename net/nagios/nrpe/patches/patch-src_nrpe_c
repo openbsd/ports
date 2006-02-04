@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_nrpe_c,v 1.1.1.1 2006/02/04 13:16:08 david Exp $
+--- src/nrpe.c.orig	Mon Jan 23 10:36:50 2006
++++ src/nrpe.c	Wed Jan 25 10:48:41 2006
+@@ -47,7 +47,7 @@ int use_ssl=FALSE;
+ char    *command_name=NULL;
+ char    *macro_argv[MAX_COMMAND_ARGUMENTS];
+ 
+-char    config_file[MAX_INPUT_BUFFER]="nrpe.cfg";
++char    config_file[MAX_INPUT_BUFFER]="%%SYSCONFDIR%%/nrpe.cfg";
+ int     server_port=DEFAULT_SERVER_PORT;
+ char    server_address[16]="0.0.0.0";
+ int     socket_timeout=DEFAULT_SOCKET_TIMEOUT;
