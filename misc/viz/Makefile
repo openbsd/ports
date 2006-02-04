@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2004/12/22 11:50:30 alek Exp $
+# $OpenBSD: Makefile,v 1.12 2006/02/04 23:18:20 steven Exp $
 
 COMMENT=	"Convert invisible (binary) characters to a visible form"
 
 DISTNAME=	viz-1.1.1
 CATEGORIES=	misc
 
-MASTER_SITES=	${MASTER_SITE_LOCAL}
 EXTRACT_SUFX=	.tgz
 
 PERMIT_PACKAGE_CDROM=	Yes
