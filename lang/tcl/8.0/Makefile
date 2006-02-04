@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/01/08 12:43:52 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2006/02/04 23:50:20 steven Exp $
 # $FreeBSD: Makefile,v 1.4 1997/12/01 16:50:49 pst Exp $
 
 COMMENT=	"Tool Command Language"
@@ -7,7 +7,7 @@ DISTNAME=	tcl8.0.5
 PKGNAME=	tcl-8.0.5
 SHARED_LIBS=	tcl80 1.5
 CATEGORIES=	lang lang/tcl
-MASTER_SITES=	${MASTER_SITE_TCLTK:=tcl8_0/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tcl/}
 
 HOMEPAGE=	http://dev.scriptics.com/software/tcltk/
 

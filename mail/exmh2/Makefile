@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2005/04/05 22:50:56 alek Exp $
+# $OpenBSD: Makefile,v 1.24 2006/02/04 23:50:20 steven Exp $
 
 COMMENT=		"Tcl/Tk interface to the MH mail system"
 
@@ -14,7 +14,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_TCLTK:=exmh/}
+MASTER_SITES=		ftp://sunsite.utk.edu/pub/tcl/exmh/ \
+			ftp://ftp.funet.fi/pub/languages/tcl/tcl/exmh/ \
+			ftp://ftp.tcl.tk/pub/tcl/exmh/
 
 BUILD_DEPENDS=		:tcl-8.4.*:lang/tcl/8.4
 RUN_DEPENDS=		:expect-*:lang/expect\

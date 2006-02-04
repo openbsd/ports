@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2006/01/08 20:56:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2006/02/04 23:50:19 steven Exp $
 # $FreeBSD: Makefile,v 1.7 1997/12/01 16:50:58 pst Exp $
 
 COMMENT=	"graphical toolkit for Tcl"
@@ -7,7 +7,7 @@ DISTNAME=	tk8.0.5
 PKGNAME=	tk-8.0.5
 SHARED_LIBS=	tk80 1.5
 CATEGORIES=	x11 x11/tk
-MASTER_SITES=	${MASTER_SITE_TCLTK:=tcl8_0/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tcl/}
 
 HOMEPAGE=	http://dev.scriptics.com/software/tcltk/
 
