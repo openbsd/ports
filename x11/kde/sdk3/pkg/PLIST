@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2006/01/05 23:01:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2006/02/04 19:30:57 espie Exp $
 bin/adddebug
 bin/build-progress.sh
 bin/catalogmanager
@@ -731,6 +731,18 @@ share/doc/HTML/en/kbabel/nexterror.png
 share/doc/HTML/en/kbabel/nextfuzzy.png
 share/doc/HTML/en/kbabel/nextfuzzyuntrans.png
 share/doc/HTML/en/kbabel/nextuntranslated.png
+share/doc/HTML/en/kbabel/pref_diff.png
+share/doc/HTML/en/kbabel/pref_edit_appearance.png
+share/doc/HTML/en/kbabel/pref_edit_general.png
+share/doc/HTML/en/kbabel/pref_fonts.png
+share/doc/HTML/en/kbabel/pref_proj_catman.png
+share/doc/HTML/en/kbabel/pref_proj_diff.png
+share/doc/HTML/en/kbabel/pref_proj_file_commands.png
+share/doc/HTML/en/kbabel/pref_proj_folder_commands.png
+share/doc/HTML/en/kbabel/pref_proj_source.png
+share/doc/HTML/en/kbabel/pref_search.png
+share/doc/HTML/en/kbabel/pref_wizard_page1.png
+share/doc/HTML/en/kbabel/pref_wizard_page2.png
 share/doc/HTML/en/kbabel/preferences.docbook
 share/doc/HTML/en/kbabel/preverror.png
 share/doc/HTML/en/kbabel/prevfuzzy.png
