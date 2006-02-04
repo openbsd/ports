@@ -1,0 +1,23 @@
+xcursor-themes  - cursors images for the X window system.
+
+The package comes with three cursor themes : 'redglass', 'whiteglass'
+and 'handhelds'. Additionally selecting the 'core' theme switches back
+to the traditional X server "core" cursors. 
+
+To use the new cursors 
+- set the environment variable XCURSOR_PATH to 
+  "~/.icons:${PREFIX}/lib/X11/icons"
+
+- either :
+  a) set the XCURSOR_THEME environment variable to one of the theme names 
+  b) create ~/.icons/default/index.theme containing (for example to use
+     the whiteglass theme):
+
+   -- Cut --
+   [Icon Theme]
+   Inherits=whiteglass
+   -- Cut --
+
+The XCURSOR_SIZE environment variable can be used to set the size of
+the cursors. 
+
