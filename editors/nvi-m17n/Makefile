@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.22 2005/08/03 18:07:33 aanriot Exp $
+# $OpenBSD: Makefile,v 1.23 2006/02/04 10:07:58 steven Exp $
 # NetBSD: Makefile,v 1.6 2000/01/19 12:28:44 hubertf Exp
 # FreeBSD Id: Makefile,v 1.11 1999/04/17 10:51:03 itojun Exp
 
 COMMENT=	"multilingual clone of vi/ex"
 
 DISTNAME=	nvi-1.79
-PKGNAME=	nvi-m17n-1.79.19991117p0
+PKGNAME=	nvi-m17n-1.79.19991117p1
 CATEGORIES=	editors
 
-MASTER_SITES=	ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
+MASTER_SITES=	ftp://ftp.foretune.co.jp/pub/tools/nvi/
+MASTER_SITES0=	ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
 
-PATCHFILES=	nvi-1.79.m17n-19991117.diff.gz
+PATCHFILES=	nvi-1.79.m17n-19991117.diff.gz:0
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
