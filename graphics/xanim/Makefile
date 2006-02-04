@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2005/01/27 21:29:41 alek Exp $
+# $OpenBSD: Makefile,v 1.21 2006/02/04 20:07:20 steven Exp $
 
 COMMENT=	"X11 animation player with support for lots of formats"
 
@@ -10,7 +10,7 @@ CATEGORIES= graphics x11
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 DIST_SUBDIR=xanim
-MASTER_SITES=http://smurfland.cit.buffalo.edu/xanim/files/
+MASTER_SITES=http://xanim.polter.net/files/
 MASTER_SITES0=ftp://ftp.ut.ee/pub/graphics/xanim/modules/
 
 # License: NOFEE
