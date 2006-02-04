@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2005/11/09 20:09:56 fgsch Exp $
+# $OpenBSD: Makefile,v 1.8 2006/02/04 15:47:50 aaron Exp $
 
 COMMENT=		"interpreter for old Sierra AGI games"
 
 DISTNAME=		sarien-0.7.0
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		games emulators
 
 HOMEPAGE=		http://sarien.sourceforge.net/
