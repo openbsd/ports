@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.82 2006/01/19 19:53:21 steven Exp $
+# $OpenBSD: network.conf.template,v 1.83 2006/02/04 23:54:57 steven Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -190,15 +190,6 @@ MASTER_SITE_KDE+=	\
  	ftp://ftp.sunet.se/pub/X11/kde/ \
 	ftp://ftp.informatik.hu-berlin.de/pub/Mirrors/ftp.kde.org/ \
 	ftp://ftp.chg.ru/pub/X11/kde/
-
-MASTER_SITE_TCLTK+=	\
-	ftp://ftp.scriptics.com/pub/tcl/ \
-	ftp://mirror.neosoft.com/pub/tcl/mirror/ftp.scriptics.com/ \
-	ftp://sunsite.utk.edu/pub/tcl/ \
-	ftp://ftp.funet.fi/pub/languages/tcl/tcl/ \
-	ftp://ftp.cs.tu-berlin.de/pub/tcl/distrib/ \
-	ftp://ftp.srcc.msu.su/mirror/ftp.scriptics.com/pub/tcl/ \
-	ftp://ftp.lip6.fr/pub/tcl/distrib/
 
 MASTER_SITE_AFTERSTEP+=	\
 	ftp://ftp.afterstep.org/ \
