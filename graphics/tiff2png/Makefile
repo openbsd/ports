@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2005/10/30 00:10:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2006/02/04 19:53:21 steven Exp $
 
 COMMENT=	"converts TIFF images to PNG format"
 
 DISTNAME=	tiff2png-0.81c
 CATEGORIES=	graphics
 
-MASTER_SITES=	ftp://swrinde.nde.swri.edu/pub/png/applications/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=png-mng/}
 
 HOMEPAGE=	http://www.libpng.org/pub/png/apps/tiff2png.html
 
