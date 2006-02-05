@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2005/06/17 22:19:02 kurt Exp $
+# $OpenBSD: Makefile,v 1.21 2006/02/05 18:25:48 steven Exp $
 
 COMMENT=	"xml parser for Java"
 
@@ -16,7 +16,8 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	http://xml.apache.org/dist/xerces-j/
+MASTER_SITES=	http://xml.apache.org/dist/xerces-j/ \
+		http://xml.apache.org/dist/xerces-j/old_xerces2/
 
 TAR?=		gtar
 
