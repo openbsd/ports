@@ -1,0 +1,29 @@
+$OpenBSD: patch-configure,v 1.1 2006/02/05 13:50:13 steven Exp $
+--- configure.orig	Mon Aug 13 21:39:00 2001
++++ configure	Sun Feb  5 11:36:41 2006
+@@ -5876,7 +5876,6 @@ fi
+     echo "$ac_t""no" 1>&6
+   fi
+ 
+-CXXFLAGS="`echo $CXXFLAGS | sed s/-O2//`"
+ if test "x${GXX-}" = xyes ; then
+   WARN="-W -Wall -Wno-unused -Wcast-align"
+   
+@@ -5888,7 +5887,7 @@ echo "configure:5886: checking -O3" >&5
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   
+-    CXXFLAGS="$OLD_CXXFLAGS -O3"
++    CXXFLAGS="$OLD_CXXFLAGS"
+     if test "$cross_compiling" = yes; then
+   sdlmm_cv_option_O3=no
+ else
+@@ -5919,7 +5918,7 @@ fi
+   CXXFLAGS="$OLD_CXXFLAGS"
+   
+   if test x"$sdlmm_cv_option_O3" = "xyes" ; then
+-    OPTIMIZE="$OPTIMIZE -O3"
++    OPTIMIZE="$OPTIMIZE"
+     echo "$ac_t""yes" 1>&6
+   else
+     echo "$ac_t""no" 1>&6
