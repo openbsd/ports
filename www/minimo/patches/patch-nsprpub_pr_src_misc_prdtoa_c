@@ -1,6 +1,6 @@
-$OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev Exp $
+$OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.2 2006/02/05 02:39:18 pvalchev Exp $
 --- nsprpub/pr/src/misc/prdtoa.c.orig	Tue Apr 27 18:34:07 2004
-+++ nsprpub/pr/src/misc/prdtoa.c	Mon Jan  9 14:28:46 2006
++++ nsprpub/pr/src/misc/prdtoa.c	Sat Feb  4 18:47:53 2006
 @@ -1,82 +1,8 @@
 -/* -*- Mode: C++; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
 -/* ***** BEGIN LICENSE BLOCK *****
@@ -238,7 +238,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
 -#ifndef Long
 -#define Long long
 +#if defined(LIBC_SCCS) && !defined(lint)
-+static char *rcsid = "$OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev Exp $";
++static char *rcsid = "$OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.2 2006/02/05 02:39:18 pvalchev Exp $";
 +#endif /* LIBC_SCCS and not lint */
 +
 +#include "primpl.h"
@@ -403,7 +403,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  #ifndef __MATH_H__
  #include "math.h"
  #endif
-@@ -350,37 +234,41 @@ extern "C" {
+@@ -350,37 +234,43 @@ extern "C" {
  #endif
  #endif
  
@@ -436,19 +436,21 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  #define word0(x) ((ULong *)&x)[1]
  #define word1(x) ((ULong *)&x)[0]
  #else
--#define word0(x) ((ULong *)&x)[0]
--#define word1(x) ((ULong *)&x)[1]
--#endif
++/* #define word0(x) ((x).ul[0])
++   #define word1(x) ((x).ul[1]) */
+ #define word0(x) ((ULong *)&x)[0]
+ #define word1(x) ((ULong *)&x)[1]
++/* #define word0(x) ((U*)&x)->L[0]
++   #define word1(x) ((U*)&x)->L[1] */
+ #endif
 -#else
 -#ifdef IEEE_8087
 -#define word0(x) ((U*)&x)->L[1]
 -#define word1(x) ((U*)&x)->L[0]
 -#else
-+/* #define word0(x) ((x).ul[0])
-+   #define word1(x) ((x).ul[1]) */
- #define word0(x) ((U*)&x)->L[0]
- #define word1(x) ((U*)&x)->L[1]
- #endif
+-#define word0(x) ((U*)&x)->L[0]
+-#define word1(x) ((U*)&x)->L[1]
+-#endif
 -#define dval(x) ((U*)&x)->d
 -#endif
 +#define dval(x) x
@@ -462,7 +464,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  #define Storeinc(a,b,c) (((unsigned short *)a)[1] = (unsigned short)b, \
  ((unsigned short *)a)[0] = (unsigned short)c, a++)
  #else
-@@ -394,7 +282,7 @@ typedef union { double d; ULong L[2]; } 
+@@ -394,7 +284,7 @@ typedef union { double d; ULong L[2]; } 
  /* Quick_max = floor((P-1)*log(FLT_RADIX)/log(10) - 1) */
  /* Int_max = floor(P*log(FLT_RADIX)/log(10) - 1) */
  
@@ -471,7 +473,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  #define Exp_shift  20
  #define Exp_shift1 20
  #define Exp_msk1    0x100000
-@@ -402,6 +290,7 @@ typedef union { double d; ULong L[2]; } 
+@@ -402,6 +292,7 @@ typedef union { double d; ULong L[2]; } 
  #define Exp_mask  0x7ff00000
  #define P 53
  #define Bias 1023
@@ -479,7 +481,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  #define Emin (-1022)
  #define Exp_1  0x3ff00000
  #define Exp_11 0x3ff00000
-@@ -419,38 +308,11 @@ typedef union { double d; ULong L[2]; } 
+@@ -419,38 +310,11 @@ typedef union { double d; ULong L[2]; } 
  #define Tiny1 1
  #define Quick_max 14
  #define Int_max 14
@@ -519,7 +521,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  #define Exp_shift  24
  #define Exp_shift1 24
  #define Exp_msk1   0x1000000
-@@ -475,8 +337,6 @@ typedef union { double d; ULong L[2]; } 
+@@ -475,8 +339,6 @@ typedef union { double d; ULong L[2]; } 
  #define Quick_max 14
  #define Int_max 15
  #else /* VAX */
@@ -528,7 +530,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  #define Exp_shift  23
  #define Exp_shift1 7
  #define Exp_msk1    0x80
-@@ -500,8 +360,8 @@ typedef union { double d; ULong L[2]; } 
+@@ -500,8 +362,8 @@ typedef union { double d; ULong L[2]; } 
  #define Tiny1 0
  #define Quick_max 15
  #define Int_max 15
@@ -539,7 +541,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  
  #ifndef IEEE_Arith
  #define ROUND_BIASED
-@@ -523,42 +383,25 @@ extern double rnd_prod(double, double), 
+@@ -523,42 +385,25 @@ extern double rnd_prod(double, double), 
  #define Big0 (Frac_mask1 | Exp_msk1*(DBL_MAX_EXP+Bias-1))
  #define Big1 0xffffffff
  
@@ -591,7 +593,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
   struct
  Bigint {
  	struct Bigint *next;
-@@ -580,32 +423,16 @@ Balloc
+@@ -580,32 +425,16 @@ Balloc
  {
  	int x;
  	Bigint *rv;
@@ -626,7 +628,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  	rv->sign = rv->wds = 0;
  	return rv;
  	}
-@@ -619,10 +446,8 @@ Bfree
+@@ -619,10 +448,8 @@ Bfree
  #endif
  {
  	if (v) {
@@ -637,7 +639,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  		}
  	}
  
-@@ -638,49 +463,37 @@ multadd
+@@ -638,49 +465,37 @@ multadd
  #endif
  {
  	int i, wds;
@@ -694,7 +696,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  		b->wds = wds;
  		}
  	return b;
-@@ -799,7 +612,7 @@ lo0bits
+@@ -799,7 +614,7 @@ lo0bits
  	if (!(x & 1)) {
  		k++;
  		x >>= 1;
@@ -703,7 +705,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  			return 32;
  		}
  	*y = x;
-@@ -832,16 +645,11 @@ mult
+@@ -832,16 +647,11 @@ mult
  {
  	Bigint *c;
  	int k, wa, wb, wc;
@@ -721,7 +723,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  
  	if (a->wds < b->wds) {
  		c = a;
-@@ -862,25 +670,9 @@ mult
+@@ -862,25 +672,9 @@ mult
  	xb = b->x;
  	xbe = xb + wb;
  	xc0 = c->x;
@@ -748,7 +750,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  			x = xa;
  			xc = xc0;
  			carry = 0;
-@@ -894,7 +686,7 @@ mult
+@@ -894,7 +688,7 @@ mult
  				while(x < xae);
  			*xc = carry;
  			}
@@ -757,7 +759,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  			x = xa;
  			xc = xc0;
  			carry = 0;
-@@ -926,7 +718,6 @@ mult
+@@ -926,7 +720,6 @@ mult
  			}
  		}
  #endif
@@ -765,7 +767,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  	for(xc0 = c->x, xc = xc0 + wc; wc > 0 && !*--xc; --wc) ;
  	c->wds = wc;
  	return c;
-@@ -946,24 +737,15 @@ pow5mult
+@@ -946,24 +739,15 @@ pow5mult
  	int i;
  	static int p05[3] = { 5, 25, 125 };
  
@@ -791,7 +793,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  		}
  	for(;;) {
  		if (k & 1) {
-@@ -974,17 +756,8 @@ pow5mult
+@@ -974,17 +758,8 @@ pow5mult
  		if (!(k >>= 1))
  			break;
  		if (!(p51 = p5->next)) {
@@ -809,7 +811,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  			}
  		p5 = p51;
  		}
-@@ -1027,7 +800,7 @@ lshift
+@@ -1027,7 +802,7 @@ lshift
  			z = *x++ >> k1;
  			}
  			while(x < xe);
@@ -818,7 +820,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  			++n1;
  		}
  #else
-@@ -1095,15 +868,11 @@ diff
+@@ -1095,15 +870,11 @@ diff
  {
  	Bigint *c;
  	int i, wa, wb;
@@ -836,7 +838,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  
  	i = cmp(a,b);
  	if (!i) {
-@@ -1130,49 +899,41 @@ diff
+@@ -1130,49 +901,41 @@ diff
  	xbe = xb + wb;
  	xc = c->x;
  	borrow = 0;
@@ -904,7 +906,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  	while(!*--xc)
  		wa--;
  	c->wds = wa;
-@@ -1182,26 +943,25 @@ diff
+@@ -1182,26 +945,25 @@ diff
   static double
  ulp
  #ifdef KR_headers
@@ -936,7 +938,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  #ifndef Sudden_Underflow
  		}
  	else {
-@@ -1217,8 +977,7 @@ ulp
+@@ -1217,8 +979,7 @@ ulp
  			}
  		}
  #endif
@@ -946,7 +948,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  	}
  
   static double
-@@ -1231,7 +990,7 @@ b2d
+@@ -1231,7 +992,7 @@ b2d
  {
  	ULong *xa, *xa0, w, y, z;
  	int k;
@@ -955,7 +957,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  #ifdef VAX
  	ULong d0, d1;
  #else
-@@ -1288,25 +1047,27 @@ b2d
+@@ -1288,25 +1049,27 @@ b2d
  #undef d0
  #undef d1
  #endif
@@ -990,7 +992,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  	d0 = word0(d) >> 16 | word0(d) << 16;
  	d1 = word1(d) >> 16 | word1(d) << 16;
  #else
-@@ -1340,10 +1101,7 @@ d2b
+@@ -1340,10 +1103,7 @@ d2b
  			}
  		else
  			x[0] = y;
@@ -1002,7 +1004,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  		}
  	else {
  #ifdef DEBUG
-@@ -1352,10 +1110,7 @@ d2b
+@@ -1352,10 +1112,7 @@ d2b
  #endif
  		k = lo0bits(&z);
  		x[0] = z;
@@ -1014,7 +1016,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  		k += 32;
  		}
  #else
-@@ -1437,11 +1192,11 @@ ratio
+@@ -1437,11 +1194,11 @@ ratio
  	(Bigint *a, Bigint *b)
  #endif
  {
@@ -1029,7 +1031,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  #ifdef Pack_32
  	k = ka - kb + 32*(a->wds - b->wds);
  #else
-@@ -1451,13 +1206,13 @@ ratio
+@@ -1451,13 +1208,13 @@ ratio
  	if (k > 0) {
  		word0(da) += (k >> 2)*Exp_msk1;
  		if (k &= 3)
@@ -1045,7 +1047,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  		}
  #else
  	if (k > 0)
-@@ -1467,10 +1222,10 @@ ratio
+@@ -1467,10 +1224,10 @@ ratio
  		word0(db) += k*Exp_msk1;
  		}
  #endif
@@ -1058,7 +1060,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  tens[] = {
  		1e0, 1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7, 1e8, 1e9,
  		1e10, 1e11, 1e12, 1e13, 1e14, 1e15, 1e16, 1e17, 1e18, 1e19,
-@@ -1480,124 +1235,23 @@ tens[] = {
+@@ -1480,124 +1237,23 @@ tens[] = {
  #endif
  		};
  
@@ -1188,7 +1190,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  PR_strtod
  #ifdef KR_headers
  	(s00, se) CONST char *s00; char **se;
-@@ -1605,51 +1259,40 @@ PR_strtod
+@@ -1605,51 +1261,40 @@ PR_strtod
  	(CONST char *s00, char **se)
  #endif
  {
@@ -1265,7 +1267,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  	if (*s == '0') {
  		nz0 = 1;
  		while(*++s == '0') ;
-@@ -1664,26 +1307,7 @@ PR_strtod
+@@ -1664,26 +1309,7 @@ PR_strtod
  		else if (nd < 16)
  			z = 10*z + c - '0';
  	nd0 = nd;
@@ -1293,7 +1295,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  		c = *++s;
  		if (!nd) {
  			for(; c == '0'; c = *++s)
-@@ -1718,7 +1342,8 @@ PR_strtod
+@@ -1718,7 +1344,8 @@ PR_strtod
  	e = 0;
  	if (c == 'e' || c == 'E') {
  		if (!nd && !nz && !nz0) {
@@ -1303,7 +1305,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  			}
  		s00 = s;
  		esign = 0;
-@@ -1753,38 +1378,8 @@ PR_strtod
+@@ -1753,38 +1380,8 @@ PR_strtod
  			s = s00;
  		}
  	if (!nd) {
@@ -1343,7 +1345,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  		goto ret;
  		}
  	e1 = e -= nf;
-@@ -1797,21 +1392,14 @@ PR_strtod
+@@ -1797,21 +1394,14 @@ PR_strtod
  	if (!nd0)
  		nd0 = nd;
  	k = nd < DBL_DIG + 1 ? nd : DBL_DIG + 1;
@@ -1369,7 +1371,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  			) {
  		if (!e)
  			goto ret;
-@@ -1820,14 +1408,8 @@ PR_strtod
+@@ -1820,14 +1410,8 @@ PR_strtod
  #ifdef VAX
  				goto vax_ovfl_check;
  #else
@@ -1386,7 +1388,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  				goto ret;
  #endif
  				}
-@@ -1836,184 +1418,115 @@ PR_strtod
+@@ -1836,184 +1420,115 @@ PR_strtod
  				/* A fancier test would sometimes let us do
  				 * this for larger i values.
  				 */
@@ -1617,7 +1619,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  			}
  		}
  
-@@ -2026,7 +1539,7 @@ PR_strtod
+@@ -2026,7 +1541,7 @@ PR_strtod
  	for(;;) {
  		bd = Balloc(bd0->k);
  		Bcopy(bd, bd0);
@@ -1626,7 +1628,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  		bs = i2b(1);
  
  		if (e >= 0) {
-@@ -2042,38 +1555,21 @@ PR_strtod
+@@ -2042,38 +1557,21 @@ PR_strtod
  		else
  			bd2 -= bbe;
  		bs2 = bb2;
@@ -1669,7 +1671,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  		i = bb2 < bd2 ? bb2 : bd2;
  		if (i > bs2)
  			i = bs2;
-@@ -2100,123 +1596,12 @@ PR_strtod
+@@ -2100,123 +1598,12 @@ PR_strtod
  		dsign = delta->sign;
  		delta->sign = 0;
  		i = cmp(delta, bs);
@@ -1794,7 +1796,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  			delta = lshift(delta,Log2P);
  			if (cmp(delta, bs) > 0)
  				goto drop_down;
-@@ -2226,12 +1611,7 @@ PR_strtod
+@@ -2226,12 +1613,7 @@ PR_strtod
  			/* exactly half-way between */
  			if (dsign) {
  				if ((word0(rv) & Bndry_mask1) == Bndry_mask1
@@ -1808,7 +1810,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  					/*boundary case -- increment exponent*/
  					word0(rv) = (word0(rv) & Exp_mask)
  						+ Exp_msk1
-@@ -2240,44 +1620,24 @@ PR_strtod
+@@ -2240,44 +1622,24 @@ PR_strtod
  #endif
  						;
  					word1(rv) = 0;
@@ -1857,7 +1859,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  				word0(rv) = L | Bndry_mask1;
  				word1(rv) = 0xffffffff;
  #ifdef IBM
-@@ -2291,19 +1651,16 @@ PR_strtod
+@@ -2291,19 +1653,16 @@ PR_strtod
  				break;
  #endif
  			if (dsign)
@@ -1880,7 +1882,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  			break;
  			}
  		if ((aadj = ratio(delta, bs)) <= 2.) {
-@@ -2332,7 +1689,7 @@ PR_strtod
+@@ -2332,7 +1691,7 @@ PR_strtod
  			aadj *= 0.5;
  			aadj1 = dsign ? aadj : -aadj;
  #ifdef Check_FLT_ROUNDS
@@ -1889,7 +1891,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  				case 2: /* towards +infinity */
  					aadj1 -= 0.5;
  					break;
-@@ -2341,19 +1698,19 @@ PR_strtod
+@@ -2341,19 +1700,19 @@ PR_strtod
  					aadj1 += 0.5;
  				}
  #else
@@ -1914,7 +1916,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  			if ((word0(rv) & Exp_mask) >=
  					Exp_msk1*(DBL_MAX_EXP+Bias-P)) {
  				if (word0(rv0) == Big0 && word1(rv0) == Big1)
-@@ -2366,25 +1723,12 @@ PR_strtod
+@@ -2366,25 +1725,12 @@ PR_strtod
  				word0(rv) += P*Exp_msk1;
  			}
  		else {
@@ -1943,7 +1945,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  #ifdef IBM
  				if ((word0(rv) & Exp_mask) <  P*Exp_msk1)
  #else
-@@ -2402,10 +1746,10 @@ PR_strtod
+@@ -2402,10 +1748,10 @@ PR_strtod
  					word0(rv) -= P*Exp_msk1;
  				}
  			else {
@@ -1957,7 +1959,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  			/* Compute adj so that the IEEE rounding rules will
  			 * correctly round rv + adj in some half-way cases.
  			 * If rv * ulp(rv) is denormalized (i.e.,
-@@ -2413,24 +1757,19 @@ PR_strtod
+@@ -2413,24 +1759,19 @@ PR_strtod
  			 * trouble from bits lost to denormalization;
  			 * example: 1.2e-307 .
  			 */
@@ -1987,7 +1989,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  			aadj -= L;
  			/* The tolerances below are conservative. */
  			if (dsign || word1(rv) || word0(rv) & Bndry_mask) {
-@@ -2440,43 +1779,12 @@ PR_strtod
+@@ -2440,43 +1781,12 @@ PR_strtod
  			else if (aadj < .4999999/FLT_RADIX)
  				break;
  			}
@@ -2031,7 +2033,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
   retfree:
  	Bfree(bb);
  	Bfree(bd);
-@@ -2486,7 +1794,7 @@ PR_strtod
+@@ -2486,7 +1796,7 @@ PR_strtod
   ret:
  	if (se)
  		*se = (char *)s;
@@ -2040,7 +2042,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  	}
  
   static int
-@@ -2498,15 +1806,13 @@ quorem
+@@ -2498,15 +1808,13 @@ quorem
  #endif
  {
  	int n;
@@ -2061,7 +2063,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  
  	n = S->wds;
  #ifdef DEBUG
-@@ -2528,31 +1834,26 @@ quorem
+@@ -2528,31 +1836,26 @@ quorem
  		borrow = 0;
  		carry = 0;
  		do {
@@ -2102,7 +2104,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  			}
  			while(sx <= sxe);
  		if (!*bxe) {
-@@ -2569,31 +1870,26 @@ quorem
+@@ -2569,31 +1872,26 @@ quorem
  		bx = b->x;
  		sx = S->x;
  		do {
@@ -2143,7 +2145,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  			}
  			while(sx <= sxe);
  		bx = b->x;
-@@ -2607,49 +1903,6 @@ quorem
+@@ -2607,49 +1905,6 @@ quorem
  	return q;
  	}
  
@@ -2193,7 +2195,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  /* freedtoa(s) must be used to free values s returned by dtoa
   * when MULTIPLE_THREADS is #defined.  It should be used in all cases,
   * but for consistency with earlier versions of dtoa, it is optional
-@@ -2663,19 +1916,19 @@ freedtoa(s) char *s;
+@@ -2663,19 +1918,19 @@ freedtoa(s) char *s;
  freedtoa(char *s)
  #endif
  {
@@ -2220,7 +2222,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
   *
   * Modifications:
   *	1. Rather than iterating, we use a simple numeric overestimate
-@@ -2706,13 +1959,13 @@ freedtoa(char *s)
+@@ -2706,13 +1961,13 @@ freedtoa(char *s)
   *	   calculation.
   */
  
@@ -2238,7 +2240,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  #endif
  {
   /*	Arguments ndigits, decpt, sign are similar to those
-@@ -2734,14 +1987,14 @@ dtoa
+@@ -2734,14 +1989,14 @@ dtoa
  			gives a return value similar to that from fcvt,
  			except that trailing zeros are suppressed, and
  			ndigits can be negative.
@@ -2261,7 +2263,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  
  		Values of mode other than 0-9 are treated as mode 0.
  
-@@ -2758,21 +2011,19 @@ dtoa
+@@ -2758,21 +2013,19 @@ dtoa
  	ULong x;
  #endif
  	Bigint *b, *b1, *delta, *mlo, *mhi, *S;
@@ -2293,7 +2295,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  
  	if (word0(d) & Sign_bit) {
  		/* set sign for everything, including 0's and NaNs */
-@@ -2791,47 +2042,43 @@ dtoa
+@@ -2791,47 +2044,43 @@ dtoa
  		{
  		/* Infinity or NaN */
  		*decpt = 9999;
@@ -2360,7 +2362,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  #endif
  
  		/* log(x)	~=~ log(1.5) + (x-1.5)/1.5
-@@ -2870,19 +2117,20 @@ dtoa
+@@ -2870,19 +2119,20 @@ dtoa
  		i = bbits + be + (Bias + (P-1) - 1);
  		x = i > 32  ? word0(d) << 64 - i | word1(d) >> i - 32
  			    : word1(d) << 32 - i;
@@ -2384,7 +2386,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  			k--;
  		k_check = 0;
  		}
-@@ -2907,15 +2155,7 @@ dtoa
+@@ -2907,15 +2157,7 @@ dtoa
  		}
  	if (mode < 0 || mode > 9)
  		mode = 0;
@@ -2400,7 +2402,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  	if (mode > 5) {
  		mode -= 4;
  		try_quick = 0;
-@@ -2946,19 +2186,18 @@ dtoa
+@@ -2946,19 +2188,18 @@ dtoa
  			if (i <= 0)
  				i = 1;
  		}
@@ -2426,7 +2428,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  		k0 = k;
  		ilim0 = ilim;
  		ieps = 2; /* conservative */
-@@ -2968,7 +2207,7 @@ dtoa
+@@ -2968,7 +2209,7 @@ dtoa
  			if (j & Bletch) {
  				/* prevent overflows */
  				j &= Bletch - 1;
@@ -2435,7 +2437,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  				ieps++;
  				}
  			for(; j; j >>= 1, i++)
-@@ -2976,32 +2215,32 @@ dtoa
+@@ -2976,32 +2217,32 @@ dtoa
  					ieps++;
  					ds *= bigtens[i];
  					}
@@ -2477,7 +2479,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  				goto no_digits;
  			goto fast_failed;
  			}
-@@ -3010,34 +2249,33 @@ dtoa
+@@ -3010,34 +2251,33 @@ dtoa
  			/* Use Steele & White method of only
  			 * generating digits needed.
  			 */
@@ -2525,7 +2527,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  						while(*--s == '0');
  						s++;
  						goto ret1;
-@@ -3050,7 +2288,7 @@ dtoa
+@@ -3050,7 +2290,7 @@ dtoa
  #endif
   fast_failed:
  		s = s0;
@@ -2534,7 +2536,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  		k = k0;
  		ilim = ilim0;
  		}
-@@ -3062,37 +2300,24 @@ dtoa
+@@ -3062,37 +2302,24 @@ dtoa
  		ds = tens[k];
  		if (ndigits < 0 && ilim <= 0) {
  			S = mhi = 0;
@@ -2580,7 +2582,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
   bump_up:
  					while(*--s == '9')
  						if (s == s0) {
-@@ -3104,6 +2329,8 @@ dtoa
+@@ -3104,6 +2331,8 @@ dtoa
  					}
  				break;
  				}
@@ -2589,7 +2591,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  			}
  		goto ret1;
  		}
-@@ -3112,15 +2339,31 @@ dtoa
+@@ -3112,15 +2341,31 @@ dtoa
  	m5 = b5;
  	mhi = mlo = 0;
  	if (leftright) {
@@ -2625,7 +2627,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  		b2 += i;
  		s2 += i;
  		mhi = i2b(1);
-@@ -3151,15 +2394,10 @@ dtoa
+@@ -3151,15 +2396,10 @@ dtoa
  
  	/* Check for special case that d is a normalized power of 2. */
  
@@ -2643,7 +2645,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  #endif
  				) {
  			/* The special case */
-@@ -3167,6 +2405,8 @@ dtoa
+@@ -3167,6 +2407,8 @@ dtoa
  			s2 += Log2P;
  			spec_case = 1;
  			}
@@ -2652,7 +2654,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  		}
  
  	/* Arrange for convenient computation of quotients:
-@@ -3208,7 +2448,7 @@ dtoa
+@@ -3208,7 +2450,7 @@ dtoa
  			ilim = ilim1;
  			}
  		}
@@ -2661,7 +2663,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  		if (ilim < 0 || cmp(b,S = multadd(S,5,0)) <= 0) {
  			/* no digits, fcvt style */
   no_digits:
-@@ -3245,41 +2485,20 @@ dtoa
+@@ -3245,41 +2487,20 @@ dtoa
  			j1 = delta->sign ? 1 : cmp(b, delta);
  			Bfree(delta);
  #ifndef ROUND_BIASED
@@ -2705,7 +2707,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  				if (j1 > 0) {
  					b = lshift(b, 1);
  					j1 = cmp(b, S);
-@@ -3287,15 +2506,10 @@ dtoa
+@@ -3287,15 +2508,10 @@ dtoa
  					&& dig++ == '9')
  						goto round_9_up;
  					}
@@ -2721,7 +2723,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  				if (dig == '9') { /* possible if i == 1 */
   round_9_up:
  					*s++ = '9';
-@@ -3304,9 +2518,6 @@ dtoa
+@@ -3304,9 +2520,6 @@ dtoa
  				*s++ = dig + 1;
  				goto ret;
  				}
@@ -2731,7 +2733,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  			*s++ = dig;
  			if (i == ilim)
  				break;
-@@ -3322,12 +2533,6 @@ dtoa
+@@ -3322,12 +2535,6 @@ dtoa
  	else
  		for(i = 1;; i++) {
  			*s++ = dig = quorem(b,S) + '0';
@@ -2744,7 +2746,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  			if (i >= ilim)
  				break;
  			b = multadd(b, 10, 0);
-@@ -3335,12 +2540,6 @@ dtoa
+@@ -3335,12 +2542,6 @@ dtoa
  
  	/* Round off last digit */
  
@@ -2757,7 +2759,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  	b = lshift(b, 1);
  	j = cmp(b, S);
  	if (j > 0 || j == 0 && dig & 1) {
-@@ -3354,7 +2553,6 @@ dtoa
+@@ -3354,7 +2555,6 @@ dtoa
  		++*s++;
  		}
  	else {
@@ -2765,7 +2767,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/01/11 00:56:29 pvalchev 
  		while(*--s == '0');
  		s++;
  		}
-@@ -3366,18 +2564,11 @@ dtoa
+@@ -3366,18 +2566,11 @@ dtoa
  		Bfree(mhi);
  		}
   ret1:
