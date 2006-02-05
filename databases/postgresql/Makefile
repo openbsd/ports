@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.83 2006/01/07 11:11:17 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.84 2006/02/05 09:23:22 mbalmer Exp $
 
 COMMENT=	"PostgreSQL RDBMS (client)"
 COMMENT-server=	"PostgreSQL RDBMS (server)"
 COMMENT-docs=	"PostgreSQL RDBMS documentation"
 
-VERSION=	8.1.0
+VERSION=	8.1.2
 DISTNAME=	postgresql-${VERSION}
-FULLPKGNAME=	postgresql-client-${VERSION}p0
-PKGNAME-server=	postgresql-server-${VERSION}p0
-PKGNAME-docs=	postgresql-docs-${VERSION}p1
+FULLPKGNAME=	postgresql-client-${VERSION}
+PKGNAME-server=	postgresql-server-${VERSION}
+PKGNAME-docs=	postgresql-docs-${VERSION}
 
 CATEGORIES=	databases
 SHARED_LIBS=	ecpg		5.1 \
@@ -116,6 +116,7 @@ post-install:
 	${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/postgresql
 	@sed -e s#!!PREFIX!!#${TRUEPREFIX}#g ${FILESDIR}/README.OpenBSD > \
 		${WRKBUILD}/README.OpenBSD
-	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD ${PREFIX}/share/doc/postgresql
+	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD \
+		${PREFIX}/share/doc/postgresql
 
 .include <bsd.port.mk>

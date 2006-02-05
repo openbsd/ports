@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.8 2005/11/08 22:07:33 mbalmer Exp $
+@comment $OpenBSD: PLIST-server,v 1.9 2006/02/05 09:23:22 mbalmer Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-clients-*
@@ -391,6 +391,8 @@ include/postgresql/server/utils/varbit.h
 @man man/man1/pg_resetxlog.1
 @man man/man1/postgres.1
 @man man/man1/postmaster.1
+share/doc/postgresql/
+share/doc/postgresql/README.OpenBSD
 share/postgresql/pg_hba.conf.sample
 share/postgresql/pg_ident.conf.sample
 share/postgresql/pg_service.conf.sample

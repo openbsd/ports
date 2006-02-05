@@ -1,3 +1,2 @@
 For more information on using PostgreSQL in an OpenBSD environment,
-please install the postgresql-docs package and see
-${PREFIX}/share/doc/postgresql/README.OpenBSD.
+please see ${PREFIX}/share/doc/postgresql/README.OpenBSD.
