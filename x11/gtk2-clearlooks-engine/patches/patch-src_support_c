@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_support_c,v 1.1 2006/02/05 02:08:53 pvalchev Exp $
+--- src/support.c.orig	Sat Feb  4 17:13:20 2006
++++ src/support.c	Sat Feb  4 17:13:36 2006
+@@ -530,8 +530,8 @@ gboolean *resizable)
+ void gtk_clist_get_header_index (GtkCList *clist, GtkWidget *button,
+                                  gint *column_index, gint *columns)
+ {
+-	*columns = clist->columns;
+ 	int i;
++	*columns = clist->columns;
+ 	
+ 	for (i=0; i<*columns; i++)
+ 	{

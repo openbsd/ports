@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_game_c,v 1.1 2006/02/05 02:08:53 pvalchev Exp $
+--- src/game.c.orig	Sat Feb  4 17:14:39 2006
++++ src/game.c	Sat Feb  4 17:14:46 2006
+@@ -495,8 +495,8 @@ gint game_destroy_lines(gboolean count_s
+                         lock_actions(1);
+                         draw_board();
+ 	                for(animtime = 0, i = 0; i < animcadres;) {
+-                        	gettimeofday(&tvs, NULL);
+                 	        gint isav = i;
++                        	gettimeofday(&tvs, NULL);
+ 	                	for(; animtime == animarray[i].time && i < animcadres; i++) {
+                         		draw_ball(animarray[i].color, animarray[i].x, animarray[i].y, 0, animarray[i].phase + 1);
+                                         _board_destroys[animarray[i].y * rules_get_width() + animarray[i].x] = animarray[i].phase + 1;
