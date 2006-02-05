@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/12/16 00:31:25 alek Exp $
+# $OpenBSD: Makefile,v 1.18 2006/02/05 00:23:13 steven Exp $
 # $FreeBSD: Makefile,v 1.10 1999/01/06 17:11:23 dt Exp $
 
 COMMENT=	"userland smbfs --- SMB to NFS protocols converter"
@@ -8,8 +8,7 @@ DISTNAME=	Sharity-Light.${VERSION}
 PKGNAME=	sharity-light-${VERSION}
 CATEGORIES=	net
 
-MASTER_SITES=	ftp://ftp.obdev.at/pub/Products/Sharity-Light/	\
-		ftp://ftp.warpnet.ro/mirrors/ftp.obdev.at/pub/Products/Sharity-Light/
+MASTER_SITES=	http://www.obdev.at/ftp/pub/Products/Sharity-Light/
 
 HOMEPAGE=	http://www.obdev.at/products/sharity-light/
 
