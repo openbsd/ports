@@ -3,7 +3,7 @@
 # Date created:         22 Nov 1999
 # Whom:                 Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.14 2004/12/20 10:35:36 alek Exp $
+# $OpenBSD: Makefile,v 1.15 2006/02/05 11:44:12 steven Exp $
 #
 
 COMMENT=	"APC Smart UPS Monitoring Daemon"
@@ -11,7 +11,6 @@ COMMENT=	"APC Smart UPS Monitoring Daemon"
 DISTNAME=	upsd-2.0.1.6
 PKGNAME=	upsd-2.0
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_LOCAL}
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
