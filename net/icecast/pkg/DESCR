@@ -1,8 +1,9 @@
 Icecast is a streaming media server which currently supports Ogg-based
-streams like Vorbis, Speex, FLAC, Midi and Theora, as well as MP3 and various
-others (even NSV Shoutcast streams). It can be used to create an Internet
-radio station or a privately run jukebox and many things inbetween. It is very
-versatile and supports open standards for communication and interaction.
+streams like Vorbis, Speex, FLAC, Midi and Theora, as well as MP3 and
+various others (even NSV Shoutcast streams). It can be used to create
+an Internet radio station or a privately run jukebox and many things
+inbetween. It is very versatile and supports open standards for
+communication and interaction.
 
 Icecast v2 is a complete rewrite of the old Icecast streaming server.
 It was designed to be highly efficient and have low memory requirements.
