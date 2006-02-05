@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2006/01/08 13:33:22 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2006/02/05 11:00:55 steven Exp $
 
 COMMENT=	"drivers for several smart card readers"
 
 DISTNAME=	openct-0.6.6
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	security
 SHARED_LIBS=	openct	1.0
 
-HOMEPAGE=	http://www.opensc.org/openct
+HOMEPAGE=	http://www.opensc-project.org/openct/
 
 MAINTAINER=	Douglas Santos <dsantos@hydroxyl.org>
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	http://www.opensc.org/files/
+MASTER_SITES=	http://www.opensc-project.org/files/openct/
 
 WANTLIB=	c pthread
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
