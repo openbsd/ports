@@ -1,8 +1,0 @@
-You will have to specify the datadir manually
-every time you use htmldoc.  Try:
-
-  htmldoc --datadir ${PREFIX}/share/htmldoc
-
-The full set of documentation is available online:
-
-  ${HOMEPAGE}/htmldoc.html

@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.14 2005/02/21 20:24:52 alek Exp $
+# $OpenBSD: Makefile,v 1.15 2006/02/05 16:17:13 sturm Exp $
 
 COMMENT=	"convert HTML pages to PDF/PS format"
 
 V=			1.8.23
 DISTNAME=		htmldoc-${V}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=     	print www
 
 HOMEPAGE=		http://www.easysw.com/htmldoc
+
+MAINTAINER=		Antoine Jacoutot <ajacoutot@lphp.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -31,6 +34,9 @@ CONFIGURE_ENV= 		LDFLAGS="-L${LOCALBASE}/lib" \
 
 post-extract:
 	@rm -rf ${WRKSRC}/jpeg ${WRKSRC}/png ${WRKSRC}/zlib
+
+post-configure:
+	@perl -pi -e "s,\\$$\\{DESTDIR},," ${WRKSRC}/config.h
 
 NO_REGRESS=		Yes
 
