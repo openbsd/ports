@@ -1,12 +1,33 @@
-$OpenBSD: patch-oinkmaster_conf,v 1.3 2006/01/25 04:30:58 david Exp $
+$OpenBSD: patch-oinkmaster_conf,v 1.4 2006/02/05 05:00:43 david Exp $
 --- oinkmaster.conf.orig	Sat Apr 16 02:29:41 2005
-+++ oinkmaster.conf	Tue Jan  3 23:24:21 2006
-@@ -64,7 +64,7 @@
++++ oinkmaster.conf	Sat Feb  4 12:20:56 2006
+@@ -47,9 +47,9 @@
+ # You then specify the URL as
+ # http://www.snort.org/pub-bin/oinkmaster.cgi/<oinkcode>/<filename>
+ # For example, if your code is 5a081649c06a277e1022e1284b and
+-# you use Snort 2.3, the url to use would be (without the wrap):
++# you use Snort 2.4, the url to use would be (without the wrap):
+ # http://www.snort.org/pub-bin/oinkmaster.cgi/
+-# 5a081649c06a277e1022e1284bdc8fabda70e2a4/snortrules-snapshot-2.3.tar.gz
++# 5a081649c06a277e1022e1284bdc8fabda70e2a4/snortrules-snapshot-2.4.tar.gz
+ # See the Oinkmaster FAQ Q28 and http://www.snort.org/rules/ for
+ # more information.
+ 
+@@ -57,14 +57,14 @@
+ # URL examples follows. Replace <oinkcode> with the code you get on the 
+ # Snort site in your registered user profile.
+ 
+-# Example for Snort 2.3
+-# url = http://www.snort.org/pub-bin/oinkmaster.cgi/<oinkcode>/snortrules-snapshot-2.3.tar.gz
++# Example for Snort 2.4
++# url = http://www.snort.org/pub-bin/oinkmaster.cgi/<oinkcode>/snortrules-snapshot-2.4.tar.gz
+ 
+ # Example for Snort-current ("current" means cvs snapshots).
  # url = http://www.snort.org/pub-bin/oinkmaster.cgi/<oinkcode>/snortrules-snapshot-CURRENT.tar.gz
  
  # Example for Community rules
 -# url = http://www.snort.org/pub-bin/downloads.cgi/Download/comm_rules/Community-Rules.tar.gz
-+# url = http://www.snort.org/pub-bin/downloads.cgi/Download/comm_rules/Community-Rules-2.3.tar.gz
++# url = http://www.snort.org/pub-bin/downloads.cgi/Download/comm_rules/Community-Rules-2.4.tar.gz
  
  # Example for rules from the Bleeding Snort project
  # url = http://www.bleedingsnort.com/bleeding.rules.tar.gz
