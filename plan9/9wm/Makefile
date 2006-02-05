@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/12/20 13:45:21 alek Exp $
+# $OpenBSD: Makefile,v 1.21 2006/02/05 10:00:05 steven Exp $
 
 COMMENT=	"8 1/2-like Window Manager for X11"
 
@@ -6,7 +6,7 @@ PKGNAME=	9wm-1.2pre
 DISTNAME=	pre-9wm-1.2
 CATEGORIES=	plan9
 
-MASTER_SITES=	ftp://ftp.cs.su.oz.au/dhog/9wm/
+MASTER_SITES=	http://www.plig.org/xwinman/archive/9wm/
 EXTRACT_SUFX=	.shar.gz
 EXTRACT_CASES=	*.shar.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | /bin/sh;;
 
