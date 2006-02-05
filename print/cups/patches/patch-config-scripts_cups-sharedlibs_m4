@@ -6,8 +6,8 @@
  		OSF1* | Linux | GNU | *BSD*)
 -			LIBCUPS="libcups.so.2"
 -			LIBCUPSIMAGE="libcupsimage.so.2"
-+			LIBCUPS="libcups.so.2.2"
-+			LIBCUPSIMAGE="libcupsimage.so.2.2"
++			LIBCUPS="libcups.so.${LIBcups_VERSION}"
++			LIBCUPSIMAGE="libcupsimage.so.${LIBcupsimage_VERSION}"
  			DSO="\$(CC)"
  			DSOFLAGS="$DSOFLAGS -Wl,-soname,\$@ -shared \$(OPTIM)"
  			;;

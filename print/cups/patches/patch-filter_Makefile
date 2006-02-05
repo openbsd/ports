@@ -5,7 +5,7 @@
  clean:
  	$(RM) $(OBJS) $(TARGETS) $(LIBCUPSIMAGE) libcupsimage.a
 -	$(RM) `basename $(LIBCUPSIMAGE) .2` libcupsimage.dylib
-+	$(RM) `basename $(LIBCUPSIMAGE) .2.2` libcupsimage.dylib
++	$(RM) `basename $(LIBCUPSIMAGE) .${LIBcupsimage_VERSION}` libcupsimage.dylib
  
  
  #
@@ -16,9 +16,9 @@
 -	-if test $(LIBCUPSIMAGE) = "libcupsimage.so.2" -o $(LIBCUPSIMAGE) = "libcupsimage.sl.2"; then \
 -		$(RM) $(LIBDIR)/`basename $(LIBCUPSIMAGE) .2`; \
 -		$(LN) $(LIBCUPSIMAGE) $(LIBDIR)/`basename $(LIBCUPSIMAGE) .2`; \
-+	-if test $(LIBCUPSIMAGE) = "libcupsimage.so.2.2" -o $(LIBCUPSIMAGE) = "libcupsimage.sl.2"; then \
-+		$(RM) $(LIBDIR)/`basename $(LIBCUPSIMAGE) .2.2`; \
-+		$(LN) $(LIBCUPSIMAGE) $(LIBDIR)/`basename $(LIBCUPSIMAGE) .2.2`; \
++	-if test $(LIBCUPSIMAGE) = "libcupsimage.so.${LIBcupsimage_VERSION}" -o $(LIBCUPSIMAGE) = "libcupsimage.sl.2"; then \
++		$(RM) $(LIBDIR)/`basename $(LIBCUPSIMAGE) .${LIBcupsimage_VERSION}`; \
++		$(LN) $(LIBCUPSIMAGE) $(LIBDIR)/`basename $(LIBCUPSIMAGE) .${LIBcupsimage_VERSION}`; \
  	fi
  	-if test $(LIBCUPSIMAGE) = "libcupsimage.2.dylib"; then \
  		$(STRIP) -x $(LIBDIR)/$(LIBCUPSIMAGE); \
@@ -27,13 +27,13 @@
  #
  
 -libcupsimage.so.2 libcupsimage.sl.2:	$(IMAGEOBJS) ../Makedefs
-+libcupsimage.so.2.2 libcupsimage.sl.2:	$(IMAGEOBJS) ../Makedefs
++libcupsimage.so.${LIBcupsimage_VERSION} libcupsimage.sl.2:	$(IMAGEOBJS) ../Makedefs
  	echo Linking $@...
  	$(DSO) $(DSOFLAGS) -o $@ $(IMAGEOBJS) $(DSOLIBS) -lm
 -	$(RM) `basename $@ .2`
 -	$(LN) $@ `basename $@ .2`
-+	$(RM) `basename $@ .2.2`
-+	$(LN) $@ `basename $@ .2.2`
++	$(RM) `basename $@ .${LIBcupsimage_VERSION}`
++	$(LN) $@ `basename $@ .${LIBcupsimage_VERSION}`
  
  
  #

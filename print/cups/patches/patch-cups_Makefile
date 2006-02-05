@@ -5,7 +5,7 @@
  
  clean:
 -	$(RM) $(OBJS) $(TARGETS) `basename $(LIBCUPS) .2` libcups.dylib
-+	$(RM) $(OBJS) $(TARGETS) `basename $(LIBCUPS) .2.2` libcups.dylib
++	$(RM) $(OBJS) $(TARGETS) `basename $(LIBCUPS) .${LIBcups_VERSION}` libcups.dylib
  
  
  #
@@ -16,9 +16,9 @@
 -	if test $(LIBCUPS) = "libcups.so.2" -o $(LIBCUPS) = "libcups.sl.2"; then \
 -		$(RM) $(LIBDIR)/`basename $(LIBCUPS) .2`; \
 -		$(LN) $(LIBCUPS) $(LIBDIR)/`basename $(LIBCUPS) .2`; \
-+	if test $(LIBCUPS) = "libcups.so.2.2" -o $(LIBCUPS) = "libcups.sl.2.2"; then \
-+		$(RM) $(LIBDIR)/`basename $(LIBCUPS) .2.2`; \
-+		$(LN) $(LIBCUPS) $(LIBDIR)/`basename $(LIBCUPS) .2.2`; \
++	if test $(LIBCUPS) = "libcups.so.${LIBcups_VERSION}" -o $(LIBCUPS) = "libcups.sl.${LIBcups_VERSION}"; then \
++		$(RM) $(LIBDIR)/`basename $(LIBCUPS) .${LIBcups_VERSION}`; \
++		$(LN) $(LIBCUPS) $(LIBDIR)/`basename $(LIBCUPS) .${LIBcups_VERSION}`; \
  	fi
  	if test $(LIBCUPS) = "libcups.2.dylib"; then \
  		$(STRIP) -x $(LIBDIR)/$(LIBCUPS); \
@@ -27,17 +27,17 @@
  
  #
 -# libcups.so.2, libcups.sl.2
-+# libcups.so.2.2, libcups.sl.2
++# libcups.so.${LIBcups_VERSION}, libcups.sl.2
  #
  
 -libcups.so.2 libcups.sl.2:	$(LIBOBJS) ../Makedefs
-+libcups.so.2.2 libcups.sl.2:	$(LIBOBJS) ../Makedefs
++libcups.so.${LIBcups_VERSION} libcups.sl.2:	$(LIBOBJS) ../Makedefs
  	echo Linking $@...
  	$(DSO) $(DSOFLAGS) -o $@ $(LIBOBJS) $(SSLLIBS) $(COMMONLIBS)
 -	$(RM) `basename $@ .2`
 -	$(LN) $@ `basename $@ .2`
-+	$(RM) `basename $@ .2.2`
-+	$(LN) $@ `basename $@ .2.2`
++	$(RM) `basename $@ .${LIBcups_VERSION}`
++	$(LN) $@ `basename $@ .${LIBcups_VERSION}`
  
  
  #

@@ -6,7 +6,7 @@
  </TR>
 -<TR VALIGN="TOP"><TD>/usr/lib/libcups.so.2
 -<BR> /usr/lib/libcupsimage.so.2</TD><TD>Shared libraries (all others)</TD>
-+<TR VALIGN="TOP"><TD>/usr/lib/libcups.so.2.2
++<TR VALIGN="TOP"><TD>/usr/lib/libcups.so.${LIBcups_VERSION}
 +<BR> /usr/lib/libcupsimage.so.2.2</TD><TD>Shared libraries (all others)</TD>
  </TR>
  <TR VALIGN="TOP"><TD>/usr/libexec/cups/backend/</TD><TD>Backends for

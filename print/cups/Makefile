@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2005/12/23 20:17:41 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.10 2006/02/05 10:20:57 mbalmer Exp $
 
 COMMENT=		"Common Unix Printing System"
 
 VERSION=		1.1.23
 DISTNAME=		cups-${VERSION}-source
-PKGNAME=		${DISTNAME:S/-source//}p6
+PKGNAME=		${DISTNAME:S/-source//}p7
 CATEGORIES=		print sysutils
 SHARED_LIBS=		cups		2.2 \
 			cupsimage	2.2
@@ -37,6 +37,9 @@ LIB_DEPENDS=		png.3::graphics/png \
 FAKE_FLAGS=		BINMODE=${BINMODE} \
 			SHAREMODE=${SHAREMODE}
 
+MAKE_ENV+=		LIBcups_VERSION=${LIBcups_VERSION} \
+			LIBcupsimage_VERSION=${LIBcupsimage_VERSION}
+
 CONFIGURE_STYLE=	gnu dest
 AUTOCONF_VERSION=	2.59
 CONFIGURE_ARGS+=	--with-cups-user=_cups \
@@ -52,7 +55,9 @@ CONFIGURE_ARGS+=	--with-cups-user=_cups \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 			  -I${LOCALBASE}/include/libpng" \
 			DSOFLAGS="-L${LOCALBASE}/lib" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			LIBcups_VERSION=${LIBcups_VERSION} \
+			LIBcupsimage_VERSION=${LIBcupsimage_VERSION}
 
 CFLAGS+=		"-I${LOCALBASE}/include" \
 			"-I${LOCALBASE}/include/libpng"
