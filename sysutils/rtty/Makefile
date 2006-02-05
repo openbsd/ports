@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/12/20 10:35:36 alek Exp $
+# $OpenBSD: Makefile,v 1.17 2006/02/05 11:38:24 steven Exp $
 
 COMMENT=	"multiuser "tip"/"cu" replacement with logging"
 
@@ -12,7 +12,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c 
 
-MASTER_SITES=   ftp://ftp.vix.com/pub/vixie/
+MASTER_SITES=   ftp://ftp.isc.org/isc/rtty/
 EXTRACT_SUFX=	.shar.gz
 
 WRKDIST=	${WRKDIR}
