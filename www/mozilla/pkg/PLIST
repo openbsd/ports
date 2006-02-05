@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.35 2005/12/09 19:59:54 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.36 2006/02/05 00:21:21 espie Exp $
+@pkgpath www/mozilla,gtk2
 %%SHARED%%
 bin/mozilla
 lib/pkgconfig/

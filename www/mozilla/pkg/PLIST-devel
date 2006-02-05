@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-devel,v 1.14 2005/12/09 19:59:54 wilfried Exp $
+@comment $OpenBSD: PLIST-devel,v 1.15 2006/02/05 00:21:21 espie Exp $
+@pkgpath www/mozilla,-devel,gtk2
 %%SHARED%%
 lib/pkgconfig/mozilla-gtkmozembed.pc
 lib/pkgconfig/mozilla-js.pc
