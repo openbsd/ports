@@ -1,0 +1,20 @@
+$OpenBSD: patch-panel-plugin_showdesktop_c,v 1.1 2006/02/05 01:58:22 pvalchev Exp $
+--- panel-plugin/showdesktop.c.orig	Sat Feb  4 18:10:00 2006
++++ panel-plugin/showdesktop.c	Sat Feb  4 18:10:14 2006
+@@ -613,7 +613,6 @@ plugin_create_options (Control *ctrl, Gt
+ {
+     gui *plugin = ctrl->data;
+     GtkWidget *vbox, *optionbox, *cb1, *cb2, *cb3, *cb4,*frame;
+-    xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
+     
+     gchar *tips[] = {
+         N_("Enable this option, if your panel is located on top or on the right."),
+@@ -621,6 +620,8 @@ plugin_create_options (Control *ctrl, Gt
+         N_("If this option is enabled, the plugin consumes less space on the panel."),
+         N_("display one button only"),
+     };
++
++    xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
+ 
+     optiontooltips = gtk_tooltips_new ();
+ 
