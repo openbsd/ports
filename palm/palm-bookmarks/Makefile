@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2004/02/02 17:35:02 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2006/02/05 09:54:47 steven Exp $
 
 COMMENT=	"bookmarks on your palm"
 
 DISTNAME=	palm-bookmarks-0.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	palm textproc
 
-HOMEPAGE=	http://www.liacs.nl/~jvhemert/scripts/palm-bookmarks/
+HOMEPAGE=	http://www.vanhemert.co.uk/palmbookmarks.html
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
@@ -15,7 +16,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	http://www.vanhemert.co.uk/files/
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
