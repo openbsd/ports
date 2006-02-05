@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.83 2006/02/04 23:54:57 steven Exp $
+# $OpenBSD: network.conf.template,v 1.84 2006/02/05 13:56:19 steven Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -116,7 +116,6 @@ MASTER_SITE_SUNSITE+=	\
 	ftp://ftp.chg.ru/pub/Linux/sunsite/
 
 MASTER_SITE_SOURCEFORGE+=	\
-	http://ovh.dl.sourceforge.net/sourceforge/ \
 	http://puzzle.dl.sourceforge.net/sourceforge/ \
 	http://optusnet.dl.sourceforge.net/sourceforge/ \
 	http://heanet.dl.sourceforge.net/sourceforge/ \
