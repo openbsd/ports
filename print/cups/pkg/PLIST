@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/10/14 18:10:15 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.8 2006/02/05 10:26:23 mbalmer Exp $
 @conflict LPRng-*
 @newgroup _cups:541
 @newuser _cups:541:541:daemon:CUPS:/nonexistent:/sbin/nologin
@@ -775,36 +775,24 @@ share/examples/cups/printers.conf
 @sample /var/spool/cups/tmp/
 @owner
 @group
-share/locale/
 share/locale/C/
 share/locale/C/cups_C
-share/locale/be/
 share/locale/be/cups_be
-share/locale/cs/
 share/locale/cs/cups_cs
-share/locale/de/
 share/locale/de/cups_de
-share/locale/en/
 share/locale/en/cups_en
 share/locale/en_US/
 share/locale/en_US/cups_en_US
-share/locale/es/
 share/locale/es/cups_es
-share/locale/fr/
 share/locale/fr/cups_fr
-share/locale/he/
 share/locale/he/cups_he
-share/locale/it/
 share/locale/it/cups_it
 share/locale/ru_RU/
 share/locale/ru_RU/cups_ru_RU
-share/locale/sv/
 share/locale/sv/cups_sv
-share/locale/uk/
 share/locale/uk/cups_uk
 share/locale/uk_UA/
 share/locale/uk_UA/cups_uk_UA
-share/locale/zh_CN/
 share/locale/zh_CN/cups_zh_CN
 @extraunexec rm -fr /var/log/cups
 @extraunexec rm -fr /var/spool/cups
