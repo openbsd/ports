@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/11/22 16:59:30 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2006/02/05 15:08:43 david Exp $
 
 DISTNAME=	sqsh-2.1
 PKGNAME=	${DISTNAME}p0
@@ -30,7 +30,7 @@ CONFIGURE_ARGS=	--with-readline --sysconfdir='${SYSCONFDIR}'
 ALL_TARGET=	
 NO_REGRESS=	Yes
 
-post-patch:
+pre-configure:
 	@perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR}," ${WRKSRC}/Makefile.in \
 		${WRKSRC}/src/Makefile.in
 
