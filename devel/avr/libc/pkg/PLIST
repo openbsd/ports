@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/12/09 16:01:01 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2006/02/05 22:43:01 jsg Exp $
+avr/
 avr/include/
 avr/include/assert.h
 avr/include/avr/
@@ -69,12 +70,20 @@ avr/include/avr/iotn13.h
 avr/include/avr/iotn15.h
 avr/include/avr/iotn22.h
 avr/include/avr/iotn2313.h
+avr/include/avr/iotn24.h
 avr/include/avr/iotn25.h
 avr/include/avr/iotn26.h
+avr/include/avr/iotn261.h
 avr/include/avr/iotn28.h
+avr/include/avr/iotn44.h
 avr/include/avr/iotn45.h
+avr/include/avr/iotn461.h
+avr/include/avr/iotn84.h
 avr/include/avr/iotn85.h
+avr/include/avr/iotn861.h
+avr/include/avr/iotnx4.h
 avr/include/avr/iotnx5.h
+avr/include/avr/iotnx61.h
 avr/include/avr/parity.h
 avr/include/avr/pgmspace.h
 avr/include/avr/portpins.h
@@ -101,6 +110,7 @@ avr/include/util/crc16.h
 avr/include/util/delay.h
 avr/include/util/parity.h
 avr/include/util/twi.h
+avr/lib/
 avr/lib/avr3/
 avr/lib/avr3/crt43320.o
 avr/lib/avr3/crt43355.o
@@ -164,3 +174,25 @@ avr/lib/libprintf_min.a
 avr/lib/libscanf_flt.a
 avr/lib/libscanf_min.a
 bin/avr-avr-man
+share/doc/avr-libc/
+share/doc/avr-libc/examples/
+share/doc/avr-libc/examples/demo/
+share/doc/avr-libc/examples/demo/Makefile
+share/doc/avr-libc/examples/demo/demo.c
+share/doc/avr-libc/examples/demo/iocompat.h
+share/doc/avr-libc/examples/largedemo/
+share/doc/avr-libc/examples/largedemo/Makefile
+share/doc/avr-libc/examples/largedemo/largedemo.c
+share/doc/avr-libc/examples/stdiodemo/
+share/doc/avr-libc/examples/stdiodemo/Makefile
+share/doc/avr-libc/examples/stdiodemo/defines.h
+share/doc/avr-libc/examples/stdiodemo/hd44780.c
+share/doc/avr-libc/examples/stdiodemo/hd44780.h
+share/doc/avr-libc/examples/stdiodemo/lcd.c
+share/doc/avr-libc/examples/stdiodemo/lcd.h
+share/doc/avr-libc/examples/stdiodemo/stdiodemo.c
+share/doc/avr-libc/examples/stdiodemo/uart.c
+share/doc/avr-libc/examples/stdiodemo/uart.h
+share/doc/avr-libc/examples/twitest/
+share/doc/avr-libc/examples/twitest/Makefile
+share/doc/avr-libc/examples/twitest/twitest.c
