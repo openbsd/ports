@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2005/04/19 09:41:42 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2006/02/05 09:36:22 steven Exp $
 # Original from: Curtiss Howard, cereal@schizo.com
 #
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m termcap 
 
-MASTER_SITES=		ftp://ftp.funet.fi/pub/mirrors/ftp.debian.org/debian/dists/potato/main/source/news/ \
+MASTER_SITES=		ftp://ftp.funet.fi/pub/mirrors/ftp.debian.org/debian/pool/main/l/linleech/ \
 			http://people.montana.com/~drrom/
 
 FAKE=			lib
