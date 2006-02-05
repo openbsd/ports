@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/01/14 11:46:15 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/02/05 11:09:46 steven Exp $
 
 COMMENT=	"Qt Cryptographic Architecture"
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${HOMEPAGE}
+MASTER_SITES=		http://delta.affinix.com/download/qca/
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		x11/qt3
