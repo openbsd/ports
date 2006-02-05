@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/12/27 13:28:34 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2006/02/05 10:50:44 steven Exp $
 
 COMMENT=		"high level firewall language"
 
@@ -17,7 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MASTER_SITES=		http://www.hlfl.org/hlfl/ \
-			ftp://ftp.hlfl.org/pub/hlfl/
+			ftp://ftp.hlfl.org/pub/hlfl/ \
+			ftp://ftp.hlfl.org/pub/hlfl/old/
 
 CONFIGURE_STYLE=	gnu 
 FAKE_FLAGS=		prefix=${WRKINST}${PREFIX} \
