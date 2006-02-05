@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2005/12/25 11:15:33 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2006/02/05 10:56:21 steven Exp $
 
 COMMENT=		"Abstract Syntax Notation One structure parser library"
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/alpha/gnutls/libtasn1/ \
+		ftp://ftp.gnupg.org/gcrypt/alpha/gnutls/libtasn1/attic/ \
 		ftp://gd.tuwien.ac.at/privacy/gnupg/alpha/gnutls/libtasn1/ \
 		http://ftp.planetmirror.com/pub/gnupg/alpha/gnutls/libtasn1/ \
 		http://sunsite.dk/pub/security/gcrypt/alpha/gnutls/libtasn1/ \
