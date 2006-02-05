@@ -1,4 +1,4 @@
-$OpenBSD: patch-conf_Makefile_in,v 1.1.1.1 2005/02/19 20:49:51 alek Exp $
+$OpenBSD: patch-conf_Makefile_in,v 1.2 2006/02/05 15:34:54 alek Exp $
 --- conf/Makefile.in.orig	Sat Jan 22 15:57:22 2005
 +++ conf/Makefile.in	Tue Feb  1 15:51:29 2005
 @@ -33,7 +33,7 @@ infodir = @infodir@
@@ -15,7 +15,7 @@ $OpenBSD: patch-conf_Makefile_in,v 1.1.1.1 2005/02/19 20:49:51 alek Exp $
  AUTOMAKE_OPTIONS = foreign
  
 -dist_pkgdata_DATA = ices-oss.xml ices-alsa.xml ices-playlist.xml
-+dist_pkgdata_DATA = ices-sun.xml ices-alsa.xml ices-playlist.xml
++dist_pkgdata_DATA = ices-sun.xml ices-oss.xml ices-playlist.xml
  subdir = conf
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = $(top_builddir)/config.h

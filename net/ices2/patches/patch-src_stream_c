@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_stream_c,v 1.1 2005/10/21 16:14:02 naddy Exp $
+$OpenBSD: patch-src_stream_c,v 1.2 2006/02/05 15:34:54 alek Exp $
 --- src/stream.c.orig	Fri Nov  5 20:19:54 2004
-+++ src/stream.c	Tue Oct 18 14:45:00 2005
++++ src/stream.c	Tue Nov 15 16:28:24 2005
 @@ -295,9 +295,10 @@ void *ices_instance_stream(void *arg)
                              stream->reconnect_attempts==-1) && 
                              !ices_config->shutdown)
@@ -14,11 +14,3 @@ $OpenBSD: patch-src_stream_c,v 1.1 2005/10/21 16:14:02 naddy Exp $
                          if((shouterr = shout_open(sdsc->shout)) == SHOUTERR_SUCCESS)
                          {
                              LOG_INFO3("Connected to server: %s:%d%s", 
-@@ -329,6 +330,7 @@ void *ices_instance_stream(void *arg)
-                             }
-                             else /* Don't try again too soon */
-                                 thread_sleep (stream->reconnect_delay*1000000); 
-+                            sdsc->shout = NULL;
-                         }
-                     }
-                     stream->skip = 0;
