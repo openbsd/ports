@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2004/12/27 13:28:33 alek Exp $
+# $OpenBSD: Makefile,v 1.11 2006/02/05 10:48:57 steven Exp $
 
 COMMENT=	"encrypt and decrypt AES files and streams"
 
 DISTNAME=	ccrypt-1.7
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	security
 
-HOMEPAGE=	http://quasar.mathstat.uottawa.ca/~selinger/ccrypt/
+HOMEPAGE=	http://www.mathstat.dal.ca/~selinger/ccrypt/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
