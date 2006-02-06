@@ -1,7 +1,0 @@
-The manpage of GnuPG mentions the need for memory page locking.
-In fact this is not needed as OpenBSD enables swap file encryption
-by default.
-
-However you might want to get rid of the misleading 'using insecure
-memory' warning. Just put 'no-secmem-warning' into your ~/.gnupg/gpg.conf
-file or use gpg with the --no-secmem-warning switch.

@@ -1,7 +1,7 @@
-$OpenBSD: patch-keyserver_Makefile_in,v 1.1 2005/02/19 12:10:03 alek Exp $
---- keyserver/Makefile.in.orig	Sat Feb 19 11:15:45 2005
-+++ keyserver/Makefile.in	Sat Feb 19 11:15:51 2005
-@@ -278,7 +278,7 @@ sbindir = @sbindir@
+$OpenBSD: patch-keyserver_Makefile_in,v 1.2 2006/02/06 21:57:56 bernd Exp $
+--- keyserver/Makefile.in.orig	Tue Mar 15 16:52:21 2005
++++ keyserver/Makefile.in	Mon Feb  6 16:04:35 2006
+@@ -300,7 +300,7 @@ sbindir = @sbindir@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@

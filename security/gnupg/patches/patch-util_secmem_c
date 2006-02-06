@@ -1,0 +1,41 @@
+$OpenBSD: patch-util_secmem_c,v 1.1 2006/02/06 21:57:56 bernd Exp $
+--- util/secmem.c.orig	Thu Mar 10 10:42:06 2005
++++ util/secmem.c	Mon Feb  6 20:35:32 2006
+@@ -36,6 +36,9 @@
+ #include <sys/lock.h>
+ #endif
+ #endif
++#include <sys/param.h>
++#include <sys/sysctl.h>
++#include <uvm/uvm_swap_encrypt.h>
+ 
+ #include "types.h"
+ #include "memory.h"
+@@ -85,11 +88,23 @@ static int suspend_warning;
+ static void
+ print_warn(void)
+ {
+-  if (!no_warning)
++  int	 mib[3], swapencrypt = 0;
++  size_t len;
++
++  mib[0] = CTL_VM;
++  mib[1] = VM_SWAPENCRYPT;
++  mib[2] = SWPENC_ENABLE;
++
++  len = sizeof(swapencrypt);
++
++  if (sysctl(mib, 3, &swapencrypt, &len, NULL, 0) == -1)
++    log_info("WARNING: Can't receive vm.swapencrypt.enable sysctl value\n");
++
++  if (!no_warning && !swapencrypt)
+     {
+-      log_info(_("WARNING: using insecure memory!\n"));
+-      log_info(_("please see http://www.gnupg.org/faq.html"
+-		 " for more information\n"));
++      log_info("WARNING: Using insecure memory!\n");
++      log_info("Please enable swap encryption via"
++		 " 'sysctl vm.swapencrypt.enable=1'.\n");
+     }
+ }
+ 

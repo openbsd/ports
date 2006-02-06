@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1 2005/01/29 19:27:18 sturm Exp $
---- doc/Makefile.in.orig	Fri Jan 21 23:26:07 2005
-+++ doc/Makefile.in	Fri Jan 21 23:26:32 2005
-@@ -274,7 +274,7 @@ info_TEXINFOS = gpg.texi gpgv.texi
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2006/02/06 21:57:56 bernd Exp $
+--- doc/Makefile.in.orig	Tue Mar 15 16:52:21 2005
++++ doc/Makefile.in	Mon Feb  6 16:04:35 2006
+@@ -284,7 +284,7 @@ info_TEXINFOS = gpg.texi gpgv.texi
  
  # Need this to avoid building of dvis with automake 1.4
  DVIS = 

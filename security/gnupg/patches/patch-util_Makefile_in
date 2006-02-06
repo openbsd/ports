@@ -1,7 +1,7 @@
-$OpenBSD: patch-util_Makefile_in,v 1.1 2005/02/19 12:10:03 alek Exp $
---- util/Makefile.in.orig	Sat Feb 19 11:14:27 2005
-+++ util/Makefile.in	Sat Feb 19 11:14:34 2005
-@@ -260,7 +260,7 @@ sbindir = @sbindir@
+$OpenBSD: patch-util_Makefile_in,v 1.2 2006/02/06 21:57:56 bernd Exp $
+--- util/Makefile.in.orig	Tue Mar 15 16:52:22 2005
++++ util/Makefile.in	Mon Feb  6 16:04:35 2006
+@@ -270,7 +270,7 @@ sbindir = @sbindir@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
