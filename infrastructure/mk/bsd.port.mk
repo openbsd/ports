@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.743 2006/01/05 19:33:17 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.744 2006/02/06 17:09:08 jolan Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -884,7 +884,7 @@ _PERL_FIX_SHAR?=perl -ne 'print if $$s || ($$s = m:^\#(\!\s*/bin/sh\s*| This is 
 # XXX note that we DON'T set EXTRACT_SUFX.
 .if ${_USE_ZIP:L} != "no"
 BUILD_DEPENDS+=		:unzip-*:archivers/unzip
-EXTRACT_CASES+= *.zip) ${UNZIP} -q ${FULLDISTDIR}/$$archive -d ${WRKDIR};;
+EXTRACT_CASES+= *.zip) ${UNZIP} -oq ${FULLDISTDIR}/$$archive -d ${WRKDIR};;
 .endif
 .if ${_USE_BZIP2:L} != "no"
 BUILD_DEPENDS+=		:bzip2-*:archivers/bzip2
