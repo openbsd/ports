@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.89 2006/01/28 19:56:16 bernd Exp $
+# $OpenBSD: Makefile,v 1.90 2006/02/06 22:10:24 bernd Exp $
 
 COMMENT=		"image processing tools"
 
 VER=			6.2.6
-DASHVER=		0
+DASHVER=		1
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
-PKGNAME=		ImageMagick-${VER}.${DASHVER}p0
-SHARED_LIBS=		Magick++	10.0	\
-			Magick		10.0	\
-			Wand		10.0
+PKGNAME=		ImageMagick-${VER}.${DASHVER}
+SHARED_LIBS=		Magick++	10.1	\
+			Magick		10.1	\
+			Wand		10.1
 
 CATEGORIES=		graphics
 MAINTAINER=		Bernd Ahlers <bernd@openbsd.org>
@@ -35,7 +35,7 @@ LIB_DEPENDS=		bz2.10::archivers/bzip2 \
 
 RUN_DEPENDS=		:netpbm-*:graphics/netpbm
 BUILD_DEPENDS=		:netpbm-*:graphics/netpbm
-REGRESS_DEPENDS= 	::graphics/p5-PerlMagick
+REGRESS_DEPENDS= 	:p5-PerlMagick-${VER}.${DASHVER}:graphics/p5-PerlMagick
 
 USE_LIBTOOL=		Yes
 SEPARATE_BUILD=		concurrent
