@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.3 2006/02/02 03:21:57 todd Exp $
+# $OpenBSD: Makefile,v 1.4 2006/02/06 12:39:24 todd Exp $
 
-COMMENT=		"OpenAFS"
+COMMENT=		"Distributed filesystem OpenAFS"
 
 DISTNAME=		openafs-1.4.0-src
-PKGNAME=		openafs-1.4.0
+PKGNAME=		openafs-1.4.0p0
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.openafs.org
 
-MAINTAINER=		Ober J. Heim <ober@linbsd.org>
+MAINTAINER=		Jaime Fournier <ober@linbsd.org>
 
 ONLY_FOR_ARCHS= i386
 
-# ???
+# IPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -34,9 +34,14 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 COPTS+= -ggdb
 WRKDIST=		${WRKDIR}/${PKGNAME}
 
-.if !exists(/usr/src/sys/lib/libkern/libkern.h)
-ERRORS += "Fatal: You cannot build this port without kernel sources"
-.endif
+pre-configure:
+	@if [ ! -d /usr/src/sys ]; then \
+		echo ""; \
+		echo "*** Error: Building this package requires the"; \
+		echo "*** kernel sources to be available under /usr/src/sys"; \
+		echo ""; \
+		exit 1; \
+	fi
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/

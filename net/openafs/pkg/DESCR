@@ -1,1 +1,9 @@
-OpenAFS
+AFS is a distributed filesystem product, pioneered at Carnegie Mellon
+University and supported and developed as a product by Transarc
+Corporation (now IBM Pittsburgh Labs). It offers a client-server
+architecture for file sharing, providing location independence,
+scalability and transparent migration capabilities for data.
+
+IBM branched the source of the AFS product, and made a copy of the
+source available for community development and maintenance. They called
+the release OpenAFS.
