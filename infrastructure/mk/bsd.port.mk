@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.744 2006/02/06 17:09:08 jolan Exp $
+#	$OpenBSD: bsd.port.mk,v 1.745 2006/02/06 22:01:48 steven Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2787,7 +2787,7 @@ show-required-by:
 	license-check _license-check \
 	_internal-extract _internal-distpatch _internal-configure \
 	_internal-build _internal-all _internal_install _internal-fake \
-	_internal-package _internal_fetch _internal-checksum \
+	_internal-package _internal-fetch _internal-checksum \
 	_internal-depends _internal-lib-depends _internal-libs-depends \
 	_internal-build-depends \
 	_internal-run-depends _internal-regress-depends \
