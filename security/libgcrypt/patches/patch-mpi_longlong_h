@@ -1,6 +1,6 @@
-$OpenBSD: patch-mpi_longlong_h,v 1.1 2004/06/22 04:37:42 sturm Exp $
---- mpi/longlong.h.orig	Mon Jun 21 22:06:32 2004
-+++ mpi/longlong.h	Mon Jun 21 22:07:36 2004
+$OpenBSD: patch-mpi_longlong_h,v 1.2 2006/02/06 06:43:48 sturm Exp $
+--- mpi/longlong.h.orig	Wed Mar  3 09:21:49 2004
++++ mpi/longlong.h	Sun Feb  5 09:41:09 2006
 @@ -170,6 +170,7 @@ MA 02111-1307, USA. */
      (pl) = __m0 * __m1; 						\
    } while (0)
@@ -17,3 +17,12 @@ $OpenBSD: patch-mpi_longlong_h,v 1.1 2004/06/22 04:37:42 sturm Exp $
  #endif /* __alpha */
  
  /***************************************
+@@ -1133,7 +1135,7 @@ extern USItype __udiv_qrnnd ();
+ 	     "rJ" ((USItype)(al)),                                      \
+ 	     "rI" ((USItype)(bl))                                       \
+ 	   __CLOBBER_CC)
+-#if defined (__sparc_v8__)
++#if defined (__sparc_v8__) || defined (__sparc__)
+ /* Don't match immediate range because, 1) it is not often useful,
+    2) the 'I' flag thinks of the range as a 13 bit signed interval,
+    while we want to match a 13 bit interval, sign extended to 32 bits,
