@@ -12,7 +12,7 @@ fetch/check-distfiles
 	heuristic to check the whole contents of /usr/ports/distfiles against
 	all MD5 files in the ports tree.
 	
-packages/check-dependencies
+package/check-dependencies
 	Check dependencies for all packages in the current directory.
 	Basically, verifies that the tsort in bsd.port.mk did their job.
 
@@ -39,9 +39,6 @@ db/network.conf
 
 fetch/check-license
 	legacy script used by Marco to check the LICENSE files
-
-install/create-user
-	simple script to create new users account, based on db/users.db
 
 build/outdated-perl-ports
 	compare perl ports INDEX entries with the latest module
