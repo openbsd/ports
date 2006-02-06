@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.47 2006/01/16 07:01:39 steven Exp $
+# $OpenBSD: Makefile,v 1.48 2006/02/06 08:21:53 wilfried Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
 COMMENT=	"redesign of Mozilla's browser component"
 
-VER=		1.5
+VER=		1.5.0.1
 DISTNAME=	mozilla
-PKGNAME=	mozilla-firefox-${VER}p3
-SO_VERSION=	9.0
+PKGNAME=	mozilla-firefox-${VER}
+SO_VERSION=	10.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 .for _lib in accessibility appcomps auth autoconfig browsercomps \
@@ -120,9 +120,9 @@ do-install:
 	@cd ${MOB} && ${TAR} -chf - ${dir} | \
 		${TAR} -xf - -C ${MOZ}
 .endfor
-	@cd ${MOB} && ${TAR} -chf - *.so.?.? | \
+	@cd ${MOB} && ${TAR} -chf - *.so.??.? | \
 		${TAR} -xf - -C ${MOZ}
-	@chmod 444 ${MOZ}/*.so.?.? ${MOZ}/components/*.so.?.? ${MOZ}/components/*.js
+	@chmod 444 ${MOZ}/*.so.??.? ${MOZ}/components/*.so.??.? ${MOZ}/components/*.js
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${MOZ}
 
 	${INSTALL_DATA} ${WRKSRC}/browser/app/mozicon16.xpm ${WRKSRC}/browser/app/mozicon50.xpm ${MOZ}
