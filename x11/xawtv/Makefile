@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2005/03/12 03:38:42 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.12 2006/02/06 17:48:59 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 macppc amd64
 
@@ -32,7 +32,7 @@ CONFIGURE_ARGS+=--enable-mmx
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--disable-aa --disable-motif --disable-gl \
-		--disable-dv
+		--disable-dv --disable-quicktime
 CONFIGURE_ENV=	PKG_CONFIG_PATH="${X11BASE}/lib/pkgconfig"
 
 MAKE_FLAGS=	verbose=yes SYSCONFDIR="${SYSCONFDIR}"
