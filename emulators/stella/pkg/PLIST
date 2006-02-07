@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/10/18 19:51:58 niallo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/02/07 17:38:41 niallo Exp $
 bin/stella
 share/doc/stella/
-share/doc/stella/cheat.html
 share/doc/stella/debugger.html
 share/doc/stella/graphics/
+share/doc/stella/graphics/cheat.png
 share/doc/stella/graphics/chucky_cheese.png
 share/doc/stella/graphics/circuit.png
 share/doc/stella/graphics/console.png
