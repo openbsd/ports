@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: postfix-enable,v 1.4 2004/04/25 10:36:40 jakob Exp $
+# $OpenBSD: postfix-enable,v 1.5 2006/02/07 19:48:53 brad Exp $
 
 if [ -f /etc/mailer.conf.postfix ]; then
     if [ -f /etc/mailer.conf ]; then
@@ -10,7 +10,7 @@ if [ -f /etc/mailer.conf.postfix ]; then
     mv -f /etc/mailer.conf.postfix /etc/mailer.conf
     echo "postfix /etc/mailer.conf enabled"
     echo ""
-    echo "NOTE: do not forget to add sendmail_flags=\"-bd -q30m\" to"
+    echo "NOTE: do not forget to add sendmail_flags=\"-bd\" to"
     echo "      /etc/rc.conf.local to startup postfix correctly." 
     echo ""
     echo "NOTE: do not forget to remove the \"sendmail clientmqueue runner\""
