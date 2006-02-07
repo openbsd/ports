@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2006/02/07 09:46:27 xsa Exp $
+# $OpenBSD: Makefile,v 1.5 2006/02/07 11:58:54 bernd Exp $
 
 COMMENT=	"connect four of stones in a straight line"
 
 V=		2.1.4
 DISTNAME=	4stAttack-${V}
-PKGNAME=	forcedattack-${V}
+PKGNAME=	forcedattack-${V}p0
 CATEGORIES=	games
 
 HOMEPAGE=	http://forcedattack.sourceforge.net/

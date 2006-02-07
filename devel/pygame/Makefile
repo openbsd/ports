@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/02/07 09:46:27 xsa Exp $
+# $OpenBSD: Makefile,v 1.10 2006/02/07 11:57:19 bernd Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 .if ${MACHINE_ARCH} == "alpha"
@@ -8,7 +8,7 @@ BROKEN=		"smpeg"
 COMMENT=	"set of Python modules designed for writing games"
 
 DISTNAME=	pygame-1.6
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	devel games
 HOMEPAGE=	http://www.pygame.org/
 
