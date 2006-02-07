@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/11/01 16:29:24 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2006/02/07 09:46:27 xsa Exp $
 
 COMMENT=	"Python interface to sendmail milter API"
 
@@ -7,8 +7,6 @@ PKGNAME=	py-${DISTNAME}p0
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.bmsi.com/python/milter.html
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

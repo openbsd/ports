@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2005/03/14 15:12:56 xsa Exp $
+# $OpenBSD: Makefile,v 1.9 2006/02/07 09:46:27 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 .if ${MACHINE_ARCH} == "alpha"
@@ -11,8 +11,6 @@ DISTNAME=	pygame-1.6
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel games
 HOMEPAGE=	http://www.pygame.org/
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

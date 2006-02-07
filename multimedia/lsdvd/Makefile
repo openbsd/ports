@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2005/03/13 22:48:11 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2006/02/07 09:46:27 xsa Exp $
 
 COMMENT=	"print information about the content and structure of a DVD"
 
 DISTNAME=	lsdvd-0.10
 CATEGORIES=	multimedia
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 HOMEPAGE=	http://untrepid.com/acidrip/lsdvd.html
 

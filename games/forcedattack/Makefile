@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/08/04 19:46:14 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2006/02/07 09:46:27 xsa Exp $
 
 COMMENT=	"connect four of stones in a straight line"
 
@@ -8,8 +8,6 @@ PKGNAME=	forcedattack-${V}
 CATEGORIES=	games
 
 HOMEPAGE=	http://forcedattack.sourceforge.net/
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # GPL 
 PERMIT_PACKAGE_CDROM=	Yes
