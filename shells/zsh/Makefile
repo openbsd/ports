@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.37 2006/01/29 20:41:02 sturm Exp $
+# $OpenBSD: Makefile,v 1.38 2006/02/07 21:06:17 naddy Exp $
 
-COMMENT=	"Z shell, Bourne shell-compatible, release flavor"
+COMMENT=	"Z shell, Bourne shell-compatible"
 COMMENT-zftp=	"Z shell embedded ftp client"
 
 VERSION=	4.2.6
 DISTNAME=	zsh-${VERSION}
+PKGNAME=	${DISTNAME}p0
+PKGNAME-zftp=	zsh-zftp-${VERSION}
 CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
 		${HOMEPAGE}pub/ \
@@ -24,35 +26,20 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS=	static
-
-.if ${MACHINE_ARCH:Malpha} || ${MACHINE_ARCH:Mvax}
-# for the time being, force static on alpha and vax
-FLAVOR?=        static
-.else
-FLAVOR?=
-.endif
+WANTLIB=	c m termcap 
 
 AUTOCONF_VERSION=2.59
-CONFIGURE_STYLE= autoconf
-CONFIGURE_ARGS=	--enable-zsh-mem --enable-zsh-secure-free \
+CONFIGURE_STYLE=autoconf
+CONFIGURE_ARGS=	${CONFIGURE_SHARED:S/shared/dynamic/} \
+		--enable-zsh-mem --enable-zsh-secure-free \
 		--enable-maildir-support --with-tcsetpgrp
 
-.if ${FLAVOR:L} == "static"
-CONFIGURE_ENV=	LDFLAGS="-static"
-CONFIGURE_ARGS+=--disable-dynamic
-.else
-# we only enable sub-packages if the FLAVOR is not static
-MULTI_PACKAGES=	-zftp
+# we only enable sub-packages if shared libraries are available
+MULTI_PACKAGES= ${NO_SHARED_LIBS:S/Yes//:S/No/-zftp/}
 SUBPACKAGE?=
-.  for i in ${MULTI_PACKAGES}
-PKGNAME$i=	zsh$i-${VERSION:C/-//g}
-.  endfor
-.  if defined(PACKAGING) && !empty(SUBPACKAGE)
+
+.if defined(PACKAGING) && !empty(SUBPACKAGE)
 RUN_DEPENDS=	::shells/zsh
-.  endif
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED:S/shared/dynamic/}
-WANTLIB=	c m termcap 
 .endif
 
 SUBST_VARS=	VERSION

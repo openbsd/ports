@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2006/01/29 20:41:02 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.19 2006/02/07 21:06:17 naddy Exp $
 @shell bin/zsh
 bin/zsh-${VERSION}
 @info info/zsh.info
@@ -539,4 +539,4 @@ share/zsh/${VERSION}/functions/zsh-mime-handler
 share/zsh/${VERSION}/functions/zsh-mime-setup
 share/zsh/${VERSION}/functions/zstyle+
 share/zsh/site-functions/
-!%%static%%
+%%SHARED%%
