@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/10/18 17:06:27 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.6 2006/02/07 08:57:25 xsa Exp $
 lib/python${MODPY_VERSION}/
 lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/pyparsing.py
@@ -17,6 +17,7 @@ share/doc/py-parsing/index.html
 share/doc/py-parsing/indices.html
 share/doc/py-parsing/pyparsing-module.html
 share/doc/py-parsing/pyparsing.And-class.html
+share/doc/py-parsing/pyparsing.CaselessKeyword-class.html
 share/doc/py-parsing/pyparsing.CaselessLiteral-class.html
 share/doc/py-parsing/pyparsing.CharsNotIn-class.html
 share/doc/py-parsing/pyparsing.Combine-class.html
@@ -45,7 +46,9 @@ share/doc/py-parsing/pyparsing.ParseFatalException-class.html
 share/doc/py-parsing/pyparsing.ParseResults-class.html
 share/doc/py-parsing/pyparsing.ParserElement-class.html
 share/doc/py-parsing/pyparsing.PositionToken-class.html
+share/doc/py-parsing/pyparsing.QuotedString-class.html
 share/doc/py-parsing/pyparsing.RecursiveGrammarException-class.html
+share/doc/py-parsing/pyparsing.Regex-class.html
 share/doc/py-parsing/pyparsing.SkipTo-class.html
 share/doc/py-parsing/pyparsing.StringEnd-class.html
 share/doc/py-parsing/pyparsing.StringStart-class.html
@@ -62,6 +65,7 @@ share/doc/py-parsing/toc.html
 share/doc/py-parsing/trees.html
 share/examples/py-parsing/
 share/examples/py-parsing/AcManForm.dfm
+share/examples/py-parsing/LAparser.py
 share/examples/py-parsing/SimpleCalc.py
 share/examples/py-parsing/SingleForm.dfm
 share/examples/py-parsing/chemicalFormulas.py
@@ -74,6 +78,7 @@ share/examples/py-parsing/ebnf.py
 share/examples/py-parsing/ebnftest.py
 share/examples/py-parsing/fourFn.py
 share/examples/py-parsing/getNTPservers.py
+share/examples/py-parsing/getNTPserversNew.py
 share/examples/py-parsing/greeting.py
 share/examples/py-parsing/greetingInKorean.py
 share/examples/py-parsing/httpServerLogParser.py
@@ -85,3 +90,5 @@ share/examples/py-parsing/pgn.py
 share/examples/py-parsing/scanExamples.py
 share/examples/py-parsing/simpleSQL.py
 share/examples/py-parsing/urlExtractor.py
+share/examples/py-parsing/urlExtractorNew.py
+share/examples/py-parsing/wordsToNum.py
