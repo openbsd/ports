@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2005/10/09 21:42:04 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2006/02/07 10:20:36 espie Exp $
 
 COMMENT=	"documentation system for C++/C/Java/Objective-C/IDL and others"
 COMMENT-gui=	"GUI front-end for doxygen"
 
 VERSION=	1.4.5
 DISTNAME=	doxygen-${VERSION}.src
-PKGNAME=	doxygen-${VERSION}
+PKGNAME=	doxygen-${VERSION}p0
 FULLPKGNAME-gui=doxygen-gui-${VERSION}
 CATEGORIES=	devel textproc 
 
