@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_ctags_man,v 1.1 2006/02/07 10:18:51 espie Exp $
+--- lib/ctags.man.orig	Mon Sep  5 14:11:07 2005
++++ lib/ctags.man	Mon Sep  5 14:11:52 2005
+@@ -1,8 +1,8 @@
+-.TH CTAGS 1
++.TH ELVTAGS 1
+ .SH NAME
+-ctags - Generates "tags" and (optionally) "refs" files
++elvtags - Generates "tags" and (optionally) "refs" files
+ .SH SYNOPSIS
+-.B ctags
++.B elvtags
+ .RB [ -D
+ .IR word ]
+ .RB [ -FBNitvshlpxra ]

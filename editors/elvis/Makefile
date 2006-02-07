@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2005/09/05 12:14:36 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2006/02/07 10:18:51 espie Exp $
 
 COMMENT=	"clone of the ex/vi text editor"
 
 DISTNAME=	elvis-2.1_4
-PKGNAME=	${DISTNAME:S/_/./}p0
+PKGNAME=	${DISTNAME:S/_/./}p1
 CATEGORIES=	editors
 HOMEPAGE=	http://www.fh-wedel.de/elvis/
 
