@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/02/06 12:39:24 todd Exp $
+# $OpenBSD: Makefile,v 1.5 2006/02/07 13:41:52 bernd Exp $
 
 COMMENT=		"Distributed filesystem OpenAFS"
 
@@ -32,7 +32,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-afs-sysname=${ARCH}_obsd${OSrev} \
 			--enable-debug
 COPTS+= -ggdb
-WRKDIST=		${WRKDIR}/${PKGNAME}
+WRKDIST=		${WRKDIR}/${DISTNAME:S/-src$//}
 
 pre-configure:
 	@if [ ! -d /usr/src/sys ]; then \
