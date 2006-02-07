@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1 2006/02/07 07:43:11 steven Exp $
+--- configure.orig	Sun Jul 28 05:50:42 2002
++++ configure	Tue Feb  7 01:03:57 2006
+@@ -2751,9 +2751,8 @@ if test x"$GCC" = x"yes"; then
+ 
+ 
+ 
+-    OPT_CFLAGS=`echo "$CFLAGS"|sed "s/-O[0-9]*//g"`
++    OPT_CFLAGS="$CFLAGS"
+ 
+-    OPT_CFLAGS="$OPT_CFLAGS -O3"
+     echo "$as_me:$LINENO: checking if $CC supports $OPT_CFLAGS flags" >&5
+ echo $ECHO_N "checking if $CC supports $OPT_CFLAGS flags... $ECHO_C" >&6
+     SAVE_CFLAGS="$CFLAGS"
