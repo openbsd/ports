@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/01/16 07:24:18 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2006/02/07 01:11:57 naddy Exp $
 
 COMMENT=	"CSS editor"
 
@@ -36,5 +36,9 @@ CONFIGURE_ARGS=	--with-help-menus \
 		--with-plugin-headers \
 		--without-terminal \
 		--without-ipc-queue
+
+# trailing ^M after a \ for line continuation confuses gcc2
+pre-patch:
+	@perl -i -pe 's/\r$$//' ${WRKSRC}/scintilla/gtk/ScintillaGTK.cxx
 
 .include <bsd.port.mk>
