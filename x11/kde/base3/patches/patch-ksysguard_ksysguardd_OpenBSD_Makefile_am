@@ -1,0 +1,9 @@
+$OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_Makefile_am,v 1.1 2006/02/07 10:26:42 espie Exp $
+--- ksysguard/ksysguardd/OpenBSD/Makefile.am.orig	Sun Feb  5 13:25:40 2006
++++ ksysguard/ksysguardd/OpenBSD/Makefile.am	Sun Feb  5 13:25:47 2006
+@@ -3,4 +3,4 @@ AM_CFLAGS = -Wall
+ INCLUDES = -I$(srcdir)/../../CContLib -I$(srcdir)/..
+ 
+ noinst_LIBRARIES = libksysguardd.a
+-libksysguardd_a_SOURCES = cpu.c memory.c
++libksysguardd_a_SOURCES = cpu.c memory.c ProcessList.c

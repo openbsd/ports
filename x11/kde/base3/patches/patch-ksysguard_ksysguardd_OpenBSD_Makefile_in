@@ -1,0 +1,44 @@
+$OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_Makefile_in,v 1.1 2006/02/07 10:26:42 espie Exp $
+--- ksysguard/ksysguardd/OpenBSD/Makefile.in.orig	Sun Feb  5 13:25:40 2006
++++ ksysguard/ksysguardd/OpenBSD/Makefile.in	Sun Feb  5 13:26:53 2006
+@@ -52,11 +52,11 @@ LIBRARIES = $(noinst_LIBRARIES)
+ ARFLAGS = cru
+ libksysguardd_a_AR = $(AR) $(ARFLAGS)
+ libksysguardd_a_LIBADD =
+-am_libksysguardd_a_OBJECTS = cpu.$(OBJEXT) memory.$(OBJEXT)
++am_libksysguardd_a_OBJECTS = cpu.$(OBJEXT) memory.$(OBJEXT) ProcessList.$(OBJEXT)
+ #>- libksysguardd_a_OBJECTS = $(am_libksysguardd_a_OBJECTS)
+ #>+ 4
+-libksysguardd_a_final_OBJECTS = cpu.o memory.o 
+-libksysguardd_a_nofinal_OBJECTS = cpu.$(OBJEXT) memory.$(OBJEXT)
++libksysguardd_a_final_OBJECTS = cpu.o memory.o ProcessList.o
++libksysguardd_a_nofinal_OBJECTS = cpu.$(OBJEXT) memory.$(OBJEXT) ProcessList.$(OBJEXT)
+ @KDE_USE_FINAL_FALSE@libksysguardd_a_OBJECTS = $(libksysguardd_a_nofinal_OBJECTS)
+ @KDE_USE_FINAL_TRUE@libksysguardd_a_OBJECTS = $(libksysguardd_a_final_OBJECTS)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+@@ -565,7 +565,7 @@ xdg_menudir = @xdg_menudir@
+ AM_CFLAGS = -Wall
+ INCLUDES = -I$(srcdir)/../../CContLib -I$(srcdir)/..
+ noinst_LIBRARIES = libksysguardd.a
+-libksysguardd_a_SOURCES = cpu.c memory.c
++libksysguardd_a_SOURCES = cpu.c memory.c ProcessList.c
+ #>- all: all-am
+ #>+ 1
+ all: docs-am  all-am
+@@ -630,6 +630,7 @@ distclean-compile:
+ 
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpu.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/memory.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ProcessList.Po@am__quote@
+ 
+ .c.o:
+ @am__fastdepCC_TRUE@	if $(COMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \
+@@ -838,7 +839,7 @@ uninstall-am: uninstall-info-am
+ .NOEXPORT:
+ 
+ #>+ 2
+-KDE_DIST=Makefile.in cpu.h memory.h Makefile.am 
++KDE_DIST=Makefile.in cpu.h memory.h ProcessList.h Makefile.am 
+ 
+ #>+ 2
+ docs-am:
