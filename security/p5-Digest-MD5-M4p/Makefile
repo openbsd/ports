@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/03/30 21:16:18 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2006/02/07 21:37:21 pvalchev Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	"perl interface to a variant of the MD5 algorithm"
@@ -16,5 +16,9 @@ PERMIT_PACKAGE_FTP=	Yes
 CONFIGURE_STYLE=perl
 
 INSTALL_TARGET=	install_site
+
+# trailing ^M after a \ for line continuation confuses gcc2
+pre-patch:
+	@perl -i -pe 's/\r$$//' ${WRKSRC}/M4p.xs
 
 .include <bsd.port.mk>
