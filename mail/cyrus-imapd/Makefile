@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/03/27 18:01:50 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2006/02/08 19:31:13 sturm Exp $
 
 COMMENT=	"Cyrus IMAP server"
 COMMENT-perl=	"perl utils for the Cyrus IMAP server"
 
 V=		2.2.12
 DISTNAME=	cyrus-imapd-${V}
+PKGNAME=	${DISTNAME}p0
 FULLPKGNAME-perl=cyrus-imapd-perl-${V}
 CATEGORIES=	mail
 HOMEPAGE=	http://asg.web.cmu.edu/cyrus/imapd/
@@ -31,6 +32,7 @@ PATCH_LIST=	patch-*
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
+		ac_cv_lib_resolv_res_search=no \
 		MAKEDEPEND=""
 CONFIGURE_ARGS=	--with-service-path=${LOCALBASE}/libexec/cyrus-imapd \
 		--with-bdb \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/03/27 18:01:50 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/02/08 19:31:13 sturm Exp $
 @newgroup _cyrus:543
 @newuser _cyrus:543:_cyrus:daemon:Cyrus Account:/var/empty:/sbin/nologin
 bin/imtest
@@ -99,13 +99,13 @@ libexec/cyrus-imapd/tls_prune
 @man man/man8/cyrus-imapd.8
 @man man/man8/cyrus-master.8
 @man man/man8/deliver.8
-@comment man man/man8/fetchnews.8
+@comment @man man/man8/fetchnews.8
 @man man/man8/fud.8
-@comment man man/man8/idled.8
-@comment man man/man8/imapd.8
+@comment @man man/man8/idled.8
+@comment @man man/man8/imapd.8
 @man man/man8/ipurge.8
 @man man/man8/lmtpd.8
-@comment man man/man8/master.8
+@comment @man man/man8/master.8
 @man man/man8/mbexamine.8
 @man man/man8/mbpath.8
 @man man/man8/nntpd.8
