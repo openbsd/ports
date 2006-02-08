@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.3 2005/12/27 07:56:15 todd Exp $
+$OpenBSD: patch-configure,v 1.4 2006/02/08 13:44:17 todd Exp $
 --- configure.orig	Mon Dec 19 16:51:53 2005
-+++ configure	Tue Dec 20 08:06:20 2005
++++ configure	Wed Feb  8 06:05:57 2006
 @@ -21,8 +21,8 @@ prefix=""
  interp_prefix="/usr/gnemul/qemu-%M"
  static="no"
@@ -79,14 +79,13 @@ $OpenBSD: patch-configure,v 1.3 2005/12/27 07:56:15 todd Exp $
  fi
  if test "$coreaudio" = "yes" ; then
    echo "CONFIG_COREAUDIO=yes" >> $config_mak
-@@ -655,6 +663,14 @@ if [ "$bsd" = "yes" ] ; then
+@@ -655,6 +663,13 @@ if [ "$bsd" = "yes" ] ; then
    echo "#define MAP_ANONYMOUS MAP_ANON" >> $config_h
    echo "#define _BSD 1" >> $config_h
  fi
 +
 +if [ "$openbsd" = "yes" ] ; then
 +  echo "#define ENOTSUP 4096" >> $config_h
-+  echo "#define PRIx64 \"llX\"" >> $config_h
 +  echo "#define qemu_siginfo siginfo_t" >> $config_h
 +else
 +  echo "#define qemu_siginfo struct siginfo" >> $config_h

@@ -2,6 +2,11 @@
 | Quick Start:
 | 1. get a bootable floppy image
 | 2. qemu-img create -f qcow virtual.hd 10G
-| 3. qemu -m 32 -fda floppy.fs -boot a virtual.hd
+| 3. qemu -m 32 -fda floppy.fs -boot a -monitor stdio virtual.hd
+|      (initial install to hard drive)
+| 4. qemu-img convert -c -O qcow virtual.hd tmp && mv tmp virtual.hd
+|      (compress hard drive while qemu is not running)
+| 5. qemu -m 32 -monitor stdio virtual.hd
+|      (normal boot from hard drive)
 +---------------
 

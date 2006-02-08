@@ -1,6 +1,6 @@
-$OpenBSD: patch-vl_c,v 1.5 2005/12/27 07:56:15 todd Exp $
---- vl.c.orig	Mon Dec 19 16:51:53 2005
-+++ vl.c	Tue Dec 20 10:53:26 2005
+$OpenBSD: patch-vl_c,v 1.6 2006/02/08 13:44:17 todd Exp $
+--- vl.c.orig	Mon Dec 19 17:51:53 2005
++++ vl.c	Sat Jan 28 22:10:33 2006
 @@ -43,7 +43,7 @@
  #include <netdb.h>
  #ifdef _BSD
@@ -43,7 +43,73 @@ $OpenBSD: patch-vl_c,v 1.5 2005/12/27 07:56:15 todd Exp $
  #endif
  
  static int64_t cpu_ticks_offset;
-@@ -2037,11 +2054,35 @@ static int tap_open(char *ifname, int if
+@@ -1768,13 +1785,16 @@ VLANState *qemu_find_vlan(int id)
+ }
+ 
+ VLANClientState *qemu_new_vlan_client(VLANState *vlan,
+-                                      IOReadHandler *fd_read, void *opaque)
++                                      IOReadHandler *fd_read,
++                                      IOCanRWHandler *fd_can_read,
++                                      void *opaque)
+ {
+     VLANClientState *vc, **pvc;
+     vc = qemu_mallocz(sizeof(VLANClientState));
+     if (!vc)
+         return NULL;
+     vc->fd_read = fd_read;
++    vc->fd_can_read = fd_can_read;
+     vc->opaque = opaque;
+     vc->vlan = vlan;
+ 
+@@ -1786,6 +1806,20 @@ VLANClientState *qemu_new_vlan_client(VL
+     return vc;
+ }
+ 
++int qemu_can_send_packet(VLANClientState *vc1)
++{
++    VLANState *vlan = vc1->vlan;
++    VLANClientState *vc;
++
++    for(vc = vlan->first_client; vc != NULL; vc = vc->next) {
++        if (vc != vc1) {
++            if (vc->fd_can_read && !vc->fd_can_read(vc->opaque))
++                return 0;
++        }
++    }
++    return 1;
++}
++
+ void qemu_send_packet(VLANClientState *vc1, const uint8_t *buf, int size)
+ {
+     VLANState *vlan = vc1->vlan;
+@@ -1811,7 +1845,7 @@ static VLANClientState *slirp_vc;
+ 
+ int slirp_can_output(void)
+ {
+-    return 1;
++    qemu_can_send_packet(slirp_vc);
+ }
+ 
+ void slirp_output(const uint8_t *pkt, int pkt_len)
+@@ -1839,7 +1873,7 @@ static int net_slirp_init(VLANState *vla
+         slirp_init();
+     }
+     slirp_vc = qemu_new_vlan_client(vlan, 
+-                                    slirp_receive, NULL);
++                                    slirp_receive, NULL, NULL);
+     snprintf(slirp_vc->info_str, sizeof(slirp_vc->info_str), "user redirector");
+     return 0;
+ }
+@@ -2024,7 +2058,7 @@ static TAPState *net_tap_fd_init(VLANSta
+     if (!s)
+         return NULL;
+     s->fd = fd;
+-    s->vc = qemu_new_vlan_client(vlan, tap_receive, s);
++    s->vc = qemu_new_vlan_client(vlan, tap_receive, NULL, s);
+     qemu_set_fd_handler(s->fd, tap_send, NULL, s);
+     snprintf(s->vc->info_str, sizeof(s->vc->info_str), "tap: fd=%d", fd);
+     return s;
+@@ -2037,11 +2071,35 @@ static int tap_open(char *ifname, int if
      char *dev;
      struct stat s;
  
@@ -79,7 +145,25 @@ $OpenBSD: patch-vl_c,v 1.5 2005/12/27 07:56:15 todd Exp $
  
      fstat(fd, &s);
      dev = devname(s.st_rdev, S_IFCHR);
-@@ -3986,6 +4027,7 @@ void help(void)
+@@ -2327,7 +2385,7 @@ static NetSocketState *net_socket_fd_ini
+         return NULL;
+     s->fd = fd;
+ 
+-    s->vc = qemu_new_vlan_client(vlan, net_socket_receive_dgram, s);
++    s->vc = qemu_new_vlan_client(vlan, net_socket_receive_dgram, NULL, s);
+     qemu_set_fd_handler(s->fd, net_socket_send_dgram, NULL, s);
+ 
+     /* mcast: save bound address as dst */
+@@ -2355,7 +2413,7 @@ static NetSocketState *net_socket_fd_ini
+         return NULL;
+     s->fd = fd;
+     s->vc = qemu_new_vlan_client(vlan, 
+-                                 net_socket_receive, s);
++                                 net_socket_receive, NULL, s);
+     snprintf(s->vc->info_str, sizeof(s->vc->info_str),
+              "socket: fd=%d", fd);
+     if (is_connected) {
+@@ -3986,6 +4044,7 @@ void help(void)
  #if defined(TARGET_PPC) || defined(TARGET_SPARC)
             "-g WxH[xDEPTH]  Set the initial graphical resolution and depth\n"
  #endif
@@ -87,7 +171,7 @@ $OpenBSD: patch-vl_c,v 1.5 2005/12/27 07:56:15 todd Exp $
             "\n"
             "Network options:\n"
             "-net nic[,vlan=n][,macaddr=addr]\n"
-@@ -4093,6 +4135,7 @@ enum {
+@@ -4093,6 +4152,7 @@ enum {
      QEMU_OPTION_audio_help,
      QEMU_OPTION_soundhw,
  #endif
@@ -95,7 +179,7 @@ $OpenBSD: patch-vl_c,v 1.5 2005/12/27 07:56:15 todd Exp $
  
      QEMU_OPTION_net,
      QEMU_OPTION_tftp,
-@@ -4195,6 +4238,7 @@ const QEMUOption qemu_options[] = {
+@@ -4195,6 +4255,7 @@ const QEMUOption qemu_options[] = {
      
      /* temporary options */
      { "usb", 0, QEMU_OPTION_usb },
@@ -103,7 +187,7 @@ $OpenBSD: patch-vl_c,v 1.5 2005/12/27 07:56:15 todd Exp $
      { "cirrusvga", 0, QEMU_OPTION_cirrusvga },
      { NULL },
  };
-@@ -4441,7 +4485,7 @@ int main(int argc, char **argv)
+@@ -4441,7 +4502,7 @@ int main(int argc, char **argv)
          serial_devices[i][0] = '\0';
      serial_device_index = 0;
      
@@ -112,7 +196,7 @@ $OpenBSD: patch-vl_c,v 1.5 2005/12/27 07:56:15 todd Exp $
      for(i = 1; i < MAX_PARALLEL_PORTS; i++)
          parallel_devices[i][0] = '\0';
      parallel_device_index = 0;
-@@ -4601,6 +4645,9 @@ int main(int argc, char **argv)
+@@ -4601,6 +4662,9 @@ int main(int argc, char **argv)
                          optarg);
                  nb_net_clients++;
                  break;
