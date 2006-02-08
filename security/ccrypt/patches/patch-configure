@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.1 2006/02/08 07:52:56 steven Exp $
+--- configure.orig	Wed Feb  8 08:21:40 2006
++++ configure	Wed Feb  8 08:21:50 2006
+@@ -2981,9 +2981,9 @@ fi
+ 
+ if test "$GCC" = "yes"; then
+    if test "$iCFLAGS" = ""; then
+-     CFLAGS="-O3 -Wall"
++     CFLAGS="-Wall"
+    else
+-     CFLAGS="$iCFLAGS -O3"
++     CFLAGS="$iCFLAGS"
+    fi
+ fi
+ 
