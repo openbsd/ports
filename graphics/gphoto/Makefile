@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2006/01/08 01:38:37 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2006/02/08 20:09:22 steven Exp $
 
 COMMENT=	"universal digital camera picture control tool"
 
 DISTNAME=	gphoto-0.4.3
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS=	gphoto_canon		0.0	\
 		gphoto_casio_qv		0.0	\
 		gphoto_coolpix600	0.0	\
@@ -33,8 +33,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xi c gdk glib gmodule gtk iconv intl \
+WANTLIB=		X11 Xext Xi ICE SM c gdk glib gmodule gtk \
 			jpeg m png tiff ungif z
+
+MODULES=	devel/gettext
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
