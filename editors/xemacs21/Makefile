@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2006/01/22 21:20:48 aanriot Exp $
+# $OpenBSD: Makefile,v 1.35 2006/02/08 19:56:47 steven Exp $
 
 COMMENT=	"heavily customizable and extensible editor"
 
 VERSION=	21.4.17
 DISTNAME=	xemacs-${VERSION}
 # see below as well
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	editors
 
 HOMEPAGE=	http://www.xemacs.org/
@@ -61,7 +61,7 @@ FLAVOR?=
 CONFIGURE_ARGS+=--without-x11
 .else
 USE_X11=	Yes
-WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xpm Xt z
+WANTLIB+=	ICE SM X11 Xau Xaw Xext Xmu Xpm Xt z
 
 CONFIGURE_ARGS+=--with-menubars=lucid \
 		--with-scrollbars=lucid \
