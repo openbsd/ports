@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2004/12/17 15:18:33 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2006/02/08 23:39:19 steven Exp $
 
 COMMENT=	"interactive X11 proxy with selective X request replacement"
 
 DISTNAME=	mxconns-3.1.4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11 security
 
 MASTER_SITES=	http://c.home.cern.ch/c/cons/www/mxconns/
@@ -13,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
-WANTLIB=		X11 Xext Xpm Xt c 
+WANTLIB=		X11 Xau Xext Xpm Xt c 
 
 USE_X11=	Yes
 USE_MOTIF=	any
