@@ -5,5 +5,6 @@ reproduce the problem before filing bugs.
 In order to create a new profile, start Mozilla with the the 
 -profilemanager switch, e.g. mozilla -profilemanager
    
-Or you could just wack the old profile-dir,
+Or you could just delete the old profile-dir (note that this will delete 
+your saved bookmarks and settings):
     rm -r ~/.mozilla/default/<profile-dir>
