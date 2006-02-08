@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/11/30 01:06:39 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/02/08 04:54:49 david Exp $
 
 COMMENT=			"3D image rendering package"
 
@@ -37,7 +37,7 @@ WANTLIB+=			X11
 .endif
 ALL_TARGET+=			newunix
 
-post-patch:
+pre-configure:
 	@perl -i -p -e "s#/usr/local/lib#${PREFIX}/share#" ${WRKDIR}/povray31/povray.ini
 
 NO_REGRESS=			Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2005/10/11 18:49:54 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2006/02/08 04:54:50 david Exp $
 
 COMMENT=		"Small menubar for X11 written in Perl/Tk"
 DISTNAME=		belt-1.21
@@ -32,7 +32,7 @@ NO_REGRESS=		Yes
 post-extract:
 	@cp ${FULLDISTDIR}/${DISTNAME} ${WRKDIR}/
 
-post-patch:
+pre-configure:
 	@perl -pi -e 's,/usr/local/belt/icons,${PREFIX}/share/belt/icons,g; ' \
 		-e 's,/usr/local/bin/perl,/usr/bin/perl,' \
 		${WRKDIR}/${DISTNAME}

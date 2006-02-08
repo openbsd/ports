@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2005/12/06 17:07:02 ian Exp $
+# $OpenBSD: Makefile,v 1.11 2006/02/08 04:54:50 david Exp $
 
 COMMENT=	"Java servlet 2.2 and Java server pages 1.1 server"
 
@@ -36,7 +36,7 @@ CONFDIR=	${SYSCONFDIR}/tomcat
 TOMCATDIR=	/var/tomcat
 SUBST_VARS=	TOMCATDIR CONFDIR
 
-post-patch:
+pre-configure:
 	@perl -pi -e 's|JAVA_HOME|${JAVA_HOME}|g' ${WRKSRC}/conf/workers.properties
 	@perl -pi -e 's|TOMCATDIR|${TOMCATDIR}|g' ${WRKSRC}/bin/tomcat.sh
 	@perl -pi -e 's|PREFIX|${PREFIX}|g' ${WRKSRC}/bin/tomcat.sh

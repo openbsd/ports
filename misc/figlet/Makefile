@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2005/08/20 08:01:41 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.17 2006/02/08 04:54:49 david Exp $
 
 COMMENT=	"generates ASCII banner art"
 
@@ -26,7 +26,7 @@ MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
 
 NO_REGRESS=	Yes
 
-post-patch:
+pre-configure:
 	@perl -pi -e 's|%%OPENBSDFIGLET%%|${LOCALBASE}/share/figlet|g' ${WRKBUILD}/figlist
 
 post-extract:

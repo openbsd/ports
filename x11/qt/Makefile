@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2006/01/14 06:38:56 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.71 2006/02/08 04:54:50 david Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=	"C++ X11 GUI toolkit"
@@ -63,7 +63,7 @@ IMAGEIODIR=	${WRKSRC}/extensions/imageio/src
 DOCS=	ANNOUNCE FAQ LICENSE README README.QT changes-1.40 changes-1.41 \
 	changes-1.42 changes-1.43 changes-1.44 changes-1.45
 
-post-patch:
+pre-configure:
 	@cd ${WRKSRC}/configs; for i in openbsd-*; do \
 	    mv -f $$i $$i.bak && \
 		sed -e s,/usr/local,${LOCALBASE}, \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/01/09 14:01:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2006/02/08 04:54:49 david Exp $
 
 SHARED_ONLY=	Yes
 
@@ -26,7 +26,7 @@ NO_REGRESS= 	Yes
 
 CONFIGURE_STYLE= perl
 
-post-patch:
+pre-configure:
 	@perl -pi -e 's#%%LOCALBASE%%#${LOCALBASE}#' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

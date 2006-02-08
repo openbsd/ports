@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2005/02/15 10:20:24 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2006/02/08 04:54:49 david Exp $
 
 
 COMMENT=	"X11 based RTF editor"
@@ -35,7 +35,7 @@ INFODIR=	${PREFIX}/share/doc/Ted
 post-extract:
 	cd ${WRKDIST}/tedPackage && tar xf TedBindist.tar
 
-post-patch:
+pre-configure:
 	cd ${WRKDIST}/tedPackage/Ted && \
 	    sed -e 's,/usr/local/afm,${AFMDIR},' \
 		-e 's,/usr/local/ind,${INDDIR},' \

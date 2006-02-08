@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/01/14 00:28:45 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2006/02/08 04:54:49 david Exp $
 
 COMMENT=	"filemanager for X Window"
 
@@ -43,7 +43,7 @@ FAKE_FLAGS=	LIBxncaqua_VERSION=${LIBxncaqua_VERSION} \
 XNLAUNCHFILES=	.launch.menu .xnlaunch.ini graphs.gif ives.gif kill.gif \
 		map.gif netscape.gif term.gif tnet.gif
 
-post-patch:
+pre-configure:
 	@perl -pi -e 's,\@prefix\@,${PREFIX},g' ${WRKSRC}/xncdirs.h.in
 
 post-install:

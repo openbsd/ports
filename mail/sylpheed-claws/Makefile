@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/01/18 17:31:54 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2006/02/08 04:54:49 david Exp $
 
 COMMENT=		"lightweight GTK+ based mail/news client"
 COMMENT-dillo=		"dillo plugin for sylpheed-claws"
@@ -166,6 +166,8 @@ post-patch:
 		mv sylpheed.desktop sylpheed-claws.desktop
 	@cd ${WRKDIR}/${THEMEFILE} && mv "Skypilot Clawssic" \
 		Skypilot_Clawssic
+
+pre-configure:
 	@perl -pi -e 's|pheed|pheed-claws|g' ${WRKSRC}/sylpheed-claws.desktop
 	@perl -pi -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/tools/sylpheed-switcher

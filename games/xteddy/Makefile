@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/11/28 23:32:07 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2006/02/08 04:54:49 david Exp $
 
 COMMENT=	"cuddlesome teddy for the X11 desktop"
 
@@ -21,7 +21,7 @@ CONFIGURE_ENV=  CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 
 NO_REGRESS=	Yes
 
-post-patch:
+pre-configure:
 .for f in configure xteddy.c
 	@perl -pi -e 's#/usr/share/xteddy#${PREFIX}/share/xteddy#g' \
 		${WRKSRC}/${f}

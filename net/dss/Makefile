@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/10/26 23:49:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2006/02/08 04:54:49 david Exp $
 
 BROKEN=			"security issues"
 
@@ -52,7 +52,7 @@ FETCH_MANUALLY=	"The source to this port may not be automatically fetched" \
 		"${FULLDISTDIR} and then restart this build." \
 		""
 
-post-patch:
+pre-configure:
 	@find ${WRKSRC} -type f | xargs perl -pi -e \
 		"s|/usr/local|${PREFIX}|g"
 	@find ${WRKSRC} -type f | xargs perl -pi -e \

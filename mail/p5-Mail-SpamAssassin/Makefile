@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2006/01/28 21:27:17 steven Exp $
+# $OpenBSD: Makefile,v 1.37 2006/02/08 04:54:49 david Exp $
 
 COMMENT=		"mailfilter to identify and mark spam"
 
@@ -57,7 +57,7 @@ DOCS=		README UPGRADE LICENSE procmailrc.example \
 		sample-nonspam.txt sample-spam.txt
 LOCALCF=	local.cf init.pre v310.pre
 
-post-patch:
+pre-configure:
 	@perl -pi -e "s#\@\@LOCAL_RULES_DIR\@\@#${CONFDIR}#" ${WRKSRC}/rules/*
 
 post-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/04/18 21:59:51 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2006/02/08 04:54:49 david Exp $
 
 COMMENT=		"Jabber client with whiteboard communication" 
 
@@ -25,7 +25,7 @@ NO_BUILD=		Yes
 NO_REGRESS=		Yes
 PKG_ARCH=		*
 
-post-patch:
+pre-configure:
 	@perl -pi -e 's,!!COCCINELLALIB!!,${LOCALBASE}/lib/coccinella,'\
 		 ${WRKSRC}/Coccinella.tcl ${WRKSRC}/lib/Init.tcl
 	

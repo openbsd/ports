@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2006/01/14 20:03:36 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2006/02/08 04:54:48 david Exp $
 
 COMMENT=	"Open source LDAP software (client)"
 COMMENT-server=	"Open source LDAP software (server)"
@@ -112,7 +112,7 @@ USE_LIBTOOL=	Yes
 pre-build:
 	@cd ${WRKBUILD}; ${MAKE_PROGRAM} depend
 
-post-patch:
+pre-configure:
 .if ${FLAVOR:L:Msasl}
 	perl -pi -e 's,KRB5_LIBS=,KRB5_LIBS="-lgssapi -lkrb5 -lasn1 -lcom_err",g' \
 		${WRKSRC}/configure

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2006/01/20 13:12:03 steven Exp $
+# $OpenBSD: Makefile,v 1.28 2006/02/08 04:54:51 david Exp $
 
 COMMENT=		"gtk file manager with desktop features"
 
@@ -36,7 +36,7 @@ FILE_TO_PATCH=  ${WRKSRC}/ROX-Filer/src/choices.c
 USE_X11=	Yes
 NO_REGRESS=	Yes
 
-post-patch:
+pre-configure:
 	@sed -e s:/usr/local/share/Choices:${PREFIX}/share/rox/Choices: \
 		${FILE_TO_PATCH} > ${FILE_TO_PATCH}.tmp && \
 		mv ${FILE_TO_PATCH}.tmp ${FILE_TO_PATCH}

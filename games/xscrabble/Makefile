@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/11/28 22:41:27 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2006/02/08 04:54:49 david Exp $
 
 COMMENT=	"X11 version of the popular board game"
 
@@ -18,7 +18,7 @@ CONFIGURE_STYLE=imake noman
 
 NO_REGRESS=	Yes
 
-post-patch:
+pre-configure:
 	@/usr/bin/perl -pi.bak -e "s|\@XSCRABBLEDIR\@|${PREFIX}/lib/X11/xscrabble|;" \
 		${WRKSRC}/Imakefile ${WRKSRC}/XScrabble.ad ${WRKSRC}/src/main.c
 

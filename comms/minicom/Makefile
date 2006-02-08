@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2005/11/03 18:28:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2006/02/08 04:54:48 david Exp $
 
 COMMENT=		"MS-DOS Telix-like serial communication program"
 
@@ -30,7 +30,7 @@ CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 CONFIGURE_ARGS=		--enable-cfg-dir=${SYSCONFDIR}/minicom \
 			--enable-lock-dir=/var/spool/lock
 
-post-patch:
+pre-configure:
 	@perl -pi -e "s@/usr/local/bin/@${LOCALBASE}/bin/@g;s@/sz@/lsz@g; \
 		s@/sb@/lsb@g;s@/sx@/lsx@g;s@/rz@/lrz@g;s@/rb@/lrb@g; \
 		s@/rx@/lrx@g" ${WRKSRC}/src/rwconf.c

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/01/21 06:49:11 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2006/02/08 04:54:48 david Exp $
 
 COMMENT=	"server for the DAA protocol"
 DISTNAME=	daapd-0.2.4a
@@ -28,7 +28,7 @@ MAKE_ENV+=	CC="${CC}" \
 		CFLAGS="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}"
 
-post-patch:
+pre-configure:
 	@perl -pi -e 's,_SYSCONFDIR_,${SYSCONFDIR},g' \
 		${WRKSRC}/README ${WRKSRC}/daapd.8 ${WRKSRC}/daapd.cc
 

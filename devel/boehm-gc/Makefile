@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2006/01/06 14:42:59 bernd Exp $
+# $OpenBSD: Makefile,v 1.32 2006/02/08 04:54:49 david Exp $
 # $FreeBSD: Makefile,v 1.4 1999/01/10 20:12:06 steve Exp $
 
 COMMENT=	"garbage collection and memory leak detection for C and C++"
@@ -37,7 +37,7 @@ CONFIGURE_ARGS= ${CONFIGURE_SHARED} --enable-full-debug
 
 WRKDIST=	${WRKDIR}/gc${VERSION}
 
-post-patch:
+pre-configure:
 	@mv ${WRKSRC}/doc/gc.man ${WRKSRC}/doc/gc.man.in
 	@sed -e "s,@PREFIX@,${PREFIX},g" ${WRKSRC}/doc/gc.man.in > \
 		${WRKSRC}/doc/gc.man

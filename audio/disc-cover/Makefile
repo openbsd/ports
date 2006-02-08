@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/02/21 01:18:08 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2006/02/08 04:54:48 david Exp $
 
 COMMENT=	"creates cover for audio cds using cddb and latex"
 
@@ -27,7 +27,7 @@ NO_REGRESS=	Yes
 EX_DIR=		${PREFIX}/share/examples/disc-cover
 PNGS=		busy.png offline.png online.png
 
-post-patch:
+pre-configure:
 	@perl -i -pe "s#%%PREFIX%%#${PREFIX}#" ${WRKSRC}/disc-cover
 
 do-build:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2005/12/02 01:12:08 jolan Exp $
+# $OpenBSD: Makefile,v 1.8 2006/02/08 04:54:50 david Exp $
 
 COMMENT=	"lua web server with cgi support"
 DISTNAME=	xavante-1.1
@@ -28,7 +28,7 @@ post-extract:
 	     -e "s:@sysconfdir@:${SYSCONFDIR}/?.lua:g" \
                 ${FILESDIR}/init.lua > ${WRKSRC}/init.lua
 
-post-patch:
+pre-configure:
 	@perl -pi -e 's:\@xavanteweb@:${PREFIX}/share/examples/xavante/htdocs/:g;' \
                 ${WRKSRC}/src/xavante/config.lua
 	@perl -pi -e 's:\@localbase@:${LOCALBASE}:g;' \

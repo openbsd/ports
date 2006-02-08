@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2005/01/01 21:04:48 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2006/02/08 04:54:48 david Exp $
 
 COMMENT=	"command-line utility to rip and encode audio cds"
 
@@ -41,7 +41,7 @@ RUN_DEPENDS+=	:vorbis-tools-*:audio/vorbis-tools
 .endif
 SUPDISTFILES=	id3_0.12.orig.tar.gz:1
 
-post-patch:
+pre-configure:
 .if ${FLAVOR:L:Mlame}
 	perl -pi -e 's,OUTPUTTYPE=ogg,OUTPUTTYPE=mp3,g' ${WRKSRC}/abcde
 .endif

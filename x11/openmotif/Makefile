@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2005/12/30 22:21:21 steven Exp $
+# $OpenBSD: Makefile,v 1.25 2006/02/08 04:54:50 david Exp $
 
 COMMENT=	"Motif toolkit"
 COMMENT-debuglibs="Motif toolkit debug libraries"
@@ -75,7 +75,7 @@ pre-extract:
 	esac)
 .endif
 
-post-patch:
+pre-configure:
 # fix sections
 	@cd ${WRKSRC}/doc/man/man1 && perl -pi -e "s|user cmd|1|" *.1
 	@cd ${WRKSRC}/doc/man/man3 && perl -pi -e "s|library call|3|" *.3

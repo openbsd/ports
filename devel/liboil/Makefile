@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/01/06 12:24:55 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2006/02/08 04:54:49 david Exp $
 
 COMMENT=	"library of optimized inner loops"
 DISTNAME=	liboil-0.2.2
@@ -25,7 +25,7 @@ WANTLIB=m
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 
-post-patch:
+pre-configure:
 	@perl -pi -e 's|stdint\.h|inttypes.h|g' \
 		${WRKSRC}/liboil/liboiltypes.h \
 		${WRKSRC}/liboil/liboil.h

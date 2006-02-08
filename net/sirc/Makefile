@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/02/05 00:27:46 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2006/02/08 04:54:50 david Exp $
 
 COMMENT=	"programmable small perl irc client"
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c termcap 
 
-post-patch:
+pre-configure:
 	@sed s!PREFIX.SED!${PREFIX}!g ${FILESDIR}/sirc-script > \
 	${WRKSRC}/sirc
 	@sed s!PREFIX.SED!${PREFIX}!g ${WRKSRC}/dsirc > \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/11/21 12:50:33 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2006/02/08 04:54:48 david Exp $
 
 COMMENT=	"real-time satellite tracking and orbit propagation program"
 DISTNAME=	sattrack-3.1.6
@@ -17,7 +17,7 @@ USE_X11=	Yes
 
 WRKDIST=	${WRKDIR}/SatTrack-3.1.6/src
 
-post-patch:
+pre-configure:
 	@sed -e s,__PREFIX__,$(PREFIX), $(WRKSRC)/../run/getsts > $(WRKSRC)/../run/getsts.new
 	@sed -e s,__PREFIX__,$(PREFIX), $(WRKSRC)/../run/gettle > $(WRKSRC)/../run/gettle.new
 	@mv $(WRKSRC)/../run/getsts.new $(WRKSRC)/../run/getsts

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/12/30 19:04:22 alek Exp $
+# $OpenBSD: Makefile,v 1.13 2006/02/08 04:54:49 david Exp $
 
 COMMENT=	"wm-dockapp; multiple mailbox checker"
 DISTNAME=	wmbiff-0.4.22
@@ -23,7 +23,7 @@ LIB_DEPENDS=	gnutls.12::security/gnutls
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	ac_cv_path_CVS2CL=""
 
-post-patch:
+pre-configure:
 	@perl -pi -e 's,/usr/share/doc/wmbiff/examples/sample.wmbiffrc,\
 		${PREFIX}/share/examples/wmbiff/sample.wmbiffrc,g' \
 		${WRKSRC}/wmbiff/{wmbiff.1,wmbiffrc.5}

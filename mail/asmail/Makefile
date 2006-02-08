@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2005/01/02 10:53:41 alek Exp $
+# $OpenBSD: Makefile,v 1.23 2006/02/08 04:54:49 david Exp $
 
 COMMENT=	"biff-type program, designed to match AfterStep"
 
@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--enable-shaping
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-post-patch:
+pre-configure:
 	@sed -e s#!!PREFIX!!#${PREFIX}#g \
 	 ${WRKSRC}/sample.asmailrc > ${WRKSRC}/sample.asmailrc.new
 	@mv ${WRKSRC}/sample.asmailrc.new ${WRKSRC}/sample.asmailrc

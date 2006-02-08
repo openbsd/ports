@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/06/03 01:04:36 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2006/02/08 04:54:48 david Exp $
 
 COMMENT=	"integer-only ogg vorbis command-line player"
 DISTNAME=	vorbis-tools-1.0
@@ -43,8 +43,6 @@ pre-configure:
 	@perl -pi -e s,"hardcode_libdir_flag_spec=.*",,g ${WRKSRC}/configure
 	@perl -pi -e s,-O20,,g ${WRKSRC}/configure
 	@perl -pi -e s,'CFLAGS="-O"','CFLAGS=""',g ${WRKSRC}/configure
-
-post-patch:
 	@perl -pi -e s,'/etc/ogg123rc',${SYSCONFDIR}/igg123rc,g \
 		${WRKSRC}/ogg123/cfgfile_options.c
 

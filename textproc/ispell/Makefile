@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2005/11/13 18:19:31 jakob Exp $
+# $OpenBSD: Makefile,v 1.43 2006/02/08 04:54:50 david Exp $
 
 COMMENT=		"interactive spelling checker"
 COMMENT-dutch=		"ispell dictionary for Dutch"
@@ -110,7 +110,7 @@ post-extract:
 	mv espa~nol.aff spanish.aff; \
 	mv espa~nol.words+ spanish.words+)
 
-post-patch:
+pre-configure:
 	@sed "s%/usr/local%${PREFIX}%g" ${WRKSRC}/local.h.samp > \
 		${WRKSRC}/local.h
 	@echo "#define CFLAGS \"${CFLAGS}\"" >> ${WRKSRC}/local.h

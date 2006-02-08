@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2004/12/02 21:14:45 alek Exp $
+# $OpenBSD: Makefile,v 1.35 2006/02/08 04:54:50 david Exp $
 
 COMMENT=	"english-russian keyboard switcher for X11"
 
@@ -29,7 +29,7 @@ CONFIGURE_ARGS=	--without-motif --with-Xaw
 WANTLIB+=	Xaw
 .endif
 
-post-patch:
+pre-configure:
 	@perl -i -pe 's!/usr/!${LOCALBASE}/!' \
 	    ${WRKSRC}/Xrus.{ad,wmaker}
 

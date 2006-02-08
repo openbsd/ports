@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2006/01/13 19:18:50 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2006/02/08 04:54:51 david Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples and tutorial for qt2"
@@ -95,7 +95,7 @@ DOCS=	ANNOUNCE FAQ LICENSE.GPL README README.QT \
 VMEM_WARNING=	Yes
 NO_REGRESS=	Yes
 
-post-patch:
+pre-configure:
 	@cd ${WRKSRC}/configs; for i in openbsd-*; do \
 	    mv -f $$i $$i.bak && \
 		sed -e s,/usr/local,${LOCALBASE}, \

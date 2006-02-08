@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2005/09/18 16:41:55 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/02/08 04:54:50 david Exp $
 
 COMMENT=	'convert docbook to man'
 CATEGORIES=	textproc converters
@@ -22,7 +22,7 @@ CONFIGURE_STYLE=imake noman
 
 RUN_DEPENDS=	::textproc/sp  ::textproc/docbook ::textproc/openjade
 
-post-patch:
+pre-configure:
 	perl -pi.bak -e 's,/tmp/dtm\.\$$\$$\.psinc,\$$TMPFILE,;' ${WRKDIST}/cmd/docbook-to-man.sh
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2005/09/05 11:20:53 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2006/02/08 04:54:48 david Exp $
 # $FreeBSD: ports/audio/ascd/Makefile,v 1.17 2000/09/25 12:21:17 asami Exp $
 
 COMMENT= 		"cd player for Afterstep or Window Maker"
@@ -30,7 +30,7 @@ CONFIGURE_STYLE=	imake
 post-extract:
 	@rm -rf ${WRKSRC}/workman
 
-post-patch:
+pre-configure:
 	@sed -e "s:%%PREFIX%%:${PREFIX}:g" \
 		${WRKSRC}/misc/config.h.default > ${WRKSRC}/config.h
 	@sed -e "s:%%PREFIX%%:${PREFIX}:g" \

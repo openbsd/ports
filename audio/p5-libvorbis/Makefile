@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2005/01/03 19:32:30 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2006/02/08 04:54:48 david Exp $
 
 SHARED_ONLY=		Yes
 
@@ -24,7 +24,7 @@ LIB_DEPENDS=		vorbis.1,vorbisfile.2::audio/libvorbis
 
 CONFIGURE_STYLE=	perl
 
-post-patch:
+pre-configure:
 	@perl -i -p -e 's#/usr/local#${LOCALBASE}#' ${WRKDIST}/Makefile.PL
 
 .include <bsd.port.mk>

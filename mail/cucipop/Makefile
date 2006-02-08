@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2005/01/02 12:56:04 alek Exp $
+# $OpenBSD: Makefile,v 1.20 2006/02/08 04:54:49 david Exp $
 
 COMMENT=	"Cubic Circle's POP3 daemon"
 
@@ -19,7 +19,7 @@ WANTLIB=		c
 
 MAKE_FLAGS=	CFLAGS="${CFLAGS} -DINET6" LDFLAGS="" MD5_OBJ=""
 
-post-patch:
+pre-configure:
 .for f in cucipop.8 makevpopdb.8
 	@cd ${WRKSRC} && sed -e s#!!PREFIX!!#${PREFIX}#g ${f} > ${f}.new && \
 		mv ${f}.new ${f}

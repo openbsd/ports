@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2005/02/21 14:32:46 alek Exp $
+# $OpenBSD: Makefile,v 1.26 2006/02/08 04:54:50 david Exp $
 
 COMMENT= 	"PostScript and PDF previewer"
 
@@ -26,7 +26,7 @@ NO_REGRESS=	Yes
 
 INSTALL_TARGET=	install install.man install.doc
 
-post-patch:
+pre-configure:
 	perl -pi.bak ${.CURDIR}/fixincludes ${WRKSRC}/source/*.[ch]
 
 post-install:

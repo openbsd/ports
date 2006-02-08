@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/01/22 00:09:30 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2006/02/08 04:54:50 david Exp $
 
 COMMENT=	"Weather plugin for GkrellM2"
 
@@ -13,7 +13,7 @@ MASTER_SITES=	http://kmlinux.fjfi.cvut.cz/~makovick/gkrellm/
 ALL_TARGET=	gkrellweather.so
 PLUGIN=		${WRKSRC}/gkrellweather.so
 
-post-patch:
+pre-configure:
 	@perl -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/gkrellweather.c
 
 post-install:

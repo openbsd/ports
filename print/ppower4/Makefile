@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/12/26 14:01:37 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2006/02/08 04:54:50 david Exp $
 
 COMMENT=	"PDF presentation post processor"
 
@@ -41,7 +41,7 @@ EXFILES=		${WRKDIR}/leveldemo.tex
 EXFILES+=		${WRKDIR}/example.${i}
 .endfor
 
-post-patch:
+pre-configure:
 	@cp ${FILESDIR}/ppower4 ${WRKDIR}
 	@perl -pi -e "s,%%PREFIX%%,${PREFIX},g" ${WRKDIR}/ppower4
 

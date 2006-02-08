@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2005/11/07 21:33:58 bernd Exp $
+# $OpenBSD: Makefile,v 1.32 2006/02/08 04:54:50 david Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -61,7 +61,7 @@ pre-fake:
 INSTALL_TARGET= install-pear install-headers install-build install-programs
 FAKE_FLAGS= 	INSTALL_ROOT=${DESTDIR}
 
-post-patch:
+pre-configure:
 	@perl -p -i.orig -e "s,OPENBSD_PEAR_ROOT,'${CHROOT_DIR}/pear',g" \
 	    ${WRKSRC}/pear/PEAR/Config.php ${WRKSRC}/scripts/phpize.in \
 	    ${WRKSRC}/scripts/php-config.in

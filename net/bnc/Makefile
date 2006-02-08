@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2005/03/02 20:13:23 robert Exp $
+# $OpenBSD: Makefile,v 1.11 2006/02/08 04:54:49 david Exp $
 
 COMMENT=	"simple IRC relay proxy with support for virtual hosting"
 
@@ -20,7 +20,7 @@ WANTLIB=		c
 RUN_DEPENDS=		:dialog-*:misc/dialog
 CONFIGURE_STYLE=	gnu
 
-post-patch:
+pre-configure:
 	@sed -e s#!!PREFIX!!#${PREFIX}#g \
 		${WRKSRC}/bncsetup > ${WRKSRC}/bncsetup.new
 	@mv ${WRKSRC}/bncsetup.new ${WRKSRC}/bncsetup

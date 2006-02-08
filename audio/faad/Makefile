@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2006/01/13 19:12:15 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2006/02/08 04:54:48 david Exp $
 
 COMMENT=	"MPEG2 and MPEG-4 AAC decoder"
 COMMENT-xmms=	"XMMS input plugin for AAC files"
@@ -66,6 +66,8 @@ post-patch:
 	@cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} PATH=${PORTPATH} \
 		sh bootstrap
+
+pre-configure:
 	@perl -pi -e 's/--no-verify//g' ${WRKSRC}/configure
 
 post-configure:

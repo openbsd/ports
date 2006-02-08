@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2005/05/20 06:06:25 alek Exp $
+# $OpenBSD: Makefile,v 1.15 2006/02/08 04:54:48 david Exp $
 
 COMMENT=	"convert Big5/GB encoded files to postscript"
 
@@ -24,7 +24,7 @@ LIB_DEPENDS=	ttf.1::print/freetype
 
 NO_REGRESS=	Yes
 
-post-patch:
+pre-configure:
 	perl -pi -e \
 		"s|/usr/bin/python|${LOCALBASE}/bin/python${PYTHON_VER}|" \
 		${WRKSRC}/bg5ps

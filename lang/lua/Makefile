@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2006/01/26 16:17:40 pedro Exp $
+# $OpenBSD: Makefile,v 1.21 2006/02/08 04:54:49 david Exp $
 
 COMMENT=	"powerful, light-weight programming language"
 
@@ -46,13 +46,15 @@ post-extract:
 .endfor
 
 post-patch:
-	@perl -pi -e 's:\@initconf@:${SYSCONFDIR}/lua/init.lua:g;' \
-		${WRKSRC}/src/lua/lua.c
 	@touch ${WRKSRC}/include/luser.h
 .if ${FLAVOR:L:Mfixedpoint}
 	@cp -p ${FILESDIR}/luser_fixedpoint.h ${WRKSRC}/include
 	@echo '#include "luser_fixedpoint.h"' >> ${WRKSRC}/include/luser.h
 .endif
+
+pre-configure:
+	@perl -pi -e 's:\@initconf@:${SYSCONFDIR}/lua/init.lua:g;' \
+		${WRKSRC}/src/lua/lua.c
 
 post-build:
 	cd ${WRKDIST} && ${CC} ${CFLAGS} -o bin/bin2c etc/bin2c.c

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/25 06:11:00 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2006/02/08 04:54:50 david Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	"cgi tool for the lua language"
@@ -30,7 +30,7 @@ post-extract:
 	@sed -e "s:@cgiluapath@:${PREFIX}/lua/cgilua/?.lua:g"\
                 ${FILESDIR}/init.lua > ${WRKSRC}/init.lua
 
-post-patch:
+pre-configure:
 	@perl -pi -e 's:\@initconf@:${SYSCONFDIR}/lua/init.lua:g;'\
                 ${WRKSRC}/launcher/_cgi/t_cgi.lua
 

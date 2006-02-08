@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2005/05/20 06:03:28 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2006/02/08 04:54:48 david Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -34,7 +34,7 @@ MAKE_ENV=	PYTHON_VER=${PYTHON_VER}
 
 NO_REGRESS=	Yes
 
-post-patch:
+pre-configure:
 	perl -pi -e \
 		"s|/usr/bin/python|${LOCALBASE}/bin/python${PYTHON_VER}|" \
 		${WRKSRC}/bg5pdf
