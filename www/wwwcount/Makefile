@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.25 2004/12/11 13:29:22 alek Exp $
+# $OpenBSD: Makefile,v 1.26 2006/02/08 08:34:40 steven Exp $
 
 COMMENT=	"access counter, clock and date for WWW pages"
 
 DISTNAME=	wwwcount2.5
 PKGNAME=	wwwcount-2.5p0
 CATEGORIES=	www
-MASTER_SITES=	http://wwwcount.yeehaw.net/mirror/$S/ \
-		http://mirror.njit.edu/counter/$S/ \
-		http://www.neonramp.com/Count/$S/ \
-		http://wwwcount.iinetwork.net/$S/ \
-		http://www.jesterscastle.com/mirror/Count/$S/ \
-		http://www.quiltersdream.com/Count/$S/ \
+MASTER_SITES=	http://wwwcount.yeehaw.net/$S/ \
+		http://www.asamnet.de/mirror/Count/$S/ \
+		http://wwwcount.webcc.net/$S/ \
+		http://www.infolaunch.com/count/$S/ \
+		http://elmar.ucsm.ac.uk/Count/$S/ \
 		http://muquit.com/muquit/software/Count/$S/
 
 S=	src/wwwcount2.5

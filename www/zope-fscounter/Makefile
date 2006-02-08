@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2005/10/25 18:37:15 xsa Exp $
+# $OpenBSD: Makefile,v 1.6 2006/02/08 08:40:15 steven Exp $
 
 COMMENT=	"web page hit counter for Zope"
 
@@ -8,7 +8,7 @@ PKGNAME=	zope-fscounter-${VERSION}
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.zope.org/Members/andym/FSCounter/	
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	${HOMEPAGE}${VERSION}/
 EXTRACT_SUFX=	.tar	
 
 # Zope Public License
