@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/02/08 04:54:49 david Exp $
+# $OpenBSD: Makefile,v 1.14 2006/02/08 20:04:24 sturm Exp $
 
 COMMENT=		"lightweight GTK+ based mail/news client"
 COMMENT-dillo=		"dillo plugin for sylpheed-claws"
@@ -52,7 +52,8 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 FLAVORS=		compface pgpmime jpilot ldap
 FLAVOR?=
 
-MULTI_PACKAGES=		-dillo -docs -imageviewer -spamassassin -themes \
+# add -dillo once www/dillo is unbroken
+MULTI_PACKAGES=		-docs -imageviewer -spamassassin -themes \
 			-trayicon
 
 FULLPKGNAME-docs=	sylpheed-claws-docs-${VERSION}p0
