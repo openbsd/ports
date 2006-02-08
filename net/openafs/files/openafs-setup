@@ -1,6 +1,6 @@
 #!/bin/ksh
 
-# Copyright (c) 2005-2006 Ober Heim <ober@LinBSD.org>
+# Copyright (c) 2005-2006 Jaime Fournier <ober@LinBSD.org>
 #
 # Script to configure a single server OpenAFS Cell.
 # We use Kaserver for authentication, and OpenAFS lkm/afsd for client.
@@ -10,9 +10,10 @@
 if [[ `/usr/bin/whoami` != "root" ]]
 then
     echo "Please run this script as root. Thanks"
-    exit;
+    exit
 fi
 export PATH=/bin:/usr/bin:/sbin:/usr/sbin:%LOCALBASE%/bin:%LOCALBASE%/sbin
+SERVBIN=%LOCALBASE%/libexec/openafs
 
 
 # Ask for a password, saving the input in $resp.
@@ -49,6 +50,22 @@ ask() {
         set +o noglob
 }
 
+move_file() {
+
+	if [[ -f ${1} ]] 
+	then
+		/bin/mv ${1:?} ${1:?}.arla
+	else
+		echo "cannot rename file ${1} as it does not exist."
+	fi
+}
+
+err() {
+	echo "$1"
+	exit
+}
+
+
 TMPRC=`/usr/bin/mktemp`
 if [[ -f /etc/rc.conf.local ]]
 then
@@ -61,6 +78,7 @@ fi
 if [[ `/usr/bin/grep %LOCALBASE%/lib/openafs/libafs.o /etc/rc.securelevel` = "" ]]
 then
 /bin/cat <<EOF>> /etc/rc.securelevel
+
 if [[ -f %LOCALBASE%/lib/openafs/libafs.o ]]
 then
         /sbin/modload %LOCALBASE%/lib/openafs/libafs.o
@@ -68,18 +86,38 @@ fi
 EOF
 fi
 
-if [[ `sysctl kern.securelevel|awk -F"=" '{print $2}'` == 1  && `modstat|grep afs` == "" ]]
+if [[ `sysctl kern.securelevel|awk -F"=" '{print $2}'` == 1 ]]
 then
 cat <<EOF
-#######################################
-You are running at a secure level that does not allow for loading 
-kernel modules. An update has been made to /etc/rc.securelevel in
-order to load OpenAFS on the next reboot.
-Please reboot for this to take effect.
-Then just rerun this script to continue the setup.
-#######################################
+	#######################################
+	You are running at a secure level that does not allow for loading 
+	kernel modules. An update has been made to /etc/rc.securelevel in
+	order to load OpenAFS on the next reboot.
+	Please reboot for this to take effect.
+	Then just rerun this script to continue the setup.
+	#######################################
 EOF
-exit
+	exit
+else
+	if [[ `modstat|grep afs` == "" ]]
+	then
+        	/sbin/modload %LOCALBASE%/lib/openafs/libafs.o
+	fi
+fi
+
+# Test if arla is mounted. If so unmount
+if [[ `mount|awk '(($1 ~ "^/dev/xfs") && ($3 ~ "^/afs")) {print $0}'` != "" ]]
+then
+	echo "/afs is already mounted. Attmepting to unmount"
+        /sbin/umount -f /afs|| err "Could not umount /afs. exiting"
+fi
+
+# test if openafs afsd(1) is running, if so clean up /etc and ask for reboot.
+if [[ `ps -k|awk '($NF == "(afsd)") {print $0}'` != "" ]]
+then
+	echo "OpenAFS afsd is currently running. It can not be killed. "
+	echo "Please reboot, and rerun this script. Thanks."
+	exit
 fi
 
 FQDN=`hostname`
@@ -95,15 +133,6 @@ IP=$resp
 
 ask 'Cache size? ' 198112
 CACHESIZE=$resp
-
-
-SERVBIN=%LOCALBASE%/libexec/openafs
-
-if [[ `/sbin/mount|/usr/bin/awk '($3 ~ "^/afs") {print $0}'` != "" ]]
-then
-	echo "/afs is already mounted. Attmepting to unmount"
-        /sbin/umount -f /afs||return 1
-fi
 
 if [[ ! -d /afs ]] then
 	mkdir -p -m 0755 /afs || return 1
@@ -126,7 +155,7 @@ PG=`pgrep -x kaserver buserver ptserver vlserver bosserver fileserver`
 if [[ `echo ${PG}` != "" ]]
 then
 	echo "		It appears one, or more of the the following servers are still running."
-	ps ${PG}
+	ps ${PG:?}
 	echo "		Process ID ${PG} did not die, so we can not continue."
 
 
@@ -170,6 +199,15 @@ while :; do
 	fi
 done
 
+cat << EOF
+You will be prompted several times now for the key.
+Please make sure you enter the same passphrase in 
+each of them.
+EOF
+
+ask 'OK?' 
+ 
+
 #create cell configurations
 echo "${CELLNAME:?}" > /etc/afs/ThisCell
 
@@ -189,13 +227,12 @@ then
         /sbin/umount -f /afs||return 1
 fi
 
-#rename all the conflicting arla binaries.
-/bin/mv /usr/sbin/fs /usr/sbin/fs.arla
-/bin/mv /usr/sbin/vos /usr/sbin/vos.arla
-/bin/mv /usr/sbin/bos /usr/sbin/bos.arla
-/bin/mv /usr/sbin/pts /usr/sbin/pts.arla
 
-/bin/mkdir -p -m 0755 /afs
+#rename all the conflicting arla binaries.
+move_file /usr/sbin/fs
+move_file /usr/sbin/vos
+move_file /usr/sbin/pts
+move_file /usr/sbin/pts
 
 if [[ `/usr/bin/grep %LOCALBASE%/lib/openafs/libafs.o /etc/rc.securelevel` = "" ]]
 then
@@ -317,7 +354,8 @@ pkill -9 -x kaserver buserver ptserver vlserver bosserver fileserver
 #begin server configuration
 echo "!%LOCALBASE%/sbin/bosserver"
 %LOCALBASE%/sbin/bosserver
-%LOCALBASE%/sbin/afsd -stat 4000 -dcache 4000 -daemons 6 -volumes 256 -files 5000
+echo "!%LOCALBASE%/sbin/afsd -stat 4000 -dcache 4000 -daemons 6 -volumes 256 -files 5000"
+%LOCALBASE%/sbin/afsd -stat 4000 -dcache 4000 -daemons 6 -volumes 256 -files 5000|| err "Failed to launch afsd.";
 sleep 4
 
 echo "!klogging as admin"
