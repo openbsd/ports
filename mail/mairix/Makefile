@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2005/12/16 22:17:25 cathcart Exp $
+# $OpenBSD: Makefile,v 1.3 2006/02/08 23:26:07 steven Exp $
 
 COMMENT=		"program for indexing & searching email"
 
 DISTNAME=		mairix-0.17
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		mail
 HOMEPAGE=		http://www.rpcurnow.force9.co.uk/mairix/
 
@@ -16,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.rpcurnow.force9.co.uk/mairix/
 
-WANTLIB=		c
+WANTLIB=		c z
 
 BUILD_DEPENDS=		:bison-*:devel/bison
 

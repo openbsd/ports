@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/01/28 09:51:45 alek Exp $
+# $OpenBSD: Makefile,v 1.15 2006/02/08 23:23:09 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT-perl=	"UUID modules for Perl"
 VERSION=		1.3.2
 DISTNAME=		uuid-${VERSION}
 FULLPKGNAME=		uuid-${VERSION}p0
-FULLPKGNAME-perl= 	p5-UUID-${VERSION}p1
+FULLPKGNAME-perl= 	p5-UUID-${VERSION}p2
 CATEGORIES=		devel
 SHARED_LIBS=		uuid	13.22
 
@@ -29,6 +29,7 @@ SUBPACKAGE?=
 
 .if ${SUBPACKAGE} == "-perl"
 CATEGORIES=		devel perl5
+WANTLIB=
 .  if defined(PACKAGING)
 LIB_DEPENDS+=		uuid.12::devel/uuid
 .  endif
