@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2006/01/02 20:05:09 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2006/02/08 23:03:39 steven Exp $
 
 COMMENT=		"C library to produce PDF files"
 
 DISTNAME=		pdflib-4.0.3
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=     	print
 SHARED_LIBS=		pdf	2.3
 
@@ -15,6 +15,8 @@ PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.pdflib.com/pdflib/download/
+
+WANTLIB=		m z jpeg
 
 LIB_DEPENDS=		png.2::graphics/png \
 			tiff.35::graphics/tiff
