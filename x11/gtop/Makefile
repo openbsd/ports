@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2006/01/08 02:49:47 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2006/02/08 23:15:19 steven Exp $
 
 COMMENT=		"GNOME version of top"
 
 DISTNAME=		gtop-1.0.13
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11
 
 MAINTAINER=		Jim Geovedi <jim@corebsd.or.id>
@@ -18,9 +19,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 Xext Xi audiofile c esd gdk gdk_imlib glib \
-			gmodule gnomesupport gtk iconv intl jpeg m png tiff \
-			ungif z
+WANTLIB=		ICE SM X11 Xau Xext Xi audiofile c m kvm z \
+			esd gdk gdk_imlib glib \
+			gmodule gnomesupport gtk jpeg png tiff ungif
+
+MODULES=		devel/gettext
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
