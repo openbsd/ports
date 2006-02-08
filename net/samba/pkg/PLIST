@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2006/02/02 09:40:43 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.26 2006/02/08 16:20:48 bernd Exp $
 bin/eventlogadm
 bin/findsmb
 bin/mksmbpasswd
@@ -82,6 +82,7 @@ libexec/swat
 @man man/man8/tdbdump.8
 @man man/man8/umount.cifs.8
 @man man/man8/winbindd.8
+share/examples/samba/
 share/examples/samba/smb.conf.default
 @sample ${SYSCONFDIR}/samba/
 @sample ${SYSCONFDIR}/samba/smb.conf
