@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2006/02/08 19:17:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2006/02/09 07:28:22 steven Exp $
 
 COMMENT=		"library of assorted spiffy things"
 
 DISTNAME=		libast-0.7
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS=		ast 2.2
 CATEGORIES=		devel
 
@@ -15,10 +16,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE m SM freetype X11 Xext
 
-
 MASTER_SITES=		http://www.eterm.org/download/
 
-LIB_DEPENDS=		Imlib2.2::graphics/imlib2
+LIB_DEPENDS=		Imlib2.2::graphics/imlib2 \
+			ltdl::devel/libtool,-ltdl
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
