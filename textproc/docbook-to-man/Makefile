@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/02/08 04:54:50 david Exp $
+# $OpenBSD: Makefile,v 1.6 2006/02/09 20:32:01 alek Exp $
 
 COMMENT=	'convert docbook to man'
 CATEGORIES=	textproc converters
@@ -6,7 +6,7 @@ CATEGORIES=	textproc converters
 VERSION=	0.0
 HOMEPAGE=	http://www.oasis-open.org/docbook/tools/dtm/
 MASTER_SITES= 	http://www.oasis-open.org/docbook/tools/dtm/
-DIST_SUBDIR=	${VERSION}
+DIST_SUBDIR=	${DISTNAME}-${VERSION}
 DISTNAME=docbook-to-man
 PKGNAME=docbook-to-man-${VERSION}p0
 EXTRACT_SUFX=.tar.gz
