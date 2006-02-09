@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/02/05 22:43:01 jsg Exp $
-avr/
+@comment $OpenBSD: PLIST,v 1.5 2006/02/09 11:11:53 aanriot Exp $
 avr/include/
 avr/include/assert.h
 avr/include/avr/
@@ -110,7 +109,6 @@ avr/include/util/crc16.h
 avr/include/util/delay.h
 avr/include/util/parity.h
 avr/include/util/twi.h
-avr/lib/
 avr/lib/avr3/
 avr/lib/avr3/crt43320.o
 avr/lib/avr3/crt43355.o
