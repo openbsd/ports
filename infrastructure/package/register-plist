@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.4 2005/09/19 21:12:27 espie Exp $
+# $OpenBSD: register-plist,v 1.5 2006/02/09 10:49:13 espie Exp $
 # Copyright (c) 2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -29,13 +29,38 @@ use strict;
 use OpenBSD::PackageLocator;
 use OpenBSD::PackageInfo;
 use OpenBSD::PackingList;
-use File::Compare;
 
 package OpenBSD::PackingElement;
+
+use IO::Scalar;
 
 sub forget_details
 {
 }
+
+sub flatten
+{
+	my ($self, $l) = @_;
+	push(@$l, $self);
+}
+
+sub compare
+{
+	my ($self, $self2) = @_;
+	my ($data, $data2);
+	my $fh = new IO::Scalar \$data;
+	my $fh2 = new IO::Scalar \$data2;
+	$self->write($fh);
+	$self2->write($fh2);
+	close($fh);
+	close($fh2);
+	if ($data ne $data2) {
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
 
 package OpenBSD::PackingElement::FileBase;
 
@@ -50,8 +75,29 @@ package OpenBSD::PackingElement::SpecialFile;
 sub forget_details
 {
 	my $self = shift;
-	undef $self->{md5};
+#	undef $self->{md5};
 	undef $self->{size};
+}
+
+sub compare
+{
+	my ($self, $self2) = @_;
+	if (ref($self) ne ref($self2)) {
+		return 1;
+	}
+	if ($self->{name} ne $self2->{name}) {
+		return 1;
+	}
+	if (defined $self->{md5} && defined $self2->{md5}) {
+		if ($self->{md5} eq $self2->{md5}) {
+			return 0;
+		} else {
+			return 1;
+		}
+	} elsif (!defined $self->{md5} && !defined $self2->{md5}) {
+		return 0;
+	}
+	return 2;
 }
 
 package OpenBSD::PackingElement::Dependency;
@@ -86,6 +132,30 @@ sub forget_details
 
 package main;
 
+sub my_compare
+{
+	my ($p, $p2) = @_;
+	my $l = [];
+	my $l2 = [];
+	my $final = 0;
+	$p->visit('flatten', $l);
+	$p2->visit('flatten', $l2);
+	if (@$l != @$l2) {
+		return 1;
+	}
+	for my $e (@$l) {
+		my $e2 = shift @$l2;
+		my $r = $e->compare($e2);
+		if ($r == 1) {
+			return $r;
+		}
+		if ($r == 2) {
+			$final = 2;
+		}
+	}
+	return $final;
+}
+
 if (@ARGV < 2) {
 	die "usage issue";
 }
@@ -119,13 +189,17 @@ for my $pkgfile (@ARGV) {
 		next unless -d $dir;
 		my $result = $dir.'/'.$plist->pkgname();
 		if (-f $result) {
-			my $t = "$result-new";
-			$plist->tofile($t);
-			if (compare($t, $result) == 0) {
-				unlink($t);
-			} else {
+			my $plist2 = OpenBSD::PackingList->fromfile($result);
+			my $r = my_compare($plist, $plist2);
+			if ($r == 1) {
+				my $t = "$result-new";
+				$plist->tofile($t);
 				print STDERR "Error: $t and $result are different\n";
 				$error++;
+			}
+			if ($r == 2) {
+				$plist->tofile($result);
+				print STDERR "$result was updated\n";
 			}
 		}
 	}
