@@ -1,10 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/10/02 15:38:16 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/02/09 11:19:08 aanriot Exp $
 @conflict nessus-<2.2.4
 bin/nessus-build
 @comment no checksum
 lib/nessus/plugins/12planet_chat_server_xss.nasl
 @comment no checksum
+lib/nessus/plugins/3com_nbx_voip_netset_detection.nasl
+@comment no checksum
 lib/nessus/plugins/3com_switches.nasl
+@comment no checksum
+lib/nessus/plugins/404_path_disclosure.nasl
 @comment no checksum
 lib/nessus/plugins/4553.nasl
 @comment no checksum
@@ -672,6 +676,8 @@ lib/nessus/plugins/faqmanager.nasl
 @comment no checksum
 lib/nessus/plugins/fcgi_echo.nasl
 @comment no checksum
+lib/nessus/plugins/find_service.nes
+@comment no checksum
 lib/nessus/plugins/find_service1.nasl
 @comment no checksum
 lib/nessus/plugins/find_service2.nasl
@@ -698,7 +704,6 @@ lib/nessus/plugins/foxweb_dll.nasl
 @comment no checksum
 lib/nessus/plugins/frontpage_overflow.nasl
 @comment no checksum
-@comment no checksum
 lib/nessus/plugins/fsp_detection.nasl
 @comment no checksum
 lib/nessus/plugins/fspd_directory_traversal.nasl
@@ -714,6 +719,8 @@ lib/nessus/plugins/ftp_servu_dos3.nasl
 lib/nessus/plugins/ftp_servu_overflow.nasl
 @comment no checksum
 lib/nessus/plugins/ftp_w98_devname_dos.nasl
+@comment no checksum
+lib/nessus/plugins/ftp_write_dirs.nes
 @comment no checksum
 lib/nessus/plugins/ftpd_1byte_overflow.nasl
 @comment no checksum
@@ -1105,6 +1112,8 @@ lib/nessus/plugins/linksys_gozila_cgi_DoS.nasl
 @comment no checksum
 lib/nessus/plugins/linksys_next_file_file_disclosure.nasl
 @comment no checksum
+lib/nessus/plugins/linux_tftp.nes
+@comment no checksum
 lib/nessus/plugins/linuxconf_detect.nasl
 @comment no checksum
 lib/nessus/plugins/listrec.nasl
@@ -1382,6 +1391,8 @@ lib/nessus/plugins/ntp_open.nasl
 lib/nessus/plugins/nuked_klan_xss.nasl
 @comment no checksum
 lib/nessus/plugins/nullhttpd_content_length.nasl
+@comment no checksum
+lib/nessus/plugins/objectserver.nes
 @comment no checksum
 lib/nessus/plugins/odbc_tools_check.nasl
 @comment no checksum
@@ -1899,6 +1910,8 @@ lib/nessus/plugins/slackware.inc
 @comment no checksum
 lib/nessus/plugins/slident.nasl
 @comment no checksum
+lib/nessus/plugins/smad.nes
+@comment no checksum
 lib/nessus/plugins/smallftpd_1_0_3.nasl
 @comment no checksum
 lib/nessus/plugins/smb_file_funcs.inc
@@ -1975,7 +1988,6 @@ lib/nessus/plugins/smb_nt_ms04-026.nasl
 @comment no checksum
 lib/nessus/plugins/smb_nt_ms04-029.nasl
 @comment no checksum
-@comment no checksum
 lib/nessus/plugins/smb_nt_ms04-039.nasl
 @comment no checksum
 lib/nessus/plugins/smb_reg_service_pack_XP.nasl
@@ -2021,6 +2033,8 @@ lib/nessus/plugins/snmp_default_communities.nasl
 lib/nessus/plugins/snmp_detect.nasl
 @comment no checksum
 lib/nessus/plugins/snmp_hpJetDirectEWS.nasl
+@comment no checksum
+lib/nessus/plugins/snmp_portscan.nes
 @comment no checksum
 lib/nessus/plugins/snmpwalk_portscan.nasl
 @comment no checksum
@@ -2084,6 +2098,8 @@ lib/nessus/plugins/ssh_settings.nasl
 @comment no checksum
 lib/nessus/plugins/ssl_cert_expiry.nasl
 @comment no checksum
+lib/nessus/plugins/ssl_ciphers.nes
+@comment no checksum
 lib/nessus/plugins/ssl_funcs.inc
 @comment no checksum
 lib/nessus/plugins/sslv2_hello_overflow.nasl
@@ -2124,6 +2140,8 @@ lib/nessus/plugins/sympa_unauthorised_list_creation.nasl
 @comment no checksum
 lib/nessus/plugins/synchrologic_detect.nasl
 @comment no checksum
+lib/nessus/plugins/synscan.nes
+@comment no checksum
 lib/nessus/plugins/tcp_port_zero.nasl
 @comment no checksum
 lib/nessus/plugins/teekai_track_online_xss.nasl
@@ -2141,6 +2159,8 @@ lib/nessus/plugins/tftp.inc
 lib/nessus/plugins/tftp_files_cisco_ios.nasl
 @comment no checksum
 lib/nessus/plugins/tftp_files_cisco_ios_ca.nasl
+@comment no checksum
+lib/nessus/plugins/tftp_grab_file.nes
 @comment no checksum
 lib/nessus/plugins/tftpd_backdoor.nasl
 @comment no checksum

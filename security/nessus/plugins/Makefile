@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2005/10/02 15:38:16 aanriot Exp $
+# $OpenBSD: Makefile,v 1.5 2006/02/09 11:19:08 aanriot Exp $
 
 COMMENT=        "plugins for Nessus"
 
 DISTNAME=	nessus-plugins-GPL-${VERSION}
-PKGNAME=        ${DISTNAME:S/-GPL//}p1
+PKGNAME=        ${DISTNAME:S/-GPL//}p2
 
 WANTLIB=        crypto pcap ssl util nessus hosts_gatherer
 
