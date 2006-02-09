@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.5 2006/02/09 10:49:13 espie Exp $
+# $OpenBSD: register-plist,v 1.6 2006/02/09 11:39:02 espie Exp $
 # Copyright (c) 2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -116,18 +116,55 @@ sub forget_details
 }
 
 package OpenBSD::PackingElement::CVSTag;
+
+# XXX needed to avoid CVS expansion
+
+our $openbsd = 'OpenBSD';
+
 sub forget_details
 {
 	my $self = shift;
-	my $openbsd = 'OpenBSD';
 	$self->{name} =~ s/^(\$$openbsd: .*,v).*/$1\$/;
 }
 
-package OpenBSD::PackingElement::ExtraInfo;
-sub forget_details
+sub compare
 {
-	my $self = shift;
-	$self->{subdir} =~ s/^mystuff\///;
+	my ($self, $self2) = @_;
+	if (ref($self) ne ref($self2)) {
+		return 1;
+	}
+	if ($self->{name} eq $self2->{name}) {
+		return 0;
+	}
+	if ($self->{name} eq "\$$openbsd\$" or 
+	    $self2->{name} eq "\$$openbsd\$") {
+		return 2;
+	}
+	return 1;
+}
+
+package OpenBSD::PackingElement::ExtraInfo;
+
+sub compare
+{
+	my ($self, $self2) = @_;
+	if (ref($self) ne ref($self2)) {
+		return 1;
+	}
+	if ($self->{ftp} ne $self2->{ftp} or 
+	    $self->{cdrom} ne $self2->{cdrom}) {
+		return 1;
+	}
+	if ($self->{subdir} eq $self2->{subdir}) {
+		return 0;
+	}
+	if ($self->{subdir} =~ m/^mystuff\// && $self2->{subdir} eq $') {
+		return 2;
+	}
+	if ($self2->{subdir} =~ m/^mystuff\// && $self->{subdir} eq $') {
+		return 2;
+	}
+	return 1;
 }
 
 package main;
