@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2006/01/23 20:33:40 brad Exp $
+# $OpenBSD: Makefile,v 1.32 2006/02/09 05:17:14 brad Exp $
 
 COMMENT= 	"compact IMAP/POP3 server"
 
-DISTNAME=	dovecot-1.0.beta2
+DISTNAME=	dovecot-1.0.beta3
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto ssl
+WANTLIB=		c crypto ssl z
 
 MODULES=	converters/libiconv
 
@@ -31,7 +31,7 @@ WANTLIB+=		sasl2
 .if ${FLAVOR:L:Mmysql}
 CONFIGURE_ARGS+=	--with-mysql
 LIB_DEPENDS+=		lib/mysql/mysqlclient.10::databases/mysql
-WANTLIB+=		m z
+WANTLIB+=		m
 .endif
 
 .if ${FLAVOR:L:Mpostgresql}
