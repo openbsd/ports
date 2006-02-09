@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.52 2006/01/12 11:40:13 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2006/02/09 11:31:11 fgsch Exp $
 # $NetBSD: Makefile,v 1.2 1998/08/23 20:48:03 frueauf Exp $
 
 COMMENT=		"PDP, IBM 1401, Nova and other CPUs simulator"
 
-DISTNAME=		simh-3.5.1
-PKGNAME=		$(DISTNAME)p1
+DISTNAME=		simh-3.5.2
 CATEGORIES=		emulators
 MASTER_SITES=		http://simh.trailing-edge.com/sources/
-DISTFILES=		simhv35-1.zip
+DISTFILES=		simhv35-2.zip
 
 HOMEPAGE=		http://simh.trailing-edge.com/
 
@@ -37,7 +36,6 @@ do-install:
 	    ${INSTALL_PROGRAM} $${f} ${PREFIX}/bin/simh-$${f}; \
 	done;
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/simh/vax
-	${INSTALL_DATA} ${WRKDIST}/VAX/ka655.bin ${PREFIX}/lib/simh/vax
 	${INSTALL_DATA} ${WRKDIST}/VAX/ka655x.bin ${PREFIX}/lib/simh/vax
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/simh
 	${INSTALL_DATA} ${WRKBUILD}/*.txt ${WRKBUILD}/*/*.txt \
