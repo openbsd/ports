@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2006/01/10 11:14:49 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2006/02/10 18:26:33 steven Exp $
 
 COMMENT=	"portable audio output library"
 COMMENT-arts=	"aRts module for portable audio output library"
@@ -7,8 +7,8 @@ COMMENT-esd=	"ESounD module for portable audio output library"
 VERSION=	0.8.5
 DISTNAME=	libao-${VERSION}
 FULLPKGNAME=	libao-${VERSION}p2
-PKGNAME-arts=	libao-arts-${VERSION}p1
-PKGNAME-esd=	libao-esd-${VERSION}p1
+PKGNAME-arts=	libao-arts-${VERSION}p2
+PKGNAME-esd=	libao-esd-${VERSION}p2
 CATEGORIES=    	audio
 HOMEPAGE=	http://www.xiph.org/ao/
 SHARED_LIBS=	ao	3.2
@@ -51,13 +51,13 @@ CONFIGURE_ARGS+= --disable-nas
 
 .if defined(PACKAGING)
 .  if   ${SUBPACKAGE} == "-arts"
-LIB_DEPENDS=	ao.3::audio/libao \
-		artsc.0::x11/kde/arts3
-WANTLIB+=	glib-2.0.0.0 gmodule-2.0.0.0 gthread-2.0.0.0 \
-		iconv intl
+LIB_DEPENDS=	artsc.0::x11/kde/arts3
+RUN_DEPENDS=	:libao-${VERSION}:audio/libao
+WANTLIB+=	glib-2.0.0.0 gmodule-2.0.0.0 gthread-2.0.0.0
+MODULES=	devel/gettext
 .  elif ${SUBPACKAGE} == "-esd"
-LIB_DEPENDS=	ao.3::audio/libao \
-		esd.2::audio/esound
+LIB_DEPENDS=	esd.2::audio/esound
+RUN_DEPENDS=	:libao-${VERSION}:audio/libao
 WANTLIB+=	audiofile m
 .  endif
 .else
