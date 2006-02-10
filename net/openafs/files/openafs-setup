@@ -86,23 +86,31 @@ fi
 EOF
 fi
 
-if [[ `sysctl kern.securelevel|awk -F"=" '{print $2}'` == 1 ]]
+if [[ `sysctl -n kern.securelevel` -ge 1 ]]
 then
+
+        if [[ `modstat|grep afs` == "" ]]
+        then
+
 cat <<EOF
-	#######################################
-	You are running at a secure level that does not allow for loading 
-	kernel modules. An update has been made to /etc/rc.securelevel in
-	order to load OpenAFS on the next reboot.
-	Please reboot for this to take effect.
-	Then just rerun this script to continue the setup.
-	#######################################
+        #######################################
+        You are running at a secure level that does not allow for loading
+        kernel modules. An update has been made to /etc/rc.securelevel in
+        order to load OpenAFS on the next reboot.
+        Please reboot for this to take effect.
+        Then just rerun this script to continue the setup.
+        #######################################
 EOF
-	exit
-else
-	if [[ `modstat|grep afs` == "" ]]
-	then
-        	/sbin/modload %LOCALBASE%/lib/openafs/libafs.o
-	fi
+exit
+
+        fi
+
+else # not running in secure level >= 1
+
+        if [[ `modstat|grep afs` == "" ]]
+        then
+                /sbin/modload %LOCALBASE%/lib/openafs/libafs.o
+        fi
 fi
 
 # Test if arla is mounted. If so unmount
