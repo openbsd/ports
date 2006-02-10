@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2006/01/13 23:40:23 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2006/02/10 22:12:52 steven Exp $
 
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
@@ -7,7 +7,7 @@ COMMENT-docs=		"C++ API for MySQL documentation"
 
 VERSION=		2.0.6
 DISTNAME=		mysql++-${VERSION}
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 PKGNAME-docs=		mysql++-docs-${VERSION}
 SHARED_LIBS=		mysqlpp 3.0
 CATEGORIES=		devel
@@ -29,7 +29,7 @@ SUBPACKAGE?=
 
 .if ${SUBPACKAGE} != "-docs"
 LIB_DEPENDS=		lib/mysql/mysqlclient.10::databases/mysql
-WANTLIB=		z
+WANTLIB=		crypto m ssl z
 .endif
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
 PKG_ARCH=		*
