@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.24 2006/01/12 01:05:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2006/02/10 10:02:36 steven Exp $
 
 COMMENT=	"small, fast & usable window manager"
 
 DISTNAME=	openbox-3.2
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SHARED_LIBS=	obparser	2.0 \
 		obrender	2.0
 CATEGORIES=	x11
-MASTER_SITES=	http://icculus.org/openbox/releases/
+MASTER_SITES=	http://offload1.icculus.org/openbox/releases/
 
-HOMEPAGE=	http://www.openbox.org/
+HOMEPAGE=	http://icculus.org/openbox/
 
 MODULES=	devel/gettext
 LIB_DEPENDS+=	glib-2.0.0.0::devel/glib2 \
