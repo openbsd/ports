@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/12/29 15:20:52 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2006/02/10 10:09:54 steven Exp $
 
 COMMENT=		"lightweight window manager with emphasis on usability"
 
@@ -7,7 +7,7 @@ PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://modeemi.cs.tut.fi/~tuomov/pwm/
-MASTER_SITES=		http://modeemi.cs.tut.fi/~tuomov/dl/
+MASTER_SITES=		${HOMEPAGE}dl/
 
 MAINTAINER=		Gregory Steuck <greg-openbsd-pwm@nest.cx>
 
