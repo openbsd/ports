@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2006/02/10 08:53:19 steven Exp $
+--- src/Makefile.in.orig	Fri Feb 10 09:01:10 2006
++++ src/Makefile.in	Fri Feb 10 09:01:20 2006
+@@ -102,7 +102,7 @@ corewars_cmd_LDADD = program-cmd.o stati
+ 
+ AM_YFLAGS = -d -t
+ AM_LFLAGS = -i
+-AM_CFLAGS = -g -O3 -DDATADIR="\"${pkgdatadir}\""
++AM_CFLAGS = -DDATADIR="\"${pkgdatadir}\""
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = config.h
+ CONFIG_CLEAN_FILES = 

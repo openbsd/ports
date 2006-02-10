@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_main-cmd_c,v 1.1 2002/03/20 16:19:52 espie Exp $
---- src/main-cmd.c.orig	Wed Mar 20 16:15:00 2002
-+++ src/main-cmd.c	Wed Mar 20 16:55:43 2002
+$OpenBSD: patch-src_main-cmd_c,v 1.2 2006/02/10 08:53:19 steven Exp $
+--- src/main-cmd.c.orig	Fri Sep 29 00:05:10 2000
++++ src/main-cmd.c	Fri Feb 10 09:00:31 2006
 @@ -19,11 +19,14 @@
  
  #include "config.h"
@@ -26,7 +26,7 @@ $OpenBSD: patch-src_main-cmd_c,v 1.1 2002/03/20 16:19:52 espie Exp $
  static error_t parse_opt (int key, char *arg, struct argp_state *state)
  {
    char *p;
-@@ -260,6 +264,160 @@ struct argp argp = 
+@@ -260,7 +264,161 @@ struct argp argp = 
    "%s for the score, %t for the title, %a for the author and %f for the filename. "
    "The default format string is '%4r %7s %-25t %a'.",
  };
@@ -45,7 +45,7 @@ $OpenBSD: patch-src_main-cmd_c,v 1.1 2002/03/20 16:19:52 espie Exp $
 +		"\t\t[-z CELLS]\n");
 +	exit(1);
 +}
-+
+ 
 +void
 +description()
 +{
@@ -184,9 +184,10 @@ $OpenBSD: patch-src_main-cmd_c,v 1.1 2002/03/20 16:19:52 espie Exp $
 +	*file_list = argv+optind;
 +}
 +#endif
- 
++
  int main(int argc,char *argv[])
  {
+   char **file_list;
 @@ -271,7 +429,10 @@ int main(int argc,char *argv[])
    struct program **table;
    char *s;

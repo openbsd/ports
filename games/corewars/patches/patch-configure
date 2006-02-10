@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure,v 1.1 2002/03/20 16:19:51 espie Exp $
---- configure.orig	Wed Mar 20 16:35:40 2002
-+++ configure	Wed Mar 20 16:36:02 2002
+$OpenBSD: patch-configure,v 1.2 2006/02/10 08:53:19 steven Exp $
+--- configure.orig	Sun Jul 30 03:33:34 2000
++++ configure	Fri Feb 10 09:28:59 2006
+@@ -1999,7 +1999,7 @@ rm -f conftest*
+   rm -f conf.gtktest
+ 
+ 
+-CFLAGS=$GTK_CFLAGS
++CFLAGS="$CFLAGS $GTK_CFLAGS"
+ LIBS=$GTK_LIBS
+ 
+ 
 @@ -2310,14 +2310,7 @@ if eval "test \"`echo '$ac_cv_header_'$a
  EOF
   COREWARSCMD=corewars-cmd
