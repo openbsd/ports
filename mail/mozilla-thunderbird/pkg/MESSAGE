@@ -7,5 +7,14 @@ In order to create a new profile, start Thunderbird with the the
    
 If thunderbird doesn't start at all, first try and remove compreg.dat,
 xpti.dat and extensions/Extensions.rdf in your profile-dir, or you
-could just wack the old profile-dir,
+could just delete the old profile-dir,
     rm -r ~/.thunderbird/<profile-dir>
+(Be aware that this will delete any locally-stored mail).
+
+To make Thunderbird open links using Firefox, shut down Thunderbird
+and add these lines to ~/.thunderbird/<something>.default/prefs.js:
+
+user_pref("network.protocol-handler.app.ftp", "/usr/local/bin/firefox");
+user_pref("network.protocol-handler.app.http", "/usr/local/bin/firefox");
+user_pref("network.protocol-handler.app.https", "/usr/local/bin/firefox");
+
