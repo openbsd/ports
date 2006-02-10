@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/09/15 08:57:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2006/02/10 11:33:17 espie Exp $
+@pkgpath shells/bash,static
 @shell bin/bash
 bin/bashbug
 @info info/bash.info

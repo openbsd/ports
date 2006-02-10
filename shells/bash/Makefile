@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2006/01/09 21:21:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2006/02/10 11:33:17 espie Exp $
 
 COMMENT=	"GNU Bourne Again Shell"
 
 DISTNAME=	bash-3.1
-PKGNAME=	${DISTNAME}.1
+PKGNAME=	${DISTNAME}.1p0
 CATEGORIES=	shells
 HOMEPAGE=	http://cnswww.cns.cwru.edu/~chet/bash/bashtop.html
 

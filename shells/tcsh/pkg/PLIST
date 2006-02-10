@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.10 2006/01/15 13:58:39 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.11 2006/02/10 11:33:17 espie Exp $
+@pkgpath shells/tcsh,static
 @shell bin/tcsh
 @man man/man1/tcsh.1
 share/nls/C/tcsh.cat
