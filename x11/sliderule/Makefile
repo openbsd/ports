@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/12/19 17:27:01 alek Exp $
+# $OpenBSD: Makefile,v 1.15 2006/02/10 10:14:14 steven Exp $
 
 COMMENT=	"slide rule component of X11R3's xcalc"
 
@@ -11,8 +11,6 @@ PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
 WANTLIB=		X11 Xext c m
-
-MASTER_SITES=	${MASTER_SITE_LOCAL}
 
 USE_X11=	Yes
 
