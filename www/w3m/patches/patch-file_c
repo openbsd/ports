@@ -1,0 +1,12 @@
+$OpenBSD: patch-file_c,v 1.3 2006/02/10 18:54:58 sturm Exp $
+--- file.c.orig	Thu Feb  9 21:04:17 2006
++++ file.c	Thu Feb  9 21:04:30 2006
+@@ -7891,7 +7891,7 @@ uncompress_stream(URLFile *uf, char **sr
+ 	    uf->scheme = SCM_LOCAL;
+     }
+     UFhalfclose(uf);
+-    uf->stream = newFileStream(f1, (void (*)())pclose);
++    uf->stream = newFileStream(f1, (void (*)())fclose);
+ }
+ 
+ static FILE *
