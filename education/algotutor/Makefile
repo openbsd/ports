@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2005/10/18 19:11:02 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/02/10 04:50:06 sturm Exp $
 
 COMMENT=	"interactive tutorial for algorithms and data structures"
 
 DISTNAME=	algotutor-0.8.5
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	education math
 
 HOMEPAGE=	http://www.ofset.org/~ckhung/p/algotutor/
@@ -18,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://www.cyut.edu.tw/~ckhung/dl/
 EXTRACT_SUFX=	.tgz
 
-BUILD_DEPENDS=	:p5-Tk-*:x11/p5-Tk
+RUN_DEPENDS=	:p5-Tk-*:x11/p5-Tk
 
 NO_BUILD=	Yes
 
