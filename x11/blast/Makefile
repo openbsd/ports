@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2004/12/17 15:18:32 alek Exp $
+# $OpenBSD: Makefile,v 1.15 2006/02/10 09:20:28 steven Exp $
 
 COMMENT=	"blow holes through windows"
 
-DISTNAME=	blast-1.0-ss-11.00
+DISTNAME=	blast-1.0-src-11.00
 PKGNAME=	blast-1.0
 CATEGORIES=	x11
 
-MASTER_SITES=	ftp://hpux.csc.liv.ac.uk/hpux/X11/Demos/blast-1.0/ \
-		ftp://hpftp.cict.fr/hpux/X11/Demos/blast-1.0/
+MASTER_SITES=	http://hpux.connect.org.uk/ftp/hpux/X11/Demos/blast-1.0/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
