@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.84 2006/02/05 13:56:19 steven Exp $
+# $OpenBSD: network.conf.template,v 1.85 2006/02/10 09:36:57 steven Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -67,14 +67,12 @@ MASTER_SITE_GNU+=	\
 MASTER_SITE_XCONTRIB+=	\
 	ftp://ftp.gwdg.de/pub/x11/x.org/contrib/ \
 	ftp://ftp.x.org/contrib/ \
-	ftp://ftp.sunet.se/pub/X11/contrib/ \
-	ftp://ftp.kddlabs.co.jp/X11/contrib/ \
-	ftp://gd.tuwien.ac.at/hci/x.org/contrib/ \
-	ftp://ftp.uvsq.fr/pub/X11/contrib/ \
+	ftp://ftp.sunet.se/pub/X11/ftp.x.org/contrib/ \
+	ftp://ftp.kddlabs.co.jp/X11/ftp.x.org/contrib/ \
+	ftp://ftp.uvsq.fr/pub/X11/x.org/contrib/ \
 	ftp://ftp.eos.hokudai.ac.jp/pub/X11/contrib/ \
-	ftp://ftp.chg.ru/pub/X11/contrib/ \
+	ftp://ftp.chg.ru/pub/X11/x.org/contrib/ \
 	ftp://ftp.duke.edu/pub/X11/contrib/ \
-	ftp://ftp.dl.ac.uk/src/X/contrib/ \
 	ftp://sunsite.sut.ac.jp/pub/archives/X11/contrib/
 
 MASTER_SITE_R5CONTRIB+=	\
