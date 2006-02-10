@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/28 09:06:33 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/02/10 16:36:37 naddy Exp $
 bin/libast-config
 include/libast/
 include/libast.h
@@ -9,6 +9,7 @@ include/libast/iterator_if.h
 include/libast/linked_list.h
 include/libast/list_if.h
 include/libast/map_if.h
+include/libast/mbuff.h
 include/libast/obj.h
 include/libast/objpair.h
 include/libast/regexp.h
