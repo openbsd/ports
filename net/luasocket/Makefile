@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2006/01/21 01:32:40 jolan Exp $
+# $OpenBSD: Makefile,v 1.7 2006/02/10 18:07:37 steven Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"network support for the lua language"
 DISTNAME=	luasocket-2.0
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net
 
 MASTER_SITES=	http://luaforge.net/frs/download.php/1097/
@@ -20,9 +20,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_REGRESS=	Yes
 
-BUILD_DEPENDS=	::lang/lua ::devel/luacompat
-RUN_DEPENDS=	${BUILD_DEPENDS}
-LIB_DEPENDS=	luacompat::devel/luacompat
+WANTLIB=	m
+
+LIB_DEPENDS=	lua,lualib::lang/lua \
+		luacompat::devel/luacompat
 
 MAKE_FILE=	makefile
 
