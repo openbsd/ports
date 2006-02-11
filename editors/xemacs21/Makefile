@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2006/02/08 19:56:47 steven Exp $
+# $OpenBSD: Makefile,v 1.36 2006/02/11 08:53:26 sturm Exp $
 
 COMMENT=	"heavily customizable and extensible editor"
 
@@ -82,7 +82,7 @@ CONFIGURE_ARGS+=--with-xim=xlib
 .endif
 
 .if ${FLAVOR:L:Mmule}
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 MODULES=	devel/gettext
 CONFIGURE_ARGS+=--with-mule
 
