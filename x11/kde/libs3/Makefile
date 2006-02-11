@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2006/02/03 12:23:14 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2006/02/11 18:22:35 bernd Exp $
 
 COMMENT=		"K Desktop Environment, libraries"
 COMMENT-cups=		"K Desktop Environment, cups support"
@@ -8,7 +8,7 @@ DISTNAME=		kdelibs-${VERSION}
 MASTER_SITES0=  ftp://ftp.kde.org/pub/kde/security_patches/
 #PATCHFILES=	post-3.4.3-kdelibs-kjs.diff:0
 
-PKGNAME=		${DISTNAME}
+PKGNAME=		${DISTNAME}p0
 PKGNAME-cups=		kdecups-${VERSION}
 MODKDE_VERSION?=	3.5
 SHARED_LIBS=		DCOP			7.0 \
@@ -84,6 +84,7 @@ WANTLIB+=	audiofile esd glib-2.0.0.0 \
 
 LIB_DEPENDS+=	Half,Iex,Imath,IlmImf::graphics/openexr	\
 		aspell::textproc/aspell/core
+RUN_DEPENDS+=	::x11/hicolor-icon-theme
 .endif
 
 .if !defined(PACKAGING) || ${SUBPACKAGE:L} == "-cups"
