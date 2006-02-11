@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2006/01/01 22:23:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2006/02/11 21:27:04 steven Exp $
 
 COMMENT=	"GTK Extra Widget Set"
 
 DISTNAME=	gtk+extra-0.99.17
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SHARED_LIBS=	gtkextra 17.0
 CATEGORIES=	x11 devel
 
@@ -18,8 +18,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/src/
 
-BUILD_DEPENDS=	gtk.1.2,glib.1.2::x11/gtk+
-RUN_DEPENDS=	${BUILD_DEPENDS}
+WANTLIB=	X11 Xext Xi m glib gmodule
+
+MODULES=	devel/gettext
+
+LIB_DEPENDS=	gtk.2,gdk.2::x11/gtk+
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
