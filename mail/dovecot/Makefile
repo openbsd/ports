@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2006/02/09 05:17:14 brad Exp $
+# $OpenBSD: Makefile,v 1.33 2006/02/11 04:10:08 brad Exp $
 
 COMMENT= 	"compact IMAP/POP3 server"
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://dovecot.org/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
-# LGPL
+# MIT/LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
