@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_files_c,v 1.1 2006/02/11 16:15:46 otto Exp $
+--- src/files.c.orig	Sat Feb 11 09:31:55 2006
++++ src/files.c	Sat Feb 11 09:32:01 2006
+@@ -1153,7 +1153,9 @@ boolean uncomp;
+ 			redirect(filename, RDBMODE, stdin, uncomp);
+ 			redirect(cfn, WRBMODE, stdout, uncomp);
+ 		}
++		(void) setegid(getgid());
+ 		(void) setgid(getgid());
++		(void) seteuid(getuid());
+ 		(void) setuid(getuid());
+ 		(void) execv(args[0], (char *const *) args);
+ 		perror((char *)0);
