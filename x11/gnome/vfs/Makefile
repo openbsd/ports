@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2006/01/08 21:44:11 alek Exp $
+# $OpenBSD: Makefile,v 1.23 2006/02/12 01:22:00 steven Exp $
 
 COMMENT=		"GNOME Virtual File System"
 
 DISTNAME=		gnome-vfs-1.0.5
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 SHARED_LIBS=		gnomevfs 0.2
 CATEGORIES=		devel x11/gnome
 HOMEPAGE=		http://www.gnome.org/
@@ -27,7 +27,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		IIOP ORBit ORBitCosNaming ORBitutil X11 Xext Xi gdk \
-			glib gmodule gtk iconv intl m oaf pthread wrap z
+			glib gmodule gtk m oaf popt pthread wrap z
+
+MODULES=		devel/gettext
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}

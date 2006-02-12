@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2006/01/10 05:45:54 bernd Exp $
+# $OpenBSD: Makefile,v 1.25 2006/02/12 01:22:00 steven Exp $
 
 COMMENT=		"GNOME control center"
 
 DISTNAME=		control-center-1.4.0.5
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 SHARED_LIBS=		capplet 0.0
 CATEGORIES=		x11 x11/gnome
 
@@ -28,8 +28,10 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE IIOP Imlib ORBit ORBitCosNaming ORBitutil SM X11 \
 			Xext Xi Xpm Xxf86misc art_lgpl audiofile c esd \
 			gconf-1 gconf-gtk-1 gdk gdk_imlib glib gmodule gnome \
-			gnomesupport gnomeui gthread gtk iconv intl jpeg m \
-			oaf png pthread tiff ungif wrap xml z
+			gnomesupport gnomeui gthread gtk jpeg m \
+			oaf png popt pthread tiff ungif wrap xml z
+
+MODULES=		devel/gettext
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
