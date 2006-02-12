@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.153 2005/12/22 22:08:44 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.154 2006/02/12 14:58:15 david Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -7,21 +7,17 @@
      SUBDIR += Guppi
      SUBDIR += aalib
      SUBDIR += aalib,no_x11
-#    SUBDIR += aero
      SUBDIR += blender
      SUBDIR += cadubi
      SUBDIR += cairo
-#    SUBDIR += camediaplay
      SUBDIR += camlimages
      SUBDIR += compface
      SUBDIR += cqcam
-#    SUBDIR += dc3play
      SUBDIR += dcraw
      SUBDIR += dia
      SUBDIR += digikam
      SUBDIR += digikam-doc
      SUBDIR += digikam-image-plugins
-#    SUBDIR += dore
      SUBDIR += dumpmpeg
      SUBDIR += dvdrip
      SUBDIR += enjoympeg
@@ -32,14 +28,10 @@
      SUBDIR += fxtv
      SUBDIR += gd
      SUBDIR += gdk-pixbuf
-#    SUBDIR += geomview
-#    SUBDIR += gfont
      SUBDIR += ggi
      SUBDIR += gif2png
-#    SUBDIR += gifmerge
      SUBDIR += gifsicle
      SUBDIR += gifsicle,no_x11
-#    SUBDIR += giftool
      SUBDIR += giftrans
      SUBDIR += gii
      SUBDIR += gimp
@@ -55,9 +47,6 @@
      SUBDIR += gtkam
      SUBDIR += gtksee
      SUBDIR += gwenview
-#    SUBDIR += hdf
-#    SUBDIR += hobbes-icons-xpm
-#    SUBDIR += hpscan
      SUBDIR += kipi-plugins
      SUBDIR += imlib
      SUBDIR += imlib2
@@ -83,12 +72,8 @@
      SUBDIR += libungif
      SUBDIR += libwmf
      SUBDIR += mpeg-lib
-#    SUBDIR += mpeg2codec
-#    SUBDIR += mpeg2play
      SUBDIR += mpeg_encode
      SUBDIR += mpeg_play
-#    SUBDIR += mpeg_stat
-#    SUBDIR += mpegedit
      SUBDIR += mplex
      SUBDIR += netpbm
      SUBDIR += openexr
@@ -107,11 +92,6 @@
      SUBDIR += p5-Imager
      SUBDIR += p5-PerlMagick
      SUBDIR += p5-SVG
-#    SUBDIR += pgperl
-#    SUBDIR += pgplot
-#    SUBDIR += photopc
-#    SUBDIR += pixmap
-#    SUBDIR += plotmtv
      SUBDIR += png
      SUBDIR += png2ico
      SUBDIR += pngcrush
@@ -127,49 +107,32 @@
      SUBDIR += py-gd
      SUBDIR += py-matplotlib
      SUBDIR += qiv
-#    SUBDIR += qvplay
      SUBDIR += ruby-gdk-imlib
      SUBDIR += ruby-gdk-pixbuf
      SUBDIR += s10sh
      SUBDIR += sane-backends
      SUBDIR += sane-frontends
-#    SUBDIR += sced
      SUBDIR += scrot
      SUBDIR += smpeg-xmms
      SUBDIR += sng
      SUBDIR += sodipodi
-#    SUBDIR += spigot
-#    SUBDIR += splitmpg
      SUBDIR += swfdec
      SUBDIR += synaesthesia
      SUBDIR += tgif
      SUBDIR += tiff
      SUBDIR += tiff2png
-#    SUBDIR += txtmerge
-#    SUBDIR += urt
      SUBDIR += vcdimager
-#    SUBDIR += vcg
      SUBDIR += vid
      SUBDIR += videod
-#    SUBDIR += whirlgif
      SUBDIR += win32-codecs
      SUBDIR += wmgrabimage
      SUBDIR += wmicons
      SUBDIR += wmphoto
      SUBDIR += xanim
-#    SUBDIR += xaos
      SUBDIR += xbmbrowser
-#    SUBDIR += xdl
      SUBDIR += xfig
-#    SUBDIR += xfractint
-#    SUBDIR += xgrasp
-#    SUBDIR += xli
-#    SUBDIR += xmandel
      SUBDIR += xmedcon
-#    SUBDIR += xmfract
      SUBDIR += xmms-kj
-#    SUBDIR += xmorph
-#    SUBDIR += xmountains
      SUBDIR += xpaint
      SUBDIR += xv
      SUBDIR += xzgv

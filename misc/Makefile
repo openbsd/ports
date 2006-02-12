@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2006/01/28 11:11:37 alek Exp $
+# $OpenBSD: Makefile,v 1.85 2006/02/12 14:58:15 david Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -8,26 +8,16 @@
      SUBDIR += brs
      SUBDIR += bsdiff
      SUBDIR += buffer
-#    SUBDIR += cal
      SUBDIR += calentool
      SUBDIR += cbb
      SUBDIR += ccze
      SUBDIR += cdrchive
      SUBDIR += cdrdao
-#    SUBDIR += chord
      SUBDIR += clex
-#    SUBDIR += colorls
-#    SUBDIR += ctk
      SUBDIR += deco
-#    SUBDIR += dejagnu
      SUBDIR += delay
      SUBDIR += dialog
-#    SUBDIR += dotfile
      SUBDIR += dnetc
-#    SUBDIR += ecc
-#    SUBDIR += estic
-#    SUBDIR += fd
-#    SUBDIR += fep
      SUBDIR += figlet
      SUBDIR += fileutils
      SUBDIR += findutils
@@ -35,22 +25,15 @@
      SUBDIR += gacc
      SUBDIR += garmin-utils
      SUBDIR += geekcode
-#    SUBDIR += git
      SUBDIR += gnuwatch
      SUBDIR += gone
      SUBDIR += gpsd
      SUBDIR += hfsplus
-#    SUBDIR += ical
      SUBDIR += impress
      SUBDIR += jive
-#    SUBDIR += kdeutils
-#    SUBDIR += kp
      SUBDIR += ktimeclock
-#    SUBDIR += less
      SUBDIR += libutf8
-#    SUBDIR += lile
      SUBDIR += logjam
-#    SUBDIR += logsurfer
      SUBDIR += magicpoint
      SUBDIR += mc
      SUBDIR += memcached
@@ -58,15 +41,11 @@
      SUBDIR += mmv
      SUBDIR += most
      SUBDIR += mshell
-#    SUBDIR += nwrite
-#    SUBDIR += p5-Array-PrintCols
      SUBDIR += p5-CreditCard
-#    SUBDIR += p5-Business-CreditCard
      SUBDIR += p5-File-MMagic
      SUBDIR += p5-Finance-Quote
      SUBDIR += p5-Finance-QuoteHist
      SUBDIR += p5-I18N-Charset
-#    SUBDIR += p5-Search
      SUBDIR += pdmenu
      SUBDIR += pfm
      SUBDIR += plan
@@ -79,31 +58,23 @@
      SUBDIR += sh-utils
      SUBDIR += shared-mime-info
      SUBDIR += splitvt
-#    SUBDIR += team
      SUBDIR += tpwireless
      SUBDIR += tkcron
      SUBDIR += tkinfo
      SUBDIR += tkman
      SUBDIR += ttyrec
-#    SUBDIR += unclutter
      SUBDIR += viz
      SUBDIR += wmmand
      SUBDIR += wmnetscapekiller
      SUBDIR += wmtimer
-#    SUBDIR += xcalendar
      SUBDIR += xcdroast
      SUBDIR += xd
      SUBDIR += xdelta
      SUBDIR += xgas
-#    SUBDIR += xinvest
      SUBDIR += xless
-#    SUBDIR += xmaddressbook
      SUBDIR += xnc
-#    SUBDIR += xopps
-#    SUBDIR += xpns
      SUBDIR += xtar
      SUBDIR += xtimer
      SUBDIR += ytree
-#    SUBDIR += zorro
 
 .include <bsd.port.subdir.mk>

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2005/01/14 18:04:40 todd Exp $
+# $OpenBSD: Makefile,v 1.29 2006/02/12 14:58:15 david Exp $
 # $FreeBSD: Makefile,v 1.27 1997/11/22 14:56:56 peter Exp $
 
      SUBDIR += birda
      SUBDIR += bottlerocket
      SUBDIR += conserver
-#    SUBDIR += ecu
      SUBDIR += efax
      SUBDIR += flipit
      SUBDIR += hylafax
@@ -25,7 +24,6 @@
      SUBDIR += qpage
      SUBDIR += scmxx
      SUBDIR += seyon
-#    SUBDIR += snooper
      SUBDIR += tkhylafax
      SUBDIR += wy60
      SUBDIR += xcept

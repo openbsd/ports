@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2006/01/20 06:25:33 jolan Exp $
+# $OpenBSD: Makefile,v 1.136 2006/02/12 14:58:15 david Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -10,10 +10,7 @@
      SUBDIR += bladeenc
      SUBDIR += bmp
      SUBDIR += bonk
-#    SUBDIR += cam
-#    SUBDIR += cddbd
      SUBDIR += cdparanoia
-#    SUBDIR += cdplay
      SUBDIR += cplay
      SUBDIR += daapd
      SUBDIR += disc-cover
@@ -23,7 +20,6 @@
      SUBDIR += festival
      SUBDIR += flac
      SUBDIR += flite
-#    SUBDIR += gmod
      SUBDIR += gogo
      SUBDIR += gqmpeg
      SUBDIR += grip
@@ -51,9 +47,7 @@
      SUBDIR += libworkman
      SUBDIR += lopster
      SUBDIR += madplay
-#    SUBDIR += maplay
      SUBDIR += midish
-#    SUBDIR += mikmod
      SUBDIR += mixer.app
      SUBDIR += morseplayer
      SUBDIR += mp3blaster
@@ -67,9 +61,7 @@
      SUBDIR += mpg123,esd
      SUBDIR += mpg321
      SUBDIR += mt-daapd
-#    SUBDIR += mxv
      SUBDIR += nap
-#    SUBDIR += nas
      SUBDIR += normalize
      SUBDIR += nosefart
      SUBDIR += nspmod
@@ -82,21 +74,17 @@
      SUBDIR += p5-MP3-Info
      SUBDIR += p5-cddb
      SUBDIR += p5-libvorbis
-#    SUBDIR += playmidi
      SUBDIR += py-ao
      SUBDIR += py-cddb
      SUBDIR += py-id3
      SUBDIR += py-ogg
      SUBDIR += py-tagger
      SUBDIR += py-xmms
-#    SUBDIR += radio
      SUBDIR += rhythmbox
      SUBDIR += rio500
      SUBDIR += rioutil
-#    SUBDIR += rosegarden
      SUBDIR += rplay
      SUBDIR += rsynth
-#    SUBDIR += s3mod
      SUBDIR += shorten
      SUBDIR += sidplay
      SUBDIR += soundtracker
@@ -105,7 +93,6 @@
      SUBDIR += sox
      SUBDIR += sox,mp3,vorbis
      SUBDIR += speex
-#    SUBDIR += splay
      SUBDIR += streamripper
      SUBDIR += taglib
      SUBDIR += teknap

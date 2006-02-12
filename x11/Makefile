@@ -1,10 +1,7 @@
-# $OpenBSD: Makefile,v 1.229 2006/02/04 10:33:31 matthieu Exp $
+# $OpenBSD: Makefile,v 1.230 2006/02/12 14:58:16 david Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 855resolution
-#    SUBDIR += FWF
-#    SUBDIR += XFree86
-#    SUBDIR += XFree86-contrib
      SUBDIR += Xaw3d
      SUBDIR += XawMu
      SUBDIR += aewm
@@ -19,7 +16,6 @@
      SUBDIR += aterm,big5
      SUBDIR += aterm,big5,lite
      SUBDIR += aterm,lite
-#    SUBDIR += auis
      SUBDIR += bbdate
      SUBDIR += bbkeys
      SUBDIR += bbpager
@@ -27,24 +23,18 @@
      SUBDIR += belt
      SUBDIR += blackbox
      SUBDIR += blast
-#    SUBDIR += blt
      SUBDIR += bricons
-#    SUBDIR += camltk41
      SUBDIR += chbg
      SUBDIR += ctwm
      SUBDIR += cwm
      SUBDIR += dclock
      SUBDIR += e16keyedit
      SUBDIR += emiclock
-#    SUBDIR += emu
      SUBDIR += enlightenment
      SUBDIR += eterm
      SUBDIR += eterm,kanji
-#    SUBDIR += etlfonts
      SUBDIR += evilwm
      SUBDIR += explorer
-#    SUBDIR += fbsd-icons
-#    SUBDIR += filerunner
      SUBDIR += fleditor
      SUBDIR += fltk
      SUBDIR += fluxbox
@@ -53,10 +43,8 @@
      SUBDIR += flwm
      SUBDIR += freefonts
      SUBDIR += fsv
-#    SUBDIR += fvwm
      SUBDIR += fvwm2
      SUBDIR += fvwm2,i18n
-#    SUBDIR += fvwm2-english
      SUBDIR += fvwm95
      SUBDIR += gatos-bin
      SUBDIR += gentoo
@@ -79,12 +67,10 @@
      SUBDIR += gtkmm
      SUBDIR += gtksourceview
      SUBDIR += gtop
-#    SUBDIR += gwm
      SUBDIR += hicolor-icon-theme
      SUBDIR += icewm
      SUBDIR += idesk
      SUBDIR += ion
-#    SUBDIR += iv
      SUBDIR += jmk-fonts
      SUBDIR += kde
      SUBDIR += kdirstat
@@ -93,11 +79,9 @@
      SUBDIR += lablgtk
      SUBDIR += lesstif
      SUBDIR += libdnd
-#    SUBDIR += libsx
      SUBDIR += lupe
      SUBDIR += matchbox
      SUBDIR += mlterm
-#    SUBDIR += mlvwm
      SUBDIR += mouseclock
      SUBDIR += mowitz
      SUBDIR += mplayer
@@ -120,7 +104,6 @@
      SUBDIR += p5-Gtk
      SUBDIR += p5-Gtk,gtkglarea
      SUBDIR += p5-Gtk,gnome
-#    SUBDIR += p5-Tcl-Tk
      SUBDIR += p5-Tk
      SUBDIR += p5-Tk-ProgressBar-Mac
      SUBDIR += p5-Tk-Stderr
@@ -132,7 +115,6 @@
      SUBDIR += pwm
      SUBDIR += py-Gtk
      SUBDIR += py-gtk2
-#    SUBDIR += pythonqt
      SUBDIR += qinx
      SUBDIR += qlwm
      SUBDIR += qt
@@ -156,24 +138,13 @@
      SUBDIR += sawfish
      SUBDIR += skippy
      SUBDIR += sliderule
-#    SUBDIR += slingshot
      SUBDIR += swisswatch
-#    SUBDIR += sxpc
      SUBDIR += terminus-font
-#    SUBDIR += tix
      SUBDIR += tk
-#    SUBDIR += tk41
-#    SUBDIR += tk42
-#    SUBDIR += tk80
-#    SUBDIR += tk82
-#    SUBDIR += tkdesk
-#    SUBDIR += tkgoodstuff
-#    SUBDIR += tkstep80
      SUBDIR += tktable
      SUBDIR += treewm
      SUBDIR += ttmkfdir
      SUBDIR += tvtwm
-#    SUBDIR += tycoon
      SUBDIR += type1inst
      SUBDIR += unclutter
      SUBDIR += viewfax
@@ -206,13 +177,10 @@
      SUBDIR += x11vnc
      SUBDIR += x2vnc
      SUBDIR += x2x
-#    SUBDIR += x3270
-#    SUBDIR += xalarm
      SUBDIR += xaniroc
      SUBDIR += xantfarm
      SUBDIR += xautolock
      SUBDIR += xawtv
-#    SUBDIR += xbuffy
      SUBDIR += xcb
      SUBDIR += xchm
      SUBDIR += xclip
@@ -226,7 +194,6 @@
      SUBDIR += xdmchoose
      SUBDIR += xdtm
      SUBDIR += xdu
-#    SUBDIR += xfce
      SUBDIR += xfce4
      SUBDIR += xfed
      SUBDIR += xfedor
@@ -255,13 +222,11 @@
      SUBDIR += xscreensaver
      SUBDIR += xscreensaver,no_gle
      SUBDIR += xscribble
-#    SUBDIR += xskyroot
      SUBDIR += xsnow
      SUBDIR += xtacy
      SUBDIR += xtattr
      SUBDIR += xtermset
      SUBDIR += xtestpicture
-#    SUBDIR += xtide
      SUBDIR += xtoolwait
      SUBDIR += xtraceroute
      SUBDIR += xview

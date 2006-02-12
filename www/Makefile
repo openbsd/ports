@@ -1,12 +1,8 @@
-# $OpenBSD: Makefile,v 1.207 2006/01/15 16:26:29 sturm Exp $
+# $OpenBSD: Makefile,v 1.208 2006/02/12 14:58:16 david Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
-#    SUBDIR += Mosaic         # requires Motif
      SUBDIR += amaya          # requires Motif (lesstif works)
      SUBDIR += analog
-#    SUBDIR += arena
-#    SUBDIR += ashe           # requires Motif
-#    SUBDIR += aswedit
      SUBDIR += august
      SUBDIR += bk2site
      SUBDIR += bluefish
@@ -15,10 +11,8 @@
      SUBDIR += cgicc
      SUBDIR += cgilua
      SUBDIR += cgiparse
-#    SUBDIR += chimera
      SUBDIR += clearsilver
      SUBDIR += clearsilver,python
-#    SUBDIR += comline
      SUBDIR += cronolog
      SUBDIR += cssed
      SUBDIR += decss
@@ -27,14 +21,9 @@
      SUBDIR += epiphany
      SUBDIR += fcgi
      SUBDIR += ffproxy
-#    SUBDIR += fxhtml
-#    SUBDIR += gn
      SUBDIR += galeon
      SUBDIR += gtkhtml
      SUBDIR += gtkhtml3
-#    SUBDIR += gwstat
-#    SUBDIR += harvest
-#    SUBDIR += http-analyze
      SUBDIR += http_load
      SUBDIR += http_ping
      SUBDIR += igal
@@ -45,24 +34,19 @@
      SUBDIR += konqueror-embedded
      SUBDIR += kronolith
      SUBDIR += libghttp
-#    SUBDIR += libpics
-#    SUBDIR += libwww
      SUBDIR += lighttpd
      SUBDIR += lighttpd,ldap
      SUBDIR += lighttpd,ldap,mysql
      SUBDIR += lighttpd,mysql
-#    SUBDIR += linemode
      SUBDIR += linkchecker
      SUBDIR += links
      SUBDIR += links+
      SUBDIR += links+,no_x11
      SUBDIR += man2web
-#    SUBDIR += mapedit
      SUBDIR += mediawiki
      SUBDIR += mhonarc
      SUBDIR += mindterm
      SUBDIR += minimo
-#    SUBDIR += mmm
      SUBDIR += mod_auth_bsd
      SUBDIR += mod_auth_kerb
      SUBDIR += mod_auth_ldap
@@ -84,7 +68,6 @@
      SUBDIR += mod_security
      SUBDIR += mod_text2html
      SUBDIR += moinmoin
-#    SUBDIR += momspider
      SUBDIR += moodle
      SUBDIR += moodle,mysql
      SUBDIR += moodle,pgsql
@@ -104,7 +87,6 @@
      SUBDIR += p5-Apache-Session
      SUBDIR += p5-Apache-Test
      SUBDIR += p5-Blatte-HTML
-#    SUBDIR += p5-CGI_Lite
      SUBDIR += p5-CGI-Deurl
      SUBDIR += p5-CGI-SpeedyCGI
      SUBDIR += p5-CGI-Untaint
@@ -118,7 +100,6 @@
      SUBDIR += p5-HTML-Lint
      SUBDIR += p5-HTML-Mason
      SUBDIR += p5-HTML-Parser
-#    SUBDIR += p5-HTML-QuickCheck
      SUBDIR += p5-HTML-Scrubber
      SUBDIR += p5-HTML-Stream
      SUBDIR += p5-HTML-Table
@@ -135,7 +116,6 @@
      SUBDIR += p5-HTTP-Recorder
      SUBDIR += p5-HTTP-Request-Params
      SUBDIR += p5-HTTPD-Log-Filter
-#    SUBDIR += p5-HTTPD-Tools
      SUBDIR += p5-LWP-UserAgent-Determined
      SUBDIR += p5-MasonX-Interp-WithCallbacks
      SUBDIR += p5-Maypole
@@ -146,7 +126,6 @@
      SUBDIR += p5-URI
      SUBDIR += p5-WWW-Curl
      SUBDIR += p5-WWW-Mechanize
-#    SUBDIR += p5-WWW-Search
      SUBDIR += p5-libapreq
      SUBDIR += p5-libwww
      SUBDIR += pear-HTML-Common2
@@ -179,9 +158,6 @@
      SUBDIR += transproxy
      SUBDIR += turba
      SUBDIR += twiki
-#    SUBDIR += vrweb
-#    SUBDIR += w3
-#    SUBDIR += w3c-httpd
      SUBDIR += w3m
      SUBDIR += w3m,image
      SUBDIR += w3m,japanese
@@ -189,16 +165,11 @@
      SUBDIR += w3mir
      SUBDIR += webalizer
      SUBDIR += webcollab
-#    SUBDIR += webcopy
      SUBDIR += weblint
      SUBDIR += wordpress
-#    SUBDIR += webstone
-#    SUBDIR += wml
-#    SUBDIR += wn
      SUBDIR += www6to4
      SUBDIR += wwwcount
      SUBDIR += wwwoffle
-#    SUBDIR += wwwstat
      SUBDIR += xavante
      SUBDIR += xmhtml
      SUBDIR += xoops

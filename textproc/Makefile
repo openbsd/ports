@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2005/11/25 21:35:11 steven Exp $
+# $OpenBSD: Makefile,v 1.141 2006/02/12 14:58:16 david Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -16,7 +16,6 @@
      SUBDIR += docbook-to-man
      SUBDIR += docbook-xsl
      SUBDIR += expat
-#    SUBDIR += figlet
      SUBDIR += gdiff
      SUBDIR += glimpse
      SUBDIR += gnome-spell
@@ -119,7 +118,6 @@
      SUBDIR += pear-XML-Util
      SUBDIR += pilot_makedoc
      SUBDIR += pinfo
-#    SUBDIR += pspell
      SUBDIR += py-Chart
      SUBDIR += py-ElementTree
      SUBDIR += py-HappyDoc
@@ -141,7 +139,6 @@
      SUBDIR += textutils
      SUBDIR += txt2tags
      SUBDIR += unrtf
-#    SUBDIR += unroff
      SUBDIR += urlview
      SUBDIR += validate
      SUBDIR += wdg-sgml-lib

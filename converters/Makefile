@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2005/02/06 15:16:39 sturm Exp $
+# $OpenBSD: Makefile,v 1.30 2006/02/12 14:58:15 david Exp $
 #
 
     SUBDIR += base64
@@ -29,7 +29,6 @@
     SUBDIR += p5-Unicode-Map8
     SUBDIR += p5-Unicode-MapUTF8
     SUBDIR += p5-Unicode-String
-#   SUBDIR += playfair
     SUBDIR += ppmtoTbmp
     SUBDIR += py-cjkcodecs
     SUBDIR += py-iconvcodec
@@ -37,12 +36,8 @@
     SUBDIR += recode
     SUBDIR += rpm2cpio
     SUBDIR += trans
-#   SUBDIR += uudeview
-#   SUBDIR += uudx
-#   SUBDIR += uulib
     SUBDIR += wv
     SUBDIR += wv2
-#   SUBDIR += xdeview
     SUBDIR += xlhtml
 
 .include <bsd.port.subdir.mk>

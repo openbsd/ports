@@ -1,24 +1,15 @@
-# $OpenBSD: Makefile,v 1.49 2005/12/03 21:59:05 steven Exp $
+# $OpenBSD: Makefile,v 1.50 2006/02/12 14:58:15 david Exp $
 #
 
      SUBDIR += R
-#    SUBDIR += Scilab
      SUBDIR += aamath
      SUBDIR += abs
-#    SUBDIR += apc
      SUBDIR += blas
      SUBDIR += calc
      SUBDIR += calcoo
-#    SUBDIR += calctool
      SUBDIR += coq
-#    SUBDIR += eispack
-#    SUBDIR += eval
-#    SUBDIR += femlab
-#    SUBDIR += fftpack
      SUBDIR += fftw
      SUBDIR += fftw3
-#    SUBDIR += freefem
-#    SUBDIR += fudgit
      SUBDIR += galculator
      SUBDIR += geg
      SUBDIR += gnumeric
@@ -32,21 +23,15 @@
      SUBDIR += hoc
      SUBDIR += kst
      SUBDIR += jacal
-#    SUBDIR += lapack
-#    SUBDIR += libranlib
-#    SUBDIR += linpack
      SUBDIR += maple
      SUBDIR += maple-share
      SUBDIR += mathomatic
      SUBDIR += maxima
      SUBDIR += mcl
      SUBDIR += mcsim
-#    SUBDIR += metis
      SUBDIR += netcdf
      SUBDIR += ntl
-#    SUBDIR += numpy
      SUBDIR += octave
-#    SUBDIR += oleo
      SUBDIR += p5-AI-NeuralNet-BackProp
      SUBDIR += p5-AI-NeuralNet-Mesh
      SUBDIR += p5-AI-Perceptron
@@ -54,27 +39,14 @@
      SUBDIR += p5-Math-FFT
      SUBDIR += p5-Math-GMP
      SUBDIR += p5-Math-Pari
-#    SUBDIR += p5-MatrixReal
      SUBDIR += p5-Set-IntSpan
      SUBDIR += py-Numeric
      SUBDIR += py-gnuplot
      SUBDIR += py-probstat
      SUBDIR += pari
-#    SUBDIR += plplot
-#    SUBDIR += r
      SUBDIR += sc
-#    SUBDIR += siag
-#    SUBDIR += simpack
-#    SUBDIR += ss
-#    SUBDIR += umatrix
      SUBDIR += wingz
      SUBDIR += wmcalc
-#    SUBDIR += xgfe
-#    SUBDIR += xgraph
-#    SUBDIR += xldlas
-#    SUBDIR += xlispstat
-#    SUBDIR += xmgr
-#    SUBDIR += xplot
      SUBDIR += xspread
      SUBDIR += yorick
 

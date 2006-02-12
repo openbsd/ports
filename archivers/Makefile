@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2006/01/30 13:29:14 steven Exp $
+# $OpenBSD: Makefile,v 1.28 2006/02/12 14:58:15 david Exp $
 # $FreeBSD: Makefile,v 1.19 1997/11/20 08:21:26 tg Exp $
 
      SUBDIR += arc
@@ -12,7 +12,6 @@
      SUBDIR += gtar
      SUBDIR += gtar,static
      SUBDIR += ha
-#    SUBDIR += hpack.non-usa.only
      SUBDIR += lha
      SUBDIR += lxsplit
      SUBDIR += lzma
@@ -38,10 +37,8 @@
      SUBDIR += unrar
      SUBDIR += unshield
      SUBDIR += unzip
-#    SUBDIR += unzip.with_encryption
      SUBDIR += zip
      SUBDIR += zipios
-#    SUBDIR += zip.with_encryption
      SUBDIR += zoo
 
 .include <bsd.port.subdir.mk>

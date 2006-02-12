@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.403 2006/01/31 02:58:52 marco Exp $
+# $OpenBSD: Makefile,v 1.404 2006/02/12 14:58:15 david Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -39,7 +39,6 @@
      SUBDIR += curl
      SUBDIR += cvsup
      SUBDIR += cvsup,no_x11
-#    SUBDIR += cvsup-mirror
      SUBDIR += cvsync
      SUBDIR += dc_gui
      SUBDIR += dclib
@@ -305,7 +304,6 @@
      SUBDIR += tcpstat
      SUBDIR += tcptrace
      SUBDIR += tcptraceroute
-#     SUBDIR += tftp-proxy
      SUBDIR += thcrut
      SUBDIR += tightvnc
      SUBDIR += tintin++
