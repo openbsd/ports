@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1 2003/05/13 00:12:38 naddy Exp $
---- configure.orig	Mon May 12 17:29:18 2003
-+++ configure	Mon May 12 17:30:28 2003
+$OpenBSD: patch-configure,v 1.2 2006/02/12 16:46:08 alek Exp $
+--- configure.orig	Sun Apr 28 21:23:03 2002
++++ configure	Sun Feb 12 12:13:21 2006
 @@ -13288,7 +13288,6 @@ else
  #include "confdefs.h"
  #include <libintl.h>
@@ -35,3 +35,12 @@ $OpenBSD: patch-configure,v 1.1 2003/05/13 00:12:38 naddy Exp $
    ;
    return 0;
  }
+@@ -14162,7 +14160,7 @@ s,@USE_NLS@,$USE_NLS,;t t
+ s,@LIBICONV@,$LIBICONV,;t t
+ s,@LTLIBICONV@,$LTLIBICONV,;t t
+ s,@INTLLIBS@,$INTLLIBS,;t t
+-s,@LIBINTL@,$LIBINTL,;t t
++s,@LIBINTL@,$LTLIBINTL,;t t
+ s,@LTLIBINTL@,$LTLIBINTL,;t t
+ s,@POSUB@,$POSUB,;t t
+ CEOF

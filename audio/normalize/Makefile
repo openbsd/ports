@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2004/11/21 17:51:46 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2006/02/12 16:46:08 alek Exp $
 
 COMMENT=	"audio file volume normalizer"
 
 DISTNAME=	normalize-0.7.4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cs.columbia.edu/~cvaill/normalize/
 
@@ -35,5 +36,7 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
 LIB_DEPENDS=	mad.2::audio/libmad \
 		audiofile::devel/libaudiofile
+
+USE_LIBTOOL=	Yes
 
 .include <bsd.port.mk>
