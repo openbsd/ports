@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2006/02/12 14:58:15 david Exp $
+# $OpenBSD: Makefile,v 1.51 2006/02/12 16:24:50 david Exp $
 #
 
      SUBDIR += R
@@ -21,8 +21,8 @@
      SUBDIR += hc
      SUBDIR += hexcalc
      SUBDIR += hoc
-     SUBDIR += kst
      SUBDIR += jacal
+     SUBDIR += kst
      SUBDIR += maple
      SUBDIR += maple-share
      SUBDIR += mathomatic
@@ -40,10 +40,10 @@
      SUBDIR += p5-Math-GMP
      SUBDIR += p5-Math-Pari
      SUBDIR += p5-Set-IntSpan
+     SUBDIR += pari
      SUBDIR += py-Numeric
      SUBDIR += py-gnuplot
      SUBDIR += py-probstat
-     SUBDIR += pari
      SUBDIR += sc
      SUBDIR += wingz
      SUBDIR += wmcalc

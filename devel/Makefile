@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.355 2006/01/25 23:33:51 jolan Exp $
+# $OpenBSD: Makefile,v 1.356 2006/02/12 16:24:50 david Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -51,6 +51,7 @@
      SUBDIR += flawfinder
      SUBDIR += fox
      SUBDIR += fribidi
+     SUBDIR += g-wrap
      SUBDIR += gal
      SUBDIR += gal2
      SUBDIR += gconf
@@ -75,7 +76,6 @@
      SUBDIR += gstreamer
      SUBDIR += gstreamer-plugins
      SUBDIR += guilib
-     SUBDIR += g-wrap
      SUBDIR += haddock
      SUBDIR += happy
      SUBDIR += help2man
@@ -142,12 +142,12 @@
      SUBDIR += mico
      SUBDIR += mk
      SUBDIR += mm
-     SUBDIR += mysql-gui-common
      SUBDIR += mysql++
+     SUBDIR += mysql-gui-common
      SUBDIR += nasm
      SUBDIR += nspr
-     SUBDIR += opencm
      SUBDIR += ocaml-calendar
+     SUBDIR += opencm
      SUBDIR += p5-Algorithm-Annotate
      SUBDIR += p5-Algorithm-Diff
      SUBDIR += p5-Algorithm-MDiff
@@ -160,10 +160,10 @@
      SUBDIR += p5-B-Deobfuscate
      SUBDIR += p5-B-Graph
      SUBDIR += p5-B-Keywords
-     SUBDIR += p5-Bit-Vector-Minimal
      SUBDIR += p5-BFD
      SUBDIR += p5-BSD-Resource
      SUBDIR += p5-BSD-stat
+     SUBDIR += p5-Bit-Vector-Minimal
      SUBDIR += p5-C-Scan
      SUBDIR += p5-Cache-Cache
      SUBDIR += p5-Cache-Mmap
@@ -202,11 +202,11 @@
      SUBDIR += p5-Date-Leapyear
      SUBDIR += p5-Date-Simple
      SUBDIR += p5-Devel-Cycle
-     SUBDIR += p5-Devel-ptkdb
      SUBDIR += p5-Devel-Size
      SUBDIR += p5-Devel-SmallProf
      SUBDIR += p5-Devel-StackTrace
      SUBDIR += p5-Devel-Symdump
+     SUBDIR += p5-Devel-ptkdb
      SUBDIR += p5-Error
      SUBDIR += p5-Event
      SUBDIR += p5-Exception-Class
@@ -239,11 +239,11 @@
      SUBDIR += p5-IPC-Run3
      SUBDIR += p5-IPC-ShareLite
      SUBDIR += p5-Lchown
-     SUBDIR += p5-Locale-PGettext
      SUBDIR += p5-Locale-Maketext-Fuzzy
      SUBDIR += p5-Locale-Maketext-Gettext
      SUBDIR += p5-Locale-Maketext-Lexicon
      SUBDIR += p5-Locale-Maketext-Simple
+     SUBDIR += p5-Locale-PGettext
      SUBDIR += p5-Locale-gettext
      SUBDIR += p5-Log-Agent
      SUBDIR += p5-Log-Dispatch
@@ -297,8 +297,8 @@
      SUBDIR += p5-Test-Pod
      SUBDIR += p5-Test-Pod-Coverage
      SUBDIR += p5-Test-Taint
-     SUBDIR += p5-Test-Warn
      SUBDIR += p5-Test-WWW-Mechanize
+     SUBDIR += p5-Test-Warn
      SUBDIR += p5-Tie-Array-Sorted
      SUBDIR += p5-Time-Period
      SUBDIR += p5-Time-Piece
@@ -329,6 +329,7 @@
      SUBDIR += prc-tools
      SUBDIR += pth
      SUBDIR += py-Checker
+     SUBDIR += py-SOAPpy
      SUBDIR += py-cheetah
      SUBDIR += py-dateutil
      SUBDIR += py-fpconst
@@ -339,7 +340,6 @@
      SUBDIR += py-pexpect
      SUBDIR += py-psyco
      SUBDIR += py-radix
-     SUBDIR += py-SOAPpy
      SUBDIR += py-tpg
      SUBDIR += py-tz
      SUBDIR += py-unit

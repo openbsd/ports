@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2005/11/04 14:05:30 wilfried Exp $
+# $OpenBSD: Makefile,v 1.79 2006/02/12 16:24:50 david Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += db
@@ -34,7 +34,6 @@
      SUBDIR += p5-Class-DBI-Plugin-Type
      SUBDIR += p5-Class-DBI-SQLite
      SUBDIR += p5-Class-DBI-mysql
-     SUBDIR += p5-Data-Page
      SUBDIR += p5-DBD-CSV
      SUBDIR += p5-DBD-Pg
      SUBDIR += p5-DBD-SQLite
@@ -46,6 +45,7 @@
      SUBDIR += p5-DBIx-ContextualFetch
      SUBDIR += p5-DBIx-SearchBuilder
      SUBDIR += p5-DBIx-XHTML_Table
+     SUBDIR += p5-Data-Page
      SUBDIR += p5-Ima-DBI
      SUBDIR += p5-SQL-Abstract
      SUBDIR += p5-SQL-Statement

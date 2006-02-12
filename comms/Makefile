@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2006/02/12 14:58:15 david Exp $
+# $OpenBSD: Makefile,v 1.30 2006/02/12 16:24:50 david Exp $
 # $FreeBSD: Makefile,v 1.27 1997/11/22 14:56:56 peter Exp $
 
      SUBDIR += birda
@@ -16,11 +16,11 @@
      SUBDIR += minicom
      SUBDIR += obexftp
      SUBDIR += openobex
-     SUBDIR += pilot-link
      SUBDIR += p5-Device-Gsm
      SUBDIR += p5-Device-Modem
      SUBDIR += p5-Device-SerialPort
      SUBDIR += p5-SendPage
+     SUBDIR += pilot-link
      SUBDIR += qpage
      SUBDIR += scmxx
      SUBDIR += seyon

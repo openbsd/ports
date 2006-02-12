@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.208 2006/02/12 14:58:16 david Exp $
+# $OpenBSD: Makefile,v 1.209 2006/02/12 16:24:50 david Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -27,8 +27,8 @@
      SUBDIR += http_load
      SUBDIR += http_ping
      SUBDIR += igal
-     SUBDIR += japana
      SUBDIR += jakarta-tomcat
+     SUBDIR += japana
      SUBDIR += jesred
      SUBDIR += junkbuster
      SUBDIR += konqueror-embedded
@@ -110,8 +110,8 @@
      SUBDIR += p5-HTML-Template-Expr
      SUBDIR += p5-HTML-Tree
      SUBDIR += p5-HTTP-BrowserDetect
-     SUBDIR += p5-HTTP-GetImages
      SUBDIR += p5-HTTP-GHTTP
+     SUBDIR += p5-HTTP-GetImages
      SUBDIR += p5-HTTP-Proxy
      SUBDIR += p5-HTTP-Recorder
      SUBDIR += p5-HTTP-Request-Params
@@ -174,7 +174,6 @@
      SUBDIR += xmhtml
      SUBDIR += xoops
      SUBDIR += zope
-     SUBDIR += zopeedit
      SUBDIR += zope-btreefolder2
      SUBDIR += zope-cmf
      SUBDIR += zope-cmfquickinstaller
@@ -192,5 +191,6 @@
      SUBDIR += zope-xmlmethods
      SUBDIR += zope-zippy
      SUBDIR += zope-zwiki
+     SUBDIR += zopeedit
 
 .include <bsd.port.subdir.mk>

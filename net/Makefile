@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.405 2006/02/12 15:54:54 david Exp $
+# $OpenBSD: Makefile,v 1.406 2006/02/12 16:24:50 david Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
      SUBDIR += BitTorrent
-     SUBDIR += bwm-ng
      SUBDIR += GeoIP
      SUBDIR += adns
      SUBDIR += aggregate
@@ -24,6 +23,7 @@
      SUBDIR += bitlbee
      SUBDIR += bluetooth-tools
      SUBDIR += bnc
+     SUBDIR += bwm-ng
      SUBDIR += cadaver
      SUBDIR += centericq
      SUBDIR += cftp
@@ -172,7 +172,6 @@
      SUBDIR += p5-IO-INET6
      SUBDIR += p5-IO-Interface
      SUBDIR += p5-IO-Socket-Multicast
-     SUBDIR += p5-NetPacket
      SUBDIR += p5-Net-Amazon
      SUBDIR += p5-Net-BGP
      SUBDIR += p5-Net-CIDR
@@ -209,6 +208,7 @@
      SUBDIR += p5-Net-Wake
      SUBDIR += p5-Net-Whois
      SUBDIR += p5-Net-Whois-Raw
+     SUBDIR += p5-NetPacket
      SUBDIR += p5-Nmap-Scanner
      SUBDIR += p5-POE-Component-Client-DNS
      SUBDIR += p5-POE-Component-Pcap
@@ -225,7 +225,6 @@
      SUBDIR += pcapmerge
      SUBDIR += pchar
      SUBDIR += pdnsd
-     SUBDIR += pebrot
      SUBDIR += pear-HTTP
      SUBDIR += pear-HTTP-Request
      SUBDIR += pear-Net-IMAP
@@ -233,6 +232,7 @@
      SUBDIR += pear-Net-Socket
      SUBDIR += pear-Net-URL
      SUBDIR += pear-Services-Weather
+     SUBDIR += pebrot
      SUBDIR += pebrot,cjk
      SUBDIR += pen
      SUBDIR += pfflowd

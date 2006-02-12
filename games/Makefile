@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2006/02/12 14:58:15 david Exp $
+# $OpenBSD: Makefile,v 1.122 2006/02/12 16:24:50 david Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -73,8 +73,8 @@
      SUBDIR += prboom
      SUBDIR += qstat
      SUBDIR += quake
-     SUBDIR += quake,ggi
      SUBDIR += quake,
+     SUBDIR += quake,ggi
      SUBDIR += rocksndiamonds
      SUBDIR += sarien
      SUBDIR += scummvm

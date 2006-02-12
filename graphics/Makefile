@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.154 2006/02/12 14:58:15 david Exp $
+# $OpenBSD: Makefile,v 1.155 2006/02/12 16:24:50 david Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
+     SUBDIR += Guppi
      SUBDIR += ImageMagick
      SUBDIR += ImageMagick,no_x11
-     SUBDIR += Guppi
      SUBDIR += aalib
      SUBDIR += aalib,no_x11
      SUBDIR += blender
@@ -38,7 +38,7 @@
      SUBDIR += gle
      SUBDIR += glitz
      SUBDIR += glut
-     SUBDIR += gmt 
+     SUBDIR += gmt
      SUBDIR += gphoto
      SUBDIR += gphoto2
      SUBDIR += gqview
@@ -47,7 +47,6 @@
      SUBDIR += gtkam
      SUBDIR += gtksee
      SUBDIR += gwenview
-     SUBDIR += kipi-plugins
      SUBDIR += imlib
      SUBDIR += imlib2
      SUBDIR += indexpage
@@ -58,6 +57,7 @@
      SUBDIR += jpeg
      SUBDIR += jpeg2ps
      SUBDIR += kimdaba
+     SUBDIR += kipi-plugins
      SUBDIR += lcms
      SUBDIR += libart
      SUBDIR += libcaca

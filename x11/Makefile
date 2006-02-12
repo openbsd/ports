@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.230 2006/02/12 14:58:16 david Exp $
+# $OpenBSD: Makefile,v 1.231 2006/02/12 16:24:50 david Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 855resolution
@@ -85,8 +85,8 @@
      SUBDIR += mouseclock
      SUBDIR += mowitz
      SUBDIR += mplayer
-     SUBDIR += mplayer,sdl
      SUBDIR += mplayer,no_x11
+     SUBDIR += mplayer,sdl
      SUBDIR += mplayer-fontmaker
      SUBDIR += msttcorefonts
      SUBDIR += mterm
@@ -102,8 +102,8 @@
      SUBDIR += oroborus
      SUBDIR += osd_clock
      SUBDIR += p5-Gtk
-     SUBDIR += p5-Gtk,gtkglarea
      SUBDIR += p5-Gtk,gnome
+     SUBDIR += p5-Gtk,gtkglarea
      SUBDIR += p5-Tk
      SUBDIR += p5-Tk-ProgressBar-Mac
      SUBDIR += p5-Tk-Stderr

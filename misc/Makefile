@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2006/02/12 14:58:15 david Exp $
+# $OpenBSD: Makefile,v 1.86 2006/02/12 16:24:50 david Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -53,15 +53,15 @@
      SUBDIR += remind
      SUBDIR += rpm
      SUBDIR += screen
-     SUBDIR += screen,static
      SUBDIR += screen,shm
+     SUBDIR += screen,static
      SUBDIR += sh-utils
      SUBDIR += shared-mime-info
      SUBDIR += splitvt
-     SUBDIR += tpwireless
      SUBDIR += tkcron
      SUBDIR += tkinfo
      SUBDIR += tkman
+     SUBDIR += tpwireless
      SUBDIR += ttyrec
      SUBDIR += viz
      SUBDIR += wmmand

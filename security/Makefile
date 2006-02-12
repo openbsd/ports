@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.167 2005/12/14 22:16:42 steven Exp $
+# $OpenBSD: Makefile,v 1.168 2006/02/12 16:24:50 david Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -27,8 +27,8 @@
      SUBDIR += cryptokit
      SUBDIR += cyrus-sasl2
      SUBDIR += cyrus-sasl2,db4
-     SUBDIR += cyrus-sasl2,mysql
      SUBDIR += cyrus-sasl2,ldap
+     SUBDIR += cyrus-sasl2,mysql
      SUBDIR += dante
      SUBDIR += despoof
      SUBDIR += dsniff
