@@ -1,0 +1,12 @@
+$OpenBSD: patch-gdk--_gdk--_Makefile_in,v 1.4 2006/02/12 11:58:24 steven Exp $
+--- gdk--/gdk--/Makefile.in.orig	Sun Feb 12 01:00:38 2006
++++ gdk--/gdk--/Makefile.in	Sun Feb 12 01:00:54 2006
+@@ -110,7 +110,7 @@ libgdkmm_la_SOURCES = \
+ 	color.cc     drawable.cc  gc.cc        pixmap.cc    visual.cc \
+         image.cc     types.cc     cursor.cc
+ 
+-libgdkmm_la_LDFLAGS = -version-info $(LIBGDKMM_SO_VERSION) -release $(GTKMM_RELEASE)
++libgdkmm_la_LDFLAGS = -version-info $(LIBGDKMM_SO_VERSION)
+ 
+ libgdkmmincludedir = $(includedir)/gdk--
+ libgdkmminclude_HEADERS = \
