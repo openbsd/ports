@@ -2,9 +2,9 @@ If you encounter strange problems relating to bookmarks, downloads,
 window placement, toolbars, history, or other settings, it is
 recommended that you try creating a new profile and attempting to
 reproduce the problem before filing bugs.
-In order to create a new profile, start Thunderbird with the the 
+In order to create a new profile, start Thunderbird with the
 -profilemanager switch, e.g. thunderbird -profilemanager
-   
+
 If thunderbird doesn't start at all, first try and remove compreg.dat,
 xpti.dat and extensions/Extensions.rdf in your profile-dir, or you
 could just delete the old profile-dir,
@@ -14,7 +14,7 @@ could just delete the old profile-dir,
 To make Thunderbird open links using Firefox, shut down Thunderbird
 and add these lines to ~/.thunderbird/<something>.default/prefs.js:
 
-user_pref("network.protocol-handler.app.ftp", "/usr/local/bin/firefox");
-user_pref("network.protocol-handler.app.http", "/usr/local/bin/firefox");
-user_pref("network.protocol-handler.app.https", "/usr/local/bin/firefox");
+user_pref("network.protocol-handler.app.ftp", "${PREFIX}/bin/firefox");
+user_pref("network.protocol-handler.app.http", "${PREFIX}/bin/firefox");
+user_pref("network.protocol-handler.app.https", "${PREFIX}/bin/firefox");
 

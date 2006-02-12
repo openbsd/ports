@@ -2,9 +2,9 @@ If you encounter strange problems relating to bookmarks, downloads,
 window placement, toolbars, history, or other settings, it is
 recommended that you try creating a new profile and attempting to
 reproduce the problem before filing bugs.
-In order to create a new profile, start Mozilla with the the 
+In order to create a new profile, start Mozilla with the
 -profilemanager switch, e.g. mozilla -profilemanager
-   
-Or you could just delete the old profile-dir (note that this will delete 
+
+Or you could just delete the old profile-dir (note that this will delete
 your saved bookmarks and settings):
     rm -r ~/.mozilla/default/<profile-dir>
