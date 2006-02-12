@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/01/25 03:58:23 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2006/02/12 16:24:18 aanriot Exp $
 
 COMMENT=		"mouse and keyboard sharing utility"
 
 DISTNAME=		synergy-1.2.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		net
 
 HOMEPAGE=		http://synergy2.sourceforge.net/
@@ -20,16 +21,17 @@ WANTLIB=		ICE SM X11 Xext Xinerama Xtst c m pthread stdc++
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=synergy2/}
 
 CONFIGURE_STYLE=        gnu
-CONFIGURE_ARGS=		--bindir="/usr/local/bin" \
-			--sbindir="/usr/local/sbin" \
-			--libexecdir="/usr/local/libexec" \
-			--sysconfdir="/etc/" \
-			--datadir="/usr/local/share" \
+CONFIGURE_ARGS=		--bindir="${LOCALBASE}/bin" \
+			--sbindir="${LOCALBASE}/sbin" \
+			--libexecdir="${LOCALBASE}/libexec" \
+			--sysconfdir="${SYSCONFDIR}" \
+			--datadir="${LOCALBASE}/share" \
 			--localstatedir="/var/run" \
-			--libdir="/usr/local/lib" \
-			--includedir="/usr/local/include" \
-			--mandir="/usr/local/man"
+			--libdir="${LOCALBASE}/lib" \
+			--includedir="${LOCALBASE}/include" \
+			--mandir="${LOCALBASE}/man"
 
+USE_X11=		Yes
 NO_REGRESS=		Yes
 
 post-install:
