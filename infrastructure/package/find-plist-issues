@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: find-plist-issues,v 1.4 2005/12/12 13:37:21 espie Exp $
+# $OpenBSD: find-plist-issues,v 1.5 2006/02/12 16:33:35 espie Exp $
 # Copyright (c) 2000-2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -141,29 +141,39 @@ package main;
 my $cache = {};
 my $cache2 = {};
 my @available = ();
+my $conflicts_cache = {};
 
 sub find_a_conflict
 {
 	my ($conflicts, $deps, $pkg, $pkg2) = @_;
 	return 0 if $pkg2 eq $pkg;
+	my $h = "$pkg/$pkg2";
+	if (defined $conflicts_cache->{$h}) {
+		return $conflicts_cache->{$h};
+	}
 	
-	if (defined $conflicts->{$pkg} && $conflicts->{$pkg}->conflicts_with($pkg2)) {
+	if (defined $conflicts->{$pkg} && 
+	    $conflicts->{$pkg}->conflicts_with($pkg2)) {
+		$conflicts_cache->{$h} = 1;
 		return 1;
 	}
 	if (defined $deps->{$pkg}) {
 	    for my $dep (@{$deps->{$pkg}}) {
-	    	if (find_a_conflict($conflicts, $deps, $dep, $pkg2)) {
+		if (find_a_conflict($conflicts, $deps, $dep, $pkg2)) {
+			$conflicts_cache->{$h} = 1;
 			return 1;
 		}
 	    }
 	}
 	if (defined $deps->{$pkg2}) {
 	    for my $dep (@{$deps->{$pkg2}}) {
-	    	if (find_a_conflict($conflicts, $deps, $pkg, $dep)) {
+		if (find_a_conflict($conflicts, $deps, $pkg, $dep)) {
+			$conflicts_cache->{$h} = 1;
 			return 1;
 		}
 	    }
 	}
+	$conflicts_cache->{$h} = 0;
 	return 0;
 }
 
@@ -183,7 +193,7 @@ sub compute_conflicts
 			    my $keepit = 0;
 
 			    for my $pkg2 (@$l) {
-			    	next if $pkg eq $pkg2;
+			    	next if $pkg le $pkg2;
 				if (!(find_a_conflict($conflicts, $deps, $pkg, $pkg2) ||
 					find_a_conflict($conflicts, $deps, $pkg2, $pkg))) {
 					$keepit = 1;
@@ -302,7 +312,7 @@ my $conflicts={};
 my $dephash={};
 my $db = {};
 my $mtree = {};
-our ($opt_d, $opt_v, $opt_C, $opt_D);
+our ($opt_d, $opt_v, $opt_C, $opt_D, $opt_f);
 
 sub handle_plist
 {
@@ -331,9 +341,9 @@ sub handle_file
 	handle_plist($plist);
 }
 
-set_usage('find-all-conflicts [-vCD] [-d plist_dir] [pkgname ...]');
+set_usage('find-all-conflicts [-vCDf] [-d plist_dir] [pkgname ...]');
 try {
-    getopts('d:vCD');
+    getopts('d:vCDf');
 } catchall {
 	Usage($_);
 };
@@ -373,9 +383,13 @@ push(@available, map { s,.*/,,; s/\.tgz$//; } @pkgs);
 
 for my $pkgname (@ARGV) {
 	print STDERR "$pkgname\n";
-	my $plist = OpenBSD::PackageLocator->grabPlist($pkgname);
-	next unless $plist;
-	handle_plist($plist);
+	if ($opt_f) {
+		handle_file($pkgname);
+	} else {
+		my $plist = OpenBSD::PackageLocator->grabPlist($pkgname);
+		next unless $plist;
+		handle_plist($plist);
+	}
 }
 
 print "File problems:\n";
