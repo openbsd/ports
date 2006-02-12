@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2006/01/08 02:06:22 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2006/02/12 01:44:09 steven Exp $
 
 COMMENT=		"sample theme engines for GTK+ provided with GNOME"
 
 DISTNAME=		gtk-engines-0.12
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.gnome.org
@@ -17,8 +17,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xi gdk glib gmodule gtk iconv intl jpeg m png \
+WANTLIB=		ICE SM X11 Xext Xi gdk glib gmodule gtk jpeg m png \
 			tiff ungif z
+
+MODULES=		devel/gettext
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
