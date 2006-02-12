@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.30 2005/07/14 06:56:24 aanriot Exp $
+# $OpenBSD: Makefile,v 1.31 2006/02/12 21:34:45 brad Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"libraries necessary for FreeBSD compatibility"
 
-DISTNAME=	freebsd_lib-4.0
+DISTNAME=	freebsd_lib-4.11
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.dqc.org/pub/brad/source/
+MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_ONLY=
 
 HOMEPAGE=	http://www.freebsd.org/
 
-# XXX no license, but obviously bsd licensed
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
