@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2005/03/23 20:20:40 alek Exp $
+# $OpenBSD: Makefile,v 1.18 2006/02/13 20:44:57 sturm Exp $
 
 COMMENT=		"macros for the OpenJade DSSSL TeX backend"
 
 DISTNAME=		jadetex-3.11
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=     	print
 
 HOMEPAGE=		http://jadetex.sourceforge.net/
@@ -40,7 +40,7 @@ do-install:
 	${INSTALL_DATA} ${WRKBUILD}/jadetex.ltx ${TEXMFLOC}/tex/jadetex
 	${INSTALL_MAN} ${WRKBUILD}/jadetex.1 ${PREFIX}/man/man1/jadetex.1
 	${INSTALL_MAN} ${WRKBUILD}/pdfjadetex.1 ${PREFIX}/man/man1/pdfjadetex.1
-	ln -s ${TRUEPREFIX}/bin/tex ${PREFIX}/bin/jadetex
-	ln -s ${TRUEPREFIX}/bin/pdftex ${PREFIX}/bin/pdfjadetex
+	ln -s ${TRUEPREFIX}/bin/etex ${PREFIX}/bin/jadetex
+	ln -s ${TRUEPREFIX}/bin/pdfetex ${PREFIX}/bin/pdfjadetex
 
 .include <bsd.port.mk>
