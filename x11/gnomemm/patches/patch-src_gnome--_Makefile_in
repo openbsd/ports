@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gnome--_Makefile_in,v 1.4 2006/02/13 17:34:48 steven Exp $
+--- src/gnome--/Makefile.in.orig	Mon Feb 13 14:55:13 2006
++++ src/gnome--/Makefile.in	Mon Feb 13 14:55:33 2006
+@@ -165,7 +165,7 @@ gnomemm_DATA = $(gnomemmh) imlib.h app-h
+ 
+ # This builds the library
+ libgnomemm_la_SOURCES = $(gnomemmc) app-helper.cc app-callback.cc point.cc affinetrans.cc construct_copies.cc
+-libgnomemm_la_LDFLAGS = -version-info $(LIBGNOMEMM_SO_VERSION) -release $(GNOMEMM_RELEASE) -no-undefined
++libgnomemm_la_LDFLAGS = -version-info $(LIBGNOMEMM_SO_VERSION) -no-undefined
+ libgnomemm_la_LIBADD = $(GNOME_LIBDIR) $(GNOMEUI_LIBS) $(gnomemmla) 
+ libgnomemm_la_DEPENDENCIES = $(gnomemmla)
+ 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2006/01/14 11:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2006/02/13 17:34:48 steven Exp $
 
 COMMENT=		"C++ interface for the GNOME libraries"
 COMMENT-docs=		"C++ interface for the GNOME libraries documentation"
 
 VERSION=		1.2.3
 DISTNAME=		gnomemm-${VERSION}
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 PKGNAME-docs=		gnomemm-docs-${VERSION}
 SHARED_LIBS=		gnomemm 10.0
 CATEGORIES=		devel x11
