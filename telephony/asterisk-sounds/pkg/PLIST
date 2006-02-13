@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/02/06 16:19:17 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/02/13 03:59:52 jolan Exp $
 share/asterisk/
 share/asterisk/sounds/
 share/asterisk/sounds/1-for-am-2-for-pm.gsm
@@ -182,18 +182,18 @@ share/asterisk/sounds/conditions.gsm
 share/asterisk/sounds/conf-banned.gsm
 share/asterisk/sounds/conf-full.gsm
 share/asterisk/sounds/conf-hasentered.gsm
-share/asterisk/sounds/conf-hasleft.gsm
-share/asterisk/sounds/conf-leaderhasleft.gsm
+@comment share/asterisk/sounds/conf-hasleft.gsm
+@comment share/asterisk/sounds/conf-leaderhasleft.gsm
 share/asterisk/sounds/conf-onlypersonleft.gsm
 share/asterisk/sounds/conf-peopleinconf.gsm
-share/asterisk/sounds/conf-placeintoconf.gsm
+@comment share/asterisk/sounds/conf-placeintoconf.gsm
 share/asterisk/sounds/conf-sysop.gsm
 share/asterisk/sounds/conf-sysopreq.gsm
 share/asterisk/sounds/conf-sysopreqcancelled.gsm
-share/asterisk/sounds/conf-thereare.gsm
-share/asterisk/sounds/conf-userswilljoin.gsm
-share/asterisk/sounds/conf-userwilljoin.gsm
-share/asterisk/sounds/conf-waitforleader.gsm
+@comment share/asterisk/sounds/conf-thereare.gsm
+@comment share/asterisk/sounds/conf-userswilljoin.gsm
+@comment share/asterisk/sounds/conf-userwilljoin.gsm
+@comment share/asterisk/sounds/conf-waitforleader.gsm
 share/asterisk/sounds/conf-youareinconfnum.gsm
 share/asterisk/sounds/conference-call.gsm
 share/asterisk/sounds/conference-reservations.gsm
@@ -578,7 +578,7 @@ share/asterisk/sounds/internal-audit.gsm
 share/asterisk/sounds/international-call.gsm
 share/asterisk/sounds/interstate.gsm
 share/asterisk/sounds/invalid-date.gsm
-share/asterisk/sounds/invalid.gsm
+@comment share/asterisk/sounds/invalid.gsm
 share/asterisk/sounds/investor-relations.gsm
 share/asterisk/sounds/iowa.gsm
 share/asterisk/sounds/is-at.gsm
@@ -621,34 +621,34 @@ share/asterisk/sounds/left-bracket.gsm
 share/asterisk/sounds/legal.gsm
 share/asterisk/sounds/len.gsm
 share/asterisk/sounds/less-than.gsm
-share/asterisk/sounds/letters/
-share/asterisk/sounds/letters/a.gsm
-share/asterisk/sounds/letters/b.gsm
-share/asterisk/sounds/letters/c.gsm
-share/asterisk/sounds/letters/d.gsm
-share/asterisk/sounds/letters/e.gsm
-share/asterisk/sounds/letters/f.gsm
-share/asterisk/sounds/letters/g.gsm
-share/asterisk/sounds/letters/h.gsm
-share/asterisk/sounds/letters/i.gsm
-share/asterisk/sounds/letters/j.gsm
-share/asterisk/sounds/letters/k.gsm
-share/asterisk/sounds/letters/l.gsm
-share/asterisk/sounds/letters/m.gsm
-share/asterisk/sounds/letters/n.gsm
-share/asterisk/sounds/letters/o.gsm
-share/asterisk/sounds/letters/p.gsm
-share/asterisk/sounds/letters/q.gsm
-share/asterisk/sounds/letters/r.gsm
-share/asterisk/sounds/letters/s.gsm
-share/asterisk/sounds/letters/t.gsm
-share/asterisk/sounds/letters/u.gsm
-share/asterisk/sounds/letters/v.gsm
-share/asterisk/sounds/letters/w.gsm
-share/asterisk/sounds/letters/x.gsm
-share/asterisk/sounds/letters/y.gsm
-share/asterisk/sounds/letters/z.gsm
-share/asterisk/sounds/letters/zed.gsm
+@comment share/asterisk/sounds/letters/
+@comment share/asterisk/sounds/letters/a.gsm
+@comment share/asterisk/sounds/letters/b.gsm
+@comment share/asterisk/sounds/letters/c.gsm
+@comment share/asterisk/sounds/letters/d.gsm
+@comment share/asterisk/sounds/letters/e.gsm
+@comment share/asterisk/sounds/letters/f.gsm
+@comment share/asterisk/sounds/letters/g.gsm
+@comment share/asterisk/sounds/letters/h.gsm
+@comment share/asterisk/sounds/letters/i.gsm
+@comment share/asterisk/sounds/letters/j.gsm
+@comment share/asterisk/sounds/letters/k.gsm
+@comment share/asterisk/sounds/letters/l.gsm
+@comment share/asterisk/sounds/letters/m.gsm
+@comment share/asterisk/sounds/letters/n.gsm
+@comment share/asterisk/sounds/letters/o.gsm
+@comment share/asterisk/sounds/letters/p.gsm
+@comment share/asterisk/sounds/letters/q.gsm
+@comment share/asterisk/sounds/letters/r.gsm
+@comment share/asterisk/sounds/letters/s.gsm
+@comment share/asterisk/sounds/letters/t.gsm
+@comment share/asterisk/sounds/letters/u.gsm
+@comment share/asterisk/sounds/letters/v.gsm
+@comment share/asterisk/sounds/letters/w.gsm
+@comment share/asterisk/sounds/letters/x.gsm
+@comment share/asterisk/sounds/letters/y.gsm
+@comment share/asterisk/sounds/letters/z.gsm
+@comment share/asterisk/sounds/letters/zed.gsm
 share/asterisk/sounds/library.gsm
 share/asterisk/sounds/lightning.gsm
 share/asterisk/sounds/limit-simul-calls.gsm
