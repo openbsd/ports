@@ -26,7 +26,7 @@ then
 	echo "Without this we can not install a server."
 	echo "Please mount a partition under /vicepa"
 	echo "A /vicepa directory will not work as"
-	echo "OpenAFS requires fileserver to have it's own paritition"
+	echo "OpenAFS requires fileserver to have its own partition"
 	exit
 fi
 
@@ -116,7 +116,7 @@ fi
 # Test if arla is mounted. If so unmount
 if [[ `mount|awk '(($1 ~ "^/dev/xfs") && ($3 ~ "^/afs")) {print $0}'` != "" ]]
 then
-	echo "/afs is already mounted. Attmepting to unmount"
+	echo "/afs is already mounted. Attempting to unmount"
         /sbin/umount -f /afs|| err "Could not umount /afs. exiting"
 fi
 
@@ -148,7 +148,7 @@ fi
 
 if [[ `grep $IP /etc/hosts|grep ${SERVER}` = "" ]]
 then
-	echo "Could not find a proper /etc/host entry for the information provided."
+	echo "Could not find a proper /etc/hosts entry for the information provided."
 	echo "There needs to be an entry like the following in /etc/hosts"
 	echo "${IP} ${SERVER}"
 	echo "Please add, and rerun this script."
@@ -162,7 +162,7 @@ sleep 5
 PG=`pgrep -x kaserver buserver ptserver vlserver bosserver fileserver`
 if [[ `echo ${PG}` != "" ]]
 then
-	echo "		It appears one, or more of the the following servers are still running."
+	echo "		It appears one or more of the following servers are still running."
 	ps ${PG:?}
 	echo "		Process ID ${PG} did not die, so we can not continue."
 

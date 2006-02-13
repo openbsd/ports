@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2006/02/10 19:09:00 marco Exp $
+# $OpenBSD: Makefile,v 1.8 2006/02/13 17:27:01 david Exp $
 
 COMMENT=		"Distributed filesystem OpenAFS"
 
 DISTNAME=		openafs-1.4.0-src
-PKGNAME=		openafs-1.4.0p2
+PKGNAME=		openafs-1.4.0p3
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.openafs.org
