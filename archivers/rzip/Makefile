@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2005/04/17 19:43:52 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/02/14 10:18:37 steven Exp $
 
 COMMENT=	"file compressor with a high compression ratio"
 
 DISTNAME=	rzip-2.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	archivers
 HOMEPAGE=	http://rzip.samba.org/
 
-MAINTAINER=	Lawrence Teo <lteo.openbsd1@mailnull.com>
+MAINTAINER=	Lawrence Teo <lteo@metawire.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -15,7 +16,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	c
 
-MASTER_SITES=	${HOMEPAGE}ftp/rzip/
+MASTER_SITES=	${HOMEPAGE}ftp/rzip/ \
+		${HOMEPAGE}ftp/rzip/old-versions/
 
 LIB_DEPENDS=    bz2::archivers/bzip2
 
