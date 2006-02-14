@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2006/01/06 12:07:27 espie Exp $
+@comment $OpenBSD: PLIST,v 1.18 2006/02/14 23:35:15 espie Exp $
 bin/karbon
 bin/kchart
 bin/kexi
@@ -452,6 +452,8 @@ ${KDE}/straight_connector.la
 ${KDE}/straight_connector.so
 lib/libkarbonbase.la
 @lib lib/libkarbonbase.so.${LIBkarbonbase_VERSION}
+lib/libkarboncommon.la
+@lib lib/libkarboncommon.so.${LIBkarboncommon_VERSION}
 lib/libkchartcommon.la
 @lib lib/libkchartcommon.so.${LIBkchartcommon_VERSION}
 lib/libkdchart.la
