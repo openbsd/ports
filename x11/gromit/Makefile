@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2006/01/16 12:13:01 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2006/02/15 20:40:00 sturm Exp $
 
 COMMENT=		"small tool to make annotations on the screen"
 
 DISTNAME=		gromit-20041213
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.home.unix-ag.org/simon/gromit/
@@ -39,6 +39,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gromit ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/gromitrc ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/gromitrc_gsr ${DOCDIR}gromitrc
 
 .include <bsd.port.mk>
