@@ -18,7 +18,7 @@ Available flavors are:
 - sqlite3: use the sqlite 3.x library as a storage engine. This is the
 default.
 
-- pgsql: use a posgresql server as a storage engine.
+- pgsql: use a postgresql server as a storage engine.
 
 - mysql: use a mysql server as a storage engine.
 
