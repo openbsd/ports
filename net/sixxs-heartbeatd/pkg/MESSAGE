@@ -3,7 +3,7 @@ Copy ${PREFIX}/share/examples/sixxs-heartbeatd/heartbeat.conf to
 ${SYSCONFDIR} and insert your account data.
 
 You can start the daemon:
-/usr/local/sbin/sixxs-heartbeatd ${SYSCONFDIR}/heartbeat.conf
+${PREFIX}/sbin/sixxs-heartbeatd ${SYSCONFDIR}/heartbeat.conf
 
 Add the following to the /etc/rc.local script to start the daemon on boot:
 

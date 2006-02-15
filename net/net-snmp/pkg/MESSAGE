@@ -1,8 +1,8 @@
 To have snmpd start at boot time, you must edit ${SYSCONFDIR}/snmp/snmpd.conf
 and uncomment the following in /etc/rc.local.
 
-    #if [ -x /usr/local/sbin/snmpd ]; then
-    #        echo -n ' snmpd';       /usr/local/sbin/snmpd
+    #if [ -x ${PREFIX}/sbin/snmpd ]; then
+    #        echo -n ' snmpd';       ${PREFIX}/sbin/snmpd
     #fi
 
 This will start snmpd and use ${SYSCONFDIR}/snmp/snmpd.conf for the configuration. 

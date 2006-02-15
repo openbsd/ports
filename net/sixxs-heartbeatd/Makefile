@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2006/01/22 18:40:36 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2006/02/15 05:14:30 david Exp $
 
 COMMENT=	"SixXS IPv6 tunnel broker heartbeat client"
 
-PKGNAME=	sixxs-heartbeatd-20031026
+PKGNAME=	sixxs-heartbeatd-20031026p0
 DISTNAME=	heartbeat-unix-2003-10-26
 CATEGORIES=	net
 

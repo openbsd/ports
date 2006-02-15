@@ -1,6 +1,6 @@
 You will need to add 
 
-  csh -cf '/usr/local/sbin/runsvdir-start &'
+  csh -cf '${PREFIX}/sbin/runsvdir-start &'
 
 to /etc/rc.local in order to have runit start at boot.  The port expects
 services to be in /service.  If you're using another location you will
