@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2006/02/02 16:12:24 jolan Exp $
+# $OpenBSD: Makefile,v 1.8 2006/02/15 06:11:39 sturm Exp $
 
 COMMENT=	"open source PBX"
 DISTNAME=	asterisk-1.2.4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	telephony
 MASTER_SITES=	ftp://ftp.digium.com/pub/asterisk/
 
@@ -14,7 +15,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-WANTLIB=		c crypto m ncurses ossaudio pthread ssl
+WANTLIB=		c crypto m ncurses pthread ssl z
+
+MAKE_FLAGS=		CC="${CC} ${CFLAGS}"
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
