@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2005/11/27 17:44:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2006/02/15 05:59:41 david Exp $
 
 COMMENT=		"several programs to handle macintosh files and archives"
 DISTNAME=		macutil2.0b3
@@ -21,6 +21,9 @@ MAKE_ENV=		CF="${CFLAGS}" \
 			CC=${CC}
 
 NO_REGRESS=		Yes
+
+post-extract:
+	@rm ${WRKDIST}/doc/README.crc.orig
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/macunpack/macunpack \
