@@ -1,0 +1,12 @@
+$OpenBSD: patch-mpeglib_example_yaf_yafxplayer_Makefile_in,v 1.8 2006/02/16 08:25:12 espie Exp $
+--- mpeglib/example/yaf/yafxplayer/Makefile.in.orig	Thu Feb 16 06:14:51 2006
++++ mpeglib/example/yaf/yafxplayer/Makefile.in	Thu Feb 16 06:15:00 2006
+@@ -492,7 +492,7 @@ libyafxplayer_la_SOURCES = commandTableX
+ #>- 					-no-undefined -avoid-version
+ #>+ 2
+ libyafxplayer_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) \
+-					-no-undefined $(KDE_NO_UNDEFINED) -avoid-version
++					-no-undefined $(KDE_NO_UNDEFINED) 
+ 
+ libyafxplayer_la_LIBADD = ../../../lib/libmpeg.la \
+ 					../yafcore/libyafcore.la \

@@ -1,21 +1,21 @@
-$OpenBSD: patch-kscd_Makefile_in,v 1.13 2005/10/17 11:28:25 espie Exp $
---- kscd/Makefile.in.orig	Fri Oct  7 10:00:41 2005
-+++ kscd/Makefile.in	Sun Oct 16 22:40:18 2005
-@@ -70,7 +70,7 @@ kscd_OBJECTS = kvolumecontrol.$(OBJEXT) 
- 	ledlamp.$(OBJEXT) docking.$(OBJEXT) bwlednum.$(OBJEXT) \
- 	configWidget.$(OBJEXT) cddbdlg.$(OBJEXT) kscd_skel.$(OBJEXT) panel.$(OBJEXT) configWidgetUI.$(OBJEXT) prefs.$(OBJEXT)
- am__DEPENDENCIES_1 =
--kscd_DEPENDENCIES = $(top_builddir)/kscd/libwm/libworkman.la \
-+kscd_DEPENDENCIES = $(top_builddir)/kscd/libwm/libkworkman.la \
- 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
- 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
- 	$(top_builddir)/libkcddb/libkcddb.la
-@@ -543,7 +543,7 @@ kscd_SOURCES=kvolumecontrol.cpp  kscd.cp
+$OpenBSD: patch-kscd_Makefile_in,v 1.14 2006/02/16 08:25:11 espie Exp $
+--- kscd/Makefile.in.orig	Thu Feb 16 00:03:02 2006
++++ kscd/Makefile.in	Thu Feb 16 00:03:12 2006
+@@ -58,7 +58,7 @@ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES =
+ LTLIBRARIES = $(noinst_LTLIBRARIES)
+ libkcompactdisc_la_DEPENDENCIES =  \
+-	$(top_builddir)/kscd/libwm/libworkman.la
++	$(top_builddir)/kscd/libwm/libkworkman.la
+ am_libkcompactdisc_la_OBJECTS = kcompactdisc.lo
+ #>- libkcompactdisc_la_OBJECTS = $(am_libkcompactdisc_la_OBJECTS)
+ #>+ 1
+@@ -526,7 +526,7 @@ kscd_SOURCES= kscd.cpp  ledlamp.cpp \
  
+ noinst_LTLIBRARIES = libkcompactdisc.la
+ libkcompactdisc_la_SOURCES = kcompactdisc.cpp
+-libkcompactdisc_la_LIBADD = $(top_builddir)/kscd/libwm/libworkman.la
++libkcompactdisc_la_LIBADD = $(top_builddir)/kscd/libwm/libkworkman.la
  kde_kcfg_DATA = kscd.kcfg
  kscd_LDFLAGS = $(all_libraries) $(KDE_RPATH)
--kscd_LDADD = $(top_builddir)/kscd/libwm/libworkman.la \
-+kscd_LDADD = $(top_builddir)/kscd/libwm/libkworkman.la \
-              $(LIBCDROM) $(LIBCDAUDIO) $(LIBFPE) $(LIB_KIO) -lkutils $(top_builddir)/libkcddb/libkcddb.la
- 
- profiledata_DATA = kscd.profile.xml
+ kscd_LDADD = $(LIBCDROM) $(LIBCDAUDIO) \

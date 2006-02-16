@@ -1,6 +1,6 @@
-$OpenBSD: patch-kscd_libwm_Makefile_am,v 1.7 2005/03/29 21:18:36 espie Exp $
---- kscd/libwm/Makefile.am.orig	Thu Feb  3 23:48:26 2005
-+++ kscd/libwm/Makefile.am	Sat Mar 26 10:34:19 2005
+$OpenBSD: patch-kscd_libwm_Makefile_am,v 1.8 2006/02/16 08:25:11 espie Exp $
+--- kscd/libwm/Makefile.am.orig	Sat Sep 10 10:19:56 2005
++++ kscd/libwm/Makefile.am	Wed Feb 15 12:13:03 2006
 @@ -1,5 +1,5 @@
  #
 -# Makefile.am for libworkman. Based on the example Makefile.am for a

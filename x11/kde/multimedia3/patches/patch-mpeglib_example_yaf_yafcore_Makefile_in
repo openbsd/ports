@@ -1,0 +1,12 @@
+$OpenBSD: patch-mpeglib_example_yaf_yafcore_Makefile_in,v 1.1 2006/02/16 08:25:12 espie Exp $
+--- mpeglib/example/yaf/yafcore/Makefile.in.orig	Thu Feb 16 06:14:08 2006
++++ mpeglib/example/yaf/yafcore/Makefile.in	Thu Feb 16 06:14:32 2006
+@@ -504,7 +504,7 @@ libyafcore_la_SOURCES = buffer.cpp \
+ #>- 				-no-undefined -avoid-version
+ #>+ 2
+ libyafcore_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) \
+-				-no-undefined $(KDE_NO_UNDEFINED) -avoid-version
++				-no-undefined $(KDE_NO_UNDEFINED) 
+ 
+ libyafcore_la_LIBADD = -lkdefakes $(THIS_LIB_LIBS)
+ yafcoredir = $(includedir)/$(THIS_LIB_NAME)/util/yaf/yafcore

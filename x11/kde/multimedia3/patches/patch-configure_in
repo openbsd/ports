@@ -1,39 +1,54 @@
-$OpenBSD: patch-configure_in,v 1.20 2005/12/15 15:42:24 naddy Exp $
---- configure.in.orig	Fri Oct  7 01:57:47 2005
-+++ configure.in	Thu Dec 15 06:35:47 2005
-@@ -183,11 +183,11 @@ AC_CHECK_HEADER(vorbis/vorbisfile.h,
+$OpenBSD: patch-configure_in,v 1.21 2006/02/16 08:25:11 espie Exp $
+--- configure.in.orig	Fri Jan 20 18:47:07 2006
++++ configure.in	Wed Feb 15 12:23:08 2006
+@@ -164,22 +164,22 @@ AC_DEFUN([KDE_CHECK_OGGVORBIS],
+     [:], [have_oggvorbis=no])
  
- AC_CHECK_LIB(vorbisfile, ov_open,
- 	[USELESS_VAR=1],
--	[oggv_have_vorbis=""], -lvorbis -logg)
-+	[oggv_have_vorbis=""], -lvorbis -logg -lm)
+   KDE_CHECK_LIB(vorbis, vorbis_info_init,
+-    [:], [have_oggvorbis=no])
++    [:], [have_oggvorbis=no], -logg -lm)
  
- AC_CHECK_LIB(vorbis, vorbis_info_init,
- 	[USELESS_VAR=1],
--	[oggv_have_vorbis=""])
-+	[oggv_have_vorbis=""], -logg -lm)
+   KDE_CHECK_LIB(vorbisfile, ov_open,
+-    [:], [have_oggvorbis=no], -lvorbis -logg)
++    [:], [have_oggvorbis=no], -lvorbis -logg -lm)
  
- AC_CHECK_LIB(ogg, ogg_page_version,
- 	[USELESS_VAR=1],
-@@ -321,7 +321,7 @@ int main ()
-      AC_MSG_RESULT($msg)
-      AC_DEFINE_UNQUOTED(HAVE_VORBIS, $have_vorbis_value, [Define if you have vorbis])
-      VORBISFILE_LIBS="-lvorbisfile"
--     VORBISENC_LIBS="-lvorbisenc -lvorbis -logg"
-+     VORBISENC_LIBS="-lvorbisenc -lvorbis -logg -lm"
-      KCM_AUDIOCD="kcmaudiocd"	
-      KAUDIOCREATOR="kaudiocreator"
-   else
-@@ -381,7 +381,7 @@ KDE_CHECK_HEADER(theora/theora.h,
+   KDE_CHECK_LIB(vorbisenc, vorbis_encode_init,
+-    [:], [have_oggvorbis=no], -lvorbis -logg)
++    [:], [have_oggvorbis=no], -lvorbis -logg -lm)
+ 
+   KDE_CHECK_LIB(vorbisenc, vorbis_bitrate_addblock,
+     [have_vorbis_value=2], [have_vorbis_value=1])
+ 
+   if test "x$have_oggvorbis" = xyes; then
+     # for akode/plugins/xiph_decoder/ kioslave/audiocd/plugins/ and krec/ogg_export/
+-    VORBIS_LIBS="-lvorbis -logg"
+-    VORBISFILE_LIBS="-lvorbisfile"
+-    VORBISENC_LIBS="-lvorbisenc"
++    VORBIS_LIBS="-lvorbis -logg -lm"
++    VORBISFILE_LIBS="-lvorbisfile -lm"
++    VORBISENC_LIBS="-lvorbisenc -lm"
+ 
+     # for akode/plugins/xiph_decoder/
+     AC_DEFINE_UNQUOTED(HAVE_OGG_VORBIS, 1, [Define if you have ogg/vorbis installed])
+@@ -188,7 +188,7 @@ AC_DEFUN([KDE_CHECK_OGGVORBIS],
+     AC_DEFINE_UNQUOTED(HAVE_VORBIS, $have_vorbis_value, [Define if you ogg/vorbis installed])
+ 
+     # for mpeglib/
+-    OGG_VORBISLIBS="-lvorbisfile -lvorbis -logg"
++    OGG_VORBISLIBS="-lvorbisfile -lvorbis -logg -lm"
+     AC_DEFINE(OGG_VORBIS, 1, [Define if you have ogg/vorbis installed])
+   fi
+ 
+@@ -889,7 +889,7 @@ KDE_CHECK_HEADER(theora/theora.h,
+   [], [have_theora=no])
  
  KDE_CHECK_LIB(theora, theora_info_init,
- 	[USELESS_VAR=1],
--	[oggv_have_theora=""], -ltheora -lvorbis -logg)
-+	[oggv_have_theora=""], -ltheora -lvorbis -logg -lm)
- 
+-  [], [have_theora=no], [-lvorbis -logg])
++  [], [have_theora=no], [-lvorbis -logg -lm])
  ])
  
-@@ -579,7 +579,7 @@ AC_DEFUN([AC_CHECK_LIBOGGFLAC],
+ AC_ARG_WITH(theora,
+@@ -939,7 +939,7 @@ AC_DEFUN([AC_CHECK_LIBOGGFLAC],
    KDE_CHECK_HEADER(OggFLAC/seekable_stream_decoder.h,
    [
       KDE_CHECK_LIB(OggFLAC,OggFLAC__seekable_stream_decoder_process_single,
@@ -42,21 +57,7 @@ $OpenBSD: patch-configure_in,v 1.20 2005/12/15 15:42:24 naddy Exp $
  
      ])
    if test "x$have_libOggFLAC" = "xyes"; then
-@@ -1891,11 +1891,11 @@ AC_MSG_RESULT($ogg_vorbis)
- if test x$ogg_vorbis = xyes; then
-    dnl we need the ogg_vorbis_lib because otherwise we override LIBS !
-    AC_CHECK_LIB(vorbisfile,ov_open,ogg_vorbis_lib=yes,
--                ogg_vorbis=no,[-lvorbisfile -lvorbis -logg])
-+                ogg_vorbis=no,[-lvorbisfile -lvorbis -logg -lm])
- fi
- if test x$ogg_vorbis = xyes; then
-    AC_DEFINE(OGG_VORBIS,1,[Define if you have ogg/vorbis installed])
--   OGG_VORBISLIBS="-lvorbisfile -lvorbis -logg"
-+   OGG_VORBISLIBS="-lvorbisfile -lvorbis -logg -lm"
- fi
- fi
- 
-@@ -1929,6 +1929,9 @@ case "$OS_TYPE" in
+@@ -1285,6 +1285,9 @@ case "$OS_TYPE" in
    NetBSD)
      kde_mpeglib_compiles=yes
      ;;
@@ -66,7 +67,7 @@ $OpenBSD: patch-configure_in,v 1.20 2005/12/15 15:42:24 naddy Exp $
    Linux)
      kde_mpeglib_compiles=yes
      ;;
-@@ -1956,6 +1959,12 @@ case "$OS_TYPE" in
+@@ -1312,6 +1315,12 @@ case "$OS_TYPE" in
      AC_DEFINE(OS_Linux,1,[Define if you have linux pthread])
      ;;
  
@@ -79,9 +80,9 @@ $OpenBSD: patch-configure_in,v 1.20 2005/12/15 15:42:24 naddy Exp $
    FreeBSD)
      OS_TYPE="BSD"
      AC_DEFINE(OS_BSD,1,[Define if you have BSD pthread])
-@@ -1999,7 +2008,7 @@ KDE_MPEGLIB_COMPILES
+@@ -1355,7 +1364,7 @@ KDE_MPEGLIB_COMPILES
  
- THIS_LIB_LIBS="-lX11 -lXext -lm -lstdc++ ${XVLIBS} ${DGALIBS} "
+ THIS_LIB_LIBS="-lX11 -lXext -lm ${XVLIBS} ${DGALIBS} "
  THIS_LIB_LIBS="${THIS_LIB_LIBS} ${XVIDMODELIBS} ${SDLLIB} ${CDDALIBS} "
 -THIS_LIB_LIBS="${THIS_LIB_LIBS} ${OGG_VORBISLIBS} ${LIBPTHREAD}"
 +THIS_LIB_LIBS="${THIS_LIB_LIBS} ${OGG_VORBISLIBS} ${LIBPTHREAD} ${LIBOSSAUDIO}"

@@ -1,6 +1,6 @@
-$OpenBSD: patch-kscd_libwm_Makefile_in,v 1.14 2005/10/17 11:28:25 espie Exp $
---- kscd/libwm/Makefile.in.orig	Fri Oct  7 10:00:41 2005
-+++ kscd/libwm/Makefile.in	Sun Oct 16 22:41:52 2005
+$OpenBSD: patch-kscd_libwm_Makefile_in,v 1.15 2006/02/16 08:25:11 espie Exp $
+--- kscd/libwm/Makefile.in.orig	Fri Jan 20 18:48:35 2006
++++ kscd/libwm/Makefile.in	Wed Feb 15 12:13:03 2006
 @@ -16,7 +16,7 @@
  @SET_MAKE@
  
@@ -56,7 +56,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.14 2005/10/17 11:28:25 espie Exp $
  #>- RECURSIVE_TARGETS = all-recursive check-recursive dvi-recursive \
  #>- 	html-recursive info-recursive install-data-recursive \
  #>- 	install-exec-recursive install-info-recursive \
-@@ -503,10 +503,10 @@ xine_artsplugin_SUBDIR_included_TRUE = @
+@@ -481,10 +481,10 @@ xine_artsplugin_SUBDIR_included_TRUE = @
  subdirs = include
  SUBDIRS = audio
  INCLUDES = $(all_includes) 
@@ -71,7 +71,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.14 2005/10/17 11:28:25 espie Exp $
  database.c index.c scsi.c cdda.c plat_linux_cdda.c plat_sun_cdda.c\
  plat_aix.c plat_bsd386.c plat_freebsd.c plat_hpux.c plat_irix.c \
  plat_linux.c plat_svr4.c plat_ultrix.c plat_news.c plat_openbsd.c \
-@@ -570,8 +570,8 @@ clean-noinstLTLIBRARIES:
+@@ -548,8 +548,8 @@ clean-noinstLTLIBRARIES:
  	  echo "rm -f \"$${dir}/so_locations\""; \
  	  rm -f "$${dir}/so_locations"; \
  	done
@@ -82,7 +82,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.14 2005/10/17 11:28:25 espie Exp $
  
  mostlyclean-compile:
  	-rm -f *.$(OBJEXT)
-@@ -913,8 +913,8 @@ uninstall-info: uninstall-info-recursive
+@@ -891,8 +891,8 @@ uninstall-info: uninstall-info-recursive
  	tags tags-recursive uninstall uninstall-am uninstall-info-am
  
  
@@ -93,7 +93,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.14 2005/10/17 11:28:25 espie Exp $
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
  .NOEXPORT:
-@@ -965,19 +965,19 @@ bcheck-am:
+@@ -943,19 +943,19 @@ bcheck-am:
  
  #>+ 3
  final:
@@ -116,4 +116,4 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.14 2005/10/17 11:28:25 espie Exp $
 +	$(MAKE) libkworkman_la_OBJECTS="$(libkworkman_la_nofinal_OBJECTS)" install-am
  
  #>+ 3
- cvs-clean:
+ kde-rpo-clean:

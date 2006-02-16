@@ -1,16 +1,16 @@
-$OpenBSD: patch-mpeglib_example_splay_Makefile_in,v 1.13 2005/10/17 11:28:25 espie Exp $
---- mpeglib/example/splay/Makefile.in.orig	Fri Oct  7 10:00:42 2005
-+++ mpeglib/example/splay/Makefile.in	Sun Oct 16 22:40:18 2005
-@@ -181,7 +181,7 @@ LAME_INCS = @LAME_INCS@
+$OpenBSD: patch-mpeglib_example_splay_Makefile_in,v 1.14 2006/02/16 08:25:11 espie Exp $
+--- mpeglib/example/splay/Makefile.in.orig	Fri Jan 20 18:48:35 2006
++++ mpeglib/example/splay/Makefile.in	Wed Feb 15 12:13:03 2006
+@@ -176,7 +176,7 @@ KDE_USE_PIE = @KDE_USE_PIE@
+ KDE_XSL_STYLESHEET = @KDE_XSL_STYLESHEET@
  LAME_LIBS = @LAME_LIBS@
- LAME_RPATH = @LAME_RPATH@
  LDADD_GST = @LDADD_GST@
 -LDFLAGS = @LDFLAGS@
 +LDFLAGS = @LDFLAGS@ -L../../lib/.libs
  LDFLAGS_AS_NEEDED = @LDFLAGS_AS_NEEDED@
  LDFLAGS_GST = @LDFLAGS_GST@
  LDFLAGS_NEW_DTAGS = @LDFLAGS_NEW_DTAGS@
-@@ -491,11 +491,11 @@ EXTRA_DIST = 
+@@ -469,11 +469,11 @@ EXTRA_DIST = 
  splay_SOURCES = splay.cpp
  mp3framing_SOURCES = mp3framing.cpp
  noinst_HEADERS = 

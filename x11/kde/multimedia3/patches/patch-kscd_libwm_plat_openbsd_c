@@ -1,6 +1,6 @@
-$OpenBSD: patch-kscd_libwm_plat_openbsd_c,v 1.5 2005/06/04 12:12:10 naddy Exp $
---- kscd/libwm/plat_openbsd.c.orig	Mon May 23 06:06:56 2005
-+++ kscd/libwm/plat_openbsd.c	Sat Jun  4 05:00:08 2005
+$OpenBSD: patch-kscd_libwm_plat_openbsd_c,v 1.6 2006/02/16 08:25:11 espie Exp $
+--- kscd/libwm/plat_openbsd.c.orig	Sat Sep 10 10:19:56 2005
++++ kscd/libwm/plat_openbsd.c	Wed Feb 15 12:13:03 2006
 @@ -57,7 +57,6 @@
  #include <sys/scsiio.h>
  #include <scsi/scsi_all.h>

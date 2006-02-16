@@ -1,6 +1,6 @@
-$OpenBSD: patch-kscd_libwm_include_wm_config_h,v 1.3 2004/03/07 21:08:44 espie Exp $
---- kscd/libwm/include/wm_config.h.orig	2004-03-07 14:02:43.000000000 +0100
-+++ kscd/libwm/include/wm_config.h	2004-03-07 14:03:16.000000000 +0100
+$OpenBSD: patch-kscd_libwm_include_wm_config_h,v 1.4 2006/02/16 08:25:11 espie Exp $
+--- kscd/libwm/include/wm_config.h.orig	Sat Sep 10 10:19:56 2005
++++ kscd/libwm/include/wm_config.h	Wed Feb 15 12:13:03 2006
 @@ -173,6 +173,12 @@
  
  #endif /* hpux */

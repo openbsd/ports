@@ -1,16 +1,16 @@
-$OpenBSD: patch-mpeglib_example_yaf_yaftplay_Makefile_in,v 1.13 2005/10/17 11:28:26 espie Exp $
---- mpeglib/example/yaf/yaftplay/Makefile.in.orig	Fri Oct  7 10:00:42 2005
-+++ mpeglib/example/yaf/yaftplay/Makefile.in	Sun Oct 16 22:40:18 2005
-@@ -180,7 +180,7 @@ LAME_INCS = @LAME_INCS@
+$OpenBSD: patch-mpeglib_example_yaf_yaftplay_Makefile_in,v 1.14 2006/02/16 08:25:12 espie Exp $
+--- mpeglib/example/yaf/yaftplay/Makefile.in.orig	Fri Jan 20 18:48:35 2006
++++ mpeglib/example/yaf/yaftplay/Makefile.in	Wed Feb 15 12:13:03 2006
+@@ -175,7 +175,7 @@ KDE_USE_PIE = @KDE_USE_PIE@
+ KDE_XSL_STYLESHEET = @KDE_XSL_STYLESHEET@
  LAME_LIBS = @LAME_LIBS@
- LAME_RPATH = @LAME_RPATH@
  LDADD_GST = @LDADD_GST@
 -LDFLAGS = @LDFLAGS@
 +LDFLAGS = @LDFLAGS@ -L../../../lib/.libs
  LDFLAGS_AS_NEEDED = @LDFLAGS_AS_NEEDED@
  LDFLAGS_GST = @LDFLAGS_GST@
  LDFLAGS_NEW_DTAGS = @LDFLAGS_NEW_DTAGS@
-@@ -488,7 +488,7 @@ xine_artsplugin_SUBDIR_included_TRUE = @
+@@ -466,7 +466,7 @@ xine_artsplugin_SUBDIR_included_TRUE = @
  INCLUDES = -I../../include $(all_includes)
  yaf_tplay_SOURCES = tplay_control.cpp
  noinst_HEADERS = 

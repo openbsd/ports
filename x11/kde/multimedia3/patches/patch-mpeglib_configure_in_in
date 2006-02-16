@@ -1,6 +1,6 @@
---- mpeglib/configure.in.in.orig	Thu Feb  3 23:48:26 2005
-+++ mpeglib/configure.in.in	Sat Mar 26 10:30:28 2005
-@@ -217,6 +217,9 @@ case "$OS_TYPE" in
+--- mpeglib/configure.in.in.orig	Thu Jan 19 17:40:35 2006
++++ mpeglib/configure.in.in	Wed Feb 15 12:13:03 2006
+@@ -164,6 +164,9 @@ case "$OS_TYPE" in
    NetBSD)
      kde_mpeglib_compiles=yes
      ;;
@@ -10,7 +10,7 @@
    Linux)
      kde_mpeglib_compiles=yes
      ;;
-@@ -244,6 +247,12 @@ case "$OS_TYPE" in
+@@ -191,6 +194,12 @@ case "$OS_TYPE" in
      AC_DEFINE(OS_Linux,1,[Define if you have linux pthread])
      ;;
  
@@ -23,9 +23,9 @@
    FreeBSD)
      OS_TYPE="BSD"
      AC_DEFINE(OS_BSD,1,[Define if you have BSD pthread])
-@@ -287,5 +296,5 @@ KDE_MPEGLIB_COMPILES
+@@ -234,5 +243,5 @@ KDE_MPEGLIB_COMPILES
  
- THIS_LIB_LIBS="-lX11 -lXext -lm -lstdc++ ${XVLIBS} ${DGALIBS} "
+ THIS_LIB_LIBS="-lX11 -lXext -lm ${XVLIBS} ${DGALIBS} "
  THIS_LIB_LIBS="${THIS_LIB_LIBS} ${XVIDMODELIBS} ${SDLLIB} ${CDDALIBS} "
 -THIS_LIB_LIBS="${THIS_LIB_LIBS} ${OGG_VORBISLIBS} ${LIBPTHREAD}"
 +THIS_LIB_LIBS="${THIS_LIB_LIBS} ${OGG_VORBISLIBS} ${LIBPTHREAD} ${LIBOSSAUDIO}"
