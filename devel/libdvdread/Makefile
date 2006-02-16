@@ -1,11 +1,10 @@
-#$OpenBSD: Makefile,v 1.11 2006/01/03 14:55:18 bernd Exp $
+#$OpenBSD: Makefile,v 1.12 2006/02/16 11:08:26 espie Exp $
 CATEGORIES=	devel
 
 COMMENT=	"accessing DVD files"
-DISTNAME=	libdvdread-0.9.4
-PKGNAME=	${DISTNAME}p2
-SHARED_LIBS=		dvdread 3.0
-MODGNU_SHARED_LIBS=	dvdread '-export-symbols-regex "(DVD.*|ifo.*|nav.*)"'
+DISTNAME=	libdvdread-0.9.5
+PKGNAME=	${DISTNAME}
+SHARED_LIBS=		dvdread 4.0
 HOMEPAGE=	http://www.dtek.chalmers.se/groups/dvd/
 MASTER_SITES=	${HOMEPAGE}dist/
 

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/10 00:52:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/02/16 11:08:26 espie Exp $
 include/dvdread/
+include/dvdread/cmd_print.h
 include/dvdread/dvd_reader.h
 include/dvdread/ifo_print.h
 include/dvdread/ifo_read.h
