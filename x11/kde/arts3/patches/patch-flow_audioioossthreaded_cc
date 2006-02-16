@@ -1,0 +1,15 @@
+$OpenBSD: patch-flow_audioioossthreaded_cc,v 1.1 2006/02/16 12:33:43 espie Exp $
+--- flow/audioioossthreaded.cc.orig	Mon Feb 13 14:04:58 2006
++++ flow/audioioossthreaded.cc	Mon Feb 13 14:05:44 2006
+@@ -37,6 +37,11 @@
+ #define COMPILE_AUDIOIO_OSS 1
+ #endif
+ 
++/* Something is currently broken on OpenBSD wrt ossthreaded */
++#if defined(__OpenBSD__)
++#undef HAVE_LIBPTHREAD
++#endif
++
+ /**
+  * only compile 'oss' AudioIO class if sys/soundcard.h or soundcard.h is present
+  * also, only compile if libpthread was found
