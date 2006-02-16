@@ -1,0 +1,19 @@
+#! /bin/sh
+
+ETHER=trunk0
+BRIDGE=bridge0
+
+if test `id -u` -ne 0; then
+	SUDO=sudo
+fi
+
+echo "Initializing $1.."
+
+# Set the tun device into layer2 mode
+$SUDO ifconfig $1 link0 up
+
+# Set up our bridge
+$SUDO ifconfig $BRIDGE destroy 2>/dev/null || true
+$SUDO ifconfig $BRIDGE create
+$SUDO brconfig $BRIDGE add $ETHER up
+$SUDO brconfig $BRIDGE add $1 up

@@ -8,5 +8,7 @@
 |      (compress hard drive while qemu is not running)
 | 5. qemu -m 32 -monitor stdio virtual.hd
 |      (normal boot from hard drive)
+|
+| Note: Customize ${SYSCONFDIR}/qemu-ifup to use '-net tap' on your system.
 +---------------
 

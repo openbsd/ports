@@ -1,4 +1,4 @@
-$OpenBSD: patch-hw_pc_c,v 1.2 2005/12/27 07:56:15 todd Exp $
+$OpenBSD: patch-hw_pc_c,v 1.3 2006/02/16 16:27:44 todd Exp $
 --- hw/pc.c.orig	Mon Dec 19 16:51:53 2005
 +++ hw/pc.c	Tue Dec 20 11:22:29 2005
 @@ -616,7 +616,7 @@ static void pc_init1(int ram_size, int v
@@ -29,7 +29,7 @@ $OpenBSD: patch-hw_pc_c,v 1.2 2005/12/27 07:56:15 todd Exp $
      if (pci_enabled) {
          for(i = 0; i < nb_nics; i++) {
 -            pci_ne2000_init(pci_bus, &nd_table[i]);
-+#if 0
++#if 1
 +            if (nic_pcnet)
 +                pci_pcnet_init(pci_bus, &nd_table[i]);
 +            else

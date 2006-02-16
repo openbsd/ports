@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2006/02/08 13:44:17 todd Exp $
+# $OpenBSD: Makefile,v 1.12 2006/02/16 16:27:44 todd Exp $
 
 # no success building on other archs yet
 ONLY_FOR_ARCHS=		amd64 arm i386 powerpc
 
 COMMENT=		"multi system emulator"
 DISTNAME=		qemu-0.8.0
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://fabrice.bellard.free.fr/qemu/
@@ -29,5 +29,9 @@ CONFIGURE_STYLE=	gnu
 .if ${MACHINE_ARCH} == "amd64"
 PATCH_LIST=     patch-* misc-*
 .endif
+
+post-install:
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/qemu
+	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup ${PREFIX}/share/examples/qemu
 
 .include <bsd.port.mk>

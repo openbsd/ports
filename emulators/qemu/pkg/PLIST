@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/12/27 07:56:15 todd Exp $
+@comment $OpenBSD: PLIST,v 1.4 2006/02/16 16:27:44 todd Exp $
 bin/qemu
 bin/qemu-img
 bin/qemu-system-arm
@@ -11,6 +11,9 @@ bin/qemu-system-x86_64
 share/doc/qemu/
 share/doc/qemu/qemu-doc.html
 share/doc/qemu/qemu-tech.html
+share/examples/qemu/
+share/examples/qemu/qemu-ifup
+@sample ${SYSCONFDIR}/qemu-ifup
 share/qemu/
 share/qemu/bios.bin
 share/qemu/keymaps/
