@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2005/07/02 05:46:25 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2006/02/16 20:56:58 naddy Exp $
 
+BROKEN=			"does not handle randomized mmap()"
 ONLY_FOR_ARCHS=		i386
 
 COMMENT=		Prolog compiler

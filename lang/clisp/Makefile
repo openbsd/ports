@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.24 2005/02/11 12:14:37 alek Exp $
+# $OpenBSD: Makefile,v 1.25 2006/02/16 20:56:58 naddy Exp $
 
+BROKEN=		"does not handle randomized mmap()"
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"ANSI Common Lisp compiler"
