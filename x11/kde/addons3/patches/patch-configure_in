@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure_in,v 1.1 2006/02/16 11:55:22 espie Exp $
+--- configure.in.orig	Fri Jan 20 18:14:37 2006
++++ configure.in	Thu Feb 16 12:11:34 2006
+@@ -397,9 +397,6 @@ if test "x$with_berkeley_db" != xno; the
+   KDE_CHECK_HEADER([db_cxx.h],
+     [:], [berkeley_db=no])
+ 
+-  AC_CHECK_LIB([$ac_db_name], [main],
+-    [:], [berkeley_db=no])
+-
+   if test "x$berkeley_db" = xyes; then
+     AC_DEFINE(BERKELEY_DB, 1, [Define if you have Berkeley DB++ installed])
+     BERKELEY_DB_LIBS="-l$ac_db_name"

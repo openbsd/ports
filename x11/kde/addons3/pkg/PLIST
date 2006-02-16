@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.22 2005/03/29 21:18:34 espie Exp $
+@comment $OpenBSD: PLIST,v 1.23 2006/02/16 11:55:22 espie Exp $
 bin/atlantikdesigner
 bin/exif.py
 bin/fsview
 bin/jpegorient
+bin/kio_media_realfolder
 bin/ksig
 bin/lnkforward
 bin/noatunsynaescope.bin
@@ -13,8 +14,6 @@ ${KDE}/katecppsymbolviewerplugin.la
 ${KDE}/katecppsymbolviewerplugin.so
 ${KDE}/katefiletemplates.la
 ${KDE}/katefiletemplates.so
-${KDE}/katefll_initplugin.la
-${KDE}/katefll_initplugin.so
 ${KDE}/katefll_plugin.la
 ${KDE}/katefll_plugin.so
 ${KDE}/katehtmltoolsplugin.la
@@ -37,8 +36,6 @@ ${KDE}/kbinaryclock_panelapplet.la
 ${KDE}/kbinaryclock_panelapplet.so
 ${KDE}/kcm_kuick.la
 ${KDE}/kcm_kuick.so
-${KDE}/kcm_vim.la
-${KDE}/kcm_vim.so
 ${KDE}/kfile_cert.la
 ${KDE}/kfile_cert.so
 ${KDE}/kfile_desktop.la
@@ -57,8 +54,12 @@ ${KDE}/kolourpicker_panelapplet.la
 ${KDE}/kolourpicker_panelapplet.so
 ${KDE}/konq_sidebarnews.la
 ${KDE}/konq_sidebarnews.so
+${KDE}/konqsidebar_delicious.la
+${KDE}/konqsidebar_delicious.so
 ${KDE}/konqsidebar_mediaplayer.la
 ${KDE}/konqsidebar_mediaplayer.so
+${KDE}/konqsidebar_metabar.la
+${KDE}/konqsidebar_metabar.so
 ${KDE}/ktimemon_panelapplet.la
 ${KDE}/ktimemon_panelapplet.so
 ${KDE}/libakregatorkonqfeedicon.la
@@ -91,6 +92,8 @@ ${KDE}/libkimgallery.la
 ${KDE}/libkimgallery.so
 ${KDE}/libkuickplugin.la
 ${KDE}/libkuickplugin.so
+${KDE}/libmfkonqmficon.la
+${KDE}/libmfkonqmficon.so
 ${KDE}/libminitoolsplugin.la
 ${KDE}/libminitoolsplugin.so
 ${KDE}/librellinksplugin.la
@@ -105,8 +108,6 @@ ${KDE}/libuachangerplugin.la
 ${KDE}/libuachangerplugin.so
 ${KDE}/libvalidatorsplugin.la
 ${KDE}/libvalidatorsplugin.so
-${KDE}/libvimpart.la
-${KDE}/libvimpart.so
 ${KDE}/libwebarchiverplugin.la
 ${KDE}/libwebarchiverplugin.so
 ${KDE}/math_panelapplet.la
@@ -115,6 +116,8 @@ ${KDE}/mediacontrol_panelapplet.la
 ${KDE}/mediacontrol_panelapplet.so
 ${KDE}/noatun_ffrs.la
 ${KDE}/noatun_ffrs.so
+${KDE}/noatun_oblique.la
+${KDE}/noatun_oblique.so
 ${KDE}/noatunalsaplayer.la
 ${KDE}/noatunalsaplayer.so
 ${KDE}/noatunblurscope.la
@@ -143,15 +146,11 @@ ${KDE}/noatunwavecapture.la
 ${KDE}/noatunwavecapture.so
 ${KDE}/webarchivethumbnail.la
 ${KDE}/webarchivethumbnail.so
-lib/libxvim.la
-@lib lib/libxvim.so.0.0
 share/applications/kde/atlantikdesigner.desktop
-share/applications/kde/kcmvim.desktop
 share/applications/kde/ksig.desktop
 share/applnk/.hidden/arkplugin.desktop
 share/applnk/.hidden/katefll.desktop
 share/applnk/.hidden/kcmkuick.desktop
-share/applnk/.hidden/kimgalleryplugin.desktop
 share/applnk/.hidden/kuickplugin.desktop
 share/applnk/.hidden/lnkforward.desktop
 share/applnk/.hidden/mediaplayerplugin.desktop
@@ -164,6 +163,7 @@ share/apps/fsview/
 share/apps/fsview/fsview_part.rc
 share/apps/kaddressbook/geo_xxportui.rc
 share/apps/kaddressbook/gmx_xxportui.rc
+share/apps/kate/plugins/
 share/apps/kate/plugins/katecppsymbolviewer/
 share/apps/kate/plugins/katecppsymbolviewer/ui.rc
 share/apps/kate/plugins/katefiletemplates/
@@ -196,6 +196,7 @@ share/apps/kate/plugins/katexmlcheck/
 share/apps/kate/plugins/katexmlcheck/ui.rc
 share/apps/kate/plugins/katexmltools/
 share/apps/kate/plugins/katexmltools/ui.rc
+share/apps/kate/scripts/
 share/apps/kate/scripts/html-tidy.desktop
 share/apps/kate/scripts/html-tidy.sh
 share/apps/katepart/syntax/katetemplate.xml
@@ -212,7 +213,6 @@ share/apps/katexmltools/xhtml1-frameset.dtd.xml
 share/apps/katexmltools/xhtml1-strict.dtd.xml
 share/apps/katexmltools/xhtml1-transitional.dtd.xml
 share/apps/katexmltools/xslt-1.0.dtd.xml
-share/apps/kcontrol/pics/kvim.png
 share/apps/khtml/kpartplugins/akregator_konqfeedicon.desktop
 share/apps/khtml/kpartplugins/akregator_konqfeedicon.rc
 share/apps/khtml/kpartplugins/autorefresh.desktop
@@ -223,6 +223,8 @@ share/apps/khtml/kpartplugins/crashesplugin.rc
 share/apps/khtml/kpartplugins/domtreeviewerplugin.desktop
 share/apps/khtml/kpartplugins/khtmlsettingsplugin.desktop
 share/apps/khtml/kpartplugins/khtmlsettingsplugin.rc
+share/apps/khtml/kpartplugins/mf_konqmficon.desktop
+share/apps/khtml/kpartplugins/mf_konqmficon.rc
 share/apps/khtml/kpartplugins/minitoolsplugin.desktop
 share/apps/khtml/kpartplugins/minitoolsplugin.rc
 share/apps/khtml/kpartplugins/plugin_babelfish.desktop
@@ -255,12 +257,19 @@ share/apps/knewsticker/scripts/fyensget.py
 share/apps/knewsticker/scripts/newsrss.pl
 share/apps/knewsticker/scripts/sportscores.py
 share/apps/knewsticker/scripts/stock.pl
+share/apps/konqiconview/kpartplugins/dirfilterplugin.desktop
 share/apps/konqiconview/kpartplugins/dirfilterplugin.rc
+share/apps/konqiconview/kpartplugins/kimgalleryplugin.desktop
 share/apps/konqiconview/kpartplugins/kimgalleryplugin.rc
+share/apps/konqlistview/kpartplugins/dirfilterplugin.desktop
 share/apps/konqlistview/kpartplugins/dirfilterplugin.rc
+share/apps/konqlistview/kpartplugins/kimgalleryplugin.desktop
 share/apps/konqlistview/kpartplugins/kimgalleryplugin.rc
+share/apps/konqsidebartng/add/delicious_add.desktop
+share/apps/konqsidebartng/add/metabar_add.desktop
 share/apps/konqsidebartng/add/mplayer_add.desktop
 share/apps/konqsidebartng/add/news_add.desktop
+share/apps/konqsidebartng/entries/metabar.desktop
 share/apps/konqueror/icons/crystalsvg/16x16/actions/google.png
 share/apps/konqueror/kpartplugins/
 share/apps/konqueror/kpartplugins/searchbar.desktop
@@ -268,6 +277,7 @@ share/apps/konqueror/kpartplugins/searchbar.rc
 share/apps/konqueror/kpartplugins/searchbarplugin.desktop
 share/apps/konqueror/servicemenus/imageconverter.desktop
 share/apps/konqueror/servicemenus/jpegorient.desktop
+share/apps/konqueror/servicemenus/media_realfolder.desktop
 share/apps/ksig/
 share/apps/ksig/ksigui.rc
 share/apps/mediacontrol/
@@ -289,6 +299,15 @@ share/apps/mediacontrol/fulldecent/pause.png
 share/apps/mediacontrol/fulldecent/play.png
 share/apps/mediacontrol/fulldecent/prev.png
 share/apps/mediacontrol/fulldecent/stop.png
+share/apps/metabar/
+share/apps/metabar/iconsrc
+share/apps/metabar/themes/
+share/apps/metabar/themes/default/
+share/apps/metabar/themes/default/default.css
+share/apps/metabar/themes/default/layout.html
+share/apps/microformat/
+share/apps/microformat/pics/
+share/apps/microformat/pics/microformat.png
 share/apps/noatun/alsaplayerui.plugin
 share/apps/noatun/blurscope.plugin
 share/apps/noatun/charlatanui.plugin
@@ -298,6 +317,11 @@ share/apps/noatun/luckytag.plugin
 share/apps/noatun/lyrics.plugin
 share/apps/noatun/lyricsui.rc
 share/apps/noatun/madness.plugin
+share/apps/noatun/oblique/
+share/apps/noatun/oblique.plugin
+share/apps/noatun/oblique/schemas/
+share/apps/noatun/oblique/schemas/standard
+share/apps/noatun/obliqueui.rc
 share/apps/noatun/pitchablespeed.plugin
 share/apps/noatun/synaescope.plugin
 share/apps/noatun/tippecanoe.plugin
@@ -305,11 +329,6 @@ share/apps/noatun/tyler.plugin
 share/apps/noatun/tylerstates
 share/apps/noatun/wakeup.plugin
 share/apps/noatun/wavecapture.plugin
-share/apps/vimpart/
-share/apps/vimpart/kvim.vim
-share/apps/vimpart/vimpartui.rc
-share/apps/vimpart/vimpartuibrowser.rc
-share/apps/vimpart/vimpartuireadonly.rc
 share/config.kcfg/kbinaryclock.kcfg
 share/config.kcfg/konq_sidebarnews.kcfg
 share/config/translaterc
@@ -395,9 +414,10 @@ share/icons/crystalsvg/16x16/actions/cssvalidator.png
 share/icons/crystalsvg/16x16/actions/domtreeviewer.png
 share/icons/crystalsvg/16x16/actions/htmlvalidator.png
 share/icons/crystalsvg/16x16/actions/imagegallery.png
+share/icons/crystalsvg/16x16/actions/minitools.png
 share/icons/crystalsvg/16x16/actions/validators.png
 share/icons/crystalsvg/16x16/actions/webarchiver.png
-share/icons/crystalsvg/16x16/apps/atlantikdesigner.png
+share/icons/crystalsvg/16x16/apps/konqsidebar_delicious.png
 share/icons/crystalsvg/16x16/apps/konqsidebar_mediaplayer.png
 share/icons/crystalsvg/16x16/apps/konqsidebar_news.png
 share/icons/crystalsvg/16x16/apps/ktimemon.png
@@ -407,18 +427,27 @@ share/icons/crystalsvg/22x22/actions/cssvalidator.png
 share/icons/crystalsvg/22x22/actions/domtreeviewer.png
 share/icons/crystalsvg/22x22/actions/htmlvalidator.png
 share/icons/crystalsvg/22x22/actions/imagegallery.png
+share/icons/crystalsvg/22x22/actions/minitools.png
 share/icons/crystalsvg/22x22/actions/validators.png
 share/icons/crystalsvg/22x22/actions/webarchiver.png
 share/icons/crystalsvg/22x22/apps/konqsidebar_mediaplayer.png
-share/icons/crystalsvg/32x32/apps/atlantikdesigner.png
+share/icons/crystalsvg/32x32/actions/minitools.png
 share/icons/crystalsvg/32x32/apps/konqsidebar_mediaplayer.png
 share/icons/crystalsvg/32x32/apps/ktimemon.png
+share/icons/crystalsvg/48x48/actions/minitools.png
 share/icons/crystalsvg/48x48/apps/konqsidebar_mediaplayer.png
+share/icons/hicolor/128x128/apps/metabar.png
+share/icons/hicolor/16x16/apps/atlantikdesigner.png
 share/icons/hicolor/16x16/apps/ksig.png
-share/icons/hicolor/22x22/apps/
+share/icons/hicolor/16x16/apps/metabar.png
 share/icons/hicolor/22x22/apps/fsview.png
+share/icons/hicolor/32x32/apps/atlantikdesigner.png
 share/icons/hicolor/32x32/apps/fsview.png
 share/icons/hicolor/32x32/apps/ksig.png
+share/icons/hicolor/32x32/apps/metabar.png
+share/icons/hicolor/48x48/apps/metabar.png
+share/icons/hicolor/64x64/apps/metabar.png
+share/icons/hicolor/scalable/apps/metabar.svgz
 share/icons/locolor/16x16/apps/autorefresh.png
 share/icons/locolor/16x16/apps/ktimemon.png
 share/icons/locolor/32x32/apps/konqsidebar_mediaplayer.png
@@ -426,13 +455,11 @@ share/icons/locolor/32x32/apps/ktimemon.png
 share/mimelnk/application/x-win-lnk.desktop
 share/services/akregator_konqplugin.desktop
 share/services/ark_plugin.desktop
-share/services/dirfilterplugin.desktop
 share/services/fsview_part.desktop
 share/services/kaddressbook/geo_xxport.desktop
 share/services/kaddressbook/gmx_xxport.desktop
 share/services/katecppsymbolviewer.desktop
 share/services/katefiletemplates.desktop
-share/services/katefll_initplugin.desktop
 share/services/katefll_plugin.desktop
 share/services/katehtmltools.desktop
 share/services/katemodeline.desktop
@@ -453,5 +480,4 @@ share/services/kfile_txt.desktop
 share/services/kuick_plugin.desktop
 share/services/renaudiodlg.desktop
 share/services/renimagedlg.desktop
-share/services/vimpart.desktop
 share/services/webarchivethumbnail.desktop
