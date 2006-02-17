@@ -1,21 +1,21 @@
-$OpenBSD: patch-src_report_report-gnome_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
---- src/report/report-gnome/Makefile.in.orig	Thu Dec 29 22:10:18 2005
-+++ src/report/report-gnome/Makefile.in	Thu Dec 29 22:10:28 2005
-@@ -268,7 +268,7 @@ gncinclude_HEADERS = \
+$OpenBSD: patch-src_report_report-gnome_Makefile_in,v 1.2 2006/02/17 14:07:44 todd Exp $
+--- src/report/report-gnome/Makefile.in.orig	Wed Oct 19 15:26:24 2005
++++ src/report/report-gnome/Makefile.in	Thu Feb 16 12:07:51 2006
+@@ -443,7 +443,7 @@ gncinclude_HEADERS = \
+   dialog-style-sheet.h \
    window-report.h
- 
  
 -libgncmod_report_gnome_la_LDFLAGS = -module
 +libgncmod_report_gnome_la_LDFLAGS = -module -avoid-version
- 
  libgncmod_report_gnome_la_LIBADD = \
    ${top_builddir}/src/gnc-module/libgncmodule.la \
-@@ -284,7 +284,7 @@ libgncmod_report_gnome_la_LIBADD = \
- 
+   ${top_builddir}/src/gnome-utils/libgncmod-gnome-utils.la \
+@@ -457,7 +457,7 @@ libgncmod_report_gnome_la_LIBADD = \
+   ${GLIB_LIBS}
  
  libgw_report_gnome_la_SOURCES = gw-report-gnome.c
 -libgw_report_gnome_la_LDFLAGS = -module
 +libgw_report_gnome_la_LDFLAGS = -module -avoid-version
- 
  gwmoddir = ${GNC_GWRAP_LIBDIR}
  gwmod_DATA = gw-report-gnome.scm gw-report-gnome-spec.scm
+ gncmoddir = ${GNC_SHAREDIR}/guile-modules/gnucash/report

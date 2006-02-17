@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_scm_Makefile_in,v 1.1.1.1 2005/02/24 01:47:15 todd Exp $
---- src/scm/Makefile.in.orig	Sun Feb  6 15:50:23 2005
-+++ src/scm/Makefile.in	Thu Feb 17 07:05:15 2005
-@@ -257,7 +257,7 @@ gncscm_DATA = ${gnc_regular_scm_files}
+$OpenBSD: patch-src_scm_Makefile_in,v 1.2 2006/02/17 14:07:44 todd Exp $
+--- src/scm/Makefile.in.orig	Wed Oct 19 15:26:26 2005
++++ src/scm/Makefile.in	Thu Feb 16 12:07:52 2006
+@@ -392,7 +392,7 @@ gnc_regular_scm_files = \
  
+ gncscm_DATA = ${gnc_regular_scm_files}
  noinst_DATA = .scm-links
- 
 -configdir = ${GNC_CONFIGDIR}
 +configdir = ${prefix}/share/examples/gnucash
  config_DATA = config
- 
  SCM_FILES = ${gncscm_DATA} ${gncscmmod_DATA}
+ EXTRA_DIST = \

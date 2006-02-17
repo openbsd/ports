@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_import-export_qif-import_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
---- src/import-export/qif-import/Makefile.in.orig	Thu Dec 29 22:09:12 2005
-+++ src/import-export/qif-import/Makefile.in	Thu Dec 29 22:09:21 2005
-@@ -247,7 +247,7 @@ noinst_HEADERS = \
+$OpenBSD: patch-src_import-export_qif-import_Makefile_in,v 1.2 2006/02/17 14:07:44 todd Exp $
+--- src/import-export/qif-import/Makefile.in.orig	Wed Oct 19 15:26:18 2005
++++ src/import-export/qif-import/Makefile.in	Thu Feb 16 12:07:51 2006
+@@ -415,7 +415,7 @@ noinst_HEADERS = \
+   dialog-account-picker.h \
    druid-qif-import.h
- 
  
 -libgncmod_qif_import_la_LDFLAGS = -module 
 +libgncmod_qif_import_la_LDFLAGS = -module -avoid-version
- 
  libgncmod_qif_import_la_LIBADD = \
    ${top_builddir}/src/gnome-utils/libgncmod-gnome-utils.la \
+   ${top_builddir}/src/app-file/libgncmod-app-file.la \

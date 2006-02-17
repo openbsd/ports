@@ -1,21 +1,21 @@
-$OpenBSD: patch-src_import-export_binary-import_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
---- src/import-export/binary-import/Makefile.in.orig	Thu Dec 29 22:00:16 2005
-+++ src/import-export/binary-import/Makefile.in	Thu Dec 29 22:00:34 2005
-@@ -267,7 +267,7 @@ gncinclude_HEADERS = \
+$OpenBSD: patch-src_import-export_binary-import_Makefile_in,v 1.2 2006/02/17 14:07:44 todd Exp $
+--- src/import-export/binary-import/Makefile.in.orig	Wed Oct 19 15:26:15 2005
++++ src/import-export/binary-import/Makefile.in	Thu Feb 16 12:07:51 2006
+@@ -444,7 +444,7 @@ gncinclude_HEADERS = \
+   druid-commodity.h \
    gw-binary-import.h
- 
  
 -libgncmod_binary_import_la_LDFLAGS = -module
 +libgncmod_binary_import_la_LDFLAGS = -module -avoid-version
- 
  libgncmod_binary_import_la_LIBADD = \
    ${top_builddir}/src/gnc-module/libgncmodule.la \
-@@ -284,7 +284,7 @@ libgncmod_binary_import_la_LIBADD = \
- 
+   ${top_builddir}/src/engine/libgncmod-engine.la \
+@@ -459,7 +459,7 @@ libgncmod_binary_import_la_LIBADD = \
+   ${GLIB_LIBS}
  
  libgw_binary_import_la_SOURCES = gw-binary-import.c
 -libgw_binary_import_la_LDFLAGS = -module
 +libgw_binary_import_la_LDFLAGS = -module -avoid-version
  libgw_binary_import_la_LIBADD = libgncmod-binary-import.la
- 
  gncmoddir = ${GNC_SHAREDIR}/guile-modules/gnucash/import-export
+ gncmod_DATA = binary-import.scm 

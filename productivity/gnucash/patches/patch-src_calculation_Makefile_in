@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_calculation_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
---- src/calculation/Makefile.in.orig	Thu Dec 29 22:02:28 2005
-+++ src/calculation/Makefile.in	Thu Dec 29 22:02:38 2005
-@@ -236,7 +236,7 @@ SUBDIRS = . test
- 
+$OpenBSD: patch-src_calculation_Makefile_in,v 1.2 2006/02/17 14:07:44 todd Exp $
+--- src/calculation/Makefile.in.orig	Wed Oct 19 15:26:08 2005
++++ src/calculation/Makefile.in	Thu Feb 16 12:07:51 2006
+@@ -395,7 +395,7 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ SUBDIRS = . test
  pkglib_LTLIBRARIES = libgncmod-calculation.la
- 
 -libgncmod_calculation_la_LDFLAGS = -module
 +libgncmod_calculation_la_LDFLAGS = -module -avoid-version
  libgncmod_calculation_la_LIBADD = ${GLIB_LIBS} ${GUILE_LIBS}
- 
  libgncmod_calculation_la_SOURCES = \
+   expression_parser.c \

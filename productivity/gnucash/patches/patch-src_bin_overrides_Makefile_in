@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_bin_overrides_Makefile_in,v 1.1.1.1 2005/02/24 01:47:15 todd Exp $
---- src/bin/overrides/Makefile.in.orig	Sun Feb  6 15:50:31 2005
-+++ src/bin/overrides/Makefile.in	Thu Feb 17 07:05:14 2005
-@@ -398,7 +398,8 @@ gnucash-env: gnucash-env.in ${top_buildd
+$OpenBSD: patch-src_bin_overrides_Makefile_in,v 1.2 2006/02/17 14:07:44 todd Exp $
+--- src/bin/overrides/Makefile.in.orig	Wed Oct 19 15:26:05 2005
++++ src/bin/overrides/Makefile.in	Thu Feb 16 12:07:51 2006
+@@ -580,7 +580,8 @@ gnucash-env: gnucash-env.in ${top_buildd
              -e 's:@-GNC_LIB_INSTALLDIR-@:${libdir}:' \
              -e 's:@-GNC_PKGLIB_INSTALLDIR-@:${pkglibdir}:g' \
  	    -e 's:@-GNC_MODULE_DIR-@:${GNC_MODULE_DIR}:g' \

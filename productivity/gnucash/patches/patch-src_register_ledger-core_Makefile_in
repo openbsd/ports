@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_register_ledger-core_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
---- src/register/ledger-core/Makefile.in.orig	Thu Dec 29 22:07:37 2005
-+++ src/register/ledger-core/Makefile.in	Thu Dec 29 22:07:45 2005
-@@ -259,7 +259,7 @@ noinst_HEADERS = \
+$OpenBSD: patch-src_register_ledger-core_Makefile_in,v 1.2 2006/02/17 14:07:44 todd Exp $
+--- src/register/ledger-core/Makefile.in.orig	Wed Oct 19 15:26:21 2005
++++ src/register/ledger-core/Makefile.in	Thu Feb 16 12:07:51 2006
+@@ -421,7 +421,7 @@ noinst_HEADERS = \
+   split-register-model-save.h \
    split-register-p.h
- 
  
 -libgncmod_ledger_core_la_LDFLAGS = -module
 +libgncmod_ledger_core_la_LDFLAGS = -module -avoid-version

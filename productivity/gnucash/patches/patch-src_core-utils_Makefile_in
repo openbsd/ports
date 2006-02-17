@@ -1,17 +1,16 @@
-$OpenBSD: patch-src_core-utils_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
---- src/core-utils/Makefile.in.orig	Thu Dec 29 21:15:53 2005
-+++ src/core-utils/Makefile.in	Thu Dec 29 21:16:51 2005
-@@ -238,11 +238,11 @@ gwmoddir = ${GNC_GWRAP_LIBDIR}
+$OpenBSD: patch-src_core-utils_Makefile_in,v 1.2 2006/02/17 14:07:44 todd Exp $
+--- src/core-utils/Makefile.in.orig	Wed Oct 19 15:26:09 2005
++++ src/core-utils/Makefile.in	Thu Feb 16 12:07:51 2006
+@@ -393,10 +393,10 @@ lib_LTLIBRARIES = libcore-utils.la libgw
+ gwmoddir = ${GNC_GWRAP_LIBDIR}
  gwmod_DATA = gw-core-utils-spec.scm gw-core-utils.scm
- 
  libcore_utils_la_SOURCES = core-utils.c
 -libcore_utils_la_LDFLAGS = -module ${GLIB_LIBS}
 +libcore_utils_la_LDFLAGS = -module -avoid-version ${GLIB_LIBS}
  libcore_utils_la_LIBADD = 
- 
  libgw_core_utils_la_SOURCES = gw-core-utils.c
 -libgw_core_utils_la_LDFLAGS = -module ${G_WRAP_LINK_ARGS} ${GUILE_LIBS}
 +libgw_core_utils_la_LDFLAGS = -module -avoid-version ${G_WRAP_LINK_ARGS} ${GUILE_LIBS}
  libgw_core_utils_la_LIBADD = libcore-utils.la
- 
  noinst_HEADERS = \
+   core-utils.h \

@@ -1,21 +1,21 @@
-$OpenBSD: patch-src_gnome-utils_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
---- src/gnome-utils/Makefile.in.orig	Thu Dec 29 22:07:05 2005
-+++ src/gnome-utils/Makefile.in	Thu Dec 29 22:07:16 2005
-@@ -333,7 +333,7 @@ noinst_HEADERS = \
+$OpenBSD: patch-src_gnome-utils_Makefile_in,v 1.2 2006/02/17 14:07:44 todd Exp $
+--- src/gnome-utils/Makefile.in.orig	Wed Oct 19 15:26:14 2005
++++ src/gnome-utils/Makefile.in	Thu Feb 16 12:07:51 2006
+@@ -522,7 +522,7 @@ noinst_HEADERS = \
+   gw-gnome-utils.h \
    search-param.h
- 
  
 -libgncmod_gnome_utils_la_LDFLAGS = -module
 +libgncmod_gnome_utils_la_LDFLAGS = -module -avoid-version
- 
  libgncmod_gnome_utils_la_LIBADD = \
    ${top_builddir}/src/gnc-module/libgncmodule.la \
-@@ -355,7 +355,7 @@ libgncmod_gnome_utils_la_LIBADD = \
- 
+   ${top_builddir}/src/engine/libgncmod-engine.la \
+@@ -542,7 +542,7 @@ libgncmod_gnome_utils_la_LIBADD = \
+   ${DB_LIBS}
  
  libgw_gnome_utils_la_SOURCES = gw-gnome-utils.c
 -libgw_gnome_utils_la_LDFLAGS = -module
 +libgw_gnome_utils_la_LDFLAGS = -module -avoid-version
- 
  gwmoddir = ${GNC_GWRAP_LIBDIR}
  gwmod_DATA = gw-gnome-utils.scm gw-gnome-utils-spec.scm
+ gncmoddir = ${GNC_SHAREDIR}/guile-modules/gnucash

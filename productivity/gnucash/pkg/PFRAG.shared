@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2005/12/29 22:44:00 sturm Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.3 2006/02/17 14:07:44 todd Exp $
 lib/gnucash/libgnc-business-ledger.so
 lib/gnucash/libgncmod-app-file.so
 lib/gnucash/libgncmod-app-utils.so
@@ -41,7 +41,7 @@ lib/gnucash/libgw-kvp.so
 lib/gnucash/libgw-register-core.so
 lib/gnucash/libgw-report-gnome.so
 lib/libcore-utils.so
-lib/libgnc-app-file-gnome.so
+@lib lib/libgnc-app-file-gnome.so.${LIBgnc-app-file-gnome_VERSION}
 lib/libgncgnome.so
 lib/libgncmodule.so
 lib/libgw-core-utils.so

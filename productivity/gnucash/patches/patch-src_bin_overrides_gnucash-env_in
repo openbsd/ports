@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_bin_overrides_gnucash-env_in,v 1.1.1.1 2005/02/24 01:47:15 todd Exp $
+$OpenBSD: patch-src_bin_overrides_gnucash-env_in,v 1.2 2006/02/17 14:07:44 todd Exp $
 --- src/bin/overrides/gnucash-env.in.orig	Thu Apr 18 22:14:56 2002
-+++ src/bin/overrides/gnucash-env.in	Thu Feb 17 07:05:14 2005
++++ src/bin/overrides/gnucash-env.in	Thu Feb 16 12:07:51 2006
 @@ -10,7 +10,7 @@ EXTRA_PATH="@-G_WRAP_MODULE_DIR-@"
  EXTRA_PATH="${EXTRA_PATH}:@-GNC_GUILE_MODULE_DIR-@"
  EXTRA_PATH="${EXTRA_PATH}:@-GNC_SCM_INSTALL_DIR-@"

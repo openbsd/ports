@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_import-export_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
---- src/import-export/Makefile.in.orig	Thu Dec 29 22:05:34 2005
-+++ src/import-export/Makefile.in	Thu Dec 29 22:05:44 2005
-@@ -265,7 +265,7 @@ noinst_HEADERS = \
+$OpenBSD: patch-src_import-export_Makefile_in,v 1.2 2006/02/17 14:07:44 todd Exp $
+--- src/import-export/Makefile.in.orig	Wed Oct 19 15:26:15 2005
++++ src/import-export/Makefile.in	Thu Feb 16 12:07:51 2006
+@@ -434,7 +434,7 @@ noinst_HEADERS = \
+   import-settings.h \
    import-utilities.h 
- 
  
 -libgncmod_generic_import_la_LDFLAGS = -module
 +libgncmod_generic_import_la_LDFLAGS = -module -avoid-version
- 
  libgncmod_generic_import_la_LIBADD = \
    ${top_builddir}/src/gnome-utils/libgncmod-gnome-utils.la \
+   ${top_builddir}/src/app-file/libgncmod-app-file.la \

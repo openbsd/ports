@@ -1,26 +1,33 @@
-# $OpenBSD: Makefile,v 1.6 2005/12/29 22:44:00 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2006/02/17 14:07:44 todd Exp $
 
 NOT_FOR_ARCHS=	${LP64_ARCHS}
 
 COMMENT=	"Quicken-like money and finance manager"
-DISTNAME=	gnucash-1.8.11
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	gnucash-1.8.12
+PKGNAME=	${DISTNAME}
+DOCVER=		1.8.5
 CATEGORIES=	x11/gnome productivity
 
+
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+
 MASTER_SITE_GNUCASH=	http://www.gnucash.org/pub/gnucash/ \
-		ftp://ftp.gnucash.org/pub/gnucash/ \
 		http://www.linas.org/pub/gnucash/gnucash/
 MASTER_SITES= ${MASTER_SITE_GNUCASH:=sources/stable/} \
-		${MASTER_SITE_GNOME:=sources/gnucash/1.8/}
+		${MASTER_SITE_GNOME:=sources/gnucash/1.8/} \
+		 ${MASTER_SITE_SOURCEFORGE:=gnucash/}
 
 HOMEPAGE=	http://www.gnucash.org/
 
+SHARED_LIBS=	gnc-app-file-gnome	0.0
+
+
 WANTLIB=	db gnomesupport wrap gnomecanvaspixbuf 
 WANTLIB+=	ORBitCosNaming ICE gwrap-wct glib audiofile IIOP jpeg z
-WANTLIB+=	iconv ORBit ungif X11 oaf freetype intl gconf-1 gmodule SM
-WANTLIB+=	Xext esd gwrap-glib tiff xml png gdk_imlib guile Xi
+WANTLIB+=	ORBit ungif X11 oaf freetype gconf-1 gmodule SM
+WANTLIB+=	Xext esd gwrap-glib tiff xml png gdk_imlib guile guile-ltdl Xi
 WANTLIB+=	gconf-gtk-1 art_lgpl ORBitutil gtk gdk ltdl m ghttp gnomeui
-WANTLIB+=	gdk_pixbuf gnomeprint gtkhtml-1.1.0.0
+WANTLIB+=	gdk_pixbuf gnomeprint gtkhtml-1.1.0.0 popt bonobo bonobox
 
 MAINTAINER=	Todd T. Fries <todd@OpenBSD.org>
 
@@ -29,14 +36,20 @@ PERMIT_PACKAGE_FTP=		Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+MODULES=	devel/gettext
+
 CONFIGURE_STYLE= gnu
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+LIBTOOL_FLAGS+=	--tag=disable-static
 CONFIGURE_ARGS+= ${ENABLE_SHARED} \
 		--with-glib-config=${LOCALBASE}/bin/glib-config \
-		--enable-nls --without-included-gettext \
-		--disable-guppi --with-libglade-config=${LOCALBASE}/bin/libglade-config --disable-xim
+		--enable-nls \
+		--without-included-gettext \
+		--disable-guppi \
+		--disable-xim \
+		--with-libglade-config=${LOCALBASE}/bin/libglade-config
 CONFIGURE_ENV+=  CPPFLAGS="${CFLAGS}" CFLAGS="${CFLAGS}" \
 		LDFLAGS="${LDFLAGS}" \
 		LIBS="${LDFLAGS}"
@@ -53,7 +66,7 @@ BUILD_DEPENDS=	swig::devel/swig \
 		gnome-print::x11/gnome/print \
 		guppi::graphics/Guppi \
 		db::databases/db/v4 \
-		::devel/slib \
+		::devel/slib-guile \
 		::devel/libtool \
 		::lang/guile \
 		::devel/pkgconfig
@@ -66,7 +79,7 @@ RUN_DEPENDS+=	::devel/slib \
 CFLAGS=-I${LOCALBASE}/include -I${X11BASE}/include -I${LOCALBASE}/share/libtool/libltdl -I${LOCALBASE}/include/libgtkhtml-1.1
 LDFLAGS=-pthread -L${LOCALBASE}/lib -L${X11BASE}/lib -lintl -liconv
 
-LIBPATH=/usr/lib:/usr/X11R6/lib:/usr/local/lib
+LIBPATH=/usr/lib:/usr/X11R6/lib:${LOCALBASE}/lib
 
 MAKE_FLAGS += DB_LIBS=-ldb LDFLAGS="${LDFLAGS}" LIBS="${LDFLAGS}"
 MAKE_ENV += LIBRARY_PATH="${LIBPATH}"

@@ -1,27 +1,26 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2005/02/24 01:47:15 todd Exp $
---- configure.orig	Sun Feb  6 15:03:22 2005
-+++ configure	Thu Feb 17 07:05:13 2005
-@@ -3537,11 +3537,11 @@ else
- #line 3538 "configure"
- #include "confdefs.h"
+$OpenBSD: patch-configure,v 1.2 2006/02/17 14:07:44 todd Exp $
+--- configure.orig	Wed Oct 19 15:26:29 2005
++++ configure	Fri Feb 17 06:17:32 2006
+@@ -9710,12 +9710,11 @@ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
  #include <libintl.h>
--extern int _nl_msg_cat_cntr;
+ extern int _nl_msg_cat_cntr;
 -extern int *_nl_domain_bindings;
-+extern int libintl_nl_msg_cat_cntr;
-+extern int *libintl_nl_domain_bindings;
- int main() {
+ int
+ main ()
+ {
  bindtextdomain ("", "");
 -return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings
-+return (int) gettext ("") + libintl_nl_msg_cat_cntr + *libintl_nl_domain_bindings
- ; return 0; }
- EOF
- if { (eval echo configure:3548: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-@@ -13488,7 +13488,7 @@ echo "configure:13476: checking for gtkh
++return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_expand_alias (0)
+   ;
+   return 0;
+ }
+@@ -23177,7 +23176,7 @@ echo $ECHO_N "checking for gtkhtml >= 1.
  
      fi
  
 -    if test "x$GTKHTML_LIBS" != x; then
 +    if test "x$GTKHTML_LIBS" != "xNO"; then
- 	echo "$ac_t""yes" 1>&6
+ 	echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
  	# check for gtkhtml and enable it via HAVE_LIBGTKHTML if found
- 	echo $ac_n "checking for gtk_html_new in -lgtkhtml-1.1""... $ac_c" 1>&6

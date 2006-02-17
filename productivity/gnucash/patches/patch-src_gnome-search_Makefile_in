@@ -1,21 +1,21 @@
-$OpenBSD: patch-src_gnome-search_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
---- src/gnome-search/Makefile.in.orig	Thu Dec 29 22:05:55 2005
-+++ src/gnome-search/Makefile.in	Thu Dec 29 22:06:13 2005
-@@ -286,7 +286,7 @@ noinst_HEADERS = \
+$OpenBSD: patch-src_gnome-search_Makefile_in,v 1.2 2006/02/17 14:07:44 todd Exp $
+--- src/gnome-search/Makefile.in.orig	Wed Oct 19 15:26:13 2005
++++ src/gnome-search/Makefile.in	Thu Feb 16 12:07:51 2006
+@@ -453,7 +453,7 @@ noinst_HEADERS = \
+   search-string.h \
    gw-gnome-search.h
- 
  
 -libgncmod_gnome_search_la_LDFLAGS = -module
 +libgncmod_gnome_search_la_LDFLAGS = -module -avoid-version
- 
  libgncmod_gnome_search_la_LIBADD = \
    ${top_builddir}/src/gnc-module/libgncmodule.la \
-@@ -299,7 +299,7 @@ libgncmod_gnome_search_la_LIBADD = \
- 
+   ${GUILE_LIBS} \
+@@ -464,7 +464,7 @@ libgncmod_gnome_search_la_LIBADD = \
+   ${GLIB_LIBS}
  
  libgw_gnome_search_la_SOURCES = gw-gnome-search.c
 -libgw_gnome_search_la_LDFLAGS = -module ${G_WRAP_LINK_ARGS}
 +libgw_gnome_search_la_LDFLAGS = -module -avoid-version ${G_WRAP_LINK_ARGS}
- 
  gncmoddir = ${GNC_SHAREDIR}/guile-modules/gnucash
  gncmod_DATA = gnome-search.scm
+ gladedir = $(GNC_GLADE_DIR)

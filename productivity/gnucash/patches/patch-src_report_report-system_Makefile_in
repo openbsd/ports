@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_report_report-system_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
---- src/report/report-system/Makefile.in.orig	Thu Dec 29 22:10:35 2005
-+++ src/report/report-system/Makefile.in	Thu Dec 29 22:10:45 2005
-@@ -246,7 +246,7 @@ gncinclude_HEADERS = \
+$OpenBSD: patch-src_report_report-system_Makefile_in,v 1.2 2006/02/17 14:07:44 todd Exp $
+--- src/report/report-system/Makefile.in.orig	Wed Oct 19 15:26:24 2005
++++ src/report/report-system/Makefile.in	Thu Feb 16 12:07:52 2006
+@@ -410,7 +410,7 @@ gncincludedir = ${GNC_INCLUDE_DIR}
+ gncinclude_HEADERS = \
    gnc-report.h
- 
  
 -libgncmod_report_system_la_LDFLAGS = -module
 +libgncmod_report_system_la_LDFLAGS = -module -avoid-version

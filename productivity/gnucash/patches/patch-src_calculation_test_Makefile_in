@@ -1,17 +1,20 @@
-$OpenBSD: patch-src_calculation_test_Makefile_in,v 1.1.1.1 2005/02/24 01:47:15 todd Exp $
---- src/calculation/test/Makefile.in.orig	Sun Feb  6 15:50:39 2005
-+++ src/calculation/test/Makefile.in	Thu Feb 17 07:05:14 2005
-@@ -247,11 +247,11 @@ PROGRAMS =  $(noinst_PROGRAMS)
- 
- DEFS = @DEFS@ -I. -I$(srcdir) -I../../..
- CPPFLAGS = @CPPFLAGS@
+$OpenBSD: patch-src_calculation_test_Makefile_in,v 1.2 2006/02/17 14:07:44 todd Exp $
+--- src/calculation/test/Makefile.in.orig	Wed Oct 19 15:26:08 2005
++++ src/calculation/test/Makefile.in	Thu Feb 16 12:07:51 2006
+@@ -77,6 +77,7 @@ test_link_OBJECTS = $(am_test_link_OBJEC
+ am__DEPENDENCIES_1 =
+ test_link_DEPENDENCIES = ../libgncmod-calculation.la \
+ 	$(am__DEPENDENCIES_1)
++test_link_LDFLAGS = -lm
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+@@ -266,7 +267,7 @@ INTLTOOL_XML_NOMERGE_RULE = @INTLTOOL_XM
+ INTLTOOL_XML_RULE = @INTLTOOL_XML_RULE@
+ INTL_LIBTOOL_SUFFIX_PREFIX = @INTL_LIBTOOL_SUFFIX_PREFIX@
+ LC_MESSAGES_ENUM = @LC_MESSAGES_ENUM@
 -LDFLAGS = @LDFLAGS@
 +LDFLAGS = @LDFLAGS@ -lm
- LIBS = @LIBS@
- test_link_OBJECTS =  test-link.$(OBJEXT)
- test_link_DEPENDENCIES =  ../libgncmod-calculation.la
--test_link_LDFLAGS = 
-+test_link_LDFLAGS = -lm
- CFLAGS = @CFLAGS@
- COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
- LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ LIBGLADE_CFLAGS = @LIBGLADE_CFLAGS@
+ LIBGLADE_CONFIG = @LIBGLADE_CONFIG@
+ LIBGLADE_LIBS = @LIBGLADE_LIBS@

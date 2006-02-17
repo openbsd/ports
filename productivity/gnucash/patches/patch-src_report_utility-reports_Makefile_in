@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_report_utility-reports_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
---- src/report/utility-reports/Makefile.in.orig	Thu Dec 29 22:12:58 2005
-+++ src/report/utility-reports/Makefile.in	Thu Dec 29 22:13:10 2005
-@@ -240,7 +240,7 @@ libgncmod_utility_reports_la_SOURCES = \
+$OpenBSD: patch-src_report_utility-reports_Makefile_in,v 1.2 2006/02/17 14:07:44 todd Exp $
+--- src/report/utility-reports/Makefile.in.orig	Wed Oct 19 15:26:26 2005
++++ src/report/utility-reports/Makefile.in	Thu Feb 16 12:07:52 2006
+@@ -395,7 +395,7 @@ pkglib_LTLIBRARIES = libgncmod-utility-r
+ libgncmod_utility_reports_la_SOURCES = \
    gncmod-utility-reports.c 
- 
  
 -libgncmod_utility_reports_la_LDFLAGS = -module
 +libgncmod_utility_reports_la_LDFLAGS = -module -avoid-version
- 
  AM_CFLAGS = -I${top_srcdir}/src/gnc-module ${GUILE_INCS} ${GLIB_CFLAGS}
- 
+ noinst_DATA = .scm-links
+ gncscmmoddir = ${GNC_SHAREDIR}/guile-modules/gnucash/report/

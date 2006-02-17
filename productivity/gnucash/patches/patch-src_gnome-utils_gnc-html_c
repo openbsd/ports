@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_gnome-utils_gnc-html_c,v 1.1 2006/01/16 16:08:37 espie Exp $
---- src/gnome-utils/gnc-html.c.orig	Mon Jan 16 17:01:38 2006
-+++ src/gnome-utils/gnc-html.c	Mon Jan 16 17:02:01 2006
+$OpenBSD: patch-src_gnome-utils_gnc-html_c,v 1.2 2006/02/17 14:07:44 todd Exp $
+--- src/gnome-utils/gnc-html.c.orig	Sat Apr 12 12:03:30 2003
++++ src/gnome-utils/gnc-html.c	Thu Feb 16 12:07:51 2006
 @@ -1315,7 +1315,7 @@ gnc_html_set_button_cb(gnc_html * html, 
  static gboolean 
  raw_html_receiver (gpointer     engine,

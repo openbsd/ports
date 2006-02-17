@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_business_business-core_file_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
---- src/business/business-core/file/Makefile.in.orig	Thu Dec 29 22:03:10 2005
-+++ src/business/business-core/file/Makefile.in	Thu Dec 29 22:03:22 2005
-@@ -275,7 +275,7 @@ noinst_HEADERS = \
+$OpenBSD: patch-src_business_business-core_file_Makefile_in,v 1.2 2006/02/17 14:07:44 todd Exp $
+--- src/business/business-core/file/Makefile.in.orig	Wed Oct 19 15:26:06 2005
++++ src/business/business-core/file/Makefile.in	Thu Feb 16 12:07:51 2006
+@@ -437,7 +437,7 @@ noinst_HEADERS = \
+   gnc-tax-table-xml-v2.h \
    gnc-vendor-xml-v2.h
- 
  
 -libgncmod_business_backend_file_la_LDFLAGS = -module
 +libgncmod_business_backend_file_la_LDFLAGS = -module -avoid-version

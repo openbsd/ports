@@ -1,17 +1,17 @@
-$OpenBSD: patch-src_gnome_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
---- src/gnome/Makefile.in.orig	Thu Dec 29 22:34:37 2005
-+++ src/gnome/Makefile.in	Thu Dec 29 22:34:58 2005
-@@ -240,7 +240,7 @@ gwmoddir = ${GNC_GWRAP_LIBDIR}
+$OpenBSD: patch-src_gnome_Makefile_in,v 1.2 2006/02/17 14:07:44 todd Exp $
+--- src/gnome/Makefile.in.orig	Wed Oct 19 15:26:14 2005
++++ src/gnome/Makefile.in	Thu Feb 16 12:07:51 2006
+@@ -424,7 +424,7 @@ lib_LTLIBRARIES = libgncgnome.la libgw-g
+ gwmoddir = ${GNC_GWRAP_LIBDIR}
  gwmod_DATA = gw-gnc-spec.scm gw-gnc.scm
  #nodist_gwmod_DATA = gw-gnc.scm
- 
 -libgncgnome_la_LDFLAGS = -module
 +libgncgnome_la_LDFLAGS = -module -avoid-version
  libgncgnome_la_LIBADD = \
    ${top_builddir}/src/engine/libgncmod-engine.la \
    ${top_builddir}/src/app-file/libgncmod-app-file.la \
-@@ -253,7 +253,7 @@ libgncgnome_la_LIBADD = \
- 
+@@ -436,7 +436,7 @@ libgncgnome_la_LIBADD = \
+   ${GUILE_LIBS} ${GNOME_LIBDIR} ${GNOMEUI_LIBS} ${GLIB_LIBS}
  
  libgw_gnc_la_SOURCES = gw-gnc.c
 -libgw_gnc_la_LDFLAGS = -module \

@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_backend_file_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
---- src/backend/file/Makefile.in.orig	Thu Dec 29 21:59:17 2005
-+++ src/backend/file/Makefile.in	Thu Dec 29 21:59:26 2005
-@@ -289,7 +289,7 @@ noinst_HEADERS = \
+$OpenBSD: patch-src_backend_file_Makefile_in,v 1.2 2006/02/17 14:07:44 todd Exp $
+--- src/backend/file/Makefile.in.orig	Wed Oct 19 15:26:02 2005
++++ src/backend/file/Makefile.in	Thu Feb 16 12:07:51 2006
+@@ -453,7 +453,7 @@ noinst_HEADERS = \
+   sixtp-stack.h \
    sixtp-utils.h
- 
  
 -libgncmod_backend_file_la_LDFLAGS = -module
 +libgncmod_backend_file_la_LDFLAGS = -module -avoid-version
