@@ -3,7 +3,7 @@ To start the Samba server and naming service enter the following commands:
 $ sudo ${LOCALBASE}/libexec/smbd # Start the Samba server component
 $ sudo ${LOCALBASE}/libexec/nmbd # Start the Samba naming service
 
-The configuration file, found at ${CONFDIR}/smbd.conf can be used right
+The configuration file, found at ${CONFDIR}/smb.conf can be used right
 away for simple configurations.  Local users must be added to the Samba user
 database using the smbpasswd utility in order to use the Samba server.
 
