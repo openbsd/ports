@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1 2006/02/17 22:08:52 steven Exp $
+--- configure.in.orig	Mon Nov 21 22:02:02 2005
++++ configure.in	Fri Feb 17 01:13:20 2006
+@@ -1006,7 +1006,7 @@ if test "x$xc_with_tcl" != "x" ; then
+       if test "$test_ok" = yes; then
+         SHLIB_CFLAGS="-fpic"
+         SHLIB_LD="ld"
+-        LDDL_FLAGS="-Wl,-Bshareable,-x"
++        LDDL_FLAGS="-shared"
+       fi
+       ;;
+ 
