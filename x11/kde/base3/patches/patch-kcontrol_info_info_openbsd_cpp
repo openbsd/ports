@@ -1,0 +1,12 @@
+$OpenBSD: patch-kcontrol_info_info_openbsd_cpp,v 1.1 2006/02/18 14:28:48 espie Exp $
+--- kcontrol/info/info_openbsd.cpp.orig	Sat Feb 18 15:20:29 2006
++++ kcontrol/info/info_openbsd.cpp	Sat Feb 18 15:23:49 2006
+@@ -235,7 +235,7 @@ bool GetInfo_Sound (QListView *lbox)
+ 		if ((pos = s.find("at ")) >= 0) {
+ 			pos += 3;	// skip "at "
+ 			start = end = s.ascii();
+-			for(; (*end!=':') && (*end!='\n'); end++);
++			for(; *end && (*end!=':') && (*end!='\n'); end++);
+ 			len = end - start;
+ 			dev = (char *) malloc(len + 1);
+ 			strncpy(dev, start, len);
