@@ -1,0 +1,24 @@
+$OpenBSD: patch-ksysguard_gui_SensorDisplayLib_ProcessList_cc,v 1.1 2006/02/18 13:07:02 espie Exp $
+--- ksysguard/gui/SensorDisplayLib/ProcessList.cc.orig	Sat Feb 18 13:27:44 2006
++++ ksysguard/gui/SensorDisplayLib/ProcessList.cc	Sat Feb 18 13:30:45 2006
+@@ -170,6 +170,12 @@ ProcessList::ProcessList(QWidget *parent
+ 		aliases.insert("wwwoffled", new QString("daemon"));
+ 		aliases.insert("xntpd", new QString("daemon"));
+ 		aliases.insert("ypbind", new QString("daemon"));
++		aliases.insert("apmd", new QString("daemon"));
++		aliases.insert("getty", new QString("daemon"));
++		aliases.insert("mountd", new QString("daemon"));
++		aliases.insert("inetd", new QString("daemon"));
++		aliases.insert("nfsd", new QString("daemon"));
++		aliases.insert("wsmoused", new QString("daemon"));
+ 		/* kde applications */
+ 		aliases.insert("appletproxy", new QString("kdeapp"));
+ 		aliases.insert("dcopserver", new QString("kdeapp"));
+@@ -194,6 +200,7 @@ ProcessList::ProcessList(QWidget *parent
+ 		aliases.insert("cat", new QString("tools"));
+ 		aliases.insert("egrep", new QString("tools"));
+ 		aliases.insert("emacs", new QString("wordprocessing"));
++		aliases.insert("vim", new QString("wordprocessing"));
+ 		aliases.insert("fgrep", new QString("tools"));
+ 		aliases.insert("find", new QString("tools"));
+ 		aliases.insert("grep", new QString("tools"));

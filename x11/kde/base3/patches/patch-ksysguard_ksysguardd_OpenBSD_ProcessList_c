@@ -1,7 +1,7 @@
-$OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_ProcessList_c,v 1.2 2006/02/18 12:06:50 espie Exp $
+$OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_ProcessList_c,v 1.3 2006/02/18 13:07:02 espie Exp $
 --- ksysguard/ksysguardd/OpenBSD/ProcessList.c.orig	Sat Feb 11 11:45:05 2006
-+++ ksysguard/ksysguardd/OpenBSD/ProcessList.c	Sat Feb 18 13:03:33 2006
-@@ -0,0 +1,505 @@
++++ ksysguard/ksysguardd/OpenBSD/ProcessList.c	Sat Feb 18 14:02:58 2006
+@@ -0,0 +1,500 @@
 +/*
 +    KSysGuard, the KDE System Guard
 +
@@ -210,15 +210,13 @@ $OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_ProcessList_c,v 1.2 2006/02/18 12:0
 +}
 +
 +static int
-+updateProcess(int pid)
++updateProcess(struct kinfo_proc2 *p)
 +{
 +	static char *statuses[] = { "idle","run","sleep","stop","zombie" };
 +	
 +	ProcessInfo* ps;
 +	struct passwd* pwent;
-+	int mib[6];
-+	struct kinfo_proc2 p;
-+	size_t len;
++	pid_t pid = p->p_pid;
 +
 +	if ((ps = findProcessInList(pid)) == 0)
 +	{
@@ -227,30 +225,19 @@ $OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_ProcessList_c,v 1.2 2006/02/18 12:0
 +		ps->centStamp = 0;
 +		push_ctnr(ProcessList, ps);
 +		bsort_ctnr(ProcessList, processCmp);
-+	}
++	} 
 +
 +	ps->alive = 1;
 +
-+	mib[0] = CTL_KERN;
-+	mib[1] = KERN_PROC2;
-+	mib[2] = KERN_PROC_PID;
-+	mib[3] = pid;
-+	mib[4] = sizeof(p);
-+	mib[5] = 1;
-+
-+	len = mib[4];
-+	if (sysctl(mib, 6, &p, &len, NULL, 0) == -1 || !len)
-+		return -1;
-+
-+        ps->pid       = p.p_pid;
-+        ps->ppid      = p.p_ppid;
-+        ps->uid       = p.p_uid;
-+        ps->gid       = p.p_gid;
-+        ps->priority  = p.p_priority;
-+        ps->niceLevel = p.p_nice;
++        ps->pid       = p->p_pid;
++        ps->ppid      = p->p_ppid;
++        ps->uid       = p->p_uid;
++        ps->gid       = p->p_gid;
++        ps->priority  = p->p_priority;
++        ps->niceLevel = p->p_nice;
 +
 +        /* this isn't usertime -- it's total time (??) */
-+	ps->userTime = p.p_uutime_sec*100+p.p_uutime_usec/100;
++	ps->userTime = p->p_uutime_sec*100+p->p_uutime_usec/100;
 +        ps->sysTime  = 0;
 +        ps->sysLoad  = 0;
 +
@@ -260,15 +247,15 @@ $OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_ProcessList_c,v 1.2 2006/02/18 12:0
 +	strlcpy(ps->userName,pwent&&pwent->pw_name? pwent->pw_name:"????",sizeof(ps->userName));
 +	ps->userName[sizeof(ps->userName)-1]='\0';
 +
-+        ps->userLoad = p.p_pctcpu / 100;
-+	ps->vmSize   = (p.p_vm_tsize +
-+			p.p_vm_dsize +
-+			p.p_vm_ssize) * getpagesize();
-+	ps->vmRss    = p.p_vm_rssize * getpagesize();
-+	strlcpy(ps->name,p.p_comm ? p.p_comm : "????", sizeof(ps->name));
-+	strlcpy(ps->status,(p.p_stat>=1)&&(p.p_stat<=5)? statuses[p.p_stat-1]:"????", sizeof(ps->status));
++        ps->userLoad = p->p_pctcpu / 100;
++	ps->vmSize   = (p->p_vm_tsize +
++			p->p_vm_dsize +
++			p->p_vm_ssize) * getpagesize();
++	ps->vmRss    = p->p_vm_rssize * getpagesize();
++	strlcpy(ps->name,p->p_comm ? p->p_comm : "????", sizeof(ps->name));
++	strlcpy(ps->status,(p->p_stat>=1)&&(p->p_stat<=5)? statuses[p->p_stat-1]:"????", sizeof(ps->status));
 +
-+	fillProcessCmdline(ps->cmdline, &p, sizeof(ps->cmdline));
++	fillProcessCmdline(ps->cmdline, p, sizeof(ps->cmdline));
 +        /* process command line */
 +
 +	return (0);
@@ -334,21 +321,30 @@ $OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_ProcessList_c,v 1.2 2006/02/18 12:0
 +int
 +updateProcessList(void)
 +{
-+        int mib[3];
++        int mib[6];
 +        size_t len;
 +        size_t num;
-+        struct kinfo_proc *p;
++        struct kinfo_proc2 *p;
 +
 +
 +        mib[0] = CTL_KERN;
-+        mib[1] = KERN_PROC;
++        mib[1] = KERN_PROC2;
 +        mib[2] = KERN_PROC_ALL;
-+        sysctl(mib, 3, NULL, &len, NULL, 0);
++	mib[3] = 0;
++	mib[4] = sizeof(struct kinfo_proc2);
++	mib[5] = 0;
++        if (sysctl(mib, 6, NULL, &len, NULL, 0) == -1)
++		return 0;
++	len = 5 * len / 4;
 +	p = malloc(len);
-+        sysctl(mib, 3, p, &len, NULL, 0);
++	if (!p)
++		return 0;
++	mib[5] = len/ sizeof(struct kinfo_proc2);
++        if (sysctl(mib, 6, p, &len, NULL, 0) == -1)
++		return 0;
 +
-+	for (num = 0; num < len / sizeof(struct kinfo_proc); num++)
-+		updateProcess(p[num].kp_proc.p_pid);
++	for (num = 0; num < len / sizeof(struct kinfo_proc2); num++)
++		updateProcess(&p[num]);
 +	free(p);
 +	cleanupProcessList();
 +
@@ -367,8 +363,7 @@ $OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_ProcessList_c,v 1.2 2006/02/18 12:0
 +{
 +	ProcessInfo* ps;
 +
-+	ps = first_ctnr(ProcessList); /* skip 'kernel' entry */
-+	for (ps = next_ctnr(ProcessList); ps; ps = next_ctnr(ProcessList))
++	for (ps = first_ctnr(ProcessList); ps; ps = next_ctnr(ProcessList))
 +	{
 +		fprintf(CurrentClient, "%s\t%ld\t%ld\t%ld\t%ld\t%s\t%.2f\t%.2f\t%d\t%d\t%d\t%s\t%s\n",
 +			   ps->name, (long)ps->pid, (long)ps->ppid,
