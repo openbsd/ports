@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/01/06 18:30:40 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2006/02/18 21:14:42 steven Exp $
 
 COMMENT=	"C routines for computing the Discrete Fourier Transform"
 
@@ -20,7 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
 MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ \
-		http://fftw.mirror.fr/
+		http://fftw.mirror.fr/ \
+		ftp://ftp.fftw.org/pub/fftw/old/
 
 SEPARATE_BUILD=	concurrent
 
