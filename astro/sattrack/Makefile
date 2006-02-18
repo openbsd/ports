@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2006/02/08 04:54:48 david Exp $
+# $OpenBSD: Makefile,v 1.20 2006/02/18 19:06:33 steven Exp $
 
 COMMENT=	"real-time satellite tracking and orbit propagation program"
 DISTNAME=	sattrack-3.1.6
 CATEGORIES=	astro
-MASTER_SITES=   ${MASTER_SITE_LOCAL}
 
 PERMIT_PACKAGE_CDROM=   "May not be bundled, according to copyright."
 PERMIT_PACKAGE_FTP=     Yes
