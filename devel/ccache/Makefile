@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/01/23 03:27:52 jolan Exp $
+# $OpenBSD: Makefile,v 1.11 2006/02/18 20:17:14 steven Exp $
 
 COMMENT=	"compiler cache"
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	${HOMEPAGE}ftp/ccache/
+MASTER_SITES=	http://samba.org/ftp/ccache/
 
 CONFIGURE_STYLE=	gnu
 
