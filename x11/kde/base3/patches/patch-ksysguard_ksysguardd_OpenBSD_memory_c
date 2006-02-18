@@ -1,0 +1,62 @@
+$OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_memory_c,v 1.1 2006/02/18 13:29:36 espie Exp $
+--- ksysguard/ksysguardd/OpenBSD/memory.c.orig	Sat Feb 18 14:14:15 2006
++++ ksysguard/ksysguardd/OpenBSD/memory.c	Sat Feb 18 14:22:08 2006
+@@ -37,6 +37,8 @@
+ 
+ static size_t Total = 0;
+ static size_t MFree = 0;
++static size_t Used = 0;
++static size_t Application = 0;
+ static size_t Active = 0;
+ static size_t InActive = 0;
+ static size_t STotal = 0;
+@@ -71,6 +73,8 @@ initMemory(struct SensorModul* sm)
+   registerMonitor("mem/physical/free", "integer", printMFree, printMFreeInfo, sm);
+ 	registerMonitor("mem/physical/active", "integer", printActive, printActiveInfo, sm);
+ 	registerMonitor("mem/physical/inactive", "integer", printInActive, printInActiveInfo, sm);
++	registerMonitor("mem/physical/used", "integer", printUsed, printUsedInfo, sm);
++	registerMonitor("mem/physical/application", "integer", printApplication, printApplicationInfo, sm);
+ 	registerMonitor("mem/swap/free", "integer", printSwapFree, printSwapFreeInfo, sm);
+ 	registerMonitor("mem/swap/used", "integer", printSwapUsed, printSwapUsedInfo, sm);
+ }
+@@ -99,6 +103,9 @@ updateMemory(void)
+ 	InActive /= 1024;
+ 	InActive -= Active;
+ 
++	Used = Total - MFree;
++	Application = Used;
++
+ 	swapmode(&SUsed, &STotal);
+ 	SFree = STotal - SUsed;
+ 	return 0;
+@@ -114,6 +121,30 @@ void
+ printMFreeInfo(const char* cmd)
+ {
+ 	fprintf(CurrentClient, "Free Memory\t0\t%d\tKB\n", Total);
++}
++
++void
++printUsed(const char* cmd)
++{
++	fprintf(CurrentClient, "%d\n", Used);
++}
++
++void
++printUsedInfo(const char* cmd)
++{
++	fprintf(CurrentClient, "Used Memory\t0\t%d\tKB\n", Total);
++}
++
++void
++printApplication(const char* cmd)
++{
++	fprintf(CurrentClient, "%d\n", Application);
++}
++
++void
++printApplicationInfo(const char* cmd)
++{
++	fprintf(CurrentClient, "Application Memory\t0\t%ld\tKB\n", Total);
+ }
+ 
+ void
