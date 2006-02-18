@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2004/11/21 22:29:51 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2006/02/18 20:03:41 steven Exp $
 
 COMMENT=	"decoder for the CEPT (Btx) protocol"
 
 DISTNAME=	xcept-2.1.2
 PKGNAME=	${DISTNAME}p2
 CATEGORIES=	comms
-MASTER_SITES=	${MASTER_SITE_LOCAL}
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
