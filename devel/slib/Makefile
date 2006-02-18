@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2005/12/05 16:28:33 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/02/18 20:37:54 steven Exp $
 
 COMMENT=	"scheme r5 library"
 
@@ -11,7 +11,8 @@ EXTRACT_SUFX=	.zip
 
 HOMEPAGE=	http://swissnet.ai.mit.edu/~jaffer/SCM.html
 
-MASTER_SITES=	ftp://ftp.swiss.ai.mit.edu/pub/scm/
+MASTER_SITES=	ftp://ftp.swiss.ai.mit.edu/pub/scm/ \
+		ftp://ftp.swiss.ai.mit.edu/pub/scm/OLD/
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
