@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/11/23 11:22:01 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/02/18 20:23:09 steven Exp $
 
 COMMENT=	"safely manipulate and inspect CVS respositories"
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	ftp://riemann.iam.uni-bonn.de/pub/users/roessler/cvslock/
+MASTER_SITES=	http://www.does-not-exist.org/roessler/
 
 CONFIGURE_STYLE=gnu
 
