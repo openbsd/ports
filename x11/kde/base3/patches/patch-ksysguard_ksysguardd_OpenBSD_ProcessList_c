@@ -1,7 +1,7 @@
-$OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_ProcessList_c,v 1.1 2006/02/07 10:26:42 espie Exp $
---- ksysguard/ksysguardd/OpenBSD/ProcessList.c.orig	Sun Feb  5 13:27:16 2006
-+++ ksysguard/ksysguardd/OpenBSD/ProcessList.c	Sun Feb  5 13:25:22 2006
-@@ -0,0 +1,457 @@
+$OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_ProcessList_c,v 1.2 2006/02/18 12:06:50 espie Exp $
+--- ksysguard/ksysguardd/OpenBSD/ProcessList.c.orig	Sat Feb 11 11:45:05 2006
++++ ksysguard/ksysguardd/OpenBSD/ProcessList.c	Sat Feb 18 13:03:33 2006
+@@ -0,0 +1,505 @@
 +/*
 +    KSysGuard, the KDE System Guard
 +
@@ -160,6 +160,55 @@ $OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_ProcessList_c,v 1.1 2006/02/07 10:2
 +	return (get_ctnr(ProcessList, index));
 +}
 +
++static void
++fillProcessCmdline(char *cmdline, struct kinfo_proc2 *p, size_t maxlen)
++{
++	int mib[4];
++	int ret = -1;
++	static char *argbuf = NULL;
++	static size_t arglen = 0;
++
++	strlcpy(cmdline, p->p_comm, maxlen);
++
++	if (!argbuf) {
++		arglen = 1024;
++		argbuf = malloc(arglen);
++	}
++	mib[0] = CTL_KERN;
++	mib[1] = KERN_PROC_ARGS;
++	mib[2] = p->p_pid;
++	mib[3] = KERN_PROC_ARGV;
++
++	while (argbuf) {
++		ret = sysctl(mib, 4, argbuf, &arglen, NULL, 0);
++		if (ret == -1 && errno == ENOMEM) {
++			char *n;
++			n = realloc(argbuf, arglen * 2);
++			if (n != 0) {
++				argbuf = n;
++				arglen *= 2;
++				continue;
++			}
++		}
++		break;
++	}
++
++	if (ret != 1) {
++		char **argv;
++		int argc;
++
++		argv = (char **)argbuf;
++		if (argv[0] != NULL)
++			strlcpy(cmdline, argv[0], maxlen);
++		for (argc = 1; argv[argc] != NULL; argc++) {
++			strlcat(cmdline, " ", maxlen);
++			strlcat(cmdline, argv[argc], maxlen);
++		}
++	} else {
++		strlcpy(cmdline, p->p_comm, maxlen);
++	} 
++}
++
 +static int
 +updateProcess(int pid)
 +{
@@ -167,8 +216,8 @@ $OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_ProcessList_c,v 1.1 2006/02/07 10:2
 +	
 +	ProcessInfo* ps;
 +	struct passwd* pwent;
-+	int mib[4];
-+	struct kinfo_proc p;
++	int mib[6];
++	struct kinfo_proc2 p;
 +	size_t len;
 +
 +	if ((ps = findProcessInList(pid)) == 0)
@@ -183,23 +232,25 @@ $OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_ProcessList_c,v 1.1 2006/02/07 10:2
 +	ps->alive = 1;
 +
 +	mib[0] = CTL_KERN;
-+	mib[1] = KERN_PROC;
++	mib[1] = KERN_PROC2;
 +	mib[2] = KERN_PROC_PID;
 +	mib[3] = pid;
++	mib[4] = sizeof(p);
++	mib[5] = 1;
 +
-+	len = sizeof (p);
-+	if (sysctl(mib, 4, &p, &len, NULL, 0) == -1 || !len)
++	len = mib[4];
++	if (sysctl(mib, 6, &p, &len, NULL, 0) == -1 || !len)
 +		return -1;
 +
-+        ps->pid       = p.kp_proc.p_pid;
-+        ps->ppid      = p.kp_eproc.e_ppid;
-+        ps->uid       = p.kp_eproc.e_ucred.cr_uid;
-+        ps->gid       = p.kp_eproc.e_pgid;
-+        ps->priority  = p.kp_proc.p_priority;
-+        ps->niceLevel = p.kp_proc.p_nice;
++        ps->pid       = p.p_pid;
++        ps->ppid      = p.p_ppid;
++        ps->uid       = p.p_uid;
++        ps->gid       = p.p_gid;
++        ps->priority  = p.p_priority;
++        ps->niceLevel = p.p_nice;
 +
 +        /* this isn't usertime -- it's total time (??) */
-+	ps->userTime = p.kp_proc.p_rtime.tv_sec*100+p.kp_proc.p_rtime.tv_usec/100;
++	ps->userTime = p.p_uutime_sec*100+p.p_uutime_usec/100;
 +        ps->sysTime  = 0;
 +        ps->sysLoad  = 0;
 +
@@ -209,19 +260,16 @@ $OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_ProcessList_c,v 1.1 2006/02/07 10:2
 +	strlcpy(ps->userName,pwent&&pwent->pw_name? pwent->pw_name:"????",sizeof(ps->userName));
 +	ps->userName[sizeof(ps->userName)-1]='\0';
 +
-+        ps->userLoad = p.kp_proc.p_pctcpu / 100;
-+	ps->vmSize   = (p.kp_eproc.e_vm.vm_tsize +
-+			p.kp_eproc.e_vm.vm_dsize +
-+			p.kp_eproc.e_vm.vm_ssize) * getpagesize();
-+	ps->vmRss    = p.kp_eproc.e_vm.vm_rssize * getpagesize();
-+	strlcpy(ps->name,p.kp_proc.p_comm ? p.kp_proc.p_comm : "????", sizeof(ps->name));
-+	strlcpy(ps->status,(p.kp_proc.p_stat>=1)&&(p.kp_proc.p_stat<=5)? statuses[p.kp_proc.p_stat-1]:"????", sizeof(ps->status));
++        ps->userLoad = p.p_pctcpu / 100;
++	ps->vmSize   = (p.p_vm_tsize +
++			p.p_vm_dsize +
++			p.p_vm_ssize) * getpagesize();
++	ps->vmRss    = p.p_vm_rssize * getpagesize();
++	strlcpy(ps->name,p.p_comm ? p.p_comm : "????", sizeof(ps->name));
++	strlcpy(ps->status,(p.p_stat>=1)&&(p.p_stat<=5)? statuses[p.p_stat-1]:"????", sizeof(ps->status));
 +
++	fillProcessCmdline(ps->cmdline, &p, sizeof(ps->cmdline));
 +        /* process command line */
-+	/* the following line causes segfaults on some FreeBSD systems... why?
-+		strncpy(ps->cmdline, p.kp_proc.p_args->ar_args, sizeof(ps->cmdline) - 1);
-+	*/
-+	strcpy(ps->cmdline, "????");
 +
 +	return (0);
 +}
