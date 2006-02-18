@@ -1,2 +1,16 @@
-To utilize this package, you will need to run ${PREFIX}/sbin/openafs-setup
-as root.
+To utilize this package, you will need to run ${PREFIX}/sbin/openafs-setup as root.
+Consider setting the following:
+1. Uncomment the following line in /etc/sysctl.conf 
+---->/etc/sysctl.conf
+-#ddb.panic=0                     # 0=Do not drop into ddb on a kernel panic
++ddb.panic=0                     # 0=Do not drop into ddb on a kernel panic
+----|
+2. Increase the default maximum number of open files in /etc/login.conf for daemon to aleast a few thousand.
+---->/etc/login.conf
+-      :openfiles-cur=128:\
++      :openfiles-cur=infinity:\
+----|
+3. If you increase #2 above 1772 then consider also updating kern.maxfiles   
+---->/etc/sysctl.conf
++kern.maxfiles=102400            # increase maximum files
+----|

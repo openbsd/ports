@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2006/02/13 17:27:01 david Exp $
+# $OpenBSD: Makefile,v 1.9 2006/02/18 02:05:49 todd Exp $
 
 COMMENT=		"Distributed filesystem OpenAFS"
 
 DISTNAME=		openafs-1.4.0-src
-PKGNAME=		openafs-1.4.0p3
+PKGNAME=		openafs-1.4.0p4
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.openafs.org
@@ -29,9 +29,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-namei-fileserver \
 			--enable-largefile-fileserver \
 			--enable-supergroups \
-			--with-afs-sysname=${ARCH}_obsd${OSrev} \
-			--enable-debug
-COPTS+= -ggdb
+			--with-afs-sysname=${ARCH}_obsd${OSrev} 
+
 WRKDIST=		${WRKDIR}/${DISTNAME:S/-src$//}
 
 pre-configure:

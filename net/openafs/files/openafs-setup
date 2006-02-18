@@ -93,13 +93,17 @@ then
         then
 
 cat <<EOF
-        #######################################
-        You are running at a secure level that does not allow for loading
-        kernel modules. An update has been made to /etc/rc.securelevel in
-        order to load OpenAFS on the next reboot.
+        #######################################################
+        You are running at a secure level that does not allow 
+	for loading kernel modules. 
+
+	An update has been made to /etc/rc.securelevel in order
+        to load OpenAFS on the next reboot.
+
         Please reboot for this to take effect.
+
         Then just rerun this script to continue the setup.
-        #######################################
+        #######################################################
 EOF
 exit
 
@@ -182,8 +186,8 @@ then
 fi
 
 rm -rf /var/openafs /etc/openafs
-mkdir -m 700 /etc/openafs /var/openafs /var/openafs/db
-mkdir -m 755  /etc/openafs/server /var/openafs/server /var/openafs/cache
+mkdir -m 700 /var/openafs /var/openafs/db
+mkdir -m 755  /etc/openafs /etc/openafs/server /var/openafs/server /var/openafs/cache
 /bin/echo "/afs:/var/openafs/cache:${CACHESIZE:?}" > /etc/openafs/cacheinfo
 
 KAS=%LOCALBASE%/sbin/kas
@@ -424,6 +428,9 @@ Make sure that openfiles-cur is set to a high enough level.
 Otherwise you will get "partition full" messages when
 writing files to afs.
 This is the setting I use on the test cell.
+-------------------------------------------------
         :openfiles-cur=infinity:\
+--------------------------------------------------
+Also note that this port does not work on Multiprocessor systems.
 If you find any breakage please let me know <ober <AT> linbsd.org>
 EOF
