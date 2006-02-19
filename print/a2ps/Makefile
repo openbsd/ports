@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2006/01/19 14:20:17 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.36 2006/02/19 17:32:59 alek Exp $
 
 COMMENT=	"format ascii files for printing on PostScript printers"
 
 DISTNAME=	a2ps-4.13b
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 WRKDIST=	${WRKDIR}/a2ps-4.13
 CATEGORIES=	print
 SHARED_LIBS=	a2ps	2.0

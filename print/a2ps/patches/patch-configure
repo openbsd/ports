@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1 2005/02/11 19:45:04 alek Exp $
+$OpenBSD: patch-configure,v 1.2 2006/02/19 17:32:59 alek Exp $
 --- configure.orig	Wed Mar  8 18:43:57 2000
-+++ configure	Tue Feb  8 23:27:52 2005
++++ configure	Sun Feb 19 15:31:11 2006
 @@ -892,7 +892,7 @@ if test -z "install_sh"; then
  fi
  
@@ -55,3 +55,12 @@ $OpenBSD: patch-configure,v 1.1 2005/02/11 19:45:04 alek Exp $
  
  fi
  
+@@ -8531,7 +8531,7 @@ fi
+    esac
+ 
+ # How to send things in the printer queue
+-for ac_prog in lp lpr
++for ac_prog in lpr
+ do
+ # Extract the first word of "$ac_prog", so it can be a program name with args.
+ set dummy $ac_prog; ac_word=$2
