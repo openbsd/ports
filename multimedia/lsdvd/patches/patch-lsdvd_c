@@ -1,7 +1,15 @@
-$OpenBSD: patch-lsdvd_c,v 1.1.1.1 2004/06/21 21:26:24 xsa Exp $
---- lsdvd.c.orig	2003-09-29 15:01:00.000000000 -0600
-+++ lsdvd.c	2004-06-21 13:45:33.000000000 -0600
-@@ -133,21 +133,21 @@ int get_title_name(const char* dvd_devic
+$OpenBSD: patch-lsdvd_c,v 1.2 2006/02/19 17:42:36 espie Exp $
+--- lsdvd.c.orig	Mon Sep 29 23:01:00 2003
++++ lsdvd.c	Sun Feb 19 18:38:20 2006
+@@ -13,6 +13,7 @@
+  *  2003-04-19  Cleanups get_title_name, added dvdtime2msec, added helper macros,
+  *              output info structures in form of a Perl module, by Henk Vergonet.
+  */
++#include <stdint.h>
+ #include <dvdread/ifo_read.h>
+ #include <string.h>
+ #include <sys/stat.h>
+@@ -133,21 +134,21 @@ int get_title_name(const char* dvd_devic
  
    if (! (filehandle = fopen(dvd_device, "r"))) {
      fprintf(stderr, "Couldn't open %s for title\n", dvd_device);
@@ -26,7 +34,7 @@ $OpenBSD: patch-lsdvd_c,v 1.1.1.1 2004/06/21 21:26:24 xsa Exp $
      return -1;
    }
  
-@@ -194,7 +194,7 @@ int main(int argc, char *argv[])
+@@ -194,7 +195,7 @@ int main(int argc, char *argv[])
  	pgc_t *pgc;
  	int i, j, c, titles, cell, vts_ttn, title_set_nr;
   	char lang_code[2];
@@ -35,7 +43,7 @@ $OpenBSD: patch-lsdvd_c,v 1.1.1.1 2004/06/21 21:26:24 xsa Exp $
  	int has_title = 0, ret = 0;
          int max_length = 0, max_track = 0;
  	struct stat dvd_stat;
-@@ -349,7 +349,7 @@ int main(int argc, char *argv[])
+@@ -349,7 +350,7 @@ int main(int argc, char *argv[])
  			for (i=0; i<vtsi_mat->nr_of_vts_audio_streams; i++)
  			{
  				audio_attr = &vtsi_mat->vts_audio_attr[i];
@@ -44,7 +52,7 @@ $OpenBSD: patch-lsdvd_c,v 1.1.1.1 2004/06/21 21:26:24 xsa Exp $
  				if (!lang_code[0]) { lang_code[0] = 'x'; lang_code[1] = 'x'; }
  				HASH(0);
  				DEF("ix", "%d", i+1);
-@@ -368,7 +368,7 @@ int main(int argc, char *argv[])
+@@ -368,7 +369,7 @@ int main(int argc, char *argv[])
  			for (i=0; i<vtsi_mat->nr_of_vts_audio_streams; i++)
                  	{
                          	audio_attr = &vtsi_mat->vts_audio_attr[i];
@@ -53,7 +61,7 @@ $OpenBSD: patch-lsdvd_c,v 1.1.1.1 2004/06/21 21:26:24 xsa Exp $
  	                        if (!lang_code[0]) { lang_code[0] = 'x'; lang_code[1] = 'x'; }
  		                printf("\tAudio: %d, Language: %s - %s, ", i +1 , lang_code, lang_name(lang_code));
         	                	printf("Format: %s, ", audio_format[audio_attr->audio_format]);
-@@ -412,11 +412,11 @@ int main(int argc, char *argv[])
+@@ -412,11 +413,11 @@ int main(int argc, char *argv[])
  	                        if (i == pgc->nr_of_programs - 1) next = pgc->nr_of_cells + 1;
  	                        while (cell < next - 1)
  	                        {
@@ -67,7 +75,7 @@ $OpenBSD: patch-lsdvd_c,v 1.1.1.1 2004/06/21 21:26:24 xsa Exp $
  	                                tmp = minute + atoi(hex);
          	                        hour = hour + (tmp / 60);
  	                                minute = tmp % 60;
-@@ -455,7 +455,7 @@ int main(int argc, char *argv[])
+@@ -455,7 +456,7 @@ int main(int argc, char *argv[])
  			for (i=0; i<vtsi_mat->nr_of_vts_subp_streams; i++)
  			{
  				subp_attr = &vtsi_mat->vts_subp_attr[i];
@@ -76,7 +84,7 @@ $OpenBSD: patch-lsdvd_c,v 1.1.1.1 2004/06/21 21:26:24 xsa Exp $
  				if (!lang_code[0]) { lang_code[0] = 'x'; lang_code[1] = 'x'; }
  	
  				HASH(0);
-@@ -470,7 +470,7 @@ int main(int argc, char *argv[])
+@@ -470,7 +471,7 @@ int main(int argc, char *argv[])
  			for (i=0; i<vtsi_mat->nr_of_vts_subp_streams; i++)
  	                {
  	                        subp_attr = &vtsi_mat->vts_subp_attr[i];

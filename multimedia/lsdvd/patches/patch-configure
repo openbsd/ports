@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure,v 1.1 2006/02/19 17:42:36 espie Exp $
+--- configure.orig	Sun Feb 19 18:37:06 2006
++++ configure	Sun Feb 19 18:37:25 2006
+@@ -1050,6 +1050,7 @@ echo "configure:1050: checking for dvdre
+ cat > conftest.$ac_ext <<EOF
+ #line 1052 "configure"
+ #include "confdefs.h"
++#include <stdint.h>
+ #include <dvdread/ifo_read.h>
+ int main() {
+ 
