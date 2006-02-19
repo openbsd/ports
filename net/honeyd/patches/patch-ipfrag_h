@@ -1,0 +1,11 @@
+$OpenBSD: patch-ipfrag_h,v 1.1 2006/02/19 17:09:32 naddy Exp $
+--- ipfrag.h.orig	Fri Dec 31 20:13:43 2004
++++ ipfrag.h	Sun Feb 19 17:54:36 2006
+@@ -52,6 +52,7 @@ struct fragment {
+ 	ip_addr_t ip_src;	/* Network order */
+ 	ip_addr_t ip_dst;	/* Network order */
+ 	u_short ip_id;		/* Network order */
++	u_char ip_proto;
+ 
+ 	u_short maxlen;		
+ 	u_short hadlastpacket;

@@ -1,0 +1,64 @@
+$OpenBSD: patch-ipfrag_c,v 1.1 2006/02/19 17:09:32 naddy Exp $
+--- ipfrag.c.orig	Fri Dec 31 20:13:38 2004
++++ ipfrag.c	Sun Feb 19 17:54:36 2006
+@@ -81,6 +81,7 @@ fragcompare(struct fragment *a, struct f
+ 	DIFF(a->ip_src, b->ip_src);
+ 	DIFF(a->ip_dst, b->ip_dst);
+ 	DIFF(a->ip_id, b->ip_id);
++	DIFF(a->ip_proto, b->ip_proto);
+ 
+ 	return (0);
+ }
+@@ -105,13 +106,14 @@ ip_fragment_init(void)
+ }
+ 
+ struct fragment *
+-ip_fragment_find(ip_addr_t src, ip_addr_t dst, u_short id)
++ip_fragment_find(ip_addr_t src, ip_addr_t dst, u_short id, u_char proto)
+ {
+ 	struct fragment tmp, *frag;
+ 
+ 	tmp.ip_src = src;
+ 	tmp.ip_dst = dst;
+ 	tmp.ip_id = id;
++	tmp.ip_proto = proto;
+ 
+ 	frag = SPLAY_FIND(fragtree, &fragments, &tmp);
+ 
+@@ -179,7 +181,8 @@ ip_fragment_reclaim(int count)
+ }
+ 
+ struct fragment *
+-ip_fragment_new(ip_addr_t src, ip_addr_t dst, u_short id, enum fragpolicy pl)
++ip_fragment_new(ip_addr_t src, ip_addr_t dst, u_short id, u_char proto,
++    enum fragpolicy pl)
+ {
+ 	struct fragment *tmp = NULL;
+ 	struct timeval tv = { IPFRAG_TIMEOUT, 0};
+@@ -202,6 +205,7 @@ ip_fragment_new(ip_addr_t src, ip_addr_t
+ 	tmp->ip_src = src;
+ 	tmp->ip_dst = dst;
+ 	tmp->ip_id = id;
++	tmp->ip_proto = proto;
+ 	tmp->fragp = pl;
+ 
+ 	TAILQ_INIT(&tmp->fraglist);
+@@ -358,7 +362,7 @@ ip_fragment(struct template *tmpl, struc
+ 	if (fragp == FRAG_DROP)
+ 		goto drop;
+ 
+-	fragq = ip_fragment_find(ip->ip_src, ip->ip_dst, ip->ip_id);
++	fragq = ip_fragment_find(ip->ip_src, ip->ip_dst, ip->ip_id, ip->ip_p);
+ 
+ 	/* Nothing here for now */
+ 	off = ntohs(ip->ip_off);
+@@ -383,7 +387,8 @@ ip_fragment(struct template *tmpl, struc
+ 		goto freeall;
+ 
+ 	if (fragq == NULL) {
+-		fragq = ip_fragment_new(ip->ip_src, ip->ip_dst, ip->ip_id, fragp);
++		fragq = ip_fragment_new(ip->ip_src, ip->ip_dst, ip->ip_id,
++		    ip->ip_p, fragp);
+ 		if (fragq == NULL)
+ 			goto drop;
+ 	}
