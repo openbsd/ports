@@ -1,0 +1,11 @@
+$OpenBSD: patch-contrib_lsdvd_lsdvd_c,v 1.1 2006/02/19 18:30:12 espie Exp $
+--- contrib/lsdvd/lsdvd.c.orig	Sun Feb 19 18:53:58 2006
++++ contrib/lsdvd/lsdvd.c	Sun Feb 19 18:54:06 2006
+@@ -14,6 +14,7 @@
+  *              output info structures in form of a Perl module, by Henk Vergonet.
+  *  2004-02-25  now prints the stream-id's for audio and subpicture streams, by Reinhardt Wolf
+  */
++#include <stdint.h>
+ #include <dvdread/ifo_read.h>
+ #include <string.h>
+ #include <sys/stat.h>

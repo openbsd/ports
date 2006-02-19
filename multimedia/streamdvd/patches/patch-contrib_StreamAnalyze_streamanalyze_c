@@ -1,0 +1,11 @@
+$OpenBSD: patch-contrib_StreamAnalyze_streamanalyze_c,v 1.1 2006/02/19 18:30:12 espie Exp $
+--- contrib/StreamAnalyze/streamanalyze.c.orig	Sun Feb 19 18:53:08 2006
++++ contrib/StreamAnalyze/streamanalyze.c	Sun Feb 19 18:53:14 2006
+@@ -19,6 +19,7 @@
+ #include <string.h>
+ #include <stdlib.h>
+ #include <getopt.h>
++#include <stdint.h>
+ #include <dvdread/ifo_read.h>
+ #include <dvdread/ifo_types.h>
+ #include <dvdread/dvd_reader.h>

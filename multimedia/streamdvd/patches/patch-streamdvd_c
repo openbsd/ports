@@ -1,0 +1,11 @@
+$OpenBSD: patch-streamdvd_c,v 1.1 2006/02/19 18:30:12 espie Exp $
+--- streamdvd.c.orig	Mon Mar  8 23:10:53 2004
++++ streamdvd.c	Sun Feb 19 18:52:28 2006
+@@ -19,6 +19,7 @@
+ #include <string.h>
+ #include <stdlib.h>
+ #include <getopt.h>
++#include <stdint.h>
+ #include <dvdread/ifo_read.h>
+ #include <dvdread/ifo_types.h>
+ #include <dvdread/dvd_reader.h>
