@@ -1,0 +1,17 @@
+$OpenBSD: patch-dvdread_ifo_types_h,v 1.1 2006/02/19 18:28:55 espie Exp $
+--- dvdread/ifo_types.h.orig	Sun Feb 19 18:57:54 2006
++++ dvdread/ifo_types.h	Sun Feb 19 19:00:02 2006
+@@ -28,8 +28,12 @@
+ #error "Must include <inttypes.h> or <stdint.h> before any libdvdread header."
+ #endif
+ #else
+-#if !defined(UINT8_MAX) || !defined(UINT16_MAX) || !defined(INT32_MAX)
++#if defined(UINT8_MAX) && defined(UINT16_MAX) && defined(INT32_MAX)
++#else
++#if defined(__OpenBSD__) && defined(__cplusplus) && defined(__BIT_TYPES_DEFINED__)
++#else
+ #error "Must include <inttypes.h> or <stdint.h> before any libdvdread header."
++#endif
+ #endif
+ #endif
+ 
