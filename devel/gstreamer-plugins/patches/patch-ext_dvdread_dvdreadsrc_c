@@ -1,0 +1,11 @@
+$OpenBSD: patch-ext_dvdread_dvdreadsrc_c,v 1.1 2006/02/19 19:22:06 espie Exp $
+--- ext/dvdread/dvdreadsrc.c.orig	Sun Feb 19 20:03:42 2006
++++ ext/dvdread/dvdreadsrc.c	Sun Feb 19 20:03:54 2006
+@@ -34,6 +34,7 @@
+ #include <sys/types.h>
+ #include <dirent.h>
+ #include <errno.h>
++#include <stdint.h>
+ //#include <linux/cdrom.h>
+ #include <assert.h>
+ 

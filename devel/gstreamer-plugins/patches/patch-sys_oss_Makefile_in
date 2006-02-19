@@ -1,7 +1,7 @@
-$OpenBSD: patch-sys_oss_Makefile_in,v 1.3 2005/11/13 06:49:01 marcm Exp $
---- sys/oss/Makefile.in.orig	Thu Jun 30 16:12:18 2005
-+++ sys/oss/Makefile.in	Mon Jul 11 05:30:44 2005
-@@ -388,7 +388,7 @@ LIBOIL_CFLAGS = @LIBOIL_CFLAGS@
+$OpenBSD: patch-sys_oss_Makefile_in,v 1.4 2006/02/19 19:22:06 espie Exp $
+--- sys/oss/Makefile.in.orig	Sun Sep  4 14:21:13 2005
++++ sys/oss/Makefile.in	Mon Dec 19 14:36:49 2005
+@@ -368,7 +368,7 @@ LIBOIL_CFLAGS = @LIBOIL_CFLAGS@
  LIBOIL_LIBS = @LIBOIL_LIBS@
  LIBPNG_CFLAGS = @LIBPNG_CFLAGS@
  LIBPNG_LIBS = @LIBPNG_LIBS@
