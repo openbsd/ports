@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2004/11/24 02:27:33 jolan Exp $
---- Makefile.orig	Mon Mar  8 16:10:53 2004
-+++ Makefile	Sun Oct 17 22:12:04 2004
-@@ -1,11 +1,11 @@
+$OpenBSD: patch-Makefile,v 1.2 2006/02/19 18:29:32 espie Exp $
+--- Makefile.orig	Mon Mar  8 23:10:53 2004
++++ Makefile	Sun Feb 19 18:55:36 2006
+@@ -1,16 +1,16 @@
  INSTALLDIR = /usr/local/bin/
  
  all:
@@ -12,7 +12,13 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2004/11/24 02:27:33 jolan Exp $
 -	gcc -g -Wall -ldvdread -o streamanalyze contrib/StreamAnalyze/streamanalyze.c
 -	gcc -g -Wall -ldvdread -DVERSION=\"0.9\" -o lsdvd contrib/lsdvd/lsdvd.c
 +	${CC} ${CFLAGS} -Wall -L${LOCALBASE}/lib -ldvdread -o streamanalyze -I${LOCALBASE}/include contrib/StreamAnalyze/streamanalyze.c
-+	${CC} ${CFLAGS} -Wall -L${LOCALBASE}/lib -ldvdread -DVERSION=\"0.9\" -o lsdvd -I${LOCALBASE}/include contrib/lsdvd/lsdvd.c
++#	${CC} ${CFLAGS} -Wall -L${LOCALBASE}/lib -ldvdread -DVERSION=\"0.9\" -o lsdvd -I${LOCALBASE}/include contrib/lsdvd/lsdvd.c
  
  gui:
  	g++ -g -Wall -ldvdread -lm -o streamdvd -I. -Implex streamdvd.c requant.c mplex/*.c mplex/*.cpp
+ 	gcc -g -Wall -ldvdread -o streamanalyze contrib/StreamAnalyze/streamanalyze.c
+-	gcc -g -Wall -ldvdread -DVERSION=\"0.9\" -o lsdvd contrib/lsdvd/lsdvd.c
++#	gcc -g -Wall -ldvdread -DVERSION=\"0.9\" -o lsdvd contrib/lsdvd/lsdvd.c
+ 
+ clean: 
+ 	rm -f streamdvd streamanalyze lsdvd
