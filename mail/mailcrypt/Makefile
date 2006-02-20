@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2005/09/23 19:36:02 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2006/02/20 17:42:11 steven Exp $
 
 COMMENT=	"emacs interface to PGP and GnuPG"
 
@@ -32,7 +32,7 @@ RUN_DEPENDS=	:pgp-2.*:security/pgp
 RUN_DEPENDS=	:pgp-5.*:security/pgp5
 .endif
 
-REGRESS_DEPENDS=	:python-2.2*:lang/python/2.2
+REGRESS_DEPENDS=	:python-2.3*:lang/python/2.3
 
 pre-regress:
 	@perl -i -pe 's:%%LOCALBASE%%:${LOCALBASE}:' \
