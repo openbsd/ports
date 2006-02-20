@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2006/02/17 14:07:44 todd Exp $
+# $OpenBSD: Makefile,v 1.8 2006/02/20 19:27:24 steven Exp $
 
 NOT_FOR_ARCHS=	${LP64_ARCHS}
 
 COMMENT=	"Quicken-like money and finance manager"
 DISTNAME=	gnucash-1.8.12
-PKGNAME=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
 DOCVER=		1.8.5
 CATEGORIES=	x11/gnome productivity
 
@@ -23,9 +23,9 @@ SHARED_LIBS=	gnc-app-file-gnome	0.0
 
 
 WANTLIB=	db gnomesupport wrap gnomecanvaspixbuf 
-WANTLIB+=	ORBitCosNaming ICE gwrap-wct glib audiofile IIOP jpeg z
+WANTLIB+=	ORBitCosNaming ICE glib audiofile IIOP jpeg z
 WANTLIB+=	ORBit ungif X11 oaf freetype gconf-1 gmodule SM
-WANTLIB+=	Xext esd gwrap-glib tiff xml png gdk_imlib guile guile-ltdl Xi
+WANTLIB+=	Xext esd tiff xml png gdk_imlib guile guile-ltdl Xi
 WANTLIB+=	gconf-gtk-1 art_lgpl ORBitutil gtk gdk ltdl m ghttp gnomeui
 WANTLIB+=	gdk_pixbuf gnomeprint gtkhtml-1.1.0.0 popt bonobo bonobox
 
@@ -60,7 +60,7 @@ LIB_DEPENDS=	glade.4,glade-gnome::devel/libglade,gnome \
 		gnomeprint.16::x11/gnome/print \
 		gdk_pixbuf.2::graphics/gdk-pixbuf \
 		lib/db4/db.=4:db-4.*:databases/db/v4 \
-		gw-glib,gw-standard,gw-wct,gwrap-glib,gwrap-wct::devel/g-wrap \
+		gwrap-glib,gwrap-wct::devel/g-wrap \
 		gtkhtml-1.1.3.5::www/gtkhtml
 BUILD_DEPENDS=	swig::devel/swig \
 		gnome-print::x11/gnome/print \
