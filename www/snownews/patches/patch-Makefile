@@ -1,12 +1,21 @@
-$OpenBSD: patch-Makefile,v 1.8 2005/11/03 00:52:45 cathcart Exp $
---- Makefile.orig	Wed Sep 29 11:28:31 2004
-+++ Makefile	Tue Oct 12 22:52:36 2004
+$OpenBSD: patch-Makefile,v 1.9 2006/02/20 16:33:55 naddy Exp $
+--- Makefile.orig	Sun Jun  5 11:50:22 2005
++++ Makefile	Thu Feb 16 22:15:51 2006
 @@ -1,4 +1,4 @@
 -CC=         gcc
 +#CC=         gcc
  MAKE=       make
  INSTALL=    install
  LOCALEPATH= $(PREFIX)/share/locale
+@@ -8,7 +8,7 @@ LOCALEPATH= $(PREFIX)/share/locale
+ include platform_settings
+ 
+ ### Object files ###
+-OBJFILES= main.o netio.o interface.o xmlparse.o updatecheck.o conversions.o dialog.o ui-support.o categories.o about.o cookies.o setup.o net-support.o digcalc.o md5.o filters.o io-internal.o os-support.o zlib_interface.o support.o
++OBJFILES= main.o netio.o interface.o xmlparse.o updatecheck.o conversions.o dialog.o ui-support.o categories.o about.o cookies.o setup.o net-support.o digcalc.o filters.o io-internal.o os-support.o zlib_interface.o support.o
+ 
+ VERSION= `grep VERSION version.h | sed s/\"//g | sed s/\#define\ VERSION\ //`
+ DISTDIR= snownews-$(VERSION)
 @@ -42,11 +42,11 @@ locales:
  	done
  
@@ -21,12 +30,12 @@ $OpenBSD: patch-Makefile,v 1.8 2005/11/03 00:52:45 cathcart Exp $
  		sed s/VERSION/$(VERSION)/ > $(MAN)/$$L/snownews.1; \
  	done
  
-@@ -60,7 +60,7 @@ install-bin: snownews
+@@ -59,7 +59,7 @@ install-bin: snownews
  	if [ ! -d "$(DESTDIR)$(PREFIX)/bin" ]; then \
  		mkdir -p $(DESTDIR)$(PREFIX)/bin; \
  	fi
 -	$(INSTALL) -s snownews $(DESTDIR)$(PREFIX)/bin
 +	$(INSTALL) snownews $(DESTDIR)$(PREFIX)/bin
  	$(INSTALL) opml2snow $(DESTDIR)$(PREFIX)/bin
- 
- install-locales: locales
+ 	if [ ! -f "$(DESTDIR)$(PREFIX)/bin/snow2opml" ]; then \
+ 		ln -sf $(DESTDIR)$(PREFIX)/bin/opml2snow $(DESTDIR)$(PREFIX)/bin/snow2opml; \

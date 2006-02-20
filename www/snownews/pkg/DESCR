@@ -5,7 +5,7 @@ RSS 0.91 and 2.0 versions.
 Here are some feeds to get you started:
 
 Freshmeat	- http://freshmeat.net/backend/fm.rdf
-OpenBSD Journal	- http://www.deadly.org/summary.rss
-The Register	- http://www.theregister.co.uk/tonys/slashdot.rdf
+OpenBSD Journal	- http://undeadly.org/cgi?action=rss
+The Register	- http://www.theregister.co.uk/excerpts.rss
 Slashdot	- http://slashdot.org/slashdot.rdf
 Snownews	- http://home.kcore.de/~kiza/software/snownews/snowlog.rdf

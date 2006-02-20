@@ -1,0 +1,27 @@
+$OpenBSD: patch-conversions_c,v 1.5 2006/02/20 16:33:55 naddy Exp $
+--- conversions.c.orig	Thu Feb 16 22:14:10 2006
++++ conversions.c	Thu Feb 16 22:17:11 2006
+@@ -24,6 +24,7 @@
+  *
+  */
+  
++#include <sys/types.h> 
+ #include <string.h>
+ #include <iconv.h>
+ #include <stdio.h>
+@@ -33,6 +34,7 @@
+ #include <errno.h>
+ #include <libxml/HTMLparser.h>
+ #include <langinfo.h>
++#include <md5.h>
+ 
+ /* I have no idea what needs to be defined to get strptime() on glibc.
+  * This is stolen from somewhere else and it works for me(tm).
+@@ -49,7 +51,6 @@
+ #include "interface.h"
+ #include "ui-support.h"
+ #include "setup.h"
+-#include "md5.h"
+ #include "digcalc.h"
+ 
+ extern struct entity *first_entity;
