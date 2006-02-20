@@ -1,0 +1,16 @@
+$OpenBSD: patch-kompare_libdiff2_kompareprocess_cpp,v 1.1 2006/02/20 14:08:14 espie Exp $
+--- kompare/libdiff2/kompareprocess.cpp.orig	Mon Feb 20 14:57:09 2006
++++ kompare/libdiff2/kompareprocess.cpp	Mon Feb 20 15:00:13 2006
+@@ -118,7 +118,11 @@ void KompareProcess::writeCommandLine()
+ 		break;
+ 	}
+ 
+-	if ( m_diffSettings->m_largeFiles )
++	if ( m_diffSettings->m_largeFiles 
++#if defined(__OpenBSD__)
++		&& !m_diffSettings->m_diffProgram.isEmpty() 
++#endif
++	   )
+ 	{
+ 		*this << "-H";
+ 	}
