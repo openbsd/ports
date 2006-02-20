@@ -1,6 +1,6 @@
-$OpenBSD: patch-misc_Makefile_in,v 1.1.1.1 2004/02/20 19:54:58 espie Exp $
---- misc/Makefile.in.orig	2002-02-24 22:04:00.000000000 +0100
-+++ misc/Makefile.in	2003-11-16 18:04:21.000000000 +0100
+$OpenBSD: patch-misc_Makefile_in,v 1.2 2006/02/20 16:51:46 aanriot Exp $
+--- misc/Makefile.in.orig	Sun Feb 24 22:04:00 2002
++++ misc/Makefile.in	Sun Feb 19 18:14:36 2006
 @@ -39,13 +39,13 @@ SRCS=	$(srcdir)/tune2fs.c $(srcdir)/mklo
  		$(srcdir)/uuidgen.c $(srcdir)/fstype.c
  
@@ -26,3 +26,23 @@ $OpenBSD: patch-misc_Makefile_in,v 1.1.1.1 2004/02/20 19:54:58 espie Exp $
  	$(CC) $(ALL_LDFLAGS) -o mke2fs $(MKE2FS_OBJS) $(LIBS) $(LIBE2P) $(LIBUUID)
  
  mke2fs.static: $(MKE2FS_OBJS) $(STATIC_DEPLIBS) $(STATIC_LIBE2P) $(DEPSTATIC_LIBUUID)
+@@ -145,11 +145,9 @@ installdirs:
+ install: all $(SMANPAGES) $(UMANPAGES) installdirs
+ 	for i in $(SPROGS); do \
+ 		$(INSTALL_PROGRAM) $$i $(DESTDIR)$(root_sbindir)/$$i; \
+-		$(STRIP) $(DESTDIR)$(root_sbindir)/$$i; \
+ 	done
+ 	for i in $(USPROGS); do \
+ 		$(INSTALL_PROGRAM) $$i $(DESTDIR)$(sbindir)/$$i; \
+-		$(STRIP) $(DESTDIR)$(sbindir)/$$i; \
+ 	done
+ 	$(LN) -f $(DESTDIR)$(root_sbindir)/mke2fs \
+ 		$(DESTDIR)$(root_sbindir)/mkfs.ext2
+@@ -159,7 +157,6 @@ install: all $(SMANPAGES) $(UMANPAGES) i
+ 		$(DESTDIR)$(root_sbindir)/e2label
+ 	for i in $(UPROGS); do \
+ 		$(INSTALL_PROGRAM) $$i $(DESTDIR)$(bindir)/$$i; \
+-		$(STRIP) $(DESTDIR)$(bindir)/$$i; \
+ 	done
+ 	for i in $(SMANPAGES); do \
+ 		$(RM) -f $(DESTDIR)$(man8dir)/$$i.gz; \

@@ -1,6 +1,6 @@
-$OpenBSD: patch-e2fsck_Makefile_in,v 1.1.1.1 2004/02/20 19:54:58 espie Exp $
---- e2fsck/Makefile.in.orig	2003-11-16 17:37:08.000000000 +0100
-+++ e2fsck/Makefile.in	2003-11-16 17:37:26.000000000 +0100
+$OpenBSD: patch-e2fsck_Makefile_in,v 1.2 2006/02/20 16:51:46 aanriot Exp $
+--- e2fsck/Makefile.in.orig	Sun Feb 24 22:03:58 2002
++++ e2fsck/Makefile.in	Sun Feb 19 18:14:04 2006
 @@ -17,7 +17,7 @@ MANPAGES=	e2fsck.8
  XTRA_CFLAGS=	-DRESOURCE_TRACK
  
@@ -10,3 +10,11 @@ $OpenBSD: patch-e2fsck_Makefile_in,v 1.1.1.1 2004/02/20 19:54:58 espie Exp $
  
  STATIC_LIBS= $(STATIC_LIBEXT2FS) $(STATIC_LIBCOM_ERR) $(STATIC_LIBUUID)
  STATIC_DEPLIBS= $(STATIC_LIBEXT2FS) $(STATIC_LIBCOM_ERR) $(DEPSTATIC_LIBUUID)
+@@ -139,7 +139,6 @@ installdirs:
+ install: $(PROGS) $(MANPAGES) installdirs
+ 	for i in $(PROGS); do \
+ 		$(INSTALL_PROGRAM) $$i $(DESTDIR)$(root_sbindir)/$$i; \
+-		$(STRIP) $(DESTDIR)$(root_sbindir)/$$i; \
+ 	done
+ 	$(LN) -f $(DESTDIR)$(root_sbindir)/e2fsck \
+ 			$(DESTDIR)$(root_sbindir)/fsck.ext2
