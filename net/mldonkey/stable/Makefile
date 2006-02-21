@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2005/09/10 17:29:58 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/02/21 09:49:02 espie Exp $
 
 COMMENT='e-donkey client'
 CATEGORIES=net
@@ -10,8 +10,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
-WANTLIB=		X11 Xext Xi c glib gmodule iconv intl m z pthread
-CONFIGURE_STYLE=	gnu
+WANTLIB=		X11 Xext Xi c glib gmodule iconv intl m z pthread \
+			freetype png jpeg charset
+CONFIGURE_STYLE=	autoconf no-autoheader
+AUTOCONF_DIR=		${WRKSRC}/config
+AUTOCONF_VERSION=	2.59
 #CONFIGURE_ARGS+=	--enable-ocamlver=3.07
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
@@ -19,14 +22,19 @@ HOMEPAGE=http://savannah.nongnu.org/projects/mldonkey/
 
 MASTER_SITES=http://savannah.nongnu.org/download/mldonkey/
 DISTNAME=mldonkey-2.6.3
-PKGNAME=${DISTNAME}p0
+PKGNAME=${DISTNAME}p1
 EXTRACT_SUFX=.tar.bz2
 
 CONFIGURE_ARGS+=--enable-gui=newgui1
+CONFIGURE_ENV+=CPPFLAGS='-I${LOCALBASE}/include -I${X11BASE}/include'
+CONFIGURE_ENV+=LDFLAGS='-L${LOCALBASE}/lib -L${X11BASE}/lib'
+
 USE_GMAKE=Yes
 MODULES=lang/ocaml
 BUILD_DEPENDS=::x11/lablgtk
-LIB_DEPENDS=gdk.1,gtk.1::x11/gtk+
+LIB_DEPENDS=gdk.1,gtk.1::x11/gtk+ \
+		bz2::archivers/bzip2 \
+		gd::graphics/gd
 FAKE_FLAGS=prefix=${DESTDIR}${PREFIX} MODOCAML_NATIVE=${MODOCAML_NATIVE}
 NO_REGRESS=Yes
 

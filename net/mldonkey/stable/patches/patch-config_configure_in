@@ -1,0 +1,25 @@
+$OpenBSD: patch-config_configure_in,v 1.1 2006/02/21 09:49:02 espie Exp $
+--- config/configure.in.orig	Sun Aug 21 21:39:12 2005
++++ config/configure.in	Tue Feb 21 01:25:28 2006
+@@ -1098,10 +1098,10 @@ GD_PNG=no
+ if test "$GD" != "no"; then
+   GD=no
+   LIBGD=no
+-  AC_CHECK_LIB(gd, gdImageCreate , [LIBGD=yes])
++  AC_CHECK_LIB(gd, gdImageCreate , [LIBGD=yes],, -lfreetype -lfontconfig)
+   if test "$LIBGD" = "yes"; then
+     LIBPNG=no
+-    AC_CHECK_LIB(png, png_create_read_struct , [LIBPNG=yes])
++    AC_CHECK_LIB(png, png_create_read_struct , [LIBPNG=yes],, -lz -lm)
+     LIBGD_PNG=no
+     AC_CHECK_LIB(gd, gdImagePng, [LIBGD_PNG=yes])
+     if test "$LIBPNG" = "no"; then
+@@ -1111,7 +1111,7 @@ if test "$GD" != "no"; then
+         GD=yes
+         HAS_GD_PNG=true
+ 	GD_PNG=yes
+-	AC_CHECK_LIB(png, png_access_version_number,[AC_DEFINE(HAVE_PNGVERSION, 1,)])
++	AC_CHECK_LIB(png, png_access_version_number,[AC_DEFINE(HAVE_PNGVERSION, 1,)],, -lz -lm)
+         AC_DEFINE(HAVE_GD_PNG, 1, [Define to 1 if you have png support in libgd.])
+         AC_MSG_NOTICE(using png support in libgd)
+       else
