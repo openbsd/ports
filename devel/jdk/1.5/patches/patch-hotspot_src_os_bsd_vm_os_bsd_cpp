@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.4 2005/11/30 02:21:32 kurt Exp $
---- hotspot/src/os/bsd/vm/os_bsd.cpp.orig	Tue Nov 22 10:16:29 2005
-+++ hotspot/src/os/bsd/vm/os_bsd.cpp	Tue Nov 29 09:47:23 2005
+$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.5 2006/02/22 22:52:44 kurt Exp $
+--- hotspot/src/os/bsd/vm/os_bsd.cpp.orig	Thu Feb 16 11:07:32 2006
++++ hotspot/src/os/bsd/vm/os_bsd.cpp	Thu Feb 16 11:11:42 2006
 @@ -290,8 +290,15 @@ julong os::allocatable_physical_memory(j
       // is not known at this point.  Alignments will 
       // be at most to LargePageSizeInBytes.  Protect 
@@ -37,3 +37,62 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.4 2005/11/30 02:21:32 kurt 
  #define EXTENSIONS_DIR "/lib/ext"
  #define ENDORSED_DIR "/lib/endorsed"
  
+@@ -1909,22 +1918,50 @@ char* os::reserve_memory_special(size_t 
+ }
+ 
+ static int os_sleep(jlong millis, bool interruptible) {
+-  struct timespec t;
++  const jlong limit = INT_MAX;
++  jlong prevtime;
+   int res;
+   
+-  t.tv_sec = millis / 1000L;
+-  t.tv_nsec = (millis % 1000L) * 1000000;
++  while (millis > limit) {
++    if ((res = os_sleep(limit, interruptible)) != OS_OK)
++      return res;
++    millis -= limit;
++  } 
++
++  // Restart interrupted polls with new parameters until the proper delay 
++  // has been completed.
++
++  prevtime = getTimeMillis();
++
++  while (millis > 0) {
++    jlong newtime;
++
+   if (!interruptible) {
+-    do {
+-      res = nanosleep(&t, &t);
+-    } while ((res == OS_ERR) && (errno == EINTR) && (t.tv_sec != 0 || t.tv_nsec != 0));
++    // Following assert fails for os::yield_all:
++    // assert(!thread->is_Java_thread(), "must not be java thread");
++    res = poll(NULL, 0, millis);
+   } else {
+     assert(Thread::current()->is_Java_thread(), "must be java thread");
+-    INTERRUPTIBLE_NORESTART_VM(nanosleep(&t, &t), res, os::Bsd::clear_interrupted);
++    INTERRUPTIBLE_NORESTART_VM(poll(NULL, 0, millis), res, 
++      os::Bsd::clear_interrupted);
+   }
+   // INTERRUPTIBLE_NORESTART_VM returns res == OS_INTRPT for thread.Interrupt
+ 
+-  return res;
++    if((res == OS_ERR) && (errno == EINTR)) {
++      newtime = getTimeMillis();
++      assert(newtime >= prevtime, "time moving backwards");
++    /* Doing prevtime and newtime in microseconds doesn't help precision,
++       and trying to round up to avoid lost milliseconds can result in a
++       too-short delay. */
++      millis -= newtime - prevtime;
++      if(millis <= 0)
++	return OS_OK;
++      prevtime = newtime;
++    } else
++      return res;
++  }
++
++  return OS_OK;
+ }
+ 
+ int os::Bsd::naked_sleep() {
