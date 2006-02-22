@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2006/01/25 16:03:35 bernd Exp $
+$OpenBSD: patch-Makefile_in,v 1.4 2006/02/22 11:15:47 bernd Exp $
 --- Makefile.in.orig	Sat Jan 14 18:01:14 2006
-+++ Makefile.in	Wed Jan 25 12:21:31 2006
++++ Makefile.in	Mon Feb 20 12:33:28 2006
 @@ -24,7 +24,7 @@ LIBREV = @LIBREV@
  # Targets
  MYHEADS = depot.h curia.h relic.h hovel.h cabin.h villa.h vista.h odeum.h
@@ -40,8 +40,9 @@ $OpenBSD: patch-Makefile_in,v 1.3 2006/01/25 16:03:35 bernd Exp $
 +LDFLAGS += -L. -L${LOCALBASE}/lib $(LIBS)
 +LDENV = LD_RUN_PATH=/lib:/usr/lib:${LOCALBASE}/lib:$(MYLIBDIR)
  AR = @AR@
- ARFLAGS = rcsv
+-ARFLAGS = rcsv
 -RUNENV = LD_LIBRARY_PATH=.:/lib:/usr/lib:$(HOME)/lib:/usr/local/lib
++ARFLAGS = rcv
 +RUNENV = LD_LIBRARY_PATH=.:/lib:/usr/lib:${LOCALBASE}/lib
  
  
