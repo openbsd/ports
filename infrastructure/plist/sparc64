@@ -1,52 +1,45 @@
-# $OpenBSD: sparc64,v 1.18 2005/12/12 23:32:22 pvalchev Exp $
-# This is the master list of subdirs used to choose sparc64 packages.
+# $OpenBSD: sparc64,v 1.19 2006/02/26 04:51:13 pvalchev Exp $
+# This is the master list of subdirs used to choose sparc packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
 net/rsync
-net/cvsync
 textproc/gdiff
 sysutils/mergemaster
 editors/vim,no_x11
 editors/emacs21
-archivers/unzip
+#archivers/unzip
 archivers/bzip2
 #print/teTeX/base
-net/nmap,no_x11
-sysutils/cdrtools
+#net/nmap,no_x11
+#net/pptp
+#sysutils/cdrtools
 mail/procmail
 mail/fetchmail
 misc/screen
 #net/samba
-shells/zsh
-shells/bash
-shells/tcsh
+#shells/zsh
+#shells/bash
+#shells/tcsh
 mail/mutt/stable
-net/curl
-print/ghostscript/gnu
-print/gv
-devel/id-utils
+#net/curl
+#print/ghostscript/gnu
+#print/gv
+#devel/id-utils
 x11/openmotif
 www/mozilla-firefox
-x11/kde/base3
+#x11/kde/base3
 #x11/kde/office3
 #x11/kde/pim3
 #x11/kde/edu3
-x11/windowmaker
-x11/windowmaker-extra
-www/tidy
-editors/nedit
+#x11/windowmaker
+#x11/windowmaker-extra
 textproc/xpdf
-graphics/gqview
-sysutils/pftop
-security/stunnel
+#graphics/gqview
 #lang/python/2.3
 #lang/python/2.3,-tools
-www/links
-net/snort
-www/squid
-www/transproxy
-security/aide
-security/dsniff
-net/ntop
-news/slrn
-#security/gnupg
+#sysutils/pftop
+#security/stunnel
+#www/links
+#net/snort
+#www/squid
+#www/transproxy
