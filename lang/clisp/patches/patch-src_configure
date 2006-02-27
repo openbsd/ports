@@ -1,6 +1,15 @@
-$OpenBSD: patch-src_configure,v 1.1 2005/02/11 12:14:37 alek Exp $
---- src/configure.orig	Thu Feb 10 00:43:19 2005
-+++ src/configure	Thu Feb 10 00:43:34 2005
+$OpenBSD: patch-src_configure,v 1.2 2006/02/27 17:22:09 pvalchev Exp $
+--- src/configure.orig	Wed Jun  2 15:56:55 2004
++++ src/configure	Mon Feb 27 09:46:34 2006
+@@ -11437,7 +11437,7 @@ if test $cross_compiling = no; then
+ # Both are broken. When used with CLISP, the one in the default libc.a
+ # leads to a SIGSEGV, the one in libmalloc.a leads to a SIGBUS.
+ case "$host_os" in
+-  hpux*) cl_cv_func_malloc_broken=yes ;;
++  hpux*|openbsd*) cl_cv_func_malloc_broken=yes ;;
+   *) cl_cv_func_malloc_broken=no ;;
+ esac
+ else
 @@ -24255,7 +24255,7 @@ s,@host@,$host,;t t
  s,@host_cpu@,$host_cpu,;t t
  s,@host_vendor@,$host_vendor,;t t

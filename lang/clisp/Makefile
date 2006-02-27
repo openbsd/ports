@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2006/02/16 20:56:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2006/02/27 17:22:09 pvalchev Exp $
 
-BROKEN=		"does not handle randomized mmap()"
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"ANSI Common Lisp compiler"
 
 DISTNAME=	clisp-2.33.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	lang
 HOMEPAGE=	http://clisp.cons.org/
 
