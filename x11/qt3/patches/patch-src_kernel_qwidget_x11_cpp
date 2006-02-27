@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_kernel_qwidget_x11_cpp,v 1.5 2006/02/27 16:40:25 espie Exp $
+--- src/kernel/qwidget_x11.cpp.orig	Mon Feb 27 17:39:38 2006
++++ src/kernel/qwidget_x11.cpp	Mon Feb 27 17:40:23 2006
+@@ -2754,7 +2754,7 @@ void QWidget::changeInputContext( const 
+ void QWidget::createInputContext()
+ {
+ #if !defined(QT_NO_IM_EXTENSIONS)
+-    if( !isInputMethodEnabled() )
++    if( !isInputMethodEnabled() || QApplication::closingDown() )
+ 	return;
+ #endif
+ 

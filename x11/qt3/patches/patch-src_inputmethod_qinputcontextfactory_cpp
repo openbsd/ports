@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_inputmethod_qinputcontextfactory_cpp,v 1.1 2006/02/27 16:40:25 espie Exp $
+--- src/inputmethod/qinputcontextfactory.cpp.orig	Mon Feb 27 17:39:37 2006
++++ src/inputmethod/qinputcontextfactory.cpp	Mon Feb 27 17:40:37 2006
+@@ -102,7 +102,8 @@ QInputContext *QInputContextFactory::cre
+     if ( iface ) {
+ 	ret = iface->create( inputcontext );
+ #ifdef Q_WS_X11
+-	ret->setHolderWidget( widget );
++        if ( ret ) 
++	    ret->setHolderWidget( widget );
+ #endif
+     }
+ #endif
