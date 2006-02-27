@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_makemake_in,v 1.6 2004/11/03 19:30:37 naddy Exp $
---- src/makemake.in.orig	Wed Nov  3 19:38:54 2004
-+++ src/makemake.in	Wed Nov  3 19:39:16 2004
-@@ -1534,7 +1534,7 @@ echol "prefix = ${PREFIX}"
+$OpenBSD: patch-src_makemake_in,v 1.7 2006/02/27 16:45:37 pvalchev Exp $
+--- src/makemake.in.orig	Thu May 27 08:43:39 2004
++++ src/makemake.in	Mon Feb 27 09:37:50 2006
+@@ -1550,7 +1550,7 @@ echol "prefix = ${PREFIX}"
  echol "exec_prefix = ${EXEC_PREFIX}"
  echol "bindir  = \$(exec_prefix)${NEXT_}bin"
  echol "shared  = \$(prefix)${NEXT_}share"
