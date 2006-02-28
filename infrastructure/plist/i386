@@ -1,4 +1,4 @@
-# $OpenBSD: i386,v 1.23 2006/02/26 04:51:13 pvalchev Exp $
+# $OpenBSD: i386,v 1.24 2006/02/28 17:11:55 pvalchev Exp $
 # This is the master list of subdirs used to choose i386 packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -42,6 +42,10 @@ x11/openmotif
 www/mozilla-firefox
 x11/kde/base3
 x11/kde/office3
+x11/kde/edu3
+graphics/digikam
+graphics/digikam-image-plugins
+x11/kde/games3
 x11/windowmaker
 x11/windowmaker-extra
 www/tidy
@@ -101,3 +105,38 @@ graphics/ImageMagick
 audio/abcde
 devel/smpeg
 mail/mozilla-thunderbird
+graphics/gimp/stable
+emulators/redhat/base
+emulators/redhat/motif
+sysutils/gkrellm/gkrellm
+sysutils/gkrellm/plugins/aclock
+sysutils/gkrellm/plugins/flynn
+sysutils/gkrellm/plugins/itime
+sysutils/gkrellm/plugins/kam
+sysutils/gkrellm/plugins/launch
+sysutils/gkrellm/plugins/mailwatch
+sysutils/gkrellm/plugins/mms
+sysutils/gkrellm/plugins/moon
+sysutils/gkrellm/plugins/mss
+sysutils/gkrellm/plugins/reminder
+sysutils/gkrellm/plugins/shoot
+sysutils/gkrellm/plugins/stock
+sysutils/gkrellm/plugins/sun
+sysutils/gkrellm/plugins/volume
+sysutils/gkrellm/plugins/weather
+sysutils/gkrellm/plugins/wireless
+misc/xcdroast
+net/unison/stable
+misc/magicpoint
+audio/xmms
+audio/xmms,-vorbis
+audio/xmms-mad
+graphics/jhead
+x11/ogle
+graphics/gphoto2
+#x11/blackbox
+#x11/icewm
+x11/rdesktop
+textproc/ispell
+textproc/ispell,-french
+textproc/ispell,-spanish

@@ -1,32 +1,32 @@
-# $OpenBSD: sparc,v 1.16 2006/02/26 04:51:13 pvalchev Exp $
+# $OpenBSD: sparc,v 1.17 2006/02/28 17:11:38 pvalchev Exp $
 # This is the master list of subdirs used to choose sparc packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
 net/rsync
 textproc/gdiff
 sysutils/mergemaster
-editors/vim,no_x11
+#editors/vim,no_x11 XXX
 editors/emacs21
 #archivers/unzip
-archivers/bzip2
+#archivers/bzip2
 #print/teTeX/base
 net/nmap,no_x11
 #net/pptp
 #sysutils/cdrtools
-mail/procmail
-mail/fetchmail
+#mail/procmail
+#mail/fetchmail
 misc/screen
 #net/samba
-shells/zsh
+#shells/zsh
 shells/bash
-shells/tcsh
+#shells/tcsh
 mail/mutt/stable
-net/curl
+#net/curl
 #print/ghostscript/gnu
 #print/gv
 devel/id-utils
 x11/openmotif
-www/mozilla-firefox
+#www/mozilla-firefox
 #x11/kde/base3
 #x11/kde/office3
 #x11/kde/pim3
@@ -37,9 +37,9 @@ textproc/xpdf
 #graphics/gqview
 #lang/python/2.3
 #lang/python/2.3,-tools
-sysutils/pftop
-security/stunnel
-www/links
-net/snort
+#sysutils/pftop
+#security/stunnel
+#www/links
+#net/snort
 #www/squid
 #www/transproxy

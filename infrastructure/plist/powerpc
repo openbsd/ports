@@ -1,4 +1,4 @@
-# $OpenBSD: powerpc,v 1.21 2006/02/26 04:51:13 pvalchev Exp $
+# $OpenBSD: powerpc,v 1.22 2006/02/28 17:11:55 pvalchev Exp $
 # This is the master list of subdirs used to choose powerpc packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -12,8 +12,8 @@ editors/emacs21
 #net/nmap,no_x11
 #net/pptp
 sysutils/cdrtools
-mail/procmail
-mail/fetchmail
+#mail/procmail
+#mail/fetchmail
 misc/screen
 #graphics/gif2png
 #shells/zsh
@@ -26,7 +26,7 @@ mail/mutt/stable
 #net/wget
 #print/ghostscript/gnu
 #print/gv
-##audio/cdparanoia
+#audio/cdparanoia
 net/ircII
 www/mozilla-firefox
 #devel/id-utils
