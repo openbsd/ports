@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.11 2006/01/17 07:18:23 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2006/03/04 15:10:31 sturm Exp $
 # $FreeBSD: ports/math/fftw/Makefile,v 1.11 2000/06/16 21:51:38 asami Exp $
 # Original from: Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
 
 COMMENT=	"C routines for computing the Discrete Fourier Transform"
 
 DISTNAME=	fftw-2.1.5
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS=	fftw	2.7 \
 		rfftw	2.7
 CATEGORIES=	math
 
 HOMEPAGE=	http://www.fftw.org/
-
-MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.21 2005/01/29 00:19:12 alek Exp $
+# $OpenBSD: Makefile,v 1.22 2006/03/04 15:10:31 sturm Exp $
 
 COMMENT=	"two-dimensional drawing tool and hyper-object browser"
 
 DISTNAME=	tgif-QPL-4.1.43
-PKGNAME=	${DISTNAME:S/-QPL//}
+PKGNAME=	${DISTNAME:S/-QPL//}p0
 CATEGORIES=	graphics
 
 MASTER_SITES=	ftp://bourbon.usc.edu/pub/tgif/ \
 		${MASTER_SITE_SOURCEFORGE:=tgif/}
 
 HOMEPAGE=	http://bourbon.usc.edu:8001/tgif/
-
-MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
 # Trolltech Q License
 PERMIT_PACKAGE_CDROM=	yes

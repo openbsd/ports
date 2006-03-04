@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2005/12/22 09:26:50 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2006/03/04 15:10:31 sturm Exp $
 
 COMMENT=	"translate common internet acronyms"
 
 DISTNAME=	wtf-20051104
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games
-
-MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
 # Public Domain
 PERMIT_PACKAGE_CDROM=	Yes

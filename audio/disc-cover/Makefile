@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2006/02/08 04:54:48 david Exp $
+# $OpenBSD: Makefile,v 1.17 2006/03/04 15:10:30 sturm Exp $
 
 COMMENT=	"creates cover for audio cds using cddb and latex"
 
 DISTNAME=	disc-cover-1.5.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
 
 HOMEPAGE=	http://homepages.cwi.nl/~jvhemert/disc-cover.html
-
-MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

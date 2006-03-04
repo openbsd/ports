@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2005/11/11 19:38:07 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2006/03/04 15:10:31 sturm Exp $
 
 COMMENT=		"client for Cisco 3000 VPN concentrators"
 
 DISTNAME=		vpnc-0.3.3
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		security net
 
 HOMEPAGE=		http://www.unix-ag.uni-kl.de/~massar/vpnc/
-
-MAINTAINER=		Nikolay Sturm <sturm@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

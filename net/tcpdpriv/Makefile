@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/16 00:31:26 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2006/03/04 15:10:31 sturm Exp $
 
 COMMENT=	"removes sensitive information from a tcpdump -w file"
 
 DISTNAME=	tcpdpriv-1.1.10
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net security
 
 HOMEPAGE=	http://ita.ee.lbl.gov/html/contrib/tcpdpriv.html
-
-MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2006/02/08 04:54:50 david Exp $
+# $OpenBSD: Makefile,v 1.5 2006/03/04 15:10:31 sturm Exp $
 
 COMMENT=	"PDF presentation post processor"
 
 DISTNAME=	ppower4-0.9.4
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	print
 
 HOMEPAGE=	http://www-sp.iti.informatik.tu-darmstadt.de/software/ppower4/
-
-MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

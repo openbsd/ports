@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/02/08 04:54:48 david Exp $
+# $OpenBSD: Makefile,v 1.10 2006/03/04 15:10:31 sturm Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,10 +6,8 @@ COMMENT=		"Perl extension for Ogg Vorbis streams"
 
 V=			0.04
 DISTNAME=		libvorbis-perl-${V}
-PKGNAME=		p5-libvorbis-${V}p0
+PKGNAME=		p5-libvorbis-${V}p1
 CATEGORIES=		audio perl5
-
-MAINTAINER=		Nikolay Sturm <sturm@openbsd.org>
 
 # GPL or Artistic
 PERMIT_PACKAGE_CDROM=	Yes

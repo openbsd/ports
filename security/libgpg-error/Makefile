@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2005/12/24 22:32:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2006/03/04 15:10:31 sturm Exp $
 
 COMMENT=	"error codes for GnuPG related software"
 
 DISTNAME=	libgpg-error-1.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	security devel
 SHARED_LIBS=	gpg-error	1.4
 MODGNU_SHARED_LIBS=gpg-error	''
 LIBgpg-error_ALIAS=gpg_error
-
-MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

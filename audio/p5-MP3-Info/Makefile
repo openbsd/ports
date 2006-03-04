@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2005/08/07 09:40:06 sturm Exp $
+# $OpenBSD: Makefile,v 1.13 2006/03/04 15:10:31 sturm Exp $
 
 COMMENT=	"Perl5 module for reading MPEG1-Layer3 tags"
 
 DISTNAME=	MP3-Info-1.13
-PKGNAME=	p5-${DISTNAME}
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	audio perl5
 
 HOMEPAGE=	http://search.cpan.org/~cnandor/MP3-Info/
-
-MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
 # Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
