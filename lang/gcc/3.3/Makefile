@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/01/22 23:21:46 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2006/03/04 13:44:19 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
@@ -111,21 +111,24 @@ DISTFILES+=adastrap-${MACHINE_ARCH}-3.3.6-2.tgz:0
 CONFIGURE_ENV=ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 MAKE_ENV=ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 
+post-build:
+	cd ${WRKBUILD}/gcc && ${MAKE_PROGRAM} gnatlib_and_tools
+
+.endif
+
 post-extract:
-.for f in egcc gnatbind gnatmake gnatlink
+.if ${MAKE_ADA:L} == "yes"
+.  for f in egcc gnatbind gnatmake gnatlink
 	echo "#! /bin/sh" >${WRKDIR}/bin/$f
 	echo 'GNAT_ROOT=${WRKDIR}/bootstrap GCC_ROOT=${WRKDIR}/bootstrap exec ${WRKDIR}/bootstrap/bin/$f "$$@"' >>${WRKDIR}/bin/$f
 	chmod a+x ${WRKDIR}/bin/$f
-.endfor
+.  endfor
+.endif
 	echo "# This file automatically generated" >> ${WRKSRC}/libversions
 .for l v in ${SHARED_LIBS}
 	echo "LIB$l_LTVERSION = -version-info ${v:S/./:/}" >> ${WRKSRC}/libversions
 .endfor
 
-post-build:
-	cd ${WRKBUILD}/gcc && ${MAKE_PROGRAM} gnatlib_and_tools
-
-.endif
 CONFIGURE_ENV+=am_cv_func_iconv=no
 
 CONFIGURE_ARGS= \
