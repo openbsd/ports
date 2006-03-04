@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_kernel_qapplication_x11_cpp,v 1.3 2006/03/04 10:07:10 espie Exp $
+--- src/kernel/qapplication_x11.cpp.orig	Mon Feb 27 13:00:20 2006
++++ src/kernel/qapplication_x11.cpp	Mon Feb 27 13:12:05 2006
+@@ -3294,11 +3294,7 @@ int QApplication::x11ProcessEvent( XEven
+     // filtering opportunity first to ensure all input methods work
+     // properly regardless of application design.
+ 
+-#ifndef QT_NO_IM_EXTENSIONS
+     if( keywidget && keywidget->isEnabled() && keywidget->isInputMethodEnabled() ) {
+-#else
+-    if( keywidget && keywidget->isEnabled() ) {
+-#endif
+ 	if( ( event->type==XKeyPress || event->type==XKeyRelease ) &&
+ 	    sm_blockUserInput ) // block user interaction during session management
+ 	    return TRUE;
+@@ -5220,11 +5216,12 @@ bool QETWidget::translateKeyEventInterna
+     } else {
+ 	key = (int)(long)keyDict->find( keycode );
+ 	if ( key )
+-	    if( !willRepeat ) // Take out key of dictionary only if this call.
++	    if( !willRepeat && statefulTranslation ) // Take out key of dictionary only if this call.
+ 		keyDict->take( keycode );
+ 	long s = (long)textDict->find( keycode );
+ 	if ( s ) {
+-	    textDict->take( keycode );
++            if( statefulTranslation )
++		textDict->take( keycode );
+ 	    ascii = (char)(s-256);
+ 	}
+     }

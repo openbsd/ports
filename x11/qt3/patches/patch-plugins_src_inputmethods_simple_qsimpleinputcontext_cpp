@@ -1,0 +1,73 @@
+$OpenBSD: patch-plugins_src_inputmethods_simple_qsimpleinputcontext_cpp,v 1.1 2006/03/04 10:07:10 espie Exp $
+--- plugins/src/inputmethods/simple/qsimpleinputcontext.cpp.orig	Mon Feb 27 12:38:25 2006
++++ plugins/src/inputmethods/simple/qsimpleinputcontext.cpp	Mon Feb 27 12:48:56 2006
+@@ -140,7 +140,7 @@ bool QSimpleInputContext::filterEvent( c
+         // only one character. See description of
+         // QInputContext::filterEvent() about key compression.
+         val = text[0].unicode();
+-        qDebug( "str = %s", (const char*)keyevent->text().local8Bit() );
++        //qDebug( "str = %s", (const char*)keyevent->text().local8Bit() );
+     }
+ 
+     // Store value
+@@ -164,14 +164,14 @@ bool QSimpleInputContext::filterEvent( c
+ 
+ void QSimpleInputContext::setFocus()
+ {
+-    qDebug( "QSimpleInputContext: %p->setFocus(), focusWidget()=%p",
+-            this, focusWidget() );
++    //qDebug( "QSimpleInputContext: %p->setFocus(), focusWidget()=%p",
++     //       this, focusWidget() );
+ }
+ 
+ void QSimpleInputContext::unsetFocus()
+ {
+-    qDebug( "QSimpleInputContext: %p->unsetFocus(), focusWidget()=%p",
+-            this, focusWidget() );
++    //qDebug( "QSimpleInputContext: %p->unsetFocus(), focusWidget()=%p",
++     //       this, focusWidget() );
+     reset();
+ }
+ 
+@@ -188,8 +188,8 @@ void QSimpleInputContext::mouseHandler( 
+     case QEvent::MouseButtonRelease:
+     case QEvent::MouseButtonDblClick:
+     case QEvent::MouseMove:
+-        qDebug( "QSimpleInputContext::mouseHandler: "
+-                "x=%d, type=%d, button=%d, state=%d", x, type, button, state );
++        //qDebug( "QSimpleInputContext::mouseHandler: "
++         //       "x=%d, type=%d, button=%d, state=%d", x, type, button, state );
+         break;
+     default:
+         break;
+@@ -240,7 +240,7 @@ bool QSimpleInputContext::checkComposeTa
+ 
+     // no entries were found
+     if ( p == composeTable->data + composeTable->size ) {
+-        qDebug( "no match" );
++        //qDebug( "no match" );
+         clearComposeBuffer();
+         return FALSE;
+     }
+@@ -250,18 +250,18 @@ bool QSimpleInputContext::checkComposeTa
+ 
+         // check if partial match
+         if ( composeBuffer[i] == 0 && p->keys[i] ) {
+-            qDebug("partial match");
++            //qDebug("partial match");
+             return TRUE;
+         }
+ 
+         if ( composeBuffer[i] != p->keys[i] ) {
+-            qDebug("different entry");
++            //qDebug("different entry");
+             clearComposeBuffer();
+             return i!=0;
+         }
+     }
+ 
+-    qDebug("match exactly");
++    //qDebug("match exactly");
+ 
+     // match exactly
+     commitChar( p->value );

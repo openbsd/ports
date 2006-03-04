@@ -1,0 +1,14 @@
+$OpenBSD: patch-plugins_src_inputmethods_imsw-multi_qmultiinputcontext_cpp,v 1.1 2006/03/04 10:07:10 espie Exp $
+--- plugins/src/inputmethods/imsw-multi/qmultiinputcontext.cpp.orig	Mon Feb 27 12:38:25 2006
++++ plugins/src/inputmethods/imsw-multi/qmultiinputcontext.cpp	Mon Feb 27 12:48:56 2006
+@@ -306,8 +306,8 @@ void QMultiInputContext::changeInputMeth
+ 
+         currentIMKey = key;
+ 
+-	qDebug( "QMultiInputContext::changeInputMethod(): index=%d, slave=%s",
+-		imIndex, (const char *)_slave->identifierName() );
++	//qDebug( "QMultiInputContext::changeInputMethod(): index=%d, slave=%s",
++	//	imIndex, (const char *)_slave->identifierName() );
+     }
+ }
+ 

@@ -1,12 +1,28 @@
-$OpenBSD: patch-src_kernel_qwidget_x11_cpp,v 1.5 2006/02/27 16:40:25 espie Exp $
---- src/kernel/qwidget_x11.cpp.orig	Mon Feb 27 17:39:38 2006
-+++ src/kernel/qwidget_x11.cpp	Mon Feb 27 17:40:23 2006
-@@ -2754,7 +2754,7 @@ void QWidget::changeInputContext( const 
+$OpenBSD: patch-src_kernel_qwidget_x11_cpp,v 1.6 2006/03/04 10:07:10 espie Exp $
+--- src/kernel/qwidget_x11.cpp.orig	Mon Feb 27 13:00:21 2006
++++ src/kernel/qwidget_x11.cpp	Mon Feb 27 13:02:18 2006
+@@ -2698,11 +2698,10 @@ QInputContext *QWidget::getInputContext(
+ {
+     QInputContext *qic = 0;
+ 
+-#if !defined(QT_NO_IM_EXTENSIONS)
+     if ( isInputMethodEnabled() ) {
++#if !defined(QT_NO_IM_EXTENSIONS)
+ 	qic = icHolderWidget()->ic;
+ #else
+-    {
+ 	// icHolderWidget is always topLevelWidget
+ 	QTLWExtra *topdata = icHolderWidget()->topData();
+ 	qic = (QInputContext *)topdata->xic;
+@@ -2753,10 +2752,8 @@ void QWidget::changeInputContext( const 
+ */
  void QWidget::createInputContext()
  {
- #if !defined(QT_NO_IM_EXTENSIONS)
+-#if !defined(QT_NO_IM_EXTENSIONS)
 -    if( !isInputMethodEnabled() )
-+    if( !isInputMethodEnabled() || QApplication::closingDown() )
++    if( !isInputMethodEnabled()  || QApplication::closingDown() )
  	return;
- #endif
+-#endif
  
+     QWidget *icWidget = icHolderWidget();
+ #ifndef QT_NO_IM
