@@ -7,5 +7,5 @@ export PATH
 
 x=`ftp -o - \
 'http://www.fourmilab.ch/cgi-bin/uncgi/Earth?imgsize=640&opt=-p&lat=-21&ns=North&lon=-134&ew=West&alt=986&img=irsat.bmp&daynight=-d' \
-| grep "/cache.*gif" | awk -F\" '{ print $2 }'`
+| grep "img src" | awk -F\" '{ print $2 }'`
 ftp -o clouds.gif "http://www.fourmilab.ch$x"
