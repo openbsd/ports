@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.35 2004/12/16 00:31:24 alek Exp $
+# $OpenBSD: Makefile,v 1.36 2006/03/04 04:30:11 brad Exp $
 
 COMMENT=	"small, easy to set up, fast and very secure FTP server"
 
-DISTNAME=	pure-ftpd-1.0.20
+DISTNAME=	pure-ftpd-1.0.21
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp2.fr.pureftpd.org/pub/mirrors/ftp.fr.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -30,8 +30,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --with-everything \
 		 --with-paranoidmsg \
 		 --with-privsep \
-		 --with-tls \
-		 --with-largefile
+		 --with-tls
 
 FLAVORS=	ldap mysql postgresql no_banner virtual_chroot
 FLAVOR?=
