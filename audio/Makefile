@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2006/02/12 14:58:15 david Exp $
+# $OpenBSD: Makefile,v 1.137 2006/03/04 09:18:43 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -53,6 +53,7 @@
      SUBDIR += mp3blaster
      SUBDIR += mp3cddb
      SUBDIR += mp3encode
+     SUBDIR += mp3gain
      SUBDIR += mp3info
      SUBDIR += mp3info,no_x11
      SUBDIR += mp3splt
