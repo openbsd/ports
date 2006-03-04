@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2005/06/27 09:21:04 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/03/04 13:38:00 steven Exp $
 
 COMMENT=	"documentation for autoconf, automake, libtool"
 
-V=		1.4
+V=		1.5
 DISTNAME=	autobook-${V}
 CATEGORIES=	books devel
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
-HOMEPAGE=	http://sources.redhat.com/autobook/
+HOMEPAGE=	http://sourceware.org/autobook/
 
 EXTRACT_ONLY=	
 NO_BUILD=	Yes
