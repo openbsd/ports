@@ -1,6 +1,6 @@
-$OpenBSD: patch-Configure,v 1.8 2006/01/25 21:27:32 sturm Exp $
---- Configure.orig	Tue Jan 24 22:18:37 2006
-+++ Configure	Wed Jan 25 20:56:34 2006
+$OpenBSD: patch-Configure,v 1.9 2006/03/05 10:06:46 sturm Exp $
+--- Configure.orig	Wed Feb 22 17:50:18 2006
++++ Configure	Sun Mar  5 10:40:00 2006
 @@ -323,7 +323,7 @@ d_memcpy=''
  d_msghdr_msg_flags=''
  d_nls=''
@@ -10,7 +10,7 @@ $OpenBSD: patch-Configure,v 1.8 2006/01/25 21:27:32 sturm Exp $
  d_random=''
  d_rusage=''
  d_sa_interrupt=''
-@@ -1082,7 +1082,7 @@ for file in $*; do
+@@ -1083,7 +1083,7 @@ for file in $*; do
  			dir=`expr X$file : 'X\(.*\)/'`
  			file=`expr X$file : 'X.*/\(.*\)'`
  			./mkdirp $dir
@@ -19,7 +19,7 @@ $OpenBSD: patch-Configure,v 1.8 2006/01/25 21:27:32 sturm Exp $
  			;;
  		*)
  			sh <"$SRC/$file"
-@@ -5294,7 +5294,7 @@ main(void) {
+@@ -5295,7 +5295,7 @@ main(void) {
    static struct kevent changes[1], events[1];
    static struct timespec ts;
    static unsigned long filters[] = { EVFILT_READ, EVFILT_WRITE,
@@ -28,7 +28,7 @@ $OpenBSD: patch-Configure,v 1.8 2006/01/25 21:27:32 sturm Exp $
    int kq = kqueue();
    int fd = 0;
    unsigned long flags;
-@@ -7812,15 +7812,6 @@ If you'd like to make any changes to the
+@@ -7839,15 +7839,6 @@ If you'd like to make any changes to the
  to configure things, do it as a shell escape now (e.g. !vi config.sh).
  
  EOM
