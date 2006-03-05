@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/01/13 19:18:50 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2006/03/05 21:58:07 espie Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples for qt4"
@@ -7,10 +7,10 @@ COMMENT-postgresql=	"PostgresSQL plugin for qt4"
 COMMENT-mysql=		"MySQL plugin for qt4"
 
 PKGNAME=		qt4-${VERSION}
-PKGNAME-mysql=		qt4-mysql-${VERSION}p0
-PKGNAME-postgresql=	qt4-postgresql-${VERSION}p0
+PKGNAME-mysql=		qt4-mysql-${VERSION}
+PKGNAME-postgresql=	qt4-postgresql-${VERSION}
 PKGNAME-examples=	qt4-examples-${VERSION}
-FULLPKGNAME=		qt4-${VERSION}p0
+FULLPKGNAME=		qt4-${VERSION}
 FULLPKGNAME-html=	qt4-html-${VERSION}
 SHARED_LIBS=	Qt3Support 5.0 \
 		QtCore 5.0 \
@@ -24,8 +24,8 @@ SHARED_LIBS=	Qt3Support 5.0 \
 		QtSvg 5.0 \
 		QtTest 5.0
 
-VERSION=	4.1.0
-DISTNAME=	qt-x11-opensource-src-4.1.0
+VERSION=	4.1.1
+DISTNAME=	qt-x11-opensource-src-4.1.1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.rediris.es/mirror/Qt/source/ \
 		ftp://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/sources/ \
@@ -97,6 +97,7 @@ MULTI_PACKAGES+=-html -examples
 LIB_DEPENDS+=	jpeg::graphics/jpeg \
 		mng::graphics/libmng 
 
+WANTLIB+=	lcms
 .endif
 
 MULTI_PACKAGES+=	-mysql

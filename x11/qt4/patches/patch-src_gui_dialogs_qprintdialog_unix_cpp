@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_gui_dialogs_qprintdialog_unix_cpp,v 1.1 2005/12/31 15:59:50 espie Exp $
---- src/gui/dialogs/qprintdialog_unix.cpp.orig	Fri Dec 30 17:01:00 2005
-+++ src/gui/dialogs/qprintdialog_unix.cpp	Fri Dec 30 17:01:29 2005
-@@ -65,6 +65,8 @@
+$OpenBSD: patch-src_gui_dialogs_qprintdialog_unix_cpp,v 1.2 2006/03/05 21:58:07 espie Exp $
+--- src/gui/dialogs/qprintdialog_unix.cpp.orig	Thu Feb 16 11:51:12 2006
++++ src/gui/dialogs/qprintdialog_unix.cpp	Sun Mar  5 12:10:38 2006
+@@ -66,6 +66,8 @@
  #define BOOL_DEFINED
  #endif
  

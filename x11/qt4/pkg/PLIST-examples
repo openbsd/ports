@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.3 2005/12/31 15:59:51 espie Exp $
+@comment $OpenBSD: PLIST-examples,v 1.4 2006/03/05 21:58:07 espie Exp $
 %%SHARED%%
 bin/qtdemo
 lib/qt4/bin/qtdemo
@@ -687,7 +687,6 @@ lib/qt4/examples/network/torrent/metainfo.cpp
 lib/qt4/examples/network/torrent/metainfo.h
 lib/qt4/examples/network/torrent/peerwireclient.cpp
 lib/qt4/examples/network/torrent/peerwireclient.h
-lib/qt4/examples/network/torrent/qt4_music_video_VCD.mpg.torrent
 lib/qt4/examples/network/torrent/ratecontroller.cpp
 lib/qt4/examples/network/torrent/ratecontroller.h
 lib/qt4/examples/network/torrent/torrent
@@ -780,6 +779,7 @@ lib/qt4/examples/painting/painterpaths/window.h
 lib/qt4/examples/painting/painting.pro
 lib/qt4/examples/painting/svgviewer/
 lib/qt4/examples/painting/svgviewer/files/
+lib/qt4/examples/painting/svgviewer/files/bubbles.svg
 lib/qt4/examples/painting/svgviewer/files/cubic.svg
 lib/qt4/examples/painting/svgviewer/files/spheres.svg
 lib/qt4/examples/painting/svgviewer/main.cpp
@@ -837,8 +837,6 @@ lib/qt4/examples/richtext/orderform/orderform
 lib/qt4/examples/richtext/orderform/orderform.pro
 lib/qt4/examples/richtext/richtext.pro
 lib/qt4/examples/richtext/syntaxhighlighter/
-lib/qt4/examples/richtext/syntaxhighlighter/examples/
-lib/qt4/examples/richtext/syntaxhighlighter/examples/example
 lib/qt4/examples/richtext/syntaxhighlighter/highlighter.cpp
 lib/qt4/examples/richtext/syntaxhighlighter/highlighter.h
 lib/qt4/examples/richtext/syntaxhighlighter/main.cpp
@@ -846,7 +844,6 @@ lib/qt4/examples/richtext/syntaxhighlighter/mainwindow.cpp
 lib/qt4/examples/richtext/syntaxhighlighter/mainwindow.h
 lib/qt4/examples/richtext/syntaxhighlighter/syntaxhighlighter
 lib/qt4/examples/richtext/syntaxhighlighter/syntaxhighlighter.pro
-lib/qt4/examples/richtext/syntaxhighlighter/syntaxhighlighter.qrc
 lib/qt4/examples/sql/
 lib/qt4/examples/sql/README
 lib/qt4/examples/sql/cachedtable/
@@ -1177,17 +1174,20 @@ lib/qt4/examples/widgets/lineedits/main.cpp
 lib/qt4/examples/widgets/lineedits/window.cpp
 lib/qt4/examples/widgets/lineedits/window.h
 lib/qt4/examples/widgets/movie/
-lib/qt4/examples/widgets/movie/icons/
-lib/qt4/examples/widgets/movie/icons/eject.png
-lib/qt4/examples/widgets/movie/icons/play-pause.png
-lib/qt4/examples/widgets/movie/icons/quit.png
-lib/qt4/examples/widgets/movie/icons/stop.png
+lib/qt4/examples/widgets/movie/images/
+lib/qt4/examples/widgets/movie/images/open.png
+lib/qt4/examples/widgets/movie/images/pause.png
+lib/qt4/examples/widgets/movie/images/play.png
+lib/qt4/examples/widgets/movie/images/quit.png
+lib/qt4/examples/widgets/movie/images/stop.png
 lib/qt4/examples/widgets/movie/main.cpp
 lib/qt4/examples/widgets/movie/movie
 lib/qt4/examples/widgets/movie/movie.pro
 lib/qt4/examples/widgets/movie/movie.qrc
 lib/qt4/examples/widgets/movie/movieplayer.cpp
 lib/qt4/examples/widgets/movie/movieplayer.h
+lib/qt4/examples/widgets/movie/movies/
+lib/qt4/examples/widgets/movie/movies/fire.mng
 lib/qt4/examples/widgets/screenshot/
 lib/qt4/examples/widgets/screenshot/main.cpp
 lib/qt4/examples/widgets/screenshot/screenshot

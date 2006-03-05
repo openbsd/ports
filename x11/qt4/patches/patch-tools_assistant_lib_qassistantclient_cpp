@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_assistant_lib_qassistantclient_cpp,v 1.1 2005/12/31 15:59:50 espie Exp $
---- tools/assistant/lib/qassistantclient.cpp.orig	Fri Dec 30 09:56:37 2005
-+++ tools/assistant/lib/qassistantclient.cpp	Fri Dec 30 09:57:00 2005
-@@ -128,11 +128,11 @@ QAssistantClient::QAssistantClient( cons
+$OpenBSD: patch-tools_assistant_lib_qassistantclient_cpp,v 1.2 2006/03/05 21:58:07 espie Exp $
+--- tools/assistant/lib/qassistantclient.cpp.orig	Thu Feb 16 11:51:19 2006
++++ tools/assistant/lib/qassistantclient.cpp	Sun Mar  5 12:10:38 2006
+@@ -166,11 +166,11 @@ QAssistantClient::QAssistantClient( cons
      : QObject( parent ), host ( "localhost" )
  {
      if ( path.isEmpty() )

@@ -1,7 +1,8 @@
-$OpenBSD: patch-config_tests_unix_nis_nis_cpp,v 1.1 2005/12/31 15:59:50 espie Exp $
---- config.tests/unix/nis/nis.cpp.orig	Fri Dec 30 10:10:15 2005
-+++ config.tests/unix/nis/nis.cpp	Fri Dec 30 10:11:09 2005
-@@ -1,3 +1,5 @@
+$OpenBSD: patch-config_tests_unix_nis_nis_cpp,v 1.2 2006/03/05 21:58:07 espie Exp $
+--- config.tests/unix/nis/nis.cpp.orig	Thu Feb 16 11:51:21 2006
++++ config.tests/unix/nis/nis.cpp	Sun Mar  5 12:10:37 2006
+@@ -1,4 +1,6 @@
+ #include <sys/types.h>
 +#include <sys/types.h>
 +#include <rpc/rpc.h>
  #include <rpcsvc/ypclnt.h>
