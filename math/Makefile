@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2006/02/12 16:24:50 david Exp $
+# $OpenBSD: Makefile,v 1.52 2006/03/05 00:24:03 marco Exp $
 #
 
      SUBDIR += R
@@ -29,6 +29,7 @@
      SUBDIR += maxima
      SUBDIR += mcl
      SUBDIR += mcsim
+     SUBDIR += moo
      SUBDIR += netcdf
      SUBDIR += ntl
      SUBDIR += octave
