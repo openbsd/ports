@@ -1,0 +1,20 @@
+$OpenBSD: patch-master_c,v 1.1.1.1 2006/03/05 17:05:36 niallo Exp $
+--- master.c.orig	Sun Jul  4 17:07:03 2004
++++ master.c	Sun Feb 26 01:19:14 2006
+@@ -17,6 +17,7 @@
+     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ */
+ #include "dtach.h"
++#define HAVE_OPENPTY
+ 
+ /* The pty struct - The pty information is stored here. */
+ struct pty
+@@ -124,7 +125,7 @@ create_socket(char *name)
+ 	if (s < 0)
+ 		return -1;
+ 	sockun.sun_family = AF_UNIX;
+-	strcpy(sockun.sun_path, name);
++	strlcpy(sockun.sun_path, name, sizeof(sockun.sun_path));
+ 	if (bind(s, (struct sockaddr*)&sockun, sizeof(sockun)) < 0)
+ 	{
+ 		close(s);
