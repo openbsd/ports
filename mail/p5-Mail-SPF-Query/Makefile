@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2006/02/01 20:51:17 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/03/05 12:25:30 steven Exp $
 
 COMMENT=		"perl module to query Sender Policy Framework"
 
-DISTNAME=		Mail-SPF-Query-1.998
-PKGNAME=		p5-${DISTNAME}p0
+DISTNAME=		Mail-SPF-Query-1.999.1
+PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		mail perl5
 
 MAINTAINER=		David Hill <dhill@mindcry.org>
