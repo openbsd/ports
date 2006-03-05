@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2005/12/04 16:26:20 pedro Exp $
+@comment $OpenBSD: PLIST,v 1.15 2006/03/05 16:20:09 pedro Exp $
 %%SHARED%%
 bin/ion3
 bin/pwm3
@@ -90,3 +90,4 @@ share/ion3/welcome.txt
 share/locale/cs/LC_MESSAGES/ion3.mo
 share/locale/de/LC_MESSAGES/ion3.mo
 share/locale/fi/LC_MESSAGES/ion3.mo
+share/locale/ru/LC_MESSAGES/ion3.mo
