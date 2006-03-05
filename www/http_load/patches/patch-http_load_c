@@ -1,0 +1,56 @@
+$OpenBSD: patch-http_load_c,v 1.3 2006/03/05 21:12:13 sturm Exp $
+--- http_load.c.orig	Fri May 20 21:10:23 2005
++++ http_load.c	Mon Feb 27 18:26:05 2006
+@@ -655,11 +655,11 @@ lookup_address( int url_num )
+     (void) memset( &hints, 0, sizeof(hints) );
+     hints.ai_family = PF_UNSPEC;
+     hints.ai_socktype = SOCK_STREAM;
+-    (void) snprintf( portstr, sizeof(portstr), "%d", (int) urls[url_num].port );
+-    if ( (gaierr = getaddrinfo( urls[url_num].hostname, portstr, &hints, &ai )) != 0 )
++    (void) snprintf( portstr, sizeof(portstr), "%d", (int) port );
++    if ( (gaierr = getaddrinfo( hostname, portstr, &hints, &ai )) != 0 )
+ 	{
+ 	(void) fprintf(
+-	    stderr, "%s: getaddrinfo %s - %s\n", argv0, urls[url_num].hostname,
++	    stderr, "%s: getaddrinfo %s - %s\n", argv0, hostname,
+ 	    gai_strerror( gaierr ) );
+ 	exit( 1 );
+ 	}
+@@ -689,7 +689,7 @@ lookup_address( int url_num )
+ 	    {
+ 	    (void) fprintf(
+ 		stderr, "%s - sockaddr too small (%lu < %lu)\n",
+-		urls[url_num].hostname,
++		hostname,
+ 		(unsigned long) sizeof(urls[url_num].sa),
+ 		(unsigned long) aiv4->ai_addrlen );
+ 	    exit( 1 );
+@@ -708,7 +708,7 @@ lookup_address( int url_num )
+ 	    {
+ 	    (void) fprintf(
+ 		stderr, "%s - sockaddr too small (%lu < %lu)\n",
+-		urls[url_num].hostname,
++		hostname,
+ 		(unsigned long) sizeof(urls[url_num].sa),
+ 		(unsigned long) aiv6->ai_addrlen );
+ 	    exit( 1 );
+@@ -723,16 +723,15 @@ lookup_address( int url_num )
+ 	}
+ 
+     (void) fprintf(
+-	stderr, "%s: no valid address found for host %s\n", argv0,
+-	urls[url_num].hostname );
++	stderr, "%s: no valid address found for host %s\n", argv0, hostname );
+     exit( 1 );
+ 
+ #else /* USE_IPV6 */
+ 
+-    he = gethostbyname( urls[url_num].hostname );
++    he = gethostbyname( hostname );
+     if ( he == (struct hostent*) 0 )
+ 	{
+-	(void) fprintf( stderr, "%s: unknown host - %s\n", argv0, urls[url_num].hostname );
++	(void) fprintf( stderr, "%s: unknown host - %s\n", argv0, hostname );
+ 	exit( 1 );
+ 	}
+     urls[url_num].sock_family = urls[url_num].sa.sin_family = he->h_addrtype;
