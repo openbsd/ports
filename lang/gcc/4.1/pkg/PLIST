@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/08/04 14:51:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/03/05 22:11:15 espie Exp $
 %%SHARED%%
 bin/ecpp
 bin/egcc
@@ -6,12 +6,6 @@ bin/egccbug
 bin/egcov
 bin/${CONFIG}-egcc
 bin/${CONFIG}-gcc-${V}
-include/mf-runtime.h
-include/ssp/
-include/ssp/ssp.h
-include/ssp/stdio.h
-include/ssp/string.h
-include/ssp/unistd.h
 @info info/cpp.info
 @info info/cppinternals.info
 @info info/gcc.info
@@ -22,20 +16,23 @@ lib/gcc/${CONFIG}/
 lib/gcc/${CONFIG}/${V}/
 lib/gcc/${CONFIG}/${V}/include/
 lib/gcc/${CONFIG}/${V}/include/README
-lib/gcc/${CONFIG}/${V}/include/arpa/
-lib/gcc/${CONFIG}/${V}/include/arpa/nameser.h
 lib/gcc/${CONFIG}/${V}/include/com_err.h
 lib/gcc/${CONFIG}/${V}/include/limits.h
 lib/gcc/${CONFIG}/${V}/include/math.h
 lib/gcc/${CONFIG}/${V}/include/rpc/
 lib/gcc/${CONFIG}/${V}/include/rpc/rpc_des.h
 lib/gcc/${CONFIG}/${V}/include/rpc/svc.h
+lib/gcc/${CONFIG}/${V}/include/ssp/
+lib/gcc/${CONFIG}/${V}/include/ssp/ssp.h
+lib/gcc/${CONFIG}/${V}/include/ssp/stdio.h
+lib/gcc/${CONFIG}/${V}/include/ssp/string.h
+lib/gcc/${CONFIG}/${V}/include/ssp/unistd.h
 lib/gcc/${CONFIG}/${V}/include/stddef.h
+lib/gcc/${CONFIG}/${V}/include/stdio.h
 lib/gcc/${CONFIG}/${V}/include/stdlib.h
 lib/gcc/${CONFIG}/${V}/include/sys/
 lib/gcc/${CONFIG}/${V}/include/sys/types.h
 lib/gcc/${CONFIG}/${V}/include/syslimits.h
-lib/gcc/${CONFIG}/${V}/include/unistd.h
 lib/gcc/${CONFIG}/${V}/include/unwind.h
 lib/gcc/${CONFIG}/${V}/install-tools/
 lib/gcc/${CONFIG}/${V}/install-tools/gsyslimits.h
@@ -48,10 +45,6 @@ lib/gcc/${CONFIG}/${V}/install-tools/mkheaders.conf
 lib/gcc/${CONFIG}/${V}/libgcc.a
 lib/gcc/${CONFIG}/${V}/libgcov.a
 lib/libiberty.a
-lib/libmudflap.a
-lib/libmudflap.la
-lib/libmudflapth.a
-lib/libmudflapth.la
 lib/libssp.a
 lib/libssp.la
 lib/libssp_nonshared.a

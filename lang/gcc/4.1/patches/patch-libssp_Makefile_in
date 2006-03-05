@@ -1,0 +1,15 @@
+$OpenBSD: patch-libssp_Makefile_in,v 1.1 2006/03/05 22:11:15 espie Exp $
+--- libssp/Makefile.in.orig	Sun Mar  5 12:49:20 2006
++++ libssp/Makefile.in	Sun Mar  5 12:50:03 2006
+@@ -230,9 +230,10 @@ libssp_la_SOURCES = \
+ 	strcat-chk.c strcpy-chk.c strncat-chk.c strncpy-chk.c \
+ 	vsnprintf-chk.c vsprintf-chk.c
+ 
++include $(top_srcdir)/../libversions
+ libssp_la_LIBADD = 
+ libssp_la_DEPENDENCIES = $(version_dep) $(libssp_la_LIBADD)
+-libssp_la_LDFLAGS = -version-info `grep -v '^\#' $(srcdir)/libtool-version` \
++libssp_la_LDFLAGS = $(LIBssp_LTVERSION) \
+ 		    $(version_arg)
+ 
+ libssp_nonshared_la_SOURCES = \

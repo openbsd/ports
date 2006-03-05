@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_diagnostic_c,v 1.2 2005/08/04 14:51:37 espie Exp $
---- gcc/diagnostic.c.orig	Fri Jul  1 16:26:18 2005
-+++ gcc/diagnostic.c	Thu Aug  4 10:54:01 2005
-@@ -346,7 +346,7 @@ diagnostic_report_diagnostic (diagnostic
+$OpenBSD: patch-gcc_diagnostic_c,v 1.3 2006/03/05 22:11:15 espie Exp $
+--- gcc/diagnostic.c.orig	Fri Nov  4 00:08:18 2005
++++ gcc/diagnostic.c	Sat Mar  4 14:34:46 2006
+@@ -358,7 +358,7 @@ diagnostic_report_diagnostic (diagnostic
        if (context->show_option_requested && diagnostic->option_index)
  	diagnostic->message.format_spec
  	  = ACONCAT ((diagnostic->message.format_spec,

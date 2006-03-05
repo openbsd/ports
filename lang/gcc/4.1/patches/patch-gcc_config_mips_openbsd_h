@@ -1,0 +1,16 @@
+$OpenBSD: patch-gcc_config_mips_openbsd_h,v 1.1 2006/03/05 22:11:15 espie Exp $
+--- gcc/config/mips/openbsd.h.orig	Sat Mar  4 15:00:21 2006
++++ gcc/config/mips/openbsd.h	Sat Mar  4 15:01:03 2006
+@@ -58,10 +58,10 @@ Boston, MA 02110-1301, USA.  */
+ 
+ /* This must agree with <machine/ansi.h>.  */
+ #undef SIZE_TYPE
+-#define SIZE_TYPE "unsigned int"
++#define SIZE_TYPE "long unsigned int"
+ 
+ #undef PTRDIFF_TYPE
+-#define PTRDIFF_TYPE "int"
++#define PTRDIFF_TYPE "long int"
+ 
+ #undef WCHAR_TYPE
+ #define WCHAR_TYPE "int"

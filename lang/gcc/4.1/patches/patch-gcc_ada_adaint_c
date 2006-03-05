@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_ada_adaint_c,v 1.4 2005/09/11 22:04:41 espie Exp $
---- gcc/ada/adaint.c.orig	Mon Sep  5 09:49:24 2005
-+++ gcc/ada/adaint.c	Mon Sep 12 00:01:23 2005
-@@ -724,7 +724,7 @@ __gnat_open_new_temp (char *path, int fm
+$OpenBSD: patch-gcc_ada_adaint_c,v 1.5 2006/03/05 22:11:15 espie Exp $
+--- gcc/ada/adaint.c.orig	Tue Nov 15 14:52:31 2005
++++ gcc/ada/adaint.c	Sat Mar  4 14:34:45 2006
+@@ -731,7 +731,7 @@ __gnat_open_new_temp (char *path, int fm
  
    strcpy (path, "GNAT-XXXXXX");
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-gcc_ada_adaint_c,v 1.4 2005/09/11 22:04:41 espie Exp $
    return mkstemp (path);
  #elif defined (__Lynx__)
    mktemp (path);
-@@ -814,7 +814,7 @@ __gnat_tmp_name (char *tmp_filename)
+@@ -821,7 +821,7 @@ __gnat_tmp_name (char *tmp_filename)
      free (pname);
    }
  

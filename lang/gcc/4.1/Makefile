@@ -1,12 +1,20 @@
-# $OpenBSD: Makefile,v 1.10 2006/01/14 11:47:20 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2006/03/05 22:11:15 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
-BROKEN='adjust for types changes'
+#BROKEN='adjust for types changes'
 
-V=4.1.0
-DATE=20050909
+V=4.1.1
+DATE=20060303
 FULL_VERSION=4.1-${DATE}
 FULL_PKGVERSION=4.1.${DATE}
+SHARED_LIBS=	estdc++		7.0 \
+		gfortran	2.0 \
+		-org-w3c-dom	1.0 \
+		-org-xml-sax	1.0 \
+		gcj		5.0 \
+		objc		2.0 \
+		objc_gc		2.0 \
+		ssp		0.0
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
@@ -66,7 +74,7 @@ DISTNAME=   	gcc-${FULL_VERSION}
 
 DISTFILES=  ${DISTNAME}.tar.bz2
 #SUPDISTFILES=adastrap-i386-4.0-20050102-1.tgz:0
-SUPDISTFILES=adastrap-i386-3.3.6-1.tgz:0
+SUPDISTFILES=adastrap-i386-3.3.6-2.tgz:0
 
 MASTER_SITES=	${MASTER_SITE_GCC:=snapshots/$(FULL_VERSION)/}
 MASTER_SITES0=	ftp://quatramaran.ens.fr/pub/espie/
@@ -97,20 +105,26 @@ CONFIGURE_ARGS+=--enable-java-gc=system-boehm
 LANGS:=${LANGS},ada
 MULTI_PACKAGES+=-ada
 #DISTFILES+=adastrap-${MACHINE_ARCH}-4.0-20050102-1.tgz:0
-DISTFILES+=adastrap-${MACHINE_ARCH}-3.3.6-1.tgz:0
+DISTFILES+=adastrap-${MACHINE_ARCH}-3.3.6-2.tgz:0
 CONFIGURE_ENV=ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 MAKE_ENV=ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 CC=${WRKDIR}/bin/egcc
+.endif
 
 post-extract:
-.for f in egcc gnatbind gnatmake gnatlink
+.if ${MAKE_ADA:L} == "yes"
+.  for f in egcc gnatbind gnatmake gnatlink
 	echo "#! /bin/sh" >${WRKDIR}/bin/$f
 	echo 'GNAT_ROOT=${WRKDIR}/bootstrap GCC_ROOT=${WRKDIR}/bootstrap exec ${WRKDIR}/bootstrap/bin/$f "$$@"' >>${WRKDIR}/bin/$f
 	chmod a+x ${WRKDIR}/bin/$f
-.endfor
+.  endfor
 	ln -s /usr/bin/nm ${WRKDIR}/bin/enm
-
 .endif
+	echo "# This file automatically generated" >> ${WRKSRC}/libversions
+.for l v in ${SHARED_LIBS}
+	echo "LIB$l_LTVERSION = -version-info ${v:S/./:/}" >> ${WRKSRC}/libversions
+.endfor
+
 CONFIGURE_ENV+=am_cv_func_iconv=no
 CONFIGURE_ENV+=ac_cv_prog_CONFIGURED_M4=/usr/bin/m4
 
@@ -125,7 +139,8 @@ CONFIGURE_ARGS+= \
 	--disable-nls  \
 	--disable-checking \
 	--with-system-zlib \
-	--enable-libmudflap \
+	--disable-libmudflap \
+	--disable-libmudflap \
 	--with-as=/usr/bin/as \
 	--with-ld=/usr/bin/ld \
 	--with-gnu-ld \

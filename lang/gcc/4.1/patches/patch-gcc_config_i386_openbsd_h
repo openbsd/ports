@@ -1,0 +1,16 @@
+$OpenBSD: patch-gcc_config_i386_openbsd_h,v 1.1 2006/03/05 22:11:15 espie Exp $
+--- gcc/config/i386/openbsd.h.orig	Sat Mar  4 15:00:21 2006
++++ gcc/config/i386/openbsd.h	Sat Mar  4 15:00:44 2006
+@@ -41,10 +41,10 @@ Boston, MA 02110-1301, USA.  */
+ 
+ /* This must agree with <machine/ansi.h> */
+ #undef SIZE_TYPE
+-#define SIZE_TYPE "unsigned int"
++#define SIZE_TYPE "long unsigned int"
+ 
+ #undef PTRDIFF_TYPE
+-#define PTRDIFF_TYPE "int"
++#define PTRDIFF_TYPE "long int"
+ 
+ #undef WCHAR_TYPE
+ #define WCHAR_TYPE "int"

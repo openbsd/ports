@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ada,v 1.4 2005/09/11 22:04:41 espie Exp $
+@comment $OpenBSD: PLIST-ada,v 1.5 2006/03/05 22:11:15 espie Exp $
 bin/gnat
 bin/gnatbind
 bin/gnatbl
@@ -612,12 +612,17 @@ lib/gcc/${CONFIG}/${V}/adainclude/s-fatsfl.ads
 lib/gcc/${CONFIG}/${V}/adainclude/s-ficobl.ads
 lib/gcc/${CONFIG}/${V}/adainclude/s-fileio.adb
 lib/gcc/${CONFIG}/${V}/adainclude/s-fileio.ads
+lib/gcc/${CONFIG}/${V}/adainclude/s-filofl.ads
 lib/gcc/${CONFIG}/${V}/adainclude/s-finimp.adb
 lib/gcc/${CONFIG}/${V}/adainclude/s-finimp.ads
 lib/gcc/${CONFIG}/${V}/adainclude/s-finroo.adb
 lib/gcc/${CONFIG}/${V}/adainclude/s-finroo.ads
+lib/gcc/${CONFIG}/${V}/adainclude/s-fishfl.ads
 lib/gcc/${CONFIG}/${V}/adainclude/s-fore.adb
 lib/gcc/${CONFIG}/${V}/adainclude/s-fore.ads
+lib/gcc/${CONFIG}/${V}/adainclude/s-fvadfl.ads
+lib/gcc/${CONFIG}/${V}/adainclude/s-fvaffl.ads
+lib/gcc/${CONFIG}/${V}/adainclude/s-fvagfl.ads
 lib/gcc/${CONFIG}/${V}/adainclude/s-geveop.adb
 lib/gcc/${CONFIG}/${V}/adainclude/s-geveop.ads
 lib/gcc/${CONFIG}/${V}/adainclude/s-gloloc.adb
@@ -1301,9 +1306,14 @@ lib/gcc/${CONFIG}/${V}/adalib/s-fatllf.ali
 lib/gcc/${CONFIG}/${V}/adalib/s-fatsfl.ali
 lib/gcc/${CONFIG}/${V}/adalib/s-ficobl.ali
 lib/gcc/${CONFIG}/${V}/adalib/s-fileio.ali
+lib/gcc/${CONFIG}/${V}/adalib/s-filofl.ali
 lib/gcc/${CONFIG}/${V}/adalib/s-finimp.ali
 lib/gcc/${CONFIG}/${V}/adalib/s-finroo.ali
+lib/gcc/${CONFIG}/${V}/adalib/s-fishfl.ali
 lib/gcc/${CONFIG}/${V}/adalib/s-fore.ali
+lib/gcc/${CONFIG}/${V}/adalib/s-fvadfl.ali
+lib/gcc/${CONFIG}/${V}/adalib/s-fvaffl.ali
+lib/gcc/${CONFIG}/${V}/adalib/s-fvagfl.ali
 lib/gcc/${CONFIG}/${V}/adalib/s-geveop.ali
 lib/gcc/${CONFIG}/${V}/adalib/s-gloloc.ali
 lib/gcc/${CONFIG}/${V}/adalib/s-htable.ali

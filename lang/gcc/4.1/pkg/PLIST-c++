@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-c++,v 1.7 2005/09/11 22:04:41 espie Exp $
+@comment $OpenBSD: PLIST-c++,v 1.8 2006/03/05 22:11:15 espie Exp $
 bin/ec++
 bin/eg++
 bin/${CONFIG}-ec++
@@ -426,6 +426,7 @@ include/c++/${V}/${CONFIG}/bits/c++allocator.h
 include/c++/${V}/${CONFIG}/bits/c++config.h
 include/c++/${V}/${CONFIG}/bits/c++io.h
 include/c++/${V}/${CONFIG}/bits/c++locale.h
+include/c++/${V}/${CONFIG}/bits/cpu_defines.h
 include/c++/${V}/${CONFIG}/bits/ctype_base.h
 include/c++/${V}/${CONFIG}/bits/ctype_inline.h
 include/c++/${V}/${CONFIG}/bits/ctype_noninline.h

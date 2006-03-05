@@ -1,6 +1,6 @@
-$OpenBSD: patch-libstdc++-v3_src_Makefile_in,v 1.4 2005/08/04 14:51:37 espie Exp $
---- libstdc++-v3/src/Makefile.in.orig	Wed Jul 27 20:28:31 2005
-+++ libstdc++-v3/src/Makefile.in	Thu Aug  4 10:55:50 2005
+$OpenBSD: patch-libstdc++-v3_src_Makefile_in,v 1.5 2006/03/05 22:11:15 espie Exp $
+--- libstdc++-v3/src/Makefile.in.orig	Tue Jan 10 18:14:00 2006
++++ libstdc++-v3/src/Makefile.in	Sat Mar  4 14:51:22 2006
 @@ -274,7 +274,7 @@ WARN_CXXFLAGS = \
  AM_CPPFLAGS = $(GLIBCXX_INCLUDES)
  
@@ -9,8 +9,21 @@ $OpenBSD: patch-libstdc++-v3_src_Makefile_in,v 1.4 2005/08/04 14:51:37 espie Exp
 +toolexeclib_LTLIBRARIES = libestdc++.la
  @ENABLE_SYMVERS_DARWIN_EXPORT_FALSE@@ENABLE_SYMVERS_GNU_FALSE@version_arg = 
  @ENABLE_SYMVERS_DARWIN_EXPORT_TRUE@@ENABLE_SYMVERS_GNU_FALSE@version_arg = -Wl,-exported_symbols_list,libstdc++-symbol.explist
+ @ENABLE_SYMVERS_GNU_TRUE@version_arg = -Wl,--version-script=libstdc++-symbol.ver
+@@ -357,9 +357,11 @@ libstdc___la_LIBADD = \
+ 	$(top_builddir)/libmath/libmath.la \
+ 	$(top_builddir)/libsupc++/libsupc++convenience.la
  
-@@ -471,7 +471,7 @@ clean-toolexeclibLTLIBRARIES:
++include $(top_srcdir)/../libversions
++
+ libstdc___la_DEPENDENCIES = ${version_dep} $(libstdc___la_LIBADD)
+ libstdc___la_LDFLAGS = \
+-	-version-info $(libtool_VERSION) ${version_arg} -lm 
++	$(LIBestdc++_LTVERSION) ${version_arg} -lm 
+ 
+ 
+ # Use special rules for the deprecated source files so that they find
+@@ -470,7 +472,7 @@ clean-toolexeclibLTLIBRARIES:
  	  echo "rm -f \"$${dir}/so_locations\""; \
  	  rm -f "$${dir}/so_locations"; \
  	done

@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_host,v 1.4 2005/08/04 14:51:36 espie Exp $
---- gcc/config.host.orig	Wed Jul 20 08:38:59 2005
-+++ gcc/config.host	Thu Aug  4 10:54:00 2005
-@@ -188,6 +188,10 @@ case ${host} in
+$OpenBSD: patch-gcc_config_host,v 1.5 2006/03/05 22:11:15 espie Exp $
+--- gcc/config.host.orig	Sun Feb  5 17:18:20 2006
++++ gcc/config.host	Sat Mar  4 14:34:45 2006
+@@ -191,6 +191,10 @@ case ${host} in
      out_host_hook_obj=host-solaris.o
      host_xmake_file=x-solaris
      ;;
