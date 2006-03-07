@@ -1,25 +1,21 @@
-$OpenBSD: patch-config_configure_in,v 1.1 2006/02/21 09:49:02 espie Exp $
---- config/configure.in.orig	Sun Aug 21 21:39:12 2005
-+++ config/configure.in	Tue Feb 21 01:25:28 2006
-@@ -1098,10 +1098,10 @@ GD_PNG=no
- if test "$GD" != "no"; then
-   GD=no
-   LIBGD=no
--  AC_CHECK_LIB(gd, gdImageCreate , [LIBGD=yes])
-+  AC_CHECK_LIB(gd, gdImageCreate , [LIBGD=yes],, -lfreetype -lfontconfig)
+$OpenBSD: patch-config_configure_in,v 1.2 2006/03/07 09:19:14 espie Exp $
+--- config/configure.in.orig	Sun Feb 26 16:50:54 2006
++++ config/configure.in	Tue Mar  7 09:00:59 2006
+@@ -1057,7 +1057,7 @@ if test "$GD" != "no"; then
    if test "$LIBGD" = "yes"; then
+ 
      LIBPNG=no
 -    AC_CHECK_LIB(png, png_create_read_struct , [LIBPNG=yes])
 +    AC_CHECK_LIB(png, png_create_read_struct , [LIBPNG=yes],, -lz -lm)
-     LIBGD_PNG=no
-     AC_CHECK_LIB(gd, gdImagePng, [LIBGD_PNG=yes])
+ 
      if test "$LIBPNG" = "no"; then
-@@ -1111,7 +1111,7 @@ if test "$GD" != "no"; then
+       AC_MSG_NOTICE(png support not available)
+@@ -1081,7 +1081,7 @@ if test "$GD" != "no"; then
          GD=yes
-         HAS_GD_PNG=true
  	GD_PNG=yes
+         AC_MSG_RESULT(yes)
 -	AC_CHECK_LIB(png, png_access_version_number,[AC_DEFINE(HAVE_PNGVERSION, 1,)])
 +	AC_CHECK_LIB(png, png_access_version_number,[AC_DEFINE(HAVE_PNGVERSION, 1,)],, -lz -lm)
          AC_DEFINE(HAVE_GD_PNG, 1, [Define to 1 if you have png support in libgd.])
-         AC_MSG_NOTICE(using png support in libgd)
        else
+         AC_MSG_RESULT(no)
