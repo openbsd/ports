@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2006/01/13 19:12:15 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2006/03/07 19:31:46 sturm Exp $
 # $NetBSD: Makefile,v 1.37 2004/10/03 00:13:16 tv Exp $
 
 COMMENT=	"tools to connect your PalmOS® compatible handheld"
@@ -47,22 +47,5 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--without-java \
 			--without-python \
 			--without-tcl
-
-pre-configure:
-	@if pkg dependencies check pilot-link-\*; then \
-		if pkg dependencies check ${DISTNAME}; then \
-			:; \
-		else \
-			echo 1>&2 "+-------------------"; \
-			echo 1>&2 "| Error: you must remove the existing pilot-link installation"; \
-			echo 1>&2 "| before compiling this version. To fully remove run"; \
-			echo 1>&2 "| these commands as user root"; \
-			echo 1>&2 "|"; \
-			echo 1>&2 "|      pkg_delete `pkg_info -e 'pilot-link-*'`"; \
-			echo 1>&2 "|"; \
-			echo 1>&2 "+-------------------"; \
-			exit 1; \
-		fi; \
-	fi
 
 .include <bsd.port.mk>
