@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2006/03/07 19:30:36 sturm Exp $
+lib/erlang/lib/asn1-1.4.4.9/priv/lib/asn1_erl_drv.so
+lib/erlang/lib/crypto-1.4/priv/lib/crypto_drv.so
+lib/erlang/lib/megaco-3.2.3/priv/lib/megaco_flex_scanner_drv.so
+lib/erlang/lib/runtime_tools-1.5.1.1/priv/lib/trace_file_drv.so
+lib/erlang/lib/runtime_tools-1.5.1.1/priv/lib/trace_ip_drv.so

@@ -1,82 +1,41 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2001/10/20 13:31:26 naddy Exp $
---- Makefile.in.orig	Sun Oct 14 18:13:32 2001
-+++ Makefile.in	Sun Oct 14 18:15:06 2001
-@@ -70,8 +70,8 @@ new_libraries:
- # Order is important here, don't change it!
+$OpenBSD: patch-Makefile_in,v 1.3 2006/03/07 19:30:36 sturm Exp $
+--- Makefile.in.orig	Mon Oct 24 11:43:23 2005
++++ Makefile.in	Tue Feb 14 08:09:24 2006
+@@ -49,8 +49,7 @@ exec_prefix = @exec_prefix@
+ # useful e.g. when installing on a server that stores the files with a
+ # different path from where the clients access them. Or when building
+ # rpms.
+-#INSTALL_PREFIX =
+-# Naah...override `prefix' instead.
++INSTALL_PREFIX = $(DESTDIR)
+ 
+ # The directory in which user executables (erl, erlc and erl_call) are put
+ BINDIR      = $(INSTALL_PREFIX)@bindir@
+@@ -524,7 +523,7 @@ else
+ endif
+ 
+ install.Install:
+-	cd $(ERLANG_LIBDIR) && ./Install -minimal $(ERLANG_LIBDIR)
++	cd $(ERLANG_LIBDIR) && ./Install -minimal $(ERLANG_ILIBDIR)
+ 
  #
- install: install.dirs install.ertsbin install.bin install.lib
--	${INSTALL_PROGRAM} erts/bin/$(TARGET)/erlc ${BINDIR}/erlc
--	${INSTALL_PROGRAM} ${ERLANG_BINDIR}/erl    ${BINDIR}/erl
-+	${INSTALL_PROGRAM} erts/bin/$(TARGET)/erlc $(DESTDIR)${BINDIR}/erlc
-+	${INSTALL_PROGRAM} ${DESTDIR}${ERLANG_BINDIR}/erl    $(DESTDIR)${BINDIR}/erl
- 
- install.lib:
- 	( cc_root=`pwd`; PATH=$${cc_root}/erts/bin:$${PATH}; export PATH; \
-@@ -79,47 +79,47 @@ install.lib:
- 	  for d in *-* ; do \
- 	    ( cd $$d ; \
- 	      ${MAKE} CC_ROOT=$${cc_root}/ TESTROOT=${ERLANG_LIBDIR} release);\
--            (cd $$d/doc/man;tar -cf - .)|(cd ${ERLANG_LIBDIR}/man;tar -xf -);\
-+            (cd $$d/doc/man;tar -cf - .)|(cd $(DESTDIR)${ERLANG_LIBDIR}/man;tar -xf -);\
- 	  done )
--	(cd erts/doc/man;tar -cf - .)|(cd ${ERLANG_LIBDIR}/man;tar -xf -)
-+	(cd erts/doc/man;tar -cf - .)|(cd $(DESTDIR)${ERLANG_LIBDIR}/man;tar -xf -)
- 	for f in erts/system/erl_interface/src/*.h ; do \
--	  ${INSTALL_DATA} $$f ${ERLANG_LIBDIR}/usr/include ; \
-+	  ${INSTALL_DATA} $$f $(DESTDIR)${ERLANG_LIBDIR}/usr/include ; \
- 	done
- 
+ # Erlang base public files
+@@ -532,12 +531,12 @@ install.Install:
  install.bin:
--	${INSTALL_PROGRAM} ${ERLANG_ERTSBINDIR}/erl ${ERLANG_BINDIR}/erl
--	ln -s ../${ERTS}/bin/epmd     ${ERLANG_BINDIR}/epmd || true
--	ln -s ../${ERTS}/bin/erl_call ${ERLANG_BINDIR}/erl_call || true
-+	${INSTALL_PROGRAM} ${DESTDIR}${ERLANG_ERTSBINDIR}/erl $(DESTDIR)${ERLANG_BINDIR}/erl
-+	ln -s ../${ERTS}/bin/epmd     $(DESTDIR)${ERLANG_BINDIR}/epmd || true
-+	ln -s ../${ERTS}/bin/erl_call $(DESTDIR)${ERLANG_BINDIR}/erl_call || true
- 	for s in script boot ; do \
--	 ${INSTALL_DATA} erts/bin/start_clean.$$s ${ERLANG_BINDIR}/start.$$s ;\
-+	 ${INSTALL_DATA} erts/bin/start_clean.$$s $(DESTDIR)${ERLANG_BINDIR}/start.$$s ;\
- 	done
- 	for s in erts/bin/start_sasl* ; do \
--	  ${INSTALL_DATA} $$s ${ERLANG_BINDIR} ; \
-+	  ${INSTALL_DATA} $$s $(DESTDIR)${ERLANG_BINDIR} ; \
- 	done
+ 	rm -f $(BINDIR)/erl $(BINDIR)/erlc \
+ 	      $(BINDIR)/ecc $(BINDIR)/elink $(BINDIR)/ear $(BINDIR)/escript
+-	${LN_S} $(ERLANG_BINDIR)/erl      $(BINDIR)/erl
+-	${LN_S} $(ERLANG_BINDIR)/erlc     $(BINDIR)/erlc
+-	${LN_S} $(ERLANG_BINDIR)/ecc      $(BINDIR)/ecc
+-	${LN_S} $(ERLANG_BINDIR)/elink    $(BINDIR)/elink
+-	${LN_S} $(ERLANG_BINDIR)/ear      $(BINDIR)/ear
+-	${LN_S} $(ERLANG_BINDIR)/escript  $(BINDIR)/escript
++	${LN_S} $(ERLANG_ILIBDIR)/bin/erl      $(BINDIR)/erl
++	${LN_S} $(ERLANG_ILIBDIR)/bin/erlc     $(BINDIR)/erlc
++	${LN_S} $(ERLANG_ILIBDIR)/bin/ecc      $(BINDIR)/ecc
++	${LN_S} $(ERLANG_ILIBDIR)/bin/elink    $(BINDIR)/elink
++	${LN_S} $(ERLANG_ILIBDIR)/bin/ear      $(BINDIR)/ear
++	${LN_S} $(ERLANG_ILIBDIR)/bin/escript  $(BINDIR)/escript
  
- install.ertsbin:
- 	for f in erts/bin/${TARGET}/* ; do \
--	  ${INSTALL_PROGRAM} $$f ${ERLANG_ERTSBINDIR} ; \
-+	  ${INSTALL_PROGRAM} $$f $(DESTDIR)${ERLANG_ERTSBINDIR} ; \
- 	done
- 	( cd erts/obj/${TARGET} ; \
- 	  for l in *.a ; do \
--	    ${INSTALL_DATA} $$l ${ERLANG_LIBDIR}/usr/lib ; \
--	    ${RANLIB} ${ERLANG_LIBDIR}/usr/lib/$$l || true ; \
-+	    ${INSTALL_DATA} $$l $(DESTDIR)${ERLANG_LIBDIR}/usr/lib ; \
-+	    ${RANLIB} $(DESTDIR)${ERLANG_LIBDIR}/usr/lib/$$l || true ; \
- 	  done )
- 	sed -e 's|%FINAL_ROOTDIR%|$(ERLANG_LIBDIR)|' \
--	  erts/system/etc.unix/erl.dist > ${ERLANG_ERTSBINDIR}/erl
--	chmod 755 ${ERLANG_ERTSBINDIR}/erl
-+	  erts/system/etc.unix/erl.dist > $(DESTDIR)${ERLANG_ERTSBINDIR}/erl
-+	chmod 755 $(DESTDIR)${ERLANG_ERTSBINDIR}/erl
- 
- install.dirs:
--	${MKSUBDIRS} ${ERLANG_LIBDIR}/lib
--	${MKSUBDIRS} ${ERLANG_LIBDIR}/bin
--	${MKSUBDIRS} ${ERLANG_LIBDIR}/usr/include
--	${MKSUBDIRS} ${ERLANG_LIBDIR}/usr/lib
-+	${MKSUBDIRS} $(DESTDIR)${ERLANG_LIBDIR}/lib
-+	${MKSUBDIRS} $(DESTDIR)${ERLANG_LIBDIR}/bin
-+	${MKSUBDIRS} $(DESTDIR)${ERLANG_LIBDIR}/usr/include
-+	${MKSUBDIRS} $(DESTDIR)${ERLANG_LIBDIR}/usr/lib
- 	for m in man man/man1 man/man3 man/man4 man/man6 ; do \
--	  ${MKSUBDIRS} ${ERLANG_LIBDIR}/$$m ; \
-+	  ${MKSUBDIRS} $(DESTDIR)${ERLANG_LIBDIR}/$$m ; \
- 	done
--	${MKSUBDIRS} ${ERLANG_BINDIR}
--	${MKSUBDIRS} ${ERLANG_ERTSBINDIR}
-+	${MKSUBDIRS} $(DESTDIR)${ERLANG_BINDIR}
-+	${MKSUBDIRS} $(DESTDIR)${ERLANG_ERTSBINDIR}
- 
- clean:
- 	rm -f *~ *.bak config.log config.status
+ #
+ # Directories needed before we can install
