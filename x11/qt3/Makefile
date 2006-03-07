@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2006/03/04 10:07:10 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2006/03/07 19:29:19 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -11,7 +11,7 @@ PKGNAME=		qt3-${VERSION}
 PKGNAME-mysql=		qt3-mysql-${VERSION}p1
 PKGNAME-postgresql=	qt3-postgresql-${VERSION}p1
 PKGNAME-examples=	qt3-examples-${VERSION}
-FULLPKGNAME=		qt3-mt-${VERSION}p5${PKGDEBUG}
+FULLPKGNAME=		qt3-mt-${VERSION}p6${PKGDEBUG}
 FULLPKGNAME-html=	qt3-html-${VERSION}
 SHARED_LIBS=		qt-mt	30.0 \
 			qui	2.0 \
@@ -314,5 +314,6 @@ do-install:
 # fix for qmake
 	sed -e  s,${WRKDIST},${PREFIX}/lib/qt3, <${WRKBUILD}/.qmake.cache >${WRKBUILD}/mogrified.cache
 	${INSTALL_DATA} ${WRKBUILD}/mogrified.cache ${PREFIX}/lib/qt3/.qmake.cache
+	cd ${PREFIX}/lib/qt3 && ln -sf ../../share/doc/qt3 doc
 
 .include <bsd.port.mk>

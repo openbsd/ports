@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2005/12/28 16:50:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.28 2006/03/07 19:29:20 espie Exp $
 @conflict qt3-*
 @conflict qt3-base-*
 @pkgpath x11/qt3,mt
@@ -450,6 +450,7 @@ lib/qt3/bin/qt20fix
 lib/qt3/bin/qtconfig
 lib/qt3/bin/qtrename140
 lib/qt3/bin/uic
+lib/qt3/doc
 lib/qt3/include
 lib/qt3/lib
 lib/qt3/libdesignercore.a

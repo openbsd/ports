@@ -1,7 +1,16 @@
-$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.14 2005/12/28 16:50:59 espie Exp $
+$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.15 2006/03/07 19:29:20 espie Exp $
 --- qmake/generators/unix/unixmake2.cpp.orig	Fri Sep  2 14:43:19 2005
-+++ qmake/generators/unix/unixmake2.cpp	Tue Dec 27 19:45:53 2005
-@@ -295,10 +295,15 @@ UnixMakefileGenerator::writeMakeParts(QT
++++ qmake/generators/unix/unixmake2.cpp	Tue Mar  7 10:42:35 2006
+@@ -129,6 +129,8 @@ UnixMakefileGenerator::writeMakeParts(QT
+ 	 src_incremental=FALSE, moc_incremental=FALSE;
+ 
+     t << "####### Compiler, tools and options" << endl << endl;
++    if (varGlue("INCLUDEPATH", " -I", " -I", "").find("$(LOCALBASE)") != -1)
++    	t << "LOCALBASE?= /usr/local" << endl;
+     t << "CC       = ";
+     if (project->isActiveConfig("thread") &&
+ 	! project->variables()["QMAKE_CC_THREAD"].isEmpty())
+@@ -295,10 +297,15 @@ UnixMakefileGenerator::writeMakeParts(QT
      } else if (!project->isActiveConfig("staticlib") && project->variables()["QMAKE_APP_FLAG"].isEmpty()) {
  	t << "TARGETA	= " << var("TARGETA") << endl;
  	if (project->isEmpty("QMAKE_HPUX_SHLIB")) {
@@ -21,7 +30,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.14 2005/12/28 16:50:59 e
  	} else {
  	    t << "TARGETD	= " << var("TARGET_x") << endl;
  	    t << "TARGET0	= " << var("TARGET_") << endl;
-@@ -1293,10 +1298,20 @@ void UnixMakefileGenerator::init2()
+@@ -1293,10 +1300,20 @@ void UnixMakefileGenerator::init2()
  		project->variables()["TARGET_x"].append("lib" + project->first("TARGET") + "." +
  							project->first("QMAKE_EXTENSION_SHLIB") +
  							"." + project->first("VER_MAJ"));
@@ -46,7 +55,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.14 2005/12/28 16:50:59 e
  		project->variables()["TARGET_x.y.z"].append("lib" + project->first("TARGET") +
  							    "." +
  							    project->variables()[
-@@ -1305,7 +1320,10 @@ void UnixMakefileGenerator::init2()
+@@ -1305,7 +1322,10 @@ void UnixMakefileGenerator::init2()
  							    project->first("VER_MIN") +  "." +
  							    project->first("VER_PAT"));
  	    }
