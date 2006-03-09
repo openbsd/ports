@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/03/09 21:33:18 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2006/03/09 21:42:56 msf Exp $
 
 COMMENT=	"beginner's drill tool to learn Japanese kana characters" 
 
@@ -7,7 +7,7 @@ CATEGORIES=	japanese
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org> 
 
-#
+# GPL
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
