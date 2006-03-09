@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2006/01/25 12:52:24 david Exp $
+# $OpenBSD: Makefile,v 1.40 2006/03/09 03:02:44 pvalchev Exp $
 
 COMMENT=	"small & pretty window manager for 8 and more bits displays"
 
-DISTNAME=		blackbox-0.70.0
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		blackbox-0.70.1
+PKGNAME=		${DISTNAME}
 CATEGORIES=		x11
 
 HOMEPAGE=		http://blackboxwm.sourceforge.net/
