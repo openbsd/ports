@@ -1,0 +1,14 @@
+Leafpad is a simple GTK+ text editor that emphasizes simplicity. As
+development focuses on keeping weight down to a minimum, only the most
+essential features are implemented in the editor. Leafpad is simple to
+use, is easily compiled, requires few libraries, and starts up quickly.
+
+Currently Leafpad has the following features:
+
+ * Codeset option (Some OpenI18N registered)
+ * Auto codeset detection (UTF-8 and some codesets)
+ * Unlimitted Undo/Redo
+ * Auto/Multi-line Indent
+ * Display line numbers
+ * Drag and Drop
+ * Printing
