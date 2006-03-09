@@ -1,0 +1,83 @@
+$OpenBSD: patch-ParseXSDoc_pm,v 1.1 2006/03/09 21:38:12 msf Exp $
+--- ParseXSDoc.pm.orig	Sat Jan 29 21:24:14 2005
++++ ParseXSDoc.pm	Thu Mar  9 13:30:00 2006
+@@ -4,6 +4,7 @@ package Glib::ParseXSDoc;
+ 
+ use strict;
+ use Data::Dumper;
++use Storable qw(store_fd);
+ use Exporter;
+ use Carp;
+ 
+@@ -81,11 +82,30 @@ sub xsdocparse {
+ 	print "# input files:\n";
+ 	map { print "#   $_\n" } @filenames;
+ 	print "#\n\n";
+-	$Data::Dumper::Purity = 1;
+-	print Data::Dumper->Dump([$parser->{xspods}, $parser->{data}],
+-	                       [qw($xspods            $data)]);
+-	print "\n1;\n";
+ 
++	# Data::Dumper converts the whole output to a string, and consequently
++	# uses an obscene amount of ram on Gtk2's nearly 200 xs files.  Use
++	# Storable unless the user really really wants to force us to fall
++	# back to Data::Dumper.
++	if ($ENV{FORCE_DATA_DUMPER}) {
++		$Data::Dumper::Purity = 1;
++		print Data::Dumper->Dump([$parser->{xspods}, $parser->{data}],
++		                       [qw($xspods            $data)]);
++		print "\n1;\n";
++	} else {
++		print "use Storable qw(fd_retrieve);\n";
++		print "\$xspods = fd_retrieve \\*DATA;\n";
++		print "\$data = fd_retrieve \\*DATA;\n";
++
++		print "\n1;\n";
++		print "__DATA__\n";
++
++		# NOTE: don't assume STDOUT, because other code may have select'd
++		# a different file handle.
++		store_fd $parser->{xspods}, select;
++		store_fd $parser->{data}, select;
++	}
++
+ 	return [ keys %{$parser->{data}} ];
+ }
+ 
+@@ -311,7 +331,7 @@ sub parse_file {
+ 				last if /^\s*$/;
+ 				push @thisxsub, $_;
+ 			}
+-			my $xsub = $self->parse_xsub (@thisxsub);
++			my $xsub = $self->parse_xsub (\@thisxsub);
+ 			if ($lastpod) {
+ 				# aha! we'll lay claim to that...
+ 				pop @{ $self->pkgdata->{pods} };
+@@ -463,6 +483,8 @@ sub slurp_pod_paragraph {
+ }
+ 
+ 
++=item $xsub = $parser->parse_xsub (\@lines)
++
+ =item $xsub = $parser->parse_xsub (@lines)
+ 
+ Parse an xsub header, in the form of a list of lines,
+@@ -479,9 +501,18 @@ both.
+ 
+ Data type names are not mangled at all.
+ 
++Note that the method can take either a list of lines or a reference to a
++list of lines.  The flat list form is provided for compatibility; the
++reference form is preferred, to avoid duplicating a potentially large list
++of strings.
++
+ =cut
+ sub parse_xsub {
+ 	my ($self, @thisxsub) = @_;
++
++	# allow for pass-by-reference.
++	@thisxsub = @{ $thisxsub[0] }
++	    if @thisxsub == 1 && 'ARRAY' eq ref $thisxsub[0];
+ 
+ 	map { s/#.*$// } @thisxsub;
+ 
