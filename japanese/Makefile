@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2006/02/12 16:24:50 david Exp $
+# $OpenBSD: Makefile,v 1.19 2006/03/09 21:34:52 msf Exp $
 
      SUBDIR += Wnn
      SUBDIR += canna
@@ -10,6 +10,7 @@
      SUBDIR += jvim,wnn
      SUBDIR += jvim,wnn,canna
      SUBDIR += kakasi
+     SUBDIR += kanatest
      SUBDIR += kanjipad
      SUBDIR += kanjips
      SUBDIR += kbanner
