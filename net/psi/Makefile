@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/19 20:29:58 niallo Exp $
+# $OpenBSD: Makefile,v 1.2 2006/03/09 20:40:06 sturm Exp $
 
 COMMENT=	"multiplatform Jabber client"
 
 DISTNAME=	psi-0.9.3
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://psi.affinix.com/
@@ -59,14 +60,14 @@ do-install:
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/16x16/apps
 	${INSTALL_DATA} ${WRKSRC}/iconsets/system/default/icon_16.png \
-		${PREFIX}/share/icons/hicolor/16x16/apps/
+		${PREFIX}/share/icons/hicolor/16x16/apps/psi.png
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/32x32/apps
 	${INSTALL_DATA} ${WRKSRC}/iconsets/system/default/icon_32.png \
-		${PREFIX}/share/icons/hicolor/32x32/apps/
+		${PREFIX}/share/icons/hicolor/32x32/apps/psi.png
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/48x48/apps
 	${INSTALL_DATA} ${WRKSRC}/iconsets/system/default/icon_48.png \
-		${PREFIX}/share/icons/hicolor/48x48/apps/
+		${PREFIX}/share/icons/hicolor/48x48/apps/psi.png
 
 .include <bsd.port.mk>

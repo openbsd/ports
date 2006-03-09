@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/19 20:29:58 niallo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/03/09 20:40:06 sturm Exp $
 %%SHARED%%
 bin/psi
 share/applnk/
@@ -8,13 +8,13 @@ share/icons/
 share/icons/hicolor/
 share/icons/hicolor/16x16/
 share/icons/hicolor/16x16/apps/
-share/icons/hicolor/16x16/apps/icon_16.png
+share/icons/hicolor/16x16/apps/psi.png
 share/icons/hicolor/32x32/
 share/icons/hicolor/32x32/apps/
-share/icons/hicolor/32x32/apps/icon_32.png
+share/icons/hicolor/32x32/apps/psi.png
 share/icons/hicolor/48x48/
 share/icons/hicolor/48x48/apps/
-share/icons/hicolor/48x48/apps/icon_48.png
+share/icons/hicolor/48x48/apps/psi.png
 share/psi/
 share/psi/COPYING
 share/psi/README
