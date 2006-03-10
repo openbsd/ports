@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/03/10 09:43:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/03/10 15:53:53 jolan Exp $
 %%SHARED%%
+bin/mpc2wav
 include/mpcdec/
 include/mpcdec/config_types.h
 include/mpcdec/decoder.h
