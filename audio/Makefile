@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.138 2006/03/10 09:45:18 espie Exp $
+# $OpenBSD: Makefile,v 1.139 2006/03/10 10:40:56 espie Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
      SUBDIR += ac3dec
+     SUBDIR += akode
      SUBDIR += amarok
      SUBDIR += ascd
      SUBDIR += audacity
