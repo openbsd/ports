@@ -1,7 +1,7 @@
-$OpenBSD: patch-include_my_global_h,v 1.4 2005/09/04 22:51:24 brad Exp $
---- include/my_global.h.orig	Fri Jul 15 06:39:32 2005
-+++ include/my_global.h	Tue Jul 26 10:22:14 2005
-@@ -48,6 +48,10 @@
+$OpenBSD: patch-include_my_global_h,v 1.5 2006/03/10 23:51:53 brad Exp $
+--- include/my_global.h.orig	Sat Mar  4 15:34:48 2006
++++ include/my_global.h	Tue Mar  7 22:18:47 2006
+@@ -57,6 +57,10 @@
  #define USE_PRAGMA_INTERFACE
  #endif
  
