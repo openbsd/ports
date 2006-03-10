@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_Makefile_in,v 1.1.1.1 2006/03/10 09:43:37 espie Exp $
+--- include/Makefile.in.orig	Fri Mar 10 10:39:30 2006
++++ include/Makefile.in	Fri Mar 10 10:39:38 2006
+@@ -218,7 +218,7 @@ stamp-h1: $(srcdir)/config.h.in $(top_bu
+ 	@rm -f stamp-h1
+ 	cd $(top_builddir) && $(SHELL) ./config.status include/config.h
+ $(srcdir)/config.h.in:  $(am__configure_deps) 
+-	cd $(top_srcdir) && $(AUTOHEADER)
++#	cd $(top_srcdir) && $(AUTOHEADER)
+ 	rm -f stamp-h1
+ 	touch $@
+ 
