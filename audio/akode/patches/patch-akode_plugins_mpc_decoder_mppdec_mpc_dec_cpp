@@ -1,0 +1,11 @@
+$OpenBSD: patch-akode_plugins_mpc_decoder_mppdec_mpc_dec_cpp,v 1.1.1.1 2006/03/10 10:40:16 espie Exp $
+--- akode/plugins/mpc_decoder/mppdec/mpc_dec.cpp.orig	Fri Mar 10 11:33:14 2006
++++ akode/plugins/mpc_decoder/mppdec/mpc_dec.cpp	Fri Mar 10 11:33:21 2006
+@@ -1056,6 +1056,7 @@ void MPC_decoder::UpdateBuffer ( unsigne
+         f_read_dword ( Speicher + (RING & MEMSIZE2), MEMSIZE2 );      // update buffer
+ }
+ 
++#undef swap32
+ static unsigned long swap32(unsigned long val)
+ {
+ 	const unsigned char * src = (const unsigned char*)&val;

@@ -1,0 +1,7 @@
+aKode is the decoding library used in akode_artsplugin in kdemultimedia,
+and improves the aRts experience by fewer drop-outs, more supported
+formats and fewer bugs in general.  It can also be used directly without
+aRts in JuK and Amarok.
+
+aKode supports decoding of MPEG audio, Ogg Vorbis, Ogg FLAC, old FLAC,
+Speex, WAV, and Musepack audio.

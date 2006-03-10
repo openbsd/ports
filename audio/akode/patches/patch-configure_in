@@ -1,0 +1,38 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2006/03/10 10:40:16 espie Exp $
+--- configure.in.orig	Wed Dec 14 21:09:22 2005
++++ configure.in	Wed Feb 22 12:08:06 2006
+@@ -120,7 +120,7 @@ AC_DEFUN([AC_CHECK_LIBFLAC],
+ 
+     ])
+   if test "x$have_libFLAC" = "xyes"; then
+-      LIBFLAC="-lFLAC"
++      LIBFLAC="-lFLAC -lm"
+       AC_DEFINE(HAVE_LIBFLAC, 1,
+         [Define if you have libFLAC (required for loading FLAC files)])
+   fi
+@@ -136,7 +136,7 @@ AC_DEFUN([AC_CHECK_LIBOGGFLAC],
+   KDE_CHECK_HEADER(OggFLAC/seekable_stream_decoder.h,
+   [
+      KDE_CHECK_LIB(OggFLAC,OggFLAC__seekable_stream_decoder_process_single,
+-	          have_libOggFLAC=yes,,[-lm -lOggFLAC -lFLAC])
++	          have_libOggFLAC=yes,,[-lm -logg -lOggFLAC -lFLAC])
+ 
+     ])
+   if test "x$have_libOggFLAC" = "xyes"; then
+@@ -159,13 +159,13 @@ AC_DEFUN([KDE_CHECK_OGGVORBIS],
+     [:], [have_oggvorbis=no])
+ 
+   KDE_CHECK_LIB(vorbis, vorbis_info_init,
+-    [:], [have_oggvorbis=no], -logg)
++    [:], [have_oggvorbis=no], -logg -lm)
+ 
+   KDE_CHECK_LIB(vorbisfile, ov_open,
+-    [:], [have_oggvorbis=no], -lvorbis -logg)
++    [:], [have_oggvorbis=no], -lvorbis -logg -lm)
+ 
+   if test "x$have_oggvorbis" = xyes; then
+-    VORBIS_LIBS="-lvorbis -logg"
++    VORBIS_LIBS="-lvorbis -logg -lm"
+     VORBISFILE_LIBS="-lvorbisfile"
+ 
+     # for akode/plugins/xiph_decoder/
