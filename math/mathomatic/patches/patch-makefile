@@ -1,13 +1,13 @@
-$OpenBSD: patch-makefile,v 1.1.1.1 2005/05/27 06:04:11 naddy Exp $
---- makefile.orig	Thu May 26 22:54:54 2005
-+++ makefile	Thu May 26 22:55:12 2005
+$OpenBSD: patch-makefile,v 1.2 2006/03/11 13:43:27 steven Exp $
+--- makefile.orig	Sat Mar 11 14:21:54 2006
++++ makefile	Sat Mar 11 14:22:13 2006
 @@ -1,8 +1,8 @@
- # Makefile for compiling Mathomatic under UNIX, GNU/Linux, and MacOS-X.
+ # Makefile for compiling and installing Mathomatic under any UNIX like OS.
  
  VERSION		= `cat VERSION`
--CFLAGS		+= -O -DUNIX -DVERSION=\"$(VERSION)\"
+-CFLAGS		+= -O -Wunused -Wshadow -DUNIX -DVERSION=\"$(VERSION)\"
 -LDFLAGS		+= -s
-+CFLAGS		+= -DUNIX -DVERSION=\"$(VERSION)\"
++CFLAGS		+= -Wunused -Wshadow -DUNIX -DVERSION=\"$(VERSION)\"
 +LDFLAGS		+= 
  LIBS		+= -lm
  
