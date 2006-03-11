@@ -1,11 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/04/25 18:31:56 sturm Exp $
-${P5SITE}/XML/
+@comment $OpenBSD: PLIST,v 1.2 2006/03/11 14:35:19 steven Exp $
 ${P5SITE}/XML/Elemental/
 ${P5SITE}/XML/Elemental.pm
 ${P5SITE}/XML/Elemental/Characters.pm
 ${P5SITE}/XML/Elemental/Document.pm
 ${P5SITE}/XML/Elemental/Element.pm
 ${P5SITE}/XML/Elemental/Node.pm
+${P5SITE}/XML/Elemental/SAXHandler.pm
+${P5SITE}/XML/Elemental/Util.pm
 ${P5SITE}/XML/Parser/
 ${P5SITE}/XML/Parser/Style/
 ${P5SITE}/XML/Parser/Style/Elemental.pm
@@ -14,4 +15,6 @@ ${P5SITE}/XML/Parser/Style/Elemental.pm
 @man man/man3p/XML::Elemental::Document.3p
 @man man/man3p/XML::Elemental::Element.3p
 @man man/man3p/XML::Elemental::Node.3p
+@man man/man3p/XML::Elemental::SAXHandler.3p
+@man man/man3p/XML::Elemental::Util.3p
 @man man/man3p/XML::Parser::Style::Elemental.3p

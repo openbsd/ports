@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/04/25 18:31:56 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2006/03/11 14:35:18 steven Exp $
 
 COMMENT=	"generic classes for simplistic handling of XML data"
 
-DISTNAME=	XML-Elemental-1.03
+DISTNAME=	XML-Elemental-2.0
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 
@@ -16,7 +16,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 
-RUN_DEPENDS=	::textproc/p5-XML-Parser
+RUN_DEPENDS=	::devel/p5-Class-Accessor \
+		::textproc/p5-XML-Parser \
+		::textproc/p5-XML-SAX
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE=perl
