@@ -1,0 +1,12 @@
+$OpenBSD: patch-Examples_BigProject_Project1_Makefile_in,v 1.1.1.1 2006/03/11 14:06:31 sturm Exp $
+--- Examples/BigProject/Project1/Makefile.in.orig	Mon Dec 12 19:45:00 2005
++++ Examples/BigProject/Project1/Makefile.in	Mon Dec 12 19:45:13 2005
+@@ -303,7 +303,7 @@ TJX2GANTT = ../../../tjx2gantt/tjx2gantt
+ TARGETNAME = Project1
+ EXTRA_DIST = *.html *.tjp *.tji
+ CLEANFILES = *.html *.tji
+-docprefix = $(prefix)/share/doc/packages/taskjuggler/Examples/BigProject/$(TARGETNAME)
++docprefix = $(prefix)/share/examples/taskjuggler/BigProject/$(TARGETNAME)
+ #>- all: all-am
+ #>+ 1
+ all: docs-am  all-am

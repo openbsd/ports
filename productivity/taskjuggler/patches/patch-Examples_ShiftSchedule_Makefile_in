@@ -1,0 +1,12 @@
+$OpenBSD: patch-Examples_ShiftSchedule_Makefile_in,v 1.1.1.1 2006/03/11 14:06:31 sturm Exp $
+--- Examples/ShiftSchedule/Makefile.in.orig	Mon Dec 12 19:46:08 2005
++++ Examples/ShiftSchedule/Makefile.in	Mon Dec 12 19:46:19 2005
+@@ -303,7 +303,7 @@ TJX2GANTT = ../../tjx2gantt/tjx2gantt
+ TARGETNAME = ShiftSchedule
+ EXTRA_DIST = *.html *.tjp *.tjx
+ CLEANFILES = *.html *.tjx
+-docprefix = $(prefix)/share/doc/packages/taskjuggler/Examples/$(TARGETNAME)
++docprefix = $(prefix)/share/examples/taskjuggler/$(TARGETNAME)
+ #>- all: all-am
+ #>+ 1
+ all: docs-am  all-am

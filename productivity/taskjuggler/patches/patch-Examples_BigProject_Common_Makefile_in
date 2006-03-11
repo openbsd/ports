@@ -1,0 +1,12 @@
+$OpenBSD: patch-Examples_BigProject_Common_Makefile_in,v 1.1.1.1 2006/03/11 14:06:31 sturm Exp $
+--- Examples/BigProject/Common/Makefile.in.orig	Mon Dec 12 19:35:39 2005
++++ Examples/BigProject/Common/Makefile.in	Mon Dec 12 19:35:52 2005
+@@ -298,7 +298,7 @@ x_libraries = @x_libraries@
+ xdg_appsdir = @xdg_appsdir@
+ xdg_directorydir = @xdg_directorydir@
+ xdg_menudir = @xdg_menudir@
+-docprefix = $(prefix)/share/doc/packages/taskjuggler/Examples/BigProject/Common
++docprefix = $(prefix)/share/examples/taskjuggler/BigProject/Common
+ #>- all: all-am
+ #>+ 1
+ all: docs-am  all-am
