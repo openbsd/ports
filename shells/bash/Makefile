@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2006/02/10 11:33:17 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2006/03/11 15:13:26 naddy Exp $
 
 COMMENT=	"GNU Bourne Again Shell"
 
 DISTNAME=	bash-3.1
-PKGNAME=	${DISTNAME}.1p0
+PKGNAME=	${DISTNAME}.11
 CATEGORIES=	shells
 HOMEPAGE=	http://cnswww.cns.cwru.edu/~chet/bash/bashtop.html
 
@@ -17,10 +17,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.cwru.edu/pub/bash/ \
 		${MASTER_SITE_GNU:=bash/}
-MASTER_SITES0=	ftp://ftp.cwru.edu/pub/bash/${DISTNAME}-patches/ \
-		${MASTER_SITE_GNU:=bash/${DISTNAME}-patches/}
+MASTER_SITES0=	ftp://ftp.cwru.edu/pub/bash/${DISTNAME}-patches/
 DIST_SUBDIR=	bash
-.for i in 01
+.for i in 01 02 03 04 05 06 07 08 09 10 11
 PATCHFILES+=	bash31-0$i:0
 .endfor
 
