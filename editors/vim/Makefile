@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.62 2006/01/18 04:41:12 steven Exp $
+# $OpenBSD: Makefile,v 1.63 2006/03/11 13:53:59 sturm Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
 
 DISTNAME=	vim-6.4
-REVISION=	6
+REVISION=	8
 VERSION=	6.4.${REVISION}
-PKGNAME=	vim-${VERSION}p1
 P=		${DISTNAME:C/[-\.]//g}
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unix/ \
