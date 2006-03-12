@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2006/01/14 00:07:30 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/03/12 02:31:16 steven Exp $
 
 COMMENT=	"translate PostScript/PDF graphics to other vector formats"
 
-DISTNAME=	pstoedit-3.42
-PKGNAME=	${DISTNAME}p1
-SHARED_LIBS=	pstoedit 1.0
+DISTNAME=	pstoedit-3.44
+SHARED_LIBS=	pstoedit 1.1
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.pstoedit.net/
@@ -32,6 +31,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED}	\
 WANTLIB=	c stdc++ m
 
 post-install:
-	cd ${WRKSRC}/doc && ${INSTALL_MAN} pstoedit.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/pstoedit.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

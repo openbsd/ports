@@ -23,6 +23,7 @@ formats. Currently pstoedit can generate the following major formats:
    * LWO - LightWave 3D
    * Mathematica Graphics (.mma)
    * MetaPost (.mp) format for usage with TeX/LaTeX
+   * OpenOffice metafile (.svm)
    * PCB
    * PDF - Adobe's Portable Document Format
    * PIC format for troff/groff
