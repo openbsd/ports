@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/01/24 07:29:11 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2006/03/12 14:36:34 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"perl extension for version objects"
-DISTNAME=	version-0.53
+DISTNAME=	version-0.57
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
