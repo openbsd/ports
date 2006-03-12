@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/04/25 18:48:30 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2006/03/12 17:33:28 steven Exp $
 
 COMMENT=	"RSS Abstraction Interface"
 
-DISTNAME=	XML-RAI-1.2
+DISTNAME=	XML-RAI-1.301
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 
@@ -17,11 +17,12 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 
 RUN_DEPENDS=	::textproc/p5-XML-RSS \
-		::textproc/p5-XML-Elemental \
+		:p5-XML-RSS-Parser->=4.0:textproc/p5-XML-RSS-Parser \
 		::devel/p5-Time-TimeDate
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE=perl
 
+PKG_ARCH=	*
 
 .include <bsd.port.mk>
