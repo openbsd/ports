@@ -1,0 +1,37 @@
+$OpenBSD: patch-lib_XML_RSS_Parser_pm,v 1.1 2006/03/12 17:11:14 steven Exp $
+--- lib/XML/RSS/Parser.pm.orig	Fri Nov 18 19:24:56 2005
++++ lib/XML/RSS/Parser.pm	Sun Mar 12 17:53:44 2006
+@@ -307,6 +307,8 @@ more as needed.
+ The following objects and methods are provided in this
+ package.
+ 
++=over
++
+ =item XML::RSS::Parser->new
+ 
+ Constructor. Returns a reference to a new XML::RSS::Parser
+@@ -361,6 +363,8 @@ C<undef>. Inherited from Class::ErrorHan
+ Returns the last error message set by C<error>. Inherited
+ from Class:ErrorHandler.
+ 
++=back
++
+ =head1 DEPENDENCIES
+ 
+ L<XML::SAX>, L<XML::Elemental>, L<Class::ErrorHandler>,
+@@ -386,8 +390,6 @@ rssfeedquality.html>
+ The myth of RSS compatibility
+ L<http://diveintomark.org/archives/2004/02/04/incompatible-
+ rss>
+-
+-=back
+ 
+ =head1 AUTHOR & COPYRIGHT
+ 
+@@ -397,4 +399,4 @@ reserved.
+ 
+ =cut
+ 
+-=end
+\ No newline at end of file
++=end
