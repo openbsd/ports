@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.17 2006/01/22 13:35:32 aanriot Exp $
+# $OpenBSD: Makefile,v 1.18 2006/03/12 12:21:10 aanriot Exp $
 
 COMMENT=	"Zope content management framework"
 
 DISTNAME=	CMF-1.5.5
-PKGNAME=	zope-${DISTNAME:L}
+PKGNAME=	zope-${DISTNAME:L}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://cmf.zope.org/
 
-MAINTAINER=	Alexandre Anriot <aanriot@openbsd.org>
+MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
 # Zope Public License (ZPL) 2.0 <http://www.zope.org/Resources/ZPL>
 PERMIT_PACKAGE_CDROM=	Yes
