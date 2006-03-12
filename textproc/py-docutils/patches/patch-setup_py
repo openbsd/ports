@@ -1,21 +1,31 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2005/04/30 14:05:56 alek Exp $
---- setup.py.orig	Thu Mar 31 10:00:29 2005
-+++ setup.py	Thu Mar 31 10:00:55 2005
-@@ -42,7 +42,7 @@ what-you-see-is-what-you-get plaintext m
-                  'docutils.readers', 'docutils.readers.python',
-                  'docutils.transforms',
-                  'docutils.writers',],
--    'scripts' : ['tools/rst2html.py','tools/rst2latex.py'],}
-+    'scripts' : ['tools/rst2html','tools/rst2latex'],}
+$OpenBSD: patch-setup_py,v 1.2 2006/03/12 10:04:56 steven Exp $
+--- setup.py.orig	Mon Jan  9 10:28:09 2006
++++ setup.py	Fri Mar 10 15:50:13 2006
+@@ -76,12 +76,12 @@ what-you-see-is-what-you-get plaintext m
+                     ('docutils/writers/s5_html/themes',
+                      ['docutils/writers/s5_html/themes/README.txt']),]
+                    + s5_theme_files),
+-    'scripts' : ['tools/rst2html.py',
+-                 'tools/rst2s5.py',
+-                 'tools/rst2latex.py',
+-                 'tools/rst2newlatex.py',
+-                 'tools/rst2xml.py',
+-                 'tools/rst2pseudoxml.py'],}
++    'scripts' : ['tools/rst2html',
++                 'tools/rst2s5',
++                 'tools/rst2latex',
++                 'tools/rst2newlatex',
++                 'tools/rst2xml',
++                 'tools/rst2pseudoxml'],}
  """Distutils setup parameters."""
  
  classifiers = [
-@@ -84,6 +84,8 @@ List of (module name, minimum __version_
+@@ -123,6 +123,8 @@ List of (module name, minimum __version_
  def get_extras():
      extras = []
      for module_name, version, attributes in extra_modules:
-+        if module_name == "roman":
-+            extras.append(module_name)
++	if module_name == "roman":
++	    extras.append(module_name)
          try:
              module = __import__(module_name)
              if version and module.__version__ < version:
