@@ -1,17 +1,16 @@
-$OpenBSD: patch-watch_c,v 1.1.1.1 2006/01/28 11:04:08 alek Exp $
---- watch.c.orig	Sun Oct 30 01:44:53 2005
-+++ watch.c	Sun Jan  1 13:28:37 2006
-@@ -148,6 +148,13 @@ main(int argc, char *argv[])
- 	setlocale(LC_ALL, "");
- 	progname = argv[0];
+$OpenBSD: patch-watch_c,v 1.2 2006/03/12 17:28:24 pvalchev Exp $
+--- watch.c.orig	Sat Oct 29 17:44:53 2005
++++ watch.c	Sat Mar 11 15:14:02 2006
+@@ -134,6 +134,12 @@ get_terminal_size(void)
+ 	}
+ }
  
-+	float
-+	strtof(const char * restrict nptr, char ** restrict endptr)
-+	{
-+	
-+		return ((float)strtod(nptr, endptr));
-+	}
++float
++strtof(const char * restrict nptr, char ** restrict endptr)
++{
++	return ((float)strtod(nptr, endptr));
++}
 +
- 	while ((optc = getopt_long(argc, argv, "+d::hn:vt", longopts, (int *) 0))
- 	       != EOF) {
- 		switch (optc) {
+ int
+ main(int argc, char *argv[])
+ {
