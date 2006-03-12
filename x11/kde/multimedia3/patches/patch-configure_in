@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.21 2006/02/16 08:25:11 espie Exp $
+$OpenBSD: patch-configure_in,v 1.22 2006/03/12 13:22:36 espie Exp $
 --- configure.in.orig	Fri Jan 20 18:47:07 2006
-+++ configure.in	Wed Feb 15 12:23:08 2006
++++ configure.in	Sun Mar 12 12:02:58 2006
 @@ -164,22 +164,22 @@ AC_DEFUN([KDE_CHECK_OGGVORBIS],
      [:], [have_oggvorbis=no])
  
@@ -39,7 +39,21 @@ $OpenBSD: patch-configure_in,v 1.21 2006/02/16 08:25:11 espie Exp $
      AC_DEFINE(OGG_VORBIS, 1, [Define if you have ogg/vorbis installed])
    fi
  
-@@ -889,7 +889,7 @@ KDE_CHECK_HEADER(theora/theora.h,
+@@ -433,10 +433,13 @@ AC_DEFUN([KDE_CHECK_AKODE],
+   AC_SUBST(akode_includes)
+   AC_SUBST(akode_libs)
+ 
++  AC_LANG_SAVE
++  AC_LANG_CPLUSPLUS
+   KDE_CHECK_LIB(akode_mpeg_decoder,   mpeg_decoder,   have_akode_mpeg=yes,   have_akode_mpeg=no,   -lakode)
+   KDE_CHECK_LIB(akode_mpc_decoder,    mpc_decoder,    have_akode_mpc=yes,    have_akode_mpc=no,    -lakode)
+   KDE_CHECK_LIB(akode_xiph_decoder,   xiph_decoder,   have_akode_xiph=yes,   have_akode_xiph=no,   -lakode)
+   KDE_CHECK_LIB(akode_ffmpeg_decoder, ffmpeg_decoder, have_akode_ffmpeg=yes, have_akode_ffmpeg=no, -lakode)
++  AC_LANG_RESTORE
+ 
+   AM_CONDITIONAL(include_akode_mpeg,   test x$have_akode_mpeg = xyes)
+   AM_CONDITIONAL(include_akode_mpc,    test x$have_akode_mpc = xyes)
+@@ -889,7 +892,7 @@ KDE_CHECK_HEADER(theora/theora.h,
    [], [have_theora=no])
  
  KDE_CHECK_LIB(theora, theora_info_init,
@@ -48,7 +62,7 @@ $OpenBSD: patch-configure_in,v 1.21 2006/02/16 08:25:11 espie Exp $
  ])
  
  AC_ARG_WITH(theora,
-@@ -939,7 +939,7 @@ AC_DEFUN([AC_CHECK_LIBOGGFLAC],
+@@ -939,7 +942,7 @@ AC_DEFUN([AC_CHECK_LIBOGGFLAC],
    KDE_CHECK_HEADER(OggFLAC/seekable_stream_decoder.h,
    [
       KDE_CHECK_LIB(OggFLAC,OggFLAC__seekable_stream_decoder_process_single,
@@ -57,7 +71,7 @@ $OpenBSD: patch-configure_in,v 1.21 2006/02/16 08:25:11 espie Exp $
  
      ])
    if test "x$have_libOggFLAC" = "xyes"; then
-@@ -1285,6 +1285,9 @@ case "$OS_TYPE" in
+@@ -1285,6 +1288,9 @@ case "$OS_TYPE" in
    NetBSD)
      kde_mpeglib_compiles=yes
      ;;
@@ -67,7 +81,7 @@ $OpenBSD: patch-configure_in,v 1.21 2006/02/16 08:25:11 espie Exp $
    Linux)
      kde_mpeglib_compiles=yes
      ;;
-@@ -1312,6 +1315,12 @@ case "$OS_TYPE" in
+@@ -1312,6 +1318,12 @@ case "$OS_TYPE" in
      AC_DEFINE(OS_Linux,1,[Define if you have linux pthread])
      ;;
  
@@ -80,7 +94,7 @@ $OpenBSD: patch-configure_in,v 1.21 2006/02/16 08:25:11 espie Exp $
    FreeBSD)
      OS_TYPE="BSD"
      AC_DEFINE(OS_BSD,1,[Define if you have BSD pthread])
-@@ -1355,7 +1364,7 @@ KDE_MPEGLIB_COMPILES
+@@ -1355,7 +1367,7 @@ KDE_MPEGLIB_COMPILES
  
  THIS_LIB_LIBS="-lX11 -lXext -lm ${XVLIBS} ${DGALIBS} "
  THIS_LIB_LIBS="${THIS_LIB_LIBS} ${XVIDMODELIBS} ${SDLLIB} ${CDDALIBS} "

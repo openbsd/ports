@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2006/02/16 08:25:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.23 2006/03/12 13:22:36 espie Exp $
 bin/artsbuilder
 bin/artscontrol
 bin/juk
@@ -19,6 +19,7 @@ bin/yaf-splay
 bin/yaf-tplay
 bin/yaf-vorbis
 bin/yaf-yuv
+include/arts/
 include/arts/artsbuilder.h
 include/arts/artsbuilder.idl
 include/arts/artsgui.h
@@ -264,6 +265,8 @@ ${KDE}/noatun_winskin.la
 ${KDE}/noatun_winskin.so
 ${KDE}/noatunsimple.la
 ${KDE}/noatunsimple.so
+lib/libarts_akode.la
+lib/libarts_akode.so
 @lib lib/libarts_mpeglib-0.3.0.so.${LIBarts_mpeglib-0.3.0_VERSION}
 lib/libarts_mpeglib.la
 @lib lib/libarts_mpeglib.so.${LIBarts_mpeglib_VERSION}
@@ -330,6 +333,8 @@ lib/libyafcore.la
 @lib lib/libyafcore.so.${LIByafcore_VERSION}
 lib/libyafxplayer.la
 @lib lib/libyafxplayer.so.${LIByafxplayer_VERSION}
+lib/mcop/
+lib/mcop/Arts/
 lib/mcop/Arts/ArtsBuilderLoader.mcopclass
 lib/mcop/Arts/Button.mcopclass
 lib/mcop/Arts/EffectRackGuiFactory.mcopclass
@@ -440,6 +445,14 @@ lib/mcop/RawWriter.mcopclass
 lib/mcop/SplayPlayObject.mcopclass
 lib/mcop/VoiceRemoval.mcopclass
 lib/mcop/WAVPlayObject.mcopclass
+lib/mcop/akodeMPCPlayObject.mcopclass
+lib/mcop/akodeMPEGPlayObject.mcopclass
+lib/mcop/akodePlayObject.mcopclass
+lib/mcop/akodeSpeexStreamPlayObject.mcopclass
+lib/mcop/akodeVorbisStreamPlayObject.mcopclass
+lib/mcop/akodeXiphPlayObject.mcopclass
+lib/mcop/akodearts.mcopclass
+lib/mcop/akodearts.mcoptype
 lib/mcop/artsbuilder.mcopclass
 lib/mcop/artsbuilder.mcoptype
 lib/mcop/artseffects.mcopclass
