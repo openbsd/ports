@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2006/02/12 14:58:16 david Exp $
+# $OpenBSD: Makefile,v 1.142 2006/03/12 17:19:26 steven Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -99,6 +99,7 @@
      SUBDIR += p5-XML-Parser
      SUBDIR += p5-XML-RAI
      SUBDIR += p5-XML-RSS
+     SUBDIR += p5-XML-RSS-Parser
      SUBDIR += p5-XML-RSS-Timing
      SUBDIR += p5-XML-RSS-TimingBot
      SUBDIR += p5-XML-RegExp
