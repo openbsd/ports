@@ -1,12 +1,9 @@
-@comment $OpenBSD: PLIST-perl,v 1.4 2006/01/28 09:51:45 alek Exp $
+@comment $OpenBSD: PLIST-perl,v 1.5 2006/03/12 23:11:31 robert Exp $
 @conflict p5-Data-UUID-*
 @comment libdata/perl5/${MACHINE_ARCH}-openbsd/
 @comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.8.6/
 @comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.8.6/perllocal.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Data/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Data/UUID.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Data/UUID.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/OSSP/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/OSSP/uuid.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/OSSP/uuid.pod
@@ -15,5 +12,4 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/OSSP/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/OSSP/uuid/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/OSSP/uuid/uuid.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/OSSP/uuid/uuid.so
-@man man/man3p/Data::UUID.3
 @man man/man3p/OSSP::uuid.3
