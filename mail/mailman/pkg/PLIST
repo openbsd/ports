@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2006/01/21 15:03:32 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.14 2006/03/13 18:35:45 bernd Exp $
 @newgroup _mailman:504
 @newuser _mailman:504:_mailman:daemon:Mailing List Manager:${PREFIX}/lib/mailman:/sbin/nologin
 @mode 775
@@ -792,10 +792,10 @@ lib/mailman/pythonlib/korean/unijohab.py
 lib/mailman/pythonlib/korean/unijohab.pyc
 @mode 775
 lib/mailman/pythonlib/lib/
-lib/mailman/pythonlib/lib/python${PYTHON_VER}/
-lib/mailman/pythonlib/lib/python${PYTHON_VER}/site-packages/
+lib/mailman/pythonlib/lib/python${MODPY_VERSION}/
+lib/mailman/pythonlib/lib/python${MODPY_VERSION}/site-packages/
 @mode
-lib/mailman/pythonlib/lib/python${PYTHON_VER}/site-packages/japanese.pth
+lib/mailman/pythonlib/lib/python${MODPY_VERSION}/site-packages/japanese.pth
 @mode 775
 lib/mailman/scripts/
 @mode

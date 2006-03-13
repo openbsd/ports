@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2005/05/19 00:02:28 alek Exp $
+# $OpenBSD: Makefile,v 1.30 2006/03/13 18:31:21 bernd Exp $
 
 COMMENT=		"reduce the amount of SPAM/UCE (junk-mail)"
 
-VERSION=		1.0.3
-DISTNAME=		tmda-${VERSION}
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		tmda-1.0.3
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		mail
 
 HOMEPAGE=		http://tmda.net/
@@ -19,13 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://tmda.net/releases/stable/
 EXTRACT_SUFX=		.tgz
 
-PYTHON_VER=     	2.3
+MODULES=		lang/python
 
-RUN_DEPENDS=		:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
-BUILD_DEPENDS=		${RUN_DEPENDS}
-
-PYTHON_LIBDIR=		lib/python${PYTHON_VER}/site-packages
-SUBST_VARS=		PYTHON_VER
 NO_REGRESS=		Yes
 
 CONTRIB_FILES=		collectaddys printcdb sample.config sendit.sh \
@@ -36,10 +30,10 @@ do-build:
 
 do-install:
 	@perl -pi -e 's:htdocs:${TRUEPREFIX}/share/doc/tmda:' ${WRKSRC}/INSTALL
-	${INSTALL_DATA_DIR} ${PREFIX}/${PYTHON_LIBDIR}/TMDA/pythonlib/email
-	${INSTALL_SCRIPT} ${WRKSRC}/TMDA/*.py* ${PREFIX}/${PYTHON_LIBDIR}/TMDA
+	${INSTALL_DATA_DIR} ${DESTDIR}${MODPY_SITEPKG}/TMDA/pythonlib/email
+	${INSTALL_SCRIPT} ${WRKSRC}/TMDA/*.py* ${DESTDIR}${MODPY_SITEPKG}/TMDA
 	${INSTALL_SCRIPT} ${WRKSRC}/TMDA/pythonlib/email/*.py* \
-		${PREFIX}/${PYTHON_LIBDIR}/TMDA/pythonlib/email
+		${DESTDIR}${MODPY_SITEPKG}/TMDA/pythonlib/email
 	${INSTALL_DATA_DIR} ${PREFIX}/share/tmda
 	${INSTALL_DATA} ${WRKSRC}/templates/*.txt ${PREFIX}/share/tmda
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/tmda-* ${PREFIX}/bin
