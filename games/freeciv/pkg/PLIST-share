@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-share,v 1.6 2005/11/21 23:37:18 alek Exp $
+@comment $OpenBSD: PLIST-share,v 1.7 2006/03/13 00:02:11 steven Exp $
 share/freeciv/
 share/freeciv/civ1/
 share/freeciv/civ1.serv
@@ -131,11 +131,15 @@ share/locale/ca/LC_MESSAGES/freeciv.mo
 share/locale/cs/LC_MESSAGES/freeciv.mo
 share/locale/da/LC_MESSAGES/freeciv.mo
 share/locale/de/LC_MESSAGES/freeciv.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/freeciv.mo
 share/locale/es/LC_MESSAGES/freeciv.mo
 share/locale/et/LC_MESSAGES/freeciv.mo
 share/locale/fi/LC_MESSAGES/freeciv.mo
 share/locale/fr/LC_MESSAGES/freeciv.mo
+share/locale/he_IL/
+share/locale/he_IL/LC_MESSAGES/
 share/locale/he_IL/LC_MESSAGES/freeciv.mo
 share/locale/hu/LC_MESSAGES/freeciv.mo
 share/locale/it/LC_MESSAGES/freeciv.mo
