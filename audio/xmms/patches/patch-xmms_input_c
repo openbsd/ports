@@ -1,0 +1,30 @@
+$OpenBSD: patch-xmms_input_c,v 1.1 2006/03/13 14:30:43 robert Exp $
+--- xmms/input.c.orig	Mon Mar 13 00:18:51 2006
++++ xmms/input.c	Mon Mar 13 00:39:00 2006
+@@ -245,6 +245,8 @@
+ {
+ 	GList *node;
+ 	InputPlugin *ip;
++	
++	char *text;
+ 
+ 	node = get_input_list();
+ 	if (get_current_output_plugin() == NULL)
+@@ -271,9 +273,16 @@
+ 		node = node->next;
+ 	}
+ 	/* We set the playing flag even if no inputplugin
+-	   recognizes the file. This way we are sure it will be skipped. */
++	   recognizes the file. This way we are sure it will be skipped. 
++	   We also notify the user that there has been no input plugin
++	   installed for the current file. */
+ 	ip_data->playing = TRUE;
+ 	set_current_input_plugin(NULL);
++	text = g_strdup_printf(_("No input plugin has been installed for %s"),
++			  g_basename(filename));
++	xmms_show_message(_("No input plugin"),
++			  _(text),
++			  _("Ok"), FALSE, NULL, NULL);
+ }
+ 
+ void input_seek(int time)
