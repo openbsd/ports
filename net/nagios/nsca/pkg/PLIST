@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/03/13 18:18:22 bernd Exp $
+sbin/nsca
+share/doc/nsca/
+share/doc/nsca/README
+share/doc/nsca/SECURITY
+share/examples/nsca/
+share/examples/nsca/nsca.cfg
+@sample ${SYSCONFDIR}/nsca.cfg

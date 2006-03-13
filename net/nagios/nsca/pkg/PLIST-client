@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-client,v 1.1.1.1 2006/03/13 18:18:22 bernd Exp $
+libexec/nagios/
+libexec/nagios/send_nsca
+share/examples/nsca/
+share/examples/nsca/send_nsca.cfg
+@sample ${SYSCONFDIR}/send_nsca.cfg

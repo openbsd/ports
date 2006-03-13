@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_utils_c,v 1.1.1.1 2006/03/13 18:18:22 bernd Exp $
+--- src/utils.c.orig	Fri Feb  3 13:13:20 2006
++++ src/utils.c	Fri Feb  3 13:13:55 2006
+@@ -282,8 +282,8 @@ static void generate_transmitted_iv(char
+         /* fill IV buffer with data that's as random as possible */ 
+         /*********************************************************/
+ 
+-        /* try to get seed value from /dev/urandom, as its a better source of entropy */
+-        fp=fopen("/dev/urandom","r");
++        /* try to get seed value from /dev/arandom, as its a better source of entropy */
++        fp=fopen("/dev/arandom","r");
+         if(fp!=NULL){
+                 seed=fgetc(fp);
+                 fclose(fp);
+@@ -413,8 +413,8 @@ void randomize_buffer(char *buffer,int b
+ 	   ends and the rest of the buffer (padded randomly) starts.
+ 	***************************************************************/
+ 
+-	/* try to get seed value from /dev/urandom, as its a better source of entropy */
+-	fp=fopen("/dev/urandom","r");
++	/* try to get seed value from /dev/arandom, as its a better source of entropy */
++	fp=fopen("/dev/arandom","r");
+ 	if(fp!=NULL){
+ 		seed=fgetc(fp);
+ 		fclose(fp);
