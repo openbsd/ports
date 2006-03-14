@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2005/05/03 21:51:46 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/03/14 23:26:36 espie Exp $
 
 COMMENT=		"kde image plugins"
 CATEGORIES=		graphics x11 x11/kde
-DISTNAME=		kipi-plugins-0.1.0-beta2
+DISTNAME=		kipi-plugins-0.1.0-rc1
 EXTRACT_SUFX=		.tar.bz2
+PKGNAME=		kipi-plugins-0.1.0rc1
 HOMEPAGE=		http://extragear.kde.org/apps/kipi/
-MASTER_SITES=		${MASTER_SITE_KDE:=unstable/apps/KDE3.x/graphics/}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=kipi/}
 
 SHARED_ONLY=Yes
 LIB_DEPENDS+=	lib/qt3/qt-mt.3.33::x11/qt3,mt \
@@ -20,10 +21,11 @@ BUILD_DEPENDS=	::devel/pkgconfig
 WANTLIB=	X11 Xext freetype util m c ICE Xrender SM pthread z GL stdc++ \
 		jpeg png pcre pcreposix iconv intl art_lgpl_2 tiff exif ltdl
 
-MODKDE_LIBTOOL=		Yes
+USE_LIBTOOL=		Yes
+LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
-MODKDE_VERSION=		3.4
+MODKDE_VERSION=		3.5
 AUTOCONF=		/bin/sh ${WRKDIST}/admin/cvs.sh configure
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS}
 USE_GMAKE?=		Yes
