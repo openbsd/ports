@@ -1,53 +1,32 @@
-$OpenBSD: patch-src_shout_c,v 1.1 2005/04/19 20:07:11 sturm Exp $
---- src/shout.c.orig	Sun Apr 17 12:25:25 2005
-+++ src/shout.c	Sun Apr 17 12:51:32 2005
-@@ -489,7 +489,7 @@ int shout_set_mount(shout_t *self, const
- 	if (!(self->mount = malloc(len)))
- 		return self->error = SHOUTERR_MALLOC;
+$OpenBSD: patch-src_shout_c,v 1.2 2006/03/14 19:59:01 sturm Exp $
+--- src/shout.c.orig	Tue Jan  3 19:56:39 2006
++++ src/shout.c	Fri Jan  6 12:30:31 2006
+@@ -165,6 +165,8 @@ int shout_close(shout_t *self)
+ 	if (self->close)
+ 		self->close(self);
  
--	sprintf (self->mount, "%s%s", mount[0] == '/' ? "" : "/", mount);
-+	snprintf (self->mount, len, "%s%s", mount[0] == '/' ? "" : "/", mount);
++	self->close = NULL;
++	self->send = NULL;
+ 	sock_close(self->socket);
+ 	self->state = SHOUT_STATE_UNCONNECTED;
+ 	self->starttime = 0;
+@@ -183,6 +185,9 @@ int shout_send(shout_t *self, const unsi
+ 	if (self->state != SHOUT_STATE_CONNECTED)
+ 		return self->error = SHOUTERR_UNCONNECTED;
  
- 	return self->error = SHOUTERR_SUCCESS;
- }
-@@ -1145,6 +1145,7 @@ static char *http_basic_authorization(sh
- {
- 	char *out, *in;
- 	int len;
-+	int ret;
++	if (self->send == NULL)
++		return self->error = SHOUTERR_NOCONNECT;
++
+ 	if (self->starttime <= 0)
+ 		self->starttime = timing_get_time();
  
- 	if (!self || !self->user || !self->password)
- 		return NULL;
-@@ -1152,7 +1153,11 @@ static char *http_basic_authorization(sh
- 	len = strlen(self->user) + strlen(self->password) + 2;
- 	if (!(in = malloc(len)))
- 		return NULL;
--	sprintf(in, "%s:%s", self->user, self->password);
-+	ret = snprintf(in, len, "%s:%s", self->user, self->password);
-+	if (ret == -1 || ret >= len) {
-+		free(in);
-+		return NULL;
-+	}
- 	out = _shout_util_base64_encode(in);
- 	free(in);
+@@ -202,6 +207,9 @@ ssize_t shout_send_raw(shout_t *self, co
+ 	if (self->state != SHOUT_STATE_CONNECTED)
+ 		return SHOUTERR_UNCONNECTED;
  
-@@ -1161,10 +1166,15 @@ static char *http_basic_authorization(sh
- 		free(out);
- 		return NULL;
- 	}
--	sprintf(in, "Authorization: Basic %s\r\n", out);
--	free(out);
--	
--	return in;
-+	ret = snprintf(in, len, "Authorization: Basic %s\r\n", out);
-+	if (ret == -1 || ret >= len) {
-+		free(in);
-+		free(out);
-+		return NULL;
-+	} else {
-+		free(out);
-+		return in;
-+	}
- }
++	if (self->send == NULL)
++		return self->error = SHOUTERR_NOCONNECT;
++
+ 	self->error = SHOUTERR_SUCCESS;
  
- static int parse_response(shout_t *self)
+ 	/* send immediately if possible (should be the common case) */
