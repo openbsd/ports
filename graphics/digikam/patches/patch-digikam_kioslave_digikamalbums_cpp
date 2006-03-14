@@ -1,0 +1,12 @@
+$OpenBSD: patch-digikam_kioslave_digikamalbums_cpp,v 1.1 2006/03/14 22:27:35 espie Exp $
+--- digikam/kioslave/digikamalbums.cpp.orig	Tue Mar 14 21:48:07 2006
++++ digikam/kioslave/digikamalbums.cpp	Tue Mar 14 21:48:26 2006
+@@ -206,7 +206,7 @@ void kio_digikamalbums::special(const QB
+         os << albumid;
+         os << name;
+         os << date;
+-        os << stbuf.st_size;
++        os << static_cast<size_t>(stbuf.st_size);
+         os << dims;
+     }
+ 

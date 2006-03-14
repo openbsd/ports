@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.6 2006/01/14 00:07:28 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/03/14 22:27:34 espie Exp $
 
 COMMENT=		"digital image kde application"
 CATEGORIES=		graphics x11 x11/kde
-V=			0.7.4
+V=			0.8.1
 DISTNAME=		digikam-$V
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}
 SHARED_LIBS=		digikam	1.0
-HOMEPAGE=		http://extragear.kde.org/apps/kipi/
+HOMEPAGE=		http://www.digikam.org/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=digikam/}
 DISTFILES=		${DISTNAME}.tar.bz2
 
 SHARED_ONLY=Yes
 LIB_DEPENDS+=	lib/qt3/qt-mt.3.33::x11/qt3,mt \
-		kdecore.6,kwalletclient,DCOP,kparts,kdeui,kdesu,kio,kdefx,kdeprint::x11/kde/libs3 \
+		kdecore.6,kwalletclient,DCOP,kparts,kdeui,kdesu,kio,kdefx,kdeprint,kutils,kabc,vcard,kresources::x11/kde/libs3 \
 		Imlib2.0.0::graphics/imlib2 \
 		gphoto2,gphoto2_port::graphics/libgphoto2 \
 		kipi::graphics/libkipi \
 		kexif::graphics/libkexif \
-		gdbm::databases/gdbm \
+		sqlite3::databases/sqlite3 \
 		tiff::graphics/tiff
 
 WANTLIB=	util m c ICE Xrender SM pthread z stdc++ \
@@ -26,16 +26,18 @@ WANTLIB=	util m c ICE Xrender SM pthread z stdc++ \
 
 MODULES=	x11/kde
 
+FLAVORS=		debug
 BUILD_DEPENDS=		::devel/pkgconfig
 USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS+=		--tag=disable-static
-MODKDE_VERSION=		3.4
+MODKDE_VERSION=		3.5
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS}
 USE_GMAKE?=		Yes
 CONFIGURE_ENV+=		${MODKDE_CONFIGURE_ENV}
 MAKE_ENV=		${CONFIGURE_ENV}
+SUBST_VARS+=		V
 
 MAKE_FLAGS+=		${MODKDE_MAKE_FLAGS} LIBKEXIF_LIBS='-L${PREFIX}/lib -lkexif -lintl -liconv'
 MAKE_FLAGS+=		LIBRESOLV=
