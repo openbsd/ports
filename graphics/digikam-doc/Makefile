@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.3 2005/11/24 20:38:40 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2006/03/14 23:11:30 espie Exp $
 
 COMMENT=		"documentation for digikam"
 CATEGORIES=		graphics x11 x11/kde
-V=			0.7.4
+V=			0.8.0
 DISTNAME=		digikam-doc-$V
-PKGNAME=		${DISTNAME}p0
-HOMEPAGE=		http://extragear.kde.org/apps/kipi/
+PKGNAME=		${DISTNAME}
+HOMEPAGE=		http://www.digikam.org/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=digikam/}
 DISTFILES=		${DISTNAME}.tar.bz2
 
 SHARED_ONLY=Yes
 
 MODULES=	x11/kde
-MODKDE_VERSION=		3.4
+MODKDE_VERSION=		3.5
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS}
