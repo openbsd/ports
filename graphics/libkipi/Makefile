@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2006/01/14 00:07:29 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/03/14 21:49:38 espie Exp $
 
 COMMENT=		"kde image plugins api"
 CATEGORIES=		graphics devel x11 x11/kde
-DISTNAME=		libkipi-0.1.1
-PKGNAME=		${DISTNAME}p1
-SHARED_LIBS=		kipi	1.0
+V=			0.1.2
+DISTNAME=		libkipi-$V
+PKGNAME=		${DISTNAME}
+SHARED_LIBS=		kipi	1.1
 EXTRACT_SUFX=		.tar.bz2
 HOMEPAGE=		http://extragear.kde.org/apps/kipi/
-MASTER_SITES=		${MASTER_SITE_KDE:=unstable/apps/KDE3.x/graphics/}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=kipi/}
 
 SHARED_ONLY=Yes
 LIB_DEPENDS+=		lib/qt3/qt-mt.3.33::x11/qt3,mt \
@@ -16,6 +17,7 @@ LIB_DEPENDS+=		lib/qt3/qt-mt.3.33::x11/qt3,mt \
 WANTLIB=		ICE Xrender SM Xext pthread X11 util m z \
 			jpeg png art_lgpl_2
 
+FLAVORS=	debug
 MODULES=	x11/kde
 
 USE_LIBTOOL=		Yes
@@ -30,6 +32,7 @@ MAKE_ENV=		${CONFIGURE_ENV}
 
 MAKE_FLAGS+=		${MODKDE_MAKE_FLAGS}
 MAKE_FLAGS+=		LIBRESOLV=
+SUBST_VARS+=		V
 
 # GPL
 PERMIT_DISTFILES_CDROM?=	Yes

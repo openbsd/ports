@@ -1,12 +1,12 @@
-$OpenBSD: patch-admin_cvs_sh,v 1.1.1.1 2005/04/09 12:11:03 espie Exp $
---- admin/cvs.sh.orig	Tue Feb  8 11:34:50 2005
-+++ admin/cvs.sh	Wed Apr  6 12:37:13 2005
-@@ -633,8 +633,10 @@ if test -f Makefile.am.in; then
-   rm -f $makefile_wo
- fi
+$OpenBSD: patch-admin_cvs_sh,v 1.2 2006/03/14 21:49:39 espie Exp $
+--- admin/cvs.sh.orig	Sat Sep 17 18:09:28 2005
++++ admin/cvs.sh	Mon Jan 23 10:30:59 2006
+@@ -630,7 +630,11 @@ fi
  
--# Suck in the AUTOCONF detection code
--. $admindir/detect-autoconf.sh
+ # Call script to find autoconf and friends.  Uses eval since the script outputs
+ # sh-compatible code.
+-eval `$admindir/detect-autoconf.pl`
++#eval `$admindir/detect-autoconf.pl`
 +AUTOCONF=autoconf
 +AUTOHEADER=autoheader
 +AUTOM4TE=autom4te-2.59

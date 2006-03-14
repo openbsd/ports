@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/12/31 14:07:21 steven Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/03/14 21:49:39 espie Exp $
 include/libkipi/
 include/libkipi/batchprogressdialog.h
 include/libkipi/imagecollection.h
@@ -8,6 +8,7 @@ include/libkipi/imagedialog.h
 include/libkipi/imageinfo.h
 include/libkipi/imageinfoshared.h
 include/libkipi/interface.h
+include/libkipi/libkipi_export.h
 include/libkipi/plugin.h
 include/libkipi/pluginloader.h
 include/libkipi/uploadwidget.h
@@ -18,6 +19,9 @@ lib/pkgconfig/libkipi.pc
 share/apps/kipi/
 share/apps/kipi/data/
 share/apps/kipi/data/banner_left.png
+@comment share/doc/HTML/en/libkipi-${V}-apidocs/
+@comment share/doc/HTML/en/libkipi-${V}-apidocs/libkipi/
+@comment share/doc/HTML/en/libkipi-${V}-apidocs/libkipi/html/
 share/icons/hicolor/16x16/
 share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/kipi.png
@@ -34,9 +38,11 @@ share/locale/br/
 share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/libkipi.mo
 share/locale/ca/LC_MESSAGES/libkipi.mo
+share/locale/cs/LC_MESSAGES/libkipi.mo
 share/locale/cy/LC_MESSAGES/libkipi.mo
 share/locale/da/LC_MESSAGES/libkipi.mo
 share/locale/de/LC_MESSAGES/libkipi.mo
+share/locale/el/LC_MESSAGES/libkipi.mo
 share/locale/en_GB/LC_MESSAGES/libkipi.mo
 share/locale/es/LC_MESSAGES/libkipi.mo
 share/locale/et/LC_MESSAGES/libkipi.mo
@@ -46,13 +52,21 @@ share/locale/ga/LC_MESSAGES/libkipi.mo
 share/locale/is/LC_MESSAGES/libkipi.mo
 share/locale/it/LC_MESSAGES/libkipi.mo
 share/locale/lt/LC_MESSAGES/libkipi.mo
+share/locale/mt/
+share/locale/mt/LC_MESSAGES/
+share/locale/mt/LC_MESSAGES/libkipi.mo
+share/locale/nb/LC_MESSAGES/libkipi.mo
 share/locale/nl/LC_MESSAGES/libkipi.mo
+share/locale/pa/LC_MESSAGES/libkipi.mo
 share/locale/pl/LC_MESSAGES/libkipi.mo
 share/locale/pt/LC_MESSAGES/libkipi.mo
 share/locale/pt_BR/LC_MESSAGES/libkipi.mo
+share/locale/rw/LC_MESSAGES/libkipi.mo
 share/locale/sl/LC_MESSAGES/libkipi.mo
 share/locale/sr/LC_MESSAGES/libkipi.mo
+share/locale/sr@Latn/LC_MESSAGES/libkipi.mo
 share/locale/sv/LC_MESSAGES/libkipi.mo
 share/locale/ta/LC_MESSAGES/libkipi.mo
 share/locale/tr/LC_MESSAGES/libkipi.mo
+share/locale/zh_CN/LC_MESSAGES/libkipi.mo
 share/servicetypes/kipiplugin.desktop
