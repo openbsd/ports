@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2005/06/18 18:08:49 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2006/03/14 20:00:20 sturm Exp $
 
 COMMENT=	"icecast source for streaming MP3"
 
 DISTNAME=	ices-0.4
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net audio
 
 HOMEPAGE=	http://www.icecast.org/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m ogg perl pthread util vorbis vorbisfile z
+WANTLIB=		c m ogg perl pthread theora util vorbis vorbisfile z
 
 MASTER_SITES=	http://downloads.xiph.org/releases/ices/
 
@@ -27,8 +27,10 @@ CONFIGURE_ARGS=	--with-docdir=${LOCALBASE}/share/doc/ices \
 		--with-flac=${LOCALBASE}
 
 MODULES=	converters/libiconv
+BUILD_DEPENDS=	::devel/pkgconfig
 LIB_DEPENDS=	mp3lame.0:lame-*:audio/lame,no_x11 \
 		shout.3::net/libshout \
+		speex.4::audio/speex \
 		FLAC.5::audio/flac \
 		xml2.7::textproc/libxml
 
@@ -36,7 +38,7 @@ FLAVORS=	python mp4
 FLAVOR?=
 
 .if ${FLAVOR:L:Mpython}
-PYTHON_VER=	2.3
+PYTHON_VER=	2.4
 CONFIGURE_ARGS+=--with-python=${LOCALBASE}/bin/python${PYTHON_VER}
 LIB_DEPENDS+=	python${PYTHON_VER}.0.0:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 .else
@@ -51,6 +53,7 @@ CONFIGURE_ARGS+=--without-faad
 .endif
 
 SEPARATE_BUILD=	simple
+USE_LIBTOOL=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ices/
