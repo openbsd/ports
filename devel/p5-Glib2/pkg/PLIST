@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/10/07 17:49:23 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/03/15 14:00:26 msf Exp $
 ${P5ARCH}/
 ${P5ARCH}/Glib/
 ${P5ARCH}/Glib.pm
@@ -27,8 +27,10 @@ ${P5ARCH}/Glib/Param/Double.pod
 ${P5ARCH}/Glib/Param/Enum.pod
 ${P5ARCH}/Glib/Param/Flags.pod
 ${P5ARCH}/Glib/Param/Int.pod
+${P5ARCH}/Glib/Param/Int64.pod
 ${P5ARCH}/Glib/Param/String.pod
 ${P5ARCH}/Glib/Param/UInt.pod
+${P5ARCH}/Glib/Param/UInt64.pod
 ${P5ARCH}/Glib/Param/Unichar.pod
 ${P5ARCH}/Glib/ParamSpec.pod
 ${P5ARCH}/Glib/ParseXSDoc.pm
@@ -61,8 +63,10 @@ ${P5ARCH}/auto/Glib/Glib.so
 @man man/man3p/Glib::Param::Enum.3p
 @man man/man3p/Glib::Param::Flags.3p
 @man man/man3p/Glib::Param::Int.3p
+@man man/man3p/Glib::Param::Int64.3p
 @man man/man3p/Glib::Param::String.3p
 @man man/man3p/Glib::Param::UInt.3p
+@man man/man3p/Glib::Param::UInt64.3p
 @man man/man3p/Glib::Param::Unichar.3p
 @man man/man3p/Glib::ParamSpec.3p
 @man man/man3p/Glib::ParseXSDoc.3p

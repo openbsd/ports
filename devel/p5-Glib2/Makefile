@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2006/03/09 21:38:12 msf Exp $
+# $OpenBSD: Makefile,v 1.3 2006/03/15 14:00:26 msf Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"perl interface to the Glib libraries"
 
-DISTNAME=	Glib-1.105
-PKGNAME=	p5-Glib2-1.105
+DISTNAME=	Glib-1.120
+PKGNAME=	p5-Glib2-1.120
 CATEGORIES=	x11 devel perl5
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
