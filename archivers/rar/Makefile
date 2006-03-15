@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2005/02/21 21:59:44 sturm Exp $
+# $OpenBSD: Makefile,v 1.39 2006/03/15 19:59:42 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc
 
@@ -18,6 +18,8 @@ EMUL=		bsdos
 DISTFILES=	rarsparc.sfx
 PKGNAME=	rar-2.01
 EMUL=		svr4
+.else
+DISTFILES=
 .endif
 
 SUPDISTFILES=	rarsparc.sfx rarbsd.sfx
