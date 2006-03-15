@@ -1,0 +1,13 @@
+$OpenBSD: patch-t_Gdk_t,v 1.1.1.1 2006/03/15 16:10:45 msf Exp $
+--- t/Gdk.t.orig	Wed Mar 15 08:55:56 2006
++++ t/Gdk.t	Wed Mar 15 08:57:05 2006
+@@ -5,7 +5,8 @@ use Gtk2;
+ 
+ # $Header: /home/cvs/ports/x11/p5-Gtk2/patches/Attic/patch-t_Gdk_t,v 1.1.1.1 2006/03/15 16:10:45 msf Exp $
+ 
+-Gtk2::Gdk::Threads -> init();
++# OpenBSD perl does not have thread support
++# Gtk2::Gdk::Threads -> init();
+ 
+ @ARGV = qw(--help --name bla --urgs tree);
+ 
