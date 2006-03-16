@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2005/11/06 20:20:59 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.17 2006/03/16 09:53:56 mbalmer Exp $
 @newgroup _zope:534
 @newuser _zope:534:_zope:daemon:Zope Account:/nonexistent:/sbin/nologin
 lib/zope/
@@ -9,7 +9,6 @@ lib/zope/bin/check_catalog.py
 lib/zope/bin/checkbtrees.py
 lib/zope/bin/compilezpy.py
 lib/zope/bin/copyzopeskel.py
-@unexec rm -f %D/lib/zope/bin/copyzopeskel.pyc
 lib/zope/bin/decompilezpy.py
 lib/zope/bin/fsdump.py
 lib/zope/bin/fsrefs.py
@@ -117,6 +116,8 @@ lib/zope/lib/python/AccessControl/dtml/owner.dtml
 lib/zope/lib/python/AccessControl/dtml/permissionEdit.dtml
 lib/zope/lib/python/AccessControl/dtml/roleEdit.dtml
 lib/zope/lib/python/AccessControl/dtml/userFolderProps.dtml
+lib/zope/lib/python/AccessControl/interfaces.py
+lib/zope/lib/python/AccessControl/interfaces.pyc
 lib/zope/lib/python/AccessControl/securitySuite/
 lib/zope/lib/python/AccessControl/securitySuite/README
 lib/zope/lib/python/AccessControl/securitySuite/ResultObject.py
@@ -170,6 +171,8 @@ lib/zope/lib/python/AccessControl/tests/testPermissionRole.py
 lib/zope/lib/python/AccessControl/tests/testPermissionRole.pyc
 lib/zope/lib/python/AccessControl/tests/testSecurity.py
 lib/zope/lib/python/AccessControl/tests/testSecurity.pyc
+lib/zope/lib/python/AccessControl/tests/testSecurityManager.py
+lib/zope/lib/python/AccessControl/tests/testSecurityManager.pyc
 lib/zope/lib/python/AccessControl/tests/testUserFolder.py
 lib/zope/lib/python/AccessControl/tests/testUserFolder.pyc
 lib/zope/lib/python/AccessControl/tests/testZopeGuards.py
@@ -3093,6 +3096,8 @@ lib/zope/lib/python/ZPublisher/maybe_lock.pyc
 lib/zope/lib/python/ZPublisher/tests/
 lib/zope/lib/python/ZPublisher/tests/__init__.py
 lib/zope/lib/python/ZPublisher/tests/__init__.pyc
+lib/zope/lib/python/ZPublisher/tests/generate_conflicts.py
+lib/zope/lib/python/ZPublisher/tests/generate_conflicts.pyc
 lib/zope/lib/python/ZPublisher/tests/testBaseRequest.py
 lib/zope/lib/python/ZPublisher/tests/testBaseRequest.pyc
 lib/zope/lib/python/ZPublisher/tests/testHTTPRangeSupport.py
@@ -7236,6 +7241,9 @@ lib/zope/skel/etc/zope.conf.in
 @comment lib/zope/skel/etc/zope.conf.in.orig
 lib/zope/skel/import/
 lib/zope/skel/import/README.txt
+lib/zope/skel/lib/
+lib/zope/skel/lib/python/
+lib/zope/skel/lib/python/README.txt.in
 lib/zope/skel/log/
 lib/zope/skel/log/README.txt
 lib/zope/skel/var/

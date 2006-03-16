@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2005/11/06 20:20:58 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.26 2006/03/16 09:53:55 mbalmer Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"object-oriented web application server"
 
-VERSION=	2.8.4
+VERSION=	2.8.6
 DISTNAME=	Zope-${VERSION}-final
 PKGNAME=	${DISTNAME:S/-final//:L}
 CATEGORIES=     www
