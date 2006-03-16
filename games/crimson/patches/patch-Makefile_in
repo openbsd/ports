@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2004/08/06 14:11:04 jolan Exp $
---- Makefile.in.orig	Thu Jul  8 15:14:43 2004
-+++ Makefile.in	Thu Aug  5 22:50:00 2004
-@@ -155,7 +155,7 @@ sharedstatedir = @sharedstatedir@
+$OpenBSD: patch-Makefile_in,v 1.3 2006/03/16 05:44:05 jsg Exp $
+--- Makefile.in.orig	Sat Mar 11 23:33:16 2006
++++ Makefile.in	Sat Mar 11 23:33:26 2006
+@@ -170,7 +170,7 @@ sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
- EXTRA_DIST = crimson.spec.in README.bi2cf README.CoMET
+ EXTRA_DIST = crimson.desktop crimson.spec.in README.bi2cf README.CoMET
 -SUBDIRS = doc src tools gfx levels locale music sfx
 +SUBDIRS = src tools gfx levels locale music sfx
- all: all-recursive
- 
- .SUFFIXES:
+ DISTCHECK_CONFIGURE_FLAGS = --enable-bi2cf --enable-cf2bmp --enable-cfed --enable-comet
+ desktopdir = $(datadir)/applications
+ desktop_DATA = crimson.desktop

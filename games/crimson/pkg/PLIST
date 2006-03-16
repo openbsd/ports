@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 00:46:08 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2006/03/16 05:44:05 jsg Exp $
 bin/bi2cf
 bin/cfed
 bin/comet
@@ -7,6 +7,8 @@ bin/crimson
 @man man/man6/cfed.6
 @man man/man6/comet.6
 @man man/man6/crimson.6
+share/applications/
+share/applications/crimson.desktop
 share/crimson/
 share/crimson/Bepa-Roman.ttf
 share/crimson/cf.dat
@@ -17,6 +19,7 @@ share/crimson/levels/Anthill.lev
 share/crimson/levels/ArmsRace.lev
 share/crimson/levels/BeachRaid.lev
 share/crimson/levels/Foxhole.lev
+share/crimson/levels/General.lev
 share/crimson/levels/GreatBattle.lev
 share/crimson/levels/HeavyMetal.lev
 share/crimson/levels/IslandHoppers.lev
@@ -24,12 +27,19 @@ share/crimson/levels/LankhValley.lev
 share/crimson/levels/LostFactories.lev
 share/crimson/levels/MountainDefense.lev
 share/crimson/levels/OmyarGorge.lev
+share/crimson/levels/Plowshares.lev
+share/crimson/levels/RadioSilence.lev
 share/crimson/levels/Revelation.lev
+share/crimson/levels/Tutorial1.lev
+share/crimson/levels/Tutorial2.lev
+share/crimson/levels/Tutorial3.lev
 share/crimson/levels/Uprising.lev
 share/crimson/locale/
 share/crimson/locale/de.dat
 share/crimson/locale/en.dat
+share/crimson/locale/fr.dat
 share/crimson/locale/pl.dat
+share/crimson/locale/sk.dat
 share/crimson/music/
 share/crimson/music/default.mid
 share/crimson/sound/
