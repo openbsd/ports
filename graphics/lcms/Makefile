@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2006/01/08 01:01:18 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2006/03/16 11:03:07 espie Exp $
 
 COMMENT=	"color management library"
 
-DISTNAME=	lcms-1.12
-PKGNAME=	${DISTNAME}p1
-SHARED_LIBS=	lcms	1.12
+DISTNAME=	lcms-1.15
+PKGNAME=	${DISTNAME}
+SHARED_LIBS=	lcms	1.15
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lcms/}
 
@@ -24,7 +24,7 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${WRKBUILD}/src/.libs -L${LOCALBASE}/lib"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lcms

@@ -1,0 +1,10 @@
+$OpenBSD: patch-lcms_pc_in,v 1.1 2006/03/16 11:03:07 espie Exp $
+--- lcms.pc.in.orig	Tue Mar  7 22:54:35 2006
++++ lcms.pc.in	Tue Mar  7 22:54:46 2006
+@@ -6,5 +6,5 @@ includedir=@includedir@
+ Name: @PACKAGE@
+ Description: LCMS Color Management Library
+ Version: @VERSION@
+-Libs: -L${libdir} -llcms
++Libs: -L${libdir} -llcms @LCMS_LIB_DEPLIBS@
+ Cflags: -I${includedir}

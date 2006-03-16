@@ -1,40 +1,22 @@
-$OpenBSD: patch-include_lcms_h,v 1.2 2005/03/14 08:46:54 espie Exp $
---- include/lcms.h.orig	Sat Dec 20 16:00:11 2003
-+++ include/lcms.h	Mon Mar 14 09:27:50 2005
-@@ -75,7 +75,7 @@
- 
- // Metroworks CodeWarrior
- 
--#if __MWERKS__ 
-+#ifdef __MWERKS__ 
- #   define unlink remove
- #   if WIN32 
- #       define USE_CUSTOM_SWAB 1
-@@ -100,7 +100,7 @@
+$OpenBSD: patch-include_lcms_h,v 1.3 2006/03/16 11:03:07 espie Exp $
+--- include/lcms.h.orig	Tue Mar  7 22:46:48 2006
++++ include/lcms.h	Tue Mar  7 22:47:46 2006
+@@ -131,11 +131,17 @@
  #   define USE_BIG_ENDIAN      1
  #endif
  
--#if TARGET_CPU_PPC
-+#ifdef TARGET_CPU_PPC
- #   define USE_BIG_ENDIAN   1
- #endif
- 
-@@ -114,6 +114,9 @@
- 
- #if defined(__OpenBSD__) || defined(__NetBSD__) || defined(__FreeBSD__)
+-#if defined(__OpenBSD__) || defined(__NetBSD__) || defined(__FreeBSD__)
++#if defined(__NetBSD__) || defined(__FreeBSD__)
  #  include <sys/types.h>
-+#  if BYTE_ORDER == BIG_ENDIAN
-+#    define USE_BIG_ENDIAN    1
-+#  endif
  #  define USE_INT64           1
- #  undef  LONGLONG
- #  define LONGLONG            u_int64_t
-@@ -128,7 +131,7 @@
- #include <memory.h>
- #include <string.h>
- 
--#if defined(__GNUC__) || defined(__FreeBSD__)
-+#if defined(__GNUC__) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__FreeBSD__)
- #   include <unistd.h>
+ #  define LCMSSLONGLONG       int_64_t
+ #  define LCMSULONGLONG       u_int64_t
++#endif
++#if defined(__OpenBSD__)
++#  include <stdint.h>
++#  define USE_INT64           1
++#  define LCMSSLONGLONG	      int64_t
++#  define LCMSULONGLONG       uint64_t
  #endif
  
+ #ifdef USE_INT64

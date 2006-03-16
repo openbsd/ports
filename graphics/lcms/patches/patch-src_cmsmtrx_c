@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_cmsmtrx_c,v 1.1 2004/02/03 05:15:16 brad Exp $
---- src/cmsmtrx.c.orig	2003-12-20 10:00:11.000000000 -0500
-+++ src/cmsmtrx.c	2004-02-02 22:06:07.000000000 -0500
-@@ -733,9 +733,9 @@ void MAT3fromFix(LPMAT3 r, LPWMAT3 v)
+$OpenBSD: patch-src_cmsmtrx_c,v 1.2 2006/03/16 11:03:07 espie Exp $
+--- src/cmsmtrx.c.orig	Fri Nov 25 12:11:16 2005
++++ src/cmsmtrx.c	Tue Mar  7 22:36:36 2006
+@@ -797,9 +797,9 @@ void MAT3fromFix(LPMAT3 r, LPWMAT3 v)
  
  void VEC3scaleAndCut(LPWVEC3 r, LPVEC3 v, double d)
  {

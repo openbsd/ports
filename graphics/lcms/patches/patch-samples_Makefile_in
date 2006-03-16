@@ -1,27 +1,25 @@
-$OpenBSD: patch-samples_Makefile_in,v 1.1 2004/02/03 05:15:16 brad Exp $
---- samples/Makefile.in.orig	2004-02-02 22:56:52.000000000 -0500
-+++ samples/Makefile.in	2004-02-02 23:01:05.000000000 -0500
-@@ -195,19 +195,19 @@ AM_CPPFLAGS = -I$(top_builddir)/include 
- 
- bin_PROGRAMS = icctrans wtpt icc2ps icclink
- 
+$OpenBSD: patch-samples_Makefile_in,v 1.2 2006/03/16 11:03:07 espie Exp $
+--- samples/Makefile.in.orig	Tue Nov  1 01:13:40 2005
++++ samples/Makefile.in	Tue Mar  7 22:42:42 2006
+@@ -243,17 +243,17 @@ target_vendor = @target_vendor@
+ # Don't require all the GNU mandated files
+ AUTOMAKE_OPTIONS = 1.7 foreign
+ AM_CPPFLAGS = -I$(top_builddir)/include -I$(top_srcdir)/include
 -icctrans_LDADD = $(top_builddir)/src/liblcms.la 
-+icctrans_LDADD = $(top_builddir)/src/liblcms.la $(LCMS_LIB_DEPLIBS)
++icctrans_LDADD = $(top_builddir)/src/liblcms.la  $(LCMS_LIB_DEPLIBS)
  icctrans_LDFLAGS = @LDFLAGS@
- icctrans_SOURCES = icctrans.c xgetopt.c
- 
+ icctrans_SOURCES = icctrans.c xgetopt.c vprf.c
+ icctrans_MANS = icctrans.1
 -wtpt_LDADD = $(top_builddir)/src/liblcms.la 
-+wtpt_LDADD = $(top_builddir)/src/liblcms.la $(LCMS_LIB_DEPLIBS)
++wtpt_LDADD = $(top_builddir)/src/liblcms.la  $(LCMS_LIB_DEPLIBS)
  wtpt_LDFLAGS = @LDFLAGS@
- wtpt_SOURCES = wtpt.c xgetopt.c
- 
+ wtpt_SOURCES = wtpt.c xgetopt.c 
 -icc2ps_LDADD = $(top_builddir)/src/liblcms.la 
-+icc2ps_LDADD = $(top_builddir)/src/liblcms.la $(LCMS_LIB_DEPLIBS)
++icc2ps_LDADD = $(top_builddir)/src/liblcms.la  $(LCMS_LIB_DEPLIBS)
  icc2ps_LDFLAGS = @LDFLAGS@
- icc2ps_SOURCES = icc2ps.c xgetopt.c
- 
+ icc2ps_SOURCES = icc2ps.c xgetopt.c 
 -icclink_LDADD = $(top_builddir)/src/liblcms.la 
-+icclink_LDADD = $(top_builddir)/src/liblcms.la $(LCMS_LIB_DEPLIBS)
++icclink_LDADD = $(top_builddir)/src/liblcms.la  $(LCMS_LIB_DEPLIBS)
  icclink_LDFLAGS = @LDFLAGS@
- icclink_SOURCES = icclink.c xgetopt.c
- subdir = samples
+ icclink_SOURCES = icclink.c xgetopt.c vprf.c
+ man_MANS = wtpt.1 icc2ps.1 icclink.1
