@@ -1,0 +1,12 @@
+$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_inline_hpp,v 1.1 2006/03/16 16:09:01 kurt Exp $
+--- hotspot/src/os/bsd/vm/os_bsd.inline.hpp.orig	Wed Mar 15 15:32:22 2006
++++ hotspot/src/os/bsd/vm/os_bsd.inline.hpp	Wed Mar 15 15:32:40 2006
+@@ -32,7 +32,7 @@ inline bool os::allocate_stack_guard_pag
+   assert(uses_stack_guard_pages(), "sanity check");
+ // XXXBSD: maybe we need to enable coloring conditionally ?
+ //  return thr_main();
+-  return true;
++  return false;
+ }
+ 
+ 

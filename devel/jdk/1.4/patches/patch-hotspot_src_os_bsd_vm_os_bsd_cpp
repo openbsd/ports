@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1 2005/02/04 17:06:45 kurt Exp $
---- hotspot/src/os/bsd/vm/os_bsd.cpp.orig	Tue Jan  4 16:41:21 2005
-+++ hotspot/src/os/bsd/vm/os_bsd.cpp	Tue Jan  4 16:42:20 2005
+$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.2 2006/03/16 16:09:01 kurt Exp $
+--- hotspot/src/os/bsd/vm/os_bsd.cpp.orig	Wed Mar  8 18:44:06 2006
++++ hotspot/src/os/bsd/vm/os_bsd.cpp	Wed Mar  8 18:45:25 2006
 @@ -344,7 +344,9 @@ props_md_t* os::get_system_properties() 
  #define malloc(n) (char*)NEW_C_HEAP_ARRAY(char, (n))
  #define getenv(n) ::getenv(n)
@@ -11,3 +11,11 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1 2005/02/04 17:06:45 kurt 
  #define EXTENSIONS_DIR "/lib/ext"
  #define ENDORSED_DIR "/lib/endorsed"
  
+@@ -710,6 +712,7 @@ bool os::create_thread(Thread* thread, T
+   osthread->set_thread_id(NULL);
+ 
+   status = pthread_create(&tid, &tattr, _start, thread);
++  pthread_attr_destroy(&tattr);
+   if (status != 0) {
+ err:
+     if (PrintMiscellaneous && (Verbose || WizardMode)) {
