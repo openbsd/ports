@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2004/04/16 22:17:14 naddy Exp $
---- Makefile.PL.orig	2004-04-10 13:31:46.000000000 -0700
-+++ Makefile.PL	2004-04-10 13:32:11.000000000 -0700
-@@ -89,8 +89,8 @@ sub MY::constants {
+$OpenBSD: patch-Makefile_PL,v 1.2 2006/03/18 07:40:47 sturm Exp $
+--- Makefile.PL.orig	Mon Feb 13 15:22:23 2006
++++ Makefile.PL	Tue Mar 14 22:08:17 2006
+@@ -191,8 +191,8 @@ sub MY::constants {
          $string .= <<'EOI';
  
  # install into the same location as mod_perl 2.0
