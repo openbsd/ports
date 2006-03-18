@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/03/18 19:03:35 sturm Exp $
+${P5SITE}/Hook/
+${P5SITE}/Hook/LexWrap.pm
+@man man/man3p/Hook::LexWrap.3p
