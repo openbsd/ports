@@ -1,0 +1,5 @@
+The original Wiki web site had a very simple interface to edit and to
+add pages. Its formatting rules are simple and easy to use. They are
+also easy to translate into other, more complicated markup languages
+with this module. It creates HTML by default, but can produce valid
+POD, DocBook, XML, or any other format imaginable.

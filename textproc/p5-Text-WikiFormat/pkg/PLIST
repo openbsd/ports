@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/03/18 21:14:42 sturm Exp $
+${P5SITE}/Text/
+${P5SITE}/Text/WikiFormat/
+${P5SITE}/Text/WikiFormat.pm
+${P5SITE}/Text/WikiFormat/Blocks.pm
+@man man/man3p/Text::WikiFormat.3p
+@man man/man3p/Text::WikiFormat::Blocks.3p
