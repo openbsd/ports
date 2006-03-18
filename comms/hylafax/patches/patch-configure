@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.4 2005/06/18 18:48:12 naddy Exp $
+$OpenBSD: patch-configure,v 1.5 2006/03/18 17:19:21 naddy Exp $
 --- configure.orig	Tue Oct  1 16:05:55 2002
-+++ configure	Sat Jun 18 19:23:37 2005
++++ configure	Sat Mar 18 18:13:47 2006
 @@ -37,10 +37,10 @@
  #
  # Setup general configuration parameters.
@@ -49,7 +49,7 @@ $OpenBSD: patch-configure,v 1.4 2005/06/18 18:48:12 naddy Exp $
 -	    fi
 +	    case ${lib_ver} in
 +	    3.4)	tiff_runlen_t="uint16" ;;
-+	    3.[567])	tiff_runlen_t="uint32" ;;
++	    3.[5-8])	tiff_runlen_t="uint32" ;;
 +	    esac
  	fi
      else
