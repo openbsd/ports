@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/03/18 18:56:15 sturm Exp $
+${P5SITE}/HTTP/
+${P5SITE}/HTTP/Server/
+${P5SITE}/HTTP/Server/Simple/
+${P5SITE}/HTTP/Server/Simple.pm
+${P5SITE}/HTTP/Server/Simple/CGI/
+${P5SITE}/HTTP/Server/Simple/CGI.pm
+${P5SITE}/HTTP/Server/Simple/CGI/Environment.pm
+@man man/man3p/HTTP::Server::Simple.3p
+@man man/man3p/HTTP::Server::Simple::CGI.3p
+@man man/man3p/HTTP::Server::Simple::CGI::Environment.3p
