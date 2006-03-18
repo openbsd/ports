@@ -11,4 +11,6 @@ cruft such as dates and message-IDs are discarded so as not to bloat
 the word lists.
 
 Flavors:
-	* db4: use v4 of the Berkeley database
+	* db4:		use v4 of the Berkeley database
+	* sqlite3:	use SQLite 3 database backend
+	* qdbm:		use QDBM database backend

@@ -1,13 +1,38 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 09:09:41 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/03/18 19:33:10 bernd Exp $
+bin/bf_compact
+bin/bf_copy
+bin/bf_tar
 bin/bogofilter
 bin/bogolexer
 bin/bogotune
 bin/bogoupgrade
 bin/bogoutil
+@man man/man1/bf_compact.1
+@man man/man1/bf_copy.1
+@man man/man1/bf_tar.1
 @man man/man1/bogofilter.1
 @man man/man1/bogolexer.1
 @man man/man1/bogotune.1
 @man man/man1/bogoupgrade.1
 @man man/man1/bogoutil.1
+share/doc/bogofilter/
+share/doc/bogofilter/README.db
+share/doc/bogofilter/README.sqlite
+share/doc/bogofilter/README.validation
+share/doc/bogofilter/bf_compact.html
+share/doc/bogofilter/bf_copy.html
+share/doc/bogofilter/bf_tar.html
+share/doc/bogofilter/bogofilter-faq-fr.html
+share/doc/bogofilter/bogofilter-faq.html
+share/doc/bogofilter/bogofilter-tuning.HOWTO.html
+share/doc/bogofilter/bogofilter.html
+share/doc/bogofilter/bogolexer.html
+share/doc/bogofilter/bogotune-faq.html
+share/doc/bogofilter/bogotune.html
+share/doc/bogofilter/bogoupgrade.html
+share/doc/bogofilter/bogoutil.html
+share/doc/bogofilter/integrating-with-postfix
+share/doc/bogofilter/integrating-with-qmail
 share/examples/bogofilter/
 share/examples/bogofilter/bogofilter.cf.example
+%%qdbm%%
