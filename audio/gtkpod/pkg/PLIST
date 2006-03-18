@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2006/01/20 06:27:28 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.4 2006/03/18 07:08:21 sturm Exp $
 bin/gtkpod
 share/gtkpod/
 share/gtkpod/gtkpod.glade
@@ -20,13 +20,17 @@ share/gtkpod/pixmaps/gtkpod-sync.png
 share/gtkpod/pixmaps/gtkpod.glade
 share/gtkpod/pixmaps/gtkpod.gladep
 share/gtkpod/scripts/
+share/gtkpod/scripts/ldif2vcf.sh
 share/gtkpod/scripts/mab2vcard
 share/gtkpod/scripts/sync-abook.sh
 share/gtkpod/scripts/sync-evocalendar.sh
 share/gtkpod/scripts/sync-evolution.sh
 share/gtkpod/scripts/sync-kaddressbook.sh
+share/gtkpod/scripts/sync-knotes.sh
 share/gtkpod/scripts/sync-korganizer.sh
+share/gtkpod/scripts/sync-ldif.sh
 share/gtkpod/scripts/sync-notes.sh
+share/gtkpod/scripts/sync-palm-jppy.py
 share/gtkpod/scripts/sync-thunderbird.sh
 share/gtkpod/scripts/sync-webcalendar.sh
 share/locale/de/LC_MESSAGES/gtkpod.mo
