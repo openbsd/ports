@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/22 02:46:39 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2006/03/18 06:31:47 sturm Exp $
 
 COMMENT=		"Use other catalog formats in Locale::Maketext"
 
-DISTNAME=		Regexp-Common-2.118
+DISTNAME=		Regexp-Common-2.120
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		textproc perl5
 
