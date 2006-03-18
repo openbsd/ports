@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2006/01/14 00:07:30 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2006/03/18 17:40:02 naddy Exp $
 
 COMMENT=	"tools and library routines for working with TIFF images"
 
-DISTNAME=	tiff-3.7.3
-PKGNAME=	$(DISTNAME)p0
-SHARED_LIBS=	tiff	37.3 \
-		tiffxx	38.0
+DISTNAME=	tiff-3.8.1
+SHARED_LIBS=	tiff	38.1 \
+		tiffxx	39.0
 CATEGORIES=	graphics
 
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
@@ -30,5 +29,6 @@ CONFIGURE_ARGS=	--with-docdir="${PREFIX}/share/doc/tiff" \
 		--with-jpeg-lib-dir="${DEPBASE}/lib" \
 		--without-x
 SEPARATE_BUILD=	simple
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
 .include <bsd.port.mk>

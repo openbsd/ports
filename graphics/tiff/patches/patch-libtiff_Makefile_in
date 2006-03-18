@@ -1,7 +1,7 @@
-$OpenBSD: patch-libtiff_Makefile_in,v 1.7 2005/07/17 20:54:36 naddy Exp $
---- libtiff/Makefile.in.orig	Tue Jul  5 18:38:08 2005
-+++ libtiff/Makefile.in	Wed Jul 13 18:52:48 2005
-@@ -193,7 +193,7 @@ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_P
+$OpenBSD: patch-libtiff_Makefile_in,v 1.8 2006/03/18 17:40:02 naddy Exp $
+--- libtiff/Makefile.in.orig	Mon Mar 13 15:58:39 2006
++++ libtiff/Makefile.in	Thu Mar 16 16:08:40 2006
+@@ -196,7 +196,7 @@ LD = @LD@
  LDFLAGS = @LDFLAGS@
  LIBDIR = @LIBDIR@
  LIBOBJS = @LIBOBJS@

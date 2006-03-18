@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2005/06/18 21:24:41 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.15 2006/03/18 17:40:02 naddy Exp $
 include/tiff.h
 include/tiffconf.h
 include/tiffio.h
@@ -218,3 +218,7 @@ share/doc/tiff/v3.7.0beta.html
 share/doc/tiff/v3.7.0beta2.html
 share/doc/tiff/v3.7.1.html
 share/doc/tiff/v3.7.2.html
+share/doc/tiff/v3.7.3.html
+share/doc/tiff/v3.7.4.html
+share/doc/tiff/v3.8.0.html
+share/doc/tiff/v3.8.1.html
