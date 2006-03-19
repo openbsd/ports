@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2006/03/05 16:20:09 pedro Exp $
+@comment $OpenBSD: PLIST,v 1.16 2006/03/19 17:36:41 pedro Exp $
 %%SHARED%%
 bin/ion3
 bin/pwm3
@@ -52,18 +52,16 @@ share/doc/ion3/LICENSE
 share/doc/ion3/README
 share/doc/ion3/RELNOTES
 share/examples/ion3/
-share/examples/ion3/cfg_bindings.lua
 share/examples/ion3/cfg_dock.lua
 share/examples/ion3/cfg_floatws.lua
 share/examples/ion3/cfg_ion.lua
+share/examples/ion3/cfg_ioncore.lua
 share/examples/ion3/cfg_ionws.lua
 share/examples/ion3/cfg_kludges.lua
 share/examples/ion3/cfg_menu.lua
-share/examples/ion3/cfg_menus.lua
+share/examples/ion3/cfg_modules.lua
 share/examples/ion3/cfg_panews.lua
 share/examples/ion3/cfg_pwm.lua
-share/examples/ion3/cfg_pwm_bindings.lua
-share/examples/ion3/cfg_pwm_menus.lua
 share/examples/ion3/cfg_query.lua
 share/examples/ion3/cfg_sp.lua
 share/examples/ion3/cfg_statusbar.lua
@@ -87,7 +85,16 @@ share/ion3/welcome.cs.txt
 share/ion3/welcome.de.txt
 share/ion3/welcome.fi.txt
 share/ion3/welcome.txt
+share/locale/
+share/locale/cs/
+share/locale/cs/LC_MESSAGES/
 share/locale/cs/LC_MESSAGES/ion3.mo
+share/locale/de/
+share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/ion3.mo
+share/locale/fi/
+share/locale/fi/LC_MESSAGES/
 share/locale/fi/LC_MESSAGES/ion3.mo
+share/locale/ru/
+share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/ion3.mo

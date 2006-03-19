@@ -1,0 +1,21 @@
+$OpenBSD: patch-etc_cfg_ioncore_lua,v 1.1 2006/03/19 17:36:41 pedro Exp $
+--- etc/cfg_ioncore.lua.orig	Sun Mar 19 11:10:01 2006
++++ etc/cfg_ioncore.lua	Sun Mar 19 11:12:23 2006
+@@ -57,8 +57,8 @@ defbindings("WScreen", {
+     kpress(META.."F9", "ioncore.create_ws(_)"),
+     
+     bdoc("Display the main menu."),
+-    kpress(ALTMETA.."F12", "mod_query.query_menu(_, 'mainmenu', 'Main menu: ')"),
+-    --kpress(ALTMETA.."F12", "mod_menu.menu(_, _sub, 'mainmenu', {big=true})"),
++    --kpress(ALTMETA.."F12", "mod_query.query_menu(_, 'mainmenu', 'Main menu: ')"),
++    kpress(ALTMETA.."F12", "mod_menu.menu(_, _sub, 'mainmenu', {big=true})"),
+     mpress("Button3", "mod_menu.pmenu(_, _sub, 'mainmenu')"),
+     
+     bdoc("Display the window list menu."),
+@@ -291,4 +291,6 @@ defctxmenu("WFrame", "Frame", {
+     menuentry("Clear tags",     "ioncore.clear_tags()"),
+     menuentry("Window info",    "mod_query.show_clientwin(_, _sub)",
+                                 "_sub:WClientWin"),
++    submenu("Attach",		"menuattach"),
++    submenu("Detach",		"menudetach"),
+ })
