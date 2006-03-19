@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2006/01/28 11:18:52 alek Exp $
+# $OpenBSD: Makefile,v 1.23 2006/03/19 16:45:27 alek Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT-zope=	"database adapter for Zope"
 
 VERSION=	1.1.21
 DISTNAME=	psycopg-${VERSION}
-PKGNAME=	py-${DISTNAME}
+PKGNAME=	py-${DISTNAME}p0
 FULLPKGNAME-zope=py-psycopg-zope-${VERSION}
 CATEGORIES=	databases
 
@@ -25,9 +25,10 @@ MASTER_SITES=	http://initd.org/pub/software/psycopg/
 
 MODULES=	lang/python
 
-RUN_DEPENDS=	:postgresql-server-*:databases/postgresql,-server \
+BUILD_DEPENDS=	:postgresql-server-*:databases/postgresql,-server \
 		:py-mxDateTime->=2.0.0:devel/py-mxDateTime
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	:postgresql-client-*:databases/postgresql \
+		:py-mxDateTime->=2.0.0:devel/py-mxDateTime
 
 MULTI_PACKAGES=	-zope
 SUBPACKAGE?=
