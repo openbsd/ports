@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.18 2006/02/01 01:04:29 kurt Exp $
+# $OpenBSD: Makefile,v 1.19 2006/03/20 14:40:24 kurt Exp $
 # $FreeBSD: ports/java/jdk12/Makefile,v 1.11 2002/08/19 20:47:04 glewis Exp $
 
-ONLY_FOR_ARCHS= 	arm i386 powerpc
+ONLY_FOR_ARCHS= 	arm i386 powerpc sparc
 
 COMMENT=		"Java2(TM) Standard Edition Dev Kit v${V}"
 COMMENT-jre=		"Java2(TM) Standard Edition Runtime Environment v${V}"
 V=			1.3.1
 DISTNAME=		j2sdk-1_3_1-src
-PKGNAME=		jdk-${V}p6
-PKGNAME-jre=		jre-${V}p6
+PKGNAME=		jdk-${V}p7
+PKGNAME-jre=		jre-${V}p7
 
 CATEGORIES=		devel/jdk java
 
@@ -81,7 +81,10 @@ EXTRACT_CASES+=		*.bin) \
 				${WRKDIR}/$$archive.zip && \
 			unzip -j ${WRKDIR}/$$archive ${LINUXFILES} ;;
 .  if ${MACHINE_ARCH} == "powerpc"
-PATCH_LIST=		patch-* pack-patch-*
+PATCH_LIST=		patch-* powerpc-patch-*
+.  endif
+.  if ${MACHINE_ARCH} == "sparc"
+PATCH_LIST=		patch-* sparc-patch-*
 .  endif
 .endif
 

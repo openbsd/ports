@@ -1,0 +1,19 @@
+$OpenBSD: powerpc-patch-j2sdk1_3_1_build_bsd-powerpc.2,v 1.1 2006/03/20 14:40:25 kurt Exp $
+--- j2sdk1.3.1/build/bsd-powerpc/tmp/java/java.lang/jvm/CClassHeaders/java_lang_ref_SoftReference.h.orig	Fri May 27 18:35:16 2005
++++ j2sdk1.3.1/build/bsd-powerpc/tmp/java/java.lang/jvm/CClassHeaders/java_lang_ref_SoftReference.h	Fri May 27 18:35:35 2005
+@@ -8,6 +8,7 @@ struct Hjava_lang_Object;
+ struct Hjava_lang_ref_ReferenceQueue;
+ struct Hjava_lang_ref_Reference;
+ 
++#pragma pack(4)
+ typedef struct Classjava_lang_ref_SoftReference {
+     struct Hjava_lang_Object *referent;
+     struct Hjava_lang_ref_ReferenceQueue *queue;
+@@ -17,6 +18,7 @@ typedef struct Classjava_lang_ref_SoftRe
+ /* Inaccessible static: clock */
+     int64_t timestamp;
+ } Classjava_lang_ref_SoftReference;
++#pragma pack()
+ HandleTo(java_lang_ref_SoftReference);
+ 
+ #ifdef __cplusplus

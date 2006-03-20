@@ -1,0 +1,12 @@
+$OpenBSD: patch-j2sdk1_3_1_src_solaris_javavm_runtime_invokeNative_sparc_s,v 1.1 2006/03/20 14:40:25 kurt Exp $
+--- j2sdk1.3.1/src/solaris/javavm/runtime/invokeNative_sparc.s.orig	Fri Mar 17 14:10:52 2006
++++ j2sdk1.3.1/src/solaris/javavm/runtime/invokeNative_sparc.s	Fri Mar 17 14:11:19 2006
+@@ -288,7 +288,7 @@ arg_jumps:
+ 	.word	args_done   /* for void - remind:	 shouldn't happen */
+ 	.word	args_done   /* end-of-args */
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(__OpenBSD__)
+ 	.type	sysInvokeNative,#function
+ #else
+ 	.type	sysInvokeNative,2

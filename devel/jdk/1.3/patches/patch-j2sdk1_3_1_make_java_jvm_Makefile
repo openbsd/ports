@@ -1,7 +1,7 @@
-$OpenBSD: patch-j2sdk1_3_1_make_java_jvm_Makefile,v 1.1 2005/06/03 17:27:54 kurt Exp $
---- j2sdk1.3.1/make/java/jvm/Makefile.orig	Mon Nov 22 18:24:20 2004
-+++ j2sdk1.3.1/make/java/jvm/Makefile	Mon Nov 22 18:29:26 2004
-@@ -51,6 +51,15 @@ ifeq ($(TRUE_PLATFORM),OpenBSD)
+$OpenBSD: patch-j2sdk1_3_1_make_java_jvm_Makefile,v 1.2 2006/03/20 14:40:25 kurt Exp $
+--- j2sdk1.3.1/make/java/jvm/Makefile.orig	Fri Mar 17 13:49:45 2006
++++ j2sdk1.3.1/make/java/jvm/Makefile	Fri Mar 17 14:07:59 2006
+@@ -51,6 +51,18 @@ ifeq ($(TRUE_PLATFORM),OpenBSD)
      ifeq ($(ARCH),i386)
  	USE_C_INTERPRETER = true
      endif
@@ -11,13 +11,28 @@ $OpenBSD: patch-j2sdk1_3_1_make_java_jvm_Makefile,v 1.1 2005/06/03 17:27:54 kurt
 +    ifeq ($(ARCH),powerpc)
 +	USE_C_INTERPRETER = true
 +    endif
++    ifeq ($(ARCH),sparc)
++	USE_C_INTERPRETER = true
++    endif
 +    ifeq ($(ARCH),sparc64)
 +	USE_C_INTERPRETER = true
 +    endif
  endif
  
  ifeq ($(TRUE_PLATFORM),NetBSD)
-@@ -125,6 +134,16 @@ ifeq ($(ARCH),i386)
+@@ -103,7 +115,11 @@ FILES_c += \
+ 
+ ifeq ($(ARCH),sparc)
+ ARCHNAME = sparc
++ifeq ($(PLATFORM),solaris)
+ FILES_s += $(TARGDIR)machgc_$(ARCHNAME).s
++else
++FILES_c += $(TARGDIR)machgc_nonsparc.c
++endif
+ FILES_s += $(TARGDIR)invokeNative_sparc.s
+ endif
+ ifeq ($(ARCH),powerpc)
+@@ -125,6 +141,16 @@ ifeq ($(ARCH),i386)
  ARCHNAME = p5
  FILES_c += $(TARGDIR)machgc_nonsparc.c
  FILES_s += $(TARGDIR)invokeNative_x86.s

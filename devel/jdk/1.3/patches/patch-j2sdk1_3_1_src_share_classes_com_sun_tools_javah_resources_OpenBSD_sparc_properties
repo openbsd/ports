@@ -1,0 +1,7 @@
+$OpenBSD: patch-j2sdk1_3_1_src_share_classes_com_sun_tools_javah_resources_OpenBSD_sparc_properties,v 1.1 2006/03/20 14:40:25 kurt Exp $
+--- j2sdk1.3.1/src/share/classes/com/sun/tools/javah/resources/OpenBSD_sparc.properties.orig	Fri Mar 17 12:48:42 2006
++++ j2sdk1.3.1/src/share/classes/com/sun/tools/javah/resources/OpenBSD_sparc.properties	Fri Mar 17 13:03:11 2006
+@@ -0,0 +1,3 @@
++# OpenBSD sparc specific properties
++pack.pragma.start=\#pragma pack(4)\n
++pack.pragma.end=\#pragma pack()\n

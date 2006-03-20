@@ -1,0 +1,15 @@
+$OpenBSD: patch-j2sdk1_3_1_make_common_Defs_gmk,v 1.1 2006/03/20 14:40:25 kurt Exp $
+--- j2sdk1.3.1/make/common/Defs.gmk.orig	Fri Mar 17 21:17:04 2006
++++ j2sdk1.3.1/make/common/Defs.gmk	Sat Mar 18 08:27:00 2006
+@@ -397,7 +397,11 @@ endif
+ #     passed to javac.
+ #  -- Use JAVAC_CMD if you want to take the defaults given to you.
+ #
++ifeq ($(ARCH), sparc)
++JAVAC_VMFLAGS		   = -Xms16m -Xmx60m $(JIT_OPTION)
++else
+ JAVAC_VMFLAGS		   = -Xms16m -Xmx256m $(JIT_OPTION)
++endif
+ JAVAC_VMFLAGS_J    = $(patsubst %,-J%,$(JAVAC_VMFLAGS))
+ JAVAC_SRC_FLAG     = -sourcepath "$(SOURCEPATH)"
+ JAVAC_DST_FLAG     = -d $(CLASSDESTDIR)

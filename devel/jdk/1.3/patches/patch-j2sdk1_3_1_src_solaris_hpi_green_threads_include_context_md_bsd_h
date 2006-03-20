@@ -1,11 +1,11 @@
-$OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_green_threads_include_context_md_bsd_h,v 1.2 2005/07/14 17:29:09 kurt Exp $
---- j2sdk1.3.1/src/solaris/hpi/green_threads/include/context_md_bsd.h.orig	Thu Jul  7 15:44:51 2005
-+++ j2sdk1.3.1/src/solaris/hpi/green_threads/include/context_md_bsd.h	Sat Jul  9 18:09:22 2005
+$OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_green_threads_include_context_md_bsd_h,v 1.3 2006/03/20 14:40:25 kurt Exp $
+--- j2sdk1.3.1/src/solaris/hpi/green_threads/include/context_md_bsd.h.orig	Thu Mar 16 16:42:43 2006
++++ j2sdk1.3.1/src/solaris/hpi/green_threads/include/context_md_bsd.h	Fri Mar 17 12:39:53 2006
 @@ -26,6 +26,9 @@ typedef struct lj_ucontext {
  	context_jmpbuf_t	jmpbuf;
  #if defined(i386)
  	char		floatbuf[108];
-+#elif defined(__arm__)
++#elif defined(__arm__) || defined(__sparc__)
 +	unsigned int    pc;     /* args for death func are stored here */
 +	unsigned int    arg;    /* args for death func are stored here */
  #elif defined(__powerpc__)
@@ -25,7 +25,21 @@ $OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_green_threads_include_context_md_bsd_
  #elif defined(__powerpc__)
  
  /* jmpbuf contains sigmask, then r8-31 where r11 is the LR
-@@ -90,7 +100,7 @@ typedef lj_ucontext_t	inner_ucontext_t;
+@@ -78,6 +88,13 @@ typedef struct lj_ucontext {
+ #define BSD_STACK_POINTER	3	/* index in sigjmp_buf of SP (r10) */
+ #define BSD_LINK_REGISTER	4	/* index in sigjmp_buf of LR (r11) */
+ 
++#elif defined(__sparc__)
++
++#define BSD_SIGNAL_MASK         1
++#define BSD_STACK_POINTER       2
++#define BSD_PC                  3
++#define BSD_nPC                 4
++
+ #else
+ #error architecture unsupported
+ #endif
+@@ -90,7 +107,7 @@ typedef lj_ucontext_t	inner_ucontext_t;
  
  typedef struct {
      unsigned int unix_errno;
@@ -34,12 +48,12 @@ $OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_green_threads_include_context_md_bsd_
      void *current_sp;
  #endif
      inner_ucontext_t lj_ucontext;
-@@ -200,6 +210,21 @@ extern int netbsd_siglongjmp(sigjmp_buf 
+@@ -200,6 +217,21 @@ extern int netbsd_siglongjmp(sigjmp_buf 
          (contextp)->unix_errno = errno;					\
          reschedule();							\
      }									\
 +}
-+#elif defined(__arm__)
++#elif defined(__arm__) || defined(__sparc__)
 +#define getcontext(lj_ucontextp) { 				\
 +    sigsetjmp((lj_ucontextp)->jmpbuf, -1); 			\
 +}

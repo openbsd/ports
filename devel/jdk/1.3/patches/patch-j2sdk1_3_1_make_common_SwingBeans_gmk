@@ -1,0 +1,15 @@
+$OpenBSD: patch-j2sdk1_3_1_make_common_SwingBeans_gmk,v 1.1 2006/03/20 14:40:25 kurt Exp $
+--- j2sdk1.3.1/make/common/SwingBeans.gmk.orig	Fri Mar 17 21:17:12 2006
++++ j2sdk1.3.1/make/common/SwingBeans.gmk	Sat Mar 18 08:27:17 2006
+@@ -27,7 +27,11 @@ LOCAL_JAVAC     = $(JAVAC)
+ LOCAL_JAR       = $(shell $(CD) $(BINDIR); $(PWD))/jar$(EXE_SUFFIX)
+ LOCAL_CLASSPATH = "$(CLASSBINDIR)$(CLASSPATH_SEPARATOR)."
+ PREFIX          = 1.2
++ifeq ($(ARCH), sparc)
++JAVADOCFLAGS    = -J-ms60m -J-mx60m $(DASHJ_JIT_OPTION) 
++else
+ JAVADOCFLAGS    = -J-ms64m -J-mx256m $(DASHJ_JIT_OPTION) 
++endif
+ SWINGPKG        = javax/swing
+ LOCAL_JAVAC_FLAGS = 
+ ABS_TMPDIR = $(shell $(CD) $(TMPDIR); $(PWD))

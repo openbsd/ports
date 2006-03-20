@@ -1,0 +1,19 @@
+$OpenBSD: powerpc-patch-j2sdk1_3_1_build_bsd-powerpc.1,v 1.1 2006/03/20 14:40:25 kurt Exp $
+--- j2sdk1.3.1/build/bsd-powerpc/tmp/java/java.lang/jvm/CClassHeaders/java_lang_Thread.h.orig	Fri May 27 18:34:31 2005
++++ j2sdk1.3.1/build/bsd-powerpc/tmp/java/java.lang/jvm/CClassHeaders/java_lang_Thread.h	Fri May 27 18:34:57 2005
+@@ -11,6 +11,7 @@ struct Hjava_lang_ClassLoader;
+ struct Hjava_security_AccessControlContext;
+ struct Hjava_util_Map;
+ 
++#pragma pack(4)
+ typedef struct Classjava_lang_Thread {
+     struct HArrayOfChar *name;
+     int32_t priority;
+@@ -34,6 +35,7 @@ typedef struct Classjava_lang_Thread {
+ #undef java_lang_Thread_MAX_PRIORITY
+ #define java_lang_Thread_MAX_PRIORITY 10L
+ } Classjava_lang_Thread;
++#pragma pack()
+ HandleTo(java_lang_Thread);
+ 
+ #ifdef __cplusplus
