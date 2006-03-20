@@ -1,0 +1,11 @@
+Using ldapvi you can update LDAP entries with a text editor.
+There are other implementations of the same idea, but ldapvi:
+
+- is written in C
+- is reasonably fast and small
+- shows a summary of changes before committing them; details of the
+  changes can be previewed in LDIF format
+- uses an LDIF-like format in the editor
+- can rename entries
+- does not give up easily; on error, you can edit the file again or
+  rebind to the server and try again
