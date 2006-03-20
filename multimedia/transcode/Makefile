@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2006/02/03 05:25:21 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.8 2006/03/20 05:52:33 jakemsr Exp $
 
 COMMENT=		"video stream processing tools"
 
 DISTNAME=		transcode-1.0.2
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://www.transcoding.org/
@@ -16,8 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xaw Xext Xi Xpm Xt Xv c freetype \
-			m pthread usbhid vorbisenc z \
-			glib gmodule intl
+			m pthread usbhid z glib gmodule intl
 
 MASTER_SITES=		http://www.jakemsr.com/transcode/ \
 			http://kraymer.de/mirroring/
@@ -38,7 +37,7 @@ PATCH_LIST=		patch-* gcc-*
 
 LIB_DEPENDS=		SDL.2::devel/sdl \
 			a52.0::audio/liba52 \
-			avcodec.6::graphics/ffmpeg \
+			avcodec.7,avutil.1::graphics/ffmpeg \
 			dv.4::multimedia/libdv \
 			dvdread.3::devel/libdvdread \
 			gdk.1.2,gtk.1.2::x11/gtk+ \
@@ -66,7 +65,7 @@ SHARED_ONLY=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			LIBAVCODEC_EXTRA_LIBS="-lmp3lame -la52 -lvorbisenc -lvorbis -logg"
+			LIBAVCODEC_EXTRA_LIBS="-lavutil -lm -lz -pthread"
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 
