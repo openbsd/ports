@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2005/12/24 09:01:17 jolan Exp $
+# $OpenBSD: Makefile,v 1.33 2006/03/20 05:53:18 jakemsr Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"videolan client; multimedia player"
 V=		0.8.4a
 DISTNAME=	vlc-${V}
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -31,7 +31,7 @@ LIB_DEPENDS=	SDL_image.1.3::devel/sdl-image \
 		ogg.5.2::audio/libogg \
 		vorbis.3.0,vorbisenc.2.0::audio/libvorbis \
 		mpeg2.0.0::graphics/libmpeg2 \
-		avcodec.5.0,avformat.5.0,postproc.5.0::graphics/ffmpeg \
+		avcodec.7.0,avformat.7.0,postproc.7.0,avutil.1.0::graphics/ffmpeg \
 		fribidi.0.0::devel/fribidi \
 		faad.0.0::audio/faad \
 		a52.0.0::audio/liba52 \
@@ -41,12 +41,11 @@ LIB_DEPENDS=	SDL_image.1.3::devel/sdl-image \
 
 WANTLIB=	X11 Xext Xinerama Xv c freetype m ncurses ossaudio \
 		pthread usbhid z \
-		SDL jpeg mp3lame
+		SDL jpeg
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.59
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		LIBS="-lpostproc -lmp3lame -la52 -lvorbisenc -lvorbis -logg -lossaudio -lm -lz -pthread" \
 		CPPFLAGS="-I${WRKSRC}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng"
 
 CONFIGURE_ARGS+=--disable-pth \

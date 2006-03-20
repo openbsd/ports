@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.1 2006/02/03 04:55:56 jakemsr Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2006/03/20 05:51:59 jakemsr Exp $
 --- configure.ac.orig	Thu May 26 06:35:22 2005
-+++ configure.ac	Mon Dec  5 23:30:21 2005
++++ configure.ac	Thu Feb  2 22:41:52 2006
 @@ -104,8 +104,10 @@ AC_CHECK_LIB(dl, dlopen)
  AC_CHECK_LIB(z, inflateEnd)
  AC_CHECK_LIB(m, cos)
@@ -34,15 +34,22 @@ $OpenBSD: patch-configure_ac,v 1.1 2006/02/03 04:55:56 jakemsr Exp $
  AC_SUBST(VORBIS_REQUIRED)
  
  dnl
-@@ -159,7 +166,7 @@ OLD_CFLAGS=$CFLAGS
+@@ -158,11 +165,11 @@ have_lame="false"
+ OLD_CFLAGS=$CFLAGS
  OLD_LIBS=$LIBS
  
- if test x$have_vorbis = xtrue; then
+-if test x$have_vorbis = xtrue; then
 -LIBS="$LIBS -lmp3lame -lvorbis -lm"
-+LIBS="$LIBS -lmp3lame -lvorbis -logg -lm"
- else
+-else
++# if test x$have_vorbis = xtrue; then
++# LIBS="$LIBS -lmp3lame -lvorbis -logg -lm"
++# else
  LIBS="$LIBS -lmp3lame -lm"
- fi
+-fi
++# fi
+ 
+ dnl CFLAGS="$CFLAGS"
+ 
 @@ -235,9 +242,9 @@ fi
  ALSA_CFLAGS="$ALSA_CFLAGS"
  AC_SUBST(ALSA_CFLAGS)
@@ -61,7 +68,7 @@ $OpenBSD: patch-configure_ac,v 1.1 2006/02/03 04:55:56 jakemsr Exp $
  AVCODEC_BUILD="4734"
  
 +OLD_LIBS="$LIBS"
-+LIBS="$LIBS -lvorbis -lvorbisenc -logg -la52 -lmp3lame"
++LIBS="$LIBS -lavutil -lm -lz -pthread"
 +
  dnl PKG_CHECK_MODULES(AVCODEC, avcodec_acl = $AVCODEC_REQUIRED, have_libavcodec="true", have_libavcodec="false")
  ACL_PATH_AVCODEC($AVCODEC_BUILD , have_libavcodec="true", have_libavcodec="false")

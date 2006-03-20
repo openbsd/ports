@@ -1,6 +1,15 @@
-$OpenBSD: patch-acinclude_m4,v 1.1 2006/02/03 04:55:56 jakemsr Exp $
---- acinclude.m4.orig	Sun Jan 22 22:33:47 2006
-+++ acinclude.m4	Sun Jan 22 22:41:38 2006
+$OpenBSD: patch-acinclude_m4,v 1.2 2006/03/20 05:51:59 jakemsr Exp $
+--- acinclude.m4.orig	Sun Jan  9 14:50:53 2005
++++ acinclude.m4	Thu Feb  2 22:24:47 2006
+@@ -387,7 +387,7 @@ AC_TRY_RUN([
+     if(LIBAVCODEC_BUILD < $1)
+       return -1;
+     output=fopen("avcodec_version", "w");
+-    fprintf(output, LIBAVCODEC_VERSION);
++    fprintf(output, "%lld", LIBAVCODEC_VERSION_INT);
+     fclose(output);
+     return 0;
+     }
 @@ -427,7 +427,8 @@ dnl
  
  if test "x$avcodec_prefix" != x; then

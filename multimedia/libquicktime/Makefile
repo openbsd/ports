@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2006/02/03 04:55:56 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.6 2006/03/20 05:51:59 jakemsr Exp $
 # $FreeBSD: ports/multimedia/libquicktime/Makefile,v 1.19 2004/03/16 04:23:53 edwin Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		library for reading and writing quicktime files
 DISTNAME=		libquicktime-0.9.7
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		multimedia
 SHARED_LIBS=		quicktime	2.0
 
@@ -19,9 +20,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		GL GLU ICE SM X11 Xaw Xext Xft Xrender Xt Xv \
-			a52 atk-1.0.1011.3 c fontconfig freetype \
+			atk-1.0.1011.3 c fontconfig freetype \
 			glib-2.0.800.3 gmodule-2.0.800.3 gobject-2.0.800.3 \
-			m mp3lame ogg ossaudio pango-1.0.1001.1 \
+			m ogg ossaudio pango-1.0.1001.1 \
 			pangox-1.0.1001.1 pangoxft-1.0.1001.1 \
 			pangoft2-1.0.1001.1 pthread z
 
@@ -33,7 +34,8 @@ LIB_DEPENDS=		vorbis.3,vorbisfile.4,vorbisenc.2::audio/libvorbis \
 			jpeg.9::graphics/jpeg \
 			png.4::graphics/png \
 			dv.4::multimedia/libdv \
-			avcodec.4::graphics/ffmpeg \
+			mp3lame.0::audio/lame \
+			avcodec.7,avutil.1::graphics/ffmpeg \
 			gtk-x11-2.0.800.8,gdk-x11-2.0.800.8,gdk_pixbuf-2.0.800.8::x11/gtk+2
 
 VMEM_WARNING=		Yes
@@ -45,7 +47,7 @@ SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
-			AVCODEC_LIBS="-lavcodec -lmp3lame -la52 -lvorbisenc -lvorbis -logg"
+			AVCODEC_LIBS="-lavcodec -lavutil -lz -lm -pthread"
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-firewire \
 			--with-avcodec="${LOCALBASE}" \
