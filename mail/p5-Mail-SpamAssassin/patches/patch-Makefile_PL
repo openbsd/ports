@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_PL,v 1.3 2005/10/09 09:05:43 mbalmer Exp $
---- Makefile.PL.orig	Wed Oct  5 09:35:06 2005
-+++ Makefile.PL	Wed Oct  5 09:35:33 2005
-@@ -809,7 +809,7 @@ sub MY::install {
+$OpenBSD: patch-Makefile_PL,v 1.4 2006/03/20 20:18:30 steven Exp $
+--- Makefile.PL.orig	Fri Mar 10 20:30:24 2006
++++ Makefile.PL	Sun Mar 19 11:59:51 2006
+@@ -857,7 +857,7 @@ sub MY::install {
  
    foreach (@code) {
      # Add our install targets as a dependency to all top-level install targets
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile_PL,v 1.3 2005/10/09 09:05:43 mbalmer Exp $
  
      # Now do the DESTDIR hack, if necessary.
      next if !$mm_needs_destdir;
-@@ -1085,12 +1085,6 @@ qmail/qmail-spamc$(EXE_EXT): spamc/qmail
+@@ -1143,12 +1143,6 @@ qmail/qmail-spamc$(EXE_EXT): spamc/qmail
  #bin__install: $(INST_SCRIPT)/sa-filter
  #        # $(RM_F) $(B_SCRIPTDIR)/spamassassin
  #        # $(SYMLINK) $(INST_SCRIPT)/sa-filter $(B_SCRIPTDIR)/spamassassin

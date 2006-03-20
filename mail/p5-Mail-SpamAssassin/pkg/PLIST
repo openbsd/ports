@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2006/01/28 21:27:17 steven Exp $
+@comment $OpenBSD: PLIST,v 1.18 2006/03/20 20:18:30 steven Exp $
 bin/sa-learn
 bin/sa-update
 bin/spamassassin
@@ -78,6 +78,7 @@ ${P5SITE}/Mail/SpamAssassin/Reporter.pm
 ${P5SITE}/Mail/SpamAssassin/SQLBasedAddrList.pm
 ${P5SITE}/Mail/SpamAssassin/SpamdForkScaling.pm
 ${P5SITE}/Mail/SpamAssassin/SubProcBackChannel.pm
+${P5SITE}/Mail/SpamAssassin/Timeout.pm
 ${P5SITE}/Mail/SpamAssassin/Util/
 ${P5SITE}/Mail/SpamAssassin/Util.pm
 ${P5SITE}/Mail/SpamAssassin/Util/DependencyInfo.pm
@@ -135,6 +136,7 @@ ${P5SITE}/spamassassin-run.pod
 @man man/man3p/Mail::SpamAssassin::PluginHandler.3p
 @man man/man3p/Mail::SpamAssassin::SQLBasedAddrList.3p
 @man man/man3p/Mail::SpamAssassin::SubProcBackChannel.3p
+@man man/man3p/Mail::SpamAssassin::Timeout.3p
 @man man/man3p/Mail::SpamAssassin::Util.3p
 @man man/man3p/Mail::SpamAssassin::Util::Progress.3p
 @man man/man3p/spamassassin-run.3p
@@ -198,5 +200,6 @@ share/spamassassin/60_whitelist.cf
 share/spamassassin/60_whitelist_spf.cf
 share/spamassassin/60_whitelist_subject.cf
 share/spamassassin/languages
+share/spamassassin/sa-update-pubkey.txt
 share/spamassassin/triplets.txt
 share/spamassassin/user_prefs.template

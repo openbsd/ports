@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_Mail_SpamAssassin_Plugin_Razor2_pm,v 1.1 2006/03/20 20:18:30 steven Exp $
+--- lib/Mail/SpamAssassin/Plugin/Razor2.pm.orig	Fri Mar 10 20:29:54 2006
++++ lib/Mail/SpamAssassin/Plugin/Razor2.pm	Sun Mar 19 12:00:45 2006
+@@ -46,6 +46,7 @@ package Mail::SpamAssassin::Plugin::Razo
+ 
+ use Mail::SpamAssassin::Plugin;
+ use Mail::SpamAssassin::Logger;
++use Mail::SpamAssassin::Timeout;
+ use strict;
+ use warnings;
+ use bytes;
