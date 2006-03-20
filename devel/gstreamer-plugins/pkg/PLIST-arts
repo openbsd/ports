@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST-arts,v 1.1 2006/03/20 15:21:43 espie Exp $
+lib/gstreamer-0.8/libgstarts.a
+lib/gstreamer-0.8/libgstarts.la
+lib/gstreamer-0.8/libgstarts.so
+lib/gstreamer-0.8/libgstartsdsink.a
+lib/gstreamer-0.8/libgstartsdsink.la
+lib/gstreamer-0.8/libgstartsdsink.so
+@exec %D/bin/gst-register > /dev/null 2>&1
+@unexec %D/bin/gst-register > /dev/null 2>&1

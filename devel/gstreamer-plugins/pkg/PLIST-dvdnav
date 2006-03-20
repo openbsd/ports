@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-dvdnav,v 1.1 2006/03/20 15:21:43 espie Exp $
+lib/gstreamer-0.8/libgstdvdnavsrc.a
+lib/gstreamer-0.8/libgstdvdnavsrc.la
+lib/gstreamer-0.8/libgstdvdnavsrc.so
+@exec %D/bin/gst-register > /dev/null 2>&1
+@unexec %D/bin/gst-register > /dev/null 2>&1
