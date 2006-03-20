@@ -1,32 +1,21 @@
-$OpenBSD: patch-libavformat_Makefile,v 1.10 2005/12/31 08:45:56 steven Exp $
---- libavformat/Makefile.orig	Sat Apr  9 17:32:58 2005
-+++ libavformat/Makefile	Thu Dec 29 09:07:41 2005
-@@ -37,7 +37,7 @@ OBJS+= avio.o aviobuf.o file.o 
- OBJS+= framehook.o 
- 
- ifeq ($(CONFIG_VIDEO4LINUX),yes)
--OBJS+= grab.o
-+OBJS+= grab_bsdbktr.o
+$OpenBSD: patch-libavformat_Makefile,v 1.11 2006/03/20 05:50:49 jakemsr Exp $
+--- libavformat/Makefile.orig	Tue Feb 28 00:11:51 2006
++++ libavformat/Makefile	Tue Feb 28 00:18:50 2006
+@@ -66,7 +66,7 @@ ifeq ($(CONFIG_AUDIO_OSS),yes)
+ OBJS+= audio.o
  endif
  
- ifeq ($(CONFIG_DV1394),yes)
-@@ -75,8 +75,8 @@ endif
+-EXTRALIBS += -L../libavutil -lavutil$(BUILDSUF) -lavcodec$(BUILDSUF) -L../libavcodec
++# EXTRALIBS += -L../libavutil -lavutil$(BUILDSUF) -lavcodec$(BUILDSUF) -L../libavcodec
  
- LIB= $(LIBPREF)avformat$(LIBSUF)
+ ifeq ($(CONFIG_AUDIO_BEOS),yes)
+ CPPOBJS+= beosaudio.o
+@@ -93,7 +93,7 @@ endif
+ NAME=avformat
+ SUBDIR=libavformat
  ifeq ($(BUILD_SHARED),yes)
--SLIB= $(SLIBPREF)avformat$(SLIBSUF)
--
-+SLIB= $(SLIBPREF)avformat$(SLIBSUF).$(LIBavformat_VERSION)
-+CFLAGS += ${PIC} -DPIC
- AVCLIBS+=-lavcodec -L../libavcodec
- ifeq ($(CONFIG_MP3LAME),yes)
- AVCLIBS+=-lmp3lame
-@@ -97,7 +97,7 @@ ifeq ($(CONFIG_WIN32),yes)
- 	$(CC) $(SHFLAGS) -Wl,--output-def,$(@:.dll=.def) -o $@ $(OBJS) $(PPOBJS) $(AVCLIBS) $(EXTRALIBS)
- 	-lib /machine:i386 /def:$(@:.dll=.def)
- else
--	$(CC) $(SHFLAGS) -o $@ $(OBJS) $(PPOBJS) $(AVCLIBS) $(EXTRALIBS)
-+	$(CC) $(SHFLAGS) -o $@ $(OBJS) $(PPOBJS) $(AVCLIBS) $(LDFLAGS)
+-LIBVERSION=$(LAVFVERSION)
++LIBVERSION='$(LIBavformat_VERSION)'
+ LIBMAJOR=$(LAVFMAJOR)
  endif
  
- depend: $(SRCS)

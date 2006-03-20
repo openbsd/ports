@@ -1,4 +1,10 @@
-@comment $OpenBSD: PFRAG.shared,v 1.12 2005/12/31 08:45:56 steven Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.13 2006/03/20 05:50:49 jakemsr Exp $
 @lib lib/libavcodec.so.${LIBavcodec_VERSION}
 @lib lib/libavformat.so.${LIBavformat_VERSION}
+@lib lib/libavutil.so.${LIBavutil_VERSION}
 @lib lib/libpostproc.so.${LIBpostproc_VERSION}
+lib/vhook/drawtext.so
+lib/vhook/fish.so
+lib/vhook/null.so
+lib/vhook/ppm.so
+lib/vhook/watermark.so

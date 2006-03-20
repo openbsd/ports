@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2005/02/09 23:41:43 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2006/03/20 05:50:49 jakemsr Exp $
 %%SHARED%%
 bin/ffmpeg
 bin/ffplay
@@ -7,8 +7,12 @@ include/ffmpeg/
 include/ffmpeg/avcodec.h
 include/ffmpeg/avformat.h
 include/ffmpeg/avio.h
+include/ffmpeg/avutil.h
 include/ffmpeg/common.h
-include/ffmpeg/mpegaudio.h
+include/ffmpeg/dsputil.h
+include/ffmpeg/integer.h
+include/ffmpeg/intfloat_readwrite.h
+include/ffmpeg/mathematics.h
 include/ffmpeg/rational.h
 include/ffmpeg/rtp.h
 include/ffmpeg/rtsp.h
@@ -17,6 +21,14 @@ include/postproc/
 include/postproc/postprocess.h
 lib/libavcodec.a
 lib/libavformat.a
+lib/libavutil.a
+lib/libpostproc.a
+lib/pkgconfig/
+lib/pkgconfig/libavcodec.pc
+lib/pkgconfig/libavformat.pc
+lib/pkgconfig/libavutil.pc
+lib/pkgconfig/libpostproc.pc
+lib/vhook/
 @man man/man1/ffmpeg.1
 @man man/man1/ffplay.1
 @man man/man1/ffserver.1

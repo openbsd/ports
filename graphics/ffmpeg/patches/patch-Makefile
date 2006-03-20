@@ -1,27 +1,12 @@
-$OpenBSD: patch-Makefile,v 1.5 2005/04/20 16:46:54 naddy Exp $
---- Makefile.orig	Thu Mar 17 18:13:13 2005
-+++ Makefile	Wed Apr 13 00:17:45 2005
-@@ -7,7 +7,7 @@ include config.mak
- VPATH=$(SRC_PATH)
+$OpenBSD: patch-Makefile,v 1.6 2006/03/20 05:50:49 jakemsr Exp $
+--- Makefile.orig	Fri Feb  3 00:31:04 2006
++++ Makefile	Mon Feb  6 23:48:43 2006
+@@ -59,7 +59,7 @@ endif
  
- CFLAGS=$(OPTFLAGS) -I. -I$(SRC_PATH) -I$(SRC_PATH)/libavcodec -I$(SRC_PATH)/libavformat -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_GNU_SOURCE
--LDFLAGS+= -g 
-+#LDFLAGS+= -g 
+ OBJS = ffmpeg.o ffserver.o cmdutils.o $(FFPLAY_O)
+ SRCS = $(OBJS:.o=.c) $(ASM_OBJS:.o=.s)
+-FFLIBS = -L./libavformat -lavformat$(BUILDSUF) -L./libavcodec -lavcodec$(BUILDSUF) -L./libavutil -lavutil$(BUILDSUF)
++FFLIBS = -L./libavformat -lavformat$(BUILDSUF) -L./libavcodec -lavcodec$(BUILDSUF) -L./libavutil -lavutil$(BUILDSUF) -lossaudio -lm -lz -pthread
  
- ifeq ($(TARGET_GPROF),yes)
- CFLAGS+=-p
-@@ -38,9 +38,14 @@ ifeq ($(BUILD_SHARED),yes)
- DEP_LIBS=libavcodec/$(SLIBPREF)avcodec$(SLIBSUF) libavformat/$(SLIBPREF)avformat$(SLIBSUF)
- else
- DEP_LIBS=libavcodec/$(LIBPREF)avcodec$(LIBSUF) libavformat/$(LIBPREF)avformat$(LIBSUF)
-+endif
-+
- ifeq ($(CONFIG_MP3LAME),yes)
- EXTRALIBS+=-lmp3lame
- endif
-+
-+ifeq ($(CONFIG_AC3),yes)
-+EXTRALIBS+=-la52
- endif
+ all: lib $(PROG_G) $(PROG) $(PROGTEST) $(VHOOK) $(QTFASTSTART) $(DOC)
  
- ifeq ($(CONFIG_LIBOGG),yes)

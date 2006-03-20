@@ -1,38 +1,24 @@
-$OpenBSD: patch-libavcodec_Makefile,v 1.11 2005/12/31 08:45:56 steven Exp $
---- libavcodec/Makefile.orig	Sun Apr  3 07:02:08 2005
-+++ libavcodec/Makefile	Thu Dec 29 08:49:19 2005
-@@ -73,11 +73,11 @@ ifeq ($(CONFIG_AC3),yes)
- OBJS+= a52dec.o
- 
- # using builtin liba52 or runtime linked liba52.so.0
--ifneq ($(CONFIG_A52BIN),yes)
--OBJS+= liba52/bit_allocate.o liba52/bitstream.o liba52/downmix.o \
--	liba52/imdct.o  liba52/parse.o liba52/crc.o liba52/resample.o
-+#ifneq ($(CONFIG_A52BIN),yes)
-+#OBJS+= liba52/bit_allocate.o liba52/bitstream.o liba52/downmix.o \
-+#	liba52/imdct.o  liba52/parse.o liba52/crc.o liba52/resample.o
-+#endif
+$OpenBSD: patch-libavcodec_Makefile,v 1.12 2006/03/20 05:50:49 jakemsr Exp $
+--- libavcodec/Makefile.orig	Tue Feb 28 00:11:44 2006
++++ libavcodec/Makefile	Tue Feb 28 00:21:33 2006
+@@ -282,7 +282,7 @@ OBJS+= liba52/bit_allocate.o liba52/bits
  endif
--endif
+ endif
+ 
+-EXTRALIBS += -L../libavutil -lavutil$(BUILDSUF)
++# EXTRALIBS += -L../libavutil -lavutil$(BUILDSUF)
  
  # currently using libdts for dts decoding
  ifeq ($(CONFIG_DTS),yes)
-@@ -207,7 +207,8 @@ OBJS := $(OBJS) $(ASM_OBJS)
+@@ -396,9 +396,9 @@ endif
  
- LIB= $(LIBPREF)avcodec$(LIBSUF)
+ NAME=avcodec
+ SUBDIR=libavcodec
+-LIBAVUTIL= $(SRC_PATH)/libavutil/$(LIBPREF)avutil$(LIBSUF)
++LIBAVUTIL= $(SRC_PATH)/libavutil/$(LIBPREF)avutil$(LIBSUF).$(LIBavutil_VERSION)
  ifeq ($(BUILD_SHARED),yes)
--SLIB= $(SLIBPREF)avcodec$(SLIBSUF)
-+SLIB= $(SLIBPREF)avcodec$(SLIBSUF).$(LIBavcodec_VERSION)
-+CFLAGS += ${PIC} -DPIC
+-LIBVERSION=$(LAVCVERSION)
++LIBVERSION='$(LIBavcodec_VERSION)'
+ LIBMAJOR=$(LAVCMAJOR)
  endif
  TESTS= imgresample-test dct-test motion-test fft-test
- 
-@@ -231,7 +232,7 @@ ifeq ($(CONFIG_WIN32),yes)
- 	$(CC) $(SHFLAGS) -Wl,--output-def,$(@:.dll=.def) -o $@ $(OBJS) $(EXTRALIBS) $(AMREXTRALIBS)
- 	-lib /machine:i386 /def:$(@:.dll=.def)
- else
--	$(CC) $(SHFLAGS) -o $@ $(OBJS) $(EXTRALIBS) $(AMREXTRALIBS) $(LDFLAGS)
-+	$(CC) $(SHFLAGS) -o $@ $(OBJS) $(AMREXTRALIBS) $(LDFLAGS)
- endif
- 
- dsputil.o: dsputil.c dsputil.h

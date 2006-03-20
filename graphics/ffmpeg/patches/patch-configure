@@ -1,52 +1,94 @@
-$OpenBSD: patch-configure,v 1.12 2005/04/20 16:46:54 naddy Exp $
---- configure.orig	Sat Apr  9 08:32:58 2005
-+++ configure	Wed Apr 13 00:18:10 2005
-@@ -111,8 +111,8 @@ case "$cpu" in
-   i386|i486|i586|i686|i86pc|BePC)
-     cpu="x86"
-   ;;
--  x86_64)
--    if [ "`$cc -dumpmachine | grep x86_64 | cut -d- -f1`" = "x86_64" -a \
-+  amd64|x86_64)
-+    if [ "`$cc -dumpmachine | grep amd64 | cut -d- -f1`" = "amd64" -a \
-          -z "`echo $CFLAGS | grep -- -m32`"  ]; then
-       cpu="x86_64"
-     else
-@@ -266,6 +266,12 @@ make="gmake"
- CFLAGS="-pthread"
- LDFLAGS="$LDFLAGS -export-dynamic -pthread"
- ;;
-+OpenBSD)
-+strip="echo"
-+extralibs="$extralibs -lossaudio -pthread"
-+source_path="`echo $0 | sed -e 's#/configure##'`"
-+SLIBSUF=".so.$SV"
-+;;
- BSD/OS)
- v4l="no"
+$OpenBSD: patch-configure,v 1.13 2006/03/20 05:50:49 jakemsr Exp $
+--- configure.orig	Tue Feb 28 00:11:44 2006
++++ configure	Tue Feb 28 00:15:42 2006
+@@ -243,7 +243,7 @@ LIBSUF=".a"
+ LIB='$(LIBPREF)$(NAME)$(LIBSUF)'
+ SLIBPREF="lib"
+ SLIBSUF=".so"
+-SLIBNAME='$(SLIBPREF)$(NAME)$(SLIBSUF)'
++SLIBNAME='$(SLIBPREF)$(NAME)$(SLIBSUF).$(LIBVERSION)'
+ SLIBNAME_WITH_VERSION='$(SLIBPREF)$(NAME)$(SLIBSUF).$(LIBVERSION)'
+ SLIBNAME_WITH_MAJOR='$(SLIBPREF)$(NAME)$(SLIBSUF).$(LIBMAJOR)'
+ EXESUF=""
+@@ -324,10 +324,11 @@ bktr="yes"
  audio_oss="yes"
-@@ -832,10 +838,10 @@ EOF
+ dv1394="no"
+ make="gmake"
++SHFLAGS='-shared'
+ LIBOBJFLAGS="\$(PIC)"
+-LDFLAGS="$LDFLAGS -export-dynamic -pthread"
++LDFLAGS="$LDFLAGS -export-dynamic"
+ LDCONFIG="ldconfig -m \$(libdir)"
+-extralibs="$extralibs -lossaudio"
++extralibs=""
+ ;;
+ FreeBSD)
+ v4l="no"
+@@ -1015,10 +1016,12 @@ EOF
  $cc -o $TMPE $TMPC 2> /dev/null || _memalign=no
  fi
  
--if test "$_memalign" = "no" -a "$mmx" = "yes" -a "$memalignhack" != "yes"; then
--    echo "error, no memalign() but sse enabled, either disable it or use --enable-memalign-hack"
--    exit 1
--fi
-+#if test "$_memalign" = "no" -a "$mmx" = "yes" -a "$memalignhack" != "yes"; then
-+#    echo "error, no memalign() but sse enabled, either disable it or use --enable-memalign-hack"
-+#    exit 1
-+#fi
++if false ; then
+ if test "$_memalign" = "no" -a "$mmx" = "yes" -a "$memalignhack" != "yes"; then
+     echo "Error, no memalign() but SSE enabled, disable it or use --enable-memalign-hack."
+     exit 1
+ fi
++fi
  
  cat > $TMPC << EOF
  #include <time.h>
-@@ -1274,9 +1280,6 @@ if test "$pthreads" = "yes" ; then
-   echo "HAVE_PTHREADS=yes" >> config.mak
-   echo "#define HAVE_PTHREADS 1" >> $TMPH
-   echo "#define HAVE_THREADS 1" >> $TMPH
--  if test $targetos != FreeBSD; then
--     extralibs="$extralibs -lpthread"
--  fi
+@@ -1046,7 +1049,8 @@ $cc $CFLAGS $LDFLAGS -o $TMPE $TMPC -lz 
+ # XXX: more tests needed - runtime test
  fi
- if test "$sdl" = "yes" ; then
-   echo "CONFIG_SDL=yes" >> config.mak
+ if test "$zlib" = "yes"; then
+-extralibs="$extralibs -lz"
++# extralibs="$extralibs -lz"
++ :
+ fi
+ 
+ if test "$lzo" = "yes" -a "$gpl" = "yes"; then
+@@ -1074,7 +1078,7 @@ int main( void ) { return (lrintf(3.999f
+ EOF
+ 
+ have_lrintf="no"
+-if $cc $CFLAGS $LDFLAGS $extralibs -o $TMPE $TMPC 2> /dev/null ; then
++if $cc $CFLAGS $LDFLAGS -lm -o $TMPE $TMPC 2> /dev/null ; then
+   have_lrintf="yes"
+   # allanc@chickenandporn.com: cannot execute cross-compiled
+   # code on the host.  Only execute if not cross-compiling.
+@@ -1963,7 +1967,7 @@ Description: FFmpeg utility library
+ Version: $lavu_version
+ Requires:
+ Conflicts:
+-Libs: -L\${libdir} -lavutil
++Libs: -L\${libdir} -lavutil -lm
+ Cflags: -I\${includedir} -I\${includedir}/ffmpeg
+ EOF
+ 
+@@ -1994,7 +1998,7 @@ Description: FFmpeg codec library
+ Version: $lavc_version
+ Requires: $pkg_requires libavutil = $lavu_version
+ Conflicts:
+-Libs: -L\${libdir} -lavcodec $extralibs
++Libs: -L\${libdir} -lavcodec -lavutil -lm -lz -pthread
+ Cflags: -I\${includedir} -I\${includedir}/ffmpeg
+ EOF
+ 
+@@ -2009,7 +2013,7 @@ Description: FFmpeg codec library
+ Version: $lavc_version
+ Requires: $pkg_requires libavutil = $lavu_version
+ Conflicts:
+-Libs: \${libdir}/${LIBPREF}avcodec${LIBSUF} $extralibs
++Libs: \${libdir}/${LIBPREF}avcodec${LIBSUF} ${extralibs}
+ Cflags: -I\${includedir}
+ EOF
+ 
+@@ -2025,7 +2029,7 @@ Description: FFmpeg container format lib
+ Version: $lavf_version
+ Requires: $pkg_requires libavcodec = $lavc_version
+ Conflicts:
+-Libs: -L\${libdir} -lavformat $extralibs
++Libs: -L\${libdir} -lavformat -lavutil -lossaudio -lavcodec -lm -lz -pthread
+ Cflags: -I\${includedir} -I\${includedir}/ffmpeg
+ EOF
+ 
