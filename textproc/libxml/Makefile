@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.94 2006/02/03 14:14:36 bernd Exp $
+# $OpenBSD: Makefile,v 1.95 2006/03/20 13:36:54 steven Exp $
 
 COMMENT=		"XML parsing library"
 
-VERSION=		2.6.16
+VERSION=		2.6.23
 DISTNAME=		libxml2-${VERSION}
-PKGNAME=		libxml-${VERSION}p8
-SHARED_LIBS=		xml2	9.0
+PKGNAME=		libxml-${VERSION}
+SHARED_LIBS=		xml2	9.1
 CATEGORIES=		textproc
 MASTER_SITES=		ftp://xmlsoft.org/ \
 			${MASTER_SITE_GNOME:=sources/libxml2/2.6/}
@@ -32,12 +32,18 @@ CONFIGURE_ARGS+=	--with-iconv="${DEPBASE}"
 CONFIGURE_ARGS+=	--without-python
 CONFIGURE_ARGS+=	--without-threads
 
+REGRESS_DEPENDS=	::devel/gmake
+
 post-configure:
 	sed -e 's,@PREFIX@,${PREFIX},' <${FILESDIR}/rebuild >${WRKBUILD}/rebuild
 
 post-install:
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/share/libxml2
 	${INSTALL_SCRIPT} ${WRKBUILD}/rebuild ${PREFIX}/share/libxml2/
+
+do-regress:
+	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${GMAKE} \
+		${REGRESS_FLAGS} -f ${MAKE_FILE} ${REGRESS_TARGET}
 
 # XXX let's cheat
 #post-configure:

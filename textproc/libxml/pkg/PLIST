@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2006/02/03 14:14:36 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.40 2006/03/20 13:36:54 steven Exp $
 %%SHARED%%
 bin/xml2-config
 bin/xmlcatalog
@@ -27,6 +27,7 @@ include/libxml2/libxml/parserInternals.h
 include/libxml2/libxml/pattern.h
 include/libxml2/libxml/relaxng.h
 include/libxml2/libxml/schemasInternals.h
+include/libxml2/libxml/schematron.h
 include/libxml2/libxml/threads.h
 include/libxml2/libxml/tree.h
 include/libxml2/libxml/uri.h
@@ -38,6 +39,7 @@ include/libxml2/libxml/xmlautomata.h
 include/libxml2/libxml/xmlerror.h
 include/libxml2/libxml/xmlexports.h
 include/libxml2/libxml/xmlmemory.h
+include/libxml2/libxml/xmlmodule.h
 include/libxml2/libxml/xmlreader.h
 include/libxml2/libxml/xmlregexp.h
 include/libxml2/libxml/xmlsave.h
@@ -103,6 +105,7 @@ share/doc/libxml2/html/html/libxml-parserInternals.html
 share/doc/libxml2/html/html/libxml-pattern.html
 share/doc/libxml2/html/html/libxml-relaxng.html
 share/doc/libxml2/html/html/libxml-schemasInternals.html
+share/doc/libxml2/html/html/libxml-schematron.html
 share/doc/libxml2/html/html/libxml-threads.html
 share/doc/libxml2/html/html/libxml-tree.html
 share/doc/libxml2/html/html/libxml-uri.html
@@ -114,6 +117,7 @@ share/doc/libxml2/html/html/libxml-xmlautomata.html
 share/doc/libxml2/html/html/libxml-xmlerror.html
 share/doc/libxml2/html/html/libxml-xmlexports.html
 share/doc/libxml2/html/html/libxml-xmlmemory.html
+share/doc/libxml2/html/html/libxml-xmlmodule.html
 share/doc/libxml2/html/html/libxml-xmlreader.html
 share/doc/libxml2/html/html/libxml-xmlregexp.html
 share/doc/libxml2/html/html/libxml-xmlsave.html

@@ -1,6 +1,6 @@
-$OpenBSD: patch-catalog_c,v 1.2 2003/08/26 16:33:11 marcm Exp $
---- catalog.c.orig	2003-08-04 11:41:42.000000000 -0700
-+++ catalog.c	2003-08-19 20:44:38.000000000 -0700
+$OpenBSD: patch-catalog_c,v 1.3 2006/03/20 13:36:54 steven Exp $
+--- catalog.c.orig	Fri Apr  1 15:15:01 2005
++++ catalog.c	Sun Mar  5 11:28:46 2006
 @@ -62,10 +62,10 @@
  #define XML_URN_PUBID "urn:publicid:"
  #define XML_CATAL_BREAK ((xmlChar *) -1)
@@ -13,4 +13,4 @@ $OpenBSD: patch-catalog_c,v 1.2 2003/08/26 16:33:11 marcm Exp $
 +#define XML_SGML_DEFAULT_CATALOG "file:///var/db/sgmlcatalog"
  #endif
  
- static int xmlExpandCatalog(xmlCatalogPtr catal, const char *filename);
+ #if defined(_WIN32) && defined(_MSC_VER)
