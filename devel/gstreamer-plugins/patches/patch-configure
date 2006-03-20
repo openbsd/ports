@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.4 2006/02/19 19:22:06 espie Exp $
+$OpenBSD: patch-configure,v 1.5 2006/03/20 15:33:21 espie Exp $
 --- configure.orig	Sun Sep  4 14:21:34 2005
-+++ configure	Mon Dec 19 14:36:49 2005
++++ configure	Mon Mar 20 16:28:55 2006
 @@ -28114,7 +28114,7 @@ DEFAULT_AUDIOSRC="osssrc"
  DEFAULT_VIDEOSRC="v4lsrc"
  DEFAULT_VISUALIZER="goom"
@@ -19,3 +19,12 @@ $OpenBSD: patch-configure,v 1.4 2006/02/19 19:22:06 espie Exp $
  else
    HAVE_XVIDEO="no"
  fi
+@@ -42153,7 +42153,7 @@ fi
+     DVDNAV_CFLAGS=
+     HAVE_DVDNAV=no
+   else
+-    if dvdnav-config --plugin-libs  &> /dev/null; then
++    if dvdnav-config --plugin-libs  2> /dev/null >/dev/null; then
+       DVDNAV_LIBS=`dvdnav-config --plugin-libs `
+     else
+       DVDNAV_LIBS=`dvdnav-config --libs `

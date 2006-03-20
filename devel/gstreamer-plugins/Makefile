@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/03/20 15:21:43 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2006/03/20 15:33:21 espie Exp $
 
 COMMENT=		"GStreamer Streaming-media framework plug-ins."
 
@@ -183,8 +183,10 @@ DEPENDS-ogg=		ogg::audio/libogg
 # sdlvideosink
 COMMENT-sdl=		"GStreamer plugin for using SDL to diplay video"
 WANTLIB-sdl=		Xext usbhid X11
-DEPENDS-sdl=		SDL::devel/sdl \
-			gstinterfaces-0.8.1.0::devel/gstreamer-plugins
+DEPENDS-sdl=		SDL::devel/sdl
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-sdl"
+LIB_DEPENDS+= 		gstinterfaces-0.8.1.0::devel/gstreamer-plugins
+.endif
 
 # sidplay
 COMMENT-sidplay=	"GStreamer plugin for playing SID files"
