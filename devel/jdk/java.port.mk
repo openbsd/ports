@@ -1,4 +1,4 @@
-# $OpenBSD: java.port.mk,v 1.3 2005/07/14 17:29:58 kurt Exp $
+# $OpenBSD: java.port.mk,v 1.4 2006/03/20 14:42:37 kurt Exp $
 
 # Set MODJAVA_VER to x.y or x.y+ based on the version
 # of the jdk needed for the port. x.y  means any x.y jdk.
@@ -22,7 +22,7 @@ MODJAVA_JRERUN?=no
 #   the port.
 
 .if ${MODJAVA_VER:S/+//} == "1.3"
-ONLY_FOR_ARCHS?=	arm i386 powerpc
+ONLY_FOR_ARCHS?=	arm i386 powerpc sparc
 JAVA_HOME=		${LOCALBASE}/jdk-1.3.1
 .  if ${NO_BUILD:L} != "yes"
 BUILD_DEPENDS+=		:jdk-1.3.1:devel/jdk/1.3
