@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2006/01/07 15:10:53 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2006/03/21 21:32:25 pedro Exp $
 
 COMMENT=	"compatibility module for lua 5.1"
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
-DISTNAME=	compat-5.1r4
-PKGNAME=	luacompat-5.1r4
+DISTNAME=	compat-5.1r5
+PKGNAME=	luacompat-5.1r5
 SHARED_LIBS=	luacompat 5.1
-DIST_SUBDIR=	luacompat-5.1r4
+DIST_SUBDIR=	luacompat-5.1r5
 CATEGORIES=	devel
 
-MASTER_SITES=	http://luaforge.net/frs/download.php/952/
+MASTER_SITES=	http://luaforge.net/frs/download.php/1410/
 HOMEPAGE=	http://www.keplerproject.org/compat/
 
 MAINTAINER=	Pedro Martelletto <pedro@openbsd.org>
