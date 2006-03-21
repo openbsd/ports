@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_rings_c,v 1.1.1.1 2006/03/21 21:02:52 pedro Exp $
+--- src/rings.c.orig	Fri Feb  3 10:01:39 2006
++++ src/rings.c	Tue Mar 21 16:22:00 2006
+@@ -9,9 +9,7 @@
+ #include "lua.h"
+ #include "lualib.h"
+ #include "lauxlib.h"
+-#include "compat-5.1.h"
+ 
+-
+ #define RINGS_TABLENAME "rings"
+ #define RINGS_CACHE     "rings cache"
+ #define STATE_METATABLE "state metatable"
+@@ -22,7 +20,7 @@ typedef struct {
+ } state_data;
+ 
+ 
+-int luaopen_rings (lua_State *L);
++int luaopen_rings_core (lua_State *L);
+ 
+ 
+ /*
+@@ -293,7 +291,7 @@ static void set_info (lua_State *L) {
+ /*
+ ** Opens library.
+ */
+-int luaopen_rings (lua_State *L) {
++int luaopen_rings_core (lua_State *L) {
+ 	/* Library functions */
+ 	struct luaL_reg rings[] = {
+ 		{"new", state_new},

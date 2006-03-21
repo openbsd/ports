@@ -1,0 +1,31 @@
+$OpenBSD: patch-config,v 1.1.1.1 2006/03/21 21:02:52 pedro Exp $
+--- config.orig	Thu Dec 29 11:09:17 2005
++++ config	Tue Mar 21 11:38:21 2006
+@@ -1,20 +1,17 @@
+ # Installation directories
+ # System's libraries directory (where binary libraries are installed)
+-LUA_LIBDIR= /usr/local/lib/lua/5.0
++LUA_LIBDIR= $(LOCALBASE)/lib
+ # Lua includes directory
+-LUA_INC= /usr/local/include
++LUA_INC= $(LOCALBASE)/include
+ 
+-# OS dependent
+-#LIB_OPTION= -shared #for Linux
+-LIB_OPTION= -bundle -undefined dynamic_lookup #for MacOS X
+-
+-LIBNAME= $T.so.$V
++LIBNAME= $T.so
+ COMPAT_DIR= ../compat/src
+ 
+ # Compilation directives
+ WARN= -O2 -Wall -fPIC -W -Waggregate-return -Wcast-align -Wmissing-prototypes -Wnested-externs -Wshadow -Wwrite-strings -Wpointer-arith -pedantic
+-INCS= -I$(LUA_INC) -I$(COMPAT_DIR)
+-CFLAGS= $(WARN) $(INCS)
+-CC= gcc
++INCS= -I$(LUA_INC)
++CFLAGS+= -fPIC $(INCS)
++LDFLAGS+= -shared
++CC= cc
+ 
+ # $Id: patch-config,v 1.1.1.1 2006/03/21 21:02:52 pedro Exp $

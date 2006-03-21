@@ -1,0 +1,27 @@
+$OpenBSD: patch-tests_test_lua,v 1.1.1.1 2006/03/21 21:02:52 pedro Exp $
+--- tests/test.lua.orig	Wed Mar  8 15:24:50 2006
++++ tests/test.lua	Tue Mar 21 17:26:30 2006
+@@ -1,5 +1,3 @@
+-#!/usr/local/bin/lua50
+-
+ ---------------------------------------------------------------------
+ -- checks for a value and throw an error if it is invalid.
+ ---------------------------------------------------------------------
+@@ -81,7 +79,7 @@ data = {
+ 	key2 = { f3, f1, f2, },
+ }
+ local ok, k, i, f = S:dostring[[
+-	assert (loadfile ("/usr/local/share/lua/5.0/compat-5.1.lua"))()
++	dofile("@initconf@")
+ 	require"math"
+ 	require"os"
+ 	math.randomseed(os.date"%s")
+@@ -147,7 +145,7 @@ collectgarbage()
+ 
+ -- Checking Stable's persistent table
+ local NS = test_object (rings.new())
+-assert (NS:dostring[[assert (loadfile ("/usr/local/share/lua/5.0/compat-5.1.lua"))()]])
++assert (NS:dostring[[dofile("@initconf@")]])
+ assert (NS:dostring[[require"stable"]])
+ assert (type(_state_persistent_table_) == "table", "Stable persistent table was removed")
+ assert (_state_persistent_table_.key == "value", "Stable key vanished")

@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/03/21 21:02:52 pedro Exp $
+@unexec lua ${SYSCONFDIR}/lua/luapkg.lua del luarings
+lua/luarings/
+lua/luarings/init.lua
+lua/luarings/rings/
+lua/luarings/rings.lua
+lua/luarings/stable.lua
+share/doc/luarings/
+share/doc/luarings/index.html
+share/doc/luarings/license.html
+share/doc/luarings/manual.html
+share/doc/luarings/rings.png
+share/examples/luarings/
+share/examples/luarings/sample.lua
+share/examples/luarings/sample_state.lua
+share/examples/luarings/test.lua
+@exec lua ${SYSCONFDIR}/lua/luapkg.lua add luarings ${PREFIX}/lua/luarings/init.lua
+%%SHARED%%
