@@ -1,0 +1,16 @@
+To configure a Trac environment, you must run the following command
+and follow the prompts:
+    trac-admin </path/to/projectenv> initenv
+
+Here, "</path/to/projectenv>" is the location on your disk where you
+want to place the project environment.
+
+To get started with Trac, you can use the built-in webserver, by running:
+   tracd -p 8085 </path/to/projectenv>
+
+Now you can open up a web brower and go to http://localhost:8085/. You
+should see a single link for the project you just created. If you follow
+the link, you should see trac in action.
+
+You can find the Trac Installation Guide here:
+  http://projects.edgewall.com/trac/wiki/TracInstall
