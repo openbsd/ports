@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/19 21:17:05 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2006/03/21 22:54:29 msf Exp $
 
 COMMENT=	"lists of Perl keywords for use in backend modules" 
 
-DISTNAME=	B-Keywords-0.06
+DISTNAME=	B-Keywords-1.01
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
