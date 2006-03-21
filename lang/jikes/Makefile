@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2005/03/31 22:39:45 sturm Exp $
+# $OpenBSD: Makefile,v 1.13 2006/03/21 17:32:04 kurt Exp $
 
 COMMENT="compile Java source into .class files (quickly!)"
 
 # Jikes, a fast Java compiler. 
 
 DISTNAME=	jikes-1.22
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	lang
 HOMEPAGE=	http://jikes.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=jikes/}
@@ -19,9 +20,12 @@ PERMIT_DISTFILES_CDROM=	"commercial contributor must indemnify all others"
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m stdc++
 
-VMEM_WARNING=	Yes
+MODULES=	converters/libiconv
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE=gnu
+
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
