@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2005/11/05 03:48:40 jolan Exp $
+# $OpenBSD: Makefile,v 1.17 2006/03/21 04:00:09 jsg Exp $
 # XXX hardcoded endian list
 
 # 64-bit issues, unaligned memory access
@@ -11,7 +11,7 @@ COMMENT-remix3=		"ur-quan masters: remix pack number three"
 COMMENT-threedomusic=	"ur-quan masters: 3DO music content"
 COMMENT-voice=		"ur-quan masters: speech content"
 
-VER=			0.4.0
+VER=			0.5.0
 DISTNAME=		uqm-${VER}-source
 CATEGORIES=		games x11
 PDIST=			${DISTNAME}.tar.gz
@@ -25,12 +25,12 @@ DISTFILES=		${PDIST} ${CDIST}
 SUPDISTFILES=		${MDIST} ${VDIST} ${RM1DIST} ${RM2DIST} ${RM3DIST}
 DIST_SUBDIR=		uqm
 CATEGORIES=		games x11
-PKGNAME=		uqm-${VER}p1
-PKGNAME-remix1=		uqm-remix1-${VER}p0
-PKGNAME-remix2=		uqm-remix2-${VER}p0
-PKGNAME-remix3=		uqm-remix3-${VER}p0
-PKGNAME-threedomusic=	uqm-threedomusic-${VER}p0
-PKGNAME-voice=		uqm-voice-${VER}p0
+PKGNAME=		uqm-${VER}
+PKGNAME-remix1=		uqm-remix1-${VER}
+PKGNAME-remix2=		uqm-remix2-${VER}
+PKGNAME-remix3=		uqm-remix3-${VER}
+PKGNAME-threedomusic=	uqm-threedomusic-${VER}
+PKGNAME-voice=		uqm-voice-${VER}
 EXTRACT_ONLY=		${PDIST}
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sc2/}
 
