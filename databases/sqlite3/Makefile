@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2006/01/11 12:19:44 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2006/03/22 01:36:11 jolan Exp $
 
 COMMENT=	"Embedded SQL implementation"
 COMMENT-tcl=	"TCL bindings for Sqlite3"
-V=		3.2.8
+V=		3.3.4
 DISTNAME=	sqlite-${V}
-PKGNAME=	sqlite3-${V}p0
-PKGNAME-tcl=	sqlite3-tcl-${V}p0
+PKGNAME=	sqlite3-${V}
+PKGNAME-tcl=	sqlite3-tcl-${V}
 CATEGORIES=	databases
 SHARED_LIBS=	sqlite3	8.6
 
@@ -28,7 +28,7 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}
 
-# XXX gcc bug? some regress tests crash at w/-O2 but not -Os
+# XXX gcc bug? some regress tests crash w/-O2 but not -Os
 .if ${MACHINE_ARCH} == "amd64"
 CFLAGS+=-Os
 .endif
