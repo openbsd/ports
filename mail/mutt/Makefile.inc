@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.20 2005/11/12 02:29:47 jolan Exp $
+# $OpenBSD: Makefile.inc,v 1.21 2006/03/22 12:43:09 bernd Exp $
 
 CATEGORIES=	mail
 
@@ -112,3 +112,5 @@ post-install:
 	@mv -f ${PREFIX}/share/doc/mutt/samples/* ${PREFIX}/share/examples/mutt
 	@perl -pi -e "s,/etc/Muttrc,${CONFDIR}/Muttrc," ${PREFIX}/man/man1/mutt.1
 	@perl -pi -e "s,/etc/mime.types,${CONFDIR}/mime.types," ${PREFIX}/man/man1/mutt.1
+	@perl -pi -e "s,/usr/bin/gpg,${LOCALBASE}/bin/gpg," \
+		${PREFIX}/share/examples/mutt/gpg.rc

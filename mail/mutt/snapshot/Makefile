@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2005/11/09 21:19:03 bernd Exp $
+# $OpenBSD: Makefile,v 1.38 2006/03/22 12:43:09 bernd Exp $
 
 COMMENT=	"tty-based e-mail client, development version"
 
 VERSION=	1.5.11
 DISTNAME=	mutt-${VERSION}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 MASTER_SITES=	${MASTER_SITES_MUTT:=devel/}
 
 AUTOCONF_VERSION= 2.59
