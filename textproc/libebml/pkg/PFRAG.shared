@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/03/22 01:26:57 jolan Exp $
+@lib lib/libebml.so.${LIBebml_VERSION}
