@@ -1,5 +1,5 @@
---- src/command.c.orig	Thu Sep  6 10:38:07 2001
-+++ src/command.c	Wed Sep 15 20:38:55 2004
+--- src/command.c.orig	Thu Sep  6 18:38:07 2001
++++ src/command.c	Wed Mar 22 21:09:34 2006
 @@ -477,6 +477,16 @@ get_pty(void)
      ptydev = ttydev = _getpty(&fd, O_RDWR | O_NDELAY, 0622, 0);
      if (ptydev == NULL)
@@ -17,7 +17,27 @@
  #elif defined (__svr4__) || defined(__CYGWIN32__) || defined(__lnx21__)
      {
  	extern char    *ptsname();
-@@ -2148,11 +2158,23 @@ process_x_event(XEvent * ev)
+@@ -759,6 +769,9 @@ debug_ttymode(ttymode_t * ttymode)
+ #  ifdef VLNEXT
+     FOO(VLNEXT, "VLNEXT");
+ #  endif
++#  ifdef VSTATUS
++    FOO(VSTATUS, "VSTATUS");
++#  endif
+     fprintf(stderr, "\n\n");
+ #  undef FOO
+ # endif				/* HAVE_TERMIOS_H */
+@@ -799,6 +812,9 @@ get_ttymode(ttymode_t * tio)
+ # ifdef VLNEXT
+ 	tio->c_cc[VLNEXT] = CLNEXT;
+ # endif
++# ifdef VSTATUS
++	tio->c_cc[VSTATUS] = CSTATUS;
++# endif
+     }
+     tio->c_cc[VEOF] = CEOF;
+     tio->c_cc[VEOL] = VDISABLE;
+@@ -2148,11 +2164,23 @@ process_x_event(XEvent * ev)
      static int      bypass_keystate = 0;
      int             reportmode;
      static int      csrO = 0;	/* Hops - csr offset in thumb/slider      */
@@ -42,7 +62,7 @@
  	break;
  
      case ClientMessage:
-@@ -2217,6 +2239,9 @@ process_x_event(XEvent * ev)
+@@ -2217,6 +2245,9 @@ process_x_event(XEvent * ev)
  
      case FocusIn:
  	if (!TermWin.focus) {

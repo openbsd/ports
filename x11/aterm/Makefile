@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.37 2004/12/17 15:18:32 alek Exp $
+# $OpenBSD: Makefile,v 1.38 2006/03/22 20:17:40 uwe Exp $
 
 DISTNAME=	aterm-0.4.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 
 # GPL
