@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2006/03/18 21:15:33 sturm Exp $
+# $OpenBSD: Makefile,v 1.144 2006/03/22 01:28:10 jolan Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -35,6 +35,7 @@
      SUBDIR += ispell
      SUBDIR += latex2html
      SUBDIR += lgrind
+     SUBDIR += libebml
      SUBDIR += libxml
      SUBDIR += libxml1
      SUBDIR += libxslt
