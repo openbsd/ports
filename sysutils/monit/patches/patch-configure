@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2004/04/13 08:57:59 brad Exp $
---- configure.orig	Wed Apr  7 11:31:29 2004
-+++ configure	Wed Apr  7 11:31:44 2004
-@@ -3205,13 +3205,13 @@
+$OpenBSD: patch-configure,v 1.6 2006/03/22 15:58:01 sturm Exp $
+--- configure.orig	Wed Jan 11 23:01:35 2006
++++ configure	Wed Mar 22 16:55:32 2006
+@@ -3367,13 +3367,13 @@ fi
  
  # Wacky pthread madness
  pthread_libs=""
@@ -16,9 +16,9 @@ $OpenBSD: patch-configure,v 1.5 2004/04/13 08:57:59 brad Exp $
 -LIBS="-lpthread  $LIBS"
 +LIBS="-pthread  $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -3260,7 +3260,7 @@
+ _ACEOF
+@@ -3431,7 +3431,7 @@ fi
  echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
  echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6
  if test $ac_cv_lib_pthread_pthread_create = yes; then
