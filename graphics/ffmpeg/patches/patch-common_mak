@@ -1,6 +1,6 @@
-$OpenBSD: patch-common_mak,v 1.1 2006/03/20 05:50:49 jakemsr Exp $
---- common.mak.orig	Tue Feb 28 00:23:24 2006
-+++ common.mak	Tue Feb 28 00:26:36 2006
+$OpenBSD: patch-common_mak,v 1.2 2006/03/22 08:08:42 jakemsr Exp $
+--- common.mak.orig	Sun Feb 26 18:47:05 2006
++++ common.mak	Wed Mar 22 00:04:04 2006
 @@ -75,12 +75,11 @@ install-lib-shared: $(SLIBNAME)
  ifeq ($(CONFIG_WIN32),yes)
  	install $(INSTALLSTRIP) -m 755 $(SLIBNAME) "$(prefix)"
@@ -11,7 +11,7 @@ $OpenBSD: patch-common_mak,v 1.1 2006/03/20 05:50:49 jakemsr Exp $
 -		$(libdir)/$(SLIBNAME_WITH_MAJOR)
 -	ln -sf $(SLIBNAME_WITH_VERSION) \
 -		$(libdir)/$(SLIBNAME)
-+	install $(INSTALLSTRIP) -m 755 $(SLIBNAME) $(libdir)
++	install -m 755 $(SLIBNAME) $(libdir)
 +	#ln -sf $(SLIBNAME_WITH_VERSION) \
 +	#	$(libdir)/$(SLIBNAME_WITH_MAJOR)
 +	#ln -sf $(SLIBNAME_WITH_VERSION) \
