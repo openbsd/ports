@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2005/12/24 09:01:17 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.19 2006/03/22 01:33:06 jolan Exp $
 %%SHARED%%
 %%altivec%%
 %%win32%%
@@ -105,6 +105,7 @@ lib/vlc/demux/libid3tag_plugin.so
 lib/vlc/demux/libm3u_plugin.so
 lib/vlc/demux/libm4v_plugin.so
 lib/vlc/demux/libmp4_plugin.so
+lib/vlc/demux/libmpc_plugin.so
 lib/vlc/demux/libmpga_plugin.so
 lib/vlc/demux/libmpgv_plugin.so
 lib/vlc/demux/libnsc_plugin.so
@@ -124,6 +125,7 @@ lib/vlc/demux/libxa_plugin.so
 lib/vlc/gui/
 lib/vlc/gui/libncurses_plugin.so
 lib/vlc/libffmpeg.a
+lib/vlc/libmkv.a
 lib/vlc/libstream_out_switcher.a
 lib/vlc/libtheora.a
 lib/vlc/libxvideo.a

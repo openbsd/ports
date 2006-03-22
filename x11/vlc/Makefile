@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2006/03/20 05:53:18 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.34 2006/03/22 01:33:06 jolan Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"videolan client; multimedia player"
 V=		0.8.4a
 DISTNAME=	vlc-${V}
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -37,11 +37,14 @@ LIB_DEPENDS=	SDL_image.1.3::devel/sdl-image \
 		a52.0.0::audio/liba52 \
 		theora.1::multimedia/libtheora \
 		xml2.9::textproc/libxml \
-		FLAC.7.0::audio/flac
+		FLAC.7.0::audio/flac \
+		mpcdec.1::audio/libmpcdec \
+		matroska.0::multimedia/libmatroska \
+		ebml.0::textproc/libebml
 
 WANTLIB=	X11 Xext Xinerama Xv c freetype m ncurses ossaudio \
-		pthread usbhid z \
-		SDL jpeg
+		pthread stdc++ usbhid z \
+		SDL jpeg tiff
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.59
@@ -96,7 +99,6 @@ CONFIGURE_ARGS+=--disable-pth \
 		--disable-libcddb \
 		--disable-cdda \
 		--disable-vcd \
-		--disable-mkv \
 		--disable-quicktime \
 		--disable-dts \
 		--disable-x264 \
@@ -122,7 +124,6 @@ CONFIGURE_ARGS+=--disable-pth \
 		--disable-cmml \
 		--disable-shout \
 		--disable-gnomevfs \
-		--disable-mpc \
 		--disable-real \
 		--disable-realrtsp \
 		--disable-cyberlink \
@@ -152,7 +153,9 @@ CONFIGURE_ARGS+=--enable-ncurses \
 		--enable-libxml2 \
 		--enable-faad \
 		--enable-theora \
-		--enable-flac
+		--enable-flac \
+		--enable-mkv \
+		--enable-mpc
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 
