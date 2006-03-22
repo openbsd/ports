@@ -1,0 +1,5 @@
+Matroska is aiming to become the standard of Multimedia Container
+Formats one day.  It is based on EBML (Extensible Binary Meta Language),
+a kind of binary version of XML.  This way the significant advantages in
+terms of future format extensability are gained without breaking file
+support in old parsers.
