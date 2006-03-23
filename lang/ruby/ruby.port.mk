@@ -1,9 +1,9 @@
-# $OpenBSD: ruby.port.mk,v 1.1 2004/08/09 19:54:20 xsa Exp $
+# $OpenBSD: ruby.port.mk,v 1.2 2006/03/23 17:15:25 msf Exp $
 
 # ruby module
 
 RUN_DEPENDS+=::lang/ruby
-LIB_DEPENDS+=ruby.1.81::lang/ruby
+LIB_DEPENDS+=ruby.1.84::lang/ruby
 
 # location of ruby libraries
 MODRUBY_LIBDIR=		${LOCALBASE}/lib/ruby
