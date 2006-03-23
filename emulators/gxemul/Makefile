@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2005/12/20 18:57:40 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2006/03/23 01:40:03 brad Exp $
 
-COMMENT=		"MIPS (and other) machines emulator"
-DISTNAME=		gxemul-0.3.7
-PKGNAME=		${DISTNAME}p0
+COMMENT=		"ARM/MIPS/PowerPC machines emulator"
+
+DISTNAME=		gxemul-0.3.8
 CATEGORIES=		emulators
 HOMEPAGE=		http://gavare.se/gxemul/
+
 MAINTAINER=		Alexander Yurchenko <grange@openbsd.org>
 
 # BSD
