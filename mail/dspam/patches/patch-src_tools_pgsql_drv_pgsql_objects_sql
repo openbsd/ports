@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_tools_pgsql_drv_pgsql_objects_sql,v 1.1 2006/03/23 17:17:40 todd Exp $
+--- src/tools.pgsql_drv/pgsql_objects.sql.orig	Tue Jan 24 09:46:14 2006
++++ src/tools.pgsql_drv/pgsql_objects.sql	Mon Mar 20 17:28:38 2006
+@@ -55,3 +55,16 @@ begin
+   return;
+ end;';
+ 
++--
++-- For much better performance
++-- see http://archives.postgresql.org/pgsql-performance/2004-11/msg00416.php
++-- and http://archives.postgresql.org/pgsql-performance/2004-11/msg00417.php
++-- for details
++--
++
++alter table "dspam_token_data" alter "token" set statistics 200;
++alter table dspam_signature_data alter signature set statistics 200;
++alter table dspam_token_data alter innocent_hits set statistics 200;
++alter table dspam_token_data alter spam_hits set statistics 200;
++CREATE INDEX id_token_data_sumhits ON dspam_token_data ((spam_hits + innocent_hits));
++analyze;

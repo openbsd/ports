@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2006/02/15 05:58:19 david Exp $
+# $OpenBSD: Makefile,v 1.10 2006/03/23 17:17:40 todd Exp $
 
 COMMENT=	"anti-spam filter"
 
-VERSION=	3.6.3
+VERSION=	3.6.4
 DISTNAME=	dspam-${VERSION}
-PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=		dspam	7.0
 MODGNU_SHARED_LIBS=	dspam	''
 LIBdspam_ALIAS=		realdspam
@@ -14,7 +13,7 @@ MASTER_SITES=	http://dspam.nuclearelephant.com/sources/
 
 HOMEPAGE=	http://dspam.nuclearelephant.com/
 
-MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
+MAINTAINER=     Todd T. Fries <todd@OpenBSD.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

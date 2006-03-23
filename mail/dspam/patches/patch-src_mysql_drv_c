@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_mysql_drv_c,v 1.1 2005/10/26 06:18:39 jakob Exp $
---- src/mysql_drv.c.orig	Sat Oct  1 17:33:44 2005
-+++ src/mysql_drv.c	Mon Oct 17 14:48:42 2005
-@@ -1350,7 +1350,7 @@ _ds_get_nextuser (DSPAM_CTX * CTX)
+$OpenBSD: patch-src_mysql_drv_c,v 1.2 2006/03/23 17:17:40 todd Exp $
+--- src/mysql_drv.c.orig	Thu Feb  2 11:15:36 2006
++++ src/mysql_drv.c	Sat Mar  4 19:04:44 2006
+@@ -1353,7 +1353,7 @@ _ds_get_nextuser (DSPAM_CTX * CTX)
        virtual_username, 
        virtual_table);
  #else

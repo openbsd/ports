@@ -1,7 +1,16 @@
-$OpenBSD: patch-src_pgsql_drv_c,v 1.1 2005/10/26 06:18:39 jakob Exp $
---- src/pgsql_drv.c.orig	Mon Oct 10 15:52:21 2005
-+++ src/pgsql_drv.c	Mon Oct 17 14:48:42 2005
-@@ -1390,7 +1390,7 @@ _ds_get_nextuser (DSPAM_CTX * CTX)
+$OpenBSD: patch-src_pgsql_drv_c,v 1.2 2006/03/23 17:17:40 todd Exp $
+--- src/pgsql_drv.c.orig	Thu Feb  2 11:15:36 2006
++++ src/pgsql_drv.c	Sat Mar  4 19:08:13 2006
+@@ -1133,7 +1133,7 @@ _ds_get_signature (DSPAM_CTX * CTX, stru
+ 
+     p = _pgsql_drv_getpwuid (CTX, uid);
+     if (!p) {
+-      LOG(LOG_CRIT, "_ds_get_signature(): _mysql_drv_getpwuid(%d) failed: aborting", uid);
++      LOG(LOG_CRIT, "_ds_get_signature(): _pgsql_drv_getpwuid(%d) failed: aborting", uid);
+       return EFAILURE;
+     }
+     username = strdup(p->pw_name);
+@@ -1392,7 +1392,7 @@ _ds_get_nextuser (DSPAM_CTX * CTX)
          virtual_username,
          virtual_table);
  #else

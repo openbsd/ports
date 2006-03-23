@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_client_c,v 1.1 2005/10/26 06:18:38 jakob Exp $
---- src/client.c.orig	Sat Sep 24 19:49:48 2005
-+++ src/client.c	Mon Oct 17 14:48:42 2005
+$OpenBSD: patch-src_client_c,v 1.2 2006/03/23 17:17:40 todd Exp $
+--- src/client.c.orig	Tue Jan 31 14:25:46 2006
++++ src/client.c	Mon Mar  6 17:08:36 2006
 @@ -108,7 +108,7 @@ int client_process(AGENT_CTX *ATX, buffe
  
    /* RCPT TO - Send recipient information */
@@ -10,7 +10,34 @@ $OpenBSD: patch-src_client_c,v 1.1 2005/10/26 06:18:38 jakob Exp $
    node_nt = c_nt_first(ATX->users, &c_nt);
    while(node_nt != NULL) {
      const char *ptr = (const char *) node_nt->ptr;
-@@ -308,7 +308,7 @@ int client_connect(AGENT_CTX *ATX, int f
+@@ -165,7 +165,7 @@ int client_process(AGENT_CTX *ATX, buffe
+     char *line = NULL;
+     int head = !(ATX->flags & DAF_STDOUT);
+ 
+-    line = client_getline(&TTX, 300);
++    line = client_getline(&TTX, 900);
+ 
+     while(line != NULL && strcmp(line, ".")) {
+       chomp(line);
+@@ -185,7 +185,7 @@ int client_process(AGENT_CTX *ATX, buffe
+         printf("%s\n", line);
+       } 
+       free(line);
+-      line = client_getline(&TTX, 300);
++      line = client_getline(&TTX, 900);
+       if (line) chomp(line);
+     }
+     free(line);
+@@ -193,7 +193,7 @@ int client_process(AGENT_CTX *ATX, buffe
+       goto BAIL;
+   } else {
+     for(i=0;i<ATX->users->items;i++) {
+-      char *input = client_getline(&TTX, 300);
++      char *input = client_getline(&TTX, 900);
+       char *x;
+       int code = 500;
+ 
+@@ -306,7 +306,7 @@ int client_connect(AGENT_CTX *ATX, int f
    if (domain) {
      sockfd = socket(AF_UNIX, SOCK_STREAM, 0);
      saun.sun_family = AF_UNIX;
@@ -19,3 +46,37 @@ $OpenBSD: patch-src_client_c,v 1.1 2005/10/26 06:18:38 jakob Exp $
      addr_len = sizeof(saun.sun_family) + strlen(saun.sun_path) + 1;
  
      LOGDEBUG(INFO_CLIENT_CONNECTING, host, 0);
+@@ -436,7 +436,7 @@ char * client_expect(THREAD_CTX *TTX, in
+   char *inp, *dup, *ptr, *ptrptr;
+   int recv_code;
+ 
+-  inp = client_getline(TTX, 300);
++  inp = client_getline(TTX, 900);
+   while(inp != NULL) {
+     recv_code = 0;
+     dup = strdup(inp);
+@@ -460,7 +460,7 @@ char * client_expect(THREAD_CTX *TTX, in
+     
+     strlcpy(err, inp, len);
+     free(inp);
+-    inp = client_getline(TTX, 300);
++    inp = client_getline(TTX, 900);
+   }
+ 
+   return NULL;
+@@ -505,13 +505,13 @@ int client_getcode(THREAD_CTX *TTX, char
+   char *inp, *ptr, *ptrptr;
+   int i;
+ 
+-  inp = client_getline(TTX, 300);
++  inp = client_getline(TTX, 900);
+   if (!inp)
+     return EFAILURE;
+ 
+   while(inp && !strncmp(inp, "250-", 4)) {
+     free(inp);
+-    inp = client_getline(TTX, 300);
++    inp = client_getline(TTX, 900);
+   }
+ 
+   strlcpy(err, inp, len);
