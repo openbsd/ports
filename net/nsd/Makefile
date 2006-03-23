@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2005/12/08 10:45:45 jakob Exp $
+# $OpenBSD: Makefile,v 1.30 2006/03/23 00:39:41 jakob Exp $
 
 COMMENT=	"authoritative-only name server daemon"
 
 VERSION=	2.3.3
 DISTNAME=	nsd-${VERSION}
+PKGNAME=	nsd-${VERSION}p0
 CATEGORIES=	net
 
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/
@@ -17,6 +18,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c wrap crypto
+
+# gcc 3.3.5, Bus errors
+.if ${MACHINE_ARCH} == "sparc64"
+CFLAGS=	-g -O0
+.endif
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-dnssec \
