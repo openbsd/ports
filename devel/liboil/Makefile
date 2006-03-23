@@ -1,33 +1,29 @@
-# $OpenBSD: Makefile,v 1.4 2006/02/08 04:54:49 david Exp $
+# $OpenBSD: Makefile,v 1.5 2006/03/23 18:05:55 bernd Exp $
 
 COMMENT=	"library of optimized inner loops"
-DISTNAME=	liboil-0.2.2
-PKGNAME=	${DISTNAME}p1
-SHARED_LIBS=	oil-0.2 0.0 \
-		oiltmp1 0.0
+
+DISTNAME=	liboil-0.3.7
+
+SHARED_LIBS=	oil-0.3 1.0
 
 CATEGORIES=	devel
 MASTER_SITES=	${HOMEPAGE}download/
 
-HOMEPAGE=	http://www.schleef.org/liboil/
+HOMEPAGE=	http://liboil.freedesktop.org/
 
-# LGPL
+# BSD
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-BUILD_DEPENDS+=	:pkgconfig->=0.15.0:devel/pkgconfig \
-		:glib2->=2.4.7:devel/glib2
+BUILD_DEPENDS+=		:pkgconfig->=0.15.0:devel/pkgconfig
 
-WANTLIB=m
+WANTLIB=		m
 
-USE_LIBTOOL=	Yes
-CONFIGURE_STYLE=gnu
+USE_LIBTOOL=		Yes
 
-pre-configure:
-	@perl -pi -e 's|stdint\.h|inttypes.h|g' \
-		${WRKSRC}/liboil/liboiltypes.h \
-		${WRKSRC}/liboil/liboil.h
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		--disable-glib
 
 .include <bsd.port.mk>
