@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_PerfSocket_cpp,v 1.1 2006/03/23 19:35:08 jakob Exp $
+--- src/PerfSocket.cpp.orig	Mon May  2 22:09:27 2005
++++ src/PerfSocket.cpp	Thu Mar 23 20:29:38 2006
+@@ -92,7 +92,7 @@ void SetSocketOptions( thread_Settings *
+ 
+     // check if we're sending multicast, and set TTL
+     if ( isMulticast( inSettings ) && ( inSettings->mTTL > 0 ) ) {
+-	int val = inSettings->mTTL;
++	u_int8_t val = inSettings->mTTL;
+ #ifdef HAVE_MULTICAST
+ 	if ( !SockAddr_isIPv6( &inSettings->local ) ) {
+ 	    int rc = setsockopt( inSettings->mSock, IPPROTO_IP, IP_MULTICAST_TTL,
