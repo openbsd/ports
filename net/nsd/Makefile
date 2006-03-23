@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2006/03/23 00:39:41 jakob Exp $
+# $OpenBSD: Makefile,v 1.31 2006/03/23 02:34:37 jakob Exp $
 
 COMMENT=	"authoritative-only name server daemon"
 
@@ -21,7 +21,7 @@ WANTLIB=		c wrap crypto
 
 # gcc 3.3.5, Bus errors
 .if ${MACHINE_ARCH} == "sparc64"
-CFLAGS=	-g -O0
+CFLAGS=	-O0
 .endif
 
 CONFIGURE_STYLE=	gnu
