@@ -1,0 +1,90 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
+--- configure.orig	Tue Nov 15 05:40:27 2005
++++ configure	Fri Dec 30 00:02:42 2005
+@@ -26269,7 +26269,7 @@ fi;
+                  "ac_cv_lib_avcodec_pp_get_context" \
+                  "ac_cv_lib_postproc_pp_get_context" \
+                  "ac_cv_lib_avcodec_register_avcodec"; do
+-          $as_unset $i || test "${$i+set}" != set || { $i=; export $i; }
++          $as_unset $i || test "$i+set" != set || { $i=; export $i; }
+         done
+ 
+                 if test "${ac_cv_header_avcodec_h+set}" = set; then
+@@ -26804,7 +26804,7 @@ configure option --with-external-ffmpeg.
+       fi
+     else
+             CPPFLAGS="${FFMPEG_CPPFLAGS} ${ac_save_CPPFLAGS}"
+-      LDFLAGS="${FFMPEG_LIBS} ${FFMPEG_POSTPROC_LIBS } ${ac_save_LDFLAGS}"
++      LDFLAGS="${FFMPEG_LIBS} ${FFMPEG_POSTPROC_LIBS} ${ac_save_LDFLAGS}"
+       cat >conftest.$ac_ext <<_ACEOF
+ #include <avcodec.h>
+ #include <postprocess.h>
+@@ -29925,8 +29925,12 @@ _ACEOF
+ 
+ 
+      ac_have_xv="yes"
++
++XV_LIB="-lXv"
++
++if test 0 -eq 1 ; then
+      case x$XV_LIB in
+-      x*.a)
++      x*_pic.a)
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_XV_STATIC 1
+@@ -29935,8 +29939,8 @@ _ACEOF
+         ac_have_xv_static="yes"
+         XV_LIB="$xv_path/$XV_LIB"
+         ;;
+-      x*.so)
+-        XV_LIB=`echo $XV_LIB | sed 's/^lib/-l/; s/\.so$//'`
++      x*.so.*)
++        XV_LIB="-lXv"
+         ;;
+       *)
+         { { echo "$as_me:$LINENO: error: sorry, I don't know about $XV_LIB" >&5
+@@ -29960,6 +29964,7 @@ fi
+ 
+ fi
+ 
++fi
+ 
+ if test x$ac_have_xv = "xyes"; then
+   HAVE_XV_TRUE=
+@@ -36061,7 +36066,7 @@ elif test x"$external_a52dec" = "xyes"; 
+   have_a52="yes"
+ 
+ 
+-for ac_header in a52dec/a52.h a52dec/a52_internal.h
++for ac_header in a52dec/a52.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ echo "$as_me:$LINENO: checking for $ac_header" >&5
+@@ -36206,7 +36211,7 @@ if test $ac_cv_lib_a52_a52_init = yes; t
+ #define HAVE_LIBA52 1
+ _ACEOF
+ 
+-  LIBS="-la52 $LIBS"
++  LIBS="-la52 -lm $LIBS"
+ 
+ else
+   have_a52="no"
+@@ -36561,7 +36566,7 @@ if test "${ac_cv_lib_mng_mng_initialize+
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lmng  $LIBS"
++LIBS="-lmng -llcms -ljpeg -lz -lm $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -36759,7 +36764,7 @@ echo "${ECHO_T}$ac_cv_header_libmng_h" >
+ fi
+ if test $ac_cv_header_libmng_h = yes; then
+    have_libmng=yes
+-		  MNG_LIBS="-lmng"
++		  MNG_LIBS="-lmng -llcms -ljpeg -lz -lm"
+ else
+   echo "$as_me:$LINENO: result: *** All libmng dependent parts will be disabled ***" >&5
+ echo "${ECHO_T}*** All libmng dependent parts will be disabled ***" >&6

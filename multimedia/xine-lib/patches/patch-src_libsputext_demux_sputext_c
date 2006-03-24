@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_libsputext_demux_sputext_c,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
+--- src/libsputext/demux_sputext.c.orig	Thu Jan  5 01:07:12 2006
++++ src/libsputext/demux_sputext.c	Thu Jan  5 01:08:23 2006
+@@ -57,7 +57,7 @@
+ #define SUB_MAX_TEXT  5
+ #define SUB_BUFSIZE   1024
+ #define LINE_LEN      1000
+-#define LINE_LEN_QUOT "1000"
++#define LINE_LEN_QUOT "999"
+ 
+ /*
+  *  Demuxer typedefs

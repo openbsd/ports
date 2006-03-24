@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_input_input_cdda_c,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
+--- src/input/input_cdda.c.orig	Tue Nov 15 05:36:44 2005
++++ src/input/input_cdda.c	Thu Dec 29 23:39:05 2005
+@@ -73,7 +73,7 @@
+ #elif defined(WIN32)
+ #define DEFAULT_CDDA_DEVICE "d:\\"
+ #else
+-#define	DEFAULT_CDDA_DEVICE	"/dev/cdrom"
++#define	DEFAULT_CDDA_DEVICE	"/dev/cd0c"
+ #endif
+ 
+ #define CDDB_SERVER             "freedb.freedb.org"

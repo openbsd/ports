@@ -1,0 +1,190 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
+--- configure.orig	Tue Jul 26 11:34:03 2005
++++ configure	Sun Dec 25 00:47:48 2005
+@@ -25747,7 +25747,7 @@ fi;
+                  "ac_cv_lib_avcodec_pp_get_context" \
+                  "ac_cv_lib_postproc_pp_get_context" \
+                  "ac_cv_lib_avcodec_register_avcodec"; do
+-          $as_unset $i || test "${$i+set}" != set || { $i=; export $i; }
++          $as_unset $i || test "$i+set" != set || { $i=; export $i; }
+         done
+ 
+                 if test "${ac_cv_header_avcodec_h+set}" = set; then
+@@ -29374,8 +29374,12 @@ _ACEOF
+ 
+ 
+      ac_have_xv="yes"
++
++XV_LIB="-lXv"
++
++if test 0 -eq 1 ; then
+      case x$XV_LIB in
+-      x*.a)
++      x*_pic.a)
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_XV_STATIC 1
+@@ -29384,8 +29388,8 @@ _ACEOF
+         ac_have_xv_static="yes"
+         XV_LIB="$xv_path/$XV_LIB"
+         ;;
+-      x*.so)
+-        XV_LIB=`echo $XV_LIB | sed 's/^lib/-l/; s/\.so$//'`
++      x*.so.*)
++        XV_LIB="-lXv"
+         ;;
+       *)
+         { { echo "$as_me:$LINENO: error: sorry, I don't know about $XV_LIB" >&5
+@@ -29409,6 +29413,7 @@ fi
+ 
+ fi
+ 
++fi
+ 
+ if test x$ac_have_xv = "xyes"; then
+   HAVE_XV_TRUE=
+@@ -35267,7 +35272,7 @@ if test x"$external_a52dec" = "xyes"; th
+   have_a52="yes"
+ 
+ 
+-for ac_header in a52dec/a52.h a52dec/a52_internal.h
++for ac_header in a52dec/a52.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ echo "$as_me:$LINENO: checking for $ac_header" >&5
+@@ -35412,7 +35417,7 @@ if test $ac_cv_lib_a52_a52_init = yes; t
+ #define HAVE_LIBA52 1
+ _ACEOF
+ 
+-  LIBS="-la52 $LIBS"
++  LIBS="-la52 -lm $LIBS"
+ 
+ else
+   have_a52="no"
+@@ -35727,7 +35732,7 @@ if test "${ac_cv_lib_mng_mng_initialize+
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lmng  $LIBS"
++LIBS="-lmng -llcms -ljpeg -lz -lm $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -35925,7 +35930,7 @@ echo "${ECHO_T}$ac_cv_header_libmng_h" >
+ fi
+ if test $ac_cv_header_libmng_h = yes; then
+    have_libmng=yes
+-		  MNG_LIBS="-lmng"
++		  MNG_LIBS="-lmng -llcms -ljpeg -lz -lm"
+ else
+   echo "$as_me:$LINENO: result: *** All libmng dependent parts will be disabled ***" >&5
+ echo "${ECHO_T}*** All libmng dependent parts will be disabled ***" >&6
+@@ -44367,6 +44372,9 @@ _ACEOF
+ 
+ 
+   i?86-*-linux* | i386-*-solaris* | i?86-* | k?-* | athlon-* | pentium*)
++
++if test x"$OPTIMIZE" = x"Yes" ; then
++
+     if test "$GCC" = yes -o "${CC##*/}x" = "iccx" ; then
+ 
+       if test "$GCC" = yes ; then
+@@ -44674,6 +44682,7 @@ echo "${ECHO_T}$ac_cv_try_cflags_ok" >&6
+ 
+       fi
+ 
++fi  # $OPTIMIZE = "Yes"
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define ARCH_X86
+@@ -44697,9 +44706,13 @@ _ACEOF
+ 	  ;;
+ 	esac
+     else
++if test x"$OPTIMIZE" = x"Yes" ; then
++
+ 		CFLAGS="-O $CFLAGS"
+ 	DEBUG_CFLAGS="-O $DEBUG_CFLAGS"
+ 
++fi
++
+ cat >>confdefs.h <<_ACEOF
+ #define FPM_64BIT
+ _ACEOF
+@@ -44715,8 +44728,10 @@ _ACEOF
+     ;;
+ 
+   alphaev56-*)
++if test x"$OPTIMIZE" = x"Yes" ; then
+     CFLAGS="-O3 -mcpu=ev56 -mieee $CFLAGS"
+     DEBUG_CFLAGS="-O3 -mcpu=ev56 -mieee $DEBUG_CFLAGS"
++fi
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define FPM_64BIT
+@@ -44725,8 +44740,10 @@ _ACEOF
+     ;;
+ 
+   alpha*)
++if test x"$OPTIMIZE" = x"Yes" ; then
+     CFLAGS="-O3 -mieee $CFLAGS"
+     DEBUG_CFLAGS="-O3 -mieee $DEBUG_CFLAGS"
++fi
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define FPM_64BIT
+@@ -44889,8 +44906,10 @@ _ACEOF
+     ;;
+ 
+   mips-*)
++if test x"$OPTIMIZE" = x"yes" ; then
+     CFLAGS="-O3 $CFLAGS"
+     DEBUG_CFLAGS="-O $DEBUG_CFLAGS"
++fi
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define FPM_MIPS
+@@ -44901,8 +44920,10 @@ _ACEOF
+   m68k-*)
+     # used to be -O2, but that makes gcc 2.95.2 segfault
+     # see http://bugs.debian.org/146006 for more info
++if test x"$OPTIMIZE" = x"Yes" ; then
+     CFLAGS="-O $CFLAGS"
+     DEBUG_CFLAGS="-O $DEBUG_CFLAGS"
++fi
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define FPM_DEFAULT
+@@ -44921,8 +44942,10 @@ _ACEOF
+   ;;
+ 
+   hppa-*)
++if test x"$OPTIMIZE" = x"Yes" ; then
+         CFLAGS="-O $CFLAGS"
+     DEBUG_CFLAGS="-O $DEBUG_CFLAGS"
++fi
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define FPM_64BIT
+@@ -44941,8 +44964,10 @@ _ACEOF
+     ;;
+ 
+   x86_64-*)
++if test x"$OTIMIZE" = x"yes"; then
+     CFLAGS="-O3 -fomit-frame-pointer $m_wm $m_psb -fexpensive-optimizations $f_si $f_nsa -ffast-math -funroll-loops $INLINE_FUNCTIONS $CFLAGS"
+     DEBUG_CFLAGS="-O0 -g $DEBUG_CFLAGS"
++fi
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define ARCH_X86_64
+@@ -44992,8 +45017,10 @@ _ACEOF
+     echo "(sleeping one minute so you can read this...)"
+     sleep 60
+ 
++if test x"$OPTIMIZE" = x"Yes" ; then
+     CFLAGS="-O3 $CFLAGS"
+     DEBUG_CFLAGS="-O $DEBUG_CFLAGS"
++fi
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define FPM_DEFAULT

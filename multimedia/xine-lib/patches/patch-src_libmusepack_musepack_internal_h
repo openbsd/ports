@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_libmusepack_musepack_internal_h,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
+--- src/libmusepack/musepack/internal.h.orig	Sat Dec 24 20:53:47 2005
++++ src/libmusepack/musepack/internal.h	Sat Dec 24 20:55:07 2005
+@@ -8,6 +8,7 @@ enum {
+     MPC_DECODER_SYNTH_DELAY = 481
+ };
+ 
++#ifndef swap32
+ /// Big/little endian 32 bit byte swapping routine.
+ static inline
+ mpc_uint32_t swap32(mpc_uint32_t val) {
+@@ -16,6 +17,7 @@ mpc_uint32_t swap32(mpc_uint32_t val) {
+         (mpc_uint32_t)src[0] | 
+         ((mpc_uint32_t)src[1] << 8) | ((mpc_uint32_t)src[2] << 16) | ((mpc_uint32_t)src[3] << 24);
+ }
++#endif
+ 
+ /// Searches for a ID3v2-tag and reads the length (in bytes) of it.
+ /// \param reader supplying raw stream data

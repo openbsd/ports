@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_input_input_pnm_c,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
+--- src/input/input_pnm.c.orig	Fri Oct 14 14:02:16 2005
++++ src/input/input_pnm.c	Thu Jan  5 00:58:49 2006
+@@ -51,7 +51,9 @@
+ #define BUFSIZE 4096
+ 
+ #if !defined(NDELAY) && defined(O_NDELAY)
++#ifndef FNDELAY
+ #define FNDELAY O_NDELAY
++#endif
+ #endif
+ 
+ typedef struct {

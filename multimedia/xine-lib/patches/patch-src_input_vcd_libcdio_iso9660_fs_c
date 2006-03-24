@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_input_vcd_libcdio_iso9660_fs_c,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
+--- src/input/vcd/libcdio/iso9660_fs.c.orig	Sat Dec 24 23:41:05 2005
++++ src/input/vcd/libcdio/iso9660_fs.c	Sat Dec 24 23:42:04 2005
+@@ -33,6 +33,7 @@
+ 
+ #ifdef HAVE_ICONV
+ # include <iconv.h>
++# include <localcharset.h>
+ #endif
+ 
+ #ifdef HAVE_LANGINFO_CODESET
+@@ -149,7 +150,7 @@ ucs2be_to_locale(ICONV_CONST char *psz_u
+ 
+   iconv_t ic = 
+ #if defined(HAVE_LANGINFO_CODESET)
+-    iconv_open(nl_langinfo(CODESET), "UCS-2BE");
++    iconv_open(locale_charset(), "UCS-2BE");
+ #else 
+     iconv_open("ASCII", "UCS-2BE");
+ #endif

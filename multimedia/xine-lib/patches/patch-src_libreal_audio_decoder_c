@@ -1,0 +1,48 @@
+$OpenBSD: patch-src_libreal_audio_decoder_c,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
+--- src/libreal/audio_decoder.c.orig	Mon Feb 21 02:05:15 2005
++++ src/libreal/audio_decoder.c	Mon Feb 21 02:06:50 2005
+@@ -32,8 +32,10 @@
+ #include <fcntl.h>
+ #include <unistd.h>
+ #include <dlfcn.h>
+-#ifdef __x86_64__
+-  #include <elf.h>
++#ifdef __linux__
++  #ifdef __x86_64__
++    #include <elf.h>
++  #endif
+ #endif
+ 
+ #define LOG_MODULE "real_audio_decoder"
+@@ -121,7 +123,8 @@ void __builtin_delete (void *foo) {
+   free (foo);
+ }
+ 
+-#ifdef __x86_64__
++#ifdef __linux__
++  #ifdef __x86_64__
+ /* (gb) quick-n-dirty check to be run natively */
+ static int is_x86_64_object_(FILE *f)
+ {
+@@ -162,6 +165,7 @@ static inline int is_x86_64_object(const
+   fclose(f);
+   return ret;
+ }
++  #endif
+ #endif
+ 
+ static int load_syms_linux (realdec_decoder_t *this, char *codec_name) {
+@@ -172,10 +176,12 @@ static int load_syms_linux (realdec_deco
+ 
+   snprintf (path, sizeof(path), "%s/%s", entry->str_value, codec_name);
+ 
+-#ifdef __x86_64__
++#ifdef __linux__
++  #ifdef __x86_64__
+   /* check whether it's a real x86-64 library */
+   if (!is_x86_64_object(path))
+ 	return 0;
++  #endif
+ #endif
+ 
+   lprintf ("(audio) opening shared obj '%s'\n", path);

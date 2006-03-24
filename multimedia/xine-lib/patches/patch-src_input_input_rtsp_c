@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_input_input_rtsp_c,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
+--- src/input/input_rtsp.c.orig	Thu Jan  5 00:59:02 2006
++++ src/input/input_rtsp.c	Thu Jan  5 00:59:29 2006
+@@ -51,7 +51,9 @@
+ #define BUFSIZE 1025
+ 
+ #if !defined(NDELAY) && defined(O_NDELAY)
++#ifndef FNDELAY
+ #define FNDELAY O_NDELAY
++#endif
+ #endif
+ 
+ typedef struct {

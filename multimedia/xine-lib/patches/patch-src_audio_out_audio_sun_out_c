@@ -1,0 +1,136 @@
+$OpenBSD: patch-src_audio_out_audio_sun_out_c,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
+--- src/audio_out/audio_sun_out.c.orig	Sun Dec 12 16:01:02 2004
++++ src/audio_out/audio_sun_out.c	Fri Dec 30 02:22:36 2005
+@@ -41,7 +41,12 @@
+ #ifdef	__svr4__
+ #include <stropts.h>
+ #endif
++#include <sys/param.h>
+ 
++#if (defined(BSD) && BSD >= 199306)
++typedef unsigned uint_t;
++#endif
++
+ #include "xine_internal.h"
+ #include "xineutils.h"
+ #include "audio_out.h"
+@@ -89,7 +94,9 @@ typedef struct sun_driver_s {
+   uint32_t       num_channels;
+   int		 bytes_per_frame;
+ 
++#ifndef __OpenBSD__
+   uint32_t       frames_in_buffer;     /* number of frames writen to audio hardware   */
++#endif
+ 
+   enum {
+       RTSC_UNKNOWN = 0,
+@@ -113,12 +120,14 @@ typedef struct sun_driver_s {
+   unsigned	 buf_len;
+ #endif
+ 
++#ifndef __OpenBSD__
+ #if	SW_SAMPLE_COUNT
+   struct timeval tv0;
+   uint_t	 sample0;
+ #endif
+ 
+   uint_t	 last_samplecnt;
++#endif
+ } sun_driver_t;
+ 
+ 
+@@ -128,6 +137,7 @@ typedef struct sun_driver_s {
+  */
+ static int realtime_samplecounter_available(xine_t *xine, char *dev)
+ {
++#ifndef __OpenBSD__
+   int fd = -1;
+   audio_info_t info;
+   int rtsc_ok = RTSC_DISABLED;
+@@ -246,6 +256,9 @@ error:
+   }
+ 
+   return rtsc_ok;
++#else
++  return RTSC_ENABLED;
++#endif
+ }
+ 
+ 
+@@ -429,7 +442,9 @@ static int ao_sun_open(ao_driver_t *this
+   
+   this->mode			= mode;
+   this->input_sample_rate	= rate;
++#ifndef __OpenBSD__
+   this->frames_in_buffer	= 0;
++#endif
+ 
+   /*
+    * open audio device
+@@ -461,6 +476,9 @@ static int ao_sun_open(ao_driver_t *this
+       info.play.sample_rate = this->input_sample_rate;
+       info.play.eof = 0;
+       info.play.samples = 0;
++#ifdef __OpenBSD__
++      info.blocksize = 1024;
++#endif
+ 
+       this->convert_u8_s8 = 0;
+ 
+@@ -522,7 +540,9 @@ static int ao_sun_open(ao_driver_t *this
+       return 0;
+   }
+ 
++#ifndef __OpenBSD__
+   this->last_samplecnt = 0;
++#endif
+ 
+   this->output_sample_rate = info.play.sample_rate;
+   this->num_channels = info.play.channels;
+@@ -563,6 +583,7 @@ static int ao_sun_delay(ao_driver_t *thi
+   sun_driver_t *this = (sun_driver_t *) this_gen;
+   audio_info_t info;
+ 
++#ifndef __OpenBSD__
+   if (ioctl(this->audio_fd, AUDIO_GETINFO, &info) == 0 &&
+       (this->frames_in_buffer == 0 || info.play.samples > 0)) {
+ 
+@@ -609,6 +630,10 @@ static int ao_sun_delay(ao_driver_t *thi
+     }
+ #endif
+   }
++#else
++  if (ioctl(this->audio_fd, AUDIO_GETINFO, &info) == 0)
++    return info.play.seek / this->bytes_per_frame;
++#endif
+   return NOT_REAL_TIME;
+ }
+ 
+@@ -717,7 +742,9 @@ static int ao_sun_write(ao_driver_t *thi
+   if (num_written > 0) {
+     int buffered_samples;
+ 
++#ifndef __OpenBSD__
+     this->frames_in_buffer += num_written / this->bytes_per_frame;
++#endif
+ 
+     /* 
+      * Avoid storing too much data in the sound driver's buffers.
+@@ -776,7 +803,7 @@ static int ao_sun_get_property (ao_drive
+     if (ioctl(this->audio_fd, AUDIO_GETINFO, &info) < 0)
+       return 0;
+     return info.play.gain * 100 / AUDIO_MAX_GAIN;
+-#if !defined(__NetBSD__)    /* audio_info.output_muted is missing on NetBSD */
++#if !defined(__OpenBSD__)    /* audio_info.output_muted is missing on NetBSD */
+   case AO_PROP_MUTE_VOL:
+     if (ioctl(this->audio_fd, AUDIO_GETINFO, &info) < 0)
+       return 0;
+@@ -804,7 +831,7 @@ static int ao_sun_set_property (ao_drive
+     if (ioctl(this->audio_fd, AUDIO_SETINFO, &info) < 0)
+       return ~value;
+     return value;
+-#if !defined(__NetBSD__)    /* audio_info.output_muted is missing on NetBSD */
++#if !defined(__OpenBSD__)    /* audio_info.output_muted is missing on NetBSD */
+   case AO_PROP_MUTE_VOL:
+     info.output_muted = value != 0;
+     if (ioctl(this->audio_fd, AUDIO_SETINFO, &info) < 0)

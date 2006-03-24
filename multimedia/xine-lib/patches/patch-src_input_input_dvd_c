@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_input_input_dvd_c,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
+--- src/input/input_dvd.c.orig	Fri Oct 14 16:02:16 2005
++++ src/input/input_dvd.c	Thu Dec 29 23:39:05 2005
+@@ -64,7 +64,7 @@
+ #endif /* WIN32 */
+ 
+ 
+-#if defined(__NetBSD__) || defined(__OpenBSD__) || defined(__FreeBSD__)
++#if defined(__NetBSD__) || defined(__FreeBSD__)
+ #include <sys/dvdio.h>
+ #include <sys/cdio.h> /* CDIOCALLOW etc... */
+ #elif defined(HAVE_LINUX_CDROM_H)
+@@ -123,8 +123,8 @@
+ #define DVD_PATH "d:\\"
+ #define RDVD_PATH "d:\\"
+ #else
+-#define DVD_PATH "/dev/dvd"
+-#define RDVD_PATH "/dev/rdvd"
++#define DVD_PATH "/dev/rcd0c"
++#define RDVD_PATH "/dev/rcd0c"
+ #endif 
+ 
+ /* Some misc. defines */

@@ -1,0 +1,48 @@
+$OpenBSD: patch-src_libreal_xine_decoder_c,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
+--- src/libreal/xine_decoder.c.orig	Mon Feb 21 02:02:03 2005
++++ src/libreal/xine_decoder.c	Mon Feb 21 02:04:41 2005
+@@ -32,8 +32,10 @@
+ #include <fcntl.h>
+ #include <unistd.h>
+ #include <dlfcn.h>
+-#ifdef __x86_64__
+-  #include <elf.h>
++#ifdef __linux__
++  #ifdef __x86_64__
++    #include <elf.h>
++  #endif
+ #endif
+ 
+ #define LOG_MODULE "real_decoder"
+@@ -106,7 +108,8 @@ void *__builtin_vec_new(uint32_t size);
+ void __builtin_vec_delete(void *mem);
+ void __pure_virtual(void);
+ 
+-#ifdef __x86_64__
++#ifdef __linux__
++  #ifdef __x86_64__
+ /* (gb) quick-n-dirty check to be run natively */
+ static int is_x86_64_object_(FILE *f)
+ {
+@@ -147,6 +150,7 @@ static inline int is_x86_64_object(const
+   fclose(f);
+   return ret;
+ }
++  #endif
+ #endif
+ 
+ /*
+@@ -161,10 +165,12 @@ static int load_syms_linux (realdec_deco
+ 
+   snprintf (path, sizeof(path), "%s/%s", entry->str_value, codec_name);
+ 
+-#ifdef __x86_64__
++#ifdef __linux__
++  #ifdef __x86_64__
+   /* check whether it's a real x86-64 library */
+   if (!is_x86_64_object(path))
+ 	return 0;
++  #endif
+ #endif
+ 
+   lprintf ("opening shared obj '%s'\n", path);

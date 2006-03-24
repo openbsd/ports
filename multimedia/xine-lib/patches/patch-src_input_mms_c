@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_input_mms_c,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
+--- src/input/mms.c.orig	Sat Dec 24 23:39:48 2005
++++ src/input/mms.c	Sat Dec 24 23:40:23 2005
+@@ -50,6 +50,7 @@
+ #include <iconv.h>
+ #include <locale.h>
+ #include <langinfo.h>
++#include <localcharset.h>
+ #endif
+ 
+ /********** logging **********/
+@@ -299,7 +300,7 @@ static int send_command (mms_t *this, in
+ 
+ #ifdef USE_ICONV
+ static iconv_t string_utf16_open() {
+-    return iconv_open("UTF-16LE", nl_langinfo(CODESET));
++    return iconv_open("UTF-16LE", locale_charset());
+ }
+ 
+ static void string_utf16_close(iconv_t url_conv) {

@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_input_Makefile_in,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
+--- src/input/Makefile.in.orig	Tue Nov 15 05:39:45 2005
++++ src/input/Makefile.in	Thu Dec 29 23:39:05 2005
+@@ -150,11 +150,11 @@ xineplug_inp_v4l_la_DEPENDENCIES = $(am_
+ am_xineplug_inp_v4l_la_OBJECTS = input_v4l.lo
+ xineplug_inp_v4l_la_OBJECTS = $(am_xineplug_inp_v4l_la_OBJECTS)
+ @HAVE_V4L_TRUE@am_xineplug_inp_v4l_la_rpath = -rpath $(libdir)
+-xineplug_inp_vcdo_la_DEPENDENCIES = $(am__DEPENDENCIES_1)
+-am_xineplug_inp_vcdo_la_OBJECTS = input_vcd.lo media_helper.lo
+-xineplug_inp_vcdo_la_OBJECTS = $(am_xineplug_inp_vcdo_la_OBJECTS)
+-@HAVE_CDROM_IOCTLS_TRUE@am_xineplug_inp_vcdo_la_rpath = -rpath \
+-@HAVE_CDROM_IOCTLS_TRUE@	$(libdir)
++@ENABLE_VCD_TRUE@xineplug_inp_vcdo_la_DEPENDENCIES = $(am__DEPENDENCIES_1)
++@ENABLE_VCD_TRUE@am_xineplug_inp_vcdo_la_OBJECTS = input_vcd.lo media_helper.lo
++@ENABLE_VCD_TRUE@xineplug_inp_vcdo_la_OBJECTS = $(am_xineplug_inp_vcdo_la_OBJECTS)
++@ENABLE_VCD_TRUE@@HAVE_CDROM_IOCTLS_TRUE@am_xineplug_inp_vcdo_la_rpath = -rpath \
++@ENABLE_VCD_TRUE@@HAVE_CDROM_IOCTLS_TRUE@	$(libdir)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+@@ -630,7 +630,7 @@ EXTRA_DIST = input_dvd.c input_vcd.c inp
+ # ---------
+ # All of xine input plugins should be named like the scheme "xineplug_inp_"
+ #
+-@HAVE_CDROM_IOCTLS_TRUE@in_vcd = xineplug_inp_vcdo.la
++@ENABLE_VCD_TRUE@@HAVE_CDROM_IOCTLS_TRUE@in_vcd = xineplug_inp_vcdo.la
+ @HAVE_V4L_TRUE@in_v4l = xineplug_inp_v4l.la
+ @HAVE_V4L_TRUE@in_pvr = xineplug_inp_pvr.la
+ @HAVE_GNOME_VFS_TRUE@in_gnome_vfs = xineplug_inp_gnome_vfs.la
