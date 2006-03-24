@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2006/02/17 22:08:52 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2006/03/24 17:30:34 steven Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		"circuit drawing and schematic capture"
 
 BASEVER=		3.4
-DISTNAME=		xcircuit-${BASEVER}.11
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		xcircuit-${BASEVER}.21
 CATEGORIES=		cad
 
 HOMEPAGE=		http://opencircuitdesign.com/xcircuit/
@@ -40,11 +39,13 @@ NO_REGRESS=		Yes
 SUBST_VARS=		BASEVER
 
 post-install:
-	@cd ${WRKSRC}; ${MAKE} install-man
+	@cd ${WRKSRC} && ${MAKE} install-man
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xcircuit
 	${INSTALL_DATA} ${WRKSRC}/README* ${PREFIX}/share/doc/xcircuit
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xcircuit
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/examples/xcircuit
-	${INSTALL_DATA} ${WRKSRC}/examples/.xcircuitrc ${PREFIX}/share/examples/xcircuit/dot.xcircuitrc
+	${INSTALL_DATA} ${WRKSRC}/examples/*.* \
+		${PREFIX}/share/examples/xcircuit
+	${INSTALL_DATA} ${WRKSRC}/examples/.xcircuitrc \
+		${PREFIX}/share/examples/xcircuit/dot.xcircuitrc
 
 .include <bsd.port.mk>
