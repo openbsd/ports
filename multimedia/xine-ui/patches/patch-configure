@@ -1,0 +1,22 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2006/03/24 22:46:37 jakemsr Exp $
+--- configure.orig	Tue Jan 10 02:28:32 2006
++++ configure	Tue Jan 10 02:35:06 2006
+@@ -29914,8 +29914,8 @@ BUILD_OS="`uname -s -r -m`"
+ BUILD_DATE="`date \"+%a %d %b %Y %T\"`"
+ 
+ 
++if false ; then
+ 
+-
+ if test "$GCC" = yes; then
+                         echo "$as_me:$LINENO: checking if $CC supports \"-mpreferred-stack-boundary=2\" flags" >&5
+ echo $ECHO_N "checking if $CC supports \"-mpreferred-stack-boundary=2\" flags... $ECHO_C" >&6
+@@ -31110,7 +31110,7 @@ _ACEOF
+     ;;
+ esac
+ 
+-
++fi
+ 
+ if test x$no_BSDiconv != "xyes"; then
+   HAVE_GICONV_TRUE=

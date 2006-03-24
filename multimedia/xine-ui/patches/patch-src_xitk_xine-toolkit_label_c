@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_xitk_xine-toolkit_label_c,v 1.1.1.1 2006/03/24 22:46:37 jakemsr Exp $
+--- src/xitk/xine-toolkit/label.c.orig	Mon Feb 21 04:22:48 2005
++++ src/xitk/xine-toolkit/label.c	Mon Feb 21 04:23:14 2005
+@@ -335,7 +335,9 @@ static void label_setup_label(xitk_widge
+ 
+ #ifdef _POSIX_THREAD_PRIORITY_SCHEDULING
+       pthread_attr_getschedparam(&pth_attrs, &pth_params);
++#ifndef __OpenBSD__
+       pth_params.sched_priority = sched_get_priority_min(SCHED_OTHER);
++#endif
+       pthread_attr_setschedparam(&pth_attrs, &pth_params);
+ #endif
+       

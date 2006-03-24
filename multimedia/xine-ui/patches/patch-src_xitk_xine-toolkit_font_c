@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_xitk_xine-toolkit_font_c,v 1.1.1.1 2006/03/24 22:46:37 jakemsr Exp $
+--- src/xitk/xine-toolkit/font.c.orig	Thu Jan  6 09:46:56 2005
++++ src/xitk/xine-toolkit/font.c	Sat Dec 24 23:18:18 2005
+@@ -38,6 +38,7 @@
+ 
+ #ifdef HAVE_ICONV
+ #include <iconv.h>
++#include <localcharset.h>
+ #endif
+ 
+ #ifdef HAVE_LANGINFO_CODESET
+@@ -406,7 +407,7 @@ static int xitk_font_load_one(Display *d
+ #endif
+   {
+     XLOCK(display);
+-#ifdef WITH_XFT
++#ifdef WITH_XMB
+     xtfs->font = XftFontOpenName( display, DefaultScreen(display), xitk_font_core_string_to_xft(font));
+ #else
+     xtfs->font = XLoadQueryFont(display, font);
+@@ -1262,7 +1263,7 @@ char *xitk_get_system_encoding(void) {
+   char *lang, *codeset = NULL;
+   
+ #ifdef HAVE_LANGINFO_CODESET
+-  codeset = nl_langinfo(CODESET);
++  codeset = locale_charset();
+ #endif
+   /*
+    * guess locale codeset according to shell variables

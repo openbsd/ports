@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_xitk_xine-remote_c,v 1.1.1.1 2006/03/24 22:46:37 jakemsr Exp $
+--- src/xitk/xine-remote.c.orig	Sun Jan  8 23:09:07 2006
++++ src/xitk/xine-remote.c	Sun Jan  8 23:09:34 2006
+@@ -41,6 +41,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <signal.h>
+ 
+ #if defined(__hpux)
+ #include <strings.h>

@@ -1,0 +1,182 @@
+$OpenBSD: patch-src_xitk_oxine_mediamarks_c,v 1.1.1.1 2006/03/24 22:46:37 jakemsr Exp $
+--- src/xitk/oxine/mediamarks.c.orig	Tue Feb 15 12:09:28 2005
++++ src/xitk/oxine/mediamarks.c	Sun Jan  8 23:06:58 2006
+@@ -33,6 +33,9 @@
+ #include <fcntl.h>
+ #include <string.h>
+ #include <libgen.h>
++#include <limits.h>
++#include <stdlib.h>
++#include <errno.h>
+ 
+ #include "common.h"
+ 
+@@ -88,7 +91,159 @@ struct mm_session_s {
+ /* private functions */
+ static int file_is_m3u(const char *mrl);
+ 
++/* prototypes */
++ssize_t getdelim (char **, size_t *, int, FILE *);
++ssize_t getline (char **, size_t *, FILE *);
++size_t strnlen (const char *, size_t);
++char * strndup (const char *, size_t);
+ 
++
++/* getline() */
++
++#ifndef SIZE_MAX
++# define SIZE_MAX ((size_t) -1)
++#endif
++#ifndef SSIZE_MAX
++# define SSIZE_MAX ((ssize_t) (SIZE_MAX / 2))
++#endif
++
++/* Read up to (and including) a DELIMITER from FP into *LINEPTR (and
++   NUL-terminate it).  *LINEPTR is a pointer returned from malloc (or
++   NULL), pointing to *N characters of space.  It is realloc'ed as
++   necessary.  Returns the number of characters read (not including
++   the null terminator), or -1 on error or EOF.  */
++
++ssize_t
++getdelim (char **lineptr, size_t *n, int delimiter, FILE *fp)
++{
++  ssize_t result = 0;
++  size_t cur_len = 0;
++
++  if (lineptr == NULL || n == NULL || fp == NULL)
++    {
++      errno = EINVAL;
++      return -1;
++    }
++
++  flockfile (fp);
++
++  if (*lineptr == NULL || *n == 0)
++    {
++      *n = 120;
++      *lineptr = (char *) malloc (*n);
++      if (*lineptr == NULL)
++	{
++	  result = -1;
++	  goto unlock_return;
++	}
++    }
++
++  for (;;)
++    {
++      int i;
++
++      i = getc (fp);
++      if (i == EOF)
++	{
++	  result = -1;
++	  break;
++	}
++
++      /* Make enough space for len+1 (for final NUL) bytes.  */
++      if (cur_len + 1 >= *n)
++	{
++	  size_t needed_max =
++	    SSIZE_MAX < SIZE_MAX ? (size_t) SSIZE_MAX + 1 : SIZE_MAX;
++	  size_t needed = 2 * *n + 1;   /* Be generous. */
++	  char *new_lineptr;
++
++	  if (needed_max < needed)
++	    needed = needed_max;
++	  if (cur_len + 1 >= needed)
++	    {
++	      result = -1;
++	      goto unlock_return;
++	    }
++
++	  new_lineptr = (char *) realloc (*lineptr, needed);
++	  if (new_lineptr == NULL)
++	    {
++	      result = -1;
++	      goto unlock_return;
++	    }
++
++	  *lineptr = new_lineptr;
++	  *n = needed;
++	}
++
++      (*lineptr)[cur_len] = i;
++      cur_len++;
++
++      if (i == delimiter)
++	break;
++    }
++  (*lineptr)[cur_len] = '\0';
++  result = cur_len ? cur_len : result;
++
++ unlock_return:
++  funlockfile (fp);
++  return result;
++}
++
++
++ssize_t
++getline (char **lineptr, size_t *n, FILE *stream)
++{
++  return getdelim (lineptr, n, '\n', stream);
++}
++
++
++#ifndef weak_alias
++# define __strnlen strnlen
++#endif
++
++/* Find the length of STRING, but scan at most MAXLEN characters.
++   If no '\0' terminator is found in that many characters, return MAXLEN.  */
++
++size_t
++__strnlen (const char *string, size_t maxlen)
++{
++  const char *end = memchr (string, '\0', maxlen);
++  return end ? (size_t) (end - string) : maxlen;
++}
++#ifdef weak_alias
++weak_alias (__strnlen, strnlen)
++#endif
++
++
++#undef __strndup
++#undef strndup
++
++#ifndef weak_alias
++# define __strndup strndup
++#endif
++
++char *
++__strndup (const char *s, size_t n)
++{
++  size_t len = strnlen (s, n);
++  char *new = malloc (len + 1);
++
++  if (new == NULL)
++    return NULL;
++
++  new[len] = '\0';
++  return memcpy (new, s, len);
++}
++#ifdef weak_alias
++weak_alias (__strndup, strndup)
++#endif
++
++
++
++
++
++
+ /* body of mediamarks functions */
+ 
+ static void bpush (list_t *list, list_t *item) {
+@@ -718,7 +873,7 @@ void mediamarks_cb (void *data) {
+   snprintf(mmpath,sizeof(mmpath),"%s/.xine/oxine/mediamarks", xine_get_homedir());
+   if (!read_mediamarks(items, mmpath)) {
+     lprintf("trying to load system wide mediamarks\n");
+-    snprintf(mmpath,1024,"%s/mediamarks", XINE_OXINEDIR);
++    snprintf(mmpath,sizeof(mmpath),"%s/mediamarks", XINE_OXINEDIR);
+     if (read_mediamarks(items, mmpath)) {
+       bpush(session->backpath, items);
+       oxine->reentry_data = session;
