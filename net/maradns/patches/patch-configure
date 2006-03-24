@@ -1,14 +1,14 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2002/11/15 20:19:32 brad Exp $
---- configure.orig	Mon Sep  2 05:57:06 2002
-+++ configure	Thu Nov 14 23:55:33 2002
+$OpenBSD: patch-configure,v 1.1 2006/03/24 20:12:28 sturm Exp $
+--- configure.orig	Wed Nov 13 18:14:04 2002
++++ configure	Wed Nov 13 18:17:30 2002
 @@ -66,8 +66,8 @@ elif echo $UNAME | grep -i freebsd > /de
  	echo	http://www.freebsd.org/cgi/query-pr.cgi?pr=28389
  elif echo $UNAME | grep -i openbsd > /dev/null ; then
  	cat $BUILDDIR/Makefile.linux >> Makefile
--	echo It looks like you are using OpenBSD\; please read doc/faq.txt
+-	echo It looks like you are using OpenBSD\; please read FAQ
 -	echo before trying to compile MaraDNS
 +	echo It looks like you are using OpenBSD\; proceeding the
-+	echo compile of MaraDNS..
++	echo compile of MaraDNS.
  elif echo $UNAME | grep -i cygwin > /dev/null ; then
  	cat $BUILDDIR/Makefile.noflock >> Makefile
- 	cp $BUILDDIR/Makefile.server.win9x server/Makefile
+ 	echo It looks like you are using Cygwin\; this should compile file

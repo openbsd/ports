@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/07/22 17:40:28 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.1 2006/03/24 20:12:29 sturm Exp $
 @newgroup _maradns:537
 @newuser _maradns:537:_maradns::MaraDNS Account:${SYSCONFDIR}/maradns:/sbin/nologin
 bin/askmara

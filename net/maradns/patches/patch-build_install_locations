@@ -1,12 +1,12 @@
-$OpenBSD: patch-build_install_locations,v 1.1.1.1 2002/11/15 20:19:32 brad Exp $
---- build/install.locations.orig	Thu Nov 14 23:59:09 2002
-+++ build/install.locations	Fri Nov 15 00:02:17 2002
+$OpenBSD: patch-build_install_locations,v 1.1 2006/03/24 20:12:28 sturm Exp $
+--- build/install.locations.orig	Wed Nov 13 17:10:49 2002
++++ build/install.locations	Wed Nov 13 17:11:38 2002
 @@ -33,7 +33,7 @@ MAN5="$PREFIX/man/man5/"
  # The directory to put man pages which describe the server programs
  MAN8="$PREFIX/man/man8/"
  # The directory to put a copy of the MaraDNS documents on the system
 -DOCS="$PREFIX/doc/maradns-$VERSION"
-+DOCS="$PREFIX/share/doc/maradns-devel"
++DOCS="$PREFIX/share/doc/maradns"
  
  # Mandrake does not have a /usr/local/man.  Ugh.
  # As a result, we need the following kludge to get this to
