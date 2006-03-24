@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/02/15 09:47:57 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2006/03/24 15:39:38 mbalmer Exp $
 
 COMMENT=	"an easy way to perform HTTP requests for PHP"
 
@@ -18,5 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+RUN_DEPENDS=	::net/pear-Net-URL
 
 .include <bsd.port.mk>
