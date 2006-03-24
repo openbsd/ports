@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.745 2006/02/06 22:01:48 steven Exp $
+#	$OpenBSD: bsd.port.mk,v 1.746 2006/03/24 19:28:13 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -336,6 +336,9 @@ MOTIFLIB=-L${DEPBASE}/lib -lXm
 ERRORS+= "Fatal: Subpackage ${SUBPACKAGE} does not exist."
 .    endif
 .  endfor
+.endif
+.if defined(MULTI_PACKAGES) && !empty(MULTI_PACKAGES:N-*)
+ERRORS+= "Fatal: SUBPACKAGES should always beging with -: ${MULTI_PACKAGES:N-*}."
 .endif
 
 .if defined(SED_PLIST)
@@ -2121,7 +2124,7 @@ ${_F}:
 				else \
 					if grep -q "SIZE ($$file)" ${CHECKSUM_FILE}; then \
 						${ECHO_MSG} ">> Size does not match for ${_F}"; \
-						test `wc -c "$$file" 2>/dev/null || echo 0 | awk '{print $$1}'` -lt 30000 && rm -f $$file; \
+						test `{ wc -c "$$file" 2>/dev/null || echo 0 ; }| awk '{print $$1}'` -lt 30000 && rm -f $$file; \
 					else \
 						${ECHO_MSG} ">> No size recorded for ${_F}"; \
 						exit 0; \
