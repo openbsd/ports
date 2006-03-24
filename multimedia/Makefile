@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/03/22 01:31:43 jolan Exp $
+# $OpenBSD: Makefile,v 1.13 2006/03/24 23:07:00 jakemsr Exp $
 
      SUBDIR += dvdauthor
      SUBDIR += dvdbackup
@@ -12,6 +12,8 @@
      SUBDIR += mjpegtools,quicktime
      SUBDIR += streamdvd
      SUBDIR += transcode
+     SUBDIR += xine-lib
+     SUBDIR += xine-ui
      SUBDIR += xvidcore
 
 .include <bsd.port.subdir.mk>
