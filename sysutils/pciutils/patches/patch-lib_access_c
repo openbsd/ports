@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_access_c,v 1.1.1.1 2006/03/25 21:53:35 matthieu Exp $
+--- lib/access.c.orig	Fri Aug 13 22:15:11 2004
++++ lib/access.c	Tue Mar 21 22:56:47 2006
+@@ -47,6 +47,11 @@ static struct pci_methods *pci_methods[P
+ #else
+   NULL,
+ #endif
++#ifdef PCI_HAVE_PM_OBSD_DEVICE
++  &pm_obsd_device,
++#else
++  NULL,
++#endif
+ #ifdef PCI_HAVE_PM_DUMP
+   &pm_dump,
+ #else

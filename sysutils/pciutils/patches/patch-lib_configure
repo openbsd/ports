@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_configure,v 1.1.1.1 2006/03/25 21:53:35 matthieu Exp $
+--- lib/configure.orig	Wed Sep 21 13:42:03 2005
++++ lib/configure	Tue Mar 21 22:56:47 2006
+@@ -74,6 +74,12 @@ case $sys in
+ 		echo >>$c '#define PCI_PATH_FBSD_DEVICE "/dev/pci"'
+ 		ok=1
+ 		;;
++        openbsd)
++	        echo_n " obsd-device"
++		echo >>$c '#define PCI_HAVE_PM_OBSD_DEVICE'
++		echo >>$c '#define PCI_PATH_OBSD_DEVICE "/dev/pci"'
++		ok=1
++		;;
+ 	aix)
+ 		echo_n " aix-device"
+ 		echo >>$c '#define PCI_HAVE_PM_AIX_DEVICE'

@@ -1,0 +1,25 @@
+The PCI Utilities package contains a library for portable access to
+PCI bus configuration registers and several utilities based on this
+library.
+
+Currently, pciutils work on all versions of Linux and they also have
+somewhat experimental support for OpenBSD, FreeBSD, NetBSD, AIX, GNU
+Hurd and Solaris/x86.  It should be very easy to add support for other
+systems as well (volunteers wanted; if you want to try that, I'll be
+very glad to see the patches and include them in the next version).
+
+The utilities include:  (See manual pages for more details)
+
+  - lspci: displays detailed information about all PCI buses and
+    devices.
+
+  - setpci: allows to read from and write to PCI device configuration
+    registers. For example, you can adjust the latency timers with it.
+    CAUTION: There is a couple of dangerous points and caveats, please
+    read the manual page first!
+
+  - update-pciids: download the current version of the pci.ids file.
+
+On OpenBSD you need to set sysctl machdep.allowaperture=2 in
+/etc/sysctl.conf, and run lspci and setpci as root.
+

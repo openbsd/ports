@@ -1,0 +1,10 @@
+$OpenBSD: patch-lib_internal_h,v 1.1.1.1 2006/03/25 21:53:35 matthieu Exp $
+--- lib/internal.h.orig	Fri Aug 13 22:21:22 2004
++++ lib/internal.h	Tue Mar 21 22:56:47 2006
+@@ -36,4 +36,5 @@ struct pci_dev *pci_alloc_dev(struct pci
+ int pci_link_dev(struct pci_access *, struct pci_dev *);
+ 
+ extern struct pci_methods pm_intel_conf1, pm_intel_conf2, pm_linux_proc,
+-  pm_fbsd_device, pm_aix_device, pm_nbsd_libpci, pm_dump, pm_linux_sysfs;
++	pm_fbsd_device, pm_aix_device, pm_nbsd_libpci, pm_obsd_device, 
++	pm_dump, pm_linux_sysfs;

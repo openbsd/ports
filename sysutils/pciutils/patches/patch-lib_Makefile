@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_Makefile,v 1.1.1.1 2006/03/25 21:53:35 matthieu Exp $
+--- lib/Makefile.orig	Fri Aug 13 22:29:06 2004
++++ lib/Makefile	Wed Mar 22 23:20:03 2006
+@@ -36,6 +36,10 @@ CFLAGS += -I${FREEBSD_SYS}
+ endif
+ endif
+ 
++ifdef PCI_HAVE_PM_OBSD_DEVICE
++OBJS += obsd-device.o
++endif
++
+ ifdef PCI_HAVE_PM_AIX_DEVICE
+ OBJS += aix-device.o
+ endif
