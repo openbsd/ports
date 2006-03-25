@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/10/26 06:18:39 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/03/25 02:51:33 todd Exp $
 @newgroup _dspam:540
 @newuser _dspam:540:540:daemon:DSPAM Account:/var/dspam:/sbin/nologin
 %%SHARED%%
@@ -13,6 +13,7 @@ bin/dspam_genaliases
 bin/dspam_logrotate
 bin/dspam_merge
 bin/dspam_stats
+bin/dspam_train
 bin/dspamc
 include/dspam/
 include/dspam/buffer.h
@@ -37,6 +38,7 @@ lib/pkgconfig/dspam.pc
 @man man/man1/dspam_dump.1
 @man man/man1/dspam_merge.1
 @man man/man1/dspam_stats.1
+@man man/man1/dspam_train.1
 @man man/man3/dspam_addattribute.3
 @man man/man3/dspam_attach.3
 @man man/man3/dspam_create.3
