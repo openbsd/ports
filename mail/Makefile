@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.155 2006/02/12 15:41:23 david Exp $
+# $OpenBSD: Makefile,v 1.156 2006/03/25 02:32:33 brad Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -28,6 +28,10 @@
      SUBDIR += dovecot,postgresql
      SUBDIR += drac
      SUBDIR += dspam
+     SUBDIR += dspam,hash
+     SUBDIR += dspam,ldap
+     SUBDIR += dspam,mysql
+     SUBDIR += dspam,pgsql
      SUBDIR += elm
      SUBDIR += evolution
      SUBDIR += exim
