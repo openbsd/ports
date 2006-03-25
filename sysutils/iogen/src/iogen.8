@@ -1,4 +1,4 @@
-.\" $OpenBSD: iogen.8,v 1.4 2005/12/08 16:50:03 marco Exp $
+.\" $OpenBSD: iogen.8,v 1.5 2006/03/25 16:26:52 marco Exp $
 .\"
 .\" Copyright (c) 2005 Marco Peereboom <marco@peereboom.us>
 .\"
@@ -127,7 +127,9 @@ Run
 with a 2GB max file, 128KB I/O size, and result file in
 .Pa /tmp :
 .Pp
-.Dl $ iogen -s 2g -b 128k -t 1 -f /tmp
+.Bd -literal -offset indent
+$ iogen -s 2g -b 128k -t 1 -f /tmp
+.Ed
 .Sh HISTORY
 The first version of
 .Nm
