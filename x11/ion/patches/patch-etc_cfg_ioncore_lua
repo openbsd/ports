@@ -1,6 +1,6 @@
-$OpenBSD: patch-etc_cfg_ioncore_lua,v 1.1 2006/03/19 17:36:41 pedro Exp $
---- etc/cfg_ioncore.lua.orig	Sun Mar 19 11:10:01 2006
-+++ etc/cfg_ioncore.lua	Sun Mar 19 11:12:23 2006
+$OpenBSD: patch-etc_cfg_ioncore_lua,v 1.2 2006/03/26 16:07:40 pedro Exp $
+--- etc/cfg_ioncore.lua.orig	Sun Mar 26 06:37:34 2006
++++ etc/cfg_ioncore.lua	Sun Mar 26 13:01:30 2006
 @@ -57,8 +57,8 @@ defbindings("WScreen", {
      kpress(META.."F9", "ioncore.create_ws(_)"),
      
@@ -12,7 +12,21 @@ $OpenBSD: patch-etc_cfg_ioncore_lua,v 1.1 2006/03/19 17:36:41 pedro Exp $
      mpress("Button3", "mod_menu.pmenu(_, _sub, 'mainmenu')"),
      
      bdoc("Display the window list menu."),
-@@ -291,4 +291,6 @@ defctxmenu("WFrame", "Frame", {
+@@ -266,12 +266,7 @@ defmenu("mainmenu", {
+ -- Application menu
+ defmenu("appmenu", {
+     menuentry("XTerm",          "ioncore.exec_on(_, 'xterm')"),
+-    menuentry("W3M",            "ioncore.exec_on(_, ':w3m -v')"),
+-    menuentry("Rxvt",           "ioncore.exec_on(_, 'rxvt')"),
+-    menuentry("Opera",          "ioncore.exec_on(_, 'opera')"),
+-    menuentry("Links",          "ioncore.exec_on(_, ':links')"),
+-    menuentry("Konqueror",      "ioncore.exec_on(_, 'konqueror')"),
+-    menuentry("Dillo",          "ioncore.exec_on(_, 'dillo')"),
++    menuentry("Firefox",        "ioncore.exec_on(_, 'firefox')"),
+     menuentry("Run...",         "mod_query.query_exec(_)"),
+ })
+ 
+@@ -296,4 +291,6 @@ defctxmenu("WFrame", "Frame", {
      menuentry("Clear tags",     "ioncore.clear_tags()"),
      menuentry("Window info",    "mod_query.show_clientwin(_, _sub)",
                                  "_sub:WClientWin"),
