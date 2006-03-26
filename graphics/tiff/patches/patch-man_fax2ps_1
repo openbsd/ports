@@ -1,0 +1,12 @@
+$OpenBSD: patch-man_fax2ps_1,v 1.1 2006/03/26 10:45:18 espie Exp $
+--- man/fax2ps.1.orig	Sun Mar 26 12:33:21 2006
++++ man/fax2ps.1	Sun Mar 26 12:33:33 2006
+@@ -27,7 +27,7 @@
+ .SH NAME
+ fax2ps \- convert a
+ .SM TIFF
+-facsimile to compressed \*(Ps\(tm
++facsimile to compressed PostScript tm
+ .SH SYNOPSIS
+ .B fax2ps
+ [
