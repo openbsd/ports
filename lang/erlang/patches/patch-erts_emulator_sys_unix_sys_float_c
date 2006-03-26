@@ -1,0 +1,12 @@
+$OpenBSD: patch-erts_emulator_sys_unix_sys_float_c,v 1.1 2006/03/26 09:18:16 steven Exp $
+--- erts/emulator/sys/unix/sys_float.c.orig	Fri Mar 24 17:42:12 2006
++++ erts/emulator/sys/unix/sys_float.c	Fri Mar 24 17:42:31 2006
+@@ -52,7 +52,7 @@ static void unmask_x87(void)
+     __asm__ __volatile__("fldcw %0" : : "m"(cw));
+ }
+ 
+-#if defined(__x86_64__)
++#if defined(__x86_64__) && !defined(__OpenBSD__)
+ static void unmask_sse2(void)
+ {
+     unsigned int mxcsr;

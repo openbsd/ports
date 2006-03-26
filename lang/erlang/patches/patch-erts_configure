@@ -1,0 +1,12 @@
+$OpenBSD: patch-erts_configure,v 1.1 2006/03/26 09:18:16 steven Exp $
+--- erts/configure.orig	Wed Mar  8 00:02:39 2006
++++ erts/configure	Sat Mar 25 20:46:17 2006
+@@ -5833,7 +5833,7 @@ static void unmask_x87(void)
+     __asm__ __volatile__("fldcw %0" : : "m"(cw));
+ }
+ 
+-#if defined(__x86_64__)
++#if defined(__x86_64__) && !defined(__OpenBSD__)
+ static void unmask_sse2(void)
+ {
+     unsigned int mxcsr;

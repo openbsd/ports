@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2006/03/07 19:30:36 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2006/03/26 09:18:16 steven Exp $
 
 COMMENT=	"Ericsson's high-level functional programming language"
 
@@ -20,7 +20,8 @@ CONFIGURE_ARGS=	--disable-jinterface	\
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=autoconf
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/erts/autoconf
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/erts/autoconf \
+				${WRKSRC}/lib/erl_interface/src/auxdir
 
 NO_REGRESS=	Yes
 
