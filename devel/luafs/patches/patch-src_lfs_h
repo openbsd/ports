@@ -1,0 +1,9 @@
+$OpenBSD: patch-src_lfs_h,v 1.1 2006/03/26 04:56:02 pedro Exp $
+--- src/lfs.h.orig	Fri Mar 10 20:37:32 2006
++++ src/lfs.h	Sun Mar 26 00:15:04 2006
+@@ -13,4 +13,4 @@
+ #define chdir_error	strerror(errno)
+ #endif
+ 
+-int luaopen_lfs (lua_State *L);
++int luaopen_fs_core (lua_State *L);

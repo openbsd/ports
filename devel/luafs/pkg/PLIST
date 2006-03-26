@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/07/08 17:57:27 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/03/26 04:56:02 pedro Exp $
 @unexec lua ${SYSCONFDIR}/lua/luapkg.lua del luafs
 %%SHARED%%
 lua/luafs/
+lua/luafs/fs/
 lua/luafs/init.lua
 lua/luafs/lfs.lua
 @exec lua ${SYSCONFDIR}/lua/luapkg.lua add luafs ${PREFIX}/lua/luafs/init.lua
@@ -11,3 +12,5 @@ share/doc/luafs/index.html
 share/doc/luafs/license.html
 share/doc/luafs/luafilesystem.png
 share/doc/luafs/manual.html
+share/examples/luafs/
+share/examples/luafs/test.lua

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_lfs_c,v 1.1 2005/07/08 17:57:27 jolan Exp $
---- src/lfs.c.orig	Fri May 20 13:32:19 2005
-+++ src/lfs.c	Thu Jul  7 23:29:53 2005
-@@ -28,14 +28,13 @@
+$OpenBSD: patch-src_lfs_c,v 1.2 2006/03/26 04:56:02 pedro Exp $
+--- src/lfs.c.orig	Tue Mar 14 13:18:30 2006
++++ src/lfs.c	Sun Mar 26 00:15:08 2006
+@@ -32,14 +32,13 @@
  #include <unistd.h>
  #include <dirent.h>
  #include <fcntl.h>
@@ -17,7 +17,7 @@ $OpenBSD: patch-src_lfs_c,v 1.1 2005/07/08 17:57:27 jolan Exp $
  
  #include "lfs.h"
  
-@@ -84,8 +83,8 @@ static int change_dir (lua_State *L) {
+@@ -91,8 +90,8 @@ static int change_dir (lua_State *L) {
  **  and a string describing the error
  */
  static int get_dir (lua_State *L) {
@@ -28,3 +28,12 @@ $OpenBSD: patch-src_lfs_c,v 1.1 2005/07/08 17:57:27 jolan Exp $
  		lua_pushnil(L);
  		lua_pushstring(L, getcwd_error);
  		return 2;
+@@ -580,7 +579,7 @@ static const struct luaL_reg fslib[] = {
+ 	{NULL, NULL},
+ };
+ 
+-int luaopen_lfs (lua_State *L) {
++int luaopen_fs_core (lua_State *L) {
+ 	dir_create_meta (L);
+ 	luaL_openlib (L, "lfs", fslib, 0);
+ 	set_info (L);

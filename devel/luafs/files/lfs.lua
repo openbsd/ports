@@ -1,2 +1,2 @@
--- $OpenBSD: lfs.lua,v 1.1.1.1 2005/05/15 00:42:52 jolan Exp $
-assert(loadlib("luafs.so", "luaopen_lfs"))()
+-- $OpenBSD: lfs.lua,v 1.2 2006/03/26 04:56:02 pedro Exp $
+require("fs.core")

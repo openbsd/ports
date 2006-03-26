@@ -1,0 +1,9 @@
+$OpenBSD: patch-tests_test_lua,v 1.1 2006/03/26 04:56:02 pedro Exp $
+--- tests/test.lua.orig	Sun Mar 26 00:16:12 2006
++++ tests/test.lua	Sun Mar 26 00:16:14 2006
+@@ -1,5 +1,3 @@
+-#!/usr/local/bin/lua50
+-
+ local tmp = "/tmp"
+ local sep = "/"
+ local upper = ".."
