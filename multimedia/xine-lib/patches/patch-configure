@@ -1,7 +1,21 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
---- configure.orig	Tue Nov 15 05:40:27 2005
-+++ configure	Fri Dec 30 00:02:42 2005
-@@ -26269,7 +26269,7 @@ fi;
+$OpenBSD: patch-configure,v 1.2 2006/03/27 11:04:28 jakemsr Exp $
+--- configure.orig	Tue Nov 15 03:40:27 2005
++++ configure	Sat Mar 25 17:56:18 2006
+@@ -25296,6 +25296,13 @@ case "$host" in
+ 
+     ;;
+ 
++  *-*-openbsd*)
++    THREAD_LIBS="-pthread"
++    THREAD_CPPFLAGS="-pthread"
++    have_pthread=yes
++
++    ;;
++
+   *-*-hpux11*)
+     THREAD_LIBS="-lpthread"
+     have_pthread=yes
+@@ -26269,7 +26276,7 @@ fi;
                   "ac_cv_lib_avcodec_pp_get_context" \
                   "ac_cv_lib_postproc_pp_get_context" \
                   "ac_cv_lib_avcodec_register_avcodec"; do
@@ -10,7 +24,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
          done
  
                  if test "${ac_cv_header_avcodec_h+set}" = set; then
-@@ -26804,7 +26804,7 @@ configure option --with-external-ffmpeg.
+@@ -26804,7 +26811,7 @@ configure option --with-external-ffmpeg.
        fi
      else
              CPPFLAGS="${FFMPEG_CPPFLAGS} ${ac_save_CPPFLAGS}"
@@ -19,7 +33,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
        cat >conftest.$ac_ext <<_ACEOF
  #include <avcodec.h>
  #include <postprocess.h>
-@@ -29925,8 +29925,12 @@ _ACEOF
+@@ -29925,8 +29932,12 @@ _ACEOF
  
  
       ac_have_xv="yes"
@@ -33,7 +47,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
  
  cat >>confdefs.h <<\_ACEOF
  #define HAVE_XV_STATIC 1
-@@ -29935,8 +29939,8 @@ _ACEOF
+@@ -29935,8 +29946,8 @@ _ACEOF
          ac_have_xv_static="yes"
          XV_LIB="$xv_path/$XV_LIB"
          ;;
@@ -44,7 +58,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
          ;;
        *)
          { { echo "$as_me:$LINENO: error: sorry, I don't know about $XV_LIB" >&5
-@@ -29960,6 +29964,7 @@ fi
+@@ -29960,6 +29971,7 @@ fi
  
  fi
  
@@ -52,7 +66,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
  
  if test x$ac_have_xv = "xyes"; then
    HAVE_XV_TRUE=
-@@ -36061,7 +36066,7 @@ elif test x"$external_a52dec" = "xyes"; 
+@@ -36061,7 +36073,7 @@ elif test x"$external_a52dec" = "xyes"; 
    have_a52="yes"
  
  
@@ -61,7 +75,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
  do
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
  echo "$as_me:$LINENO: checking for $ac_header" >&5
-@@ -36206,7 +36211,7 @@ if test $ac_cv_lib_a52_a52_init = yes; t
+@@ -36206,7 +36218,7 @@ if test $ac_cv_lib_a52_a52_init = yes; t
  #define HAVE_LIBA52 1
  _ACEOF
  
@@ -70,7 +84,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
  
  else
    have_a52="no"
-@@ -36561,7 +36566,7 @@ if test "${ac_cv_lib_mng_mng_initialize+
+@@ -36561,7 +36573,7 @@ if test "${ac_cv_lib_mng_mng_initialize+
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -79,7 +93,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -36759,7 +36764,7 @@ echo "${ECHO_T}$ac_cv_header_libmng_h" >
+@@ -36759,7 +36771,7 @@ echo "${ECHO_T}$ac_cv_header_libmng_h" >
  fi
  if test $ac_cv_header_libmng_h = yes; then
     have_libmng=yes

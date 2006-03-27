@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_libw32dll_wine_pe_image_c,v 1.1 2006/03/27 11:04:28 jakemsr Exp $
+--- src/libw32dll/wine/pe_image.c.orig	Sun Mar 26 18:06:55 2006
++++ src/libw32dll/wine/pe_image.c	Sun Mar 26 18:06:55 2006
+@@ -897,7 +897,7 @@ void PE_UnloadLibrary(WINE_MODREF *wm)
+  */
+ static void extend_stack_for_dll_alloca(void)
+ {
+-#ifndef __FreeBSD__
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+     void* mem=alloca(0x20000);
+     *(int*)mem=0x1234;
+ #endif

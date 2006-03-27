@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.2 2006/03/27 11:04:27 jakemsr Exp $
 
 COMMENT=		"multimedia decoding library"
 
 V=			1.1.1
 DISTNAME=		xine-lib-${V}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		multimedia
 SHARED_LIBS=		xine	14.0
 
@@ -20,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xine/}
 
 WANTLIB=		X11 Xext Xinerama Xv freetype \
-			jpeg lcms m pthread usbhid z
+			jpeg lcms m usbhid z
 
 .if ${MACHINE_ARCH} == "i386"
 PKG_ARGS+=		-Di386=1
@@ -59,6 +60,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-aalib \
 			--disable-caca \
 			--disable-polypaudio \
+			--disable-oss \
 			--disable-alsa \
 			--disable-arts \
 			--disable-esd \
@@ -79,5 +81,10 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			FFMPEG_CPPFLAGS="-I${LOCALBASE}/include/ffmpeg -I${LOCALBASE}/include/postproc" \
 			FFMPEG_LIBS="-lavcodec -lavutil -lpostproc -lm -lz -pthread" \
 			FFMPEG_POSTPROC_LIBS="-lpostproc"
+
+post-patch:
+.if ${MACHINE_ARCH} == "i386"
+	cp ${FILESDIR}/i386_set_ldt.c ${WRKSRC}/src/libw32dll/wine/
+.endif
 
 .include <bsd.port.mk>
