@@ -1,0 +1,53 @@
+$OpenBSD: patch-gfx_src_gtk_nsFontMetricsXft_cpp,v 1.1 2006/03/27 04:23:28 pvalchev Exp $
+--- gfx/src/gtk/nsFontMetricsXft.cpp.orig	Tue Jun 21 00:08:27 2005
++++ gfx/src/gtk/nsFontMetricsXft.cpp	Sun Mar 26 18:17:37 2006
+@@ -872,8 +872,14 @@ nsFontMetricsXft::CacheFontMetrics(void)
+     mXHeight = nscoord(mXHeight * f);
+ 
+     // mUnderlineOffset (offset for underlines)
+-    val = CONVERT_DESIGN_UNITS_TO_PIXELS(face->underline_position,
++    if (face) {
++        val = CONVERT_DESIGN_UNITS_TO_PIXELS(face->underline_position,
+                                          face->size->metrics.y_scale);
++    }
++    else {
++        val = 0.0f;
++    }
++    
+     if (val) {
+         mUnderlineOffset = NSToIntRound(val * f);
+     }
+@@ -883,8 +889,14 @@ nsFontMetricsXft::CacheFontMetrics(void)
+     }
+ 
+     // mUnderlineSize (thickness of an underline)
+-    val = CONVERT_DESIGN_UNITS_TO_PIXELS(face->underline_thickness,
++    if (face) {
++        val = CONVERT_DESIGN_UNITS_TO_PIXELS(face->underline_thickness,
+                                          face->size->metrics.y_scale);
++    }
++    else {
++        val = 0.0f;
++    }
++    
+     if (val) {
+         mUnderlineSize = nscoord(PR_MAX(f, NSToIntRound(val * f)));
+     }
+@@ -894,7 +906,7 @@ nsFontMetricsXft::CacheFontMetrics(void)
+     }
+ 
+     // mSuperscriptOffset
+-    if (os2 && os2->ySuperscriptYOffset) {
++    if (face && os2 && os2->ySuperscriptYOffset) {
+         val = CONVERT_DESIGN_UNITS_TO_PIXELS(os2->ySuperscriptYOffset,
+                                              face->size->metrics.y_scale);
+         mSuperscriptOffset = nscoord(PR_MAX(f, NSToIntRound(val * f)));
+@@ -904,7 +916,7 @@ nsFontMetricsXft::CacheFontMetrics(void)
+     }
+ 
+     // mSubscriptOffset
+-    if (os2 && os2->ySubscriptYOffset) {
++    if (face && os2 && os2->ySubscriptYOffset) {
+         val = CONVERT_DESIGN_UNITS_TO_PIXELS(os2->ySubscriptYOffset,
+                                              face->size->metrics.y_scale);
+         // some fonts have the incorrect sign. 
