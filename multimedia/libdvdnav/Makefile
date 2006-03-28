@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2005/12/28 15:28:28 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.7 2006/03/28 10:25:09 jakemsr Exp $
 
 COMMENT=	"DVD read/navigation library"
 DISTNAME=	libdvdnav-20051102
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	multimedia
 
 SHARED_LIBS=		dvdnav	5.0
@@ -23,7 +23,6 @@ AUTOCONF_VERSION=2.59
 USE_LIBTOOL=	Yes
 
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} ${MODGNU_AUTOMAKE_DEPENDS}
-WANTLIB=	pthread
 
 CONFIGURE_STYLE=gnu
 

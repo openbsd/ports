@@ -1,7 +1,19 @@
-$OpenBSD: patch-configure_ac,v 1.1 2005/11/03 04:25:08 jolan Exp $
---- configure.ac.orig	Mon Jan  3 14:24:21 2005
-+++ configure.ac	Wed Nov  2 14:04:07 2005
-@@ -174,7 +174,7 @@ dnl ------------------------------------
+$OpenBSD: patch-configure_ac,v 1.2 2006/03/28 10:25:10 jakemsr Exp $
+--- configure.ac.orig	Sat Mar 25 18:00:02 2006
++++ configure.ac	Sat Mar 25 18:01:37 2006
+@@ -138,6 +138,11 @@ case $host in
+     THREAD_CFLAGS="-I/usr/local/include -D_THREAD_SAFE"
+     CFLAGS="$THREAD_CFLAGS $CFLAGS"
+     ;;
++  *-*-openbsd*)
++    THREAD_LIBS="-pthread"
++    THREAD_CFLAGS="-pthread"
++    CFLAGS="$CFLAGS $THREAD_CFLAGS"
++    ;;
+   *mingw32* | *cygwin*)
+     ;;
+   *)
+@@ -174,7 +179,7 @@ dnl ------------------------------------
  dnl cflags
  dnl ---------------------------------------------
  dnl Common cflags for all platforms
