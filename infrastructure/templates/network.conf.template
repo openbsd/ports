@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.86 2006/02/15 16:35:21 jolan Exp $
+# $OpenBSD: network.conf.template,v 1.87 2006/03/28 03:23:51 pvalchev Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -137,7 +137,7 @@ MASTER_SITE_GNOME+=	\
 	ftp://ftp.cse.buffalo.edu/pub/Gnome/ \
 	ftp://ftp.yggdrasil.com/mirrors/site/ftp.gnome.org/pub/GNOME/ \
 	ftp://ftp.linux.org.uk/mirrors/ftp.gnome.org/ \
-	ftp://ftp.gnome.org/pub/GNOME
+	ftp://ftp.gnome.org/pub/GNOME/
 	
 MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.funet.fi/pub/languages/perl/CPAN/modules/by-module/ \
