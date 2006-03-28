@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/12/30 00:43:15 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/03/28 15:57:05 jcs Exp $
 
 DISTNAME=	cqcam-0.91
 PKGNAME=	${DISTNAME}p0
@@ -12,8 +12,7 @@ WANTLIB=		c m stdc++
 
 COMMENT=	"color QuickCam control program"
 HOMEPAGE=	http://www.cs.duke.edu/~reynolds/cqcam/
-MASTER_SITES=	${HOMEPAGE} \
-		ftp://rt.fm/pub/cqcam/
+MASTER_SITES=	${HOMEPAGE}
 
 ONLY_FOR_ARCHS=	i386
 
