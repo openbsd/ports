@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2005/06/07 09:25:37 xsa Exp $
+# $OpenBSD: Makefile,v 1.15 2006/03/28 15:49:25 jcs Exp $
 
 ONLY_FOR_ARCHS=	i386 macppc zaurus
 
@@ -9,8 +9,7 @@ HOMEPAGE=	http://www.tigr.net/afterstep/
 
 CATEGORIES=	x11
 
-MASTER_SITES=	http://www.tigr.net/afterstep/download/asapm/ \
-		ftp://rt.fm/pub/asapm/
+MASTER_SITES=	http://www.tigr.net/afterstep/download/asapm/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
