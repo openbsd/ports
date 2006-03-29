@@ -1,0 +1,9 @@
+$OpenBSD: patch-iris_libidn_rfc3454_c,v 1.1 2006/03/29 09:16:03 bernd Exp $
+--- iris/libidn/rfc3454.c.orig	Wed Mar 22 11:28:27 2006
++++ iris/libidn/rfc3454.c	Wed Mar 22 11:28:27 2006
+@@ -1,4 +1,4 @@
+-#include <stringprep.h>
++#include "stringprep.h"
+ 
+ /*
+  * A.1 Unassigned code points in Unicode 3.2

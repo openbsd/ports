@@ -1,0 +1,12 @@
+$OpenBSD: patch-iris_xmpp-core_jid_cpp,v 1.1 2006/03/29 09:16:03 bernd Exp $
+--- iris/xmpp-core/jid.cpp.orig	Wed Mar 22 11:25:09 2006
++++ iris/xmpp-core/jid.cpp	Wed Mar 22 11:25:09 2006
+@@ -20,7 +20,7 @@
+ 
+ #include"xmpp.h"
+ 
+-#include<stringprep.h>
++#include"../libidn/stringprep.h"
+ 
+ using namespace XMPP;
+ 
