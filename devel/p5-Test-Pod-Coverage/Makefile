@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/21 02:03:25 msf Exp $
+# $OpenBSD: Makefile,v 1.3 2006/03/29 21:30:23 msf Exp $
 
 COMMENT= 	"check for pod coverage in your distribution"
 
@@ -17,8 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Test/}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-Pod-Coverage \
-		::devel/p5-Test-Builder-Tester
+RUN_DEPENDS=	::devel/p5-Pod-Coverage
 
 CONFIGURE_STYLE= perl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/02/03 16:58:31 msf Exp $
+# $OpenBSD: Makefile,v 1.3 2006/03/29 21:30:23 msf Exp $
 
 COMMENT= 	"tests strings for equality"
 
@@ -15,9 +15,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Test/}
-
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-Test-Builder-Tester
 
 CONFIGURE_STYLE= perl
 

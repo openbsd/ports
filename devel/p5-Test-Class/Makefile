@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/07/11 19:54:30 aanriot Exp $
+# $OpenBSD: Makefile,v 1.3 2006/03/29 21:30:23 msf Exp $
 
 COMMENT=	"easily create test classes in an xUnit style"
 
@@ -18,7 +18,6 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Test/}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::devel/p5-Devel-Symdump \
-		::devel/p5-Test-Builder-Tester \
 		::devel/p5-Test-Differences \
 		::devel/p5-Test-Exception
 

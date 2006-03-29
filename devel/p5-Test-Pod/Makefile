@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/08 22:20:23 msf Exp $
+# $OpenBSD: Makefile,v 1.3 2006/03/29 21:30:23 msf Exp $
 
 COMMENT= 	"check for POD errors in files"
 
@@ -17,8 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Test/}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-Test-Builder-Tester \
-		::textproc/p5-Pod-Simple
+RUN_DEPENDS=	::textproc/p5-Pod-Simple
 
 CONFIGURE_STYLE= perl
 

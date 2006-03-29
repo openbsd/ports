@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/02/03 16:49:41 msf Exp $
+# $OpenBSD: Makefile,v 1.4 2006/03/29 21:30:23 msf Exp $
 
 COMMENT= 	"Perl extension for emulating troublesome interfaces"
 
@@ -17,8 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Test/}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-Devel-Cycle \
-		::devel/p5-Test-Builder-Tester
+RUN_DEPENDS=	::devel/p5-Devel-Cycle
 
 REGRESS_DEPENDS=	::devel/p5-Test-Pod \
 			::devel/p5-Test-Pod-Coverage
