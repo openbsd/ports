@@ -1,0 +1,15 @@
+$OpenBSD: patch-Flowd-perl_Makefile_PL,v 1.1 2006/03/29 11:50:31 msf Exp $
+--- Flowd-perl/Makefile.PL.orig	Thu Mar 23 09:54:14 2006
++++ Flowd-perl/Makefile.PL	Thu Mar 23 09:55:27 2006
+@@ -9,9 +9,9 @@ WriteMakefile(
+     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
+       (ABSTRACT_FROM  => 'lib/Flowd.pm', # retrieve abstract from module
+        AUTHOR         => 'Damien Miller <djm@mindrot.org>') : ()),
+-    LIBS              => ['-L.. -lflowd'], # e.g., '-lm'
++    LIBS              => ['-L.. -L%%LOCALBASE%%/lib -lflowd'], # e.g., '-lm'
+ #    DEFINE            => '-DHAVE_CONFIG_H', # e.g., '-DHAVE_SOMETHING'
+-    INC               => '-I. -I..', # e.g., '-I. -I/usr/include/other'
++    INC               => '-I. -I.. -I%%LOCALBASE%%/include/flowd', 
+ 	# Un-comment this if you add C files to link with later:
+     # OBJECT            => '$(O_FILES)', # link all the C files too
+ );

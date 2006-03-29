@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/22 21:27:17 djm Exp $
+# $OpenBSD: Makefile,v 1.2 2006/03/29 11:50:31 msf Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		"Perl API to flowd binary logfiles"
 
-DISTNAME=		flowd-0.8.5
+DISTNAME=		flowd-0.9
 PKGNAME=		${DISTNAME:S/^/p5-/}
 CATEGORIES=		net devel
 
@@ -23,8 +23,8 @@ MASTER_SITES=		http://www2.mindrot.org/files/flowd/
 WRKSRC=			${WRKDIR}/${DISTNAME}/Flowd-perl
 BUILD_DEPENDS=		flowd::net/flowd
 CONFIGURE_STYLE=	perl
-MAKE_ENV+=		INC="-I${LOCALBASE}/include/flowd" \
-			EXTRALIBS="-L${LOCALBASE}/lib -lflowd" \
-			LDLOADLIBS="-L${LOCALBASE}/lib -lflowd"
+
+post-patch:
+	perl -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|" ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
