@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/08 17:35:42 msf Exp $
+# $OpenBSD: Makefile,v 1.3 2006/03/29 21:23:58 msf Exp $
+
+COMES_WITH=	3.9
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
