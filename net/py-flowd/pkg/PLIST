@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/22 10:15:38 djm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/03/29 11:45:27 msf Exp $
 lib/python${MODPY_VERSION}/
 lib/python${MODPY_VERSION}/site-packages/
-lib/python${MODPY_VERSION}/site-packages/flowd.py
-lib/python${MODPY_VERSION}/site-packages/flowd.pyc
-lib/python${MODPY_VERSION}/site-packages/flowd_serialiser.so
+lib/python${MODPY_VERSION}/site-packages/flowd.so
