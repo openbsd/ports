@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2005/11/26 04:42:38 jsg Exp $
+# $OpenBSD: Makefile,v 1.5 2006/03/31 13:56:51 jsg Exp $
 
-COMMENT=	"x86 with DOS emulator targeted at playing old games"
-DISTNAME=	dosbox-0.63
-PKGNAME=	${DISTNAME}p0
+COMMENT=	"x86 with DOS emulator targeted at playing games"
+DISTNAME=	dosbox-0.65
+PKGNAME=	${DISTNAME}
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dosbox/}
 
@@ -27,8 +27,6 @@ NO_REGRESS=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" 
 CONFIGURE_ENV+=LDFLAGS="-L${LOCALBASE}/lib"
-# The dynamic CPU core does nasty things
-CONFIGURE_ARGS=		--disable-dynamic-x86 
 CONFIGURE_ARGS+=	--disable-alsatest
 CONFIGURE_ARGS+=	--disable-opengl
 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_dosbox_cpp,v 1.1 2006/03/31 13:56:51 jsg Exp $
+--- src/dosbox.cpp.orig	Fri Mar 31 22:16:06 2006
++++ src/dosbox.cpp	Fri Mar 31 22:16:35 2006
+@@ -303,7 +303,7 @@ void DOSBOX_Init(void) {
+ 	secprop->Add_bool("nosound",false);
+ 	secprop->Add_int("rate",22050);
+ 	secprop->Add_int("blocksize",2048);
+-	secprop->Add_int("prebuffer",10);
++	secprop->Add_int("prebuffer",30);
+ 
+ 	MSG_Add("MIXER_CONFIGFILE_HELP",
+ 		"nosound -- Enable silent mode, sound is still emulated though.\n"

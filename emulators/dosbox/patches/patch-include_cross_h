@@ -1,6 +1,6 @@
-$OpenBSD: patch-include_cross_h,v 1.1.1.1 2004/10/07 03:05:32 jsg Exp $
---- include/cross.h.orig	Tue Oct  5 19:42:34 2004
-+++ include/cross.h	Tue Oct  5 19:42:47 2004
+$OpenBSD: patch-include_cross_h,v 1.2 2006/03/31 13:56:51 jsg Exp $
+--- include/cross.h.orig	Thu Feb  9 23:32:47 2006
++++ include/cross.h	Fri Mar 31 21:36:23 2006
 @@ -34,10 +34,11 @@
  #else										/* LINUX / GCC */
  #include <dirent.h>
@@ -13,4 +13,4 @@ $OpenBSD: patch-include_cross_h,v 1.1.1.1 2004/10/07 03:05:32 jsg Exp $
 +#define CROSS_LEN MAXPATHLEN						/* Maximum filename size */
  
  
- #if defined (WIN32)							/* Win 32 */
+ #if defined (WIN32) || defined (OS2)				/* Win 32 & OS/2*/
