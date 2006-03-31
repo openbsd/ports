@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2006/01/14 00:07:30 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2006/03/31 17:25:21 bernd Exp $
 
 COMMENT=		"new mail notification utility for KDE"
 
-DISTNAME=		kbiff-3.7.1
-PKGNAME=		${DISTNAME}p1
-SHARED_LIBS=		kbiff 1.0
+DISTNAME=		kbiff-3.8
+SHARED_LIBS=		kbiff 2.0
 CATEGORIES=		mail
 EXTRACT_SUFX=		.tar.bz2
 
@@ -20,11 +19,11 @@ PERMIT_DISTFILES_FTP=  	Yes
 WANTLIB=		ICE SM X11 Xext Xrender art_lgpl_2 c jpeg m png \
 			pthread stdc++ util z
 
-MASTER_SITES=		http://devel-home.kde.org/~granroth/kbiff/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=kbiff/}
 
 LIB_DEPENDS=		kdecore.4,kio,kdeui,kdefx,kdesu,DCOP,kwalletclient.1::x11/kde/libs3
 
-MODKDE_VERSION= 	3.1
+MODKDE_VERSION= 	3.3
 MODULES=        	x11/kde
 
 MAKE_ENV=		KDEDIR="${LOCALBASE}"
@@ -35,7 +34,7 @@ USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS+=		--tag=disable-static
 CONFIGURE_STYLE= 	autoconf
-AUTOCONF_VERSION=	2.57
+AUTOCONF_VERSION=	2.59
 MODGNU_CONFIG_GUESS_DIRS= ${MODKDE_CONFIG_GUESS_DIRS}
 CONFIGURE_ARGS=		${MODKDE_CONFIGURE_ARGS}
 CONFIGURE_ENV=		${MODKDE_CONFIGURE_ENV}

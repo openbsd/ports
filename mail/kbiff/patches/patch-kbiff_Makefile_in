@@ -1,16 +1,25 @@
-$OpenBSD: patch-kbiff_Makefile_in,v 1.1 2006/01/09 22:40:02 alek Exp $
---- kbiff/Makefile.in.orig	Fri Mar 26 02:47:41 2004
-+++ kbiff/Makefile.in	Mon Jan  9 13:19:13 2006
-@@ -249,7 +249,7 @@ SUBDIRS = pics
- ####### This part is very kbiff specific
- # you can add here more. This one gets installed 
- bin_PROGRAMS = kbiff
+$OpenBSD: patch-kbiff_Makefile_in,v 1.2 2006/03/31 17:25:21 bernd Exp $
+--- kbiff/Makefile.in.orig	Sun Sep 11 00:09:56 2005
++++ kbiff/Makefile.in	Tue Mar 28 20:05:21 2006
+@@ -85,7 +85,7 @@ am_kbiff_OBJECTS = dummy.$(OBJEXT)
+ #>- kbiff_OBJECTS = $(am_kbiff_OBJECTS)
+ #>+ 1
+ kbiff_OBJECTS = dummy.$(OBJEXT)
+-kbiff_DEPENDENCIES = kbiff.la
++kbiff_DEPENDENCIES = libkbiff.la
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/admin/depcomp
+ am__depfiles_maybe = depfiles
+@@ -337,7 +337,7 @@ INCLUDES = $(all_includes)
+ 
+ # claim, which subdirectories you want to install
+ SUBDIRS = pics
 -lib_LTLIBRARIES = kbiff.la
 +lib_LTLIBRARIES = libkbiff.la
- 
  #>- METASOURCES = AUTO
  
-@@ -261,13 +261,13 @@ kbiff_la_SOURCES = setupdlg.cpp kbiff.cp
+ # Which sources should be compiled for kbiff.
+@@ -348,13 +348,13 @@ kbiff_la_SOURCES = setupdlg.cpp kbiff.cp
  kbiff_SOURCES = dummy.cpp
  
  # the library search path
@@ -26,21 +35,12 @@ $OpenBSD: patch-kbiff_Makefile_in,v 1.1 2006/01/09 22:40:02 alek Exp $
  
  # this option you can leave out. Just, if you use "make dist", you need it
  noinst_HEADERS = setupdlg.h kbiff.h kbiffmonitor.h notify.h kbiffurl.h \
-@@ -299,7 +299,7 @@ am_kbiff_OBJECTS = dummy.$(OBJEXT)
- #>- kbiff_OBJECTS = $(am_kbiff_OBJECTS)
- #>+ 1
- kbiff_OBJECTS = dummy.$(OBJEXT)
--kbiff_DEPENDENCIES = kbiff.la
-+kbiff_DEPENDENCIES = libkbiff.la
- 
- DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
- depcomp = $(SHELL) $(top_srcdir)/admin/depcomp
-@@ -400,7 +400,7 @@ clean-libLTLIBRARIES:
+@@ -436,7 +436,7 @@ clean-libLTLIBRARIES:
  	  echo "rm -f \"$${dir}/so_locations\""; \
  	  rm -f "$${dir}/so_locations"; \
  	done
 -kbiff.la: $(kbiff_la_OBJECTS) $(kbiff_la_DEPENDENCIES) 
 +libkbiff.la: $(kbiff_la_OBJECTS) $(kbiff_la_DEPENDENCIES) 
  	$(CXXLINK) -rpath $(libdir) $(kbiff_la_LDFLAGS) $(kbiff_la_OBJECTS) $(kbiff_la_LIBADD) $(LIBS)
- binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
  install-binPROGRAMS: $(bin_PROGRAMS)
+ 	@$(NORMAL_INSTALL)
