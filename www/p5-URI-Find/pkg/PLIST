@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/03/31 18:42:19 bernd Exp $
+${P5SITE}/URI/Find/
+${P5SITE}/URI/Find.pm
+${P5SITE}/URI/Find/Schemeless.pm
+@man man/man3p/URI::Find.3p
+@man man/man3p/URI::Find::Schemeless.3p
