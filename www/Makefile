@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.212 2006/03/21 21:18:40 msf Exp $
+# $OpenBSD: Makefile,v 1.213 2006/03/31 18:45:36 bernd Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -126,6 +126,7 @@
      SUBDIR += p5-PodToHTML
      SUBDIR += p5-SOAP-Lite
      SUBDIR += p5-URI
+     SUBDIR += p5-URI-Find
      SUBDIR += p5-WWW-Curl
      SUBDIR += p5-WWW-Mechanize
      SUBDIR += p5-libapreq
