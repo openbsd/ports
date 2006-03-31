@@ -1,11 +1,10 @@
-$OpenBSD: patch-build_install_sh,v 1.1 2006/03/24 20:12:28 sturm Exp $
---- build/install.sh.orig	Fri Nov 15 02:28:49 2002
-+++ build/install.sh	Fri Nov 15 02:33:20 2002
-@@ -109,43 +109,3 @@ mkdir $DOCS > /dev/null 2>&1
- cp -r * $DOCS
+$OpenBSD: patch-build_install_sh,v 1.2 2006/03/31 16:10:23 sturm Exp $
+--- build/install.sh.orig	Fri Mar 24 20:44:57 2006
++++ build/install.sh	Fri Mar 24 20:45:18 2006
+@@ -128,58 +128,3 @@ cp -r * $DOCS
  cd $TOPLEVEL
- cp maradns.pgp.key $DOCS
--
+ cp maradns.gpg.key $DOCS
+ 
 -# If the system in question does not already have configuration files,
 -# place example configuration files in /etc
 -if [ -d docs/$LANGUAGE/examples ] ; then
@@ -14,14 +13,24 @@ $OpenBSD: patch-build_install_sh,v 1.1 2006/03/24 20:12:28 sturm Exp $
 -	cd doc/en/examples
 -fi
 -
+-# $RPM_BUILD_ROOT was added at the request of one of my users
 -if [ ! -f $RPM_BUILD_ROOT/etc/mararc ] ; then
 -	cp example_mararc $RPM_BUILD_ROOT/etc/mararc
+-else 
+-	echo /etc/mararc already there, not replacing
 -fi
 -if [ ! -d $RPM_BUILD_ROOT/etc/maradns ] ; then
 -	mkdir $RPM_BUILD_ROOT/etc/maradns
 -	chmod 755 $RPM_BUILD_ROOT/etc/maradns
 -fi
--cp example_csv1 $RPM_BUILD_ROOT/etc/maradns/db.example.com
+-if [ ! -d $RPM_BUILD_ROOT/etc/maradns/logger ] ; then
+-	# The duende tool *needs* an /etc/maradns/logger directory
+-	# Note that duende uses an absolute path
+-	mkdir $RPM_BUILD_ROOT/etc/maradns/logger
+-fi
+-if [ ! -f $RPM_BUILD_ROOT/etc/maradns/db.example.net ] ; then
+-	cp example_csv2 $RPM_BUILD_ROOT/etc/maradns/db.example.net
+-fi
 -
 -# Finally, set up the startup files, as needed
 -# Go back to the top-level MaraDNS directory
@@ -32,16 +41,22 @@ $OpenBSD: patch-build_install_sh,v 1.1 2006/03/24 20:12:28 sturm Exp $
 -	echo Adding MaraDNS startup scripts
 -	if [ ! -f $RPM_BUILD_ROOT/etc/rc.d/init.d/maradns ] ; then
 -	      cp $BUILDDIR/mara.startup $RPM_BUILD_ROOT/etc/rc.d/init.d/maradns
+-	      cp $BUILDDIR/zoneserver.startup \
+-	          $RPM_BUILD_ROOT/etc/rc.d/init.d/maradns.zoneserver
 -	fi
 -	if cd $RPM_BUILD_ROOT/etc/rc.d/rc3.d/ ; then
 -		echo Starting up MaraDNS at runlevel 3
--		rm S60maradns
+-		rm S60maradns 2> /dev/null
+-		rm K60maradns.zoneserver 2> /dev/null
 -		ln -s ../init.d/maradns S60maradns
+-		ln -s ../init.d/maradns.zoneserver K60maradns.zoneserver
 -	fi
 -	if cd $RPM_BUILD_ROOT/etc/rc.d/rc5.d/ ; then
 -		echo starting up MaraDNS at runlevel 5
--		rm S60maradns
+-		rm S60maradns 2> /dev/null
+-		rm K60maradns.zoneserver 2> /dev/null
 -		ln -s ../init.d/maradns S60maradns
+-		ln -s ../init.d/maradns.zoneserver K60maradns.zoneserver
 -	fi
 -fi
 -

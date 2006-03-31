@@ -1,14 +1,22 @@
-$OpenBSD: patch-configure,v 1.1 2006/03/24 20:12:28 sturm Exp $
---- configure.orig	Wed Nov 13 18:14:04 2002
-+++ configure	Wed Nov 13 18:17:30 2002
-@@ -66,8 +66,8 @@ elif echo $UNAME | grep -i freebsd > /de
- 	echo	http://www.freebsd.org/cgi/query-pr.cgi?pr=28389
- elif echo $UNAME | grep -i openbsd > /dev/null ; then
- 	cat $BUILDDIR/Makefile.linux >> Makefile
--	echo It looks like you are using OpenBSD\; please read FAQ
--	echo before trying to compile MaraDNS
-+	echo It looks like you are using OpenBSD\; proceeding the
-+	echo compile of MaraDNS.
- elif echo $UNAME | grep -i cygwin > /dev/null ; then
- 	cat $BUILDDIR/Makefile.noflock >> Makefile
- 	echo It looks like you are using Cygwin\; this should compile file
+$OpenBSD: patch-configure,v 1.2 2006/03/31 16:10:23 sturm Exp $
+--- configure.orig	Fri Mar 24 20:55:47 2006
++++ configure	Fri Mar 24 20:57:15 2006
+@@ -77,6 +77,18 @@ elif echo $UNAME | grep -i freebsd > /de
+ 	echo	/usr/ports/dns/maradns
+ 	echo
+ 	EXITCODE=0
++elif echo $UNAME | grep -i openbsd > /dev/null ; then
++	cat $BUILDDIR/Makefile.freebsd >> Makefile
++	echo It looks like you are using OpenBSD\; this should compile
++	echo fine by typing in \'make\'.  There is an official port here:
++	echo
++	echo	http://www.openbsd.org/cgi-bin/cvsweb/ports/net/maradns/
++	echo
++	echo Which may be on your system here:
++	echo
++	echo	/usr/ports/net/maradns
++	echo
++	EXITCODE=0
+ elif echo $UNAME | grep -i mingw32 > /dev/null ; then
+ 	cat $BUILDDIR/Makefile.mingw32 >> Makefile
+ 	echo It looks like you are using MinGW32 \; this is only a partial

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/03/24 20:12:28 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2006/03/31 16:10:22 sturm Exp $
 
-VERSION=	1.0.28
+VERSION=	1.2.07.1
 COMMENT=	"simple and performant DNS server"
 DISTNAME=	maradns-${VERSION}
 CATEGORIES=	net
@@ -14,18 +14,16 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c pthread
+WANTLIB=	c pthread
 
-MAKE_FLAGS=	CC="${CC}" FLAGS="${CFLAGS}"
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=maradns/}
+
+MAKE_FLAGS=	CC="${CC}" FLAGS="${CFLAGS} -D_THREAD_SAFE -pthread"
 
 NO_REGRESS=	Yes
-MASTER_SITES=	${HOMEPAGE}/download/ \
-		http://maradns.3va.net/download/ \
-		http://maradns.glou.net/download/
 
 post-configure:
-	@perl -pi -e "s,/etc,${SYSCONFDIR},g" ${WRKSRC}/maragen/mararc.m4 \
-		${WRKSRC}/parse/ParseMaraRc.c ${WRKSRC}/doc/en/examples/ex*
+	@find ${WRKSRC} -type f | xargs perl -pi -e "s,/etc,${SYSCONFDIR},g"
 	@perl -pi -e "s, = 99, = 537," ${WRKSRC}/doc/en/examples/ex*
 
 post-install:
