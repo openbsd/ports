@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/11/02 00:02:50 cathcart Exp $
+# $OpenBSD: Makefile,v 1.2 2006/03/31 16:50:44 sturm Exp $
 
 COMMENT=		"draw maps and charts"
 
@@ -26,7 +26,6 @@ MASTER_SITES=		ftp://gmt.soest.hawaii.edu/pub/gmt/4/ \
 			ftp://ftp.iag.usp.br/pub/gmt/4/ \
 			ftp://ftp.geologi.uio.no/pub/gmt/4/ \
 			ftp://gd.tuwien.ac.at/pub/gmt/4/ \
-			ftp://ftp.eos.hokudai.ac.jp/pub/gmt/4/ \
 			ftp://life.csu.edu.au/pub/gmt/4/
 			
 DISTFILES=		GMT4.0_progs.tar.bz2 \

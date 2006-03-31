@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/01/22 23:21:47 sturm Exp $
+# $OpenBSD: Makefile,v 1.14 2006/03/31 16:50:44 sturm Exp $
 
 NOT_FOR_ARCHS=	vax
 
@@ -26,7 +26,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	c g2c m ncurses readline stdc++
 
 MASTER_SITES=	ftp://ftp.octave.org/pub/octave/ \
-		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/misc/octave/ \
 		ftp://neacm.fe.up.pt/pub/octave/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave/
 
