@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.88 2006/03/31 16:33:47 sturm Exp $
+# $OpenBSD: network.conf.template,v 1.89 2006/04/01 05:22:20 sturm Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -133,7 +133,6 @@ MASTER_SITE_GNOME+=	\
 	ftp://ftp.dit.upm.es/linux/gnome/ \
 	ftp://ftp.dataplus.se/pub/linux/gnome/ \
 	ftp://ftp.cse.buffalo.edu/pub/Gnome/ \
-	ftp://ftp.yggdrasil.com/mirrors/site/ftp.gnome.org/pub/GNOME/ \
 	ftp://ftp.linux.org.uk/mirrors/ftp.gnome.org/ \
 	ftp://ftp.gnome.org/pub/GNOME/
 	
