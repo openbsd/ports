@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-mk,v 1.5 2006/02/04 14:49:52 espie Exp $
+@comment $OpenBSD: PLIST-mk,v 1.6 2006/04/01 12:33:43 espie Exp $
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
 ${LOC}ark.mo
@@ -191,6 +191,7 @@ ${LOC}kfile_tga.mo
 ${LOC}kfile_theora.mo
 ${LOC}kfile_tiff.mo
 ${LOC}kfile_torrent.mo
+${LOC}kfile_ts.mo
 ${LOC}kfile_txt.mo
 ${LOC}kfile_vcf.mo
 ${LOC}kfile_wav.mo
@@ -286,6 +287,7 @@ ${LOC}knotify.mo
 ${LOC}kodo.mo
 ${LOC}kolf.mo
 ${LOC}kolourpaint.mo
+${LOC}kolourpicker.mo
 ${LOC}kompare.mo
 ${LOC}konqueror.mo
 ${LOC}konquest.mo
@@ -313,6 +315,7 @@ ${LOC}krdc.mo
 ${LOC}kreadconfig.mo
 ${LOC}krec.mo
 ${LOC}kregexpeditor.mo
+${LOC}kres_bugzilla.mo
 ${LOC}kres_exchange.mo
 ${LOC}kres_remote.mo
 ${LOC}kres_xmlrpc.mo
@@ -337,6 +340,7 @@ ${LOC}ksplash.mo
 ${LOC}ksplashthemes.mo
 ${LOC}kstars.mo
 ${LOC}kstart.mo
+${LOC}kstartperf.mo
 ${LOC}kstyle_keramik_config.mo
 ${LOC}kstyle_plastik_config.mo
 ${LOC}ksvgplugin.mo
@@ -357,7 +361,9 @@ ${LOC}ktouch.mo
 ${LOC}ktron.mo
 ${LOC}ktuberling.mo
 ${LOC}ktux.mo
+${LOC}kuick_plugin.mo
 ${LOC}kuickshow.mo
+${LOC}kuiviewer.mo
 ${LOC}kuser.mo
 ${LOC}kverbos.mo
 ${LOC}kview.mo
@@ -387,6 +393,7 @@ ${LOC}libkcalsystem.mo
 ${LOC}libkcddb.mo
 ${LOC}libkdegames.mo
 ${LOC}libkdepim.mo
+${LOC}libkfaximgage.mo
 ${LOC}libkicker.mo
 ${LOC}libkickermenu_kdeprint.mo
 ${LOC}libkickermenu_konsole.mo
@@ -406,6 +413,7 @@ ${LOC}libtaskmanager.mo
 ${LOC}lockout.mo
 ${LOC}lskat.mo
 ${LOC}mediaapplet.mo
+${LOC}mf_konqplugin.mo
 ${LOC}naughtyapplet.mo
 ${LOC}noatun.mo
 ${LOC}nsplugin.mo
@@ -415,6 +423,7 @@ ${LOC}quicklauncher.mo
 ${LOC}secpolicy.mo
 ${LOC}timezones.mo
 ${LOC}trashapplet.mo
+${LOC}uachangerplugin.mo
 ${LOC}useraccount.mo
 share/locale/mk/charset
 share/locale/mk/entry.desktop

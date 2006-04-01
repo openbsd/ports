@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-nds,v 1.5 2006/02/04 14:49:52 espie Exp $
+@comment $OpenBSD: PLIST-nds,v 1.6 2006/04/01 12:33:43 espie Exp $
 share/locale/nds/
 share/locale/nds/LC_MESSAGES/
 ${LOC}akregator.mo
@@ -131,6 +131,8 @@ ${LOC}kdelibs.mo
 ${LOC}kdelibs_colors.mo
 ${LOC}kdelirc.mo
 ${LOC}kdepasswd.mo
+${LOC}kdepimresources.mo
+${LOC}kdepimwizards.mo
 ${LOC}kdeprint.mo
 ${LOC}kdeprint_part.mo
 ${LOC}kdeprintfax.mo
@@ -150,6 +152,8 @@ ${LOC}kfile_deb.mo
 ${LOC}kfile_desktop.mo
 ${LOC}kfile_folder.mo
 ${LOC}kfile_html.mo
+${LOC}kfile_ics.mo
+${LOC}kfile_palm.mo
 ${LOC}kfile_rfc822.mo
 ${LOC}kfile_rpm.mo
 ${LOC}kfile_txt.mo
@@ -175,6 +179,7 @@ ${LOC}kio.mo
 ${LOC}kio_finger.mo
 ${LOC}kio_fish.mo
 ${LOC}kio_floppy.mo
+${LOC}kio_groupwise.mo
 ${LOC}kio_help.mo
 ${LOC}kio_home.mo
 ${LOC}kio_imap4.mo

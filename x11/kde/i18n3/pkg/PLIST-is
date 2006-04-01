@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-is,v 1.6 2006/02/04 14:49:52 espie Exp $
+@comment $OpenBSD: PLIST-is,v 1.7 2006/04/01 12:33:43 espie Exp $
 ${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo
@@ -401,10 +401,12 @@ ${LOC}krdc.mo
 ${LOC}kreadconfig.mo
 ${LOC}krec.mo
 ${LOC}kregexpeditor.mo
+${LOC}kres_birthday.mo
 ${LOC}kres_blogging.mo
 ${LOC}kres_bugzilla.mo
 ${LOC}kres_exchange.mo
 ${LOC}kres_featureplan.mo
+${LOC}kres_groupware.mo
 ${LOC}kres_groupwise.mo
 ${LOC}kres_kolab.mo
 ${LOC}kres_remote.mo
