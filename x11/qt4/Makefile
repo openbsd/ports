@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/03/05 21:58:07 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2006/04/01 12:32:56 espie Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples for qt4"
@@ -24,8 +24,8 @@ SHARED_LIBS=	Qt3Support 5.0 \
 		QtSvg 5.0 \
 		QtTest 5.0
 
-VERSION=	4.1.1
-DISTNAME=	qt-x11-opensource-src-4.1.1
+VERSION=	4.1.2
+DISTNAME=	qt-x11-opensource-src-4.1.2
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.rediris.es/mirror/Qt/source/ \
 		ftp://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/sources/ \
