@@ -1,0 +1,12 @@
+$OpenBSD: patch-mess_artworkx_c,v 1.1 2006/04/01 07:20:33 jsg Exp $
+--- mess/artworkx.c.orig	Sat Apr  1 16:25:23 2006
++++ mess/artworkx.c	Sat Apr  1 16:25:36 2006
+@@ -192,7 +192,7 @@ int artwork_get_inputscreen_customizatio
+ 					continue;
+ 				}
+ 
+-				if (!enabled || sscanf(buffer, "%64s (%d,%d)-(%d,%d)", ipt_name, &x1, &y1, &x2, &y2) != 5)
++				if (!enabled || sscanf(buffer, "%63s  (%d,%d)-(%d,%d)", ipt_name, &x1, &y1, &x2, &y2) != 5)
+ 					continue;
+ 
+ #if 0

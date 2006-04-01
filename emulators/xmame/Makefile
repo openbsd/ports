@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.20 2005/12/31 15:56:09 sturm Exp $
+# $OpenBSD: Makefile,v 1.21 2006/04/01 07:20:33 jsg Exp $
 
 COMMENT=	"emulates arcade machines and old home computers"
 COMMENT-mame=	"emulates a massive variety of arcade machines"
 COMMENT-mess=	"emulates game consoles and old home computers"
 
-VERSION=	0.100
+VERSION=	0.104
 DISTNAME=	xmame-${VERSION}
 
-PKGNAME=	xmame+xmess-${VERSION}p2
-PKGNAME-mame=	xmame-${VERSION}p2
-PKGNAME-mess=	xmess-${VERSION}p2
+PKGNAME=	xmame+xmess-${VERSION}
+PKGNAME-mame=	xmame-${VERSION}
+PKGNAME-mess=	xmess-${VERSION}
 
 CATEGORIES=	emulators games
 MASTER_SITES=	${HOMEPAGE}/download/ \
@@ -22,8 +22,6 @@ MASTER_SITES0=	http://www.mameworld.net/highscore/ \
 		ftp://ftp.atlantilde.com/pub/distfiles/
 
 HOMEPAGE=	http://x.mame.net
-
-MAINTAINER=	Claudio Castiglia <ccastig@mail.ru>
 
 HISCORE_FILE=	uhsdat${VERSION:S/.//}.zip
 HISTORY_FILE=	history1_02.zip
