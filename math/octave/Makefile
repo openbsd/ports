@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/03/31 16:50:44 sturm Exp $
+# $OpenBSD: Makefile,v 1.15 2006/04/01 19:21:57 steven Exp $
 
 NOT_FOR_ARCHS=	vax
 
@@ -6,16 +6,16 @@ COMMENT=	"high-level language for numerical computations"
 
 VERSION=	2.1.72
 DISTNAME=	octave-${VERSION}
-PKGNAME=	$(DISTNAME)p1
+PKGNAME=	$(DISTNAME)p2
 CATEGORIES=	math
 
-SHARED_LIBS=	cruft		3.0 \
+SHARED_LIBS=	cruft		4.0 \
 		octave		3.0 \
 		octinterp	3.0
 
 HOMEPAGE=	http://www.octave.org/
 
-MAINTAINER=	Steven Mestdagh <steven.mestdagh@esat.kuleuven.be>
+MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 
 # GNU GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -33,7 +33,9 @@ MODULES=	gcc3
 MODGCC3_ARCHES=	alpha sparc
 MODGCC3_LANGS=	C++
 
-LIB_DEPENDS=	fftw3.3::math/fftw3
+LIB_DEPENDS=	fftw3.3::math/fftw3 \
+		lapack.3::math/lapack \
+		blas.1::math/blas
 REGRESS_DEPENDS=::devel/dejagnu
 
 USE_GMAKE=	Yes
