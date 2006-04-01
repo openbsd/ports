@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2006/03/05 00:24:03 marco Exp $
+# $OpenBSD: Makefile,v 1.53 2006/04/01 16:27:48 steven Exp $
 #
 
      SUBDIR += R
@@ -23,6 +23,7 @@
      SUBDIR += hoc
      SUBDIR += jacal
      SUBDIR += kst
+     SUBDIR += lapack
      SUBDIR += maple
      SUBDIR += maple-share
      SUBDIR += mathomatic
