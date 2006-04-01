@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2005/05/13 20:22:03 msf Exp $
+# $OpenBSD: Makefile,v 1.5 2006/04/01 18:00:34 bernd Exp $
 
 COMMENT=	"encapsulate SQL queries and rows in simple perl objects"
 
@@ -23,7 +23,8 @@ RUN_DEPENDS=	::databases/p5-DBI \
 		::devel/p5-Want
 
 REGRESS_DEPENDS= ::databases/p5-DBD-SQLite \
-		 ::devel/p5-Test-Pod
+		 ::devel/p5-Test-Pod \
+		 ::devel/p5-Devel-StackTrace
 
 CONFIGURE_STYLE= perl
 
