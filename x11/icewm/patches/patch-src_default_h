@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_default_h,v 1.5 2005/03/23 21:43:31 naddy Exp $
---- src/default.h.orig	Sun Jan  9 22:48:23 2005
-+++ src/default.h	Wed Mar 23 22:26:53 2005
-@@ -131,8 +131,8 @@ XSV(const char *, acpiIgnoreBatteries,  
+$OpenBSD: patch-src_default_h,v 1.6 2006/04/01 15:47:10 robert Exp $
+--- src/default.h.orig	Thu Feb 16 12:08:41 2006
++++ src/default.h	Thu Feb 16 12:09:56 2006
+@@ -135,8 +135,8 @@ XSV(const char *, acpiIgnoreBatteries,  
  #endif
  
  XSV(const char *, mailBoxPath,                  0)
@@ -10,5 +10,5 @@ $OpenBSD: patch-src_default_h,v 1.5 2005/03/23 21:43:31 naddy Exp $
 +XSV(const char *, mailCommand,                  "xterm -name mail -title MAIL -e mail")
 +XSV(const char *, mailClassHint,                "mail.XTerm")
  XSV(const char *, newMailCommand,               0)
- XSV(const char *, lockCommand,                  "xlock")
+ XSV(const char *, lockCommand,                  0)
  XSV(const char *, clockCommand,                 "xclock -name icewm -title Clock")

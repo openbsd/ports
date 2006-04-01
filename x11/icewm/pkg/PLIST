@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/12/04 17:25:19 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.10 2006/04/01 15:47:10 robert Exp $
 bin/icehelp
 bin/icesh
 bin/icewm
@@ -106,8 +106,10 @@ share/icewm/mailbox/unreadmail.xpm
 share/icewm/menu
 share/icewm/preferences
 share/icewm/taskbar/
+share/icewm/taskbar/collapse.xpm
 share/icewm/taskbar/debian.xpm
 share/icewm/taskbar/desktop.xpm
+share/icewm/taskbar/expand.xpm
 share/icewm/taskbar/icewm.xpm
 share/icewm/taskbar/linux.xpm
 share/icewm/taskbar/linux1.xpm
@@ -382,6 +384,9 @@ share/locale/hr/LC_MESSAGES/icewm.mo
 share/locale/hu/
 share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/icewm.mo
+share/locale/id/
+share/locale/id/LC_MESSAGES/
+share/locale/id/LC_MESSAGES/icewm.mo
 share/locale/it/
 share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/icewm.mo
@@ -394,12 +399,15 @@ share/locale/ko/LC_MESSAGES/icewm.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/icewm.mo
+share/locale/lv/
+share/locale/lv/LC_MESSAGES/
+share/locale/lv/LC_MESSAGES/icewm.mo
+share/locale/nb/
+share/locale/nb/LC_MESSAGES/
+share/locale/nb/LC_MESSAGES/icewm.mo
 share/locale/nl/
 share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/icewm.mo
-share/locale/no/
-share/locale/no/LC_MESSAGES/
-share/locale/no/LC_MESSAGES/icewm.mo
 share/locale/pl/
 share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/icewm.mo
@@ -427,9 +435,15 @@ share/locale/tr/LC_MESSAGES/icewm.mo
 share/locale/uk/
 share/locale/uk/LC_MESSAGES/
 share/locale/uk/LC_MESSAGES/icewm.mo
+share/locale/vi/
+share/locale/vi/LC_MESSAGES/
+share/locale/vi/LC_MESSAGES/icewm.mo
 share/locale/zh_CN/
 share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_CN/LC_MESSAGES/icewm.mo
+share/locale/zh_TW/
 share/locale/zh_TW.Big5/
 share/locale/zh_TW.Big5/LC_MESSAGES/
 share/locale/zh_TW.Big5/LC_MESSAGES/icewm.mo
+share/locale/zh_TW/LC_MESSAGES/
+share/locale/zh_TW/LC_MESSAGES/icewm.mo
