@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2006/02/04 19:30:57 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2006/04/01 10:49:22 espie Exp $
 bin/adddebug
 bin/build-progress.sh
 bin/catalogmanager
@@ -870,7 +870,6 @@ share/icons/hicolor/16x16/apps/kbugbuster.png
 share/icons/hicolor/16x16/apps/kompare.png
 share/icons/hicolor/16x16/apps/kuiviewer.png
 share/icons/hicolor/16x16/apps/umbrello.png
-share/icons/hicolor/16x16/mimetypes/
 share/icons/hicolor/16x16/mimetypes/umbrellofile.png
 share/icons/hicolor/22x22/apps/catalogmanager.png
 share/icons/hicolor/22x22/apps/cervisia.png
@@ -886,7 +885,6 @@ share/icons/hicolor/32x32/apps/kcachegrind.png
 share/icons/hicolor/32x32/apps/kompare.png
 share/icons/hicolor/32x32/apps/kuiviewer.png
 share/icons/hicolor/32x32/apps/umbrello.png
-share/icons/hicolor/32x32/mimetypes/
 share/icons/hicolor/32x32/mimetypes/umbrellofile.png
 share/icons/hicolor/48x48/apps/catalogmanager.png
 share/icons/hicolor/48x48/apps/cervisia.png

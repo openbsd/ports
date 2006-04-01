@@ -1,0 +1,15 @@
+$OpenBSD: patch-kcontrol_kdm_kdm-shut_cpp,v 1.1 2006/04/01 10:49:19 espie Exp $
+--- kcontrol/kdm/kdm-shut.cpp.orig	Mon Feb 20 15:44:18 2006
++++ kcontrol/kdm/kdm-shut.cpp	Mon Feb 20 15:44:49 2006
+@@ -210,7 +210,11 @@ void KDMSessionsWidget::load()
+ void KDMSessionsWidget::defaults()
+ {
+   restart_lined->setURL("/sbin/reboot");
++#if defined(__OpenBSD__)
++  shutdown_lined->setURL("/sbin/halt -p");
++#else
+   shutdown_lined->setURL("/sbin/halt");
++#endif
+ 
+   sdlcombo->setCurrentItem(SdAll);
+   sdrcombo->setCurrentItem(SdRoot);

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2006/02/16 11:55:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.24 2006/04/01 10:49:18 espie Exp $
 bin/atlantikdesigner
 bin/exif.py
 bin/fsview
@@ -16,8 +16,14 @@ ${KDE}/katefiletemplates.la
 ${KDE}/katefiletemplates.so
 ${KDE}/katefll_plugin.la
 ${KDE}/katefll_plugin.so
+${KDE}/katehelloworldplugin.la
+${KDE}/katehelloworldplugin.so
 ${KDE}/katehtmltoolsplugin.la
 ${KDE}/katehtmltoolsplugin.so
+${KDE}/kateinsertcommandplugin.la
+${KDE}/kateinsertcommandplugin.so
+${KDE}/katemakeplugin.la
+${KDE}/katemakeplugin.so
 ${KDE}/katemodelineplugin.la
 ${KDE}/katemodelineplugin.so
 ${KDE}/kateopenheaderplugin.la
@@ -178,8 +184,14 @@ share/apps/kate/plugins/katefiletemplates/templates/language.xml.katetemplate
 share/apps/kate/plugins/katefiletemplates/ui.rc
 share/apps/kate/plugins/katefll/
 share/apps/kate/plugins/katefll/ui.rc
+share/apps/kate/plugins/katehelloworld/
+share/apps/kate/plugins/katehelloworld/ui.rc
 share/apps/kate/plugins/katehtmltools/
 share/apps/kate/plugins/katehtmltools/ui.rc
+share/apps/kate/plugins/kateinsertcommand/
+share/apps/kate/plugins/kateinsertcommand/ui.rc
+share/apps/kate/plugins/katemake/
+share/apps/kate/plugins/katemake/ui.rc
 share/apps/kate/plugins/katemodeline/
 share/apps/kate/plugins/katemodeline/ui.rc
 share/apps/kate/plugins/kateopenheader/
@@ -334,11 +346,13 @@ share/config.kcfg/konq_sidebarnews.kcfg
 share/config/translaterc
 share/doc/HTML/en/kate-plugins/
 share/doc/HTML/en/kate-plugins/common
+share/doc/HTML/en/kate-plugins/configure_insertcommand.png
 share/doc/HTML/en/kate-plugins/filetemplates.docbook
 share/doc/HTML/en/kate-plugins/htmltools.docbook
 share/doc/HTML/en/kate-plugins/index.cache.bz2
 share/doc/HTML/en/kate-plugins/index.docbook
 share/doc/HTML/en/kate-plugins/insertcommand.docbook
+share/doc/HTML/en/kate-plugins/insertcommand.png
 share/doc/HTML/en/kate-plugins/openheader.docbook
 share/doc/HTML/en/kate-plugins/textfilter.docbook
 share/doc/HTML/en/kate-plugins/xmlcheck.docbook
@@ -352,7 +366,6 @@ share/doc/HTML/en/kicker-applets/ktimemon.docbook
 share/doc/HTML/en/konq-plugins/
 share/doc/HTML/en/konq-plugins/babel/
 share/doc/HTML/en/konq-plugins/babel/common
-share/doc/HTML/en/konq-plugins/babel/cr16-action-babelfish.png
 share/doc/HTML/en/konq-plugins/babel/index.cache.bz2
 share/doc/HTML/en/konq-plugins/babel/index.docbook
 share/doc/HTML/en/konq-plugins/common
@@ -393,10 +406,6 @@ share/doc/HTML/en/konq-plugins/mediaplayer/
 share/doc/HTML/en/konq-plugins/mediaplayer/common
 share/doc/HTML/en/konq-plugins/mediaplayer/index.cache.bz2
 share/doc/HTML/en/konq-plugins/mediaplayer/index.docbook
-share/doc/HTML/en/konq-plugins/smbmounter/
-share/doc/HTML/en/konq-plugins/smbmounter/common
-share/doc/HTML/en/konq-plugins/smbmounter/index.cache.bz2
-share/doc/HTML/en/konq-plugins/smbmounter/index.docbook
 share/doc/HTML/en/konq-plugins/uachanger/
 share/doc/HTML/en/konq-plugins/uachanger/common
 share/doc/HTML/en/konq-plugins/uachanger/index.cache.bz2
@@ -461,7 +470,10 @@ share/services/kaddressbook/gmx_xxport.desktop
 share/services/katecppsymbolviewer.desktop
 share/services/katefiletemplates.desktop
 share/services/katefll_plugin.desktop
+share/services/katehelloworld.desktop
 share/services/katehtmltools.desktop
+share/services/kateinsertcommand.desktop
+share/services/katemake.desktop
 share/services/katemodeline.desktop
 share/services/kateopenheader.desktop
 share/services/katepybrowse.desktop

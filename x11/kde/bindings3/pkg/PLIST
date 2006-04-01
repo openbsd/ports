@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2006/02/04 16:39:47 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2006/04/01 10:49:19 espie Exp $
 bin/embedjs
 bin/jsaccess
 bin/kjscmd
@@ -89,11 +89,7 @@ share/apps/kate/scripts/swaptabs.js
 share/apps/kate/scripts/swaptabs.ui
 share/apps/kjsembed/
 share/apps/kjsembed/cmdline.js
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/embedjs.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/embedjs.png
 share/services/customobject_plugin.desktop
 share/services/customqobject_plugin.desktop

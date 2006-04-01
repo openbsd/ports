@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.38 2006/02/03 15:06:12 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2006/04/01 10:49:20 espie Exp $
 
 COMMENT=		"K Desktop Environment, games"
 
 CATEGORIES=		x11 x11/kde games
-VERSION=		3.5.1
+VERSION=		3.5.2
 DISTNAME=		kdegames-${VERSION}
 PKGNAME=		${DISTNAME}
-MODKDE_VERSION=		3.5
+MODKDE_VERSION=		3.5.2
 SHARED_LIBS=		atlantic	4.0 \
 			atlantikclient	4.0 \
 			atlantikui	4.0 \

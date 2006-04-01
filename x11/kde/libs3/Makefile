@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.65 2006/02/11 18:22:35 bernd Exp $
+# $OpenBSD: Makefile,v 1.66 2006/04/01 10:49:20 espie Exp $
 
 COMMENT=		"K Desktop Environment, libraries"
 COMMENT-cups=		"K Desktop Environment, cups support"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.1
+VERSION=		3.5.2
 DISTNAME=		kdelibs-${VERSION}
 MASTER_SITES0=  ftp://ftp.kde.org/pub/kde/security_patches/
 #PATCHFILES=	post-3.4.3-kdelibs-kjs.diff:0
 
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}
 PKGNAME-cups=		kdecups-${VERSION}
-MODKDE_VERSION?=	3.5
+MODKDE_VERSION?=	3.5.2
 SHARED_LIBS=		DCOP			7.0 \
 			artskde			4.0 \
 			kabc			4.0 \
@@ -61,8 +61,7 @@ CONFIGURE_ARGS+= --enable-cups
 
 SUBPACKAGE?=
 
-BUILD_DEPENDS+= ::textproc/docbook-to-man \
-		::devel/pkgconfig
+BUILD_DEPENDS+= ::devel/pkgconfig
 LIB_DEPENDS+=	art_lgpl_2::graphics/libart
 WANTLIB+=	intl iconv util jpeg m X11 ICE Xrender c SM pthread \
 		stdc++ Xext z png
@@ -102,32 +101,11 @@ EXTRA_CONFIG=xdg/menus/applications.menu
 
 FAKE_FLAGS=DESTDIR=${WRKINST} sysconfdir=${SAMPLECONFDIR}
 	
-# Stuff provided that debian, trimmed down of non-existent stuff.
-
-EXTRA_MANPAGES= artsmessage cupsdconf dcop \
-    dcopfind dcopserver \
-    dcopserver_shutdown imagetops kaddprinterwizard \
-    kbuildsycoca kconf_update kcookiejar kde-config kded kdeinit \
-    kdeinit_shutdown kdeinit_wrapper kdontchangethehostname \
-    kfile kinstalltheme kio_http_cache_cleaner \
-    kio_uiserver kmailservice \
-    ksendbugmail ksvgtopng ktelnetservice \
-    meinproc 
-
 post-extract:
 	cp ${FILESDIR}/krb5-config ${WRKDIR}/bin
 	chmod a+x ${WRKDIR}/bin/krb5-config
 
-post-build:
-	@mkdir -p ${WRKBUILD}/man/man1
-	@for i in ${EXTRA_MANPAGES}; do \
-	    ${LOCALBASE}/bin/docbook-to-man ${WRKDIST}/debian/man/$$i.sgml >${WRKBUILD}/man/man1/$$i.1; \
-	done
-
 post-install:
-	@for i in ${EXTRA_MANPAGES}; do \
-		${INSTALL_MAN} ${WRKBUILD}/man/man1/$$i.1 ${PREFIX}/man/man1; \
-	done
 	${INSTALL_PROGRAM} ${WRKBUILD}/libtool ${PREFIX}/bin/kdelibtool
 
 USE_LIBTOOL=Yes

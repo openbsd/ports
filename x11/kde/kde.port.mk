@@ -1,4 +1,4 @@
-# $OpenBSD: kde.port.mk,v 1.19 2006/02/16 13:48:27 espie Exp $
+# $OpenBSD: kde.port.mk,v 1.20 2006/04/01 10:49:17 espie Exp $
 
 SHARED_ONLY?=	Yes
 
@@ -70,6 +70,10 @@ AUTOCONF?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
 LIB_DEPENDS+=lib/qt3/qt-mt.3.33::x11/qt3,mt
 .elif ${MODKDE_VERSION} == "3.5"
 PATCH_LIST=	${PORTSDIR}/x11/kde/patches-3.5/patch-* patch-* ${SUP_PATCH_LIST}
+AUTOCONF?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
+LIB_DEPENDS+=lib/qt3/qt-mt.3.33::x11/qt3,mt
+.elif ${MODKDE_VERSION} == "3.5.2"
+PATCH_LIST=	${PORTSDIR}/x11/kde/patches-3.5.2/patch-* patch-* ${SUP_PATCH_LIST}
 AUTOCONF?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
 LIB_DEPENDS+=lib/qt3/qt-mt.3.33::x11/qt3,mt
 .elif ${MODKDE_VERSION} == "2.2.2"

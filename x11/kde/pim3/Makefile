@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.31 2006/02/03 13:31:33 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2006/04/01 10:49:21 espie Exp $
 
 COMMENT= 		"KDE personal information applications"
 COMMENT-kpilot=		"KDE interface to sync with Palm Pilot"
 CATEGORIES=		x11 x11/kde productivity
-VERSION=		3.5.1
+VERSION=		3.5.2
 DISTNAME=		kdepim-${VERSION}
 PKGNAME=		${DISTNAME}
-MODKDE_VERSION=		3.5
+MODKDE_VERSION=		3.5.2
 SHARED_LIBS=		gpgme++				3.0 \
 			index				1.0 \
 			kabc_groupdav			2.0 \
@@ -71,6 +71,7 @@ WANTLIB=	Xss audiofile stdc++ ossaudio X11 jpeg util m \
 		glib-2.0.0.0 ICE readline soundserver_idl Xrender \
 		gpg-error vorbis pcre esd z sasl2
 
+FLAVORS=	debug
 LIB_DEPENDS+=	pisock::comms/pilot-link
 RUN_DEPENDS+=	::x11/kde/base3
 LIB_DEPENDS+=	gpgme:gpgme->=0.4.5:security/gpgme \

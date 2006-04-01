@@ -1,0 +1,12 @@
+$OpenBSD: patch-klinkstatus_src_utils_Makefile_in,v 1.1 2006/04/01 10:49:23 espie Exp $
+--- klinkstatus/src/utils/Makefile.in.orig	Sat Apr  1 11:35:09 2006
++++ klinkstatus/src/utils/Makefile.in	Sat Apr  1 11:35:23 2006
+@@ -380,7 +380,7 @@ x_libraries = @x_libraries@
+ xdg_appsdir = @xdg_appsdir@
+ xdg_directorydir = @xdg_directorydir@
+ xdg_menudir = @xdg_menudir@
+-INCLUDES = -I/usr/include/libxml2 $(all_includes)
++INCLUDES = $(LIBXML_CFLAGS) $(all_includes)
+ #>- METASOURCES = AUTO
+ libutils_la_LDFLAGS = $(all_libraries)
+ noinst_LTLIBRARIES = libutils.la

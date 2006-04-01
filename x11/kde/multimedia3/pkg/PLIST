@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2006/03/12 13:22:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.24 2006/04/01 10:49:21 espie Exp $
 bin/artsbuilder
 bin/artscontrol
 bin/juk
@@ -19,7 +19,6 @@ bin/yaf-splay
 bin/yaf-tplay
 bin/yaf-vorbis
 bin/yaf-yuv
-include/arts/
 include/arts/artsbuilder.h
 include/arts/artsbuilder.idl
 include/arts/artsgui.h
@@ -333,8 +332,6 @@ lib/libyafcore.la
 @lib lib/libyafcore.so.${LIByafcore_VERSION}
 lib/libyafxplayer.la
 @lib lib/libyafxplayer.so.${LIByafxplayer_VERSION}
-lib/mcop/
-lib/mcop/Arts/
 lib/mcop/Arts/ArtsBuilderLoader.mcopclass
 lib/mcop/Arts/Button.mcopclass
 lib/mcop/Arts/EffectRackGuiFactory.mcopclass
@@ -1100,6 +1097,29 @@ share/doc/HTML/en/kaboodle/
 share/doc/HTML/en/kaboodle/common
 share/doc/HTML/en/kaboodle/index.cache.bz2
 share/doc/HTML/en/kaboodle/index.docbook
+share/doc/HTML/en/kaudiocreator/
+share/doc/HTML/en/kaudiocreator/cdconfiguration.png
+share/doc/HTML/en/kaudiocreator/cddbconfigurationlookup.png
+share/doc/HTML/en/kaudiocreator/cddbconfigurationsubmit.png
+share/doc/HTML/en/kaudiocreator/cdinserted.png
+share/doc/HTML/en/kaudiocreator/common
+share/doc/HTML/en/kaudiocreator/confirmartistcarryover.png
+share/doc/HTML/en/kaudiocreator/encoderconfiguration.png
+share/doc/HTML/en/kaudiocreator/encodernotfound.png
+share/doc/HTML/en/kaudiocreator/entersong1.png
+share/doc/HTML/en/kaudiocreator/generalconfiguration.png
+share/doc/HTML/en/kaudiocreator/index.cache.bz2
+share/doc/HTML/en/kaudiocreator/index.docbook
+share/doc/HTML/en/kaudiocreator/jobcontrol.png
+share/doc/HTML/en/kaudiocreator/jobshavestarted.png
+share/doc/HTML/en/kaudiocreator/kaudiocreatormainwindow800.png
+share/doc/HTML/en/kaudiocreator/lameconfiguration.png
+share/doc/HTML/en/kaudiocreator/readytorip.png
+share/doc/HTML/en/kaudiocreator/ripperconfiguration.png
+share/doc/HTML/en/kaudiocreator/rippingandencoding.png
+share/doc/HTML/en/kaudiocreator/rippingandencoding2.png
+share/doc/HTML/en/kaudiocreator/setalbumcategory.png
+share/doc/HTML/en/kaudiocreator/startalbumeditor.png
 share/doc/HTML/en/kdemultimedia-apidocs/
 share/doc/HTML/en/kdemultimedia-apidocs/libkcddb/
 share/doc/HTML/en/kdemultimedia-apidocs/libkcddb/html/
@@ -1184,8 +1204,6 @@ share/icons/crystalsvg/scalable/actions/artsenvironment.svgz
 share/icons/crystalsvg/scalable/actions/artsfftscope.svgz
 share/icons/crystalsvg/scalable/actions/artsmediatypes.svgz
 share/icons/crystalsvg/scalable/actions/artsmidimanager.svgz
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/artscontrol.png
 share/icons/hicolor/128x128/apps/juk.png
 share/icons/hicolor/128x128/apps/kaboodle.png
@@ -1193,8 +1211,6 @@ share/icons/hicolor/128x128/apps/kmix.png
 share/icons/hicolor/128x128/apps/krec.png
 share/icons/hicolor/128x128/apps/kscd.png
 share/icons/hicolor/128x128/apps/noatun.png
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/artsbuilder.png
 share/icons/hicolor/16x16/apps/artscontrol.png
 share/icons/hicolor/16x16/apps/juk.png
@@ -1205,14 +1221,10 @@ share/icons/hicolor/16x16/apps/kmix.png
 share/icons/hicolor/16x16/apps/krec.png
 share/icons/hicolor/16x16/apps/kscd.png
 share/icons/hicolor/16x16/apps/noatun.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/artscontrol.png
 share/icons/hicolor/22x22/apps/kaboodle.png
 share/icons/hicolor/22x22/apps/krec.png
 share/icons/hicolor/22x22/apps/noatun.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/artscontrol.png
 share/icons/hicolor/32x32/apps/juk.png
 share/icons/hicolor/32x32/apps/kaboodle.png
@@ -1222,8 +1234,6 @@ share/icons/hicolor/32x32/apps/kmix.png
 share/icons/hicolor/32x32/apps/krec.png
 share/icons/hicolor/32x32/apps/kscd.png
 share/icons/hicolor/32x32/apps/noatun.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/artscontrol.png
 share/icons/hicolor/48x48/apps/juk.png
 share/icons/hicolor/48x48/apps/kaboodle.png
@@ -1232,8 +1242,6 @@ share/icons/hicolor/48x48/apps/kmix.png
 share/icons/hicolor/48x48/apps/krec.png
 share/icons/hicolor/48x48/apps/kscd.png
 share/icons/hicolor/48x48/apps/noatun.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/artscontrol.png
 share/icons/hicolor/64x64/apps/juk.png
 share/icons/hicolor/64x64/apps/kaboodle.png
@@ -1241,8 +1249,6 @@ share/icons/hicolor/64x64/apps/kmix.png
 share/icons/hicolor/64x64/apps/krec.png
 share/icons/hicolor/64x64/apps/kscd.png
 share/icons/hicolor/64x64/apps/noatun.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/artsbuilder.svgz
 share/icons/hicolor/scalable/apps/artscontrol.svgz
 share/icons/locolor/

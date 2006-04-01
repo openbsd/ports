@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2006/02/03 20:59:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2006/04/01 10:49:18 espie Exp $
 bin/kmag
 bin/kmousetool
 bin/kmouth
@@ -371,39 +371,27 @@ share/doc/HTML/en/kttsd/stringreplacer.png
 share/doc/HTML/en/kttsd/talkerchooser.png
 share/doc/HTML/en/kttsd/talkers.png
 share/doc/HTML/en/kttsd/xmltransformer.png
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/actions/
 share/icons/hicolor/16x16/actions/female.png
 share/icons/hicolor/16x16/actions/male.png
 share/icons/hicolor/16x16/actions/nospeak.png
 share/icons/hicolor/16x16/actions/speak.png
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/kmag.png
 share/icons/hicolor/16x16/apps/kmousetool.png
 share/icons/hicolor/16x16/apps/kmouth.png
 share/icons/hicolor/16x16/apps/ksayit.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/actions/
 share/icons/hicolor/22x22/actions/nospeak.png
 share/icons/hicolor/22x22/actions/speak.png
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/kmouth.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/actions/
 share/icons/hicolor/32x32/actions/nospeak.png
 share/icons/hicolor/32x32/actions/speak.png
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/kmag.png
 share/icons/hicolor/32x32/apps/kmousetool.png
 share/icons/hicolor/32x32/apps/kmouth.png
 share/icons/hicolor/32x32/apps/ksayit.png
 share/icons/hicolor/32x32/apps/ksayit_clipempty.png
 share/icons/hicolor/32x32/apps/ksayit_talking.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/actions/
 share/icons/hicolor/48x48/actions/nospeak.png
 share/icons/hicolor/48x48/actions/speak.png
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/kmouth.png
 share/icons/locolor/
 share/icons/locolor/16x16/

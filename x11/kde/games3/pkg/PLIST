@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2006/02/03 15:06:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.19 2006/04/01 10:49:20 espie Exp $
 bin/atlantik
 bin/kasteroids
 bin/katomic
@@ -2447,8 +2447,6 @@ share/icons/crystalsvg/48x48/actions/lastmoves.png
 share/icons/crystalsvg/48x48/actions/legalmoves.png
 share/icons/crystalsvg/scalable/actions/lastmoves.svgz
 share/icons/crystalsvg/scalable/actions/legalmoves.svgz
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/kasteroids.png
 share/icons/hicolor/128x128/apps/katomic.png
 share/icons/hicolor/128x128/apps/kbackgammon.png
@@ -2480,8 +2478,6 @@ share/icons/hicolor/128x128/apps/ktron.png
 share/icons/hicolor/128x128/apps/ktuberling.png
 share/icons/hicolor/128x128/apps/kwin4.png
 share/icons/hicolor/128x128/apps/lskat.png
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/atlantik.png
 share/icons/hicolor/16x16/apps/kasteroids.png
 share/icons/hicolor/16x16/apps/katomic.png
@@ -2514,8 +2510,6 @@ share/icons/hicolor/16x16/apps/ktron.png
 share/icons/hicolor/16x16/apps/ktuberling.png
 share/icons/hicolor/16x16/apps/kwin4.png
 share/icons/hicolor/16x16/apps/lskat.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/kasteroids.png
 share/icons/hicolor/22x22/apps/katomic.png
 share/icons/hicolor/22x22/apps/kbackgammon.png
@@ -2547,8 +2541,6 @@ share/icons/hicolor/22x22/apps/ktron.png
 share/icons/hicolor/22x22/apps/ktuberling.png
 share/icons/hicolor/22x22/apps/kwin4.png
 share/icons/hicolor/22x22/apps/lskat.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/atlantik.png
 share/icons/hicolor/32x32/apps/kasteroids.png
 share/icons/hicolor/32x32/apps/katomic.png
@@ -2582,8 +2574,6 @@ share/icons/hicolor/32x32/apps/ktron.png
 share/icons/hicolor/32x32/apps/ktuberling.png
 share/icons/hicolor/32x32/apps/kwin4.png
 share/icons/hicolor/32x32/apps/lskat.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/atlantik.png
 share/icons/hicolor/48x48/apps/kasteroids.png
 share/icons/hicolor/48x48/apps/katomic.png
@@ -2616,8 +2606,6 @@ share/icons/hicolor/48x48/apps/ktron.png
 share/icons/hicolor/48x48/apps/ktuberling.png
 share/icons/hicolor/48x48/apps/kwin4.png
 share/icons/hicolor/48x48/apps/lskat.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/kasteroids.png
 share/icons/hicolor/64x64/apps/katomic.png
 share/icons/hicolor/64x64/apps/kbackgammon.png

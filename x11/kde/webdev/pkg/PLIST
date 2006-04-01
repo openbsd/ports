@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2006/01/06 08:56:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2006/04/01 10:49:23 espie Exp $
 @conflict quanta-*
 @pkgpath x11/kde/quanta
 bin/kfilereplace
@@ -77,6 +77,8 @@ share/apps/kimagemapeditor/polygoncursor.png
 share/apps/kimagemapeditor/removepointcursor.png
 share/apps/klinkstatus/
 share/apps/klinkstatus/klinkstatus_shell.rc
+share/apps/klinkstatus/styles/
+share/apps/klinkstatus/styles/results_stylesheet.xsl
 share/apps/klinkstatuspart/
 share/apps/klinkstatuspart/klinkstatus_part.rc
 share/apps/klinkstatuspart/pics/
@@ -1658,7 +1660,6 @@ share/icons/crystalsvg/22x22/apps/kommander.png
 share/icons/crystalsvg/32x32/apps/kommander.png
 share/icons/crystalsvg/64x64/apps/kommander.png
 share/icons/hicolor/128x128/apps/klinkstatus.png
-share/icons/hicolor/16x16/actions/
 share/icons/hicolor/16x16/actions/1downarrow.png
 share/icons/hicolor/16x16/actions/configure.png
 share/icons/hicolor/16x16/actions/exit.png
@@ -1679,7 +1680,6 @@ share/icons/hicolor/16x16/actions/xsldbg_stepup.png
 share/icons/hicolor/16x16/apps/kimagemapeditor.png
 share/icons/hicolor/16x16/apps/klinkstatus.png
 share/icons/hicolor/16x16/apps/quanta.png
-share/icons/hicolor/22x22/actions/
 share/icons/hicolor/22x22/actions/1downarrow.png
 share/icons/hicolor/22x22/actions/addpoint.png
 share/icons/hicolor/22x22/actions/arrow.png

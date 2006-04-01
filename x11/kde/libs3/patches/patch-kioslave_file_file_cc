@@ -1,6 +1,6 @@
-$OpenBSD: patch-kioslave_file_file_cc,v 1.1 2005/11/29 14:01:48 espie Exp $
---- kioslave/file/file.cc.orig	Mon Nov 21 12:59:13 2005
-+++ kioslave/file/file.cc	Mon Nov 21 12:59:38 2005
+$OpenBSD: patch-kioslave_file_file_cc,v 1.2 2006/04/01 10:49:20 espie Exp $
+--- kioslave/file/file.cc.orig	Fri Mar 17 11:19:07 2006
++++ kioslave/file/file.cc	Mon Mar 20 11:33:25 2006
 @@ -193,9 +193,11 @@ void FileProtocol::chmod( const KURL& ur
              case EACCES:
                  error( KIO::ERR_ACCESS_DENIED, url.path() );
@@ -13,3 +13,25 @@ $OpenBSD: patch-kioslave_file_file_cc,v 1.1 2005/11/29 14:01:48 espie Exp $
              case ENOSPC:
                  error( KIO::ERR_DISK_FULL, url.path() );
                  break;
+@@ -1445,6 +1447,9 @@ void FileProtocol::mount( bool _ro, cons
+                                 dev.data()
+                                 point.data()
+                                 tmp );
++#elif defined(__OpenBSD__)
++              buffer.sprintf( "%s %s %s -t %s %s %s 2>%s", "kdesu", mountProg.latin1(), readonly.data(),
++                              fstype.data(), dev.data(), point.data(), tmp );
+ #else
+               buffer.sprintf( "%s %s -t %s %s %s 2>%s", mountProg.latin1(), readonly.data(),
+                               fstype.data(), dev.data(), point.data(), tmp );
+@@ -1604,7 +1609,11 @@ void FileProtocol::unmount( const QStrin
+         error( KIO::ERR_COULD_NOT_UNMOUNT, i18n("Could not find program \"umount\""));
+         return;
+     }
++#ifdef __OpenBSD__
++    buffer.sprintf( "%s %s %s 2>%s", "kdesu", umountProg.latin1(), QFile::encodeName(KProcess::quote(_point)).data(), tmp );
++#else
+     buffer.sprintf( "%s %s 2>%s", umountProg.latin1(), QFile::encodeName(KProcess::quote(_point)).data(), tmp );
++#endif
+     system( buffer.data() );
+ #endif /* HAVE_VOLMGT */
+ 

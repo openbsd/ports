@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2006/02/03 21:25:53 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2006/04/01 10:49:18 espie Exp $
 bin/kcron
 bin/kpackage
 bin/kuser
@@ -155,39 +155,26 @@ share/doc/HTML/en/lilo-config/
 share/doc/HTML/en/lilo-config/common
 share/doc/HTML/en/lilo-config/index.cache.bz2
 share/doc/HTML/en/lilo-config/index.docbook
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/kpackage.png
 share/icons/hicolor/128x128/apps/kuser.png
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/kcron.png
 share/icons/hicolor/16x16/apps/knetworkconf.png
 share/icons/hicolor/16x16/apps/kpackage.png
 share/icons/hicolor/16x16/apps/kuser.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/actions/
 share/icons/hicolor/22x22/actions/network_connected_lan_knc.png
 share/icons/hicolor/22x22/actions/network_disconnected_lan.png
 share/icons/hicolor/22x22/actions/network_disconnected_wlan.png
 share/icons/hicolor/22x22/actions/network_traffic_wlan.png
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/kcron.png
 share/icons/hicolor/22x22/apps/knetworkconf.png
 share/icons/hicolor/22x22/apps/kpackage.png
 share/icons/hicolor/22x22/apps/kuser.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/kcron.png
 share/icons/hicolor/32x32/apps/knetworkconf.png
 share/icons/hicolor/32x32/apps/kpackage.png
 share/icons/hicolor/32x32/apps/kuser.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/kpackage.png
 share/icons/hicolor/48x48/apps/kuser.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/kpackage.png
 share/icons/hicolor/64x64/apps/kuser.png
 share/services/kfile_deb.desktop

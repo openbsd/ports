@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2006/02/03 13:31:33 espie Exp $
+@comment $OpenBSD: PLIST,v 1.25 2006/04/01 10:49:18 espie Exp $
 bin/kbanner.kss
 bin/kblob.kss
 bin/kclock.kss
@@ -78,6 +78,7 @@ share/applnk/System/ScreenSavers/anemone.desktop
 share/applnk/System/ScreenSavers/anemotaxis.desktop
 share/applnk/System/ScreenSavers/ant.desktop
 share/applnk/System/ScreenSavers/antinspect.desktop
+share/applnk/System/ScreenSavers/antmaze.desktop
 share/applnk/System/ScreenSavers/antspotlight.desktop
 share/applnk/System/ScreenSavers/apollonian.desktop
 share/applnk/System/ScreenSavers/apple2.desktop
@@ -89,20 +90,24 @@ share/applnk/System/ScreenSavers/blaster.desktop
 share/applnk/System/ScreenSavers/blinkbox.desktop
 share/applnk/System/ScreenSavers/blitspin.desktop
 share/applnk/System/ScreenSavers/blocktube.desktop
+share/applnk/System/ScreenSavers/boing.desktop
 share/applnk/System/ScreenSavers/bouboule.desktop
 share/applnk/System/ScreenSavers/bouncingcow.desktop
 share/applnk/System/ScreenSavers/boxed.desktop
+share/applnk/System/ScreenSavers/boxfit.desktop
 share/applnk/System/ScreenSavers/braid.desktop
 share/applnk/System/ScreenSavers/bsod.desktop
 share/applnk/System/ScreenSavers/bubble3d.desktop
 share/applnk/System/ScreenSavers/bubbles.desktop
 share/applnk/System/ScreenSavers/bumps.desktop
 share/applnk/System/ScreenSavers/cage.desktop
+share/applnk/System/ScreenSavers/carousel.desktop
 share/applnk/System/ScreenSavers/ccurve.desktop
 share/applnk/System/ScreenSavers/circuit.desktop
 share/applnk/System/ScreenSavers/cloudlife.desktop
 share/applnk/System/ScreenSavers/compass.desktop
 share/applnk/System/ScreenSavers/coral.desktop
+share/applnk/System/ScreenSavers/crackberg.desktop
 share/applnk/System/ScreenSavers/critical.desktop
 share/applnk/System/ScreenSavers/crystal.desktop
 share/applnk/System/ScreenSavers/cubenetic.desktop
@@ -121,11 +126,13 @@ share/applnk/System/ScreenSavers/epicycle.desktop
 share/applnk/System/ScreenSavers/eruption.desktop
 share/applnk/System/ScreenSavers/euler2d.desktop
 share/applnk/System/ScreenSavers/fadeplot.desktop
+share/applnk/System/ScreenSavers/fiberlamp.desktop
 share/applnk/System/ScreenSavers/fireworkx.desktop
 share/applnk/System/ScreenSavers/flag.desktop
 share/applnk/System/ScreenSavers/flame.desktop
 share/applnk/System/ScreenSavers/flipflop.desktop
 share/applnk/System/ScreenSavers/flipscreen3d.desktop
+share/applnk/System/ScreenSavers/fliptext.desktop
 share/applnk/System/ScreenSavers/flow.desktop
 share/applnk/System/ScreenSavers/fluidballs.desktop
 share/applnk/System/ScreenSavers/flurry.desktop
@@ -157,6 +164,7 @@ share/applnk/System/ScreenSavers/hypercube.desktop
 share/applnk/System/ScreenSavers/hypertorus.desktop
 share/applnk/System/ScreenSavers/ifs.desktop
 share/applnk/System/ScreenSavers/imsmap.desktop
+share/applnk/System/ScreenSavers/interaggregate.desktop
 share/applnk/System/ScreenSavers/interference.desktop
 share/applnk/System/ScreenSavers/intermomentary.desktop
 share/applnk/System/ScreenSavers/jigglypuff.desktop
@@ -240,6 +248,7 @@ share/applnk/System/ScreenSavers/substrate.desktop
 share/applnk/System/ScreenSavers/superquadrics.desktop
 share/applnk/System/ScreenSavers/swirl.desktop
 share/applnk/System/ScreenSavers/t3d.desktop
+share/applnk/System/ScreenSavers/tangram.desktop
 share/applnk/System/ScreenSavers/thornbird.desktop
 share/applnk/System/ScreenSavers/triangle.desktop
 share/applnk/System/ScreenSavers/truchet.desktop

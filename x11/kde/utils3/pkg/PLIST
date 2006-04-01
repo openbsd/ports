@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2006/01/06 09:28:32 espie Exp $
+@comment $OpenBSD: PLIST,v 1.21 2006/04/01 10:49:22 espie Exp $
 bin/ark
 bin/irkick
 bin/kcalc
@@ -392,6 +392,7 @@ share/doc/HTML/en/irkick/common
 share/doc/HTML/en/irkick/index.cache.bz2
 share/doc/HTML/en/irkick/index.docbook
 share/doc/HTML/en/kcalc/
+share/doc/HTML/en/kcalc/commands.docbook
 share/doc/HTML/en/kcalc/common
 share/doc/HTML/en/kcalc/index.cache.bz2
 share/doc/HTML/en/kcalc/index.docbook
@@ -521,8 +522,6 @@ share/icons/crystalsvg/64x64/mimetypes/superkaramba_theme.png
 share/icons/crystalsvg/scalable/apps/laptop_battery.svgz
 share/icons/crystalsvg/scalable/apps/superkaramba.svgz
 share/icons/crystalsvg/scalable/mimetypes/superkaramba_theme.svgz
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/ark.png
 share/icons/hicolor/128x128/apps/kdf.png
 share/icons/hicolor/128x128/apps/kfloppy.png
@@ -530,8 +529,6 @@ share/icons/hicolor/128x128/apps/kregexpeditor.png
 share/icons/hicolor/128x128/apps/ktimer.png
 share/icons/hicolor/128x128/apps/kwalletmanager.png
 share/icons/hicolor/128x128/apps/kwikdisk.png
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/ark.png
 share/icons/hicolor/16x16/apps/irkick.png
 share/icons/hicolor/16x16/apps/kcalc.png
@@ -546,8 +543,6 @@ share/icons/hicolor/16x16/apps/kregexpeditor.png
 share/icons/hicolor/16x16/apps/ktimer.png
 share/icons/hicolor/16x16/apps/kwalletmanager.png
 share/icons/hicolor/16x16/apps/kwikdisk.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/ark.png
 share/icons/hicolor/22x22/apps/irkick.png
 share/icons/hicolor/22x22/apps/kcalc.png
@@ -559,8 +554,6 @@ share/icons/hicolor/22x22/apps/kjots.png
 share/icons/hicolor/22x22/apps/kregexpeditor.png
 share/icons/hicolor/22x22/apps/kwalletmanager.png
 share/icons/hicolor/22x22/apps/kwikdisk.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/ark.png
 share/icons/hicolor/32x32/apps/irkick.png
 share/icons/hicolor/32x32/apps/kcalc.png
@@ -575,8 +568,6 @@ share/icons/hicolor/32x32/apps/kregexpeditor.png
 share/icons/hicolor/32x32/apps/ktimer.png
 share/icons/hicolor/32x32/apps/kwalletmanager.png
 share/icons/hicolor/32x32/apps/kwikdisk.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/ark.png
 share/icons/hicolor/48x48/apps/kcalc.png
 share/icons/hicolor/48x48/apps/kcharselect.png
@@ -590,8 +581,6 @@ share/icons/hicolor/48x48/apps/kregexpeditor.png
 share/icons/hicolor/48x48/apps/ktimer.png
 share/icons/hicolor/48x48/apps/kwalletmanager.png
 share/icons/hicolor/48x48/apps/kwikdisk.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/ark.png
 share/icons/hicolor/64x64/apps/kcalc.png
 share/icons/hicolor/64x64/apps/kdf.png
@@ -601,8 +590,6 @@ share/icons/hicolor/64x64/apps/kjots.png
 share/icons/hicolor/64x64/apps/kregexpeditor.png
 share/icons/hicolor/64x64/apps/kwalletmanager.png
 share/icons/hicolor/64x64/apps/kwikdisk.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/ark.svgz
 share/icons/hicolor/scalable/apps/kcalc.svgz
 share/icons/locolor/

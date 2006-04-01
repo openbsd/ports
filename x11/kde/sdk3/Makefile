@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2006/02/20 14:08:14 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2006/04/01 10:49:22 espie Exp $
 
 COMMENT= 		"K Desktop Environment, developer extensions"
 CATEGORIES=		x11 x11/kde devel
-VERSION=		3.5.1
+VERSION=		3.5.2
 DISTNAME=		kdesdk-${VERSION}
-PKGNAME=		${DISTNAME}p0
-MODKDE_VERSION=		3.5
+PKGNAME=		${DISTNAME}
+MODKDE_VERSION=		3.5.2
 SHARED_LIBS=	cvsservice		1.0 \
 		kbabelcommon		6.0 \
 		kbabeldictplugin	4.0 \

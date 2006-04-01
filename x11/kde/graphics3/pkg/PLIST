@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2006/02/03 18:42:01 espie Exp $
+@comment $OpenBSD: PLIST,v 1.30 2006/04/01 10:49:20 espie Exp $
 bin/kcolorchooser
 bin/kcoloredit
 bin/kdvi
@@ -601,8 +601,6 @@ share/config.kcfg/kdvi.kcfg
 share/config.kcfg/kghostview.kcfg
 share/config.kcfg/kpdf.kcfg
 share/config.kcfg/kviewshell.kcfg
-share/config/magic/
-share/config/magic/x-image-raw.magic
 share/doc/HTML/en/kamera/
 share/doc/HTML/en/kamera/common
 share/doc/HTML/en/kamera/index.cache.bz2
@@ -801,12 +799,8 @@ share/icons/crystalsvg/32x32/filesystems/camera.png
 share/icons/crystalsvg/32x32/mimetypes/kpovmodeler_doc.png
 share/icons/crystalsvg/48x48/apps/kviewshell.png
 share/icons/crystalsvg/48x48/mimetypes/kpovmodeler_doc.png
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/kghostview.png
 share/icons/hicolor/128x128/apps/kpdf.png
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/kcolorchooser.png
 share/icons/hicolor/16x16/apps/kcoloredit.png
 share/icons/hicolor/16x16/apps/kdvi.png
@@ -822,8 +816,6 @@ share/icons/hicolor/16x16/apps/kruler.png
 share/icons/hicolor/16x16/apps/ksnapshot.png
 share/icons/hicolor/16x16/apps/kuickshow.png
 share/icons/hicolor/16x16/apps/kview.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/kcolorchooser.png
 share/icons/hicolor/22x22/apps/kdvi.png
 share/icons/hicolor/22x22/apps/kfax.png
@@ -837,8 +829,6 @@ share/icons/hicolor/22x22/apps/kruler.png
 share/icons/hicolor/22x22/apps/ksnapshot.png
 share/icons/hicolor/22x22/apps/kuickshow.png
 share/icons/hicolor/22x22/apps/kview.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/kcoloredit.png
 share/icons/hicolor/32x32/apps/kdvi.png
 share/icons/hicolor/32x32/apps/kfax.png
@@ -853,8 +843,6 @@ share/icons/hicolor/32x32/apps/kruler.png
 share/icons/hicolor/32x32/apps/ksnapshot.png
 share/icons/hicolor/32x32/apps/kuickshow.png
 share/icons/hicolor/32x32/apps/kview.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/kdvi.png
 share/icons/hicolor/48x48/apps/kfax.png
 share/icons/hicolor/48x48/apps/kfaxview.png
@@ -867,19 +855,14 @@ share/icons/hicolor/48x48/apps/kpovmodeler.png
 share/icons/hicolor/48x48/apps/kruler.png
 share/icons/hicolor/48x48/apps/ksnapshot.png
 share/icons/hicolor/48x48/apps/kview.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/kghostview.png
 share/icons/hicolor/64x64/apps/kpdf.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/kdvi.svgz
 share/icons/hicolor/scalable/apps/kfax.svgz
 share/icons/hicolor/scalable/apps/kfaxview.svgz
 share/icons/hicolor/scalable/apps/kolourpaint.svgz
 share/icons/hicolor/scalable/apps/kpdf.svgz
 share/icons/hicolor/scalable/apps/ksnapshot.svgz
-share/mimelnk/image/x-image-raw.desktop
 share/mimelnk/text/mrml.desktop
 share/services/camera.protocol
 share/services/djvumultipage.desktop

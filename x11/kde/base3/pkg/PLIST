@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2006/02/03 12:23:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.36 2006/04/01 10:49:19 espie Exp $
 @conflict kdeartwork-<=3.4
 @conflict kdeedu-<3.4
 bin/appletproxy
@@ -156,6 +156,7 @@ include/libkonq_export.h
 lib/kconf_update_bin/
 lib/kconf_update_bin/khotkeys_update
 lib/kconf_update_bin/kicker-3.4-reverseLayout
+lib/kconf_update_bin/kwin_update_default_rules
 lib/kconf_update_bin/kwin_update_window_settings
 ${KDE}/appletproxy.la
 ${KDE}/appletproxy.so
@@ -1118,6 +1119,7 @@ share/apps/kconf_update/kwin_focus1.sh
 share/apps/kconf_update/kwin_focus1.upd
 share/apps/kconf_update/kwin_focus2.sh
 share/apps/kconf_update/kwin_focus2.upd
+share/apps/kconf_update/kwin_fsp_workarounds_1.upd
 share/apps/kconf_update/kwiniconify.upd
 share/apps/kconf_update/kwinsticky.upd
 share/apps/kconf_update/kwinupdatewindowsettings.upd
@@ -1979,6 +1981,8 @@ share/apps/kthememanager/themes/YellowOnBlue/YellowOnBlue.preview.png
 share/apps/kthememanager/themes/YellowOnBlue/YellowOnBlue.xml
 share/apps/kwin/
 share/apps/kwin/b2.desktop
+share/apps/kwin/default_rules/
+share/apps/kwin/default_rules/fsp_workarounds_1
 share/apps/kwin/eventsrc
 share/apps/kwin/keramik.desktop
 share/apps/kwin/laptop.desktop
@@ -2770,6 +2774,9 @@ share/doc/HTML/en/kxkb/
 share/doc/HTML/en/kxkb/common
 share/doc/HTML/en/kxkb/index.cache.bz2
 share/doc/HTML/en/kxkb/index.docbook
+share/doc/HTML/en/kxkb/layout.png
+share/doc/HTML/en/kxkb/switching.png
+share/doc/HTML/en/kxkb/xkb.png
 share/doc/kdm/
 share/doc/kdm/README
 @fontdir share/fonts/
@@ -3494,8 +3501,6 @@ share/icons/crystalsvg/scalable/apps/xclock.svgz
 share/icons/crystalsvg/scalable/apps/xeyes.svgz
 share/icons/crystalsvg/scalable/apps/xpaint.svgz
 share/icons/crystalsvg/scalable/devices/laptop.svgz
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/kappfinder.png
 share/icons/hicolor/128x128/apps/kate.png
 share/icons/hicolor/128x128/apps/kdeprintfax.png
@@ -3509,8 +3514,6 @@ share/icons/hicolor/128x128/apps/ksplash.png
 share/icons/hicolor/128x128/apps/ktip.png
 share/icons/hicolor/128x128/apps/kwrite.png
 share/icons/hicolor/128x128/apps/printmgr.png
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/kappfinder.png
 share/icons/hicolor/16x16/apps/kate.png
 share/icons/hicolor/16x16/apps/kdeprintfax.png
@@ -3530,8 +3533,6 @@ share/icons/hicolor/16x16/apps/ktip.png
 share/icons/hicolor/16x16/apps/kwrite.png
 share/icons/hicolor/16x16/apps/kxkb.png
 share/icons/hicolor/16x16/apps/printmgr.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/kappfinder.png
 share/icons/hicolor/22x22/apps/kate.png
 share/icons/hicolor/22x22/apps/kdeprintfax.png
@@ -3549,8 +3550,6 @@ share/icons/hicolor/22x22/apps/ksplash.png
 share/icons/hicolor/22x22/apps/ktip.png
 share/icons/hicolor/22x22/apps/kwrite.png
 share/icons/hicolor/22x22/apps/printmgr.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/kappfinder.png
 share/icons/hicolor/32x32/apps/kate.png
 share/icons/hicolor/32x32/apps/kdeprintfax.png
@@ -3570,8 +3569,6 @@ share/icons/hicolor/32x32/apps/ktip.png
 share/icons/hicolor/32x32/apps/kwrite.png
 share/icons/hicolor/32x32/apps/kxkb.png
 share/icons/hicolor/32x32/apps/printmgr.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/kappfinder.png
 share/icons/hicolor/48x48/apps/kate.png
 share/icons/hicolor/48x48/apps/kdeprintfax.png
@@ -3590,8 +3587,6 @@ share/icons/hicolor/48x48/apps/ktip.png
 share/icons/hicolor/48x48/apps/kwrite.png
 share/icons/hicolor/48x48/apps/kxkb.png
 share/icons/hicolor/48x48/apps/printmgr.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/kappfinder.png
 share/icons/hicolor/64x64/apps/kate.png
 share/icons/hicolor/64x64/apps/kdeprintfax.png
@@ -3607,8 +3602,6 @@ share/icons/hicolor/64x64/apps/ksplash.png
 share/icons/hicolor/64x64/apps/ktip.png
 share/icons/hicolor/64x64/apps/kwrite.png
 share/icons/hicolor/64x64/apps/printmgr.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/kate2.svgz
 share/icons/hicolor/scalable/apps/kdeprintfax.svgz
 share/icons/hicolor/scalable/apps/khelpcenter.svgz

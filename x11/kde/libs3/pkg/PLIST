@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2006/02/03 12:23:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.38 2006/04/01 10:49:20 espie Exp $
 @conflict kdebase-<3.5
 @conflict kdeartwork-<3.4
 @conflict kdeaddons-<3.4
@@ -1030,32 +1030,6 @@ lib/libkwalletclient.la
 @lib lib/libkwalletclient.so.${LIBkwalletclient_VERSION}
 lib/libvcard.la
 @lib lib/libvcard.so.${LIBvcard_VERSION}
-@man man/man1/artsmessage.1
-@man man/man1/cupsdconf.1
-@man man/man1/dcop.1
-@man man/man1/dcopfind.1
-@man man/man1/dcopserver.1
-@man man/man1/dcopserver_shutdown.1
-@man man/man1/imagetops.1
-@man man/man1/kaddprinterwizard.1
-@man man/man1/kbuildsycoca.1
-@man man/man1/kconf_update.1
-@man man/man1/kcookiejar.1
-@man man/man1/kde-config.1
-@man man/man1/kded.1
-@man man/man1/kdeinit.1
-@man man/man1/kdeinit_shutdown.1
-@man man/man1/kdeinit_wrapper.1
-@man man/man1/kdontchangethehostname.1
-@man man/man1/kfile.1
-@man man/man1/kinstalltheme.1
-@man man/man1/kio_http_cache_cleaner.1
-@man man/man1/kio_uiserver.1
-@man man/man1/kmailservice.1
-@man man/man1/ksendbugmail.1
-@man man/man1/ksvgtopng.1
-@man man/man1/ktelnetservice.1
-@man man/man1/meinproc.1
 share/applications/
 share/applications/kde/
 share/applications/kde/kresources.desktop
@@ -1185,6 +1159,7 @@ share/apps/katepart/syntax/purebasic.xml
 share/apps/katepart/syntax/python.xml
 share/apps/katepart/syntax/r.xml
 share/apps/katepart/syntax/rexx.xml
+share/apps/katepart/syntax/rhtml.xml
 share/apps/katepart/syntax/rib.xml
 share/apps/katepart/syntax/rpmspec.xml
 share/apps/katepart/syntax/rsiidl.xml
@@ -1709,6 +1684,7 @@ share/apps/ksgmltools2/customization/et/entities/underArtisticLicense.docbook
 share/apps/ksgmltools2/customization/et/entities/underBSDLicense.docbook
 share/apps/ksgmltools2/customization/et/entities/underFDL.docbook
 share/apps/ksgmltools2/customization/et/entities/underGPL.docbook
+share/apps/ksgmltools2/customization/et/entities/underLGPL.docbook
 share/apps/ksgmltools2/customization/et/entities/underX11License.docbook
 share/apps/ksgmltools2/customization/et/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/et/lang.entities
@@ -3274,10 +3250,10 @@ share/emoticons/Default/unhappy.png
 share/emoticons/Default/unlove.png
 share/emoticons/Default/wilted_rose.png
 share/emoticons/Default/wink.png
-share/icons/
 share/icons/crystalsvg/
 share/icons/crystalsvg/128x128/
 share/icons/crystalsvg/128x128/actions/
+share/icons/crystalsvg/128x128/actions/fileopen.png
 share/icons/crystalsvg/128x128/actions/launch.png
 share/icons/crystalsvg/128x128/actions/share.png
 share/icons/crystalsvg/128x128/apps/
@@ -4833,6 +4809,7 @@ share/icons/crystalsvg/48x48/mimetypes/zip.png
 share/icons/crystalsvg/64x64/
 share/icons/crystalsvg/64x64/actions/
 share/icons/crystalsvg/64x64/actions/favorites.png
+share/icons/crystalsvg/64x64/actions/fileopen.png
 share/icons/crystalsvg/64x64/actions/knewstuff.png
 share/icons/crystalsvg/64x64/actions/player_play.png
 share/icons/crystalsvg/64x64/actions/share.png
@@ -5030,6 +5007,7 @@ share/icons/crystalsvg/scalable/actions/eraser.svgz
 share/icons/crystalsvg/scalable/actions/exit.svgz
 share/icons/crystalsvg/scalable/actions/fileclose.svgz
 share/icons/crystalsvg/scalable/actions/filenew.svgz
+share/icons/crystalsvg/scalable/actions/fileopen.svgz
 share/icons/crystalsvg/scalable/actions/fileprint.svgz
 share/icons/crystalsvg/scalable/actions/filequickprint.svgz
 share/icons/crystalsvg/scalable/actions/finish.svgz
@@ -5258,7 +5236,6 @@ share/icons/crystalsvg/scalable/mimetypes/widget_doc.svgz
 share/icons/crystalsvg/scalable/mimetypes/wordprocessing.svgz
 share/icons/crystalsvg/scalable/mimetypes/zip.svgz
 share/icons/default.kde
-share/icons/hicolor/
 @comment share/icons/hicolor/index.theme
 share/locale/all_languages
 share/mimelnk/
@@ -5503,6 +5480,7 @@ share/mimelnk/image/x-photo-cd.desktop
 share/mimelnk/image/x-portable-bitmap.desktop
 share/mimelnk/image/x-portable-greymap.desktop
 share/mimelnk/image/x-portable-pixmap.desktop
+@comment share/mimelnk/image/x-raw.desktop
 share/mimelnk/image/x-rgb.desktop
 share/mimelnk/image/x-targa.desktop
 share/mimelnk/image/x-vnd.adobe.photoshop.desktop

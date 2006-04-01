@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2006/01/05 19:36:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.21 2006/04/01 10:49:22 espie Exp $
 @conflict kdelibs-<3.4
 @conflict kdebase-<3.4
 @conflict kpilot-*
@@ -337,8 +337,6 @@ ${KDE}/kabc_slox.la
 ${KDE}/kabc_slox.so
 ${KDE}/kabc_xmlrpc.la
 ${KDE}/kabc_xmlrpc.so
-${KDE}/kcal_blogging.la
-${KDE}/kcal_blogging.so
 ${KDE}/kcal_groupdav.la
 ${KDE}/kcal_groupdav.so
 ${KDE}/kcal_groupwise.la
@@ -565,8 +563,6 @@ lib/libkaddressbook.la
 @lib lib/libkaddressbook.so.${LIBkaddressbook_VERSION}
 lib/libkcal.la
 @lib lib/libkcal.so.${LIBkcal_VERSION}
-lib/libkcal_blogging.la
-@lib lib/libkcal_blogging.so.${LIBkcal_blogging_VERSION}
 lib/libkcal_groupdav.la
 @lib lib/libkcal_groupdav.so.${LIBkcal_groupdav_VERSION}
 lib/libkcal_groupwise.la
@@ -2306,7 +2302,6 @@ share/services/kresources/kabc/kabc_slox.desktop
 share/services/kresources/kabc/kabc_xmlrpc.desktop
 share/services/kresources/kabc/kolab.desktop
 share/services/kresources/kcal/
-share/services/kresources/kcal/blogging.desktop
 share/services/kresources/kcal/exchange.desktop
 share/services/kresources/kcal/imap.desktop
 share/services/kresources/kcal/kabc.desktop
