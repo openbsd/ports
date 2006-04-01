@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/26 13:36:08 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2006/04/01 18:06:32 bernd Exp $
 
 COMMENT=	"extensions to Class::DBI for MySQL "
 
@@ -21,7 +21,7 @@ CONFIGURE_STYLE=perl
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::databases/p5-Class-DBI \
 		::databases/p5-DBD-mysql
-REGRESS_DEPENDS=:mysql-server-4.*:databases/mysql,-server
+REGRESS_DEPENDS=:mysql-server-*:databases/mysql,-server
 
 PKG_ARCH=	*
 
