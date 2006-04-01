@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/26 13:36:07 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2006/04/01 11:51:06 bernd Exp $
 
 COMMENT=	"dynamic definition of Class::DBI sub classes"
 
@@ -22,5 +22,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::databases/p5-Class-DBI 
 
 PKG_ARCH=	*
+
+REGRESS_IS_INTERACTIVE=Yes
 
 .include <bsd.port.mk>
