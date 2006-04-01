@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2005/09/22 16:17:15 kurt Exp $
+# $OpenBSD: Makefile,v 1.30 2006/04/01 13:58:49 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -39,6 +39,7 @@ FETCH_MANUALLY+= " ${DISTFILES} into ${FULLDISTDIR}."
 
 JDK_HOME=	${PREFIX}/jdk1.3.1-linux
 SYSCTL=		${SUDO} sysctl -w kern.emul.linux
+SYSTRACE_SUBST_VARS=WRKSRC
 
 pre-extract:
 	@sysctl -n kern.emul.linux > ${WRKDIR}/.emul_linux
