@@ -1,0 +1,9 @@
+$OpenBSD: patch-man_manl_zdrot_l,v 1.1.1.1 2006/04/01 16:25:12 steven Exp $
+--- man/manl/zdrot.l.orig	Thu Mar 23 22:52:29 2006
++++ man/manl/zdrot.l	Thu Mar 23 22:53:09 2006
+@@ -1,4 +1,4 @@
+-.SH NAME
++.TH ZDROT 3
+ 
+ .SH SYNOPSIS
+ .TP 18

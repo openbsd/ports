@@ -1,0 +1,9 @@
+$OpenBSD: patch-man_manl_csrot_l,v 1.1.1.1 2006/04/01 16:25:12 steven Exp $
+--- man/manl/csrot.l.orig	Thu Mar 23 22:52:23 2006
++++ man/manl/csrot.l	Thu Mar 23 22:53:02 2006
+@@ -1,4 +1,4 @@
+-.SH NAME
++.TH CSROT 3
+ 
+ .SH SYNOPSIS
+ .TP 18

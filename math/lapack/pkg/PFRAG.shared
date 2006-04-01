@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/04/01 16:25:11 steven Exp $
+@lib lib/liblapack.so.${LIBlapack_VERSION}
