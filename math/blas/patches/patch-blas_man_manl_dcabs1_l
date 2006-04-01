@@ -1,0 +1,9 @@
+$OpenBSD: patch-blas_man_manl_dcabs1_l,v 1.1 2006/04/01 19:02:24 steven Exp $
+--- blas/man/manl/dcabs1.l.orig	Sat Apr  1 19:54:21 2006
++++ blas/man/manl/dcabs1.l	Sat Apr  1 19:54:33 2006
+@@ -1,4 +1,4 @@
+-.SH NAME
++.TH DCABS1 3
+ 
+ .SH SYNOPSIS
+ .TP 17

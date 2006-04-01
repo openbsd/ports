@@ -1,0 +1,9 @@
+$OpenBSD: patch-blas_man_manl_zrotg_l,v 1.1 2006/04/01 19:02:24 steven Exp $
+--- blas/man/manl/zrotg.l.orig	Sat Apr  1 19:54:40 2006
++++ blas/man/manl/zrotg.l	Sat Apr  1 19:54:47 2006
+@@ -1,4 +1,4 @@
+-.SH NAME
++.TH ZROTG 3
+ 
+ .SH SYNOPSIS
+ .TP 28

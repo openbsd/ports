@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2005/12/24 14:46:37 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2006/04/01 19:02:23 steven Exp $
 
 COMMENT=	"Basic Linear Algebra Subprograms"
 
 DISTNAME=	blas
-PKGNAME=	${DISTNAME}-${LIBblas_VERSION}
+PKGNAME=	${DISTNAME}-${LIBblas_VERSION}p0
 SHARED_LIBS=	blas	1.0
-SHLIB_MAJOR=	${LIBblas_VERSION:R}
-SHLIB_MINOR=	${LIBblas_VERSION:E}
 
 CATEGORIES=	math
+DISTFILES=	blas.tgz manpages.tgz:0
 
 HOMEPAGE=	http://www.netlib.org/blas/
 
@@ -23,12 +22,24 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	ftp://ftp.netlib.org/blas/ \
 		ftp://netlib.bell-labs.com/netlib/blas/ \
 		http://www.netlib.no/netlib/blas/
+MASTER_SITES0=	${MASTER_SITES:S/blas/lapack/}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PKGNAME}
 WRKDIST=	${WRKDIR}
 
 MAKE_FILE=	${FILESDIR}/Makefile
-MAKE_ENV=	SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR}
+MAKE_ENV=	SHLIB_MAJOR=${LIBblas_VERSION:R} \
+		SHLIB_MINOR=${LIBblas_VERSION:E}
 FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
+
+MANSRC=		${WRKDIR}/${DISTNAME}/man/manl
+
+pre-build:
+	@rm -f ${MANSRC}/{lsame,xerbla}.l
+	@perl -pi -e 's/(\.TH\s+\w+)\s+l(.*)/\1 3\2/' ${MANSRC}/*.l
+	@cd ${MANSRC} && for m in *.l; do mv $$m $${m%\.l}.3; done
+
+post-install:
+	${INSTALL_MAN} ${MANSRC}/*.3 ${PREFIX}/man/man3
 
 .include <bsd.port.mk>
