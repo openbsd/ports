@@ -1,14 +1,41 @@
-# $OpenBSD: Makefile,v 1.29 2006/02/14 23:35:15 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2006/04/02 09:44:31 espie Exp $
 
 COMMENT=		"office suite for KDE"
 
 CATEGORIES=		x11 x11/kde productivity
 VMEM_WARNING=		Yes
-MASTER_SITES?=		${MASTER_SITE_KDE:S@$@stable/koffice-1.4.2/src/@}
+MASTER_SITES?=		${MASTER_SITE_KDE:S@$@unstable/koffice-1.5-rc1/src/@}
 
-DISTNAME=	koffice-1.4.2
-PKGNAME=	${DISTNAME}p2
-SHARED_LIBS=	karbonbase		3.0 \
+DISTNAME=	koffice-1.5.0-rc1
+PKGNAME=	koffice-1.5.0rc1
+#SHARED_LIBS=	karbonbase		3.0 \
+#		kexipropertyeditor	1.0 \
+#		koscript		3.0 \
+
+SHARED_LIBS=	kchartimageexport	4.0 \
+		kexiutils		1.0 \
+		kopalette		1.0 \
+		koproperty		0.0 \
+		kpresenterimageexport	4.0 \
+		kpresenterprivate	4.0 \
+		krita_cmyk_u16		0.0 \
+		krita_gray_u16		0.0 \
+		krita_lms_f32		0.0 \
+		krita_rgb_f16half	0.0 \
+		krita_rgb_f32		0.0 \
+		krita_rgb_u16		0.0 \
+		kritacolor		1.0 \
+		kritagrayscale		0.0 \
+		kritaimage		1.0 \
+		kritargb		0.0 \
+		kritascripting		0.0 \
+		kritaui			1.0 \
+		krossapi		1.0 \
+		krossmain		1.0 \
+		kwordprivate		4.0
+
+# need to check version of these
+SHARED_LIBS+=				    \
 		karboncommon		1.0 \
 		kchartcommon		3.0 \
 		kdchart			1.0 \
@@ -21,7 +48,6 @@ SHARED_LIBS=	karbonbase		3.0 \
 		kexiguiutils		1.0 \
 		keximain		1.0 \
 		keximigrate		1.0 \
-		kexipropertyeditor	1.0 \
 		kexirelationsview	1.0 \
 		kexisql2		3.0 \
 		kexisql3		4.0 \
@@ -32,7 +58,6 @@ SHARED_LIBS=	karbonbase		3.0 \
 		kofficecore		3.0 \
 		kofficeui		3.0 \
 		kopainter		2.0 \
-		koscript		3.0 \
 		kotext			3.0 \
 		kowmf			2.0 \
 		kritacommon		2.0 \
@@ -47,18 +72,20 @@ FLAVORS=debug
 FAKE_FLAGS=	${MAKE_FLAGS} TAR=tar DESTDIR=${WRKINST}
 
 SEPARATE_BUILD=	flavored
+BUILD_DEPENDS+=	::devel/pkgconfig
 
-MODKDE_VERSION=	3.4
+MODKDE_VERSION=	3.5.2
 AUTOCONF?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
 AUTOCONF_VERSION=2.59
 
 LIB_DEPENDS=	kdecore.4,DCOP,artskde,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kparts,kspell,kabc,kjs,kresources,ktexteditor,kutils,kwalletclient,vcard,kspell2,knewstuff,kmdi::x11/kde/libs3 \
-		python2.3.0.0:python-2.3.*:lang/python/2.3 \
+		python2.4.0.0:python-2.4.*:lang/python/2.4 \
 		art_lgpl_2.5::graphics/libart \
 		wv2::converters/wv2 \
 		Magick::graphics/ImageMagick \
 		jbig::graphics/jbigkit \
-		mysqlclient::databases/mysql
+		mysqlclient::databases/mysql \
+		ruby::lang/ruby
 
 
 WANTLIB=	ICE SM X11 Xext Xrender artsflow artsflow_idl audiofile bz2 c \
@@ -66,7 +93,9 @@ WANTLIB=	ICE SM X11 Xext Xrender artsflow artsflow_idl audiofile bz2 c \
 		gsf-1 gthread-2.0.0.0 iconv intl jasper jpeg kmedia2_idl lcms \
 		m mad mcop ogg ossaudio pcre pcreposix png pthread qtmcop \
 		soundserver_idl stdc++ tiff util vorbis vorbisenc vorbisfile \
-		xml2 xslt z Xt termcap Xi fontconfig crypto readline ssl
+		xml2 xslt z Xt termcap Xi fontconfig crypto readline ssl \
+		IlmImf Half Imath GLU GL Iex
+
 
 CONFIGURE_ARGS+= --with-pgsqlincdir=${LOCALBASE}/include/postgresql
 LIB_DEPENDS+=	pqxx::databases/libpqxx \

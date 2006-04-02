@@ -1,0 +1,17 @@
+$OpenBSD: patch-karbon_core_vtext_cc,v 1.1 2006/04/02 09:44:31 espie Exp $
+--- karbon/core/vtext.cc.orig	Sat Apr  1 14:49:46 2006
++++ karbon/core/vtext.cc	Sat Apr  1 14:49:54 2006
+@@ -732,6 +732,8 @@ VText::buildRequest( QString family, int
+ 	return fileName;
+ }
+ 
++#endif // HAVE_KARBONTEXT
++
+ void VText::setOffset( double offset )
+ {
+ 	if( offset < 0.0 )
+@@ -742,4 +744,3 @@ void VText::setOffset( double offset )
+ 		m_offset = offset;
+ }
+ 
+-#endif // HAVE_KARBONTEXT

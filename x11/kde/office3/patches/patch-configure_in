@@ -1,29 +1,29 @@
-$OpenBSD: patch-configure_in,v 1.4 2006/01/17 15:08:08 naddy Exp $
---- configure.in.orig	Tue Jul 19 21:55:34 2005
-+++ configure.in	Tue Sep 20 23:07:48 2005
-@@ -845,8 +845,8 @@ dnl ====================================
+$OpenBSD: patch-configure_in,v 1.5 2006/04/02 09:44:31 espie Exp $
+--- configure.in.orig	Thu Mar 23 21:13:59 2006
++++ configure.in	Sat Apr  1 15:12:43 2006
+@@ -935,8 +935,8 @@ dnl *** Check that the paths given to co
+ 
+     AC_MSG_CHECKING([for PostgreSQL C API libraries])
+     pgsql_libdirs="$ac_pgsql_libdir /usr/local/lib$kdelibsuff /usr/lib$kdelibsuff"
+-    AC_FIND_FILE(libpq.so, $pgsql_libdirs, pgsql_libdir)
+-    if test -r $pgsql_libdir/libpq.so; then
++    AC_FIND_FILE(libpq.a, $pgsql_libdirs, pgsql_libdir)
++    if test -r $pgsql_libdir/libpq.a; then
+       PG_LIBDIR=$pgsql_libdir
+       AC_MSG_RESULT([$PG_LIBDIR])
+       AC_SUBST(PG_LIBDIR)
+@@ -1015,8 +1015,8 @@ dnl ====================================
  if test "$compile_pgsql_plugin" = "yes"; then
-   AC_MSG_CHECKING([for PostgreSQL... Step 2 of 4])
-   pgsql_libdirs="$ac_pgsql_libdir /usr/lib /usr/local/lib /usr/local/pgsql/lib /opt/postgres/lib"
--  AC_FIND_FILE(libpq.so, $pgsql_libdirs, pgsql_libdir)
--  if test ! -r $pgsql_libdir/libpq.so; then
-+  AC_FIND_FILE(libpq.a, $pgsql_libdirs, pgsql_libdir)
-+  if test ! -r $pgsql_libdir/libpq.a; then
-     compile_pgsql_plugin="no"
-     AC_MSG_RESULT([not found])
-   else
-@@ -880,8 +880,8 @@ dnl ====================================
- if test "$compile_pgsql_plugin" = "yes"; then
-   AC_MSG_CHECKING([for PostgreSQL... Step 4 of 4])
-   pqxx_libdirs="$ac_pqxx_libdir /usr/lib /usr/local/lib /usr/local/pqxx/lib"
+   AC_MSG_CHECKING([for PostgreSQL C++ libraries])
+   pqxx_libdirs="$ac_pqxx_libdir /usr/local/lib$kdelibsuff /usr/lib$kdelibsuff"
 -  AC_FIND_FILE(libpqxx.so, $pqxx_libdirs, pqxx_libdir)
--  if test ! -r $pqxx_libdir/libpqxx.so; then
-+  AC_FIND_FILE(libpqxx.so.1.0, $pqxx_libdirs, pqxx_libdir)
-+  if test ! -r $pqxx_libdir/libpqxx.so.1.0; then
-     compile_pgsql_plugin="no"
-     AC_MSG_RESULT([not found])
-   else
-@@ -918,7 +918,7 @@ AC_CACHE_VAL(ac_cv_have_knewstuff,
+-  if test -r $pqxx_libdir/libpqxx.so; then
++  AC_FIND_FILE(libpqxx.a, $pqxx_libdirs, pqxx_libdir)
++  if test -r $pqxx_libdir/libpqxx.a; then
+     PQXX_LIBDIR=$pqxx_libdir
+     AC_MSG_RESULT([$PQXX_LIBDIR])
+     AC_SUBST(PQXX_LIBDIR)
+@@ -1053,7 +1053,7 @@ AC_CACHE_VAL(ac_cv_have_knewstuff,
  AC_FIND_FILE(knewstuff/downloaddialog.h, $kde_incdirs, knewstuff_incdir)
  ac_knewstuff_includes="$knewstuff_incdir"
  
@@ -32,7 +32,24 @@ $OpenBSD: patch-configure_in,v 1.4 2006/01/17 15:08:08 naddy Exp $
  ac_knewstuff_libraries="$knewstuff_libdir"
  
  if test "$ac_knewstuff_includes" = NO || test "$ac_knewstuff_libraries" = NO; then
-@@ -1245,7 +1245,7 @@ dnl FILE: ./lib/kotext/configure.in.in
+@@ -1220,6 +1220,8 @@ AC_SUBST(LCMS_LIBS)
+ # Check if the 1.14 version of lcms is detected
+ if test ! "$LCMS_LIBS" = ""
+ then
++kde_safe_cppflags=$CPPFLAGS
++CPPFLAGS="$CPPFLAGS $all_includes"
+ AC_LANG_SAVE
+ AC_LANG_CPLUSPLUS
+ AC_TRY_COMPILE(
+@@ -1228,6 +1230,7 @@ AC_TRY_COMPILE(
+      #error lcms 1.14 detected
+      #endif ] , [ ], lcms_version_114='no', lcms_version_114='yes' )
+ AC_LANG_RESTORE
++CPPFLAGS=$kde_safe_cppflags
+ fi
+ 
+ # IM 6.1.3 changed the number of arguments to GetMagickInfoList
+@@ -1412,7 +1415,7 @@ dnl FILE: ./lib/kotext/configure.in.in
  dnl =======================================================
  
     AC_LANG_SAVE
