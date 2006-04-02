@@ -1,7 +1,16 @@
-$OpenBSD: patch-tcpslice_c,v 1.1 2001/10/18 15:12:40 naddy Exp $
---- tcpslice.c.orig	Fri Oct 12 18:24:23 2001
-+++ tcpslice.c	Fri Oct 12 18:28:45 2001
-@@ -71,14 +71,14 @@ enum stamp_styles timestamp_style = TIME
+$OpenBSD: patch-tcpslice_c,v 1.2 2006/04/02 14:45:10 sturm Exp $
+--- tcpslice.c.orig	Tue Oct 25 00:06:26 2005
++++ tcpslice.c	Sun Apr  2 13:24:33 2006
+@@ -84,7 +84,7 @@ static const char rcsid[] =
+ struct state {
+ 	off_t	start_pos,	/* seek position corresponding to start time */
+ 		stop_pos;	/* seek position corresponding to stop time */
+-	struct timeval
++	struct bpf_timeval
+ 		file_start_time,	/* time of first pkt in file */
+ 		file_stop_time;		/* time of last pkt in file */
+ 	pcap_t	*p;
+@@ -107,19 +107,19 @@ enum stamp_styles timestamp_style = TIME
  
  
  int is_timestamp( char *str );
@@ -11,17 +20,24 @@ $OpenBSD: patch-tcpslice_c,v 1.1 2001/10/18 15:12:40 naddy Exp $
  void get_file_range( char filename[], pcap_t **p,
 -			struct timeval *first_time, struct timeval *last_time );
 -struct timeval first_packet_time(char filename[], pcap_t **p_addr);
+-struct timeval lowest_start_time(struct state *states, int numfiles);
 +			struct bpf_timeval *first_time, struct bpf_timeval *last_time );
 +struct bpf_timeval first_packet_time(char filename[], pcap_t **p_addr);
- void extract_slice(char filename[], char write_file_name[],
--			struct timeval *start_time, struct timeval *stop_time);
++struct bpf_timeval lowest_start_time(struct state *states, int numfiles);
+ void get_next_packet(struct state *s);
+ struct state *open_files(char *filenames[], int numfiles);
+ void extract_slice(struct state *states, int numfiles, char *write_file_name,
+-			struct timeval *start_time, struct timeval *stop_time,
++			struct bpf_timeval *start_time, struct bpf_timeval *stop_time,
+ 			int keep_dups, int relative_time_merge,
+-			struct timeval *base_time);
 -char *timestamp_to_string(struct timeval *timestamp);
-+			struct bpf_timeval *start_time, struct bpf_timeval *stop_time);
++			struct bpf_timeval *base_time);
 +char *timestamp_to_string(struct bpf_timeval *timestamp);
  void dump_times(pcap_t **p, char filename[]);
  __dead void usage(void)__attribute__((volatile));
  
-@@ -98,7 +98,7 @@ main(int argc, char **argv)
+@@ -144,7 +144,7 @@ main(int argc, char **argv)
  	char *start_time_string = 0;
  	char *stop_time_string = 0;
  	char *write_file_name = "-";	/* default is stdout */
@@ -29,8 +45,8 @@ $OpenBSD: patch-tcpslice_c,v 1.1 2001/10/18 15:12:40 naddy Exp $
 +	struct bpf_timeval first_time, start_time, stop_time;
  	pcap_t *pcap;
  	char ebuf[PCAP_ERRBUF_SIZE];
- 
-@@ -223,15 +223,19 @@ int is_timestamp( char *str )
+ 	struct state *states;
+@@ -280,15 +280,19 @@ int is_timestamp( char *str )
   * containing the specified time.
   */
  
@@ -39,8 +55,7 @@ $OpenBSD: patch-tcpslice_c,v 1.1 2001/10/18 15:12:40 naddy Exp $
 +struct bpf_timeval
 +parse_time(char *time_string, struct bpf_timeval base_time)
  {
--	struct tm *bt = localtime((time_t *) &base_time.tv_sec);
-+	struct tm *bt;
+ 	struct tm *bt = localtime((time_t *) &base_time.tv_sec);
  	struct tm t;
 -	struct timeval result;
 +	struct bpf_timeval result;
@@ -54,7 +69,7 @@ $OpenBSD: patch-tcpslice_c,v 1.1 2001/10/18 15:12:40 naddy Exp $
  	if ( is_delta )
  		++time_string;	/* skip over '+' sign */
  
-@@ -412,7 +416,7 @@ fill_tm(char *time_string, int is_delta,
+@@ -472,7 +476,7 @@ fill_tm(char *time_string, int is_delta,
   */
  void
  get_file_range( char filename[], pcap_t **p,
@@ -63,7 +78,7 @@ $OpenBSD: patch-tcpslice_c,v 1.1 2001/10/18 15:12:40 naddy Exp $
  {
  	*first_time = first_packet_time( filename, p );
  
-@@ -427,7 +431,7 @@ int snaplen;
+@@ -485,7 +489,7 @@ get_file_range( char filename[], pcap_t 
   * reading.
   */
  
@@ -72,29 +87,37 @@ $OpenBSD: patch-tcpslice_c,v 1.1 2001/10/18 15:12:40 naddy Exp $
  first_packet_time(char filename[], pcap_t **p_addr)
  {
  	struct pcap_pkthdr hdr;
-@@ -457,10 +461,10 @@ first_packet_time(char filename[], pcap_
+@@ -504,10 +508,10 @@ first_packet_time(char filename[], pcap_
+ 
+ 
+ /* Of all the files, what is the lowest start time. */
+-struct timeval
++struct bpf_timeval
+ lowest_start_time(struct state *states, int numfiles)
+ {
+-	struct timeval min_time = states->file_start_time;
++	struct bpf_timeval min_time = states->file_start_time;
+ 
+ 	while (numfiles--) {
+ 		if (sf_timestamp_less_than(&states->file_start_time, &min_time)) {
+@@ -590,13 +594,13 @@ open_files(char *filenames[], int numfil
  
  void
- extract_slice(char filename[], char write_file_name[],
--		struct timeval *start_time, struct timeval *stop_time)
-+		struct bpf_timeval *start_time, struct bpf_timeval *stop_time)
+ extract_slice(struct state *states, int numfiles, char *write_file_name,
+-		struct timeval *start_time, struct timeval *stop_time,
++		struct bpf_timeval *start_time, struct bpf_timeval *stop_time,
+ 		int keep_dups, int relative_time_merge,
+-		struct timeval *base_time)
++		struct bpf_timeval *base_time)
  {
- 	off_t start_pos, stop_pos;
--	struct timeval file_start_time, file_stop_time;
-+	struct bpf_timeval file_start_time, file_stop_time;
- 	struct pcap_pkthdr hdr;
- 	pcap_t *p;
- 	char errbuf[PCAP_ERRBUF_SIZE];
-@@ -511,7 +515,7 @@ extract_slice(char filename[], char writ
+ 	struct state *s, *min_state;
+ 	pcap_dumper_t *dumper;
+-	struct timeval temp1, temp2, relative_start, relative_stop;
++	struct bpf_timeval temp1, temp2, relative_start, relative_stop;
+ 	int i;
  
- 	for ( ; ; )
- 		{
--		struct timeval *timestamp;
-+		struct bpf_timeval *timestamp;
- 		const u_char *pkt = pcap_next( p, &hdr );
- 
- 		if ( pkt == 0 )
-@@ -554,7 +558,7 @@ extract_slice(char filename[], char writ
+ 	struct state *last_state;	/* remember the last packet */
+@@ -747,7 +751,7 @@ extract_slice(struct state *states, int 
   */
  
  char *
@@ -103,7 +126,7 @@ $OpenBSD: patch-tcpslice_c,v 1.1 2001/10/18 15:12:40 naddy Exp $
  {
  	struct tm *t;
  #define NUM_BUFFERS 2
-@@ -599,7 +603,7 @@ timestamp_to_string(struct timeval *time
+@@ -793,7 +797,7 @@ timestamp_to_string(struct timeval *time
  void
  dump_times(pcap_t **p, char filename[])
  {

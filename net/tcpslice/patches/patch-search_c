@@ -1,6 +1,6 @@
-$OpenBSD: patch-search_c,v 1.1 2001/10/18 15:12:40 naddy Exp $
---- search.c.orig	Fri Oct 12 18:21:37 2001
-+++ search.c	Fri Oct 12 18:22:45 2001
+$OpenBSD: patch-search_c,v 1.2 2006/04/02 14:45:10 sturm Exp $
+--- search.c.orig	Sun Sep 10 10:52:40 2000
++++ search.c	Sun Apr  2 13:24:33 2006
 @@ -279,8 +279,8 @@ find_header( pcap_t *p, u_char *buf, int
   * present in the dump file.
   */
@@ -10,9 +10,9 @@ $OpenBSD: patch-search_c,v 1.1 2001/10/18 15:12:40 naddy Exp $
 +sf_find_end( pcap_t *p, struct bpf_timeval *first_timestamp,
 +		struct bpf_timeval *last_timestamp )
  	{
- 	u_int32_t first_time = first_timestamp->tv_sec;
- 	int num_bytes;
-@@ -373,7 +373,7 @@ sf_find_end( pcap_t *p, struct timeval *
+ 	time_t first_time = first_timestamp->tv_sec;
+ 	off_t len_file;
+@@ -383,7 +383,7 @@ sf_find_end( pcap_t *p, struct timeval *
  /* Takes two timeval's and returns the difference, tv2 - tv1, as a double. */
  
  static double
@@ -21,7 +21,7 @@ $OpenBSD: patch-search_c,v 1.1 2001/10/18 15:12:40 naddy Exp $
  	{
  	double result = (tv2->tv_sec - tv1->tv_sec);
  	result += (tv2->tv_usec - tv1->tv_usec) / 1000000.0;
-@@ -385,7 +385,7 @@ timeval_diff( struct timeval *tv1, struc
+@@ -395,7 +395,7 @@ timeval_diff( struct timeval *tv1, struc
  /* Returns true if timestamp t1 is chronologically less than timestamp t2. */
  
  int
@@ -30,7 +30,7 @@ $OpenBSD: patch-search_c,v 1.1 2001/10/18 15:12:40 naddy Exp $
  	{
  	return t1->tv_sec < t2->tv_sec ||
  	       (t1->tv_sec == t2->tv_sec &&
-@@ -399,9 +399,9 @@ sf_timestamp_less_than( struct timeval *
+@@ -409,9 +409,9 @@ sf_timestamp_less_than( struct timeval *
   */
  
  static off_t
@@ -43,7 +43,7 @@ $OpenBSD: patch-search_c,v 1.1 2001/10/18 15:12:40 naddy Exp $
  	{
  	double full_span = timeval_diff( max_time, min_time );
  	double desired_span = timeval_diff( desired_time, min_time );
-@@ -422,7 +422,7 @@ interpolated_position( struct timeval *m
+@@ -432,7 +432,7 @@ interpolated_position( struct timeval *m
   */
  
  static int
@@ -52,16 +52,16 @@ $OpenBSD: patch-search_c,v 1.1 2001/10/18 15:12:40 naddy Exp $
  	{
  	struct pcap_pkthdr hdr;
  	const u_char *buf;
-@@ -431,7 +431,7 @@ read_up_to( pcap_t *p, struct timeval *d
+@@ -441,7 +441,7 @@ read_up_to( pcap_t *p, struct timeval *d
  
  	for ( ; ; )
  		{
 -		struct timeval *timestamp;
 +		struct bpf_timeval *timestamp;
  
- 		pos = ftell( pcap_file( p ) );
+ 		pos = FTELL( pcap_file( p ) );
  		buf = pcap_next( p, &hdr );
-@@ -480,12 +480,12 @@ read_up_to( pcap_t *p, struct timeval *d
+@@ -490,12 +490,12 @@ read_up_to( pcap_t *p, struct timeval *d
  
  int
  sf_find_packet( pcap_t *p,

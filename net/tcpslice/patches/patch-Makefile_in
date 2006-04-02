@@ -1,36 +1,36 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2001/01/08 09:04:30 danh Exp $
---- Makefile.in.orig	Fri Jan 24 01:25:22 1997
-+++ Makefile.in	Mon Jan  8 03:51:00 2001
-@@ -40,8 +40,8 @@ VPATH = @srcdir@
- #
+$OpenBSD: patch-Makefile_in,v 1.2 2006/04/02 14:45:10 sturm Exp $
+--- Makefile.in.orig	Sun Sep 10 10:54:27 2000
++++ Makefile.in	Sun Apr  2 13:24:32 2006
+@@ -41,8 +41,8 @@ VPATH = @srcdir@
  
  CC = @CC@
+ PROG = tcpslice
 -CCOPT = @V_CCOPT@
 -INCLS = -I. @V_INCLS@
 +CCOPT = @CFLAGS@
-+INCLS = -I. -I$(srcdir) -I$(srcdir)/lbl
++INCLS = -I. -I$(srcdir) -I$(srcdir)/lbl 
  DEFS = @DEFS@
  
  # Standard CFLAGS
-@@ -55,9 +55,9 @@ INSTALL = @INSTALL@
+@@ -59,9 +59,9 @@ INSTALL = @INSTALL@
  # Explicitly define compilation rule since SunOS 4's make doesn't like gcc.
  # Also, gcc does not remove the .o before forking 'as', which can be a
  # problem if you don't own the file but can write to the directory.
 -.c.o:
 -	@rm -f $@
 -	$(CC) $(CFLAGS) -c $(srcdir)/$*.c
-+# .c.o:
-+# 	@rm -f $@
-+# 	$(CC) $(CFLAGS) -c $*.c
++#.c.o:
++#	@rm -f $@
++#	$(CC) $(CFLAGS) -c $(srcdir)/$*.c
  
  CSRC =	tcpslice.c gmt2local.c gwtm2secs.c machdep.c search.c util.c
  GENSRC = version.c
-@@ -94,7 +94,7 @@ version.c: $(srcdir)/VERSION
- 
+@@ -97,7 +97,7 @@ version.c: $(srcdir)/VERSION
+ 	sed -e 's/.*/char version[] = "&";/' $(srcdir)/VERSION > $@
  
  install: force
 -	$(INSTALL) -m 555 -o bin -g bin tcpslice $(DESTDIR)$(BINDEST)
 +	$(INSTALL) -s -m 555 -o root -g bin tcpslice $(DESTDIR)$(BINDEST)
  
  install-man: force
- 	$(INSTALL) -m 444 -o bin -g bin $(srcdir)/tcpslice.1 \
+ 	$(INSTALL) -m 444 -o bin -g bin $(srcdir)/$(PROG).1 \
