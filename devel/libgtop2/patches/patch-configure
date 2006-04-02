@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2006/04/02 12:21:00 sturm Exp $
+--- configure.orig	Sun Apr  2 14:13:28 2006
++++ configure	Sun Apr  2 14:14:22 2006
+@@ -20141,7 +20141,7 @@ echo $ECHO_N "checking for libgtop sysde
+ 	  libgtop_sysdeps_dir=freebsd
+ 	  libgtop_use_machine_h=yes
+ 	  libgtop_need_server=yes
+-	  libgtop_postinstall='chgrp kmem $(bindir)/libgtop_server && chmod 2755 $(bindir)/libgtop_server'
++	  libgtop_postinstall=
+ 	  ;;
+ 	solaris*)
+ 	  libgtop_sysdeps_dir=solaris
