@@ -1,12 +1,26 @@
 	native-__sysctl: permit
 	native-accept: permit
 	native-bind: sockaddr match "/tmp" then permit
+	native-bind: sockaddr match "/var/tmp" then permit
 	native-bind: sockaddr match "${TMPDIR}" then permit
+	native-bind: sockaddr match "${WRKDIR}" then permit
 	native-break: permit
 	native-chdir: permit
-	native-chflags: permit
-	native-chmod: permit
-	native-chown: permit
+	native-chflags: filename match "/tmp" then permit
+	native-chflags: filename match "/var/tmp" then permit
+	native-chflags: filename match "${TMPDIR}" then permit
+	native-chflags: filename match "${WRKDIR}" then permit
+	native-chflags: filename match "/<non-existent filename>: *" then deny[enoent]
+	native-chmod: filename match "/tmp" then permit
+	native-chmod: filename match "/var/tmp" then permit
+	native-chmod: filename match "${TMPDIR}" then permit
+	native-chmod: filename match "${WRKDIR}" then permit
+	native-chmod: filename match "/<non-existent filename>: *" then deny[enoent]
+	native-chown: filename match "/tmp" then permit
+	native-chown: filename match "/var/tmp" then permit
+	native-chown: filename match "${TMPDIR}" then permit
+	native-chown: filename match "${WRKDIR}" then permit
+	native-chown: filename match "/<non-existent filename>: *" then deny[enoent]
 	native-chroot: permit
 	native-clock_gettime: permit
 	native-close: permit
@@ -17,7 +31,9 @@
 	native-connect: sockaddr eq "family(0)" then permit
 	native-connect: sockaddr match "/dev/log" then permit
 	native-connect: sockaddr match "/tmp" then permit
+	native-connect: sockaddr match "/var/tmp" then permit
 	native-connect: sockaddr match "${TMPDIR}" then permit
+	native-connect: sockaddr match "${WRKDIR}" then permit
 	native-dup2: permit
 	native-dup: permit
 	native-execve: true then permit
@@ -39,12 +55,13 @@
 	native-fswrite: filename eq "/dev/tty" then permit
 	native-fswrite: filename eq "/dev/zero" then permit
 	native-fswrite: filename match "/tmp" then permit
-	native-fswrite: filename match "${TMPDIR}" then permit
+	native-fswrite: filename match "/var/tmp" then permit
 	native-fswrite: filename match "${DISTDIR}" then permit
-	native-fswrite: filename match "${WRKDIR}" then permit
+	native-fswrite: filename match "${PKG_TMPDIR}" then permit
 	native-fswrite: filename match "${PORTSDIR}/bulk" then permit
 	native-fswrite: filename match "${PORTSDIR}/packages" then permit
-	native-fswrite: filename match "${PKG_TMPDIR}" then permit
+	native-fswrite: filename match "${TMPDIR}" then permit
+	native-fswrite: filename match "${WRKDIR}" then permit
 	native-fswrite: filename match "/<non-existent filename>: *" then deny[enoent]
 	native-fsync: permit
 	native-ftruncate: permit
@@ -74,10 +91,16 @@
 	native-kevent: permit
 	native-kill: permit
 	native-kqueue: permit
-	native-lchown: permit
+	native-lchown: filename match "/tmp" then permit
+	native-lchown: filename match "/var/tmp" then permit
+	native-lchown: filename match "${TMPDIR}" then permit
+	native-lchown: filename match "${WRKDIR}" then permit
+	native-lchown: filename match "/<non-existent filename>: *" then deny[enoent]
 	native-link: filename match "/tmp" and filename[1] match "/tmp" then permit
+	native-link: filename match "/var/tmp" and filename[1] match "/var/tmp" then permit
+	native-link: filename match "${TMPDIR}" and filename[1] match "${TMPDIR}" then permit
 	native-link: filename match "${WRKDIR}" and filename[1] match "${WRKDIR}" then permit
-	native-link: filename[1] match "/<non-existent filename>: *" then deny[enoent]
+	native-link: filename match "/<non-existent filename>: *" then deny[enoent]
 	native-listen: permit
 	native-lseek: permit
 	native-madvise: permit
@@ -100,7 +123,15 @@
 	native-readv: permit
 	native-recvfrom: permit
 	native-recvmsg: permit
-	native-rename: permit
+	native-rename: filename match "/tmp" and filename[1] match "/tmp" then permit
+	native-rename: filename match "/tmp" and filename[1] match "${WRKDIR}" then permit
+	native-rename: filename match "/var/tmp" and filename[1] match "/var/tmp" then permit
+	native-rename: filename match "/var/tmp" and filename[1] match "${WRKDIR}" then permit
+	native-rename: filename match "${TMPDIR}" and filename[1] match "${TMPDIR}" then permit
+	native-rename: filename match "${TMPDIR}" and filename[1] match "${WRKDIR}" then permit
+	native-rename: filename match "${WRKDIR}" and filename[1] match "${WRKDIR}" then permit
+	native-rename: filename match "/<non-existent filename>: *" then deny[enoent]
+	native-rfork: permit
 	native-select: permit
 	native-sendmsg: permit
 	native-sendto: permit
@@ -132,6 +163,8 @@
 	native-socketpair: permit
 	native-statfs: permit
 	native-symlink: filename match "/tmp" then permit
+	native-symlink: filename match "/var/tmp" then permit
+	native-symlink: filename match "${TMPDIR}" then permit
 	native-symlink: filename match "${WRKDIR}" then permit
 	native-symlink: filename match "/<non-existent filename>: *" then deny[enoent]
 	native-symlink: string eq "" and filename eq "" then deny[enoent]
