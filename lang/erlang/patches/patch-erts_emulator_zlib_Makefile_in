@@ -1,0 +1,12 @@
+$OpenBSD: patch-erts_emulator_zlib_Makefile_in,v 1.1 2006/04/02 16:52:04 steven Exp $
+--- erts/emulator/zlib/Makefile.in.orig	Sun Apr  2 12:13:31 2006
++++ erts/emulator/zlib/Makefile.in	Sun Apr  2 12:13:56 2006
+@@ -15,7 +15,7 @@ ARFLAGS = rc
+ ifeq ($(findstring ose,$(TARGET)),ose)
+   TYPE_FLAGS =
+ else
+-  TYPE_FLAGS = -O3
++  TYPE_FLAGS =
+ endif
+ CFLAGS = @CFLAGS@ @DEFS@ @EMU_THR_DEFS@ $(TYPE_FLAGS)
+ #CFLAGS=-O -DMAX_WBITS=14 -DMAX_MEM_LEVEL=7

@@ -1,6 +1,6 @@
-$OpenBSD: patch-erts_configure,v 1.1 2006/03/26 09:18:16 steven Exp $
---- erts/configure.orig	Wed Mar  8 00:02:39 2006
-+++ erts/configure	Sat Mar 25 20:46:17 2006
+$OpenBSD: patch-erts_configure,v 1.2 2006/04/02 16:52:04 steven Exp $
+--- erts/configure.orig	Fri Mar 24 18:43:23 2006
++++ erts/configure	Fri Mar 24 18:43:59 2006
 @@ -5833,7 +5833,7 @@ static void unmask_x87(void)
      __asm__ __volatile__("fldcw %0" : : "m"(cw));
  }

@@ -1,6 +1,6 @@
-$OpenBSD: patch-erts_etc_unix_Install_src,v 1.1 2006/03/07 19:30:36 sturm Exp $
+$OpenBSD: patch-erts_etc_unix_Install_src,v 1.2 2006/04/02 16:52:04 steven Exp $
 --- erts/etc/unix/Install.src.orig	Fri Dec  2 16:07:40 2005
-+++ erts/etc/unix/Install.src	Sun Mar  5 10:37:37 2006
++++ erts/etc/unix/Install.src	Thu Mar 23 00:00:17 2006
 @@ -8,7 +8,8 @@ while [ $# -ne 0 ]; do
  	case $1 in
  		-minimal) start_option=minimal ;;
@@ -55,12 +55,20 @@ $OpenBSD: patch-erts_etc_unix_Install_src,v 1.1 2006/03/07 19:30:36 sturm Exp $
  
  if [ "$start_option" = "query" ]
  then
-@@ -142,7 +143,7 @@ fi
- if [ -d $ERL_ROOT/man ]
- then
-     cd $ERL_ROOT
--    ./misc/format_man_pages $ERL_ROOT
-+    ./misc/format_man_pages $ERL_IROOT
+@@ -133,16 +134,4 @@ if [ "X$TARGET" != "Xsunos5" -a -d $ERL_
+ 	(ranlib $library) > /dev/null 2>&1
+     done
  fi
- 
+-
+-
+-#
+-# Fixing the man pages
+-#
+-
+-if [ -d $ERL_ROOT/man ]
+-then
+-    cd $ERL_ROOT
+-    ./misc/format_man_pages $ERL_ROOT
+-fi
+-
  

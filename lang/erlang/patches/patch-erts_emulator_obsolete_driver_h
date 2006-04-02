@@ -1,0 +1,17 @@
+$OpenBSD: patch-erts_emulator_obsolete_driver_h,v 1.1 2006/04/02 16:52:04 steven Exp $
+--- erts/emulator/obsolete/driver.h.orig	Sun Apr  2 08:39:28 2006
++++ erts/emulator/obsolete/driver.h	Sun Apr  2 08:39:59 2006
+@@ -67,10 +67,10 @@
+ #  define DRIVER_INIT(DRIVER_NAME)  driver_init
+ #endif
+ 
+-typedef int (*F_PTR)();    /* a function pointer */
+-typedef long (*L_PTR)();   /* pointer to a function returning long */
++typedef int (*F_PTR)(void);    /* a function pointer */
++typedef long (*L_PTR)(void);   /* pointer to a function returning long */
+ 
+-extern int null_func();
++extern int null_func(void);
+ 
+ /* This structure MUST match Binary in global.h exactly!!! */
+ typedef struct driver_binary {

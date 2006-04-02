@@ -1,0 +1,12 @@
+$OpenBSD: patch-erts_emulator_Makefile_in,v 1.1 2006/04/02 16:52:04 steven Exp $
+--- erts/emulator/Makefile.in.orig	Tue Mar  7 15:24:20 2006
++++ erts/emulator/Makefile.in	Sun Apr  2 08:11:31 2006
+@@ -672,7 +672,7 @@ $(OBJDIR)/%.o: hipe/%.S
+ 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+ 
+ $(OBJDIR)/%.o: hipe/%.c
+-	$(CC) $(subst O2,O3, $(CFLAGS)) $(INCLUDES) -c $< -o $@
++	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+ 
+ $(BINDIR)/hipe_mkliterals$(TYPEMARKER):	$(OBJDIR)/hipe_mkliterals.o
+ 	$(CC) $(CFLAGS) $(INCLUDES) -o $@ $<
