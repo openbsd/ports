@@ -1,7 +1,7 @@
-$OpenBSD: patch-misc_c,v 1.1 2005/12/20 06:05:03 pvalchev Exp $
---- misc.c.orig	Mon Dec 19 22:26:02 2005
-+++ misc.c	Mon Dec 19 22:26:48 2005
-@@ -34,8 +34,8 @@ void spawn(const char *const cmd[]) {
+$OpenBSD: patch-misc_c,v 1.2 2006/04/02 11:00:11 sturm Exp $
+--- misc.c.orig	Fri Feb 17 12:19:52 2006
++++ misc.c	Sun Apr  2 12:57:56 2006
+@@ -37,8 +37,8 @@ void spawn(const char *const cmd[]) {
  }
  
  void handle_signal(int signo) {
@@ -10,14 +10,14 @@ $OpenBSD: patch-misc_c,v 1.1 2005/12/20 06:05:03 pvalchev Exp $
 +	(void)signo;  /* unused */
  	/* SIGCHLD check no longer necessary */
  	/* Quit Nicely */
- 	quitting = 1;
-@@ -52,8 +52,8 @@ void handle_signal(int signo) {
+ 	while(head_client) remove_client(head_client);
+@@ -54,8 +54,8 @@ void handle_signal(int signo) {
  }
  
  int handle_xerror(Display *dsply, XErrorEvent *e) {
 -	(void)dsply;  /* unused */
- 	Client *c = find_client(e->resourceid);
+ 	Client *c;
 +	(void)dsply;  /* unused */
  
- 	/* If this error actually occurred while setting up the new
- 	 * window, best let make_new_client() know not to bother */
+ 	if (ignore_xerror) {
+ 		LOG_DEBUG("handle_xerror() ignored an XErrorEvent: %d\n", e->error_code);

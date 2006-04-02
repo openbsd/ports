@@ -1,16 +1,7 @@
---- Makefile.orig	Thu Sep 15 00:30:44 2005
-+++ Makefile	Tue Sep 20 11:06:18 2005
-@@ -25,7 +25,7 @@ DEFINES += -DINFOBANNER
- 
- # Use Motif hints to find if a window should be borderless.
- # To use this option, you need to have the Motif development files installed.
--DEFINES += -DMWM_HINTS
-+#DEFINES += -DMWM_HINTS
- 
- # To support virtual desktops, uncomment the following line.
- DEFINES += -DVWM
-@@ -67,7 +67,7 @@ distname = evilwm-$(version)
- DEFINES += -DXDEBUG	# show some X calls
+--- Makefile.orig	Mon Feb 20 16:30:31 2006
++++ Makefile	Sun Apr  2 12:57:56 2006
+@@ -63,7 +63,7 @@ distname = evilwm-$(version)
+ #DEFINES += -DXDEBUG	# show some X calls
  
  DEFINES += -DVERSION=\"$(version)\" $(DEBIAN)
 -CFLAGS  += $(INCLUDES) $(DEFINES) -Os -Wall
