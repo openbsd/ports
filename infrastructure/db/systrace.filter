@@ -1,5 +1,5 @@
 	native-__sysctl: permit
-	native-accept: true then permit log
+	native-accept: permit
 	native-bind: sockaddr match "/tmp" then permit
 	native-bind: sockaddr match "${TMPDIR}" then permit
 	native-break: permit
@@ -78,10 +78,9 @@
 	native-link: filename match "/tmp" and filename[1] match "/tmp" then permit
 	native-link: filename match "${WRKDIR}" and filename[1] match "${WRKDIR}" then permit
 	native-link: filename[1] match "/<non-existent filename>: *" then deny[enoent]
-	native-listen: true then permit log
+	native-listen: permit
 	native-lseek: permit
 	native-madvise: permit
-	native-mkfifo: permit
 	native-mlock: permit
 	native-mlockall: permit
 	native-mmap: permit
@@ -96,6 +95,7 @@
 	native-poll: permit
 	native-pread: permit
 	native-pwrite: permit
+	native-quotactl: permit
 	native-read: permit
 	native-readv: permit
 	native-recvfrom: permit
