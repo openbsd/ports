@@ -1,6 +1,6 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.78 2005/12/26 19:29:34 bernd Exp $
-# Copyright (c) 2004 Marc Espie <espie@openbsd.org>
+# $OpenBSD: make-plist,v 1.79 2006/04/03 13:53:43 espie Exp $
+# Copyright (c) 2004-2006 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above
@@ -933,6 +933,14 @@ sub handle_file
 	} else {
 		if ($short =~ /\.orig$/) {
 			print STDERR "make-plist: generated plist may contain patched file\n";
+			print STDERR "\t$short\n";
+		}
+		if ($short =~ /\/\.[^\/]*\.swp$/) {
+			print STDERR "make-plist: generated plist may contain vim swap file\n";
+			print STDERR "\t$short\n";
+		}
+		if ($short =~ /\~$/) {
+			print STDERR "make-plist: generated plist may contain emacs temp file\n";
 			print STDERR "\t$short\n";
 		}
 		if (($type eq 'library' || $type eq 'plugin') && (!defined $item) && !$shared_only) {
