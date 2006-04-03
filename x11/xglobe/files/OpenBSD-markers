@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD-markers,v 1.71 2006/04/03 16:59:40 robert Exp $
+# $OpenBSD: OpenBSD-markers,v 1.72 2006/04/03 17:20:18 robert Exp $
 #
 # THE PKGNAME MUST BE BUMPED FOR THE FOLLOWING PORTS WHEN YOU COMMIT
 # TO THIS FILE:
@@ -43,7 +43,6 @@
 48.137970	11.542279	"markus"	# Markus Friedl
 48.35		7.46		"couderc"	# Damien Couderc
 48.750		2.317		"saad"		# Saad Kadhi
-49.22		-123.10		"hugh"		# Hugh
 49.28		-123.12		"mcbride"	# Ryan Thomas McBride
 49.48		8.42		"naddy"		# Christian Weisgerber
 48.08		11.31		"sturm"		# Nikolay Sturm
@@ -67,7 +66,6 @@
 57.717		11.967		"niklas"	# Niklas Hallqvist
 59.33		18.08		"art"		# Artur Grabowski
 59.43		17.81		"maja"		# Mats O Jansson
-53.29836	-6.2233		"catchcart"	# David Catchcart
 52.3667		9.71667		"reyk"		# Reyk Floeter
 
 #-27.48         153.20          "d"             # David Leonard
@@ -93,7 +91,9 @@
 #47.25          -61.48          "wcobb"         # Wilbern Cobb
 #48.3           15.7            "reinhard"      # Reinhard J. Sammer
 #48.76472       9.17027         "pb"            # Philipp Buehler
+#49.22          -123.10         "hugh"          # Hugh
 #49.313446      -123.063975     "mjc"           # Michael Coulter
+#53.29836       -6.2233         "catchcart"     # David Catchcart
 #55.02          82.54           "form"          # Oleg Safiullin
 #57.0           24.0            "mpech"         # Mike Pechkin
 #59.52          17.38           "nino"          # Nils Nordman
