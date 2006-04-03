@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD-markers,v 1.70 2006/04/03 14:42:20 marco Exp $
+# $OpenBSD: OpenBSD-markers,v 1.71 2006/04/03 16:59:40 robert Exp $
 #
 # THE PKGNAME MUST BE BUMPED FOR THE FOLLOWING PORTS WHEN YOU COMMIT
 # TO THIS FILE:
@@ -7,93 +7,95 @@
 #
 # This is a list of OpenBSD developers and related people.
 #
--37.457132	144.580589	"Miller"	# Damien
--33.536466	151.093514	"Stewart"	# Don
--34.67		-58.50		"Schwindt"	# Federico G.
--33.81		151.15		"Tucker"	# Darren
--27.48		153.20		"Leonard"	# David
--22.88		-43.28		"Martelletto"	# Pedro
-15.58		-61.35		"Vink"		# Joris
-25.0		121.400		"Lo"		# Kevin
-30.448		-97.684		"Peereboom"	# Marco
-32.857736	-117.211507	"Grimes"	# Mark
-33.700077	-117.887943	"Peel"		# Jason
-35.5635277	-97.5437221	"Fries"		# Todd
-35.67		139.75		"Itojun"	# Jun-ichiro
-36.134		-86.70		"Krause"	# David
-37.515049	-122.339528	"Hyman"		# Marco S.
-38.6842		-120.987	"Matteo"	# Marc
-38.7341		-9.1446		"Sequeira"	# Margarida
-38.9693		-77.3863	"Wright"	# Jason L.
-39.96		-83		"Jackson"	# Eric
-40		-75.10		"Keromytis"	# Angelos D.
-40.033779	-105.250051	"Miller"	# Todd
-40.115		-88.02		"Rahn"		# Dale
-40.4		-79.7		"Yanovich"	# Jared
-40.85		-96.75		"Phillips"	# James, OpenBSD journal
-41.881		-87.628		"Creighton"	# Brandon
-42.1230		-88.261		"Stein"		# Joshua
-42.150962	-88.030436	"Luff"		# Jolan
-42.2731		-83.782		"Campbell"	# Aaron
-42.2775		-83.754167	"Provos"	# Niels
-42.280556	-83.754722	"Rees"		# Jim
-42.281336	-83.738587	"Turan"		# Chris
-42.3813		-71.1283	"Janzen"	# Paul
-42.49538	-82.89954	"Holland"	# Nick
-43.1342		-78.966048	"Harnett"	# Daniel L.
-43.30		5.37		"Anriot"	# Alexandre
-43.5826		1.4376		"Herrb"		# Matthieu
-43.5826		1.4376		"Vallat"	# Miod
-43.633		-79.500		"Smith"		# Brad
-43.70		-79.42		"Westerback"	# Ken
-43.9183		-78.6838	"Bertrand"	# Louis
-44.01		-79.93		"Darwin"	# Ian
-45.29		-73.34		"Lebel"		# David
-45.4745		-73.6556	"Sauve-Frankel"	# Mathieu
-45.5		-73.5		"Cote"		# Yannick
-47.25		-61.48		"Cobb"		# Wilbern
-47.50		7.60		"Hartmeier"	# Daniel
-47.53		21.63		"Nagy"		# Robert
-47.581		7.589		"Balmer"	# Marc
-48.0718		11.9582		"von Gernler"	# Alexander
-48.2		16.367		"Reindl"	# Martin
-48.3		15.7		"Sammer"	# Reinhard J.
-48.87		2.33		"Espie"		# Marc
-48.1247		11.5975		"Pfatschbacher"	# Marco
-48.1248		11.5972		"Shalayeff"	# Michael
-48.137970	11.542279	"Friedl"	# Markus
-48.35		7.46		"Couderc"	# Damien
-48.750		2.317		"Kadhi"		# Saad
-49.22		-123.10		"Hugh"		# Hugh
-49.28		-123.12		"McBride"	# Ryan Thomas
-49.313446	-123.063975	"Coulter"	# Michael
-49.48		8.42		"Weisgerber"	# Christian
-48.08		11.31		"Sturm"		# Nikolay
-48.76472	9.17027		"Buehler"	# Philipp
-50.858		4.3897		"Santolaria"	# Xavier
-51.0333		-114.0500	"Valchev"	# Peter
-51.05		3.60		"Vandeputte"	# Wim
-51.6		-114.1		"de Raadt"	# Theo
-52.2		12.75		"Stuehler"	# Uwe
-52.26		4.63		"Dobbelaar"	# Camiel
-52.35		4.62		"Moerbeek"	# Otto
-52.5		21		"Piotrowski"	# Aleksander
-53.13		9		"Finck"		# Jan-Uwe
-53.22		10.00		"Brauer"	# Henning	
-53.30		-6.24		"O'Higgins"	# Niall
-53.317		9.817		"Ahlers"	# Bernd
-53.56		-113.51		"Beck"		# Bob
-53.56		-113.51		"Weingartner"	# Tobias
-55.02		82.54		"Safiullin"	# Oleg
-55.593		12.987		"Stromberg"	# Peter
-55.599		-2.4324		"McIntyre"	# Jason
-57.0		24.0		"Pechkin"	# Mike
-57.42		11.58		"Schlyter"	# Jakob
-57.717		11.967		"Hallqvist"	# Niklas
-59.33		18.08		"Grabowski"	# Art
-59.43		17.81		"Jansson"	# Mats O
-59.52		17.38		"Nordman"	# Nils
-60.10		24.57		"Korpela"	# Heikki
-60.12399	24.52438	"Virtanen"	# Jukka
-53.29836	-6.2233		"Cathcart"	# David
-52.3667		9.71667		"Floeter"	# Reyk
+
+-37.457132	144.580589	"djm"		# Damien Miller
+51.32		0.5 		"fgsch"		# Federico G. Schwindt
+-33.81		151.15		"dtucker"	# Darren Tucker
+-22.88		-43.28		"pedro"		# Pedro Martelletto 
+15.58		-61.35		"joris"		# Joris Vink
+30.448		-97.684		"marco"		# Marco Peereboom
+35.5635277	-97.5437221	"todd"		# Todd T. Fries
+35.67		139.75		"itojun"	# Jun-ichiro Itojun
+36.134		-86.70		"david"		# David Krause
+37.515049	-122.339528	"marc"		# Marco S. Hyman
+40.033779	-105.250051	"millert"	# Todd C. Miller
+40.115		-88.02		"drahn"		# Dale Rahn
+40.4		-79.7		"jaredy"	# Jared Yanovich
+42.1230		-88.261		"jcs"		# Joshua Stein
+42.150962	-88.030436	"jolan"		# Jolan Luff
+42.2731		-83.782		"aaron"		# Aaron Campbell
+42.49538	-82.89954	"nick"		# Nick Holland
+43.30		5.37		"aanriot"	# Alexandre Anriot
+43.5826		1.4376		"matthieu"	# Matthieu Herrb
+43.5826		1.4376		"miod"		# Miod Vallat
+43.633		-79.500		"brad"		# Brad Smith
+43.70		-79.42		"krw"		# Kenneth R. Westerback
+44.01		-79.93		"ian"		# Ian Darwin
+45.4745		-73.6556	"msf"		# Mathieu Sauve-Frankel
+47.50		7.60		"dhartmei"	# Daniel Hartmeier
+47.53		21.63		"robert"	# Robert Nagy
+47.581		7.589		"mbalmer"	# Marc Balmer
+48.0718		11.9582		"grunk"		# Alexander von Gernler
+48.2		16.367		"martin"	# Martin Reindl
+48.87		2.33		"espie"		# Marc Espie
+48.1247		11.5975		"mpf"		# Marco Pfatschbacher
+48.1248		11.5972		"mickey"	# Michael Shalayeff
+48.137970	11.542279	"markus"	# Markus Friedl
+48.35		7.46		"couderc"	# Damien Couderc
+48.750		2.317		"saad"		# Saad Kadhi
+49.22		-123.10		"hugh"		# Hugh
+49.28		-123.12		"mcbride"	# Ryan Thomas McBride
+49.48		8.42		"naddy"		# Christian Weisgerber
+48.08		11.31		"sturm"		# Nikolay Sturm
+50.858		4.3897		"xsa"		# Xavier Santolaria
+51.0333		-114.0500	"pvalchev"	# Peter Valchev
+51.05		3.60		"wvdputte"	# Wim Vandeputte
+51.6		-114.1		"deraadt"	# Theo de Raadt
+52.2		12.75		"uwe"		# Uwe Stuehler
+52.26		4.63		"camield"	# Camiel Dobbelaar
+52.35		4.62		"otto"		# Otto Boerbeek
+52.5		21  		"alek"		# Aleksander Piotrowski
+53.13		9   		"jufi"		# Jan-Uwe Finck
+53.22		10.00		"henning"	# Henning Brauer
+53.30		-6.24		"niallo"	# Niall O'Higgins
+53.317		9.817		"bernd"		# Bernd Ahlers
+53.56		-113.51		"beck"		# Bob Beck
+53.56		-113.51		"weingart"	# Tobias Weingartner
+55.593		12.987		"wilfried"	# Peter Stromberg
+55.599		-2.4324		"jmc"		# Jason McIntyre
+57.42		11.58		"jakob"		# Jakob Schlyter
+57.717		11.967		"niklas"	# Niklas Hallqvist
+59.33		18.08		"art"		# Artur Grabowski
+59.43		17.81		"maja"		# Mats O Jansson
+53.29836	-6.2233		"catchcart"	# David Catchcart
+52.3667		9.71667		"reyk"		# Reyk Floeter
+
+#-27.48         153.20          "d"             # David Leonard
+#-33.536466     151.093514      "dons"          # Don Stewart
+#25.0           121.400         "kevlo"         # Kevin Lo
+#32.857736      -117.211507     "mark"          # Mark Grimes
+#33.700077      -117.887943     "jsyn"          # Jason Peel
+#38.6842        -120.987        "marcm"         # Marc Matteo
+#38.7341        -9.1446         "margarida"     # Margarida Sequeria
+#38.9693        -77.3863        "jason"         # Jason L. Wright
+#39.96          -83             "ericj"         # Eric Jackson
+#40             -75.10          "angelos"       # Angelos D. Keromytis
+#40.85          -96.75          "james"         # James Phillips, OpenBSD journal
+#41.881         -87.628         "bjc"           # Brandon Creighton
+#42.2775        -83.754167      "provos"        # Niels Provos
+#42.280556      -83.754722      "rees"          # Jim Rees
+#42.281336      -83.738587      "turan"         # Chris Turan
+#42.3813        -71.1283        "pjanzen"       # Paul Janzen
+#43.1342        -78.966048      "danh"          # Daniel L. Harnett
+#43.9183        -78.6838        "louis"         # Louis Bertrand
+#45.29          -73.34          "davidl"        # David Lebel
+#45.5           -73.5           "ycote"         # Yannick Cote
+#47.25          -61.48          "wcobb"         # Wilbern Cobb
+#48.3           15.7            "reinhard"      # Reinhard J. Sammer
+#48.76472       9.17027         "pb"            # Philipp Buehler
+#49.313446      -123.063975     "mjc"           # Michael Coulter
+#55.02          82.54           "form"          # Oleg Safiullin
+#57.0           24.0            "mpech"         # Mike Pechkin
+#59.52          17.38           "nino"          # Nils Nordman
+#60.10          24.57           "heko"          # Heikki Korpela
+#60.12399       24.52438        "virtanen"      # Jukka Virtanen
