@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD-markers,v 1.72 2006/04/03 17:20:18 robert Exp $
+# $OpenBSD: OpenBSD-markers,v 1.73 2006/04/03 21:24:14 otto Exp $
 #
 # THE PKGNAME MUST BE BUMPED FOR THE FOLLOWING PORTS WHEN YOU COMMIT
 # TO THIS FILE:
@@ -9,7 +9,6 @@
 #
 
 -37.457132	144.580589	"djm"		# Damien Miller
-51.32		0.5 		"fgsch"		# Federico G. Schwindt
 -33.81		151.15		"dtucker"	# Darren Tucker
 -22.88		-43.28		"pedro"		# Pedro Martelletto 
 15.58		-61.35		"joris"		# Joris Vink
@@ -36,23 +35,25 @@
 47.53		21.63		"robert"	# Robert Nagy
 47.581		7.589		"mbalmer"	# Marc Balmer
 48.0718		11.9582		"grunk"		# Alexander von Gernler
-48.2		16.367		"martin"	# Martin Reindl
-48.87		2.33		"espie"		# Marc Espie
+48.08		11.31		"sturm"		# Nikolay Sturm
 48.1247		11.5975		"mpf"		# Marco Pfatschbacher
 48.1248		11.5972		"mickey"	# Michael Shalayeff
 48.137970	11.542279	"markus"	# Markus Friedl
+48.2		16.367		"martin"	# Martin Reindl
 48.35		7.46		"couderc"	# Damien Couderc
 48.750		2.317		"saad"		# Saad Kadhi
+48.87		2.33		"espie"		# Marc Espie
 49.28		-123.12		"mcbride"	# Ryan Thomas McBride
 49.48		8.42		"naddy"		# Christian Weisgerber
-48.08		11.31		"sturm"		# Nikolay Sturm
 50.858		4.3897		"xsa"		# Xavier Santolaria
 51.0333		-114.0500	"pvalchev"	# Peter Valchev
 51.05		3.60		"wvdputte"	# Wim Vandeputte
+51.32		0.5 		"fgsch"		# Federico G. Schwindt
 51.6		-114.1		"deraadt"	# Theo de Raadt
 52.2		12.75		"uwe"		# Uwe Stuehler
 52.26		4.63		"camield"	# Camiel Dobbelaar
-52.35		4.62		"otto"		# Otto Boerbeek
+52.35		4.62		"otto"		# Otto Moerbeek
+52.3667		9.71667		"reyk"		# Reyk Floeter
 52.5		21  		"alek"		# Aleksander Piotrowski
 53.13		9   		"jufi"		# Jan-Uwe Finck
 53.22		10.00		"henning"	# Henning Brauer
@@ -66,7 +67,6 @@
 57.717		11.967		"niklas"	# Niklas Hallqvist
 59.33		18.08		"art"		# Artur Grabowski
 59.43		17.81		"maja"		# Mats O Jansson
-52.3667		9.71667		"reyk"		# Reyk Floeter
 
 #-27.48         153.20          "d"             # David Leonard
 #-33.536466     151.093514      "dons"          # Don Stewart
@@ -93,7 +93,7 @@
 #48.76472       9.17027         "pb"            # Philipp Buehler
 #49.22          -123.10         "hugh"          # Hugh
 #49.313446      -123.063975     "mjc"           # Michael Coulter
-#53.29836       -6.2233         "catchcart"     # David Catchcart
+#53.29836       -6.2233         "cathcart"      # David Cathcart
 #55.02          82.54           "form"          # Oleg Safiullin
 #57.0           24.0            "mpech"         # Mike Pechkin
 #59.52          17.38           "nino"          # Nils Nordman
