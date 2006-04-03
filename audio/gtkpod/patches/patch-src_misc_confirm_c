@@ -1,0 +1,95 @@
+$OpenBSD: patch-src_misc_confirm_c,v 1.1 2006/04/03 20:03:37 jolan Exp $
+--- src/misc_confirm.c.orig	Fri Dec  9 08:55:34 2005
++++ src/misc_confirm.c	Wed Mar 29 09:59:33 2006
+@@ -1,4 +1,4 @@
+-/* Time-stamp: <2005-12-09 23:52:06 jcs>
++/* Time-stamp: <2006-03-29 23:35:27 jcs>
+ |
+ |  Copyright (C) 2002-2005 Jorg Schuler <jcsjcs at users sourceforge net>
+ |  Part of the gtkpod project.
+@@ -550,13 +550,14 @@ static void delete_playlist_ok (struct D
+ 	    }
+ 	    else
+ 	    {
+-		/* remove playlist */
+-		gp_playlist_remove (dd->pl);
++		/* first use playlist name */
+ 		msg = g_strdup_printf (
+ 		    ngettext ("Deleted playlist '%s' including %d member track",
+ 			      "Deleted playlist '%s' including %d member tracks",
+ 			      n),
+ 		    dd->pl->name, n);
++		/* then remove playlist */
++		gp_playlist_remove (dd->pl);
+ 	    }
+ 	    break;
+ 	case DELETE_ACTION_PLAYLIST:
+@@ -566,9 +567,11 @@ static void delete_playlist_ok (struct D
+ 	    }
+ 	    else
+ 	    {
+-		gp_playlist_remove (dd->pl);
++		/* first use playlist name */
+ 		msg = g_strdup_printf (_("Deleted playlist '%s'"),
+ 				       dd->pl->name);
++		/* then remove playlist */
++		gp_playlist_remove (dd->pl);
+ 	    }
+ 	    break;
+ 	case DELETE_ACTION_LOCAL:
+@@ -585,7 +588,7 @@ static void delete_playlist_ok (struct D
+ 	case DELETE_ACTION_LOCAL:
+ 	    if (itdb_playlist_is_mpl (dd->pl))
+ 	    {   /* for safety reasons this is not implemented (would
+-		   remove all tracks from your local harddisk */
++		   remove all tracks from your local harddisk) */
+ 		g_return_if_reached ();
+ 	    }
+ 	    else
+@@ -597,13 +600,14 @@ static void delete_playlist_ok (struct D
+ 					      dd->pl->members->data,
+ 					      dd->deleteaction);
+ 		}
+-		/* remove playlist */
+-		gp_playlist_remove (dd->pl);
++		/* first use playlist name */
+ 		msg = g_strdup_printf (
+ 		    ngettext ("Deleted playlist '%s' including %d member track on harddisk",
+ 			      "Deleted playlist '%s' including %d member tracks on harddisk",
+ 			      n),
+ 		    dd->pl->name, n);
++		/* then remove playlist */
++		gp_playlist_remove (dd->pl);
+ 	    }
+ 	    break;
+ 	case DELETE_ACTION_DATABASE:
+@@ -620,13 +624,14 @@ static void delete_playlist_ok (struct D
+ 	    }
+ 	    else
+ 	    {
+-		/* remove playlist */
+-		gp_playlist_remove (dd->pl);
++		/* first use playlist name */
+ 		msg = g_strdup_printf (
+ 		    ngettext ("Deleted playlist '%s' including %d member track",
+ 			      "Deleted playlist '%s' including %d member tracks",
+ 			      n),
+ 		    dd->pl->name, n);
++		/* then remove playlist */
++		gp_playlist_remove (dd->pl);
+ 	    }
+ 	    break;
+ 	case DELETE_ACTION_PLAYLIST:
+@@ -636,9 +641,11 @@ static void delete_playlist_ok (struct D
+ 	    }
+ 	    else
+ 	    {
+-		gp_playlist_remove (dd->pl);
++		/* first use playlist name */
+ 		msg = g_strdup_printf (_("Deleted playlist '%s'"),
+ 				       dd->pl->name);
++		/* then remove playlist */
++		gp_playlist_remove (dd->pl);
+ 	    }
+ 	    break;
+ 	case DELETE_ACTION_IPOD:

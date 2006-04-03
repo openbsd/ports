@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_mp3file_c,v 1.1 2006/01/20 06:27:28 jolan Exp $
---- src/mp3file.c.orig	Tue Nov 22 21:16:12 2005
-+++ src/mp3file.c	Fri Jan  6 15:45:20 2006
-@@ -1907,7 +1907,7 @@ static gboolean mp3_calc_gain (gchar *pa
+$OpenBSD: patch-src_mp3file_c,v 1.2 2006/04/03 20:03:37 jolan Exp $
+--- src/mp3file.c.orig	Sun Feb 19 04:20:06 2006
++++ src/mp3file.c	Tue Mar 28 15:53:57 2006
+@@ -1908,7 +1908,7 @@ static gboolean mp3_calc_gain (gchar *pa
          execl(mp3gain_path, mp3gain_exec, 
  			"-q", /* quiet */
  			"-k", /* set ReplayGain so that clipping is prevented */
