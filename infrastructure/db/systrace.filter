@@ -4,6 +4,7 @@
 	native-bind: sockaddr match "/var/tmp" then permit
 	native-bind: sockaddr match "${TMPDIR}" then permit
 	native-bind: sockaddr match "${WRKDIR}" then permit
+	native-bind: sockaddr match "/<non-existent filename>: *" then deny[enoent]
 	native-break: permit
 	native-chdir: permit
 	native-chflags: filename match "/tmp" then permit
@@ -34,6 +35,7 @@
 	native-connect: sockaddr match "/var/tmp" then permit
 	native-connect: sockaddr match "${TMPDIR}" then permit
 	native-connect: sockaddr match "${WRKDIR}" then permit
+	native-connect: sockaddr match "/<non-existent filename>: *" then deny[enoent]
 	native-dup2: permit
 	native-dup: permit
 	native-execve: true then permit
@@ -104,6 +106,10 @@
 	native-listen: permit
 	native-lseek: permit
 	native-madvise: permit
+	native-mknod: filename match "/tmp" then permit
+	native-mknod: filename match "/var/tmp" then permit
+	native-mknod: filename match "${TMPDIR}" then permit
+	native-mknod: filename match "${WRKDIR}" then permit
 	native-mlock: permit
 	native-mlockall: permit
 	native-mmap: permit
@@ -166,7 +172,6 @@
 	native-symlink: filename match "/var/tmp" then permit
 	native-symlink: filename match "${TMPDIR}" then permit
 	native-symlink: filename match "${WRKDIR}" then permit
-	native-symlink: filename match "/<non-existent filename>: *" then deny[enoent]
 	native-symlink: string eq "" and filename eq "" then deny[enoent]
 	native-sync: permit
 	native-umask: permit
