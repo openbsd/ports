@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2005/11/02 01:12:47 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2006/04/03 16:27:57 bernd Exp $
 
 V=0.18
 
 COMMENT=	'desktop publishing clip-art'
 CATEGORIES=	print graphics
 DISTNAME=	openclipart-$V
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 HOMEPAGE=	http://openclipart.org/
 MASTER_SITES=	${HOMEPAGE}downloads/$V/
 DISTFILES=	openclipart-$V-full.tar.bz2

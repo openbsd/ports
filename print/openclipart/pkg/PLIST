@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/10/30 15:55:33 ian Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/04/03 16:27:57 bernd Exp $
 share/openclipart/
 share/openclipart/LICENSE.txt
 share/openclipart/LOG.txt
@@ -18722,7 +18722,7 @@ share/openclipart/signs_and_symbols/flags/america/turks_and_caicos.svg
 share/openclipart/signs_and_symbols/flags/america/united_states/
 share/openclipart/signs_and_symbols/flags/america/united_states.png
 share/openclipart/signs_and_symbols/flags/america/united_states.svg
-share/openclipart/signs_and_symbols/flags/america/united_states/.usa_hawaii.svg.swp
+@comment share/openclipart/signs_and_symbols/flags/america/united_states/.usa_hawaii.svg.swp
 share/openclipart/signs_and_symbols/flags/america/united_states/kansasflag_dave_reckonin_01.png
 share/openclipart/signs_and_symbols/flags/america/united_states/kansasflag_dave_reckonin_01.svg
 share/openclipart/signs_and_symbols/flags/america/united_states/kansasflag_dave_reckonin_01.txt

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-doc,v 1.1 2005/06/14 15:34:27 db Exp $
+@comment $OpenBSD: PLIST-doc,v 1.2 2006/04/03 16:27:57 bernd Exp $
 share/doc/lout/
 share/doc/lout/README
 share/doc/lout/design/
@@ -120,7 +120,7 @@ share/doc/lout/slides/all
 share/doc/lout/slides/mydefs
 share/doc/lout/slides/outfile.ps
 share/doc/lout/user/
-share/doc/lout/user/.pie_intr.swp
+@comment share/doc/lout/user/.pie_intr.swp
 share/doc/lout/user/README
 share/doc/lout/user/all
 share/doc/lout/user/ap_byp
