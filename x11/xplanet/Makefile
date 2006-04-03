@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2006/04/03 14:42:20 marco Exp $
+# $OpenBSD: Makefile,v 1.15 2006/04/03 17:06:03 robert Exp $
 
 COMMENT=	"Draw pictures of the earth textured by an image"
 
 DISTNAME=	xplanet-1.1.2
-PKGNAME=	${DISTNAME}p12
+PKGNAME=	${DISTNAME}p13
 CATEGORIES=	astro x11
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -37,5 +37,13 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 post-install:
 	${INSTALL_DATA} ${PORTSDIR}/x11/xglobe/files/OpenBSD-markers \
 			${PREFIX}/share/xplanet/markers/
+	${INSTALL_DATA} ${FILESDIR}/openbsd_markers \
+			${PREFIX}/share/xplanet/config/
+	${INSTALL_SCRIPT} ${FILESDIR}/openbsd_markers.sh \
+			${PREFIX}/share/xplanet/scripts/
+
+	@perl -pi -e 's,%%LOCALBASE%%,${LOCALBASE},' \
+			${PREFIX}/share/xplanet/config/openbsd_markers \
+			${PREFIX}/share/xplanet/scripts/openbsd_markers.sh
 
 .include <bsd.port.mk>
