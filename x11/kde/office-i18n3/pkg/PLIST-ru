@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ru,v 1.1 2005/10/18 18:32:55 espie Exp $
+@comment $OpenBSD: PLIST-ru,v 1.2 2006/04/03 14:52:19 bernd Exp $
 share/doc/HTML/ru/
 ${DOC}kchart/
 ${DOC}kchart/common
@@ -16,6 +16,10 @@ ${DOC}kivio/${I}
 ${DOC}kivio/introduction.docbook
 ${DOC}kivio/usage.docbook
 ${DOC}kivio/working.docbook
+${DOC}koffice/
+${DOC}koffice/common
+${DOC}koffice/${C}
+${DOC}koffice/${I}
 ${DOC}koshell/
 ${DOC}koshell/common
 ${DOC}koshell/${C}
@@ -113,6 +117,7 @@ ${LOC}kivio.mo
 ${LOC}koconverter.mo
 ${LOC}koffice.mo
 ${LOC}kofficefilters.mo
+${LOC}koproperty.mo
 ${LOC}koshell.mo
 ${LOC}kounavail.mo
 ${LOC}kplato.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-fr,v 1.1 2005/10/18 18:32:55 espie Exp $
+@comment $OpenBSD: PLIST-fr,v 1.2 2006/04/03 14:52:19 bernd Exp $
 share/apps/koffice/
 share/apps/koffice/autocorrect/
 share/apps/koffice/autocorrect/fr.xml
@@ -277,7 +277,6 @@ ${DOC}kword/chapnumb.docbook
 ${DOC}kword/chstylebut.png
 ${DOC}kword/colorseldlg.png
 ${DOC}kword/columns.docbook
-${DOC}kword/common
 ${DOC}kword/ctab2.png
 ${DOC}kword/doccomments.docbook
 ${DOC}kword/doclinks.docbook
@@ -322,8 +321,6 @@ ${DOC}kword/fundimentals.docbook
 ${DOC}kword/graphics.docbook
 ${DOC}kword/headerfooter.docbook
 ${DOC}kword/horizline.docbook
-${DOC}kword/${C}
-${DOC}kword/${I}
 ${DOC}kword/inscoldlg.png
 ${DOC}kword/insdate.png
 ${DOC}kword/insertfile.docbook
@@ -416,7 +413,6 @@ ${LOC}koffice.mo
 ${LOC}kofficefilters.mo
 ${LOC}koshell.mo
 ${LOC}kounavail.mo
-${LOC}kplato.mo
 ${LOC}kpresenter.mo
 ${LOC}krita.mo
 ${LOC}kscan_plugin.mo

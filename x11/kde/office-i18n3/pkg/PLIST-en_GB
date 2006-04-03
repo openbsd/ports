@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-en_GB,v 1.1 2005/10/18 18:32:55 espie Exp $
+@comment $OpenBSD: PLIST-en_GB,v 1.2 2006/04/03 14:52:19 bernd Exp $
 share/doc/HTML/en_GB/
 ${DOC}kpresenter/
 ${DOC}kpresenter/faq.docbook
@@ -30,7 +30,6 @@ ${LOC}koffice.mo
 ${LOC}kofficefilters.mo
 ${LOC}koshell.mo
 ${LOC}kounavail.mo
-${LOC}kplato.mo
 ${LOC}kpresenter.mo
 ${LOC}krita.mo
 ${LOC}kscan_plugin.mo

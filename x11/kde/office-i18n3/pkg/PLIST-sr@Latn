@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST-sr@Latn,v 1.1 2005/10/18 18:32:55 espie Exp $
+@comment $OpenBSD: PLIST-sr@Latn,v 1.2 2006/04/03 14:52:19 bernd Exp $
 ${LOC}desktop_koffice.mo
 ${LOC}example.mo
 ${LOC}karbon.mo
 ${LOC}kchart.mo
 ${LOC}kexi.mo
+${LOC}kfile_abiword.mo
+${LOC}kfile_gnumeric.mo
 ${LOC}kfile_koffice.mo
 ${LOC}kfile_ooo.mo
 ${LOC}kformdesigner.mo
@@ -12,6 +14,7 @@ ${LOC}kivio.mo
 ${LOC}koconverter.mo
 ${LOC}koffice.mo
 ${LOC}kofficefilters.mo
+${LOC}koproperty.mo
 ${LOC}koshell.mo
 ${LOC}kounavail.mo
 ${LOC}kplato.mo
