@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2005/12/14 22:26:02 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2006/04/04 06:46:20 steven Exp $
 
 PKG_ARCH=	*
 
 COMMENT=	"perl module to manage XML RSS files"
 
-DISTNAME=	XML-RSS-1.05
+DISTNAME=	XML-RSS-1.10
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}

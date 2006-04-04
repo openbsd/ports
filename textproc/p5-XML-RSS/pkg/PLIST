@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2005/09/05 13:12:47 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2006/04/04 06:46:20 steven Exp $
 ${P5SITE}/XML/
 ${P5SITE}/XML/RSS.pm
-@man man/man3p/XML::RSS.3
+@man man/man3p/XML::RSS.3p
 share/examples/p5-XML-RSS/
 share/examples/p5-XML-RSS/0.9/
 share/examples/p5-XML-RSS/0.9/create_rss.pl
