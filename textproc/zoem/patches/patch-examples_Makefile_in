@@ -1,7 +1,7 @@
-$OpenBSD: patch-examples_Makefile_in,v 1.3 2004/06/30 23:38:56 naddy Exp $
---- examples/Makefile.in.orig	Tue Jun 29 15:21:41 2004
-+++ examples/Makefile.in	Tue Jun 29 15:22:04 2004
-@@ -128,7 +128,7 @@ sharedstatedir = @sharedstatedir@
+$OpenBSD: patch-examples_Makefile_in,v 1.4 2006/04/04 17:50:02 bernd Exp $
+--- examples/Makefile.in.orig	Tue Mar 21 11:58:43 2006
++++ examples/Makefile.in	Sun Apr  2 12:58:04 2006
+@@ -136,7 +136,7 @@ sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  docdir = $(datadir)/doc/$(PACKAGE)
@@ -10,3 +10,16 @@ $OpenBSD: patch-examples_Makefile_in,v 1.3 2004/06/30 23:38:56 naddy Exp $
  docexamples_DATA = \
   README \
   power-of-2.azm   power-of-2.ozm \
+@@ -337,10 +337,10 @@ fib.ozm: fib.azm
+ 	true
+ 
+ stress.ozm: stress.azm
+-   zoem -i stress --system-honor --unsafe-silent --err-out -s get_it_on=1 -o - > stress.ozm
++	zoem -i stress --system-honor --unsafe-silent --err-out -s get_it_on=1 -o - > stress.ozm
+ 
+ stress2.ozm: stress2.azm
+-   zoem -i stress2 --system-honor --unsafe-silent --err-out -s get_it_on=1 -o - > stress2.ozm
++	zoem -i stress2 --system-honor --unsafe-silent --err-out -s get_it_on=1 -o - > stress2.ozm
+ 
+ power-of-2.ozm: power-of-2.azm
+ 	../src/zoem -i power-of-2 --allow=ls
