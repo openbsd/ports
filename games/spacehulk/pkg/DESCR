@@ -1,3 +1,11 @@
-Space Hulk is a science-fiction board game in the world of Warhammer
-40000. It is aiming at providing a way to play SpaceHulk on your
-computer with the exact same rules as in the board version.
+Space Hulk is a great board game of Games Workshop in the world of
+Warhammer 40000.
+This is a two player turn-based game where one play the 'Marine', the
+other play the alien called 'Genestealer'. This video game is a complete
+conversion of the board game with the 2nd edition rules. The project is
+aiming at providing a way to play SpaceHulk on your computer exactly as
+you could do it with the real board version but with some extra : you
+can play via network (no need to have two players in the same room)
+synchronized or asynchronized (via e-mail), and you will even be able to
+play solo against an artificial intelligent opponent. Currently, only
+HotSeat and Play-By-Email mode game are implemented.

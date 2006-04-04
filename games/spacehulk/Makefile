@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/11/26 19:18:12 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2006/04/04 07:33:26 alek Exp $
 
-COMMENT=	"conversion of Warhammer 4000 into video game"
+COMMENT=	"total conversion of the Space Hulk board game"
 
 DISTNAME=	spacehulk-1.5-beta1
-PKGNAME=	spacehulk-1.5beta1
+PKGNAME=	spacehulk-1.5beta1p0
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://r.vinot.free.fr/spacehulk/
