@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.91 2006/04/05 04:37:00 sturm Exp $
+# $OpenBSD: network.conf.template,v 1.92 2006/04/05 04:42:58 sturm Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -79,36 +79,26 @@ MASTER_SITE_R5CONTRIB+=	\
 
 MASTER_SITE_SUNSITE+=	\
 	ftp://metalab.unc.edu/pub/Linux/ \
-	ftp://ftp.oit.unc.edu/pub/Linux/ \
 	http://www.ibiblio.org/pub/Linux/ \
-	http://linux.dsi.internet2.edu/ \
-	ftp://ftp.unicamp.br/pub/systems/Linux/ \
 	ftp://ftp.tuwien.ac.at/pub/linux/ibiblio/ \
 	ftp://sunsite.cnlab-switch.ch/mirror/linux/sunsite/ \
 	ftp://ftp.cs.tu-berlin.de/pub/linux/Mirrors/sunsite.unc.edu/ \
 	ftp://ftp.fu-berlin.de/unix/linux/mirrors/sunsite.unc.edu/ \
 	ftp://ftp.uni-bremen.de/pub/mirrors/sunsite/ \
-	ftp://ftp.uni-jena.de/pub/linux/MIRROR.sunsite/ \
-	ftp://ftp.rz.uni-karlsruhe.de/pub/mirror/ftp.uni-tuebingen.de/pub/linux/mirrors/ftp.metalab.unc.edu/pub/Linux/ \
-	ftp://ftp.uni-magdeburg.de/pub/mirror/linux/ftp.metalab.unc.edu/ \
+	ftp://ftp.rz.uni-karlsruhe.de/pub/sunsite/ \
 	ftp://ftp.uni-stuttgart.de/pub/mirror/sunsite.unc.edu/pub/Linux/ \
-	ftp://ftp.uniovi.es/pub1/linux/ \
+	ftp://ftp.uniovi.es/pub/linux/ \
 	ftp://ftp.lip6.fr/pub/linux/sunsite/ \
-	ftp://ftp.medasys-digital-systems.fr/pub1/linux/sunsite/ \
-	ftp://ftp.uvsq.fr/pub5/linux/sunsite/ \
-	ftp://ftp.leidenuniv.nl/pub/linux/sunsite/ \
+	ftp://ftp.uvsq.fr/pub/linux/sunsite/ \
 	ftp://ftp.nvg.ntnu.no/pub/mirrors/metalab.unc.edu/ \
 	ftp://ftp.icm.edu.pl/vol/rzm1/linux-sunsite/ \
-	ftp://ftp.man.poznan.pl/vols/vol1/sunsite/ \
-	ftp://ftp.pku.edu.cn/pub/linux/ \
-	ftp://ftp.cse.cuhk.edu.hk/pub4/Linux/ \
+	ftp://ftp.man.poznan.pl/pub/linux/sunsite/ \
+	ftp://ftp.cse.cuhk.edu.hk/pub/Linux/ \
 	ftp://ftp.kobe-u.ac.jp/pub/Linux/metalab.unc.edu/ \
 	ftp://ftp.kddilabs.jp/Linux/metalab.unc.edu/ \
-	ftp://sunsite.sut.ac.jp/pub/archives/linux/sunsite-unc/ \
-	ftp://ftp.bora.net/pub/mirrors/metalab.unc.edu/Linux/ \
 	ftp://ftp.funet.fi/pub/Linux/mirrors/metalab/ \
 	ftp://sunsite.org.uk/packages/linux/sunsite.unc-mirror/ \
-	ftp://ftp.nluug.nl/vol/3/metalab/ \
+	ftp://ftp.nluug.nl/vol/4/metalab/ \
 	ftp://ftp.is.co.za/linux/sunsite/ \
 	ftp://ftp.chg.ru/pub/Linux/sunsite/
 
