@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2006/01/29 04:05:26 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/04/05 15:16:56 bernd Exp $
 mediawiki/
 mediawiki/AdminSettings.sample
 mediawiki/COPYING
@@ -406,6 +406,8 @@ mediawiki/maintenance/convertLinks.php
 mediawiki/maintenance/convertUtf8.php
 mediawiki/maintenance/database.sql
 mediawiki/maintenance/delete-idle-wiki-users.pl
+mediawiki/maintenance/deleteOldRevisions.inc
+mediawiki/maintenance/deleteOldRevisions.php
 mediawiki/maintenance/diffLanguage.php
 mediawiki/maintenance/dumpBackup.php
 mediawiki/maintenance/dumpHTML.inc
@@ -431,12 +433,16 @@ mediawiki/maintenance/mysql5/
 mediawiki/maintenance/mysql5/tables.sql
 mediawiki/maintenance/namespace2sql.php
 mediawiki/maintenance/namespaceDupes.php
+mediawiki/maintenance/nukePage.inc
+mediawiki/maintenance/nukePage.php
 mediawiki/maintenance/orphans.php
 mediawiki/maintenance/ourusers.php
 mediawiki/maintenance/parserTests.inc
 mediawiki/maintenance/parserTests.php
 mediawiki/maintenance/parserTests.txt
 mediawiki/maintenance/portal.php
+mediawiki/maintenance/purgeOldText.inc
+mediawiki/maintenance/purgeOldText.php
 mediawiki/maintenance/rebuildImages.php
 mediawiki/maintenance/rebuildInterwiki.inc
 mediawiki/maintenance/rebuildInterwiki.php
@@ -450,8 +456,6 @@ mediawiki/maintenance/redundanttrans.php
 mediawiki/maintenance/refreshLinks.inc
 mediawiki/maintenance/refreshLinks.php
 mediawiki/maintenance/removeUnusedAccounts.php
-mediawiki/maintenance/splitLanguageFiles.inc
-mediawiki/maintenance/splitLanguageFiles.php
 mediawiki/maintenance/stats.php
 mediawiki/maintenance/storage/
 mediawiki/maintenance/storage/blobs.sql
