@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 00:46:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/04/05 09:49:59 bernd Exp $
 bin/lifeconv
 bin/lifesrc
 bin/lifesrcdumb
@@ -170,7 +170,7 @@ share/xlife/patterns/life/makehustler.l
 share/xlife/patterns/life/makeoscs.l
 share/xlife/patterns/life/makepole.l
 share/xlife/patterns/life/match.l
-share/xlife/patterns/life/match.l~
+@comment share/xlife/patterns/life/match.l~
 share/xlife/patterns/life/max.l
 share/xlife/patterns/life/mediumfish.l
 share/xlife/patterns/life/mediumfishgun.l
@@ -180,7 +180,7 @@ share/xlife/patterns/life/mwssgun.l
 share/xlife/patterns/life/mwssrak2.l
 share/xlife/patterns/life/mwssrake.l
 share/xlife/patterns/life/named-patterns
-share/xlife/patterns/life/named-patterns~
+@comment share/xlife/patterns/life/named-patterns~
 share/xlife/patterns/life/oscillator7.l
 share/xlife/patterns/life/oscillators.l
 share/xlife/patterns/life/oscsp2.l
@@ -209,7 +209,7 @@ share/xlife/patterns/life/p32gun.l
 share/xlife/patterns/life/p3sampler.l
 share/xlife/patterns/life/p47.l
 share/xlife/patterns/life/p4sampler.l
-share/xlife/patterns/life/p4sampler.l~
+@comment share/xlife/patterns/life/p4sampler.l~
 share/xlife/patterns/life/p54.l
 share/xlife/patterns/life/p54shuttle.l
 share/xlife/patterns/life/p55.l
@@ -353,7 +353,7 @@ share/xlife/patterns/life/zip2.l
 share/xlife/patterns/life/zips.l
 share/xlife/patterns/misc/
 share/xlife/patterns/misc/highlife.l
-share/xlife/patterns/misc/highlife.l~
+@comment share/xlife/patterns/misc/highlife.l~
 share/xlife/patterns/misc/lloyd.l
 share/xlife/patterns/wireworld/
 share/xlife/patterns/wireworld/diode.l

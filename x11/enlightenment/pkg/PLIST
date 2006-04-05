@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2005/06/22 04:48:28 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.10 2006/04/05 09:49:59 bernd Exp $
 bin/edox
 bin/eesh
 bin/enlightenment
@@ -2606,7 +2606,7 @@ share/enlightenment/themes/winter/borders/DEFAULT/border.cfg
 share/enlightenment/themes/winter/borders/DEFAULT/images/
 share/enlightenment/themes/winter/borders/DIALOG/
 share/enlightenment/themes/winter/borders/DIALOG/border.cfg
-share/enlightenment/themes/winter/borders/DIALOG/border.cfg~
+@comment share/enlightenment/themes/winter/borders/DIALOG/border.cfg~
 share/enlightenment/themes/winter/borders/DIALOG/images/
 share/enlightenment/themes/winter/borders/FIXED_SIZE/
 share/enlightenment/themes/winter/borders/FIXED_SIZE/border.cfg

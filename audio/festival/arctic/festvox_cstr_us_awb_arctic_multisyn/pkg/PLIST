@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/08/06 03:34:11 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/04/05 09:45:57 bernd Exp $
 lib/festival/voices-multisyn/
 lib/festival/voices-multisyn/english/
 lib/festival/voices-multisyn/english/cstr_us_awb_arctic_multisyn/
@@ -4558,4 +4558,4 @@ lib/festival/voices-multisyn/english/cstr_us_awb_arctic_multisyn/awb/utts.data
 lib/festival/voices-multisyn/english/cstr_us_awb_arctic_multisyn/awb/utts.pauses
 lib/festival/voices-multisyn/english/cstr_us_awb_arctic_multisyn/festvox/
 lib/festival/voices-multisyn/english/cstr_us_awb_arctic_multisyn/festvox/cstr_us_awb_arctic_multisyn.scm
-lib/festival/voices-multisyn/english/cstr_us_awb_arctic_multisyn/festvox/cstr_us_awb_arctic_multisyn.scm~
+@comment lib/festival/voices-multisyn/english/cstr_us_awb_arctic_multisyn/festvox/cstr_us_awb_arctic_multisyn.scm~
