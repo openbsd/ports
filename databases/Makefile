@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2006/02/12 16:24:50 david Exp $
+# $OpenBSD: Makefile,v 1.80 2006/04/05 12:41:41 steven Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += db
@@ -48,6 +48,7 @@
      SUBDIR += p5-Data-Page
      SUBDIR += p5-Ima-DBI
      SUBDIR += p5-SQL-Abstract
+     SUBDIR += p5-SQL-Abstract-Limit
      SUBDIR += p5-SQL-Statement
      SUBDIR += p5-Tie-DBI
      SUBDIR += p5-ldap
