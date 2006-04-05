@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2006/01/22 13:35:32 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/04/05 09:42:17 bernd Exp $
 lib/zope/lib/python/Products/CMFActionIcons/
 lib/zope/lib/python/Products/CMFActionIcons/ActionIconsTool.py
 lib/zope/lib/python/Products/CMFActionIcons/ActionIconsTool.pyc
@@ -352,7 +352,7 @@ lib/zope/lib/python/Products/CMFCore/tests/fake_skins/fake_skin/#test1.pyc
 lib/zope/lib/python/Products/CMFCore/tests/fake_skins/fake_skin/.test1.py
 lib/zope/lib/python/Products/CMFCore/tests/fake_skins/fake_skin/.test1.pyc
 lib/zope/lib/python/Products/CMFCore/tests/fake_skins/fake_skin/test1.py
-lib/zope/lib/python/Products/CMFCore/tests/fake_skins/fake_skin/test1.py~
+@comment lib/zope/lib/python/Products/CMFCore/tests/fake_skins/fake_skin/test1.py~
 lib/zope/lib/python/Products/CMFCore/tests/fake_skins/fake_skin/test4.py
 lib/zope/lib/python/Products/CMFCore/tests/fake_skins/fake_skin/test4.py.security
 lib/zope/lib/python/Products/CMFCore/tests/fake_skins/fake_skin/test5.py
