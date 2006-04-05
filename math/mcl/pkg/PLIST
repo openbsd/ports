@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/07/26 18:50:43 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/04/05 08:58:44 bernd Exp $
 bin/clmclose
 bin/clmdist
 bin/clmformat
@@ -15,6 +15,7 @@ bin/mcxarray
 bin/mcxassemble
 bin/mcxconvert
 bin/mcxdump
+bin/mcxload
 bin/mcxmap
 bin/mcxsubs
 @man man/man1/clmclose.1
@@ -33,6 +34,7 @@ bin/mcxsubs
 @man man/man1/mcxassemble.1
 @man man/man1/mcxconvert.1
 @man man/man1/mcxdump.1
+@man man/man1/mcxload.1
 @man man/man1/mcxmap.1
 @man man/man1/mcxsubs.1
 @man man/man5/mcxio.5
@@ -83,22 +85,37 @@ share/doc/mcl/mcxdump.html
 share/doc/mcl/mcxdump.ps
 share/doc/mcl/mcxio.html
 share/doc/mcl/mcxio.ps
+share/doc/mcl/mcxload.html
+share/doc/mcl/mcxload.ps
 share/doc/mcl/mcxmap.html
 share/doc/mcl/mcxmap.ps
 share/doc/mcl/mcxsubs.html
 share/doc/mcl/mcxsubs.ps
+share/doc/mcl/minimcl
 share/examples/mcl/
+share/examples/mcl/data.abc.hdr
+share/examples/mcl/data.abc.map
+share/examples/mcl/data.abc.raw
 share/examples/mcl/data.hdr
 share/examples/mcl/data.raw
 share/examples/mcl/data.tab
 share/examples/mcl/falkner.mci
+share/examples/mcl/falkner.ps
 share/examples/mcl/fznyy.mci
 share/examples/mcl/fznyy.tab
+share/examples/mcl/lattice.mci
 share/examples/mcl/matula.mci
 share/examples/mcl/proteins.mci
 share/examples/mcl/seven.mci
+share/examples/mcl/small.map
 share/examples/mcl/small.mci
 share/examples/mcl/small.png
 share/examples/mcl/small.ps
 share/examples/mcl/small.tab
 share/examples/mcl/small64.mci
+share/examples/mcl/tiny-min.mci
+share/examples/mcl/tiny-nil.mci
+share/examples/mcl/tiny-nilnine.mci
+share/examples/mcl/tiny-ninenil.mci
+share/examples/mcl/tiny-one.mci
+share/examples/mcl/tiny-zero.mci

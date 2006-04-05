@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2005/07/26 18:50:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2006/04/05 08:58:44 bernd Exp $
 
 COMMENT=	"clustering algorithm for graphs"
 
-V=		05-118
+V=		06-058
 DISTNAME=	mcl-${V}
 PKGNAME=	mcl-${V:S,-,_,}
 CATEGORIES=	math
