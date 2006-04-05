@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2005/07/07 18:30:29 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.22 2006/04/05 18:36:36 sturm Exp $
 bin/opera
 lib/opera/
 lib/opera/plugins/
@@ -18,6 +18,9 @@ share/examples/opera/opera6rc
 @sample /etc/opera6rc
 share/examples/opera/opera6rc.fixed
 @sample /etc/opera6rc.fixed
+@comment share/man/
+@comment share/man/man1/
+@comment @man share/man/man1/opera.1
 share/opera/
 share/opera/chartables.bin
 share/opera/config/
