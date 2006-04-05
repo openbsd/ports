@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/04/05 12:39:46 steven Exp $
+${P5SITE}/SQL/Abstract/
+${P5SITE}/SQL/Abstract/Limit.pm
+@man man/man3p/SQL::Abstract::Limit.3p
