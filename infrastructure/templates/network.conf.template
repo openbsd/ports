@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.90 2006/04/02 10:53:45 sturm Exp $
+# $OpenBSD: network.conf.template,v 1.91 2006/04/05 04:37:00 sturm Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -191,14 +191,7 @@ MASTER_SITE_AFTERSTEP+=	\
 	ftp://ftp.dti.ad.jp/pub/X/AfterStep/
 
 MASTER_SITE_WINDOWMAKER+=	\
-	ftp://ftp.windowmaker.org/pub/ \
-	ftp://ftp.minet.net/pub/windowmaker/ \
-	ftp://ftp.ziobudda.net/pub/Mirrors/ftp.windowmaker.org/ \
-	ftp://ftp.task.gda.pl/mirror/ftp.windowmaker.org/pub/ \
-	ftp://ftp.nectec.or.th/pub/mirrors/windowmaker/ \
-	ftp://sunsite.ulatina.ac.cr/Mirrors/XWindows/Windomanagers/WindowMaker/ \
-	ftp://ftp.club-internet.fr/pub/mirrors/ftp.windowmaker.org/pub/ \
-	ftp://ftp.dti.ad.jp/pub/X/WindowMaker/
+	ftp://ftp.windowmaker.info/pub/
 
 MASTER_SITE_SOURCEWARE+=	\
 	ftp://mirrors.rcn.net/mirrors/sources.redhat.com/ \

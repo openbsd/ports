@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2004/02/01 20:17:47 sturm Exp $
+# $OpenBSD: Makefile,v 1.12 2006/04/05 04:37:00 sturm Exp $
 
 COMMENT=		'themes and icons for Window Maker'
 
 DISTNAME=		WindowMaker-extra-0.1
-PKGNAME=		${DISTNAME:L}
+PKGNAME=		${DISTNAME:L}p0
 CATEGORIES=		x11 x11/windowmaker
 
-HOMEPAGE=		http://www.windowmaker.org/
+HOMEPAGE=		http://www.windowmaker.info/
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/02/02 18:02:22 sturm Exp $
+# $OpenBSD: Makefile,v 1.13 2006/04/05 04:37:00 sturm Exp $
 
 COMMENT=		'icons mainly for use in Window Maker'
 
@@ -13,7 +13,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_WINDOWMAKER:=contrib/old/icons/}
 DISTFILES=		DWiconpack1.tar.gz DWiconpack2.tar.gz IconFest-1.2.tgz \
 			NeXT_XEmacs_tar.gz wm_icons_png.tar.gz wm_icons_tif.tar.gz
 
