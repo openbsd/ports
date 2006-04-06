@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/26 13:36:07 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2006/04/06 18:22:57 steven Exp $
 
 COMMENT=	"produce HTML form elements for database columns"
 
-DISTNAME=	Class-DBI-AsForm-2.2
+DISTNAME=	Class-DBI-AsForm-2.42
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www databases perl5
 
@@ -19,8 +19,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Class/}
 CONFIGURE_STYLE=perl
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::databases/p5-Class-DBI \
-		::databases/p5-Class-DBI-Plugin-Type \
+RUN_DEPENDS=	::databases/p5-Class-DBI-Plugin-Type \
 		::www/p5-HTML-Tree
 
 PKG_ARCH=	*
