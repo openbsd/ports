@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/04/01 12:32:56 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2006/04/06 09:35:46 steven Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples for qt4"
@@ -28,10 +28,10 @@ VERSION=	4.1.2
 DISTNAME=	qt-x11-opensource-src-4.1.2
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.rediris.es/mirror/Qt/source/ \
-		ftp://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/sources/ \
+		ftp://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/source/ \
 		ftp://ftp.ntua.gr/pub/X11/Qt/qt/source/ \
-		ftp://ftp.tu-chemnitz.de/pub/Qt/source/ \
-		ftp://ftp.silug.org/mirrors/ftp.trolltech.com/qt/source/ \
+		ftp://ftp.tu-chemnitz.de/pub/Qt/qt/source/ \
+		http://ftp.silug.org/pub/qt/source/ \
 		ftp://ftp.troll.no/qt/source/
 
 HOMEPAGE=	http://www.trolltech.com/qt/
