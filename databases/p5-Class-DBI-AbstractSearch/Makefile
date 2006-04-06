@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/26 13:36:07 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2006/04/06 18:22:19 steven Exp $
 
 COMMENT=	"abstract Class::DBI's SQL with SQL::Abstract"
 
-DISTNAME=	Class-DBI-AbstractSearch-0.03
+DISTNAME=	Class-DBI-AbstractSearch-0.07
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	databases perl5
 
@@ -20,8 +20,8 @@ CONFIGURE_STYLE=perl
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::databases/p5-Class-DBI \
-		::databases/p5-SQL-Abstract
-
+		::databases/p5-SQL-Abstract-Limit
+REGRESS_DEPENDS=::databases/p5-DBD-SQLite
 
 PKG_ARCH=	*
 
