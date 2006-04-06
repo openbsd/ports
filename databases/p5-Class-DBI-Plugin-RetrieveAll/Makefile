@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/26 13:36:07 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2006/04/06 18:26:04 steven Exp $
 
 COMMENT=	"more complex retrieve_all() for Class::DBI"
 
-DISTNAME=	Class-DBI-Plugin-RetrieveAll-1
+DISTNAME=	Class-DBI-Plugin-RetrieveAll-1.04
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	databases perl5
 
@@ -18,8 +18,9 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Class/}
 
 CONFIGURE_STYLE=perl
 
-RUN_DEPENDS=	::databases/p5-Class-DBI \
-		::databases/p5-SQL-Abstract
+RUN_DEPENDS=	::databases/p5-Class-DBI
+BUILD_DEPENDS=	${RUN_DEPENDS}
+REGRESS_DEPENDS=::databases/p5-DBD-SQLite
 
 PKG_ARCH=	*
 
