@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2006/04/01 18:06:32 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2006/04/06 18:28:16 steven Exp $
 
 COMMENT=	"extensions to Class::DBI for MySQL "
 
-DISTNAME=	Class-DBI-mysql-0.22
+DISTNAME=	Class-DBI-mysql-1.00
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	databases perl5
 
@@ -22,6 +22,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::databases/p5-Class-DBI \
 		::databases/p5-DBD-mysql
 REGRESS_DEPENDS=:mysql-server-*:databases/mysql,-server
+
+REGRESS_IS_INTERACTIVE=Yes
 
 PKG_ARCH=	*
 

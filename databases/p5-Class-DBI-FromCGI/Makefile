@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/26 13:36:07 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2006/04/06 18:23:36 steven Exp $
 
 COMMENT=	"update Class::DBI objects through CGI::Untaint"
 
-DISTNAME=	Class-DBI-FromCGI-0.94
+DISTNAME=	Class-DBI-FromCGI-1.00
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	databases perl5 www
 
@@ -21,6 +21,7 @@ CONFIGURE_STYLE=perl
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::databases/p5-Class-DBI \
 		::www/p5-CGI-Untaint
+REGRESS_DEPENDS=::databases/p5-DBD-SQLite
 
 PKG_ARCH=	*
 
