@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/26 13:36:07 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2006/04/06 18:21:38 steven Exp $
 
 COMMENT=	"simple database abstraction"
 
-DISTNAME=	Class-DBI-0.95
-PKGNAME=	p5-${DISTNAME}
+V=		3.0.14
+DISTNAME=	Class-DBI-v${V}
+PKGNAME=	p5-Class-DBI-${V}
 CATEGORIES=	databases perl5
 
 MAINTAINER=	Sam Smith <S@msmith.net>
@@ -22,9 +23,11 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::devel/p5-Class-Accessor \
 		::devel/p5-Class-Data-Inheritable \
 		::devel/p5-Class-Trigger \
+		::devel/p5-Clone \
 		::devel/p5-Universal-moniker \
-		::databases/p5-DBD-SQLite \
+		::devel/p5-version \
 		::databases/p5-Ima-DBI
+REGRESS_DEPENDS=::databases/p5-DBD-SQLite
 
 PKG_ARCH=	*
 
