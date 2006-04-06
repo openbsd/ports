@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2005/12/29 23:06:28 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2006/04/06 11:26:39 otto Exp $
 
 FULLPKGNAME=	php5-extensions-${V}p0
 COMMENT=	"informational package about PHP5 extensions"
@@ -99,19 +99,20 @@ CONFIGURE_ARGS+=	--enable-filepro=shared
 PSEUDO_FLAVORS+=	no_gd
 .if ${FLAVOR:L:Mno_gd}
 CONFIGURE_ARGS+=	--without-gd --without-xpm-dir --without-ttf \
-			--without-freetype-dir
+			--without-freetype-dir 
 .else
 MULTI_PACKAGES+=	-gd
 COMMENT-gd=		"image manipulation extensions for php5"
-GD_DEPENDS=		ttf.1::print/freetype ${GRAPHIC_DEPENDS} \
-			t1.5::devel/t1lib
+GD_DEPENDS=		${GRAPHIC_DEPENDS} t1.5::devel/t1lib
 GD_WANTLIB=		z
 CONFIGURE_ARGS+=	--with-gd=shared ${GRAPHIC_CONFIG} \
-			--with-ttf=shared,${LOCALBASE} --without-freetype-dir \
-			--with-t1lib=${LOCALBASE}
+			--with-t1lib=${LOCALBASE} \
+			--with-freetype-dir=${X11BASE}
+
 . if !${FLAVOR:L:Mno_x11}
 USE_X11=               yes
 CONFIGURE_ARGS+=       --with-xpm-dir=${X11BASE}
+FULLPKGNAME-gd=		php5-gd-${V}p0
 .  if !defined(PACKAGING) || ${SUBPACKAGE} == "-gd"
 GD_WANTLIB+=		X11 Xpm
 .  endif
