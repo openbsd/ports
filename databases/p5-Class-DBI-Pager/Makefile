@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/26 13:36:07 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2006/04/06 18:25:17 steven Exp $
 
 COMMENT=	"pager utility for Class::DBI"
 
-DISTNAME=	Class-DBI-Pager-0.05
+DISTNAME=	Class-DBI-Pager-0.08
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	databases perl5
 
@@ -20,7 +20,9 @@ CONFIGURE_STYLE=perl
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::databases/p5-Class-DBI \
-		::databases/p5-Data-Page
+		::databases/p5-Data-Page \
+		::devel/p5-Exporter-Lite
+REGRESS_DEPENDS=::databases/p5-DBD-SQLite
 
 PKG_ARCH=	*
 
