@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/26 13:36:07 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2006/04/06 18:29:54 steven Exp $
 
 COMMENT=	"determine type information for columns "
 
@@ -19,6 +19,8 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Class/}
 CONFIGURE_STYLE=perl
 
 RUN_DEPENDS=	::databases/p5-Class-DBI
+BUILD_DEPENDS=	${RUN_DEPENDS}
+REGRESS_DEPENDS=::databases/p5-DBD-SQLite
 
 PKG_ARCH=	*
 
