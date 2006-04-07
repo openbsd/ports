@@ -1,0 +1,35 @@
+$OpenBSD: patch-portable_c,v 1.1 2006/04/07 23:14:13 pvalchev Exp $
+--- portable.c.orig	Tue Jul 16 09:55:11 1991
++++ portable.c	Fri Apr  7 01:35:28 2006
+@@ -364,6 +364,31 @@ ZOOFILE zoo_file;
+       show_dir(direntry);
+    }
+ #endif
++   char *p;
++   /* take off '../'   */
++   while ((p = strstr( direntry->dirname, "../" )) != NULL) {
++      while (*(p+3) != '\0') {
++        *p = *(p + 3);
++        p++;
++      }
++      *p = *(p+3); /* move last null */
++      //printf("zoo: skipped \"../\" path component in '%s'\n", direntry->dirname);
++   }
++   /* take off  '/'  */
++   if ( direntry->dirname[0] == '/' ) {
++      p = direntry->dirname;
++      while (*p != '\0') {
++        *p = *(p + 1);
++        p++;
++      }
++      *p = *(p+1); /* move last null */
++      //printf("zoo: skipped \"/\" path component in '%s'\n", direntry->dirname);
++   }
++   /* take off '..'   */
++   if(!strcmp(direntry->dirname, ".."))
++      direntry->dirname[0] = '\0';
++   /* direntry->dirlen = strlen(direntry->dirname); */
++
+    return (0);
+ }
+ 

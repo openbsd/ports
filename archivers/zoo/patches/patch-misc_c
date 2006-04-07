@@ -1,0 +1,21 @@
+$OpenBSD: patch-misc_c,v 1.1 2006/04/07 23:14:13 pvalchev Exp $
+--- misc.c.orig	Tue Jul 16 09:52:54 1991
++++ misc.c	Fri Apr  7 01:36:17 2006
+@@ -135,11 +135,16 @@ if available, else the short filename is
+ char *fullpath (direntry)
+ struct direntry *direntry;
+ {
+-	static char result[PATHSIZE];
++	static char result[PATHSIZE+LFNAMESIZE+12]; /* Room for enough space.*/
+ 	combine (result,
+ 				direntry->dirlen != 0 ? direntry->dirname : "", 
+ 				(direntry->namlen != 0) ? direntry->lfname : direntry->fname
+ 			  );
++
++       if (strlen (result) >= PATHSIZE) {
++               prterror ('f', "Combined dirname and filename too long!\n");
++       }
++
+ 	return (result);
+ }
+ 
