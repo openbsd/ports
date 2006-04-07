@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_print_c,v 1.1 2006/04/07 07:02:36 steven Exp $
+--- src/print.c.orig	Thu Apr  6 17:53:59 2006
++++ src/print.c	Thu Apr  6 17:54:08 2006
+@@ -41,7 +41,7 @@ static gint write_tmp(gint fd)
+ 	FILE *fp;
+ 	GtkTextIter start, end;
+ 	gchar *str;
+-	gint rbytes, wbytes;
++	gsize rbytes, wbytes;
+ 	GError *error = NULL;
+ 	
+ 	GtkTextBuffer *buffer = pub->mw->buffer;
