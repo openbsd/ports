@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2006/02/20 19:27:24 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2006/04/07 14:00:02 todd Exp $
 
 NOT_FOR_ARCHS=	${LP64_ARCHS}
 
 COMMENT=	"Quicken-like money and finance manager"
 DISTNAME=	gnucash-1.8.12
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 DOCVER=		1.8.5
 CATEGORIES=	x11/gnome productivity
 
@@ -72,6 +72,7 @@ BUILD_DEPENDS=	swig::devel/swig \
 		::devel/pkgconfig
 
 RUN_DEPENDS+=	::devel/slib \
+		::devel/slib-guile \
 		::devel/libtool \
 		::lang/guile \
 		::devel/pkgconfig
