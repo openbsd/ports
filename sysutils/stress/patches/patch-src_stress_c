@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_stress_c,v 1.1 2006/04/07 07:12:28 pvalchev Exp $
+--- src/stress.c.orig	Wed Apr  5 22:23:12 2006
++++ src/stress.c	Wed Apr  5 22:23:38 2006
+@@ -481,7 +481,7 @@ int
+ hogvm (long long bytes, long long stride, long long hang, int keep)
+ {
+   long long i;
+-  char *ptr;
++  char *ptr = NULL;
+   int do_malloc = 1;
+ 
+   while (1)
