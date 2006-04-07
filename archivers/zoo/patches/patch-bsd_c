@@ -1,6 +1,7 @@
---- bsd.c.orig	Sat May  1 00:21:53 1993
-+++ bsd.c	Wed Dec 15 23:08:42 1999
-@@ -69,8 +69,16 @@
+$OpenBSD: patch-bsd_c,v 1.1 2006/04/07 07:40:18 pvalchev Exp $
+--- bsd.c.orig	Fri Apr 30 22:21:53 1993
++++ bsd.c	Fri Apr  7 01:38:55 2006
+@@ -69,8 +69,16 @@ ZOOFILE f;
  }
  
  /* Function gettz() returns the offset from GMT in seconds */
@@ -18,7 +19,7 @@
  #define SEC_IN_DAY	(24L * 60L * 60L)
  #define INV_VALUE		(SEC_IN_DAY + 1L)
  	static long retval = INV_VALUE;	     /* cache, init to impossible value */
-@@ -95,6 +103,7 @@
+@@ -95,6 +103,7 @@ long gettz()
  	retval = -tm->tm_gmtoff;
  #endif
  	return retval;
@@ -26,7 +27,7 @@
  }
  
  /* Standard UNIX-compatible time routines */
-@@ -103,15 +112,19 @@
+@@ -103,15 +112,19 @@ long gettz()
  /* Standard UNIX-specific file attribute routines */
  #include "nixmode.i"
  

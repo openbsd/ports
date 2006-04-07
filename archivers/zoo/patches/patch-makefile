@@ -1,6 +1,7 @@
---- makefile.orig	Tue Jul 16 11:52:08 1991
-+++ makefile	Sun Mar 26 16:56:32 2000
-@@ -68,7 +68,8 @@
+$OpenBSD: patch-makefile,v 1.1 2006/04/07 07:40:18 pvalchev Exp $
+--- makefile.orig	Tue Jul 16 09:52:08 1991
++++ makefile	Fri Apr  7 01:38:55 2006
+@@ -68,7 +68,8 @@ help :
  
  # install alpha zoo as "tzoo"
  install:
