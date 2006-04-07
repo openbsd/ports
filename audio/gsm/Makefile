@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.31 2005/12/23 16:59:13 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2006/04/07 16:56:02 alek Exp $
 
 COMMENT=	"u-law to gsm encoding audio converter and library"
 
 DISTNAME=	gsm-1.0.10
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/local/kbs/tubmik/gsm/
+MASTER_SITES=	ftp://ftp.digium.com/pub/gnophone/ \
+		ftp://ftp.gbnet.net/pub/digium/telephony/gnophone/
 SHARED_LIBS=	gsm	1.0
 
 # Missing redistribution terms in license
