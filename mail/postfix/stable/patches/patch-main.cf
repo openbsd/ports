@@ -1,4 +1,4 @@
-$OpenBSD
+$OpenBSD: patch-main.cf,v 1.4 2006/04/08 22:47:38 brad Exp $
 
 --- conf/main.cf.orig	Fri Mar  4 18:48:25 2005
 +++ conf/main.cf	Fri Apr  7 09:45:52 2006
