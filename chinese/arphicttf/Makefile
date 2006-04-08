@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/12/03 04:04:10 kevlo Exp $
+# $OpenBSD: Makefile,v 1.12 2006/04/08 20:28:36 sturm Exp $
 
 COMMENT=	"chinese big5/gb truetype fonts"
 
@@ -13,8 +13,7 @@ PERMIT_DISTFILES_FTP=   Yes
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 
-MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/ \
-		ftp://ftp.shellhung.org/pub/OpenBSD/packages/chinese/
+MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

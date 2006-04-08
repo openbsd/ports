@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/11/21 21:51:36 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2006/04/08 20:28:36 sturm Exp $
 
 COMMENT=	"chinese input utility for X"
 
@@ -6,8 +6,7 @@ DISTNAME=	xcin-2.3.04-3
 PKGNAME=	zh-xcin-2.3.04
 CATEGORIES=	chinese
 
-MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/old/ \
-		ftp://ftp.shellhung.org/pub/OpenBSD/packages/chinese/
+MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/old/
 
 HOMEPAGE=	http://xcin.linux.org.tw/
 

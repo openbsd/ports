@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2006/02/28 16:27:52 bernd Exp $
+# $OpenBSD: Makefile,v 1.65 2006/04/08 20:28:36 sturm Exp $
 
 COMMENT=	"Open source LDAP software (client)"
 COMMENT-server=	"Open source LDAP software (server)"
@@ -31,13 +31,11 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto ssl
 
 MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/openldap-release/ \
-		ftp://ftp.net.lut.ac.uk/openldap/openldap-release/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenLDAP/openldap-release/ \
-		ftp://mirror.aarnet.edu.au/pub/OpenLDAP/openldap-release/ \
+		ftp://mirror.aarnet.edu.au/pub/openldap/openldap-release/ \
 		ftp://gd.tuwien.ac.at/infosys/network/OpenLDAP/openldap-release/ \
 		http://www.unibase.cz/ldapcz/Programy/Free/OpenLDAP/openldap-release/ \
-		ftp://ftp.ntua.gr/mirror/OpenLDAP/openldap-release/ \
-		ftp://ftp.shellhung.org/pub/OpenLDAP/openldap-release/
+		ftp://ftp.ntua.gr/mirror/OpenLDAP/openldap-release/
 
 EXTRACT_SUFX=		.tgz
 

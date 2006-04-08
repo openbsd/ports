@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2005/09/23 19:36:02 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2006/04/08 20:28:36 sturm Exp $
 
 COMMENT=	"Python Unicode codecs for Chinese charsets"
 
@@ -14,8 +14,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=	ftp://ftp.shellhung.org/pub/OpenBSD/packages/chinese/
 
 MODULES=	lang/python
 
