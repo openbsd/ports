@@ -1,6 +1,7 @@
---- configure.orig	Tue Nov 23 19:55:47 2004
-+++ configure	Sat Jan 22 13:12:28 2005
-@@ -3286,10 +3286,9 @@ CFLAGS=$save_CFLAGS
+$OpenBSD: patch-configure,v 1.2 2006/04/08 20:46:20 sturm Exp $
+--- configure.orig	Sun Apr  2 14:49:05 2006
++++ configure	Sun Apr  2 14:54:33 2006
+@@ -3486,9 +3486,7 @@ CFLAGS=$save_CFLAGS
  fi
  
  if test "$ac_cv_fpic" = "yes"; then
@@ -9,20 +10,9 @@
 -    FPIC_CFLAGS=""
 +    CFLAGS="${CFLAGS} -fPIC"
  fi
-+
  echo "$as_me:$LINENO: result: $ac_cv_fpic" >&5
  echo "${ECHO_T}$ac_cv_fpic" >&6
- 
-@@ -4489,7 +4488,7 @@ if test "${ac_cv_lib_resolv_res_search+s
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lresolv  $LIBS"
-+#LIBS="-lresolv  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- /* confdefs.h.  */
-@@ -6728,7 +6727,7 @@ echo "$as_me: error: Berkeley DB 3.x or 
+@@ -7838,7 +7836,7 @@ echo "$as_me: error: Berkeley DB 3.x or 
  
  
  
@@ -31,34 +21,16 @@
    CPPFLAGS="${BDB_INCADD} ${CPPFLAGS}"
  
    CYRUSDB_OBJS="$CYRUSDB_OBJS cyrusdb_berkeley.o"
-@@ -9639,7 +9638,7 @@ if test "${ac_cv_lib_resolv_res_search+s
+@@ -13581,7 +13579,7 @@ if test "${ac_cv_lib_gssapi_gss_unwrap+s
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
--LIBS="-lresolv  $LIBS"
-+#LIBS="-lresolv  $LIBS"
+-LIBS="-lgssapi ${GSSAPIBASE_LIBS} -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} ${LIB_DES} -lcom_err ${LIB_SOCKET} $LIBS"
++LIBS="-lgssapi ${GSSAPIBASE_LIBS} -lgssapi -lkrb5 -lasn1 -lcrypto ${LIB_CRYPT} ${LIB_DES} -lcom_err ${LIB_SOCKET} $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -11814,7 +11813,7 @@ if test "${ac_cv_lib_resolv_res_search+s
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lresolv  $LIBS"
-+#LIBS="-lresolv  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- /* confdefs.h.  */
-@@ -11892,7 +11891,7 @@ if test "${ac_cv_lib_gssapi_gss_unwrap+s
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lgssapi $GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} ${LIB_DES} -lcom_err ${LIB_SOCKET} $LIBS"
-+LIBS="-lgssapi $GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lcrypto ${LIB_CRYPT} ${LIB_DES} -lcom_err ${LIB_SOCKET} $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- /* confdefs.h.  */
-@@ -12242,8 +12241,8 @@ fi
+ _ACEOF
+@@ -13981,8 +13979,8 @@ fi
      GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a"
    elif test "$gss_impl" = "heimdal"; then
      CPPFLAGS="$CPPFLAGS -DKRB5_HEIMDAL"
@@ -69,29 +41,7 @@
    elif test "$gss_impl" = "cybersafe03"; then
  # Version of CyberSafe with two libraries
      CPPFLAGS="$CPPFLAGS -D$platform -I${gssapi}/appsec-sdk/include"
-@@ -12435,7 +12434,7 @@ if test "${ac_cv_lib_resolv_res_search+s
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lresolv  $LIBS"
-+#LIBS="-lresolv  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- /* confdefs.h.  */
-@@ -12483,9 +12482,9 @@ LIBS=$ac_check_lib_save_LIBS
- fi
- echo "$as_me:$LINENO: result: $ac_cv_lib_resolv_res_search" >&5
- echo "${ECHO_T}$ac_cv_lib_resolv_res_search" >&6
--if test $ac_cv_lib_resolv_res_search = yes; then
--  GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lresolv"
--fi
-+#if test $ac_cv_lib_resolv_res_search = yes; then
-+#  GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lresolv"
-+#fi
- 
-   SASL_MECHS="$SASL_MECHS libgssapiv2.la"
-   SASL_STATIC_OBJS="$SASL_STATIC_OBJS ../plugins/gssapi.o"
-@@ -13727,6 +13726,8 @@ extern "C"
+@@ -16004,6 +16002,8 @@ extern "C"
  /* We use char because int might match the return type of a gcc2
     builtin and then its argument prototype would still apply.  */
  char request_init ();

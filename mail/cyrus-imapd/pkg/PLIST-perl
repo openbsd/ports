@@ -1,10 +1,8 @@
-@comment $OpenBSD: PLIST-perl,v 1.1.1.1 2005/03/27 18:01:50 alek Exp $
+@comment $OpenBSD: PLIST-perl,v 1.2 2006/04/08 20:46:20 sturm Exp $
 bin/cyradm
 bin/installsieve
 bin/sieveshell
 @comment libdata/perl5/${MACHINE_ARCH}-openbsd/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.8.6/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.8.6/perllocal.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/IMAP/

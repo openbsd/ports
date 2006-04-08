@@ -1,0 +1,11 @@
+$OpenBSD: patch-contrib_drac_auth_patch,v 1.1 2006/04/08 20:46:20 sturm Exp $
+--- contrib/drac_auth.patch.orig	Fri Dec 19 21:01:58 2003
++++ contrib/drac_auth.patch	Tue Apr  4 09:56:31 2006
+@@ -373,6 +373,6 @@ diff -u -r1.8 imapoptions
+ +{ "drachost", "localhost", STRING }
+ +/* Hostname of the RPC dracd server. */
+ +
+- { "duplicate_db", "berkeley-nosync", STRINGLIST("berkeley", "berkeley-nosync", "skiplist")}
++ { "duplicate_db", "berkeley-nosync", STRINGLIST("berkeley", "berkeley-nosync", "berkeley-hash", "berkeley-hash-nosync", "skiplist")}
+  /* The cyrusdb backend to use for the duplicate delivery suppression
+     and sieve. */

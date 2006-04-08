@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2006/03/31 16:48:05 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2006/04/08 20:46:20 sturm Exp $
 
 COMMENT=	"Cyrus IMAP server"
 COMMENT-perl=	"perl utils for the Cyrus IMAP server"
 
-V=		2.2.12
+V=		2.2.13
 DISTNAME=	cyrus-imapd-${V}
-PKGNAME=	${DISTNAME}p0
 FULLPKGNAME-perl=cyrus-imapd-perl-${V}
 CATEGORIES=	mail
-HOMEPAGE=	http://asg.web.cmu.edu/cyrus/imapd/
+HOMEPAGE=	http://cyrusimap.web.cmu.edu
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@lphp.org>
 
@@ -33,6 +32,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_lib_resolv_res_search=no \
+		ac_cv_sys_long_file_names=yes \
 		MAKEDEPEND=""
 CONFIGURE_ARGS=	--with-service-path=${LOCALBASE}/libexec/cyrus-imapd \
 		--with-bdb \
@@ -68,6 +68,7 @@ PATCH_LIST+=	${WRKSRC}/contrib/drac_auth.patch \
 .endif
 
 .if ${FLAVOR:L:Mkerberos}
+WANTLIB+=	com_err krb5 gssapi asn1
 CONFIGURE_ENV+=	CPPFLAGS="-I/usr/include/kerberosV" \
 CONFIGURE_ARGS+=--with-auth=krb5 \
 		--enable-gssapi=/usr \
