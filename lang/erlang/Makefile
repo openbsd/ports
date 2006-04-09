@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/04/02 16:52:03 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2006/04/09 19:32:50 sturm Exp $
 
 COMMENT=	"real-time, concurrent and distributed functional language"
 
@@ -106,6 +106,9 @@ COSNOTIFICATION=cosNotification-${COSNOTIFICATION_VSN}
 COSPROPERTY=	cosProperty-${COSPROPERTY_VSN}
 COSTIME=	cosTime-${COSTIME_VSN}
 COSTRANSACTIONS=cosTransactions-${COSTRANSACTIONS_VSN}
+
+post-configure:
+	@echo "No ODBC" > ${WRKSRC}/lib/odbc/SKIP
 
 post-install:
 	tar zxf ${FULLDISTDIR}/otp_doc_man_${V}.tar.gz -C ${DOC_DIR}
