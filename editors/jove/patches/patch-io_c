@@ -1,6 +1,7 @@
---- io.c.~1~	Thu Mar  7 09:34:42 1996
-+++ io.c	Fri Jul 24 19:17:53 1998
-@@ -1193,10 +1193,16 @@
+$OpenBSD: patch-io_c,v 1.1 2006/04/09 10:10:25 alek Exp $
+--- io.c.orig	Thu Mar  7 18:34:42 1996
++++ io.c	Sun Apr  9 12:05:56 2006
+@@ -1193,10 +1193,16 @@ tmpinit()
  #endif
  		);
  	tfname = copystr(buf);

@@ -1,6 +1,7 @@
---- abbrev.c.~1~	Thu Mar  7 09:34:41 1996
-+++ abbrev.c	Fri Jul 24 19:22:45 1998
-@@ -274,7 +274,16 @@
+$OpenBSD: patch-abbrev_c,v 1.1 2006/04/09 10:10:25 alek Exp $
+--- abbrev.c.orig	Thu Mar  7 18:34:41 1996
++++ abbrev.c	Sun Apr  9 12:05:56 2006
+@@ -274,7 +274,16 @@ EditAbbrevs()
  		"jabbXXXXXX"
  #endif
  		);

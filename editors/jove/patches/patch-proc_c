@@ -1,6 +1,7 @@
---- proc.c.orig	Fri Mar  8 13:46:40 1996
-+++ proc.c	Fri Jul 24 19:42:45 1998
-@@ -827,8 +827,14 @@
+$OpenBSD: patch-proc_c,v 1.1 2006/04/09 10:10:25 alek Exp $
+--- proc.c.orig	Fri Mar  8 22:46:40 1996
++++ proc.c	Sun Apr  9 12:05:56 2006
+@@ -827,8 +827,14 @@ UnixToBuf(flags, bnm, InFName, cmd)
  		int	ph;
  
  		swritef(pnbuf, sizeof(pnbuf), "%s/%s", TmpDir, "jpXXXXXX");
@@ -16,7 +17,7 @@
  			complain("cannot make pipe for filter: %s", strerror(errno));
  		close(1);
  		close(2);
-@@ -923,7 +929,18 @@
+@@ -923,7 +929,18 @@ bool	wrap;
  	jmp_buf	sav_jmp;
  
  	swritef(tnambuf, sizeof(tnambuf), "%s/%s", TmpDir, "jfXXXXXX");

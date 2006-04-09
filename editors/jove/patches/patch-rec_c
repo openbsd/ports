@@ -1,6 +1,7 @@
---- rec.c.~1~	Thu Mar  7 09:34:43 1996
-+++ rec.c	Fri Jul 24 19:25:22 1998
-@@ -55,8 +55,12 @@
+$OpenBSD: patch-rec_c,v 1.1 2006/04/09 10:10:25 alek Exp $
+--- rec.c.orig	Thu Mar  7 18:34:43 1996
++++ rec.c	Sun Apr  9 12:05:56 2006
+@@ -55,8 +55,12 @@ recinit()
  #endif
  		);
  	recfname = copystr(buf);
