@@ -1,0 +1,13 @@
+$OpenBSD: patch-sysdep_h,v 1.1 2006/04/09 11:10:09 alek Exp $
+--- sysdep.h.orig	Tue Mar 19 05:44:33 1996
++++ sysdep.h	Sun Apr  9 13:03:06 2006
+@@ -568,7 +568,8 @@
+ #endif
+ 
+ #ifndef MSDOS	/* maximum path length (including '\0') */
+-# define FILESIZE	256
++# include <sys/param.h>
++# define FILESIZE	MAXPATHLEN
+ #else /* MSDOS */
+ # define FILESIZE	128	/* currently, 2+1+64+3+1+3+1 == 80 ought to be OK */
+ #endif /* MSDOS */

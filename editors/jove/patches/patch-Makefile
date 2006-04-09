@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1 2006/04/09 10:10:25 alek Exp $
---- Makefile.orig	Tue Mar 19 05:44:33 1996
-+++ Makefile	Sun Apr  9 12:05:56 2006
+$OpenBSD: patch-Makefile,v 1.2 2006/04/09 11:10:09 alek Exp $
+--- Makefile.orig	Tue Mar 19 06:44:33 1996
++++ Makefile	Mon Mar 13 08:51:30 2006
 @@ -27,16 +27,16 @@
  # LIBDIR and SHAREDIR.  All others must already exist.
  
@@ -98,25 +98,33 @@ $OpenBSD: patch-Makefile,v 1.1 2006/04/09 10:10:25 alek Exp $
  
  $(LIBDIR)::
  	test -d $(LIBDIR) || mkdir $(LIBDIR)
-@@ -375,9 +379,8 @@ $(JOVEM): doc/jove.nr
+@@ -373,11 +377,10 @@ $(TEACHJOVE): teachjove
+ 
+ $(JOVEM): doc/jove.nr
  	@sed -e 's;<TMPDIR>;$(TMPDIR);' \
- 	     -e 's;<LIBDIR>;$(LIBDIR);' \
- 	     -e 's;<SHAREDIR>;$(SHAREDIR);' \
+-	     -e 's;<LIBDIR>;$(LIBDIR);' \
+-	     -e 's;<SHAREDIR>;$(SHAREDIR);' \
 -	     -e 's;<SHELL>;$(DFLTSHELL);' doc/jove.nr > /tmp/jove.nr
 -	$(TINSTALL) /tmp/jove.nr $(JOVEM)
 -	rm /tmp/jove.nr
++	     -e 's;<LIBDIR>;${LOCALBASE}/libexec/jove;' \
++	     -e 's;<SHAREDIR>;${LOCALBASE}/share/jove;' \
 +	     -e 's;<SHELL>;$(DFLTSHELL);' doc/jove.nr > jove.$(MANEXT)
 +	$(TINSTALL) jove.$(MANEXT) $(JOVEM)
  
  # doc/jove.doc is the formatted manpage (only needed by DOS)
  # Building it should be like building $(JOVEM) except that we
-@@ -391,18 +394,16 @@ $(TEACHJOVEM): doc/teachjove.nr
+@@ -389,20 +392,18 @@ doc/jove.doc: doc/jove.nr
+ 
+ $(TEACHJOVEM): doc/teachjove.nr
  	@sed -e 's;<TMPDIR>;$(TMPDIR);' \
- 	     -e 's;<LIBDIR>;$(LIBDIR);' \
- 	     -e 's;<SHAREDIR>;$(SHAREDIR);' \
+-	     -e 's;<LIBDIR>;$(LIBDIR);' \
+-	     -e 's;<SHAREDIR>;$(SHAREDIR);' \
 -	     -e 's;<SHELL>;$(DFLTSHELL);' doc/teachjove.nr > /tmp/teachjove.nr
 -	$(TINSTALL) /tmp/teachjove.nr $(TEACHJOVEM)
 -	rm /tmp/teachjove.nr
++	     -e 's;<LIBDIR>;${LOCALBASE}/libexec/jove;' \
++	     -e 's;<SHAREDIR>;${LOCALBASE}/share/jove;' \
 +	     -e 's;<SHELL>;$(DFLTSHELL);' doc/teachjove.nr > teachjove.$(MANEXT)
 +	$(TINSTALL) teachjove.$(MANEXT) $(TEACHJOVEM)
  
