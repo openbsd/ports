@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/09/16 08:51:18 aanriot Exp $
+# $OpenBSD: Makefile,v 1.2 2006/04/09 12:02:36 aanriot Exp $
 
 COMMENT=	"simple methods to Read/Write .ini style files"
 
-DISTNAME=	Config-Tiny-2.02
+DISTNAME=	Config-Tiny-2.05
 PKGNAME=        p5-${DISTNAME}
 CATEGORIES=     devel perl5
 
