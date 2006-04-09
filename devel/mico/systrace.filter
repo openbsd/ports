@@ -1,3 +1,3 @@
-# $OpenBSD: systrace.filter,v 1.2 2005/02/09 20:36:29 sturm Exp $
+# $OpenBSD: systrace.filter,v 1.3 2006/04/09 13:29:34 sturm Exp $
 # necessary for idl to work
-	native-bind: sockaddr eq "inet-[0.0.0.0]:0" then permit log
+	native-bind: sockaddr eq "inet-[0.0.0.0]:0" then permit
