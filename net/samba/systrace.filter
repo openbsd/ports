@@ -1,0 +1,3 @@
+# $OpenBSD: systrace.filter,v 1.1 2006/04/09 15:08:20 sturm Exp $
+# XXX AF_LOCAL socket is not expanded like a filename
+	native-bind: sockaddr eq "conftest.unixsock.sock" then permit
