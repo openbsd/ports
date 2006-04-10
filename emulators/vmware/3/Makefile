@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2006/01/08 02:20:30 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2006/04/10 21:33:36 todd Exp $
 
 ONLY_FOR_ARCHS= i386
 
 COMMENT=	"VMware emulator"
 DISTNAME=	VMware-workstation-3.2.1-2242
-PKGNAME=	vmware-3.2.1_2242p2
+PKGNAME=	vmware-3.2.1_2242p3
 CATEGORIES=	emulators
 MASTER_SITES=	http://download3.vmware.com/software/wkst/
 MASTER_SITES0=	http://monkey.org/~marius/vmware-openbsd/

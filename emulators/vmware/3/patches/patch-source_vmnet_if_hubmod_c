@@ -1,7 +1,7 @@
-$OpenBSD: patch-source_vmnet_if_hubmod_c,v 1.1 2006/01/08 01:44:38 aaron Exp $
---- source/vmnet/if_hubmod.c.orig	Sat Jan  7 08:27:56 2006
-+++ source/vmnet/if_hubmod.c	Sat Jan  7 08:27:18 2006
-@@ -604,6 +604,7 @@
+$OpenBSD: patch-source_vmnet_if_hubmod_c,v 1.2 2006/04/10 21:33:36 todd Exp $
+--- source/vmnet/if_hubmod.c.orig	Sun Mar 14 15:58:51 2004
++++ source/vmnet/if_hubmod.c	Mon Apr 10 16:17:15 2006
+@@ -604,6 +604,7 @@ hub_fake_clonedev(dev_t dev, int flag, s
  #endif
  
  	p->p_dupfd = fd;
@@ -9,3 +9,21 @@ $OpenBSD: patch-source_vmnet_if_hubmod_c,v 1.1 2006/01/08 01:44:38 aaron Exp $
  
  	return ENXIO;
  }
+@@ -651,7 +652,7 @@ hub_sendchain(struct hubport_softc *port
+ 			 */
+ #if NBPFILTER > 0
+ 			if (ifp2->if_bpf)
+-				bpf_mtap(ifp2->if_bpf, m2);
++				bpf_mtap(ifp2->if_bpf, m2, BPF_DIRECTION_OUT);
+ #endif
+ 			s = splnet();
+ 			drops1 = ifp2->if_snd.ifq_drops;
+@@ -732,7 +733,7 @@ hub_ifstart(struct ifnet *ifp)
+ 	hub_sendchain(portsc, m);
+ #if NBPFILTER > 0
+ 	if (ifp->if_bpf)
+-		bpf_mtap(ifp->if_bpf, m);
++		bpf_mtap(ifp->if_bpf, m, BPF_DIRECTION_OUT);
+ #endif
+ 	m_freem(m);
+ 
