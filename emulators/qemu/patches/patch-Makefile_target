@@ -1,16 +1,18 @@
-$OpenBSD: patch-Makefile_target,v 1.7 2006/02/16 16:27:44 todd Exp $
+$OpenBSD: patch-Makefile_target,v 1.8 2006/04/10 21:10:05 todd Exp $
 --- Makefile.target.orig	Mon Dec 19 16:51:53 2005
-+++ Makefile.target	Tue Feb 14 15:04:27 2006
-@@ -17,7 +17,7 @@ ifdef CONFIG_USER_ONLY
++++ Makefile.target	Mon Feb 20 21:21:20 2006
+@@ -17,8 +17,9 @@ ifdef CONFIG_USER_ONLY
  VPATH+=:$(SRC_PATH)/linux-user
  DEFINES+=-I$(SRC_PATH)/linux-user -I$(SRC_PATH)/linux-user/$(TARGET_ARCH)
  endif
 -CFLAGS=-Wall -O2 -g -fno-strict-aliasing
 +#CFLAGS=-Wall -O2 -g -fno-strict-aliasing
  #CFLAGS+=-Werror
++CFLAGS+= -ggdb
  LDFLAGS=-g
  LIBS=
-@@ -137,7 +137,7 @@ LDFLAGS+=-Wl,-G0 -Wl,-T,$(SRC_PATH)/ia64
+ HELPER_CFLAGS=$(CFLAGS)
+@@ -137,7 +138,7 @@ LDFLAGS+=-Wl,-G0 -Wl,-T,$(SRC_PATH)/ia64
  endif
  
  ifeq ($(ARCH),arm)
@@ -19,7 +21,7 @@ $OpenBSD: patch-Makefile_target,v 1.7 2006/02/16 16:27:44 todd Exp $
  LDFLAGS+=-Wl,-T,$(SRC_PATH)/arm.ld
  endif
  
-@@ -146,6 +146,12 @@ OP_CFLAGS=$(CFLAGS) -fomit-frame-pointer
+@@ -146,6 +147,12 @@ OP_CFLAGS=$(CFLAGS) -fomit-frame-pointer
  LDFLAGS+=-Wl,-T,m68k.ld
  endif
  
@@ -32,7 +34,7 @@ $OpenBSD: patch-Makefile_target,v 1.7 2006/02/16 16:27:44 todd Exp $
  ifeq ($(HAVE_GCC3_OPTIONS),yes)
  # very important to generate a return at the end of every operation
  OP_CFLAGS+=-fno-reorder-blocks -fno-optimize-sibling-calls
-@@ -159,6 +165,7 @@ endif
+@@ -159,6 +166,7 @@ endif
  #########################################################
  
  DEFINES+=-D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
@@ -40,7 +42,7 @@ $OpenBSD: patch-Makefile_target,v 1.7 2006/02/16 16:27:44 todd Exp $
  LIBS+=-lm
  ifndef CONFIG_USER_ONLY
  LIBS+=-lz
-@@ -275,6 +282,9 @@ VL_OBJS+=block-cow.o block-qcow.o aes.o 
+@@ -275,6 +283,9 @@ VL_OBJS+=block-cow.o block-qcow.o aes.o 
  
  SOUND_HW = sb16.o es1370.o
  AUDIODRV = audio.o noaudio.o wavaudio.o
@@ -50,7 +52,7 @@ $OpenBSD: patch-Makefile_target,v 1.7 2006/02/16 16:27:44 todd Exp $
  ifdef CONFIG_SDL
  AUDIODRV += sdlaudio.o
  endif
-@@ -308,7 +318,7 @@ ifeq ($(TARGET_BASE_ARCH), i386)
+@@ -308,7 +319,7 @@ ifeq ($(TARGET_BASE_ARCH), i386)
  # Hardware support
  VL_OBJS+= ide.o ne2000.o pckbd.o ps2.o vga.o $(SOUND_HW) dma.o $(AUDIODRV)
  VL_OBJS+= fdc.o mc146818rtc.o serial.o i8259.o i8254.o pc.o
@@ -59,7 +61,7 @@ $OpenBSD: patch-Makefile_target,v 1.7 2006/02/16 16:27:44 todd Exp $
  DEFINES += -DHAS_AUDIO
  endif
  ifeq ($(TARGET_BASE_ARCH), ppc)
-@@ -462,7 +472,7 @@ clean:
+@@ -462,7 +473,7 @@ clean:
  
  install: all 
  ifneq ($(PROGS),)

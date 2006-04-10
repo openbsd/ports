@@ -1,0 +1,21 @@
+$OpenBSD: patch-qemu-img_c,v 1.1 2006/04/10 21:10:05 todd Exp $
+--- qemu-img.c.orig	Mon Feb 20 22:57:21 2006
++++ qemu-img.c	Mon Feb 20 22:56:51 2006
+@@ -58,7 +58,7 @@ char *qemu_strdup(const char *str)
+     return ptr;
+ }
+ 
+-void pstrcpy(char *buf, int buf_size, const char *str)
++void pstrcpy(char *buf, size_t buf_size, const char *str)
+ {
+     int c;
+     char *q = buf;
+@@ -76,7 +76,7 @@ void pstrcpy(char *buf, int buf_size, co
+ }
+ 
+ /* strcat and truncate. */
+-char *pstrcat(char *buf, int buf_size, const char *s)
++char *pstrcat(char *buf, size_t buf_size, const char *s)
+ {
+     int len;
+     len = strlen(buf);

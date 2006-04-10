@@ -1,0 +1,12 @@
+$OpenBSD: patch-disas_c,v 1.1 2006/04/10 21:10:05 todd Exp $
+--- disas.c.orig	Sat Apr  1 08:42:02 2006
++++ disas.c	Sat Apr  1 08:44:56 2006
+@@ -270,7 +270,7 @@ void disas(FILE *out, void *code, unsign
+ #ifdef __arm__
+         /* since data are included in the code, it is better to
+            display code data too */
+-        if (is_host) {
++        if (1 /* is_host */) {
+             fprintf(out, "%08x  ", (int)bfd_getl32((const bfd_byte *)pc));
+         }
+ #endif
