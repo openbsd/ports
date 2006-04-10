@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.16 2006/03/12 23:11:30 robert Exp $
+# $OpenBSD: Makefile,v 1.17 2006/04/10 14:51:04 robert Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"ISO-C API and CLI for generating Universally Unique Identifiers"
 COMMENT-perl=	"UUID modules for Perl"
 
-VERSION=		1.4.1
+VERSION=		1.4.2
 DISTNAME=		uuid-${VERSION}
 FULLPKGNAME=		uuid-${VERSION}
 FULLPKGNAME-perl= 	p5-UUID-${VERSION}
 CATEGORIES=		devel
 SHARED_LIBS=		uuid	13.22 \
-					uuid++	14.21
+			uuid++	14.21
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -40,6 +40,6 @@ USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-perl --with-cxx \
-					--without-php --without-pgsql
+			--without-php --without-pgsql
 
 .include <bsd.port.mk>
