@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/11/02 00:02:50 cathcart Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/04/10 20:43:01 sturm Exp $
 bin/GMT
 bin/blockmean
 bin/blockmedian
@@ -70,8 +70,11 @@ include/gmt_calclock.h
 include/gmt_colors.h
 include/gmt_contour.h
 include/gmt_customio.h
+include/gmt_datums.h
+include/gmt_ellipsoids.h
 include/gmt_funcnames.h
 include/gmt_grd.h
+include/gmt_grdformats.h
 include/gmt_grdio.h
 include/gmt_io.h
 include/gmt_keywords.h
@@ -86,8 +89,11 @@ include/gmt_shore.h
 include/gmt_symbol.h
 include/gmt_time_systems.h
 include/gmt_unique.h
+include/gmt_version.h
 include/pslib.h
+include/pslib_inc.h
 lib/libgmt.a
+lib/libgmtps.a
 lib/libpsl.a
 @man man/man1/GMT.1
 @man man/man1/blockmean.1
@@ -361,6 +367,7 @@ share/gmt/share/time/gr.d
 share/gmt/share/time/hu.d
 share/gmt/share/time/ie.d
 share/gmt/share/time/il.d
+share/gmt/share/time/is.d
 share/gmt/share/time/it.d
 share/gmt/share/time/jp.d
 share/gmt/share/time/nl.d
@@ -369,6 +376,7 @@ share/gmt/share/time/pl.d
 share/gmt/share/time/pt.d
 share/gmt/share/time/ru.d
 share/gmt/share/time/se.d
+share/gmt/share/time/sg.d
 share/gmt/share/time/to.d
 share/gmt/share/time/tr.d
 share/gmt/share/time/uk.d

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2006/03/31 16:50:44 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2006/04/10 20:43:01 sturm Exp $
 
 COMMENT=		"draw maps and charts"
 
-DISTNAME=		GMT4.0
-PKGNAME=		gmt-4.0
+V=			4.1.1
+DISTNAME=		GMT${V}
+PKGNAME=		gmt-${V}
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://gmt.soest.hawaii.edu/
@@ -20,51 +21,43 @@ LIB_DEPENDS=		netcdf.1::math/netcdf
 
 WANTLIB=		c m
 
-MASTER_SITES=		ftp://gmt.soest.hawaii.edu/pub/gmt/4/ \
+MASTER_SITES=		ftp://ftp.soest.hawaii.edu/gmt/4/ \
 			ftp://falcon.grdl.noaa.gov/pub/gmt/4/ \
 			ftp://ftp.iris.washington.edu/pub/gmt/4/ \
-			ftp://ftp.iag.usp.br/pub/gmt/4/ \
 			ftp://ftp.geologi.uio.no/pub/gmt/4/ \
-			ftp://gd.tuwien.ac.at/pub/gmt/4/ \
-			ftp://life.csu.edu.au/pub/gmt/4/
+			ftp://gd.tuwien.ac.at/pub/gmt/4/
 			
-DISTFILES=		GMT4.0_progs.tar.bz2 \
-			GMT4.0_man.tar.bz2 \
-			GMT_share.tar.bz2 
+DISTFILES=		GMT4.1.1_progs.tar.bz2 \
+			GMT4.1.1_man.tar.bz2 \
+			GMT4_share.tar.bz2 
 
-SUPDISTFILES=		GMT_high.tar.bz2 \
-			GMT_full.tar.bz2
+SUPDISTFILES=		GMT4_high.tar.bz2 \
+			GMT4_full.tar.bz2
 
-EXTRACT_CASES=		GMT_*tar.bz2) cd ${WRKDIR}/${DISTNAME}; \
-			bzip2 -dc ${FULLDISTDIR}/$$archive | tar xf -; \
-			cd ${WRKDIR};;
+DIST_SUBDIR=		${PKGNAME}
+EXTRACT_CASES=		GMT4_*.tar.bz2) bzip2 -dc ${FULLDISTDIR}/$$archive | \
+				tar xf - -C ${WRKDIST};;
 
-MAKE_ENV+=		NETCDFHOME="${LOCALBASE}"
+CONFIGURE_STYLE=	gnu
 
-CONFIGURE_STYLE=	simple
+CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/gmt/share \
+			--enable-mansect=1 \
+			--enable-netcdf=${LOCALBASE}
 
-CONFIGURE_ARGS+=	--prefix=${WRKINST}${LOCALBASE} \
-			--datadir=${WRKINST}${LOCALBASE}/share/gmt/share \
-			--enable-mansect=1
-
-CONFIGURE_ENV+=		NETCDFHOME="${LOCALBASE}"
 
 FLAVORS=		high full
 FLAVOR?=
 
 .if ${FLAVOR:L:Mhigh}
-DISTFILES+=		GMT_high.tar.bz2
+DISTFILES+=		GMT4_high.tar.bz2
 .endif
 .if ${FLAVOR:L:Mfull}
-DISTFILES+=		GMT_full.tar.bz2
+DISTFILES+=		GMT4_full.tar.bz2
 .endif
 
 NO_REGRESS=		Yes
 
-INSTALL_TARGET=		install-all
-
-pre-configure:
-	@cd ${WRKSRC}/src && \
-		perl -pi -e "s,\@prefix\@,${PREFIX},g" GMT.in
+ALL_TARGET=		gmt
+INSTALL_TARGET=		install install-data install-man
 
 .include <bsd.port.mk>

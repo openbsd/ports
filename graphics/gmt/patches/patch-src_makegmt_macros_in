@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_makegmt_macros_in,v 1.1.1.1 2005/11/02 00:02:50 cathcart Exp $
---- src/makegmt.macros.in.orig	Fri Jun 24 01:46:37 2005
-+++ src/makegmt.macros.in	Fri Jun 24 01:46:49 2005
-@@ -78,7 +78,7 @@ NETCDF		 = $(NETCDFHOME)
+$OpenBSD: patch-src_makegmt_macros_in,v 1.2 2006/04/10 20:43:01 sturm Exp $
+--- src/makegmt.macros.in.orig	Sat Dec 17 05:53:05 2005
++++ src/makegmt.macros.in	Wed Mar 29 21:31:58 2006
+@@ -85,7 +85,7 @@ NETCDF		 = @NETCDFHOME@
  #	Required path to GMT home (used as $GMTHOME by users)
  #---------------------------------------------------------------
  #
 -GMT_DEFAULT_PATH = $(prefix)
-+GMT_DEFAULT_PATH = $(LOCALBASE)/share/gmt
++GMT_DEFAULT_PATH = ${prefix}/share/gmt
  #
  #-------------------------------------------------------------------------------
  #	Compiler switches (set a total of one only)
