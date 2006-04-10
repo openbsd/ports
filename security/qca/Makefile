@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/02/05 11:09:46 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2006/04/10 05:43:48 jakob Exp $
 
 COMMENT=	"Qt Cryptographic Architecture"
 
@@ -9,7 +9,7 @@ SHARED_LIBS=	qca	2.0
 
 HOMEPAGE=	http://delta.affinix.com/qca/
 
-MAINTAINER=	Gerardo Santana Gomez Garrido <santana@openbsd.org.mx>
+MAINTAINER=	Gerardo Santana Gomez Garrido <gerardo.santana@gmail.com>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

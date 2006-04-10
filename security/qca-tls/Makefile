@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/01/16 16:35:36 espie Exp $ 
+# $OpenBSD: Makefile,v 1.4 2006/04/10 05:43:49 jakob Exp $ 
 
 COMMENT=                "Qt Cryptographic Architecture, TLS plugin"
 
@@ -8,7 +8,7 @@ CATEGORIES=             security
 
 HOMEPAGE=               http://delta.affinix.com/qca/
 
-MAINTAINER=             Gerardo Santana Gomez Garrido <santana@openbsd.org.mx>
+MAINTAINER=             Gerardo Santana Gomez Garrido <gerardo.santana@gmail.com>
 
 RUN_DEPENDS=            qca.1::security/qca
 

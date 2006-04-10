@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/01/14 15:49:48 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2006/04/10 05:43:49 jakob Exp $
 
 COMMENT=	"OO toolkit for SGML parsing and entity management"
 
@@ -7,7 +7,7 @@ PKGNAME=	${DISTNAME}p1
 CATEGORIES=	textproc
 HOMEPAGE=	http://www.jclark.com/sp/
 
-MAINTAINER=	Gerardo Santana Gomez Garrido <santana@openbsd.org.mx>
+MAINTAINER=	Gerardo Santana Gomez Garrido <gerardo.santana@gmail.com>
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes

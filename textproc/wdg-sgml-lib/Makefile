@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2005/05/01 18:39:13 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2006/04/10 05:43:49 jakob Exp $
 
 COMMENT=	"collection of HTML, XHTML, ISO-HTML, WML and MathML DTDs"
 
@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.htmlhelp.com/tools/validator/offline/
 
-MAINTAINER=	Gerardo Santana Gomez Garrido <santana@openbsd.org.mx>
+MAINTAINER=	Gerardo Santana Gomez Garrido <gerardo.santana@gmail.com>
 
 # custom
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2005/05/01 18:33:05 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2006/04/10 05:43:49 jakob Exp $
 
 COMMENT=	"SGML parser and entity manager"
 
@@ -6,7 +6,7 @@ DISTNAME=	lq-sp-1.3.4.12
 CATEGORIES=	textproc
 HOMEPAGE=	http://www.htmlhelp.com/tools/validator/offline/
 
-MAINTAINER=	Gerardo Santana Gomez Garrido <santana@openbsd.org.mx>
+MAINTAINER=	Gerardo Santana Gomez Garrido <gerardo.santana@gmail.com>
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes

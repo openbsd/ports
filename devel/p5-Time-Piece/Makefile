@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/04/17 09:57:59 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2006/04/10 05:43:47 jakob Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -8,7 +8,7 @@ DISTNAME=	Time-Piece-1.08
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
-MAINTAINER=	Gerardo Santana Gomez Garrido <santana@openbsd.org.mx>
+MAINTAINER=	Gerardo Santana Gomez Garrido <gerardo.santana@gmail.com>
 
 # Artistic License
 PERMIT_PACKAGE_CDROM=	Yes

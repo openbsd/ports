@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/03/29 09:16:03 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2006/04/10 05:43:48 jakob Exp $
 
 COMMENT=	"multiplatform Jabber client"
 
@@ -8,7 +8,7 @@ CATEGORIES=	net
 
 HOMEPAGE=	http://psi.affinix.com/
 
-MAINTAINER=	Gerardo Santana Gomez Garrido <santana@openbsd.org.mx>
+MAINTAINER=	Gerardo Santana Gomez Garrido <gerardo.santana@gmail.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

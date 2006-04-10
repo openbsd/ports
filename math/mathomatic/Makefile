@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/03/11 13:43:27 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2006/04/10 05:43:48 jakob Exp $
 
 COMMENT=	"small, portable, general purpose computer algebra system"
 
@@ -7,7 +7,7 @@ CATEGORIES=	math
 
 HOMEPAGE=	http://mathomatic.orgserve.de/math/
 
-MAINTAINER=	Gerardo Santana Gomez Garrido <santana@openbsd.org.mx>
+MAINTAINER=	Gerardo Santana Gomez Garrido <gerardo.santana@gmail.com>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
