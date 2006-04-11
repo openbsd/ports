@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2004/11/26 09:54:35 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2006/04/11 05:49:38 kevlo Exp $
 
 COMMENT=	"lightweight and easy to use web calendar"
 
-V=		2.6
+V=		2.7
 DISTNAME=	calendar-$V
-PKGNAME=	mycalendar-$Vp0
+PKGNAME=	mycalendar-$V
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.fuzzymonkey.org/newfuzzy/software/perl/
@@ -18,6 +18,9 @@ PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=  Yes
 
 MASTER_SITES=	http://www.fuzzymonkey.org/files/
+
+RUN_DEPENDS=	:pscal-*:print/pscal \
+		:ghostscript-*:print/ghostscript/gnu
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
