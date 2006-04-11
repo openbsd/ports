@@ -1,7 +1,7 @@
-$OpenBSD: patch-protocols_yahoo_yahoo_httplib_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
---- protocols/yahoo/yahoo_httplib.c.orig	2004-03-18 07:21:12.000000000 +1100
-+++ protocols/yahoo/yahoo_httplib.c	2004-06-09 20:32:18.000000000 +1000
-@@ -101,7 +101,7 @@ int yahoo_tcp_readline(char *ptr, int ma
+$OpenBSD: patch-protocols_yahoo_yahoo_httplib_c,v 1.2 2006/04/11 15:11:33 naddy Exp $
+--- protocols/yahoo/yahoo_httplib.c.orig	Wed Nov 30 23:07:43 2005
++++ protocols/yahoo/yahoo_httplib.c	Sun Jan 29 03:23:16 2006
+@@ -97,7 +97,7 @@ int yahoo_tcp_readline(char *ptr, int ma
  }
  
  static int url_to_host_port_path(const char *url,
@@ -10,7 +10,7 @@ $OpenBSD: patch-protocols_yahoo_yahoo_httplib_c,v 1.1 2004/06/20 16:27:49 naddy 
  {
  	char *urlcopy=NULL;
  	char *slash=NULL;
-@@ -136,13 +136,13 @@ static int url_to_host_port_path(const c
+@@ -132,13 +132,13 @@ static int url_to_host_port_path(const c
  	}
  
  	if(!slash) {
@@ -27,7 +27,7 @@ $OpenBSD: patch-protocols_yahoo_yahoo_httplib_c,v 1.1 2004/06/20 16:27:49 naddy 
  	
  	FREE(urlcopy);
  
-@@ -159,8 +159,9 @@ char *yahoo_urlencode(const char *instr)
+@@ -155,8 +155,9 @@ char *yahoo_urlencode(const char *instr)
  	int ipos=0, bpos=0;
  	char *str = NULL;
  	int len = strlen(instr);
@@ -38,7 +38,7 @@ $OpenBSD: patch-protocols_yahoo_yahoo_httplib_c,v 1.1 2004/06/20 16:27:49 naddy 
  		return "";
  
  	while(instr[ipos]) {
-@@ -169,7 +170,7 @@ char *yahoo_urlencode(const char *instr)
+@@ -165,7 +166,7 @@ char *yahoo_urlencode(const char *instr)
  		if(!instr[ipos])
  			break;
  		
@@ -47,7 +47,7 @@ $OpenBSD: patch-protocols_yahoo_yahoo_httplib_c,v 1.1 2004/06/20 16:27:49 naddy 
  		bpos+=3;
  		ipos++;
  	}
-@@ -318,7 +319,7 @@ void yahoo_http_post(int id, const char 
+@@ -314,7 +315,7 @@ void yahoo_http_post(int id, const char 
  	char path[255];
  	char buff[1024];
  	
@@ -56,7 +56,7 @@ $OpenBSD: patch-protocols_yahoo_yahoo_httplib_c,v 1.1 2004/06/20 16:27:49 naddy 
  		return;
  
  	snprintf(buff, sizeof(buff), 
-@@ -343,7 +344,7 @@ void yahoo_http_get(int id, const char *
+@@ -339,7 +340,7 @@ void yahoo_http_get(int id, const char *
  	char path[255];
  	char buff[1024];
  	

@@ -1,0 +1,17 @@
+$OpenBSD: patch-protocols_yahoo_crypt_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
+--- protocols/yahoo/crypt.c.orig	Wed Nov 30 23:07:35 2005
++++ protocols/yahoo/crypt.c	Sun Jan 29 03:23:16 2006
+@@ -155,11 +155,11 @@ char *yahoo_crypt(char *key, char *salt)
+ 	/* Now we can construct the result string.  It consists of three
+ 	   parts.  */
+ 
+-	strncpy(buffer, md5_salt_prefix, MAX (0, buflen));
++	strlcpy(buffer, md5_salt_prefix, MAX (0, buflen));
+ 	cp = buffer + strlen(buffer);
+ 	buflen -= sizeof (md5_salt_prefix);
+ 
+-	strncpy(cp, salt, MIN ((size_t) buflen, salt_len));
++	strlcpy(cp, salt, MIN ((size_t) buflen, salt_len));
+ 	cp = cp + strlen(cp);
+ 	buflen -= MIN ((size_t) buflen, salt_len);
+ 

@@ -1,0 +1,21 @@
+$OpenBSD: patch-protocols_oscar_info_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
+--- protocols/oscar/info.c.orig	Mon Sep 12 03:21:52 2005
++++ protocols/oscar/info.c	Tue Nov  1 22:01:08 2005
+@@ -26,7 +26,7 @@ int aim_getinfo(aim_session_t *sess, aim
+ 	if (!(fr = aim_tx_new(sess, conn, AIM_FRAMETYPE_FLAP, 0x02, 12+1+strlen(sn))))
+ 		return -ENOMEM;
+ 
+-	strncpy(privdata.sn, sn, sizeof(privdata.sn));
++	strlcpy(privdata.sn, sn, sizeof(privdata.sn));
+ 	privdata.infotype = infotype;
+ 	snacid = aim_cachesnac(sess, 0x0002, 0x0005, 0x0000, &privdata, sizeof(struct aim_priv_inforeq));
+ 	
+@@ -718,7 +718,7 @@ int locate_modfirst(aim_session_t *sess,
+ 	mod->toolid = 0x0110;
+ 	mod->toolversion = 0x0629;
+ 	mod->flags = 0;
+-	strncpy(mod->name, "locate", sizeof(mod->name));
++	strlcpy(mod->name, "locate", sizeof(mod->name));
+ 	mod->snachandler = snachandler;
+ 
+ 	return 0;

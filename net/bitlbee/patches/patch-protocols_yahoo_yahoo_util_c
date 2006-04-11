@@ -1,7 +1,7 @@
-$OpenBSD: patch-protocols_yahoo_yahoo_util_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
---- protocols/yahoo/yahoo_util.c.orig	2004-02-09 04:23:29.000000000 +1100
-+++ protocols/yahoo/yahoo_util.c	2004-06-09 20:33:34.000000000 +1000
-@@ -46,11 +46,11 @@ char * y_string_append(char * string, ch
+$OpenBSD: patch-protocols_yahoo_yahoo_util_c,v 1.2 2006/04/11 15:11:33 naddy Exp $
+--- protocols/yahoo/yahoo_util.c.orig	Sun Jan 15 02:12:41 2006
++++ protocols/yahoo/yahoo_util.c	Sun Jan 29 03:23:16 2006
+@@ -42,11 +42,11 @@ char * y_string_append(char * string, ch
  
  	if(new_string == NULL) {
  		new_string = y_new(char, size);
@@ -15,3 +15,12 @@ $OpenBSD: patch-protocols_yahoo_yahoo_util_c,v 1.1 2004/06/20 16:27:49 naddy Exp
  
  	return new_string;
  }
+@@ -82,7 +82,7 @@ char ** y_strsplit(char * str, char * se
+ 	for(p=str, s=strstr(p,sep); i<nelem && s; p=s+l, s=strstr(p,sep), i++) {
+ 		int len = s-p;
+ 		vector[i] = y_new(char, len+1);
+-		strncpy(vector[i], p, len);
++		strlcpy(vector[i], p, len+1);
+ 		vector[i][len] = '\0';
+ 	}
+ 

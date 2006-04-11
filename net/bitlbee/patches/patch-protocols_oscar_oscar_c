@@ -1,16 +1,25 @@
-$OpenBSD: patch-protocols_oscar_oscar_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
---- protocols/oscar/oscar.c.orig	Sat Sep 25 21:30:31 2004
-+++ protocols/oscar/oscar.c	Fri Oct 15 14:34:08 2004
-@@ -297,7 +297,7 @@ static void oscar_callback(gpointer data
- 					c->inpa = 0;
- 					c->fd = -1;
- 					aim_conn_kill(odata->sess, &conn);
--					sprintf(buf, _("You have been disconnected from chat room %s."), c->name);
-+					g_snprintf(buf, sizeof(buf), _("You have been disconnected from chat room %s."), c->name);
- 					do_error_dialog(sess->aux_data, buf, _("Chat Error!"));
- 				} else if (conn->type == AIM_CONN_TYPE_CHATNAV) {
- 					if (odata->cnpa > 0)
-@@ -1353,7 +1353,7 @@ static int gaim_parse_msgerr(aim_session
+$OpenBSD: patch-protocols_oscar_oscar_c,v 1.3 2006/04/11 15:11:33 naddy Exp $
+--- protocols/oscar/oscar.c.orig	Sun Apr  2 04:53:40 2006
++++ protocols/oscar/oscar.c	Thu Apr  6 23:39:32 2006
+@@ -146,7 +146,7 @@ static char *extract_name(const char *na
+ 			tmp[j++] = x[i];
+ 			continue;
+ 		}
+-		strncpy(hex, x + ++i, 2); hex[2] = 0;
++		strlcpy(hex, x + ++i, sizeof(hex));
+ 		i++;
+ 		tmp[j++] = (char)strtol(hex, NULL, 16);
+ 	}
+@@ -291,7 +291,7 @@ static void oscar_callback(gpointer data
+ 				c->inpa = 0;
+ 				c->fd = -1;
+ 				aim_conn_kill(odata->sess, &conn);
+-				sprintf(buf, _("You have been disconnected from chat room %s."), c->name);
++				g_snprintf(buf, sizeof(buf), _("You have been disconnected from chat room %s."), c->name);
+ 				do_error_dialog(sess->aux_data, buf, _("Chat Error!"));
+ 			} else if (conn->type == AIM_CONN_TYPE_CHATNAV) {
+ 				if (odata->cnpa > 0)
+@@ -1361,7 +1361,7 @@ static int gaim_parse_msgerr(aim_session
  	destn = va_arg(ap, char *);
  	va_end(ap);
  
@@ -19,7 +28,7 @@ $OpenBSD: patch-protocols_oscar_oscar_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
  			(reason < msgerrreasonlen) ? msgerrreason[reason] : _("Reason unknown"));
  	do_error_dialog(sess->aux_data, buf, _("Gaim - Error"));
  
-@@ -1371,7 +1371,7 @@ static int gaim_parse_locerr(aim_session
+@@ -1379,7 +1379,7 @@ static int gaim_parse_locerr(aim_session
  	destn = va_arg(ap, char *);
  	va_end(ap);
  
@@ -28,3 +37,12 @@ $OpenBSD: patch-protocols_oscar_oscar_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
  			(reason < msgerrreasonlen) ? msgerrreason[reason] : _("Reason unknown"));
  	do_error_dialog(sess->aux_data, buf, _("Gaim - Error"));
  
+@@ -2382,7 +2382,7 @@ static char *oscar_encoding_to_utf8(char
+ 	 * that was specified.  So we assume it's UTF-8 and hope for the best.
+ 	 */
+ 	if (*utf8 == 0) {
+-	    strncpy(utf8, text, textlen);
++	    strlcpy(utf8, text, 8192);
+ 	}
+ 
+ 	return utf8;

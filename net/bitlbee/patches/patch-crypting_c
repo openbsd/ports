@@ -1,7 +1,7 @@
-$OpenBSD: patch-crypting_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
---- crypting.c.orig	2004-05-05 00:25:36.000000000 +1000
-+++ crypting.c	2004-06-08 20:08:19.000000000 +1000
-@@ -111,11 +111,15 @@ char *hashpass (irc_t *irc) {
+$OpenBSD: patch-crypting_c,v 1.2 2006/04/11 15:11:33 naddy Exp $
+--- crypting.c.orig	Sun Jan 15 02:04:28 2006
++++ crypting.c	Sun Jan 29 03:27:22 2006
+@@ -117,11 +117,15 @@ char *hashpass (irc_t *irc) {
  	int i;
  	char digits[3];
  	char *rv;
@@ -18,8 +18,8 @@ $OpenBSD: patch-crypting_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
 +	memset (rv, 0, rv_len);
  	
  	md5_init (&md5state);
- 	md5_append (&md5state, irc->password, strlen (irc->password));
-@@ -124,7 +128,7 @@ char *hashpass (irc_t *irc) {
+ 	md5_append (&md5state, (unsigned char *)irc->password, strlen (irc->password));
+@@ -130,7 +134,7 @@ char *hashpass (irc_t *irc) {
  	for (i = 0; i < 16; i++) {
  		/* Build a hash of the pass */
  		g_snprintf (digits, sizeof (digits), "%02x", digest[i]);
@@ -28,43 +28,7 @@ $OpenBSD: patch-crypting_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  	}
  	
  	return (rv);
-@@ -133,11 +137,15 @@ char *hashpass (irc_t *irc) {
- char *obfucrypt (irc_t *irc, char *line) {
- 	int i, j;
- 	char *rv;
-+	size_t rv_len;
- 	
- 	if (irc->password == NULL) return (NULL);
- 	
--	rv = (char *)g_malloc (strlen (line) + 1);
--	memset (rv, '\0', strlen (line) + 1);
-+	rv_len = strlen (line) + 1;
-+	rv = (char *)g_malloc (rv_len);
-+	if (!rv) return NULL;
-+
-+	memset (rv, 0, rv_len);
- 	
- 	i = j = 0;
- 	while (*line) {
-@@ -158,11 +166,15 @@ char *obfucrypt (irc_t *irc, char *line)
- char *deobfucrypt (irc_t *irc, char *line) {
- 	int i, j;
- 	char *rv;
-+	size_t rv_len;
- 	
- 	if (irc->password == NULL) return (NULL);
- 	
--	rv = (char *)g_malloc (strlen (line) + 1);
--	memset (rv, '\0', strlen (line) + 1);
-+	rv_len = strlen (line) + 1;
-+	rv = (char *)g_malloc (rv_len);
-+	if (!rv) return NULL;
-+
-+	memset (rv, 0, rv_len);
- 	
- 	i = j = 0;
- 	while (*line) {
-@@ -224,6 +236,7 @@ int main( int argc, char *argv[] )
+@@ -229,6 +233,7 @@ int main( int argc, char *argv[] )
  		return( main( 0, NULL ) );
  	}
  	

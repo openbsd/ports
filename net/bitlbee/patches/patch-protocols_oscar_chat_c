@@ -1,0 +1,21 @@
+$OpenBSD: patch-protocols_oscar_chat_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
+--- protocols/oscar/chat.c.orig	Sun Jan 15 02:04:28 2006
++++ protocols/oscar/chat.c	Sun Jan 29 03:23:00 2006
+@@ -204,7 +204,7 @@ int aim_chat_join(aim_session_t *sess, a
+ 
+ 	memset(&csi, 0, sizeof(csi));
+ 	csi.exchange = exchange;
+-	strncpy(csi.name, roomname, sizeof(csi.name));
++	strlcpy(csi.name, roomname, sizeof(csi.name));
+ 	csi.instance = instance;
+ 
+ 	snacid = aim_cachesnac(sess, 0x0001, 0x0004, 0x0000, &csi, sizeof(csi));
+@@ -681,7 +681,7 @@ int chat_modfirst(aim_session_t *sess, a
+ 	mod->toolid = 0x0010;
+ 	mod->toolversion = 0x0629;
+ 	mod->flags = 0;
+-	strncpy(mod->name, "chat", sizeof(mod->name));
++	strlcpy(mod->name, "chat", sizeof(mod->name));
+ 	mod->snachandler = snachandler;
+ 
+ 	return 0;

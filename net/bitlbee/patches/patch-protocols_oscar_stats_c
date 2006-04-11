@@ -1,0 +1,12 @@
+$OpenBSD: patch-protocols_oscar_stats_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
+--- protocols/oscar/stats.c.orig	Wed Apr 28 01:36:33 2004
++++ protocols/oscar/stats.c	Tue Nov  1 21:54:29 2005
+@@ -31,7 +31,7 @@ int stats_modfirst(aim_session_t *sess, 
+ 	mod->toolid = 0x0104;
+ 	mod->toolversion = 0x0001;
+ 	mod->flags = 0;
+-	strncpy(mod->name, "stats", sizeof(mod->name));
++	strlcpy(mod->name, "stats", sizeof(mod->name));
+ 	mod->snachandler = snachandler;
+ 
+ 	return 0;

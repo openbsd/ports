@@ -1,0 +1,21 @@
+$OpenBSD: patch-protocols_oscar_auth_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
+--- protocols/oscar/auth.c.orig	Fri Nov 18 11:17:05 2005
++++ protocols/oscar/auth.c	Sun Jan 29 03:23:00 2006
+@@ -395,7 +395,7 @@ static int parse(aim_session_t *sess, ai
+ 	memset(sess->sn, 0, sizeof(sess->sn));
+ 	if (aim_gettlv(tlvlist, 0x0001, 1)) {
+ 		info.sn = aim_gettlv_str(tlvlist, 0x0001, 1);
+-		strncpy(sess->sn, info.sn, sizeof(sess->sn));
++		strlcpy(sess->sn, info.sn, sizeof(sess->sn));
+ 	}
+ 
+ 	/*
+@@ -529,7 +529,7 @@ int auth_modfirst(aim_session_t *sess, a
+ 	mod->family = 0x0017;
+ 	mod->version = 0x0000;
+ 	mod->flags = 0;
+-	strncpy(mod->name, "auth", sizeof(mod->name));
++	strlcpy(mod->name, "auth", sizeof(mod->name));
+ 	mod->snachandler = snachandler;
+ 
+ 	return 0;

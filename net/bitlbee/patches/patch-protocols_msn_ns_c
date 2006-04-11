@@ -1,9 +1,12 @@
-$OpenBSD: patch-protocols_msn_ns_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
---- protocols/msn/ns.c.orig	2004-05-15 23:00:53.000000000 +1000
-+++ protocols/msn/ns.c	2004-06-09 22:01:38.000000000 +1000
-@@ -218,8 +218,7 @@ static int msn_ns_command( gpointer data
+$OpenBSD: patch-protocols_msn_ns_c,v 1.2 2006/04/11 15:11:33 naddy Exp $
+--- protocols/msn/ns.c.orig	Fri Jun  3 11:15:35 2005
++++ protocols/msn/ns.c	Tue Nov  1 21:26:47 2005
+@@ -216,10 +216,9 @@ static int msn_ns_command( gpointer data
+ 		}
+ 		else if( num_parts == 7 && strcmp( cmd[2], "OK" ) == 0 )
  		{
- 			http_decode( cmd[4] );
+-			http_decode( cmd[4] );
++			http_decode( cmd[4], strlen(cmd[4])+1 );
  			
 -			strncpy( gc->displayname, cmd[4], sizeof( gc->displayname ) );
 -			gc->displayname[sizeof(gc->displayname)-1] = 0;
@@ -11,7 +14,16 @@ $OpenBSD: patch-protocols_msn_ns_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  			
  			set_login_progress( gc, 1, "Authenticated, getting buddy list" );
  			
-@@ -342,7 +341,7 @@ static int msn_ns_command( gpointer data
+@@ -291,7 +290,7 @@ static int msn_ns_command( gpointer data
+ 			return( 0 );
+ 		}
+ 		
+-		http_decode( cmd[2] );
++		http_decode( cmd[2], strlen(cmd[2])+1 );
+ 		list = atoi( cmd[3] );
+ 		
+ 		if( list & 1 ) /* FL */
+@@ -352,7 +351,7 @@ static int msn_ns_command( gpointer data
  		
  		g_snprintf( buf, sizeof( buf ), "QRY %d %s %d\r\n", ++md->trId, QRY_NAME, 32 );
  		for( i = 0; i < 16; i ++ )
@@ -20,13 +32,48 @@ $OpenBSD: patch-protocols_msn_ns_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  		
  		return( msn_write( gc, buf, strlen( buf ) ) );
  	}
-@@ -502,8 +501,7 @@ static int msn_ns_command( gpointer data
+@@ -373,7 +372,7 @@ static int msn_ns_command( gpointer data
+ 			return( 0 );
+ 		}
+ 		
+-		http_decode( cmd[4] );
++		http_decode( cmd[4], strlen(cmd[4])+1 );
+ 		serv_buddy_rename( gc, cmd[3], cmd[4] );
+ 		
+ 		st = msn_away_state_by_code( cmd[2] );
+@@ -401,7 +400,7 @@ static int msn_ns_command( gpointer data
+ 			return( 0 );
+ 		}
+ 		
+-		http_decode( cmd[3] );
++		http_decode( cmd[3], strlen(cmd[3])+1 );
+ 		serv_buddy_rename( gc, cmd[2], cmd[3] );
+ 		
+ 		st = msn_away_state_by_code( cmd[1] );
+@@ -457,7 +456,7 @@ static int msn_ns_command( gpointer data
+ 		{
+ 			GSList *l;
+ 			
+-			http_decode( cmd[5] );
++			http_decode( cmd[5], strlen(cmd[5])+1 );
+ 			
+ 			if( strchr( cmd[4], '@' ) == NULL )
+ 			{
+@@ -511,14 +510,13 @@ static int msn_ns_command( gpointer data
+ 		
  		if( g_strcasecmp( cmd[3], gc->username ) == 0 )
  		{
- 			http_decode( cmd[4] );
+-			http_decode( cmd[4] );
 -			strncpy( gc->displayname, cmd[4], sizeof( gc->displayname ) );
 -			gc->displayname[sizeof(gc->displayname)-1] = 0;
++			http_decode( cmd[4], strlen(cmd[4])+1 );
 +			strlcpy( gc->displayname, cmd[4], sizeof( gc->displayname ) );
  		}
  		else
  		{
+ 			/* This is not supposed to happen, but let's handle it anyway... */
+-			http_decode( cmd[4] );
++			http_decode( cmd[4], strlen(cmd[4])+1 );
+ 			serv_buddy_rename( gc, cmd[3], cmd[4] );
+ 		}
+ 	}

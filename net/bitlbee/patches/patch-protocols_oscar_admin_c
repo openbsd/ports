@@ -1,0 +1,12 @@
+$OpenBSD: patch-protocols_oscar_admin_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
+--- protocols/oscar/admin.c.orig	Thu Mar 24 00:38:46 2005
++++ protocols/oscar/admin.c	Tue Nov  1 21:54:16 2005
+@@ -80,7 +80,7 @@ int admin_modfirst(aim_session_t *sess, 
+ 	mod->toolid = AIM_TOOL_NEWWIN;
+ 	mod->toolversion = 0x0629; 
+ 	mod->flags = 0;
+-	strncpy(mod->name, "admin", sizeof(mod->name));
++	strlcpy(mod->name, "admin", sizeof(mod->name));
+ 	mod->snachandler = snachandler;
+ 
+ 	return 0;

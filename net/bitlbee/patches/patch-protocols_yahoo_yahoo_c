@@ -1,7 +1,7 @@
-$OpenBSD: patch-protocols_yahoo_yahoo_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
---- protocols/yahoo/yahoo.c.orig	Thu Sep  9 22:06:54 2004
-+++ protocols/yahoo/yahoo.c	Thu Oct 14 15:43:35 2004
-@@ -360,8 +360,11 @@ static int byahoo_chat_open( struct gaim
+$OpenBSD: patch-protocols_yahoo_yahoo_c,v 1.3 2006/04/11 15:11:33 naddy Exp $
+--- protocols/yahoo/yahoo.c.orig	Sun Jan 15 04:09:23 2006
++++ protocols/yahoo/yahoo.c	Sun Jan 29 03:23:16 2006
+@@ -379,8 +379,11 @@ static int byahoo_chat_open( struct gaim
  	char *roomname;
  	YList *members;
  	
@@ -15,7 +15,7 @@ $OpenBSD: patch-protocols_yahoo_yahoo_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
  	
  	c = serv_got_joined_chat( gc, ++byahoo_chat_id, roomname );
  	add_chat_buddy( c, gc->username );
-@@ -527,13 +530,17 @@ void ext_yahoo_login_response( int id, i
+@@ -558,13 +561,17 @@ void ext_yahoo_login_response( int id, i
  		
  		if( url && *url )
  		{
@@ -37,7 +37,7 @@ $OpenBSD: patch-protocols_yahoo_yahoo_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
  		}
  		
  		if( yd->logged_in )
-@@ -736,7 +743,7 @@ int ext_yahoo_connect(char *host, int po
+@@ -774,7 +781,7 @@ int ext_yahoo_connect(char *host, int po
  		if(!(server = gethostbyname(host))) {
  			return -1;
  		}
@@ -46,7 +46,15 @@ $OpenBSD: patch-protocols_yahoo_yahoo_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
  	}
  
  	if((servfd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
-@@ -799,7 +806,7 @@ void ext_yahoo_got_conf_invite( int id, 
+@@ -785,6 +792,7 @@ int ext_yahoo_connect(char *host, int po
+ 	{
+ 		memset(&serv_addr, 0, sizeof(serv_addr));
+ 		serv_addr.sin_family = AF_INET;
++		assert(server->h_length <= sizeof(serv_addr.sin_addr.s_addr));
+ 		memcpy(&serv_addr.sin_addr.s_addr, *p, server->h_length);
+ 		serv_addr.sin_port = htons(port);
+ 
+@@ -837,7 +845,7 @@ void ext_yahoo_got_conf_invite( int id, 
  		if( g_strcasecmp( m->data, gc->username ) != 0 )
  			add_chat_buddy( inv->c, m->data );
  	

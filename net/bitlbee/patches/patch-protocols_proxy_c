@@ -1,0 +1,38 @@
+$OpenBSD: patch-protocols_proxy_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
+--- protocols/proxy.c.orig	Fri Dec  9 22:59:55 2005
++++ protocols/proxy.c	Sun Jan 29 03:37:58 2006
+@@ -25,6 +25,7 @@
+  , 2nd provide an easy way to add socks support */
+ 
+ #define BITLBEE_CORE
++#include <assert.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+@@ -82,6 +83,7 @@ static struct sockaddr_in *gaim_gethostb
+ 			return NULL;
+ 		}
+ 		memset(&sin, 0, sizeof(struct sockaddr_in));
++		assert(hp->h_length <= sizeof(sin.sin_addr.s_addr));
+ 		memcpy(&sin.sin_addr.s_addr, hp->h_addr, hp->h_length);
+ 		sin.sin_family = hp->h_addrtype;
+ 	} else
+@@ -406,6 +408,7 @@ static void s5_sendconnect(gpointer data
+ 	buf[2] = 0x00;		/* reserved */
+ 	buf[3] = 0x03;		/* address type -- host name */
+ 	buf[4] = hlen;
++	assert(hlen <= sizeof(buf)-5);
+ 	memcpy(buf + 5, phb->host, hlen);
+ 	buf[5 + strlen(phb->host)] = phb->port >> 8;
+ 	buf[5 + strlen(phb->host) + 1] = phb->port & 0xff;
+@@ -474,8 +477,10 @@ static void s5_canread(gpointer data, gi
+ 		unsigned int i = strlen(proxyuser), j = strlen(proxypass);
+ 		buf[0] = 0x01;	/* version 1 */
+ 		buf[1] = i;
++		assert(i <= sizeof(buf)-2);
+ 		memcpy(buf + 2, proxyuser, i);
+ 		buf[2 + i] = j;
++		assert(j <= sizeof(buf)-2-i-1);
+ 		memcpy(buf + 2 + i + 1, proxypass, j);
+ 		if (write(source, buf, 3 + i + j) < 3 + i + j) {
+ 			close(source);

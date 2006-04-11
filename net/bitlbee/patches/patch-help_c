@@ -1,0 +1,22 @@
+$OpenBSD: patch-help_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
+--- help.c.orig	Sun Apr  2 04:53:39 2006
++++ help.c	Thu Apr  6 23:39:32 2006
+@@ -83,8 +83,7 @@ help_t *help_init( help_t **help )
+ 		}
+ 		h->string = g_new ( char, i );
+ 		
+-		strncpy( h->string, s + 1, i - 1 );
+-		h->string[i-1] = 0;
++		strlcpy( h->string, s + 1, i );
+ 		h->fd = (*help)->fd;
+ 		h->offset.file_offset = lseek( h->fd, 0, SEEK_CUR ) - buflen + i + 1;
+ 		h->length = t - s - i - 1;
+@@ -138,7 +137,7 @@ char *help_get( help_t **help, char *str
+ 		}
+ 		else
+ 		{
+-			strncpy( s, h->offset.mem_offset, h->length );
++			strlcpy( s, h->offset.mem_offset, h->length + 1 );
+ 		}
+ 		return s;
+ 	}

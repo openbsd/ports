@@ -1,0 +1,16 @@
+$OpenBSD: patch-account_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
+--- account.c.orig	Sat Sep 17 22:42:26 2005
++++ account.c	Tue Nov  1 21:50:11 2005
+@@ -134,9 +134,9 @@ void account_on( irc_t *irc, account_t *
+ 	u = g_new0 ( struct aim_user, 1 );
+ 	u->irc = irc;
+ 	u->protocol = a->protocol;
+-	strncpy( u->username, a->user, sizeof( u->username ) - 1 );
+-	strncpy( u->password, a->pass, sizeof( u->password ) - 1 );
+-	if( a->server) strncpy( u->proto_opt[0], a->server, sizeof( u->proto_opt[0] ) - 1 );
++	strlcpy( u->username, a->user, sizeof( u->username ) );
++	strlcpy( u->password, a->pass, sizeof( u->password ) );
++	if( a->server) strlcpy( u->proto_opt[0], a->server, sizeof( u->proto_opt[0] ) );
+ 	
+ 	a->gc = (struct gaim_connection *) u; /* Bit hackish :-/ */
+ 	a->reconnect = 0;

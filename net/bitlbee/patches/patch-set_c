@@ -1,0 +1,62 @@
+$OpenBSD: patch-set_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
+--- set.c.orig	Fri Nov 18 11:17:04 2005
++++ set.c	Sun Jan 29 12:30:04 2006
+@@ -35,14 +35,20 @@ set_t *set_add( irc_t *irc, char *key, c
+ 		{
+ 			while( s->next ) s = s->next;
+ 			s->next = g_new ( set_t, 1 );
++			if (!s->next)
++				return NULL;
+ 			s = s->next;
+ 		}
+ 		else
+ 		{
+ 			s = irc->set = g_new( set_t, 1 );
++			if (!s)
++				return NULL;
+ 		}
+ 		memset( s, 0, sizeof( set_t ) );
+ 		s->key = g_strdup( key );
++		if (!s->key)
++			return NULL;
+ 	}
+ 	
+ 	if( s->def )
+@@ -133,7 +139,7 @@ int set_setint( irc_t *irc, char *key, i
+ {
+ 	char s[24];	/* Not quite 128-bit clean eh? ;-) */
+ 	
+-	sprintf( s, "%d", value );
++	snprintf( s, sizeof(s), "%d", value );
+ 	return( set_setstr( irc, key, s ) );
+ }
+ 
+@@ -179,12 +185,16 @@ char *set_eval_bool( irc_t *irc, set_t *
+ 
+ char *set_eval_to_char( irc_t *irc, set_t *set, char *value )
+ {
+-	char *s = g_new( char, 3 );
++	size_t s_len = 3;
++	char *s = g_new( char, s_len );
++
++	if (!s)
++		return NULL;
+ 	
+ 	if( *value == ' ' )
+-		strcpy( s, " " );
++		strlcpy( s, " ", s_len );
+ 	else
+-		sprintf( s, "%c ", *value );
++		g_snprintf( s, s_len, "%c ", *value );
+ 	
+ 	return( s );
+ }
+@@ -197,7 +207,7 @@ char *set_eval_ops( irc_t *irc, set_t *s
+ 		                                              irc->channel, "+o-o", irc->nick, irc->mynick );
+ 		return( value );
+ 	}
+-	else if( g_strcasecmp( value, "root" ) == 0 )
++	else if( g_strcasecmp( value, ROOT_NICK ) == 0  || g_strcasecmp( value, "root" ) == 0 )
+ 	{
+ 		irc_write( irc, ":%s!%s@%s MODE %s %s %s %s", irc->mynick, irc->mynick, irc->myhost,
+ 		                                              irc->channel, "-o+o", irc->nick, irc->mynick );

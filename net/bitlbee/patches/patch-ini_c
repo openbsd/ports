@@ -1,7 +1,7 @@
-$OpenBSD: patch-ini_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
---- ini.c.orig	2004-04-05 02:57:31.000000000 +1000
-+++ ini.c	2004-06-08 20:10:54.000000000 +1000
-@@ -47,28 +47,31 @@ int ini_read( ini_t *file )
+$OpenBSD: patch-ini_c,v 1.2 2006/04/11 15:11:33 naddy Exp $
+--- ini.c.orig	Thu Feb 24 02:47:58 2005
++++ ini.c	Wed Nov  2 11:51:26 2005
+@@ -46,28 +46,31 @@ int ini_read( ini_t *file )
  	while( !feof( file->fp ) )
  	{
  		*s = 0;
@@ -38,7 +38,7 @@ $OpenBSD: patch-ini_c,v 1.1 2004/06/20 16:27:49 naddy Exp $
  			for( i = strlen( file->value ) - 1; file->value[i] == 32; i -- )
  				file->value[i] = 0;
  			
-@@ -76,7 +79,7 @@ int ini_read( ini_t *file )
+@@ -75,7 +78,7 @@ int ini_read( ini_t *file )
  		}
  		else if( ( t = strchr( s, '[' ) ) )
  		{

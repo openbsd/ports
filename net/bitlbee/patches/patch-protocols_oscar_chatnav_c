@@ -1,0 +1,12 @@
+$OpenBSD: patch-protocols_oscar_chatnav_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
+--- protocols/oscar/chatnav.c.orig	Thu Mar 24 00:38:46 2005
++++ protocols/oscar/chatnav.c	Tue Nov  1 22:02:48 2005
+@@ -414,7 +414,7 @@ int chatnav_modfirst(aim_session_t *sess
+ 	mod->toolid = 0x0010;
+ 	mod->toolversion = 0x0629;
+ 	mod->flags = 0;
+-	strncpy(mod->name, "chatnav", sizeof(mod->name));
++	strlcpy(mod->name, "chatnav", sizeof(mod->name));
+ 	mod->snachandler = snachandler;
+ 
+ 	return 0;

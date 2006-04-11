@@ -1,0 +1,14 @@
+$OpenBSD: patch-util_h,v 1.1 2006/04/11 15:11:33 naddy Exp $
+--- util.h.orig	Sun Apr  2 04:53:41 2006
++++ util.h	Thu Apr  6 23:47:25 2006
+@@ -38,8 +38,8 @@ double gettime( void );
+ 
+ G_MODULE_EXPORT void strip_html( char *msg );
+ G_MODULE_EXPORT char *escape_html( const char *html );
+-G_MODULE_EXPORT void http_decode( char *s );
+-G_MODULE_EXPORT void http_encode( char *s );
++G_MODULE_EXPORT void http_decode( char *s, size_t s_len );
++G_MODULE_EXPORT void http_encode( char *s, size_t s_len );
+ 
+ G_MODULE_EXPORT char *ipv6_wrap( char *src );
+ G_MODULE_EXPORT char *ipv6_unwrap( char *src );

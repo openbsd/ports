@@ -1,0 +1,12 @@
+$OpenBSD: patch-protocols_oscar_conn_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
+--- protocols/oscar/conn.c.orig	Mon Nov 21 03:27:39 2005
++++ protocols/oscar/conn.c	Sun Jan 29 03:23:00 2006
+@@ -446,7 +446,7 @@ aim_conn_t *aim_newconn(aim_session_t *s
+ 	}
+ 
+ 	host = (char *)g_malloc(i+1);
+-	strncpy(host, dest, i);
++	strlcpy(host, dest, i+1);
+ 	host[i] = '\0';
+ 
+ 	connstruct->fd = proxy_connect(host, port, NULL, NULL);

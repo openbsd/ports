@@ -1,16 +1,29 @@
-$OpenBSD: patch-conf_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
---- conf.c.orig	Fri Sep 24 05:42:32 2004
-+++ conf.c	Thu Oct 14 15:43:33 2004
-@@ -130,9 +130,10 @@ conf_t *conf_load( int argc, char *argv[
+$OpenBSD: patch-conf_c,v 1.3 2006/04/11 15:11:33 naddy Exp $
+--- conf.c.orig	Thu Feb 24 02:47:58 2005
++++ conf.c	Tue Nov  1 21:50:32 2005
+@@ -129,9 +129,10 @@ conf_t *conf_load( int argc, char *argv[
  	
  	if( conf->configdir[strlen(conf->configdir)-1] != '/' )
  	{
--		char *s = bitlbee_alloc( strlen( conf->configdir ) + 2 );
-+		size_t s_len = strlen( conf->configdir ) + 2 ;
-+		char *s = bitlbee_alloc( s_len );
+-		char *s = g_new( char, strlen( conf->configdir ) + 2 );
++		size_t s_len = strlen( conf->configdir ) + 2;
++		char *s = g_new( char, s_len);
  		
 -		sprintf( s, "%s/", conf->configdir );
 +		g_snprintf( s, s_len, "%s/", conf->configdir );
  		g_free( conf->configdir );
  		conf->configdir = s;
  	}
+@@ -226,9 +227,9 @@ static int conf_loadini( conf_t *conf, c
+ 					return( 0 );
+ 				}
+ 				
+-				strncpy( proxyhost, url->host, sizeof( proxyhost ) );
+-				strncpy( proxyuser, url->user, sizeof( proxyuser ) );
+-				strncpy( proxypass, url->pass, sizeof( proxypass ) );
++				strlcpy( proxyhost, url->host, sizeof( proxyhost ) );
++				strlcpy( proxyuser, url->user, sizeof( proxyuser ) );
++				strlcpy( proxypass, url->pass, sizeof( proxypass ) );
+ 				proxyport = url->port;
+ 				if( url->proto == PROTO_HTTP )
+ 					proxytype = PROXY_HTTP;

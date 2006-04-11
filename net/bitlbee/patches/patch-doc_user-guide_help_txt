@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_user-guide_help_txt,v 1.1 2006/04/11 15:11:33 naddy Exp $
+--- doc/user-guide/help.txt.orig	Sun Dec  4 13:51:10 2005
++++ doc/user-guide/help.txt	Sun Jan 29 13:00:20 2006
+@@ -27,7 +27,7 @@ You can read more about them with help 
+ ?quickstart
+ Welcome to BitlBee, your IRC gateway to ICQ, MSN, AOL, Jabber and Yahoo Instant Messaging Systems.
+ 
+-The center of BitlBee is the control channel, &bitlbee. Two users will always be there, you (where "you" is the nickname you are using) and the system user, root.
++The center of BitlBee is the control channel, &bitlbee. Two users will always be there, you (where "you" is the nickname you are using) and the system user, root. Your installation may have redefined root, e.g. to bitlbee.
+ 
+ You need register so that all your IM settings (passwords, contacts, etc) can be saved on the BitlBee server. It's important that you pick a good password so no one else can access your account. Register with this password using the register command: register <password> (without the brackets!).
+ 

@@ -1,29 +1,28 @@
-$OpenBSD: patch-bitlbee_h,v 1.5 2004/10/21 14:48:51 naddy Exp $
+$OpenBSD: patch-bitlbee_h,v 1.6 2006/04/11 15:11:33 naddy Exp $
 Use a more usefull name for the server
---- bitlbee.h.orig	Sat Sep 25 21:15:15 2004
-+++ bitlbee.h	Thu Oct 14 15:43:33 2004
-@@ -75,7 +75,7 @@
+--- bitlbee.h.orig	Sun Apr  2 04:53:38 2006
++++ bitlbee.h	Thu Apr  6 23:40:56 2006
+@@ -69,7 +69,6 @@
+ #undef strndup
+ #define strndup		__PLEASE_USE_THE_GLIB_STRDUP_FUNCTIONS_SYSTEM_INSTEAD__
+ #undef snprintf
+-#define snprintf	__PLEASE_USE_G_SNPRINTF_INSTEAD__
+ #undef strcasecmp
+ #define strcasecmp	__PLEASE_USE_G_STRCASECMP_INSTEAD__
+ #undef strncasecmp
+@@ -81,7 +80,7 @@
  
  #define _( x ) x
  
 -#define ROOT_NICK "root"
 +#define ROOT_NICK "bitlbee"
- #define ROOT_CHAN "#bitlbee"
+ #define ROOT_CHAN "&bitlbee"
  #define ROOT_FN "User manager"
  
-@@ -127,7 +127,7 @@ int root_command( irc_t *irc, char *comm
- int bitlbee_load( irc_t *irc, char *password );
- int bitlbee_save( irc_t *irc );
- double gettime( void );
--G_MODULE_EXPORT void http_encode( char *s );
-+G_MODULE_EXPORT void http_encode( char *s, size_t s_len );
- G_MODULE_EXPORT void http_decode( char *s );
- 
- void *bitlbee_alloc(size_t size);
-@@ -135,5 +135,12 @@ void *bitlbee_realloc(void *oldmem, size
+@@ -132,5 +131,12 @@ int bitlbee_save( irc_t *irc );
+ void bitlbee_shutdown( gpointer data );
  
  extern global_t global;
- extern GList *connection_list;
 +
 +#define COMPILE_TIME_ASSERT(ex) do {\
 +typedef char COMPILE_TIME_ASSERTION_FAILURE[(ex) ? 1 : -1];\

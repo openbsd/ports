@@ -1,0 +1,33 @@
+$OpenBSD: patch-protocols_oscar_misc_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
+--- protocols/oscar/misc.c.orig	Sun Oct 10 21:24:06 2004
++++ protocols/oscar/misc.c	Tue Nov  1 22:00:53 2005
+@@ -32,9 +32,11 @@ int aim_bos_setbuddylist(aim_session_t *
+ 	int len = 0;
+ 	char *localcpy = NULL;
+ 	char *tmpptr = NULL;
++	size_t	sizeof_localcpy;
+ 
+ 	if (!buddy_list || !(localcpy = g_strdup(buddy_list))) 
+ 		return -EINVAL;
++	sizeof_localcpy = strlen(localcpy)+1;
+ 
+ 	for (tmpptr = strtok(localcpy, "&"); tmpptr; ) {
+ 		len += 1 + strlen(tmpptr);
+@@ -47,7 +49,7 @@ int aim_bos_setbuddylist(aim_session_t *
+ 	snacid = aim_cachesnac(sess, 0x0003, 0x0004, 0x0000, NULL, 0);
+ 	aim_putsnac(&fr->data, 0x0003, 0x0004, 0x0000, snacid);
+ 
+-	strncpy(localcpy, buddy_list, strlen(buddy_list) + 1);
++	strlcpy(localcpy, buddy_list, sizeof_localcpy);
+ 
+ 	for (tmpptr = strtok(localcpy, "&"); tmpptr; ) {
+ 
+@@ -387,7 +389,7 @@ int misc_modfirst(aim_session_t *sess, a
+ 	mod->family = 0xffff;
+ 	mod->version = 0x0000;
+ 	mod->flags = AIM_MODFLAG_MULTIFAMILY;
+-	strncpy(mod->name, "misc", sizeof(mod->name));
++	strlcpy(mod->name, "misc", sizeof(mod->name));
+ 	mod->snachandler = snachandler;
+ 
+ 	return 0;

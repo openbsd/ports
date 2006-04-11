@@ -1,7 +1,7 @@
-$OpenBSD: patch-nick_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
---- nick.c.orig	Sun Jul 18 21:13:15 2004
-+++ nick.c	Fri Oct 15 14:31:10 2004
-@@ -66,7 +66,7 @@ char *nick_get( irc_t *irc, char *handle
+$OpenBSD: patch-nick_c,v 1.3 2006/04/11 15:11:33 naddy Exp $
+--- nick.c.orig	Fri Dec  9 22:59:55 2005
++++ nick.c	Sun Jan 29 03:28:20 2006
+@@ -65,7 +65,7 @@ char *nick_get( irc_t *irc, const char *
  	
  	while( n && !*nick )
  		if( ( n->proto == proto ) && ( g_strcasecmp( n->handle, handle ) == 0 ) )
@@ -10,7 +10,7 @@ $OpenBSD: patch-nick_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
  		else
  			n = n->next;
  	
-@@ -74,7 +74,7 @@ char *nick_get( irc_t *irc, char *handle
+@@ -73,7 +73,7 @@ char *nick_get( irc_t *irc, const char *
  	{
  		char *s;
  		
@@ -19,7 +19,7 @@ $OpenBSD: patch-nick_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
  		if( ( s = strchr( nick, '@' ) ) )
  			while( *s )
  				*(s++) = 0;
-@@ -83,7 +83,7 @@ char *nick_get( irc_t *irc, char *handle
+@@ -82,7 +82,7 @@ char *nick_get( irc_t *irc, const char *
  		   use the realname instead. */
  		for( s = nick; *s && isdigit( *s ); s ++ );
  		if( !*s && realname && *realname )
@@ -28,7 +28,7 @@ $OpenBSD: patch-nick_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
  		
  		nick_strip( nick );
  		if (set_getint(irc, "lcnicks")) 
-@@ -120,7 +120,7 @@ char *nick_get( irc_t *irc, char *handle
+@@ -119,7 +119,7 @@ char *nick_get( irc_t *irc, const char *
  			                  "Good luck, and please don't forget to paste the lines up here "
  			                  "in #bitlbee on OFTC or in a mail to wilmer@gaast.net" );
  			
@@ -37,7 +37,7 @@ $OpenBSD: patch-nick_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
  			
  			break;
  		}
-@@ -244,8 +244,8 @@ int nick_cmp( char *a, char *b )
+@@ -240,8 +240,8 @@ int nick_cmp( const char *a, const char 
  {
  	char aa[1024] = "", bb[1024] = "";
  	
@@ -48,18 +48,3 @@ $OpenBSD: patch-nick_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
  	if( nick_lc( aa ) && nick_lc( bb ) )
  	{
  		return( strcmp( aa, bb ) );
-@@ -259,10 +259,11 @@ int nick_cmp( char *a, char *b )
- char *nick_dup( char *nick )
- {
- 	char *cp;
-+	size_t cp_len = MAX_NICK_LENGTH +1;
- 	
--	cp = bitlbee_alloc( MAX_NICK_LENGTH + 1 );
--	memset( cp, 0, MAX_NICK_LENGTH + 1 );
--	strncpy( cp, nick, MAX_NICK_LENGTH );
-+	cp = bitlbee_alloc( cp_len );
-+	memset( cp, 0, cp_len );
-+	strlcpy( cp, nick, cp_len );
- 	
- 	return( cp );
- }

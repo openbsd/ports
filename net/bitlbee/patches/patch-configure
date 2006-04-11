@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.4 2004/06/20 16:27:49 naddy Exp $
---- configure.orig	2004-05-19 07:02:29.000000000 +1000
-+++ configure	2004-06-08 20:01:18.000000000 +1000
+$OpenBSD: patch-configure,v 1.5 2006/04/11 15:11:33 naddy Exp $
+--- configure.orig	Sun Jan 15 02:14:05 2006
++++ configure	Sun Jan 29 03:23:47 2006
 @@ -82,6 +82,8 @@ CONFIG=$config
  
  ARCH=$arch
@@ -10,12 +10,12 @@ $OpenBSD: patch-configure,v 1.4 2004/06/20 16:27:49 naddy Exp $
  OUTFILE=bitlbee
  
  DESTDIR=
-@@ -107,8 +109,6 @@ if [ "$debug" = "1" ]; then
+@@ -110,8 +112,6 @@ if [ "$debug" = "1" ]; then
  	echo 'CFLAGS=-g' >> Makefile.settings
  	echo 'DEBUG=1' >> Makefile.settings
  	echo '#define DEBUG' >> config.h
 -else
--	echo 'CFLAGS=-O3' >> Makefile.settings;
+-	echo 'CFLAGS=-O3' >> Makefile.settings
  fi
  
  echo CFLAGS+=-I`pwd` -I`pwd`/protocols -I. >> Makefile.settings

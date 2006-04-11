@@ -1,0 +1,12 @@
+$OpenBSD: patch-user_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
+--- user.c.orig	Thu Nov 18 21:34:31 2004
++++ user.c	Tue Nov  1 21:51:33 2005
+@@ -132,7 +132,7 @@ user_t *user_find( irc_t *irc, char *nic
+ {
+ 	char key[512] = "";
+ 	
+-	strncpy( key, nick, sizeof( key ) - 1 );
++	strlcpy( key, nick, sizeof( key ) );
+ 	if( nick_lc( key ) )
+ 		return( g_hash_table_lookup( irc->userhash, key ) );
+ 	else

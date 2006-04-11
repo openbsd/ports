@@ -1,7 +1,28 @@
-$OpenBSD: patch-bitlbee_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
---- bitlbee.c.orig	Wed Jul 21 09:36:07 2004
-+++ bitlbee.c	Fri Oct 15 14:43:15 2004
-@@ -306,7 +306,7 @@ int bitlbee_load( irc_t *irc, char* pass
+$OpenBSD: patch-bitlbee_c,v 1.3 2006/04/11 15:11:33 naddy Exp $
+--- bitlbee.c.orig	Sun Apr  2 04:53:38 2006
++++ bitlbee.c	Thu Apr  6 23:39:32 2006
+@@ -35,7 +35,7 @@
+ 
+ gboolean bitlbee_io_new_client( GIOChannel *source, GIOCondition condition, gpointer data )
+ {
+-	size_t size = sizeof( struct sockaddr_in );
++	socklen_t size = sizeof( struct sockaddr_in );
+ 	struct sockaddr_in conn_info;
+ 	int new_socket = accept( global.listen_socket, (struct sockaddr *) &conn_info, 
+ 		                     &size );
+@@ -154,8 +154,9 @@ gboolean bitlbee_io_current_client_read(
+ 	}
+ 	else 
+ 	{
+-		irc->readbuffer = g_renew( char, irc->readbuffer, strlen( irc->readbuffer ) + strlen ( line ) + 1 );
+-		strcpy( ( irc->readbuffer + strlen( irc->readbuffer ) ), line );
++		size_t newlen = strlen(irc->readbuffer) + strlen(line) + 1;
++		irc->readbuffer = g_renew( char, irc->readbuffer, newlen);
++		strlcat(irc->readbuffer, line, newlen);
+ 	}
+ 	
+ 	if( !irc_process( irc ) )
+@@ -228,10 +229,11 @@ int bitlbee_load( irc_t *irc, const char
  	if( irc->status == USTATUS_IDENTIFIED )
  		return( 1 );
  	
@@ -10,7 +31,11 @@ $OpenBSD: patch-bitlbee_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
     	fp = fopen( s, "r" );
     	if( !fp ) return( 0 );
  	
-@@ -318,6 +318,7 @@ int bitlbee_load( irc_t *irc, char* pass
++	COMPILE_TIME_ASSERT(32 < sizeof(s));
+ 	fscanf( fp, "%32[^\n]s", s );
+ 	if( setpass( irc, password, s ) < 0 )
+ 	{
+@@ -243,6 +245,7 @@ int bitlbee_load( irc_t *irc, const char
  	   account command will not work otherwise. */
  	irc->status = USTATUS_IDENTIFIED;
  	
@@ -18,7 +43,7 @@ $OpenBSD: patch-bitlbee_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
  	while( fscanf( fp, "%511[^\n]s", s ) > 0 )
  	{
  		fgetc( fp );
-@@ -327,7 +328,7 @@ int bitlbee_load( irc_t *irc, char* pass
+@@ -252,19 +255,21 @@ int bitlbee_load( irc_t *irc, const char
  	}
  	fclose( fp );
  	
@@ -26,17 +51,25 @@ $OpenBSD: patch-bitlbee_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
 +	g_snprintf( s, sizeof(s), "%s%s%s", global.conf->configdir, irc->nick, ".nicks" );
  	fp = fopen( s, "r" );
  	if( !fp ) return( 0 );
- 	while( fscanf( fp, "%s %d %s", s, &proto, nick ) > 0 )
-@@ -339,7 +340,7 @@ int bitlbee_load( irc_t *irc, char* pass
+-	while( fscanf( fp, "%s %d %s", s, &proto, nick ) > 0 )
++	COMPILE_TIME_ASSERT(511 < sizeof(s));
++	COMPILE_TIME_ASSERT(24 < sizeof(nick));
++	while( fscanf( fp, "%511s %d %24s", s, &proto, nick ) > 0 )
+ 	{
+-		http_decode( s );
++		http_decode( s, sizeof(s) );
+ 		nick_set( irc, s, proto, nick );
+ 	}
+ 	fclose( fp );
  	
  	if( set_getint( irc, "auto_connect" ) )
  	{
 -		strcpy( s, "account on" );	/* Can't do this directly because r_c_s alters the string */
 +		strlcpy( s, "account on", sizeof(s) );	/* Can't do this directly because r_c_s alters the string */
- 		root_command_string( irc, ru, s );
+ 		root_command_string( irc, ru, s, 0 );
  	}
  	
-@@ -380,15 +381,15 @@ int bitlbee_save( irc_t *irc )
+@@ -305,15 +310,15 @@ int bitlbee_save( irc_t *irc )
  		return( 0 );
  	}
  	
@@ -57,16 +90,16 @@ $OpenBSD: patch-bitlbee_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
  		if( fprintf( fp, "%s\n", s ) != strlen( s ) + 1 )
  		{
  			irc_usermsg( irc, "fprintf() wrote too little. Disk full?" );
-@@ -398,7 +399,7 @@ int bitlbee_save( irc_t *irc )
+@@ -327,7 +332,7 @@ int bitlbee_save( irc_t *irc )
+ 		return( 0 );
  	}
- 	fclose( fp );
    
 -	g_snprintf( new_path, 512, "%s%s%s", global.conf->configdir, irc->nick, ".nicks" );
 +	g_snprintf( new_path, sizeof(new_path), "%s%s%s", global.conf->configdir, irc->nick, ".nicks" );
  	if( unlink( new_path ) != 0 )
  	{
  		if( errno != ENOENT )
-@@ -413,7 +414,7 @@ int bitlbee_save( irc_t *irc )
+@@ -342,7 +347,7 @@ int bitlbee_save( irc_t *irc )
  		return( 0 );
  	}
  	
@@ -75,52 +108,12 @@ $OpenBSD: patch-bitlbee_c,v 1.2 2004/10/21 14:48:51 naddy Exp $
  	fp = fopen( path, "w" );
  	if( !fp ) return( 0 );
  	if( fprintf( fp, "%s", hash ) != strlen( hash ) )
-@@ -481,7 +482,7 @@ int bitlbee_save( irc_t *irc )
+@@ -414,7 +419,7 @@ int bitlbee_save( irc_t *irc )
+ 		return( 0 );
  	}
- 	fclose( fp );
  	
 - 	g_snprintf( new_path, 512, "%s%s%s", global.conf->configdir, irc->nick, ".accounts" );
 + 	g_snprintf( new_path, sizeof(new_path), "%s%s%s", global.conf->configdir, irc->nick, ".accounts" );
   	if( unlink( new_path ) != 0 )
  	{
  		if( errno != ENOENT )
-@@ -565,8 +566,9 @@ void http_decode( char *s )
- {
- 	char *t;
- 	int i, j, k;
-+	size_t s_len = strlen(s) + 1;
- 	
--	t = bitlbee_alloc( strlen( s ) + 1 );
-+	t = bitlbee_alloc(s_len);
- 	
- 	for( i = j = 0; s[i]; i ++, j ++ )
- 	{
-@@ -590,24 +592,24 @@ void http_decode( char *s )
- 	}
- 	t[j] = 0;
- 	
--	strcpy( s, t );
-+	strlcpy( s, t, s_len );
- 	g_free( t );
- }
- 
- /* Warning: This one explodes the string. Worst-cases can make the string 3x its original size! */
- /* This fuction is safe, but make sure you call it safely as well! */
--void http_encode( char *s )
-+void http_encode( char *s, size_t s_len )
- {
- 	char *t;
- 	int i, j;
- 	
- 	t = g_strdup( s );
- 	
--	for( i = j = 0; t[i]; i ++, j ++ )
-+	for( i = j = 0; t[i] && j < s_len -1; i ++, j ++ )
- 	{
- 		if( t[i] <= ' ' || ((unsigned char *)t)[i] >= 128 || t[i] == '%' )
- 		{
--			sprintf( s + j, "%%%02X", t[i] );
-+			g_snprintf( s + j, s_len - j, "%%%02X", t[i] );
- 			j += 2;
- 		}
- 		else

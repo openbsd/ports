@@ -1,0 +1,99 @@
+$OpenBSD: patch-util_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
+--- util.c.orig	Sun Apr  2 04:53:41 2006
++++ util.c	Thu Apr  6 23:39:32 2006
+@@ -43,14 +43,15 @@
+ void strip_linefeed(gchar *text)
+ {
+ 	int i, j;
+-	gchar *text2 = g_malloc(strlen(text) + 1);
++	size_t	sizeof_text = strlen(text) + 1;
++	gchar *text2 = g_malloc(sizeof_text);
+ 
+ 	for (i = 0, j = 0; text[i]; i++)
+ 		if (text[i] != '\r')
+ 			text2[j++] = text[i];
+ 	text2[j] = '\0';
+ 
+-	strcpy(text, text2);
++	strlcpy(text, text2, sizeof_text);
+ 	g_free(text2);
+ }
+ 
+@@ -151,7 +152,6 @@ char *normalize(const char *s)
+ 
+ 	u = t = g_strdup(s);
+ 
+-	strcpy(t, s);
+ 	g_strdown(t);
+ 
+ 	while (*t && (x < BUF_LEN - 1)) {
+@@ -219,12 +219,13 @@ static const htmlentity_t ent[] =
+ 
+ void strip_html( char *in )
+ {
++	size_t sizeof_in = strlen(in) + 1;
+ 	char *start = in;
+-	char *out = g_malloc( strlen( in ) + 1 );
++	char *out = g_malloc( sizeof_in );
+ 	char *s = out, *cs;
+ 	int i, matched;
+ 	
+-	memset( out, 0, strlen( in ) + 1 );
++	memset( out, 0, sizeof_in);
+ 	
+ 	while( *in )
+ 	{
+@@ -285,7 +286,7 @@ void strip_html( char *in )
+ 		}
+ 	}
+ 	
+-	strcpy( start, out );
++	strlcpy( start, out, sizeof_in );
+ 	g_free( out );
+ }
+ 
+@@ -334,12 +335,12 @@ void info_string_append(GString *str, ch
+ }
+ 
+ /* Decode%20a%20file%20name						*/
+-void http_decode( char *s )
++void http_decode( char *s, size_t s_len )
+ {
+ 	char *t;
+ 	int i, j, k;
+ 	
+-	t = g_new( char, strlen( s ) + 1 );
++	t = g_new( char, s_len);
+ 	
+ 	for( i = j = 0; s[i]; i ++, j ++ )
+ 	{
+@@ -363,25 +364,25 @@ void http_decode( char *s )
+ 	}
+ 	t[j] = 0;
+ 	
+-	strcpy( s, t );
++	strlcpy( s, t, s_len );
+ 	g_free( t );
+ }
+ 
+ /* Warning: This one explodes the string. Worst-cases can make the string 3x its original size! */
+ /* This fuction is safe, but make sure you call it safely as well! */
+-void http_encode( char *s )
++void http_encode( char *s, size_t s_len )
+ {
+ 	char *t;
+ 	int i, j;
+ 	
+ 	t = g_strdup( s );
+ 	
+-	for( i = j = 0; t[i]; i ++, j ++ )
++	for( i = j = 0; t[i] && j < s_len - 1; i ++, j ++ )
+ 	{
+ 		/* if( t[i] <= ' ' || ((unsigned char *)t)[i] >= 128 || t[i] == '%' ) */
+ 		if( !isalnum( t[i] ) )
+ 		{
+-			sprintf( s + j, "%%%02X", ((unsigned char*)t)[i] );
++			g_snprintf( s + j, s_len - j, "%%%02X", ((unsigned char*)t)[i] );
+ 			j += 2;
+ 		}
+ 		else

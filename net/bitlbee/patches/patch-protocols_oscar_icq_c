@@ -1,0 +1,12 @@
+$OpenBSD: patch-protocols_oscar_icq_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
+--- protocols/oscar/icq.c.orig	Thu Mar 24 00:38:46 2005
++++ protocols/oscar/icq.c	Tue Nov  1 22:01:32 2005
+@@ -432,7 +432,7 @@ int icq_modfirst(aim_session_t *sess, ai
+ 	mod->toolid = 0x0110;
+ 	mod->toolversion = 0x047c;
+ 	mod->flags = 0;
+-	strncpy(mod->name, "icq", sizeof(mod->name));
++	strlcpy(mod->name, "icq", sizeof(mod->name));
+ 	mod->snachandler = snachandler;
+ 
+ 	return 0;
