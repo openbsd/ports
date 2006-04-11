@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.69 2006/02/12 14:58:15 david Exp $
+# $OpenBSD: Makefile,v 1.70 2006/04/11 13:43:35 kurt Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
      SUBDIR += Gofer
      SUBDIR += STk
+     SUBDIR += classpath
      SUBDIR += clisp
      SUBDIR += eltclsh
      SUBDIR += erlang
@@ -20,6 +21,7 @@
      SUBDIR += hugs
      SUBDIR += icon
      SUBDIR += intel2gas
+     SUBDIR += jamvm
      SUBDIR += jikes
      SUBDIR += js
      SUBDIR += kaffe
