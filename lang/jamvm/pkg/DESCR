@@ -1,0 +1,7 @@
+JamVM is a new Java Virtual Machine which conforms to the JVM
+specification version 2 (blue book). In comparison to most other VM's
+(free and commercial) it is extremely small, with a stripped executable
+on PowerPC of only ~135K, and Intel 100K. However, unlike other small
+VMs (e.g. KVM) it is designed to support the full specification, and
+includes support for object finalisation, the Java Native Interface
+(JNI) and the Reflection API.

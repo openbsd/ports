@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/04/11 01:04:15 kurt Exp $
+bin/jamvm
+include/jamvm/
+include/jamvm/jni.h
+share/jamvm/
+share/jamvm/classes.zip
