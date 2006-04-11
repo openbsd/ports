@@ -1,0 +1,27 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2006/04/11 01:09:44 kurt Exp $
+--- Makefile.in.orig	Tue Mar 28 15:53:14 2006
++++ Makefile.in	Tue Mar 28 15:53:25 2006
+@@ -388,7 +388,6 @@ SUBDIRS = \
+ 	external \
+ 	libraries/javalib \
+ 	config \
+-	libltdl \
+ 	kaffe/kaffeh \
+ 	include  \
+ 	kaffe/kaffevm \
+@@ -402,7 +401,6 @@ DIST_SUBDIRS = \
+ 	external \
+ 	include \
+ 	replace \
+-	libltdl \
+ 	kaffe \
+ 	libraries \
+ 	tools \
+@@ -538,7 +536,6 @@ DIRECTORIES_BEFORE_RTJAR = \
+ 	config \
+ 	include \
+ 	replace \
+-	libltdl \
+ 	kaffe/kaffevm \
+ 	libraries/clib \
+ 	kaffe

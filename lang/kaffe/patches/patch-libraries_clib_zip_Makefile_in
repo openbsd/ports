@@ -1,0 +1,11 @@
+$OpenBSD: patch-libraries_clib_zip_Makefile_in,v 1.1 2006/04/11 01:09:44 kurt Exp $
+--- libraries/clib/zip/Makefile.in.orig	Fri Mar 24 18:23:55 2006
++++ libraries/clib/zip/Makefile.in	Sat Mar 25 01:46:19 2006
+@@ -392,7 +392,6 @@ libzip_la_LDFLAGS = \
+ 	$(KLIBFLAGS) \
+ 	-no-undefined \
+ 	-module \
+-	-release $(PACKAGE_VERSION) \
+ 	-export-symbols-regex "^([Jj]ava|kaffe)_"
+ 
+ libzip_la_LIBADD = \

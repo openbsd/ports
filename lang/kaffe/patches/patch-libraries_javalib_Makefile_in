@@ -1,0 +1,18 @@
+$OpenBSD: patch-libraries_javalib_Makefile_in,v 1.1 2006/04/11 01:09:44 kurt Exp $
+--- libraries/javalib/Makefile.in.orig	Fri Mar 24 18:23:57 2006
++++ libraries/javalib/Makefile.in	Sat Mar 25 01:46:19 2006
+@@ -1275,14 +1275,8 @@ clean-local:
+ export JAVA_COMPILER
+ 
+ install-data-local: installdirs
+-	if test -f $(DESTDIR)${jrelibdir}/glibj.zip ; then \
+-		if ! test -f $(DESTDIR)${jrelibdir}/rt.jar ; then \
+-			$(LN_S) $(DESTDIR)${jrelibdir}/glibj.zip $(DESTDIR)${jrelibdir}/rt.jar ; \
+-		fi ; \
+-	fi
+ 
+ uninstall-local: 
+-	$(RM) $(DESTDIR)${jrelibdir}/rt.jar
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

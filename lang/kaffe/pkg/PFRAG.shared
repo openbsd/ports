@@ -1,23 +1,13 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2006/01/10 05:29:12 bernd Exp $
-@lib lib/kaffe/libawt-1.0.6.so.${LIBawt-1.0.6_VERSION}
-@lib lib/kaffe/libawt.so.${LIBawt_VERSION}
-@lib lib/kaffe/libio-1.0.6.so.${LIBio-1.0.6_VERSION}
-@lib lib/kaffe/libio.so.${LIBio_VERSION}
-@lib lib/kaffe/libmanagement-1.0.6.so.${LIBmanagement-1.0.6_VERSION}
-@lib lib/kaffe/libmanagement.so.${LIBmanagement_VERSION}
-@lib lib/kaffe/libmath-1.0.6.so.${LIBmath-1.0.6_VERSION}
-@lib lib/kaffe/libmath.so.${LIBmath_VERSION}
-@lib lib/kaffe/libmicrosoft-1.0.6.so.${LIBmicrosoft-1.0.6_VERSION}
-@lib lib/kaffe/libmicrosoft.so.${LIBmicrosoft_VERSION}
-@lib lib/kaffe/libnative-1.0.6.so.${LIBnative-1.0.6_VERSION}
-@lib lib/kaffe/libnative.so.${LIBnative_VERSION}
-@lib lib/kaffe/libnet-1.0.6.so.${LIBnet-1.0.6_VERSION}
-@lib lib/kaffe/libnet.so.${LIBnet_VERSION}
-@lib lib/kaffe/libsecurity-1.0.6.so.${LIBsecurity-1.0.6_VERSION}
-@lib lib/kaffe/libsecurity.so.${LIBsecurity_VERSION}
-@lib lib/kaffe/libzip-1.0.6.so.${LIBzip-1.0.6_VERSION}
-@lib lib/kaffe/libzip.so.${LIBzip_VERSION}
-@lib lib/libkaffevm-1.0.6.so.${LIBkaffevm-1.0.6_VERSION}
-@lib lib/libkaffevm.so.${LIBkaffevm_VERSION}
-@lib lib/libkaffexprof-1.0.6.so.${LIBkaffexprof-1.0.6_VERSION}
-@lib lib/libkaffexprof.so.${LIBkaffexprof_VERSION}
+@comment $OpenBSD: PFRAG.shared,v 1.6 2006/04/11 01:09:44 kurt Exp $
+@lib jre/lib/${MACHINE_ARCH}/libgtkpeer.so.${LIBgtkpeer_VERSION}
+@lib jre/lib/${MACHINE_ARCH}/libjavaio.so.${LIBjavaio_VERSION}
+@lib jre/lib/${MACHINE_ARCH}/libjavalang.so.${LIBjavalang_VERSION}
+@lib jre/lib/${MACHINE_ARCH}/libjavanet.so.${LIBjavanet_VERSION}
+@lib jre/lib/${MACHINE_ARCH}/libjavanio.so.${LIBjavanio_VERSION}
+@lib jre/lib/${MACHINE_ARCH}/libjawtgnu.so.${LIBjawtgnu_VERSION}
+@lib jre/lib/${MACHINE_ARCH}/libkaffevm.so.${LIBkaffevm_VERSION}
+@lib jre/lib/${MACHINE_ARCH}/libmanagement.so.${LIBmanagement_VERSION}
+@lib jre/lib/${MACHINE_ARCH}/libmath.so.${LIBmath_VERSION}
+@lib jre/lib/${MACHINE_ARCH}/libsecurity.so.${LIBsecurity_VERSION}
+@lib jre/lib/${MACHINE_ARCH}/libtritonusesd.so.${LIBtritonusesd_VERSION}
+@lib jre/lib/${MACHINE_ARCH}/libzip.so.${LIBzip_VERSION}

@@ -1,0 +1,11 @@
+$OpenBSD: patch-libraries_clib_sound_esd_Makefile_in,v 1.1 2006/04/11 01:09:44 kurt Exp $
+--- libraries/clib/sound/esd/Makefile.in.orig	Fri Mar 24 18:23:54 2006
++++ libraries/clib/sound/esd/Makefile.in	Sat Mar 25 01:46:19 2006
+@@ -384,7 +384,6 @@ libtritonusesd_la_CFLAGS = \
+ libtritonusesd_la_LDFLAGS = \
+ 	$(KLIBFLAGS) \
+ 	-module \
+-	-release $(PACKAGE_VERSION) \
+ 	-export-symbols-regex "^([Jj]ava|org)_"
+ 
+ libtritonusesd_la_LIBADD = -lesd

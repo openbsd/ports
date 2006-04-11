@@ -1,0 +1,11 @@
+$OpenBSD: patch-libraries_clib_native_Makefile_in,v 1.1 2006/04/11 01:09:44 kurt Exp $
+--- libraries/clib/native/Makefile.in.orig	Sat Mar 25 01:47:41 2006
++++ libraries/clib/native/Makefile.in	Sat Mar 25 01:47:54 2006
+@@ -449,7 +449,6 @@ libjavalang_la_LDFLAGS = \
+ 	$(KLIBFLAGS) \
+ 	-no-undefined \
+ 	-module \
+-	-release $(PACKAGE_VERSION) \
+ 	-export-symbols-regex "^([Jj]ava|kaffe|gnu|TestNative)_"
+ 
+ libjavalang_la_DEPENDENCIES = \

@@ -1,0 +1,11 @@
+$OpenBSD: patch-libraries_clib_management_Makefile_in,v 1.1 2006/04/11 01:09:44 kurt Exp $
+--- libraries/clib/management/Makefile.in.orig	Fri Mar 24 18:23:51 2006
++++ libraries/clib/management/Makefile.in	Sat Mar 25 01:46:19 2006
+@@ -386,7 +386,6 @@ libmanagement_la_LDFLAGS = \
+ 	$(KLIBFLAGS) \
+ 	-no-undefined \
+ 	-module \
+-	-release $(PACKAGE_VERSION) \
+ 	-export-symbols-regex "^([Jj]ava|kaffe)_"
+ 
+ libmanagement_la_LIBADD = $(top_builddir)/kaffe/kaffevm/libkaffevm.la

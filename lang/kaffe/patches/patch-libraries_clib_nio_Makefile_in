@@ -1,0 +1,11 @@
+$OpenBSD: patch-libraries_clib_nio_Makefile_in,v 1.1 2006/04/11 01:09:44 kurt Exp $
+--- libraries/clib/nio/Makefile.in.orig	Fri Mar 24 18:23:53 2006
++++ libraries/clib/nio/Makefile.in	Sat Mar 25 01:46:19 2006
+@@ -394,7 +394,6 @@ libjavanio_la_LDFLAGS = \
+ 	$(KLIBFLAGS) \
+ 	-no-undefined \
+ 	-module \
+-	-release $(PACKAGE_VERSION) \
+ 	-export-symbols-regex "^([Jj]ava|kaffe|gnu)_"
+ 
+ libjavanio_la_SOURCES = \

@@ -1,5 +1,0 @@
-$OpenBSD: patch-config_i386_openbsd2_jit3-md_h,v 1.1 2003/05/23 05:03:46 pvalchev Exp $
---- config/i386/openbsd2/jit3-md.h.orig	Sat May 17 09:40:57 2003
-+++ config/i386/openbsd2/jit3-md.h	Sat May 17 09:40:57 2003
-@@ -0,0 +1 @@
-+#include "i386/openbsd2/jit-md.h"

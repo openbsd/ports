@@ -1,11 +1,2 @@
-This is "Kaffe OpenVM", a complete virtual machine and class library
-set which allows the execution of Java code without any code from
-Javasoft.  It comes with a virtual machine and a set of class
-libraries including beans, and the all important AWT graphics system.
-This is the first full JDK1.1 release of the runtime, and also
-includes a compiler (javac-compatible).
-
-This code was changed from the BSD license to the GPL with 1.0B1.
-The 0.8 BSD licensed version can possibly be obtained by checking out
-with a date code of 1998, but you may have trouble finding the
-distfiles, which we no longer fetch or track.
+Kaffe is a clean room implementation of the Java virtual machine, plus the
+associated class libraries needed to provide a Java runtime environment.

@@ -1,0 +1,13 @@
+$OpenBSD: patch-kaffe_kaffevm_Makefile_in,v 1.1 2006/04/11 01:09:44 kurt Exp $
+--- kaffe/kaffevm/Makefile.in.orig	Fri Mar 24 18:23:45 2006
++++ kaffe/kaffevm/Makefile.in	Sat Mar 25 01:46:19 2006
+@@ -442,8 +442,7 @@ libkaffevm_la_LDFLAGS = \
+         $(SEMAPHORE_LIB) \
+ 	$(KVMLIBFLAGS) \
+ 	-no-undefined \
+-	-export-dynamic \
+-	-release $(PACKAGE_VERSION)
++	-export-dynamic
+ 
+ libkaffevm_la_DEPENDENCIES = \
+ 	$(LIBLTDL) \
