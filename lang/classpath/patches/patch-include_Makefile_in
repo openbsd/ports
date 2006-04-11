@@ -1,0 +1,38 @@
+$OpenBSD: patch-include_Makefile_in,v 1.1.1.1 2006/04/11 01:01:34 kurt Exp $
+--- include/Makefile.in.orig	Fri Jan 13 08:38:32 2006
++++ include/Makefile.in	Sun Feb 19 22:27:38 2006
+@@ -464,20 +464,20 @@ distclean-libtool:
+ uninstall-info-am:
+ install-includeHEADERS: $(include_HEADERS)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(includedir)" || $(mkdir_p) "$(DESTDIR)$(includedir)"
++	test -z "$(includedir)" || $(mkdir_p) "$(DESTDIR)$(pkgincludedir)"
+ 	@list='$(include_HEADERS)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f=$(am__strip_dir) \
+-	  echo " $(includeHEADERS_INSTALL) '$$d$$p' '$(DESTDIR)$(includedir)/$$f'"; \
+-	  $(includeHEADERS_INSTALL) "$$d$$p" "$(DESTDIR)$(includedir)/$$f"; \
++	  echo " $(includeHEADERS_INSTALL) '$$d$$p' '$(DESTDIR)$(pkgincludedir)/$$f'"; \
++	  $(includeHEADERS_INSTALL) "$$d$$p" "$(DESTDIR)$(pkgincludedir)/$$f"; \
+ 	done
+ 
+ uninstall-includeHEADERS:
+ 	@$(NORMAL_UNINSTALL)
+ 	@list='$(include_HEADERS)'; for p in $$list; do \
+ 	  f=$(am__strip_dir) \
+-	  echo " rm -f '$(DESTDIR)$(includedir)/$$f'"; \
+-	  rm -f "$(DESTDIR)$(includedir)/$$f"; \
++	  echo " rm -f '$(DESTDIR)$(pkgincludedir)/$$f'"; \
++	  rm -f "$(DESTDIR)$(pkgincludedir)/$$f"; \
+ 	done
+ 
+ ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
+@@ -560,7 +560,7 @@ check: check-am
+ @CREATE_JNI_HEADERS_FALSE@all-local:
+ all-am: Makefile $(HEADERS) config.h all-local
+ installdirs:
+-	for dir in "$(DESTDIR)$(includedir)"; do \
++	for dir in "$(DESTDIR)$(pkgincludedir)"; do \
+ 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+ 	done
+ install: install-am

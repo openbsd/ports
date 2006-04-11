@@ -1,0 +1,9 @@
+GNU Classpath, Essential Libraries for Java, is a GNU project to create
+free core class libraries for use with virtual machines and compilers
+for the java programming language.
+
+Classpath is still a work in progress.  The first public release will be
+version 1.0.  There have been no public releases; however, pre-release
+source code is available via GNU's anonymous CVS server, and snapshots
+of the Classpath tree have been released and are available from
+ftp://ftp.gnu.org/gnu/classpath/

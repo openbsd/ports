@@ -1,0 +1,30 @@
+$OpenBSD: patch-examples_Makefile_in,v 1.1.1.1 2006/04/11 01:01:34 kurt Exp $
+--- examples/Makefile.in.orig	Fri Jan 13 08:36:12 2006
++++ examples/Makefile.in	Sun Feb 19 22:31:15 2006
+@@ -496,7 +496,7 @@ uninstall-am: uninstall-exampleDATA unin
+ install-data-local:
+ 	srcdir_cnt=`echo $(srcdir) | wc -c`; \
+ 	for file in $(ALL_EXAMPLE_FILES); do \
+-	  f=`echo $$file | cut -c$$srcdir_cnt-`; \
++	  f=`echo $$file | cut -c$$((srcdir_cnt))-`; \
+ 	  fdir=`dirname $$f`; \
+ 	  if test ! -d $(DESTDIR)$(pkgdatadir)/examples/$$fdir; then \
+ 	    echo "$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/examples/$$fdir"; \
+@@ -511,7 +511,7 @@ install-data-local:
+ uninstall-local:
+ 	srcdir_cnt=`echo $(srcdir) | wc -c`; \
+ 	for file in $(ALL_EXAMPLE_FILES); do \
+-	  f=`echo $$file | cut -c$$srcdir_cnt-`; \
++	  f=`echo $$file | cut -c$$(srcdir_cnt))-`; \
+ 	  echo "rm -f $(DESTDIR)$(pkgdatadir)/examples/$$f"; \
+ 	  rm -f $(DESTDIR)$(pkgdatadir)/examples/$$f; \
+ 	done
+@@ -520,7 +520,7 @@ uninstall-local:
+ dist-hook:
+ 	srcdir_cnt=`echo $(srcdir) | wc -c`; \
+ 	for file in $(ALL_EXAMPLE_FILES); do \
+-	  f=`echo $$file | cut -c$$srcdir_cnt-`; \
++	  f=`echo $$file | cut -c$$((srcdir_cnt))-`; \
+ 	  fdir=`dirname $$f`; \
+ 	  if test ! -d $(distdir)/$$fdir; then \
+ 	    echo "$(makeinstalldirs) $(distdir)/$$fdir"; \
