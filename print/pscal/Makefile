@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2004/02/01 20:40:46 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2006/04/11 05:47:16 kevlo Exp $
 
 COMMENT=	"utility for generating PostScript calendars"
 
-DISTNAME=	pscal-1.15
+DISTNAME=	pscal-1.16
 CATEGORIES=	print
 
 HOMEPAGE=	http://www.panix.com/~mbh/projects.html
