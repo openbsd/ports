@@ -1,33 +1,7 @@
-$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.5 2006/02/22 22:52:44 kurt Exp $
---- hotspot/src/os/bsd/vm/os_bsd.cpp.orig	Thu Feb 16 11:07:32 2006
-+++ hotspot/src/os/bsd/vm/os_bsd.cpp	Thu Feb 16 11:11:42 2006
-@@ -290,8 +290,15 @@ julong os::allocatable_physical_memory(j
-      // is not known at this point.  Alignments will 
-      // be at most to LargePageSizeInBytes.  Protect 
-      // allocations from alignments up to illegal
--     // values. If at this point 2G is illegal.
-+     // values.
-+// XXXBSD: This really should be using rlimit to get the actual
-+// value and perhaps automaticlly increasing the current rlimit
-+// up to the min(rlimit max, size)
-+#ifdef __OpenBSD__
-+     julong reasonable_size = (julong)1*G - 2 * LargePageSizeInBytes;
-+#else
-      julong reasonable_size = (julong)2*G - 2 * LargePageSizeInBytes;
-+#endif
-      result =  MIN2(size, reasonable_size);
-    }
-    return result;
-@@ -313,7 +320,7 @@ static volatile int max_hrtime_lock = LO
- void os::Bsd::initialize_system_info() {
-   int mib[2];
-   size_t len;
--  int val;
-+  u_int val;
- 
-   /* get processors count via hw.ncpus sysctl */
-   mib[0] = CTL_HW;
-@@ -429,7 +436,9 @@ void os::init_system_properties_values()
+$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.6 2006/04/11 00:45:42 kurt Exp $
+--- hotspot/src/os/bsd/vm/os_bsd.cpp.orig	Sat Apr  8 11:31:03 2006
++++ hotspot/src/os/bsd/vm/os_bsd.cpp	Sat Apr  8 11:31:33 2006
+@@ -447,7 +447,9 @@ void os::init_system_properties_values()
  #define malloc(n) (char*)NEW_C_HEAP_ARRAY(char, (n))
  #define getenv(n) ::getenv(n)
  
@@ -37,62 +11,3 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.5 2006/02/22 22:52:44 kurt 
  #define EXTENSIONS_DIR "/lib/ext"
  #define ENDORSED_DIR "/lib/endorsed"
  
-@@ -1909,22 +1918,50 @@ char* os::reserve_memory_special(size_t 
- }
- 
- static int os_sleep(jlong millis, bool interruptible) {
--  struct timespec t;
-+  const jlong limit = INT_MAX;
-+  jlong prevtime;
-   int res;
-   
--  t.tv_sec = millis / 1000L;
--  t.tv_nsec = (millis % 1000L) * 1000000;
-+  while (millis > limit) {
-+    if ((res = os_sleep(limit, interruptible)) != OS_OK)
-+      return res;
-+    millis -= limit;
-+  } 
-+
-+  // Restart interrupted polls with new parameters until the proper delay 
-+  // has been completed.
-+
-+  prevtime = getTimeMillis();
-+
-+  while (millis > 0) {
-+    jlong newtime;
-+
-   if (!interruptible) {
--    do {
--      res = nanosleep(&t, &t);
--    } while ((res == OS_ERR) && (errno == EINTR) && (t.tv_sec != 0 || t.tv_nsec != 0));
-+    // Following assert fails for os::yield_all:
-+    // assert(!thread->is_Java_thread(), "must not be java thread");
-+    res = poll(NULL, 0, millis);
-   } else {
-     assert(Thread::current()->is_Java_thread(), "must be java thread");
--    INTERRUPTIBLE_NORESTART_VM(nanosleep(&t, &t), res, os::Bsd::clear_interrupted);
-+    INTERRUPTIBLE_NORESTART_VM(poll(NULL, 0, millis), res, 
-+      os::Bsd::clear_interrupted);
-   }
-   // INTERRUPTIBLE_NORESTART_VM returns res == OS_INTRPT for thread.Interrupt
- 
--  return res;
-+    if((res == OS_ERR) && (errno == EINTR)) {
-+      newtime = getTimeMillis();
-+      assert(newtime >= prevtime, "time moving backwards");
-+    /* Doing prevtime and newtime in microseconds doesn't help precision,
-+       and trying to round up to avoid lost milliseconds can result in a
-+       too-short delay. */
-+      millis -= newtime - prevtime;
-+      if(millis <= 0)
-+	return OS_OK;
-+      prevtime = newtime;
-+    } else
-+      return res;
-+  }
-+
-+  return OS_OK;
- }
- 
- int os::Bsd::naked_sleep() {

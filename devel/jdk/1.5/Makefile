@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/02/22 22:52:44 kurt Exp $
+# $OpenBSD: Makefile,v 1.14 2006/04/11 00:45:41 kurt Exp $
 
 ONLY_FOR_ARCHS= 	i386
 
@@ -6,8 +6,8 @@ COMMENT=		"Java2(TM) Standard Edition Dev Kit v${V}"
 COMMENT-jre=		"Java2(TM) Standard Edition Runtime Environment v${V}"
 V=			1.5.0
 DISTNAME=		jdk-1_5_0
-PKGNAME=		jdk-${V}p9
-PKGNAME-jre=		jre-${V}p9
+PKGNAME=		jdk-${V}p10
+PKGNAME-jre=		jre-${V}p10
 
 CATEGORIES=		devel/jdk java
 
@@ -21,7 +21,7 @@ MAINTAINER=		Kurt Miller <kurt@openbsd.org>
 
 DISTFILES=		${DISTNAME}-src-scsl.zip \
 			${DISTNAME}-bin-scsl.zip \
-			bsd-jdk15-patches-2.tar.bz2
+			bsd-jdk15-patches-3.tar.bz2
 
 # Sun Community Source License
 # http://www.sun.com/software/communitysource/j2se/java2/license.html
@@ -39,7 +39,7 @@ BUILD_DEPENDS=		:gtar-*:archivers/gtar \
 RUN_DEPENDS=		:zip-*:archivers/zip
 USE_MOTIF=		openmotif
 MODULES=		converters/libiconv
-WANTLIB=		X11 Xext Xi Xp Xt Xtst c m ossaudio pthread stdc++
+WANTLIB=		X11 Xext Xi Xp Xt Xtst c m ossaudio pthread stdc++ z
 
 .if defined(PACKAGING) && empty(SUBPACKAGE)
 WANTLIB+=		Xmu
@@ -66,7 +66,7 @@ FETCH_MANUALLY+=	"    ${DISTNAME}-src-scsl.zip"
 FETCH_MANUALLY+=	"    ${DISTNAME}-bin-scsl.zip"
 FETCH_MANUALLY+=	"from http://wwws.sun.com/software/communitysource/j2se/java2/download.html"
 FETCH_MANUALLY+=	"Get the BSD patchset file:"
-FETCH_MANUALLY+=	"    bsd-jdk15-patches-2.tar.bz2"
+FETCH_MANUALLY+=	"    bsd-jdk15-patches-3.tar.bz2"
 FETCH_MANUALLY+=	"from http://www.eyesbeyond.com/freebsddom/java/jdk15.html"
 
 FLAVORS=		no_web with_ipv6
