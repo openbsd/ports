@@ -1,13 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.18 2006/02/22 12:30:52 steven Exp $
+@comment $OpenBSD: PLIST,v 1.19 2006/04/12 09:55:24 bernd Exp $
 bin/gpg
+bin/gpg-zip
 bin/gpgsplit
 bin/gpgv
 @info info/gpg.info
 @info info/gpgv.info
 libexec/gnupg/
+libexec/gnupg/gpgkeys_curl
 libexec/gnupg/gpgkeys_finger
 libexec/gnupg/gpgkeys_hkp
-libexec/gnupg/gpgkeys_http
 @man man/man1/gpg.1
 @man man/man1/gpg.ru.1
 @man man/man1/gpgv.1
@@ -54,3 +55,4 @@ share/locale/sv/LC_MESSAGES/gnupg.mo
 share/locale/tr/LC_MESSAGES/gnupg.mo
 share/locale/zh_CN/LC_MESSAGES/gnupg.mo
 share/locale/zh_TW/LC_MESSAGES/gnupg.mo
+%%ldap%%

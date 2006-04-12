@@ -1,3 +1,8 @@
 GnuPG is a complete and free replacement for PGP. Because it does
 not use IDEA or RSA it can be used without any restrictions. GnuPG
 is nearly in compliance with RFC2440 (OpenPGP).
+
+Flavors:
+	idea - build with IDEA support
+	card - build with OpenPGP card support
+	ldap - build with LDAP keyserver support

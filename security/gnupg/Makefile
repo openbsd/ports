@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.56 2006/03/10 20:57:50 steven Exp $
+# $OpenBSD: Makefile,v 1.57 2006/04/12 09:55:24 bernd Exp $
 
 COMMENT=	"GNU privacy guard - a free PGP replacement"
 
-DISTNAME=	gnupg-1.4.2.2
+DISTNAME=	gnupg-1.4.3
 CATEGORIES=	security
 
 MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/gnupg/ \
@@ -25,16 +25,16 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c z readline.3 termcap
+WANTLIB=		c z readline termcap ssl crypto
 
 MODULES= devel/gettext
-LIB_DEPENDS=	bz2.10::archivers/bzip2
+LIB_DEPENDS=	bz2.10::archivers/bzip2 \
+		curl.3::net/curl
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.59
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/scripts
-CONFIGURE_ARGS+= --disable-ldap \
-		 --disable-gnupg-iconv
+CONFIGURE_ARGS+= --disable-gnupg-iconv
 .if ${MACHINE_ARCH} == "m68k"
 CONFIGURE_ARGS+= --disable-asm
 .endif
@@ -43,7 +43,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAKE_FLAGS=	LIBINTL="-L${LOCALBASE}/lib -lintl -liconv" \
 		LIBICONV="-L${LOCALBASE}/lib -liconv"
 
-FLAVORS=	idea card
+FLAVORS=	idea card ldap
 FLAVOR?=
 
 .if ${FLAVOR:L:Midea}
@@ -61,6 +61,13 @@ SUPDISTFILES=	idea.c.gz:0
 LIB_DEPENDS+=		usb::devel/libusb
 .else
 CONFIGURE_ARGS+=	--disable-card-support --without-libusb
+.endif
+
+.if ${FLAVOR:L:Mldap}
+CONFIGURE_ARGS+=	--enable-ldap
+LIB_DEPENDS+=		ldap.8::databases/openldap
+.else
+CONFIGURE_ARGS+=	--disable-ldap
 .endif
 
 
