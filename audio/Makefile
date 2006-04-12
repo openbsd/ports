@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2006/03/24 19:49:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.141 2006/04/12 07:11:38 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -88,6 +88,7 @@
      SUBDIR += rioutil
      SUBDIR += rplay
      SUBDIR += rsynth
+     SUBDIR += rtunes
      SUBDIR += shorten
      SUBDIR += sidplay
      SUBDIR += soundtracker
