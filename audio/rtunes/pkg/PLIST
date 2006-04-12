@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/04/12 07:10:25 mbalmer Exp $
+bin/rtunes
+@man man/man1/rtunes.1
+@man man/man5/rtunes.conf.5
+share/examples/rtunes/
+share/examples/rtunes/rtunes.conf
+@sample ${SYSCONFDIR}/rtunes.conf
