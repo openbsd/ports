@@ -4,10 +4,14 @@ interaction. It has quite a few useful features regarding rules
 management, such as ability to enable, disable and modify specified
 rules after each update. It will tell you the exact changes from your
 previous rules, so you have total control of what's going on.
+It may be useful in conjunction with any program that can use Snort
+rules, like Snort (doh!) or Prelude-NIDS.
 
 Oinkmaster is most often used to grab the latest official rules tarball
 from www.snort.org and apply a set of modifications to them (such as
 disabling unwanted ones), but it can just as well be used to manage
-local and third party rules and distribute them to multiple sensors
-with ability to fine-tune the rules on each sensor or group of
-sensors.
+your local rules and also third party rules and distribute them to
+multiple sensors with ability to fine-tune the rules on each sensor or
+group of sensors. Oinkmaster is designed to integrate well with other
+scripts and you can easily setup a very powerful rules management system.
+See the FAQ for hints and suggestions.

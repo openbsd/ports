@@ -1,8 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/03/29 01:31:39 msf Exp $
+@comment $OpenBSD: PLIST,v 1.6 2006/04/12 21:18:34 david Exp $
 bin/oinkmaster
 @man man/man1/oinkmaster.1
 share/doc/oinkmaster/
+share/doc/oinkmaster/FAQ
+share/doc/oinkmaster/INSTALL
+share/doc/oinkmaster/LICENSE
+share/doc/oinkmaster/README
 share/doc/oinkmaster/README.templates
+share/doc/oinkmaster/UPGRADING
 share/examples/oinkmaster/
 share/examples/oinkmaster/oinkmaster.conf
 @sample ${SYSCONFDIR}/oinkmaster.conf

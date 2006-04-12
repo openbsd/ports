@@ -1,6 +1,6 @@
-$OpenBSD: patch-oinkmaster_1,v 1.2 2006/01/25 04:30:58 david Exp $
---- oinkmaster.1.orig	Sat Apr 16 02:29:41 2005
-+++ oinkmaster.1	Tue Jan  3 23:05:36 2006
+$OpenBSD: patch-oinkmaster_1,v 1.3 2006/04/12 21:18:34 david Exp $
+--- oinkmaster.1.orig	Sat Feb 18 06:35:21 2006
++++ oinkmaster.1	Thu Mar  9 09:12:04 2006
 @@ -8,7 +8,7 @@
  .B oinkmaster
  \- update Snort signatures
@@ -10,7 +10,7 @@ $OpenBSD: patch-oinkmaster_1,v 1.2 2006/01/25 04:30:58 david Exp $
  .I outdir
  [options]
  .SH DESCRIPTION
-@@ -182,14 +182,14 @@ Download rules archive from default loca
+@@ -205,14 +205,14 @@ Download rules archive from default loca
  and put the new rules in /etc/rules/:
  .PP
  .nf
@@ -27,8 +27,8 @@ $OpenBSD: patch-oinkmaster_1,v 1.2 2006/01/25 04:30:58 david Exp $
  .fi
  .PP
  Download rules archive from default location, make backup of old rules if
-@@ -200,7 +200,7 @@ passwords, you should of course not send
- first encrypting the content.) 
+@@ -223,7 +223,7 @@ passwords, you should of course not send
+ first encrypting the content.):
  .PP
  .nf
 -\fB    oinkmaster.pl -o /etc/snort/rules -b /etc/snort/backup 2>&1 | \fP\\
@@ -36,7 +36,16 @@ $OpenBSD: patch-oinkmaster_1,v 1.2 2006/01/25 04:30:58 david Exp $
  \fB    mail -s "subject" user@example.com
  .fi
  .PP
-@@ -212,7 +212,7 @@ command is available on the system:
+@@ -232,7 +232,7 @@ downloaded snort.conf and foo.conf but n
+ /etc/snort/snort.conf:
+ .PP
+ .nf
+-\fB    oinkmaster.pl -u file:///tmp/foo.rules.tar.gz \fP\\
++\fB    oinkmaster -u file:///tmp/foo.rules.tar.gz \fP\\
+ \fB    -u http://somewhere/rules.tar.gz -u https://blah/rules.tar.gz \fP\\
+ \fB    -o /etc/rules -S snort.conf -S foo.conf -U /etc/snort/snort.conf
+ .fi
+@@ -245,7 +245,7 @@ command is available on the system:
  .PP
  .nf
  \fB    TMP=`mktemp /tmp/oinkmaster.XXXXXX` && \fP\\
