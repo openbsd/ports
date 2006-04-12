@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2006/02/10 18:07:37 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2006/04/12 18:41:36 pedro Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"network support for the lua language"
 DISTNAME=	luasocket-2.0
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	net
 
 MASTER_SITES=	http://luaforge.net/frs/download.php/1097/
