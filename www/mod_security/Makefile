@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2005/12/14 06:38:24 david Exp $
+# $OpenBSD: Makefile,v 1.13 2006/04/12 21:01:46 david Exp $
 
 COMMENT=	"Web intrusion detection and prevention engine"
 
@@ -7,13 +7,13 @@ COMMENT=	"Web intrusion detection and prevention engine"
 SHARED_ONLY=	Yes
 
 DISTNAME=	modsecurity-apache-1.9.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 
 MASTER_SITES=	http://www.modsecurity.org/download/
 MASTER_SITES0=	${MASTER_SITE_SOURCEFORGE:=mod-security/}
 
 HOMEPAGE=	http://www.modsecurity.org/
-MAINTAINER=	David Krause <david@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

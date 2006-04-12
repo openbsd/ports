@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2005/08/10 08:53:26 aanriot Exp $
+# $OpenBSD: Makefile,v 1.7 2006/04/12 21:01:45 david Exp $
 
 COMMENT=	"multi-threaded routing daemon"
 
 DISTNAME=	quagga-0.96.4
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	net
 MASTER_SITES=	http://www.quagga.net/download/
 
 HOMEPAGE=	http://www.quagga.net/
-
-MAINTAINER=	David Krause <david@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
