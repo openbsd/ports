@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.42 2006/02/04 13:15:42 david Exp $
+# $OpenBSD: Makefile,v 1.43 2006/04/12 22:03:47 david Exp $
 
 COMMENT=	"highly flexible sniffer/NIDS"
 
-DISTNAME=	snort-2.4.3
+DISTNAME=	snort-2.4.4
 CATEGORIES=	net security
 MASTER_SITES=	${HOMEPAGE}/dl/current/
 
