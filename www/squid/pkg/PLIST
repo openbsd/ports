@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2005/09/25 17:03:33 brad Exp $
+@comment $OpenBSD: PLIST,v 1.24 2006/04/13 23:46:56 brad Exp $
 @newgroup _squid:515
 @newuser _squid:515:_squid:daemon:Squid Account:/nonexistent:/sbin/nologin
 bin/RunAccel
@@ -22,6 +22,37 @@ share/examples/squid/cachemgr.conf
 @sample ${SYSCONFDIR}/squid/cachemgr.conf
 share/examples/squid/errors/
 @sample share/squid/errors/
+share/examples/squid/errors/Azerbaijani/
+share/examples/squid/errors/Azerbaijani/ERR_ACCESS_DENIED
+share/examples/squid/errors/Azerbaijani/ERR_CACHE_ACCESS_DENIED
+share/examples/squid/errors/Azerbaijani/ERR_CACHE_MGR_ACCESS_DENIED
+share/examples/squid/errors/Azerbaijani/ERR_CANNOT_FORWARD
+share/examples/squid/errors/Azerbaijani/ERR_CONNECT_FAIL
+share/examples/squid/errors/Azerbaijani/ERR_DNS_FAIL
+share/examples/squid/errors/Azerbaijani/ERR_FORWARDING_DENIED
+share/examples/squid/errors/Azerbaijani/ERR_FTP_DISABLED
+share/examples/squid/errors/Azerbaijani/ERR_FTP_FAILURE
+share/examples/squid/errors/Azerbaijani/ERR_FTP_FORBIDDEN
+share/examples/squid/errors/Azerbaijani/ERR_FTP_NOT_FOUND
+share/examples/squid/errors/Azerbaijani/ERR_FTP_PUT_CREATED
+share/examples/squid/errors/Azerbaijani/ERR_FTP_PUT_ERROR
+share/examples/squid/errors/Azerbaijani/ERR_FTP_PUT_MODIFIED
+share/examples/squid/errors/Azerbaijani/ERR_FTP_UNAVAILABLE
+share/examples/squid/errors/Azerbaijani/ERR_INVALID_REQ
+share/examples/squid/errors/Azerbaijani/ERR_INVALID_RESP
+share/examples/squid/errors/Azerbaijani/ERR_INVALID_URL
+share/examples/squid/errors/Azerbaijani/ERR_LIFETIME_EXP
+share/examples/squid/errors/Azerbaijani/ERR_NO_RELAY
+share/examples/squid/errors/Azerbaijani/ERR_ONLY_IF_CACHED_MISS
+share/examples/squid/errors/Azerbaijani/ERR_READ_ERROR
+share/examples/squid/errors/Azerbaijani/ERR_READ_TIMEOUT
+share/examples/squid/errors/Azerbaijani/ERR_SHUTTING_DOWN
+share/examples/squid/errors/Azerbaijani/ERR_SOCKET_FAILURE
+share/examples/squid/errors/Azerbaijani/ERR_TOO_BIG
+share/examples/squid/errors/Azerbaijani/ERR_UNSUP_REQ
+share/examples/squid/errors/Azerbaijani/ERR_URN_RESOLVE
+share/examples/squid/errors/Azerbaijani/ERR_WRITE_ERROR
+share/examples/squid/errors/Azerbaijani/ERR_ZERO_SIZE_OBJECT
 share/examples/squid/errors/Bulgarian/
 @sample share/squid/errors/Bulgarian/
 share/examples/squid/errors/Bulgarian/ERR_ACCESS_DENIED
@@ -1883,14 +1914,14 @@ share/examples/squid/mime.conf
 @comment share/examples/squid/mime.conf.default
 share/examples/squid/squid.conf
 @sample ${SYSCONFDIR}/squid/squid.conf
-@comment share/examples/squid/squid.conf.default
+@mode 771
 @owner _squid
 @group _squid
-@mode 771
 @sample ${SQUIDDIR}/
 @sample ${SQUIDDIR}/cache/
 @mode 775
 @sample ${SQUIDDIR}/logs/
 @exec ln -sf ${SQUIDDIR}/logs/squid.pid /var/run/squid.pid
 @unexec rm -f /var/run/squid.pid
+@comment share/examples/squid/squid.conf.default
 @extraunexec rm -rf ${SQUIDDIR}
