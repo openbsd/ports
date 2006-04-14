@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2006/04/10 05:43:48 jakob Exp $
+# $OpenBSD: Makefile,v 1.5 2006/04/14 22:52:02 naddy Exp $
 
 COMMENT=	"multiplatform Jabber client"
 
 DISTNAME=	psi-0.9.3
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	net
 
 HOMEPAGE=	http://psi.affinix.com/
