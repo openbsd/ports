@@ -1,9 +1,0 @@
-$OpenBSD: patch-data_styles_MerleyKay,v 1.1 2006/01/25 03:57:44 david Exp $
---- data/styles/MerleyKay.orig	Mon Nov 15 14:40:53 2004
-+++ data/styles/MerleyKay	Mon Jan 23 02:57:00 2006
-@@ -131,4 +131,4 @@ bevelWidth:                          2
- borderWidth:                         2
- handleWidth:                         3
- 
--rootCommand:                         bsetroot -mod 5 5 -fg rgb:62/70/85 -bg rgb:52/60/75
-+rootCommand:                         fbsetroot -mod 5 5 -fg rgb:62/70/85 -bg rgb:52/60/75
