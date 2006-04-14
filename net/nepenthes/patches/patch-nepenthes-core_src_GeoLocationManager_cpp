@@ -1,0 +1,20 @@
+--- nepenthes-core/src/GeoLocationManager.cpp.orig	Mon Oct 31 09:47:28 2005
++++ nepenthes-core/src/GeoLocationManager.cpp	Wed Apr  5 03:16:56 2006
+@@ -31,7 +31,7 @@
+ 
+ #ifdef HAVE_GEOLOCATION
+ 
+-
++#include <sys/param.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+@@ -371,7 +371,7 @@ bool GeoLocationManager::Init()
+  */
+ bool GeoLocationManager::Exit()
+ {
+-
++	return true;
+ }
+ 
+ 

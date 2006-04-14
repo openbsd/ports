@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2006/04/14 17:08:25 jolan Exp $
+--- Makefile.in.orig	Sun Jan 15 16:46:20 2006
++++ Makefile.in	Wed Apr  5 03:32:42 2006
+@@ -686,12 +686,6 @@ install-data-local:
+ 	$(mkinstalldirs) $(DESTDIR)$(mandir)
+ 	$(mkinstalldirs) $(DESTDIR)$(mandir)/man8
+ 	$(INSTALL_DATA) $(srcdir)/doc/nepenthes.8 $(DESTDIR)$(mandir)/man8/nepenthes.8;
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/cache
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/cache/nepenthes
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/cache/nepenthes/geolocation
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/log
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/binaries
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/hexdumps
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

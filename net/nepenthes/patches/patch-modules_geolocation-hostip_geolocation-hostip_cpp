@@ -1,0 +1,28 @@
+--- modules/geolocation-hostip/geolocation-hostip.cpp.orig	Fri Dec 16 09:15:14 2005
++++ modules/geolocation-hostip/geolocation-hostip.cpp	Wed Apr  5 03:16:56 2006
+@@ -32,6 +32,7 @@
+ #ifdef HAVE_GEOLOCATION
+ 
+ #include <ctype.h>
++#include <sys/param.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+@@ -213,7 +214,7 @@ void GeoLocationHostIp::downloadSuccess(
+ 
+ 	if (test[2].m_Value != NULL)
+ 	{
+-		len = strtof(test[2].m_Value,NULL);
++		len = (float)strtod(test[2].m_Value,NULL);
+ 	}else
+ 	{
+ 		len = 0.0;
+@@ -221,7 +222,7 @@ void GeoLocationHostIp::downloadSuccess(
+ 
+ 	if (test[3].m_Value != NULL)
+ 	{
+-		lat = strtof(test[3].m_Value,NULL);
++		lat = (float)strtod(test[3].m_Value,NULL);
+ 	}else
+ 	{
+ 		lat = 0.0;

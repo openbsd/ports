@@ -1,0 +1,10 @@
+--- modules/geolocation-ip2location/geolocation-ip2location.cpp.orig	Fri Mar 24 23:48:14 2006
++++ modules/geolocation-ip2location/geolocation-ip2location.cpp	Fri Mar 24 23:46:30 2006
+@@ -32,6 +32,7 @@
+ #ifdef HAVE_GEOLOCATION
+ 
+ #include <ctype.h>
++#include <sys/param.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>

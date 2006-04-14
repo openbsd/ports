@@ -1,0 +1,148 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/04/14 17:08:25 jolan Exp $
+%%SHARED%%
+bin/nepenthes
+lib/nepenthes/
+lib/nepenthes/dnsresolveadns.la
+lib/nepenthes/downloadcreceive.la
+lib/nepenthes/downloadcsend.la
+lib/nepenthes/downloadcurl.la
+lib/nepenthes/downloadftp.la
+lib/nepenthes/downloadhttp.la
+lib/nepenthes/downloadlink.la
+lib/nepenthes/downloadnepenthes.la
+lib/nepenthes/downloadrcp.la
+lib/nepenthes/downloadtftp.la
+lib/nepenthes/geolocationgeoip.la
+lib/nepenthes/geolocationhostip.la
+lib/nepenthes/geolocationip2location.la
+lib/nepenthes/logdownload.la
+lib/nepenthes/logirc.la
+lib/nepenthes/logsurfnet.la
+lib/nepenthes/moduleportwatch.la
+lib/nepenthes/shellcodegeneric.la
+lib/nepenthes/shellemuwinnt.la
+lib/nepenthes/submitfile.la
+lib/nepenthes/submitnepenthes.la
+lib/nepenthes/submitnorman.la
+lib/nepenthes/submitxmlrpc.la
+lib/nepenthes/uploadhttp.la
+lib/nepenthes/vulnasn1.la
+lib/nepenthes/vulnbagle.la
+lib/nepenthes/vulndameware.la
+lib/nepenthes/vulndcom.la
+lib/nepenthes/vulniis.la
+lib/nepenthes/vulnkuang2.la
+lib/nepenthes/vulnlsass.la
+lib/nepenthes/vulnmsdtc.la
+lib/nepenthes/vulnmsmq.la
+lib/nepenthes/vulnmssql.la
+lib/nepenthes/vulnmydoom.la
+lib/nepenthes/vulnnetbiosname.la
+lib/nepenthes/vulnnetdde.la
+lib/nepenthes/vulnoptix.la
+lib/nepenthes/vulnpnp.la
+lib/nepenthes/vulnsasserftpd.la
+lib/nepenthes/vulnssh.la
+lib/nepenthes/vulnsub7.la
+lib/nepenthes/vulnupnp.la
+lib/nepenthes/vulnveritas.la
+lib/nepenthes/vulnwins.la
+lib/nepenthes/x1.la
+lib/nepenthes/x2.la
+lib/nepenthes/x3.la
+lib/nepenthes/x4.la
+lib/nepenthes/x5.la
+lib/nepenthes/x6.la
+lib/nepenthes/x7.la
+lib/nepenthes/x8.la
+@man man/man8/nepenthes.8
+share/doc/README
+share/doc/README.VFS
+share/doc/logo-shaded.svg
+@sample ${SYSCONFDIR}/nepenthes/
+share/examples/nepenthes/
+share/examples/nepenthes/download-csend.conf
+@sample ${SYSCONFDIR}/nepenthes/download-csend.conf
+share/examples/nepenthes/download-curl.conf
+@sample ${SYSCONFDIR}/nepenthes/download-curl.conf
+share/examples/nepenthes/download-link.conf
+@sample ${SYSCONFDIR}/nepenthes/download-link.conf
+share/examples/nepenthes/download-nepenthes.conf
+@sample ${SYSCONFDIR}/nepenthes/download-nepenthes.conf
+share/examples/nepenthes/download-tftp.conf
+@sample ${SYSCONFDIR}/nepenthes/download-tftp.conf
+share/examples/nepenthes/geolocation-ip2location.conf
+@sample ${SYSCONFDIR}/nepenthes/geolocation-ip2location.conf
+share/examples/nepenthes/log-download.conf
+@sample ${SYSCONFDIR}/nepenthes/log-download.conf
+share/examples/nepenthes/log-irc.conf
+@sample ${SYSCONFDIR}/nepenthes/log-irc.conf
+share/examples/nepenthes/log-surfnet.conf
+@sample ${SYSCONFDIR}/nepenthes/log-surfnet.conf
+share/examples/nepenthes/module-portwatch.conf
+@sample ${SYSCONFDIR}/nepenthes/module-portwatch.conf
+share/examples/nepenthes/nepenthes.conf
+@sample ${SYSCONFDIR}/nepenthes/nepenthes.conf
+share/examples/nepenthes/nepenthes.conf.dist
+share/examples/nepenthes/shellcode-generic.conf
+@sample ${SYSCONFDIR}/nepenthes/shellcode-generic.conf
+share/examples/nepenthes/submit-file.conf
+@sample ${SYSCONFDIR}/nepenthes/submit-file.conf
+share/examples/nepenthes/submit-nepenthes.conf
+@sample ${SYSCONFDIR}/nepenthes/submit-nepenthes.conf
+share/examples/nepenthes/submit-norman.conf
+@sample ${SYSCONFDIR}/nepenthes/submit-norman.conf
+share/examples/nepenthes/submit-xmlrpc.conf
+@sample ${SYSCONFDIR}/nepenthes/submit-xmlrpc.conf
+share/examples/nepenthes/vuln-asn1.conf
+@sample ${SYSCONFDIR}/nepenthes/vuln-asn1.conf
+share/examples/nepenthes/vuln-bagle.conf
+@sample ${SYSCONFDIR}/nepenthes/vuln-bagle.conf
+share/examples/nepenthes/vuln-dameware.conf
+@sample ${SYSCONFDIR}/nepenthes/vuln-dameware.conf
+share/examples/nepenthes/vuln-dcom.conf
+@sample ${SYSCONFDIR}/nepenthes/vuln-dcom.conf
+share/examples/nepenthes/vuln-iis.conf
+@sample ${SYSCONFDIR}/nepenthes/vuln-iis.conf
+share/examples/nepenthes/vuln-kuang2.conf
+@sample ${SYSCONFDIR}/nepenthes/vuln-kuang2.conf
+share/examples/nepenthes/vuln-lsass.conf
+@sample ${SYSCONFDIR}/nepenthes/vuln-lsass.conf
+share/examples/nepenthes/vuln-msdtc.conf
+@sample ${SYSCONFDIR}/nepenthes/vuln-msdtc.conf
+share/examples/nepenthes/vuln-msmq.conf
+@sample ${SYSCONFDIR}/nepenthes/vuln-msmq.conf
+share/examples/nepenthes/vuln-mssql.conf
+@sample ${SYSCONFDIR}/nepenthes/vuln-mssql.conf
+share/examples/nepenthes/vuln-mydoom.conf
+@sample ${SYSCONFDIR}/nepenthes/vuln-mydoom.conf
+share/examples/nepenthes/vuln-netbiosname.conf
+@sample ${SYSCONFDIR}/nepenthes/vuln-netbiosname.conf
+share/examples/nepenthes/vuln-netdde.conf
+@sample ${SYSCONFDIR}/nepenthes/vuln-netdde.conf
+share/examples/nepenthes/vuln-optix.conf
+@sample ${SYSCONFDIR}/nepenthes/vuln-optix.conf
+share/examples/nepenthes/vuln-pnp.conf
+@sample ${SYSCONFDIR}/nepenthes/vuln-pnp.conf
+share/examples/nepenthes/vuln-sasserftpd.conf
+@sample ${SYSCONFDIR}/nepenthes/vuln-sasserftpd.conf
+share/examples/nepenthes/vuln-ssh.conf
+@sample ${SYSCONFDIR}/nepenthes/vuln-ssh.conf
+share/examples/nepenthes/vuln-sub7.conf
+@sample ${SYSCONFDIR}/nepenthes/vuln-sub7.conf
+share/examples/nepenthes/vuln-upnp.conf
+@sample ${SYSCONFDIR}/nepenthes/vuln-upnp.conf
+share/examples/nepenthes/vuln-veritas.conf
+@sample ${SYSCONFDIR}/nepenthes/vuln-veritas.conf
+share/examples/nepenthes/vuln-wins.conf
+@sample ${SYSCONFDIR}/nepenthes/vuln-wins.conf
+share/examples/nepenthes/x-2.conf
+@sample ${SYSCONFDIR}/nepenthes/x-2.conf
+@extraunexec rm -fr /var/nepenthes/
+@sample /var/nepenthes/
+@sample /var/nepenthes/binaries/
+@sample /var/nepenthes/cache/
+@sample /var/nepenthes/cache/nepenthes/
+@sample /var/nepenthes/cache/nepenthes/geolocation/
+@sample /var/nepenthes/hexdumps/
+@sample /var/nepenthes/log/
