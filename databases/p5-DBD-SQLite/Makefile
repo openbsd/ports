@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2006/03/23 15:50:30 robert Exp $
+# $OpenBSD: Makefile,v 1.8 2006/04/14 15:30:37 robert Exp $
 
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
 COMMENT=		'SQLite drivers for the Perl DBI'
 
-DISTNAME=		DBD-SQLite-1.11
-PKGNAME=		p5-${DISTNAME}p0
+DISTNAME=		DBD-SQLite-1.12
+PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		databases perl5
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
