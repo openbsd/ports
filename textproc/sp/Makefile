@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2006/04/10 05:43:49 jakob Exp $
+# $OpenBSD: Makefile,v 1.21 2006/04/14 21:09:04 sturm Exp $
 
 COMMENT=	"OO toolkit for SGML parsing and entity management"
 
 DISTNAME=	sp-1.3.4
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	textproc
 HOMEPAGE=	http://www.jclark.com/sp/
 
