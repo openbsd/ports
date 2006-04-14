@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_apprentice_c,v 1.1.1.1 2006/04/14 17:02:58 jolan Exp $
+--- src/apprentice.c.orig	Sat Apr  1 20:32:37 2006
++++ src/apprentice.c	Sat Apr  1 20:57:19 2006
+@@ -386,6 +386,8 @@ apprentice_file(struct magic_set *ms, st
+ 		file_oomem(ms);
+ 		return -1;
+ 	}
++
++	memset(marray, 0x0, maxmagic * sizeof(*marray));
+ 	marraycount = 0;
+ 
+ 	/* print silly verbose header for USG compat. */
+@@ -892,8 +894,8 @@ GetDesc:
+ 		m->nospflag = 1;
+ 	} else
+ 		m->nospflag = 0;
+-	while ((m->desc[i++] = *l++) != '\0' && i < MAXDESC)
+-		/* NULLBODY */;
++
++	strlcpy(m->desc, l, sizeof(m->desc));
+ 
+ 	if (ms->flags & MAGIC_CHECK) {
+ 		if (!check_format(ms, m))

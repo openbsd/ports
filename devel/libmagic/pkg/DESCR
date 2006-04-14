@@ -1,0 +1,6 @@
+libmagic is a library to which attempts to classify files. There ar
+three sets of tests, performed in the following order:
+
+- filesystem tests
+- magic number tests
+- language tests

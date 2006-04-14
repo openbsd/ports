@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/04/14 17:02:58 jolan Exp $
+%%SHARED%%
+@comment bin/file
+include/magic.h
+lib/libmagic.a
+lib/libmagic.la
+@comment @man man/man1/file.1
+@man man/man3/libmagic.3
+@man man/man4/magic.4
+share/file/
+share/file/magic
+share/file/magic.mgc
+share/file/magic.mime
+share/file/magic.mime.mgc

@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/04/14 17:02:58 jolan Exp $
+@lib lib/libmagic.so.${LIBmagic_VERSION}
