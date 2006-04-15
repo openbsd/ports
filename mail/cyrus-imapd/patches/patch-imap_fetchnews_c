@@ -1,12 +1,36 @@
-$OpenBSD: patch-imap_fetchnews_c,v 1.1 2006/04/08 20:46:20 sturm Exp $
---- imap/fetchnews.c.orig	Tue Apr  4 09:21:43 2006
-+++ imap/fetchnews.c	Tue Apr  4 09:21:59 2006
-@@ -433,7 +433,7 @@ int main(int argc, char *argv[])
+$OpenBSD: patch-imap_fetchnews_c,v 1.2 2006/04/15 08:15:01 alek Exp $
+--- imap/fetchnews.c.orig	Wed Mar 23 01:40:11 2005
++++ imap/fetchnews.c	Mon Apr 10 19:20:13 2006
+@@ -60,6 +60,7 @@
+ #include "cyrusdb.h"
+ #include "exitcodes.h"
+ #include "global.h"
++#include "gmtoff.h"
+ #include "lock.h"
+ #include "prot.h"
+ #include "xmalloc.h"
+@@ -388,6 +389,7 @@ int main(int argc, char *argv[])
+ 	       &ctime.tm_hour, &ctime.tm_min, &ctime.tm_sec);
+ 	ctime.tm_year -= 1900;
+ 	ctime.tm_mon--;
++	ctime.tm_isdst = -1;
+ 
+ 	/* read the previous timestamp */
+ 	if (!sfile[0]) {
+@@ -417,6 +419,7 @@ int main(int argc, char *argv[])
+ 	/* ask for new articles */
+ 	if (stamp) stamp -= 180; /* adjust back 3 minutes */
+ 	ptime = gmtime(&stamp);
++	ptime->tm_isdst = -1;
+ 	strftime(buf, sizeof(buf), datefmt, ptime);
+ 	prot_printf(pout, "NEWNEWS %s %s GMT\r\n", wildmat, buf);
+ 	
+@@ -433,7 +436,7 @@ int main(int argc, char *argv[])
  	   We can't change this, otherwise we'd be incompatible
  	   with an old localtime timestamp.
  	*/
 -	stamp -= timezone;
-+	stamp -= (time_t) timezone;
++	stamp += gmtoff_of(&ctime, stamp);
      }
  
      if (!newnews) {

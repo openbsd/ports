@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2006/04/08 20:46:20 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2006/04/15 08:15:01 alek Exp $
 
 COMMENT=	"Cyrus IMAP server"
 COMMENT-perl=	"perl utils for the Cyrus IMAP server"
 
 V=		2.2.13
 DISTNAME=	cyrus-imapd-${V}
+PKGNAME=	${DISTNAME}p0
 FULLPKGNAME-perl=cyrus-imapd-perl-${V}
 CATEGORIES=	mail
 HOMEPAGE=	http://cyrusimap.web.cmu.edu
@@ -81,6 +82,8 @@ CONFIGURE_ARGS+=--with-auth=unix \
 .if defined(PACKAGING) && empty(SUBPACKAGE)
 WANTLIB+=	wrap c pthread
 .endif
+
+NO_REGRESS=	Yes
 
 MAN8=		fetchnews idled master imapd
 SIEVEREF=	lib/imapoptions man/imapd.conf.5 \
