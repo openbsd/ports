@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2006/01/27 10:20:56 alek Exp $
+# $OpenBSD: Makefile,v 1.18 2006/04/15 10:27:38 steven Exp $
 
 COMMENT=	"subversion revision control system"
 COMMENT-perl=	"perl interface to subversion"
 COMMENT-python=	"python interface to subversion"
 
-VERSION=	1.3.0
+VERSION=	1.3.1
 DISTNAME=	subversion-${VERSION}
 PKGNAME-perl=	p5-SVN-${VERSION}
 PKGNAME-python=	py-subversion-${VERSION}
@@ -99,16 +99,19 @@ CONFIGURE_ARGS+=--disable-swig-bindings \
 		--without-swig
 .endif
 
-REGRESS_DEPENDS=::lang/python/${PYTHON_VER} \
-		::devel/p5-IO-String
+REGRESS_DEPENDS=::lang/python/${PYTHON_VER}
 
 pre-configure:
 	@perl -pi -e "s,!!LOCALBASE!!,${LOCALBASE}," ${WRKSRC}/configure
+	@perl -pi -e "s,!!PYTHON_VER!!,${PYTHON_VER}," ${WRKSRC}/configure
 
 pre-build: 
 	@perl -pi -e "s,!!PYTHON_VER!!,${PYTHON_VER}," ${WRKBUILD}/Makefile
 
 .if !${FLAVOR:L:Mno_bindings}
+REGRESS_DEPENDS+=	::devel/p5-IO-String \
+			::devel/subversion,-python
+
 post-build: 
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${MAKE_FLAGS} swig-py
@@ -119,7 +122,9 @@ post-regress:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${REGRESS_FLAGS} check FSTYPE=bdb
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
-		${REGRESS_FLAGS} check-swig-pl
+		${REGRESS_FLAGS} TMPDIR=${WRKBUILD} check-swig-pl
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
+		${REGRESS_FLAGS} check-swig-py
 .endif
 
 post-install:

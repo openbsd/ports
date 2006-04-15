@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2006/01/27 10:20:56 alek Exp $
---- Makefile.in.orig	Tue Nov 15 16:56:15 2005
-+++ Makefile.in	Sun Jan  8 17:31:33 2006
+$OpenBSD: patch-Makefile_in,v 1.4 2006/04/15 10:27:38 steven Exp $
+--- Makefile.in.orig	Wed Nov 16 01:56:15 2005
++++ Makefile.in	Wed Apr  5 20:10:11 2006
 @@ -66,8 +66,8 @@ swig_pl_libdir = @libdir@
  swig_rb_libdir = @libdir@
  
@@ -23,3 +23,14 @@ $OpenBSD: patch-Makefile_in,v 1.3 2006/01/27 10:20:56 alek Exp $
  LT_LDFLAGS = @LT_LDFLAGS@
  LT_NO_UNDEFINED = @LT_NO_UNDEFINED@
  LT_CXX_LIBADD = @LT_CXX_LIBADD@
+@@ -116,8 +116,8 @@ SWIG_INCLUDES = -I$(SWIG_BUILD_DIR) \
+                 $(SVN_APR_INCLUDES) $(SVN_APRUTIL_INCLUDES)
+ SWIG_PY_INCLUDES = @SWIG_PY_INCLUDES@ -I$(SWIG_SRC_DIR)/python/libsvn_swig_py
+ SWIG_PY_COMPILE = @SWIG_PY_COMPILE@
+-SWIG_PY_LINK = @SWIG_PY_LINK@
+-SWIG_PY_LIBS = @SWIG_PY_LIBS@
++SWIG_PY_LINK = @SWIG_PY_LINK@ -L@libdir@
++SWIG_PY_LIBS = -lpython!!PYTHON_VER!!
+ SWIG_PL_INCLUDES = @SWIG_PL_INCLUDES@
+ SWIG_RB_INCLUDES = @SWIG_RB_INCLUDES@ -I$(SWIG_SRC_DIR)/ruby/libsvn_swig_ruby
+ SWIG_RB_COMPILE = @SWIG_RB_COMPILE@

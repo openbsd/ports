@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.4 2006/01/27 10:20:56 alek Exp $
---- configure.orig	Sun Jan  8 10:19:14 2006
-+++ configure	Sun Jan  8 10:32:47 2006
+$OpenBSD: patch-configure,v 1.5 2006/04/15 10:27:38 steven Exp $
+--- configure.orig	Sat Mar 25 03:00:55 2006
++++ configure	Sun Mar 26 13:14:07 2006
 @@ -21025,7 +21025,7 @@ rm -f conftest.err conftest.$ac_objext \
        conftest$ac_exeext conftest.$ac_ext
  if test "$ac_cv_search_bindtextdomain" = no; then
@@ -19,3 +19,12 @@ $OpenBSD: patch-configure,v 1.4 2006/01/27 10:20:56 alek Exp $
  break
  else
    echo "$as_me: failed program was:" >&5
+@@ -22392,7 +22392,7 @@ _ACEOF
+ # Python: Used for testsuite, and bindings
+ 
+ 
+-PYTHON="`$abs_srcdir/build/find_python.sh`"
++PYTHON="python!!PYTHON_VER!!"
+ if test -z "$PYTHON"; then
+   { echo "$as_me:$LINENO: WARNING: Python 2.0 or later is required to run the testsuite" >&5
+ echo "$as_me: WARNING: Python 2.0 or later is required to run the testsuite" >&2;}
