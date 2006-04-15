@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/04/06 18:22:57 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/04/15 19:26:43 steven Exp $
 
 COMMENT=	"produce HTML form elements for database columns"
 
@@ -21,6 +21,7 @@ CONFIGURE_STYLE=perl
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::databases/p5-Class-DBI-Plugin-Type \
 		::www/p5-HTML-Tree
+REGRESS_DEPENDS=::databases/p5-DBD-SQLite
 
 PKG_ARCH=	*
 
