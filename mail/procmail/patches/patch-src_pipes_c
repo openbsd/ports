@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_pipes_c,v 1.1 2006/04/15 21:23:49 sturm Exp $
+--- src/pipes.c.orig	Wed Apr 12 16:16:42 2006
++++ src/pipes.c	Wed Apr 12 16:17:03 2006
+@@ -194,7 +194,7 @@ perr:	      progerr(line,excode,pwait==4
+      makeblock(&temp,Stdfilled);
+      tmemmove(temp.p,Stdout,Stdfilled);
+      readdyn(&temp,&Stdfilled,Stdfilled+backlen+1);
+-     Stdout=realloc(Stdout,&Stdfilled+1);
++     Stdout=realloc(Stdout,Stdfilled+1);
+      tmemmove(Stdout,temp.p,Stdfilled+1);
+      freeblock(&temp);
+      retStdout(Stdout,pwait&&pipw,!backblock);
