@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2004/10/08 08:22:28 xsa Exp $
+# $OpenBSD: Makefile,v 1.14 2006/04/15 17:24:51 steven Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"BSD process resource limit and priority functions"
 
-DISTNAME=	BSD-Resource-1.24
+DISTNAME=	BSD-Resource-1.25
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
