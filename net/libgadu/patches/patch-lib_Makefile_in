@@ -1,0 +1,42 @@
+$OpenBSD: patch-lib_Makefile_in,v 1.1.1.1 2006/04/15 20:49:25 alek Exp $
+--- lib/Makefile.in.orig	Tue Mar 28 20:14:19 2006
++++ lib/Makefile.in	Wed Apr 12 21:05:51 2006
+@@ -11,7 +11,7 @@ VERSION_MAJOR=3
+ VERSION_MINOR=5
+ 
+ CC = @CC@ 
+-CFLAGS = @CFLAGS_LIBGADU@ -I. -I.. -Wall
++CFLAGS += @CFLAGS_LIBGADU@ -I. -I.. -Wall
+ LIBS = @LIBS_LIBGADU@
+ 
+ MAKE = @MAKE@
+@@ -26,8 +26,7 @@ LOBJS = common.lo libgadu.lo pubdir.lo h
+ SRCS = $(OBJS:.o=.c)
+ 
+ SHAREDMM = libgadu.so
+-SHAREDM = $(SHAREDMM).$(VERSION_MAJOR)
+-SHARED = $(SHAREDM).$(VERSION_MINOR)
++SHARED = $(SHAREDMM).$(LIBgadu_VERSION)
+ STATIC = libgadu.a
+ 
+ all:	@static@ @shared@
+@@ -56,9 +55,7 @@ $(STATIC): $(OBJS)
+ shared:	dep $(SHARED)
+ 
+ $(SHARED): $(LOBJS)
+-	$(CC) -shared -Wl,-soname,libgadu.so.$(VERSION_MAJOR) -o $(SHARED) $(LOBJS) $(LIBS) -lc
+-	$(LN_S) -f $(SHARED) $(SHAREDM)
+-	$(LN_S) -f $(SHARED) $(SHAREDMM)
++	$(CC) -shared -o $(SHARED) $(LOBJS) $(LIBS) -lc
+ 
+ #
+ 
+@@ -82,8 +79,6 @@ install-common:
+ 
+ install-shared:	install-common @strip_libgadu_so@
+ 	$(INSTALL) -m 755 $(SHARED) $(DESTDIR)$(libdir)
+-	cd $(DESTDIR)$(libdir) && $(LN_S) -f $(SHARED) $(SHAREDM)
+-	cd $(DESTDIR)$(libdir) && $(LN_S) -f $(SHARED) $(SHAREDMM)
+ 
+ install-static:	install-common
+ 	$(INSTALL) -m 755 $(STATIC) $(DESTDIR)$(libdir)
