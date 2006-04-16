@@ -1,0 +1,16 @@
+$OpenBSD: patch-plugins_popen_c,v 1.1 2006/04/16 17:26:42 sturm Exp $
+--- plugins/popen.c.orig	Wed Apr 12 20:42:46 2006
++++ plugins/popen.c	Wed Apr 12 20:42:48 2006
+@@ -268,9 +268,10 @@ popen_sigchld_handler (int signo)
+ RETSIGTYPE
+ popen_timeout_alarm_handler (int signo)
+ {
+-	int fh;
++	int fh = -1;
+ 	if (signo == SIGALRM) {
+-		fh=fileno (child_process);
++		if (child_process)
++			fh=fileno (child_process);
+ 		if(fh >= 0){
+ 			kill (childpid[fh], SIGKILL);
+ 		}
