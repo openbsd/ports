@@ -1,0 +1,21 @@
+# $OpenBSD: systrace.policy,v 1.1 2006/04/16 16:59:47 sturm Exp $
+Policy: ${WRKDIR}/vmware-openbsd/vmware-any-any-update37/update, Emulation: linux
+	linux-brk: permit
+	linux-close: permit
+	linux-exit: permit
+	linux-fsread: permit
+	linux-fstat64: permit
+	linux-fswrite: filename match "${WRKDIR}" then permit
+	linux-getegid: permit
+	linux-geteuid: permit
+	linux-getgid: permit
+	linux-getuid: permit
+	linux-ioctl: permit
+	linux-lseek: permit
+	linux-mmap: permit
+	linux-mprotect: permit
+	linux-munmap: permit
+	linux-read: permit
+	linux-uname: permit
+	linux-write: permit
+	linux-writev: permit
