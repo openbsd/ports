@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.42 2006/02/11 14:40:51 aanriot Exp $
+$OpenBSD: user.list,v 1.43 2006/04/16 12:51:55 sturm Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -45,7 +45,7 @@ id  user		group		port options
 534 _zope		_zope		www/zope
 535 _symon		_symon		sysutils/symon
 536 _nostromo		_nostromo	www/nostromo
-537 _maradns		_maradns	net/maradns/stable
+537 _maradns		_maradns	net/maradns
 538 _vilter		_vilter		mail/smtp-vilter
 539 _clamav		_clamav		security/clamav
 540 _dspam		_dspam		mail/dspam
@@ -67,3 +67,4 @@ id  user		group		port options
 556 _nrpe		_nrpe		net/nagios/nrpe
 557 _snort		_snort		net/snort
 558 _ipfreely		_ipfreely	net/ipfreely
+559 _freeradius		_freeradius	net/freeradius
