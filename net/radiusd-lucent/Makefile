@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2004/12/16 00:31:25 alek Exp $
+# $OpenBSD: Makefile,v 1.21 2006/04/16 14:42:13 sturm Exp $
 
 COMMENT=	"Lucent remote access RADIUS server"
 
 DISTNAME=	radius21
-PKGNAME=	radiusd-lucent-2.1p6
+PKGNAME=	radiusd-lucent-2.1p7
 CATEGORIES=	net
 MASTER_SITES=	http://www.vergenet.net/linux/radius/download/
 PATCHFILES=	radius-2.1.comprehensive.6.patch.gz
