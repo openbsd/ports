@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_main_session_c,v 1.1.1.1 2006/04/16 14:37:08 sturm Exp $
+--- src/main/session.c.orig	Mon Mar 27 23:02:47 2006
++++ src/main/session.c	Mon Mar 27 23:02:54 2006
+@@ -222,7 +222,7 @@ int rad_check_ts(uint32_t nasaddr, unsig
+ 		user, session_id, NULL);
+ #else
+ 	execl(mainconfig.checkrad, "checkrad", cl->nastype, address, port,
+-		user, session_id, NULL);
++		user, session_id, (void *)NULL);
+ #endif
+ 	radlog(L_ERR, "Check-TS: exec %s: %s", mainconfig.checkrad, strerror(errno));
+ 

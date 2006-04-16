@@ -1,0 +1,424 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/04/16 14:37:09 sturm Exp $
+@conflict radiusd-cistron-*
+@conflict radiusd-lucent-*
+@newgroup _freeradius:559
+@newuser _freeradius:559:559:daemon:Freeradius:/nonexistent:/sbin/nologin
+bin/radclient
+bin/radeapclient
+bin/radlast
+bin/radrelay
+bin/radsqlrelay
+bin/radtest
+bin/radwho
+bin/radzap
+bin/rlm_dbm_cat
+bin/rlm_dbm_parser
+bin/rlm_ippool_tool
+bin/smbencrypt
+lib/freeradius/
+lib/freeradius/rlm_acct_unique.a
+lib/freeradius/rlm_acct_unique.la
+lib/freeradius/rlm_acct_unique.so
+lib/freeradius/rlm_always.a
+lib/freeradius/rlm_always.la
+lib/freeradius/rlm_always.so
+lib/freeradius/rlm_attr_filter.a
+lib/freeradius/rlm_attr_filter.la
+lib/freeradius/rlm_attr_filter.so
+lib/freeradius/rlm_attr_rewrite.a
+lib/freeradius/rlm_attr_rewrite.la
+lib/freeradius/rlm_attr_rewrite.so
+lib/freeradius/rlm_chap.a
+lib/freeradius/rlm_chap.la
+lib/freeradius/rlm_chap.so
+lib/freeradius/rlm_checkval.a
+lib/freeradius/rlm_checkval.la
+lib/freeradius/rlm_checkval.so
+lib/freeradius/rlm_counter.a
+lib/freeradius/rlm_counter.la
+lib/freeradius/rlm_counter.so
+lib/freeradius/rlm_dbm.a
+lib/freeradius/rlm_dbm.la
+lib/freeradius/rlm_dbm.so
+lib/freeradius/rlm_detail.a
+lib/freeradius/rlm_detail.la
+lib/freeradius/rlm_detail.so
+lib/freeradius/rlm_digest.a
+lib/freeradius/rlm_digest.la
+lib/freeradius/rlm_digest.so
+lib/freeradius/rlm_eap.a
+lib/freeradius/rlm_eap.la
+lib/freeradius/rlm_eap.so
+lib/freeradius/rlm_eap_gtc.a
+lib/freeradius/rlm_eap_gtc.la
+lib/freeradius/rlm_eap_gtc.so
+lib/freeradius/rlm_eap_leap.a
+lib/freeradius/rlm_eap_leap.la
+lib/freeradius/rlm_eap_leap.so
+lib/freeradius/rlm_eap_md5.a
+lib/freeradius/rlm_eap_md5.la
+lib/freeradius/rlm_eap_md5.so
+lib/freeradius/rlm_eap_mschapv2.a
+lib/freeradius/rlm_eap_mschapv2.la
+lib/freeradius/rlm_eap_mschapv2.so
+lib/freeradius/rlm_eap_peap.a
+lib/freeradius/rlm_eap_peap.la
+lib/freeradius/rlm_eap_peap.so
+lib/freeradius/rlm_eap_sim.a
+lib/freeradius/rlm_eap_sim.la
+lib/freeradius/rlm_eap_sim.so
+lib/freeradius/rlm_eap_tls.a
+lib/freeradius/rlm_eap_tls.la
+lib/freeradius/rlm_eap_tls.so
+lib/freeradius/rlm_eap_ttls.a
+lib/freeradius/rlm_eap_ttls.la
+lib/freeradius/rlm_eap_ttls.so
+lib/freeradius/rlm_exec.a
+lib/freeradius/rlm_exec.la
+lib/freeradius/rlm_exec.so
+lib/freeradius/rlm_expr.a
+lib/freeradius/rlm_expr.la
+lib/freeradius/rlm_expr.so
+lib/freeradius/rlm_fastusers.a
+lib/freeradius/rlm_fastusers.la
+lib/freeradius/rlm_fastusers.so
+lib/freeradius/rlm_files.a
+lib/freeradius/rlm_files.la
+lib/freeradius/rlm_files.so
+lib/freeradius/rlm_ippool.a
+lib/freeradius/rlm_ippool.la
+lib/freeradius/rlm_ippool.so
+lib/freeradius/rlm_krb5.a
+lib/freeradius/rlm_krb5.la
+lib/freeradius/rlm_krb5.so
+lib/freeradius/rlm_mschap.a
+lib/freeradius/rlm_mschap.la
+lib/freeradius/rlm_mschap.so
+lib/freeradius/rlm_ns_mta_md5.a
+lib/freeradius/rlm_ns_mta_md5.la
+lib/freeradius/rlm_ns_mta_md5.so
+lib/freeradius/rlm_otp.a
+lib/freeradius/rlm_otp.la
+lib/freeradius/rlm_otp.so
+lib/freeradius/rlm_pap.a
+lib/freeradius/rlm_pap.la
+lib/freeradius/rlm_pap.so
+lib/freeradius/rlm_passwd.a
+lib/freeradius/rlm_passwd.la
+lib/freeradius/rlm_passwd.so
+lib/freeradius/rlm_preprocess.a
+lib/freeradius/rlm_preprocess.la
+lib/freeradius/rlm_preprocess.so
+lib/freeradius/rlm_radutmp.a
+lib/freeradius/rlm_radutmp.la
+lib/freeradius/rlm_radutmp.so
+lib/freeradius/rlm_realm.a
+lib/freeradius/rlm_realm.la
+lib/freeradius/rlm_realm.so
+lib/freeradius/rlm_sql.a
+lib/freeradius/rlm_sql.la
+lib/freeradius/rlm_sql.so
+lib/freeradius/rlm_sql_log.a
+lib/freeradius/rlm_sql_log.la
+lib/freeradius/rlm_sql_log.so
+lib/freeradius/rlm_sqlcounter.a
+lib/freeradius/rlm_sqlcounter.la
+lib/freeradius/rlm_sqlcounter.so
+lib/freeradius/rlm_unix.a
+lib/freeradius/rlm_unix.la
+lib/freeradius/rlm_unix.so
+lib/libeap.a
+lib/libeap.la
+@lib lib/libeap.so.${LIBeap_VERSION}
+lib/libradius.a
+lib/libradius.la
+@lib lib/libradius.so.${LIBradius_VERSION}
+@man man/man1/radclient.1
+@man man/man1/radeapclient.1
+@man man/man1/radlast.1
+@man man/man1/radtest.1
+@man man/man1/radwho.1
+@man man/man1/radzap.1
+@man man/man5/acct_users.5
+@man man/man5/clients.5
+@man man/man5/clients.conf.5
+@man man/man5/dictionary.5
+@man man/man5/naslist.5
+@man man/man5/radiusd.conf.5
+@man man/man5/rlm_acct_unique.5
+@man man/man5/rlm_always.5
+@man man/man5/rlm_attr_filter.5
+@man man/man5/rlm_attr_rewrite.5
+@man man/man5/rlm_chap.5
+@man man/man5/rlm_counter.5
+@man man/man5/rlm_detail.5
+@man man/man5/rlm_expr.5
+@man man/man5/rlm_files.5
+@man man/man5/rlm_mschap.5
+@man man/man5/rlm_pap.5
+@man man/man5/rlm_passwd.5
+@man man/man5/rlm_realm.5
+@man man/man5/rlm_sql.5
+@man man/man5/rlm_sql_log.5
+@man man/man5/rlm_unix.5
+@man man/man5/users.5
+@man man/man8/radiusd.8
+@man man/man8/radrelay.8
+@man man/man8/radsqlrelay.8
+@man man/man8/radwatch.8
+@man man/man8/rlm_ippool_tool.8
+sbin/check-radiusd-config
+sbin/checkrad
+sbin/radiusd
+sbin/radwatch
+@comment sbin/rc.radiusd
+share/doc/freeradius/
+share/doc/freeradius/Acct-Type
+share/doc/freeradius/Autz-Type
+share/doc/freeradius/CYGWIN
+share/doc/freeradius/ChangeLog
+share/doc/freeradius/DIFFS
+share/doc/freeradius/MACOSX
+share/doc/freeradius/OS2
+share/doc/freeradius/Post-Auth-Type
+share/doc/freeradius/RADIUS-LDAP-eDirectory
+share/doc/freeradius/RADIUS-SQL.schema
+share/doc/freeradius/README
+share/doc/freeradius/Session-Type
+share/doc/freeradius/Simultaneous-Use
+share/doc/freeradius/aaa.txt
+share/doc/freeradius/ascend
+share/doc/freeradius/bay
+share/doc/freeradius/bugs
+share/doc/freeradius/cisco
+share/doc/freeradius/coding-methods.txt
+share/doc/freeradius/configurable_failover
+share/doc/freeradius/duplicate-users
+share/doc/freeradius/examples/
+share/doc/freeradius/examples/iplanet.ldif
+share/doc/freeradius/examples/iplanet.schema
+share/doc/freeradius/examples/mssql.sql
+share/doc/freeradius/examples/mysql.sql
+share/doc/freeradius/examples/openldap.schema
+share/doc/freeradius/examples/oracle.sql
+share/doc/freeradius/examples/postgresql.sql
+share/doc/freeradius/ldap_howto.txt
+share/doc/freeradius/load-balance.txt
+share/doc/freeradius/misc-nas
+share/doc/freeradius/module_interface
+share/doc/freeradius/mssql
+share/doc/freeradius/performance-testing
+share/doc/freeradius/processing_users_file
+share/doc/freeradius/proxy
+share/doc/freeradius/radrelay
+share/doc/freeradius/release-method.txt
+share/doc/freeradius/rfc/
+share/doc/freeradius/rfc/attributes.html
+share/doc/freeradius/rfc/draft-kamath-pppext-eap-mschapv2-00.txt
+share/doc/freeradius/rfc/draft-sterman-aaa-sip-00.txt
+share/doc/freeradius/rfc/leap.txt
+share/doc/freeradius/rfc/pppext-eap-sim-12.txt
+share/doc/freeradius/rfc/rfc1157.txt
+share/doc/freeradius/rfc/rfc1227.txt
+share/doc/freeradius/rfc/rfc1448.txt
+share/doc/freeradius/rfc/rfc1901.txt
+share/doc/freeradius/rfc/rfc1905.txt
+share/doc/freeradius/rfc/rfc2058.txt
+share/doc/freeradius/rfc/rfc2059.txt
+share/doc/freeradius/rfc/rfc2138.txt
+share/doc/freeradius/rfc/rfc2139.txt
+share/doc/freeradius/rfc/rfc2243.txt
+share/doc/freeradius/rfc/rfc2289.txt
+share/doc/freeradius/rfc/rfc2433.txt
+share/doc/freeradius/rfc/rfc2548.txt
+share/doc/freeradius/rfc/rfc2618.txt
+share/doc/freeradius/rfc/rfc2619.txt
+share/doc/freeradius/rfc/rfc2620.txt
+share/doc/freeradius/rfc/rfc2621.txt
+share/doc/freeradius/rfc/rfc2716.txt
+share/doc/freeradius/rfc/rfc2759.txt
+share/doc/freeradius/rfc/rfc2809.txt
+share/doc/freeradius/rfc/rfc2865.txt
+share/doc/freeradius/rfc/rfc2866.txt
+share/doc/freeradius/rfc/rfc2867.txt
+share/doc/freeradius/rfc/rfc2868.txt
+share/doc/freeradius/rfc/rfc2869.txt
+share/doc/freeradius/rfc/rfc2882.txt
+share/doc/freeradius/rfc/rfc2924.txt
+share/doc/freeradius/rfc/rfc3162.txt
+share/doc/freeradius/rfc/rfc3575.txt
+share/doc/freeradius/rfc/rfc3576.txt
+share/doc/freeradius/rfc/rfc3579.txt
+share/doc/freeradius/rfc/rfc3580.txt
+share/doc/freeradius/rlm_attr_filter
+share/doc/freeradius/rlm_dbm
+share/doc/freeradius/rlm_digest
+share/doc/freeradius/rlm_eap
+share/doc/freeradius/rlm_fastusers
+share/doc/freeradius/rlm_krb5
+share/doc/freeradius/rlm_ldap
+share/doc/freeradius/rlm_otp
+share/doc/freeradius/rlm_pam
+share/doc/freeradius/rlm_passwd
+share/doc/freeradius/rlm_python
+share/doc/freeradius/rlm_sim_triplets
+share/doc/freeradius/rlm_sql
+share/doc/freeradius/rlm_sqlcounter
+share/doc/freeradius/supervise-radiusd.txt
+share/doc/freeradius/tuning_guide
+share/doc/freeradius/variables.txt
+share/examples/freeradius/
+@sample ${SYSCONFDIR}/raddb/
+share/examples/freeradius/acct_users
+@sample ${SYSCONFDIR}/raddb/acct_users
+share/examples/freeradius/attrs
+share/examples/freeradius/certs/
+share/examples/freeradius/certs/README
+share/examples/freeradius/certs/cert-clt.der
+share/examples/freeradius/certs/cert-clt.p12
+share/examples/freeradius/certs/cert-clt.pem
+share/examples/freeradius/certs/cert-srv.der
+share/examples/freeradius/certs/cert-srv.p12
+share/examples/freeradius/certs/cert-srv.pem
+share/examples/freeradius/certs/demoCA/
+share/examples/freeradius/certs/demoCA/cacert.pem
+share/examples/freeradius/certs/demoCA/index.txt
+share/examples/freeradius/certs/demoCA/index.txt.old
+share/examples/freeradius/certs/demoCA/serial
+share/examples/freeradius/certs/demoCA/serial.old
+share/examples/freeradius/certs/dh
+share/examples/freeradius/certs/newcert.pem
+share/examples/freeradius/certs/newreq.pem
+share/examples/freeradius/certs/random
+share/examples/freeradius/certs/root.der
+share/examples/freeradius/certs/root.p12
+share/examples/freeradius/certs/root.pem
+share/examples/freeradius/clients
+share/examples/freeradius/clients.conf
+@sample ${SYSCONFDIR}/raddb/clients.conf
+share/examples/freeradius/dictionary
+@sample ${SYSCONFDIR}/raddb/dictionary
+share/examples/freeradius/eap.conf
+@sample ${SYSCONFDIR}/raddb/eap.conf
+share/examples/freeradius/experimental.conf
+share/examples/freeradius/hints
+@sample ${SYSCONFDIR}/raddb/hints
+share/examples/freeradius/huntgroups
+@sample ${SYSCONFDIR}/raddb/huntgroups
+share/examples/freeradius/ldap.attrmap
+share/examples/freeradius/mssql.conf
+share/examples/freeradius/naslist
+share/examples/freeradius/naspasswd
+share/examples/freeradius/oraclesql.conf
+share/examples/freeradius/otp.conf
+share/examples/freeradius/otppasswd.sample
+share/examples/freeradius/postgresql.conf
+share/examples/freeradius/preproxy_users
+@sample ${SYSCONFDIR}/raddb/preproxy_users
+share/examples/freeradius/proxy.conf
+share/examples/freeradius/radiusd.conf
+@sample ${SYSCONFDIR}/raddb/radiusd.conf
+share/examples/freeradius/realms
+share/examples/freeradius/snmp.conf
+@sample ${SYSCONFDIR}/raddb/snmp.conf
+share/examples/freeradius/sql.conf
+share/examples/freeradius/users
+@sample ${SYSCONFDIR}/raddb/users
+share/freeradius/
+share/freeradius/dictionary
+share/freeradius/dictionary.3com
+share/freeradius/dictionary.3gpp
+share/freeradius/dictionary.3gpp2
+share/freeradius/dictionary.acc
+share/freeradius/dictionary.airespace
+share/freeradius/dictionary.alcatel
+share/freeradius/dictionary.alteon
+share/freeradius/dictionary.altiga
+share/freeradius/dictionary.aptis
+share/freeradius/dictionary.aruba
+share/freeradius/dictionary.ascend
+share/freeradius/dictionary.avaya
+share/freeradius/dictionary.bay
+share/freeradius/dictionary.bintec
+share/freeradius/dictionary.bristol
+share/freeradius/dictionary.cablelabs
+share/freeradius/dictionary.cabletron
+share/freeradius/dictionary.cisco
+share/freeradius/dictionary.cisco.bbsm
+share/freeradius/dictionary.cisco.vpn3000
+share/freeradius/dictionary.cisco.vpn5000
+share/freeradius/dictionary.colubris
+share/freeradius/dictionary.columbia_university
+share/freeradius/dictionary.compat
+share/freeradius/dictionary.cosine
+share/freeradius/dictionary.digest
+share/freeradius/dictionary.epygi
+share/freeradius/dictionary.ericsson
+share/freeradius/dictionary.erx
+share/freeradius/dictionary.extreme
+share/freeradius/dictionary.fortinet
+share/freeradius/dictionary.foundry
+share/freeradius/dictionary.freeradius
+share/freeradius/dictionary.freeradius.internal
+share/freeradius/dictionary.gandalf
+share/freeradius/dictionary.garderos
+share/freeradius/dictionary.gemtek
+share/freeradius/dictionary.hp
+share/freeradius/dictionary.ipunplugged
+share/freeradius/dictionary.issanni
+share/freeradius/dictionary.itk
+share/freeradius/dictionary.juniper
+share/freeradius/dictionary.karlnet
+share/freeradius/dictionary.livingston
+share/freeradius/dictionary.localweb
+share/freeradius/dictionary.lucent
+share/freeradius/dictionary.merit
+share/freeradius/dictionary.microsoft
+share/freeradius/dictionary.mikrotik
+share/freeradius/dictionary.motorola
+share/freeradius/dictionary.navini
+share/freeradius/dictionary.netscreen
+share/freeradius/dictionary.nokia
+share/freeradius/dictionary.nomadix
+share/freeradius/dictionary.nortel
+share/freeradius/dictionary.ntua
+share/freeradius/dictionary.packeteer
+share/freeradius/dictionary.propel
+share/freeradius/dictionary.quintum
+share/freeradius/dictionary.redback
+share/freeradius/dictionary.redcreek
+share/freeradius/dictionary.rfc2865
+share/freeradius/dictionary.rfc2866
+share/freeradius/dictionary.rfc2867
+share/freeradius/dictionary.rfc2868
+share/freeradius/dictionary.rfc2869
+share/freeradius/dictionary.rfc3162
+share/freeradius/dictionary.rfc3576
+share/freeradius/dictionary.rfc3580
+share/freeradius/dictionary.roaringpenguin
+share/freeradius/dictionary.shasta
+share/freeradius/dictionary.shiva
+share/freeradius/dictionary.sonicwall
+share/freeradius/dictionary.springtide
+share/freeradius/dictionary.starent
+share/freeradius/dictionary.t_systems_nova
+share/freeradius/dictionary.telebit
+share/freeradius/dictionary.trapeze
+share/freeradius/dictionary.unix
+share/freeradius/dictionary.usr
+share/freeradius/dictionary.valemount
+share/freeradius/dictionary.versanet
+share/freeradius/dictionary.waverider
+share/freeradius/dictionary.wispr
+share/freeradius/dictionary.xedia
+share/freeradius/dictionary.xylan
+share/freeradius/dictionary.zyxel
+@sample /var/log/radius/
+@sample /var/log/radius/radacct/
+@owner _freeradius
+@sample /var/run/radiusd/
+@owner
+@extra /var/log/radius/radwtmp
+@extraunexec rm -f ${SYSCONFDIR}/raddb/*
+@extraunexec rm -rf /var/log/radius/radacct/*
+@extraunexec rm -f /var/log/radius/radius.log*

@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_modules_rlm_krb5_rlm_krb5_c,v 1.1.1.1 2006/04/16 14:37:08 sturm Exp $
+--- src/modules/rlm_krb5/rlm_krb5.c.orig	Tue Mar 21 22:39:22 2006
++++ src/modules/rlm_krb5/rlm_krb5.c	Tue Mar 21 22:38:51 2006
+@@ -53,6 +53,7 @@ static CONF_PARSER module_config[] = {
+ 	{ NULL, -1, 0, NULL, NULL }
+ };
+ 
++#define HEIMDAL_KRB5
+ #ifndef HEIMDAL_KRB5
+ static int verify_krb5_tgt(krb5_context context, rlm_krb5_t *instance,
+                            const char *user, krb5_ccache ccache)

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_modules_rlm_ldap_Makefile_in,v 1.1.1.1 2006/04/16 14:37:08 sturm Exp $
+--- src/modules/rlm_ldap/Makefile.in.orig	Mon Mar 27 23:01:15 2006
++++ src/modules/rlm_ldap/Makefile.in	Mon Mar 27 23:01:35 2006
+@@ -5,7 +5,7 @@
+ TARGET     = @targetname@
+ SRCS       = rlm_ldap.c @edir@
+ HEADERS    =
+-RLM_CFLAGS = @ldap_cflags@
++RLM_CFLAGS = @ldap_cflags@ -DLDAP_DEPRECATED
+ RLM_LIBS   = @ldap_ldflags@
+ 
+ include ../rules.mak

@@ -1,0 +1,11 @@
+To have radiusd start at boot time, you have to adapt
+${SYSCONFDIR}/raddb/radiusd.conf and insert the following into /etc/rc.local.
+
+if [ -x ${PREFIX}/sbin/radiusd ]; then
+	install -d -o _freeradius /var/run/radiusd
+	echo -n ' radiusd';	${PREFIX}/sbin/radiusd
+fi
+
+This will start radiusd and use ${SYSCONFDIR}/raddb/radiusd.conf for the
+configuration. Example configuration files can be found in
+${PREFIX}/examples/freeradius.

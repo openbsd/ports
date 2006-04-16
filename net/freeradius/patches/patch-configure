@@ -1,0 +1,55 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2006/04/16 14:37:08 sturm Exp $
+--- configure.orig	Mon Feb  6 13:55:53 2006
++++ configure	Mon Mar 27 22:53:33 2006
+@@ -1452,7 +1452,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
+   echo "$ac_t""yes" 1>&6
+    
+        ltdl_found="yes"
+-       LIBLTDL="-lltdl"
++       LIBLTDL="-L$with_ltdl_lib -lltdl"
+        # Check whether --with-ltdl-include or --without-ltdl-include was given.
+ if test "${with_ltdl_include+set}" = set; then
+   withval="$with_ltdl_include"
+@@ -4302,7 +4302,6 @@ openbsd*)
+     shlibpath_overrides_runpath=yes
+   fi
+   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
+@@ -6464,7 +6463,6 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lresolv  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 6470 "configure"
+ #include "confdefs.h"
+@@ -6498,8 +6496,6 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lresolv $LIBS"
+-
+ else
+   echo "$ac_t""no" 1>&6
+ fi
+@@ -6605,7 +6601,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lssl  $LIBS"
++LIBS="-lcrypto -lssl  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 6611 "configure"
+ #include "confdefs.h"
+@@ -8761,7 +8757,7 @@ echo "$ac_t""top_builddir=$top_builddir"
+ 
+ 
+ 
+-if test "x$INCLTDL" != "x";then
++if test "x$INCLTDL" = "x";then
+   INCLTDL='-I${top_builddir}/''libltdl'
+ fi
+ 

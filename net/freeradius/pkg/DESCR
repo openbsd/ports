@@ -1,0 +1,8 @@
+FreeRADIUS is an Internet authentication daemon, which implements
+the RADIUS protocol, as defined in RFC 2865 (and others).  It allows
+Network Access Servers (NAS boxes) to perform authentication for
+dial-up users.  There are also RADIUS clients available for Web
+servers, firewalls, Unix logins, and more.  Using RADIUS allows
+authentication and authorization for a network to be centralized, and
+minimizes the amount of re-configuration which has to be done when
+adding or deleting new users.

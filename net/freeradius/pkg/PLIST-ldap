@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-ldap,v 1.1.1.1 2006/04/16 14:37:09 sturm Exp $
+lib/freeradius/rlm_ldap.a
+lib/freeradius/rlm_ldap.la
+lib/freeradius/rlm_ldap.so

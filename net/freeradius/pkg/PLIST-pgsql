@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-pgsql,v 1.1.1.1 2006/04/16 14:37:08 sturm Exp $
+lib/freeradius/rlm_sql_postgresql.a
+lib/freeradius/rlm_sql_postgresql.la
+lib/freeradius/rlm_sql_postgresql.so

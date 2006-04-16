@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_modules_rlm_sql_drivers_rules_mak,v 1.1.1.1 2006/04/16 14:37:08 sturm Exp $
+--- src/modules/rlm_sql/drivers/rules.mak.orig	Fri Feb 10 20:47:19 2006
++++ src/modules/rlm_sql/drivers/rules.mak	Wed Mar 29 22:29:15 2006
+@@ -99,9 +99,9 @@ build-module: $(TARGET).la
+ 	@cp $< ../lib
+ 
+ $(TARGET).la: $(LT_OBJS)
+-	$(LIBTOOL) --mode=link $(CC) -release $(RADIUSD_VERSION) \
++	$(LIBTOOL) --mode=link $(CC) -avoid-version \
+ 	-module $(LINK_MODE) $(LDFLAGS) $(RLM_SQL_LDFLAGS) -o $@ \
+-	-rpath $(libdir) $^ $(RLM_SQL_LIBS)
++	-rpath $(libdir)/freeradius $^ $(RLM_SQL_LIBS)
+ 
+ #######################################################################
+ #
+@@ -137,4 +137,4 @@ reconfig:
+ #  Otherwise, install the libraries into $(libdir)
+ #
+ install:
+-	[ "x$(TARGET)" = "x" ] || $(LIBTOOL) --mode=install $(INSTALL) -c $(TARGET).la $(R)$(libdir)/$(TARGET).la
++	[ "x$(TARGET)" = "x" ] || $(LIBTOOL) --mode=install $(INSTALL) -c $(TARGET).la $(R)$(libdir)/freeradius/$(TARGET).la

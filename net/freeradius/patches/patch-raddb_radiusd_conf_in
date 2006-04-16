@@ -1,0 +1,61 @@
+$OpenBSD: patch-raddb_radiusd_conf_in,v 1.1.1.1 2006/04/16 14:37:08 sturm Exp $
+--- raddb/radiusd.conf.in.orig	Fri Feb 10 16:12:02 2006
++++ raddb/radiusd.conf.in	Mon Apr 10 21:58:08 2006
+@@ -23,7 +23,7 @@
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+ sysconfdir = @sysconfdir@
+-localstatedir = @localstatedir@
++localstatedir = /var
+ sbindir = @sbindir@
+ logdir = @logdir@
+ raddbdir = @raddbdir@
+@@ -71,7 +71,7 @@ log_file = ${logdir}/radius.log
+ #	make
+ #	make install
+ #
+-libdir = @libdir@
++libdir = @prefix@/lib/freeradius
+ 
+ #  pidfile: Where to place the PID of the RADIUS server.
+ #
+@@ -106,8 +106,8 @@ pidfile = ${run_dir}/radiusd.pid
+ #  that the debugging mode server is running as a user that can read the
+ #  shadow info, and the user listed below can not.
+ #
+-#user = nobody
+-#group = nobody
++user = _freeradius
++group = _freeradius
+ 
+ #  max_request_time: The maximum time (in seconds) to handle a request.
+ #
+@@ -425,8 +425,8 @@ security {
+ #
+ #  allowed values: {no, yes}
+ #
+-proxy_requests  = yes
+-$INCLUDE  ${confdir}/proxy.conf
++proxy_requests  = no
++# $INCLUDE  ${confdir}/proxy.conf
+ 
+ 
+ # CLIENTS CONFIGURATION
+@@ -657,7 +657,7 @@ modules {
+ 	#  For all EAP related authentications.
+ 	#  Now in another file, because it is very large.
+ 	#
+-$INCLUDE ${confdir}/eap.conf
++	$INCLUDE ${confdir}/eap.conf
+ 
+ 	# Microsoft CHAP authentication
+ 	#
+@@ -1221,7 +1221,7 @@ $INCLUDE ${confdir}/eap.conf
+ 	#  For MS-SQL, use:	 	${confdir}/mssql.conf
+ 	#  For Oracle, use:	 	${confdir}/oraclesql.conf
+ 	#
+-	$INCLUDE  ${confdir}/sql.conf
++	# $INCLUDE  ${confdir}/sql.conf
+ 
+ 
+ 	#  For Cisco VoIP specific accounting with Postgresql,
