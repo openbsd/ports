@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/09/18 22:27:38 aanriot Exp $
+# $OpenBSD: Makefile,v 1.2 2006/04/16 09:02:17 steven Exp $
 
 COMMENT=	"perl debugger built with a PerlTk GUI"
 
@@ -23,5 +23,6 @@ CONFIGURE_ARGS=	INSTALLDIRS="site"
 
 RUN_DEPENDS=	::x11/tk/8.4 \
 		::x11/p5-Tk
+REGRESS_DEPENDS=::x11/p5-Tk
 
 .include <bsd.port.mk>
