@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2006/04/17 11:26:03 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2006/04/17 11:57:22 espie Exp $
 
-LANGS= bg ca cs cy da de el en_GB es et eu fi fr hu it nb nl nn pl \
-	pt pt_BR ru sl sr sr@Latn sv ta tg zh_CN
+LANGS= af ar bg br bs ca cs cy da de el en_GB eo es et eu fi fr ga he hi \
+	hu is it ja lt mk nb nl nn pl pt pt_BR ro ru se sl sr sr@Latn \
+	sv ta tg tr uk uz zh_CN
 
 # some extra vars to compact PLISTs
 I=index.docbook

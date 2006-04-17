@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST-eo,v 1.1 2006/04/17 11:57:22 espie Exp $
+${LOC}desktop_koffice.mo
+${LOC}example.mo
+${LOC}kchart.mo
+${LOC}kformula.mo
+${LOC}kivio.mo
+${LOC}koffice.mo
+${LOC}kofficefilters.mo
+${LOC}koshell.mo
+${LOC}kpresenter.mo
+${LOC}krita.mo
+${LOC}kscan_plugin.mo
+${LOC}kspread.mo
+${LOC}kspreadcalc_calc.mo
+${LOC}kugar.mo
+${LOC}kword.mo

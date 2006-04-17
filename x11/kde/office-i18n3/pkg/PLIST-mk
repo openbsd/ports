@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST-mk,v 1.1 2006/04/17 11:57:22 espie Exp $
+${LOC}desktop_koffice.mo
+${LOC}kfile_koffice.mo
+${LOC}kfile_ooo.mo
+${LOC}kformula.mo
+${LOC}koffice.mo
+${LOC}koshell.mo
+${LOC}kspread.mo
+${LOC}kspreadcalc_calc.mo
+${LOC}kword.mo
