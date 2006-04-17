@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2006/01/14 11:46:15 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/04/17 14:46:08 espie Exp $
 
 COMMENT=	'libraries for fwbuilder'
-DISTNAME=	libfwbuilder-2.0.7
-PKGNAME=	$(DISTNAME)p0
+DISTNAME=	libfwbuilder-2.0.12
+PKGNAME=	$(DISTNAME)
 CATEGORIES=	net security
-SHARED_LIBS=	fwbuilder	7.0 \
-		fwcompiler	7.0
+SHARED_LIBS=	fwbuilder	8.0 \
+		fwcompiler	8.0
 
 HOMEPAGE=	http://www.fwbuilder.org/
 
@@ -24,6 +24,7 @@ LIB_DEPENDS+=	xslt::textproc/libxslt \
 	    	netsnmp::net/net-snmp
 
 CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS+=	--with-docdir=${TRUEPREFIX}/share/doc/libfwbuilder
 
 NO_REGRESS=	Yes
 

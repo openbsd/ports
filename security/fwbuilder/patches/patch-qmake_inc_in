@@ -1,6 +1,6 @@
-$OpenBSD: patch-qmake_inc_in,v 1.1.1.1 2005/05/21 09:37:35 espie Exp $
---- qmake.inc.in.orig	Thu May 19 14:40:36 2005
-+++ qmake.inc.in	Thu May 19 14:41:00 2005
+$OpenBSD: patch-qmake_inc_in,v 1.2 2006/04/17 14:46:09 espie Exp $
+--- qmake.inc.in.orig	Tue Oct 25 08:11:26 2005
++++ qmake.inc.in	Mon Apr 17 14:40:39 2006
 @@ -27,7 +27,7 @@ unix {
  	res_os.path             = $(DDIR)@RES_DIR@/os
  	res_platform.path       = $(DDIR)@RES_DIR@/platform
@@ -9,4 +9,4 @@ $OpenBSD: patch-qmake_inc_in,v 1.1.1.1 2005/05/21 09:37:35 espie Exp $
 +	CONFIG                 += qt thread rtti stl warn_on release
  	INCLUDEPATH            += @LIBFWBUILDER_INCLUDEPATH@
  
- 	LIBS                   += $$LIBS_FWBUILDER
+ 	LIBS                   += $$LIBS_FWBUILDER @LIBS@

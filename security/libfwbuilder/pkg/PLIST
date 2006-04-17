@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/21 09:35:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/04/17 14:46:09 espie Exp $
 %%SHARED%%
 bin/libfwbuilder-config-2
 include/fwb-2.0/
@@ -60,13 +60,13 @@ include/fwb-2.0/fwcompiler/NATCompiler.h
 include/fwb-2.0/fwcompiler/OSConfigurator.h
 include/fwb-2.0/fwcompiler/PolicyCompiler.h
 include/fwb-2.0/fwcompiler/RuleProcessor.h
-share/doc/libfwbuilder-2.0.7/
-share/doc/libfwbuilder-2.0.7/AUTHORS
-share/doc/libfwbuilder-2.0.7/COPYING
-share/doc/libfwbuilder-2.0.7/ChangeLog
-share/doc/libfwbuilder-2.0.7/Credits
-share/doc/libfwbuilder-2.0.7/INSTALL
-share/doc/libfwbuilder-2.0.7/PatchAcceptancePolicy.txt
+share/doc/libfwbuilder/
+share/doc/libfwbuilder/AUTHORS
+share/doc/libfwbuilder/COPYING
+share/doc/libfwbuilder/ChangeLog
+share/doc/libfwbuilder/Credits
+share/doc/libfwbuilder/INSTALL
+share/doc/libfwbuilder/PatchAcceptancePolicy.txt
 share/libfwbuilder/
 share/libfwbuilder/fwbuilder.dtd
 share/libfwbuilder/migration/
@@ -97,8 +97,13 @@ share/libfwbuilder/migration/FWObjectDatabase_1.0.1.xslt
 share/libfwbuilder/migration/FWObjectDatabase_1.0.2.xslt
 share/libfwbuilder/migration/FWObjectDatabase_2.0.0.xslt
 share/libfwbuilder/migration/FWObjectDatabase_2.0.1.xslt
+share/libfwbuilder/migration/FWObjectDatabase_2.0.10.xslt
+share/libfwbuilder/migration/FWObjectDatabase_2.0.11.xslt
 share/libfwbuilder/migration/FWObjectDatabase_2.0.2.xslt
 share/libfwbuilder/migration/FWObjectDatabase_2.0.3.xslt
 share/libfwbuilder/migration/FWObjectDatabase_2.0.4.xslt
 share/libfwbuilder/migration/FWObjectDatabase_2.0.5.xslt
 share/libfwbuilder/migration/FWObjectDatabase_2.0.6.xslt
+share/libfwbuilder/migration/FWObjectDatabase_2.0.7.xslt
+share/libfwbuilder/migration/FWObjectDatabase_2.0.8.xslt
+share/libfwbuilder/migration/FWObjectDatabase_2.0.9.xslt

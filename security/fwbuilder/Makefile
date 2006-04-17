@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/05/26 21:18:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2006/04/17 14:46:09 espie Exp $
 
 COMMENT='firewall gui'
 CATEGORIES=net security
@@ -11,15 +11,16 @@ PERMIT_DISTFILES_CDROM=	Yes
 HOMEPAGE=http://www.fwbuilder.org/
 
 MASTER_SITES=${MASTER_SITE_SOURCEFORGE:=fwbuilder/}
-DISTNAME=fwbuilder-2.0.7
-PKGNAME=${DISTNAME}p0
-CONFIGURE_STYLE=gnu
+DISTNAME=	fwbuilder-2.0.12
+PKGNAME=	${DISTNAME}
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--with-docdir=${TRUEPREFIX}/share/doc/fwbuilder
 
-MODULES=x11/qt3
-FAKE_FLAGS=INSTALL_ROOT=${WRKINST} ${MAKE_FLAGS}
-LIB_DEPENDS=fwcompiler,fwbuilder::security/libfwbuilder
-NO_REGRESS=Yes
+MODULES=	x11/qt3
+FAKE_FLAGS=	INSTALL_ROOT=${WRKINST} ${MAKE_FLAGS}
+LIB_DEPENDS=	fwcompiler.8,fwbuilder.8::security/libfwbuilder
+NO_REGRESS=	Yes
 
-WANTLIB=stdc++ c util m X11 ssl z crypto Xext pthread iconv xslt xml2 netsnmp
+WANTLIB=	stdc++ c util m X11 ssl z crypto Xext pthread iconv xslt xml2 netsnmp
 
 .include <bsd.port.mk>
