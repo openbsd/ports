@@ -1,0 +1,52 @@
+$OpenBSD: patch-admin_ltmain_sh,v 1.3 2006/04/17 10:56:49 espie Exp $
+--- admin/ltmain.sh.orig	Mon Apr  3 19:17:01 2006
++++ admin/ltmain.sh	Sun Apr 16 17:52:44 2006
+@@ -1301,6 +1301,17 @@ EOF
+ 	continue
+ 	;;
+ 
++      -pthread)
++        case $host in
++	*-*-openbsd*)
++	  deplibs="$deplibs $arg"
++	  ;;
++	*)
++	  continue
++	  ;;
++	esac
++	;;
++
+       -module)
+ 	module=yes
+ 	continue
+@@ -1997,6 +2008,30 @@ EOF
+ 	  fi
+ 	  continue
+ 	  ;;
++	-pthread)
++	  case $linkmode in
++	  lib)
++	    deplibs="$deplib $deplibs"
++	    test "$pass" = conv && continue
++	    newdependency_libs="$deplib $newdependency_libs"
++	    ;;
++	  prog)
++	    if test "$pass" = conv; then
++	      deplibs="$deplib $deplibs"
++	      continue
++	    fi
++	    if test "$pass" = scan; then
++	      deplibs="$deplib $deplibs"
++	    else
++	      compile_deplibs="$deplib $compile_deplibs"
++	      finalize_deplibs="$deplib $finalize_deplibs"
++	    fi
++	    ;;
++	  *)
++	    ;;
++	  esac # linkmode
++	  continue
++	  ;; # -pthread
+ 	%DEPLIBS%)
+ 	  alldeplibs=yes
+ 	  continue

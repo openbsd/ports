@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.5 2006/04/02 09:44:31 espie Exp $
---- configure.in.orig	Thu Mar 23 21:13:59 2006
-+++ configure.in	Sat Apr  1 15:12:43 2006
+$OpenBSD: patch-configure_in,v 1.6 2006/04/17 10:56:49 espie Exp $
+--- configure.in.orig	Mon Apr  3 19:27:42 2006
++++ configure.in	Sun Apr 16 17:53:20 2006
 @@ -935,8 +935,8 @@ dnl *** Check that the paths given to co
  
      AC_MSG_CHECKING([for PostgreSQL C API libraries])
@@ -56,5 +56,5 @@ $OpenBSD: patch-configure_in,v 1.5 2006/04/02 09:44:31 espie Exp $
 -   AC_LANG_C
 +   AC_LANG_CPLUSPLUS
     dnl Check for aspell library
-    AC_MSG_CHECKING([for kspell2/broker.h (kdelibs>3.2)])
-    AC_FIND_FILE(kspell2/broker.h, $kde_includes, ac_kspell2_includes)
+    KDE_CHECK_HEADERS([kspell2/broker.h])
+    if test "x$ac_cv_header_kspell2_broker_h" = "xyes"; then

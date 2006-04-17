@@ -1,0 +1,14 @@
+$OpenBSD: patch-admin_cvs_sh,v 1.1 2006/04/17 10:56:49 espie Exp $
+--- admin/cvs.sh.orig	Mon Apr  3 19:17:01 2006
++++ admin/cvs.sh	Sun Apr 16 17:53:13 2006
+@@ -634,6 +634,10 @@ fi
+ # Call script to find autoconf and friends.  Uses eval since the script outputs
+ # sh-compatible code.
+ eval `$admindir/detect-autoconf.pl`
++AUTOCONF=autoconf
++AUTOHEADER=autoheader
++AUTOM4TE=autom4te-2.59
++ACLOCAL=aclocal
+ 
+ ###
+ ### Main

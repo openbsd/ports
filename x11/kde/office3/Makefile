@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.30 2006/04/02 09:44:31 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2006/04/17 10:56:49 espie Exp $
 
 COMMENT=		"office suite for KDE"
 
 CATEGORIES=		x11 x11/kde productivity
 VMEM_WARNING=		Yes
-MASTER_SITES?=		${MASTER_SITE_KDE:S@$@unstable/koffice-1.5-rc1/src/@}
+MASTER_SITES?=		${MASTER_SITE_KDE:S@$@stable/koffice-1.5.0/src/@}
 
-DISTNAME=	koffice-1.5.0-rc1
-PKGNAME=	koffice-1.5.0rc1
+DISTNAME=	koffice-1.5.0
+PKGNAME=	koffice-1.5.0
 #SHARED_LIBS=	karbonbase		3.0 \
 #		kexipropertyeditor	1.0 \
 #		koscript		3.0 \
@@ -74,7 +74,7 @@ FAKE_FLAGS=	${MAKE_FLAGS} TAR=tar DESTDIR=${WRKINST}
 SEPARATE_BUILD=	flavored
 BUILD_DEPENDS+=	::devel/pkgconfig
 
-MODKDE_VERSION=	3.5.2
+MODKDE_VERSION=	
 AUTOCONF?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
 AUTOCONF_VERSION=2.59
 
