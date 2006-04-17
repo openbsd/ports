@@ -3,7 +3,7 @@ to enable the module using the following command
 
   ${PREFIX}/sbin/mod_security-enable
 
-The manual is found at ${PREFIX}/share/doc/mod_security
+The manual is found at ${PREFIX}/share/doc/mod_security.
 
 If you already have Apache running on your machine,
 you should not use "apachectl restart" - instead,
