@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2005/12/30 05:23:52 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2006/04/17 15:36:19 jolan Exp $
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"flash support for opera"
-DISTNAME=	flash-7.0r61
-PKGNAME=	opera-flashplugin-7.0r61
+DISTNAME=	flash-7.0r63
+PKGNAME=	opera-flashplugin-7.0r63
 CATEGORIES=	www
 MASTER_SITES=	http://mirrors.protection.cx/~jolan/
 
