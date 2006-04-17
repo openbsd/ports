@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/10/23 12:37:32 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2006/04/17 14:57:11 steven Exp $
 
 COMMENT=	"Python-based build system"
 
-DISTNAME=	scons-0.96.1
+VERSION=	0.96.92
+DISTNAME=	scons-${VERSION}
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.scons.org/
@@ -20,6 +21,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scons/}
 MODULES=	python
 
 NO_REGRESS=	Yes
+
+SUBST_VARS+=	VERSION
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/scons.1    ${PREFIX}/man/man1
