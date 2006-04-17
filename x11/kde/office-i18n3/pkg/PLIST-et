@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-et,v 1.2 2006/04/03 14:52:19 bernd Exp $
+@comment $OpenBSD: PLIST-et,v 1.3 2006/04/17 11:26:03 espie Exp $
 share/doc/HTML/et/
 ${DOC}karbon/
 ${DOC}karbon/common
@@ -15,6 +15,7 @@ ${DOC}kexi/common
 ${DOC}kexi/configuration.docbook
 ${DOC}kexi/credits.docbook
 ${DOC}kexi/database.docbook
+${DOC}kexi/${C}
 ${DOC}kexi/${I}
 ${DOC}kexi/intro.docbook
 ${DOC}kexi/menus.docbook
@@ -53,6 +54,7 @@ ${DOC}kpresenter/common
 ${DOC}kpresenter/faq.docbook
 ${DOC}kpresenter/great-presentations.docbook
 ${DOC}kpresenter/guides.docbook
+${DOC}kpresenter/${C}
 ${DOC}kpresenter/${I}
 ${DOC}kpresenter/menus.docbook
 ${DOC}kpresenter/options.docbook
@@ -95,6 +97,7 @@ ${DOC}kspread/copy1.png
 ${DOC}kspread/faq.docbook
 ${DOC}kspread/format.docbook
 ${DOC}kspread/importexport.docbook
+${DOC}kspread/${C}
 ${DOC}kspread/${I}
 ${DOC}kspread/shortcut1.png
 ${DOC}kspread/shortcut2.png
@@ -135,6 +138,7 @@ ${DOC}kword/frames.docbook
 ${DOC}kword/fundimentals.docbook
 ${DOC}kword/graphics.docbook
 ${DOC}kword/headerfooter.docbook
+${DOC}kword/${C}
 ${DOC}kword/${I}
 ${DOC}kword/insertfile.docbook
 ${DOC}kword/kparts.docbook
