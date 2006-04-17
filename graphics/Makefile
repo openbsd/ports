@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.156 2006/03/14 23:27:49 espie Exp $
+# $OpenBSD: Makefile,v 1.157 2006/04/17 13:50:50 steven Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -29,6 +29,7 @@
      SUBDIR += fxtv
      SUBDIR += gd
      SUBDIR += gdk-pixbuf
+     SUBDIR += gfract
      SUBDIR += ggi
      SUBDIR += gif2png
      SUBDIR += gifsicle
