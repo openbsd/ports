@@ -1,0 +1,6 @@
+Gfract is a GTK-based fractal program that currently implements the
+standard Mandelbrot and Julia sets. It features infinite image size with
+infinite anti-aliasing if you have the memory for it (well, at least 2^31
+x 2^31 image sizes), Julia instant preview mode, user-specified coloring
+algorithms and PNG support. For palette files it uses the same format as
+Fractint does, except that it supports arbitraly large palettes.
