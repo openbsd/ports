@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/04/17 15:28:41 sturm Exp $
+bin/devilspie
+@comment @man man/man1/devilspie.1
+share/doc/devilspie/
+share/doc/devilspie/README
+share/locale/de/LC_MESSAGES/devilspie.mo
