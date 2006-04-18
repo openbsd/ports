@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/04/18 19:05:25 espie Exp $
+${P5ARCH}/DateTime/
+${P5ARCH}/DateTime.pm
+${P5ARCH}/DateTime/Duration.pm
+${P5ARCH}/DateTime/Infinite.pm
+${P5ARCH}/DateTime/LeapSecond.pm
+${P5ARCH}/DateTimePP.pm
+${P5ARCH}/DateTimePPExtra.pm
+${P5ARCH}/auto/DateTime/
+${P5ARCH}/auto/DateTime/DateTime.bs
+${P5ARCH}/auto/DateTime/DateTime.so
+@man man/man3p/DateTime.3p
+@man man/man3p/DateTime::Duration.3p
+@man man/man3p/DateTime::Infinite.3p
+@man man/man3p/DateTime::LeapSecond.3p

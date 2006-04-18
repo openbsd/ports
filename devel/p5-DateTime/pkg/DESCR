@@ -1,0 +1,4 @@
+The DateTime.pm module aims to provide a complete, correct, and easy
+to use date/time object implementation. Currently it handles many date
+calculations, date math (addition and subtraction), and provides
+convenient methods for retrieving portions of a date/time.
