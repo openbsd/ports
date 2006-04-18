@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/06/07 01:12:55 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/04/18 17:29:35 alek Exp $
 @option no-default-conflict
 @conflict python->=2.4,<2.5
 %%SHARED%%
@@ -204,6 +204,9 @@ lib/python2.4/bsddb/test/
 lib/python2.4/bsddb/test/__init__.py
 lib/python2.4/bsddb/test/__init__.pyc
 lib/python2.4/bsddb/test/__init__.pyo
+lib/python2.4/bsddb/test/test_1413192.py
+lib/python2.4/bsddb/test/test_1413192.pyc
+lib/python2.4/bsddb/test/test_1413192.pyo
 lib/python2.4/bsddb/test/test_all.py
 lib/python2.4/bsddb/test/test_all.pyc
 lib/python2.4/bsddb/test/test_all.pyo
@@ -663,6 +666,7 @@ lib/python2.4/email/test/data/msg_40.txt
 lib/python2.4/email/test/data/msg_41.txt
 lib/python2.4/email/test/data/msg_42.txt
 lib/python2.4/email/test/data/msg_43.txt
+lib/python2.4/email/test/data/msg_44.txt
 lib/python2.4/email/test/test_email.py
 lib/python2.4/email/test/test_email.pyc
 lib/python2.4/email/test/test_email.pyo

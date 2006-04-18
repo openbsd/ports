@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.1.1.1 2005/06/07 01:12:56 alek Exp $
+@comment $OpenBSD: PLIST-tests,v 1.2 2006/04/18 17:29:35 alek Exp $
 @option no-default-conflict
 @conflict python-tests->=2.4,<2.5
 lib/python2.4/test/
@@ -20,6 +20,7 @@ lib/python2.4/test/badsyntax_future8.py
 lib/python2.4/test/badsyntax_future9.py
 lib/python2.4/test/badsyntax_nocaret.py
 lib/python2.4/test/cfgparser.1
+lib/python2.4/test/check_soundcard.vbs
 lib/python2.4/test/cjkencodings_test.py
 lib/python2.4/test/cjkencodings_test.pyc
 lib/python2.4/test/cjkencodings_test.pyo
@@ -260,6 +261,9 @@ lib/python2.4/test/test_class.pyo
 lib/python2.4/test/test_cmath.py
 lib/python2.4/test/test_cmath.pyc
 lib/python2.4/test/test_cmath.pyo
+lib/python2.4/test/test_cmd_line.py
+lib/python2.4/test/test_cmd_line.pyc
+lib/python2.4/test/test_cmd_line.pyo
 lib/python2.4/test/test_codeccallbacks.py
 lib/python2.4/test/test_codeccallbacks.pyc
 lib/python2.4/test/test_codeccallbacks.pyo

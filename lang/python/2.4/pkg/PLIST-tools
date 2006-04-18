@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tools,v 1.2 2005/12/17 12:33:00 alek Exp $
+@comment $OpenBSD: PLIST-tools,v 1.3 2006/04/18 17:29:35 alek Exp $
 @option no-default-conflict
 @conflict python-tools->=2.4,<2.5
 lib/python2.4/Tools/
@@ -23,6 +23,13 @@ lib/python2.4/Tools/bgen/bgen/bgenType.py
 lib/python2.4/Tools/bgen/bgen/bgenVariable.py
 lib/python2.4/Tools/bgen/bgen/macsupport.py
 lib/python2.4/Tools/bgen/bgen/scantools.py
+lib/python2.4/Tools/buildbot/
+lib/python2.4/Tools/buildbot/README.txt
+lib/python2.4/Tools/buildbot/build.bat
+lib/python2.4/Tools/buildbot/clean.bat
+lib/python2.4/Tools/buildbot/external.bat
+lib/python2.4/Tools/buildbot/fetch_data_files.py
+lib/python2.4/Tools/buildbot/test.bat
 lib/python2.4/Tools/compiler/
 lib/python2.4/Tools/compiler/ACKS
 lib/python2.4/Tools/compiler/README
@@ -55,7 +62,6 @@ lib/python2.4/Tools/framer/framer/structparse.py
 lib/python2.4/Tools/framer/framer/template.py
 lib/python2.4/Tools/framer/framer/util.py
 lib/python2.4/Tools/freeze/
-lib/python2.4/Tools/freeze/.cvsignore
 lib/python2.4/Tools/freeze/README
 lib/python2.4/Tools/freeze/bkfile.py
 lib/python2.4/Tools/freeze/checkextensions.py
