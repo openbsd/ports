@@ -1,0 +1,3 @@
+Fast implementation of the Levenshtein `edit distance' for perl.
+see < http://www.merriampark.com/ld.htm > for a description of the
+algorithm.
