@@ -1,0 +1,3 @@
+List::MoreUtils provides some trivial but commonly needed functionality 
+on lists which is not going to be a part of List::Util.
+
