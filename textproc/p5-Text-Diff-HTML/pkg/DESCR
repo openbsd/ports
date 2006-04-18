@@ -1,0 +1,4 @@
+This class subclasses Text::Diff::Unified, a formatting class provided
+by the Text::Diff module, to add XHTML markup to the unified diff
+format. For details on the interface of the "diff()" function, see the
+Text::Diff documentation.
