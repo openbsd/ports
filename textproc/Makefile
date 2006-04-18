@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2006/04/18 16:04:41 espie Exp $
+# $OpenBSD: Makefile,v 1.147 2006/04/18 18:07:43 espie Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -91,6 +91,7 @@
      SUBDIR += p5-Text-Tmpl
      SUBDIR += p5-Text-Unidecode
      SUBDIR += p5-Text-WikiFormat
+     SUBDIR += p5-Text-WordDiff
      SUBDIR += p5-Text-Wrapper
      SUBDIR += p5-WML-Card
      SUBDIR += p5-XML-AutoWriter
