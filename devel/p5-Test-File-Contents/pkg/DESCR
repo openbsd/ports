@@ -1,0 +1,5 @@
+Test::File::Contents - Test routines for examining the contents of files
+file_contents_is       ($file,  $string,  $test_description);
+file_contents_like     ($file,  qr/foo/,  $test_description);
+file_md5sum            ($file,  $md5sum,  $test_description);
+file_contents_identical($file1, $file2,   $test_description);
