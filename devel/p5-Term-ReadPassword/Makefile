@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/04/18 10:18:07 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/04/18 15:48:07 espie Exp $
 
 COMMENT=		"ask passwords from perl"
 
 DISTNAME=		Term-ReadPassword-0.07
-PKGNAME=		p5-${DISTNAME}
+PKGNAME=		p5-${DISTNAME}p0
+PKG_ARCH=		*
 CATEGORIES=		devel perl5
 
 # Artistic
