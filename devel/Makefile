@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.363 2006/04/18 18:49:31 espie Exp $
+# $OpenBSD: Makefile,v 1.364 2006/04/18 19:08:30 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -205,6 +205,9 @@
      SUBDIR += p5-Date-ICal
      SUBDIR += p5-Date-Leapyear
      SUBDIR += p5-Date-Simple
+     SUBDIR += p5-DateTime
+     SUBDIR += p5-DateTime-Locale
+     SUBDIR += p5-DateTime-TimeZone
      SUBDIR += p5-Devel-Cycle
      SUBDIR += p5-Devel-Size
      SUBDIR += p5-Devel-SmallProf
