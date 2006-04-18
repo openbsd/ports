@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2006/04/18 20:30:03 steven Exp $
+--- Makefile.in.orig	Mon Apr 17 14:39:54 2006
++++ Makefile.in	Mon Apr 17 14:40:27 2006
+@@ -132,7 +132,7 @@ SUBDIRS = src docs scripts
+ confdir = $(sysconfdir)
+ conf_DATA = irssi.conf
+ 
+-themedir = $(datadir)/irssi/themes
++themedir = $(datadir)/examples/irssi/themes
+ theme_DATA = default.theme colorless.theme
+ 
+ pkginclude_HEADERS = config.h irssi-version.h

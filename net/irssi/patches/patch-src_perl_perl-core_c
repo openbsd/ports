@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_perl_perl-core_c,v 1.1 2006/04/18 20:30:03 steven Exp $
+--- src/perl/perl-core.c.orig	Fri Apr  7 12:56:00 2006
++++ src/perl/perl-core.c	Fri Apr  7 13:06:09 2006
+@@ -370,12 +370,17 @@ char *perl_script_get_path(const char *n
+ 	/* check from ~/.irssi/scripts/ */
+ 	path = g_strdup_printf("%s/scripts/%s", get_irssi_dir(), file);
+ 	if (stat(path, &statbuf) != 0) {
+-		/* check from SCRIPTDIR */
++		/* check from SYSCONFDIR and SCRIPTDIR */
+ 		g_free(path);
+-		path = g_strdup_printf(SCRIPTDIR"/%s", file);
++		/* path = g_strdup_printf(SCRIPTDIR"/%s", file); */
++		path = g_strdup_printf(SYSCONFDIR"/irssi/scripts/%s", file);
+ 		if (stat(path, &statbuf) != 0) {
+ 			g_free(path);
+-			path = NULL;
++			path = g_strdup_printf(SCRIPTDIR"/%s", file);
++			if (stat(path, &statbuf) != 0) {
++				g_free(path);
++				path = NULL;
++			}
+ 		}
+ 	}
+ 	g_free(file);

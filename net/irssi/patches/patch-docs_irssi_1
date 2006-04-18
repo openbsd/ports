@@ -1,0 +1,52 @@
+$OpenBSD: patch-docs_irssi_1,v 1.1 2006/04/18 20:30:03 steven Exp $
+--- docs/irssi.1.orig	Wed Oct 19 04:13:33 2005
++++ docs/irssi.1	Tue Apr 18 11:19:37 2006
+@@ -69,10 +69,10 @@ display brief usage message.
+ .SH SEE ALSO
+ .B Irssi
+ has been supplied with a huge amount of documentation. Check /help or look
+-at the files contained by /usr/share/doc/irssi*
++at the files contained by !!LOCALBASE!!/share/irssi/* and !!LOCALBASE!!/share/doc/irssi/*
+ .SH FILES
+ .TP
+-.I /etc/irssi.conf
++.I !!SYSCONFDIR!!/irssi/irssi.conf
+ Global configuration file
+ .TP
+ .I ~/.irssi/config
+@@ -87,14 +87,29 @@ Default irssi theme
+ .I ~/.irssi/away.log
+ Logged messages in away status
+ .TP
+-.I /usr/share/irssi/help/
+-Directory including many help files
++.I !!LOCALBASE!!/share/irssi/help/
++.RS .3
++.I !!LOCALBASE!!/share/doc/irssi/
++.RE
++.RS
++Directories including many help files
++.RE
+ .TP
+-.I /usr/share/irssi/scripts/
+-Global scripts directory
++.I !!SYSCONFDIR!!/irssi/scripts/
++.RS .3
++.I !!LOCALBASE!!/share/examples/irssi/scripts/
++.RE
++.RS
++Global scripts directories
++.RE
+ .TP
+-.I /usr/share/irssi/themes/
+-Global themes directory
++.I !!SYSCONFDIR!!/irssi/themes/
++.RS .3
++.I !!LOCALBASE!!/share/examples/irssi/themes/
++.RE
++.RS
++Global themes directories
++.RE
+ .TP
+ .I ~/.irssi/scripts/
+ Default scripts directory

@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_fe-common_core_themes_c,v 1.1 2006/04/18 20:30:03 steven Exp $
+--- src/fe-common/core/themes.c.orig	Wed Oct 19 04:13:20 2005
++++ src/fe-common/core/themes.c	Thu Apr  6 14:00:43 2006
+@@ -838,12 +838,15 @@ THEME_REC *theme_load(const char *setnam
+ 	if (stat(fname, &statbuf) != 0) {
+ 		/* check global config dir */
+ 		g_free(fname);
+-		fname = g_strdup_printf(THEMESDIR"/%s.theme", name);
++		fname = g_strdup_printf(SYSCONFDIR"/irssi/themes/%s.theme", name);
+ 		if (stat(fname, &statbuf) != 0) {
+-			/* theme not found */
+-			g_free(fname);
+-			g_free(name);
+-			return theme; /* use the one in memory if possible */
++			fname = g_strdup_printf(THEMESDIR"/%s.theme", name);
++			if (stat(fname, &statbuf) != 0) {
++				/* theme not found */
++				g_free(fname);
++				g_free(name);
++				return theme; /* use the one in memory if possible */
++			}
+ 		}
+ 	}
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-scripts_examples_Makefile_in,v 1.1 2006/04/18 20:30:03 steven Exp $
+--- scripts/examples/Makefile.in.orig	Mon Apr 17 20:09:09 2006
++++ scripts/examples/Makefile.in	Mon Apr 17 20:09:31 2006
+@@ -123,7 +123,7 @@ perl_static_lib = @perl_static_lib@
+ perlpath = @perlpath@
+ sedpath = @sedpath@
+ 
+-scriptdir = $(datadir)/irssi/scripts
++scriptdir = $(datadir)/examples/irssi/scripts
+ 
+ script_DATA =  	command.pl 	msg-event.pl 	redirect.pl
+ 

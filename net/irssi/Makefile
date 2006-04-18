@@ -1,40 +1,44 @@
-# $OpenBSD: Makefile,v 1.25 2004/12/16 00:31:22 alek Exp $
+# $OpenBSD: Makefile,v 1.26 2006/04/18 20:30:02 steven Exp $
 # Original from: Timo Sirainen <tss@iki.fi>
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"modular IRC client with many features (ipv6,socks,proxy)"
 
-DISTNAME=	irssi-0.8.9
+DISTNAME=	irssi-0.8.10
+DISTFILES=	irssi-0.8.10a.tar.gz
 CATEGORIES=	net
-
-MASTER_SITES=	${HOMEPAGE}/files/ \
-		http://nl.irssi.org/files/ \
-		http://fi.irssi.org/files/ \
-		http://no.irssi.org/files/ \
-		http://de.irssi.org/files/ \
-		http://uk.irssi.org/files/ \
-		http://pl.irssi.org/files/ \
-		http://us.irssi.org/files/
 
 HOMEPAGE=	http://www.irssi.org/
 
-MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
+MAINTAINER=	Wiktor Izdebski <vicviq@gmail.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto m ncurses perl ssl util
 
-LIB_DEPENDS+=		glib.1.2,gmodule::devel/glib
+MASTER_SITES=   ${HOMEPAGE}/files/
 
-CONFIGURE_STYLE=	gnu
+WANTLIB=	c crypto m ncurses perl ssl util
 
-CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/doc --enable-ipv6 \
-	--with-proxy --enable-perl=yes --with-included-gettext \
-	--with-perl-lib=${PREFIX}/libdata/perl5/site_perl --with-glib1
+MODULES=	devel/gettext
+
+LIB_DEPENDS=	glib-2.0.0.0,gmodule-2.0.0.0::devel/glib2
+BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
+
+USE_LIBTOOL=	Yes
+LIBTOOL_FLAGS+=	--tag=disable-static
+
+CONFIGURE_STYLE=gnu
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}
+CONFIGURE_ARGS+=--enable-ipv6 \
+		--with-pic \
+		--with-proxy \
+		--without-included-gettext \
+		--enable-perl=yes \
+		--with-perl-lib=${PREFIX}/libdata/perl5/site_perl
 
 FLAVORS=	socks
 FLAVOR?=
@@ -44,14 +48,12 @@ CONFIGURE_ARGS+=	--with-socks
 BUILD_DEPENDS+=		::security/dante
 .endif
 
-SAMPLE=		default.theme colorless.theme
-
 pre-configure:
-	@perl -pi -e 's,doc/irssi,irssi,g' ${WRKSRC}/docs/Makefile.in
+	@perl -pi -e "s,!!LOCALBASE!!,${LOCALBASE},g;" \
+		-e "s,!!SYSCONFDIR!!,${SYSCONFDIR},g" ${WRKSRC}/docs/irssi.1
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/irssi
-	cd ${WRKDIST} && ${INSTALL_DATA} ${SAMPLE} \
-		${PREFIX}/share/examples/irssi
+	${INSTALL_DATA} ${WRKDIST}/irssi.conf ${PREFIX}/share/examples/irssi
+	@rm -rf ${PREFIX}/include
 
 .include <bsd.port.mk>

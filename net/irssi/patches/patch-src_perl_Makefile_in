@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_perl_Makefile_in,v 1.1 2006/04/18 20:30:03 steven Exp $
+--- src/perl/Makefile.in.orig	Fri Apr  7 12:37:34 2006
++++ src/perl/Makefile.in	Fri Apr  7 12:39:34 2006
+@@ -136,7 +136,7 @@ EXTRA_LTLIBRARIES =  	libperl_core.la li
+ libperl_core_la_LDFLAGS = -module -avoid-version -rpath $(moduledir)
+ libfe_perl_la_LDFLAGS = -module -avoid-version -rpath $(moduledir)
+ 
+-INCLUDES =  	-I$(top_srcdir)/src 	-I$(top_srcdir)/src/core 	-I$(top_srcdir)/src/fe-common/core 	$(GLIB_CFLAGS) 	-DSCRIPTDIR=\""$(datadir)/irssi/scripts"\" 	-DPERL_USE_LIB=\""$(PERL_USE_LIB)"\" 	-DPERL_STATIC_LIBS=$(PERL_STATIC_LIBS) 	$(PERL_CFLAGS)
++INCLUDES =  	-I$(top_srcdir)/src 	-I$(top_srcdir)/src/core 	-I$(top_srcdir)/src/fe-common/core 	$(GLIB_CFLAGS) 	-DSCRIPTDIR=\""$(datadir)/examples/irssi/scripts"\" 	-DPERL_USE_LIB=\""$(PERL_USE_LIB)"\" 	-DPERL_STATIC_LIBS=$(PERL_STATIC_LIBS) 	$(PERL_CFLAGS)	-DSYSCONFDIR=\""$(sysconfdir)"\"
+ 
+ 
+ perl_sources =  	perl-core.c 	perl-common.c 	perl-signals.c 	perl-sources.c

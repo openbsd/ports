@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_fe-common_core_fe-common-core_c,v 1.1 2006/04/18 20:30:03 steven Exp $
+--- src/fe-common/core/fe-common-core.c.orig	Fri Feb  3 02:41:33 2006
++++ src/fe-common/core/fe-common-core.c	Fri Feb  3 02:47:45 2006
+@@ -25,8 +25,8 @@
+ #include "levels.h"
+ #include "settings.h"
+ #include "irssi-version.h"
+-#ifdef HAVE_NL_LANGINFO
+-#  include <langinfo.h>
++#ifdef USE_LIBICONV
++#include <localcharset.h>
+ #endif
+ 
+ #include "servers.h"
+@@ -174,10 +174,12 @@ void fe_common_core_init(void)
+ 
+ 	settings_add_bool("lookandfeel", "use_status_window", TRUE);
+ 	settings_add_bool("lookandfeel", "use_msgs_window", FALSE);
+-#if defined (HAVE_NL_LANGINFO) && defined(CODESET)
+-	settings_add_str("lookandfeel", "term_charset", 
+-			 *nl_langinfo(CODESET) != '\0' ? 
+-			 nl_langinfo(CODESET) : "ISO8859-1");
++
++#ifdef USE_LIBICONV
++	settings_add_str("lookandfeel", "term_charset",
++			 *locale_charset() != '\0' ?
++			 locale_charset() : "ISO8859-1");
++
+ #else
+ 	settings_add_str("lookandfeel", "term_charset", "ISO8859-1");
+ #endif

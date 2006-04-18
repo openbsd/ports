@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_core_settings_c,v 1.1 2006/04/18 20:30:03 steven Exp $
+--- src/core/settings.c.orig	Sun Mar 26 23:59:41 2006
++++ src/core/settings.c	Mon Mar 27 00:13:38 2006
+@@ -674,7 +674,7 @@ static CONFIG_REC *parse_configfile(cons
+ 	else {
+ 		/* user configuration file not found, use the default one
+ 		   from sysconfdir */
+-                path = SYSCONFDIR"/"IRSSI_GLOBAL_CONFIG;
++                path = SYSCONFDIR"/irssi/"IRSSI_GLOBAL_CONFIG;
+ 		if (stat(path, &statbuf) != 0) {
+ 			/* no configuration file in sysconfdir ..
+ 			   use the build-in configuration */
