@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.360 2006/04/14 17:05:59 jolan Exp $
+# $OpenBSD: Makefile,v 1.361 2006/04/18 10:20:45 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -285,6 +285,7 @@
      SUBDIR += p5-Sub-Uplevel
      SUBDIR += p5-Term-ReadKey
      SUBDIR += p5-Term-ReadLine-Gnu
+     SUBDIR += p5-Term-ReadPassword
      SUBDIR += p5-Term-Screen
      SUBDIR += p5-Term-ScreenColor
      SUBDIR += p5-Term-Shell
