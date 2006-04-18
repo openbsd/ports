@@ -1,0 +1,6 @@
+This module lets you ask the user for a password in the
+traditional way, from the keyboard, without echoing.
+
+It's only dependent on posix functionalities to put the keyboard
+in raw mode without echo.
+
