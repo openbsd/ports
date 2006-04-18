@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2006/03/11 15:00:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2006/04/18 15:03:33 naddy Exp $
 
 COMMENT=	"multi-window tail(1) utility"
 
-VERSION=	3.8.8
+VERSION=	4.0.3
 DISTNAME=	multitail-${VERSION}
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.vanheusden.com/multitail/	
-
-MASTER_SITES=	${HOMEPAGE}
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,22 +14,25 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c m ncurses util panel
-
+MASTER_SITES=	${HOMEPAGE}
 EXTRACT_SUFX=	.tgz
+
+WANTLIB=	c m ncurses util panel
 
 NO_REGRESS=	Yes
 
-MAKE_FLAGS=	CC='${CC}' CFLAGS='${CFLAGS} -DVERSION=\"${VERSION}\"'
+MAKE_FLAGS=	CC='${CC}' \
+		CFLAGS='${CFLAGS} -DVERSION=\"${VERSION}\" \
+			-DCONFIG_FILE=\"${SYSCONFDIR}/multitail.conf\"'
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/multitail
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/multitail
 	${INSTALL_PROGRAM} ${WRKBUILD}/multitail ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/multitail.1 ${PREFIX}/man/man1
-	cd ${WRKSRC} && ${INSTALL_DATA} readme.txt manual.html \
-	  ${PREFIX}/share/doc/multitail
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/multitail
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${WRKSRC}/manual.html \
+		${PREFIX}/share/doc/multitail
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/multitail
 	${INSTALL_DATA} ${WRKSRC}/multitail.conf \
-	  ${PREFIX}/share/examples/multitail
+		${PREFIX}/share/examples/multitail
  
 .include <bsd.port.mk>
