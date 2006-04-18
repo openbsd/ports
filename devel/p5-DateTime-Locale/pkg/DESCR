@@ -1,0 +1,8 @@
+The DateTime::Locale modules provide localization data for the
+DateTime.pm class.
+
+DateTime::Locale is primarily a factory for the various locale
+subclasses.  It also provides some functions for getting information
+on available locales.
+
+Those locale provide such infos as month names, day names, etc.
