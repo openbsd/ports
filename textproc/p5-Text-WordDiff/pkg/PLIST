@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/04/18 18:02:25 espie Exp $
+${P5SITE}/Text/
+${P5SITE}/Text/WordDiff/
+${P5SITE}/Text/WordDiff.pm
+${P5SITE}/Text/WordDiff/ANSIColor.pm
+${P5SITE}/Text/WordDiff/HTML.pm
+@man man/man3p/Text::WordDiff.3p
+@man man/man3p/Text::WordDiff::ANSIColor.3p
+@man man/man3p/Text::WordDiff::HTML.3p
