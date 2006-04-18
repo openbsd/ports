@@ -1,0 +1,8 @@
+The DateTime::TimeZone modules provide a Perl interface to the Olson
+time zone database.  Rather than using the database directly, we parse
+the database files and turn them into a set of modules, one for each
+time zone defined.  This allows for various optimizations in doing
+time zone calculations.  
+
+Warning: p5-Datetime-TimeZone and p5-DateTime are actually dependent on 
+one another at runtime.
