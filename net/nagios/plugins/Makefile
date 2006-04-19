@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/04/16 17:26:42 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2006/04/19 20:35:28 sturm Exp $
 
 COMMENT=	"nagios base plugins"
 COMMENT-fping=	"fping plugin"
@@ -10,17 +10,17 @@ COMMENT-pgsql=	"postgresql plugin"
 COMMENT-samba=	"samba plugin"
 COMMENT-snmp=	"plugins using snmp"
 
-V=		1.4.2
+V=		1.4.3
 DISTNAME=	nagios-plugins-${V}
-PKGNAME=	nagios-plugins-${V}p0
-PKGNAME-fping=	nagios-plugins-fping-${V}p0
-PKGNAME-game=	nagios-plugins-game-${V}p0
+PKGNAME=	nagios-plugins-${V}
+PKGNAME-fping=	nagios-plugins-fping-${V}
+PKGNAME-game=	nagios-plugins-game-${V}
 PKGNAME-ldap=	nagios-plugins-ldap-${V}
 PKGNAME-mysql=	nagios-plugins-mysql-${V}
 PKGNAME-ntp=	nagios-plugins-ntp-${V}
 PKGNAME-pgsql=	nagios-plugins-pgsql-${V}
 PKGNAME-samba=	nagios-plugins-samba-${V}
-PKGNAME-snmp=	nagios-plugins-snmp-${V}p0
+PKGNAME-snmp=	nagios-plugins-snmp-${V}
 CATEGORIES=	net
 
 HOMEPAGE=	http://nagiosplug.sourceforge.net/
@@ -39,6 +39,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nagiosplug/}
 
 BUILD_DEPENDS=	qstat::games/qstat \
 		fping::net/fping
+
+USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	PATH_TO_FPING=${LOCALBASE}/sbin/fping \
@@ -64,6 +66,7 @@ BUILD_DEPENDS+=	:mysql-client-*:databases/mysql \
 		:postgresql-client-*:databases/postgresql
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} \
 		--with-pgsql=${LOCALBASE}
+CFLAGS+=	-DLDAP_DEPRECATED
 .else
 CONFIGURE_ARGS+=--without-mysql --without-pgsql
 .endif
@@ -85,14 +88,16 @@ BUILD_DEPENDS+=	::net/p5-Net-SNMP \
 .endif
 
 .if defined(PACKAGING)
-WANTLIB=	c
+WANTLIB=	c crypto ssl
 .  if ${SUBPACKAGE} == "-fping"
 RUN_DEPENDS=	fping::net/fping
 .  elif ${SUBPACKAGE} == "-game"
 RUN_DEPENDS=	qstat::games/qstat
 .  elif ${SUBPACKAGE} == "-ldap"
+WANTLIB+=	sasl2
 LIB_DEPENDS=	lber,ldap:openldap-client-*:databases/openldap
 .  elif ${SUBPACKAGE} == "-mysql"
+WANTLIB+=	m z
 LIB_DEPENDS=	mysqlclient:mysql-client-*:databases/mysql
 .  elif ${SUBPACKAGE} == "-ntp"
 WANTLIB=
@@ -107,7 +112,7 @@ RUN_DEPENDS=	smbclient::net/samba
 RUN_DEPENDS=	snmpget::net/net-snmp \
 		::net/p5-Net-SNMP
 .  else
-WANTLIB+=	crypto ssl m
+WANTLIB+=	m
 .  endif
 .else
 MODULES=	gettext
