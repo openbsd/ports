@@ -1,0 +1,20 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2006/04/19 17:11:52 alek Exp $
+--- configure.orig	Sat Apr 15 12:30:38 2006
++++ configure	Sat Apr 15 12:30:41 2006
+@@ -2484,7 +2484,6 @@ fi
+ 
+ REALCC="$CC"
+ if test "$CC" = gcc; then
+-    CFLAGS='-g -O'
+     WCFLAGS='-Wall'
+     case "$host" in
+             *linux*)
+@@ -2495,8 +2494,6 @@ if test "$CC" = gcc; then
+     esac
+ 				# Silence flex/bison output
+     SCFLAGS="-Wno-implicit -Wno-unused"
+-else
+-    CFLAGS='-g'
+ fi
+ 
+ local_dmalloc=0

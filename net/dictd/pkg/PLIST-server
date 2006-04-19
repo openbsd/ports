@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST-server,v 1.1.1.1 2006/04/19 17:11:52 alek Exp $
+bin/colorit
+bin/dictdplugin-config
+bin/dictfmt
+bin/dictfmt_index2suffix
+bin/dictfmt_index2word
+bin/dictfmt_plugin
+bin/dictfmt_virtual
+bin/dictunformat
+bin/dictzip
+include/dictdplugin.h
+@man man/man1/colorit.1
+@man man/man1/dictfmt.1
+@man man/man1/dictfmt_index2suffix.1
+@man man/man1/dictfmt_index2word.1
+@man man/man1/dictfmt_virtual.1
+@man man/man1/dictunformat.1
+@man man/man1/dictzip.1
+@man man/man8/dictd.8
+sbin/dictd
+share/examples/dictd/
+share/examples/dictd/example.conf
+share/examples/dictd/example.site
+share/examples/dictd/example2.conf
+share/examples/dictd/example3.conf
+share/examples/dictd/example_complex.conf
+share/examples/dictd/example_plugin_dbi.conf
+share/examples/dictd/example_popen.conf
+share/examples/dictd/example_virtual.conf

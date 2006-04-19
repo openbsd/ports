@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/04/19 17:11:52 alek Exp $
+bin/dict
+bin/dictl
+@man man/man1/dict.1
+@man man/man1/dictl.1
+share/examples/dictd/
+share/examples/dictd/example.dictrc

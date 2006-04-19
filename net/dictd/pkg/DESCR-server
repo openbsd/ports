@@ -1,0 +1,2 @@
+This package contains server implementing the Dictionary Server Protocol
+(DICT) described in RFC 2229.
