@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.411 2006/04/16 17:01:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.412 2006/04/19 17:56:35 alek Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -46,6 +46,7 @@
      SUBDIR += dctc
      SUBDIR += ddclient
      SUBDIR += dhcping
+     SUBDIR += dictd
      SUBDIR += dlint
      SUBDIR += dnsmasq
      SUBDIR += dnsreflector
@@ -277,6 +278,7 @@
      SUBDIR += samba
      SUBDIR += samba,cups
      SUBDIR += samba,ldap
+     SUBDIR += scapy
      SUBDIR += scli
      SUBDIR += ser
      SUBDIR += sharity-light
