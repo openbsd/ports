@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/04/19 17:36:58 alek Exp $
+bin/scapy
+lib/python${MODPY_VERSION}/site-packages/scapy.py
+@man man/man1/scapy.1
+share/examples/scapy/
+share/examples/scapy/ethertypes
+@sample ${SYSCONFDIR}/ethertypes
