@@ -3,12 +3,12 @@ See smtp-vilter(8) for instructions on how to register the milter.
 
 To start the milter automatically on startup, one can use:
 
-${SYSCONFDIR}/rc.conf.local
-  smtp_vilter_flags=""
+${SYSCONFDIR}/rc.conf.local:
+smtp_vilter_flags=""	# for normal use ""
 
-${SYSCONFDIR}/rc.local
-  if [ X"${smtp_vilter_flags}" != X"NO" -a \
-      -x ${PREFIX}/sbin/smtp-vilter ]; then
-          echo -n ' smtp-vilter'
-          ${PREFIX}/sbin/smtp-vilter
-  fi
+${SYSCONFDIR}/rc.local:
+if [ X"${smtp_vilter_flags}" != X"NO" -a \
+    -x ${PREFIX}/sbin/smtp-vilter ]; then
+	echo -n ' smtp-vilter'
+	${PREFIX}/sbin/smtp-vilter ${smtp_vilter_flags}
+fi
