@@ -1,6 +1,6 @@
-$OpenBSD: patch-external_gcc_fastjar_jartool_c,v 1.1 2006/04/11 01:09:44 kurt Exp $
+$OpenBSD: patch-external_gcc_fastjar_jartool_c,v 1.2 2006/04/20 04:42:38 kurt Exp $
 --- external/gcc/fastjar/jartool.c.orig	Tue Jan  3 10:27:01 2006
-+++ external/gcc/fastjar/jartool.c	Wed Mar 29 10:03:21 2006
++++ external/gcc/fastjar/jartool.c	Fri Apr 14 01:07:57 2006
 @@ -1591,6 +1591,31 @@ int create_central_header(int fd){
    return 0;
  }
@@ -47,7 +47,23 @@ $OpenBSD: patch-external_gcc_fastjar_jartool_c,v 1.1 2006/04/11 01:09:44 kurt Ex
  #ifdef DEBUG    
      printf("filename is %s\n", filename);
  #endif
-@@ -2007,6 +2039,12 @@ int list_jar(int fd, char **files, int f
+@@ -1706,11 +1738,13 @@ int extract_jar(int fd, char **files, in
+     if(file_num > 0){
+       handle = FALSE;
+       
+-      for(j = 0; j < file_num; j++)
+-        if(strcmp(files[j], (const char *)filename) == 0){
++      for(j = 0; j < file_num; j++) {
++        size_t len = strlen(files[j]);
++        if(strncmp(files[j], (const char *)filename, len) == 0){
+           handle = TRUE;
+           break;
+         }
++      }
+     }
+ 
+     if(!handle)
+@@ -2007,17 +2041,25 @@ int list_jar(int fd, char **files, int f
        }
        filename[fnlen] = '\0';
      
@@ -60,3 +76,18 @@ $OpenBSD: patch-external_gcc_fastjar_jartool_c,v 1.1 2006/04/11 01:09:44 kurt Ex
        /* if the user specified a list of files on the command line,
           we'll only display those, otherwise we'll display everything */
        if(file_num > 0){
+-        for(j = 0; j < file_num; j++)
+-          if(strcmp(files[j], (const char *)filename) == 0){
++        for(j = 0; j < file_num; j++) {
++          size_t len = strlen(files[j]);
++          if(strncmp(files[j], (const char *)filename, len) == 0){
+             if(verbose)
+               printf("%6d %s %s\n", usize, ascii_date, filename);
+             else
+               printf("%s\n", filename);
+             break;
+           }
++        }
+       } else {
+         if(verbose)
+           printf("%6d %s %s\n", usize, ascii_date, filename);

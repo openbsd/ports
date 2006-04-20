@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2006/04/11 01:09:44 kurt Exp $
+# $OpenBSD: Makefile,v 1.27 2006/04/20 04:42:38 kurt Exp $
 
 ONLY_FOR_ARCHS=	i386 powerpc
 
 COMMENT=	"kaffe.org's Java JDK1.4 compiler, runtime and libs"
 
 DISTNAME=	kaffe-1.1.7
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	lang
 
