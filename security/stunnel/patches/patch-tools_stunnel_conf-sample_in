@@ -6,7 +6,7 @@
  ; Certificate/key is needed in server mode and optional in client mode
 -cert = @prefix@/etc/stunnel/mail.pem
 -;key = @prefix@/etc/stunnel/mail.pem
-+cert = @sysconfdir@/ssl/stunnel.pem
++cert = @sysconfdir@/ssl/private/stunnel.pem
 +;key = @sysconfdir@/ssl/private/stunnel.key
  
  ; Some security enhancements for UNIX systems - comment them out on Win32
