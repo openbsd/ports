@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.9 2006/04/01 11:57:44 bernd Exp $
---- configure.orig	Wed Mar 29 12:30:22 2006
-+++ configure	Fri Mar 31 10:38:41 2006
-@@ -11528,7 +11528,7 @@ cat >>confdefs.h <<\_ACEOF
+$OpenBSD: patch-configure,v 1.10 2006/04/21 09:21:59 bernd Exp $
+--- configure.orig	Fri Apr 14 17:42:57 2006
++++ configure	Mon Apr 17 15:42:25 2006
+@@ -11434,7 +11434,7 @@ cat >>confdefs.h <<\_ACEOF
  _ACEOF
  
    CEFLAGS="$CEFLAGS -I/usr/include/kerberosV"
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.9 2006/04/01 11:57:44 bernd Exp $
  elif krb5-config 2> /dev/null >/dev/null ; then
    krb5_prefix=`krb5-config --prefix krb5`
    echo "$as_me:$LINENO: result: krb5-config points to kerberosV under $krb5_prefix" >&5
-@@ -14937,8 +14937,8 @@ s,@pythondir@,$pythondir,;t t
+@@ -14843,8 +14843,8 @@ s,@pythondir@,$pythondir,;t t
  s,@pkgpythondir@,$pkgpythondir,;t t
  s,@pyexecdir@,$pyexecdir,;t t
  s,@pkgpyexecdir@,$pkgpyexecdir,;t t
@@ -21,7 +21,7 @@ $OpenBSD: patch-configure,v 1.9 2006/04/01 11:57:44 bernd Exp $
  s,@CC@,$CC,;t t
  s,@CFLAGS@,$CFLAGS,;t t
  s,@LDFLAGS@,$LDFLAGS,;t t
-@@ -14970,10 +14970,10 @@ s,@GMSGFMT@,$GMSGFMT,;t t
+@@ -14876,10 +14876,10 @@ s,@GMSGFMT@,$GMSGFMT,;t t
  s,@XGETTEXT@,$XGETTEXT,;t t
  s,@MSGMERGE@,$MSGMERGE,;t t
  s,@INTL_MACOSX_LIBS@,$INTL_MACOSX_LIBS,;t t
