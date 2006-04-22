@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.233 2006/04/17 15:29:14 sturm Exp $
+# $OpenBSD: Makefile,v 1.234 2006/04/22 23:47:11 alek Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 855resolution
@@ -93,6 +93,7 @@
      SUBDIR += mterm
      SUBDIR += mxconns
      SUBDIR += neXtaw
+     SUBDIR += netwmpager
      SUBDIR += numlockx
      SUBDIR += ogle
      SUBDIR += ogle,altivec
