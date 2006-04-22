@@ -1,0 +1,3 @@
+Netwmpager is a really small pager with a few knobs that is fully EWMH
+compliant.  As such it will behave perfectly with window managers such
+as Openbox.
