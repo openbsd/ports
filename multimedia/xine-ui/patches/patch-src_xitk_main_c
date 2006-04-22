@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_xitk_main_c,v 1.1 2006/04/22 18:37:28 bernd Exp $
+--- src/xitk/main.c.orig	Sun Jul 24 04:40:37 2005
++++ src/xitk/main.c	Sat Apr 22 11:49:42 2006
+@@ -456,7 +456,7 @@ static void print_formatted(char *title,
+   int          len;
+   char        *blanks = "     ";
+ 
+-  printf(title);
++  printf("%s", title);
+   
+   sprintf(buffer, "%s", blanks);
+   plugin = *plugins++;
+@@ -469,7 +469,7 @@ static void print_formatted(char *title,
+       sprintf(buffer, "%s%s%s", buffer, (strlen(buffer) == strlen(blanks)) ? "" : ", ", plugin);
+     }
+     else {
+-      printf(buffer);
++      printf("%s", buffer);
+       printf(",\n");
+       snprintf(buffer, sizeof(buffer), "%s%s", blanks, plugin);
+     }
+@@ -478,7 +478,7 @@ static void print_formatted(char *title,
+   }
+   
+   if(strlen(buffer))
+-    printf(buffer);
++    printf("%s", buffer);
+   
+   printf(".\n\n");
+ }
