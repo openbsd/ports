@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/04/01 16:25:12 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2006/04/22 06:59:45 steven Exp $
 
 LIB=	lapack
 
@@ -244,3 +244,7 @@ ZLASRC = \
 SRCS=${ALLAUX} ${SLASRC} ${SCLAUX} ${CLASRC} ${DLASRC} ${DZLAUX} ${ZLASRC}
 
 .include <bsd.lib.mk>
+
+.if ${MACHINE_ARCH} == "powerpc"
+PICFLAG=-fPIC
+.endif
