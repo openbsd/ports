@@ -1,0 +1,30 @@
+Apache::DB establishes the needed hooks to debug mod_perl code interactively.
+In order to use it,
+
+- add the following code to httpd.conf, after loading mod_perl.so
+
+<IfDefine PERLDB>
+
+<Perl>
+  use Apache::DB ();
+  Apache::DB->init;
+</Perl>
+
+<Location />
+  PerlFixupHandler Apache::DB
+</Location>
+
+</IfDefine>
+
+
+- start apache for a debugging session using a line like:
+httpd -X -DPERLDB -u
+
+
+Then any perl request will be intercepted by the debugger.
+Modules such as HTML::Mason have further hooks to get into the debugger
+at interesting points.
+
+This port also provides some sample configuration code that can
+start up the debugger or the profiler in a similar way
+(${PREFIX}/share/Apache/DB/perldb.conf)

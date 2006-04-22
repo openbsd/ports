@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/04/22 10:17:22 espie Exp $
+${P5ARCH}/Apache/DB.pm
+${P5ARCH}/Apache/DProf.pm
+${P5ARCH}/Apache/SmallProf.pm
+${P5ARCH}/Apache/perl5db.pl
+${P5ARCH}/auto/Apache/DB/
+${P5ARCH}/auto/Apache/DB/DB.bs
+${P5ARCH}/auto/Apache/DB/DB.so
+@man man/man3p/Apache::DB.3p
+@man man/man3p/Apache::DProf.3p
+@man man/man3p/Apache::SmallProf.3p
+@man man/man3p/Apache::perl5db.3p
+share/Apache/
+share/Apache/DB/
+share/Apache/DB/perldb.conf
