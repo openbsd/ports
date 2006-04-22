@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.213 2006/03/31 18:45:36 bernd Exp $
+# $OpenBSD: Makefile,v 1.214 2006/04/22 10:18:59 espie Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -81,6 +81,7 @@
      SUBDIR += opera
      SUBDIR += opera-flashplugin
      SUBDIR += p5-Apache-ASP
+     SUBDIR += p5-Apache-DB
      SUBDIR += p5-Apache-DBI
      SUBDIR += p5-Apache-Gallery
      SUBDIR += p5-Apache-MP3
