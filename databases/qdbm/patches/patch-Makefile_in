@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2006/02/22 11:15:47 bernd Exp $
---- Makefile.in.orig	Sat Jan 14 18:01:14 2006
-+++ Makefile.in	Mon Feb 20 12:33:28 2006
+$OpenBSD: patch-Makefile_in,v 1.5 2006/04/22 18:31:35 bernd Exp $
+--- Makefile.in.orig	Wed Apr 19 08:53:32 2006
++++ Makefile.in	Sat Apr 22 12:38:49 2006
 @@ -24,7 +24,7 @@ LIBREV = @LIBREV@
  # Targets
  MYHEADS = depot.h curia.h relic.h hovel.h cabin.h villa.h vista.h odeum.h
@@ -82,13 +82,13 @@ $OpenBSD: patch-Makefile_in,v 1.4 2006/02/22 11:15:47 bernd Exp $
  	@printf '\n'
  	@printf '#================================================================\n'
  	@printf '# Thanks for using QDBM.\n'
-@@ -444,12 +444,12 @@ libqdbm.a : $(MYLIBOBJS)
+@@ -431,12 +431,12 @@ libqdbm.a : $(MYLIBOBJS)
  	$(AR) $(ARFLAGS) $@ $(MYLIBOBJS)
  
  
 -libqdbm.so.$(LIBVER).$(LIBREV).0 : $(MYLIBOBJS)
 +libqdbm.so.$(LIBVER).$(LIBREV) : $(MYLIBOBJS)
- 	if $(CC) --print-prog-name=ld | egrep -i '(solaris|/ccs/|/ucb/)' > /dev/null ; \
+ 	if uname -a | egrep -i 'SunOS' > /dev/null ; \
  	  then \
  	    $(CC) -shared -Wl,-G,-h,libqdbm.so.$(LIBVER) -o $@ $(MYLIBOBJS) $(LIBLDFLAGS) ; \
  	  else \
