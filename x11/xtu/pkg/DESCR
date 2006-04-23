@@ -1,0 +1,6 @@
+xtu, in short, is just another clock for X.
+
+The main feature is, that it can grab its actual background and
+use that for itself. You can move the window by just pressing the
+mouse and moving it around. Resizing the window is possible with
+the "hidden" resizer at the right bottom.
