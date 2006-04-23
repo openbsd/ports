@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.234 2006/04/22 23:47:11 alek Exp $
+# $OpenBSD: Makefile,v 1.235 2006/04/23 12:59:24 steven Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 855resolution
      SUBDIR += Xaw3d
      SUBDIR += XawMu
+     SUBDIR += Xdialog
      SUBDIR += aewm
      SUBDIR += afterstep
      SUBDIR += amiwm
