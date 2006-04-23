@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/10/09 09:12:20 alek Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/04/23 10:29:53 alek Exp $
 @newgroup _saned:553
 @newuser _saned:553:_saned:daemon:Scanner Daemon:/var/empty:/sbin/nologin
 %%SHARED%%
@@ -52,16 +52,22 @@ lib/sane/libsane-fujitsu.a
 lib/sane/libsane-fujitsu.la
 lib/sane/libsane-genesys.a
 lib/sane/libsane-genesys.la
+lib/sane/libsane-gphoto2.a
+lib/sane/libsane-gphoto2.la
 lib/sane/libsane-gt68xx.a
 lib/sane/libsane-gt68xx.la
 lib/sane/libsane-hp.a
 lib/sane/libsane-hp.la
+lib/sane/libsane-hp4200.a
+lib/sane/libsane-hp4200.la
 lib/sane/libsane-hp5400.a
 lib/sane/libsane-hp5400.la
 lib/sane/libsane-ibm.a
 lib/sane/libsane-ibm.la
 lib/sane/libsane-leo.a
 lib/sane/libsane-leo.la
+lib/sane/libsane-lexmark.a
+lib/sane/libsane-lexmark.la
 lib/sane/libsane-ma1509.a
 lib/sane/libsane-ma1509.la
 lib/sane/libsane-matsushita.a
@@ -74,6 +80,8 @@ lib/sane/libsane-mustek.a
 lib/sane/libsane-mustek.la
 lib/sane/libsane-mustek_usb.a
 lib/sane/libsane-mustek_usb.la
+lib/sane/libsane-mustek_usb2.a
+lib/sane/libsane-mustek_usb2.la
 lib/sane/libsane-nec.a
 lib/sane/libsane-nec.la
 lib/sane/libsane-net.a
@@ -150,13 +158,15 @@ libexec/saned
 @man man/man5/sane-epson.5
 @man man/man5/sane-fujitsu.5
 @man man/man5/sane-genesys.5
-@comment @man man/man5/sane-gphoto2.5
+@man man/man5/sane-gphoto2.5
 @man man/man5/sane-gt68xx.5
 @man man/man5/sane-hp.5
+@man man/man5/sane-hp4200.5
 @man man/man5/sane-hp5400.5
 @comment @man man/man5/sane-hpsj5s.5
 @man man/man5/sane-ibm.5
 @man man/man5/sane-leo.5
+@man man/man5/sane-lexmark.5
 @man man/man5/sane-ma1509.5
 @man man/man5/sane-matsushita.5
 @man man/man5/sane-microtek.5
@@ -164,6 +174,7 @@ libexec/saned
 @man man/man5/sane-mustek.5
 @comment @man man/man5/sane-mustek_pp.5
 @man man/man5/sane-mustek_usb.5
+@man man/man5/sane-mustek_usb2.5
 @man man/man5/sane-nec.5
 @man man/man5/sane-net.5
 @man man/man5/sane-niash.5
@@ -236,6 +247,9 @@ share/doc/sane-backends/mustek/mustek.CHANGES
 share/doc/sane-backends/mustek_usb/
 share/doc/sane-backends/mustek_usb/mustek_usb.CHANGES
 share/doc/sane-backends/mustek_usb/mustek_usb.TODO
+share/doc/sane-backends/mustek_usb2/
+share/doc/sane-backends/mustek_usb2/mustek_usb2.CHANGES
+share/doc/sane-backends/mustek_usb2/mustek_usb2.TODO
 share/doc/sane-backends/niash/
 share/doc/sane-backends/niash/niash.TODO
 share/doc/sane-backends/plustek/
@@ -332,16 +346,23 @@ share/examples/sane-backends/sane.d/epson.conf
 share/examples/sane-backends/sane.d/fujitsu.conf
 @sample ${SYSCONFDIR}/sane.d/fujitsu.conf
 share/examples/sane-backends/sane.d/genesys.conf
+@sample ${SYSCONFDIR}/sane.d/genesys.conf
+share/examples/sane-backends/sane.d/gphoto2.conf
+@sample ${SYSCONFDIR}/sane.d/gphoto2.conf
 share/examples/sane-backends/sane.d/gt68xx.conf
 @sample ${SYSCONFDIR}/sane.d/gt68xx.conf
 share/examples/sane-backends/sane.d/hp.conf
 @sample ${SYSCONFDIR}/sane.d/hp.conf
+share/examples/sane-backends/sane.d/hp4200.conf
+@sample ${SYSCONFDIR}/sane.d/hp4200.conf
 share/examples/sane-backends/sane.d/hp5400.conf
 @sample ${SYSCONFDIR}/sane.d/hp5400.conf
 share/examples/sane-backends/sane.d/ibm.conf
 @sample ${SYSCONFDIR}/sane.d/ibm.conf
 share/examples/sane-backends/sane.d/leo.conf
 @sample ${SYSCONFDIR}/sane.d/leo.conf
+share/examples/sane-backends/sane.d/lexmark.conf
+@sample ${SYSCONFDIR}/sane.d/lexmark.conf
 share/examples/sane-backends/sane.d/ma1509.conf
 @sample ${SYSCONFDIR}/sane.d/ma1509.conf
 share/examples/sane-backends/sane.d/matsushita.conf
@@ -375,6 +396,7 @@ share/examples/sane-backends/sane.d/sceptre.conf
 share/examples/sane-backends/sane.d/sharp.conf
 @sample ${SYSCONFDIR}/sane.d/sharp.conf
 share/examples/sane-backends/sane.d/sm3840.conf
+@sample ${SYSCONFDIR}/sane.d/sm3840.conf
 share/examples/sane-backends/sane.d/snapscan.conf
 @sample ${SYSCONFDIR}/sane.d/snapscan.conf
 share/examples/sane-backends/sane.d/sp15c.conf
@@ -399,52 +421,24 @@ share/examples/sane-backends/sane.d/umax1220u.conf
 @sample ${SYSCONFDIR}/sane.d/umax1220u.conf
 share/examples/sane-backends/sane.d/umax_pp.conf
 @sample ${SYSCONFDIR}/sane.d/umax_pp.conf
-share/locale/
-share/locale/bg/
-share/locale/bg/LC_MESSAGES/
 share/locale/bg/LC_MESSAGES/sane-backends.mo
-share/locale/cs/
-share/locale/cs/LC_MESSAGES/
 share/locale/cs/LC_MESSAGES/sane-backends.mo
-share/locale/da/
-share/locale/da/LC_MESSAGES/
 share/locale/da/LC_MESSAGES/sane-backends.mo
-share/locale/de/
-share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/sane-backends.mo
-share/locale/es/
-share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/sane-backends.mo
-share/locale/fi/
-share/locale/fi/LC_MESSAGES/
 share/locale/fi/LC_MESSAGES/sane-backends.mo
-share/locale/fr/
-share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/sane-backends.mo
-share/locale/it/
-share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/sane-backends.mo
-share/locale/nl/
-share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/sane-backends.mo
-share/locale/no/
-share/locale/no/LC_MESSAGES/
 share/locale/no/LC_MESSAGES/sane-backends.mo
-share/locale/pl/
-share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/sane-backends.mo
-share/locale/pt/
-share/locale/pt/LC_MESSAGES/
 share/locale/pt/LC_MESSAGES/sane-backends.mo
-share/locale/ru/
-share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/sane-backends.mo
-share/locale/sv/
-share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/sane-backends.mo
 share/sane/
+share/sane/artec_eplus48u/
 share/sane/gt68xx/
-%%gphoto2%%
+share/sane/snapscan/
 @mode 775
 @group _saned
 @sample /var/spool/lock/sane/

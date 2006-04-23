@@ -1,5 +1,5 @@
---- backend/Makefile.in.orig	Sat Jul 30 14:28:10 2005
-+++ backend/Makefile.in	Mon Dec 26 14:44:59 2005
+--- backend/Makefile.in.orig	Sun Dec 18 14:32:31 2005
++++ backend/Makefile.in	Mon Dec 19 15:22:23 2005
 @@ -25,7 +25,7 @@ infodir = @infodir@
  mandir = @mandir@
  includedir = @includedir@
@@ -9,7 +9,7 @@
  BEOS_ADDONDIR = @BEOS_ADDONDIR@
  
  V_MAJOR = @V_MAJOR@
-@@ -168,7 +168,8 @@ DISTFILES = abaton.c abaton.conf abaton.
+@@ -175,7 +175,8 @@ DISTFILES = abaton.c abaton.conf abaton.
  libsane-%.la: %.lo %-s.lo $(EXTRA) $(LIBOBJS)
  	@$(LIBTOOL) $(MLINK) $(CC) -export-dynamic -o $@ $($*_LIBS) \
  	$(LDFLAGS) $(BACKENDLIBS) $^ @LIBTOOL_LINK_EXTRA@ -rpath $(libsanedir) \
@@ -19,14 +19,23 @@
  
  %-s.lo:	%-s.c
  	@$(LIBTOOL) $(MCOMP) $(COMPILE) -DSTUBS -DBACKEND_NAME=$* $<
-@@ -195,7 +196,6 @@ install-be:
+@@ -203,7 +204,6 @@ install-be:
  	  $(LIBTOOL) $(MINST) $(INSTALL_PROGRAM) $${be} \
-               $(DESTDIR)$(libsanedir)/$${be} || exit 1; \
+               $(DESTDIR)$(libsanedir)/$${be} >/dev/null || exit 1; \
  	done
--	@$(LIBTOOL) $(MINST) --finish $(DESTDIR)$(libsanedir)
- #	@# Assume the dll name without any versions is last
- #	@dllend=`../tools/libtool-get-dll-ext libsane-dll.la`; \
- #	list="$(ALL_BACKENDS)"; cd $(DESTDIR)$(libsanedir) && for be in $$list; do \
+-	@$(LIBTOOL) $(MINST) --finish $(DESTDIR)$(libsanedir) >/dev/null
+ 	@# Remove libsane.* links in lib/sane/ as these links to libsane-v4l.so
+ 	@# cause misdetection of scanners.
+ 	rm -f $(DESTDIR)$(libsanedir)/libsane.*
+@@ -250,7 +250,7 @@ install-becfg:
+ 	 done
+ 
+ install-lockpath:
+-	$(MKDIR) -m 775 -g $(LOCKPATH_GROUP) $(DESTDIR)$(localstatesanedir)
++#	$(MKDIR) -m 775 -g $(LOCKPATH_GROUP) $(DESTDIR)$(localstatesanedir)
+ 
+ uninstall:
+ 	rm -rf $(libsanedir) $(configdir) $(localstatesanedir)
 @@ -274,7 +274,7 @@ dll-preload.c:
  libsane.la: dll.lo dll-s.lo $(EXTRA) $(addsuffix .lo,$(DLL_PRELOAD)) $(LIBOBJS)
  	@$(LIBTOOL) $(MLINK) $(CC) -o $@ $(LDFLAGS) $(BACKENDLIBS)  $^ \

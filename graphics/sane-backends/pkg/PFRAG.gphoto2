@@ -1,7 +1,0 @@
-@comment $OpenBSD: PFRAG.gphoto2,v 1.1.1.1 2005/10/03 21:15:04 alek Exp $
-%%SHARED%%
-lib/sane/libsane-gphoto2.a
-lib/sane/libsane-gphoto2.la
-@man man/man5/sane${FLAVOR_EXT}.5
-share/examples/sane-backends/sane.d/gphoto2.conf
-@sample ${SYSCONFDIR}/sane.d/gphoto2.conf

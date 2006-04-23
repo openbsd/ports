@@ -22,6 +22,3 @@ and/or applications are added.
 SANE-BACKENDS comes complete with documentation, several backends,
 scanimage command line frontend, and networking support. For
 other/graphical frontends take a look at sane-frontends and XSane.
-
-Available flavors:
-        gphoto2 - Build gphoto2 support

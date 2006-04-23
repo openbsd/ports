@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_saned_man,v 1.2 2005/10/06 22:37:45 alek Exp $
---- doc/saned.man.orig	Sat Apr 16 15:06:50 2005
-+++ doc/saned.man	Thu Oct  6 11:00:15 2005
+$OpenBSD: patch-doc_saned_man,v 1.3 2006/04/23 10:29:53 alek Exp $
+--- doc/saned.man.orig	Mon Dec 19 11:12:10 2005
++++ doc/saned.man	Mon Dec 19 11:15:51 2005
 @@ -92,7 +92,7 @@ support IPv6, check the documentation fo
  The configuration line normally looks like this:
  .PP
@@ -10,7 +10,7 @@ $OpenBSD: patch-doc_saned_man,v 1.2 2005/10/06 22:37:45 alek Exp $
  .RE
  .PP
  However, if your system uses
-@@ -105,13 +105,13 @@ and use a line of the following form in
+@@ -105,16 +105,16 @@ and use a line of the following form in
  instead:
  .PP
  .RS
@@ -26,16 +26,19 @@ $OpenBSD: patch-doc_saned_man,v 1.2 2005/10/06 22:37:45 alek Exp $
 +.B _saned
  user.  If you follow this example, please make sure that the 
  access permissions on the special device are set such that
- .B saned
-@@ -140,9 +140,9 @@ socket_type = stream
- .br
- wait        = no
- .br
--user        = saned
-+user        = _saned
- .br
--group       = saned
-+group       = _saned
- .br
- server      = @SBINDIR@/saned
- .RE
+-.B saned
++.B _saned
+ can access the scanner (the program generally needs read and
+ write access to scanner devices).
+ .PP
+@@ -133,8 +133,8 @@ service sane-port
+    port        = 6566
+    socket_type = stream
+    wait        = no
+-   user        = saned
+-   group       = saned
++   user        = _saned
++   group       = _saned
+    server      = @SBINDIR@/saned
+ }
+ .fi

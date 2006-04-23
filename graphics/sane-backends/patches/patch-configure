@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.3 2006/04/23 10:29:53 alek Exp $
+--- configure.orig	Mon Dec 19 15:02:38 2005
++++ configure	Mon Dec 19 15:02:54 2005
+@@ -4929,7 +4929,7 @@ done
+ 
+   #check if links for dynamic libs should be created
+   case "${host_os}" in
+-  darwin*)
++  darwin* | openbsd* )
+     USE_LINKS=no
+     ;;
+   *)

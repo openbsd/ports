@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2006/01/08 00:29:38 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2006/04/23 10:29:53 alek Exp $
 
 COMMENT=	"API for accessing scanners, backends"
 
-DISTNAME=	sane-backends-1.0.16
-PKGNAME=	${DISTNAME}p2
-SHARED_LIBS=	sane 1.16
+DISTNAME=	sane-backends-1.0.17
+SHARED_LIBS=	sane 1.17
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.sane-project.org/
@@ -21,43 +20,27 @@ MASTER_SITES=	ftp://ftp.sane-project.org/pub/sane/${DISTNAME}/ \
 		http://gd.tuwien.ac.at/hci/sane/${DISTNAME}/ \
 		ftp://gd.tuwien.ac.at/hci/sane/${DISTNAME}/ \
 		ftp://ftp.sane-project.org/pub/sane/old-versions/${DISTNAME}/
-WANTLIB=	c m
+WANTLIB=	c m pthread exif
 
 LIB_DEPENDS=	usb.7::devel/libusb \
-		jpeg.62::graphics/jpeg
+		jpeg.62::graphics/jpeg \
+		gphoto2.2,gphoto2_port.5::graphics/libgphoto2
 
+MODULES=	devel/gettext
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		ac_cv_path_MAKEDEPEND="no"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--sbindir=${LOCALBASE}/libexec \
 		--with-docdir=${LOCALBASE}/share/doc/sane-backends \
 		--localstatedir=/var/spool \
+		--with-gphoto2 \
 		--with-group=553
 
-FLAVORS=	gphoto2
-FLAVOR?=
-
-.if ${FLAVOR:L} == "gphoto2"
-LIB_DEPENDS+=	gphoto2,gphoto2_port::graphics/libgphoto2
-CONFIGURE_ARGS+=--with-gphoto2
-WANTLIB+=	exif
-MODULES=	devel/gettext
-.else
-CONFIGURE_ARGS+=--without-gphoto2
-.endif
-
 NO_REGRESS=	Yes
-
-MKFILES=	lib/Makefile.in sanei/Makefile.in backend/Makefile.in \
-		frontend/Makefile.in tools/Makefile.in japi/Makefile.in
-
-pre-build:
-.for i in ${MKFILES}
-	perl -pi -e "s,\.\.\/libtool,${LIBTOOL},g" ${WRKSRC}/${i}
-.endfor
 
 .include <bsd.port.mk>

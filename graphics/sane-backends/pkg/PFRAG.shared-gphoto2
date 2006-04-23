@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-gphoto2,v 1.2 2005/10/04 21:42:39 alek Exp $
-lib/sane/libsane${FLAVOR_EXT}.so
