@@ -1,0 +1,6 @@
+Xdialog is designed to be a drop in replacement for the "dialog"
+program.  It converts any terminal based program into a program with an
+X-windows interface.  The dialogs are easier to see and use while adding
+even more functionalities (e.g. with the treeview, the file selector,
+the edit box, the range box, the help button/box).  Because Xdialog uses
+GTK+, it will also match your desktop themes.
