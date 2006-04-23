@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.235 2006/04/23 12:59:24 steven Exp $
+# $OpenBSD: Makefile,v 1.236 2006/04/23 19:49:22 steven Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 855resolution
@@ -233,6 +233,7 @@
      SUBDIR += xtestpicture
      SUBDIR += xtoolwait
      SUBDIR += xtraceroute
+     SUBDIR += xtu
      SUBDIR += xview
      SUBDIR += xvkbd
      SUBDIR += xwit
