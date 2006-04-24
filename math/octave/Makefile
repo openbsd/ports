@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/04/01 19:21:57 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2006/04/24 22:30:27 steven Exp $
 
 NOT_FOR_ARCHS=	vax
 
@@ -25,9 +25,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c g2c m ncurses readline stdc++
 
-MASTER_SITES=	ftp://ftp.octave.org/pub/octave/ \
-		ftp://neacm.fe.up.pt/pub/octave/ \
-		ftp://ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave/
+MASTER_SITES=	ftp://ftp.octave.org/pub/octave/bleeding-edge/ \
+		ftp://neacm.fe.up.pt/pub/octave/bleeding-edge/ \
+		ftp://ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave/bleeding-edge/
 
 MODULES=	gcc3
 MODGCC3_ARCHES=	alpha sparc
