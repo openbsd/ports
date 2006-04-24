@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2006/03/27 04:23:29 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.18 2006/04/24 20:03:00 kurt Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc64 arm
 SHARED_ONLY=	Yes
 
 COMMENT=	"mini mozilla"
 DISTNAME=	minimo-20050802
-PKGNAME=	${DISTNAME}p6
+PKGNAME=	${DISTNAME}p7
 SO_VERSION=	2.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
