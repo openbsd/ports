@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/01/14 20:05:49 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2006/04/24 16:38:10 steven Exp $
 
 COMMENT=		"service daemon that monitors one or more GPSes"
 COMMENT-motif=		"motif-based test apps using gpsd"
@@ -36,6 +36,7 @@ FLAVOR?=
 MULTI_PACKAGES=		-motif
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+BUILD_DEPENDS=		::x11/openmotif
 .endif
 
 SUBPACKAGE?=
