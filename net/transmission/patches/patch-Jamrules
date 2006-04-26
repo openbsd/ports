@@ -1,0 +1,11 @@
+$OpenBSD: patch-Jamrules,v 1.1.1.1 2006/04/26 20:05:06 naddy Exp $
+--- Jamrules.orig	Fri Apr 21 19:44:00 2006
++++ Jamrules	Fri Apr 21 19:44:10 2006
+@@ -13,7 +13,6 @@ VERSION_STRING = $(VERSION_MAJOR).$(VERS
+ DEFINES += VERSION_MAJOR=$(VERSION_MAJOR)
+            VERSION_MINOR=$(VERSION_MINOR)
+            VERSION_STRING=\\\"$(VERSION_STRING)\\\" ;
+-OPTIM    = -O3 ;
+ RM       = rm -Rf ;
+ 
+ rule SystemLibraries

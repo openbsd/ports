@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-gui,v 1.1.1.1 2006/04/26 20:05:06 naddy Exp $
+bin/transmission-gtk

@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/04/26 20:05:06 naddy Exp $
+bin/transmissioncli
+@man man/man1/transmissioncli.1
