@@ -1,3 +1,4 @@
-Nail is a mail user agent derived from Berkeley Mail 8.1 and is
-intended to provide the functionality of the POSIX.2 mailx command
-with additional support for MIME messages, POP3, and SMTP.
+Heirloom mailx (previously known as nail) is a mail user agent 
+derived from Berkeley Mail 8.1 and is intended to provide the 
+functionality of the POSIX.2 mailx command with additional 
+support for MIME messages, POP3, and SMTP.

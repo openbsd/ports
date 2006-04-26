@@ -1,0 +1,1258 @@
+$OpenBSD: patch-mailx_1,v 1.1 2006/04/26 15:37:25 naddy Exp $
+--- mailx.1.orig	Mon Apr 24 10:34:31 2006
++++ mailx.1	Mon Apr 24 10:42:37 2006
+@@ -36,14 +36,14 @@
+ .\"
+ .\"     Sccsid: @(#)mailx.1	2.317 (gritter) 3/4/06
+ .\"
+-.TH MAILX 1 "3/4/06" "mailx 12.0" "User Commands"
++.TH MAILX 1 "3/4/06" "nail 12.0" "User Commands"
+ .SH NAME
+-mailx \- send and receive Internet mail
++nail \- send and receive Internet mail
+ .SH SYNOPSIS
+ .PD 0
+ .HP
+ .ad l
+-\fBmailx\fR [\fB\-BDdFintv~\fR]
++\fBnail\fR [\fB\-BDdFintv~\fR]
+ [\fB\-s\fI\ subject\fR] [\fB\-a\fI\ attachment\fR ]
+ [\fB\-c\fI\ cc-addr\fR] [\fB\-b\fI\ bcc-addr\fR] [\fB\-r\fI\ from-addr\fR]
+ [\fB\-h\fI\ hops\fR]
+@@ -52,13 +52,13 @@ mailx \- send and receive Internet mail
+ \fIto-addr\fR .\ .\ .
+ .HP
+ .ad l
+-\fBmailx\fR [\fB\-BDdeHiInNRv~\fR] [\fB\-T\fI\ name\fR]
++\fBnail\fR [\fB\-BDdeHiInNRv~\fR] [\fB\-T\fI\ name\fR]
+ [\fB\-A\fI\ account\fR]
+ [\fB\-S\fI\ variable\fR[\fB=\fIvalue\fR]]
+ \fB\-f\fR [\fIname\fR]
+ .HP
+ .ad l
+-\fBmailx\fR [\fB\-BDdeinNRv~\fR]
++\fBnail\fR [\fB\-BDdeinNRv~\fR]
+ [\fB\-A\fI\ account\fR]
+ [\fB\-S\fI\ variable\fR[\fB=\fIvalue\fR]]
+ [\fB\-u\fI\ user\fR]
+@@ -66,7 +66,7 @@ mailx \- send and receive Internet mail
+ .PD
+ .ad b
+ .SH DESCRIPTION
+-\fIMailx\fR is an intelligent mail processing system, which has
++\fINail\fR is an intelligent mail processing system, which has
+ a command syntax reminiscent of
+ .IR ed (1)
+ with lines replaced by messages.
+@@ -76,7 +76,7 @@ is intended to provide the functionality
+ command,
+ and offers extensions
+ for MIME, IMAP, POP3, SMTP, and S/MIME.
+-.I Mailx
++.I Nail
+ provides enhanced
+ features for interactive use, such as caching and disconnected
+ operation for IMAP, message threading, scoring, and filtering.
+@@ -117,7 +117,7 @@ Enables debugging messages and disables 
+ Unlike
+ .IR \-v ,
+ this option is intended for
+-.I mailx
++.I nail
+ development only.
+ .TP
+ .B \-e
+@@ -130,7 +130,7 @@ Read in the contents of the user's mbox
+ (or the specified file)
+ for processing;
+ when
+-.I mailx
++.I nail
+ is quit, it writes
+ undeleted messages back
+ to this file.
+@@ -155,7 +155,7 @@ This option has no effect when SMTP is u
+ Ignore tty interrupt signals.
+ This is
+ particularly useful when using
+-\fImailx\fR on noisy phone lines.
++\fInail\fR on noisy phone lines.
+ .TP
+ .B \-I
+ Shows the `Newsgroup:' or `Article-Id:' fields
+@@ -166,7 +166,7 @@ Only applicable in combination with
+ .B \-n
+ Inhibits reading /etc/nail.rc upon startup.
+ This option should be activated for
+-.I mailx
++.I nail
+ scripts that are invoked on more than one machine,
+ because the contents of that file may differ between them.
+ .TP
+@@ -233,23 +233,23 @@ The details of
+ delivery are displayed on the user's terminal.
+ .TP
+ .B \-V
+-Print \fImailx\fR's version and exit.
++Print \fInail\fR's version and exit.
+ .TP
+ .B \-~
+ Enable tilde escapes even if not in interactive mode.
+ .SS "Sending mail"
+ To send a message to one or more people,
+-\fImailx\fR can be invoked with arguments
++\fInail\fR can be invoked with arguments
+ which are the names of people
+ to whom the mail will be sent.
+ The user is then expected to type in his message,
+ followed by an `control-D' at the beginning of a line.
+ The section below Replying to
+ or originating mail,
+-describes some features of \fImailx\fR
++describes some features of \fInail\fR
+ available to help when composing letters.
+ .SS "Reading mail"
+-In normal usage \fImailx\fR is given no arguments
++In normal usage \fInail\fR is given no arguments
+ and checks the user's mail out of the post office,
+ then prints out a one line header
+ of each message found.
+@@ -266,12 +266,12 @@ and simple numbers.
+ After examining a message
+ the user can delete `d') the message
+ or reply `r') to it.
+-Deletion causes the \fImailx\fR program
++Deletion causes the \fInail\fR program
+ to forget about the message.
+ This is not irreversible;
+ the message can be undeleted `u')
+ by giving its number,
+-or the \fImailx\fR session can be aborted
++or the \fInail\fR session can be aborted
+ by giving the exit `x') command.
+ Deleted messages will, however,
+ usually disappear never to be seen again.
+@@ -414,7 +414,7 @@ All messages that satisfy the given IMAP
+ This addressing mode is available with all types of folders;
+ for folders not located on IMAP servers,
+ or for servers unable to execute the SEARCH command,
+-.I mailx
++.I nail
+ will perform the search locally.
+ Strings must be enclosed by double quotes `"' in their entirety
+ if they contain white space or parentheses;
+@@ -576,7 +576,7 @@ Text the user types in then,
+ up to an end-of-file,
+ defines the contents of the message.
+ While the user is composing a message,
+-\fImailx\fR treats lines beginning with the character `~' specially.
++\fInail\fR treats lines beginning with the character `~' specially.
+ For instance, typing `~m' (alone on a line)
+ will place a copy of the current message into the response
+ right shifting it by a tabstop
+@@ -591,7 +591,7 @@ to revise the message
+ or to a shell to run some commands.
+ (These options are given in the summary below.)
+ .SS "Ending a mail processing session"
+-The user can end a \fImailx\fR session
++The user can end a \fInail\fR session
+ with the quit (`q') command.
+ Messages which have been examined
+ go to the user's mbox file
+@@ -614,7 +614,7 @@ Such lists can be defined by placing a l
+ .fi
+ in the file .mailrc in the user's home directory.
+ The current list of such aliases
+-can be displayed with the alias command in \fImailx\fR.
++can be displayed with the alias command in \fInail\fR.
+ System wide distribution lists can be created
+ by editing /etc/aliases, see
+ .IR aliases (5)
+@@ -663,14 +663,14 @@ command below.
+ See
+ .IR mailaddr (7)
+ for a description of network addresses.
+-\fIMailx\fR has a number of options
++\fINail\fR has a number of options
+ which can be set in the .mailrc file
+ to alter its behavior;
+ thus `\fIset askcc\fR' enables the askcc feature.
+ (These options are summarized below).
+ .SS "MIME types"
+ For any outgoing attachment,
+-\fImailx\fR tries to determine the content type.
++\fInail\fR tries to determine the content type.
+ It does this by reading MIME type files
+ whose lines have the following syntax:
+ .nf
+@@ -681,7 +681,7 @@ whose lines have the following syntax:
+ where type/subtype are strings describing the file contents,
+ and extension is the part of a filename starting after the last dot.
+ Any line not immediately beginning with an ASCII alphabetical character is
+-ignored by \fImailx\fR.
++ignored by \fInail\fR.
+ If there is a match with the extension of the file to attach,
+ the given type/subtype pair is used.
+ Otherwise, or if the filename has no extension,
+@@ -690,7 +690,7 @@ the first for text or international text
+ the second for any file that contains formatting characters
+ other than newlines and horizontal tabulators.
+ .SS "Character sets"
+-.I Mailx
++.I Nail
+ normally detects the character set of the terminal
+ using the LC_CTYPE locale setting.
+ If the locale cannot be used appropriately,
+@@ -714,7 +714,7 @@ must be declared within its header.
+ Permissible values can be declared
+ using the \fIsendcharsets\fR variable,
+ separated by commas;
+-.I mailx
++.I nail
+ tries each of the values in order
+ and uses the first appropriate one.
+ If the message contains characters that cannot be represented
+@@ -734,7 +734,7 @@ if it is invoked without arguments.
+ .PP
+ Best results are usually achieved
+ when
+-.I mailx
++.I nail
+ is run in a UTF-8 locale
+ on a UTF-8 capable terminal.
+ In this setup,
+@@ -754,7 +754,7 @@ the command's requirements is used.
+ If there are no messages forward of the current message,
+ the search proceeds backwards,
+ and if there are no good messages at all,
+-\fImailx\fR types `\fIapplicable messages\fR' and aborts the command.
++\fInail\fR types `\fIapplicable messages\fR' and aborts the command.
+ If the command begins with a \fI#\fR sign,
+ the line is ignored.
+ .PP
+@@ -858,10 +858,10 @@ creates a new alias or changes an old on
+ .B alternates
+ (alt) The alternates command is useful
+ if the user has accounts on several machines.
+-It can be used to inform \fImailx\fR
++It can be used to inform \fInail\fR
+ that the listed addresses all belong to the invoking user.
+ When he replies to messages,
+-\fImailx\fR will not send a copy of the message
++\fInail\fR will not send a copy of the message
+ to any of the addresses
+ listed on the alternates list.
+ If the alternates command is given
+@@ -1006,7 +1006,7 @@ available for disconnected use.
+ Deletes the current message
+ and prints the next message.
+ If there is no next message,
+-\fImailx\fR says `\fIat EOF\fR'.
++\fInail\fR says `\fIat EOF\fR'.
+ .TP
+ .B draft
+ Takes a message list and marks each message
+@@ -1145,7 +1145,7 @@ The optional
+ part applies to IMAP only;
+ if it is omitted,
+ the default `INBOX' is used.
+-If \fImailx\fR is connected to an IMAP server,
++If \fInail\fR is connected to an IMAP server,
+ a name of the form \fB@\fImailbox\fR
+ refers to the \fImailbox\fR on that server.
+ If the `folder' variable refers to an IMAP account,
+@@ -1252,14 +1252,14 @@ and marks each message therein to be sav
+ in the user's system mailbox
+ instead of in mbox.
+ Does not override the delete command.
+-.I mailx
++.I nail
+ deviates from the POSIX standard with this command,
+ as a `next' command issued after `hold'
+ will display the following message,
+ not the current one.
+ .TP
+ .B if
+-Commands in \fImailx\fR's startup files
++Commands in \fInail\fR's startup files
+ can be executed conditionally
+ depending on whether the user is sending
+ or receiving mail with the if command.
+@@ -1302,7 +1302,7 @@ it lists the current set of ignored fiel
+ .TP
+ .B imap
+ Sends command strings directly to the current IMAP server.
+-\fIMailx\fR operates always in IMAP \fIselected state\fR
++\fINail\fR operates always in IMAP \fIselected state\fR
+ on the current mailbox;
+ commands that change this
+ will produce undesirable results
+@@ -1375,13 +1375,13 @@ and sends mail to those people.
+ .B mbox
+ Indicate that a list of messages be sent
+ to mbox in the user's home directory when
+-.I mailx
++.I nail
+ is quit.
+ This is the default action for messages
+ if unless the
+ .I hold
+ option is set.
+-.I mailx
++.I nail
+ deviates from the POSIX standard with this command,
+ as a `next' command issued after `mbox'
+ will display the following message,
+@@ -1771,7 +1771,7 @@ Takes a message list
+ and marks the messages for saving in the
+ .I mbox
+ file.
+-.I mailx
++.I nail
+ deviates from the POSIX standard with this command,
+ as a `next' command issued after `mbox'
+ will display the following message,
+@@ -1941,7 +1941,7 @@ No special handling of compressed files 
+ (x) A synonym for exit.
+ .TP
+ .B z
+-\fIMailx\fR presents message headers in windowfuls
++\fINail\fR presents message headers in windowfuls
+ as described under the headers command.
+ The z command scrolls to the next window of messages.
+ If an argument is given,
+@@ -1951,7 +1951,7 @@ that the window is calculated in relatio
+ to the current position.
+ A number without a prefix specifies an
+ absolute window number,
+-and a `$' lets \fImailx\fR scroll
++and a `$' lets \fInail\fR scroll
+ to the last window of messages.
+ .TP
+ .B Z
+@@ -1989,7 +1989,7 @@ First, the user can edit all existing at
+ If an attachment's file name is left empty,
+ that attachment is deleted from the list.
+ When the end of the attachment list is reached,
+-.I mailx
++.I nail
+ will ask for further attachments,
+ until an empty file name is given.
+ If \fIfilename\fP arguments are specified,
+@@ -2141,11 +2141,11 @@ The command
+ is often used
+ as command to rejustify the message.
+ .TP
+-.BI ~: mailx-command
+-Execute the given \fImailx\fR command.
++.BI ~: nail-command
++Execute the given \fInail\fR command.
+ Not all commands, however, are allowed.
+ .TP
+-.BI ~_ mailx-command
++.BI ~_ nail-command
+ Identical to ~:.
+ .TP
+ .BI ~~ string
+@@ -2158,7 +2158,7 @@ in order to send it at the beginning of 
+ Options are controlled via set and unset commands,
+ see their entries for a syntax description.
+ An option is also set
+-if it is passed to \fImailx\fR
++if it is passed to \fInail\fR
+ as part of the environment
+ (this is not restricted to specific variables as in the POSIX standard).
+ A value given in a startup file overrides
+@@ -2181,7 +2181,7 @@ rather than prepended.
+ This should always be set.
+ .TP
+ .BR ask \ or \ asksub
+-Causes \fImailx\fR to prompt for the subject
++Causes \fInail\fR to prompt for the subject
+ of each message sent.
+ If the user responds with simply a newline,
+ no subject field will be sent.
+@@ -2191,7 +2191,7 @@ Causes the prompts for `Cc:' and `Bcc:' 
+ to appear after the message has been edited.
+ .TP
+ .B askattach
+-If set, \fImailx\fR asks for files to attach at the end of each message.
++If set, \fInail\fR asks for files to attach at the end of each message.
+ Responding with a newline indicates not to include an attachment.
+ .TP
+ .B askcc
+@@ -2309,7 +2309,7 @@ Prints debugging messages and disables t
+ Unlike
+ .IR verbose ,
+ this option is intended for
+-.I mailx
++.I nail
+ development only.
+ .TP
+ .B disconnected
+@@ -2340,7 +2340,7 @@ variable above,
+ but other accounts are not affected.
+ .TP
+ .B dot
+-The binary option dot causes \fImailx\fR to interpret
++The binary option dot causes \fInail\fR to interpret
+ a period alone on a line
+ as the terminator of a message the user is sending.
+ .TP
+@@ -2359,10 +2359,10 @@ when using a common folder directory.
+ .TP
+ .B emptystart
+ If the mailbox is empty,
+-\fImailx\fR normally prints \fI`No mail for user'\fR
++\fInail\fR normally prints \fI`No mail for user'\fR
+ and exits immediately.
+ If this option is set,
+-\fImailx\fR starts even with an empty mailbox.
++\fInail\fR starts even with an empty mailbox.
+ .TP
+ .B flipr
+ Exchanges the
+@@ -2391,7 +2391,7 @@ option is set.
+ .TP
+ .B fullnames
+ When replying to a message,
+-\fImailx\fR normally removes the comment parts of email addresses,
++\fInail\fR normally removes the comment parts of email addresses,
+ which by convention contain the full names of the recipients.
+ If this variable is set,
+ such stripping is not performed,
+@@ -2413,13 +2413,13 @@ to be ignored and echoed as @'s.
+ .TP
+ .B ignoreeof
+ An option related to dot is ignoreeof
+-which makes \fImailx\fR refuse to
++which makes \fInail\fR refuse to
+ accept a control-d as the end of a message.
+-Ignoreeof also applies to \fImailx\fR command mode.
++Ignoreeof also applies to \fInail\fR command mode.
+ .TP
+ .B imap-use-starttls
+ Causes
+-.I mailx
++.I nail
+ to issue a STARTTLS command
+ to make an unencrypted IMAP session SSL/TLS encrypted.
+ This functionality is not supported by all servers,
+@@ -2431,7 +2431,7 @@ Activates
+ for a specific account.
+ .TP
+ .B keep
+-This option causes \fImailx\fR to truncate the user's system mailbox
++This option causes \fInail\fR to truncate the user's system mailbox
+ instead of deleting it when it is empty.
+ This should always be set,
+ since it prevents malicious users
+@@ -2443,7 +2443,7 @@ When a message is saved,
+ it is usually discarded
+ from the originating folder
+ when
+-.I mailx
++.I nail
+ is quit.
+ Setting this option
+ causes all saved message to be retained.
+@@ -2535,7 +2535,7 @@ for a specific account.
+ .TP
+ .B pop3-use-starttls
+ Causes
+-.I mailx
++.I nail
+ to issue a STLS command
+ to make an unencrypted POP3 session SSL/TLS encrypted.
+ This functionality is not supported by all servers,
+@@ -2583,7 +2583,7 @@ folder as it is normally only done for n
+ .TP
+ .B reply-in-same-charset
+ If this variable is set,
+-.I mailx
++.I nail
+ first tries to use the same character set
+ of the original message for replies.
+ If this fails,
+@@ -2597,7 +2597,7 @@ Reverses the sense of reply and Reply co
+ .B save
+ When the user aborts a message
+ with two RUBOUT (interrupt characters)
+-\fImailx\fR copies the partial letter
++\fInail\fR copies the partial letter
+ to the file `dead.letter' in the home directory.
+ This option is set by default.
+ .TP
+@@ -2613,15 +2613,15 @@ When sending a message,
+ wait until the mail transfer agent exits
+ before accepting further commands.
+ If the mail transfer agent returns a non-zero exit status,
+-the exit status of mailx will also be non-zero.
++the exit status of nail will also be non-zero.
+ .TP
+ .B showlast
+-Setting this option causes \fImailx\fR to start at the
++Setting this option causes \fInail\fR to start at the
+ last message instead of the first one when opening a mail folder.
+ .TP
+ .B showname
+ Causes
+-.I mailx
++.I nail
+ to use the sender's real name instead of the plain address
+ in the header field summary and in message specifications.
+ .TP
+@@ -2631,7 +2631,7 @@ if the message was sent by the user.
+ .TP
+ .B smime-force-encryption
+ Causes
+-.I mailx
++.I nail
+ to refuse sending unencrypted messages.
+ .TP
+ .B smime-sign
+@@ -2651,7 +2651,7 @@ when verifying S/MIME signed messages.
+ Only applicable if S/MIME support is built using OpenSSL.
+ .TP
+ .B smtp-use-starttls
+-Causes \fImailx\fR to issue a STARTTLS command
++Causes \fInail\fR to issue a STARTTLS command
+ to make an SMTP session SSL/TLS encrypted.
+ Not all servers support this command;
+ because of common implementation defects,
+@@ -2671,7 +2671,7 @@ because this protocol version is insecur
+ .B stealthmua
+ Inhibits the generation of
+ the \fI`Message-Id:'\fR and \fI`User-Agent:'\fR
+-header fields that include obvious references to \fImailx\fR.
++header fields that include obvious references to \fInail\fR.
+ There are two pitfalls associated with this:
+ First, the message id of outgoing messages is not known anymore.
+ Second, an expert may still use the remaining information in the header
+@@ -2680,13 +2680,13 @@ to track down the originating mail user 
+ .B verbose
+ Setting the option verbose is the same
+ as using the \-v flag on the command line.
+-When \fImailx\fR runs in verbose mode,
++When \fInail\fR runs in verbose mode,
+ details of the actual message delivery
+ and protocol conversations for IMAP, POP3, and SMTP,
+ as well as of other internal processes,
+ are displayed on the user's terminal,
+ This is sometimes useful to debug problems.
+-.I Mailx
++.I Nail
+ prints all data that is sent to remote servers in clear texts,
+ including passwords,
+ so care should be taken that no unauthorized option
+@@ -2798,7 +2798,7 @@ for storing folders of messages.
+ All folder names that begin with `+'
+ refer to files below that directory.
+ If the directory name begins with a `/',
+-\fImailx\fR considers it to be an absolute pathname;
++\fInail\fR considers it to be an absolute pathname;
+ otherwise, the folder directory is found
+ relative to the user's home directory.
+ .IP
+@@ -2953,9 +2953,9 @@ Sets the IMAP authentication method for 
+ Enables caching of IMAP mailboxes.
+ The value of this variable must point to a directory
+ that is either existent or can be created by
+-.IR mailx .
++.IR nail .
+ All contents of the cache can be deleted by
+-.I mailx
++.I nail
+ at any time;
+ it is not safe to make assumptions about them.
+ .TP
+@@ -3005,7 +3005,7 @@ format for saving space.
+ If processing time is considered more important,
+ .IR uncompress (1)
+ can be used to store them in plain form.
+-.I Mailx
++.I Nail
+ will then work using the uncompressed files.
+ .TP
+ .B LISTER
+@@ -3080,17 +3080,17 @@ is a digit.
+ These are usually taken from Mozilla installations,
+ so an appropriate value might be
+ `~/.mozilla/firefox/default.clm'.
+-.I Mailx
++.I Nail
+ opens these files read-only
+ and does not modify them.
+ However, if the files are modified by Mozilla
+ while
+-.I mailx
++.I nail
+ is running,
+ it will print a `Bad database' message.
+ It may be necessary to create copies of these files
+ that are exclusively used by
+-.I mailx
++.I nail
+ then.
+ Only applicable if S/MIME and SSL/TLS support is built using
+ Network Security Services (NSS).
+@@ -3134,7 +3134,7 @@ if messages of type
+ were filtered through the shell, for example,
+ a message sender could easily execute arbitrary code
+ on the system
+-.I mailx
++.I nail
+ is running on.
+ .TP
+ .B pop3-keepalive
+@@ -3157,7 +3157,7 @@ or to `\fB&\ \fR' if the
+ variable is set.
+ .TP
+ .B quote
+-If set, \fImailx\fR starts a replying message with the original message prefixed
++If set, \fInail\fR starts a replying message with the original message prefixed
+ by the value of the variable \fIindentprefix\fR.
+ Normally, a heading consisting of `Fromheaderfield wrote:' is printed
+ before the quotation.
+@@ -3188,7 +3188,7 @@ If replying to a message, such addresses
+ as if they were in the alternates list.
+ .TP
+ .B screen
+-When \fImailx\fR initially prints the message headers,
++When \fInail\fR initially prints the message headers,
+ it determines the number to print
+ by looking at the speed of the terminal.
+ The faster the terminal, the more it prints.
+@@ -3203,7 +3203,7 @@ A comma-separated list of character set 
+ that can be used in Internet mail.
+ When a message that contains characters not representable in US-ASCII
+ is prepared for sending,
+-.I mailx
++.I nail
+ tries to convert its text
+ to each of the given character sets in order
+ and uses the first appropriate one.
+@@ -3367,7 +3367,7 @@ the specific file is used.
+ When decrypting messages,
+ their recipient fields (To: and Cc:) are searched for addresses
+ for which such a variable is set.
+-.I Mailx
++.I Nail
+ always uses the first address that matches,
+ so if the same message is sent to more than one
+ of the user's addresses using different encryption keys,
+@@ -3390,7 +3390,7 @@ for a specific address.
+ Only applicable if S/MIME support is built using NSS.
+ .TP
+ .B smtp
+-Normally, \fImailx\fR invokes
++Normally, \fInail\fR invokes
+ .IR sendmail (8)
+ directly to transfer messages.
+ If the \fIsmtp\fR variable is set, a SMTP connection to
+@@ -3464,7 +3464,7 @@ If this variable is set but neither
+ or a matching
+ .I smtp-auth-password-user@host
+ can be found,
+-.I mailx
++.I nail
+ will as for a password on the user's terminal.
+ .TP
+ \fBsmtp-auth-user-\fIuser\fB@\fIhost\fR
+@@ -3583,9 +3583,9 @@ normally, the first five
+ lines are printed.
+ .TP
+ .B ttycharset
+-The character set of the terminal \fImailx\fR operates on.
++The character set of the terminal \fInail\fR operates on.
+ There is normally no need to set this variable
+-since \fImailx\fR can determine this automatically
++since \fInail\fR can determine this automatically
+ by looking at the LC_CTYPE locale setting;
+ if this succeeds, the value is assigned at startup
+ and will be displayed by the \fIset\fP command.
+@@ -3596,7 +3596,7 @@ that can be used in Internet messages.
+ Pathname of the text editor to use
+ in the visual command and ~v escape.
+ .SH ENVIRONMENT VARIABLES
+-Besides the variables described above, \fImailx\fR uses
++Besides the variables described above, \fInail\fR uses
+ the following environment strings:
+ .TP
+ .B HOME
+@@ -3609,7 +3609,7 @@ See
+ .B MAILRC
+ Is used as startup file instead of ~/.mailrc if set.
+ When
+-.I mailx
++.I nail
+ scripts are invoked on behalf of other users,
+ this variable should be set to `/dev/null'
+ to avoid side-effects from reading their configuration files.
+@@ -3641,7 +3641,7 @@ System wide MIME types.
+ .SH EXAMPLES
+ .SS "Getting started"
+ The
+-.I mailx
++.I nail
+ command has two distinct usages, according to whether one
+ wants to send or receive mail.
+ Sending mail is simple: to send a
+@@ -3651,29 +3651,29 @@ use the shell
+ command:
+ .nf
+ .sp
+-    $ \fBmailx\fI bill@host.example\fR
++    $ \fBnail\fI bill@host.example\fR
+ .sp
+ .fi
+ then type your message.
+-.I Mailx
++.I Nail
+ will prompt you for a message
+ .I subject 
+ first;
+ after that, lines typed by you form the body of the message.
+ When you reach the end of the message, type
+ an EOT (control\-d) at the beginning of a line, which will cause
+-.I mailx
++.I nail
+ to echo `EOT' and return you to the shell.
+ .PP
+ If, while you are composing the message
+ you decide that you do not wish to send it after all, you can
+ abort the letter with a \s-2RUBOUT\s0.  Typing a single \s-2RUBOUT\s0
+ causes
+-.I mailx
++.I nail
+ to print `(Interrupt -- one more to kill letter)'.
+ Typing a second
+ \s-2RUBOUT\s0 causes
+-.I mailx
++.I nail
+ to save your partial letter on the file `dead.letter'
+ in your home directory and abort the letter.
+ Once you have
+@@ -3685,7 +3685,7 @@ you can list their email addresses on th
+ Thus,
+ .nf
+ .sp
+-    $ \fBmailx\fI sam@workstation.example bob@server.example\fR
++    $ \fBnail\fI sam@workstation.example bob@server.example\fR
+     Subject: Fees
+     Tuition fees are due next Friday.  Don't forget!
+     <Control\-d>
+@@ -3700,16 +3700,16 @@ and
+ To read your mail, simply type
+ .nf
+ .sp
+-    $ \fBmailx\fR
++    $ \fBnail\fR
+ .sp
+ .fi
+-.I Mailx
++.I Nail
+ will respond by typing its version number and date and then listing
+ the messages you have waiting.
+ Then it will type a prompt and await your command.
+ The messages are assigned numbers starting with 1\(emyou
+ refer to the messages with these numbers.
+-.I Mailx
++.I Nail
+ keeps track of which messages are
+ .I new
+ (have been sent since you last read your mail) and
+@@ -3720,7 +3720,7 @@ next to them in the header listing and o
+ a
+ .B U
+ next to them.
+-.I Mailx
++.I Nail
+ keeps track of new/old and read/unread messages by putting a
+ header field called
+ .I Status
+@@ -3744,7 +3744,7 @@ you could examine the first message by g
+ .sp
+ .fi
+ which might cause
+-.N mailx
++.N nail
+ to respond with, for example:
+ .nf
+ .sp
+@@ -3758,14 +3758,14 @@ to respond with, for example:
+ .fi
+ .PP
+ Many
+-.I mailx
++.I nail
+ commands that operate on messages take a message number as an
+ argument like the
+ .I type
+ command.
+ For these commands, there is a notion of a current message.
+ When you enter the
+-.I mailx
++.I nail
+ program, the current message is initially the first
+ (or the first recent) one.
+ Thus, you can often omit the message number and use, for example,
+@@ -3788,10 +3788,10 @@ would type the first message.
+ Frequently, it is useful to read the messages in your mailbox in order,
+ one after another.
+ You can read the next message in
+-.I mailx
++.I nail
+ by simply typing a newline.
+ As a special case, you can type a newline as your first command to
+-.I mailx
++.I nail
+ to type the first message.
+ .PP
+ If, after typing a message, you wish to immediately send a reply,
+@@ -3802,13 +3802,13 @@ This command,
+ like
+ .IR type ,
+ takes a message number as an argument.
+-.I mailx
++.I nail
+ then begins a message addressed to the user who sent you the message.
+ You may then type in your letter in reply, followed by a <control-d>
+ at the beginning of a line, as before.
+ .PP
+ Note that
+-.I mailx
++.I nail
+ copies the subject header from the original message.
+ This is useful in that correspondence
+ about a particular matter will tend to retain the same subject heading,
+@@ -3843,13 +3843,13 @@ you can use the
+ .I delete
+ command.
+ In addition to not saving deleted messages,
+-.I mailx
++.I nail
+ will not let you type them, either.
+ The effect is to make the message disappear
+ altogether, along with its number.
+ .PP
+ Many features of
+-.I mailx
++.I nail
+ can be tailored to your liking with the
+ .I set
+ command.
+@@ -3863,7 +3863,7 @@ option.
+ Binary options are either on or off.  For example, the
+ .I askcc
+ option informs
+-.I mailx
++.I nail
+ that each time you send a message, you want it to prompt you for
+ a `Cc:' header,
+ to be included in the message.
+@@ -3876,12 +3876,12 @@ option, you would type
+ .fi
+ .PP
+ Valued options are values which
+-.I mailx
++.I nail
+ uses to adapt to your tastes.
+ For example, the
+ .I record
+ option tells
+-.I mailx
++.I nail
+ where to save messages sent by you,
+ and is specified by
+ .nf
+@@ -3893,17 +3893,17 @@ for example.
+ Note that no spaces are allowed in
+ .I "set record=Sent".
+ .PP
+-.I Mailx
++.I Nail
+ includes a simple facility for maintaining groups of messages together
+ in folders.
+ To use the folder facility, you must tell
+-.I mailx
++.I nail
+ where you wish to keep your folders.
+ Each folder of messages will be a single file.
+ For convenience, all of your folders are kept in
+ a single directory of your choosing.
+ To tell
+-.I mailx
++.I nail
+ where your folder directory is, put a line of the form
+ .nf
+ .sp
+@@ -3915,7 +3915,7 @@ in your
+ file.
+ If, as in the example above,
+ your folder directory does not begin with a `/',
+-.I mailx
++.I nail
+ will assume that your folder directory is to be found starting from
+ your home directory.
+ .PP
+@@ -3950,7 +3950,7 @@ The
+ .I folder
+ command
+ can be used to direct
+-.I mailx
++.I nail
+ to the contents of a different folder.
+ For example,
+ .nf
+@@ -3959,7 +3959,7 @@ For example,
+ .sp
+ .fi
+ directs
+-.I mailx
++.I nail
+ to read the contents of the
+ .I classwork
+ folder.
+@@ -3982,14 +3982,14 @@ command.
+ Finally, the
+ .I help
+ command is available to print out a brief summary of the most important
+-.I mailx
++.I nail
+ commands.
+ .PP
+ While typing in a message to be sent to others, it is often
+ useful to be able to invoke the text editor on the partial message,
+ print the message, execute a shell command, or do some other
+ auxiliary function. 
+-.I Mailx
++.I Nail
+ provides these capabilities through
+ .I "tilde escapes" ,
+ which consist of a tilde (~) at the beginning of a line, followed by
+@@ -4066,7 +4066,7 @@ You might want to put this string into a
+ As the
+ .I shortcut
+ command is specific to this implementation of
+-.I mailx
++.I nail
+ and will confuse other implementations,
+ it should not be used in
+ .IR ~/.mailrc ,
+@@ -4084,15 +4084,15 @@ containing the
+ .I shortcut
+ command above.
+ You can then access your remote mailbox by invoking
+-`mailx \-f \fImyisp\fR' on the command line,
+-or by executing `fi \fImyisp\fR' within mailx.
++`nail \-f \fImyisp\fR' on the command line,
++or by executing `fi \fImyisp\fR' within nail.
+ .PP
+ If you want to use more than one IMAP mailbox on a server,
+ or if you want to use the IMAP server for mail storage too,
+ the
+ .I account
+ command
+-(which is also \fImailx-\fRspecific)
++(which is also \fInail-\fRspecific)
+ is more appropriate than the
+ .I shortcut
+ command.
+@@ -4107,8 +4107,8 @@ You can put the following in
+ .fi
+ .sp
+ and can then access incoming mail for this account by invoking
+-`mailx \-A \fImyisp\fR' on the command line,
+-or by executing `ac \fImyisp\fR' within mailx.
++`nail \-A \fImyisp\fR' on the command line,
++or by executing `ac \fImyisp\fR' within nail.
+ After that,
+ a command like `copy \fI1\fR +\fIotherfolder\fR'
+ will refer to \fIotherfolder\fR on the IMAP server.
+@@ -4120,7 +4120,7 @@ and
+ `fi +Sent' will show your recorded sent mail,
+ with both folders located on the IMAP server.
+ .PP
+-.I Mailx
++.I Nail
+ will ask you for a password string
+ each time you connect to a remote account.
+ If you can reasonably trust the security
+@@ -4134,7 +4134,7 @@ you can give this password in the startu
+ You should change the permissions of this file to 0600, see
+ .IR chmod (1).
+ .PP
+-.I Mailx
++.I Nail
+ supports different authentication methods for both IMAP and POP3.
+ If Kerberos is used at your location,
+ you can try to activate GSSAPI-based authentication by
+@@ -4144,7 +4144,7 @@ you can try to activate GSSAPI-based aut
+ 
+ .fi
+ The advantage of this method is that
+-.I mailx
++.I nail
+ does not need to know your password at all,
+ nor needs to send sensitive data over the network.
+ Otherwise, the options
+@@ -4163,7 +4163,7 @@ conventional user/password based authent
+ It is sometimes helpful to set the
+ .I verbose
+ option when authentication problems occur.
+-.I Mailx
++.I Nail
+ will display all data sent to the server in clear text on the screen
+ with this option,
+ including passwords.
+@@ -4186,14 +4186,14 @@ select a local directory name and put
+ .fi
+ in the startup file.
+ All files within that directory
+-can be overwritten or deleted by \fImailx\fR at any time,
++can be overwritten or deleted by \fInail\fR at any time,
+ so you should not use the directory to store other information.
+ .PP
+ Once the cache contains some messages,
+ it is not strictly necessary anymore
+ to open a connection to the IMAP server
+ to access them.
+-When \fImailx\fR is invoked with the \fI\-D\fR option,
++When \fInail\fR is invoked with the \fI\-D\fR option,
+ or when the
+ .I disconnected
+ variable is set,
+@@ -4270,7 +4270,7 @@ such as by personally receiving the cert
+ The scoring commands are best separated
+ from other configuration for clarity,
+ and are mostly
+-.I mailx
++.I nail
+ specific.
+ It is thus recommended to put them in a separate file
+ that is sourced from your NAIL_EXTRA_RC as follows:
+@@ -4400,7 +4400,7 @@ If you set the
+ option before running the
+ .I classify
+ command,
+-.I mailx
++.I nail
+ prints the words it uses for calculating the junk status
+ along with their statistical probabilities.
+ This can help you to find out
+@@ -4454,8 +4454,8 @@ Most PDF viewers do not accept input dir
+ It is thus necessary to store the attachment in a temporary file, as with
+ .nf
+ .sp
+-    \fBset pipe-application/pdf=\fR"cat >/tmp/mailx$$.pdf; \e
+-           acroread /tmp/mailx$$.pdf; rm /tmp/mailx$$.pdf"
++    \fBset pipe-application/pdf=\fR"cat >/tmp/nail$$.pdf; \e
++           acroread /tmp/nail$$.pdf; rm /tmp/nail$$.pdf"
+ .sp
+ .fi
+ Note that security defects are discovered in PDF viewers
+@@ -4526,7 +4526,7 @@ from one of the major CAs on the Interne
+ You will usually receive
+ a combined certificate and private key
+ in PKCS#12 format which
+-.I mailx
++.I nail
+ does not directly accept
+ if S/MIME support is built using OpenSSL.
+ To convert it to PEM format,
+@@ -4543,7 +4543,7 @@ parameter,
+ you can specifiy an additional
+ .I "PEM pass phrase"
+ for protecting the private key.
+-.I Mailx
++.I Nail
+ will then ask you for that pass phrase
+ each time it signs or decrypts a message.
+ You can then use
+@@ -4553,7 +4553,7 @@ You can then use
+ .sp
+ .fi
+ to make this private key and certificate known to
+-.IR mailx .
++.IR nail .
+ .PP
+ If S/MIME support is built using NSS,
+ the PKCS#12 file must be installed using Mozilla
+@@ -4588,7 +4588,7 @@ First use the
+ command to check the validity of the certificate.
+ After that,
+ retrieve the certificate and tell
+-.I mailx
++.I nail
+ that it should use it for encryption:
+ .nf
+ .sp
+@@ -4645,13 +4645,13 @@ To seriously use S/MIME or SSL/TLS verif
+ an up-to-date CRL is required for each trusted CA.
+ There is otherwise no method
+ to distinguish between valid and invalidated certificates.
+-.I Mailx
++.I Nail
+ currently offers no mechanism to fetch CRLs,
+ or to access them on the Internet,
+ so you have to retrieve them by some external mechanism.
+ .PP
+ If S/MIME and SSL/TLS support are built using OpenSSL,
+-.I mailx
++.I nail
+ accepts CRLs in PEM format only;
+ CRLs in DER format must be converted,
+ e.\|g. with the shell command
+@@ -4661,7 +4661,7 @@ e.\|g. with the shell command
+ .sp
+ .fi
+ To tell
+-.I mailx
++.I nail
+ about the CRLs,
+ a directory
+ that contains all CRL files
+@@ -4674,7 +4674,7 @@ or
+ variables, respectively,
+ must then be set to point to that directory.
+ After that,
+-.I mailx
++.I nail
+ requires a CRL to be present
+ for each CA that is used
+ to verify a certificate.
+@@ -4687,20 +4687,20 @@ is set appropriately).
+ .SS "Sending mail from scripts"
+ If you want to send mail from scripts,
+ you must be aware that
+-.I mailx
++.I nail
+ reads the user's configuration files by default.
+ So unless your script is only intended for your own personal use
+ (as e.g. a cron job),
+ you need to circumvent this by invoking
+-.I mailx
++.I nail
+ like
+ .nf
+ .sp
+-    \fBMAILRC=/dev/null mailx \-n\fR
++    \fBMAILRC=/dev/null nail \-n\fR
+ .sp
+ .fi
+ You then need to create a configuration for
+-.I mailx
++.I nail
+ for your script.
+ This can be done by either pointing the
+ .I MAILRC
+@@ -4714,7 +4714,7 @@ An invocation could thus look like
+ .sp
+     \fBenv MAILRC=/dev/null\fR from=\fIscriptreply@domain\fR smtp=\fIhost\fR \e
+           smtp-auth-user=\fIlogin\fR smtp-auth-password=\fIsecret\fR \e
+-          smtp-auth=\fIlogin\fR \fBmailx \-n\fR \-s "\fIsubject\fR" \e
++          smtp-auth=\fIlogin\fR \fBnail \-n\fR \-s "\fIsubject\fR" \e
+           \-a \fIattachment_file\fR \fIrecipient@domain\fR <\fIcontent_file\fR
+ .SH "SEE ALSO"
+ fmt(1),
+@@ -4731,7 +4731,7 @@ sendmail(8)
+ .SH NOTES
+ .PP
+ Variables in the environment passed to
+-.I mailx
++.I nail
+ cannot be unset.
+ .PP
+ The character set conversion relies
+@@ -4740,7 +4740,7 @@ on the
+ function.
+ Its functionality differs widely
+ between the various system environments
+-\fImailx\fR runs on.
++\fInail\fR runs on.
+ If the message `Cannot convert from \fIa\fR to \fIb\fR' appears,
+ either some characters within the message header or text
+ are not appropriate for the currently selected terminal character set,
+@@ -4764,7 +4764,7 @@ the value assigned to
+ .I sendcharsets
+ must match the character set that is used on the terminal.
+ .PP
+-Mailx expects input text to be in Unix format,
++Nail expects input text to be in Unix format,
+ with lines separated by 
+ .I newline
+ (^J, \en) characters only.
+@@ -4775,7 +4775,7 @@ characters in addition will be treated a
+ to send such files as text, strip these characters e.\ g. by
+ .RS
+ .sp
+-tr \-d '\e015' <input | mailx .\ .\ .
++tr \-d '\e015' <input | nail .\ .\ .
+ .sp
+ .RE
+ or fix the tools that generate them.
+@@ -4809,10 +4809,10 @@ and new messages will appear as unread
+ when it is selected for viewing later.
+ The `flagged', `answered', and `draft' attributes are usually permanent,
+ but some IMAP servers are known to drop them without notification.
+-.\" This is why mailx does not even check if storing them succeeds.
++.\" This is why nail does not even check if storing them succeeds.
+ Message numbers may change with IMAP
+ every time before the prompt is printed
+-if \fImailx\fR is notified by the server
++if \fInail\fR is notified by the server
+ that messages have been deleted
+ by some other client or process.
+ In this case, `Expunged \fIn\fR messages' is printed,
+@@ -4836,14 +4836,14 @@ It is not possible to rename or to remov
+ If a
+ .SM RUBOUT
+ (interrupt) is typed while an IMAP or POP3 operation is in progress,
+-.I mailx
++.I nail
+ will wait until the operation can be safely aborted,
+ and will then return to the command loop
+ and print the prompt again.
+ When a second
+ .I RUBOUT
+ is typed while
+-.I mailx
++.I nail
+ is waiting for the operation to complete,
+ the operation itself will be canceled.
+ In this case,
+@@ -4855,7 +4855,7 @@ was using an SSL/TLS encrypted channel,
+ an error in the SSL transport will very likely result,
+ and the connection is no longer usable.
+ .PP
+-As \fImailx\fR is a mail user agent,
++As \fInail\fR is a mail user agent,
+ it provides only basic SMTP services.
+ If it fails to contact its upstream SMTP server,
+ it will not make further attempts to transfer the message
+@@ -4865,20 +4865,20 @@ than an error message on the terminal
+ and a `dead.letter' file.
+ This is usually not a problem if the SMTP server
+ is located in the same local network
+-as the computer on which \fImailx\fR is run.
++as the computer on which \fInail\fR is run.
+ However, care should be taken when using a remote server of an ISP;
+ it might be better to set up a local SMTP server then
+ which just acts as a proxy.
+ .PP
+-\fIMailx\fR immediately contacts the SMTP server (or
++\fINail\fR immediately contacts the SMTP server (or
+ .IR \%/usr/lib/sendmail )
+ even when operating in
+ .I disconnected
+ mode.
+-It would not make much sense for \fImailx\fR to defer outgoing mail
++It would not make much sense for \fInail\fR to defer outgoing mail
+ since SMTP servers usually provide
+ much more elaborated delay handling
+-than \fImailx\fR could perform as a client.
++than \fInail\fR could perform as a client.
+ Thus the recommended setup for sending mail in
+ .I disconnected
+ mode is to configure a local SMTP server
