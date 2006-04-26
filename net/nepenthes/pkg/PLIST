@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/04/14 17:08:25 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/04/26 19:06:17 jolan Exp $
 %%SHARED%%
 bin/nepenthes
 lib/nepenthes/
@@ -17,11 +17,14 @@ lib/nepenthes/geolocationhostip.la
 lib/nepenthes/geolocationip2location.la
 lib/nepenthes/logdownload.la
 lib/nepenthes/logirc.la
+lib/nepenthes/logprelude.la
 lib/nepenthes/logsurfnet.la
 lib/nepenthes/moduleportwatch.la
 lib/nepenthes/shellcodegeneric.la
+lib/nepenthes/shellcodesignatures.la
 lib/nepenthes/shellemuwinnt.la
 lib/nepenthes/submitfile.la
+lib/nepenthes/submitgotek.la
 lib/nepenthes/submitnepenthes.la
 lib/nepenthes/submitnorman.la
 lib/nepenthes/submitxmlrpc.la
@@ -30,6 +33,7 @@ lib/nepenthes/vulnasn1.la
 lib/nepenthes/vulnbagle.la
 lib/nepenthes/vulndameware.la
 lib/nepenthes/vulndcom.la
+lib/nepenthes/vulnftpd.la
 lib/nepenthes/vulniis.la
 lib/nepenthes/vulnkuang2.la
 lib/nepenthes/vulnlsass.la
@@ -53,18 +57,19 @@ lib/nepenthes/x3.la
 lib/nepenthes/x4.la
 lib/nepenthes/x5.la
 lib/nepenthes/x6.la
-lib/nepenthes/x7.la
 lib/nepenthes/x8.la
 @man man/man8/nepenthes.8
-share/doc/README
-share/doc/README.VFS
-share/doc/logo-shaded.svg
+share/doc/nepenthes/
+share/doc/nepenthes/README.VFS
+share/doc/nepenthes/logo-shaded.svg
 @sample ${SYSCONFDIR}/nepenthes/
 share/examples/nepenthes/
 share/examples/nepenthes/download-csend.conf
 @sample ${SYSCONFDIR}/nepenthes/download-csend.conf
 share/examples/nepenthes/download-curl.conf
 @sample ${SYSCONFDIR}/nepenthes/download-curl.conf
+share/examples/nepenthes/download-ftp.conf
+@sample ${SYSCONFDIR}/nepenthes/download-ftp.conf
 share/examples/nepenthes/download-link.conf
 @sample ${SYSCONFDIR}/nepenthes/download-link.conf
 share/examples/nepenthes/download-nepenthes.conf
@@ -77,6 +82,8 @@ share/examples/nepenthes/log-download.conf
 @sample ${SYSCONFDIR}/nepenthes/log-download.conf
 share/examples/nepenthes/log-irc.conf
 @sample ${SYSCONFDIR}/nepenthes/log-irc.conf
+share/examples/nepenthes/log-prelude.conf
+@sample ${SYSCONFDIR}/nepenthes/log-prelude.conf
 share/examples/nepenthes/log-surfnet.conf
 @sample ${SYSCONFDIR}/nepenthes/log-surfnet.conf
 share/examples/nepenthes/module-portwatch.conf
@@ -88,6 +95,8 @@ share/examples/nepenthes/shellcode-generic.conf
 @sample ${SYSCONFDIR}/nepenthes/shellcode-generic.conf
 share/examples/nepenthes/submit-file.conf
 @sample ${SYSCONFDIR}/nepenthes/submit-file.conf
+share/examples/nepenthes/submit-gotek.conf
+@sample ${SYSCONFDIR}/nepenthes/submit-gotek.conf
 share/examples/nepenthes/submit-nepenthes.conf
 @sample ${SYSCONFDIR}/nepenthes/submit-nepenthes.conf
 share/examples/nepenthes/submit-norman.conf
@@ -102,6 +111,8 @@ share/examples/nepenthes/vuln-dameware.conf
 @sample ${SYSCONFDIR}/nepenthes/vuln-dameware.conf
 share/examples/nepenthes/vuln-dcom.conf
 @sample ${SYSCONFDIR}/nepenthes/vuln-dcom.conf
+share/examples/nepenthes/vuln-ftpd.conf
+@sample ${SYSCONFDIR}/nepenthes/vuln-ftpd.conf
 share/examples/nepenthes/vuln-iis.conf
 @sample ${SYSCONFDIR}/nepenthes/vuln-iis.conf
 share/examples/nepenthes/vuln-kuang2.conf
@@ -144,5 +155,11 @@ share/examples/nepenthes/x-2.conf
 @sample /var/nepenthes/cache/
 @sample /var/nepenthes/cache/nepenthes/
 @sample /var/nepenthes/cache/nepenthes/geolocation/
+@sample /var/nepenthes/cache/nepenthes/signatures/
+share/examples/nepenthes/shellcode-signatures.sc
+@sample /var/nepenthes/cache/nepenthes/signatures/shellcode-signatures.sc
 @sample /var/nepenthes/hexdumps/
 @sample /var/nepenthes/log/
+@sample /var/nepenthes/spool/
+@sample /var/nepenthes/spool/nepenthes/
+@sample /var/nepenthes/spool/nepenthes/gotek/

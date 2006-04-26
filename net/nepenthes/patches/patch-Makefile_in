@@ -1,13 +1,30 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2006/04/14 17:08:25 jolan Exp $
---- Makefile.in.orig	Sun Jan 15 16:46:20 2006
-+++ Makefile.in	Wed Apr  5 03:32:42 2006
-@@ -686,12 +686,6 @@ install-data-local:
+$OpenBSD: patch-Makefile_in,v 1.2 2006/04/26 19:06:17 jolan Exp $
+--- Makefile.in.orig	Wed Apr 26 18:47:56 2006
++++ Makefile.in	Wed Apr 26 18:49:51 2006
+@@ -198,7 +198,7 @@ AUTOMAKE_OPTIONS = foreign
+ SUBDIRS = nepenthes-core modules 
+ #tools
+ EXTRA_DIST = configure.ac CHANGES doc/README.VFS doc/logo-shaded.svg doc/nepenthes.8 conf/nepenthes.conf.dist
+-docdir = $(prefix)/share/doc
++docdir = $(prefix)/share/doc/nepenthes
+ doc_DATA = doc/README.VFS doc/logo-shaded.svg
+ 
+ #sysconf_DATA = conf/nepenthes.conf.dist
+@@ -691,19 +691,9 @@ install-data-local:
  	$(mkinstalldirs) $(DESTDIR)$(mandir)
  	$(mkinstalldirs) $(DESTDIR)$(mandir)/man8
  	$(INSTALL_DATA) $(srcdir)/doc/nepenthes.8 $(DESTDIR)$(mandir)/man8/nepenthes.8;
 -	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/cache
 -	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/cache/nepenthes
 -	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/cache/nepenthes/geolocation
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/cache/nepenthes/signatures
+ 
+-	$(INSTALL_DATA) modules/shellcode-signatures/shellcode-signatures.sc $(DESTDIR)$(localstatedir)/cache/nepenthes/signatures
++	$(INSTALL_DATA) modules/shellcode-signatures/shellcode-signatures.sc $(DESTDIR)$(prefix)/share/examples/nepenthes/shellcode-signatures.sc
+ 
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/spool
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/spool/nepenthes
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/spool/nepenthes/gotek
 -	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/log
 -	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/binaries
 -	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/hexdumps
