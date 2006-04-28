@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2006/01/14 00:07:29 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2006/04/28 04:39:39 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"image viewer for KDE"
 
-DISTNAME=	gwenview-1.2.0
-PKGNAME=	${DISTNAME}p1
-SHARED_LIBS=	gwenviewcore	2.0
+DISTNAME=	gwenview-1.3.1
+SHARED_LIBS=	gwenviewcore	3.0
 CATEGORIES=	graphics x11 x11/kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gwenview/}
 EXTRACT_SUFX=	.tar.bz2
@@ -25,7 +24,7 @@ LIB_DEPENDS=	kdecore.6,DCOP,kdefx,kdeprint,kdesu,kparts,kdeui,kio,kwalletclient:
 		kipi::graphics/libkipi
 
 MODULES=	x11/kde
-MODKDE_VERSION= 3.4
+MODKDE_VERSION= 3.5
 
 PORTHOME=	${WRKDIR}
 
