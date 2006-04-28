@@ -12,6 +12,11 @@ Flavors:
     previously installed devel/jdk/1.5 package, the port will
     build the jdk twice!
 
+  alt_bootstrap
+    Bootstrap the jdk using kaffe, Xalan and solaris class files.
+    This method avoids the need for having devel/jdk/1.4 as a
+    build depend.
+
   no_web
     The Mozilla plugin and Java Web Start (javaws) are not built.
 

@@ -1,0 +1,16 @@
+$OpenBSD: patch-j2se_make_common_Defs_gmk,v 1.3 2006/04/28 20:56:15 kurt Exp $
+--- j2se/make/common/Defs.gmk.orig	Fri Apr 14 01:27:56 2006
++++ j2se/make/common/Defs.gmk	Thu Apr 27 21:26:58 2006
+@@ -604,7 +604,11 @@ JAVAC_CMD 	   = $(JAVAC) $(JAVAC_VMFLAGS
+ # variable in $(BUILDDIR)/java/GNUmakefile.
+ #
+ JAVA_BOOT      = $(BOOTDIR)/bin/java -Xbootclasspath/p:$(BUILDDIR)/sun/javac/javac/gjc.jar
+-JAVAC_BOOT     = $(BOOTDIR)/bin/javac -J-Xbootclasspath/p:$(BUILDDIR)/sun/javac/javac/gjc.jar -Xbootclasspath/p:$(BUILDDIR)/sun/javac/javac/collect.jar -target jsr14
++ifndef ALT_BOOTSTRAP
++JAVAC_BOOT	= $(BOOTDIR)/bin/javac -J-Xbootclasspath/p:$(BUILDDIR)/sun/javac/javac/gjc.jar -Xbootclasspath/p:$(BUILDDIR)/sun/javac/javac/collect.jar -target jsr14
++else
++JAVAC_BOOT     = $(BOOTDIR)/bin/javac -classpath $(BUILDDIR)/sun/javac/javac/gjc.jar:$(BUILDDIR)/sun/javac/javac/collect.jar -target 1.4
++endif
+ JAVAC_BOOT_CMD = $(JAVAC_BOOT) $(JAVAC_BOOT_FLAGS) $(JAVACFLAGS) $(LANGUAGE_VERSION)
+ JAVAH_BOOT_CMD = $(BOOTDIR)/bin/javah -J-Xbootclasspath/p:$(BUILDDIR)/sun/javac/javac/gjc.jar
+ 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/04/11 00:45:41 kurt Exp $
+# $OpenBSD: Makefile,v 1.15 2006/04/28 20:56:15 kurt Exp $
 
 ONLY_FOR_ARCHS= 	i386
 
@@ -6,8 +6,8 @@ COMMENT=		"Java2(TM) Standard Edition Dev Kit v${V}"
 COMMENT-jre=		"Java2(TM) Standard Edition Runtime Environment v${V}"
 V=			1.5.0
 DISTNAME=		jdk-1_5_0
-PKGNAME=		jdk-${V}p10
-PKGNAME-jre=		jre-${V}p10
+PKGNAME=		jdk-${V}p11
+PKGNAME-jre=		jre-${V}p11
 
 CATEGORIES=		devel/jdk java
 
@@ -70,7 +70,7 @@ FETCH_MANUALLY+=	"    bsd-jdk15-patches-3.tar.bz2"
 FETCH_MANUALLY+=	"from http://www.eyesbeyond.com/freebsddom/java/jdk15.html"
 
 FLAVORS=		no_web with_ipv6
-PSEUDO_FLAVORS=		native_bootstrap
+PSEUDO_FLAVORS=		native_bootstrap alt_bootstrap
 FLAVOR?=
 
 .if !${FLAVOR:L:Mwith_ipv6}
@@ -80,6 +80,25 @@ MAKE_ENV+=		DONT_ENABLE_IPV6="YES"
 .if ${FLAVOR:L:Mnative_bootstrap}
 BUILD_DEPENDS+=		:jdk-1.5*:devel/jdk/1.5
 MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/${JDKHOME}"
+.elif ${FLAVOR:L:Malt_bootstrap}
+DISTFILES+=		jdk-1_5_0-solaris-i586.tar.Z \
+			xalan-j_2_7_0-bin.tar.gz
+FETCH_MANUALLY+=	"Get the solaris x86 jdk file:"
+FETCH_MANUALLY+=	"    jdk-1_5_0-solaris-i586.tar.Z"
+FETCH_MANUALLY+=	"from http://java.sun.com/products/archive/j2se/5.0/index.html"
+FETCH_MANUALLY+=	"Get the Apache Xalan Java file:"
+FETCH_MANUALLY+=	"    xalan-j_2_7_0-bin.tar.gz"
+FETCH_MANUALLY+=	"from http://www.apache.org/dist/xml/xalan-j/"
+BUILD_DEPENDS+=		:kaffe->=1.1.7p0*:lang/kaffe \
+			::lang/jikes
+ALT_BOOTDIR2=		${LOCALBASE}/kaffe
+MAKE_ENV+=		ALT_BOOTDIR=${WRKDIST} \
+			ALT_BOOTDIR2=${LOCALBASE}/kaffe \
+			ALT_BOOTSTRAP=yes
+RT_JAR=			SUNWj5rt/reloc/jdk/instances/jdk1.5.0/jre/lib/rt.jar
+TOOLS_JAR=		SUNWj5dev/reloc/jdk/instances/jdk1.5.0/lib/tools.jar
+EXTRACT_CASES+=		*.Z) \
+			tar xzf ${FULLDISTDIR}/$$archive ${RT_JAR} ${TOOLS_JAR} ;;
 .else
 BUILD_DEPENDS+=		:jdk-1.4*:devel/jdk/1.4
 MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/jdk-1.4.2/"
@@ -106,10 +125,30 @@ JDKIMAGEDIR=		${OUTPUTDIR}/j2sdk-image
 JDKIMAGEDIR_G=		${OUTPUTDIR}/j2sdk-debug-image
 JREIMAGEDIR=		${OUTPUTDIR}/j2re-image
 
+.if ${FLAVOR:L:Malt_bootstrap}
+post-extract:
+	@mkdir -p ${OUTPUTDIR}/classes
+	@cd ${OUTPUTDIR}/classes && \
+		${LOCALBASE}/kaffe/bin/jar xf ${WRKDIR}/${RT_JAR} && \
+		${LOCALBASE}/kaffe/bin/jar xf ${WRKDIR}/${TOOLS_JAR} && \
+		rm -rf META-INF
+	@rm -rf ${WRKDIR}/SUNWj5*
+.endif
+
 pre-patch:
 	@cd ${WRKDIR} &&  \
 		${CHMOD} -R u+w * && \
 		${PATCH} -p0 -z .orig.bsd --quiet < ${WRKDIR}/jdk15.patches
+
+.if ${FLAVOR:L:Malt_bootstrap}
+post-patch:
+	@cd ${WRKDIR}/bin && \
+		${CHMOD} +x bootscript
+.for prog in java javac javah jar
+	@cd ${WRKDIR}/bin && \
+		ln -s bootscript ${prog}
+.endfor
+.endif
 
 post-build:
 	@rm -rf ${JDKIMAGEDIR}/demo/jfc/SwingSet2/resources \

@@ -1,0 +1,32 @@
+$OpenBSD: patch-bin_bootscript,v 1.1 2006/04/28 20:56:15 kurt Exp $
+--- bin/bootscript.orig	Thu Apr 13 15:25:11 2006
++++ bin/bootscript	Thu Apr 13 21:45:30 2006
+@@ -0,0 +1,28 @@
++#!/bin/sh
++
++# this makes sure the sanity check passes
++case $1 in
++  -version)
++    echo 'java version "1.4.2"'
++    exit 0
++  ;;
++esac;
++
++progname=`basename $0`
++
++case $progname in
++  jar|java|javah)
++    exec $ALT_BOOTDIR2/bin/$progname "$@"
++    ;;
++  javac)
++    # for select cases only
++    # use javac in ALT_BOOTDIR2
++    case "$*" in
++      *hotspot*|*\.\.\/tools\/*|*java\.text\/tools\/*)
++#        exec $ALT_BOOTDIR2/bin/javac "$@"
++        exec jikes -bootclasspath `dirname $0`/../control/build/bsd-i586/classes "$@"
++        ;;
++    esac;
++esac;
++
++exit 0

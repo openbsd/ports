@@ -1,0 +1,19 @@
+$OpenBSD: patch-hotspot_build_bsd_makefiles_jvmti_make,v 1.1 2006/04/28 20:56:15 kurt Exp $
+--- hotspot/build/bsd/makefiles/jvmti.make.orig	Fri Apr 14 01:27:55 2006
++++ hotspot/build/bsd/makefiles/jvmti.make	Thu Apr 27 21:26:10 2006
+@@ -40,7 +40,15 @@ JvmtiGenClass = $(JvmtiOutDir)/jvmtiGen.
+ 
+ JvmtiGeneratedFiles = $(JvmtiGeneratedNames:%=$(JvmtiOutDir)/%)
+ 
++ifndef ALT_BOOTSTRAP
+ XSLT = $(QUIETLY) $(RUN.JAVA) -classpath $(JvmtiOutDir) jvmtiGen
++else
++XSLT = $(QUIETLY) $(RUN.JAVA) -Xss 1048576 \
++	-Djavax.xml.transform.TransformerFactory=org.apache.xalan.processor.TransformerFactoryImpl \
++	-Djavax.xml.parsers.DocumentBuilderFactory=org.apache.xerces.jaxp.DocumentBuilderFactoryImpl \
++	-Djavax.xml.parsers.SAXParserFactory=org.apache.xerces.jaxp.SAXParserFactoryImpl \
++	-classpath $(GAMMADIR)/../xalan-j_2_7_0/xalan.jar:$(JvmtiOutDir) jvmtiGen
++endif
+ 
+ .PHONY: all jvmtidocs clean cleanall
+ 

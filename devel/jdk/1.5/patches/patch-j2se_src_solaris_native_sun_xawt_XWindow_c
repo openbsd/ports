@@ -1,0 +1,27 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_xawt_XWindow_c,v 1.1 2006/04/28 20:56:15 kurt Exp $
+--- j2se/src/solaris/native/sun/xawt/XWindow.c.orig	Sun Apr 16 18:26:12 2006
++++ j2se/src/solaris/native/sun/xawt/XWindow.c	Thu Apr 27 21:30:38 2006
+@@ -204,10 +204,10 @@ KeymapEntry keymapTable[] =
+     {java_awt_event_KeyEvent_VK_DOWN, XK_Down, FALSE, java_awt_event_KeyEvent_KEY_LOCATION_STANDARD},
+ 
+     /* Keypad equivalents of Triangular Navigation Block */
+-    {java_awt_event_KeyEvent_VK_KP_LEFT, XK_KP_Left, FALSE, java_awt_event_KeyEvent_KEY_LOCATION_NUMPAD},
+-    {java_awt_event_KeyEvent_VK_KP_UP, XK_KP_Up, FALSE, java_awt_event_KeyEvent_KEY_LOCATION_NUMPAD},
+-    {java_awt_event_KeyEvent_VK_KP_RIGHT, XK_KP_Right, FALSE, java_awt_event_KeyEvent_KEY_LOCATION_NUMPAD},
+-    {java_awt_event_KeyEvent_VK_KP_DOWN, XK_KP_Down, FALSE, java_awt_event_KeyEvent_KEY_LOCATION_NUMPAD},
++    {java_awt_event_KeyEvent_VK_LEFT, XK_KP_Left, FALSE, java_awt_event_KeyEvent_KEY_LOCATION_NUMPAD},
++    {java_awt_event_KeyEvent_VK_UP, XK_KP_Up, FALSE, java_awt_event_KeyEvent_KEY_LOCATION_NUMPAD},
++    {java_awt_event_KeyEvent_VK_RIGHT, XK_KP_Right, FALSE, java_awt_event_KeyEvent_KEY_LOCATION_NUMPAD},
++    {java_awt_event_KeyEvent_VK_DOWN, XK_KP_Down, FALSE, java_awt_event_KeyEvent_KEY_LOCATION_NUMPAD},
+ 
+     /* Other vendor-specific Triangular Navigation Block */
+     {java_awt_event_KeyEvent_VK_LEFT, osfXK_Left, FALSE, java_awt_event_KeyEvent_KEY_LOCATION_STANDARD},
+@@ -742,7 +742,7 @@ handleKeyEventWithNumLockMask(XEvent *ev
+ {
+     KeySym originalKeysym = *keysym;
+ 
+-#ifndef __linux__
++#if !defined(__linux__) && !defined(_ALLBSD_SOURCE)
+     /* The following code on Linux will cause the keypad keys
+      * not to echo on JTextField when the NumLock is on. The
+      * keysyms will be 0, because the last parameter 2 is not defined.
