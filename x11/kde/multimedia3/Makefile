@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2006/04/01 10:49:21 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2006/04/29 05:31:45 brad Exp $
 
 COMMENT= 		"K Desktop Environment, multimedia applications"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.2
 DISTNAME=		kdemultimedia-${VERSION}
-PKGNAME=		${DISTNAME}
+PKGNAME=		${DISTNAME}p1
 MODKDE_VERSION=		3.5.2
 SHARED_LIBS=		arts_mpeglib-0.3.0	1.0 \
 			arts_mpeglib		1.0 \
@@ -44,7 +44,8 @@ LIB_DEPENDS= DCOP,kdecore.6,kdefakes,kdefx,kdesu,kdeui,kio,khtml,kmid,kparts,kme
 	ltdl::devel/libtool,-ltdl \
 	theora::multimedia/libtheora \
 	::devel/gstreamer-plugins \
-	akode::audio/akode
+	akode::audio/akode \
+	xine::multimedia/xine-lib
 
 EXTRA_CONFIG=	xdg/menus/applications-merged/kde-multimedia-music.menu 
 SAMPLECONFDIR=${PREFIX}/share/apps/kde-conf-sample
@@ -62,6 +63,6 @@ WANTLIB=	ICE SM X11 Xext Xrender Xv Xxf86dga Xxf86vm art_lgpl_2 \
 		artsflow artsflow_idl audiofile c esd glib-2.0.0.0 \
 		gmodule-2.0.0.0 gthread-2.0.0.0 iconv intl jpeg kmedia2_idl m \
 		mad mcop ossaudio png pthread qtmcop soundserver_idl stdc++ \
-		util vorbisfile z gobject-2.0.0.0 pcreposix xml2 pcre
+		util vorbisfile z gobject-2.0.0.0 pcreposix xml2 pcre freetype
 
 .include <bsd.port.mk>

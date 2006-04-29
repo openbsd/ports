@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2006/04/01 10:49:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.25 2006/04/29 05:31:45 brad Exp $
 bin/artsbuilder
 bin/artscontrol
 bin/juk
@@ -264,6 +264,8 @@ ${KDE}/noatun_winskin.la
 ${KDE}/noatun_winskin.so
 ${KDE}/noatunsimple.la
 ${KDE}/noatunsimple.so
+${KDE}/videothumbnail.la
+${KDE}/videothumbnail.so
 lib/libarts_akode.la
 lib/libarts_akode.so
 @lib lib/libarts_mpeglib-0.3.0.so.${LIBarts_mpeglib-0.3.0_VERSION}
@@ -271,6 +273,8 @@ lib/libarts_mpeglib.la
 @lib lib/libarts_mpeglib.so.${LIBarts_mpeglib_VERSION}
 lib/libarts_splay.la
 @lib lib/libarts_splay.so.${LIBarts_splay_VERSION}
+lib/libarts_xine.la
+lib/libarts_xine.so
 lib/libartsbuilder.la
 @lib lib/libartsbuilder.so.${LIBartsbuilder_VERSION}
 lib/libartscontrolapplet.la
@@ -474,6 +478,8 @@ lib/mcop/noatunarts.mcopclass
 lib/mcop/noatunarts.mcoptype
 lib/mcop/winskinvis.mcopclass
 lib/mcop/winskinvis.mcoptype
+lib/mcop/xineAudioPlayObject.mcopclass
+lib/mcop/xineVideoPlayObject.mcopclass
 share/applications/kde/artsbuilder.desktop
 share/applications/kde/artscontrol.desktop
 share/applications/kde/audiocd.desktop
@@ -1002,6 +1008,10 @@ share/apps/noatun/winskin.plugin
 share/apps/noatun/yhconfig.kcfg
 share/apps/profiles/
 share/apps/profiles/kscd.profile.xml
+share/apps/videothumbnail/
+share/apps/videothumbnail/sprocket-large.png
+share/apps/videothumbnail/sprocket-medium.png
+share/apps/videothumbnail/sprocket-small.png
 share/autostart/restore_kmix_volumes.desktop
 share/config.kcfg/
 share/config.kcfg/audiocd_lame_encoder.kcfg
@@ -1166,6 +1176,7 @@ share/doc/HTML/en/noatun/
 share/doc/HTML/en/noatun/common
 share/doc/HTML/en/noatun/index.cache.bz2
 share/doc/HTML/en/noatun/index.docbook
+share/icons/
 share/icons/crystalsvg/128x128/actions/artsaudiomanager.png
 share/icons/crystalsvg/128x128/actions/artsenvironment.png
 share/icons/crystalsvg/128x128/actions/artsfftscope.png
@@ -1204,6 +1215,9 @@ share/icons/crystalsvg/scalable/actions/artsenvironment.svgz
 share/icons/crystalsvg/scalable/actions/artsfftscope.svgz
 share/icons/crystalsvg/scalable/actions/artsmediatypes.svgz
 share/icons/crystalsvg/scalable/actions/artsmidimanager.svgz
+share/icons/hicolor/
+share/icons/hicolor/128x128/
+share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/artscontrol.png
 share/icons/hicolor/128x128/apps/juk.png
 share/icons/hicolor/128x128/apps/kaboodle.png
@@ -1211,6 +1225,8 @@ share/icons/hicolor/128x128/apps/kmix.png
 share/icons/hicolor/128x128/apps/krec.png
 share/icons/hicolor/128x128/apps/kscd.png
 share/icons/hicolor/128x128/apps/noatun.png
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/artsbuilder.png
 share/icons/hicolor/16x16/apps/artscontrol.png
 share/icons/hicolor/16x16/apps/juk.png
@@ -1221,10 +1237,14 @@ share/icons/hicolor/16x16/apps/kmix.png
 share/icons/hicolor/16x16/apps/krec.png
 share/icons/hicolor/16x16/apps/kscd.png
 share/icons/hicolor/16x16/apps/noatun.png
+share/icons/hicolor/22x22/
+share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/artscontrol.png
 share/icons/hicolor/22x22/apps/kaboodle.png
 share/icons/hicolor/22x22/apps/krec.png
 share/icons/hicolor/22x22/apps/noatun.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/artscontrol.png
 share/icons/hicolor/32x32/apps/juk.png
 share/icons/hicolor/32x32/apps/kaboodle.png
@@ -1234,6 +1254,8 @@ share/icons/hicolor/32x32/apps/kmix.png
 share/icons/hicolor/32x32/apps/krec.png
 share/icons/hicolor/32x32/apps/kscd.png
 share/icons/hicolor/32x32/apps/noatun.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/artscontrol.png
 share/icons/hicolor/48x48/apps/juk.png
 share/icons/hicolor/48x48/apps/kaboodle.png
@@ -1242,6 +1264,8 @@ share/icons/hicolor/48x48/apps/kmix.png
 share/icons/hicolor/48x48/apps/krec.png
 share/icons/hicolor/48x48/apps/kscd.png
 share/icons/hicolor/48x48/apps/noatun.png
+share/icons/hicolor/64x64/
+share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/artscontrol.png
 share/icons/hicolor/64x64/apps/juk.png
 share/icons/hicolor/64x64/apps/kaboodle.png
@@ -1249,6 +1273,8 @@ share/icons/hicolor/64x64/apps/kmix.png
 share/icons/hicolor/64x64/apps/krec.png
 share/icons/hicolor/64x64/apps/kscd.png
 share/icons/hicolor/64x64/apps/noatun.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/artsbuilder.svgz
 share/icons/hicolor/scalable/apps/artscontrol.svgz
 share/icons/locolor/
@@ -1282,5 +1308,6 @@ share/services/kfile_wav.desktop
 share/services/kmixctrl_restore.desktop
 share/services/krec_exportogg.desktop
 share/services/krec_exportwave.desktop
+share/services/videothumbnail.desktop
 share/servicetypes/audiomidi.desktop
 share/servicetypes/krec_exportitem.desktop
