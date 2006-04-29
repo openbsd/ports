@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/04/26 20:05:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2006/04/29 15:37:44 naddy Exp $
 
 COMMENT=	"lightweight BitTorrent client"
 COMMENT-gui=	"lightweight BitTorrent client with graphical interface"
 
 DISTNAME=	Transmission-0.5
-PKGNAME=	${DISTNAME:L}
-PKGNAME-gui=	${DISTNAME:L:S/-/-gui-/}
+PKGNAME=	${DISTNAME:L}p0
+PKGNAME-gui=	${DISTNAME:L:S/-/-gui-/}p0
 CATEGORIES=	net
 HOMEPAGE=	http://transmission.m0k.org/
 
