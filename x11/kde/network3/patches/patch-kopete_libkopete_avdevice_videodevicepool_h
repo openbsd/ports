@@ -1,0 +1,49 @@
+$OpenBSD: patch-kopete_libkopete_avdevice_videodevicepool_h,v 1.1 2006/04/29 01:02:24 brad Exp $
+--- kopete/libkopete/avdevice/videodevicepool.h.orig	Fri Mar 17 05:12:32 2006
++++ kopete/libkopete/avdevice/videodevicepool.h	Fri Apr 28 15:50:23 2006
+@@ -27,6 +27,7 @@
+ #include <qstring.h>
+ #include <qimage.h>
+ #include <qvaluevector.h>
++#include <qmutex.h>
+ #include <kcombobox.h>
+ #include "videodevice.h"
+ #include "kopete_export.h"
+@@ -78,6 +79,7 @@ public:
+ 	VideoDeviceModelPool m_modelvector;  // Vector to be filled with unique device models
+ 	int fillDeviceKComboBox(KComboBox *combobox);
+ 	int fillInputKComboBox(KComboBox *combobox);
++	int fillStandardKComboBox(KComboBox *combobox);
+ 	unsigned int currentDevice();
+ 	int currentInput();
+ 	unsigned int inputs();
+@@ -92,12 +94,16 @@ public:
+ 	float setWhiteness(float whiteness);
+ 	float getHue();
+ 	float setHue(float hue);
++
+ 	bool getAutoBrightnessContrast();
+ 	bool setAutoBrightnessContrast(bool brightnesscontrast);
+ 	bool getAutoColorCorrection();
+ 	bool setAutoColorCorrection(bool colorcorrection);
+ 	bool getImageAsMirror();
+ 	bool setImageAsMirror(bool imageasmirror);
++
++	bool getDisableMMap();
++	bool setDisableMMap(bool disablemmap);
+ 	bool getWorkaroundBrokenDriver();
+ 	bool setWorkaroundBrokenDriver(bool workaroundbrokendriver);
+ 
+@@ -111,9 +117,12 @@ protected:
+ 	void guessDriver();
+ 	unsigned int m_current_device;
+ 	struct imagebuffer m_buffer; // only used when no devices were found
++
++	QMutex m_ready;
+ private:
+ 	VideoDevicePool();
+ 	static VideoDevicePool* s_self;
++	static __u64 m_clients; // Number of instances
+ };
+ 
+ }

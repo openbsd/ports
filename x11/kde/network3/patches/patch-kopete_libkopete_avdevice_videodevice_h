@@ -1,0 +1,118 @@
+$OpenBSD: patch-kopete_libkopete_avdevice_videodevice_h,v 1.1 2006/04/29 01:02:24 brad Exp $
+--- kopete/libkopete/avdevice/videodevice.h.orig	Fri Mar 17 05:12:32 2006
++++ kopete/libkopete/avdevice/videodevice.h	Fri Apr 28 15:51:55 2006
+@@ -48,6 +48,10 @@
+ #include <linux/fs.h>
+ #include <linux/kernel.h>
+ #include <linux/videodev.h>
++#define VIDEO_MODE_PAL_Nc  3
++#define VIDEO_MODE_PAL_M   4
++#define VIDEO_MODE_PAL_N   5
++#define VIDEO_MODE_NTSC_JP 6
+ #define __STRICT_ANSI__
+ 
+ #endif // __linux__
+@@ -102,6 +106,50 @@ typedef enum
+ 
+ typedef enum
+ {
++	STANDARD_NONE		= 0,
++	STANDARD_PAL_B		= (1 << 0),
++	STANDARD_PAL_B1		= (1 << 1),
++	STANDARD_PAL_G		= (1 << 2),
++	STANDARD_PAL_H		= (1 << 3),
++	STANDARD_PAL_I		= (1 << 4),
++	STANDARD_PAL_D		= (1 << 5),
++	STANDARD_PAL_D1		= (1 << 6),
++	STANDARD_PAL_K		= (1 << 7),
++	STANDARD_PAL_M		= (1 << 8),
++	STANDARD_PAL_N		= (1 << 9),
++	STANDARD_PAL_Nc		= (1 << 10),
++	STANDARD_PAL_60		= (1 << 11),
++// STANDARD_PAL_60 is a hybrid standard with 525 lines, 60 Hz refresh rate, and PAL color modulation with a 4.43 MHz color subcarrier. Some PAL video recorders can play back NTSC tapes in this mode for display on a 50/60 Hz agnostic PAL TV.
++	STANDARD_NTSC_M		= (1 << 12),
++	STANDARD_NTSC_M_JP	= (1 << 13),
++	STANDARD_NTSC_443	= (1 << 14),
++// STANDARD_NTSC_443 is a hybrid standard with 525 lines, 60 Hz refresh rate, and NTSC color modulation with a 4.43 MHz color subcarrier.
++	STANDARD_SECAM_B	= (1 << 16),
++	STANDARD_SECAM_D	= (1 << 17),
++	STANDARD_SECAM_G	= (1 << 18),
++	STANDARD_SECAM_H	= (1 << 19),
++	STANDARD_SECAM_K	= (1 << 20),
++	STANDARD_SECAM_K1	= (1 << 21),
++	STANDARD_SECAM_L	= (1 << 22),
++	STANDARD_SECAM_LC	= (1 << 23),
++// ATSC/HDTV
++	STANDARD_ATSC_8_VSB	= (1 << 24),
++	STANDARD_ATSC_16_VSB	= (1 << 25),
++
++	STANDARD_PAL_BG		= ( STANDARD_PAL_B   | STANDARD_PAL_B1   | STANDARD_PAL_G  ),
++	STANDARD_PAL_DK		= ( STANDARD_PAL_D   | STANDARD_PAL_D1   | STANDARD_PAL_K  ),
++	STANDARD_PAL		= ( STANDARD_PAL_BG  | STANDARD_PAL_DK   | STANDARD_PAL_H    | STANDARD_PAL_I  ),
++	STANDARD_NTSC		= ( STANDARD_NTSC_M  | STANDARD_NTSC_M_JP ),
++	STANDARD_SECAM_DK       = ( STANDARD_SECAM_D | STANDARD_SECAM_K  | STANDARD_SECAM_K1 ),
++	STANDARD_SECAM		= ( STANDARD_SECAM_B | STANDARD_SECAM_G  | STANDARD_SECAM_H  | STANDARD_SECAM_DK | STANDARD_SECAM_L),
++	STANDARD_525_60		= ( STANDARD_PAL_M   | STANDARD_PAL_60   | STANDARD_NTSC     | STANDARD_NTSC_443),
++	STANDARD_625_50		= ( STANDARD_PAL     | STANDARD_PAL_N    | STANDARD_PAL_Nc   | STANDARD_SECAM),
++	STANDARD_ALL		= ( STANDARD_525_60  | STANDARD_625_50)
++} signal_standard;
++
++
++typedef enum
++{
+ 	IO_METHOD_NONE,
+ 	IO_METHOD_READ,
+ 	IO_METHOD_MMAP,
+@@ -140,12 +188,19 @@ public:
+ 	int minHeight();
+ 	int maxHeight();
+ 	int setSize( int newwidth, int newheight);
++
+ 	pixel_format setPixelFormat(pixel_format newformat);
+ 	int pixelFormatCode(pixel_format pixelformat);
+ 	pixel_format pixelFormatForPalette( int palette );
+ 	int pixelFormatDepth(pixel_format pixelformat);
+ 	QString pixelFormatName(pixel_format pixelformat);
+ 	QString pixelFormatName(int pixelformat);
++
++	__u64 signalStandardCode(signal_standard standard);
++	QString signalStandardName(signal_standard standard);
++	QString signalStandardName(int standard);
++	int detectSignalStandards();
++
+ 	int currentInput();
+ 	int selectInput(int input);
+ 	int setInputParameters();
+@@ -166,12 +221,16 @@ public:
+ 	float setWhiteness(float whiteness);
+ 	float getHue();
+ 	float setHue(float Hue);
++
+ 	bool getAutoBrightnessContrast();
+ 	bool setAutoBrightnessContrast(bool brightnesscontrast);
+ 	bool getAutoColorCorrection();
+ 	bool setAutoColorCorrection(bool colorcorrection);
+ 	bool getImageAsMirror();
+ 	bool setImageAsMirror(bool imageasmirror);
++
++	bool getDisableMMap();
++	bool setDisableMMap(bool disablemmap);
+ 	bool getWorkaroundBrokenDriver();
+ 	bool setWorkaroundBrokenDriver(bool workaroundbrokendriver);
+ 
+@@ -197,6 +256,7 @@ public:
+ 	struct v4l2_cropcap cropcap;
+ 	struct v4l2_crop crop;
+ 	struct v4l2_format fmt;
++//	struct v4l2_input m_input;
+ #endif
+ 	struct video_capability V4L_capabilities;
+ 	struct video_buffer V4L_videobuffer;
+@@ -206,6 +266,7 @@ public:
+ protected:
+ 	int currentwidth, minwidth, maxwidth, currentheight, minheight, maxheight;
+ 
++	bool m_disablemmap;
+ 	bool m_workaroundbrokendriver;
+ 
+ 	QValueVector<rawbuffer> m_rawbuffers;
