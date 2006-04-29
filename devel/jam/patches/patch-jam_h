@@ -1,12 +1,23 @@
-$OpenBSD: patch-jam_h,v 1.1.1.1 2003/02/13 14:51:43 naddy Exp $
---- jam.h.orig	Wed Mar 20 18:40:21 2002
-+++ jam.h	Thu Feb 13 15:18:22 2003
-@@ -380,7 +380,7 @@
+$OpenBSD: patch-jam_h,v 1.2 2006/04/29 15:35:47 naddy Exp $
+--- jam.h.orig	Fri Apr 21 17:09:04 2006
++++ jam.h	Fri Apr 21 17:12:06 2006
+@@ -290,6 +290,11 @@
+ # define OS_NETBSD
+ # define NO_VFORK
+ # endif
++# ifdef __OpenBSD__
++# define unix
++# define OS_MINOR "OS=OPENBSD"
++# define OS_OPENBSD
++# endif
+ # ifdef __QNX__
+ # ifdef __QNXNTO__
+ # define OSMINOR "OS=QNXNTO"
+@@ -388,6 +393,7 @@
+      !defined(OS_NEXT) && \
+      !defined(OS_MACHTEN) && \
       !defined(OS_MACOSX) && \
++     !defined(OS_OPENBSD) && \
       !defined(OS_RHAPSODY) && \
       !defined(OS_MVS)
--# include <malloc.h>
-+# include <stdlib.h>
- # endif
- 
- # endif 
+ # include <malloc.h>

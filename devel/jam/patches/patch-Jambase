@@ -1,0 +1,12 @@
+$OpenBSD: patch-Jambase,v 1.1 2006/04/29 15:35:47 naddy Exp $
+--- Jambase.orig	Fri Apr 21 21:21:08 2006
++++ Jambase	Fri Apr 21 21:21:27 2006
+@@ -516,7 +516,7 @@ else if $(UNIX)
+ 	LEX		?= lex ;
+ 	LINKFLAGS	?= $(CCFLAGS) ;
+ 	LINKLIBS	?= ;
+-	OPTIM		?= -O ;
++	OPTIM		?= ;
+ 	RANLIB		?= ranlib ;
+ 	YACC		?= yacc ;
+ 	YACCGEN		?= .c ;

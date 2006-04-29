@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2006/04/21 15:02:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2006/04/29 15:35:47 naddy Exp $
 
 COMMENT=		"build utility like make"
 
-DISTNAME=	 	jam-2.4
+DISTNAME=	 	jam-2.5
 CATEGORIES=	  	devel
 
 HOMEPAGE=		http://www.perforce.com/jam/jam.html
