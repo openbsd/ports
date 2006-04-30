@@ -1,7 +1,7 @@
-$OpenBSD: patch-mysql-test_mysql-test-run_sh,v 1.6 2005/09/04 22:51:24 brad Exp $
---- mysql-test/mysql-test-run.sh.orig	Fri Jul 15 06:39:36 2005
-+++ mysql-test/mysql-test-run.sh	Tue Jul 26 10:22:14 2005
-@@ -99,7 +99,6 @@ sleep_until_file_created ()
+$OpenBSD: patch-mysql-test_mysql-test-run_sh,v 1.7 2006/04/30 20:55:44 brad Exp $
+--- mysql-test/mysql-test-run.sh.orig	Fri Mar 31 12:10:41 2006
++++ mysql-test/mysql-test-run.sh	Mon Apr 17 01:25:23 2006
+@@ -101,7 +101,6 @@ sleep_until_file_created ()
      loop=`expr $loop - 1`
    done
    echo "ERROR: $file was not created in $org_time seconds;  Aborting"

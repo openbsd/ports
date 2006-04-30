@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.17 2006/03/10 23:51:53 brad Exp $
+@comment $OpenBSD: PLIST-tests,v 1.18 2006/04/30 20:55:44 brad Exp $
 share/mysql-test/
 share/mysql-test/README
 share/mysql-test/cacert.pem
@@ -34,6 +34,7 @@ share/mysql-test/include/have_gb2312.inc
 share/mysql-test/include/have_gbk.inc
 share/mysql-test/include/have_geometry.inc
 share/mysql-test/include/have_innodb.inc
+share/mysql-test/include/have_latin2_ch.inc
 share/mysql-test/include/have_lowercase0.inc
 share/mysql-test/include/have_multi_ndb.inc
 share/mysql-test/include/have_ndb.inc
@@ -43,6 +44,7 @@ share/mysql-test/include/have_query_cache.inc
 share/mysql-test/include/have_sjis.inc
 share/mysql-test/include/have_tis620.inc
 share/mysql-test/include/have_ucs2.inc
+share/mysql-test/include/have_udf.inc
 share/mysql-test/include/have_ujis.inc
 share/mysql-test/include/im_check_os.inc
 share/mysql-test/include/is_debug_build.inc
@@ -69,6 +71,7 @@ share/mysql-test/include/system_db_struct.inc
 share/mysql-test/include/test_outfile.inc
 share/mysql-test/include/testdb_only.inc
 share/mysql-test/include/varchar.inc
+share/mysql-test/include/wait_slave_status.inc
 share/mysql-test/include/windows.inc
 share/mysql-test/install_test_db
 share/mysql-test/lib/
@@ -142,6 +145,7 @@ share/mysql-test/r/ctype_gbk.result
 share/mysql-test/r/ctype_latin1.result
 share/mysql-test/r/ctype_latin1_de.result
 share/mysql-test/r/ctype_latin2.result
+share/mysql-test/r/ctype_latin2_ch.result
 share/mysql-test/r/ctype_many.result
 share/mysql-test/r/ctype_mb.result
 share/mysql-test/r/ctype_recoding.result
@@ -149,6 +153,7 @@ share/mysql-test/r/ctype_sjis.result
 share/mysql-test/r/ctype_tis620.result
 share/mysql-test/r/ctype_uca.result
 share/mysql-test/r/ctype_ucs.result
+share/mysql-test/r/ctype_ucs2_def.result
 share/mysql-test/r/ctype_ucs_binlog.result
 share/mysql-test/r/ctype_ujis.result
 share/mysql-test/r/ctype_utf8.result
@@ -238,6 +243,7 @@ share/mysql-test/r/have_gb2312.require
 share/mysql-test/r/have_gbk.require
 share/mysql-test/r/have_geometry.require
 share/mysql-test/r/have_innodb.require
+share/mysql-test/r/have_latin2_ch.require
 share/mysql-test/r/have_met_timezone.require
 share/mysql-test/r/have_moscow_leap_timezone.require
 share/mysql-test/r/have_ndb.require
@@ -249,6 +255,7 @@ share/mysql-test/r/have_sjis.require
 share/mysql-test/r/have_symlink.require
 share/mysql-test/r/have_tis620.require
 share/mysql-test/r/have_ucs2.require
+share/mysql-test/r/have_udf.require
 share/mysql-test/r/have_ujis.require
 share/mysql-test/r/having.result
 share/mysql-test/r/heap.result
@@ -490,6 +497,7 @@ share/mysql-test/r/rpl_start_stop_slave.result
 share/mysql-test/r/rpl_temporary.result
 share/mysql-test/r/rpl_timezone.result
 share/mysql-test/r/rpl_trigger.result
+share/mysql-test/r/rpl_trunc_temp.result
 share/mysql-test/r/rpl_until.result
 share/mysql-test/r/rpl_user_variables.result
 share/mysql-test/r/rpl_variables.result
@@ -532,6 +540,7 @@ share/mysql-test/r/sum_distinct-big.result
 share/mysql-test/r/sum_distinct.result
 share/mysql-test/r/symlink.result
 share/mysql-test/r/synchronization.result
+share/mysql-test/r/sysdate_is_now.result
 share/mysql-test/r/system_mysql_db.result
 share/mysql-test/r/system_mysql_db_refs.result
 share/mysql-test/r/tablelock.result
@@ -543,6 +552,7 @@ share/mysql-test/r/timezone3.result
 share/mysql-test/r/timezone_grant.result
 share/mysql-test/r/trigger-compat.result
 share/mysql-test/r/trigger-grant.result
+share/mysql-test/r/trigger-trans.result
 share/mysql-test/r/trigger.result
 share/mysql-test/r/true.require
 share/mysql-test/r/truncate.result
@@ -565,6 +575,7 @@ share/mysql-test/r/type_timestamp.result
 share/mysql-test/r/type_uint.result
 share/mysql-test/r/type_varchar.result
 share/mysql-test/r/type_year.result
+share/mysql-test/r/udf.result
 share/mysql-test/r/union.result
 share/mysql-test/r/update.result
 share/mysql-test/r/user_limits.result
@@ -583,6 +594,7 @@ share/mysql-test/server-cert.pem
 share/mysql-test/server-key.pem
 share/mysql-test/std_data/
 share/mysql-test/std_data/Moscow_leap
+share/mysql-test/std_data/bug16266.000001
 share/mysql-test/std_data/cacert.pem
 share/mysql-test/std_data/client-cert.pem
 share/mysql-test/std_data/client-key.pem
@@ -668,6 +680,7 @@ share/mysql-test/t/ctype_latin1.test
 share/mysql-test/t/ctype_latin1_de-master.opt
 share/mysql-test/t/ctype_latin1_de.test
 share/mysql-test/t/ctype_latin2.test
+share/mysql-test/t/ctype_latin2_ch.test
 share/mysql-test/t/ctype_many.test
 share/mysql-test/t/ctype_mb.test
 share/mysql-test/t/ctype_recoding.test
@@ -675,6 +688,8 @@ share/mysql-test/t/ctype_sjis.test
 share/mysql-test/t/ctype_tis620.test
 share/mysql-test/t/ctype_uca.test
 share/mysql-test/t/ctype_ucs.test
+share/mysql-test/t/ctype_ucs2_def-master.opt
+share/mysql-test/t/ctype_ucs2_def.test
 share/mysql-test/t/ctype_ucs_binlog.test
 share/mysql-test/t/ctype_ujis.test
 share/mysql-test/t/ctype_utf8.test
@@ -1061,6 +1076,7 @@ share/mysql-test/t/rpl_timezone-master.opt
 share/mysql-test/t/rpl_timezone-slave.opt
 share/mysql-test/t/rpl_timezone.test
 share/mysql-test/t/rpl_trigger.test
+share/mysql-test/t/rpl_trunc_temp.test
 share/mysql-test/t/rpl_until.test
 share/mysql-test/t/rpl_user_variables.test
 share/mysql-test/t/rpl_variables-master.opt
@@ -1102,6 +1118,8 @@ share/mysql-test/t/sum_distinct-big.test
 share/mysql-test/t/sum_distinct.test
 share/mysql-test/t/symlink.test
 share/mysql-test/t/synchronization.test
+share/mysql-test/t/sysdate_is_now-master.opt
+share/mysql-test/t/sysdate_is_now.test
 share/mysql-test/t/system_mysql_db.test
 share/mysql-test/t/system_mysql_db_fix-master.opt
 share/mysql-test/t/system_mysql_db_fix.test
@@ -1117,6 +1135,7 @@ share/mysql-test/t/timezone3.test
 share/mysql-test/t/timezone_grant.test
 share/mysql-test/t/trigger-compat.test
 share/mysql-test/t/trigger-grant.test
+share/mysql-test/t/trigger-trans.test
 share/mysql-test/t/trigger.test
 share/mysql-test/t/truncate.test
 share/mysql-test/t/type_binary.test
@@ -1138,6 +1157,7 @@ share/mysql-test/t/type_timestamp.test
 share/mysql-test/t/type_uint.test
 share/mysql-test/t/type_varchar.test
 share/mysql-test/t/type_year.test
+share/mysql-test/t/udf.test
 share/mysql-test/t/union-master.opt
 share/mysql-test/t/union.test
 share/mysql-test/t/update.test
