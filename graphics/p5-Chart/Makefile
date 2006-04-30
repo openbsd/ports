@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/10/07 23:09:09 djm Exp $
+# $OpenBSD: Makefile,v 1.2 2006/04/30 03:05:00 djm Exp $
 
 COMMENT=	"Charting library for Perl"
 
-DISTNAME=	Chart-2.3
+DISTNAME=	Chart-2.4.1
 PKGNAME=	${DISTNAME:S/^/p5-/}
 CATEGORIES=	graphics perl5
 
