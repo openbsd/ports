@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2006/04/05 12:41:41 steven Exp $
+# $OpenBSD: Makefile,v 1.81 2006/05/01 09:56:38 espie Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += db
@@ -12,6 +12,7 @@
      SUBDIR += iodbc
      SUBDIR += libpqxx
      SUBDIR += luasqlite3
+     SUBDIR += mdbtools/snapshot
      SUBDIR += mnemo
      SUBDIR += mysql
      SUBDIR += mysql-administrator
