@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/01 09:55:33 espie Exp $
+%%SHARED%%
+bin/mdb-array
+bin/mdb-export
+bin/mdb-header
+bin/mdb-hexdump
+bin/mdb-parsecsv
+bin/mdb-prop
+bin/mdb-schema
+bin/mdb-sql
+bin/mdb-tables
+bin/mdb-ver
+include/gmdb.h
+include/mdbodbc.h
+include/mdbprivate.h
+include/mdbsql.h
+include/mdbtools.h
+include/mdbver.h
+lib/libmdb.a
+lib/libmdb.la
+lib/libmdbsql.a
+lib/libmdbsql.la
+lib/pkgconfig/
+lib/pkgconfig/libmdb.pc
+lib/pkgconfig/libmdbsql.pc
+@man man/man1/mdb-export.1
+@man man/man1/mdb-schema.1
+@man man/man1/mdb-sql.1
+@man man/man1/mdb-tables.1
+@man man/man1/mdb-ver.1

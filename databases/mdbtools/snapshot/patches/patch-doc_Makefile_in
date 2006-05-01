@@ -1,0 +1,28 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2006/05/01 09:55:33 espie Exp $
+--- doc/Makefile.in.orig	Tue Apr 25 19:49:57 2006
++++ doc/Makefile.in	Tue Apr 25 19:50:38 2006
+@@ -418,19 +418,19 @@ install.tgz: $(srcdir)/install.sgml
+ man:	mdb-tables.1 mdb-ver.1 mdb-export.1 mdb-sql.1
+ 
+ mdb-tables.1: mdb-tables.txt
+-	- $(TXT2MAN) -P $(PRODUCT) -t $(PRODUCT) -r $(RELEASE) $(srcdir)/$< > $@
++	- $(TXT2MAN) -P $(PRODUCT) -t $(PRODUCT) -r $(RELEASE) $(srcdir)/mdb-tables.txt > $@
+ 
+ mdb-ver.1: mdb-ver.txt
+-	- $(TXT2MAN) -P $(PRODUCT) -t $(PRODUCT) -r $(RELEASE) $(srcdir)/$< > $@
++	- $(TXT2MAN) -P $(PRODUCT) -t $(PRODUCT) -r $(RELEASE) $(srcdir)/mdb-ver.txt > $@
+ 
+ mdb-export.1: mdb-export.txt
+-	- $(TXT2MAN) -P $(PRODUCT) -t $(PRODUCT) -r $(RELEASE) $(srcdir)/$< > $@
++	- $(TXT2MAN) -P $(PRODUCT) -t $(PRODUCT) -r $(RELEASE) $(srcdir)/mdb-export.txt > $@
+ 
+ mdb-schema.1: mdb-schema.txt
+-	- $(TXT2MAN) -P $(PRODUCT) -t $(PRODUCT) -r $(RELEASE) $(srcdir)/$< > $@
++	- $(TXT2MAN) -P $(PRODUCT) -t $(PRODUCT) -r $(RELEASE) $(srcdir)/mdb-schema.txt > $@
+ 
+ mdb-sql.1: mdb-sql.txt
+-	- $(TXT2MAN) -P $(PRODUCT) -t $(PRODUCT) -r $(RELEASE) $(srcdir)/$< > $@
++	- $(TXT2MAN) -P $(PRODUCT) -t $(PRODUCT) -r $(RELEASE) $(srcdir)/mdb-sql.txt > $@
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_libmdb_file_c,v 1.1.1.1 2006/05/01 09:55:33 espie Exp $
+--- src/libmdb/file.c.orig	Wed Apr 26 17:12:01 2006
++++ src/libmdb/file.c	Wed Apr 26 17:12:19 2006
+@@ -123,7 +123,7 @@ MdbHandle *mdb_open(const char *filename
+ 	mdb->f->fd = -1;
+ 	mdb->f->filename = mdb_find_file(filename);
+ 	if (!mdb->f->filename) { 
+-		fprintf(stderr, "Can't alloc filename\n");
++		fprintf(stderr, "Can't find mdb file% s\n", filename);
+ 		mdb_close(mdb);
+ 		return NULL; 
+ 	}

@@ -1,0 +1,4 @@
+MDB Tools is a set of programs to help you use Microsoft Access file 
+This package contains:
+. gmdb2     - The Gnome MDB File Viewer and debugger.  Still alpha, but making
+              great progress.
