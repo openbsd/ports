@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/15 18:49:51 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2006/05/01 21:09:18 espie Exp $
 ${P5SITE}/Apache/
 ${P5SITE}/Apache/Mason.pm
 ${P5SITE}/Bundle/
@@ -9,7 +9,6 @@ ${P5SITE}/HTML/Mason/
 ${P5SITE}/HTML/Mason.pm
 ${P5SITE}/HTML/Mason/Admin.pod
 ${P5SITE}/HTML/Mason/ApacheHandler.pm
-${P5SITE}/HTML/Mason/Buffer.pm
 ${P5SITE}/HTML/Mason/CGIHandler.pm
 ${P5SITE}/HTML/Mason/Cache/
 ${P5SITE}/HTML/Mason/Cache/BaseCache.pm
@@ -25,11 +24,15 @@ ${P5SITE}/HTML/Mason/Devel.pod
 ${P5SITE}/HTML/Mason/Escapes.pm
 ${P5SITE}/HTML/Mason/Exceptions.pm
 ${P5SITE}/HTML/Mason/FakeApache.pm
+${P5SITE}/HTML/Mason/Handler.pm
 ${P5SITE}/HTML/Mason/Interp.pm
 ${P5SITE}/HTML/Mason/Lexer.pm
 ${P5SITE}/HTML/Mason/MethodMaker.pm
 ${P5SITE}/HTML/Mason/Params.pod
 ${P5SITE}/HTML/Mason/Parser.pm
+${P5SITE}/HTML/Mason/Plugin/
+${P5SITE}/HTML/Mason/Plugin.pm
+${P5SITE}/HTML/Mason/Plugin/Context.pm
 ${P5SITE}/HTML/Mason/Request.pm
 ${P5SITE}/HTML/Mason/Resolver/
 ${P5SITE}/HTML/Mason/Resolver.pm
@@ -43,7 +46,6 @@ ${P5SITE}/HTML/Mason/Utils.pm
 @man man/man3p/HTML::Mason.3p
 @man man/man3p/HTML::Mason::Admin.3p
 @man man/man3p/HTML::Mason::ApacheHandler.3p
-@man man/man3p/HTML::Mason::Buffer.3p
 @man man/man3p/HTML::Mason::CGIHandler.3p
 @man man/man3p/HTML::Mason::Cache::BaseCache.3p
 @man man/man3p/HTML::Mason::Compiler.3p
@@ -61,6 +63,8 @@ ${P5SITE}/HTML/Mason/Utils.pm
 @man man/man3p/HTML::Mason::MethodMaker.3p
 @man man/man3p/HTML::Mason::Params.3p
 @man man/man3p/HTML::Mason::Parser.3p
+@man man/man3p/HTML::Mason::Plugin.3p
+@man man/man3p/HTML::Mason::Plugin::Context.3p
 @man man/man3p/HTML::Mason::Request.3p
 @man man/man3p/HTML::Mason::Resolver.3p
 @man man/man3p/HTML::Mason::Resolver::File.3p
