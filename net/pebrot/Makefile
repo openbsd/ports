@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2005/11/21 03:19:36 kevlo Exp $
+# $OpenBSD: Makefile,v 1.11 2006/05/01 08:14:41 kevlo Exp $
 
 COMMENT=	"text-based MSN messenger client"
 
-DISTNAME=	pebrot-0.8.7.1
+DISTNAME=	pebrot-0.8.8
 CATEGORIES=	net
 
 HOMEPAGE=	http://pebrot.sourceforge.net/
@@ -19,16 +19,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pebrot/}
 
 NO_REGRESS=	Yes
 
+MODPY_VERSION=	2.4
 MODULES=	lang/python
-
-FLAVORS=	cjk
-FLAVOR?=
-
-.if ${FLAVOR:L:Mcjk}
-RUN_DEPENDS=	:py-cjkcodecs-*:converters/py-cjkcodecs
-.endif
-
-post-extract:
-	@find ${WRKSRC} -name 'CVS' -type d |xargs rm -rf
 
 .include <bsd.port.mk>
