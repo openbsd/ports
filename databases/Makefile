@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.81 2006/05/01 09:56:38 espie Exp $
+# $OpenBSD: Makefile,v 1.82 2006/05/01 12:50:38 alek Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += db
      SUBDIR += dbh
+     SUBDIR += directoryassistant
      SUBDIR += evolution-data-server
      SUBDIR += freetds
      SUBDIR += freetds,msdblib
