@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.413 2006/04/26 20:06:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.414 2006/05/01 17:54:10 naddy Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -238,7 +238,6 @@
      SUBDIR += pear-Net-URL
      SUBDIR += pear-Services-Weather
      SUBDIR += pebrot
-     SUBDIR += pebrot,cjk
      SUBDIR += pen
      SUBDIR += pfflowd
      SUBDIR += pfstat
