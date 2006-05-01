@@ -1,0 +1,7 @@
+Directory Assistant is a small application for managing a LDAP address
+book. The focus is to create a very easy to use program, with only the
+few but necessary features. The target is novice users that have their
+addresses in an LDAP server.
+
+If you want an advanced application targeted at power users, check out
+databases/gq port.
