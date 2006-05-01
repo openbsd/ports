@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.16 2006/02/01 13:02:42 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.17 2006/05/01 08:25:59 kevlo Exp $
 bin/lftp
 bin/lftpget
+lib/lftp/
 lib/liblftp-jobs.a
 lib/liblftp-jobs.la
 lib/liblftp-tasks.a
