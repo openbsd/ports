@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2006/02/01 13:53:57 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2006/05/01 08:40:46 kevlo Exp $
 
 COMMENT=	"decentralized version control system"
 
-V=		1.06
+V=		1.07
 DISTNAME=	SVK-${V}
 PKGNAME=	svk-${V}
 CATEGORIES=	devel perl5
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../../authors/id/C/CL/CLKAO/}
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/C/CL/CLKAO/}
 
 BUILD_DEPENDS=	:p5-Compress-Zlib->=1.34:archivers/p5-Compress-Zlib \
 		:p5-Algorithm-Annotate->=0.10:devel/p5-Algorithm-Annotate \
