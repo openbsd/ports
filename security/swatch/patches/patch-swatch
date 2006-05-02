@@ -1,5 +1,14 @@
---- swatch.orig	2003-12-08 03:50:55.000000000 +0000
-+++ swatch	2003-12-08 03:57:52.000000000 +0000
+--- swatch.orig	Fri Apr  4 00:33:05 2003
++++ swatch	Tue May  2 23:00:12 2006
+@@ -372,7 +372,7 @@ sub parse_command_line {
+   die "$USAGE" if not GetOptions(
+ 				 "config-file|c=s" => \$opt_config_file,
+ 				 "daemon" => \$opt_daemon,
+-				 "debug-level=i" => $opt_debug_level,
++				 "debug-level=i" => \$opt_debug_level,
+ 				 "dump-script:s" => \$opt_dump_script,
+ 				 "examine|f=s" => \$opt_examine,
+ 				 "help|h" => \$opt_help,
 @@ -411,7 +411,7 @@ sub parse_command_line {
  sub dprint {
      my $msg_lev = shift;

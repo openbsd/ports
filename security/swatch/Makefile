@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2004/06/26 07:35:09 xsa Exp $
+# $OpenBSD: Makefile,v 1.20 2006/05/02 21:28:26 aanriot Exp $
 
 COMMENT=	"simple WATCHdog log filtering program"
 
 DISTNAME=	swatch-3.0.8
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	security sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=swatch/} \
 		ftp://ftp.cert.dfn.de/pub/tools/audit/swatch/
