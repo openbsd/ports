@@ -1,0 +1,6 @@
+ExifTool provides an extensible set of Perl modules to read and write meta
+information in image, audio and video files.
+
+ExifTool supports many different file formats. ExifTool also extracts
+information from the maker notes of many digital cameras by various
+manufacturers.
