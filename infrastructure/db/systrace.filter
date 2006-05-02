@@ -1,3 +1,4 @@
+	native-__getcwd: permit
 	native-__sysctl: permit
 	native-accept: permit
 	native-bind: sockaddr match "/tmp" then permit
