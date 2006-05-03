@@ -1,7 +1,20 @@
-$OpenBSD: patch-p0f_c,v 1.8 2005/07/29 19:40:44 aanriot Exp $
---- p0f.c.orig	Mon Sep 13 19:51:36 2004
-+++ p0f.c	Thu Jul 28 08:25:51 2005
-@@ -735,7 +735,7 @@ static _u8* lookup_link(_u16 mss,_u8 txt
+$OpenBSD: patch-p0f_c,v 1.9 2006/05/03 07:17:44 aanriot Exp $
+--- p0f.c.orig	Sun Apr 30 18:29:33 2006
++++ p0f.c	Sun Apr 30 18:30:49 2006
+@@ -36,12 +36,6 @@
+ #include <pcap.h>
+ #include <signal.h>
+ 
+-#ifdef USE_BPF
+-#include USE_BPF
+-#else
+-#include <pcap-bpf.h>
+-#endif /* ^USE_BPF */
+-
+ #include <time.h>
+ #include <ctype.h>
+ 
+@@ -740,7 +734,7 @@ static _u8* lookup_link(_u16 mss,_u8 txt
  unknown:
  
    if (!txt) return 0;
@@ -10,19 +23,19 @@ $OpenBSD: patch-p0f_c,v 1.8 2005/07/29 19:40:44 aanriot Exp $
    return tmp;
  
  }
-@@ -1614,13 +1614,13 @@ int main(int argc,char** argv) {
+@@ -1620,13 +1614,13 @@ int main(int argc,char** argv) {
    load_config(config_file);
  
    if (argv[optind] && *(argv[optind])) {
--    sprintf(buf,"(%s) and (%3000s)",use_rule,argv[optind]);
-+    snprintf(buf, sizeof(buf), "(%s) and (%3000s)",use_rule,argv[optind]);
+-    sprintf(buf,"(%s) and (%.3000s)",use_rule,argv[optind]);
++    snprintf(buf, sizeof(buf), "(%s) and (%.3000s)",use_rule,argv[optind]);
      use_rule = buf;
    } 
  
    if (use_vlan) {
      _u8* x = strdup(use_rule);
--    sprintf(buf,"(%1000s) or (vlan and (%1000s))",x,x);
-+    snprintf(buf, sizeof(buf), "(%1000s) or (vlan and (%1000s))",x,x);
+-    sprintf(buf,"(%.1000s) or (vlan and (%.1000s))",x,x);
++    snprintf(buf, sizeof(buf), "(%.1000s) or (vlan and (%.1000s))",x,x);
      free(x);
      use_rule = buf;
    }

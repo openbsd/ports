@@ -1,16 +1,17 @@
-$OpenBSD: patch-mk_OpenBSD,v 1.1 2005/07/29 19:40:44 aanriot Exp $
---- mk/OpenBSD.orig	Thu Jul 28 11:01:44 2005
-+++ mk/OpenBSD	Thu Jul 28 11:01:51 2005
-@@ -7,16 +7,15 @@
- # (C) Copyright 2000-2004 by Michal Zalewski <lcamtuf@coredump.cx>
+$OpenBSD: patch-mk_OpenBSD,v 1.2 2006/05/03 07:17:44 aanriot Exp $
+--- mk/OpenBSD.orig	Sun Apr 30 18:21:59 2006
++++ mk/OpenBSD	Sun Apr 30 18:29:11 2006
+@@ -7,18 +7,15 @@
+ # (C) Copyright 2000-2006 by Michal Zalewski <lcamtuf@coredump.cx>
  #
  
 -CC      = gcc
--LIBS	= -lpcap -I/usr/include/pcap -I/usr/local/include/pcap
-+CC      = $(CC)
-+LIBS	= -lpcap
++CC      = $(CC) 
+ LIBS	= -lpcap
  STRIP   = strip
--CFLAGS  = -O3 -Wall -fomit-frame-pointer -funroll-loops
+-CFLAGS  = -O3 -Wall -fomit-frame-pointer -funroll-loops \
+-          -DUSE_BPF=\"${USE_BPF}\" \
+-	  -I/usr/include/pcap -I/usr/local/include/pcap -I/usr/local/include
 +CFLAGS  +=
  FILE	= p0f
 -TOOLS   = test/sendack test/sendack2 test/sendsyn
@@ -24,7 +25,7 @@ $OpenBSD: patch-mk_OpenBSD,v 1.1 2005/07/29 19:40:44 aanriot Exp $
  
  static: $(FILE)-static
  
-@@ -43,9 +42,10 @@ publish: clean
+@@ -45,9 +42,10 @@ publish: clean
  	rm -f /tmp/p0f.tgz
  	
  install: $(FILE)
