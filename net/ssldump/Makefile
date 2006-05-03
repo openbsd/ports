@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2004/12/16 00:31:25 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2006/05/03 06:07:17 jakob Exp $
 
 COMMENT=	"SSLv3/TLS network protocol analyzer"
 
-DISTNAME=	ssldump-0.9b3
+VERSION=	0.9b3
+DISTNAME=	ssldump-${VERSION}
+PKGNAME=	ssldump-${VERSION}p0
 CATEGORIES=    	net
 
 HOMEPAGE=	http://www.rtfm.com/ssldump/
