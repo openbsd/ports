@@ -1,10 +1,12 @@
-$OpenBSD: patch-drivers_fentonups_h,v 1.1 2006/04/27 19:46:24 mbalmer Exp $
---- drivers/fentonups.h.orig	Tue Apr 25 23:32:16 2006
-+++ drivers/fentonups.h	Wed Apr 26 00:09:19 2006
-@@ -81,5 +81,6 @@ struct {
- 	{ "WELI 500 1.0", "Giant Power", "MT650", 10.6, 3.7, 170, 180, 270, 280, 0 },
- 	{ "SMART-UPS       1800VA     T18Q16AG", "Effekta", "MT 2000 RM",
- 		50.0, 19.5, 171, 200, 260, 278, 1 },
-+	{ "XS3000R", "Online", "Xanto S3000R", 1.81, 0.44, 165, 200, 240, 275, 1 },
+$OpenBSD: patch-drivers_fentonups_h,v 1.2 2006/05/03 17:32:09 henning Exp $
+--- drivers/fentonups.h.orig	Wed Jul 20 12:45:41 2005
++++ drivers/fentonups.h	Mon May  1 17:44:54 2006
+@@ -106,5 +106,8 @@ struct {
+ 	{ "UNITEK          Alph1000iS A0", "Unitek", "Alpha 1000is",
+ 		9.6, 2.4, 9.6, 2.4, 158, 172, 288, 290, 0 },
+ 
++	{ "XS3000R", "Online", "Xanto S3000R",
++		1.81, 0.44, 1.81, 0.44, 165, 200, 240, 275, 1 },
++
  	{ NULL,    NULL,		NULL,  0, 0,   0,   0,   0,   0, 0 }
  };

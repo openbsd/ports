@@ -1,36 +1,44 @@
-@comment $OpenBSD: PLIST,v 1.10 2005/10/24 05:14:13 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.11 2006/05/03 17:32:09 henning Exp $
 @conflict upsd-*
 @pkgpath sysutils/nut,no_cgi
 @pkgpath sysutils/nut,snmp
 @pkgpath sysutils/nut,no_cgi,snmp
 @newuser ${NUT_USER}:${NUT_ID}:::UPS User:/var/empty:/sbin/nologin
 bin/apcsmart
+bin/bcmxcp
 bin/belkin
 bin/belkinunv
+bin/bestfcom
 bin/bestuferrups
 bin/bestups
 bin/blazer
+bin/cpsups
 bin/cyberpower
-bin/cyberpower1100
 bin/esupssmart
 bin/etapro
 bin/everups
 bin/fentonups
+bin/gamatronic
 bin/genericups
 bin/ippon
 bin/isbmex
 bin/liebert
 bin/masterguard
+bin/metasys
 bin/mge-shut
 bin/mge-utalk
+bin/mustek
 bin/oneac
 bin/powercom
+bin/powermust
 bin/safenet
 bin/sms
+bin/solis
 bin/tripplite
 bin/tripplitesu
 bin/upsc
 bin/upscmd
+bin/upscode2
 bin/upsdrvctl
 bin/upslog
 bin/upsrw
@@ -44,32 +52,39 @@ bin/victronups
 @man man/man5/upsset.conf.5
 @man man/man5/upsstats.html.5
 @man man/man8/apcsmart.8
+@man man/man8/bcmxcp.8
 @man man/man8/belkin.8
 @man man/man8/belkinunv.8
+@man man/man8/bestfcom.8
 @man man/man8/bestuferrups.8
 @man man/man8/bestups.8
+@man man/man8/cpsups.8
 @man man/man8/cyberpower.8
-@man man/man8/cyberpower1100.8
 @man man/man8/etapro.8
 @man man/man8/everups.8
 @man man/man8/fentonups.8
+@man man/man8/gamatronic.8
 @man man/man8/genericups.8
 @man man/man8/ippon.8
 @man man/man8/isbmex.8
 @man man/man8/liebert.8
 @man man/man8/masterguard.8
+@man man/man8/metasys.8
 @man man/man8/mge-shut.8
 @man man/man8/mge-utalk.8
+@man man/man8/mustek.8
 @man man/man8/nutupsdrv.8
 @man man/man8/oneac.8
 @man man/man8/powercom.8
+@man man/man8/powermust.8
 @man man/man8/safenet.8
 @man man/man8/sms.8
-@man man/man8/snmp-ups.8
+@man man/man8/solis.8
 @man man/man8/tripplite.8
 @man man/man8/tripplitesu.8
 @man man/man8/upsc.8
 @man man/man8/upscmd.8
+@man man/man8/upscode2.8
 @man man/man8/upsd.8
 @man man/man8/upsdrvctl.8
 @man man/man8/upsimage.cgi.8
@@ -88,6 +103,7 @@ share/doc/nut/FAQ
 share/doc/nut/README
 share/doc/nut/big-servers.txt
 share/doc/nut/cables/
+share/doc/nut/cables/apc-rs500-serial.txt
 share/doc/nut/cables/apc.txt
 share/doc/nut/cables/ge-imv-victron.txt
 share/doc/nut/cables/imv.txt
@@ -103,6 +119,7 @@ share/doc/nut/contact-closure.txt
 share/doc/nut/data-room.txt
 share/doc/nut/design.txt
 share/doc/nut/developers.txt
+share/doc/nut/hid-subdrivers.txt
 share/doc/nut/ideas.txt
 share/doc/nut/new-drivers.txt
 share/doc/nut/new-names.txt
