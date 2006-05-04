@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.158 2006/05/02 20:55:29 steven Exp $
+# $OpenBSD: Makefile,v 1.159 2006/05/04 22:56:29 pedro Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -73,6 +73,7 @@
      SUBDIR += libmpeg2
      SUBDIR += libungif
      SUBDIR += libwmf
+     SUBDIR += luagd
      SUBDIR += mpeg-lib
      SUBDIR += mpeg_encode
      SUBDIR += mpeg_play
