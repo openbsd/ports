@@ -1,0 +1,12 @@
+$OpenBSD: patch-luagd_c,v 1.1.1.1 2006/05/04 22:53:57 pedro Exp $
+--- luagd.c.orig	Thu May  4 14:48:41 2006
++++ luagd.c	Thu May  4 14:48:52 2006
+@@ -2466,7 +2466,7 @@ static const luaL_reg LgdMetatable[] =
+ };
+ 
+ 
+-int luaopen_gd(lua_State *L)
++int luaopen_gd_core(lua_State *L)
+ {
+     luaL_openlib(L, LIB_NAME, LgdFunctions, 0);
+     lua_pushliteral(L, "VERSION");

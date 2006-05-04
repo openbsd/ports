@@ -1,0 +1,8 @@
+LuaGD is a set of Lua bindings to the Thomas Boutell's gd library that
+allows your code to quickly draw complete images with lines, polygons,
+arcs, text, multiple colors, cut and paste from other images, flood
+fills, read in or write out images in the PNG or JPEG formats. It is not
+a kitchen-sink graphics package, but it does include most frequently
+requested features, including both truecolor and palette images,
+resampling (smooth resizing of truecolor images) and so forth. It is
+particularly useful in Web applications.
