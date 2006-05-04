@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2005/12/25 15:52:38 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2006/05/04 22:40:24 aanriot Exp $
 
 COMMENT=	"Nessus Attack Scripting Language"
 
 DISTNAME=	libnasl-${VERSION}
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 SHARED_LIBS=	nasl	4.5
 MODGNU_SHARED_LIBS=nasl	''
 

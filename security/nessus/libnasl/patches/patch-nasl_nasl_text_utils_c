@@ -1,0 +1,20 @@
+$OpenBSD: patch-nasl_nasl_text_utils_c,v 1.1 2006/05/04 22:40:24 aanriot Exp $
+--- nasl/nasl_text_utils.c.orig	Thu May  4 23:14:29 2006
++++ nasl/nasl_text_utils.c	Thu May  4 23:15:43 2006
+@@ -961,7 +961,15 @@ nasl_split(lex_ctxt* lexic)
+ 
+   sep = get_str_local_var_by_name(lexic, "sep");
+   if (sep != NULL)
+-    sep_len = get_var_size_by_name(lexic, "sep");
++  {
++	sep_len = get_var_size_by_name(lexic, "sep");
++	if(sep_len == 0)
++	{
++	  nasl_perror(lexic, "split: invalid 'sep' argument value\n");
++	  return NULL;
++	}
++  }
++
+   keep = get_int_local_var_by_name(lexic, "keep", 1);
+ 
+   retc = alloc_tree_cell(0, NULL);
