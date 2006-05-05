@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2005/12/01 22:37:28 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/05/05 16:57:11 msf Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"implementation of the want command"
 
-DISTNAME=	Want-0.09
+DISTNAME=	Want-0.10
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
