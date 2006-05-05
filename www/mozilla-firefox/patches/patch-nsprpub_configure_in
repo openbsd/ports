@@ -1,7 +1,7 @@
-$OpenBSD: patch-nsprpub_configure_in,v 1.4 2005/12/20 23:44:00 bernd Exp $
---- nsprpub/configure.in.orig	Thu Aug 25 01:19:59 2005
-+++ nsprpub/configure.in	Sat Sep 10 09:47:32 2005
-@@ -1620,9 +1620,11 @@ mips-sony-newsos*)
+$OpenBSD: patch-nsprpub_configure_in,v 1.5 2006/05/05 10:14:21 bernd Exp $
+--- nsprpub/configure.in.orig	Thu Feb 23 00:03:11 2006
++++ nsprpub/configure.in	Wed May  3 13:25:55 2006
+@@ -1704,9 +1704,11 @@ mips-sony-newsos*)
      AC_DEFINE(OPENBSD)
      AC_DEFINE(HAVE_BSD_FLOCK)
      AC_DEFINE(HAVE_SOCKLEN_T)
