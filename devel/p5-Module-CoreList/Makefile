@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/11/29 17:41:05 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/05/05 16:53:34 msf Exp $
 
 COMMENT=	"see what modules shipped with versions of Perl"
 
-DISTNAME=	Module-CoreList-2.02
+DISTNAME=	Module-CoreList-2.04
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
