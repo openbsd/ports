@@ -1,0 +1,28 @@
+$OpenBSD: patch-modules_vuln-bagle_BagleDialogue_cpp,v 1.1 2006/05/05 22:58:45 jolan Exp $
+--- modules/vuln-bagle/BagleDialogue.cpp.orig	Fri May  5 23:42:58 2006
++++ modules/vuln-bagle/BagleDialogue.cpp	Fri May  5 23:44:49 2006
+@@ -158,6 +158,7 @@ ConsumeLevel BagleDialogue::incomingData
+ 				m_State = BAGLE_BINARY;
+ 				m_Download = new Download(m_Socket->getRemoteHost(),"bagle://",m_Socket->getRemoteHost(),"bagle://foo/bar");
+ 				m_Download->getDownloadBuffer()->addData(msg->getMsg()+4,msg->getSize()-4);
++				return CL_ASSIGN_AND_DONE;
+ 			}
+ 		}
+ 		break;
+@@ -165,6 +166,7 @@ ConsumeLevel BagleDialogue::incomingData
+ 	case BAGLE_BINARY:
+ 		// FIXME m_MaxFileSize
+ 		m_Download->getDownloadBuffer()->addData(msg->getMsg(),msg->getSize());
++		return CL_ASSIGN_AND_DONE;
+ 		break;
+ 
+ 	}
+@@ -232,8 +234,6 @@ ConsumeLevel BagleDialogue::connectionSh
+ 		if ( m_Download->getDownloadBuffer()->getSize() == m_FileSize )
+ 		{
+ 			g_Nepenthes->getSubmitMgr()->addSubmission(m_Download);
+-			// destructor will delete it
+-			return CL_ASSIGN_AND_DONE;
+ 		}
+ 	}
+ 	return CL_DROP;

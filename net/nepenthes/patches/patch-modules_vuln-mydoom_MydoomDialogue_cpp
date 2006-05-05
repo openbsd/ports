@@ -1,0 +1,28 @@
+$OpenBSD: patch-modules_vuln-mydoom_MydoomDialogue_cpp,v 1.1 2006/05/05 22:58:45 jolan Exp $
+--- modules/vuln-mydoom/MydoomDialogue.cpp.orig	Fri May  5 23:40:18 2006
++++ modules/vuln-mydoom/MydoomDialogue.cpp	Fri May  5 23:42:23 2006
+@@ -120,7 +120,7 @@ ConsumeLevel MydoomDialogue::incomingDat
+ 				m_Download = new Download(msg->getRemoteHost(),"mydoom://foo/bar",msg->getRemoteHost(),"some triggerline");
+ 				m_Download->getDownloadBuffer()->addData((char *)m_Buffer->getData(),m_Buffer->getSize());
+ 				m_Buffer->clear();
+-				return CL_ASSIGN;
++				return CL_ASSIGN_AND_DONE;
+ 			}
+ 		}
+ 		if (m_Buffer->getSize() > 128 )
+@@ -130,6 +130,7 @@ ConsumeLevel MydoomDialogue::incomingDat
+ 	case MYDOOM_FILETRANSFERR:
+ 		{
+ 			m_Download->getDownloadBuffer()->addData((char *)msg->getMsg(),msg->getSize());
++			return CL_ASSIGN_AND_DONE;
+ 		}
+ 		break;
+ 
+@@ -196,7 +197,6 @@ ConsumeLevel MydoomDialogue::connectionS
+ 	if (m_Download != NULL)
+ 	{
+     	g_Nepenthes->getSubmitMgr()->addSubmission(m_Download);
+-		return CL_ASSIGN_AND_DONE;
+ 	}
+ 	return CL_DROP;
+ }
