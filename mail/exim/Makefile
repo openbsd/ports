@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.52 2006/02/05 14:30:11 steven Exp $
+# $OpenBSD: Makefile,v 1.53 2006/05/05 06:02:30 sturm Exp $
 
 COMMENT=	"Flexible mail transfer agent"
-DISTNAME=	exim-4.60
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	exim-4.62
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.exim.org/pub/exim/exim4/ \
 		http://mirror.switch.ch/ftp/mirror/exim/exim/exim4/ \
@@ -10,7 +9,7 @@ MASTER_SITES=	ftp://ftp.exim.org/pub/exim/exim4/ \
 
 HOMEPAGE=	http://www.exim.org/
 
-MAINTAINER=	Andreas Voegele <voegelas@gmx.net>
+MAINTAINER=	Andreas Voegele <andreas@altroot.de>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes
@@ -94,6 +93,9 @@ do-configure:
 .if !${FLAVOR:L:Mno_x11}
 	@cp ${FILESDIR}/eximon.conf ${WRKSRC}/Local
 .endif
+
+pre-fake:
+	${INSTALL_DATA_DIR} ${WRKINST}${SYSCONFDIR}/mail
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/exim

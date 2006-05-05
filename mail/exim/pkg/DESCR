@@ -11,7 +11,9 @@ This port can be built with the following flavors:
 * no_x11		- do not build eximon which requires X11
 * mysql			- support mysql queries for lookups
 * postgresql		- support postgresql queries for lookups
+* sqlite3		- support for sqlite queries for lookups
 * ldap			- support ldap (OpenLDAP) queries for lookups
 * iconv			- support character code conversions
+* sasl			- support for SASL
 
-All this flavors are independent of each other.
+All these flavors are independent of each other.
