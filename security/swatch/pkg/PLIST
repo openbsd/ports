@@ -1,5 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:36:03 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2006/05/05 11:30:46 aanriot Exp $
 bin/swatch
-bin/swatch_oldrc2newrc
+${P5SITE}/Swatch/
+${P5SITE}/Swatch/Actions.pm
+${P5SITE}/Swatch/Throttle.pm
+${P5SITE}/auto/
+${P5SITE}/auto/Swatch/
+${P5SITE}/auto/Swatch/Actions/
+${P5SITE}/auto/Swatch/Actions/autosplit.ix
 @man man/man1/swatch.1
-@man man/man1/swatch_oldrc2newrc.1
+@man man/man3p/Swatch::Actions.3p
+@man man/man3p/Swatch::Throttle.3p

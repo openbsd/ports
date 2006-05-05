@@ -1,6 +1,3 @@
-Swatch was originally written to actively monitor messages as they
-are written to a log file via the UNIX syslog utility. For a simple
-demonstration type "swatch --examine=FILENAME" with FILENAME
-being the file that you would like to see the contents of.  All
-this example will do is demonstrate the different text modes that
-are available with to the echo action.
+Swatch started out as the "simple watchdog" for activly monitoring log
+files produced by UNIX's syslog facility. It has since been evolving
+into a utility that can monitor just about any type of log.

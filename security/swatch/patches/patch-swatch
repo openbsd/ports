@@ -1,35 +1,10 @@
---- swatch.orig	Fri Apr  4 00:33:05 2003
-+++ swatch	Tue May  2 23:00:12 2006
-@@ -372,7 +372,7 @@ sub parse_command_line {
-   die "$USAGE" if not GetOptions(
- 				 "config-file|c=s" => \$opt_config_file,
- 				 "daemon" => \$opt_daemon,
--				 "debug-level=i" => $opt_debug_level,
-+				 "debug-level=i" => \$opt_debug_level,
- 				 "dump-script:s" => \$opt_dump_script,
- 				 "examine|f=s" => \$opt_examine,
- 				 "help|h" => \$opt_help,
-@@ -411,7 +411,7 @@ sub parse_command_line {
+$OpenBSD: patch-swatch,v 1.4 2006/05/05 11:30:46 aanriot Exp $
+--- swatch.orig	Wed May  3 06:39:14 2006
++++ swatch	Wed May  3 06:39:22 2006
+@@ -482,7 +482,7 @@ sub parse_command_line {
  sub dprint {
      my $msg_lev = shift;
      my $msg = shift;
 -    print STDERR "DEBUG($msg_lev): $msg\n" if ($msg_lev & $opt_debug_level);
 +    print STDERR "DEBUG($msg_lev): $msg\n" if ($msg_lev && $opt_debug_level);
  }
- 
- ####### dprint end #######
-@@ -804,14 +804,11 @@ sub ring_bell {
- 	      'RINGS' => 1,
- 	      @_
- 	     );
--  my $sun_terminal = (`uname -s` eq 'SunOS\n');
--  
-   return if exists($args{'WHEN'}) and not inside_time_window($args{'WHEN'});
-   
-   my $bells = $args{'RINGS'};
-   for ( ; $bells > 0 ; $bells-- ) {
-     print $BELL;
--    sleep 1 if $sun_terminal; # SunOS needed this. Not sure about Solaris though
-   }
- }
- 
