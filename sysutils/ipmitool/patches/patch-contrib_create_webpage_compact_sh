@@ -1,0 +1,9 @@
+$OpenBSD: patch-contrib_create_webpage_compact_sh,v 1.1.1.1 2006/05/06 17:28:44 wilfried Exp $
+--- contrib/create_webpage_compact.sh.orig	Mon Feb  2 18:45:57 2004
++++ contrib/create_webpage_compact.sh	Sat May  6 19:03:32 2006
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #
+ #  Copyright (c) 2003-2004 Fredrik Ohrn.  All Rights Reserved.
+ #

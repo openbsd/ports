@@ -1,0 +1,9 @@
+$OpenBSD: patch-contrib_bmclanconf,v 1.1.1.1 2006/05/06 17:28:44 wilfried Exp $
+--- contrib/bmclanconf.orig	Sun Mar 19 18:59:38 2006
++++ contrib/bmclanconf	Sat May  6 19:03:22 2006
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #
+ # Copyright (c) 2003 Sun Microsystems, Inc.  All Rights Reserved.
+ # 

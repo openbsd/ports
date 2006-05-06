@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_plugins_imb_imbapi_h,v 1.1.1.1 2006/05/06 17:28:44 wilfried Exp $
+--- src/plugins/imb/imbapi.h.orig	Wed Sep  1 01:52:58 2004
++++ src/plugins/imb/imbapi.h	Wed May  3 13:19:19 2006
+@@ -44,7 +44,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBI
+ #ifndef NULL
+ #define NULL 0
+ #endif
+-#ifndef WIN32   
++#if !defined(WIN32) && !defined(__OpenBSD__)
+ /* WIN32 defines this in stdio.h */
+ #ifndef _WCHAR_T
+ #define _WCHAR_T
+@@ -139,7 +139,7 @@ typedef CONST WCHAR	    *LPCWSTR, *PCWST
+ #ifndef _SYS_TYPES_H
+ #ifndef _CADDR_T
+ #define _CADDR_T
+-  typedef char *        caddr_t;
++//  typedef char *        caddr_t;
+ #endif
+ #endif
+ /*

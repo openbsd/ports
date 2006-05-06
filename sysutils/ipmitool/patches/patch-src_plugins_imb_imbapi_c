@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_plugins_imb_imbapi_c,v 1.1.1.1 2006/05/06 17:28:44 wilfried Exp $
+--- src/plugins/imb/imbapi.c.orig	Wed May  3 13:21:34 2006
++++ src/plugins/imb/imbapi.c	Wed May  3 13:20:34 2006
+@@ -1961,6 +1961,7 @@ UnmapPhysicalMemory (
+ ACCESN_STATUS
+ MapPhysicalMemory(int startAddress,int addressLength, int *virtualAddress )
+ {
++#if 0
+ 	int 				fd; 
+ 	unsigned int 		length = addressLength;
+ 	off_t 				startpAddress = (off_t)startAddress;
+@@ -2017,11 +2018,14 @@ MapPhysicalMemory(int startAddress,int a
+ 
+ 	*virtualAddress = (long)(startvAddress + diff);
+ 	return ACCESN_OK;
++#endif
++	return ACCESN_ERROR ;
+ }
+ 
+ ACCESN_STATUS
+ UnmapPhysicalMemory( int virtualAddress, int Length )
+ {
++#if 0
+ 	unsigned int diff = 0;
+ 
+ 	/* page align the virtual address and adjust length accordingly  */
+@@ -2046,6 +2050,8 @@ UnmapPhysicalMemory( int virtualAddress,
+ #endif
+ 
+ 	return ACCESN_OK;
++#endif
++	return ACCESN_ERROR;
+ }
+ #endif    /*unix*/
+ 

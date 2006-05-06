@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/06 17:28:44 wilfried Exp $
+bin/ipmitool
+@man man/man1/ipmitool.1
+@man man/man8/ipmievd.8
+sbin/ipmievd
+share/doc/ipmitool/
+share/doc/ipmitool/AUTHORS
+share/doc/ipmitool/COPYING
+share/doc/ipmitool/ChangeLog
+share/doc/ipmitool/README
+share/ipmitool/
+share/ipmitool/README
+share/ipmitool/bmclanconf
+share/ipmitool/collect_data.sh
+share/ipmitool/create_rrds.sh
+share/ipmitool/create_webpage.sh
+share/ipmitool/create_webpage_compact.sh
+share/ipmitool/ipmi.init.basic
+share/ipmitool/ipmi.init.redhat
+share/ipmitool/ipmievd.init.debian
+share/ipmitool/ipmievd.init.redhat
+share/ipmitool/ipmievd.init.suse
+share/ipmitool/oem_ibm_sel_map

@@ -1,0 +1,9 @@
+$OpenBSD: patch-contrib_collect_data_sh,v 1.1.1.1 2006/05/06 17:28:44 wilfried Exp $
+--- contrib/collect_data.sh.orig	Sat Jan 10 19:31:54 2004
++++ contrib/collect_data.sh	Sat May  6 19:03:24 2006
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #
+ #  Copyright (c) 2003 Fredrik Ohrn.  All Rights Reserved.
+ #
