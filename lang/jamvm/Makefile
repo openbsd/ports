@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/04/11 01:04:15 kurt Exp $
+# $OpenBSD: Makefile,v 1.2 2006/05/06 16:20:44 sturm Exp $
 
 COMMENT=	"a free, standards-compilant jvm with a small footprint"
 
 ONLY_FOR_ARCHS=	i386 powerpc arm amd64
 
 DISTNAME=	jamvm-1.4.2
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	lang java
 
@@ -24,7 +25,7 @@ USE_GMAKE=		Yes
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
 
-RUN_DEPENDS=		::lang/classpath/
+RUN_DEPENDS=		::lang/classpath
 
 WANTLIB=		c m z pthread
 
