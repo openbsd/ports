@@ -1,0 +1,11 @@
+$OpenBSD: patch-kopete_plugins_connectionstatus_connectionstatusplugin_h,v 1.1 2006/05/06 23:19:13 brad Exp $
+--- kopete/plugins/connectionstatus/connectionstatusplugin.h.orig	Sat May  6 18:14:25 2006
++++ kopete/plugins/connectionstatus/connectionstatusplugin.h	Sat May  6 18:14:49 2006
+@@ -49,6 +49,7 @@ private:
+ 	bool m_pluginConnected;
+ 	KProcess *m_process;
+ 	QTimer *m_timer;
++	QString m_buffer;
+ };
+ 
+ #endif
