@@ -1,0 +1,34 @@
+Some nagios plugins need elevated privileges to run properly. As the code
+quality of these plugins is not really good, they are not installed suid
+root by default, but instead I suggest running them with systrace's
+privilege elevation feature. This way they are run as _nagios, but single
+syscalls are run as root.
+
+1) Create a preliminary systrace policy for the plugin.
+
+# cd ${PREFIX}/libexec/nagios
+# systrace -A -d /tmp ./<plugin> <plugin arguments>
+
+This creates a policy for the plugin <plugin> in /tmp.
+
+2) Refine the policy and configure privilege elevation as required. This
+is an example, permitting the bind(2) syscall as root.
+
+native-bind: sockaddr eq "inet-[0.0.0.0]:68" then permit as root
+
+3) Copy the systrace policy to /etc/systrace.
+
+4) Run visudo as root and configure sudo for user _nagios like this.
+
+_nagios ALL=NOPASSWD: /bin/systrace -a -c 550\:550 \
+    ${PREFIX}/libexec/nagios/<plugin> <plugin arguments>
+
+5) Configure the respective command in nagios.
+
+define command {
+	command_name check_dhcp
+	command_line sudo /bin/systrace -a -c 550:550 $USER1$/<plugin> <plugin arguments>
+}
+
+6) In case of problems, systrace will log to /var/log/messages.
+

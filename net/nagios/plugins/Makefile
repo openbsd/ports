@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/04/19 20:35:28 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2006/05/07 07:42:09 sturm Exp $
 
 COMMENT=	"nagios base plugins"
 COMMENT-fping=	"fping plugin"
@@ -12,7 +12,7 @@ COMMENT-snmp=	"plugins using snmp"
 
 V=		1.4.3
 DISTNAME=	nagios-plugins-${V}
-PKGNAME=	nagios-plugins-${V}
+PKGNAME=	nagios-plugins-${V}p0
 PKGNAME-fping=	nagios-plugins-fping-${V}
 PKGNAME-game=	nagios-plugins-game-${V}
 PKGNAME-ldap=	nagios-plugins-ldap-${V}
@@ -39,6 +39,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nagiosplug/}
 
 BUILD_DEPENDS=	qstat::games/qstat \
 		fping::net/fping
+
+FAKE_FLAGS=	setuid_root_mode=0555
 
 USE_LIBTOOL=	Yes
 
@@ -119,5 +121,10 @@ MODULES=	gettext
 .endif
 
 NO_REGRESS=	lots of broken tests
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nagios-plugins
+	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD \
+		${PREFIX}/share/doc/nagios-plugins
 
 .include <bsd.port.mk>
