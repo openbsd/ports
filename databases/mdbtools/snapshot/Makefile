@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/05/01 09:55:33 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/05/07 22:14:14 naddy Exp $
 
 COMMENT=	"read microsoft Access MDB"
 COMMENT-gmdb=	"graphical interface to MDB tools"
@@ -53,7 +53,7 @@ WANTLIB+=	audiofile bonobo-activation popt ORBit-2.0.0 pthread \
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-gmdb"
-LIB_DEPENDS+=	mdb,mdbsql::databases/mdbtools
+LIB_DEPENDS+=	mdb,mdbsql::databases/mdbtools/snapshot
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == ""
