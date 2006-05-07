@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.168 2006/02/12 16:24:50 david Exp $
+# $OpenBSD: Makefile,v 1.169 2006/05/07 13:34:45 steven Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -105,6 +105,7 @@
      SUBDIR += p5-Digest-SHA
      SUBDIR += p5-Digest-SHA1
      SUBDIR += p5-GPG
+     SUBDIR += p5-GSSAPI
      SUBDIR += p5-GnuPG
      SUBDIR += p5-GnuPG-Interface
      SUBDIR += p5-IO-Socket-SSL
