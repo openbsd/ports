@@ -1,11 +1,9 @@
-$OpenBSD: patch-makefile,v 1.1.1.1 2005/01/21 06:49:11 jolan Exp $
---- makefile.orig	Tue Jan  4 17:18:48 2005
-+++ makefile	Thu Jan 20 21:21:01 2005
-@@ -1,35 +1,35 @@
- # configure daapd here
+$OpenBSD: patch-makefile,v 1.2 2006/05/08 21:25:52 jolan Exp $
+--- makefile.orig	Sun Mar  5 08:39:37 2006
++++ makefile	Wed Apr 19 20:05:34 2006
+@@ -2,34 +2,34 @@
  
--HOWL_ENABLE = 0
-+HOWL_ENABLE = 1
+ HOWL_ENABLE = 1
  ZLIB_ENABLE = 1
 -MPEG4_ENABLE = 0
 +MPEG4_ENABLE = 1
@@ -15,7 +13,7 @@ $OpenBSD: patch-makefile,v 1.1.1.1 2005/01/21 06:49:11 jolan Exp $
  # -----------------------------------------
  
 -CC = g++
-+#CC = g++
++CC?= g++
  MAKE = $(MAKE_COMMAND)
  TARGET = daapd
  DEPS = daaplib_ libhttpd_

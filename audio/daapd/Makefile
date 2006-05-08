@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2006/02/08 04:54:48 david Exp $
+# $OpenBSD: Makefile,v 1.3 2006/05/08 21:25:52 jolan Exp $
 
 COMMENT=	"server for the DAA protocol"
-DISTNAME=	daapd-0.2.4a
+DISTNAME=	daapd-0.2.4b
 EXTRACT_SUFX=	.tgz
 CATEGORIES=	audio net
 MASTER_SITES=	${HOMEPAGE}
