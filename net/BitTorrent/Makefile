@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2005/12/19 03:50:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2006/05/08 13:46:48 naddy Exp $
 
 COMMENT=	"cooperative file distribution system implemented in Python"
 COMMENT-gui=	"graphical interface components for BitTorrent"
 
-VERSION=	4.2.2
+VERSION=	4.4.0
 DISTNAME=	BitTorrent-${VERSION}
 PKGNAME-gui=	BitTorrent-gui-${VERSION}
 CATEGORIES=	net
@@ -29,7 +29,7 @@ SUBPACKAGE?=
 
 .if !empty(SUBPACKAGE)
 RUN_DEPENDS=	:${PKGNAME}:net/BitTorrent \
-		::x11/py-gtk2 ::x11/hicolor-icon-theme
+		:py-gtk2->=2.6:x11/py-gtk2
 .endif
 
 NO_REGRESS=	Yes

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2005/12/04 12:38:15 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.12 2006/05/08 13:46:48 naddy Exp $
 bin/bittorrent-console
 bin/bittorrent-curses
 bin/bittorrent-tracker
@@ -8,6 +8,8 @@ bin/launchmany-curses
 bin/maketorrent-console
 bin/torrentinfo-console
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/
+lib/python${MODPY_VERSION}/site-packages/BitTorrent/BeautifulSupe.py
+lib/python${MODPY_VERSION}/site-packages/BitTorrent/BeautifulSupe.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/Choker.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/Choker.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/ClientIdentifier.py
@@ -32,8 +34,12 @@ lib/python${MODPY_VERSION}/site-packages/BitTorrent/LaunchPath.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/LaunchPath.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/NatCheck.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/NatCheck.pyc
+lib/python${MODPY_VERSION}/site-packages/BitTorrent/NatTraversal.py
+lib/python${MODPY_VERSION}/site-packages/BitTorrent/NatTraversal.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/NewVersion.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/NewVersion.pyc
+lib/python${MODPY_VERSION}/site-packages/BitTorrent/PeerID.py
+lib/python${MODPY_VERSION}/site-packages/BitTorrent/PeerID.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/PiecePicker.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/PiecePicker.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/RateLimiter.py
@@ -54,6 +60,8 @@ lib/python${MODPY_VERSION}/site-packages/BitTorrent/StorageWrapper.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/StorageWrapper.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/TorrentQueue.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/TorrentQueue.pyc
+lib/python${MODPY_VERSION}/site-packages/BitTorrent/TrayIcon.py
+lib/python${MODPY_VERSION}/site-packages/BitTorrent/TrayIcon.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/Uploader.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/Uploader.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/__init__.py
@@ -66,14 +74,14 @@ lib/python${MODPY_VERSION}/site-packages/BitTorrent/btformats.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/btformats.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/configfile.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/configfile.pyc
-lib/python${MODPY_VERSION}/site-packages/BitTorrent/controlsocket.py
-lib/python${MODPY_VERSION}/site-packages/BitTorrent/controlsocket.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/defaultargs.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/defaultargs.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/defer.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/defer.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/download.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/download.pyc
+lib/python${MODPY_VERSION}/site-packages/BitTorrent/language.py
+lib/python${MODPY_VERSION}/site-packages/BitTorrent/language.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/launchmanycore.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/launchmanycore.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/makemetafile.py
@@ -169,6 +177,9 @@ share/locale/da/LC_MESSAGES/bittorrent.mo
 share/locale/de/
 share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/bittorrent.mo
+share/locale/el/
+share/locale/el/LC_MESSAGES/
+share/locale/el/LC_MESSAGES/bittorrent.mo
 share/locale/es/
 share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/bittorrent.mo
@@ -178,12 +189,15 @@ share/locale/es_MX/LC_MESSAGES/bittorrent.mo
 share/locale/fr/
 share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/bittorrent.mo
-share/locale/gr/
-share/locale/gr/LC_MESSAGES/
-share/locale/gr/LC_MESSAGES/bittorrent.mo
+share/locale/he/
+share/locale/he/LC_MESSAGES/
+share/locale/he/LC_MESSAGES/bittorrent.mo
 share/locale/hu/
 share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/bittorrent.mo
+share/locale/is/
+share/locale/is/LC_MESSAGES/
+share/locale/is/LC_MESSAGES/bittorrent.mo
 share/locale/it/
 share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/bittorrent.mo
