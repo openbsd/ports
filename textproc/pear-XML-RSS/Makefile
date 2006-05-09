@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2005/02/27 23:14:32 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.4 2006/05/09 14:16:50 robert Exp $
 
 COMMENT=	"parser for RDF Site Summary files in PHP"
 
 DISTNAME=	XML_RSS-0.9.2
-PKGNAME=	pear-${DISTNAME:S/_/-/}
+PKGNAME=	pear-${DISTNAME:S/_/-/}p0
 CATEGORIES=	textproc pear
 
 MASTER_SITES=	http://pear.php.net/get/

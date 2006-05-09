@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2005/03/02 14:26:48 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.5 2006/05/09 14:16:50 robert Exp $
 
 COMMENT=	"package provides methods for HTML forms"
 
 DISTNAME=	HTML_QuickForm-3.2.4pl1
-PKGNAME=	pear-${DISTNAME:S/_/-/}
+PKGNAME=	pear-${DISTNAME:S/_/-/}p0
 CATEGORIES=	devel www pear
 
 MASTER_SITES=	http://pear.php.net/get/

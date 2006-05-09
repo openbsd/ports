@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/03/02 14:07:10 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2006/05/09 14:16:50 robert Exp $
 
 COMMENT=	"base package for HTML handling in PHP5"
 
 DISTNAME=	HTML_Common2-0.1.0
-PKGNAME=	pear-${DISTNAME:S/_/-/}
+PKGNAME=	pear-${DISTNAME:S/_/-/}p0
 CATEGORIES=	www devel pear
 
 MASTER_SITES=	http://pear.php.net/get/

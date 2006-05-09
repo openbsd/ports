@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/02/28 12:32:47 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2006/05/09 14:16:50 robert Exp $
 
 COMMENT=	"XML utility class for PHP"
 
 DISTNAME=	XML_Util-1.1.1
-PKGNAME=	pear-${DISTNAME:S/_/-/}
+PKGNAME=	pear-${DISTNAME:S/_/-/}p0
 CATEGORIES=	textproc pear
 
 MASTER_SITES=	http://pear.php.net/get/

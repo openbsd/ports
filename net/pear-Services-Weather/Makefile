@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/02/15 09:51:34 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2006/05/09 14:16:50 robert Exp $
 
 COMMENT=	"interface to various online weather-services for PHP"
 
 V=		1.3.1
 DISTNAME=	Services_Weather-${V}
-PKGNAME=	pear-Services-Weather-${V}
+PKGNAME=	pear-Services-Weather-${V}p0
 CATEGORIES=	net pear
 
 MASTER_SITES=	http://pear.php.net/get/

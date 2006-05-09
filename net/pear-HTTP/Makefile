@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/02/15 09:46:50 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2006/05/09 14:16:50 robert Exp $
 
 COMMENT=	"miscellaneous HTTP utilities for PHP"
 
 V=		1.3.3
 DISTNAME=	HTTP-${V}
-PKGNAME=	pear-HTTP-${V}
+PKGNAME=	pear-HTTP-${V}p0
 CATEGORIES=	net pear
 
 MASTER_SITES=	http://pear.php.net/get/

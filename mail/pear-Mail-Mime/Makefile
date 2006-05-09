@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2005/02/15 16:19:29 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.4 2006/05/09 14:16:50 robert Exp $
 
 COMMENT=	"classes to create and decode MIME messages in PHP"
 
 DISTNAME=	Mail_Mime-1.2.1
-PKGNAME=	pear-${DISTNAME:S/_/-/}
+PKGNAME=	pear-${DISTNAME:S/_/-/}p0
 CATEGORIES=	mail pear
 
 MASTER_SITES=	http://pear.php.net/get/
