@@ -1,0 +1,19 @@
+SQLite Database Browser is a public domain visual tool used to create, 
+design and edit database files compatible with SQLite3. 
+
+It is meant to be used for users and developers who want to create 
+databases, edit and search data using a familiar spreadsheet-like interface, 
+without the need to learn complicated SQL commands. 
+Controls and wizards are available for users to:
+*   Create and compact database files 
+*   Create, define, modify and delete tables 
+*   Create, define and delete indexes 
+*   Browse, edit, add and delete records 
+*   Search records 
+*   Import and export records as text
+*   Import and export tables from/to CSV files 
+*   Import and export databases from/to SQL dump files 
+*   Issue SQL queries and inspect the results
+*   Examine a log of all SQL commands issued by the application
+
+This program, however, is not a visual shell for the sqlite command line tool. 

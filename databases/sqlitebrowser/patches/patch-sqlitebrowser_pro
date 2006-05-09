@@ -1,0 +1,12 @@
+$OpenBSD: patch-sqlitebrowser_pro,v 1.1.1.1 2006/05/09 15:18:28 espie Exp $
+--- sqlitebrowser.pro.orig	Tue May  9 15:54:02 2006
++++ sqlitebrowser.pro	Tue May  9 16:13:12 2006
+@@ -47,7 +47,7 @@ unix {
+   UI_DIR = .ui
+   MOC_DIR = .moc
+   OBJECTS_DIR = .obj
+-  LIBS += ./sqlite_source/libsqlite_source.a
++  LIBS += -lsqlite3
+ }
+ win32 {
+   RC_FILE = winapp.rc
