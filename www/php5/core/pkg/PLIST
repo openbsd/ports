@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/12/29 23:06:28 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/05/09 14:15:40 robert Exp $
 @conflict php4-core-*
 %%SHARED%%
 bin/pear
+bin/peardev
+bin/pecl
 bin/php
 bin/php-config
 bin/phpize

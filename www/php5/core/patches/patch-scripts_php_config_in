@@ -1,0 +1,14 @@
+--- scripts/php-config.in.orig	Fri Apr 28 00:49:53 2006
++++ scripts/php-config.in	Fri Apr 28 01:03:19 2006
+@@ -1,9 +1,9 @@
+ #! /bin/sh
+ 
+-prefix="@prefix@"
++prefix=OPENBSD_PEAR_ROOT
+ exec_prefix="@exec_prefix@"
+ version="@PHP_VERSION@"
+-includedir="@includedir@/php"
++includedir="@PEAR_INSTALLDIR@/include"
+ includes="-I$includedir -I$includedir/main -I$includedir/TSRM -I$includedir/Zend -I$includedir/ext"
+ ldflags="@PHP_LDFLAGS@"
+ libs="@EXTRA_LIBS@"

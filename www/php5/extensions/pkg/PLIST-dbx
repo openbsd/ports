@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-dbx,v 1.4 2005/12/29 23:07:19 sturm Exp $
-@conflict php4-dbx-*
-lib/php/modules/dbx.so

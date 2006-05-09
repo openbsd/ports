@@ -1,22 +1,26 @@
-# $OpenBSD: Makefile,v 1.20 2006/04/15 14:57:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2006/05/09 14:15:40 robert Exp $
 
-FULLPKGNAME=	php5-extensions-${V}p0
-COMMENT=	"informational package about PHP5 extensions"
+FULLPKGNAME=		php5-extensions-${V}
+COMMENT=		"informational package about PHP5 extensions"
 
 MULTI_PACKAGES=
 SUBPACKAGE?=
 
 # extensions get installed under the apache chroot
-PREFIX?=	${CHROOT_DIR}
+PREFIX?=		${CHROOT_DIR}
 
-FLAVORS=	no_x11
+FLAVORS=		no_x11
 FLAVOR?=
 
-WANTLIB=	stdc++ m
+WANTLIB=		stdc++ m
 
-RUN_DEPENDS=	:php5-core-${V}:www/php5/core
+.if ${FLAVOR:L:Mhardened}
+RUN_DEPENDS=		:php5-core-${V}-hardened:www/php5/core,hardened
+.else
+RUN_DEPENDS=		:php5-core-${V}-!hardened:www/php5/core
+.endif
 .if !defined(PACKAGING)
-MODULES=	devel/gettext
+MODULES=		devel/gettext
 .endif
 
 CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
@@ -75,16 +79,6 @@ COMMENT-dbase=		"dBase database access extensions for php5"
 CONFIGURE_ARGS+=	--enable-dbase=shared
 .endif
 
-# dbx
-PSEUDO_FLAVORS+=	no_dbx
-.if ${FLAVOR:L:Mno_dbx}
-CONFIGURE_ARGS+=	--disable-dbx
-.else
-MULTI_PACKAGES+=	-dbx
-COMMENT-dbx=		"dbx database abstraction interface for php5"
-CONFIGURE_ARGS+=	--enable-dbx=shared
-.endif
-
 # filepro
 PSEUDO_FLAVORS+=	no_filepro
 .if ${FLAVOR:L:Mno_filepro}
@@ -104,18 +98,19 @@ CONFIGURE_ARGS+=	--without-gd --without-xpm-dir --without-ttf \
 MULTI_PACKAGES+=	-gd
 COMMENT-gd=		"image manipulation extensions for php5"
 GD_DEPENDS=		${GRAPHIC_DEPENDS} t1.5::devel/t1lib
-GD_WANTLIB=		z
+GD_WANTLIB=		freetype z
+CONFIGURE_ENV+=		CPPFLAGS="${LOCALBASE}/include/libpng
 CONFIGURE_ARGS+=	--with-gd=shared ${GRAPHIC_CONFIG} \
 			--with-t1lib=${LOCALBASE} \
 			--with-freetype-dir=${X11BASE}
 
 . if ${FLAVOR:L:Mno_x11}
-CONFIGURE_ARGS+=       --without-xpm-dir
-FULLPKGNAME-gd=		php5-gd-${V}p3-no_x11
+CONFIGURE_ARGS+=	--without-xpm-dir
+FULLPKGNAME-gd=		php5-gd-${V}-no_x11
 . else
-USE_X11=               yes
-CONFIGURE_ARGS+=       --with-xpm-dir=${X11BASE}
-FULLPKGNAME-gd=		php5-gd-${V}p1
+USE_X11=		yes
+CONFIGURE_ARGS+=	--with-xpm-dir=${X11BASE}
+FULLPKGNAME-gd=		php5-gd-${V}
 .  if !defined(PACKAGING) || ${SUBPACKAGE} == "-gd"
 GD_WANTLIB+=		X11 Xpm
 .  endif
@@ -143,8 +138,8 @@ COMMENT-imap=		"imap, pop3 and nntp extensions for php5"
 CONFIGURE_ARGS+=	--with-imap=shared,${LOCALBASE} \
 			--with-kerberos=/usr --with-imap-ssl
 IMAP_DEPENDS=		c-client.3::mail/c-client
-IMAP_WANTLIB=		gssapi crypto krb5 ssl des
-FULLPKGNAME-imap=	php5-imap-${V}p1
+IMAP_WANTLIB=		gssapi crypto krb5 ssl
+FULLPKGNAME-imap=	php5-imap-${V}
 .endif
 
 # ldap
@@ -201,6 +196,18 @@ CONFIGURE_ARGS+=	--with-mysql=shared,${LOCALBASE}
 MYSQL_DEPENDS=		lib/mysql/mysqlclient.10::databases/mysql
 .endif
 
+# mysqli
+PSEUDO_FLAVORS+=	no_mysqli
+.if ${FLAVOR:L:Mno_mysqli}
+CONFIGURE_ARGS+=	--without-mysqli
+.else
+MULTI_PACKAGES+=	-mysqli
+COMMENT-mysqli=		"mysql database access extensions for php5"
+CONFIGURE_ARGS+=	--with-mysqli=shared,${LOCALBASE}/bin/mysql_config
+MYSQLI_DEPENDS=		lib/mysql/mysqlclient.10::databases/mysql
+MYSQLI_WANTLIB=		crypto ssl z
+.endif
+
 # ncurses
 PSEUDO_FLAVORS+=	no_ncurses
 .if ${FLAVOR:L:Mno_ncurses}
@@ -253,7 +260,7 @@ MULTI_PACKAGES+=	-soap
 COMMENT-soap=		"SOAP functions for php5"
 CONFIGURE_ARGS+=	--enable-soap=shared
 SOAP_WANTLIB=		xml2 z iconv
-FULLPKGNAME-soap=	php5-soap-${V}p1
+FULLPKGNAME-soap=	php5-soap-${V}
 .endif
 
 # snmp
@@ -298,8 +305,7 @@ CONFIGURE_ARGS+=	--without-xmlrpc
 MULTI_PACKAGES+=	-xmlrpc
 COMMENT-xmlrpc=		"XML RPC functions for php5"
 CONFIGURE_ARGS+=	--with-xmlrpc=shared
-XMLRPC_DEPENDS=		expat.2::textproc/expat
-XMLRPC_WANTLIB=		iconv
+XMLRPC_WANTLIB=		iconv xml2 z
 .endif
 
 # xsl
@@ -311,14 +317,17 @@ MULTI_PACKAGES+=	-xsl
 COMMENT-xsl=		"XSL functions for php5"
 CONFIGURE_ARGS+=	--with-xsl=shared --enable-dom
 XSL_DEPENDS=		xslt.3,exslt::textproc/libxslt
-XSL_WANTLIB=		xml2 z iconv
-FULLPKGNAME-xsl=	php5-xsl-${V}p1
+XSL_WANTLIB=		iconv xml2 z
+FULLPKGNAME-xsl=	php5-xsl-${V}
 .endif
 
 .for i in ${MULTI_PACKAGES}
-.if !defined(FULLPKGNAME${i})
-FULLPKGNAME${i}=	php5${i}-${V}p0
-.endif
+.  if !defined(FULLPKGNAME${i})
+FULLPKGNAME${i}=	php5${i}-${V}
+.  endif
+.  if ${FLAVOR:L:Mhardened}
+FULLPKGNAME${i}:=	${FULLPKGNAME${i}}-hardened
+.  endif
 .endfor
 
 .if defined(PACKAGING) && !empty(SUBPACKAGE)

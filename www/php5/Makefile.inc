@@ -1,24 +1,25 @@
-# $OpenBSD: Makefile.inc,v 1.7 2005/12/29 23:03:29 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2006/05/09 14:15:40 robert Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
-V=		5.0.5
-DISTNAME=	php-${V}
-CATEGORIES=	www lang
+V=			5.1.4
+DISTNAME?=		php-${V}
+CATEGORIES=		www lang
 
-MAINTAINER=	Robert Nagy <robert@openbsd.org>
-HOMEPAGE=	http://www.php.net/
+MAINTAINER=		Robert Nagy <robert@openbsd.org>
+HOMEPAGE=		http://www.php.net/
 
-MASTER_SITES=	http://us2.php.net/distributions/ \
-		http://se.php.net/distributions/ \
-		http://no.php.net/distributions/ \
-		http://uk.php.net/distributions/
+MASTER_SITES=		http://us2.php.net/distributions/ \
+			http://se.php.net/distributions/ \
+			http://no.php.net/distributions/ \
+			http://uk.php.net/distributions/
+MASTER_SITES0=		http://anoncvs.silihost.hu/
+MASTER_SITES1=		http://www.hardened-php.net/
 
 # UPGRADERS: please read BOTH the PHP and Zend licenses
 # and make sure they are safe before an upgrade
-
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -65,3 +66,15 @@ REGRESS_FLAGS=		NO_INTERACTION=1
 CHECKSUM_FILE=		${.CURDIR}/../distinfo
 PATCH_LIST=		${.CURDIR}/../patches/patch-* \
 			patch-*
+
+# the hardened flavor is used by both core and extensions
+FLAVORS+=		hardened
+FLAVOR?=
+
+HARDENED_V=		0.4.9
+.if ${FLAVOR:L:Mhardened}
+PATCHFILES=		hardening-patch-${V}-${HARDENED_V}.patch.gz:1
+PATCH_DIST_STRIP=	-p1
+.else
+SUPDISTFILES=		hardening-patch-${V}-${HARDENED_V}.patch.gz:1
+.endif
