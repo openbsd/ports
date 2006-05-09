@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2005/12/20 08:13:46 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.58 2006/05/09 19:13:32 pedro Exp $
 
 COMMENT=	"list information about open files"
 
-VERSION=	4.75
+VERSION=	4.77
 DISTNAME=	lsof_${VERSION}
-PKGNAME=	${DISTNAME:S/_/-/}p0
+PKGNAME=	${DISTNAME:S/_/-/}
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/ \
 		ftp://ftp.ayamura.org/pub/lsof/ \
@@ -40,7 +40,7 @@ WRKDIST=	${WRKDIR}/${DISTNAME}/${SRCBALL_NAME}
 
 post-extract:
 	@(cd ${WRKDIST}/..; \
-	EXPMD5=`/usr/bin/grep MD5 README.${DISTNAME} | \
+	EXPMD5=`/usr/bin/grep "MD5 (" README.${DISTNAME} | \
 	    /usr/bin/sed 's/^[ ]*//'` ; \
 	CALCMD5=`md5 ${SRCBALL_NAME}.tar` ; \
 	if [ "$${EXPMD5}"X != "$${CALCMD5}"X ]; then \
