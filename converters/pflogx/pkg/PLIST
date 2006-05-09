@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/09 18:22:47 naddy Exp $
+bin/pflogx
+share/doc/pflogx/
+share/doc/pflogx/Changelog
+share/doc/pflogx/README
+share/pflogx/
+share/pflogx/dtd/
+share/pflogx/dtd/export.dtd
+share/pflogx/xsl/
+share/pflogx/xsl/export_csv.xsl
+share/pflogx/xsl/export_html.xsl
+share/pflogx/xsl/export_xhtml.xsl
+share/pflogx/xsl/first_date.xsl
+share/pflogx/xsl/last_date.xsl
