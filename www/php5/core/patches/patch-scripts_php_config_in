@@ -1,3 +1,4 @@
+$OpenBSD: patch-scripts_php_config_in,v 1.2 2006/05/10 13:48:01 wilfried Exp $
 --- scripts/php-config.in.orig	Fri Apr 28 00:49:53 2006
 +++ scripts/php-config.in	Fri Apr 28 01:03:19 2006
 @@ -1,9 +1,9 @@
