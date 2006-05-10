@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.16 2006/04/30 20:55:44 brad Exp $
---- configure.in.orig	Fri Mar 31 12:10:39 2006
-+++ configure.in	Mon Apr 17 01:26:51 2006
+$OpenBSD: patch-configure_in,v 1.17 2006/05/10 03:21:30 brad Exp $
+--- configure.in.orig	Wed Apr 26 14:31:03 2006
++++ configure.in	Sun May  7 03:14:55 2006
 @@ -445,44 +445,7 @@ AC_SUBST(MAKEINDEX)
  AC_PATH_PROG(PS, ps, ps)
  AC_MSG_CHECKING("how to check if pid exists")
@@ -57,7 +57,7 @@ $OpenBSD: patch-configure_in,v 1.16 2006/04/30 20:55:44 brad Exp $
  int allow_severity = 0;
  int deny_severity  = 0;
  
-@@ -1538,7 +1502,7 @@ then
+@@ -1543,7 +1507,7 @@ then
    AC_CHECK_LIB(c_r,strtok_r)
    case "$with_osf32_threads---$target_os" in
      # Don't keep -lc_r in LIBS; -pthread handles it magically
@@ -66,7 +66,7 @@ $OpenBSD: patch-configure_in,v 1.16 2006/04/30 20:55:44 brad Exp $
  
    esac
    AC_CHECK_FUNCS(strtok_r pthread_init)
-@@ -1586,29 +1550,6 @@ case $SYSTEM_TYPE in
+@@ -1591,29 +1555,6 @@ case $SYSTEM_TYPE in
  AC_SYS_RESTARTABLE_SYSCALLS
      ;;
  esac
