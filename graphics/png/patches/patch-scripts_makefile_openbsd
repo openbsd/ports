@@ -1,26 +1,23 @@
---- scripts/makefile.openbsd.orig	Fri Dec  3 01:14:31 2004
-+++ scripts/makefile.openbsd	Mon Dec 26 22:46:14 2005
-@@ -1,14 +1,14 @@
--# makefile for libpng
-+# makefile for libpng under OpenBSD
- # Copyright (C) 1995 Guy Eric Schalnat, Group 42, Inc.
+$OpenBSD: patch-scripts_makefile_openbsd,v 1.14 2006/05/10 13:50:01 bernd Exp $
+--- scripts/makefile.openbsd.orig	Sun Apr 23 20:45:40 2006
++++ scripts/makefile.openbsd	Tue May  9 15:07:40 2006
+@@ -3,12 +3,12 @@
  # For conditions of distribution and use, see copyright notice in png.h
  
  PREFIX?= /usr/local
-+BINDIR=	${PREFIX}/bin
++BINDIR= ${PREFIX}/bin
  LIBDIR=	${PREFIX}/lib
--MANDIR= ${PREFIX}/man/cat
-+MANDIR=	${PREFIX}/man/cat
+ MANDIR= ${PREFIX}/man/cat
 +INCDIR=	${PREFIX}/include/libpng
 +DOCDIR=	${PREFIX}/share/doc/png
  
 -SHLIB_MAJOR=	0
--SHLIB_MINOR=	1.2.8
+-SHLIB_MINOR=	1.2.10
 -
  LIB=	png
  SRCS=	png.c pngerror.c pnggccrd.c pngget.c pngmem.c pngpread.c \
  	pngread.c pngrio.c pngrtran.c pngrutil.c pngset.c pngtrans.c \
-@@ -21,24 +21,39 @@ CPPFLAGS+= -I${.CURDIR} -DPNG_NO_ASSEMBL
+@@ -21,24 +21,42 @@ CPPFLAGS+= -I${.CURDIR} -DPNG_NO_ASSEMBL
  
  NOPROFILE= Yes
  
@@ -28,18 +25,16 @@
 +CLEANFILES+= pngtest.o pngtest libpng-config
  
  MAN=	libpng.3 libpngpf.3 png.5
--DOCS=	ANNOUNCE CHANGES LICENSE README libpng.txt
-+DOCS=	README libpng.txt
+-DOCS = ANNOUNCE CHANGES INSTALL KNOWNBUG LICENSE README TODO Y2KINFO libpng.txt
++DOCS = README libpng.txt
  
--pngtest.o:	pngtest.c
 +all: ${_LIBS} libpng-config libpng.pc
 +
-+pngtest.o: pngtest.c
- 	${CC} ${CPPFLAGS} ${CFLAGS} -c ${.ALLSRC} -o ${.TARGET}
- 
--pngtest:	pngtest.o
 +libpng.pc:
-+	cat scripts/libpng.pc.in | sed -e s\!@PREFIX@!$(PREFIX)! > libpng.pc
++	cat scripts/libpng.pc.in | sed -e s\!@prefix@!$(PREFIX)! \
++		-e s\!@exec_prefix@!$(BINDIR)! -e s\!@libdir@!$(LIBDIR)! \
++		-e s\!@includedir@!$(INCDIR)!  \
++		-e s\!@PNGLIB_VERSION@!$(PNGLIB_VERSION)!> libpng.pc
 +
 +libpng-config:
 +	( cat scripts/libpng-config-head.in; \
@@ -51,11 +46,14 @@
 +	cat scripts/libpng-config-body.in ) > libpng-config
 +	chmod +x libpng-config
 +
-+pngtest: pngtest.o
+ pngtest.o:	pngtest.c
+ 	${CC} ${CPPFLAGS} ${CFLAGS} -c ${.ALLSRC} -o ${.TARGET}
+ 
+ pngtest:	pngtest.o
  	${CC} ${LDFLAGS} ${.ALLSRC} -o ${.TARGET} -L${.OBJDIR} -lpng -lz -lm
  
 -test:	pngtest
-+test regress: pngtest
++test regress:	pngtest
  	cd ${.OBJDIR} && env \
  		LD_LIBRARY_PATH="${.OBJDIR}" ${.OBJDIR}/pngtest
  
@@ -67,7 +65,7 @@
  	fi
  	if [ ! -d ${DESTDIR}${LIBDIR} ]; then \
  	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${LIBDIR}; \
-@@ -52,21 +67,24 @@ beforeinstall:
+@@ -52,21 +70,24 @@ beforeinstall:
  	if [ ! -d ${DESTDIR}${MANDIR}5 ]; then \
  	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${MANDIR}5; \
  	fi

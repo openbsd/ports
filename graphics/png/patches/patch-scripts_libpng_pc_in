@@ -1,14 +1,16 @@
---- scripts/libpng.pc.in.orig	Thu Dec  2 19:14:31 2004
-+++ scripts/libpng.pc.in	Sun Jul 24 00:42:53 2005
-@@ -4,8 +4,8 @@ exec_prefix=${prefix}
- libdir=${exec_prefix}/lib
- includedir=${exec_prefix}/include
+$OpenBSD: patch-scripts_libpng_pc_in,v 1.3 2006/05/10 13:50:01 bernd Exp $
+--- scripts/libpng.pc.in.orig	Fri Mar  3 03:48:03 2006
++++ scripts/libpng.pc.in	Tue May  9 14:57:35 2006
+@@ -1,10 +1,10 @@
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+ libdir=@libdir@
+-includedir=@includedir@/libpng@PNGLIB_MAJOR@
++includedir=@includedir@
  
--Name: libpng12
-+Name: libpng
+ Name: libpng
  Description: Loads and saves PNG files
- Version: 1.2.8
--Libs: -L${libdir} -lpng12 -lz -lm
--Cflags: -I${includedir}/libpng12
+ Version: @PNGLIB_VERSION@
+-Libs: -L${libdir} -lpng@PNGLIB_MAJOR@
 +Libs: -L${libdir} -lpng -lz -lm
-+Cflags: -I${includedir}/libpng
+ Cflags: -I${includedir}
