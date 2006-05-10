@@ -1,0 +1,46 @@
+$OpenBSD: patch-src_lib_ioloop-kqueue_c,v 1.6 2006/05/10 00:30:04 brad Exp $
+--- src/lib/ioloop-kqueue.c.orig	Sat Mar 25 03:07:39 2006
++++ src/lib/ioloop-kqueue.c	Tue May  9 15:57:02 2006
+@@ -74,7 +74,7 @@ void io_loop_handle_add(struct ioloop *i
+ {
+ 	struct ioloop_handler_context *ctx = ioloop->handler_context;
+ 	const int fd = io->fd;
+-	struct kevent ev = { fd, 0, EV_ADD | EV_EOF, 0, 0, NULL };
++	struct kevent ev = { fd, 0, EV_ADD, 0, 0, NULL };
+ 	enum io_condition condition = io->condition & MASK;
+ 	
+ 	i_assert(io->callback != NULL);
+@@ -184,7 +184,7 @@ void io_loop_handler_run(struct ioloop *
+ 
+ 		i_assert(ctx->evbuf[i].ident < ctx->fds_size);
+ 		if ((ctx->fds[ctx->evbuf[i].ident].mode & IO_ERROR) &&
+-		    (ctx->evbuf[i].flags & EV_EOF)) {
++		    (ctx->evbuf[i].flags & (EV_EOF | EV_ERROR))) {
+ 			struct io *errio = ctx->fds[ctx->evbuf[i].ident].errio;
+ 
+ 			t_id = t_push();
+@@ -203,14 +203,22 @@ void io_loop_handler_run(struct ioloop *
+ 					" in I/O handler %p",
+ 					(void *)io->callback);
+ 			}
++		} else if (ctx->fds[ctx->evbuf[i].ident].mode & IO_ERROR) {
++			/* 
++			   NO-OP. If the handle is registered only for 
++			   IO_ERROR, then we can get readable/writable event
++			   but no IO_READ | IO_WRITE set.
++			 */
+ 		} else
+ 			i_panic("Unrecognized event: kevent {.ident =  %u,"
+                                 " .filter = 0x%04x,"
+                                 " .flags = 0x%04x,"
+                                 " .fflags = 0x%08x,"
+-                                " .data = 0x%08x}", ctx->evbuf[i].ident,
++                                " .data = 0x%08x}\n"
++				"mode: 0x%x04x", ctx->evbuf[i].ident,
+                                 ctx->evbuf[i].filter, ctx->evbuf[i].flags,
+-                                ctx->evbuf[i].fflags, ctx->evbuf[i].data);
++                                ctx->evbuf[i].fflags, ctx->evbuf[i].data,
++				ctx->fds[ctx->evbuf[i].ident].mode);
+ 	}
+ }
+ 
