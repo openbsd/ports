@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_lib_ioloop-kqueue_c,v 1.6 2006/05/10 00:30:04 brad Exp $
+$OpenBSD: patch-src_lib_ioloop-kqueue_c,v 1.7 2006/05/10 19:51:03 brad Exp $
 --- src/lib/ioloop-kqueue.c.orig	Sat Mar 25 03:07:39 2006
-+++ src/lib/ioloop-kqueue.c	Tue May  9 15:57:02 2006
++++ src/lib/ioloop-kqueue.c	Wed May 10 14:58:44 2006
 @@ -74,7 +74,7 @@ void io_loop_handle_add(struct ioloop *i
  {
  	struct ioloop_handler_context *ctx = ioloop->handler_context;
@@ -10,7 +10,25 @@ $OpenBSD: patch-src_lib_ioloop-kqueue_c,v 1.6 2006/05/10 00:30:04 brad Exp $
  	enum io_condition condition = io->condition & MASK;
  	
  	i_assert(io->callback != NULL);
-@@ -184,7 +184,7 @@ void io_loop_handler_run(struct ioloop *
+@@ -101,6 +101,8 @@ void io_loop_handle_add(struct ioloop *i
+ 	if (condition & (IO_READ | IO_ERROR)) {
+ 		ctx->fds[fd].mode |= condition;
+ 		ev.filter = EVFILT_READ;
++		if (!(condition & ~IO_ERROR))
++			ev.flags |= EV_CLEAR;
+ 		if (kevent(ctx->kq, &ev, 1, NULL, 0, NULL) < 0) {
+ 			i_error("kevent(%d) in io_loop_handle_add() failed: %m",
+ 				fd);
+@@ -109,6 +111,8 @@ void io_loop_handle_add(struct ioloop *i
+ 	if (condition & (IO_WRITE | IO_ERROR)) {
+ 		ctx->fds[fd].mode |= condition;
+ 		ev.filter = EVFILT_WRITE;
++		if (!(condition & ~IO_ERROR))
++			ev.flags |= EV_CLEAR;
+ 		if (kevent(ctx->kq, &ev, 1, NULL, 0, NULL) < 0) {
+ 			i_error("kevent(%d) in io_loop_handle_add() failed: %m",
+ 				fd);
+@@ -184,7 +188,7 @@ void io_loop_handler_run(struct ioloop *
  
  		i_assert(ctx->evbuf[i].ident < ctx->fds_size);
  		if ((ctx->fds[ctx->evbuf[i].ident].mode & IO_ERROR) &&
@@ -19,7 +37,7 @@ $OpenBSD: patch-src_lib_ioloop-kqueue_c,v 1.6 2006/05/10 00:30:04 brad Exp $
  			struct io *errio = ctx->fds[ctx->evbuf[i].ident].errio;
  
  			t_id = t_push();
-@@ -203,14 +203,22 @@ void io_loop_handler_run(struct ioloop *
+@@ -203,14 +207,22 @@ void io_loop_handler_run(struct ioloop *
  					" in I/O handler %p",
  					(void *)io->callback);
  			}
