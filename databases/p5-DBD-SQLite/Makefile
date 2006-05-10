@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2006/04/14 15:30:37 robert Exp $
+# $OpenBSD: Makefile,v 1.9 2006/05/10 11:38:08 espie Exp $
 
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
 COMMENT=		'SQLite drivers for the Perl DBI'
 
 DISTNAME=		DBD-SQLite-1.12
-PKGNAME=		p5-${DISTNAME}
+PKGNAME=		p5-${DISTNAME}p0
 CATEGORIES=		databases perl5
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
@@ -20,8 +20,10 @@ MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=DBD/}
 
 BUILD_DEPENDS=		:p5-DBI->=1.08:databases/p5-DBI
 RUN_DEPENDS=		:p5-DBI->=1.08:databases/p5-DBI
+LIB_DEPENDS=		sqlite3::databases/sqlite3
 
 CONFIGURE_STYLE=	perl
+CONFIGURE_ARGS=		SQLITE_LOCATION=${LOCALBASE}
 MAKE_FLAGS=		CC='${CC}' \
 			LD='${CC}'
 
