@@ -1,0 +1,383 @@
+$OpenBSD: patch-src_cairo-xlib-surface_c,v 1.1 2006/05/10 21:34:17 brad Exp $
+--- src/cairo-xlib-surface.c.orig	Wed Mar 15 16:26:51 2006
++++ src/cairo-xlib-surface.c	Sun Mar 26 21:00:36 2006
+@@ -72,6 +72,8 @@ _native_byte_order_lsb (void);
+ 
+ #define CAIRO_ASSUME_PIXMAP	20
+ 
++struct clut_r3g3b2;
++
+ struct _cairo_xlib_surface {
+     cairo_surface_t base;
+ 
+@@ -117,6 +119,9 @@ struct _cairo_xlib_surface {
+     int num_clip_rects;
+ 
+     XRenderPictFormat *format;
++
++    struct clut_r3g3b2 *clut;
++
+ };
+ 
+ #define CAIRO_SURFACE_RENDER_AT_LEAST(surface, major, minor)	\
+@@ -416,6 +421,160 @@ _swap_ximage_to_native (XImage *ximage)
+     }
+ }
+ 
++#if 0
++static void _set_optimal_cmap(Display *dpy, Colormap cmap) {
++    int i, r, g, b;
++    XColor cm[256];
++
++    for (i = 0; i < 256; i++) {
++	r = i >> 5;
++	g = (i >> 2) & 0x7;
++	b = (i << 1) & 0x7;
++	cm[i].pixel = i;
++	cm[i].flags = DoRed | DoGreen | DoBlue;
++	cm[i].red   = r << 13 | r << 10 | r << 7 | r << 4 | r << 1 | r >> 2;
++	cm[i].green = g << 13 | g << 10 | g << 7 | g << 4 | g << 1 | g >> 2;
++	cm[i].blue  = b << 13 | b << 10 | b << 7 | b << 4 | b << 1 | b >> 2;
++    }
++    XStoreColors(dpy, cmap, cm, 256);
++}
++#endif
++
++struct clut_r3g3b2 {
++    struct clut_r3g3b2 *next;
++    Display            *dpy;
++    Colormap           cmap;
++    unsigned char      clut[256 * 3];
++    unsigned char      ilut[256];
++};
++
++static struct clut_r3g3b2 * _get_clut_r3g3b2(Display *dpy, Colormap cmap) {
++    static struct clut_r3g3b2 *first = NULL;
++    int i,j, min, d;
++    struct clut_r3g3b2 *clut;
++    unsigned char *c, r,g,b, r2,g2,b2;
++
++    clut = first;
++    while(clut) {
++	if ( clut->dpy == dpy && clut->cmap == cmap )
++	    return clut;
++	clut = clut->next;
++    }
++    
++    clut = calloc(1, sizeof(*clut));
++    if(clut == NULL)
++	return NULL;
++    
++    clut->next = first;
++    clut->dpy = dpy;
++    clut->cmap = cmap;
++    first = clut;
++
++    /* Construct the clut from Colormap */
++    c = clut->clut;
++    for (i = 0; i < 256; i++) {
++	XColor xcol;
++	xcol.pixel = i;
++	XQueryColor(dpy, cmap, &xcol);
++	c[0] = xcol.red   / 256;
++	c[1] = xcol.green / 256;
++	c[2] = xcol.blue  / 256;
++	c += 3;
++    }
++    /*
++      
++    Find the best matching color in the colormap for all r3g3b2
++    values. The distance is maybe not perceptively valid, but it
++    should not be too bad.
++    
++    */
++    for (i = 0; i < 256; i++) {
++	r = i >> 5;
++	g = (i >> 2) & 0x7;
++	b = (i << 1) & 0x7;
++	min = 255;
++	for(j = 0; j < 256; j++) {
++	    c = clut->clut + j*3;
++	    r2 = c[0] >> 5;
++	    g2 = c[1] >> 5;
++	    b2 = c[2] >> 5;
++	    if ( r2 == r && g2 == g && (b2 & 0x6) == b ) {
++		clut->ilut[i] = j;
++		break;
++	    }
++
++	    /*
++	      
++	    Square make higher bits much more important than lower
++	    ones.
++	    
++	    */
++	    d  = (r2 ^ r) * (r2 ^ r);
++	    d += (g2 ^ g) * (g2 ^ g);
++	    d += (b2 ^ b) * (b2 ^ b);
++	    
++	    if(d < min) {
++		clut->ilut[i] = j;
++		min = d;
++	    }
++	}
++    }
++    
++    return clut;
++}
++
++static const char * _visualClass[] = {
++    "StaticGray",
++    "GrayScale",
++    "StaticColor",
++    "PseudoColor",
++    "TrueColor",
++    "DirectColor"
++};
++
++
++static void _print_visual(Visual *v) {
++    printf("Visual: class=%s, bpRGB=%i, CM=%i, r=%lx, g=%lx, b=%lx\n",
++	   _visualClass[v->class],
++	   v->bits_per_rgb,
++	   v->map_entries,
++	   v->red_mask, v->green_mask, v->blue_mask);
++}
++
++#if 0
++static void _print_ximage(XImage *x) {
++    const char * format[] = { "XYBitmap", "XYPixmap", "ZPixmap" };
++    printf("XImage: size=(%i,%i), xoffset=%i, format=%s, depth=%i, bpp=%i, stride=%i\n        r=%lx, g=%lx, b=%lx, unit=%i, pad=%i\n",
++	   x->width,
++	   x->height,
++	   x->xoffset,
++	   format[x->format],
++	   x->depth,
++	   x->bits_per_pixel,
++	   x->bytes_per_line,
++	   x->red_mask, x->green_mask, x->blue_mask,
++	   x->bitmap_unit, x->bitmap_pad);
++}
++
++
++const char * _cairoFormats[] = { "ARGB32", "RGB24", "A8", "A1" };
++
++static void _print_cairoimage(cairo_image_surface_t *i) {
++    
++    printf("CairoImage: size=(%i,%i), format=%s, depth=%i, stride=%i\n",
++	   i->width,
++	   i->height,
++	   _cairoFormats[i->format],
++	   i->depth,
++	   i->stride);
++}
++
++static void _print_cairomasks(cairo_format_masks_t *m) {
++    printf("CairoFormatMask: bpp=%i, a=%lx, r=%lx, g=%lx, b=%lx\n",
++	   m->bpp, m->alpha_mask, m->red_mask, m->green_mask, m->blue_mask);
++}
++#endif
++
+ static cairo_status_t
+ _get_image_surface (cairo_xlib_surface_t   *surface,
+ 		    cairo_rectangle_t      *interest_rect,
+@@ -508,7 +667,7 @@ _get_image_surface (cairo_xlib_surface_t
+ 
+ 	XCopyArea (surface->dpy, surface->drawable, pixmap, surface->gc,
+ 		   x1, y1, x2 - x1, y2 - y1, 0, 0);
+-	
++
+ 	ximage = XGetImage (surface->dpy,
+ 			    pixmap,
+ 			    0, 0,
+@@ -521,7 +680,7 @@ _get_image_surface (cairo_xlib_surface_t
+ 	return CAIRO_STATUS_NO_MEMORY;
+ 
+     _swap_ximage_to_native (ximage);
+-					
++
+     /*
+      * Compute the pixel format masks from either a visual or a 
+      * XRenderFormat, failing we assume the drawable is an
+@@ -569,20 +728,78 @@ _get_image_surface (cairo_xlib_surface_t
+     }
+     else
+     {
+-	/* 
+-	 * XXX This can't work.  We must convert the data to one of the 
+-	 * supported pixman formats.  Pixman needs another function
+-	 * which takes data in an arbitrary format and converts it
+-	 * to something supported by that library.
++	/*
++	 * Otherwise, we construct a buffer containing RGB24 data.
+ 	 */
++	unsigned char *data, *dst, *src, *col, *clut;
++	unsigned int stride;
++	int i,j;
++	
++	if(surface->visual == NULL) {
++	    printf("No visual for surface\n");
++	    goto FAIL;
++	}
++	stride = ximage->width * 4;
++	data = malloc(stride * ximage->height);
++	if(data == NULL) {
++	    printf("Cannot allocate RGB buffer\n");
++	    goto FAIL;
++	}
++	
++	switch (surface->visual->class) {
++	case StaticGray:
++	case GrayScale:
++	    for(j = 0; j < ximage->height; j++) {
++		src = (unsigned char *) ximage->data + ximage->bytes_per_line * j;
++		dst = data + j * stride;
++		for(i = 0; i < ximage->width; i++) {
++		    dst[1] = dst[2] = dst[3] = *src;
++		    dst += 4;
++		    src++;
++		}
++	    }
++	    break;
++	case PseudoColor:
++	case StaticColor:
++	    if(surface->clut == NULL) {
++		surface->clut = _get_clut_r3g3b2(
++		    surface->dpy,
++		    DefaultColormapOfScreen(surface->screen));
++	    }
++	    if(surface->clut == NULL) {
++		printf("Cannot allocate clut/ilut!\n");
++		free(data);
++		goto FAIL;
++	    }
++	    clut = surface->clut->clut;
++	    src = (unsigned char *) ximage->data;
++	    for(j = 0; j < ximage->height; j++) {
++		dst = data + j * stride;
++		for(i = 0; i < ximage->width; i++) {
++		    col = clut + (src[i] * 3);
++		    dst[1] = col[0];
++		    dst[2] = col[1];
++		    dst[3] = col[2];
++		    dst += 4;
++		}
++		src += ximage->bytes_per_line;
++	    }
++	    break;
++	default:
++	    printf("Dunno what to do with: ");
++	    _print_visual(surface->visual);
++	    goto FAIL;
++	}
++	free(ximage->data);
+ 	image = (cairo_image_surface_t*)
+-	    _cairo_image_surface_create_with_masks ((unsigned char *) ximage->data,
+-						    &masks,
+-						    ximage->width, 
+-						    ximage->height,
+-						    ximage->bytes_per_line);
+-	if (image->base.status)
++	    cairo_image_surface_create_for_data(data, CAIRO_FORMAT_RGB24, ximage->width, ximage->height, stride);
++	
++	if (image->base.status) {
++	    printf("Failed!\n");
++	    free(data);
+ 	    goto FAIL;
++	}
++	
+     }
+ 
+     /* Let the surface take ownership of the data */
+@@ -661,23 +878,67 @@ _draw_image_surface (cairo_xlib_surface_
+ 		     int                    dst_x,
+ 		     int                    dst_y)
+ {
++    static unsigned char *buf = NULL;
++    static int size = 0;
+     XImage ximage;
+-    int bpp, alpha, red, green, blue;
++    int bpp, alpha, red, green, blue, stride, depth, i, j, l;
++    unsigned char *data, *c, *d, *ilut;
+     int native_byte_order = _native_byte_order_lsb () ? LSBFirst : MSBFirst;
+     
+     pixman_format_get_masks (pixman_image_get_format (image->pixman_image),
+ 			     &bpp, &alpha, &red, &green, &blue);
+     
++    stride = image->width * 4;
++    depth = image->depth;
++    data = image->data;
++    l = 0;
++    
++    if(image->depth == 24 && surface->clut) {
++	stride = image->width;
++	if(stride%4)
++	    stride += 4 - stride % 4;
++	l = (stride * image->height);
++	if (size < l) {
++	    if(buf)
++		data = realloc(buf, l);
++	    else
++		data = malloc(l);
++	    if(data) {
++		buf = data;
++		size = l;
++	    }
++	} else {
++	    data = buf;
++	}
++	if(data == NULL)
++	    return CAIRO_STATUS_NO_MEMORY;
++	
++	ilut = surface->clut->ilut;
++	for(j=0;j<image->height;j++) {
++	    c = image->data + j * image->stride;
++	    d = data + j * stride;
++	    for(i=0;i<image->width;i++) {
++		d[i] = ilut[ (unsigned int)
++			     (((c[1]) & ( 0x7 << 5 )) |
++			      ((c[2] >> 3) & (0x7 << 2 )) |
++			      ((c[3] >> 6) & 0x3)) ];
++		c += 4;
++	    }
++	}
++	alpha = red = green = blue = 0;
++	depth = bpp = 8;
++    }
++
+     ximage.width = image->width;
+     ximage.height = image->height;
+     ximage.format = ZPixmap;
+-    ximage.data = (char *)image->data;
++    ximage.data = data;
+     ximage.byte_order = native_byte_order;
+-    ximage.bitmap_unit = 32;	/* always for libpixman */
++    ximage.bitmap_unit = 32; /* always for libpixman */
+     ximage.bitmap_bit_order = native_byte_order;
+-    ximage.bitmap_pad = 32;	/* always for libpixman */
+-    ximage.depth = image->depth;
+-    ximage.bytes_per_line = image->stride;
++    ximage.bitmap_pad = 32; /* always for libpixman */
++    ximage.depth = depth;
++    ximage.bytes_per_line = stride;
+     ximage.bits_per_pixel = bpp;
+     ximage.red_mask = red;
+     ximage.green_mask = green;
+@@ -685,7 +946,7 @@ _draw_image_surface (cairo_xlib_surface_
+     ximage.xoffset = 0;
+ 
+     XInitImage (&ximage);
+-    
++
+     _cairo_xlib_surface_ensure_gc (surface);
+     XPutImage(surface->dpy, surface->drawable, surface->gc,
+ 	      &ximage, 0, 0, dst_x, dst_y,
+@@ -1788,6 +2049,8 @@ _cairo_xlib_surface_create_internal (Dis
+     surface->have_clip_rects = FALSE;
+     surface->clip_rects = NULL;
+     surface->num_clip_rects = 0;
++
++    surface->clut = NULL;
+ 
+     return (cairo_surface_t *) surface;
+ }
