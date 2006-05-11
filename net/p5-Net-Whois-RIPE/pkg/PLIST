@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/11 14:52:40 bernd Exp $
+${P5SITE}/Net/
+${P5SITE}/Net/Whois/
+${P5SITE}/Net/Whois/RIPE/
+${P5SITE}/Net/Whois/RIPE.pm
+${P5SITE}/Net/Whois/RIPE.pod
+${P5SITE}/Net/Whois/RIPE/Iterator.pm
+${P5SITE}/Net/Whois/RIPE/Iterator.pod
+${P5SITE}/Net/Whois/RIPE/Object/
+${P5SITE}/Net/Whois/RIPE/Object.pm
+${P5SITE}/Net/Whois/RIPE/Object.pod
+${P5SITE}/Net/Whois/RIPE/Object/Template.pm
+@man man/man3p/Net::Whois::RIPE.3p
+@man man/man3p/Net::Whois::RIPE::Iterator.3p
+@man man/man3p/Net::Whois::RIPE::Object.3p
