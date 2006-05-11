@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/09/22 09:29:14 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2006/05/11 14:45:42 bernd Exp $
 
 COMMENT=	"simple SMTP client"
 
@@ -15,11 +15,18 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c
-
 MASTER_SITES=	${HOMEPAGE}
 EXTRACT_SUFX=	.tgz
 
 NO_REGRESS=	Yes
+
+FLAVORS=	static
+FLAVOR?=
+
+.if ${FLAVOR:L:Mstatic}
+MAKE_ENV=	LDFLAGS="-static"
+.else
+WANTLIB=	c
+.endif
 
 .include <bsd.port.mk>
