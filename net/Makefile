@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.415 2006/05/05 21:23:59 msf Exp $
+# $OpenBSD: Makefile,v 1.416 2006/05/11 14:55:12 bernd Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -213,6 +213,7 @@
      SUBDIR += p5-Net-Wake
      SUBDIR += p5-Net-Whois
      SUBDIR += p5-Net-Whois-Raw
+     SUBDIR += p5-Net-Whois-RIPE
      SUBDIR += p5-NetPacket
      SUBDIR += p5-Nmap-Parser
      SUBDIR += p5-Nmap-Scanner
