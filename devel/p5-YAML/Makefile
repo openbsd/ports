@@ -1,9 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2005/03/09 02:25:29 kevlo Exp $
-
 COMMENT=	"YAML ain't a markup language"
 
-V=		0.36
-DISTNAME=	YAML-${V}
+DISTNAME=	YAML-0.58
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 

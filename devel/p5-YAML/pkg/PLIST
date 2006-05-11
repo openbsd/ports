@@ -1,12 +1,31 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/03/09 02:25:30 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.4 2006/05/11 12:03:44 msf Exp $
 bin/ysh
+${P5SITE}/Test/
+${P5SITE}/Test/YAML.pm
 ${P5SITE}/YAML/
 ${P5SITE}/YAML.pm
-${P5SITE}/YAML.pod
+${P5SITE}/YAML/Base.pm
+${P5SITE}/YAML/Dumper/
+${P5SITE}/YAML/Dumper.pm
+${P5SITE}/YAML/Dumper/Base.pm
 ${P5SITE}/YAML/Error.pm
-${P5SITE}/YAML/Family.pm
+${P5SITE}/YAML/Loader/
+${P5SITE}/YAML/Loader.pm
+${P5SITE}/YAML/Loader/Base.pm
+${P5SITE}/YAML/Marshall.pm
 ${P5SITE}/YAML/Node.pm
-${P5SITE}/YAML/Transfer.pm
+${P5SITE}/YAML/Tag.pm
+${P5SITE}/YAML/Types.pm
 @man man/man1/ysh.1
+@man man/man3p/Test::YAML.3p
 @man man/man3p/YAML.3p
+@man man/man3p/YAML::Base.3p
+@man man/man3p/YAML::Dumper.3p
+@man man/man3p/YAML::Dumper::Base.3p
+@man man/man3p/YAML::Error.3p
+@man man/man3p/YAML::Loader.3p
+@man man/man3p/YAML::Loader::Base.3p
+@man man/man3p/YAML::Marshall.3p
 @man man/man3p/YAML::Node.3p
+@man man/man3p/YAML::Tag.3p
+@man man/man3p/YAML::Types.3p
