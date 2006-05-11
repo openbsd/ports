@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2006/03/20 21:30:34 msf Exp $
+# $OpenBSD: Makefile,v 1.5 2006/05/11 12:01:34 msf Exp $
 
 COMMENT=	"build and install Perl modules"
 
-DISTNAME=	Module-Build-0.2611
+DISTNAME=	Module-Build-0.28
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 

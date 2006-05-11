@@ -1,12 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/12/21 01:51:59 msf Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/05/11 12:01:34 msf Exp $
 bin/config_data
 ${P5SITE}/Module/
 ${P5SITE}/Module/Build/
 ${P5SITE}/Module/Build.pm
+${P5SITE}/Module/Build/API.pod
+${P5SITE}/Module/Build/Authoring.pod
 ${P5SITE}/Module/Build/Base.pm
 ${P5SITE}/Module/Build/Compat.pm
 ${P5SITE}/Module/Build/ConfigData.pm
 ${P5SITE}/Module/Build/Cookbook.pm
+${P5SITE}/Module/Build/ModuleInfo.pm
+${P5SITE}/Module/Build/Notes.pm
 ${P5SITE}/Module/Build/PPMMaker.pm
 ${P5SITE}/Module/Build/Platform/
 ${P5SITE}/Module/Build/Platform/Amiga.pm
@@ -24,12 +28,17 @@ ${P5SITE}/Module/Build/Platform/cygwin.pm
 ${P5SITE}/Module/Build/Platform/darwin.pm
 ${P5SITE}/Module/Build/Platform/os2.pm
 ${P5SITE}/Module/Build/PodParser.pm
+${P5SITE}/Module/Build/YAML.pm
 @man man/man1/config_data.1
 @man man/man3p/Module::Build.3p
+@man man/man3p/Module::Build::API.3p
+@man man/man3p/Module::Build::Authoring.3p
 @man man/man3p/Module::Build::Base.3p
 @man man/man3p/Module::Build::Compat.3p
 @man man/man3p/Module::Build::ConfigData.3p
 @man man/man3p/Module::Build::Cookbook.3p
+@man man/man3p/Module::Build::ModuleInfo.3p
+@man man/man3p/Module::Build::Notes.3p
 @man man/man3p/Module::Build::PPMMaker.3p
 @man man/man3p/Module::Build::Platform::Amiga.3p
 @man man/man3p/Module::Build::Platform::Default.3p
@@ -45,3 +54,4 @@ ${P5SITE}/Module/Build/PodParser.pm
 @man man/man3p/Module::Build::Platform::cygwin.3p
 @man man/man3p/Module::Build::Platform::darwin.3p
 @man man/man3p/Module::Build::Platform::os2.3p
+@man man/man3p/Module::Build::YAML.3p
