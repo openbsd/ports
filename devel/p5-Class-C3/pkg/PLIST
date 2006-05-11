@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/11 11:39:51 msf Exp $
+${P5SITE}/Class/
+${P5SITE}/Class/C3.pm
+@man man/man3p/Class::C3.3p
