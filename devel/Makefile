@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.366 2006/05/06 17:09:03 msf Exp $
+# $OpenBSD: Makefile,v 1.367 2006/05/11 11:59:42 msf Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -151,6 +151,7 @@
      SUBDIR += ocaml-calendar
      SUBDIR += opencm
      SUBDIR += p5-Algorithm-Annotate
+     SUBDIR += p5-Algorithm-C3
      SUBDIR += p5-Algorithm-Diff
      SUBDIR += p5-Algorithm-MDiff
      SUBDIR += p5-Algorithm-MarkovChain
@@ -175,12 +176,16 @@
      SUBDIR += p5-Carp-Clan
      SUBDIR += p5-Carp-Datum
      SUBDIR += p5-Class-Accessor
+     SUBDIR += p5-Class-Accessor-Chained
      SUBDIR += p5-Class-AutoClass
      SUBDIR += p5-Class-Autouse
      SUBDIR += p5-Class-Container
+     SUBDIR += p5-Class-C3
+     SUBDIR += p5-Class-Data-Accessor
      SUBDIR += p5-Class-Data-Inheritable
      SUBDIR += p5-Class-Date
      SUBDIR += p5-Class-ErrorHandler
+     SUBDIR += p5-Class-Inspector
      SUBDIR += p5-Class-Loader
      SUBDIR += p5-Class-MethodMaker
      SUBDIR += p5-Class-MethodMapper
@@ -261,6 +266,7 @@
      SUBDIR += p5-MLDBM-Sync
      SUBDIR += p5-Module-Build
      SUBDIR += p5-Module-CoreList
+     SUBDIR += p5-Module-Find
      SUBDIR += p5-Module-Load
      SUBDIR += p5-Module-Refresh
      SUBDIR += p5-Module-Versions-Report
@@ -287,6 +293,7 @@
      SUBDIR += p5-Set-Scalar
      SUBDIR += p5-String-CRC32
      SUBDIR += p5-String-Scanf
+     SUBDIR += p5-Sub-Name
      SUBDIR += p5-Sub-Uplevel
      SUBDIR += p5-Term-ReadKey
      SUBDIR += p5-Term-ReadLine-Gnu
