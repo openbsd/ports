@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/11 11:27:39 msf Exp $
+${P5SITE}/Algorithm/
+${P5SITE}/Algorithm/C3.pm
+@man man/man3p/Algorithm::C3.3p

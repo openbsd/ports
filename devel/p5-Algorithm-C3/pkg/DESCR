@@ -1,0 +1,2 @@
+C3 is an algorithm which aims to provide a sane method resolution order
+under multiple inheritence.
