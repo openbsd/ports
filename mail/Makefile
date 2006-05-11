@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.156 2006/03/25 02:32:33 brad Exp $
+# $OpenBSD: Makefile,v 1.157 2006/05/11 14:47:22 bernd Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -48,6 +48,7 @@
      SUBDIR += exmh2
      SUBDIR += faces
      SUBDIR += femail
+     SUBDIR += femail,static
      SUBDIR += fetchmail
      SUBDIR += getmail
      SUBDIR += grepmail
