@@ -1,0 +1,20 @@
+$OpenBSD: patch-bindings_octave_demos_Makefile_in,v 1.1.1.1 2006/05/12 13:35:39 steven Exp $
+--- bindings/octave/demos/Makefile.in.orig	Wed May  3 03:08:08 2006
++++ bindings/octave/demos/Makefile.in	Sat May  6 12:44:34 2006
+@@ -139,6 +139,7 @@ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+ DATA_DIR = @DATA_DIR@
++EXAMPLE_DIR = @EXAMPLE_DIR@
+ DB2X_TEXIXML = @DB2X_TEXIXML@
+ DB2X_XSLTPROC = @DB2X_XSLTPROC@
+ DB_SS_HTML_PUBID = @DB_SS_HTML_PUBID@
+@@ -494,7 +495,7 @@ examples_octave = \
+ 	lena.img
+ 
+ EXTRA_DIST = $(examples_octave)
+-@enable_octave_TRUE@examples_octavedir = $(DATA_DIR)/examples/octave
++@enable_octave_TRUE@examples_octavedir = $(EXAMPLE_DIR)/octave
+ @enable_octave_TRUE@examples_octave_DATA = $(examples_octave)
+ all: all-am
+ 

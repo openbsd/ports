@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_plcore_c,v 1.1.1.1 2006/05/12 13:35:39 steven Exp $
+--- src/plcore.c.orig	Tue Apr 25 17:35:06 2006
++++ src/plcore.c	Sat May  6 12:44:35 2006
+@@ -34,6 +34,8 @@
+ 
+ #define DEBUG
+ 
++#include <sys/param.h>
++
+ #define NEED_PLDEBUG
+ #include "plcore.h"
+ 
+@@ -2091,7 +2093,7 @@ int plInBuildTree()
+   static int inBuildTree = 0;
+ 
+   if (inited == 0) {
+-    char currdir[256];
++    char currdir[MAXPATHLEN];
+ 
+ /* AM: getcwd has a somewhat strange status on Windows, its proper
+    name is _getcwd, this is a problem in the case of DLLs, like with
+@@ -2101,7 +2103,7 @@ int plInBuildTree()
+ #define getcwd _getcwd
+ #endif
+ 
+-    if (getcwd(currdir, 256) == NULL) {
++    if (getcwd(currdir, sizeof(currdir)) == NULL) {
+       pldebug("plInBuildTree():", "Not enough buffer space");
+     } else if (strncmp(BUILD_DIR, currdir, strlen(BUILD_DIR)) == 0)
+       inBuildTree = 1;

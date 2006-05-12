@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST-c++,v 1.1.1.1 2006/05/12 13:35:39 steven Exp $
+lib/libplplotcxxd.a
+lib/libplplotcxxd.la
+@lib lib/libplplotcxxd.so.${LIBplplotcxxd_VERSION}
+share/examples/plplot/c++/
+share/examples/plplot/c++/Makefile
+share/examples/plplot/c++/lena.pgm
+share/examples/plplot/c++/plc++demos.h
+share/examples/plplot/c++/x01.cc
+share/examples/plplot/c++/x01cc.cc
+share/examples/plplot/c++/x02.cc
+share/examples/plplot/c++/x03.cc
+share/examples/plplot/c++/x04.cc
+share/examples/plplot/c++/x05.cc
+share/examples/plplot/c++/x06.cc
+share/examples/plplot/c++/x07.cc
+share/examples/plplot/c++/x08.cc
+share/examples/plplot/c++/x09.cc
+share/examples/plplot/c++/x10.cc
+share/examples/plplot/c++/x11.cc
+share/examples/plplot/c++/x12.cc
+share/examples/plplot/c++/x13.cc
+share/examples/plplot/c++/x14.cc
+share/examples/plplot/c++/x15.cc
+share/examples/plplot/c++/x16.cc
+share/examples/plplot/c++/x17.cc
+share/examples/plplot/c++/x18.cc
+share/examples/plplot/c++/x19.cc
+share/examples/plplot/c++/x20.cc
+share/examples/plplot/c++/x21.cc
+share/examples/plplot/c++/x22.cc
+share/examples/plplot/c++/x23.cc
+share/examples/plplot/c++/x24.cc
+share/examples/plplot/test_cxx.sh

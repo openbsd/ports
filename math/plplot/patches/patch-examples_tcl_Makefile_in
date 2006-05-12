@@ -1,0 +1,20 @@
+$OpenBSD: patch-examples_tcl_Makefile_in,v 1.1.1.1 2006/05/12 13:35:39 steven Exp $
+--- examples/tcl/Makefile.in.orig	Wed May  3 03:08:25 2006
++++ examples/tcl/Makefile.in	Sat May  6 12:44:34 2006
+@@ -153,6 +153,7 @@ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+ DATA_DIR = @DATA_DIR@
++EXAMPLE_DIR = @EXAMPLE_DIR@
+ DB2X_TEXIXML = @DB2X_TEXIXML@
+ DB2X_XSLTPROC = @DB2X_XSLTPROC@
+ DB_SS_HTML_PUBID = @DB_SS_HTML_PUBID@
+@@ -463,7 +464,7 @@ with_qhull_FALSE = @with_qhull_FALSE@
+ with_qhull_TRUE = @with_qhull_TRUE@
+ with_rpath_FALSE = @with_rpath_FALSE@
+ with_rpath_TRUE = @with_rpath_TRUE@
+-@enable_tcl_TRUE@examples_tcldir = $(DATA_DIR)/examples/tcl
++@enable_tcl_TRUE@examples_tcldir = $(EXAMPLE_DIR)/tcl
+ @enable_itcl_FALSE@@enable_tcl_TRUE@mkindex = ../../scripts/mktclIndex -tcl
+ @enable_itcl_TRUE@@enable_tcl_TRUE@mkindex = ../../scripts/mktclIndex -itcl
+ @enable_tcl_TRUE@dist_examples_tcl_DATA = \

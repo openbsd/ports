@@ -1,0 +1,20 @@
+$OpenBSD: patch-test_Makefile_in,v 1.1.1.1 2006/05/12 13:35:39 steven Exp $
+--- test/Makefile.in.orig	Wed May  3 03:08:32 2006
++++ test/Makefile.in	Sat May  6 12:44:35 2006
+@@ -147,6 +147,7 @@ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+ DATA_DIR = @DATA_DIR@
++EXAMPLE_DIR = @EXAMPLE_DIR@
+ DB2X_TEXIXML = @DB2X_TEXIXML@
+ DB2X_XSLTPROC = @DB2X_XSLTPROC@
+ DB_SS_HTML_PUBID = @DB_SS_HTML_PUBID@
+@@ -457,7 +458,7 @@ with_qhull_FALSE = @with_qhull_FALSE@
+ with_qhull_TRUE = @with_qhull_TRUE@
+ with_rpath_FALSE = @with_rpath_FALSE@
+ with_rpath_TRUE = @with_rpath_TRUE@
+-examplesdir = $(DATA_DIR)/examples
++examplesdir = $(EXAMPLE_DIR)
+ scripts = test_c.sh $(am__append_1) $(am__append_2) $(am__append_3) \
+ 	$(am__append_4) $(am__append_5) $(am__append_6) \
+ 	$(am__append_7)

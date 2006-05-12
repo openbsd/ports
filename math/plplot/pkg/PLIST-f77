@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST-f77,v 1.1.1.1 2006/05/12 13:35:39 steven Exp $
+lib/libplplotf77cd.a
+lib/libplplotf77cd.la
+@lib lib/libplplotf77cd.so.${LIBplplotf77cd_VERSION}
+lib/libplplotf77d.a
+lib/libplplotf77d.la
+@lib lib/libplplotf77d.so.${LIBplplotf77d_VERSION}
+share/examples/plplot/f77/
+share/examples/plplot/f77/Makefile
+share/examples/plplot/f77/x01f.f
+share/examples/plplot/f77/x02f.f
+share/examples/plplot/f77/x03f.f
+share/examples/plplot/f77/x04f.f
+share/examples/plplot/f77/x05f.f
+share/examples/plplot/f77/x06f.f
+share/examples/plplot/f77/x07f.f
+share/examples/plplot/f77/x08f.f
+share/examples/plplot/f77/x09f.f
+share/examples/plplot/f77/x10f.f
+share/examples/plplot/f77/x11f.f
+share/examples/plplot/f77/x12f.f
+share/examples/plplot/f77/x13f.f
+share/examples/plplot/f77/x14f.f
+share/examples/plplot/f77/x15f.f
+share/examples/plplot/f77/x16af.f
+share/examples/plplot/f77/x16f.f
+share/examples/plplot/f77/x17f.f
+share/examples/plplot/f77/x18f.f
+share/examples/plplot/f77/x22f.f
+share/examples/plplot/f77/x23f.f
+share/examples/plplot/test_f77.sh

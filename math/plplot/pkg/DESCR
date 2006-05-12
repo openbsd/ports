@@ -1,0 +1,23 @@
+PLplot is a library of functions that are useful for making scientific
+plots.
+
+PLplot can be used from within compiled languages such as C, C++,
+Fortran and Java, and interactively from interpreted languages such
+as Octave, Python, Perl and Tcl.
+
+The PLplot library can be used to create standard x-y plots, semilog
+plots, log-log plots, contour plots, 3D surface plots, mesh plots,
+bar charts and pie charts. Multiple graphs (of the same or different
+sizes) may be placed on a single page with multiple lines in each
+graph.
+
+A variety of output file devices such as Postscript, png, jpeg,
+LaTeX and others, as well as interactive devices such as xwin, tk,
+xterm and Tektronics devices are supported. New devices can be
+easily added by writing a small number of device dependent routines.
+
+There are almost 2000 characters in the extended character set.
+This includes four different fonts, the Greek alphabet and a host
+of mathematical, musical, and other symbols. Some devices support
+their own way of dealing with text, such as the Postscript and LaTeX
+drivers, or the png and jpeg drivers that use the Freetype library.
