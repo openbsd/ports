@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2006/03/20 13:36:54 steven Exp $
+# $OpenBSD: Makefile,v 1.96 2006/05/12 16:08:36 steven Exp $
 
 COMMENT=		"XML parsing library"
 
@@ -7,7 +7,7 @@ DISTNAME=		libxml2-${VERSION}
 PKGNAME=		libxml-${VERSION}
 SHARED_LIBS=		xml2	9.1
 CATEGORIES=		textproc
-MASTER_SITES=		ftp://xmlsoft.org/ \
+MASTER_SITES=		ftp://xmlsoft.org/libxml/ \
 			${MASTER_SITE_GNOME:=sources/libxml2/2.6/}
 
 HOMEPAGE=		http://xmlsoft.org/ 

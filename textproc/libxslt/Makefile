@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2006/01/07 10:17:12 steven Exp $
+# $OpenBSD: Makefile,v 1.48 2006/05/12 16:08:36 steven Exp $
 
 COMMENT=		"XSLT C Library for GNOME"
 
@@ -11,7 +11,7 @@ CATEGORIES=		textproc
 
 HOMEPAGE=		http://xmlsoft.org/XSLT/
 
-MASTER_SITES=		ftp://xmlsoft.org/ \
+MASTER_SITES=		ftp://xmlsoft.org/libxslt/ \
 			${MASTER_SITE_GNOME:=sources/libxslt/1.1/}
 
 # BSD-like
