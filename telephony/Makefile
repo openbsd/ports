@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2006/02/03 17:42:14 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2006/05/12 01:32:59 jolan Exp $
 
      SUBDIR += app_conference
      SUBDIR += asterisk
      SUBDIR += asterisk-sounds
+     SUBDIR += fobbit
      SUBDIR += libosip2
      SUBDIR += siproxd
 
