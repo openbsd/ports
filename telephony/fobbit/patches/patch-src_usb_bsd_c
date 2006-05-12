@@ -1,0 +1,113 @@
+$OpenBSD: patch-src_usb_bsd_c,v 1.1.1.1 2006/05/12 01:29:41 jolan Exp $
+--- src/usb_bsd.c.orig	Mon Nov 22 23:41:32 2004
++++ src/usb_bsd.c	Tue Aug  2 19:56:03 2005
+@@ -278,13 +278,13 @@ validate_descriptors(int fd, usb_device_
+     // -----------------------------------------------------------------------
+ 
+     memset(&conf, 0, sizeof(conf));
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+     conf.ucd_config_index = 0;
+ #else
+     conf.config_index = 0; // there is only one configuration
+ #endif
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+     conf.ucd_desc.bLength = USB_CONFIG_DESCRIPTOR_SIZE;
+ #else
+     conf.desc.bLength = USB_CONFIG_DESCRIPTOR_SIZE; // only get first part
+@@ -296,7 +296,7 @@ validate_descriptors(int fd, usb_device_
+         return 0;
+     }
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+     if(check_desc_config(&(conf.ucd_desc)) == 0) { return 0; } // not valid
+ #else
+     if(check_desc_config(&(conf.desc)) == 0) { return 0; } // not valid
+@@ -307,25 +307,25 @@ validate_descriptors(int fd, usb_device_
+ 
+     memset(&intf, 0, sizeof(intf));
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+     intf.uid_config_index = 0;
+ #else
+     intf.config_index    = 0;
+ #endif
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+     intf.uid_interface_index = 0;
+ #else
+     intf.interface_index = 0;
+ #endif
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+     intf.uid_alt_index   = 0;
+ #else
+     intf.alt_index       = 0;
+ #endif
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+     intf.uid_desc.bLength = USB_INTERFACE_DESCRIPTOR_SIZE;
+ #else
+     intf.desc.bLength    = USB_INTERFACE_DESCRIPTOR_SIZE;
+@@ -337,7 +337,7 @@ validate_descriptors(int fd, usb_device_
+         return 0;
+     }
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+     if(check_desc_interface(&(intf.uid_desc)) == 0) { return 0; } // not valid
+ #else
+     if(check_desc_interface(&(intf.desc)) == 0) { return 0; } // not valid
+@@ -350,31 +350,31 @@ validate_descriptors(int fd, usb_device_
+     for(i = 0; i < 4; i++) // get endpoint descriptors
+     {
+         memset(&endp, 0, sizeof(endp));
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+         endp.ued_config_index    = 0;
+ #else
+         endp.config_index    = 0;
+ #endif
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+         endp.ued_interface_index = 0;
+ #else
+         endp.interface_index = 0;
+ #endif
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ 	endp.ued_alt_index   = 0;
+ #else
+         endp.alt_index       = 0;
+ #endif
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ 	endp.ued_endpoint_index = i;
+ #else
+         endp.endpoint_index  = i;
+ #endif
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ 	endp.ued_desc.bLength = USB_ENDPOINT_DESCRIPTOR_SIZE;
+ #else
+         endp.desc.bLength    = USB_ENDPOINT_DESCRIPTOR_SIZE;
+@@ -386,7 +386,7 @@ validate_descriptors(int fd, usb_device_
+             return 0;
+         }
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ 	if(check_desc_endpoint(&(endp.ued_desc), i) == 0) { return 0; }
+ #else
+         if(check_desc_endpoint(&(endp.desc), i) == 0) { return 0; }

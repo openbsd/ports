@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_vb_ini,v 1.1.1.1 2006/05/12 01:29:41 jolan Exp $
+--- src/vb.ini.orig	Mon Nov 22 23:41:32 2004
++++ src/vb.ini	Wed May  3 23:20:48 2006
+@@ -94,10 +94,10 @@
+ 
+ # various sound files to use, seems if use dialtone file causes dialing issues
+ # ringback and busy are required, but if dialtone not specified uses builtin
+- FILE_RINGBACK         "sounds/ringback.723"
+- FILE_BUSY             "sounds/busy.723"
+-#FILE_DIALTONE         "sounds/dialtone.723"
+- FILE_DIALTONE_HEADSET "sounds/dialtone.723"
++ FILE_RINGBACK         "_PREFIX_/share/fobbit/sounds/ringback.723"
++ FILE_BUSY             "_PREFIX_/share/fobbit/sounds/busy.723"
++#FILE_DIALTONE         "_PREFIX_/share/fobbit/sounds/dialtone.723"
++ FILE_DIALTONE_HEADSET "_PREFIX_/share/fobbit/sounds/dialtone.723"
+ 
+ # this controls how to dial, first is number of seconds from off-hook till
+ # must enter the first digit, second is how many seconds from last digit

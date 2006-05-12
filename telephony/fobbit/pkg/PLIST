@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/12 01:29:41 jolan Exp $
+bin/vb
+share/examples/fobbit/
+share/examples/fobbit/vb.ini
+share/fobbit/
+share/fobbit/sounds/
+share/fobbit/sounds/busy.723
+share/fobbit/sounds/dialtone.723
+share/fobbit/sounds/ringback.723

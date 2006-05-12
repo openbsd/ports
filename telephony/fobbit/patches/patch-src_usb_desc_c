@@ -1,0 +1,51 @@
+$OpenBSD: patch-src_usb_desc_c,v 1.1.1.1 2006/05/12 01:29:41 jolan Exp $
+--- src/usb_desc.c.orig	Mon Nov 22 23:41:32 2004
++++ src/usb_desc.c	Thu May  4 02:48:54 2006
+@@ -74,8 +74,8 @@ check_is_vblaster(struct usb_device_desc
+ 
+     if((dp->bLength         !=     18) ||
+        (dp->bDescriptorType !=      1) ||
+-       (dp->idVendor        != 0x1292) ||
+-       (dp->idProduct       != 0x0258))
++       (letoh16(dp->idVendor)        != 0x1292) ||
++       (letoh16(dp->idProduct)       != 0x0258))
+     {
+         return 0; // not a voip-blaster
+     }
+@@ -103,14 +103,14 @@ check_desc_device(void *v)
+ 
+     check_desc(bLength           ,     18)
+     check_desc(bDescriptorType   ,      1)
+-    check_desc(bcdUSB            , 0x0100) // USB 1.0
++    check_desc(bcdUSB            , letoh16(0x0100)) // USB 1.0
+     check_desc(bDeviceClass      ,      0) // no class here
+     check_desc(bDeviceSubClass   ,      0) // no sub-class here
+     check_desc(bDeviceProtocol   ,      0) // no specific protocol
+     check_desc(bMaxPacketSize    ,     16) // size for endpoing 0
+-    check_desc(idVendor          , 0x1292) // vendor id
+-    check_desc(idProduct         , 0x0258) // vendor product id
+-    check_desc(bcdDevice         , 0x0100) // device release 1.0
++    check_desc(idVendor          , letoh16(0x1292)) // vendor id
++    check_desc(idProduct         , letoh16(0x0258)) // vendor product id
++    check_desc(bcdDevice         , letoh16(0x0100)) // device release 1.0
+     check_desc(iManufacturer     ,      0) // no strings
+     check_desc(iProduct          ,      0) // no strings
+     check_desc(iSerialNumber     ,      0) // no strings
+@@ -130,7 +130,7 @@ check_desc_config(void *v)
+ 
+     check_desc(bLength            ,    9)
+     check_desc(bDescriptorType    ,    2)
+-    check_desc(wTotalLength       ,   46)
++    check_desc(wTotalLength       ,   letoh16(46))
+     check_desc(bNumInterface      ,    1) // only 1 interface
+     check_desc(bConfigurationValue,    1) // for SetConfig
+     check_desc(iConfiguration     ,    0) // no strings
+@@ -178,7 +178,7 @@ check_desc_endpoint(void *v, int i)
+     check_desc(bDescriptorType ,       5)
+     check_desc(bEndpointAddress, addr[i])
+     check_desc(bmAttributes    ,       3) // all are 'interrupt'
+-    check_desc(wMaxPacketSize  , size[i])
++    check_desc(wMaxPacketSize  , letoh16(size[i]))
+     check_desc(bInterval       ,      30)
+ 
+     MSG(("Addr(0x%02x:%s) Size(%04d)\n", p->bEndpointAddress,

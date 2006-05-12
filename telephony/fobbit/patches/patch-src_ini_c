@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_ini_c,v 1.1.1.1 2006/05/12 01:29:41 jolan Exp $
+--- src/ini.c.orig	Mon Nov 22 23:41:32 2004
++++ src/ini.c	Thu May  4 01:15:06 2006
+@@ -6,6 +6,7 @@
+ // routines to read and parse a initialization file
+ //
+ 
++#include <ctype.h>
+ #include "vblast.h"
+ 
+ // ---------------------------------------------------------------------------
+@@ -45,8 +46,8 @@ static char *public_address_udp = NULL  
+        int   can_accept_inbound = 1                    ; // default is YES
+        int   cpc_duration       = 0                    ; // default is OFF
+        int   force_dial         = 1                    ; // default is ON
+-       char *sound_ringback     = "sounds/ringback.723";
+-       char *sound_busy         = "sounds/busy.723"    ;
++       char *sound_ringback     = "_PREFIX_/share/fobbit/sounds/ringback.723";
++       char *sound_busy         = "_PREFIX_/share/fobbit/sounds/busy.723"    ;
+        char *sound_dialtone     = NULL                 ; // default is internal
+        char *sound_dialtone_hs  = NULL                 ; // deafult is none
+ 

@@ -1,0 +1,7 @@
+fobbit is software to use the Creative Labs USB VOIP Blaster.  The
+application is not very elegant but it gets the job done.  It uses TCP
+for signaling and UDP for the voice traffic.  It can be configured to
+use TCP for both types of traffic since this plays better with
+firewalls, NAT, and other internet connection-sharing schemes.  With
+this software, most of the work is done at the user level, the drivers
+only provide access to the usb-pipes implemented in the hardware.
