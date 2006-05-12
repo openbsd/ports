@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/05/12 13:35:38 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2006/05/12 13:52:17 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -42,6 +42,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=plplot/}
 TCL_VERSION=	8.4
 TCLLIB=		tcl${TCL_VERSION:S/.//}
 
+USE_X11=	Yes
 USE_LIBTOOL=	Yes
 BUILD_DEPENDS=	::lang/tcl/${TCL_VERSION} \
 		::math/octave \
