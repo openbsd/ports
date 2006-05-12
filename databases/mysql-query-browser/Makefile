@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2006/01/17 12:49:18 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2006/05/12 08:20:23 bernd Exp $
 
 COMMENT=	"visual query tool for MySQL"
 
 DISTNAME=	mysql-query-browser-1.1.17
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	databases
 
 HOMEPAGE=	http://www.mysql.com/products/tools/query-browser/
@@ -33,7 +33,8 @@ WANTLIB=	ICE SM X11 Xext Xft Xrender c crypto fontconfig freetype m \
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
-		::devel/mysql-gui-common
+		::devel/mysql-gui-common \
+		::textproc/p5-XML-Parser
 RUN_DEPENDS=	::devel/mysql-gui-common
 LIB_DEPENDS=	pcre::devel/pcre \
 		mysqlclient_r::databases/mysql \
