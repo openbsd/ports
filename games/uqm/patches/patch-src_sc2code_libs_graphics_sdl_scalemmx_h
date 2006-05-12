@@ -1,0 +1,146 @@
+$OpenBSD: patch-src_sc2code_libs_graphics_sdl_scalemmx_h,v 1.1 2006/05/12 01:27:42 jolan Exp $
+--- src/sc2code/libs/graphics/sdl/scalemmx.h.orig	Wed Nov  9 21:05:25 2005
++++ src/sc2code/libs/graphics/sdl/scalemmx.h	Wed May 10 13:39:01 2006
+@@ -89,6 +89,8 @@ SCALE_(PlatInit) (void)
+ 		// 0 is needed for bytes->words unpack instructions
+ 		pxor       mm0, mm0
+ 
++#if 0
++// not used anymore
+ 		// mm5-mm7 contains RGB->YUV mults
+ 		movq       mm7, mmx_Y_mult
+ 		movq       mm6, mmx_U_mult
+@@ -99,6 +101,7 @@ SCALE_(PlatInit) (void)
+ 		// mm5 contains DiffYUV threshold
+ 		movq       mm5, mmx_YUV_threshold
+ #endif
++#endif
+ 	}
+ }
+ 
+@@ -496,6 +499,22 @@ SCALE_(Blend_bilinear) (const Uint32* ro
+ #	define PREFETCH(addr)
+ #endif
+ 
++#if defined(__x86_64__)
++#	define A_REG   "rax"
++#	define D_REG   "rdx"
++#	define CLR_UPPER32(r)      "xor "  "%%" r "," "%%" r
++#	define OFFSETABLE_PTR(p)   "r" (p)
++#	define MOVD_WMO(base, ofs, mult, dst) \
++                               "movd " "(" #base "," ofs "," #mult ")," #dst
++#else
++#	define A_REG   "eax"
++#	define D_REG   "edx"
++#	define CLR_UPPER32(r)
++#	define OFFSETABLE_PTR(p)   "o" (*(p))
++#	define MOVD_WMO(base, ofs, mult, dst) \
++                               "movd " #base "(," ofs "," #mult ")," #dst
++#endif
++
+ static inline void
+ SCALE_(PlatInit) (void)
+ {
+@@ -504,6 +523,8 @@ SCALE_(PlatInit) (void)
+ 		// 0 is needed for bytes->words unpack instructions
+ 		"pxor       %%mm0, %%mm0 \n\t"
+ 
++#if 0
++// not used anymore
+ 		// mm5-mm7 contains RGB->YUV mults
+ 		"movq       %0, %%mm7 \n\t"
+ 		"movq       %1, %%mm6 \n\t"
+@@ -514,7 +535,7 @@ SCALE_(PlatInit) (void)
+ 		// mm5 contains DiffYUV threshold
+ 		"movq       %4, %%mm5 \n\t"
+ #endif
+-
++#endif
+ 	: /* nothing */
+ 	: /*0*/"m" (mmx_Y_mult), /*1*/"m" (mmx_U_mult), /*2*/"m" (mmx_V_mult)
+ 		, /*3*/"m" (mmx_888to555_mult), /*4*/"m" (mmx_YUV_threshold)
+@@ -631,12 +652,15 @@ SCALE_(CmpYUV) (Uint32 pix1, Uint32 pix2
+ 		// convert RGB888 to 555
+ 		// this is somewhat parallelized
+ 		"punpcklbw  %%mm0, %%mm1 \n\t"
++		CLR_UPPER32 (A_REG)     "\n\t"
+ 		"psrlw      $3, %%mm1    \n\t"   // 8->5 bit
+ 		"punpcklbw  %%mm0, %%mm3 \n\t"
+ 		"psrlw      $3, %%mm3    \n\t" // 8->5 bit
+ 		"pmaddwd    %4, %%mm1    \n\t" // shuffle into the right channel order
++
+ 		"movq       %%mm1, %%mm2 \n\t"  // finish shuffling
+ 		"pmaddwd    %4, %%mm3    \n\t" // shuffle into the right channel order
++		CLR_UPPER32 (D_REG)     "\n\t"
+ 		"movq       %%mm3, %%mm4 \n\t"  // finish shuffling
+ 		"punpckhdq  %%mm0, %%mm2 \n\t"  //   ditto
+ 		"por        %%mm2, %%mm1 \n\t"  //   ditto
+@@ -646,9 +670,11 @@ SCALE_(CmpYUV) (Uint32 pix1, Uint32 pix2
+ 		// lookup the YUV vector
+ 		"movd       %%mm1, %%eax \n\t"
+ 		"movd       %%mm3, %%edx \n\t"
+-		"movd       %3(,%%eax,4), %%mm1 \n\t"
++		//"movd       %3(,%%" A_REG ",4), %%mm1 \n\t"
++		MOVD_WMO    (%3, "%%" A_REG, 4, %%mm1) "\n\t"
+ 		"movq       %%mm1, %%mm4 \n\t"
+-		"movd       %3(,%%edx,4), %%mm2 \n\t"
++		//"movd       %3(,%%" D_REG ",4), %%mm2 \n\t"
++		MOVD_WMO    (%3, "%%" D_REG, 4, %%mm2) "\n\t"
+ 
+ 		// get abs difference between YUV components
+ #ifdef USE_PSADBW
+@@ -675,8 +701,9 @@ SCALE_(CmpYUV) (Uint32 pix1, Uint32 pix2
+ #endif /* USE_PSADBW */
+ 	: /*0*/"=r" (delta)
+ 	: /*1*/"rm" (pix1), /*2*/"rm" (pix2),
+-		/*3*/"m" (*RGB15_to_YUV), /*4*/"m" (mmx_888to555_mult)
+-	: "%eax", "%edx"
++		/*3*/OFFSETABLE_PTR(RGB15_to_YUV),
++		/*4*/"m" (mmx_888to555_mult)
++	: "%" A_REG, "%" D_REG
+ 	);
+ 	
+ 	return (delta << 1) <= toler;
+@@ -700,21 +727,22 @@ SCALE_(DiffYUV) (Uint32 yuv1, Uint32 yuv
+ 		// abs difference between channels
+ 		"psubusb    %%mm2, %%mm1 \n\t"
+ 		"psubusb    %%mm4, %%mm2 \n\t"
++		CLR_UPPER32(D_REG)      "\n\t"
+ 		"por        %%mm2, %%mm1 \n\t"
+ 		// compare to threshold
+ 		"psubusb    %3, %%mm1    \n\t"
+ 
+ 		"movd       %%mm1, %%edx \n\t"
+ 		// transform eax to 0 or ~0
+-		"xor        %%eax, %%eax \n\t"
+-		"or         %%edx, %%edx \n\t"
++		"xor        %%" A_REG ", %%" A_REG "\n\t"
++		"or         %%" D_REG ", %%" D_REG "\n\t"
+ 		"setz       %%al         \n\t"
+-		"dec        %%eax        \n\t"
++		"dec        %%" A_REG "  \n\t"
+ 	
+ 	: /*0*/"=a" (ret)
+ 	: /*1*/"rm" (yuv1), /*2*/"rm" (yuv2),
+ 		/*3*/"m" (mmx_YUV_threshold)
+-	: "%edx"
++	: "%" D_REG
+ 	);
+ 	return ret;
+ }
+@@ -783,10 +811,14 @@ SCALE_(Blend_bilinear) (const Uint32* ro
+ 		 MOVNTQ     (%%mm3, (%2,%3,4)) "\n\t" // EL4/5: store 2 pixels
+ 	
+ 	: /* nothing */
+-	: /*0*/"m" (*row0), /*1*/"m" (*row1), /*2*/"r" (dst_p), /*3*/"r" (dlen)
++	: /*0*/"m" (*row0), /*1*/"m" (*row1), /*2*/"r" (dst_p),
++			/*3*/"r" ((unsigned long)dlen) /* 'long' is for proper reg alloc on amd64 */
+ 	: "memory"
+ 	);
+ }
++
++#undef A_REG
++#undef D_REG
+ 
+ #endif // GCC_ASM
+ 

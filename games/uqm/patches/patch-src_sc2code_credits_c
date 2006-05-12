@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sc2code_credits_c,v 1.1 2006/05/12 01:27:42 jolan Exp $
+--- src/sc2code/credits.c.orig	Thu Jan 12 21:49:10 2006
++++ src/sc2code/credits.c	Tue May  9 14:21:23 2006
+@@ -150,7 +150,7 @@ Credits_RenderTextFrame (CONTEXT TempCon
+ 	if (!pStr || *pStr == '\0')
+ 		return 0;
+ 	
+-	if (2 != sscanf (pStr, "%d %32s %n", &size, salign, &scaned)
++	if (2 != sscanf (pStr, "%d %31s %n", &size, salign, &scaned)
+ 			|| size <= 0)
+ 		return 0;
+ 	pStr += scaned;
