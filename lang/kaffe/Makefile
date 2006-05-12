@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2006/04/20 04:42:38 kurt Exp $
+# $OpenBSD: Makefile,v 1.28 2006/05/12 03:01:04 kurt Exp $
 
-ONLY_FOR_ARCHS=	i386 powerpc
+ONLY_FOR_ARCHS=	amd64 i386 powerpc
 
 COMMENT=	"kaffe.org's Java JDK1.4 compiler, runtime and libs"
 
 DISTNAME=	kaffe-1.1.7
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=	lang
 
@@ -28,7 +28,8 @@ USE_LIBTOOL=	Yes
 USE_GMAKE=	yes
 
 BUILD_DEPENDS=	::archivers/zip \
-		:jikes->=1.22p0:lang/jikes
+		:jikes->=1.22p0:lang/jikes \
+		:pkgconfig->=0.19p0:devel/pkgconfig
 LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
 		gmp.4.::devel/gmp \
 		audiofile::devel/libaudiofile \
@@ -47,6 +48,8 @@ SEPARATE_BUILD=	concurrent
 PREFIX=		${LOCALBASE}/kaffe
 
 CONFIGURE_STYLE=gnu
+GNU_ARCH=	${MACHINE_ARCH:S/amd64/x86_64/}
+SUBST_VARS=	GNU_ARCH
 
 MODGNU_CONFIG_GUESS_DIRS= \
 		${WRKSRC}/libraries/javalib/external/classpath \

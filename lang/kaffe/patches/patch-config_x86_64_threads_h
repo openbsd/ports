@@ -1,0 +1,12 @@
+$OpenBSD: patch-config_x86_64_threads_h,v 1.1 2006/05/12 03:01:04 kurt Exp $
+--- config/x86_64/threads.h.orig	Tue May  2 11:30:55 2006
++++ config/x86_64/threads.h	Tue May  2 11:31:02 2006
+@@ -16,7 +16,7 @@
+  * Set a default size for the stack.
+  */
+ #if defined(INTERPRETER)
+-#define THREADSTACKSIZE         (128 * 1024)
++#define THREADSTACKSIZE         (512 * 1024)
+ #else
+ #define THREADSTACKSIZE         (64 * 1024)
+ #endif

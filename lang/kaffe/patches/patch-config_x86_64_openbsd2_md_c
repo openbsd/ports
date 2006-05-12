@@ -1,0 +1,52 @@
+$OpenBSD: patch-config_x86_64_openbsd2_md_c,v 1.1 2006/05/12 03:01:04 kurt Exp $
+--- config/x86_64/openbsd2/md.c.orig	Thu May  4 16:30:44 2006
++++ config/x86_64/openbsd2/md.c	Thu May 11 22:38:30 2006
+@@ -0,0 +1,48 @@
++/*
++ * amd64/openbsd2/md.c
++ * OpenBSD amd64 specific functions.
++ *
++ * Copyright (c) 2006
++ *      Kaffe.org contributors. See ChangeLog for details.
++ *
++ * See the file "license.terms" for information on usage and redistribution 
++ * of this file. 
++ */
++
++#include "config.h"
++
++#if defined(KAFFE_SYSTEM_UNIX_PTHREADS)
++
++#include <sys/signal.h>
++#include <pthread.h>
++#include <pthread_np.h>
++#include <stdio.h>
++#include <stdlib.h>
++
++void *mdGetStackEnd(void)
++{
++    stack_t stack;
++    if (pthread_stackseg_np(pthread_self(), &stack) != 0)
++      {
++        fprintf(stderr,
++                "Kaffe VM was unable to retrieve the pointer to the stack base\n"
++                "Aborting...\n");
++        exit(1);
++      }
++    return stack.ss_sp;
++}
++
++size_t mdGetStackSize(void)
++{
++    stack_t stack;
++    if (pthread_stackseg_np(pthread_self(), &stack) != 0)
++      {
++        fprintf(stderr,
++                "Kaffe VM has not been able to retrieve the stack size\n"
++                "Aborting...\n");
++        exit(1);
++      }
++    return stack.ss_size;
++}
++
++#endif

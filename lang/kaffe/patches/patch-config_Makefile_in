@@ -1,0 +1,22 @@
+$OpenBSD: patch-config_Makefile_in,v 1.1 2006/05/12 03:01:04 kurt Exp $
+--- config/Makefile.in.orig	Sun Apr 30 21:19:20 2006
++++ config/Makefile.in	Sun Apr 30 21:17:29 2006
+@@ -481,6 +481,9 @@ EXTRA_DIST = \
+ 	x86_64/linux/md.c \
+ 	x86_64/linux/md.h \
+ 	x86_64/linux/sigcontextinfo.h \
++	x86_64/openbsd2/config.frag \
++	x86_64/openbsd2/md.c \
++	x86_64/openbsd2/md.h \
+ 	x86_64/threads.h \
+ 	x86_64/sysdepCallMethod.h \
+ 	i386/atomic.h \
+@@ -870,7 +873,7 @@ distclean-tags:
+ 	-rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+ 
+ distdir: $(DISTFILES)
+-	$(mkdir_p) $(distdir)/alpha $(distdir)/alpha/freebsd2 $(distdir)/alpha/linux $(distdir)/alpha/netbsd1 $(distdir)/alpha/osf $(distdir)/arm $(distdir)/arm/linux $(distdir)/arm/netbsd1 $(distdir)/arm/riscos $(distdir)/bfin $(distdir)/bfin/uclinux $(distdir)/generic $(distdir)/i386 $(distdir)/i386/beos $(distdir)/i386/bsdi $(distdir)/i386/cygwin32 $(distdir)/i386/darwin $(distdir)/i386/dgux $(distdir)/i386/freebsd2 $(distdir)/i386/gnu $(distdir)/i386/linux $(distdir)/i386/netbsd1 $(distdir)/i386/nextstep3 $(distdir)/i386/openbsd2 $(distdir)/i386/oskit $(distdir)/i386/qnx $(distdir)/i386/sco3.2v5 $(distdir)/i386/solaris2 $(distdir)/i386/univel_svr4 $(distdir)/i386/win32 $(distdir)/ia64 $(distdir)/ia64/freebsd2 $(distdir)/ia64/hpux $(distdir)/ia64/linux $(distdir)/m68k $(distdir)/m68k/a-ux $(distdir)/m68k/amigaos $(distdir)/m68k/linux $(distdir)/m68k/netbsd1 $(distdir)/m68k/nextstep3 $(distdir)/m68k/openbsd2 $(distdir)/m68k/sunos4 $(distdir)/mips $(distdir)/mips/irix5 $(distdir)/mips/linux $(distdir)/mips/netbsd1 $(distdir)/mips/ultrix4 $(distdir)/parisc $(distdir)/parisc/hpux $(distdir)/parisc/linux $(distdir)/powerpc $(distdir)/powerpc/aix $(distdir)/powerpc/bits $(distdir)/powerpc/darwin $(distdir)/powerpc/linux $(distdir)/powerpc/machten $(distdir)/powerpc/netbsd1 $(distdir)/powerpc/openbsd2 $(distdir)/powerpc/powerpc32 $(distdir)/powerpc/powerpc64 $(distdir)/s390 $(distdir)/s390/linux $(distdir)/sh $(distdir)/sh/linux $(distdir)/sparc $(distdir)/sparc/bsdi3 $(distdir)/sparc/linux $(distdir)/sparc/netbsd1 $(distdir)/sparc/nextstep3 $(distdir)/sparc/openbsd2 $(distdir)/sparc/solaris2 $(distdir)/sparc/sunos4 $(distdir)/sparc/uxpds $(distdir)/x86_64 $(distdir)/x86_64/freebsd2 $(distdir)/x86_64/linux
++	$(mkdir_p) $(distdir)/alpha $(distdir)/alpha/freebsd2 $(distdir)/alpha/linux $(distdir)/alpha/netbsd1 $(distdir)/alpha/osf $(distdir)/arm $(distdir)/arm/linux $(distdir)/arm/netbsd1 $(distdir)/arm/riscos $(distdir)/bfin $(distdir)/bfin/uclinux $(distdir)/generic $(distdir)/i386 $(distdir)/i386/beos $(distdir)/i386/bsdi $(distdir)/i386/cygwin32 $(distdir)/i386/darwin $(distdir)/i386/dgux $(distdir)/i386/freebsd2 $(distdir)/i386/gnu $(distdir)/i386/linux $(distdir)/i386/netbsd1 $(distdir)/i386/nextstep3 $(distdir)/i386/openbsd2 $(distdir)/i386/oskit $(distdir)/i386/qnx $(distdir)/i386/sco3.2v5 $(distdir)/i386/solaris2 $(distdir)/i386/univel_svr4 $(distdir)/i386/win32 $(distdir)/ia64 $(distdir)/ia64/freebsd2 $(distdir)/ia64/hpux $(distdir)/ia64/linux $(distdir)/m68k $(distdir)/m68k/a-ux $(distdir)/m68k/amigaos $(distdir)/m68k/linux $(distdir)/m68k/netbsd1 $(distdir)/m68k/nextstep3 $(distdir)/m68k/openbsd2 $(distdir)/m68k/sunos4 $(distdir)/mips $(distdir)/mips/irix5 $(distdir)/mips/linux $(distdir)/mips/netbsd1 $(distdir)/mips/ultrix4 $(distdir)/parisc $(distdir)/parisc/hpux $(distdir)/parisc/linux $(distdir)/powerpc $(distdir)/powerpc/aix $(distdir)/powerpc/bits $(distdir)/powerpc/darwin $(distdir)/powerpc/linux $(distdir)/powerpc/machten $(distdir)/powerpc/netbsd1 $(distdir)/powerpc/openbsd2 $(distdir)/powerpc/powerpc32 $(distdir)/powerpc/powerpc64 $(distdir)/s390 $(distdir)/s390/linux $(distdir)/sh $(distdir)/sh/linux $(distdir)/sparc $(distdir)/sparc/bsdi3 $(distdir)/sparc/linux $(distdir)/sparc/netbsd1 $(distdir)/sparc/nextstep3 $(distdir)/sparc/openbsd2 $(distdir)/sparc/solaris2 $(distdir)/sparc/sunos4 $(distdir)/sparc/uxpds $(distdir)/x86_64 $(distdir)/x86_64/freebsd2 $(distdir)/x86_64/linux $(distdir)/x86_64/openbsd2
+ 	@srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`; \
+ 	topsrcdirstrip=`echo "$(top_srcdir)" | sed 's|.|.|g'`; \
+ 	list='$(DISTFILES)'; for file in $$list; do \

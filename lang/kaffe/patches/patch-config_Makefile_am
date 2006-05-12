@@ -1,0 +1,13 @@
+$OpenBSD: patch-config_Makefile_am,v 1.1 2006/05/12 03:01:04 kurt Exp $
+--- config/Makefile.am.orig	Sun Apr 30 21:18:26 2006
++++ config/Makefile.am	Sun Apr 30 21:15:35 2006
+@@ -144,6 +144,9 @@ EXTRA_DIST = \
+ 	x86_64/linux/md.c \
+ 	x86_64/linux/md.h \
+ 	x86_64/linux/sigcontextinfo.h \
++	x86_64/openbsd2/config.frag \
++	x86_64/openbsd2/md.c \
++	x86_64/openbsd2/md.h \
+ 	x86_64/threads.h \
+ 	x86_64/sysdepCallMethod.h \
+ 	i386/atomic.h \

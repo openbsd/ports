@@ -1,13 +1,13 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2006/04/11 01:09:44 kurt Exp $
-@lib jre/lib/${MACHINE_ARCH}/libgtkpeer.so.${LIBgtkpeer_VERSION}
-@lib jre/lib/${MACHINE_ARCH}/libjavaio.so.${LIBjavaio_VERSION}
-@lib jre/lib/${MACHINE_ARCH}/libjavalang.so.${LIBjavalang_VERSION}
-@lib jre/lib/${MACHINE_ARCH}/libjavanet.so.${LIBjavanet_VERSION}
-@lib jre/lib/${MACHINE_ARCH}/libjavanio.so.${LIBjavanio_VERSION}
-@lib jre/lib/${MACHINE_ARCH}/libjawtgnu.so.${LIBjawtgnu_VERSION}
-@lib jre/lib/${MACHINE_ARCH}/libkaffevm.so.${LIBkaffevm_VERSION}
-@lib jre/lib/${MACHINE_ARCH}/libmanagement.so.${LIBmanagement_VERSION}
-@lib jre/lib/${MACHINE_ARCH}/libmath.so.${LIBmath_VERSION}
-@lib jre/lib/${MACHINE_ARCH}/libsecurity.so.${LIBsecurity_VERSION}
-@lib jre/lib/${MACHINE_ARCH}/libtritonusesd.so.${LIBtritonusesd_VERSION}
-@lib jre/lib/${MACHINE_ARCH}/libzip.so.${LIBzip_VERSION}
+@comment $OpenBSD: PFRAG.shared,v 1.7 2006/05/12 03:01:04 kurt Exp $
+@lib jre/lib/${GNU_ARCH}/libgtkpeer.so.${LIBgtkpeer_VERSION}
+@lib jre/lib/${GNU_ARCH}/libjavaio.so.${LIBjavaio_VERSION}
+@lib jre/lib/${GNU_ARCH}/libjavalang.so.${LIBjavalang_VERSION}
+@lib jre/lib/${GNU_ARCH}/libjavanet.so.${LIBjavanet_VERSION}
+@lib jre/lib/${GNU_ARCH}/libjavanio.so.${LIBjavanio_VERSION}
+@lib jre/lib/${GNU_ARCH}/libjawtgnu.so.${LIBjawtgnu_VERSION}
+@lib jre/lib/${GNU_ARCH}/libkaffevm.so.${LIBkaffevm_VERSION}
+@lib jre/lib/${GNU_ARCH}/libmanagement.so.${LIBmanagement_VERSION}
+@lib jre/lib/${GNU_ARCH}/libmath.so.${LIBmath_VERSION}
+@lib jre/lib/${GNU_ARCH}/libsecurity.so.${LIBsecurity_VERSION}
+@lib jre/lib/${GNU_ARCH}/libtritonusesd.so.${LIBtritonusesd_VERSION}
+@lib jre/lib/${GNU_ARCH}/libzip.so.${LIBzip_VERSION}
