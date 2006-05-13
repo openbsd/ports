@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_volume_c,v 1.1.1.1 2006/05/13 09:52:49 bernd Exp $
+--- src/volume.c.orig	Tue Apr  4 16:03:01 2006
++++ src/volume.c	Tue Apr  4 16:03:09 2006
+@@ -30,7 +30,7 @@
+ #include <fcntl.h>
+ #include <errno.h>
+ #ifndef NO_OSS_MIXER
+-#include <sys/soundcard.h>
++#include <soundcard.h>
+ #endif
+ #ifdef HAVE_ALSA
+ #include <alsa/asoundlib.h>

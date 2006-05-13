@@ -1,0 +1,12 @@
+A sample configuration file has been installed to ${SYSCONFDIR}/mpd.conf
+and MPD is configured to listen on localhost only.
+
+Make sure that music_directory points to a valid directory,
+otherwise MPD won't start.
+
+If you wish to have MPD started automatically at boot time,
+simply add the follow lines to /etc/rc.local:
+
+if [ -x ${PREFIX}/bin/mpd ]; then
+        echo -n ' mpd';       ${PREFIX}/bin/mpd
+fi

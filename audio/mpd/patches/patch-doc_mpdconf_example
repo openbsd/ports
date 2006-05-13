@@ -1,0 +1,64 @@
+$OpenBSD: patch-doc_mpdconf_example,v 1.1.1.1 2006/05/13 09:52:49 bernd Exp $
+--- doc/mpdconf.example.orig	Tue Nov  2 05:03:21 2004
++++ doc/mpdconf.example	Fri Apr  7 18:46:01 2006
+@@ -4,10 +4,10 @@
+ 
+ ##################### REQUIRED ###########################
+ port 			"6600"
+-music_directory 	"~/music"
+-playlist_directory 	"~/.mpd/playlists"
+-log_file 		"~/.mpd/mpd.log"
+-error_file 		"~/.mpd/mpd.error"
++music_directory 	"/please-configure-your-music_directory"
++playlist_directory 	"/var/spool/mpd/playlists"
++log_file 		"/var/log/mpd/mpd.log"
++error_file 		"/var/log/mpd/mpd.error"
+ ##########################################################
+ 
+ ##########################################################
+@@ -35,7 +35,7 @@ error_file 		"~/.mpd/mpd.error"
+ #
+ # Location of DB file 
+ #
+-#db_file		"~/.mpd/mpd.db"
++db_file			"/var/spool/mpd/mpd.db"
+ #
+ # The state file (if set) will be a file
+ # for storing all current information 
+@@ -44,7 +44,7 @@ error_file 		"~/.mpd/mpd.error"
+ # to recreate your last MPD session after
+ # restart.
+ #
+-#state_file		"~/.mpd/mpdstate"
++state_file		"/var/spool/mpd/mpdstate"
+ #
+ ##########################################################
+ 
+@@ -58,9 +58,9 @@ error_file 		"~/.mpd/mpd.error"
+ #mixer_control		"PCM"
+ #
+ # OSS Mixer
+-#mixer_type		"oss"
+-#mixer_device 		"/dev/mixer"
+-#mixer_control		"PCM"
++mixer_type		"oss"
++mixer_device 		"/dev/mixer"
++mixer_control		"master"
+ #
+ # Software Mixer
+ #mixer_type		"software"
+@@ -142,12 +142,12 @@ error_file 		"~/.mpd/mpd.error"
+ # this value, then  mpd will drop root priveleges
+ # and runs as the user specified.
+ #
+-#user 		"nobody"
++user 		"_mpd"
+ #
+ # Set this value if you only have one 
+ # address you want to allow connection to. 
+ #
+-#bind_to_address 	"localhost"
++bind_to_address 	"localhost"
+ #
+ # If you want to setup MPD to use 
+ # passwords set them here
