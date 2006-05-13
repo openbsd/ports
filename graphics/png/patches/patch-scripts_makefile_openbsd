@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_makefile_openbsd,v 1.14 2006/05/10 13:50:01 bernd Exp $
+$OpenBSD: patch-scripts_makefile_openbsd,v 1.15 2006/05/13 13:52:48 bernd Exp $
 --- scripts/makefile.openbsd.orig	Sun Apr 23 20:45:40 2006
-+++ scripts/makefile.openbsd	Tue May  9 15:07:40 2006
++++ scripts/makefile.openbsd	Sat May 13 13:21:46 2006
 @@ -3,12 +3,12 @@
  # For conditions of distribution and use, see copyright notice in png.h
  
@@ -17,7 +17,12 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.14 2006/05/10 13:50:01 bernd Exp $
  LIB=	png
  SRCS=	png.c pngerror.c pnggccrd.c pngget.c pngmem.c pngpread.c \
  	pngread.c pngrio.c pngrtran.c pngrutil.c pngset.c pngtrans.c \
-@@ -21,24 +21,42 @@ CPPFLAGS+= -I${.CURDIR} -DPNG_NO_ASSEMBL
+@@ -17,28 +17,46 @@ SRCS=	png.c pngerror.c pnggccrd.c pngget
+ HDRS=	png.h pngconf.h
+ 
+ CFLAGS+= -Wall
+-CPPFLAGS+= -I${.CURDIR} -DPNG_NO_ASSEMBLER_CODE -DPNG_USE_PNGGCCRD
++CPPFLAGS+= -I${.CURDIR}
  
  NOPROFILE= Yes
  

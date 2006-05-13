@@ -1,0 +1,17 @@
+$OpenBSD: patch-pngconf_h,v 1.4 2006/05/13 13:52:48 bernd Exp $
+--- pngconf.h.orig	Sun Apr 23 20:45:34 2006
++++ pngconf.h	Fri May 12 10:16:39 2006
+@@ -720,6 +720,13 @@
+ #  define PNG_EASY_ACCESS_SUPPORTED
+ #endif
+ 
++/*
++ * Disable assembler and MMX code on OpenBSD
++ */
++#ifndef PNG_NO_ASSEMBLER_CODE
++#  define PNG_NO_ASSEMBLER_CODE
++#endif
++
+ /* PNG_ASSEMBLER_CODE was enabled by default in version 1.2.0 
+    even when PNG_USE_PNGVCRD or PNG_USE_PNGGCCRD is not defined */
+ #if defined(PNG_READ_SUPPORTED) && !defined(PNG_NO_ASSEMBLER_CODE)
