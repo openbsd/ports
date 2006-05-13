@@ -1,4 +1,4 @@
-$OpenBSD: patch-libsn_sn-launcher_c,v 1.1 2005/05/25 23:53:37 marcm Exp $
+$OpenBSD: patch-libsn_sn-launcher_c,v 1.2 2006/05/13 16:19:36 steven Exp $
 --- libsn/sn-launcher.c.orig	Tue Oct 26 22:07:27 2004
 +++ libsn/sn-launcher.c	Wed May 25 16:44:54 2005
 @@ -220,7 +220,7 @@ sn_launcher_context_initiate (SnLauncher
@@ -19,14 +19,3 @@ $OpenBSD: patch-libsn_sn-launcher_c,v 1.1 2005/05/25 23:53:37 marcm Exp $
        values[i] = workspacebuf;
        ++i;
      }
-@@ -358,8 +358,8 @@ sn_launcher_context_setup_child_process 
-   /* Man we need glib here */
- 
-   startup_id = sn_malloc (strlen (context->startup_id) + strlen ("DESKTOP_STARTUP_ID") + 3);
--  strcpy (startup_id, "DESKTOP_STARTUP_ID=");
--  strcat (startup_id, context->startup_id);
-+  strncpy (startup_id, "DESKTOP_STARTUP_ID=", sizeof(startup_id));
-+  strncat (startup_id, context->startup_id, sizeof(startup_id));
- 
-   putenv (startup_id);
- 
