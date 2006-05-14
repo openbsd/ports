@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2006/02/10 10:02:36 steven Exp $
+# $OpenBSD: Makefile,v 1.26 2006/05/14 00:26:13 brad Exp $
 
 COMMENT=	"small, fast & usable window manager"
 
-DISTNAME=	openbox-3.2
-PKGNAME=	${DISTNAME}p2
-SHARED_LIBS=	obparser	2.0 \
-		obrender	2.0
+DISTNAME=	openbox-3.3-rc2
+PKGNAME=	openbox-3.3.rc2
+SHARED_LIBS=	obparser	3.0 \
+		obrender	3.0
 CATEGORIES=	x11
 MASTER_SITES=	http://offload1.icculus.org/openbox/releases/
 

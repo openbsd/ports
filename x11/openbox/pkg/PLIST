@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/09/15 19:26:30 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2006/05/14 00:26:13 brad Exp $
 bin/gnome-panel-control
 bin/kdetrayproxy
 bin/openbox
 include/openbox/
-include/openbox/3.0/
-include/openbox/3.0/openbox/
-include/openbox/3.0/openbox/parse.h
-include/openbox/3.0/openbox/render.h
-include/openbox/3.0/openbox/theme.h
-include/openbox/3.0/openbox/version.h
+include/openbox/3.3/
+include/openbox/3.3/openbox/
+include/openbox/3.3/openbox/parse.h
+include/openbox/3.3/openbox/render.h
+include/openbox/3.3/openbox/theme.h
+include/openbox/3.3/openbox/version.h
 lib/libobparser.a
 lib/libobparser.la
 lib/libobrender.a
@@ -19,15 +19,47 @@ lib/pkgconfig/obrender-3.0.pc
 share/gnome/
 share/gnome/wm-properties/
 share/gnome/wm-properties/openbox.desktop
+share/locale/
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
+share/locale/ca/LC_MESSAGES/openbox.mo
+share/locale/en@boldquot/
+share/locale/en@boldquot/LC_MESSAGES/
 share/locale/en@boldquot/LC_MESSAGES/openbox.mo
+share/locale/en@quot/
+share/locale/en@quot/LC_MESSAGES/
 share/locale/en@quot/LC_MESSAGES/openbox.mo
+share/locale/es/
+share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/openbox.mo
+share/locale/fi/
+share/locale/fi/LC_MESSAGES/
+share/locale/fi/LC_MESSAGES/openbox.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
+share/locale/fr/LC_MESSAGES/openbox.mo
+share/locale/ja/
+share/locale/ja/LC_MESSAGES/
 share/locale/ja/LC_MESSAGES/openbox.mo
+share/locale/no/
+share/locale/no/LC_MESSAGES/
+share/locale/no/LC_MESSAGES/openbox.mo
+share/locale/pl/
+share/locale/pl/LC_MESSAGES/
+share/locale/pl/LC_MESSAGES/openbox.mo
+share/locale/ru/
+share/locale/ru/LC_MESSAGES/
+share/locale/ru/LC_MESSAGES/openbox.mo
+share/locale/sv/
+share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/openbox.mo
 share/openbox/
+@sample ${SYSCONFDIR}/xdg/openbox/
 share/openbox/menu.xml
+@sample ${SYSCONFDIR}/xdg/openbox/menu.xml
 share/openbox/menu.xsd
 share/openbox/rc.xml
+@sample ${SYSCONFDIR}/xdg/openbox/rc.xml
 share/openbox/rc.xsd
 share/openbox/themeupdate.py
 share/pixmaps/
