@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2006/04/16 18:54:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2006/05/14 17:31:16 steven Exp $
 
 COMMENT=		"jabber server"
 DISTNAME=		jabberd-2.0s11
@@ -13,7 +13,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto ssl
 
-MASTER_SITES=		http://files.jabberstudio.org/jabberd2/
+MASTER_SITES=		http://files.jabberstudio.org/jabberd2/ \
+			http://jabberstudio.rediris.es/jabberd2/ \
+			http://jabberstudio.2nw.net/jabberd2/
 
 JABBERDUSER=		_jabberd
 JABBERDGROUP=		_jabberd
