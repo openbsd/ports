@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/14 01:15:56 brad Exp $
+bin/obconf
+share/applications/
+share/applications/obconf.desktop
+share/obconf/
+share/obconf/obconf.glade
