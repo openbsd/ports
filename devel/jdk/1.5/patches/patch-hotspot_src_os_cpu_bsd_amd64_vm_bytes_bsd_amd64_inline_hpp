@@ -1,0 +1,31 @@
+$OpenBSD: patch-hotspot_src_os_cpu_bsd_amd64_vm_bytes_bsd_amd64_inline_hpp,v 1.1 2006/05/15 18:11:23 ian Exp $
+--- hotspot/src/os_cpu/bsd_amd64/vm/bytes_bsd_amd64.inline.hpp.orig	Tue May  9 16:23:03 2006
++++ hotspot/src/os_cpu/bsd_amd64/vm/bytes_bsd_amd64.inline.hpp	Tue May  9 16:24:27 2006
+@@ -11,15 +11,27 @@
+ 
+ inline u2 Bytes::swap_u2(u2 x) 
+ {
++#ifdef __OpenBSD__
++  return swap16(x);
++#else
+   return __bswap16(x);
++#endif
+ }
+ 
+ inline u4 Bytes::swap_u4(u4 x) 
+ {
++#ifdef __OpenBSD__
++  return swap32(x);
++#else
+   return __bswap32(x);
++#endif
+ }
+ 
+ inline u8 Bytes::swap_u8(u8 x) 
+ {
++#ifdef __OpenBSD__
++  return swap64(x);
++#else
+   return __bswap64(x);
++#endif
+ }

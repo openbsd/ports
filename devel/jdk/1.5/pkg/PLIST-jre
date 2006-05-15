@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-jre,v 1.3 2005/11/23 19:39:14 kurt Exp $
+@comment $OpenBSD: PLIST-jre,v 1.4 2006/05/15 18:11:23 ian Exp $
 @option no-default-conflict
 @conflict jre->=1.5,<1.6
 @pkgpath devel/jdk/1.5,-jre,native_bootstrap
@@ -54,10 +54,6 @@ ${JREHOME}/lib/fonts/LucidaTypewriterRegular.ttf
 ${JREHOME}/lib/fonts/fonts.dir
 ${JREHOME}/lib/${MACHINE_ARCH}/
 ${JREHOME}/lib/${MACHINE_ARCH}/awt_robot
-${JREHOME}/lib/${MACHINE_ARCH}/client/
-${JREHOME}/lib/${MACHINE_ARCH}/client/Xusage.txt
-${JREHOME}/lib/${MACHINE_ARCH}/client/libjsig.so
-${JREHOME}/lib/${MACHINE_ARCH}/client/libjvm.so
 ${JREHOME}/lib/${MACHINE_ARCH}/gtkhelper
 ${JREHOME}/lib/${MACHINE_ARCH}/headless/
 ${JREHOME}/lib/${MACHINE_ARCH}/headless/libmawt.so
@@ -559,7 +555,6 @@ ${JREHOME}/lib/zi/ZoneInfoMappings
 @mandir ${JREHOME}/man/
 ${JREHOME}/man/man1/
 @man ${JREHOME}/man/man1/java.1
-@man ${JREHOME}/man/man1/javaws.1
 @man ${JREHOME}/man/man1/keytool.1
 @man ${JREHOME}/man/man1/kinit.1
 @man ${JREHOME}/man/man1/klist.1
@@ -573,3 +568,4 @@ ${JREHOME}/man/man1/
 @man ${JREHOME}/man/man1/tnameserv.1
 @man ${JREHOME}/man/man1/unpack200.1
 !%%no_web%%
+%%client_vm%%

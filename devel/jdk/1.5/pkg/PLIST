@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/11/23 19:39:14 kurt Exp $
+@comment $OpenBSD: PLIST,v 1.4 2006/05/15 18:11:23 ian Exp $
 @option no-default-conflict
 @conflict jdk->=1.5,<1.6
 @pkgpath devel/jdk/1.5,native_bootstrap
@@ -20,7 +20,6 @@ ${JDKHOME}/bin/jar_g
 ${JDKHOME}/bin/jarsigner
 ${JDKHOME}/bin/jarsigner_g
 ${JDKHOME}/bin/java
-${JDKHOME}/bin/java-rmi.cgi
 ${JDKHOME}/bin/java_g
 ${JDKHOME}/bin/javac
 ${JDKHOME}/bin/javac_g
@@ -820,12 +819,6 @@ ${JDKHOME}/jre/lib/fonts/fonts.dir
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/awt_robot
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/awt_robot_g
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/client/
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/client/Xusage.txt
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/client/libjsig.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/client/libjsig_g.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/client/libjvm.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/client/libjvm_g.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/gtkhelper
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/headless/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/headless/libmawt.so
@@ -1375,7 +1368,6 @@ ${JDKHOME}/man/man1/
 @man ${JDKHOME}/man/man1/javadoc.1
 @man ${JDKHOME}/man/man1/javah.1
 @man ${JDKHOME}/man/man1/javap.1
-@man ${JDKHOME}/man/man1/javaws.1
 @man ${JDKHOME}/man/man1/jconsole.1
 @man ${JDKHOME}/man/man1/jdb.1
 @man ${JDKHOME}/man/man1/jinfo.1
@@ -1430,3 +1422,4 @@ ${JDKHOME}/sample/nio/server/StringContent.java
 ${JDKHOME}/sample/nio/server/URLDumper.java
 ${JDKHOME}/src.zip
 !%%no_web%%
+%%client_vm%%

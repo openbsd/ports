@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_build_bsd_makefiles_vm_make,v 1.2 2005/11/22 14:43:05 kurt Exp $
---- hotspot/build/bsd/makefiles/vm.make.orig	Wed Nov 16 17:13:31 2005
-+++ hotspot/build/bsd/makefiles/vm.make	Wed Nov 16 21:21:40 2005
+$OpenBSD: patch-hotspot_build_bsd_makefiles_vm_make,v 1.3 2006/05/15 18:11:22 ian Exp $
+--- hotspot/build/bsd/makefiles/vm.make.orig	Mon May  8 15:04:13 2006
++++ hotspot/build/bsd/makefiles/vm.make	Tue May  9 19:49:32 2006
 @@ -71,6 +71,10 @@ BUILD_VERSION$(HOTSPOT_BUILD_VERSION) = 
  
  CPPFLAGS = ${SYSDEFS} ${INCLUDES} ${BUILD_VERSION}
@@ -11,4 +11,13 @@ $OpenBSD: patch-hotspot_build_bsd_makefiles_vm_make,v 1.2 2005/11/22 14:43:05 ku
 +
  # Suppress warnings (for now)
  CFLAGS += -w
+ 
+@@ -78,7 +82,7 @@ CFLAGS += -w
+ #AOUT_FLAGS += -norunpath
+ 
+ COMPILE   = ${CPP} ${CPPFLAGS} ${CFLAGS}
+-LINK_LIB  = ${CPP} -shared -mimpure-text
++LINK_LIB  = ${CPP} -shared -mimpure-text -fPIC
+ LINK      = ${CPP} ${AOUT_FLAGS}
+ 
  

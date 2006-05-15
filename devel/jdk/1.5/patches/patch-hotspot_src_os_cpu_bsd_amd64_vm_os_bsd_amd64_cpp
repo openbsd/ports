@@ -1,0 +1,255 @@
+$OpenBSD: patch-hotspot_src_os_cpu_bsd_amd64_vm_os_bsd_amd64_cpp,v 1.1 2006/05/15 18:11:23 ian Exp $
+--- hotspot/src/os_cpu/bsd_amd64/vm/os_bsd_amd64.cpp.orig	Tue May  9 15:52:33 2006
++++ hotspot/src/os_cpu/bsd_amd64/vm/os_bsd_amd64.cpp	Tue May  9 16:21:14 2006
+@@ -29,8 +29,54 @@
+ #include <sys/wait.h>
+ #include <pwd.h>
+ #include <poll.h>
+-#include <ucontext.h>
+ 
++# ifdef __FreeBSD__
++#  define context_rip uc_mcontext.mc_rip
++#  define context_rsp uc_mcontext.mc_rsp
++#  define context_rax uc_mcontext.mc_rax
++#  define context_rbx uc_mcontext.mc_rbx
++#  define context_rcx uc_mcontext.mc_rcx
++#  define context_rdx uc_mcontext.mc_rdx
++#  define context_rbp uc_mcontext.mc_rbp
++#  define context_rsi uc_mcontext.mc_rsi
++#  define context_rdi uc_mcontext.mc_rdi
++#  define context_r8  uc_mcontext.mc_r8
++#  define context_r9  uc_mcontext.mc_r9
++#  define context_r10 uc_mcontext.mc_r10
++#  define context_r11 uc_mcontext.mc_r11
++#  define context_r12 uc_mcontext.mc_r12
++#  define context_r13 uc_mcontext.mc_r13
++#  define context_r14 uc_mcontext.mc_r14
++#  define context_r15 uc_mcontext.mc_r15
++#  define context_flags uc_mcontext.mc_flags
++#  define context_trapno uc_mcontext.mc_trapno
++#  define context_err uc_mcontext.mc_err
++# endif
++
++# ifdef __OpenBSD__
++#  define context_rip sc_rip
++#  define context_rsp sc_rsp
++#  define context_rax sc_rax
++#  define context_rbx sc_rbx
++#  define context_rcx sc_rcx
++#  define context_rdx sc_rdx
++#  define context_rbp sc_rbp
++#  define context_rsi sc_rsi
++#  define context_rdi sc_rdi
++#  define context_r8  sc_r8
++#  define context_r9  sc_r9
++#  define context_r10 sc_r10
++#  define context_r11 sc_r11
++#  define context_r12 sc_r12
++#  define context_r13 sc_r13
++#  define context_r14 sc_r14
++#  define context_r15 sc_r15
++#  define context_flags sc_rflags
++#  define context_trapno sc_trapno
++#  define context_err sc_err
++# endif
++
++
+ // XXXBSD: find best value
+ size_t os::Bsd::min_stack_allowed  = 256 * K;
+ 
+@@ -48,6 +94,7 @@ char* os::non_memory_address_word()
+ // There are issues with libthread giving out uc_links for different threads
+ // on the same uc_link chain and bad or circular links. 
+ //
++#ifndef __OpenBSD__
+ bool os::Bsd::valid_ucontext(Thread* thread, ucontext_t* valid, ucontext_t* suspect) {
+   if (valid >= suspect || 
+       valid->uc_stack.ss_flags != suspect->uc_stack.ss_flags ||
+@@ -62,7 +109,7 @@ bool os::Bsd::valid_ucontext(Thread* thr
+       DEBUG_ONLY(tty->print_cr("valid_ucontext: uc_link not in thread stack");)
+       return false;
+     }
+-    if (!valid_stack_address(thread,  (address) suspect->uc_mcontext.mc_rsp)) {
++    if (!valid_stack_address(thread,  (address) suspect->context_rsp)) {
+       DEBUG_ONLY(tty->print_cr("valid_ucontext: stackpointer not in thread stack");)
+       return false;
+     }
+@@ -96,26 +143,27 @@ ucontext_t* os::Bsd::get_valid_uc_in_sig
+   }
+   return retuc;
+ }
++#endif // !__OpenBSD__
+ 
+ // Assumes ucontext is valid
+ // XXXBSD: my additional...
+ address ucontext_get_pc(ucontext_t *uc) {
+-  return (address)uc->uc_mcontext.mc_rip;
++  return (address)uc->context_rip;
+ }
+ 
+ // Assumes ucontext is valid
+ ExtendedPC os::Bsd::ucontext_get_ExtendedPC(ucontext_t *uc) {
+-  return ExtendedPC((address)uc->uc_mcontext.mc_rip);
++  return ExtendedPC((address)uc->context_rip);
+ }
+ 
+ // Assumes ucontext is valid
+ intptr_t* os::Bsd::ucontext_get_sp(ucontext_t *uc) {
+-  return (intptr_t*)uc->uc_mcontext.mc_rsp;
++  return (intptr_t*)uc->context_rsp;
+ }
+ 
+ // Assumes ucontext is valid
+ intptr_t* os::Bsd::ucontext_get_fp(ucontext_t *uc) {
+-  return (intptr_t*)uc->uc_mcontext.mc_rbp;
++  return (intptr_t*)uc->context_rbp;
+ }
+ 
+ // For Forte Analyzer AsyncGetCallTrace profiling support - thread
+@@ -130,8 +178,12 @@ ExtendedPC os::Bsd::fetch_frame_from_uco
+   assert(ret_sp != NULL, "just checking");
+   assert(ret_fp != NULL, "just checking");
+ 
++#ifdef __OpenBSD__
++  return os::fetch_frame_from_context(uc, ret_sp, ret_fp);
++#else
+   ucontext_t *luc = os::Bsd::get_valid_uc_in_signal_handler(thread, uc);
+   return os::fetch_frame_from_context(luc, ret_sp, ret_fp);
++#endif
+ }
+ 
+ ExtendedPC os::fetch_frame_from_context(void* ucVoid, 
+@@ -203,25 +255,31 @@ void SetThreadPC_Callback::execute(OSThr
+   // success, if not we return failure and the caller can retry.
+   // 
+   _result = false;
+-  if (uc->uc_mcontext.mc_rip == (int)_old_addr.pc() ) {
+-    uc->uc_mcontext.mc_rip = (int)_new_addr.pc();
++  if (uc->context_rip == (int)_old_addr.pc() ) {
++    uc->context_rip = (int)_new_addr.pc();
+     _result = true;
++#ifndef __OpenBSD__
+   } else if (uc->uc_link != NULL) {
+     // Check (and validate) one level of stacked ucontext
+     ucontext_t* linked_uc = uc->uc_link;
+-    if (os::Bsd::valid_ucontext(thread, uc, linked_uc) && linked_uc->uc_mcontext.mc_rip == (int)_old_addr.pc()) {
+-      linked_uc->uc_mcontext.mc_rip = (int)_new_addr.pc();
++    if (os::Bsd::valid_ucontext(thread, uc, linked_uc) && linked_uc->context_rip == (int)_old_addr.pc()) {
++      linked_uc->context_rip = (int)_new_addr.pc();
+       _result = true;
+     }
++#endif
+   }
+ 
+   thread->safepoint_state()->notify_set_thread_pc_result(_result);
+ 
+ #ifdef ASSERT
+   if (!_result) { 
++#ifndef __OpenBSD__
+     if (uc->uc_link != NULL) { 
+       tty->print_cr("set_thread_pc:(nested) failed to set pc " INTPTR_FORMAT " -> " INTPTR_FORMAT, _old_addr.pc(), _new_addr.pc()); 
+     } else { 
++#else
++    {
++#endif
+       tty->print_cr("set_thread_pc: failed to set pc " INTPTR_FORMAT " -> " INTPTR_FORMAT, _old_addr.pc(), _new_addr.pc()); 
+     } 
+   } 
+@@ -242,7 +300,7 @@ void GetThreadPC_Callback::execute(OSThr
+ 
+   assert(ProfileVM && thread->is_VM_thread(), "just checking");
+     
+-  ExtendedPC new_addr((address)uc->uc_mcontext.mc_rip);
++  ExtendedPC new_addr((address)uc->context_rip);
+   _addr = new_addr;
+ }
+ 
+@@ -290,7 +348,7 @@ JVM_handle_bsd_signal(int sig,
+   //%note os_trap_1
+   if (info != NULL && thread != NULL) {
+     // factor me: getPCfromContext
+-    pc = (address) uc->uc_mcontext.mc_rip;
++    pc = (address) uc->context_rip;
+ #ifndef CORE
+     adjusted_pc = 
+       SafepointPolling 
+@@ -505,7 +563,7 @@ JVM_handle_bsd_signal(int sig,
+     // Currently, no, but might need to if we'll be returning to the
+     // context where the trap occurred. Will need to revisit this for
+     // compiled safepoint stubs.  factor me: setPC
+-    uc->uc_mcontext.mc_rip = (__register_t) stub;
++    uc->context_rip = (__register_t) stub;
+     return true;
+   }
+ 
+@@ -514,7 +572,7 @@ JVM_handle_bsd_signal(int sig,
+   if ((sig == SIGSEGV) || (sig == SIGBUS)) {
+     address addr = JNI_FastGetField::find_slowcase_pc(pc);
+     if (addr != (address)-1) {
+-      uc->uc_mcontext.mc_rip = (__register_t)addr;
++      uc->context_rip = (__register_t)addr;
+       return true;
+     }
+   }
+@@ -545,7 +603,7 @@ JVM_handle_bsd_signal(int sig,
+   }
+ 
+   if (pc == NULL && uc != NULL) {
+-    pc = (address) uc->uc_mcontext.mc_rip;
++    pc = (address) uc->context_rip;
+   }
+ 
+   // unmask current signal
+@@ -576,32 +634,31 @@ void os::print_context(outputStream* st,
+ 
+   ucontext_t* uc = (ucontext_t*) context;
+   st->print_cr("Registers:");
+-  st->print(  "RAX=" INTPTR_FORMAT, uc->uc_mcontext.mc_rax);
+-  st->print(", RBX=" INTPTR_FORMAT, uc->uc_mcontext.mc_rbx);
+-  st->print(", RCX=" INTPTR_FORMAT, uc->uc_mcontext.mc_rcx);
+-  st->print(", RDX=" INTPTR_FORMAT, uc->uc_mcontext.mc_rdx);
++  st->print(  "RAX=" INTPTR_FORMAT, uc->context_rax);
++  st->print(", RBX=" INTPTR_FORMAT, uc->context_rbx);
++  st->print(", RCX=" INTPTR_FORMAT, uc->context_rcx);
++  st->print(", RDX=" INTPTR_FORMAT, uc->context_rdx);
+   st->cr();
+-  st->print(  "RSP=" INTPTR_FORMAT, uc->uc_mcontext.mc_rsp);
+-  st->print(", RBP=" INTPTR_FORMAT, uc->uc_mcontext.mc_rbp);
+-  st->print(", RSI=" INTPTR_FORMAT, uc->uc_mcontext.mc_rsi);
+-  st->print(", RDI=" INTPTR_FORMAT, uc->uc_mcontext.mc_rdi);
++  st->print(  "RSP=" INTPTR_FORMAT, uc->context_rsp);
++  st->print(", RBP=" INTPTR_FORMAT, uc->context_rbp);
++  st->print(", RSI=" INTPTR_FORMAT, uc->context_rsi);
++  st->print(", RDI=" INTPTR_FORMAT, uc->context_rdi);
+   st->cr();
+-  st->print(  "R8 =" INTPTR_FORMAT, uc->uc_mcontext.mc_r8);
+-  st->print(", R9 =" INTPTR_FORMAT, uc->uc_mcontext.mc_r9);
+-  st->print(", R10=" INTPTR_FORMAT, uc->uc_mcontext.mc_r10);
+-  st->print(", R11=" INTPTR_FORMAT, uc->uc_mcontext.mc_r11);
++  st->print(  "R8 =" INTPTR_FORMAT, uc->context_r8);
++  st->print(", R9 =" INTPTR_FORMAT, uc->context_r9);
++  st->print(", R10=" INTPTR_FORMAT, uc->context_r10);
++  st->print(", R11=" INTPTR_FORMAT, uc->context_r11);
+   st->cr();
+-  st->print(  "R12=" INTPTR_FORMAT, uc->uc_mcontext.mc_r12);
+-  st->print(", R13=" INTPTR_FORMAT, uc->uc_mcontext.mc_r13);
+-  st->print(", R14=" INTPTR_FORMAT, uc->uc_mcontext.mc_r14);
+-  st->print(", R15=" INTPTR_FORMAT, uc->uc_mcontext.mc_r15);
++  st->print(  "R12=" INTPTR_FORMAT, uc->context_r12);
++  st->print(", R13=" INTPTR_FORMAT, uc->context_r13);
++  st->print(", R14=" INTPTR_FORMAT, uc->context_r14);
++  st->print(", R15=" INTPTR_FORMAT, uc->context_r15);
+   st->cr();
+-  st->print(  "RIP=" INTPTR_FORMAT, uc->uc_mcontext.mc_rip);
+-  st->print(", EFL=" INTPTR_FORMAT, uc->uc_mcontext.mc_flags);
+-  st->print(", CSGSFS=" INTPTR_FORMAT, uc->uc_mcontext.mc_addr);
+-  st->print(", ERR=" INTPTR_FORMAT, uc->uc_mcontext.mc_err);
++  st->print(  "RIP=" INTPTR_FORMAT, uc->context_rip);
++  st->print(", EFL=" INTPTR_FORMAT, uc->context_flags);
++  st->print(", ERR=" INTPTR_FORMAT, uc->context_err);
+   st->cr();
+-  st->print("  TRAPNO=" INTPTR_FORMAT, uc->uc_mcontext.mc_trapno);
++  st->print("  TRAPNO=" INTPTR_FORMAT, uc->context_trapno);
+   st->cr();
+   st->cr();
+ 

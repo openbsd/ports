@@ -1,0 +1,15 @@
+$OpenBSD: patch-hotspot_src_cpu_amd64_vm_c2_globals_amd64_hpp,v 1.1 2006/05/15 18:11:22 ian Exp $
+--- hotspot/src/cpu/amd64/vm/c2_globals_amd64.hpp.orig	Thu May 11 12:28:17 2006
++++ hotspot/src/cpu/amd64/vm/c2_globals_amd64.hpp	Thu May 11 12:29:36 2006
+@@ -52,7 +52,11 @@ define_pd_global(bool, OptoBundling,    
+ // pointer.  Note that CALL rel32off insns must be patched for
+ // safepoints
+ define_pd_global(intx, InitialCodeCacheSize,         1024*K);
++#ifdef __OpenBSD__
++define_pd_global(intx, ReservedCodeCacheSize,        256*M);
++#else
+ define_pd_global(intx, ReservedCodeCacheSize,        1024*M);
++#endif
+ define_pd_global(intx, CodeCacheExpansionSize,       64*K);
+ define_pd_global(uintx,CodeCacheMinBlockLength,      4);
+ define_pd_global(intx, LoopUnrollLimit,		     60);
