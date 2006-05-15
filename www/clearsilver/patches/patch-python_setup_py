@@ -1,7 +1,7 @@
-$OpenBSD: patch-python_setup_py,v 1.1 2005/07/23 17:08:13 sturm Exp $
---- python/setup.py.orig	Sun Aug 31 10:33:09 2003
-+++ python/setup.py	Tue Jun 14 10:11:11 2005
-@@ -15,11 +15,11 @@ LIB_DIRS = ["../libs"]
+$OpenBSD: patch-python_setup_py,v 1.2 2006/05/15 17:08:43 fkr Exp $
+--- python/setup.py.orig	Mon Mar 13 01:15:48 2006
++++ python/setup.py	Mon May  8 16:54:19 2006
+@@ -28,11 +28,11 @@ LDSHARED = "gcc -shared"
  ## Actually, forget that, I'm just going to load and parse the rules.mk
  ## file and build what I need
  

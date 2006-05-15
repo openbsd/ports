@@ -1,19 +1,11 @@
-$OpenBSD: patch-rules_mk_in,v 1.1.1.1 2005/05/26 01:33:38 sturm Exp $
---- rules.mk.in.orig	Tue Nov 16 16:05:10 2004
-+++ rules.mk.in	Wed May 25 19:03:31 2005
-@@ -78,15 +78,15 @@ CPPFLAGS   = -I$(NEOTONIC_ROOT) @CPPFLAG
- OUTPUT_OPTION = -o $@
- LD         = $(CC) -o
- LDFLAGS    = -L$(LIB_DIR) @LDFLAGS@
--LDSHARED   = $(CC) -shared -fPic
--CPPLDSHARED   = $(CPP) -shared -fPic
-+LDSHARED   = $(CC) -shared -fPIC
-+CPPLDSHARED   = $(CPP) -shared -fPIC
- AR         = @AR@ cr
+--- rules.mk.in.orig	Fri Dec  2 12:25:19 2005
++++ rules.mk.in	Mon May  8 16:54:19 2006
+@@ -94,9 +94,9 @@ AR         = @AR@ cr
  RANLIB     = @RANLIB@
  DEP_LIBS   = $(DLIBS:-l%=$(LIB_DIR)lib%.a)
  DBI_LIBS   = -ldbi -ldl -lz
- LIBS       = @LIBS@
+-LIBS       = @LIBS@
++LIBS       = @LIBS@ -lpthread
  LS         = /bin/ls
 -XARGS      = xargs -i%
 +XARGS      = xargs -J%

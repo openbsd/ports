@@ -1,7 +1,6 @@
-$OpenBSD: patch-cgi_cgi_c,v 1.1 2005/10/28 12:48:49 markus Exp $
---- cgi/cgi.c.orig	Tue Oct 25 10:50:41 2005
-+++ cgi/cgi.c	Tue Oct 25 10:52:15 2005
-@@ -625,7 +625,7 @@ static void _launch_debugger (CGI *cgi, 
+--- cgi/cgi.c.orig	Fri Dec  2 10:34:04 2005
++++ cgi/cgi.c	Mon May  8 16:54:19 2006
+@@ -646,7 +646,7 @@ static void _launch_debugger (CGI *cgi, 
  
    if (!pid)
    {
@@ -10,7 +9,7 @@ $OpenBSD: patch-cgi_cgi_c,v 1.1 2005/10/28 12:48:49 markus Exp $
      execl("/bin/sh", "sh", "-c", buffer, NULL);
    }
    else
-@@ -1320,11 +1320,11 @@ NEOERR *cgi_output (CGI *cgi, STRING *st
+@@ -1341,11 +1341,11 @@ NEOERR *cgi_output (CGI *cgi, STRING *st
  	  {
  	    if (use_gzip)
  	    {
@@ -21,15 +20,15 @@ $OpenBSD: patch-cgi_cgi_c,v 1.1 2005/10/28 12:48:49 markus Exp $
  	       * now as well */
 -	      sprintf(gz_buf, "%c%c%c%c%c%c%c%c%c%c", gz_magic[0], gz_magic[1],
 +	      snprintf(gz_buf, sizeof(gz_buf), "%c%c%c%c%c%c%c%c%c%c", gz_magic[0], gz_magic[1],
- 		  Z_DEFLATED, 0 /*flags*/, 0,0,0,0 /*time*/, 0 /*xflags*/, 
+ 		  Z_DEFLATED, 0 /*flags*/, 0,0,0,0 /*time*/, 0 /*xflags*/,
  		  OS_CODE);
  	      err = cgiwrap_write(gz_buf, 10);
-@@ -1336,7 +1336,7 @@ NEOERR *cgi_output (CGI *cgi, STRING *st
+@@ -1357,7 +1357,7 @@ NEOERR *cgi_output (CGI *cgi, STRING *st
  	    if (use_gzip)
  	    {
  	      /* write crc and len in network order */
--	      sprintf(gz_buf, "%c%c%c%c%c%c%c%c", 
-+	      snprintf(gz_buf, sizeof(gz_buf), "%c%c%c%c%c%c%c%c", 
- 		  (0xff & (crc >> 0)), 
- 		  (0xff & (crc >> 8)), 
- 		  (0xff & (crc >> 16)), 
+-	      sprintf(gz_buf, "%c%c%c%c%c%c%c%c",
++	      snprintf(gz_buf, sizeof(gz_buf), "%c%c%c%c%c%c%c%c",
+ 		  (0xff & (crc >> 0)),
+ 		  (0xff & (crc >> 8)),
+ 		  (0xff & (crc >> 16)),

@@ -1,7 +1,7 @@
-$OpenBSD: patch-cgi_cgi_h,v 1.1 2005/10/28 12:48:49 markus Exp $
---- cgi/cgi.h.orig	Tue Oct 25 10:32:43 2005
-+++ cgi/cgi.h	Tue Oct 25 10:44:52 2005
-@@ -267,11 +267,11 @@ FILE *cgi_filehandle (CGI *cgi, char *fo
+$OpenBSD: patch-cgi_cgi_h,v 1.2 2006/05/15 17:08:43 fkr Exp $
+--- cgi/cgi.h.orig	Thu Dec  1 04:57:32 2005
++++ cgi/cgi.h	Mon May  8 16:54:19 2006
+@@ -267,11 +267,11 @@ FILE *cgi_filehandle (CGI *cgi, const ch
   *              removed from future versions in favor of some sort of
   *              user error mechanism.
   * Input: cgi - a pointer to a CGI struct

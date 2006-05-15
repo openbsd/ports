@@ -1,7 +1,25 @@
-$OpenBSD: patch-util_neo_hdf_c,v 1.1 2005/10/28 12:48:49 markus Exp $
---- util/neo_hdf.c.orig	Tue Oct 25 11:07:12 2005
-+++ util/neo_hdf.c	Tue Oct 25 11:07:52 2005
-@@ -1146,8 +1146,9 @@ static NEOERR* hdf_dump_cb(HDF *hdf, cha
+$OpenBSD: patch-util_neo_hdf_c,v 1.2 2006/05/15 17:08:43 fkr Exp $
+--- util/neo_hdf.c.orig	Tue Mar  7 21:24:44 2006
++++ util/neo_hdf.c	Mon May  8 16:57:13 2006
+@@ -771,13 +771,14 @@ skip_search:
+     }
+     else if (hp->link) 
+     {
+-      char *new_name = (char *) malloc(strlen(hp->value) + strlen(s) + 1);
++      size_t nn_siz = strlen(hp->value) + strlen(s) + 1;
++      char *new_name = (char *) malloc(nn_siz);
+       if (new_name == NULL)
+       {
+         return nerr_raise(NERR_NOMEM, "Unable to allocate memory");
+       }
+-      strcpy(new_name, hp->value);
+-      strcat(new_name, s);
++      strlcpy(new_name, hp->value, nn_siz);
++      strlcat(new_name, s, nn_siz);
+       err = _set_value (hdf, new_name, value, dup, wf, link, attr, set_node);
+       free(new_name);
+       return nerr_pass(err);
+@@ -1170,8 +1171,9 @@ static NEOERR* hdf_dump_cb(HDF *hdf, con
      {
        if (prefix && (dtype == DUMP_TYPE_DOTTED))
        {

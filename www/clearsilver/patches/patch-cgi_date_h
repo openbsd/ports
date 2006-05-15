@@ -1,12 +1,11 @@
-$OpenBSD: patch-cgi_date_h,v 1.1 2005/10/28 12:48:49 markus Exp $
---- cgi/date.h.orig	Tue Oct 25 10:32:23 2005
-+++ cgi/date.h	Tue Oct 25 10:32:31 2005
+--- cgi/date.h.orig	Fri Jul  1 03:21:30 2005
++++ cgi/date.h	Fri Apr 28 00:04:19 2006
 @@ -17,7 +17,7 @@
  __BEGIN_DECLS
  
- NEOERR *export_date_tm (HDF *obj, char *prefix, struct tm *ttm);
--NEOERR *export_date_time_t (HDF *obj, char *prefix, char *timezone, time_t tt);
-+NEOERR *export_date_time_t (HDF *obj, char *prefix, char *neotimezone, time_t tt);
+ NEOERR *export_date_tm (HDF *obj, const char *prefix, struct tm *ttm);
+-NEOERR *export_date_time_t (HDF *obj, const char *prefix, const char *timezone, 
++NEOERR *export_date_time_t (HDF *obj, const char *prefix, const char *neotimezone, 
+                             time_t tt);
  
  __END_DECLS
- 

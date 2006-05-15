@@ -1,16 +1,15 @@
-$OpenBSD: patch-util_neo_date_h,v 1.1 2005/10/28 12:48:49 markus Exp $
---- util/neo_date.h.orig	Tue Oct 25 10:27:16 2005
-+++ util/neo_date.h	Tue Oct 25 10:27:47 2005
+--- util/neo_date.h.orig	Thu Jun 30 20:58:48 2005
++++ util/neo_date.h	Fri Apr 28 00:11:28 2006
 @@ -17,10 +17,10 @@
  __BEGIN_DECLS
  
  /* UTC time_t -> struct tm in local timezone */
--void neo_time_expand (const time_t tt, char *timezone, struct tm *ttm);
-+void neo_time_expand (const time_t tt, char *neotimezone, struct tm *ttm);
+-void neo_time_expand (const time_t tt, const char *timezone, struct tm *ttm);
++void neo_time_expand (const time_t tt, const char *neotimezone, struct tm *ttm);
  
  /* local timezone struct tm -> time_t UTC */
--time_t neo_time_compact (struct tm *ttm, char *timezone);
-+time_t neo_time_compact (struct tm *ttm, char *neotimezone);
+-time_t neo_time_compact (struct tm *ttm, const char *timezone);
++time_t neo_time_compact (struct tm *ttm, const char *neotimezone);
  
  /* To be portable... in seconds */
  long neo_tz_offset(struct tm *ttm);

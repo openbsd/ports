@@ -1,7 +1,7 @@
-$OpenBSD: patch-util_neo_str_c,v 1.1 2005/10/28 12:48:49 markus Exp $
---- util/neo_str.c.orig	Thu Jul 29 00:17:42 2004
-+++ util/neo_str.c	Tue Oct 25 11:10:45 2005
-@@ -122,7 +122,7 @@ NEOERR *string_append (STRING *str, char
+$OpenBSD: patch-util_neo_str_c,v 1.2 2006/05/15 17:08:43 fkr Exp $
+--- util/neo_str.c.orig	Fri Jul  1 02:42:50 2005
++++ util/neo_str.c	Mon May  8 16:54:19 2006
+@@ -122,7 +122,7 @@ NEOERR *string_append (STRING *str, cons
    l = strlen(buf);
    err = string_check_length (str, l);
    if (err != STATUS_OK) return nerr_pass (err);
@@ -10,7 +10,7 @@ $OpenBSD: patch-util_neo_str_c,v 1.1 2005/10/28 12:48:49 markus Exp $
    str->len += l;
  
    return STATUS_OK;
-@@ -174,7 +174,7 @@ NEOERR *string_appendvf (STRING *str, ch
+@@ -174,7 +174,7 @@ NEOERR *string_appendvf (STRING *str, co
    err = string_check_length (str, bl+1);
    if (err != STATUS_OK) return nerr_pass (err);
    va_copy(tmp, ap);
@@ -19,7 +19,7 @@ $OpenBSD: patch-util_neo_str_c,v 1.1 2005/10/28 12:48:49 markus Exp $
    str->len += bl;
    str->buf[str->len] = '\0';
  
-@@ -579,7 +579,7 @@ char *repr_string_alloc (char *s)
+@@ -581,7 +581,7 @@ char *repr_string_alloc (const char *s)
  	  rs[i++] = '\\';
  	  break;
  	default:
