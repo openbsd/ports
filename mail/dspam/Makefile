@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2006/04/28 01:13:36 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2006/05/15 12:01:25 todd Exp $
 
 COMMENT=	"anti-spam filter"
 
-VERSION=	3.6.5
+VERSION=	3.6.6
 DISTNAME=	dspam-${VERSION}
 SHARED_LIBS=	dspam	7.0
 CATEGORIES=	mail
@@ -44,7 +44,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/dspam
 DRIVER=
 DAEMON_SUPPORT=
 
-FLAVORS=	sqlite3 sqlite mysql pgsql hash clamav ldap
+FLAVORS=	sqlite3 sqlite mysql pgsql hash clamav ldap preferences
 FLAVOR?=	sqlite3
 
 .if ${FLAVOR:L:Mmysql}
@@ -123,6 +123,10 @@ LIB_DEPENDS+=		ldap.8,lber.8::databases/openldap
 .if !empty(DAEMON_SUPPORT)
 CONFIGURE_ARGS+=	--enable-daemon
 WANTLIB+=		pthread
+.endif
+
+.if ${FLAVOR:L:Mpreferences}
+CONFIGURE_ARGS+=	--enable-preferences-extension
 .endif
 
 post-install:
