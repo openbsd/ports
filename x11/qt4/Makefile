@@ -1,16 +1,20 @@
-# $OpenBSD: Makefile,v 1.16 2006/05/14 08:57:48 bernd Exp $
+# $OpenBSD: Makefile,v 1.17 2006/05/15 21:09:39 espie Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples for qt4"
 COMMENT-html=		"off-line html documentation for qt4"
 COMMENT-postgresql=	"PostgresSQL plugin for qt4"
 COMMENT-mysql=		"MySQL plugin for qt4"
+COMMENT-sqlite2=	"sqlite2 plugin for qt4"
+COMMENT-sqlite=		"sqlite plugin for qt4"
 
 PKGNAME=		qt4-${VERSION}
 PKGNAME-mysql=		qt4-mysql-${VERSION}p0
 PKGNAME-postgresql=	qt4-postgresql-${VERSION}p0
 PKGNAME-examples=	qt4-examples-${VERSION}p0
-FULLPKGNAME=		qt4-${VERSION}
+PKGNAME-sqlite2=	qt4-sqlite2-${VERSION}
+PKGNAME-sqlite=		qt4-sqlite-${VERSION}
+FULLPKGNAME=		qt4-${VERSION}p0
 FULLPKGNAME-html=	qt4-html-${VERSION}
 SHARED_LIBS=	Qt3Support 5.0 \
 		QtCore 5.0 \
@@ -83,7 +87,7 @@ CONFIGURE_ARGS+=	-sysconfdir ${SYSCONFDIR}
 CONFIGURE_ARGS+=	-examplesdir ${QT_BASEDIR}/examples
 CONFIGURE_ARGS+=	-demosdir ${QT_BASEDIR}/demos
 
-CONFIGURE_ENV=	QTDIR="${WRKSRC}" 
+CONFIGURE_ENV=	LOCALBASE=${LOCALBASE} QTDIR="${WRKSRC}" 
 
 SUBPACKAGE?=
 
@@ -119,6 +123,26 @@ CONFIGURE_ARGS+= -I${LOCALBASE}/include/postgresql \
 	    -I${LOCALBASE}/include -plugin-sql-psql
 .if !defined(PACKAGING) || ${SUBPACKAGE} == "-postgresql" 
 LIB_DEPENDS+=pq.2:postgresql-client-*:databases/postgresql
+.  if defined(PACKAGING)
+LIB_DEPENDS+=	QtCore.4,QtSql::x11/qt4
+.  endif
+WANTLIB+=	m z
+.endif
+
+
+CONFIGURE_ARGS+= -plugin-sql-sqlite
+MULTI_PACKAGES+=	-sqlite2
+.if !defined(PACKAGING) || ${SUBPACKAGE} == "-sqlite2"
+LIB_DEPENDS+=	sqlite::databases/sqlite
+.  if defined(PACKAGING)
+LIB_DEPENDS+=	QtCore.4,QtSql::x11/qt4
+.  endif
+WANTLIB+=	m z
+.endif
+
+MULTI_PACKAGES+=	-sqlite
+.if !defined(PACKAGING) || ${SUBPACKAGE} == "-sqlite"
+LIB_DEPENDS+=	sqlite3::databases/sqlite3
 .  if defined(PACKAGING)
 LIB_DEPENDS+=	QtCore.4,QtSql::x11/qt4
 .  endif

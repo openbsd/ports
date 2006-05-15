@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2006/03/05 21:58:07 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.6 2006/05/15 21:09:39 espie Exp $
 @lib lib/libQt3Support.so.${LIBQt3Support_VERSION}
 @lib lib/libQtCore.so.${LIBQtCore_VERSION}
 @lib lib/libQtDesigner.so.${LIBQtDesigner_VERSION}
@@ -37,4 +37,3 @@ lib/qt4/plugins/imageformats/libqgif.so
 lib/qt4/plugins/imageformats/libqjpeg.so
 lib/qt4/plugins/imageformats/libqmng.so
 lib/qt4/plugins/inputmethods/libqimsw-multi.so
-lib/qt4/plugins/sqldrivers/libqsqlite.so

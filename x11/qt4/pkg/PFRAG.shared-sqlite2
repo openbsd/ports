@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared-sqlite2,v 1.1 2006/05/15 21:09:39 espie Exp $
+lib/qt4/plugins/sqldrivers/libqsqlite2.so

@@ -1,0 +1,9 @@
+$OpenBSD: patch-src_plugins_sqldrivers_sqldrivers_pro,v 1.1 2006/05/15 21:09:39 espie Exp $
+--- src/plugins/sqldrivers/sqldrivers.pro.orig	Mon Mar 20 14:04:36 2006
++++ src/plugins/sqldrivers/sqldrivers.pro	Mon May 15 19:41:11 2006
+@@ -7,4 +7,5 @@ contains(sql-plugins, tds)	: SUBDIRS += 
+ contains(sql-plugins, oci)	: SUBDIRS += oci
+ contains(sql-plugins, db2)	: SUBDIRS += db2
+ contains(sql-plugins, sqlite)	: SUBDIRS += sqlite
++contains(sql-plugins, sqlite)	: SUBDIRS += sqlite2
+ contains(sql-plugins, ibase)	: SUBDIRS += ibase
