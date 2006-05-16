@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-jre,v 1.4 2006/05/15 18:11:23 ian Exp $
+@comment $OpenBSD: PLIST-jre,v 1.5 2006/05/16 03:39:41 ian Exp $
 @option no-default-conflict
 @conflict jre->=1.5,<1.6
 @pkgpath devel/jdk/1.5,-jre,native_bootstrap
@@ -568,4 +568,3 @@ ${JREHOME}/man/man1/
 @man ${JREHOME}/man/man1/tnameserv.1
 @man ${JREHOME}/man/man1/unpack200.1
 !%%no_web%%
-%%client_vm%%
