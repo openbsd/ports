@@ -1,0 +1,12 @@
+$OpenBSD: patch-cherrypy_test_test_py,v 1.1.1.1 2006/05/18 08:44:51 alek Exp $
+--- cherrypy/test/test.py.orig	Tue May 16 09:59:36 2006
++++ cherrypy/test/test.py	Tue May 16 09:59:51 2006
+@@ -311,7 +311,7 @@ def run():
+     CommandLineParser(testList).run()
+     
+     print
+-    raw_input('hit enter')
++    #raw_input('hit enter')
+ 
+ 
+ if __name__ == '__main__':

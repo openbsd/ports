@@ -1,0 +1,21 @@
+$OpenBSD: patch-cherrypy_test_webtest_py,v 1.1.1.1 2006/05/18 08:44:51 alek Exp $
+--- cherrypy/test/webtest.py.orig	Tue May 16 09:55:50 2006
++++ cherrypy/test/webtest.py	Tue May 16 09:57:15 2006
+@@ -368,9 +368,14 @@ def openURL(url, headers=None, method="G
+             conn = http_conn(host, port)
+             conn._http_vsn_str = protocol
+             conn._http_vsn = int("".join([x for x in protocol if x.isdigit()]))
+-            conn.putrequest(method.upper(), url,
+-                            skip_host=True, skip_accept_encoding=True)
+-            
++            # skip_accept_encoding argument added in python version 2.4
++            if sys.version_info < (2, 4):
++                conn.putrequest(method.upper(), url,
++                                skip_host=True)
++            else:
++                conn.putrequest(method.upper(), url,
++                                skip_host=True, skip_accept_encoding=True)
++
+             for key, value in headers:
+                 conn.putheader(key, value)
+             conn.endheaders()
