@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2004/12/07 00:23:21 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2006/05/19 07:27:38 steven Exp $
 
 COMMENT=		"grep wrapper with search highlighting"
 
 DISTNAME=		hgrep-19991004
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://www.acme.com/software/hgrep/
