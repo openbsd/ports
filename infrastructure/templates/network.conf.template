@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.96 2006/05/07 09:23:51 steven Exp $
+# $OpenBSD: network.conf.template,v 1.97 2006/05/20 08:08:34 steven Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -163,7 +163,7 @@ MASTER_SITE_TEX_CTAN+=	\
 
 MASTER_SITE_KDE+=	\
 	ftp://ftp.kde.org/pub/kde/ \
-	ftp://ftp.rutgers.edu/pub/kde/ \
+	ftp://ftp.oregonstate.edu/pub/kde/ \
 	ftp://ftp.tuniv.szczecin.pl/pub/kde/ \
 	ftp://ftp.kddilabs.jp/X11/kde/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.kde.org/pub/kde/ \
@@ -171,7 +171,7 @@ MASTER_SITE_KDE+=	\
 	ftp://ftp.uvsq.fr/pub/X11/kde/ \
  	ftp://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/ \
  	ftp://ftp.sunet.se/pub/X11/kde/ \
-	ftp://ftp.informatik.hu-berlin.de/pub/Mirrors/ftp.kde.org/ \
+ 	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/ \
 	ftp://ftp.chg.ru/pub/X11/kde/
 
 MASTER_SITE_AFTERSTEP+=	\
