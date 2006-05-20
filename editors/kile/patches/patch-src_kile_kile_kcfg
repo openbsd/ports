@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_kile_kile_kcfg,v 1.1.1.1 2006/05/20 20:24:48 steven Exp $
+--- src/kile/kile.kcfg.orig	Sun Apr 30 01:47:26 2006
++++ src/kile/kile.kcfg	Sun Apr 30 01:47:46 2006
+@@ -198,7 +198,7 @@
+ 	<group name="Help">
+ 		<entry name="location" type="String">
+ 			<label>Location of the TeX documentation.</label>
+-			<default>/usr/share/texmf/doc</default>
++			<default>!!LOCALBASE!!/share/texmf-dist/doc</default>
+ 		</entry>
+ 		<entry name="use" type="Int">
+ 			<label>Use the system's TeX reference for the contextual help.</label>
