@@ -1,0 +1,113 @@
+$OpenBSD: patch-915resolution_c,v 1.1.1.1 2006/05/20 16:32:05 sturm Exp $
+--- 915resolution.c.orig	Sun May 14 11:09:58 2006
++++ 915resolution.c	Sun May 14 11:12:58 2006
+@@ -22,7 +22,18 @@
+ #include <string.h>
+ #include <sys/mman.h>
+ #include <fcntl.h>
++#if defined(__OpenBSD__)
++#include <i386/pio.h>
++#include <i386/sysarch.h>
++#define IOPL(x) i386_iopl(x)
++#define OUTL(x,y) outl(y,x)
++#define OUTB(x,y) outb(y,x)
++#else
+ #include <sys/io.h>
++#define IOPL(x) iopl(x)
++#define OUTL(x,y) outl(x,y)
++#define OUTB(x,y) outb(x,y)
++#endif
+ #include <unistd.h>
+ #include <assert.h>
+ 
+@@ -161,7 +172,7 @@ typedef struct {
+ void initialize_system(char * filename) {
+ 
+     if (!filename) {
+-        if (iopl(3) < 0) {
++        if (IOPL(3) < 0) {
+             perror("Unable to obtain the proper IO permissions");
+             exit(2);
+         }
+@@ -169,7 +180,7 @@ void initialize_system(char * filename) 
+ }
+ 
+ cardinal get_chipset_id(void) {
+-    outl(0x80000000, 0xcf8);
++    OUTL(0x80000000, 0xcf8);
+     return inl(0xcfc);
+ }
+ 
+@@ -330,6 +341,7 @@ vbios_map * open_vbios(char * filename, 
+         }
+     }
+ 
++#if 0
+     /*
+      * check if we have ATI Radeon
+      */
+@@ -378,6 +390,7 @@ vbios_map * open_vbios(char * filename, 
+         close_vbios(map);
+         exit(2);
+     }
++#endif /* 0 */
+ 
+     /*
+      * Figure out where the mode table is 
+@@ -476,11 +489,11 @@ void unlock_vbios(vbios_map * map) {
+         case CT_UNKWN:
+             break;
+         case CT_855GM:
+-            outl(0x8000005a, 0xcf8);
++            OUTL(0x8000005a, 0xcf8);
+             map->b1 = inb(0xcfe);
+             
+-            outl(0x8000005a, 0xcf8);
+-            outb(0x33, 0xcfe);
++            OUTL(0x8000005a, 0xcf8);
++            OUTB(0x33, 0xcfe);
+             break;
+         case CT_845G:
+         case CT_865G:
+@@ -488,13 +501,13 @@ void unlock_vbios(vbios_map * map) {
+         case CT_915GM:
+         case CT_945G:
+         case CT_945GM:
+-            outl(0x80000090, 0xcf8);
++            OUTL(0x80000090, 0xcf8);
+             map->b1 = inb(0xcfd);
+             map->b2 = inb(0xcfe);
+             
+-            outl(0x80000090, 0xcf8);
+-            outb(0x33, 0xcfd);
+-            outb(0x33, 0xcfe);
++            OUTL(0x80000090, 0xcf8);
++            OUTB(0x33, 0xcfd);
++            OUTB(0x33, 0xcfe);
+             break;
+         }
+     }
+@@ -526,8 +539,8 @@ void relock_vbios(vbios_map * map) {
+         case CT_UNKWN:
+             break;
+         case CT_855GM:
+-            outl(0x8000005a, 0xcf8);
+-            outb(map->b1, 0xcfe);
++            OUTL(0x8000005a, 0xcf8);
++            OUTB(map->b1, 0xcfe);
+             break;
+         case CT_845G:
+         case CT_865G:
+@@ -535,9 +548,9 @@ void relock_vbios(vbios_map * map) {
+         case CT_915GM:
+         case CT_945G:
+         case CT_945GM:
+-            outl(0x80000090, 0xcf8);
+-            outb(map->b1, 0xcfd);
+-            outb(map->b2, 0xcfe);
++            OUTL(0x80000090, 0xcf8);
++            OUTB(map->b1, 0xcfd);
++            OUTB(map->b2, 0xcfe);
+             break;
+         }
+     }
