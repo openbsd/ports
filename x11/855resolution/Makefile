@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2005/09/10 09:06:19 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/05/20 16:34:57 sturm Exp $
 
+IGNORE=		"is deprecated, use x11/915resolution instead"
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"change resolution on available vbios mode for i855/865/915"
