@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2006/03/20 16:20:13 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.57 2006/05/20 20:26:49 steven Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -24,6 +24,7 @@
      SUBDIR += jed,no_x11
      SUBDIR += joe
      SUBDIR += jove
+     SUBDIR += kile
      SUBDIR += kxmleditor
      SUBDIR += ldapvi
      SUBDIR += leafpad
