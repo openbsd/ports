@@ -1,0 +1,12 @@
+$OpenBSD: patch-rename_form_php,v 1.1 2006/05/21 19:15:08 aanriot Exp $
+--- rename_form.php.orig	Sun May 21 13:30:59 2006
++++ rename_form.php	Sun May 21 13:31:17 2006
+@@ -36,7 +36,7 @@ include './header.php'; ?>
+ <center>
+ <form action="rename.php" method="post" class="edit_dn" />
+ <input type="hidden" name="server_id" value="<?php echo $ldapserver->server_id; ?>" />
+-<input type="hidden" name="dn" value="<?php echo $dn; ?>" />
++<input type="hidden" name="dn" value="<?php echo htmlspecialchars($dn); ?>" />
+ <input type="text" name="new_rdn" size="30" value="<?php echo htmlspecialchars( ( $rdn ) ); ?>" />
+ <input class="update_dn" type="submit" value="<?php echo $lang['rename']; ?>" />
+ </form>

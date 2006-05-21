@@ -1,0 +1,22 @@
+$OpenBSD: patch-copy_form_php,v 1.1 2006/05/21 19:15:08 aanriot Exp $
+--- copy_form.php.orig	Sun May 21 13:24:35 2006
++++ copy_form.php	Sun May 21 13:26:14 2006
+@@ -56,15 +56,15 @@ if( is_array( $children ) && count( $chi
+ 
+ <body>
+ 
+-<h3 class="title"><?php echo $lang['copyf_title_copy'] . $rdn; ?></h3>
+-<h3 class="subtitle"><?php echo $lang['server']; ?>: <b><?php echo $ldapserver->name; ?></b> &nbsp;&nbsp;&nbsp; <?php echo $lang['distinguished_name']?>: <b><?php echo $dn; ?></b></h3>
++<h3 class="title"><?php echo $lang['copyf_title_copy'] . htmlspecialchars($rdn); ?></h3>
++<h3 class="subtitle"><?php echo $lang['server']; ?>: <b><?php echo $server_name; ?></b> &nbsp;&nbsp;&nbsp; <?php echo $lang['distinguished_name']?>: <b><?php echo html specialchars($dn); ?></b></h3>
+ 
+ <center>
+ <?php echo $lang['copyf_title_copy'] ?><b><?php echo htmlspecialchars( $rdn ); ?></b> <?php echo $lang['copyf_to_new_object']?>:<br />
+ <br />
+ 
+ <form action="copy.php" method="post" name="copy_form">
+-<input type="hidden" name="old_dn" value="<?php echo $dn; ?>" />
++<input type="hidden" name="old_dn" value="<?php echo htmlspecialchars($dn); ?>" />
+ <input type="hidden" name="server_id" value="<?php echo $ldapserver->server_id; ?>" />
+ 
+ <table style="border-spacing: 10px">

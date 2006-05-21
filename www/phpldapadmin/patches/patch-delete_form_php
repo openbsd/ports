@@ -1,0 +1,12 @@
+$OpenBSD: patch-delete_form_php,v 1.1 2006/05/21 19:15:08 aanriot Exp $
+--- delete_form.php.orig	Sun May 21 13:29:00 2006
++++ delete_form.php	Sun May 21 13:30:34 2006
+@@ -69,7 +69,7 @@ include './header.php'; ?>
+ 		<td>
+ 		<center>
+ 			<form action="rdelete.php" method="post">
+-			<input type="hidden" name="dn" value="<?php echo $dn; ?>" />
++			<input type="hidden" name="dn" value="<?php echo htmlspecialchars($dn); ?>" />
+ 			<input type="hidden" name="server_id" value="<?php echo $ldapserver->server_id; ?>" />
+ 			<input type="submit" class="scary" value="<?php echo sprintf( $lang['delete_all_x_objects'], $sub_tree_count ); ?>" />
+ 			</form>
