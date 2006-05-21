@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/12/14 22:14:39 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2006/05/21 12:32:52 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"perl extension for SHA-1/224/256/384/512"
-DISTNAME=	Digest-SHA-5.32
+DISTNAME=	Digest-SHA-5.37
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
 
