@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2006/03/10 21:34:43 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2006/05/21 13:55:43 steven Exp $
 
 COMMENT=	"perl extension for unparsed raw whois information"
 
-DISTNAME=	Net-Whois-Raw-1.02
+DISTNAME=	Net-Whois-Raw-1.07
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net perl5
 
@@ -15,6 +15,10 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Net/}
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	::www/p5-URI \
+		::www/p5-libwww
 
 CONFIGURE_STYLE= perl
 
