@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2006/01/09 23:13:12 steven Exp $
+@comment $OpenBSD: PLIST,v 1.8 2006/05/21 14:38:57 steven Exp $
 ${P5SITE}/Finance/
 ${P5SITE}/Finance/Quote/
 ${P5SITE}/Finance/Quote.pm
@@ -8,6 +8,7 @@ ${P5SITE}/Finance/Quote/ASX.pm
 ${P5SITE}/Finance/Quote/BMONesbittBurns.pm
 ${P5SITE}/Finance/Quote/Cdnfundlibrary.pm
 ${P5SITE}/Finance/Quote/DWS.pm
+${P5SITE}/Finance/Quote/Deka.pm
 ${P5SITE}/Finance/Quote/FTPortfolios.pm
 ${P5SITE}/Finance/Quote/Fidelity.pm
 ${P5SITE}/Finance/Quote/FinanceCanada.pm
@@ -23,6 +24,7 @@ ${P5SITE}/Finance/Quote/Tdwaterhouse.pm
 ${P5SITE}/Finance/Quote/Tiaacref.pm
 ${P5SITE}/Finance/Quote/Troweprice.pm
 ${P5SITE}/Finance/Quote/Trustnet.pm
+${P5SITE}/Finance/Quote/USFedBonds.pm
 ${P5SITE}/Finance/Quote/Union.pm
 ${P5SITE}/Finance/Quote/UserAgent.pm
 ${P5SITE}/Finance/Quote/VWD.pm
@@ -34,7 +36,7 @@ ${P5SITE}/Finance/Quote/Yahoo/Brasil.pm
 ${P5SITE}/Finance/Quote/Yahoo/Europe.pm
 ${P5SITE}/Finance/Quote/Yahoo/NZ.pm
 ${P5SITE}/Finance/Quote/Yahoo/USA.pm
-${P5SITE}/Finance/Quote/ZI.pm
+${P5SITE}/Finance/Quote/ZA.pm
 @man man/man3p/Finance::Quote.3p
 @man man/man3p/Finance::Quote::AEX.3p
 @man man/man3p/Finance::Quote::ASEGR.3p
@@ -42,6 +44,7 @@ ${P5SITE}/Finance/Quote/ZI.pm
 @man man/man3p/Finance::Quote::BMONesbittBurns.3p
 @man man/man3p/Finance::Quote::Cdnfundlibrary.3p
 @man man/man3p/Finance::Quote::DWS.3p
+@man man/man3p/Finance::Quote::Deka.3p
 @man man/man3p/Finance::Quote::FTPortfolios.3p
 @man man/man3p/Finance::Quote::Fidelity.3p
 @man man/man3p/Finance::Quote::FinanceCanada.3p
@@ -57,6 +60,7 @@ ${P5SITE}/Finance/Quote/ZI.pm
 @man man/man3p/Finance::Quote::Tiaacref.3p
 @man man/man3p/Finance::Quote::Troweprice.3p
 @man man/man3p/Finance::Quote::Trustnet.3p
+@man man/man3p/Finance::Quote::USFedBonds.3p
 @man man/man3p/Finance::Quote::Union.3p
 @man man/man3p/Finance::Quote::VWD.3p
 @man man/man3p/Finance::Quote::Yahoo::Asia.3p
@@ -66,4 +70,4 @@ ${P5SITE}/Finance/Quote/ZI.pm
 @man man/man3p/Finance::Quote::Yahoo::Europe.3p
 @man man/man3p/Finance::Quote::Yahoo::NZ.3p
 @man man/man3p/Finance::Quote::Yahoo::USA.3p
-@man man/man3p/Finance::Quote::ZI.3p
+@man man/man3p/Finance::Quote::ZA.3p
