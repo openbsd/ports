@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2006/04/12 21:06:10 david Exp $
+# $OpenBSD: Makefile,v 1.3 2006/05/21 19:16:34 aanriot Exp $
 
 COMMENT=	"Nagios Remote Plugin Executor"
 
-DISTNAME=	nrpe-2.5
+DISTNAME=	nrpe-2.5.1
 CATEGORIES=	net
 
 MAINTAINER=	David Krause <david@openbsd.org>
