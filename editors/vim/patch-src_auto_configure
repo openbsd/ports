@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_auto_configure,v 1.1 2006/05/21 20:45:34 marco Exp $
+--- src/auto/configure.orig	Thu May  4 04:46:19 2006
++++ src/auto/configure	Mon May  8 15:28:01 2006
+@@ -10278,6 +10278,7 @@ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
++#include <sys/param.h>
+ #include <$ac_header>
+ _ACEOF
+ rm -f conftest.$ac_objext
+@@ -13577,6 +13578,7 @@ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ #include <sys/types.h>
++#include <sys/param.h>
+ #include <sys/sysctl.h>
+ int
+ main ()

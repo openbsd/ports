@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST-lang,v 1.4 2006/01/17 19:43:11 espie Exp $
+@comment $OpenBSD: PLIST-lang,v 1.5 2006/05/21 20:45:35 marco Exp $
 %%gtk2%%
-share/vim/${P}/lang/
 share/vim/${P}/lang/README.txt
 share/vim/${P}/lang/af/
 share/vim/${P}/lang/af/LC_MESSAGES/

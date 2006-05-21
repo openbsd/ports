@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.64 2006/04/03 20:23:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.65 2006/05/21 20:45:34 marco Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
 
-DISTNAME=	vim-6.4
-REVISION=	8
-VERSION=	6.4.${REVISION}
+DISTNAME=	vim-7.0
+REVISION=	0
+VERSION=	7.0.${REVISION}
 # keep PKGNAME for full version number
 PKGNAME=	vim-${VERSION}
 P=		${DISTNAME:C/[-\.]//g}
@@ -13,21 +13,20 @@ CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unix/ \
 		ftp://ftp.home.vim.org/pub/vim/unix/ \
 		ftp://ftp.berlin.de.vim.org/unix/
-MASTER_SITES0=	${MASTER_SITES:S/unix/patches\/6.4/}
+MASTER_SITES0=	${MASTER_SITES:S/unix/patches\/7.0/}
 MASTER_SITES1=	${MASTER_SITES:S/unix/extra/}
 DISTFILES=	${DISTNAME}.tar.bz2 \
-		${DISTNAME}-extra.tar.gz:1 \
 		${DISTNAME}-lang.tar.gz:1 
-DIST_SUBDIR=	vim6
+DIST_SUBDIR=	vim7
 
 HOMEPAGE=	http://www.vim.org/
 MAINTAINER=	Chris Kuethe <chris.kuethe@gmail.com>
 
 PATCHFILES=	#
-_patches!=	jot -w%03d - 1 ${REVISION} 1
-.for p in ${_patches}
-PATCHFILES+=	6.4.${p}:0
-.endfor
+#_patches!=	jot -w%03d - 1 ${REVISION} 1
+#.for p in ${_patches}
+#PATCHFILES+=	7.0.${p}:0
+#.endfor
 
 # allow vim to build on m68k and vax
 .if (${MACHINE_ARCH} == "m68k")
@@ -47,7 +46,7 @@ MULTI_PACKAGES=	-lang
 SUBPACKAGE?=
 
 .for i in ${MULTI_PACKAGES}
-PKGNAME$i=	vim$i-${VERSION}p0
+PKGNAME$i=	vim$i-${VERSION}
 .endfor
 
 FLAVORS=	huge gtk2 athena motif no_x11 perl python ruby
