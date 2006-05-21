@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_auto_configure,v 1.1 2006/05/21 20:45:34 marco Exp $
+$OpenBSD: patch-src_auto_configure,v 1.1 2006/05/21 20:57:06 robert Exp $
 --- src/auto/configure.orig	Thu May  4 04:46:19 2006
 +++ src/auto/configure	Mon May  8 15:28:01 2006
 @@ -10278,6 +10278,7 @@ cat confdefs.h >>conftest.$ac_ext
