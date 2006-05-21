@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2006/04/01 10:49:20 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2006/05/21 17:29:21 steven Exp $
 
 COMMENT=		"K Desktop Environment, graphic applications"
 COMMENT-kamera=		"KDE interface to digital cameras"
@@ -15,7 +15,7 @@ MULTI_PACKAGES=-kpov -kamera -sane
 PKGNAME=${DISTNAME}
 PKGNAME-kamera=kamera-${VERSION}
 PKGNAME-kpov=kpovmodeller-${VERSION}
-PKGNAME-sane=ksane-${VERSION}
+PKGNAME-sane=ksane-${VERSION}p0
 SHARED_LIBS=		kghostviewlib	1.0 \
 			kimageviewer	1.0 \
 			kmultipage	1.0 \
@@ -62,7 +62,7 @@ WANTLIB+=	iconv exif Xrender intl
 .if !defined(PACKAGING) || ${SUBPACKAGE:L} == "-sane"
 LIB_DEPENDS+= kwalletclient,ktexteditor,DCOP,vcard,kabc,kparts,kdeui,kdesu,kdecore.6,kio,kresources,kdefx,kspell,kdeprint::x11/kde/libs3
 LIB_DEPENDS+=	sane::graphics/sane-backends
-WANTLIB+=	usb tiff stdc++ c Xrender
+WANTLIB+=	usb tiff stdc++ c Xrender exif gphoto2 gphoto2_port iconv intl
 .endif
 
 CONFIGURE_ENV+=	\
