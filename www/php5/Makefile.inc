@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.8 2006/05/09 14:15:40 robert Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2006/05/21 20:46:06 aanriot Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -78,3 +78,6 @@ PATCH_DIST_STRIP=	-p1
 .else
 SUPDISTFILES=		hardening-patch-${V}-${HARDENED_V}.patch.gz:1
 .endif
+
+PEAR_V=			20060428
+SUPDISTFILES+=		pear-${PEAR_V}
