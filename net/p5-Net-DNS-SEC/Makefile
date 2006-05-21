@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2005/12/18 00:12:48 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2006/05/21 13:02:00 steven Exp $
 
 COMMENT=	"extends the Net::DNS module with DNSSEC functionality"
 
-VERSION=	0.13
-DISTNAME=	Net-DNS-SEC-${VERSION}
+DISTNAME=	Net-DNS-SEC-0.14
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net perl5
 
@@ -27,7 +26,7 @@ RUN_DEPENDS=	:p5-Net-DNS->=0.44:net/p5-Net-DNS \
 		:p5-Crypt-OpenSSL-DSA->=0.10:security/p5-Crypt-OpenSSL-DSA \
 		:p5-Crypt-OpenSSL-Bignum->=0.03:security/p5-Crypt-OpenSSL-Bignum \
 		:p5-Digest-SHA->=5.23:security/p5-Digest-SHA \
-		::security/p5-Digest-SHA1
+		:p5-Digest-SHA1-*:security/p5-Digest-SHA1
 
 CONFIGURE_STYLE=	perl
 
