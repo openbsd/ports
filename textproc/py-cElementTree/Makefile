@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2005/02/04 00:01:56 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2006/05/21 17:06:12 alek Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"C implementation of the ElementTree API"
 
-DISTNAME=	cElementTree-1.0.1-20050130
-PKGNAME=	py-cElementTree-1.0.1
+DISTNAME=	cElementTree-1.0.5-20051216
+PKGNAME=	py-cElementTree-1.0.5
 CATEGORIES=	textproc devel
 
 HOMEPAGE=	http://effbot.org/zone/celementtree.htm
