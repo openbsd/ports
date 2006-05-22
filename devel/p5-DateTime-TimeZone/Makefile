@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/04/18 19:06:15 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/05/22 06:19:18 steven Exp $
 
 COMMENT=		"perl DateTime submodule for TZ"
 
-DISTNAME=		DateTime-TimeZone-0.43
+DISTNAME=		DateTime-TimeZone-0.46
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		devel perl5
 
@@ -22,5 +22,7 @@ RUN_DEPENDS=		${DEPS}
 
 CONFIGURE_STYLE=	perl modbuild
 REGRESS_DEPENDS=	$(DEPS) ::devel/p5-DateTime
+
+PKG_ARCH=		*
 
 .include <bsd.port.mk>	
