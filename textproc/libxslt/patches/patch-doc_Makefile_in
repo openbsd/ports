@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.5 2004/11/11 22:08:13 espie Exp $
---- doc/Makefile.in.orig	Fri Oct 29 17:07:05 2004
-+++ doc/Makefile.in	Thu Nov 11 22:19:21 2004
-@@ -202,7 +202,7 @@ sysconfdir = @sysconfdir@
+$OpenBSD: patch-doc_Makefile_in,v 1.6 2006/05/22 11:33:49 steven Exp $
+--- doc/Makefile.in.orig	Mon May  1 23:33:05 2006
++++ doc/Makefile.in	Fri May 12 18:03:33 2006
+@@ -210,7 +210,7 @@ sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  
  # The name of the module.

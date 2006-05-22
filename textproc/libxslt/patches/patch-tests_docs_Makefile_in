@@ -1,6 +1,6 @@
---- tests/docs/Makefile.in.orig	Fri Oct 29 17:07:07 2004
-+++ tests/docs/Makefile.in	Thu Nov 11 22:19:21 2004
-@@ -431,7 +431,7 @@ distdir: $(DISTFILES)
+--- tests/docs/Makefile.in.orig	Mon May  1 23:33:07 2006
++++ tests/docs/Makefile.in	Sat May 13 13:14:49 2006
+@@ -447,7 +447,7 @@ distdir: $(DISTFILES)
  	  fi; \
  	done
  check-am: all-am
