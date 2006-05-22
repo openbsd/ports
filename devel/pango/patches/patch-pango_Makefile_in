@@ -1,48 +1,48 @@
-$OpenBSD: patch-pango_Makefile_in,v 1.6 2006/01/03 10:40:09 bernd Exp $
---- pango/Makefile.in.orig	Mon Jan  2 22:17:56 2006
-+++ pango/Makefile.in	Mon Jan  2 22:24:49 2006
-@@ -313,7 +313,7 @@ pangoincludedir = $(includedir)/pango-1.
+$OpenBSD: patch-pango_Makefile_in,v 1.7 2006/05/22 01:41:52 brad Exp $
+--- pango/Makefile.in.orig	Fri Apr  7 00:33:48 2006
++++ pango/Makefile.in	Wed May 10 18:53:19 2006
+@@ -364,7 +364,7 @@ pangoincludedir = $(includedir)/pango-1.
  # ------------------- libpango -------------------
- lib_LTLIBRARIES = libpango-1.0.la $(am__append_4) $(am__append_6) $(am__append_10) $(am__append_12) $(am__append_21)
+ lib_LTLIBRARIES = libpango-1.0.la $(am__append_4) $(am__append_6) $(am__append_10) $(am__append_12) $(am__append_22)
  
 -libpango_1_0_la_LDFLAGS = $(LIBRARY_LIBTOOL_OPTIONS) $(am__append_1)
 +libpango_1_0_la_LDFLAGS = $(LIBpango-1.0_LTVERSION) $(LIBRARY_LIBTOOL_OPTIONS) $(am__append_1)
- libpango_1_0_la_LIBADD = $(GLIB_LIBS) mini-fribidi/libmini-fribidi.la $(libm)
- libpango_1_0_la_DEPENDENCIES = mini-fribidi/libmini-fribidi.la $(am__append_2)
  
-@@ -380,7 +380,7 @@ pangoinclude_HEADERS = \
- 	pango-enum-types.h\
- $(am__append_3) $(am__append_5) $(am__append_9) $(am__append_11) $(am__append_20)
+ libpango_1_0_la_LIBADD = $(GLIB_LIBS) $(libm) mini-fribidi/libmini-fribidi.la
+ libpango_1_0_la_DEPENDENCIES = mini-fribidi/libmini-fribidi.la $(am__append_2)
+@@ -434,7 +434,7 @@ $(am__append_3) $(am__append_5) $(am__ap
+ @HAVE_X_TRUE@aliasdir = $(sysconfdir)/pango
+ @HAVE_X_TRUE@alias_DATA = pangox.aliases
  
 -libpangox_1_0_la_LDFLAGS = $(LIBRARY_LIBTOOL_OPTIONS)
 +libpangox_1_0_la_LDFLAGS = $(LIBpangox-1.0_LTVERSION) $(LIBRARY_LIBTOOL_OPTIONS)
- libpangox_1_0_la_LIBADD = libpango-$(PANGO_API_VERSION).la $(INCLUDED_X_MODULES) $(X_LIBS) $(X_EXTRA_LIBS) $(GLIB_LIBS)
- libpangox_1_0_la_DEPENDENCIES = libpango-$(PANGO_API_VERSION).la $(INCLUDED_X_MODULES)
- 
-@@ -393,7 +393,7 @@ libpangox_1_0_la_SOURCES = \
+ libpangox_1_0_la_LIBADD = \
+ 	libpango-$(PANGO_API_VERSION).la	\
+ 	$(INCLUDED_X_MODULES)			\
+@@ -455,7 +455,7 @@ libpangox_1_0_la_SOURCES = \
  	pangox-fontmap.c
  
  
 -libpangoft2_1_0_la_LDFLAGS = $(LIBRARY_LIBTOOL_OPTIONS) $(am__append_7)
 +libpangoft2_1_0_la_LDFLAGS = $(LIBpangoft2-1.0_LTVERSION) $(LIBRARY_LIBTOOL_OPTIONS) $(am__append_7)
- libpangoft2_1_0_la_LIBADD = opentype/libpango-ot.la libpango-$(PANGO_API_VERSION).la $(INCLUDED_FC_MODULES) $(FREETYPE_LIBS) $(GLIB_LIBS) $(libm)
- libpangoft2_1_0_la_DEPENDENCIES = opentype/libpango-ot.la libpango-$(PANGO_API_VERSION).la $(INCLUDED_FC_MODULES) $(am__append_8)
- 
-@@ -410,7 +410,7 @@ libpangoft2_1_0_la_SOURCES = \
- 	module-defs-fc.c
+ libpangoft2_1_0_la_LIBADD = \
+ 	opentype/libmini-harfbuzz.la		\
+ 	libpango-$(PANGO_API_VERSION).la	\
+@@ -487,7 +487,7 @@ libpangoft2_1_0_la_SOURCES = \
+ 	pango-ot-ruleset.c
  
  
 -libpangoxft_1_0_la_LDFLAGS = $(LIBRARY_LIBTOOL_OPTIONS)
 +libpangoxft_1_0_la_LDFLAGS = $(LIBpangoxft-1.0_LTVERSION) $(LIBRARY_LIBTOOL_OPTIONS)
- libpangoxft_1_0_la_LIBADD = libpangoft2-$(PANGO_API_VERSION).la libpango-$(PANGO_API_VERSION).la $(XFT_LIBS) $(GLIB_LIBS) $(libm)
- libpangoxft_1_0_la_DEPENDENCIES = libpangoft2-$(PANGO_API_VERSION).la libpango-$(PANGO_API_VERSION).la
- 
-@@ -421,7 +421,7 @@ libpangoxft_1_0_la_SOURCES = \
+ libpangoxft_1_0_la_LIBADD = \
+ 	libpangoft2-$(PANGO_API_VERSION).la	\
+ 	libpango-$(PANGO_API_VERSION).la	\
+@@ -506,7 +506,7 @@ libpangoxft_1_0_la_SOURCES = \
  	pangoxft-render.c
  
  
 -libpangocairo_1_0_la_LDFLAGS = $(LIBRARY_LIBTOOL_OPTIONS) $(am__append_13)
 +libpangocairo_1_0_la_LDFLAGS = $(LIBpangocairo-1.0_LTVERSION) $(LIBRARY_LIBTOOL_OPTIONS) $(am__append_13)
- libpangocairo_1_0_la_LIBADD = libpango-$(PANGO_API_VERSION).la $(CAIRO_LIBS) $(GLIB_LIBS) $(am__append_15) $(am__append_17)
- libpangocairo_1_0_la_DEPENDENCIES = libpango-$(PANGO_API_VERSION).la $(am__append_14) $(am__append_18)
- 
+ libpangocairo_1_0_la_LIBADD = \
+ 	libpango-$(PANGO_API_VERSION).la	\
+ 	$(GLIB_LIBS)				\

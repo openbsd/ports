@@ -1,16 +1,16 @@
-@comment $OpenBSD: PFRAG.shared,v 1.12 2006/01/03 10:40:10 bernd Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.13 2006/05/22 01:41:52 brad Exp $
 @lib lib/libpango-1.0.so.${LIBpango-1.0_VERSION}
 @lib lib/libpangocairo-1.0.so.${LIBpangocairo-1.0_VERSION}
 @lib lib/libpangoft2-1.0.so.${LIBpangoft2-1.0_VERSION}
 @lib lib/libpangox-1.0.so.${LIBpangox-1.0_VERSION}
 @lib lib/libpangoxft-1.0.so.${LIBpangoxft-1.0_VERSION}
-lib/pango/1.4.0/modules/pango-arabic-fc.so
-lib/pango/1.4.0/modules/pango-basic-fc.so
-lib/pango/1.4.0/modules/pango-basic-x.so
-lib/pango/1.4.0/modules/pango-hangul-fc.so
-lib/pango/1.4.0/modules/pango-hebrew-fc.so
-lib/pango/1.4.0/modules/pango-indic-fc.so
-lib/pango/1.4.0/modules/pango-khmer-fc.so
-lib/pango/1.4.0/modules/pango-syriac-fc.so
-lib/pango/1.4.0/modules/pango-thai-fc.so
-lib/pango/1.4.0/modules/pango-tibetan-fc.so
+lib/pango/1.5.0/modules/pango-arabic-fc.so
+lib/pango/1.5.0/modules/pango-basic-fc.so
+lib/pango/1.5.0/modules/pango-basic-x.so
+lib/pango/1.5.0/modules/pango-hangul-fc.so
+lib/pango/1.5.0/modules/pango-hebrew-fc.so
+lib/pango/1.5.0/modules/pango-indic-fc.so
+lib/pango/1.5.0/modules/pango-khmer-fc.so
+lib/pango/1.5.0/modules/pango-syriac-fc.so
+lib/pango/1.5.0/modules/pango-thai-fc.so
+lib/pango/1.5.0/modules/pango-tibetan-fc.so

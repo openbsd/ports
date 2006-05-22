@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.9 2006/01/03 10:40:09 bernd Exp $
---- configure.orig	Mon Jan  2 22:19:22 2006
-+++ configure	Mon Jan  2 22:20:14 2006
-@@ -23198,7 +23198,7 @@ fi
+$OpenBSD: patch-configure,v 1.10 2006/05/22 01:41:52 brad Exp $
+--- configure.orig	Fri Apr  7 00:33:32 2006
++++ configure	Wed May 10 18:01:16 2006
+@@ -24033,7 +24033,7 @@ fi
  if test "$pango_os_win32" != yes; then
      # libtool option to control which symbols are exported
      # right now, symbols starting with _ are not exported

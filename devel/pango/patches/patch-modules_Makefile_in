@@ -1,11 +1,11 @@
-$OpenBSD: patch-modules_Makefile_in,v 1.9 2005/12/01 15:41:09 bernd Exp $
---- modules/Makefile.in.orig	Tue Nov 29 06:30:32 2005
-+++ modules/Makefile.in	Wed Nov 30 15:34:05 2005
-@@ -560,21 +560,11 @@ uninstall-info: uninstall-info-recursive
+$OpenBSD: patch-modules_Makefile_in,v 1.10 2006/05/22 01:41:52 brad Exp $
+--- modules/Makefile.in.orig	Fri Apr  7 00:33:55 2006
++++ modules/Makefile.in	Wed May 10 18:49:30 2006
+@@ -604,21 +604,11 @@ uninstall-info: uninstall-info-recursive
+ @CROSS_COMPILING_FALSE@all-local: pango.modules
  
- 
- install-data-local:
--	@if $(RUN_QUERY_IMMODULES_TEST) ; then 				\
+ install-data-local: $(top_builddir)/pango/pango-querymodules
+-	@if $(RUN_QUERY_MODULES_TEST) ; then 				\
 -	  echo $(mkinstalldirs) $(DESTDIR)$(sysconfdir)/pango \&\& 	\
 -	  $(top_builddir)/pango/pango-querymodules 			\
 -		\> $(DESTDIR)$(sysconfdir)/pango/pango.modules ;	\
@@ -14,17 +14,17 @@ $OpenBSD: patch-modules_Makefile_in,v 1.9 2005/12/01 15:41:09 bernd Exp $
 -		> $(DESTDIR)$(sysconfdir)/pango/pango.modules ;		\
 -	else								\
 -	  echo "***" ; 							\
--	  echo "*** Warning: pango.modules not created" ; 		\
--	  echo "***" ; 							\
+-	  echo "*** Warning: $(sysconfdir)/pango/pango.modules" ; 	\
+-	  echo "*** not created" ; 					\
 -	  echo "*** Generate this file on the target system" ; 		\
--	  echo "*** system using pango-querymodules" ; 			\
+-	  echo "*** using pango-querymodules" ; 			\
 -	  echo "***" ; 							\
 -	fi
-+	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)/pango &&		  \
-+	LD_LIBRARY_PATH=$(top_builddir)/pango/.libs			  \
-+	$(top_builddir)/pango/pango-querymodules			  \
-+	`find $(DESTDIR)$(moduledir) -name '*.so'` | sed 's,$(DESTDIR),,' \
-+	> $(DESTDIR)$(sysconfdir)/pango/pango.modules
++	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)/pango &&	\
++	  LD_LIBRARY_PATH=$(top_builddir)/pango/.libs		\
++	  $(top_builddir)/pango/pango-querymodules		\
++	  `find $(DESTDIR)$(moduledir) -name '*.so'` | sed 's,$(DESTDIR),,' \
++	  > $(DESTDIR)$(sysconfdir)/pango/pango.modules
  
- included-modules:
- 	@for d in $(SUBDIRS) ; do \
+ uninstall-local:
+ 	$(RM) $(DESTDIR)$(sysconfdir)/pango/pango.modules
