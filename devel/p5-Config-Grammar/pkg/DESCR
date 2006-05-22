@@ -1,0 +1,8 @@
+Config::Grammar is a Perl module to parse configuration files by
+following a grammar, which specifies how the configuration file should
+look like. The configuration files are nice to work with for humans
+and the error messages are helpful because it tells right away that
+for example you are setting a variable which isn't defined.
+
+Config::Grammar supports many advanced features, that you can read
+about in its documentation.

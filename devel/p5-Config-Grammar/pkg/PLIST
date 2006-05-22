@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/22 12:41:29 bernd Exp $
+${P5SITE}/Config/
+${P5SITE}/Config/Grammar.pm
+@man man/man3p/Config::Grammar.3p
