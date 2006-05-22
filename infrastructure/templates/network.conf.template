@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.98 2006/05/22 18:48:39 steven Exp $
+# $OpenBSD: network.conf.template,v 1.99 2006/05/22 18:50:01 steven Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -61,8 +61,7 @@ MASTER_SITE_GNU+=	\
 	ftp://ftp.cs.univ-paris8.fr/mirrors/ftp.gnu.org/ \
 	ftp://ftp.chg.ru/pub/gnu/ \
 	ftp://ftp.uvsq.fr/pub/gnu/ \
-  	ftp://ftp.sunet.se/pub/gnu/ \
-  	ftp://mirrors.dotsrc.org/gnu/
+  	ftp://ftp.sunet.se/pub/gnu/
 
 MASTER_SITE_XCONTRIB+=	\
 	ftp://ftp.gwdg.de/pub/x11/x.org/contrib/ \
