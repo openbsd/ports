@@ -1,7 +1,7 @@
-$OpenBSD: patch-contrib_gdk-pixbuf-xlib_Makefile_in,v 1.7 2006/01/07 07:10:19 pvalchev Exp $
---- contrib/gdk-pixbuf-xlib/Makefile.in.orig	Thu Aug 18 08:12:35 2005
-+++ contrib/gdk-pixbuf-xlib/Makefile.in	Thu Jan  5 17:24:45 2006
-@@ -298,7 +298,7 @@ INCLUDES = \
+$OpenBSD: patch-contrib_gdk-pixbuf-xlib_Makefile_in,v 1.8 2006/05/22 01:49:07 brad Exp $
+--- contrib/gdk-pixbuf-xlib/Makefile.in.orig	Fri Dec  9 13:28:10 2005
++++ contrib/gdk-pixbuf-xlib/Makefile.in	Sat May 13 16:52:40 2006
+@@ -293,7 +293,7 @@ INCLUDES = \
  
  libgdk_pixbuf_xlib_2_0_la_LDFLAGS = \
  	-export-dynamic						\

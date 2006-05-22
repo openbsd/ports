@@ -1,7 +1,7 @@
-$OpenBSD: patch-gdk_Makefile_in,v 1.7 2006/01/07 07:10:19 pvalchev Exp $
---- gdk/Makefile.in.orig	Thu Aug 18 08:12:38 2005
-+++ gdk/Makefile.in	Thu Jan  5 17:24:45 2006
-@@ -323,7 +323,6 @@ gtarget = $(gdktarget)
+$OpenBSD: patch-gdk_Makefile_in,v 1.8 2006/05/22 01:49:07 brad Exp $
+--- gdk/Makefile.in.orig	Fri Dec  9 13:28:12 2005
++++ gdk/Makefile.in	Sat May 13 16:52:41 2006
+@@ -322,7 +322,6 @@ gtarget = $(gdktarget)
  # since automake doesn't support conditionalized libsomething_la_LDFLAGS
  # we use the general approach here
  LDADD = \
@@ -9,7 +9,7 @@ $OpenBSD: patch-gdk_Makefile_in,v 1.7 2006/01/07 07:10:19 pvalchev Exp $
  	-export-dynamic 						\
  	-rpath $(libdir) 						\
  	$(no_undefined)							\
-@@ -424,7 +423,7 @@ libgdk_x11_2_0_la_SOURCES = $(common_sou
+@@ -425,7 +424,7 @@ libgdk_x11_2_0_la_SOURCES = $(common_sou
  libgdk_x11_2_0_la_LIBADD = x11/libgdk-x11.la $(GDK_DEP_LIBS) \
    $(top_builddir)/gdk-pixbuf/libgdk_pixbuf-$(GTK_API_VERSION).la
  

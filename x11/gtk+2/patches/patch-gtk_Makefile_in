@@ -1,7 +1,7 @@
-$OpenBSD: patch-gtk_Makefile_in,v 1.8 2006/01/07 07:10:19 pvalchev Exp $
---- gtk/Makefile.in.orig	Thu Aug 18 08:12:39 2005
-+++ gtk/Makefile.in	Thu Jan  5 17:24:45 2006
-@@ -346,7 +346,6 @@ $(am__append_2)
+$OpenBSD: patch-gtk_Makefile_in,v 1.9 2006/05/22 01:49:07 brad Exp $
+--- gtk/Makefile.in.orig	Fri Dec  9 13:28:14 2005
++++ gtk/Makefile.in	Sat May 13 16:52:41 2006
+@@ -347,7 +347,6 @@ $(am__append_2)
  
  # common options for the various packages.
  libtool_opts = \

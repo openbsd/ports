@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.16 2006/01/07 07:10:19 pvalchev Exp $
+@comment $OpenBSD: PLIST-docs,v 1.17 2006/05/22 01:49:08 brad Exp $
 @conflict gtk+2-<2.4.9
 share/gtk-doc/
 share/gtk-doc/html/
@@ -29,6 +29,7 @@ share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-refcounting.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-scaling.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-util.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf.devhelp
+share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf.devhelp2
 share/gtk-doc/html/gdk-pixbuf/home.png
 share/gtk-doc/html/gdk-pixbuf/index.html
 share/gtk-doc/html/gdk-pixbuf/index.sgml
@@ -37,6 +38,7 @@ share/gtk-doc/html/gdk-pixbuf/ix02.html
 share/gtk-doc/html/gdk-pixbuf/ix03.html
 share/gtk-doc/html/gdk-pixbuf/ix04.html
 share/gtk-doc/html/gdk-pixbuf/ix05.html
+share/gtk-doc/html/gdk-pixbuf/ix06.html
 share/gtk-doc/html/gdk-pixbuf/left.png
 share/gtk-doc/html/gdk-pixbuf/license.html
 share/gtk-doc/html/gdk-pixbuf/right.png
@@ -75,6 +77,7 @@ share/gtk-doc/html/gdk/draped_box.png
 share/gtk-doc/html/gdk/exchange.png
 share/gtk-doc/html/gdk/fleur.png
 share/gtk-doc/html/gdk/gdk-Bitmaps-and-Pixmaps.html
+share/gtk-doc/html/gdk/gdk-Cairo-Interaction.html
 share/gtk-doc/html/gdk/gdk-Colormaps-and-Colors.html
 share/gtk-doc/html/gdk/gdk-Cursors.html
 share/gtk-doc/html/gdk/gdk-Drag-and-Drop.html
@@ -99,6 +102,7 @@ share/gtk-doc/html/gdk/gdk-Visuals.html
 share/gtk-doc/html/gdk/gdk-Windows.html
 share/gtk-doc/html/gdk/gdk-X-Window-System-Interaction.html
 share/gtk-doc/html/gdk/gdk.devhelp
+share/gtk-doc/html/gdk/gdk.devhelp2
 share/gtk-doc/html/gdk/gobbler.png
 share/gtk-doc/html/gdk/gumby.png
 share/gtk-doc/html/gdk/hand1.png
@@ -114,6 +118,7 @@ share/gtk-doc/html/gdk/ix02.html
 share/gtk-doc/html/gdk/ix03.html
 share/gtk-doc/html/gdk/ix04.html
 share/gtk-doc/html/gdk/ix05.html
+share/gtk-doc/html/gdk/ix06.html
 share/gtk-doc/html/gdk/left.png
 share/gtk-doc/html/gdk/left_ptr.png
 share/gtk-doc/html/gdk/left_side.png
@@ -341,6 +346,7 @@ share/gtk-doc/html/gtk/ch02.html
 share/gtk-doc/html/gtk/check-button.png
 share/gtk-doc/html/gtk/checklist-gdkeventexpose-region.html
 share/gtk-doc/html/gtk/checklist-modifiers.html
+share/gtk-doc/html/gtk/checklist-named-icons.html
 share/gtk-doc/html/gtk/color-button.png
 share/gtk-doc/html/gtk/colorsel.png
 share/gtk-doc/html/gtk/combo-box-entry.png
@@ -390,6 +396,7 @@ share/gtk-doc/html/gtk/gtk-update-icon-cache.html
 share/gtk-doc/html/gtk/gtk-windows.html
 share/gtk-doc/html/gtk/gtk-x11.html
 share/gtk-doc/html/gtk/gtk.devhelp
+share/gtk-doc/html/gtk/gtk.devhelp2
 share/gtk-doc/html/gtk/gtk.html
 share/gtk-doc/html/gtk/gtkbase.html
 share/gtk-doc/html/gtk/gtkfilechooser-installing-extra-widgets.html
@@ -407,6 +414,7 @@ share/gtk-doc/html/gtk/ix02.html
 share/gtk-doc/html/gtk/ix03.html
 share/gtk-doc/html/gtk/ix04.html
 share/gtk-doc/html/gtk/ix05.html
+share/gtk-doc/html/gtk/ix06.html
 share/gtk-doc/html/gtk/label.png
 share/gtk-doc/html/gtk/left.png
 share/gtk-doc/html/gtk/list-and-tree.png
@@ -463,13 +471,16 @@ share/gtk-doc/html/gtk/stock_exit_24.png
 share/gtk-doc/html/gtk/stock_file_24.png
 share/gtk-doc/html/gtk/stock_first_24.png
 share/gtk-doc/html/gtk/stock_font_24.png
+share/gtk-doc/html/gtk/stock_fullscreen_24.png
 share/gtk-doc/html/gtk/stock_harddisk_24.png
 share/gtk-doc/html/gtk/stock_help_24.png
 share/gtk-doc/html/gtk/stock_home_24.png
 share/gtk-doc/html/gtk/stock_index_24.png
+share/gtk-doc/html/gtk/stock_info_24.png
 share/gtk-doc/html/gtk/stock_jump_to_24.png
 share/gtk-doc/html/gtk/stock_jump_to_rtl_24.png
 share/gtk-doc/html/gtk/stock_last_24.png
+share/gtk-doc/html/gtk/stock_leave_fullscreen_24.png
 share/gtk-doc/html/gtk/stock_left_arrow_24.png
 share/gtk-doc/html/gtk/stock_media_forward_24.png
 share/gtk-doc/html/gtk/stock_media_next_24.png
