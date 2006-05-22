@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2006/01/31 22:06:57 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2006/05/22 18:11:01 steven Exp $
 
 COMMENT=	"perl module for parsing huge XML documents"
 
-DISTNAME=	XML-Twig-3.23
+DISTNAME=	XML-Twig-3.25
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 
