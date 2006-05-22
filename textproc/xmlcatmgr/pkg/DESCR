@@ -1,0 +1,5 @@
+XML Catalog Manager, or xmlcatmgr for short, is an utility used to
+manipulate SGML and XML catalogs.  Its main purpose is to add and remove
+entries from them in a completely automated way.  It is designed with
+simplicity in mind to avoid depending on external programs and/or
+libraries.

@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/22 22:57:50 alek Exp $
+bin/xmlcatmgr
+@man man/man1/xmlcatmgr.1
+share/doc/xmlcatmgr/
+share/doc/xmlcatmgr/AUTHORS
+share/doc/xmlcatmgr/COPYING
+share/doc/xmlcatmgr/NEWS
+share/doc/xmlcatmgr/README
+share/doc/xmlcatmgr/TODO
+share/examples/xmlcatmgr/
+share/examples/xmlcatmgr/catalog.etc.sgml
+share/examples/xmlcatmgr/catalog.etc.xml
+share/examples/xmlcatmgr/catalog.share.sgml
+share/examples/xmlcatmgr/catalog.share.xml
