@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2006/05/22 01:49:07 brad Exp $
+# $OpenBSD: Makefile,v 1.36 2006/05/22 02:16:40 brad Exp $
 
 NOT_FOR_ARCHS=			${NO_SHARED_ARCHS}
 
@@ -7,7 +7,7 @@ COMMENT-docs=           	"gtk+-2 documentation"
 
 VERSION=			2.8.17
 DISTNAME=			gtk+-${VERSION}
-PKGNAME=			gtk+2-${VERSION}
+PKGNAME=			gtk+2-${VERSION}p1
 PKGNAME-docs=			gtk+2-docs-${VERSION}
 CATEGORIES=			x11 devel
 
@@ -31,7 +31,7 @@ MULTI_PACKAGES=         	-docs
 SUBPACKAGE?=
 
 .if ${SUBPACKAGE} != "-docs"
-WANTLIB=			X11 Xcursor Xext Xfixes Xinerama Xrender \
+WANTLIB=			X11 Xcursor Xext Xfixes Xi Xinerama Xrender \
 				Xrandr c cairo fontconfig freetype glitz m z
 MODULES=			devel/gettext
 
@@ -54,6 +54,7 @@ USE_GMAKE=			Yes
 USE_LIBTOOL=			Yes
 CONFIGURE_STYLE=		gnu
 CONFIGURE_ARGS+= 		--disable-gtk-doc
+CONFIGURE_ARGS+=		--with-xinput=yes
 CONFIGURE_ENV=			CPPFLAGS="-I${X11BASE}/include/freetype2/ -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 				LDFLAGS="-L${LOCALBASE}/lib" \
 				PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig"
