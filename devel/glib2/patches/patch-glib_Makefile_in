@@ -1,7 +1,7 @@
-$OpenBSD: patch-glib_Makefile_in,v 1.5 2005/12/28 06:25:27 marcm Exp $
---- glib/Makefile.in.orig	Sat Dec 24 13:49:44 2005
-+++ glib/Makefile.in	Sat Dec 24 13:58:15 2005
-@@ -418,7 +418,7 @@ libglib_2_0_la_DEPENDENCIES = libcharset
+$OpenBSD: patch-glib_Makefile_in,v 1.6 2006/05/22 01:39:36 brad Exp $
+--- glib/Makefile.in.orig	Fri Apr  7 08:35:30 2006
++++ glib/Makefile.in	Fri Apr 28 23:41:43 2006
+@@ -428,7 +428,7 @@ libglib_2_0_la_DEPENDENCIES = libcharset
  
  libglib_2_0_la_LDFLAGS = \
  	 $(glib_win32_res_ldflag) \

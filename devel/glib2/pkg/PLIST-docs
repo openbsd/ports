@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.10 2005/11/13 06:22:03 marcm Exp $
+@comment $OpenBSD: PLIST-docs,v 1.11 2006/05/22 01:39:36 brad Exp $
 @conflict glib2-<2.4.6
 share/gtk-doc/
 share/gtk-doc/html/
@@ -34,6 +34,7 @@ share/gtk-doc/html/glib/glib-Limits-of-Basic-Types.html
 share/gtk-doc/html/glib/glib-Memory-Allocation.html
 share/gtk-doc/html/glib/glib-Memory-Allocators.html
 share/gtk-doc/html/glib/glib-Memory-Chunks.html
+share/gtk-doc/html/glib/glib-Memory-Slices.html
 share/gtk-doc/html/glib/glib-Message-Logging.html
 share/gtk-doc/html/glib/glib-Miscellaneous-Macros.html
 share/gtk-doc/html/glib/glib-Miscellaneous-Utility-Functions.html
@@ -60,7 +61,7 @@ share/gtk-doc/html/glib/glib-Type-Conversion-Macros.html
 share/gtk-doc/html/glib/glib-Unicode-Manipulation.html
 share/gtk-doc/html/glib/glib-Version-Information.html
 share/gtk-doc/html/glib/glib-Warnings-and-Assertions.html
-share/gtk-doc/html/glib/glib-Windows-Compatability-Functions.html
+share/gtk-doc/html/glib/glib-Windows-Compatibility-Functions.html
 share/gtk-doc/html/glib/glib-building.html
 share/gtk-doc/html/glib/glib-changes.html
 share/gtk-doc/html/glib/glib-compiling.html
@@ -73,6 +74,7 @@ share/gtk-doc/html/glib/glib-resources.html
 share/gtk-doc/html/glib/glib-running.html
 share/gtk-doc/html/glib/glib-utilities.html
 share/gtk-doc/html/glib/glib.devhelp
+share/gtk-doc/html/glib/glib.devhelp2
 share/gtk-doc/html/glib/glib.html
 share/gtk-doc/html/glib/home.png
 share/gtk-doc/html/glib/index.html
@@ -83,6 +85,7 @@ share/gtk-doc/html/glib/ix03.html
 share/gtk-doc/html/glib/ix04.html
 share/gtk-doc/html/glib/ix05.html
 share/gtk-doc/html/glib/ix06.html
+share/gtk-doc/html/glib/ix07.html
 share/gtk-doc/html/glib/left.png
 share/gtk-doc/html/glib/mainloop-states.gif
 share/gtk-doc/html/glib/right.png
@@ -118,6 +121,7 @@ share/gtk-doc/html/gobject/gobject-memory.html
 share/gtk-doc/html/gobject/gobject-properties.html
 share/gtk-doc/html/gobject/gobject-query.html
 share/gtk-doc/html/gobject/gobject.devhelp
+share/gtk-doc/html/gobject/gobject.devhelp2
 share/gtk-doc/html/gobject/gtype-conventions.html
 share/gtk-doc/html/gobject/gtype-instantiable-classed.html
 share/gtk-doc/html/gobject/gtype-non-instantiable-classed.html
@@ -141,6 +145,7 @@ share/gtk-doc/html/gobject/ix03.html
 share/gtk-doc/html/gobject/ix04.html
 share/gtk-doc/html/gobject/ix05.html
 share/gtk-doc/html/gobject/ix06.html
+share/gtk-doc/html/gobject/ix07.html
 share/gtk-doc/html/gobject/left.png
 share/gtk-doc/html/gobject/pr01.html
 share/gtk-doc/html/gobject/pt01.html

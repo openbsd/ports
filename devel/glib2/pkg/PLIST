@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2005/12/28 06:25:27 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.17 2006/05/22 01:39:36 brad Exp $
 bin/glib-genmarshal
 bin/glib-gettextize
 bin/glib-mkenums
@@ -45,6 +45,7 @@ include/glib-2.0/glib/grand.h
 include/glib-2.0/glib/grel.h
 include/glib-2.0/glib/gscanner.h
 include/glib-2.0/glib/gshell.h
+include/glib-2.0/glib/gslice.h
 include/glib-2.0/glib/gslist.h
 include/glib-2.0/glib/gspawn.h
 include/glib-2.0/glib/gstdio.h
@@ -131,6 +132,9 @@ share/locale/cy/LC_MESSAGES/
 share/locale/cy/LC_MESSAGES/glib20.mo
 share/locale/da/LC_MESSAGES/glib20.mo
 share/locale/de/LC_MESSAGES/glib20.mo
+share/locale/dz/
+share/locale/dz/LC_MESSAGES/
+share/locale/dz/LC_MESSAGES/glib20.mo
 share/locale/el/LC_MESSAGES/glib20.mo
 share/locale/en_CA/
 share/locale/en_CA/LC_MESSAGES/
@@ -166,7 +170,13 @@ share/locale/is/LC_MESSAGES/
 share/locale/is/LC_MESSAGES/glib20.mo
 share/locale/it/LC_MESSAGES/glib20.mo
 share/locale/ja/LC_MESSAGES/glib20.mo
+share/locale/ka/
+share/locale/ka/LC_MESSAGES/
+share/locale/ka/LC_MESSAGES/glib20.mo
 share/locale/ko/LC_MESSAGES/glib20.mo
+share/locale/ku/
+share/locale/ku/LC_MESSAGES/
+share/locale/ku/LC_MESSAGES/glib20.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/glib20.mo
@@ -174,6 +184,9 @@ share/locale/lv/LC_MESSAGES/glib20.mo
 share/locale/mk/
 share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/glib20.mo
+share/locale/ml/
+share/locale/ml/LC_MESSAGES/
+share/locale/ml/LC_MESSAGES/glib20.mo
 share/locale/mn/
 share/locale/mn/LC_MESSAGES/
 share/locale/mn/LC_MESSAGES/glib20.mo
@@ -227,6 +240,9 @@ share/locale/tl/
 share/locale/tl/LC_MESSAGES/
 share/locale/tl/LC_MESSAGES/glib20.mo
 share/locale/tr/LC_MESSAGES/glib20.mo
+share/locale/tt/
+share/locale/tt/LC_MESSAGES/
+share/locale/tt/LC_MESSAGES/glib20.mo
 share/locale/uk/LC_MESSAGES/glib20.mo
 share/locale/vi/LC_MESSAGES/glib20.mo
 share/locale/wa/
@@ -239,5 +255,8 @@ share/locale/yi/
 share/locale/yi/LC_MESSAGES/
 share/locale/yi/LC_MESSAGES/glib20.mo
 share/locale/zh_CN/LC_MESSAGES/glib20.mo
+share/locale/zh_HK/
+share/locale/zh_HK/LC_MESSAGES/
+share/locale/zh_HK/LC_MESSAGES/glib20.mo
 share/locale/zh_TW/LC_MESSAGES/glib20.mo
 %%SHARED%%

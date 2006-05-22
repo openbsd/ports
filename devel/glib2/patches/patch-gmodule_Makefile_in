@@ -1,7 +1,7 @@
-$OpenBSD: patch-gmodule_Makefile_in,v 1.5 2005/12/28 06:25:27 marcm Exp $
---- gmodule/Makefile.in.orig	Sat Dec 24 13:56:11 2005
-+++ gmodule/Makefile.in	Sat Dec 24 13:57:39 2005
-@@ -287,7 +287,7 @@ libgmodule_2_0_la_SOURCES = gmodule.c
+$OpenBSD: patch-gmodule_Makefile_in,v 1.6 2006/05/22 01:39:36 brad Exp $
+--- gmodule/Makefile.in.orig	Fri Apr  7 08:35:31 2006
++++ gmodule/Makefile.in	Fri Apr 28 23:41:43 2006
+@@ -286,7 +286,7 @@ libgmodule_2_0_la_SOURCES = gmodule.c
  libgmodule_2_0_la_LDFLAGS = \
  	$(gmodule_win32_res_ldflag) \
  	$(G_MODULE_LDFLAGS) \
