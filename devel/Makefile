@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.367 2006/05/11 11:59:42 msf Exp $
+# $OpenBSD: Makefile,v 1.368 2006/05/22 12:42:40 bernd Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -195,6 +195,7 @@
      SUBDIR += p5-Class-WhiteHole
      SUBDIR += p5-Class-XPath
      SUBDIR += p5-Clone
+     SUBDIR += p5-Config-Grammar
      SUBDIR += p5-Config-IniFiles
      SUBDIR += p5-Config-Tiny
      SUBDIR += p5-Curses
