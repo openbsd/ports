@@ -1,13 +1,13 @@
-$OpenBSD: README.OpenBSD,v 1.1 2005/12/26 02:17:53 ian Exp $
+$OpenBSD: README.OpenBSD,v 1.2 2006/05/23 14:03:22 bernd Exp $
 
 If you encounter strange problems relating to bookmarks, downloads,
 window placement, toolbars, history, or other settings, it is
-recommended that you creat a new profile and attempt to
+recommended that you create a new profile and attempt to
 reproduce the problem before filing bugs.  To create a new profile,
 start Firefox with the --profilemanager switch, e.g.
 firefox --profilemanager, and click "Create Profile".
 
-If Firefox doesn't start at all, first try and remove compreg.dat,
+If Firefox doesn't start at all, first try to remove compreg.dat,
 xpti.dat and extensions/Extensions.rdf from your profile-dir, or you
 could just remove the old profile-dir,
     rm -r ~/.mozilla/firefox/<profile-dir> ~/.firefox/<profile-dir>

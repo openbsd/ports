@@ -1,3 +1,2 @@
-If firefox doesn't start at all or to configure email, Java,
-etc., see ${PREFIX}/mozilla-firefox/README.OpenBSD for more
-information on using FireFox in an OpenBSD environment.
+Please see ${PREFIX}/mozilla-firefox/README.OpenBSD for information about
+running Firefox on OpenBSD.
