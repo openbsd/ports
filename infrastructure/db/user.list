@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.44 2006/05/13 09:54:27 bernd Exp $
+$OpenBSD: user.list,v 1.45 2006/05/23 05:56:29 alek Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -69,3 +69,4 @@ id  user		group		port options
 558 _ipfreely		_ipfreely	net/ipfreely
 559 _freeradius		_freeradius	net/freeradius
 560 _mpd		_mpd		audio/mpd
+561 _rbldns		_rbldns		net/rbldnsd
