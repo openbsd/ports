@@ -1,0 +1,12 @@
+$OpenBSD: patch-rbldnsd_c,v 1.1.1.1 2006/05/23 05:53:07 alek Exp $
+--- rbldnsd.c.orig	Mon May 22 01:52:31 2006
++++ rbldnsd.c	Mon May 22 01:52:35 2006
+@@ -504,7 +504,7 @@ break;
+   initsockets(bindaddr, nba, family);
+ 
+   if (!user && !(uid = getuid()))
+-    user = "rbldns";
++    user = "_rbldns";
+ 
+   if (user && (p = strchr(user, ':')) != NULL)
+     *p++ = '\0';

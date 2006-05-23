@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/23 05:53:07 alek Exp $
+@newgroup _rbldns:561
+@newuser _rbldns:561:_rbldns:daemon:rbldns Account:/var/empty:/sbin/nologin
+@man man/man8/rbldnsd.8
+sbin/rbldnsd
