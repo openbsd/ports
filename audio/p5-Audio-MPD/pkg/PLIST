@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/23 15:27:34 bernd Exp $
+${P5SITE}/Audio/
+${P5SITE}/Audio/MPD.pm
+@man man/man3p/Audio::MPD.3p
+share/examples/p5-Audio-MPD/
+share/examples/p5-Audio-MPD/example.pl
+share/examples/p5-Audio-MPD/mpc.pl

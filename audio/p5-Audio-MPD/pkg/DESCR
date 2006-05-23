@@ -1,0 +1,4 @@
+Audio::MPD gives a clear object-oriented interface for talking to and
+controlling MPD (Music Player Daemon) servers. A connection to the MPD
+server is established as soon as a new Audio::MPD object is created.
+Commands are then send to the server as the class's methods are called.
