@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/09/05 12:27:13 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/05/23 19:54:03 sturm Exp $
 
 COMMENT=	"proxy that can transliterate japanese"
 
@@ -21,6 +21,7 @@ RUN_DEPENDS=	:p5-Text-Kakasi-*:japanese/p5-Text-Kakasi \
 		:p5-AppConfig-*:devel/p5-AppConfig \
 		:p5-libwww-*:www/p5-libwww
 
+NO_REGRESS=	Yes
 
 do-build:
 	cd ${WRKSRC} && pod2man japana|nroff -man >japana.cat1
