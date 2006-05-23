@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2006/05/23 14:27:52 bernd Exp $
+# $OpenBSD: Makefile,v 1.146 2006/05/23 15:29:18 bernd Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -74,6 +74,7 @@
      SUBDIR += openal
      SUBDIR += opennap
      SUBDIR += p5-Audio-CD
+     SUBDIR += p5-Audio-MPD
      SUBDIR += p5-CDDB_get
      SUBDIR += p5-MP3-ID3v1Tag
      SUBDIR += p5-MP3-Info
