@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_command_c,v 1.1.1.1 2006/05/23 14:26:41 bernd Exp $
+--- src/command.c.orig	Fri Mar 11 10:04:35 2005
++++ src/command.c	Mon May 15 20:09:35 2006
+@@ -183,10 +183,11 @@ int cmd_add (int argc, char ** argv, mpd
+ int cmd_crop( int argc, char ** argv, mpd_Connection * conn )
+ {
+ 
++	int length;
+ 	mpd_Status *status;
+ 	status = getStatus( conn );
+ 
+-	int length = ( status->playlistLength - 1 );
++	length = ( status->playlistLength - 1 );
+ 
+ 	if( status->playlistLength == 0 ) {
+ 

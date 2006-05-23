@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/23 14:26:41 bernd Exp $
+bin/mpc
+@man man/man1/mpc.1
+share/doc/mpc/
+share/doc/mpc/AUTHORS
+share/doc/mpc/README
+share/examples/mpc/
+share/examples/mpc/m3u-handler.sh
+share/examples/mpc/mpc-bashrc
+share/examples/mpc/pls-handler.sh
+@comment share/mpc/
