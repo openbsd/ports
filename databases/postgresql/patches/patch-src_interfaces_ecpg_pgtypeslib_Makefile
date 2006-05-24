@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_interfaces_ecpg_pgtypeslib_Makefile,v 1.1 2006/01/07 11:11:17 mbalmer Exp $
---- src/interfaces/ecpg/pgtypeslib/Makefile.orig	Wed Dec 28 12:44:22 2005
-+++ src/interfaces/ecpg/pgtypeslib/Makefile	Wed Dec 28 12:45:35 2005
+$OpenBSD: patch-src_interfaces_ecpg_pgtypeslib_Makefile,v 1.2 2006/05/24 11:18:29 bernd Exp $
+--- src/interfaces/ecpg/pgtypeslib/Makefile.orig	Tue Dec  6 06:26:30 2005
++++ src/interfaces/ecpg/pgtypeslib/Makefile	Wed May 24 11:01:21 2006
 @@ -13,8 +13,8 @@ top_builddir = ../../../..
  include $(top_builddir)/src/Makefile.global
  
@@ -11,4 +11,4 @@ $OpenBSD: patch-src_interfaces_ecpg_pgtypeslib_Makefile,v 1.1 2006/01/07 11:11:1
 +SO_MINOR_VERSION= ${LIBpgtypes_MINOR}
  DLTYPE= library
  
- override CPPFLAGS := -I$(top_srcdir)/src/interfaces/ecpg/include \
+ override CPPFLAGS := -DFRONTEND -I$(top_srcdir)/src/interfaces/ecpg/include \
