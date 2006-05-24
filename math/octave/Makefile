@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2006/04/24 22:30:27 steven Exp $
+# $OpenBSD: Makefile,v 1.17 2006/05/24 05:03:51 steven Exp $
 
-NOT_FOR_ARCHS=	vax
+# vax:   no IEEE arithmetic
+# sparc: fPIC version of libgcc.a needed but not available
+NOT_FOR_ARCHS=	vax sparc
 
 COMMENT=	"high-level language for numerical computations"
 
@@ -31,7 +33,7 @@ MASTER_SITES=	ftp://ftp.octave.org/pub/octave/bleeding-edge/ \
 
 MODULES=	gcc3
 MODGCC3_ARCHES=	alpha sparc
-MODGCC3_LANGS=	C++
+MODGCC3_LANGS=	c++ g77
 
 LIB_DEPENDS=	fftw3.3::math/fftw3 \
 		lapack.3::math/lapack \
@@ -48,7 +50,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--without-mpi \
 		--without-hdf5
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		F77=${FC}
 MAKE_ENV=	LIBcruft_VERSION=${LIBcruft_VERSION} \
 		LIBoctave_VERSION=${LIBoctave_VERSION} \
 		LIBoctinterp_VERSION=${LIBoctinterp_VERSION}
