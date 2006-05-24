@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/05/23 15:27:34 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2006/05/24 21:53:04 steven Exp $
 
 COMMENT=		"module for communicating with MPD servers"
 DISTNAME=		Audio-MPD-0.12.3
-PKGNMAE=		p5-${DISTNAME}
+PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		audio perl5
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
