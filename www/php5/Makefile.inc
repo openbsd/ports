@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.9 2006/05/21 20:46:06 aanriot Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2006/05/24 13:15:42 robert Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
 V=			5.1.4
+PEAR_V= 		20060428
 DISTNAME?=		php-${V}
 CATEGORIES=		www lang
 
@@ -78,6 +79,3 @@ PATCH_DIST_STRIP=	-p1
 .else
 SUPDISTFILES=		hardening-patch-${V}-${HARDENED_V}.patch.gz:1
 .endif
-
-PEAR_V=			20060428
-SUPDISTFILES+=		pear-${PEAR_V}
