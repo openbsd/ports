@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2006/05/21 20:45:35 marco Exp $
+@comment $OpenBSD: PLIST,v 1.15 2006/05/24 18:37:35 sturm Exp $
 %%gtk2%%
 bin/ex
 bin/rview
@@ -637,15 +637,6 @@ share/vim/${P}/keymap/slovak_iso-8859-2.vim
 share/vim/${P}/keymap/slovak_utf-8.vim
 share/vim/${P}/keymap/tamil_tscii.vim
 share/vim/${P}/keymap/ukrainian-jcuken.vim
-share/vim/${P}/lang/
-share/vim/${P}/lang/menu_ja.euc-jp.vim
-share/vim/${P}/lang/menu_ja.eucjp.vim
-share/vim/${P}/lang/menu_ja.ujis.vim
-share/vim/${P}/lang/menu_pl_pl.utf-8.vim
-share/vim/${P}/lang/menu_vi_vn.vim
-share/vim/${P}/lang/vi/
-share/vim/${P}/lang/vi/LC_MESSAGES/
-share/vim/${P}/lang/vi/LC_MESSAGES/vim.mo
 share/vim/${P}/macros/
 share/vim/${P}/macros/README.txt
 share/vim/${P}/macros/dvorak

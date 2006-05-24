@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-lang,v 1.5 2006/05/21 20:45:35 marco Exp $
+@comment $OpenBSD: PLIST-lang,v 1.6 2006/05/24 18:37:35 sturm Exp $
 %%gtk2%%
+share/vim/${P}/lang/
 share/vim/${P}/lang/README.txt
 share/vim/${P}/lang/af/
 share/vim/${P}/lang/af/LC_MESSAGES/
@@ -82,6 +83,9 @@ share/vim/${P}/lang/menu_it_it.latin1.vim
 share/vim/${P}/lang/menu_it_it.utf-8.vim
 share/vim/${P}/lang/menu_italian_italy.1252.vim
 share/vim/${P}/lang/menu_ja.cp932.vim
+share/vim/${P}/lang/menu_ja.euc-jp.vim
+share/vim/${P}/lang/menu_ja.eucjp.vim
+share/vim/${P}/lang/menu_ja.ujis.vim
 share/vim/${P}/lang/menu_ja.utf-8.vim
 share/vim/${P}/lang/menu_ja_jp.cp932.vim
 share/vim/${P}/lang/menu_ja_jp.euc-jp.vim
@@ -104,6 +108,7 @@ share/vim/${P}/lang/menu_no_no.utf-8.vim
 share/vim/${P}/lang/menu_pl.cp1250.vim
 share/vim/${P}/lang/menu_pl_pl.cp1250.vim
 share/vim/${P}/lang/menu_pl_pl.iso_8859-2.vim
+share/vim/${P}/lang/menu_pl_pl.utf-8.vim
 share/vim/${P}/lang/menu_polish_poland.1250.vim
 share/vim/${P}/lang/menu_pt_br.latin1.vim
 share/vim/${P}/lang/menu_pt_br.utf-8.vim
@@ -133,6 +138,7 @@ share/vim/${P}/lang/menu_sv_se.latin1.vim
 share/vim/${P}/lang/menu_sv_se.utf-8.vim
 share/vim/${P}/lang/menu_uk_ua.cp1251.vim
 share/vim/${P}/lang/menu_uk_ua.koi8-u.vim
+share/vim/${P}/lang/menu_vi_vn.vim
 share/vim/${P}/lang/menu_zh.big5.vim
 share/vim/${P}/lang/menu_zh.cp936.vim
 share/vim/${P}/lang/menu_zh.cp950.vim
@@ -163,6 +169,9 @@ share/vim/${P}/lang/sv/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/uk/
 share/vim/${P}/lang/uk/LC_MESSAGES/
 share/vim/${P}/lang/uk/LC_MESSAGES/vim.mo
+share/vim/${P}/lang/vi/
+share/vim/${P}/lang/vi/LC_MESSAGES/
+share/vim/${P}/lang/vi/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/zh_CN/
 share/vim/${P}/lang/zh_CN.UTF-8/
 share/vim/${P}/lang/zh_CN.UTF-8/LC_MESSAGES/
