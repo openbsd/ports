@@ -1,10 +1,10 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2005/05/22 09:37:25 djm Exp $
---- setup.py.orig	Sun May 22 14:40:30 2005
-+++ setup.py	Sun May 22 14:41:33 2005
-@@ -87,11 +87,11 @@ def build_docs():
+$OpenBSD: patch-setup_py,v 1.2 2006/05/25 13:39:08 alek Exp $
+--- setup.py.orig	Tue Apr 11 00:13:37 2006
++++ setup.py	Thu Apr 20 01:56:14 2006
+@@ -104,11 +104,11 @@ def get_setup_args():
+         print "Fatal error: PYSQLITE_VERSION could not be detected!"
+         sys.exit(1)
  
- def main():
-     build_docs()
 -    data_files = [("pysqlite2-doc",
 +    data_files = [("share/doc/py-sqlite2",
                          glob.glob("doc/*.html") \

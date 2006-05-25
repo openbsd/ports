@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2005/09/19 02:10:46 djm Exp $
+# $OpenBSD: Makefile,v 1.3 2006/05/25 13:39:08 alek Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"SQLite3 adapter for Python"
 
-VERSION=	2.0.4
-DISTNAME=	pysqlite-${VERSION}
+DISTNAME=	pysqlite-2.2.2
 PKGNAME=	${DISTNAME:S/^pysqlite/py-sqlite2/}
 CATEGORIES=	databases devel
 
-MASTER_SITES=	http://initd.org/pub/software/pysqlite/releases/2.0/${VERSION}/
+MAINTAINER=	Eric Faurot <eric.faurot@gmail.com>
+
+MASTER_SITES=	http://initd.org/pub/software/pysqlite/releases/2.2/2.2.2/
 HOMEPAGE=	http://pysqlite.org/
 
 # BSD-like
@@ -29,7 +30,8 @@ pre-configure:
 	mv ${WRKSRC}/setup.cfg_ ${WRKSRC}/setup.cfg
 
 do-regress: fake
-	@cd ${WRKSRC}/scripts && ${SETENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
-		${MODPY_BIN} ./test-pysqlite
+	@cd ${WRKSRC}/pysqlite2/test && \
+		${SETENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
+		${MODPY_BIN} ./regression.py
 
 .include <bsd.port.mk>

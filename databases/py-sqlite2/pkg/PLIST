@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/09/19 02:10:46 djm Exp $
-bin/test-pysqlite
+@comment $OpenBSD: PLIST,v 1.3 2006/05/25 13:39:08 alek Exp $
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/__init__.pyc
@@ -13,6 +12,10 @@ lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/dbapi.py
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/dbapi.pyc
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/factory.py
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/factory.pyc
+lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/hooks.py
+lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/hooks.pyc
+lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/regression.py
+lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/regression.pyc
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/transactions.py
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/transactions.pyc
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/types.py
@@ -22,6 +25,8 @@ lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/userfunctions.pyc
 share/doc/py-sqlite2/
 share/doc/py-sqlite2/default.css
 share/doc/py-sqlite2/docutils.css
+share/doc/py-sqlite2/install-source-win32.html
+share/doc/py-sqlite2/install-source-win32.txt
 share/doc/py-sqlite2/install-source.html
 share/doc/py-sqlite2/install-source.txt
 share/doc/py-sqlite2/silvercity.css
@@ -31,6 +36,8 @@ share/examples/py-sqlite2/
 share/examples/py-sqlite2/adapter_datetime.py
 share/examples/py-sqlite2/adapter_point_1.py
 share/examples/py-sqlite2/adapter_point_2.py
+share/examples/py-sqlite2/collation_reverse.py
+share/examples/py-sqlite2/complete_statement.py
 share/examples/py-sqlite2/connect_db_1.py
 share/examples/py-sqlite2/connect_db_2.py
 share/examples/py-sqlite2/converter_point.py
@@ -50,4 +57,8 @@ share/examples/py-sqlite2/mysumaggr.py
 share/examples/py-sqlite2/parse_colnames.py
 share/examples/py-sqlite2/pysqlite_datetime.py
 share/examples/py-sqlite2/row_factory.py
+share/examples/py-sqlite2/rowclass.py
+share/examples/py-sqlite2/shared_cache.py
+share/examples/py-sqlite2/shortcut_methods.py
 share/examples/py-sqlite2/simple_tableprinter.py
+share/examples/py-sqlite2/text_factory.py
