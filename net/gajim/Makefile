@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2006/01/20 08:39:12 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2006/05/25 17:56:10 jolan Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	"jabber client written in pygtk"
-DISTNAME=	gajim-0.8.2
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	gajim-0.10
+PKGNAME=	${DISTNAME}
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	net x11
 MASTER_SITES=	${HOMEPAGE}downloads/
@@ -24,11 +24,13 @@ USE_GMAKE=	Yes
 MODULES=	devel/gettext
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
+		::textproc/intltool \
 		${RUN_DEPENDS}
 LIB_DEPENDS=	gtkspell.0::textproc/gtkspell
 RUN_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
 		:python-expat-${PYTHON_VER}*:lang/python/${PYTHON_VER},-expat \
 		::net/py-dns \
+		::databases/py-sqlite2 \
 		::x11/py-gtk2
 WANTLIB=	X11 Xext Xft Xrender Xss fontconfig freetype m \
 		aspell atk-1.0.1011.0 gdk-x11-2.0.600.0 gdk_pixbuf-2.0.600.0 \
