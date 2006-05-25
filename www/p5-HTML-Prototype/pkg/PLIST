@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/25 09:45:14 espie Exp $
+${P5SITE}/HTML/
+${P5SITE}/HTML/Prototype/
+${P5SITE}/HTML/Prototype.pm
+${P5SITE}/HTML/Prototype/Controls.pm
+${P5SITE}/HTML/Prototype/DragDrop.pm
+${P5SITE}/HTML/Prototype/Effects.pm
+${P5SITE}/HTML/Prototype/Helper/
+${P5SITE}/HTML/Prototype/Helper.pm
+${P5SITE}/HTML/Prototype/Helper/Tag.pm
+${P5SITE}/HTML/Prototype/Js.pm
+@man man/man3p/HTML::Prototype.3p
+@man man/man3p/HTML::Prototype::Controls.3p
+@man man/man3p/HTML::Prototype::DragDrop.3p
+@man man/man3p/HTML::Prototype::Effects.3p
+@man man/man3p/HTML::Prototype::Helper.3p
+@man man/man3p/HTML::Prototype::Helper::Tag.3p
+@man man/man3p/HTML::Prototype::Js.3p

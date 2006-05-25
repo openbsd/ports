@@ -1,0 +1,16 @@
+AJAX framework for perl, direct port of the prototype functions
+and extensions used by various people, including `ruby on rails'
+
+This module has been apparently designed for Catalyst, but it is
+perfectly usable from other perl frameworks like HTML::Mason, or
+even straight CGI.
+
+See http://www.maztravel.com/ajax/ for a few examples.
+
+It isolates the programmer from all the gory details of writing
+Javascript code directly, but not from CSS and HTML.
+
+With this, one can write web applications that support drag-and-drop,
+or sortable lists, provided the web browser has decent javascript
+support (which seems to include at least mozilla, firefox, opera, IE, and
+konqueror these days).
