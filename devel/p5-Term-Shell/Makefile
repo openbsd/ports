@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/24 21:45:55 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2006/05/25 20:42:56 grunk Exp $
 # Original from: Neil Watkiss <nwatkiss@ttul.org>
 
 COMMENT=	"simple command-line shell framework"
 
 DISTNAME=	Term-Shell-0.01
-PKGNAME=	p5-${DISTNAME}
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel perl5
-
-MAINTAINER=	Alexander von Gernler <grunk@pestilenz.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
