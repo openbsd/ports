@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2006/05/24 11:18:29 bernd Exp $
+# $OpenBSD: Makefile,v 1.87 2006/05/25 13:03:07 steven Exp $
 
 COMMENT=	"PostgreSQL RDBMS (client)"
 COMMENT-server=	"PostgreSQL RDBMS (server)"
@@ -27,8 +27,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c com_err crypto m readline ssl termcap util z
 
-MASTER_SITES= ftp://ftp3.us.postgresql.org/pub/postgresql/source/v${VERSION}/ \
-	      ftp://ftp.postgresql.org/pub/source/v${VERSION}/
+MASTER_SITES= ftp://ftp2.uk.postgresql.org/sites/ftp.postgresql.org/source/v${VERSION}/ \
+	ftp://ftp5.us.postgresql.org/pub/PostgreSQL/source/v${VERSION}/ \
+	ftp://ftp5.es.postgresql.org/mirror/postgresql/source/v${VERSION}/ \
+	ftp://ftp.postgresql.org/pub/source/v${VERSION}/
 
 MULTI_PACKAGES=	-server -docs
 SUBPACKAGE?=
