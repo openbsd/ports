@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/05/15 18:11:23 ian Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/05/26 17:32:21 steven Exp $
 @option no-default-conflict
 @conflict jdk->=1.5,<1.6
 @pkgpath devel/jdk/1.5,native_bootstrap
@@ -787,35 +787,6 @@ ${JDKHOME}/jre/bin/tnameserv_g
 ${JDKHOME}/jre/bin/unpack200
 ${JDKHOME}/jre/bin/unpack200_g
 ${JDKHOME}/jre/lib/
-${JDKHOME}/jre/lib/applet/
-${JDKHOME}/jre/lib/audio/
-${JDKHOME}/jre/lib/audio/soundbank.gm
-${JDKHOME}/jre/lib/charsets.jar
-${JDKHOME}/jre/lib/classlist
-${JDKHOME}/jre/lib/cmm/
-${JDKHOME}/jre/lib/cmm/CIEXYZ.pf
-${JDKHOME}/jre/lib/cmm/GRAY.pf
-${JDKHOME}/jre/lib/cmm/LINEAR_RGB.pf
-${JDKHOME}/jre/lib/cmm/PYCC.pf
-${JDKHOME}/jre/lib/cmm/sRGB.pf
-${JDKHOME}/jre/lib/content-types.properties
-${JDKHOME}/jre/lib/ext/
-${JDKHOME}/jre/lib/ext/dnsns.jar
-${JDKHOME}/jre/lib/ext/localedata.jar
-${JDKHOME}/jre/lib/ext/sunjce_provider.jar
-${JDKHOME}/jre/lib/flavormap.properties
-${JDKHOME}/jre/lib/fontconfig.bfc
-${JDKHOME}/jre/lib/fontconfig.properties.src
-${JDKHOME}/jre/lib/fonts/
-${JDKHOME}/jre/lib/fonts/LucidaBrightDemiBold.ttf
-${JDKHOME}/jre/lib/fonts/LucidaBrightDemiItalic.ttf
-${JDKHOME}/jre/lib/fonts/LucidaBrightItalic.ttf
-${JDKHOME}/jre/lib/fonts/LucidaBrightRegular.ttf
-${JDKHOME}/jre/lib/fonts/LucidaSansDemiBold.ttf
-${JDKHOME}/jre/lib/fonts/LucidaSansRegular.ttf
-${JDKHOME}/jre/lib/fonts/LucidaTypewriterBold.ttf
-${JDKHOME}/jre/lib/fonts/LucidaTypewriterRegular.ttf
-${JDKHOME}/jre/lib/fonts/fonts.dir
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/awt_robot
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/awt_robot_g
@@ -891,6 +862,35 @@ ${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjvm_g.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/xawt/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/xawt/libmawt.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/xawt/libmawt_g.so
+${JDKHOME}/jre/lib/applet/
+${JDKHOME}/jre/lib/audio/
+${JDKHOME}/jre/lib/audio/soundbank.gm
+${JDKHOME}/jre/lib/charsets.jar
+${JDKHOME}/jre/lib/classlist
+${JDKHOME}/jre/lib/cmm/
+${JDKHOME}/jre/lib/cmm/CIEXYZ.pf
+${JDKHOME}/jre/lib/cmm/GRAY.pf
+${JDKHOME}/jre/lib/cmm/LINEAR_RGB.pf
+${JDKHOME}/jre/lib/cmm/PYCC.pf
+${JDKHOME}/jre/lib/cmm/sRGB.pf
+${JDKHOME}/jre/lib/content-types.properties
+${JDKHOME}/jre/lib/ext/
+${JDKHOME}/jre/lib/ext/dnsns.jar
+${JDKHOME}/jre/lib/ext/localedata.jar
+${JDKHOME}/jre/lib/ext/sunjce_provider.jar
+${JDKHOME}/jre/lib/flavormap.properties
+${JDKHOME}/jre/lib/fontconfig.bfc
+${JDKHOME}/jre/lib/fontconfig.properties.src
+${JDKHOME}/jre/lib/fonts/
+${JDKHOME}/jre/lib/fonts/LucidaBrightDemiBold.ttf
+${JDKHOME}/jre/lib/fonts/LucidaBrightDemiItalic.ttf
+${JDKHOME}/jre/lib/fonts/LucidaBrightItalic.ttf
+${JDKHOME}/jre/lib/fonts/LucidaBrightRegular.ttf
+${JDKHOME}/jre/lib/fonts/LucidaSansDemiBold.ttf
+${JDKHOME}/jre/lib/fonts/LucidaSansRegular.ttf
+${JDKHOME}/jre/lib/fonts/LucidaTypewriterBold.ttf
+${JDKHOME}/jre/lib/fonts/LucidaTypewriterRegular.ttf
+${JDKHOME}/jre/lib/fonts/fonts.dir
 ${JDKHOME}/jre/lib/im/
 ${JDKHOME}/jre/lib/im/indicim.jar
 ${JDKHOME}/jre/lib/im/thaiim.jar
@@ -1368,6 +1368,7 @@ ${JDKHOME}/man/man1/
 @man ${JDKHOME}/man/man1/javadoc.1
 @man ${JDKHOME}/man/man1/javah.1
 @man ${JDKHOME}/man/man1/javap.1
+@man ${JDKHOME}/man/man1/javaws.1
 @man ${JDKHOME}/man/man1/jconsole.1
 @man ${JDKHOME}/man/man1/jdb.1
 @man ${JDKHOME}/man/man1/jinfo.1

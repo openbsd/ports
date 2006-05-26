@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-jre,v 1.5 2006/05/16 03:39:41 ian Exp $
+@comment $OpenBSD: PLIST-jre,v 1.6 2006/05/26 17:32:21 steven Exp $
 @option no-default-conflict
 @conflict jre->=1.5,<1.6
 @pkgpath devel/jdk/1.5,-jre,native_bootstrap
@@ -23,35 +23,6 @@ ${JREHOME}/bin/servertool
 ${JREHOME}/bin/tnameserv
 ${JREHOME}/bin/unpack200
 ${JREHOME}/lib/
-${JREHOME}/lib/applet/
-${JREHOME}/lib/audio/
-${JREHOME}/lib/audio/soundbank.gm
-${JREHOME}/lib/charsets.jar
-${JREHOME}/lib/classlist
-${JREHOME}/lib/cmm/
-${JREHOME}/lib/cmm/CIEXYZ.pf
-${JREHOME}/lib/cmm/GRAY.pf
-${JREHOME}/lib/cmm/LINEAR_RGB.pf
-${JREHOME}/lib/cmm/PYCC.pf
-${JREHOME}/lib/cmm/sRGB.pf
-${JREHOME}/lib/content-types.properties
-${JREHOME}/lib/ext/
-${JREHOME}/lib/ext/dnsns.jar
-${JREHOME}/lib/ext/localedata.jar
-${JREHOME}/lib/ext/sunjce_provider.jar
-${JREHOME}/lib/flavormap.properties
-${JREHOME}/lib/fontconfig.bfc
-${JREHOME}/lib/fontconfig.properties.src
-${JREHOME}/lib/fonts/
-${JREHOME}/lib/fonts/LucidaBrightDemiBold.ttf
-${JREHOME}/lib/fonts/LucidaBrightDemiItalic.ttf
-${JREHOME}/lib/fonts/LucidaBrightItalic.ttf
-${JREHOME}/lib/fonts/LucidaBrightRegular.ttf
-${JREHOME}/lib/fonts/LucidaSansDemiBold.ttf
-${JREHOME}/lib/fonts/LucidaSansRegular.ttf
-${JREHOME}/lib/fonts/LucidaTypewriterBold.ttf
-${JREHOME}/lib/fonts/LucidaTypewriterRegular.ttf
-${JREHOME}/lib/fonts/fonts.dir
 ${JREHOME}/lib/${MACHINE_ARCH}/
 ${JREHOME}/lib/${MACHINE_ARCH}/awt_robot
 ${JREHOME}/lib/${MACHINE_ARCH}/gtkhelper
@@ -94,6 +65,35 @@ ${JREHOME}/lib/${MACHINE_ARCH}/server/libjsig.so
 ${JREHOME}/lib/${MACHINE_ARCH}/server/libjvm.so
 ${JREHOME}/lib/${MACHINE_ARCH}/xawt/
 ${JREHOME}/lib/${MACHINE_ARCH}/xawt/libmawt.so
+${JREHOME}/lib/applet/
+${JREHOME}/lib/audio/
+${JREHOME}/lib/audio/soundbank.gm
+${JREHOME}/lib/charsets.jar
+${JREHOME}/lib/classlist
+${JREHOME}/lib/cmm/
+${JREHOME}/lib/cmm/CIEXYZ.pf
+${JREHOME}/lib/cmm/GRAY.pf
+${JREHOME}/lib/cmm/LINEAR_RGB.pf
+${JREHOME}/lib/cmm/PYCC.pf
+${JREHOME}/lib/cmm/sRGB.pf
+${JREHOME}/lib/content-types.properties
+${JREHOME}/lib/ext/
+${JREHOME}/lib/ext/dnsns.jar
+${JREHOME}/lib/ext/localedata.jar
+${JREHOME}/lib/ext/sunjce_provider.jar
+${JREHOME}/lib/flavormap.properties
+${JREHOME}/lib/fontconfig.bfc
+${JREHOME}/lib/fontconfig.properties.src
+${JREHOME}/lib/fonts/
+${JREHOME}/lib/fonts/LucidaBrightDemiBold.ttf
+${JREHOME}/lib/fonts/LucidaBrightDemiItalic.ttf
+${JREHOME}/lib/fonts/LucidaBrightItalic.ttf
+${JREHOME}/lib/fonts/LucidaBrightRegular.ttf
+${JREHOME}/lib/fonts/LucidaSansDemiBold.ttf
+${JREHOME}/lib/fonts/LucidaSansRegular.ttf
+${JREHOME}/lib/fonts/LucidaTypewriterBold.ttf
+${JREHOME}/lib/fonts/LucidaTypewriterRegular.ttf
+${JREHOME}/lib/fonts/fonts.dir
 ${JREHOME}/lib/im/
 ${JREHOME}/lib/im/indicim.jar
 ${JREHOME}/lib/im/thaiim.jar

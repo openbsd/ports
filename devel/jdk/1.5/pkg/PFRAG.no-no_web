@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_web,v 1.1 2005/11/23 19:39:13 kurt Exp $
+@comment $OpenBSD: PFRAG.no-no_web,v 1.2 2006/05/26 17:32:21 steven Exp $
 ${JDKHOME}/bin/ControlPanel
 ${JDKHOME}/bin/HtmlConverter
 ${JDKHOME}/bin/javaws
@@ -523,14 +523,14 @@ ${JDKHOME}/jre/bin/javaws
 ${JDKHOME}/jre/bin/javaws_g
 ${JDKHOME}/jre/javaws/
 ${JDKHOME}/jre/javaws/javaws
-${JDKHOME}/jre/lib/deploy.jar
-${JDKHOME}/jre/lib/deploy_g.jar
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libdeploy.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libdeploy_g.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjavaplugin_jni.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjavaplugin_jni_g.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjavaplugin_nscp.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjavaplugin_nscp_g.so
+${JDKHOME}/jre/lib/deploy.jar
+${JDKHOME}/jre/lib/deploy_g.jar
 ${JDKHOME}/jre/lib/images/icons/
 ${JDKHOME}/jre/lib/images/icons/sun-java.png
 ${JDKHOME}/jre/lib/images/icons/sun-java_HighContrast.png
@@ -596,13 +596,13 @@ ${JDKHOME}/jre/lib/plugin.jar
 ${JDKHOME}/jre/lib/plugin_g.jar
 ${JDKHOME}/jre/lib/security/javaws.policy
 ${JDKHOME}/jre/plugin/
-${JDKHOME}/jre/plugin/desktop/
-${JDKHOME}/jre/plugin/desktop/sun_java.desktop
-${JDKHOME}/jre/plugin/desktop/sun_java.png
 ${JDKHOME}/jre/plugin/${MACHINE_ARCH}/
 ${JDKHOME}/jre/plugin/${MACHINE_ARCH}/ns7/
 ${JDKHOME}/jre/plugin/${MACHINE_ARCH}/ns7/libjavaplugin_oji.so
 ${JDKHOME}/jre/plugin/${MACHINE_ARCH}/ns7/libjavaplugin_oji_g.so
+${JDKHOME}/jre/plugin/desktop/
+${JDKHOME}/jre/plugin/desktop/sun_java.desktop
+${JDKHOME}/jre/plugin/desktop/sun_java.png
 ${JDKHOME}/lib/htmlconverter.jar
 ${JDKHOME}/lib/htmlconverter_g.jar
 ${JDKHOME}/sample/jnlp/
