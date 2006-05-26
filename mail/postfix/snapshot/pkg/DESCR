@@ -6,8 +6,9 @@ different.
 Extra features always included:
 
 - table lookups using PCRE (Perl-Compatible Regular Expression)
+- authenticated SMTP using Dovecot SASL
 
 Optional features included using flavors:
 
-- authenticated SMTP using Cyrus SASL v2 or Dovecot SASL
+- authenticated SMTP using Cyrus SASL v2
 - table lookups using LDAP, MySQL and PostgreSQL
