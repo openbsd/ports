@@ -1,12 +1,20 @@
-$OpenBSD: patch-utils_c,v 1.1 2003/06/18 02:48:00 avsm Exp $
---- utils.c.orig	Wed Sep 30 03:38:24 1998
-+++ utils.c	Wed Jun 18 03:41:50 2003
-@@ -170,7 +170,7 @@ get_today()
+$OpenBSD: patch-utils_c,v 1.2 2006/05/27 16:54:16 naddy Exp $
+--- utils.c.orig	Wed Sep 30 04:38:24 1998
++++ utils.c	Sat May 27 18:11:00 2006
+@@ -164,13 +164,15 @@ get_today()
+ #ifndef CALENCHECK
+ 	char timstr[16];
+ #endif
++	time_t t;
+ 
+ #ifdef SVR4
+ 	gettimeofday(&tv);
  #else
  	gettimeofday(&tv, 0);
  #endif
 -	tm = localtime(&tv.tv_sec);
-+	tm = localtime((time_t*)&tv.tv_sec);
++	t = tv.tv_sec;
++	tm = localtime(&t);
  
  	today = *tm;
  

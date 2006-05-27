@@ -1,0 +1,12 @@
+$OpenBSD: patch-wpaint_c,v 1.1 2006/05/27 16:54:16 naddy Exp $
+--- wpaint.c.orig	Sat May 27 18:32:52 2006
++++ wpaint.c	Sat May 27 18:35:16 2006
+@@ -179,7 +179,7 @@ paint_week_trim()
+ {
+ 	int i, x, y, rightx;
+ 	int cwidth;
+-	char c[8];
++	char c[9];
+ 	
+ 	cwidth = xv_get(font, FONT_DEFAULT_CHAR_WIDTH);
+ 	First = current;
