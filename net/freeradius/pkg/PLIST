@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/04/16 14:37:09 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/05/27 07:24:39 alek Exp $
 @conflict radiusd-cistron-*
 @conflict radiusd-lucent-*
 @newgroup _freeradius:559
@@ -268,7 +268,11 @@ share/doc/freeradius/supervise-radiusd.txt
 share/doc/freeradius/tuning_guide
 share/doc/freeradius/variables.txt
 share/examples/freeradius/
+@group _freeradius
+@mode 750
 @sample ${SYSCONFDIR}/raddb/
+@group
+@mode
 share/examples/freeradius/acct_users
 @sample ${SYSCONFDIR}/raddb/acct_users
 share/examples/freeradius/attrs
