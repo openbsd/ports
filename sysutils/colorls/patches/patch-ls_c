@@ -1,6 +1,6 @@
-$OpenBSD: patch-ls_c,v 1.7 2005/06/21 18:26:21 naddy Exp $
---- ls.c.orig	Tue Jun 21 20:05:48 2005
-+++ ls.c	Tue Jun 21 20:16:37 2005
+$OpenBSD: patch-ls_c,v 1.8 2006/05/27 04:35:21 naddy Exp $
+--- ls.c.orig	Sat May 27 04:58:46 2006
++++ ls.c	Sat May 27 05:55:02 2006
 @@ -62,6 +62,10 @@ static char rcsid[] = "$OpenBSD: ls.c,v 
  #include <string.h>
  #include <unistd.h>
@@ -12,8 +12,8 @@ $OpenBSD: patch-ls_c,v 1.7 2005/06/21 18:26:21 naddy Exp $
  
  #include "ls.h"
  #include "extern.h"
-@@ -105,6 +109,15 @@ int f_stream;			/* stream format */
- int f_dirname;			/* if precede with directory name */
+@@ -103,6 +107,15 @@ int f_statustime;		/* use time of last m
+ int f_stream;			/* stream format */
  int f_type;			/* add type character for non-regular files */
  int f_typedir;			/* add type character for directories */
 +#ifdef COLORLS
@@ -28,7 +28,7 @@ $OpenBSD: patch-ls_c,v 1.7 2005/06/21 18:26:21 naddy Exp $
  
  int rval;
  
-@@ -116,6 +129,11 @@ ls_main(int argc, char *argv[])
+@@ -114,6 +127,11 @@ ls_main(int argc, char *argv[])
  	int ch, fts_options, notused;
  	int kflag = 0;
  	char *p;
@@ -40,7 +40,7 @@ $OpenBSD: patch-ls_c,v 1.7 2005/06/21 18:26:21 naddy Exp $
  
  	/* Terminal defaults to -Cq, non-terminal defaults to -1. */
  	if (isatty(STDOUT_FILENO)) {
-@@ -133,7 +151,7 @@ ls_main(int argc, char *argv[])
+@@ -131,7 +149,7 @@ ls_main(int argc, char *argv[])
  		f_listdot = 1;
  
  	fts_options = FTS_PHYSICAL;
@@ -49,7 +49,7 @@ $OpenBSD: patch-ls_c,v 1.7 2005/06/21 18:26:21 naddy Exp $
  		switch (ch) {
  		/*
  		 * The -1, -C and -l, -m and -x options all override each
-@@ -178,6 +196,9 @@ ls_main(int argc, char *argv[])
+@@ -176,6 +194,9 @@ ls_main(int argc, char *argv[])
  		case 'F':
  			f_type = 1;
  			break;
@@ -59,7 +59,7 @@ $OpenBSD: patch-ls_c,v 1.7 2005/06/21 18:26:21 naddy Exp $
  		case 'L':
  			fts_options &= ~FTS_PHYSICAL;
  			fts_options |= FTS_LOGICAL;
-@@ -242,11 +263,46 @@ ls_main(int argc, char *argv[])
+@@ -240,11 +261,46 @@ ls_main(int argc, char *argv[])
  	argc -= optind;
  	argv += optind;
  

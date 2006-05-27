@@ -1,6 +1,6 @@
-$OpenBSD: patch-colorls_1,v 1.7 2005/09/05 11:55:47 espie Exp $
---- colorls.1.orig	Mon Sep  5 13:49:27 2005
-+++ colorls.1	Mon Sep  5 13:50:47 2005
+$OpenBSD: patch-colorls_1,v 1.8 2006/05/27 04:35:21 naddy Exp $
+--- colorls.1.orig	Sat May 27 06:10:29 2006
++++ colorls.1	Sat May 27 06:30:47 2006
 @@ -34,14 +34,14 @@
  .\"     @(#)ls.1	8.7 (Berkeley) 7/29/94
  .\"
@@ -189,7 +189,7 @@ $OpenBSD: patch-colorls_1,v 1.7 2005/09/05 11:55:47 espie Exp $
 +.Ev CLICOLOR
 +functionality depends on a terminal type with color capabilities.
  .It Ev TZ
- The timezone to use when displaying dates.
+ The time zone to use when displaying dates.
  See
 @@ -425,24 +562,25 @@ for more information.
  .Sh EXAMPLES
@@ -220,3 +220,11 @@ $OpenBSD: patch-colorls_1,v 1.7 2005/09/05 11:55:47 espie Exp $
  .Xr symlink 7 ,
  .Xr sticky 8
  .Sh STANDARDS
+@@ -458,6 +596,6 @@ utility is expected to be a superset of 
+ specification.
+ .Sh HISTORY
+ An
+-.Nm
++.Nm ls
+ utility appeared in
+ .At v3 .
