@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2005/11/04 09:31:25 alek Exp $
+$OpenBSD: README,v 1.3 2006/05/27 16:08:16 alek Exp $
 
 If you haven't already run the module enabler, you can manually enable
 Kerberos support by adding the following lines into httpd.conf near the
@@ -32,7 +32,17 @@ writeable by apache, and has no relation to your other Kerberos keys. One
 way to do this:
 
 	ktutil -k /var/www/conf/httpd.keytab add -V 1 -e des-cbc-crc \
-		-w PASSWORD -p http/host.domain.tld@REALM.TLD
+		-w PASSWORD -p http/host.domain.tld@YOUR.REALM
+
+Depending on your ID management system, you may be able to simply "get" a
+principal, though you will needed the appropriate kdc privileges to do so:
+
+	ktutil -k /var/www/conf/httpd.keytab get \
+		http/host.domain.tld@YOUR.REALM
+
+Once you have created the keytab with the web server's principal, you should
+restrict permissions on the keytab:
+
 	chown root:www /var/www/conf/httpd.keytab
 	chmod 0440 /var/www/conf/httpd.keytab
 

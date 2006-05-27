@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2005/11/04 09:31:25 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2006/05/27 16:08:16 alek Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"Apache Kerberos authentication module"
 
-VERSION=	5.0-rc6
+VERSION=	5.0rc7
 DISTNAME=	mod_auth_kerb-${VERSION}
-PKGNAME=	mod_auth_kerb-${VERSION:S/-//}p1
 CATEGORIES=	www
 
 HOMEPAGE=	http://modauthkerb.sourceforge.net/
@@ -23,6 +22,7 @@ WANTLIB=		ssl gssapi krb5 crypto
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=modauthkerb/}
 
 NO_REGRESS=	Yes
+USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	KRB5_CPPFLAGS="-I/usr/include/kerberosV" \
