@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.native,v 1.5 2005/09/23 14:23:42 avsm Exp $
+@comment $OpenBSD: PFRAG.native,v 1.6 2006/05/28 15:28:54 avsm Exp $
 bin/camlp4o.opt
 bin/camlp4r.opt
 bin/ocamlc.opt
@@ -23,6 +23,8 @@ lib/ocaml/buffer.cmx
 lib/ocaml/buffer.p.cmx
 lib/ocaml/callback.cmx
 lib/ocaml/callback.p.cmx
+lib/ocaml/camlinternalMod.cmx
+lib/ocaml/camlinternalMod.p.cmx
 lib/ocaml/camlinternalOO.cmx
 lib/ocaml/camlinternalOO.p.cmx
 lib/ocaml/camlp4/argl.cmx
@@ -169,6 +171,7 @@ lib/ocaml/labltk/clipboard.cmx
 lib/ocaml/labltk/dialog.cmx
 lib/ocaml/labltk/encoding.cmx
 lib/ocaml/labltk/entry.cmx
+lib/ocaml/labltk/fileevent.cmx
 lib/ocaml/labltk/fileselect.cmx
 lib/ocaml/labltk/focus.cmx
 lib/ocaml/labltk/font.cmx
@@ -197,18 +200,24 @@ lib/ocaml/labltk/pack.cmx
 lib/ocaml/labltk/palette.cmx
 lib/ocaml/labltk/pixmap.cmx
 lib/ocaml/labltk/place.cmx
+lib/ocaml/labltk/protocol.cmx
 lib/ocaml/labltk/radiobutton.cmx
+lib/ocaml/labltk/rawwidget.cmx
 lib/ocaml/labltk/scale.cmx
 lib/ocaml/labltk/scrollbar.cmx
 lib/ocaml/labltk/selection.cmx
 lib/ocaml/labltk/shell.cmx
 lib/ocaml/labltk/text.cmx
+lib/ocaml/labltk/textvariable.cmx
+lib/ocaml/labltk/timer.cmx
 lib/ocaml/labltk/tk.cmx
 lib/ocaml/labltk/tkanim.a
 lib/ocaml/labltk/tkanim.cmxa
+lib/ocaml/labltk/tkthread.o
 lib/ocaml/labltk/tkvars.cmx
 lib/ocaml/labltk/tkwait.cmx
 lib/ocaml/labltk/toplevel.cmx
+lib/ocaml/labltk/widget.cmx
 lib/ocaml/labltk/winfo.cmx
 lib/ocaml/labltk/wm.cmx
 lib/ocaml/lazy.cmx
@@ -281,7 +290,6 @@ lib/ocaml/string.cmx
 lib/ocaml/string.p.cmx
 lib/ocaml/stringLabels.cmx
 lib/ocaml/stringLabels.p.cmx
-lib/ocaml/string_misc.cmx
 lib/ocaml/sys.cmx
 lib/ocaml/sys.p.cmx
 lib/ocaml/threads/condition.cmx

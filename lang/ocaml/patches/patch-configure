@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.8 2005/05/28 20:55:45 avsm Exp $
---- configure.orig	Mon Jan 24 08:22:46 2005
-+++ configure	Sat May 28 13:04:41 2005
-@@ -563,6 +563,7 @@ case "$host" in
+$OpenBSD: patch-configure,v 1.9 2006/05/28 15:28:54 avsm Exp $
+--- configure.orig	Thu Mar 30 11:00:19 2006
++++ configure	Tue May  2 12:02:42 2006
+@@ -566,6 +566,7 @@ case "$host" in
    alpha*-*-freebsd*)            arch=alpha; system=freebsd;;
    alpha*-*-netbsd*)             arch=alpha; system=netbsd;;
    alpha*-*-openbsd*)            arch=alpha; system=openbsd;;
@@ -9,24 +9,25 @@ $OpenBSD: patch-configure,v 1.8 2005/05/28 20:55:45 avsm Exp $
    sparc*-*-sunos4.*)            arch=sparc; system=sunos;;
    sparc*-*-solaris2.*)          arch=sparc; system=solaris;;
    sparc*-*-*bsd*)               arch=sparc; system=bsd;;
-@@ -579,9 +580,11 @@ case "$host" in
-   hppa*-*-linux*)		arch=hppa; system=linux;;
+@@ -586,9 +587,11 @@ case "$host" in
+   hppa*-*-gnu*)                 arch=hppa; system=gnu;;
    powerpc-*-linux*)             arch=power; model=ppc; system=elf;;
    powerpc-*-netbsd*)            arch=power; model=ppc; system=bsd;;
 +  powerpc-*-openbsd*)           arch=power; model=ppc; system=bsd;;
    powerpc-*-rhapsody*)          arch=power; model=ppc; system=rhapsody;;
    powerpc-*-darwin*)            arch=power; model=ppc; system=rhapsody;;
    arm*-*-linux*)                arch=arm; system=linux;;
-+  zaurus*-*-openbsd*)		arch=arm; system=openbsd;;
++  zaurus*-*-openbsd*)           arch=arm; system=openbsd;;
+   arm*-*-gnu*)                  arch=arm; system=gnu;;
    ia64-*-linux*)                arch=ia64; system=linux;;
-   ia64-*-freebsd*)              arch=ia64; system=freebsd;;
-   x86_64-*-linux*)              arch=amd64; system=linux;;
-@@ -651,8 +654,12 @@ esac
+   ia64-*-gnu*)                  arch=ia64; system=gnu;;
+@@ -664,9 +667,13 @@ esac
  cc_profile='-pg'
  case "$arch,$model,$system" in
    alpha,*,digital) profiling='prof';;
 +  alpha,*,openbsd) profiling='prof';;
    i386,*,linux_elf) profiling='prof';;
+   i386,*,gnu) profiling='prof';;
    i386,*,bsd_elf) profiling='prof';;
 +  amd64,*,openbsd) profiling='prof';;
 +  power,*,bsd) profiling='prof';;
@@ -34,14 +35,3 @@ $OpenBSD: patch-configure,v 1.8 2005/05/28 20:55:45 avsm Exp $
    sparc,*,solaris)
      profiling='prof'
      case "$nativecc" in gcc*) ;; *) cc_profile='-xpg';; esac;;
-@@ -683,10 +690,6 @@ case "$host" in
-           echo "objcopy and nm found in $d"
-           if test `$d/objcopy --help | grep -s -c 'redefine-sym'` -eq 0; then
-             echo "$d/objcopy does not support option --redefine-sym, discarded"
--            continue;
--          fi
--          if test `$d/nm --version | grep -s -c 'GNU nm'` -eq 0; then
--            echo "$d/nm is not from GNU binutils, discarded"
-             continue;
-           fi
-           binutils_objcopy="$d/objcopy"

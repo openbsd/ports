@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2005/09/23 14:23:42 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.16 2006/05/28 15:28:54 avsm Exp $
 bin/camlp4
 bin/camlp4o
 bin/camlp4r
@@ -19,6 +19,7 @@ bin/ocamlrun
 bin/ocamlyacc
 bin/ocpp
 lib/ocaml/
+lib/ocaml/Makefile.config
 lib/ocaml/addlabels
 lib/ocaml/arg.cmi
 lib/ocaml/arg.ml
@@ -58,6 +59,9 @@ lib/ocaml/caml/printexc.h
 lib/ocaml/caml/signals.h
 lib/ocaml/camlheader
 lib/ocaml/camlheader_ur
+lib/ocaml/camlinternalMod.cmi
+lib/ocaml/camlinternalMod.ml
+lib/ocaml/camlinternalMod.mli
 lib/ocaml/camlinternalOO.cmi
 lib/ocaml/camlinternalOO.ml
 lib/ocaml/camlinternalOO.mli
@@ -383,6 +387,9 @@ lib/ocaml/labltk/tkanim.cma
 lib/ocaml/labltk/tkanim.cmi
 lib/ocaml/labltk/tkanim.mli
 lib/ocaml/labltk/tkcompiler
+lib/ocaml/labltk/tkthread.cmi
+lib/ocaml/labltk/tkthread.cmo
+lib/ocaml/labltk/tkthread.mli
 lib/ocaml/labltk/tkvars.cmi
 lib/ocaml/labltk/tkvars.mli
 lib/ocaml/labltk/tkwait.cmi
@@ -614,6 +621,7 @@ lib/ocaml/weak.mli
 @man man/man3/Bigarray.Genarray.3o
 @man man/man3/Buffer.3o
 @man man/man3/Callback.3o
+@man man/man3/CamlinternalMod.3o
 @man man/man3/CamlinternalOO.3o
 @man man/man3/Char.3o
 @man man/man3/Complex.3o
@@ -703,6 +711,7 @@ share/doc/ocaml/html/libref/Bigarray.Genarray.html
 share/doc/ocaml/html/libref/Bigarray.html
 share/doc/ocaml/html/libref/Buffer.html
 share/doc/ocaml/html/libref/Callback.html
+share/doc/ocaml/html/libref/CamlinternalMod.html
 share/doc/ocaml/html/libref/CamlinternalOO.html
 share/doc/ocaml/html/libref/Char.html
 share/doc/ocaml/html/libref/Complex.html
@@ -777,7 +786,6 @@ share/doc/ocaml/html/libref/StringLabels.html
 share/doc/ocaml/html/libref/Sys.html
 share/doc/ocaml/html/libref/Thread.html
 share/doc/ocaml/html/libref/ThreadUnix.html
-share/doc/ocaml/html/libref/Tk.html
 share/doc/ocaml/html/libref/Unix.LargeFile.html
 share/doc/ocaml/html/libref/Unix.html
 share/doc/ocaml/html/libref/UnixLabels.LargeFile.html
@@ -808,6 +816,7 @@ share/doc/ocaml/html/libref/type_Bigarray.Genarray.html
 share/doc/ocaml/html/libref/type_Bigarray.html
 share/doc/ocaml/html/libref/type_Buffer.html
 share/doc/ocaml/html/libref/type_Callback.html
+share/doc/ocaml/html/libref/type_CamlinternalMod.html
 share/doc/ocaml/html/libref/type_CamlinternalOO.html
 share/doc/ocaml/html/libref/type_Char.html
 share/doc/ocaml/html/libref/type_Complex.html
@@ -882,7 +891,6 @@ share/doc/ocaml/html/libref/type_StringLabels.html
 share/doc/ocaml/html/libref/type_Sys.html
 share/doc/ocaml/html/libref/type_Thread.html
 share/doc/ocaml/html/libref/type_ThreadUnix.html
-share/doc/ocaml/html/libref/type_Tk.html
 share/doc/ocaml/html/libref/type_Unix.LargeFile.html
 share/doc/ocaml/html/libref/type_Unix.html
 share/doc/ocaml/html/libref/type_UnixLabels.LargeFile.html

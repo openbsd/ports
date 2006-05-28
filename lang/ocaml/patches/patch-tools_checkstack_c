@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_checkstack_c,v 1.1 2003/12/31 17:05:28 sturm Exp $
---- tools/checkstack.c.orig	2003-09-30 15:41:37.000000000 +0200
-+++ tools/checkstack.c	2003-09-30 15:42:58.000000000 +0200
-@@ -34,7 +34,8 @@ int main(int argc, char ** argv)
+$OpenBSD: patch-tools_checkstack_c,v 1.2 2006/05/28 15:28:54 avsm Exp $
+--- tools/checkstack.c.orig	Mon Jan 23 17:36:47 2006
++++ tools/checkstack.c	Tue May  2 11:34:56 2006
+@@ -35,7 +35,8 @@ int main(int argc, char ** argv)
               "Under sh, bash, zsh:  ulimit -s %lu\n"
               "Under csh, tcsh:      limit stacksize %lu\n\n",
               (unsigned long) (limit.rlim_cur / 1024),
