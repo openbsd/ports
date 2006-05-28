@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD-markers,v 1.74 2006/04/04 14:36:53 moritz Exp $
+# $OpenBSD: OpenBSD-markers,v 1.75 2006/05/28 22:45:42 ray Exp $
 #
 # THE PKGNAME MUST BE BUMPED FOR THE FOLLOWING PORTS WHEN YOU COMMIT
 # TO THIS FILE:
@@ -20,6 +20,7 @@
 40.033779	-105.250051	"millert"	# Todd C. Miller
 40.115		-88.02		"drahn"		# Dale Rahn
 40.4		-79.7		"jaredy"	# Jared Yanovich
+40.721300	-73.858770	"ray"		# Ray Lai
 42.1230		-88.261		"jcs"		# Joshua Stein
 42.150962	-88.030436	"jolan"		# Jolan Luff
 42.2731		-83.782		"aaron"		# Aaron Campbell
