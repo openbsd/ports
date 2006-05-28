@@ -1,0 +1,5 @@
+IPython provides a replacement for the interactive Python interpreter
+with extra functionality, including persistent input history,
+readline-based name completion and comprehensive object
+introspection. It also allows easy access to the pdb debugger and
+Python profiler, as well as the system shell.

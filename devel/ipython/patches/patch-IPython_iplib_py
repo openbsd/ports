@@ -1,0 +1,24 @@
+$OpenBSD: patch-IPython_iplib_py,v 1.1.1.1 2006/05/28 21:59:20 steven Exp $
+--- IPython/iplib.py.orig	Mon Jan 30 07:34:22 2006
++++ IPython/iplib.py	Sun May 28 15:49:04 2006
+@@ -576,15 +576,15 @@ class InteractiveShell(object,Magic):
+                           # long ls
+                           'll ls -lF',
+                           # color ls
+-                          'lc ls -F -o --color',
++                          #'lc ls -F -o --color',
+                           # ls normal files only
+-                          'lf ls -F -o --color %l | grep ^-',
++                          'lf ls -F -l %l | grep ^-',
+                           # ls symbolic links 
+-                          'lk ls -F -o --color %l | grep ^l',
++                          'lk ls -F -l %l | grep ^l',
+                           # directories or links to directories,
+-                          'ldir ls -F -o --color %l | grep /$',
++                          'ldir ls -F -l %l | grep /$',
+                           # things which are executable
+-                          'lx ls -F -o --color %l | grep ^-..x',
++                          'lx ls -F -l %l | grep *$',
+                           )
+         elif os.name in ['nt','dos']:
+             auto_alias = ('dir dir /on', 'ls dir /on',
