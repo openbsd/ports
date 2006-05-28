@@ -1,0 +1,9 @@
+$OpenBSD: patch-bin_CilConfig_pm_in,v 1.1 2006/05/28 15:44:14 avsm Exp $
+--- bin/CilConfig.pm.in.orig	Sat May 27 19:27:29 2006
++++ bin/CilConfig.pm.in	Sat May 27 19:27:35 2006
+@@ -1,4 +1,4 @@
+-
++use lib "@CILLIBDIR@";
+ $::archos    = "@ARCHOS@";
+ $::cc        = "@CC@";
+ $::cilhome   = "@CILHOME@";

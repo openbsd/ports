@@ -1,26 +1,26 @@
-$OpenBSD: patch-configure_in,v 1.5 2005/10/16 15:52:31 avsm Exp $
---- configure.in.orig	Wed Jun  1 06:37:13 2005
-+++ configure.in	Sat Oct  8 02:22:16 2005
-@@ -395,6 +397,13 @@ case "$target" in
-     ARCHOS=x86_LINUX
-     ;;
+$OpenBSD: patch-configure_in,v 1.6 2006/05/28 15:44:14 avsm Exp $
+--- configure.in.orig	Sun May 21 05:14:15 2006
++++ configure.in	Sat May 27 18:33:20 2006
+@@ -85,7 +85,7 @@ binaryExists() {
+ # this specifies the root of the source tree; it's just the
+ # directory where ./configure runs, except on cygwin, which
+ # overrides this below
+-CILHOME=`pwd`
++CILHOME=${LOCALBASE}
  
-+   # openbsd
-+  *openbsd*)
-+    AC_MSG_RESULT(configuring for OpenBSD)
+ DEFAULT_COMPILER=_GNUCC
+ DEFAULT_CIL_MODE=GNUCC
+@@ -391,6 +391,13 @@ case "$target" in
+   # linux
+   *86*linux*|*86*freebsd*|*86*openbsd*|*86*darwin*)
+     AC_MSG_RESULT(configuring for linux/x86)
 +
 +    ARCHOS=x86_LINUX
 +    ;;
 +
-   # Mac OS X
-   *powerpc*darwin*)
-     AC_MSG_RESULT(configuring for powerpc/darwin, which we treat like linux/x86)
-@@ -423,7 +432,7 @@ case "$target" in
-     ])
-     ;;
- esac
--CILHOME=$CCUREDHOME
-+CILHOME=${LOCALBASE}
++   # openbsd
++  *openbsd*)
++    AC_MSG_RESULT(configuring for OpenBSD)
  
- # Make the object directory if not already present
- AC_CHECK_FILE(obj/$ARCHOS,, AC_MSG_RESULT(creating obj/$ARCHOS);
+     ARCHOS=x86_LINUX
+     ;;

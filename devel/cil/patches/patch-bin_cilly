@@ -1,7 +1,7 @@
-$OpenBSD: patch-bin_cilly,v 1.1.1.1 2004/06/20 16:08:28 avsm Exp $
---- bin/cilly.orig	2004-06-20 16:57:52.000000000 +0100
-+++ bin/cilly	2004-06-20 16:58:08.000000000 +0100
-@@ -60,7 +60,7 @@ use File::Basename;
+$OpenBSD: patch-bin_cilly,v 1.2 2006/05/28 15:44:14 avsm Exp $
+--- bin/cilly.orig	Sun May 21 05:14:15 2006
++++ bin/cilly	Sat May 27 19:23:05 2006
+@@ -61,7 +61,7 @@ use File::Basename;
  use strict;
  BEGIN {
      @CilCompiler::ISA = qw(Cilly);

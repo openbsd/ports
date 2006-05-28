@@ -1,4 +1,4 @@
-(* $OpenBSD: nullint.ml,v 1.1 2004/06/21 18:53:12 avsm Exp $ *)
+(* $OpenBSD: nullint.ml,v 1.2 2006/05/28 15:44:14 avsm Exp $ *)
 (* check for NULL/int comparisons - it does false positive at the moment *)
 
 open Pretty
@@ -24,17 +24,15 @@ class grepNullInt = object
       | BinOp(Le, le, re, _)
       | BinOp(Ge, le, re, _)
       | BinOp(Eq, le, re, _) ->
-	  let tyle = (typeOf le) in
-	  let tyre = (typeOf re) in
-	    checkNullInt le re;
-	    checkNullInt re le;
-	    SkipChildren
+          checkNullInt le re;
+          checkNullInt re le;
+          SkipChildren
       | _ -> SkipChildren
 end
 
 let feature : featureDescr = 
   { fd_name = "nullint";
-    fd_enabled = Cilutil.nullInt;
+    fd_enabled = ref false;
     fd_description = "check for NULL and int comparisons";
     fd_extraopt = [];
     fd_doit = 

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2005/10/18 19:09:46 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2006/05/28 15:44:14 avsm Exp $
 
 # until tested on others, even though bytecode is produced
 ONLY_FOR_ARCHS=	i386 amd64 macppc
 
 COMMENT=	"framework for analysis and transformation of C"
 
-DISTNAME=	cil-1.3.3
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	cil-1.3.5
+PKGNAME=	${DISTNAME}
 CATEGORIES=	devel lang
 MASTER_SITES=	http://manju.cs.berkeley.edu/cil/distrib/
 
@@ -23,16 +23,17 @@ WANTLIB=		c curses m pthread
 MODULES=	lang/ocaml
 WRKDIST=	${WRKDIR}/cil
 
+OURFILES=	nullint kerneltrace randomvars
+
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.52
 USE_GMAKE= yes
 ALL_TARGET= setup
+CONFIGURE_ARGS= EXTRAFEATURES="${OURFILES}"
 P5SITE= libdata/perl5/site_perl
 P5INST= ${PREFIX}/${P5SITE}
 SUBST_VARS+= P5SITE
 GCC=/usr/bin/gcc  # cant use CC in case it's set to cilly
-
-OURFILES=	nullint kerneltrace randomvars
 
 post-extract:
 .for i in ${OURFILES}
@@ -44,15 +45,15 @@ pre-install:
 	${INSTALL_DATA_DIR} ${P5INST}/CIL
 
 post-install:
-	sed -e 's,@CILHOME@/lib,${LOCALBASE}/${P5SITE}/CIL,g' \
-	     -e 's,@CILHOME@,${LOCALBASE},g' \
+	sed -e 's,@CILHOME@,${LOCALBASE},g' \
+	     -e 's,@CILLIBDIR@,${LOCALBASE}/${P5SITE}/CIL,g' \
 	     -e 's,@ARCHOS@,libexec/cil,g' \
              -e 's,@DEFAULT_CIL_MODE@,GNUCC,g' \
 	     -e 's,@CC@,${GCC},g' < \
 	    ${WRKSRC}/bin/CilConfig.pm.in > ${P5INST}/CilConfig.pm
 
-	${INSTALL_PROGRAM} ${WRKBUILD}/bin/cilly ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKBUILD}/bin/patcher ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKBUILD}/bin/cilly ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKBUILD}/bin/patcher ${PREFIX}/bin
 
 .for i in Cilly KeptFile OutputFile TempFile
 	${INSTALL_DATA} ${WRKSRC}/lib/${i}.pm ${P5INST}/CIL

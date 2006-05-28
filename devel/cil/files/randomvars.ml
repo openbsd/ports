@@ -1,4 +1,4 @@
-(* $OpenBSD: randomvars.ml,v 1.1 2005/05/27 21:46:23 avsm Exp $ *)
+(* $OpenBSD: randomvars.ml,v 1.2 2006/05/28 15:44:14 avsm Exp $ *)
 (*
  * Copyright (c) 2005 Anil Madhavapeddy <anil@recoil.org>
  *
@@ -14,7 +14,7 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *
- * $Id: randomvars.ml,v 1.1 2005/05/27 21:46:23 avsm Exp $
+ * $Id: randomvars.ml,v 1.2 2006/05/28 15:44:14 avsm Exp $
  *)
 
 (* introduce log messages to trace kernel messages *)
@@ -57,7 +57,7 @@ let randomvars f =
 
 let feature : featureDescr = 
   { fd_name = "randomvars";
-    fd_enabled = Cilutil.randomVars;
+    fd_enabled = ref false;
     fd_description = "randomize values of uninitialized local variables";
     fd_extraopt = [];
     fd_doit = (function (f: file) -> randomvars f);

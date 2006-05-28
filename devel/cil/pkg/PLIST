@@ -1,23 +1,32 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/05/09 13:52:38 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2006/05/28 15:44:14 avsm Exp $
 bin/cilly
 bin/patcher
 lib/cil/
+lib/cil/alpha.cmi
+lib/cil/bitmap.cmi
 lib/cil/cabs2cil.cmi
 lib/cil/cabsvisit.cmi
 lib/cil/callgraph.cmi
 lib/cil/canonicalize.cmi
+lib/cil/cfg.cmi
 lib/cil/check.cmi
 lib/cil/cil.a
 lib/cil/cil.cma
 lib/cil/cil.cmi
 lib/cil/cil.cmxa
+lib/cil/cillower.cmi
+lib/cil/ciloptions.cmi
 lib/cil/clexer.cmi
 lib/cil/clist.cmi
+lib/cil/dataflow.cmi
 lib/cil/dataslicing.cmi
+lib/cil/dominators.cmi
 lib/cil/errormsg.cmi
 lib/cil/escape.cmi
 lib/cil/formatcil.cmi
 lib/cil/frontc.cmi
+lib/cil/growArray.cmi
+lib/cil/inthash.cmi
 lib/cil/libperfcount.a
 lib/cil/logcalls.cmi
 lib/cil/mergecil.cmi
@@ -28,8 +37,8 @@ lib/cil/pretty.cmi
 lib/cil/ptranal.cmi
 lib/cil/rmtmps.cmi
 lib/cil/setp.cmi
+lib/cil/ssa.cmi
 lib/cil/stats.cmi
-lib/cil/steensgaard.cmi
 lib/cil/trace.cmi
 lib/cil/uref.cmi
 lib/cil/util.cmi
