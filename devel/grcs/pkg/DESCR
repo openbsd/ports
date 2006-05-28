@@ -1,0 +1,9 @@
+GNU versions of rcs utilities.  The Revision Control System (RCS)
+manages multiple revisions of files.  RCS automates the storing,
+retrieval, logging, identification, and merging of revisions.  RCS is
+useful for text that is revised frequently, including source code,
+programs, documentation, graphics, papers, and form letters.
+
+Note that this port will install these utilities with a 'g' prefix,
+e.g. grcs, but the documentation will refer to them without the
+'g' prefix.

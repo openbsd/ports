@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/28 07:03:39 jolan Exp $
+bin/gci
+bin/gco
+bin/gident
+bin/gmerge
+bin/grcs
+bin/grcsclean
+bin/grcsdiff
+bin/grcsmerge
+bin/grlog
+@man man/man1/gci.1
+@man man/man1/gco.1
+@man man/man1/gident.1
+@man man/man1/gmerge.1
+@man man/man1/grcs.1
+@man man/man1/grcsclean.1
+@man man/man1/grcsdiff.1
+@man man/man1/grcsmerge.1
+@man man/man1/grlog.1
