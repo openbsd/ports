@@ -1,4 +1,4 @@
-# $OpenBSD: java.port.mk,v 1.4 2006/03/20 14:42:37 kurt Exp $
+# $OpenBSD: java.port.mk,v 1.5 2006/05/28 00:14:39 kurt Exp $
 
 # Set MODJAVA_VER to x.y or x.y+ based on the version
 # of the jdk needed for the port. x.y  means any x.y jdk.
@@ -21,7 +21,21 @@ MODJAVA_JRERUN?=no
 #   RUN_DEPENDS for all jdk's and jre's that can run
 #   the port.
 
-.if ${MODJAVA_VER:S/+//} == "1.3"
+.if ${MACHINE_ARCH} == "amd64" && (${MODJAVA_VER} == "1.3+" || ${MODJAVA_VER} == "1.4+")
+# this is a special case for amd64. since amd64 doesn't have 1.3 or 1.4,
+# but 1.5 can run any 1.3+ or 1.4+ port, so special case them to run
+# on 1.5+ for amd64 
+ONLY_FOR_ARCHS?=	amd64
+JAVA_HOME=		${LOCALBASE}/jdk-1.5.0
+.  if ${NO_BUILD:L} != "yes"
+BUILD_DEPENDS+=		:jdk-1.5.0:devel/jdk/1.5
+.  endif
+.  if ${MODJAVA_JRERUN:L} == "yes"
+RUN_DEPENDS+=		:jdk->=1.5.0|jre->=1.5.0:devel/jdk/1.5
+.  else
+RUN_DEPENDS+=		:jdk->=1.5.0:devel/jdk/1.5
+.  endif
+.elif ${MODJAVA_VER:S/+//} == "1.3"
 ONLY_FOR_ARCHS?=	arm i386 powerpc sparc
 JAVA_HOME=		${LOCALBASE}/jdk-1.3.1
 .  if ${NO_BUILD:L} != "yes"
@@ -59,7 +73,7 @@ RUN_DEPENDS+=	:${_MODJAVA_RUNDEP:S/-/->=/g}:devel/jdk/1.4
 RUN_DEPENDS+=	:${_MODJAVA_RUNDEP}:devel/jdk/1.4
 .  endif
 .elif ${MODJAVA_VER:S/+//} == "1.5"
-ONLY_FOR_ARCHS?=	i386
+ONLY_FOR_ARCHS?=	i386 amd64
 JAVA_HOME=		${LOCALBASE}/jdk-1.5.0
 .  if ${NO_BUILD:L} != "yes"
 BUILD_DEPENDS+=		:jdk-1.5.0:devel/jdk/1.5
