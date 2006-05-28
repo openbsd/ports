@@ -1,0 +1,15 @@
+$OpenBSD: patch-tiff_tiffread_c,v 1.1 2006/05/28 15:31:46 avsm Exp $
+--- tiff/tiffread.c.orig	Wed May 24 17:20:14 2006
++++ tiff/tiffread.c	Wed May 24 17:20:22 2006
+@@ -28,11 +28,6 @@
+ 
+ #include <tiffio.h>
+ 
+-#undef int16
+-#undef uint16
+-#undef int32
+-#undef uint32
+-
+ extern value *imglib_error;
+ 
+ value open_tiff_file_for_read( name )
