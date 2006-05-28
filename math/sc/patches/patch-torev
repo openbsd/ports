@@ -1,8 +1,8 @@
-$OpenBSD: patch-torev,v 1.1 2003/06/16 20:19:29 pvalchev Exp $
---- torev.orig	Fri Mar  7 12:47:43 2003
-+++ torev	Fri Mar  7 12:48:16 2003
+$OpenBSD: patch-torev,v 1.2 2006/05/28 21:21:51 weingart Exp $
+--- torev.orig	Thu May  4 10:04:39 2006
++++ torev	Thu May  4 10:05:46 2006
 @@ -1,4 +1,5 @@
- REVISION=`sed -e '/Revision/!D' -e 's/.*$Revision: 1.1 $.*/\1/' version.c` 
+ REVISION=`sed -e '/Revision/!D' -e 's/.*$Revision: 1.2 $.*/\1/' version.c` 
  sed -e s/pname/$name/g -e s/PNAME/$NAME/g \
  	-e "s%#LIBDIR#%$LIBDIR%g" \
 -	-e "s/#REVISION#/$REVISION/" $1

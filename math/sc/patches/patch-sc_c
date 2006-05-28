@@ -1,29 +1,21 @@
-$OpenBSD: patch-sc_c,v 1.1 2002/08/06 00:45:17 pvalchev Exp $
---- sc.c.orig	Wed Nov  7 18:12:02 2001
-+++ sc.c	Mon Aug  5 17:47:16 2002
-@@ -16,7 +16,6 @@
- #include <signal.h>
- #include <curses.h>
- #include <ctype.h>
--#include <getopt.h>
- 
- #ifdef BSD42
- #include <strings.h>
-@@ -262,7 +261,7 @@ main (int argc, char  **argv)
+$OpenBSD: patch-sc_c,v 1.2 2006/05/28 21:21:51 weingart Exp $
+--- sc.c.orig	Thu May  4 10:10:28 2006
++++ sc.c	Thu May  4 10:10:40 2006
+@@ -274,7 +274,7 @@ main (int argc, char  **argv)
      else
  	progname = argv[0];
  
--    while ((c = getopt(argc, argv, "axmoncrCReP:vq")) != EOF) {
-+    while ((c = getopt(argc, argv, "axmoncrCReP:vq")) != -1) {
+-    while ((c = getopt(argc, argv, "axmoncrCReP:W:vq")) != EOF) {
++    while ((c = getopt(argc, argv, "axmoncrCReP:W:vq")) != -1) {
      	switch (c) {
  	    case 'a':
  		    skipautorun = 1;
-@@ -403,7 +402,7 @@ main (int argc, char  **argv)
- 
- 	optind = 0;
+@@ -425,7 +425,7 @@ main (int argc, char  **argv)
+ #endif
+ 	optind = 1;
  	stopdisp();
--	while ((o = getopt(argc, argv, "xmoncrCReP:vq")) != EOF) {
-+	while ((o = getopt(argc, argv, "xmoncrCReP:vq")) != -1) {
+-	while ((o = getopt(argc, argv, "axmoncrCReP:W:vq")) != EOF) {
++	while ((o = getopt(argc, argv, "axmoncrCReP:W:vq")) != -1) {
  	    switch (o) {
  		case 'v':
  		    Vopt = 1;

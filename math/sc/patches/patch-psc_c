@@ -1,15 +1,7 @@
-$OpenBSD: patch-psc_c,v 1.1 2002/08/06 00:45:17 pvalchev Exp $
---- psc.c.orig	Mon Nov  5 17:40:27 2001
-+++ psc.c	Mon Aug  5 17:47:42 2002
-@@ -22,7 +22,6 @@ char *rev = "$Revision: 1.1 $";
- #include <ctype.h>
- #include <stdio.h>
- #include <stdlib.h>
--#include <getopt.h>
- #include "sc.h"
- 
- #define END	0
-@@ -73,7 +72,7 @@ main(int argc, char **argv)
+$OpenBSD: patch-psc_c,v 1.2 2006/05/28 21:21:51 weingart Exp $
+--- psc.c.orig	Thu May  4 10:08:27 2006
++++ psc.c	Thu May  4 10:08:34 2006
+@@ -73,7 +73,7 @@ main(int argc, char **argv)
      register char *p;
  
      progname = argv[0];

@@ -1,0 +1,16 @@
+$OpenBSD: patch-abbrev_c,v 1.1 2006/05/28 21:21:51 weingart Exp $
+--- abbrev.c.orig	Tue Dec 18 12:22:10 2001
++++ abbrev.c	Fri May  5 11:06:05 2006
+@@ -43,10 +43,10 @@ add_abbr(char *string)
+ 	    struct abbrev *a;
+ 	    struct abbrev *nexta;
+ 
+-	    (void) strcpy(px, "| ");
++	    (void) strlcpy(px, "| ", sizeof px);
+ 	    if (!(pager = getenv("PAGER")))
+ 		pager = DFLT_PAGER;
+-	    (void) strcat(px, pager);
++	    (void) strlcat(px, pager, sizeof px);
+ 	    f = openfile(px, &pid, NULL);
+ 	    if (!f) {
+ 		error("Can't open pipe to %s", pager);
