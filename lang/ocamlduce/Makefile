@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/05/29 03:55:33 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2006/05/29 21:39:10 avsm Exp $
 
 COMMENT=	"XML extension types for Objective Caml"
 CATEGORIES=	lang textproc
@@ -25,7 +25,7 @@ FAKE_FLAGS=	CAMLC=ocamlc${MODOCAML_NATIVE:S,Yes,.opt,:S,No,,}
 ALL_TARGET=	all ${MODOCAML_NATIVE:S,Yes,opt,:S,No,,}
 
 BUILD_DEPENDS=	::sysutils/findlib
-RUN_DPENDS=	::sysutils/findlib
+RUN_DEPENDS=	::sysutils/findlib
 
 pre-fake:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/site-lib
