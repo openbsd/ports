@@ -1,0 +1,30 @@
+$OpenBSD: patch-panel-plugin_scrollbox_c,v 1.1 2006/05/29 07:58:51 jolan Exp $
+--- panel-plugin/scrollbox.c.orig	Mon Feb 28 09:25:19 2005
++++ panel-plugin/scrollbox.c	Mon May 29 02:54:43 2006
+@@ -17,7 +17,7 @@ enum {
+ void free_label(struct label *lbl)
+ {
+         if (lbl->pixmap)
+-                g_free(lbl->pixmap);
++                g_object_unref(lbl->pixmap);
+         if (lbl->msg)
+                 g_free(lbl->msg);
+ }
+@@ -305,7 +305,7 @@ gtk_scrollbox_finalize(GObject *gobject)
+                 {
+                         struct label *lbl = (struct label*)g_ptr_array_index(self->labels, i); 
+ 
+-                        g_free(lbl->pixmap);
++                        g_object_unref(lbl->pixmap);
+                         g_free(lbl->msg);
+                 }
+                 g_ptr_array_free(self->labels, TRUE);
+@@ -337,7 +337,7 @@ void redraw_labels (GtkWidget *widget, G
+                 newpixmap = make_pixmap(self, lbl->msg);
+ 
+                 if (lbl->pixmap)
+-                        g_free(lbl->pixmap);
++                        g_object_unref(lbl->pixmap);
+ 
+                 lbl->pixmap = newpixmap;
+         }
