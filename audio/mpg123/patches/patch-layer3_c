@@ -1,6 +1,6 @@
-$OpenBSD: patch-layer3_c,v 1.3 2004/09/15 20:38:07 brad Exp $
---- layer3.c.orig	Wed Apr 21 11:25:18 1999
-+++ layer3.c	Wed Sep 15 16:22:35 2004
+$OpenBSD: patch-layer3_c,v 1.4 2006/05/29 19:34:59 bernd Exp $
+--- layer3.c.orig	Wed Apr 21 17:25:18 1999
++++ layer3.c	Mon May 29 10:55:42 2006
 @@ -608,12 +608,21 @@ static int pretab2[22] = {0,0,0,0,0,0,0,
   * Dequantize samples (includes huffman decoding)
   */
@@ -83,3 +83,15 @@ $OpenBSD: patch-layer3_c,v 1.3 2004/09/15 20:38:07 brad Exp $
            num -= h->linbits+1;
            mask <<= h->linbits;
            if(mask < 0)
+@@ -1119,7 +1148,10 @@ maybe still wrong??? (copy 12 to 13?) */
+       } 
+       else { /* ((gr_info->block_type != 2)) */
+         int sfb = gr_info->maxbandl;
+-        int is_p,idx = bi->longIdx[sfb];
++        int is_p,idx;
++        if (sfb > 21)
++                return;
++        idx = bi->longIdx[sfb];
+         for ( ; sfb<21; sfb++) {
+           int sb = bi->longDiff[sfb];
+           is_p = scalefac[sfb]; /* scale: 0-15 */
