@@ -1,0 +1,25 @@
+$OpenBSD: patch-sudoku_c,v 1.1.1.1 2006/05/29 19:32:08 alek Exp $
+--- sudoku.c.orig	Mon Jul 25 03:13:53 2005
++++ sudoku.c	Mon May 29 16:05:37 2006
+@@ -44,10 +44,10 @@
+ 
+ /* Default file locations */
+ #ifndef TEMPLATE
+-#define TEMPLATE "/usr/lib/sudoku/template"
++#define TEMPLATE "!!PREFIX!!/share/sudoku/template"
+ #endif
+ #ifndef PRECANNED
+-#define PRECANNED "/usr/lib/sudoku/precanned"
++#define PRECANNED "!!PREFIX!!/share/sudoku/precanned"
+ #endif
+ 
+ static const char * program;        /* argv[0] */
+@@ -1837,7 +1837,7 @@
+ 
+     /* Read character input (raw processing mode) */
+     i = strlen( userfile );
+-    while( '\r' != ( ch = getkey( ) ) )
++    while( '\n' != ( ch = getkey( ) ) )
+     {
+         if( 0x08 == ch || VKEY_LEFT == ch ) /* destructive backspace */
+         {

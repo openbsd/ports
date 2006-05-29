@@ -1,0 +1,20 @@
+$OpenBSD: patch-sudoku_6,v 1.1.1.1 2006/05/29 19:32:08 alek Exp $
+--- sudoku.6.orig	Mon May 29 16:06:27 2006
++++ sudoku.6	Mon May 29 16:06:58 2006
+@@ -198,13 +198,13 @@
+ program.
+ .SH FILES
+ .TP
+-.BI /usr/lib/sudoku/template
++.BI !!PREFIX!!/share/sudoku/template
+ Template file for generating new sudoku boards.
+ .TP
+-.BI /usr/lib/sudoku/precanned
++.BI !!PREFIX!!/share/sudoku/precanned
+ Optional file, containing `precanned' sudoku boards.
+ .SH "FILE FORMATS"
+-.SS /usr/lib/sudoku/template
++.SS !!PREFIX!!/share/sudoku/template
+ The template file contains a sequence of patterns that are used for
+ generating new
+ .B sudoku
