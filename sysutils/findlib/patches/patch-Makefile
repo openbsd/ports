@@ -1,0 +1,58 @@
+$OpenBSD: patch-Makefile,v 1.1 2006/05/29 03:46:29 avsm Exp $
+--- Makefile.orig	Mon Jan 16 23:04:50 2006
++++ Makefile	Sun May 28 04:13:27 2006
+@@ -22,7 +22,7 @@ install:
+ 	$(MAKE) install-meta
+ 	cd src/findlib; $(MAKE) install-num-top
+ 	$(MAKE) install-config
+-	cp tools/safe_camlp4 $(OCAMLFIND_BIN)
++	cp tools/safe_camlp4 $(DESTDIR)$(OCAMLFIND_BIN)
+ 
+ uninstall:
+ 	$(MAKE) uninstall-doc
+@@ -62,32 +62,32 @@ findlib.conf: findlib.conf.in 
+ 
+ .PHONY: install-doc
+ install-doc:
+-	mkdir -p $(prefix)$(OCAMLFIND_MAN)/man1 $(prefix)$(OCAMLFIND_MAN)/man3 $(prefix)$(OCAMLFIND_MAN)/man5
+-	cp doc/ref-man/ocamlfind.1 $(prefix)$(OCAMLFIND_MAN)/man1
+-	cp doc/ref-man/META.5 doc/ref-man/site-lib.5 doc/ref-man/findlib.conf.5 $(prefix)$(OCAMLFIND_MAN)/man5
++	mkdir -p $(DESTDIR)$(prefix)$(OCAMLFIND_MAN)/man1 $(DESTDIR)$(prefix)$(OCAMLFIND_MAN)/man3 $(DESTDIR)$(prefix)$(OCAMLFIND_MAN)/man5
++	cp doc/ref-man/ocamlfind.1 $(DESTDIR)$(prefix)$(OCAMLFIND_MAN)/man1
++	cp doc/ref-man/META.5 doc/ref-man/site-lib.5 doc/ref-man/findlib.conf.5 $(DESTDIR)$(prefix)$(OCAMLFIND_MAN)/man5
+ 
+ .PHONY: uninstall-doc
+ uninstall-doc:
+-	rm -f $(prefix)$(OCAMLFIND_MAN)/man1/ocamlfind.1
+-	rm -f $(prefix)$(OCAMLFIND_MAN)/man3/Findlib.3
+-	rm -f $(prefix)$(OCAMLFIND_MAN)/man3/Topfind.3
+-	rm -f $(prefix)$(OCAMLFIND_MAN)/man5/META.5
+-	rm -f $(prefix)$(OCAMLFIND_MAN)/man5/site-lib.5
++	rm -f $(DESTDIR)$(prefix)$(OCAMLFIND_MAN)/man1/ocamlfind.1
++	rm -f $(DESTDIR)$(prefix)$(OCAMLFIND_MAN)/man3/Findlib.3
++	rm -f $(DESTDIR)$(prefix)$(OCAMLFIND_MAN)/man3/Topfind.3
++	rm -f $(DESTDIR)$(prefix)$(OCAMLFIND_MAN)/man5/META.5
++	rm -f $(DESTDIR)$(prefix)$(OCAMLFIND_MAN)/man5/site-lib.5
+ 
+ 
+ .PHONY: install-meta
+ install-meta:
+-	for x in `ls site-lib-src`; do if [ "$$x" != "CVS" -a -f "site-lib-src/$$x/META" ]; then mkdir -p $(prefix)$(OCAML_SITELIB)/$$x; cp site-lib-src/$$x/META $(prefix)$(OCAML_SITELIB)/$$x; fi; done
++	for x in `ls site-lib-src`; do if [ "$$x" != "CVS" -a -f "site-lib-src/$$x/META" ]; then mkdir -p $(DESTDIR)$(prefix)$(OCAML_SITELIB)/$$x; cp site-lib-src/$$x/META $(DESTDIR)$(prefix)$(OCAML_SITELIB)/$$x; fi; done
+ 
+ .PHONY: uninstall-meta
+ uninstall-meta:
+-	for x in `ls site-lib-src`; do if [ "$$x" != "CVS" ]; then rm -rf $(prefix)$(OCAML_SITELIB)/$$x; fi; done
++	for x in `ls site-lib-src`; do if [ "$$x" != "CVS" ]; then rm -rf $(DESTDIR)$(prefix)$(OCAML_SITELIB)/$$x; fi; done
+ 
+ .PHONY: install-config
+ install-config:
+-	mkdir -p `dirname $(prefix)$(OCAMLFIND_CONF)`
+-	@if [ -f $(prefix)$(OCAMLFIND_CONF) ]; then echo "!!! Keeping old $(prefix)$(OCAMLFIND_CONF) !!!"; fi
+-	test -f $(prefix)$(OCAMLFIND_CONF) || cp findlib.conf $(prefix)$(OCAMLFIND_CONF)
++	mkdir -p `dirname $(DESTDIR)$(prefix)$(OCAMLFIND_CONF)`
++	@if [ -f $(DESTDIR)$(prefix)$(OCAMLFIND_CONF) ]; then echo "!!! Keeping old $(DESTDIR)$(prefix)$(OCAMLFIND_CONF) !!!"; fi
++	test -f $(DESTDIR)$(prefix)$(OCAMLFIND_CONF) || cp findlib.conf $(DESTDIR)$(prefix)$(OCAMLFIND_CONF)
+ 
+ .PHONY: uninstall-config
+ uninstall-config:

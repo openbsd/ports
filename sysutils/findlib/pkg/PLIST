@@ -1,8 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/24 09:40:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2006/05/29 03:46:29 avsm Exp $
 bin/ocamlfind
+bin/safe_camlp4
 lib/ocaml/
 lib/ocaml/site-lib/
+lib/ocaml/site-lib/bigarray/
+lib/ocaml/site-lib/bigarray/META
+lib/ocaml/site-lib/camlp4/
+lib/ocaml/site-lib/camlp4/META
+lib/ocaml/site-lib/dbm/
+lib/ocaml/site-lib/dbm/META
+lib/ocaml/site-lib/dynlink/
+lib/ocaml/site-lib/dynlink/META
 lib/ocaml/site-lib/findlib/
+lib/ocaml/site-lib/findlib/META
 lib/ocaml/site-lib/findlib/Makefile.config
 lib/ocaml/site-lib/findlib/findlib.cma
 lib/ocaml/site-lib/findlib/findlib.cmi
@@ -16,16 +26,30 @@ lib/ocaml/site-lib/findlib/make_wizard
 lib/ocaml/site-lib/findlib/make_wizard.pattern
 lib/ocaml/site-lib/findlib/topfind.cmi
 lib/ocaml/site-lib/findlib/topfind.mli
+lib/ocaml/site-lib/graphics/
+lib/ocaml/site-lib/graphics/META
+lib/ocaml/site-lib/labltk/
+lib/ocaml/site-lib/labltk/META
+lib/ocaml/site-lib/num/
 lib/ocaml/site-lib/num-top/
+lib/ocaml/site-lib/num-top/META
 lib/ocaml/site-lib/num-top/num_top.cma
 lib/ocaml/site-lib/num-top/num_top.cmi
 lib/ocaml/site-lib/num-top/num_top_printers.cmi
+lib/ocaml/site-lib/num/META
+lib/ocaml/site-lib/stdlib/
+lib/ocaml/site-lib/stdlib/META
+lib/ocaml/site-lib/str/
+lib/ocaml/site-lib/str/META
+lib/ocaml/site-lib/threads/
+lib/ocaml/site-lib/threads/META
+lib/ocaml/site-lib/unix/
+lib/ocaml/site-lib/unix/META
 lib/ocaml/topfind
 @man man/man1/ocamlfind.1
 @man man/man5/META.5
 @man man/man5/findlib.conf.5
 @man man/man5/site-lib.5
 share/examples/findlib/
-share/examples/findlib/ocamlfind.conf
-@sample ${SYSCONFDIR}/ocamlfind.conf
-%%native%%
+share/examples/findlib/findlib.conf
+@sample ${SYSCONFDIR}/findlib.conf

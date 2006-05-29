@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_findlib-toolbox_Makefile,v 1.1 2006/05/29 03:46:29 avsm Exp $
+--- src/findlib-toolbox/Makefile.orig	Sun May 28 03:53:53 2006
++++ src/findlib-toolbox/Makefile	Sun May 28 03:54:03 2006
+@@ -13,7 +13,7 @@ make_wizard$(EXEC_SUFFIX): make_wizard.m
+ 	 	findlib.cma make_wizard.ml
+ 
+ install:
+-	cp make_wizard$(EXEC_SUFFIX) make_wizard.pattern $(prefix)$(OCAML_SITELIB)/findlib
++	cp make_wizard$(EXEC_SUFFIX) make_wizard.pattern $(DESTDIR)$(prefix)$(OCAML_SITELIB)/findlib
+ 
+ # uninstall: Nothing to do, because the removal of the findlib core also
+ # deinstalls the make_wizard

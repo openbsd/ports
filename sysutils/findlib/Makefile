@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2004/12/30 12:06:22 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/05/29 03:46:29 avsm Exp $
 
 COMMENT=	"Objective Caml package manager"
 CATEGORIES=	sysutils
-DISTNAME=	findlib-1.0.4
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	findlib-1.1.2pl1
+PKGNAME=	${DISTNAME}
 MASTER_SITES=	http://www.ocaml-programming.de/packages/
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
@@ -20,16 +20,10 @@ MODULES=	lang/ocaml
 LIB_DEPENDS=	tk84.1:tk-8.4.*:x11/tk/8.4
 NO_REGRESS=	Yes
 
-SAMPLE_LOC=	${PREFIX}/share/examples/findlib
-SAMPLE_FILE=	${SAMPLE_LOC}/ocamlfind.conf
-MAKE_FLAGS=	PREFIX=${PREFIX} SYSCONFDIR=${SYSCONFDIR}
-FAKE_FLAGS=	PREFIX=${PREFIX} SYSCONFDIR=${DESTDIR}${SAMPLE_LOC}
+CONFIGURE_STYLE=simple
+CONFIGURE_ARGS=	-with-toolbox -config ${PREFIX}/share/examples/findlib/findlib.conf
 
 ALL_TARGET=	all ${MODOCAML_NATIVE:S,Yes,all opt,:S,No,,}
 USE_GMAKE=	Yes
-SUBST_VARS=	SAMPLE_FILE
-
-do-configure:
-	cp ${WRKSRC}/Makefile.config.pattern ${WRKBUILD}/Makefile.config
 
 .include <bsd.port.mk>
