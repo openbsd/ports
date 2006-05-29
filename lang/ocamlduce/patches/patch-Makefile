@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile,v 1.1 2006/05/29 03:55:33 avsm Exp $
+--- Makefile.orig	Thu May 11 05:24:34 2006
++++ Makefile	Sun May 28 20:00:32 2006
+@@ -487,10 +487,10 @@ INSTALL_DOC_FILES= \
+ 
+ install: FORCE META
+ 	for i in $(INSTALL_BINARIES); do \
+-	  cp $$i $(BINDIR)/; \
++	  cp $$i $(DESTDIR)$(BINDIR)/; \
+ 	done
+ 	for i in $(OPT_VARIANTS); do \
+-	  cp $$i.opt $(BINDIR)/$$i; \
++	  if [ -r $$i.opt ]; then cp $$i.opt $(DESTDIR)$(BINDIR)/$$i; fi \
+ 	done
+ 	ocamlfind install ocamlduce META -optional $(INSTALL_LIB_FILES)
+ 

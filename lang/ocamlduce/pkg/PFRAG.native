@@ -1,8 +1,6 @@
-@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2005/09/23 14:27:27 avsm Exp $
-bin/ocamlducec.opt
-bin/ocamlducedep.opt
-bin/ocamlducedoc.opt
+@comment $OpenBSD: PFRAG.native,v 1.2 2006/05/29 03:55:33 avsm Exp $
 bin/ocamlduceopt
-bin/ocamlduceopt.opt
-lib/ocaml/ocamlduce.a
-lib/ocaml/ocamlduce.cmxa
+lib/ocaml/site-lib/ocamlduce/cduce_types.o
+lib/ocaml/site-lib/ocamlduce/ocamlduce.a
+lib/ocaml/site-lib/ocamlduce/ocamlduce.cmxa
+lib/ocaml/site-lib/ocamlduce/ocamlduce.o

@@ -1,10 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/23 14:27:27 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/05/29 03:55:33 avsm Exp $
+bin/expungeduce
 bin/ocamlduce
 bin/ocamlducec
 bin/ocamlducedep
 bin/ocamlducedoc
-lib/ocaml/cduce_types.cmi
-lib/ocaml/ocamlduce.cma
-lib/ocaml/ocamlduce.cmi
-lib/ocaml/ocamlduce.mli
+bin/ocamlducefind
+bin/ocamlducemktop
+lib/ocaml/
+lib/ocaml/site-lib/
+lib/ocaml/site-lib/ocamlduce/
+lib/ocaml/site-lib/ocamlduce/META
+lib/ocaml/site-lib/ocamlduce/cduce_types.cmi
+lib/ocaml/site-lib/ocamlduce/ocamlduce.cma
+lib/ocaml/site-lib/ocamlduce/ocamlduce.cmi
+lib/ocaml/site-lib/ocamlduce/ocamlduce.mli
+lib/ocaml/site-lib/ocamlduce/toplevelducelib.cma
+lib/ocaml/site-lib/ocamlduce/topstart.cmo
 %%native%%

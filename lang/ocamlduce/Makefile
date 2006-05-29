@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/09/23 14:27:27 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2006/05/29 03:55:33 avsm Exp $
 
 COMMENT=	"XML extension types for Objective Caml"
 CATEGORIES=	lang textproc
 
-V=		3.08.4pl3
+V=		3.09.2pl1
 DISTNAME=	ocamlduce-${V}
 MASTER_SITES=	http://pauillac.inria.fr/~frisch/ocamlcduce/download/
-WRKDIST=	${WRKDIR}/ocaml-sub
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 HOMEPAGE=	http://www.cduce.org/ocaml.html
@@ -17,16 +16,18 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
 MODULES=	lang/ocaml
-RUN_DEPENDS=	:ocaml-3.08.4:lang/ocaml
 WANTLIB=	curses m c pthread
 
 NO_REGRESS= 	Yes
-CONFIGURE_STYLE=simple
-CONFIGURE_ARGS=	-prefix ${PREFIX}
-MAKE_FILE=	Makefile.ocamlduce
-BYT_FLAGS=	CAMLC=ocamlc CAMLOPT=ocamlopt CAMLDEP=ocamldep
-MAKE_FLAGS=	${MODOCAML_NATIVE:S,Yes,,:S,No,${BYT_FLAGS},}
+USE_GMAKE=	Yes
+MAKE_FLAGS=	CAMLC=ocamlc${MODOCAML_NATIVE:S,Yes,.opt,:S,No,,}
+FAKE_FLAGS=	CAMLC=ocamlc${MODOCAML_NATIVE:S,Yes,.opt,:S,No,,}
 ALL_TARGET=	all ${MODOCAML_NATIVE:S,Yes,opt,:S,No,,}
-INSTALL_TARGET=	minstall ${MODOCAML_NATIVE:S,Yes,minstallopt,:S,No,,}
+
+BUILD_DEPENDS=	::sysutils/findlib
+RUN_DPENDS=	::sysutils/findlib
+
+pre-fake:
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/site-lib
 
 .include <bsd.port.mk>
