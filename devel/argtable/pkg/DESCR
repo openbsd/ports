@@ -1,0 +1,7 @@
+Argtable is an ANSI C library for parsing GNU style command line options
+with a minimum of fuss. It enables a program's command line syntax to be
+defined in the source code as an array of argtable structs. The command
+line is then parsed according to that specification and the resulting
+values are returned in those same structs where they are accessible to
+the main program. Both tagged (-v, --verbose, --foo=bar) and untagged
+arguments are supported, as are multiple instances of each argument.

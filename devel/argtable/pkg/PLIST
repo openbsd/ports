@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/29 21:56:50 alek Exp $
+%%SHARED%%
+include/argtable2.h
+lib/libargtable2.a
+lib/libargtable2.la
+@comment @man man/man3/argtable.3
+@man man/man3/argtable2.3
+share/doc/argtable2/
+share/doc/argtable2/arg_int.gif
+share/doc/argtable2/argtable2-advanced.html
+share/doc/argtable2/argtable2-advanced.pdf
+share/doc/argtable2/argtable2-advanced.ps
+share/doc/argtable2/argtable2-intro.html
+share/doc/argtable2/argtable2-intro.pdf
+share/doc/argtable2/argtable2-intro.ps
+share/doc/argtable2/argtable2.html
+share/doc/argtable2/argtable2.pdf
+share/doc/argtable2/argtable2.ps
+share/doc/argtable2/argxxx.gif
+share/doc/argtable2/example/
+share/doc/argtable2/example/Makefile
+share/doc/argtable2/example/Makefile.nmake
+share/doc/argtable2/example/README.txt
+share/doc/argtable2/example/argcustom.c
+share/doc/argtable2/example/argxxx.c
+share/doc/argtable2/example/argxxx.h
+share/doc/argtable2/example/callbacks.c
+share/doc/argtable2/example/echo.c
+share/doc/argtable2/example/hasoptvalue.c
+share/doc/argtable2/example/ls.c
+share/doc/argtable2/example/multisyntax.c
+share/doc/argtable2/example/mv.c
+share/doc/argtable2/example/myprog.c
+share/doc/argtable2/example/myprog_C89.c
+share/doc/argtable2/example/rm.c
+share/doc/argtable2/example/uname.c
