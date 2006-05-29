@@ -1,105 +1,131 @@
-$OpenBSD: patch-jhead_c,v 1.3 2004/07/18 20:21:03 xsa Exp $
---- jhead.c.orig	Mon Jul  5 19:28:00 2004
-+++ jhead.c	Fri Jul 16 09:28:54 2004
-@@ -153,7 +153,8 @@ static int FileEditComment(char * TempFi
+$OpenBSD: patch-jhead_c,v 1.4 2006/05/29 17:40:24 sturm Exp $
+--- jhead.c.orig	Tue May 23 08:50:41 2006
++++ jhead.c	Tue May 23 08:57:01 2006
+@@ -163,7 +163,7 @@ static int FileEditComment(char * TempFi
  #endif
          }
  
 -        sprintf(QuotedPath, "%s \"%s\"",Editor, TempFileName);
-+        snprintf(QuotedPath, sizeof QuotedPath, "%s \"%s\"",
-+		Editor, TempFileName);
++        snprintf(QuotedPath, sizeof(QuotedPath), "%s \"%s\"",Editor, TempFileName);
          a = system(QuotedPath);
      }
      
-@@ -260,7 +261,8 @@ static int ModifyDescriptComment(char * 
+@@ -269,7 +269,8 @@ static int ModifyDescriptComment(char * 
      if (!HasScandate && !ImageInfo.DateTime[0]){
          // Scan date is not in the file yet, and it doesn't have one built in.  Add it.
          char Temp[30];
 -        sprintf(Temp, "scan_date=%s", ctime(&ImageInfo.FileDateTime));
-+        snprintf(Temp, sizeof Temp, "scan_date=%s",
-+		ctime(&ImageInfo.FileDateTime));
++        snprintf(Temp, sizeof(Temp),
++	    "scan_date=%s", ctime(&ImageInfo.FileDateTime));
          strcat(OutComment, Temp);
          Modified = TRUE;
      }
-@@ -288,7 +290,9 @@ static int AutoResizeCmdStuff(void)
+@@ -295,7 +296,9 @@ static int AutoResizeCmdStuff(void)
  
-     if (scale > 0.8) return FALSE; // Don't rescale by really small amounts (not worth it!)
+     if (scale < 0.5) scale = 0.5; // Don't scale down by more than a factor of two.
  
--    sprintf(CommandString, "mogrify -geometry %dx%d -quality 80 &i",(int)(ImageInfo.Width*scale), (int)(ImageInfo.Height*scale));
-+    snprintf(CommandString, sizeof CommandString,
-+	"mogrify -geometry %dx%d -quality 80 &i",
+-    sprintf(CommandString, "mogrify -geometry %dx%d -quality 85 &i",(int)(ImageInfo.Width*scale), (int)(ImageInfo.Height*scale));
++    snprintf(CommandString, sizeof(CommandString),
++	"mogrify -geometry %dx%d -quality 85 &i",
 +	(int)(ImageInfo.Width*scale), (int)(ImageInfo.Height*scale));
      return TRUE;
  }
  
-@@ -319,17 +323,20 @@ static void DoCommand(const char * FileN
+@@ -325,13 +328,15 @@ static void DoCommand(const char * FileN
+         if (ApplyCommand[a] == '&'){
              if (ApplyCommand[a+1] == 'i'){
                  // Input file.
-                 if (strstr(FileName, " ")){
--                    e += sprintf(ExecString+e, "\"%s\"",FileName);
-+                    e += snprintf(ExecString+e, sizeof ExecString+e,
-+			"\"%s\"",FileName);
-                 }else{
-                     // No need for quoting (that way I can put a relative path in front)
--                    e += sprintf(ExecString+e, "%s",FileName);
-+                    e += snprintf(ExecString+e, sizeof ExecString+e,
-+			"%s",FileName);
-                 }
+-                e += sprintf(ExecString+e, "\"%s\"",FileName);
++                e += snprintf(ExecString+e, sizeof(ExecString) + e,
++		    "\"%s\"",FileName);
                  a += 1;
                  continue;
              }
              if (ApplyCommand[a+1] == 'o'){
                  // Needs an output file distinct from the input file.
 -                e += sprintf(ExecString+e, "\"%s\"",TempName);
-+                e += snprintf(ExecString+e, sizeof ExecString+e, 
-+			"\"%s\"",TempName);
++                e += snprintf(ExecString+e, sizeof(ExecString) + e,
++		    "\"%s\"",TempName);
                  a += 1;
                  TempUsed = TRUE;
                  unlink(TempName);// Remove any pre-existing temp file
-@@ -494,7 +501,7 @@ void DoFileRenaming(const char * FileNam
-                         char num[16];
+@@ -559,7 +564,8 @@ static void DoFileRenaming(const char * 
                          memcpy(pat, pattern+ppos, 4);
+                         pat[a-ppos] = 'd'; // Replace 'i' with 'd' for '%d'
                          pat[a-ppos+1] = '\0';
--                        sprintf(num, pat, FilesMatched); // let printf do the number formatting.
-+                        snprintf(num, sizeof num, pat, FilesMatched); // let printf do the number formatting.
+-                        sprintf(num, pat, FileSequence); // let printf do the number formatting.
++			// let printf do the number formatting.
++                        snprintf(num, sizeof(num), pat, FileSequence);
                          memmove(pattern+ppos+strlen(num), pattern+a+1, strlen(pattern+a+1)+1);
                          memcpy(pattern+ppos, num, strlen(num));
                          break;
-@@ -508,7 +515,8 @@ void DoFileRenaming(const char * FileNam
+@@ -573,8 +579,9 @@ static void DoFileRenaming(const char * 
          strftime(NewBaseName+PrefixPart, PATH_MAX, pattern, &tm);
      }else{
          // My favourite scheme.
 -        sprintf(NewBaseName+PrefixPart, "%02d%02d-%02d%02d%02d",
+-             tm.tm_mon+1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec);
 +        snprintf(NewBaseName+PrefixPart, sizeof NewBaseName+PrefixPart,
-+		"%02d%02d-%02d%02d%02d",
-              tm.tm_mon+1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec);
++	    "%02d%02d-%02d%02d%02d",
++            tm.tm_mon+1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec);
      }
  
-@@ -533,7 +541,7 @@ void DoFileRenaming(const char * FileNam
+     for (a=0;;a++){
+@@ -598,7 +605,7 @@ static void DoFileRenaming(const char * 
              NameExtra[0] = 0;
          }
  
 -        sprintf(NewName, "%s%s.jpg", NewBaseName, NameExtra);
-+        snprintf(NewName, sizeof NewName, "%s%s.jpg", NewBaseName, NameExtra);
++        snprintf(NewName, sizeof(NewName), "%s%s.jpg", NewBaseName, NameExtra);
  
          if (!strcmp(FileName, NewName)) break; // Skip if its already this name.
  
-@@ -617,7 +625,8 @@ void ProcessFile(const char * FileName)
-                     if (Argument == NULL){
-                         ErrFatal("Orientation screwup");
-                     }
--                    sprintf(RotateCommand, "jpegtran -%s -outfile &o &i", Argument);
-+                    snprintf(RotateCommand, sizeof RotateCommand,
-+			"jpegtran -%s -outfile &o &i", Argument);
-                     ApplyCommand = RotateCommand;
-                     DoCommand(FileName);
-                     ApplyCommand = NULL;
-@@ -838,7 +847,7 @@ void ProcessFile(const char * FileName)
+@@ -608,7 +615,8 @@ static void DoFileRenaming(const char * 
+                 printf("%s --> %s\n",FileName, NewName);
+ #ifdef _WIN32
+                 if (RenameAssociatedFiles){
+-                    sprintf(NewName, "%s%s", NewBaseName, NameExtra);
++                    snprintf(NewName, sizeof(NewName),
++			"%s%s", NewBaseName, NameExtra);
+                     RenameAssociated(FileName, NewName);
+                 }
+ #endif
+@@ -640,7 +648,8 @@ static int DoAutoRotate(const char * Fil
+                 ErrFatal("Orientation screwup");
+             }
+ 
+-            sprintf(RotateCommand, "jpegtran -%s -outfile &o &i", Argument);
++            snprintf(RotateCommand, sizeof(RotateCommand),
++		"jpegtran -%s -outfile &o &i", Argument);
+             ApplyCommand = RotateCommand;
+             DoCommand(FileName, FALSE);
+             ApplyCommand = NULL;
+@@ -659,7 +668,8 @@ static int DoAutoRotate(const char * Fil
+                 strcpy(ThumbTempName_out, FileName);
+                 strcat(ThumbTempName_out, ".tho");
+                 SaveThumbnail(ThumbTempName_in);
+-                sprintf(RotateCommand,"jpegtran -%s -outfile \"%s\" \"%s\"",
++                snprintf(RotateCommand, sizeof(RotateCommand),
++		    "jpegtran -%s -outfile \"%s\" \"%s\"",
+                     Argument, ThumbTempName_out, ThumbTempName_in);
+ 
+                 if (system(RotateCommand) == 0){
+@@ -687,7 +697,8 @@ static int RegenerateThumbnail(const cha
+         return FALSE;
+     }
+ 
+-    sprintf(ThumbnailGenCommand, "mogrify -thumbnail %dx%d \"%s\"", 
++    snprintf(ThumbnailGenCommand, sizeof(ThumbnailGenCommand),
++	"mogrify -thumbnail %dx%d \"%s\"", 
+         RegenThumbnail, RegenThumbnail, FileName);
+ 
+     if (system(ThumbnailGenCommand) == 0){
+@@ -985,7 +996,7 @@ void ProcessFile(const char * FileName)
  
              // Print to temp buffer first to avoid putting null termination in destination.
              // snprintf() would do the trick ,but not available everywhere (like FreeBSD 4.4)
 -            sprintf(TempBuf, "%04d:%02d:%02d %02d:%02d:%02d",
-+            snprintf(TempBuf, sizeof TempBuf, "%04d:%02d:%02d %02d:%02d:%02d",
++            snprintf(TempBuf, sizeof(TempBuf), "%04d:%02d:%02d %02d:%02d:%02d",
                  tm.tm_year+1900, tm.tm_mon+1, tm.tm_mday,
                  tm.tm_hour, tm.tm_min, tm.tm_sec);
  

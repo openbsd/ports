@@ -1,0 +1,23 @@
+$OpenBSD: patch-gpsinfo_c,v 1.1 2006/05/29 17:40:24 sturm Exp $
+--- gpsinfo.c.orig	Tue May 23 09:13:33 2006
++++ gpsinfo.c	Tue May 23 09:13:52 2006
+@@ -152,7 +152,8 @@ void ProcessGpsInfo(unsigned char * DirS
+ 
+                     Values[a] = ConvertAnyFormat(ValuePtr+a*ComponentSize, Format);
+                 }
+-                sprintf(TempString, FmtString, Values[0], Values[1], Values[2]);
++                snprintf(TempString, sizeof(TempString),
++		    FmtString, Values[0], Values[1], Values[2]);
+ 
+                 if (Tag == TAG_GPS_LAT){
+                     strncpy(ImageInfo.GpsLat+2, TempString, 29);
+@@ -166,7 +167,8 @@ void ProcessGpsInfo(unsigned char * DirS
+                 break;
+ 
+             case TAG_GPS_ALT:
+-                sprintf(ImageInfo.GpsAlt + 1, "%dm", Get32s(ValuePtr));
++                snprintf(ImageInfo.GpsAlt + 1, sizeof(ImageInfo.GpsAlt) + 1,
++		    "%dm", Get32s(ValuePtr));
+                 break;
+         }
+ 
