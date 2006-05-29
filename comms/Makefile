@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2006/02/12 16:24:50 david Exp $
+# $OpenBSD: Makefile,v 1.31 2006/05/29 18:08:42 robert Exp $
 # $FreeBSD: Makefile,v 1.27 1997/11/22 14:56:56 peter Exp $
 
      SUBDIR += birda
@@ -6,6 +6,8 @@
      SUBDIR += conserver
      SUBDIR += efax
      SUBDIR += flipit
+     SUBDIR += gnokii
+     SUBDIR += gnokii,no_x11
      SUBDIR += hylafax
      SUBDIR += hylafax,a4
      SUBDIR += jpilot
