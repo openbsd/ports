@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/29 21:56:50 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/05/30 09:23:44 alek Exp $
 %%SHARED%%
 include/argtable2.h
 lib/libargtable2.a
@@ -8,29 +8,29 @@ lib/libargtable2.la
 share/doc/argtable2/
 share/doc/argtable2/arg_int.gif
 share/doc/argtable2/argtable2-advanced.html
-share/doc/argtable2/argtable2-advanced.pdf
-share/doc/argtable2/argtable2-advanced.ps
+@comment share/doc/argtable2/argtable2-advanced.pdf
+@comment share/doc/argtable2/argtable2-advanced.ps
 share/doc/argtable2/argtable2-intro.html
-share/doc/argtable2/argtable2-intro.pdf
-share/doc/argtable2/argtable2-intro.ps
+@comment share/doc/argtable2/argtable2-intro.pdf
+@comment share/doc/argtable2/argtable2-intro.ps
 share/doc/argtable2/argtable2.html
-share/doc/argtable2/argtable2.pdf
-share/doc/argtable2/argtable2.ps
+@comment share/doc/argtable2/argtable2.pdf
+@comment share/doc/argtable2/argtable2.ps
 share/doc/argtable2/argxxx.gif
-share/doc/argtable2/example/
-share/doc/argtable2/example/Makefile
-share/doc/argtable2/example/Makefile.nmake
-share/doc/argtable2/example/README.txt
-share/doc/argtable2/example/argcustom.c
-share/doc/argtable2/example/argxxx.c
-share/doc/argtable2/example/argxxx.h
-share/doc/argtable2/example/callbacks.c
-share/doc/argtable2/example/echo.c
-share/doc/argtable2/example/hasoptvalue.c
-share/doc/argtable2/example/ls.c
-share/doc/argtable2/example/multisyntax.c
-share/doc/argtable2/example/mv.c
-share/doc/argtable2/example/myprog.c
-share/doc/argtable2/example/myprog_C89.c
-share/doc/argtable2/example/rm.c
-share/doc/argtable2/example/uname.c
+share/examples/argtable2/
+share/examples/argtable2/Makefile
+share/examples/argtable2/Makefile.nmake
+share/examples/argtable2/README.txt
+share/examples/argtable2/argcustom.c
+share/examples/argtable2/argxxx.c
+share/examples/argtable2/argxxx.h
+share/examples/argtable2/callbacks.c
+share/examples/argtable2/echo.c
+share/examples/argtable2/hasoptvalue.c
+share/examples/argtable2/ls.c
+share/examples/argtable2/multisyntax.c
+share/examples/argtable2/mv.c
+share/examples/argtable2/myprog.c
+share/examples/argtable2/myprog_C89.c
+share/examples/argtable2/rm.c
+share/examples/argtable2/uname.c
