@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/05/29 19:32:08 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2006/05/30 13:57:19 steven Exp $
 
 COMMENT=		"console based sudoku"
 
@@ -16,7 +16,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c curses
 
-MASTER_SITES=		http://humppa.nl/distfiles/
+MASTER_SITES=		http://humppa.nl/distfiles/ \
+			http://www.laurasia.com.au/downloads/
 EXTRACT_SUFX=		.tgz
 
 NO_REGRESS=		Yes
@@ -29,7 +30,6 @@ do-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/sudoku ${WRKSRC}/sudoku.c -lcurses
 	
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/sudoku ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/sudoku.6 ${PREFIX}/man/man6
 	${INSTALL_DATA_DIR} ${PREFIX}/share/sudoku
