@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/12/30 04:41:30 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/05/31 06:26:15 naddy Exp $
 %%SHARED%%
 include/torrent/
 include/torrent/bencode.h
@@ -8,9 +8,11 @@ include/torrent/entry.h
 include/torrent/event.h
 include/torrent/exceptions.h
 include/torrent/http.h
+include/torrent/path.h
 include/torrent/peer.h
 include/torrent/poll.h
 include/torrent/poll_epoll.h
+include/torrent/poll_kqueue.h
 include/torrent/poll_select.h
 include/torrent/rate.h
 include/torrent/torrent.h
