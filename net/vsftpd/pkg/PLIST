@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/09/16 16:40:19 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/05/31 00:10:12 aanriot Exp $
 @newgroup _vsftpd:513
 @newuser _vsftpd:513:_vsftpd:daemon:vsftpd user:/nonexistent:/sbin/nologin
 @man man/man5/vsftpd.conf.5
@@ -10,25 +10,5 @@ share/doc/vsftpd/INSTALL
 share/doc/vsftpd/README
 share/doc/vsftpd/README.ssl
 share/examples/vsftpd/
-share/examples/vsftpd/INTERNET_SITE/
-share/examples/vsftpd/INTERNET_SITE/README
-share/examples/vsftpd/INTERNET_SITE/vsftpd.conf
-share/examples/vsftpd/INTERNET_SITE/vsftpd.xinetd
-share/examples/vsftpd/INTERNET_SITE_NOINETD/
-share/examples/vsftpd/INTERNET_SITE_NOINETD/README
-share/examples/vsftpd/INTERNET_SITE_NOINETD/vsftpd.conf
-share/examples/vsftpd/PER_IP_CONFIG/
-share/examples/vsftpd/PER_IP_CONFIG/README
-share/examples/vsftpd/PER_IP_CONFIG/hosts.allow
-share/examples/vsftpd/README
-share/examples/vsftpd/VIRTUAL_HOSTS/
-share/examples/vsftpd/VIRTUAL_HOSTS/README
-share/examples/vsftpd/VIRTUAL_USERS/
-share/examples/vsftpd/VIRTUAL_USERS/README
-share/examples/vsftpd/VIRTUAL_USERS/logins.txt
-share/examples/vsftpd/VIRTUAL_USERS/vsftpd.conf
-share/examples/vsftpd/VIRTUAL_USERS/vsftpd.pam
-share/examples/vsftpd/VIRTUAL_USERS_2/
-share/examples/vsftpd/VIRTUAL_USERS_2/README
 share/examples/vsftpd/vsftpd.conf
 @sample ${SYSCONFDIR}/vsftpd.conf
