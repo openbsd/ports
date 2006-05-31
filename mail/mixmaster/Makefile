@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/03/04 15:10:31 sturm Exp $
+# $OpenBSD: Makefile,v 1.15 2006/05/31 01:41:55 sturm Exp $
 
 COMMENT=	"client for anonymous remailing"
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto curses z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mixmaster/}
-MASTER_SITES0=	ftp://ftp.erisiandiscord.de/pub/misc/
+MASTER_SITES0=	${MASTER_SITES_BACKUP}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		mixmaster-update.pl.gz:0 allpingers.txt.gz:0
 

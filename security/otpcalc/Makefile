@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/09/06 10:06:24 aanriot Exp $
+# $OpenBSD: Makefile,v 1.3 2006/05/31 01:41:55 sturm Exp $
 
 COMMENT=	"OTP and S/Key calculator for X"
 
@@ -17,8 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto m X11 Xext Xi glib gmodule
 
-MASTER_SITES=	ftp://ftp.erisiandiscord.de/pub/misc/ \
-		${HOMEPAGE}
+MASTER_SITES=	${HOMEPAGE}
 
 CONFIGURE_STYLE=gnu dest
 
