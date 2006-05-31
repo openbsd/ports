@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2006/04/29 10:30:31 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2006/05/31 19:53:06 msf Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=		'MySQL drivers for the Perl DBI'
 
-DISTNAME=		DBD-mysql-3.0002_5
+DISTNAME=		DBD-mysql-3.0003
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		databases perl5
-
-MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 # artistic
 PERMIT_PACKAGE_CDROM=	Yes
