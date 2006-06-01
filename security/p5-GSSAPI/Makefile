@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/05/07 13:33:40 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2006/06/01 04:36:41 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"perl interface to the GSSAPIv2 library"
 
-DISTNAME=	GSSAPI-0.21
+DISTNAME=	GSSAPI-0.22
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
 
