@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/04/23 12:58:39 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2006/06/01 04:21:13 steven Exp $
 
 COMMENT=	"X11 counterpart of curses-based misc/dialog"
 
-DISTNAME=	Xdialog-2.2.0
+DISTNAME=	Xdialog-2.2.1
 CATEGORIES=	x11 misc
 
 HOMEPAGE=	http://xdialog.dyns.net/
