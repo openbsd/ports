@@ -1,0 +1,23 @@
+$OpenBSD: patch-wrksp_c,v 1.1.1.1 2006/06/01 05:58:15 jolan Exp $
+--- wrksp.c.orig	Mon Aug  8 12:38:17 2005
++++ wrksp.c	Sun May 28 23:42:37 2006
+@@ -23,6 +23,10 @@
+ #include <windows.h>
+ #endif
+ 
++#include <sys/types.h>
++#include <sys/wait.h>
++#include <ctype.h>
++
+ #define WANT_EVAL_REGS 1
+ #include "logo.h"
+ #include "globals.h"
+@@ -1519,7 +1523,7 @@ NODE *ledit(NODE *args) {
+ #endif
+ #else	/* !ibm (so unix) */
+     if (fork() == 0) {
+-	execlp(editor, editorname, tmp_filename, 0);
++	execlp(editor, editorname, tmp_filename, (void*)NULL);
+ 	exit(1);
+     }
+     wait(0);

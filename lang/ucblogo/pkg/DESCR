@@ -1,0 +1,14 @@
+ucblogo is the Berkeley interpreter for the Logo programming language.
+
+Special features of this dialect are:
+
+- Random-access arrays.
+- Variable number of inputs to user-defined procedures.
+- Mutators for list structure (dangerous).
+- Pause on error, and other improvements to error handling.
+- Comments and continuation lines; formatting is preserved when
+  procedure definitions are saved or edited.
+- Terrapin-style tokenization (e.g., [2+3] is a list with one member)
+  but LCSI-style syntax (no special forms except TO). The best of both worlds.
+- First-class instruction and expression templates.
+- Macros.

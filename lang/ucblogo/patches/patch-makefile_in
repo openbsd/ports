@@ -1,0 +1,19 @@
+$OpenBSD: patch-makefile_in,v 1.1.1.1 2006/06/01 05:58:15 jolan Exp $
+--- makefile.in.orig	Tue Nov 30 10:11:07 2004
++++ makefile.in	Sun May 28 23:33:24 2006
+@@ -1,5 +1,5 @@
+ CC	= @CC@
+-CFLAGS	= @CFLAGS@ @CPPFLAGS@ @X_CFLAGS@ -O0
++CFLAGS	= @CFLAGS@ @CPPFLAGS@ @X_CFLAGS@
+ LDFLAGS	= @LDFLAGS@
+ LIBS  = @X_PRE_LIBS@ @X_LIBS@ @LIBS@ @X_EXTRA_LIBS@
+ prefix = @prefix@
+@@ -22,7 +22,7 @@ HDRS	= globals.h logo.h xgraphics.h
+ all:	logo logolib/Messages helpfiles helpfiles/HELPCONTENTS logo-mode make-docs
+ 
+ mem.o:	mem.c
+-	$(CC) $(CFLAGS) -O0 -c mem.c
++	$(CC) $(CFLAGS) -c mem.c
+ 
+ logo:	$(OBJS)
+ 	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJS) $(LIBS) -o logo

@@ -1,0 +1,13 @@
+$OpenBSD: patch-term_c,v 1.1.1.1 2006/06/01 05:58:15 jolan Exp $
+--- term.c.orig	Fri Jul 22 18:15:32 2005
++++ term.c	Sun May 28 23:54:50 2006
+@@ -19,6 +19,9 @@
+  *
+  */
+ 
++#include <curses.h>
++#include <term.h>
++
+ #include "logo.h"
+ #include "globals.h"
+ 
