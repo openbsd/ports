@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2006/04/11 13:43:35 kurt Exp $
+# $OpenBSD: Makefile,v 1.71 2006/06/01 05:59:01 jolan Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -45,6 +45,7 @@
      SUBDIR += squeak
      SUBDIR += tcl
      SUBDIR += tendra
+     SUBDIR += ucblogo
      SUBDIR += unicon
 
 .include <bsd.port.subdir.mk>
