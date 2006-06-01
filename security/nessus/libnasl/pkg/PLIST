@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/09/27 18:43:01 msf Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/06/01 05:16:32 aanriot Exp $
 @conflict nessus-<2.2.4
 %%SHARED%%
 bin/nasl
@@ -9,8 +9,8 @@ lib/libnasl.a
 @comment lib/libnasl.la
 @man man/man1/nasl-config.1
 @man man/man1/nasl.1
-share/libnasl/
+share/examples/nessus/
+share/examples/nessus/nessus_org.pem
 @sample /var/nessus/
-share/libnasl/nessus_org.pem
 @sample /var/nessus/nessus_org.pem
-@extraunexec rm -fr /var/nessus
+@extraunexec rm -rf /var/nessus/*

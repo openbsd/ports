@@ -1,0 +1,29 @@
+$OpenBSD: patch-Makefile,v 1.1 2006/06/01 05:16:32 aanriot Exp $
+--- Makefile.orig	Sun Jan 15 16:37:55 2006
++++ Makefile	Sat Apr 29 21:24:39 2006
+@@ -23,22 +23,11 @@ install-bin:
+ 	test -d $(DESTDIR)${sbindir} || $(INSTALL_DIR) -m 755 $(DESTDIR)${sbindir}
+ 	$(INSTALL) -m $(SERVERMODE)  ${make_bindir}/nessusd $(DESTDIR)${sbindir}
+ 	$(INSTALL) -m $(SERVERMODE) ${make_bindir}/nessus-check-signature $(DESTDIR)${sbindir}
+-	test -d $(DESTDIR)${sysconfdir} || $(INSTALL_DIR) -m 755 $(DESTDIR)${sysconfdir}
+-	test -d $(DESTDIR)${sysconfdir}/nessus || $(INSTALL_DIR) -m 755 $(DESTDIR)${sysconfdir}/nessus	
+-	test -d $(DESTDIR)${NESSUSD_DATADIR} || \
+-		$(INSTALL_DIR) -m $(PLUGINSDIRMODE) $(DESTDIR)${NESSUSD_DATADIR}
+-	test -d $(DESTDIR)$(NESSUSD_PLUGINS) || \
+-		$(INSTALL_DIR) -m $(PLUGINSDIRMODE) $(DESTDIR)$(NESSUSD_PLUGINS)
+ 	test -d $(DESTDIR)${includedir} || $(INSTALL_DIR) -m 755 $(DESTDIR)${includedir}
+ 	test -d $(DESTDIR)${includedir}/nessus || $(INSTALL_DIR) -m 755 $(DESTDIR)${includedir}/nessus
+-	test -d $(DESTDIR)${localstatedir} || $(INSTALL_DIR) -m 755 $(DESTDIR)${localstatedir}
+-	test -d $(DESTDIR)${NESSUSD_STATEDIR} || $(INSTALL_DIR) -m 755 $(DESTDIR)${NESSUSD_STATEDIR}
+-	test -d $(DESTDIR)${NESSUSD_STATEDIR}/users || $(INSTALL_DIR) -m 755 $(DESTDIR)${NESSUSD_STATEDIR}/users
+-	test -d $(DESTDIR)${NESSUSD_STATEDIR}/logs  || $(INSTALL_DIR) -m 755 $(DESTDIR)${NESSUSD_STATEDIR}/logs
+-	test -d $(DESTDIR)${NESSUSD_STATEDIR}/tmp || $(INSTALL_DIR) -m 755 $(DESTDIR)${NESSUSD_STATEDIR}/tmp
+-	test -d $(DESTDIR)${NESSUSD_STATEDIR}/jobs  || $(INSTALL_DIR) -m 755 $(DESTDIR)${NESSUSD_STATEDIR}/jobs
+-	test -d $(DESTDIR)${NESSUSD_LOGDIR} || $(INSTALL_DIR) -m 755 $(DESTDIR)${NESSUSD_LOGDIR}
+-	$(INSTALL) -c -m 0444 nessus-services $(DESTDIR)${NESSUSD_STATEDIR}/
++	test -d $(DESTDIR)${prefix}/share/examples/nessus || $(INSTALL_DIR) -m 755 $(DESTDIR)${prefix}/share/examples/nessus/
++	test -d $(DESTDIR)${prefix}/lib/nessus/plugins || $(INSTALL_DIR) -m 755 $(DESTDIR)${prefix}/lib/nessus/plugins/
++	$(INSTALL) -c -m 0444 nessus-services $(DESTDIR)${prefix}/share/examples/nessus/
+ 	$(INSTALL) -c -m 0444 include/config.h $(DESTDIR)${includedir}/nessus
+ 	$(INSTALL) -c -m 0444 include/ntcompat.h $(DESTDIR)${includedir}/nessus
+ 	$(INSTALL) -c -m 0444 include/includes.h $(DESTDIR)${includedir}/nessus

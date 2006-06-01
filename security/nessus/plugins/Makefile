@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2006/02/09 11:19:08 aanriot Exp $
+# $OpenBSD: Makefile,v 1.6 2006/06/01 05:16:32 aanriot Exp $
 
-COMMENT=        "plugins for Nessus"
+COMMENT=	"plugins for Nessus"
+DISTNAME=	nessus-plugins-GPL-${V}
+PKGNAME=	${DISTNAME:S/-GPL//}
 
-DISTNAME=	nessus-plugins-GPL-${VERSION}
-PKGNAME=        ${DISTNAME:S/-GPL//}p2
+WANTLIB=	crypto hosts_gatherer m nessus pcap ssl util
 
-WANTLIB=        crypto pcap ssl util nessus hosts_gatherer
-
-BUILD_DEPENDS=  ::security/nessus/core \
-		::security/hydra \
-		::security/nikto \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	::security/nessus/core	\
+		::security/hydra	\
+		::security/nikto	\
 		::net/nmap
-
-RUN_DEPENDS=    ${BUILD_DEPENDS}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/09/27 18:50:32 msf Exp $
+@comment $OpenBSD: PLIST,v 1.4 2006/06/01 05:16:32 aanriot Exp $
 @conflict nessus-<2.2.4
 bin/nessus
 bin/nessus-fetch
@@ -16,6 +16,7 @@ include/nessus/nessusudp.h
 include/nessus/ntcompat.h
 lib/nessus/
 lib/nessus/plugins/
+@extra lib/nessus/plugins/.desc
 @man man/man1/nessus-fetch.1
 @man man/man1/nessus-mkcert-client.1
 @man man/man1/nessus-mkrand.1
@@ -29,7 +30,12 @@ sbin/nessus-check-signature
 sbin/nessus-mkcert
 sbin/nessus-rmuser
 sbin/nessusd
-@sample ${SYSCONFDIR}/nessus/
+share/examples/nessus/
+share/examples/nessus/nessus-services
+@sample /var/nessus/users/
 @sample /var/nessus/logs/
-@extraunexec rm -fr ${SYSCONFDIR}/nessus
-@extraunexec rm -fr /var/nessus
+@sample /var/nessus/nessus-services
+@sample ${SYSCONFDIR}/nessus/
+@extraunexec rm -fr ${SYSCONFDIR}/nessus/*
+@extraunexec rm -fr /var/nessus/logs/*
+@extraunexec rm -fr /var/nessus/users/*

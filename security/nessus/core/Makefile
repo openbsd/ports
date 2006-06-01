@@ -1,24 +1,22 @@
-# $OpenBSD: Makefile,v 1.7 2006/01/20 20:47:25 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2006/06/01 05:16:32 aanriot Exp $
 
 COMMENT=	"network security scanner"
-
-DISTNAME=	nessus-core-${VERSION}
-PKGNAME=	${DISTNAME}p3
+DISTNAME=	nessus-core-${V}
 
 FLAVORS=	no_x11
 FLAVOR?=
 
-WANTLIB=   	c crypto m pcap rpcsvc ssl util hosts_gatherer nessus
+WANTLIB=	c crypto m pcap rpcsvc ssl util hosts_gatherer nessus
 
-LIB_DEPENDS=    nasl.4::security/nessus/libnasl
-BUILD_DEPENDS= 	:bison-*:devel/bison
+LIB_DEPENDS=	nasl.4::security/nessus/libnasl
+BUILD_DEPENDS=	:bison-*:devel/bison
 
 .if empty(FLAVOR:L:Mno_x11)
 USE_X11=	Yes
-MODULES=    	devel/gettext
-WANTLIB+=	X11 Xext Xft Xrender atk-1.0.0.0 fontconfig freetype \
-		glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 pango-1.0.0.0 \
-		pangox-1.0.0.0 pangoxft-1.0.0.0 pangoft2-1.0.0.0
+MODULES=	devel/gettext
+WANTLIB+=	X11 atk-1.0.0.0 fontconfig freetype glib-2.0.0.0 \
+		cairo.4 gmodule-2.0.0.0 gobject-2.0.0.0 pango-1.0.0.0 \
+		pangocairo-1.0.0.0 pangoft2-1.0.0.0
 BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS+=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
 CONFIGURE_ARGS+=--enable-gtk

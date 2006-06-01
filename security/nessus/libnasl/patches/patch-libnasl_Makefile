@@ -1,6 +1,6 @@
-$OpenBSD: patch-libnasl_Makefile,v 1.1.1.1 2005/05/16 16:02:56 sturm Exp $
---- Makefile.orig	Thu Mar 31 07:00:26 2005
-+++ Makefile	Thu Mar 31 07:01:53 2005
+$OpenBSD: patch-libnasl_Makefile,v 1.2 2006/06/01 05:16:32 aanriot Exp $
+--- Makefile.orig	Wed Jul 28 20:07:09 2004
++++ Makefile	Sun Apr 23 18:20:19 2006
 @@ -8,7 +8,7 @@ nasl.tmpl: nasl.tmpl.in configure
  	touch $@
  
@@ -10,3 +10,14 @@ $OpenBSD: patch-libnasl_Makefile,v 1.1.1.1 2005/05/16 16:02:56 sturm Exp $
  	test -d $(DESTDIR)${includedir}/nessus || $(INSTALL_DIR) -m 755 $(DESTDIR)${includedir}/nessus
  	$(INSTALL) -c -m 0444 include/nasl.h $(DESTDIR)${includedir}/nessus
  	test -d $(DESTDIR)${bindir} || $(INSTALL_DIR) -m 755 $(DESTDIR)${bindir}
+@@ -17,8 +17,8 @@ install: all
+ 	$(INSTALL) -c -m 0644 doc/nasl-config.1 $(DESTDIR)${mandir}/man1
+ 	$(INSTALL) -c -m 0644 doc/nasl.1 $(DESTDIR)${mandir}/man1
+ 	$(INSTALL) -c -m 0644 doc/nasl-config.1 $(DESTDIR)${mandir}/man1
+-	test -d $(DESTDIR)${localstatedir}/nessus || $(INSTALL_DIR) -m 755 $(DESTDIR)${localstatedir}/nessus
+-	$(INSTALL) -c -m 0644 doc/nessus_org.pem $(DESTDIR)${localstatedir}/nessus/nessus_org.pem
++	test -d $(DESTDIR)${prefix}/share/examples/nessus || $(INSTALL_DIR) -m 755 $(DESTDIR)${prefix}/share/examples/nessus
++	$(INSTALL) -c -m 0644 doc/nessus_org.pem $(DESTDIR)${prefix}/share/examples/nessus/nessus_org.pem
+ 
+ 
+ 	@echo
