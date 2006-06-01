@@ -1,0 +1,378 @@
+$OpenBSD: patch-mspack_mspack_h,v 1.1.1.1 2006/06/01 08:12:41 jolan Exp $
+--- mspack/mspack.h.orig	Tue Mar  9 07:01:18 2004
++++ mspack/mspack.h	Thu Jun  1 02:27:30 2006
+@@ -240,7 +240,7 @@ struct mspack_system {
+   /**
+    * Opens a file for reading, writing, appending or updating.
+    *
+-   * @param this     a self-referential pointer to the mspack_system
++   * @param self     a self-referential pointer to the mspack_system
+    *                 structure whose open() method is being called. If
+    *                 this pointer is required by close(), read(), write(),
+    *                 seek() or tell(), it should be stored in the result
+@@ -260,7 +260,7 @@ struct mspack_system {
+    *         for other mspack_system methods to operate.
+    * @see close(), read(), write(), seek(), tell(), message()
+    */
+-  struct mspack_file * (*open)(struct mspack_system *this,
++  struct mspack_file * (*open)(struct mspack_system *self,
+ 			       char *filename,
+ 			       int mode);
+ 
+@@ -362,14 +362,14 @@ struct mspack_system {
+   /**
+    * Allocates memory.
+    *
+-   * @param this     a self-referential pointer to the mspack_system
++   * @param self     a self-referential pointer to the mspack_system
+    *                 structure whose alloc() method is being called.
+    * @param bytes    the number of bytes to allocate
+    * @result a pointer to the requested number of bytes, or NULL if
+    *         not enough memory is available
+    * @see free()
+    */
+-  void * (*alloc)(struct mspack_system *this,
++  void * (*alloc)(struct mspack_system *self,
+ 		  size_t bytes);
+   
+   /**
+@@ -474,14 +474,14 @@ extern struct mscab_decompressor *
+   mspack_create_cab_decompressor(struct mspack_system *sys);
+ 
+ /** Destroys an existing CAB compressor.
+- * @param this the #mscab_compressor to destroy
++ * @param self the #mscab_compressor to destroy
+  */
+-extern void mspack_destroy_cab_compressor(struct mscab_compressor *this);
++extern void mspack_destroy_cab_compressor(struct mscab_compressor *self);
+ 
+ /** Destroys an existing CAB decompressor.
+- * @param this the #mscab_decompressor to destroy
++ * @param self the #mscab_decompressor to destroy
+  */
+-extern void mspack_destroy_cab_decompressor(struct mscab_decompressor *this);
++extern void mspack_destroy_cab_decompressor(struct mscab_decompressor *self);
+ 
+ 
+ /** Creates a new CHM compressor.
+@@ -499,14 +499,14 @@ extern struct mschm_decompressor *
+   mspack_create_chm_decompressor(struct mspack_system *sys);
+ 
+ /** Destroys an existing CHM compressor.
+- * @param this the #mschm_compressor to destroy
++ * @param self the #mschm_compressor to destroy
+  */
+-extern void mspack_destroy_chm_compressor(struct mschm_compressor *this);
++extern void mspack_destroy_chm_compressor(struct mschm_compressor *self);
+ 
+ /** Destroys an existing CHM decompressor.
+- * @param this the #mschm_decompressor to destroy
++ * @param self the #mschm_decompressor to destroy
+  */
+-extern void mspack_destroy_chm_decompressor(struct mschm_decompressor *this);
++extern void mspack_destroy_chm_decompressor(struct mschm_decompressor *self);
+ 
+ 
+ /** Creates a new LIT compressor.
+@@ -524,14 +524,14 @@ extern struct mslit_decompressor *
+   mspack_create_lit_decompressor(struct mspack_system *sys);
+ 
+ /** Destroys an existing LIT compressor.
+- * @param this the #mslit_compressor to destroy
++ * @param self the #mslit_compressor to destroy
+  */
+-extern void mspack_destroy_lit_compressor(struct mslit_compressor *this);
++extern void mspack_destroy_lit_compressor(struct mslit_compressor *self);
+ 
+ /** Destroys an existing LIT decompressor.
+- * @param this the #mslit_decompressor to destroy
++ * @param self the #mslit_decompressor to destroy
+  */
+-extern void mspack_destroy_lit_decompressor(struct mslit_decompressor *this);
++extern void mspack_destroy_lit_decompressor(struct mslit_decompressor *self);
+ 
+ 
+ /** Creates a new HLP compressor.
+@@ -549,14 +549,14 @@ extern struct mshlp_decompressor *
+   mspack_create_hlp_decompressor(struct mspack_system *sys);
+ 
+ /** Destroys an existing hlp compressor.
+- * @param this the #mshlp_compressor to destroy
++ * @param self the #mshlp_compressor to destroy
+  */
+-extern void mspack_destroy_hlp_compressor(struct mshlp_compressor *this);
++extern void mspack_destroy_hlp_compressor(struct mshlp_compressor *self);
+ 
+ /** Destroys an existing hlp decompressor.
+- * @param this the #mshlp_decompressor to destroy
++ * @param self the #mshlp_decompressor to destroy
+  */
+-extern void mspack_destroy_hlp_decompressor(struct mshlp_decompressor *this);
++extern void mspack_destroy_hlp_decompressor(struct mshlp_decompressor *self);
+ 
+ 
+ /** Creates a new SZDD compressor.
+@@ -574,14 +574,14 @@ extern struct msszdd_decompressor *
+   mspack_create_szdd_decompressor(struct mspack_system *sys);
+ 
+ /** Destroys an existing SZDD compressor.
+- * @param this the #msszdd_compressor to destroy
++ * @param self the #msszdd_compressor to destroy
+  */
+-extern void mspack_destroy_szdd_compressor(struct msszdd_compressor *this);
++extern void mspack_destroy_szdd_compressor(struct msszdd_compressor *self);
+ 
+ /** Destroys an existing SZDD decompressor.
+- * @param this the #msszdd_decompressor to destroy
++ * @param self the #msszdd_decompressor to destroy
+  */
+-extern void mspack_destroy_szdd_decompressor(struct msszdd_decompressor *this);
++extern void mspack_destroy_szdd_decompressor(struct msszdd_decompressor *self);
+ 
+ 
+ /** Creates a new KWAJ compressor.
+@@ -599,14 +599,14 @@ extern struct mskwaj_decompressor *
+   mspack_create_kwaj_decompressor(struct mspack_system *sys);
+ 
+ /** Destroys an existing KWAJ compressor.
+- * @param this the #mskwaj_compressor to destroy
++ * @param self the #mskwaj_compressor to destroy
+  */
+-extern void mspack_destroy_kwaj_compressor(struct mskwaj_compressor *this);
++extern void mspack_destroy_kwaj_compressor(struct mskwaj_compressor *self);
+ 
+ /** Destroys an existing KWAJ decompressor.
+- * @param this the #mskwaj_decompressor to destroy
++ * @param self the #mskwaj_decompressor to destroy
+  */
+-extern void mspack_destroy_kwaj_decompressor(struct mskwaj_decompressor *this);
++extern void mspack_destroy_kwaj_decompressor(struct mskwaj_decompressor *self);
+ 
+ 
+ /* --- support for .CAB (MS Cabinet) file format --------------------------- */
+@@ -887,14 +887,14 @@ struct mscab_decompressor {
+    * The filename pointer should be considered "in use" until close() is
+    * called on the cabinet.
+    *
+-   * @param  this     a self-referential pointer to the mscab_decompressor
++   * @param  self     a self-referential pointer to the mscab_decompressor
+    *                  instance being called
+    * @param  filename the filename of the cabinet file. This is passed
+    *                  directly to mspack_system::open().
+    * @return a pointer to a mscabd_cabinet structure, or NULL on failure
+    * @see close(), search(), last_error()
+    */
+-  struct mscabd_cabinet * (*open) (struct mscab_decompressor *this,
++  struct mscabd_cabinet * (*open) (struct mscab_decompressor *self,
+ 				   char *filename);
+ 
+   /**
+@@ -921,12 +921,12 @@ struct mscab_decompressor {
+    * not allocated by the library. The caller should free this itself if
+    * necessary, before it is lost forever.
+    *
+-   * @param  this     a self-referential pointer to the mscab_decompressor
++   * @param  self     a self-referential pointer to the mscab_decompressor
+    *                  instance being called
+    * @param  cab      the cabinet to close
+    * @see open(), search(), append(), prepend()
+    */
+-  void (*close)(struct mscab_decompressor *this,
++  void (*close)(struct mscab_decompressor *self,
+ 		struct mscabd_cabinet *cab);
+ 
+   /**
+@@ -956,14 +956,14 @@ struct mscab_decompressor {
+    * close() should only be called on the result of search(), not on any
+    * subsequent cabinets in the mscabd_cabinet::next chain.
+    *
+-   * @param  this     a self-referential pointer to the mscab_decompressor
++   * @param  self     a self-referential pointer to the mscab_decompressor
+    *                  instance being called
+    * @param  filename the filename of the file to search for cabinets. This
+    *                  is passed directly to mspack_system::open().
+    * @return a pointer to a mscabd_cabinet structure, or NULL
+    * @see close(), open(), last_error()
+    */
+-  struct mscabd_cabinet * (*search) (struct mscab_decompressor *this,
++  struct mscabd_cabinet * (*search) (struct mscab_decompressor *self,
+ 				     char *filename);
+ 
+   /**
+@@ -997,7 +997,7 @@ struct mscab_decompressor {
+    * structures in either cabinet must be discarded and re-obtained after
+    * merging.
+    *
+-   * @param  this     a self-referential pointer to the mscab_decompressor
++   * @param  self     a self-referential pointer to the mscab_decompressor
+    *                  instance being called
+    * @param  cab      the cabinet which will be appended to,
+    *                  predecessor of nextcab
+@@ -1006,7 +1006,7 @@ struct mscab_decompressor {
+    * @return an error code, or MSPACK_ERR_OK if successful
+    * @see prepend(), open(), close()
+    */
+-  int (*append) (struct mscab_decompressor *this,
++  int (*append) (struct mscab_decompressor *self,
+ 		 struct mscabd_cabinet *cab,
+ 		 struct mscabd_cabinet *nextcab);
+ 
+@@ -1019,7 +1019,7 @@ struct mscab_decompressor {
+    * all other respects, it is identical to append(). See append() for the
+    * full documentation.
+    *
+-   * @param  this     a self-referential pointer to the mscab_decompressor
++   * @param  self     a self-referential pointer to the mscab_decompressor
+    *                  instance being called
+    * @param  cab      the cabinet which will be prepended to,
+    *                  successor of prevcab
+@@ -1028,7 +1028,7 @@ struct mscab_decompressor {
+    * @return an error code, or MSPACK_ERR_OK if successful
+    * @see append(), open(), close()
+    */
+-  int (*prepend) (struct mscab_decompressor *this,
++  int (*prepend) (struct mscab_decompressor *self,
+ 		  struct mscabd_cabinet *cab,
+ 		  struct mscabd_cabinet *prevcab);
+ 
+@@ -1048,13 +1048,13 @@ struct mscab_decompressor {
+    * and not enough parts of the cabinet set have been loaded and appended
+    * or prepended, an error will be returned immediately.
+    *
+-   * @param  this     a self-referential pointer to the mscab_decompressor
++   * @param  self     a self-referential pointer to the mscab_decompressor
+    *                  instance being called
+    * @param  file     the file to be decompressed
+    * @param  filename the filename of the file being written to
+    * @return an error code, or MSPACK_ERR_OK if successful
+    */
+-  int (*extract)(struct mscab_decompressor *this,
++  int (*extract)(struct mscab_decompressor *self,
+ 		 struct mscabd_file *file,
+ 		 char *filename);
+ 
+@@ -1072,7 +1072,7 @@ struct mscab_decompressor {
+    *   bit buffer by decompressors? The minimum value is 4. The default
+    *   value is 4096.
+    *
+-   * @param  this     a self-referential pointer to the mscab_decompressor
++   * @param  self     a self-referential pointer to the mscab_decompressor
+    *                  instance being called
+    * @param  param    the parameter to set
+    * @param  value    the value to set the parameter to
+@@ -1080,7 +1080,7 @@ struct mscab_decompressor {
+    *         is a problem with either parameter or value.
+    * @see search(), extract()
+    */
+-  int (*set_param)(struct mscab_decompressor *this,
++  int (*set_param)(struct mscab_decompressor *self,
+ 		   int param,
+ 		   int value);
+ 
+@@ -1090,7 +1090,7 @@ struct mscab_decompressor {
+    * This is useful for open() and search(), which do not return an error
+    * code directly.
+    *
+-   * @param  this     a self-referential pointer to the mscab_decompressor
++   * @param  self     a self-referential pointer to the mscab_decompressor
+    *                  instance being called
+    * @return the most recent error code
+    * @see open(), search()
+@@ -1287,14 +1287,14 @@ struct mschm_decompressor {
+    * The filename pointer should be considered "in use" until close() is
+    * called on the CHM helpfile.
+    *
+-   * @param  this     a self-referential pointer to the mschm_decompressor
++   * @param  self     a self-referential pointer to the mschm_decompressor
+    *                  instance being called
+    * @param  filename the filename of the CHM helpfile. This is passed
+    *                  directly to mspack_system::open().
+    * @return a pointer to a mschmd_header structure, or NULL on failure
+    * @see close()
+    */
+-  struct mschmd_header *(*open)(struct mschm_decompressor *this,
++  struct mschmd_header *(*open)(struct mschm_decompressor *self,
+ 				char *filename);
+ 
+   /**
+@@ -1309,12 +1309,12 @@ struct mschm_decompressor {
+    * mschmd_file pointers referencing that CHM are also now invalid, and
+    * cannot be used again.
+    *
+-   * @param  this     a self-referential pointer to the mschm_decompressor
++   * @param  self     a self-referential pointer to the mschm_decompressor
+    *                  instance being called
+    * @param  chm      the CHM helpfile to close
+    * @see open(), fast_open()
+    */
+-  void (*close)(struct mschm_decompressor *this,
++  void (*close)(struct mschm_decompressor *self,
+ 		struct mschmd_header *chm);
+ 
+   /**
+@@ -1329,13 +1329,13 @@ struct mschm_decompressor {
+    * and mschmd_header::sysfiles list and mschmd_file structures generated
+    * on the fly by fast_find().
+    *
+-   * @param  this     a self-referential pointer to the mscab_decompressor
++   * @param  self     a self-referential pointer to the mscab_decompressor
+    *                  instance being called
+    * @param  file     the file to be decompressed
+    * @param  filename the filename of the file being written to
+    * @return an error code, or MSPACK_ERR_OK if successful
+    */
+-  int (*extract)(struct mschm_decompressor *this,
++  int (*extract)(struct mschm_decompressor *self,
+ 		 struct mschmd_file *file,
+ 		 char *filename);
+ 
+@@ -1345,12 +1345,12 @@ struct mschm_decompressor {
+    * This is useful for open() and fast_open(), which do not return an
+    * error code directly.
+    *
+-   * @param  this     a self-referential pointer to the mschm_decompressor
++   * @param  self     a self-referential pointer to the mschm_decompressor
+    *                  instance being called
+    * @return the most recent error code
+    * @see open(), search()
+    */
+-  int (*last_error)(struct mschm_decompressor *this);
++  int (*last_error)(struct mschm_decompressor *self);
+ 
+   /**
+    * Opens a CHM helpfile quickly.
+@@ -1367,14 +1367,14 @@ struct mschm_decompressor {
+    * The filename pointer should be considered "in use" until close() is
+    * called on the CHM helpfile.
+    *
+-   * @param  this     a self-referential pointer to the mschm_decompressor
++   * @param  self     a self-referential pointer to the mschm_decompressor
+    *                  instance being called
+    * @param  filename the filename of the CHM helpfile. This is passed
+    *                  directly to mspack_system::open().
+    * @return a pointer to a mschmd_header structure, or NULL on failure
+    * @see open(), close(), fast_find(), extract()
+    */
+-  struct mschmd_header *(*fast_open)(struct mschm_decompressor *this,
++  struct mschmd_header *(*fast_open)(struct mschm_decompressor *self,
+ 				     char *filename);
+ 
+   /**
+@@ -1406,7 +1406,7 @@ struct mschm_decompressor {
+    * opened with fast_open(), but it also works with helpfiles opened
+    * using the regular open().
+    *
+-   * @param  this     a self-referential pointer to the mschm_decompressor
++   * @param  self     a self-referential pointer to the mschm_decompressor
+    *                  instance being called
+    * @param  chm      the CHM helpfile to search for the file
+    * @param  filename the filename of the file to search for
+@@ -1415,7 +1415,7 @@ struct mschm_decompressor {
+    * @return MSPACK_ERR_OK, or an error code
+    * @see open(), close(), fast_find(), extract()
+    */
+-  int (*fast_find)(struct mschm_decompressor *this,
++  int (*fast_find)(struct mschm_decompressor *self,
+ 		   struct mschmd_header *chm,
+ 		   char *filename,
+ 		   struct mschmd_file *f_ptr,

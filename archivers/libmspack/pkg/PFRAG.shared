@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/06/01 08:12:41 jolan Exp $
+@lib lib/libmspack.so.${LIBmspack_VERSION}

@@ -1,0 +1,31 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2006/06/01 08:12:41 jolan Exp $
+--- Makefile.in.orig	Wed Mar 10 07:12:21 2004
++++ Makefile.in	Thu Jun  1 01:27:54 2006
+@@ -16,7 +16,7 @@
+ 
+ 
+ 
+-SOURCES = $(libmscabd_la_SOURCES) $(libmschmd_la_SOURCES) $(libmspack_la_SOURCES) $(test_cabd_md5_SOURCES) $(test_cabd_test_SOURCES) $(test_cabextract_md5_SOURCES) $(test_cabrip_SOURCES) $(test_chmd_md5_SOURCES) $(test_chminfo_SOURCES) $(test_chmx_SOURCES)
++SOURCES = $(libmscabd_la_SOURCES) $(libmschmd_la_SOURCES) $(libmspack_la_SOURCES)
+ 
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
+@@ -72,7 +72,7 @@ am_libmspack_la_OBJECTS = system.lo cabc
+ 	hlpc.lo hlpd.lo litc.lo litd.lo kwajc.lo kwajd.lo szddc.lo \
+ 	szddd.lo lzxc.lo lzxd.lo mszipc.lo mszipd.lo qtmd.lo
+ libmspack_la_OBJECTS = $(am_libmspack_la_OBJECTS)
+-PROGRAMS = $(noinst_PROGRAMS)
++PROGRAMS = 
+ am_test_cabd_md5_OBJECTS = cabd_md5.$(OBJEXT) md5.$(OBJEXT)
+ test_cabd_md5_OBJECTS = $(am_test_cabd_md5_OBJECTS)
+ test_cabd_md5_DEPENDENCIES = libmscabd.la
+@@ -246,8 +246,7 @@ target_alias = @target_alias@
+ MSPACK_FLAGS = 
+ EXTRA_DIST = debian doc test/test_files
+ AM_CPPFLAGS = -I$(srcdir)/mspack
+-AM_CFLAGS = -std=c99 -Wall -Wsign-compare -Wconversion -pedantic \
+-			$(MSPACK_FLAGS)
++AM_CFLAGS = -Wall -Wsign-compare -Wconversion -pedantic $(MSPACK_FLAGS)
+ 
+ lib_LTLIBRARIES = libmspack.la
+ include_HEADERS = mspack/mspack.h
