@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_cppunit_Makefile_in,v 1.1.1.1 2006/06/01 01:36:23 jolan Exp $
+--- src/cppunit/Makefile.in.orig	Fri Jun 18 06:39:04 2004
++++ src/cppunit/Makefile.in	Wed May 31 20:19:20 2006
+@@ -213,8 +213,7 @@ libcppunit_la_SOURCES = \
+ 
+ 
+ libcppunit_la_LDFLAGS = \
+- -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
+- -release $(LT_RELEASE)
++ -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ 
+ subdir = src/cppunit
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

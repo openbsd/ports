@@ -1,0 +1,14 @@
+CppUnit is a C++ unit testing framework.  It started its life as a port
+of JUnit to C++ done by Michael Feathers.
+
+Features:
+
+ XML output with hook for additional data
+ Compiler like text output to integrate with an IDE
+ Helper macros for easier test suite declaration
+ Hierarcal test fixture support
+ Test registry to reduce recompilation need
+ Test plug-in for faster compile/test cycle
+  (self testable dynamic library)
+ Protector to encapsulate test execution
+  (allow capture of exception not derived from std::exception)
