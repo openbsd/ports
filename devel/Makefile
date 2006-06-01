@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.372 2006/05/29 21:59:25 alek Exp $
+# $OpenBSD: Makefile,v 1.373 2006/06/01 01:39:01 jolan Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -31,6 +31,7 @@
      SUBDIR += cil
      SUBDIR += cook
      SUBDIR += cpphs
+     SUBDIR += cppunit
      SUBDIR += cscope
      SUBDIR += ctm
      SUBDIR += cvs2cl
