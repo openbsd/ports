@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_libmojave-external_stdlib_lm_filename_util_ml,v 1.1.1.1 2006/06/01 02:16:59 avsm Exp $
+--- src/libmojave-external/stdlib/lm_filename_util.ml.orig	Wed May 31 09:12:59 2006
++++ src/libmojave-external/stdlib/lm_filename_util.ml	Wed May 31 09:13:27 2006
+@@ -492,9 +492,10 @@ let mkdirhier dir mode =
+          head :: path ->
+             let dir = Filename.concat dir head in
+             let () =
+-               try Unix.mkdir dir mode with
+-                   Unix.Unix_error (Unix.EEXIST, _, _) ->
+-                     ()
++               if not (Sys.file_exists dir) then
++                 try Unix.mkdir dir mode with
++                     Unix.Unix_error (Unix.EEXIST, _, _) ->
++                       ()
+             in
+                mkdir dir path
+        | [] ->

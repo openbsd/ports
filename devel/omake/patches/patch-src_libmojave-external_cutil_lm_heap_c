@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_libmojave-external_cutil_lm_heap_c,v 1.1.1.1 2006/06/01 02:16:59 avsm Exp $
+--- src/libmojave-external/cutil/lm_heap.c.orig	Mon Apr  3 23:31:06 2006
++++ src/libmojave-external/cutil/lm_heap.c	Wed May 31 09:14:55 2006
+@@ -82,7 +82,7 @@ static void lm_heap_check_aux1(char *nam
+     start = caml_young_start;
+     ptr = caml_young_ptr;
+     end = caml_young_end;
+-
++#if 0
+     fprintf(stderr, "AAA: %s: [0x%08lx, 0x%08lx, 0x%08lx, 0x%08lx] (%d/%d/%d bytes)\n",
+             name,
+             (unsigned long) caml_young_start,
+@@ -93,6 +93,7 @@ static void lm_heap_check_aux1(char *nam
+             caml_young_end - caml_young_limit,
+             caml_young_end - caml_young_start);
+     fflush(stderr);
++#endif
+ 
+     /*
+      * Phase 1: check that the headers have the right sizes.
+@@ -167,6 +168,7 @@ static void lm_heap_check_aux2(char *nam
+     ptr = caml_young_ptr;
+     end = caml_young_end;
+ 
++#if 0
+     fprintf(stderr, "AAA: %s: [0x%08lx, 0x%08lx, 0x%08lx, 0x%08lx] (%d/%d/%d bytes)\n",
+             name,
+             (unsigned long) caml_young_start,
+@@ -177,6 +179,7 @@ static void lm_heap_check_aux2(char *nam
+             caml_young_end - caml_young_limit,
+             caml_young_end - caml_young_start);
+     fflush(stderr);
++#endif
+ 
+     /*
+      * Phase 1: check that the headers have the right sizes.

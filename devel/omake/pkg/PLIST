@@ -1,0 +1,35 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/01 02:16:59 avsm Exp $
+bin/cvs_realclean
+bin/omake
+bin/osh
+lib/omake/
+lib/omake/OMakefile.default
+lib/omake/OMakeroot.default
+lib/omake/OMakeroot.om
+lib/omake/Pervasives.om
+lib/omake/build/
+lib/omake/build/C.om
+lib/omake/build/Common.om
+lib/omake/build/LaTeX.om
+lib/omake/build/OCaml.om
+lib/omake/configure/
+lib/omake/configure/Configure.om
+lib/omake/configure/fam.om
+lib/omake/configure/ncurses.om
+lib/omake/configure/readline.om
+lib/omake/parse/
+lib/omake/parse/C/
+lib/omake/parse/C/Lex.om
+lib/omake/parse/C/Parse.om
+@man man/man1/omake-base.1
+@man man/man1/omake-doc.1
+@man man/man1/omake-language.1
+@man man/man1/omake-options.1
+@man man/man1/omake-pervasives.1
+@man man/man1/omake-quickstart.1
+@man man/man1/omake-root.1
+@man man/man1/omake-rules.1
+@man man/man1/omake-shell.1
+@man man/man1/omake-system.1
+@man man/man1/omake.1
+@man man/man1/osh.1

@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_clib_fam_kqueue_c,v 1.1.1.1 2006/06/01 02:16:59 avsm Exp $
+--- src/clib/fam_kqueue.c.orig	Wed May 31 08:42:59 2006
++++ src/clib/fam_kqueue.c	Wed May 31 08:43:10 2006
+@@ -44,6 +44,7 @@
+ #include <unistd.h>
+ #include <stdlib.h>
+ #include <stdio.h>
++#include <stdint.h>
+ #include <fcntl.h>
+ #include <errno.h>
+ 

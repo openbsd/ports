@@ -1,0 +1,20 @@
+OMake is a build system designed for scalability and portability.
+It uses a syntax similar to make utilities you may have used, but
+it features many additional enhancements, such as:
+
+Support for projects spanning several directories or directory
+hierarchies.  Fast, reliable, automated, scriptable dependency
+analysis using MD5 digests, with full support for incremental builds.
+Fully scriptable, includes a library that providing support for
+standard tasks in C, C++, OCaml, and LaTeX projects, or a mixture
+thereof.  Full native support for rules that build several files
+at once.
+
+OMake provides a uniform interface on Linux/Unix (including 64-bit
+architectures), Win32, Cygwin, Mac OS X, and other platforms that
+are supported by OCaml.
+
+Active filesystem monitoring, where the build automatically restarts
+whenever you modify a source file. This can be very useful during
+the edit/compile cycle.  A built-in command-interpreter osh that
+can be used interactively.
