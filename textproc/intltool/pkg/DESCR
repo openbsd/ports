@@ -1,4 +1,2 @@
-The intltool package is a set of tools for translating the
-contents of data files using the gettext translation framework.
-
-For more information about intltool, visit:
+The intltool package is a set of tools for translating the contents of
+data files using the gettext translation framework.
