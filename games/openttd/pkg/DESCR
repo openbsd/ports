@@ -1,0 +1,8 @@
+OpenTTD is modeled after the original Transport Tycoon game by Chris
+Sawyer and enhances the game experience dramatically. Many features were
+inspired by TTDPatch while others are original.
+
+OpenTTD requires the original version of Transport Tycoon Deluxe data
+files in order to function.  Data files and music files should be placed
+in ${PREFIX}/share/openttd/data and ${PREFIX}/share/openttd/gm
+respectively.

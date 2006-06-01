@@ -1,0 +1,11 @@
+$OpenBSD: patch-endian_check_c,v 1.1.1.1 2006/06/01 08:06:45 jolan Exp $
+--- endian_check.c.orig	Tue Dec  6 08:35:10 2005
++++ endian_check.c	Thu Feb  2 00:46:34 2006
+@@ -1,6 +1,7 @@
+ /* $Id: patch-endian_check_c,v 1.1.1.1 2006/06/01 08:06:45 jolan Exp $ */
+ 
+ #include <stdio.h>
++#include <string.h>
+ 
+ // This pretty simple file checks if the system is LITTLE_ENDIAN or BIG_ENDIAN
+ //  it does that by putting a 1 and a 0 in an array, and read it out as one
