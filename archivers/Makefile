@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2006/02/12 14:58:15 david Exp $
-# $FreeBSD: Makefile,v 1.19 1997/11/20 08:21:26 tg Exp $
+# $OpenBSD: Makefile,v 1.29 2006/06/01 08:13:49 jolan Exp $
 
      SUBDIR += arc
      SUBDIR += bzip
@@ -13,6 +12,7 @@
      SUBDIR += gtar,static
      SUBDIR += ha
      SUBDIR += lha
+     SUBDIR += libmspack
      SUBDIR += lxsplit
      SUBDIR += lzma
      SUBDIR += lzo
