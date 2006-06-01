@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2006/04/10 20:43:01 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2006/06/01 04:04:45 steven Exp $
 
 COMMENT=		"draw maps and charts"
 
-V=			4.1.1
+V=			4.1.3
 DISTNAME=		GMT${V}
 PKGNAME=		gmt-${V}
 CATEGORIES=		graphics
@@ -27,15 +27,16 @@ MASTER_SITES=		ftp://ftp.soest.hawaii.edu/gmt/4/ \
 			ftp://ftp.geologi.uio.no/pub/gmt/4/ \
 			ftp://gd.tuwien.ac.at/pub/gmt/4/
 			
-DISTFILES=		GMT4.1.1_progs.tar.bz2 \
-			GMT4.1.1_man.tar.bz2 \
-			GMT4_share.tar.bz2 
+DISTFILES=		GMT${V}_src.tar.bz2 \
+			GMT${V}_man.tar.bz2 \
+			GMT${V}_share.tar.bz2 \
+			GMT4.1_coast.tar.bz2
 
-SUPDISTFILES=		GMT4_high.tar.bz2 \
-			GMT4_full.tar.bz2
+SUPDISTFILES=		GMT4.1_high.tar.bz2 \
+			GMT4.1_full.tar.bz2
 
 DIST_SUBDIR=		${PKGNAME}
-EXTRACT_CASES=		GMT4_*.tar.bz2) bzip2 -dc ${FULLDISTDIR}/$$archive | \
+EXTRACT_CASES=		GMT4.1_*.tar.bz2) bzip2 -dc ${FULLDISTDIR}/$$archive | \
 				tar xf - -C ${WRKDIST};;
 
 CONFIGURE_STYLE=	gnu
@@ -49,10 +50,10 @@ FLAVORS=		high full
 FLAVOR?=
 
 .if ${FLAVOR:L:Mhigh}
-DISTFILES+=		GMT4_high.tar.bz2
+DISTFILES+=		GMT4.1_high.tar.bz2
 .endif
 .if ${FLAVOR:L:Mfull}
-DISTFILES+=		GMT4_full.tar.bz2
+DISTFILES+=		GMT4.1_full.tar.bz2
 .endif
 
 NO_REGRESS=		Yes
