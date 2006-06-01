@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2006/05/29 19:38:11 alek Exp $
+# $OpenBSD: Makefile,v 1.124 2006/06/01 08:07:59 jolan Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -69,6 +69,7 @@
      SUBDIR += newvox
      SUBDIR += oilwar
      SUBDIR += omega
+     SUBDIR += openttd
      SUBDIR += pathological
      SUBDIR += prboom
      SUBDIR += qstat
