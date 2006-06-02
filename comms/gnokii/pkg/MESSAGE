@@ -1,0 +1,3 @@
+There are currently NO setuid/gid bits enabled, but if you
+want to use gnokii as a normal user you need to set the
+setuid/gid bits manually.

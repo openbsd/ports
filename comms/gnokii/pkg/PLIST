@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/29 18:05:53 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/06/02 01:54:28 robert Exp $
 %%SHARED%%
 !%%no_x11%%
 bin/gnokii
@@ -23,6 +23,7 @@ lib/libgnokii.a
 lib/libgnokii.la
 lib/pkgconfig/
 lib/pkgconfig/gnokii.pc
+@man man/man1/gnokii.1
 sbin/gnokiid
 sbin/mgnokiidev
 share/doc/gnokii/
