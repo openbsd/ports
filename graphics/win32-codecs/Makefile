@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2005/08/12 22:59:15 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2006/06/02 15:02:54 bernd Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"Huge compilation of Win32 binary codecs"
-DATE=		20050412
+DATE=		20060501
 DATE2=		20050115
 
 DISTNAME=	win32-codecs-${DATE}
-PKGNAME=	${DISTNAME}p0
 DISTFILES=	all-${DATE}.tar.bz2 rp9codecs-win32-${DATE2}.tar.bz2
 CATEGORIES=	graphics
 
