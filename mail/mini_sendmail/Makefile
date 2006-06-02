@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2005/01/02 12:56:05 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2006/06/02 03:44:11 aanriot Exp $
+
 COMMENT=	"accept email on behalf of real sendmail"
 COMMENT-chroot=	"static mini_sendmail for chrooted apache"
-DISTNAME=	mini_sendmail-1.3.5
-PKGNAME-chroot=	mini_sendmail-chroot-1.3.5
+DISTNAME=	mini_sendmail-1.3.6
+PKGNAME-chroot=	mini_sendmail-chroot-1.3.6
 CATEGORIES=	mail www
 MASTER_SITES=	${HOMEPAGE}
 
