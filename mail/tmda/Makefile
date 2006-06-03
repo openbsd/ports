@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2006/06/03 09:39:22 alek Exp $
+# $OpenBSD: Makefile,v 1.32 2006/06/03 15:42:51 alek Exp $
 
 COMMENT=		"reduce the amount of SPAM/UCE (junk-mail)"
 
@@ -26,7 +26,7 @@ CONTRIB_FILES=		collectaddys printcdb sample.config sendit.sh \
 			def2html printdbm tmda.el vadduser-tmda
 
 do-build:
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/python${PYTHON_VER} ./compileall
+	@cd ${WRKSRC} && ${MODPY_BIN} ./compileall
 
 do-install:
 	@perl -pi -e 's:htdocs:${TRUEPREFIX}/share/doc/tmda:' ${WRKSRC}/INSTALL
