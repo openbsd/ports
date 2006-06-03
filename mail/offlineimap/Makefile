@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2006/03/31 17:37:02 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2006/06/03 12:48:56 steven Exp $
 
 COMMENT=	"powerful IMAP/Maildir synchronization and reader support"
 
 DISTNAME=	offlineimap_4.0.11
 CATEGORIES=	mail
-PKGNAME=        ${DISTNAME:S/_/-/}
+PKGNAME=        ${DISTNAME:S/_/-/}p0
 
 HOMEPAGE=	http://www.quux.org/devel/offlineimap/
 
