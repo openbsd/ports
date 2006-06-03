@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/03/21 21:17:10 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2006/06/03 08:28:21 alek Exp $
 
 COMMENT=	"enhanced wiki and bug tracking system for software projects"
 
@@ -25,6 +25,8 @@ RUN_DEPENDS=	::databases/py-sqlite \
 		::textproc/py-docutils \
 		::www/clearsilver,python
 BUILD_DEPENDS=	${RUN_DEPENDS}
+
+NO_REGRESS=	Yes
 
 post-install:
 	@perl -pi -e 's#${WRKINST}##' ${WRKSRC}/trac/siteconfig.py
