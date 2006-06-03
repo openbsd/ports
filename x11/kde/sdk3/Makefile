@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2006/04/01 10:49:22 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2006/06/03 12:47:31 espie Exp $
 
 COMMENT= 		"K Desktop Environment, developer extensions"
 CATEGORIES=		x11 x11/kde devel
-VERSION=		3.5.2
+VERSION=		3.5.3
 DISTNAME=		kdesdk-${VERSION}
 PKGNAME=		${DISTNAME}
-MODKDE_VERSION=		3.5.2
+MODKDE_VERSION=		3.5.3
 SHARED_LIBS=	cvsservice		1.0 \
 		kbabelcommon		6.0 \
 		kbabeldictplugin	4.0 \
@@ -20,7 +20,7 @@ FLAVORS=	debug
 SEPARATE_BUILD=flavored
 
 WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 c jpeg ktnef m pcre \
-		pcreposix png pthread qui-mt stdc++ util z
+		pcreposix png pthread qui-mt stdc++ util z iconv idn
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static

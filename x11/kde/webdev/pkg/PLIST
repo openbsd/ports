@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2006/04/01 10:49:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2006/06/03 12:47:31 espie Exp $
 @conflict quanta-*
 @pkgpath x11/kde/quanta
 bin/kfilereplace
@@ -1228,6 +1228,7 @@ share/apps/quanta/templates/text/scripts/demo.php
 share/apps/quanta/tips
 share/apps/quanta/toolbar/
 share/apps/quanta/toolbar/ball.png
+share/apps/quanta/toolbar/button.png
 share/apps/quanta/toolbar/check.png
 share/apps/quanta/toolbar/check_clear.png
 share/apps/quanta/toolbar/check_grey.png

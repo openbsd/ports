@@ -1,7 +1,7 @@
-$OpenBSD: patch-kdesu_kdesu_kdesu_cpp,v 1.8 2005/03/29 21:18:35 espie Exp $
---- kdesu/kdesu/kdesu.cpp.orig	Tue Oct  5 16:57:50 2004
-+++ kdesu/kdesu/kdesu.cpp	Wed Mar 23 11:50:58 2005
-@@ -112,7 +112,8 @@ int main(int argc, char *argv[])
+$OpenBSD: patch-kdesu_kdesu_kdesu_cpp,v 1.9 2006/06/03 12:47:30 espie Exp $
+--- kdesu/kdesu/kdesu.cpp.orig	Mon May 22 20:13:07 2006
++++ kdesu/kdesu/kdesu.cpp	Sun May 28 23:11:24 2006
+@@ -113,7 +113,8 @@ int main(int argc, char *argv[])
      unsetenv( "SESSION_MANAGER" );
      KApplication app;
      // but propagate it to the started app
@@ -11,7 +11,7 @@ $OpenBSD: patch-kdesu_kdesu_kdesu_cpp,v 1.8 2005/03/29 21:18:35 espie Exp $
      
      {
          KStartupInfoId id;
-@@ -329,10 +330,12 @@ static int startApp()
+@@ -331,10 +332,12 @@ static int startApp()
      KConfig *config = KGlobal::config();
      config->setGroup("Passwords");
      int timeout = config->readNumEntry("Timeout", defTimeout);
@@ -24,16 +24,16 @@ $OpenBSD: patch-kdesu_kdesu_kdesu_cpp,v 1.8 2005/03/29 21:18:35 espie Exp $
      int needpw = proc.checkNeedPassword();
      if (needpw < 0)
      {
-@@ -355,7 +358,7 @@ static int startApp()
+@@ -357,7 +360,7 @@ static int startApp()
          KStartupInfoData data;
          data.setSilent( KStartupInfoData::Yes );
          KStartupInfo::sendChange( id, data );
--        KDEsuDialog dlg(user, auth_user, keep && !terminal, icon);
-+        KDEsuDialog dlg(user, auth_user, keep && !terminal, icon, useSudo);
+-        KDEsuDialog dlg(user, auth_user, keep && !terminal,icon, withIgnoreButton);
++        KDEsuDialog dlg(user, auth_user, keep && !terminal,icon, useSudo, withIgnoreButton);
  	if (prompt)
  	    dlg.addLine(i18n("Command:"), command);
          if ((priority != 50) || (scheduler != SuProcess::SchedNormal))
-@@ -408,6 +411,7 @@ static int startApp()
+@@ -410,6 +413,7 @@ static int startApp()
          proc.setTerminal(terminal);
          proc.setErase(true);
          proc.setUser(user);

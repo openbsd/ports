@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ro,v 1.7 2006/04/01 12:33:43 espie Exp $
+@comment $OpenBSD: PLIST-ro,v 1.8 2006/06/03 12:47:30 espie Exp $
 @conflict kde-i18n-de-<3.4
 share/apps/ktuberling/
 share/apps/ktuberling/sounds/
@@ -25,6 +25,13 @@ share/apps/ktuberling/sounds/ro/sprinceana.wav
 share/apps/ktuberling/sounds/ro/tigara.wav
 share/apps/ktuberling/sounds/ro/ureche.wav
 share/doc/HTML/ro/
+${DOC}docs/
+${DOC}docs/common/
+${DOC}docs/common/fdl-translated.html
+${DOC}docs/common/gpl-translated.html
+${DOC}docs/common/kde-localised.css
+${DOC}docs/common/lgpl-translated.html
+${DOC}docs/common/logotp3.png
 ${DOC}khelpcenter/
 ${DOC}khelpcenter/common
 ${DOC}khelpcenter/contact.docbook
@@ -179,14 +186,6 @@ ${DOC}kioslave/telnet.docbook
 ${DOC}kioslave/thumbnail.docbook
 ${DOC}kioslave/webdav.docbook
 ${DOC}kioslave/webdavs.docbook
-${DOC}ro/
-${DOC}ro/docs/
-${DOC}ro/docs/common/
-${DOC}ro/docs/common/fdl-translated.html
-${DOC}ro/docs/common/gpl-translated.html
-${DOC}ro/docs/common/kde-localised.css
-${DOC}ro/docs/common/lgpl-translated.html
-${DOC}ro/docs/common/logotp3.png
 ${LOC}akregator.mo
 ${LOC}alsaplayerui.mo
 ${LOC}amor.mo

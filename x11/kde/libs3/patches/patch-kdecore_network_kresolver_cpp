@@ -1,6 +1,6 @@
-$OpenBSD: patch-kdecore_network_kresolver_cpp,v 1.9 2005/11/29 14:00:12 espie Exp $
---- kdecore/network/kresolver.cpp.orig	Mon Oct 10 17:06:02 2005
-+++ kdecore/network/kresolver.cpp	Mon Nov 21 12:00:08 2005
+$OpenBSD: patch-kdecore_network_kresolver_cpp,v 1.10 2006/06/03 12:47:30 espie Exp $
+--- kdecore/network/kresolver.cpp.orig	Mon May 22 20:14:19 2006
++++ kdecore/network/kresolver.cpp	Sun May 28 13:22:11 2006
 @@ -66,6 +66,10 @@
  QMutex getXXbyYYmutex;
  #endif
@@ -42,9 +42,9 @@ $OpenBSD: patch-kdecore_network_kresolver_cpp,v 1.9 2005/11/29 14:00:12 espie Ex
 -# endif
 +#  endif
  	{
+           pe = 0L;
  	  buflen += 1024;
- 	  delete [] buf;
-@@ -635,6 +650,7 @@ QStrList KResolver::protocolName(int pro
+@@ -636,6 +651,7 @@ QStrList KResolver::protocolName(int pro
  	break;
      }
    while (pe == 0L);
@@ -52,7 +52,7 @@ $OpenBSD: patch-kdecore_network_kresolver_cpp,v 1.9 2005/11/29 14:00:12 espie Ex
  #endif
  
    // Do common processing
-@@ -647,7 +663,9 @@ QStrList KResolver::protocolName(int pro
+@@ -648,7 +664,9 @@ QStrList KResolver::protocolName(int pro
      }
  
  #ifdef HAVE_GETPROTOBYNAME_R
@@ -62,7 +62,7 @@ $OpenBSD: patch-kdecore_network_kresolver_cpp,v 1.9 2005/11/29 14:00:12 espie Ex
  #endif
  
    return lst;
-@@ -662,17 +680,27 @@ QStrList KResolver::protocolName(const c
+@@ -663,17 +681,27 @@ QStrList KResolver::protocolName(const c
    pe = getprotobyname(protoname);
  
  #else
@@ -91,9 +91,9 @@ $OpenBSD: patch-kdecore_network_kresolver_cpp,v 1.9 2005/11/29 14:00:12 espie Ex
 -# endif
 +#  endif
  	{
+           pe = 0L;
  	  buflen += 1024;
- 	  delete [] buf;
-@@ -681,6 +709,7 @@ QStrList KResolver::protocolName(const c
+@@ -683,6 +711,7 @@ QStrList KResolver::protocolName(const c
  	break;
      }
    while (pe == 0L);
@@ -101,7 +101,7 @@ $OpenBSD: patch-kdecore_network_kresolver_cpp,v 1.9 2005/11/29 14:00:12 espie Ex
  #endif
  
    // Do common processing
-@@ -693,7 +722,9 @@ QStrList KResolver::protocolName(const c
+@@ -695,7 +724,9 @@ QStrList KResolver::protocolName(const c
      }
  
  #ifdef HAVE_GETPROTOBYNAME_R
@@ -111,7 +111,7 @@ $OpenBSD: patch-kdecore_network_kresolver_cpp,v 1.9 2005/11/29 14:00:12 espie Ex
  #endif
  
    return lst;
-@@ -708,17 +739,28 @@ int KResolver::protocolNumber(const char
+@@ -710,17 +741,28 @@ int KResolver::protocolNumber(const char
    pe = getprotobyname(protoname);
  
  #else
@@ -141,9 +141,9 @@ $OpenBSD: patch-kdecore_network_kresolver_cpp,v 1.9 2005/11/29 14:00:12 espie Ex
 -# endif
 +#  endif
  	{
+           pe = 0L;
  	  buflen += 1024;
- 	  delete [] buf;
-@@ -727,6 +769,7 @@ int KResolver::protocolNumber(const char
+@@ -730,6 +772,7 @@ int KResolver::protocolNumber(const char
  	break;
      }
    while (pe == 0L);
@@ -151,7 +151,7 @@ $OpenBSD: patch-kdecore_network_kresolver_cpp,v 1.9 2005/11/29 14:00:12 espie Ex
  #endif
  
    // Do common processing
-@@ -735,7 +778,9 @@ int KResolver::protocolNumber(const char
+@@ -738,7 +781,9 @@ int KResolver::protocolNumber(const char
      protonum = pe->p_proto;
  
  #ifdef HAVE_GETPROTOBYNAME_R
@@ -161,7 +161,7 @@ $OpenBSD: patch-kdecore_network_kresolver_cpp,v 1.9 2005/11/29 14:00:12 espie Ex
  #endif
  
    return protonum;
-@@ -750,17 +795,27 @@ int KResolver::servicePort(const char *s
+@@ -753,17 +798,27 @@ int KResolver::servicePort(const char *s
    se = getservbyname(servname, protoname);
  
  #else
@@ -190,9 +190,9 @@ $OpenBSD: patch-kdecore_network_kresolver_cpp,v 1.9 2005/11/29 14:00:12 espie Ex
 -# endif
 +#  endif
  	{
+           se = 0L;
  	  buflen += 1024;
- 	  delete [] buf;
-@@ -777,7 +832,9 @@ int KResolver::servicePort(const char *s
+@@ -781,7 +836,9 @@ int KResolver::servicePort(const char *s
      servport = ntohs(se->s_port);
  
  #ifdef HAVE_GETSERVBYNAME_R
@@ -202,7 +202,7 @@ $OpenBSD: patch-kdecore_network_kresolver_cpp,v 1.9 2005/11/29 14:00:12 espie Ex
  #endif
  
    return servport;
-@@ -792,17 +849,27 @@ QStrList KResolver::serviceName(const ch
+@@ -796,17 +853,27 @@ QStrList KResolver::serviceName(const ch
    se = getservbyname(servname, protoname);
  
  #else
@@ -231,9 +231,9 @@ $OpenBSD: patch-kdecore_network_kresolver_cpp,v 1.9 2005/11/29 14:00:12 espie Ex
 -# endif
 +#  endif
  	{
+           se = 0L;
  	  buflen += 1024;
- 	  delete [] buf;
-@@ -811,6 +878,7 @@ QStrList KResolver::serviceName(const ch
+@@ -816,6 +883,7 @@ QStrList KResolver::serviceName(const ch
  	break;
      }
    while (se == 0L);
@@ -241,7 +241,7 @@ $OpenBSD: patch-kdecore_network_kresolver_cpp,v 1.9 2005/11/29 14:00:12 espie Ex
  #endif
  
    // Do common processing
-@@ -823,7 +891,9 @@ QStrList KResolver::serviceName(const ch
+@@ -828,7 +896,9 @@ QStrList KResolver::serviceName(const ch
      }
  
  #ifdef HAVE_GETSERVBYNAME_R
@@ -251,7 +251,7 @@ $OpenBSD: patch-kdecore_network_kresolver_cpp,v 1.9 2005/11/29 14:00:12 espie Ex
  #endif
  
    return lst;
-@@ -838,17 +908,27 @@ QStrList KResolver::serviceName(int port
+@@ -843,17 +913,27 @@ QStrList KResolver::serviceName(int port
    se = getservbyport(port, protoname);
  
  #else
@@ -280,9 +280,9 @@ $OpenBSD: patch-kdecore_network_kresolver_cpp,v 1.9 2005/11/29 14:00:12 espie Ex
 -# endif
 +#  endif
  	{
+           se = 0L;
  	  buflen += 1024;
- 	  delete [] buf;
-@@ -857,6 +937,8 @@ QStrList KResolver::serviceName(int port
+@@ -863,6 +943,8 @@ QStrList KResolver::serviceName(int port
  	break;
      }
    while (se == 0L);
@@ -291,7 +291,7 @@ $OpenBSD: patch-kdecore_network_kresolver_cpp,v 1.9 2005/11/29 14:00:12 espie Ex
  #endif
  
    // Do common processing
-@@ -869,7 +951,9 @@ QStrList KResolver::serviceName(int port
+@@ -875,7 +957,9 @@ QStrList KResolver::serviceName(int port
      }
  
  #ifdef HAVE_GETSERVBYPORT_R

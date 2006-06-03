@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2006/04/29 05:31:45 brad Exp $
+# $OpenBSD: Makefile,v 1.38 2006/06/03 12:47:31 espie Exp $
 
 COMMENT= 		"K Desktop Environment, multimedia applications"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.2
+VERSION=		3.5.3
 DISTNAME=		kdemultimedia-${VERSION}
-PKGNAME=		${DISTNAME}p1
-MODKDE_VERSION=		3.5.2
+PKGNAME=		${DISTNAME}
+MODKDE_VERSION=		3.5.3
 SHARED_LIBS=		arts_mpeglib-0.3.0	1.0 \
 			arts_mpeglib		1.0 \
 			arts_splay		1.0 \
@@ -63,6 +63,7 @@ WANTLIB=	ICE SM X11 Xext Xrender Xv Xxf86dga Xxf86vm art_lgpl_2 \
 		artsflow artsflow_idl audiofile c esd glib-2.0.0.0 \
 		gmodule-2.0.0.0 gthread-2.0.0.0 iconv intl jpeg kmedia2_idl m \
 		mad mcop ossaudio png pthread qtmcop soundserver_idl stdc++ \
-		util vorbisfile z gobject-2.0.0.0 pcreposix xml2 pcre freetype
+		util vorbisfile z gobject-2.0.0.0 pcreposix xml2 pcre freetype \
+		idn
 
 .include <bsd.port.mk>

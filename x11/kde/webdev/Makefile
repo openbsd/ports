@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2006/04/01 10:49:23 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2006/06/03 12:47:31 espie Exp $
 
 COMMENT= 		"web development tool"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.2
+VERSION=		3.5.3
 DISTNAME=		kdewebdev-${VERSION}
 PKGNAME=		${DISTNAME}
-MODKDE_VERSION=		3.5.2
+MODKDE_VERSION=		3.5.3
 SHARED_LIBS=		kommanderplugin		1.0 \
 			kommanderwidget		1.0 \
 			kommanderwidgets	1.0
@@ -18,7 +18,7 @@ SEPARATE_BUILD=flavored
 
 WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 c gcrypt gpg-error iconv \
 		intl jpeg kmdi knewstuff m pcre pcreposix png pthread stdc++ \
-		util xml2 xslt z
+		util xml2 xslt z idn
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static

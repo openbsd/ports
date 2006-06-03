@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pt_BR,v 1.6 2006/04/01 12:33:43 espie Exp $
+@comment $OpenBSD: PLIST-pt_BR,v 1.7 2006/06/03 12:47:30 espie Exp $
 share/apps/katepart/syntax/logohighlightstyle.pt_BR.xml
 share/apps/khangman/
 share/apps/khangman/data/
@@ -72,6 +72,13 @@ ${DOC}cervisia/${C}
 ${DOC}cervisia/${I}
 ${DOC}cervisia/mainview.png
 ${DOC}cervisia/popup.png
+${DOC}docs/
+${DOC}docs/common/
+${DOC}docs/common/fdl-translated.html
+${DOC}docs/common/gpl-translated.html
+${DOC}docs/common/kde-localised.css
+${DOC}docs/common/lgpl-translated.html
+${DOC}docs/common/logotp3.png
 ${DOC}juk/
 ${DOC}juk/common
 ${DOC}juk/${C}
@@ -1499,14 +1506,6 @@ ${DOC}noatun/
 ${DOC}noatun/common
 ${DOC}noatun/${C}
 ${DOC}noatun/${I}
-${DOC}pt_BR/
-${DOC}pt_BR/docs/
-${DOC}pt_BR/docs/common/
-${DOC}pt_BR/docs/common/fdl-translated.html
-${DOC}pt_BR/docs/common/gpl-translated.html
-${DOC}pt_BR/docs/common/kde-localised.css
-${DOC}pt_BR/docs/common/lgpl-translated.html
-${DOC}pt_BR/docs/common/logotp3.png
 ${DOC}quanta/
 ${DOC}quanta/adv-quanta.docbook
 ${DOC}quanta/attribute_tree.png

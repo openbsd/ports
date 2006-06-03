@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.59 2006/05/21 17:29:21 steven Exp $
+# $OpenBSD: Makefile,v 1.60 2006/06/03 12:47:30 espie Exp $
 
 COMMENT=		"K Desktop Environment, graphic applications"
 COMMENT-kamera=		"KDE interface to digital cameras"
 COMMENT-kpov=		"KDE modeller for povray"
 COMMENT-sane=		"KDE interface to scanners"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.2
+VERSION=		3.5.3
 DISTNAME=		kdegraphics-${VERSION}
-MODKDE_VERSION=		3.5.2
+MODKDE_VERSION=		3.5.3
 
 FLAVORS=debug
 SEPARATE_BUILD=flavored
@@ -29,7 +29,7 @@ BUILD_DEPENDS+=	::print/teTeX/base \
 		:pkgconfig-*:devel/pkgconfig
 
 
-WANTLIB+=	X11 art_lgpl_2 pthread ICE png util jpeg z SM Xext m
+WANTLIB+=	X11 art_lgpl_2 pthread ICE png util jpeg z SM Xext m idn
 
 LIB_DEPENDS+=	
 	
@@ -43,14 +43,14 @@ LIB_DEPENDS+=	Imlib::graphics/imlib \
 		Iex,Half,Imath,IlmImf::graphics/openexr \
 		fribidi::devel/fribidi
 
-WANTLIB+=	tiff fontconfig lcms Xrender ICE c \
+WANTLIB+=	tiff fontconfig lcms Xrender ICE c iconv \
 		freetype stdc++ pcreposix pcre Xxf86vm SM Xext Xft
 .endif
 
 .if !defined(PACKAGING) || ${SUBPACKAGE:L} == "-kpov"
 LIB_DEPENDS+= kwalletclient,DCOP,kdecore.6,kio,kparts,kdeui,kdefx,kdesu::x11/kde/libs3
 RUN_DEPENDS+=	::graphics/povray
-WANTLIB+=	GL stdc++ freetype Xrender Xmu GLU c Xi
+WANTLIB+=	GL stdc++ freetype Xrender Xmu GLU c Xi iconv
 .endif
 
 .if !defined(PACKAGING) || ${SUBPACKAGE:L} == "-kamera"
@@ -62,7 +62,7 @@ WANTLIB+=	iconv exif Xrender intl
 .if !defined(PACKAGING) || ${SUBPACKAGE:L} == "-sane"
 LIB_DEPENDS+= kwalletclient,ktexteditor,DCOP,vcard,kabc,kparts,kdeui,kdesu,kdecore.6,kio,kresources,kdefx,kspell,kdeprint::x11/kde/libs3
 LIB_DEPENDS+=	sane::graphics/sane-backends
-WANTLIB+=	usb tiff stdc++ c Xrender exif gphoto2 gphoto2_port iconv intl
+WANTLIB+=	usb tiff stdc++ c Xrender gphoto2 intl iconv gphoto2_port exif
 .endif
 
 CONFIGURE_ENV+=	\

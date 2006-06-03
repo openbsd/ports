@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ru,v 1.5 2006/04/01 12:33:43 espie Exp $
+@comment $OpenBSD: PLIST-ru,v 1.6 2006/06/03 12:47:30 espie Exp $
 share/apps/katepart/syntax/logohighlightstyle.ru.xml
 share/apps/khangman/
 share/apps/khangman/data/
@@ -60,6 +60,12 @@ ${DOC}cervisia/
 ${DOC}cervisia/common
 ${DOC}cervisia/${C}
 ${DOC}cervisia/${I}
+${DOC}docs/
+${DOC}docs/common/
+${DOC}docs/common/fdl-translated.html
+${DOC}docs/common/gpl-translated.html
+${DOC}docs/common/kde-localised.css
+${DOC}docs/common/logotp3.png
 ${DOC}juk/
 ${DOC}juk/common
 ${DOC}juk/${C}
@@ -1478,13 +1484,6 @@ ${DOC}quanta/quanta-projects.docbook
 ${DOC}quanta/taginputex.png
 ${DOC}quanta/toolbars.png
 ${DOC}quanta/working-with-quanta.docbook
-${DOC}ru/
-${DOC}ru/docs/
-${DOC}ru/docs/common/
-${DOC}ru/docs/common/fdl-translated.html
-${DOC}ru/docs/common/gpl-translated.html
-${DOC}ru/docs/common/kde-localised.css
-${DOC}ru/docs/common/logotp3.png
 ${DOC}scripts/
 ${DOC}scripts/man-po2xml.1.docbook
 ${DOC}scripts/man-split2po.1.docbook

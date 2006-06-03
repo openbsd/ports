@@ -1,6 +1,6 @@
-$OpenBSD: patch-klaptopdaemon_portable_cpp,v 1.7 2006/02/18 14:17:23 espie Exp $
---- klaptopdaemon/portable.cpp.orig	Thu Jan 19 17:49:17 2006
-+++ klaptopdaemon/portable.cpp	Sat Feb 18 15:15:11 2006
+$OpenBSD: patch-klaptopdaemon_portable_cpp,v 1.8 2006/06/03 12:47:31 espie Exp $
+--- klaptopdaemon/portable.cpp.orig	Mon May 22 20:08:33 2006
++++ klaptopdaemon/portable.cpp	Fri Jun  2 00:11:26 2006
 @@ -40,6 +40,7 @@
  //	Linux 		(#if __linux__)
  //	FreeBSD		(#elif __FreeBSD__)
@@ -9,7 +9,7 @@ $OpenBSD: patch-klaptopdaemon_portable_cpp,v 1.7 2006/02/18 14:17:23 espie Exp $
  //	generic nothing	(#else)
  //
  //
-@@ -2769,6 +2770,323 @@ laptop_portable::get_button(LaptopButton
+@@ -2768,6 +2769,323 @@ laptop_portable::get_button(LaptopButton
  	return(0);
  }
  

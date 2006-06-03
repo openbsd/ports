@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pt,v 1.7 2006/04/01 12:33:43 espie Exp $
+@comment $OpenBSD: PLIST-pt,v 1.8 2006/06/03 12:47:30 espie Exp $
 @conflict kdeedu-<3.4
 @conflict kde-i18n-de-<3.4
 share/apps/khangman/
@@ -85,6 +85,13 @@ ${DOC}cervisia/
 ${DOC}cervisia/common
 ${DOC}cervisia/${C}
 ${DOC}cervisia/${I}
+${DOC}docs/
+${DOC}docs/common/
+${DOC}docs/common/fdl-translated.html
+${DOC}docs/common/gpl-translated.html
+${DOC}docs/common/kde-localised.css
+${DOC}docs/common/lgpl-translated.html
+${DOC}docs/common/logotp3.png
 ${DOC}juk/
 ${DOC}juk/common
 ${DOC}juk/${C}
@@ -145,9 +152,12 @@ ${DOC}kate-plugins/textfilter.docbook
 ${DOC}kate-plugins/xmlcheck.docbook
 ${DOC}kate-plugins/xmltools.docbook
 ${DOC}kate/advanced.docbook
+${DOC}kate/common
 ${DOC}kate/configuring.docbook
 ${DOC}kate/fundamentals.docbook
 ${DOC}kate/highlighting.docbook
+${DOC}kate/${C}
+${DOC}kate/${I}
 ${DOC}kate/man-kate.1.docbook
 ${DOC}kate/mdi.docbook
 ${DOC}kate/menus.docbook
@@ -158,6 +168,10 @@ ${DOC}katomic/
 ${DOC}katomic/common
 ${DOC}katomic/${C}
 ${DOC}katomic/${I}
+${DOC}kaudiocreator/
+${DOC}kaudiocreator/common
+${DOC}kaudiocreator/${C}
+${DOC}kaudiocreator/${I}
 ${DOC}kbabel/
 ${DOC}kbabel/catman.docbook
 ${DOC}kbabel/common
@@ -201,6 +215,7 @@ ${DOC}kcachegrind/common
 ${DOC}kcachegrind/${C}
 ${DOC}kcachegrind/${I}
 ${DOC}kcalc/
+${DOC}kcalc/commands.docbook
 ${DOC}kcalc/common
 ${DOC}kcalc/${C}
 ${DOC}kcalc/${I}
@@ -521,6 +536,7 @@ ${DOC}kdevelop/app-uimodes-examples.docbook
 ${DOC}kdevelop/applicationwizard.docbook
 ${DOC}kdevelop/class-browsers.docbook
 ${DOC}kdevelop/commands.docbook
+${DOC}kdevelop/common
 ${DOC}kdevelop/credits.docbook
 ${DOC}kdevelop/cvs.docbook
 ${DOC}kdevelop/debugger.docbook
@@ -528,6 +544,8 @@ ${DOC}kdevelop/documentation.docbook
 ${DOC}kdevelop/editing.docbook
 ${DOC}kdevelop/file-browsers.docbook
 ${DOC}kdevelop/getting-started.docbook
+${DOC}kdevelop/${C}
+${DOC}kdevelop/${I}
 ${DOC}kdevelop/kdevelop-install.docbook
 ${DOC}kdevelop/kdevelop-scripting.docbook
 ${DOC}kdevelop/kdevelop-survey.docbook
@@ -1282,6 +1300,10 @@ ${DOC}ksim/
 ${DOC}ksim/common
 ${DOC}ksim/${C}
 ${DOC}ksim/${I}
+${DOC}ksirc/
+${DOC}ksirc/common
+${DOC}ksirc/${C}
+${DOC}ksirc/${I}
 ${DOC}ksirtet/
 ${DOC}ksirtet/common
 ${DOC}ksirtet/${C}
@@ -1544,14 +1566,6 @@ ${DOC}noatun/
 ${DOC}noatun/common
 ${DOC}noatun/${C}
 ${DOC}noatun/${I}
-${DOC}pt/
-${DOC}pt/docs/
-${DOC}pt/docs/common/
-${DOC}pt/docs/common/fdl-translated.html
-${DOC}pt/docs/common/gpl-translated.html
-${DOC}pt/docs/common/kde-localised.css
-${DOC}pt/docs/common/lgpl-translated.html
-${DOC}pt/docs/common/logotp3.png
 ${DOC}quanta/
 ${DOC}quanta/adv-quanta.docbook
 ${DOC}quanta/common

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2006/04/29 05:31:45 brad Exp $
+@comment $OpenBSD: PLIST,v 1.26 2006/06/03 12:47:31 espie Exp $
 bin/artsbuilder
 bin/artscontrol
 bin/juk
@@ -1176,7 +1176,6 @@ share/doc/HTML/en/noatun/
 share/doc/HTML/en/noatun/common
 share/doc/HTML/en/noatun/index.cache.bz2
 share/doc/HTML/en/noatun/index.docbook
-share/icons/
 share/icons/crystalsvg/128x128/actions/artsaudiomanager.png
 share/icons/crystalsvg/128x128/actions/artsenvironment.png
 share/icons/crystalsvg/128x128/actions/artsfftscope.png
@@ -1215,9 +1214,6 @@ share/icons/crystalsvg/scalable/actions/artsenvironment.svgz
 share/icons/crystalsvg/scalable/actions/artsfftscope.svgz
 share/icons/crystalsvg/scalable/actions/artsmediatypes.svgz
 share/icons/crystalsvg/scalable/actions/artsmidimanager.svgz
-share/icons/hicolor/
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/artscontrol.png
 share/icons/hicolor/128x128/apps/juk.png
 share/icons/hicolor/128x128/apps/kaboodle.png
@@ -1225,8 +1221,6 @@ share/icons/hicolor/128x128/apps/kmix.png
 share/icons/hicolor/128x128/apps/krec.png
 share/icons/hicolor/128x128/apps/kscd.png
 share/icons/hicolor/128x128/apps/noatun.png
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/artsbuilder.png
 share/icons/hicolor/16x16/apps/artscontrol.png
 share/icons/hicolor/16x16/apps/juk.png
@@ -1237,14 +1231,10 @@ share/icons/hicolor/16x16/apps/kmix.png
 share/icons/hicolor/16x16/apps/krec.png
 share/icons/hicolor/16x16/apps/kscd.png
 share/icons/hicolor/16x16/apps/noatun.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/artscontrol.png
 share/icons/hicolor/22x22/apps/kaboodle.png
 share/icons/hicolor/22x22/apps/krec.png
 share/icons/hicolor/22x22/apps/noatun.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/artscontrol.png
 share/icons/hicolor/32x32/apps/juk.png
 share/icons/hicolor/32x32/apps/kaboodle.png
@@ -1254,8 +1244,6 @@ share/icons/hicolor/32x32/apps/kmix.png
 share/icons/hicolor/32x32/apps/krec.png
 share/icons/hicolor/32x32/apps/kscd.png
 share/icons/hicolor/32x32/apps/noatun.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/artscontrol.png
 share/icons/hicolor/48x48/apps/juk.png
 share/icons/hicolor/48x48/apps/kaboodle.png
@@ -1264,8 +1252,6 @@ share/icons/hicolor/48x48/apps/kmix.png
 share/icons/hicolor/48x48/apps/krec.png
 share/icons/hicolor/48x48/apps/kscd.png
 share/icons/hicolor/48x48/apps/noatun.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/artscontrol.png
 share/icons/hicolor/64x64/apps/juk.png
 share/icons/hicolor/64x64/apps/kaboodle.png
@@ -1273,8 +1259,6 @@ share/icons/hicolor/64x64/apps/kmix.png
 share/icons/hicolor/64x64/apps/krec.png
 share/icons/hicolor/64x64/apps/kscd.png
 share/icons/hicolor/64x64/apps/noatun.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/artsbuilder.svgz
 share/icons/hicolor/scalable/apps/artscontrol.svgz
 share/icons/locolor/

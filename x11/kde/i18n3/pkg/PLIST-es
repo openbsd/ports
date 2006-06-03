@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-es,v 1.8 2006/04/01 12:33:43 espie Exp $
+@comment $OpenBSD: PLIST-es,v 1.9 2006/06/03 12:47:30 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.es.xml
 share/apps/khangman/
@@ -373,15 +373,14 @@ ${DOC}cervisia/popup.png
 ${DOC}cervisia/repositories.png
 ${DOC}cervisia/resolve.png
 ${DOC}cervisia/updatetag.png
-${DOC}es/
-${DOC}es/docs/
-${DOC}es/docs/common/
-${DOC}es/docs/common/fdl-translated.html
-${DOC}es/docs/common/gpl-translated.html
-${DOC}es/docs/common/kde-localised.css
-${DOC}es/docs/common/kde_logo.png
-${DOC}es/docs/common/lgpl-translated.html
-${DOC}es/docs/common/logotp3.png
+${DOC}docs/
+${DOC}docs/common/
+${DOC}docs/common/fdl-translated.html
+${DOC}docs/common/gpl-translated.html
+${DOC}docs/common/kde-localised.css
+${DOC}docs/common/kde_logo.png
+${DOC}docs/common/lgpl-translated.html
+${DOC}docs/common/logotp3.png
 ${DOC}flashkard/
 ${DOC}flashkard/common
 ${DOC}flashkard/${C}
@@ -533,11 +532,14 @@ ${DOC}kaudiocreator/cdconfiguration.png
 ${DOC}kaudiocreator/cddbconfigurationlookup.png
 ${DOC}kaudiocreator/cddbconfigurationsubmit.png
 ${DOC}kaudiocreator/cdinserted.png
+${DOC}kaudiocreator/common
 ${DOC}kaudiocreator/confirmartistcarryover.png
 ${DOC}kaudiocreator/encoderconfiguration.png
 ${DOC}kaudiocreator/encodernotfound.png
 ${DOC}kaudiocreator/entersong1.png
 ${DOC}kaudiocreator/generalconfiguration.png
+${DOC}kaudiocreator/${C}
+${DOC}kaudiocreator/${I}
 ${DOC}kaudiocreator/jobcontrol.png
 ${DOC}kaudiocreator/jobshavestarted.png
 ${DOC}kaudiocreator/kaudiocreatormainwindow800.png
@@ -1109,6 +1111,7 @@ ${DOC}keduca/
 ${DOC}keduca/common
 ${DOC}keduca/${C}
 ${DOC}keduca/${I}
+${DOC}keduca/man-keduca.1.docbook
 ${DOC}keduca/screenshot.png
 ${DOC}kenolaba/
 ${DOC}kenolaba/common
@@ -1288,6 +1291,7 @@ ${DOC}khelpcenter/userguide/amarok.png
 ${DOC}khelpcenter/userguide/base-kde-applications.docbook
 ${DOC}khelpcenter/userguide/browser-fine-tuning.docbook
 ${DOC}khelpcenter/userguide/burning-cds.docbook
+${DOC}khelpcenter/userguide/common
 ${DOC}khelpcenter/userguide/control-center.docbook
 ${DOC}khelpcenter/userguide/creating-graphics.docbook
 ${DOC}khelpcenter/userguide/credits-and-license.docbook
@@ -1302,6 +1306,8 @@ ${DOC}khelpcenter/userguide/getting-started.docbook
 ${DOC}khelpcenter/userguide/glossary.docbook
 ${DOC}khelpcenter/userguide/groupware-kontact.docbook
 ${DOC}khelpcenter/userguide/history.docbook
+${DOC}khelpcenter/userguide/${C}
+${DOC}khelpcenter/userguide/${I}
 ${DOC}khelpcenter/userguide/installation.docbook
 ${DOC}khelpcenter/userguide/internet-shortcuts.docbook
 ${DOC}khelpcenter/userguide/intro.docbook

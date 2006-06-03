@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-fr,v 1.8 2006/04/01 12:33:43 espie Exp $
+@comment $OpenBSD: PLIST-fr,v 1.9 2006/06/03 12:47:30 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.fr_FR.xml
 share/apps/khangman/
@@ -87,14 +87,13 @@ ${DOC}cervisia/logtree.png
 ${DOC}cervisia/mainview.png
 ${DOC}cervisia/resolve.png
 ${DOC}cervisia/updatetag.png
-${DOC}fr/
-${DOC}fr/docs/
-${DOC}fr/docs/common/
-${DOC}fr/docs/common/fdl-translated.html
-${DOC}fr/docs/common/gpl-translated.html
-${DOC}fr/docs/common/kde-localised.css
-${DOC}fr/docs/common/lgpl-translated.html
-${DOC}fr/docs/common/logotp3.png
+${DOC}docs/
+${DOC}docs/common/
+${DOC}docs/common/fdl-translated.html
+${DOC}docs/common/gpl-translated.html
+${DOC}docs/common/kde-localised.css
+${DOC}docs/common/lgpl-translated.html
+${DOC}docs/common/logotp3.png
 ${DOC}juk/
 ${DOC}juk/common
 ${DOC}juk/${C}
@@ -543,6 +542,7 @@ ${DOC}kdesu/
 ${DOC}kdesu/common
 ${DOC}kdesu/${C}
 ${DOC}kdesu/${I}
+${DOC}kdesu/man-kdesu.1.docbook
 ${DOC}kdevelop/
 ${DOC}kdevelop/tip.database
 ${DOC}kdf/
@@ -583,6 +583,7 @@ ${DOC}kfind/
 ${DOC}kfind/common
 ${DOC}kfind/${C}
 ${DOC}kfind/${I}
+${DOC}kfind/man-kfind.1.docbook
 ${DOC}kfloppy/
 ${DOC}kfloppy/common
 ${DOC}kfloppy/${C}
@@ -682,7 +683,10 @@ ${DOC}khelpcenter/userguide/burning-cds.docbook
 ${DOC}khelpcenter/userguide/common
 ${DOC}khelpcenter/userguide/control-center.docbook
 ${DOC}khelpcenter/userguide/creating-graphics.docbook
+${DOC}khelpcenter/userguide/credits-and-license.docbook
 ${DOC}khelpcenter/userguide/email.docbook
+${DOC}khelpcenter/userguide/extragear-applications.docbook
+${DOC}khelpcenter/userguide/file-sharing.docbook
 ${DOC}khelpcenter/userguide/first-impressions.docbook
 ${DOC}khelpcenter/userguide/font-installation.docbook
 ${DOC}khelpcenter/userguide/getting-help.docbook
@@ -697,6 +701,7 @@ ${DOC}khelpcenter/userguide/internet-shortcuts.docbook
 ${DOC}khelpcenter/userguide/intro.docbook
 ${DOC}khelpcenter/userguide/kde-as-root.docbook
 ${DOC}khelpcenter/userguide/kde-edutainment.docbook
+${DOC}khelpcenter/userguide/kde-for-admins.docbook
 ${DOC}khelpcenter/userguide/kde-office.docbook
 ${DOC}khelpcenter/userguide/konsole-intro.docbook
 ${DOC}khelpcenter/userguide/messaging-intro.docbook
@@ -705,6 +710,7 @@ ${DOC}khelpcenter/userguide/more-help.docbook
 ${DOC}khelpcenter/userguide/net-connection-setup.docbook
 ${DOC}khelpcenter/userguide/networking-with-windows.docbook
 ${DOC}khelpcenter/userguide/notices-trademarks.docbook
+${DOC}khelpcenter/userguide/panel-and-desktop.docbook
 ${DOC}khelpcenter/userguide/pdf-files.docbook
 ${DOC}khelpcenter/userguide/playing-movies.docbook
 ${DOC}khelpcenter/userguide/printer-setup.docbook
@@ -765,6 +771,7 @@ ${DOC}kicker/common
 ${DOC}kicker/${C}
 ${DOC}kicker/${I}
 ${DOC}kicker/k_menu_icon.png
+${DOC}kicker/man-kicker.1.docbook
 ${DOC}kicker/screenshot_left.png
 ${DOC}kicker/screenshot_right.png
 ${DOC}kicker/windowlist_icon.png
@@ -1176,6 +1183,7 @@ ${DOC}konqueror/${C}
 ${DOC}konqueror/${I}
 ${DOC}konqueror/introduction.docbook
 ${DOC}konqueror/konqorg.png
+${DOC}konqueror/man-kbookmarkmerger.1.docbook
 ${DOC}konqueror/parts.png
 ${DOC}konqueror/path-complete.docbook
 ${DOC}konqueror/plugins.docbook

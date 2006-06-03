@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-en_GB,v 1.5 2006/04/01 12:33:43 espie Exp $
+@comment $OpenBSD: PLIST-en_GB,v 1.6 2006/06/03 12:47:30 espie Exp $
 share/apps/katepart/syntax/logohighlightstyle.en_GB.xml
 share/apps/kturtle/
 share/apps/kturtle/data/
@@ -14,14 +14,13 @@ ${DOC}cervisia/
 ${DOC}cervisia/common
 ${DOC}cervisia/${C}
 ${DOC}cervisia/${I}
-${DOC}en_GB/
-${DOC}en_GB/docs/
-${DOC}en_GB/docs/common/
-${DOC}en_GB/docs/common/fdl-translated.html
-${DOC}en_GB/docs/common/gpl-translated.html
-${DOC}en_GB/docs/common/kde-localised.css
-${DOC}en_GB/docs/common/lgpl-translated.html
-${DOC}en_GB/docs/common/logotp3.png
+${DOC}docs/
+${DOC}docs/common/
+${DOC}docs/common/fdl-translated.html
+${DOC}docs/common/gpl-translated.html
+${DOC}docs/common/kde-localised.css
+${DOC}docs/common/lgpl-translated.html
+${DOC}docs/common/logotp3.png
 ${DOC}kaddressbook/
 ${DOC}kaddressbook/common
 ${DOC}kaddressbook/${C}

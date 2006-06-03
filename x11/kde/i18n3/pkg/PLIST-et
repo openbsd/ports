@@ -1,4 +1,12 @@
-@comment $OpenBSD: PLIST-et,v 1.6 2006/04/01 12:33:43 espie Exp $
+@comment $OpenBSD: PLIST-et,v 1.7 2006/06/03 12:47:30 espie Exp $
+share/apps/khangman/
+share/apps/khangman/data/
+share/apps/khangman/data/et/
+share/apps/khangman/data/et/animals.kvtml
+share/apps/khangman/data/et/easy.kvtml
+share/apps/khangman/data/et/hard.kvtml
+share/apps/khangman/data/et/medium.kvtml
+share/apps/khangman/et.txt
 share/doc/HTML/et/
 ${DOC}KRegExpEditor/
 ${DOC}KRegExpEditor/common
@@ -31,14 +39,13 @@ ${DOC}cervisia/
 ${DOC}cervisia/common
 ${DOC}cervisia/${C}
 ${DOC}cervisia/${I}
-${DOC}et/
-${DOC}et/docs/
-${DOC}et/docs/common/
-${DOC}et/docs/common/fdl-translated.html
-${DOC}et/docs/common/gpl-translated.html
-${DOC}et/docs/common/kde-localised.css
-${DOC}et/docs/common/lgpl-translated.html
-${DOC}et/docs/common/logotp3.png
+${DOC}docs/
+${DOC}docs/common/
+${DOC}docs/common/fdl-translated.html
+${DOC}docs/common/gpl-translated.html
+${DOC}docs/common/kde-localised.css
+${DOC}docs/common/lgpl-translated.html
+${DOC}docs/common/logotp3.png
 ${DOC}flashkard/
 ${DOC}flashkard/common
 ${DOC}flashkard/${C}

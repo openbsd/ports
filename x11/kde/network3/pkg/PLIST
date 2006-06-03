@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2006/04/29 02:17:48 brad Exp $
+@comment $OpenBSD: PLIST,v 1.31 2006/06/03 12:47:31 espie Exp $
 @conflict sirc-*
 bin/dsirc
 bin/feedbrowser
@@ -1088,8 +1088,6 @@ share/apps/kppp/Provider/Irland/
 share/apps/kppp/Provider/Irland/.directory
 share/apps/kppp/Provider/Irland/Eircom
 share/apps/kppp/Provider/Irland/IOL
-share/apps/kppp/Provider/Irland/UTV
-share/apps/kppp/Provider/Irland/UVT
 share/apps/kppp/Provider/Netherlands/
 share/apps/kppp/Provider/Netherlands/.directory
 share/apps/kppp/Provider/Netherlands/12Move
@@ -1203,6 +1201,7 @@ share/apps/kppp/Provider/United_Kingdom/UK%032Free%032Software%032Network%032ISD
 share/apps/kppp/Provider/United_Kingdom/UK%032Free%032Software%032Network%032Modem
 share/apps/kppp/Provider/United_Kingdom/UKPOST%032ISDN
 share/apps/kppp/Provider/United_Kingdom/UKPOST%032Modem
+share/apps/kppp/Provider/United_Kingdom/UTV
 share/apps/kppp/Provider/Yugoslavia/
 share/apps/kppp/Provider/Yugoslavia/041Net
 share/apps/kppp/Provider/Yugoslavia/BeoTelNet
@@ -1886,7 +1885,6 @@ share/doc/HTML/en/lisa/
 share/doc/HTML/en/lisa/common
 share/doc/HTML/en/lisa/index.cache.bz2
 share/doc/HTML/en/lisa/index.docbook
-share/icons/
 share/icons/crystalsvg/128x128/apps/ktalkd.png
 share/icons/crystalsvg/16x16/apps/kget.png
 share/icons/crystalsvg/16x16/apps/kpf.png
@@ -1915,47 +1913,32 @@ share/icons/crystalsvg/48x48/apps/krdc.png
 share/icons/crystalsvg/48x48/apps/krfb.png
 share/icons/crystalsvg/48x48/apps/ktalkd.png
 share/icons/crystalsvg/48x48/mimetypes/kget_list.png
-share/icons/hicolor/
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/kdict.png
 share/icons/hicolor/128x128/apps/kopete.png
 share/icons/hicolor/128x128/apps/kppp.png
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/kcmsambaconf.png
 share/icons/hicolor/16x16/apps/kdict.png
 share/icons/hicolor/16x16/apps/knewsticker.png
 share/icons/hicolor/16x16/apps/kopete.png
 share/icons/hicolor/16x16/apps/kppp.png
 share/icons/hicolor/16x16/apps/ksirc.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/kopete.png
 share/icons/hicolor/22x22/apps/kppp.png
 share/icons/hicolor/22x22/apps/ksirc.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/kdict.png
 share/icons/hicolor/32x32/apps/knewsticker.png
 share/icons/hicolor/32x32/apps/kopete.png
 share/icons/hicolor/32x32/apps/kppp.png
 share/icons/hicolor/32x32/apps/ksirc.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/kdict.png
 share/icons/hicolor/48x48/apps/knewsticker.png
 share/icons/hicolor/48x48/apps/kopete.png
 share/icons/hicolor/48x48/apps/kppp.png
 share/icons/hicolor/48x48/apps/ksirc.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/kdict.png
 share/icons/hicolor/64x64/apps/kopete.png
 share/icons/hicolor/64x64/apps/kppp.png
 share/icons/hicolor/64x64/apps/ksirc.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/kdict.svgz
 share/icons/hicolor/scalable/apps/kopete2.svgz
 share/icons/locolor/

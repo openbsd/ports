@@ -1,12 +1,12 @@
-$OpenBSD: patch-kdesu_kdesu_sudlg_h,v 1.2 2004/09/18 09:36:43 espie Exp $
---- kdesu/kdesu/sudlg.h.orig	Sat May 22 22:26:47 2004
-+++ kdesu/kdesu/sudlg.h	Mon Sep  6 11:44:58 2004
+$OpenBSD: patch-kdesu_kdesu_sudlg_h,v 1.3 2006/06/03 12:47:30 espie Exp $
+--- kdesu/kdesu/sudlg.h.orig	Mon May 22 20:13:07 2006
++++ kdesu/kdesu/sudlg.h	Sun May 28 23:12:49 2006
 @@ -15,7 +15,7 @@ class KDEsuDialog
      Q_OBJECT
  
  public:
--    KDEsuDialog(QCString user, QCString auth_user, bool enableKeep, const QString& icon );
-+    KDEsuDialog(QCString user, QCString auth_user, bool enableKeep, const QString& icon, bool useSudo);
+-    KDEsuDialog(QCString user, QCString auth_user, bool enableKeep, const QString& icon , bool withIgnoreButton=false);
++    KDEsuDialog(QCString user, QCString auth_user, bool enableKeep, const QString& icon , bool useSudo, bool withIgnoreButton=false);
      ~KDEsuDialog();
  
      enum ResultCodes { AsUser = 10 };

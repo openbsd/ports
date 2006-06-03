@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2006/04/01 10:49:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.37 2006/06/03 12:47:30 espie Exp $
 @conflict kdeartwork-<=3.4
 @conflict kdeedu-<3.4
 bin/appletproxy
@@ -19,6 +19,7 @@ bin/kcheckpass
 @owner
 bin/kcheckrunning
 bin/kcminit
+bin/kcminit_startup
 bin/kcontrol
 bin/kcontroledit
 bin/kdcop
@@ -298,6 +299,8 @@ ${KDE}/kcm_xinerama.la
 ${KDE}/kcm_xinerama.so
 ${KDE}/kcminit.la
 ${KDE}/kcminit.so
+${KDE}/kcminit_startup.la
+${KDE}/kcminit_startup.so
 ${KDE}/kcontrol.la
 ${KDE}/kcontrol.so
 ${KDE}/kcontroledit.la
@@ -564,6 +567,8 @@ lib/libkdeinit_kate.la
 lib/libkdeinit_kate.so
 lib/libkdeinit_kcminit.la
 lib/libkdeinit_kcminit.so
+lib/libkdeinit_kcminit_startup.la
+lib/libkdeinit_kcminit_startup.so
 lib/libkdeinit_kcontrol.la
 lib/libkdeinit_kcontrol.so
 lib/libkdeinit_kcontroledit.la
@@ -775,8 +780,6 @@ share/applnk/Settings/WebBrowsing/
 share/applnk/Settings/WebBrowsing/khtml_appearance.desktop
 share/applnk/Settings/WebBrowsing/nsplugin.desktop
 share/applnk/Settings/WebBrowsing/smb.desktop
-share/applnk/Settingsmenu/
-share/applnk/Settingsmenu/printmgr.desktop
 share/applnk/System/
 share/applnk/System/ScreenSavers/
 share/applnk/System/ScreenSavers/KBlankscreen.desktop

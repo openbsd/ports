@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2006/04/01 10:49:20 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2006/06/03 12:47:30 espie Exp $
 
 COMMENT=		"K Desktop Environment, edutainment"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.2
+VERSION=		3.5.3
 DISTNAME=		kdeedu-${VERSION}
 PKGNAME=		${DISTNAME}
-MODKDE_VERSION?=	3.5.2
+MODKDE_VERSION?=	3.5.3
 FLAVORS=debug
 SHARED_LIBS=		extdate		4.0 \
 			kdeeducore	4.0 \
@@ -24,7 +24,7 @@ WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 c jpeg katepartinterfaces \
 		z ossaudio qtmcop soundserver_idl artskde kmedia2_idl \
 		artsflow vorbis ogg esd mcop \
 		intl iconv artsflow_idl audiofile mad vorbisfile vorbisenc \
-		gthread-2.0.800.0 gmodule-2.0.800.0 glib-2.0.800.0
+		gthread-2.0.800.0 gmodule-2.0.800.0 glib-2.0.800.0 idn
 
 USE_LIBTOOL=Yes
 LIBTOOL_FLAGS=--tag=disable-static

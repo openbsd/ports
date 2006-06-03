@@ -1,12 +1,12 @@
-$OpenBSD: patch-kdecore_kpty_cpp,v 1.1 2006/02/03 12:23:58 espie Exp $
---- kdecore/kpty.cpp.orig	Sat Jan 21 13:32:13 2006
-+++ kdecore/kpty.cpp	Mon Jan 23 18:56:28 2006
+$OpenBSD: patch-kdecore_kpty_cpp,v 1.2 2006/06/03 12:47:30 espie Exp $
+--- kdecore/kpty.cpp.orig	Mon May 22 20:14:21 2006
++++ kdecore/kpty.cpp	Sun May 28 13:23:43 2006
 @@ -95,20 +95,20 @@ extern "C" {
  # endif
  #endif
  
--#if defined (__FreeBSD__) || defined (__NetBSD__) || defined (__OpenBSD__) || defined (__bsdi__) || defined(__APPLE__)
-+#if defined (__FreeBSD__) || defined (__NetBSD__) || defined (__bsdi__) || defined(__APPLE__)
+-#if defined (__FreeBSD__) || defined (__NetBSD__) || defined (__OpenBSD__) || defined (__bsdi__) || defined(__APPLE__) || defined (__DragonFly__)
++#if defined (__FreeBSD__) || defined (__NetBSD__) || defined (__bsdi__) || defined(__APPLE__) || defined (__DragonFly__)
  # define _tcgetattr(fd, ttmode) ioctl(fd, TIOCGETA, (char *)ttmode)
  #else
 -# if defined(_HPUX_SOURCE) || defined(__Lynx__) || defined (__CYGWIN__)
@@ -17,8 +17,8 @@ $OpenBSD: patch-kdecore_kpty_cpp,v 1.1 2006/02/03 12:23:58 espie Exp $
  # endif
  #endif
  
--#if defined (__FreeBSD__) || defined (__NetBSD__) || defined (__OpenBSD__) || defined (__bsdi__) || defined(__APPLE__)
-+#if defined (__FreeBSD__) || defined (__NetBSD__) || defined (__bsdi__) || defined(__APPLE__)
+-#if defined (__FreeBSD__) || defined (__NetBSD__) || defined (__OpenBSD__) || defined (__bsdi__) || defined(__APPLE__) || defined (__DragonFly__)
++#if defined (__FreeBSD__) || defined (__NetBSD__) || defined (__bsdi__) || defined(__APPLE__) || defined (__DragonFly__)
  # define _tcsetattr(fd, ttmode) ioctl(fd, TIOCSETA, (char *)ttmode)
  #else
 -# if defined(_HPUX_SOURCE) || defined(__CYGWIN__)

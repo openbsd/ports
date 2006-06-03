@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-sr@Latn,v 1.7 2006/04/01 12:33:43 espie Exp $
+@comment $OpenBSD: PLIST-sr@Latn,v 1.8 2006/06/03 12:47:30 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.sr@Latn.xml
 share/apps/khangman/
@@ -11,22 +11,22 @@ share/apps/khangman/data/sr@Latn/medium.kvtml
 share/apps/khangman/sr@Latn.txt
 @comment share/apps/ktuberling/
 @comment share/apps/ktuberling/sounds/
-@comment share/apps/ktuberling/sounds/sr/
-@comment share/apps/ktuberling/sounds/sr/brkovi.wav
-@comment share/apps/ktuberling/sounds/sr/cigara.wav
-@comment share/apps/ktuberling/sounds/sr/krompirko.wav
-@comment share/apps/ktuberling/sounds/sr/masna.wav
-@comment share/apps/ktuberling/sounds/sr/mindjusa.wav
-@comment share/apps/ktuberling/sounds/sr/naocare.wav
-@comment share/apps/ktuberling/sounds/sr/naocare_za_sunce.wav
-@comment share/apps/ktuberling/sounds/sr/nos.wav
-@comment share/apps/ktuberling/sounds/sr/obrva.wav
-@comment share/apps/ktuberling/sounds/sr/oko.wav
-@comment share/apps/ktuberling/sounds/sr/sat.wav
-@comment share/apps/ktuberling/sounds/sr/sesir.wav
-@comment share/apps/ktuberling/sounds/sr/usta.wav
-@comment share/apps/ktuberling/sounds/sr/uvo.wav
-@comment share/apps/ktuberling/sounds/sr/znacka.wav
+share/apps/ktuberling/sounds/sr@Latn/
+share/apps/ktuberling/sounds/sr@Latn/brkovi.wav
+share/apps/ktuberling/sounds/sr@Latn/cigara.wav
+share/apps/ktuberling/sounds/sr@Latn/krompirko.wav
+share/apps/ktuberling/sounds/sr@Latn/masna.wav
+share/apps/ktuberling/sounds/sr@Latn/mindjusa.wav
+share/apps/ktuberling/sounds/sr@Latn/naocare.wav
+share/apps/ktuberling/sounds/sr@Latn/naocare_za_sunce.wav
+share/apps/ktuberling/sounds/sr@Latn/nos.wav
+share/apps/ktuberling/sounds/sr@Latn/obrva.wav
+share/apps/ktuberling/sounds/sr@Latn/oko.wav
+share/apps/ktuberling/sounds/sr@Latn/sat.wav
+share/apps/ktuberling/sounds/sr@Latn/sesir.wav
+share/apps/ktuberling/sounds/sr@Latn/usta.wav
+share/apps/ktuberling/sounds/sr@Latn/uvo.wav
+share/apps/ktuberling/sounds/sr@Latn/znacka.wav
 share/apps/kturtle/
 share/apps/kturtle/data/
 share/apps/kturtle/data/logokeywords.sr@Latn.xml

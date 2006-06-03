@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-sr,v 1.7 2006/04/01 12:33:43 espie Exp $
+@comment $OpenBSD: PLIST-sr,v 1.8 2006/06/03 12:47:30 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.sr.xml
 share/apps/khangman/
@@ -36,17 +36,16 @@ share/apps/kturtle/examples/sr/example1.logo
 share/apps/kturtle/examples/sr/square.logo
 share/apps/kturtle/examples/sr/triangle.logo
 share/doc/HTML/sr/
+${DOC}docs/
+${DOC}docs/common/
+${DOC}docs/common/fdl-translated.html
+${DOC}docs/common/gpl-translated.html
+${DOC}docs/common/kde-localised.css
+${DOC}docs/common/lgpl-translated.html
+${DOC}docs/common/logotp3.png
 ${DOC}khelpcenter/
 ${DOC}khelpcenter/welcome.docbook
 ${DOC}khelpcenter/whatiskde.docbook
-${DOC}sr/
-${DOC}sr/docs/
-${DOC}sr/docs/common/
-${DOC}sr/docs/common/fdl-translated.html
-${DOC}sr/docs/common/gpl-translated.html
-${DOC}sr/docs/common/kde-localised.css
-${DOC}sr/docs/common/lgpl-translated.html
-${DOC}sr/docs/common/logotp3.png
 ${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo

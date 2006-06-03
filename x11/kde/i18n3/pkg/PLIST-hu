@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hu,v 1.6 2006/04/01 12:33:43 espie Exp $
+@comment $OpenBSD: PLIST-hu,v 1.7 2006/06/03 12:47:30 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/khangman/
 share/apps/khangman/data/
@@ -21,18 +21,17 @@ ${DOC}atlantik/
 ${DOC}atlantik/common
 ${DOC}atlantik/${C}
 ${DOC}atlantik/${I}
+${DOC}docs/
+${DOC}docs/common/
+${DOC}docs/common/fdl-translated.html
+${DOC}docs/common/gpl-translated.html
+${DOC}docs/common/kde-localised.css
+${DOC}docs/common/lgpl-translated.html
+${DOC}docs/common/logotp3.png
 ${DOC}flashkard/
 ${DOC}flashkard/common
 ${DOC}flashkard/${C}
 ${DOC}flashkard/${I}
-${DOC}hu/
-${DOC}hu/docs/
-${DOC}hu/docs/common/
-${DOC}hu/docs/common/fdl-translated.html
-${DOC}hu/docs/common/gpl-translated.html
-${DOC}hu/docs/common/kde-localised.css
-${DOC}hu/docs/common/lgpl-translated.html
-${DOC}hu/docs/common/logotp3.png
 ${DOC}kaboodle/
 ${DOC}kaboodle/common
 ${DOC}kaboodle/${C}

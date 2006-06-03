@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tr,v 1.4 2006/04/01 12:33:43 espie Exp $
+@comment $OpenBSD: PLIST-tr,v 1.5 2006/06/03 12:47:30 espie Exp $
 share/apps/khangman/
 share/apps/khangman/data/
 share/apps/khangman/data/tr/
@@ -8,6 +8,10 @@ share/apps/khangman/data/tr/hard.kvtml
 share/apps/khangman/data/tr/medium.kvtml
 share/apps/khangman/tr.txt
 share/doc/HTML/tr/
+${DOC}docs/
+${DOC}docs/common/
+${DOC}docs/common/gpl${FLAVOR_EXT}anslated.html
+${DOC}docs/common/kde-localised.css
 ${DOC}khelpcenter/
 ${DOC}khelpcenter/common
 ${DOC}khelpcenter/contact.docbook
@@ -66,11 +70,6 @@ ${DOC}kioslave/telnet.docbook
 ${DOC}kioslave/thumbnail.docbook
 ${DOC}kioslave/webdav.docbook
 ${DOC}kioslave/webdavs.docbook
-${DOC}tr/
-${DOC}tr/docs/
-${DOC}tr/docs/common/
-${DOC}tr/docs/common/gpl${FLAVOR_EXT}anslated.html
-${DOC}tr/docs/common/kde-localised.css
 ${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo

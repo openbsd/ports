@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2006/04/01 12:33:42 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2006/06/03 12:47:30 espie Exp $
 
 LANGS=  af ar az bg bn br bs ca cs cy da de el en_GB eo es et eu fa \
-	fi fr fy ga gl he hi hr hu is it ja km ko lt lv mk nb nds nl nn \
+	fi fr fy ga gl he hi hr hu is it ja kk km ko lt lv mk nb nds nl nn \
 	pa pl pt pt_BR ro ru rw se sk sl sr sr@Latn ss sv ta tg tr uk uz \
-	zh_CN zh_TW
+	vi zh_CN zh_TW
 
 # some extra vars to compact PLISTs
 I=index.docbook
@@ -33,9 +33,9 @@ SUBST_VARS+=DOC LOC
 
 DISTNAME=		kde-i18n-${VERSION}
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.2
+VERSION=		3.5.3
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}
-MASTER_SITES=	${MASTER_SITE_KDE:=stable/3.5.2/src/kde-i18n/}
+MASTER_SITES=	${MASTER_SITE_KDE:=stable/3.5.3/src/kde-i18n/}
 
 BUILD_DEPENDS = ::x11/kde/libs3
 RUN_DEPENDS = ::x11/kde/libs3

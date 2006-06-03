@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2006/04/01 10:49:19 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2006/06/03 12:47:30 espie Exp $
 
 .if ${MACHINE_ARCH} == "powerpc"
 BROKEN=			"gcc spins on x_20.cpp"
@@ -6,10 +6,10 @@ BROKEN=			"gcc spins on x_20.cpp"
 
 COMMENT= 		"K Desktop Environment, extra language support"
 CATEGORIES=		x11 x11/kde devel
-VERSION=		3.5.2
+VERSION=		3.5.3
 DISTNAME=		kdebindings-${VERSION}
 PKGNAME=		${DISTNAME}
-MODKDE_VERSION=		3.5.2
+MODKDE_VERSION=		3.5.3
 SHARED_LIBS=		kjsembed	2.0 \
 			smokekde	4.0 \
 			smokeqt		4.0
@@ -20,7 +20,7 @@ LIB_DEPENDS=DCOP,kdecore.6,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kmdi,knewstu
 
 WANTLIB=	GLU Xext stdc++ X11 util m ICE Xrender SM pthread \
 		c fontconfig z GL \
-		png pcre jpeg art_lgpl_2.0.0 pcreposix
+		png pcre jpeg art_lgpl_2.0.0 pcreposix iconv idn
 PYTHON_VER=	2.4
 BUILD_DEPENDS=	::lang/python/${PYTHON_VER}
 #		::devel/tmake

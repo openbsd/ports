@@ -1,5 +1,9 @@
-@comment $OpenBSD: PLIST-uk,v 1.6 2006/04/01 12:33:43 espie Exp $
+@comment $OpenBSD: PLIST-uk,v 1.7 2006/06/03 12:47:30 espie Exp $
 share/doc/HTML/uk/
+${DOC}docs/
+${DOC}docs/common/
+${DOC}docs/common/kde-localised.css
+${DOC}docs/common/logotp3.png
 ${DOC}kbabel/
 ${DOC}kbabel/catman.docbook
 ${DOC}kbabel/faq.docbook
@@ -28,11 +32,6 @@ ${DOC}kspell/
 ${DOC}kspell/common
 ${DOC}kspell/${C}
 ${DOC}kspell/${I}
-${DOC}uk/
-${DOC}uk/docs/
-${DOC}uk/docs/common/
-${DOC}uk/docs/common/kde-localised.css
-${DOC}uk/docs/common/logotp3.png
 ${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo
@@ -87,6 +86,7 @@ ${LOC}kaccess.mo
 ${LOC}kaddressbook.mo
 ${LOC}kalarm.mo
 ${LOC}kalzium.mo
+${LOC}kanagram.mo
 ${LOC}kandy.mo
 ${LOC}kappfinder.mo
 ${LOC}karm.mo

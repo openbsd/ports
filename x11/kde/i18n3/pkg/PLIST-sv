@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-sv,v 1.7 2006/04/01 12:33:43 espie Exp $
+@comment $OpenBSD: PLIST-sv,v 1.8 2006/06/03 12:47:30 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.sv.xml
 share/apps/khangman/
@@ -144,6 +144,13 @@ ${DOC}cervisia/popup.png
 ${DOC}cervisia/repositories.png
 ${DOC}cervisia/resolve.png
 ${DOC}cervisia/updatetag.png
+${DOC}docs/
+${DOC}docs/common/
+${DOC}docs/common/fdl-translated.html
+${DOC}docs/common/gpl-translated.html
+${DOC}docs/common/kde-localised.css
+${DOC}docs/common/lgpl-translated.html
+${DOC}docs/common/logotp3.png
 ${DOC}juk/
 ${DOC}juk/common
 ${DOC}juk/history-playlist.png
@@ -2432,14 +2439,6 @@ ${DOC}superkaramba/
 ${DOC}superkaramba/common
 ${DOC}superkaramba/${C}
 ${DOC}superkaramba/${I}
-${DOC}sv/
-${DOC}sv/docs/
-${DOC}sv/docs/common/
-${DOC}sv/docs/common/fdl-translated.html
-${DOC}sv/docs/common/gpl-translated.html
-${DOC}sv/docs/common/kde-localised.css
-${DOC}sv/docs/common/lgpl-translated.html
-${DOC}sv/docs/common/logotp3.png
 ${DOC}umbrello/
 ${DOC}umbrello/authors.docbook
 ${DOC}umbrello/code_import_and_generation.docbook

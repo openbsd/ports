@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.60 2006/05/14 17:19:23 brad Exp $
+# $OpenBSD: Makefile,v 1.61 2006/06/03 12:47:30 espie Exp $
 
 COMMENT= 		"K Desktop Environment, basic applications"
 COMMENT-plugins=	"Konqueror nsplugins, essentially native JDK"
 COMMENT-samba=		"K Desktop Environment, samba support"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.2
+VERSION=		3.5.3
 DISTNAME=		kdebase-${VERSION}
 PKGNAME=		${DISTNAME}
-PKGNAME-samba=		kdesamba-${VERSION}p1
-MODKDE_VERSION?=	3.5.2
+PKGNAME-samba=		kdesamba-${VERSION}
+MODKDE_VERSION?=	3.5.3
 SHARED_LIBS=		kasbar			2.0 \
 			kateinterfaces		1.0 \
 			kateutils		1.0 \
@@ -29,7 +29,7 @@ FLAVORS=		debug
 
 BUILD_DEPENDS+=::devel/pkgconfig
 
-WANTLIB+=ICE Xrender SM pthread util X11 m z png jpeg art_lgpl_2 Xext 
+WANTLIB+=ICE Xrender SM pthread util X11 m z png jpeg art_lgpl_2 Xext idn iconv
 
 .if !defined(PACKAGING) || ${SUBPACKAGE:L} == ""
 LIB_DEPENDS+= kdecore.6,kabc,katepartinterfaces,kdefakes,kdefx,kdnssd,kdeprint,kdeprint_management,kdesu,kdeui,khtml,kio,kjs,knewstuff,kmid,kparts,kresources,kscreensaver,ktexteditor,kutils,kwalletclient,DCOP,vcard,artskde::x11/kde/libs3 \
@@ -40,7 +40,7 @@ LIB_DEPENDS+= \
 	glib-2.0.0.0,gmodule-2.0.0.0,gthread-2.0.0.0::devel/glib2
 WANTLIB+=	Xcursor Xrandr Xss Xt Xtst Xxf86misc \
 		artsflow artsflow_idl audiofile c crypto esd \
-		freetype iconv intl kmedia2_idl mad mcop ogg ossaudio \
+		freetype intl kmedia2_idl mad mcop ogg ossaudio \
 		pcre pcreposix qtmcop soundserver_idl ssl stdc++ \
 		vorbis vorbisenc vorbisfile xkbfile GLU fontenc \
 		Xinerama Xft Xfixes fontconfig GL Xcomposite Xdamage \

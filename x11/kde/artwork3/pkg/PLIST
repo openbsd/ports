@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2006/04/01 10:49:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.26 2006/06/03 12:47:30 espie Exp $
 bin/kbanner.kss
 bin/kblob.kss
 bin/kclock.kss
@@ -1531,23 +1531,6 @@ share/icons/Locolor/32x32/mimetypes/vcalendar.png
 share/icons/Locolor/32x32/mimetypes/vcard.png
 share/icons/Locolor/32x32/mimetypes/video.png
 share/icons/Locolor/index.theme
-share/icons/hicolor/16x16/actions/
-share/icons/hicolor/16x16/actions/show_side_panel.png
-share/icons/hicolor/16x16/actions/view_fit_width.png
-share/icons/hicolor/16x16/actions/view_fit_window.png
-share/icons/hicolor/16x16/apps/kmenu.png
-share/icons/hicolor/22x22/actions/
-share/icons/hicolor/22x22/actions/show_side_panel.png
-share/icons/hicolor/22x22/actions/view_fit_width.png
-share/icons/hicolor/22x22/actions/view_fit_window.png
-share/icons/hicolor/22x22/apps/kmenu.png
-share/icons/hicolor/32x32/actions/
-share/icons/hicolor/32x32/actions/show_side_panel.png
-share/icons/hicolor/32x32/actions/view_fit_width.png
-share/icons/hicolor/32x32/actions/view_fit_window.png
-share/icons/hicolor/32x32/apps/kmenu.png
-share/icons/hicolor/48x48/apps/kmenu.png
-share/icons/hicolor/scalable/apps/kmenu.svgz
 share/icons/ikons/
 share/icons/ikons/16x16/
 share/icons/ikons/16x16/actions/
@@ -3643,6 +3626,11 @@ share/icons/kdeclassic/22x22/actions/stop.png
 share/icons/kdeclassic/22x22/actions/sub.png
 share/icons/kdeclassic/22x22/actions/sum.png
 share/icons/kdeclassic/22x22/actions/super.png
+share/icons/kdeclassic/22x22/actions/tab_breakoff.png
+share/icons/kdeclassic/22x22/actions/tab_duplicate.png
+share/icons/kdeclassic/22x22/actions/tab_new.png
+share/icons/kdeclassic/22x22/actions/tab_new_bg.png
+share/icons/kdeclassic/22x22/actions/tab_remove.png
 share/icons/kdeclassic/22x22/actions/text.png
 share/icons/kdeclassic/22x22/actions/text_block.png
 share/icons/kdeclassic/22x22/actions/text_bold.png
@@ -3959,6 +3947,11 @@ share/icons/kdeclassic/32x32/actions/sqrt.png
 share/icons/kdeclassic/32x32/actions/start.png
 share/icons/kdeclassic/32x32/actions/stop.png
 share/icons/kdeclassic/32x32/actions/sum.png
+share/icons/kdeclassic/32x32/actions/tab_breakoff.png
+share/icons/kdeclassic/32x32/actions/tab_duplicate.png
+share/icons/kdeclassic/32x32/actions/tab_new.png
+share/icons/kdeclassic/32x32/actions/tab_new_bg.png
+share/icons/kdeclassic/32x32/actions/tab_remove.png
 share/icons/kdeclassic/32x32/actions/text_block.png
 share/icons/kdeclassic/32x32/actions/text_bold.png
 share/icons/kdeclassic/32x32/actions/text_center.png

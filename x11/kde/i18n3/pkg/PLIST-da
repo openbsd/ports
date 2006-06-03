@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-da,v 1.6 2006/04/01 12:33:43 espie Exp $
+@comment $OpenBSD: PLIST-da,v 1.7 2006/06/03 12:47:30 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/khangman/
 share/apps/khangman/da.txt
@@ -155,14 +155,13 @@ ${DOC}cervisia/
 ${DOC}cervisia/common
 ${DOC}cervisia/${C}
 ${DOC}cervisia/${I}
-${DOC}da/
-${DOC}da/docs/
-${DOC}da/docs/common/
-${DOC}da/docs/common/fdl-translated.html
-${DOC}da/docs/common/gpl-translated.html
-${DOC}da/docs/common/kde-localised.css
-${DOC}da/docs/common/lgpl-translated.html
-${DOC}da/docs/common/logotp3.png
+${DOC}docs/
+${DOC}docs/common/
+${DOC}docs/common/fdl-translated.html
+${DOC}docs/common/gpl-translated.html
+${DOC}docs/common/kde-localised.css
+${DOC}docs/common/lgpl-translated.html
+${DOC}docs/common/logotp3.png
 ${DOC}juk/
 ${DOC}juk/common
 ${DOC}juk/${C}

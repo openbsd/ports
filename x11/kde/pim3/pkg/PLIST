@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2006/04/01 10:49:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.22 2006/06/03 12:47:31 espie Exp $
 @conflict kdelibs-<3.4
 @conflict kdebase-<3.4
 @conflict kpilot-*
@@ -1283,6 +1283,7 @@ share/apps/libical/zoneinfo/America/Cordoba.ics
 share/apps/libical/zoneinfo/America/Costa_Rica.ics
 share/apps/libical/zoneinfo/America/Cuiaba.ics
 share/apps/libical/zoneinfo/America/Curacao.ics
+share/apps/libical/zoneinfo/America/Danmarkshavn.ics
 share/apps/libical/zoneinfo/America/Dawson.ics
 share/apps/libical/zoneinfo/America/Dawson_Creek.ics
 share/apps/libical/zoneinfo/America/Denver.ics
@@ -1341,6 +1342,8 @@ share/apps/libical/zoneinfo/America/New_York.ics
 share/apps/libical/zoneinfo/America/Nipigon.ics
 share/apps/libical/zoneinfo/America/Nome.ics
 share/apps/libical/zoneinfo/America/Noronha.ics
+share/apps/libical/zoneinfo/America/North_Dakota/
+share/apps/libical/zoneinfo/America/North_Dakota/Center.ics
 share/apps/libical/zoneinfo/America/Panama.ics
 share/apps/libical/zoneinfo/America/Pangnirtung.ics
 share/apps/libical/zoneinfo/America/Paramaribo.ics
@@ -1404,6 +1407,8 @@ share/apps/libical/zoneinfo/Asia/Beirut.ics
 share/apps/libical/zoneinfo/Asia/Bishkek.ics
 share/apps/libical/zoneinfo/Asia/Brunei.ics
 share/apps/libical/zoneinfo/Asia/Calcutta.ics
+share/apps/libical/zoneinfo/Asia/Choibalsan.ics
+share/apps/libical/zoneinfo/Asia/Chongqing.ics
 share/apps/libical/zoneinfo/Asia/Chungking.ics
 share/apps/libical/zoneinfo/Asia/Colombo.ics
 share/apps/libical/zoneinfo/Asia/Damascus.ics
@@ -1443,6 +1448,7 @@ share/apps/libical/zoneinfo/Asia/Qatar.ics
 share/apps/libical/zoneinfo/Asia/Rangoon.ics
 share/apps/libical/zoneinfo/Asia/Riyadh.ics
 share/apps/libical/zoneinfo/Asia/Saigon.ics
+share/apps/libical/zoneinfo/Asia/Sakhalin.ics
 share/apps/libical/zoneinfo/Asia/Samarkand.ics
 share/apps/libical/zoneinfo/Asia/Seoul.ics
 share/apps/libical/zoneinfo/Asia/Shanghai.ics
@@ -1754,6 +1760,12 @@ share/doc/HTML/en/karm/index.docbook
 share/doc/HTML/en/karm/karm.png
 share/doc/HTML/en/karm/systray.png
 share/doc/HTML/en/kdepim-apidocs/
+share/doc/HTML/en/kdepim-apidocs/akregator/
+share/doc/HTML/en/kdepim-apidocs/akregator/html/
+share/doc/HTML/en/kdepim-apidocs/akregator/src/
+share/doc/HTML/en/kdepim-apidocs/akregator/src/html/
+share/doc/HTML/en/kdepim-apidocs/akregator/src/librss/
+share/doc/HTML/en/kdepim-apidocs/akregator/src/librss/html/
 share/doc/HTML/en/kdepim-apidocs/certmanager/
 share/doc/HTML/en/kdepim-apidocs/certmanager/html/
 share/doc/HTML/en/kdepim-apidocs/certmanager/lib/

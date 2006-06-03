@@ -1,5 +1,12 @@
-@comment $OpenBSD: PLIST-zh_TW,v 1.2 2006/04/01 12:33:43 espie Exp $
+@comment $OpenBSD: PLIST-zh_TW,v 1.3 2006/06/03 12:47:30 espie Exp $
 share/doc/HTML/zh_TW/
+${DOC}docs/
+${DOC}docs/common/
+${DOC}docs/common/fdl-translated.html
+${DOC}docs/common/gpl-translated.html
+${DOC}docs/common/kde-localised.css
+${DOC}docs/common/lgpl-translated.html
+${DOC}docs/common/logotp3.png
 ${DOC}khelpcenter/
 ${DOC}khelpcenter/contact.docbook
 ${DOC}khelpcenter/help.docbook
@@ -7,14 +14,6 @@ ${DOC}khelpcenter/links.docbook
 ${DOC}khelpcenter/support.docbook
 ${DOC}khelpcenter/welcome.docbook
 ${DOC}khelpcenter/whatiskde.docbook
-${DOC}zh_TW/
-${DOC}zh_TW/docs/
-${DOC}zh_TW/docs/common/
-${DOC}zh_TW/docs/common/fdl-translated.html
-${DOC}zh_TW/docs/common/gpl-translated.html
-${DOC}zh_TW/docs/common/kde-localised.css
-${DOC}zh_TW/docs/common/lgpl-translated.html
-${DOC}zh_TW/docs/common/logotp3.png
 ${LOC}alsaplayerui.mo
 ${LOC}amor.mo
 ${LOC}appletproxy.mo

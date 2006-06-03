@@ -1,15 +1,14 @@
-@comment $OpenBSD: PLIST-zh_CN,v 1.5 2006/04/01 12:33:43 espie Exp $
+@comment $OpenBSD: PLIST-zh_CN,v 1.6 2006/06/03 12:47:30 espie Exp $
 share/doc/HTML/zh_CN/
+${DOC}docs/
+${DOC}docs/common/
+${DOC}docs/common/fdl-translated.html
+${DOC}docs/common/gpl-translated.html
+${DOC}docs/common/kde-localised.css
+${DOC}docs/common/lgpl-translated.html
+${DOC}docs/common/logotp3.png
 ${DOC}kdevelop/
 ${DOC}kdevelop/tip.database
-${DOC}zh_CN/
-${DOC}zh_CN/docs/
-${DOC}zh_CN/docs/common/
-${DOC}zh_CN/docs/common/fdl-translated.html
-${DOC}zh_CN/docs/common/gpl-translated.html
-${DOC}zh_CN/docs/common/kde-localised.css
-${DOC}zh_CN/docs/common/lgpl-translated.html
-${DOC}zh_CN/docs/common/logotp3.png
 ${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo
@@ -351,6 +350,7 @@ ${LOC}kmouth.mo
 ${LOC}kmplot.mo
 ${LOC}kmrml.mo
 ${LOC}knetattach.mo
+${LOC}knetworkconf.mo
 ${LOC}knewsticker.mo
 ${LOC}knode.mo
 ${LOC}knotes.mo

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2006/04/01 10:49:18 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2006/06/03 12:47:30 espie Exp $
 
 COMMENT=		"K Desktop Environment, addons"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.2
+VERSION=		3.5.3
 DISTNAME=		kdeaddons-${VERSION}
-MODKDE_VERSION=		3.5.2
+MODKDE_VERSION=		3.5.3
 
 LIB_DEPENDS= kdecore.6,kdnssd,knewstuff,DCOP,artskde,kabc,katepartinterfaces,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kmediaplayer,kparts,kresources,ktexteditor,kutils,kwalletclient,vcard::x11/kde/libs3 \
 	SDL.1:sdl-*-!no_x11:devel/sdl \
@@ -27,7 +27,8 @@ WANTLIB=	ICE SM X11 Xext Xi Xrender art_lgpl_2 artsflow artsflow_idl \
 		audiofile c esd glib glib-2.0.0.0 gmodule gmodule-2.0.0.0 \
 		iconv intl jpeg kimproxy kmedia2_idl m mad mcop ogg \
 		ossaudio pcre pcreposix png pthread qtmcop soundserver_idl \
-		stdc++ usbhid util vorbis vorbisenc vorbisfile z gthread-2.0.0.0
+		stdc++ usbhid util vorbis vorbisenc vorbisfile z \
+		gthread-2.0.0.0 idn
 #WANTLIB+=	noatunarts 
 
 .include <bsd.port.mk>

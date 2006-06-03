@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.23 2006/04/01 10:49:21 espie Exp $
---- configure.in.orig	Sat Mar 18 14:43:01 2006
-+++ configure.in	Thu Mar 30 21:00:10 2006
+$OpenBSD: patch-configure_in,v 1.24 2006/06/03 12:47:31 espie Exp $
+--- configure.in.orig	Tue May 23 22:38:23 2006
++++ configure.in	Thu Jun  1 09:19:53 2006
 @@ -164,22 +164,22 @@ AC_DEFUN([KDE_CHECK_OGGVORBIS],
      [:], [have_oggvorbis=no])
  
@@ -16,8 +16,9 @@ $OpenBSD: patch-configure_in,v 1.23 2006/04/01 10:49:21 espie Exp $
 -    [:], [have_oggvorbis=no], -lvorbis -logg)
 +    [:], [have_oggvorbis=no], -lvorbis -logg -lm)
  
-   KDE_CHECK_LIB(vorbisenc, vorbis_bitrate_addblock,
-     [have_vorbis_value=2], [have_vorbis_value=1])
+   KDE_CHECK_LIB(vorbis, vorbis_bitrate_addblock,
+-    [have_vorbis_value=2], [have_vorbis_value=1])
++    [have_vorbis_value=2], [have_vorbis_value=1], -lvorbis -logg -lm)
  
    if test "x$have_oggvorbis" = xyes; then
      # for akode/plugins/xiph_decoder/ kioslave/audiocd/plugins/ and krec/ogg_export/
@@ -71,7 +72,7 @@ $OpenBSD: patch-configure_in,v 1.23 2006/04/01 10:49:21 espie Exp $
  
      ])
    if test "x$have_libOggFLAC" = "xyes"; then
-@@ -1297,6 +1300,9 @@ case "$OS_TYPE" in
+@@ -1307,6 +1310,9 @@ case "$OS_TYPE" in
    NetBSD)
      kde_mpeglib_compiles=yes
      ;;
@@ -81,7 +82,7 @@ $OpenBSD: patch-configure_in,v 1.23 2006/04/01 10:49:21 espie Exp $
    Linux)
      kde_mpeglib_compiles=yes
      ;;
-@@ -1324,6 +1330,12 @@ case "$OS_TYPE" in
+@@ -1334,6 +1340,12 @@ case "$OS_TYPE" in
      AC_DEFINE(OS_Linux,1,[Define if you have linux pthread])
      ;;
  
@@ -94,7 +95,7 @@ $OpenBSD: patch-configure_in,v 1.23 2006/04/01 10:49:21 espie Exp $
    FreeBSD)
      OS_TYPE="BSD"
      AC_DEFINE(OS_BSD,1,[Define if you have BSD pthread])
-@@ -1367,7 +1379,7 @@ KDE_MPEGLIB_COMPILES
+@@ -1377,7 +1389,7 @@ KDE_MPEGLIB_COMPILES
  
  THIS_LIB_LIBS="-lX11 -lXext -lm ${XVLIBS} ${DGALIBS} "
  THIS_LIB_LIBS="${THIS_LIB_LIBS} ${XVIDMODELIBS} ${SDLLIB} ${CDDALIBS} "

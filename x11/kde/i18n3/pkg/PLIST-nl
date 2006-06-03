@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-nl,v 1.6 2006/04/01 12:33:43 espie Exp $
+@comment $OpenBSD: PLIST-nl,v 1.7 2006/06/03 12:47:30 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.nl.xml
 share/apps/khangman/
@@ -121,6 +121,13 @@ ${DOC}atlantik/
 ${DOC}atlantik/common
 ${DOC}atlantik/${C}
 ${DOC}atlantik/${I}
+${DOC}docs/
+${DOC}docs/common/
+${DOC}docs/common/fdl-translated.html
+${DOC}docs/common/gpl-translated.html
+${DOC}docs/common/kde-localised.css
+${DOC}docs/common/lgpl-translated.html
+${DOC}docs/common/logotp3.png
 ${DOC}juk/
 ${DOC}juk/common
 ${DOC}juk/${C}
@@ -1467,14 +1474,6 @@ ${DOC}multisynk/common
 ${DOC}multisynk/${C}
 ${DOC}multisynk/${I}
 ${DOC}multisynk/konnectors-chapter.docbook
-${DOC}nl/
-${DOC}nl/docs/
-${DOC}nl/docs/common/
-${DOC}nl/docs/common/fdl-translated.html
-${DOC}nl/docs/common/gpl-translated.html
-${DOC}nl/docs/common/kde-localised.css
-${DOC}nl/docs/common/lgpl-translated.html
-${DOC}nl/docs/common/logotp3.png
 ${DOC}noatun/
 ${DOC}noatun/common
 ${DOC}noatun/${C}

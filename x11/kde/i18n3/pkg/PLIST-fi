@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-fi,v 1.8 2006/04/01 12:33:43 espie Exp $
+@comment $OpenBSD: PLIST-fi,v 1.9 2006/06/03 12:47:30 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/khangman/
 share/apps/khangman/data/
@@ -9,14 +9,13 @@ share/apps/khangman/data/fi/hard.kvtml
 share/apps/khangman/data/fi/medium.kvtml
 share/apps/khangman/fi.txt
 share/doc/HTML/fi/
-${DOC}fi/
-${DOC}fi/docs/
-${DOC}fi/docs/common/
-${DOC}fi/docs/common/fdl-translated.html
-${DOC}fi/docs/common/gpl-translated.html
-${DOC}fi/docs/common/kde-localised.css
-${DOC}fi/docs/common/lgpl-translated.html
-${DOC}fi/docs/common/logotp3.png
+${DOC}docs/
+${DOC}docs/common/
+${DOC}docs/common/fdl-translated.html
+${DOC}docs/common/gpl-translated.html
+${DOC}docs/common/kde-localised.css
+${DOC}docs/common/lgpl-translated.html
+${DOC}docs/common/logotp3.png
 ${DOC}kfind/
 ${DOC}kfind/common
 ${DOC}kfind/${C}
@@ -222,6 +221,7 @@ ${LOC}kdgantt.mo
 ${LOC}kdialog.mo
 ${LOC}kdict.mo
 ${LOC}kdictapplet.mo
+${LOC}kdjview.mo
 ${LOC}kdmconfig.mo
 ${LOC}kdmgreet.mo
 ${LOC}kdvi.mo
@@ -345,6 +345,7 @@ ${LOC}kjots.mo
 ${LOC}kjumpingcube.mo
 ${LOC}klaptopdaemon.mo
 ${LOC}klatin.mo
+${LOC}kleopatra.mo
 ${LOC}klettres.mo
 ${LOC}klickety.mo
 ${LOC}klines.mo
@@ -508,6 +509,7 @@ ${LOC}kviewshell.mo
 ${LOC}kviewviewer.mo
 ${LOC}kvoctrain.mo
 ${LOC}kwalletmanager.mo
+${LOC}kwatchgnupg.mo
 ${LOC}kweather.mo
 ${LOC}kwifimanager.mo
 ${LOC}kwin.mo
@@ -528,6 +530,7 @@ ${LOC}libkaddrbk_geo_xxport.mo
 ${LOC}libkaddrbk_gmx_xxport.mo
 ${LOC}libkcal.mo
 ${LOC}libkcddb.mo
+${LOC}libkdeedu.mo
 ${LOC}libkdegames.mo
 ${LOC}libkdepim.mo
 ${LOC}libkfaximgage.mo
@@ -540,6 +543,7 @@ ${LOC}libkickermenu_recentdocs.mo
 ${LOC}libkickermenu_remotemenu.mo
 ${LOC}libkickermenu_systemmenu.mo
 ${LOC}libkickermenu_tom.mo
+${LOC}libkleopatra.mo
 ${LOC}libkmime.mo
 ${LOC}libkonq.mo
 ${LOC}libkpgp.mo

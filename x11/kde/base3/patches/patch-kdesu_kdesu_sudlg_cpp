@@ -1,20 +1,20 @@
-$OpenBSD: patch-kdesu_kdesu_sudlg_cpp,v 1.4 2006/02/18 12:06:50 espie Exp $
---- kdesu/kdesu/sudlg.cpp.orig	Sat Sep 10 10:26:14 2005
-+++ kdesu/kdesu/sudlg.cpp	Fri Feb 17 12:22:58 2006
+$OpenBSD: patch-kdesu_kdesu_sudlg_cpp,v 1.5 2006/06/03 12:47:30 espie Exp $
+--- kdesu/kdesu/sudlg.cpp.orig	Mon May 22 20:13:07 2006
++++ kdesu/kdesu/sudlg.cpp	Sun May 28 23:12:07 2006
 @@ -12,10 +12,11 @@
  #include "sudlg.h"
  
  
--KDEsuDialog::KDEsuDialog(QCString user, QCString auth_user, bool enableKeep, const QString& icon)
-+KDEsuDialog::KDEsuDialog(QCString user, QCString auth_user, bool enableKeep, const QString& icon, bool useSudo)
-     : KPasswordDialog(Password, enableKeep, User1, icon)
+-KDEsuDialog::KDEsuDialog(QCString user, QCString auth_user, bool enableKeep,const QString& icon, bool withIgnoreButton)
++KDEsuDialog::KDEsuDialog(QCString user, QCString auth_user, bool enableKeep,const QString& icon, bool useSudo, bool withIgnoreButton)
+      : KPasswordDialog(Password, enableKeep, (withIgnoreButton ? User1:NoDefault), icon)
  {
      m_User = auth_user;
 +    m_Sudo = useSudo;
      setCaption(i18n("Run as %1").arg(user));
  
      QString prompt;
-@@ -27,6 +28,8 @@ KDEsuDialog::KDEsuDialog(QCString user, 
+@@ -34,6 +35,8 @@ KDEsuDialog::KDEsuDialog(QCString user, 
  	prompt = i18n("The action you requested needs additional privileges. "
  		"Please enter the password for \"%1\" below or click "
  		"Ignore to continue with your current privileges.").arg(m_User);
@@ -22,8 +22,8 @@ $OpenBSD: patch-kdesu_kdesu_sudlg_cpp,v 1.4 2006/02/18 12:06:50 espie Exp $
 +	prompt += " (sudo)";
      setPrompt(prompt);
  
-     setButtonText(User1, i18n("&Ignore"));
-@@ -41,6 +44,7 @@ bool KDEsuDialog::checkPassword(const ch
+     if( withIgnoreButton )
+@@ -49,6 +52,7 @@ bool KDEsuDialog::checkPassword(const ch
  {
      SuProcess proc;
      proc.setUser(m_User);

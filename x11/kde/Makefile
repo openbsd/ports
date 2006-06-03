@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2005/12/02 02:07:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.58 2006/06/03 12:47:30 espie Exp $
 
      SUBDIR+= arts3
      SUBDIR+= libs3
@@ -21,6 +21,7 @@
      SUBDIR+= office3
      SUBDIR+=i18n3,af
      SUBDIR+=i18n3,ar
+     SUBDIR+=i18n3,az
      SUBDIR+=i18n3,bg
      SUBDIR+=i18n3,bn
      SUBDIR+=i18n3,br
@@ -36,17 +37,24 @@
      SUBDIR+=i18n3,es
      SUBDIR+=i18n3,et
      SUBDIR+=i18n3,eu
+     SUBDIR+=i18n3,fa
      SUBDIR+=i18n3,fi
      SUBDIR+=i18n3,fr
      SUBDIR+=i18n3,fy
      SUBDIR+=i18n3,ga
+     SUBDIR+=i18n3,gl
      SUBDIR+=i18n3,he
      SUBDIR+=i18n3,hi
+     SUBDIR+=i18n3,hr
      SUBDIR+=i18n3,hu
      SUBDIR+=i18n3,is
      SUBDIR+=i18n3,it
      SUBDIR+=i18n3,ja
+     SUBDIR+=i18n3,kk
+     SUBDIR+=i18n3,km
+     SUBDIR+=i18n3,ko
      SUBDIR+=i18n3,lt
+     SUBDIR+=i18n3,lv
      SUBDIR+=i18n3,mk
      SUBDIR+=i18n3,nb
      SUBDIR+=i18n3,nds
@@ -58,17 +66,22 @@
      SUBDIR+=i18n3,pt_BR
      SUBDIR+=i18n3,ro
      SUBDIR+=i18n3,ru
+     SUBDIR+=i18n3,rw
      SUBDIR+=i18n3,se
      SUBDIR+=i18n3,sk
      SUBDIR+=i18n3,sl
      SUBDIR+=i18n3,sr
      SUBDIR+=i18n3,sr@Latn
+     SUBDIR+=i18n3,ss
      SUBDIR+=i18n3,sv
      SUBDIR+=i18n3,ta
      SUBDIR+=i18n3,tg
      SUBDIR+=i18n3,tr
      SUBDIR+=i18n3,uk
+     SUBDIR+=i18n3,uz
+     SUBDIR+=i18n3,vi
      SUBDIR+=i18n3,zh_CN
+     SUBDIR+=i18n3,zh_TW
      SUBDIR+=office-i18n3,bg
      SUBDIR+=office-i18n3,ca
      SUBDIR+=office-i18n3,cs

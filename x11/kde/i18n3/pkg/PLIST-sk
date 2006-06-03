@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-sk,v 1.7 2006/04/01 12:33:43 espie Exp $
+@comment $OpenBSD: PLIST-sk,v 1.8 2006/06/03 12:47:30 espie Exp $
 @conflict kdeedu-<3.3
 share/apps/klettres/
 share/apps/klettres/sk/
@@ -150,6 +150,9 @@ ${DOC}atlantik/
 ${DOC}atlantik/common
 ${DOC}atlantik/${C}
 ${DOC}atlantik/${I}
+${DOC}docs/
+${DOC}docs/common/
+${DOC}docs/common/gpl-translated.html
 ${DOC}kaboodle/
 ${DOC}kaboodle/common
 ${DOC}kaboodle/${C}
@@ -911,10 +914,6 @@ ${DOC}lskat/
 ${DOC}lskat/common
 ${DOC}lskat/${C}
 ${DOC}lskat/${I}
-${DOC}sk/
-${DOC}sk/docs/
-${DOC}sk/docs/common/
-${DOC}sk/docs/common/gpl-translated.html
 ${DOC}umbrello/
 ${DOC}umbrello/asf.xmi
 ${DOC}umbrello/authors.docbook

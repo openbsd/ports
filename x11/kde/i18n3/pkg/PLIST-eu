@@ -1,12 +1,11 @@
-@comment $OpenBSD: PLIST-eu,v 1.7 2006/04/01 12:33:43 espie Exp $
+@comment $OpenBSD: PLIST-eu,v 1.8 2006/06/03 12:47:30 espie Exp $
 share/doc/HTML/eu/
-${DOC}eu/
-${DOC}eu/docs/
-${DOC}eu/docs/common/
-${DOC}eu/docs/common/fdl-translated.html
-${DOC}eu/docs/common/gpl-translated.html
-${DOC}eu/docs/common/kde-localised.css
-${DOC}eu/docs/common/logotp3.png
+${DOC}docs/
+${DOC}docs/common/
+${DOC}docs/common/fdl-translated.html
+${DOC}docs/common/gpl-translated.html
+${DOC}docs/common/kde-localised.css
+${DOC}docs/common/logotp3.png
 ${DOC}kbabel/
 ${DOC}kbabel/catman.docbook
 ${DOC}kbabel/dictionaries.docbook

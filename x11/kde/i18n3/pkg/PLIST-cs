@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-cs,v 1.7 2006/04/01 12:33:43 espie Exp $
+@comment $OpenBSD: PLIST-cs,v 1.8 2006/06/03 12:47:30 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/khangman/
 share/apps/khangman/cs.txt
@@ -64,14 +64,13 @@ share/apps/klettres/cs/syllab/ad-7.ogg
 share/apps/klettres/cs/syllab/ad-8.ogg
 share/apps/klettres/cs/syllab/ad-9.ogg
 share/doc/HTML/cs/
-${DOC}cs/
-${DOC}cs/docs/
-${DOC}cs/docs/common/
-${DOC}cs/docs/common/fdl-translated.html
-${DOC}cs/docs/common/gpl-translated.html
-${DOC}cs/docs/common/kde-localised.css
-${DOC}cs/docs/common/lgpl-translated.html
-${DOC}cs/docs/common/logotp3.png
+${DOC}docs/
+${DOC}docs/common/
+${DOC}docs/common/fdl-translated.html
+${DOC}docs/common/gpl-translated.html
+${DOC}docs/common/kde-localised.css
+${DOC}docs/common/lgpl-translated.html
+${DOC}docs/common/logotp3.png
 ${DOC}kcontrol/
 ${DOC}kcontrol/arts/
 ${DOC}kcontrol/arts/midi.docbook
@@ -527,6 +526,7 @@ ${LOC}kio_smtp.mo
 ${LOC}kio_svn.mo
 ${LOC}kio_system.mo
 ${LOC}kio_tar.mo
+${LOC}kio_thumbnail.mo
 ${LOC}kio_trash.mo
 ${LOC}kio_zeroconf.mo
 ${LOC}kioexec.mo

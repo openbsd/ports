@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.67 2006/05/02 12:35:42 steven Exp $
+# $OpenBSD: Makefile,v 1.68 2006/06/03 12:47:30 espie Exp $
 
 COMMENT=		"K Desktop Environment, libraries"
 COMMENT-cups=		"K Desktop Environment, cups support"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.2
+VERSION=		3.5.3
 DISTNAME=		kdelibs-${VERSION}
 MASTER_SITES0=  ftp://ftp.kde.org/pub/kde/security_patches/
 #PATCHFILES=	post-3.4.3-kdelibs-kjs.diff:0
 
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}
 PKGNAME-cups=		kdecups-${VERSION}
-MODKDE_VERSION?=	3.5.2
+MODKDE_VERSION?=	3.5.3
 SHARED_LIBS=		DCOP			7.0 \
 			artskde			4.0 \
 			kabc			4.0 \
@@ -63,6 +63,7 @@ SUBPACKAGE?=
 
 BUILD_DEPENDS+= ::devel/pkgconfig
 LIB_DEPENDS+=	art_lgpl_2::graphics/libart
+LIB_DEPENDS+=	idn::devel/libidn
 WANTLIB+=	intl iconv util jpeg m X11 ICE Xrender c SM pthread \
 		stdc++ Xext z png
 

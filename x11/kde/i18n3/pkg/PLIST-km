@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-km,v 1.1 2006/04/01 12:33:43 espie Exp $
+@comment $OpenBSD: PLIST-km,v 1.2 2006/06/03 12:47:30 espie Exp $
 share/locale/km/
 share/locale/km/LC_MESSAGES/
 ${LOC}akregator.mo
@@ -158,6 +158,7 @@ ${LOC}kcmtaskbar.mo
 ${LOC}kcmthinkpad.mo
 ${LOC}kcmusb.mo
 ${LOC}kcmview1394.mo
+${LOC}kcmvim.mo
 ${LOC}kcmwifi.mo
 ${LOC}kcmxinerama.mo
 ${LOC}kcoloredit.mo
@@ -230,6 +231,7 @@ ${LOC}kfile_wav.mo
 ${LOC}kfile_xbm.mo
 ${LOC}kfile_xpm.mo
 ${LOC}kfileaudiopreview.mo
+${LOC}kfileshare.mo
 ${LOC}kfindpart.mo
 ${LOC}kfloppy.mo
 ${LOC}kfmclient.mo
@@ -239,6 +241,7 @@ ${LOC}kgamma.mo
 ${LOC}kgantt.mo
 ${LOC}kget.mo
 ${LOC}kghostview.mo
+${LOC}kgoldrunner.mo
 ${LOC}kgreet_classic.mo
 ${LOC}kgreet_winbind.mo
 ${LOC}khelpcenter.mo
@@ -273,6 +276,7 @@ ${LOC}kio_print.mo
 ${LOC}kio_remote.mo
 ${LOC}kio_settings.mo
 ${LOC}kio_sftp.mo
+${LOC}kio_sieve.mo
 ${LOC}kio_smb.mo
 ${LOC}kio_smtp.mo
 ${LOC}kio_system.mo
@@ -290,8 +294,10 @@ ${LOC}klickety.mo
 ${LOC}klines.mo
 ${LOC}klipper.mo
 ${LOC}kmahjongg.mo
+${LOC}kmail.mo
 ${LOC}kmail_text_calendar_plugin.mo
 ${LOC}kmail_text_vcard_plugin.mo
+${LOC}kmailcvt.mo
 ${LOC}kmathapplet.mo
 ${LOC}kmcop.mo
 ${LOC}kmenuapplet.mo
@@ -320,6 +326,9 @@ ${LOC}kolourpicker.mo
 ${LOC}konnector_dummy.mo
 ${LOC}konnector_kabc.mo
 ${LOC}konnector_kcal.mo
+${LOC}konnector_local.mo
+${LOC}konnector_qtopia.mo
+${LOC}konnector_remote.mo
 ${LOC}konq_smbmounterplugin.mo
 ${LOC}konqsidebar_delicious.mo
 ${LOC}konqsidebar_mediaplayer.mo
@@ -328,8 +337,10 @@ ${LOC}konqsidebar_news.mo
 ${LOC}konqueror.mo
 ${LOC}konquest.mo
 ${LOC}konsole.mo
+${LOC}konsolekalendar.mo
 ${LOC}kontact.mo
 ${LOC}kooka.mo
+${LOC}kopete.mo
 ${LOC}korganizer.mo
 ${LOC}kpager.mo
 ${LOC}kpartapp.mo
@@ -350,10 +361,13 @@ ${LOC}kres_birthday.mo
 ${LOC}kres_blogging.mo
 ${LOC}kres_exchange.mo
 ${LOC}kres_featureplan.mo
+${LOC}kres_groupware.mo
+${LOC}kres_groupwise.mo
 ${LOC}kres_kolab.mo
 ${LOC}kres_opengroupware.mo
 ${LOC}kres_remote.mo
 ${LOC}kres_tvanytime.mo
+${LOC}kres_xmlrpc.mo
 ${LOC}kreversi.mo
 ${LOC}krfb.mo
 ${LOC}kruler.mo
@@ -427,6 +441,7 @@ ${LOC}libkdehighscores.mo
 ${LOC}libkdenetwork.mo
 ${LOC}libkdepim.mo
 ${LOC}libkfaximgage.mo
+${LOC}libkholidays.mo
 ${LOC}libkicker.mo
 ${LOC}libkickermenu_kdeprint.mo
 ${LOC}libkickermenu_konsole.mo
@@ -437,10 +452,13 @@ ${LOC}libkickermenu_systemmenu.mo
 ${LOC}libkickermenu_tom.mo
 ${LOC}libkmime.mo
 ${LOC}libkonq.mo
+${LOC}libkpgp.mo
 ${LOC}libkpimexchange.mo
 ${LOC}libkscan.mo
 ${LOC}libkscreensaver.mo
+${LOC}libksieve.mo
 ${LOC}libksirtet.mo
+${LOC}libksync.mo
 ${LOC}libtaskbar.mo
 ${LOC}libtaskmanager.mo
 ${LOC}lockout.mo
