@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2006/05/23 15:29:18 bernd Exp $
+# $OpenBSD: Makefile,v 1.147 2006/06/03 16:52:18 bernd Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -67,6 +67,7 @@
      SUBDIR += mpg321
      SUBDIR += mt-daapd
      SUBDIR += nap
+     SUBDIR += ncmpc
      SUBDIR += normalize
      SUBDIR += nosefart
      SUBDIR += nspmod
