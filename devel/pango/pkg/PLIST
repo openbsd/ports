@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2006/05/22 01:41:52 brad Exp $
+@comment $OpenBSD: PLIST,v 1.14 2006/06/03 18:23:03 brad Exp $
 bin/pango-querymodules
 bin/pango-view
 include/pango-1.0/
@@ -113,6 +113,7 @@ share/gtk-doc/html/pango/pango-X-Fonts-and-Rendering.html
 share/gtk-doc/html/pango/pango-Xft-Fonts-and-Rendering.html
 share/gtk-doc/html/pango/pango-querymodules.html
 share/gtk-doc/html/pango/pango.devhelp
+share/gtk-doc/html/pango/pango.devhelp2
 share/gtk-doc/html/pango/pango.html
 share/gtk-doc/html/pango/rendering.html
 share/gtk-doc/html/pango/right.png
