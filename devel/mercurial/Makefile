@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/05/28 15:39:59 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2006/06/03 12:39:30 steven Exp $
 
 COMMENT=		"fast, lightweight source control management"
 
 VERSION=		0.9
 DISTNAME=		mercurial-${VERSION}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=     	devel
 HOMEPAGE=		http://www.selenic.com/mercurial/
 
