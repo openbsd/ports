@@ -1,3 +1,2 @@
-Graph, a Perl module for dealing with graphs, the abstract
-data structures.
-
+Graph is a Perl module for creating abstract data structures called
+graphs, and for doing various operations on those.
