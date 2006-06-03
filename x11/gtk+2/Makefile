@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.36 2006/05/22 02:16:40 brad Exp $
+# $OpenBSD: Makefile,v 1.37 2006/06/03 18:23:52 brad Exp $
 
 NOT_FOR_ARCHS=			${NO_SHARED_ARCHS}
 
 COMMENT=			"multi-platform graphical toolkit"
 COMMENT-docs=           	"gtk+-2 documentation"
 
-VERSION=			2.8.17
+VERSION=			2.8.18
 DISTNAME=			gtk+-${VERSION}
-PKGNAME=			gtk+2-${VERSION}p1
+PKGNAME=			gtk+2-${VERSION}
 PKGNAME-docs=			gtk+2-docs-${VERSION}
 CATEGORIES=			x11 devel
 
 HOMEPAGE=			http://www.gtk.org
 
-SHARED_LIBS=			gdk-x11-2.0		802.0 \
-				gdk_pixbuf-2.0		802.0 \
-				gdk_pixbuf_xlib-2.0	802.0 \
-				gtk-x11-2.0		802.0
+SHARED_LIBS=			gdk-x11-2.0		802.1 \
+				gdk_pixbuf-2.0		802.1 \
+				gdk_pixbuf_xlib-2.0	802.1 \
+				gtk-x11-2.0		802.1
 
 # LGPL
 PERMIT_PACKAGE_CDROM=		Yes
