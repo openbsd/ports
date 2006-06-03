@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2006/03/13 00:02:10 steven Exp $
+# $OpenBSD: Makefile,v 1.56 2006/06/03 23:00:39 steven Exp $
 
 COMMENT=	"Civilization clone for X11; multiplayer; game server"
 COMMENT-client=	"Freeciv client"
@@ -29,8 +29,6 @@ FLAVOR?=
 
 MULTI_PACKAGES=	-share
 SUBPACKAGE?=
-
-BUILD_DEPENDS=	::lang/python/2.3
 
 MODULES=	devel/gettext
 WANTLIB=	c m z ncurses readline
