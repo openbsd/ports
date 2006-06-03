@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2006/05/08 13:44:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2006/06/03 09:50:24 alek Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"GTK+2 Python bindings"
 
 V=		2.6.3
 DISTNAME=	pygtk-${V}
-PKGNAME=	py-gtk2-${V}
+PKGNAME=	py-gtk2-${V}p0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.pygtk.org/
