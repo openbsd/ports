@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2006/06/03 18:23:52 brad Exp $
+# $OpenBSD: Makefile,v 1.38 2006/06/03 19:56:56 brad Exp $
 
 NOT_FOR_ARCHS=			${NO_SHARED_ARCHS}
 
@@ -7,7 +7,7 @@ COMMENT-docs=           	"gtk+-2 documentation"
 
 VERSION=			2.8.18
 DISTNAME=			gtk+-${VERSION}
-PKGNAME=			gtk+2-${VERSION}
+PKGNAME=			gtk+2-${VERSION}p1
 PKGNAME-docs=			gtk+2-docs-${VERSION}
 CATEGORIES=			x11 devel
 
@@ -36,7 +36,7 @@ WANTLIB=			X11 Xcursor Xext Xfixes Xi Xinerama Xrender \
 MODULES=			devel/gettext
 
 LIB_DEPENDS=			glib-2.0.1000.0,gmodule-2.0.1000.0,gobject-2.0.1000.0::devel/glib2 \
-				pango-1.0.1200.0,pangoft2-1.0.1200.0,pangoxft-1.0.1200.0,pangox-1.0.1200.0::devel/pango \
+				pango-1.0.1200.0,pangocairo-1.0.1200.0,pangoft2-1.0.1200.0::devel/pango \
 				atk-1.0.0.1::devel/atk \
 				tiff.35::graphics/tiff \
 				png.3::graphics/png \
