@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2005/12/03 22:34:52 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2006/06/03 09:23:14 alek Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	"Python tools for computational molecular biology"
 
 DISTNAME=	biopython-1.41
-PKGNAME=	py-${DISTNAME}
+PKGNAME=	py-${DISTNAME}p0
 CATEGORIES=	biology
 
 HOMEPAGE=	http://www.biopython.org/
