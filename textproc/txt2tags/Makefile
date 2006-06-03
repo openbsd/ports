@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/02/11 11:59:23 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2006/06/03 15:56:21 steven Exp $
 
 COMMENT=	"utility to turn simply formatted text into markup" 
 
 DISTNAME=	txt2tags-2.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	textproc	
 
 HOMEPAGE=	http://txt2tags.sourceforge.net/
@@ -18,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}/src/
 EXTRACT_SUFX=	.tgz
 
-PY_VERSION=	2.3
+PY_VERSION=	2.4
 RUN_DEPENDS=	:python-${PY_VERSION}*:lang/python/${PY_VERSION}
 
 PKG_ARCH=	*
