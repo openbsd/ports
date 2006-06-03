@@ -1,0 +1,3 @@
+ncmpc is a curses client for mpd (Music Player Daemon). ncmpc
+connects to a mpd running on a machine on the local network, and
+controls this with an interface inspired by cplay.

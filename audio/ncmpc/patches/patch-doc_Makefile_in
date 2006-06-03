@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2006/06/03 16:50:53 bernd Exp $
+--- doc/Makefile.in.orig	Sun May 28 16:15:35 2006
++++ doc/Makefile.in	Sun May 28 16:16:35 2006
+@@ -108,7 +108,7 @@ am__quote = @am__quote@
+ install_sh = @install_sh@
+ 
+ man_MANS = ncmpc.1
+-docdir = $(prefix)/share/doc/$(PACKAGE)
++docdir = $(prefix)/share/examples/$(PACKAGE)
+ doc_DATA = config.sample keys.sample ncmpc.lirc
+ EXTRA_DIST = $(man_MANS) $(doc_DATA)
+ subdir = doc
