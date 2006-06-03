@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2005/09/23 19:41:43 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2006/06/03 09:38:37 alek Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"fast array facility to the Python language"
 
 VERSION=	23.1
 DISTNAME=	Numeric-${VERSION}
-PKGNAME=	py-${DISTNAME}
+PKGNAME=	py-${DISTNAME}p0
 CATEGORIES=	math
 
 # Python License

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/04/19 17:36:58 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2006/06/03 09:43:03 alek Exp $
 
 COMMENT=	"powerful interactive packet manipulation in python"
 
 DISTNAME=	scapy-1.0.4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://secdev.org/projects/scapy/

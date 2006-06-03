@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2006/02/02 09:25:47 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2006/06/03 09:49:24 alek Exp $
 
 COMMENT=	"RSS and Atom feeds parser written in Python"
 
 DISTNAME=	feedparser-4.1
-PKGNAME=	py-${DISTNAME}
+PKGNAME=	py-${DISTNAME}p0
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.feedparser.org/

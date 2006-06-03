@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2005/01/05 17:45:27 xsa Exp $
+# $OpenBSD: Makefile,v 1.6 2006/06/03 09:21:21 alek Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"Python wrapper for the Ogg libraries"
 
 DISTNAME=	pyogg-1.3
-PKGNAME=	${DISTNAME:S/py/py-/}
+PKGNAME=	${DISTNAME:S/py/py-/}p0
 CATEGORIES=	audio
 HOMEPAGE=	http://www.andrewchatham.com/pyogg/
 

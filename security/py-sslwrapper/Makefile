@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2005/09/23 19:41:45 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2006/06/03 09:45:27 alek Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -6,7 +6,7 @@ COMMENT=	"OpenSSL Wrappers for Python"
 
 VERSION=	0.6.1
 DISTNAME=	POW-${VERSION}
-PKGNAME=	py-sslwrapper-${VERSION}
+PKGNAME=	py-sslwrapper-${VERSION}p0
 CATEGORIES=    	security devel
 
 HOMEPAGE=	http://www.sourceforge.net/projects/pow/

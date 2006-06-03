@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.22 2005/09/23 19:41:45 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.23 2006/06/03 09:49:24 alek Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"Python module for writing basic XML applications"
 
 VERSION=	0.7.1
 DISTNAME=	PyXML-${VERSION}
-PKGNAME=	py-xml-${VERSION}
+PKGNAME=	py-xml-${VERSION}p0
 CATEGORIES=	textproc devel
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pyxml/}

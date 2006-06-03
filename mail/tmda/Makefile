@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2006/03/13 18:31:21 bernd Exp $
+# $OpenBSD: Makefile,v 1.31 2006/06/03 09:39:22 alek Exp $
 
 COMMENT=		"reduce the amount of SPAM/UCE (junk-mail)"
 
 DISTNAME=		tmda-1.0.3
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		mail
 
 HOMEPAGE=		http://tmda.net/

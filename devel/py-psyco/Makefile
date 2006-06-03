@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/06/08 22:24:01 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2006/06/03 09:37:09 alek Exp $
 
 COMMENT=	"extension module to speed up the execution of Python code"
 
@@ -6,7 +6,7 @@ SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 
 
 DISTNAME=	psyco-1.4-src
-PKGNAME=	py-${DISTNAME:S/-src//}p0
+PKGNAME=	py-${DISTNAME:S/-src//}p1
 CATEGORIES=	devel
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=psyco/}

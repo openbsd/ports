@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.25 2005/11/17 19:07:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2006/06/03 09:29:42 alek Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"Python interface to MySQL"
 
 VERSION=	1.2.0
 DISTNAME=	MySQL-python-${VERSION}
-PKGNAME=	py-mysql-${VERSION}p0
+PKGNAME=	py-mysql-${VERSION}p1
 CATEGORIES=	databases
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mysql-python/}

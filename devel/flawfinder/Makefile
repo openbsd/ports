@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2005/01/25 08:23:47 xsa Exp $
+# $OpenBSD: Makefile,v 1.26 2006/06/03 09:37:09 alek Exp $
 
 COMMENT=		"C/C++ source code auditing tool"
 
 DISTNAME=		flawfinder-1.26
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		devel security
 
 HOMEPAGE=		http://www.dwheeler.com/flawfinder/

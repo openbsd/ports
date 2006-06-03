@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/04/08 20:23:43 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2006/06/03 09:39:22 alek Exp $
 
 COMMENT=	"archive and compress your old email"
 
 DISTNAME=	archivemail-0.6.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	mail
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>

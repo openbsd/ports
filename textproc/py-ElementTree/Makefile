@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2006/05/21 17:05:41 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2006/06/03 09:49:24 alek Exp $
 
 COMMENT=	"pure-Python implementation of the ElementTree API"
 
 DISTNAME=	elementtree-1.2.6-20050316
-PKGNAME=	py-ElementTree-1.2.6
+PKGNAME=	py-ElementTree-1.2.6p0
 CATEGORIES=	textproc devel
 
 HOMEPAGE=	http://effbot.org/zone/element-index.htm

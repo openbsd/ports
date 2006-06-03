@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2006/03/12 10:04:55 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/06/03 09:49:24 alek Exp $
 
 COMMENT=	"tools for converting plaintext documentation into other formats"
 
 DISTNAME=	docutils-0.4
-PKGNAME=	py-${DISTNAME}
+PKGNAME=	py-${DISTNAME}p0
 CATEGORIES=	textproc
 
 MAINTAINER=	Ben Lovett <ben@tilderoot.com>

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2005/06/10 17:07:43 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2006/06/03 09:29:42 alek Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"Python interface to the Sybase relational database system"
 
 DISTNAME=	sybase-0.36
-PKGNAME=	py-${DISTNAME}p0
+PKGNAME=	py-${DISTNAME}p1
 CATEGORIES=	databases
 
 HOMEPAGE=	http://www.object-craft.com.au/projects/sybase/

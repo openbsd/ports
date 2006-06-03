@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2005/09/23 11:59:02 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.10 2006/06/03 09:29:42 alek Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"LDAP client API for Python"
 
 DISTNAME=	python-ldap-2.0.10
-PKGNAME=	${DISTNAME:S/python/py/}
+PKGNAME=	${DISTNAME:S/python/py/}p0
 CATEGORIES=	databases
 
 HOMEPAGE=	http://python-ldap.sourceforge.net/

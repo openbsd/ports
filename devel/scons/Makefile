@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2006/04/17 14:57:11 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/06/03 09:37:09 alek Exp $
 
 COMMENT=	"Python-based build system"
 
 VERSION=	0.96.92
 DISTNAME=	scons-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.scons.org/

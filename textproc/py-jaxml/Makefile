@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2004/08/03 21:34:44 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2006/06/03 09:49:24 alek Exp $
 
 COMMENT=	"Python module to easily generate XML/XHTML/HTML documents"
 
 DISTNAME=	jaxml-3.01
-PKGNAME=	py-${DISTNAME}
+PKGNAME=	py-${DISTNAME}p0
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.librelogiciel.com/software/jaxml/action_Presentation

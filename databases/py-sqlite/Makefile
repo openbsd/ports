@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2005/04/29 00:02:05 djm Exp $
+# $OpenBSD: Makefile,v 1.9 2006/06/03 09:29:42 alek Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"SQLite adapter for Python"
 
 VERSION=	1.0
 DISTNAME=	pysqlite-${VERSION}
-PKGNAME=	py-sqlite-${VERSION}
+PKGNAME=	py-sqlite-${VERSION}p0
 CATEGORIES=	databases
 WRKDIST=	${WRKDIR}/pysqlite
 

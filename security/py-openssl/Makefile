@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2004/12/27 13:28:35 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2006/06/03 09:45:27 alek Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"Python interface to the OpenSSL library"
 
 VERSION=	0.5.1
 DISTNAME=	pyOpenSSL-${VERSION}
-PKGNAME=	py-openssl-${VERSION}
+PKGNAME=	py-openssl-${VERSION}p0
 CATEGORIES=    	security devel
 
 HOMEPAGE=	http://www.sourceforge.net/projects/pyopenssl/

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2004/08/03 14:59:26 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2006/06/03 09:21:21 alek Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"Python wrapper module for the ao library"
 
 DISTNAME=	pyao-0.82
-PKGNAME=	${DISTNAME:S/py/py-/}
+PKGNAME=	${DISTNAME:S/py/py-/}p0
 CATEGORIES=	audio
 HOMEPAGE=	http://www.andrewchatham.com/pyogg/
 

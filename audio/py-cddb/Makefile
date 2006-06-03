@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2004/08/03 14:59:27 xsa Exp $
+# $OpenBSD: Makefile,v 1.6 2006/06/03 09:21:21 alek Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"CDDB audio CD track info access in Python"
 
 DISTNAME=	CDDB-1.4
-PKGNAME=	py-${DISTNAME:L}
+PKGNAME=	py-${DISTNAME:L}p0
 CATEGORIES=	audio
 
 HOMEPAGE=	http://cddb-py.sourceforge.net/

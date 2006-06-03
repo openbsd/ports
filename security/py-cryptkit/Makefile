@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2005/09/23 19:41:44 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2006/06/03 09:45:27 alek Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"Python Cryptographic Toolkit"
 
 DISTNAME=	cryptkit-0.9
-PKGNAME=	py-${DISTNAME}
+PKGNAME=	py-${DISTNAME}p0
 CATEGORIES=    	security devel
 
 HOMEPAGE=	http://eevolved.com/cryptkit/

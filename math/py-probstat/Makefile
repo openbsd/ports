@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2004/08/04 19:46:15 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2006/06/03 09:38:37 alek Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"probability and statistics utilities for Python"
 
 DISTNAME=	probstat_0.912
-PKGNAME=	py-${DISTNAME:S/_/-/}
+PKGNAME=	py-${DISTNAME:S/_/-/}p0
 CATEGORIES=	math
 
 HOMEPAGE=	http://probstat.sourceforge.net/

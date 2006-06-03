@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/11/03 19:44:48 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2006/06/03 09:36:00 alek Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"cairo bindings for Python"
 
 DISTNAME=	pycairo-1.0.2
-PKGNAME=	${DISTNAME:S/py/py-/}
+PKGNAME=	${DISTNAME:S/py/py-/}p0
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://cairographics.org/introduction/

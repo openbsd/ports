@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2006/03/29 11:45:27 msf Exp $
+# $OpenBSD: Makefile,v 1.3 2006/06/03 09:43:03 alek Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		"Python API for flowd binary log files"
 
 DISTNAME=		flowd-0.9
-PKGNAME=		${DISTNAME:S/^/py-/}
+PKGNAME=		${DISTNAME:S/^/py-/}p0
 CATEGORIES=		net devel
 
 HOMEPAGE=		http://www.mindrot.org/flowd.html
