@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2006/04/01 12:32:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2006/06/04 09:37:43 espie Exp $
 %%SHARED%%
 bin/assistant4
 bin/designer4
@@ -541,6 +541,8 @@ include/X11/qt4/Qt3Support/Q3PtrDictIterator
 include/X11/qt4/Qt3Support/Q3PtrList
 include/X11/qt4/Qt3Support/Q3PtrListIterator
 include/X11/qt4/Qt3Support/Q3PtrListStdIterator
+include/X11/qt4/Qt3Support/Q3PtrQueue
+include/X11/qt4/Qt3Support/Q3PtrStack
 include/X11/qt4/Qt3Support/Q3PtrVector
 include/X11/qt4/Qt3Support/Q3RangeControl
 include/X11/qt4/Qt3Support/Q3ScrollView
@@ -1701,6 +1703,8 @@ lib/qt4/bin/qtconfig
 lib/qt4/bin/rcc
 lib/qt4/bin/uic
 lib/qt4/bin/uic3
+lib/qt4/examples/tools/settingseditor/inifiles/licensepage.ini
+lib/qt4/examples/tools/settingseditor/inifiles/qsa.ini
 lib/qt4/include
 @comment lib/qt4/libQt3Support.la
 lib/qt4/libQt3Support.prl
@@ -1791,6 +1795,8 @@ lib/qt4/mkspecs/features/warn_on.prf
 lib/qt4/mkspecs/features/win32/
 lib/qt4/mkspecs/features/win32/console.prf
 lib/qt4/mkspecs/features/win32/default_pre.prf
+lib/qt4/mkspecs/features/win32/embed_manifest_dll.prf
+lib/qt4/mkspecs/features/win32/embed_manifest_exe.prf
 lib/qt4/mkspecs/features/win32/exceptions.prf
 lib/qt4/mkspecs/features/win32/exceptions_off.prf
 lib/qt4/mkspecs/features/win32/opengl.prf
@@ -1999,8 +2005,6 @@ lib/qt4/phrasebooks/spanish.qph
 lib/qt4/phrasebooks/swedish.qph
 lib/qt4/plugins/
 lib/qt4/plugins/accessible/
-lib/qt4/plugins/arthurplugin/
-lib/qt4/plugins/codecs/
 lib/qt4/plugins/designer/
 lib/qt4/plugins/imageformats/
 lib/qt4/plugins/inputmethods/
@@ -2018,4 +2022,3 @@ lib/qt4/translations/qt_zh_CN.qm
 share/doc/qt4/LICENSE.GPL
 share/doc/qt4/OPENSOURCE-NOTICE.TXT
 share/doc/qt4/README
-share/doc/qt4/html/images/propagation-custom.png

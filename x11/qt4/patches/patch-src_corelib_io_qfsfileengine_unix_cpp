@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_corelib_io_qfsfileengine_unix_cpp,v 1.1 2006/06/04 09:37:43 espie Exp $
+--- src/corelib/io/qfsfileengine_unix.cpp.orig	Mon May 22 12:22:02 2006
++++ src/corelib/io/qfsfileengine_unix.cpp	Mon May 22 12:25:43 2006
+@@ -539,13 +539,13 @@ uint QFSFileEngine::ownerId(FileOwner ow
+ 
+ QString QFSFileEngine::owner(FileOwner own) const
+ {
+-#if !defined(QT_NO_THREAD) && defined(_POSIX_THREAD_SAFE_FUNCTIONS)
++#if !defined(QT_NO_THREAD) && defined(_POSIX_THREAD_SAFE_FUNCTIONS) && !defined(Q_OS_OPENBSD)
+     QVarLengthArray<char, 1024> buf(sysconf(_SC_GETPW_R_SIZE_MAX));
+ #endif
+ 
+     if(own == OwnerUser) {
+         struct passwd *pw = 0;
+-#if !defined(QT_NO_THREAD) && defined(_POSIX_THREAD_SAFE_FUNCTIONS)
++#if !defined(QT_NO_THREAD) && defined(_POSIX_THREAD_SAFE_FUNCTIONS) && !defined(Q_OS_OPENBSD)
+         struct passwd entry;
+         getpwuid_r(ownerId(own), &entry, buf.data(), buf.size(), &pw);
+ #else
+@@ -555,7 +555,7 @@ QString QFSFileEngine::owner(FileOwner o
+             return QFile::decodeName(QByteArray(pw->pw_name));
+     } else if(own == OwnerGroup) {
+         struct group *gr = 0;
+-#if !defined(QT_NO_THREAD) && defined(_POSIX_THREAD_SAFE_FUNCTIONS)
++#if !defined(QT_NO_THREAD) && defined(_POSIX_THREAD_SAFE_FUNCTIONS) && !defined(Q_OS_OPENBSD)
+         buf.resize(sysconf(_SC_GETGR_R_SIZE_MAX));
+         struct group entry;
+         getgrgid_r(ownerId(own), &entry, buf.data(), buf.size(), &gr);
