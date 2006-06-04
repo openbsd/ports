@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_kotext_KoTextObject_cpp,v 1.1 2006/06/04 09:15:36 espie Exp $
+--- lib/kotext/KoTextObject.cpp.orig	Sat Jun  3 19:54:26 2006
++++ lib/kotext/KoTextObject.cpp	Sat Jun  3 19:55:02 2006
+@@ -143,8 +143,11 @@ void KoTextObject::slotParagraphCreated(
+     m_needsSpellCheck = true;
+ }
+ 
+-void KoTextObject::slotParagraphDeleted(KoTextParag * /*parag*/)
++void KoTextObject::slotParagraphDeleted(KoTextParag * parag)
+ {
++    if ( m_lastFormatted == parag )                                            
++        m_lastFormatted = parag->next();                                       
++                                                                               
+     // ### TODO: remove from kwbgspellcheck
+     // not needed, since KoTextIterator takes care of that.
+ }

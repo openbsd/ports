@@ -1,13 +1,20 @@
-# $OpenBSD: Makefile,v 1.31 2006/04/17 10:56:49 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2006/06/04 09:15:36 espie Exp $
 
 COMMENT=		"office suite for KDE"
 
 CATEGORIES=		x11 x11/kde productivity
 VMEM_WARNING=		Yes
-MASTER_SITES?=		${MASTER_SITE_KDE:S@$@stable/koffice-1.5.0/src/@}
+MASTER_SITES?=		${MASTER_SITE_KDE:S@$@stable/koffice-1.5.1/src/@}
 
-DISTNAME=	koffice-1.5.0
-PKGNAME=	koffice-1.5.0
+DISTNAME=	koffice-1.5.1
+PATCHFILES=	koffice-1.5.1-kexi-checkbox-data-saving.patch \
+		koffice-1.5.1-kexi-form-plugins.patch
+
+do-distpatch:
+	cd ${WRKDIST} && ${PATCH} ${PATCH_DIST_ARGS} <${FULLDISTDIR}/koffice-1.5.1-kexi-checkbox-data-saving.patch
+	cd ${WRKDIST}/kexi && ${PATCH} -z .bak.orig --forward --quiet -E -p0 <${FULLDISTDIR}/koffice-1.5.1-kexi-form-plugins.patch
+
+PKGNAME=	koffice-1.5.1
 #SHARED_LIBS=	karbonbase		3.0 \
 #		kexipropertyeditor	1.0 \
 #		koscript		3.0 \
@@ -74,7 +81,7 @@ FAKE_FLAGS=	${MAKE_FLAGS} TAR=tar DESTDIR=${WRKINST}
 SEPARATE_BUILD=	flavored
 BUILD_DEPENDS+=	::devel/pkgconfig
 
-MODKDE_VERSION=	
+MODKDE_VERSION=	3.5.3
 AUTOCONF?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
 AUTOCONF_VERSION=2.59
 
@@ -94,12 +101,13 @@ WANTLIB=	ICE SM X11 Xext Xrender artsflow artsflow_idl audiofile bz2 c \
 		m mad mcop ogg ossaudio pcre pcreposix png pthread qtmcop \
 		soundserver_idl stdc++ tiff util vorbis vorbisenc vorbisfile \
 		xml2 xslt z Xt termcap Xi fontconfig crypto readline ssl \
-		IlmImf Half Imath GLU GL Iex
+		IlmImf Half Imath Iex idn
 
 
 CONFIGURE_ARGS+= --with-pgsqlincdir=${LOCALBASE}/include/postgresql
 LIB_DEPENDS+=	pqxx::databases/libpqxx \
 		pq::databases/postgresql
+
 
 USE_LIBTOOL=Yes
 LIBTOOL_FLAGS=--tag=disable-static
