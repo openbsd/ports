@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2006/02/19 17:09:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2006/06/04 18:25:07 alek Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"utility to create virtual hosts on a network"
 DISTNAME=	honeyd-1.0
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	net
 MASTER_SITES=	http://www.citi.umich.edu/u/provos/honeyd/ \
 		http://niels.xtdnet.nl/honeyd/
@@ -20,11 +20,13 @@ WANTLIB=		c edit event m ncurses pcap pthread util z
 
 USE_LIBTOOL=	Yes
 
+PYTHON_VER=	2.4
 LIB_DEPENDS=	dnet.1::net/libdnet \
-		python2.3.0.0:python-2.3.*:lang/python/2.3
+		python${PYTHON_VER}.0.0:python-${PYTHON_VER}.*:lang/python/${PYTHON_VER}
 RUN_DEPENDS=	::net/rrdtool
 
 CONFIGURE_STYLE=gnu
+CONFIGURE_ENV=	_PATH_PYTHON=${LOCALBASE}/bin/python${PYTHON_VER}
 
 SCRIPTS=	INSTALL.kuang2 README.cmdexe README.kuang2 	\
 		README.mydoom cmdexe.pl kuang2.conf kuang2.pl 	\
