@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_util_sys_defs_h,v 1.1 2006/06/04 18:11:28 jakob Exp $
+--- src/util/sys_defs.h.orig	Tue May 16 22:19:45 2006
++++ src/util/sys_defs.h	Tue May 30 22:49:17 2006
+@@ -47,6 +47,9 @@
+ #if (defined(__NetBSD_Version__) && __NetBSD_Version__ >= 104250000)
+ #define ALIAS_DB_MAP   "hash:/etc/mail/aliases"	/* sendmail 8.10 */
+ #endif
++#if defined(OPENBSD3)
++#define ALIAS_DB_MAP "hash:/etc/mail/aliases"
++#endif
+ #ifndef ALIAS_DB_MAP
+ #define ALIAS_DB_MAP	"hash:/etc/aliases"
+ #endif
