@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/04 10:36:03 steven Exp $
+%%SHARED%%
+bin/chicken
+bin/chicken-profile
+bin/chicken-setup
+bin/csc
+bin/csi
+include/chicken-config.h
+include/chicken-defaults.h
+include/chicken.h
+@info info/chicken.info
+lib/libchicken.a
+lib/libchicken.la
+lib/libuchicken.a
+lib/libuchicken.la
+@man man/man1/chicken-profile.1
+@man man/man1/chicken-setup.1
+@man man/man1/chicken.1
+@man man/man1/csc.1
+@man man/man1/csi.1
+share/chicken/
+share/chicken/banner.scm
+share/chicken/chicken-ffi-macros.scm
+share/chicken/chicken-match-macros.scm
+share/chicken/chicken-more-macros.scm
+share/doc/chicken/
+share/doc/chicken/ChangeLog
+share/doc/chicken/LICENSE
+share/doc/chicken/README
+share/doc/chicken/chicken.html

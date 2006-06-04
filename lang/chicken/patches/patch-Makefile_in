@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2006/06/04 10:36:03 steven Exp $
+--- Makefile.in.orig	Sat May  6 18:20:49 2006
++++ Makefile.in	Sat May  6 18:21:27 2006
+@@ -1449,7 +1449,7 @@ info: info-am
+ 
+ info-am: $(INFO_DEPS)
+ 
+-install-data-am: install-data-local install-includeHEADERS \
++install-data-am: install-includeHEADERS \
+ 	install-info-am install-man install-pkgdataDATA
+ 
+ install-exec-am: install-binPROGRAMS install-libLTLIBRARIES
