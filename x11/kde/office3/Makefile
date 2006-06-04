@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2006/06/04 09:15:36 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2006/06/04 23:10:21 brad Exp $
 
 COMMENT=		"office suite for KDE"
 
@@ -14,7 +14,7 @@ do-distpatch:
 	cd ${WRKDIST} && ${PATCH} ${PATCH_DIST_ARGS} <${FULLDISTDIR}/koffice-1.5.1-kexi-checkbox-data-saving.patch
 	cd ${WRKDIST}/kexi && ${PATCH} -z .bak.orig --forward --quiet -E -p0 <${FULLDISTDIR}/koffice-1.5.1-kexi-form-plugins.patch
 
-PKGNAME=	koffice-1.5.1
+PKGNAME=	koffice-1.5.1p1
 #SHARED_LIBS=	karbonbase		3.0 \
 #		kexipropertyeditor	1.0 \
 #		koscript		3.0 \
