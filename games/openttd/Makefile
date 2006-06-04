@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/06/01 08:06:45 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2006/06/04 14:30:29 alek Exp $
 
 COMMENT=	"open source clone of the game Transport Tycoon Deluxe"
 DISTNAME=	openttd-0.4.7-source
@@ -31,6 +31,7 @@ MAKE_ENV+=		WITH_ZLIB=1 WITH_PNG=1 INSTALL=1 VERBOSE=1 \
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
+NO_REGRESS=		Yes
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S/-source//}
 
