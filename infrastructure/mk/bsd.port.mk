@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.746 2006/03/24 19:28:13 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.747 2006/06/04 14:56:10 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1439,8 +1439,14 @@ ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 			dep="/nonexistent";; \
 		esac; \
 		toset="$$toset _SOLVING_DEP=Yes"; \
-		case "X$$pkg" in X) pkg=`eval $$toset ${MAKE} _print-packagename`; \
-			defaulted=true;; esac; \
+		case "X$$pkg" in X) \
+			if pkg=`eval $$toset ${MAKE} _print-packagename`; \
+			then \
+				defaulted=true; \
+			else \
+				${ECHO_MSG} "===> Error in evaluating dependency ${_i}"; \
+				exit 1; \
+			fi;; esac; \
 		for abort in false false true; do \
 			if $$abort; then \
 				${ECHO_MSG} "Dependency check failed"; \
@@ -1455,6 +1461,7 @@ ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 				if eval $$toset ${MAKE} package; then \
 					${ECHO_MSG} "===> Returning to build of ${FULLPKGNAME${SUBPACKAGE}}${_MASTER}"; \
 				else \
+					${ECHO_MSG} "===> Error in evaluating dependency ${_i}"; \
 					exit 1; \
 				fi; \
 				$$defaulted || pkg=`eval $$toset ${MAKE} _print-packagename`; \
