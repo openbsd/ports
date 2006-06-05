@@ -1,7 +1,7 @@
-$OpenBSD: patch-gfx_src_gtk_nsFontMetricsXft_cpp,v 1.1 2006/03/27 04:23:28 pvalchev Exp $
---- gfx/src/gtk/nsFontMetricsXft.cpp.orig	Tue Jun 21 00:08:27 2005
-+++ gfx/src/gtk/nsFontMetricsXft.cpp	Sun Mar 26 18:17:37 2006
-@@ -872,8 +872,14 @@ nsFontMetricsXft::CacheFontMetrics(void)
+$OpenBSD: patch-gfx_src_gtk_nsFontMetricsXft_cpp,v 1.2 2006/06/05 09:30:06 bernd Exp $
+--- gfx/src/gtk/nsFontMetricsXft.cpp.orig	Tue Apr 25 01:58:36 2006
++++ gfx/src/gtk/nsFontMetricsXft.cpp	Fri Jun  2 10:33:47 2006
+@@ -871,8 +871,14 @@ nsFontMetricsXft::CacheFontMetrics(void)
      mXHeight = nscoord(mXHeight * f);
  
      // mUnderlineOffset (offset for underlines)
@@ -17,7 +17,7 @@ $OpenBSD: patch-gfx_src_gtk_nsFontMetricsXft_cpp,v 1.1 2006/03/27 04:23:28 pvalc
      if (val) {
          mUnderlineOffset = NSToIntRound(val * f);
      }
-@@ -883,8 +889,14 @@ nsFontMetricsXft::CacheFontMetrics(void)
+@@ -882,8 +888,14 @@ nsFontMetricsXft::CacheFontMetrics(void)
      }
  
      // mUnderlineSize (thickness of an underline)
@@ -33,8 +33,8 @@ $OpenBSD: patch-gfx_src_gtk_nsFontMetricsXft_cpp,v 1.1 2006/03/27 04:23:28 pvalc
      if (val) {
          mUnderlineSize = nscoord(PR_MAX(f, NSToIntRound(val * f)));
      }
-@@ -894,7 +906,7 @@ nsFontMetricsXft::CacheFontMetrics(void)
-     }
+@@ -895,7 +907,7 @@ nsFontMetricsXft::CacheFontMetrics(void)
+     TT_OS2 *os2 = (TT_OS2 *) FT_Get_Sfnt_Table(face, ft_sfnt_os2);
  
      // mSuperscriptOffset
 -    if (os2 && os2->ySuperscriptYOffset) {
@@ -42,7 +42,7 @@ $OpenBSD: patch-gfx_src_gtk_nsFontMetricsXft_cpp,v 1.1 2006/03/27 04:23:28 pvalc
          val = CONVERT_DESIGN_UNITS_TO_PIXELS(os2->ySuperscriptYOffset,
                                               face->size->metrics.y_scale);
          mSuperscriptOffset = nscoord(PR_MAX(f, NSToIntRound(val * f)));
-@@ -904,7 +916,7 @@ nsFontMetricsXft::CacheFontMetrics(void)
+@@ -905,7 +917,7 @@ nsFontMetricsXft::CacheFontMetrics(void)
      }
  
      // mSubscriptOffset
