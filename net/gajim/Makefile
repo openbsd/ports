@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2006/05/25 17:56:10 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2006/06/05 07:55:19 alek Exp $
+
 SHARED_ONLY=	Yes
 
 COMMENT=	"jabber client written in pygtk"
 DISTNAME=	gajim-0.10
-PKGNAME=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	net x11
 MASTER_SITES=	${HOMEPAGE}downloads/
@@ -16,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-PYTHON_VER=	2.3
+PYTHON_VER=	2.4
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
@@ -26,9 +27,9 @@ MODULES=	devel/gettext
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
 		::textproc/intltool \
 		${RUN_DEPENDS}
-LIB_DEPENDS=	gtkspell.0::textproc/gtkspell
-RUN_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
-		:python-expat-${PYTHON_VER}*:lang/python/${PYTHON_VER},-expat \
+LIB_DEPENDS=	gtkspell.0::textproc/gtkspell \
+		python${PYTHON_VER}.0.0::lang/python/${PYTHON_VER}
+RUN_DEPENDS=	:python-expat-${PYTHON_VER}*:lang/python/${PYTHON_VER},-expat \
 		::net/py-dns \
 		::databases/py-sqlite2 \
 		::x11/py-gtk2
@@ -41,5 +42,7 @@ WANTLIB=	X11 Xext Xft Xrender Xss fontconfig freetype m \
 MAKE_ENV+=	PY_CFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/python${PYTHON_VER}" \
 		PY_PREFIX=${LOCALBASE} \
 		CC=${CC} LDFLAGS=-L${LOCALBASE}/lib
+MAKE_FLAGS=	PYTHONVER=${PYTHON_VER}
+FAKE_FLAGS=	DESTDIR=${DESTDIR} PYTHON=${LOCALBASE}/bin/python${PYTHON_VER}
 
 .include <bsd.port.mk>
