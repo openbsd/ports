@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2006/04/24 05:47:47 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.16 2006/06/05 12:37:30 aanriot Exp $
 @newgroup _mailman:504
 @newuser _mailman:504:_mailman:daemon:Mailing List Manager:${PREFIX}/lib/mailman:/sbin/nologin
 @mode 775
@@ -2280,5 +2280,3 @@ share/doc/mailman/UPGRADING
 @unexec find %D/lib/mailman -name paths.pyc -exec rm -f {} \;
 @extra /var/cron/tabs/_mailman
 @extraunexec rm -fr /var/spool/mailman
-@extraunexec userdel -r _mailman
-@extraunexec groupdel _mailman
