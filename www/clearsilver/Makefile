@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/06/04 10:04:34 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2006/06/05 18:30:20 alek Exp $
 
 SHARED_ONLY=	Yes
 
@@ -33,7 +33,7 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mpython}
 MODULES=		lang/python
-CONFIGURE_ARGS+=	--with-python=${LOCALBASE}/bin/python${MODPY_VERSION}
+CONFIGURE_ARGS+=	--with-python=${MODPY_BIN}
 .else
 CONFIGURE_ARGS+=	--disable-python
 .endif
