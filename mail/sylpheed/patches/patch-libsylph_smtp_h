@@ -1,0 +1,14 @@
+$OpenBSD: patch-libsylph_smtp_h,v 1.1 2006/06/05 15:31:16 couderc Exp $
+--- libsylph/smtp.h.orig	Thu Dec  1 06:13:57 2005
++++ libsylph/smtp.h	Thu May 11 23:41:52 2006
+@@ -33,7 +33,9 @@ typedef struct _SMTPSession	SMTPSession;
+ 
+ #define SMTP_SESSION(obj)	((SMTPSession *)obj)
+ 
+-#define MSGBUFSIZE		8192
++#ifndef MSGBUFSIZE
++#  define MSGBUFSIZE		8192
++#endif
+ 
+ typedef enum
+ {

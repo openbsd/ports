@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_mbox_c,v 1.1 2003/01/17 12:04:28 couderc Exp $
---- src/mbox.c.orig	Fri Jan 17 13:42:59 2003
-+++ src/mbox.c	Fri Jan 17 13:43:22 2003
+$OpenBSD: patch-libsylph_mbox_c,v 1.1 2006/06/05 15:31:16 couderc Exp $
+--- libsylph/mbox.c.orig	Fri Jan 17 13:42:59 2003
++++ libsylph/mbox.c	Fri Jan 17 13:43:22 2003
 @@ -42,7 +42,9 @@
  #include "account.h"
  #include "utils.h"
