@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2005/12/30 05:35:56 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.4 2006/06/05 12:34:29 steven Exp $
 
 COMMENT=	"open video codec"
-DISTNAME=	libtheora-1.0alpha4
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	libtheora-1.0alpha6
 CATEGORIES=	multimedia
-SHARED_LIBS=		theora	1.0
-MODGNU_SHARED_LIBS=	theora	''
+SHARED_LIBS=	theora	1.1
 
 MASTER_SITES=	http://downloads.xiph.org/releases/theora/
 
@@ -27,9 +25,4 @@ USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE=gnu
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/libtheora
-	${INSTALL_DATA} ${WRKSRC}/doc/{color.html,vp3-format.txt} \
-		${PREFIX}/share/doc/libtheora
-			
 .include <bsd.port.mk>

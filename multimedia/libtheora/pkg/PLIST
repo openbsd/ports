@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/07/09 00:35:02 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/06/05 12:34:29 steven Exp $
 %%SHARED%%
 include/theora/
 include/theora/theora.h
@@ -8,4 +8,7 @@ lib/pkgconfig/
 lib/pkgconfig/theora.pc
 share/doc/libtheora/
 share/doc/libtheora/color.html
+share/doc/libtheora/doxygen-build.stamp
+share/doc/libtheora/draft-barbato-avt-rtp-theora-00.txt
+share/doc/libtheora/draft-barbato-avt-rtp-theora-00.xml
 share/doc/libtheora/vp3-format.txt

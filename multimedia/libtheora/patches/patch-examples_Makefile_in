@@ -1,0 +1,12 @@
+$OpenBSD: patch-examples_Makefile_in,v 1.1 2006/06/05 12:34:29 steven Exp $
+--- examples/Makefile.in.orig	Fri Jun  2 17:26:42 2006
++++ examples/Makefile.in	Fri Jun  2 17:27:11 2006
+@@ -216,7 +216,7 @@ encoder_example$(EXEEXT): $(encoder_exam
+ player_example-player_example.$(OBJEXT): player_example.c
+ player_example$(EXEEXT): $(player_example_OBJECTS) $(player_example_DEPENDENCIES) 
+ 	@rm -f player_example$(EXEEXT)
+-	$(LINK) $(player_example_LDFLAGS) $(player_example_OBJECTS) $(player_example_LDADD) $(LIBS)
++#	$(LINK) $(player_example_LDFLAGS) $(player_example_OBJECTS) $(player_example_LDADD) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT) core *.core
