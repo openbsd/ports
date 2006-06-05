@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2006/01/08 11:13:45 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2006/06/05 10:50:25 alek Exp $
 
 COMMENT=	"portable low-level networking library"
 COMMENT-python= "python interface to libdnet"
 
 DISTNAME=	libdnet-1.10
 PKGNAME=	${DISTNAME}p1
-PKGNAME-python= ${DISTNAME:S/^libdnet/py-libdnet/}p0
+PKGNAME-python= ${DISTNAME:S/^libdnet/py-libdnet/}p1
 SHARED_LIBS=	dnet	1.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libdnet/}
@@ -21,11 +21,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-PSEUDO_FLAVORS=        no_python
+PSEUDO_FLAVORS=		no_python
 FLAVOR?=
 
-USE_LIBTOOL=	Yes
-CONFIGURE_STYLE= gnu
+USE_LIBTOOL=		Yes
+CONFIGURE_STYLE=	gnu
 
 .if ${FLAVOR:L:Mno_python}
 CONFIGURE_ARGS+=	--without-python
@@ -36,11 +36,13 @@ CONFIGURE_ARGS+=	--with-python
 BUILD_DEPENDS+=		:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 MAKE_FLAGS=		PYTHON=${LOCALBASE}/bin/python${PYTHON_VER}
 FAKE_FLAGS=		${MAKE_FLAGS} DESTDIR=${WRKINST}
-PYTHON_VER=		2.3
+PYTHON_VER=		2.4
 SUBST_VARS=		PYTHON_VER
+REGRESS_DEPENDS=	::net/libdnet,-python
+REGRESS_FLAGS=		TESTS_ENVIRONMENT=${LOCALBASE}/bin/python${PYTHON_VER}
 .  if defined(PACKAGING) && ${SUBPACKAGE} == "-python"
-LIB_DEPENDS+=           python${PYTHON_VER}.0.0:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
-WANTLIB+=               m pthread util
+RUN_DEPENDS=		:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
+WANTLIB=
 .  endif
 .endif
 
