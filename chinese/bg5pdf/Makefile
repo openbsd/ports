@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2006/02/08 04:54:48 david Exp $
+# $OpenBSD: Makefile,v 1.11 2006/06/05 17:33:14 alek Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"convert Big5 encoded files to PDF"
 
 DISTNAME=	bg5pdf-1.0.0
-PKGNAME=	zh-${DISTNAME}p0
+PKGNAME=	zh-${DISTNAME}p1
 CATEGORIES=	chinese print
 
 HOMEPAGE=	http://cschin.yydolphin.net/bg5pdf/
@@ -28,7 +28,7 @@ LIB_DEPENDS=	pdf.2::print/pdflib
 
 WRKDIST=	${WRKDIR}/bg5pdf
 
-PYTHON_VER=	2.3
+PYTHON_VER=	2.4
 SUBST_VARS=	PYTHON_VER
 MAKE_ENV=	PYTHON_VER=${PYTHON_VER}
 
