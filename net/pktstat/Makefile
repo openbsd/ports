@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2004/12/16 00:31:24 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2006/06/05 15:57:08 couderc Exp $
 
 COMMENT=		"network traffic viewer"
 
-VERSION=		1.7.5
+VERSION=		1.8.1
 DISTNAME=		pktstat-${VERSION}
 CATEGORIES=		net
 
@@ -19,12 +19,6 @@ WANTLIB=		c curses m pcap
 
 MASTER_SITES=		${HOMEPAGE}
 
-MAKE_FILE=		BSDmakefile
-
-MAKE_ENV=		CC="${CC}" CFLAGS="${CFLAGS}"
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pktstat ${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKSRC}/pktstat.1 ${PREFIX}/man/man1
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>
