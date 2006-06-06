@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2006/02/04 15:29:30 bernd Exp $
+# $OpenBSD: Makefile,v 1.7 2006/06/06 12:55:15 bernd Exp $
 
 COMMENT=		"C++ interface for glib2"
 COMMENT-docs=		"C++ interface for glib2 documentation"
 
-VERSION=		2.6.1
+VERSION=		2.8.8
 V=			2.4
 DISTNAME=		glibmm-${VERSION}
-PKGNAME=		glib2mm-${VERSION}p4
-PKGNAME-docs=		glib2mm-docs-${VERSION}p0
-SHARED_LIBS=		glibmm-2.4 			2.0 \
-			glibmm_generate_extra_defs-2.4	2.0
+PKGNAME=		glib2mm-${VERSION}
+PKGNAME-docs=		glib2mm-docs-${VERSION}
+SHARED_LIBS=		glibmm-2.4 			3.0 \
+			glibmm_generate_extra_defs-2.4	3.0
 
 CATEGORIES=		devel
 
@@ -23,7 +23,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/glibmm/2.6/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/glibmm/2.8/}
 
 MULTI_PACKAGES=		-docs
 SUBPACKAGE?=
