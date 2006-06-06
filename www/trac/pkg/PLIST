@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/03/21 21:17:10 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/06/06 09:32:57 alek Exp $
 bin/trac-admin
 bin/tracd
 bin/tracdb2env
@@ -56,6 +56,7 @@ lib/python${MODPY_VERSION}/site-packages/trac/scripts/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/scripts/admin.py
 lib/python${MODPY_VERSION}/site-packages/trac/scripts/admin.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/siteconfig.py
+lib/python${MODPY_VERSION}/site-packages/trac/siteconfig.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/test.py
 lib/python${MODPY_VERSION}/site-packages/trac/test.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/ticket/

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2006/06/03 09:49:35 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2006/06/06 09:32:56 alek Exp $
 
 COMMENT=	"enhanced wiki and bug tracking system for software projects"
 
-DISTNAME=	trac-0.9.4
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	trac-0.9.5
 CATEGORIES=	www devel
 
 MAINTAINER=	Ben Lovett <ben@tilderoot.com>
@@ -27,11 +26,12 @@ RUN_DEPENDS=	::databases/py-sqlite \
 		::www/clearsilver,python
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-NO_REGRESS=	Yes
-
 post-install:
 	@perl -pi -e 's#${WRKINST}##' ${WRKSRC}/trac/siteconfig.py
 	@${INSTALL_SCRIPT} ${WRKSRC}/trac/siteconfig.py \
- 	   ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/trac/
+		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/trac/
+
+do-regress:
+	@cd ${WRKSRC} && PYTHONPATH=. ${MODPY_BIN} ./trac/test.py
 
 .include <bsd.port.mk>
