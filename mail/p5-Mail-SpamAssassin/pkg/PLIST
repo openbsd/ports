@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2006/03/20 20:18:30 steven Exp $
+@comment $OpenBSD: PLIST,v 1.19 2006/06/06 17:33:42 steven Exp $
 bin/sa-learn
 bin/sa-update
 bin/spamassassin
@@ -60,6 +60,7 @@ ${P5SITE}/Mail/SpamAssassin/Plugin/AccessDB.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/AntiVirus.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/AutoLearnThreshold.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/DCC.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/DKIM.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/DomainKeys.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/Hashcash.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/MIMEHeader.pm
@@ -120,6 +121,7 @@ ${P5SITE}/spamassassin-run.pod
 @man man/man3p/Mail::SpamAssassin::Plugin::AntiVirus.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::AutoLearnThreshold.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::DCC.3p
+@man man/man3p/Mail::SpamAssassin::Plugin::DKIM.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::DomainKeys.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::Hashcash.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::MIMEHeader.3p
@@ -157,6 +159,8 @@ share/examples/SpamAssassin/local.cf
 @sample ${CONFDIR}/local.cf
 share/examples/SpamAssassin/v310.pre
 @sample ${CONFDIR}/v310.pre
+share/examples/SpamAssassin/v312.pre
+@sample ${CONFDIR}/v312.pre
 share/spamassassin/
 share/spamassassin/10_misc.cf
 share/spamassassin/20_advance_fee.cf
@@ -180,6 +184,7 @@ share/spamassassin/25_antivirus.cf
 share/spamassassin/25_body_tests_es.cf
 share/spamassassin/25_body_tests_pl.cf
 share/spamassassin/25_dcc.cf
+share/spamassassin/25_dkim.cf
 share/spamassassin/25_domainkeys.cf
 share/spamassassin/25_hashcash.cf
 share/spamassassin/25_pyzor.cf
@@ -197,6 +202,7 @@ share/spamassassin/30_text_pt_br.cf
 share/spamassassin/50_scores.cf
 share/spamassassin/60_awl.cf
 share/spamassassin/60_whitelist.cf
+share/spamassassin/60_whitelist_dkim.cf
 share/spamassassin/60_whitelist_spf.cf
 share/spamassassin/60_whitelist_subject.cf
 share/spamassassin/languages
