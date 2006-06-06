@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2006/05/31 01:41:55 sturm Exp $
+# $OpenBSD: Makefile,v 1.23 2006/06/06 09:23:16 aanriot Exp $
 
 COMMENT=	"emulates arcade machines and old home computers"
 COMMENT-mame=	"emulates a massive variety of arcade machines"
@@ -15,9 +15,9 @@ CATEGORIES=	emulators games
 MASTER_SITES=	${HOMEPAGE}/download/ \
 		${HOMEPAGE}/download/historic/ \
 		ftp://ftp.kaupp.cx/pub/xmame/ \
-		ftp://ftp.atlantilde.com/pub/distfiles/
+		http://www.atlantilde.com/~aanriot/distfiles/
 MASTER_SITES0=	http://www.mameworld.net/highscore/ \
-		ftp://ftp.atlantilde.com/pub/distfiles/
+		http://www.atlantilde.com/~aanriot/distfiles/
 
 HOMEPAGE=	http://x.mame.net
 
