@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2006/06/03 14:42:20 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2006/06/06 12:36:49 steven Exp $
 
 COMMENT=	"3D creation software"
 
-DISTNAME=	blender-2.37a
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	blender-2.41
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.blender.org/
@@ -20,8 +19,10 @@ MASTER_SITES=	ftp://ftp.cs.umn.edu/pub/blender.org/source/ \
 		http://download.blender.org/source/ \
 		http://public.planetmirror.com/pub/blender/source/
 
+RUN_DEPENDS=	::graphics/tiff
 BUILD_DEPENDS=	:scons-*:devel/scons \
-		:pkgconfig-*:devel/pkgconfig
+		:pkgconfig-*:devel/pkgconfig \
+		::graphics/tiff
 LIB_DEPENDS=	png::graphics/png \
 		jpeg::graphics/jpeg \
 		SDL::devel/sdl \
@@ -36,8 +37,8 @@ NO_REGRESS=	Yes
 WRKDIST=	${WRKDIR}/blender
 
 pre-build:
-	@perl -pi -e 's#!!LOCALBASE!!#${LOCALBASE}#g' ${WRKSRC}/SConstruct
-	@perl -pi -e 's#!!X11BASE!!#${X11BASE}#g' ${WRKSRC}/SConstruct
+	@perl -pi -e 's#!!LOCALBASE!!#${LOCALBASE}#g;' \
+		-e 's#!!X11BASE!!#${X11BASE}#g' ${WRKSRC}/SConstruct
 
 do-build:
 	@${SETENV} ${MAKE_ENV} CC=${CC} CXX=${CXX} CXXFLAGS="${CXXFLAGS}" \

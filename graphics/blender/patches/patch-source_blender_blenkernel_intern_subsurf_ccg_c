@@ -1,39 +1,40 @@
-$OpenBSD: patch-source_blender_blenkernel_intern_subsurf_ccg_c,v 1.1 2005/11/24 22:22:57 steven Exp $
---- source/blender/blenkernel/intern/subsurf_ccg.c.orig	Mon Nov 21 22:43:17 2005
-+++ source/blender/blenkernel/intern/subsurf_ccg.c	Mon Nov 21 22:46:27 2005
-@@ -313,7 +313,7 @@ static DispListMesh *subSurf_createDispL
- 					med->flag|= ME_SEAM;
- 				}
- 			} else {
--				int edgeIdx = (int) ccgSubSurf_getEdgeEdgeHandle(ss, e);
-+				long edgeIdx = (long) ccgSubSurf_getEdgeEdgeHandle(ss, e);
+$OpenBSD: patch-source_blender_blenkernel_intern_subsurf_ccg_c,v 1.2 2006/06/06 12:36:49 steven Exp $
+--- source/blender/blenkernel/intern/subsurf_ccg.c.orig	Fri Jan 13 07:56:32 2006
++++ source/blender/blenkernel/intern/subsurf_ccg.c	Sun Jun  4 21:36:56 2006
+@@ -608,7 +608,7 @@ static DispListMesh *ss_to_displistmesh(
+ 				flags |= ME_SEAM;
+ 			}
+ 		} else {
+-			int edgeIdx = (int) ccgSubSurf_getEdgeEdgeHandle(ss, e);
++			long edgeIdx = (long) ccgSubSurf_getEdgeEdgeHandle(ss, e);
  
- 					/* Edges created by lib have handle of -1 */
- 				if (edgeIdx!=-1 && ssm->me->medge) {
-@@ -377,7 +377,7 @@ static DispListMesh *subSurf_createDispL
- 		int flag;
+ 			if (edgeIdx!=-1) {
+ 				MEdge *origMed = &medge[edgeIdx];
+@@ -652,7 +652,7 @@ static DispListMesh *ss_to_displistmesh(
+ 		int mapIndex = ccgDM_getFaceMapIndex(ccgdm, ss, f);
  
- 		if (ssm->controlType==SUBSURF_CONTROLTYPE_MESH) {
+ 		if (!ssFromEditmesh) {
 -			int origIdx = (int) ccgSubSurf_getFaceFaceHandle(ss, f);
 +			long origIdx = (long) ccgSubSurf_getFaceFaceHandle(ss, f);
- 			MFace *origMFace = &((MFace*) ssm->me->mface)[origIdx];
- 			if (ssm->me->tface)
- 				origTFace = &((TFace*)ssm->me->tface)[origIdx];
-@@ -501,7 +501,7 @@ static void subSurf_sync(SubSurf *ss, in
- 
- 	if (ss->controlType==SUBSURF_CONTROLTYPE_MESH) {
- 		CCGVertHDL fVerts[4];
--		int i;
+ 			MFace *origMFace = &mface[origIdx];
+ 			
+ 			if (tface) {
+@@ -804,7 +804,8 @@ static void ss_sync_from_mesh(CCGSubSurf
+ 	int totvert = dlm?dlm->totvert:me->totvert;
+ 	int totedge = dlm?dlm->totedge:me->totedge;
+ 	int totface = dlm?dlm->totface:me->totface;
+-	int i, index;
++	int index;
 +		long i;
  
- 		for (i=0; i<ss->me->totvert; i++) {
- 			ccgSubSurf_syncVert(ss->subSurf, (CCGVertHDL) i, ss->me->mvert[i].co);
-@@ -981,7 +981,7 @@ void subsurf_calculate_limit_positions(M
- 	vi = ccgSubSurf_getVertIterator(ss->subSurf);
+ 	ccgSubSurf_initFullSync(ss);
+ 
+@@ -1783,7 +1784,7 @@ void subsurf_calculate_limit_positions(M
+ 	vi = ccgSubSurf_getVertIterator(ss);
  	for (; !ccgVertIterator_isStopped(vi); ccgVertIterator_next(vi)) {
  		CCGVert *v = ccgVertIterator_getCurrent(vi);
--		int idx = (int) ccgSubSurf_getVertVertHandle(ss->subSurf, v);
-+		long idx = (long) ccgSubSurf_getVertVertHandle(ss->subSurf, v);
- 		int N = ccgSubSurf_getVertNumEdges(ss->subSurf, v);
- 		int numFaces = ccgSubSurf_getVertNumFaces(ss->subSurf, v);
+-		int idx = (int) ccgSubSurf_getVertVertHandle(ss, v);
++		long idx = (long) ccgSubSurf_getVertVertHandle(ss, v);
+ 		int N = ccgSubSurf_getVertNumEdges(ss, v);
+ 		int numFaces = ccgSubSurf_getVertNumFaces(ss, v);
  		float *co;

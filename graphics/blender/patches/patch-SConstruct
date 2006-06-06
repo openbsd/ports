@@ -1,7 +1,7 @@
-$OpenBSD: patch-SConstruct,v 1.1 2005/11/24 22:22:57 steven Exp $
---- SConstruct.orig	Mon Jun 13 22:56:19 2005
-+++ SConstruct	Mon Nov 21 10:27:22 2005
-@@ -607,9 +607,9 @@ elif sys.platform=='openbsd3':
+$OpenBSD: patch-SConstruct,v 1.2 2006/06/06 12:36:49 steven Exp $
+--- SConstruct.orig	Tue Dec 20 16:56:12 2005
++++ SConstruct	Tue Jan  3 16:05:47 2006
+@@ -666,9 +666,9 @@ elif sys.platform=='openbsd3':
  	build_blender_static = 'false'
  	build_blender_player = 'false'
  	build_blender_plugin = 'false'
@@ -14,7 +14,7 @@ $OpenBSD: patch-SConstruct,v 1.1 2005/11/24 22:22:57 steven Exp $
  	cxxflags = []
  	defines = []
  	warn_flags = ['-Wall','-W']
-@@ -623,17 +623,17 @@ elif sys.platform=='openbsd3':
+@@ -682,17 +682,21 @@ elif sys.platform=='openbsd3':
  	z_include = ['/usr/include']
  	# png library information
  	png_lib = ['png']
@@ -28,6 +28,10 @@ $OpenBSD: patch-SConstruct,v 1.1 2005/11/24 22:22:57 steven Exp $
 -	jpeg_include = ['/usr/local/include']
 +	jpeg_libpath = ['!!LOCALBASE!!/lib']
 +	jpeg_include = ['!!LOCALBASE!!/include']
++	# tiff library information
++	tiff_lib = ['tiff']
++	tiff_libpath = ['!!LOCALBASE!!/lib']
++	tiff_include = ['!!LOCALBASE!!/include']
  	# OpenGL library information
  	opengl_lib = ['GL', 'GLU']
 -	opengl_static = ['/usr/lib/libGL.a', '/usr/lib/libGLU.a']
@@ -39,7 +43,7 @@ $OpenBSD: patch-SConstruct,v 1.1 2005/11/24 22:22:57 steven Exp $
  	# SDL library information
  	sdl_env.ParseConfig ('sdl-config --cflags --libs')
  	sdl_cflags = sdl_env.Dictionary()['CCFLAGS']
-@@ -660,13 +660,13 @@ elif sys.platform=='openbsd3':
+@@ -723,13 +727,13 @@ elif sys.platform=='openbsd3':
          ftgl_lib = []
          ftgl_libpath = []
          ftgl_include = ['#extern/bFTGL/include']
@@ -57,7 +61,7 @@ $OpenBSD: patch-SConstruct,v 1.1 2005/11/24 22:22:57 steven Exp $
  	# OpenAL library information
  	openal_lib = ['openal']
  	openal_libpath = ['/usr/lib']
-@@ -786,8 +786,8 @@ else:
+@@ -855,8 +859,8 @@ else:
  	
  	config.write ("\n# Extra compiler flags can be defined here.\n")
  	config.write ("DEFINES = %s\n"%(my_defines))
@@ -68,9 +72,9 @@ $OpenBSD: patch-SConstruct,v 1.1 2005/11/24 22:22:57 steven Exp $
  	config.write ("LDFLAGS = %s\n"%(my_ldflags))
  
  	config.write ("USE_INTERNATIONAL = %r\n"%(use_international))
-@@ -800,10 +800,10 @@ else:
- 	config.write ("USE_FMOD = %r\n"%(use_fmod))
+@@ -872,10 +876,10 @@ else:
  	config.write ("USE_QUICKTIME = %r\n"%(use_quicktime))
+ 	config.write ("USE_FLUIDSIM = %r\n"%(use_fluidsim))
  	config.write ("\n# Compiler information.\n")
 -	config.write ("HOST_CC = %r\n"%(env_dict['CC']))
 -	config.write ("HOST_CXX = %r\n"%(env_dict['CXX']))

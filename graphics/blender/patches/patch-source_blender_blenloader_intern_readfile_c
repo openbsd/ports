@@ -1,7 +1,7 @@
-$OpenBSD: patch-source_blender_blenloader_intern_readfile_c,v 1.1 2005/11/24 22:22:57 steven Exp $
---- source/blender/blenloader/intern/readfile.c.orig	Mon Nov 21 22:57:09 2005
-+++ source/blender/blenloader/intern/readfile.c	Mon Nov 21 22:57:25 2005
-@@ -2161,7 +2161,7 @@ static void lib_link_object(FileData *fd
+$OpenBSD: patch-source_blender_blenloader_intern_readfile_c,v 1.2 2006/06/06 12:36:49 steven Exp $
+--- source/blender/blenloader/intern/readfile.c.orig	Wed Dec 21 17:18:59 2005
++++ source/blender/blenloader/intern/readfile.c	Tue Jan  3 16:03:52 2006
+@@ -2162,7 +2162,7 @@ static void lib_link_object(FileData *fd
  				ob->type= OB_EMPTY;
  				warn= 1;
  				if(ob->id.lib) printf("Can't find obdata of %s lib %s\n", ob->id.name+2, ob->id.lib->name);
