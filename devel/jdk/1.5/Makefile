@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2006/05/26 17:32:21 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2006/06/06 03:02:42 kurt Exp $
 
 ONLY_FOR_ARCHS= 	amd64 i386
 
@@ -6,8 +6,8 @@ COMMENT=		"Java2(TM) Standard Edition Dev Kit v${V}"
 COMMENT-jre=		"Java2(TM) Standard Edition Runtime Environment v${V}"
 V=			1.5.0
 DISTNAME=		jdk-1_5_0
-PKGNAME=		jdk-${V}p14
-PKGNAME-jre=		jre-${V}p14
+PKGNAME=		jdk-${V}p15
+PKGNAME-jre=		jre-${V}p15
 
 CATEGORIES=		devel/jdk java
 
@@ -143,6 +143,7 @@ post-extract:
 .endif
 
 pre-patch:
+	@cp -f ${FILESDIR}/cacerts ${WRKDIR}/j2se/src/share/lib/security
 	@cd ${WRKDIR} &&  \
 		${CHMOD} -R u+w * && \
 		${PATCH} -p0 -z .orig.bsd --quiet < ${WRKDIR}/jdk15.patches

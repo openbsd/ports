@@ -1,0 +1,16 @@
+$OpenBSD: patch-j2se_make_sun_javac_recompile_library_Makefile,v 1.1 2006/06/06 03:02:43 kurt Exp $
+--- j2se/make/sun/javac/recompile/library/Makefile.orig	Thu Jun  1 10:30:13 2006
++++ j2se/make/sun/javac/recompile/library/Makefile	Thu Jun  1 10:38:08 2006
+@@ -30,6 +30,12 @@ FILES_java += $(TARGDIR)java/lang/UNIXPr
+ FILES_java += $(TARGDIR)java/io/UnixFileSystem.java
+ endif
+ 
++ifdef ALT_BOOTSTRAP 
++FILES_java += $(TARGDIR)sun/io/ByteToCharKOI8_U.java
++FILES_java += $(TARGDIR)sun/io/CharToByteKOI8_U.java
++FILES_java += $(TARGDIR)sun/nio/cs/KOI8_U.java
++endif
++
+ #
+ # Override destination directory
+ #
