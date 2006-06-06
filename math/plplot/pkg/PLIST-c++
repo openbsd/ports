@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-c++,v 1.1.1.1 2006/05/12 13:35:39 steven Exp $
+@comment $OpenBSD: PLIST-c++,v 1.2 2006/06/06 13:36:28 steven Exp $
 lib/libplplotcxxd.a
 lib/libplplotcxxd.la
 @lib lib/libplplotcxxd.so.${LIBplplotcxxd_VERSION}
+lib/pkgconfig/plplotd-c++.pc
 share/examples/plplot/c++/
 share/examples/plplot/c++/Makefile
 share/examples/plplot/c++/lena.pgm

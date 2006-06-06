@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tcl,v 1.1.1.1 2006/05/12 13:35:39 steven Exp $
+@comment $OpenBSD: PLIST-tcl,v 1.2 2006/06/06 13:36:28 steven Exp $
 bin/pltcl
 lib/libplplottcltkd.a
 lib/libplplottcltkd.la
@@ -6,6 +6,7 @@ lib/libplplottcltkd.la
 lib/libtclmatrixd.a
 lib/libtclmatrixd.la
 @lib lib/libtclmatrixd.so.${LIBtclmatrixd_VERSION}
+lib/pkgconfig/plplotd-tcl.pc
 share/examples/plplot/tcl/
 share/examples/plplot/tcl/README.tcldemos
 share/examples/plplot/tcl/plgrid.tcl

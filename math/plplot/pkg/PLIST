@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/12 13:35:39 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/06/06 13:36:28 steven Exp $
 bin/plm2gif
 bin/plplot-config
 bin/plplot_libtool
@@ -29,6 +29,7 @@ lib/libcsirocsa.la
 lib/libplplotd.a
 lib/libplplotd.la
 @lib lib/libplplotd.so.${LIBplplotd_VERSION}
+lib/pkgconfig/plplotd.pc
 lib/plplot/
 lib/plplot/driversd/
 lib/plplot/driversd/gd.la
@@ -52,9 +53,6 @@ lib/plplot/driversd/plmeta.so
 lib/plplot/driversd/ps.la
 lib/plplot/driversd/ps.rc
 lib/plplot/driversd/ps.so
-lib/plplot/driversd/pstex.la
-lib/plplot/driversd/pstex.rc
-lib/plplot/driversd/pstex.so
 lib/plplot/driversd/xfig.la
 lib/plplot/driversd/xfig.rc
 lib/plplot/driversd/xfig.so
@@ -215,6 +213,7 @@ share/doc/plplot/README
 share/doc/plplot/README.1st.csa
 share/doc/plplot/README.csa
 share/doc/plplot/README.drivers
+share/doc/plplot/README.pkg-config
 share/doc/plplot/README.release
 share/doc/plplot/README.wxwidgets
 share/doc/plplot/html/
@@ -222,7 +221,8 @@ share/doc/plplot/html/acquiring-plplot.html
 share/doc/plplot/html/advanced.html
 share/doc/plplot/html/api-c.html
 share/doc/plplot/html/api-compat.html
-share/doc/plplot/html/api-fortran.html
+share/doc/plplot/html/api-fortran-77.html
+share/doc/plplot/html/api-fortran-95.html
 share/doc/plplot/html/api-obsolete.html
 share/doc/plplot/html/api.html
 share/doc/plplot/html/aqt-driver.html
@@ -245,7 +245,8 @@ share/doc/plplot/html/extended-wish.html
 share/doc/plplot/html/extensions-tcl.html
 share/doc/plplot/html/fill-pattern.html
 share/doc/plplot/html/finishing.html
-share/doc/plplot/html/fortran.html
+share/doc/plplot/html/fortran77.html
+share/doc/plplot/html/fortran95.html
 share/doc/plplot/html/freetype-notes.html
 share/doc/plplot/html/gcw-driver.html
 share/doc/plplot/html/gd-driver.html
@@ -263,8 +264,8 @@ share/doc/plplot/html/os-notes.html
 share/doc/plplot/html/output-devices.html
 share/doc/plplot/html/output-drivers.html
 share/doc/plplot/html/p148.html
-share/doc/plplot/html/p2432.html
-share/doc/plplot/html/p3225.html
+share/doc/plplot/html/p2442.html
+share/doc/plplot/html/p3311.html
 share/doc/plplot/html/p56.html
 share/doc/plplot/html/perl.html
 share/doc/plplot/html/pl_setcontlabelparam.html
@@ -283,7 +284,7 @@ share/doc/plplot/html/plcol1.html
 share/doc/plplot/html/plcon1.html
 share/doc/plplot/html/plcon2.html
 share/doc/plplot/html/plcont.html
-share/doc/plplot/html/plcontfortran.html
+share/doc/plplot/html/plcontfortran77.html
 share/doc/plplot/html/plcpstrm.html
 share/doc/plplot/html/plend.html
 share/doc/plplot/html/plend1.html
@@ -338,16 +339,19 @@ share/doc/plplot/html/plmap.html
 share/doc/plplot/html/plmeridians.html
 share/doc/plplot/html/plmesh.html
 share/doc/plplot/html/plmeshc.html
-share/doc/plplot/html/plmeshfortran.html
+share/doc/plplot/html/plmeshfortran77.html
+share/doc/plplot/html/plmeshfortran95.html
 share/doc/plplot/html/plmkstrm.html
 share/doc/plplot/html/plmtex.html
 share/doc/plplot/html/plot3d.html
 share/doc/plplot/html/plot3dc.html
-share/doc/plplot/html/plot3dfortran.html
+share/doc/plplot/html/plot3dfortran77.html
+share/doc/plplot/html/plot3dfortran95.html
 share/doc/plplot/html/plp_getinitdriverlist.html
 share/doc/plplot/html/plpage.html
 share/doc/plplot/html/plparseopts.html
-share/doc/plplot/html/plparseoptsfortran.html
+share/doc/plplot/html/plparseoptsfortran77.html
+share/doc/plplot/html/plparseoptsfortran95.html
 share/doc/plplot/html/plpat.html
 share/doc/plplot/html/plpoin.html
 share/doc/plplot/html/plpoin3.html
@@ -377,7 +381,8 @@ share/doc/plplot/html/plsdiori.html
 share/doc/plplot/html/plsdiplt.html
 share/doc/plplot/html/plsdiplz.html
 share/doc/plplot/html/plsesc.html
-share/doc/plplot/html/plsescfortran.html
+share/doc/plplot/html/plsescfortran77.html
+share/doc/plplot/html/plsescfortran95.html
 share/doc/plplot/html/plsetopt.html
 share/doc/plplot/html/plsexit.html
 share/doc/plplot/html/plsfam.html
@@ -386,7 +391,9 @@ share/doc/plplot/html/plsfile.html
 share/doc/plplot/html/plsfnam.html
 share/doc/plplot/html/plshade.html
 share/doc/plplot/html/plshade1.html
+share/doc/plplot/html/plshadefortran95.html
 share/doc/plplot/html/plshades.html
+share/doc/plplot/html/plshadesfortran95.html
 share/doc/plplot/html/plsmaj.html
 share/doc/plplot/html/plsmem.html
 share/doc/plplot/html/plsmin.html
@@ -418,7 +425,8 @@ share/doc/plplot/html/plvec0.html
 share/doc/plplot/html/plvec1.html
 share/doc/plplot/html/plvec2.html
 share/doc/plplot/html/plvect.html
-share/doc/plplot/html/plvectfortran.html
+share/doc/plplot/html/plvectfortran77.html
+share/doc/plplot/html/plvectfortran95.html
 share/doc/plplot/html/plvpas.html
 share/doc/plplot/html/plvpor.html
 share/doc/plplot/html/plvsta.html
@@ -439,7 +447,7 @@ share/doc/plplot/html/tri-d-plots.html
 share/doc/plplot/html/viewport_window.html
 share/doc/plplot/html/wxwidgets-driver.html
 share/doc/plplot/html/x-drivers.html
-share/doc/plplot/html/x11424.html
+share/doc/plplot/html/x11698.html
 share/examples/plplot/
 share/examples/plplot/Makefile
 share/examples/plplot/c/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/05/12 13:52:17 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/06/06 13:36:28 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT-f77=	"Fortran 77 interface to plplot"
 COMMENT-octave=	"Octave bindings for plplot"
 COMMENT-tcl=	"Tcl bindings for plplot"
 
-VERSION=	5.6.0
+VERSION=	5.6.1
 DISTNAME=	plplot-${VERSION}
 SHARED_LIBS=	csirocsa	0.1	\
 		plplotcxxd	11.0	\
@@ -23,7 +23,7 @@ PKGNAME-f77=	plplot-f77-${VERSION}
 PKGNAME-octave=	plplot-octave-${VERSION}
 PKGNAME-tcl=	plplot-tcl-${VERSION}
 
-CATEGORIES=	math
+CATEGORIES=	math graphics
 
 HOMEPAGE=	http://plplot.sourceforge.net/
 
@@ -47,7 +47,8 @@ USE_LIBTOOL=	Yes
 BUILD_DEPENDS=	::lang/tcl/${TCL_VERSION} \
 		::math/octave \
 		::graphics/gd \
-		::print/ghostscript/gnu-fonts
+		::print/ghostscript/gnu-fonts \
+		::devel/pkgconfig
 RUN_DEPENDS=	::print/ghostscript/gnu-fonts
 LIB_DEPENDS=	ltdl::devel/libtool,-ltdl
 

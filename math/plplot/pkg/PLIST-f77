@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST-f77,v 1.1.1.1 2006/05/12 13:35:39 steven Exp $
+@comment $OpenBSD: PLIST-f77,v 1.2 2006/06/06 13:36:28 steven Exp $
 lib/libplplotf77cd.a
 lib/libplplotf77cd.la
 @lib lib/libplplotf77cd.so.${LIBplplotf77cd_VERSION}
 lib/libplplotf77d.a
 lib/libplplotf77d.la
 @lib lib/libplplotf77d.so.${LIBplplotf77d_VERSION}
+lib/pkgconfig/plplotd-f77.pc
 share/examples/plplot/f77/
 share/examples/plplot/f77/Makefile
 share/examples/plplot/f77/x01f.f
@@ -26,6 +27,7 @@ share/examples/plplot/f77/x16af.f
 share/examples/plplot/f77/x16f.f
 share/examples/plplot/f77/x17f.f
 share/examples/plplot/f77/x18f.f
+share/examples/plplot/f77/x19f.f
 share/examples/plplot/f77/x22f.f
 share/examples/plplot/f77/x23f.f
 share/examples/plplot/test_f77.sh

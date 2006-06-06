@@ -1,7 +1,7 @@
-$OpenBSD: patch-examples_c_Makefile_in,v 1.1.1.1 2006/05/12 13:35:39 steven Exp $
---- examples/c/Makefile.in.orig	Wed May  3 03:08:20 2006
-+++ examples/c/Makefile.in	Sat May  6 12:44:34 2006
-@@ -267,6 +267,7 @@ CXXDEPMODE = @CXXDEPMODE@
+$OpenBSD: patch-examples_c_Makefile_in,v 1.2 2006/06/06 13:36:28 steven Exp $
+--- examples/c/Makefile.in.orig	Tue May 30 01:07:22 2006
++++ examples/c/Makefile.in	Wed May 31 18:32:16 2006
+@@ -266,6 +266,7 @@ CXXDEPMODE = @CXXDEPMODE@
  CXXFLAGS = @CXXFLAGS@
  CYGPATH_W = @CYGPATH_W@
  DATA_DIR = @DATA_DIR@
@@ -9,7 +9,7 @@ $OpenBSD: patch-examples_c_Makefile_in,v 1.1.1.1 2006/05/12 13:35:39 steven Exp 
  DB2X_TEXIXML = @DB2X_TEXIXML@
  DB2X_XSLTPROC = @DB2X_XSLTPROC@
  DB_SS_HTML_PUBID = @DB_SS_HTML_PUBID@
-@@ -578,7 +579,7 @@ with_qhull_TRUE = @with_qhull_TRUE@
+@@ -584,7 +585,7 @@ with_qhull_TRUE = @with_qhull_TRUE@
  with_rpath_FALSE = @with_rpath_FALSE@
  with_rpath_TRUE = @with_rpath_TRUE@
  AM_CPPFLAGS = -I$(top_srcdir)/include $(INCLTDL)
