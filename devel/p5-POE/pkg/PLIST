@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/24 01:03:13 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/06/07 08:13:20 alek Exp $
 ${P5SITE}/POE/
 ${P5SITE}/POE.pm
 ${P5SITE}/POE/API/
@@ -35,14 +35,11 @@ ${P5SITE}/POE/Loop/Select.pm
 ${P5SITE}/POE/Loop/Tk.pm
 ${P5SITE}/POE/Loop/TkActiveState.pm
 ${P5SITE}/POE/Loop/TkCommon.pm
-${P5SITE}/POE/Macro/
-${P5SITE}/POE/Macro/UseBytes.pm
 ${P5SITE}/POE/NFA.pm
 ${P5SITE}/POE/Pipe/
 ${P5SITE}/POE/Pipe.pm
 ${P5SITE}/POE/Pipe/OneWay.pm
 ${P5SITE}/POE/Pipe/TwoWay.pm
-${P5SITE}/POE/Preprocessor.pm
 ${P5SITE}/POE/Queue/
 ${P5SITE}/POE/Queue.pm
 ${P5SITE}/POE/Queue/Array.pm
@@ -100,7 +97,6 @@ ${P5SITE}/POE/Wheel/SocketFactory.pm
 @man man/man3p/POE::Pipe.3p
 @man man/man3p/POE::Pipe::OneWay.3p
 @man man/man3p/POE::Pipe::TwoWay.3p
-@man man/man3p/POE::Preprocessor.3p
 @man man/man3p/POE::Queue.3p
 @man man/man3p/POE::Queue::Array.3p
 @man man/man3p/POE::Resource.3p
