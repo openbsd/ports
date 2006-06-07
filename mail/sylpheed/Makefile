@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.61 2006/06/05 15:31:16 couderc Exp $
+# $OpenBSD: Makefile,v 1.62 2006/06/07 20:33:44 couderc Exp $
 
 COMMENT=	"mail/news client in gtk+"
 
 VERSION=	2.2.5
 DISTNAME=	sylpheed-${VERSION}
-PKGNAME=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=    	mail news x11
 HOMEPAGE=	http://sylpheed.good-day.net
 
@@ -18,11 +18,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	gtk-x11-2.0.0.9,gdk_pixbuf-2.0.0.9,gdk-x11-2.0.0.9::x11/gtk+2
-WANTLIB=	X11 Xrender Xext Xft atk-1.0.0.0 c \
-		crypto fontconfig freetype glib-2.0.0.0 gdk-x11-2.0.0.0 \
+WANTLIB=	X11 Xrender Xext atk-1.0.0.0 c cairo crypto \
+		fontconfig freetype glib-2.0.0.0 glitz gdk-x11-2.0.0.0 \
 		gdk_pixbuf-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 \
 		gtk-x11-2.0.0.0 m pthread pango-1.0.0.0 \
-		pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 ssl
+		pangocairo-1.0.0.0 pangoft2-1.0.0.0 png ssl z
 
 
 MASTER_SITES=	${HOMEPAGE}/sylpheed/v2.2/
