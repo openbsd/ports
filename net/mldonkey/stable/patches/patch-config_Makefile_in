@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_Makefile_in,v 1.4 2006/03/07 09:19:14 espie Exp $
---- config/Makefile.in.orig	Sat Feb 11 20:52:57 2006
-+++ config/Makefile.in	Tue Mar  7 10:04:44 2006
-@@ -775,6 +775,8 @@ uninstall::
+$OpenBSD: patch-config_Makefile_in,v 1.5 2006/06/07 07:50:47 espie Exp $
+--- config/Makefile.in.orig	Mon May 15 19:43:09 2006
++++ config/Makefile.in	Wed Jun  7 09:36:56 2006
+@@ -786,6 +786,8 @@ uninstall::
  	rm -f $(BINDIR)/mlnet
  	rm -f $(BINDIR)/mlgui
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-config_Makefile_in,v 1.4 2006/03/07 09:19:14 espie Exp $
  install:: opt 
  	mkdir -p $(DESTDIR)$(prefix)/bin
  	if test -f mlnet; then \
-@@ -797,6 +799,22 @@ install:: opt 
+@@ -808,6 +810,22 @@ install:: opt 
               rm -f $(DESTDIR)$(prefix)/bin/mlim; cp -f mlim $(DESTDIR)$(prefix)/bin/mlim; \
           fi
  

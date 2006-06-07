@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/03/07 09:19:14 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2006/06/07 07:50:47 espie Exp $
 
 COMMENT='e-donkey client'
 CATEGORIES=net
@@ -21,7 +21,7 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 HOMEPAGE=http://mldonkey.sourceforge.net/Main_Page
 
 MASTER_SITES=${MASTER_SITE_SOURCEFORGE:=mldonkey/}
-DISTNAME=mldonkey-2.7.4
+DISTNAME=mldonkey-2.7.6
 PKGNAME=${DISTNAME}
 EXTRACT_SUFX=.tar.bz2
 
@@ -34,7 +34,9 @@ MODULES=lang/ocaml
 BUILD_DEPENDS=::x11/lablgtk
 LIB_DEPENDS=gdk.1,gtk.1::x11/gtk+ \
 		bz2::archivers/bzip2 \
-		gd::graphics/gd
+		gd::graphics/gd \
+		magic::devel/libmagic
+
 FAKE_FLAGS=MODOCAML_NATIVE=${MODOCAML_NATIVE}
 NO_REGRESS=Yes
 
