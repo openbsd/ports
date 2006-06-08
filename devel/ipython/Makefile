@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2006/06/03 12:23:41 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/06/08 14:38:01 steven Exp $
 
 COMMENT=	"enhanced interactive Python shell"
 
-DISTNAME=	ipython-0.7.1.fix1
-PKGNAME=	ipython-0.7.1.1p0
+DISTNAME=	ipython-0.7.2
 CATEGORIES=	devel
 
 HOMEPAGE=	http://ipython.scipy.org/
@@ -22,14 +21,13 @@ MASTER_SITES=	http://ipython.scipy.org/dist/
 
 NO_REGRESS=	Yes
 
+RUN_DEPENDS=	::devel/py-pexpect
+
 DOC_DIR=	${PREFIX}/share/doc/ipython
 EXAMPLE_DIR=	${PREFIX}/share/examples/ipython
 
 post-extract:
 	@cd ${WRKSRC}/doc && gunzip *.1.gz
-
-pre-install:
-	@rm -f ${WRKSRC}/IPython/UserConfig/*.orig
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1
