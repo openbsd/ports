@@ -1,0 +1,413 @@
+$OpenBSD: patch-hw_rtl8139_c,v 1.1 2006/06/08 14:33:38 todd Exp $
+--- hw/rtl8139.c.orig	Wed May  3 15:32:58 2006
++++ hw/rtl8139.c	Thu May 11 22:17:23 2006
+@@ -32,6 +32,8 @@
+ /* debug RTL8139 card */
+ //#define DEBUG_RTL8139 1
+ 
++#define PCI_FREQUENCY 33000000L
++
+ /* debug RTL8139 card C+ mode only */
+ //#define DEBUG_RTL8139CP 1
+ 
+@@ -315,6 +317,11 @@ enum chip_flags {
+     (b30<<30 | b29<<29 | b28<<28 | b27<<27 | b26<<26 | b23<<23 | b22<<22)
+ #define HW_REVID_MASK    HW_REVID(1, 1, 1, 1, 1, 1, 1)
+ 
++#define RTL8139_PCI_REVID_8139      0x10
++#define RTL8139_PCI_REVID_8139CPLUS 0x20
++
++#define RTL8139_PCI_REVID           RTL8139_PCI_REVID_8139CPLUS
++
+ /* Size is 64 * 16bit words */
+ #define EEPROM_9346_ADDR_BITS 6
+ #define EEPROM_9346_SIZE  (1 << EEPROM_9346_ADDR_BITS)
+@@ -414,7 +421,13 @@ typedef struct RTL8139State {
+     uint32_t   RxRingAddrHI;
+ 
+     EEprom9346 eeprom;
+-    
++
++	uint32_t   TCTR;
++	uint32_t   TimerInt;
++	int64_t    TCTR_base;
++
++	QEMUTimer *timer;
++
+ } RTL8139State;
+ 
+ void prom9346_decode_command(EEprom9346 *eeprom, uint8_t command)
+@@ -512,6 +525,19 @@ void prom9346_shift_clock(EEprom9346 *ee
+             eeprom->output <<= 1;
+             if (eeprom->tick == 16)
+             {
++#if 1
++		// the FreeBSD drivers (rl and re) don't explicitly toggle
++		// CS between reads (or does setting Cfg9346 to 0 count too?),
++		// so we need to enter wait-for-command state here
++                eeprom->mode = Chip9346_enter_command_mode;
++                eeprom->input = 0;
++                eeprom->tick = 0;
++
++#if defined(DEBUG_RTL8139)
++                printf("eeprom: +++ end of read, awaiting next command\n");
++#endif
++#else
++		// original behaviour
+                 ++eeprom->address;
+                 eeprom->address &= EEPROM_9346_ADDR_MASK;
+                 eeprom->output = eeprom->contents[eeprom->address];
+@@ -521,6 +547,7 @@ void prom9346_shift_clock(EEprom9346 *ee
+                 printf("eeprom: +++ read next address 0x%02x data=0x%04x\n",
+                        eeprom->address, eeprom->output);
+ #endif
++#endif
+             }
+             break;
+ 
+@@ -751,7 +778,7 @@ static int rtl8139_can_receive(void *opa
+     }
+ }
+ 
+-static void rtl8139_receive(void *opaque, const uint8_t *buf, int size)
++static void rtl8139_do_receive(void *opaque, const uint8_t *buf, int size, int do_interrupt)
+ {
+     RTL8139State *s = opaque;
+ 
+@@ -1078,9 +1105,18 @@ static void rtl8139_receive(void *opaque
+     }
+ 
+     s->IntrStatus |= RxOK;
+-    rtl8139_update_irq(s);
++
++	if (do_interrupt)
++	{
++		rtl8139_update_irq(s);
++	}
+ }
+ 
++static void rtl8139_receive(void *opaque, const uint8_t *buf, int size)
++{
++	rtl8139_do_receive(opaque, buf, size, 1);
++}
++
+ static void rtl8139_reset_rxring(RTL8139State *s, uint32_t bufferSize)
+ {
+     s->RxBufferSize = bufferSize;
+@@ -1103,6 +1139,11 @@ static void rtl8139_reset(RTL8139State *
+ 
+     /* prepare eeprom */
+     s->eeprom.contents[0] = 0x8129;
++#if 1
++    // PCI vendor and device ID should be mirrored here
++    s->eeprom.contents[1] = 0x10ec;
++    s->eeprom.contents[2] = 0x8139;
++#endif
+     memcpy(&s->eeprom.contents[7], s->macaddr, 6);
+ 
+     /* mark all status registers as owned by host */
+@@ -1129,7 +1170,7 @@ static void rtl8139_reset(RTL8139State *
+ //    s->TxConfig |= HW_REVID(1, 0, 0, 0, 0, 0, 0); // RTL-8139  HasHltClk
+     s->clock_enabled = 0;
+ #else
+-    s->TxConfig |= HW_REVID(1, 1, 1, 0, 1, 0, 0); // RTL-8139C HasLWake
++    s->TxConfig |= HW_REVID(1, 1, 1, 0, 1, 1, 0); // RTL-8139C+ HasLWake
+     s->clock_enabled = 1;
+ #endif
+ 
+@@ -1157,6 +1198,11 @@ static void rtl8139_reset(RTL8139State *
+     s->NWayAdvert    = 0x05e1; /* all modes, full duplex */
+     s->NWayLPAR      = 0x05e1; /* all modes, full duplex */
+     s->NWayExpansion = 0x0001; /* autonegotiation supported */
++
++	/* also reset timer and disable timer interrupt */
++	s->TCTR = 0;
++	s->TimerInt = 0;
++	s->TCTR_base = 0;
+ }
+ 
+ static void rtl8139_ChipCmd_write(RTL8139State *s, uint32_t val)
+@@ -1622,13 +1668,23 @@ static int rtl8139_transmit_one(RTL8139S
+ #endif
+     cpu_physical_memory_read(s->TxAddr[descriptor], txbuffer, txsize);
+ 
+-    qemu_send_packet(s->vc, txbuffer, txsize);
+-
+     /* Mark descriptor as transferred */
+     s->TxStatus[descriptor] |= TxHostOwns;
+     s->TxStatus[descriptor] |= TxStatOK;
+ 
++	if (TxLoopBack == (s->TxConfig & TxLoopBack))
++	{
+ #ifdef DEBUG_RTL8139
++		printf("RTL8139: +++ transmit loopback mode\n");
++#endif
++		rtl8139_do_receive(s, txbuffer, txsize, 0);
++	}
++	else
++	{
++		qemu_send_packet(s->vc, txbuffer, txsize);
++	}
++
++#ifdef DEBUG_RTL8139
+     printf("RTL8139: +++ transmitted %d bytes from descriptor %d\n", txsize, descriptor);
+ #endif
+ 
+@@ -1748,9 +1804,6 @@ static int rtl8139_cplus_transmit_one(RT
+ #endif
+     cpu_physical_memory_read(tx_addr, txbuffer, txsize);
+ 
+-    /* transmit the packet */
+-    qemu_send_packet(s->vc, txbuffer, txsize);
+-
+     /* transfer ownership to target */
+     txdw0 &= ~CP_RX_OWN;
+ 
+@@ -1777,7 +1830,20 @@ static int rtl8139_cplus_transmit_one(RT
+         ++s->currCPlusTxDesc;
+     }
+ 
++	if (TxLoopBack == (s->TxConfig & TxLoopBack))
++	{
+ #ifdef DEBUG_RTL8139
++		printf("RTL8139: +++ C+ transmit loopback mode\n");
++#endif
++		rtl8139_receive(s, txbuffer, txsize);
++	}
++	else
++	{
++		/* transmit the packet */
++		qemu_send_packet(s->vc, txbuffer, txsize);
++	}
++
++#ifdef DEBUG_RTL8139
+     printf("RTL8139: +++ C+ mode transmitted %d bytes from descriptor %d\n", txsize, descriptor);
+ #endif
+     return 1;
+@@ -1909,6 +1975,8 @@ static void rtl8139_TxAddr_write(RTL8139
+ #endif
+ 
+     s->TxAddr[txAddrOffset/4] = le32_to_cpu(val);
++
++	s->currCPlusTxDesc = 0;
+ }
+ 
+ static uint32_t rtl8139_TxAddr_read(RTL8139State *s, uint32_t txAddrOffset)
+@@ -1949,6 +2017,18 @@ static uint32_t rtl8139_RxBufPtr_read(RT
+     return ret;
+ }
+ 
++static uint32_t rtl8139_RxBufAddr_read(RTL8139State *s)
++{
++    /* this value is NOT off by 16 */
++    uint32_t ret = s->RxBufAddr;
++
++#ifdef DEBUG_RTL8139
++    printf("RTL8139: RxBufAddr read val=0x%04x\n", ret);
++#endif
++
++    return ret;
++}
++
+ static void rtl8139_RxBuf_write(RTL8139State *s, uint32_t val)
+ {
+ #ifdef DEBUG_RTL8139
+@@ -2281,6 +2361,21 @@ static void rtl8139_io_writel(void *opaq
+             s->RxRingAddrHI = val;
+             break;
+ 
++		case Timer:
++#ifdef DEBUG_RTL8139
++			printf("RTL8139: TCTR Timer reset on write\n");
++#endif
++			s->TCTR = 0;
++			s->TCTR_base = qemu_get_clock(vm_clock);
++			break;
++
++		case FlashReg:
++#ifdef DEBUG_RTL8139
++			printf("RTL8139: FlashReg TimerInt write val=0x%08x\n", val);
++#endif
++			s->TimerInt = val;
++			break;
++
+         default:
+ #ifdef DEBUG_RTL8139
+             printf("RTL8139: ioport write(l) addr=0x%x val=0x%08x via write(b)\n", addr, val);
+@@ -2355,7 +2450,7 @@ static uint32_t rtl8139_io_readb(void *o
+             break;
+ 
+         case PCIRevisionID:
+-            ret = 0x10;
++            ret = RTL8139_PCI_REVID;
+ #ifdef DEBUG_RTL8139
+             printf("RTL8139: PCI Revision ID read 0x%x\n", ret);
+ #endif
+@@ -2411,6 +2506,10 @@ static uint32_t rtl8139_io_readw(void *o
+             ret = rtl8139_RxBufPtr_read(s);
+             break;
+ 
++        case RxBufAddr:
++            ret = rtl8139_RxBufAddr_read(s);
++            break;
++
+         case BasicModeCtrl:
+             ret = rtl8139_BasicModeCtrl_read(s);
+             break;
+@@ -2521,6 +2620,20 @@ static uint32_t rtl8139_io_readl(void *o
+ #endif
+             break;
+ 
++		case Timer:
++			ret = s->TCTR;
++#ifdef DEBUG_RTL8139
++			printf("RTL8139: TCTR Timer read val=0x%08x\n", ret);
++#endif
++			break;
++
++		case FlashReg:
++			ret = s->TimerInt;
++#ifdef DEBUG_RTL8139
++			printf("RTL8139: FlashReg TimerInt read val=0x%08x\n", ret);
++#endif
++			break;
++
+         default:
+ #ifdef DEBUG_RTL8139
+             printf("RTL8139: ioport read(l) addr=0x%x via read(b)\n", addr);
+@@ -2688,6 +2801,10 @@ static void rtl8139_save(QEMUFile* f,voi
+     qemu_put_8s(f, &s->eeprom.eesk);
+     qemu_put_8s(f, &s->eeprom.eedi);
+     qemu_put_8s(f, &s->eeprom.eedo);
++
++	qemu_put_be32s(f, &s->TCTR);
++	qemu_put_be32s(f, &s->TimerInt);
++	qemu_put_be64s(f, &s->TCTR_base);
+ }
+ 
+ static int rtl8139_load(QEMUFile* f,void* opaque,int version_id)
+@@ -2695,9 +2812,11 @@ static int rtl8139_load(QEMUFile* f,void
+     RTL8139State* s=(RTL8139State*)opaque;
+     int i;
+ 
+-    if (version_id != 1)
++	/* just 2 versions for now */
++    if (version_id > 2)
+             return -EINVAL;
+ 
++	/* saved since version 1 */
+     qemu_get_buffer(f, s->phys, 6);
+     qemu_get_buffer(f, s->mult, 8);
+ 
+@@ -2769,7 +2888,22 @@ static int rtl8139_load(QEMUFile* f,void
+     qemu_get_8s(f, &s->eeprom.eedi);
+     qemu_get_8s(f, &s->eeprom.eedo);
+ 
+-    return 0;
++	/* saved since version 2 */
++	if (version_id >= 2)
++	{
++		qemu_get_be32s(f, &s->TCTR);
++		qemu_get_be32s(f, &s->TimerInt);
++		qemu_get_be64s(f, &s->TCTR_base);
++	}
++	else
++	{
++		/* not saved, use default */
++		s->TCTR = 0;
++		s->TimerInt = 0;
++		s->TCTR_base = 0;
++	}
++
++	return 0;
+ }
+ 
+ /***********************************************************/
+@@ -2817,6 +2951,63 @@ static CPUWriteMemoryFunc *rtl8139_mmio_
+     rtl8139_mmio_writel,
+ };
+ 
++static inline int64_t rtl8139_get_next_tctr_time(RTL8139State *s, int64_t current_time)
++{
++    int64_t next_time = current_time + 
++        muldiv64(1, ticks_per_sec, PCI_FREQUENCY);
++    if (next_time <= current_time)
++        next_time = current_time + 1;
++    return next_time;
++}
++
++static void rtl8139_timer(void *opaque)
++{
++	RTL8139State *s = opaque;
++
++	int is_timeout = 0;
++
++	int64_t  curr_time;
++	uint32_t curr_tick;
++
++	if (!s->clock_enabled)
++	{
++#ifdef DEBUG_RTL8139
++		printf("RTL8139: >>> timer: clock is not running\n");
++#endif
++		return;
++	}
++
++	curr_time = qemu_get_clock(vm_clock);
++
++	curr_tick = muldiv64(curr_time - s->TCTR_base, PCI_FREQUENCY, ticks_per_sec);
++
++	if (s->TimerInt && curr_tick >= s->TimerInt)
++	{
++		if (s->TCTR < s->TimerInt || curr_tick < s->TCTR)
++		{
++			is_timeout = 1;
++		}
++	}
++
++	s->TCTR = curr_tick;
++
++#ifdef DEBUG_RTL8139
++	printf("RTL8139: >>> timer: tick=%08u\n", s->TCTR);
++#endif
++
++	if (is_timeout)
++	{
++#ifdef DEBUG_RTL8139
++		printf("RTL8139: >>> timer: timeout tick=%08u\n", s->TCTR);
++#endif
++		s->IntrStatus |= PCSTimeout;
++		rtl8139_update_irq(s);
++	}
++
++	qemu_mod_timer(s->timer, 
++		rtl8139_get_next_tctr_time(s,curr_time));
++}
++
+ void pci_rtl8139_init(PCIBus *bus, NICInfo *nd)
+ {
+     PCIRTL8139State *d;
+@@ -2833,7 +3024,7 @@ void pci_rtl8139_init(PCIBus *bus, NICIn
+     pci_conf[0x02] = 0x39;
+     pci_conf[0x03] = 0x81;
+     pci_conf[0x04] = 0x05; /* command = I/O space, Bus Master */
+-    pci_conf[0x08] = 0x20; /* 0x10 */ /* PCI revision ID; >=0x20 is for 8139C+ */
++    pci_conf[0x08] = RTL8139_PCI_REVID; /* PCI revision ID; >=0x20 is for 8139C+ */
+     pci_conf[0x0a] = 0x00; /* ethernet network controller */
+     pci_conf[0x0b] = 0x02;
+     pci_conf[0x0e] = 0x00; /* header_type */
+@@ -2869,7 +3060,13 @@ void pci_rtl8139_init(PCIBus *bus, NICIn
+              s->macaddr[5]);
+              
+     /* XXX: instance number ? */
+-    register_savevm("rtl8139", 0, 1, rtl8139_save, rtl8139_load, s);
++    register_savevm("rtl8139", 0, 2, rtl8139_save, rtl8139_load, s);
+     register_savevm("rtl8139_pci", 0, 1, generic_pci_save, generic_pci_load, 
+                     &d->dev);
++
++	s->timer = qemu_new_timer(vm_clock, rtl8139_timer, s);
++
++	qemu_mod_timer(s->timer, 
++		rtl8139_get_next_tctr_time(s,qemu_get_clock(vm_clock)));
+ }
++

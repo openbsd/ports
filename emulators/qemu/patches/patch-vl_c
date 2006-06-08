@@ -1,5 +1,5 @@
---- vl.c.orig	Mon Dec 19 16:51:53 2005
-+++ vl.c	Mon Apr 10 16:02:04 2006
+--- vl.c.orig	Wed May  3 15:32:58 2006
++++ vl.c	Fri May  5 22:24:31 2006
 @@ -43,7 +43,8 @@
  #include <netdb.h>
  #ifdef _BSD
@@ -10,7 +10,7 @@
  #include <libutil.h>
  #endif
  #else
-@@ -126,6 +127,7 @@ QEMUTimer *gui_timer;
+@@ -130,6 +131,7 @@ QEMUTimer *gui_timer;
  int vm_running;
  int rtc_utc = 1;
  int cirrus_vga_enabled = 1;
@@ -18,7 +18,7 @@
  #ifdef TARGET_SPARC
  int graphic_width = 1024;
  int graphic_height = 768;
-@@ -288,7 +290,7 @@ void isa_unassign_ioport(int start, int 
+@@ -292,7 +294,7 @@ void isa_unassign_ioport(int start, int 
  
  /***********************************************************/
  
@@ -27,7 +27,7 @@
  {
      int c;
      char *q = buf;
-@@ -306,7 +308,7 @@ void pstrcpy(char *buf, int buf_size, co
+@@ -310,7 +312,7 @@ void pstrcpy(char *buf, int buf_size, co
  }
  
  /* strcat and truncate. */
@@ -36,7 +36,7 @@
  {
      int len;
      len = strlen(buf);
-@@ -549,7 +551,23 @@ int64_t cpu_get_real_ticks(void)
+@@ -561,7 +563,23 @@ int64_t cpu_get_real_ticks(void)
  }
  
  #else
@@ -60,8 +60,8 @@
 +}
  #endif
  
- static int64_t cpu_ticks_offset;
-@@ -1693,7 +1711,7 @@ static int parse_macaddr(uint8_t *macadd
+ static int64_t cpu_ticks_prev;
+@@ -2201,7 +2219,7 @@ static int parse_macaddr(uint8_t *macadd
      return 0;
  }
  
@@ -70,73 +70,7 @@
  {
      const char *p, *p1;
      int len;
-@@ -1768,13 +1786,16 @@ VLANState *qemu_find_vlan(int id)
- }
- 
- VLANClientState *qemu_new_vlan_client(VLANState *vlan,
--                                      IOReadHandler *fd_read, void *opaque)
-+                                      IOReadHandler *fd_read,
-+                                      IOCanRWHandler *fd_can_read,
-+                                      void *opaque)
- {
-     VLANClientState *vc, **pvc;
-     vc = qemu_mallocz(sizeof(VLANClientState));
-     if (!vc)
-         return NULL;
-     vc->fd_read = fd_read;
-+    vc->fd_can_read = fd_can_read;
-     vc->opaque = opaque;
-     vc->vlan = vlan;
- 
-@@ -1786,6 +1807,20 @@ VLANClientState *qemu_new_vlan_client(VL
-     return vc;
- }
- 
-+int qemu_can_send_packet(VLANClientState *vc1)
-+{
-+    VLANState *vlan = vc1->vlan;
-+    VLANClientState *vc;
-+
-+    for(vc = vlan->first_client; vc != NULL; vc = vc->next) {
-+        if (vc != vc1) {
-+            if (vc->fd_can_read && !vc->fd_can_read(vc->opaque))
-+                return 0;
-+        }
-+    }
-+    return 1;
-+}
-+
- void qemu_send_packet(VLANClientState *vc1, const uint8_t *buf, int size)
- {
-     VLANState *vlan = vc1->vlan;
-@@ -1811,7 +1846,7 @@ static VLANClientState *slirp_vc;
- 
- int slirp_can_output(void)
- {
--    return 1;
-+    qemu_can_send_packet(slirp_vc);
- }
- 
- void slirp_output(const uint8_t *pkt, int pkt_len)
-@@ -1839,7 +1874,7 @@ static int net_slirp_init(VLANState *vla
-         slirp_init();
-     }
-     slirp_vc = qemu_new_vlan_client(vlan, 
--                                    slirp_receive, NULL);
-+                                    slirp_receive, NULL, NULL);
-     snprintf(slirp_vc->info_str, sizeof(slirp_vc->info_str), "user redirector");
-     return 0;
- }
-@@ -2024,7 +2059,7 @@ static TAPState *net_tap_fd_init(VLANSta
-     if (!s)
-         return NULL;
-     s->fd = fd;
--    s->vc = qemu_new_vlan_client(vlan, tap_receive, s);
-+    s->vc = qemu_new_vlan_client(vlan, tap_receive, NULL, s);
-     qemu_set_fd_handler(s->fd, tap_send, NULL, s);
-     snprintf(s->vc->info_str, sizeof(s->vc->info_str), "tap: fd=%d", fd);
-     return s;
-@@ -2037,11 +2072,85 @@ static int tap_open(char *ifname, int if
+@@ -2560,11 +2578,85 @@ static int tap_open(char *ifname, int if
      char *dev;
      struct stat s;
  
@@ -222,27 +156,9 @@
  
      fstat(fd, &s);
      dev = devname(s.st_rdev, S_IFCHR);
-@@ -2327,7 +2436,7 @@ static NetSocketState *net_socket_fd_ini
-         return NULL;
-     s->fd = fd;
+@@ -3065,7 +3157,8 @@ static int net_socket_mcast_init(VLANSta
  
--    s->vc = qemu_new_vlan_client(vlan, net_socket_receive_dgram, s);
-+    s->vc = qemu_new_vlan_client(vlan, net_socket_receive_dgram, NULL, s);
-     qemu_set_fd_handler(s->fd, net_socket_send_dgram, NULL, s);
- 
-     /* mcast: save bound address as dst */
-@@ -2355,7 +2464,7 @@ static NetSocketState *net_socket_fd_ini
-         return NULL;
-     s->fd = fd;
-     s->vc = qemu_new_vlan_client(vlan, 
--                                 net_socket_receive, s);
-+                                 net_socket_receive, NULL, s);
-     snprintf(s->vc->info_str, sizeof(s->vc->info_str),
-              "socket: fd=%d", fd);
-     if (is_connected) {
-@@ -2526,7 +2635,8 @@ static int net_socket_mcast_init(VLANSta
- 
- #endif /* !_WIN32 */
+ }
  
 -static int get_param_value(char *buf, int buf_size,
 +static int get_param_value(char *, size_t, const char *, const char *);
@@ -250,7 +166,7 @@
                             const char *tag, const char *str)
  {
      const char *p;
-@@ -2636,17 +2746,21 @@ int net_client_init(const char *str)
+@@ -3190,17 +3283,21 @@ int net_client_init(const char *str)
          char ifname[64];
          char setup_script[1024];
          int fd;
@@ -273,16 +189,16 @@
 +            	ret = net_tap_init(vlan, ifname, setup_script);
          }
      } else
-     if (!strcmp(device, "socket")) {
-@@ -3986,6 +4100,7 @@ void help(void)
+ #endif
+@@ -4623,6 +4720,7 @@ void help(void)
  #if defined(TARGET_PPC) || defined(TARGET_SPARC)
             "-g WxH[xDEPTH]  Set the initial graphical resolution and depth\n"
  #endif
 +           "-nic-pcnet     simulate an AMD PC-Net PCI ethernet adaptor\n"
             "\n"
             "Network options:\n"
-            "-net nic[,vlan=n][,macaddr=addr]\n"
-@@ -4093,6 +4208,7 @@ enum {
+            "-net nic[,vlan=n][,macaddr=addr][,model=type]\n"
+@@ -4735,6 +4833,7 @@ enum {
      QEMU_OPTION_audio_help,
      QEMU_OPTION_soundhw,
  #endif
@@ -290,7 +206,7 @@
  
      QEMU_OPTION_net,
      QEMU_OPTION_tftp,
-@@ -4195,6 +4311,7 @@ const QEMUOption qemu_options[] = {
+@@ -4841,6 +4940,7 @@ const QEMUOption qemu_options[] = {
      
      /* temporary options */
      { "usb", 0, QEMU_OPTION_usb },
@@ -298,7 +214,7 @@
      { "cirrusvga", 0, QEMU_OPTION_cirrusvga },
      { NULL },
  };
-@@ -4441,7 +4558,7 @@ int main(int argc, char **argv)
+@@ -5101,7 +5201,7 @@ int main(int argc, char **argv)
          serial_devices[i][0] = '\0';
      serial_device_index = 0;
      
@@ -307,7 +223,7 @@
      for(i = 1; i < MAX_PARALLEL_PORTS; i++)
          parallel_devices[i][0] = '\0';
      parallel_device_index = 0;
-@@ -4601,6 +4718,9 @@ int main(int argc, char **argv)
+@@ -5261,6 +5361,9 @@ int main(int argc, char **argv)
                          optarg);
                  nb_net_clients++;
                  break;

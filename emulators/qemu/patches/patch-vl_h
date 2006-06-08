@@ -1,8 +1,8 @@
-$OpenBSD: patch-vl_h,v 1.4 2006/04/10 21:10:05 todd Exp $
---- vl.h.orig	Mon Dec 19 16:51:53 2005
-+++ vl.h	Mon Feb 20 21:37:31 2006
-@@ -91,8 +91,8 @@ int get_image_size(const char *filename)
- int load_image(const char *filename, uint8_t *addr);
+$OpenBSD: patch-vl_h,v 1.5 2006/06/08 14:33:38 todd Exp $
+--- vl.h.orig	Wed May  3 15:32:58 2006
++++ vl.h	Fri May  5 22:07:42 2006
+@@ -96,8 +96,8 @@ void hw_error(const char *fmt, ...);
+ 
  extern const char *bios_dir;
  
 -void pstrcpy(char *buf, int buf_size, const char *str);
@@ -12,31 +12,7 @@ $OpenBSD: patch-vl_h,v 1.4 2006/04/10 21:10:05 todd Exp $
  int strstart(const char *str, const char *val, const char **ptr);
  
  extern int vm_running;
-@@ -279,6 +279,9 @@ typedef struct VLANClientState VLANClien
- 
- struct VLANClientState {
-     IOReadHandler *fd_read;
-+    /* Packets may still be sent if this returns zero.  It's used to
-+       rate-limit the slirp code.  */
-+    IOCanRWHandler *fd_can_read;
-     void *opaque;
-     struct VLANClientState *next;
-     struct VLANState *vlan;
-@@ -293,8 +296,12 @@ typedef struct VLANState {
- 
- VLANState *qemu_find_vlan(int id);
- VLANClientState *qemu_new_vlan_client(VLANState *vlan,
--                                      IOReadHandler *fd_read, void *opaque);
-+                                      IOReadHandler *fd_read,
-+                                      IOCanRWHandler *fd_can_read,
-+                                      void *opaque);
-+int qemu_can_send_packet(VLANClientState *vc);
- void qemu_send_packet(VLANClientState *vc, const uint8_t *buf, int size);
-+void qemu_handler_true(void *opaque);
- 
- void do_info_network(void);
- 
-@@ -728,6 +735,12 @@ int fdctrl_get_drive_type(fdctrl_t *fdct
+@@ -769,6 +769,12 @@ int fdctrl_get_drive_type(fdctrl_t *fdct
  
  void isa_ne2000_init(int base, int irq, NICInfo *nd);
  void pci_ne2000_init(PCIBus *bus, NICInfo *nd);
@@ -47,5 +23,5 @@ $OpenBSD: patch-vl_h,v 1.4 2006/04/10 21:10:05 todd Exp $
 +
 +void pci_pcnet_init(PCIBus *bus, NICInfo *nd);
  
- /* pckbd.c */
+ /* rtl8139.c */
  
