@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_dspam_c,v 1.6 2006/05/15 12:01:25 todd Exp $
---- src/dspam.c.orig	Sat May 13 14:17:30 2006
-+++ src/dspam.c	Sun May 14 21:32:13 2006
-@@ -383,7 +383,7 @@ process_message (
+$OpenBSD: patch-src_dspam_c,v 1.7 2006/06/08 14:41:08 todd Exp $
+--- src/dspam.c.orig	Tue May 30 17:03:55 2006
++++ src/dspam.c	Wed Jun  7 13:36:39 2006
+@@ -387,7 +387,7 @@ process_message (
        CTX->confidence = 1.0;
        STATUS("A virus was detected in the message contents");
        result = DSR_ISSPAM;
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_dspam_c,v 1.6 2006/05/15 12:01:25 todd Exp $
        internally_canned = 1;
      }
    }
-@@ -396,7 +396,7 @@ process_message (
+@@ -400,7 +400,7 @@ process_message (
      result = DSR_ISSPAM;
      CTX->probability = 1.0;
      CTX->confidence = 1.0;
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_dspam_c,v 1.6 2006/05/15 12:01:25 todd Exp $
      internally_canned = 1;
    }
  
-@@ -416,7 +416,7 @@ process_message (
+@@ -420,7 +420,7 @@ process_message (
          result = DSR_ISSPAM;
          CTX->probability = 1.0;
          CTX->confidence = 1.0;
@@ -28,7 +28,7 @@ $OpenBSD: patch-src_dspam_c,v 1.6 2006/05/15 12:01:25 todd Exp $
          internally_canned = 1;
        }
      }
-@@ -747,10 +747,10 @@ process_message (
+@@ -751,10 +751,10 @@ process_message (
  
      switch (CTX->result) {
        case DSR_ISSPAM:
@@ -41,7 +41,7 @@ $OpenBSD: patch-src_dspam_c,v 1.6 2006/05/15 12:01:25 todd Exp $
          break;
      }
  
-@@ -1015,7 +1015,7 @@ int tag_message(AGENT_CTX *ATX, ds_messa
+@@ -1019,7 +1019,7 @@ int tag_message(AGENT_CTX *ATX, ds_messa
    int tagged = 0;
    char spam_subject[16];
  
@@ -50,7 +50,7 @@ $OpenBSD: patch-src_dspam_c,v 1.6 2006/05/15 12:01:25 todd Exp $
    if (_ds_pref_val(ATX->PTX, "spamSubject")[0] != '\n' &&
        _ds_pref_val(ATX->PTX, "spamSubject")[0] != 0)
    {
-@@ -1589,7 +1589,7 @@ int process_users(AGENT_CTX *ATX, buffer
+@@ -1593,7 +1593,7 @@ int process_users(AGENT_CTX *ATX, buffer
      if (parse_message == NULL) {
        LOG(LOG_CRIT, ERR_MEM_ALLOC);
        presult->exitcode = ERC_PROCESS;

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_pgsql_drv_c,v 1.2 2006/03/23 17:17:40 todd Exp $
---- src/pgsql_drv.c.orig	Thu Feb  2 11:15:36 2006
-+++ src/pgsql_drv.c	Sat Mar  4 19:08:13 2006
-@@ -1133,7 +1133,7 @@ _ds_get_signature (DSPAM_CTX * CTX, stru
+$OpenBSD: patch-src_pgsql_drv_c,v 1.3 2006/06/08 14:41:08 todd Exp $
+--- src/pgsql_drv.c.orig	Tue Jun  6 17:46:06 2006
++++ src/pgsql_drv.c	Wed Jun  7 13:36:39 2006
+@@ -1146,7 +1146,7 @@ _ds_get_signature (DSPAM_CTX * CTX, stru
  
      p = _pgsql_drv_getpwuid (CTX, uid);
      if (!p) {
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_pgsql_drv_c,v 1.2 2006/03/23 17:17:40 todd Exp $
        return EFAILURE;
      }
      username = strdup(p->pw_name);
-@@ -1392,7 +1392,7 @@ _ds_get_nextuser (DSPAM_CTX * CTX)
+@@ -1405,7 +1405,7 @@ _ds_get_nextuser (DSPAM_CTX * CTX)
          virtual_username,
          virtual_table);
  #else

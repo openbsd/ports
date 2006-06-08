@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/05/15 12:01:25 todd Exp $
+@comment $OpenBSD: PLIST,v 1.6 2006/06/08 14:41:08 todd Exp $
 @newgroup _dspam:540
 @newuser _dspam:540:540:daemon:DSPAM Account:/var/dspam:/sbin/nologin
 %%SHARED%%
@@ -21,6 +21,7 @@ include/dspam/decode.h
 include/dspam/diction.h
 include/dspam/error.h
 include/dspam/heap.h
+include/dspam/ldap_client.h
 include/dspam/libdspam.h
 include/dspam/libdspam_objects.h
 include/dspam/nodetree.h
