@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/02/02 18:02:22 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2006/06/09 12:14:19 aanriot Exp $
 
 CATEGORIES=	books lang
 COMMENT=	'Icon programming language reference book'
@@ -15,7 +15,7 @@ FLAVORS=two_sided
 FLAVOR?=
 .if ${FLAVOR:L} == "two_sided"
 DISTFILES=	lb2up.pdf
-FULLPKGNAME=	icon-book-two_sided-$V
+FULLPKGNAME=	icon-book-two_sided-$Vp0
 .else
 DISTFILES=	lb1up.pdf
 FULLPKGNAME=	icon-book-$V
