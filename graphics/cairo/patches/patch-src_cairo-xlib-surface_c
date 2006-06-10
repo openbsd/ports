@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_cairo-xlib-surface_c,v 1.1 2006/05/10 21:34:17 brad Exp $
+$OpenBSD: patch-src_cairo-xlib-surface_c,v 1.2 2006/06/10 12:26:19 steven Exp $
 --- src/cairo-xlib-surface.c.orig	Wed Mar 15 16:26:51 2006
-+++ src/cairo-xlib-surface.c	Sun Mar 26 21:00:36 2006
++++ src/cairo-xlib-surface.c	Sat Jun  3 18:18:03 2006
 @@ -72,6 +72,8 @@ _native_byte_order_lsb (void);
  
  #define CAIRO_ASSUME_PIXMAP	20
@@ -16,11 +16,11 @@ $OpenBSD: patch-src_cairo-xlib-surface_c,v 1.1 2006/05/10 21:34:17 brad Exp $
      XRenderPictFormat *format;
 +
 +    struct clut_r3g3b2 *clut;
-+
++    int workaround;
  };
  
  #define CAIRO_SURFACE_RENDER_AT_LEAST(surface, major, minor)	\
-@@ -416,6 +421,160 @@ _swap_ximage_to_native (XImage *ximage)
+@@ -416,6 +421,158 @@ _swap_ximage_to_native (XImage *ximage)
      }
  }
  
@@ -47,7 +47,7 @@ $OpenBSD: patch-src_cairo-xlib-surface_c,v 1.1 2006/05/10 21:34:17 brad Exp $
 +    struct clut_r3g3b2 *next;
 +    Display            *dpy;
 +    Colormap           cmap;
-+    unsigned char      clut[256 * 3];
++    uint32_t           clut[256];
 +    unsigned char      ilut[256];
 +};
 +
@@ -55,8 +55,8 @@ $OpenBSD: patch-src_cairo-xlib-surface_c,v 1.1 2006/05/10 21:34:17 brad Exp $
 +    static struct clut_r3g3b2 *first = NULL;
 +    int i,j, min, d;
 +    struct clut_r3g3b2 *clut;
-+    unsigned char *c, r,g,b, r2,g2,b2;
-+
++    unsigned char r,g,b, r2,g2,b2;
++    
 +    clut = first;
 +    while(clut) {
 +	if ( clut->dpy == dpy && clut->cmap == cmap )
@@ -74,15 +74,13 @@ $OpenBSD: patch-src_cairo-xlib-surface_c,v 1.1 2006/05/10 21:34:17 brad Exp $
 +    first = clut;
 +
 +    /* Construct the clut from Colormap */
-+    c = clut->clut;
 +    for (i = 0; i < 256; i++) {
 +	XColor xcol;
 +	xcol.pixel = i;
 +	XQueryColor(dpy, cmap, &xcol);
-+	c[0] = xcol.red   / 256;
-+	c[1] = xcol.green / 256;
-+	c[2] = xcol.blue  / 256;
-+	c += 3;
++	clut->clut[i] = ( ( ((uint32_t)xcol.red   & 0xff00 ) << 8) |
++			  ( ((uint32_t)xcol.green & 0xff00 ) ) |
++			  ( ((uint32_t)xcol.blue  & 0xff00 ) >> 8) );
 +    }
 +    /*
 +      
@@ -97,25 +95,20 @@ $OpenBSD: patch-src_cairo-xlib-surface_c,v 1.1 2006/05/10 21:34:17 brad Exp $
 +	b = (i << 1) & 0x7;
 +	min = 255;
 +	for(j = 0; j < 256; j++) {
-+	    c = clut->clut + j*3;
-+	    r2 = c[0] >> 5;
-+	    g2 = c[1] >> 5;
-+	    b2 = c[2] >> 5;
++	    r2 = (clut->clut[j] & 0xff0000) >> 21;
++	    g2 = (clut->clut[j] & 0x00ff00) >> 13;
++	    b2 = (clut->clut[j] & 0x0000ff) >> 5;
 +	    if ( r2 == r && g2 == g && (b2 & 0x6) == b ) {
 +		clut->ilut[i] = j;
 +		break;
 +	    }
-+
 +	    /*
-+	      
-+	    Square make higher bits much more important than lower
-+	    ones.
-+	    
++	      Squares make higher bits much more important than lower
++	      ones.
 +	    */
 +	    d  = (r2 ^ r) * (r2 ^ r);
 +	    d += (g2 ^ g) * (g2 ^ g);
 +	    d += (b2 ^ b) * (b2 ^ b);
-+	    
 +	    if(d < min) {
 +		clut->ilut[i] = j;
 +		min = d;
@@ -144,6 +137,7 @@ $OpenBSD: patch-src_cairo-xlib-surface_c,v 1.1 2006/05/10 21:34:17 brad Exp $
 +	   v->red_mask, v->green_mask, v->blue_mask);
 +}
 +
++
 +#if 0
 +static void _print_ximage(XImage *x) {
 +    const char * format[] = { "XYBitmap", "XYPixmap", "ZPixmap" };
@@ -158,7 +152,6 @@ $OpenBSD: patch-src_cairo-xlib-surface_c,v 1.1 2006/05/10 21:34:17 brad Exp $
 +	   x->red_mask, x->green_mask, x->blue_mask,
 +	   x->bitmap_unit, x->bitmap_pad);
 +}
-+
 +
 +const char * _cairoFormats[] = { "ARGB32", "RGB24", "A8", "A1" };
 +
@@ -178,10 +171,15 @@ $OpenBSD: patch-src_cairo-xlib-surface_c,v 1.1 2006/05/10 21:34:17 brad Exp $
 +}
 +#endif
 +
++#define WORKAROUND_NONE           0
++#define WORKAROUND_8BIT_GRAYLEVEL 1
++#define WORKAROUND_8BIT_PALETTE   2
++#define WORKAROUND_R5G6B5         3
++
  static cairo_status_t
  _get_image_surface (cairo_xlib_surface_t   *surface,
  		    cairo_rectangle_t      *interest_rect,
-@@ -508,7 +667,7 @@ _get_image_surface (cairo_xlib_surface_t
+@@ -508,7 +665,7 @@ _get_image_surface (cairo_xlib_surface_t
  
  	XCopyArea (surface->dpy, surface->drawable, pixmap, surface->gc,
  		   x1, y1, x2 - x1, y2 - y1, 0, 0);
@@ -190,7 +188,7 @@ $OpenBSD: patch-src_cairo-xlib-surface_c,v 1.1 2006/05/10 21:34:17 brad Exp $
  	ximage = XGetImage (surface->dpy,
  			    pixmap,
  			    0, 0,
-@@ -521,7 +680,7 @@ _get_image_surface (cairo_xlib_surface_t
+@@ -521,7 +678,7 @@ _get_image_surface (cairo_xlib_surface_t
  	return CAIRO_STATUS_NO_MEMORY;
  
      _swap_ximage_to_native (ximage);
@@ -199,7 +197,7 @@ $OpenBSD: patch-src_cairo-xlib-surface_c,v 1.1 2006/05/10 21:34:17 brad Exp $
      /*
       * Compute the pixel format masks from either a visual or a 
       * XRenderFormat, failing we assume the drawable is an
-@@ -569,20 +728,78 @@ _get_image_surface (cairo_xlib_surface_t
+@@ -569,20 +726,98 @@ _get_image_surface (cairo_xlib_surface_t
      }
      else
      {
@@ -209,62 +207,82 @@ $OpenBSD: patch-src_cairo-xlib-surface_c,v 1.1 2006/05/10 21:34:17 brad Exp $
 -	 * which takes data in an arbitrary format and converts it
 -	 * to something supported by that library.
 +	/*
-+	 * Otherwise, we construct a buffer containing RGB24 data.
++	 * Otherwise, we construct a buffer containing RGB24 data
++	 * using the specified workaround.
  	 */
-+	unsigned char *data, *dst, *src, *col, *clut;
-+	unsigned int stride;
++	uint32_t *data, *dst, *clut;
++	uint8_t  *src8;
++	uint16_t *src16;
 +	int i,j;
 +	
 +	if(surface->visual == NULL) {
 +	    printf("No visual for surface\n");
 +	    goto FAIL;
 +	}
-+	stride = ximage->width * 4;
-+	data = malloc(stride * ximage->height);
++
++	if (surface->workaround == WORKAROUND_NONE) {
++	    printf("No workaround for this pixel format: ");
++	    _print_visual(surface->visual);
++	    goto FAIL;
++	}
++	
++	data = (uint32_t*)malloc(ximage->height * ximage->width * 4);
 +	if(data == NULL) {
 +	    printf("Cannot allocate RGB buffer\n");
 +	    goto FAIL;
 +	}
 +	
-+	switch (surface->visual->class) {
-+	case StaticGray:
-+	case GrayScale:
++	switch (surface->workaround) {
++	    
++	case WORKAROUND_8BIT_GRAYLEVEL:
++
++	    dst = data;
 +	    for(j = 0; j < ximage->height; j++) {
-+		src = (unsigned char *) ximage->data + ximage->bytes_per_line * j;
-+		dst = data + j * stride;
++		src8 = (uint8_t *) (ximage->data + ximage->bytes_per_line * j);
 +		for(i = 0; i < ximage->width; i++) {
-+		    dst[1] = dst[2] = dst[3] = *src;
-+		    dst += 4;
-+		    src++;
++		    *dst++ = (*src8 << 16) | (*src8 << 8) | *src8;
++		    src8++;
 +		}
 +	    }
 +	    break;
-+	case PseudoColor:
-+	case StaticColor:
++	    
++	case WORKAROUND_8BIT_PALETTE:
++
 +	    if(surface->clut == NULL) {
 +		surface->clut = _get_clut_r3g3b2(
 +		    surface->dpy,
 +		    DefaultColormapOfScreen(surface->screen));
 +	    }
++
 +	    if(surface->clut == NULL) {
-+		printf("Cannot allocate clut/ilut!\n");
 +		free(data);
 +		goto FAIL;
 +	    }
++
 +	    clut = surface->clut->clut;
-+	    src = (unsigned char *) ximage->data;
++	    src8 = (uint8_t*) ximage->data;
++	    dst = data;
 +	    for(j = 0; j < ximage->height; j++) {
-+		dst = data + j * stride;
-+		for(i = 0; i < ximage->width; i++) {
-+		    col = clut + (src[i] * 3);
-+		    dst[1] = col[0];
-+		    dst[2] = col[1];
-+		    dst[3] = col[2];
-+		    dst += 4;
-+		}
-+		src += ximage->bytes_per_line;
++		for(i = 0; i < ximage->width; i++)
++		    *dst++ = clut[src8[i]];
++		src8 += ximage->bytes_per_line;
 +	    }
 +	    break;
++
++	case WORKAROUND_R5G6B5:
++
++	    src16 = (uint16_t*)ximage->data;
++	    dst = data;
++	    for(j = 0; j < ximage->height; j++) {
++		for(i = 0; i < ximage->width; i++) {
++		    *dst++ = ( ( ((src16[i] & 0xf800) << 8) | ((src16[i] & 0xe000) << 3) ) |
++			       ( ((src16[i] & 0x07e0) << 5) | ((src16[i] & 0x0600) >> 1) ) |
++			       ( ((src16[i] & 0x001f) << 3) | ((src16[i] & 0x001f) >> 2) ) );
++		}
++		src16 += ximage->bytes_per_line / sizeof(*src16);
++	    }
++	    break;
++	    
 +	default:
 +	    printf("Dunno what to do with: ");
 +	    _print_visual(surface->visual);
@@ -278,7 +296,7 @@ $OpenBSD: patch-src_cairo-xlib-surface_c,v 1.1 2006/05/10 21:34:17 brad Exp $
 -						    ximage->height,
 -						    ximage->bytes_per_line);
 -	if (image->base.status)
-+	    cairo_image_surface_create_for_data(data, CAIRO_FORMAT_RGB24, ximage->width, ximage->height, stride);
++	    cairo_image_surface_create_for_data((unsigned char *)data, CAIRO_FORMAT_RGB24, ximage->width, ximage->height, ximage->width*4);
 +	
 +	if (image->base.status) {
 +	    printf("Failed!\n");
@@ -289,7 +307,37 @@ $OpenBSD: patch-src_cairo-xlib-surface_c,v 1.1 2006/05/10 21:34:17 brad Exp $
      }
  
      /* Let the surface take ownership of the data */
-@@ -661,23 +878,67 @@ _draw_image_surface (cairo_xlib_surface_
+@@ -655,29 +890,130 @@ _cairo_xlib_surface_ensure_gc (cairo_xli
+     _cairo_xlib_surface_set_gc_clip_rects (surface);
+ }
+ 
++static int
++make_space_for(unsigned char ** buf, int *size, int *stride, int width, int height, int Bpp) {
++    unsigned char * data;
++    int l;
++
++    *stride = width * Bpp;
++    if(*stride%4)
++	*stride += 4 - *stride % 4;
++    l = (*stride * height);
++    if (*size < l) {
++	if(*buf)
++	    data = realloc(*buf, l);
++	else
++	    data = malloc(l);
++	if(data) {
++	    *buf = data;
++	    *size = l;
++	} else {
++	    return -1;
++	}
++    } 
++    return 0;
++}
++
+ static cairo_status_t
+ _draw_image_surface (cairo_xlib_surface_t   *surface,
+ 		     cairo_image_surface_t  *image,
  		     int                    dst_x,
  		     int                    dst_y)
  {
@@ -297,54 +345,87 @@ $OpenBSD: patch-src_cairo-xlib-surface_c,v 1.1 2006/05/10 21:34:17 brad Exp $
 +    static int size = 0;
      XImage ximage;
 -    int bpp, alpha, red, green, blue;
-+    int bpp, alpha, red, green, blue, stride, depth, i, j, l;
-+    unsigned char *data, *c, *d, *ilut;
++    int bpp, alpha, red, green, blue, stride, depth, i, j;
++    unsigned char *data, *c, *ilut;
++    uint32_t *src;
++    uint8_t *dst8;
++    uint16_t *dst16;
      int native_byte_order = _native_byte_order_lsb () ? LSBFirst : MSBFirst;
      
      pixman_format_get_masks (pixman_image_get_format (image->pixman_image),
  			     &bpp, &alpha, &red, &green, &blue);
      
-+    stride = image->width * 4;
-+    depth = image->depth;
-+    data = image->data;
-+    l = 0;
 +    
-+    if(image->depth == 24 && surface->clut) {
-+	stride = image->width;
-+	if(stride%4)
-+	    stride += 4 - stride % 4;
-+	l = (stride * image->height);
-+	if (size < l) {
-+	    if(buf)
-+		data = realloc(buf, l);
-+	    else
-+		data = malloc(l);
-+	    if(data) {
-+		buf = data;
-+		size = l;
-+	    }
-+	} else {
-+	    data = buf;
-+	}
-+	if(data == NULL)
++    switch(surface->workaround) {
++    case WORKAROUND_NONE:
++	/* Default behaviour is supposed to work */
++	stride = image->width * 4;
++	depth = image->depth;
++	data = image->data;
++	break;
++
++    case WORKAROUND_8BIT_GRAYLEVEL:
++
++	if (make_space_for(&buf, &size, &stride, image->width, image->height, 1))
 +	    return CAIRO_STATUS_NO_MEMORY;
++	data = buf;
 +	
++	for(j=0;j<image->height;j++) {
++	    src = image->data;
++	    dst8 = data + j * stride;
++	    for(i=0;i<image->width;i++) {
++		/* XXX use correct factor for each channel */
++		dst8[i] = ( ((*src >> 16) & 0xff) +
++			    ((*src >> 8) & 0xff) +
++			    (*src & 0xff) ) / 3;
++		src++;
++	    }
++	}
++	
++	alpha = red = green = blue = 0;
++	depth = bpp = 8;
++	break;
++	
++    case WORKAROUND_8BIT_PALETTE:
++	
++	if (make_space_for(&buf, &size, &stride, image->width, image->height, 1))
++	    return CAIRO_STATUS_NO_MEMORY;
++	data = buf;
++	src = image->data;
 +	ilut = surface->clut->ilut;
 +	for(j=0;j<image->height;j++) {
-+	    c = image->data + j * image->stride;
-+	    d = data + j * stride;
++	    dst8 = data + j * stride;
 +	    for(i=0;i<image->width;i++) {
-+		d[i] = ilut[ (unsigned int)
-+			     (((c[1]) & ( 0x7 << 5 )) |
-+			      ((c[2] >> 3) & (0x7 << 2 )) |
-+			      ((c[3] >> 6) & 0x3)) ];
-+		c += 4;
++		dst8[i] = ilut[ ((*src >> 16) & 0xe0) |
++				((*src >> 11) & 0x1c) |
++				((*src >> 6)  & 0x03) ];
++		src++;
 +	    }
 +	}
 +	alpha = red = green = blue = 0;
 +	depth = bpp = 8;
++	break;
++	
++    case WORKAROUND_R5G6B5:
++	if (make_space_for(&buf, &size, &stride, image->width, image->height, 2))
++	    return CAIRO_STATUS_NO_MEMORY;
++	data = buf;
++	src = image->data;
++	for(j=0;j<image->height;j++) {
++	    dst16 = (uint16_t*)(data + j * stride);
++	    for(i=0;i<image->width;i++) {
++		dst16[i] = ( ((*src >> 8) & 0xf800) |
++			     ((*src >> 5) & 0x07e0) |
++			     ((*src >> 3) & 0x001f) );
++		src++;
++	    }
++	}
++	alpha = 0; red = 0xf800; green = 0x07e0; blue = 0x001f;
++	depth = bpp = 16;
++	break;
++	
 +    }
-+
++    
      ximage.width = image->width;
      ximage.height = image->height;
      ximage.format = ZPixmap;
@@ -363,7 +444,7 @@ $OpenBSD: patch-src_cairo-xlib-surface_c,v 1.1 2006/05/10 21:34:17 brad Exp $
      ximage.bits_per_pixel = bpp;
      ximage.red_mask = red;
      ximage.green_mask = green;
-@@ -685,7 +946,7 @@ _draw_image_surface (cairo_xlib_surface_
+@@ -685,7 +1021,7 @@ _draw_image_surface (cairo_xlib_surface_
      ximage.xoffset = 0;
  
      XInitImage (&ximage);
@@ -372,12 +453,33 @@ $OpenBSD: patch-src_cairo-xlib-surface_c,v 1.1 2006/05/10 21:34:17 brad Exp $
      _cairo_xlib_surface_ensure_gc (surface);
      XPutImage(surface->dpy, surface->drawable, surface->gc,
  	      &ximage, 0, 0, dst_x, dst_y,
-@@ -1788,6 +2049,8 @@ _cairo_xlib_surface_create_internal (Dis
-     surface->have_clip_rects = FALSE;
+@@ -1789,6 +2125,29 @@ _cairo_xlib_surface_create_internal (Dis
      surface->clip_rects = NULL;
      surface->num_clip_rects = 0;
-+
-+    surface->clut = NULL;
  
++    surface->clut = NULL;
++    surface->workaround = WORKAROUND_NONE;
++
++    if (surface->format == NULL) {
++	/* Install the correct workaround */
++	switch (visual->class) {
++	case StaticGray:
++	case GrayScale:
++	    surface->workaround = WORKAROUND_8BIT_GRAYLEVEL;
++	    break;
++	case PseudoColor:
++	case StaticColor:
++	    surface->workaround = WORKAROUND_8BIT_PALETTE;
++	    break;
++	case TrueColor:
++	    if (visual->red_mask   == 0xf800 &&
++		visual->green_mask == 0x07e0 &&
++		visual->blue_mask  == 0x001f) {
++		surface->workaround = WORKAROUND_R5G6B5;
++	    }
++	}
++    }
++    
      return (cairo_surface_t *) surface;
  }
+ 
