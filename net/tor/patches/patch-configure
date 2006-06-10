@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.2 2005/01/30 20:20:18 naddy Exp $
---- configure.orig	Sun Jan 30 21:05:20 2005
-+++ configure	Sun Jan 30 21:06:03 2005
-@@ -10713,7 +10713,7 @@ LOCALSTATEDIR=`eval echo $localstatedir`
- 
+$OpenBSD: patch-configure,v 1.3 2006/06/10 08:33:36 steven Exp $
+--- configure.orig	Thu Jun  8 18:56:35 2006
++++ configure	Thu Jun  8 18:58:11 2006
+@@ -15199,7 +15199,7 @@ _ACEOF
  # Set CFLAGS _after_ all the above checks, since our warnings are stricter
  # than autoconf's macros like.
--CFLAGS="$CFLAGS -Wall -g -O2"
-+#CFLAGS="$CFLAGS -Wall -g -O2"
- # Add some more warnings which we use in the cvs version but not in the
- # released versions.  (Some relevant gcc versions can't handle these.)
- #CFLAGS="$CFLAGS -W -Wno-unused-parameter -Wfloat-equal -Wundef -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wredundant-decls"
+ if test $ac_cv_c_compiler_gnu = yes; then
+-  CFLAGS="$CFLAGS -Wall -g -O2"
++  CFLAGS="$CFLAGS -Wall"
+ else
+   CFLAGS="$CFLAGS -g -O"
+ fi
