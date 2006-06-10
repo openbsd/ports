@@ -1,0 +1,7 @@
+Six free command-line tools for dealing with Type 1 fonts.
+This is a revision of I. Lee Hetherington's beloved t1utils package.
+t1ascii changes PFB (binary) fonts into PFA (ASCII) format; t1binary
+goes the opposite direction. t1disasm translates PFBs or PFAs into a
+human-readable and -editable format; t1asm goes the opposite direction.
+Finally, t1unmac (formerly unpost) translates a Macintosh Type 1 font
+into either PFB or PFA format, and t1mac goes the opposite direction.
