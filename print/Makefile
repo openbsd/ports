@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.48 2006/02/12 14:58:15 david Exp $
+#	$OpenBSD: Makefile,v 1.49 2006/06/10 23:14:47 steven Exp $
 
     SUBDIR += a2ps,a4
     SUBDIR += a2ps,letter
@@ -38,6 +38,7 @@
     SUBDIR += py-reportlab
     SUBDIR += scribus
     SUBDIR += teTeX
+    SUBDIR += t1utils
     SUBDIR += transfig
 
 .include <bsd.port.subdir.mk>
