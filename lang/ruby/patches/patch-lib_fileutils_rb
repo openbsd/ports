@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_fileutils_rb,v 1.3 2006/06/10 16:51:05 sturm Exp $
+--- lib/fileutils.rb.orig	Sun Nov 20 02:23:41 2005
++++ lib/fileutils.rb	Fri Jun  2 21:36:26 2006
+@@ -240,7 +240,7 @@ module FileUtils
+       Dir.mkdir path, mode
+       File.chmod mode, path
+     else
+-      Dir.mkdir path
++      Dir.mkdir path unless File.exist?(path)
+     end
+   end
+   private_module_function :fu_mkdir
