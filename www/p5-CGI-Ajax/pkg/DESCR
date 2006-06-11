@@ -1,0 +1,6 @@
+AJAX framework for perl, can be used with various CGI setups, or HTML::Mason,
+or other.
+
+Provides some methods that build javascript code that can effect callbacks
+to perl code (or arbitrary urls). The return value(s) can be dispatched
+to multiple divs in the original document.

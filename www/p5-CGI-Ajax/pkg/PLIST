@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/11 12:33:33 espie Exp $
+${P5SITE}/CGI/
+${P5SITE}/CGI/Ajax.pm
+@man man/man3p/CGI::Ajax.3p
