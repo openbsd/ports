@@ -1,0 +1,14 @@
+$OpenBSD: patch-ppmtoTbmp_c,v 1.1 2006/06/11 18:28:14 naddy Exp $
+--- ppmtoTbmp.c.orig	Wed May 31 22:11:06 2006
++++ ppmtoTbmp.c	Wed May 31 22:11:32 2006
+@@ -5,8 +5,8 @@
+  * Based on ppmtopuzz.c by Jef Paskanzer, from the netpbm-1mar1994 package.
+  */
+ 
+-#include "ppm.h"
+-#include "ppmcmap.h"
++#include <ppm.h>
++#include <ppmcmap.h>
+ 
+ static int colcompare(const void *a, const void *b)
+ {
