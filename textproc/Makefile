@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2006/05/22 23:00:29 alek Exp $
+# $OpenBSD: Makefile,v 1.149 2006/06/11 22:34:54 espie Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -74,6 +74,9 @@
      SUBDIR += p5-String-Random
      SUBDIR += p5-String-ShellQuote
      SUBDIR += p5-String-Similarity
+     SUBDIR += p5-Syntax-Highlight-HTML
+     SUBDIR += p5-Syntax-Highlight-Mason
+     SUBDIR += p5-Syntax-Highlight-Perl
      SUBDIR += p5-Template
      SUBDIR += p5-Text-Aligner
      SUBDIR += p5-Text-Autoformat
