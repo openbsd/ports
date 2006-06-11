@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/11 22:33:45 espie Exp $
+${P5SITE}/Syntax/Highlight/Mason.pm
+@man man/man3p/Syntax::Highlight::Mason.3p
+share/examples/p5-Syntax-Highlight-Mason/
+share/examples/p5-Syntax-Highlight-Mason/view_source.html
