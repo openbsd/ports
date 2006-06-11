@@ -1,6 +1,6 @@
---- dcraw.c.orig	Thu Sep 15 00:17:59 2005
-+++ dcraw.c	Thu Sep 15 00:18:35 2005
-@@ -2228,7 +2228,7 @@ void CLASS foveon_interpolate()
+--- dcraw.c.orig	Thu May 25 21:08:17 2006
++++ dcraw.c	Thu May 25 21:09:19 2006
+@@ -2482,7 +2482,7 @@
      for (j=0; j < 3; j++)
        FORC3 last[i][j] += correct[i][c] * cam_xyz[c][j];
  
@@ -9,7 +9,7 @@
    if (foveon_camf_param ("IncludeBlocks", str))
      foveon_fixed (div, 3, str);
    else {
-@@ -2598,9 +2598,9 @@ void CLASS bad_pixels()
+@@ -2853,9 +2853,9 @@
      if (*cp == '\\') *cp = '/';
  #endif
    cp = fname + strlen(fname);
@@ -21,25 +21,43 @@
      if ((fp = fopen (fname, "r"))) break;
      if (cp == fname) break;
      while (*--cp != '/');
-@@ -3530,7 +3530,7 @@ int CLASS parse_tiff_ifd (int base, int 
- 	if (level) {
- 	  data_offset = ftell(ifp);
- 	} else {
--	  strcpy (make, "Leaf");
-+	  strlcpy (make, "Leaf", sizeof make);
- 	  data_offset = get4();
+@@ -3902,7 +3902,7 @@
+   while (1) {
+     fread (data, 1, 8, ifp);
+     if (strcmp(data,"PKTS")) break;
+-    if (!make[0]) strcpy(make,"Leaf");
++    if (!make[0]) strlcpy (make, "Leaf", sizeof make);
+     fread (data, 1, 40, ifp);
+     skip = get4();
+     from = ftell(ifp);
+@@ -3918,7 +3918,7 @@
+       fread (data, 1, 40, ifp);
+       for (i=0; i < sizeof mod / sizeof *mod; i++)
+ 	if (data[0] == mod[i][0] && data[1] == toupper(mod[i][1]))
+-	  sprintf (model, "%s %d", mod[i], atoi(data+2));
++	  snprintf (model, sizeof model, "%s %d", mod[i], atoi(data+2));
+     }
+     if (!strcmp(data,"CaptProf_color_matrix") && use_camera_wb) {
+       for (i=0; i < 9; i++)
+@@ -4053,7 +4053,7 @@
  	}
  	break;
-@@ -3565,7 +3565,7 @@ int CLASS parse_tiff_ifd (int base, int 
- 	parse_exif (base);
+       case 400:
+-	strcpy (make, "Sarnoff");
++	strlcpy (make, "Sarnoff", sizeof make);
+ 	maximum = 0xfff;
  	break;
-       case 46275:
+       case 29184: sony_offset = get4();  break;
+@@ -4110,7 +4110,7 @@
+ 	}
+ 	break;
+       case 46275:			/* Imacon tags */
 -	strcpy (make, "Imacon");
 +	strlcpy (make, "Imacon", sizeof make);
  	data_offset = ftell(ifp);
- 	raw_width = 4090;
- 	raw_height = len / raw_width / 2;
-@@ -3716,6 +3716,7 @@ void CLASS parse_external_jpeg()
+ 	ima_len = len;
+ 	break;
+@@ -4389,6 +4389,7 @@
  {
    char *file, *ext, *jname, *jfile, *jext;
    FILE *save=ifp;
@@ -47,13 +65,13 @@
  
    ext  = strrchr (ifname, '.');
    file = strrchr (ifname, '/');
-@@ -3723,13 +3724,15 @@ void CLASS parse_external_jpeg()
+@@ -4396,13 +4397,15 @@
    if (!file) file = ifname-1;
    file++;
-   if (strlen(ext) != 4 || ext-file != 8) return;
--  jname = malloc (strlen(ifname) + 1);
+   if (!ext || strlen(ext) != 4 || ext-file != 8) return;
+-  jname = (char *) malloc (strlen(ifname) + 1);
 +  ifsize = strlen(ifname) + 1;
-+  jname = malloc (ifsize);
++  jname = (char *) malloc (ifsize);
    merror (jname, "parse_external()");
 -  strcpy (jname, ifname);
 +  strlcpy (jname, ifname, ifsize);
@@ -66,26 +84,24 @@
      memcpy (jfile, file+4, 4);
      memcpy (jfile+4, file, 4);
    } else
-@@ -3932,8 +3935,8 @@ void CLASS parse_rollei()
-   if ((ts = mktime(&t)) > 0)
-     timestamp = ts;
-   data_offset += tx * ty * 2;
+@@ -4585,8 +4588,8 @@
+   t.tm_mon -= 1;
+   if (mktime(&t) > 0)
+     timestamp = mktime(&t);
 -  strcpy (make, "Rollei");
 -  strcpy (model,"d530flex");
 +  strlcpy (make, "Rollei", sizeof make);
 +  strlcpy (model,"d530flex", sizeof model);
+   write_thumb = rollei_thumb;
  }
  
- void CLASS parse_mos (int offset)
-@@ -4019,14 +4022,14 @@ void CLASS parse_phase_one (int base)
-   }
-   load_raw = tiff_data_compression < 3 ?
- 	phase_one_load_raw:phase_one_load_raw_c;
+@@ -4647,13 +4650,13 @@
+   load_raw = ph1.format < 3 ?
+ 	phase_one_load_raw : phase_one_load_raw_c;
+   maximum = 0xffff;
 -  strcpy (make, "Phase One");
 +  strlcpy (make, "Phase One", sizeof make);
    if (model[0]) return;
--  sprintf (model, "%dx%d", width, height);
-+  snprintf (model, sizeof model,  "%dx%d", width, height);
    switch (raw_height) {
 -    case 2060: strcpy (model,"LightPhase");	break;
 -    case 2682: strcpy (model,"H 10");		break;
@@ -98,7 +114,7 @@
    }
  }
  
-@@ -4081,8 +4084,8 @@ void CLASS parse_smal (int offset, int f
+@@ -4756,8 +4759,8 @@
    if (ver > 6) data_offset = get4();
    raw_height = height = get2();
    raw_width  = width  = get2();
@@ -109,7 +125,22 @@
    if (ver == 6) load_raw = smal_v6_load_raw;
    if (ver == 9) load_raw = smal_v9_load_raw;
  }
-@@ -4372,7 +4375,7 @@ void CLASS adobe_coeff()
+@@ -4833,11 +4836,11 @@
+ 	  if (!strcmp (name, "ISO"))
+ 	    iso_speed = atoi(value);
+ 	  if (!strcmp (name, "CAMMANUF"))
+-	    strcpy (make, value);
++	    strlcpy (make, value, sizeof make);
+ 	  if (!strcmp (name, "CAMMODEL"))
+-	    strcpy (model, value);
++	    strlcpy (model, value, sizeof model);
+ 	  if (!strcmp (name, "WB_DESC"))
+-	    strcpy (model2, value);
++	    strlcpy (model2, value, sizeof model2);
+ 	  if (!strcmp (name, "TIME"))
+ 	    timestamp = atoi(value);
+ 	  if (!strcmp (name, "EXPTIME"))
+@@ -5118,7 +5121,7 @@
    char name[130];
    int i, j;
  
@@ -117,17 +148,17 @@
 +  snprintf (name, sizeof name, "%s %s", make, model);
    for (i=0; i < sizeof table / sizeof *table; i++)
      if (!strncmp (name, table[i].prefix, strlen(table[i].prefix))) {
-       for (j=0; j < 12; j++)
-@@ -4525,14 +4528,14 @@ int CLASS identify (int will_decode)
+       if (table[i].black)
+@@ -5278,14 +5281,14 @@
      order = 0x4949;
      fseek (ifp, 38, SEEK_SET);
-     if (get4() == 2834 && get4() == 2834) {
+     if (get4() == 2834 && get4() == 2834 && get4() == 0 && get4() == 4096) {
 -      strcpy (model, "BMQ");
 +      strlcpy (model, "BMQ", sizeof model);
        flip = 3;
        goto nucore;
      }
-   } else if (!memcmp (head, "BR", 2)) {
+   } else if (!memcmp (head,"BR",2)) {
 -    strcpy (model, "RAW");
 +    strlcpy (model, "RAW", sizeof model);
  nucore:
@@ -136,10 +167,10 @@
      order = 0x4949;
      fseek (ifp, 10, SEEK_SET);
      data_offset += get4();
-@@ -4544,15 +4547,15 @@ nucore:
+@@ -5296,15 +5299,15 @@
        data_offset -= 0x1000;
      }
-   } else if (!memcmp (head+25, "ARECOYK", 7)) {
+   } else if (!memcmp (head+25,"ARECOYK",7)) {
 -    strcpy (make, "Contax");
 -    strcpy (model,"N Digital");
 +    strlcpy (make, "Contax", sizeof make);
@@ -153,10 +184,10 @@
 -    strcpy (model,"Fotoman Pixtura");
 +    strlcpy (make, "Logitech", sizeof make);
 +    strlcpy (model,"Fotoman Pixtura", sizeof model);
-   } else if (!memcmp (head, "FUJIFILM", 8)) {
-     fseek (ifp, 92, SEEK_SET);
-     parse_fuji (get4());
-@@ -4570,8 +4573,8 @@ nucore:
+   } else if (!memcmp (head,"FUJIFILM",8)) {
+     fseek (ifp, 84, SEEK_SET);
+     thumb_offset = get4();
+@@ -5332,8 +5335,8 @@
    else
      for (i=0; i < sizeof table / sizeof *table; i++)
        if (fsize == table[i].fsize) {
@@ -167,7 +198,7 @@
  	if (table[i].withjpeg)
  	  parse_external_jpeg();
        }
-@@ -4582,7 +4585,7 @@ nucore:
+@@ -5344,7 +5347,7 @@
  
    for (i=0; i < sizeof corp / sizeof *corp; i++)
      if (strstr (make, corp[i]))		/* Simplify company names */
@@ -176,7 +207,7 @@
    if (!strncmp (make,"KODAK",5))
      make[16] = model[16] = 0;
    cp = make + strlen(make);		/* Remove trailing spaces */
-@@ -4608,7 +4611,7 @@ nucore:
+@@ -5368,7 +5371,7 @@
      xmag = ymag = 1;
    }
    if (dng_version) {
@@ -185,16 +216,16 @@
      if (filters == UINT_MAX) filters = 0;
      if (!filters)
        colors = tiff_samples;
-@@ -4793,7 +4796,7 @@ canon_cr2:
-     pre_mul[2] = 1.018;
-   } else if (!strcmp(model,"E995")) {
- cp_e995:
--    strcpy (model, "E995");
-+    strlcpy (model, "E995", sizeof model);
-     height = 1540;
-     width  = 2064;
-     colors = 4;
-@@ -4807,7 +4810,7 @@ cp_e995:
+@@ -5542,7 +5545,7 @@
+     filters = 0xe1e1e1e1;
+     load_raw = nikon_load_raw;
+     if (!timestamp && nikon_e995())
+-      strcpy (model, "E995");
++      strlcpy (model, "E995", sizeof model);
+     if (strcmp(model,"E995")) {
+       filters = 0xb4b4b4b4;
+       simple_coeff(3);
+@@ -5559,7 +5562,7 @@
      pre_mul[2] = 1.040;
    } else if (!strcmp(model,"E2500")) {
  cp_e2500:
@@ -203,7 +234,7 @@
      height = 1204;
      width  = 1616;
      colors = 4;
-@@ -4819,11 +4822,11 @@ cp_e2500:
+@@ -5571,11 +5574,11 @@
      pre_mul[0] = 1.818;
      pre_mul[2] = 1.618;
      if ((i = nikon_3700()) == 2) {
@@ -219,78 +250,77 @@
        flip = 1;
        filters = 0x16161616;
        pre_mul[0] = 1.331;
-@@ -4839,8 +4842,8 @@ cp_e2500:
-     pre_mul[2] = 322;
-   } else if (!strcmp(model,"DiMAGE Z2")) {
- dimage_z2:
--    strcpy (make, "MINOLTA");
--    strcpy (model,"DiMAGE Z2");
-+    strlcpy (make, "MINOLTA", sizeof make);
-+    strlcpy (model,"DiMAGE Z2", sizeof model);
-     height = 1710;
+@@ -5586,8 +5589,8 @@
      width  = 2288;
      filters = 0x16161616;
-@@ -4866,7 +4869,7 @@ dimage_z2:
-     filters = 0x61616161;
-     load_raw = fuji_s2_load_raw;
-     black = 128;
--    strcpy (model+7, " S2Pro");
-+    strlcpy (model+7, " S2Pro", sizeof model -7);
-   } else if (!strcmp(model,"FinePix S3Pro")) {
-     height = 3583;
-     width  = 3584;
-@@ -4938,7 +4941,7 @@ dimage_z2:
+     if (!timestamp && minolta_z2()) {
+-      strcpy (make, "Minolta");
+-      strcpy (model,"DiMAGE Z2");
++      strlcpy (make, "Minolta", sizeof make);
++      strlcpy (model,"DiMAGE Z2", sizeof model);
+     }
+     if (make[0] == 'M')
+       load_raw = nikon_e2100_load_raw;
+@@ -5610,7 +5613,7 @@
+     maximum = 0x3e00;
+   } else if (!strncmp(model,"FinePix",7)) {
+     if (!strcmp(model+7,"S2Pro")) {
+-      strcpy (model+7," S2Pro");
++      strlcpy (model + 7, " S2Pro", sizeof model - 7);
+       height = 2144;
+       width  = 2880;
+       flip = 6;
+@@ -5658,7 +5661,7 @@
      } else if (!strncmp(model,"ALPHA",5) ||
  	       !strncmp(model,"DYNAX",5) ||
  	       !strncmp(model,"MAXXUM",6)) {
--      sprintf (model, "DYNAX%s", strchr (model,' '));
-+      snprintf (model, sizeof model, "DYNAX%s", strchr (model,' '));
+-      sprintf (model, "DYNAX %s", model+6 + (model[0]=='M'));
++      snprintf (model, sizeof model, "DYNAX %s", model+6 + (model[0]=='M'));
        load_raw = packed_12_load_raw;
        maximum = 0xffb;
      } else if (!strncmp(model,"DiMAGE G",8)) {
-@@ -5051,15 +5054,15 @@ konica_400z:
+@@ -5782,11 +5785,11 @@
        height -= 16;
        width  -= 28;
        maximum = 0xf5c0;
 -      strcpy (make, "ISG");
--      sprintf (model, "%dx%d", width, height);
 +      strlcpy (make, "ISG", sizeof make);
-+      snprintf (model, sizeof model, "%dx%d", width, height);
+       model[0] = 0;
      }
    } else if (!strcmp(make,"Imacon")) {
-     height = raw_height - 6;
-     width  = raw_width - 10;
-     data_offset += 6 + raw_width*12;
-     flip = height > width+10 ? 5:3;
 -    sprintf (model, "Ixpress %d-Mp", height*width/1000000);
 +    snprintf (model, sizeof model, "Ixpress %d-Mp", height*width/1000000);
-     filters = 0x61616161;
-     load_raw = unpacked_load_raw;
-     maximum = 0xffff;
-@@ -5078,11 +5081,11 @@ konica_400z:
-     if (tiff_data_compression == 99)
+     load_raw = imacon_full_load_raw;
+     if (filters) {
+       data_offset += (top_margin*raw_width + left_margin) * 2;
+@@ -5809,7 +5812,7 @@
        load_raw = lossless_jpeg_load_raw;
      maximum = 0x3fff;
--    strcpy (model, "Valeo");
-+    strlcpy (model, "Valeo", sizeof model);
      if (filters == 0) {
-       load_raw = leaf_load_raw;
-       maximum = 0xffff;
 -      strcpy (model, "Volare");
 +      strlcpy (model, "Volare", sizeof model);
-     }
-   } else if (!strcmp(make,"LEICA") || !strcmp(make,"Panasonic")) {
-     if (width == 3304) width -= 16;
-@@ -5219,7 +5222,7 @@ konica_400z:
- 	return 1;
-     }
+       load_raw = leaf_full_load_raw;
+       maximum = 0xffff;
+       raw_color = 0;
+@@ -5871,7 +5874,7 @@
+     load_raw = sony_load_raw;
+     filters = 0x9c9c9c9c;
+     colors = 4;
+-    strcpy (cdesc, "RGBE");
++    strlcpy (cdesc, "RGBE", sizeof cdesc);
+   } else if (!strcmp(model,"DSC-V3")) {
+     width = 3109;
+     left_margin = 59;
+@@ -5916,7 +5919,7 @@
+     if (load_raw == eight_bit_load_raw)
+ 	load_raw = kodak_easy_load_raw;
      if (strstr(model,"DC25")) {
 -      strcpy (model, "DC25");
 +      strlcpy (model, "DC25", sizeof model);
        data_offset = 15424;
      }
      if (!strncmp(model,"DC2",3)) {
-@@ -5238,19 +5241,19 @@ konica_400z:
+@@ -5935,19 +5938,19 @@
        pre_mul[3] = 1.036;
        load_raw = kodak_easy_load_raw;
      } else if (!strcmp(model,"Digital Camera 40")) {
@@ -312,22 +342,40 @@
 +      strlcpy (model, "DC120", sizeof model);
        height = 976;
        width  = 848;
-       if (tiff_data_compression == 7)
-@@ -5672,6 +5675,7 @@ int CLASS main (int argc, char **argv)
+       load_raw = (tiff_compress == 7)
+@@ -6063,7 +6066,7 @@
+     }
+   }
+   if (!model[0])
+-    sprintf (model, "%dx%d", width, height);
++    snprintf (model, sizeof model,  "%dx%d", width, height);
+   if (filters == UINT_MAX) filters = 0x94949494;
+   if (raw_color) adobe_coeff (make, model);
+   if (thumb_offset && !thumb_height) {
+@@ -6084,7 +6087,7 @@
+   if (flip == -1) flip = tiff_flip;
+   if (flip == -1) flip = 0;
+   if (!cdesc[0])
+-    strcpy (cdesc, colors == 3 ? "RGB":"GMCY");
++    strlcpy (cdesc, colors == 3 ? "RGB":"GMCY", sizeof cdesc);
+   if (!raw_height) raw_height = height;
+   if (!raw_width ) raw_width  = width;
+   if (filters && colors == 3)
+@@ -6374,6 +6377,7 @@
+   const char *write_ext;
    struct utimbuf ut;
-   const char *write_ext = ".ppm";
    FILE *ofp = stdout;
 +  size_t ofsize;
- #ifdef USE_LCMS
-   char *profile = NULL;
- #endif
-@@ -5844,14 +5848,15 @@ next:
-     convert_to_rgb();
-     if (flip) flip_image();
-     fclose(ifp);
--    ofname = malloc (strlen(ifname) + 16);
+   void (*write_image)(FILE *) = write_ppm;
+ #ifndef NO_LCMS
+   char *cam_profile = NULL, *out_profile = NULL;
+@@ -6649,16 +6653,17 @@
+       write_ext = ".psd";
+     else
+       write_ext = ".pgm\0.ppm\0.ppm\0.pam" + colors*5-5;
+-    ofname = (char *) malloc (strlen(ifname) + 16);
 +    ofsize = strlen(ifname) + 16;
-+    ofname = malloc (ofsize);
++    ofname = (char *) malloc (ofsize);
      merror (ofname, "main()");
      if (write_to_stdout)
 -      strcpy (ofname, "standard output");
@@ -336,7 +384,10 @@
 -      strcpy (ofname, ifname);
 +      strlcpy (ofname, ifname, ofsize);
        if ((cp = strrchr (ofname, '.'))) *cp = 0;
+       if (thumbnail_only)
+-	strcat (ofname, ".thumb");
 -      strcat (ofname, write_ext);
++        strlcat (ofname, ".thumb", ofsize);
 +      strlcat (ofname, write_ext, ofsize);
        ofp = fopen (ofname, "wb");
        if (!ofp) {

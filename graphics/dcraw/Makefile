@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2005/09/27 08:24:22 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2006/06/11 04:12:48 hugh Exp $
 
 COMMENT=	"digital camera RAW format conversion tool"
 
-PKGNAME=	dcraw-7.65
+PKGNAME=	dcraw-8.19
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.cybercom.net/~dcoffin/dcraw/
 
-MASTER_SITES=	http://bruno.rohee.free.fr/dcraw/${PKGNAME}/
+MASTER_SITES=	http://www.oxide.org/dcraw/${PKGNAME}/
 	
 DISTFILES=	dcraw.c dcraw.1
 DIST_SUBDIR=	${PKGNAME}
@@ -32,7 +32,7 @@ do-extract:
 
 do-build:
 	${CC} ${CFLAGS} -c -o ${WRKBUILD}/dcraw.o -I${PREFIX}/include \
-		${WRKSRC}/dcraw.c
+		-DNO_LCMS ${WRKSRC}/dcraw.c
 	${CC} ${CFLAGS} -o ${WRKBUILD}/dcraw -ljpeg -lm -L${PREFIX}/lib \
 		${WRKBUILD}/dcraw.o
 
