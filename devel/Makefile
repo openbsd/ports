@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.375 2006/06/03 07:22:33 steven Exp $
+# $OpenBSD: Makefile,v 1.376 2006/06/11 19:12:03 sturm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -373,6 +373,7 @@
      SUBDIR += py-unit,no_x11
      SUBDIR += pygame
      SUBDIR += rats
+     SUBDIR += ruby-gems
      SUBDIR += ruby-ncurses
      SUBDIR += scons
      SUBDIR += sdl
