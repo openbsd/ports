@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.14 2006/06/11 18:24:11 steven Exp $
+--- doc/Makefile.in.orig	Sun May 21 10:40:09 2006
++++ doc/Makefile.in	Sun May 21 10:40:16 2006
+@@ -271,7 +271,7 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = devhelp examples
++SUBDIRS = examples
+ 
+ # The top-level SGML file.
+ DOC_MAIN_XML_FILE = gnome-xml.xml

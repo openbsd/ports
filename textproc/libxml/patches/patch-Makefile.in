@@ -1,6 +1,6 @@
---- Makefile.in.orig	Thu Jan  5 16:39:09 2006
-+++ Makefile.in	Sun Mar  5 12:00:07 2006
-@@ -524,7 +524,7 @@ testModule_DEPENDENCIES = $(DEPS)
+--- Makefile.in.orig	Fri Apr 28 18:32:52 2006
++++ Makefile.in	Sun May 21 10:21:45 2006
+@@ -522,7 +522,7 @@ testModule_DEPENDENCIES = $(DEPS)
  testModule_LDADD = $(LDADDS)
  noinst_LTLIBRARIES = testdso.la
  testdso_la_SOURCES = testdso.c
@@ -9,7 +9,7 @@
  testapi_SOURCES = testapi.c
  testapi_LDFLAGS = 
  testapi_DEPENDENCIES = $(DEPS)
-@@ -553,7 +553,7 @@ pkgconfig_DATA = libxml-2.0.pc
+@@ -551,7 +551,7 @@ pkgconfig_DATA = libxml-2.0.pc
  # Install the tests program sources as examples 
  #
  BASE_DIR = $(datadir)/doc
@@ -18,7 +18,7 @@
  EXAMPLES_DIR = $(BASE_DIR)/$(DOC_MODULE)/examples
  all: config.h
  	$(MAKE) $(AM_MAKEFLAGS) all-recursive
-@@ -1909,6 +1909,7 @@ SVGtests : xmllint$(EXEEXT)
+@@ -1919,6 +1919,7 @@ SVGtests : xmllint$(EXEEXT)
  	      grep "MORY ALLO" .memdump  | grep -v "MEMORY ALLOCATED : 0";\
  	  else \
  	      echo Testing $$name ; \
