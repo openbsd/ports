@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/01/22 23:21:47 sturm Exp $
+# $OpenBSD: Makefile,v 1.13 2006/06/11 18:57:11 sturm Exp $
 
 COMMENT=		"Ruby interface to LBL Packet Capture library"
 
@@ -21,6 +21,8 @@ WANTLIB=		c m pcap
 MASTER_SITES=		http://www.goto.info.waseda.ac.jp/~fukusima/ruby/
 
 MODULES=		lang/ruby
+
+LIB_DEPENDS=		ruby.1.84::lang/ruby
 
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/01/22 23:21:46 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2006/06/11 18:57:11 sturm Exp $
 
 COMMENT=	"Ruby binding to Gdk-imlib"
 
@@ -19,7 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ruby-gnome/}
 
 MODULES=	lang/ruby
-LIB_DEPENDS=	gdk_imlib.19::graphics/imlib
+LIB_DEPENDS=	gdk_imlib.19::graphics/imlib \
+		ruby.1.84::lang/ruby
 RUN_DEPENDS=	:ruby-gtk->=0.31:x11/ruby-gtk
 WANTLIB=	c gmodule iconv intl gtk Xmu jpeg ungif \
 		Xext Xi m X11 glib z gdk tiff png
