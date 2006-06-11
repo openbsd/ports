@@ -14,3 +14,6 @@ With this, one can write web applications that support drag-and-drop,
 or sortable lists, provided the web browser has decent javascript
 support (which seems to include at least mozilla, firefox, opera, IE, and
 konqueror these days).
+
+This new version includes a more recent version of the aculous scripts,
+including sortable trees.

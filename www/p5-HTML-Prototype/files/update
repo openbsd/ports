@@ -1,0 +1,28 @@
+#! /usr/bin/perl
+
+use strict;
+use File::Copy;
+
+my $pdir = $ENV{'PROTODIR'}.'/lib/HTML/Prototype';
+chdir($pdir) or die "$pdir: $!";
+my $sdir = $ENV{'ACULOUSDIR'};
+
+while (@ARGV >= 2) {
+	my $stem = shift;
+	my $js = shift;
+	move("$stem.pm", "$stem.pm.bak");
+	open my $s, '<', "$stem.pm.bak" or die "$stem.pm.bak: $!";
+	open my $d, '>', "$stem.pm"  or die "$stem.pm: $!";
+	local $_;
+	while (<$s>) {
+		print $d $_;
+		last if m/^\_\_DATA\_\_$/;
+	}
+	close $s;
+	open my $s2, '<', "$sdir/$js.js" or die "$js.js: $!";
+	while (<$s2>) {
+		print $d $_;
+	}
+	close $s2;
+	close $d;
+}
