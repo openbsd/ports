@@ -1,73 +1,121 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 00:50:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/06/11 18:22:06 naddy Exp $
+%%SHARED%%
 bin/411toppm
 bin/anytopnm
 bin/asciitopgm
 bin/atktopbm
 bin/bioradtopgm
+bin/bmptopnm
 bin/bmptoppm
 bin/brushtopbm
 bin/cmuwmtopbm
+bin/ddbugtopbm
+bin/escp2topbm
 bin/eyuvtoppm
+bin/fiascotopnm
 bin/fitstopnm
 bin/fstopgm
 bin/g3topbm
+bin/gemtopbm
 bin/gemtopnm
 bin/giftopnm
 bin/gouldtoppm
+bin/hdifftopam
 bin/hipstopgm
+@comment bin/hpcdtoppm
 bin/icontopbm
 bin/ilbmtoppm
 bin/imgtoppm
+bin/infotopam
 bin/jbigtopnm
+bin/jpeg2ktopam
 bin/jpegtopnm
 bin/leaftoppm
 bin/lispmtopgm
 bin/macptopbm
+bin/manweb
 bin/mdatopbm
 bin/mgrtopbm
+bin/mrftopbm
 bin/mtvtoppm
 bin/neotoppm
 bin/palmtopnm
+bin/pamarith
 bin/pamchannel
+bin/pamcomp
 bin/pamcut
 bin/pamdeinterlace
+bin/pamdice
+bin/pamditherbw
+bin/pamedge
+bin/pamendian
+bin/pamenlarge
 bin/pamfile
+bin/pamflip
+bin/pamfunc
+bin/pamgauss
+bin/pamlookup
+bin/pammasksharpen
 bin/pamoil
+bin/pamperspective
+bin/pampop9
+bin/pamscale
+bin/pamseq
+bin/pamsharpmap
+bin/pamsharpness
+bin/pamslice
+bin/pamstack
+bin/pamstereogram
 bin/pamstretch
 bin/pamstretch-gen
+bin/pamsumm
+bin/pamsummcol
+bin/pamtodjvurle
+bin/pamtohdiff
+bin/pamtohtmltbl
+bin/pamtojpeg2k
+bin/pamtopfm
 bin/pamtopnm
+bin/pamtotga
+bin/pamtouil
 bin/pbmclean
 bin/pbmlife
 bin/pbmmake
 bin/pbmmask
-bin/pbmmerge
 bin/pbmpage
 bin/pbmpscale
 bin/pbmreduce
 bin/pbmtext
+bin/pbmtextps
 bin/pbmto10x
 bin/pbmto4425
 bin/pbmtoascii
 bin/pbmtoatk
 bin/pbmtobbnbg
 bin/pbmtocmuwm
+bin/pbmtodjvurle
 bin/pbmtoepsi
 bin/pbmtoepson
+bin/pbmtoescp2
 bin/pbmtog3
 bin/pbmtogem
 bin/pbmtogo
+bin/pbmtoibm23xx
 bin/pbmtoicon
 bin/pbmtolj
 bin/pbmtoln03
 bin/pbmtolps
 bin/pbmtomacp
+bin/pbmtomatrixorbital
 bin/pbmtomda
 bin/pbmtomgr
+bin/pbmtomrf
 bin/pbmtonokia
 bin/pbmtopgm
 bin/pbmtopi3
 bin/pbmtopk
 bin/pbmtoplot
+bin/pbmtoppa
 bin/pbmtopsg3
 bin/pbmtoptx
 bin/pbmtowbmp
@@ -76,23 +124,29 @@ bin/pbmtoxbm
 bin/pbmtoybm
 bin/pbmtozinc
 bin/pbmupc
-bin/pcdindex
+bin/pc1toppm
+bin/pcdovtoppm
 bin/pcxtoppm
+bin/pfmtopam
+bin/pgmabel
 bin/pgmbentley
 bin/pgmcrater
 bin/pgmedge
 bin/pgmenhance
 bin/pgmhist
 bin/pgmkernel
-bin/pgmmerge
+bin/pgmminkowski
+bin/pgmmorphconv
 bin/pgmnoise
 bin/pgmnorm
+bin/pgmoil
 bin/pgmramp
 bin/pgmslice
 bin/pgmtexture
 bin/pgmtofs
 bin/pgmtolispm
 bin/pgmtopbm
+bin/pgmtopgm
 bin/pgmtoppm
 bin/pi1toppm
 bin/pi3topbm
@@ -116,11 +170,13 @@ bin/pnmgamma
 bin/pnmhisteq
 bin/pnmhistmap
 bin/pnmindex
+bin/pnminterp
 bin/pnminvert
 bin/pnmmargin
-bin/pnmmerge
 bin/pnmmontage
 bin/pnmnlfilt
+bin/pnmnoraw
+bin/pnmnorm
 bin/pnmpad
 bin/pnmpaste
 bin/pnmpsnr
@@ -132,16 +188,21 @@ bin/pnmscalefixed
 bin/pnmshear
 bin/pnmsmooth
 bin/pnmsplit
+bin/pnmstitch
 bin/pnmtile
 bin/pnmtoddif
+bin/pnmtofiasco
 bin/pnmtofits
 bin/pnmtojbig
 bin/pnmtojpeg
 bin/pnmtopalm
+bin/pnmtopclxl
 bin/pnmtoplainpnm
 bin/pnmtopng
+bin/pnmtopnm
 bin/pnmtops
 bin/pnmtorast
+bin/pnmtorle
 bin/pnmtosgi
 bin/pnmtosir
 bin/pnmtotiff
@@ -159,28 +220,30 @@ bin/ppmdither
 bin/ppmfade
 bin/ppmflash
 bin/ppmforge
+bin/ppmglobe
 bin/ppmhist
 bin/ppmlabel
 bin/ppmmake
-bin/ppmmerge
 bin/ppmmix
 bin/ppmnorm
 bin/ppmntsc
 bin/ppmpat
 bin/ppmquant
 bin/ppmquantall
-bin/ppmqvga
 bin/ppmrainbow
 bin/ppmrelief
+bin/ppmrough
 bin/ppmshadow
 bin/ppmshift
 bin/ppmspread
 bin/ppmtoacad
+bin/ppmtoarbtxt
 bin/ppmtobmp
 bin/ppmtoeyuv
 bin/ppmtogif
 bin/ppmtoicr
 bin/ppmtoilbm
+bin/ppmtojpeg
 bin/ppmtoleaf
 bin/ppmtolj
 bin/ppmtomap
@@ -193,16 +256,18 @@ bin/ppmtopi1
 bin/ppmtopict
 bin/ppmtopj
 bin/ppmtopjxl
+bin/ppmtoppm
 bin/ppmtopuzz
 bin/ppmtorgb3
 bin/ppmtosixel
-bin/ppmtotga
+bin/ppmtoterm
 bin/ppmtouil
 bin/ppmtowinicon
 bin/ppmtoxpm
 bin/ppmtoyuv
 bin/ppmtoyuvsplit
 bin/ppmtv
+bin/ppmwheel
 bin/psidtopgm
 bin/pstopnm
 bin/qrttoppm
@@ -210,6 +275,7 @@ bin/rasttopnm
 bin/rawtopgm
 bin/rawtoppm
 bin/rgb3toppm
+bin/rletopnm
 bin/sbigtopgm
 bin/sgitopnm
 bin/sirtopnm
@@ -231,262 +297,29 @@ bin/ybmtopbm
 bin/yuvsplittoppm
 bin/yuvtoppm
 bin/zeisstopnm
+include/bitio.h
+include/colorname.h
+include/mallocvar.h
+include/nstring.h
 include/pam.h
 include/pammap.h
 include/pbm.h
+include/pbmfont.h
 include/pgm.h
 include/pm.h
 include/pm_config.h
-include/pm_shhopt.h
+include/pm_gamma.h
+include/pm_system.h
 include/pnm.h
 include/ppm.h
 include/ppmcmap.h
-include/ppmdraw.h
 include/ppmfloyd.h
-lib/libpbm.a
-lib/libpgm.a
-lib/libpnm.a
-lib/libppm.a
-@man man/man1/411toppm.1
-@man man/man1/anytopnm.1
-@man man/man1/asciitopgm.1
-@man man/man1/atktopbm.1
-@man man/man1/bioradtopgm.1
-@man man/man1/bmptoppm.1
-@man man/man1/brushtopbm.1
-@man man/man1/cmuwmtopbm.1
-@man man/man1/eyuvtoppm.1
-@man man/man1/fitstopnm.1
-@man man/man1/fstopgm.1
-@man man/man1/g3topbm.1
-@man man/man1/giftopnm.1
-@man man/man1/gouldtoppm.1
-@man man/man1/hipstopgm.1
-@man man/man1/icontopbm.1
-@man man/man1/ilbmtoppm.1
-@man man/man1/imgtoppm.1
-@man man/man1/jbigtopnm.1
-@man man/man1/jpegtopnm.1
-@man man/man1/leaftoppm.1
-@man man/man1/lispmtopgm.1
-@man man/man1/macptopbm.1
-@man man/man1/mdatopbm.1
-@man man/man1/mgrtopbm.1
-@man man/man1/mtvtoppm.1
-@man man/man1/neotoppm.1
-@man man/man1/netpbm.1
-@man man/man1/palmtopnm.1
-@man man/man1/pamchannel.1
-@man man/man1/pamcut.1
-@man man/man1/pamdeinterlace.1
-@man man/man1/pamfile.1
-@man man/man1/pamoil.1
-@man man/man1/pamstretch-gen.1
-@man man/man1/pamstretch.1
-@man man/man1/pamtopnm.1
-@man man/man1/pbmclean.1
-@man man/man1/pbmlife.1
-@man man/man1/pbmmake.1
-@man man/man1/pbmmask.1
-@man man/man1/pbmpage.1
-@man man/man1/pbmpscale.1
-@man man/man1/pbmreduce.1
-@man man/man1/pbmtext.1
-@man man/man1/pbmto10x.1
-@man man/man1/pbmto4425.1
-@man man/man1/pbmtoascii.1
-@man man/man1/pbmtoatk.1
-@man man/man1/pbmtobbnbg.1
-@man man/man1/pbmtocmuwm.1
-@man man/man1/pbmtoepsi.1
-@man man/man1/pbmtoepson.1
-@man man/man1/pbmtog3.1
-@man man/man1/pbmtogem.1
-@man man/man1/pbmtogo.1
-@man man/man1/pbmtoicon.1
-@man man/man1/pbmtolj.1
-@man man/man1/pbmtoln03.1
-@man man/man1/pbmtolps.1
-@man man/man1/pbmtomacp.1
-@man man/man1/pbmtomda.1
-@man man/man1/pbmtomgr.1
-@man man/man1/pbmtonokia.1
-@man man/man1/pbmtopgm.1
-@man man/man1/pbmtopi3.1
-@man man/man1/pbmtopk.1
-@man man/man1/pbmtoplot.1
-@man man/man1/pbmtopsg3.1
-@man man/man1/pbmtoptx.1
-@man man/man1/pbmtowbmp.1
-@man man/man1/pbmtox10bm.1
-@man man/man1/pbmtoxbm.1
-@man man/man1/pbmtoybm.1
-@man man/man1/pbmtozinc.1
-@man man/man1/pbmupc.1
-@man man/man1/pcdindex.1
-@man man/man1/pcxtoppm.1
-@man man/man1/pgmbentley.1
-@man man/man1/pgmcrater.1
-@man man/man1/pgmedge.1
-@man man/man1/pgmenhance.1
-@man man/man1/pgmhist.1
-@man man/man1/pgmkernel.1
-@man man/man1/pgmnoise.1
-@man man/man1/pgmnorm.1
-@man man/man1/pgmramp.1
-@man man/man1/pgmslice.1
-@man man/man1/pgmtexture.1
-@man man/man1/pgmtofs.1
-@man man/man1/pgmtolispm.1
-@man man/man1/pgmtopbm.1
-@man man/man1/pgmtoppm.1
-@man man/man1/pi1toppm.1
-@man man/man1/pi3topbm.1
-@man man/man1/picttoppm.1
-@man man/man1/pjtoppm.1
-@man man/man1/pktopbm.1
-@man man/man1/pngtopnm.1
-@man man/man1/pnmalias.1
-@man man/man1/pnmarith.1
-@man man/man1/pnmcat.1
-@man man/man1/pnmcolormap.1
-@man man/man1/pnmcomp.1
-@man man/man1/pnmconvol.1
-@man man/man1/pnmcrop.1
-@man man/man1/pnmcut.1
-@man man/man1/pnmdepth.1
-@man man/man1/pnmenlarge.1
-@man man/man1/pnmfile.1
-@man man/man1/pnmflip.1
-@man man/man1/pnmgamma.1
-@man man/man1/pnmhisteq.1
-@man man/man1/pnmhistmap.1
-@man man/man1/pnmindex.1
-@man man/man1/pnminvert.1
-@man man/man1/pnmmargin.1
-@man man/man1/pnmmontage.1
-@man man/man1/pnmnlfilt.1
-@man man/man1/pnmpad.1
-@man man/man1/pnmpaste.1
-@man man/man1/pnmpsnr.1
-@man man/man1/pnmquant.1
-@man man/man1/pnmremap.1
-@man man/man1/pnmrotate.1
-@man man/man1/pnmscale.1
-@man man/man1/pnmscalefixed.1
-@man man/man1/pnmshear.1
-@man man/man1/pnmsmooth.1
-@man man/man1/pnmsplit.1
-@man man/man1/pnmtile.1
-@man man/man1/pnmtoddif.1
-@man man/man1/pnmtofits.1
-@man man/man1/pnmtojbig.1
-@man man/man1/pnmtojpeg.1
-@man man/man1/pnmtopalm.1
-@man man/man1/pnmtoplainpnm.1
-@man man/man1/pnmtopng.1
-@man man/man1/pnmtops.1
-@man man/man1/pnmtorast.1
-@man man/man1/pnmtosgi.1
-@man man/man1/pnmtosir.1
-@man man/man1/pnmtotiff.1
-@man man/man1/pnmtotiffcmyk.1
-@man man/man1/pnmtoxwd.1
-@man man/man1/ppm3d.1
-@man man/man1/ppmbrighten.1
-@man man/man1/ppmchange.1
-@man man/man1/ppmcie.1
-@man man/man1/ppmcolormask.1
-@man man/man1/ppmcolors.1
-@man man/man1/ppmdim.1
-@man man/man1/ppmdist.1
-@man man/man1/ppmdither.1
-@man man/man1/ppmfade.1
-@man man/man1/ppmflash.1
-@man man/man1/ppmforge.1
-@man man/man1/ppmhist.1
-@man man/man1/ppmlabel.1
-@man man/man1/ppmmake.1
-@man man/man1/ppmmix.1
-@man man/man1/ppmnorm.1
-@man man/man1/ppmntsc.1
-@man man/man1/ppmpat.1
-@man man/man1/ppmquant.1
-@man man/man1/ppmquantall.1
-@man man/man1/ppmqvga.1
-@man man/man1/ppmrainbow.1
-@man man/man1/ppmrelief.1
-@man man/man1/ppmshadow.1
-@man man/man1/ppmshift.1
-@man man/man1/ppmspread.1
-@man man/man1/ppmtoacad.1
-@man man/man1/ppmtobmp.1
-@man man/man1/ppmtoeyuv.1
-@man man/man1/ppmtogif.1
-@man man/man1/ppmtoicr.1
-@man man/man1/ppmtoilbm.1
-@man man/man1/ppmtoleaf.1
-@man man/man1/ppmtolj.1
-@man man/man1/ppmtomap.1
-@man man/man1/ppmtomitsu.1
-@man man/man1/ppmtompeg.1
-@man man/man1/ppmtoneo.1
-@man man/man1/ppmtopcx.1
-@man man/man1/ppmtopgm.1
-@man man/man1/ppmtopi1.1
-@man man/man1/ppmtopict.1
-@man man/man1/ppmtopj.1
-@man man/man1/ppmtopjxl.1
-@man man/man1/ppmtopuzz.1
-@man man/man1/ppmtorgb3.1
-@man man/man1/ppmtosixel.1
-@man man/man1/ppmtotga.1
-@man man/man1/ppmtouil.1
-@man man/man1/ppmtowinicon.1
-@man man/man1/ppmtoxpm.1
-@man man/man1/ppmtoyuv.1
-@man man/man1/ppmtoyuvsplit.1
-@man man/man1/ppmtv.1
-@man man/man1/psidtopgm.1
-@man man/man1/pstopnm.1
-@man man/man1/qrttoppm.1
-@man man/man1/rasttopnm.1
-@man man/man1/rawtopgm.1
-@man man/man1/rawtoppm.1
-@man man/man1/rgb3toppm.1
-@man man/man1/sbigtopgm.1
-@man man/man1/sgitopnm.1
-@man man/man1/sirtopnm.1
-@man man/man1/sldtoppm.1
-@man man/man1/spctoppm.1
-@man man/man1/spottopgm.1
-@man man/man1/sputoppm.1
-@man man/man1/tgatoppm.1
-@man man/man1/thinkjettopbm.1
-@man man/man1/tifftopnm.1
-@man man/man1/wbmptopbm.1
-@man man/man1/winicontoppm.1
-@man man/man1/xbmtopbm.1
-@man man/man1/ximtoppm.1
-@man man/man1/xpmtoppm.1
-@man man/man1/xvminitoppm.1
-@man man/man1/xwdtopnm.1
-@man man/man1/ybmtopbm.1
-@man man/man1/yuvsplittoppm.1
-@man man/man1/yuvtoppm.1
-@man man/man1/zeisstopnm.1
-@man man/man3/libpbm.3
-@man man/man3/libpgm.3
-@man man/man3/libpnm.3
-@man man/man3/libppm.3
-@man man/man5/pam.5
-@man man/man5/pbm.5
-@man man/man5/pgm.5
-@man man/man5/pnm.5
-@man man/man5/ppm.5
+include/shhopt.h
+lib/libnetpbm.a
 share/netpbm/
 share/netpbm/palmcolor8.map
 share/netpbm/palmgray1.map
 share/netpbm/palmgray2.map
 share/netpbm/palmgray4.map
-%%SHARED%%
+share/netpbm/pcxstd.ppm
+share/netpbm/rgb.txt

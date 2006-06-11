@@ -1,127 +1,27 @@
-$OpenBSD: patch-Makefile_common,v 1.3 2005/12/29 15:45:43 steven Exp $
---- Makefile.common.orig	Sun Jan 27 21:09:03 2002
-+++ Makefile.common	Thu Dec 29 15:53:24 2005
-@@ -176,25 +176,24 @@ $(MERGENAME): $(MERGENAME).o $(MERGE_OBJ
- 
- $(LIBOBJECTS): %.o: $(SRCSUBDIR)/%.c $(HEADERLINKS)
- # Note that the user may have configured -I options into CFLAGS.
-+	$(CC) -c $(INCLUDE) $(CFLAGS) $(CDEBUG) -o $@ $<
-+
-+$(SHLIBOBJECTS): %.lo: $(SRCSUBDIR)/%.c $(HEADERLINKS)
- 	$(CC) -c $(INCLUDE) $(CFLAGS) $(CFLAGS_SHLIB) $(CDEBUG) -o $@ $<
- 
- SONAME = lib$(LIBROOT).so.$(MAJ)
- 
- ifeq ($(NETPBMLIBTYPE),unixshared)
- # The libxxx.so link is needed to link the executables.
--lib$(LIBROOT).$(NETPBMLIBSUFFIX): $(SONAME)
--	rm -f $@
--	$(SYMLINK) $< $@
--# The $(SONAME) link is only needed to test the programs without
--# installing the libraries (in that case, you also need to direct the 
--# dynamic linker to the source directories, e.g. set LD_LIBRARY_PATH).
--$(SONAME): lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(MAJ).$(MIN)
--	rm -f $@
--	$(SYMLINK) $< $@
--lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(MAJ).$(MIN): \
--    $(LIBOBJECTS) $(LIBOBJECTS_X) $(LIBLIBS) $(LIBOPT)
--	$(LD) $(LDSHLIB) -o $@ $(LIBOBJECTS) $(LIBOBJECTS_X) \
--          `$(LIBOPT) $(LIBLIBS)` -lc $(CDEBUG)
-+libpbm.$(NETPBMLIBSUFFIX): libpbm.$(NETPBMLIBSUFFIX).$(LIBpbm_VERSION)
-+libpgm.$(NETPBMLIBSUFFIX): libpgm.$(NETPBMLIBSUFFIX).$(LIBpgm_VERSION)
-+libpnm.$(NETPBMLIBSUFFIX): libpnm.$(NETPBMLIBSUFFIX).$(LIBpnm_VERSION)
-+libppm.$(NETPBMLIBSUFFIX): libppm.$(NETPBMLIBSUFFIX).$(LIBppm_VERSION)
-+
-+lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(SOVER): \
-+    $(SHLIBOBJECTS) $(LIBOBJECTS_X) $(LIBLIBS) $(LIBOPT)
-+	$(LD) $(LDSHLIB) -o $@ $(SHLIBOBJECTS) $(LIBOBJECTS_X) \
-+          `$(LIBOPT) $(LIBLIBS)` $(LDFLAGS) $(CDEBUG)
- endif
- 
- ifeq ($(NETPBMLIBTYPE),dll)
-@@ -283,7 +282,7 @@ endif
- install.merge.common: $(MERGENAME) $(NOMERGEBINARIES) install.script
- 	cd $(INSTALLBINARIES) ; rm -f $(BINARIES) $(MERGE_ALIASES)
- ifneq ($(MERGENAME)x,x)
+$OpenBSD: patch-Makefile_common,v 1.4 2006/06/11 18:22:06 naddy Exp $
+--- Makefile.common.orig	Tue May 30 22:43:07 2006
++++ Makefile.common	Tue May 30 22:51:22 2006
+@@ -345,19 +345,19 @@ install.bin: $(BINARIES:%=%_installbin) 
+ INSTALLBIN_TARGETS = $(BINARIES:%=%_installbin) netpbm_installbin
+ .PHONY: $(INSTALLBIN_TARGETS)
+ $(INSTALLBIN_TARGETS): $(PKGDIR)/bin
 -	$(INSTALL) -c $(STRIPFLAG) -m $(INSTALL_PERM_BIN) \
-+	${BSD_INSTALL_PROGRAM} \
-             $(MERGENAME) $(INSTALLBINARIES)
- 	cd $(INSTALLBINARIES) ; \
- 	   for i in $(MERGEBINARIES) $(MERGE_ALIASES) ; \
-@@ -293,7 +292,7 @@ endif
- ifneq ($(NOMERGEBINARIES)x,x)
- 	for x in $(NOMERGEBINARIES); \
-         do \
--           $(INSTALL) -c $(STRIPFLAG) -m $(INSTALL_PERM_BIN) \
-+           ${BSD_INSTALL_PROGRAM} \
-                $$x $(INSTALLBINARIES); \
- 	done
- endif
-@@ -304,7 +303,7 @@ install.bin.common: $(BINARIES) install.
- # Make and Install know that pbmmake.exe counts as pbmmake.
- 	for x in $(BINARIES); \
- 	do \
--	   $(INSTALL) -c $(STRIPFLAG) -m $(INSTALL_PERM_BIN) \
-+	   ${BSD_INSTALL_PROGRAM} \
-                $$x $(INSTALLBINARIES); \
- 	done
++	$(BSD_INSTALL_PROGRAM) \
+ 	  $(@:%_installbin=%) $<
  
-@@ -313,7 +312,7 @@ install.script: $(SCRIPTS)
- ifneq ($(SCRIPTS)x,x)
- 	for x in $(SCRIPTS); \
- 	do \
--	   $(INSTALL) -c -m $(INSTALL_PERM_BIN) $(SRCSUBDIR)/$$x \
-+	   ${BSD_INSTALL_SCRIPT} $(SRCSUBDIR)/$$x \
-                $(INSTALLSCRIPTS); \
- 	done
- endif
-@@ -350,7 +349,7 @@ install.hdr:
- # directory when you compile your programs.
- 	for x in $(INTERFACE_HEADERS); \
- 	do \
--	   $(INSTALL) -c -m $(INSTALL_PERM_HDR) $(SRCSUBDIR)/$$x \
-+	   ${BSD_INSTALL_DATA} $(SRCSUBDIR)/$$x \
-                $(INSTALLHDRS); \
- 	done
+ $(SCRIPTS:%=%_installscript): $(PKGDIR)/bin
+-	$(INSTALL) -c -m $(INSTALL_PERM_BIN) \
++	$(BSD_INSTALL_SCRIPT) \
+ 	  $(SRCDIR)/$(SUBDIR)/$(@:%_installscript=%) $<
  
-@@ -358,36 +357,19 @@ install.hdr:
- #
- .PHONY: install.staticlib
- install.staticlib: lib$(LIBROOT).$(STATICLIBSUFFIX) 
--	$(INSTALL) -c -m $(INSTALL_PERM_LIBS) $< $(INSTALLSTATICLIBS)/$<
-+	${BSD_INSTALL_DATA} $< $(INSTALLSTATICLIBS)/$<
+ .PHONY: install.data
+ install.data: $(DATAFILES:%=%_installdata) $(SUBDIRS:%=%/install.data)
  
--# Install a shared library stub -- the ".so" file used at link time to
--# prepare a program for dynamically linking a library at run time 
- .PHONY: install.sharedlibstub
--ifeq ($(NETPBMLIBTYPE),unixshared)
--# install the link-time (.so) links to the runtime libraries
--install.sharedlibstub: 
--	cd $(INSTALLSTATICLIBS) ; \
--          rm -f lib$(LIBROOT).$(NETPBMLIBSUFFIX); \
--          $(SYMLINK) $(INSTALLLIBS)/lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(MAJ) \
--            lib$(LIBROOT).$(NETPBMLIBSUFFIX)
--else
--# I have no idea what link-time stuff is required for other library types.
--# static libraries are of course entirely link-time and are handled
--# by the install.staticlib target.
- install.sharedlibstub:
--endif
+ .PHONY: $(DATAFILES:%=%_installdata) 
+-$(DATAFILES:%=%_installdata): $(PKGDIR)/misc
+-	$(INSTALL) -c -m $(INSTALL_PERM_DATA) \
++$(DATAFILES:%=%_installdata): $(PKGDIR)/share/netpbm
++	$(BSD_INSTALL_DATA) \
+ 	  $(SRCDIR)/$(SUBDIR)/$(@:%_installdata=%) $<
  
- # Install a shared library
- #
- .PHONY: install.lib.common
- ifeq ($(NETPBMLIBTYPE),unixshared)
- # install a Unix-style shared library
--install.lib.common: lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(MAJ).$(MIN) 
--	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(MAJ).*
--	$(INSTALL) -c -m $(INSTALL_PERM_LIBD) $< $(INSTALLLIBS)
--	cd $(INSTALLLIBS) ; \
--          rm -f lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(MAJ); \
--          $(SYMLINK) $< lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(MAJ)
-+install.lib.common: lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(SOVER)
-+	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).$(NETPBMLIBSUFFIX).*
-+	${BSD_INSTALL_DATA} $< $(INSTALLLIBS)
- endif
- ifeq ($(NETPBMLIBTYPE),dll)
- #install a Windows DLL shared library
+ 

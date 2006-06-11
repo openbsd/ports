@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-hpcd,v 1.2 2004/09/15 00:50:10 espie Exp $
-bin/hpcdtoppm
-@man man/man1/hpcdtoppm.1

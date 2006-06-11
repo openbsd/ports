@@ -1,34 +1,12 @@
-$OpenBSD: patch-GNUmakefile,v 1.2 2002/03/01 22:49:20 brad Exp $
---- GNUmakefile.orig	Thu Jan 10 18:28:24 2002
-+++ GNUmakefile	Fri Mar  1 17:13:24 2002
-@@ -71,7 +71,7 @@ SUBDIRS = pbm pgm ppm pnm
- 
- default: $(DEFAULT_TARGET)
- 
--all: nonmerge
-+all: default
- 
- .PHONY: nonmerge
- nonmerge: $(SUBDIRS)
-@@ -139,7 +139,6 @@ install.lib: $(INSTALLLIBS)
- 	for i in $(SUBDIRS) ; do \
- 	    $(MAKE) -C $$i -f $(SRCDIR)/$$i/Makefile install.lib ; \
- 	done
--	$(SRCDIR)/buildtools/try_ldconfig
- endif
- 
- 
-@@ -159,10 +158,10 @@ install-dev: install.hdr install.staticl
- install.hdr: $(INSTALLHDRS) $(SRCDIR)/pm_config.h
- # See notes in Makefile.common about how $(INSTALL) varies from one 
- # platform to another.
+$OpenBSD: patch-GNUmakefile,v 1.3 2006/06/11 18:22:06 naddy Exp $
+--- GNUmakefile.orig	Sat Oct 16 22:27:50 2004
++++ GNUmakefile	Wed May 31 01:16:56 2006
+@@ -312,7 +312,7 @@ install-dev: install.hdr install.staticl
+ install.hdr: $(PKGDIR)/include
+ 	$(MAKE) -C lib -f $(SRCDIR)/lib/Makefile \
+ 	    SRCDIR=$(SRCDIR) BUILDDIR=$(BUILDDIR) install.hdr
 -	$(INSTALL) -c -m $(INSTALL_PERM_HDR) \
-+	${BSD_INSTALL_DATA} \
- 	    $(SRCDIR)/pm_config.h $(INSTALLHDRS)
--	$(INSTALL) -c -m $(INSTALL_PERM_HDR) \
--	    $(SRCDIR)/shhopt/shhopt.h $(INSTALLHDRS)
-+	${BSD_INSTALL_DATA} \
-+	    $(SRCDIR)/shhopt/pm_shhopt.h $(INSTALLHDRS)
- 	for i in $(SUBDIRS) ; do \
- 	    $(MAKE) -C $$i -f $(SRCDIR)/$$i/Makefile install.hdr ; \
- 	done
++	$(BSD_INSTALL_DATA) \
+ 	    $(SRCDIR)/pm_config.h $(PKGDIR)/include
+ 
+ ifeq ($(STATICLIB_TOO),y)

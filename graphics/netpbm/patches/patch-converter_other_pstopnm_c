@@ -1,0 +1,20 @@
+$OpenBSD: patch-converter_other_pstopnm_c,v 1.1 2006/06/11 18:22:06 naddy Exp $
+--- converter/other/pstopnm.c.orig	Sat Nov  5 04:42:26 2005
++++ converter/other/pstopnm.c	Tue May 30 21:52:55 2006
+@@ -702,13 +702,13 @@ execGhostscript(int const inputPipeFd,
+ 
+     if (verbose) {
+         pm_message("execing '%s' with args '%s' (arg 0), "
+-                   "'%s', '%s', '%s', '%s', '%s', '%s', '%s'",
++                   "'%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s",
+                    ghostscriptProg, arg0,
+-                   deviceopt, outfileopt, gopt, ropt, "-q", "-dNOPAUSE", "-");
++                   deviceopt, outfileopt, gopt, ropt, "-q", "-dNOPAUSE", "-dSAFER", "-");
+     }
+ 
+     execl(ghostscriptProg, arg0, deviceopt, outfileopt, gopt, ropt, "-q",
+-          "-dNOPAUSE", "-", NULL);
++          "-dNOPAUSE", "-dSAFER", "-", NULL);
+     
+     pm_error("execl() of Ghostscript ('%s') failed, errno=%d (%s)",
+              ghostscriptProg, errno, strerror(errno));

@@ -1,0 +1,88 @@
+$OpenBSD: patch-lib_Makefile,v 1.1 2006/06/11 18:22:06 naddy Exp $
+--- lib/Makefile.orig	Wed Dec  8 05:32:37 2004
++++ lib/Makefile	Wed May 31 01:14:05 2006
+@@ -35,6 +35,9 @@ endif
+ # Library objects to be linked but not built by Makefile.common:
+ LIBOBJECTS_X = util/shhopt.o util/nstring.o
+ 
++SHLIBOBJECTS = $(patsubst %.o, %.lo, $(LIBOBJECTS))
++SHLIBOBJECTS_X = $(patsubst %.o, %.lo, $(LIBOBJECTS_X))
++
+ MANUALS3 = libnetpbm
+ MANUALS5 = pbm pgm ppm pnm pam
+ 
+@@ -76,6 +79,10 @@ extra_staticlib: $(EXTRA_STATICLIB)
+ 
+ $(LIBOBJECTS): %.o: %.c $(HEADERLINKS)
+ # Note that the user may have configured -I options into CFLAGS.
++	$(CC) -c $(INCLUDES) -DNDEBUG $(CFLAGS) \
++	  $(CFLAGS_PERSONAL) $(CADD) -o $@ $<
++
++$(SHLIBOBJECTS): %.lo: %.c $(HEADERLINKS)
+ 	$(CC) -c $(INCLUDES) -DNDEBUG $(CFLAGS) $(CFLAGS_SHLIB) \
+ 	  $(CFLAGS_PERSONAL) $(CADD) -o $@ $<
+ 
+@@ -101,7 +108,7 @@ endif
+ 
+ ifeq ($(NETPBMLIBTYPE),unixshared)
+ # The libxxx.so link is needed to link the executables.
+-libnetpbm.$(NETPBMLIBSUFFIX): $(SONAME)
++libnetpbm.$(NETPBMLIBSUFFIX): libnetpbm.$(NETPBMLIBSUFFIX).$(LIBnetpbm_VERSION)
+ 	rm -f $@
+ 	$(SYMLINK) $< $@
+ # The $(SONAME) link is needed only to test the programs without
+@@ -110,8 +117,8 @@ libnetpbm.$(NETPBMLIBSUFFIX): $(SONAME)
+ $(SONAME): libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ).$(MIN)
+ 	rm -f $@
+ 	$(SYMLINK) $< $@
+-libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ).$(MIN): $(LIBOBJECTS) $(LIBOBJECTS_X)
+-	$(LD) $(LDSHLIB) -o $@ $(LIBOBJECTS) $(LIBOBJECTS_X) \
++libnetpbm.$(NETPBMLIBSUFFIX).$(LIBnetpbm_VERSION): $(SHLIBOBJECTS) $(SHLIBOBJECTS_X)
++	$(LD) $(LDSHLIB) -o $@ $(SHLIBOBJECTS) $(SHLIBOBJECTS_X) \
+           $(SHLIB_CLIB) $(LADD)
+ endif
+ 
+@@ -179,7 +186,7 @@ endif
+ compile.h:
+ 	$(SRCDIR)/buildtools/stamp-date >$@ || rm $@
+ 
+-util/shhopt.o util/nstring.o: FORCE
++util/shhopt.o util/nstring.o util/shhopt.lo util/nstring.lo: FORCE
+ 	@if [ ! -d $(dir $@) ] ; then mkdir $(dir $@) ; fi
+ 	$(MAKE) -C $(dir $@) -f $(SRCDIR)/$(SUBDIR)/$(dir $@)Makefile \
+ 		SRCDIR=$(SRCDIR) BUILDDIR=$(BUILDDIR) $(notdir $@) 
+@@ -189,13 +196,9 @@ util/shhopt.o util/nstring.o: FORCE
+ .PHONY: install.lib
+ ifeq ($(NETPBMLIBTYPE),unixshared)
+ # install a Unix-style shared library
+-install.lib: $(PKGDIR)/lib $(PKGDIR)/link
+-	cd $(PKGDIR)/lib ; rm -f libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ).*
+-	$(INSTALL) -c -m $(INSTALL_PERM_LIBD) \
+-	  libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ).$(MIN)  $(PKGDIR)/lib/
+-	cd $(PKGDIR)/lib/ ; \
+-          rm -f libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ); \
+-          $(SYMLINK) libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ).$(MIN) $(SONAME)
++install.lib: $(PKGDIR)/lib
++	$(BSD_INSTALL_DATA) \
++	  libnetpbm.$(NETPBMLIBSUFFIX).$(LIBnetpbm_VERSION) $(PKGDIR)/lib/
+ endif
+ ifeq ($(NETPBMLIBTYPE),dll)
+ #install a Windows DLL shared library
+@@ -225,13 +228,13 @@ install.hdr: $(INTERFACE_HEADERS:%=%_ins
+ # directory when you compile your programs.
+ 
+ %_installhdr: $(PKGDIR)/include
+-	$(INSTALL) -c -m $(INSTALL_PERM_HDR) \
++	$(BSD_INSTALL_DATA) \
+ 	  $(SRCDIR)/lib/$(@:%_installhdr=%) $(PKGDIR)/include/;
+ 
+ .PHONY: install.staticlib
+-install.staticlib: $(PKGDIR)/link
+-	$(INSTALL) -c -m $(INSTALL_PERM_LIBS) libnetpbm.$(STATICLIBSUFFIX) \
+-	  $(PKGDIR)/link
++install.staticlib: $(PKGDIR)/lib
++	$(BSD_INSTALL_DATA) libnetpbm.$(STATICLIBSUFFIX) \
++	  $(PKGDIR)/lib
+ 
+ # Install a shared library stub -- the ".so" file used at link time to
+ # prepare a program for dynamically linking a library at run time 

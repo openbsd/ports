@@ -1,9 +1,0 @@
-$OpenBSD: patch-pbm_libpbmvms_c,v 1.1 2003/03/29 04:13:54 brad Exp $
---- pbm/libpbmvms.c.orig	Fri May 26 14:34:55 2000
-+++ pbm/libpbmvms.c	Fri Mar 28 20:22:06 2003
-@@ -1,3 +1,5 @@
-+#warning "NOT AUDITED"
-+
- /***************************************************************************
-   This file contains library routines needed to build Netpbm for VMS.
-   However, as of 2000.05.26, when these were split out of libpbm1.c
