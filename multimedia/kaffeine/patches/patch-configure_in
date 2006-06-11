@@ -1,0 +1,36 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2006/06/11 10:32:57 espie Exp $
+--- configure.in.orig	Sat Jun 10 12:20:50 2006
++++ configure.in	Sat Jun 10 12:32:07 2006
+@@ -208,7 +208,7 @@ dnl ------------------------------------
+ dnl       cdparanoia check
+ dnl -------------------------------------
+ 
+-AC_CHECK_HEADERS(cdda_interface.h, have_paranoia="yes", have_paranoia="no" )
++KDE_CHECK_HEADERS(cdda_interface.h, have_paranoia="yes", have_paranoia="no" )
+ 
+ dnl ----------------------------------
+ dnl    Can Kaffeine be compiled?
+@@ -242,18 +242,14 @@ if test "$ac_cv_use_oggvorbis" = "yes"; 
+ 
+   AC_MSG_CHECKING(for ogg/vorbis headers)
+   ogg_vorbis=no
+-  AC_TRY_COMPILE([
+-  		#include <vorbis/codec.h>
+-  		#include <vorbis/vorbisfile.h>
+-                ],[
+-                ],[
+-                ogg_vorbis=yes
+-                ])
++  KDE_CHECK_HEADER(vorbis/vorbisfile.h,
++    [ogg_vorbis=yes], [:])
++
+   AC_MSG_RESULT($ogg_vorbis)
+   if test x$ogg_vorbis = xyes; then
+      dnl we need the ogg_vorbis_lib because otherwise we override LIBS !
+-     AC_CHECK_LIB(vorbisfile,ov_open,ogg_vorbis_lib=yes,
+-                  ogg_vorbis=no,[$all_libraries -lvorbisfile -lvorbis -logg])
++     KDE_CHECK_LIB(vorbisfile,ov_open,ogg_vorbis_lib=yes,
++                  ogg_vorbis=no,[$all_libraries -lvorbisfile -lvorbis -logg -lm])
+   fi
+   if test x$ogg_vorbis = xyes; then
+ 	AC_DEFINE(OGG_VORBIS,1,[Define if you have ogg/vorbis installed])

@@ -1,0 +1,57 @@
+$OpenBSD: patch-kaffeine_src_wizarddialog_cpp,v 1.1.1.1 2006/06/11 10:32:57 espie Exp $
+--- kaffeine/src/wizarddialog.cpp.orig	Sat Jun 10 13:48:17 2006
++++ kaffeine/src/wizarddialog.cpp	Sat Jun 10 23:07:51 2006
+@@ -104,7 +104,7 @@ WizardDialog::WizardDialog( QWidget *par
+ 	*/
+ 	//WIN32-CODECS
+ 	info << "<hr><b>" << i18n("WIN32 Codecs") << "...</b><br>";
+-	QDir d("/usr/lib/win32");
++	QDir d("/usr/local/lib/win32");
+ 	QStringList entries = d.entryList("wmv*");
+ 	if (entries.count())
+ 		info << "<font color=\"DarkGreen\">" << i18n("Ok.") << "</font>";
+@@ -122,13 +122,13 @@ WizardDialog::WizardDialog( QWidget *par
+ 	else
+ 	{
+ 		d = QDir("/usr/local/lib");
+-		entries = d.entryList("libdvdcss.so*");
++		entries = d.entryList("libdvd.so*");
+ 		if (entries.count())
+ 			dvdcss = true;
+ 		else
+ 		{
+ 			d = QDir("/usr/lib64");
+-			entries = d.entryList("libdvdcss.so*");
++			entries = d.entryList("libdvd.so*");
+ 			if (entries.count())
+ 				dvdcss = true;
+ 		}
+@@ -139,6 +139,7 @@ WizardDialog::WizardDialog( QWidget *par
+ 	else
+ 		info << "<font color=\"DarkGreen\">" << i18n("Ok.") << "</font>";
+ 
++#if !defined(__OpenBSD__)
+ 	//DVD-DRIVE
+ 	info << "<br><hr><b>" << i18n("DVD Drive") << "...</b><br>";
+ 	KProcess process;
+@@ -153,6 +154,7 @@ WizardDialog::WizardDialog( QWidget *par
+ 	else
+ 		info << "<font color=\"DarkBlue\">" << i18n("Can't check DMA mode. Permission denied or no such device:")
+ 		<< " \"/dev/dvd\".</font>";
++#endif
+ 
+ 	//DVB-DEVICES
+ #ifdef HAVE_LINUX_DVB_FRONTEND_H
+@@ -281,9 +283,9 @@ void WizardDialog::accept()
+ 
+ void WizardDialog::slotReceivedStdout(KProcess*, char* buffer, int buflen)
+ {
+-	QString stdout = QString::fromLatin1(buffer, buflen);
+-	m_stdout.append(stdout);
+-	kdDebug() << "WizardDialog: got from hdparm: " << stdout << endl;
++	QString out = QString::fromLatin1(buffer, buflen);
++	m_stdout.append(out);
++	kdDebug() << "WizardDialog: got from hdparm: " << out << endl;
+ }
+ 
+ void WizardDialog::reject()

@@ -1,0 +1,8 @@
+Multimedia player for KDE. 
+
+This port Uses xine for playback.
+
+Video formats supported by xine are functional, including DVD
+playback with menus.
+
+No CD support currently, nor VCD. No digital TV either.
