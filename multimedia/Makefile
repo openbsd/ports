@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2006/03/24 23:07:00 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.14 2006/06/11 10:34:01 espie Exp $
 
      SUBDIR += dvdauthor
      SUBDIR += dvdbackup
+     SUBDIR += kaffeine
      SUBDIR += libdv
      SUBDIR += libdvdnav
      SUBDIR += libmatroska
