@@ -1,0 +1,2 @@
+Simple perl module that parses HTML using HTML-Parser, and adds css
+classes so that it can be highlighted, provided the right css is used.

@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/11 22:32:07 espie Exp $
+${P5SITE}/Syntax/
+${P5SITE}/Syntax/Highlight/
+${P5SITE}/Syntax/Highlight/HTML.pm
+@man man/man3p/Syntax::Highlight::HTML.3p
+share/examples/p5-Syntax-Highlight-HTML/
+share/examples/p5-Syntax-Highlight-HTML/filter.pl
+share/examples/p5-Syntax-Highlight-HTML/highlight.pl
+share/examples/p5-Syntax-Highlight-HTML/html-syntax.css
