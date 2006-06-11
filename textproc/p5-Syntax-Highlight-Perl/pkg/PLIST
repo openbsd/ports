@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/11 22:32:58 espie Exp $
+bin/viewperl
+${P5SITE}/Syntax/
+${P5SITE}/Syntax/Highlight/
+${P5SITE}/Syntax/Highlight/Perl/
+${P5SITE}/Syntax/Highlight/Perl.pm
+@comment ${P5SITE}/Syntax/Highlight/Perl.pm.orig
+${P5SITE}/Syntax/Highlight/Perl/Improved.pm
+@man man/man3p/Syntax::Highlight::Perl.3p
+@man man/man3p/Syntax::Highlight::Perl::Improved.3p

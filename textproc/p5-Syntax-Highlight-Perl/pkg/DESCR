@@ -1,0 +1,4 @@
+Highlights perl code. Actually a bug-fixed version of the original
+Syntax::Highlight::Perl code, named ::Improved.
+
+This includes a script (viewperl) that shows what this module can do.

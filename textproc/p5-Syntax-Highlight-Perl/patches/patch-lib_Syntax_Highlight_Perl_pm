@@ -1,0 +1,19 @@
+$OpenBSD: patch-lib_Syntax_Highlight_Perl_pm,v 1.1.1.1 2006/06/11 22:32:58 espie Exp $
+--- lib/Syntax/Highlight/Perl.pm.orig	Mon Jun 12 00:22:18 2006
++++ lib/Syntax/Highlight/Perl.pm	Mon Jun 12 00:26:47 2006
+@@ -0,0 +1,15 @@
++package Syntax::Highlight::Perl;
++use Syntax::Highlight::Perl::Improved;
++
++our $VERSION=$Syntax::Highlight::Perl::Improved::VERSION;
++our @ISA=qw(Syntax::Highlight::Perl::Improved);
++
++=head1 NAME
++
++Syntax::Highlight::Perl - Highlighting of Perl Syntactical Structures
++
++See L<Syntax::Highlight::Perl::Improved>
++
++=cut
++
++1;
