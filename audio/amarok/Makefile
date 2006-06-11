@@ -1,39 +1,37 @@
-# $OpenBSD: Makefile,v 1.6 2006/01/22 16:07:44 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/06/11 11:33:52 espie Exp $
 
 CATEGORIES=	audio x11 x11/kde
 COMMENT=	'music player for kde'
 
 HOMEPAGE=	http://amarok.kde.org/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=amarok/}
-DISTNAME=	amarok-1.3.6
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	amarok-1.4.0a
+WRKDIST=	${WRKDIR}/amarok-1.4.0
+PKGNAME=	${DISTNAME}
 EXTRACT_SUFX=	.tar.bz2
 
+FLAVORS=	debug
+
 LIB_DEPENDS+=	lib/qt3/qt-mt.3.33::x11/qt3,mt \
-		kdecore.6,DCOP,khtml,kwalletclient,kdefx,kdeprint,kutils,kdeui,kparts,artskde,kio,kdesu,kjs,knewstuff::x11/kde/libs3 \
-		artsmodules,artsgui_kde,artsmodulesmixers,artsmodulescommon,artsgui,artsgui_idl,artsmidi_idl,artsmodulessynth,artsmoduleseffects,artsbuilder,::x11/kde/multimedia3 \
-		konqsidebarplugin::x11/kde/base3 \
+		kdecore.6,DCOP,khtml,kwalletclient,kdefx,kdeprint,kutils,kdeui,kparts,kio,kdesu,kjs,knewstuff::x11/kde/libs3 \
 		tag.5.0:taglib->=1.4:audio/taglib \
-		xmms::audio/xmms \
-		gstreamer-0.8.0.0::devel/gstreamer
+		xine::multimedia/xine-lib \
+		sqlite3::databases/sqlite3
 
-WANTLIB=	stdc++ Xext Xrender z ossaudio X11 util m Xi SM GL c \
-		pthread ICE \
-		iconv pcre vorbis esd xml2 glib-2.0.0.0 qtmcop mad audiofile \
-		jpeg vorbisfile gmodule-2.0.0.0 gthread-2.0.0.0 \
-		gobject-2.0.0.0 pcreposix popt vorbisenc kmedia2_idl \
-		artsflow ogg mcop png soundserver_idl art_lgpl_2 intl \
-		artsflow_idl 
+WANTLIB=	stdc++ Xext Xrender z X11 util m SM c \
+		pthread ICE idn freetype \
+		iconv pcre pcreposix \
+		jpeg png art_lgpl_2 intl
 		
-# These come from xmms
-WANTLIB+=	gtk gmodule gdk glib
-
+		
+LIB_DEPENDS+=	konqsidebarplugin::x11/kde/base3
 
 SHARED_ONLY=Yes
+SHARED_LIBS=	amarok	0.0
 MODULES=	x11/kde
 USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
-MODKDE_VERSION=		3.5
+MODKDE_VERSION=		3.5.3
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS}
@@ -43,9 +41,12 @@ MAKE_ENV=		${CONFIGURE_ENV}
 MAKE_FLAGS+=		${MODKDE_MAKE_FLAGS}
 MAKE_FLAGS+=		LIBRESOLV=
 
-BUILD_DEPENDS=		::devel/pkgconfig \
-			::devel/gstreamer-plugins
+BUILD_DEPENDS=		::devel/pkgconfig
 
+
+CONFIGURE_ARGS+=	--without-arts \
+			--without-opengl --without-gstreamer \
+			--with-xine --without-included-sqlite
 
 PERMIT_DISTFILES_FTP=Yes
 PERMIT_DISTFILES_CDROM=Yes

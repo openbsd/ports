@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1 2006/06/11 11:33:52 espie Exp $
+--- configure.in.orig	Sat Jun 10 11:53:04 2006
++++ configure.in	Sat Jun 10 11:54:55 2006
+@@ -819,7 +819,7 @@ AC_MSG_RESULT($amarok_glibcsched_works)
+ ###############################################################################
+ 
+ KDE_CHECK_HEADER(konqsidebarplugin.h, have_konqsidebar=yes, have_konqsidebar=no)
+-KDE_CHECK_LIB(konqsidebarplugin, _init, have_konqsidebar=$have_konqsidebar, have_konqsidebar=no)
++KDE_CHECK_LIB(konqsidebarplugin, _init, have_konqsidebar=$have_konqsidebar, have_konqsidebar=no, -lstdc++)
+ 
+ AM_CONDITIONAL(with_konqsidebar, [test x$have_konqsidebar = xyes])
+ 
