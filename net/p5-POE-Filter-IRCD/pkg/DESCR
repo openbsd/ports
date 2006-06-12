@@ -1,0 +1,2 @@
+POE::Filter::IRCD provides a convenient way of parsing and creating IRC
+protocol lines.
