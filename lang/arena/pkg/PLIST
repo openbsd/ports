@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/12 13:05:27 alek Exp $
+bin/arena
+@man man/man1/arena.1
+share/doc/arena/
+share/doc/arena/manual.asc
+share/doc/arena/transform
