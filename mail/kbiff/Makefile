@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2006/03/31 17:25:21 bernd Exp $
+# $OpenBSD: Makefile,v 1.23 2006/06/12 13:38:00 espie Exp $
 
 COMMENT=		"new mail notification utility for KDE"
 
 DISTNAME=		kbiff-3.8
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS=		kbiff 2.0
 CATEGORIES=		mail
 EXTRACT_SUFX=		.tar.bz2
@@ -17,7 +18,7 @@ PERMIT_PACKAGE_FTP=    	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=  	Yes
 WANTLIB=		ICE SM X11 Xext Xrender art_lgpl_2 c jpeg m png \
-			pthread stdc++ util z
+			pthread stdc++ util z iconv idn
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=kbiff/}
 
