@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/02/02 03:41:37 todd Exp $
+@comment $OpenBSD: PLIST,v 1.6 2006/06/12 19:04:10 naddy Exp $
 @newgroup _asterisk:545
 @newuser _asterisk:545:_asterisk:daemon:asterisk user:/nonexistent:/sbin/nologin
 include/asterisk/
@@ -456,10 +456,8 @@ share/asterisk/sounds/vm-unknown-caller.gsm
 share/asterisk/sounds/vm-whichbox.gsm
 share/asterisk/sounds/vm-youhave.gsm
 %%SHARED%%
-share/asterisk/sounds/voicemail
 share/doc/asterisk/
 share/doc/asterisk/BUGS
-share/doc/asterisk/BUGS.OpenBSD
 share/doc/asterisk/README.ael
 share/doc/asterisk/README.asterisk.conf
 share/doc/asterisk/README.backtrace
@@ -559,6 +557,8 @@ share/examples/asterisk/openbsd/logger.conf.sample
 @sample ${SYSCONFDIR}/asterisk/logger.conf
 share/examples/asterisk/openbsd/modules.conf.sample
 @sample ${SYSCONFDIR}/asterisk/modules.conf
+share/examples/asterisk/openbsd/musiconhold.conf.sample
+@sample ${SYSCONFDIR}/asterisk/musiconhold.conf
 share/examples/asterisk/openbsd/sip.conf.sample
 @sample ${SYSCONFDIR}/asterisk/sip.conf
 share/examples/asterisk/openbsd/voicemail.conf.sample

@@ -1,14 +1,14 @@
-$OpenBSD: patch-cdr_Makefile,v 1.2 2006/02/02 03:41:36 todd Exp $
---- cdr/Makefile.orig	Tue Nov 29 13:24:39 2005
-+++ cdr/Makefile	Wed Dec 28 13:30:25 2005
-@@ -30,21 +30,26 @@ endif
+$OpenBSD: patch-cdr_Makefile,v 1.3 2006/06/12 19:04:10 naddy Exp $
+--- cdr/Makefile.orig	Sun Apr 30 15:27:56 2006
++++ cdr/Makefile	Thu Jun  1 02:33:19 2006
+@@ -30,21 +30,26 @@
  #A ultrasparc cpu is really v9 but the stock debian stable 3.0 gcc doesn.t support it.
  #So we go lowest common available by gcc and go a step down, still a step up from
  #the default as we now have a better instruction set to work with. - Belgarath
 +ifneq (${OSARCH},OpenBSD)
  ifeq ($(PROC),sparc64)
   PROC=ultrasparc
-   CFLAGS += -mtune=$(PROC) -O3 -pipe -fomit-frame-pointer -mcpu=v8
+   CFLAGS += -mtune=$(PROC) -pipe -fomit-frame-pointer -mcpu=v8
  endif
 +endif
  
@@ -25,10 +25,10 @@ $OpenBSD: patch-cdr_Makefile,v 1.2 2006/02/02 03:41:36 todd Exp $
  # FreeTDS stuff...
  #
 +ifneq (${OSARCH},OpenBSD)
- ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/tds.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/local/include/tds.h),)
-   ifeq ($(shell grep -s TDS_VERSION_NO $(CROSS_COMPILE_TARGET)/usr/include/tdsver.h $(CROSS_COMPILE_TARGET)/usr/local/include/tdsver.h | grep -c 0.63),1)
+ ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/tds.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/local/include/tds.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/include/freetds/tds.h),)
+   ifeq ($(shell grep -s TDS_VERSION_NO $(CROSS_COMPILE_TARGET)/usr/include/tdsver.h $(CROSS_COMPILE_TARGET)/usr/local/include/tdsver.h $(CROSS_COMPILE_TARGET)/usr/include/freetds/tdsver.h | grep -c 0.63),1)
      CFLAGS += -DFREETDS_0_63
-@@ -57,13 +62,16 @@ ifneq ($(wildcard $(CROSS_COMPILE_TARGET
+@@ -57,13 +62,16 @@
    endif
    MODS+=cdr_tds.so
  endif
@@ -45,7 +45,7 @@ $OpenBSD: patch-cdr_Makefile,v 1.2 2006/02/02 03:41:36 todd Exp $
  
  MLFLAGS=
  
-@@ -103,8 +111,10 @@ endif
+@@ -103,8 +111,10 @@
  #
  # SQLite stuff...
  #

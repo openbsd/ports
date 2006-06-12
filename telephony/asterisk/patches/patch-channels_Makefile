@@ -1,6 +1,6 @@
-$OpenBSD: patch-channels_Makefile,v 1.1 2006/02/02 03:41:36 todd Exp $
---- channels/Makefile.orig	Thu Jan 26 18:02:51 2006
-+++ channels/Makefile	Thu Jan 26 18:02:53 2006
+$OpenBSD: patch-channels_Makefile,v 1.2 2006/06/12 19:04:10 naddy Exp $
+--- channels/Makefile.orig	Sun Apr 30 15:27:56 2006
++++ channels/Makefile	Thu Jun  1 02:29:34 2006
 @@ -42,9 +42,11 @@
  CYG_CHAN_AGENT=-lres_monitor.so
  endif
@@ -8,7 +8,7 @@ $OpenBSD: patch-channels_Makefile,v 1.1 2006/02/02 03:41:36 todd Exp $
 +ifneq (${OSARCH},OpenBSD)
  ifeq ($(PROC),sparc64)
    PROC=ultrasparc
-   CFLAGS += -mtune=$(PROC) -O3 -pipe -fomit-frame-pointer -mcpu=v8
+   CFLAGS += -mtune=$(PROC) -pipe -fomit-frame-pointer -mcpu=v8
 +endif
  endif
  

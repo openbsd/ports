@@ -1,0 +1,32 @@
+; $OpenBSD: musiconhold.conf.sample,v 1.1 2006/06/12 19:04:10 naddy Exp $
+; Music on Hold -- Sample Configuration
+
+[default]
+mode=files
+directory=/usr/local/share/asterisk/moh-native
+
+;[native-random]
+;mode=files
+;directory=/usr/local/share/asterisk/moh-native
+;random=yes 	; Play the files in a random order
+
+;
+; This plays files directly from the specified directory, no external
+; processes are required. Files are played in normal sorting order
+; (same as a sorted directory listing), and no volume or other
+; sound adjustments are available. If the file is available in
+; the same format as the channel's codec, then it will be played
+; without transcoding (same as Playback would do in the dialplan).
+; Files can be present in as many formats as you wish, and the
+; 'best' format will be chosen at playback time.
+;
+; NOTE:
+; If you are not using "autoload" in modules.conf, then you
+; must ensure that the format modules for any formats you wish
+; to use are loaded _before_ res_musiconhold. If you do not do
+; this, res_musiconhold will skip the files it is not able to
+; understand when it loads.
+;
+; format_mp3 is in the asterisk-addons package;
+; format_wav supports 8KHz mono RIFF .wav files.
+;

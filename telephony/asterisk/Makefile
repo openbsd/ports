@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2006/02/15 06:11:39 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2006/06/12 19:04:10 naddy Exp $
 
 COMMENT=	"open source PBX"
-DISTNAME=	asterisk-1.2.4
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	asterisk-1.2.9.1
 CATEGORIES=	telephony
 MASTER_SITES=	ftp://ftp.digium.com/pub/asterisk/
 
@@ -29,7 +28,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/asterisk/agi
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/asterisk/default
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/asterisk/openbsd
-	${INSTALL_DATA} ${FILESDIR}/BUGS.OpenBSD ${PREFIX}/share/doc/asterisk
 	${INSTALL_DATA} ${WRKSRC}/{BUGS,SECURITY} ${PREFIX}/share/doc/asterisk
 	${INSTALL_DATA} ${WRKSRC}/doc/README.* ${PREFIX}/share/doc/asterisk
 	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${PREFIX}/share/doc/asterisk

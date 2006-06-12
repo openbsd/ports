@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.6 2006/02/15 06:11:39 sturm Exp $
---- Makefile.orig	Mon Dec  5 06:47:51 2005
-+++ Makefile	Sat Feb 11 02:29:14 2006
+$OpenBSD: patch-Makefile,v 1.7 2006/06/12 19:04:10 naddy Exp $
+--- Makefile.orig	Sun Apr 30 15:27:56 2006
++++ Makefile	Thu Jun  1 02:36:38 2006
 @@ -19,8 +19,8 @@
  # CROSS_COMPILE=/opt/montavista/pro/devkit/arm/xscale_be/bin/xscale_be-
  # CROSS_COMPILE_BIN=/opt/montavista/pro/devkit/arm/xscale_be/bin/
@@ -12,7 +12,7 @@ $OpenBSD: patch-Makefile,v 1.6 2006/02/15 06:11:39 sturm Exp $
  # CROSS_ARCH=Linux
  # CROSS_PROC=arm
  # SUB_PROC=xscale # or maverick
-@@ -44,8 +44,12 @@
+@@ -46,8 +46,12 @@
  #K6OPT  = -DK6OPT
  
  #Tell gcc to optimize the code
@@ -25,7 +25,7 @@ $OpenBSD: patch-Makefile,v 1.6 2006/02/15 06:11:39 sturm Exp $
  
  #Overwite config files on "make samples"
  OVERWRITE=y
-@@ -83,7 +87,11 @@
+@@ -85,7 +89,11 @@
  
  # Where to install asterisk after compiling
  # Default -> leave empty
@@ -37,7 +37,7 @@ $OpenBSD: patch-Makefile,v 1.6 2006/02/15 06:11:39 sturm Exp $
  
  # Staging directory
  # Files are copied here temporarily during the install process
-@@ -105,7 +113,7 @@
+@@ -107,7 +115,7 @@
  # Don't use together with -DBUSYDETECT_TONEONLY
  BUSYDETECT+= #-DBUSYDETECT_COMPARE_TONE_AND_SILENCE
  
@@ -46,7 +46,7 @@ $OpenBSD: patch-Makefile,v 1.6 2006/02/15 06:11:39 sturm Exp $
    ASTLIBDIR=$(INSTALL_PREFIX)/usr/lib/asterisk
    ASTVARLIBDIR=$(INSTALL_PREFIX)/var/lib/asterisk
    ASTETCDIR=$(INSTALL_PREFIX)/etc/asterisk
-@@ -119,7 +127,25 @@
+@@ -121,7 +129,25 @@
    ASTMANDIR=$(INSTALL_PREFIX)/usr/share/man
    MODULES_DIR=$(ASTLIBDIR)/modules
    AGI_DIR=$(ASTVARLIBDIR)/agi-bin
@@ -73,7 +73,7 @@ $OpenBSD: patch-Makefile,v 1.6 2006/02/15 06:11:39 sturm Exp $
    ASTLIBDIR=$(INSTALL_PREFIX)/opt/asterisk/lib
    ASTVARLIBDIR=$(INSTALL_PREFIX)/var/opt/asterisk/lib
    ASTETCDIR=$(INSTALL_PREFIX)/etc/opt/asterisk
-@@ -160,6 +186,8 @@
+@@ -162,6 +188,8 @@
  # The file, /etc/asterisk.makeopts will also be included, but can be overridden
  # by the file in your home directory.
  
@@ -82,7 +82,7 @@ $OpenBSD: patch-Makefile,v 1.6 2006/02/15 06:11:39 sturm Exp $
  ifneq ($(wildcard /etc/asterisk.makeopts),)
    include /etc/asterisk.makeopts
  endif
-@@ -167,6 +195,7 @@
+@@ -169,6 +197,7 @@
  ifneq ($(wildcard ~/.asterisk.makeopts),)
    include ~/.asterisk.makeopts
  endif
@@ -90,22 +90,7 @@ $OpenBSD: patch-Makefile,v 1.6 2006/02/15 06:11:39 sturm Exp $
  
  ifeq ($(OSARCH),Linux)
    ifeq ($(CROSS_COMPILE),)
-@@ -209,6 +238,14 @@
-   MPG123TARG=linux
- endif
- 
-+ifeq ($(OSARCH),OpenBSD)
-+  PROC?=$(shell uname -m)
-+
-+  ifeq ($(PROC),arm)
-+    OPTIONS+=-fsigned-char
-+  endif
-+endif
-+
- PWD=$(shell pwd)
- GREP=grep
- 
-@@ -227,8 +264,10 @@
+@@ -229,8 +258,10 @@
    ASTCFLAGS+=-I$(CROSS_COMPILE_TARGET)/usr/local/include -L$(CROSS_COMPILE_TARGET)/usr/local/lib
  endif
  
@@ -118,7 +103,7 @@ $OpenBSD: patch-Makefile,v 1.6 2006/02/15 06:11:39 sturm Exp $
  endif
  
  ifeq ($(PROC),ppc)
-@@ -410,6 +449,7 @@
+@@ -412,6 +443,7 @@
  INSTALL=install
  
  _all: all
@@ -126,7 +111,7 @@ $OpenBSD: patch-Makefile,v 1.6 2006/02/15 06:11:39 sturm Exp $
  	@echo " +--------- Asterisk Build Complete ---------+"  
  	@echo " + Asterisk has successfully been built, but +"  
  	@echo " + cannot be run before being installed by   +"  
-@@ -417,6 +457,7 @@
+@@ -419,6 +451,7 @@
  	@echo " +                                           +"
  	@echo " +               $(MAKE) install                +"  
  	@echo " +-------------------------------------------+"  
@@ -134,20 +119,19 @@ $OpenBSD: patch-Makefile,v 1.6 2006/02/15 06:11:39 sturm Exp $
  
  all: cleantest depend asterisk subdirs 
  
-@@ -666,6 +707,8 @@
- 	fi 
- 	( cd $(DESTDIR)$(ASTVARLIBDIR)/sounds  ; ln -s $(ASTSPOOLDIR)/voicemail . )
- 	if [ -f mpg123-0.59r/mpg123 ]; then $(MAKE) -C mpg123-0.59r install; fi
-+# OpenBSD packaging has own message-at-actual-install-time
+@@ -694,6 +727,7 @@
+ 	@if [ -x /usr/sbin/asterisk-post-install ]; then \
+ 		/usr/sbin/asterisk-post-install $(DESTDIR) . ; \
+ 	fi
 +ifneq (${OSARCH},OpenBSD)
  	@echo " +---- Asterisk Installation Complete -------+"  
  	@echo " +                                           +"
  	@echo " +    YOU MUST READ THE SECURITY DOCUMENT    +"
-@@ -687,6 +730,7 @@
+@@ -715,6 +749,7 @@
  	@echo " + **Note** This requires that you have      +"
  	@echo " + doxygen installed on your local system    +"
  	@echo " +-------------------------------------------+"
 +endif
  	@$(MAKE) -s oldmodcheck
  
- NEWMODS=$(notdir $(wildcard */*.so))
+ upgrade: all bininstall
