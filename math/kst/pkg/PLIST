@@ -1,9 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/06/12 08:46:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/06/12 11:15:56 espie Exp $
 bin/d2asc
 bin/kst
-bin/kstplugineditor
+bin/kstcmd
 include/kst_export.h
 include/kstdatasource.h
+include/kstdateparser.h
+include/kstextcalendarsystem.h
+include/kstextcalendarsystemgregorian.h
+include/kstextdatepicker.h
+include/kstextdatetbl.h
+include/kstextdatetime.h
+include/kstextdatetimeedit.h
+include/kstextdatewidget.h
 include/kstobject.h
 include/kstsharedptr.h
 include/rwlock.h
@@ -11,16 +19,26 @@ ${KDE}/kstdata_ascii.la
 ${KDE}/kstdata_ascii.so
 ${KDE}/kstdata_dirfile.la
 ${KDE}/kstdata_dirfile.so
+${KDE}/kstdata_fitsimage.la
+${KDE}/kstdata_fitsimage.so
 ${KDE}/kstdata_frame.la
 ${KDE}/kstdata_frame.so
+${KDE}/kstdata_healpix.la
+${KDE}/kstdata_healpix.so
 ${KDE}/kstdata_indirect.la
 ${KDE}/kstdata_indirect.so
+${KDE}/kstdata_lfiio.la
+${KDE}/kstdata_lfiio.so
 ${KDE}/kstdata_netcdf.la
 ${KDE}/kstdata_netcdf.so
+${KDE}/kstdata_qimagesource.la
+${KDE}/kstdata_qimagesource.so
 ${KDE}/kstextension_elog.la
 ${KDE}/kstextension_elog.so
-${KDE}/kstextension_rana.la
-${KDE}/kstextension_rana.so
+${KDE}/kstextension_js.la
+${KDE}/kstextension_js.so
+${KDE}/kstextension_pulse.la
+${KDE}/kstextension_pulse.so
 ${KDE}/kstplugins/
 ${KDE}/kstplugins/autocorrelate.la
 ${KDE}/kstplugins/autocorrelate.so
@@ -52,9 +70,15 @@ ${KDE}/kstplugins/crosscorrelate.xml
 ${KDE}/kstplugins/crossspectrum.la
 ${KDE}/kstplugins/crossspectrum.so
 ${KDE}/kstplugins/crossspectrum.xml
+${KDE}/kstplugins/cumulative_sum.la
+${KDE}/kstplugins/cumulative_sum.so
+${KDE}/kstplugins/cumulative_sum.xml
 ${KDE}/kstplugins/deconvolve.la
 ${KDE}/kstplugins/deconvolve.so
 ${KDE}/kstplugins/deconvolve.xml
+${KDE}/kstplugins/differentiation.la
+${KDE}/kstplugins/differentiation.so
+${KDE}/kstplugins/differentiation.xml
 ${KDE}/kstplugins/kstfit_exponential.la
 ${KDE}/kstplugins/kstfit_exponential.so
 ${KDE}/kstplugins/kstfit_exponential.xml
@@ -133,14 +157,18 @@ ${KDE}/kstplugins/statistics.xml
 ${KDE}/kstplugins/syncbin.la
 ${KDE}/kstplugins/syncbin.so
 ${KDE}/kstplugins/syncbin.xml
+${KDE}/plugins/designer/kstwidgets.la
+${KDE}/plugins/designer/kstwidgets.so
 lib/libkst.la
 @lib lib/libkst.so.${LIBkst_VERSION}
 lib/libkstapp.la
 @lib lib/libkstapp.so.${LIBkstapp_VERSION}
-lib/libkstguiapp.la
-@lib lib/libkstguiapp.so.${LIBkstguiapp_VERSION}
+lib/libkstextdate.la
+@lib lib/libkstextdate.so.${LIBkstextdate_VERSION}
 lib/libkstmath.la
 @lib lib/libkstmath.so.${LIBkstmath_VERSION}
+lib/libkstwidgets.la
+@lib lib/libkstwidgets.so.${LIBkstwidgets_VERSION}
 @man man/man1/kst.1
 share/applnk/
 share/applnk/Applications/
@@ -158,9 +186,12 @@ share/apps/kst/fonts/symb14.pcf.gz
 share/apps/kst/fonts/symb18.pcf.gz
 share/apps/kst/fonts/symb24.pcf.gz
 share/apps/kst/kstextension_elog.rc
-share/apps/kst/kstextension_rana.rc
+share/apps/kst/kstextension_js.rc
+share/apps/kst/kstextension_pulse.rc
 share/apps/kst/kstui.rc
 share/apps/kst/pics/
+share/apps/kst/pics/kst_error_1.png
+share/apps/kst/pics/kst_error_2.png
 share/apps/kst/pics/no.png
 share/apps/kst/pics/yes.png
 share/apps/kst/tutorial/
@@ -177,6 +208,47 @@ share/apps/kst/tutorial/demo.kst
 share/apps/kst/tutorial/gyrodata.dat
 share/apps/kst/tutorial/maxima.dat
 share/apps/kst/tutorial/vsa.dat
+share/config/colors/IDL 00 BW-Linear
+share/config/colors/IDL 01 Blue-White
+share/config/colors/IDL 02 GRN-RED-BLU-WHT
+share/config/colors/IDL 03 RED-Temperature
+share/config/colors/IDL 04 BLU-GRN-RED-YEL
+share/config/colors/IDL 05 STD-Gamma-II
+share/config/colors/IDL 06 PRISM
+share/config/colors/IDL 07 RED-PURPLE
+share/config/colors/IDL 08 GRN-WHT-Linear
+share/config/colors/IDL 09 GRN-WHT-Exp
+share/config/colors/IDL 10 GRN-PINK
+share/config/colors/IDL 11 BLUE-RED
+share/config/colors/IDL 12 16-Level
+share/config/colors/IDL 13 RAINBOW
+share/config/colors/IDL 14 STEPS
+share/config/colors/IDL 15 STERN-Special
+share/config/colors/IDL 16 Haze
+share/config/colors/IDL 17 BLU-Pastel-RED
+share/config/colors/IDL 18 Pastels
+share/config/colors/IDL 19 Hue-Sat-Light1
+share/config/colors/IDL 20 Hue-Sat-Light2
+share/config/colors/IDL 21 Hue-Sat-Value1
+share/config/colors/IDL 22 Hue-Sat-Value2
+share/config/colors/IDL 23 Purple-Red-Stripe
+share/config/colors/IDL 24 Beach
+share/config/colors/IDL 25 Mac-Style
+share/config/colors/IDL 26 Eos-A
+share/config/colors/IDL 27 Eos-B
+share/config/colors/IDL 28 Hardcandy
+share/config/colors/IDL 29 Nature
+share/config/colors/IDL 30 Ocean
+share/config/colors/IDL 31 Peppermint
+share/config/colors/IDL 32 Plasma
+share/config/colors/IDL 33 Blue-Red
+share/config/colors/IDL 34 Rainbow
+share/config/colors/IDL 35 Blue-Waves
+share/config/colors/IDL 36 Volcano
+share/config/colors/IDL 37 Waves
+share/config/colors/IDL 38 Rainbow18
+share/config/colors/IDL 39 Rainbow-White
+share/config/colors/IDL 40 Rainbow-Black
 share/config/colors/Kst Colors
 share/config/colors/Kst Grayscale 256
 share/config/colors/Kst Spectrum 1021
@@ -200,6 +272,7 @@ share/doc/HTML/da/kst/miscfeatures-chapter.docbook
 share/doc/HTML/da/kst/plotsandwindows-chapter.docbook
 share/doc/HTML/da/kst/plugins-chapter.docbook
 share/doc/HTML/da/kst/saving-chapter.docbook
+share/doc/HTML/da/kst/tutorial.docbook
 share/doc/HTML/de/
 share/doc/HTML/de/kst/
 share/doc/HTML/de/kst/dcop-chapter.docbook
@@ -320,6 +393,98 @@ share/doc/HTML/en/kst/saving-chapter.docbook
 share/doc/HTML/en/kst/tutorial.docbook
 share/doc/HTML/es/
 share/doc/HTML/es/kst/
+share/doc/HTML/es/kst/Diagram-kst-array.png
+share/doc/HTML/es/kst/Diagram-kst-datatypes.png
+share/doc/HTML/es/kst/Diagram-kst-frames.png
+share/doc/HTML/es/kst/Diagram-kst-matrix.png
+share/doc/HTML/es/kst/Diagram-kst-windowplotrelation.png
+share/doc/HTML/es/kst/Equation-kst-correctedpitch.png
+share/doc/HTML/es/kst/Formula-kst-autocorrelation.png
+share/doc/HTML/es/kst/Formula-kst-autocorrelation2.png
+share/doc/HTML/es/kst/Formula-kst-bandpass.png
+share/doc/HTML/es/kst/Formula-kst-bandstop.png
+share/doc/HTML/es/kst/Formula-kst-convolution.png
+share/doc/HTML/es/kst/Formula-kst-crosscorrelation.png
+share/doc/HTML/es/kst/Formula-kst-deconvolution.png
+share/doc/HTML/es/kst/Formula-kst-exponentialfitequation.png
+share/doc/HTML/es/kst/Formula-kst-gaussianfitequation.png
+share/doc/HTML/es/kst/Formula-kst-gaussianprobability.png
+share/doc/HTML/es/kst/Formula-kst-generallinearmodel.png
+share/doc/HTML/es/kst/Formula-kst-generallinearmodelexample.png
+share/doc/HTML/es/kst/Formula-kst-gradientequation.png
+share/doc/HTML/es/kst/Formula-kst-gradientsumofsquares.png
+share/doc/HTML/es/kst/Formula-kst-highpass.png
+share/doc/HTML/es/kst/Formula-kst-linefitequation.png
+share/doc/HTML/es/kst/Formula-kst-linefitsumofsquaredresiduals.png
+share/doc/HTML/es/kst/Formula-kst-lorentzianfitequation.png
+share/doc/HTML/es/kst/Formula-kst-lowpass.png
+share/doc/HTML/es/kst/Formula-kst-polynomialfitequation.png
+share/doc/HTML/es/kst/Formula-kst-sinusoidfitequation.png
+share/doc/HTML/es/kst/Icon-kst-datamanager.png
+share/doc/HTML/es/kst/Icon-kst-datawizard.png
+share/doc/HTML/es/kst/Icon-kst-layoutmode.png
+share/doc/HTML/es/kst/Icon-kst-tiedzoom.png
+share/doc/HTML/es/kst/Icon-kst-xmousezoom.png
+share/doc/HTML/es/kst/Icon-kst-xymousezoom.png
+share/doc/HTML/es/kst/Screenshot-kst-arraywindow.png
+share/doc/HTML/es/kst/Screenshot-kst-configureshortcutswindow.png
+share/doc/HTML/es/kst/Screenshot-kst-curveoptions.png
+share/doc/HTML/es/kst/Screenshot-kst-curvewindow.png
+share/doc/HTML/es/kst/Screenshot-kst-datamanager.png
+share/doc/HTML/es/kst/Screenshot-kst-datamode.png
+share/doc/HTML/es/kst/Screenshot-kst-datawizard1.png
+share/doc/HTML/es/kst/Screenshot-kst-datawizard2.png
+share/doc/HTML/es/kst/Screenshot-kst-datawizard3.png
+share/doc/HTML/es/kst/Screenshot-kst-debuglog.png
+share/doc/HTML/es/kst/Screenshot-kst-defineshortcutwindow.png
+share/doc/HTML/es/kst/Screenshot-kst-demo.png
+share/doc/HTML/es/kst/Screenshot-kst-democorrected.png
+share/doc/HTML/es/kst/Screenshot-kst-editequation.png
+share/doc/HTML/es/kst/Screenshot-kst-equationwindow.png
+share/doc/HTML/es/kst/Screenshot-kst-eventmonitor-loggingsettings.png
+share/doc/HTML/es/kst/Screenshot-kst-eventmonitor-serversettings.png
+share/doc/HTML/es/kst/Screenshot-kst-eventmonitor.png
+share/doc/HTML/es/kst/Screenshot-kst-exportgraphics.png
+share/doc/HTML/es/kst/Screenshot-kst-filesave.png
+share/doc/HTML/es/kst/Screenshot-kst-fittedline.png
+share/doc/HTML/es/kst/Screenshot-kst-histogramwindow.png
+share/doc/HTML/es/kst/Screenshot-kst-imagewindow.png
+share/doc/HTML/es/kst/Screenshot-kst-labeleditor.png
+share/doc/HTML/es/kst/Screenshot-kst-mainwindow.png
+share/doc/HTML/es/kst/Screenshot-kst-matrixwindow.png
+share/doc/HTML/es/kst/Screenshot-kst-maxima-datapoints.png
+share/doc/HTML/es/kst/Screenshot-kst-mditabpage.png
+share/doc/HTML/es/kst/Screenshot-kst-mditoplevel.png
+share/doc/HTML/es/kst/Screenshot-kst-multipleselectedplots.png
+share/doc/HTML/es/kst/Screenshot-kst-open-file-button.png
+share/doc/HTML/es/kst/Screenshot-kst-plotdialogcontent.png
+share/doc/HTML/es/kst/Screenshot-kst-plotdialoglabels.png
+share/doc/HTML/es/kst/Screenshot-kst-plotdialoglegend.png
+share/doc/HTML/es/kst/Screenshot-kst-plotdialoglimits.png
+share/doc/HTML/es/kst/Screenshot-kst-plotdialogmarkers.png
+share/doc/HTML/es/kst/Screenshot-kst-plotdialogtop.png
+share/doc/HTML/es/kst/Screenshot-kst-pluginswindow.png
+share/doc/HTML/es/kst/Screenshot-kst-powerspectrawindow.png
+share/doc/HTML/es/kst/Screenshot-kst-quickstart.png
+share/doc/HTML/es/kst/Screenshot-kst-simpledata.png
+share/doc/HTML/es/kst/Screenshot-kst-tiedzoom.png
+share/doc/HTML/es/kst/Screenshot-kst-tutorial-datawizard-done.png
+share/doc/HTML/es/kst/Screenshot-kst-tutorial-gyro-multiple.png
+share/doc/HTML/es/kst/Screenshot-kst-tutorial-gyro1.png
+share/doc/HTML/es/kst/Screenshot-kst-vectorwindow.png
+share/doc/HTML/es/kst/Screenshot-kst-zoom.png
+share/doc/HTML/es/kst/Symbol-kst-Gamma.png
+share/doc/HTML/es/kst/Symbol-kst-lambda.png
+share/doc/HTML/es/kst/Symbol-kst-mu.png
+share/doc/HTML/es/kst/Symbol-kst-sigma.png
+share/doc/HTML/es/kst/Symbol-kst-theta.png
+share/doc/HTML/es/kst/Widget-kst-close.png
+share/doc/HTML/es/kst/Widget-kst-colourchooser.png
+share/doc/HTML/es/kst/Widget-kst-defaultcolours.png
+share/doc/HTML/es/kst/Widget-kst-maximize.png
+share/doc/HTML/es/kst/Widget-kst-minimize.png
+share/doc/HTML/es/kst/Widget-kst-swapcolour.png
+share/doc/HTML/es/kst/Widget-kst-undock.png
 share/doc/HTML/es/kst/additionalformats-chapter.docbook
 share/doc/HTML/es/kst/commandline-chapter.docbook
 share/doc/HTML/es/kst/creatingplugins-chapter.docbook
@@ -335,13 +500,6 @@ share/doc/HTML/es/kst/plugins-chapter.docbook
 share/doc/HTML/es/kst/saving-chapter.docbook
 share/doc/HTML/et/
 share/doc/HTML/et/kst/
-share/doc/HTML/et/kst/Equation-kst-correctedpitch.png
-share/doc/HTML/et/kst/Icon-kst-datamanager.png
-share/doc/HTML/et/kst/Icon-kst-datawizard.png
-share/doc/HTML/et/kst/Icon-kst-layoutmode.png
-share/doc/HTML/et/kst/Icon-kst-tiedzoom.png
-share/doc/HTML/et/kst/Icon-kst-xmousezoom.png
-share/doc/HTML/et/kst/Icon-kst-xymousezoom.png
 share/doc/HTML/et/kst/Screenshot-kst-curveoptions.png
 share/doc/HTML/et/kst/Screenshot-kst-curvewindow.png
 share/doc/HTML/et/kst/Screenshot-kst-datamanager.png
@@ -377,11 +535,6 @@ share/doc/HTML/et/kst/Screenshot-kst-tutorial-gyro-multiple.png
 share/doc/HTML/et/kst/Screenshot-kst-tutorial-gyro1.png
 share/doc/HTML/et/kst/Screenshot-kst-vectorwindow.png
 share/doc/HTML/et/kst/Screenshot-kst-zoom.png
-share/doc/HTML/et/kst/Symbol-kst-Gamma.png
-share/doc/HTML/et/kst/Symbol-kst-lambda.png
-share/doc/HTML/et/kst/Symbol-kst-mu.png
-share/doc/HTML/et/kst/Symbol-kst-sigma.png
-share/doc/HTML/et/kst/Symbol-kst-theta.png
 share/doc/HTML/et/kst/Widget-kst-colourchooser.png
 share/doc/HTML/et/kst/additionalformats-chapter.docbook
 share/doc/HTML/et/kst/commandline-chapter.docbook
@@ -442,6 +595,7 @@ share/doc/HTML/nl/kst/
 share/doc/HTML/nl/kst/additionalformats-chapter.docbook
 share/doc/HTML/nl/kst/commandline-chapter.docbook
 share/doc/HTML/nl/kst/common
+share/doc/HTML/nl/kst/commontasks-chapter.docbook
 share/doc/HTML/nl/kst/creatingplugins-chapter.docbook
 share/doc/HTML/nl/kst/data-chapter.docbook
 share/doc/HTML/nl/kst/dcop-chapter.docbook
@@ -456,6 +610,7 @@ share/doc/HTML/nl/kst/miscfeatures-chapter.docbook
 share/doc/HTML/nl/kst/plotsandwindows-chapter.docbook
 share/doc/HTML/nl/kst/plugins-chapter.docbook
 share/doc/HTML/nl/kst/saving-chapter.docbook
+share/doc/HTML/nl/kst/tutorial.docbook
 share/doc/HTML/pt/
 share/doc/HTML/pt/kst/
 share/doc/HTML/pt/kst/additionalformats-chapter.docbook
@@ -486,16 +641,26 @@ share/doc/HTML/sv/kst/Diagram-kst-windowplotrelation.png
 share/doc/HTML/sv/kst/Screenshot-kst-configureshortcutswindow.png
 share/doc/HTML/sv/kst/Screenshot-kst-curveoptions.png
 share/doc/HTML/sv/kst/Screenshot-kst-curvewindow.png
+share/doc/HTML/sv/kst/Screenshot-kst-datamanager.png
 share/doc/HTML/sv/kst/Screenshot-kst-datawizard2.png
 share/doc/HTML/sv/kst/Screenshot-kst-datawizard3.png
+share/doc/HTML/sv/kst/Screenshot-kst-debuglog.png
 share/doc/HTML/sv/kst/Screenshot-kst-defineshortcutwindow.png
+share/doc/HTML/sv/kst/Screenshot-kst-demo.png
+share/doc/HTML/sv/kst/Screenshot-kst-democorrected.png
+share/doc/HTML/sv/kst/Screenshot-kst-editequation.png
 share/doc/HTML/sv/kst/Screenshot-kst-equationwindow.png
+share/doc/HTML/sv/kst/Screenshot-kst-eventmonitor-loggingsettings.png
+share/doc/HTML/sv/kst/Screenshot-kst-eventmonitor-serversettings.png
 share/doc/HTML/sv/kst/Screenshot-kst-eventmonitor.png
 share/doc/HTML/sv/kst/Screenshot-kst-exportgraphics.png
+share/doc/HTML/sv/kst/Screenshot-kst-filesave.png
+share/doc/HTML/sv/kst/Screenshot-kst-fittedline.png
 share/doc/HTML/sv/kst/Screenshot-kst-histogramwindow.png
 share/doc/HTML/sv/kst/Screenshot-kst-imagewindow.png
 share/doc/HTML/sv/kst/Screenshot-kst-labeleditor.png
 share/doc/HTML/sv/kst/Screenshot-kst-matrixwindow.png
+share/doc/HTML/sv/kst/Screenshot-kst-maxima-datapoints.png
 share/doc/HTML/sv/kst/Screenshot-kst-mditabpage.png
 share/doc/HTML/sv/kst/Screenshot-kst-mditoplevel.png
 share/doc/HTML/sv/kst/Screenshot-kst-multipleselectedplots.png
@@ -509,7 +674,11 @@ share/doc/HTML/sv/kst/Screenshot-kst-pluginswindow.png
 share/doc/HTML/sv/kst/Screenshot-kst-powerspectrawindow.png
 share/doc/HTML/sv/kst/Screenshot-kst-quickstart.png
 share/doc/HTML/sv/kst/Screenshot-kst-simpledata.png
+share/doc/HTML/sv/kst/Screenshot-kst-tutorial-datawizard-done.png
+share/doc/HTML/sv/kst/Screenshot-kst-tutorial-gyro-multiple.png
+share/doc/HTML/sv/kst/Screenshot-kst-tutorial-gyro1.png
 share/doc/HTML/sv/kst/Screenshot-kst-vectorwindow.png
+share/doc/HTML/sv/kst/Screenshot-kst-zoom.png
 share/doc/HTML/sv/kst/additionalformats-chapter.docbook
 share/doc/HTML/sv/kst/commandline-chapter.docbook
 share/doc/HTML/sv/kst/common
@@ -535,14 +704,26 @@ share/icons/hicolor/22x22/actions/kst_advance.png
 share/icons/hicolor/22x22/actions/kst_back.png
 share/icons/hicolor/22x22/actions/kst_changefile.png
 share/icons/hicolor/22x22/actions/kst_changenpts.png
+share/icons/hicolor/22x22/actions/kst_choosecolor.png
+share/icons/hicolor/22x22/actions/kst_csdnew.png
 share/icons/hicolor/22x22/actions/kst_curvenew.png
 share/icons/hicolor/22x22/actions/kst_datamanager.png
 share/icons/hicolor/22x22/actions/kst_datamode.png
 share/icons/hicolor/22x22/actions/kst_datawizard.png
+share/icons/hicolor/22x22/actions/kst_differentiatecurves.png
 share/icons/hicolor/22x22/actions/kst_editplots.png
 share/icons/hicolor/22x22/actions/kst_equationnew.png
 share/icons/hicolor/22x22/actions/kst_eventnew.png
+share/icons/hicolor/22x22/actions/kst_gfx_arrow.png
+share/icons/hicolor/22x22/actions/kst_gfx_ellipse.png
+share/icons/hicolor/22x22/actions/kst_gfx_line.png
+share/icons/hicolor/22x22/actions/kst_gfx_picture.png
+share/icons/hicolor/22x22/actions/kst_gfx_polygon.png
+share/icons/hicolor/22x22/actions/kst_gfx_polyline.png
+share/icons/hicolor/22x22/actions/kst_gfx_rectangle.png
+share/icons/hicolor/22x22/actions/kst_gfx_rounded_rectangle.png
 share/icons/hicolor/22x22/actions/kst_graphfile.png
+share/icons/hicolor/22x22/actions/kst_graphics.png
 share/icons/hicolor/22x22/actions/kst_histogramnew.png
 share/icons/hicolor/22x22/actions/kst_imagenew.png
 share/icons/hicolor/22x22/actions/kst_layoutmode.png
@@ -567,48 +748,87 @@ share/icons/locolor/32x32/apps/
 share/icons/locolor/32x32/apps/kst.png
 share/icons/locolor/32x32/mimetypes/
 share/icons/locolor/32x32/mimetypes/kst.png
+share/locale/bg/LC_MESSAGES/kst.mo
 share/locale/br/
 share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/kst.mo
+share/locale/br/LC_MESSAGES/kstplugineditor.mo
 share/locale/ca/LC_MESSAGES/kst.mo
+share/locale/ca/LC_MESSAGES/kstplugineditor.mo
+share/locale/cs/LC_MESSAGES/kst.mo
+share/locale/cs/LC_MESSAGES/kstplugineditor.mo
 share/locale/cy/LC_MESSAGES/kst.mo
+share/locale/cy/LC_MESSAGES/kstplugineditor.mo
 share/locale/da/LC_MESSAGES/kst.mo
+share/locale/da/LC_MESSAGES/kstplugineditor.mo
 share/locale/de/LC_MESSAGES/kst.mo
+share/locale/de/LC_MESSAGES/kstplugineditor.mo
 share/locale/el/LC_MESSAGES/kst.mo
+share/locale/el/LC_MESSAGES/kstplugineditor.mo
 share/locale/en_GB/LC_MESSAGES/kst.mo
+share/locale/en_GB/LC_MESSAGES/kstplugineditor.mo
 share/locale/es/LC_MESSAGES/kst.mo
+share/locale/es/LC_MESSAGES/kstplugineditor.mo
 share/locale/et/LC_MESSAGES/kst.mo
+share/locale/et/LC_MESSAGES/kstplugineditor.mo
 share/locale/fr/LC_MESSAGES/kst.mo
+share/locale/fr/LC_MESSAGES/kstplugineditor.mo
 share/locale/ga/LC_MESSAGES/kst.mo
+share/locale/ga/LC_MESSAGES/kstplugineditor.mo
 share/locale/hi/LC_MESSAGES/kst.mo
+share/locale/hi/LC_MESSAGES/kstplugineditor.mo
 share/locale/is/LC_MESSAGES/kst.mo
+share/locale/is/LC_MESSAGES/kstplugineditor.mo
 share/locale/it/LC_MESSAGES/kst.mo
+share/locale/it/LC_MESSAGES/kstplugineditor.mo
 share/locale/lt/LC_MESSAGES/kst.mo
+share/locale/lt/LC_MESSAGES/kstplugineditor.mo
 share/locale/mt/
 share/locale/mt/LC_MESSAGES/
 share/locale/mt/LC_MESSAGES/kst.mo
+share/locale/mt/LC_MESSAGES/kstplugineditor.mo
 share/locale/nb/LC_MESSAGES/kst.mo
 share/locale/nl/LC_MESSAGES/kst.mo
+share/locale/nl/LC_MESSAGES/kstplugineditor.mo
+share/locale/nn/LC_MESSAGES/kstplugineditor.mo
+share/locale/pa/LC_MESSAGES/kstplugineditor.mo
 share/locale/pl/LC_MESSAGES/kst.mo
+share/locale/pl/LC_MESSAGES/kstplugineditor.mo
 share/locale/pt/LC_MESSAGES/kst.mo
+share/locale/pt/LC_MESSAGES/kstplugineditor.mo
 share/locale/pt_BR/LC_MESSAGES/kst.mo
+share/locale/pt_BR/LC_MESSAGES/kstplugineditor.mo
 share/locale/ro/LC_MESSAGES/kst.mo
+share/locale/ro/LC_MESSAGES/kstplugineditor.mo
 share/locale/ru/LC_MESSAGES/kst.mo
+share/locale/ru/LC_MESSAGES/kstplugineditor.mo
+share/locale/rw/LC_MESSAGES/kst.mo
+share/locale/rw/LC_MESSAGES/kstplugineditor.mo
 share/locale/sr/LC_MESSAGES/kst.mo
+share/locale/sr/LC_MESSAGES/kstplugineditor.mo
 share/locale/sr@Latn/LC_MESSAGES/kst.mo
+share/locale/sr@Latn/LC_MESSAGES/kstplugineditor.mo
 share/locale/sv/LC_MESSAGES/kst.mo
+share/locale/sv/LC_MESSAGES/kstplugineditor.mo
 share/locale/ta/LC_MESSAGES/kst.mo
+share/locale/ta/LC_MESSAGES/kstplugineditor.mo
 share/locale/tr/LC_MESSAGES/kst.mo
+share/locale/tr/LC_MESSAGES/kstplugineditor.mo
 share/locale/zh_CN/LC_MESSAGES/kst.mo
 share/mimelnk/application/x-kst.desktop
 share/services/kst/
 share/services/kst/kstdata_ascii.desktop
 share/services/kst/kstdata_dirfile.desktop
+share/services/kst/kstdata_fitsimage.desktop
 share/services/kst/kstdata_frame.desktop
+share/services/kst/kstdata_healpix.desktop
 share/services/kst/kstdata_indirect.desktop
+share/services/kst/kstdata_lfiio.desktop
 share/services/kst/kstdata_netcdf.desktop
+share/services/kst/kstdata_qimagesource.desktop
 share/services/kst/kstextension_elog.desktop
-share/services/kst/kstextension_rana.desktop
+share/services/kst/kstextension_js.desktop
+share/services/kst/kstextension_pulse.desktop
 share/servicetypes/kst/
 share/servicetypes/kst/kstdatasourceplugin.desktop
 share/servicetypes/kst/kstextension.desktop
