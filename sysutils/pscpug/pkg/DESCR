@@ -1,0 +1,3 @@
+pscpug is a unix utility designed to graph a given process's CPU usage
+over time. Since you can see changes over time, it is often more useful
+than top for checking on a specific errant process.
