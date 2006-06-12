@@ -1,0 +1,69 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/12 11:30:05 alek Exp $
+${P5SITE}/POE/Component/IRC/
+${P5SITE}/POE/Component/IRC.pm
+${P5SITE}/POE/Component/IRC/Common.pm
+${P5SITE}/POE/Component/IRC/Constants.pm
+${P5SITE}/POE/Component/IRC/Pipeline.pm
+${P5SITE}/POE/Component/IRC/Plugin/
+${P5SITE}/POE/Component/IRC/Plugin.pm
+${P5SITE}/POE/Component/IRC/Plugin/BotAddressed.pm
+${P5SITE}/POE/Component/IRC/Plugin/BotTraffic.pm
+${P5SITE}/POE/Component/IRC/Plugin/CTCP.pm
+${P5SITE}/POE/Component/IRC/Plugin/Connector.pm
+${P5SITE}/POE/Component/IRC/Plugin/Console.pm
+${P5SITE}/POE/Component/IRC/Plugin/ISupport.pm
+${P5SITE}/POE/Component/IRC/Plugin/NickReclaim.pm
+${P5SITE}/POE/Component/IRC/Plugin/PlugMan.pm
+${P5SITE}/POE/Component/IRC/Plugin/Proxy.pm
+${P5SITE}/POE/Component/IRC/Plugin/Whois.pm
+${P5SITE}/POE/Component/IRC/Projects.pm
+${P5SITE}/POE/Component/IRC/Qnet/
+${P5SITE}/POE/Component/IRC/Qnet.pm
+${P5SITE}/POE/Component/IRC/Qnet/State.pm
+${P5SITE}/POE/Component/IRC/State.pm
+${P5SITE}/POE/Component/IRC/Test/
+${P5SITE}/POE/Component/IRC/Test/Harness.pm
+${P5SITE}/POE/Component/IRC/Test/Plugin.pm
+${P5SITE}/POE/Filter/CTCP.pm
+${P5SITE}/POE/Filter/IRC/
+${P5SITE}/POE/Filter/IRC.pm
+${P5SITE}/POE/Filter/IRC/Compat.pm
+@man man/man3p/POE::Component::IRC.3p
+@man man/man3p/POE::Component::IRC::Common.3p
+@man man/man3p/POE::Component::IRC::Constants.3p
+@man man/man3p/POE::Component::IRC::Pipeline.3p
+@man man/man3p/POE::Component::IRC::Plugin.3p
+@man man/man3p/POE::Component::IRC::Plugin::BotAddressed.3p
+@man man/man3p/POE::Component::IRC::Plugin::BotTraffic.3p
+@man man/man3p/POE::Component::IRC::Plugin::CTCP.3p
+@man man/man3p/POE::Component::IRC::Plugin::Connector.3p
+@man man/man3p/POE::Component::IRC::Plugin::Console.3p
+@man man/man3p/POE::Component::IRC::Plugin::ISupport.3p
+@man man/man3p/POE::Component::IRC::Plugin::NickReclaim.3p
+@man man/man3p/POE::Component::IRC::Plugin::PlugMan.3p
+@man man/man3p/POE::Component::IRC::Plugin::Proxy.3p
+@man man/man3p/POE::Component::IRC::Plugin::Whois.3p
+@man man/man3p/POE::Component::IRC::Projects.3p
+@man man/man3p/POE::Component::IRC::Qnet.3p
+@man man/man3p/POE::Component::IRC::Qnet::State.3p
+@man man/man3p/POE::Component::IRC::State.3p
+@man man/man3p/POE::Component::IRC::Test::Harness.3p
+@man man/man3p/POE::Filter::CTCP.3p
+@man man/man3p/POE::Filter::IRC.3p
+share/doc/p5-POE-Component-IRC/
+share/doc/p5-POE-Component-IRC/ctcpspec.html
+share/doc/p5-POE-Component-IRC/dccspec.html
+share/doc/p5-POE-Component-IRC/rfc1459.html
+share/doc/p5-POE-Component-IRC/rfc2810.html
+share/doc/p5-POE-Component-IRC/rfc2811.html
+share/doc/p5-POE-Component-IRC/rfc2812.html
+share/doc/p5-POE-Component-IRC/rfc2813.html
+share/examples/p5-POE-Component-IRC/
+share/examples/p5-POE-Component-IRC/aimproxy.pl
+share/examples/p5-POE-Component-IRC/dcctest.pl
+share/examples/p5-POE-Component-IRC/dicebot.pl
+share/examples/p5-POE-Component-IRC/eliza.pl
+share/examples/p5-POE-Component-IRC/ircproxy.pl
+share/examples/p5-POE-Component-IRC/moo.pl
+share/examples/p5-POE-Component-IRC/simpleclient.pl
+share/examples/p5-POE-Component-IRC/tinyurl.pl
