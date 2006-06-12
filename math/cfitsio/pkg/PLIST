@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/12 11:14:08 espie Exp $
+%%SHARED%%
+bin/fitscopy
+bin/imcopy
+bin/listhead
+include/drvrsmem.h
+include/fitsio.h
+include/fitsio2.h
+include/longnam.h
+lib/libcfitsio.a
+share/doc/cfitsio/
+share/doc/cfitsio/License.txt
+share/doc/cfitsio/README
+share/doc/cfitsio/cfitsio.doc
+share/doc/cfitsio/cfortran.doc
+share/doc/cfitsio/cookbook.c
+share/doc/cfitsio/fitsio.doc

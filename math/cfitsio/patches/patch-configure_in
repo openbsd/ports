@@ -1,0 +1,23 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2006/06/12 11:14:08 espie Exp $
+--- configure.in.orig	Thu Jul 28 23:26:00 2005
++++ configure.in	Mon Jun 12 13:04:54 2006
+@@ -307,7 +307,8 @@ AC_MSG_RESULT("yes")
+ # -------------------------------------------------------------------------
+ 
+ AC_MSG_CHECKING("whether system V style IPC services are supported")
+-AC_TRY_LINK([#include <sys/ipc.h>
++AC_TRY_LINK([#include <sys/types.h>
++#include <sys/ipc.h>
+ #include <sys/shm.h>
+ #include <sys/sem.h>
+ ], [
+@@ -354,7 +355,8 @@ fi
+ 
+ AC_MSG_CHECKING("do we have union semun defined")
+ AC_TRY_COMPILE(
+-[#include <sys/ipc.h>
++[#include <sys/types.h>
++#include <sys/ipc.h>
+ #include <sys/shm.h>
+ #include <sys/sem.h>
+ ], [

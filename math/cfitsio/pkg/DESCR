@@ -1,0 +1,4 @@
+The CFITS format is a standard format used in astrophysics.
+This library yields C source to manipulate all aspects of this format.
+
+Extended documentation is available on the web site.

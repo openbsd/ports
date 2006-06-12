@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/06/12 11:14:08 espie Exp $
+@lib lib/libcfitsio.so.${LIBcfitsio_VERSION}
