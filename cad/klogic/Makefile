@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2006/01/22 17:02:50 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/06/12 14:32:48 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT= 	"logic circuit simulator for KDE"
 
 DISTNAME=	klogic-1.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	cad education x11 x11/kde
 MASTER_SITES=	${HOMEPAGE}Version/
 
@@ -16,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		art_lgpl_2.0.0 jpeg kwalletclient ICE SM X11 Xext \
-			Xrender c m png pthread stdc++ util z
+			Xrender c m png pthread stdc++ util z iconv idn
 
 LIB_DEPENDS=	kdecore.4,DCOP,kdefx,kdesu,kdeui,kio::x11/kde/libs3
 

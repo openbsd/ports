@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2004/12/17 15:18:33 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2006/06/12 14:32:48 espie Exp $
 
 COMMENT=	"screen saver that displays a countdown to a selected date"
 
 DISTNAME=	kountdown-0.4.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.lysator.liu.se/~erre/kountdown.html
@@ -15,7 +16,8 @@ PERMIT_PACKAGE_FTP=    Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=  Yes
 WANTLIB=		ICE SM X11 Xext Xrender art_lgpl_2 c jpeg \
-			kwalletclient m png pthread stdc++ util z 
+			kwalletclient m png pthread stdc++ util z \
+			iconv idn
 
 MASTER_SITES=	http://www.lysator.liu.se/~erre/download/kountdown/
 
@@ -31,6 +33,7 @@ MAKE_ENV=	KDEDIR="${LOCALBASE}"
 MAKE_ENV+= 	UIC_PATH="${MODQT_UIC}" UIC="${MODQT_UIC}"
 MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}
 
+USE_LIBTOOL=	Yes
 USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf

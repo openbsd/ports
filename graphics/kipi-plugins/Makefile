@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2006/03/14 23:26:36 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/06/12 14:32:48 espie Exp $
 
 COMMENT=		"kde image plugins"
 CATEGORIES=		graphics x11 x11/kde
 DISTNAME=		kipi-plugins-0.1.0-rc1
 EXTRACT_SUFX=		.tar.bz2
-PKGNAME=		kipi-plugins-0.1.0rc1
+PKGNAME=		kipi-plugins-0.1.0rc1p0
 HOMEPAGE=		http://extragear.kde.org/apps/kipi/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=kipi/}
 
@@ -19,7 +19,7 @@ MODULES=	x11/kde
 
 BUILD_DEPENDS=	::devel/pkgconfig
 WANTLIB=	X11 Xext freetype util m c ICE Xrender SM pthread z GL stdc++ \
-		jpeg png pcre pcreposix iconv intl art_lgpl_2 tiff exif ltdl
+		jpeg png pcre pcreposix iconv intl art_lgpl_2 tiff exif ltdl idn
 
 USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static

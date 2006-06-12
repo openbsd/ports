@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2006/01/23 09:03:46 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/06/12 14:32:48 espie Exp $
 
 COMMENT=	"puzzle game for KDE"
 
 DISTNAME=	kslide-0.90
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games
 
 HOMEPAGE=	http://perso.wanadoo.fr/coquelle/taquin/
@@ -14,7 +15,7 @@ PERMIT_PACKAGE_FTP=    Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=  Yes
 WANTLIB=	art_lgpl_2.0.0 jpeg ICE SM X11 Xext Xrender c m png pthread stdc++ \
-		util z
+		util z iconv idn
 
 MASTER_SITES=	http://david.bieder.free.fr/eric/taquin/ \
 		http://perso.wanadoo.fr/coquelle/taquin/

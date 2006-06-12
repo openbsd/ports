@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2004/12/22 11:48:33 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2006/06/12 14:32:48 espie Exp $
 
 COMMENT=	"task-based timeclock for KDE"
 
 VERSION=	2.0.2
 DISTNAME=	ktimeclock-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	misc x11
 
 HOMEPAGE=	http://www.howlingfrog.com/opensource/ktimeclock/
@@ -16,7 +17,7 @@ PERMIT_PACKAGE_FTP=    Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=  Yes
 WANTLIB=		art_lgpl_2 jpeg kwalletclient ICE SM X11 Xext Xrender \
-			c m png pthread stdc++ util z
+			c m png pthread stdc++ util z idn iconv
 
 MASTER_SITES=	${HOMEPAGE}/downloads/v${VERSION}/tarball/
 
@@ -41,5 +42,6 @@ CONFIGURE_ARGS+= --with-extra-includes="${LOCALBASE}/include/libpng:${LOCALBASE}
 CONFIGURE_ARGS+= --with-xinerama
 CONFIGURE_ENV=	KDEDIR="${LOCALBASE}"
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/admin
+USE_LIBTOOL=	Yes
 
 .include <bsd.port.mk>
