@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.417 2006/05/23 05:55:22 alek Exp $
+# $OpenBSD: Makefile,v 1.418 2006/06/12 11:58:54 alek Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -218,8 +218,10 @@
      SUBDIR += p5-Nmap-Parser
      SUBDIR += p5-Nmap-Scanner
      SUBDIR += p5-POE-Component-Client-DNS
+     SUBDIR += p5-POE-Component-IRC
      SUBDIR += p5-POE-Component-Pcap
      SUBDIR += p5-POE-Component-Server-FTP
+     SUBDIR += p5-POE-Filter-IRCD
      SUBDIR += p5-PlRPC
      SUBDIR += p5-SNMP-BridgeQuery
      SUBDIR += p5-SNMP_Session
