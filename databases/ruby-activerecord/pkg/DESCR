@@ -1,0 +1,4 @@
+Implements the ActiveRecord pattern (Fowler, PoEAA) for ORM. It ties
+database tables and classes together for business objects, like Customer
+or Subscription, that can find, save, and destroy themselves without
+resorting to manual SQL.
