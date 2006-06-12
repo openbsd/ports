@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2005/10/30 00:10:42 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2006/06/12 15:45:51 espie Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"QNX Photon inspired theme for KDE"
 
 DISTNAME=	qinx-1.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11 x11/kde
 MASTER_SITES=	http://www.usermode.org/code/
 
@@ -15,7 +16,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
-WANTLIB=		ICE SM X11 Xext Xrender jpeg m png pthread util z
+WANTLIB=		ICE SM X11 Xext Xrender jpeg m png pthread util z \
+			iconv idn
 
 LIB_DEPENDS=	art_lgpl_2::graphics/libart \
 		kdecore.6,DCOP,kdefx,kdeui::x11/kde/libs3 \
@@ -32,6 +34,7 @@ MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
 MODGNU_CONFIG_GUESS_DIRS= ${MODKDE_CONFIG_GUESS_DIRS}
 CONFIGURE_ARGS=	${MODKDE_CONFIGURE_ARGS}

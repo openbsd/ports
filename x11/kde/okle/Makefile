@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2004/12/16 07:25:25 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2006/06/12 15:45:51 espie Exp $
 
 COMMENT= 		"kde front end for ogle"
 CATEGORIES=		x11 x11/kde 
 VERSION=		3.0
 DISTNAME=		okle-0.3
+PKGNAME=		${DISTNAME}p0
 HOMEPAGE=		http://okle.sourceforge.net/
 MASTER_SITES=		http://okle.sourceforge.net/src/
 EXTRACT_SUFX=		.tar.gz
@@ -14,6 +15,6 @@ CONFIGURE_ARGS+=--with-ogle-libs='${LOCALBASE}/lib/ogle -L${LOCALBASE}/lib'
 CONFIGURE_ARGS+=--with-ogle-includes=${LOCALBASE}/include
 
 WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 c iconv jpeg kwalletclient \
-		m png pthread stdc++ util xml2 z
+		m png pthread stdc++ util xml2 z idn
 
 .include <bsd.port.mk>

@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2004/02/10 22:54:59 espie Exp $
-${KDE}/kstyle_qinx_config.so
-${KDE}/kwin3_qinx.so
-${KDE}/kwin_qinx_config.so
-${KDE}/plugins/styles/qinx.so
