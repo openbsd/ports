@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.377 2006/06/11 20:06:01 sturm Exp $
+# $OpenBSD: Makefile,v 1.378 2006/06/12 19:56:33 sturm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -377,6 +377,7 @@
      SUBDIR += ruby-activesupport
      SUBDIR += ruby-gems
      SUBDIR += ruby-ncurses
+     SUBDIR += ruby-rake
      SUBDIR += scons
      SUBDIR += sdl
      SUBDIR += sdl,esd
