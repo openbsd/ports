@@ -1,0 +1,2 @@
+Simple support for publishing Web Service APIs for Rails applications.
+Supports SOAP and XML-RPC, as well as generating WSDL for SOAP bindings.
