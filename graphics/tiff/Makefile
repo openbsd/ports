@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2006/03/31 20:38:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2006/06/12 17:31:34 naddy Exp $
 
 COMMENT=	"tools and library routines for working with TIFF images"
 
 DISTNAME=	tiff-3.8.2
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	tiff	38.2 \
 		tiffxx	39.2
 CATEGORIES=	graphics
