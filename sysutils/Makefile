@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2006/06/12 14:30:39 alek Exp $
+# $OpenBSD: Makefile,v 1.106 2006/06/13 19:39:45 steven Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -10,6 +10,7 @@
      SUBDIR += bubblemon-dockapp
      SUBDIR += cdrtools
      SUBDIR += cfengine
+     SUBDIR += clusterit
      SUBDIR += colorls
      SUBDIR += colortail
      SUBDIR += contool
