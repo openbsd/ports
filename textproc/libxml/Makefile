@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.97 2006/06/11 18:24:11 steven Exp $
+# $OpenBSD: Makefile,v 1.98 2006/06/13 17:31:29 alek Exp $
 
 COMMENT=		"XML parsing library"
+COMMENT-python=		"Python bindings for libxml"
 
 VERSION=		2.6.24
 DISTNAME=		libxml2-${VERSION}
 PKGNAME=		libxml-${VERSION}
+PKGNAME-python=		py-libxml-${VERSION}
 SHARED_LIBS=		xml2	9.2
 CATEGORIES=		textproc
 MASTER_SITES=		ftp://xmlsoft.org/libxml/ \
@@ -20,6 +22,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m z 
 
+PSEUDO_FLAVORS=		python
+FLAVOR?=
+
 MODULES=		converters/libiconv
 
 USE_LIBTOOL=		Yes
@@ -29,7 +34,29 @@ CONFIGURE_ARGS+=	--enable-static
 CONFIGURE_ARGS+=	--with-html-dir="${PREFIX}/share/doc"
 CONFIGURE_ARGS+=	--with-html-subdir="libxml2/html"
 CONFIGURE_ARGS+=	--with-iconv="${DEPBASE}"
+
+.if ${FLAVOR:Mpython}
+SHARED_ONLY=		Yes
+
+MULTI_PACKAGES=		-python
+SUBPACKAGE?=
+
+.  if !defined(PACKAGING) || !empty(SUBPACKAGE)
+MODULES+=		lang/python
+.  endif
+CONFIGURE_ENV=		PYTHON=${MODPY_BIN}
+
+CONFIGURE_ARGS+=	--with-python
+FAKE_FLAGS=		EXAMPLE_DIR=${PREFIX}/share/examples/libxml2/ \
+			DEVHELP_DIR=${PREFIX}/share/doc/libxml2/html/devhelp
+
+.  if defined(PACKAGING) && !empty(SUBPACKAGE)
+LIB_DEPENDS=		xml2.9::textproc/libxml
+WANTLIB=		m z
+.  endif
+.else
 CONFIGURE_ARGS+=	--without-python
+.endif
 CONFIGURE_ARGS+=	--without-threads
 
 REGRESS_DEPENDS=	::devel/gmake

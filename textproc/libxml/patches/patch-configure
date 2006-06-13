@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.14 2006/06/13 17:31:29 alek Exp $
+--- configure.orig	Sun Jun  4 18:22:26 2006
++++ configure	Sun Jun  4 18:22:46 2006
+@@ -26958,7 +26958,7 @@ fi
+     fi
+     if test "$with_python" != ""
+     then
+-        pythondir=$(PYTHON_SITE_PACKAGES)
++        pythondir=${PYTHON_SITE_PACKAGES}
+     else
+         pythondir='$(libdir)/python$(PYTHON_VERSION)/site-packages'
+     fi
