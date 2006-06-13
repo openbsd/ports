@@ -1,12 +1,11 @@
-@comment $OpenBSD: PLIST-python,v 1.1 2006/06/13 17:31:29 alek Exp $
-lib/lib/
-lib/lib/python${MODPY_VERSION}/
-lib/lib/python${MODPY_VERSION}/site-packages/
-lib/lib/python${MODPY_VERSION}/site-packages/drv_libxml2.py
-lib/lib/python${MODPY_VERSION}/site-packages/libxml2.py
-lib/lib/python${MODPY_VERSION}/site-packages/libxml2mod.a
-lib/lib/python${MODPY_VERSION}/site-packages/libxml2mod.la
-lib/lib/python${MODPY_VERSION}/site-packages/libxml2mod.so
+@comment $OpenBSD: PLIST-python,v 1.2 2006/06/13 19:24:46 alek Exp $
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
+lib/python${MODPY_VERSION}/site-packages/drv_libxml2.py
+lib/python${MODPY_VERSION}/site-packages/libxml2.py
+lib/python${MODPY_VERSION}/site-packages/libxml2mod.a
+lib/python${MODPY_VERSION}/site-packages/libxml2mod.la
+lib/python${MODPY_VERSION}/site-packages/libxml2mod.so
 @comment share/doc/libxml2-python-2.6.24/
 @comment share/doc/libxml2-python-2.6.24/TODO
 share/examples/libxml2/
