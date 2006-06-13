@@ -1,0 +1,12 @@
+$OpenBSD: patch-dsh_run_1,v 1.1.1.1 2006/06/13 19:39:07 steven Exp $
+--- dsh/run.1.orig	Mon Jun 12 11:53:43 2006
++++ dsh/run.1	Mon Jun 12 11:53:52 2006
+@@ -129,7 +129,7 @@ in the cluster.
+ .It Ev RCMD_CMD
+ Command to use to connect to remote machines.  The command chosen must
+ be able to connect with no password to the remote host.  Defaults to
+-.Ic rsh
++.Ic ssh .
+ .It Ev RCMD_CMD_ARGS
+ Arguments to pass to the remote shell command.  Defaults to none.
+ .It Ev RCMD_USER

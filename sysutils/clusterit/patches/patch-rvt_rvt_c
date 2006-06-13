@@ -1,0 +1,12 @@
+$OpenBSD: patch-rvt_rvt_c,v 1.1.1.1 2006/06/13 19:39:07 steven Exp $
+--- rvt/rvt.c.orig	Sun Jun 11 17:17:54 2006
++++ rvt/rvt.c	Sun Jun 11 17:18:18 2006
+@@ -166,7 +166,7 @@ char **argv;
+ 	com_argv = (char**) cmalloc( (i+1) * sizeof(char**) );
+ 	
+ 	command = getenv("RLOGIN_CMD");
+-	if(command == NULL) command = "/usr/bin/rsh";
++	if(command == NULL) command = "/usr/bin/ssh";
+ 	i = 0;
+ 	com_argv[i++] = command;
+ 	if(remote_username != NULL)

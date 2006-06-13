@@ -1,0 +1,12 @@
+$OpenBSD: patch-jsd_jsd_1,v 1.1.1.1 2006/06/13 19:39:07 steven Exp $
+--- jsd/jsd.1.orig	Mon Jun 12 11:54:38 2006
++++ jsd/jsd.1	Mon Jun 12 11:54:53 2006
+@@ -173,7 +173,7 @@ in the cluster.
+ .It Ev RCMD_CMD
+ Command to use to connect to remote machines.  The command chosen must
+ be able to connect with no password to the remote host.  Defaults to
+-.Ic rsh .
++.Ic ssh .
+ This is only used by
+ .Nm
+ when issuing the benchmark at startup, and has no

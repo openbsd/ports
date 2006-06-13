@@ -1,0 +1,12 @@
+$OpenBSD: patch-jsd_jsh_c,v 1.1.1.1 2006/06/13 19:39:07 steven Exp $
+--- jsd/jsh.c.orig	Sun Jun 11 17:16:28 2006
++++ jsd/jsh.c	Sun Jun 11 17:17:19 2006
+@@ -319,7 +319,7 @@ do_command(char **argv, int allrun, char
+     }
+     rsh = getenv("RCMD_CMD");
+     if (rsh == NULL)
+-	rsh = strdup("rsh");
++	rsh = strdup("ssh");
+     if (rsh == NULL)
+ 	bailout();
+ 

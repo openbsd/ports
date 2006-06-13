@@ -1,0 +1,12 @@
+$OpenBSD: patch-pcp_pcp_c,v 1.1.1.1 2006/06/13 19:39:07 steven Exp $
+--- pcp/pcp.c.orig	Sun Jun 11 18:09:22 2006
++++ pcp/pcp.c	Sun Jun 11 18:10:18 2006
+@@ -276,7 +276,7 @@ void do_copy(char **argv, int recurse, i
+ 
+     rcp = getenv("RCP_CMD");
+     if (rcp == NULL)
+-	rcp = strdup("rcp");
++	rcp = strdup("scp");
+     if (rcp == NULL)
+ 	bailout();
+     (void)snprintf(args, 64, " ");

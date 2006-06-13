@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/13 19:39:07 steven Exp $
+bin/barrier
+bin/barrierd
+bin/clustersed
+bin/dsh
+bin/dshbak
+bin/jsd
+bin/jsh
+bin/pcp
+bin/pdf
+bin/prm
+bin/rseq
+bin/run
+@man man/man1/barrier.1
+@man man/man1/barrierd.1
+@man man/man1/clustersed.1
+@man man/man1/dsh.1
+@man man/man1/dshbak.1
+@man man/man1/jsd.1
+@man man/man1/jsh.1
+@man man/man1/pcp.1
+@man man/man1/pdf.1
+@man man/man1/prm.1
+@man man/man1/rseq.1
+@man man/man1/run.1
+share/doc/clusterit/
+share/doc/clusterit/CHANGES
+share/doc/clusterit/clusterit.html
+!%%no_x11%%
