@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2006/05/14 00:26:13 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2006/06/13 12:28:33 bernd Exp $
 
 COMMENT=	"small, fast & usable window manager"
 
 DISTNAME=	openbox-3.3-rc2
-PKGNAME=	openbox-3.3.rc2
+PKGNAME=	openbox-3.3.rc2p0
 SHARED_LIBS=	obparser	3.0 \
 		obrender	3.0
 CATEGORIES=	x11
@@ -12,7 +12,7 @@ MASTER_SITES=	http://offload1.icculus.org/openbox/releases/
 HOMEPAGE=	http://icculus.org/openbox/
 
 MODULES=	devel/gettext
-LIB_DEPENDS+=	glib-2.0.0.0::devel/glib2 \
+LIB_DEPENDS+=	pango-1.0.0.0,pangoxft-1.0.0.0,pangoft2-1.0.0.0::devel/pango \
 		xml2.6::textproc/libxml \
 		startup-notification-1.0.0::devel/startup-notification
 BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
@@ -23,7 +23,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xft Xinerama Xrandr Xrender Xxf86vm c \
-			fontconfig freetype m z 
+			fontconfig freetype m z glib-2.0.0.0 gmodule-2.0.0.0 \
+			gobject-2.0.0.0
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
