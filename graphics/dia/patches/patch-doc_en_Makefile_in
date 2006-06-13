@@ -1,25 +1,33 @@
-$OpenBSD: patch-doc_en_Makefile_in,v 1.1 2005/05/17 20:14:44 alek Exp $
---- doc/en/Makefile.in.orig	Thu Aug 19 16:25:57 2004
-+++ doc/en/Makefile.in	Sun May  1 00:18:49 2005
-@@ -582,7 +582,7 @@ install-data-hook-omf:
- 	for file in $(omffile); do \
- 		$(INSTALL_DATA) $$file.out $(DESTDIR)$(omf_dest_dir)/$$file; \
- 	done
+$OpenBSD: patch-doc_en_Makefile_in,v 1.2 2006/06/13 19:27:54 steven Exp $
+--- doc/en/Makefile.in.orig	Thu May 25 22:49:19 2006
++++ doc/en/Makefile.in	Thu Jun  8 12:19:11 2006
+@@ -332,6 +332,7 @@ entities = 
+ # This variable (docdir) specifies where the documents should be installed.
+ # This default value should work for most packages.
+ @HAVE_GNOME_TRUE@docdir = $(datadir)/gnome/help/$(docname)/$(lang)
++docdir = $(datadir)/gnome/help/$(docname)/$(lang)
+ 
+ # **********  You should not have to edit below this line  **********
+ xml_files = $(entities) $(docname).xml authors.xml dia.xml \
+@@ -594,7 +595,7 @@ install-data-hook-omf:
+ 	    $(INSTALL_DATA) $$file.out $(DESTDIR)$(omf_dest_dir)/$$file; \
+ 	  done; \
+ 	fi
 -	-scrollkeeper-update -p $(scrollkeeper_localstate_dir) -o $(DESTDIR)$(omf_dest_dir)
 +	# -scrollkeeper-update -p $(scrollkeeper_localstate_dir) -o $(DESTDIR)$(omf_dest_dir)
  
  uninstall-local-omf:
  	-for file in $(srcdir)/*.omf; do \
-@@ -597,7 +597,7 @@ clean-local-omf:
- 		rm -f $$file.out; \
- 	done
+@@ -611,7 +612,7 @@ clean-local-omf:
+ 	  done; \
+ 	fi
  
 -all: omf
 +all:
  
  $(docname).xml: $(entities)
  	-ourdir=`pwd`;  \
-@@ -613,7 +613,7 @@ app-dist-hook:
+@@ -627,7 +628,7 @@ app-dist-hook:
  	  done \
  	fi
  
