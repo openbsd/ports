@@ -1,3 +1,5 @@
+# $OpenBSD: Makefile,v 1.2 2006/06/13 23:11:26 naddy Exp $
+
 COMMENT=	"syntax highlight for perl"
 
 DISTNAME=	Syntax-Highlight-Perl-Improved-1.01
