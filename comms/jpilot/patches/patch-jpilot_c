@@ -1,0 +1,19 @@
+$OpenBSD: patch-jpilot_c,v 1.1 2006/06/13 07:38:01 bernd Exp $
+
+Fixes a startup crash. From jpilot CVS. Will be fixed in 0.99.9.
+
+Log Message:
+get_inline_pixbuf_data(): use g_object_unref() instead of g_free() since
+gdk_pixbuf_new_from_xpm_data() returns an object.
+
+--- jpilot.c.orig	Tue Jun 13 08:51:31 2006
++++ jpilot.c	Tue Jun 13 08:51:51 2006
+@@ -1371,7 +1371,7 @@ guint8 *get_inline_pixbuf_data(const cha
+    gdk_pixdata_from_pixbuf(pixdata, pixbuf, FALSE);
+    data = gdk_pixdata_serialize(pixdata, &len);
+ 
+-   g_free(pixbuf);
++   g_object_unref(pixbuf);
+    g_free(pixdata);
+ 
+    return data;
