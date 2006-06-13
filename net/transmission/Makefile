@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2006/04/29 15:37:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2006/06/13 13:30:30 bernd Exp $
 
 COMMENT=	"lightweight BitTorrent client"
 COMMENT-gui=	"lightweight BitTorrent client with graphical interface"
 
 DISTNAME=	Transmission-0.5
 PKGNAME=	${DISTNAME:L}p0
-PKGNAME-gui=	${DISTNAME:L:S/-/-gui-/}p0
+PKGNAME-gui=	${DISTNAME:L:S/-/-gui-/}p1
 CATEGORIES=	net
 HOMEPAGE=	http://transmission.m0k.org/
 
@@ -47,10 +47,10 @@ LIB_DEPENDS+=	gdk_pixbuf-2.0.800.0,gdk-x11-2.0.800.0,gtk-x11-2.0.800.0::x11/gtk+
 MODULES=
 LIB_DEPENDS=
 .  else
-WANTLIB+=	X11 Xft Xext Xrender fontconfig freetype \
+WANTLIB+=	X11 fontconfig freetype \
 		atk-1.0.1011.0 glib-2.0.800.0 gmodule-2.0.800.0 \
 		gobject-2.0.800.0 pango-1.0.1001.0 pangoft2-1.0.1001.0 \
-		pangox-1.0.1001.0 pangoxft-1.0.1001.0
+		pangocairo-1.0.1001.0 cairo
 .  endif
 .endif
 

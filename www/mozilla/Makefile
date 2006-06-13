@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2006/05/02 07:27:12 wilfried Exp $
+# $OpenBSD: Makefile,v 1.106 2006/06/13 13:34:56 bernd Exp $
 
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64 amd64 powerpc
 
@@ -7,8 +7,8 @@ COMMENT-devel=	"devel files for Gecko"
 
 VER=		1.7.13
 DISTNAME=	mozilla
-PKGNAME=	mozilla-${VER}
-PKGNAME-devel=	mozilla-devel-${VER}
+PKGNAME=	mozilla-${VER}p0
+PKGNAME-devel=	mozilla-devel-${VER}p0
 DISTFILES=	mozilla-${VER}-source.tar.bz2
 SO_VERSION=	7.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -54,16 +54,16 @@ BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
 		:zip->=2.3:archivers/zip \
 		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
-WANTLIB=	X11 Xext Xft Xrender Xt atk-1.0.0.0 fontconfig freetype \
+WANTLIB=	X11 Xt atk-1.0.0.0 fontconfig freetype \
 		glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 m \
-		pango-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 pangoft2-1.0.0.0
+		pango-1.0.0.0 pangocairo-1.0.0.0 pangoft2-1.0.0.0 cairo
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-devel"
 MODULES=	devel/gettext
 RUN_DEPENDS=	:${PKGNAME}:www/mozilla
 .else
 RUN_DEPENDS=	:esound-0.2.*:audio/esound
-WANTLIB+=	Xp c jpeg png pthread z
+WANTLIB+=	Xext Xft Xp Xrender c jpeg png pthread z
 .  if empty(MACHINE_ARCH:Malpha)
 WANTLIB+=	stdc++
 .  endif

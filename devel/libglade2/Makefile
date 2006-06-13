@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2006/01/16 07:30:23 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2006/06/13 13:21:48 bernd Exp $
 
 COMMENT=		"library for loading GLADE interface files at runtime"
 V=			2.5.1
 DISTNAME=		libglade-${V}
-PKGNAME=		libglade2-${V}p4
+PKGNAME=		libglade2-${V}p5
 SHARED_LIBS=		glade-2.0 0.7
 
 CATEGORIES=		devel
@@ -18,11 +18,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xft Xrender m z \
+WANTLIB=		X11 Xext Xrender m z \
 			atk-1.0.0.0 fontconfig freetype \
 			glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 \
 			pango-1.0.0.0 pangoft2-1.0.0.0 \
-			pangox-1.0.0.0 pangoxft-1.0.0.0
+			pangocairo-1.0.0.0 cairo glitz png
 
 MODULES=		devel/gettext
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig

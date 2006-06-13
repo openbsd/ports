@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2006/01/18 04:44:18 steven Exp $
+# $OpenBSD: Makefile,v 1.33 2006/06/13 13:24:17 bernd Exp $
 
 COMMENT=	"game where you deal drugs on the streets of NY"
 
 DISTNAME=	dopewars-1.5.7
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dopewars/}
 
@@ -40,9 +40,9 @@ FLAVOR?=
 CONFIGURE_ARGS+= --disable-gui-client
 .else
 LIB_DEPENDS+=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
-WANTLIB+=	X11 Xext Xft Xrender fontconfig freetype m \
+WANTLIB+=	X11 fontconfig freetype m cairo \
 		gmodule-2.0.0.0 gobject-2.0.0.0 atk-1.0.0.0 pango-1.0.0.0 \
-		pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0
+		pangoft2-1.0.0.0 pangocairo-1.0.0.0
 .endif
 
 post-install:

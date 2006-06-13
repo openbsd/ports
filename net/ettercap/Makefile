@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2006/01/20 08:39:12 steven Exp $
+# $OpenBSD: Makefile,v 1.33 2006/06/13 13:30:30 bernd Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	"multi-purpose sniffer/interceptor/logger"
 
 VER=		0.6.b
 DISTNAME=	ettercap-${VER}
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	net
 
 HOMEPAGE=	http://ettercap.sourceforge.net/
@@ -33,10 +33,10 @@ BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 CONFIGURE_ARGS+=	--enable-gtk=no
 .else
 LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
-WANTLIB+=		X11 Xext Xft Xrender atk-1.0.0.0 fontconfig \
+WANTLIB+=		X11 atk-1.0.0.0 fontconfig \
 			freetype glib-2.0.0.0 gmodule-2.0.0.0 \
-			gobject-2.0.0.0 m pango-1.0.0.0 pangox-1.0.0.0 \
-			pangoxft-1.0.0.0 pangoft2-1.0.0.0
+			gobject-2.0.0.0 m pango-1.0.0.0 pangocairo-1.0.0.0 \
+			pangoft2-1.0.0.0 cairo
 MODULES=	devel/gettext
 USE_X11=	Yes
 .endif

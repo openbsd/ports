@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/02/06 16:57:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2006/06/13 13:21:48 bernd Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -8,9 +8,9 @@ COMMENT-mozilla=	"mozilla integration library for eclipse HTML Browser Widget"
 
 ECLIPSE_VER=		3.1
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
-PKGNAME=		eclipse-sdk-${ECLIPSE_VER}p5
-PKGNAME-gnome=		eclipse-sdk-gnome-${ECLIPSE_VER}p5
-PKGNAME-mozilla=	eclipse-sdk-mozilla-${ECLIPSE_VER}p5
+PKGNAME=		eclipse-sdk-${ECLIPSE_VER}p6
+PKGNAME-gnome=		eclipse-sdk-gnome-${ECLIPSE_VER}p6
+PKGNAME-mozilla=	eclipse-sdk-mozilla-${ECLIPSE_VER}p6
 SHARED_LIBS=		core_3_1_0		2.0 \
 			swt-atk-gtk-3138	2.0 \
 			swt-awt-gtk-3138	2.0 \
@@ -79,10 +79,10 @@ RUN_DEPENDS=		:${PKGNAME}:devel/eclipse/sdk
 LIB_DEPENDS=		${MOZILLA_LIB_DEPENDS}
 . else
 MODULES+=		devel/gettext
-WANTLIB=		X11 Xext Xft Xrender Xtst c m fontconfig freetype \
+WANTLIB=		X11 Xtst c m fontconfig freetype \
 			atk-1.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 \
 			gobject-2.0.0.0 gthread-2.0.0.0 pango-1.0.0.0 \
-			pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0
+			pangoft2-1.0.0.0 pangocairo-1.0.0.0 cairo
 . endif
 .else
 MODULES+=		devel/gettext

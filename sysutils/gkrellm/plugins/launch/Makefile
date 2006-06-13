@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2006/01/22 00:09:30 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2006/06/13 13:32:48 bernd Exp $
 
 COMMENT=	"launch commonly used apps from GkrellM2"
 
 DISTNAME=	gkrellmlaunch-0.5
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	x11 sysutils/gkrellm
 
 HOMEPAGE=	http://gkrellmlaunch.sourceforge.net/

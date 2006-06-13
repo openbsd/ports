@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2006/01/20 13:12:03 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2006/06/13 13:41:20 bernd Exp $
 
 COMMENT=	"color terminal emulator with transparency and unicode support"
 DISTNAME=	mlterm-2.9.0
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 SHARED_LIBS=	kik	10.0 \
 		mkf	13.0
 CATEGORIES=	x11
@@ -16,8 +16,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	ICE SM X11 Xext Xft Xrender atk-1.0.0.0 c m fontconfig \
 		freetype gdk-x11-2.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 \
-		gobject-2.0.0.0 pango-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 \
-		pangoft2-1.0.0.0 util
+		gobject-2.0.0.0 pango-1.0.0.0 pangocairo-1.0.0.0 \
+		pangoft2-1.0.0.0 util cairo glitz png z
 
 HOMEPAGE=	http://mlterm.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mlterm/}

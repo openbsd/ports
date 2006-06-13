@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2006/01/20 08:39:12 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2006/06/13 13:30:30 bernd Exp $
 
 COMMENT=		"graphical network monitor"
 
 DISTNAME=		etherape-0.9.0
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		net
 
 HOMEPAGE=		http://etherape.sourceforge.net/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE ORBit-2 ORBitCosNaming-2 SM X11 Xext Xft \
+WANTLIB=		ICE ORBit-2 ORBitCosNaming-2 SM X11 Xext \
 			Xrender art_lgpl_2 atk-1.0.0.0 audiofile \
 			bonobo-activation bonoboui-2 c crypto esd fontconfig \
 			freetype gconf-2 gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 \
@@ -23,7 +23,7 @@ WANTLIB=		ICE ORBit-2 ORBitCosNaming-2 SM X11 Xext Xft \
 			gnomecanvas-2 gnomevfs-2 gobject-2.0.0.0 \
 			iconv intl jpeg m pango-1.0.0.0 pangoft2-1.0.0.0 \
 			pcap popt pthread ssl xml2 z bonobo-2 \
-			gthread-2.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0
+			gthread-2.0.0.0 pangocairo-1.0.0.0 cairo glitz png
 
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=etherape/}

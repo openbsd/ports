@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2006/02/03 05:08:41 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.6 2006/06/13 13:29:09 bernd Exp $
 
 COMMENT=		"tools to edit/modify/encode video streams"
 
 DISTNAME=		mjpegtools-1.8.0
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		multimedia
 SHARED_LIBS=		lavfile		3.0 \
 			lavfile-1.8	3.0 \
@@ -29,8 +30,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mjpeg/}
 
-WANTLIB=		X11 Xext Xft Xrender c fontconfig \
-			freetype m pthread stdc++ usbhid z
+WANTLIB=		X11 Xext Xrender c cairo fontconfig \
+			freetype glitz m pthread stdc++ usbhid z
 
 MODULES+=		devel/gettext
 
@@ -43,7 +44,7 @@ LIB_DEPENDS=		SDL.2:sdl-*-!no_x11:devel/sdl \
 			atk-1.0.800.0::devel/atk \
 			glib-2.0.600.0,gmodule-2.0.600.0,gobject-2.0.600.0::devel/glib2 \
 			gdk-x11-2.0.400.0,gdk_pixbuf-2.0.400.0,gtk-x11-2.0.400.0::x11/gtk+2 \
-			pango-1.0.1001.0,pangoft2-1.0.1001.0,pangox-1.0.1001.0,pangoxft-1.0.1001.0::devel/pango
+			pango-1.0.1001.0,pangoft2-1.0.1001.0,pangocairo-1.0.1001.0::devel/pango
 
 USE_LIBTOOL=		Yes
 AUTOMAKE_VERSION=	1.9

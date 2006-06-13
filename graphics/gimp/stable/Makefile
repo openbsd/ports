@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2006/04/22 10:50:41 bernd Exp $
+# $OpenBSD: Makefile,v 1.14 2006/06/13 13:25:31 bernd Exp $
 
 COMMENT=	"GNU Image Manipulation Program"
 
 DISTNAME=	gimp-2.2.11
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	gimp-2.0	200.11	\
 		gimpbase-2.0	200.11	\
 		gimpcolor-2.0	200.11	\
@@ -38,11 +39,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE SM X11 Xext Xft Xmu Xpm Xrender Xt atk-1.0.0.0 c \
+WANTLIB=	ICE SM X11 Xext Xmu Xpm Xrender Xt atk-1.0.0.0 c \
 		fontconfig freetype glib-2.0.0.0 gmodule-2.0.0.0 \
 		gobject-2.0.0.0 jpeg.62 lcms.1 m pango-1.0.0.0 \
-		pangox-1.0.0.0 pangoxft-1.0.0.0 pangoft2-1.0.0.0 png.4 \
-		ncurses xml2 z
+		pangocairo-1.0.0.0 pangoft2-1.0.0.0 png.4 \
+		ncurses xml2 z cairo glitz
 
 MODULES=	devel/gettext
 

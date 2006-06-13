@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2006/03/20 15:33:21 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2006/06/13 13:21:48 bernd Exp $
 
 COMMENT=		"GStreamer Streaming-media framework plug-ins."
 
 VERSION=		0.8.11
 PATCHLEVEL=		
 DISTNAME=		gst-plugins-${VERSION}
-PKGNAME=		gstreamer-plugins-${VERSION}p5
+PKGNAME=		gstreamer-plugins-${VERSION}p6
 SHARED_LIBS=		gstgconf-0.8		1.0 \
 			gstinterfaces-0.8	1.0 \
 			gstmedia-info-0.8	1.0 \
@@ -55,11 +55,10 @@ FLAVOR?=
 MULTI_PACKAGES=
 SUBPACKAGE?=
 .if !defined(PACKAGING) || ${SUBPACKAGE} == ""
-WANTLIB=		ICE SM X11 Xdamage Xext Xft Xfixes Xrender Xv \
+WANTLIB=		ICE SM X11 Xdamage Xext Xfixes Xrender Xv \
 			fontconfig freetype ossaudio \
-			atk-1.0.0.0 \
-			pango-1.0.0.0 pangoft2-1.0.0.0 pangox-1.0.0.0 \
-			pangoxft-1.0.0.0 ORBit-2\
+			atk-1.0.0.0 ORBit-2 \
+			pango-1.0.0.0 pangoft2-1.0.0.0 pangocairo-1.0.0.0 \
 			gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 gtk-x11-2.0.0.0 \
 			cairo glitz png
 LIB_DEPENDS=		gconf-2::devel/gconf2 \

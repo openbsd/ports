@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2006/01/20 08:47:54 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2006/06/13 13:21:48 bernd Exp $
 
 COMMENT=		"editor for the GConf configuration system"
 
 VERSION=		2.10.0
 DISTNAME=		gconf-editor-${VERSION}
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		devel x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
@@ -16,14 +16,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	ORBit-2.0.0 X11 Xext Xft Xrender atk-1.0.0.0 c m SM \
+WANTLIB=	ORBit-2.0.0 X11 Xext Xrender atk-1.0.0.0 c m SM \
 		fontconfig freetype gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 \
 		glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 gthread-2.0.0.0 \
 		gtk-x11-2.0.0.0 pango-1.0.0.0 pangoft2-1.0.0.0 \
 		popt pthread esd art_lgpl_2 \
 		gnomecanvas-2 ICE ORBitCosNaming-2 audiofile gnomevfs-2 jpeg z \
 		gnome-2 xml2 crypto bonobo-activation bonobo-2 ssl bonoboui-2 \
-		gnome-keyring pangox-1.0.0.0 pangoxft-1.0.0.0
+		gnome-keyring pangocairo-1.0.0.0 cairo glitz png
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gconf-editor/2.10/}
 EXTRACT_SUFX=		.tar.bz2

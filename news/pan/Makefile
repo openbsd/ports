@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2006/01/16 21:08:30 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2006/06/13 13:30:58 bernd Exp $
 
 COMMENT=	"powerful Gtk+2 newsreader"
 
 VER=		0.14.2
 DISTNAME=	pan-${VER}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	news x11
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${VER}/SOURCE/
 
@@ -25,9 +25,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xft Xrender c fontconfig freetype m \
-			atk-1.0.0.0 pango-1.0.0.0 pangox-1.0.0.0 \
-			pangoft2-1.0.0.0 pangoxft-1.0.0.0 pthread z
+WANTLIB=		X11 c cairo fontconfig freetype m \
+			atk-1.0.0.0 pango-1.0.0.0 pangocairo-1.0.0.0 \
+			pangoft2-1.0.0.0 pthread z
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--disable-gtkspell

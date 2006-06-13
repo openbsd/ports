@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/02/08 20:04:24 sturm Exp $
+# $OpenBSD: Makefile,v 1.15 2006/06/13 13:27:12 bernd Exp $
 
 COMMENT=		"lightweight GTK+ based mail/news client"
 COMMENT-dillo=		"dillo plugin for sylpheed-claws"
@@ -10,7 +10,7 @@ COMMENT-trayicon=	"system tray icon plugin for sylpheed-claws"
 
 VERSION=		1.9.6
 DISTNAME=		sylpheed-claws-${VERSION}
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 THEMEFILE=		sylpheed-iconset-20040929
 CATEGORIES=		mail news x11
 
@@ -30,12 +30,12 @@ MODULES=		devel/gettext
 
 LIB_DEPENDS=		gdk_pixbuf-2.0.0.0::x11/gtk+2
 
-WANTLIB=		X11 Xext Xft Xrender crypto \
+WANTLIB=		X11 Xext Xrender crypto \
 			fontconfig freetype m ssl \
 			atk-1.0.0.0 gdk-x11-2.0.0.0 glib-2.0.0.0 \
 			gmodule-2.0.0.0 gobject-2.0.0.0 gtk-x11-2.0.0.0 \
-			pango-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 \
-			pangoft2-1.0.0.0
+			pango-1.0.0.0 pangocairo-1.0.0.0 \
+			pangoft2-1.0.0.0 cairo glitz png z
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS=		--program-suffix="-claws" \
@@ -59,7 +59,7 @@ MULTI_PACKAGES=		-docs -imageviewer -spamassassin -themes \
 FULLPKGNAME-docs=	sylpheed-claws-docs-${VERSION}p0
 FULLPKGNAME-themes=	sylpheed-claws-themes-${VERSION}p0
 .for i in ${MULTI_PACKAGES}
-FULLPKGNAME$i?=		sylpheed-claws${i}-${VERSION}p1
+FULLPKGNAME$i?=		sylpheed-claws${i}-${VERSION}p2
 .endfor
 
 SUBPACKAGE?=

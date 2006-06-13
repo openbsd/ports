@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2006/01/17 06:58:59 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2006/06/13 13:21:48 bernd Exp $
 
 COMMENT=		"terminal emulatation library"
 
 DISTNAME=		vte-0.11.12
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		devel
 SHARED_LIBS=		vte	8.0
 
@@ -17,7 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xft Xrender c fontconfig freetype \
 			m ncurses util atk-1.0.0.0 glib-2.0.0.0 \
 			gmodule-2.0.0.0 gobject-2.0.0.0 pango-1.0.0.0 \
-			pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0
+			pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 \
+			pangocairo-1.0.0.0 cairo glitz png z
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/vte/0.11/}
 EXTRACT_SUFX=		.tar.bz2

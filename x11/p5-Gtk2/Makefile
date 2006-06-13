@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/03/15 16:10:45 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2006/06/13 13:41:20 bernd Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"set of modules to use Gtk+2 libraries from Perl"
 
 DISTNAME=	Gtk2-1.120
-PKGNAME=	p5-${DISTNAME}
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	x11 perl5
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
@@ -15,9 +15,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	m freetype fontconfig X11 Xext Xft Xrender \
+WANTLIB=	m freetype fontconfig X11 \
 		atk-1.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 \
-		pango-1.0.0.0 pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0
+		pango-1.0.0.0 pangoft2-1.0.0.0 pangocairo-1.0.0.0 cairo
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Gtk2/}
 

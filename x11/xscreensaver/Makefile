@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2006/01/20 21:10:24 steven Exp $
+# $OpenBSD: Makefile,v 1.34 2006/06/13 13:41:20 bernd Exp $
 
 COMMENT=		"screen saver and locker for the X Window System"
 
 VERSION=		4.22
 DISTNAME=		xscreensaver-${VERSION}
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=     	x11
 
 HOMEPAGE=		http://www.jwz.org/xscreensaver/
@@ -16,10 +16,10 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		GL GLU ICE SM X11 Xext Xinerama Xmu Xrandr Xrender \
-			Xt Xft Xxf86misc Xxf86vm c jpeg m pthread util z \
-			atk-1.0.0.0 fontconfig freetype Xpm pangox-1.0.0.0 \
+			Xt Xxf86misc Xxf86vm c jpeg m pthread util z \
+			atk-1.0.0.0 fontconfig freetype Xpm pangocairo-1.0.0.0 \
 			glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 \
-			pango-1.0.0.0 pangoxft-1.0.0.0 pangoft2-1.0.0.0
+			pango-1.0.0.0 pangoft2-1.0.0.0 cairo
 
 MASTER_SITES=		http://www.jwz.org/xscreensaver/
 

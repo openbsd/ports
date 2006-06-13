@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/06/03 09:50:24 alek Exp $
+# $OpenBSD: Makefile,v 1.14 2006/06/13 13:41:20 bernd Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	"GTK+2 Python bindings"
 
 V=		2.6.3
 DISTNAME=	pygtk-${V}
-PKGNAME=	py-gtk2-${V}p0
+PKGNAME=	py-gtk2-${V}p1
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.pygtk.org/
@@ -22,11 +22,11 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/pygtk/2.6/}
 EXTRACT_SUFX=	.tar.bz2
 
-WANTLIB=	X11 Xext Xft Xrender atk-1.0.0.0 fontconfig freetype \
+WANTLIB=	X11 Xext Xrender atk-1.0.0.0 fontconfig freetype \
 		gdk-x11-2.0.801.0 gdk_pixbuf-2.0.801.0 glib-2.0.800.0 \
 		gmodule-2.0.800.0 gobject-2.0.800.0 gthread-2.0.800.0 \
 		gtk-x11-2.0.801.0 m pango-1.0.0.0 pangoft2-1.0.0.0 \
-		pangox-1.0.0.0 pangoxft-1.0.0.0 xml2 z
+		pangocairo-1.0.0.0 xml2 z cairo glitz png
 
 MODULES=	devel/gettext lang/python
 

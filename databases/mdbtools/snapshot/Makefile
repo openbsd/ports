@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2006/05/07 22:14:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2006/06/13 13:19:47 bernd Exp $
 
 COMMENT=	"read microsoft Access MDB"
 COMMENT-gmdb=	"graphical interface to MDB tools"
 DATE=		20060425
 DISTNAME=	mdbtools-${DATE}
-PKGNAME-gmdb=	gmdb-${DATE}
+PKGNAME-gmdb=	gmdb-${DATE}p0
 HOMEPAGE=	http://mdbtools.sourceforge.net/
 
 CATEGORIES=	databases converters
@@ -42,13 +42,13 @@ MODULES=	devel/gettext
 LIB_DEPENDS+=	gnomeui-2.0.0::x11/gnome/libgnomeui
 WANTLIB+=	audiofile bonobo-activation popt ORBit-2.0.0 pthread \
 		bonoboui-2.0.0  atk-1.0.0.0 gobject-2.0.0.0 m jpeg \
-		SM esd fontconfig ssl z \
+		SM esd fontconfig ssl z cairo glitz png \
 		gthread-2.0.0.0 art_lgpl_2 X11 glade-2.0.0.0 \
 		gconf-2.0.0 ICE Xrender gmodule-2.0.0.0 \
-		pango-1.0.0.0 pangoxft-1.0.0.0 pangoft2-1.0.0.0 \
+		pango-1.0.0.0 pangoft2-1.0.0.0 \
 		gnomecanvas-2.0.0 gdk-x11-2.0.0.0 xml2 Xext gnome-2.0.0 \
 		gnome-keyring freetype crypto gtk-x11-2.0.0.0 \
-		pangox-1.0.0.0 Xft gdk_pixbuf-2.0.0.0 bonobo-2.0.0 \
+		pangocairo-1.0.0.0 gdk_pixbuf-2.0.0.0 bonobo-2.0.0 \
 		gnomevfs-2.0.0 ORBitCosNaming-2.0.0
 .endif
 
