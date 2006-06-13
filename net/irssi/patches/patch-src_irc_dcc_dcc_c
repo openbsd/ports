@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_irc_dcc_dcc_c,v 1.1 2006/06/13 02:02:04 jolan Exp $
+--- src/irc/dcc/dcc.c.orig	Tue Oct 18 21:13:31 2005
++++ src/irc/dcc/dcc.c	Mon Jun 12 20:57:28 2006
+@@ -58,8 +58,8 @@ void dcc_unregister_type(const char *typ
+ 
+ 	pos = gslist_find_string(dcc_types, type);
+ 	if (pos != NULL) {
+-                dcc_types = g_slist_remove(dcc_types, pos->data);
+ 		g_free(pos->data);
++		dcc_types = g_slist_remove(dcc_types, pos->data);
+ 	}
+ }
+ 
