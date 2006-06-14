@@ -1,4 +1,6 @@
-$OpenBSD: patch-src_util_c,v 1.3 2005/08/05 18:55:41 fgsch Exp $
+Avoid a crash by leaving enough space for nul.
+
+$OpenBSD: patch-src_util_c,v 1.4 2006/06/14 02:01:08 fgsch Exp $
 --- src/util.c.orig	Thu Aug  4 16:46:10 2005
 +++ src/util.c	Thu Aug  4 16:49:20 2005
 @@ -2745,7 +2745,7 @@ url_fetched_cb(gpointer url_data, gint s
