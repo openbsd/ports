@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.238 2006/05/20 16:33:16 sturm Exp $
+# $OpenBSD: Makefile,v 1.239 2006/06/14 13:58:59 steven Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -66,6 +66,7 @@
      SUBDIR += gtk2-theme-switch
      SUBDIR += gtk2mm
      SUBDIR += gtkglarea
+     SUBDIR += gtkglext
      SUBDIR += gtkmm
      SUBDIR += gtksourceview
      SUBDIR += gtop
