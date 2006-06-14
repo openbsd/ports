@@ -1,0 +1,43 @@
+$OpenBSD: patch-etc_config_dist,v 1.1 2006/06/14 08:58:22 jakob Exp $
+--- etc/config.dist.orig	Tue May 23 13:31:29 2006
++++ etc/config.dist	Tue May 23 13:41:27 2006
+@@ -7,14 +7,14 @@
+ owner    = Joe Random
+ contact  = joe@some.place.xyz
+ mailhost = smtp.mailhost.abc
+-sendmail = /usr/lib/sendmail
+-imgcache = /home/oetiker/public_html/.simg
+-imgurl   = ../.simg
+-datadir  = /home/oetiker/data/projects/AADJ-smokeping/dist/var
+-piddir  = /home/oetiker/data/projects/AADJ-smokeping/dist/var
++sendmail = /usr/sbin/sendmail
++imgcache = %%WEBDIR%%/img
++imgurl   = /img
++datadir  = /var/spool/smokeping
++piddir  = /var/run/smokeping
+ cgiurl   = http://people.ee.ethz.ch/~oetiker/smokeping/smokeping.cgi
+-smokemail = /home/oetiker/data/projects/AADJ-smokeping/dist/etc/smokemail.dist
+-tmail = /home/oetiker/data/projects/AADJ-smokeping/dist/etc/tmail.dist
++smokemail = %%SYSCONFDIR%%/smokeping/smokemail
++tmail = %%SYSCONFDIR%%/smokeping/tmail
+ # specify this to get syslog logging
+ syslogfacility = local0
+ # each probe is now run in its own process
+@@ -66,7 +66,7 @@ AVERAGE  0.5 144   720
+ 
+ *** Presentation ***
+ 
+-template = /home/oetiker/data/projects/AADJ-smokeping/dist/etc/basepage.html.dist
++template = %%SYSCONFDIR%%/smokeping/basepage.html
+ 
+ + overview 
+ 
+@@ -89,7 +89,7 @@ unison_tolerance = 2
+ 
+ + FPing
+ 
+-binary = /usr/sepp/bin/fping
++binary = /usr/local/sbin/fping
+ 
+ *** Targets ***
+ 

@@ -1,70 +1,110 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:17:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/06/14 08:58:22 jakob Exp $
+@newgroup _smokeping:562
+@newuser _smokeping:562:562:daemon:Smokeping account:/var/empty:/sbin/nologin
 bin/smokeping
-lib/smokeping/
-lib/smokeping/smokeping.cgi
-libdata/perl5/site_perl/ISG/
-libdata/perl5/site_perl/ISG/ParseConfig.pm
-libdata/perl5/site_perl/Smokeping.pm
-libdata/perl5/site_perl/probes/
-libdata/perl5/site_perl/probes/CiscoRTTMonDNS.pm
-libdata/perl5/site_perl/probes/CiscoRTTMonEchoICMP.pm
-libdata/perl5/site_perl/probes/CiscoRTTMonTcpConnect.pm
-libdata/perl5/site_perl/probes/Curl.pm
-libdata/perl5/site_perl/probes/DNS.pm
-libdata/perl5/site_perl/probes/EchoPing.pm
-libdata/perl5/site_perl/probes/EchoPingChargen.pm
-libdata/perl5/site_perl/probes/EchoPingDiscard.pm
-libdata/perl5/site_perl/probes/EchoPingHttp.pm
-libdata/perl5/site_perl/probes/EchoPingHttps.pm
-libdata/perl5/site_perl/probes/EchoPingIcp.pm
-libdata/perl5/site_perl/probes/EchoPingSmtp.pm
-libdata/perl5/site_perl/probes/FPing.pm
-libdata/perl5/site_perl/probes/FPing6.pm
-libdata/perl5/site_perl/probes/IOSPing.pm
-libdata/perl5/site_perl/probes/LDAP.pm
-libdata/perl5/site_perl/probes/Radius.pm
-libdata/perl5/site_perl/probes/RemoteFPing.pm
-libdata/perl5/site_perl/probes/base.pm
-libdata/perl5/site_perl/probes/basefork.pm
-libdata/perl5/site_perl/probes/basevars.pm
-libdata/perl5/site_perl/probes/passwordchecker.pm
-libdata/perl5/site_perl/probes/telnetIOSPing.pm
+${PMDIR}/Smokeping/
+${PMDIR}/Smokeping.pm
+${PMDIR}/Smokeping/Examples.pm
+${PMDIR}/Smokeping/RRDtools.pm
+${PMDIR}/Smokeping/ciscoRttMonMIB.pm
+${PMDIR}/Smokeping/matchers/
+${PMDIR}/Smokeping/matchers/Avgratio.pm
+${PMDIR}/Smokeping/matchers/Median.pm
+${PMDIR}/Smokeping/matchers/base.pm
+${PMDIR}/Smokeping/probes/
+${PMDIR}/Smokeping/probes/AnotherDNS.pm
+${PMDIR}/Smokeping/probes/AnotherSSH.pm
+${PMDIR}/Smokeping/probes/CiscoRTTMonDNS.pm
+${PMDIR}/Smokeping/probes/CiscoRTTMonEchoICMP.pm
+${PMDIR}/Smokeping/probes/CiscoRTTMonTcpConnect.pm
+${PMDIR}/Smokeping/probes/Curl.pm
+${PMDIR}/Smokeping/probes/DNS.pm
+${PMDIR}/Smokeping/probes/EchoPing.pm
+${PMDIR}/Smokeping/probes/EchoPingChargen.pm
+${PMDIR}/Smokeping/probes/EchoPingDiscard.pm
+${PMDIR}/Smokeping/probes/EchoPingHttp.pm
+${PMDIR}/Smokeping/probes/EchoPingHttps.pm
+${PMDIR}/Smokeping/probes/EchoPingIcp.pm
+${PMDIR}/Smokeping/probes/EchoPingSmtp.pm
+${PMDIR}/Smokeping/probes/FPing.pm
+${PMDIR}/Smokeping/probes/FPing6.pm
+${PMDIR}/Smokeping/probes/IOSPing.pm
+${PMDIR}/Smokeping/probes/LDAP.pm
+${PMDIR}/Smokeping/probes/Radius.pm
+${PMDIR}/Smokeping/probes/RemoteFPing.pm
+${PMDIR}/Smokeping/probes/SSH.pm
+${PMDIR}/Smokeping/probes/TelnetIOSPing.pm
+${PMDIR}/Smokeping/probes/base.pm
+${PMDIR}/Smokeping/probes/basefork.pm
+${PMDIR}/Smokeping/probes/basevars.pm
+${PMDIR}/Smokeping/probes/passwordchecker.pm
+${PMDIR}/Smokeping/probes/skel.pm
 @man man/man1/smokeping.1
 @man man/man1/smokeping.cgi.1
-@man man/man1/smokeping_config.1
-@man man/man1/smokeping_install.1
 share/doc/smokeping/
-share/doc/smokeping/CiscoRTTMonDNS.pm.txt
-share/doc/smokeping/CiscoRTTMonEchoICMP.pm.txt
-share/doc/smokeping/CiscoRTTMonTcpConnect.pm.txt
-share/doc/smokeping/Curl.pm.txt
-share/doc/smokeping/DNS.pm.txt
-share/doc/smokeping/EchoPing.pm.txt
-share/doc/smokeping/EchoPingChargen.pm.txt
-share/doc/smokeping/EchoPingDiscard.pm.txt
-share/doc/smokeping/EchoPingHttp.pm.txt
-share/doc/smokeping/EchoPingHttps.pm.txt
-share/doc/smokeping/EchoPingIcp.pm.txt
-share/doc/smokeping/EchoPingSmtp.pm.txt
-share/doc/smokeping/FPing.pm.txt
-share/doc/smokeping/FPing6.pm.txt
-share/doc/smokeping/IOSPing.pm.txt
-share/doc/smokeping/LDAP.pm.txt
-share/doc/smokeping/ParseConfig.pm.txt
-share/doc/smokeping/Radius.pm.txt
-share/doc/smokeping/RemoteFPing.pm.txt
-share/doc/smokeping/Smokeping.pm.txt
-share/doc/smokeping/base.pm.txt
-share/doc/smokeping/basefork.pm.txt
-share/doc/smokeping/basevars.pm.txt
-share/doc/smokeping/passwordchecker.pm.txt
+share/doc/smokeping/Smokeping.txt
+share/doc/smokeping/matchers/
+share/doc/smokeping/matchers/Avgratio.txt
+share/doc/smokeping/matchers/Median.txt
+share/doc/smokeping/matchers/base.txt
+share/doc/smokeping/probes/
+share/doc/smokeping/probes/AnotherDNS.txt
+share/doc/smokeping/probes/AnotherSSH.txt
+share/doc/smokeping/probes/CiscoRTTMonDNS.txt
+share/doc/smokeping/probes/CiscoRTTMonEchoICMP.txt
+share/doc/smokeping/probes/CiscoRTTMonTcpConnect.txt
+share/doc/smokeping/probes/Curl.txt
+share/doc/smokeping/probes/DNS.txt
+share/doc/smokeping/probes/EchoPing.txt
+share/doc/smokeping/probes/EchoPingChargen.txt
+share/doc/smokeping/probes/EchoPingDiscard.txt
+share/doc/smokeping/probes/EchoPingHttp.txt
+share/doc/smokeping/probes/EchoPingHttps.txt
+share/doc/smokeping/probes/EchoPingIcp.txt
+share/doc/smokeping/probes/EchoPingSmtp.txt
+share/doc/smokeping/probes/FPing.txt
+share/doc/smokeping/probes/FPing6.txt
+share/doc/smokeping/probes/IOSPing.txt
+share/doc/smokeping/probes/LDAP.txt
+share/doc/smokeping/probes/Radius.txt
+share/doc/smokeping/probes/RemoteFPing.txt
+share/doc/smokeping/probes/SSH.txt
+share/doc/smokeping/probes/TelnetIOSPing.txt
+share/doc/smokeping/probes/base.txt
+share/doc/smokeping/probes/basefork.txt
+share/doc/smokeping/probes/basevars.txt
+share/doc/smokeping/probes/passwordchecker.txt
+share/doc/smokeping/probes/skel.txt
 share/doc/smokeping/smokeping.cgi.txt
 share/doc/smokeping/smokeping.txt
 share/doc/smokeping/smokeping_config.txt
+share/doc/smokeping/smokeping_examples.txt
+share/doc/smokeping/smokeping_extend.txt
 share/doc/smokeping/smokeping_install.txt
-share/doc/smokeping/telnetIOSPing.pm.txt
+share/doc/smokeping/smokeping_upgrade.txt
+share/doc/smokeping/tSmoke.txt
 share/examples/smokeping/
+@sample ${SYSCONFDIR}/smokeping/
+@sample /var/www/smokeping/
+@sample /var/www/smokeping/cgi-bin/
 share/examples/smokeping/basepage.html
+@sample ${SYSCONFDIR}/smokeping/basepage.html
 share/examples/smokeping/config
-share/examples/smokeping/config-echoping
+@sample ${SYSCONFDIR}/smokeping/config
 share/examples/smokeping/smokemail
+@sample ${SYSCONFDIR}/smokeping/smokemail
+share/examples/smokeping/smokeping.cgi
+@mode 0755
+@sample /var/www/smokeping/cgi-bin/smokeping.cgi
+@mode
+share/examples/smokeping/tmail
+@sample ${SYSCONFDIR}/smokeping/tmail
+@mode 0755
+@owner _smokeping
+@group _smokeping
+@sample /var/run/smokeping/
+@sample /var/spool/smokeping/
+@mode 0755
+@owner www
+@group
+@sample /var/www/smokeping/img/
