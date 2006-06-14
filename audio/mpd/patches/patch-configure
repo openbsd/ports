@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2006/05/13 09:52:49 bernd Exp $
+$OpenBSD: patch-configure,v 1.2 2006/06/14 12:37:52 bernd Exp $
 --- configure.orig	Tue Nov  2 05:39:55 2004
-+++ configure	Tue Apr  4 16:00:51 2006
++++ configure	Fri May 26 17:47:58 2006
+@@ -494,7 +494,7 @@ x_libraries=NONE
+ # and all the variables that are supposed to be based on exec_prefix
+ # by default will actually change.
+ # Use braces instead of parens because sh, perl, etc. also accept them.
+-bindir='${exec_prefix}/bin'
++bindir='${exec_prefix}/sbin'
+ sbindir='${exec_prefix}/sbin'
+ libexecdir='${exec_prefix}/libexec'
+ datadir='${prefix}/share'
 @@ -19274,7 +19274,7 @@ fi
      { echo "$as_me:$LINENO: WARNING: output file \`$ofile' does not exist" >&5
  echo "$as_me: WARNING: output file \`$ofile' does not exist" >&2;}

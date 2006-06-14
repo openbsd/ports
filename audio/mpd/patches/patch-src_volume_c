@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_volume_c,v 1.1.1.1 2006/05/13 09:52:49 bernd Exp $
---- src/volume.c.orig	Tue Apr  4 16:03:01 2006
-+++ src/volume.c	Tue Apr  4 16:03:09 2006
+$OpenBSD: patch-src_volume_c,v 1.2 2006/06/14 12:37:52 bernd Exp $
+--- src/volume.c.orig	Tue Nov  2 05:03:22 2004
++++ src/volume.c	Tue Jun 13 17:26:31 2006
 @@ -30,7 +30,7 @@
  #include <fcntl.h>
  #include <errno.h>
@@ -10,3 +10,12 @@ $OpenBSD: patch-src_volume_c,v 1.1.1.1 2006/05/13 09:52:49 bernd Exp $
  #endif
  #ifdef HAVE_ALSA
  #include <alsa/asoundlib.h>
+@@ -67,7 +67,7 @@ int volume_alsaSet = -1;
+ int prepOssMixer(char * device) {
+ 	int devmask = 0;
+ 
+-	if((volume_ossFd = open(device,O_RDONLY))<0) {
++	if((volume_ossFd = open(device,O_RDWR))<0) {
+ 		WARNING("unable to open oss mixer \"%s\"\n",device);
+ 		return -1;
+ 	}

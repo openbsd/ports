@@ -7,6 +7,6 @@ otherwise MPD won't start.
 If you wish to have MPD started automatically at boot time,
 simply add the follow lines to /etc/rc.local:
 
-if [ -x ${PREFIX}/bin/mpd ]; then
-        echo -n ' mpd';       ${PREFIX}/bin/mpd
+if [ -x ${PREFIX}/sbin/mpd ]; then
+        echo -n ' mpd';       ${PREFIX}/sbin/mpd
 fi

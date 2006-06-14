@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_mpdconf_example,v 1.1.1.1 2006/05/13 09:52:49 bernd Exp $
+$OpenBSD: patch-doc_mpdconf_example,v 1.2 2006/06/14 12:37:52 bernd Exp $
 --- doc/mpdconf.example.orig	Tue Nov  2 05:03:21 2004
-+++ doc/mpdconf.example	Fri Apr  7 18:46:01 2006
++++ doc/mpdconf.example	Tue Jun 13 17:26:48 2006
 @@ -4,10 +4,10 @@
  
  ##################### REQUIRED ###########################
@@ -43,7 +43,7 @@ $OpenBSD: patch-doc_mpdconf_example,v 1.1.1.1 2006/05/13 09:52:49 bernd Exp $
 -#mixer_control		"PCM"
 +mixer_type		"oss"
 +mixer_device 		"/dev/mixer"
-+mixer_control		"master"
++mixer_control		"vol"
  #
  # Software Mixer
  #mixer_type		"software"
