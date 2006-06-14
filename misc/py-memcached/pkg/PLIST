@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/14 08:41:14 alek Exp $
+lib/python${MODPY_VERSION}/site-packages/memcache.py
+lib/python${MODPY_VERSION}/site-packages/memcache.pyc
