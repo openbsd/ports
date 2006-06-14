@@ -1,0 +1,44 @@
+Avoid a crash by saving a pointer before calling g_slist_remove() that
+will leave l unreachable.
+
+$OpenBSD: patch-src_privacy_c,v 1.1 2006/06/14 01:58:17 fgsch Exp $
+--- src/privacy.c.orig	Tue Jun 13 16:56:56 2006
++++ src/privacy.c	Tue Jun 13 16:57:33 2006
+@@ -68,6 +68,7 @@ gaim_privacy_permit_remove(GaimAccount *
+ 						   gboolean local_only)
+ {
+ 	GSList *l;
++	gpointer data;
+ 	char *name;
+ 
+ 	g_return_val_if_fail(account != NULL, FALSE);
+@@ -85,8 +86,9 @@ gaim_privacy_permit_remove(GaimAccount *
+ 	if (l == NULL)
+ 		return FALSE;
+ 
++	data = l->data;
+ 	account->permit = g_slist_remove(account->permit, l->data);
+-	g_free(l->data);
++	g_free(data);
+ 
+ 	if (!local_only && gaim_account_is_connected(account))
+ 		serv_rem_permit(gaim_account_get_connection(account), who);
+@@ -139,6 +141,7 @@ gaim_privacy_deny_remove(GaimAccount *ac
+ 						 gboolean local_only)
+ {
+ 	GSList *l;
++	gpointer data;
+ 	char *name;
+ 
+ 	g_return_val_if_fail(account != NULL, FALSE);
+@@ -156,8 +159,9 @@ gaim_privacy_deny_remove(GaimAccount *ac
+ 	if (l == NULL)
+ 		return FALSE;
+ 
++	data = l->data;
+ 	account->deny = g_slist_remove(account->deny, l->data);
+-	g_free(l->data);
++	g_free(data);
+ 
+ 	if (!local_only && gaim_account_is_connected(account))
+ 		serv_rem_deny(gaim_account_get_connection(account), who);
