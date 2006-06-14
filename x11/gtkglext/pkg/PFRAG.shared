@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/06/14 13:58:38 steven Exp $
+@lib lib/libgdkglext-x11-1.0.so.${LIBgdkglext-x11-1.0_VERSION}
+@lib lib/libgtkglext-x11-1.0.so.${LIBgtkglext-x11-1.0_VERSION}
