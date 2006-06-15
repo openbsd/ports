@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2006/06/04 23:10:21 brad Exp $
+# $OpenBSD: Makefile,v 1.34 2006/06/15 09:13:45 bernd Exp $
 
 COMMENT=		"office suite for KDE"
 
@@ -14,7 +14,7 @@ do-distpatch:
 	cd ${WRKDIST} && ${PATCH} ${PATCH_DIST_ARGS} <${FULLDISTDIR}/koffice-1.5.1-kexi-checkbox-data-saving.patch
 	cd ${WRKDIST}/kexi && ${PATCH} -z .bak.orig --forward --quiet -E -p0 <${FULLDISTDIR}/koffice-1.5.1-kexi-form-plugins.patch
 
-PKGNAME=	koffice-1.5.1p1
+PKGNAME=	koffice-1.5.1p2
 #SHARED_LIBS=	karbonbase		3.0 \
 #		kexipropertyeditor	1.0 \
 #		koscript		3.0 \
@@ -101,7 +101,7 @@ WANTLIB=	ICE SM X11 Xext Xrender artsflow artsflow_idl audiofile bz2 c \
 		m mad mcop ogg ossaudio pcre pcreposix png pthread qtmcop \
 		soundserver_idl stdc++ tiff util vorbis vorbisenc vorbisfile \
 		xml2 xslt z Xt termcap Xi fontconfig crypto readline ssl \
-		IlmImf Half Imath Iex idn
+		IlmImf Half Imath Iex idn GL GLU
 
 
 CONFIGURE_ARGS+= --with-pgsqlincdir=${LOCALBASE}/include/postgresql
