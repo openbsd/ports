@@ -1,0 +1,65 @@
+$OpenBSD: patch-gd_gif_in_c,v 1.1 2006/06/15 22:18:25 bernd Exp $
+
+Security fix for CVE-2006-2906, from Xavier Roche via Ubuntu via NetBSD.
+
+--- gd_gif_in.c.orig	Mon Nov  1 19:28:56 2004
++++ gd_gif_in.c	Thu Jun 15 12:38:02 2006
+@@ -118,6 +118,7 @@ BGD_DECLARE(gdImagePtr) gdImageCreateFro
+        char            version[4];
+        /* 2.0.28: threadsafe storage */
+        int ZeroDataBlock = FALSE;
++       int             maxcount = 1024;
+ 
+        gdImagePtr im = 0;
+        if (! ReadOK(fd,buf,6)) {
+@@ -164,6 +165,8 @@ BGD_DECLARE(gdImagePtr) gdImageCreateFro
+                }
+ 
+                if (c != ',') {         /* Not a valid start character */
++		       if (--maxcount < 0)
++			       goto terminated;  /* Looping */
+                        continue;
+                }
+ 
+@@ -242,6 +245,7 @@ static int
+ DoExtension(gdIOCtx *fd, int label, int *Transparent, int *ZeroDataBlockP)
+ {
+        static unsigned char     buf[256];
++       int                      maxcount = 1024;
+ 
+        switch (label) {
+        case 0xf9:              /* Graphic Control Extension */
+@@ -254,13 +258,13 @@ DoExtension(gdIOCtx *fd, int label, int 
+                if ((buf[0] & 0x1) != 0)
+                        *Transparent = buf[3];
+ 
+-               while (GetDataBlock(fd, (unsigned char*) buf, ZeroDataBlockP) != 0)
++               while (GetDataBlock(fd, (unsigned char*) buf, ZeroDataBlockP) != 0 && --maxcount >= 0)
+                        ;
+                return FALSE;
+        default:
+                break;
+        }
+-       while (GetDataBlock(fd, (unsigned char*) buf, ZeroDataBlockP) != 0)
++       while (GetDataBlock(fd, (unsigned char*) buf, ZeroDataBlockP) != 0 && --maxcount >= 0)
+                ;
+ 
+        return FALSE;
+@@ -419,14 +423,15 @@ LWZReadByte_(gdIOCtx *fd, int flag, int 
+                } else if (code == end_code) {
+                        int             count;
+                        unsigned char   buf[260];
++		       int             maxcount = 1024;
+ 
+                        if (*ZeroDataBlockP)
+                                return -2;
+ 
+-                       while ((count = GetDataBlock(fd, buf, ZeroDataBlockP)) > 0)
++                       while ((count = GetDataBlock(fd, buf, ZeroDataBlockP)) > 0  && --maxcount >= 0)
+                                ;
+ 
+-                       if (count != 0)
++                       if (count != 0 || maxcount < 0)
+                        return -2;
+                }
+ 
