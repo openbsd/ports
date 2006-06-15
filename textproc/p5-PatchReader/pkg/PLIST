@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/15 07:27:49 djm Exp $
+${P5SITE}/PatchReader/
+${P5SITE}/PatchReader.pm
+${P5SITE}/PatchReader/AddCVSContext.pm
+${P5SITE}/PatchReader/Base.pm
+${P5SITE}/PatchReader/CVSClient.pm
+${P5SITE}/PatchReader/DiffPrinter/
+${P5SITE}/PatchReader/DiffPrinter/raw.pm
+${P5SITE}/PatchReader/DiffPrinter/template.pm
+${P5SITE}/PatchReader/FilterPatch.pm
+${P5SITE}/PatchReader/FixPatchRoot.pm
+${P5SITE}/PatchReader/NarrowPatch.pm
+${P5SITE}/PatchReader/PatchInfoGrabber.pm
+${P5SITE}/PatchReader/Raw.pm
+@man man/man3p/PatchReader.3p

@@ -1,0 +1,3 @@
+This perl library allows you to manipulate patches programmatically by
+chaining together a variety of objects that read, manipulate, and output
+patch information.
