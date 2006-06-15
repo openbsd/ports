@@ -1,3 +1,5 @@
-; $OpenBSD: logger.conf.sample,v 1.1.1.1 2004/09/26 00:38:24 jolan Exp $
+; $OpenBSD: logger.conf.sample,v 1.2 2006/06/15 06:39:50 steven Exp $
+[logfiles]
 console => notice,warning,error
 messages => notice,warning,error
+;syslog.local0 => notice,warning,error
