@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2006/05/21 12:32:52 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/06/16 16:56:56 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"perl extension for SHA-1/224/256/384/512"
-DISTNAME=	Digest-SHA-5.37
+DISTNAME=	Digest-SHA-5.41
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Artistic/GPL
 PERMIT_PACKAGE_CDROM=	Yes
