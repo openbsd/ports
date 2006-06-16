@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/16 01:31:41 bernd Exp $
+bin/htmlclean
+${P5SITE}/HTML/
+${P5SITE}/HTML/Clean.pm
+${P5SITE}/auto/
+${P5SITE}/auto/HTML/
+${P5SITE}/auto/HTML/Clean/
+${P5SITE}/auto/HTML/Clean/autosplit.ix
+@man man/man1/htmlclean.1
+@man man/man3p/HTML::Clean.3p
