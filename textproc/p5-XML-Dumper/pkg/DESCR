@@ -1,0 +1,6 @@
+XML::Dumper dumps Perl data to XML format. XML::Dumper can also read XML
+data that was previously dumped by the module and convert it back to Perl.
+You can use the module read the XML from a file and write the XML to a file.
+
+Additionally, because XML benefits so nicely from compression, XML::Dumper
+understands gzipped XML files.
