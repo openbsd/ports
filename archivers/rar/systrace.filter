@@ -1,0 +1,2 @@
+	native-chmod: filename match "${FULLDISTDIR}/rarbsd.sfx" then permit
+	native-chmod: filename match "${FULLDISTDIR}/rarsparc.sfx" then permit
