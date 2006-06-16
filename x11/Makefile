@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.239 2006/06/14 13:58:59 steven Exp $
+# $OpenBSD: Makefile,v 1.240 2006/06/16 21:38:44 steven Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -167,6 +167,7 @@
      SUBDIR += wmdate
      SUBDIR += wmfishtime
      SUBDIR += wmi
+     SUBDIR += wmii
      SUBDIR += wminfo
      SUBDIR += wmitime
      SUBDIR += wmmenu
