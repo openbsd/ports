@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.747 2006/06/04 14:56:10 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.748 2006/06/16 18:48:58 sturm Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1342,7 +1342,7 @@ ${_SYSTRACE_COOKIE}: ${_WRKDIR_COOKIE}
 .for _i in ${_SYSTRACE_POLICIES}
 	@echo "Policy: ${_i}, Emulation: native" >> $@
 	@if [ -f ${.CURDIR}/systrace.filter ]; then \
-		cat ${.CURDIR}/systrace.filter >> $@; \
+		sed ${_SYSTRACE_SED_SUBST} ${.CURDIR}/systrace.filter >> $@; \
 	fi
 	@sed ${_SYSTRACE_SED_SUBST} ${SYSTRACE_FILTER} >> $@
 .endfor
