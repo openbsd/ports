@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2005/11/23 01:02:39 brad Exp $
+@comment $OpenBSD: PLIST,v 1.37 2006/06/16 15:52:19 jakob Exp $
 @conflict postfix-*
 @newgroup _postfix:507
 @newgroup _postdrop:508
@@ -137,6 +137,7 @@ share/doc/postfix/html/LINUX_README.html
 share/doc/postfix/html/LMTP_README.html
 share/doc/postfix/html/LOCAL_RECIPIENT_README.html
 share/doc/postfix/html/MAILDROP_README.html
+share/doc/postfix/html/MILTER_README.html
 share/doc/postfix/html/MYSQL_README.html
 share/doc/postfix/html/NFS_README.html
 share/doc/postfix/html/OVERVIEW.html
@@ -247,6 +248,7 @@ share/doc/postfix/readme/LINUX_README
 share/doc/postfix/readme/LMTP_README
 share/doc/postfix/readme/LOCAL_RECIPIENT_README
 share/doc/postfix/readme/MAILDROP_README
+share/doc/postfix/readme/MILTER_README
 share/doc/postfix/readme/MYSQL_README
 share/doc/postfix/readme/NFS_README
 share/doc/postfix/readme/OVERVIEW
