@@ -1,0 +1,11 @@
+--- cmd/wm/area.c.orig	Sat May 27 19:53:10 2006
++++ cmd/wm/area.c	Sat May 27 19:54:13 2006
+@@ -150,7 +150,7 @@
+ 	static unsigned int mx, my;
+ 	static Bool *field = nil;
+ 	Bool fit = False;
+-	unsigned int i, j, k, x, y, maxx, maxy, dx, dy, cx, cy, diff;
++	unsigned int i, j, k, x, y, maxx, maxy, dx, dy, cx = 0, cy = 0, diff;
+ 	XPoint p1 = {0, 0}, p2 = {0, 0};
+ 	Frame *f = c->frame.data[c->sel];
+ 

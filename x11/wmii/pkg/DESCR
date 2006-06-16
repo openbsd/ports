@@ -1,0 +1,4 @@
+wmii is a dynamic window manager for X11. It supports classic and
+dynamic window management with extended keyboard, mouse, and
+filesystem based remote control. It replaces the workspace paradigm
+with a new tagging approach.

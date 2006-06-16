@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/16 21:36:03 steven Exp $
+bin/wmii
+bin/wmiimenu
+bin/wmiipsel
+bin/wmiir
+bin/wmiisetsid
+bin/wmiiwarp
+bin/wmiiwm
+@man man/man1/wmii.1
+@man man/man1/wmiimenu.1
+@man man/man1/wmiir.1
+@man man/man1/wmiiwm.1
+share/examples/wmii-3/
+@sample ${SYSCONFDIR}/wmii-3/
+@mode 755
+share/examples/wmii-3/quit
+@sample ${SYSCONFDIR}/wmii-3/quit
+share/examples/wmii-3/status
+@sample ${SYSCONFDIR}/wmii-3/status
+share/examples/wmii-3/welcome
+@sample ${SYSCONFDIR}/wmii-3/welcome
+share/examples/wmii-3/wmiirc
+@sample ${SYSCONFDIR}/wmii-3/wmiirc
