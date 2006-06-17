@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.17 2006/03/16 09:53:56 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.18 2006/06/17 15:23:57 naddy Exp $
+@pkgpath www/zope-btreefolder2
 @newgroup _zope:534
 @newuser _zope:534:_zope:daemon:Zope Account:/nonexistent:/sbin/nologin
 lib/zope/
