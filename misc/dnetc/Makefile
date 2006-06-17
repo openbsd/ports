@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2005/01/05 19:40:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2006/06/17 12:11:33 naddy Exp $
 
 ONLY_FOR_ARCHS=		i386 m68k sparc
 
@@ -16,11 +16,13 @@ A-sparc=		sparc-aout
 V-sparc=		2.9002
 SV-sparc=		479
 
+DISTFILES=
 .for m in ${ONLY_FOR_ARCHS}
 .  if ${MACHINE_ARCH} == "$m"
 A=			${A-$m}
 V=			${V-$m}
 SV=			${SV-$m}
+DISTFILES+=		dnetc${SV}-openbsd-${A}${EXTRACT_SUFX}
 .  else
 SUPDISTFILES+=		dnetc${SV-$m}-openbsd-${A-$m}${EXTRACT_SUFX}
 .  endif
