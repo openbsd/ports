@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.2 2005/05/30 19:27:45 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2006/06/17 19:14:42 sturm Exp $
 
 DISTNAME=	unison-${VERSION}
-PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.cis.upenn.edu/~bcpierce/unison/
@@ -43,8 +42,8 @@ MAKE_FLAGS+=	NATIVE=${MODOCAML_NATIVE:S/Yes/true/:S/No/false/} \
 
 NO_REGRESS=	Yes
 
-# Empty to avoid multiple all:: entries and use the first target entry.
-ALL_TARGET=
+# Avoid multiple all:: entries and use the real target entry.
+ALL_TARGET=	unison
 
 DOCS=		BUGS.txt NEWS README
 
