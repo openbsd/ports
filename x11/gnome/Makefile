@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2005/09/08 15:23:13 marcm Exp $
+# $OpenBSD: Makefile,v 1.22 2006/06/17 16:51:13 alek Exp $
 
      SUBDIR += applets2
      SUBDIR += bonobo
      SUBDIR += controlcenter
      SUBDIR += controlcenter2
      SUBDIR += desktop
+     SUBDIR += doc-utils
      SUBDIR += eel
      SUBDIR += eog
      SUBDIR += gail
