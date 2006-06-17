@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2006/06/13 17:31:29 alek Exp $
+# $OpenBSD: Makefile,v 1.99 2006/06/17 17:04:15 alek Exp $
 
 COMMENT=		"XML parsing library"
 COMMENT-python=		"Python bindings for libxml"
@@ -6,7 +6,7 @@ COMMENT-python=		"Python bindings for libxml"
 VERSION=		2.6.24
 DISTNAME=		libxml2-${VERSION}
 PKGNAME=		libxml-${VERSION}
-PKGNAME-python=		py-libxml-${VERSION}
+PKGNAME-python=		py-libxml-${VERSION}p0
 SHARED_LIBS=		xml2	9.2
 CATEGORIES=		textproc
 MASTER_SITES=		ftp://xmlsoft.org/libxml/ \
@@ -67,6 +67,9 @@ post-configure:
 post-install:
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/share/libxml2
 	${INSTALL_SCRIPT} ${WRKBUILD}/rebuild ${PREFIX}/share/libxml2/
+.if ${FLAVOR:Mpython}
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKINST}${MODPY_SITEPKG}
+.endif
 
 do-regress:
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${GMAKE} \
