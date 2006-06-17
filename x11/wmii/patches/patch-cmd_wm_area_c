@@ -1,6 +1,6 @@
---- cmd/wm/area.c.orig	Sat May 27 19:53:10 2006
-+++ cmd/wm/area.c	Sat May 27 19:54:13 2006
-@@ -150,7 +150,7 @@
+--- cmd/wm/area.c.orig	Sat Jun 17 13:44:30 2006
++++ cmd/wm/area.c	Sat Jun 17 19:39:01 2006
+@@ -150,7 +150,7 @@ place_client(Area *a, Client *c)
  	static unsigned int mx, my;
  	static Bool *field = nil;
  	Bool fit = False;

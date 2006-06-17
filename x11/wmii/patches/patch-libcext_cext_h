@@ -1,5 +1,5 @@
---- libcext/cext.h.orig	Fri May 19 13:20:53 2006
-+++ libcext/cext.h	Mon May 29 01:44:36 2006
+--- libcext/cext.h.orig	Sat Jun 17 13:44:30 2006
++++ libcext/cext.h	Sat Jun 17 19:39:01 2006
 @@ -5,6 +5,9 @@
  
  #include <sys/types.h>
@@ -10,9 +10,9 @@
  #ifndef nil
  #define nil (void *)0
  #endif
-@@ -15,15 +18,18 @@
- /* estrdup.c */
- char *cext_estrdup(const char *s);
+@@ -12,15 +15,18 @@
+ /* emallocz.c */
+ void *cext_emallocz(unsigned int size);
  
 -/* strlcat.c */
 -unsigned int cext_strlcat(char *dst, const char *src, unsigned int siz);

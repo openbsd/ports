@@ -1,11 +1,11 @@
---- libcext/Makefile.orig	Fri May 19 13:20:53 2006
-+++ libcext/Makefile	Mon May 29 01:38:40 2006
+--- libcext/Makefile.orig	Sat Jun 17 17:32:13 2006
++++ libcext/Makefile	Sat Jun 17 17:32:36 2006
 @@ -3,7 +3,7 @@
  
  include ../config.mk
  
--SRC = emallocz.c estrdup.c strlcat.c strlcpy.c strtonum.c tokenize.c trim.c vector.c 
-+SRC = emallocz.c estrdup.c tokenize.c trim.c vector.c 
+-SRC = emallocz.c strlcat.c strlcpy.c strtonum.c tokenize.c trim.c vector.c 
++SRC = emallocz.c tokenize.c trim.c vector.c 
  
  OBJ = ${SRC:.c=.o}
  
