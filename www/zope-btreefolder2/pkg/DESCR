@@ -1,8 +1,0 @@
-BTreeFolder2 is a Zope product that acts like a Zope folder but can
-store many more items.
-
-When you fill a Zope folder with too many items, both Zope and your
-browser get overwhelmed. Zope has to load and store a large folder
-object, and the browser has to render large HTML tables repeatedly. Zope
-can store a lot of objects, but it has trouble storing a lot of objects
-in a single standard folder.
