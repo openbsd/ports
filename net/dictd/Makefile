@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/04/19 17:11:52 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2006/06/17 15:31:52 naddy Exp $
 
 COMMENT=	"Dictionary Server Protocol client"
 COMMENT-server=	"Dictionary Server Protocol server"
 
 DISTNAME=	dictd-1.9.15
-PKGNAME=	${DISTNAME:S/-/-client-/}
+PKGNAME=	${DISTNAME:S/-/-client-/}p0
 PKGNAME-server=	${DISTNAME:S/-/-server-/}
 
 CATEGORIES=	net education
