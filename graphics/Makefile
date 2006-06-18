@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.159 2006/05/04 22:56:29 pedro Exp $
+# $OpenBSD: Makefile,v 1.160 2006/06/18 14:48:36 alek Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -22,6 +22,7 @@
      SUBDIR += dumpmpeg
      SUBDIR += dvdrip
      SUBDIR += enjoympeg
+     SUBDIR += evince
      SUBDIR += feh
      SUBDIR += ffmpeg
      SUBDIR += flash
