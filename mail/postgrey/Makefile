@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2005/12/04 20:10:02 jakob Exp $
+# $OpenBSD: Makefile,v 1.7 2006/06/18 08:28:56 jakob Exp $
 
 COMMENT=	"postfix greylist daemon"
 
-VERSION=	1.23
+VERSION=	1.24
 DISTNAME=	postgrey-${VERSION}
 CATEGORIES=	mail
 
@@ -29,5 +29,6 @@ RUN_DEPENDS=		::devel/p5-Net-Server \
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/postgrey ${PREFIX}/libexec
+	pod2man ${WRKSRC}/postgrey ${PREFIX}/man/man1/postgrey.1
 
 .include <bsd.port.mk>

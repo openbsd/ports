@@ -1,0 +1,38 @@
+$OpenBSD: patch-postgrey,v 1.1 2006/06/18 08:28:56 jakob Exp $
+--- postgrey.orig	Mon Jan 16 08:32:15 2006
++++ postgrey	Sun Jun 18 10:26:14 2006
+@@ -431,9 +431,9 @@ sub main()
+             commandline      => [ $0, @ARGV_saved ],
+             port             => [ $opt{inet} ? $opt{inet} : $opt{unix}."|unix" ],
+             proto            => $opt{inet} ? 'tcp' : 'unix',
+-            user             => $opt{user} || 'postgrey',
+-            group            => $opt{group} || 'nogroup',
+-            dbdir            => $opt{dbdir} || '/var/spool/postfix/postgrey',
++            user             => $opt{user} || '_postgrey',
++            group            => $opt{group} || '_postgrey',
++            dbdir            => $opt{dbdir} || '/var/db/postgrey',
+             setsid           => $opt{daemonize} ? 1 : undef,
+             pid_file         => $opt{daemonize} ? $opt{pidfile} : undef,
+             log_level        => $opt{verbose} ? 4 : 2,
+@@ -444,7 +444,7 @@ sub main()
+         },
+         postgrey => {
+             delay            => $opt{delay}     || 300,
+-            dbdir            => $opt{dbdir}     || '/var/spool/postfix/postgrey',
++            dbdir            => $opt{dbdir}     || '/var/db/postgrey',
+             max_age          => $opt{'max-age'} || 35,
+             last_maint       => time,
+             last_maint_keys  => 0, # do it on the first night
+@@ -608,9 +608,9 @@ B<postgrey> [I<options>...]
+  -i, --inet=[HOST:]PORT  listen on PORT, localhost if HOST is not specified
+  -d, --daemonize         run in the background
+      --pidfile=PATH      put daemon pid into this file
+-     --user=USER         run as USER (default: postgrey)
+-     --group=GROUP       run as group GROUP (default: nogroup)
+-     --dbdir=PATH        put db files in PATH (default: /var/spool/postfix/postgrey)
++     --user=USER         run as USER (default: _postgrey)
++     --group=GROUP       run as group GROUP (default: _postgrey)
++     --dbdir=PATH        put db files in PATH (default: /var/db/postgrey)
+      --delay=N           greylist for N seconds (default: 300)
+      --max-age=N         delete entries older than N days since the last time
+                          that they have been seen (default: 35)

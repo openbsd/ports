@@ -1,2 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/10 09:37:31 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/06/18 08:28:56 jakob Exp $
+@newgroup _postgrey:563
+@newuser _postgrey:563:563:daemon:Postgrey Daemon:/var/empty:/sbin/nologin
 libexec/postgrey
+man/man1/postgrey.1
+@mode 0755
+@owner _postgrey
+@group _postgrey
+@sample /var/db/postgrey/
