@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.419 2006/06/18 08:45:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.420 2006/06/18 17:29:34 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -41,6 +41,7 @@
      SUBDIR += cvsup
      SUBDIR += cvsup,no_x11
      SUBDIR += cvsync
+     SUBDIR += darkstat
      SUBDIR += dc_gui
      SUBDIR += dclib
      SUBDIR += dctc
