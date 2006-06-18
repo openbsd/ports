@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/06/18 08:33:49 jasper Exp $
+@lib lib/liboop.so.${LIBoop_VERSION}
