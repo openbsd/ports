@@ -1,0 +1,10 @@
+Darkstat is a packet sniffer which runs as a background process on
+a cable/DSL router, gathers all sorts of useless but interesting
+statistics, and serves them over HTTP. Features:
+
+* Traffic graphs.
+* Tracks traffic per host.
+* Tracks traffic per TCP and UDP port for each host.
+* Embedded web-server with deflate compression.
+* Asynchronous reverse DNS resolution using a child process.
+* Small. Portable. Single-threaded. Efficient.
