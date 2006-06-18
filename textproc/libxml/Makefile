@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.99 2006/06/17 17:04:15 alek Exp $
+# $OpenBSD: Makefile,v 1.100 2006/06/18 13:48:19 steven Exp $
 
 COMMENT=		"XML parsing library"
 COMMENT-python=		"Python bindings for libxml"
 
-VERSION=		2.6.24
+VERSION=		2.6.26
 DISTNAME=		libxml2-${VERSION}
 PKGNAME=		libxml-${VERSION}
-PKGNAME-python=		py-libxml-${VERSION}p0
-SHARED_LIBS=		xml2	9.2
+PKGNAME-python=		py-libxml-${VERSION}
+SHARED_LIBS=		xml2	9.3
 CATEGORIES=		textproc
 MASTER_SITES=		ftp://xmlsoft.org/libxml/ \
 			${MASTER_SITE_GNOME:=sources/libxml2/2.6/}
@@ -60,6 +60,8 @@ CONFIGURE_ARGS+=	--without-python
 CONFIGURE_ARGS+=	--without-threads
 
 REGRESS_DEPENDS=	::devel/gmake
+
+SUBST_VARS=		VERSION
 
 post-configure:
 	sed -e 's,@PREFIX@,${PREFIX},' <${FILESDIR}/rebuild >${WRKBUILD}/rebuild
