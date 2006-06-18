@@ -1,0 +1,5 @@
+nepim stands for network pipemeter, a tool for measuring available
+bandwidth between hosts. nepim is also useful to generate network
+traffic for testing purposes. nepim operates in client/server mode, is
+able to handle multiple parallel traffic streams, reports periodic
+partial statistics along the testing, and supports IPv6.

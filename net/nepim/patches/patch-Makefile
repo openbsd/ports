@@ -1,0 +1,22 @@
+--- src/Makefile.orig	Sat Jun 17 13:38:19 2006
++++ src/Makefile	Sat Jun 17 13:39:50 2006
+@@ -28,17 +28,14 @@
+ # ENABLE_DLOPEN defined as -DHAVE_DLOPEN.
+ # Otherwise, tcpwrapper support is disabled.
+ 
+-OOP_BASE = /usr/local/oop
++OOP_BASE = !!PREFIX!!
+ OOP_INC  = $(OOP_BASE)/include
+ OOP_LIB  = $(OOP_BASE)/lib
+ 
+ ENABLE_DLOPEN = -DHAVE_DLOPEN
+ 
+-CC      = gcc
+-WARN    = -Wall
+ REENT   = -D_REENTRANT
+-CFLAGS  = $(WARN) $(REENT) -g -ggdb -I$(OOP_INC) $(ENABLE_DLOPEN) \
+-	 -DHAVE_IPV6_MREQ
++CFLAGS  += -Wall $(REENT) -I$(OOP_INC) -DHAVE_IPV6_MREQ $(ENABLE_DLOPEN)	 
+ LDFLAGS += -L$(OOP_LIB) -loop
+ 
+ PLATFORM=$(shell uname)

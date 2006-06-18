@@ -1,0 +1,20 @@
+--- src/common.c.orig	Sat Jun 17 13:37:04 2006
++++ src/common.c	Sat Jun 17 13:37:34 2006
+@@ -407,7 +407,7 @@
+ 					  int *addr_len)
+ {
+   int size = addr_list_size(list);
+-  int i;
++  int i, result;
+ 
+   for (i = 0; i < size; ++i) {
+     char hostname[100];
+@@ -435,7 +435,7 @@
+     hints.ai_flags    = AI_CANONNAME;
+     hints.ai_family   = PF_UNSPEC;
+ 
+-    int result = getaddrinfo(hostname, portname,
++    result = getaddrinfo(hostname, portname,
+ 			     &hints, &ai_res);
+     if (result) {
+       fprintf(stderr, "%s %s: getaddrinfo(%s,%s): %s\n",
