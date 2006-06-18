@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.49 2006/06/10 23:14:47 steven Exp $
+#	$OpenBSD: Makefile,v 1.50 2006/06/18 13:14:08 alek Exp $
 
     SUBDIR += a2ps,a4
     SUBDIR += a2ps,letter
@@ -30,6 +30,7 @@
     SUBDIR += openclipart
     SUBDIR += pdflib
     SUBDIR += pkfonts
+    SUBDIR += poppler
     SUBDIR += ppower4
     SUBDIR += prosper
     SUBDIR += pscal
