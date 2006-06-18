@@ -1,0 +1,12 @@
+$OpenBSD: patch-fontforge_splinesaveafm_c,v 1.1.1.1 2006/06/18 13:33:25 steven Exp $
+--- fontforge/splinesaveafm.c.orig	Mon Jun 12 18:44:10 2006
++++ fontforge/splinesaveafm.c	Mon Jun 12 18:44:46 2006
+@@ -190,7 +190,7 @@ static void CheckMMAfmFile(SplineFont *s
+ 
+ int LoadKerningDataFromAmfm(SplineFont *sf, char *filename,EncMap *map) {
+     FILE *file=NULL;
+-    char buffer[280], *pt, lastname[256];
++    char buffer[280], *pt, lastname[257];
+     int index, i;
+     MMSet *mm = sf->mm;
+ 

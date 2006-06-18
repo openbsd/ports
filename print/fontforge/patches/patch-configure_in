@@ -1,0 +1,29 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2006/06/18 13:33:25 steven Exp $
+--- configure.in.orig	Sun Apr  9 18:30:21 2006
++++ configure.in	Wed Jun 14 21:52:36 2006
+@@ -163,22 +163,15 @@ AC_CHECK_FILE(/usr/include/libxml2/libxm
+  AC_CHECK_FILE(/usr/local/include/libxml2/libxml,[CFLAGS="$CFLAGS -I/usr/local/include -I/usr/local/include/libxml2/"],
+   AC_DEFINE(_NO_LIBXML))])
+ 
+-dnl Some old versions of lib(un)gif don't work for us, they've got the
++dnl Some old versions of libungif don't work for us, they've got the
+ dnl Function argument in the wrong place. So check the header files.
+-dnl check for both libgif and libungif, I think they use the same args.
+ 
+-AC_CHECK_LIB(gif, DGifOpenFileName, [
++AC_CHECK_LIB(ungif, DGifOpenFileName, [
+ echo -n checking for ExtensionBlock.Function in gif_lib.h...
+ AC_TRY_COMPILE([#include <gif_lib.h>], [ ExtensionBlock foo; foo.Function=3; ], echo " " yes , [echo " " no
+     ac_cv_lib_ungif_DGifOpenFileName=no
+     AC_DEFINE(_NO_LIBUNGIF)])
+-] , [
+-  AC_CHECK_LIB(ungif, DGifOpenFileName, [
+-  echo -n checking for ExtensionBlock.Function in gif_lib.h...
+-  AC_TRY_COMPILE([#include <gif_lib.h>], [ ExtensionBlock foo; foo.Function=3; ], echo " " yes , [echo " " no
+-      ac_cv_lib_ungif_DGifOpenFileName=no
+-      AC_DEFINE(_NO_LIBUNGIF)])
+-  ] , AC_DEFINE(_NO_LIBUNGIF))])
++] , AC_DEFINE(_NO_LIBUNGIF))
+ 
+ dnl some people have installed libraries without include files.
+ dnl bloody useless thing to do, but check for both (don't need to check for

@@ -1,0 +1,4 @@
+An outline font editor that lets you create your own PostScript, TrueType,
+OpenType, CID-keyed, Multi-Master, CFF, SVG and bitmap (BDF) fonts, or
+edit existing ones. It also lets you convert one format to another.
+FontForge has support for many Macintosh font formats.
