@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2006/06/14 08:58:22 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2006/06/18 18:05:46 jakob Exp $
 
 COMMENT=	"latency logging and graphing system"
 
-DISTNAME=	smokeping-2.0.8
+VERSION=	2.0.8
+DISTNAME=	smokeping-${VERSION}
+PKGNAME=	smokeping-${VERSION}p0
 CATEGORIES=	net
 
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/smokeping/pub/
@@ -28,14 +30,13 @@ NO_BUILD=	Yes
 PKG_ARCH=	*
 
 PMDIR=		libdata/perl5/site_perl
-WEBDIR=		/var/www/smokeping
 SUBST_VARS=	PMDIR
 
 ETCFILES=	basepage.html config smokemail tmail
 
 do-install:
-	@perl -pi -e "s|%%WEBDIR%%|${WEBDIR}|g; \
-		s|%%SYSCONFDIR%%|${SYSCONFDIR}|g;" \
+	@perl -pi -e "s|%%SYSCONFDIR%%|${SYSCONFDIR}|g; \
+		s|%%LOCALBASE%%|${LOCALBASE}|g;" \
 		${WRKSRC}/etc/config.dist
 	@perl -pi -e "s|%%SYSCONFDIR%%|${SYSCONFDIR}|g" \
 		< ${WRKSRC}/bin/smokeping.dist > ${WRKSRC}/bin/smokeping

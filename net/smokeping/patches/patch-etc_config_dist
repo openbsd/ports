@@ -1,7 +1,7 @@
-$OpenBSD: patch-etc_config_dist,v 1.1 2006/06/14 08:58:22 jakob Exp $
---- etc/config.dist.orig	Tue May 23 13:31:29 2006
-+++ etc/config.dist	Tue May 23 13:41:27 2006
-@@ -7,14 +7,14 @@
+$OpenBSD: patch-etc_config_dist,v 1.2 2006/06/18 18:05:46 jakob Exp $
+--- etc/config.dist.orig	Fri Mar 24 17:51:02 2006
++++ etc/config.dist	Sun Jun 18 19:38:15 2006
+@@ -7,14 +7,15 @@
  owner    = Joe Random
  contact  = joe@some.place.xyz
  mailhost = smtp.mailhost.abc
@@ -11,9 +11,10 @@ $OpenBSD: patch-etc_config_dist,v 1.1 2006/06/14 08:58:22 jakob Exp $
 -datadir  = /home/oetiker/data/projects/AADJ-smokeping/dist/var
 -piddir  = /home/oetiker/data/projects/AADJ-smokeping/dist/var
 +sendmail = /usr/sbin/sendmail
-+imgcache = %%WEBDIR%%/img
-+imgurl   = /img
-+datadir  = /var/spool/smokeping
++imgcache = /var/www/htdocs/smokeping/img
++imgurl   = /smokeping/img
++pagedir  = /var/www/htdocs/smokeping
++datadir  = /var/db/smokeping
 +piddir  = /var/run/smokeping
  cgiurl   = http://people.ee.ethz.ch/~oetiker/smokeping/smokeping.cgi
 -smokemail = /home/oetiker/data/projects/AADJ-smokeping/dist/etc/smokemail.dist
@@ -23,7 +24,7 @@ $OpenBSD: patch-etc_config_dist,v 1.1 2006/06/14 08:58:22 jakob Exp $
  # specify this to get syslog logging
  syslogfacility = local0
  # each probe is now run in its own process
-@@ -66,7 +66,7 @@ AVERAGE  0.5 144   720
+@@ -66,7 +67,7 @@ AVERAGE  0.5 144   720
  
  *** Presentation ***
  
@@ -32,12 +33,12 @@ $OpenBSD: patch-etc_config_dist,v 1.1 2006/06/14 08:58:22 jakob Exp $
  
  + overview 
  
-@@ -89,7 +89,7 @@ unison_tolerance = 2
+@@ -89,7 +90,7 @@ unison_tolerance = 2
  
  + FPing
  
 -binary = /usr/sepp/bin/fping
-+binary = /usr/local/sbin/fping
++binary = %%LOCALBASE%%/sbin/fping
  
  *** Targets ***
  
