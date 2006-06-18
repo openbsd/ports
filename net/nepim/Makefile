@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/06/18 08:42:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2006/06/18 10:22:29 jasper Exp $
 
 COMMENT=		"network pipe meter"
 
 DISTNAME=		nepim-0.32
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		net sysutils
 
 HOMEPAGE=		http://www.nongnu.org/nepim/
@@ -32,7 +33,7 @@ do-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nepim ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/doc/nepim
-	${INSTALL_DATA} ${WRKDIST}/README ${PREFIX}/doc/nepim
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nepim
+	${INSTALL_DATA} ${WRKDIST}/README ${PREFIX}/share/doc/nepim
 
 .include <bsd.port.mk>

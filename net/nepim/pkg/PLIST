@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/18 08:42:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/06/18 10:22:29 jasper Exp $
 bin/nepim
-doc/
-doc/nepim/
-doc/nepim/README
+share/doc/nepim/
+share/doc/nepim/README
