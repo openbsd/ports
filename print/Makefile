@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.50 2006/06/18 13:14:08 alek Exp $
+#	$OpenBSD: Makefile,v 1.51 2006/06/18 13:34:22 steven Exp $
 
     SUBDIR += a2ps,a4
     SUBDIR += a2ps,letter
@@ -14,6 +14,7 @@
     SUBDIR += enscript
     SUBDIR += enscript,a4
     SUBDIR += foiltex
+    SUBDIR += fontforge
     SUBDIR += freetype
     SUBDIR += ghostscript
     SUBDIR += ghostview
