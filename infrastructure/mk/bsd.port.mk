@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.748 2006/06/16 18:48:58 sturm Exp $
+#	$OpenBSD: bsd.port.mk,v 1.749 2006/06/18 10:10:04 sturm Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -633,7 +633,7 @@ _SYSTRACE_CMD=
 .endif
 SYSTRACE_FILTER?=	${PORTSDIR}/infrastructure/db/systrace.filter
 _SYSTRACE_POLICIES+=	/bin/sh /usr/bin/env /usr/bin/make \
-	${DEPBASE}/bin/gmake
+	/usr/bin/patch ${DEPBASE}/bin/gmake
 SYSTRACE_SUBST_VARS+=	DISTDIR PKG_TMPDIR PORTSDIR TMPDIR WRKDIR
 .for _v in ${SYSTRACE_SUBST_VARS}
 _SYSTRACE_SED_SUBST+=-e 's,$${${_v}},${${_v}},g'
@@ -1786,7 +1786,7 @@ do-extract:
 # Hence it needs special treatment (a specific cookie).
 .if target(pre-patch)
 ${_PREPATCH_COOKIE}:
-	@cd ${.CURDIR} && exec ${MAKE} pre-patch
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} pre-patch
 .  if ${PATCH_CHECK_ONLY:L} != "yes"
 	@${_MAKE_COOKIE} $@
 .  endif
@@ -1800,9 +1800,16 @@ ${_DISTPATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .if target(pre-patch)
 	@cd ${.CURDIR} && exec ${MAKE} ${_PREPATCH_COOKIE}
 .endif
-.if target(do-distpatch)
-	@cd ${.CURDIR} && exec ${MAKE} do-distpatch
-.else
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} do-distpatch
+.if target(post-distpatch)
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} post-distpatch
+.endif
+.if ${PATCH_CHECK_ONLY:L} != "yes"
+	@${_MAKE_COOKIE} $@
+.endif
+
+.if !target(do-distpatch)
+do-distpatch:
 # What DISTPATCH normally does
 .  if defined(_PATCHFILES)
 	@${ECHO_MSG} "===>  Applying distribution patches for ${FULLPKGNAME}${_MASTER}"
@@ -1819,12 +1826,6 @@ ${_DISTPATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .  endif
 # End of DISTPATCH.
 .endif
-.if target(post-distpatch)
-	@cd ${.CURDIR} && exec ${MAKE} post-distpatch
-.endif
-.if ${PATCH_CHECK_ONLY:L} != "yes"
-	@${_MAKE_COOKIE} $@
-.endif
 
 # The real patch
 
@@ -1834,7 +1835,7 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 	@cd ${.CURDIR} && exec ${MAKE} ${_PREPATCH_COOKIE}
 .endif
 .if target(do-patch)
-	@cd ${.CURDIR} && exec ${MAKE} do-patch
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} do-patch
 .else
 # What PATCH normally does:
 # XXX test for efficiency, don't bother with distpatch if it's not needed
@@ -1854,7 +1855,7 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 							no) ;; \
 							*) ${ECHO_MSG} "===>   Applying ${OPSYS} patch $$i" ;; \
 						esac; \
-						${PATCH} ${PATCH_ARGS} < $$i || \
+						${_SYSTRACE_CMD} ${PATCH} ${PATCH_ARGS} < $$i || \
 							{ echo "***>   $$i did not apply cleanly"; \
 							error=true; }\
 					else \
@@ -1871,7 +1872,7 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 # End of PATCH.
 .endif
 .if target(post-patch)
-	@cd ${.CURDIR} && exec ${MAKE} post-patch
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} post-patch
 .endif
 .for _m in ${MODULES}
 .  if defined(MOD${_m:U}_post-patch)
