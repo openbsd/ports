@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2006/01/06 08:20:20 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2006/06/18 15:03:58 alek Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"DTP program"
 DISTNAME=	scribus-1.2.2.1
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	print
 
 HOMEPAGE=	http://www.scribus.org.uk/
@@ -16,13 +16,13 @@ PERMIT_DISTFILES_CDROM?=Yes
 PERMIT_DISTFILES_FTP?=	Yes
 
 WANTLIB=	ICE SM X11 Xext c freetype gcrypt gnutls gpg-error \
-		iconv intl m pthread stdc++ util z
+		m pthread stdc++ z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scribus/}
 
 EXTRACT_SUFX=	.tar.bz2
 
-MODULES=	x11/qt3
+MODULES=	x11/qt3 devel/gettext
 MODQT_MT=	Yes
 
 LIB_DEPENDS=	jpeg::graphics/jpeg \
@@ -30,7 +30,7 @@ LIB_DEPENDS=	jpeg::graphics/jpeg \
 		art_lgpl_2.0.0::graphics/libart \
 		png::graphics/png \
 		tiff::graphics/tiff \
-		python2.3.0.0:python-2.3.*:lang/python/2.3 \
+		python2.4.0.0:python-2.4.*:lang/python/2.4 \
 		cups::print/cups \
 		xml2::textproc/libxml
 
