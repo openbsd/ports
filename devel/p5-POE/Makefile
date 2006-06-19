@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2006/06/07 08:13:20 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2006/06/19 06:32:41 jasper Exp $
 
 COMMENT=	"portable multitasking and networking framework for perl"
 
-DISTNAME=	POE-0.3501
+DISTNAME=	POE-0.3502
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://poe.perl.org/
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=POE/} 
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Artistic and GPL
 PERMIT_PACKAGE_CDROM=	Yes
