@@ -1,0 +1,7 @@
+To have smokeping start at boot time, you have to adapt
+${SYSCONFDIR}/smokeping/config and insert the following into /etc/rc.local.
+
+if [ -x ${PREFIX}/bin/smokeping ]; then
+	install -d -o _smokeping /var/run/smokeping
+	echo -n ' smokeping';	${PREFIX}/bin/smokeping
+fi

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2006/06/18 18:05:46 jakob Exp $
+# $OpenBSD: Makefile,v 1.7 2006/06/19 19:40:01 jakob Exp $
 
 COMMENT=	"latency logging and graphing system"
 
 VERSION=	2.0.8
 DISTNAME=	smokeping-${VERSION}
-PKGNAME=	smokeping-${VERSION}p0
+PKGNAME=	smokeping-${VERSION}p1
 CATEGORIES=	net
 
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/smokeping/pub/
