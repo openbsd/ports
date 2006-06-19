@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.2 2005/11/07 15:59:08 mbalmer Exp $
---- configure.orig	Wed Oct  5 20:41:09 2005
-+++ configure	Tue Oct 18 14:30:27 2005
-@@ -9443,7 +9443,6 @@ openbsd*)
+$OpenBSD: patch-configure,v 1.3 2006/06/19 08:22:35 bernd Exp $
+--- configure.orig	Sat Apr  8 19:49:11 2006
++++ configure	Fri Jun 16 11:32:56 2006
+@@ -9478,7 +9478,6 @@ openbsd*)
      *)                         need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure,v 1.2 2005/11/07 15:59:08 mbalmer Exp $
    shlibpath_var=LD_LIBRARY_PATH
    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case $host_os in
-@@ -34518,6 +34517,7 @@ cat confdefs.h >>conftest.$ac_ext
+@@ -36188,6 +36187,7 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  

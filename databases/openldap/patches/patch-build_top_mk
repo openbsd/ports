@@ -1,24 +1,6 @@
-$OpenBSD: patch-build_top_mk,v 1.3 2005/12/29 14:00:36 bernd Exp $
+$OpenBSD: patch-build_top_mk,v 1.4 2006/06/19 08:22:35 bernd Exp $
 --- build/top.mk.orig	Mon Aug 29 20:46:17 2005
 +++ build/top.mk	Wed Dec 28 12:04:37 2005
-@@ -73,7 +73,7 @@ MKVERSION = $(top_srcdir)/build/mkversio
- LIBTOOL = @LIBTOOL@
- LIBRELEASE = @OPENLDAP_LIBRELEASE@
- LIBVERSION = @OPENLDAP_LIBVERSION@
--LTVERSION = -release $(LIBRELEASE) -version-info $(LIBVERSION)
-+LTVERSION = -release $(LIBRELEASE)
- 
- # libtool --only flag for libraries: platform specific
- NT_LTONLY_LIB = # --only-$(BUILD_LIBS_DYNAMIC)
-@@ -112,7 +112,7 @@ LTCOMPILE_LIB = $(LIBTOOL) $(LTONLY_LIB)
- 	$(CC) $(LT_CFLAGS) $(LT_CPPFLAGS) $(LIB_DEFS) -c
- 
- LTLINK_LIB = $(LIBTOOL) $(LTONLY_LIB) --mode=link \
--	$(CC) $(LT_CFLAGS) $(LDFLAGS) $(LTFLAGS_LIB)
-+	$(CC) $(LT_CFLAGS) $(LDFLAGS) $(LTFLAGS_LIB) $(LIBRARY_LT_VERSION)
- 
- LTCOMPILE_MOD = $(LIBTOOL) $(LTONLY_MOD) --mode=compile \
- 	$(CC) $(LT_CFLAGS) $(LT_CPPFLAGS) $(MOD_DEFS) -c
 @@ -121,7 +121,7 @@ LTLINK_MOD = $(LIBTOOL) $(LTONLY_MOD) --
  	$(CC) $(LT_CFLAGS) $(LDFLAGS) $(LTFLAGS_MOD)
  
