@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/12/29 13:56:07 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2006/06/19 09:46:43 espie Exp $
 COMMENT=	"handling CHM files"
 CATEGORIES=	devel textproc
 
@@ -9,7 +9,6 @@ EXTRACT_SUFX=	.tgz
 DISTNAME=	chmlib-0.37.4
 PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=		chm 0.0
-MODGNU_SHARED_LIBS=	chm ''
 WRKDIST=	${WRKDIR}/chmlib-0.37
 
 CONFIGURE_STYLE=gnu

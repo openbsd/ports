@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2006/01/02 18:15:53 bernd Exp $
+# $OpenBSD: Makefile,v 1.7 2006/06/19 09:46:43 espie Exp $
 
 COMMENT=		"library for accessing disks and disk image files"
 
 DISTNAME=		libdsk-1.0.0
 PKGNAME=		${DISTNAME}p0
 SHARED_LIBS=		dsk 2.2
-MODGNU_SHARED_LIBS=	dsk ''
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.seasip.demon.co.uk/Unix/LibDsk/

@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2006/01/13 23:40:23 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/06/19 09:46:43 espie Exp $
 
 COMMENT=		"wrapper class around the pcre library"
 
 DISTNAME=		pcre++-0.9.5
 PKGNAME=		${DISTNAME}p1
 SHARED_LIBS=		pcre++ 1.0
-MODGNU_SHARED_LIBS=	pcre++ ''
-LIBpcre++_ALIAS=	pcre__
 
 CATEGORIES=		devel
 HOMEPAGE=		http://www.daemon.de/PCRE

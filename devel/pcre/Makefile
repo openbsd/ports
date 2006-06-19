@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2006/01/13 23:40:23 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2006/06/19 09:46:43 espie Exp $
 
 COMMENT=	"perl-compatible regular expression library"
 
@@ -7,9 +7,6 @@ PKGNAME=	${DISTNAME}p1
 SHARED_LIBS=		pcre		1.0 \
 			pcrecpp		2.0 \
 			pcreposix	1.0
-MODGNU_SHARED_LIBS=	pcre		'' \
-			pcrecpp		'' \
-			pcreposix	''
 
 CATEGORIES=	devel
 
