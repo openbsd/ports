@@ -1,0 +1,20 @@
+$OpenBSD: patch-vstring_c,v 1.1 2006/06/19 14:37:12 alek Exp $
+--- vstring.c.orig	Tue May 30 06:37:13 2006
++++ vstring.c	Sun Jun 18 19:43:21 2006
+@@ -89,12 +89,14 @@ extern vString *vStringNew (void)
+ #ifndef VSTRING_PUTC_MACRO
+ extern void vStringPut (vString *const string, const int c)
+ {
+-	if (string->length == string->size)  /*  check for buffer overflow */
++	if (string->length == (string->size - 1))  /*  check for buffer overflow */
+ 		vStringAutoResize (string);
+ 
+ 	string->buffer [string->length] = c;
+-	if (c != '\0')
++	if (c != '\0') {
+ 		string->length++;
++		string->buffer[string->length] = '\0';
++	}
+ }
+ #endif
+ 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2004/11/23 11:22:01 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/06/19 14:37:12 alek Exp $
 
 COMMENT=	"multilanguage implementation of ctags"
 
-DISTNAME=	ctags-5.5.4
+DISTNAME=	ctags-5.6
 PKGNAME=	e${DISTNAME}
 CATEGORIES=	devel
 HOMEPAGE=	http://ctags.sourceforge.net/
@@ -18,7 +18,7 @@ WANTLIB=		c
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ctags/}
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=gnu
 
 DOCS=		FAQ NEWS README EXTENDING.html
 

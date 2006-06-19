@@ -1,0 +1,12 @@
+$OpenBSD: patch-vstring_h,v 1.1 2006/06/19 14:37:12 alek Exp $
+--- vstring.h.orig	Sun Jun 18 19:23:43 2006
++++ vstring.h	Sun Jun 18 19:23:45 2006
+@@ -37,7 +37,7 @@
+ #define vStringUpper(vs)      toUpperString((vs)->buffer)
+ 
+ #ifndef DEBUG
+-# define VSTRING_PUTC_MACRO 1
++# define VSTRING_PUTC_MACRO_OFF
+ #endif
+ #ifdef VSTRING_PUTC_MACRO
+ #define vStringPut(s,c) \
