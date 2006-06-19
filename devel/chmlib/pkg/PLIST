@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/11/08 10:40:17 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/06/19 18:14:59 bernd Exp $
 %%SHARED%%
 include/chm_lib.h
+include/lzx.h
 lib/libchm.a
 lib/libchm.la
