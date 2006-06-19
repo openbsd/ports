@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2005/01/02 12:56:05 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2006/06/19 13:55:39 kevlo Exp $
 
 COMMENT=	"decode MS-TNEF MIME attachments"
 
-DISTNAME=	tnef-1.2.3.1
+DISTNAME=	tnef-1.4.1
 CATEGORIES=	mail
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tnef/}
@@ -16,8 +16,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c
+WANTLIB=	c
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE= gnu
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		 LDFLAGS="-L${LOCALBASE}/lib"
+
+MODULES=	 devel/gettext
 
 .include <bsd.port.mk>
