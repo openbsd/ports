@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/06/12 11:30:05 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2006/06/19 14:56:51 jasper Exp $
 
 COMMENT=	"event-driven IRC-client module"
 
-DISTNAME=	POE-Component-IRC-4.91
+DISTNAME=	POE-Component-IRC-4.93
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net perl5
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Artistic/GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,7 +22,6 @@ BUILD_DEPENDS=	:p5-POE->=0.3202:devel/p5-POE \
 		:p5-POE-Component-Client-DNS->=0.99:net/p5-POE-Component-Client-DNS \
 		:p5-POE-Filter-IRCD->=1.7:net/p5-POE-Filter-IRCD
 RUN_DEPENDS=	${BUILD_DEPENDS}
-REGRESS_DEPENDS=:p5-Test-Pod-*:devel/p5-Test-Pod
 
 PKG_ARCH=	*
 
