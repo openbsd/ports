@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2006/04/11 05:54:05 kevlo Exp $ 
+# $OpenBSD: Makefile,v 1.16 2006/06/19 15:27:03 kevlo Exp $ 
 
 COMMENT=	"tool to handle the administration of MySQL over the web"
 
-V=		2.8.0.3
+V=		2.8.1
 DISTNAME=	phpMyAdmin-${V}
 CATEGORIES=	www
 HOMEPAGE=	http://www.phpmyadmin.net/
@@ -28,6 +28,7 @@ SUBST_VARS=	INSTDIR
 
 RUN_DEPENDS=	:php5-mysql-*:www/php5/extensions,-mysql \
 		:php5-mbstring-*:www/php5/extensions,-mbstring \
+		:php5-mcrypt-*:www/php5/extensions,-mcrypt \
 		:php5-gd-*:www/php5/extensions,-gd
 
 do-install:
