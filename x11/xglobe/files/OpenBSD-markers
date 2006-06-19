@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD-markers,v 1.76 2006/06/19 18:07:49 jasper Exp $
+# $OpenBSD: OpenBSD-markers,v 1.77 2006/06/19 19:45:22 steven Exp $
 #
 # THE PKGNAME MUST BE BUMPED FOR THE FOLLOWING PORTS WHEN YOU COMMIT
 # TO THIS FILE:
@@ -47,6 +47,7 @@
 49.28		-123.12		"mcbride"	# Ryan Thomas McBride
 49.48		8.42		"naddy"		# Christian Weisgerber
 50.858		4.3897		"xsa"		# Xavier Santolaria
+50.883		4.70		"steven"	# Steven Mestdagh
 51.0333		-114.0500	"pvalchev"	# Peter Valchev
 51.05		3.60		"wvdputte"	# Wim Vandeputte
 51.32		0.5 		"fgsch"		# Federico G. Schwindt
