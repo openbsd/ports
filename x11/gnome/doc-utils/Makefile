@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/06/17 16:49:40 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2006/06/19 05:06:11 sturm Exp $
 
 COMMENT=	"collection of documentation utilities for the GNOME project"
 
 DISTNAME=	gnome-doc-utils-0.6.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11/gnome textproc
 
 HOMEPAGE=	http://www.gnome.org
@@ -20,9 +21,9 @@ MODULES=	lang/python
 BUILD_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser \
 		:pkgconfig-*:devel/pkgconfig \
 		:py-libxml-*:textproc/libxml,python,-python \
-		:libxslt-*:textproc/libxslt/
+		:libxslt-*:textproc/libxslt
 RUN_DEPENDS=	:py-libxml-*:textproc/libxml,python,-python \
-		:libxslt-*:textproc/libxslt/
+		:libxslt-*:textproc/libxslt
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	PYTHON=${MODPY_BIN}
