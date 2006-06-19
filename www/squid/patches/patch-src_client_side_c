@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_client_side_c,v 1.6 2006/06/17 03:15:55 brad Exp $
---- src/client_side.c.orig	Fri Jun 16 22:20:57 2006
-+++ src/client_side.c	Fri Jun 16 22:20:57 2006
-@@ -2828,7 +2828,7 @@ parseHttpRequest(ConnStateData * conn, m
+$OpenBSD: patch-src_client_side_c,v 1.7 2006/06/19 11:49:26 bernd Exp $
+--- src/client_side.c.orig	Fri Mar 10 17:58:35 2006
++++ src/client_side.c	Thu Apr 13 19:21:21 2006
+@@ -2832,7 +2832,7 @@ parseHttpRequest(ConnStateData * conn, m
  #elif PF_TRANSPARENT
  	    static time_t last_reported = 0;
  	    if (pffd < 0)
