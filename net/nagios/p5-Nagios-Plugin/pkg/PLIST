@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/20 12:26:30 bernd Exp $
+${P5SITE}/Nagios/
+${P5SITE}/Nagios/Plugin/
+${P5SITE}/Nagios/Plugin.pm
+${P5SITE}/Nagios/Plugin/Base.pm
+${P5SITE}/Nagios/Plugin/Performance.pm
+${P5SITE}/Nagios/Plugin/Range.pm
+${P5SITE}/Nagios/Plugin/Threshold.pm
+@man man/man3p/Nagios::Plugin.3p
+@man man/man3p/Nagios::Plugin::Base.3p
+@man man/man3p/Nagios::Plugin::Performance.3p
+@man man/man3p/Nagios::Plugin::Range.3p
+@man man/man3p/Nagios::Plugin::Threshold.3p
