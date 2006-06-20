@@ -1,0 +1,20 @@
+--- src/wmmp.c.orig	Tue May 16 19:57:00 2006
++++ src/wmmp.c	Tue May 16 19:59:48 2006
+@@ -756,6 +756,9 @@
+         } else if (!strcmp(argv[i], "--display") || !strcmp(argv[i], "-d")) {
+             display_name = argv[i + 1];
+             i++;
++	/* "BrokenWM-fix" so that WMmp will work with FVWM and perhaps others */
++        } else if (!strcmp(argv[i], "--broken-wm") || !strcmp(argv[i], "-bw")) {
++            dockapp_isbrokenwm = True;	    
+         } else if (!strcmp(argv[i], "--backlight") || !strcmp(argv[i], "-bl")) {
+             backlight = LIGHTON;
+         } else if (!strcmp(argv[i], "--light-color") || !strcmp(argv[i], "-lc")) {
+@@ -789,6 +792,7 @@
+            "  -bl, --backlight               turn on back-light\n"
+            "  -lc, --light-color <string>    back-light color(rgb:6E/C6/3B is default)\n"
+            "  -i,  --interval <number>       number of secs between updates (1 is default)\n"
++           "  -bw, --broken-wm               activate broken window manager fix\n"
+            "  -h,  --help                    show this help text and exit\n"
+            "  -v,  --version                 show program version and exit\n",
+            prog, prog);

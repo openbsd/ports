@@ -1,0 +1,11 @@
+--- doc/WMmp.1.orig	Tue Jun 20 15:07:12 2006
++++ doc/WMmp.1	Tue Jun 20 15:07:20 2006
+@@ -2,7 +2,7 @@
+ .\" First parameter, NAME, should be all caps
+ .\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+ .\" other parameters are allowed: see man(7), man(1)
+-.TH WMXMMS 1 "March 29, 2003"
++.TH WMmp 1 "March 29, 2003"
+ .\" Please adjust this date whenever revising the man page.
+ .\"
+ .\" Some roff macros, for reference:
