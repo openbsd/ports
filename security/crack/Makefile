@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.24 2005/09/25 09:22:49 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2006/06/20 12:59:12 jasper Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	'sensible unix password cracker'
 
 DISTNAME=	crack5.0
-PKGNAME=	crack-5.0p1
+PKGNAME=	crack-5.0p2
 CATEGORIES=	security
 
-HOMEPAGE=	http://www.crypticide.org/users/alecm/
+HOMEPAGE=	http://www.crypticide.com/users/alecm/security/
 
 MASTER_SITES=	ftp://ftp.cerias.purdue.edu/pub/tools/unix/pwdutils/crack/ \
 		${MASTER_SITE_PACKETSTORM:=Crackers/crack/}
