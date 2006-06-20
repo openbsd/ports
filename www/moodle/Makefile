@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2005/11/22 07:47:46 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2006/06/20 06:57:23 kevlo Exp $
 
 COMMENT=	"learning management system"
 
-V=		1.5.3
+V=		1.6
 DISTNAME=	moodle-${V}
 CATEGORIES=	www education
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=    Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=  Yes
 
-MASTER_SITES=	http://download.moodle.org/stable15/
+MASTER_SITES=	http://download.moodle.org/stable16/
 EXTRACT_SUFX=	.tgz
 
 NO_BUILD=	Yes
@@ -27,7 +27,8 @@ PREFIX=		/var/www
 INSTDIR=	${PREFIX}/moodle
 SUBST_VARS=	INSTDIR
 
-RUN_DEPENDS=	:php5-gd-*:www/php5/extensions,-gd
+RUN_DEPENDS=	:php5-gd-*:www/php5/extensions,-gd \
+		:php5-mbstring-*:www/php5/extensions,-mbstring
 
 FLAVORS=	mysql pgsql
 FLAVOR?=
