@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/06/06 03:02:42 kurt Exp $
+# $OpenBSD: Makefile,v 1.20 2006/06/20 02:02:48 kurt Exp $
 
 ONLY_FOR_ARCHS= 	amd64 i386
 
@@ -6,8 +6,8 @@ COMMENT=		"Java2(TM) Standard Edition Dev Kit v${V}"
 COMMENT-jre=		"Java2(TM) Standard Edition Runtime Environment v${V}"
 V=			1.5.0
 DISTNAME=		jdk-1_5_0
-PKGNAME=		jdk-${V}p15
-PKGNAME-jre=		jre-${V}p15
+PKGNAME=		jdk-${V}p16
+PKGNAME-jre=		jre-${V}p16
 
 CATEGORIES=		devel/jdk java
 
