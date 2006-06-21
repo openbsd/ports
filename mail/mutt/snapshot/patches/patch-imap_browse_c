@@ -1,0 +1,33 @@
+$OpenBSD: patch-imap_browse_c,v 1.1 2006/06/21 08:16:45 bernd Exp $
+
+From mutt CVS:
+Fix browse_get_namespace() which could overflow ns[LONG_STRING].
+(Possible remote vulnerability)
+
+--- imap/browse.c.orig	Tue Jun 20 15:40:30 2006
++++ imap/browse.c	Tue Jun 20 15:42:34 2006
+@@ -512,7 +512,7 @@ static int browse_get_namespace (IMAP_DA
+ 	    if (*s == '\"')
+ 	    {
+ 	      s++;
+-	      while (*s && *s != '\"') 
++	      while (*s && *s != '\"' && n < sizeof (ns) - 1) 
+ 	      {
+ 		if (*s == '\\')
+ 		  s++;
+@@ -523,12 +523,14 @@ static int browse_get_namespace (IMAP_DA
+ 		s++;
+ 	    }
+ 	    else
+-	      while (*s && !ISSPACE (*s)) 
++	      while (*s && !ISSPACE (*s) && n < sizeof (ns) - 1)
+ 	      {
+ 		ns[n++] = *s;
+ 		s++;
+ 	      }
+ 	    ns[n] = '\0';
++	    if (n == sizeof (ns) - 1)
++	      dprint (1, (debugfile, "browse_get_namespace: too long: [%s]\n", ns));
+ 	    /* delim? */
+ 	    s = imap_next_word (s);
+ 	    /* delimiter is meaningless if namespace is "". Why does
