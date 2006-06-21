@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.26 2006/06/21 10:19:32 alek Exp $
+# $OpenBSD: Makefile,v 1.27 2006/06/21 12:20:40 alek Exp $
 
 COMMENT=	"create & extract files from DOS .ARC files"
 
 DISTNAME=	arc-5.21o
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	archivers
+
+MAINTAINER=	Will Maier <willmaier@ml1.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
