@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2005/12/11 18:45:17 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2006/06/21 10:08:07 alek Exp $
 
 COMMENT=	"tty recorder"
 
-DISTNAME=	ttyrec-1.0.6
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	ttyrec-1.0.8
 CATEGORIES=	misc
-MASTER_SITES=	http://namazu.org/~satoru/ttyrec/
 
-HOMEPAGE=	http://namazu.org/~satoru/ttyrec/index.html.en
+HOMEPAGE=	http://0xcc.net/ttyrec/
 
 MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
 
@@ -17,6 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
+
+MASTER_SITES=	${HOMEPAGE}
 
 NO_REGRESS=	Yes
 
