@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.14 2004/12/22 11:48:33 alek Exp $
+# $OpenBSD: Makefile,v 1.15 2006/06/23 06:36:05 jasper Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/03/27 11:56:44 tg Exp $
 
 COMMENT=	"Demos Commander, a free Norton Commander clone"
 
 DISTNAME=	deco383
-PKGNAME=	deco-3.8.3
+PKGNAME=	deco-3.8.3p0
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.cronyx.ru/cronyx/deco/
+MASTER_SITES=	http://humppa.nl/distfiles/
 EXTRACT_SUFX=	.tgz
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
