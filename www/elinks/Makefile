@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2006/01/29 15:41:00 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2006/06/23 12:32:33 steven Exp $
 
 COMMENT=		"full-featured text WWW browser"
-DISTNAME=		elinks-0.11.0
+DISTNAME=		elinks-0.11.1
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		www
 MASTER_SITES=		http://elinks.cz/download/
@@ -23,7 +23,8 @@ CONFIGURE_ARGS+=	--with-bzlib \
 			--disable-xbel \
 			--enable-gopher \
 			--with-libiconv=${LOCALBASE}
-LIB_DEPENDS+=		bz2::archivers/bzip2
+LIB_DEPENDS+=		bz2::archivers/bzip2 \
+			idn::devel/libidn
 USE_GMAKE=		Yes
 
 RUN_DEPENDS=		::devel/gettext
