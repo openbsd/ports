@@ -1,17 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2004/09/15 00:06:59 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.12 2006/06/23 06:37:27 jasper Exp $
 
 NOT_FOR_ARCHS=  ${NO_SHARED_ARCHS}
 
 COMMENT=	"ICB plugin for irssi"
 
 DISTNAME=	irssi-icb-0.14
-MASTER_SITES=   http://www.irssi.org/files/plugins/icb/ \
-                http://fi.irssi.org/files/plugins/icb/ \
-                http://no.irssi.org/files/plugins/icb/ \
-                http://de.irssi.org/files/plugins/icb/ \
-                http://uk.irssi.org/files/plugins/icb/ \
-                http://pl.irssi.org/files/plugins/icb/ \
-                http://us.irssi.org/files/plugins/icb/
+MASTER_SITES=   http://humppa.nl/distfiles/
 
 CATEGORIES=     net
 
