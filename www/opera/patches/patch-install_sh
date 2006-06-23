@@ -1,7 +1,7 @@
-$OpenBSD: patch-install_sh,v 1.16 2006/04/05 18:36:36 sturm Exp $
---- install.sh.orig	Wed Apr  5 20:13:19 2006
-+++ install.sh	Wed Apr  5 20:17:44 2006
-@@ -1379,7 +1379,7 @@ run_install()
+$OpenBSD: patch-install_sh,v 1.17 2006/06/23 08:34:17 bernd Exp $
+--- install.sh.orig	Fri Jun 16 13:18:52 2006
++++ install.sh	Tue Jun 20 11:01:55 2006
+@@ -1330,7 +1330,7 @@ run_install()
      then
  	# System wide configuration files
  	config_dir="/etc"
@@ -10,7 +10,7 @@ $OpenBSD: patch-install_sh,v 1.16 2006/04/05 18:36:36 sturm Exp $
  	then
  	    echo
  	    echo "System wide configuration files:"
-@@ -1409,7 +1409,7 @@ run_install()
+@@ -1360,7 +1360,7 @@ run_install()
  	then
  	    echo
  	    echo "Shortcut icons will be ignored if installed with the prefix \"$prefix\"."
