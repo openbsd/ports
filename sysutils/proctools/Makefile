@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/20 10:35:35 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2006/06/23 06:02:58 steven Exp $
+
+COMES_WITH=	3.9
 
 COMMENT=	"scan for and send signals to processes"
 
