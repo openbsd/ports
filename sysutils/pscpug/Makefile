@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/06/12 13:55:08 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2006/06/24 20:44:06 jasper Exp $
 
 COMMENT=	"draws a graph of CPU usage of a certain process"
 
-DISTNAME=	pscpug031
-PKGNAME=	pscpug-0.3.1
+DISTNAME=	pscpug032
+PKGNAME=	pscpug-0.3.2
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.diablonet.net/~mercadal/projects/pscpug/
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
