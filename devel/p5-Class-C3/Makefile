@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/05/11 11:39:51 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2006/06/24 11:08:01 espie Exp $
 
-COMMENT=		"pragma to use the C3 method resolution order algortihm"
+COMMENT=		"pragma to use the C3 method resolution order algorithm"
 
 DISTNAME=		Class-C3-0.11
-PKGNAME=		p5-${DISTNAME}
+PKGNAME=		p5-${DISTNAME}p0
 CATEGORIES=		devel perl5
 
 MAINTAINER=		Sean Comeau <scomeau@obscurity.org>
