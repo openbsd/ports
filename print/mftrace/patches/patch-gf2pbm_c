@@ -1,0 +1,12 @@
+$OpenBSD: patch-gf2pbm_c,v 1.1.1.1 2006/06/25 10:42:23 steven Exp $
+--- gf2pbm.c.orig	Mon Jun 19 13:03:11 2006
++++ gf2pbm.c	Mon Jun 19 13:03:23 2006
+@@ -694,7 +694,7 @@ main (int argc, char * argv [])
+   if(!out_file)
+     {
+       static char s[100];
+-      sprintf (s, "%d.pbm", glyph_num);
++      snprintf (s, sizeof(s), "%d.pbm", glyph_num);
+       outfilename = s;
+       out_file = fopen (s, "w");
+     }

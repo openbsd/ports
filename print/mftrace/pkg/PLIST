@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/25 10:42:23 steven Exp $
+bin/gf2pbm
+bin/mftrace
+lib/python${MODPY_VERSION}/site-packages/afm.py
+lib/python${MODPY_VERSION}/site-packages/afm.pyc
+lib/python${MODPY_VERSION}/site-packages/tfm.py
+lib/python${MODPY_VERSION}/site-packages/tfm.pyc
+@man man/man1/mftrace.1
