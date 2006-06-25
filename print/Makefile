@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.51 2006/06/18 13:34:22 steven Exp $
+#	$OpenBSD: Makefile,v 1.52 2006/06/25 10:43:10 steven Exp $
 
     SUBDIR += a2ps,a4
     SUBDIR += a2ps,letter
@@ -25,6 +25,7 @@
     SUBDIR += l2a
     SUBDIR += lout
     SUBDIR += lyx
+    SUBDIR += mftrace
     SUBDIR += mpage,a4
     SUBDIR += mpage,legal
     SUBDIR += mpage,letter
