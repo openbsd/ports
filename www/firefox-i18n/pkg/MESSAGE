@@ -1,0 +1,3 @@
+To configure Firefox for your language, type "about:config" in the URL
+bar and edit "general.useragent.locale" (e.g. fr-FR ; default is en-US),
+then restart Firefox.

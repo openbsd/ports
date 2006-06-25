@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-es-AR,v 1.1.1.1 2006/06/25 21:25:44 steven Exp $
+mozilla-firefox/extensions/langpack-es-AR@firefox.mozilla.org/
+mozilla-firefox/extensions/langpack-es-AR@firefox.mozilla.org/chrome/
+mozilla-firefox/extensions/langpack-es-AR@firefox.mozilla.org/chrome.manifest
+mozilla-firefox/extensions/langpack-es-AR@firefox.mozilla.org/chrome/chromelist.txt
+mozilla-firefox/extensions/langpack-es-AR@firefox.mozilla.org/chrome/es-AR.jar
+mozilla-firefox/extensions/langpack-es-AR@firefox.mozilla.org/install.rdf
