@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.44 2006/06/11 13:41:48 sturm Exp $
+# $OpenBSD: Makefile,v 1.45 2006/06/25 15:38:36 sturm Exp $
 
 COMMENT=	"POP3 mail retriever"
 
-DISTNAME=	getmail-4.6.2
+DISTNAME=	getmail-4.6.3
 CATEGORIES=	mail
 
 HOMEPAGE=	http://pyropus.ca/software/getmail/
