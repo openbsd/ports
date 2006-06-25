@@ -1,0 +1,130 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/25 11:30:38 espie Exp $
+${P5SITE}/Class/
+${P5SITE}/Class/MakeMethods/
+${P5SITE}/Class/MakeMethods.pm
+${P5SITE}/Class/MakeMethods/Attribute.pm
+${P5SITE}/Class/MakeMethods/Autoload.pm
+${P5SITE}/Class/MakeMethods/Basic/
+${P5SITE}/Class/MakeMethods/Basic.pm
+${P5SITE}/Class/MakeMethods/Basic/Array.pm
+${P5SITE}/Class/MakeMethods/Basic/Global.pm
+${P5SITE}/Class/MakeMethods/Basic/Hash.pm
+${P5SITE}/Class/MakeMethods/Composite/
+${P5SITE}/Class/MakeMethods/Composite.pm
+${P5SITE}/Class/MakeMethods/Composite/Array.pm
+${P5SITE}/Class/MakeMethods/Composite/Global.pm
+${P5SITE}/Class/MakeMethods/Composite/Hash.pm
+${P5SITE}/Class/MakeMethods/Composite/Inheritable.pm
+${P5SITE}/Class/MakeMethods/Composite/Universal.pm
+${P5SITE}/Class/MakeMethods/Docs/
+${P5SITE}/Class/MakeMethods/Docs/Catalog.pod
+${P5SITE}/Class/MakeMethods/Docs/Changes.pod
+${P5SITE}/Class/MakeMethods/Docs/Examples.pod
+${P5SITE}/Class/MakeMethods/Docs/ReadMe.pod
+${P5SITE}/Class/MakeMethods/Docs/RelatedModules.pod
+${P5SITE}/Class/MakeMethods/Docs/ToDo.pod
+${P5SITE}/Class/MakeMethods/Emulator/
+${P5SITE}/Class/MakeMethods/Emulator.pm
+${P5SITE}/Class/MakeMethods/Emulator/AccessorFast.pm
+${P5SITE}/Class/MakeMethods/Emulator/Inheritable.pm
+${P5SITE}/Class/MakeMethods/Emulator/MethodMaker.pm
+${P5SITE}/Class/MakeMethods/Emulator/Singleton.pm
+${P5SITE}/Class/MakeMethods/Emulator/Struct.pm
+${P5SITE}/Class/MakeMethods/Emulator/accessors.pm
+${P5SITE}/Class/MakeMethods/Emulator/mcoder.pm
+${P5SITE}/Class/MakeMethods/Evaled/
+${P5SITE}/Class/MakeMethods/Evaled.pm
+${P5SITE}/Class/MakeMethods/Evaled/Hash.pm
+${P5SITE}/Class/MakeMethods/Standard/
+${P5SITE}/Class/MakeMethods/Standard.pm
+${P5SITE}/Class/MakeMethods/Standard/Array.pm
+${P5SITE}/Class/MakeMethods/Standard/Global.pm
+${P5SITE}/Class/MakeMethods/Standard/Hash.pm
+${P5SITE}/Class/MakeMethods/Standard/Inheritable.pm
+${P5SITE}/Class/MakeMethods/Standard/Universal.pm
+${P5SITE}/Class/MakeMethods/Template/
+${P5SITE}/Class/MakeMethods/Template.pm
+${P5SITE}/Class/MakeMethods/Template/Array.pm
+${P5SITE}/Class/MakeMethods/Template/Class.pm
+${P5SITE}/Class/MakeMethods/Template/ClassInherit.pm
+${P5SITE}/Class/MakeMethods/Template/ClassName.pm
+${P5SITE}/Class/MakeMethods/Template/ClassVar.pm
+${P5SITE}/Class/MakeMethods/Template/Flyweight.pm
+${P5SITE}/Class/MakeMethods/Template/Generic.pm
+${P5SITE}/Class/MakeMethods/Template/Global.pm
+${P5SITE}/Class/MakeMethods/Template/Hash.pm
+${P5SITE}/Class/MakeMethods/Template/Inheritable.pm
+${P5SITE}/Class/MakeMethods/Template/InsideOut.pm
+${P5SITE}/Class/MakeMethods/Template/PackageVar.pm
+${P5SITE}/Class/MakeMethods/Template/Ref.pm
+${P5SITE}/Class/MakeMethods/Template/Scalar.pm
+${P5SITE}/Class/MakeMethods/Template/Static.pm
+${P5SITE}/Class/MakeMethods/Template/Struct.pm
+${P5SITE}/Class/MakeMethods/Template/StructBuiltin.pm
+${P5SITE}/Class/MakeMethods/Template/Universal.pm
+${P5SITE}/Class/MakeMethods/Utility/
+${P5SITE}/Class/MakeMethods/Utility/ArraySplicer.pm
+${P5SITE}/Class/MakeMethods/Utility/DiskCache.pm
+${P5SITE}/Class/MakeMethods/Utility/Inheritable.pm
+${P5SITE}/Class/MakeMethods/Utility/Ref.pm
+${P5SITE}/Class/MakeMethods/Utility/TextBuilder.pm
+${P5SITE}/Class/benchmark.pl
+@man man/man3p/Class::MakeMethods.3p
+@man man/man3p/Class::MakeMethods::Attribute.3p
+@man man/man3p/Class::MakeMethods::Autoload.3p
+@man man/man3p/Class::MakeMethods::Basic.3p
+@man man/man3p/Class::MakeMethods::Basic::Array.3p
+@man man/man3p/Class::MakeMethods::Basic::Global.3p
+@man man/man3p/Class::MakeMethods::Basic::Hash.3p
+@man man/man3p/Class::MakeMethods::Composite.3p
+@man man/man3p/Class::MakeMethods::Composite::Array.3p
+@man man/man3p/Class::MakeMethods::Composite::Global.3p
+@man man/man3p/Class::MakeMethods::Composite::Hash.3p
+@man man/man3p/Class::MakeMethods::Composite::Inheritable.3p
+@man man/man3p/Class::MakeMethods::Composite::Universal.3p
+@man man/man3p/Class::MakeMethods::Docs::Catalog.3p
+@man man/man3p/Class::MakeMethods::Docs::Changes.3p
+@man man/man3p/Class::MakeMethods::Docs::Examples.3p
+@man man/man3p/Class::MakeMethods::Docs::ReadMe.3p
+@man man/man3p/Class::MakeMethods::Docs::RelatedModules.3p
+@man man/man3p/Class::MakeMethods::Docs::ToDo.3p
+@man man/man3p/Class::MakeMethods::Emulator.3p
+@man man/man3p/Class::MakeMethods::Emulator::AccessorFast.3p
+@man man/man3p/Class::MakeMethods::Emulator::Inheritable.3p
+@man man/man3p/Class::MakeMethods::Emulator::MethodMaker.3p
+@man man/man3p/Class::MakeMethods::Emulator::Singleton.3p
+@man man/man3p/Class::MakeMethods::Emulator::Struct.3p
+@man man/man3p/Class::MakeMethods::Emulator::accessors.3p
+@man man/man3p/Class::MakeMethods::Emulator::mcoder.3p
+@man man/man3p/Class::MakeMethods::Evaled.3p
+@man man/man3p/Class::MakeMethods::Evaled::Hash.3p
+@man man/man3p/Class::MakeMethods::Standard.3p
+@man man/man3p/Class::MakeMethods::Standard::Array.3p
+@man man/man3p/Class::MakeMethods::Standard::Global.3p
+@man man/man3p/Class::MakeMethods::Standard::Hash.3p
+@man man/man3p/Class::MakeMethods::Standard::Inheritable.3p
+@man man/man3p/Class::MakeMethods::Standard::Universal.3p
+@man man/man3p/Class::MakeMethods::Template.3p
+@man man/man3p/Class::MakeMethods::Template::Array.3p
+@man man/man3p/Class::MakeMethods::Template::Class.3p
+@man man/man3p/Class::MakeMethods::Template::ClassInherit.3p
+@man man/man3p/Class::MakeMethods::Template::ClassName.3p
+@man man/man3p/Class::MakeMethods::Template::ClassVar.3p
+@man man/man3p/Class::MakeMethods::Template::Flyweight.3p
+@man man/man3p/Class::MakeMethods::Template::Generic.3p
+@man man/man3p/Class::MakeMethods::Template::Global.3p
+@man man/man3p/Class::MakeMethods::Template::Hash.3p
+@man man/man3p/Class::MakeMethods::Template::Inheritable.3p
+@man man/man3p/Class::MakeMethods::Template::InsideOut.3p
+@man man/man3p/Class::MakeMethods::Template::PackageVar.3p
+@man man/man3p/Class::MakeMethods::Template::Ref.3p
+@man man/man3p/Class::MakeMethods::Template::Scalar.3p
+@man man/man3p/Class::MakeMethods::Template::Static.3p
+@man man/man3p/Class::MakeMethods::Template::Struct.3p
+@man man/man3p/Class::MakeMethods::Template::StructBuiltin.3p
+@man man/man3p/Class::MakeMethods::Template::Universal.3p
+@man man/man3p/Class::MakeMethods::Utility::ArraySplicer.3p
+@man man/man3p/Class::MakeMethods::Utility::DiskCache.3p
+@man man/man3p/Class::MakeMethods::Utility::Inheritable.3p
+@man man/man3p/Class::MakeMethods::Utility::Ref.3p
+@man man/man3p/Class::MakeMethods::Utility::TextBuilder.3p
