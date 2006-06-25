@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/25 15:20:01 espie Exp $
+bin/tablify
+bin/tabmerge
+${P5SITE}/Text/
+${P5SITE}/Text/RecordParser/
+${P5SITE}/Text/RecordParser.pm
+${P5SITE}/Text/RecordParser/Tab.pm
+@man man/man1/tablify.1
+@man man/man1/tabmerge.1
+@man man/man3p/Text::RecordParser.3p
+@man man/man3p/Text::RecordParser::Tab.3p

@@ -1,0 +1,10 @@
+Text::RecordParser  is used to read  record-oriented data in a delimited text
+file. The most common example have records separated by newlines and
+fields separated by commas or tabs, but this module aims at providing a
+consistent interface for handling sequential records in a file in more
+generality.  Typically the first record lists the field names,
+in which case you should call "bind_header" to bind the field names.
+If the first line contains data, you can still bind your own field names via
+"bind_fields". In both cases, you may afterwards use many methods to get 
+at the data as arrays or hashes.
+
