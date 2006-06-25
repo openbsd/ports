@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/25 12:45:03 espie Exp $
+${P5SITE}/Readonly.pm
+${P5SITE}/benchmark.pl
+@man man/man3p/Readonly.3p

@@ -1,0 +1,2 @@
+create variables marked as read-only, applicable to scalar, list, hashes
+and all sorts of recursive data-structures.
