@@ -1,0 +1,5 @@
+Perl has a do it yourself approach to object construction.
+
+This module is an abstract base class that provides basic
+new/clone/error handling methods for the common case where
+the object is created as a hash of parameters.
