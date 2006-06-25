@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/06/01 02:07:19 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2006/06/25 14:48:15 espie Exp $
 
 COMMENT= 	"module for inspecting Perl's symbol table"
 
-DISTNAME=	Devel-Symdump-2.03
+DISTNAME=	Devel-Symdump-2.0601
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 

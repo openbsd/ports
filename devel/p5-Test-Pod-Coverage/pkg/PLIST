@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:44:00 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/06/25 14:48:15 espie Exp $
+${P5SITE}/Test/
 ${P5SITE}/Test/Pod/
 ${P5SITE}/Test/Pod/Coverage.pm
 @man man/man3p/Test::Pod::Coverage.3p

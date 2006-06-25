@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2006/04/02 13:07:27 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2006/06/25 14:48:15 espie Exp $
 
 COMMENT= 	"check for POD errors in files"
 
-DISTNAME=	Test-Pod-1.20
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Test-Pod-1.24
+PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>

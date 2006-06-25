@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2004/07/01 13:51:04 msf Exp $
+# $OpenBSD: Makefile,v 1.4 2006/06/25 14:48:15 espie Exp $
 
 COMMENT=	"framework for parsing the Perl Pod format"
 
-DISTNAME=	Pod-Simple-3.02
+DISTNAME=	Pod-Simple-3.04
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 
