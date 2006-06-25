@@ -1,0 +1,4 @@
+create variables marked as read-only, applicable to scalar, list, hashes
+and all sorts of recursive data-structures.
+
+Companion module to p5-ReadOnly, auto-detected by the former module.
