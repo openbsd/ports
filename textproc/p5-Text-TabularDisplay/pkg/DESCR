@@ -1,0 +1,9 @@
+Render tabular data like this:
+
++----+-----------+
+| id | name      |
++----+-----------+
+| 1  | Tom       |
+| 2  | Dick      |
+| 3  | Harry     |
++----+-----------+
