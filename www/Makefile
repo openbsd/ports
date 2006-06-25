@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.220 2006/06/17 15:12:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.221 2006/06/25 21:26:37 steven Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -21,6 +21,7 @@
      SUBDIR += epiphany
      SUBDIR += fcgi
      SUBDIR += ffproxy
+     SUBDIR += firefox-i18n
      SUBDIR += galeon
      SUBDIR += gtkhtml
      SUBDIR += gtkhtml3
