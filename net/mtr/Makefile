@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2006/02/02 18:49:17 jakob Exp $
+# $OpenBSD: Makefile,v 1.31 2006/06/26 20:39:16 aanriot Exp $
 
 COMMENT=	"Matt's traceroute - network diagnostic tool"
 
-VERSION=	0.69
+VERSION=	0.71
 DISTNAME=	mtr-${VERSION}
 CATEGORIES=	net
 
@@ -16,12 +16,11 @@ PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 WANTLIB=		c m termcap
 
-MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
-		ftp://ftp.lysator.liu.se/mirror/unix/mtr/
+MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=gnu
 
-FLAVORS=        no_x11
+FLAVORS=	no_x11
 
 FLAVOR?=
 .if ${FLAVOR:L} == "no_x11"

@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2006/06/26 20:39:16 aanriot Exp $
+--- configure.orig	Fri Jun  9 15:45:35 2006
++++ configure	Fri Jun  9 15:46:31 2006
+@@ -6965,7 +6965,7 @@ fi
+ 
+ fi
+ 
+-LIBS="$LIBS -lresolv"
++#LIBS="$LIBS -lresolv"
+ 
+ echo "$as_me:$LINENO: checking for herror" >&5
+ echo $ECHO_N "checking for herror... $ECHO_C" >&6
