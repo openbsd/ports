@@ -1,0 +1,5 @@
+This module is a quick and dirty way to determine if a cron time format is
+valid for the current date and time.
+A cron entry follows the cron format from crontab(5).
+The validate_time function uses the current date and time for comparison,
+but will also accept a valid DateTime object as a parameter.
