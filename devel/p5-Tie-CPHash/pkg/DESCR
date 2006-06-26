@@ -1,0 +1,2 @@
+The Tie::CPHash module provides a hash table that is case preserving but
+case insensitive.
