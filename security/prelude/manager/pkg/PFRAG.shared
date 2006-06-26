@@ -1,0 +1,8 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/06/26 18:04:25 aanriot Exp $
+lib/prelude-manager/decodes/normalize.so
+lib/prelude-manager/filters/idmef-criteria.so
+lib/prelude-manager/reports/db.so
+lib/prelude-manager/reports/debug.so
+lib/prelude-manager/reports/relaying.so
+lib/prelude-manager/reports/textmod.so
+lib/prelude-manager/reports/xmlmod.so

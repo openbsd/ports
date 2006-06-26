@@ -1,0 +1,10 @@
+$OpenBSD: patch-prewikka_siteconfig_py,v 1.1.1.1 2006/06/26 18:04:25 aanriot Exp $
+--- prewikka/siteconfig.py.orig	Thu May  4 09:20:17 2006
++++ prewikka/siteconfig.py	Tue May 30 23:57:42 2006
+@@ -1,3 +1,3 @@
+-htdocs_dir = '/home/yoann/dev/prelude/svk/trunk/prewikka/bin/share/prewikka/htdocs'
+-database_dir = '/home/yoann/dev/prelude/svk/trunk/prewikka/bin/share/prewikka/database'
+-conf_dir = '/home/yoann/dev/prelude/svk/trunk/prewikka/bin/etc/prewikka'
++htdocs_dir = '%%PREFIX%%/share/prewikka/htdocs'
++database_dir = '%%PREFIX%%/share/prewikka/database'
++conf_dir = '%%SYSCONFDIR%%/prewikka'

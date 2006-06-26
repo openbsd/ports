@@ -1,0 +1,42 @@
+$OpenBSD: patch-prelude-lml_conf_in,v 1.1.1.1 2006/06/26 18:04:24 aanriot Exp $
+--- prelude-lml.conf.in.orig	Tue Dec 13 13:39:52 2005
++++ prelude-lml.conf.in	Fri Jun  2 05:31:47 2006
+@@ -50,14 +50,25 @@ prefix-regex = "^(?P<timestamp>.{15}) (?
+ file = /var/log/messages
+ # udp-server = 0.0.0.0
+ 
++[format=syslog]
++time-format = "%b %d %H:%M:%S" 
++prefix-regex = "^(?P<timestamp>.{15}) (?P<hostname>\S+) (?:(?P<process>\S+?)(?:\[(?P<pid>[0-9]+)\])?: )?"
++file = /var/log/daemon
++# udp-server = 0.0.0.0
+ 
++[format=syslog]
++time-format = "%b %d %H:%M:%S" 
++prefix-regex = "^(?P<timestamp>.{15}) (?P<hostname>\S+) (?:(?P<process>\S+?)(?:\[(?P<pid>[0-9]+)\])?: )?"
++file = /var/log/authlog
++# udp-server = 0.0.0.0
++
+ #
+ # Example configuration for metalog output:
+ #
+-[format=metalog]
+-prefix-regex = "^(?P<timestamp>.{15}) \[(?P<program>\S+)\] "
+-time-format = "%b %d %H:%M:%S" 
+-file = /var/log/everything/current
++#[format=metalog]
++#prefix-regex = "^(?P<timestamp>.{15}) \[(?P<program>\S+)\] "
++#time-format = "%b %d %H:%M:%S" 
++#file = /var/log/everything/current
+ # udp-server = 0.0.0.0
+ 
+ 
+@@ -67,7 +78,7 @@ file = /var/log/everything/current
+ [format=apache]
+ time-format = "%d/%b/%Y:%H:%M:%S"
+ prefix-regex = "^(?P<hostname>\S+) - - \[(?P<timestamp>.{20}) \+.{4}\] "
+-file = /var/log/apache2/access_log
++file = /var/www/logs/access_log
+ 
+ 
+ #

@@ -1,0 +1,22 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2006/06/26 18:04:25 aanriot Exp $
+--- Makefile.in.orig	Tue Mar 28 19:04:43 2006
++++ Makefile.in	Tue May 30 21:47:33 2006
+@@ -225,7 +225,7 @@ build_alias = @build_alias@
+ build_cpu = @build_cpu@
+ build_os = @build_os@
+ build_vendor = @build_vendor@
+-configdir = @configdir@
++configdir = @prefix@/share/examples/prelude-manager
+ datadir = @datadir@
+ decode_plugin_dir = @decode_plugin_dir@
+ defined = @defined@
+@@ -707,9 +707,6 @@ uninstall-info: uninstall-info-recursive
+ 
+ install-data-local:
+ 	$(INSTALL) -d -m 700 $(DESTDIR)$(configdir);
+-	$(INSTALL) -d -m 700 $(DESTDIR)$(manager_run_dir);
+-	$(INSTALL) -d -m 700 $(DESTDIR)$(manager_scheduler_dir);
+-	$(INSTALL) -d -m 700 $(DESTDIR)$(manager_failover_dir);
+ 	@if test -f $(DESTDIR)$(configdir)/prelude-manager.conf; then                                                  \
+ 		$(INSTALL) -m 600 $(top_srcdir)/prelude-manager.conf $(DESTDIR)$(configdir)/prelude-manager.conf-dist; \
+ 		echo "********************************************************************************";     		\

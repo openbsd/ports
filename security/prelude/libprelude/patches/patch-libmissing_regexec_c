@@ -1,0 +1,12 @@
+$OpenBSD: patch-libmissing_regexec_c,v 1.1.1.1 2006/06/26 18:04:26 aanriot Exp $
+--- libmissing/regexec.c.orig	Mon Jun 19 23:02:57 2006
++++ libmissing/regexec.c	Mon Jun 19 23:15:36 2006
+@@ -3615,7 +3615,7 @@ group_nodes_into_DFAstates (const re_dfa
+       else if (type == OP_UTF8_PERIOD)
+         {
+ 	  if (ASCII_CHARS % BITSET_WORD_BITS == 0)
+-	    memset (accepts, -1, ASCII_CHARS);
++	    memset (accepts, -1, BITSET_WORDS);
+ 	  else
+ 	    bitset_merge (accepts, utf8_sb_map);
+ 	  if (!(dfa->syntax & RE_DOT_NEWLINE))

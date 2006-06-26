@@ -1,0 +1,2 @@
+To start with prelude, you have to install at least one DBMS module for
+libpreludedb, e.g. prelude-libpreludedb-pgsql .

@@ -1,0 +1,108 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/26 18:04:24 aanriot Exp $
+%%SHARED%%
+bin/prelude-lml
+include/prelude-lml/
+include/prelude-lml/prelude-lml.h
+lib/prelude-lml/
+lib/prelude-lml/debug.a
+lib/prelude-lml/debug.la
+lib/prelude-lml/pcre.a
+lib/prelude-lml/pcre.la
+share/examples/prelude-lml/
+@sample ${SYSCONFDIR}/prelude-lml/
+share/examples/prelude-lml/plugins.rules
+@sample ${SYSCONFDIR}/prelude-lml/plugins.rules
+share/examples/prelude-lml/prelude-lml.conf
+@sample ${SYSCONFDIR}/prelude-lml/prelude-lml.conf
+share/examples/prelude-lml/ruleset/
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/
+share/examples/prelude-lml/ruleset/apc-emu.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/apc-emu.rules
+share/examples/prelude-lml/ruleset/arbor.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/arbor.rules
+share/examples/prelude-lml/ruleset/arpwatch.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/arpwatch.rules
+share/examples/prelude-lml/ruleset/cisco-pix.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/cisco-pix.rules
+share/examples/prelude-lml/ruleset/cisco-router.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/cisco-router.rules
+share/examples/prelude-lml/ruleset/cisco-vpn.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/cisco-vpn.rules
+share/examples/prelude-lml/ruleset/clamav.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/clamav.rules
+share/examples/prelude-lml/ruleset/dell-om.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/dell-om.rules
+share/examples/prelude-lml/ruleset/f5-bigip.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/f5-bigip.rules
+share/examples/prelude-lml/ruleset/grsecurity.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/grsecurity.rules
+share/examples/prelude-lml/ruleset/honeyd.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/honeyd.rules
+share/examples/prelude-lml/ruleset/httpd.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/httpd.rules
+share/examples/prelude-lml/ruleset/ipchains.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/ipchains.rules
+share/examples/prelude-lml/ruleset/ipfw.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/ipfw.rules
+share/examples/prelude-lml/ruleset/linksys-wap11.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/linksys-wap11.rules
+share/examples/prelude-lml/ruleset/modsecurity.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/modsecurity.rules
+share/examples/prelude-lml/ruleset/ms-sql.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/ms-sql.rules
+share/examples/prelude-lml/ruleset/nagios.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/nagios.rules
+share/examples/prelude-lml/ruleset/navce.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/navce.rules
+share/examples/prelude-lml/ruleset/netapp-ontap.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/netapp-ontap.rules
+share/examples/prelude-lml/ruleset/netfilter.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/netfilter.rules
+share/examples/prelude-lml/ruleset/netscreen.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/netscreen.rules
+share/examples/prelude-lml/ruleset/ntsyslog.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/ntsyslog.rules
+share/examples/prelude-lml/ruleset/openhostapd.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/openhostapd.rules
+share/examples/prelude-lml/ruleset/pam.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/pam.rules
+share/examples/prelude-lml/ruleset/pcanywhere.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/pcanywhere.rules
+share/examples/prelude-lml/ruleset/pcre.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/pcre.rules
+share/examples/prelude-lml/ruleset/portsentry.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/portsentry.rules
+share/examples/prelude-lml/ruleset/postfix.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/postfix.rules
+share/examples/prelude-lml/ruleset/proftpd.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/proftpd.rules
+share/examples/prelude-lml/ruleset/qpopper.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/qpopper.rules
+share/examples/prelude-lml/ruleset/selinux.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/selinux.rules
+share/examples/prelude-lml/ruleset/sendmail.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/sendmail.rules
+share/examples/prelude-lml/ruleset/shadow-utils.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/shadow-utils.rules
+share/examples/prelude-lml/ruleset/single.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/single.rules
+share/examples/prelude-lml/ruleset/squid.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/squid.rules
+share/examples/prelude-lml/ruleset/ssh.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/ssh.rules
+share/examples/prelude-lml/ruleset/sudo.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/sudo.rules
+share/examples/prelude-lml/ruleset/tripwire.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/tripwire.rules
+share/examples/prelude-lml/ruleset/vigor.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/vigor.rules
+share/examples/prelude-lml/ruleset/vpopmail.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/vpopmail.rules
+share/examples/prelude-lml/ruleset/webmin.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/webmin.rules
+share/examples/prelude-lml/ruleset/wu-ftp.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/wu-ftp.rules
+@sample /var/prelude-lml/
+@sample /var/spool/prelude-lml/
+@extraunexec rm -rf /var/prelude-lml/*
+@extraunexec rm -rf /var/spool/prelude-lml/*

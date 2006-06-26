@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-pgsql,v 1.1.1.1 2006/06/26 18:04:26 aanriot Exp $
+lib/libpreludedb/plugins/sql/pgsql.a
+lib/libpreludedb/plugins/sql/pgsql.la
+lib/libpreludedb/plugins/sql/pgsql.so

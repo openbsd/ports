@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2006/06/26 18:04:25 aanriot Exp $
+--- setup.py.orig	Fri Jun 23 04:18:57 2006
++++ setup.py	Fri Jun 23 04:20:19 2006
+@@ -117,7 +117,7 @@ class my_install(install):
+     def finalize_options(self):
+         ### if no prefix is given, configuration should go to /etc or in {prefix}/etc otherwise
+         if self.prefix:
+-            self.conf_prefix = self.prefix + "/etc/prewikka"
++            self.conf_prefix = self.prefix + "/share/prewikka/conf"
+         else:
+             self.conf_prefix = "/etc/prewikka"
+ 

@@ -1,0 +1,2 @@
+This package provides the framework for easy access to the Prelude
+database by several DBMS such as PostgreSQL, MySQL or SQLite.

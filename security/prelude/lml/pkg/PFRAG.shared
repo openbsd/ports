@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/06/26 18:04:24 aanriot Exp $
+lib/prelude-lml/debug.so
+lib/prelude-lml/pcre.so

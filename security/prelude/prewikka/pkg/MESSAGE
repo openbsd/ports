@@ -1,0 +1,13 @@
+To start with prelude-prewikka, you have to create the "prewikka"
+database by running:
+
+# su - _postgresql
+$ createdb -O prelude prewikka
+$ cd ${PREFIX}/share/prewikka/database/
+$ psql -U prelude -W prewikka < pgsql.sql
+
+Eventually, start prewikka's webserver (listening by default on 8000):
+
+# prewikka-httpd
+
+The default user is "admin", with "admin" as password.

@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2006/06/26 18:04:25 aanriot Exp $
+--- configure.orig	Thu Jun  1 18:22:30 2006
++++ configure	Thu Jun  1 18:22:46 2006
+@@ -32569,7 +32569,7 @@ manager_failover_dir=$localstatedir/spoo
+ manager_scheduler_dir=$localstatedir/spool/prelude-manager/scheduler
+ 
+ manager_data_dir=$datadir/prelude-manager
+-manager_run_dir=$localstatedir/run/prelude-manager
++manager_run_dir=$localstatedir/run
+ 
+ 
+ cat >>confdefs.h <<_ACEOF

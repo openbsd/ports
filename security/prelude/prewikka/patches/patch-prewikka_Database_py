@@ -1,0 +1,21 @@
+$OpenBSD: patch-prewikka_Database_py,v 1.1.1.1 2006/06/26 18:04:25 aanriot Exp $
+--- prewikka/Database.py.orig	Mon Feb 20 00:09:41 2006
++++ prewikka/Database.py	Wed May 31 01:26:07 2006
+@@ -69,7 +69,7 @@ class Database:
+             if value:
+                 preludedb_sql_settings_set(settings, name, value)
+ 
+-        db_type = config.get("type", "mysql")
++        db_type = config.get("type", "pgsql")
+         
+         self._sql = preludedb_sql_new(db_type, settings)
+ 
+@@ -157,7 +157,7 @@ class Database:
+         self.query("DELETE FROM Prewikka_User WHERE login = %s" % login)
+         self.query("DELETE FROM Prewikka_Permission WHERE login = %s" % login)
+         self.query("DELETE FROM Prewikka_Session WHERE login = %s" % login)
+-        self.query("DELETE FROM Prewikka_Filter_Criterion USING Prewikka_Filter, Prewikka_Filter_Criterion "
++        self.query("DELETE FROM Prewikka_Filter_Criterion USING Prewikka_Filter "
+                    "WHERE Prewikka_Filter.login = %s AND Prewikka_Filter.id = Prewikka_Filter_Criterion.id" % login)
+         self.query("DELETE FROM Prewikka_Filter WHERE login = %s" % login)
+         self.transaction_end()

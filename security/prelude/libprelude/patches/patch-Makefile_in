@@ -1,0 +1,20 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2006/06/26 18:04:26 aanriot Exp $
+--- Makefile.in.orig	Tue May  2 13:41:46 2006
++++ Makefile.in	Tue May 30 22:05:07 2006
+@@ -300,7 +300,7 @@ mkdir_p = @mkdir_p@
+ oldincludedir = @oldincludedir@
+ prefix = @prefix@
+ prelude_adduser_libs = @prelude_adduser_libs@
+-prelude_config_dir = @prelude_config_dir@
++prelude_config_dir = @prefix@/share/examples/libprelude
+ prelude_ident_file = @prelude_ident_file@
+ prelude_spool_dir = @prelude_spool_dir@
+ program_transform_name = @program_transform_name@
+@@ -833,7 +833,6 @@ prelude-config.h: $(top_builddir)/config
+ # Spool directory for report saving is mode 
+ 
+ install-data-local:
+-	$(INSTALL) -d -m 755 $(DESTDIR)$(prelude_spool_dir);
+ 	$(INSTALL) -d -m 755 $(DESTDIR)$(prelude_config_dir);
+ 	$(INSTALL) -d -m 755 $(DESTDIR)$(prelude_config_dir)/default;
+ 	$(INSTALL) -d -m 755 $(DESTDIR)$(prelude_config_dir)/profile;

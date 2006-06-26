@@ -1,0 +1,18 @@
+$OpenBSD: patch-prelude-manager_conf_in,v 1.1.1.1 2006/06/26 18:04:25 aanriot Exp $
+--- prelude-manager.conf.in.orig	Wed May 31 01:17:46 2006
++++ prelude-manager.conf.in	Wed May 31 01:19:20 2006
+@@ -103,7 +103,13 @@ listen = 127.0.0.1
+ # Password used to connect the database.
+ # pass = xxxxxx
+ 
+-
++[db]
++type = pgsql
++host = localhost
++port = 5432
++name = prelude
++user = prelude
++pass = prelude
+ 
+ #
+ # The Textmod plugin allow to report alert as text
