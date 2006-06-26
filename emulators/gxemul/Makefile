@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2006/03/23 01:40:03 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2006/06/26 12:32:51 brad Exp $
 
 COMMENT=		"ARM/MIPS/PowerPC machines emulator"
 
-DISTNAME=		gxemul-0.3.8
+DISTNAME=		gxemul-0.4.0.1
 CATEGORIES=		emulators
 HOMEPAGE=		http://gavare.se/gxemul/
 
@@ -32,10 +32,12 @@ WANTLIB+=		X11
 
 NO_REGRESS=		Yes
 
+INSTALL_STRIP=
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gxemul ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gxemul
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/gxemul
+	${INSTALL_DATA} ${WRKSRC}/doc/*.{gif,png,html} ${PREFIX}/share/doc/gxemul
 	${INSTALL_DATA} ${WRKSRC}/man/gxemul.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
