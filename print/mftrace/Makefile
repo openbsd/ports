@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/06/25 10:42:23 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2006/06/26 05:50:58 steven Exp $
 
 COMMENT=	"Scalable PostScript fonts for MetaFont"
 
@@ -21,11 +21,11 @@ WANTLIB=	c
 
 MODULES=	lang/python
 
+BUILD_DEPENDS=	:potrace-*:graphics/potrace
 RUN_DEPENDS=	:potrace-*:graphics/potrace \
 		:t1utils-*:print/t1utils \
 		:fontforge-*:print/fontforge \
 		:teTeX_base-*:print/teTeX/base
-BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
