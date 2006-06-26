@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2006/06/12 11:14:47 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2006/06/26 00:46:51 djm Exp $
 #
 
      SUBDIR += R
@@ -47,6 +47,7 @@
      SUBDIR += plplot
      SUBDIR += py-Numeric
      SUBDIR += py-gnuplot
+     SUBDIR += py-numpy
      SUBDIR += py-probstat
      SUBDIR += sc
      SUBDIR += wingz
