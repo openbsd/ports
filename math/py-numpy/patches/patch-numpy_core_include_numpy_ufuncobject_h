@@ -1,0 +1,12 @@
+$OpenBSD: patch-numpy_core_include_numpy_ufuncobject_h,v 1.1.1.1 2006/06/26 00:45:37 djm Exp $
+--- numpy/core/include/numpy/ufuncobject.h.orig	Thu Jun 15 20:40:07 2006
++++ numpy/core/include/numpy/ufuncobject.h	Thu Jun 15 20:40:31 2006
+@@ -249,7 +249,7 @@ typedef struct {
+ /* Solaris --------------------------------------------------------*/
+ /* --------ignoring SunOS ieee_flags approach, someone else can
+ **         deal with that! */
+-#elif defined(sun) || defined(__BSD__) 
++#elif defined(sun) || defined(__BSD__) || defined(__OpenBSD__)
+ #include <ieeefp.h>
+ 
+ #define UFUNC_CHECK_STATUS(ret) {				\

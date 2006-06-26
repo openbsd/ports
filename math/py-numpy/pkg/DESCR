@@ -1,0 +1,5 @@
+NumPy is a Python library for numeric and scientific computing, it
+contains a powerful N-dimensional array object, basic linear algebra
+functions, basic Fourier transforms, sophisticated random number
+capabilities and tools for integrating Fortran code.
+
