@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/26 18:09:00 jasper Exp $
+bin/tree
+man/man1/tree.0
