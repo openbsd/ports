@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2006/06/13 19:39:45 steven Exp $
+# $OpenBSD: Makefile,v 1.107 2006/06/26 18:10:47 jasper Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -78,6 +78,7 @@
      SUBDIR += tentakel
      SUBDIR += tpb
      SUBDIR += tphdisk
+     SUBDIR += tree
      SUBDIR += upsd
      SUBDIR += usbutil
      SUBDIR += wdsetup
