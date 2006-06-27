@@ -1,2 +1,1 @@
-This package provides python bindings for cairo library.  It is built
-with gtk support.
+This package provides python bindings for the cairo library.
