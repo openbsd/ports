@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/05/08 13:44:18 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2006/06/27 19:14:01 naddy Exp $
 bin/pygtk-codegen-2.0
 bin/pygtk-demo
 include/pygtk-2.0/
 include/pygtk-2.0/pygobject.h
 include/pygtk-2.0/pygtk/
 include/pygtk-2.0/pygtk/pygtk.h
-lib/pkgconfig/
 lib/pkgconfig/pygobject-2.0.pc
 lib/pkgconfig/pygtk-2.0.pc
 lib/pygtk/
@@ -165,6 +164,9 @@ lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/keysyms.pyo
 @comment lib/python${MODPY_VERSION}/site-packages/gtk-2.0/pango.a
 @comment lib/python${MODPY_VERSION}/site-packages/gtk-2.0/pango.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/pango.so
+@comment lib/python${MODPY_VERSION}/site-packages/gtk-2.0/pangocairo.a
+@comment lib/python${MODPY_VERSION}/site-packages/gtk-2.0/pangocairo.la
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/pangocairo.so
 lib/python${MODPY_VERSION}/site-packages/pygtk.pth
 lib/python${MODPY_VERSION}/site-packages/pygtk.py
 lib/python${MODPY_VERSION}/site-packages/pygtk.pyc
@@ -182,3 +184,5 @@ share/pygtk/2.0/defs/gtk.defs
 share/pygtk/2.0/defs/libglade.defs
 share/pygtk/2.0/defs/pango-types.defs
 share/pygtk/2.0/defs/pango.defs
+share/pygtk/2.0/defs/pangocairo.defs
+share/pygtk/2.0/defs/pangocairo.override

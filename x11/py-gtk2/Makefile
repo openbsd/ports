@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2006/06/13 13:41:20 bernd Exp $
+# $OpenBSD: Makefile,v 1.15 2006/06/27 19:14:00 naddy Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"GTK+2 Python bindings"
 
-V=		2.6.3
+V=		2.8.6
 DISTNAME=	pygtk-${V}
-PKGNAME=	py-gtk2-${V}p1
+PKGNAME=	py-gtk2-${V}
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.pygtk.org/
@@ -19,19 +19,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_GNOME:=sources/pygtk/2.6/}
+MASTER_SITES=	${MASTER_SITE_GNOME:=sources/pygtk/${V:R}/}
 EXTRACT_SUFX=	.tar.bz2
 
 WANTLIB=	X11 Xext Xrender atk-1.0.0.0 fontconfig freetype \
-		gdk-x11-2.0.801.0 gdk_pixbuf-2.0.801.0 glib-2.0.800.0 \
-		gmodule-2.0.800.0 gobject-2.0.800.0 gthread-2.0.800.0 \
-		gtk-x11-2.0.801.0 m pango-1.0.0.0 pangoft2-1.0.0.0 \
+		gdk-x11-2.0.802.0 gdk_pixbuf-2.0.802.0 glib-2.0.1000.0 \
+		gmodule-2.0.1000.0 gobject-2.0.1000.0 gthread-2.0.1000.0 \
+		gtk-x11-2.0.802.0 m pango-1.0.0.0 pangoft2-1.0.0.0 \
 		pangocairo-1.0.0.0 xml2 z cairo glitz png
 
 MODULES=	devel/gettext lang/python
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
-		:py-Numeric-*:math/py-Numeric
+		:py-cairo->=1.0.2p1:graphics/py-cairo
 LIB_DEPENDS=	glade-2.0.0.0::devel/libglade2
 
 USE_LIBTOOL=	Yes

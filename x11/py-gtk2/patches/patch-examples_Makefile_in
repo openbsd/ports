@@ -1,7 +1,7 @@
-$OpenBSD: patch-examples_Makefile_in,v 1.1 2006/05/08 13:44:18 naddy Exp $
---- examples/Makefile.in.orig	Thu Jul 14 14:33:21 2005
-+++ examples/Makefile.in	Mon Apr 10 00:51:36 2006
-@@ -525,7 +525,7 @@ pygtk-demo/pygtk-demo: pygtk-demo/pygtk-
+$OpenBSD: patch-examples_Makefile_in,v 1.2 2006/06/27 19:14:01 naddy Exp $
+--- examples/Makefile.in.orig	Thu Apr  6 00:54:31 2006
++++ examples/Makefile.in	Tue Jun 20 20:53:02 2006
+@@ -555,7 +555,7 @@ pygtk-demo/pygtk-demo: pygtk-demo/pygtk-
  	-mkdir pygtk-demo
  	sed -e s!\@PYTHON\@!@PYTHON@! \
  	    -e s!\@libdir\@!@libdir@! \
