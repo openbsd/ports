@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2006/02/08 04:54:49 david Exp $
+# $OpenBSD: Makefile,v 1.22 2006/06/27 03:43:19 pedro Exp $
 
 COMMENT=	"powerful, light-weight programming language"
 
-DISTNAME=	lua-5.0.2
-PKGNAME=	${DISTNAME}p6
+DISTNAME=	lua-5.0.3
 SHARED_LIBS=	lua 5.0 \
 		lualib 5.0
 CATEGORIES=     lang
