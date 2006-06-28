@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/28 17:22:52 jasper Exp $
+include/uthash.h
+@man man/man3/uthash.3
+share/doc/uthash/
+share/doc/uthash/img/
+share/doc/uthash/img/banner.png
+share/doc/uthash/img/banner.svg
+share/doc/uthash/img/grad_blue.png
+share/doc/uthash/img/grad_blue.svg
+share/doc/uthash/index.html
+share/doc/uthash/styles.css
+share/doc/uthash/userguide.html
+share/doc/uthash/uthash.3.html
