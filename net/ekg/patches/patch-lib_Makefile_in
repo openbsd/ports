@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Makefile_in,v 1.1.1.1 2006/06/28 18:21:44 alek Exp $
+--- lib/Makefile.in.orig	Mon Jun 26 02:16:27 2006
++++ lib/Makefile.in	Mon Jun 26 02:16:28 2006
+@@ -11,7 +11,7 @@ VERSION_MAJOR=3
+ VERSION_MINOR=3
+ 
+ CC = @CC@ 
+-CFLAGS = @CFLAGS_LIBGADU@ -I. -I.. -Wall
++CFLAGS += @CFLAGS_LIBGADU@ -I. -I.. -Wall
+ LIBS = @LIBS_LIBGADU@
+ 
+ MAKE = @MAKE@
