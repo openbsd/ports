@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2006/06/08 20:25:53 david Exp $
+# $OpenBSD: Makefile,v 1.46 2006/06/28 19:27:42 aanriot Exp $
 
 COMMENT=	"highly flexible sniffer/NIDS"
 
 DISTNAME=	snort-2.4.5
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net security
 MASTER_SITES=	${HOMEPAGE}/dl/current/
 
@@ -25,7 +26,7 @@ LIB_DEPENDS=     pcre::devel/pcre
 CFLAGS+=	-O0
 .endif
 
-FLAVORS=	postgresql mysql flexresp
+FLAVORS=	postgresql mysql flexresp prelude
 FLAVOR?=	
 
 .if ${FLAVOR:L:Mflexresp}
@@ -45,6 +46,14 @@ CONFIGURE_ARGS+= --with-postgresql="${LOCALBASE}"
 LIB_DEPENDS+=	lib/mysql/mysqlclient.10::databases/mysql
 CONFIGURE_ARGS+= --with-mysql="${LOCALBASE}"
 WANTLIB+=	z
+.endif
+
+.if ${FLAVOR:L:Mprelude}
+MODULES=	devel/gettext
+WANTLIB+=	gcrypt gpg-error pthread z
+LIB_DEPENDS+=	prelude.8::security/prelude/libprelude
+CONFIGURE_ARGS+=--enable-prelude
+MESSAGE=	${PKGDIR}/MESSAGE-prelude
 .endif
 
 CONFIGS=	classification.config gen-msg.map generators reference.config \

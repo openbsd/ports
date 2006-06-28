@@ -17,3 +17,4 @@ Available flavors:
 	postgresql - enable postgresql database logging support
 	mysql	   - enable mysql database logging support
 	flexresp   - enable dynamic connection killing support
+	prelude	   - enable prelude-ids support
