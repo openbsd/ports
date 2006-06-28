@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.420 2006/06/18 17:29:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.421 2006/06/28 18:37:02 alek Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -58,6 +58,7 @@
      SUBDIR += dss
      SUBDIR += dxpc
      SUBDIR += echoping
+     SUBDIR += ekg
      SUBDIR += epic4
      SUBDIR += etherape
      SUBDIR += ettercap
