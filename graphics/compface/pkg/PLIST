@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/18 12:45:06 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/06/28 18:12:16 jasper Exp $
 @conflict faces-*
 bin/compface
 bin/uncompface
+bin/xbm2xface
 include/compface.h
 lib/libcompface.a
 @man man/man1/compface.1
-@man man/man1/uncompface.1
 @man man/man3/compface.3
-@man man/man3/uncompface.3

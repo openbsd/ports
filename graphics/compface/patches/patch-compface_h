@@ -1,0 +1,10 @@
+--- compface.h.orig	Sun Jun 18 17:39:08 2006
++++ compface.h	Sun Jun 18 17:39:32 2006
+@@ -16,6 +16,7 @@
+ #ifndef COMPFACE_H
+ #define COMPFACE_H
+ 
++#include <errno.h>
+ #include <setjmp.h>
+ 
+ /* For all function declarations, if ANSI then use a prototype. */
