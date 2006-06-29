@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2006/03/04 15:10:31 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2006/06/29 17:26:15 steven Exp $
 
 COMMENT=		"client for Cisco 3000 VPN concentrators"
 
 DISTNAME=		vpnc-0.3.3
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		security net
 
 HOMEPAGE=		http://www.unix-ag.uni-kl.de/~massar/vpnc/
@@ -34,5 +34,6 @@ do-install:
 	${INSTALL_DATA} ${WRKBUILD}/vpnc.conf ${PREFIX}/share/examples/vpnc
 	${INSTALL_DATA} ${WRKBUILD}/vpnc-script ${PREFIX}/share/examples/vpnc
 	${INSTALL_DATA} ${WRKBUILD}/vpnc.sh ${PREFIX}/share/examples/vpnc
+	${INSTALL_MAN} ${WRKBUILD}/vpnc.8 ${PREFIX}/man/man8
 
 .include <bsd.port.mk>
