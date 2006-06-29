@@ -1,19 +1,22 @@
-# $OpenBSD: Makefile,v 1.12 2004/11/21 17:51:44 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2006/06/29 05:59:12 steven Exp $
 # $NetBSD: Makefile,v 1.2 2000/01/07 04:20:49 hubertf Exp $
 
 COMMENT=	'ac3 audio (as used on DVDs) decoding tools'
 
 DISTNAME=	ac3dec-0.6.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
-MASTER_SITES=	http://dara.notbsd.org/~aholtzma/ac3/tarballs/
 
-HOMEPAGE=	http://dara.notbsd.org/~aholtzma/ac3/ac3dec.php
+HOMEPAGE=	http://liba52.sourceforge.net/
 
+# GPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		c m ossaudio
+
+MASTER_SITES=	http://liba52.sourceforge.net/files/
 
 CONFIGURE_STYLE= gnu
 
