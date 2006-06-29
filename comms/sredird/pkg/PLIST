@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/29 10:53:08 alek Exp $
+libexec/sredird
+@man man/man8/sredird.8

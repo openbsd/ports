@@ -1,0 +1,7 @@
+You may wish to add the following line to /etc/inetd.conf:
+
+:2001 stream  tcp  nowait  root  ${PREFIX}/libexec/sredird \
+	sredird 5 /dev/cua00 /var/spool/lock/LCK..cua00
+
+which will start sredird on port 2001 and attach it to serial
+port cua00.

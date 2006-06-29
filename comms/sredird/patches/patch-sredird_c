@@ -1,0 +1,46 @@
+$OpenBSD: patch-sredird_c,v 1.1.1.1 2006/06/29 10:53:08 alek Exp $
+--- sredird.c.orig	Fri Aug 12 16:10:46 2005
++++ sredird.c	Sun Jun 18 02:10:10 2006
+@@ -110,9 +110,9 @@
+ #include <fcntl.h>
+ #include <syslog.h>
+ #include <termios.h>
+-#include <termio.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
++#include <netinet/in_systm.h>
+ #include <netinet/ip.h>
+ #include <netinet/tcp.h>
+ 
+@@ -714,8 +714,6 @@ unsigned long int GetPortSpeed(int PortF
+ 					return(115200UL);
+ 				case B230400:
+ 					return(230400UL);
+-				case B460800:
+-					return(460800UL);
+ 				default:
+ 					return(0UL);
+ 			}
+@@ -1094,9 +1092,6 @@ void SetPortSpeed(int PortFd, unsigned l
+ 				case 230400UL:
+ 					Speed = B230400;
+ 				break;
+-				case 460800UL:
+-					Speed = B460800;
+-				break;
+ 				default:
+ 					LogMsg(LOG_WARNING,"Unknwon baud rate requested, setting to 9600.");
+ 					Speed = B9600;
+@@ -2024,10 +2019,10 @@ int main(int argc, char * argv[])
+ 		 */
+ 		SockParm = IPTOS_LOWDELAY;
+ 		setsockopt(STDIN_FILENO,SOL_SOCKET,SO_KEEPALIVE,&SockParmEnable,sizeof(SockParmEnable));
+-		setsockopt(STDIN_FILENO,SOL_IP,IP_TOS,&SockParm,sizeof(SockParm));
++		setsockopt(STDIN_FILENO,IPPROTO_IP,IP_TOS,&SockParm,sizeof(SockParm));
+ 		setsockopt(STDIN_FILENO,SOL_SOCKET,SO_OOBINLINE,&SockParmEnable,sizeof(SockParmEnable));
+ 		setsockopt(STDOUT_FILENO,SOL_SOCKET,SO_KEEPALIVE,&SockParmEnable,sizeof(SockParmEnable));
+-		setsockopt(STDOUT_FILENO,SOL_IP,IP_TOS,&SockParm,sizeof(SockParm));
++		setsockopt(STDOUT_FILENO,IPPROTO_IP,IP_TOS,&SockParm,sizeof(SockParm));
+ 
+ 		/* Make reads/writes unblocking */
+ 		ioctl(STDOUT_FILENO,FIONBIO,&SockParmEnable);

@@ -1,0 +1,17 @@
+$OpenBSD: patch-sredird_8,v 1.1.1.1 2006/06/29 10:53:08 alek Exp $
+--- sredird.8.orig	Mon Jun 19 12:44:13 2006
++++ sredird.8	Mon Jun 19 12:59:13 2006
+@@ -29,8 +29,11 @@
+ .I sredird.
+ 
+ .SH "EXAMPLE"
+-Here is a configuration line for running it from inetd:
+-sredir          stream  tcp     nowait  root    /usr/sbin/tcpd /usr/sbin/sredird 5 /dev/modem /var/lock/LCK..modem
++The following configuration line for
++.I inetd.conf
++will start sredird on port 2001 and attach it to serial port cua00:
++.P
++:2001 stream  tcp  nowait  root  %%LOCALBASE%%/libexec/sredird sredird 5 /dev/cua00 /var/spool/lock/LCK..cua00
+ 
+ .SH "AUTHOR"
+ This man page was written by Russell Coker <russell@coker.com.au>.  May be

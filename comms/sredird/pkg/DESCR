@@ -1,0 +1,6 @@
+Sredird is a serial port redirector that is compliant with the RFC 2217
+"Telnet Com Port Control Option" protocol. This protocol lets you share
+a serial port through the network.
+
+RFC 2217 was orginally implemented in Cisco Terminal Servers in IOS
+version 11.x.
