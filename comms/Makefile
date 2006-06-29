@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2006/05/29 18:08:42 robert Exp $
+# $OpenBSD: Makefile,v 1.32 2006/06/29 11:09:15 alek Exp $
 # $FreeBSD: Makefile,v 1.27 1997/11/22 14:56:56 peter Exp $
 
      SUBDIR += birda
@@ -26,6 +26,7 @@
      SUBDIR += qpage
      SUBDIR += scmxx
      SUBDIR += seyon
+     SUBDIR += sredird
      SUBDIR += tkhylafax
      SUBDIR += wy60
      SUBDIR += xcept
