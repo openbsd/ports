@@ -1,23 +1,22 @@
-$OpenBSD: patch-scripts_makefile_openbsd,v 1.15 2006/05/13 13:52:48 bernd Exp $
---- scripts/makefile.openbsd.orig	Sun Apr 23 20:45:40 2006
-+++ scripts/makefile.openbsd	Sat May 13 13:21:46 2006
-@@ -3,12 +3,12 @@
+$OpenBSD: patch-scripts_makefile_openbsd,v 1.16 2006/06/29 14:33:47 bernd Exp $
+--- scripts/makefile.openbsd.orig	Tue Jun 27 22:22:40 2006
++++ scripts/makefile.openbsd	Thu Jun 29 11:03:42 2006
+@@ -3,11 +3,12 @@
  # For conditions of distribution and use, see copyright notice in png.h
  
  PREFIX?= /usr/local
 +BINDIR= ${PREFIX}/bin
  LIBDIR=	${PREFIX}/lib
  MANDIR= ${PREFIX}/man/cat
-+INCDIR=	${PREFIX}/include/libpng
-+DOCDIR=	${PREFIX}/share/doc/png
++INCDIR= ${PREFIX}/include/libpng
++DOCDIR= ${PREFIX}/share/doc/png
  
 -SHLIB_MAJOR=	0
--SHLIB_MINOR=	1.2.10
--
+-SHLIB_MINOR=	1.2.12
+ 
  LIB=	png
  SRCS=	png.c pngerror.c pnggccrd.c pngget.c pngmem.c pngpread.c \
- 	pngread.c pngrio.c pngrtran.c pngrutil.c pngset.c pngtrans.c \
-@@ -17,28 +17,46 @@ SRCS=	png.c pngerror.c pnggccrd.c pngget
+@@ -17,28 +18,46 @@ SRCS=	png.c pngerror.c pnggccrd.c pngget
  HDRS=	png.h pngconf.h
  
  CFLAGS+= -Wall
@@ -70,7 +69,7 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.15 2006/05/13 13:52:48 bernd Exp $
  	fi
  	if [ ! -d ${DESTDIR}${LIBDIR} ]; then \
  	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${LIBDIR}; \
-@@ -52,21 +70,24 @@ beforeinstall:
+@@ -52,21 +71,24 @@ beforeinstall:
  	if [ ! -d ${DESTDIR}${MANDIR}5 ]; then \
  	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${MANDIR}5; \
  	fi
