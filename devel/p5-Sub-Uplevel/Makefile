@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/06/25 14:48:15 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/06/29 05:42:24 steven Exp $
 
 COMMENT= 	"Perl library for manipulating frame stack"
 
@@ -21,7 +21,7 @@ CONFIGURE_STYLE= perl modbuild
 MAKE_ENV=AUTHOR_TESTING=Yes
 
 REGRESS_DEPENDS=	:p5-Test-Pod->=1.22:devel/p5-Test-Pod \
-			:p5-test-Pod-Coverage->=1.08:devel/p5-Test-Pod-Coverage
+			:p5-Test-Pod-Coverage->=1.08:devel/p5-Test-Pod-Coverage
 
 PKG_ARCH=	*
 
