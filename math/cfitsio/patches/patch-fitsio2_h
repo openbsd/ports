@@ -1,0 +1,11 @@
+$OpenBSD: patch-fitsio2_h,v 1.1 2006/06/29 00:43:58 pvalchev Exp $
+--- fitsio2.h.orig	Wed Jun 28 17:58:38 2006
++++ fitsio2.h	Wed Jun 28 17:58:40 2006
+@@ -62,6 +62,7 @@
+ #elif defined(__ia64__)  || defined(__x86_64__)
+                   /*  Intel itanium 64-bit PC, or AMD opteron 64-bit PC */
+ #define BYTESWAPPED TRUE
++#define MACHINE NATIVE
+ #define LONGSIZE 64   
+ 
+ #elif defined(_SX)             /* Nec SuperUx */
