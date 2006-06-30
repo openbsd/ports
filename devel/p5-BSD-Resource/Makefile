@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2006/05/22 06:27:42 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2006/06/30 14:27:45 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"BSD process resource limit and priority functions"
 
-DISTNAME=	BSD-Resource-1.26
+DISTNAME=	BSD-Resource-1.28
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
