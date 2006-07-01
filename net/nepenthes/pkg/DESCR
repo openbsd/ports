@@ -2,15 +2,3 @@ Nepenthes can determine the malware activity on a network
 by deploying a nepenthes sensor (i.e. honeypot). The programm
 emulates different well known vulnerabilities waiting for
 malicious connections trying to exploit them.
-
-Packages can be built with additional FLAVORs:
-
-  geoip: In order to provide usefull information to visualize 
-the collected data, we have to resolve attacking ip 
-addresses to their location. 
-
-  mysql:  To setup a Nepenthes powerd google Map you need a 
-running and working xmlrpc server with mysql database. 
-
-  pgsql:  Dumps the Captured files to a postgresql database, 
-so you can track how many hits a file gets. 

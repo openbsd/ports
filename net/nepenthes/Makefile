@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/07/01 06:20:58 aanriot Exp $
+# $OpenBSD: Makefile,v 1.5 2006/07/01 06:31:01 aanriot Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	"determine the malware activity on a network"
@@ -23,7 +23,7 @@ USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 
 LIB_DEPENDS=	adns.1::net/adns \
-	 	curl.3.3::net/curl \
+		curl.3.3::net/curl \
 		GeoIP.4::net/GeoIP \
 		magic.1::devel/libmagic \
 		pcre.1::devel/pcre
