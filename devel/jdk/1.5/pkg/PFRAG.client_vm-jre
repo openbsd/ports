@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.client_vm-jre,v 1.1 2006/07/01 09:06:00 steven Exp $
+${JREHOME}/lib/${MACHINE_ARCH}/client/
+${JREHOME}/lib/${MACHINE_ARCH}/client/Xusage.txt
+${JREHOME}/lib/${MACHINE_ARCH}/client/libjsig.so
+${JREHOME}/lib/${MACHINE_ARCH}/client/libjvm.so
