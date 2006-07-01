@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/07/01 12:46:51 alek Exp $
+lib/python${MODPY_VERSION}/site-packages/zope/interface/_zope_interface_coptimizations.so
