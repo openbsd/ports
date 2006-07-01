@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2006/02/11 08:53:26 sturm Exp $
+# $OpenBSD: Makefile,v 1.37 2006/07/01 17:52:45 aanriot Exp $
 
 COMMENT=	"heavily customizable and extensible editor"
 
-VERSION=	21.4.17
+VERSION=	21.4.19
 DISTNAME=	xemacs-${VERSION}
-# see below as well
-PKGNAME=	${DISTNAME}p2
 CATEGORIES=	editors
 
 HOMEPAGE=	http://www.xemacs.org/
@@ -82,7 +80,6 @@ CONFIGURE_ARGS+=--with-xim=xlib
 .endif
 
 .if ${FLAVOR:L:Mmule}
-PKGNAME=	${DISTNAME}p3
 MODULES=	devel/gettext
 CONFIGURE_ARGS+=--with-mule
 

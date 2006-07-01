@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2006/01/22 21:20:48 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2006/07/01 17:52:45 aanriot Exp $
 %%mule%%
 bin/ellcc
 bin/gnuattach
@@ -15,6 +15,7 @@ bin/xemacs-rcs-checkin
 info/xemacs-${VERSION}/
 @info info/xemacs-${VERSION}/cl.info
 @info info/xemacs-${VERSION}/custom.info
+@comment info/xemacs-${VERSION}/dir
 @info info/xemacs-${VERSION}/emodules.info
 @comment info/xemacs-${VERSION}/emodules.info.orig
 @info info/xemacs-${VERSION}/external-widget.info
@@ -29,8 +30,6 @@ info/xemacs-${VERSION}/
 @info info/xemacs-${VERSION}/widget.info
 @info info/xemacs-${VERSION}/xemacs-faq.info
 @info info/xemacs-${VERSION}/xemacs.info
-@comment no checksum
-info/xemacs-${VERSION}/dir
 lib/xemacs/
 lib/xemacs-${VERSION}/
 lib/xemacs-${VERSION}/etc/
@@ -66,6 +65,7 @@ lib/xemacs-${VERSION}/etc/README.OO-BROWSER
 lib/xemacs-${VERSION}/etc/SERVICE
 lib/xemacs-${VERSION}/etc/TERMS
 lib/xemacs-${VERSION}/etc/TUTORIAL
+lib/xemacs-${VERSION}/etc/TUTORIAL.cs
 lib/xemacs-${VERSION}/etc/TUTORIAL.de
 lib/xemacs-${VERSION}/etc/TUTORIAL.fr
 lib/xemacs-${VERSION}/etc/TUTORIAL.hr
@@ -76,6 +76,7 @@ lib/xemacs-${VERSION}/etc/TUTORIAL.pl
 lib/xemacs-${VERSION}/etc/TUTORIAL.ro
 lib/xemacs-${VERSION}/etc/TUTORIAL.ru
 lib/xemacs-${VERSION}/etc/TUTORIAL.se
+lib/xemacs-${VERSION}/etc/TUTORIAL.sl
 lib/xemacs-${VERSION}/etc/TUTORIAL.th
 lib/xemacs-${VERSION}/etc/XKeysymDB
 lib/xemacs-${VERSION}/etc/aliases.ksh
@@ -1059,6 +1060,8 @@ lib/xemacs-${VERSION}/lisp/msw-mouse.el
 lib/xemacs-${VERSION}/lisp/msw-mouse.elc
 lib/xemacs-${VERSION}/lisp/msw-select.el
 lib/xemacs-${VERSION}/lisp/msw-select.elc
+lib/xemacs-${VERSION}/lisp/mule/canna-leim.elc
+lib/xemacs-${VERSION}/lisp/mule/custom-load.elc
 lib/xemacs-${VERSION}/lisp/multicast.el
 lib/xemacs-${VERSION}/lisp/multicast.elc
 lib/xemacs-${VERSION}/lisp/mwheel.el
@@ -1221,3 +1224,4 @@ lib/xemacs/site-modules/
 @man man/man1/xemacs-ctags.1
 @man man/man1/xemacs-etags.1
 @man man/man1/xemacs.1
+@extra info/xemacs-${VERSION}/dir
