@@ -1,0 +1,25 @@
+$OpenBSD: patch-configure,v 1.1 2006/07/01 10:44:22 aanriot Exp $
+--- configure.orig	Fri Jun 30 10:18:17 2006
++++ configure	Fri Jun 30 10:19:22 2006
+@@ -27466,9 +27466,9 @@ if test x$with_sqlite3 != xno; then
+    with_sqlite3=no
+ 
+    for dir in $default_path; do
+-       as_ac_File=`echo "ac_cv_file_$dir/lib/libsqlite3.so" | $as_tr_sh`
+-echo "$as_me:$LINENO: checking for $dir/lib/libsqlite3.so" >&5
+-echo $ECHO_N "checking for $dir/lib/libsqlite3.so... $ECHO_C" >&6
++       as_ac_File=`echo "ac_cv_file_$dir/include/sqlite3.h" | $as_tr_sh`
++echo "$as_me:$LINENO: checking for $dir/include/sqlite3.h" >&5
++echo $ECHO_N "checking for $dir/include/sqlite3.h... $ECHO_C" >&6
+ if eval "test \"\${$as_ac_File+set}\" = set"; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+@@ -27476,7 +27476,7 @@ else
+   { { echo "$as_me:$LINENO: error: cannot check for file existence when cross compiling" >&5
+ echo "$as_me: error: cannot check for file existence when cross compiling" >&2;}
+    { (exit 1); exit 1; }; }
+-if test -r "$dir/lib/libsqlite3.so"; then
++if test -r "$dir/include/sqlite3.h"; then
+   eval "$as_ac_File=yes"
+ else
+   eval "$as_ac_File=no"

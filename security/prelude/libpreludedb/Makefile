@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/06/26 18:04:26 aanriot Exp $
+# $OpenBSD: Makefile,v 1.2 2006/07/01 10:44:22 aanriot Exp $
 
 COMMENT=	"Prelude framework database-access library"
 COMMENT-pgsql=	"PostgreSQL module for libpreludedb"
 COMMENT-mysql=	"MySQL module for libpreludedb"
 COMMENT-sqlite=	"SQLite3 module for libpreludedb"
 
-VERSION=	0.9.7.1
+VERSION=	0.9.8
 DISTNAME=	libpreludedb-${VERSION}
 
 PKGNAME=	prelude-${DISTNAME}
@@ -15,7 +15,7 @@ PKGNAME-sqlite=	prelude-libpreludedb-sqlite-${VERSION}
 
 MODULES=	lang/python devel/gettext
 
-SHARED_LIBS=	preludedb	3.1
+SHARED_LIBS=	preludedb	3.2
 
 WANTLIB=	z
 
@@ -40,9 +40,9 @@ MULTI_PACKAGES+=-mysql
 LIB_DEPENDS+=	lib/mysql/mysqlclient.16::databases/mysql
 WANTLIB+=	m ssl crypto
 .  endif
-CONFIGURE_ARGS+=--enable-mysql
+CONFIGURE_ARGS+=--with-mysql
 .else
-CONFIGURE_ARGS+=--disable-mysql
+CONFIGURE_ARGS+=--without-mysql
 .endif
 
 .if empty(FLAVOR:L:Mno_pgsql)
@@ -50,17 +50,19 @@ MULTI_PACKAGES+=-pgsql
 .  if !defined(PACKAGING) || ${SUBPACKAGE} == "-pgsql"
 LIB_DEPENDS+=	pq.4::databases/postgresql
 .  endif
-CONFIGURE_ARGS+=--enable-pgsql
+CONFIGURE_ARGS+=--with-pgsql
 .else
-CONFIGURE_ARGS+=--disable-pgsql
+CONFIGURE_ARGS+=--without-pgsql
 .endif
 
 .if empty(FLAVOR:L:Mno_sqlite)
 MULTI_PACKAGES+=-sqlite
-BUILD_DEPENDS+=	:sqlite3-*:databases/sqlite3
-CONFIGURE_ARGS+=--enable-sqlite3
+.  if !defined(PACKAGING) || ${SUBPACKAGE} == "-sqlite"
+LIB_DEPENDS+=	sqlite3.8::databases/sqlite3
+.  endif
+CONFIGURE_ARGS+=--with-sqlite3
 .else
-CONFIGURE_ARGS+=--disable-sqlite3
+CONFIGURE_ARGS+=--without-sqlite3
 .endif
 
 .if defined(PACKAGING)

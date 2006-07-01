@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/26 18:04:26 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/07/01 10:44:22 aanriot Exp $
 bin/libpreludedb-config
 bin/preludedb-admin
 include/libpreludedb/
@@ -53,6 +53,7 @@ share/libpreludedb/classic/mysql-update-14-1.sql
 share/libpreludedb/classic/mysql-update-14-2.sql
 share/libpreludedb/classic/mysql-update-14-3.sql
 share/libpreludedb/classic/mysql-update-14-4.sql
+share/libpreludedb/classic/mysql-update-14-5.sql
 share/libpreludedb/classic/mysql.sql
 share/libpreludedb/classic/mysql2pgsql.sh
 share/libpreludedb/classic/mysql2sqlite.sh
@@ -60,6 +61,8 @@ share/libpreludedb/classic/pgsql-update-14-1.sql
 share/libpreludedb/classic/pgsql-update-14-2.sql
 share/libpreludedb/classic/pgsql-update-14-3.sql
 share/libpreludedb/classic/pgsql-update-14-4.sql
+share/libpreludedb/classic/pgsql-update-14-5.sql
 share/libpreludedb/classic/pgsql.sql
 share/libpreludedb/classic/sqlite-update-14-4.sql
+share/libpreludedb/classic/sqlite-update-14-5.sql
 share/libpreludedb/classic/sqlite.sql
