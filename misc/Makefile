@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2006/06/14 08:47:40 alek Exp $
+# $OpenBSD: Makefile,v 1.89 2006/07/02 17:02:21 jasper Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -29,6 +29,7 @@
      SUBDIR += gnuwatch
      SUBDIR += gone
      SUBDIR += gpsd
+     SUBDIR += gutenpy
      SUBDIR += hfsplus
      SUBDIR += impress
      SUBDIR += jive
