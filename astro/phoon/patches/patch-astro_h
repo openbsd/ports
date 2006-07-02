@@ -1,0 +1,9 @@
+$OpenBSD: patch-astro_h,v 1.1 2006/07/02 11:05:42 steven Exp $
+--- astro.h.orig	Sat Jul  1 16:00:46 2006
++++ astro.h	Sat Jul  1 16:00:56 2006
+@@ -43,4 +43,4 @@ extern void phasehunt2( double sdate, do
+  */
+ extern double phase( double pdate, double* pphase, double* mage, double* dist, double* angdia, double* sudist, double* suangdia );
+ 
+-#endif _ASTRO_H_
++#endif /* _ASTRO_H_ */

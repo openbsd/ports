@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2004/11/21 12:50:33 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/07/02 11:05:42 steven Exp $
 
 COMMENT=		"displays the phase of the moon in ascii"
 
-DISTNAME=		phoon-20030120
+DISTNAME=		phoon_29jun2005
+PKGNAME=		phoon-20050629
 CATEGORIES=		astro
 
 HOMEPAGE=		http://www.acme.com/software/phoon/
@@ -17,7 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
 MASTER_SITES=		${HOMEPAGE}
-DISTFILES=		phoon_20jan2003.tar.gz
 
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS} -DOS_BSD" LDFLAGS=""
 

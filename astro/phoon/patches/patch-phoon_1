@@ -1,0 +1,21 @@
+$OpenBSD: patch-phoon_1,v 1.1 2006/07/02 11:05:42 steven Exp $
+--- phoon.1.orig	Sat Apr  1 09:36:57 1995
++++ phoon.1	Sun Jul  2 12:29:53 2006
+@@ -3,7 +3,7 @@
+ phoon - show the PHase of the mOON
+ .SH SYNOPSIS
+ phoon
+-.RB -l
++.RB [ -l
+ .IR lines ]
+ .RI [ date ]
+ .SH DESCRIPTION
+@@ -16,8 +16,6 @@ or something like that, phoon
+ you the phase with a cute little picture.
+ You can vary the size of the picture with the -l flag, but only some
+ sizes have pictures defined - other sizes use @'s.
+-.SH "SEE ALSO"
+-date_parse(3)
+ .SH AUTHOR
+ Jef Poskanzer.
+ The moon-phase computation is from "moontool.c", by John Walker.
