@@ -1,0 +1,5 @@
+To configure Thunderbird for your language, shut down Thunderbird and
+add/modifiy these lines to ~/.thunderbird/<something>.default/prefs.js
+(e.g. fr-FR ; default is en-US):
+
+user_pref("general.useragent.locale", "fr-FR");

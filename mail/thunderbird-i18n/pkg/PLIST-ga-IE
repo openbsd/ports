@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-ga-IE,v 1.1.1.1 2006/07/02 16:32:35 steven Exp $
+mozilla-thunderbird/extensions/langpack-ga-IE@thunderbird.mozilla.org/
+mozilla-thunderbird/extensions/langpack-ga-IE@thunderbird.mozilla.org/chrome/
+mozilla-thunderbird/extensions/langpack-ga-IE@thunderbird.mozilla.org/chrome.manifest
+mozilla-thunderbird/extensions/langpack-ga-IE@thunderbird.mozilla.org/chrome/chromelist.txt
+mozilla-thunderbird/extensions/langpack-ga-IE@thunderbird.mozilla.org/chrome/ga-IE.jar
+mozilla-thunderbird/extensions/langpack-ga-IE@thunderbird.mozilla.org/install.rdf

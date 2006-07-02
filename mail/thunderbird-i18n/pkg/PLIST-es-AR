@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-es-AR,v 1.1.1.1 2006/07/02 16:32:35 steven Exp $
+mozilla-thunderbird/extensions/langpack-es-AR@thunderbird.mozilla.org/
+mozilla-thunderbird/extensions/langpack-es-AR@thunderbird.mozilla.org/chrome/
+mozilla-thunderbird/extensions/langpack-es-AR@thunderbird.mozilla.org/chrome.manifest
+mozilla-thunderbird/extensions/langpack-es-AR@thunderbird.mozilla.org/chrome/chromelist.txt
+mozilla-thunderbird/extensions/langpack-es-AR@thunderbird.mozilla.org/chrome/es-AR.jar
+mozilla-thunderbird/extensions/langpack-es-AR@thunderbird.mozilla.org/install.rdf

@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-gu-IN,v 1.1.1.1 2006/07/02 16:32:35 steven Exp $
+mozilla-thunderbird/extensions/langpack-gu-IN@thunderbird.mozilla.org/
+mozilla-thunderbird/extensions/langpack-gu-IN@thunderbird.mozilla.org/chrome/
+mozilla-thunderbird/extensions/langpack-gu-IN@thunderbird.mozilla.org/chrome.manifest
+mozilla-thunderbird/extensions/langpack-gu-IN@thunderbird.mozilla.org/chrome/chromelist.txt
+mozilla-thunderbird/extensions/langpack-gu-IN@thunderbird.mozilla.org/chrome/gu-IN.jar
+mozilla-thunderbird/extensions/langpack-gu-IN@thunderbird.mozilla.org/install.rdf

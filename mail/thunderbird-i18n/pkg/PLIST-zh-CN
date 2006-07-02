@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-zh-CN,v 1.1.1.1 2006/07/02 16:32:35 steven Exp $
+mozilla-thunderbird/extensions/langpack-zh-CN@thunderbird.mozilla.org/
+mozilla-thunderbird/extensions/langpack-zh-CN@thunderbird.mozilla.org/chrome/
+mozilla-thunderbird/extensions/langpack-zh-CN@thunderbird.mozilla.org/chrome.manifest
+mozilla-thunderbird/extensions/langpack-zh-CN@thunderbird.mozilla.org/chrome/chromelist.txt
+mozilla-thunderbird/extensions/langpack-zh-CN@thunderbird.mozilla.org/chrome/zh-CN.jar
+mozilla-thunderbird/extensions/langpack-zh-CN@thunderbird.mozilla.org/install.rdf
