@@ -1,7 +1,7 @@
-$OpenBSD: patch-directory_c-sdk_configure_in,v 1.5 2006/01/23 12:34:06 wilfried Exp $
---- directory/c-sdk/configure.in.orig	Tue Jun 14 23:27:33 2005
-+++ directory/c-sdk/configure.in	Sat Sep 10 09:08:27 2005
-@@ -1455,19 +1455,16 @@ mips-sony-newsos*)
+$OpenBSD: patch-directory_c-sdk_configure_in,v 1.6 2006/07/02 15:54:55 steven Exp $
+--- directory/c-sdk/configure.in.orig	Thu Feb 23 00:58:25 2006
++++ directory/c-sdk/configure.in	Thu Jun 29 08:50:39 2006
+@@ -1573,19 +1573,16 @@ mips-sony-newsos*)
      AC_DEFINE(XP_UNIX)
      AC_DEFINE(OPENBSD)
      AC_DEFINE(HAVE_BSD_FLOCK)

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.7 2006/01/23 12:34:06 wilfried Exp $
---- configure.in.orig	Tue Oct  4 07:53:49 2005
-+++ configure.in	Thu Jan 12 13:20:59 2006
-@@ -1801,7 +1801,7 @@ case "$target" in
+$OpenBSD: patch-configure_in,v 1.8 2006/07/02 15:54:55 steven Exp $
+--- configure.in.orig	Fri Apr 21 22:50:21 2006
++++ configure.in	Thu Jun 29 08:50:59 2006
+@@ -1859,7 +1859,7 @@ case "$target" in
  	;;
  
  *-openbsd*)
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_in,v 1.7 2006/01/23 12:34:06 wilfried Exp $
      DSO_CFLAGS=''
      DSO_PIC_CFLAGS='-fPIC'
      DSO_LDOPTS='-shared -fPIC'
-@@ -3582,7 +3582,7 @@ _SAVE_LIBS=$LIBS
+@@ -3643,7 +3643,7 @@ _SAVE_LIBS=$LIBS
  CFLAGS="$ZLIB_CFLAGS $CFLAGS"
  LDFLAGS="$ZLIB_LIBS -lz $LDFLAGS"
  if test -n "${PNG_DIR}" -a "${PNG_DIR}" != "yes"; then
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure_in,v 1.7 2006/01/23 12:34:06 wilfried Exp $
      LDFLAGS="-L${PNG_DIR}/lib $LDFLAGS"
  fi
  if test -z "$PNG_DIR" -o "$PNG_DIR" = no; then
-@@ -3612,7 +3612,7 @@ LDFLAGS=$_SAVE_LDFLAGS
+@@ -3673,7 +3673,7 @@ LDFLAGS=$_SAVE_LDFLAGS
  LIBS=$_SAVE_LIBS
  
  if test "${PNG_DIR}" -a -d "${PNG_DIR}" -a "$SYSTEM_PNG" = 1; then

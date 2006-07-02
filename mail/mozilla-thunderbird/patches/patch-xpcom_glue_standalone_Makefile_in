@@ -1,8 +1,8 @@
-$OpenBSD: patch-xpcom_glue_standalone_Makefile_in,v 1.1 2006/01/23 12:34:06 wilfried Exp $
---- xpcom/glue/standalone/Makefile.in.orig	Tue Oct 11 00:01:54 2005
-+++ xpcom/glue/standalone/Makefile.in	Mon Dec 26 14:07:34 2005
+$OpenBSD: patch-xpcom_glue_standalone_Makefile_in,v 1.2 2006/07/02 15:54:55 steven Exp $
+--- xpcom/glue/standalone/Makefile.in.orig	Thu Jan  5 20:35:20 2006
++++ xpcom/glue/standalone/Makefile.in	Thu Jun 29 08:51:04 2006
 @@ -62,6 +62,9 @@ endif
- ifneq (,$(filter AIX DragonFly FreeBSD Linux NetBSD OpenBSD,$(OS_ARCH)))
+ ifneq (,$(filter AIX DragonFly FreeBSD Linux NetBSD OpenBSD SunOS,$(OS_ARCH)))
  LINKSRC = nsGlueLinkingDlopen.cpp
  endif
 +ifeq (OpenBSD,$(OS_ARCH))
