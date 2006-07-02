@@ -1,0 +1,48 @@
+$OpenBSD: patch-gutenpy_py,v 1.1.1.1 2006/07/02 16:54:24 jasper Exp $
+--- gutenpy.py.orig	Wed Jun 28 09:26:51 2006
++++ gutenpy.py	Sat Jul  1 16:03:11 2006
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python2.4
++#!!!PREFIX!!/bin/python2.4
+ '''GutenPy
+ 
+ A tool to comfortably read Text Documents.'''
+@@ -77,21 +77,21 @@ class AppMainWindow(gtk.Window):
+         filelist=[]
+         for arg in argv[1:]:
+             filelist.append(os.path.realpath(arg))
+-        if not os.path.isfile('GutenPy/ui_info.xml'):
++        if not os.path.isfile('!!LIB_DIR!!/ui_info.xml'):
+             os.chdir(os.path.dirname(os.path.realpath(argv[0])))
+-        self.helpfile = os.path.realpath('docs/help.txt')
+-        self.license = os.path.realpath('docs/COPYING.txt')
++        self.helpfile = os.path.realpath('!!PREFIX!!/share/doc/gutenpy/help.txt')
++        self.license = os.path.realpath('!!PREFIX!!/share/doc/gutenpy/COPYING.txt')
+         
+         gtk.window_set_default_icon_list(
+-            gtk.gdk.pixbuf_new_from_file('icons/book-lg.png'),
+-            gtk.gdk.pixbuf_new_from_file('icons/book-sm.png'))
++            gtk.gdk.pixbuf_new_from_file('!!PREFIX!!/share/gutenpy/icons/book-lg.png'),
++            gtk.gdk.pixbuf_new_from_file('!!PREFIX!!/share/gutenpy/icons/book-sm.png'))
+         factory = gtk.IconFactory()
+         factory.add('gutenberg_org',
+-          gtk.IconSet(gtk.gdk.pixbuf_new_from_file('icons/gutenberg_org.png')))
++          gtk.IconSet(gtk.gdk.pixbuf_new_from_file('!!PREFIX!!/share/gutenpy/icons/gutenberg_org.png')))
+         factory.add('bookmark',
+-          gtk.IconSet(gtk.gdk.pixbuf_new_from_file('icons/tango-bookmark.png')))
++          gtk.IconSet(gtk.gdk.pixbuf_new_from_file('!!PREFIX!!/share/gutenpy/icons/tango-bookmark.png')))
+         factory.add('dict_org',
+-            gtk.IconSet(gtk.gdk.pixbuf_new_from_file('icons/dict_org.png')))
++            gtk.IconSet(gtk.gdk.pixbuf_new_from_file('!!PREFIX!!/share/gutenpy/icons/dict_org.png')))
+         factory.add_default()            
+ 
+         self.prefs = AppPrefs()
+@@ -116,7 +116,7 @@ class AppMainWindow(gtk.Window):
+         self.add_accel_group(self.uimanager.get_accel_group())
+ 
+         try:
+-            self.uimanagerid = self.uimanager.add_ui_from_file('GutenPy/ui_info.xml')
++            self.uimanagerid = self.uimanager.add_ui_from_file('!!LIB_DIR!!/ui_info.xml')
+         except gobject.GError, msg:
+             print "building menus failed: %s" % msg
+ 
