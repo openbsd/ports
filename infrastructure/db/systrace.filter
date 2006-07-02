@@ -131,6 +131,7 @@
 	native-recvfrom: permit
 	native-recvmsg: permit
 	native-rename: filename match "/tmp" and filename[1] match "/tmp" then permit
+	native-rename: filename match "/tmp" and filename[1] match "/var/tmp" then permit
 	native-rename: filename match "/tmp" and filename[1] match "${WRKDIR}" then permit
 	native-rename: filename match "/var/tmp" and filename[1] match "/var/tmp" then permit
 	native-rename: filename match "/var/tmp" and filename[1] match "${WRKDIR}" then permit
