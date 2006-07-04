@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2005/11/29 02:11:16 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.10 2006/07/04 16:56:18 steven Exp $
 bin/ptar
 bin/ptardiff
 ${P5SITE}/Archive/
@@ -6,5 +6,7 @@ ${P5SITE}/Archive/Tar/
 ${P5SITE}/Archive/Tar.pm
 ${P5SITE}/Archive/Tar/Constant.pm
 ${P5SITE}/Archive/Tar/File.pm
+@man man/man1/ptar.1
+@man man/man1/ptardiff.1
 @man man/man3p/Archive::Tar.3p
 @man man/man3p/Archive::Tar::File.3p
