@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.99 2006/05/22 18:50:01 steven Exp $
+# $OpenBSD: network.conf.template,v 1.100 2006/07/04 22:20:44 jasper Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -112,6 +112,11 @@ MASTER_SITE_SOURCEFORGE+=	\
 	http://switch.dl.sourceforge.net/sourceforge/ \
 	http://kent.dl.sourceforge.net/sourceforge/ \
 	http://voxel.dl.sourceforge.net/sourceforge/
+
+MASTER_SITE_SOURCEFORGE_JP+=	\
+	http://osdn.dl.sourceforge.jp/ \
+	http://downloads.sourceforge.jp/ \
+	http://prdownloads.sourceforge.jp/
 
 MASTER_SITE_GNOME+=	\
 	ftp://archive.progeny.com/GNOME/ \
