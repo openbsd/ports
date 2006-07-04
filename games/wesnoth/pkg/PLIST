@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2006/05/28 04:38:44 robert Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/07/04 21:15:41 sturm Exp $
 bin/campaignd
 bin/wesnoth
 bin/wesnoth_editor
@@ -3823,7 +3823,6 @@ share/wesnoth/images/young-ogre-die-2.png
 share/wesnoth/images/young-ogre-die-3.png
 share/wesnoth/images/young-ogre-die-4.png
 share/wesnoth/images/young-ogre.png
-share/wesnoth/music/main_menu_new.ogg
 share/wesnoth/sounds/
 share/wesnoth/sounds/arrive.wav
 share/wesnoth/sounds/arrow-hit.wav
