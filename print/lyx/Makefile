@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.36 2006/02/10 21:17:01 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2006/07/05 19:35:18 sturm Exp $
 
 COMMENT=	"graphical frontend for LaTeX (nearly WYSIWYG)"
 
-DISTNAME=	lyx-1.3.4
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	lyx-1.4.1
 CATEGORIES=	print
 
 HOMEPAGE=	http://www.lyx.org/
 
+EXTRACT_SUFX?=	.tar.bz2
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://ftp.sdsc.edu/pub/other/lyx/stable/ \
 		ftp://ftp.lip6.fr/pub/lyx/stable/ \
 		ftp://ftp.chg.ru/pub/TeX/lyx/stable/
 
-MAINTAINER=	Zvezdan Petkovic <zvezdan@cs.wm.edu>
+MAINTAINER=	Zvezdan Petkovic <zpetkovic@acm.org>
 
 # In XForms flavor: quasi-GPL (linked to closed source library)
 # In Qt flavor: GPL (this should be preferred for CD distribution)
@@ -23,11 +23,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=		devel/gettext
+MODULES=	devel/gettext lang/python
 
-BUILD_DEPENDS+=	:teTeX_base-*:print/teTeX/base
-RUN_DEPENDS+=	:teTeX_base-*:print/teTeX/base \
-		:ispell-*:textproc/ispell
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	::print/teTeX/base \
+		::graphics/ImageMagick \
+		::textproc/ispell
+
+WANTLIB=	ICE SM X11 c m stdc++ z
+
 USE_GMAKE=	Yes
 
 FLAVORS=	qt xforms
@@ -36,13 +40,13 @@ FLAVOR?=	qt
 .if ${FLAVOR:L} == "qt"
 MODULES+=	qt3
 MODQT_MT=	Yes
+WANTLIB+=	pthread
 CONFIGURE_ARGS=	--with-frontend=qt ${MODQT_CONFIGURE_ARGS}
-CONFIGURE_ENV=	LIBS=-pthread
-# A hack until LyX developers apply the patch to qt.m4 to respect $MOC and $UIC
-CONFIGURE_ENV+=	ac_moc1=${MODQT_MOC} ac_uic=${MODQT_UIC}
-WANTLIB=	ICE stdc++ c X11 m SM pthread
+CONFIGURE_ENV+=	LIBS=-pthread QTDIR=${MODQT_QTDIR}
 .elif ${FLAVOR:L} == "xforms"
 LIB_DEPENDS+=	forms.1::x11/xforms
+WANTLIB+=	Xpm flimage jpeg
+CONFIGURE_ARGS=	--with-frontend=xforms
 .else
 ERRORS+= "Fatal: Conflicting flavor: ${FLAVOR}"
 .endif
@@ -53,7 +57,10 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
 CONFIGURE_ARGS+=--with-extra-lib=${LOCALBASE}/lib \
 		--with-extra-inc="${LOCALBASE}/include \
 		${LOCALBASE}/include/X11" \
-		--without-latex-config
+		--without-aspell \
+		--without-pspell \
+		--disable-dependency-tracking
+CONFIGURE_ENV+=	PYTHON=${MODPY_BIN}
 
 # Necessary because of compilation error.  See:
 # http://www.boost.org/libs/graph/doc/trouble_shooting.html

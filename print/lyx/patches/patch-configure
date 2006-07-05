@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2004/04/28 19:57:47 sturm Exp $
---- configure.orig	2004-02-18 18:35:31.000000000 +0100
-+++ configure	2004-04-28 20:51:48.000000000 +0200
-@@ -11721,7 +11721,7 @@ fi
+$OpenBSD: patch-configure,v 1.5 2006/07/05 19:35:18 sturm Exp $
+--- configure.orig	Tue Apr 11 05:18:17 2006
++++ configure	Wed Jun 14 12:39:05 2006
+@@ -23605,7 +23605,7 @@ fi
  echo "$as_me:$LINENO: result: $ac_cv_lib_forms_fl_initialize" >&5
  echo "${ECHO_T}$ac_cv_lib_forms_fl_initialize" >&6
  if test $ac_cv_lib_forms_fl_initialize = yes; then
@@ -10,12 +10,3 @@ $OpenBSD: patch-configure,v 1.4 2004/04/28 19:57:47 sturm Exp $
  else
    echo "$as_me:$LINENO: checking for fl_initialize in -lxforms" >&5
  echo $ECHO_N "checking for fl_initialize in -lxforms... $ECHO_C" >&6
-@@ -12639,7 +12639,7 @@ ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
- 		SAVE_CXXFLAGS=$CXXFLAGS
- 		CXXFLAGS="$CXXFLAGS $QT_INCLUDES $QT_LDFLAGS"
- 
--		for libname in -lqt3 -lqt2 -lqt -lqt-mt;
-+		for libname in -lqt-mt ;
- 		do
- 
- 	SAVE_LIBS="$LIBS"
