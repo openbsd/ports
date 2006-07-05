@@ -1,4 +1,4 @@
-# $OpenBSD: arm,v 1.12 2006/04/30 11:45:17 pvalchev Exp $
+# $OpenBSD: arm,v 1.13 2006/07/05 12:11:57 aanriot Exp $
 # This is the master list of subdirs used to choose arm packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -80,5 +80,6 @@ audio/xmms
 audio/xmms-mad
 audio/xmms-tremor
 print/teTeX/base
+misc/dtach
 # Builds, but disabled for time reasons
 #x11/kde/base3
