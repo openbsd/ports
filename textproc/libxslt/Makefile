@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2006/05/22 11:33:49 steven Exp $
+# $OpenBSD: Makefile,v 1.50 2006/07/05 04:34:09 steven Exp $
 
 COMMENT=		"XSLT C Library for GNOME"
 
-DISTNAME=		libxslt-1.1.16
-SHARED_LIBS=		exslt	9.1 \
-			xslt	3.1
+DISTNAME=		libxslt-1.1.17
+SHARED_LIBS=		exslt	9.2 \
+			xslt	3.2
 
 CATEGORIES=		textproc
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c gpg-error iconv intl m z 
 
-LIB_DEPENDS=		xml2.8::textproc/libxml \
+LIB_DEPENDS=		xml2.9:libxml->=2.6.25:textproc/libxml \
 			gcrypt.12::security/libgcrypt
 
 USE_LIBTOOL=		Yes
