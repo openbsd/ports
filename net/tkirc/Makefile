@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2004/02/02 17:35:01 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2006/07/05 07:24:27 espie Exp $
 
 COMMENT=	"ircII internet relay chat client"
 
 DISTNAME=	tkirc2.46
+PKGNAME=	tkirc-2.46
 CATEGORIES=	net
 
 HOMEPAGE=	http://netsplit.de/tkirc2/

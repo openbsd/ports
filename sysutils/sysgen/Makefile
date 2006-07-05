@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2004/12/20 10:35:36 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2006/07/05 07:24:27 espie Exp $
 
 COMMENT=		"calculates QBUS CSR and Vector assignments"
 
 DISTNAME=		sysgen
+PKGNAME=		sysgen-0.0
 CATEGORIES=		sysutils
 MASTER_SITES=		http://ox.compsoc.net/~dankolb/sysgen/
 EXTRACT_SUFX=		.tar.Z
