@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.6 2005/01/25 09:15:44 xsa Exp $
---- setup.py.orig	Mon Jan 24 16:02:06 2005
-+++ setup.py	Tue Jan 25 10:07:07 2005
-@@ -85,7 +85,9 @@ class MyInstall (install, object):
+$OpenBSD: patch-setup_py,v 1.7 2006/07/05 18:31:07 alek Exp $
+--- setup.py.orig	Mon May 29 14:31:27 2006
++++ setup.py	Tue Jul  4 20:49:38 2006
+@@ -95,7 +95,9 @@ class MyInstall (install, object):
                  val = getattr(self, attr)[cutoff:]
              else:
                  val = getattr(self, attr)
@@ -11,8 +11,16 @@ $OpenBSD: patch-setup_py,v 1.6 2005/01/25 09:15:44 xsa Exp $
                  cdir = os.path.join(val, "share", "linkchecker")
                  data.append('config_dir = %r' % cnormpath(cdir))
              data.append("%s = %r" % (attr, cnormpath(val)))
-@@ -248,7 +250,7 @@ data_files = [
-              ['share/locale/nl/LC_MESSAGES/linkchecker.mo']),
+@@ -475,9 +482,15 @@ myname = "Bastian Kleineidam"
+ myemail = "calvin@users.sourceforge.net"
+ 
+ data_files = [
++         ('share/locale/de/LC_MESSAGES',
++             ['build/share/locale/de/LC_MESSAGES/linkchecker.mo']),
++         ('share/locale/fr/LC_MESSAGES',
++             ['build/share/locale/fr/LC_MESSAGES/linkchecker.mo']),
++         ('share/locale/es/LC_MESSAGES',
++             ['build/share/locale/es/LC_MESSAGES/linkchecker.mo']),
           ('share/linkchecker',
               ['config/linkcheckerrc', 'config/logging.conf', ]),
 -         ('share/linkchecker/examples',
@@ -20,7 +28,7 @@ $OpenBSD: patch-setup_py,v 1.6 2005/01/25 09:15:44 xsa Exp $
               ['cgi/lconline/leer.html.en', 'cgi/lconline/leer.html.de',
                'cgi/lconline/index.html', 'cgi/lconline/lc_cgi.html.en',
                'cgi/lconline/lc_cgi.html.de', 'cgi/lconline/check.js',
-@@ -256,10 +258,10 @@ data_files = [
+@@ -485,10 +498,10 @@ data_files = [
        ]
  
  if os.name == 'posix':
@@ -33,5 +41,5 @@ $OpenBSD: patch-setup_py,v 1.6 2005/01/25 09:15:44 xsa Exp $
 +#    data_files.append(('share/man/fr/man1', ['doc/fr/linkchecker.1']))
 +    data_files.append(('share/examples/linkchecker',
                ['config/linkchecker-completion', 'config/linkcheck-cron.sh']))
- elif os.name == 'nt':
+ elif win_compiling:
      data_files.append(('share/linkchecker/doc',
