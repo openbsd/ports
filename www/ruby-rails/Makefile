@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/06/12 20:20:09 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2006/07/05 22:59:18 jcs Exp $
 
 COMMENT=	"ruby MVC web application framework"
 
 DISTNAME=	rails-1.1.2
-PKGNAME=	ruby-${DISTNAME}
+PKGNAME=	ruby-${DISTNAME}p0
 CATEGORIES=	www 
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org> 
@@ -19,7 +19,8 @@ MASTER_SITES=	http://rubyforge.org/frs/download.php/9684/
 MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/ruby-rake \
+RUN_DEPENDS=	::devel/ruby-gems \
+		::devel/ruby-rake \
 		::mail/ruby-actionmailer \
 		::www/ruby-actionwebservice
 
