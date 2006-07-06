@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/06/28 18:12:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2006/07/06 06:52:57 jasper Exp $
 
 COMMENT=	"programs and library for the 'X-face' mail and news header"
 
@@ -7,10 +7,9 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.xemacs.org/pub/xemacs/aux/
 HOMEPAGE=	http://freshmeat.net/projects/compface/
 
-# MIT/X
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_PACKAGE_CDROM=	"No fee"
+PERMIT_PACKAGE_FTP=	No
+PERMIT_DISTFILES_CDROM=	"No fee"
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
