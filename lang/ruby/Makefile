@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2006/06/10 16:50:15 sturm Exp $
+# $OpenBSD: Makefile,v 1.38 2006/07/06 08:22:20 bernd Exp $
 
 COMMENT=		"object oriented script language with threads"
 COMMENT-iconv=		"libiconv interface for ruby"
@@ -9,7 +9,7 @@ SHARED_ONLY=		Yes
 VERSION=		1.8.4
 DISTNAME=		ruby-${VERSION}
 SHARED_LIBS=		ruby 1.84
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 PKGNAME-iconv=		ruby-iconv-${VERSION}p0
 PKGNAME-gdbm=		ruby-gdbm-${VERSION}p0
 PKGNAME-tk=		ruby-tk-${VERSION}p0
@@ -82,6 +82,8 @@ LIB_DEPENDS=		ruby.1.84::lang/ruby \
 WANTLIB=		X11 tcl84.1 c m
 .  endif
 .endif 
+
+REGRESS_DEPENDS=	::lang/ruby
 
 REV=1.8
 SUB=${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
