@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/02 20:52:34 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/07/06 07:27:10 steven Exp $
 bin/exiftool
 ${P5SITE}/File/
 ${P5SITE}/File/RandomAccess.pm
@@ -34,10 +34,12 @@ ${P5SITE}/Image/ExifTool/Jpeg2000.pm
 ${P5SITE}/Image/ExifTool/Kodak.pm
 ${P5SITE}/Image/ExifTool/KyoceraRaw.pm
 ${P5SITE}/Image/ExifTool/Leaf.pm
+${P5SITE}/Image/ExifTool/MIE.pm
 ${P5SITE}/Image/ExifTool/MIFF.pm
 ${P5SITE}/Image/ExifTool/MNG.pm
 ${P5SITE}/Image/ExifTool/MakerNotes.pm
 ${P5SITE}/Image/ExifTool/Minolta.pm
+${P5SITE}/Image/ExifTool/MinoltaRaw.pm
 ${P5SITE}/Image/ExifTool/Nikon.pm
 ${P5SITE}/Image/ExifTool/NikonCapture.pm
 ${P5SITE}/Image/ExifTool/Olympus.pm
@@ -68,6 +70,7 @@ ${P5SITE}/Image/ExifTool/WriteExif.pl
 ${P5SITE}/Image/ExifTool/WriteIPTC.pl
 ${P5SITE}/Image/ExifTool/WritePNG.pl
 ${P5SITE}/Image/ExifTool/WritePhotoshop.pl
+${P5SITE}/Image/ExifTool/WritePostScript.pl
 ${P5SITE}/Image/ExifTool/WriteXMP.pl
 ${P5SITE}/Image/ExifTool/Writer.pl
 ${P5SITE}/Image/ExifTool/XMP.pm
@@ -101,10 +104,12 @@ ${P5SITE}/Image/ExifTool/XMP.pm
 @man man/man3p/Image::ExifTool::Kodak.3p
 @man man/man3p/Image::ExifTool::KyoceraRaw.3p
 @man man/man3p/Image::ExifTool::Leaf.3p
+@man man/man3p/Image::ExifTool::MIE.3p
 @man man/man3p/Image::ExifTool::MIFF.3p
 @man man/man3p/Image::ExifTool::MNG.3p
 @man man/man3p/Image::ExifTool::MakerNotes.3p
 @man man/man3p/Image::ExifTool::Minolta.3p
+@man man/man3p/Image::ExifTool::MinoltaRaw.3p
 @man man/man3p/Image::ExifTool::Nikon.3p
 @man man/man3p/Image::ExifTool::NikonCapture.3p
 @man man/man3p/Image::ExifTool::Olympus.3p
@@ -134,6 +139,7 @@ ${P5SITE}/Image/ExifTool/XMP.pm
 @man man/man3p/Image::ExifTool::WriteIPTC.3p
 @man man/man3p/Image::ExifTool::WritePNG.3p
 @man man/man3p/Image::ExifTool::WritePhotoshop.3p
+@man man/man3p/Image::ExifTool::WritePostScript.3p
 @man man/man3p/Image::ExifTool::WriteXMP.3p
 @man man/man3p/Image::ExifTool::Writer.3p
 @man man/man3p/Image::ExifTool::XMP.3p
