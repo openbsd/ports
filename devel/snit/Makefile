@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2004/05/07 15:28:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2006/07/07 21:25:59 sturm Exp $
 
 COMMENT=		"simple object oriented framework for Tcl"
 
 VERSION=		0.7
-PKGNAME=		snit-${VERSION}
+PKGNAME=		snit-${VERSION}p0
 DISTNAME=		snit${VERSION}
 CATEGORIES=		devel
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 
-RUN_DEPENDS=		::lang/tcl/8.4
+RUN_DEPENDS=		:tcl-8.4.*:lang/tcl/8.4
 
 WRKSRC=			${WRKDIR}/snit
 NO_BUILD=		Yes
