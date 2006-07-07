@@ -1,0 +1,62 @@
+$OpenBSD: patch-plugins_org_eclipse_swt_gtk_openbsd_x86_64_build_xml,v 1.1 2006/07/07 01:48:55 kurt Exp $
+--- plugins/org.eclipse.swt.gtk.openbsd.x86_64/build.xml.orig	Wed Jun  7 12:07:06 2006
++++ plugins/org.eclipse.swt.gtk.openbsd.x86_64/build.xml	Wed Jun  7 15:36:31 2006
+@@ -92,7 +92,7 @@
+ 			<compilerarg line="-log '${temp.folder}'/@dot.bin${logExtension}" compiler="org.eclipse.jdt.core.JDTCompilerAdapter"/> 
+ 		</javac>
+         <property name="includes" value=""/>
+-        <property name="excludes" value="**/*.java,**/library/,**/package.htm*"/>
++        <property name="excludes" value="**/*.java,**/library/,**/package.htm*,**/*.orig"/>
+ 		<copy todir="${temp.folder}/@dot.bin">
+ 			<fileset dir="${basedir}/src/Eclipse SWT/cairo/" includes="${includes}" excludes="${excludes}"/>
+ 			<fileset dir="${basedir}/src/Eclipse SWT/common/" includes="${includes}" excludes="${excludes}"/>
+@@ -150,7 +150,7 @@
+ 		
+ 			<!-- Copy the existing 32 bit SWT source folders to the 64 bit source folder -->
+ 			<copy todir="${basedir}/src">
+-				<fileset dir="${plugindir}" includes="Eclipse*/**"/>
++				<fileset dir="${plugindir}" includes="Eclipse*/**" excludes="**/*.orig"/>
+ 			</copy>
+ 			<!-- Convert SWT 32 bit java source to 64 bit  -->
+ 			<replace dir="${basedir}/src" includes="**/*.java" token="int /*long*/" value="long /*int*/"/>
+@@ -200,7 +200,7 @@
+ 			<fileset dir="${basedir}/src/Eclipse SWT PI/common/" includes="**/*.java" excludes=""/>
+ 			<fileset dir="${basedir}/src/Eclipse SWT PI/common_j2se/" includes="**/*.java" excludes=""/>
+ 			<fileset dir="${basedir}/src/Eclipse SWT PI/gtk/" includes="**/*.java" excludes=""/>
+-			<fileset dir="${basedir}/src/Eclipse SWT PI/gtk/library/"/>
++			<fileset dir="${basedir}/src/Eclipse SWT PI/gtk/library/" excludes="**/*.orig"/>
+ 			<fileset dir="${basedir}/src/Eclipse SWT Printing/common/" includes="**/*.java" excludes=""/>
+ 			<fileset dir="${basedir}/src/Eclipse SWT Printing/gtk/" includes="**/*.java" excludes=""/>
+ 			<fileset dir="${basedir}/src/Eclipse SWT Program/cde/" includes="**/*.java" excludes=""/>
+@@ -263,7 +263,7 @@
+ 			<arg line="all"/>
+ 		</exec>
+ 		<copy todir="${lib_destdir}">
+-			<fileset dir="${sourcedir}/" includes="*.so"/>
++			<fileset dir="${sourcedir}/" includes="*.so*"/>
+ 		</copy>
+ 	</target>
+ 
+@@ -290,11 +290,11 @@
+ 			<fileset dir="${build.result.folder}/@dot" includes="**"/>
+ 		</copy>
+ 		<copy todir="${destination.temp.folder}/${full.name}">
+-			<fileset dir="${basedir}" includes="fragment.properties,swt*.dll,libswt*.so,libswt*.sl,libswt*.a,libswt*.jnilib,libcairo-swt.so,META-INF/"/> 
++			<fileset dir="${basedir}" includes="fragment.properties,swt*.dll,libswt*.so*,libswt*.sl,libswt*.a,libswt*.jnilib,libcairo-swt.so*,META-INF/"/> 
+ 			<fileset dir="${basedir}" includes="about.html"/>
+ 			<fileset dir="${basedir}" includes="about_files/"/>
+ 		</copy>
+-	  	<chmod perm="755" dir="${destination.temp.folder}/${full.name}" includes="swt*.dll,libswt*.so,libswt*.sl,libswt*.a,libswt*.jnilib,libcairo-swt.so" />
++	  	<chmod perm="755" dir="${destination.temp.folder}/${full.name}" includes="swt*.dll,libswt*.so*,libswt*.sl,libswt*.a,libswt*.jnilib,libcairo-swt.so*" />
+ 		<eclipse.versionReplacer path="${destination.temp.folder}/${full.name}" version="${version.suffix}"/>
+ 	</target>
+ 	
+@@ -308,7 +308,7 @@
+ 		<copy file="${plugindir}/build/.project" todir="${temp.folder}/swtdownload"/>
+ 		<copy file="${plugindir}/build/.classpath" todir="${temp.folder}/swtdownload"/>
+ 		<copy todir="${temp.folder}/swtdownload">
+-			<fileset dir="${basedir}" includes="swt*.dll,libswt*.so,libswt*.sl,libswt*.a,libswt*.jnilib,libXm.so.2,libcairo.so.1"/>
++			<fileset dir="${basedir}" includes="swt*.dll,libswt*.so*,libswt*.sl,libswt*.a,libswt*.jnilib,libXm.so.3,libcairo.so*"/>
+ 			<fileset dir="${basedir}" includes="about.html,about_files/"/>
+ 		</copy>
+ 		<chmod dir="${temp.folder}/swtdownload" perm="755" includes="**/lib*"/>

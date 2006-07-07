@@ -1,0 +1,14 @@
+$OpenBSD: patch-plugins_org_eclipse_core_resources_javaCompiler_ant_tasks_resources-ant_jar_args,v 1.1 2006/07/07 01:48:55 kurt Exp $
+--- plugins/org.eclipse.core.resources/javaCompiler.ant_tasks_resources-ant.jar.args.orig	Wed Jun  7 00:07:37 2006
++++ plugins/org.eclipse.core.resources/javaCompiler.ant_tasks_resources-ant.jar.args	Wed Jun  7 00:08:08 2006
+@@ -34,6 +34,10 @@
+ #ADAPTER#ACCESS#org.eclipse.core.filesystem.linux.x86/@dot[+org/eclipse/core/filesystem/*:+org/eclipse/core/filesystem/provider/*:~org/eclipse/core/internal/filesystem/*:~org/eclipse/core/internal/filesystem/local/*:?**/*]
+ #ADAPTER#ACCESS#org.eclipse.core.filesystem.linux.x86_64/@dot[+org/eclipse/core/filesystem/*:+org/eclipse/core/filesystem/provider/*:~org/eclipse/core/internal/filesystem/*:~org/eclipse/core/internal/filesystem/local/*:?**/*]
+ #ADAPTER#ACCESS#org.eclipse.core.filesystem.linux.x86_64/@dot[+org/eclipse/core/filesystem/*:+org/eclipse/core/filesystem/provider/*:~org/eclipse/core/internal/filesystem/*:~org/eclipse/core/internal/filesystem/local/*:?**/*]
++#ADAPTER#ACCESS#org.eclipse.core.filesystem.openbsd.x86/@dot[+org/eclipse/core/filesystem/*:+org/eclipse/core/filesystem/provider/*:~org/eclipse/core/internal/filesystem/*:~org/eclipse/core/internal/filesystem/local/*:?**/*]
++#ADAPTER#ACCESS#org.eclipse.core.filesystem.openbsd.x86/@dot[+org/eclipse/core/filesystem/*:+org/eclipse/core/filesystem/provider/*:~org/eclipse/core/internal/filesystem/*:~org/eclipse/core/internal/filesystem/local/*:?**/*]
++#ADAPTER#ACCESS#org.eclipse.core.filesystem.openbsd.x86_64/@dot[+org/eclipse/core/filesystem/*:+org/eclipse/core/filesystem/provider/*:~org/eclipse/core/internal/filesystem/*:~org/eclipse/core/internal/filesystem/local/*:?**/*]
++#ADAPTER#ACCESS#org.eclipse.core.filesystem.openbsd.x86_64/@dot[+org/eclipse/core/filesystem/*:+org/eclipse/core/filesystem/provider/*:~org/eclipse/core/internal/filesystem/*:~org/eclipse/core/internal/filesystem/local/*:?**/*]
+ #ADAPTER#ACCESS#org.eclipse.core.filesystem.macosx/@dot[+org/eclipse/core/filesystem/*:+org/eclipse/core/filesystem/provider/*:~org/eclipse/core/internal/filesystem/*:~org/eclipse/core/internal/filesystem/local/*:?**/*]
+ #ADAPTER#ACCESS#org.eclipse.core.filesystem.macosx/@dot[+org/eclipse/core/filesystem/*:+org/eclipse/core/filesystem/provider/*:~org/eclipse/core/internal/filesystem/*:~org/eclipse/core/internal/filesystem/local/*:?**/*]
+ #ADAPTER#ACCESS#org.eclipse.core.filesystem.qnx.x86/@dot[+org/eclipse/core/filesystem/*:+org/eclipse/core/filesystem/provider/*:~org/eclipse/core/internal/filesystem/*:~org/eclipse/core/internal/filesystem/local/*:?**/*]

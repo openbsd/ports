@@ -1,0 +1,27 @@
+$OpenBSD: patch-r4_package-list,v 1.1 2006/07/07 01:48:55 kurt Exp $
+--- r4/package-list.orig	Mon Jun 19 23:26:09 2006
++++ r4/package-list	Mon Jun 19 23:26:03 2006
+@@ -0,0 +1,23 @@
++org.osgi.framework
++org.osgi.service.cm
++org.osgi.service.component
++org.osgi.service.condpermadmin
++org.osgi.service.device
++org.osgi.service.event
++org.osgi.service.http
++org.osgi.service.io
++org.osgi.service.log
++org.osgi.service.metatype
++org.osgi.service.packageadmin
++org.osgi.service.permissionadmin
++org.osgi.service.prefs
++org.osgi.service.provisioning
++org.osgi.service.startlevel
++org.osgi.service.upnp
++org.osgi.service.url
++org.osgi.service.useradmin
++org.osgi.service.wireadmin
++org.osgi.util.measurement
++org.osgi.util.position
++org.osgi.util.tracker
++org.osgi.util.xml

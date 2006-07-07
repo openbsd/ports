@@ -1,7 +1,7 @@
-$OpenBSD: patch-features_org_eclipse_platform_build_xml,v 1.3 2005/08/09 14:49:09 kurt Exp $
---- features/org.eclipse.platform/build.xml.orig	Mon Jun 27 14:52:50 2005
-+++ features/org.eclipse.platform/build.xml	Sat Aug  6 08:29:43 2005
-@@ -92,6 +92,11 @@
+$OpenBSD: patch-features_org_eclipse_platform_build_xml,v 1.4 2006/07/07 01:48:55 kurt Exp $
+--- features/org.eclipse.platform/build.xml.orig	Thu Jun 29 19:20:53 2006
++++ features/org.eclipse.platform/build.xml	Sat Jul  1 13:23:41 2006
+@@ -27,6 +27,11 @@
  			<property name="os" value="linux"/>
  			<property name="ws" value="gtk"/>
  		</ant>
@@ -10,35 +10,39 @@ $OpenBSD: patch-features_org_eclipse_platform_build_xml,v 1.3 2005/08/09 14:49:0
 +			<property name="os" value="openbsd"/>
 +			<property name="ws" value="gtk"/>
 +		</ant>
- 		<ant antfile="build.xml" dir="../../plugins/org.eclipse.core.resources" target="${target}">
+ 		<ant antfile="build.xml" dir="../../plugins/org.eclipse.text" target="${target}">
  			<property name="arch" value="x86"/>
  			<property name="os" value="win32"/>
-@@ -132,6 +137,11 @@
- 			<property name="os" value="linux"/>
- 			<property name="ws" value="gtk"/>
+@@ -107,6 +112,16 @@
+ 			<property name="os" value="hpux"/>
+ 			<property name="ws" value="motif"/>
  		</ant>
-+		<ant antfile="build.xml" dir="../../plugins/org.eclipse.core.resources.openbsd" target="${target}">
++		<ant antfile="build.xml" dir="../../plugins/org.eclipse.core.filesystem.openbsd.x86" target="${target}">
 +			<property name="arch" value="x86"/>
 +			<property name="os" value="openbsd"/>
 +			<property name="ws" value="gtk"/>
 +		</ant>
- 		<ant antfile="build.xml" dir="../../plugins/org.eclipse.core.resources.win32" target="${target}">
++		<ant antfile="build.xml" dir="../../plugins/org.eclipse.core.filesystem.openbsd.x86_64" target="${target}">
++			<property name="arch" value="x86_64"/>
++			<property name="os" value="openbsd"/>
++			<property name="ws" value="gtk"/>
++		</ant>
+ 		<ant antfile="build.xml" dir="../../plugins/org.eclipse.core.boot" target="${target}">
  			<property name="arch" value="x86"/>
  			<property name="os" value="win32"/>
-@@ -346,7 +356,7 @@
- 		<copy todir="${feature.base}/features/org.eclipse.platform_3.1.0" failonerror="true" overwrite="false">
+@@ -391,7 +406,7 @@
+ 		<copy todir="${feature.base}/features/org.eclipse.platform_3.2.0.v20060609m-BBt47n6hlEUsvBO" failonerror="true" overwrite="false">
  			<fileset dir="${basedir}" includes="epl-v10.html,eclipse_update_120.jpg,feature.xml,feature.properties,license.html"			/>
  		</copy>
--		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.platform_3.1.0/feature.xml"  selfVersion="3.1.0" featureIds="org.eclipse.rcp,3.1.0," pluginIds="org.apache.ant,1.6.5,org.apache.lucene,1.4.3,org.eclipse.ant.core,3.1.0,org.eclipse.compare,3.1.0,org.eclipse.core.boot,3.1.0,org.eclipse.core.filebuffers,3.1.0,org.eclipse.core.resources,3.1.0,org.eclipse.core.resources.compatibility,3.1.0,org.eclipse.core.runtime.compatibility,3.1.0,org.eclipse.osgi.services,3.1.0,org.eclipse.osgi.util,3.1.0,org.eclipse.core.variables,3.1.0,org.eclipse.debug.core,3.1.0,org.eclipse.debug.ui,3.1.0,org.eclipse.help.webapp,3.1.0,org.eclipse.help.base,3.1.0,org.eclipse.help.ui,3.1.0,org.eclipse.help.appserver,3.1.0,org.eclipse.ltk.core.refactoring,3.1.0,org.eclipse.ltk.ui.refactoring,3.1.0,org.eclipse.platform,3.1.0,org.eclipse.platform.doc.user,3.1.0,org.eclipse.search,3.1.0,org.eclipse.team.core,3.1.0,org.eclipse.team.cvs.core,3.1.0,org.eclipse.team.cvs.ssh,3.1.0,org.eclipse.team.cvs.ssh2,3.1.0,org.eclipse.team.cvs.ui,3.1.0,org.eclipse.team.ui,3.1.0,org.eclipse.tomcat,4.1.30.1,org.eclipse.text,3.1.0,org.eclipse.jface.text,3.1.0,org.eclipse.ui.console,3.1.0,org.eclipse.ui.presentations.r21,3.1.0,org.eclipse.ui.intro,3.1.0,org.eclipse.ui.cheatsheets,3.1.0,org.eclipse.ui.browser,3.1.0,org.eclipse.ui.workbench.texteditor,3.1.0,org.eclipse.ui.views,3.1.0,org.eclipse.ui.editors,3.1.0,org.eclipse.ui.forms,3.1.0,org.eclipse.ui.externaltools,3.1.0,org.eclipse.ui.ide,3.1.0,org.eclipse.update.core,3.1.0,org.eclipse.update.scheduler,3.1.0,org.eclipse.update.ui,3.1.0,org.eclipse.ui.workbench.compatibility,3.1.0,org.eclipse.core.resources.hpux,3.1.0,org.eclipse.core.resources.linux,3.1.0,org.eclipse.core.resources.macosx,3.1.0,org.eclipse.core.resources.qnx,3.1.0,org.eclipse.core.resources.win32,3.1.0,org.eclipse.ui.carbon,3.1.0,org.eclipse.ui.win32,3.1.0,org.eclipse.update.core.linux,3.1.0,org.eclipse.update.core.win32,3.1.0,"/>
-+		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.platform_3.1.0/feature.xml"  selfVersion="3.1.0" featureIds="org.eclipse.rcp,3.1.0," pluginIds="org.apache.ant,1.6.5,org.apache.lucene,1.4.3,org.eclipse.ant.core,3.1.0,org.eclipse.compare,3.1.0,org.eclipse.core.boot,3.1.0,org.eclipse.core.filebuffers,3.1.0,org.eclipse.core.resources,3.1.0,org.eclipse.core.resources.compatibility,3.1.0,org.eclipse.core.runtime.compatibility,3.1.0,org.eclipse.osgi.services,3.1.0,org.eclipse.osgi.util,3.1.0,org.eclipse.core.variables,3.1.0,org.eclipse.debug.core,3.1.0,org.eclipse.debug.ui,3.1.0,org.eclipse.help.webapp,3.1.0,org.eclipse.help.base,3.1.0,org.eclipse.help.ui,3.1.0,org.eclipse.help.appserver,3.1.0,org.eclipse.ltk.core.refactoring,3.1.0,org.eclipse.ltk.ui.refactoring,3.1.0,org.eclipse.platform,3.1.0,org.eclipse.platform.doc.user,3.1.0,org.eclipse.search,3.1.0,org.eclipse.team.core,3.1.0,org.eclipse.team.cvs.core,3.1.0,org.eclipse.team.cvs.ssh,3.1.0,org.eclipse.team.cvs.ssh2,3.1.0,org.eclipse.team.cvs.ui,3.1.0,org.eclipse.team.ui,3.1.0,org.eclipse.tomcat,4.1.30.1,org.eclipse.text,3.1.0,org.eclipse.jface.text,3.1.0,org.eclipse.ui.console,3.1.0,org.eclipse.ui.presentations.r21,3.1.0,org.eclipse.ui.intro,3.1.0,org.eclipse.ui.cheatsheets,3.1.0,org.eclipse.ui.browser,3.1.0,org.eclipse.ui.workbench.texteditor,3.1.0,org.eclipse.ui.views,3.1.0,org.eclipse.ui.editors,3.1.0,org.eclipse.ui.forms,3.1.0,org.eclipse.ui.externaltools,3.1.0,org.eclipse.ui.ide,3.1.0,org.eclipse.update.core,3.1.0,org.eclipse.update.scheduler,3.1.0,org.eclipse.update.ui,3.1.0,org.eclipse.ui.workbench.compatibility,3.1.0,org.eclipse.core.resources.hpux,3.1.0,org.eclipse.core.resources.linux,3.1.0,org.eclipse.core.resources.openbsd,3.1.0,org.eclipse.core.resources.macosx,3.1.0,org.eclipse.core.resources.qnx,3.1.0,org.eclipse.core.resources.win32,3.1.0,org.eclipse.ui.carbon,3.1.0,org.eclipse.ui.win32,3.1.0,org.eclipse.update.core.linux,3.1.0,org.eclipse.update.core.openbsd,3.1.0,org.eclipse.update.core.win32,3.1.0,"/>
+-		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.platform_3.2.0.v20060609m-BBt47n6hlEUsvBO/feature.xml"  selfVersion="3.2.0.v20060609m-BBt47n6hlEUsvBO" featureIds="org.eclipse.rcp,3.2.0.v20060609m-Swbi2VrNoh-MeGG," pluginIds="com.jcraft.jsch,0.1.28,org.apache.ant,1.6.5,org.apache.lucene,1.4.103.v20060601,org.eclipse.ant.core,3.1.100.v20060531,org.eclipse.compare,3.2.0.v20060605,org.eclipse.core.boot,3.1.100.v20060603,org.eclipse.core.filebuffers,3.2.0.v20060605-1400,org.eclipse.core.filesystem,1.0.0.v20060603,org.eclipse.core.resources,3.2.0.v20060603,org.eclipse.core.resources.compatibility,3.2.0.v20060603,org.eclipse.core.runtime.compatibility,3.1.100.v20060603,org.eclipse.osgi.services,3.1.100.v20060601,org.eclipse.osgi.util,3.1.100.v20060601,org.eclipse.core.variables,3.1.100.v20060605,org.eclipse.debug.core,3.2.0.v20060605,org.eclipse.debug.ui,3.2.0.v20060605,org.eclipse.help.webapp,3.2.0.v20060602,org.eclipse.help.base,3.2.0.v20060601,org.eclipse.help.ui,3.2.0.v20060602,org.eclipse.help.appserver,3.1.100.v20060602,org.eclipse.ltk.core.refactoring,3.2.0.v20060605-1400,org.eclipse.ltk.ui.refactoring,3.2.0.v20060605-1400,org.eclipse.platform,3.2.0.v20060601,org.eclipse.platform.doc.user,3.2.0.v20060605,org.eclipse.search,3.2.0.v20060605-1400,org.eclipse.team.core,3.2.0.I200606051140,org.eclipse.team.cvs.core,3.2.0.M20060628,org.eclipse.team.cvs.ssh,3.2.0.I200606011710,org.eclipse.team.cvs.ssh2,3.2.0.I200606051140,org.eclipse.team.cvs.ui,3.2.0.I200606051140,org.eclipse.team.ui,3.2.0.I200606051140,org.eclipse.tomcat,4.1.130.v20060601,org.eclipse.text,3.2.0.v20060605-1400,org.eclipse.jface.text,3.2.0.v20060605-1400,org.eclipse.ui.console,3.1.100.v20060605,org.eclipse.ui.presentations.r21,3.2.0.I20060605-1400,org.eclipse.ui.intro,3.2.0.v20060601,org.eclipse.ui.intro.universal,3.2.0.v20060602,org.eclipse.ui.cheatsheets,3.2.0.v20060602,org.eclipse.ui.browser,3.2.0.v20060602,org.eclipse.ui.navigator,3.2.0.I20060605-1400,org.eclipse.ui.navigator.resources,3.2.0.I20060605-1400,org.eclipse.ui.workbench.texteditor,3.2.0.v20060605-1400,org.eclipse.ui.views,3.2.0.I20060605-1400,org.eclipse.ui.editors,3.2.0.v20060605-1400,org.eclipse.ui.forms,3.2.0.v20060602,org.eclipse.ui.externaltools,3.1.100.v20060605,org.eclipse.ui.ide,3.2.0.I20060605-1400,org.eclipse.update.core,3.2.0.v20060605,org.eclipse.update.scheduler,3.2.0.v20060605,org.eclipse.update.ui,3.2.0.v20060605,org.eclipse.ui.workbench.compatibility,3.2.0.I20060605-1400,org.eclipse.core.filesystem.hpux.ia64_32,1.0.0.v20060603,org.eclipse.core.filesystem.hpux.PA_RISC,1.0.0.v20060603,org.eclipse.core.filesystem.linux.x86,1.0.0.v20060603,org.eclipse.core.filesystem.linux.x86_64,1.0.0.v20060603,org.eclipse.core.filesystem.macosx,1.0.0.v20060603,org.eclipse.core.filesystem.qnx.x86,1.0.0.v20060603,org.eclipse.core.filesystem.win32.x86,1.0.0.v20060603,org.eclipse.core.resources.win32,3.2.0.v20060603,org.eclipse.ui.carbon,3.2.0.I20060605-1400,org.eclipse.ui.win32,3.2.0.I20060605-1400,org.eclipse.update.core.linux,3.2.0.v20060605,org.eclipse.update.core.win32,3.2.0.v20060605,org.eclipse.ui.views.properties.tabbed,3.2.0.I20060605-1400,org.eclipse.core.runtime.compatibility.registry,3.2.0.v20060603,"/>
++		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.platform_3.2.0.v20060609m-BBt47n6hlEUsvBO/feature.xml"  selfVersion="3.2.0.v20060609m-BBt47n6hlEUsvBO" featureIds="org.eclipse.rcp,3.2.0.v20060609m-Swbi2VrNoh-MeGG," pluginIds="com.jcraft.jsch,0.1.28,org.apache.ant,1.6.5,org.apache.lucene,1.4.103.v20060601,org.eclipse.ant.core,3.1.100.v20060531,org.eclipse.compare,3.2.0.v20060605,org.eclipse.core.boot,3.1.100.v20060603,org.eclipse.core.filebuffers,3.2.0.v20060605-1400,org.eclipse.core.filesystem,1.0.0.v20060603,org.eclipse.core.resources,3.2.0.v20060603,org.eclipse.core.resources.compatibility,3.2.0.v20060603,org.eclipse.core.runtime.compatibility,3.1.100.v20060603,org.eclipse.osgi.services,3.1.100.v20060601,org.eclipse.osgi.util,3.1.100.v20060601,org.eclipse.core.variables,3.1.100.v20060605,org.eclipse.debug.core,3.2.0.v20060605,org.eclipse.debug.ui,3.2.0.v20060605,org.eclipse.help.webapp,3.2.0.v20060602,org.eclipse.help.base,3.2.0.v20060601,org.eclipse.help.ui,3.2.0.v20060602,org.eclipse.help.appserver,3.1.100.v20060602,org.eclipse.ltk.core.refactoring,3.2.0.v20060605-1400,org.eclipse.ltk.ui.refactoring,3.2.0.v20060605-1400,org.eclipse.platform,3.2.0.v20060601,org.eclipse.platform.doc.user,3.2.0.v20060605,org.eclipse.search,3.2.0.v20060605-1400,org.eclipse.team.core,3.2.0.I200606051140,org.eclipse.team.cvs.core,3.2.0.M20060628,org.eclipse.team.cvs.ssh,3.2.0.I200606011710,org.eclipse.team.cvs.ssh2,3.2.0.I200606051140,org.eclipse.team.cvs.ui,3.2.0.I200606051140,org.eclipse.team.ui,3.2.0.I200606051140,org.eclipse.tomcat,4.1.130.v20060601,org.eclipse.text,3.2.0.v20060605-1400,org.eclipse.jface.text,3.2.0.v20060605-1400,org.eclipse.ui.console,3.1.100.v20060605,org.eclipse.ui.presentations.r21,3.2.0.I20060605-1400,org.eclipse.ui.intro,3.2.0.v20060601,org.eclipse.ui.intro.universal,3.2.0.v20060602,org.eclipse.ui.cheatsheets,3.2.0.v20060602,org.eclipse.ui.browser,3.2.0.v20060602,org.eclipse.ui.navigator,3.2.0.I20060605-1400,org.eclipse.ui.navigator.resources,3.2.0.I20060605-1400,org.eclipse.ui.workbench.texteditor,3.2.0.v20060605-1400,org.eclipse.ui.views,3.2.0.I20060605-1400,org.eclipse.ui.editors,3.2.0.v20060605-1400,org.eclipse.ui.forms,3.2.0.v20060602,org.eclipse.ui.externaltools,3.1.100.v20060605,org.eclipse.ui.ide,3.2.0.I20060605-1400,org.eclipse.update.core,3.2.0.v20060605,org.eclipse.update.scheduler,3.2.0.v20060605,org.eclipse.update.ui,3.2.0.v20060605,org.eclipse.ui.workbench.compatibility,3.2.0.I20060605-1400,org.eclipse.core.filesystem.hpux.ia64_32,1.0.0.v20060603,org.eclipse.core.filesystem.hpux.PA_RISC,1.0.0.v20060603,org.eclipse.core.filesystem.linux.x86,1.0.0.v20060603,org.eclipse.core.filesystem.linux.x86_64,1.0.0.v20060603,org.eclipse.core.filesystem.macosx,1.0.0.v20060603,org.eclipse.core.filesystem.qnx.x86,1.0.0.v20060603,org.eclipse.core.filesystem.win32.x86,1.0.0.v20060603,org.eclipse.core.resources.win32,3.2.0.v20060603,org.eclipse.ui.carbon,3.2.0.I20060605-1400,org.eclipse.ui.win32,3.2.0.I20060605-1400,org.eclipse.update.core.linux,3.2.0.v20060605,org.eclipse.update.core.win32,3.2.0.v20060605,org.eclipse.ui.views.properties.tabbed,3.2.0.I20060605-1400,org.eclipse.core.runtime.compatibility.registry,3.2.0.v20060603,org.eclipse.core.filesystem.openbsd.x86,1.0.0.v20060603,org.eclipse.core.filesystem.openbsd.x86_64,1.0.0.v20060603,"/>
  		<antcall target="rootFiles${os}_${ws}_${arch}"/>
  	</target>
  	<target name="rootFileswin32_win32_x86">
-@@ -371,6 +381,17 @@
- 		</copy>
+@@ -432,6 +447,17 @@
  		<chmod perm="755" dir="${feature.base}/linux.gtk.x86/${collectingFolder}" includes="eclipse" /> 
  		<chmod perm="755" dir="${feature.base}/linux.gtk.x86/${collectingFolder}" includes="*.so*" /> 
-+	</target>
+ 	</target>
 +	<target name="rootFilesopenbsd_gtk_x86">
 +		<mkdir dir="${feature.base}/openbsd.gtk.x86/${collectingFolder}"/>
 +		<copy todir="${feature.base}/openbsd.gtk.x86/${collectingFolder}" failonerror="true" overwrite="true">
@@ -49,6 +53,34 @@ $OpenBSD: patch-features_org_eclipse_platform_build_xml,v 1.3 2005/08/09 14:49:0
 +			<fileset dir="${basedir}/../../plugins/org.eclipse.platform" includes="startup.jar"			/>
 +		</copy>
 +		<chmod perm="755" dir="${feature.base}/openbsd.gtk.x86/${collectingFolder}" includes="eclipse" /> 
- 	</target>
++	</target>
  	<target name="rootFileslinux_gtk_ppc">
  		<mkdir dir="${feature.base}/linux.gtk.ppc/${collectingFolder}"/>
+ 		<copy todir="${feature.base}/linux.gtk.ppc/${collectingFolder}" failonerror="true" overwrite="true">
+@@ -466,6 +492,17 @@
+ 		<chmod perm="755" dir="${feature.base}/linux.gtk.x86_64/${collectingFolder}" includes="eclipse" /> 
+ 		<chmod perm="755" dir="${feature.base}/linux.gtk.x86_64/${collectingFolder}" includes="*.so*" /> 
+ 	</target>
++	<target name="rootFilesopenbsd_gtk_x86_64">
++		<mkdir dir="${feature.base}/openbsd.gtk.x86_64/${collectingFolder}"/>
++		<copy todir="${feature.base}/openbsd.gtk.x86_64/${collectingFolder}" failonerror="true" overwrite="true">
++			<fileset dir="${basedir}/about_files/openbsd.gtk.x86_64" includes="**"			/>
++			<fileset dir="${basedir}/../../features/org.eclipse.platform.launchers/bin/gtk/openbsd/x86_64" includes="**"			/>
++			<fileset dir="${basedir}/gtk" includes="**"			/>
++			<fileset dir="${basedir}/rootfiles" includes="**"			/>
++			<fileset dir="${basedir}/../../plugins/org.eclipse.platform" includes="startup.jar"			/>
++		</copy>
++		<chmod perm="755" dir="${feature.base}/openbsd.gtk.x86_64/${collectingFolder}" includes="eclipse" /> 
++	</target>
+ 	<target name="rootFileslinux_gtk_ia64">
+ 		<mkdir dir="${feature.base}/linux.gtk.ia64/${collectingFolder}"/>
+ 		<copy todir="${feature.base}/linux.gtk.ia64/${collectingFolder}" failonerror="true" overwrite="true">
+@@ -587,6 +624,8 @@
+ 		<antcall target="rootFileshpux_motif_ia64"/>
+ 		<antcall target="rootFileshpux_motif_ia64_32"/>
+ 		<antcall target="rootFilesqnx_photon_x86"/>
++		<antcall target="rootFilesopenbsd_gtk_x86"/>
++		<antcall target="rootFilesopenbsd_gtk_x86_64"/>
+ 	</target>
+ 
+ 	<target name="zip.distribution" depends="init" description="Create a zip containing all the plug-ins and features for the feature: org.eclipse.platform.">

@@ -1,7 +1,7 @@
-$OpenBSD: patch-features_org_eclipse_platform_launchers_library_gtk_build_sh,v 1.1 2005/08/09 14:49:09 kurt Exp $
---- features/org.eclipse.platform.launchers/library/gtk/build.sh.orig	Mon Jun 27 14:54:41 2005
-+++ features/org.eclipse.platform.launchers/library/gtk/build.sh	Wed Aug  3 14:01:26 2005
-@@ -67,6 +67,19 @@ case $OS in
+$OpenBSD: patch-features_org_eclipse_platform_launchers_library_gtk_build_sh,v 1.2 2006/07/07 01:48:55 kurt Exp $
+--- features/org.eclipse.platform.launchers/library/gtk/build.sh.orig	Fri Jun  2 13:32:05 2006
++++ features/org.eclipse.platform.launchers/library/gtk/build.sh	Tue Jun  6 23:27:22 2006
+@@ -71,6 +71,23 @@ case $OS in
  				;;
  		esac
  		;;
@@ -9,6 +9,10 @@ $OpenBSD: patch-features_org_eclipse_platform_launchers_library_gtk_build_sh,v 1
 +		makefile="make_openbsd.mak"
 +		defaultOS="openbsd"
 +		case $MODEL in
++			"amd64")
++				defaultOSArch="x86_64"
++				OUTPUT_DIR="../../bin/$defaultWS/$defaultOS/$defaultOSArch"
++				;;
 +			"i386")
 +				defaultOSArch="x86"
 +				OUTPUT_DIR="../../bin/$defaultWS/$defaultOS/$defaultOSArch"
@@ -21,7 +25,7 @@ $OpenBSD: patch-features_org_eclipse_platform_launchers_library_gtk_build_sh,v 1
  	"SunOS")
  		makefile="make_solaris.mak"
  		defaultOS="solaris"
-@@ -112,11 +125,11 @@ export OUTPUT_DIR PROGRAM_OUTPUT DEFAULT
+@@ -129,11 +146,11 @@ export OUTPUT_DIR PROGRAM_OUTPUT DEFAULT
  # If the OS is supported (a makefile exists)
  if [ "$makefile" != "" ]; then
  	if [ "$extraArgs" != "" ]; then

@@ -1,45 +1,56 @@
-$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_PI_gtk_library_make_openbsd_mak,v 1.3 2006/01/10 13:29:57 bernd Exp $
---- plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_openbsd.mak.orig	Mon Jan  9 16:11:13 2006
-+++ plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_openbsd.mak	Mon Jan  9 17:00:13 2006
-@@ -24,13 +24,13 @@ CAIRO_PREFIX = swt-cairo
- ATK_PREFIX = swt-atk
- GNOME_PREFIX = swt-gnome
- MOZILLA_PREFIX = swt-mozilla
+$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_PI_gtk_library_make_openbsd_mak,v 1.4 2006/07/07 01:48:55 kurt Exp $
+--- plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_openbsd.mak.orig	Wed Jun  7 15:47:39 2006
++++ plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_openbsd.mak	Wed Jun  7 16:38:14 2006
+@@ -27,15 +27,15 @@ GNOME_PREFIX = swt-gnome
+ MOZILLA_PREFIX = swt-mozilla$(GCC_VERSION)
+ GLX_PREFIX = swt-glx
+ 
 -SWT_LIB = lib$(SWT_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
+-CDE_LIB = lib$(CDE_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
 -AWT_LIB = lib$(AWT_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
 -SWTPI_LIB = lib$(SWTPI_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
 -CAIRO_LIB = lib$(CAIRO_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
 -ATK_LIB = lib$(ATK_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
 -GNOME_LIB = lib$(GNOME_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
 -MOZILLA_LIB = lib$(MOZILLA_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
+-GLX_LIB = lib$(GLX_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
 +SWT_LIB = lib$(SWT_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so.$(LIBswt_gtk_VERSION)
++CDE_LIB = lib$(CDE_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so.$(LIBswt_cde_gtk_VERSION)
 +AWT_LIB = lib$(AWT_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so.$(LIBswt_awt_gtk_VERSION)
 +SWTPI_LIB = lib$(SWTPI_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so.$(LIBswt_pi_gtk_VERSION)
-+CAIRO_LIB = lib$(CAIRO_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so.2.0
++CAIRO_LIB = lib$(CAIRO_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so.$(LIBswt_cairo_gtk_VERSION)
 +ATK_LIB = lib$(ATK_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so.$(LIBswt_atk_gtk_VERSION)
 +GNOME_LIB = lib$(GNOME_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so.$(LIBswt_gnome_gtk_VERSION)
 +MOZILLA_LIB = lib$(MOZILLA_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so.$(LIBswt_mozilla_gtk_VERSION)
++GLX_LIB = lib$(GLX_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so.$(LIBswt_glx_gtk_VERSION)
  
  CAIROCFLAGS = `pkg-config --cflags cairo`
  CAIROLIBS = `pkg-config --libs-only-L cairo` -lcairo
-@@ -81,12 +81,13 @@ CFLAGS = -O -Wall \
+@@ -75,7 +75,7 @@ MOZILLACFLAGS = -O \
+ 	-I$(JAVA_HOME)/include/openbsd \
+ 	${GECKO_INCLUDES} \
+ 	${SWT_PTR_CFLAGS}
+-MOZILLALIBS = -shared -s -Wl,--version-script=mozilla_exports -Bsymbolic \
++MOZILLALIBS = -shared -s -Bsymbolic \
+ 	${GECKO_LIBS}
+ 	
+ SWT_OBJECTS = swt.o callback.o
+@@ -94,12 +94,13 @@ CFLAGS = -O -Wall \
  		-DLINUX -DGTK \
  		-I$(JAVA_HOME)/include \
  		-I$(JAVA_HOME)/include/openbsd \
--		-fpic \
-+		-I/usr/X11R6/include \
-+		-fpic -fPIC \
++		-I/usr/X11R6/include/ \
+ 		-fPIC \
  		${SWT_PTR_CFLAGS}
--LIBS = -shared -fpic -s
-+LIBS = -shared -fpic -fPIC -s
+ LIBS = -shared -fPIC -s
  
  
--all: make_swt make_atk make_gnome make_awt
-+all: make_swt make_atk make_gnome make_awt make_mozilla
+-all: make_swt make_atk make_gnome make_glx
++all: make_swt make_atk make_gnome make_glx make_mozilla
  
  #
  # SWT libs
-@@ -196,10 +197,10 @@ xpcom_stats.o: xpcom_stats.cpp
+@@ -233,10 +234,10 @@ glx_stats.o: glx_stats.c glx_stats.h
  # Install
  #
  install: all

@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared-mozilla,v 1.4 2006/01/10 13:29:57 bernd Exp $
-@lib lib/libswt-mozilla-gtk-${ECLIPSE_BUILD}.so.${LIBswt-mozilla-gtk-3138_VERSION}
+@comment $OpenBSD: PFRAG.shared-mozilla,v 1.5 2006/07/07 01:48:55 kurt Exp $
+@lib lib/libswt-mozilla-gtk-3232.so.${LIBswt-mozilla-gtk-3232_VERSION}

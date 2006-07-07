@@ -1,6 +1,7 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2006/01/10 13:29:57 bernd Exp $
-@lib lib/libcore_3_1_0.so.${LIBcore_3_1_0_VERSION}
-@lib lib/libswt-atk-gtk-${ECLIPSE_BUILD}.so.${LIBswt-atk-gtk-3138_VERSION}
-@lib lib/libswt-awt-gtk-${ECLIPSE_BUILD}.so.${LIBswt-awt-gtk-3138_VERSION}
-@lib lib/libswt-gtk-${ECLIPSE_BUILD}.so.${LIBswt-gtk-3138_VERSION}
-@lib lib/libswt-pi-gtk-${ECLIPSE_BUILD}.so.${LIBswt-pi-gtk-3138_VERSION}
+@comment $OpenBSD: PFRAG.shared,v 1.5 2006/07/07 01:48:55 kurt Exp $
+@lib lib/libswt-atk-gtk-3232.so.${LIBswt-atk-gtk-3232_VERSION}
+@lib lib/libswt-awt-gtk-3232.so.${LIBswt-awt-gtk-3232_VERSION}
+@lib lib/libswt-cairo-gtk-3232.so.${LIBswt-cairo-gtk-3232_VERSION}
+@lib lib/libswt-glx-gtk-3232.so.${LIBswt-glx-gtk-3232_VERSION}
+@lib lib/libswt-gtk-3232.so.${LIBswt-gtk-3232_VERSION}
+@lib lib/libswt-pi-gtk-3232.so.${LIBswt-pi-gtk-3232_VERSION}

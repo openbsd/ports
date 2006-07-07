@@ -1,9 +1,0 @@
-$OpenBSD: patch-plugins_org_eclipse_core_resources_openbsd_permissions_properties,v 1.1 2005/08/09 14:49:09 kurt Exp $
---- plugins/org.eclipse.core.resources.openbsd/permissions.properties.orig	Tue Aug  2 16:10:34 2005
-+++ plugins/org.eclipse.core.resources.openbsd/permissions.properties	Tue Aug  2 16:10:45 2005
-@@ -8,4 +8,4 @@
- # Contributors:
- #     IBM Corporation - initial API and implementation
- ###############################################################################
--permissions.755=os/openbsd/x86/*.so
-+permissions.755=os/openbsd/x86/*.so*

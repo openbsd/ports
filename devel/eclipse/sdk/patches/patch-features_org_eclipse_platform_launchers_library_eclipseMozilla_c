@@ -1,0 +1,12 @@
+$OpenBSD: patch-features_org_eclipse_platform_launchers_library_eclipseMozilla_c,v 1.1 2006/07/07 01:48:55 kurt Exp $
+--- features/org.eclipse.platform.launchers/library/eclipseMozilla.c.orig	Tue Jun 20 11:12:30 2006
++++ features/org.eclipse.platform.launchers/library/eclipseMozilla.c	Tue Jun 20 11:15:21 2006
+@@ -24,7 +24,7 @@
+ /* Filter function used by fixEnvForMozilla() for finding directories
+  * with a desired prefix.
+  */
+-int filter(const struct dirent *dir)
++int filter(struct dirent *dir)
+ {
+ 	char* prefixes[] = {
+ 		"mozilla-",

@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugins_org_eclipse_swt_gtk_linux_x86_64_build_xml,v 1.1 2005/08/09 14:49:09 kurt Exp $
---- plugins/org.eclipse.swt.gtk.linux.x86_64/build.xml.orig	Mon Aug  1 10:50:55 2005
-+++ plugins/org.eclipse.swt.gtk.linux.x86_64/build.xml	Mon Aug  1 10:51:32 2005
-@@ -123,7 +123,7 @@
+$OpenBSD: patch-plugins_org_eclipse_swt_gtk_linux_x86_64_build_xml,v 1.2 2006/07/07 01:48:55 kurt Exp $
+--- plugins/org.eclipse.swt.gtk.linux.x86_64/build.xml.orig	Fri Jun  2 13:29:58 2006
++++ plugins/org.eclipse.swt.gtk.linux.x86_64/build.xml	Wed Jun  7 10:14:43 2006
+@@ -150,7 +150,7 @@
  		
  			<!-- Copy the existing 32 bit SWT source folders to the 64 bit source folder -->
  			<copy todir="${basedir}/src">

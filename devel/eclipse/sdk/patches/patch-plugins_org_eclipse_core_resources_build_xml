@@ -1,0 +1,25 @@
+$OpenBSD: patch-plugins_org_eclipse_core_resources_build_xml,v 1.1 2006/07/07 01:48:55 kurt Exp $
+--- plugins/org.eclipse.core.resources/build.xml.orig	Wed Jun  7 00:04:03 2006
++++ plugins/org.eclipse.core.resources/build.xml	Wed Jun  7 00:05:07 2006
+@@ -102,6 +102,10 @@
+ 			<pathelement path="${build.result.folder}/../org.eclipse.core.filesystem.linux.x86/@dot"/>
+ 			<pathelement path="../org.eclipse.core.filesystem.linux.x86_64/@dot"/>
+ 			<pathelement path="${build.result.folder}/../org.eclipse.core.filesystem.linux.x86_64/@dot"/>
++			<pathelement path="../org.eclipse.core.filesystem.openbsd.x86/@dot"/>
++			<pathelement path="${build.result.folder}/../org.eclipse.core.filesystem.openbsd.x86/@dot"/>
++			<pathelement path="../org.eclipse.core.filesystem.openbsd.x86_64/@dot"/>
++			<pathelement path="${build.result.folder}/../org.eclipse.core.filesystem.openbsd.x86_64/@dot"/>
+ 			<pathelement path="../org.eclipse.core.filesystem.macosx/@dot"/>
+ 			<pathelement path="${build.result.folder}/../org.eclipse.core.filesystem.macosx/@dot"/>
+ 			<pathelement path="../org.eclipse.core.filesystem.qnx.x86/@dot"/>
+@@ -176,6 +180,10 @@
+ 			<pathelement path="${build.result.folder}/../org.eclipse.core.filesystem.linux.x86/@dot"/>
+ 			<pathelement path="../org.eclipse.core.filesystem.linux.x86_64/@dot"/>
+ 			<pathelement path="${build.result.folder}/../org.eclipse.core.filesystem.linux.x86_64/@dot"/>
++			<pathelement path="../org.eclipse.core.filesystem.openbsd.x86/@dot"/>
++			<pathelement path="${build.result.folder}/../org.eclipse.core.filesystem.openbsd.x86/@dot"/>
++			<pathelement path="../org.eclipse.core.filesystem.openbsd.x86_64/@dot"/>
++			<pathelement path="${build.result.folder}/../org.eclipse.core.filesystem.openbsd.x86_64/@dot"/>
+ 			<pathelement path="../org.eclipse.core.filesystem.macosx/@dot"/>
+ 			<pathelement path="${build.result.folder}/../org.eclipse.core.filesystem.macosx/@dot"/>
+ 			<pathelement path="../org.eclipse.core.filesystem.qnx.x86/@dot"/>

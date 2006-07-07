@@ -1,12 +1,12 @@
-$OpenBSD: patch-features_org_eclipse_platform_launchers_library_gtk_make_openbsd_mak,v 1.1 2005/08/09 14:49:09 kurt Exp $
---- features/org.eclipse.platform.launchers/library/gtk/make_openbsd.mak.orig	Sat Aug  6 08:35:42 2005
-+++ features/org.eclipse.platform.launchers/library/gtk/make_openbsd.mak	Sat Aug  6 15:52:54 2005
+$OpenBSD: patch-features_org_eclipse_platform_launchers_library_gtk_make_openbsd_mak,v 1.2 2006/07/07 01:48:55 kurt Exp $
+--- features/org.eclipse.platform.launchers/library/gtk/make_openbsd.mak.orig	Tue Jun  6 22:47:48 2006
++++ features/org.eclipse.platform.launchers/library/gtk/make_openbsd.mak	Tue Jun  6 23:29:54 2006
 @@ -23,10 +23,9 @@
  # DEFAULT_WS      - the default value of the "-ws" switch
  
  # Define the object modules to be compiled and flags.
 -CC=gcc
- OBJS = eclipse.o eclipseUtil.o eclipseShm.o eclipseConfig.o eclipseGtk.o
+ OBJS = eclipse.o eclipseUtil.o eclipseShm.o eclipseConfig.o eclipseMozilla.o eclipseGtk.o
  EXEC = $(PROGRAM_OUTPUT)
 -LIBS = `pkg-config --libs-only-L gtk+-2.0` -lgtk-x11-2.0 -lgdk_pixbuf-2.0 -lgobject-2.0 -lgdk-x11-2.0
 +LIBS = `pkg-config --libs gtk+-2.0`

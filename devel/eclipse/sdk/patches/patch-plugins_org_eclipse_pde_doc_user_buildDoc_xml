@@ -1,12 +1,12 @@
-$OpenBSD: patch-plugins_org_eclipse_pde_doc_user_buildDoc_xml,v 1.1 2005/08/09 14:49:09 kurt Exp $
---- plugins/org.eclipse.pde.doc.user/buildDoc.xml.orig	Mon Aug  1 08:36:52 2005
-+++ plugins/org.eclipse.pde.doc.user/buildDoc.xml	Mon Aug  1 08:37:07 2005
-@@ -52,7 +52,7 @@
+$OpenBSD: patch-plugins_org_eclipse_pde_doc_user_buildDoc_xml,v 1.2 2006/07/07 01:48:55 kurt Exp $
+--- plugins/org.eclipse.pde.doc.user/buildDoc.xml.orig	Fri Jun  2 13:29:59 2006
++++ plugins/org.eclipse.pde.doc.user/buildDoc.xml	Thu Jun 22 13:03:55 2006
+@@ -53,7 +53,7 @@
  		<mkdir dir="reference/api"/>
  
  		<exec dir="." executable="${javadoc}" output="doc.bin.log">
 -			<arg line="@${basedir}/${optionsFile} -J-Xmx1000M" />
-+			<arg line="@${basedir}/${optionsFile} -J-Xmx256M" />
++			<arg line="@${basedir}/${optionsFile} -J-Xmx450M -J-XX:NewRatio=10" />
  		</exec>
  	</target>
  

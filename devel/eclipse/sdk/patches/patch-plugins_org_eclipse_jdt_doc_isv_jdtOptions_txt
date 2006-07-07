@@ -1,0 +1,15 @@
+$OpenBSD: patch-plugins_org_eclipse_jdt_doc_isv_jdtOptions_txt,v 1.1 2006/07/07 01:48:55 kurt Exp $
+--- plugins/org.eclipse.jdt.doc.isv/jdtOptions.txt.orig	Mon Jun 19 23:48:30 2006
++++ plugins/org.eclipse.jdt.doc.isv/jdtOptions.txt	Mon Jun 19 23:49:06 2006
+@@ -86,9 +86,9 @@
+ ;org.eclipse.jdt.core.*"
+ -group "Java Development Tools UI Plug-in Packages" "org.eclipse.jdt.ui
+ ;org.eclipse.jdt.ui.*"
+--link http://java.sun.com/j2se/1.5/docs/api
++-linkoffline http://java.sun.com/j2se/1.5/docs/api ../../15api
+ -linkoffline ./../../../org.eclipse.platform.doc.isv/reference/api ../org.eclipse.platform.doc.isv/reference/api
+--link http://bundles.osgi.org/javadoc/r4
++-linkoffline http://bundles.osgi.org/javadoc/r4 ../../r4
+ 
+ org.eclipse.jdt.core
+ org.eclipse.jdt.core.compiler

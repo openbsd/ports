@@ -1,23 +1,25 @@
-# $OpenBSD: Makefile,v 1.16 2006/06/13 13:21:48 bernd Exp $
+# $OpenBSD: Makefile,v 1.17 2006/07/07 01:48:54 kurt Exp $
 
-ONLY_FOR_ARCHS=		i386
+ONLY_FOR_ARCHS=		amd64 i386
 
 COMMENT=		"general-purpose, extensible IDE for Java & other langs"
 COMMENT-gnome=		"gnome integration library for eclipse"
 COMMENT-mozilla=	"mozilla integration library for eclipse HTML Browser Widget"
 
-ECLIPSE_VER=		3.1
+ECLIPSE_VER=		3.2
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
-PKGNAME=		eclipse-sdk-${ECLIPSE_VER}p6
-PKGNAME-gnome=		eclipse-sdk-gnome-${ECLIPSE_VER}p6
-PKGNAME-mozilla=	eclipse-sdk-mozilla-${ECLIPSE_VER}p6
-SHARED_LIBS=		core_3_1_0		2.0 \
-			swt-atk-gtk-3138	2.0 \
-			swt-awt-gtk-3138	2.0 \
-			swt-gtk-3138		2.0 \
-			swt-pi-gtk-3138		2.0 \
-			swt-gnome-gtk-3138	2.0 \
-			swt-mozilla-gtk-3138	2.0
+PKGNAME=		eclipse-sdk-${ECLIPSE_VER}
+PKGNAME-gnome=		eclipse-sdk-gnome-${ECLIPSE_VER}
+PKGNAME-mozilla=	eclipse-sdk-mozilla-${ECLIPSE_VER}
+SHARED_LIBS=		swt-atk-gtk-3232	3.0 \
+			swt-cde-gtk-3232	3.0 \
+			swt-awt-gtk-3232	3.0 \
+			swt-gtk-3232		3.0 \
+			swt-pi-gtk-3232		3.0 \
+			swt-cairo-gtk-3232	3.0 \
+			swt-gnome-gtk-3232	3.0 \
+			swt-mozilla-gtk-3232	3.0 \
+			swt-glx-gtk-3232	3.0
 
 CATEGORIES=		devel/eclipse java 
 
@@ -37,21 +39,20 @@ PERMIT_DISTFILES_CDROM=	"commercial distribution defend and indemnify clauses"
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITE_ECLIPSE+=	\
-	ftp://ftp.cse.buffalo.edu/pub/Eclipse/eclipse/downloads/drops/ \
+	http://ftp.osuosl.org/pub/eclipse/eclipse/downloads/drops/ \
 	http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/ \
 	ftp://eclipse.mirrors.tds.net/pub/eclipse.org/eclipse/downloads/drops/ \
 	http://eclipse.objectweb.org/downloads/drops/ \
 	http://mirror.pacific.net.au/eclipse/eclipse/downloads/drops/ \
-	ftp://download.eclipse.org/ \
-	ftp://download2.eclipse.org/
-
-MASTER_SITES=		${MASTER_SITE_ECLIPSE:=R-3.1-200506271435/}
+	http://download2.eclipse.org/eclipse/downloads/drops/
+ 
+MASTER_SITES=		${MASTER_SITE_ECLIPSE:=R-3.2-200606291905/}
 EXTRACT_SUFX=		.zip
 
 VMEM_WARNING=		Yes
 
 MODULES=		java
-MODJAVA_VER=		1.4+
+MODJAVA_VER=		1.5+
 
 BUILD_DEPENDS=		:mozilla-devel->=1.7.11:www/mozilla,-devel \
 			:apache-ant->=1.6.1:devel/apache-ant \
@@ -79,8 +80,8 @@ RUN_DEPENDS=		:${PKGNAME}:devel/eclipse/sdk
 LIB_DEPENDS=		${MOZILLA_LIB_DEPENDS}
 . else
 MODULES+=		devel/gettext
-WANTLIB=		X11 Xtst c m fontconfig freetype \
-			atk-1.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 \
+WANTLIB=		GL GLU X11 Xtst c m fontconfig \
+			freetype atk-1.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 \
 			gobject-2.0.0.0 gthread-2.0.0.0 pango-1.0.0.0 \
 			pangoft2-1.0.0.0 pangocairo-1.0.0.0 cairo
 . endif
@@ -96,10 +97,13 @@ LIB_DEPENDS+=		${MOZILLA_LIB_DEPENDS}
 
 MOZILLA_HOME=		${LOCALBASE}/mozilla
 ECLIPSE_WS=		gtk
-ECLIPSE_BUILD=		3138
-ECLIPSE_COREVER=	3.1.0
+ECLIPSE_BUILD=		3232
 ECLIPSE_OS=		openbsd
+.if ${MACHINE_ARCH} == "i386"
 ECLIPSE_ARCH=		x86
+.else
+ECLIPSE_ARCH=		x86_64
+.endif
 
 MAKE_ENV=		ECLIPSE_BUILD=${ECLIPSE_BUILD} \
 			ECLIPSE_ARCH=${ECLIPSE_ARCH} \
@@ -108,12 +112,15 @@ MAKE_ENV=		ECLIPSE_BUILD=${ECLIPSE_BUILD} \
 			JAVA_HOME=${JAVA_HOME} \
 			MOZILLA_HOME=${MOZILLA_HOME} \
 			CC="${CC}" CXX="${CXX}" \
-			LIBswt_atk_gtk_VERSION=${LIBswt-atk-gtk-3138_VERSION} \
-			LIBswt_awt_gtk_VERSION=${LIBswt-awt-gtk-3138_VERSION} \
-			LIBswt_gtk_VERSION=${LIBswt-gtk-3138_VERSION} \
-			LIBswt_pi_gtk_VERSION=${LIBswt-pi-gtk-3138_VERSION} \
-			LIBswt_gnome_gtk_VERSION=${LIBswt-gnome-gtk-3138_VERSION} \
-			LIBswt_mozilla_gtk_VERSION=${LIBswt-mozilla-gtk-3138_VERSION}
+			LIBswt_atk_gtk_VERSION=${LIBswt-atk-gtk-3232_VERSION} \
+			LIBswt_cdt_gtk_VERSION=${LIBswt-cdt-gtk-3232_VERSION} \
+			LIBswt_awt_gtk_VERSION=${LIBswt-awt-gtk-3232_VERSION} \
+			LIBswt_gtk_VERSION=${LIBswt-gtk-3232_VERSION} \
+			LIBswt_pi_gtk_VERSION=${LIBswt-pi-gtk-3232_VERSION} \
+			LIBswt_cairo_gtk_VERSION=${LIBswt-cairo-gtk-3232_VERSION} \
+			LIBswt_gnome_gtk_VERSION=${LIBswt-gnome-gtk-3232_VERSION} \
+			LIBswt_mozilla_gtk_VERSION=${LIBswt-mozilla-gtk-3232_VERSION} \
+			LIBswt_glx_gtk_VERSION=${LIBswt-glx-gtk-3232_VERSION}
 
 FAKE_FLAGS=		${MAKE_ENV}
 
@@ -121,31 +128,16 @@ NO_REGRESS=		Yes
 
 WRKDIST=		${WRKDIR}
 
-SUBST_VARS=		ECLIPSE_COREVER ECLIPSE_BUILD
-
-FIXUP_FILES=		build \
-			features/org.eclipse.platform.launchers/target.build.properties \
-			plugins/org.eclipse.swt/Eclipse\ SWT\ PI/gtk/library/build.xml \
-			plugins/org.eclipse.swt.gtk.openbsd.x86/build.xml \
-			plugins/org.eclipse.update.core.openbsd/src/build.xml
+SUBST_VARS=		ECLIPSE_ARCH
 
 # Build out openbsd source from linux source
-# Avoid patch problems by adding the missing last line feeds
 pre-patch:
 	@exec ${SETENV} WRKSRC=${WRKSRC} ECLIPSE_WS=${ECLIPSE_WS} \
 		${SCRIPTDIR}/prepatch.sh
-.for file in ${FIXUP_FILES}
-	@echo >> ${WRKSRC}/${file}
-.endfor
-
-# Needed for SHARED_LIBS support.
-pre-build:
-	@perl -pi -e s,%%LIBcore_3_1_0_VERSION%%,${LIBcore_3_1_0_VERSION},g \
-		${WRKSRC}/plugins/org.eclipse.core.resources.openbsd/build.xml
 
 do-build:
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		./build -os ${ECLIPSE_OS} -ws ${ECLIPSE_WS} -arch ${ECLIPSE_ARCH} -compilelibs
+		./build -os ${ECLIPSE_OS} -ws ${ECLIPSE_WS} -arch ${ECLIPSE_ARCH} -java5home ${JAVA_HOME} -compilelibs
 
 do-install:
 	@tar xzf ${WRKBUILD}/result/${ECLIPSE_OS}-${ECLIPSE_WS}-${ECLIPSE_ARCH}-sdk.tar.gz \
@@ -156,7 +148,6 @@ do-install:
 		${WRKBUILD}/eclipse.in > ${WRKBUILD}/eclipse.tmp
 	${INSTALL_SCRIPT} ${WRKBUILD}/eclipse.tmp $(PREFIX)/bin/eclipse
 	${INSTALL_PROGRAM} ${WRKBUILD}/launchertmp/eclipse ${PREFIX}/eclipse/eclipse
-	${INSTALL_DATA} ${WRKBUILD}/plugins/org.eclipse.core.resources.openbsd/os/openbsd/x86/libcore_*.so.* ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKBUILD}/plugins/org.eclipse.swt.gtk.openbsd.x86/libswt-*.so.* ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKBUILD}/plugins/org.eclipse.swt.gtk.openbsd.${ECLIPSE_ARCH}/libswt-*.so.* ${PREFIX}/lib
 
 .include <bsd.port.mk>

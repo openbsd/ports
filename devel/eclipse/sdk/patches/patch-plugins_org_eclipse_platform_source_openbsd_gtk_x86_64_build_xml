@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_org_eclipse_platform_source_openbsd_gtk_x86_64_build_xml,v 1.1 2006/07/07 01:48:55 kurt Exp $
+--- plugins/org.eclipse.platform.source.openbsd.gtk.x86_64/build.xml.orig	Fri Jun 30 19:26:47 2006
++++ plugins/org.eclipse.platform.source.openbsd.gtk.x86_64/build.xml	Sat Jul  1 13:12:09 2006
+@@ -68,7 +68,7 @@
+ 	<target name="gather.bin.parts" depends="init" if="destination.temp.folder">
+ 		<mkdir dir="${destination.temp.folder}/org.eclipse.platform.source.openbsd.gtk.x86_64_3.2.0.v20060609m-BBt47n6hlEUsvBO"/>
+ 		<copy todir="${destination.temp.folder}/org.eclipse.platform.source.openbsd.gtk.x86_64_3.2.0.v20060609m-BBt47n6hlEUsvBO" failonerror="true" overwrite="false">
+-			<fileset dir="${basedir}" includes="about.html,fragment.xml,src/**,META-INF/"			/>
++			<fileset dir="${basedir}" includes="about.html,fragment.xml,src/**,META-INF/" excludes="**/*.orig"/>
+ 		</copy>
+ 		<eclipse.versionReplacer path="${destination.temp.folder}/org.eclipse.platform.source.openbsd.gtk.x86_64_3.2.0.v20060609m-BBt47n6hlEUsvBO" version="3.2.0.v20060609m-BBt47n6hlEUsvBO"/>
+ 	</target>

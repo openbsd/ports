@@ -1,12 +1,12 @@
-$OpenBSD: patch-plugins_org_eclipse_platform_doc_isv_buildDoc_xml,v 1.1 2005/08/09 14:49:09 kurt Exp $
---- plugins/org.eclipse.platform.doc.isv/buildDoc.xml.orig	Mon Aug  1 08:29:07 2005
-+++ plugins/org.eclipse.platform.doc.isv/buildDoc.xml	Mon Aug  1 08:29:19 2005
-@@ -101,7 +101,7 @@
- 		<!--retrieve osgi javadoc-->
- 		<unzip src="../org.eclipse.osgi/osgi/osgiJavaDoc.zip" dest="reference/osgi" />
+$OpenBSD: patch-plugins_org_eclipse_platform_doc_isv_buildDoc_xml,v 1.2 2006/07/07 01:48:55 kurt Exp $
+--- plugins/org.eclipse.platform.doc.isv/buildDoc.xml.orig	Fri Jun  2 13:29:59 2006
++++ plugins/org.eclipse.platform.doc.isv/buildDoc.xml	Thu Jun 22 13:03:42 2006
+@@ -111,7 +111,7 @@
+ 		<mkdir dir="reference/api"/>
+ 
  		<exec dir="." executable="${javadoc}" output="doc.bin.log">
 -			<arg line="@${basedir}/${optionsFile} -J-Xmx1000M" />
-+			<arg line="@${basedir}/${optionsFile} -J-Xmx256M" />
++			<arg line="@${basedir}/${optionsFile} -J-Xmx450M -J-XX:NewRatio=10" />
  		</exec>
- 
+ 		
  		<!--workaround for bug 101048-->

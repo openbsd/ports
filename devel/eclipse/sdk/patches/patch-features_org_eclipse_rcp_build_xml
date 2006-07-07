@@ -1,9 +1,9 @@
-$OpenBSD: patch-features_org_eclipse_rcp_build_xml,v 1.1 2005/08/09 14:49:09 kurt Exp $
---- features/org.eclipse.rcp/build.xml.orig	Mon Jun 27 14:52:51 2005
-+++ features/org.eclipse.rcp/build.xml	Tue Aug  2 14:38:39 2005
-@@ -72,6 +72,11 @@
- 			<property name="os" value="linux"/>
- 			<property name="ws" value="gtk"/>
+$OpenBSD: patch-features_org_eclipse_rcp_build_xml,v 1.2 2006/07/07 01:48:55 kurt Exp $
+--- features/org.eclipse.rcp/build.xml.orig	Thu Jun 29 19:20:53 2006
++++ features/org.eclipse.rcp/build.xml	Sat Jul  1 13:25:31 2006
+@@ -47,6 +47,11 @@
+ 			<property name="os" value="hpux"/>
+ 			<property name="ws" value="motif"/>
  		</ant>
 +		<ant antfile="build.xml" dir="../../plugins/org.eclipse.swt.gtk.openbsd.x86" target="${target}">
 +			<property name="arch" value="x86"/>
@@ -13,32 +13,71 @@ $OpenBSD: patch-features_org_eclipse_rcp_build_xml,v 1.1 2005/08/09 14:49:09 kur
  		<ant antfile="build.xml" dir="../../plugins/org.eclipse.swt.motif.aix.ppc" target="${target}">
  			<property name="arch" value="ppc"/>
  			<property name="os" value="aix"/>
-@@ -185,7 +190,7 @@
- 		<copy todir="${feature.base}/features/org.eclipse.rcp_3.1.0" failonerror="true" overwrite="false">
+@@ -167,6 +172,11 @@
+ 			<property name="os" value="linux"/>
+ 			<property name="ws" value="gtk"/>
+ 		</ant>
++		<ant antfile="build.xml" dir="../../plugins/org.eclipse.swt.gtk.openbsd.x86_64" target="${target}">
++			<property name="arch" value="x86_64"/>
++			<property name="os" value="openbsd"/>
++			<property name="ws" value="gtk"/>
++		</ant>
+ 	</target>
+ 	<target name="all.features" depends="init">
+ 	</target>
+@@ -225,7 +235,7 @@
+ 		<copy todir="${feature.base}/features/org.eclipse.rcp_3.2.0.v20060609m-Swbi2VrNoh-MeGG" failonerror="true" overwrite="false">
  			<fileset dir="${basedir}" includes="feature.xml,license.html,epl-v10.html,feature.properties,eclipse_update_120.jpg"			/>
  		</copy>
--		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.rcp_3.1.0/feature.xml"  selfVersion="3.1.0" featureIds="" pluginIds="org.eclipse.core.commands,3.1.0,org.eclipse.core.expressions,3.1.0,org.eclipse.core.runtime,3.1.0,org.eclipse.osgi,3.1.0,org.eclipse.help,3.1.0,org.eclipse.swt,3.1.0,org.eclipse.jface,3.1.0,org.eclipse.ui,3.1.0,org.eclipse.ui.workbench,3.1.0,org.eclipse.update.configurator,3.1.0,org.eclipse.swt.win32.win32.x86,3.1.0,org.eclipse.swt.gtk.linux.x86,3.1.0,org.eclipse.swt.gtk.solaris.sparc,3.1.0,org.eclipse.swt.gtk.linux.ppc,3.1.0,org.eclipse.swt.gtk.linux.x86_64,3.1.0,org.eclipse.swt.carbon.macosx.ppc,3.1.0,org.eclipse.swt.motif.aix.ppc,3.1.0,org.eclipse.swt.motif.hpux.PA_RISC,3.1.0,org.eclipse.swt.motif.linux.x86,3.1.0,org.eclipse.swt.gtk.linux.ia64,3.1.0,org.eclipse.swt.motif.solaris.sparc,3.1.0,org.eclipse.swt.photon.qnx.x86,3.1.0,org.eclipse.swt.motif.hpux.ia64_32,3.1.0,org.eclipse.rcp,3.1.0,"/>
-+		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.rcp_3.1.0/feature.xml"  selfVersion="3.1.0" featureIds="" pluginIds="org.eclipse.core.commands,3.1.0,org.eclipse.core.expressions,3.1.0,org.eclipse.core.runtime,3.1.0,org.eclipse.osgi,3.1.0,org.eclipse.help,3.1.0,org.eclipse.swt,3.1.0,org.eclipse.jface,3.1.0,org.eclipse.ui,3.1.0,org.eclipse.ui.workbench,3.1.0,org.eclipse.update.configurator,3.1.0,org.eclipse.swt.win32.win32.x86,3.1.0,org.eclipse.swt.gtk.linux.x86,3.1.0,org.eclipse.swt.gtk.openbsd.x86,3.1.0,org.eclipse.swt.gtk.solaris.sparc,3.1.0,org.eclipse.swt.gtk.linux.ppc,3.1.0,org.eclipse.swt.gtk.linux.x86_64,3.1.0,org.eclipse.swt.carbon.macosx.ppc,3.1.0,org.eclipse.swt.motif.aix.ppc,3.1.0,org.eclipse.swt.motif.hpux.PA_RISC,3.1.0,org.eclipse.swt.motif.linux.x86,3.1.0,org.eclipse.swt.gtk.linux.ia64,3.1.0,org.eclipse.swt.motif.solaris.sparc,3.1.0,org.eclipse.swt.photon.qnx.x86,3.1.0,org.eclipse.swt.motif.hpux.ia64_32,3.1.0,org.eclipse.rcp,3.1.0,"/>
+-		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.rcp_3.2.0.v20060609m-Swbi2VrNoh-MeGG/feature.xml"  selfVersion="3.2.0.v20060609m-Swbi2VrNoh-MeGG" featureIds="" pluginIds="com.ibm.icu,3.4.4.1,org.eclipse.core.commands,3.2.0.I20060605-1400,org.eclipse.core.jobs,3.2.0.v20060603,org.eclipse.core.expressions,3.2.0.v20060605-1400,org.eclipse.core.runtime,3.2.0.v20060603,org.eclipse.core.runtime.compatibility.auth,3.2.0.v20060601,org.eclipse.osgi,3.2.0.v20060601,org.eclipse.help,3.2.0.v20060602,org.eclipse.swt,3.2.0.v3232o,org.eclipse.jface,3.2.0.I20060605-1400,org.eclipse.jface.databinding,1.0.0.I20060605-1400,org.eclipse.ui,3.2.0.I20060605-1400,org.eclipse.ui.workbench,3.2.0.I20060605-1400,org.eclipse.update.configurator,3.2.0.v20060605,org.eclipse.swt.win32.win32.x86,3.2.0.v3232m,org.eclipse.swt.gtk.linux.x86,3.2.0.v3232m,org.eclipse.swt.gtk.solaris.sparc,3.2.0.v3232m,org.eclipse.swt.gtk.solaris.x86,3.2.0.HEAD,org.eclipse.swt.gtk.linux.ppc,3.2.0.v3232m,org.eclipse.swt.gtk.linux.x86_64,3.2.0.v3232m,org.eclipse.swt.carbon.macosx,3.2.0.v3232m,org.eclipse.swt.motif.aix.ppc,3.2.0.v3232m,org.eclipse.swt.motif.hpux.PA_RISC,3.2.0.v3232m,org.eclipse.swt.motif.linux.x86,3.2.0.v3232m,org.eclipse.swt.gtk.linux.ia64,3.2.0.HEAD,org.eclipse.swt.motif.solaris.sparc,3.2.0.v3232m,org.eclipse.swt.photon.qnx.x86,3.2.0.v3232m,org.eclipse.swt.motif.hpux.ia64_32,3.2.0.HEAD,org.eclipse.rcp,3.2.0.v20060605,org.eclipse.core.contenttype,3.2.0.v20060603,org.eclipse.equinox.common,3.2.0.v20060603,org.eclipse.equinox.preferences,3.2.0.v20060601,org.eclipse.equinox.registry,3.2.0.v20060601,"/>
++		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.rcp_3.2.0.v20060609m-Swbi2VrNoh-MeGG/feature.xml"  selfVersion="3.2.0.v20060609m-Swbi2VrNoh-MeGG" featureIds="" pluginIds="com.ibm.icu,3.4.4.1,org.eclipse.core.commands,3.2.0.I20060605-1400,org.eclipse.core.jobs,3.2.0.v20060603,org.eclipse.core.expressions,3.2.0.v20060605-1400,org.eclipse.core.runtime,3.2.0.v20060603,org.eclipse.core.runtime.compatibility.auth,3.2.0.v20060601,org.eclipse.osgi,3.2.0.v20060601,org.eclipse.help,3.2.0.v20060602,org.eclipse.swt,3.2.0.v3232o,org.eclipse.jface,3.2.0.I20060605-1400,org.eclipse.jface.databinding,1.0.0.I20060605-1400,org.eclipse.ui,3.2.0.I20060605-1400,org.eclipse.ui.workbench,3.2.0.I20060605-1400,org.eclipse.update.configurator,3.2.0.v20060605,org.eclipse.swt.win32.win32.x86,3.2.0.v3232m,org.eclipse.swt.gtk.linux.x86,3.2.0.v3232m,org.eclipse.swt.gtk.solaris.sparc,3.2.0.v3232m,org.eclipse.swt.gtk.solaris.x86,3.2.0.HEAD,org.eclipse.swt.gtk.linux.ppc,3.2.0.v3232m,org.eclipse.swt.gtk.linux.x86_64,3.2.0.v3232m,org.eclipse.swt.carbon.macosx,3.2.0.v3232m,org.eclipse.swt.motif.aix.ppc,3.2.0.v3232m,org.eclipse.swt.motif.hpux.PA_RISC,3.2.0.v3232m,org.eclipse.swt.motif.linux.x86,3.2.0.v3232m,org.eclipse.swt.gtk.linux.ia64,3.2.0.HEAD,org.eclipse.swt.motif.solaris.sparc,3.2.0.v3232m,org.eclipse.swt.photon.qnx.x86,3.2.0.v3232m,org.eclipse.swt.motif.hpux.ia64_32,3.2.0.HEAD,org.eclipse.rcp,3.2.0.v20060605,org.eclipse.core.contenttype,3.2.0.v20060603,org.eclipse.equinox.common,3.2.0.v20060603,org.eclipse.equinox.preferences,3.2.0.v20060601,org.eclipse.equinox.registry,3.2.0.v20060601,org.eclipse.swt.gtk.openbsd.x86,3.2.0.v3232m,org.eclipse.swt.gtk.openbsd.x86_64,3.2.0.v3232m,"/>
  		<antcall target="rootFiles${os}_${ws}_${arch}"/>
  	</target>
  	<target name="rootFileswin32_win32_x86">
-@@ -210,6 +215,19 @@
- 		</copy>
+@@ -266,6 +276,18 @@
  		<chmod perm="755" dir="${feature.base}/linux.gtk.x86/${collectingFolder}" includes="eclipse" /> 
  		<chmod perm="755" dir="${feature.base}/linux.gtk.x86/${collectingFolder}" includes="*.so*" /> 
-+	</target>
+ 	</target>
 +	<target name="rootFilesopenbsd_gtk_x86">
 +		<mkdir dir="${feature.base}/openbsd.gtk.x86/${collectingFolder}"/>
 +		<copy todir="${feature.base}/openbsd.gtk.x86/${collectingFolder}" failonerror="true" overwrite="true">
 +			<fileset dir="${basedir}/../../features/org.eclipse.platform/about_files/openbsd.gtk.x86" includes="**"			/>
 +			<fileset dir="${basedir}/../../features/org.eclipse.platform.launchers/bin/gtk/openbsd/x86" includes="**"			/>
-+			<fileset dir="${basedir}/../../plugins/org.eclipse.swt.gtk.openbsd.x86" includes="libcairo.so.2.0"			/>
 +			<fileset dir="${basedir}/rootfiles" includes="**"			/>
 +			<fileset dir="${basedir}/../org.eclipse.platform/rootfiles" includes="**"			/>
 +			<fileset dir="${basedir}/../../plugins/org.eclipse.platform" includes="startup.jar"			/>
 +		</copy>
 +		<chmod perm="755" dir="${feature.base}/openbsd.gtk.x86/${collectingFolder}" includes="eclipse" /> 
 +		<chmod perm="755" dir="${feature.base}/openbsd.gtk.x86/${collectingFolder}" includes="*.so.*" /> 
- 	</target>
++	</target>
  	<target name="rootFileslinux_gtk_ppc">
  		<mkdir dir="${feature.base}/linux.gtk.ppc/${collectingFolder}"/>
+ 		<copy todir="${feature.base}/linux.gtk.ppc/${collectingFolder}" failonerror="true" overwrite="true">
+@@ -297,6 +319,18 @@
+ 		<chmod perm="755" dir="${feature.base}/linux.gtk.x86_64/${collectingFolder}" includes="eclipse" /> 
+ 		<chmod perm="755" dir="${feature.base}/linux.gtk.x86_64/${collectingFolder}" includes="*.so*" /> 
+ 	</target>
++	<target name="rootFilesopenbsd_gtk_x86_64">
++		<mkdir dir="${feature.base}/openbsd.gtk.x86_64/${collectingFolder}"/>
++		<copy todir="${feature.base}/openbsd.gtk.x86_64/${collectingFolder}" failonerror="true" overwrite="true">
++			<fileset dir="${basedir}/../../features/org.eclipse.platform/about_files/openbsd.gtk.x86_64" includes="**"			/>
++			<fileset dir="${basedir}/../../features/org.eclipse.platform.launchers/bin/gtk/openbsd/x86_64" includes="**"			/>
++			<fileset dir="${basedir}/rootfiles" includes="**"			/>
++			<fileset dir="${basedir}/../org.eclipse.platform/rootfiles" includes="**"			/>
++			<fileset dir="${basedir}/../../plugins/org.eclipse.platform" includes="startup.jar"			/>
++		</copy>
++		<chmod perm="755" dir="${feature.base}/openbsd.gtk.x86_64/${collectingFolder}" includes="eclipse" /> 
++		<chmod perm="755" dir="${feature.base}/openbsd.gtk.x86_64/${collectingFolder}" includes="*.so*" /> 
++	</target>
+ 	<target name="rootFileslinux_gtk_ia64">
+ 		<mkdir dir="${feature.base}/linux.gtk.ia64/${collectingFolder}"/>
+ 		<copy todir="${feature.base}/linux.gtk.ia64/${collectingFolder}" failonerror="true" overwrite="true">
+@@ -414,6 +448,8 @@
+ 		<antcall target="rootFileshpux_motif_ia64"/>
+ 		<antcall target="rootFileshpux_motif_ia64_32"/>
+ 		<antcall target="rootFilesqnx_photon_x86"/>
++		<antcall target="rootFilesopenbsd_gtk_x86"/>
++		<antcall target="rootFilesopenbsd_gtk_x86_64"/>
+ 	</target>
+ 
+ 	<target name="zip.distribution" depends="init" description="Create a zip containing all the plug-ins and features for the feature: org.eclipse.rcp.">

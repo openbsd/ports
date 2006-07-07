@@ -1,0 +1,14 @@
+$OpenBSD: patch-plugins_org_eclipse_platform_doc_isv_platformOptions_txt,v 1.1 2006/07/07 01:48:55 kurt Exp $
+--- plugins/org.eclipse.platform.doc.isv/platformOptions.txt.orig	Thu Jun 29 19:20:53 2006
++++ plugins/org.eclipse.platform.doc.isv/platformOptions.txt	Fri Jun 30 19:27:01 2006
+@@ -109,8 +109,8 @@
+ -doctitle "Eclipse Platform API Specification"
+ -header "<b>Eclipse Platform</b><br>Release 3.2"
+ -bottom '<font size="-1"><p><a href="{@docRoot}/../misc/api-usage-rules.html">Guidelines for using Eclipse APIs</a>.</p><p>Copyright (c) IBM Corp. and others 2000, 2006. All rights reserved.</p></font>'
+--link http://java.sun.com/j2se/1.4.2/docs/api
+--link http://bundles.osgi.org/javadoc/r4
++-linkoffline http://java.sun.com/j2se/1.4.2/docs/api ../../142api
++-linkoffline http://bundles.osgi.org/javadoc/r4 ../../r4
+ 
+ org.eclipse.ant.core
+ org.eclipse.compare

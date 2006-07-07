@@ -1,0 +1,23 @@
+$OpenBSD: patch-features_org_eclipse_platform_launchers_target_build_properties,v 1.1 2006/07/07 01:48:55 kurt Exp $
+--- features/org.eclipse.platform.launchers/target.build.properties.orig	Tue Jun  6 23:24:05 2006
++++ features/org.eclipse.platform.launchers/target.build.properties	Tue Jun  6 23:24:47 2006
+@@ -20,6 +20,9 @@ root.win32.win32.x86=bin/win32/win32/x86
+ root.linux.gtk.x86=bin/gtk/linux/x86,gtk_root
+ root.linux.gtk.x86.permissions.755=libcairo-swt.so
+ 
++root.openbsd.gtk.x86=bin/gtk/openbsd/x86,gtk_root
++root.openbsd.gtk.x86.permissions.755=libcairo-swt.so
++
+ root.macosx.carbon.ppc=bin/carbon/macosx/ppc
+ root.macosx.carbon.ppc.permissions.755=${launcherName}.app/Contents/MacOS/${launcherName}, ${launcherName}.app/Contents/Resources/Splash.app/Contents/MacOS/${launcherName}
+ 
+@@ -35,6 +38,9 @@ root.solaris.gtk.sparc=bin/gtk/solaris/s
+ 
+ root.linux.gtk.x86_64=bin/gtk/linux/x86_64,gtk_root
+ root.linux.gtk.x86_64.permissions.755=libcairo-swt.so
++
++root.openbsd.gtk.x86_64=bin/gtk/openbsd/x86_64,gtk_root
++root.openbsd.gtk.x86_64.permissions.755=libcairo-swt.so
+ 
+ root.qnx.photon.x86=bin/photon/qnx/x86
+ 

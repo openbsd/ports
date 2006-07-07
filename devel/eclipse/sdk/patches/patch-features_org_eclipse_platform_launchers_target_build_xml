@@ -1,0 +1,46 @@
+$OpenBSD: patch-features_org_eclipse_platform_launchers_target_build_xml,v 1.1 2006/07/07 01:48:55 kurt Exp $
+--- features/org.eclipse.platform.launchers/target.build.xml.orig	Tue Jun  6 23:21:36 2006
++++ features/org.eclipse.platform.launchers/target.build.xml	Tue Jun  6 23:23:45 2006
+@@ -73,6 +73,16 @@
+ 		<chmod perm="755" dir="${feature.base}/linux.gtk.x86/${collectingFolder}" includes="${launcherName}" /> 
+ 		<chmod perm="755" dir="${feature.base}/linux.gtk.x86/${collectingFolder}" includes="libcairo-swt.so" /> 
+ 	</target>
++	<target name="rootFilesopenbsd_gtk_x86">
++		<mkdir dir="${feature.base}/openbsd.gtk.x86/${collectingFolder}"/>
++		<copy todir="${feature.base}/openbsd.gtk.x86/${collectingFolder}" failonerror="true" overwrite="true">
++			<fileset dir="${basedir}/bin/gtk/openbsd/x86" includes="**"			/>
++			<fileset dir="${basedir}/gtk_root" includes="**"			/>
++			<fileset dir="${basedir}/bin" includes="startup.jar"			/>
++		</copy>
++		<chmod perm="755" dir="${feature.base}/openbsd.gtk.x86/${collectingFolder}" includes="${launcherName}" /> 
++		<chmod perm="755" dir="${feature.base}/openbsd.gtk.x86/${collectingFolder}" includes="libcairo-swt.so" /> 
++	</target>
+ 	<target name="rootFileslinux_gtk_ppc">
+ 		<mkdir dir="${feature.base}/linux.gtk.ppc/${collectingFolder}"/>
+ 		<copy todir="${feature.base}/linux.gtk.ppc/${collectingFolder}" failonerror="true" overwrite="true">
+@@ -97,6 +107,16 @@
+ 		<chmod perm="755" dir="${feature.base}/linux.gtk.x86_64/${collectingFolder}" includes="${launcherName}" /> 
+ 		<chmod perm="755" dir="${feature.base}/linux.gtk.x86_64/${collectingFolder}" includes="libcairo-swt.so" /> 
+ 	</target>
++	<target name="rootFilesopenbsd_gtk_x86_64">
++		<mkdir dir="${feature.base}/openbsd.gtk.x86_64/${collectingFolder}"/>
++		<copy todir="${feature.base}/openbsd.gtk.x86_64/${collectingFolder}" failonerror="true" overwrite="true">
++			<fileset dir="${basedir}/bin/gtk/openbsd/x86_64" includes="**"			/>
++			<fileset dir="${basedir}/gtk_root" includes="**"			/>
++			<fileset dir="${basedir}/bin" includes="startup.jar"			/>
++		</copy>
++		<chmod perm="755" dir="${feature.base}/openbsd.gtk.x86_64/${collectingFolder}" includes="${launcherName}" /> 
++		<chmod perm="755" dir="${feature.base}/openbsd.gtk.x86_64/${collectingFolder}" includes="libcairo-swt.so" /> 
++	</target>
+ 	<target name="rootFileslinux_gtk_ia64">
+ 		<mkdir dir="${feature.base}/linux.gtk.ia64/${collectingFolder}"/>
+ 		<copy todir="${feature.base}/linux.gtk.ia64/${collectingFolder}" failonerror="true" overwrite="true">
+@@ -176,6 +196,8 @@
+ 		<antcall target="rootFileshpux_motif_ia64"/>
+ 		<antcall target="rootFileshpux_motif_ia64_32"/>
+ 		<antcall target="rootFilesqnx_photon_x86"/>
++		<antcall target="rootFilesopenbsd_gtk_x86"/>
++		<antcall target="rootFilesopenbsd_gtk_x86_64"/>
+ 	</target>
+ 
+ 	<target name="zip.distribution" depends="init" description="Create a zip containing all the plug-ins and features for the feature: org.eclipse.platform.launchers.">

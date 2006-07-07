@@ -1,9 +1,9 @@
-$OpenBSD: patch-features_org_eclipse_rcp_source_build_xml,v 1.1 2005/08/09 14:49:09 kurt Exp $
---- features/org.eclipse.rcp.source/build.xml.orig	Thu Jul 28 13:21:10 2005
-+++ features/org.eclipse.rcp.source/build.xml	Thu Jul 28 13:23:16 2005
-@@ -72,6 +72,11 @@
- 			<property name="os" value="linux"/>
- 			<property name="ws" value="gtk"/>
+$OpenBSD: patch-features_org_eclipse_rcp_source_build_xml,v 1.2 2006/07/07 01:48:55 kurt Exp $
+--- features/org.eclipse.rcp.source/build.xml.orig	Thu Jun 29 19:20:53 2006
++++ features/org.eclipse.rcp.source/build.xml	Sat Jul  1 13:17:31 2006
+@@ -42,6 +42,11 @@
+ 			<property name="os" value="macosx"/>
+ 			<property name="ws" value="carbon"/>
  		</ant>
 +		<ant antfile="build.xml" dir="../../plugins/org.eclipse.rcp.source.openbsd.gtk.x86" target="${target}">
 +			<property name="arch" value="x86"/>
@@ -13,21 +13,44 @@ $OpenBSD: patch-features_org_eclipse_rcp_source_build_xml,v 1.1 2005/08/09 14:49
  		<ant antfile="build.xml" dir="../../plugins/org.eclipse.rcp.source.solaris.gtk.sparc" target="${target}">
  			<property name="arch" value="sparc"/>
  			<property name="os" value="solaris"/>
-@@ -135,7 +140,7 @@
- 		<copy todir="${feature.base}/features/org.eclipse.rcp.source_3.1.0" failonerror="true" overwrite="false">
+@@ -57,6 +62,11 @@
+ 			<property name="os" value="linux"/>
+ 			<property name="ws" value="gtk"/>
+ 		</ant>
++		<ant antfile="build.xml" dir="../../plugins/org.eclipse.rcp.source.openbsd.gtk.x86_64" target="${target}">
++			<property name="arch" value="x86_64"/>
++			<property name="os" value="openbsd"/>
++			<property name="ws" value="gtk"/>
++		</ant>
+ 		<ant antfile="build.xml" dir="../../plugins/org.eclipse.rcp.source.hpux.motif.PA_RISC" target="${target}">
+ 			<property name="arch" value="PA_RISC"/>
+ 			<property name="os" value="hpux"/>
+@@ -140,7 +150,7 @@
+ 		<copy todir="${feature.base}/features/org.eclipse.rcp.source_3.2.0.v20060609m-Swbi2VrNoh-MeGG" failonerror="true" overwrite="false">
  			<fileset dir="${basedir}" includes="epl-v10.html,eclipse_update_120.jpg,feature.xml,feature.properties,license.html"			/>
  		</copy>
--		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.rcp.source_3.1.0/feature.xml"  selfVersion="3.1.0" featureIds="" pluginIds="org.eclipse.rcp.source,3.1.0,org.eclipse.rcp.source.hpux.motif.ia64_32,3.1.0,org.eclipse.rcp.source.linux.gtk.ia64,3.1.0,org.eclipse.rcp.source.qnx.photon.x86,3.1.0,org.eclipse.rcp.source.linux.gtk.ppc,3.1.0,org.eclipse.rcp.source.hpux.motif.PA_RISC,3.1.0,org.eclipse.rcp.source.linux.gtk.x86_64,3.1.0,org.eclipse.rcp.source.solaris.gtk.sparc,3.1.0,org.eclipse.rcp.source.macosx.carbon.ppc,3.1.0,org.eclipse.rcp.source.linux.gtk.x86,3.1.0,org.eclipse.rcp.source.aix.motif.ppc,3.1.0,org.eclipse.rcp.source.win32.win32.x86,3.1.0,org.eclipse.rcp.source.solaris.motif.sparc,3.1.0,org.eclipse.rcp.source.linux.motif.x86,3.1.0,"/>
-+		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.rcp.source_3.1.0/feature.xml"  selfVersion="3.1.0" featureIds="" pluginIds="org.eclipse.rcp.source,3.1.0,org.eclipse.rcp.source.hpux.motif.ia64_32,3.1.0,org.eclipse.rcp.source.linux.gtk.ia64,3.1.0,org.eclipse.rcp.source.qnx.photon.x86,3.1.0,org.eclipse.rcp.source.linux.gtk.ppc,3.1.0,org.eclipse.rcp.source.hpux.motif.PA_RISC,3.1.0,org.eclipse.rcp.source.linux.gtk.x86_64,3.1.0,org.eclipse.rcp.source.solaris.gtk.sparc,3.1.0,org.eclipse.rcp.source.macosx.carbon.ppc,3.1.0,org.eclipse.rcp.source.linux.gtk.x86,3.1.0,org.eclipse.rcp.source.openbsd.gtk.x86,3.1.0,org.eclipse.rcp.source.aix.motif.ppc,3.1.0,org.eclipse.rcp.source.win32.win32.x86,3.1.0,org.eclipse.rcp.source.solaris.motif.sparc,3.1.0,org.eclipse.rcp.source.linux.motif.x86,3.1.0,"/>
+-		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.rcp.source_3.2.0.v20060609m-Swbi2VrNoh-MeGG/feature.xml"  selfVersion="3.2.0.v20060609m-Swbi2VrNoh-MeGG" featureIds="" pluginIds="com.ibm.icu.source,3.4.4.1,org.eclipse.rcp.source,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.hpux.motif.ia64_32,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.linux.gtk.ia64,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.qnx.photon.x86,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.linux.gtk.ppc,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.hpux.motif.PA_RISC,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.linux.gtk.x86_64,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.solaris.gtk.x86,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.solaris.gtk.sparc,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.macosx.carbon.ppc,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.linux.gtk.x86,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.aix.motif.ppc,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.win32.win32.x86,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.solaris.motif.sparc,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.linux.motif.x86,3.2.0.v20060609m-Swbi2VrNoh-MeGG,"/>
++		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.rcp.source_3.2.0.v20060609m-Swbi2VrNoh-MeGG/feature.xml"  selfVersion="3.2.0.v20060609m-Swbi2VrNoh-MeGG" featureIds="" pluginIds="com.ibm.icu.source,3.4.4.1,org.eclipse.rcp.source,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.hpux.motif.ia64_32,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.linux.gtk.ia64,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.qnx.photon.x86,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.linux.gtk.ppc,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.hpux.motif.PA_RISC,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.linux.gtk.x86_64,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.solaris.gtk.x86,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.solaris.gtk.sparc,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.macosx.carbon.ppc,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.linux.gtk.x86,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.aix.motif.ppc,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.win32.win32.x86,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.solaris.motif.sparc,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.linux.motif.x86,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.openbsd.gtk.x86_64,3.2.0.v20060609m-Swbi2VrNoh-MeGG,org.eclipse.rcp.source.openbsd.gtk.x86,3.2.0.v20060609m-Swbi2VrNoh-MeGG,"/>
  		<antcall target="rootFiles${os}_${ws}_${arch}"/>
  	</target>
  	<target name="rootFileswin32_win32_x86">
-@@ -151,6 +156,8 @@
- 	<target name="rootFileslinux_gtk_ia64">
+@@ -159,6 +169,10 @@
  	</target>
  	<target name="rootFileslinux_motif_x86">
-+	</target>
+ 	</target>
 +	<target name="rootFilesopenbsd_gtk_x86">
++	</target>
++	<target name="rootFilesopenbsd_gtk_x86_64">
++	</target>
+ 	<target name="rootFilessolaris_gtk_sparc">
  	</target>
- 	<target name="rootFilessolaris_motif_sparc">
+ 	<target name="rootFilessolaris_gtk_x86">
+@@ -192,6 +206,8 @@
+ 		<antcall target="rootFileshpux_motif_ia64"/>
+ 		<antcall target="rootFileshpux_motif_ia64_32"/>
+ 		<antcall target="rootFilesqnx_photon_x86"/>
++		<antcall target="rootFilesopenbsd_gtk_x86"/>
++		<antcall target="rootFilesopenbsd_gtk_x86_64"/>
  	</target>
+ 
+ 	<target name="zip.distribution" depends="init" description="Create a zip containing all the plug-ins and features for the feature: org.eclipse.rcp.source.">

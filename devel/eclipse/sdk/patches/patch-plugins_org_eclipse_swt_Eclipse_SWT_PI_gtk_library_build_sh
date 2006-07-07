@@ -1,34 +1,63 @@
-$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_PI_gtk_library_build_sh,v 1.3 2005/08/09 14:49:09 kurt Exp $
---- plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh.orig	Mon Jun 27 14:54:15 2005
-+++ plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh	Wed Aug  3 13:54:28 2005
-@@ -100,6 +100,24 @@ case $OS in
- 				;;	
- 		esac
- 		;;
+$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_PI_gtk_library_build_sh,v 1.4 2006/07/07 01:48:55 kurt Exp $
+--- plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh.orig	Fri Jun  2 13:32:28 2006
++++ plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh	Tue Jun 13 08:07:00 2006
+@@ -27,6 +27,10 @@ if [ "${OS}" = "" ]; then
+ 	OS=`uname -s`
+ fi
+ case $OS in
 +	"OpenBSD")
-+		LD=${CC}
-+		XTEST_LIB_PATH=/usr/X11R6/lib
-+		GECKO_SDK=${MOZILLA_HOME}
-+		GECKO_INCLUDES="-I${GECKO_SDK}/include/nspr -I${GECKO_SDK}/include/xpcom -I${GECKO_SDK}/include/string -I${GECKO_SDK}/include/embed_base -I${GECKO_SDK}/include/embedstring"
-+		GECKO_LIBS="-L${GECKO_SDK}/lib -lxpcom -lnspr4 -lplds4 -lplc4 -lgtkembedmoz"
-+		case $MODEL in
-+			"i386")
-+				AWT_LIB_PATH=${JAVA_HOME}/jre/lib/i386
-+				OUTPUT_DIR=../../../org.eclipse.swt.gtk.openbsd.x86
-+				makefile="make_openbsd.mak"
-+				echo "Building OpenBSD GTK x86 version of SWT"
-+				;;
-+			*)
-+				echo "*** Unknown MODEL <${MODEL}>"
-+				;;
-+		esac
++		SWT_OS=openbsd
++		MAKEFILE=make_openbsd.mak
 +		;;
  	"SunOS")
- 		CC=gcc
- 		LD=gcc
-@@ -128,4 +146,4 @@ esac
+ 		SWT_OS=solaris
+ 		MAKEFILE=make_solaris.mak
+@@ -39,13 +43,13 @@ esac
  
- export CC LD JAVA_HOME AWT_LIB_PATH XTEST_LIB_PATH GECKO_SDK GECKO_INCLUDES GECKO_LIBS SWT_PTR_CFLAGS CDE_HOME OUTPUT_DIR
+ # Determine which CPU type we are building for
+ if [ "${MODEL}" = "" ]; then
+-	if uname -p > /dev/null 2>&1; then
+-		MODEL=`uname -p`
+-	else
+-		MODEL=`uname -m`
+-	fi
++	MODEL=`uname -m`
+ fi
+ case $MODEL in
++	"amd64")
++		SWT_ARCH=x86_64
++		AWT_ARCH=amd64
++		;;
+ 	"x86_64")
+ 		SWT_ARCH=x86_64
+ 		AWT_ARCH=amd64
+@@ -61,7 +65,7 @@ case $MODEL in
+ esac
  
--make -f $makefile ${1} ${2} ${3} ${4}
-+gmake -f $makefile ${1} ${2} ${3} ${4}
+ # For 64-bit CPUs, we have a switch
+-if [ ${MODEL} = 'x86_64' -o ${MODEL} = 'ppc64' -o ${MODEL} = 'ia64' ]; then
++if [ ${MODEL} = 'x86_64' -o ${MODEL} = 'ppc64' -o ${MODEL} = 'ia64' -o ${MODEL} = 'amd64' ]; then
+ 	SWT_PTR_CFLAGS=-DSWT_PTR_SIZE_64
+ 	export SWT_PTR_CFLAGS
+ 	if [ -d /lib64 ]; then
+@@ -88,8 +92,8 @@ fi
+ 
+ if [ -z "${GECKO_INCLUDES}" -a -z "${GECKO_LIBS}" ]; then
+ 	if [ x`pkg-config --exists mozilla-xpcom && echo YES` = "xYES" ]; then
+-		GECKO_INCLUDES=`pkg-config --cflags mozilla-xpcom`
+-		GECKO_LIBS=`pkg-config --libs mozilla-xpcom`
++		GECKO_INCLUDES="`pkg-config --cflags mozilla-xpcom` -I`pkg-config --variable=includedir mozilla-xpcom`/embed_base"
++		GECKO_LIBS="`pkg-config --libs mozilla-xpcom` `pkg-config --libs mozilla-gtkmozembed`"
+ 		export GECKO_INCLUDES
+ 		export GECKO_LIBS
+ 		MAKE_MOZILLA=make_mozilla
+@@ -124,7 +128,7 @@ if [ "x${OUTPUT_DIR}" = "x" ]; then
+ fi
+ 
+ if [ "x${1}" = "xclean" ]; then
+-	make -f $MAKEFILE clean
++	gmake -f $MAKEFILE clean
+ else
+-	make -f $MAKEFILE all $MAKE_GNOME $MAKE_CAIRO $MAKE_AWT $MAKE_MOZILLA ${1} ${2} ${3} ${4} ${5} ${6} ${7} ${8} ${9}
++	gmake -f $MAKEFILE all $MAKE_GNOME $MAKE_CAIRO $MAKE_AWT $MAKE_MOZILLA ${1} ${2} ${3} ${4} ${5} ${6} ${7} ${8} ${9}
+ fi

@@ -1,10 +1,11 @@
-$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_PI_gtk_library_os_custom_h,v 1.1 2005/08/09 14:49:09 kurt Exp $
---- plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/os_custom.h.orig	Mon Jun 27 14:54:10 2005
-+++ plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/os_custom.h	Tue Aug  2 15:41:00 2005
-@@ -21,31 +21,31 @@
- #define PTR_sizeof() sizeof(void *)
- 
- /* Libraries for dynamic loaded functions */
+$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_PI_gtk_library_os_custom_h,v 1.2 2006/07/07 01:48:55 kurt Exp $
+--- plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/os_custom.h.orig	Fri Jun  2 13:32:28 2006
++++ plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/os_custom.h	Wed Jun  7 00:41:44 2006
+@@ -36,42 +36,42 @@
+ #define XRenderFreePicture_LIB "libXrender.so"
+ #define XRenderSetPictureClipRectangles_LIB "libXrender.so"
+ #define XRenderSetPictureTransform_LIB "libXrender.so"
+-#define gtk_entry_text_index_to_layout_index_LIB "libgtk-x11-2.0.so.0"
 -#define gtk_file_chooser_add_filter_LIB "libgtk-x11-2.0.so.0"
 -#define gtk_file_chooser_dialog_new_LIB "libgtk-x11-2.0.so.0"
 -#define gtk_file_chooser_get_current_folder_LIB "libgtk-x11-2.0.so.0"
@@ -18,6 +19,13 @@ $OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_PI_gtk_library_os_custom_h,v
 -#define gtk_file_filter_add_pattern_LIB "libgtk-x11-2.0.so.0"
 -#define gtk_file_filter_new_LIB "libgtk-x11-2.0.so.0"
 -#define gtk_file_filter_set_name_LIB "libgtk-x11-2.0.so.0"
+-#define gtk_expander_get_expanded_LIB "libgtk-x11-2.0.so.0"
+-#define gtk_expander_get_label_widget_LIB "libgtk-x11-2.0.so.0"
+-#define gtk_expander_new_LIB "libgtk-x11-2.0.so.0"
+-#define gtk_expander_set_expanded_LIB "libgtk-x11-2.0.so.0"
+-#define gtk_expander_set_label_LIB "libgtk-x11-2.0.so.0"
+-#define gtk_expander_set_label_widget_LIB "libgtk-x11-2.0.so.0"
+-#define gtk_tree_selection_count_selected_rows_LIB "libgtk-x11-2.0.so.0"
 -#define gtk_tree_selection_get_selected_rows_LIB "libgtk-x11-2.0.so.0"
 -#define gtk_tree_view_column_cell_get_position_LIB "libgtk-x11-2.0.so.0"
 -#define gtk_entry_set_alignment_LIB "libgtk-x11-2.0.so.0"
@@ -30,6 +38,10 @@ $OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_PI_gtk_library_os_custom_h,v
 -#define gdk_window_set_keep_above_LIB "libgdk-x11-2.0.so.0"
 -#define gdk_window_set_accept_focus_LIB "libgdk-x11-2.0.so.0"
 -#define gdk_x11_screen_get_window_manager_name_LIB "libgdk-x11-2.0.so.0"
+-#define gdk_x11_screen_lookup_visual_LIB "libgdk-x11-2.0.so.0"
+-#define atk_object_add_relationship_LIB "libatk-1.0.so.0"
+-#define pango_layout_set_auto_dir_LIB "libpango-1.0.so.0"
++#define gtk_entry_text_index_to_layout_index_LIB "libgtk-x11-2.0.so"
 +#define gtk_file_chooser_add_filter_LIB "libgtk-x11-2.0.so"
 +#define gtk_file_chooser_dialog_new_LIB "libgtk-x11-2.0.so"
 +#define gtk_file_chooser_get_current_folder_LIB "libgtk-x11-2.0.so"
@@ -43,6 +55,13 @@ $OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_PI_gtk_library_os_custom_h,v
 +#define gtk_file_filter_add_pattern_LIB "libgtk-x11-2.0.so"
 +#define gtk_file_filter_new_LIB "libgtk-x11-2.0.so"
 +#define gtk_file_filter_set_name_LIB "libgtk-x11-2.0.so"
++#define gtk_expander_get_expanded_LIB "libgtk-x11-2.0.so"
++#define gtk_expander_get_label_widget_LIB "libgtk-x11-2.0.so"
++#define gtk_expander_new_LIB "libgtk-x11-2.0.so"
++#define gtk_expander_set_expanded_LIB "libgtk-x11-2.0.so"
++#define gtk_expander_set_label_LIB "libgtk-x11-2.0.so"
++#define gtk_expander_set_label_widget_LIB "libgtk-x11-2.0.so"
++#define gtk_tree_selection_count_selected_rows_LIB "libgtk-x11-2.0.so"
 +#define gtk_tree_selection_get_selected_rows_LIB "libgtk-x11-2.0.so"
 +#define gtk_tree_view_column_cell_get_position_LIB "libgtk-x11-2.0.so"
 +#define gtk_entry_set_alignment_LIB "libgtk-x11-2.0.so"
@@ -55,6 +74,9 @@ $OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_PI_gtk_library_os_custom_h,v
 +#define gdk_window_set_keep_above_LIB "libgdk-x11-2.0.so"
 +#define gdk_window_set_accept_focus_LIB "libgdk-x11-2.0.so"
 +#define gdk_x11_screen_get_window_manager_name_LIB "libgdk-x11-2.0.so"
++#define gdk_x11_screen_lookup_visual_LIB "libgdk-x11-2.0.so"
++#define atk_object_add_relationship_LIB "libatk-1.0.so"
++#define pango_layout_set_auto_dir_LIB "libpango-1.0.so"
  
  /* Field accessors */
  #define GTK_ACCEL_LABEL_SET_ACCEL_STRING(arg0, arg1) (arg0)->accel_string = arg1

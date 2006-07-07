@@ -1,0 +1,16 @@
+$OpenBSD: patch-plugins_org_eclipse_jdt_doc_isv_jdtaptOptions_txt,v 1.1 2006/07/07 01:48:55 kurt Exp $
+--- plugins/org.eclipse.jdt.doc.isv/jdtaptOptions.txt.orig	Mon Jun 19 23:49:11 2006
++++ plugins/org.eclipse.jdt.doc.isv/jdtaptOptions.txt	Mon Jun 19 23:49:31 2006
+@@ -85,10 +85,10 @@
+ -bottom "Copyright (c) IBM Corp. and others 2000, 2006.  All Rights Reserved."
+ -group "Java Development Tools APT Plug-in Packages" "org.eclipse.jdt.apt.core
+ ;org.eclipse.jdt.apt.core.*"
+--link http://java.sun.com/j2se/1.5/docs/api
++-linkoffline http://java.sun.com/j2se/1.5/docs/api ../../15api
+ -linkoffline ./../../../org.eclipse.platform.doc.isv/reference/api ../org.eclipse.platform.doc.isv/reference/api
+ -linkoffline ./../../../org.eclipse.jdt.doc.isv/reference/api ./reference/api
+--link http://bundles.osgi.org/javadoc/r4
++-linkoffline http://bundles.osgi.org/javadoc/r4 ../../r4
+ 
+ org.eclipse.jdt.apt.core.build
+ org.eclipse.jdt.apt.core.env

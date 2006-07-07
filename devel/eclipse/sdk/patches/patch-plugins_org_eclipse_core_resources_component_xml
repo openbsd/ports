@@ -1,0 +1,11 @@
+$OpenBSD: patch-plugins_org_eclipse_core_resources_component_xml,v 1.1 2006/07/07 01:48:55 kurt Exp $
+--- plugins/org.eclipse.core.resources/component.xml.orig	Wed Jun  7 00:05:33 2006
++++ plugins/org.eclipse.core.resources/component.xml	Wed Jun  7 00:05:51 2006
+@@ -8,6 +8,7 @@
+  <plugin id="org.eclipse.core.resources" />
+  <plugin id="org.eclipse.core.resources.win32" fragment="true" />
+  <plugin id="org.eclipse.core.resources.linux" fragment="true" />
++ <plugin id="org.eclipse.core.resources.openbsd" fragment="true" />
+  <plugin id="org.eclipse.core.resources.hpux" fragment="true" />
+  <plugin id="org.eclipse.core.resources.macosx" fragment="true" />
+  <plugin id="org.eclipse.core.resources.qnx" fragment="true" />

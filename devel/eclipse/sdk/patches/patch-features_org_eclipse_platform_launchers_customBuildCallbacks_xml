@@ -1,0 +1,14 @@
+$OpenBSD: patch-features_org_eclipse_platform_launchers_customBuildCallbacks_xml,v 1.1 2006/07/07 01:48:55 kurt Exp $
+--- features/org.eclipse.platform.launchers/customBuildCallbacks.xml.orig	Tue Jun  6 23:19:35 2006
++++ features/org.eclipse.platform.launchers/customBuildCallbacks.xml	Tue Jun  6 23:21:27 2006
+@@ -82,6 +82,10 @@
+ 		<move file="${feature.directory}/bin/photon/qnx/x86/eclipse" tofile="${feature.directory}/bin/photon/qnx/x86/launcher" />
+ 		<chmod file="${feature.directory}/bin/photon/qnx/x86/launcher" perm="755"/>
+ 		<move file="${feature.directory}/bin/win32/win32/x86/eclipse.exe" tofile="${feature.directory}/bin/win32/win32/x86/launcher.exe" />
++		<move file="${feature.directory}/bin/gtk/openbsd/x86/eclipse" tofile="${feature.directory}/bin/gtk/openbsd/x86/launcher" />	
++		<chmod file="${feature.directory}/bin/gtk/openbsd/x86/launcher" perm="755"/>
++		<move file="${feature.directory}/bin/gtk/openbsd/x86_64/eclipse" tofile="${feature.directory}/bin/gtk/openbsd/x86_64/launcher" />
++		<chmod file="${feature.directory}/bin/gtk/openbsd/x86_64/launcher" perm="755"/>
+ 		
+ 		<!--copy startup.jar to bin directory if it's available-->
+ 	   <copy file="${basedir}/../../plugins/org.eclipse.platform/startup.jar" todir="${feature.directory}/bin" failonerror="false" overwrite="true"/>
