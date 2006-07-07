@@ -1,0 +1,12 @@
+$OpenBSD: patch-ROX-Filer_src_config_h_in,v 1.1 2006/07/07 16:43:10 steven Exp $
+--- ROX-Filer/src/config.h.in.orig	Wed Jul  5 17:17:52 2006
++++ ROX-Filer/src/config.h.in	Wed Jul  5 17:18:25 2006
+@@ -54,7 +54,7 @@
+ 
+ /* printf format string to print file sizes */
+ #ifdef LARGE_FILE_SUPPORT
+-# define SIZE_FMT G_GINT64_MODIFIER "d"
++# define SIZE_FMT "lld"
+ #else
+ # define SIZE_FMT G_GINT32_MODIFIER "d"
+ #endif
