@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/11/04 07:36:10 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.8 2006/07/07 12:24:05 bernd Exp $
 %%SHARED%%
 bin/gimp
 bin/gimp-2.2
@@ -1430,7 +1430,6 @@ share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpHelpUI.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpQueryBox.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpScrolledPreview.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpStock.html
-@comment share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpStock.html~
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpWidgets.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-cell-renderers.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-colordisplay.html
@@ -1442,6 +1441,7 @@ share/gtk-doc/html/libgimpwidgets/libgimpwidgets-hierarchy.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-utils.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-widgets.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets.devhelp
+share/gtk-doc/html/libgimpwidgets/libgimpwidgets.devhelp2
 share/gtk-doc/html/libgimpwidgets/right.png
 share/gtk-doc/html/libgimpwidgets/stock-anchor-16.png
 share/gtk-doc/html/libgimpwidgets/stock-cap-butt-16.png
