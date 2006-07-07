@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.48 2006/06/26 17:55:34 aanriot Exp $
+$OpenBSD: user.list,v 1.49 2006/07/07 08:56:57 djm Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -73,3 +73,4 @@ id  user		group		port options
 562 _smokeping		_smokeping	net/smokeping
 563 _postgrey		_postgrey	mail/postgrey
 564 _prelude		_prelude	security/prelude
+565 _pfflowd		_pfflowd	net/pfflowd
