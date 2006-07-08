@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.62 2006/06/07 20:33:44 couderc Exp $
+# $OpenBSD: Makefile,v 1.63 2006/07/08 08:49:38 sturm Exp $
 
 COMMENT=	"mail/news client in gtk+"
 
 VERSION=	2.2.5
 DISTNAME=	sylpheed-${VERSION}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=    	mail news x11
-HOMEPAGE=	http://sylpheed.good-day.net
+HOMEPAGE=	http://sylpheed.good-day.net/
 
 MAINTAINER=	Damien Couderc <couderc@openbsd.org>
 
@@ -30,7 +30,7 @@ MASTER_SITES0=	${MASTER_SITE_SOURCEFORGE:=sylpheed-claws/}
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-ssl --enable-ipv6 \
-			--disable-imlib
+			--disable-gtkspell --disable-imlib
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
