@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.72 2005/11/10 15:11:12 naddy Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.73 2006/07/08 09:20:30 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -60,13 +60,6 @@ OPSYS=	OpenBSD
 .include "${PORTSDIR}/infrastructure/mk/pkgpath.mk"
 
 ECHO_MSG?=	echo
-
-REPORT_PROBLEM_LOGFILE?=
-.if !empty(REPORT_PROBLEM_LOGFILE)
-REPORT_PROBLEM?=echo $$subdir >>${REPORT_PROBLEM_LOGFILE}
-.else
-REPORT_PROBLEM?=exit 1
-.endif
 
 # create a full list of SUBDIRS...
 .if empty(PKGPATH)

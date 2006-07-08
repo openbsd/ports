@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.6 2005/11/03 19:32:25 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.7 2006/07/08 09:20:30 espie Exp $
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
 
@@ -76,4 +76,12 @@ _depfile_fragment= \
 	esac
 
 HTMLIFY=	sed -e 's/&/\&amp;/g' -e 's/>/\&gt;/g' -e 's/</\&lt;/g'
+
+
+REPORT_PROBLEM_LOGFILE?=
+.if !empty(REPORT_PROBLEM_LOGFILE)
+REPORT_PROBLEM?=echo "$$subdir ($@)">>${REPORT_PROBLEM_LOGFILE}
+.else
+REPORT_PROBLEM?=exit 1
+.endif
 

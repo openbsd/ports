@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.750 2006/07/01 11:08:05 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.751 2006/07/08 09:20:30 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1462,6 +1462,7 @@ ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 					${ECHO_MSG} "===> Returning to build of ${FULLPKGNAME${SUBPACKAGE}}${_MASTER}"; \
 				else \
 					${ECHO_MSG} "===> Error in evaluating dependency ${_i}"; \
+					${REPORT_PROBLEM}; \
 					exit 1; \
 				fi; \
 				$$defaulted || pkg=`eval $$toset ${MAKE} _print-packagename`; \
