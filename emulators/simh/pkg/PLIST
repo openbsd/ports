@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2006/02/09 11:31:11 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.20 2006/07/08 11:19:41 fgsch Exp $
 bin/simh-altair
 bin/simh-altairz80
 bin/simh-eclipse
@@ -7,6 +7,7 @@ bin/simh-h316
 bin/simh-hp2100
 bin/simh-i1401
 bin/simh-i1620
+bin/simh-i7094
 bin/simh-ibm1130
 bin/simh-id16
 bin/simh-id32
@@ -28,38 +29,20 @@ lib/simh/
 lib/simh/vax/
 lib/simh/vax/ka655x.bin
 share/doc/simh/
-share/doc/simh/0readme_35.txt
+share/doc/simh/0readme_36.txt
 share/doc/simh/0readme_ethernet.txt
 share/doc/simh/altair.txt
 share/doc/simh/altairz80_doc.txt
 share/doc/simh/eclipse.txt
-share/doc/simh/gri_doc.txt
-share/doc/simh/h316_doc.txt
 share/doc/simh/haltguide.txt
 share/doc/simh/hp2100_diag.txt
-share/doc/simh/hp2100_doc.txt
-share/doc/simh/i1401_doc.txt
-share/doc/simh/i1620_doc.txt
+share/doc/simh/i7094_bugs.txt
 share/doc/simh/id_diag.txt
-share/doc/simh/id_doc.txt
-share/doc/simh/lgp_doc.txt
-share/doc/simh/nova_doc.txt
 share/doc/simh/pdp10_diag.txt
-share/doc/simh/pdp10_doc.txt
-share/doc/simh/pdp11_doc.txt
 share/doc/simh/pdp18b_diag.txt
-share/doc/simh/pdp18b_doc.txt
-share/doc/simh/pdp1_doc.txt
-share/doc/simh/pdp8_doc.txt
 share/doc/simh/readme1130.txt
 share/doc/simh/readme_s3.txt
 share/doc/simh/readme_update.txt
 share/doc/simh/sds_diag.txt
-share/doc/simh/sds_doc.txt
-share/doc/simh/simh_doc.txt
-share/doc/simh/simh_faq.txt
-share/doc/simh/simh_swre.txt
 share/doc/simh/system3.txt
 share/doc/simh/vax780_bugs.txt
-share/doc/simh/vax780_doc.txt
-share/doc/simh/vax_doc.txt
