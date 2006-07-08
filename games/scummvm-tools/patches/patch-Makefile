@@ -1,7 +1,8 @@
-$OpenBSD: patch-Makefile,v 1.4 2005/11/03 10:17:10 jsg Exp $
---- Makefile.orig	Thu Nov  3 20:59:51 2005
-+++ Makefile	Thu Nov  3 21:01:53 2005
-@@ -1,8 +1,9 @@
+$OpenBSD: patch-Makefile,v 1.5 2006/07/08 04:16:18 jsg Exp $
+--- Makefile.orig	Thu Jun 22 07:11:51 2006
++++ Makefile	Sat Jul  8 14:01:11 2006
+@@ -3,9 +3,10 @@
+ 
  SRC=.
  
 -CC      := gcc
@@ -14,7 +15,25 @@ $OpenBSD: patch-Makefile,v 1.4 2005/11/03 10:17:10 jsg Exp $
  # LDFLAGS +=
  
  # Additional warnings
-@@ -101,7 +102,7 @@ clean:
+@@ -28,7 +29,7 @@ TARGETS := \
+ 	dekyra$(EXEEXT) \
+ 	descumm$(EXEEXT) \
+ 	desword2$(EXEEXT) \
+-	encode_dxa$(EXEEXT) \
++#	encode_dxa$(EXEEXT) \
+ 	extract_kyra$(EXEEXT) \
+ 	extract_loom_tg16$(EXEEXT) \
+ 	extract_mm_c64$(EXEEXT) \
+@@ -61,7 +62,7 @@ compress_scumm_bun$(EXEEXT): compress_sc
+ 	$(CXX) $(LDFLAGS) -o $@ $+
+ 
+ encode_dxa$(EXEEXT): encode_dxa.o compress.o util.o
+-	$(CXX) $(LDFLAGS) -o $@ $+ -lpng -lz
++	$(CXX) $(LDFLAGS) `pkg-config --cflags --libs libpng` -o $@ $+
+ 
+ extract_loom_tg16$(EXEEXT): extract_loom_tg16.o util.o
+ 	$(CC) $(LDFLAGS) -o $@ $+
+@@ -129,7 +130,7 @@ clean:
  	rm -f *.o $(TARGETS)
  
  .cpp.o:

@@ -1,0 +1,14 @@
+$OpenBSD: patch-common_hashmap_h,v 1.1 2006/07/08 04:14:30 jsg Exp $
+--- common/hashmap.h.orig	Sat Jul  8 11:26:46 2006
++++ common/hashmap.h	Sat Jul  8 11:27:50 2006
+@@ -121,10 +121,7 @@ uint nextTableSize(uint x);
+ template <class Key, class Val, class HashFunc = Hash<Key>, class EqualFunc = EqualTo<Key>, class BaseNodeFunc = BaseNode<Key, Val> >
+ class HashMap {
+ private:
+-#if defined (_WIN32_WCE) || defined (_MSC_VER) || defined (__SYMBIAN32__) || defined (PALMOS_MODE)
+-//FIXME evc4, msvc6,msvc7 & GCC 2.9x doesn't like it as private member
+ public:
+-#endif
+ 	BaseNodeFunc **_arr;	// hashtable of size arrsize.
+ 	uint _arrsize, _nele;
+ 	

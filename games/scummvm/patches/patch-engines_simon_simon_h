@@ -1,0 +1,22 @@
+$OpenBSD: patch-engines_simon_simon_h,v 1.1 2006/07/08 04:14:30 jsg Exp $
+--- engines/simon/simon.h.orig	Thu Jun 22 07:14:03 2006
++++ engines/simon/simon.h	Fri Jul  7 18:55:58 2006
+@@ -26,6 +26,7 @@
+ 
+ #include "base/engine.h"
+ 
++#include "common/array.h"
+ #include "common/rect.h"
+ #include "common/util.h"
+ 
+@@ -210,9 +211,7 @@ protected:
+ 	uint _itemArraySize;
+ 	uint _itemArrayInited;
+ 
+-	byte *_itemHeapPtr;
+-	uint _itemHeapCurPos;
+-	uint _itemHeapSize;
++	Common::Array<byte *> _itemHeap;
+ 
+ 	byte *_iconFilePtr;
+ 

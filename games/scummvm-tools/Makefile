@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2005/11/03 10:17:10 jsg Exp $
+# $OpenBSD: Makefile,v 1.9 2006/07/08 04:16:18 jsg Exp $
 # XXX hardcoded endian list
 
 COMMENT=	"collection of various tools for scummvm"
-DISTNAME=	scummvm-tools-0.8.0
+DISTNAME=	scummvm-tools-0.9.0
 PKGNAME=	${DISTNAME}
 WRKDIST=	${WRKDIR}/${DISTNAME:S/scummvm-//}
 CATEGORIES=	games
@@ -38,10 +38,10 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/scummvm-tools
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/scummvm-tools	
 	${INSTALL_PROGRAM} \
-		${WRKBUILD}/compress_{queen,san,scumm_bun,scumm_sou} \
-		${WRKBUILD}/compress_{simon,sword1,sword2} \
+		${WRKBUILD}/compress_{kyra,queen,saga,scumm_san,scumm_bun} \
+		${WRKBUILD}/compress_{scumm_sou,simon,sword1,sword2} \
 		${WRKBUILD}/de{kyra,scumm,sword2} \
-		${WRKBUILD/extract_{mm_nes,scumm_mac,zak_c64} \
+		${WRKBUILD/extract_{kyra,mm_nes,scumm_mac,zak_c64} \
 		${PREFIX}/bin
 
 .include <bsd.port.mk>

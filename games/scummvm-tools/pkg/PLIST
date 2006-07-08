@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/11/03 10:17:10 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.6 2006/07/08 04:16:18 jsg Exp $
+bin/compress_kyra
 bin/compress_queen
-bin/compress_san
+bin/compress_saga
 bin/compress_scumm_bun
+bin/compress_scumm_san
 bin/compress_scumm_sou
 bin/compress_simon
 bin/compress_sword1

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2006/02/07 23:20:39 jsg Exp $
+# $OpenBSD: Makefile,v 1.21 2006/07/08 04:14:30 jsg Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
 BROKEN=		"gcc bug"
 .endif
 
 COMMENT=	"graphical adventure game interpreter"
-DISTNAME=	scummvm-0.8.2
+DISTNAME=	scummvm-0.9.0
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 
@@ -49,16 +49,22 @@ USE_X11=	Yes
 MAKE_ENV+=	CXXFLAGS="${CXXFLAGS}" CXX="${CXX}"
 
 # XXX gcc3 compiling compact.cpp with -O2 gobbles 800MB
+# ICE on sparc with >= -O1
 .if ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH} == "sparc"
 CXXFLAGS+=	-O0
+.endif
+
+# prevent ICE
+.if ${MACHINE_ARCH} == "arm"
+CXXFLAGS+=	-O1
 .endif
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/scummvm
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/{NEWS,AUTHORS,README} ${PREFIX}/share/doc/scummvm
-	${INSTALL_DATA} ${WRKSRC}/scummvm.xpm ${PREFIX}/share/pixmaps
-	${INSTALL_MAN} ${WRKSRC}/scummvm.6 ${PREFIX}/man/man6
+	${INSTALL_DATA} ${WRKSRC}/icons/scummvm.xpm ${PREFIX}/share/pixmaps
+	${INSTALL_MAN} ${WRKSRC}/dists/scummvm.6 ${PREFIX}/man/man6
 	${INSTALL_PROGRAM} ${WRKSRC}/scummvm ${PREFIX}/bin
 
 .include <bsd.port.mk>
