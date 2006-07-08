@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2005/02/09 01:03:50 alek Exp $
---- Makefile.in.orig	Sun Jan 30 20:09:00 2005
-+++ Makefile.in	Sun Jan 30 20:09:04 2005
-@@ -113,7 +113,7 @@ VERSION = @VERSION@
- am__include = @am__include@
- am__quote = @am__quote@
- install_sh = @install_sh@
--SUBDIRS = intl m4  libexif libjpeg test po
-+SUBDIRS = intl m4  libexif po
- 
- EXTRA_DIST = config.rpath mkinstalldirs  @PACKAGE@.spec
- 
+$OpenBSD: patch-Makefile_in,v 1.2 2006/07/08 21:02:52 ckuethe Exp $
+--- Makefile.in.orig	Sat Jul  1 09:50:58 2006
++++ Makefile.in	Sat Jul  1 09:51:27 2006
+@@ -213,7 +213,7 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = m4m po libexif test doc binary
++SUBDIRS = m4m po libexif binary
+ @SHIP_BINARIES_TRUE@README_W32_XDIST = README-Win32.txt
+ EXTRA_DIST = @PACKAGE_TARNAME@.spec autogen.sh $(README_W32_XDIST)
+ ACLOCAL_AMFLAGS = -I m4m
