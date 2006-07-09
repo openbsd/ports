@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/06/27 19:14:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2006/07/09 19:59:56 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	"GTK+2 Python bindings"
 
 V=		2.8.6
 DISTNAME=	pygtk-${V}
-PKGNAME=	py-gtk2-${V}
+PKGNAME=	py-gtk2-${V}p0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.pygtk.org/
@@ -31,8 +31,9 @@ WANTLIB=	X11 Xext Xrender atk-1.0.0.0 fontconfig freetype \
 MODULES=	devel/gettext lang/python
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
-		:py-cairo->=1.0.2p1:graphics/py-cairo
+		${RUN_DEPENDS}
 LIB_DEPENDS=	glade-2.0.0.0::devel/libglade2
+RUN_DEPENDS=	:py-cairo->=1.0.2p1:graphics/py-cairo
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
