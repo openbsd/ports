@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/09 18:17:06 sturm Exp $
+${P5SITE}/Template/
+${P5SITE}/Template/Plugin/
+${P5SITE}/Template/Plugin/Number/
+${P5SITE}/Template/Plugin/Number/Format.pm
+@man man/man3p/Template::Plugin::Number::Format.3p
