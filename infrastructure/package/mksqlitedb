@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.3 2006/07/09 17:39:34 ckuethe Exp $
+# $OpenBSD: mksqlitedb,v 1.4 2006/07/09 20:56:48 espie Exp $
 #
 # Copyright (c) 2006 Marc Espie <espie@openbsd.org>
 #
@@ -72,8 +72,10 @@ sub add
 		my ($libs, $pkgspec, $pkgpath2, $rest) = split(/\:/, $depends);
 		my $stmt = $db->prepare("INSERT INTO Depends (PKGPATH, FULLDEPENDS, DEPENDSPATH, TYPE) VALUES (?, ?, ?, ?)");
 		$stmt->execute($pkgpath, $depends, $pkgpath2, $class->type());
-		for my $lib (split(/,/, $libs)) {
-			$class->addlib($pkgpath, $db, $lib);
+		if ($libs ne '') {
+			for my $lib (split(/\,/, $libs)) {
+				$class->addlib($pkgpath, $db, $lib);
+			}
 		}
 	}
 }
@@ -266,6 +268,8 @@ my $stmt = $db->prepare("SELECT RowID FROM Ports WHERE PKGPATH=(?)");
 my $stmt2= $db->prepare("INSERT INTO Ports (PKGPATH) VALUES (?)");
 
 my $i = 0;
+my $rowid;
+my $lastkey;
 while (<STDIN>) {
 	chomp;
 	# kill noise
@@ -281,16 +285,19 @@ while (<STDIN>) {
 		$value = $1;
 	}
 
-	# get rowid for existing value
-	$stmt->execute($key);
-	my $z = $stmt->fetchall_arrayref;
-	if (@$z == 0) {
-		# if none, we create one
-		$stmt2->execute($key);
+	if (!(defined $lastkey) || $key ne $lastkey) {
+		# get rowid for existing value
 		$stmt->execute($key);
-		$z = $stmt->fetchall_arrayref;
+		my $z = $stmt->fetchall_arrayref;
+		if (@$z == 0) {
+			# if none, we create one
+			$stmt2->execute($key);
+			$stmt->execute($key);
+			$z = $stmt->fetchall_arrayref;
+		}
+		$rowid = $z->[0]->[0];
+		$lastkey = $key;
 	}
-	my $rowid = $z->[0]->[0];
 	$vars->{$var}->add($key, $db, $var, $value, $rowid);
 
 	# and we commit just once every 1000 transactions, for efficiency
