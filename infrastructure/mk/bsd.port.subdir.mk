@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.73 2006/07/08 09:20:30 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.74 2006/07/09 11:10:16 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -41,7 +41,9 @@
 .  include <bsd.own.mk>
 .endif
 
-.if defined(show)
+.if defined(verbose-show)
+.MAIN: verbose-show
+.elif defined(show)
 .MAIN: show
 .elif defined(clean)
 .MAIN: clean
@@ -92,7 +94,7 @@ _subdir_fragment= \
 
 .for __target in all fetch package fake extract patch configure \
 		 build describe distclean deinstall install update \
-		 reinstall checksum show fetch-makefile \
+		 reinstall checksum show verbose-show dump-vars fetch-makefile \
 		 link-categories unlink-categories regress lib-depends-check \
 		 newlib-depends-check homepage-links manpages-check license-check \
 		 print-package-signature
@@ -157,7 +159,7 @@ _print-packagename:
 
 .PHONY: all fetch package fake extract configure \
 	build describe distclean deinstall install update \
-	reinstall checksum show fetch-makefile \
+	reinstall checksum show verbose-show dump-vars fetch-makefile \
 	link-categories unlink-categories regress lib-depends-check \
 	newlib-depends-check \
 	homepage-links manpages-check license-check \

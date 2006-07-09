@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.751 2006/07/08 09:20:30 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.752 2006/07/09 11:10:16 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -73,6 +73,19 @@ FAKEOBJDIR?=
 BULK_TARGETS?=
 FORCE_UPDATE?=No
 PKGNAMES=${FULLPKGNAME}
+# All variables relevant to the port's description
+ALL_VARIABLES?=PKGNAME HOMEPAGE DISTNAME COMMENT LIB_DEPENDS \
+BUILD_DEPENDS RUN_DEPENDS REGRESS_DEPENDS USE_GMAKE MODULES FLAVORS \
+NO_BUILD NO_REGRESS PKG_ARCH SHARED_ONLY ONLY_FOR_ARCHS IS_INTERACTIVE \
+BROKEN MULTI_PACKAGES PSEUDO_FLAVORS CATEGORIES \
+REGRESS_IS_INTERACTIVE DISTFILES DIST_SUBDIR \
+PERMIT_DISTFILES_CDROM PERMIT_DISTFILES_FTP \
+PERMIT_PACKAGE_CDROM PERMIT_PACKAGE_FTP \
+CONFIGURE_STYLE USE_LIBTOOL SEPARATE_BUILD WANTLIB \
+SHARED_LIBS USE_MOTIF PACKAGES MASTER_SITES \
+MASTER_SITES0 MASTER_SITES1 MASTER_SITES2 MASTER_SITES3 MASTER_SITES4 \
+MASTER_SITES5 MASTER_SITES6 MASTER_SITES7 MASTER_SITES8 MASTER_SITES9 \
+MAINTAINER SUBPACKAGE PACKAGING DESCR
 
 # special purpose user settings
 PATCH_CHECK_ONLY?=No
@@ -157,13 +170,10 @@ PERMIT_DISTFILES_FTP = No
 # reserved name spaces: for module=NAME, modname*, _modname* variables and
 # targets.
 
-.if defined(show)
+.if defined(verbose-show)
+.MAIN: verbose-show
+.elif defined(show)
 .MAIN: show
-
-show:
-.  for _s in ${show}
-	@echo ${${_s}:Q}
-.  endfor
 .elif defined(clean)
 .MAIN: clean
 .elif defined(_internal-clean)
@@ -2763,6 +2773,31 @@ peek-ftp:
 show-required-by:
 	@cd ${PORTSDIR} && make all-dir-depends | perl ${PORTSDIR}/infrastructure/build/extract-dependencies -r ${FULLPKGPATH}
 
+show:
+.for _s in ${show}
+	@echo ${${_s}:Q}
+.endfor
+
+verbose-show:
+.for _s in ${verbose-show}
+. if defined(${_s})
+	@echo ${_s}=${${_s}:Q}
+. endif
+.endfor
+
+dump-vars:
+.for _s in ${ALL_VARIABLES}
+. if defined(${_s})
+	@echo ${FULLPKGPATH}.${_s}=${${_s}:Q}
+. endif
+.endfor
+.if defined(MULTI_PACKAGES) && !defined(PACKAGING)
+	@cd ${.CURDIR} && SUBPACKAGE='' PACKAGING='Yes' exec ${MAKE} $@
+.  for _sub in ${MULTI_PACKAGES}
+	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' PACKAGING='${_sub}' exec ${MAKE} $@
+.  endfor
+.endif
+
 .PHONY: \
 	_build-dir-depends _delete-package-links _fetch-makefile _fetch-onefile \
 	_package _package-links _print-packagename \
@@ -2796,7 +2831,7 @@ show-required-by:
 	readmes rebuild \
 	regress regress-depends \
 	reinstall repackage run-depends \
-	run-depends-list run-dir-depends show \
+	run-depends-list run-dir-depends show verbose-show dump-vars \
 	uninstall unlink-categories update-patches \
 	update-plist \
 	license-check _license-check \
