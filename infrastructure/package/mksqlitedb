@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.1 2006/07/09 11:00:53 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.2 2006/07/09 11:23:50 espie Exp $
 #
 # Copyright (c) 2006 Marc Espie <espie@openbsd.org>
 #
@@ -46,6 +46,17 @@ sub add
 {
 	my ($class, $pkgpath, $db, $var, $value, $rowid) = @_;
 	$class->SUPER::add($pkgpath, $db, $var, $value =~ m/^Yes/i ? 1 : undef, $rowid);
+}
+
+# variable is always defined, but we don't need to store empty values.
+package DefinedVar;
+our @ISA=(qw(AnyVar));
+
+sub add
+{
+	my ($class, $pkgpath, $db, $var, $value, $rowid) = @_;
+	return if $value eq '';
+	$class->SUPER::add($pkgpath, $db, $var, $value, $rowid);
 }
 
 
@@ -115,8 +126,17 @@ sub add
 	}
 }
 
-package FlavorsVar;
+package DefinedListVar;
 our @ISA=(qw(ListVar));
+sub add
+{
+	my ($class, $pkgpath, $db, $var, $value, $rowid) = @_;
+	return if $value eq '';
+	$class->SUPER::add($pkgpath, $db, $var, $value, $rowid);
+}
+
+package FlavorsVar;
+our @ISA=(qw(DefinedListVar));
 sub table() { 'Flavors' }
 
 package CategoriesVar;
@@ -132,7 +152,7 @@ our @ISA=(qw(ListVar));
 sub table() { 'Modules' }
 
 package ConfigureVar;
-our @ISA=(qw(ListVar));
+our @ISA=(qw(DefinedListVar));
 sub table() { 'Configure' }
 
 package WantlibVar;
@@ -185,7 +205,7 @@ my $vars = {
     PACKAGING => 'AnyVar',
     DISTFILES => 'AnyVar',
     DISTNAME => 'AnyVar',
-    DIST_SUBDIR => 'AnyVar',
+    DIST_SUBDIR => 'DefinedVar',
     FLAVORS => 'FlavorsVar',
     HOMEPAGE => 'AnyVar',
     IS_INTERACTIVE => 'AnyVar',
@@ -214,14 +234,15 @@ my $vars = {
     PERMIT_PACKAGE_FTP=> 'AnyVar',
     PKGNAME => 'AnyVar',
     PKG_ARCH => 'AnyVar',
-    PSEUDO_FLAVORS => 'AnyVar',
+    PSEUDO_FLAVORS => 'DefinedVar',
     REGRESS_DEPENDS => 'RegressDependsVar',
     REGRESS_IS_INTERACTIVE => 'AnyVar',
     RUN_DEPENDS => 'RunDependsVar',
     SEPARATE_BUILD => 'AnyVar',
-    SHARED_LIBS => 'AnyVar',
+    SHARED_LIBS => 'DefinedVar',
     SHARED_ONLY => 'YesNoVar',
-    SUBPACKAGE => 'AnyVar', 
+    SUBPACKAGE => 'DefinedVar', 
+    SUPDISTFILES => 'AnyVar',
     USE_GMAKE => 'YesNoVar',
     USE_LIBTOOL => 'YesNoVar',
     USE_MOTIF => 'YesNoVar',
