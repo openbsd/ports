@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.2 2006/07/09 11:23:50 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.3 2006/07/09 17:39:34 ckuethe Exp $
 #
 # Copyright (c) 2006 Marc Espie <espie@openbsd.org>
 #
@@ -18,7 +18,7 @@
 # example script that shows how to store all variable values into a
 # database, using SQLite for that purpose.
 #
-# usage: cd /usr/ports && make dump-all-vars |mksqlitedb
+# usage: cd /usr/ports && make dump-vars |mksqlitedb
 
 use strict;
 use warnings;
