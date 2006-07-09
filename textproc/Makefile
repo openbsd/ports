@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.154 2006/06/25 15:29:00 espie Exp $
+# $OpenBSD: Makefile,v 1.155 2006/07/09 18:18:11 sturm Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -80,6 +80,7 @@
      SUBDIR += p5-Syntax-Highlight-Mason
      SUBDIR += p5-Syntax-Highlight-Perl
      SUBDIR += p5-Template
+     SUBDIR += p5-Template-Plugin-Number-Format
      SUBDIR += p5-Text-Aligner
      SUBDIR += p5-Text-Autoformat
      SUBDIR += p5-Text-CSV_XS
