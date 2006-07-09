@@ -1,0 +1,11 @@
+$OpenBSD: patch-tests_local_at,v 1.1 2006/07/09 23:14:26 espie Exp $
+--- tests/local.at.orig	Wed Aug 27 16:52:26 2003
++++ tests/local.at	Mon Jul 10 00:15:39 2006
+@@ -65,6 +65,7 @@ m4_ifval([$4],
+ 		-e 's/^autom4te: [^ ]*m4 /autom4te: m4 /' \
+ 		-e 's/^autom4te: [^ ]*m4.exe /autom4te: m4 /' \
+ 		-e 's/ (E[A-Z]*)$//' \
++		-e 's/ at line \([0-9]*\): include(\(.*\)):/: \1: Cannot open \2:/' \
+ 	   stderr]], [0],[$4])])
+ ])
+ 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2006/07/08 17:04:40 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/07/09 23:14:26 espie Exp $
 
 COMMENT=	"automatically configure source code on many Un*x platforms"
 
 DISTNAME=	autoconf-2.59
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=autoconf/}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 HOMEPAGE=	http://www.gnu.org/software/autoconf/
 MAINTAINER=	Marc Espie <espie@openbsd.org>
