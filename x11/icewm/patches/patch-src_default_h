@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_default_h,v 1.6 2006/04/01 15:47:10 robert Exp $
---- src/default.h.orig	Thu Feb 16 12:08:41 2006
-+++ src/default.h	Thu Feb 16 12:09:56 2006
-@@ -135,8 +135,8 @@ XSV(const char *, acpiIgnoreBatteries,  
+$OpenBSD: patch-src_default_h,v 1.7 2006/07/09 09:32:01 steven Exp $
+--- src/default.h.orig	Sun Apr 16 18:12:31 2006
++++ src/default.h	Sun Jul  9 11:08:34 2006
+@@ -136,8 +136,8 @@ XSV(const char *, acpiIgnoreBatteries,  
  #endif
  
  XSV(const char *, mailBoxPath,                  0)
