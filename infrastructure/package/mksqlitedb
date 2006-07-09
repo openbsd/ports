@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.4 2006/07/09 20:56:48 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.5 2006/07/09 20:59:57 espie Exp $
 #
 # Copyright (c) 2006 Marc Espie <espie@openbsd.org>
 #
@@ -124,7 +124,7 @@ sub add
 	my ($class, $pkgpath, $db, $var, $value, $rowid) = @_;
 	AnyVar->add($pkgpath, $db, $var, $value, $rowid);
 	for my $d (split /\s+/, $value) {
-		$class->addvalue($pkgpath, $db, $d);
+		$class->addvalue($pkgpath, $db, $d) if $d ne '';
 	}
 }
 
