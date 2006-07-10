@@ -66,3 +66,4 @@ we depend upon.
 All the libraries the PKGPATH depends upon, with and without version number,
 coming from either the WANTLIB variable or various LIB_DEPENDS.
 
+- Shared_Libs(PKGPATH, LIBNAME, VERSION)

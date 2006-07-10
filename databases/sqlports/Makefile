@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/07/10 10:57:59 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/07/10 11:44:30 espie Exp $
 
 CATEGORIES=	databases
-DISTNAME=	sqlports-0.0
+DISTNAME=	sqlports-0.1
 DISTFILES=
 COMMENT=	'sqlite database of ports'
 MAINTAINER=	Marc Espie <espie@openbsd.org>

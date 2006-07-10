@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.8 2006/07/10 10:52:08 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.9 2006/07/10 11:44:30 espie Exp $
 #
 # Copyright (c) 2006 Marc Espie <espie@openbsd.org>
 #
@@ -31,7 +31,6 @@ use warnings;
 # to store them in secondary tables (because of one/many associations).
 
 package AnyVar;
-
 sub add
 {
 	my ($class, $pkgpath, $db, $var, $value, $rowid) = @_;
@@ -185,6 +184,21 @@ sub add
 
 sub table() { 'Descr' }
 
+package SharedLibsVar;
+our @ISA=(qw(AnyVar));
+
+sub add
+{
+	my ($class, $pkgpath, $db, $var, $value, $rowid) = @_;
+	$class->SUPER::add($pkgpath, $db, $var, $value, $rowid);
+	my $stmt = $db->prepare("INSERT INTO Shared_Libs (PKGPATH, LIBNAME, VERSION) VALUES (?, ?, ?)");
+	my %t = split(/\s+/, $value);
+	while (my ($k, $v) = each %t) {
+		$stmt->execute($pkgpath, $k, $v);
+	}
+}
+
+
 package main;
 
 use DBI;
@@ -244,7 +258,7 @@ my $vars = {
     REGRESS_IS_INTERACTIVE => 'AnyVar',
     RUN_DEPENDS => 'RunDependsVar',
     SEPARATE_BUILD => 'AnyVar',
-    SHARED_LIBS => 'DefinedVar',
+    SHARED_LIBS => 'SharedLibsVar',
     SHARED_ONLY => 'YesNoVar',
     SUBPACKAGE => 'DefinedVar',
     SUPDISTFILES => 'AnyVar',
@@ -262,6 +276,8 @@ for my $t (qw(Categories Flavors Multi Modules Configure Wantlib Descr)) {
 }
 $db->do("DROP TABLE Depends");
 $db->do("CREATE TABLE Depends (PKGPATH TEXT NOT NULL, FULLDEPENDS TEXT NOT NULL, DEPENDSPATH TEXT NOT NULL, TYPE TEXT NOT NULL)");
+$db->do("DROP TABLE Shared_Libs");
+$db->do("CREATE TABLE Shared_Libs (PKGPATH TEXT NOT NULL, LIBNAME TEXT NOT NULL, VERSION TEXT NOT NULL, UNIQUE (PKGPATH, LIBNAME))");
 $db->do("DROP TABLE Ports");
 $db->do("CREATE TABLE Ports (PKGPATH TEXT PRIMARY KEY, ".
 join(',', (map {$_." TEXT"} (keys %$vars))).")");
