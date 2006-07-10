@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2006/06/26 00:46:51 djm Exp $
+# $OpenBSD: Makefile,v 1.57 2006/07/10 15:34:22 steven Exp $
 #
 
      SUBDIR += R
@@ -39,6 +39,7 @@
      SUBDIR += p5-AI-NeuralNet-Mesh
      SUBDIR += p5-AI-Perceptron
      SUBDIR += p5-Bit-Vector
+     SUBDIR += p5-Math-BigInt-GMP
      SUBDIR += p5-Math-FFT
      SUBDIR += p5-Math-GMP
      SUBDIR += p5-Math-Pari
