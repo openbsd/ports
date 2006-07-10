@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.7 2006/07/10 10:35:50 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.8 2006/07/10 10:52:08 espie Exp $
 #
 # Copyright (c) 2006 Marc Espie <espie@openbsd.org>
 #
@@ -204,6 +204,7 @@ my $vars = {
     BUILD_DEPENDS => 'BuildDependsVar',
     CATEGORIES=> 'CategoriesVar',
     COMMENT => 'AnyVar',
+    CONFIGURE_ARGS => 'AnyVar',
     CONFIGURE_STYLE => 'ConfigureVar',
     DESCR => 'FileVar',
     PACKAGING => 'AnyVar',
