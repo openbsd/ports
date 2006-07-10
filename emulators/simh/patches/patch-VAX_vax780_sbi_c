@@ -1,0 +1,28 @@
+$OpenBSD: patch-VAX_vax780_sbi_c,v 1.1 2006/07/10 17:55:44 fgsch Exp $
+--- VAX/vax780_sbi.c.orig	Thu May 11 08:53:04 2006
++++ VAX/vax780_sbi.c	Sat Jul  8 19:18:19 2006
+@@ -32,6 +32,10 @@
+ 
+ #include "vax_defs.h"
+ 
++#ifndef PATH_VMB_EXE
++#define PATH_VMB_EXE	"vmb.exe"
++#endif
++
+ /* 11/780 specific IPRs */
+ 
+ /* Writeable control store */
+@@ -643,10 +647,10 @@ t_stat cpu_boot (int32 unitno, DEVICE *d
+ {
+ t_stat r;
+ 
+-printf ("Loading boot code from vmb.exe\n");
++printf ("Loading boot code from %s\n", PATH_VMB_EXE);
+ if (sim_log) fprintf (sim_log, 
+-    "Loading boot code from vmb.exe\n");
+-r = load_cmd (0, "-O vmb.exe 200");
++    "Loading boot code from %s\n", PATH_VMB_EXE);
++r = load_cmd (0, "-O " PATH_VMB_EXE " 200");
+ if (r != SCPE_OK) return r;
+ SP = PC = 512;
+ return SCPE_OK;

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.54 2006/07/08 11:19:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.55 2006/07/10 17:55:44 fgsch Exp $
 # $NetBSD: Makefile,v 1.2 1998/08/23 20:48:03 frueauf Exp $
 
 COMMENT=		"PDP, IBM 1401, Nova and other CPUs simulator"
 
 DISTNAME=		simh-3.6.0
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		emulators
 MASTER_SITES=		http://simh.trailing-edge.com/sources/
 DISTFILES=		simhv36-0.zip
@@ -22,7 +23,9 @@ WRKDIST=		${WRKDIR}
 
 UNZIP=			unzip -a -o
 
-COPTS+=			-DPATH_KA655X_BIN=\"${PREFIX}/lib/simh/vax/ka655x.bin\"
+COPTS+=		-DPATH_KA655X_BIN=\"${PREFIX}/lib/simh/vax/ka655x.bin\" \
+		-DPATH_VMB_EXE=\"${PREFIX}/lib/simh/vax/vmb.exe\"
+
 MAKE_FILE=		makefile
 
 NO_REGRESS=		Yes
@@ -37,6 +40,7 @@ do-install:
 	done;
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/simh/vax
 	${INSTALL_DATA} ${WRKDIST}/VAX/ka655x.bin ${PREFIX}/lib/simh/vax
+	${INSTALL_DATA} ${WRKDIST}/VAX/vmb.exe ${PREFIX}/lib/simh/vax
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/simh
 	${INSTALL_DATA} ${WRKBUILD}/*.txt ${WRKBUILD}/*/*.txt \
 	    ${PREFIX}/share/doc/simh

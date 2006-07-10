@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2006/07/08 11:19:41 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.21 2006/07/10 17:55:44 fgsch Exp $
 bin/simh-altair
 bin/simh-altairz80
 bin/simh-eclipse
@@ -28,6 +28,7 @@ bin/simh-vax780
 lib/simh/
 lib/simh/vax/
 lib/simh/vax/ka655x.bin
+lib/simh/vax/vmb.exe
 share/doc/simh/
 share/doc/simh/0readme_36.txt
 share/doc/simh/0readme_ethernet.txt
