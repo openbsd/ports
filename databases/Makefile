@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2006/06/23 08:12:58 sturm Exp $
+# $OpenBSD: Makefile,v 1.88 2006/07/10 10:58:48 espie Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += db
@@ -73,6 +73,7 @@
      SUBDIR += sqlite
      SUBDIR += sqlite3
      SUBDIR += sqlitebrowser
+     SUBDIR += sqlports
      SUBDIR += sqsh
      SUBDIR += xmysql
      SUBDIR += xmysqladmin
