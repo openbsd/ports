@@ -1,0 +1,62 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_nio_ch_FileChannelImpl_c,v 1.1 2006/07/10 13:17:39 kurt Exp $
+--- j2se/src/solaris/native/sun/nio/ch/FileChannelImpl.c.orig	Fri Jul  7 10:47:18 2006
++++ j2se/src/solaris/native/sun/nio/ch/FileChannelImpl.c	Fri Jul  7 14:55:36 2006
+@@ -273,14 +273,28 @@ Java_sun_nio_ch_FileChannelImpl_transfer
+     free(buf);
+ 
+     /*
+-     * XXXBSD: there're potential problems with NBIO fd's.  Check it.
++     * Similar to solaris if we've transferred any data return
++     * the number of bytes and ignore any error
++    */
++    if (offset - (off_t)position > 0)
++	return (offset - (off_t)position);
++
++    /*
++     * Deal with NBIO EAGAIN & EINTR the same as solaris. 
+      */
+     if (r == -1 || w == -1) {
+-	fprintf(stderr, "%d %d %d %d %d\n", srcFD, dstFD, r, w, errno);
+-	JNU_ThrowIOExceptionWithLastError(env, "Transfer failed");
+-	return IOS_THROWN;
++        switch (errno) {
++	    case EAGAIN:
++	        return IOS_UNAVAILABLE;
++	    case EINTR:
++	        return IOS_INTERRUPTED;
++	    default:
++		JNU_ThrowIOExceptionWithLastError(env, "Transfer failed");
++		return IOS_THROWN;
++        }
+     }
+-    return (offset - (off_t)position);
++
++    return (0);
+ #endif
+ }
+ 
+@@ -333,21 +347,12 @@ Java_sun_nio_ch_FileChannelImpl_release0
+     fl.l_start = (off64_t)pos;
+     fl.l_type = F_UNLCK;
+     lockResult = fcntl(fd, cmd, &fl);
+-#if defined(__FreeBSD__)
+-    /* XXXFREEBSD:  While doing of preClose0() we're closing actual fd which
++#if defined(_ALLBSD_SOURCE)
++    /* XXXBSD:  While doing of preClose0() we're closing actual fd which
+        was locked, so here we'll get an error which need to be ignored to
+        satisfy TCK FileLock test */
+-    /* XXXFREEBSD: backport to 1.4.2 */
++    /* XXXBSD: backport to 1.4.2 */
+     if (lockResult < 0 && errno == EBADF)
+-	lockResult = errno = 0;
+-#endif
+-#if defined(__NetBSD__)
+-    /* XXXNETBSD: The dup2 in preClose0 is being done onto 1 end of a
+-       socketpair which isn't a valid target for F_UNLCK. No good way to see
+-       this vs. a bad lock setup so just return errno = 0 there
+-       to pass JCK (lock will get removed once all fd's close anyways) */
+-    /* XXXNETBSD: backport to 1.4.2 */
+-    if (lockResult < 0 && errno == EINVAL)
+ 	lockResult = errno = 0;
+ #endif
+     if (lockResult < 0) {

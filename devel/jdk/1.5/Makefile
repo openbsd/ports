@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2006/07/01 09:06:00 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2006/07/10 13:17:39 kurt Exp $
 
 ONLY_FOR_ARCHS= 	amd64 i386
 
@@ -6,8 +6,8 @@ COMMENT=		"Java2(TM) Standard Edition Dev Kit v${V}"
 COMMENT-jre=		"Java2(TM) Standard Edition Runtime Environment v${V}"
 V=			1.5.0
 DISTNAME=		jdk-1_5_0
-PKGNAME=		jdk-${V}p17
-PKGNAME-jre=		jre-${V}p17
+PKGNAME=		jdk-${V}p18
+PKGNAME-jre=		jre-${V}p18
 
 CATEGORIES=		devel/jdk java
 
@@ -56,7 +56,8 @@ MAKE_ENV=		ALT_MOTIF_DIR="${LOCALBASE}" \
 			LANG="C" \
 			CC="${CC}" \
 			CXX="${CXX}" \
-			DEFAULT_LD_LIBRARY_PATH="/usr/lib:/usr/X11R6/lib:${LOCALBASE}/lib"
+			DEFAULT_LD_LIBRARY_PATH="/usr/lib:/usr/X11R6/lib:${LOCALBASE}/lib" \
+			HOTSPOT_BUILD_JOBS=`sysctl -n hw.ncpu`
 
 # Error message for distfile.
 FETCH_MANUALLY=		"You must manually fetch the distribution files, place"
