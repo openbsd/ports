@@ -1,0 +1,45 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2006/07/10 00:39:49 espie Exp $
+--- doc/Makefile.in.orig	Fri Jun 23 18:04:53 2006
++++ doc/Makefile.in	Sat Jul  8 17:26:07 2006
+@@ -226,7 +226,7 @@ $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
+ 	    rm -rf $(@:.html=); else rm -Rf $(@:.html=.htp) $@; fi; \
+ 	  exit 1; \
+ 	fi
+-$(srcdir)/autoconf.info: autoconf.texi $(srcdir)/version.texi $(autoconf_TEXINFOS)
++$(srcdir)/autoconf.info: #autoconf.texi $(srcdir)/version.texi $(autoconf_TEXINFOS)
+ autoconf.dvi: autoconf.texi $(srcdir)/version.texi $(autoconf_TEXINFOS)
+ autoconf.pdf: autoconf.texi $(srcdir)/version.texi $(autoconf_TEXINFOS)
+ autoconf.html: autoconf.texi $(srcdir)/version.texi $(autoconf_TEXINFOS)
+@@ -289,6 +289,10 @@ dist-info: $(INFO_DEPS)
+ 	  if test -f $$base; then d=.; else d=$(srcdir); fi; \
+ 	  for file in $$d/$$base*; do \
+ 	    relfile=`expr "$$file" : "$$d/\(.*\)"`; \
++	    ext=`echo $$relfile | sed -e 's/^.*\\.//'`; \
++	    relfile=`echo $$relfile | sed -e 's/\\.[0-9a-z]*$$//'`; \
++	    relfile=`echo $$relfile | sed -e 's/^.*\///'`; \
++	    relfile=`echo $$relfile | sed '$(transform)'`.$$ext; \
+ 	    test -f $(distdir)/$$relfile || \
+ 	      cp -p $$file $(distdir)/$$relfile; \
+ 	  done; \
+@@ -423,6 +427,10 @@ install-info-am: $(INFO_DEPS)
+                        $$d/$$file_i[0-9] $$d/$$file_i[0-9][0-9] ; do \
+ 	    if test -f $$ifile; then \
+ 	      relfile=`echo "$$ifile" | sed 's|^.*/||'`; \
++ 	      ext=`echo $$relfile | sed -e 's/^.*\\.//'`; \
++ 	      relfile=`echo $$relfile | sed -e 's/\\.[0-9a-z]*$$//'`; \
++ 	      relfile=`echo $$relfile | sed -e 's/^.*\///'`; \
++ 	      relfile=`echo $$relfile | sed '$(transform)'`.$$ext; \
+ 	      echo " $(INSTALL_DATA) '$$ifile' '$(DESTDIR)$(infodir)/$$relfile'"; \
+ 	      $(INSTALL_DATA) "$$ifile" "$(DESTDIR)$(infodir)/$$relfile"; \
+ 	    else : ; fi; \
+@@ -434,6 +442,10 @@ install-info-am: $(INFO_DEPS)
+ 	  list='$(INFO_DEPS)'; \
+ 	  for file in $$list; do \
+ 	    relfile=`echo "$$file" | sed 's|^.*/||'`; \
++ 	    ext=`echo $$relfile | sed -e 's/^.*\\.//'`; \
++ 	    relfile=`echo $$relfile | sed -e 's/\\.[0-9a-z]*$$//'`; \
++ 	    relfile=`echo $$relfile | sed -e 's/^.*\///'`; \
++ 	    relfile=`echo $$relfile | sed '$(transform)'`.$$ext; \
+ 	    echo " install-info --info-dir='$(DESTDIR)$(infodir)' '$(DESTDIR)$(infodir)/$$relfile'";\
+ 	    install-info --info-dir="$(DESTDIR)$(infodir)" "$(DESTDIR)$(infodir)/$$relfile" || :;\
+ 	  done; \

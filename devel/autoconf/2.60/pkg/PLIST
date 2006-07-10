@@ -1,0 +1,61 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/10 00:39:49 espie Exp $
+@option no-default-conflict
+bin/autoconf${SUFFIX}
+bin/autoheader${SUFFIX}
+bin/autom4te${SUFFIX}
+bin/autoreconf${SUFFIX}
+bin/autoscan${SUFFIX}
+bin/autoupdate${SUFFIX}
+bin/ifnames${SUFFIX}
+@info info/autoconf${SUFFIX}.info
+@comment @info info/standards${SUFFIX}.info
+@man man/man1/autoconf${SUFFIX}.1
+@man man/man1/autoheader${SUFFIX}.1
+@man man/man1/autom4te${SUFFIX}.1
+@man man/man1/autoreconf${SUFFIX}.1
+@man man/man1/autoscan${SUFFIX}.1
+@man man/man1/autoupdate${SUFFIX}.1
+@man man/man1/config.guess${SUFFIX}.1
+@man man/man1/config.sub${SUFFIX}.1
+@man man/man1/ifnames${SUFFIX}.1
+share/autoconf${SUFFIX}/
+share/autoconf${SUFFIX}/Autom4te/
+share/autoconf${SUFFIX}/Autom4te/C4che.pm
+share/autoconf${SUFFIX}/Autom4te/ChannelDefs.pm
+share/autoconf${SUFFIX}/Autom4te/Channels.pm
+share/autoconf${SUFFIX}/Autom4te/Configure_ac.pm
+share/autoconf${SUFFIX}/Autom4te/FileUtils.pm
+share/autoconf${SUFFIX}/Autom4te/General.pm
+share/autoconf${SUFFIX}/Autom4te/Request.pm
+share/autoconf${SUFFIX}/Autom4te/Struct.pm
+share/autoconf${SUFFIX}/Autom4te/XFile.pm
+share/autoconf${SUFFIX}/INSTALL
+share/autoconf${SUFFIX}/autoconf/
+share/autoconf${SUFFIX}/autoconf/autoconf.m4
+share/autoconf${SUFFIX}/autoconf/autoheader.m4
+share/autoconf${SUFFIX}/autoconf/autoscan.m4
+share/autoconf${SUFFIX}/autoconf/autotest.m4
+share/autoconf${SUFFIX}/autoconf/autoupdate.m4
+share/autoconf${SUFFIX}/autoconf/c.m4
+share/autoconf${SUFFIX}/autoconf/erlang.m4
+share/autoconf${SUFFIX}/autoconf/fortran.m4
+share/autoconf${SUFFIX}/autoconf/functions.m4
+share/autoconf${SUFFIX}/autoconf/general.m4
+share/autoconf${SUFFIX}/autoconf/headers.m4
+share/autoconf${SUFFIX}/autoconf/lang.m4
+share/autoconf${SUFFIX}/autoconf/libs.m4
+share/autoconf${SUFFIX}/autoconf/oldnames.m4
+share/autoconf${SUFFIX}/autoconf/programs.m4
+share/autoconf${SUFFIX}/autoconf/specific.m4
+share/autoconf${SUFFIX}/autoconf/status.m4
+share/autoconf${SUFFIX}/autoconf/types.m4
+share/autoconf${SUFFIX}/autom4te.cfg
+share/autoconf${SUFFIX}/autoscan/
+share/autoconf${SUFFIX}/autoscan/autoscan.list
+share/autoconf${SUFFIX}/autotest/
+share/autoconf${SUFFIX}/autotest/autotest.m4
+share/autoconf${SUFFIX}/autotest/general.m4
+share/autoconf${SUFFIX}/m4sugar/
+share/autoconf${SUFFIX}/m4sugar/m4sh.m4
+share/autoconf${SUFFIX}/m4sugar/m4sugar.m4
+share/autoconf${SUFFIX}/m4sugar/version.m4

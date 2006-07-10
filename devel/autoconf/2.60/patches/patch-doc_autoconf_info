@@ -1,0 +1,42 @@
+$OpenBSD: patch-doc_autoconf_info,v 1.1.1.1 2006/07/10 00:39:49 espie Exp $
+--- doc/autoconf.info.orig	Sat Jul  8 17:23:55 2006
++++ doc/autoconf.info	Sat Jul  8 17:24:47 2006
+@@ -22,27 +22,27 @@ templates and an M4 macro package.
+ 
+ INFO-DIR-SECTION Software development
+ START-INFO-DIR-ENTRY
+-* Autoconf: (autoconf).         Create source code configuration scripts.
++* Autoconf-2.60: (autoconf-2.60).         Create source code configuration scripts.
+ END-INFO-DIR-ENTRY
+ 
+ INFO-DIR-SECTION Individual utilities
+ START-INFO-DIR-ENTRY
+-* autoscan: (autoconf)autoscan Invocation.
++* autoscan-2.60: (autoconf-2.60)autoscan Invocation.
+                                 Semi-automatic `configure.ac' writing
+-* ifnames: (autoconf)ifnames Invocation.        Listing conditionals in source.
+-* autoconf: (autoconf)autoconf Invocation.
++* ifnames-2.60: (autoconf-2.60)ifnames Invocation.        Listing conditionals in source.
++* autoconf-2.60: (autoconf-2.60)autoconf Invocation.
+                                 How to create configuration scripts
+-* autoreconf: (autoconf)autoreconf Invocation.
++* autoreconf-2.60: (autoconf-2.60)autoreconf Invocation.
+                                 Remaking multiple `configure' scripts
+-* autoheader: (autoconf)autoheader Invocation.
++* autoheader-2.60: (autoconf-2.60)autoheader Invocation.
+                                 How to create configuration templates
+-* autom4te: (autoconf)autom4te Invocation.
++* autom4te-2.60: (autoconf-2.60)autom4te Invocation.
+                                 The Autoconf executables backbone
+-* configure: (autoconf)configure Invocation.    Configuring a package.
+-* autoupdate: (autoconf)autoupdate Invocation.
++* configure: (autoconf-2.60)configure Invocation.    Configuring a package.
++* autoupdate-2.60: (autoconf-2.60)autoupdate Invocation.
+                                 Automatic update of `configure.ac'
+-* config.status: (autoconf)config.status Invocation. Recreating configurations.
+-* testsuite: (autoconf)testsuite Invocation.    Running an Autotest test suite.
++* config.status: (autoconf-2.60)config.status Invocation. Recreating configurations.
++* testsuite: (autoconf-2.60)testsuite Invocation.    Running an Autotest test suite.
+ END-INFO-DIR-ENTRY
+ 
+ 

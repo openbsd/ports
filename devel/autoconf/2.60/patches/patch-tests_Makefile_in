@@ -1,0 +1,14 @@
+$OpenBSD: patch-tests_Makefile_in,v 1.1.1.1 2006/07/10 00:39:49 espie Exp $
+--- tests/Makefile.in.orig	Fri Jun 23 18:04:54 2006
++++ tests/Makefile.in	Sun Jul  9 11:43:54 2006
+@@ -471,9 +471,7 @@ $(wrappers): wrapper.in
+ 	mv -f $@.tmp $@
+ $(TESTSUITE): $(srcdir)/package.m4 \
+ 	      local.at \
+-	      $(TESTSUITE_AT) \
+-	      $(autotest_m4f_dependencies)
+-	cd $(top_builddir)/lib/autotest && $(MAKE) $(AM_MAKEFLAGS) autotest.m4f
++	      $(TESTSUITE_AT)
+ 	$(AUTOTEST) -I $(srcdir) suite.at -o $@.tmp
+ 	mv $@.tmp $@
+ 

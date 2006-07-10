@@ -1,0 +1,30 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2006/07/10 00:39:49 espie Exp $
+--- configure.orig	Sat Jul  8 17:20:14 2006
++++ configure	Sat Jul  8 17:20:26 2006
+@@ -2272,26 +2272,6 @@ fi
+ done
+ test -n "$M4" || M4="m4"
+ 
+-{ echo "$as_me:$LINENO: checking whether m4 supports frozen files" >&5
+-echo $ECHO_N "checking whether m4 supports frozen files... $ECHO_C" >&6; }
+-if test "${ac_cv_prog_gnu_m4+set}" = set; then
+-  echo $ECHO_N "(cached) $ECHO_C" >&6
+-else
+-  ac_cv_prog_gnu_m4=no
+-if test x"$M4" != x; then
+-  case `$M4 --help < /dev/null 2>&1` in
+-    *reload-state*) ac_cv_prog_gnu_m4=yes ;;
+-  esac
+-fi
+-fi
+-{ echo "$as_me:$LINENO: result: $ac_cv_prog_gnu_m4" >&5
+-echo "${ECHO_T}$ac_cv_prog_gnu_m4" >&6; }
+-if test x"$ac_cv_prog_gnu_m4" != xyes; then
+-  { { echo "$as_me:$LINENO: error: GNU M4 1.4 is required" >&5
+-echo "$as_me: error: GNU M4 1.4 is required" >&2;}
+-   { (exit 1); exit 1; }; }
+-fi
+-
+ ## ----------- ##
+ ## Man pages.  ##
+ ## ----------- ##

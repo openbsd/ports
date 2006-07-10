@@ -1,0 +1,58 @@
+$OpenBSD: patch-bin_autom4te_in,v 1.1.1.1 2006/07/10 00:39:49 espie Exp $
+--- bin/autom4te.in.orig	Fri Jun 23 17:14:13 2006
++++ bin/autom4te.in	Sat Jul  8 17:15:03 2006
+@@ -88,16 +88,9 @@ my $freeze = 0;
+ 
+ # $M4.
+ my $m4 = $ENV{"M4"} || '@M4@';
+-# Some non-GNU m4's don't reject the --help option, so give them /dev/null.
+-fatal "need GNU m4 1.4 or later: $m4"
+-  if system "$m4 --help </dev/null 2>&1 | grep reload-state >/dev/null";
+ 
+-# Set some high recursion limit as the default limit, 250, has already
+-# been hit with AC_OUTPUT.  Don't override the user's choice.
+-$m4 .= ' --nesting-limit=1024'
+-  if " $m4 " !~ / (--nesting-limit(=[0-9]+)?|-L[0-9]*) /;
++$m4 .= " -g -D__gnu__";
+ 
+-
+ # @M4_BUILTIN -- M4 builtins and a useful comment.
+ my @m4_builtin = `echo dumpdef | $m4 2>&1 >/dev/null`;
+ map { s/:.*//;s/\W// } @m4_builtin;
+@@ -458,11 +451,11 @@ sub handle_m4 ($@)
+   # We don't output directly to the cache files, to avoid problems
+   # when we are interrupted (that leaves corrupted files).
+   xsystem ("$m4"
+-	   . join (' --include=', '', @include)
+-	   . ' --debug=aflq'
+-	   . (!exists $ENV{'AUTOM4TE_NO_FATAL'} ? ' --fatal-warning' : '')
+-	   . " --error-output=$tcache" . $req->id . "t"
+-	   . join (' --trace=',   '', sort @macro)
++	   . join (' -I ', '', @include)
++	   . ' -daflq'
++#	   . (!exists $ENV{'AUTOM4TE_NO_FATAL'} ? ' --fatal-warning' : '')
++	   . " -o$tcache" . $req->id . "t"
++	   . join (' -t',   '', sort @macro)
+ 	   . " " . files_to_options (@ARGV)
+ 	   . ' </dev/null'
+ 	   . " >$ocache" . $req->id . "t");
+@@ -914,8 +907,7 @@ sub freeze ($)
+   # When processing the file with diversion disabled, there must be no
+   # output but comments and empty lines.
+   my $result = xqx ("$m4"
+-		    . ' --fatal-warning'
+-		    . join (' --include=', '', @include)
++		    . join (' -I ', '', @include)
+ 		    . ' --define=divert'
+ 		    . " " . files_to_options (@ARGV)
+ 		    . ' </dev/null');
+@@ -928,8 +920,7 @@ sub freeze ($)
+   # If freezing produces output, something went wrong: a bad `divert',
+   # or an improper paren etc.
+   xsystem ("$m4"
+-	   . ' --fatal-warning'
+-	   . join (' --include=', '', @include)
++	   . join (' -I ', '', @include)
+ 	   . " --freeze-state=$output"
+ 	   . " " . files_to_options (@ARGV)
+ 	   . ' </dev/null');
