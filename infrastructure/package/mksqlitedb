@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.5 2006/07/09 20:59:57 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.6 2006/07/10 08:01:08 bernd Exp $
 #
 # Copyright (c) 2006 Marc Espie <espie@openbsd.org>
 #
@@ -28,7 +28,7 @@ use warnings;
 
 # rule: we store each value in the main table, after converting YesNo
 # variables to undef/1. Then, in addition, we process specific variables
-# to store them in secundary tables (because of one/many associations).
+# to store them in secondary tables (because of one/many associations).
 
 package AnyVar;
 
@@ -107,17 +107,17 @@ our @ISA=(qw(DependsVar));
 sub type() { 'Regress' }
 
 # Stuff that gets stored in another table as well
-package SecundaryVar;
+package SecondaryVar;
 sub addvalue
 {
 	my ($class, $pkgpath, $db, $value) = @_;
-	my $stmt = $db->prepare("INSERT OR REPLACE INTO ".$class->table."(PKGPATH, VALUE) VALUES (?, ?)");
+	my $stmt = $db->prepare("INSERT OR REPLACE INTO ".$class->table." (PKGPATH, VALUE) VALUES (?, ?)");
 	$stmt->execute($pkgpath, $value);
 }
 
 # Generic handling for any blank-separated list
 package ListVar;
-our @ISA=(qw(SecundaryVar));
+our @ISA=(qw(SecondaryVar));
 
 sub add
 {
@@ -172,7 +172,7 @@ sub addvalue
 }
 
 package FileVar;
-our @ISA=(qw(SecundaryVar));
+our @ISA=(qw(SecondaryVar));
 
 sub add
 {
@@ -243,7 +243,7 @@ my $vars = {
     SEPARATE_BUILD => 'AnyVar',
     SHARED_LIBS => 'DefinedVar',
     SHARED_ONLY => 'YesNoVar',
-    SUBPACKAGE => 'DefinedVar', 
+    SUBPACKAGE => 'DefinedVar',
     SUPDISTFILES => 'AnyVar',
     USE_GMAKE => 'YesNoVar',
     USE_LIBTOOL => 'YesNoVar',
