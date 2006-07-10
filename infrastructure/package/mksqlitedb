@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.9 2006/07/10 11:44:30 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.10 2006/07/10 14:34:01 espie Exp $
 #
 # Copyright (c) 2006 Marc Espie <espie@openbsd.org>
 #
@@ -156,6 +156,10 @@ package ConfigureVar;
 our @ISA=(qw(DefinedListVar));
 sub table() { 'Configure' }
 
+package ConfigureArgsVar;
+our @ISA=(qw(ListVar));
+sub table() { 'ConfigureArgs' }
+
 package WantlibVar;
 our @ISA=(qw(ListVar));
 sub table() { 'Wantlib' }
@@ -218,7 +222,7 @@ my $vars = {
     BUILD_DEPENDS => 'BuildDependsVar',
     CATEGORIES=> 'CategoriesVar',
     COMMENT => 'AnyVar',
-    CONFIGURE_ARGS => 'AnyVar',
+    CONFIGURE_ARGS => 'ConfigureArgsVar',
     CONFIGURE_STYLE => 'ConfigureVar',
     DESCR => 'FileVar',
     PACKAGING => 'AnyVar',
@@ -270,7 +274,7 @@ my $vars = {
 
 # create the various tables, dropping old versions
 
-for my $t (qw(Categories Flavors Multi Modules Configure Wantlib Descr)) {
+for my $t (qw(Categories Flavors Multi Modules Configure ConfigureArgs Wantlib Descr)) {
     $db->do("DROP TABLE $t");
     $db->do("CREATE TABLE $t (PKGPATH TEXT NOT NULL, VALUE TEXT NOT NULL, UNIQUE(PKGPATH, VALUE))");
 }

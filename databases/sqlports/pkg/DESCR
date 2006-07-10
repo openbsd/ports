@@ -51,6 +51,7 @@ the correct SUBPACKAGE.
 - Multi(PKGPATH, VALUE)
 - Modules(PKGPATH, VALUE)
 - Configure(PKGPATH, VALUE)
+- ConfigureArgs(PKGPATH, VALUE)
 All of these values are actually lists. After disassembling the list,
 one can find many entries in these secondary tables.
 
