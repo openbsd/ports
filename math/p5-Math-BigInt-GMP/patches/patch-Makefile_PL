@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2006/07/10 15:33:58 steven Exp $
+--- Makefile.PL.orig	Sun Apr 10 12:20:17 2005
++++ Makefile.PL	Mon Jul 10 16:57:51 2006
+@@ -35,5 +35,6 @@ WriteMakefile(
+ 				Math::BigInt => 1.76,
+ 				XSLoader => 0.02,
+ 			   }, 
+-    'LIBS'		=> ['-lgmp'], # e.g., '-lm'
++    'LIBS'	=> ["$ENV{LDFLAGS} -lgmp"],   # e.g., '-lm' 
++    'INC'	=> "$ENV{CPPFLAGS}",
+ );
