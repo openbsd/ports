@@ -1,12 +1,12 @@
-$OpenBSD: patch-plugins_pcre_ruleset_Makefile_in,v 1.1.1.1 2006/06/26 18:04:24 aanriot Exp $
---- plugins/pcre/ruleset/Makefile.in.orig	Sun May 14 13:47:34 2006
-+++ plugins/pcre/ruleset/Makefile.in	Sun May 14 13:48:34 2006
-@@ -207,7 +207,7 @@ build_alias = @build_alias@
+$OpenBSD: patch-plugins_pcre_ruleset_Makefile_in,v 1.2 2006/07/10 14:34:23 aanriot Exp $
+--- plugins/pcre/ruleset/Makefile.in.orig	Mon Jul 10 15:50:04 2006
++++ plugins/pcre/ruleset/Makefile.in	Mon Jul 10 16:06:00 2006
+@@ -205,7 +205,7 @@ build_alias = @build_alias@
  build_cpu = @build_cpu@
  build_os = @build_os@
  build_vendor = @build_vendor@
 -configdir = @configdir@
 +configdir = @prefix@/share/examples/prelude-lml
  datadir = @datadir@
+ datarootdir = @datarootdir@
  defined = @defined@
- exec_prefix = @exec_prefix@

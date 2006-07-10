@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/26 18:04:24 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/07/10 14:34:23 aanriot Exp $
 %%SHARED%%
 bin/prelude-lml
 include/prelude-lml/
@@ -86,6 +86,8 @@ share/examples/prelude-lml/ruleset/shadow-utils.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/shadow-utils.rules
 share/examples/prelude-lml/ruleset/single.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/single.rules
+share/examples/prelude-lml/ruleset/sonicwall.rules
+share/examples/prelude-lml/ruleset/spamassassin.rules
 share/examples/prelude-lml/ruleset/squid.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/squid.rules
 share/examples/prelude-lml/ruleset/ssh.rules
