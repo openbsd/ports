@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.10 2006/07/10 14:34:01 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.11 2006/07/10 15:19:52 espie Exp $
 #
 # Copyright (c) 2006 Marc Espie <espie@openbsd.org>
 #
@@ -127,6 +127,28 @@ sub add
 	}
 }
 
+package QuotedListVar;
+our @ISA=(qw(SecondaryVar));
+
+sub add
+{
+	my ($class, $pkgpath, $db, $var, $value, $rowid) = @_;
+	AnyVar->add($pkgpath, $db, $var, $value, $rowid);
+	my @l = (split /\s+/, $value);
+	while (my $v = shift @l) {
+		while ($v =~ m/^[^']*\'[^']*$/ || $v =~m/^[^"]*\"[^"]*$/) {
+			$v.=' '.shift @l;
+		}
+		if ($v =~ m/^\"(.*)\"$/) {
+		    $v = $1;
+		}
+		if ($v =~ m/^\'(.*)\'$/) {
+		    $v = $1;
+		}
+		$class->addvalue($pkgpath, $db, $v) if $v ne '';
+	}
+}
+
 package DefinedListVar;
 our @ISA=(qw(ListVar));
 sub add
@@ -157,7 +179,7 @@ our @ISA=(qw(DefinedListVar));
 sub table() { 'Configure' }
 
 package ConfigureArgsVar;
-our @ISA=(qw(ListVar));
+our @ISA=(qw(QuotedListVar));
 sub table() { 'ConfigureArgs' }
 
 package WantlibVar;
@@ -304,7 +326,7 @@ while (<STDIN>) {
 
 	my ($key, $var, $value) = ($1, $2, $3);
 	# strip extra quotes
-	if ($value =~ m/^\"(.*)\"/) {
+	if ($value =~ m/^\"(.*)\"$/) {
 		$value = $1;
 	}
 
