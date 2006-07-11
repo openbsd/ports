@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2005/06/21 19:48:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2006/07/11 06:55:28 steven Exp $
 
 COMMENT=	"extract, list & test files in a ZIP archive"
 
@@ -6,9 +6,9 @@ VERSION=	5.52
 DISTNAME=	unzip${VERSION:S/.//}
 PKGNAME=	unzip-${VERSION}
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.info-zip.org/pub/infozip/src/ \
-		ftp://ftp.uu.net/pub/archiving/zip/src/ \
-		ftp://ftp.icce.rug.nl/infozip/src/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=infozip/} \
+		http://mirror.switch.ch/ftp/mirror/infozip/src/ \
+		ftp://ftp.info-zip.org/pub/infozip/src/
 
 HOMEPAGE=	http://www.ctan.org/tex-archive/tools/zip/info-zip/UnZip.html
 
