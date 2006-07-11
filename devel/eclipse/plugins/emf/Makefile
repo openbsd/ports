@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2005/08/09 14:50:14 kurt Exp $
+# $OpenBSD: Makefile,v 1.4 2006/07/11 18:25:27 kurt Exp $
 
 COMMENT=		"Eclipse Modeling Framework (EMF)"
 
-V=			2.1.1
-DISTNAME=		emf-sdo-xsd-SDK-M200508040005
+V=			2.2.0
+DISTNAME=		emf-sdo-xsd-SDK-${V}
 PKGNAME=		eclipse-plugin-emf-sdk-${V}
 CATEGORIES=		devel/eclipse/plugins java
 
@@ -19,17 +19,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"commercial distribution defend and indemnify clauses"
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://download.eclipse.org/tools/emf/downloads/drops/${V}/M200508040005/
+MASTER_SITES=		http://download.eclipse.org/tools/emf/downloads/drops/${V}/R200606271057/
 
-RUN_DEPENDS=		::devel/eclipse/sdk
+RUN_DEPENDS=		:eclipse-sdk->=3.2:devel/eclipse/sdk
 
 USE_ZIP=		Yes
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
 
 WRKDIST=		${WRKDIR}
-
-SUBST_VARS=		V
 
 do-install:
 	cd ${WRKDIST} && tar cfL - eclipse | \
