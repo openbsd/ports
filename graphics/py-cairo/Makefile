@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2006/06/27 19:12:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2006/07/11 06:03:40 espie Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"cairo bindings for Python"
 
 DISTNAME=	pycairo-1.0.2
-PKGNAME=	${DISTNAME:S/py/py-/}p1
+PKGNAME=	${DISTNAME:S/py/py-/}p2
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://cairographics.org/introduction/
@@ -27,8 +27,10 @@ LIB_DEPENDS=	cairo.4::graphics/cairo
 RUN_DEPENDS=	:py-Numeric-*:math/py-Numeric
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		:pkgconfig-*:devel/pkgconfig
+#USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--without-pygtk
+CONFIGURE_ENV=PYTHON=${LOCALBASE}/bin/python${MODPY_VERSION}
 
 .include <bsd.port.mk>
