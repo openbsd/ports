@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/01/06 18:52:12 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2006/07/11 09:20:23 steven Exp $
 
 COMMENT=		"getopt(3)-like library with a number of enhancements"
 
@@ -6,8 +6,9 @@ DISTNAME=		popt-1.7
 PKGNAME=		${DISTNAME}p0
 SHARED_LIBS=		popt 0.3
 CATEGORIES=		devel
-MASTER_SITES=		ftp://ftp.rpm.org/pub/rpm/dist/rpm-4.1.x/ \
-			ftp://ftp.mirror.ac.uk/sites/ftp.rpm.org/pub/rpm/dist/rpm-4.1.x/
+MASTER_SITES=		ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-4.1.x/ \
+			ftp://ftp.sunfreeware.com/pub/freeware/SOURCES/ \
+			ftp://ftp.rpm.org/pub/rpm/dist/rpm-4.1.x/
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
