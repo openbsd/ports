@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.2 2006/06/13 13:26:32 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2006/07/11 15:54:40 kurt Exp $
 
 # max data size too small to build. needs at least 256M
 NOT_FOR_ARCHS=	m68k sparc vax
 
 COMMENT=	"essential libraries for java"
 
-DISTNAME=	classpath-0.20
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	classpath-0.91
 
 CATEGORIES=	lang java
 
 .for _lib in gtkpeer javaio javalang javalangreflect javanet javanio \
 	javautil jawtgnu
-SHARED_LIBS+=		${_lib} 0.20
+SHARED_LIBS+=		${_lib} 0.91
 .endfor
 
 HOMEPAGE=	http://www.gnu.org/software/classpath/
