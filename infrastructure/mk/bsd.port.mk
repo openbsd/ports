@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.755 2006/07/10 10:52:08 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.756 2006/07/11 06:34:32 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -167,10 +167,6 @@ PERMIT_PACKAGE_FTP = No
 PERMIT_DISTFILES_FTP = No
 .endif
 
-# MODULES support
-# reserved name spaces: for module=NAME, modname*, _modname* variables and
-# targets.
-
 .if defined(verbose-show)
 .MAIN: verbose-show
 .elif defined(show)
@@ -220,9 +216,38 @@ DEF_UMASK?=		022
 .include "${.CURDIR}/Makefile.${MACHINE_ARCH}"
 .endif
 
+# MODULES support
+# reserved name spaces: for module=NAME, modname*, _modname* variables and
+# targets.
+
+# These variables must be defined before modules
+CONFIGURE_STYLE?=
 NO_DEPENDS?= No
 NO_BUILD?= No
 NO_REGRESS?= No
+INSTALL_TARGET?=	install
+
+.if ${CONFIGURE_STYLE:L:Mautomake} || ${CONFIGURE_STYLE:L:Mautoconf} || ${CONFIGURE_STYLE:L:Mautoupdate}
+.  if !${CONFIGURE_STYLE:L:Mgnu}
+CONFIGURE_STYLE+=gnu
+.  endif
+.endif
+
+.for _i in perl gnu imake
+.  if ${CONFIGURE_STYLE:L:M${_i}}
+MODULES+=${_i}
+.  endif
+.endfor
+
+.if defined(MODULES)
+_MODULES_DONE=
+.  include "${PORTSDIR}/infrastructure/mk/modules.port.mk"
+.endif
+
+###
+### Variable setup that can happen after modules
+###
+
 SHARED_ONLY?=	No
 SEPARATE_BUILD?=	No
 
@@ -279,8 +304,6 @@ LIBTOOL_FLAGS?=
 FAKE_FLAGS=${DESTDIRNAME}=${WRKINST}
 .endif
 
-CONFIGURE_STYLE?=
-
 # where configuration files should go
 SYSCONFDIR?=	/etc
 USE_GMAKE?=		No
@@ -289,12 +312,6 @@ BUILD_DEPENDS+=		::devel/gmake
 MAKE_PROGRAM=		${GMAKE}
 .else
 MAKE_PROGRAM=		${MAKE}
-.endif
-
-.if ${CONFIGURE_STYLE:L:Mautomake} || ${CONFIGURE_STYLE:L:Mautoconf} || ${CONFIGURE_STYLE:L:Mautoupdate}
-.  if !${CONFIGURE_STYLE:L:Mgnu}
-CONFIGURE_STYLE+=gnu
-.  endif
 .endif
 
 USE_LIBTOOL?=No
@@ -564,24 +581,8 @@ WRKPKG?=		${WRKDIR}/pkg
 WRKCONF?=		${WRKBUILD}
 
 ALL_TARGET?=		all
-INSTALL_TARGET?=	install
 
 FAKE_TARGET ?= ${INSTALL_TARGET}
-
-.for _i in perl gnu imake
-.  if ${CONFIGURE_STYLE:L:M${_i}}
-MODULES+=${_i}
-.  endif
-.endfor
-
-.if defined(MODULES)
-_MODULES_DONE=
-.  include "${PORTSDIR}/infrastructure/mk/modules.port.mk"
-.endif
-
-###
-### Variable setup that can happen after modules
-###
 
 REGRESS_TARGET ?= regress
 REGRESS_FLAGS ?= ${MAKE_FLAGS}
