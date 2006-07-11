@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/01/13 23:40:23 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/07/11 15:28:24 steven Exp $
 
 COMMENT=	"library to provide abstract access to various archives"
 DISTNAME=	physfs-1.0.0
@@ -7,7 +7,7 @@ SHARED_LIBS=	physfs-1.0 	1.0 \
 		physfs		1.0
 
 CATEGORIES=	devel
-MASTER_SITES=	${HOMEPAGE}downloads/
+MASTER_SITES=	http://offload1.icculus.org/physfs/downloads/
 
 HOMEPAGE=	http://icculus.org/physfs/
 

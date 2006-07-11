@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2004/02/02 17:35:01 sturm Exp $
+# $OpenBSD: Makefile,v 1.20 2006/07/11 15:28:24 steven Exp $
 
 COMMENT=	"assemble usenet binaries"
 
@@ -11,10 +11,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES= \
-	ftp://ftp.freesoftware.com/pub/perl/CPAN/scripts/news/nntpstuff/aub/ \
-	ftp://ftp.digital.com/pub/plan/perl/CPAN/scripts/news/nntpstuff/aub/ \
-	ftp://ftp.perl.org/pub/CPAN/scripts/news/nntpstuff/aub/
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../../scripts/news/nntpstuff/aub/}
 DISTFILES=	aub aub.1 BUG_FIXES
 DIST_SUBDIR=	aub
 EXTRACT_CASES=	*) cp ${FULLDISTDIR}/$$archive . ;;
