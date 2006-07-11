@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2005/09/25 09:22:49 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/07/11 16:32:13 kurt Exp $
 
-COMMENT=        "java equivalent to make"
+COMMENT=        "java replacement for make"
 
 DISTNAME=	apache-ant-1.6.5
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://ant.apache.org/
@@ -37,14 +37,14 @@ TXT=		README WHATSNEW LICENSE NOTICE LICENSE.dom LICENSE.sax LICENSE.xerces
 
 do-install:
 	@cd ${WRKDIST}/bin; \
-	    perl -pi -e 's|_antlibs_|${TRUEPREFIX}/lib/java/ant|;' \
+	    perl -pi -e 's|_antlibs_|${TRUEPREFIX}/ant/lib|;' \
 		ant runant.pl; \
 	    ${INSTALL_SCRIPT} ant antRun runant.pl ${PREFIX}/bin
 	@${INSTALL_DATA_DIR} ${ANTDOCS}
 	@cp -Rp ${WRKDIST}/docs/* ${ANTDOCS}
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${ANTDOCS}
 	@cd ${WRKDIST} && ${INSTALL_DATA} ${TXT} ${ANTDOCS}
-	@${INSTALL_DATA_DIR} ${PREFIX}/lib/java/ant
-	@cd ${WRKDIST}/lib && ${INSTALL_DATA} *.jar ${PREFIX}/lib/java/ant
+	@${INSTALL_DATA_DIR} ${PREFIX}/ant/lib
+	@cd ${WRKDIST}/lib && ${INSTALL_DATA} *.jar ${PREFIX}/ant/lib
 
 .include <bsd.port.mk>
