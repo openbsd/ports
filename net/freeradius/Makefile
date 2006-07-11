@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/06/01 14:25:06 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2006/07/11 11:30:06 steven Exp $
 
 SHARED_ONLY=		Yes
 
@@ -19,7 +19,8 @@ SHARED_LIBS=		eap	1.0 \
 			radius	1.0
 
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/
+MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
+		ftp://ftp.freeradius.org/pub/radius/old/
 
 HOMEPAGE=	http://www.freeradius.org/
 

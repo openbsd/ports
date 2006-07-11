@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/01/14 00:28:45 espie Exp $ 
+# $OpenBSD: Makefile,v 1.10 2006/07/11 11:30:06 steven Exp $ 
 # $FreeBSD: ports/math/netcdf/Makefile,v 1.7 2000/06/16 21:51:39 asami Exp $
 #
 
@@ -22,7 +22,8 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		c
 
-MASTER_SITES=	ftp://unidata.ucar.edu/pub/netcdf/
+MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/netcdf/ \
+		ftp://ftp.unidata.ucar.edu/pub/netcdf/old/
 EXTRACT_SUFX=	.tar.Z
 
 WRKSRC=			${WRKDIST}/src
