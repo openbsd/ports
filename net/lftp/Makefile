@@ -1,21 +1,24 @@
-# $OpenBSD: Makefile,v 1.60 2006/06/19 13:43:30 kevlo Exp $
+# $OpenBSD: Makefile,v 1.61 2006/07/11 06:21:11 steven Exp $
 
 COMMENT=	"shell-like command line ftp and sftp client"
 
 DISTNAME=	lftp-3.4.7
 CATEGORIES=	net
-MASTER_SITES=	http://ftp.yars.free.net/pub/source/lftp/
-EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://lftp.yar.ru/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		c crypto curses m readline ssl stdc++ util
+
+MASTER_SITES=	http://ftp.yars.free.net/pub/source/lftp/ \
+		http://ftp.yars.free.net/pub/source/lftp/old/
+EXTRACT_SUFX=	.tar.bz2
 
 LIB_DEPENDS=	expat.6::textproc/expat
 
