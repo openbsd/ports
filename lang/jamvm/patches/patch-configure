@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure,v 1.1 2006/07/11 16:01:24 kurt Exp $
+--- configure.orig	Tue Jun 20 09:49:10 2006
++++ configure	Tue Jun 20 09:50:14 2006
+@@ -1948,6 +1948,7 @@ i[3456]86-*-kfreebsd*) host_cpu=i386 hos
+ i386-*-openbsd*) host_os=bsd libdl_needed=no ;;
+ i386-*-freebsd*) host_os=bsd libdl_needed=no ;;
+ x86_64-*-linux*) host_os=linux ;;
++x86_64-*-openbsd*) host_os=bsd libdl_needed=no ;;
+ amd64-*-openbsd*) host_os=bsd libdl_needed=no ;;
+ amd64-*-freebsd*) host_os=bsd libdl_needed=no ;;
+ arm*-*-linux*) host_cpu=arm host_os=linux ;;
