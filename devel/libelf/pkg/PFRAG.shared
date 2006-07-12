@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/07/12 08:45:58 espie Exp $
+@lib lib/libelf.so.${LIBelf_VERSION}

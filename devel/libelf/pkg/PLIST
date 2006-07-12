@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/12 08:45:58 espie Exp $
+%%SHARED%%
+include/gelf.h
+include/libelf/
+include/libelf.h
+include/libelf/elf_repl.h
+include/libelf/gelf.h
+include/libelf/libelf.h
+include/libelf/nlist.h
+include/libelf/sys_elf.h
+include/nlist.h
+lib/libelf.a
+lib/pkgconfig/
+lib/pkgconfig/libelf.pc
