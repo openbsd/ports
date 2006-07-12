@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2006/05/21 14:38:57 steven Exp $
+@comment $OpenBSD: PLIST,v 1.9 2006/07/12 06:02:06 steven Exp $
 ${P5SITE}/Finance/
 ${P5SITE}/Finance/Quote/
 ${P5SITE}/Finance/Quote.pm
@@ -6,6 +6,7 @@ ${P5SITE}/Finance/Quote/AEX.pm
 ${P5SITE}/Finance/Quote/ASEGR.pm
 ${P5SITE}/Finance/Quote/ASX.pm
 ${P5SITE}/Finance/Quote/BMONesbittBurns.pm
+${P5SITE}/Finance/Quote/Bourso.pm
 ${P5SITE}/Finance/Quote/Cdnfundlibrary.pm
 ${P5SITE}/Finance/Quote/DWS.pm
 ${P5SITE}/Finance/Quote/Deka.pm
@@ -13,7 +14,9 @@ ${P5SITE}/Finance/Quote/FTPortfolios.pm
 ${P5SITE}/Finance/Quote/Fidelity.pm
 ${P5SITE}/Finance/Quote/FinanceCanada.pm
 ${P5SITE}/Finance/Quote/Fool.pm
+${P5SITE}/Finance/Quote/HEX.pm
 ${P5SITE}/Finance/Quote/IndiaMutual.pm
+${P5SITE}/Finance/Quote/LeRevenu.pm
 ${P5SITE}/Finance/Quote/ManInvestments.pm
 ${P5SITE}/Finance/Quote/NZX.pm
 ${P5SITE}/Finance/Quote/Platinum.pm
@@ -42,6 +45,7 @@ ${P5SITE}/Finance/Quote/ZA.pm
 @man man/man3p/Finance::Quote::ASEGR.3p
 @man man/man3p/Finance::Quote::ASX.3p
 @man man/man3p/Finance::Quote::BMONesbittBurns.3p
+@man man/man3p/Finance::Quote::Bourso.3p
 @man man/man3p/Finance::Quote::Cdnfundlibrary.3p
 @man man/man3p/Finance::Quote::DWS.3p
 @man man/man3p/Finance::Quote::Deka.3p
@@ -49,7 +53,9 @@ ${P5SITE}/Finance/Quote/ZA.pm
 @man man/man3p/Finance::Quote::Fidelity.3p
 @man man/man3p/Finance::Quote::FinanceCanada.3p
 @man man/man3p/Finance::Quote::Fool.3p
+@man man/man3p/Finance::Quote::HEX.3p
 @man man/man3p/Finance::Quote::IndiaMutual.3p
+@man man/man3p/Finance::Quote::LeRevenu.3p
 @man man/man3p/Finance::Quote::ManInvestments.3p
 @man man/man3p/Finance::Quote::NZX.3p
 @man man/man3p/Finance::Quote::Platinum.3p
