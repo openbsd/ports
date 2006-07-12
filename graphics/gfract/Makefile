@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2006/06/13 13:25:31 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2006/07/12 23:19:44 steven Exp $
 
 COMMENT=		"fractal program with GTK interface"
-DISTNAME=		gfract-0.32
-PKGNAME=		${DISTNAME}p0
-DISTFILES=		gfract-0.32.tar.gz \
+DISTNAME=		gfract-0.33
+DISTFILES=		${DISTNAME}.tar.gz \
 			gfract-palettes-0.1.tar.gz
 CATEGORIES=		graphics math
 

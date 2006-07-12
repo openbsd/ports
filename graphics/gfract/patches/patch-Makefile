@@ -1,31 +1,16 @@
---- Makefile.orig	Mon Feb 28 16:00:56 2005
-+++ Makefile	Mon Apr 17 14:14:51 2006
-@@ -5,13 +5,13 @@ CC := g++
- DEFS := -Wall -ansi -pedantic -D_GNU_SOURCE -DGDK_DISABLE_DEPRECATED \
- 	-DGTK_DISABLE_DEPRECATED
- 
--DEFS := $(shell pkg-config --cflags gtk+-2.0) $(DEFS)
-+DEFS := $(shell pkg-config --cflags libpng gtk+-2.0) $(DEFS)
- 
- CXXFLAGS := $(DEFS) -O2 -fomit-frame-pointer -ffast-math
- #CXXFLAGS := $(DEFS) -g
- 
- LDFLAGS := -lpng -lz
--LDFLAGS := $(shell pkg-config --libs gtk+-2.0) $(LDFLAGS)
-+LDFLAGS := $(shell pkg-config --libs libpng gtk+-2.0) $(LDFLAGS)
- 
- SRC := $(wildcard *.cpp)
- OBJS := $(patsubst %.cpp, %.o, $(SRC))
+$OpenBSD: patch-Makefile,v 1.2 2006/07/12 23:19:44 steven Exp $
+--- Makefile.orig	Tue Apr 18 17:31:44 2006
++++ Makefile	Thu Jul 13 01:18:52 2006
 @@ -19,11 +19,11 @@ HEADERS := $(wildcard *.h *.xpm)
  
  $(PROG): $(OBJS)
  	@echo Linking $(PROG)
--	@$(CC) $(CXXFLAGS) $(OBJS) $(LDFLAGS) -o $(PROG)
+-	@$(CXX) $(CXXFLAGS) $(OBJS) $(LDFLAGS) -o $(PROG)
 +	$(CXX) $(CXXFLAGS) $(OBJS) $(LDFLAGS) -o $(PROG)
  
  %.o: %.cpp $(HEADERS)
  	@echo Compiling $<
--	@$(CC) $(CXXFLAGS) -c $< -o $@
+-	@$(CXX) $(CXXFLAGS) -c $< -o $@
 +	$(CXX) $(DEFS) $(CXXFLAGS) -c $< -o $@
  
  clean:
