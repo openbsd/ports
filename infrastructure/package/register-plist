@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.7 2006/02/09 12:03:55 espie Exp $
+# $OpenBSD: register-plist,v 1.8 2006/07/12 08:11:28 espie Exp $
 # Copyright (c) 2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -175,10 +175,7 @@ sub my_compare
 	my $final = 0;
 	$p->visit('flatten', $l);
 	$p2->visit('flatten', $l2);
-	if (@$l != @$l2) {
-		return 1;
-	}
-	for my $e (@$l) {
+	while (my $e = shift @$l) {
 		my $e2 = shift @$l2;
 		my $r = $e->compare($e2);
 		if ($r == 1) {
@@ -187,6 +184,23 @@ sub my_compare
 		if ($r == 2) {
 			$final = 2;
 		}
+		# zap info-* files from compared stuff.
+		if ($e->isa("OpenBSD::PackingElement::InfoFile")) {
+			my $stem = $e->{name};
+			my ($i, $j);
+			for ($i = 1; $l->[0]->{name} eq "$stem-$i"; $i++) {
+				shift @$l;
+			}
+			for ($j = 1; $l2->[0]->{name} eq "$stem-$j"; $j++) {
+				shift @$l2;
+			}
+			if ($i != $j) {
+				$final = 2;
+			}
+		}
+	}
+	if (@$l2 > 0) {
+		return 1;
 	}
 	return $final;
 }
