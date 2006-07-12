@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2004/06/26 07:35:10 xsa Exp $
+# $OpenBSD: Makefile,v 1.13 2006/07/12 05:51:42 steven Exp $
 
 COMMENT=	"module to extract text contained within HTML tables"
 
-DISTNAME=	HTML-TableExtract-1.08
+DISTNAME=	HTML-TableExtract-2.09
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
 
@@ -20,5 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= perl
+
+PKG_ARCH=	*
 
 .include <bsd.port.mk>
