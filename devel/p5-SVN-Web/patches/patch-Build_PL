@@ -1,0 +1,56 @@
+$OpenBSD: patch-Build_PL,v 1.1 2006/07/12 05:25:48 sturm Exp $
+--- Build.PL.orig	Wed Jun 28 18:14:15 2006
++++ Build.PL	Mon Jul 10 07:44:34 2006
+@@ -79,10 +79,6 @@ looking for the necessary Perl modules.
+ 
+ EOM
+ 
+-if(Module::Build->y_n('==> Will you be using mod_perl?', 'n')) {
+-    $requires{'Apache::Request'} = 0;
+-}
+-
+ # ------------------------------------------------------------------------
+ 
+ print <<EOM;
+@@ -95,8 +91,7 @@ environment.
+ 
+ EOM
+ 
+-$feature{run_apache_tests} =
+-      Module::Build->y_n(q{==> Do you want to run the Apache tests?}, 'n');
++$feature{run_apache_tests} = 0;
+ 
+ while($feature{run_apache_tests}) {
+     $config_data{apache_path} =
+@@ -158,8 +153,7 @@ be run before installation to make sure 
+ 
+ EOM
+ 
+-$feature{'run_svnweb-server_tests'} =
+-      Module::Build->y_n(q{==> Do you want to test svnweb-server?}, 'y');
++$feature{'run_svnweb-server_tests'} = 0;
+ 
+ $requires{'HTTP::Server::Simple'} = 0 if $feature{'run_svnweb-server_tests'};
+ 
+@@ -173,8 +167,7 @@ currently being used by another service.
+ EOM
+ 
+     until(defined $config_data{httpd_port}) {
+-        $config_data{httpd_port} =
+-	  Module::Build->prompt('==> Please enter a spare port', 8080);
++        $config_data{httpd_port} = 8080;
+ 
+ 	if($config_data{httpd_port} !~ /^\d+$/) {
+ 	    print "The port must contain only digits.\n\n";
+@@ -216,11 +209,6 @@ SVN::Web can use plugins to turn e-mail 
+ Subversion commit messages in to clickable hyperlinks.
+ 
+ EOM
+-
+-if(Module::Build->y_n('==> Do you want to install these plugins?', 'y')) {
+-    $requires{'Template::Plugin::Clickable'} = 0;
+-    $requires{'Template::Plugin::Clickable::Email'} = 0;
+-}
+ 
+ # ------------------------------------------------------------------------
+ 

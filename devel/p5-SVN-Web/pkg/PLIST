@@ -1,16 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/22 01:52:23 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/07/12 05:25:48 sturm Exp $
 bin/svnweb-install
+@comment bin/svnweb-server
 ${P5SITE}/SVN/
 ${P5SITE}/SVN/Web/
 ${P5SITE}/SVN/Web.pm
-${P5SITE}/SVN/Web/Branch/
-${P5SITE}/SVN/Web/Branch.pm
-${P5SITE}/SVN/Web/Branch/YAML.pm
 ${P5SITE}/SVN/Web/Browse.pm
 ${P5SITE}/SVN/Web/Checkout.pm
+${P5SITE}/SVN/Web/ConfigData.pm
 ${P5SITE}/SVN/Web/Diff.pm
 ${P5SITE}/SVN/Web/I18N/
 ${P5SITE}/SVN/Web/I18N/en.po
+${P5SITE}/SVN/Web/I18N/fr.po
 ${P5SITE}/SVN/Web/I18N/zh_cn.po
 ${P5SITE}/SVN/Web/I18N/zh_tw.po
 ${P5SITE}/SVN/Web/List.pm
@@ -20,11 +20,57 @@ ${P5SITE}/SVN/Web/Revision.pm
 ${P5SITE}/SVN/Web/Style/
 ${P5SITE}/SVN/Web/Style/common.css
 ${P5SITE}/SVN/Web/Style/styles-hlb.css
+${P5SITE}/SVN/Web/Style/trac/
+${P5SITE}/SVN/Web/Style/trac/browser.css
+${P5SITE}/SVN/Web/Style/trac/changeset.css
+${P5SITE}/SVN/Web/Style/trac/code.css
+${P5SITE}/SVN/Web/Style/trac/diff.css
+${P5SITE}/SVN/Web/Style/trac/feed-icon-16x16.png
+${P5SITE}/SVN/Web/Style/trac/file.png
+${P5SITE}/SVN/Web/Style/trac/filedeny.png
+${P5SITE}/SVN/Web/Style/trac/folder.png
+${P5SITE}/SVN/Web/Style/trac/folderdeny.png
+${P5SITE}/SVN/Web/Style/trac/parent.png
+${P5SITE}/SVN/Web/Style/trac/svnweb.css
+${P5SITE}/SVN/Web/Style/trac/text-diff-html.css
+${P5SITE}/SVN/Web/Style/trac/trac.css
 ${P5SITE}/SVN/Web/Template/
-${P5SITE}/SVN/Web/Template/browse
-${P5SITE}/SVN/Web/Template/footer
-${P5SITE}/SVN/Web/Template/header
-${P5SITE}/SVN/Web/Template/list
-${P5SITE}/SVN/Web/Template/log
-${P5SITE}/SVN/Web/Template/revision
+${P5SITE}/SVN/Web/Template/plain/
+${P5SITE}/SVN/Web/Template/plain/browse
+${P5SITE}/SVN/Web/Template/plain/diff
+${P5SITE}/SVN/Web/Template/plain/footer
+${P5SITE}/SVN/Web/Template/plain/header
+${P5SITE}/SVN/Web/Template/plain/list
+${P5SITE}/SVN/Web/Template/plain/log
+${P5SITE}/SVN/Web/Template/plain/revision
+${P5SITE}/SVN/Web/Template/plain/view
+${P5SITE}/SVN/Web/Template/plain/x
+${P5SITE}/SVN/Web/Template/trac/
+${P5SITE}/SVN/Web/Template/trac/browse
+${P5SITE}/SVN/Web/Template/trac/diff
+${P5SITE}/SVN/Web/Template/trac/footer
+${P5SITE}/SVN/Web/Template/trac/header
+${P5SITE}/SVN/Web/Template/trac/list
+${P5SITE}/SVN/Web/Template/trac/log
+${P5SITE}/SVN/Web/Template/trac/revision
+${P5SITE}/SVN/Web/Template/trac/rss
+${P5SITE}/SVN/Web/Template/trac/view
+${P5SITE}/SVN/Web/Template/trac/x
+${P5SITE}/SVN/Web/Test.pm
+${P5SITE}/SVN/Web/View.pm
+${P5SITE}/SVN/Web/X.pm
+${P5SITE}/SVN/Web/action.pm
+@man man/man1/svnweb-server.1
 @man man/man3p/SVN::Web.3p
+@man man/man3p/SVN::Web::Browse.3p
+@man man/man3p/SVN::Web::Checkout.3p
+@man man/man3p/SVN::Web::ConfigData.3p
+@man man/man3p/SVN::Web::Diff.3p
+@man man/man3p/SVN::Web::List.3p
+@man man/man3p/SVN::Web::Log.3p
+@man man/man3p/SVN::Web::RSS.3p
+@man man/man3p/SVN::Web::Revision.3p
+@man man/man3p/SVN::Web::Test.3p
+@man man/man3p/SVN::Web::View.3p
+@man man/man3p/SVN::Web::X.3p
+@man man/man3p/SVN::Web::action.3p
