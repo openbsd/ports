@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2006/06/26 18:10:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.108 2006/07/12 22:00:30 steven Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -11,6 +11,7 @@
      SUBDIR += cdrtools
      SUBDIR += cfengine
      SUBDIR += clusterit
+     SUBDIR += clusterit,no_x11
      SUBDIR += colorls
      SUBDIR += colortail
      SUBDIR += contool
