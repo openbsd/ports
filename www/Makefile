@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.221 2006/06/25 21:26:37 steven Exp $
+# $OpenBSD: Makefile,v 1.222 2006/07/12 05:33:29 sturm Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -99,6 +99,7 @@
      SUBDIR += p5-HTML-Calendar-Month-Simple
      SUBDIR += p5-HTML-Clean
      SUBDIR += p5-HTML-Embperl
+     SUBDIR += p5-HTML-FillInForm
      SUBDIR += p5-HTML-Format
      SUBDIR += p5-HTML-FromText
      SUBDIR += p5-HTML-Lint
