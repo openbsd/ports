@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/10/16 12:56:22 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2006/07/12 07:06:42 steven Exp $
 
 COMMENT=	"error/exception handling in an OO-ish way"
 
-DISTNAME=	Error-0.15
+DISTNAME=	Error-0.16
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
@@ -16,6 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Error/}
 
-CONFIGURE_STYLE=	perl
+CONFIGURE_STYLE=perl
+
+PKG_ARCH=	*
 
 .include <bsd.port.mk>

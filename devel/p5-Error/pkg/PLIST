@@ -1,3 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/14 23:43:58 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/07/12 07:06:42 steven Exp $
+${P5SITE}/Error/
 ${P5SITE}/Error.pm
+${P5SITE}/Error/Simple.pm
 @man man/man3p/Error.3p
+@man man/man3p/Error::Simple.3p
