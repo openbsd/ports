@@ -1,0 +1,3 @@
+This module automatically inserts data from a previous HTML form into the
+HTML input and select tags. It is a subclass of HTML::Parser and uses it
+to parse the HTML and insert the values into the form tags.
