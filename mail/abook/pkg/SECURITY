@@ -1,4 +1,0 @@
-$OpenBSD: SECURITY,v 1.1.1.1 2000/05/29 16:46:51 reinhard Exp $
-
-no privileged rights needed.
-various strcat/strcpy/strcmp/sprintf, though not a server program.

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 09:09:41 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/07/12 14:24:49 steven Exp $
 bin/abook
 @man man/man1/abook.1
 @man man/man5/abookrc.5
@@ -11,3 +11,7 @@ share/examples/abook/whitelist/README
 share/examples/abook/whitelist/abook2whitelist.sh
 share/examples/abook/whitelist/mutt.whitelist
 share/examples/abook/whitelist/whitelist.rc
+share/locale/de/LC_MESSAGES/abook.mo
+share/locale/fr/LC_MESSAGES/abook.mo
+share/locale/ja/LC_MESSAGES/abook.mo
+share/locale/sv/LC_MESSAGES/abook.mo

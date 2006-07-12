@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2005/01/02 10:53:41 alek Exp $
+# $OpenBSD: Makefile,v 1.23 2006/07/12 14:24:49 steven Exp $
 
 COMMENT=	"addressbook program with mutt support"
 
-DISTNAME=	abook-0.5.2
+DISTNAME=	abook-0.5.5
 CATEGORIES=	mail
 
 HOMEPAGE=	http://abook.sourceforge.net/
@@ -17,6 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c ncurses readline
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=abook/}
+
+MODULES=	devel/gettext
 
 CONFIGURE_STYLE=gnu
 
