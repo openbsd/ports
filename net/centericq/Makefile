@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2005/07/19 18:13:01 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.31 2006/07/12 07:46:21 steven Exp $
 
 BROKEN=		"requires update but new version has issues"
 
@@ -8,7 +8,6 @@ DISTNAME=	centericq-4.9.11
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net	
 MASTER_SITES=	http://konst.org.ua/download/ \
-		http://konst.home.welcomehome.org/ \
 		http://centericq.de/archive/source/releases/
 
 HOMEPAGE=	http://konst.org.ua/software.centericq.html
