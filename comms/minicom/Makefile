@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.45 2006/02/08 04:54:48 david Exp $
+# $OpenBSD: Makefile,v 1.46 2006/07/13 06:47:09 steven Exp $
 
 COMMENT=		"MS-DOS Telix-like serial communication program"
 
 VER=			2.00.0
 DISTNAME=		minicom-${VER}.src
-PKGNAME=		minicom-${VER}p1
+PKGNAME=		minicom-${VER}p2
 CATEGORIES=		comms
 MASTER_SITES=		${MASTER_SITE_SUNSITE:=apps/serialcomm/dialout/}
 
-HOMEPAGE=		http://www.netsonic.fi/~walker/minicom.html
+HOMEPAGE=		http://alioth.debian.org/projects/minicom/
 
 MODULES=		devel/gettext
 RUN_DEPENDS=		::comms/kermit \
 			::comms/lrzsz
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
