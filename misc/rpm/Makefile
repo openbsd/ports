@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2006/01/14 20:27:11 steven Exp $
+# $OpenBSD: Makefile,v 1.17 2006/07/13 17:39:19 steven Exp $
 
 COMMENT=	"redhat package manager"
 
@@ -17,7 +17,8 @@ WANTLIB=		c z
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 HOMEPAGE=	http://www.rpm.org/
-MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/
+MASTER_SITES=	ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/ \
+		ftp://ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/
 
 MODULES=	devel/gettext
 LIB_DEPENDS+=	bz2.::archivers/bzip2 \

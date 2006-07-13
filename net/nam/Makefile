@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/12/16 00:31:23 alek Exp $
+# $OpenBSD: Makefile,v 1.21 2006/07/13 17:39:19 steven Exp $
 # $FreeBSD: ports/net/nam/Makefile,v 1.3 1999/11/29 03:46:08 steve Exp $
 
 COMMENT=	"UCB/LBNL Network Animator"
@@ -7,8 +7,7 @@ DISTNAME=	nam-src-1.9
 PKGNAME=	nam-1.9
 CATEGORIES=	net
 
-MASTER_SITES= 	ftp://ftp.ee.surrey.ac.uk/pub/Mirrors/ftp.isi.edu/nsnam/ \
-		ftp://ftp.isi.edu/nsnam/ \
+MASTER_SITES= 	ftp://ftp.isi.edu/nsnam/ \
 		http://www.isi.edu/nsnam/dist/
 
 HOMEPAGE=	http://www.isi.edu/nsnam/nam/

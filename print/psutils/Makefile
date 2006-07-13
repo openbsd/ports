@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2005/10/18 22:33:29 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2006/07/13 17:39:19 steven Exp $
 
 COMMENT=	"manipulating PostScript documents"
 
@@ -6,7 +6,8 @@ DISTNAME=	psutils-p17
 PKGNAME=	psutils-0.17p0
 CATEGORIES=	print
 
-MASTER_SITES=   ftp://ftp.tardis.ed.ac.uk/users/ajcd/
+MASTER_SITES=	${MASTER_SITE_TEX_CTAN:=support/psutils/} \
+		ftp://ftp.tardis.ed.ac.uk/users/ajcd/
 
 HOMEPAGE=	http://gershwin.ens.fr/vdaniel/Doc-Locale/Outils-Gnu-Linux/PsUtils/
 
