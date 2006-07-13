@@ -3,7 +3,7 @@
 # Date created:         Thu Jan 18, 2000
 # Whom:                 Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.13 2004/11/21 21:51:36 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2006/07/13 13:39:30 espie Exp $
 #
 
 COMMENT=	"pager utility that speaks Chinese"
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		c curses termcap
 
-CONFIGURE_STYLE= gnu dest
+CONFIGURE_STYLE= gnu dest old
 CFLAGS+=        -DHANZI # LDFLAGS=-s datadir=/usr/local/lib/less
 
 post-install:
