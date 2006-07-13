@@ -1,0 +1,10 @@
+--- frontend/Makefile.am.orig	Wed Mar 24 04:00:40 2004
++++ frontend/Makefile.am	Thu Jul 13 08:34:13 2006
+@@ -1,6 +1,6 @@
+ bin_PROGRAMS = faac
+ 
+-faac_SOURCES = main.c input.c
++faac_SOURCES = main.c input.c dummy.cc
+ 
+ INCLUDES = -I$(top_srcdir)/include 
+ LDADD = $(top_builddir)/libfaac/libfaac.la -lm

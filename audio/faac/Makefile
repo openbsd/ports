@@ -1,0 +1,38 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2006/07/13 16:18:40 ckuethe Exp $
+
+COMMENT=	"MPEG-2 and MPEG-4 AAC encoder"
+DISTNAME=	faac-1.24
+CATEGORIES=    	audio
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=faac/}
+SHARED_LIBS=	faac	0.0
+
+HOMEPAGE=	http://www.audiocoding.com/
+
+# GPL
+PERMIT_PACKAGE_CDROM=	"Patents"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"Patents"
+PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m stdc++
+
+BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS}
+LIB_DEPENDS=	mp4v2.1::audio/faad
+USE_LIBTOOL=	Yes
+
+WRKDIST=	${WRKDIR}/faac
+CONFIGURE_STYLE= automake
+AUTOCONF_VERSION=2.59
+AUTOMAKE_VERSION=1.4
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--without-mp4v2
+
+post-patch:
+	@touch ${WRKSRC}/frontend/dummy.cc
+	@cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} PATH=${PORTPATH} \
+		sh bootstrap
+
+.include <bsd.port.mk>

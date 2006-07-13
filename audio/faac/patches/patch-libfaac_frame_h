@@ -1,0 +1,22 @@
+$OpenBSD: patch-libfaac_frame_h,v 1.1.1.1 2006/07/13 16:18:40 ckuethe Exp $
+--- libfaac/frame.h.orig	Sun Jul  9 15:34:25 2006
++++ libfaac/frame.h	Sun Jul  9 15:35:37 2006
+@@ -60,8 +60,6 @@ extern "C" {
+   #endif
+ #endif
+ 
+-#pragma pack(push, 1)
+-
+ typedef struct {
+   psymodel_t *model;
+   char *name;
+@@ -149,9 +147,6 @@ int FAACAPI faacEncEncode(faacEncHandle 
+                           );
+ 
+ int FAACAPI faacEncClose(faacEncHandle hEncoder);
+-
+-
+-#pragma pack(pop)
+ 
+ #ifdef __cplusplus
+ }

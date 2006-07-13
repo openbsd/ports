@@ -1,0 +1,10 @@
+$OpenBSD: patch-libfaac_psych_h,v 1.1.1.1 2006/07/13 16:18:40 ckuethe Exp $
+--- libfaac/psych.h.orig	Sun Jul  9 15:42:32 2006
++++ libfaac/psych.h	Sun Jul  9 15:42:45 2006
+@@ -82,4 +82,4 @@ extern psymodel_t psymodel2;
+ }
+ #endif /* __cplusplus */
+ 
+-#endif /* PSYCH_H */
+\ No newline at end of file
++#endif /* PSYCH_H */

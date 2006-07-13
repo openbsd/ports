@@ -1,0 +1,3 @@
+FAAC is the "Freeware Advanced Audio Coder". It supports MPEG-2 and MPEG-4 AAC.
+The supported AAC profiles are HE, Main, LC, LTP and LD. It also supports all
+these profiles in their ER (Error Resilient) equivalent.

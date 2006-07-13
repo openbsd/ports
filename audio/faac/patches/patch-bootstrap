@@ -1,0 +1,10 @@
+$OpenBSD: patch-bootstrap,v 1.1.1.1 2006/07/13 16:18:40 ckuethe Exp $
+--- bootstrap.orig	Sun Jul  9 14:35:15 2006
++++ bootstrap	Sun Jul  9 14:35:31 2006
+@@ -3,5 +3,5 @@
+ aclocal -I .
+ autoheader
+ libtoolize --automake
+-automake --add-missing
++automake --add-missing --include-deps
+ autoconf

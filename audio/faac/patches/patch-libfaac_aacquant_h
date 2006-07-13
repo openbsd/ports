@@ -1,0 +1,18 @@
+$OpenBSD: patch-libfaac_aacquant_h,v 1.1.1.1 2006/07/13 16:18:40 ckuethe Exp $
+--- libfaac/aacquant.h.orig	Sun Jul  9 15:41:20 2006
++++ libfaac/aacquant.h	Sun Jul  9 15:41:33 2006
+@@ -37,14 +37,12 @@ extern "C" {
+ #define POW20(x)  pow(2.0,((double)x)*.25)
+ #define IPOW20(x)  pow(2.0,-((double)x)*.1875)
+ 
+-#pragma pack(push, 1)
+ typedef struct
+   {
+     double *pow43;
+     double *adj43;
+     double quality;
+   } AACQuantCfg;
+-#pragma pack(pop)
+ 
+ void AACQuantizeInit(CoderInfo *coderInfo, unsigned int numChannels,
+ 		     AACQuantCfg *aacquantCfg);

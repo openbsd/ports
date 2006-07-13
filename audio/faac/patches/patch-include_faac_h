@@ -1,0 +1,22 @@
+$OpenBSD: patch-include_faac_h,v 1.1.1.1 2006/07/13 16:18:40 ckuethe Exp $
+--- include/faac.h.orig	Sun Jul  9 15:39:41 2006
++++ include/faac.h	Sun Jul  9 15:40:49 2006
+@@ -36,8 +36,6 @@ extern "C" {
+ # endif
+ #endif
+ 
+-#pragma pack(push, 1)
+-
+ typedef struct {
+   void *ptr;
+   char *name;
+@@ -84,9 +82,6 @@ int FAACAPI faacEncEncode(faacEncHandle 
+ 
+ int FAACAPI faacEncClose(faacEncHandle hEncoder);
+ 
+-
+-
+-#pragma pack(pop)
+ 
+ #ifdef __cplusplus
+ }
