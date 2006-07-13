@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.18 2005/09/23 19:36:02 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.19 2006/07/13 08:02:42 steven Exp $
 
 COMMENT=	"create HTML table from sql queries"
 
-VERSION=	1.22
-DISTNAME=	DBIx-XHTML_Table-${VERSION}
+DISTNAME=	DBIx-XHTML_Table-1.36
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	databases www perl5
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=DBIx/}
 
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -19,5 +19,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE= perl
 REGRESS_IS_INTERACTIVE=	Yes
+
+PKG_ARCH=	*
 
 .include <bsd.port.mk>
