@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2005/08/07 10:39:47 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2006/07/13 07:28:21 steven Exp $
 
 COMMENT=	"conversions to and from arbitrary character sets and UTF8"
 
-DISTNAME=	Unicode-MapUTF8-1.10
+DISTNAME=	Unicode-MapUTF8-1.11
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	converters perl5
 
@@ -22,5 +22,7 @@ REGRESS_DEPENDS=::converters/p5-Unicode-String \
 		::converters/p5-Unicode-Map8
 
 CONFIGURE_STYLE= perl
+
+PKG_ARCH=	*
 
 .include <bsd.port.mk>
