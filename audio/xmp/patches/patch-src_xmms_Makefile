@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_xmms_Makefile,v 1.1 2004/06/13 06:11:53 pvalchev Exp $
---- src/xmms/Makefile.orig	2001-01-16 18:29:41.000000000 -0700
-+++ src/xmms/Makefile	2004-06-12 23:27:40.000000000 -0600
+$OpenBSD: patch-src_xmms_Makefile,v 1.2 2006/07/13 13:35:16 espie Exp $
+--- src/xmms/Makefile.orig	Wed Jan 17 02:29:41 2001
++++ src/xmms/Makefile	Wed Jul 12 17:10:42 2006
 @@ -1,7 +1,7 @@
  # Extended Module Player src/xmms/Makefile
- # $Id: patch-src_xmms_Makefile,v 1.1 2004/06/13 06:11:53 pvalchev Exp $
+ # $Id: patch-src_xmms_Makefile,v 1.2 2006/07/13 13:35:16 espie Exp $
  
 -XCFLAGS	= -I../include -DVERSION=\"$(VERSION)\" `xmms-config --cflags` -DXMMS_PLUGIN #-DDEBUG
 +XCFLAGS	= -I../include -DVERSION=\"$(VERSION)\" `xmms-config --cflags` -DXMMS_PLUGIN -fPIC #-DDEBUG

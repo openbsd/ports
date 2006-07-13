@@ -1,10 +1,20 @@
-$OpenBSD: patch-Makefile_rules_in,v 1.1 2003/05/18 07:40:55 naddy Exp $
---- Makefile.rules.in.orig	Fri May 16 23:21:04 2003
-+++ Makefile.rules.in	Fri May 16 23:21:18 2003
-@@ -10,6 +10,7 @@ exec_prefix= $(DEST_DIR)@prefix@
- BIN_DIR	= @bindir@
- LIB_DIR = @libdir@
- MAN_DIR	= @mandir@/man1
+$OpenBSD: patch-Makefile_rules_in,v 1.2 2006/07/13 13:35:15 espie Exp $
+--- Makefile.rules.in.orig	Sat Jan 20 02:51:53 2001
++++ Makefile.rules.in	Thu Jul 13 15:32:24 2006
+@@ -5,11 +5,12 @@ VERSION	= 2.0.4
+ DATE	= Fri Jan 19 23:51:53 BRST 2001
+ 
+ DEST_DIR=
+-prefix	= $(DEST_DIR)@prefix@
+-exec_prefix= $(DEST_DIR)@prefix@
+-BIN_DIR	= @bindir@
+-LIB_DIR = @libdir@
+-MAN_DIR	= @mandir@/man1
++prefix	= @prefix@
++exec_prefix= @prefix@
++BIN_DIR	= $(DEST_DIR)@bindir@
++LIB_DIR = $(DEST_DIR)@libdir@
++MAN_DIR	= $(DEST_DIR)@mandir@/man1
 +SYSCONF_DIR = @sysconfdir@
  
  CC	= @CC@
