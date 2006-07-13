@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2004/11/28 22:41:22 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/07/13 12:11:08 steven Exp $
 
 COMMENT=	"Rogue like adventure game"
 
-VERSION=	3.2
-DISTNAME=	wanderer-${VERSION}
+DISTNAME=	wanderer-3.2
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	games
 
-HOMEPAGE=	http://www.surferz.net/~marina/
+HOMEPAGE=	http://www.e271.net/~marina/wanderer.html
 
 MAINTAINER=	Marina Brown <marina@surferz.net>
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		c curses
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	http://www.e271.net/~marina/
 
 NO_REGRESS=		Yes
 
