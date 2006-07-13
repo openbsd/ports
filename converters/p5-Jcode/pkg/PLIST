@@ -1,23 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:25:50 espie Exp $
-${P5ARCH}/
-${P5ARCH}/Jcode/
-${P5ARCH}/Jcode.pm
-${P5ARCH}/Jcode/Constants.pm
-${P5ARCH}/Jcode/H2Z.pm
-${P5ARCH}/Jcode/Tr.pm
-${P5ARCH}/Jcode/Unicode/
-${P5ARCH}/Jcode/Unicode.pm
-${P5ARCH}/Jcode/Unicode/Constants.pm
-${P5ARCH}/Jcode/Unicode/NoXS.pm
-${P5ARCH}/Jcode/_test.pl
-${P5ARCH}/auto/
-${P5ARCH}/auto/Jcode/
-${P5ARCH}/auto/Jcode/Unicode/
-${P5ARCH}/auto/Jcode/Unicode/Unicode.bs
-${P5ARCH}/auto/Jcode/Unicode/Unicode.so
-@comment ${P5ARCH}/mac_install.pl
-@comment ${P5ARCH}/win_install.pl
+@comment $OpenBSD: PLIST,v 1.6 2006/07/13 07:26:44 steven Exp $
+${P5SITE}/Jcode/
+${P5SITE}/Jcode.pm
+${P5SITE}/Jcode/Nihongo.pod
 @man man/man3p/Jcode.3p
-@man man/man3p/Jcode::Unicode.3p
-@man man/man3p/Jcode::Unicode::Constants.3p
-@man man/man3p/Jcode::Unicode::NoXS.3p
+@man man/man3p/Jcode::Nihongo.3p
