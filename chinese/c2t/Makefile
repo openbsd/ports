@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/11/21 21:51:36 espie Exp $	
+# $OpenBSD: Makefile,v 1.21 2006/07/13 07:43:40 steven Exp $	
 
 COMMENT=	"translate GB/Big5 encoding to tone pinyin"
 
@@ -13,9 +13,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-MASTER_SITES=   ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/convert/  \
-		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/x-win/cxterm/dict/gb/
-DISTFILES=	c2t.tar.gz TONEPY.tit
+MASTER_SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/convert/
+MASTER_SITES0=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/x-win/cxterm/dict/gb/
+DISTFILES=	c2t.tar.gz TONEPY.tit:0
 EXTRACT_ONLY=	c2t.tar.gz
 
 WRKDIST=	${WRKDIR}

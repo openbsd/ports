@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2005/07/02 16:27:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2006/07/13 07:43:40 steven Exp $
 
 COMMENT=	"SOund eXchange - universal sound sample translator"
 
@@ -16,8 +16,7 @@ PERMIT_DISTFILES_CDROM=	"no redistribution"
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
-MASTER_SITES=	http://www.cnpbagwell.com/ \
-		${MASTER_SITE_SOURCEFORGE:=sox/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sox/}
 
 CONFIGURE_STYLE=gnu dest
 CONFIGURE_ARGS=	--disable-oss-dsp

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/06/03 09:23:14 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2006/07/13 07:43:40 steven Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	"Python tools for computational molecular biology"
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}files/
+MASTER_SITES=	${HOMEPAGE}DIST/
 
 MODULES=	lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/02/05 15:08:43 david Exp $
+# $OpenBSD: Makefile,v 1.15 2006/07/13 07:43:40 steven Exp $
 
 DISTNAME=	sqsh-2.1
 PKGNAME=	${DISTNAME}p0
@@ -12,7 +12,7 @@ WANTLIB=		c curses m readline
 
 COMMENT=	"SQL shell"
 HOMEPAGE=	http://www.sqsh.org/
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sqsh/} ${HOMEPAGE}
 EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	Joshua Stein <jcs@openbsd.org>
