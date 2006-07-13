@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:17:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2006/07/13 16:58:46 steven Exp $
 lib/python${MODPY_VERSION}/site-packages/curl/
 lib/python${MODPY_VERSION}/site-packages/curl/__init__.py
 lib/python${MODPY_VERSION}/site-packages/curl/__init__.pyc
@@ -7,10 +7,11 @@ share/doc/py-curl/
 share/doc/py-curl/callbacks.html
 share/doc/py-curl/curlmultiobject.html
 share/doc/py-curl/curlobject.html
+share/doc/py-curl/curlshareobject.html
 share/doc/py-curl/pycurl.html
 share/examples/py-curl/
 share/examples/py-curl/basicfirst.py
-share/examples/py-curl/gtkhtml_demo.py
+share/examples/py-curl/file_upload.py
 share/examples/py-curl/linksys.py
 share/examples/py-curl/retriever-multi.py
 share/examples/py-curl/retriever.py
@@ -32,6 +33,8 @@ share/examples/py-curl/tests/test_multi6.py
 share/examples/py-curl/tests/test_multi_vs_thread.py
 share/examples/py-curl/tests/test_post.py
 share/examples/py-curl/tests/test_post2.py
+share/examples/py-curl/tests/test_post3.py
+share/examples/py-curl/tests/test_share.py
 share/examples/py-curl/tests/test_stringio.py
 share/examples/py-curl/tests/test_xmlrpc.py
 share/examples/py-curl/tests/util.py

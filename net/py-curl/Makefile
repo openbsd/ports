@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2006/06/03 09:43:03 alek Exp $
+# $OpenBSD: Makefile,v 1.20 2006/07/13 16:58:46 steven Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"Python interface to cURL library"
 
-VERSION=	7.12
+VERSION=	7.15.4.2
 DISTNAME=	pycurl-${VERSION}
-PKGNAME=	py-curl-${VERSION}p1
+PKGNAME=	py-curl-${VERSION}
 CATEGORIES=    	net
 
 HOMEPAGE=	http://pycurl.sourceforge.net/

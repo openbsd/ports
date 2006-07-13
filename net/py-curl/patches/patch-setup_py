@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.2 2004/04/20 13:06:27 xsa Exp $
---- setup.py.orig	2004-03-15 11:24:01.000000000 +0100
-+++ setup.py	2004-04-16 17:12:05.000000000 +0200
-@@ -142,20 +142,20 @@ def get_data_files():
+$OpenBSD: patch-setup_py,v 1.3 2006/07/13 16:58:46 steven Exp $
+--- setup.py.orig	Wed Jul  5 08:52:19 2006
++++ setup.py	Thu Jul 13 18:56:06 2006
+@@ -145,20 +145,20 @@ def get_data_files():
      if sys.platform == "win32":
          datadir = os.path.join("doc", PACKAGE)
      else:
