@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/01/25 23:32:13 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2006/07/13 12:35:54 steven Exp $
 
 COMMENT=	"alarm library for the lua language"
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
@@ -10,7 +10,7 @@ DIST_SUBDIR=	luaalarm-${DATE}
 WRKDIST=	${WRKDIR}/alarm
 CATEGORIES=	devel
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	${HOMEPAGE}5.0/
 HOMEPAGE=	http://www.tecgraf.puc-rio.br/~lhf/ftp/lua/
 
 MAINTAINER=	Pedro Martelletto <pedro@openbsd.org>

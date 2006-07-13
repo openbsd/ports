@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/01/10 20:17:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.4 2006/07/13 12:35:55 steven Exp $
 
 COMMENT=	"posix library for the lua language"
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
@@ -10,7 +10,7 @@ DIST_SUBDIR=	luaposix-${DATE}
 WRKDIST=	${WRKDIR}/posix
 CATEGORIES=	devel
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	${HOMEPAGE}5.0/
 HOMEPAGE=	http://www.tecgraf.puc-rio.br/~lhf/ftp/lua/
 
 MAINTAINER=	Pedro Martelletto <pedro@openbsd.org>
