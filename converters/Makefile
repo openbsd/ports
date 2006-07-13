@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2006/05/09 18:24:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2006/07/13 11:59:51 steven Exp $
 #
 
     SUBDIR += base64
@@ -21,6 +21,7 @@
     SUBDIR += p5-Date-Tolkien-Shire
     SUBDIR += p5-DateManip
     SUBDIR += p5-IDNA-Punycode
+    SUBDIR += p5-JSON
     SUBDIR += p5-Jcode
     SUBDIR += p5-MIME-Base64
     SUBDIR += p5-Net-IDN-Nameprep
