@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.756 2006/07/11 06:34:32 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.757 2006/07/13 14:43:25 steven Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2770,7 +2770,7 @@ uninstall deinstall:
 .endif
 
 peek-ftp:
-	@for i in ${MASTER_SITES}; do echo "Connecting to $$i"; ${FETCH_CMD} $$i ; break; done
+	@for i in ${MASTER_SITES:Mftp*}; do echo "Connecting to $$i"; ${FETCH_CMD} $$i ; break; done
 
 show-required-by:
 	@cd ${PORTSDIR} && make all-dir-depends | perl ${PORTSDIR}/infrastructure/build/extract-dependencies -r ${FULLPKGPATH}
