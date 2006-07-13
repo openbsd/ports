@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/10 03:27:06 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2006/07/13 16:14:17 steven Exp $
 
 COMMENT=	"create dynamic PerlIO layers"
 
-DISTNAME=	PerlIO-via-dynamic-0.11
+DISTNAME=	PerlIO-via-dynamic-0.12
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=PerlIO/}
@@ -16,5 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= perl
+
+PKG_ARCH=	*
 
 .include <bsd.port.mk>
