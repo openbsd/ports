@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2006/01/25 07:08:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.26 2006/07/13 14:36:10 steven Exp $
 
 COMMENT=	"Linux compatibility package based on RedHat 8.0"
 
@@ -6,8 +6,10 @@ PKGNAME=	redhat_base-8.0p8
 
 MAINTAINER=	Jason Ish <ish@openbsd.org>
 
-MASTER_SITES=	${MASTER_SITE_REDHAT:=redhat/linux/8.0/en/os/i386/RedHat/RPMS/}
-MASTER_SITES0=	${MASTER_SITE_REDHAT:=redhat/linux/updates/8.0/en/os/i386/}
+MASTER_SITES=	http://download.fedoralegacy.org/redhat/8.0/os/i386/ \
+		${MASTER_SITE_REDHAT:=redhat/linux/8.0/en/os/i386/RedHat/RPMS/}
+MASTER_SITES0=	http://download.fedoralegacy.org/redhat/8.0/updates/i386/ \
+		${MASTER_SITE_REDHAT:=redhat/linux/updates/8.0/en/os/i386/}
 
 DISTFILES=	${RPMS}
 
