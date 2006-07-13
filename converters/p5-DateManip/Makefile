@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2004/05/10 19:41:33 sturm Exp $
+# $OpenBSD: Makefile,v 1.11 2006/07/13 11:52:50 steven Exp $
 
 COMMENT=	"manipulate dates in perl"
-DISTNAME=	DateManip-5.42a
+DISTNAME=	DateManip-5.44
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	converters perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Date/}
@@ -17,5 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= perl
+
+PKG_ARCH=	*
 
 .include <bsd.port.mk>
