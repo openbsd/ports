@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2006/04/10 21:33:36 todd Exp $
+# $OpenBSD: Makefile,v 1.8 2006/07/14 04:23:03 pvalchev Exp $
+
+BROKEN=		"PAE broke this, fix needed"
 
 ONLY_FOR_ARCHS= i386
 
