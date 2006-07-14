@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/11/21 22:53:58 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2006/07/14 21:26:15 steven Exp $
 
 COMMENT=	"encode/decode binary to printable ASCII"
 
@@ -12,7 +12,7 @@ PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	http://www.netsw.org/system/tools/fileutils/encode/
 PATCHFILES=	btoa-5.2-patch1.gz
 
 MAKE_FLAGS=	DESTDIR=${PREFIX}
