@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2004/12/19 17:15:18 alek Exp $
+# $OpenBSD: Makefile,v 1.17 2006/07/14 06:38:59 steven Exp $
 
 COMMENT=	"rather neat animated clock"
 
-DISTNAME=	xdaliclock-2.18
+DISTNAME=	xdaliclock-2.23
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.jwz.org/xdaliclock/
