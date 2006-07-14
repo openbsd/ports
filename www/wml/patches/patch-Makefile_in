@@ -1,0 +1,168 @@
+--- Makefile.in.orig	Fri Oct 18 23:15:15 2002
++++ Makefile.in	Sat Jun 24 00:09:14 2006
+@@ -25,12 +25,16 @@ TARBALL         = $(SHTOOL) tarball -t
+ 
+ prefix          = @prefix@
+ exec_prefix     = $(prefix)
+-bindir          = $(prefix)/bin
++bindir          = $(DESTDIR)/$(prefix)/bin
++docdir		= $(DESTDIR)/$(prefix)/share/doc/wml
+ libsubdir       = @libsubdir@
+-libdir          = $(prefix)/lib$(libsubdir)
+-mandir          = $(prefix)/man
++libdir          = $(DESTDIR)/$(prefix)/lib$(libsubdir)
++libexecdir	= $(DESTDIR)/@libexecdir@/wml
++mandir          = $(DESTDIR)/$(prefix)/man
+ catdir          = @catdir@
+ tmpdir          = @tmpdir@
++datadir         = $(DESTDIR)/@datadir@/wml
++includedir      = $(DESTDIR)/@includedir@/wml
+ 
+ RM              = rm -f
+ 
+@@ -99,17 +103,17 @@ install-dirs:
+ 	@[ -f .build-ok ] || $(MAKE) all
+ 	@echo "___ INSTALL: prepare directory structure ___"
+ 	$(MKDIR) $(bindir)
+-	$(MKDIR) $(libdir)
+-	$(MKDIR) $(libdir)/data
+-	$(MKDIR) $(libdir)/exec
+-	$(MKDIR) $(libdir)/include
+-	$(MKDIR) $(libdir)/perl
++	$(MKDIR) $(docdir)
++	$(MKDIR) $(libexecdir)
+ 	$(MKDIR) $(mandir)
+ 	$(MKDIR) $(mandir)/man1
+ 	$(MKDIR) $(mandir)/man3
+ 	$(MKDIR) $(mandir)/man7
+ 	$(MKDIR) $(mandir)/$(catdir)1
+ 	$(MKDIR) $(mandir)/$(catdir)7
++	$(MKDIR) $(datadir)
++	$(MKDIR) $(datadir)/data
++	$(MKDIR) $(includedir)
+ 
+ install-core:
+ 	@echo ""
+@@ -120,32 +124,30 @@ install-core:
+ 	$(INSTALL_DATA) wml_frontend/wml.1 $(mandir)/man1/wml.1
+ 	$(INSTALL_SCRIPT) wml_frontend/wmd.pl $(bindir)/wmd
+ 	$(INSTALL_DATA) wml_frontend/wmd.1 $(mandir)/man1/wmd.1
+-	$(INSTALL_DATA) wml_frontend/wmd.txt $(libdir)/data/wmd.txt
++	$(INSTALL_DATA) wml_frontend/wmd.txt $(datadir)/data/wmd.txt
+ 	if [ -f wml_frontend/wmd.map ]; then \
+-                $(INSTALL_DATA) wml_frontend/wmd.map $(libdir)/data/wmd.map; \
++                $(INSTALL_DATA) wml_frontend/wmd.map $(datadir)/data/wmd.map; \
+ 	else :; fi
+ 	$(INSTALL_DATA) wml_frontend/wmd_missing.1 $(mandir)/man1/wmd_missing.1
+ 	$(INSTALL_SCRIPT) wml_frontend/wmb.pl $(bindir)/wmb
+ 	$(INSTALL_DATA) wml_frontend/wmb.1 $(mandir)/man1/wmb.1
+-	$(INSTALL_SCRIPT) wml_frontend/wmu.pl $(bindir)/wmu
+-	$(INSTALL_DATA) wml_frontend/wmu.1 $(mandir)/man1/wmu.1
+-	$(INSTALL_SCRIPT) wml_backend/p1_ipp/ipp.pl $(libdir)/exec/wml_p1_ipp
++	$(INSTALL_SCRIPT) wml_backend/p1_ipp/ipp.pl $(libexecdir)/wml_p1_ipp
+ 	$(INSTALL_DATA) wml_backend/p1_ipp/ipp.1 $(mandir)/man1/wml_p1_ipp.1
+-	$(INSTALL_PROGRAM) wml_backend/p2_mp4h/src/mp4h@EXEEXT@ $(libdir)/exec/wml_p2_mp4h@EXEEXT@
++	$(INSTALL_PROGRAM) wml_backend/p2_mp4h/src/mp4h@EXEEXT@ $(libexecdir)/wml_p2_mp4h@EXEEXT@
+ 	$(INSTALL_DATA) wml_backend/p2_mp4h/doc/mp4h.1 $(mandir)/man1/wml_p2_mp4h.1
+-	$(INSTALL_PROGRAM) wml_backend/p3_eperl/eperl@EXEEXT@ $(libdir)/exec/wml_p3_eperl@EXEEXT@
++	$(INSTALL_PROGRAM) wml_backend/p3_eperl/eperl@EXEEXT@ $(libexecdir)/wml_p3_eperl@EXEEXT@
+ 	$(INSTALL_DATA) wml_backend/p3_eperl/eperl.1 $(mandir)/man1/wml_p3_eperl.1
+-	$(INSTALL_PROGRAM) wml_backend/p4_gm4/src/m4@EXEEXT@ $(libdir)/exec/wml_p4_gm4@EXEEXT@
+-	$(INSTALL_DATA) wml_backend/p4_gm4/doc/m4.txt $(mandir)/$(catdir)1/wml_p4_gm4.1
+-	$(INSTALL_SCRIPT) wml_backend/p5_divert/divert.pl $(libdir)/exec/wml_p5_divert
++	$(INSTALL_PROGRAM) wml_backend/p4_gm4/src/m4@EXEEXT@ $(libexecdir)/wml_p4_gm4@EXEEXT@
++	$(INSTALL_DATA) wml_backend/p4_gm4/doc/m4.txt $(docdir)/wml_p4_gm4.txt
++	$(INSTALL_SCRIPT) wml_backend/p5_divert/divert.pl $(libexecdir)/wml_p5_divert
+ 	$(INSTALL_DATA) wml_backend/p5_divert/divert.1 $(mandir)/man1/wml_p5_divert.1
+-	$(INSTALL_SCRIPT) wml_backend/p6_asubst/asubst.pl $(libdir)/exec/wml_p6_asubst
++	$(INSTALL_SCRIPT) wml_backend/p6_asubst/asubst.pl $(libexecdir)/wml_p6_asubst
+ 	$(INSTALL_DATA) wml_backend/p6_asubst/asubst.1 $(mandir)/man1/wml_p6_asubst.1
+-	$(INSTALL_SCRIPT) wml_backend/p7_htmlfix/htmlfix.pl $(libdir)/exec/wml_p7_htmlfix
++	$(INSTALL_SCRIPT) wml_backend/p7_htmlfix/htmlfix.pl $(libexecdir)/wml_p7_htmlfix
+ 	$(INSTALL_DATA) wml_backend/p7_htmlfix/htmlfix.1 $(mandir)/man1/wml_p7_htmlfix.1
+-	$(INSTALL_SCRIPT) wml_backend/p8_htmlstrip/htmlstrip.pl $(libdir)/exec/wml_p8_htmlstrip
++	$(INSTALL_SCRIPT) wml_backend/p8_htmlstrip/htmlstrip.pl $(libexecdir)/wml_p8_htmlstrip
+ 	$(INSTALL_DATA) wml_backend/p8_htmlstrip/htmlstrip.1 $(mandir)/man1/wml_p8_htmlstrip.1
+-	$(INSTALL_SCRIPT) wml_backend/p9_slice/slice $(libdir)/exec/wml_p9_slice
++	$(INSTALL_SCRIPT) wml_backend/p9_slice/slice $(libexecdir)/wml_p9_slice
+ 	$(INSTALL_DATA) wml_backend/p9_slice/slice.1 $(mandir)/man1/wml_p9_slice.1
+ 
+ install-perl:
+@@ -163,53 +165,51 @@ install-doc:
+ 	$(INSTALL_DATA) wml_docs/wml_macros.7 $(mandir)/man7/wml_macros.7
+ 	$(INSTALL_DATA) wml_docs/wml_faq.7 $(mandir)/man7/wml_faq.7
+ 	$(INSTALL_DATA) wml_docs/wml_tags.7 $(mandir)/man7/wml_tags.7
+-	$(INSTALL_DATA) wml_docs/wml_std_html20.txt $(mandir)/$(catdir)7/wml_std_html20.7
+-	$(INSTALL_DATA) wml_docs/wml_std_html32.txt $(mandir)/$(catdir)7/wml_std_html32.7
+-	$(INSTALL_DATA) wml_docs/wml_std_html40.txt $(mandir)/$(catdir)7/wml_std_html40.7
+-	$(INSTALL_DATA) wml_docs/wml_std_html401.txt $(mandir)/$(catdir)7/wml_std_html401.7
+-	$(INSTALL_DATA) wml_docs/wml_std_xhtml10.txt $(mandir)/$(catdir)7/wml_std_xhtml10.7
+-	$(INSTALL_DATA) wml_docs/wml_std_css1.txt $(mandir)/$(catdir)7/wml_std_css1.7
+-	$(INSTALL_DATA) wml_docs/wml_std_css2.txt $(mandir)/$(catdir)7/wml_std_css2.7
+-	$(INSTALL_DATA) wml_docs/wml_std_csspos.txt $(mandir)/$(catdir)7/wml_std_csspos.7
+-	$(INSTALL_DATA) wml_docs/wml_std_wai10.txt $(mandir)/$(catdir)7/wml_std_wai10.7
+-	$(INSTALL_DATA) wml_docs/wml_barebone.txt $(mandir)/$(catdir)7/wml_barebone.7
++	$(INSTALL_DATA) wml_docs/wml_std_html20.txt $(docdir)/wml_std_html20.txt
++	$(INSTALL_DATA) wml_docs/wml_std_html32.txt $(docdir)/wml_std_html32.txt
++	$(INSTALL_DATA) wml_docs/wml_std_html40.txt $(docdir)/wml_std_html40.txt
++	$(INSTALL_DATA) wml_docs/wml_std_html401.txt $(docdir)/wml_std_html401.txt
++	$(INSTALL_DATA) wml_docs/wml_std_xhtml10.txt $(docdir)/wml_std_xhtml10.txt
++	$(INSTALL_DATA) wml_docs/wml_std_css1.txt $(docdir)/wml_std_css1.txt
++	$(INSTALL_DATA) wml_docs/wml_std_css2.txt $(docdir)/wml_std_css2.txt
++	$(INSTALL_DATA) wml_docs/wml_std_csspos.txt $(docdir)/wml_std_csspos.txt
++	$(INSTALL_DATA) wml_docs/wml_std_wai10.txt $(docdir)/wml_std_wai10.txt
++	$(INSTALL_DATA) wml_docs/wml_barebone.txt $(docdir)/wml_barebone.txt
+ 
+ install-aux:
+ 	@echo ""
+ 	@echo "___ INSTALL: auxiliary programs and manpages ___"
+-	$(INSTALL_SCRIPT) wml_aux/htmlclean/htmlclean.pl $(libdir)/exec/wml_aux_htmlclean
+-	$(INSTALL_DATA) wml_aux/htmlclean/htmlclean.1 $(mandir)/man1/wml_aux_htmlclean.1
+-	$(INSTALL_PROGRAM) wml_aux/iselect/iselect@EXEEXT@ $(libdir)/exec/wml_aux_iselect@EXEEXT@
++	ln -sfh $(EXT_HTMLCLEAN) $(libexecdir)/wml_aux_htmlclean
++	$(INSTALL_PROGRAM) wml_aux/iselect/iselect@EXEEXT@ $(libexecdir)/wml_aux_iselect@EXEEXT@
+ 	$(INSTALL_DATA) wml_aux/iselect/iselect.1 $(mandir)/man1/wml_aux_iselect.1
+-	$(INSTALL_SCRIPT) wml_aux/map2html/map2html.pl $(libdir)/exec/wml_aux_map2html
++	$(INSTALL_SCRIPT) wml_aux/map2html/map2html.pl $(libexecdir)/wml_aux_map2html
+ 	$(INSTALL_DATA) wml_aux/map2html/map2html.1 $(mandir)/man1/wml_aux_map2html.1
+-	$(INSTALL_SCRIPT) wml_aux/txt2html/txt2html.pl $(libdir)/exec/wml_aux_txt2html
+-	$(INSTALL_DATA) wml_aux/txt2html/txt2html.txt $(mandir)/$(catdir)1/wml_aux_txt2html.1
+-	$(INSTALL_DATA) wml_aux/txt2html/txt2html.dict $(libdir)/data/txt2html.dict
+-	$(INSTALL_PROGRAM) wml_aux/tidy/tidy@EXEEXT@ $(libdir)/exec/wml_aux_tidy@EXEEXT@
+-	$(INSTALL_DATA) wml_aux/tidy/tidy.txt $(mandir)/$(catdir)1/wml_aux_tidy.1
+-	$(INSTALL_SCRIPT) wml_aux/htmlinfo/htmlinfo.pl $(libdir)/exec/wml_aux_htmlinfo
++	$(INSTALL_SCRIPT) wml_aux/txt2html/txt2html.pl $(libexecdir)/wml_aux_txt2html
++	$(INSTALL_DATA) wml_aux/txt2html/txt2html.txt $(docdir)/wml_aux_txt2html.txt
++	$(INSTALL_DATA) wml_aux/txt2html/txt2html.dict $(datadir)/data/txt2html.dict
++	ln -sfh $(EXT_TIDY) $(libexecdir)/wml_aux_tidy
++	$(INSTALL_SCRIPT) wml_aux/htmlinfo/htmlinfo.pl $(libexecdir)/wml_aux_htmlinfo
+ 	$(INSTALL_DATA) wml_aux/htmlinfo/htmlinfo.1 $(mandir)/man1/wml_aux_htmlinfo.1
+-	$(INSTALL_SCRIPT) wml_aux/linklint/linklint.pl $(libdir)/exec/wml_aux_linklint
++	$(INSTALL_SCRIPT) wml_aux/linklint/linklint.pl $(libexecdir)/wml_aux_linklint
+ 	$(INSTALL_DATA) wml_aux/linklint/linklint.1 $(mandir)/man1/wml_aux_linklint.1
+-	$(INSTALL_SCRIPT) wml_aux/weblint/weblint.pl $(libdir)/exec/wml_aux_weblint
++	$(INSTALL_SCRIPT) wml_aux/weblint/weblint.pl $(libexecdir)/wml_aux_weblint
+ 	$(INSTALL_DATA) wml_aux/weblint/weblint.1 $(mandir)/man1/wml_aux_weblint.1
+-	$(INSTALL_DATA) wml_aux/weblint/weblintrc $(libdir)/data/weblintrc
+-	$(INSTALL_SCRIPT) wml_aux/freetable/freetable.pl $(libdir)/exec/wml_aux_freetable
++	$(INSTALL_DATA) wml_aux/weblint/weblintrc $(datadir)/data/weblintrc
++	$(INSTALL_SCRIPT) wml_aux/freetable/freetable.pl $(libexecdir)/wml_aux_freetable
+ 	$(INSTALL_DATA) wml_aux/freetable/freetable.1 $(mandir)/man1/wml_aux_freetable.1
+ 
+ install-misc:
+ 	@echo ""
+ 	@echo "___ INSTALL: miscellaneous files ___"
+ 	-@set dummy $(MAKEFLAGS); amf=$$2; \
+-	(cd wml_misc && $(MAKE) install prefix=$(prefix)) \
++	(cd wml_misc && $(MAKE) install prefix=$(DESTDIR)/$(prefix)) \
+ 	    || case "$$amf" in *=*) exit 1;; *k*) ;; *) exit 1;; esac
+ 
+ install-tags:
+ 	@echo ""
+ 	@echo "___ INSTALL: include files and manpages ___"
+ 	-@set dummy $(MAKEFLAGS); amf=$$2; \
+-	(cd wml_include && $(MAKE) install prefix=$(prefix)) \
++	(cd wml_include && $(MAKE) install prefix=$(DESTDIR)/$(prefix)) \
+ 	    || case "$$amf" in *=*) exit 1;; *k*) ;; *) exit 1;; esac
+ 
+ # ------------------------------------------------

@@ -1,0 +1,70 @@
+$OpenBSD: patch-wml_frontend_wml_src,v 1.1.1.1 2006/07/14 16:12:14 bernd Exp $
+--- wml_frontend/wml.src.orig	Sun Apr 21 01:04:28 2002
++++ wml_frontend/wml.src	Sun Jun 25 12:01:07 2006
+@@ -49,7 +49,7 @@ if ($ENV{'PATH'} !~ m|@bindir@|) {
+ }
+ 
+ use Getopt::Long 2.13;
+-use File::PathConvert;
++use File::Spec::Functions 0.87;
+ use IO::File 1.06;
+ use Term::ReadKey;
+ use Cwd;
+@@ -338,7 +338,7 @@ if (not $opt_r) {
+             @opt_I_NEW = @opt_I_OLD;
+ 
+             #   adjust -D options
+-            $reldir = File::PathConvert::abs2rel("$dir", "$src");
++            $reldir = File::Spec::Functions::abs2rel("$dir", "$src");
+             $reldir = "." if $reldir eq '';
+             foreach $d (@opt_D) {
+                 if ($d =~ m|^([A-Za-z0-9_]+)~(.+)$|) {
+@@ -363,7 +363,7 @@ if (not $opt_r) {
+             }
+ 
+             #   adjust -I options
+-            $reldir = File::PathConvert::abs2rel("$dir");
++            $reldir = File::Spec::Functions::abs2rel("$dir");
+             $reldir = "." if $reldir eq '';
+             foreach $path (@opt_I) {
+                 if ($path !~ m|^/|) {
+@@ -417,12 +417,11 @@ if ($opt_V) {
+         print STDERR "Built Environment:\n";
+         print STDERR "    Host: ".'@built_system@'."\n";
+         print STDERR "    Perl: ".'@perlvers@ (@perlprog@)'."\n";
+-        print STDERR "    User: ".'@built_user@'."\n";
+         print STDERR "    Date: ".'@built_date@'."\n";
+         print STDERR "Built Location:\n";
+         print STDERR "    Prefix: ".'@prefix@'."\n";
+         print STDERR "    BinDir: ".'@bindir@'."\n";
+-        print STDERR "    LibDir: ".'@libdir@'."\n";
++        print STDERR "    LibDir: ".'@datadir@'."\n";
+         print STDERR "    ManDir: ".'@mandir@'."\n";
+     }
+     if ($opt_V > 2) {
+@@ -477,7 +476,7 @@ if (not $src_istmp) {
+     $reldir = $src;
+     $reldir =~ s,(:?/|^)[^/]+$,,;
+     ($cwd = Cwd::cwd) =~ s|/$||;
+-    $reldir = File::PathConvert::abs2rel($cwd, "$cwd/$reldir");
++    $reldir = File::Spec::Functions::abs2rel($cwd, "$cwd/$reldir");
+     $reldir = "." if $reldir eq '';
+ }
+ else {
+@@ -958,7 +957,7 @@ else {
+     if ($src =~ m|/|) {
+         $src_dirname = $src;
+         $src_dirname =~ s|/+[^/]*$||;
+-        $src_dirname = File::PathConvert::realpath("$src_dirname");
++        $src_dirname = Cwd::abs_path("$src_dirname");
+     }
+     else {
+         $src_dirname  = $cwd;
+@@ -1004,6 +1003,7 @@ unshift(@opt_D, "WML_GEN_HOSTNAME=$gen_h
+ unshift(@opt_D, "WML_LOC_PREFIX=@prefix@");
+ unshift(@opt_D, "WML_LOC_BINDIR=@bindir@");
+ unshift(@opt_D, "WML_LOC_LIBDIR=@libdir@");
++unshift(@opt_D, "WML_LOC_LIBEXECDIR=@libdir@/exec");
+ unshift(@opt_D, "WML_LOC_MANDIR=@mandir@");
+ unshift(@opt_D, "WML_VERSION=$VERSION");
+ unshift(@opt_D, "WML_TMPDIR=$tmpdir");

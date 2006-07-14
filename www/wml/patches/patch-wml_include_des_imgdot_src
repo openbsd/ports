@@ -1,0 +1,21 @@
+$OpenBSD: patch-wml_include_des_imgdot_src,v 1.1.1.1 2006/07/14 16:12:14 bernd Exp $
+--- wml_include/des/imgdot.src.orig	Fri Jun 16 00:49:02 2006
++++ wml_include/des/imgdot.src	Fri Jun 16 00:49:15 2006
+@@ -13,7 +13,7 @@
+ 
+ <protect pass=2>
+ <:
+-use WML::GD;
++use GD;
+ 
+ #   general function for creating a dot image
+ sub imgdot {
+@@ -39,7 +39,7 @@ sub imgdot {
+ 
+     #   create image if it does not still exist
+     if (not -f $file) {
+-        $im = new WML::GD::Image($x, $y);
++        $im = new GD::Image($x, $y);
+         $col = $im->colorAllocate($r, $g, $b);
+         $im->transparent($col) if $transp;
+         eval "\$data = \$im->$format";

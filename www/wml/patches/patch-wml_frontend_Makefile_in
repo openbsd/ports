@@ -1,0 +1,29 @@
+$OpenBSD: patch-wml_frontend_Makefile_in,v 1.1.1.1 2006/07/14 16:12:14 bernd Exp $
+--- wml_frontend/Makefile.in.orig	Wed Feb  7 00:02:50 2001
++++ wml_frontend/Makefile.in	Tue Jun 20 10:49:40 2006
+@@ -18,8 +18,11 @@ prefix          = @prefix@
+ exec_prefix     = $(prefix)
+ bindir          = $(prefix)/bin
+ libsubdir       = @libsubdir@
++libexecdir      = @libexecdir@/wml
+ libdir          = $(prefix)/lib$(libsubdir)
+ mandir          = $(prefix)/man
++datadir         = @datadir@/wml
++includedir      = @includedir@/wml
+ 
+ WML_VERSION     = @WML_VERSION@
+ WML_CONFIG_ARGS = @WML_CONFIG_ARGS@
+@@ -57,7 +60,12 @@ EXE_FILES       = $(SRC_FILES:.src=.pl)
+         -e 's|\@compat\@|$(compat)|g' \
+         -e 's|\@prefix\@|$(prefix)|g' \
+         -e 's|\@bindir\@|$(bindir)|g' \
+-        -e 's|\@libdir\@|$(libdir)|g' \
++        -e 's|\@libdir\@/exec|$(libexecdir)|g' \
++        -e 's|\@libdir\@/data|$(datadir)/data|g' \
++        -e 's|\@libdir\@/include|$(includedir)|g' \
++        -e 's|WML_LOC_LIBDIR=\@libdir\@|WML_LOC_LIBDIR=$(datadir)|g' \
++        -e 's|\@datadir\@|$(datadir)|g' \
++        -e 's|\@includedir\@|$(includedir)|g' \
+         -e 's|\@mandir\@|$(mandir)|g' \
+         -e 's|\@PATH_PERL\@|$(PATH_PERL)|g' \
+         -e 's|\@INSTALLPRIVLIB\@|$(INSTALLPRIVLIB)|g' \

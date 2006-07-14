@@ -1,0 +1,20 @@
+$OpenBSD: patch-wml_aux_weblint_Makefile_in,v 1.1.1.1 2006/07/14 16:12:14 bernd Exp $
+--- wml_aux/weblint/Makefile.in.orig	Fri Apr 28 09:46:17 2000
++++ wml_aux/weblint/Makefile.in	Tue Jun 20 10:40:44 2006
+@@ -20,6 +20,7 @@ bindir          = $(prefix)/bin
+ libsubdir       = @libsubdir@
+ libdir          = $(prefix)/lib$(libsubdir)
+ mandir          = $(prefix)/man
++datadir         = @datadir@/wml
+ 
+ PATH_PERL       = @PATH_PERL@
+ INSTALLPRIVLIB  = @INSTALLPRIVLIB@
+@@ -33,7 +34,7 @@ EXE_FILES       = $(SRC_FILES:.src=.pl)
+ .SUFFIXES: .pl .src
+ 
+ .src.pl:
+-	sed -e 's|\@libdir\@|$(libdir)|g' \
++	sed -e 's|\@libdir\@|$(datadir)|g' \
+ 	-e 's|\@PATH_PERL\@|$(PATH_PERL)|g' \
+         -e 's|\@INSTALLPRIVLIB\@|$(INSTALLPRIVLIB)|g' \
+         -e 's|\@INSTALLARCHLIB\@|$(INSTALLARCHLIB)|g' \

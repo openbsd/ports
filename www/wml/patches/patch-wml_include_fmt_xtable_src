@@ -1,0 +1,12 @@
+$OpenBSD: patch-wml_include_fmt_xtable_src,v 1.1.1.1 2006/07/14 16:12:14 bernd Exp $
+--- wml_include/fmt/xtable.src.orig	Thu Jun 15 15:14:16 2006
++++ wml_include/fmt/xtable.src	Thu Jun 15 15:14:16 2006
+@@ -29,7 +29,7 @@
+     print FH_XTABLE <perl:var />;
+     close(FH_XTABLE);
+     open(FH_XTABLE_IN,
+-       "$(WML_LOC_LIBDIR)/exec/wml_aux_freetable $tmpfile < /dev/null |");
++       "$(WML_LOC_LIBEXECDIR)/wml_aux_freetable $tmpfile < /dev/null |");
+     local ($/) = undef;
+     <perl:var /> = <*FH_XTABLE_IN>;
+     close(FH_XTABLE_IN);

@@ -1,0 +1,12 @@
+$OpenBSD: patch-wml_include_fmt_text_src,v 1.1.1.1 2006/07/14 16:12:14 bernd Exp $
+--- wml_include/fmt/text.src.orig	Thu Jun 15 15:34:04 2006
++++ wml_include/fmt/text.src	Thu Jun 15 15:34:04 2006
+@@ -14,7 +14,7 @@ sub wml_fmt_text {
+     local (*FP);
+ 
+     #   read the txt2html result
+-    open(FP, "$(WML_LOC_LIBDIR)/exec/wml_aux_txt2html $arg->{FILE}|");
++    open(FP, "$(WML_LOC_LIBEXECDIR)/wml_aux_txt2html $arg->{FILE}|");
+     local ($/) = undef;
+     $buf = <FP>;
+     close(FP);

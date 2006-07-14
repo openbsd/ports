@@ -1,0 +1,19 @@
+$OpenBSD: patch-wml_aux_txt2html_Makefile_in,v 1.1.1.1 2006/07/14 16:12:14 bernd Exp $
+--- wml_aux/txt2html/Makefile.in.orig	Fri Jun 16 00:22:27 2006
++++ wml_aux/txt2html/Makefile.in	Fri Jun 16 00:22:51 2006
+@@ -20,6 +20,7 @@ bindir          = $(prefix)/bin
+ libsubdir       = @libsubdir@
+ libdir          = $(prefix)/lib$(libsubdir)
+ mandir          = $(prefix)/man
++datadir         = @datadir@/wml
+ 
+ PATH_PERL       = @PATH_PERL@
+ INSTALLPRIVLIB  = @INSTALLPRIVLIB@
+@@ -37,6 +38,7 @@ EXE_FILES       = $(SRC_FILES:.src=.pl)
+         -e '/^__END__/,$$d' \
+ 	-e 's|\@PATH_PERL\@|$(PATH_PERL)|g' \
+         -e 's|\@libdir\@|$(libdir)|g' \
++        -e 's|\@datadir\@|$(datadir)|g' \
+         -e 's|\@INSTALLPRIVLIB\@|$(INSTALLPRIVLIB)|g' \
+         -e 's|\@INSTALLARCHLIB\@|$(INSTALLARCHLIB)|g' \
+           <$< >$@ && chmod a+x $@

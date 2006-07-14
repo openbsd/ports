@@ -1,0 +1,30 @@
+$OpenBSD: patch-wml_include_Makefile_in,v 1.1.1.1 2006/07/14 16:12:14 bernd Exp $
+--- wml_include/Makefile.in.orig	Thu Jun 15 15:56:55 2006
++++ wml_include/Makefile.in	Thu Jun 15 15:59:16 2006
+@@ -25,6 +25,7 @@ bindir          = $(prefix)/bin
+ libsubdir       = @libsubdir@
+ libdir          = $(prefix)/lib$(libsubdir)
+ mandir          = $(prefix)/man
++includedir      = @includedir@/wml
+ 
+ INSTALLPRIVLIB  = @INSTALLPRIVLIB@
+ INSTALLARCHLIB  = @INSTALLARCHLIB@
+@@ -69,13 +70,13 @@ install:
+ 	    base=`echo $$file | sed -e 's/\.wml$$//g'`; \
+ 	    dir=`echo $$file | sed -e 's/[a-zA-Z0-9_]*.wml$$//g'`; \
+ 	    name=`echo wml/$$base | sed -e 's/\//$(DCOLON)/g'`; \
+-	    if [ ! -d "$(libdir)/include/$$dir" ]; then \
+-	        echo "$(MKDIR) $(libdir)/include/$$dir"; \
+-	        $(MKDIR) $(libdir)/include/$$dir; \
++	    if [ ! -d "$(includedir)/$$dir" ]; then \
++	        echo "$(MKDIR) $(includedir)/$$dir"; \
++	        $(MKDIR) $(includedir)/$$dir; \
+ 	    else :; \
+ 	    fi; \
+-          echo "$(INSTALL_DATA) $$file $(libdir)/include/$$file"; \
+-          $(INSTALL_DATA) $$file $(libdir)/include/$$file; \
++          echo "$(INSTALL_DATA) $$file $(includedir)/$$file"; \
++          $(INSTALL_DATA) $$file $(includedir)/$$file; \
+           echo "$(INSTALL_DATA) $$base.3 $(mandir)/man3/$$name.3"; \
+           $(INSTALL_DATA) $$base.3 $(mandir)/man3/$$name.3; \
+ 	done

@@ -1,0 +1,201 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/14 16:12:12 bernd Exp $
+bin/wmb
+bin/wmd
+bin/wmk
+bin/wml
+include/wml/
+include/wml/all.wml
+include/wml/des/
+include/wml/des/all.wml
+include/wml/des/gfont.wml
+include/wml/des/imgbg.wml
+include/wml/des/imgdot.wml
+include/wml/des/lowsrc.wml
+include/wml/des/navbar.wml
+include/wml/des/preload.wml
+include/wml/des/rollover.wml
+include/wml/des/space.wml
+include/wml/des/typography.wml
+include/wml/fmt/
+include/wml/fmt/all.wml
+include/wml/fmt/isolatin.wml
+include/wml/fmt/pod.wml
+include/wml/fmt/sdf.wml
+include/wml/fmt/text.wml
+include/wml/fmt/url.wml
+include/wml/fmt/verbatim.wml
+include/wml/fmt/xtable.wml
+include/wml/imp/
+include/wml/imp/all.wml
+include/wml/imp/csmap.wml
+include/wml/imp/fsview.wml
+include/wml/imp/generic.wml
+include/wml/mod/
+include/wml/mod/MakeMaker.wml
+include/wml/mod/all.wml
+include/wml/mod/version.wml
+include/wml/std/
+include/wml/std/all.wml
+include/wml/std/box.wml
+include/wml/std/case.wml
+include/wml/std/grid.wml
+include/wml/std/href.wml
+include/wml/std/info.wml
+include/wml/std/label.wml
+include/wml/std/lang.wml
+include/wml/std/logo.wml
+include/wml/std/page.wml
+include/wml/std/tags.wml
+include/wml/std/toc.wml
+include/wml/sup/
+include/wml/sup/all.wml
+include/wml/sup/hextriple.wml
+include/wml/sup/path.wml
+include/wml/sys/
+include/wml/sys/all.wml
+include/wml/sys/bootp3.wml
+include/wml/sys/bootp4.wml
+include/wml/sys/compat1.wml
+libexec/wml/
+libexec/wml/wml_aux_freetable
+libexec/wml/wml_aux_htmlclean
+libexec/wml/wml_aux_htmlinfo
+libexec/wml/wml_aux_iselect
+libexec/wml/wml_aux_linklint
+libexec/wml/wml_aux_map2html
+libexec/wml/wml_aux_tidy
+libexec/wml/wml_aux_txt2html
+libexec/wml/wml_aux_weblint
+libexec/wml/wml_p1_ipp
+libexec/wml/wml_p2_mp4h
+libexec/wml/wml_p3_eperl
+libexec/wml/wml_p4_gm4
+libexec/wml/wml_p5_divert
+libexec/wml/wml_p6_asubst
+libexec/wml/wml_p7_htmlfix
+libexec/wml/wml_p8_htmlstrip
+libexec/wml/wml_p9_slice
+@man man/man1/wmb.1
+@man man/man1/wmd.1
+@man man/man1/wmd_missing.1
+@man man/man1/wmk.1
+@man man/man1/wml.1
+@man man/man1/wml_aux_freetable.1
+@man man/man1/wml_aux_htmlinfo.1
+@man man/man1/wml_aux_iselect.1
+@man man/man1/wml_aux_linklint.1
+@man man/man1/wml_aux_map2html.1
+@man man/man1/wml_aux_weblint.1
+@man man/man1/wml_p1_ipp.1
+@man man/man1/wml_p2_mp4h.1
+@man man/man1/wml_p3_eperl.1
+@man man/man1/wml_p5_divert.1
+@man man/man1/wml_p6_asubst.1
+@man man/man1/wml_p7_htmlfix.1
+@man man/man1/wml_p8_htmlstrip.1
+@man man/man1/wml_p9_slice.1
+@man man/man3/wml::all.3
+@man man/man3/wml::des::all.3
+@man man/man3/wml::des::gfont.3
+@man man/man3/wml::des::imgbg.3
+@man man/man3/wml::des::imgdot.3
+@man man/man3/wml::des::lowsrc.3
+@man man/man3/wml::des::navbar.3
+@man man/man3/wml::des::preload.3
+@man man/man3/wml::des::rollover.3
+@man man/man3/wml::des::space.3
+@man man/man3/wml::des::typography.3
+@man man/man3/wml::fmt::all.3
+@man man/man3/wml::fmt::isolatin.3
+@man man/man3/wml::fmt::pod.3
+@man man/man3/wml::fmt::sdf.3
+@man man/man3/wml::fmt::text.3
+@man man/man3/wml::fmt::url.3
+@man man/man3/wml::fmt::verbatim.3
+@man man/man3/wml::fmt::xtable.3
+@man man/man3/wml::imp::all.3
+@man man/man3/wml::imp::csmap.3
+@man man/man3/wml::imp::fsview.3
+@man man/man3/wml::imp::generic.3
+@man man/man3/wml::mod::MakeMaker.3
+@man man/man3/wml::mod::all.3
+@man man/man3/wml::mod::version.3
+@man man/man3/wml::std::all.3
+@man man/man3/wml::std::box.3
+@man man/man3/wml::std::case.3
+@man man/man3/wml::std::grid.3
+@man man/man3/wml::std::href.3
+@man man/man3/wml::std::info.3
+@man man/man3/wml::std::label.3
+@man man/man3/wml::std::lang.3
+@man man/man3/wml::std::logo.3
+@man man/man3/wml::std::page.3
+@man man/man3/wml::std::tags.3
+@man man/man3/wml::std::toc.3
+@man man/man3/wml::sup::all.3
+@man man/man3/wml::sup::hextriple.3
+@man man/man3/wml::sup::path.3
+@man man/man3/wml::sys::all.3
+@man man/man3/wml::sys::bootp3.3
+@man man/man3/wml::sys::bootp4.3
+@man man/man3/wml::sys::compat1.3
+@man man/man7/wml_faq.7
+@man man/man7/wml_intro.7
+@man man/man7/wml_macros.7
+@man man/man7/wml_tags.7
+@man man/man7/wml_tutorial.7
+share/doc/wml/
+share/doc/wml/wml_aux_txt2html.txt
+share/doc/wml/wml_barebone.txt
+share/doc/wml/wml_p4_gm4.txt
+share/doc/wml/wml_std_css1.txt
+share/doc/wml/wml_std_css2.txt
+share/doc/wml/wml_std_csspos.txt
+share/doc/wml/wml_std_html20.txt
+share/doc/wml/wml_std_html32.txt
+share/doc/wml/wml_std_html40.txt
+share/doc/wml/wml_std_html401.txt
+share/doc/wml/wml_std_wai10.txt
+share/doc/wml/wml_std_xhtml10.txt
+share/wml/
+share/wml/data/
+share/wml/data/logos/
+share/wml/data/logos/logo-apache.gif
+share/wml/data/logos/logo-apache.info
+share/wml/data/logos/logo-apache.png
+share/wml/data/logos/logo-freebsd.gif
+share/wml/data/logos/logo-freebsd.info
+share/wml/data/logos/logo-freebsd.png
+share/wml/data/logos/logo-gimp.gif
+share/wml/data/logos/logo-gimp.info
+share/wml/data/logos/logo-gimp.png
+share/wml/data/logos/logo-htdig.gif
+share/wml/data/logos/logo-htdig.info
+share/wml/data/logos/logo-htdig.png
+share/wml/data/logos/logo-linux.gif
+share/wml/data/logos/logo-linux.info
+share/wml/data/logos/logo-linux.png
+share/wml/data/logos/logo-netbsd.gif
+share/wml/data/logos/logo-netbsd.info
+share/wml/data/logos/logo-netbsd.png
+share/wml/data/logos/logo-openbsd.gif
+share/wml/data/logos/logo-openbsd.info
+share/wml/data/logos/logo-openbsd.png
+share/wml/data/logos/logo-php.gif
+share/wml/data/logos/logo-php.info
+share/wml/data/logos/logo-php.png
+share/wml/data/logos/logo-php3.gif
+share/wml/data/logos/logo-php3.info
+share/wml/data/logos/logo-php3.png
+share/wml/data/logos/logo-vim.gif
+share/wml/data/logos/logo-vim.info
+share/wml/data/logos/logo-vim.png
+share/wml/data/logos/logo-wml.gif
+share/wml/data/logos/logo-wml.info
+share/wml/data/logos/logo-wml.png
+share/wml/data/logos/logo-xemacs.gif
+share/wml/data/logos/logo-xemacs.info
+share/wml/data/logos/logo-xemacs.png
+share/wml/data/txt2html.dict
+share/wml/data/weblintrc
+share/wml/data/wmd.txt

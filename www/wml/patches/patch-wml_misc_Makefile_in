@@ -1,0 +1,27 @@
+$OpenBSD: patch-wml_misc_Makefile_in,v 1.1.1.1 2006/07/14 16:12:14 bernd Exp $
+--- wml_misc/Makefile.in.orig	Thu Jun 15 14:24:33 2006
++++ wml_misc/Makefile.in	Thu Jun 15 14:26:27 2006
+@@ -25,6 +25,7 @@ bindir          = $(prefix)/bin
+ libsubdir       = @libsubdir@
+ libdir          = $(prefix)/lib$(libsubdir)
+ mandir          = $(prefix)/man
++datadir		= @datadir@/wml
+ 
+ # ------------------------------------------------
+ #   TARGETS
+@@ -33,12 +34,12 @@ mandir          = $(prefix)/man
+ all: 
+ 
+ install:
+-	$(MKDIR) $(libdir)/data/logos
++	$(MKDIR) $(datadir)/data/logos
+ 	@set -e; \
+ 	files=`echo logo-*`; \
+ 	for file in $$files; do \
+-          echo "$(INSTALL_DATA) $$file $(libdir)/data/logos/$$file"; \
+-          $(INSTALL_DATA) $$file $(libdir)/data/logos/$$file; \
++          echo "$(INSTALL_DATA) $$file $(datadir)/data/logos/$$file"; \
++          $(INSTALL_DATA) $$file $(datadir)/data/logos/$$file; \
+ 	done
+ 
+ clean:

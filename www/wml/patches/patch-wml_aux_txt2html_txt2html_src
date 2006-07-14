@@ -1,0 +1,12 @@
+$OpenBSD: patch-wml_aux_txt2html_txt2html_src,v 1.1.1.1 2006/07/14 16:12:14 bernd Exp $
+--- wml_aux/txt2html/txt2html.src.orig	Thu Jun 15 14:42:42 2006
++++ wml_aux/txt2html/txt2html.src	Thu Jun 15 14:42:42 2006
+@@ -230,7 +230,7 @@ $dict_debug = 0;                # Debug 
+                                 # 2: The code that will make the links
+                                 # 4: When each rule matches something
+ 
+-$system_link_dict = "/usr/local/lib/txt2html.dict"; # after options
++$system_link_dict = "@datadir@/data/txt2html.dict"; # after options
+ $default_link_dict = "$ENV{'HOME'}/.txt2html.dict"; # before options
+ 
+ # [-pm/+pm    ] | [--preformat-marker / --nopreformat-marker ]

@@ -1,0 +1,14 @@
+$OpenBSD: patch-wml_common_Makefile_in,v 1.1.1.1 2006/07/14 16:12:14 bernd Exp $
+--- wml_common/Makefile.in.orig	Wed Feb  7 00:02:12 2001
++++ wml_common/Makefile.in	Thu Jun 15 18:58:09 2006
+@@ -41,8 +41,8 @@ INITVARS = \
+      have_imagesize=@have_imagesize@ \
+      have_io=@have_io@ \
+      have_termreadkey=@have_termreadkey@ \
+-     have_htmlclean=0 \
+-     have_gd=0
++     have_htmlclean=1 \
++     have_gd=1
+ 
+ SUBDIRS = \
+      bitvector \

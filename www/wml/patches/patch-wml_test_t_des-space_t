@@ -1,0 +1,19 @@
+$OpenBSD: patch-wml_test_t_des-space_t,v 1.1.1.1 2006/07/14 16:12:14 bernd Exp $
+--- wml_test/t/des-space.t.orig	Fri Jun 16 01:08:56 2006
++++ wml_test/t/des-space.t	Fri Jun 16 01:09:04 2006
+@@ -7,14 +7,7 @@ print "1..2\n";
+ $pass = "1-9";
+ 
+ #   Test if PNG support was found
+-my $png_support = 0;
+-{
+-  open (IN, '<../wml_common/gd/Makefile');
+-  local $/ = undef;
+-  $conf = <IN>;
+-  close (IN);
+-  $png_support = ($conf =~ m/-lpng/);
+-}
++my $png_support = 1;
+ 
+ if ($png_support) {
+ #   PNG support available

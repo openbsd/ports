@@ -1,0 +1,109 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2006/07/14 16:12:12 bernd Exp $
+--- configure.orig	Fri Oct 18 23:44:21 2002
++++ configure	Fri Jun 16 03:13:47 2006
+@@ -270,7 +270,7 @@ PACKAGE_BUGREPORT=
+ 
+ ac_unique_file="INSTALL"
+ ac_default_prefix=/usr/local
+-ac_subdirs_all="$ac_subdirs_all wml_backend/p2_mp4h wml_backend/p3_eperl wml_backend/p4_gm4 wml_aux/iselect wml_common/gd"
++ac_subdirs_all="$ac_subdirs_all wml_backend/p2_mp4h wml_backend/p3_eperl wml_backend/p4_gm4 wml_aux/iselect"
+ ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS WML_VERSION VERSION WML_CONFIG_ARGS MAINT built_system built_user built_date libsubdir tmpdir build build_cpu build_vendor build_os host host_cpu host_vendor host_os target target_cpu target_vendor target_os DCOLON CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT CPP RANLIB ac_ct_RANLIB SET_MAKE PATH_PERL perlprog perlvers PERL_OPTS have_getoptlong have_bitvector have_filepathconvert have_imagesize have_io have_termreadkey INSTALLPRIVLIB INSTALLARCHLIB catdir subdirs LIBOBJS LTLIBOBJS'
+ ac_subst_files=''
+ 
+@@ -1170,7 +1170,6 @@ echo "$as_me:   current value: $ac_new_v
+     esac
+     case " $ac_configure_args " in
+       *" '$ac_arg' "*) ;; # Avoid dups.  Use of quotes ensures accuracy.
+-      *) ac_configure_args="$ac_configure_args '$ac_arg'" ;;
+     esac
+   fi
+ done
+@@ -2568,7 +2567,7 @@ for dir in `echo $PATH | sed -e 's/:/ /g
+          if test -f "$dir/$perl"; then
+              if test -x "$dir/$perl"; then
+                  perlprog="$dir/$perl"
+-                 if $perlprog -e 'require 5.003'; then
++                 if $perlprog -e 'use 5.003'; then
+                      perlvers=`$perlprog -e 'printf "%.3f",$]'`
+                      break 2
+                  fi
+@@ -2580,7 +2579,7 @@ done
+ fi; PATH_PERL=$perlprog
+ echo "$as_me:$LINENO: result: $perlprog v$perlvers" >&5
+ echo "${ECHO_T}$perlprog v$perlvers" >&6
+-if $perlprog -e 'require 5.003'; then
++if $perlprog -e 'use 5.003'; then
+     :
+ else
+     echo ""
+@@ -2639,7 +2638,7 @@ if test ".$with_openworld" = .no; then
+ else
+     echo "$as_me:$LINENO: checking for Perl module Getopt::Long (2.16)" >&5
+ echo $ECHO_N "checking for Perl module Getopt::Long (2.16)... $ECHO_C" >&6
+-rc=`$path_perl -e 'eval {require Getopt::Long 2.16}; print "ok" unless $@'`;
++rc=`$path_perl -e 'eval {use Getopt::Long 2.16}; print "ok" unless $@'`;
+ if test ".$rc" = .ok; then
+     have_getoptlong=1
+     echo "$as_me:$LINENO: result: found" >&5
+@@ -2653,7 +2652,7 @@ fi
+ 
+     echo "$as_me:$LINENO: checking for Perl module Bit::Vector (5.2)" >&5
+ echo $ECHO_N "checking for Perl module Bit::Vector (5.2)... $ECHO_C" >&6
+-rc=`$path_perl -e 'eval {require Bit::Vector 5.2}; print "ok" unless $@'`;
++rc=`$path_perl -e 'eval {use Bit::Vector 5.2}; print "ok" unless $@'`;
+ if test ".$rc" = .ok; then
+     have_bitvector=1
+     echo "$as_me:$LINENO: result: found" >&5
+@@ -2665,9 +2664,9 @@ echo "${ECHO_T}not found" >&6
+ fi
+ 
+ 
+-    echo "$as_me:$LINENO: checking for Perl module File::PathConvert (ANY)" >&5
+-echo $ECHO_N "checking for Perl module File::PathConvert (ANY)... $ECHO_C" >&6
+-rc=`$path_perl -e 'eval {require File::PathConvert }; print "ok" unless $@'`;
++    echo "$as_me:$LINENO: checking for Perl module File::Spec (0.87)" >&5
++echo $ECHO_N "checking for Perl module File::Spec (0.87)... $ECHO_C" >&6
++rc=`$path_perl -e 'eval {use File::Spec 0.87}; print "ok" unless $@'`;
+ if test ".$rc" = .ok; then
+     have_filepathconvert=1
+     echo "$as_me:$LINENO: result: found" >&5
+@@ -2681,7 +2680,7 @@ fi
+ 
+     echo "$as_me:$LINENO: checking for Perl module Image::Size (2.6)" >&5
+ echo $ECHO_N "checking for Perl module Image::Size (2.6)... $ECHO_C" >&6
+-rc=`$path_perl -e 'eval {require Image::Size 2.6}; print "ok" unless $@'`;
++rc=`$path_perl -e 'eval {use Image::Size 2.6}; print "ok" unless $@'`;
+ if test ".$rc" = .ok; then
+     have_imagesize=1
+     echo "$as_me:$LINENO: result: found" >&5
+@@ -2695,7 +2694,7 @@ fi
+ 
+     echo "$as_me:$LINENO: checking for Perl module IO::File (1.07)" >&5
+ echo $ECHO_N "checking for Perl module IO::File (1.07)... $ECHO_C" >&6
+-rc=`$path_perl -e 'eval {require IO::File 1.07}; print "ok" unless $@'`;
++rc=`$path_perl -e 'eval {use IO::File 1.07}; print "ok" unless $@'`;
+ if test ".$rc" = .ok; then
+     have_io=1
+     echo "$as_me:$LINENO: result: found" >&5
+@@ -2709,7 +2708,7 @@ fi
+ 
+     echo "$as_me:$LINENO: checking for Perl module Term::ReadKey (2.11)" >&5
+ echo $ECHO_N "checking for Perl module Term::ReadKey (2.11)... $ECHO_C" >&6
+-rc=`$path_perl -e 'eval {require Term::ReadKey 2.11}; print "ok" unless $@'`;
++rc=`$path_perl -e 'eval {use Term::ReadKey 2.11}; print "ok" unless $@'`;
+ if test ".$rc" = .ok; then
+     have_termreadkey=1
+     echo "$as_me:$LINENO: result: found" >&5
+@@ -2771,11 +2770,10 @@ catdir=cat
+ fi;
+ 
+ 
+-ac_configure_args="$ac_configure_args --with-tidy=`pwd`/wml_aux/tidy/tidy"
+ 
+ 
+ 
+-subdirs="$subdirs wml_backend/p2_mp4h  wml_backend/p3_eperl wml_backend/p4_gm4 wml_aux/iselect wml_common/gd "
++subdirs="$subdirs wml_backend/p2_mp4h  wml_backend/p3_eperl wml_backend/p4_gm4 wml_aux/iselect "
+ 
+ 
+ echo "$as_me:$LINENO: result: " >&5

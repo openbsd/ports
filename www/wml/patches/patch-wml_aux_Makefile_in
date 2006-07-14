@@ -1,0 +1,15 @@
+$OpenBSD: patch-wml_aux_Makefile_in,v 1.1.1.1 2006/07/14 16:12:14 bernd Exp $
+--- wml_aux/Makefile.in.orig	Sun Mar 12 21:56:46 2000
++++ wml_aux/Makefile.in	Fri Jun 16 03:59:16 2006
+@@ -16,11 +16,9 @@ VPATH           = @srcdir@
+ 
+ SUBDIRS =             \
+    iselect   \
+-   htmlclean \
+    htmlinfo  \
+    linklint  \
+    map2html  \
+-   tidy      \
+    txt2html  \
+    weblint   \
+    freetable

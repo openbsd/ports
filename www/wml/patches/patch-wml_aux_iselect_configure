@@ -1,0 +1,30 @@
+$OpenBSD: patch-wml_aux_iselect_configure,v 1.1.1.1 2006/07/14 16:12:14 bernd Exp $
+--- wml_aux/iselect/configure.orig	Tue Jun 27 10:24:32 2006
++++ wml_aux/iselect/configure	Tue Jun 27 10:25:14 2006
+@@ -754,16 +754,12 @@ if test "$ac_test_CFLAGS" = set; then
+   CFLAGS="$ac_save_CFLAGS"
+ elif test $ac_cv_prog_cc_g = yes; then
+   if test "$GCC" = yes; then
+-    CFLAGS="-g -O2"
++    CFLAGS="-g"
+   else
+     CFLAGS="-g"
+   fi
+ else
+-  if test "$GCC" = yes; then
+-    CFLAGS="-O2"
+-  else
+     CFLAGS=
+-  fi
+ fi
+ 
+ echo $ac_n "checking how to run the C preprocessor""... $ac_c" 1>&6
+@@ -859,7 +855,7 @@ debug=on
+ 
+ else
+   x=disabled
+-CFLAGS="-O2"
++CFLAGS=""
+ LDFLAGS=""
+ debug=off
+ 

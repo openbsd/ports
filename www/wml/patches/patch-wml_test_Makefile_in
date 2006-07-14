@@ -1,0 +1,49 @@
+$OpenBSD: patch-wml_test_Makefile_in,v 1.1.1.1 2006/07/14 16:12:14 bernd Exp $
+--- wml_test/Makefile.in.orig	Sat Jul 21 13:45:17 2001
++++ wml_test/Makefile.in	Tue Jun 20 12:10:32 2006
+@@ -37,8 +37,8 @@ test:
+ 	    echo ''; \
+ 	    echo "Fixing installation prefix for local test tree:"; \
+ 	    case x$(prefix) in \
+-	      x*wml* ) lib="lib" ;; \
+-	      x*     ) lib="lib/wml" ;; \
++	      x*wml* ) lib="libexec" ;; \
++	      x*     ) lib="libexec/wml" ;; \
+ 	    esac; \
+ 	    (cd TEST.root; \
+ 	    for file in \
+@@ -46,21 +46,19 @@ test:
+ 	      bin/wmk \
+ 	      bin/wmd \
+ 	      bin/wmb \
+-	      bin/wmu \
+-	      $$lib/exec/wml_aux_freetable \
+-	      $$lib/exec/wml_aux_htmlclean \
+-	      $$lib/exec/wml_aux_htmlinfo \
+-	      $$lib/exec/wml_aux_linklint \
+-	      $$lib/exec/wml_aux_map2html \
+-	      $$lib/exec/wml_aux_txt2html \
+-	      $$lib/exec/wml_aux_weblint \
+-	      $$lib/exec/wml_p1_ipp \
+-	      $$lib/exec/wml_p5_divert \
+-	      $$lib/exec/wml_p6_asubst \
+-	      $$lib/exec/wml_p7_htmlfix \
+-	      $$lib/exec/wml_p8_htmlstrip \
+-	      $$lib/exec/wml_p9_slice \
+-	      $$lib/include/sys/bootp3.wml; do \
++	      $$lib/wml_aux_freetable \
++	      $$lib/wml_aux_htmlinfo \
++	      $$lib/wml_aux_linklint \
++	      $$lib/wml_aux_map2html \
++	      $$lib/wml_aux_txt2html \
++	      $$lib/wml_aux_weblint \
++	      $$lib/wml_p1_ipp \
++	      $$lib/wml_p5_divert \
++	      $$lib/wml_p6_asubst \
++	      $$lib/wml_p7_htmlfix \
++	      $$lib/wml_p8_htmlstrip \
++	      $$lib/wml_p9_slice \
++	      include/wml/sys/bootp3.wml; do \
+ 	        sed -e '4,$$'"s;$(prefix);$${root};g" <$$file >$$file.n \
+ 	        && mv $$file.n $$file; \
+ 	        chmod a+x $$file; \

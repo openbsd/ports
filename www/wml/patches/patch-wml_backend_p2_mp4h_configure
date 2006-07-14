@@ -1,0 +1,30 @@
+$OpenBSD: patch-wml_backend_p2_mp4h_configure,v 1.1.1.1 2006/07/14 16:12:14 bernd Exp $
+--- wml_backend/p2_mp4h/configure.orig	Fri Oct 18 01:33:13 2002
++++ wml_backend/p2_mp4h/configure	Mon Feb 13 14:48:15 2006
+@@ -8123,7 +8123,7 @@ _ACEOF
+ 
+ 
+ 
+-    INTLLIBS="$LIBINTL"
++    INTLLIBS="$LTLIBINTL"
+ 
+ 
+ 
+@@ -16070,7 +16070,7 @@ s,@host_cpu@,$host_cpu,;t t
+ s,@host_vendor@,$host_vendor,;t t
+ s,@host_os@,$host_os,;t t
+ s,@GLIBC21@,$GLIBC21,;t t
+-s,@LIBICONV@,$LIBICONV,;t t
++s,@LIBICONV@,$LTLIBICONV,;t t
+ s,@LTLIBICONV@,$LTLIBICONV,;t t
+ s,@INTLBISON@,$INTLBISON,;t t
+ s,@USE_NLS@,$USE_NLS,;t t
+@@ -16083,7 +16083,7 @@ s,@INSTOBJEXT@,$INSTOBJEXT,;t t
+ s,@GENCAT@,$GENCAT,;t t
+ s,@INTL_LIBTOOL_SUFFIX_PREFIX@,$INTL_LIBTOOL_SUFFIX_PREFIX,;t t
+ s,@INTLLIBS@,$INTLLIBS,;t t
+-s,@LIBINTL@,$LIBINTL,;t t
++s,@LIBINTL@,$LTLIBINTL,;t t
+ s,@LTLIBINTL@,$LTLIBINTL,;t t
+ s,@POSUB@,$POSUB,;t t
+ s,@INTLINCL@,$INTLINCL,;t t
