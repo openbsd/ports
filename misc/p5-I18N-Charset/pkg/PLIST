@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 17:54:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/07/14 05:05:40 steven Exp $
 ${P5SITE}/I18N/
+${P5SITE}/I18N/Charset/
 ${P5SITE}/I18N/Charset.pm
+${P5SITE}/I18N/Charset/character-sets
 @man man/man3p/I18N::Charset.3p
