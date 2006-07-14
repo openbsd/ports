@@ -1,6 +1,8 @@
-# $OpenBSD: ruby.port.mk,v 1.4 2006/06/11 19:56:31 sturm Exp $
+# $OpenBSD: ruby.port.mk,v 1.5 2006/07/14 15:41:21 bernd Exp $
 
 # ruby module
+
+MODRUBY_REV=		1.8
 
 RUBY=			${LOCALBASE}/bin/ruby
 
@@ -14,13 +16,15 @@ MODRUBY_LIBDIR=		${LOCALBASE}/lib/ruby
 # used to create docs and examples install path
 MODRUBY_DOCDIR=		${PREFIX}/share/doc/ruby
 MODRUBY_EXAMPLEDIR=	${PREFIX}/share/examples/ruby
+MODRUBY_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
 
 CONFIGURE_STYLE?=	simple
 CONFIGURE_SCRIPT?=	${LOCALBASE}/bin/ruby extconf.rb
 
-REV=1.8
-SUB=${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
-SUBST_VARS=SUB REV
+REV=${MODRUBY_REV}
+SUB=${MODRUBY_ARCH}
+SUBST_VARS=MODRUBY_REV MODRUBY_ARCH SUB REV
+
 
 .if ${CONFIGURE_STYLE:L:Mgem}
 EXTRACT_SUFX=	.gem
@@ -32,7 +36,7 @@ NO_BUILD=	Yes
 SUBST_VARS+=	DISTNAME
 
 GEM=		${LOCALBASE}/bin/gem
-GEM_BASE=	${PREFIX}/lib/ruby/gems/${REV}
+GEM_BASE=	${PREFIX}/lib/ruby/gems/${MODRUBY_REV}
 GEM_FLAGS=	--local --rdoc --no-force
 
 .  if !target(do-regress)
