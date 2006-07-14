@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2005/01/03 10:18:53 alek Exp $
+# $OpenBSD: Makefile,v 1.19 2006/07/14 05:20:45 steven Exp $
 
 COMMENT=	"mail user agent for X in C with a Tcl/Tk frontend"
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		crypto ssl
 
-MASTER_SITES=	${HOMEPAGE}/downloads/stable/
+MASTER_SITES=	ftp://ftp.tkrat.org/pub/tkrat/
 
 BUILD_DEPENDS=	:tk-8.4.*:x11/tk/8.4	
 RUN_DEPENDS=	${BUILD_DEPENDS}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.21 2004/05/01 14:29:17 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.22 2006/07/14 05:20:45 steven Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -30,19 +30,15 @@ SUPPORTED?=	unsupported
 
 CATEGORIES=     www
 MASTER_SITES= \
-	ftp://ftp.netscape.com/pub/$S/ \
-	ftp://uiarchive.uiuc.edu/pub/www/netscape/$S/ \
-	ftp://netscape.Mirror.McGill.CA/pub/mirrors/ftp.netscape.com/pub/$S/ \
-	ftp://ftp.the.net/pub/mirrors/ftp.netscape.com/pub/$S/ \
-	ftp://sunsite.doc.ic.ac.uk/packages/netscape/pub/$S/ \
-	ftp://ftp-de.netscape.com/pub/$S/ \
-	ftp://nic.funet.fi/pub/mirrors/ftp.netscape.com/pub/$S/
+	ftp://sunsite.doc.ic.ac.uk/Mirrors/ftp.netscape.com/pub/$S/ \
+	ftp://nic.funet.fi/pub/mirrors/ftp.netscape.com/pub/$S/ \
+	ftp://ftp.netscape.com/pub/$S/
 MASTER_SITES0= \
 	ftp://archive.netscape.com/pub/$S/
-MASTER_SITES1=	ftp://ftp.fortify.net/pub/Fortify/ \
+MASTER_SITES1=	http://www.fortify.net/pub/Fortify/ \
 		ftp://ftp.sunet.se/pub/security/tools/net/Fortify/ \
 		ftp://ftp.funet.fi/pub/crypt/mirrors/fortify/ \
-		ftp://ftp.it.net.au/mirrors/Fortify/
+		ftp://ftp.cert.dfn.de/pub/tools/net/Fortify/
 S= communicator/english/${PROGRAM_V}/unix/${SUPPORTED}/${LOCATION}
 DIST_SUBDIR=	netscape
 

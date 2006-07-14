@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2005/02/14 00:35:53 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2006/07/14 05:20:45 steven Exp $
 
 COMMENT=	"vector-based, pretty, Asteroids clone" 
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		X11 Xext c m pthread usbhid
 
-MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/vectoroids/
+MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/vectoroids/src/
 
 LIB_DEPENDS=	SDL::devel/sdl \
 		SDL_mixer::devel/sdl-mixer \
