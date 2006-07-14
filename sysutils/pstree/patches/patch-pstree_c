@@ -1,12 +1,21 @@
-$OpenBSD: patch-pstree_c,v 1.1 2002/06/29 14:25:53 naddy Exp $
---- pstree.c.orig	Sat Jun 29 16:18:57 2002
-+++ pstree.c	Sat Jun 29 16:19:12 2002
-@@ -180,7 +180,7 @@ extern getargs(struct ProcInfo *, int, c
- #elif defined(__NetBSD__) || defined(__OpenBSD__)
- /* NetBSD contributed by Gary D. Duzan <gary@wheel.tiac.net> */
+$OpenBSD: patch-pstree_c,v 1.2 2006/07/14 05:17:18 steven Exp $
+--- pstree.c.orig	Fri Apr  8 22:08:47 2005
++++ pstree.c	Wed Jul 12 08:51:24 2006
+@@ -71,7 +71,7 @@ extern getargs(struct ProcInfo *, int, c
+  * (Net|Open|Free)BSD & Darwin merged by Ralf Meyer <ralf AT thp.Uni-Duisburg.DE>
+  */
  #  define HAS_PGID
 -#  define PSCMD 	"ps -axwwo user,pid,ppid,pgid,command"
 +#  define PSCMD 	"ps -kaxwwo user,pid,ppid,pgid,command"
  #  define PSFORMAT 	"%s %ld %ld %ld %[^\n]"
  #  define PSVARS	P[i].name, &P[i].pid, &P[i].ppid, &P[i].pgid, P[i].cmd
- #else			/* HP-UX, A/UX etc. */
+ #  define PSVARSN	5
+@@ -515,7 +515,7 @@ int GetProcesses(void) {
+ int GetRootPid(void) {
+   int me;
+   for (me = 0; me < NProc; me++) {
+-    if (P[me].pid == -1) return P[me].pid;
++    if (P[me].pid == 1) return P[me].pid;
+   }
+   /* PID == 1 not found, so we'll take process with PPID == 0
+    * Fix for TRU64 TruCluster with uniq PIDs
