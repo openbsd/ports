@@ -1,3 +1,3 @@
-TinyCA is a simple graphical userinterface written in Perl/Gtk to manage
-a small CA (Certification Authority).  TinyCA works as a frontend for
-OpenSSL.
+TinyCA is a simple graphical userinterface written in Perl/Gtk2 to
+manage a small CA (Certification Authority). TinyCA works as a frontend
+for OpenSSL.
