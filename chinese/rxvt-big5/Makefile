@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/09/23 03:01:06 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2006/07/14 19:06:46 steven Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -14,9 +14,9 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	ftp://linux.sinica.edu.tw/redhat/redhat-8.0/en/os/i386/RedHat/RPMS/
-MASTER_SITES0=	ftp://linux.sinica.edu.tw/redhat/updates/8.0/en/os/i386/
-MASTER_SITES1=	ftp://linux.sinica.edu.tw/redhat//updates/7.3/en/os/i386/
+MASTER_SITES=	http://download.fedoralegacy.org/redhat/8.0/os/i386/
+MASTER_SITES0=	http://download.fedoralegacy.org/redhat/8.0/updates/i386/
+MASTER_SITES1=	http://download.fedoralegacy.org/redhat/7.3/updates/i386/
 DISTFILES=	${RPMS}
 EXTRACT_ONLY=
 
