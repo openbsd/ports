@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2003/10/18 19:44:55 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2006/07/14 05:06:21 steven Exp $
 
 COMMENT=	"generate HTML tables for cgi scripts"
 
-DISTNAME=	HTML-Table-1.18a
+DISTNAME=	HTML-Table-2.04a
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5 
 
@@ -20,5 +20,7 @@ MASTER_SITES=	http://www.chime.ucl.ac.uk/~rmhiajp/htmltable/ \
 		${MASTER_SITE_PERL_CPAN:=HTML/}
 
 CONFIGURE_STYLE= perl
+
+PKG_ARCH=	*
 
 .include <bsd.port.mk>
