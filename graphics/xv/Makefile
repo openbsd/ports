@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2005/09/30 04:23:20 fgsch Exp $
+# $OpenBSD: Makefile,v 1.30 2006/07/14 21:17:15 steven Exp $
 # Original from: Marco S Hyman <marc@OpenBSD.ORG>
 
 COMMENT=	"X11 image display and modification tool"
@@ -7,7 +7,10 @@ DISTNAME=	xv-3.10a
 PKGNAME=	${DISTNAME}p4
 CATEGORIES=	graphics x11
 
-MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/
+MASTER_SITES=	ftp://ftp.mirrorservice.org/sites/ftp.cis.upenn.edu/pub/xv/ \
+		ftp://ftp.cise.ufl.edu/pub/depot/archive-pkg/Graphics/ \
+		http://gd.tuwien.ac.at/graphics/xv/ \
+		ftp://ftp.cis.upenn.edu/pub/xv/
 MASTER_SITES0=	${MASTER_SITE_SOURCEFORGE:=png-mng/}
 DISTFILES=	${DISTNAME}.tar.gz xv-3.10a-jumbo-patches-20050501.tar.bz2:0
 DIST_SUBDIR=	xv

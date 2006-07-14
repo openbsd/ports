@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2004/12/17 15:18:34 alek Exp $
+# $OpenBSD: Makefile,v 1.20 2006/07/14 21:17:15 steven Exp $
 
 COMMENT=	"OpenLook applications and man pages"
 
 PKGNAME=	xview-clients-${XVIEW_VERSION}
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-DISTFILES=	xview3.2p1-X11R6.tar.gz
 CATEGORIES=	x11
 
 EXTRACT_ONLY=
