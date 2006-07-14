@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2006/03/05 23:17:29 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2006/07/14 14:37:40 steven Exp $
 
 COMMENT=	"C routines for computing the Discrete Fourier Transform"
 
-V=		3.1
+V=		3.1.2
 DISTNAME=	fftw-${V}
 PKGNAME=	fftw3-${V}
-SHARED_LIBS=	fftw3	4.0
+SHARED_LIBS=	fftw3	4.2
 CATEGORIES=	math
 
 HOMEPAGE=	http://www.fftw.org/
@@ -29,7 +29,9 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-portable-binary
+		--with-portable-binary \
+		--infodir=${LOCALBASE}/info \
+		--mandir=${LOCALBASE}/man
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/fftw3
