@@ -1,0 +1,4 @@
+OLE::Storage_Lite allows you to read and write an OLE structured file.
+Please refer to OLE::Storage by Martin Schwartz.
+
+OLE::Storage_Lite::PPS is a class representing PPS.

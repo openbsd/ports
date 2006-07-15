@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/15 19:43:12 steven Exp $
+${P5SITE}/OLE/
+${P5SITE}/OLE/Storage_Lite.pm
+@man man/man3p/OLE::Storage_Lite.3p
