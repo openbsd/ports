@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2006/07/12 22:00:30 steven Exp $
+# $OpenBSD: Makefile,v 1.109 2006/07/15 17:36:25 steven Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -68,7 +68,6 @@
      SUBDIR += smartmontools
      SUBDIR += socket
      SUBDIR += socklog
-     SUBDIR += stat
      SUBDIR += stow
      SUBDIR += stress
      SUBDIR += superscript
