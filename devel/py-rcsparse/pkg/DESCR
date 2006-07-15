@@ -1,0 +1,2 @@
+RCS file parser for Python, with the core written in C for
+high-performance manipulation of CVS repositories.
