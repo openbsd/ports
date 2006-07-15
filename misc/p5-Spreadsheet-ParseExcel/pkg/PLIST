@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/15 19:55:56 steven Exp $
+${P5SITE}/Spreadsheet/
+${P5SITE}/Spreadsheet/ParseExcel/
+${P5SITE}/Spreadsheet/ParseExcel.pm
+${P5SITE}/Spreadsheet/ParseExcel/Dump.pm
+${P5SITE}/Spreadsheet/ParseExcel/FmtDefault.pm
+${P5SITE}/Spreadsheet/ParseExcel/FmtJapan.pm
+${P5SITE}/Spreadsheet/ParseExcel/FmtJapan2.pm
+${P5SITE}/Spreadsheet/ParseExcel/FmtUnicode.pm
+${P5SITE}/Spreadsheet/ParseExcel/SaveParser.pm
+${P5SITE}/Spreadsheet/ParseExcel/Utility.pm
+@man man/man3p/Spreadsheet::ParseExcel.3p
+@man man/man3p/Spreadsheet::ParseExcel::SaveParser.3p
+@man man/man3p/Spreadsheet::ParseExcel::Utility.3p
+share/examples/p5-Spreadsheet-ParseExcel/
+share/examples/p5-Spreadsheet-ParseExcel/Ilya.pl
+share/examples/p5-Spreadsheet-ParseExcel/chkFmt.pl
+share/examples/p5-Spreadsheet-ParseExcel/chkInfo.pl
+share/examples/p5-Spreadsheet-ParseExcel/dmpEx.pl
+share/examples/p5-Spreadsheet-ParseExcel/dmpExH.pl
+share/examples/p5-Spreadsheet-ParseExcel/dmpExHJ.pl
+share/examples/p5-Spreadsheet-ParseExcel/dmpExJ.pl
+share/examples/p5-Spreadsheet-ParseExcel/dmpExR.pl
+share/examples/p5-Spreadsheet-ParseExcel/dmpExU.pl
+share/examples/p5-Spreadsheet-ParseExcel/dmpEx_2xml.pl
+share/examples/p5-Spreadsheet-ParseExcel/iftest.pl
+share/examples/p5-Spreadsheet-ParseExcel/iftestj.pl
+share/examples/p5-Spreadsheet-ParseExcel/sample.pl
+share/examples/p5-Spreadsheet-ParseExcel/sampleOEM.pl
+share/examples/p5-Spreadsheet-ParseExcel/sample_j.pl
+share/examples/p5-Spreadsheet-ParseExcel/smpFile.pl
+share/examples/p5-Spreadsheet-ParseExcel/xls2csv.pl
