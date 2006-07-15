@@ -1,0 +1,12 @@
+$OpenBSD: patch-ctypes_test_test_loading_py,v 1.1.1.1 2006/07/15 22:47:25 djm Exp $
+--- ctypes/test/test_loading.py.orig	Fri Jul 14 14:49:16 2006
++++ ctypes/test/test_loading.py	Fri Jul 14 14:49:23 2006
+@@ -17,7 +17,7 @@ else:
+     for line in os.popen("ldd %s" % sys.executable):
+         if "libc.so" in line:
+             if sys.platform == "openbsd3":
+-                libc_name = line.split()[4]
++                libc_name = line.split()[6]
+             else:
+                 libc_name = line.split()[2]
+             break

@@ -1,0 +1,8 @@
+ctypes is an advanced ffi (Foreign Function Interface) package for
+Python 2.3 and higher.
+
+ctypes allows to call functions exposed from dlls/shared libraries and
+has extensive facilities to create, access and manipulate simple and
+complicated C data types in Python - in other words: wrap libraries in
+pure Python. It is even possible to implement C callback functions in
+pure Python.
