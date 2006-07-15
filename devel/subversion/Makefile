@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.19 2006/06/04 00:21:58 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2006/07/15 16:55:32 alek Exp $
 
 COMMENT=	"subversion revision control system"
 COMMENT-perl=	"perl interface to subversion"
 COMMENT-python=	"python interface to subversion"
 
-VERSION=	1.3.1
+VERSION=	1.3.2
 DISTNAME=	subversion-${VERSION}
 PKGNAME-perl=	p5-SVN-${VERSION}
-PKGNAME-python=	py-subversion-${VERSION}p0
+PKGNAME-python=	py-subversion-${VERSION}
 SHARED_LIBS=	svn_client-1	0.0	\
 		svn_delta-1	0.0	\
 		svn_diff-1	0.0	\
@@ -118,9 +118,11 @@ post-build:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${MAKE_FLAGS} swig-pl
 
-post-regress:
+do-regress:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
-		${REGRESS_FLAGS} check FSTYPE=bdb
+		${REGRESS_FLAGS} check FS_TYPE=bdb
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
+		${REGRESS_FLAGS} check FS_TYPE=fsfs
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${REGRESS_FLAGS} TMPDIR=${WRKBUILD} check-swig-pl
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
@@ -141,6 +143,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/hook-scripts/mailer/tests
 	${INSTALL_DATA} ${WRKBUILD}/tools/backup/hot-backup.py \
 			${PREFIX}/share/examples/subversion/backup
+	${INSTALL_DATA} ${WRKSRC}/contrib/server-side/svn-fast-backup \
+			${PREFIX}/share/examples/subversion/backup/svn-fast-backup
 	${INSTALL_DATA} ${WRKBUILD}/tools/hook-scripts/* \
 			${PREFIX}/share/examples/subversion/hook-scripts
 	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/README \

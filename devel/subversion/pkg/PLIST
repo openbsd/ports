@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2006/01/27 10:20:56 alek Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/07/15 16:55:32 alek Exp $
 @pkgpath devel/subversion,no_bindings
 %%SHARED%%
 bin/svn
@@ -79,6 +79,7 @@ lib/libsvn_wc-1.la
 share/examples/subversion/
 share/examples/subversion/backup/
 share/examples/subversion/backup/hot-backup.py
+share/examples/subversion/backup/svn-fast-backup
 share/examples/subversion/hook-scripts/
 share/examples/subversion/hook-scripts/README
 share/examples/subversion/hook-scripts/commit-access-control.cfg.example
