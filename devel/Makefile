@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.389 2006/07/12 08:46:33 espie Exp $
+# $OpenBSD: Makefile,v 1.390 2006/07/15 02:17:53 avsm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -34,6 +34,7 @@
      SUBDIR += cppunit
      SUBDIR += cscope
      SUBDIR += ctm
+     SUBDIR += cvs20hg
      SUBDIR += cvs2cl
      SUBDIR += cvsgraph
      SUBDIR += cvslock
@@ -377,6 +378,7 @@
      SUBDIR += py-pexpect
      SUBDIR += py-psyco
      SUBDIR += py-radix
+     SUBDIR += py-rcsparse
      SUBDIR += py-tpg
      SUBDIR += py-tz
      SUBDIR += py-unit
