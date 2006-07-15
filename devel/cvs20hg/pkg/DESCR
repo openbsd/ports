@@ -1,0 +1,4 @@
+cvs20hg converts a locally available CVS repository into a Mercurial
+repository, with individual CVS commits collated into changesets.
+It can be run incrementally to maintain a Mercurial version of a
+CVS-based project.
