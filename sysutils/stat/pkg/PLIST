@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/09/05 13:25:55 espie Exp $
-bin/stat
-@man man/cat1/stat.0
