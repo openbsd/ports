@@ -1,0 +1,102 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/15 20:20:23 steven Exp $
+bin/chartex
+${P5SITE}/Spreadsheet/
+${P5SITE}/Spreadsheet/WriteExcel/
+${P5SITE}/Spreadsheet/WriteExcel.pm
+${P5SITE}/Spreadsheet/WriteExcel/BIFFwriter.pm
+${P5SITE}/Spreadsheet/WriteExcel/Big.pm
+${P5SITE}/Spreadsheet/WriteExcel/Chart.pm
+${P5SITE}/Spreadsheet/WriteExcel/Format.pm
+${P5SITE}/Spreadsheet/WriteExcel/Formula.pm
+${P5SITE}/Spreadsheet/WriteExcel/OLEwriter.pm
+${P5SITE}/Spreadsheet/WriteExcel/Utility.pm
+${P5SITE}/Spreadsheet/WriteExcel/Workbook.pm
+${P5SITE}/Spreadsheet/WriteExcel/WorkbookBig.pm
+${P5SITE}/Spreadsheet/WriteExcel/Worksheet.pm
+@man man/man1/chartex.1
+@man man/man3p/Spreadsheet::WriteExcel.3p
+@man man/man3p/Spreadsheet::WriteExcel::BIFFwriter.3p
+@man man/man3p/Spreadsheet::WriteExcel::Big.3p
+@man man/man3p/Spreadsheet::WriteExcel::Chart.3p
+@man man/man3p/Spreadsheet::WriteExcel::Format.3p
+@man man/man3p/Spreadsheet::WriteExcel::Formula.3p
+@man man/man3p/Spreadsheet::WriteExcel::OLEwriter.3p
+@man man/man3p/Spreadsheet::WriteExcel::Utility.3p
+@man man/man3p/Spreadsheet::WriteExcel::Workbook.3p
+@man man/man3p/Spreadsheet::WriteExcel::WorkbookBig.3p
+@man man/man3p/Spreadsheet::WriteExcel::Worksheet.3p
+share/examples/p5-Spreadsheet-WriteExcel/
+share/examples/p5-Spreadsheet-WriteExcel/README
+share/examples/p5-Spreadsheet-WriteExcel/autofit.pl
+share/examples/p5-Spreadsheet-WriteExcel/bigfile.pl
+share/examples/p5-Spreadsheet-WriteExcel/bug_report.pl
+share/examples/p5-Spreadsheet-WriteExcel/cgi.pl
+share/examples/p5-Spreadsheet-WriteExcel/chess.pl
+share/examples/p5-Spreadsheet-WriteExcel/colors.pl
+share/examples/p5-Spreadsheet-WriteExcel/comments1.pl
+share/examples/p5-Spreadsheet-WriteExcel/comments2.pl
+share/examples/p5-Spreadsheet-WriteExcel/convertA1.pl
+share/examples/p5-Spreadsheet-WriteExcel/copyformat.pl
+share/examples/p5-Spreadsheet-WriteExcel/csv2xls.pl
+share/examples/p5-Spreadsheet-WriteExcel/date_time.pl
+share/examples/p5-Spreadsheet-WriteExcel/datecalc1.pl
+share/examples/p5-Spreadsheet-WriteExcel/datecalc2.pl
+share/examples/p5-Spreadsheet-WriteExcel/demo.pl
+share/examples/p5-Spreadsheet-WriteExcel/diag_border.pl
+share/examples/p5-Spreadsheet-WriteExcel/easter_egg.pl
+share/examples/p5-Spreadsheet-WriteExcel/filehandle.pl
+share/examples/p5-Spreadsheet-WriteExcel/formats.pl
+share/examples/p5-Spreadsheet-WriteExcel/formula_result.pl
+share/examples/p5-Spreadsheet-WriteExcel/function_locale.pl
+share/examples/p5-Spreadsheet-WriteExcel/headers.pl
+share/examples/p5-Spreadsheet-WriteExcel/hide_sheet.pl
+share/examples/p5-Spreadsheet-WriteExcel/hyperlink1.pl
+share/examples/p5-Spreadsheet-WriteExcel/hyperlink2.pl
+share/examples/p5-Spreadsheet-WriteExcel/images.pl
+share/examples/p5-Spreadsheet-WriteExcel/indent.pl
+share/examples/p5-Spreadsheet-WriteExcel/lecxe.pl
+share/examples/p5-Spreadsheet-WriteExcel/merge1.pl
+share/examples/p5-Spreadsheet-WriteExcel/merge2.pl
+share/examples/p5-Spreadsheet-WriteExcel/merge3.pl
+share/examples/p5-Spreadsheet-WriteExcel/merge4.pl
+share/examples/p5-Spreadsheet-WriteExcel/merge5.pl
+share/examples/p5-Spreadsheet-WriteExcel/merge6.pl
+share/examples/p5-Spreadsheet-WriteExcel/mod_perl1.pl
+share/examples/p5-Spreadsheet-WriteExcel/mod_perl2.pl
+share/examples/p5-Spreadsheet-WriteExcel/outline.pl
+share/examples/p5-Spreadsheet-WriteExcel/panes.pl
+share/examples/p5-Spreadsheet-WriteExcel/protection.pl
+share/examples/p5-Spreadsheet-WriteExcel/regions.pl
+share/examples/p5-Spreadsheet-WriteExcel/repeat.pl
+share/examples/p5-Spreadsheet-WriteExcel/right_to_left.pl
+share/examples/p5-Spreadsheet-WriteExcel/row_wrap.pl
+share/examples/p5-Spreadsheet-WriteExcel/sales.pl
+share/examples/p5-Spreadsheet-WriteExcel/sendmail.pl
+share/examples/p5-Spreadsheet-WriteExcel/simple.pl
+share/examples/p5-Spreadsheet-WriteExcel/stats.pl
+share/examples/p5-Spreadsheet-WriteExcel/stats_ext.pl
+share/examples/p5-Spreadsheet-WriteExcel/stocks.pl
+share/examples/p5-Spreadsheet-WriteExcel/tab2xls.pl
+share/examples/p5-Spreadsheet-WriteExcel/tab_colors.pl
+share/examples/p5-Spreadsheet-WriteExcel/textwrap.pl
+share/examples/p5-Spreadsheet-WriteExcel/unicode.pl
+share/examples/p5-Spreadsheet-WriteExcel/unicode_2022_jp.pl
+share/examples/p5-Spreadsheet-WriteExcel/unicode_8859_11.pl
+share/examples/p5-Spreadsheet-WriteExcel/unicode_8859_7.pl
+share/examples/p5-Spreadsheet-WriteExcel/unicode_big5.pl
+share/examples/p5-Spreadsheet-WriteExcel/unicode_cp1251.pl
+share/examples/p5-Spreadsheet-WriteExcel/unicode_cp1256.pl
+share/examples/p5-Spreadsheet-WriteExcel/unicode_cyrillic.pl
+share/examples/p5-Spreadsheet-WriteExcel/unicode_japan.pl
+share/examples/p5-Spreadsheet-WriteExcel/unicode_koi8r.pl
+share/examples/p5-Spreadsheet-WriteExcel/unicode_list.pl
+share/examples/p5-Spreadsheet-WriteExcel/unicode_polish_utf8.pl
+share/examples/p5-Spreadsheet-WriteExcel/unicode_shift_jis.pl
+share/examples/p5-Spreadsheet-WriteExcel/win32ole.pl
+share/examples/p5-Spreadsheet-WriteExcel/writeA1.pl
+share/examples/p5-Spreadsheet-WriteExcel/write_arrays.pl
+share/examples/p5-Spreadsheet-WriteExcel/write_handler1.pl
+share/examples/p5-Spreadsheet-WriteExcel/write_handler2.pl
+share/examples/p5-Spreadsheet-WriteExcel/write_handler3.pl
+share/examples/p5-Spreadsheet-WriteExcel/write_handler4.pl
+share/examples/p5-Spreadsheet-WriteExcel/write_to_scalar.pl
