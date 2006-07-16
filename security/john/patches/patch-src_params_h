@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_params_h,v 1.3 2006/01/06 04:26:09 cathcart Exp $
---- src/params.h.orig	Fri Dec 16 16:47:25 2005
-+++ src/params.h	Thu Jan  5 19:40:05 2006
-@@ -22,15 +22,15 @@
-  * will probably want to set this to 1 for their builds of John.
+$OpenBSD: patch-src_params_h,v 1.4 2006/07/16 18:17:25 sturm Exp $
+--- src/params.h.orig	Mon Mar 20 00:34:15 2006
++++ src/params.h	Sun Jul 16 20:07:29 2006
+@@ -49,15 +49,15 @@
+  * notes above.
   */
  #ifndef JOHN_SYSTEMWIDE
 -#define JOHN_SYSTEMWIDE			0
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_params_h,v 1.3 2006/01/06 04:26:09 cathcart Exp $
  #endif
  
  #if JOHN_SYSTEMWIDE
- #ifndef JOHN_SYSTEMWIDE_EXEC
+ #ifndef JOHN_SYSTEMWIDE_EXEC /* please refer to the notes above */
 -#define JOHN_SYSTEMWIDE_EXEC		"/usr/libexec/john"
 +#define JOHN_SYSTEMWIDE_EXEC		"%%PREFIX%%/bin/john"
  #endif

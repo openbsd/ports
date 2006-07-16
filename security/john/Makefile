@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.34 2006/01/06 04:26:09 cathcart Exp $
+# $OpenBSD: Makefile,v 1.35 2006/07/16 18:17:25 sturm Exp $
 
 COMMENT=		"extremely fast password cracker"
 
-DISTNAME=		john-1.6.40
+DISTNAME=		john-1.7.0.2
 CATEGORIES=		security
 
 HOMEPAGE=		http://www.openwall.com/john/
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-MASTER_SITES=		${HOMEPAGE}c/
+MASTER_SITES=		${HOMEPAGE}f/
 
 NO_REGRESS=		Yes
 
@@ -26,13 +26,7 @@ MAKE_FLAGS=		CC=${CC} AS=${CC} LD=${CC} \
 			CFLAGS="${CFLAGS} -c" LDFLAGS="${LDFLAGS}"
 
 .if ${MACHINE_ARCH} == "i386"
-FLAVORS=		no_mmx
-FLAVOR?=
-.  if ${FLAVOR:L:Mno_mmx}
-ALL_TARGET=		openbsd-x86-any
-.  else
 ALL_TARGET=		openbsd-x86-mmx
-.  endif
 .elif ${MACHINE_ARCH} == "amd64"
 ALL_TARGET=		openbsd-x86-64
 .elif ${MACHINE_ARCH} == "sparc"
