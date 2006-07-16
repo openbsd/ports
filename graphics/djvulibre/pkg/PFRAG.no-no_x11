@@ -1,0 +1,15 @@
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.1.1.1 2006/07/16 16:48:07 steven Exp $
+bin/djview
+@comment lib/netscape/
+@comment lib/netscape/plugins/
+@comment lib/netscape/plugins/nsdejavu.so
+@man man/ja/man1/djview.1
+@comment @man man/ja/man1/nsdejavu.1
+@man man/man1/djview.1
+@comment @man man/man1/nsdejavu.1
+share/djvu/osi/de/djview.qm
+share/djvu/osi/de/qt.qm
+share/djvu/osi/fr/djview.qm
+share/djvu/osi/fr/qt.qm
+share/djvu/osi/ja/djview.qm
+share/djvu/osi/ja/qt.qm

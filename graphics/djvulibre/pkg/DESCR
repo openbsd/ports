@@ -1,0 +1,8 @@
+DjVuLibre is an open source implementation of DjVu, including viewers,
+decoders, simple encoders, and utilities.
+
+DjVu is a web-centric format and software platform for distributing
+documents and images. It features advanced technologies such as image layer
+separation, progressive loading, arithmetic coding, and lossy compression
+for bitonal images, allowing for high quality, readable images to be stored
+in a minimum of space.

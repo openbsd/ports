@@ -1,0 +1,53 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2006/07/16 16:48:07 steven Exp $
+--- configure.orig	Thu Mar 23 17:37:23 2006
++++ configure	Mon Jul 10 01:49:28 2006
+@@ -20424,14 +20424,11 @@ fi;
+    CFLAGS=
+    for opt in $saved_CXXFLAGS ; do
+      case $opt in
+-       -g*) test $ac_debug != no && OPTS="$OPTS $opt" ;;
+-       -O*) ;;
+        *) CXXFLAGS="$CXXFLAGS $opt" ;;
+      esac
+    done
+    for opt in $saved_CFLAGS ; do
+      case $opt in
+-       -O*|-g*) ;;
+        *) CFLAGS="$CFLAGS $opt" ;;
+      esac
+    done
+@@ -20463,7 +20460,7 @@ echo $ECHO_N "checking if $CXX accepts $
+     echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
+     rm conftest.*
+-    OPTS="$OPTS -O3"
++    OPTS="$OPTS"
+  else
+     echo "$as_me:$LINENO: result: no" >&5
+ echo "${ECHO_T}no" >&6
+@@ -20477,7 +20474,7 @@ echo $ECHO_N "checking if $CXX accepts $
+     echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
+     rm conftest.*
+-    OPTS="$OPTS -O2"
++    OPTS="$OPTS"
+  else
+     echo "$as_me:$LINENO: result: no" >&5
+ echo "${ECHO_T}no" >&6
+@@ -20523,7 +20520,6 @@ echo "${ECHO_T}yes" >&6
+     echo "$as_me:$LINENO: result: no" >&5
+ echo "${ECHO_T}no" >&6
+     rm conftest.*
+-     opt="-mcpu=${host_cpu}"
+ 
+  opt="$opt"
+  echo "$as_me:$LINENO: checking if $CXX accepts $opt" >&5
+@@ -26918,7 +26914,7 @@ if test x$ac_enable_djview != xno
+ then
+  NSDEJAVU_CFLAGS=${X_CFLAGS}
+  case "$host" in
+- *-cygwin* | *-mingw*)
++ *-cygwin* | *-mingw* | *-openbsd* )
+    NSDEJAVU_LIBS="`echo ${X_LIBS} | sed -e 's/-lXext/-lXt -lXext/'`"
+    NSDEJAVU_LIBS="-no-undefined $NSDEJAVU_LIBS"
+    ;;

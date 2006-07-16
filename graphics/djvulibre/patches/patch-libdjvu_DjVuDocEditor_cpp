@@ -1,0 +1,27 @@
+$OpenBSD: patch-libdjvu_DjVuDocEditor_cpp,v 1.1.1.1 2006/07/16 16:48:07 steven Exp $
+--- libdjvu/DjVuDocEditor.cpp.orig	Wed May 25 22:24:52 2005
++++ libdjvu/DjVuDocEditor.cpp	Sun Jul 16 15:48:41 2006
+@@ -192,8 +192,21 @@ DjVuDocEditor::init(const GURL &url)
+    {
+          // Suxx. I need to convert it NOW.
+          // We will unlink this file in the destructor
+-      tmp_doc_url=GURL::Filename::Native(tmpnam(0));
+-      const GP<ByteStream> gstr(ByteStream::create(tmp_doc_url, "wb"));
++      char tfn[20];
++      FILE *tfp;
++      int tfd;
++
++      strlcpy(tfn, "/tmp/djvustream.XXXXXXXX", sizeof(tfn));
++      if ((tfd = mkstemp(tfn)) == -1 || (tfp = fdopen(tfd, "w+")) == NULL) {
++	if (tfd != -1) {
++		unlink(tfn);
++		close(tfd);
++	}
++	fprintf(stderr, "problem with temporary file: %s\n", tfn);
++	G_THROW( ERR_MSG("DjVuDocEditor.init") );
++      }
++      tmp_doc_url=GURL::Filename::Native(tfn);
++      const GP<ByteStream> gstr(ByteStream::create(tfp, "w+", true));
+       tmp_doc->write(gstr, true);        // Force DJVM format
+       gstr->flush();
+       doc_pool=DataPool::create(tmp_doc_url);

@@ -1,0 +1,97 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/16 16:48:07 steven Exp $
+%%SHARED%%
+@comment bin/any2djvu
+bin/bzz
+bin/c44
+bin/cjb2
+bin/cpaldjvu
+bin/csepdjvu
+bin/ddjvu
+bin/djvm
+bin/djvmcvt
+bin/djvudigital
+bin/djvudump
+bin/djvuextract
+bin/djvumake
+bin/djvups
+bin/djvused
+bin/djvuserve
+bin/djvutoxml
+bin/djvutxt
+bin/djvuxmlparser
+include/libdjvu/
+include/libdjvu/ddjvuapi.h
+include/libdjvu/miniexp.h
+lib/libdjvulibre.a
+lib/libdjvulibre.la
+lib/pkgconfig/
+lib/pkgconfig/ddjvuapi.pc
+@comment man/de/
+@comment man/de/man1/
+@comment man/fr/
+@comment man/fr/man1/
+man/ja/
+man/ja/man1/
+@man man/ja/man1/bzz.1
+@man man/ja/man1/c44.1
+@man man/ja/man1/cjb2.1
+@man man/ja/man1/cpaldjvu.1
+@man man/ja/man1/csepdjvu.1
+@man man/ja/man1/ddjvu.1
+@man man/ja/man1/djvm.1
+@man man/ja/man1/djvmcvt.1
+@man man/ja/man1/djvu.1
+@man man/ja/man1/djvudump.1
+@man man/ja/man1/djvuextract.1
+@man man/ja/man1/djvumake.1
+@man man/ja/man1/djvups.1
+@man man/ja/man1/djvused.1
+@man man/ja/man1/djvuserve.1
+@man man/ja/man1/djvutxt.1
+@comment @man man/man1/any2djvu.1
+@man man/man1/bzz.1
+@man man/man1/c44.1
+@man man/man1/cjb2.1
+@man man/man1/cpaldjvu.1
+@man man/man1/csepdjvu.1
+@man man/man1/ddjvu.1
+@man man/man1/djvm.1
+@man man/man1/djvmcvt.1
+@man man/man1/djvu.1
+@man man/man1/djvudigital.1
+@man man/man1/djvudump.1
+@man man/man1/djvuextract.1
+@man man/man1/djvumake.1
+@man man/man1/djvups.1
+@man man/man1/djvused.1
+@man man/man1/djvuserve.1
+@man man/man1/djvutoxml.1
+@man man/man1/djvutxt.1
+@man man/man1/djvuxml.1
+@man man/man1/djvuxmlparser.1
+share/djvu/
+share/djvu/languages.xml
+share/djvu/osi/
+share/djvu/osi/de/
+share/djvu/osi/de/libdjvu++.xml
+share/djvu/osi/de/messages.xml
+share/djvu/osi/en/
+share/djvu/osi/en/djvutools-reference.xml
+share/djvu/osi/en/libdjvu++.xml
+share/djvu/osi/en/messages.xml
+share/djvu/osi/en/unixgui-shared.xml
+share/djvu/osi/en/unixgui-viewer.xml
+share/djvu/osi/fr/
+share/djvu/osi/fr/libdjvu++.xml
+share/djvu/osi/fr/messages.xml
+share/djvu/osi/ja/
+share/djvu/osi/ja/libdjvu++.xml
+share/djvu/osi/ja/messages.xml
+share/djvu/osi/zh/
+share/djvu/osi/zh/libdjvu++.xml
+share/djvu/osi/zh/messages.xml
+share/djvu/pubtext/
+share/djvu/pubtext/DjVuMessages.dtd
+share/djvu/pubtext/DjVuOCR.dtd
+share/djvu/pubtext/DjVuXML-s.dtd
+!%%no_x11%%
