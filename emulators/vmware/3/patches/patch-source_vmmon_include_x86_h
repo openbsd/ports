@@ -1,0 +1,21 @@
+$OpenBSD: patch-source_vmmon_include_x86_h,v 1.1 2006/07/16 15:13:27 mcbride Exp $
+--- source/vmmon/include/x86.h.orig	Fri Jul 14 11:13:04 2006
++++ source/vmmon/include/x86.h	Fri Jul 14 11:12:52 2006
+@@ -299,14 +299,16 @@ OpsizeValue(uint32 value,	// IN: The 32 
+ 
+ #define MSR_L2CFG            0x0000011e
+ #if !defined(__NetBSD__) || !defined(MSR_TSC)
++# if !defined(__OpenBSD__)
+ #define MSR_TSC              0x00000010
++# endif
+ #define MSR_PERFCTR0         0x000000c1
+ #define MSR_PERFCTR1         0x000000c2
+ #define MSR_MTRR_CAP         0x000000fe
+ #define MSD_EVNTSEL0         0x00000186
+ #define MSR_EVNTSEL1         0x00000187
+ #endif
+-#if !defined(__NetBSD__) || !defined(MSR_SYSENTER_CS)
++#if (!defined(__NetBSD__) && !defined(__OpenBSD__)) || !defined(MSR_SYSENTER_CS)
+ #define MSR_SYSENTER_CS      0x00000174
+ #define MSR_SYSENTER_ESP     0x00000175
+ #define MSR_SYSENTER_EIP     0x00000176

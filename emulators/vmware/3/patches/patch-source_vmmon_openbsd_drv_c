@@ -1,6 +1,6 @@
-$OpenBSD: patch-source_vmmon_openbsd_drv_c,v 1.2 2006/04/10 21:33:36 todd Exp $
+$OpenBSD: patch-source_vmmon_openbsd_drv_c,v 1.3 2006/07/16 15:13:27 mcbride Exp $
 --- source/vmmon/openbsd/drv.c.orig	Sun Mar 14 15:58:50 2004
-+++ source/vmmon/openbsd/drv.c	Mon Apr 10 16:13:41 2006
++++ source/vmmon/openbsd/drv.c	Fri Jul 14 11:15:49 2006
 @@ -414,6 +414,7 @@ vmmon_fake_clonedev(dev_t dev, int flag,
  #endif 
  
@@ -9,3 +9,19 @@ $OpenBSD: patch-source_vmmon_openbsd_drv_c,v 1.2 2006/04/10 21:33:36 todd Exp $
  
  	return ENXIO;
  }
+@@ -436,6 +437,7 @@ vmmon_alloc_low_pages(struct vmx86_softc
+ 	int error, n;
+ 	extern paddr_t avail_end;
+ 	struct rmem_pgrange *pgrp;
++#if !defined(__OpenBSD__)
+ #if 0
+ #define ISA_DMA_BOUNCE_THRESHOLD (16UL * 1024 * 1024)
+ #else
+@@ -445,6 +447,7 @@ vmmon_alloc_low_pages(struct vmx86_softc
+ 	 * So just use any pages we can get.
+ 	 */
+ #define ISA_DMA_BOUNCE_THRESHOLD (3072UL * 1024 * 1024)
++#endif
+ #endif
+ 
+ 	if (numPages == 0)

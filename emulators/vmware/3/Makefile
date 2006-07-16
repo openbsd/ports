@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2006/07/14 04:23:03 pvalchev Exp $
-
-BROKEN=		"PAE broke this, fix needed"
+# $OpenBSD: Makefile,v 1.9 2006/07/16 15:13:27 mcbride Exp $
 
 ONLY_FOR_ARCHS= i386
 
 COMMENT=	"VMware emulator"
 DISTNAME=	VMware-workstation-3.2.1-2242
-PKGNAME=	vmware-3.2.1_2242p3
+PKGNAME=	vmware-3.2.1_2242p4
 CATEGORIES=	emulators
 MASTER_SITES=	http://download3.vmware.com/software/wkst/
 MASTER_SITES0=	http://monkey.org/~marius/vmware-openbsd/

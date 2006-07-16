@@ -1,13 +1,10 @@
-$OpenBSD: patch-source_vmmon_openbsd_rmem_h,v 1.5 2006/04/11 14:10:53 todd Exp $
---- source/vmmon/openbsd/rmem.h.orig	2004-02-05 11:10:33.000000000 -0600
-+++ source/vmmon/openbsd/rmem.h	2004-02-05 11:10:33.000000000 -0600
-@@ -0,0 +1,21 @@
-+/*
-+ * rmem.h
-+ *
-+ * Copyright (c) 2004 Marius Aamodt Eriksen <marius@monkey.org>
-+ * All rights reserved.
-+ *
+$OpenBSD: patch-source_vmmon_openbsd_rmem_h,v 1.6 2006/07/16 15:13:27 mcbride Exp $
+--- source/vmmon/openbsd/rmem.h.orig	Fri Feb 13 06:40:21 2004
++++ source/vmmon/openbsd/rmem.h	Sun Jul 16 08:03:26 2006
+@@ -4,6 +4,27 @@
+  * Copyright (c) 2004 Marius Aamodt Eriksen <marius@monkey.org>
+  * All rights reserved.
+  *
 + *
 + */
 +
@@ -23,3 +20,12 @@ $OpenBSD: patch-source_vmmon_openbsd_rmem_h,v 1.5 2006/04/11 14:10:53 todd Exp $
 +TAILQ_HEAD(rmem_pglist, rmem_pgrange);
 +
 +#endif /* _RMEM_H */
++/*
++ * rmem.h
++ *
++ * Copyright (c) 2004 Marius Aamodt Eriksen <marius@monkey.org>
++ * All rights reserved.
++ *
+  * $Id: patch-source_vmmon_openbsd_rmem_h,v 1.6 2006/07/16 15:13:27 mcbride Exp $
+  */
+ 

@@ -1,0 +1,31 @@
+$OpenBSD: patch-source_vmmon_openbsd_host_c,v 1.1 2006/07/16 15:13:27 mcbride Exp $
+--- source/vmmon/openbsd/host.c.orig	Sun Mar 14 21:58:50 2004
++++ source/vmmon/openbsd/host.c	Sun Jul 16 12:31:29 2006
+@@ -59,6 +59,8 @@ lyaev Exp $
+ #include <sys/proc.h>
+ 
+ #include <machine/pio.h>
++#include <uvm/uvm_extern.h>
++#include <machine/pmap.h>
+ 
+ #include <uvm/uvm_extern.h>
+ #include <uvm/uvm_param.h>
+@@ -153,14 +155,11 @@ int host_unlock_ppn(PPN ppn)
+ static INLINE MPN
+ HostifVa2Mpn(VA addr)
+ {
+-	pt_entry_t *pteptr = (pt_entry_t *)vtopte((vaddr_t)addr);
+-	PTE pte;
+-   
+-	pte = *pteptr;
+-	if (pte & PTE_P)
+-		return PTE_2_PFN(pte);
+-	else
++	paddr_t pa;
++	if (pmap_extract(vm_map_pmap(&curproc->p_vmspace->vm_map), addr, &pa)
++	    == FALSE)
+ 		return 0;
++	return (pa >> PAGE_SHIFT);
+ }
+ 
+ /*
