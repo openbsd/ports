@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.160 2006/06/18 14:48:36 alek Exp $
+# $OpenBSD: Makefile,v 1.161 2006/07/16 16:50:14 steven Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -19,6 +19,8 @@
      SUBDIR += digikam-doc
      SUBDIR += digikam-image-plugins
      SUBDIR += digikam-image-plugins-doc
+     SUBDIR += djvulibre
+     SUBDIR += djvulibre,no_x11
      SUBDIR += dumpmpeg
      SUBDIR += dvdrip
      SUBDIR += enjoympeg
