@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2006/05/09 14:15:40 robert Exp $
+# $OpenBSD: Makefile,v 1.22 2006/07/16 22:08:42 alek Exp $
 
 FULLPKGNAME=		php5-extensions-${V}
 COMMENT=		"informational package about PHP5 extensions"
@@ -99,7 +99,7 @@ MULTI_PACKAGES+=	-gd
 COMMENT-gd=		"image manipulation extensions for php5"
 GD_DEPENDS=		${GRAPHIC_DEPENDS} t1.5::devel/t1lib
 GD_WANTLIB=		freetype z
-CONFIGURE_ENV+=		CPPFLAGS="${LOCALBASE}/include/libpng
+CONFIGURE_ENV+=		CPPFLAGS="${LOCALBASE}/include/libpng"
 CONFIGURE_ARGS+=	--with-gd=shared ${GRAPHIC_CONFIG} \
 			--with-t1lib=${LOCALBASE} \
 			--with-freetype-dir=${X11BASE}
