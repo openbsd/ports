@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.392 2006/07/15 19:44:09 steven Exp $
+# $OpenBSD: Makefile,v 1.393 2006/07/16 12:28:42 djm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -371,6 +371,7 @@
      SUBDIR += py-Checker
      SUBDIR += py-SOAPpy
      SUBDIR += py-cheetah
+     SUBDIR += py-ctypes
      SUBDIR += py-dateutil
      SUBDIR += py-fpconst
      SUBDIR += py-mxDateTime
