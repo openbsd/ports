@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.37 2006/07/05 19:35:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.38 2006/07/16 18:02:14 sturm Exp $
 
 COMMENT=	"graphical frontend for LaTeX (nearly WYSIWYG)"
 
-DISTNAME=	lyx-1.4.1
+DISTNAME=	lyx-1.4.2
 CATEGORIES=	print
 
 HOMEPAGE=	http://www.lyx.org/
@@ -27,8 +27,9 @@ MODULES=	devel/gettext lang/python
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::print/teTeX/base \
-		::graphics/ImageMagick \
-		::textproc/ispell
+		::graphics/ImageMagick
+
+LIB_DEPENDS=	aspell::textproc/aspell/core
 
 WANTLIB=	ICE SM X11 c m stdc++ z
 
@@ -57,8 +58,6 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
 CONFIGURE_ARGS+=--with-extra-lib=${LOCALBASE}/lib \
 		--with-extra-inc="${LOCALBASE}/include \
 		${LOCALBASE}/include/X11" \
-		--without-aspell \
-		--without-pspell \
 		--disable-dependency-tracking
 CONFIGURE_ENV+=	PYTHON=${MODPY_BIN}
 

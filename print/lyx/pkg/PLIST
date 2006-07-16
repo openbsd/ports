@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2006/07/05 19:35:18 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.14 2006/07/16 18:02:14 sturm Exp $
 bin/lyx
 bin/lyxclient
 bin/tex2lyx
@@ -8,8 +8,6 @@ bin/tex2lyx
 share/locale/da/LC_MESSAGES/lyx.mo
 share/locale/de/LC_MESSAGES/lyx.mo
 share/locale/es/LC_MESSAGES/lyx.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/lyx.mo
 share/locale/fi/LC_MESSAGES/lyx.mo
 share/locale/fr/LC_MESSAGES/lyx.mo
@@ -47,14 +45,13 @@ share/lyx/bind/xemacs.bind
 share/lyx/chkconfig.ltx
 share/lyx/clipart/
 share/lyx/clipart/platypus.eps
-share/lyx/configure
+share/lyx/configure.py
 share/lyx/doc/
 share/lyx/doc/Customization.lyx
 share/lyx/doc/DocStyle.lyx
 share/lyx/doc/Extended.lyx
 share/lyx/doc/FAQ.lyx
 share/lyx/doc/Intro.lyx
-share/lyx/doc/LaTeXConfig.lyx
 share/lyx/doc/LaTeXConfig.lyx.in
 share/lyx/doc/Reference.lyx
 share/lyx/doc/TOC.lyx
@@ -569,6 +566,7 @@ share/lyx/images/math/overleftarrow.xpm
 share/lyx/images/math/overleftrightarrow.xpm
 share/lyx/images/math/overline.xpm
 share/lyx/images/math/overrightarrow.xpm
+share/lyx/images/math/overset.xpm
 share/lyx/images/math/parallel.xpm
 share/lyx/images/math/partial.xpm
 share/lyx/images/math/perp.xpm
@@ -684,6 +682,7 @@ share/lyx/images/math/underleftrightarrow.xpm
 share/lyx/images/math/underline.xpm
 share/lyx/images/math/underrightarrow.xpm
 share/lyx/images/math/underscore.xpm
+share/lyx/images/math/underset.xpm
 share/lyx/images/math/uparrow.xpm
 share/lyx/images/math/uparrow2.xpm
 share/lyx/images/math/updownarrow.xpm
@@ -873,6 +872,7 @@ share/lyx/layouts/g-brief2.layout
 share/lyx/layouts/heb-article.layout
 share/lyx/layouts/heb-letter.layout
 share/lyx/layouts/hollywood.layout
+share/lyx/layouts/ijmpc.layout
 share/lyx/layouts/ijmpd.layout
 share/lyx/layouts/jgrga.layout
 share/lyx/layouts/kluwer.layout
@@ -963,11 +963,10 @@ share/lyx/lyx2lyx/parser_tools.pyo
 share/lyx/lyx2lyx/profiling.py
 share/lyx/lyx2lyx/profiling.pyc
 share/lyx/lyx2lyx/profiling.pyo
-share/lyx/lyxrc.defaults
 share/lyx/lyxrc.example
-share/lyx/packages.lst
 share/lyx/scripts/
-share/lyx/scripts/TeXFiles.sh
+share/lyx/scripts/TeXFiles.py
+share/lyx/scripts/clean_dvi.py
 share/lyx/scripts/convertDefault.sh
 share/lyx/scripts/fen2ascii.py
 share/lyx/scripts/fig2pdftex.sh
@@ -993,6 +992,7 @@ share/lyx/templates/elsart.lyx
 share/lyx/templates/g-brief-de.lyx
 share/lyx/templates/g-brief-en.lyx
 share/lyx/templates/hollywood.lyx
+share/lyx/templates/ijmpc.lyx
 share/lyx/templates/ijmpd.lyx
 share/lyx/templates/kluwer.lyx
 share/lyx/templates/koma-letter2.lyx
@@ -1009,7 +1009,6 @@ share/lyx/tex/hollywood.cls
 share/lyx/tex/lyxchess.sty
 share/lyx/tex/lyxskak.sty
 share/lyx/tex/revtex.cls
-share/lyx/textclass.lst
 share/lyx/ui/
 share/lyx/ui/classic.ui
 share/lyx/ui/default.ui
