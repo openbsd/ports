@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.1 2006/07/17 19:27:54 espie Exp $
+--- configure.orig	Mon Jul 17 21:21:33 2006
++++ configure	Mon Jul 17 21:22:12 2006
+@@ -54,6 +54,9 @@ for option in "$@"; do
+ 	--docdir=*)		docdir="$optarg" ;;
+ 	--docdir)		shift; docdir="$1" ;;
+ 
++	--infodir=*)		infodir="$optarg" ;;
++	--infodir)		shift; infodir="$1" ;;
++
+ 	--with-shell=*)		with_shell="$optarg" ;;
+ 	--with-shell)		shift; with_shell="$1" ;;
+ 

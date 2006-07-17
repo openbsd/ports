@@ -1,6 +1,7 @@
---- Makefile.in.old	Sat May 10 12:57:25 2003
-+++ Makefile.in	Sat May 10 12:58:18 2003
-@@ -11,6 +11,7 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2006/07/17 19:27:54 espie Exp $
+--- Makefile.in.orig	Sun Oct 27 23:05:19 2002
++++ Makefile.in	Sat Jul 15 10:09:40 2006
+@@ -11,6 +11,7 @@ mandir=${DESTDIR}@mandir@
  docdir=${DESTDIR}@docdir@
  
  APSSHARE=${datadir}/apsfilter
@@ -8,7 +9,7 @@
  APSDOC=${docdir}/apsfilter
  APSCONF=${sysconfdir}/apsfilter
  
-@@ -80,7 +81,7 @@
+@@ -80,7 +81,7 @@ update:
  	${INSTALL_DATA}   man/apsfilter-bug.1	${mandir}/man1/apsfilter-bug.1
  	${INSTALL_DATA}   man/apsfilterrc.5	${mandir}/man5/apsfilterrc.5
  	tar cf - driver | ( cd ${APSSHARE} && tar xf -)
