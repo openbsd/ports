@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.757 2006/07/13 14:43:25 steven Exp $
+#	$OpenBSD: bsd.port.mk,v 1.758 2006/07/17 16:23:14 steven Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -786,12 +786,6 @@ ECHO_MSG?=		echo
 .else
 .include "${PORTSDIR}/infrastructure/templates/network.conf.template"
 .endif
-# Where to put distfiles that don't have any other master site
-# ;;; This is referenced in a few Makefiles -- we'd like to get rid of it
-#
-MASTER_SITE_LOCAL?= \
-	ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/LOCAL_PORTS/ \
-	ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/LOCAL_PORTS/
 
 # Empty declarations to avoid "variable XXX is recursive" errors
 MASTER_SITES?=
