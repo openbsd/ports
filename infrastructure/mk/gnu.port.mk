@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: gnu.port.mk,v 1.26 2006/07/10 10:12:05 espie Exp $
+# $OpenBSD: gnu.port.mk,v 1.27 2006/07/17 22:08:41 espie Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -66,9 +66,13 @@ CONFIGURE_ARGS+=	--prefix='${PREFIX}'
 
 .  if empty(CONFIGURE_STYLE:L:Mold)
 .    if ${CONFIGURE_STYLE:L:Mdest}
-CONFIGURE_ARGS+=	--sysconfdir='$${${DESTDIRNAME}}${SYSCONFDIR}'
+CONFIGURE_ARGS+=	--sysconfdir='$${${DESTDIRNAME}}${SYSCONFDIR}' \
+					--mandir='$${${DESTDIRNAME}}${PREFIX}/man' \
+					--infodir='$${${DESTDIRNAME}}${PREFIX}/info'
 .    else
-CONFIGURE_ARGS+=	--sysconfdir='${SYSCONFDIR}'
+CONFIGURE_ARGS+=	--sysconfdir='${SYSCONFDIR}' \
+					--mandir='${PREFIX}/man' \
+					--infodir='${PREFIX}/info'
 .    endif
 .  endif
 .endif
