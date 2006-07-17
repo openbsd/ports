@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/02/05 10:50:44 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2006/07/17 19:30:30 espie Exp $
 
 COMMENT=		"high level firewall language"
 
@@ -22,7 +22,8 @@ MASTER_SITES=		http://www.hlfl.org/hlfl/ \
 
 CONFIGURE_STYLE=	gnu 
 FAKE_FLAGS=		prefix=${WRKINST}${PREFIX} \
-			datadir=${WRKINST}${PREFIX}/share/examples
+			datadir=${WRKINST}${PREFIX}/share/examples \
+			mandir=${WRKINST}${PREFIX}/man
 
 NO_REGRESS=		Yes
 
