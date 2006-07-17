@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.8 2006/07/12 08:11:28 espie Exp $
+# $OpenBSD: register-plist,v 1.9 2006/07/17 16:51:53 espie Exp $
 # Copyright (c) 2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -188,10 +188,10 @@ sub my_compare
 		if ($e->isa("OpenBSD::PackingElement::InfoFile")) {
 			my $stem = $e->{name};
 			my ($i, $j);
-			for ($i = 1; $l->[0]->{name} eq "$stem-$i"; $i++) {
+			for ($i = 1; @$l > 0 && $l->[0]->{name} eq "$stem-$i"; $i++) {
 				shift @$l;
 			}
-			for ($j = 1; $l2->[0]->{name} eq "$stem-$j"; $j++) {
+			for ($j = 1; @$l2 > 0 && $l2->[0]->{name} eq "$stem-$j"; $j++) {
 				shift @$l2;
 			}
 			if ($i != $j) {
