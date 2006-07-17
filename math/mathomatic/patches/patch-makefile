@@ -1,13 +1,13 @@
-$OpenBSD: patch-makefile,v 1.2 2006/03/11 13:43:27 steven Exp $
---- makefile.orig	Sat Mar 11 14:21:54 2006
-+++ makefile	Sat Mar 11 14:22:13 2006
-@@ -1,8 +1,8 @@
- # Makefile for compiling and installing Mathomatic under any UNIX like OS.
+$OpenBSD: patch-makefile,v 1.3 2006/07/17 07:48:40 steven Exp $
+--- makefile.orig	Fri Jul  7 22:33:27 2006
++++ makefile	Fri Jul 14 15:29:40 2006
+@@ -2,8 +2,8 @@
+ # Currently uses gcc only options in CFLAGS, just remove them for other C compilers.
  
  VERSION		= `cat VERSION`
--CFLAGS		+= -O -Wunused -Wshadow -DUNIX -DVERSION=\"$(VERSION)\"
+-CFLAGS		+= -O -Wunused -Wshadow -Wformat -Wparentheses -Wcast-align -DUNIX -DVERSION=\"$(VERSION)\"
 -LDFLAGS		+= -s
-+CFLAGS		+= -Wunused -Wshadow -DUNIX -DVERSION=\"$(VERSION)\"
++CFLAGS		+= -Wunused -Wshadow -Wformat -Wparentheses -Wcast-align -DUNIX -DVERSION=\"$(VERSION)\"
 +LDFLAGS		+= 
  LIBS		+= -lm
  

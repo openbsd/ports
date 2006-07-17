@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2006/04/14 22:20:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2006/07/17 07:48:40 steven Exp $
 
 COMMENT=	"small, portable, general purpose computer algebra system"
 
-DISTNAME=	mathomatic-12.5.11
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	mathomatic-12.5.20
 CATEGORIES=	math
 
 HOMEPAGE=	http://mathomatic.orgserve.de/math/
-
-MAINTAINER=	Gerardo Santana Gomez Garrido <gerardo.santana@gmail.com>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
