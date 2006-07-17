@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/11/24 11:08:04 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2006/07/17 16:45:41 espie Exp $
 
 COMMENT=	"powerful programming editor"
 
@@ -21,7 +21,7 @@ ALL_TARGET=	xwpe
 
 CONFIGURE_STYLE=gnu
 MAKE_FLAGS=	CFLAGS='${CFLAGS} -I${X11BASE}/include'
-FAKE_FLAGS=	${MAKE_FLAGS} prefix=${WRKINST}${PREFIX}
+FAKE_FLAGS=	${MAKE_FLAGS} prefix=${WRKINST}${PREFIX} MANDIR=${WRKINST}${PREFIX}/man
 #SEPARATE_BUILD=	simple
 
 NO_REGRESS=	Yes
