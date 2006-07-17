@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2005/10/04 14:00:12 matthieu Exp $
+# $OpenBSD: Makefile,v 1.6 2006/07/17 17:20:54 espie Exp $
 
 COMMENT=	"Libedit interface to Tcl/Tk interpreters"
 
@@ -23,7 +23,7 @@ SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		MKDEP=/bin/false
 USE_GMAKE=		Yes
-FAKE_FLAGS=		prefix=${WRKINST}${PREFIX} ELTCL_LIBRARY=${WRKINST}${PREFIX}/share/eltcl
+FAKE_FLAGS=		prefix=${WRKINST}${PREFIX} ELTCL_LIBRARY=${WRKINST}${PREFIX}/share/eltcl mandir=${WRKINST}${PREFIX}/man/man catdir=${WRKINST}${PREFIX}/man/cat
 
 NO_REGRESS=		Yes
 
