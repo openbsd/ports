@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/01/12 08:47:54 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/07/17 12:13:21 steven Exp $
 ${P5SITE}/App/
 ${P5SITE}/App/Info/
 ${P5SITE}/App/Info.pm
@@ -14,6 +14,7 @@ ${P5SITE}/App/Info/Lib/
 ${P5SITE}/App/Info/Lib.pm
 ${P5SITE}/App/Info/Lib/Expat.pm
 ${P5SITE}/App/Info/Lib/Iconv.pm
+${P5SITE}/App/Info/Lib/OSSPUUID.pm
 ${P5SITE}/App/Info/RDBMS/
 ${P5SITE}/App/Info/RDBMS.pm
 ${P5SITE}/App/Info/RDBMS/PostgreSQL.pm
@@ -30,6 +31,7 @@ ${P5SITE}/App/Info/Util.pm
 @man man/man3p/App::Info::Lib.3p
 @man man/man3p/App::Info::Lib::Expat.3p
 @man man/man3p/App::Info::Lib::Iconv.3p
+@man man/man3p/App::Info::Lib::OSSPUUID.3p
 @man man/man3p/App::Info::RDBMS.3p
 @man man/man3p/App::Info::RDBMS::PostgreSQL.3p
 @man man/man3p/App::Info::RDBMS::SQLite.3p
