@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/28 17:57:43 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/07/17 16:59:59 espie Exp $
 %%SHARED%%
 bin/pfe
 bin/pfe-config
@@ -105,12 +105,10 @@ lib/pfe/toolbelt.a
 lib/pfe/toolbelt.la
 lib/pfe/zchar.a
 lib/pfe/zchar.la
+@man man/man1/pfe-config.1
+@man man/man1/pfe.1
 share/doc/pfe/
 share/doc/pfe/Forthprimer.pdf
-share/man/
-share/man/man1/
-@man share/man/man1/pfe-config.1
-@man share/man/man1/pfe.1
 share/pfe/
 share/pfe/lib/
 share/pfe/lib/arrays.4th
