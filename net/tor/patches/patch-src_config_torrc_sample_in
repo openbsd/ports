@@ -1,0 +1,10 @@
+$OpenBSD: patch-src_config_torrc_sample_in,v 1.1 2006/07/17 19:23:03 jcs Exp $
+--- src/config/torrc.sample.in.orig	Sat Jul  8 04:36:45 2006
++++ src/config/torrc.sample.in	Sat Jul  8 04:36:46 2006
+@@ -137,3 +137,6 @@ SocksListenAddress 127.0.0.1 # accept co
+ #ExitPolicy accept *:119 # accept nntp as well as default exit policy
+ #ExitPolicy reject *:* # middleman only -- no exits allowed
+ 
++## Revoke privileges
++User _tor
++Group _tor
