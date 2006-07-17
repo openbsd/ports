@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.53 2006/06/07 20:43:08 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.54 2006/07/17 08:52:13 jakob Exp $
 
 COMMENT=	"fast, secure sendmail replacement"
 
@@ -37,6 +37,8 @@ ALL_TARGET=	default
 
 NO_REGRESS=	Yes
 
+MAKE_CCARGS+=	-DUSE_SASL_AUTH
+
 # always include pcre
 LIB_DEPENDS+=	pcre::devel/pcre
 MAKE_CCARGS+=	-DHAS_PCRE -I${LOCALBASE}/include
@@ -47,7 +49,7 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Msasl2}
 LIB_DEPENDS+=	sasl2::security/cyrus-sasl2
-MAKE_CCARGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/sasl -DUSE_SASL_AUTH 
+MAKE_CCARGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/sasl -DUSE_CYRUS_SASL
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2
 .endif
 

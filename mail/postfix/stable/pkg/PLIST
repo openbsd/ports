@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2005/05/06 16:35:41 brad Exp $
+@comment $OpenBSD: PLIST,v 1.16 2006/07/17 08:52:13 jakob Exp $
 @conflict postfix-*
 @newgroup _postfix:507
 @newgroup _postdrop:508
@@ -52,6 +52,7 @@ libexec/postfix/virtual
 @man man/man5/access.5
 @man man/man5/aliases.5
 @man man/man5/body_checks.5
+@man man/man5/bounce.5
 @man man/man5/canonical.5
 @man man/man5/cidr_table.5
 @man man/man5/generic.5
@@ -65,6 +66,7 @@ libexec/postfix/virtual
 @man man/man5/postconf.5
 @man man/man5/regexp_table.5
 @man man/man5/relocated.5
+@man man/man5/tcp_table.5
 @man man/man5/transport.5
 @man man/man5/virtual.5
 @man man/man8/anvil.8
@@ -125,6 +127,7 @@ share/doc/postfix/html/CYRUS_README.html
 share/doc/postfix/html/DATABASE_README.html
 share/doc/postfix/html/DB_README.html
 share/doc/postfix/html/DEBUG_README.html
+share/doc/postfix/html/DSN_README.html
 share/doc/postfix/html/ETRN_README.html
 share/doc/postfix/html/FILTER_README.html
 share/doc/postfix/html/INSTALL.html
@@ -134,6 +137,7 @@ share/doc/postfix/html/LINUX_README.html
 share/doc/postfix/html/LMTP_README.html
 share/doc/postfix/html/LOCAL_RECIPIENT_README.html
 share/doc/postfix/html/MAILDROP_README.html
+share/doc/postfix/html/MILTER_README.html
 share/doc/postfix/html/MYSQL_README.html
 share/doc/postfix/html/NFS_README.html
 share/doc/postfix/html/OVERVIEW.html
@@ -213,6 +217,7 @@ share/doc/postfix/html/smtp-source.1.html
 share/doc/postfix/html/smtp.8.html
 share/doc/postfix/html/smtpd.8.html
 share/doc/postfix/html/spawn.8.html
+share/doc/postfix/html/tcp_table.5.html
 share/doc/postfix/html/trace.8.html
 share/doc/postfix/html/transport.5.html
 share/doc/postfix/html/trivial-rewrite.8.html
@@ -233,6 +238,7 @@ share/doc/postfix/readme/CONTENT_INSPECTION_README
 share/doc/postfix/readme/DATABASE_README
 share/doc/postfix/readme/DB_README
 share/doc/postfix/readme/DEBUG_README
+share/doc/postfix/readme/DSN_README
 share/doc/postfix/readme/ETRN_README
 share/doc/postfix/readme/FILTER_README
 share/doc/postfix/readme/INSTALL
@@ -242,6 +248,7 @@ share/doc/postfix/readme/LINUX_README
 share/doc/postfix/readme/LMTP_README
 share/doc/postfix/readme/LOCAL_RECIPIENT_README
 share/doc/postfix/readme/MAILDROP_README
+share/doc/postfix/readme/MILTER_README
 share/doc/postfix/readme/MYSQL_README
 share/doc/postfix/readme/NFS_README
 share/doc/postfix/readme/OVERVIEW
@@ -271,6 +278,7 @@ share/examples/postfix/LICENSE
 share/examples/postfix/TLS_LICENSE
 share/examples/postfix/access
 share/examples/postfix/aliases
+share/examples/postfix/bounce.cf.default
 share/examples/postfix/canonical
 share/examples/postfix/generic
 share/examples/postfix/header_checks
