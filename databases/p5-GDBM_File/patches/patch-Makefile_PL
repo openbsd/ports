@@ -1,0 +1,17 @@
+$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2006/07/17 23:33:21 espie Exp $
+--- Makefile.PL.orig	Tue Jul 18 01:13:15 2006
++++ Makefile.PL	Tue Jul 18 01:20:14 2006
+@@ -1,9 +1,11 @@
+ use ExtUtils::MakeMaker;
+ use ExtUtils::Constant 0.11 'WriteConstants';
++
++my $LOCALBASE=$ENV{'LOCALBASE'};
++
+ WriteMakefile(
+     NAME => 'GDBM_File',
+-    LIBS => ["-lgdbm", "-ldbm"],
+-    MAN3PODS 	=> {}, 	# Pods will be built by installman.
++    LIBS => ["-L$LOCALBASE/lib -lgdbm", "-ldbm"],
+     XSPROTOARG => '-noprototypes', 		# XXX remove later?
+     VERSION_FROM => 'GDBM_File.pm',
+     realclean => {FILES=> 'const-c.inc const-xs.inc'},

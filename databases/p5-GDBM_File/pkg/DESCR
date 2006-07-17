@@ -1,0 +1,5 @@
+GDBM_File is a core module of perl, allowing access to functions in
+the gdb library.
+
+In OpenBSD, it is unbundled and presented as a package in the ports
+tree, since gdbm is not a part of OpenBSD proper.
