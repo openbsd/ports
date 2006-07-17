@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/12/17 15:18:31 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2006/07/17 22:00:10 espie Exp $
 
 COMMENT=		'X11 file manager. Dockable in Window Maker'
 
@@ -19,7 +19,8 @@ MASTER_SITES=		${MASTER_SITE_AFTERSTEP:=apps/ASFiles/}
 
 LIB_DEPENDS=		Dnd::x11/libdnd
 
-FAKE_FLAGS=		NORMAL_INSTALL=""
+FAKE_FLAGS=		NORMAL_INSTALL="" \
+			mandir=${WRKINST}${PREFIX}/man
 
 USE_X11=		Yes
 NO_REGRESS=		Yes
