@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2005/11/09 01:25:38 jcs Exp $
+# $OpenBSD: Makefile,v 1.5 2006/07/17 18:51:49 espie Exp $
 
 COMMENT=		"tool for synchronizing PalmOS devices"
 
@@ -19,6 +19,8 @@ WANTLIB=		c stdc++ m
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--without-usb --without-libusb
 
-FAKE_FLAGS=		${MAKE_FLAGS}
+FAKE_FLAGS=		${MAKE_FLAGS} \
+			INFODIR=${WRKINST}${PREFIX}/info \
+			MANDIR=${WRKINST}${PREFIX}/man
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
-$OpenBSD: patch-Make_rules_in,v 1.2 2005/03/11 19:47:50 jcs Exp $
---- Make.rules.in.orig	Wed Feb 25 05:40:29 2004
-+++ Make.rules.in	Fri Mar 11 11:36:39 2005
-@@ -17,10 +17,10 @@
+$OpenBSD: patch-Make_rules_in,v 1.3 2006/07/17 18:51:49 espie Exp $
+--- Make.rules.in.orig	Wed Feb 25 12:40:29 2004
++++ Make.rules.in	Sat Jul 15 09:58:22 2006
+@@ -17,10 +17,10 @@ PACKAGE =	@PACKAGE@
  VERSION =	@VERSION@
  
  # Various directories gleaned from `configure'

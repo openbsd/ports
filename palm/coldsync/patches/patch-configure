@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2005/02/12 18:08:12 jcs Exp $
---- configure.orig	Wed Jul 30 08:21:38 2003
-+++ configure	Sat Feb 12 12:01:01 2005
-@@ -4021,9 +4021,6 @@
+$OpenBSD: patch-configure,v 1.2 2006/07/17 18:51:49 espie Exp $
+--- configure.orig	Wed Jul 30 15:21:38 2003
++++ configure	Sat Jul 15 09:58:23 2006
+@@ -4021,9 +4021,6 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
    cat >> confdefs.h <<EOF
  #define $ac_tr_lib 1
  EOF
@@ -11,7 +11,7 @@ $OpenBSD: patch-configure,v 1.1 2005/02/12 18:08:12 jcs Exp $
  else
    echo "$ac_t""no" 1>&6
  fi
-@@ -4046,7 +4043,7 @@
+@@ -4046,7 +4043,7 @@ if test x"$with_libusb" = x"yes"; then
  		cat >> confdefs.h <<\EOF
  #define WITH_LIBUSB 1
  EOF
