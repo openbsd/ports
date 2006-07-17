@@ -1,11 +1,12 @@
-Postfix attempts to be fast, easy to administer, and secure, while at the 
-same time being sendmail compatible enough to not upset existing users. 
-Thus, the outside has a sendmail-ish flavor, but the inside is completely 
+Postfix attempts to be fast, easy to administer, and secure, while at the
+same time being sendmail compatible enough to not upset existing users.
+Thus, the outside has a sendmail-ish flavor, but the inside is completely
 different.
 
 Extra features always included:
 
 - table lookups using PCRE (Perl-Compatible Regular Expression)
+- authenticated SMTP using Dovecot SASL
 
 Optional features included using flavors:
 

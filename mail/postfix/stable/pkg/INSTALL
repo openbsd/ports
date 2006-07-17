@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.14 2005/02/21 00:42:22 brad Exp $
+# $OpenBSD: INSTALL,v 1.15 2006/07/17 09:15:54 jakob Exp $
 #
 # Pre/post-installation setup of postfix
 
@@ -86,16 +86,6 @@ do_configs()
     fi
 
     $PINSTALL set-permissions create-missing
-
-    grep syslogd_flags /etc/rc.conf{,.local} 2>/dev/null | grep -q postfix
-    if [ $? -eq 1 ]; then
-        echo ""
-	echo "+---------------"
-        echo "| Don't forget to add \"-a /var/spool/postfix/dev/log\" to syslogd_flags"
-        echo "| in /etc/rc.conf.local (or /etc/rc.conf) and restart syslogd."
-	echo "+---------------"
-        echo ""
-    fi
 }
 
 # Function: tell the user what s/he needs to do to use the port just installed
