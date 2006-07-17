@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/01/30 13:29:00 steven Exp $
-bin/lunzmash
+@comment $OpenBSD: PLIST,v 1.2 2006/07/17 12:10:22 steven Exp $
+%%SHARED%%
 bin/lzcat
 bin/lzcmp
 bin/lzdiff
@@ -10,9 +10,11 @@ bin/lzless
 bin/lzma
 bin/lzmadec
 bin/lzmainfo
-bin/lzmash
 bin/lzmore
-@man man/man1/lunzmash.1
+bin/unlzma
+include/lzmadec.h
+lib/liblzmadec.a
+lib/liblzmadec.la
 @man man/man1/lzcat.1
 @man man/man1/lzcmp.1
 @man man/man1/lzdiff.1
@@ -23,5 +25,5 @@ bin/lzmore
 @man man/man1/lzma.1
 @man man/man1/lzmadec.1
 @man man/man1/lzmainfo.1
-@man man/man1/lzmash.1
 @man man/man1/lzmore.1
+@man man/man1/unlzma.1

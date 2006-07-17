@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_lzma_lzmp_cpp,v 1.1 2006/07/17 12:10:22 steven Exp $
+--- src/lzma/lzmp.cpp.orig	Wed Jul  5 02:33:46 2006
++++ src/lzma/lzmp.cpp	Wed Jul  5 02:34:44 2006
+@@ -238,7 +238,7 @@ short str2int (const char *str, const in
+ void parse_options(int argc, char **argv, stringVector &filenames)
+ {
+ 	/* Snatched from getopt(3). */
+-	char c;
++	int c;
+ 
+ 	/* Check how we were called */
+ 	{

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/01/30 13:29:00 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2006/07/17 12:10:22 steven Exp $
 
 COMMENT=		"LZMA utils - make usage of LZMA compression easy"
 
-DISTNAME=		lzma-4.27.1
+DISTNAME=		lzma-4.32.0beta2
+SHARED_LIBS=		lzmadec	0.0
 CATEGORIES=		archivers
 
 HOMEPAGE=		http://tukaani.org/lzma/
@@ -19,8 +20,13 @@ MASTER_SITES=		${HOMEPAGE}
 
 WANTLIB=		c m stdc++
 
-MAKE_FLAGS=		MYCC="${CC}" MYCXX="${CXX}"
+USE_LIBTOOL=		Yes
+CONFIGURE_STYLE=	gnu
 
-REGRESS_TARGET=		test
+post-extract:
+	@cp ${FILESDIR}/tests.sh ${WRKBUILD}
+
+do-regress:
+	@cd ${WRKBUILD} && ${SH} tests.sh
 
 .include <bsd.port.mk>
