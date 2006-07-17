@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2005/09/24 17:58:23 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2006/07/17 19:57:26 espie Exp $
 
 COMMENT=	"HTTP caching proxy"
 
 DISTNAME=	polipo-0.9.9
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.pps.jussieu.fr/~jch/software/polipo/

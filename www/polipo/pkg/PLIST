@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/08/06 21:21:53 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/07/17 19:57:26 espie Exp $
 @newgroup _polipo:548
 @newuser _polipo:548:_polipo:daemon:Polipo Account:/nonexistent:/sbin/nologin
 bin/polipo
@@ -14,7 +14,7 @@ share/doc/polipo/doc/Background.html
 share/doc/polipo/doc/Browser-configuration.html
 share/doc/polipo/doc/Cache-transparency.html
 share/doc/polipo/doc/Caching.html
-share/doc/polipo/doc/Censor-Accept-Language.html
+share/doc/polipo/doc/Censor-Accept_002dLanguage.html
 share/doc/polipo/doc/Censoring-headers.html
 share/doc/polipo/doc/Chunk-memory.html
 share/doc/polipo/doc/Client-connections.html
