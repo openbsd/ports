@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2006/02/08 04:54:50 david Exp $
+# $OpenBSD: Makefile,v 1.33 2006/07/18 21:22:56 alek Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
 
 COMMENT=	"server-side HTML-embedded scripting language"
 COMMENT-pear=	"base classes for common PHP tasks"
-PKGNAME=	php4-core-${V}p0
+PKGNAME=	php4-core-${V}p1
 FULLPKGNAME-pear= php4-pear-${V}p0
 
 CONFIGURE_ARGS+= --with-apxs=/usr/sbin/apxs \
@@ -52,7 +52,7 @@ RUN_DEPENDS=	:php4-core-${V}:www/php4/core
 LIB_DEPENDS=
 MODULES=
 .else
-WANTLIB=	c crypto des m ssl stdc++ z
+WANTLIB=	c crypto des m ssl stdc++ z pthread
 .endif
 
 pre-fake:
