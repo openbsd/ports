@@ -1,0 +1,6 @@
+Also known as the SQLFairy project.
+
+A simple interface to convert database schemas from about any
+database to any database.
+
+Very useful for migrating stuff from a database to another.

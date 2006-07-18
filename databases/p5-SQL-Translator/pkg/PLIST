@@ -1,0 +1,139 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/18 08:29:32 espie Exp $
+bin/sqlt
+bin/sqlt-diagram
+bin/sqlt-diff
+bin/sqlt-dumper
+bin/sqlt-graph
+${P5SITE}/SQL/
+${P5SITE}/SQL/Translator/
+${P5SITE}/SQL/Translator.pm
+${P5SITE}/SQL/Translator/Manual.pod
+${P5SITE}/SQL/Translator/Parser/
+${P5SITE}/SQL/Translator/Parser.pm
+${P5SITE}/SQL/Translator/Parser/Access.pm
+${P5SITE}/SQL/Translator/Parser/DB2/
+${P5SITE}/SQL/Translator/Parser/DB2.pm
+${P5SITE}/SQL/Translator/Parser/DB2/Grammar.pm
+${P5SITE}/SQL/Translator/Parser/DBI/
+${P5SITE}/SQL/Translator/Parser/DBI.pm
+${P5SITE}/SQL/Translator/Parser/DBI/DB2.pm
+${P5SITE}/SQL/Translator/Parser/DBI/MySQL.pm
+${P5SITE}/SQL/Translator/Parser/DBI/PostgreSQL.pm
+${P5SITE}/SQL/Translator/Parser/DBI/SQLite.pm
+${P5SITE}/SQL/Translator/Parser/DBI/Sybase.pm
+${P5SITE}/SQL/Translator/Parser/Excel.pm
+${P5SITE}/SQL/Translator/Parser/MySQL.pm
+${P5SITE}/SQL/Translator/Parser/Oracle.pm
+${P5SITE}/SQL/Translator/Parser/PostgreSQL.pm
+${P5SITE}/SQL/Translator/Parser/SQLite.pm
+${P5SITE}/SQL/Translator/Parser/Storable.pm
+${P5SITE}/SQL/Translator/Parser/Sybase.pm
+${P5SITE}/SQL/Translator/Parser/XML/
+${P5SITE}/SQL/Translator/Parser/XML.pm
+${P5SITE}/SQL/Translator/Parser/XML/SQLFairy.pm
+${P5SITE}/SQL/Translator/Parser/YAML.pm
+${P5SITE}/SQL/Translator/Parser/xSV.pm
+${P5SITE}/SQL/Translator/Producer/
+${P5SITE}/SQL/Translator/Producer.pm
+${P5SITE}/SQL/Translator/Producer/ClassDBI.pm
+${P5SITE}/SQL/Translator/Producer/Diagram.pm
+${P5SITE}/SQL/Translator/Producer/Dumper.pm
+${P5SITE}/SQL/Translator/Producer/GraphViz.pm
+${P5SITE}/SQL/Translator/Producer/HTML.pm
+${P5SITE}/SQL/Translator/Producer/MySQL.pm
+${P5SITE}/SQL/Translator/Producer/Oracle.pm
+${P5SITE}/SQL/Translator/Producer/POD.pm
+${P5SITE}/SQL/Translator/Producer/PostgreSQL.pm
+${P5SITE}/SQL/Translator/Producer/SQLServer.pm
+${P5SITE}/SQL/Translator/Producer/SQLite.pm
+${P5SITE}/SQL/Translator/Producer/Storable.pm
+${P5SITE}/SQL/Translator/Producer/Sybase.pm
+${P5SITE}/SQL/Translator/Producer/TT/
+${P5SITE}/SQL/Translator/Producer/TT/Base.pm
+${P5SITE}/SQL/Translator/Producer/TT/Table.pm
+${P5SITE}/SQL/Translator/Producer/TTSchema.pm
+${P5SITE}/SQL/Translator/Producer/XML/
+${P5SITE}/SQL/Translator/Producer/XML.pm
+${P5SITE}/SQL/Translator/Producer/XML/SQLFairy.pm
+${P5SITE}/SQL/Translator/Producer/YAML.pm
+${P5SITE}/SQL/Translator/Schema/
+${P5SITE}/SQL/Translator/Schema.pm
+${P5SITE}/SQL/Translator/Schema/Constants.pm
+${P5SITE}/SQL/Translator/Schema/Constraint.pm
+${P5SITE}/SQL/Translator/Schema/Field.pm
+${P5SITE}/SQL/Translator/Schema/Graph/
+${P5SITE}/SQL/Translator/Schema/Graph.pm
+${P5SITE}/SQL/Translator/Schema/Graph/CompoundEdge.pm
+${P5SITE}/SQL/Translator/Schema/Graph/Edge.pm
+${P5SITE}/SQL/Translator/Schema/Graph/HyperEdge.pm
+${P5SITE}/SQL/Translator/Schema/Graph/Node.pm
+${P5SITE}/SQL/Translator/Schema/Graph/Port.pm
+${P5SITE}/SQL/Translator/Schema/Index.pm
+${P5SITE}/SQL/Translator/Schema/Object.pm
+${P5SITE}/SQL/Translator/Schema/Procedure.pm
+${P5SITE}/SQL/Translator/Schema/Table.pm
+${P5SITE}/SQL/Translator/Schema/Trigger.pm
+${P5SITE}/SQL/Translator/Schema/View.pm
+${P5SITE}/SQL/Translator/Shell.pm
+${P5SITE}/SQL/Translator/Utils.pm
+${P5SITE}/Test/
+${P5SITE}/Test/SQL/
+${P5SITE}/Test/SQL/Translator.pm
+@man man/man1/sqlt-diagram.1
+@man man/man1/sqlt-diff.1
+@man man/man1/sqlt-dumper.1
+@man man/man1/sqlt-graph.1
+@man man/man1/sqlt.1
+@man man/man3p/SQL::Translator.3p
+@man man/man3p/SQL::Translator::Manual.3p
+@man man/man3p/SQL::Translator::Parser.3p
+@man man/man3p/SQL::Translator::Parser::Access.3p
+@man man/man3p/SQL::Translator::Parser::DBI.3p
+@man man/man3p/SQL::Translator::Parser::DBI::DB2.3p
+@man man/man3p/SQL::Translator::Parser::DBI::MySQL.3p
+@man man/man3p/SQL::Translator::Parser::DBI::PostgreSQL.3p
+@man man/man3p/SQL::Translator::Parser::DBI::SQLite.3p
+@man man/man3p/SQL::Translator::Parser::DBI::Sybase.3p
+@man man/man3p/SQL::Translator::Parser::Excel.3p
+@man man/man3p/SQL::Translator::Parser::MySQL.3p
+@man man/man3p/SQL::Translator::Parser::Oracle.3p
+@man man/man3p/SQL::Translator::Parser::PostgreSQL.3p
+@man man/man3p/SQL::Translator::Parser::SQLite.3p
+@man man/man3p/SQL::Translator::Parser::Storable.3p
+@man man/man3p/SQL::Translator::Parser::Sybase.3p
+@man man/man3p/SQL::Translator::Parser::XML.3p
+@man man/man3p/SQL::Translator::Parser::XML::SQLFairy.3p
+@man man/man3p/SQL::Translator::Parser::YAML.3p
+@man man/man3p/SQL::Translator::Parser::xSV.3p
+@man man/man3p/SQL::Translator::Producer.3p
+@man man/man3p/SQL::Translator::Producer::ClassDBI.3p
+@man man/man3p/SQL::Translator::Producer::Diagram.3p
+@man man/man3p/SQL::Translator::Producer::Dumper.3p
+@man man/man3p/SQL::Translator::Producer::GraphViz.3p
+@man man/man3p/SQL::Translator::Producer::HTML.3p
+@man man/man3p/SQL::Translator::Producer::MySQL.3p
+@man man/man3p/SQL::Translator::Producer::Oracle.3p
+@man man/man3p/SQL::Translator::Producer::POD.3p
+@man man/man3p/SQL::Translator::Producer::PostgreSQL.3p
+@man man/man3p/SQL::Translator::Producer::SQLServer.3p
+@man man/man3p/SQL::Translator::Producer::SQLite.3p
+@man man/man3p/SQL::Translator::Producer::Storable.3p
+@man man/man3p/SQL::Translator::Producer::Sybase.3p
+@man man/man3p/SQL::Translator::Producer::TT::Base.3p
+@man man/man3p/SQL::Translator::Producer::TT::Table.3p
+@man man/man3p/SQL::Translator::Producer::TTSchema.3p
+@man man/man3p/SQL::Translator::Producer::XML.3p
+@man man/man3p/SQL::Translator::Producer::XML::SQLFairy.3p
+@man man/man3p/SQL::Translator::Producer::YAML.3p
+@man man/man3p/SQL::Translator::Schema.3p
+@man man/man3p/SQL::Translator::Schema::Constants.3p
+@man man/man3p/SQL::Translator::Schema::Constraint.3p
+@man man/man3p/SQL::Translator::Schema::Field.3p
+@man man/man3p/SQL::Translator::Schema::Index.3p
+@man man/man3p/SQL::Translator::Schema::Object.3p
+@man man/man3p/SQL::Translator::Schema::Procedure.3p
+@man man/man3p/SQL::Translator::Schema::Table.3p
+@man man/man3p/SQL::Translator::Schema::Trigger.3p
+@man man/man3p/SQL::Translator::Schema::View.3p
+@man man/man3p/SQL::Translator::Utils.3p
+@man man/man3p/Test::SQL::Translator.3p
