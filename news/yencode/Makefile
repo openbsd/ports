@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2005/09/25 09:43:44 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2006/07/18 19:05:37 dhill Exp $
 
 COMMENT=	"encoder/decoder tool for the Usenet yEnc encoding format"
 
 DISTNAME=	yencode-0.46
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	news
 
-MASTER_SITES=	http://www.yencode.org/download/source/
-
-HOMEPAGE=	http://www.yencode.org/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=yencode/}	
 
 MODULES=        devel/gettext
 
