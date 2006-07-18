@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/07/18 08:29:32 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/07/18 14:11:44 steven Exp $
 
 COMMENT= 	"database schema manipulation"
 
@@ -27,6 +27,8 @@ RUN_DEPENDS=	::devel/p5-Class-Base \
 
 REGRESS_DEPENDS=${RUN_DEPENDS} \
 		::devel/p5-Sub-Uplevel \
+		::devel/p5-Test-Differences \
+		::devel/p5-Test-Exception \
 		::graphics/p5-GD \
 		::textproc/p5-XML-XPath \
 		::textproc/p5-Text-RecordParser
