@@ -1,0 +1,12 @@
+$OpenBSD: patch-utils_Makefile,v 1.1 2006/07/18 19:32:54 alek Exp $
+--- utils/Makefile.orig	Tue Jul 18 21:17:25 2006
++++ utils/Makefile	Tue Jul 18 21:17:33 2006
+@@ -22,7 +22,7 @@ endif
+ 
+ TARGET=stereorize streamplayer
+ 
+-ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/popt.h)$(wildcard -f $(CROSS_COMPILE_TARGET)/usr/local/include/popt.h),)
++ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/popt.h)$(wildcard -f TURN_OFF$(CROSS_COMPILE_TARGET)/usr/local/include/popt.h),)
+   TARGET+=smsq
+ endif
+ 
