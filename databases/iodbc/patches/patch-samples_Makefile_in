@@ -1,0 +1,16 @@
+$OpenBSD: patch-samples_Makefile_in,v 1.1 2006/07/18 19:44:27 alek Exp $
+--- samples/Makefile.in.orig	Sun Jun 25 15:50:39 2006
++++ samples/Makefile.in	Sun Jun 25 15:51:08 2006
+@@ -571,9 +571,9 @@ uninstall-am: uninstall-binPROGRAMS unin
+ 
+ 
+ install-exec-hook:
+-	$(mkinstalldirs) ${DESTDIR}${pkgdatadir}/samples
+-	cp $(srcdir)/iodbctest.c ${DESTDIR}${pkgdatadir}/samples/iodbctest.c
+-	cp $(srcdir)/Makefile.sample ${DESTDIR}${pkgdatadir}/samples/Makefile
++	$(mkinstalldirs) ${DESTDIR}${datadir}/examples/iodbc
++	cp $(srcdir)/iodbctest.c ${DESTDIR}${datadir}/examples/iodbc/iodbctest.c
++	cp $(srcdir)/Makefile.sample ${DESTDIR}${datadir}/examples/iodbc/Makefile
+ 
+ uninstall-hook:
+ 	rm -f ${DESTDIR}${pkgdatadir}/samples/iodbctest.c

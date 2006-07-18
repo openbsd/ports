@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2006/01/10 18:47:52 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/07/18 19:44:27 alek Exp $
 
-COMMENT=	"ODBC 2.x driver manager"
+COMMENT=	"ODBC 3.x driver manager"
 
-DISTNAME=	libiodbc-2.50.3
-PKGNAME=	iodbc-2.50.3p0
+DISTNAME=	libiodbc-3.52.4
+PKGNAME=	${DISTNAME:S/lib//}
 CATEGORIES=	databases
-SHARED_LIBS=	iodbc	2.50
+SHARED_LIBS=	iodbc		3.15 \
+		iodbcinst	3.15
 
 HOMEPAGE=	http://www.iodbc.org/
 
@@ -16,20 +17,20 @@ PERMIT_PACKAGE_CDROM=	yes
 PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
+WANTLIB=		c pthread
 
 MASTER_SITES=	${HOMEPAGE}downloads/iODBC/
 
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= --with-iodbc-inidir="${SYSCONFDIR}"
+CONFIGURE_ARGS= --with-iodbc-inidir="${SYSCONFDIR}/iodbc" \
+		--disable-gui \
+		--disable-libodbc
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/iodbc
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/iodbc
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/iodbc
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/iodbc
-	${INSTALL_DATA} ${WRKSRC}/odbc.ini.sample \
-		${PREFIX}/share/examples/iodbc/odbc.ini
+	${INSTALL_DATA} ${WRKSRC}/etc/*.ini.sample \
+		${PREFIX}/share/examples/iodbc
 
 .include <bsd.port.mk>
