@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_check_disk_c,v 1.1 2006/07/18 20:45:46 sturm Exp $
+--- plugins/check_disk.c.orig	Tue Jul 18 22:31:31 2006
++++ plugins/check_disk.c	Tue Jul 18 22:31:58 2006
+@@ -230,7 +230,7 @@ main (int argc, char **argv)
+     if (fsp.fsu_blocks && strcmp ("none", me->me_mountdir)) {
+       usp = (double)(fsp.fsu_blocks - fsp.fsu_bavail) * 100 / fsp.fsu_blocks;
+                         uisp = (double)(fsp.fsu_files - fsp.fsu_ffree) * 100 / fsp.fsu_files;
+-      disk_result = check_disk (usp, fsp.fsu_bavail, uisp);
++      disk_result = check_disk (usp, fsp.fsu_bavail*fsp.fsu_blocksize/mult, uisp);
+ 
+ 
+       result = max_state (disk_result, result);
