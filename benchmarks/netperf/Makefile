@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2006/02/03 20:45:40 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2006/07/19 13:41:02 steven Exp $
 
 COMMENT=	"Network performance benchmark"
 
 DISTNAME=	netperf-2.3
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	benchmarks net
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
@@ -13,7 +14,7 @@ MASTER_SITES=	ftp://ftp.netperf.org/netperf/archive/ \
 		http://ftp.sunet.se/pub/network/monitoring/netperf/ \
 		http://ftp.sunet.se/pub/network/monitoring/netperf/archive/
 
-HOMEPAGE=	http://www.netperf.org/
+HOMEPAGE=	http://www.netperf.org/netperf/NetperfPage.html
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes

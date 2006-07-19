@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2006/02/03 19:57:32 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2006/07/19 13:41:02 steven Exp $
 
 COMMENT=	"curses-based mp3 player"
 
 DISTNAME=	ksmp3play-0.5.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=    	audio
-
-HOMEPAGE=	http://www.xanadunet.net/ksmp3play/index.html
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 

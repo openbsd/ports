@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/06/03 09:29:42 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2006/07/19 13:41:02 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,12 +6,12 @@ COMMENT=	"SQLite adapter for Python"
 
 VERSION=	1.0
 DISTNAME=	pysqlite-${VERSION}
-PKGNAME=	py-sqlite-${VERSION}p0
+PKGNAME=	py-sqlite-${VERSION}p1
 CATEGORIES=	databases
 WRKDIST=	${WRKDIR}/pysqlite
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pysqlite/}
-HOMEPAGE=	http://pysqlite.sourceforge.net/
+HOMEPAGE=	http://pysqlite.org/
 
 # BSD-like
 PERMIT_PACKAGE_FTP=	Yes

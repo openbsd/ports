@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2005/03/16 15:43:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2006/07/19 13:41:02 steven Exp $
 
 
 COMMENT=		"SNPP, TAP, email notification application"
 
 V=0.9.14
 DISTNAME=		sendpage-${V}
-PKGNAME=		p5-SendPage-${V}p0
+PKGNAME=		p5-SendPage-${V}p1
 CATEGORIES=		comms
 
-HOMEPAGE=		http://sendpage.sf.net
+HOMEPAGE=		http://sendpage.org/
 
 MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 
