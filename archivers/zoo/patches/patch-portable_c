@@ -1,11 +1,17 @@
-$OpenBSD: patch-portable_c,v 1.1 2006/04/07 23:14:13 pvalchev Exp $
---- portable.c.orig	Tue Jul 16 09:55:11 1991
-+++ portable.c	Fri Apr  7 01:35:28 2006
-@@ -364,6 +364,31 @@ ZOOFILE zoo_file;
+--- portable.c.orig	Tue Jul 16 17:55:11 1991
++++ portable.c	Tue Jul 18 22:49:22 2006
+@@ -345,6 +345,7 @@ ZOOFILE zoo_file;
+ {
+    int status;
+    BYTE bytes[MAXDIRSIZE];    /* big enough to hold variable part too */
++   char *p;
+ 
+    /* To simplify things, we read the maximum possible size of the
+    directory entry including the variable size and discard what is not
+@@ -364,6 +365,30 @@ ZOOFILE zoo_file;
        show_dir(direntry);
     }
  #endif
-+   char *p;
 +   /* take off '../'   */
 +   while ((p = strstr( direntry->dirname, "../" )) != NULL) {
 +      while (*(p+3) != '\0') {
