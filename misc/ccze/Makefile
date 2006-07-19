@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2006/07/19 11:08:08 robert Exp $
+# $OpenBSD: Makefile,v 1.9 2006/07/19 11:19:46 robert Exp $
 
 COMMENT=	"log colorizer"
 
 DISTNAME=	ccze-0.2.1	
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	misc
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
