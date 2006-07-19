@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2005/02/07 19:01:48 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.12 2006/07/19 15:11:53 steven Exp $
 
 COMMENT=	"curses(3) based terminal widgets"
 
 VERSION=	1.997
 DISTNAME=	CursesWidgets-${VERSION}
-PKGNAME=	p5-${DISTNAME}
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel perl5
-
-HOMEPAGE=	http://www.odinicfoundation.org/arthur/
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Curses/}
 

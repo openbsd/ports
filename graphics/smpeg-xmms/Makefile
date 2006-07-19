@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2005/01/25 16:01:57 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2006/07/19 15:11:53 steven Exp $
 
 COMMENT=	"MPEG and VCD video playback in XMMS"
 SHARED_ONLY=	Yes
 
 VERSION=	0.3.5
 DISTNAME=	smpeg-xmms-${VERSION}
-PKGNAME=	xmms-smpeg-${VERSION}
+PKGNAME=	xmms-smpeg-${VERSION}p0
 CATEGORIES=	graphics
-HOMEPAGE=	http://www.xmms.org/files/plugins/smpeg-xmms/
 
 MAINTAINER=	Wilbern Cobb <wcobb@openbsd.org>
 
@@ -18,8 +17,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		usbhid SDL Xext X11 m
 
-MASTER_SITES=	${HOMEPAGE} \
-		http://mirror.csoft.org/smpeg-xmms/
+MASTER_SITES=	http://mirror.csoft.org/smpeg-xmms/
 
 LIB_DEPENDS=	xmms.2::audio/xmms \
 		smpeg.1.3::devel/smpeg

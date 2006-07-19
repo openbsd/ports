@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2005/11/03 18:28:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2006/07/19 15:11:53 steven Exp $
 
 COMMENT=		"Qt-based CD creation tool"
 
-PKGNAME=		${DISTNAME:S/-OpenBSD//}
+PKGNAME=		${DISTNAME:S/-OpenBSD//}p0
 DISTNAME=		cdrchive-1.0.1-OpenBSD
 CATEGORIES=		misc x11
-
-HOMEPAGE=		http://www.drahthaar.clara.net/cdr.htm
 
 MAINTAINER=		Jacob Meuser <jakemsr@jakemsr.com>
 

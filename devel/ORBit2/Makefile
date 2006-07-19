@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.17 2006/01/02 17:04:20 bernd Exp $
+# $OpenBSD: Makefile,v 1.18 2006/07/19 15:11:53 steven Exp $
 
 COMMENT=		"high-performance CORBA Object Request Broker"
 
 DISTNAME=		ORBit2-2.12.2
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 SHARED_LIBS=		ORBit-2			0.0 \
 			ORBit-imodule-2		0.0 \
 			ORBitCosNaming-2	0.0
 
 CATEGORIES=		devel
 
-HOMEPAGE=		http://www.labs.redhat.com/orbit/
+HOMEPAGE=		http://www.gnome.org/projects/ORBit2/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

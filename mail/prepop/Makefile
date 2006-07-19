@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2005/01/02 01:07:49 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2006/07/19 15:11:53 steven Exp $
 
 COMMENT=	"simple interactive POP3 client"
 
 DISTNAME=	prepop-0.1b7
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	mail
-
-HOMEPAGE=	http://www.rundegren.com/software/prepop/
 
 MAINTAINER=	Patroklos Argyroudis <argp@ieee.org>
 
@@ -15,8 +14,6 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		c m readline stdc++ termcap
-
-MASTER_SITES=	${HOMEPAGE}
 
 MAKE_FLAGS= \
 	CC='${CXX}' \

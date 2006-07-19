@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.15 2005/11/22 20:06:13 niallo Exp $
+# $OpenBSD: Makefile,v 1.16 2006/07/19 15:11:53 steven Exp $
 # Original from: Robert Ruehlmann
 
 COMMENT=		"rogue-like game with X11 support"
 COMMENT-no_x11=		"rogue-like game"
 
 DISTNAME=		angband-3.0.6
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=     	games
 
-HOMEPAGE=		http://thangorodrim.angband.org/
+HOMEPAGE=		http://www.thangorodrim.net/angband.html
 
 MAINTAINER=		Niall O Higgins <niallo@openbsd.org>
 

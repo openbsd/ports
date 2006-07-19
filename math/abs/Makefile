@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2005/04/03 16:14:44 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/07/19 15:11:53 steven Exp $
 
 COMMENT=	"free spreadsheet with graphical user interface"
 
 DISTNAME=	abs-src-0.8
-PKGNAME=	${DISTNAME:S/-src//}p0
+PKGNAME=	${DISTNAME:S/-src//}p1
 CATEGORIES=	math
-
-HOMEPAGE=	http://www.ping.be/bertin/abs.shtml
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

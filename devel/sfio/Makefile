@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2005/10/18 19:08:31 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/07/19 15:11:53 steven Exp $
 
 COMMENT=	"Safe/Fast I/O Library"
 
 VERSION=	2002
-PKGNAME=	sfio-${VERSION}
+PKGNAME=	sfio-${VERSION}p0
 DISTNAME=	sfio_${VERSION}.src.unix_tar
 CATEGORIES=	devel
-HOMEPAGE=	http://www.research.att.com/sw/tools/sfio/
+HOMEPAGE=	http://akpublic.research.att.com:9000/sw/tools/sfio/
 
 MASTER_SITES=	http://mirror.csoft.org/sfio/
 EXTRACT_SUFX=	.tar

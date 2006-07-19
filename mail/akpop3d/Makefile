@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2005/12/14 06:02:09 jolan Exp $
+# $OpenBSD: Makefile,v 1.4 2006/07/19 15:11:53 steven Exp $
 
 COMMENT=	"small and secure POP3 daemon"
 
 DISTNAME=	akpop3d-0.7.7
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	mail
-HOMEPAGE=	http://www.synflood.at/akpop3d/
+HOMEPAGE=	http://www.synflood.at/akpop3d.html
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

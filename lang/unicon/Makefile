@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2005/04/27 03:14:45 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2006/07/19 15:11:53 steven Exp $
 
 # XXX crashes & hangs, to be dealt with
 NOT_FOR_ARCHS=	powerpc m68k hppa arm sparc
@@ -7,9 +7,10 @@ COMMENT=	"programming language with generators, X11 graphics and more"
 
 CATEGORIES=	lang
 DISTNAME=	unicon-10.0beta
+PKGNAME=	${DISTNAME}p0
 DISTFILES=	uni.zip
 
-HOMEPAGE=	http://icon.cs.unlv.edu/
+HOMEPAGE=	http://unicon.sourceforge.net/
 
 MASTER_SITES=	http://icon.cs.unlv.edu/v9/
 MAINTAINER=	Marc Espie <espie@openbsd.org>

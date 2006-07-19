@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2006/02/07 10:18:51 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2006/07/19 15:11:53 steven Exp $
 
 COMMENT=	"clone of the ex/vi text editor"
 
 DISTNAME=	elvis-2.1_4
-PKGNAME=	${DISTNAME:S/_/./}p1
+PKGNAME=	${DISTNAME:S/_/./}p2
 CATEGORIES=	editors
-HOMEPAGE=	http://www.fh-wedel.de/elvis/
+HOMEPAGE=	http://elvis.the-little-red-haired-girl.org/
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

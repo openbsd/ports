@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2006/01/08 01:04:33 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2006/07/19 15:11:53 steven Exp $
 
 COMMENT=	"Settlers of Catan for GNOME/Gtk"
 
 VERSION=	0.6.1
 DISTNAME=	gnocatan-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games x11/gnome
 
-HOMEPAGE=	http://gnocatan.sourceforge.net/
 MAINTAINER=	Jim Geovedi <jim@corebsd.or.id>
 
 # GPL

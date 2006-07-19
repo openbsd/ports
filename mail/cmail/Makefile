@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2002/10/30 04:13:36 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2006/07/19 15:11:53 steven Exp $
 
 COMMENT=	"simple mail counter"
 
 DISTNAME=	cmail-3.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	mail
-
-HOMEPAGE=	http://www.chocobo.cx/chip/projects.html
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

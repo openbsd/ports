@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2005/01/02 12:56:05 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2006/07/19 15:11:53 steven Exp $
 
 COMMENT=		"simple SMTP client"
 
 DISTNAME=		smtpclient-1.0.0
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		mail
-
-HOMEPAGE=		http://www.engelschall.com/sw/smtpclient/
 
 MAINTAINER=		Patroklos Argyroudis <argp@ieee.org>
 
@@ -16,7 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-MASTER_SITES=		${HOMEPAGE}distrib/
+MASTER_SITES=		ftp://www.ossp.org/pkg/tool/smtpclient/
 
 CONFIGURE_STYLE=	gnu dest
 
