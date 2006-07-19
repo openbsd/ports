@@ -1,0 +1,5 @@
+The JEM (Java EMF Model) plugin contains functions for modeling Java
+classes in EMF. It contains BeanInfo processing. The model instantiates
+the actual Java classes, but it is done in a separate Java Virtual
+Machine, so that none of the user classes will interfere with the 
+Eclipse IDE itself. 
