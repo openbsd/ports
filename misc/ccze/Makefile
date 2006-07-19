@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/02/01 16:29:47 robert Exp $
+# $OpenBSD: Makefile,v 1.8 2006/07/19 11:08:08 robert Exp $
 
 COMMENT=	"log colorizer"
 
@@ -8,7 +8,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
-HOMEPAGE=	http://bonehunter.rulez.org/CCZE.phtml
+HOMEPAGE=	http://bonehunter.rulez.org/software/ccze/
 
 MASTER_SITES=	ftp://bonehunter.rulez.org/pub/ccze/stable/
 
