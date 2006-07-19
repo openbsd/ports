@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2004/12/16 00:31:22 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2006/07/19 16:07:22 steven Exp $
 
 COMMENT=	"remote identd fingerprinting tool"
 
 DISTNAME=	ldistfp-0.1.4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net security
 
-HOMEPAGE=	http://www.team-teso.net/
-MASTER_SITES=	${HOMEPAGE}releases/
+MASTER_SITES=	${MASTER_SITE_PACKETSTORM:=UNIX/misc/}
 
 MAINTAINER=	Patroklos Argyroudis <argp@ieee.org>
 

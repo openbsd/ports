@@ -1,13 +1,12 @@
-#   $OpenBSD: Makefile,v 1.6 2005/09/05 13:12:47 espie Exp $
+#   $OpenBSD: Makefile,v 1.7 2006/07/19 16:07:22 steven Exp $
 
 COMMENT=	"compare two nmap scans and outputs the differences"
 
 DISTNAME=	NDiff-0.04
-PKGNAME=	${DISTNAME:L}p0
+PKGNAME=	${DISTNAME:L}p1
 CATEGORIES=	net perl5
 
-HOMEPAGE=	http://www.vinecorp.com/ndiff/
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	${MASTER_SITE_PACKETSTORM:=UNIX/nmap/}
 
 MAINTAINER=	Brian Caswell <bmc@openbsd.org>
 

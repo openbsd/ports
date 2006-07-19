@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.25 2006/06/13 13:31:32 bernd Exp $
+# $OpenBSD: Makefile,v 1.26 2006/07/19 16:07:22 steven Exp $
 
 COMMENT=	"parallelized login hacker"
 COMMENT-gui=	"GTK frontend for hydra"
 
 VERSION=	4.6
 DISTNAME=	hydra-4.6-src
-PKGNAME=	hydra-${VERSION}p1
-PKGNAME-gui=	hydra-gui-${VERSION}p3
+PKGNAME=	hydra-${VERSION}p2
+PKGNAME-gui=	hydra-gui-${VERSION}p4
 CATEGORIES=    	security
 
-HOMEPAGE=	http://thc.org/thc-hydra/
+HOMEPAGE=	http://thc.segfault.net/thc-hydra/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,8 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
-MASTER_SITES=	${HOMEPAGE}/releases/ \
-		${MASTER_SITE_PACKETSTORM:=groups/thc/}
+MASTER_SITES=	${MASTER_SITE_PACKETSTORM:=groups/thc/}
 
 PSEUDO_FLAVORS=	no_x11
 FLAVOR?=

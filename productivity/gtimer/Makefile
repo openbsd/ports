@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2005/10/09 13:13:25 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.6 2006/07/19 16:07:22 steven Exp $
 
 COMMENT=		"GTK-based time tracker"
 
 DISTNAME=		gtimer-1.1.5
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=     	productivity x11
 
-HOMEPAGE=		http://www.radix.net/~cknudsen/gtimer/
+HOMEPAGE=		http://www.k5n.us/gtimer.php
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes 
@@ -14,7 +15,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xi Xss c glib gmodule iconv intl m 
 
-MASTER_SITES=		${HOMEPAGE}
+MASTER_SITES=		http://www.k5n.us/gtimer/
 
 LIB_DEPENDS=		gtk.1.2::x11/gtk+  \
 			gdk.1.2::x11/gtk+
