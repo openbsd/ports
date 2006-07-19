@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2005/10/21 16:20:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2006/07/19 09:15:48 alek Exp $
 
 COMMENT=	"caching DNS forwarder and DHCP server"
 
-DISTNAME=	dnsmasq-2.23
+DISTNAME=	dnsmasq-2.31
 CATEGORIES=	net
 
 MAINTAINER=	Jonathan Weiss <jw@innerewut.de>
@@ -23,11 +23,11 @@ USE_GMAKE=	Yes
 
 pre-build:
 	@perl -pi -e "s,!!SYSCONFDIR!!,${SYSCONFDIR},g" \
-		${WRKSRC}/dnsmasq.8 ${WRKSRC}/src/config.h
+		${WRKSRC}/man/dnsmasq.8 ${WRKSRC}/src/config.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/dnsmasq ${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/dnsmasq.conf.example ${PREFIX}/share/examples
-	${INSTALL_MAN} ${WRKSRC}/dnsmasq.8 ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/man/dnsmasq.8 ${PREFIX}/man/man8
 
 .include <bsd.port.mk>

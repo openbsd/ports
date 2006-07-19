@@ -1,0 +1,21 @@
+$OpenBSD: patch-man_dnsmasq_8,v 1.1 2006/07/19 09:15:48 alek Exp $
+--- man/dnsmasq.8.orig	Wed Jun  7 07:37:25 2006
++++ man/dnsmasq.8	Wed Jun  7 07:38:22 2006
+@@ -584,7 +584,7 @@ configuration files, to include multiple
+ level of nesting is allowed.
+ .SH CONFIG FILE
+ At startup, dnsmasq reads
+-.I /etc/dnsmasq.conf,
++.I !!SYSCONFDIR!!/dnsmasq.conf,
+ if it exists. (On
+ FreeBSD, the file is 
+ .I /usr/local/etc/dnsmasq.conf
+@@ -723,7 +723,7 @@ configurations, allowing some control ov
+ different classes of hosts.
+ 
+ .SH FILES
+-.IR /etc/dnsmasq.conf 
++.IR !!SYSCONFDIR!!/dnsmasq.conf 
+ 
+ .IR /usr/local/etc/dnsmasq.conf
+ 
