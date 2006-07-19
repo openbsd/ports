@@ -1,0 +1,4 @@
+The Eclipse Web Tools Platform provides a large collection of tools for building
+web-based applications on the Eclipse Platform, including J2EE project types,
+full JSP/HTML editing capabilities, and more. Note that the WTP Runtime module 
+includes the Web Services Tools (WST) and J2EE Standard Tools (JST) in one package.
