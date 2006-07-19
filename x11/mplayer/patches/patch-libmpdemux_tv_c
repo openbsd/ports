@@ -1,7 +1,7 @@
-$OpenBSD: patch-libmpdemux_tv_c,v 1.1 2006/01/17 07:41:58 jakemsr Exp $
---- libmpdemux/tv.c.orig	Sat Jan 29 04:24:43 2005
-+++ libmpdemux/tv.c	Sun Dec 25 19:34:31 2005
-@@ -286,6 +286,10 @@ static int open_tv(tvi_handle_t *tvh)
+$OpenBSD: patch-libmpdemux_tv_c,v 1.2 2006/07/19 21:40:47 robert Exp $
+--- libmpdemux/tv.c.orig	Sun Jun 11 20:35:46 2006
++++ libmpdemux/tv.c	Thu Jul  6 00:08:12 2006
+@@ -307,6 +307,10 @@ static int open_tv(tvi_handle_t *tvh)
  	mp_msg(MSGT_TV, MSGL_V, "Selected channel list: %s (including %d channels)\n",
  	    chanlists[tvh->chanlist].name, chanlists[tvh->chanlist].count);
  

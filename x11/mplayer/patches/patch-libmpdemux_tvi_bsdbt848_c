@@ -1,6 +1,6 @@
-$OpenBSD: patch-libmpdemux_tvi_bsdbt848_c,v 1.1 2006/01/17 07:41:58 jakemsr Exp $
---- libmpdemux/tvi_bsdbt848.c.orig	Mon Dec 27 09:30:14 2004
-+++ libmpdemux/tvi_bsdbt848.c	Mon Jan 16 21:35:44 2006
+$OpenBSD: patch-libmpdemux_tvi_bsdbt848_c,v 1.2 2006/07/19 21:40:47 robert Exp $
+--- libmpdemux/tvi_bsdbt848.c.orig	Sun Jun 11 20:35:46 2006
++++ libmpdemux/tvi_bsdbt848.c	Thu Jul  6 00:08:12 2006
 @@ -40,9 +40,12 @@
  #include <string.h>
  
@@ -12,10 +12,10 @@ $OpenBSD: patch-libmpdemux_tvi_bsdbt848_c,v 1.1 2006/01/17 07:41:58 jakemsr Exp 
 +#include <sys/ioctl.h>
  #include <sys/audioio.h>
 +#include <string.h>
- #elif __FreeBSD_version >= 502100
- #include <dev/bktr/ioctl_meteor.h>
- #include <dev/bktr/ioctl_bt848.h>
-@@ -51,15 +54,17 @@
+ #elif defined(__DragonFly__)
+ #include <dev/video/meteor/ioctl_meteor.h>
+ #include <dev/video/bktr/ioctl_bt848.h>
+@@ -54,15 +57,17 @@
  #include <machine/ioctl_bt848.h>
  #endif
  
@@ -32,9 +32,9 @@ $OpenBSD: patch-libmpdemux_tvi_bsdbt848_c,v 1.1 2006/01/17 07:41:58 jakemsr Exp 
  #endif
 +#endif
  
- #include "../libaf/af_format.h"
- #include "../libvo/img_format.h"
-@@ -126,7 +131,7 @@ typedef struct {
+ #include "libaf/af_format.h"
+ #include "libvo/img_format.h"
+@@ -129,7 +134,7 @@ typedef struct {
      int tunerfd;
      int tunerready;
      u_long tunerfreq;
@@ -43,63 +43,62 @@ $OpenBSD: patch-libmpdemux_tvi_bsdbt848_c,v 1.1 2006/01/17 07:41:58 jakemsr Exp 
  
  /* Other */
  
-@@ -137,10 +142,35 @@ typedef struct {
+@@ -140,9 +145,34 @@ typedef struct {
  
  #include "tvi_def.h"
  
 +static int chnlsets[17] = {
-+    CHNLSET_NABCST,	/* us-bcast */
-+    CHNLSET_CABLEIRC,	/* us-cable */
-+    CHNLSET_CABLEHRC,	/* us-cable-hrc */
-+    CHNLSET_JPNBCST,	/* japan-bcast */
-+    CHNLSET_JPNCABLE,	/* japan-cable */
-+    CHNLSET_WEUROPE,	/* europe-west */
-+    CHNLSET_XUSSR,	/* europe-east ? */
-+    CHNLSET_WEUROPE,	/* italy ? */
-+    CHNLSET_AUSTRALIA,	/* newzealand ? */
-+    CHNLSET_AUSTRALIA,	/* australia */
-+    CHNLSET_WEUROPE,	/* ireland ? */
-+    CHNLSET_FRANCE,	/* france */
-+    CHNLSET_XUSSR,	/* china-bcast ? */
-+    CHNLSET_WEUROPE,	/* southafrica ? */
-+    CHNLSET_WEUROPE,	/* argentina ? */
-+    CHNLSET_XUSSR,	/* russia */
-+    NULL,		/* NULL */
++    CHNLSET_NABCST,    /* us-bcast */
++    CHNLSET_CABLEIRC,  /* us-cable */
++    CHNLSET_CABLEHRC,  /* us-cable-hrc */
++    CHNLSET_JPNBCST,   /* japan-bcast */
++    CHNLSET_JPNCABLE,  /* japan-cable */
++    CHNLSET_WEUROPE,   /* europe-west */
++    CHNLSET_XUSSR,     /* europe-east ? */
++    CHNLSET_WEUROPE,   /* italy ? */
++    CHNLSET_AUSTRALIA, /* newzealand ? */
++    CHNLSET_AUSTRALIA, /* australia */
++    CHNLSET_WEUROPE,   /* ireland ? */
++    CHNLSET_FRANCE,    /* france */
++    CHNLSET_XUSSR,     /* china-bcast ? */
++    CHNLSET_WEUROPE,   /* southafrica ? */
++    CHNLSET_WEUROPE,   /* argentina ? */
++    CHNLSET_XUSSR,     /* russia */
++    NULL,              /* NULL */
 +};
 +
 +static int sources[6] = { METEOR_INPUT_DEV1, METEOR_INPUT_DEV0, METEOR_INPUT_DEV2,
 +    METEOR_INPUT_DEV3, METEOR_INPUT_DEV_RGB, METEOR_INPUT_DEV_SVIDEO };
 +
++
  static priv_t *G_private=NULL;
  
  static int getinput(int innumber);
- 
 +static int getsource(int insrc);
-+
+ 
  static void processframe(int signal)
  {
- struct timeval curtime;
-@@ -209,6 +239,19 @@ static int control(priv_t *priv, int cmd
+@@ -212,6 +242,19 @@ static int control(priv_t *priv, int cmd
          return(TVI_CONTROL_TRUE);        
          }
  
 +    case TVI_CONTROL_TUN_SET_CHANLIST:
-+        {
-+        priv->tunertype = chnlsets[(int)*(void **)arg];
++	{
++	priv->tunertype = chnlsets[(int)*(void **)arg];
++	
++	if(ioctl(priv->tunerfd, TVTUNER_SETTYPE, &priv->tunertype) < 0)
++	    {
++	    perror("SETTYPE:ioctl");
++	    return(0);
++	    }
 +
-+        if(ioctl(priv->tunerfd, TVTUNER_SETTYPE, &priv->tunertype) < 0) 
-+            {
-+            perror("SETTYPE:ioctl");
-+            return(0);
-+            }
-+
-+        return(TVI_CONTROL_TRUE);        
-+        }
-+
++	return(TVI_CONTROL_TRUE);
++	}
++	
      case TVI_CONTROL_TUN_GET_TUNER:
      case TVI_CONTROL_TUN_SET_TUNER:
  
-@@ -216,23 +259,25 @@ static int control(priv_t *priv, int cmd
+@@ -219,23 +262,24 @@ static int control(priv_t *priv, int cmd
  
      case TVI_CONTROL_SPC_GET_INPUT:
          {
@@ -110,8 +109,7 @@ $OpenBSD: patch-libmpdemux_tvi_bsdbt848_c,v 1.1 2006/01/17 07:41:58 jakemsr Exp 
              return(TVI_CONTROL_FALSE);
              }
  
-+        priv->input = getsource(priv->source);
-+
++	priv->input = getsource(priv->source);
          (int)*(void **)arg = priv->input;
          return(TVI_CONTROL_TRUE);
          }
@@ -129,22 +127,24 @@ $OpenBSD: patch-libmpdemux_tvi_bsdbt848_c,v 1.1 2006/01/17 07:41:58 jakemsr Exp 
              return(0);
              }
  
-@@ -259,7 +304,14 @@ static int control(priv_t *priv, int cmd
+@@ -261,8 +305,15 @@ static int control(priv_t *priv, int cmd
+     case TVI_CONTROL_AUD_SET_SAMPLERATE:
          {
          int dspspeed = (int)*(void **)arg;
- 
 +#if defined(__OpenBSD__)
 +           audio_info_t audio_if;
 +           AUDIO_INITINFO(&audio_if);
 +           audio_if.record.sample_rate = dspspeed;
 +           if (ioctl(priv->dspfd, AUDIO_SETINFO, &audio_if) == -1)
 +#else
-            if(ioctl(priv->dspfd, SNDCTL_DSP_SPEED, &dspspeed) == -1) 
+ 
+-           if(ioctl(priv->dspfd, SNDCTL_DSP_SPEED, &dspspeed) == -1) 
++           if(ioctl(priv->dspfd, SNDCTL_DSP_SPEED, &dspspeed) == -1)
 +#endif
              {
              perror("invalidaudiorate");
              return(TVI_CONTROL_FALSE);
-@@ -470,6 +522,10 @@ static int init(priv_t *priv)
+@@ -473,7 +524,12 @@ static int init(priv_t *priv)
  int marg;
  int count;
  u_short tmp_fps;
@@ -153,9 +153,11 @@ $OpenBSD: patch-libmpdemux_tvi_bsdbt848_c,v 1.1 2006/01/17 07:41:58 jakemsr Exp 
 +audio_info_t audio_if;
 +#endif
  
++
  G_private = priv; /* Oooh, sick */
  
-@@ -482,7 +538,7 @@ priv->iformat = METEOR_FMT_PAL;
+ /* Video Configuration */
+@@ -485,7 +541,7 @@ priv->iformat = METEOR_FMT_PAL;
  priv->maxheight = PAL_HEIGHT;
  priv->maxwidth = PAL_WIDTH;
  priv->maxfps = PAL_FPS;
@@ -164,7 +166,7 @@ $OpenBSD: patch-libmpdemux_tvi_bsdbt848_c,v 1.1 2006/01/17 07:41:58 jakemsr Exp 
  priv->fps = priv->maxfps;
  
  priv->starttime=0;
-@@ -569,10 +625,26 @@ if(priv->tunerfd < 0)
+@@ -572,10 +628,26 @@ if(priv->tunerfd < 0)
      priv->tunerready = FALSE;
      }
  
@@ -192,7 +194,7 @@ $OpenBSD: patch-libmpdemux_tvi_bsdbt848_c,v 1.1 2006/01/17 07:41:58 jakemsr Exp 
  priv->dspdev = strdup("/dev/sound");
  #else
  priv->dspdev = strdup("/dev/dsp");
-@@ -580,7 +652,11 @@ priv->dspdev = strdup("/dev/dsp");
+@@ -583,7 +655,11 @@ priv->dspdev = strdup("/dev/dsp");
  priv->dspsamplesize = 16;
  priv->dspstereo = 1;
  priv->dspspeed = 44100;
@@ -204,16 +206,13 @@ $OpenBSD: patch-libmpdemux_tvi_bsdbt848_c,v 1.1 2006/01/17 07:41:58 jakemsr Exp 
  priv->dspbytesread = 0;
  priv->dsprate = priv->dspspeed * priv->dspsamplesize/8*(priv->dspstereo+1);
  priv->dspframesize = priv->dspspeed*priv->dspsamplesize/8/priv->fps * 
-@@ -594,6 +670,34 @@ if((priv->dspfd = open (priv->dspdev, O_
+@@ -597,6 +673,31 @@ if((priv->dspfd = open (priv->dspdev, O_
  
  marg = (256 << 16) | 12;
  
 +#if defined(__OpenBSD__)
 +
 +    AUDIO_INITINFO(&audio_if);
-+
-+    // audio_if.blocksize = 4096;
-+    // audio_if.hiwat = 256;
 +
 +    audio_if.record.precision = priv->dspsamplesize;
 +    audio_if.record.channels = priv->dspstereo+1;
@@ -239,7 +238,7 @@ $OpenBSD: patch-libmpdemux_tvi_bsdbt848_c,v 1.1 2006/01/17 07:41:58 jakemsr Exp 
  if (ioctl(priv->dspfd, SNDCTL_DSP_SETFRAGMENT, &marg ) < 0 ) 
      {
      perror("setfrag");
-@@ -611,6 +715,8 @@ if((priv->dspready == TRUE) &&
+@@ -614,6 +715,8 @@ if((priv->dspready == TRUE) &&
      priv->dspready = FALSE;
      }
  
@@ -248,7 +247,15 @@ $OpenBSD: patch-libmpdemux_tvi_bsdbt848_c,v 1.1 2006/01/17 07:41:58 jakemsr Exp 
  return(1);
  }
  
-@@ -655,6 +761,7 @@ return(1);
+@@ -623,6 +726,7 @@ static int start(priv_t *priv)
+ int tmp;
+ struct timeval curtime;
+ int marg;
++int tuner_audio;
+ 
+ fprintf(stderr,"START\n");
+ if(priv->videoready == FALSE) return(0);
+@@ -658,6 +762,7 @@ return(1);
  static int uninit(priv_t *priv)
  {
  int marg;
@@ -256,23 +263,23 @@ $OpenBSD: patch-libmpdemux_tvi_bsdbt848_c,v 1.1 2006/01/17 07:41:58 jakemsr Exp 
  
  if(priv->videoready == FALSE) return(0);
  
-@@ -677,6 +784,15 @@ if(ioctl(priv->btfd, METEORCAPTUR, &marg
+@@ -680,6 +785,15 @@ if(ioctl(priv->btfd, METEORCAPTUR, &marg
  close(priv->btfd);
  close(priv->dspfd);
  
-+    tuner_audio = AUDIO_MUTE;
-+    if(ioctl(priv->tunerfd, BT848_SAUDIO, &tuner_audio) < 0)
-+        {
-+        perror("tuner mute");
-+        priv->tunerready = FALSE;
-+        }
++tuner_audio = AUDIO_MUTE;
++if(ioctl(priv->tunerfd, BT848_SAUDIO, &tuner_audio) < 0)
++    {
++    perror("tuner mute");
++    priv->tunerready = FALSE;
++    }
 +
 +close(priv->tunerfd);
 +
  priv->dspfd = -1;
  priv->btfd = -1;
  
-@@ -799,20 +915,20 @@ return(priv->dspbytesread * 1.0 / priv->
+@@ -802,13 +916,13 @@ return(priv->dspbytesread * 1.0 / priv->
  static int get_audio_framesize(priv_t *priv)
  {
  int bytesavail;
@@ -288,20 +295,12 @@ $OpenBSD: patch-libmpdemux_tvi_bsdbt848_c,v 1.1 2006/01/17 07:41:58 jakemsr Exp 
  if(ioctl(priv->dspfd, AUDIO_GETINFO, &auinf) < 0) 
      {
      perror("AUDIO_GETINFO");
-     return(TVI_CONTROL_FALSE);
-     }
- else
--    bytesavail = auinf.record.seek; /* *priv->dspsamplesize; */
-+    bytesavail = auinf.record.seek; /* * priv->dspsamplesize/8 * (priv->dspstereo+1); */
- #else
- if(ioctl(priv->dspfd, FIONREAD, &bytesavail) < 0) 
-     {
-@@ -824,24 +940,29 @@ if(ioctl(priv->dspfd, FIONREAD, &bytesav
+@@ -827,24 +941,28 @@ if(ioctl(priv->dspfd, FIONREAD, &bytesav
  /* When mencoder wants audio data, it wants data..
     it won't go do anything else until it gets it :( */
  
 -if(bytesavail == 0) return FRAGSIZE;
-+  // if(bytesavail == 0) return FRAGSIZE;
++// if(bytesavail == 0) return FRAGSIZE;
  
  return(bytesavail);
  }
@@ -317,22 +316,22 @@ $OpenBSD: patch-libmpdemux_tvi_bsdbt848_c,v 1.1 2006/01/17 07:41:58 jakemsr Exp 
 -    case 4: return METEOR_INPUT_DEV_RGB;     /* RGB   */
 -    case 5: return METEOR_INPUT_DEV_SVIDEO; /* SVid  */
 -    }
- 
+-
 +if (sources[innumber])
 +    return sources[innumber];
-+
++    
  return 0;
-+}
+ }
 +
 +static int getsource(int insrc)
 +{
-+int i;
++    int i;
 +
 +    for (i = 0; sources[i]; i++)
 +        if (sources[i] == insrc)
 +            return i;
 +
 +    return 0;
- }
++ }
  
  #endif /* USE_TV */

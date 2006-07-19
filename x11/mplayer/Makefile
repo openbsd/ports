@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.98 2006/04/06 21:47:43 biorn Exp $
+# $OpenBSD: Makefile,v 1.99 2006/07/19 21:40:47 robert Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
 
 COMMENT=		"Movie player supporting MPEG, DivX, AVI, ASF, MOV & more"
 
-DISTNAME=		MPlayer-1.0pre7
+DISTNAME=		MPlayer-1.0pre8
 DIST_SUBDIR=		mplayer
-PKGNAME=		${DISTNAME:L}p15
+PKGNAME=		${DISTNAME:L}
 CATEGORIES=		x11
 EXTRACT_SUFX=		.tar.bz2
 
@@ -18,11 +18,13 @@ PERMIT_PACKAGE_CDROM=	"patents"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m ogg pthread stdc++ termcap util z 
+WANTLIB=		c m ncurses ogg pthread stdc++ util z 
 
-MASTER_SITES=		http://www2.mplayerhq.hu/MPlayer/releases/
-MASTER_SITES+=		http://www.mplayerhq.hu/MPlayer/releases/
-MASTER_SITES+=		http://ftp.lug.udel.edu/MPlayer/releases/
+MASTER_SITES=		http://www1.mplayerhq.hu/MPlayer/releases/ \
+			http://www2.mplayerhq.hu/MPlayer/releases/ \
+			http://www.mplayerhq.hu/MPlayer/releases/ \
+			http://ftp.lug.udel.edu/MPlayer/releases/
+
 # The skins tarball changes on a daily basis so it is mirrored
 # locally, do NOT change this.
 #MASTER_SITES0=		http://www2.mplayerhq.hu/MPlayer/Skin/
@@ -42,7 +44,9 @@ LIB_DEPENDS=	png::graphics/png \
 		jpeg::graphics/jpeg \
 		ungif::graphics/libungif \
 		cdda_paranoia,cdda_interface:cdparanoia->=3.a9.8:audio/cdparanoia \
-		theora::multimedia/libtheora
+		theora::multimedia/libtheora \
+		speex::audio/speex \
+		mpcdec::audio/libmpcdec
 
 CONFDIR=	${SYSCONFDIR}/mplayer
 SUBST_VARS=	CONFDIR
@@ -54,7 +58,8 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--disable-nas \
 		--disable-liblzo \
 		--disable-caca \
-		--disable-vidix \
+		--disable-internal-vidix \
+		--disable-external-vidix \
 		--disable-xvid \
 		--disable-libdv \
 		--disable-smb \
@@ -66,7 +71,10 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--enable-cdparanoia \
 		--with-extraincdir=${LOCALBASE}/include/libpng:${LOCALBASE}/include \
 		--with-extralibdir=${LOCALBASE}/lib \
-		--confdir=${CONFDIR}
+		--confdir=${CONFDIR} \
+		--disable-langinfo \
+		--disable-fribidi
+
 CONFIGURE_ENV+=	TMPDIR="${WRKBUILD}"
 
 .if ${MACHINE_ARCH:Mi386}
@@ -117,11 +125,13 @@ LIB_DEPENDS+=	mp3lame:lame-*:audio/lame,no_x11
 CONFIGURE_ARGS+=--enable-gui \
 		--enable-gl
 USE_X11=	Yes
-LIB_DEPENDS+= 	gtk,gdk::x11/gtk+ \
+LIB_DEPENDS+=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
 		mp3lame:lame-*:audio/lame
 BUILD_DEPENDS+=	:pkgconfig->=0.15.0p0:devel/pkgconfig
-WANTLIB+=	GL X11 Xext Xi Xinerama Xv Xxf86dga Xxf86vm glib gmodule intl 
-WANTLIB+=	freetype fontconfig
+WANTLIB+=	GL X11 Xext Xinerama Xv Xxf86dga Xxf86vm atk-1.0.0.0 \
+		cairo freetype fontconfig glib-2.0.0.0 gmodule-2.0.0.0 \
+		gobject-2.0.0.0 intl pango-1.0.0.0 pangocairo-1.0.0.0 \
+		pangoft2-1.0.0.0
 .endif
 
 .if ${FLAVOR:L:Msdl}
@@ -177,8 +187,8 @@ NO_REGRESS=	Yes
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mplayer
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mplayer
-	${INSTALL_DATA_DIR} ${PREFIX}/share/mplayer/Skin/${SKIN}
-	${INSTALL_DATA} ${WRKDIR}/${SKIN}/* ${PREFIX}/share/mplayer/Skin/${SKIN}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/mplayer/skins/${SKIN}
+	${INSTALL_DATA} ${WRKDIR}/${SKIN}/* ${PREFIX}/share/mplayer/skins/${SKIN}
 	cd ${WRKDIST}/etc; ${INSTALL_DATA} input.conf menu.conf codecs.conf \
 		${PREFIX}/share/examples/mplayer
 	${INSTALL_DATA} ${WRKDIST}/etc/example.conf \

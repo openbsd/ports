@@ -1,12 +1,12 @@
-$OpenBSD: patch-libmpdemux_Makefile,v 1.2 2005/06/11 14:03:17 espie Exp $
---- libmpdemux/Makefile.orig	Sat Jun 11 15:41:01 2005
-+++ libmpdemux/Makefile	Sat Jun 11 15:41:10 2005
-@@ -37,7 +37,7 @@ endif
+$OpenBSD: patch-libmpdemux_Makefile,v 1.3 2006/07/19 21:40:47 robert Exp $
+--- libmpdemux/Makefile.orig	Sun Jun 11 20:35:46 2006
++++ libmpdemux/Makefile	Thu Jul  6 00:08:12 2006
+@@ -157,7 +157,7 @@ endif
  OBJS	= $(SRCS:.c=.o)
  OBJS   += $(CPLUSPLUSSRCS:.cpp=.o)
  INCLUDE = -I.. -I../loader $(CSS_INC) $(EXTRA_INC) $(LIBAV_INC)
 -CFLAGS  = $(OPTFLAGS) $(INCLUDE) $(XMMS_CFLAGS) $(CDPARANOIA_INC) $(DVB_INC)
 +CFLAGS  = -I.. $(OPTFLAGS) $(INCLUDE) $(XMMS_CFLAGS) $(CDPARANOIA_INC) $(DVB_INC)
- CPLUSPLUSFLAGS  = $(CFLAGS) $(CPLUSPLUSINCLUDE)
+ CPLUSPLUSFLAGS  = $(CFLAGS) $(CPLUSPLUSINCLUDE) -D__STDC_LIMIT_MACROS
  CPLUSPLUS = $(CC)
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-mencoder_c,v 1.1 2005/10/10 15:37:24 espie Exp $
---- mencoder.c.orig	Mon Oct 10 15:51:36 2005
-+++ mencoder.c	Mon Oct 10 15:51:43 2005
-@@ -1829,6 +1829,7 @@ if(sh_audio && !demuxer2){
+$OpenBSD: patch-mencoder_c,v 1.2 2006/07/19 21:40:47 robert Exp $
+--- mencoder.c.orig	Sun Jun 11 20:35:47 2006
++++ mencoder.c	Thu Jul  6 00:08:12 2006
+@@ -1511,6 +1511,7 @@ if(sh_audio && !demuxer2){
  
  } // while(!at_eof)
  

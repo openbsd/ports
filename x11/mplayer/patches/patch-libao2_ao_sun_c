@@ -1,9 +1,9 @@
-$OpenBSD: patch-libao2_ao_sun_c,v 1.1 2006/01/22 06:28:25 biorn Exp $
---- libao2/ao_sun.c.orig	Thu Jan  6 23:56:54 2005
-+++ libao2/ao_sun.c	Thu Jan 19 18:00:16 2006
-@@ -66,7 +66,57 @@ static enum {
+$OpenBSD: patch-libao2_ao_sun_c,v 1.2 2006/07/19 21:40:47 robert Exp $
+--- libao2/ao_sun.c.orig	Sun Jun 11 20:35:42 2006
++++ libao2/ao_sun.c	Thu Jul  6 00:08:11 2006
+@@ -65,7 +65,57 @@ static enum {
+ } enable_sample_timing;
  
- extern int verbose;
  
 +#if defined(__OpenBSD__) || defined(__NetBSD__)
 +int sun_mixer_get_dev(int fd, int *dev, char *id)
@@ -59,7 +59,7 @@ $OpenBSD: patch-libao2_ao_sun_c,v 1.1 2006/01/22 06:28:25 biorn Exp $
  // convert an OSS audio format specification into a sun audio encoding
  static int af2sunfmt(int format)
  {
-@@ -366,13 +416,21 @@ static void setup_device_paths()
+@@ -365,13 +415,21 @@ static void setup_device_paths()
  	    audio_dev = "/dev/audio";
      }
  
@@ -81,7 +81,7 @@ $OpenBSD: patch-libao2_ao_sun_c,v 1.1 2006/01/22 06:28:25 biorn Exp $
  
      if (ao_subdevice) audio_dev = ao_subdevice;
  }
-@@ -396,6 +454,14 @@ static int control(int cmd,void *arg){
+@@ -395,6 +453,14 @@ static int control(int cmd,void *arg){
  	if ( fd != -1 )
  	{
  	    ao_control_vol_t *vol = (ao_control_vol_t *)arg;
@@ -96,7 +96,7 @@ $OpenBSD: patch-libao2_ao_sun_c,v 1.1 2006/01/22 06:28:25 biorn Exp $
  	    float volume;
  	    struct audio_info info;
  	    ioctl( fd,AUDIO_GETINFO,&info);
-@@ -410,9 +476,11 @@ static int control(int cmd,void *arg){
+@@ -409,9 +475,11 @@ static int control(int cmd,void *arg){
  							/ AUDIO_MID_BALANCE;
  		vol->right = volume;
  	    }
@@ -109,7 +109,7 @@ $OpenBSD: patch-libao2_ao_sun_c,v 1.1 2006/01/22 06:28:25 biorn Exp $
  	return CONTROL_ERROR;
      }
      case AOCONTROL_SET_VOLUME:
-@@ -423,10 +491,18 @@ static int control(int cmd,void *arg){
+@@ -422,10 +490,18 @@ static int control(int cmd,void *arg){
  	if ( !sun_mixer_device )    /* control function is used before init? */
  	    setup_device_paths();
  
@@ -129,7 +129,7 @@ $OpenBSD: patch-libao2_ao_sun_c,v 1.1 2006/01/22 06:28:25 biorn Exp $
  	    float volume;
  	    AUDIO_INITINFO(&info);
  	    volume = vol->right > vol->left ? vol->right : vol->left;
-@@ -441,9 +517,11 @@ static int control(int cmd,void *arg){
+@@ -440,9 +516,11 @@ static int control(int cmd,void *arg){
  	    info.output_muted = (volume == 0);
  #endif
  	    ioctl( fd,AUDIO_SETINFO,&info );

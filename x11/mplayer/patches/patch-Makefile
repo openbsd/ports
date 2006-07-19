@@ -1,21 +1,21 @@
-$OpenBSD: patch-Makefile,v 1.11 2005/05/09 12:24:38 biorn Exp $
---- Makefile.orig	Sat Apr 16 22:18:12 2005
-+++ Makefile	Wed Apr 20 06:35:54 2005
-@@ -259,7 +259,7 @@ mplayer_wine.so:	$(MPLAYER_DEP)
+$OpenBSD: patch-Makefile,v 1.12 2006/07/19 21:40:47 robert Exp $
+--- Makefile.orig	Sun Jun 11 20:35:47 2006
++++ Makefile	Thu Jul  6 00:08:11 2006
+@@ -426,7 +426,7 @@ LIBS_MENCODER = libmpcodecs/libmpencoder
+                 $(LIBC_LIB) \
  
- ifeq ($(MENCODER),yes)
  $(PRG_MENCODER): $(MENCODER_DEP)
--	$(CC) $(CFLAGS) -o $(PRG_MENCODER) $(OBJS_MENCODER) libmpcodecs/libmpencoders.a $(ENCORE_LIB) $(COMMON_LIBS) $(EXTRA_LIB) $(MLIB_LIB) $(LIRC_LIB) $(LIRCC_LIB) $(ARCH_LIB) $(I18NLIBS) $(MATH_LIB)
-+	$(CXX) $(CFLAGS) -o $(PRG_MENCODER) $(OBJS_MENCODER) libmpcodecs/libmpencoders.a $(ENCORE_LIB) $(COMMON_LIBS) $(EXTRA_LIB) $(MLIB_LIB) $(LIRC_LIB) $(LIRCC_LIB) $(ARCH_LIB) $(I18NLIBS) $(MATH_LIB)
+-	$(CC) $(CFLAGS) -o $(PRG_MENCODER) $(OBJS_MENCODER) $(LIBS_MENCODER)
++	$(CXX) $(CFLAGS) -o $(PRG_MENCODER) $(OBJS_MENCODER) $(LIBS_MENCODER)
  endif
  
  codecs.conf.h: $(PRG_CFG) etc/codecs.conf
-@@ -325,8 +325,6 @@ ifeq ($(GUI),yes)
- 	@if test ! -d $(prefix)/share/applications ; then mkdir -p $(prefix)/share/applications ; fi
+@@ -485,8 +485,6 @@ ifeq ($(GUI),yes)
+ 	@$(INSTALL) -d $(prefix)/share/applications
  	$(INSTALL) -m 644 etc/mplayer.desktop $(prefix)/share/applications/mplayer.desktop
  endif
--	@if test ! -d $(CONFDIR) ; then mkdir -p $(CONFDIR) ; fi
+-	@$(INSTALL) -d $(CONFDIR)
 -	@if test -f $(CONFDIR)/codecs.conf ; then mv -f $(CONFDIR)/codecs.conf $(CONFDIR)/codecs.conf.old ; fi
- ifeq ($(DVDKIT_SHARED),yes)
- ifeq ($(DVDKIT2),yes)
- 	if test ! -d $(LIBDIR) ; then mkdir -p $(LIBDIR) ; fi
+ 
+ uninstall:
+ 	-rm -f $(BINDIR)/$(PRG) $(BINDIR)/gmplayer $(MANDIR)/man1/mplayer.1

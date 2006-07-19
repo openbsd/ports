@@ -1,43 +1,8 @@
-$OpenBSD: patch-configure,v 1.37 2006/01/17 07:41:58 jakemsr Exp $
---- configure.orig	Wed Apr 13 04:46:35 2005
-+++ configure	Sun Dec 25 17:31:12 2005
-@@ -475,6 +475,9 @@ if test -z "$_target" ; then
-         if [ "`$_cc -dumpmachine | grep x86_64 | cut -d- -f1`" = "x86_64" -a \
-              -z "`echo $CFLAGS | grep -- -m32`"  ]; then
-           host_arch=x86_64
-+        elif [ "`$_cc -dumpmachine | grep amd64 | cut -d- -f1`" = "amd64" -a \
-+              -z "`echo $CFLAGS | grep -- -m32`"  ]; then
-+          host_arch=x86_64
-         else
-           host_arch=i386
-         fi
-@@ -484,7 +487,7 @@ if test -z "$_target" ; then
-       sparc) host_arch=sparc ;;
-       sparc64) host_arch=sparc64 ;;
-       parisc*|hppa*|9000*) host_arch=hppa ;;
--      arm*) host_arch=arm ;;
-+      zaurus|cats) host_arch=arm ;;
-       s390) host_arch=s390 ;;
-       s390x) host_arch=s390x ;;
-       mips) host_arch=mips ;;
-@@ -710,10 +713,15 @@ fi
- 
- x86_exts_check()
- {
-+  case $host_arch in
-+  x86_64) pparam="3dnow 3dnowext mmx mmxext xmm sse2"
-+    ;;
-+  *)
-   pparam=`$_cpuinfo | grep 'features' | cut -d ':' -f 2 | _head 1`
-   if test -z "$pparam" ; then
-     pparam=`$_cpuinfo | grep 'flags' | cut -d ':' -f 2 | _head 1`
-   fi
-+  esac
- 
-   _mmx=no
-   _3dnow=no
-@@ -2195,7 +2203,7 @@ fi
- 
+$OpenBSD: patch-configure,v 1.38 2006/07/19 21:40:47 robert Exp $
+--- configure.orig	Sun Jun 11 20:35:47 2006
++++ configure	Sat Jul  8 16:12:25 2006
+@@ -2970,7 +2970,7 @@
+ echores "$_rpath"
  
  echocheck "iconv"
 -if test "$_iconv" = auto ; then
@@ -45,7 +10,7 @@ $OpenBSD: patch-configure,v 1.37 2006/01/17 07:41:58 jakemsr Exp $
    _iconv_tmp='#include <iconv.h>'
  
    cat > $TMPC << EOF
-@@ -3789,6 +3797,8 @@ if test "$_aa" = yes ; then
+@@ -4137,6 +4137,8 @@
    _def_aa='#define HAVE_AA 1'
    if cygwin ; then
      _ld_aa=`aalib-config --libs | cut -d " " -f 2,5,6`
@@ -54,7 +19,7 @@ $OpenBSD: patch-configure,v 1.37 2006/01/17 07:41:58 jakemsr Exp $
    fi
    _vosrc="$_vosrc vo_aa.c"
    _vomodules="aa $_vomodules"
-@@ -4730,7 +4740,7 @@ echores "$_sgiaudio"
+@@ -5089,7 +5091,7 @@
  
  
  echocheck "VCD support"
@@ -62,20 +27,8 @@ $OpenBSD: patch-configure,v 1.37 2006/01/17 07:41:58 jakemsr Exp $
 +if linux || bsdos || freebsd || netbsd || sunos || darwin || openbsd ; then
    _inputmodules="vcd $_inputmodules"
    _def_vcd='#define HAVE_VCD 1'
-   echores "ok"
-@@ -5323,7 +5333,10 @@ _inc_faad="-I`pwd`/libfaad2"
- if test "$_faad_internal" = auto ; then
-   # the faad check needs a config.h file
-   if not test -f "config.h" ; then
--    > config.h
-+    cat > config.h << EOF
-+/* C99 lrintf function available */
-+$_def_lrintf  
-+EOF
-   fi
-   # internal faad: check if our dear gcc is able to compile it...
-   cp "`pwd`/libfaad2/cfft.c" $TMPC
-@@ -6115,7 +6128,7 @@ if test "$_tv_bsdbt848" = auto ; then
+   _vcd="yes"
+@@ -6723,7 +6725,7 @@
   if test "$_tv" = yes ; then
      cat > $TMPC <<EOF
  #include <sys/types.h>
@@ -84,7 +37,7 @@ $OpenBSD: patch-configure,v 1.37 2006/01/17 07:41:58 jakemsr Exp $
  #include <dev/ic/bt8xx.h>
  #else
  #include <machine/ioctl_bt848.h>
-@@ -6775,7 +6788,7 @@ CACA_LIB = $_ld_caca
+@@ -7453,7 +7455,7 @@
  # audio output
  ALSA_LIB = $_ld_alsa
  NAS_LIB = $_ld_nas
@@ -93,12 +46,12 @@ $OpenBSD: patch-configure,v 1.37 2006/01/17 07:41:58 jakemsr Exp $
  ARTS_INC = $_inc_arts
  ESD_LIB = $_ld_esd
  ESD_INC = $_inc_esd
-@@ -7041,7 +7054,7 @@ $_def_malloc
+@@ -7764,7 +7766,7 @@
  $_def_memalign
  #ifndef HAVE_MEMALIGN
  # define memalign(a,b) malloc(b)
 -#define MEMALIGN_HACK 1
-+/* #define MEMALIGN_HACK 1 */
++/* #undef MEMALIGN_HACK 1 */
  #endif
  
  /* Define this if your system has the "alloca.h" header file */
