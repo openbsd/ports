@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.19 2006/01/06 20:30:26 bernd Exp $
+# $OpenBSD: Makefile,v 1.20 2006/07/20 12:05:50 steven Exp $
 
 COMMENT=	"GNU Scientific Library"
 
-DISTNAME=	gsl-1.7
-SHARED_LIBS=	gsl		8.0 \
+DISTNAME=	gsl-1.8
+SHARED_LIBS=	gsl		9.0 \
 		gslcblas	0.0
 
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEWARE:=gsl/}
-HOMEPAGE=	http://sources.redhat.com/gsl/
+
+HOMEPAGE=	http://www.gnu.org/software/gsl/
 
 MAINTAINER=	Can Erkin Acar <canacar@openbsd.org>
 
@@ -17,6 +17,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
+
+MASTER_SITES=	${MASTER_SITE_GNU:=gsl/}
 
 CONFIGURE_STYLE=	gnu
 
