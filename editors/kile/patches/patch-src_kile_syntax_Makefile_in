@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_kile_syntax_Makefile_in,v 1.2 2006/05/21 05:50:39 steven Exp $
---- src/kile/syntax/Makefile.in.orig	Fri Mar 24 13:53:31 2006
-+++ src/kile/syntax/Makefile.in	Fri Mar 24 13:53:54 2006
-@@ -59,9 +58,7 @@ am__strip_dir = `echo $$p | sed -e 's|^.
+$OpenBSD: patch-src_kile_syntax_Makefile_in,v 1.3 2006/07/20 11:52:20 steven Exp $
+--- src/kile/syntax/Makefile.in.orig	Sun May  7 20:33:47 2006
++++ src/kile/syntax/Makefile.in	Thu Jul 13 17:46:05 2006
+@@ -59,9 +59,7 @@ am__strip_dir = `echo $$p | sed -e 's|^.
  am__installdirs = "$(DESTDIR)$(syntaxdir)"
  syntaxDATA_INSTALL = $(INSTALL_DATA)
  DATA = $(syntax_DATA)
@@ -12,7 +12,7 @@ $OpenBSD: patch-src_kile_syntax_Makefile_in,v 1.2 2006/05/21 05:50:39 steven Exp
  ACLOCAL = @ACLOCAL@
  AMDEP_FALSE = @AMDEP_FALSE@
  AMDEP_TRUE = @AMDEP_TRUE@
-@@ -314,25 +311,11 @@ xdg_appsdir = @xdg_appsdir@
+@@ -314,25 +312,11 @@ xdg_appsdir = @xdg_appsdir@
  xdg_directorydir = @xdg_directorydir@
  xdg_menudir = @xdg_menudir@
  syntaxdir = $(kde_datadir)/katepart/syntax
@@ -40,7 +40,7 @@ $OpenBSD: patch-src_kile_syntax_Makefile_in,v 1.2 2006/05/21 05:50:39 steven Exp
  	@for dep in $?; do \
  	  case '$(am__configure_deps)' in \
  	    *$$dep*) \
-@@ -344,7 +327,6 @@ $(srcdir)/Makefile.in:  $(srcdir)/Makefi
+@@ -344,7 +328,6 @@ $(srcdir)/Makefile.in:  $(srcdir)/Makefi
  	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu  src/kile/syntax/Makefile'; \
  	cd $(top_srcdir) && \
  	  $(AUTOMAKE) --gnu  src/kile/syntax/Makefile
@@ -48,7 +48,7 @@ $OpenBSD: patch-src_kile_syntax_Makefile_in,v 1.2 2006/05/21 05:50:39 steven Exp
  .PRECIOUS: Makefile
  Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
  	@case '$?' in \
-@@ -454,13 +436,9 @@ distclean-generic:
+@@ -454,13 +437,9 @@ distclean-generic:
  maintainer-clean-generic:
  	@echo "This command is intended for maintainers to use"
  	@echo "it deletes files that may require special tools to rebuild."
@@ -64,7 +64,7 @@ $OpenBSD: patch-src_kile_syntax_Makefile_in,v 1.2 2006/05/21 05:50:39 steven Exp
  
  distclean: distclean-am
  	-rm -f Makefile
-@@ -514,74 +492,16 @@ uninstall-am: uninstall-info-am uninstal
+@@ -514,74 +493,16 @@ uninstall-am: uninstall-info-am uninstal
  	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am \
  	uninstall uninstall-am uninstall-info-am uninstall-syntaxDATA
  
