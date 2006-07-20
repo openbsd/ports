@@ -1,10 +1,10 @@
-$OpenBSD: patch-applets_Makefile_in,v 1.1.1.1 2005/06/17 02:57:30 jolan Exp $
---- applets/Makefile.in.orig	Mon Apr 11 04:18:53 2005
-+++ applets/Makefile.in	Mon Jun  6 22:42:33 2005
-@@ -231,7 +231,7 @@ PKGDATADIR = $(datadir)/matchbox
- DATADIR = $(datadir)
- INCLUDES = -DDATADIR=\"$(DATADIR)\" -DPKGDATADIR=\"$(PKGDATADIR)\" -DPREFIX=\"$(PREFIXDIR)\" $(LIBMB_CFLAGS) $(SN_CFLAGS)
+$OpenBSD: patch-applets_Makefile_in,v 1.2 2006/07/20 21:00:11 robert Exp $
+--- applets/Makefile.in.orig	Tue Mar  7 19:46:57 2006
++++ applets/Makefile.in	Thu Jul 20 17:50:40 2006
+@@ -239,7 +239,7 @@
+ @WANT_ACPI_TRUE@mb_applet_battery_SOURCES = mb-applet-battery.c
  @WANT_APM_TRUE@mb_applet_battery_SOURCES = mb-applet-battery.c
+ @WANT_ACPI_TRUE@mb_applet_battery_LDADD = $(LIBMB_LIBS) $(SN_LIBS)
 -@WANT_APM_TRUE@mb_applet_battery_LDADD = $(LIBMB_LIBS) $(SN_LIBS) -lapm  
 +@WANT_APM_TRUE@mb_applet_battery_LDADD = $(LIBMB_LIBS) $(SN_LIBS)
  LDADD = $(LIBMB_LIBS) $(SN_LIBS)

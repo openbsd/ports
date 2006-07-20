@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/06/30 21:50:51 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/07/20 21:00:11 robert Exp $
 %%APM%%
 bin/matchbox-panel
 bin/mb-applet-clock
@@ -11,7 +11,12 @@ share/applications/mb-applet-clock.desktop
 share/applications/mb-applet-menu-launcher.desktop
 @comment share/applications/mb-applet-system-monitor.desktop
 share/applications/mb-launcher-term.desktop
+share/locale/
+share/locale/cs/
+share/locale/cs/LC_MESSAGES/
 share/locale/cs/LC_MESSAGES/matchbox-panel.mo
+share/locale/de/
+share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/matchbox-panel.mo
 share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
@@ -25,6 +30,8 @@ share/locale/fi_FI/LC_MESSAGES/matchbox-panel.mo
 share/locale/fr_FR/
 share/locale/fr_FR/LC_MESSAGES/
 share/locale/fr_FR/LC_MESSAGES/matchbox-panel.mo
+share/locale/zh_TW/
+share/locale/zh_TW/LC_MESSAGES/
 share/locale/zh_TW/LC_MESSAGES/matchbox-panel.mo
 share/pixmaps/broken-0.png
 share/pixmaps/mbmenu.png

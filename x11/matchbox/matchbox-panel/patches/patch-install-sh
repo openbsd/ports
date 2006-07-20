@@ -1,11 +1,11 @@
-$OpenBSD: patch-install-sh,v 1.1.1.1 2005/06/17 02:57:30 jolan Exp $
---- install-sh.orig	Sun Mar 20 11:43:33 2005
-+++ install-sh	Mon Jun  6 22:42:33 2005
-@@ -207,7 +207,7 @@ do
+$OpenBSD: patch-install-sh,v 1.2 2006/07/20 21:00:11 robert Exp $
+--- install-sh.orig	Wed Nov  2 01:30:12 2005
++++ install-sh	Thu Jul 20 17:51:44 2006
+@@ -213,7 +213,7 @@
    fi
  
    # This sed command emulates the dirname command.
--  dstdir=`echo "$dst" | sed -e 's,[^/]*$,,;s,/$,,;s,^$,.,'`
+-  dstdir=`echo "$dst" | sed -e 's,/*$,,;s,[^/]*$,,;s,/*$,,;s,^$,.,'`
 +  dstdir=`echo "$dst" | sed -e 's,/$,,g' -e 's,[^/]*$,,;s,/$,,;s,^$,.,'`
  
    # Make sure that the destination directory exists.
