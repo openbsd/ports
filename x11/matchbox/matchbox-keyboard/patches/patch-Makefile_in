@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2006/07/20 21:14:21 robert Exp $
+--- Makefile.in.orig	Tue Feb 28 19:48:45 2006
++++ Makefile.in	Thu Jul 20 18:52:28 2006
+@@ -178,7 +178,7 @@
+ EXTRA_DIST = matchbox-keyboard.desktop matchbox-keyboard.png
+ desktopdir = $(datadir)/applications/inputmethods
+ desktop_DATA = matchbox-keyboard.desktop
+-pixmapsdir = $(datadir)/pixmaps/
++pixmapsdir = $(datadir)/pixmaps
+ pixmaps_DATA = matchbox-keyboard.png
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive

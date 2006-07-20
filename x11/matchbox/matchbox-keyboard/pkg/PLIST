@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/20 21:14:21 robert Exp $
+bin/matchbox-keyboard
+share/applications/
+share/applications/inputmethods/
+share/applications/inputmethods/matchbox-keyboard.desktop
+share/matchbox-keyboard/
+share/matchbox-keyboard/keyboard-dvorak.xml
+share/matchbox-keyboard/keyboard-extended.xml
+share/matchbox-keyboard/keyboard-fi.xml
+share/matchbox-keyboard/keyboard-numpad.xml
+share/matchbox-keyboard/keyboard-ru.xml
+share/matchbox-keyboard/keyboard-us.xml
+share/matchbox-keyboard/keyboard.xml
+share/pixmaps/matchbox-keyboard.png
