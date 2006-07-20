@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/06/17 02:57:31 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2006/07/20 21:03:42 robert Exp $
 
 COMMENT=	"pda style application launcher or item browser"
 DISTNAME=	matchbox-desktop-0.9.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 MASTER_SITES=	http://projects.o-hand.com/matchbox/sources/matchbox-desktop/0.9/
 
