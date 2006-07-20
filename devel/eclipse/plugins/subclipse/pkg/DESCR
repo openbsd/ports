@@ -1,0 +1,11 @@
+Subclipse is an Eclipse 3.x IDE plugin that adds Subversion integration
+to the Eclipse IDE.  It works largely the same as the Team->CVS
+functionality, e.g., a SVN Repository window, Team->Subversion menu
+items, and so on.
+
+Subclipse itself is licensed under the terms of the Common Public
+License (CPL) 1.0.  This port includes the pure-Java client adapter
+JavaSVN from http://tmate.org/svn/ (which unfortunately has a more
+restrictive license) so there is no C/C++ compilation required to
+build this port; it should work anywhere that Java and Eclipse have
+been ported.
