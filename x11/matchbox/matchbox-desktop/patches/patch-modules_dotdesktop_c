@@ -1,0 +1,15 @@
+$OpenBSD: patch-modules_dotdesktop_c,v 1.1 2006/07/20 22:37:47 robert Exp $
+--- modules/dotdesktop.c.orig	Thu Jul 20 23:55:22 2006
++++ modules/dotdesktop.c	Thu Jul 20 23:56:42 2006
+@@ -280,9 +280,8 @@
+   else
+     {
+       snprintf(app_paths[0], 256, "%s/applications", DATADIR);
+-      snprintf(app_paths[1], 256, "/usr/share/applications");
+-      snprintf(app_paths[2], 256, "/usr/local/share/applications");
+-      snprintf(app_paths[3], 256, "%s/.applications", mb_util_get_homedir());
++      snprintf(app_paths[1], 256, "%s/applications/inputmethods", DATADIR);
++      snprintf(app_paths[2], 256, "%s/.applications", mb_util_get_homedir());
+ 
+     }
+ 
