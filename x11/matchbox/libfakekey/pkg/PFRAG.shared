@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/07/20 21:09:58 robert Exp $
+@lib lib/libfakekey.so.${LIBfakekey_VERSION}

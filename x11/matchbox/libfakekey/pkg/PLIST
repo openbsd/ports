@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/20 21:09:58 robert Exp $
+%%SHARED%%
+include/fakekey/
+include/fakekey/fakekey.h
+lib/libfakekey.a
+lib/libfakekey.la
+lib/pkgconfig/
+lib/pkgconfig/libfakekey.pc
