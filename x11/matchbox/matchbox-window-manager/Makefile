@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2005/11/13 14:26:37 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2006/07/20 21:00:35 robert Exp $
 
 COMMENT=	"window manager with a classic pda management policy"
-DISTNAME=	matchbox-window-manager-0.9.5
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	matchbox-window-manager-1.0
 CATEGORIES=	x11
-MASTER_SITES=	http://projects.o-hand.com/matchbox/sources/matchbox-window-manager/0.9/
+MASTER_SITES=	http://projects.o-hand.com/matchbox/sources/matchbox-window-manager/1.0/
 
 HOMEPAGE=	http://projects.o-hand.com/matchbox/
 

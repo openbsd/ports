@@ -1,24 +1,24 @@
-$OpenBSD: patch-data_Makefile_in,v 1.1.1.1 2005/06/17 02:57:30 jolan Exp $
---- data/Makefile.in.orig	Thu May 26 04:23:43 2005
-+++ data/Makefile.in	Mon Jun  6 23:14:36 2005
-@@ -51,7 +51,7 @@ RECURSIVE_TARGETS = all-recursive check-
- 	install-recursive installcheck-recursive installdirs-recursive \
- 	pdf-recursive ps-recursive uninstall-info-recursive \
- 	uninstall-recursive
+$OpenBSD: patch-data_Makefile_in,v 1.2 2006/07/20 21:00:35 robert Exp $
+--- data/Makefile.in.orig	Tue Mar  7 19:41:45 2006
++++ data/Makefile.in	Thu Jul 20 17:56:29 2006
+@@ -57,7 +57,7 @@
+     *) f=$$p;; \
+   esac;
+ am__strip_dir = `echo $$p | sed -e 's|^.*/||'`;
 -am__installdirs = "$(DESTDIR)$(confdir)" "$(DESTDIR)$(defaultsdir)"
 +am__installdirs = "$(DESTDIR)$(sampledir)" "$(DESTDIR)$(defaultsdir)"
  confDATA_INSTALL = $(INSTALL_DATA)
  defaultsDATA_INSTALL = $(INSTALL_DATA)
  DATA = $(conf_DATA) $(defaults_DATA)
-@@ -162,6 +162,7 @@ target_alias = @target_alias@
+@@ -171,6 +171,7 @@
  @ENABLE_SCHEMAS_FALSE@SUBDIRS = themes
  @ENABLE_SCHEMAS_TRUE@SUBDIRS = themes schemas
  confdir = $(sysconfdir)/matchbox
-+sampledir=$(datadir)/examples/matchbox
++sampledir = $(datadir)/examples/matchbox
  conf_DATA = kbdconfig
  defaultsdir = $(datadir)/matchbox
  @WANT_STANDALONE_FALSE@defaults_DATA = mbnoapp.xpm
-@@ -202,20 +203,20 @@ $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(
+@@ -211,20 +212,20 @@
  uninstall-info-am:
  install-confDATA: $(conf_DATA)
  	@$(NORMAL_INSTALL)
@@ -26,7 +26,7 @@ $OpenBSD: patch-data_Makefile_in,v 1.1.1.1 2005/06/17 02:57:30 jolan Exp $
 +	test -z "$(sampledir)" || $(mkdir_p) "$(DESTDIR)$(sampledir)"
  	@list='$(conf_DATA)'; for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
- 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+ 	  f=$(am__strip_dir) \
 -	  echo " $(confDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(confdir)/$$f'"; \
 -	  $(confDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(confdir)/$$f"; \
 +	  echo " $(confDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(sampledir)/$$f'"; \
@@ -36,7 +36,7 @@ $OpenBSD: patch-data_Makefile_in,v 1.1.1.1 2005/06/17 02:57:30 jolan Exp $
  uninstall-confDATA:
  	@$(NORMAL_UNINSTALL)
  	@list='$(conf_DATA)'; for p in $$list; do \
- 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+ 	  f=$(am__strip_dir) \
 -	  echo " rm -f '$(DESTDIR)$(confdir)/$$f'"; \
 -	  rm -f "$(DESTDIR)$(confdir)/$$f"; \
 +	  echo " rm -f '$(DESTDIR)$(sampledir)/$$f'"; \
@@ -44,7 +44,7 @@ $OpenBSD: patch-data_Makefile_in,v 1.1.1.1 2005/06/17 02:57:30 jolan Exp $
  	done
  install-defaultsDATA: $(defaults_DATA)
  	@$(NORMAL_INSTALL)
-@@ -400,7 +401,7 @@ check: check-recursive
+@@ -423,7 +424,7 @@
  all-am: Makefile $(DATA)
  installdirs: installdirs-recursive
  installdirs-am:
