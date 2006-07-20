@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.24 2006/01/12 01:05:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2006/07/20 04:43:28 steven Exp $
 
 COMMENT=	"OpenGL widget for GTK+ GUI toolkit"
 
 DISTNAME=	gtkglarea-1.2.2
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SHARED_LIBS=	gtkgl 1.2
 CATEGORIES=	x11 graphics
 MASTER_SITES=	http://www.student.oulu.fi/~jlof/gtkglarea/download/
-
-HOMEPAGE=	http://www.student.oulu.fi/~jlof/gtkglarea/
 
 BUILD_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
 RUN_DEPENDS=	${BUILD_DEPENDS}

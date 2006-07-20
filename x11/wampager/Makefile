@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2005/02/07 19:01:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2006/07/20 04:43:28 steven Exp $
 
 COMMENT=		"waimea mini pager"
 
 VERSION=		0.9.1
 DISTNAME=		wampager-${VERSION}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11
-
-HOMEPAGE=		http://www.waimea.org/wampager_info.html
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=waimea/}
 

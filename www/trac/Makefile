@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2006/07/09 10:11:49 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2006/07/20 04:43:28 steven Exp $
 
 COMMENT=	"enhanced wiki and bug tracking system for software projects"
 
 DISTNAME=	trac-0.9.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www devel
 
 MAINTAINER=	Ben Lovett <ben@tilderoot.com>
 
-HOMEPAGE=	http://projects.edgewall.com/trac/
+HOMEPAGE=	http://trac.edgewall.org/
 
 MASTER_SITES=	ftp://ftp.edgewall.com/pub/trac/ \
 		http://ftp.edgewall.com/pub/trac/

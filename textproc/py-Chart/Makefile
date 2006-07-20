@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.17 2006/06/03 09:49:24 alek Exp $
+# $OpenBSD: Makefile,v 1.18 2006/07/20 04:43:28 steven Exp $
 
 
 COMMENT=	"Python library for creating postscript or PDF charts"
 
 VERSION=	1.35
 DISTNAME=	PyChart-${VERSION}
-PKGNAME=	py-Chart-${VERSION}p0
+PKGNAME=	py-Chart-${VERSION}p1
 CATEGORIES=	textproc devel
 
-HOMEPAGE=	http://www.hpl.hp.com/personal/Yasushi_Saito/pychart/
+HOMEPAGE=	http://home.gna.org/pychart/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	http://download.gna.org/pychart/
 
 MODULES=	lang/python
 

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2004/12/19 17:27:03 alek Exp $
+# $OpenBSD: Makefile,v 1.11 2006/07/20 04:43:28 steven Exp $
 
 COMMENT=		'wm-dockapp; shows the date, time, and Internet time'
 
 DISTNAME=		wmitime-0.3
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11 x11/windowmaker
-
-HOMEPAGE=		http://www.neotokyo.org/illusion/
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
@@ -16,7 +15,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xpm c m
 
-MASTER_SITES=		${HOMEPAGE}downloads/
+MASTER_SITES=		http://dockapps.org/files/22/29/ \
+			http://web.cs.mun.ca/~gstarkes/wmaker/dockapps/files/
 
 USE_X11=		Yes
 NO_REGRESS=		Yes

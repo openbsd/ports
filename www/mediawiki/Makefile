@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2006/04/05 15:16:56 bernd Exp $
+# $OpenBSD: Makefile,v 1.10 2006/07/20 04:43:28 steven Exp $
 
 COMMENT=	"web-based collaborative editing environment"
 
 V=		1.5.8
 DISTNAME=	mediawiki-${V}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 
-HOMEPAGE=	http://wikipedia.sourceforge.net/
+HOMEPAGE=	http://www.mediawiki.org/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

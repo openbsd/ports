@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2006/02/20 16:33:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2006/07/20 04:43:28 steven Exp $
 
 COMMENT=	"text mode rss newsreader"
 DISTNAME=	snownews-1.5.7
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	www
 MASTER_SITES=	${HOMEPAGE}download/
 
-HOMEPAGE=	http://home.kcore.de/~kiza/software/snownews/
+HOMEPAGE=	http://kiza.kcore.de/software/snownews/
+
 MAINTAINER=	David Cathcart <cathcart@openbsd.org>
 
 # GPL

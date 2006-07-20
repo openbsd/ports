@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2004/12/19 17:27:02 alek Exp $
+# $OpenBSD: Makefile,v 1.15 2006/07/20 04:43:28 steven Exp $
 
 COMMENT=		'wm-dockapp; application launching program'
 
 DISTNAME=		wmbutton-0.4
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11 x11/windowmaker
 
-HOMEPAGE=		http://members.cox.net/ehf_dockapps/
+HOMEPAGE=		http://greek0.net/~greek0/wmbutton/
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
@@ -16,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xpm c
 
-MASTER_SITES=		${HOMEPAGE}wmbutton/
+MASTER_SITES=		${HOMEPAGE}
 
 USE_X11=		Yes
 NO_REGRESS=		Yes
