@@ -1,0 +1,32 @@
+$OpenBSD: patch-Source_CPack_cmCPackTGZGenerator_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
+--- Source/CPack/cmCPackTGZGenerator.cxx.orig	Mon Jul  3 13:37:11 2006
++++ Source/CPack/cmCPackTGZGenerator.cxx	Mon Jul  3 13:55:39 2006
+@@ -26,7 +26,7 @@
+ #include "cmCPackLog.h"
+ 
+ #include <cmsys/SystemTools.hxx>
+-#include <cmzlib/zutil.h>
++#include <zlib.h>
+ #include <libtar/libtar.h>
+ #include <memory> // auto_ptr
+ #include <fcntl.h>
+@@ -94,7 +94,7 @@ int cmCPackTGZ_Data_Open(void *client_da
+     mydata->ZLibStream.opaque = Z_NULL;
+     int strategy = Z_DEFAULT_STRATEGY;
+     if ( deflateInit2(&mydata->ZLibStream, mydata->CompressionLevel,
+-        Z_DEFLATED, -MAX_WBITS, DEF_MEM_LEVEL, strategy) != Z_OK )
++        Z_DEFLATED, -MAX_WBITS, 8, strategy) != Z_OK )
+       {
+       return -1;
+       }
+@@ -280,8 +280,8 @@ int cmCPackTGZGenerator::GenerateHeader(
+     {
+     const int gz_magic[2] = {0x1f, 0x8b}; /* gzip magic header */
+     char header[11];
+-    sprintf(header, "%c%c%c%c%c%c%c%c%c%c", gz_magic[0], gz_magic[1],
+-      Z_DEFLATED, 0 /*flags*/, 0,0,0,0 /*time*/, 0 /*xflags*/, OS_CODE);
++    snprintf(header, sizeof header, "%c%c%c%c%c%c%c%c%c%c", gz_magic[0], gz_magic[1],
++      Z_DEFLATED, 0 /*flags*/, 0,0,0,0 /*time*/, 0 /*xflags*/, 3);
+     os->write(header, 10);
+     }
+   return 1;

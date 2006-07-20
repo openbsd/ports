@@ -1,0 +1,12 @@
+$OpenBSD: patch-Source_CTest_cmCTestSubmitHandler_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
+--- Source/CTest/cmCTestSubmitHandler.cxx.orig	Mon Jul  3 14:41:07 2006
++++ Source/CTest/cmCTestSubmitHandler.cxx	Mon Jul  3 14:41:15 2006
+@@ -29,7 +29,7 @@ PURPOSE.  See the above copyright notice
+ #include "xmlrpc_client.h"
+ 
+ // For curl submission
+-#include "cmcurl/curl/curl.h"
++#include <curl/curl.h>
+ 
+ #include <sys/stat.h>
+ 

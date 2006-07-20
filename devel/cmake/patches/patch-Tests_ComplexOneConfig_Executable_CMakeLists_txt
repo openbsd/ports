@@ -1,0 +1,30 @@
+$OpenBSD: patch-Tests_ComplexOneConfig_Executable_CMakeLists_txt,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
+--- Tests/ComplexOneConfig/Executable/CMakeLists.txt.orig	Wed May 17 15:48:55 2006
++++ Tests/ComplexOneConfig/Executable/CMakeLists.txt	Thu Jul 20 10:46:12 2006
+@@ -10,9 +10,15 @@ IF(NOT CMAKE_TEST_DIFFERENT_GENERATOR)
+   # Link to CMake lib
+   LINK_DIRECTORIES(${Complex_BINARY_DIR}/../../Source)
+   LINK_DIRECTORIES(${Complex_BINARY_DIR}/../../Source/kwsys)
+-  LINK_DIRECTORIES(${Complex_BINARY_DIR}/../../Utilities/cmexpat)
+-  LINK_DIRECTORIES(${Complex_BINARY_DIR}/../../Utilities/cmzlib)
+   LINK_DIRECTORIES(${Complex_BINARY_DIR}/../../Utilities/cmtar)
++  IF($ENV{LOCALBASE})
++    SET(OPENBSD_LOCALBASE $ENV{LOCALBASE})
++  ELSE($ENV{LOCALBASE})
++    SET(OPENBSD_LOCALBASE /usr/local)
++  ENDIF($ENV{LOCALBASE})
++
++  # to find expat and curl
++  LINK_DIRECTORIES("${OPENBSD_LOCALBASE}/lib")
+ ENDIF(NOT CMAKE_TEST_DIFFERENT_GENERATOR)
+ 
+   # Use LINK_LIBRARIES instead of TARGET_LINK_LIBRARIES to 
+@@ -24,7 +30,7 @@ ADD_EXECUTABLE(complex complex testcflag
+ #  Sub1/NameConflictTest.c Sub2/NameConflictTest.c)
+ ADD_EXECUTABLE(complex.file complex.file.cxx)
+ IF(NOT CMAKE_TEST_DIFFERENT_GENERATOR)
+-  TARGET_LINK_LIBRARIES(complex CMakeLib cmsys cmexpat cmzlib cmtar)
++  TARGET_LINK_LIBRARIES(complex CMakeLib cmsys expat z cmtar)
+ ENDIF(NOT CMAKE_TEST_DIFFERENT_GENERATOR)
+ 
+ IF (UNIX)

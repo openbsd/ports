@@ -1,0 +1,23 @@
+$OpenBSD: patch-Utilities_cmxmlrpc_xmlrpc_data_c,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
+--- Utilities/cmxmlrpc/xmlrpc_data.c.orig	Tue Jul 18 10:51:45 2006
++++ Utilities/cmxmlrpc/xmlrpc_data.c	Tue Jul 18 10:53:10 2006
+@@ -566,14 +566,17 @@ mkDatetime(xmlrpc_env *    const envP, 
+     createXmlrpcValue(envP, &valP);
+ 
+     if (!envP->fault_occurred) {
++	size_t sz = strlen(value) + 1;
++
+         valP->_type = XMLRPC_TYPE_DATETIME;
+ 
++
+         XMLRPC_TYPED_MEM_BLOCK_INIT(
+-            char, envP, &valP->_block, strlen(value) + 1);
++            char, envP, &valP->_block, sz);
+         if (!envP->fault_occurred) {
+             char * const contents =
+                 XMLRPC_TYPED_MEM_BLOCK_CONTENTS(char, &valP->_block);
+-            strcpy(contents, value);
++            strlcpy(contents, value, sz);
+         }
+         if (envP->fault_occurred)
+             free(valP);

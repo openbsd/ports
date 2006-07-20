@@ -1,0 +1,43 @@
+$OpenBSD: patch-Source_cmCommandArgumentParserHelper_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
+--- Source/cmCommandArgumentParserHelper.cxx.orig	Wed May 17 15:48:52 2006
++++ Source/cmCommandArgumentParserHelper.cxx	Mon Jul  3 12:42:54 2006
+@@ -29,12 +29,12 @@ cmCommandArgumentParserHelper::cmCommand
+   this->FileName = 0;
+ 
+   this->EmptyVariable[0] = 0;
+-  strcpy(this->DCURLYVariable, "${");
+-  strcpy(this->RCURLYVariable, "}");
+-  strcpy(this->ATVariable,     "@");
+-  strcpy(this->DOLLARVariable, "$");
+-  strcpy(this->LCURLYVariable, "{");
+-  strcpy(this->BSLASHVariable, "\\");
++  strlcpy(this->DCURLYVariable, "${", sizeof(this->DCURLYVariable));
++  strlcpy(this->RCURLYVariable, "}", sizeof(this->RCURLYVariable));
++  strlcpy(this->ATVariable,     "@", sizeof(this->ATVariable));
++  strlcpy(this->DOLLARVariable, "$", sizeof(this->DOLLARVariable));
++  strlcpy(this->LCURLYVariable, "{", sizeof(this->LCURLYVariable));
++  strlcpy(this->BSLASHVariable, "\\", sizeof(this->BSLASHVariable));
+ 
+   this->NoEscapeMode = false;
+ }
+@@ -57,8 +57,7 @@ char* cmCommandArgumentParserHelper::Add
+     {
+     return this->EmptyVariable;
+     }
+-  char* stVal = new char[strlen(str)+1];
+-  strcpy(stVal, str);
++  char *stVal = cmSystemTools::dupstring(str);
+   this->Variables.push_back(stVal);
+   return stVal;
+ }
+@@ -127,8 +126,8 @@ char* cmCommandArgumentParserHelper::Com
+     }
+   size_t len = strlen(in1) + strlen(in2) + 1;
+   char* out = new char [ len ];
+-  strcpy(out, in1);
+-  strcat(out, in2);
++  strlcpy(out, in1, len);
++  strlcat(out, in2, len);
+   this->Variables.push_back(out);
+   return out;
+ }

@@ -1,0 +1,69 @@
+$OpenBSD: patch-Source_kwsys_CommandLineArguments_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
+--- Source/kwsys/CommandLineArguments.cxx.orig	Wed May 17 15:48:54 2006
++++ Source/kwsys/CommandLineArguments.cxx	Mon Jul  3 12:47:07 2006
+@@ -280,8 +280,9 @@ int CommandLineArguments::Parse()
+             delete [] *variable;
+             *variable = 0;
+             }
+-          *variable = new char[ strlen(var.c_str()) + 1 ];
+-          strcpy(*variable, var.c_str());
++	  size_t sz = strlen(var.c_str()) + 1;
++          *variable = new char[ sz ];
++          strlcpy(*variable, var.c_str(), sz);
+           }
+         else if ( cs->VariableType == CommandLineArguments::STL_STRING_TYPE )
+           {
+@@ -342,16 +343,18 @@ void CommandLineArguments::GetRemainingA
+ 
+   // Copy Argv0 as the first argument
+   char** args = new char*[ size ];
+-  args[0] = new char[ this->Internals->Argv0.size() + 1 ];
+-  strcpy(args[0], this->Internals->Argv0.c_str());
++  size_t sz = this->Internals->Argv0.size() + 1;
++  args[0] = new char[ sz ];
++  strlcpy(args[0], this->Internals->Argv0.c_str(), sz);
+   int cnt = 1;
+ 
+   // Copy everything after the LastArgument, since that was not parsed.
+   for ( cc = this->Internals->LastArgument+1; 
+     cc < this->Internals->Argv.size(); cc ++ )
+     {
+-    args[cnt] = new char[ this->Internals->Argv[cc].size() + 1];
+-    strcpy(args[cnt], this->Internals->Argv[cc].c_str());
++    size_t sz2 = this->Internals->Argv[cc].size() + 1;
++    args[cnt] = new char[ sz2 ];
++    strlcpy(args[cnt], this->Internals->Argv[cc].c_str(), sz2);
+     cnt ++;
+     }
+   *argc = cnt;
+@@ -593,7 +596,7 @@ void CommandLineArguments::GenerateHelp(
+ 
+   // Create format for that string
+   char format[80];
+-  sprintf(format, "  %%-%ds  ", static_cast<unsigned int>(maxlen));
++  snprintf(format, sizeof format, "  %%-%ds  ", static_cast<unsigned int>(maxlen));
+ 
+   maxlen += 4; // For the space before and after the option
+ 
+@@ -607,16 +610,16 @@ void CommandLineArguments::GenerateHelp(
+       {
+       str << kwsys_ios::endl;
+       char argument[100];
+-      sprintf(argument, sit->c_str());
++      snprintf(argument, sizeof(argument), sit->c_str());
+       switch ( this->Internals->Callbacks[*sit].ArgumentType )
+         {
+         case CommandLineArguments::NO_ARGUMENT: break;
+-        case CommandLineArguments::CONCAT_ARGUMENT: strcat(argument, "opt"); break;
+-        case CommandLineArguments::SPACE_ARGUMENT:  strcat(argument, " opt"); break;
+-        case CommandLineArguments::EQUAL_ARGUMENT:  strcat(argument, "=opt"); break;
++        case CommandLineArguments::CONCAT_ARGUMENT: strlcat(argument, "opt", sizeof(argument)); break;
++        case CommandLineArguments::SPACE_ARGUMENT:  strlcat(argument, " opt", sizeof(argument)); break;
++        case CommandLineArguments::EQUAL_ARGUMENT:  strlcat(argument, "=opt", sizeof(argument)); break;
+         }
+       char buffer[80];
+-      sprintf(buffer, format, argument);
++      snprintf(buffer, sizeof buffer, format, argument);
+       str << buffer;
+       }
+     const char* ptr = this->Internals->Callbacks[mpit->first].Help;

@@ -1,0 +1,25 @@
+$OpenBSD: patch-Utilities_cmxmlrpc_xmlrpc_parse_c,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
+--- Utilities/cmxmlrpc/xmlrpc_parse.c.orig	Tue Jul 18 11:06:02 2006
++++ Utilities/cmxmlrpc/xmlrpc_parse.c	Tue Jul 18 11:06:37 2006
+@@ -579,6 +579,7 @@ xmlrpc_parse_call(xmlrpc_env *    const 
+     size_t call_child_count;
+     char * outMethodName;
+     xmlrpc_value * outParamArrayP;
++    size_t sz;
+ 
+     XMLRPC_ASSERT_ENV_OK(envP);
+     XMLRPC_ASSERT(xml_data != NULL);
+@@ -618,10 +619,11 @@ xmlrpc_parse_call(xmlrpc_env *    const 
+     xmlrpc_validate_utf8(envP, cdata, strlen(cdata));
+     XMLRPC_FAIL_IF_FAULT(envP);
+ #endif /* HAVE_UNICODE_WCHAR */
+-    outMethodName = malloc(strlen(cdata) + 1);
++    sz = strlen(cdata) + 1;
++    outMethodName = malloc(sz);
+     XMLRPC_FAIL_IF_NULL(outMethodName, envP, XMLRPC_INTERNAL_ERROR,
+                         "Could not allocate memory for method name");
+-    strcpy(outMethodName, cdata);
++    strlcpy(outMethodName, cdata, sz);
+     
+     /* Convert our parameters. */
+     if (call_child_count == 1) {

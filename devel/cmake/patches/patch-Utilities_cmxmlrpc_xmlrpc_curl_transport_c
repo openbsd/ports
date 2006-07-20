@@ -1,0 +1,46 @@
+$OpenBSD: patch-Utilities_cmxmlrpc_xmlrpc_curl_transport_c,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
+--- Utilities/cmxmlrpc/xmlrpc_curl_transport.c.orig	Wed May 17 15:48:56 2006
++++ Utilities/cmxmlrpc/xmlrpc_curl_transport.c	Mon Jul  3 15:23:09 2006
+@@ -27,9 +27,9 @@
+ #  include "xmlrpc_pthreads.h"
+ #endif
+ 
+-#include <cmcurl/curl/curl.h>
+-#include <cmcurl/curl/types.h>
+-#include <cmcurl/curl/easy.h>
++#include <curl/curl.h>
++#include <curl/types.h>
++#include <curl/easy.h>
+ 
+ #ifndef WIN32
+ #  include <unistd.h>
+@@ -290,11 +290,11 @@ setupCurlSession(xmlrpc_env *       cons
+     proxy_type = 1;
+     if (getenv("HTTP_PROXY_PORT") )
+       {
+-      sprintf(proxy, "%s:%s", getenv("HTTP_PROXY"), getenv("HTTP_PROXY_PORT"));
++      snprintf(proxy, sizeof proxy, "%s:%s", getenv("HTTP_PROXY"), getenv("HTTP_PROXY_PORT"));
+       }
+     else
+       {
+-      sprintf(proxy, "%s", getenv("HTTP_PROXY"));
++      snprintf(proxy, sizeof proxy, "%s", getenv("HTTP_PROXY"));
+       }
+     if ( getenv("HTTP_PROXY_TYPE") )
+       {
+@@ -314,12 +314,12 @@ setupCurlSession(xmlrpc_env *       cons
+       }
+     if ( getenv("HTTP_PROXY_USER") )
+       {
+-      strcpy(proxyUser, getenv("HTTP_PROXY_USER"));
++      strlcpy(proxyUser, getenv("HTTP_PROXY_USER"), sizeof proxyUser);
+       }
+     if ( getenv("HTTP_PROXY_PASSWD") )
+       {
+-      strcat(proxyUser, ":");
+-      strcat(proxyUser, getenv("HTTP_PROXY_PASSWD"));
++      strlcat(proxyUser, ":", sizeof proxyUser);
++      strlcat(proxyUser, getenv("HTTP_PROXY_PASSWD"), sizeof proxyUser);
+       }
+     }
+     /* Using proxy */

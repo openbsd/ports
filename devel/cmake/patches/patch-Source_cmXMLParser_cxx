@@ -1,0 +1,12 @@
+$OpenBSD: patch-Source_cmXMLParser_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
+--- Source/cmXMLParser.cxx.orig	Mon Jul  3 14:37:10 2006
++++ Source/cmXMLParser.cxx	Mon Jul  3 14:37:18 2006
+@@ -16,7 +16,7 @@
+ =========================================================================*/
+ #include "cmXMLParser.h"
+ 
+-#include <cmexpat/expat.h>
++#include <expat.h>
+ #include <ctype.h>
+ 
+ //----------------------------------------------------------------------------

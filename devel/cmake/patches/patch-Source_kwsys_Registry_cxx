@@ -1,0 +1,21 @@
+$OpenBSD: patch-Source_kwsys_Registry_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
+--- Source/kwsys/Registry.cxx.orig	Tue Jul 18 10:50:35 2006
++++ Source/kwsys/Registry.cxx	Tue Jul 18 10:50:55 2006
+@@ -754,7 +754,7 @@ kwsys_stl::string RegistryHelper::Encode
+       {
+     case '%': case '=': case '\n': case '\r': case '\t':
+       char buffer[4];
+-      sprintf(buffer, "%%%02X", *str);
++      snprintf(buffer, sizeof buffer, "%%%02X", *str);
+       ostr << buffer;
+       break;
+     default:
+@@ -775,7 +775,7 @@ kwsys_stl::string RegistryHelper::Encode
+       {
+     case '%': case '=': case '\n': case '\r': case '\t':
+       char buffer[4];
+-      sprintf(buffer, "%%%02X", *str);
++      snprintf(buffer, sizeof buffer, "%%%02X", *str);
+       ostr << buffer;
+       break;
+     default:

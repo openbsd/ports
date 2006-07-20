@@ -1,0 +1,32 @@
+$OpenBSD: patch-Utilities_cmtar_util_c,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
+--- Utilities/cmtar/util.c.orig	Wed May 17 15:48:56 2006
++++ Utilities/cmtar/util.c	Tue Jul 18 10:51:27 2006
+@@ -33,7 +33,7 @@ path_hashfunc(char *key, int numbuckets)
+   char buf[TAR_MAXPATHLEN];
+   char *p;
+ 
+-  strcpy(buf, key);
++  strlcpy(buf, key, sizeof buf);
+   p = basename(buf);
+ 
+   return (((unsigned int)p[0]) % numbuckets);
+@@ -93,7 +93,7 @@ mkdirhier(char *path)
+   }
+ 
+   if (path[0] == '/')
+-    strcpy(dst, "/");
++    strlcpy(dst, "/", sizeof src);
+ 
+   while ((dirp = strsep(&nextp, "/")) != NULL)
+   {
+@@ -101,8 +101,8 @@ mkdirhier(char *path)
+       continue;
+ 
+     if (dst[0] != '\0')
+-      strcat(dst, "/");
+-    strcat(dst, dirp);
++      strlcat(dst, "/", sizeof dst);
++    strlcat(dst, dirp, sizeof dst);
+     if (
+ #if defined(_WIN32) && !defined(__CYGWIN__)
+       mkdir(dst) == -1

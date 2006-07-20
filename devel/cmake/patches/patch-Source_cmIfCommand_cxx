@@ -1,0 +1,23 @@
+$OpenBSD: patch-Source_cmIfCommand_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
+--- Source/cmIfCommand.cxx.orig	Wed May 17 15:48:53 2006
++++ Source/cmIfCommand.cxx	Mon Jul  3 15:29:04 2006
+@@ -180,8 +180,7 @@ bool cmIfCommand::IsTrue(const std::vect
+   const char *def;
+   const char *def2;
+   const char* msg = "Unknown arguments specified";
+-  *errorString = new char[strlen(msg) + 1];
+-  strcpy(*errorString, msg);
++  *errorString = cmSystemTools::dupstring(msg);
+ 
+   // handle empty invocation
+   if (args.size() < 1)
+@@ -334,8 +333,7 @@ bool cmIfCommand::IsTrue(const std::vect
+           cmOStringStream error;
+           error << "Regular expression \"" << rex << "\" cannot compile";
+           delete [] *errorString;
+-          *errorString = new char[error.str().size() + 1];
+-          strcpy(*errorString, error.str().c_str());
++          *errorString = cmSystemTools::dupstring(error.str().c_str());
+           return false;
+           }
+         if (regEntry.find(def))

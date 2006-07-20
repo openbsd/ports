@@ -1,0 +1,74 @@
+$OpenBSD: patch-Source_cmFindLibraryCommand_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
+--- Source/cmFindLibraryCommand.cxx.orig	Wed May 17 15:48:53 2006
++++ Source/cmFindLibraryCommand.cxx	Mon Jul  3 14:45:02 2006
+@@ -130,11 +130,53 @@ void cmFindLibraryCommand::AddLib64Paths
+     }
+ }
+ 
++std::string OpenBSD_find_library(const std::string& path, const std::string& prefix, const char *name)
++{
++	std::vector<std::string> result;
++
++	std::string stem = prefix + name + ".so.";
++	std::size_t len = stem.length();
++	std::string best;
++	int bestmajor = -1;
++	int bestminor = -1;
++	std::string globstring = "^" + prefix+".*\\.so\\.[0-9]+\\.[0-9]+$";
++
++	cmSystemTools::Glob(path.c_str(), globstring.c_str(), result);
++	for (std::vector<std::string>::iterator it = result.begin();
++		it != result.end(); ++it) {
++			if (it->substr(0, len) != stem) {
++				continue;
++			}
++			std::istringstream sc(it->substr(len, it->size()));
++			int major, minor;
++			sc >> major;
++			if (sc.get() != '.')
++				continue;
++			sc >> minor;
++
++			if (major < bestmajor)
++				continue;
++			if (major == bestmajor && minor < bestminor)
++				continue;
++			bestmajor = major;
++			bestminor = minor;
++			best = path + "/" + *it;
++			break;
++	}
++	return best;
++}
++
+ std::string cmFindLibraryCommand::FindLibrary(const char* name)
+ {
+   bool supportFrameworks = false;
+   bool onlyFrameworks = false;
++  bool openbsdSharedLibs = false;
+   std::string ff = this->Makefile->GetSafeDefinition("CMAKE_FIND_FRAMEWORK");
++  std::string openbsd = this->Makefile->GetSafeDefinition("CMAKE_OPENBSD_SHARED_LIBS");
++  if (openbsd == "TRUE")
++    {
++    openbsdSharedLibs = true;
++    }
+   if(ff == "FIRST" || ff == "LAST")
+     {
+     supportFrameworks = true;
+@@ -185,6 +227,16 @@ std::string cmFindLibraryCommand::FindLi
+           tryPath += *prefix;
+           tryPath += name;
+           tryPath += *suffix;
++	  if (openbsdSharedLibs && *suffix == ".so") 
++	    {
++	    std::string foundPath = OpenBSD_find_library(*p, *prefix, name);
++	    if (foundPath != "") 
++	      {
++	      tryPath = cmSystemTools::CollapseFullPath(foundPath.c_str());
++	      cmSystemTools::ConvertToUnixSlashes(tryPath);
++	      return tryPath;
++	      }
++	    }
+           if(cmSystemTools::FileExists(tryPath.c_str())
+              && !cmSystemTools::FileIsDirectory(tryPath.c_str()))
+             {

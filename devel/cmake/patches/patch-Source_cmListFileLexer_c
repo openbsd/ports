@@ -1,0 +1,35 @@
+$OpenBSD: patch-Source_cmListFileLexer_c,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
+--- Source/cmListFileLexer.c.orig	Tue Jul 18 10:44:13 2006
++++ Source/cmListFileLexer.c	Tue Jul 18 10:46:38 2006
+@@ -2109,7 +2109,7 @@ static void cmListFileLexerSetToken(cmLi
+     {
+     if(text && length < lexer->size)
+       {
+-      strcpy(lexer->token.text, text);
++      strlcpy(lexer->token.text, text, lexer->size);
+       lexer->token.length = length;
+       return;
+       }
+@@ -2142,7 +2142,7 @@ static void cmListFileLexerAppend(cmList
+   newSize = lexer->token.length + length + 1;
+   if(lexer->token.text && newSize <= lexer->size)
+     {
+-    strcpy(lexer->token.text+lexer->token.length, text);
++    strlcpy(lexer->token.text+lexer->token.length, text, lexer->size - lexer->token.length);
+     lexer->token.length += length;
+     return;
+     }
+@@ -2260,11 +2260,11 @@ int cmListFileLexer_SetString(cmListFile
+   cmListFileLexerDestroy(lexer);
+   if(text)
+     {
+-    int length = (int)strlen(text);
++    size_t length = strlen(text);
+     lexer->string_buffer = (char*)malloc(length+1);
+     if(lexer->string_buffer)
+       {
+-      strcpy(lexer->string_buffer, text);
++      strlcpy(lexer->string_buffer, text, length+1);
+       lexer->string_position = lexer->string_buffer;
+       lexer->string_left = length;
+       }

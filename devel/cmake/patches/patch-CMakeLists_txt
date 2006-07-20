@@ -1,0 +1,56 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
+--- CMakeLists.txt.orig	Wed May 17 15:48:52 2006
++++ CMakeLists.txt	Mon Jul  3 14:32:28 2006
+@@ -72,20 +72,29 @@ SUBDIRS(Source/kwsys)
+ 
+ #-----------------------------------------------------------------------------
+ # Build zlib library for Curl, CMake, and CTest.
+-SUBDIRS(Utilities/cmzlib)
++# SUBDIRS(Utilities/cmzlib)
+ SET(CMAKE_ZLIB_INCLUDES
+-  "${CMAKE_CURRENT_BINARY_DIR}/Utilities"
++  "/usr/include"
+   )
+-SET(CMAKE_ZLIB_LIBRARIES "cmzlib")
++SET(CMAKE_ZLIB_LIBRARIES "z")
+ SET(CURL_SPECIAL_LIBZ ${CMAKE_ZLIB_LIBRARIES})
+ SET(CURL_SPECIAL_LIBZ_INCLUDES ${CMAKE_ZLIB_INCLUDES})
+-SET(CURL_SPECIAL_ZLIB_H "cmzlib/zlib.h")
++SET(CURL_SPECIAL_ZLIB_H "zlib.h")
+ 
++IF($ENV{LOCALBASE})
++SET(OPENBSD_LOCALBASE $ENV{LOCALBASE})
++ELSE($ENV{LOCALBASE})
++SET(OPENBSD_LOCALBASE /usr/local)
++ENDIF($ENV{LOCALBASE})
++
++# to find expat and curl
++LINK_DIRECTORIES("${OPENBSD_LOCALBASE}/lib")
++
+ #-----------------------------------------------------------------------------
+ # Build Curl library for CTest.
+-SUBDIRS(Utilities/cmcurl)
+-SET(CMAKE_CURL_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/Utilities")
+-SET(CMAKE_CURL_LIBRARIES "cmcurl")
++#SUBDIRS(Utilities/cmcurl)
++SET(CMAKE_CURL_INCLUDES "${OPENBSD_LOCALBASE}/include/curl")
++SET(CMAKE_CURL_LIBRARIES "curl")
+ 
+ #-----------------------------------------------------------------------------
+ # Build Curl library for CTest.
+@@ -95,12 +104,11 @@ SET(CMAKE_TAR_LIBRARIES "cmtar")
+ 
+ #-----------------------------------------------------------------------------
+ # Build expat library for CMake and CTest.
+-SUBDIRS(Utilities/cmexpat)
++#SUBDIRS(Utilities/cmexpat)
+ SET(CMAKE_EXPAT_INCLUDES
+-  "${CMAKE_CURRENT_BINARY_DIR}/Utilities"
+-  "${CMAKE_CURRENT_BINARY_DIR}/Utilities/cmexpat"
++  "${OPENBSD_LOCALBASE}/include"
+   )
+-SET(CMAKE_EXPAT_LIBRARIES "cmexpat")
++SET(CMAKE_EXPAT_LIBRARIES "expat")
+ 
+ SUBDIRS(Utilities/cmxmlrpc)
+ SET(CMAKE_XMLRPC_INCLUDES

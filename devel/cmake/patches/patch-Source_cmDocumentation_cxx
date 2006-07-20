@@ -1,0 +1,18 @@
+$OpenBSD: patch-Source_cmDocumentation_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
+--- Source/cmDocumentation.cxx.orig	Wed May 17 15:48:53 2006
++++ Source/cmDocumentation.cxx	Mon Jul  3 15:35:55 2006
+@@ -315,11 +315,11 @@ bool cmDocumentation::CreateSingleModule
+         {
+         return false;
+         }
+-      char* pname = strcpy(new char[strlen(moduleName)+1], moduleName);
+-      char* ptext = strcpy(new char[text.length()+1], text.c_str());
++      char* pname = cmSystemTools::dupstring(moduleName);
++      char* ptext = cmSystemTools::dupstring(text.c_str());
+       this->ModuleStrings.push_back(pname);
+       this->ModuleStrings.push_back(ptext);
+-      char* pbrief = strcpy(new char[brief.length()+1], brief.c_str());
++      char* pbrief = cmSystemTools::dupstring(brief.c_str());
+       this->ModuleStrings.push_back(pbrief);
+       cmDocumentationEntry e = { pname, pbrief, ptext };
+       this->ModulesSection.push_back(e);

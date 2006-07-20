@@ -1,0 +1,14 @@
+$OpenBSD: patch-Source_cmSystemTools_h,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
+--- Source/cmSystemTools.h.orig	Mon Jul  3 12:38:46 2006
++++ Source/cmSystemTools.h	Mon Jul  3 12:39:59 2006
+@@ -65,6 +65,10 @@ public:
+    */
+   static std::string RemoveEscapes(const char*);
+   
++  /**
++   * Make a string copy using new.
++   */
++  static char*dupstring(const char*);
+   typedef  void (*ErrorCallback)(const char*, const char*, bool&, void*);
+   /**
+    *  Set the function used by GUI's to display error messages

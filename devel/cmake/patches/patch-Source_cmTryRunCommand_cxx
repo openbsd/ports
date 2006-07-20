@@ -1,0 +1,17 @@
+$OpenBSD: patch-Source_cmTryRunCommand_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
+--- Source/cmTryRunCommand.cxx.orig	Tue Jul  4 12:24:09 2006
++++ Source/cmTryRunCommand.cxx	Tue Jul  4 12:24:59 2006
+@@ -138,11 +138,11 @@ bool cmTryRunCommand::InitialPass(std::v
+       char retChar[1000];
+       if(worked)
+         {
+-        sprintf(retChar,"%i",retVal);
++        snprintf(retChar, sizeof retChar, "%i",retVal);
+         }
+       else
+         {
+-        strcpy(retChar, "FAILED_TO_RUN");
++        strlcpy(retChar, "FAILED_TO_RUN", sizeof retChar);
+         }
+       this->Makefile->AddCacheDefinition(argv[0].c_str(), retChar,
+                                      "Result of TRY_RUN",

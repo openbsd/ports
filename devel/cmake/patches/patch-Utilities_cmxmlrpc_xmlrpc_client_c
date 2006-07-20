@@ -1,0 +1,70 @@
+$OpenBSD: patch-Utilities_cmxmlrpc_xmlrpc_client_c,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
+--- Utilities/cmxmlrpc/xmlrpc_client.c.orig	Mon Jul  3 15:18:04 2006
++++ Utilities/cmxmlrpc/xmlrpc_client.c	Mon Jul  3 15:21:48 2006
+@@ -547,6 +547,7 @@ xmlrpc_server_info_new (xmlrpc_env * con
+ 
+     xmlrpc_server_info *server;
+     char *url_copy;
++    size_t sz;
+ 
+     /* Error-handling preconditions. */
+     url_copy = NULL;
+@@ -559,12 +560,13 @@ xmlrpc_server_info_new (xmlrpc_env * con
+     XMLRPC_FAIL_IF_NULL(server, env, XMLRPC_INTERNAL_ERROR,
+                         "Couldn't allocate memory for xmlrpc_server_info");
+     memset(server, 0, sizeof(xmlrpc_server_info));
+-    url_copy = (char*) malloc(strlen(server_url) + 1);
++    sz = strlen(server_url) + 1;
++    url_copy = (char*) malloc(sz);
+     XMLRPC_FAIL_IF_NULL(url_copy, env, XMLRPC_INTERNAL_ERROR,
+                         "Couldn't allocate memory for server URL");
+ 
+     /* Build our object. */
+-    strcpy(url_copy, server_url);
++    strlcpy(url_copy, server_url, sz);
+     server->_server_url = url_copy;
+     server->_http_basic_auth = NULL;
+ 
+@@ -584,6 +586,7 @@ xmlrpc_server_info * xmlrpc_server_info_
+ {
+     xmlrpc_server_info *server;
+     char *url_copy, *auth_copy;
++    size_t url_sz, auth_sz;
+ 
+     XMLRPC_ASSERT_ENV_OK(env);
+     XMLRPC_ASSERT_PTR_OK(aserver);
+@@ -596,17 +599,19 @@ xmlrpc_server_info * xmlrpc_server_info_
+     server = (xmlrpc_server_info*) malloc(sizeof(xmlrpc_server_info));
+     XMLRPC_FAIL_IF_NULL(server, env, XMLRPC_INTERNAL_ERROR,
+                         "Couldn't allocate memory for xmlrpc_server_info");
+-    url_copy = (char*) malloc(strlen(aserver->_server_url) + 1);
++    url_sz = strlen(aserver->_server_url) + 1;
++    url_copy = (char*) malloc(url_sz);
+     XMLRPC_FAIL_IF_NULL(url_copy, env, XMLRPC_INTERNAL_ERROR,
+                         "Couldn't allocate memory for server URL");
+-    auth_copy = (char*) malloc(strlen(aserver->_http_basic_auth) + 1);
++    auth_sz = strlen(aserver->_http_basic_auth) + 1;
++    auth_copy = (char*) malloc(auth_sz);
+     XMLRPC_FAIL_IF_NULL(auth_copy, env, XMLRPC_INTERNAL_ERROR,
+                         "Couldn't allocate memory for authentication info");
+ 
+     /* Build our object. */
+-    strcpy(url_copy, aserver->_server_url);
++    strlcpy(url_copy, aserver->_server_url, url_sz);
+     server->_server_url = url_copy;
+-    strcpy(auth_copy, aserver->_http_basic_auth);
++    strlcpy(auth_copy, aserver->_http_basic_auth, auth_sz);
+     server->_http_basic_auth = auth_copy;
+ 
+     cleanup:
+@@ -935,9 +940,7 @@ xmlrpc_server_info_set_basic_auth(xmlrpc
+     raw_token = (char*) malloc(raw_token_len + 1);
+     XMLRPC_FAIL_IF_NULL(raw_token, envP, XMLRPC_INTERNAL_ERROR,
+                         "Couldn't allocate memory for auth token");
+-    strcpy(raw_token, username);
+-    raw_token[username_len] = ':';
+-    strcpy(&raw_token[username_len + 1], password);
++    snprintf(raw_token, raw_token_len+1, "%s:%s", username, password);
+ 
+     /* Encode our raw token using Base64. */
+     token = xmlrpc_base64_encode_without_newlines(envP, 

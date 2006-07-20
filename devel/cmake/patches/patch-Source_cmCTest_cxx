@@ -1,0 +1,12 @@
+$OpenBSD: patch-Source_cmCTest_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
+--- Source/cmCTest.cxx.orig	Mon Jul  3 14:38:53 2006
++++ Source/cmCTest.cxx	Mon Jul  3 14:39:08 2006
+@@ -14,7 +14,7 @@
+      PURPOSE.  See the above copyright notices for more information.
+ 
+ =========================================================================*/
+-#include "cmcurl/curl/curl.h"
++#include <curl/curl.h>
+ 
+ #include "cmCTest.h"
+ #include "cmake.h"

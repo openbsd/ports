@@ -1,0 +1,51 @@
+$OpenBSD: patch-Source_cmCPluginAPI_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
+--- Source/cmCPluginAPI.cxx.orig	Tue Jul 18 11:07:26 2006
++++ Source/cmCPluginAPI.cxx	Tue Jul 18 11:08:55 2006
+@@ -409,10 +409,11 @@ char CCONV *cmExpandVariablesInString(vo
+     mf->ExpandVariablesInString(barf,
+                                 (escapeQuotes ? true : false),
+                                 (atOnly ? true : false));
+-  char *res = static_cast<char *>(malloc(result.size() + 1));
++  size_t sz = result.size() + 1;
++  char *res = static_cast<char *>(malloc(sz));
+   if (result.size())
+     {
+-    strcpy(res,result.c_str());
++    strlcpy(res,result.c_str(), sz);
+     }
+   res[result.size()] = '\0';
+   return res;
+@@ -585,24 +586,27 @@ void CCONV cmSourceFileSetName2(void *ar
+ char * CCONV cmGetFilenameWithoutExtension(const char *name)
+ {
+   std::string sres = cmSystemTools::GetFilenameWithoutExtension(name);
+-  char *result = (char *)malloc(sres.size()+1);
+-  strcpy(result,sres.c_str());
++  size_t sz = sres.size() + 1;
++  char *result = (char *)malloc(sz);
++  strlcpy(result,sres.c_str(), sz);
+   return result;
+ }
+ 
+ char * CCONV cmGetFilenamePath(const char *name)
+ {
+   std::string sres = cmSystemTools::GetFilenamePath(name);
+-  char *result = (char *)malloc(sres.size()+1);
+-  strcpy(result,sres.c_str());
++  size_t sz = sres.size() + 1;
++  char *result = (char *)malloc(sz);
++  strlcpy(result,sres.c_str(), sz);
+   return result;
+ }
+ 
+ char * CCONV cmCapitalized(const char *name)
+ {
+   std::string sres = cmSystemTools::Capitalized(name);
+-  char *result = (char *)malloc(sres.size()+1);
+-  strcpy(result,sres.c_str());
++  size_t sz = sres.size() + 1;
++  char *result = (char *)malloc(sz);
++  strlcpy(result,sres.c_str(), sz);
+   return result;
+ }
+ 

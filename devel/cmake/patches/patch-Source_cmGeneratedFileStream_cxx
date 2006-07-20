@@ -1,0 +1,40 @@
+$OpenBSD: patch-Source_cmGeneratedFileStream_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
+--- Source/cmGeneratedFileStream.cxx.orig	Mon Jul  3 13:15:38 2006
++++ Source/cmGeneratedFileStream.cxx	Mon Jul  3 13:16:03 2006
+@@ -27,7 +27,7 @@
+ #endif
+ 
+ #if defined(CMAKE_BUILD_WITH_CMAKE)
+-# include <cmzlib/zlib.h>
++# include <zlib.h>
+ #endif
+ 
+ //----------------------------------------------------------------------------
+@@ -213,7 +213,7 @@ void cmGeneratedFileStreamBase::Close()
+ int cmGeneratedFileStreamBase::CompressFile(const char* oldname,
+                                             const char* newname)
+ {
+-  gzFile gf = cm_zlib_gzopen(newname, "w");
++  gzFile gf = gzopen(newname, "w");
+   if ( !gf )
+     {
+     return 0;
+@@ -228,15 +228,15 @@ int cmGeneratedFileStreamBase::CompressF
+   char buffer[BUFFER_SIZE];
+   while ( (res = fread(buffer, 1, BUFFER_SIZE, ifs)) > 0 )
+     {
+-    if ( !cm_zlib_gzwrite(gf, buffer, res) )
++    if ( !gzwrite(gf, buffer, res) )
+       {
+       fclose(ifs);
+-      cm_zlib_gzclose(gf);
++      gzclose(gf);
+       return 0;
+       }
+     }
+   fclose(ifs);
+-  cm_zlib_gzclose(gf);
++  gzclose(gf);
+   return 1;
+ }
+ #else

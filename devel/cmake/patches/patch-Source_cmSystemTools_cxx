@@ -1,0 +1,108 @@
+$OpenBSD: patch-Source_cmSystemTools_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
+--- Source/cmSystemTools.cxx.orig	Mon Jul  3 12:59:42 2006
++++ Source/cmSystemTools.cxx	Mon Jul  3 13:16:24 2006
+@@ -48,7 +48,7 @@
+ #  include <libtar/libtar.h>
+ #  include <memory> // auto_ptr
+ #  include <fcntl.h>
+-#  include <cmzlib/zlib.h>
++#  include <zlib.h>
+ #endif
+ 
+ #if defined(__sgi) && !defined(__GNUC__)
+@@ -1274,12 +1274,18 @@ public:
+     }
+ };
+ 
++char* cmSystemTools::dupstring(const char* src)
++{
++  size_t sz = strlen(src)+1;
++  char* dest = new char[sz];
++  strlcpy(dest, src, sz);
++  return dest;
++}
+         
+ bool cmSystemTools::PutEnv(const char* value)
+ { 
+   static cmDeletingCharVector localEnvironment;
+-  char* envVar = new char[strlen(value)+1];
+-  strcpy(envVar, value);
++  char* envVar = dupstring(value);
+   int ret = putenv(envVar);
+   // save the pointer in the static vector so that it can
+   // be deleted on exit
+@@ -1338,7 +1344,7 @@ std::string cmSystemTools::MakeXMLSafe(c
+          && ch != '\r' )
+       {
+       char buffer[33];
+-      sprintf(buffer, "&lt;%d&gt;", (int)ch);
++      snprintf(buffer, sizeof buffer, "&lt;%d&gt;", (int)ch);
+       //sprintf(buffer, "&#x%0x;", (unsigned int)ch);
+       result.insert(result.end(), buffer, buffer+strlen(buffer));
+       }
+@@ -1439,7 +1445,7 @@ int cmSystemToolsGZStructOpen(void* call
+     }
+ #endif
+ 
+-  gzf->GZFile = cm_zlib_gzdopen(fd, gzoflags);
++  gzf->GZFile = gzdopen(fd, gzoflags);
+   if (!gzf->GZFile)
+   {
+     errno = ENOMEM;
+@@ -1452,20 +1458,20 @@ int cmSystemToolsGZStructOpen(void* call
+ int cmSystemToolsGZStructClose(void* call_data)
+ {
+   cmSystemToolsGZStruct* gzf = static_cast<cmSystemToolsGZStruct*>(call_data);
+-  return cm_zlib_gzclose(gzf->GZFile);
++  return gzclose(gzf->GZFile);
+ }
+ 
+ ssize_t cmSystemToolsGZStructRead(void* call_data, void* buf, size_t count)
+ {
+   cmSystemToolsGZStruct* gzf = static_cast<cmSystemToolsGZStruct*>(call_data);
+-  return cm_zlib_gzread(gzf->GZFile, buf, count);
++  return gzread(gzf->GZFile, buf, count);
+ }
+ 
+ ssize_t cmSystemToolsGZStructWrite(void* call_data, const void* buf,
+                                    size_t count)
+ {
+   cmSystemToolsGZStruct* gzf = static_cast<cmSystemToolsGZStruct*>(call_data);
+-  return cm_zlib_gzwrite(gzf->GZFile, (void*)buf, count);
++  return gzwrite(gzf->GZFile, (void*)buf, count);
+ }
+ 
+ #endif
+@@ -1489,9 +1495,8 @@ bool cmSystemTools::CreateTar(const char
+   };
+ 
+   // Ok, this libtar is not const safe. for now use auto_ptr hack
+-  char* realName = new char[ strlen(outFileName) + 1 ];
++  char* realName = dupstring(outFileName);
+   std::auto_ptr<char> realNamePtr(realName);
+-  strcpy(realName, outFileName);
+   if (tar_open(&t, realName,
+       (gzip? &gztype : NULL),
+       O_WRONLY | O_CREAT, 0644,
+@@ -1561,9 +1566,8 @@ bool cmSystemTools::ExtractTar(const cha
+   };
+ 
+   // Ok, this libtar is not const safe. for now use auto_ptr hack
+-  char* realName = new char[ strlen(outFileName) + 1 ];
++  char* realName = dupstring(outFileName);
+   std::auto_ptr<char> realNamePtr(realName);
+-  strcpy(realName, outFileName);
+   if (tar_open(&t, realName,
+       (gzip? &gztype : NULL),
+       O_RDONLY
+@@ -1615,9 +1619,8 @@ bool cmSystemTools::ListTar(const char* 
+   };
+ 
+   // Ok, this libtar is not const safe. for now use auto_ptr hack
+-  char* realName = new char[ strlen(outFileName) + 1 ];
++  char* realName = dupstring(outFileName);
+   std::auto_ptr<char> realNamePtr(realName);
+-  strcpy(realName, outFileName);
+   if (tar_open(&t, realName,
+       (gzip? &gztype : NULL),
+       O_RDONLY

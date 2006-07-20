@@ -1,0 +1,87 @@
+$OpenBSD: patch-Source_kwsys_SystemTools_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
+--- Source/kwsys/SystemTools.cxx.orig	Sun Jul  2 19:03:00 2006
++++ Source/kwsys/SystemTools.cxx	Sun Jul  2 19:25:36 2006
+@@ -916,13 +916,14 @@ char* SystemTools::AppendStrings(const c
+     return SystemTools::DuplicateString(str1);
+     }
+   size_t len1 = strlen(str1);
+-  char *newstr = new char[len1 + strlen(str2) + 1];
++  size_t tot = len1 + strlen(str2) + 1;
++  char *newstr = new char[tot];
+   if (!newstr)
+     {
+     return 0;
+     }
+-  strcpy(newstr, str1);
+-  strcat(newstr + len1, str2);
++  strlcpy(newstr, str1, tot);
++  strlcat(newstr + len1, str2, tot - len1);
+   return newstr;
+ }
+ 
+@@ -943,14 +944,15 @@ char* SystemTools::AppendStrings(
+     }
+ 
+   size_t len1 = strlen(str1), len2 = strlen(str2);
+-  char *newstr = new char[len1 + len2 + strlen(str3) + 1];
++  size_t tot = len1 + len2 + strlen(str3) + 1;
++  char *newstr = new char[tot];
+   if (!newstr)
+     {
+     return 0;
+     }
+-  strcpy(newstr, str1);
+-  strcat(newstr + len1, str2);
+-  strcat(newstr + len1 + len2, str3);
++  strlcpy(newstr, str1, tot);
++  strlcat(newstr + len1, str2, tot - len1);
++  strlcat(newstr + len1 + len2, str3, tot - len1 - len2);
+   return newstr;
+ }
+ 
+@@ -1118,8 +1120,10 @@ char* SystemTools::DuplicateString(const
+ {
+   if (str)
+     {
+-    char *newstr = new char [strlen(str) + 1];
+-    return strcpy(newstr, str);
++    size_t sz = strlen(str)+1;
++    char *newstr = new char [sz];
++    strlcpy(newstr, str, sz);
++    return newstr;
+     }
+   return NULL;
+ }
+@@ -1775,7 +1779,7 @@ bool SystemTools::ConvertDateMacroString
+   static char month_names[] = "JanFebMarAprMayJunJulAugSepOctNovDec";
+ 
+   char buffer[12];
+-  strcpy(buffer, str);
++  strlcpy(buffer, str, sizeof buffer);
+ 
+   buffer[3] = 0;
+   char *ptr = strstr(month_names, buffer);
+@@ -1826,7 +1830,7 @@ bool SystemTools::ConvertTimeStampMacroS
+   static char month_names[] = "JanFebMarAprMayJunJulAugSepOctNovDec";
+ 
+   char buffer[27];
+-  strcpy(buffer, str);
++  strlcpy(buffer, str, sizeof buffer);
+ 
+   buffer[7] = 0;
+   char *ptr = strstr(month_names, buffer + 4);
+@@ -3228,12 +3232,12 @@ bool SystemTools::GetShortPath(const cha
+   // if the path passed in has quotes around it, first remove the quotes
+   if (path[0] == '"' && path[strlen(path)-1] == '"')
+     {
+-    strcpy(tempPath,path+1);
++    strlcpy(tempPath,path+1, size);
+     tempPath[strlen(tempPath)-1] = '\0';
+     }
+   else
+     {
+-    strcpy(tempPath,path);
++    strlcpy(tempPath,path, size);
+     }
+   
+   buffer[0] = 0;
