@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2005/12/26 16:45:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2006/07/20 20:59:25 robert Exp $
 
 COMMENT=	"matchbox base library"
-DISTNAME=	libmatchbox-1.7
+DISTNAME=	libmatchbox-1.8
 SHARED_LIBS=	mb 1.7
 MODGNU_SHARED_LIBS=	mb ''
 CATEGORIES=	x11/matchbox
-MASTER_SITES=	http://projects.o-hand.com/matchbox/sources/libmatchbox/1.7/
+MASTER_SITES=	http://projects.o-hand.com/matchbox/sources/libmatchbox/1.8/
 
 HOMEPAGE=	http://projects.o-hand.com/matchbox/
 
