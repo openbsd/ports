@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_Makefile_in,v 1.4 2004/06/23 23:38:10 jolan Exp $
---- src/Makefile.in.orig	2004-06-04 15:00:18.000000000 -0500
-+++ src/Makefile.in	2004-06-23 17:34:20.000000000 -0500
-@@ -131,7 +131,7 @@ target_alias = @target_alias@
- SUBDIRS = missing libfaim $(irc_dir)
- bin_PROGRAMS = pork
- 
--AM_CFLAGS = -funsigned-char -Imissing -Wall -Ilibfaim $(irc_include_path) -DHELP_PATH=\"$(pkgdatadir)/help\" -DSYSTEM_PORKRC=\"$(pkgdatadir)/porkrc\" $(PERL_CFLAGS) $(DEBUG_CFLAGS)
-+AM_CFLAGS = -funsigned-char -Imissing -Wall -Ilibfaim $(irc_include_path) -DHELP_PATH=\"$(pkgdatadir)/help\" -DSYSTEM_PORKRC=\"$(sysconfdir)/porkrc\" $(PERL_CFLAGS) $(DEBUG_CFLAGS)
- 
- pork_LDADD = missing/libmissing.a libfaim/libfaim.a $(irc_lib_full_path) -lncurses $(PERL_LIBS) $(DEBUG_LIBS)
+$OpenBSD: patch-src_Makefile_in,v 1.5 2006/07/21 01:55:24 jolan Exp $
+--- src/Makefile.in.orig	Wed May  4 14:42:35 2005
++++ src/Makefile.in	Thu Jul 20 20:51:18 2006
+@@ -224,7 +224,7 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ SUBDIRS = missing protocols
+ @IRC_SUPPORT_TRUE@irc_lib = protocols/irc/libirc.a
+-AM_CFLAGS = -funsigned-char -Imissing -Wall -Iprotocols -fPIC -DHELP_PATH=\"$(pkgdatadir)/help\" -DSYSTEM_PORKRC=\"$(pkgdatadir)/porkrc\" $(PERL_CFLAGS) $(DEBUG_CFLAGS)
++AM_CFLAGS = -funsigned-char -Imissing -Wall -Iprotocols -fPIC -DHELP_PATH=\"$(pkgdatadir)/help\" -DSYSTEM_PORKRC=\"$(sysconfdir)/porkrc\" $(PERL_CFLAGS) $(DEBUG_CFLAGS)
+ pork_LDADD = missing/libmissing.a protocols/aim/libaim.a $(irc_lib) -lncurses $(PERL_LIBS) $(DEBUG_LIBS)
  @COMPILE_PERL_FALSE@pork_perl = pork_perl_stub.c
+ @COMPILE_PERL_TRUE@pork_perl = pork_perl.c

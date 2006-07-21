@@ -1,12 +1,12 @@
-$OpenBSD: patch-examples_perl_Makefile_in,v 1.5 2004/12/15 08:19:26 jolan Exp $
---- examples/perl/Makefile.in.orig	Tue Dec 14 09:16:15 2004
-+++ examples/perl/Makefile.in	Wed Dec 15 02:13:52 2004
-@@ -133,7 +133,7 @@ perl_DATA = \
+$OpenBSD: patch-examples_perl_Makefile_in,v 1.6 2006/07/21 01:55:24 jolan Exp $
+--- examples/perl/Makefile.in.orig	Wed May  4 14:42:35 2005
++++ examples/perl/Makefile.in	Thu Jul 20 20:50:33 2006
+@@ -149,7 +149,7 @@ perl_DATA = \
+ 	spellcheck.pl \
  	wh.pl
- 
  
 -perldir = $(pkgdatadir)/examples/perl
 +perldir = $(prefix)/share/examples/pork
- subdir = examples/perl
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ all: all-am
+ 
+ .SUFFIXES:

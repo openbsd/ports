@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/12/15 08:19:26 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.9 2006/07/21 01:55:24 jolan Exp $
 bin/pork
 share/doc/pork/
 share/doc/pork/QUICK_START
@@ -6,12 +6,14 @@ share/doc/pork/README
 share/examples/pork/
 share/examples/pork/acro.pl
 share/examples/pork/blist.txt
+share/examples/pork/calendar.pl
 share/examples/pork/event_test.pl
 share/examples/pork/irc.pl
 share/examples/pork/np.pl
 share/examples/pork/porkrc
 @sample ${SYSCONFDIR}/porkrc
 share/examples/pork/signon.pl
+share/examples/pork/spellcheck.pl
 share/examples/pork/wh.pl
 share/pork/
 @comment share/pork/QUICK_START
