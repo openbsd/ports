@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/07/21 09:20:34 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2006/07/21 16:42:40 steven Exp $
 
 SHARED_ONLY=		Yes
 
@@ -15,7 +15,7 @@ HOMEPAGE=		http://fontforge.sourceforge.net/
 
 MAINTAINER=		Matthias Kilian <kili@outback.escape.de>
 
-# GPL
+# BSD
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
