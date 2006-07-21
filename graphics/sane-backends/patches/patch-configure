@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2006/04/23 13:32:13 alek Exp $
---- configure.orig	Sun Dec 18 14:16:04 2005
-+++ configure	Sun Apr 23 15:39:34 2006
-@@ -4929,7 +4929,7 @@ done
+$OpenBSD: patch-configure,v 1.5 2006/07/21 10:31:09 alek Exp $
+--- configure.orig	Mon Jul  3 00:22:09 2006
++++ configure	Mon Jul  3 16:43:49 2006
+@@ -5779,7 +5779,7 @@ done
  
    #check if links for dynamic libs should be created
    case "${host_os}" in
@@ -10,11 +10,10 @@ $OpenBSD: patch-configure,v 1.4 2006/04/23 13:32:13 alek Exp $
      USE_LINKS=no
      ;;
    *)
-@@ -6381,18 +6381,6 @@ if test "${with_group+set}" = set; then
-   LOCKPATH_GROUP="$withval"
+@@ -7549,17 +7549,17 @@ if test "${with_group+set}" = set; then
+ fi
  
- fi;
--    # check if the group does exist
+     # check if the group does exist
 -    lasterror=""
 -    touch sanetest.file
 -    chgrp $LOCKPATH_GROUP sanetest.file 2>/dev/null || lasterror=$?
@@ -26,6 +25,26 @@ $OpenBSD: patch-configure,v 1.4 2006/04/23 13:32:13 alek Exp $
 -echo "$as_me: WARNING: Locking feature will be disabled." >&2;}
 -      use_locking=no
 -    fi
++#    lasterror=""
++#    touch sanetest.file
++#    chgrp $LOCKPATH_GROUP sanetest.file 2>/dev/null || lasterror=$?
++#    rm -f sanetest.file
++#    if test ! -z "$lasterror"; then
++#      { echo "$as_me:$LINENO: WARNING: Group $LOCKPATH_GROUP does not exist on this system." >&5
++#echo "$as_me: WARNING: Group $LOCKPATH_GROUP does not exist on this system." >&2;}
++#      { echo "$as_me:$LINENO: WARNING: Locking feature will be disabled." >&5
++#echo "$as_me: WARNING: Locking feature will be disabled." >&2;}
++#      use_locking=no
++#    fi
    fi
    if test $use_locking = yes ; then
      INSTALL_LOCKPATH=install-lockpath
+@@ -28966,7 +28966,7 @@ echo "$as_me: Manually selected backends
+     BACKENDS="abaton agfafocus apple artec as6e avision bh canon \
+           canon630u coolscan coolscan2 dc25 dmc \
+           epson fujitsu genesys gt68xx hp leo lexmark matsushita microtek \
+-          microtek2 mustek mustek_usb nec pie pixma plustek \
++          microtek2 mustek mustek_usb nec pie plustek \
+           plustek_pp ricoh s9036 sceptre sharp \
+           sp15c st400 tamarack test teco1 teco2 teco3 umax umax_pp umax1220u \
+           artec_eplus48u ma1509 ibm hp5400 u12 snapscan niash sm3840 hp4200 \

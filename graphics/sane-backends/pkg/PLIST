@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2006/04/23 10:29:53 alek Exp $
+@comment $OpenBSD: PLIST,v 1.4 2006/07/21 10:31:09 alek Exp $
 @newgroup _saned:553
 @newuser _saned:553:_saned:daemon:Scanner Daemon:/var/empty:/sbin/nologin
 %%SHARED%%
@@ -42,6 +42,8 @@ lib/sane/libsane-dc240.a
 lib/sane/libsane-dc240.la
 lib/sane/libsane-dc25.a
 lib/sane/libsane-dc25.la
+lib/sane/libsane-dell1600n_net.a
+lib/sane/libsane-dell1600n_net.la
 lib/sane/libsane-dll.a
 lib/sane/libsane-dll.la
 lib/sane/libsane-dmc.a
@@ -58,6 +60,8 @@ lib/sane/libsane-gt68xx.a
 lib/sane/libsane-gt68xx.la
 lib/sane/libsane-hp.a
 lib/sane/libsane-hp.la
+lib/sane/libsane-hp3500.a
+lib/sane/libsane-hp3500.la
 lib/sane/libsane-hp4200.a
 lib/sane/libsane-hp4200.la
 lib/sane/libsane-hp5400.a
@@ -114,6 +118,8 @@ lib/sane/libsane-sp15c.a
 lib/sane/libsane-sp15c.la
 lib/sane/libsane-st400.a
 lib/sane/libsane-st400.la
+lib/sane/libsane-stv680.a
+lib/sane/libsane-stv680.la
 lib/sane/libsane-tamarack.a
 lib/sane/libsane-tamarack.la
 lib/sane/libsane-teco1.a
@@ -161,6 +167,7 @@ libexec/saned
 @man man/man5/sane-gphoto2.5
 @man man/man5/sane-gt68xx.5
 @man man/man5/sane-hp.5
+@man man/man5/sane-hp3500.5
 @man man/man5/sane-hp4200.5
 @man man/man5/sane-hp5400.5
 @comment @man man/man5/sane-hpsj5s.5
@@ -180,6 +187,7 @@ libexec/saned
 @man man/man5/sane-niash.5
 @man man/man5/sane-pie.5
 @man man/man5/sane-pint.5
+@man man/man5/sane-pixma.5
 @man man/man5/sane-plustek.5
 @man man/man5/sane-plustek_pp.5
 @comment @man man/man5/sane-pnm.5
@@ -194,6 +202,7 @@ libexec/saned
 @man man/man5/sane-snapscan.5
 @man man/man5/sane-sp15c.5
 @man man/man5/sane-st400.5
+@man man/man5/sane-stv680.5
 @man man/man5/sane-tamarack.5
 @man man/man5/sane-teco1.5
 @man man/man5/sane-teco2.5
@@ -267,8 +276,6 @@ share/doc/sane-backends/sane-backends-external.html
 share/doc/sane-backends/sane-backends.html
 share/doc/sane-backends/sane-mfgs-external.html
 share/doc/sane-backends/sane-mfgs.html
-@comment share/doc/sane-backends/sane.dvi
-@comment share/doc/sane-backends/sane.ps
 share/doc/sane-backends/sceptre/
 share/doc/sane-backends/sceptre/s1200.txt
 share/doc/sane-backends/teco/
@@ -403,6 +410,8 @@ share/examples/sane-backends/sane.d/sp15c.conf
 @sample ${SYSCONFDIR}/sane.d/sp15c.conf
 share/examples/sane-backends/sane.d/st400.conf
 @sample ${SYSCONFDIR}/sane.d/st400.conf
+share/examples/sane-backends/sane.d/stv680.conf
+@sample ${SYSCONFDIR}/sane.d/stv680.conf
 share/examples/sane-backends/sane.d/tamarack.conf
 @sample ${SYSCONFDIR}/sane.d/tamarack.conf
 share/examples/sane-backends/sane.d/teco1.conf

@@ -1,16 +1,16 @@
-$OpenBSD: patch-backend_dll_conf,v 1.2 2006/04/23 10:29:53 alek Exp $
---- backend/dll.conf.orig	Mon Dec 19 11:11:01 2005
-+++ backend/dll.conf	Mon Dec 19 11:11:44 2005
-@@ -23,7 +23,7 @@ fujitsu
+$OpenBSD: patch-backend_dll_conf_in,v 1.1 2006/07/21 10:31:09 alek Exp $
+--- backend/dll.conf.in.orig	Mon Jul  3 10:09:52 2006
++++ backend/dll.conf.in	Mon Jul  3 10:10:14 2006
+@@ -24,7 +24,7 @@ fujitsu
  genesys
  gt68xx
  hp
 -hpsj5s
 +#hpsj5s
+ hp3500
  hp4200
  hp5400
- ibm
-@@ -44,7 +44,7 @@ pint
+@@ -47,7 +47,7 @@ pixma
  plustek
  #plustek_pp
  #pnm
@@ -19,7 +19,7 @@ $OpenBSD: patch-backend_dll_conf,v 1.2 2006/04/23 10:29:53 alek Exp $
  ricoh
  s9036
  sceptre
-@@ -63,7 +63,7 @@ u12
+@@ -67,7 +67,7 @@ u12
  umax
  #umax_pp
  umax1220u

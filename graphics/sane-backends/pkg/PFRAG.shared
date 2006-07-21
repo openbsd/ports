@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2006/04/23 10:29:53 alek Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2006/07/21 10:31:09 alek Exp $
 @lib lib/libsane.so.${LIBsane_VERSION}
 lib/sane/libsane-abaton.so
 lib/sane/libsane-agfafocus.so
@@ -15,6 +15,7 @@ lib/sane/libsane-coolscan2.so
 lib/sane/libsane-dc210.so
 lib/sane/libsane-dc240.so
 lib/sane/libsane-dc25.so
+lib/sane/libsane-dell1600n_net.so
 lib/sane/libsane-dll.so
 lib/sane/libsane-dmc.so
 lib/sane/libsane-epson.so
@@ -23,6 +24,7 @@ lib/sane/libsane-genesys.so
 lib/sane/libsane-gphoto2.so
 lib/sane/libsane-gt68xx.so
 lib/sane/libsane-hp.so
+lib/sane/libsane-hp3500.so
 lib/sane/libsane-hp4200.so
 lib/sane/libsane-hp5400.so
 lib/sane/libsane-ibm.so
@@ -51,6 +53,7 @@ lib/sane/libsane-sm3840.so
 lib/sane/libsane-snapscan.so
 lib/sane/libsane-sp15c.so
 lib/sane/libsane-st400.so
+lib/sane/libsane-stv680.so
 lib/sane/libsane-tamarack.so
 lib/sane/libsane-teco1.so
 lib/sane/libsane-teco2.so

@@ -1,6 +1,7 @@
---- backend/Makefile.in.orig	Sun Dec 18 14:32:31 2005
-+++ backend/Makefile.in	Mon Dec 19 15:22:23 2005
-@@ -25,7 +25,7 @@ infodir = @infodir@
+$OpenBSD: patch-backend_Makefile_in,v 1.1 2006/07/21 10:31:09 alek Exp $
+--- backend/Makefile.in.orig	Mon Jul  3 10:16:42 2006
++++ backend/Makefile.in	Mon Jul  3 10:19:17 2006
+@@ -26,7 +26,7 @@ infodir = @infodir@
  mandir = @mandir@
  includedir = @includedir@
  oldincludedir = /usr/include
@@ -9,7 +10,7 @@
  BEOS_ADDONDIR = @BEOS_ADDONDIR@
  
  V_MAJOR = @V_MAJOR@
-@@ -175,7 +175,8 @@ DISTFILES = abaton.c abaton.conf abaton.
+@@ -180,7 +180,8 @@ DISTFILES = abaton.c abaton.conf.in abat
  libsane-%.la: %.lo %-s.lo $(EXTRA) $(LIBOBJS)
  	@$(LIBTOOL) $(MLINK) $(CC) -export-dynamic -o $@ $($*_LIBS) \
  	$(LDFLAGS) $(BACKENDLIBS) $^ @LIBTOOL_LINK_EXTRA@ -rpath $(libsanedir) \
@@ -19,29 +20,30 @@
  
  %-s.lo:	%-s.c
  	@$(LIBTOOL) $(MCOMP) $(COMPILE) -DSTUBS -DBACKEND_NAME=$* $<
-@@ -203,7 +204,6 @@ install-be:
+@@ -208,7 +209,7 @@ install-be:
  	  $(LIBTOOL) $(MINST) $(INSTALL_PROGRAM) $${be} \
                $(DESTDIR)$(libsanedir)/$${be} >/dev/null || exit 1; \
  	done
 -	@$(LIBTOOL) $(MINST) --finish $(DESTDIR)$(libsanedir) >/dev/null
++#	@$(LIBTOOL) $(MINST) --finish $(DESTDIR)$(libsanedir) >/dev/null
  	@# Remove libsane.* links in lib/sane/ as these links to libsane-v4l.so
  	@# cause misdetection of scanners.
  	rm -f $(DESTDIR)$(libsanedir)/libsane.*
-@@ -250,7 +250,7 @@ install-becfg:
+@@ -255,7 +256,7 @@ install-becfg:
  	 done
  
  install-lockpath:
--	$(MKDIR) -m 775 -g $(LOCKPATH_GROUP) $(DESTDIR)$(localstatesanedir)
-+#	$(MKDIR) -m 775 -g $(LOCKPATH_GROUP) $(DESTDIR)$(localstatesanedir)
+-	$(MKDIR) -m 775 -g $(LOCKPATH_GROUP) $(DESTDIR)$(locksanedir)
++#	$(MKDIR) -m 775 -g $(LOCKPATH_GROUP) $(DESTDIR)$(locksanedir)
  
  uninstall:
- 	rm -rf $(libsanedir) $(configdir) $(localstatesanedir)
-@@ -274,7 +274,7 @@ dll-preload.c:
+ 	rm -rf $(libsanedir) $(configdir) $(locksanedir)
+@@ -287,7 +288,7 @@ dll-preload.c:
  libsane.la: dll.lo dll-s.lo $(EXTRA) $(addsuffix .lo,$(DLL_PRELOAD)) $(LIBOBJS)
  	@$(LIBTOOL) $(MLINK) $(CC) -o $@ $(LDFLAGS) $(BACKENDLIBS)  $^ \
  		$(addsuffix .lo,$(DLL_PRELOAD_EXTRAS)) @LIBTOOL_LINK_EXTRA@ \
 -		-rpath $(libdir) -version-info $(V_MAJOR):$(V_REV):$(V_MINOR)
 +		-rpath $(libdir) $(libsane_la_LDFLAGS)
  
- # additional dependencies
- 
+ # Generate .conf files for all existing .conf.in files
+ becfg: $(patsubst %.conf.in,%.conf,$(wildcard *.conf.in)) 
