@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2006/06/25 09:44:04 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2006/07/21 09:20:34 steven Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		"vector font editor/converter"
 
-DISTNAME=		fontforge_full-20060413
-PKGNAME=		${DISTNAME:S,_full,,}p1
+DISTNAME=		fontforge_full-20060715
+PKGNAME=		${DISTNAME:S,_full,,}
 EXTRACT_SUFX=		.tar.bz2
 SHARED_LIBS=		gdraw		1.9 \
 			gunicode	2.2
@@ -47,6 +47,6 @@ USE_LIBTOOL=		Yes
 NO_REGRESS=		Yes
 
 post-extract:
-	find ${WRKSRC} -name \*.orig | xargs rm
+	find ${WRKSRC} -name \*.orig -o -name \*.rej | xargs rm
 
 .include <bsd.port.mk>

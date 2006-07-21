@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makefile_dynamic_in,v 1.1.1.1 2006/06/18 13:33:25 steven Exp $
---- Makefile.dynamic.in.orig	Sat Apr  8 21:24:14 2006
-+++ Makefile.dynamic.in	Sun Jun 11 13:21:21 2006
+$OpenBSD: patch-Makefile_dynamic_in,v 1.2 2006/07/21 09:20:34 steven Exp $
+--- Makefile.dynamic.in.orig	Fri Jul 14 22:20:20 2006
++++ Makefile.dynamic.in	Sun Jul 16 16:40:43 2006
 @@ -53,7 +53,6 @@ install_libs: libs
  	$(LIBTOOL) --mode=install $(INSTALL) -c libgdraw.la $(libdir)/libgdraw.la
  	$(LIBTOOL) --mode=install $(INSTALL) -c libgunicode.la $(libdir)/libgunicode.la
  	#cp .libs/*.so.*.* $(libdir)
 -	$(LIBTOOL) --mode=finish $(libdir)
  	mkdir -p $(libdir)/pkgconfig
- 	$(LIBTOOL) --mode=install $(INSTALL) -c fontforge.pc $(libdir)/pkgconfig
+ 	$(INSTALL_DATA) fontforge.pc $(libdir)/pkgconfig
  

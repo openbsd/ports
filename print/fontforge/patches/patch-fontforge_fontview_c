@@ -1,0 +1,13 @@
+$OpenBSD: patch-fontforge_fontview_c,v 1.1 2006/07/21 09:20:34 steven Exp $
+--- fontforge/fontview.c.orig	Thu Jul 20 14:28:20 2006
++++ fontforge/fontview.c	Thu Jul 20 14:28:47 2006
+@@ -9021,8 +9021,8 @@ static void FVExpose(FontView *fv,GWindo
+ 	    (event->u.expose.rect.y+event->u.expose.rect.height+fv->cbh-1)/fv->cbh; ++i ) for ( j=0; j<fv->colcnt; ++j ) {
+ 	int index = (i+fv->rowoff)*fv->colcnt+j;
+ 	int feat_gid;
+-	styles = 0;
+ 	SplineChar *sc;
++	styles = 0;
+ 	if ( fv->mapping!=NULL ) {
+ 	    if ( index>=fv->mapcnt ) index = fv->map->enccount;
+ 	    else
