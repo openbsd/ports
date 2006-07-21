@@ -1,15 +1,6 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2006/07/10 00:39:49 espie Exp $
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2006/07/21 12:27:48 espie Exp $
 --- doc/Makefile.in.orig	Fri Jun 23 18:04:53 2006
 +++ doc/Makefile.in	Sat Jul  8 17:26:07 2006
-@@ -226,7 +226,7 @@ $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
- 	    rm -rf $(@:.html=); else rm -Rf $(@:.html=.htp) $@; fi; \
- 	  exit 1; \
- 	fi
--$(srcdir)/autoconf.info: autoconf.texi $(srcdir)/version.texi $(autoconf_TEXINFOS)
-+$(srcdir)/autoconf.info: #autoconf.texi $(srcdir)/version.texi $(autoconf_TEXINFOS)
- autoconf.dvi: autoconf.texi $(srcdir)/version.texi $(autoconf_TEXINFOS)
- autoconf.pdf: autoconf.texi $(srcdir)/version.texi $(autoconf_TEXINFOS)
- autoconf.html: autoconf.texi $(srcdir)/version.texi $(autoconf_TEXINFOS)
 @@ -289,6 +289,10 @@ dist-info: $(INFO_DEPS)
  	  if test -f $$base; then d=.; else d=$(srcdir); fi; \
  	  for file in $$d/$$base*; do \

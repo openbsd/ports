@@ -1,4 +1,4 @@
-$OpenBSD: patch-tests_local_at,v 1.1.1.1 2006/07/10 00:39:49 espie Exp $
+$OpenBSD: patch-tests_local_at,v 1.2 2006/07/21 12:27:48 espie Exp $
 --- tests/local.at.orig	Sun Jul  9 23:35:17 2006
 +++ tests/local.at	Sun Jul  9 23:51:49 2006
 @@ -97,6 +97,7 @@ m4_ifval([$4],

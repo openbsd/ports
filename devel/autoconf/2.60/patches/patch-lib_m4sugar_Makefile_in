@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_m4sugar_Makefile_in,v 1.1.1.1 2006/07/10 00:39:49 espie Exp $
+$OpenBSD: patch-lib_m4sugar_Makefile_in,v 1.2 2006/07/21 12:27:48 espie Exp $
 --- lib/m4sugar/Makefile.in.orig	Fri Jun 23 18:04:54 2006
 +++ lib/m4sugar/Makefile.in	Sat Jul  8 17:12:31 2006
 @@ -134,7 +134,7 @@ sysconfdir = @sysconfdir@
