@@ -1,0 +1,21 @@
+$OpenBSD: patch-examples_dump_video_c,v 1.1 2006/07/21 11:24:07 steven Exp $
+--- examples/dump_video.c.orig	Fri Jul 21 12:30:53 2006
++++ examples/dump_video.c	Fri Jul 21 12:31:22 2006
+@@ -162,14 +162,14 @@ int main(int argc,char *argv[]){
+   int long_option_index;
+   int c;
+ 
+-  FILE *infile = stdin;
+-  outfile = stdout;
+-
+   struct timeval start;
+   struct timeval after;
+   struct timeval last;
+   int fps_only=0;
+   int frames=0;
++
++  FILE *infile = stdin;
++  outfile = stdout;
+ 
+ #ifdef _WIN32 /* We need to set stdin/stdout to binary mode on windows. */
+   /* Beware the evil ifdef. We avoid these where we can, but this one we

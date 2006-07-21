@@ -1,12 +1,12 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1 2006/06/05 12:34:29 steven Exp $
---- doc/Makefile.in.orig	Fri Jun  2 17:26:19 2006
-+++ doc/Makefile.in	Fri Jun  2 17:26:28 2006
-@@ -120,7 +120,7 @@ install_sh = @install_sh@
- 
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2006/07/21 11:24:07 steven Exp $
+--- doc/Makefile.in.orig	Wed Jun 28 23:08:22 2006
++++ doc/Makefile.in	Wed Jun 28 23:08:34 2006
+@@ -215,7 +215,7 @@ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
  SUBDIRS = #python
- 
 -docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
 +docdir = $(datadir)/doc/$(PACKAGE)
- 
  built_docs = 
- 
+ static_docs = vp3-format.txt color.html \
+ 	draft-barbato-avt-rtp-theora-01.xml \
