@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2006/06/17 15:23:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2006/07/22 18:18:36 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -28,8 +28,6 @@ MODULES=	lang/python
 .if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
 RUN_DEPENDS+=	expat::textproc/expat
 .endif
-
-NO_CONFIGURE=Yes
 
 BUILD_ARGS=		--build-base=${WRKSRC} \
 			--build-lib="${WRKSRC}/build-lib" \
