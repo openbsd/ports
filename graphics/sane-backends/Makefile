@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/07/21 10:31:08 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2006/07/22 11:52:49 steven Exp $
 
 COMMENT=	"API for accessing scanners, backends"
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.sane-project.org/pub/sane/${DISTNAME}/ \
+		ftp://ftp.ibiblio.org/pub/Linux/apps/graphics/capture/ \
 		http://gd.tuwien.ac.at/hci/sane/${DISTNAME}/ \
 		ftp://gd.tuwien.ac.at/hci/sane/${DISTNAME}/ \
 		ftp://ftp.sane-project.org/pub/sane/old-versions/${DISTNAME}/
