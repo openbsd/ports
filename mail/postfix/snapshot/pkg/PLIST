@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2006/06/16 15:52:19 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.38 2006/07/22 20:40:51 brad Exp $
 @conflict postfix-*
 @newgroup _postfix:507
 @newgroup _postdrop:508
@@ -195,6 +195,7 @@ share/doc/postfix/html/postconf.1.html
 share/doc/postfix/html/postconf.5.html
 share/doc/postfix/html/postdrop.1.html
 share/doc/postfix/html/postfix-logo.jpg
+share/doc/postfix/html/postfix-manuals.html
 share/doc/postfix/html/postfix.1.html
 share/doc/postfix/html/postkick.1.html
 share/doc/postfix/html/postlock.1.html
