@@ -7,9 +7,9 @@ with no scramble protection.  However, vlc will recognize and use an
 installed descrambling library (see converters/libdvd in the ports
 tree).
 
-On i386 vlc can use win32 codecs if they are installed (package
-win32-codecs) and if the machdep.userldt sysctl is enabled, e.g. by
-running:
+On i386 vlc can use win32 codecs (see graphics/win32-codecs in the ports
+tree) if they are installed and if the machdep.userldt sysctl is enabled,
+e.g. by running:
 
 # sysctl machdep.userldt=1
 
