@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.4 2006/07/20 21:21:46 sturm Exp $
+$OpenBSD: patch-configure,v 1.5 2006/07/23 07:21:15 sturm Exp $
 --- configure.orig	Wed Apr 19 05:52:19 2006
 +++ configure	Thu Jul 20 22:42:43 2006
 @@ -24328,13 +24328,13 @@ if test "${with_pgsql+set}" = set; then
@@ -29,7 +29,7 @@ $OpenBSD: patch-configure,v 1.4 2006/07/20 21:21:46 sturm Exp $
  
  if test "$ac_cv_lib_crypt_main" = "yes"; then
 -  if test -n "$PGSQL"; then
-+  if [ "$PGSQL" != "no"] ; then
++  if [ "$PGSQL" != "no" ] ; then
      LDFLAGS="$LDFLAGS -L$PGSQL/lib"
      CPPFLAGS="$CPPFLAGS -I$PGSQL/include"
    fi
