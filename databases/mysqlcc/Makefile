@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2005/09/07 00:41:04 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2006/07/24 09:18:13 bernd Exp $
 
 COMMENT=		"GUI client for MySQL"
 
 VERSION=		0.9.4
 DISTNAME=		mysqlcc-${VERSION}-src
-PKGNAME=		mysqlcc-${VERSION}p1
+PKGNAME=		mysqlcc-${VERSION}p2
 CATEGORIES=		databases
 
 HOMEPAGE=		http://mysql.com/products/mysqlcc/index.html

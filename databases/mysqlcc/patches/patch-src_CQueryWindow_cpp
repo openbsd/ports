@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_CQueryWindow_cpp,v 1.1 2006/07/24 09:18:13 bernd Exp $
+
+Let mysqlcc work with mysql5. See: http://lists.mysql.com/gui-tools/1842
+
+--- src/CQueryWindow.cpp.orig	Sun Dec 14 00:10:44 2003
++++ src/CQueryWindow.cpp	Tue Jul 18 13:31:58 2006
+@@ -467,8 +467,16 @@ bool CQuerySet::execQuery(const QString 
+           if (explain_rows == 1)
+           {
+             explain_query->next(true);
+-            default_table = explain_query->row(mysql()->mysql()->version().major >= 4 && 
+-              mysql()->mysql()->version().minor >= 1 ? 2 : 0);
++
++            if (mysql()->mysql()->version().major >= 5 ||
++                (mysql()->mysql()->version().major == 4 &&
++                 mysql()->mysql()->version().minor >= 1))
++            {
++              default_table = explain_query->row(2);
++            }
++            else
++              default_table = explain_query->row(0);
++
+             if (!default_table.isEmpty())
+             {
+               finished_evt->read_only = default_database.isEmpty() || 
