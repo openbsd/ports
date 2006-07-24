@@ -1,7 +1,7 @@
-$OpenBSD: patch-aclocal_m4,v 1.2 2004/01/16 14:26:27 fgsch Exp $
---- aclocal.m4.orig	2003-03-19 19:11:36.000000000 -0300
-+++ aclocal.m4	2004-01-15 23:51:42.000000000 -0300
-@@ -494,11 +494,20 @@ AC_DEFUN(MUTT_AM_PATH_GSSAPI,
+$OpenBSD: patch-m4_gssapi_m4,v 1.1 2006/07/24 09:44:20 bernd Exp $
+--- m4/gssapi.m4.orig	Mon Jul 17 10:56:48 2006
++++ m4/gssapi.m4	Mon Jul 17 10:58:14 2006
+@@ -49,11 +49,20 @@ AC_DEFUN(MUTT_AM_PATH_GSSAPI,
      dnl Heimdal kerberos V support
      if test "$GSSAPI_IMPL" = "none"
      then
@@ -10,7 +10,7 @@ $OpenBSD: patch-aclocal_m4,v 1.2 2004/01/16 14:26:27 fgsch Exp $
 -          GSSAPI_LIBS="$GSSAPI_LDFLAGS -lgssapi -lkrb5 -ldes -lasn1 -lroken"
 -          GSSAPI_LIBS="$GSSAPI_LIBS -lcrypt -lcom_err"
 -          ],, -lkrb5 -ldes -lasn1 -lroken -lcrypt -lcom_err)
-+      if test `uname -s` = "OpenBSD" 
++      if test `uname -s` = "OpenBSD"
 +      then
 +          AC_CHECK_LIB(gssapi, gss_init_sec_context, [
 +            GSSAPI_IMPL="Heimdal"
