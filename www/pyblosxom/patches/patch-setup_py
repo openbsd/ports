@@ -1,0 +1,29 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2006/07/26 10:25:56 djm Exp $
+--- setup.py.orig	Thu Dec 22 17:16:06 2005
++++ setup.py	Tue Apr 25 09:33:56 2006
+@@ -58,10 +58,12 @@ pydf = []
+ 
+ # first we put the flavour files in the right place with the rest
+ # of the PyBlosxom package
+-for mem in flavour_files:
+-    f = os.listdir(mem)
+-    f = [os.path.join(mem, m) for m in f if os.path.isfile(os.path.join(mem, m))]
+-    pydf.append( (os.path.join(get_python_lib(), mem), f) )
++#for mem in flavour_files:
++#    f = os.listdir(mem)
++#    f = [os.path.join(mem, m) for m in f if os.path.isfile(os.path.join(mem, m))]
++#    print f
++#    print (os.path.join(get_python_lib(), mem), f)
++#    pydf.append( (os.path.join(get_python_lib(), mem), f) )
+ 
+ 
+ # now we deal with the web scripts.
+@@ -72,7 +74,7 @@ elif platform == "nix":
+ 
+     # we want to move the web script files as well, so we sneak them
+     # in here.
+-    pydf.append( [os.path.join('share', PVER, 'web'),
++    pydf.append( [os.path.join('share', 'examples', 'pyblosxom'),
+                   [os.path.normpath("web/pyblosxom.cgi"), 
+                    os.path.normpath("web/pyblosxom.tac"), 
+                    os.path.normpath("web/wsgi_app.py"), 
