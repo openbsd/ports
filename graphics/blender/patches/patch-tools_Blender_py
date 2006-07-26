@@ -1,0 +1,38 @@
+$OpenBSD: patch-tools_Blender_py,v 1.1 2006/07/26 06:45:27 steven Exp $
+--- tools/Blender.py.orig	Fri Jul 14 06:13:55 2006
++++ tools/Blender.py	Sat Jul 22 16:38:41 2006
+@@ -99,7 +99,7 @@ def create_blender_liblist(lenv = None, 
+         curlib = libs[libtype]
+         for sk in sortlist:
+             v = curlib[sk]
+-            lst.append('#' + root_build_dir + 'lib/'+lenv['LIBPREFIX'] + v + lenv['LIBSUFFIX'])
++            lst.append(root_build_dir + 'lib/'+lenv['LIBPREFIX'] + v + lenv['LIBSUFFIX'])
+ 
+     return lst
+ 
+@@ -335,7 +335,7 @@ class BlenderEnvironment(SConsEnvironmen
+         
+         print bc.HEADER+'Configuring resource '+bc.ENDC+bc.OKGREEN+libname+bc.ENDC
+         lenv = self.Copy()
+-        res = lenv.RES('#'+root_build_dir+'lib/'+libname, source)
++        res = lenv.RES(root_build_dir+'lib/'+libname, source)
+       
+         SConsEnvironment.Default(self, res)
+         resources.append(res)
+@@ -350,6 +350,7 @@ class BlenderEnvironment(SConsEnvironmen
+             else:
+                 print bc.HEADER+'Configuring library '+bc.ENDC+bc.OKGREEN+libname + bc.ENDC
+             lenv = self.Copy()
++            lenv['CCFLAGS'] = Split(lenv['CCFLAGS'])
+             lenv.Append(CPPPATH=includes)
+             lenv.Append(CPPDEFINES=defines)
+             if lenv['WITH_BF_GAMEENGINE']:
+@@ -365,7 +366,7 @@ class BlenderEnvironment(SConsEnvironmen
+                 lenv.Append(CXXFLAGS = compileflags)
+             lenv.Append(CCFLAGS = Split(lenv['C_WARN']))
+             lenv.Append(CXXFLAGS = Split(lenv['CC_WARN']))
+-            lib = lenv.Library(target= '#'+root_build_dir+'lib/'+libname, source=sources)
++            lib = lenv.Library(target= root_build_dir+'lib/'+libname, source=sources)
+             SConsEnvironment.Default(self, lib) # we add to default target, because this way we get some kind of progress info during build
+         else:
+             print bc.WARNING+'Not building '+bc.ENDC+bc.OKGREEN+libname+bc.ENDC+' for '+bc.OKBLUE+'BF_QUICK'+bc.ENDC

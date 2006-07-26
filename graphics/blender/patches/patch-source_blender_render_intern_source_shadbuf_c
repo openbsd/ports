@@ -1,7 +1,7 @@
-$OpenBSD: patch-source_blender_render_intern_source_shadbuf_c,v 1.1 2005/11/24 22:22:57 steven Exp $
---- source/blender/render/intern/source/shadbuf.c.orig	Mon Nov 21 22:36:42 2005
-+++ source/blender/render/intern/source/shadbuf.c	Mon Nov 21 22:38:40 2005
-@@ -375,7 +375,7 @@ static float readshadowbuf(struct ShadBu
+$OpenBSD: patch-source_blender_render_intern_source_shadbuf_c,v 1.2 2006/07/26 06:45:27 steven Exp $
+--- source/blender/render/intern/source/shadbuf.c.orig	Sun May 14 12:13:58 2006
++++ source/blender/render/intern/source/shadbuf.c	Fri Jul 21 16:51:11 2006
+@@ -368,7 +368,7 @@ static float readshadowbuf(ShadBuf *shb,
  {
  	float temp;
  	int *rz, ofs;
@@ -10,7 +10,7 @@ $OpenBSD: patch-source_blender_render_intern_source_shadbuf_c,v 1.1 2005/11/24 2
  	char *ct, *cz;
  
  	/* simpleclip */
-@@ -401,7 +401,7 @@ static float readshadowbuf(struct ShadBu
+@@ -394,7 +394,7 @@ static float readshadowbuf(ShadBuf *shb,
  	else if(*ct==2) {
  		ct= ((char *)rz);
  		ct+= 4+2*16*(ys & 15)+2*(xs & 15);
@@ -19,7 +19,7 @@ $OpenBSD: patch-source_blender_render_intern_source_shadbuf_c,v 1.1 2005/11/24 2
  	
  		cz= (char *)&zsamp;
  		cz[BCOMP]= ct[0];
-@@ -410,7 +410,7 @@ static float readshadowbuf(struct ShadBu
+@@ -403,7 +403,7 @@ static float readshadowbuf(ShadBuf *shb,
  	else if(*ct==1) {
  		ct= ((char *)rz);
  		ct+= 4+16*(ys & 15)+(xs & 15);
@@ -28,7 +28,7 @@ $OpenBSD: patch-source_blender_render_intern_source_shadbuf_c,v 1.1 2005/11/24 2
  
  		cz= (char *)&zsamp;
  		cz[GCOMP]= ct[0];
-@@ -419,7 +419,7 @@ static float readshadowbuf(struct ShadBu
+@@ -412,7 +412,7 @@ static float readshadowbuf(ShadBuf *shb,
  	else {
  		/* got warning on this from DEC alpha (64 bits).... */
  		/* but it's working code! (ton) */
@@ -37,7 +37,7 @@ $OpenBSD: patch-source_blender_render_intern_source_shadbuf_c,v 1.1 2005/11/24 2
  	}
  
  	/* if(zsamp >= 0x7FFFFE00) return 1.0; */	/* no shaduw when sampling at eternal distance */
-@@ -540,7 +540,8 @@ static float readshadowbuf_halo(struct S
+@@ -540,7 +540,8 @@ static float readshadowbuf_halo(ShadBuf 
  {
  	float temp;
  	int *rz, ofs;
@@ -47,7 +47,7 @@ $OpenBSD: patch-source_blender_render_intern_source_shadbuf_c,v 1.1 2005/11/24 2
  	char *ct, *cz;
  
  	/* negative! The other side is more important */
-@@ -566,7 +567,7 @@ static float readshadowbuf_halo(struct S
+@@ -566,7 +567,7 @@ static float readshadowbuf_halo(ShadBuf 
  	else if(*ct==2) {
  		ct= ((char *)rz);
  		ct+= 4+2*16*(ys & 15)+2*(xs & 15);
@@ -56,7 +56,7 @@ $OpenBSD: patch-source_blender_render_intern_source_shadbuf_c,v 1.1 2005/11/24 2
  	
  		cz= (char *)&zsamp;
  		cz[BCOMP]= ct[0];
-@@ -575,7 +576,7 @@ static float readshadowbuf_halo(struct S
+@@ -575,7 +576,7 @@ static float readshadowbuf_halo(ShadBuf 
  	else if(*ct==1) {
  		ct= ((char *)rz);
  		ct+= 4+16*(ys & 15)+(xs & 15);
@@ -65,7 +65,7 @@ $OpenBSD: patch-source_blender_render_intern_source_shadbuf_c,v 1.1 2005/11/24 2
  
  		cz= (char *)&zsamp;
  		cz[GCOMP]= ct[0];
-@@ -584,7 +585,7 @@ static float readshadowbuf_halo(struct S
+@@ -584,7 +585,7 @@ static float readshadowbuf_halo(ShadBuf 
  	else {
  		/* same as before */
  		/* still working code! (ton) */

@@ -1,0 +1,12 @@
+$OpenBSD: patch-source_blender_blenkernel_intern_packedFile_c,v 1.1 2006/07/26 06:45:27 steven Exp $
+--- source/blender/blenkernel/intern/packedFile.c.orig	Sat Jul 22 19:39:12 2006
++++ source/blender/blenkernel/intern/packedFile.c	Sat Jul 22 19:39:25 2006
+@@ -306,7 +306,7 @@ int writePackedFile(char * filename, Pac
+ 	// make sure the path to the file exists...
+ 	BLI_make_existing_file(name);
+ 	
+-	file = open(name, O_BINARY + O_WRONLY + O_CREAT + O_TRUNC, 0666);
++	file = open(name, O_WRONLY|O_CREAT|O_TRUNC, 0666);
+ 	if (file >= 0) {
+ 		if (write(file, pf->data, pf->size) != pf->size) {
+ 			if(guimode) error("Error writing file: %s", name);

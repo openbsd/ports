@@ -1,6 +1,6 @@
-$OpenBSD: patch-source_blender_blenkernel_intern_subsurf_ccg_c,v 1.2 2006/06/06 12:36:49 steven Exp $
---- source/blender/blenkernel/intern/subsurf_ccg.c.orig	Fri Jan 13 07:56:32 2006
-+++ source/blender/blenkernel/intern/subsurf_ccg.c	Sun Jun  4 21:36:56 2006
+$OpenBSD: patch-source_blender_blenkernel_intern_subsurf_ccg_c,v 1.3 2006/07/26 06:45:27 steven Exp $
+--- source/blender/blenkernel/intern/subsurf_ccg.c.orig	Sat Mar 11 17:13:09 2006
++++ source/blender/blenkernel/intern/subsurf_ccg.c	Fri Jul 21 16:51:10 2006
 @@ -608,7 +608,7 @@ static DispListMesh *ss_to_displistmesh(
  				flags |= ME_SEAM;
  			}
@@ -25,11 +25,11 @@ $OpenBSD: patch-source_blender_blenkernel_intern_subsurf_ccg_c,v 1.2 2006/06/06 
  	int totface = dlm?dlm->totface:me->totface;
 -	int i, index;
 +	int index;
-+		long i;
++	long i;
  
  	ccgSubSurf_initFullSync(ss);
  
-@@ -1783,7 +1784,7 @@ void subsurf_calculate_limit_positions(M
+@@ -1793,7 +1794,7 @@ void subsurf_calculate_limit_positions(M
  	vi = ccgSubSurf_getVertIterator(ss);
  	for (; !ccgVertIterator_isStopped(vi); ccgVertIterator_next(vi)) {
  		CCGVert *v = ccgVertIterator_getCurrent(vi);

@@ -1,6 +1,6 @@
-$OpenBSD: patch-source_blender_blenlib_intern_storage_c,v 1.1 2005/11/24 22:22:57 steven Exp $
---- source/blender/blenlib/intern/storage.c.orig	Mon Oct 17 07:33:52 2005
-+++ source/blender/blenlib/intern/storage.c	Mon Oct 17 08:31:26 2005
+$OpenBSD: patch-source_blender_blenlib_intern_storage_c,v 1.2 2006/07/26 06:45:27 steven Exp $
+--- source/blender/blenlib/intern/storage.c.orig	Sun Mar 19 14:28:01 2006
++++ source/blender/blenlib/intern/storage.c	Fri Jul 21 16:51:10 2006
 @@ -50,7 +50,7 @@
  #include <time.h>
  #include <sys/stat.h>
@@ -19,7 +19,7 @@ $OpenBSD: patch-source_blender_blenlib_intern_storage_c,v 1.1 2005/11/24 22:22:5
  #include <malloc.h>
  #endif
  
-@@ -194,7 +194,7 @@ double BLI_diskfree(char *dir)
+@@ -196,7 +196,7 @@ double BLI_diskfree(char *dir)
  #ifdef __BeOS
  	return -1;
  #endif
