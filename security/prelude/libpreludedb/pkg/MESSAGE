@@ -1,2 +1,10 @@
 To start with prelude, you have to install at least one DBMS module for
 libpreludedb, e.g. prelude-libpreludedb-pgsql .
+
+Then, install the database. Here is the instructions for PotsgreSQL:
+
+# su - _postgresql
+$ createuser --pwprompt prelude (default password "prelude" / n,n,n)
+$ createdb -O prelude prelude
+$ cd ${PREFIX}/share/libpreludedb/classic/
+$ psql -U prelude -W prelude < pgsql.sql

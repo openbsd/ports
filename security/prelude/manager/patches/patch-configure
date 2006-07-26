@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2006/06/26 18:04:25 aanriot Exp $
---- configure.orig	Thu Jun  1 18:22:30 2006
-+++ configure	Thu Jun  1 18:22:46 2006
-@@ -32569,7 +32569,7 @@ manager_failover_dir=$localstatedir/spoo
+$OpenBSD: patch-configure,v 1.2 2006/07/26 07:07:16 aanriot Exp $
+--- configure.orig	Wed Jun 14 10:47:28 2006
++++ configure	Tue Jul 25 19:07:32 2006
+@@ -32642,7 +32642,7 @@ manager_failover_dir=$localstatedir/spoo
  manager_scheduler_dir=$localstatedir/spool/prelude-manager/scheduler
  
  manager_data_dir=$datadir/prelude-manager

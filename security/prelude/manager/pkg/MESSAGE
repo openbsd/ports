@@ -3,13 +3,5 @@ e.g. "prelude-manager" by running:
 
 # prelude-adduser add prelude-manager --uid=564 --gid=564
 
-You have to create the "prelude" database (e.g. with postgresql):
-
-# su - _postgresql
-$ createuser --pwprompt prelude (default password "prelude" / n,n,n)
-$ createdb -O prelude prelude
-$ cd ${PREFIX}/share/libpreludedb/classic/
-$ psql -U prelude -W prelude < pgsql.sql
-
-Eventually, update ${SYSCONFDIR}/prelude-manager/prelude-manager.conf
-with your database settings.
+Then, update ${SYSCONFDIR}/prelude-manager/prelude-manager.conf with
+your database settings.

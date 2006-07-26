@@ -1,7 +1,8 @@
 To start with prelude-lml, you have to create a starting profile,
 e.g. "prelude-lml" by running on the manager side:
 
-# prelude-adduser registration-server prelude-manager --uid=564 --gid=564
+# prelude-adduser registration-server prelude-manager \
+	--uid=564 --gid=564
 
 and on the sensor side:
 
