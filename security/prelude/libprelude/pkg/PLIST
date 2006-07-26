@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/26 18:04:26 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/07/26 07:12:11 aanriot Exp $
 @newgroup _prelude:564
 @newuser _prelude:564:564:daemon:Prelude IDS:/var/empty:/sbin/nologin
 %%SHARED%%
@@ -52,8 +52,6 @@ include/libprelude/prelude.h
 include/libprelude/variable.h
 lib/libprelude.a
 lib/libprelude.la
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/prelude.py
 lib/python${MODPY_VERSION}/site-packages/prelude.pyc
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
@@ -88,7 +86,6 @@ share/doc/libprelude/libprelude-prelude-client.html
 share/doc/libprelude/libprelude-prelude-connection-pool.html
 share/doc/libprelude/libprelude-prelude-connection.html
 share/doc/libprelude/libprelude-prelude-error.html
-share/doc/libprelude/libprelude-prelude-extract.html
 share/doc/libprelude/libprelude-prelude-failover.html
 share/doc/libprelude/libprelude-prelude-hash.html
 share/doc/libprelude/libprelude-prelude-ident.html
