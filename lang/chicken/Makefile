@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/06/04 10:36:03 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2006/07/26 18:35:06 steven Exp $
 
-COMMENT=	"scheme to C compiler, scheme interpreter"
+COMMENT=	"practical and portable Scheme system"
 
-DISTNAME=	chicken-2.3
+DISTNAME=	chicken-2.41
 SHARED_LIBS=	chicken		0.0 \
 		uchicken	0.0
 CATEGORIES=	lang
@@ -26,6 +26,15 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+
+# gcc 3.3.5 internal compiler error
+.if ${MACHINE_ARCH} == "sparc64"
+CFLAGS+=	-O0
+.endif
+
+# benchmark runs into forever loop at low nursery sizes on some architectures
+# fix this value at 128k instead of using the benchmark
+MAKE_FLAGS=	NURSERY=131072
 
 DOCDIR=		${PREFIX}/share/doc/chicken
 DOCS=		chicken.html ChangeLog README LICENSE

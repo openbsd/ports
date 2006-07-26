@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/04 10:36:03 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/07/26 18:35:06 steven Exp $
 %%SHARED%%
 bin/chicken
 bin/chicken-profile
@@ -21,8 +21,22 @@ lib/libuchicken.la
 share/chicken/
 share/chicken/banner.scm
 share/chicken/chicken-ffi-macros.scm
-share/chicken/chicken-match-macros.scm
 share/chicken/chicken-more-macros.scm
+share/chicken/eval.exports
+share/chicken/extras.exports
+share/chicken/library.exports
+share/chicken/lolevel.exports
+share/chicken/posix.exports
+share/chicken/regex.exports
+share/chicken/scheduler.exports
+share/chicken/srfi-1.exports
+share/chicken/srfi-13.exports
+share/chicken/srfi-14.exports
+share/chicken/srfi-18.exports
+share/chicken/srfi-4.exports
+share/chicken/tcp.exports
+share/chicken/tinyclos.exports
+share/chicken/utils.exports
 share/doc/chicken/
 share/doc/chicken/ChangeLog
 share/doc/chicken/LICENSE
