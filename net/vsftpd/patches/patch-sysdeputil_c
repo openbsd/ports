@@ -1,9 +1,9 @@
-$OpenBSD: patch-sysdeputil_c,v 1.2 2006/01/28 21:57:51 aanriot Exp $
---- sysdeputil.c.orig	Tue May 24 00:34:23 2005
-+++ sysdeputil.c	Thu Jan 26 06:39:07 2006
-@@ -74,6 +74,13 @@
-   #endif
- #endif
+$OpenBSD: patch-sysdeputil_c,v 1.3 2006/07/27 11:48:41 aanriot Exp $
+--- sysdeputil.c.orig	Mon Jul  3 00:14:10 2006
++++ sysdeputil.c	Wed Jul 26 10:00:48 2006
+@@ -19,6 +19,13 @@
+ /* For Linux, this adds nothing :-) */
+ #include "port/porting_junk.h"
  
 +#if defined(__OpenBSD__)
 +  #undef VSF_BUILD_PAM
@@ -13,20 +13,5 @@ $OpenBSD: patch-sysdeputil_c,v 1.2 2006/01/28 21:57:51 aanriot Exp $
 +#endif
 +
  #if (defined(__FreeBSD__) && __FreeBSD__ >= 3)
-   #define VSF_SYSDEP_HAVE_FREEBSD_SENDFILE
-   #define VSF_SYSDEP_HAVE_SETPROCTITLE
-@@ -623,13 +630,13 @@ static int do_sendfile(const int out_fd,
-   static char* p_recvbuf;
-   unsigned int total_written = 0;
-   int retval;
--  enum EVSFSysUtilError error;
-   (void) start_pos;
- #if defined(VSF_SYSDEP_HAVE_LINUX_SENDFILE) || \
-     defined(VSF_SYSDEP_HAVE_FREEBSD_SENDFILE) || \
-     defined(VSF_SYSDEP_HAVE_HPUX_SENDFILE) || \
-     defined(VSF_SYSDEP_HAVE_AIX_SENDFILE) || \
-     defined(VSF_SYSDEP_HAVE_SOLARIS_SENDFILE)
-+  enum EVSFSysUtilError error;
-   if (tunable_use_sendfile)
-   {
-     static int s_sendfile_checked;
+   #define _FILE_OFFSET_BITS 64
+   #define _LARGEFILE_SOURCE 1

@@ -1,7 +1,7 @@
-$OpenBSD: patch-vsftpd_conf,v 1.5 2005/07/03 18:06:37 aanriot Exp $
---- vsftpd.conf.orig	Tue Jan 21 02:15:34 2003
-+++ vsftpd.conf	Sun Jul  3 11:36:17 2005
-@@ -8,14 +8,23 @@
+$OpenBSD: patch-vsftpd_conf,v 1.6 2006/07/27 11:48:41 aanriot Exp $
+--- vsftpd.conf.orig	Sat May 21 00:52:54 2005
++++ vsftpd.conf	Thu Jul 27 12:34:09 2006
+@@ -8,11 +8,20 @@
  # Please read the vsftpd.conf.5 manual page to get a full idea of vsftpd's
  # capabilities.
  #
@@ -23,28 +23,7 @@ $OpenBSD: patch-vsftpd_conf,v 1.5 2005/07/03 18:06:37 aanriot Exp $
 +local_enable=YES
  #
  # Uncomment this to enable any form of FTP write command.
--#write_enable=YES
-+write_enable=YES
- #
- # Default umask for local users is 077. You may wish to change this to 022,
- # if your users expect that (022 is used by most other ftpd's)
-@@ -32,13 +41,13 @@ anonymous_enable=YES
- #
- # Activate directory messages - messages given to remote users when they
- # go into a certain directory.
--dirmessage_enable=YES
-+#dirmessage_enable=YES
- #
- # Activate logging of uploads/downloads.
--xferlog_enable=YES
-+#xferlog_enable=YES
- #
- # Make sure PORT transfer connections originate from port 20 (ftp-data).
--connect_from_port_20=YES
-+#connect_from_port_20=YES
- #
- # If you want, you can arrange for uploaded anonymous files to be owned by
- # a different user. Note! Using "root" for uploaded files is not
+ #write_enable=YES
 @@ -61,7 +70,7 @@ connect_from_port_20=YES
  #
  # It is recommended that you define on your system a unique user which the
@@ -54,16 +33,7 @@ $OpenBSD: patch-vsftpd_conf,v 1.5 2005/07/03 18:06:37 aanriot Exp $
  #
  # Enable this and the server will recognise asynchronous ABOR requests. Not
  # recommended for security (the code is non-trivial). Not enabling it,
-@@ -79,7 +88,7 @@ connect_from_port_20=YES
- # without the DoS risk of SIZE and ASCII downloads. ASCII mangling should be
- # on the client anyway..
- #ascii_upload_enable=YES
--#ascii_download_enable=YES
-+ascii_download_enable=YES
- #
- # You may fully customise the login banner string:
- #ftpd_banner=Welcome to blah FTP service.
-@@ -93,13 +102,41 @@ connect_from_port_20=YES
+@@ -91,9 +100,9 @@ connect_from_port_20=YES
  # You may specify an explicit list of local users to chroot() to their home
  # directory. If chroot_local_user is YES, then this list becomes a list of
  # users to NOT chroot().
@@ -75,10 +45,10 @@ $OpenBSD: patch-vsftpd_conf,v 1.5 2005/07/03 18:06:37 aanriot Exp $
  #
  # You may activate the "-R" option to the builtin ls. This is disabled by
  # default to avoid remote users being able to cause excessive I/O on large
- # sites. However, some broken FTP clients such as "ncftp" and "mirror" assume
+@@ -101,3 +110,32 @@ connect_from_port_20=YES
  # the presence of the "-R" option, so there is a strong case for enabling it.
  #ls_recurse_enable=YES
--
+ 
 +#
 +# If enabled, vsftpd will load a list of usernames from the filename
 +# given by userlist_file. If a user tries to log in using a name in this
