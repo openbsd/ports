@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/03/21 21:02:52 pedro Exp $
+# $OpenBSD: Makefile,v 1.2 2006/07/27 21:13:56 pedro Exp $
 SHARED_ONLY=	Yes
 
+BROKEN=		"Pending update for Lua 5.1"
 COMMENT=	"multiple states library for the lua language"
 DISTNAME=	rings-1.0
 PKGNAME=	luarings-1.0
@@ -17,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_REGRESS=	Yes
-RUN_DEPENDS=	::lang/lua ::devel/luacompat
+RUN_DEPENDS=	::lang/lua
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 post-extract:

@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2005/08/02 17:31:30 pedro Exp $
+# $OpenBSD: Makefile,v 1.4 2006/07/27 21:13:56 pedro Exp $
 
+BROKEN=		"Pending update for Lua 5.1"
 COMMENT=	"coroutine oriented portable asynchronous services for lua"
 DISTNAME=	copas-1.0
 PKGNAME=	luacopas-1.0p0
@@ -18,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
-RUN_DEPENDS=	::lang/lua ::devel/luacompat ::net/luasocket
+RUN_DEPENDS=	::lang/lua ::net/luasocket
 
 post-extract:
 	@sed -e "s:@copaspath@:${PREFIX}/lua/luacopas/?.lua:g" \

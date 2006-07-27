@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2006/02/08 04:54:50 david Exp $
+# $OpenBSD: Makefile,v 1.3 2006/07/27 21:13:56 pedro Exp $
 SHARED_ONLY=	Yes
 
+BROKEN=		"Pending update for Lua 5.1"
 COMMENT=	"cgi tool for the lua language"
 DISTNAME=	cgilua-5.0b2
 CATEGORIES=	www
@@ -20,7 +21,7 @@ PREFIX=		/var/www
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 ALL_TARGET=	cgi
-BUILD_DEPENDS=	::lang/lua ::devel/luafs ::devel/luacompat
+BUILD_DEPENDS=	::lang/lua ::devel/luafs
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CGILUA_FILES=	config.lua cookies.lua post.lua prep.lua readuntil.lua\

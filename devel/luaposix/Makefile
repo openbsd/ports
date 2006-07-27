@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/07/13 12:35:55 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2006/07/27 21:13:56 pedro Exp $
 
+BROKEN=		"Pending update for Lua 5.1"
 COMMENT=	"posix library for the lua language"
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
