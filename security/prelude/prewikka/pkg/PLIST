@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/26 18:04:25 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/07/27 17:06:25 aanriot Exp $
 bin/prewikka-httpd
 lib/python${MODPY_VERSION}/site-packages/prewikka/
 lib/python${MODPY_VERSION}/site-packages/prewikka/Auth.py
@@ -39,6 +39,11 @@ lib/python${MODPY_VERSION}/site-packages/prewikka/modules/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/
 lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/__init__.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/cgi/
+lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/cgi/__init__.py
+lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/cgi/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/cgi/cgi.py
+lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/cgi/cgi.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/loginpassword/
 lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/loginpassword/__init__.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/loginpassword/__init__.pyc
