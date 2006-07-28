@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.35 2005/12/27 19:41:21 alek Exp $
+# $OpenBSD: Makefile.inc,v 1.36 2006/07/28 22:36:41 steven Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -205,7 +205,7 @@ FAKE_FLAGS+=	LDLIBRARY=libpython${VERSION}.so.${LIBpython${VERSION}_VERSION} \
 		LD_LIBRARY_PATH=${WRKSRC} RANLIB=:
 .endif
 
-ALL_TARGET=	all ${WRKSRC}/Lib/plat-openbsd3
+ALL_TARGET=	all ${WRKSRC}/Lib/plat-openbsd4
 
 post-configure:
 	@sed -e 's,@NOSHARED@,${NOSHARED},g' \

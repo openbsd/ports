@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/18 10:11:57 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/07/28 22:36:41 steven Exp $
 @option no-default-conflict
 @conflict python->=2.3,<2.4
 %%tkinter%%
@@ -1159,11 +1159,11 @@ lib/python2.3/pipes.pyo
 lib/python2.3/pkgutil.py
 lib/python2.3/pkgutil.pyc
 lib/python2.3/pkgutil.pyo
-lib/python2.3/plat-openbsd3/
-lib/python2.3/plat-openbsd3/IN.py
-lib/python2.3/plat-openbsd3/IN.pyc
-lib/python2.3/plat-openbsd3/IN.pyo
-lib/python2.3/plat-openbsd3/regen
+lib/python2.3/plat-openbsd4/
+lib/python2.3/plat-openbsd4/IN.py
+lib/python2.3/plat-openbsd4/IN.pyc
+lib/python2.3/plat-openbsd4/IN.pyo
+lib/python2.3/plat-openbsd4/regen
 lib/python2.3/platform.py
 lib/python2.3/platform.pyc
 lib/python2.3/platform.pyo
