@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2005/11/17 02:28:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2006/07/28 20:17:52 sturm Exp $
 
 COMMENT=	"AFP file and print services for AppleTalk/IP networks"
 
 DISTNAME=	netatalk-1.6.3
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	net
 HOMEPAGE=	http://netatalk.sourceforge.net/
 
