@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2006/03/12 12:23:13 aanriot Exp $
+# $OpenBSD: Makefile,v 1.16 2006/07/28 12:38:37 bernd Exp $
 
 COMMENT=	"content management system built on top of Zope"
 
 DISTNAME=	Plone-2.1.1
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.plone.org/
@@ -20,7 +20,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=plone/}
 
 MODULES=	www/zope
 
-RUN_DEPENDS=	::www/zope-cmf
+RUN_DEPENDS=	::www/zope-cmf \
+		::lang/python/${MODZOPE_PYTHON_VERSION},-expat
 
 PLONEITEMS=	CMFPlone CMFQuickInstallerTool GroupUserFolder \
 		PlacelessTranslationService PloneLanguageTool  \
