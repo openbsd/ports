@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2006/01/22 23:21:46 sturm Exp $
+# $OpenBSD: Makefile,v 1.31 2006/07/28 06:29:33 steven Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
 BROKEN=			"hangs indefinitely until machine panics/hangs"
@@ -10,7 +10,7 @@ COMMENT-leim=		"Library of Emacs Input Methods"
 
 VERSION=		21.4
 DISTNAME=		emacs-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 FULLPKGNAME-el=		emacs-el-${VERSION}
 FULLPKGNAME-leim=	emacs-leim-${VERSION}
 
