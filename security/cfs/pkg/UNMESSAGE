@@ -1,1 +1,1 @@
-Do not forget to revert changes made to /etc/exports and /etc/rc.conf.
+Do not forget to revert changes made to /etc/exports and /etc/rc.conf.local.

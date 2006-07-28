@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2005/04/07 20:23:44 sturm Exp $
+# $OpenBSD: Makefile,v 1.27 2006/07/28 20:15:39 sturm Exp $
 
 NOT_FOR_ARCHS=	${LP64_ARCHS}
 
 COMMENT=	"cryptographic file system (user-space NFS server)"
 
 DISTNAME=	cfs-1.4.1
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	security
 
 HOMEPAGE=	http://www.crypto.com/software/

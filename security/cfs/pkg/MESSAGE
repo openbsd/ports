@@ -1,7 +1,20 @@
-CFS is started automatically in /etc/rc.local. In order for it to work
-properly, you have to do these steps as root:
+To start CFS automatically at boot time, add these lines to /etc/rc.local:
+
+if [ -x ${PREFIX}/sbin/cfsd ]; then
+	if pgrep mountd > /dev/null; then
+		echo -n ' cfsd';	${PREFIX}/sbin/cfsd >/dev/null 2>&1
+		mount -o port=3049,nfsv2,intr,sync localhost:/null /crypt
+	else
+		echo -n ' cfsd (failed, no mountd running)'
+	fi
+fi
+
+Then do these steps as root:
 
    0) add this line to /etc/exports
-      /null localhost
-   1) set "nfs_server=YES" in /etc/rc.conf
-   2) reboot or start mountd and cfsd by hand and mount /crypt
+
+/null localhost
+
+   1) set "nfs_server=YES" and "portmap=YES" in /etc/rc.conf.local
+   2) reboot or start all necessary daemons by hand and mount /crypt
+
