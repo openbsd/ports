@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_util_sys_defs_h,v 1.1 2006/07/29 01:31:15 brad Exp $
+--- src/util/sys_defs.h.orig	Fri Jul 28 21:04:41 2006
++++ src/util/sys_defs.h	Fri Jul 28 21:05:05 2006
+@@ -26,7 +26,7 @@
+ #if defined(FREEBSD2) || defined(FREEBSD3) || defined(FREEBSD4) \
+     || defined(FREEBSD5) || defined(FREEBSD6) \
+     || defined(BSDI2) || defined(BSDI3) || defined(BSDI4) \
+-    || defined(OPENBSD2) || defined(OPENBSD3) \
++    || defined(OPENBSD2) || defined(OPENBSD3) || defined(OPENBSD4) \
+     || defined(NETBSD1) || defined(NETBSD2) || defined(NETBSD3) \
+     || defined(EKKOBSD1)
+ #define SUPPORTED
