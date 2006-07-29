@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2006/07/29 12:58:53 aanriot Exp $
+--- Makefile.in.orig	Sat Jul 29 14:13:27 2006
++++ Makefile.in	Sat Jul 29 14:14:49 2006
+@@ -211,7 +211,7 @@ gtkdocdata_DATA = \
+ 	up.png			\
+ 	style.css
+ 
+-pkgconfigdir = $(datadir)/pkgconfig
++pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = gtk-doc.pc
+ aclocaldir = $(datadir)/aclocal
+ aclocal_DATA = gtk-doc.m4

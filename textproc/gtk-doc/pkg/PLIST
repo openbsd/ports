@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/07/24 12:45:01 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/07/29 12:58:53 aanriot Exp $
 bin/gtkdoc-fixxref
 bin/gtkdoc-mkdb
 bin/gtkdoc-mkhtml
@@ -8,13 +8,12 @@ bin/gtkdoc-scan
 bin/gtkdoc-scangobj
 bin/gtkdoc-scanobj
 bin/gtkdocize
-lib/pkgconfig/
 lib/pkgconfig/gtk-doc.pc
-share/aclocal/
 share/aclocal/gtk-doc.m4
 share/gtk-doc/
 share/gtk-doc/data/
 share/gtk-doc/data/devhelp.xsl
+share/gtk-doc/data/devhelp2.xsl
 share/gtk-doc/data/gtk-doc.dcl
 share/gtk-doc/data/gtk-doc.dsl
 share/gtk-doc/data/gtk-doc.make
@@ -26,6 +25,5 @@ share/gtk-doc/data/right.png
 share/gtk-doc/data/style.css
 share/gtk-doc/data/up.png
 share/gtk-doc/data/version-greater-or-equal.xsl
-share/sgml/
 share/sgml/gtk-doc/
 share/sgml/gtk-doc/gtk-doc.cat
