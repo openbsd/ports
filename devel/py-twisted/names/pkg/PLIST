@@ -1,0 +1,45 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/29 14:37:46 alek Exp $
+lib/python${MODPY_VERSION}/site-packages/twisted/names/
+lib/python${MODPY_VERSION}/site-packages/twisted/names/__init__.py
+lib/python${MODPY_VERSION}/site-packages/twisted/names/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/names/_version.py
+lib/python${MODPY_VERSION}/site-packages/twisted/names/_version.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/names/authority.py
+lib/python${MODPY_VERSION}/site-packages/twisted/names/authority.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/names/cache.py
+lib/python${MODPY_VERSION}/site-packages/twisted/names/cache.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/names/client.py
+lib/python${MODPY_VERSION}/site-packages/twisted/names/client.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/names/common.py
+lib/python${MODPY_VERSION}/site-packages/twisted/names/common.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/names/dns.py
+lib/python${MODPY_VERSION}/site-packages/twisted/names/dns.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/names/hosts.py
+lib/python${MODPY_VERSION}/site-packages/twisted/names/hosts.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/names/resolve.py
+lib/python${MODPY_VERSION}/site-packages/twisted/names/resolve.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/names/root.py
+lib/python${MODPY_VERSION}/site-packages/twisted/names/root.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/names/secondary.py
+lib/python${MODPY_VERSION}/site-packages/twisted/names/secondary.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/names/server.py
+lib/python${MODPY_VERSION}/site-packages/twisted/names/server.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/names/srvconnect.py
+lib/python${MODPY_VERSION}/site-packages/twisted/names/srvconnect.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/names/tap.py
+lib/python${MODPY_VERSION}/site-packages/twisted/names/tap.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/names/test/
+lib/python${MODPY_VERSION}/site-packages/twisted/names/test/__init__.py
+lib/python${MODPY_VERSION}/site-packages/twisted/names/test/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/names/test/test_cache.py
+lib/python${MODPY_VERSION}/site-packages/twisted/names/test/test_cache.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/names/test/test_dns.py
+lib/python${MODPY_VERSION}/site-packages/twisted/names/test/test_dns.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/names/test/test_names.py
+lib/python${MODPY_VERSION}/site-packages/twisted/names/test/test_names.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/names/test/test_rootresolve.py
+lib/python${MODPY_VERSION}/site-packages/twisted/names/test/test_rootresolve.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/plugins/twisted_names.py
+lib/python${MODPY_VERSION}/site-packages/twisted/plugins/twisted_names.pyc
+@exec %D/sbin/twisted-regen-dropin.cache
+@unexec %D/sbin/twisted-regen-dropin.cache

@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/29 14:37:46 alek Exp $
+lib/python${MODPY_VERSION}/site-packages/twisted/news/
+lib/python${MODPY_VERSION}/site-packages/twisted/news/__init__.py
+lib/python${MODPY_VERSION}/site-packages/twisted/news/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/news/_version.py
+lib/python${MODPY_VERSION}/site-packages/twisted/news/_version.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/news/database.py
+lib/python${MODPY_VERSION}/site-packages/twisted/news/database.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/news/news.py
+lib/python${MODPY_VERSION}/site-packages/twisted/news/news.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/news/nntp.py
+lib/python${MODPY_VERSION}/site-packages/twisted/news/nntp.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/news/tap.py
+lib/python${MODPY_VERSION}/site-packages/twisted/news/tap.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/news/test/
+lib/python${MODPY_VERSION}/site-packages/twisted/news/test/__init__.py
+lib/python${MODPY_VERSION}/site-packages/twisted/news/test/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/news/test/test_news.py
+lib/python${MODPY_VERSION}/site-packages/twisted/news/test/test_news.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/news/test/test_nntp.py
+lib/python${MODPY_VERSION}/site-packages/twisted/news/test/test_nntp.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/plugins/twisted_news.py
+lib/python${MODPY_VERSION}/site-packages/twisted/plugins/twisted_news.pyc
+@exec %D/sbin/twisted-regen-dropin.cache
+@unexec %D/sbin/twisted-regen-dropin.cache

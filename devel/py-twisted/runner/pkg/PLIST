@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/29 14:37:47 alek Exp $
+%%SHARED%%
+lib/python${MODPY_VERSION}/site-packages/twisted/runner/
+lib/python${MODPY_VERSION}/site-packages/twisted/runner/__init__.py
+lib/python${MODPY_VERSION}/site-packages/twisted/runner/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/runner/_version.py
+lib/python${MODPY_VERSION}/site-packages/twisted/runner/_version.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/runner/inetd.py
+lib/python${MODPY_VERSION}/site-packages/twisted/runner/inetd.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/runner/inetdconf.py
+lib/python${MODPY_VERSION}/site-packages/twisted/runner/inetdconf.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/runner/inetdtap.py
+lib/python${MODPY_VERSION}/site-packages/twisted/runner/inetdtap.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/runner/portmap.c
+lib/python${MODPY_VERSION}/site-packages/twisted/runner/procmon.py
+lib/python${MODPY_VERSION}/site-packages/twisted/runner/procmon.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/runner/procutils.py
+lib/python${MODPY_VERSION}/site-packages/twisted/runner/procutils.pyc

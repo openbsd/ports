@@ -1,0 +1,4 @@
+Conch is an SSHv2 implementation written in Python. SSH is a protocol
+designed to allow remote access to shells and commands, but it is
+generic enough to allow everything from TCP forwarding to generic
+filesystem access.
