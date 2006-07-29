@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2006/07/18 20:27:13 alek Exp $
+@comment $OpenBSD: PLIST,v 1.20 2006/07/29 00:24:46 brad Exp $
 @newgroup _dovecot:518
 @newuser _dovecot:518:_dovecot:daemon:Dovecot Account:/nonexistent:/sbin/nologin
 %%SHARED%%
@@ -51,7 +51,7 @@ share/examples/dovecot/dovecot-example.conf
 share/examples/dovecot/dovecot-ldap.conf
 share/examples/dovecot/dovecot-openssl.cnf
 @sample /etc/ssl/dovecot-openssl.cnf
-@mode 700
+@mode 755
 @sample /var/dovecot/
 @mode 750
 @group _dovecot
