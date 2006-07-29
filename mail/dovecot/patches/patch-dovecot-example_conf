@@ -1,6 +1,6 @@
-$OpenBSD: patch-dovecot-example_conf,v 1.20 2006/07/16 02:43:08 brad Exp $
+$OpenBSD: patch-dovecot-example_conf,v 1.21 2006/07/29 00:27:35 brad Exp $
 --- dovecot-example.conf.orig	Sat Jul  1 16:07:32 2006
-+++ dovecot-example.conf	Wed Jul  5 08:41:43 2006
++++ dovecot-example.conf	Thu Jul 27 23:50:39 2006
 @@ -7,13 +7,12 @@
  # value inside quotes, eg.: key = "# char and trailing whitespace  "
  
@@ -64,6 +64,15 @@ $OpenBSD: patch-dovecot-example_conf,v 1.20 2006/07/16 02:43:08 brad Exp $
  
  # Locking method for index files. Alternatives are fcntl, flock and dotlock.
  # Dotlocking uses some tricks which may create more disk I/O than other locking
+@@ -412,7 +411,7 @@
+ # locking methods as well. Some operating systems don't allow using some of
+ # them simultaneously.
+ #mbox_read_locks = fcntl
+-#mbox_write_locks = dotlock fcntl
++mbox_write_locks = fcntl
+ 
+ # Maximum time in seconds to wait for lock (all of them) before aborting.
+ #mbox_lock_timeout = 300
 @@ -467,19 +466,19 @@
  
  protocol imap {
