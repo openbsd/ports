@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2006/07/29 15:12:17 alek Exp $
+lib/python${MODPY_VERSION}/site-packages/twisted/protocols/_c_urlarg.so
+lib/python${MODPY_VERSION}/site-packages/twisted/spread/cBanana.so

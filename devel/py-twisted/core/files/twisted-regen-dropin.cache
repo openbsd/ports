@@ -1,0 +1,6 @@
+#!/bin/sh
+# $OpenBSD: twisted-regen-dropin.cache,v 1.1 2006/07/29 15:12:17 alek Exp $
+
+/bin/rm -f %%MODPY_SITEPKG%%/twisted/plugins/dropin.cache
+%%MODPY_BIN%% -c "from twisted.plugin import IPlugin, getPlugins; \
+                  list(getPlugins(IPlugin))"
