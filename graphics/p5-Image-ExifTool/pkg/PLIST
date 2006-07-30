@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/07/06 07:27:10 steven Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/07/30 08:47:21 steven Exp $
 bin/exiftool
 ${P5SITE}/File/
 ${P5SITE}/File/RandomAccess.pm
@@ -21,6 +21,8 @@ ${P5SITE}/Image/ExifTool/DICOM.pm
 ${P5SITE}/Image/ExifTool/DNG.pm
 ${P5SITE}/Image/ExifTool/Exif.pm
 ${P5SITE}/Image/ExifTool/Fixup.pm
+${P5SITE}/Image/ExifTool/Flash.pm
+${P5SITE}/Image/ExifTool/FlashPix.pm
 ${P5SITE}/Image/ExifTool/FujiFilm.pm
 ${P5SITE}/Image/ExifTool/GIF.pm
 ${P5SITE}/Image/ExifTool/GPS.pm
@@ -37,6 +39,7 @@ ${P5SITE}/Image/ExifTool/Leaf.pm
 ${P5SITE}/Image/ExifTool/MIE.pm
 ${P5SITE}/Image/ExifTool/MIFF.pm
 ${P5SITE}/Image/ExifTool/MNG.pm
+${P5SITE}/Image/ExifTool/MPEG.pm
 ${P5SITE}/Image/ExifTool/MakerNotes.pm
 ${P5SITE}/Image/ExifTool/Minolta.pm
 ${P5SITE}/Image/ExifTool/MinoltaRaw.pm
@@ -55,6 +58,7 @@ ${P5SITE}/Image/ExifTool/PrintIM.pm
 ${P5SITE}/Image/ExifTool/QuickTime.pm
 ${P5SITE}/Image/ExifTool/README
 ${P5SITE}/Image/ExifTool/RIFF.pm
+${P5SITE}/Image/ExifTool/Real.pm
 ${P5SITE}/Image/ExifTool/Ricoh.pm
 ${P5SITE}/Image/ExifTool/Sanyo.pm
 ${P5SITE}/Image/ExifTool/Shift.pl
@@ -91,6 +95,8 @@ ${P5SITE}/Image/ExifTool/XMP.pm
 @man man/man3p/Image::ExifTool::DNG.3p
 @man man/man3p/Image::ExifTool::Exif.3p
 @man man/man3p/Image::ExifTool::Fixup.3p
+@man man/man3p/Image::ExifTool::Flash.3p
+@man man/man3p/Image::ExifTool::FlashPix.3p
 @man man/man3p/Image::ExifTool::FujiFilm.3p
 @man man/man3p/Image::ExifTool::GIF.3p
 @man man/man3p/Image::ExifTool::GPS.3p
@@ -107,6 +113,7 @@ ${P5SITE}/Image/ExifTool/XMP.pm
 @man man/man3p/Image::ExifTool::MIE.3p
 @man man/man3p/Image::ExifTool::MIFF.3p
 @man man/man3p/Image::ExifTool::MNG.3p
+@man man/man3p/Image::ExifTool::MPEG.3p
 @man man/man3p/Image::ExifTool::MakerNotes.3p
 @man man/man3p/Image::ExifTool::Minolta.3p
 @man man/man3p/Image::ExifTool::MinoltaRaw.3p
@@ -124,6 +131,7 @@ ${P5SITE}/Image/ExifTool/XMP.pm
 @man man/man3p/Image::ExifTool::PrintIM.3p
 @man man/man3p/Image::ExifTool::QuickTime.3p
 @man man/man3p/Image::ExifTool::RIFF.3p
+@man man/man3p/Image::ExifTool::Real.3p
 @man man/man3p/Image::ExifTool::Ricoh.3p
 @man man/man3p/Image::ExifTool::Sanyo.3p
 @man man/man3p/Image::ExifTool::Shift.3p
