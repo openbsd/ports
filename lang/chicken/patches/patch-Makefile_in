@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2006/07/26 18:35:06 steven Exp $
---- Makefile.in.orig	Wed Jul 19 13:37:37 2006
-+++ Makefile.in	Wed Jul 19 13:38:31 2006
+$OpenBSD: patch-Makefile_in,v 1.3 2006/07/30 12:25:19 steven Exp $
+--- Makefile.in.orig	Mon Jul 17 19:18:42 2006
++++ Makefile.in	Thu Jul 27 06:54:18 2006
 @@ -20,7 +20,7 @@ srcdir = @srcdir@
  top_srcdir = @top_srcdir@
  VPATH = @srcdir@
@@ -19,6 +19,22 @@ $OpenBSD: patch-Makefile_in,v 1.2 2006/07/26 18:35:06 steven Exp $
    -DC_INSTALL_HOME='"$(pkgdatadir)"' -DC_USE_C_DEFAULTS
  
  INCLUDES = $(BASE_CPPFLAGS) -DC_NO_PIC_NO_DLL
+@@ -678,13 +678,13 @@ libchicken_la-runtime.lo: runtime.c
+ 	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libchicken_la_CFLAGS) $(CFLAGS) -c -o libchicken_la-runtime.lo `test -f 'runtime.c' || echo '$(srcdir)/'`runtime.c
+ 
+ libchicken_la-library.o: library.c
+-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libchicken_la_CFLAGS) $(CFLAGS) -c -o libchicken_la-library.o `test -f 'library.c' || echo '$(srcdir)/'`library.c
++	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libchicken_la_CFLAGS) $(CFLAGS) $(EXTRA_CFLAGS) -c -o libchicken_la-library.o `test -f 'library.c' || echo '$(srcdir)/'`library.c
+ 
+ libchicken_la-library.obj: library.c
+ 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libchicken_la_CFLAGS) $(CFLAGS) -c -o libchicken_la-library.obj `if test -f 'library.c'; then $(CYGPATH_W) 'library.c'; else $(CYGPATH_W) '$(srcdir)/library.c'; fi`
+ 
+ libchicken_la-library.lo: library.c
+-	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libchicken_la_CFLAGS) $(CFLAGS) -c -o libchicken_la-library.lo `test -f 'library.c' || echo '$(srcdir)/'`library.c
++	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libchicken_la_CFLAGS) $(CFLAGS) $(EXTRA_CFLAGS) -c -o libchicken_la-library.lo `test -f 'library.c' || echo '$(srcdir)/'`library.c
+ 
+ libchicken_la-eval.o: eval.c
+ 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libchicken_la_CFLAGS) $(CFLAGS) -c -o libchicken_la-eval.o `test -f 'eval.c' || echo '$(srcdir)/'`eval.c
 @@ -1454,7 +1454,7 @@ info: info-am
  
  info-am: $(INFO_DEPS)
