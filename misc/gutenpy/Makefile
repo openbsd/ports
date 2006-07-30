@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/07/02 16:54:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2006/07/30 15:19:28 jasper Exp $
 
 COMMENT=		"text reader and catalog browser for Project Gutenberg"
 
-DISTNAME=		gutenpy-0.1.10
+DISTNAME=		gutenpy-0.3.0
 CATEGORIES=		misc x11
 
 HOMEPAGE=		http://gutenpy.sourceforge.net/
@@ -30,16 +30,15 @@ NO_REGRESS=		Yes
 LIB_DIR=	${PREFIX}/lib/python${MODPY_VERSION}/site-packages/GutenPy
 
 do-configure:
-		@perl -pi -e 's,!!PREFIX!!,${PREFIX},' ${WRKSRC}/gutenpy.py
-		@perl -pi -e 's,!!LIB_DIR!!,${LIB_DIR},' ${WRKSRC}/gutenpy.py
+		@perl -pi -e 's,!!PYTHON!!,${MODPY_BIN},' ${WRKSRC}/gutenpy.py
 
 do-install:
 		${INSTALL_SCRIPT} ${WRKSRC}/gutenpy.py ${PREFIX}/bin/gutenpy
 		${INSTALL_DATA_DIR} ${LIB_DIR}
 		${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gutenpy
-		${INSTALL_DATA_DIR} ${PREFIX}/share/gutenpy/icons
+		${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/gutenpy
 		${INSTALL_DATA} ${WRKSRC}/GutenPy/* ${LIB_DIR}
 		${INSTALL_DATA} ${WRKSRC}/docs/* ${PREFIX}/share/doc/gutenpy/
-		${INSTALL_DATA} ${WRKSRC}/icons/* ${PREFIX}/share/gutenpy/icons/
+		${INSTALL_DATA} ${WRKSRC}/icons/* ${PREFIX}/share/pixmaps/gutenpy/
 
 .include <bsd.port.mk>
