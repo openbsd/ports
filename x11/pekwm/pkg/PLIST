@@ -1,35 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:26:30 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/07/30 17:26:05 jasper Exp $
 bin/pekwm
-share/doc/pekwm/
-share/doc/pekwm/README
+share/examples/pekwm/
+@sample ${SYSCONFDIR}/pekwm/
+share/examples/pekwm/autoproperties
+@sample ${SYSCONFDIR}/pekwm/autoproperties
+share/examples/pekwm/config
+@sample ${SYSCONFDIR}/pekwm/config
+share/examples/pekwm/keys
+@sample ${SYSCONFDIR}/pekwm/keys
+share/examples/pekwm/menu
+@sample ${SYSCONFDIR}/pekwm/menu
+share/examples/pekwm/mouse
+@sample ${SYSCONFDIR}/pekwm/mouse
+share/examples/pekwm/start
+@sample ${SYSCONFDIR}/pekwm/start
+share/examples/pekwm/vars
+@sample ${SYSCONFDIR}/pekwm/vars
 share/pekwm/
-share/pekwm/autoprops
-share/pekwm/config
-share/pekwm/keys
-share/pekwm/menu
-share/pekwm/start
+share/pekwm/scripts/
+share/pekwm/scripts/pekwm_themeset.pl
+share/pekwm/scripts/pekwm_themeset.sh
+share/pekwm/scripts/pekwm_ws_menu.pl
 share/pekwm/themes/
 share/pekwm/themes/default/
-share/pekwm/themes/default/border.xpm
-share/pekwm/themes/default/bottom.xpm
-share/pekwm/themes/default/btn-close-fo.xpm
-share/pekwm/themes/default/btn-close-pr.xpm
-share/pekwm/themes/default/btn-close-un.xpm
-share/pekwm/themes/default/btn-max-fo.xpm
-share/pekwm/themes/default/btn-max-pr.xpm
-share/pekwm/themes/default/btn-max-un.xpm
-share/pekwm/themes/default/btn-min-fo.xpm
-share/pekwm/themes/default/btn-min-pr.xpm
-share/pekwm/themes/default/btn-min-un.xpm
-share/pekwm/themes/default/left.xpm
-share/pekwm/themes/default/right.xpm
-share/pekwm/themes/default/separator-fo.xpm
-share/pekwm/themes/default/separator-un.xpm
-share/pekwm/themes/default/side-un.xpm
-share/pekwm/themes/default/side.xpm
 share/pekwm/themes/default/theme
-share/pekwm/themes/default/theme.in
-share/pekwm/themes/default/top.xpm
-share/pekwm/themes/default/win-focus.xpm
-share/pekwm/themes/default/win-select.xpm
-share/pekwm/themes/default/win-unfocus.xpm
