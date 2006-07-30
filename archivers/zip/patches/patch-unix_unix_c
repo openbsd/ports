@@ -1,28 +1,21 @@
-$OpenBSD: patch-unix_unix_c,v 1.1 2004/12/04 15:36:36 robert Exp $
---- unix/unix.c.orig	Sat Dec  4 16:25:31 2004
-+++ unix/unix.c	Sat Dec  4 16:26:56 2004
-@@ -319,9 +319,9 @@
-    a file size of -1 */
- {
+$OpenBSD: patch-unix_unix_c,v 1.2 2006/07/30 17:33:40 naddy Exp $
+--- unix/unix.c.orig	Tue May 30 00:35:00 2006
++++ unix/unix.c	Sun Jul 30 19:09:14 2006
+@@ -338,7 +338,7 @@ ulg filetime(f, a, n, t)
    struct stat s;        /* results of stat() */
--  char name[FNMAX];
+   /* converted to pointer from using FNMAX - 11/8/04 EG */
+   char *name;
 -  int len = strlen(f);
--
-+  char *name;
 +  size_t len = strlen(f);
-+  
+ 
    if (f == label) {
      if (a != NULL)
-       *a = label_mode;
-@@ -331,6 +331,11 @@
-       t->atime = t->mtime = t->ctime = label_utim;
-     return label_time;
-   }
-+  
-+  name = malloc(len + 1);
-+  if (!name)
-+    return 0;
-+    
-   strcpy(name, f);
-   if (name[len - 1] == '/')
-     name[len - 1] = '\0';
+@@ -438,7 +438,7 @@ int set_extra_field(z, z_utim)
+ {
+   struct stat s;
+   char *name;
+-  int len = strlen(z->name);
++  size_t len = strlen(z->name);
+ 
+   /* For the full sized UT local field including the UID/GID fields, we
+    * have to stat the file again. */

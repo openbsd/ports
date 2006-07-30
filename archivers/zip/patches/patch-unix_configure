@@ -1,0 +1,43 @@
+$OpenBSD: patch-unix_configure,v 1.1 2006/07/30 17:33:40 naddy Exp $
+--- unix/configure.orig	Sun Jul 30 19:28:24 2006
++++ unix/configure	Sun Jul 30 19:28:40 2006
+@@ -15,39 +15,6 @@ CC=${1-cc}
+ CFLAGS=${2-"-I. -DUNIX"}
+ LFLAGS1=""
+ LN="ln -s"
+-echo "Check C compiler type (optimization option)"
+-cat > conftest.c << _EOF_
+-int main()
+-{
+-#ifndef __SUNPRO_C
+-   bad code
+-#endif
+-   return 0;
+-}
+-_EOF_
+-$CC $CFLAGS -c conftest.c > /dev/null 2>/dev/null
+-if test $? -eq 0; then
+-  echo '  Sun C (-xO3)'
+-  CFLAGS="${CFLAGS} -xO3"
+-else
+-  cat > conftest.c << _EOF_
+-int main()
+-{
+-#ifndef __DECC
+-   bad code
+-#endif
+-   return 0;
+-}
+-_EOF_
+-  $CC $CFLAGS -c conftest.c > /dev/null 2>/dev/null
+-  if test $? -eq 0; then
+-    echo '  DEC C (-O3)'
+-    CFLAGS="${CFLAGS} -O3"
+-  else
+-    echo '  Other (gcc?) (-O2)'
+-    CFLAGS="${CFLAGS} -O2"
+-  fi
+-fi
+ 
+ echo Check for the C preprocessor
+ # on SVR4, cc -E does not produce correct assembler files. Need /lib/cpp.

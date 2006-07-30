@@ -1,9 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/08/03 11:30:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2006/07/30 17:33:40 naddy Exp $
 bin/zip
 bin/zipcloak
 bin/zipnote
 bin/zipsplit
 @man man/man1/zip.1
-share/doc/zip/
-share/doc/zip/README
-share/doc/zip/WHERE

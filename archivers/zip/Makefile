@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.33 2004/12/04 15:45:41 robert Exp $
-# $FreeBSD: Makefile,v 1.11 1997/11/25 20:45:45 ache Exp $
+# $OpenBSD: Makefile,v 1.34 2006/07/30 17:33:40 naddy Exp $
 
 COMMENT=	"create/update ZIP files compatible with PKZip(tm)"
 
-DISTNAME=	zip23
-PKGNAME=	zip-2.3p0
+DISTNAME=	zip-2.32
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.uu.net/pub/archiving/zip/src/ \
-		ftp://ftp.icce.rug.nl/infozip/src/
+MASTER_SITES=	ftp://ftp.info-zip.org/pub/infozip/src/ \
+		${MASTER_SITE_SOURCEFORGE:=infozip/} \
+		http://mirror.switch.ch/ftp/mirror/infozip/src/		
 
-DISTFILES=	zip23.tar.gz zcrypt29.zip
+DISTFILES=	zip232.tar.gz zcrypt29.zip
 
 HOMEPAGE=	http://www.ctan.org/tex-archive/tools/zip/info-zip/Zip.html
 
@@ -20,23 +19,15 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -I. -DUNIX"
+MAKE_FLAGS=	CC="${CC}" CFLAGS_NOOPT="${CFLAGS} -I. -DUNIX"
 FAKE_FLAGS=	prefix="${WRKINST}${PREFIX}"
 
 MAKE_FILE=	unix/Makefile
 
 ALL_TARGET=	generic
 
-WRKDIST=	${WRKDIR}/${PKGNAME:S/p0//}
-
-DOCS=	README WHERE
-
 post-extract:
-	@mv -f ${WRKDIR}/{crypt.c,crypt.h} ${WRKSRC}
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/zip
-	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/zip
+	@mv -f ${WRKDIR}/crypt.[ch] ${WRKSRC}
 
 NO_REGRESS=	Yes
 

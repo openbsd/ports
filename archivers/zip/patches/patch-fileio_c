@@ -1,19 +1,19 @@
-$OpenBSD: patch-fileio_c,v 1.1 2004/02/06 08:29:24 kevlo Exp $
---- fileio.c.orig	2004-02-06 16:11:15.000000000 +0000
-+++ fileio.c	2004-02-06 16:21:58.000000000 +0000
-@@ -859,7 +859,15 @@ char *zip;              /* path name of 
+$OpenBSD: patch-fileio_c,v 1.2 2006/07/30 17:33:40 naddy Exp $
+--- fileio.c.orig	Thu Jun 16 05:31:52 2005
++++ fileio.c	Sun Jul 30 19:09:14 2006
+@@ -919,7 +919,15 @@ char *zip;              /* path name of 
    }
  #else
    strcat(t, "ziXXXXXX"); /* must use lowercase for Linux dos file system */
 -  return mktemp(t);
 +  {
-+    int fd = mkstemp(t);
-+    if ( fd == -1 ) {
-+      perror( "can't create temp file" );
-+      exit(1);
-+    }
-+    close(fd);
-+    return t;
++	int fd = mkstemp(t);
++	if (fd == -1) {
++		perror("can't create temp file");
++		exit(1);
++	}
++	close(fd);
++	return (t);
 +  }
  #endif /* NO_MKTEMP */
  #endif /* TANDEM */
