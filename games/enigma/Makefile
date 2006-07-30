@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2005/02/14 00:35:53 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2006/07/30 04:33:18 pedro Exp $
 
 COMMENT=	"Oxyd/Rock'n'Roll clone"
 
 DISTNAME=	enigma-0.81
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.nongnu.org/enigma/
@@ -16,10 +17,9 @@ WANTLIB=		SDL X11 Xext c m pthread stdc++ usbhid z
 
 MASTER_SITES=	http://savannah.nongnu.org/download/enigma/
 
-LIB_DEPENDS=	SDL_image.1::devel/sdl-image	\
-		SDL_mixer.2::devel/sdl-mixer	\
-		lua.5,lualib.5::lang/lua
-		
+BUILD_DEPENDS= :lua->=5.1:lang/lua
+LIB_DEPENDS=	SDL_image.1::devel/sdl-image SDL_mixer.2::devel/sdl-mixer
+
 USE_GMAKE=	Yes
 USE_X11=	Yes
 CONFIGURE_STYLE=gnu

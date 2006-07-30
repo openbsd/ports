@@ -1,6 +1,6 @@
-$OpenBSD: patch-config,v 1.1 2005/11/25 15:09:44 pedro Exp $
---- config.orig	Tue Nov 22 19:19:38 2005
-+++ config	Thu Nov 24 15:08:17 2005
+$OpenBSD: patch-config,v 1.2 2006/07/30 04:42:52 pedro Exp $
+--- config.orig	Thu Nov 24 18:29:38 2005
++++ config	Fri May 19 14:27:00 2006
 @@ -6,22 +6,22 @@
  # Output file names
  #
@@ -57,7 +57,7 @@ $OpenBSD: patch-config,v 1.1 2005/11/25 15:09:44 pedro Exp $
 +# for Unix
 +CC=cc
 +CFLAGS+= $(LUAINC) -fPIC -DPIC
-+LDFLAGS+= -O -shared $(LUALIB) -lluacompat -llualib -llua -lm
++LDFLAGS+= -O -shared $(LUALIB) -llua -lm
 +LD=cc
  
  #------

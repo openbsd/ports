@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_lfs_c,v 1.2 2006/03/26 04:56:02 pedro Exp $
+$OpenBSD: patch-src_lfs_c,v 1.3 2006/07/30 04:38:39 pedro Exp $
 --- src/lfs.c.orig	Tue Mar 14 13:18:30 2006
-+++ src/lfs.c	Sun Mar 26 00:15:08 2006
++++ src/lfs.c	Thu Jul 27 16:40:51 2006
 @@ -32,14 +32,13 @@
  #include <unistd.h>
  #include <dirent.h>
@@ -28,12 +28,3 @@ $OpenBSD: patch-src_lfs_c,v 1.2 2006/03/26 04:56:02 pedro Exp $
  		lua_pushnil(L);
  		lua_pushstring(L, getcwd_error);
  		return 2;
-@@ -580,7 +579,7 @@ static const struct luaL_reg fslib[] = {
- 	{NULL, NULL},
- };
- 
--int luaopen_lfs (lua_State *L) {
-+int luaopen_fs_core (lua_State *L) {
- 	dir_create_meta (L);
- 	luaL_openlib (L, "lfs", fslib, 0);
- 	set_info (L);

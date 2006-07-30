@@ -1,17 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/11/25 15:09:44 pedro Exp $
-@unexec lua ${SYSCONFDIR}/lua/luapkg.lua del luasocket
-lua/luasocket/
-lua/luasocket/init.lua
-lua/luasocket/ltn12.lua
-lua/luasocket/mime/
-lua/luasocket/mime.lua
-lua/luasocket/socket/
-lua/luasocket/socket.lua
-lua/luasocket/socket/ftp.lua
-lua/luasocket/socket/http.lua
-lua/luasocket/socket/smtp.lua
-lua/luasocket/socket/tp.lua
-lua/luasocket/socket/url.lua
+@comment $OpenBSD: PLIST,v 1.4 2006/07/30 04:42:52 pedro Exp $
 share/doc/luasocket/
 share/doc/luasocket/dns.html
 share/doc/luasocket/ftp.html
@@ -39,5 +26,14 @@ share/examples/luasocket/listener.lua
 share/examples/luasocket/lpr.lua
 share/examples/luasocket/talker.lua
 share/examples/luasocket/tinyirc.lua
-@exec lua ${SYSCONFDIR}/lua/luapkg.lua add luasocket ${PREFIX}/lua/luasocket/init.lua
 %%SHARED%%
+share/lua/5.1/ltn12.lua
+share/lua/5.1/mime/
+share/lua/5.1/mime.lua
+share/lua/5.1/socket/
+share/lua/5.1/socket.lua
+share/lua/5.1/socket/ftp.lua
+share/lua/5.1/socket/http.lua
+share/lua/5.1/socket/smtp.lua
+share/lua/5.1/socket/tp.lua
+share/lua/5.1/socket/url.lua

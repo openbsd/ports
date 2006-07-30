@@ -1,8 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/01/25 23:32:13 jolan Exp $
-@unexec lua ${SYSCONFDIR}/lua/luapkg.lua del luaalarm
+@comment $OpenBSD: PLIST,v 1.2 2006/07/30 04:36:01 pedro Exp $
 %%SHARED%%
-lua/
-lua/luaalarm/
-lua/luaalarm/alarm.lua
-lua/luaalarm/init.lua
-@exec lua ${SYSCONFDIR}/lua/luapkg.lua add luaalarm ${PREFIX}/lua/luaalarm/init.lua

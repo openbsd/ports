@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2006/04/12 18:41:36 pedro Exp $
+# $OpenBSD: Makefile,v 1.9 2006/07/30 04:42:52 pedro Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"network support for the lua language"
 DISTNAME=	luasocket-2.0
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	net
 
 MASTER_SITES=	http://luaforge.net/frs/download.php/1097/
@@ -22,35 +22,28 @@ NO_REGRESS=	Yes
 
 WANTLIB=	m
 
-LIB_DEPENDS=	lua,lualib::lang/lua \
-		luacompat::devel/luacompat
+BUILD_DEPENDS=	:lua->=5.1:lang/lua
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAKE_FILE=	makefile
-
-post-extract:
-	@sed -e "s:@socketpath@:${PREFIX}/lua/luasocket/?.lua:g" \
-	     -e "s:@socketcpath@:${PREFIX}/lua/luasocket/?.so:g" \
-		${FILESDIR}/init.lua > ${WRKSRC}/init.lua
-
-LUASOCKETDIR= ${PREFIX}/lua/luasocket
+SHAREDIR=	${PREFIX}/share/lua/5.1
+LIBDIR=		${PREFIX}/lib/lua/5.1
 
 do-install:
-	${INSTALL_DATA_DIR} ${LUASOCKETDIR}
-	${INSTALL_DATA_DIR} ${LUASOCKETDIR}/socket
-	${INSTALL_DATA_DIR} ${LUASOCKETDIR}/mime
+	${INSTALL_DATA_DIR} ${SHAREDIR}/socket ${SHAREDIR}/mime
+	${INSTALL_DATA_DIR} ${LIBDIR}/socket ${LIBDIR}/mime
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/luasocket
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/luasocket
-	${INSTALL_DATA} ${WRKSRC}/src/socket.so ${LUASOCKETDIR}/socket/core.so
-	${INSTALL_DATA} ${WRKSRC}/src/mime.so ${LUASOCKETDIR}/mime/core.so
-	${INSTALL_DATA} ${WRKSRC}/init.lua ${LUASOCKETDIR}
-	${INSTALL_DATA} ${WRKSRC}/src/socket.lua ${LUASOCKETDIR}
-	${INSTALL_DATA} ${WRKSRC}/src/ltn12.lua ${LUASOCKETDIR}
-	${INSTALL_DATA} ${WRKSRC}/src/mime.lua ${LUASOCKETDIR}
-	${INSTALL_DATA} ${WRKSRC}/src/ftp.lua ${LUASOCKETDIR}/socket
-	${INSTALL_DATA} ${WRKSRC}/src/http.lua ${LUASOCKETDIR}/socket
-	${INSTALL_DATA} ${WRKSRC}/src/smtp.lua ${LUASOCKETDIR}/socket
-	${INSTALL_DATA} ${WRKSRC}/src/tp.lua ${LUASOCKETDIR}/socket
-	${INSTALL_DATA} ${WRKSRC}/src/url.lua ${LUASOCKETDIR}/socket
+	${INSTALL_DATA} ${WRKSRC}/src/socket.so ${LIBDIR}/socket/core.so
+	${INSTALL_DATA} ${WRKSRC}/src/mime.so ${LIBDIR}/mime/core.so
+	${INSTALL_DATA} ${WRKSRC}/src/socket.lua ${SHAREDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/ltn12.lua ${SHAREDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/mime.lua ${SHAREDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/ftp.lua ${SHAREDIR}/socket
+	${INSTALL_DATA} ${WRKSRC}/src/http.lua ${SHAREDIR}/socket
+	${INSTALL_DATA} ${WRKSRC}/src/smtp.lua ${SHAREDIR}/socket
+	${INSTALL_DATA} ${WRKSRC}/src/tp.lua ${SHAREDIR}/socket
+	${INSTALL_DATA} ${WRKSRC}/src/url.lua ${SHAREDIR}/socket
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/luasocket
 	${INSTALL_DATA} ${WRKSRC}/samples/* ${PREFIX}/share/examples/luasocket
 
