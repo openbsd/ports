@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2005/12/07 21:04:37 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2006/07/30 12:50:43 jasper Exp $
 PKG_ARCH=	*
 
 COMMENT=	"perl module to provide a DAV server"
-DISTNAME=	Net-DAV-Server-1.28
+DISTNAME=	Net-DAV-Server-1.29
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net perl5
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # same as perl
 PERMIT_DISTFILES_CDROM=	Yes
