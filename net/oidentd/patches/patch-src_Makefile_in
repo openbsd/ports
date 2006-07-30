@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_Makefile_in,v 1.3 2006/07/30 13:17:58 steven Exp $
+--- src/Makefile.in.orig	Fri Jul 11 17:50:56 2003
++++ src/Makefile.in	Sun Jul 30 10:26:30 2006
+@@ -119,10 +119,10 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = missing
++SUBDIRS =
+ sbin_PROGRAMS = oidentd
+ 
+-LDADD = -Lmissing -lmissing
++LDADD =
+ 
+ DISTCLEANFILES = \
+ 	os.c

@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1 2006/07/30 13:17:58 steven Exp $
+--- configure.orig	Sun Jul 30 10:17:10 2006
++++ configure	Sun Jul 30 10:17:49 2006
+@@ -5863,7 +5863,7 @@ case "$host_os" in
+ 					os_src=openbsd29.c
+ 				;;
+ 
+-				*openbsd3*)
++				*openbsd[34]*)
+ 					os_src=openbsd30.c
+ 				;;
+ 			esac
+@@ -5874,7 +5874,7 @@ case "$host_os" in
+ 					os_src=openbsd.c
+ 				;;
+ 
+-				*openbsd3* )
++				*openbsd[34]* )
+ 					os_src=openbsd30.c
+ 				;;
+ 			esac
