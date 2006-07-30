@@ -1,5 +1,6 @@
-#	$OpenBSD: Makefile,v 1.2 2006/06/13 13:39:06 bernd Exp $
+#	$OpenBSD: Makefile,v 1.3 2006/07/30 05:01:22 pedro Exp $
 
+BROKEN=		"Pending update for Lua 5.1"
 COMMENT=	"lua driven plugin for the xfce4 panel"
 DISTNAME=	xfce4-lua-graph-plugin-0.1
 PKGNAME=	${DISTNAME:S/-plugin//}p0
