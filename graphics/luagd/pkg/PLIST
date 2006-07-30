@@ -1,11 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/04 22:53:57 pedro Exp $
-@unexec lua ${SYSCONFDIR}/lua/luapkg.lua del luagd
+@comment $OpenBSD: PLIST,v 1.2 2006/07/30 04:46:42 pedro Exp $
 %%SHARED%%
-lua/
-lua/luagd/
-lua/luagd/gd/
-lua/luagd/gd.lua
-lua/luagd/init.lua
 share/doc/luagd/
 share/doc/luagd/cat.png
 share/doc/luagd/catdiff.png
@@ -18,7 +12,6 @@ share/doc/luagd/lua-gd.png
 share/doc/luagd/sierpinski.png
 share/doc/luagd/stdfonts.png
 share/examples/luagd/
-@exec lua ${SYSCONFDIR}/lua/luapkg.lua add luagd ${PREFIX}/lua/luagd/init.lua
 share/examples/luagd/Vera.ttf
 share/examples/luagd/brush.lua
 share/examples/luagd/bugs.jpg
@@ -29,14 +22,13 @@ share/examples/luagd/counter.txt
 share/examples/luagd/ellipse.lua
 share/examples/luagd/fontconfig.lua
 share/examples/luagd/fractal.lua
-share/examples/luagd/gd.lua
 share/examples/luagd/gifanim.lua
 share/examples/luagd/gifanim2.lua
 share/examples/luagd/gifanim3.lua
 share/examples/luagd/grid.png
 share/examples/luagd/lua-gd.png
-share/examples/luagd/mkthumbs.lua
-share/examples/luagd/one.lua
+share/examples/luagd/lualogo.lua
+share/examples/luagd/lualogo.png
 share/examples/luagd/paper.png
 share/examples/luagd/poly.lua
 share/examples/luagd/stdfont.lua
@@ -45,3 +37,8 @@ share/examples/luagd/test.lua
 share/examples/luagd/test2.lua
 share/examples/luagd/ttftext.lua
 share/examples/luagd/ttftextex.lua
+share/examples/luagd/utf-8.lua
+share/examples/luagd/utf-8.png
+share/lua/
+share/lua/5.1/
+share/lua/5.1/gd.lua
