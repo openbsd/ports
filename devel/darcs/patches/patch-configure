@@ -1,43 +1,43 @@
-$OpenBSD: patch-configure,v 1.6 2005/11/17 09:31:16 dons Exp $
+$OpenBSD: patch-configure,v 1.7 2006/07/30 21:02:32 alek Exp $
 
 Don't build the postscript manual
 
---- configure.orig	Thu Sep  1 21:33:16 2005
-+++ configure	Mon Sep 12 12:02:06 2005
-@@ -3980,7 +3980,7 @@ if test "$enable_mmap" = "no"; then
+--- configure.orig	Sun May 14 02:11:04 2006
++++ configure	Fri Jun  9 15:04:52 2006
+@@ -4306,7 +4306,7 @@ if test "$enable_mmap" = "no"; then
  fi
  
  
--TARGETS="darcs darcs-createrepo darcs.1"
-+TARGETS="darcs darcs-createrepo"
+-TARGETS="darcs darcs.1"
++TARGETS="darcs"
  INSTALLWHAT="installbin"
  BUILDDOC="no"
  
-@@ -4170,7 +4170,7 @@ if test -z "$DVIPS"; then
+@@ -4510,7 +4510,7 @@ fi
  echo "$as_me: WARNING: Cannot find dvips in your path!" >&2;}
- fi
- if test ! '(' '(' -z "$LATEX" ')' -o '(' -z "$DVIPS" ')' ')'; then
--   TARGETS="$TARGETS darcs.ps"
-+   TARGETS="$TARGETS"
-    INSTALLWHAT="$INSTALLWHAT installdocs"
-    BUILDDOC="yes"
- fi
-@@ -4291,15 +4291,15 @@ fi
+ 	fi
+ 	if test ! '(' '(' -z "$LATEX" ')' -o '(' -z "$DVIPS" ')' ')'; then
+-	TARGETS="$TARGETS darcs.ps"
++	TARGETS="$TARGETS"
+ 	INSTALLWHAT="$INSTALLWHAT installdocs"
+ 	BUILDDOC="yes"
+ 	fi
+@@ -4631,15 +4631,15 @@ fi
  echo "$as_me: WARNING: Cannot find hevea in your path either!" >&2;}
-           MAKEMANUAL="touch manual/index.html; echo Cannot make manual!"
-         else
--          TARGETS="$TARGETS manual/index.html"
-+          TARGETS="$TARGETS"
-           MAKEMANUAL="$HEVEA -o manual/index.html darcs.tex"
-         fi
-     else
--        TARGETS="$TARGETS manual/index.html"
-+        TARGETS="$TARGETS"
-         MAKEMANUAL="cd manual && $HTLATEX ../darcs.tex && ln -sf darcs.html index.html"
-     fi
- else
--    TARGETS="$TARGETS manual/index.html"
-+    TARGETS="$TARGETS"
-     MAKEMANUAL="$LATEX2HTML -split +1 -dir manual darcs.tex"
-     PREPROCHTML="--html"
- fi
+ 		MAKEMANUAL="touch manual/index.html; echo Cannot make manual!"
+ 		else
+-		TARGETS="$TARGETS manual/index.html"
++		TARGETS="$TARGETS"
+ 		MAKEMANUAL="$HEVEA -o manual/index.html darcs.tex"
+ 		fi
+ 	else
+-		TARGETS="$TARGETS manual/index.html"
++		TARGETS="$TARGETS"
+ 		MAKEMANUAL="cd manual && $HTLATEX ../darcs.tex && ln -sf darcs.html index.html"
+ 	fi
+ 	else
+-	TARGETS="$TARGETS manual/index.html"
++	TARGETS="$TARGETS"
+ 	MAKEMANUAL="$LATEX2HTML -split +1 -dir manual darcs.tex"
+ 		PREPROCHTML="--html"
+ 	fi

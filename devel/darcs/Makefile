@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.14 2005/11/17 09:31:16 dons Exp $
+# $OpenBSD: Makefile,v 1.15 2006/07/30 21:02:32 alek Exp $
 
 COMMENT=	"advanced revision control system written in Haskell"
 
-V=		1.0.4
-DISTNAME=	darcs-${V}
+DISTNAME=	darcs-1.0.8
 CATEGORIES=	devel
 HOMEPAGE=	http://www.darcs.net/
 MASTER_SITES=	${HOMEPAGE}
-MAINTAINER=	Don Stewart <dons@openbsd.org>
+MAINTAINER=	Jon Olsson <jon@vexed.se>
 
 MODULES=	lang/ghc
-LIB_DEPENDS=	curl.2::net/curl
+MODGHC_RUNTIME=	No
+LIB_DEPENDS=	curl.2::net/curl \
+		gmp::devel/gmp
 
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
@@ -32,6 +33,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto curses gmp m ncurses pthread readline ssl z
+WANTLIB=		c crypto curses m ssl z
 
 .include <bsd.port.mk>

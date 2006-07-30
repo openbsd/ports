@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.9 2005/05/09 03:41:34 dons Exp $
+@comment $OpenBSD: PLIST,v 1.10 2006/07/30 21:02:32 alek Exp $
 bin/darcs
 libexec/darcs/
 libexec/darcs/cgi-bin/
 libexec/darcs/cgi-bin/darcs.cgi
 @man man/man1/darcs.1
-sbin/darcs-createrepo
 share/darcs/
 share/darcs/bash_completion.d/
 share/darcs/bash_completion.d/darcs

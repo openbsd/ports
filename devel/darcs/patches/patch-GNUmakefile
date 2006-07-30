@@ -1,18 +1,18 @@
-$OpenBSD: patch-GNUmakefile,v 1.8 2005/11/17 09:31:16 dons Exp $
+$OpenBSD: patch-GNUmakefile,v 1.9 2006/07/30 21:02:32 alek Exp $
 
 Don't try to build or install .ps docs, and don't regen the .html docs.
 
---- GNUmakefile.orig	Thu Sep  1 21:33:13 2005
-+++ GNUmakefile	Mon Sep 12 12:03:02 2005
-@@ -103,10 +103,9 @@ installbin:	all
- 		$(INSTALL) -d $(DESTDIR)/$(mandir)/man1
- 	$(INSTALL_DATA) darcs.1 $(DESTDIR)/$(mandir)/man1/
+--- GNUmakefile.orig	Fri Jun  9 15:01:54 2006
++++ GNUmakefile	Fri Jun  9 15:02:22 2006
+@@ -120,10 +120,9 @@ installbin:	all
+ 		$(INSTALL) -d $(DESTDIR)$(mandir)/man1
+ 	$(INSTALL_DATA) darcs.1 $(DESTDIR)$(mandir)/man1/
  
 -installdocs:	darcs.ps manual/index.html
 +installdocs:
- 	test -d $(DESTDIR)/$(datadir)/doc/darcs/manual || \
- 		$(INSTALL) -d $(DESTDIR)/$(datadir)/doc/darcs/manual
--	$(INSTALL_DATA) darcs.ps $(DESTDIR)/$(datadir)/doc/darcs
- 	$(INSTALL_DATA) manual/* $(DESTDIR)/$(datadir)/doc/darcs/manual
+ 	test -d $(DESTDIR)$(datadir)/doc/darcs/manual || \
+ 		$(INSTALL) -d $(DESTDIR)$(datadir)/doc/darcs/manual
+-	$(INSTALL_DATA) darcs.ps $(DESTDIR)$(datadir)/doc/darcs
+ 	$(INSTALL_DATA) manual/* $(DESTDIR)$(datadir)/doc/darcs/manual
  
- 	test -d $(DESTDIR)/$(datadir)/doc/darcs/examples || \
+ 	test -d $(DESTDIR)$(datadir)/doc/darcs/examples || \

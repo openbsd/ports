@@ -1,0 +1,18 @@
+$OpenBSD: patch-tests_pull_pl,v 1.1 2006/07/30 21:02:32 alek Exp $
+--- tests/pull.pl.orig	Fri Jun 16 20:59:27 2006
++++ tests/pull.pl	Thu Jul  6 12:34:14 2006
+@@ -54,8 +54,12 @@ TAKE_LOCK: {
+     } elsif ($^O =~ /msys/i) {
+         pass('this test fails on windows, so ignore it');
+     } else {
+-      like($out, qr#one/date\.t.+: permission denied#i,
+-           'expect permission denied error');
++      if(getuid() == 0) {
++        pass("root never gets permission denied");
++      } else {
++        like($out, qr#one/date\.t.+: permission denied#i,
++             'expect permission denied error');
++      }
+     }
+ };
+ 
