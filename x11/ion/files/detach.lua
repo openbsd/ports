@@ -1,4 +1,4 @@
--- $OpenBSD: detach.lua,v 1.1 2005/09/29 22:19:39 pedro Exp $
+-- $OpenBSD: detach.lua,v 1.2 2006/07/30 04:30:55 pedro Exp $
 -- Fancy management of transcient windows in ion. Mix WIonWS and
 -- WFloatWS on the same "workspace".
 
@@ -159,7 +159,7 @@ function detach.topmost_transient_to_sp(cwin)
    end
    -- search for the scratchpad
    local sp = nil
-   for _,r in cwin:screen_of():llist(2) do
+   for _,r in pairs(cwin:screen_of():llist(2)) do
       if (r:name() == "WScratchpad") then
          sp = r
       end
@@ -185,7 +185,7 @@ end
 function detach.find_ws(screen, passive)
    local name = detach.ws_name(passive)
    local ws
-   for _,r in screen:llist(2) do
+   for _,r in pairs(screen:llist(2)) do
       if r:name() == name then
          ws = r
       end
@@ -295,13 +295,13 @@ function detach.close_floatws(region)
    if (screen == nil) then
       screen = ioncore.find_screen_id(0)
    end
-   for _,r in screen:llist(2) do
+   for _,r in pairs(screen:llist(2)) do
       if obj_is(r, "WFloatWS") then
          local fws = r
          -- relocate windows to layer 1
          local dest = screen:lcurrent(1):current()
-         for _,fframe in r:managed_list() do
-            for _,cwin in fframe:llist(1) do
+         for _,fframe in pairs(r:managed_list()) do
+            for _,cwin in pairs(fframe:llist(1)) do
                dest:attach(cwin)
                cwin:goto()
             end

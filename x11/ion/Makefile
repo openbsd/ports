@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2006/04/09 20:12:55 pedro Exp $
+# $OpenBSD: Makefile,v 1.37 2006/07/30 04:30:55 pedro Exp $
 
 COMMENT=	"light, keyboard friendly window manager"
 
-V=		20060326
+V=		20060524
 DISTNAME=	ion-3ds-${V}
-PKGNAME=	ion-${V}p0
+PKGNAME=	ion-${V}
 CATEGORIES=	x11
 
 HOMEPAGE=	http://modeemi.cs.tut.fi/~tuomov/ion/
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE X11 m c Xinerama SM Xext
 MODULES=	devel/gettext
-LIB_DEPENDS=	lua.5,lualib.5::lang/lua
+BUILD_DEPENDS= :lua->=5.1:lang/lua
 
 USE_GMAKE=	Yes
 USE_X11=	Yes
