@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/30 08:57:47 jasper Exp $
+bin/clines
+doc/
+doc/clines/
+doc/clines/README
