@@ -1,29 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.9 2006/01/21 01:29:40 jolan Exp $
-bin/bin2c
+@comment $OpenBSD: PLIST,v 1.10 2006/07/30 04:25:41 pedro Exp $
 bin/lua
 bin/luac
 include/lauxlib.h
 include/lua.h
+include/lua.hpp
+include/luaconf.h
 include/lualib.h
-include/luser.h
-%%fixedpoint%%
 lib/liblua.a
-lib/liblualib.a
+lib/lua/
+lib/lua/5.1/
 @man man/man1/lua.1
 @man man/man1/luac.1
-share/doc/lua/
-share/doc/lua/contents.html
-share/doc/lua/logo.gif
-share/doc/lua/lua.html
-share/doc/lua/luac.html
-share/doc/lua/manual.html
-share/doc/lua/readme.html
-%%SHARED%%
-@sample ${SYSCONFDIR}/lua/
-share/examples/lua/
-share/examples/lua/init.lua
-@sample ${SYSCONFDIR}/lua/init.lua
-share/examples/lua/luapkg.lua
-@sample ${SYSCONFDIR}/lua/luapkg.lua
-share/examples/lua/packages.lua
-@sample ${SYSCONFDIR}/lua/packages.lua
+share/lua/
+share/lua/5.1/

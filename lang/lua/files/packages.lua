@@ -1,2 +1,0 @@
-installed_packages = {
-}

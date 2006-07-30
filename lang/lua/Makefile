@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2006/06/27 03:43:19 pedro Exp $
+# $OpenBSD: Makefile,v 1.23 2006/07/30 04:25:41 pedro Exp $
 
 COMMENT=	"powerful, light-weight programming language"
 
-DISTNAME=	lua-5.0.3
-SHARED_LIBS=	lua 5.0 \
-		lualib 5.0
-CATEGORIES=     lang
+DISTNAME=	lua-5.1
+CATEGORIES=	lang
 
 MASTER_SITES=	http://www.lua.org/ftp/ \
 		http://www.tecgraf.puc-rio.br/lua/ftp/ \
@@ -27,53 +25,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	c m edit curses
 NO_REGRESS=	Yes
 
-FLAVORS=fixedpoint
-FLAVOR?=
-
-.if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
-CFLAGS+=	-fPIC
-ALL_TARGET+=	all so sobin
-.endif
-
-MAKE_FLAGS+=	LIBlua_VERSION=${LIBlua_VERSION} \
-		LIBlualib_VERSION=${LIBlualib_VERSION}
-
-post-extract:
-.for f in init luapkg packages
-	@sed -e "s:@pkgconf@:${SYSCONFDIR}/lua/packages.lua:g" \
-		${FILESDIR}/${f}.lua > ${WRKSRC}/$f.lua
-.endfor
-
 post-patch:
-	@touch ${WRKSRC}/include/luser.h
-.if ${FLAVOR:L:Mfixedpoint}
-	@cp -p ${FILESDIR}/luser_fixedpoint.h ${WRKSRC}/include
-	@echo '#include "luser_fixedpoint.h"' >> ${WRKSRC}/include/luser.h
-.endif
-
-pre-configure:
-	@perl -pi -e 's:\@initconf@:${SYSCONFDIR}/lua/init.lua:g;' \
-		${WRKSRC}/src/lua/lua.c
-
-post-build:
-	cd ${WRKDIST} && ${CC} ${CFLAGS} -o bin/bin2c etc/bin2c.c
-
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/include
-	${INSTALL_DATA} ${WRKDIST}/include/*.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKDIST}/lib/* ${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKDIST}/bin/lua ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKDIST}/bin/luac ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKDIST}/bin/bin2c ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lua
-	${INSTALL_DATA} ${WRKDIST}/doc/*.html ${WRKDIST}/doc/*.gif \
-		${PREFIX}/share/doc/lua
-	${INSTALL_MAN_DIR} ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKDIST}/doc/*.1 ${PREFIX}/man/man1
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/lua
-	${INSTALL_DATA} ${WRKSRC}/init.lua ${PREFIX}/share/examples/lua
-	${INSTALL_DATA} ${WRKSRC}/luapkg.lua ${PREFIX}/share/examples/lua
-	${INSTALL_DATA} ${WRKSRC}/packages.lua \
-		${PREFIX}/share/examples/lua/packages.lua
+	@perl -pi -e 's:\@prefix@:${PREFIX}/:g;' ${WRKSRC}/src/luaconf.h
 
 .include <bsd.port.mk>

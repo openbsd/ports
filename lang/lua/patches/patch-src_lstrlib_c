@@ -1,0 +1,55 @@
+$OpenBSD: patch-src_lstrlib_c,v 1.1 2006/07/30 04:25:41 pedro Exp $
+--- src/lstrlib.c.orig	Thu Dec 29 13:32:11 2005
++++ src/lstrlib.c	Fri May 19 12:18:02 2006
+@@ -741,10 +741,9 @@ static const char *scanformat (lua_State
+ 
+ static void addintlen (char *form) {
+   size_t l = strlen(form);
+-  char spec = form[l - 1];
+-  strcpy(form + l - 1, LUA_INTFRMLEN);
+-  form[l + sizeof(LUA_INTFRMLEN) - 2] = spec;
+-  form[l + sizeof(LUA_INTFRMLEN) - 1] = '\0';
++  char spec[3] = { 'l', form[l - 1], '\0' };
++  form[l - 1] = '\0';
++  strlcat(form, spec, MAX_FORMAT);
+ }
+ 
+ 
+@@ -767,22 +766,24 @@ static int str_format (lua_State *L) {
+       strfrmt = scanformat(L, strfrmt, form);
+       switch (*strfrmt++) {
+         case 'c': {
+-          sprintf(buff, form, (int)luaL_checknumber(L, arg));
++          snprintf(buff, sizeof(buff), form, (int)luaL_checknumber(L, arg));
+           break;
+         }
+         case 'd':  case 'i': {
+           addintlen(form);
+-          sprintf(buff, form, (LUA_INTFRM_T)luaL_checknumber(L, arg));
++          snprintf(buff, sizeof(buff), form,
++	    (LUA_INTFRM_T)luaL_checknumber(L, arg));
+           break;
+         }
+         case 'o':  case 'u':  case 'x':  case 'X': {
+           addintlen(form);
+-          sprintf(buff, form, (unsigned LUA_INTFRM_T)luaL_checknumber(L, arg));
++          snprintf(buff, sizeof(buff), form,
++	    (unsigned LUA_INTFRM_T)luaL_checknumber(L, arg));
+           break;
+         }
+         case 'e':  case 'E': case 'f':
+         case 'g': case 'G': {
+-          sprintf(buff, form, (double)luaL_checknumber(L, arg));
++          snprintf(buff, sizeof(buff), form, (double)luaL_checknumber(L, arg));
+           break;
+         }
+         case 'q': {
+@@ -800,7 +801,7 @@ static int str_format (lua_State *L) {
+             continue;  /* skip the `addsize' at the end */
+           }
+           else {
+-            sprintf(buff, form, s);
++            snprintf(buff, sizeof(buff), form, s);
+             break;
+           }
+         }

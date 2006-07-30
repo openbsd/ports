@@ -1,0 +1,48 @@
+$OpenBSD: patch-src_luaconf_h,v 1.1 2006/07/30 04:25:41 pedro Exp $
+--- src/luaconf.h.orig	Thu Jul 27 13:40:32 2006
++++ src/luaconf.h	Thu Jul 27 13:42:54 2006
+@@ -33,7 +33,7 @@
+ #define LUA_WIN
+ #endif
+ 
+-#if defined(LUA_USE_LINUX)
++#if defined(LUA_USE_BSD) || defined(LUA_USE_LINUX)
+ #define LUA_USE_POSIX
+ #define LUA_USE_DLOPEN		/* needs an extra library: -ldl */
+ #define LUA_USE_READLINE	/* needs some extra libraries */
+@@ -82,7 +82,7 @@
+ 	".\\?.dll;"  LUA_CDIR"?.dll;" LUA_CDIR"loadall.dll"
+ 
+ #else
+-#define LUA_ROOT	"/usr/local/"
++#define LUA_ROOT	"@prefix@"
+ #define LUA_LDIR	LUA_ROOT "share/lua/5.1/"
+ #define LUA_CDIR	LUA_ROOT "lib/lua/5.1/"
+ #define LUA_PATH_DEFAULT  \
+@@ -171,7 +171,7 @@
+ #define LUAI_DATA	/* empty */
+ 
+ #elif defined(__GNUC__) && ((__GNUC__*100 + __GNUC_MINOR__) >= 302) && \
+-      defined(__ELF__)
++      defined(__ELF__) && !defined(LUA_USE_BSD)
+ #define LUAI_FUNC	__attribute__((visibility("hidden"))) extern
+ #define LUAI_DATA	LUAI_FUNC
+ 
+@@ -507,7 +507,7 @@
+ */
+ #define LUA_NUMBER_SCAN		"%lf"
+ #define LUA_NUMBER_FMT		"%.14g"
+-#define lua_number2str(s,n)	sprintf((s), LUA_NUMBER_FMT, (n))
++#define lua_number2str(s,n)	snprintf((s), sizeof((s)), LUA_NUMBER_FMT, (n))
+ #define LUAI_MAXNUMBER2STR	32 /* 16 digits, sign, point, and \0 */
+ #define lua_str2number(s,p)	strtod((s), (p))
+ 
+@@ -620,7 +620,7 @@ union luai_Cast { double l_d; long l_l; 
+ #include <unistd.h>
+ #define LUA_TMPNAMBUFSIZE	32
+ #define lua_tmpnam(b,e)	{ \
+-	strcpy(b, "/tmp/lua_XXXXXX"); \
++	strlcpy(b, "/tmp/lua_XXXXXX", sizeof(b)); \
+ 	e = mkstemp(b); \
+ 	if (e != -1) close(e); \
+ 	e = (e == -1); }

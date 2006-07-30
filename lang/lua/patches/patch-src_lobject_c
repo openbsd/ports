@@ -1,10 +1,19 @@
-$OpenBSD: patch-src_lobject_c,v 1.1 2006/01/18 11:17:03 pedro Exp $
---- src/lobject.c.orig	Thu Apr  3 10:35:34 2003
-+++ src/lobject.c	Tue Jan 17 14:06:46 2006
-@@ -161,35 +161,33 @@ const char *luaO_pushfstring (lua_State 
+$OpenBSD: patch-src_lobject_c,v 1.2 2006/07/30 04:25:41 pedro Exp $
+--- src/lobject.c.orig	Fri Feb 10 15:43:52 2006
++++ src/lobject.c	Fri May 19 11:09:38 2006
+@@ -142,7 +142,7 @@ const char *luaO_pushvfstring (lua_State
+       }
+       case 'p': {
+         char buff[4*sizeof(void *) + 8]; /* should be enough space for a `%p' */
+-        sprintf(buff, "%p", va_arg(argp, void *));
++        snprintf(buff, sizeof(buff), "%p", va_arg(argp, void *));
+         pushstr(L, buff);
+         break;
+       }
+@@ -180,35 +180,33 @@ const char *luaO_pushfstring (lua_State 
  
  
- void luaO_chunkid (char *out, const char *source, int bufflen) {
+ void luaO_chunkid (char *out, const char *source, size_t bufflen) {
 -  if (*source == '=') {
 -    strncpy(out, source+1, bufflen);  /* remove first char */
 -    out[bufflen-1] = '\0';  /* ensures null termination */
@@ -13,31 +22,31 @@ $OpenBSD: patch-src_lobject_c,v 1.1 2006/01/18 11:17:03 pedro Exp $
 +    strlcpy(out, source+1, bufflen);  /* remove first char */
    else {  /* out = "source", or "...source" */
      if (*source == '@') {
--      int l;
-+      int l, m;
+-      size_t l;
++      size_t l, m;
        source++;  /* skip the `@' */
--      bufflen -= sizeof(" `...' ");
+-      bufflen -= sizeof(" '...' ");
        l = strlen(source);
 -      strcpy(out, "");
--      if (l>bufflen) {
+-      if (l > bufflen) {
 -        source += (l-bufflen);  /* get last part of file name */
 -        strcat(out, "...");
 +      m = bufflen - sizeof(" '...' ");
 +      strlcpy(out, "", bufflen);
 +      if (l > m) {
 +        source += (l-m);  /* get last part of file name */
-+        strlcat(out, "...", bufflen);
++	strlcat(out, "...", bufflen);
        }
 -      strcat(out, source);
 +      strlcat(out, source, bufflen);
      }
      else {  /* out = [string "string"] */
--      int len = strcspn(source, "\n");  /* stop at first newline */
+-      size_t len = strcspn(source, "\n\r");  /* stop at first newline */
 -      bufflen -= sizeof(" [string \"...\"] ");
 -      if (len > bufflen) len = bufflen;
 -      strcpy(out, "[string \"");
-+      int pos = strcspn(source, "\n\r");  /* stop at first newline */
-+      int len = bufflen - sizeof(" [string \"...\"] ");
++      size_t pos = strcspn(source, "\n\r");  /* stop at first newline */
++      size_t len = bufflen - sizeof(" [string \"...\"] ");
 +      if (pos > len) pos = len;
 +      strlcpy(out, "[string \"", bufflen);
        if (source[len] != '\0') {  /* must truncate? */

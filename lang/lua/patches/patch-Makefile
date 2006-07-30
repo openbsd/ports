@@ -1,15 +1,19 @@
-$OpenBSD: patch-Makefile,v 1.1 2006/01/03 23:00:32 alek Exp $
---- Makefile.orig	Fri Mar 12 02:50:55 2004
-+++ Makefile	Tue Jan  3 23:45:20 2006
-@@ -38,9 +38,8 @@ install: all strip
+$OpenBSD: patch-Makefile,v 1.2 2006/07/30 04:25:41 pedro Exp $
+--- Makefile.orig	Thu Jul 27 12:24:55 2006
++++ Makefile	Thu Jul 27 12:25:23 2006
+@@ -5,13 +5,13 @@
+ # == CHANGE THE SETTINGS BELOW TO SUIT YOUR ENVIRONMENT =======================
  
- # shared libraries (for Linux)
- so:
--	ld -o lib/liblua.so.$V -shared src/*.o
--	ld -o lib/liblualib.so.$V -shared src/lib/*.o
--	cd lib; ln -fs liblua.so.$V liblua.so; ln -fs liblualib.so.$V liblualib.so
-+	ld -o lib/liblua.so.${LIBlua_VERSION} -shared src/*.o
-+	ld -o lib/liblualib.so.${LIBlualib_VERSION} -shared src/lib/*.o
+ # Your platform. See PLATS for possible values.
+-PLAT= none
++PLAT= bsd
  
- # binaries using shared libraries
- sobin:
+ # Where to install. The installation starts in the src directory, so take care
+ # if INSTALL_TOP is not an absolute path. (Man pages are installed from the
+ # doc directory.)
+ #
+-INSTALL_TOP= /usr/local
++INSTALL_TOP= $(PREFIX)
+ INSTALL_BIN= $(INSTALL_TOP)/bin
+ INSTALL_INC= $(INSTALL_TOP)/include
+ INSTALL_LIB= $(INSTALL_TOP)/lib
