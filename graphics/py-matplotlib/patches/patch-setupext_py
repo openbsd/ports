@@ -1,15 +1,16 @@
-$OpenBSD: patch-setupext_py,v 1.6 2005/12/12 07:27:18 alek Exp $
+$OpenBSD: patch-setupext_py,v 1.7 2006/07/30 06:12:38 steven Exp $
 --- setupext.py.orig	Tue Jul  5 17:36:37 2005
-+++ setupext.py	Sun Dec 11 17:11:50 2005
-@@ -34,6 +34,7 @@ WIN32
++++ setupext.py	Sun Jul 30 01:48:47 2006
+@@ -34,6 +34,8 @@ WIN32
  import os
  
  basedir = {
 +    'openbsd3'  : [os.getenv('X11BASE') or '/usr/X11R6', os.getenv('LOCALBASE') or '/usr/local', '/usr',],
++    'openbsd4'  : [os.getenv('X11BASE') or '/usr/X11R6', os.getenv('LOCALBASE') or '/usr/local', '/usr',],
      'win32'  : ['win32_static',],
      'linux2' : ['/usr/local', '/usr',],
      'linux'  : ['/usr/local', '/usr',],
-@@ -97,6 +98,8 @@ def temp_copy(_from, _to):
+@@ -97,6 +99,8 @@ def temp_copy(_from, _to):
  def add_base_flags(module):
      incdirs = [os.path.join(p, 'include') for p in basedir[sys.platform]
                 if os.path.exists(p)]
@@ -18,7 +19,7 @@ $OpenBSD: patch-setupext_py,v 1.6 2005/12/12 07:27:18 alek Exp $
      libdirs = [os.path.join(p, 'lib')     for p in basedir[sys.platform]
                 if os.path.exists(p)]
      module.include_dirs.extend(incdirs)
-@@ -174,7 +177,9 @@ def add_pygtk_flags(module):
+@@ -174,7 +178,9 @@ def add_pygtk_flags(module):
      pygtkIncludes = getoutput('pkg-config --cflags-only-I pygtk-2.0').split()
      gtkIncludes = getoutput('pkg-config --cflags-only-I gtk+-2.0').split()
      includes = pygtkIncludes + gtkIncludes
