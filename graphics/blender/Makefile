@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/07/26 06:45:27 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2006/07/30 07:29:13 steven Exp $
 
 COMMENT=	"3D creation software"
 
@@ -40,6 +40,9 @@ WRKDIST=	${WRKDIR}/${DISTNAME:S/-//}
 
 CFLAGS+=	-fPIC -funsigned-char -fno-strict-aliasing
 
+post-extract:
+	@cd ${WRKSRC}/config && cp openbsd3-config.py openbsd4-config.py
+
 do-build:
 	@${SETENV} ${MAKE_ENV} scons -C ${WRKSRC} blendernogame \
 		CC=${CC} CXX=${CXX} \
@@ -67,7 +70,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/release/scripts/bpymodules/*.py \
 		${PREFIX}/share/blender/scripts/bpymodules
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/blender
-	${INSTALL_DATA} ${WRKSRC}/release/text/{?lender*,*license*,copy*} \
+	${INSTALL_DATA} ${WRKSRC}/release/text/?lender* \
+		${PREFIX}/share/doc/blender
+	${INSTALL_DATA} ${WRKSRC}/release/text/*license* \
+		${PREFIX}/share/doc/blender
+	${INSTALL_DATA} ${WRKSRC}/release/text/copy* \
 		${PREFIX}/share/doc/blender
 
 .include <bsd.port.mk>

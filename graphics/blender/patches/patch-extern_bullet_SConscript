@@ -1,0 +1,12 @@
+$OpenBSD: patch-extern_bullet_SConscript,v 1.1 2006/07/30 07:29:13 steven Exp $
+--- extern/bullet/SConscript.orig	Sun Jul 30 08:25:22 2006
++++ extern/bullet/SConscript	Sun Jul 30 08:25:41 2006
+@@ -14,7 +14,7 @@ if env['OURPLATFORM']=='win32-vc':
+ elif env['OURPLATFORM']=='win32-mingw':
+     defs += ' NDEBUG'
+     cflags += ['-O2']
+-elif sys.platform=='linux2' or sys.platform=='linux-i386' or sys.platform=='freebsd4' or sys.platform=='freebsd5' or sys.platform=='openbsd3':
++elif sys.platform=='linux2' or sys.platform=='linux-i386' or sys.platform=='freebsd4' or sys.platform=='freebsd5' or sys.platform=='openbsd3' or sys.platform=='openbsd4':
+     defs += ' NDEBUG'
+     cflags += ['-O2']
+ elif sys.platform=='darwin':

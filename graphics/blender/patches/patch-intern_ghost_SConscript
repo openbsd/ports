@@ -1,0 +1,12 @@
+$OpenBSD: patch-intern_ghost_SConscript,v 1.1 2006/07/30 07:29:13 steven Exp $
+--- intern/ghost/SConscript.orig	Sun Jul 30 08:27:02 2006
++++ intern/ghost/SConscript	Sun Jul 30 08:27:19 2006
+@@ -22,7 +22,7 @@ elif window_system == 'darwin':
+     for f in pf:
+         sources.remove('intern' + os.sep + f + 'Win32.cpp')
+         sources.remove('intern' + os.sep + f + 'X11.cpp')
+-elif window_system == 'openbsd3':
++elif window_system == 'openbsd3' or window_system == 'openbsd4':
+     for f in pf:
+         sources.remove('intern' + os.sep + f + 'Win32.cpp')
+         sources.remove('intern' + os.sep + f + 'Carbon.cpp')
