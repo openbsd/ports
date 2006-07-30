@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_makedefs,v 1.1 2006/07/30 15:45:39 steven Exp $
+--- src/makedefs.orig	Sun Jul 30 17:42:15 2006
++++ src/makedefs	Sun Jul 30 17:42:26 2006
+@@ -16,6 +16,8 @@ case "$SYSTEM.$RELEASE" in
+                 ;;
+   OpenBSD.3*)   DEFS="-DOPENBSD3"
+                 ;;
++  OpenBSD.4*)   DEFS="-DOPENBSD3"
++                ;;
+    BSD/OS.2*)   DEFS="-DBSDI2"
+                 ;;
+    BSD/OS.3*)   DEFS="-DBSDI3"
