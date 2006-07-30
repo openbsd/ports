@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2006/07/30 04:51:39 pedro Exp $
+--- Makefile.in.orig	Thu May 11 08:07:19 2006
++++ Makefile.in	Fri Jul 28 19:53:51 2006
+@@ -27,7 +27,7 @@ LIBS			:= @LIBS@
+ 
+ COMPILE			= $(CC) -c $(CFLAGS) -o $@ $<
+ LINK			= $(CC) $(LDFLAGS) -o $@ $+ $(LIBS)
+-LINKSHARED		= $(CC) -shared  $(LDFLAGS) -o $@ $+ $(LIBS)
++LINKSHARED		= $(CC) -shared -fPIC $(LDFLAGS) -o $@ $+ $(LIBS)
+ 
+ DESTDIR			=
+ 
+@@ -54,7 +54,7 @@ CLEAN_FILES		:= libluasqlite3.o libluasq
+ DESTDIR			:=
+ 
+ 
+-all:			libluasqlite3.so libluasqlite3-loader.lua libluasqlite3-loader.lua.install
++all:			libluasqlite3.so
+ 
+ install:		all
+ 			$(install-dirs) $(DESTDIR)$(luadir)

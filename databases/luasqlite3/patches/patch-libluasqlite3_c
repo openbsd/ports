@@ -1,0 +1,32 @@
+$OpenBSD: patch-libluasqlite3_c,v 1.1 2006/07/30 04:51:39 pedro Exp $
+--- libluasqlite3.c.orig	Thu May 11 08:06:16 2006
++++ libluasqlite3.c	Fri Jul 28 21:48:41 2006
+@@ -1627,15 +1627,25 @@ d_entry auth_entries[] = {
+ 
+ 
+ 
+-int luaopen_sqlite3(lua_State * L)
++
++FUNC( init_api_entries )
+ {
+   f(L, api_entries);
+   d(L, error_entries);
+   d(L, type_entries);
+   d(L, auth_entries);
+-  
+-  return 4;	/* api, error codes, type codes, auth requests */
++
++  return 4; /* four objects placed on stack */
+ }
+ 
++f_entry init_entries[] = {
++  { "init", init_api_entries },
++  { 0, 0 }
++};
+ 
++int luaopen_sqlite3_core(lua_State * L)
++{
++  f(L, init_entries);
+ 
++  return 1; /* one object placed on stack */
++}

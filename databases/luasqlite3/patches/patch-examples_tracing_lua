@@ -1,0 +1,8 @@
+$OpenBSD: patch-examples_tracing_lua,v 1.1 2006/07/30 04:51:39 pedro Exp $
+--- examples/tracing.lua.orig	Fri Jul 28 21:59:20 2006
++++ examples/tracing.lua	Fri Jul 28 21:59:43 2006
+@@ -1,4 +1,3 @@
+-require "path"
+ require "sqlite3"
+ 
+ 

@@ -1,12 +1,16 @@
-$OpenBSD: patch-luasql-sqlite3_lua,v 1.1.1.1 2005/04/27 04:33:53 jolan Exp $
---- luasql-sqlite3.lua.orig	Mon Oct  4 11:06:02 2004
-+++ luasql-sqlite3.lua	Tue Apr 26 16:02:07 2005
-@@ -58,7 +58,7 @@ local function isref(t)		return t.ref_co
+$OpenBSD: patch-luasql-sqlite3_lua,v 1.2 2006/07/30 04:51:39 pedro Exp $
+--- luasql-sqlite3.lua.orig	Thu Jun  2 15:43:29 2005
++++ luasql-sqlite3.lua	Sat Jul 29 17:46:49 2006
+@@ -57,8 +57,11 @@ local function isref(t)		return t.ref_co
+ 
  
  function luasql.sqlite3()
++  local f = assert(package.loadlib("./libluasqlite3.so",
++      "luaopen_sqlite3_core"))
++  f = f()
    if not api then 
 -    api, ERR, TYPE, AUTH = load_libluasqlite3()
-+    api, ERR, TYPE, AUTH = loadlib("luasqlite3.so", "luaopen_sqlite3")()
++    api, ERR, TYPE, AUTH = f.init()
    end
    
    local env = setmetatable( {}, env_class_mt )

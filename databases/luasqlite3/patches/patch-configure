@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.1 2006/07/30 04:51:39 pedro Exp $
+--- configure.orig	Fri Jul 28 20:45:18 2006
++++ configure	Fri Jul 28 20:45:26 2006
+@@ -3512,8 +3512,7 @@ fi
+ 
+ echo "$as_me:$LINENO: checking if we need -llua" >&5
+ echo $ECHO_N "checking if we need -llua... $ECHO_C" >&6
+-need_llua=yes
+-nm -D "$LUA" | $EGREP "T lua_open$" >/dev/null && need_llua=no
++need_llua=no
+ echo "$as_me:$LINENO: result: $need_llua" >&5
+ echo "${ECHO_T}$need_llua" >&6
+ if test $need_llua = yes; then
