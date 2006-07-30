@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/02/09 11:11:53 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2006/07/30 16:18:08 martin Exp $
 avr/include/
 avr/include/assert.h
 avr/include/avr/
@@ -48,6 +48,7 @@ avr/include/avr/iom325.h
 avr/include/avr/iom3250.h
 avr/include/avr/iom329.h
 avr/include/avr/iom3290.h
+avr/include/avr/iom406.h
 avr/include/avr/iom48.h
 avr/include/avr/iom64.h
 avr/include/avr/iom640.h
@@ -83,6 +84,11 @@ avr/include/avr/iotn861.h
 avr/include/avr/iotnx4.h
 avr/include/avr/iotnx5.h
 avr/include/avr/iotnx61.h
+avr/include/avr/iousb1286.h
+avr/include/avr/iousb1287.h
+avr/include/avr/iousb646.h
+avr/include/avr/iousb647.h
+avr/include/avr/iousbxx6_7.h
 avr/include/avr/parity.h
 avr/include/avr/pgmspace.h
 avr/include/avr/portpins.h
