@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.395 2006/07/30 04:54:51 pedro Exp $
+# $OpenBSD: Makefile,v 1.396 2006/07/30 17:39:55 david Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -190,8 +190,8 @@
      SUBDIR += p5-Class-AutoClass
      SUBDIR += p5-Class-Autouse
      SUBDIR += p5-Class-Base
-     SUBDIR += p5-Class-Container
      SUBDIR += p5-Class-C3
+     SUBDIR += p5-Class-Container
      SUBDIR += p5-Class-Data-Accessor
      SUBDIR += p5-Class-Data-Inheritable
      SUBDIR += p5-Class-Date
