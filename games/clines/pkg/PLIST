@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/30 08:57:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/07/30 09:13:15 jasper Exp $
 bin/clines
-doc/
-doc/clines/
-doc/clines/README
+share/doc/clines/
+share/doc/clines/README
