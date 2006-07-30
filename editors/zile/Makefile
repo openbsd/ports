@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2006/07/08 14:56:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2006/07/30 17:07:22 naddy Exp $
 
 COMMENT=		"zile is lossy emacs"
-
-DISTNAME=		zile-2.2.15
+DISTNAME=		zile-2.2.17
 CATEGORIES=		editors
 HOMEPAGE=		http://zile.sourceforge.net/
 
@@ -16,7 +15,5 @@ WANTLIB=		c ncurses
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=zile/}
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--infodir='$${prefix}/info' \
-			--mandir='$${prefix}/man'
 
 .include <bsd.port.mk>
