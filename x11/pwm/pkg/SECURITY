@@ -1,4 +1,0 @@
-Patches replace all sprintf occurrences with snprintf.
-Sent the patches back to the author.
-
-$OpenBSD: SECURITY,v 1.1 2003/06/05 23:01:51 naddy Exp $
