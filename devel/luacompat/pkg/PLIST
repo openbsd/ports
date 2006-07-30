@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/04/19 14:48:09 pedro Exp $
-@unexec lua ${SYSCONFDIR}/lua/luapkg.lua del luacompat
-%%SHARED%%
-include/luacompat.h
-lua/
-lua/luacompat/
-lua/luacompat/compat-5.1.lua
-lua/luacompat/init.lua
-@exec lua ${SYSCONFDIR}/lua/luapkg.lua add luacompat ${PREFIX}/lua/luacompat/init.lua
