@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_src_pro,v 1.1.1.1 2006/07/30 22:25:41 alek Exp $
+--- src/src.pro.orig	Tue Jul 25 23:08:50 2006
++++ src/src.pro	Tue Jul 25 23:09:42 2006
+@@ -22,6 +22,7 @@ SOURCES += rfcview.cpp \
+            rfcloader.cpp \
+            cdialogfind.cpp \
+            cprintdialog.cpp
++QMAKE_CXXFLAGS_RELEASE+=!!CXXFLAGS!!
+ TARGET=../bin/qRFCView
+ CONFIG += qt release
+ QT += network 
