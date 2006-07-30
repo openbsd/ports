@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.241 2006/07/28 15:52:16 steven Exp $
+# $OpenBSD: Makefile,v 1.242 2006/07/30 22:48:09 alek Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -124,6 +124,7 @@
      SUBDIR += py-gtk2
      SUBDIR += qinx
      SUBDIR += qlwm
+     SUBDIR += qrfcview
      SUBDIR += qt
      SUBDIR += qt2
      SUBDIR += qt2-designer
