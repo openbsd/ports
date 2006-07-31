@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_applyplugin_c,v 1.1.1.1 2006/07/31 12:21:20 espie Exp $
+--- src/applyplugin.c.orig	Mon Jul 31 13:21:55 2006
++++ src/applyplugin.c	Mon Jul 31 13:22:47 2006
+@@ -6,7 +6,7 @@
+ /*****************************************************************************/
+ 
+ #include <dlfcn.h>
+-#include <endian.h>
++#include <sys/types.h>
+ #include <errno.h>
+ #include <math.h>
+ #include <stdlib.h>

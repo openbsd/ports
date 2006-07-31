@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/31 12:21:20 espie Exp $
+bin/analyseplugin
+bin/applyplugin
+bin/listplugins
+include/ladspa.h
+lib/ladspa/
+lib/ladspa/amp.so
+lib/ladspa/delay.so
+lib/ladspa/filter.so
+lib/ladspa/noise.so
+lib/ladspa/sine.so
+share/doc/ladspa/
+share/doc/ladspa/background.html
+share/doc/ladspa/changes.html
+share/doc/ladspa/download.html
+share/doc/ladspa/example_plugins.html
+share/doc/ladspa/index.html
+share/doc/ladspa/installation.html
+share/doc/ladspa/license.html
+share/doc/ladspa/overview.html
+share/doc/ladspa/shared_plugins.html
+share/doc/ladspa/unique_ids.html
