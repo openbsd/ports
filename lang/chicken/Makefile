@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2006/07/30 12:25:19 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2006/07/31 08:07:54 steven Exp $
 
 COMMENT=	"practical and portable Scheme system"
 
 DISTNAME=	chicken-2.41
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS=	chicken		0.0 \
 		uchicken	0.0
 CATEGORIES=	lang
@@ -37,12 +37,5 @@ EXTRA_CFLAGS=	-O0
 # fix this value at 128k instead of using the benchmark
 MAKE_FLAGS=	NURSERY=131072 \
 		EXTRA_CFLAGS=${EXTRA_CFLAGS}
-
-DOCDIR=		${PREFIX}/share/doc/chicken
-DOCS=		chicken.html ChangeLog README LICENSE
-
-post-install:
-	${INSTALL_DATA_DIR} ${DOCDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCDIR}
 
 .include <bsd.port.mk>

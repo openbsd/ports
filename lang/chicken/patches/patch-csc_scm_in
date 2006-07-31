@@ -1,0 +1,12 @@
+$OpenBSD: patch-csc_scm_in,v 1.1 2006/07/31 08:07:54 steven Exp $
+--- csc.scm.in.orig	Fri Jul 28 05:24:18 2006
++++ csc.scm.in	Fri Jul 28 05:24:32 2006
+@@ -226,7 +226,7 @@ EOF
+ 
+ (define include-dir
+   (let ([id (prefix "" "include" "%includedir%")])
+-    (and (not (member id '("/usr/include" "/usr/local/include" "")))
++    (and (not (member id '("/usr/include" "")))
+ 	 id) ) )
+ 
+ (define compile-options
