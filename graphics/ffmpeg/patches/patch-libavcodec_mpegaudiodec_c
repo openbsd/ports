@@ -1,0 +1,12 @@
+$OpenBSD: patch-libavcodec_mpegaudiodec_c,v 1.1 2006/07/31 15:03:15 millert Exp $
+--- libavcodec/mpegaudiodec.c.orig	Sun Jul 30 19:39:08 2006
++++ libavcodec/mpegaudiodec.c	Sun Jul 30 15:44:14 2006
+@@ -1650,7 +1650,7 @@ static int huffman_decode(MPADecodeConte
+             if (get_bits_count(&s->gb) >= end_pos)
+                 break;
+             if (code_table) {
+-                code = get_vlc2(&s->gb, vlc->table, 8, 2);
++                code = get_vlc2(&s->gb, vlc->table, 8, 3);
+                 if (code < 0)
+                     return -1;
+                 y = code_table[code];
