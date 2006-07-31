@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.52 2006/07/31 12:32:58 jakob Exp $
+$OpenBSD: user.list,v 1.53 2006/07/31 15:41:02 jakob Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -77,3 +77,4 @@ id  user		group		port options
 566 _tor		_tor		net/tor
 567 _dk-milter		_dk-milter	mail/dk-milter
 568 _milter-greylist			mail/milter-greylist
+569 _dkim-milter	_dkim-milter	mail/dkim-milter
