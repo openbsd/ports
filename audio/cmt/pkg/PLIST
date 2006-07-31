@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/31 12:22:15 espie Exp $
+lib/ladspa/
+lib/ladspa/cmt.so
+share/doc/cmt/
+share/doc/cmt/adding_plugins.html
+share/doc/cmt/bugs.html
+share/doc/cmt/changes.html
+share/doc/cmt/index.html
+share/doc/cmt/installation.html
+share/doc/cmt/license.html
+share/doc/cmt/overview.html
+share/doc/cmt/plugins.html
+share/doc/cmt/tasks.html

@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_makefile,v 1.1.1.1 2006/07/31 12:22:15 espie Exp $
+--- src/makefile.orig	Mon Jul 31 14:01:59 2006
++++ src/makefile	Mon Jul 31 14:04:41 2006
+@@ -123,3 +123,7 @@ backup:		clean
+ ###############################################################################
+ 
+ 
++.SUFFIXES: .o .cpp
++
++.cpp.o:
++	${CXX} ${CXXFLAGS} -c -o $*.o $*.cpp
