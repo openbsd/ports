@@ -1,17 +1,16 @@
-$OpenBSD: patch-setup_py,v 1.7 2006/07/05 18:31:07 alek Exp $
---- setup.py.orig	Mon May 29 14:31:27 2006
-+++ setup.py	Tue Jul  4 20:49:38 2006
+--- setup.py.orig	Sun Jul 30 16:44:11 2006
++++ setup.py	Sun Jul 30 16:47:49 2006
 @@ -95,7 +95,9 @@ class MyInstall (install, object):
                  val = getattr(self, attr)[cutoff:]
              else:
                  val = getattr(self, attr)
-+            val = "!!SITEPKG!!"
++            val = "!!SITEPKG!!"		
              if attr == 'install_data':
-+                val = sys.prefix
++                val = sys.prefix	    
                  cdir = os.path.join(val, "share", "linkchecker")
                  data.append('config_dir = %r' % cnormpath(cdir))
              data.append("%s = %r" % (attr, cnormpath(val)))
-@@ -475,9 +482,15 @@ myname = "Bastian Kleineidam"
+@@ -475,9 +477,15 @@ myname = "Bastian Kleineidam"
  myemail = "calvin@users.sourceforge.net"
  
  data_files = [
@@ -25,10 +24,10 @@ $OpenBSD: patch-setup_py,v 1.7 2006/07/05 18:31:07 alek Exp $
               ['config/linkcheckerrc', 'config/logging.conf', ]),
 -         ('share/linkchecker/examples',
 +         ('share/examples/linkchecker',
-              ['cgi/lconline/leer.html.en', 'cgi/lconline/leer.html.de',
-               'cgi/lconline/index.html', 'cgi/lconline/lc_cgi.html.en',
-               'cgi/lconline/lc_cgi.html.de', 'cgi/lconline/check.js',
-@@ -485,10 +498,10 @@ data_files = [
+              ['cgi-bin/lconline/leer.html.en',
+               'cgi-bin/lconline/leer.html.de',
+               'cgi-bin/lconline/index.html',
+@@ -489,10 +497,10 @@ data_files = [
        ]
  
  if os.name == 'posix':
