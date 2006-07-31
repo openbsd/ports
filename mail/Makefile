@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.159 2006/07/02 16:33:46 steven Exp $
+# $OpenBSD: Makefile,v 1.160 2006/07/31 12:40:12 jakob Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -21,6 +21,7 @@
      SUBDIR += cucipop
      SUBDIR += cue
      SUBDIR += cyrus-imapd
+     SUBDIR += dk-milter
      SUBDIR += dovecot
      SUBDIR += dovecot,ldap
      SUBDIR += dovecot,ldap,mysql,postgresql
@@ -74,6 +75,7 @@
      SUBDIR += majordomo
      SUBDIR += mboxgrep
      SUBDIR += metamail
+     SUBDIR += milter-greylist
      SUBDIR += milter-regex
      SUBDIR += milter-spamd
      SUBDIR += mini_sendmail
