@@ -1,0 +1,17 @@
+$OpenBSD: patch-doc_gopher_1,v 1.1.1.1 2006/07/31 12:52:20 steven Exp $
+--- doc/gopher.1.orig	Sun Jul 30 21:52:38 2006
++++ doc/gopher.1	Sun Jul 30 21:55:12 2006
+@@ -227,11 +227,11 @@ The program used to print from a pipe.
+ $HOME/.gopherrc
+ user bookmarks and configuration information
+ .TP
+-/usr/local/lib/gopher.rc
++!!SYSCONFDIR!!/gopher/gopher.rc
+ system default configuration information (default location - may be
+ somewhere else on your system)
+ .TP
+-/usr/local/lib/gopher.hlp
++!!LOCALBASE!!/share/gopher/gopher.hlp
+ client help file displayed by the '?' command (default location - may be
+ somewhere else on your system)
+  

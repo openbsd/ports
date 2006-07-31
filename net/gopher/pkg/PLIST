@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/31 12:52:20 steven Exp $
+bin/gopher
+bin/gophfilt
+@man man/man1/gopher.1
+@man man/man1/gophfilt.1
+@man man/man5/gopherrc.5
+share/examples/gopher/
+@sample ${SYSCONFDIR}/gopher/
+share/examples/gopher/gopher.rc
+@sample ${SYSCONFDIR}/gopher/gopher.rc
+share/examples/gopher/gopherremote.rc
+@sample ${SYSCONFDIR}/gopher/gopherremote.rc
+share/gopher/
+share/gopher/gopher.hlp

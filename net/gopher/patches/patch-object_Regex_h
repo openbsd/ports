@@ -1,0 +1,18 @@
+$OpenBSD: patch-object_Regex_h,v 1.1.1.1 2006/07/31 12:52:20 steven Exp $
+--- object/Regex.h.orig	Wed Jul 26 12:56:33 2006
++++ object/Regex.h	Wed Jul 26 12:56:44 2006
+@@ -171,14 +171,6 @@
+ #warning REGEX_POSIX defined but REG_EXTENDED not found.
+ #endif
+ 
+-/* These are named posix_re_comp and then #defined to the original names
+-because MacOS X is nice enough to typedef re_comp and re_exec differently
+-in unistd.h.  Eww. */
+-
+-char *posix_re_comp(char *regex);
+-int posix_re_exec(char *string);
+-#define re_comp(a) (posix_re_comp(a))
+-#define re_exec(a) (posix_re_exec(a))
+ #else
+ 
+ /* ********** Try to figure out what else they have. */

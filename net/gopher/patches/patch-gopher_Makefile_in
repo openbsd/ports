@@ -1,0 +1,12 @@
+$OpenBSD: patch-gopher_Makefile_in,v 1.1.1.1 2006/07/31 12:52:20 steven Exp $
+--- gopher/Makefile.in.orig	Fri Jul 28 20:19:27 2006
++++ gopher/Makefile.in	Fri Jul 28 20:20:44 2006
+@@ -132,7 +132,7 @@ OBJS	= manager.o gopher.o globals.o ouru
+ 
+ CCFLAGS	= $(OPT) $(DEBUGGING) -I.. -I$(top_srcdir) -I$(top_srcdir)/object \
+ 	  $(INTLOPTS) $(CLIENTOPTS)  -DGOPHERLIB=\"$(CLIENTLIB)\" \
+-	 -DGOPHERHELP=\"$(CLIENTLIB)/gopher.hlp\" \
++	 -DGOPHERHELP=\"${LOCALBASE}/share/gopher/gopher.hlp\" \
+ 	 -DGLOBALRC=\"$(CLIENTLIB)/gopher.rc\" \
+ 	 -DREMOTERC=\"$(CLIENTLIB)/gopherremote.rc\"
+ 
