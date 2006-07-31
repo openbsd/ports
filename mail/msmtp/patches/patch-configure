@@ -1,16 +1,33 @@
-$OpenBSD: patch-configure,v 1.1 2005/09/29 18:54:02 bernd Exp $
---- configure.orig	Mon Aug 15 15:32:45 2005
-+++ configure	Thu Sep 29 14:32:27 2005
-@@ -13131,10 +13131,10 @@ s,@GMSGFMT@,$GMSGFMT,;t t
- s,@XGETTEXT@,$XGETTEXT,;t t
- s,@MSGMERGE@,$MSGMERGE,;t t
- s,@INTL_MACOSX_LIBS@,$INTL_MACOSX_LIBS,;t t
--s,@LIBICONV@,$LIBICONV,;t t
-+s,@LIBICONV@,$LTLIBICONV,;t t
- s,@LTLIBICONV@,$LTLIBICONV,;t t
- s,@INTLLIBS@,$INTLLIBS,;t t
--s,@LIBINTL@,$LIBINTL,;t t
-+s,@LIBINTL@,$LTLIBINTL,;t t
- s,@LTLIBINTL@,$LTLIBINTL,;t t
- s,@POSUB@,$POSUB,;t t
- s,@have_pkgconfig@,$have_pkgconfig,;t t
+$OpenBSD: patch-configure,v 1.2 2006/07/31 20:53:00 alek Exp $
+--- configure.orig	Sat Jun 17 20:42:00 2006
++++ configure	Mon Jul 31 00:10:15 2006
+@@ -868,14 +868,14 @@ localstatedir='${prefix}/var'
+ includedir='${prefix}/include'
+ oldincludedir='/usr/include'
+ docdir='${datarootdir}/doc/${PACKAGE_TARNAME}'
+-infodir='${datarootdir}/info'
++infodir='${prefix}/info'
+ htmldir='${docdir}'
+ dvidir='${docdir}'
+ pdfdir='${docdir}'
+ psdir='${docdir}'
+ libdir='${exec_prefix}/lib'
+ localedir='${datarootdir}/locale'
+-mandir='${datarootdir}/man'
++mandir='${prefix}/man'
+ 
+ ac_prev=
+ ac_dashdash=
+@@ -27246,10 +27246,10 @@ GMSGFMT!$GMSGFMT$ac_delim
+ XGETTEXT!$XGETTEXT$ac_delim
+ MSGMERGE!$MSGMERGE$ac_delim
+ INTL_MACOSX_LIBS!$INTL_MACOSX_LIBS$ac_delim
+-LIBICONV!$LIBICONV$ac_delim
++LIBICONV!$LTLIBICONV$ac_delim
+ LTLIBICONV!$LTLIBICONV$ac_delim
+ INTLLIBS!$INTLLIBS$ac_delim
+-LIBINTL!$LIBINTL$ac_delim
++LIBINTL!$LTLIBINTL$ac_delim
+ LTLIBINTL!$LTLIBINTL$ac_delim
+ POSUB!$POSUB$ac_delim
+ LIBGNUTLS_CONFIG!$LIBGNUTLS_CONFIG$ac_delim
