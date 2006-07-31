@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_tree-complex_c,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
+--- gcc/tree-complex.c.orig	Fri Jul 29 16:51:58 2005
++++ gcc/tree-complex.c	Thu Aug  4 10:54:45 2005
+@@ -397,7 +397,7 @@ create_one_component_var (tree type, tre
+       const char *name = IDENTIFIER_POINTER (DECL_NAME (orig));
+       tree inner_type;
+ 
+-      DECL_NAME (r) = get_identifier (ACONCAT ((name, suffix, NULL)));
++      DECL_NAME (r) = get_identifier (ACONCAT ((name, suffix, (char *)0)));
+ 
+       inner_type = TREE_TYPE (TREE_TYPE (orig));
+       SET_DECL_DEBUG_EXPR (r, build1 (code, type, orig));

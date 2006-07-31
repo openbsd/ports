@@ -1,0 +1,38 @@
+$OpenBSD: patch-gcc_c-common_c,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
+--- gcc/c-common.c.orig	Thu Jul  6 04:09:02 2006
++++ gcc/c-common.c	Sun Jul 23 14:24:16 2006
+@@ -543,7 +543,9 @@ static tree handle_cleanup_attribute (tr
+ static tree handle_warn_unused_result_attribute (tree *, tree, tree, int,
+ 						 bool *);
+ static tree handle_sentinel_attribute (tree *, tree, tree, int, bool *);
++static tree handle_bounded_attribute (tree *, tree, tree, int, bool *);
+ 
++
+ static void check_function_nonnull (tree, tree);
+ static void check_nonnull_arg (void *, tree, unsigned HOST_WIDE_INT);
+ static bool nonnull_check_p (tree, unsigned HOST_WIDE_INT);
+@@ -620,6 +622,8 @@ const struct attribute_spec c_common_att
+ 			      handle_deprecated_attribute },
+   { "vector_size",	      1, 1, false, true, false,
+ 			      handle_vector_size_attribute },
++  { "bounded",                3, 4, false, true, false,
++                              handle_bounded_attribute },
+   { "visibility",	      1, 1, false, false, false,
+ 			      handle_visibility_attribute },
+   { "tls_model",	      1, 1, true,  false, false,
+@@ -5590,6 +5594,15 @@ handle_warn_unused_result_attribute (tre
+     }
+ 
+   return NULL_TREE;
++}
++
++static tree
++handle_bounded_attribute (tree *ARG_UNUSED (node), tree ARG_UNUSED (name), 
++			   tree ARG_UNUSED (args),
++			   int ARG_UNUSED (flags), bool *no_add_attrs)
++{
++	*no_add_attrs = true;
++	return NULL_TREE;
+ }
+ 
+ /* Handle a "sentinel" attribute.  */

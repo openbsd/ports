@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_diagnostic_c,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
+--- gcc/diagnostic.c.orig	Wed Mar 22 20:36:22 2006
++++ gcc/diagnostic.c	Sun Jul 23 11:24:02 2006
+@@ -398,7 +398,7 @@ diagnostic_report_diagnostic (diagnostic
+       if (context->show_option_requested && diagnostic->option_index)
+ 	diagnostic->message.format_spec
+ 	  = ACONCAT ((diagnostic->message.format_spec,
+-		      " [", cl_options[diagnostic->option_index].opt_text, "]", NULL));
++		      " [", cl_options[diagnostic->option_index].opt_text, "]", (char *)0));
+ 
+       diagnostic->message.locus = &diagnostic->location;
+       pp_format (context->printer, &diagnostic->message);

@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_cp_g++spec_c,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
+--- gcc/cp/g++spec.c.orig	Sat Jun 25 02:58:12 2005
++++ gcc/cp/g++spec.c	Thu Aug  4 10:54:00 2005
+@@ -40,7 +40,7 @@ Boston, MA 02110-1301, USA.  */
+ #endif
+ 
+ #ifndef LIBSTDCXX
+-#define LIBSTDCXX "-lstdc++"
++#define LIBSTDCXX "-lestdc++"
+ #endif
+ #ifndef LIBSTDCXX_PROFILE
+ #define LIBSTDCXX_PROFILE LIBSTDCXX

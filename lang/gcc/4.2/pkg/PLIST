@@ -1,0 +1,79 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
+%%SHARED%%
+bin/ecpp
+bin/egcc
+bin/egccbug
+bin/egcov
+bin/${CONFIG}-egcc
+bin/${CONFIG}-gcc-${V}
+@info info/cpp.info
+@info info/cppinternals.info
+@info info/gcc.info
+@info info/gccinstall.info
+@info info/gccint.info
+lib/gcc/
+lib/gcc/${CONFIG}/
+lib/gcc/${CONFIG}/${V}/
+lib/gcc/${CONFIG}/${V}/finclude/
+lib/gcc/${CONFIG}/${V}/include/
+lib/gcc/${CONFIG}/${V}/include/README
+lib/gcc/${CONFIG}/${V}/include/com_err.h
+lib/gcc/${CONFIG}/${V}/include/emmintrin.h
+lib/gcc/${CONFIG}/${V}/include/limits.h
+lib/gcc/${CONFIG}/${V}/include/math.h
+lib/gcc/${CONFIG}/${V}/include/mm3dnow.h
+lib/gcc/${CONFIG}/${V}/include/mm_malloc.h
+lib/gcc/${CONFIG}/${V}/include/mmintrin.h
+lib/gcc/${CONFIG}/${V}/include/pmmintrin.h
+lib/gcc/${CONFIG}/${V}/include/rpc/
+lib/gcc/${CONFIG}/${V}/include/rpc/rpc_des.h
+lib/gcc/${CONFIG}/${V}/include/rpc/svc.h
+lib/gcc/${CONFIG}/${V}/include/ssp/
+lib/gcc/${CONFIG}/${V}/include/ssp/ssp.h
+lib/gcc/${CONFIG}/${V}/include/ssp/stdio.h
+lib/gcc/${CONFIG}/${V}/include/ssp/string.h
+lib/gcc/${CONFIG}/${V}/include/ssp/unistd.h
+lib/gcc/${CONFIG}/${V}/include/stddef.h
+lib/gcc/${CONFIG}/${V}/include/stdio.h
+lib/gcc/${CONFIG}/${V}/include/stdlib.h
+lib/gcc/${CONFIG}/${V}/include/sys/
+lib/gcc/${CONFIG}/${V}/include/sys/types.h
+lib/gcc/${CONFIG}/${V}/include/syslimits.h
+lib/gcc/${CONFIG}/${V}/include/unwind.h
+lib/gcc/${CONFIG}/${V}/include/xmmintrin.h
+lib/gcc/${CONFIG}/${V}/install-tools/
+lib/gcc/${CONFIG}/${V}/install-tools/gsyslimits.h
+lib/gcc/${CONFIG}/${V}/install-tools/include/
+lib/gcc/${CONFIG}/${V}/install-tools/include/README
+lib/gcc/${CONFIG}/${V}/install-tools/include/emmintrin.h
+lib/gcc/${CONFIG}/${V}/install-tools/include/limits.h
+lib/gcc/${CONFIG}/${V}/install-tools/include/mm3dnow.h
+lib/gcc/${CONFIG}/${V}/install-tools/include/mm_malloc.h
+lib/gcc/${CONFIG}/${V}/install-tools/include/mmintrin.h
+lib/gcc/${CONFIG}/${V}/install-tools/include/pmmintrin.h
+lib/gcc/${CONFIG}/${V}/install-tools/include/unwind.h
+lib/gcc/${CONFIG}/${V}/install-tools/include/xmmintrin.h
+lib/gcc/${CONFIG}/${V}/install-tools/macro_list
+lib/gcc/${CONFIG}/${V}/install-tools/mkheaders.conf
+lib/gcc/${CONFIG}/${V}/libgcc.a
+lib/gcc/${CONFIG}/${V}/libgcov.a
+lib/libiberty.a
+lib/libssp.a
+lib/libssp.la
+lib/libssp_nonshared.a
+lib/libssp_nonshared.la
+libexec/gcc/
+libexec/gcc/${CONFIG}/
+libexec/gcc/${CONFIG}/${V}/
+libexec/gcc/${CONFIG}/${V}/cc1
+libexec/gcc/${CONFIG}/${V}/collect2
+libexec/gcc/${CONFIG}/${V}/install-tools/
+libexec/gcc/${CONFIG}/${V}/install-tools/fixinc.sh
+libexec/gcc/${CONFIG}/${V}/install-tools/fixincl
+libexec/gcc/${CONFIG}/${V}/install-tools/mkheaders
+@man man/man1/ecpp.1
+@man man/man1/egcc.1
+@man man/man1/egcov.1
+@man man/man7/fsf-funding.7
+@man man/man7/gfdl.7
+@man man/man7/gpl.7

@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_tree-mudflap_c,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
+--- gcc/tree-mudflap.c.orig	Sat Apr 22 18:22:54 2006
++++ gcc/tree-mudflap.c	Sun Jul 23 11:24:02 2006
+@@ -236,7 +236,7 @@ mf_file_function_line_tree (location_t l
+   else
+     op = name = cp = "";
+ 
+-  string = concat (file, colon, line, op, name, cp, NULL);
++  string = concat (file, colon, line, op, name, cp, (void *)0);
+   result = mf_build_string (string);
+   free (string);
+ 

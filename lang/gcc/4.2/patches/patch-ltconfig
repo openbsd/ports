@@ -1,0 +1,30 @@
+$OpenBSD: patch-ltconfig,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
+--- ltconfig.orig	Tue Jul  4 22:30:34 2006
++++ ltconfig	Sat Jul 22 19:45:19 2006
+@@ -626,7 +626,12 @@ old_postuninstall_cmds=
+ 
+ if test -n "$RANLIB"; then
+   old_archive_cmds="$old_archive_cmds~\$RANLIB \$oldlib"
+-  old_postinstall_cmds="~$old_postinstall_cmds~\$RANLIB \$oldlib"
++  case $host_os in
++  openbsd*)
++      old_postinstall_cmds="~$old_postinstall_cmds~\$RANLIB -t \$oldlib";;
++  *)
++      old_postinstall_cmds="~$old_postinstall_cmds~\$RANLIB \$oldlib";;
++  esac
+ fi
+ 
+ # Source the script associated with the $tagname tag configuration.
+@@ -1306,8 +1311,11 @@ openbsd*)
+     need_version=no
+   fi
+   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
++  #finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
++  shlibpath_overrides_runpath=yes
++  deplib_check_method=pass_all
++  sys_lib_dlsearch_path_spec='/usr/lib /usr/local/lib /usr/X11R6/lib'
+   ;;
+ 
+ os2*)

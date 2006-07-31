@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_varasm_c,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
+--- gcc/varasm.c.orig	Thu Jul 13 22:49:34 2006
++++ gcc/varasm.c	Sun Jul 23 11:24:03 2006
+@@ -397,7 +397,7 @@ initialize_cold_section_name (void)
+ 
+       stripped_name = targetm.strip_name_encoding (name);
+ 
+-      buffer = ACONCAT ((stripped_name, "_unlikely", NULL));
++      buffer = ACONCAT ((stripped_name, "_unlikely", (char *)0));
+       cfun->unlikely_text_section_name = ggc_strdup (buffer);
+     }
+   else

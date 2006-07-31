@@ -1,0 +1,20 @@
+$OpenBSD: patch-gcc_config_i386_driver-i386_c,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
+--- gcc/config/i386/driver-i386.c.orig	Sun Jul 23 14:55:23 2006
++++ gcc/config/i386/driver-i386.c	Sun Jul 23 14:55:40 2006
+@@ -161,14 +161,14 @@ const char *host_detect_local_cpu (int a
+     }
+ 
+ done:
+-  return concat ("-m", argv[0], "=", cpu, NULL);
++  return concat ("-m", argv[0], "=", cpu, (void *)0);
+ }
+ #else
+ /* If we aren't compiling with GCC we just provide a minimal
+    default value.  */
+ const char *host_detect_local_cpu (int argc, const char **argv)
+ {
+-  return concat ("-m", argv[0], "=i386", NULL);
++  return concat ("-m", argv[0], "=i386", (void *)0);
+ }
+ #endif
+ #endif

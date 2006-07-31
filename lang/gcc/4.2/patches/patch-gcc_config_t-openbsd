@@ -1,0 +1,7 @@
+$OpenBSD: patch-gcc_config_t-openbsd,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
+--- gcc/config/t-openbsd.orig	Sat Jul 22 23:29:24 2006
++++ gcc/config/t-openbsd	Sat Jul 22 23:29:32 2006
+@@ -1,2 +1,2 @@
+ # We don't need GCC's own include files.
+-USER_H =
++USER_H = $(EXTRA_HEADERS)
