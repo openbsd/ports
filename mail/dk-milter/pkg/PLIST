@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/31 12:35:07 jakob Exp $
+@newgroup _dk-milter:567
+@newuser _dk-milter:567:_dk-milter:daemon:dk-milter Account:/nonexistent:/sbin/nologin
+libexec/dk-filter
+@man man/man8/dk-filter.8
+share/examples/dk-milter/
+share/examples/dk-milter/gentxt.csh

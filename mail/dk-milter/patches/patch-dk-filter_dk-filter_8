@@ -1,0 +1,11 @@
+$OpenBSD: patch-dk-filter_dk-filter_8,v 1.1.1.1 2006/07/31 12:35:07 jakob Exp $
+--- dk-filter/dk-filter.8.orig	Thu May 25 20:38:49 2006
++++ dk-filter/dk-filter.8	Mon Jun 19 23:13:43 2006
+@@ -172,6 +172,7 @@ See also the NOTES section below.
+ Attempts to be come the specified
+ .I userid
+ before starting operations.
++The default is to change user to _dk-milter.
+ .TP
+ .I -U popdb
+ Requests that the filter consult a POP authentication database for IP

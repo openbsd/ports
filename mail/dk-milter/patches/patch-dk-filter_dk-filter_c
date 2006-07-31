@@ -1,0 +1,33 @@
+$OpenBSD: patch-dk-filter_dk-filter_c,v 1.1.1.1 2006/07/31 12:35:07 jakob Exp $
+--- dk-filter/dk-filter.c.orig	Fri May 19 23:42:05 2006
++++ dk-filter/dk-filter.c	Tue Jun 20 09:03:16 2006
+@@ -2782,7 +2782,7 @@ main(int argc, char **argv)
+ 	const char *args = CMDLINEOPTS;
+ 	FILE *f;
+ 	char *be = NULL;
+-	char *become = NULL;
++	char *become = "_dk-milter";
+ 	char *domlist = NULL;
+ 	char *mtalist = NULL;
+ 	char *p;
+@@ -3492,6 +3492,20 @@ main(int argc, char **argv)
+ 		}
+ 
+ 		(void) endpwent();
++
++		if (setgid(pw->pw_gid) != 0)
++		{
++			if (dolog)
++			{
++				syslog(LOG_ERR, "setgid(): %s",
++				       strerror(errno));
++			}
++
++			fprintf(stderr, "%s: setgid(): %s\n", progname,
++			        strerror(errno));
++
++			return EX_NOPERM;
++		}
+ 
+ 		if (setuid(pw->pw_uid) != 0)
+ 		{
