@@ -1,0 +1,48 @@
+$OpenBSD: patch-conf_nepenthes_conf_dist,v 1.1 2006/07/31 13:02:18 aanriot Exp $
+--- conf/nepenthes.conf.dist.orig	Sun Jul 30 11:59:05 2006
++++ conf/nepenthes.conf.dist	Sun Jul 30 12:04:09 2006
+@@ -3,8 +3,8 @@
+ 
+ nepenthes
+ {
+-    moduledir               "lib/nepenthes";        // relative to workdir
+-    moduleconfigdir         "etc/nepenthes";                  // relative to workdir
++    moduledir               "%%PREFIX%%/lib/nepenthes";
++    moduleconfigdir         "%%SYSCONFDIR%%/nepenthes";
+ 
+     modules(
+ //  module name (in moduledir)      config file (in moduleconfigdir)
+@@ -91,8 +91,8 @@ nepenthes
+ 
+     logmanager
+     {
+-	ring_logging_file		"var/log/nepenthes.%d.log";
+-	file_logging_file		"var/log/nepenthes.log";
++	ring_logging_file		"/var/nepenthes/log/nepenthes.%d.log";
++	file_logging_file		"/var/nepenthes/log/nepenthes.log";
+     };
+ 
+     modulemanager
+@@ -104,7 +104,7 @@ nepenthes
+     {
+         strictfiletype              "1";
+         // where does submit-file write to? set this to the same dir
+-        filesdir                    "var/binaries/"; 
++        filesdir                    "/var/nepenthes/binaries/"; 
+     };
+ 
+     downloadmanager
+@@ -123,11 +123,11 @@ nepenthes
+     
+     utilities
+     {
+-	hexdump_path                "var/hexdumps/";
++	hexdump_path                "/var/nepenthes/hexdumps/";
+     };
+     
+     geolocationmanager
+     {
+-	cache_path                   "var/cache/nepenthes/geolocation/";
++	cache_path                   "/var/nepenthes/cache/nepenthes/geolocation/";
+     };
+ };
