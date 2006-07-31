@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/06/03 07:18:42 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2006/07/31 05:58:20 steven Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		"perl interface to the BSD kqueue system call"
 
-DISTNAME=		IO-KQueue-0.30
+DISTNAME=		IO-KQueue-0.31
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		devel perl5
 
