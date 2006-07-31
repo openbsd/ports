@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.422 2006/07/30 17:39:55 david Exp $
+# $OpenBSD: Makefile,v 1.423 2006/07/31 12:53:07 steven Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -81,6 +81,7 @@
      SUBDIR += gftp
      SUBDIR += gmudix
      SUBDIR += gnet
+     SUBDIR += gopher
      SUBDIR += gotthard
      SUBDIR += gtk-gnutella
      SUBDIR += honeyd
