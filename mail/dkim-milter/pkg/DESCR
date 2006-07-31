@@ -1,0 +1,5 @@
+The dkim-milter package is an open source implementation of the DKIM
+sender authentication system proposed by the E-mail Signing Technology
+Group (ESTG).  DKIM is an amalgamation of the DomainKeys (DK) proposal
+by Yahoo!, Inc. and the Internet Identified Mail (IIM) proposal by
+Cisco.

@@ -1,0 +1,33 @@
+$OpenBSD: patch-dkim-filter_dkim-filter_c,v 1.1.1.1 2006/07/31 15:40:22 jakob Exp $
+--- dkim-filter/dkim-filter.c.orig	Mon Jun 12 19:44:09 2006
++++ dkim-filter/dkim-filter.c	Mon Jul 31 17:16:45 2006
+@@ -3138,7 +3138,7 @@ main(int argc, char **argv)
+ 	const char *args = CMDLINEOPTS;
+ 	FILE *f;
+ 	char *be = NULL;
+-	char *become = NULL;
++	char *become = "_dkim-milter";
+ 	char *domlist = NULL;
+ 	char *mtalist = NULL;
+ 	char *p;
+@@ -4115,6 +4115,20 @@ main(int argc, char **argv)
+ 		}
+ 
+ 		(void) endpwent();
++
++		if (setgid(pw->pw_gid) != 0)
++		{
++			if (dolog)
++			{
++				syslog(LOG_ERR, "setgid(): %s",
++				       strerror(errno));
++			}
++
++			fprintf(stderr, "%s: setgid(): %s\n", progname,
++			        strerror(errno));
++
++			return EX_NOPERM;
++		}
+ 
+ 		if (setuid(pw->pw_uid) != 0)
+ 		{

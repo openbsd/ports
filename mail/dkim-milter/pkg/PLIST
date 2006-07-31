@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/31 15:40:22 jakob Exp $
+@newgroup _dkim-milter:569
+@newuser _dkim-milter:569:_dkim-milter:daemon:dkim-milter Account:/nonexistent:/sbin/nologin
+libexec/dkim-filter
+@man man/man8/dkim-filter.8
+share/examples/dkim-milter/
+share/examples/dkim-milter/dkim-filter.conf.sample
+share/examples/dkim-milter/gentxt.csh

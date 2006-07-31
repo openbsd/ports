@@ -1,0 +1,57 @@
+(1) Configure sendmail:
+  (a) Choose a socket at which the MTA and the filter will rendezvous
+      (see the documentation in libmilter for details)
+  (b) Add a line like this example to your sendmail.mc using your desired
+      socket specification:
+	INPUT_MAIL_FILTER(`dkim-filter', `S=inet:8891@localhost')
+  (c) Rebuild your sendmail.cf in the usual way
+
+(2) Choose a selector name.  Current convention is to use the hostname
+    (hostname only, not the fully-qualified domain name) of the host that
+    will be providing the service, but you are free to choose any name you
+    wish, especially if you have a selector assignment scheme in mind.
+
+(3) Either:
+  (a) Run the script gentxt.csh.  This will generate a public and private
+      key in PEM format and output a TXT record appropriate for insertion
+      into your DNS zone file.  Insert it in your zone file and reload your
+      DNS system so the data is published.
+	-OR-
+  (b) Manually generate a public and private key:
+    (i)   % openssl genrsa -out rsa.private 512
+    (ii)  % openssl rsa -in rsa.private -out rsa.public -pubout -outform PEM
+    (iii) Add a TXT DNS record containing the base64 encoding of your public
+          key, which is everything between the BEGIN and END lines in the
+          rsa.public file generated above, with spaces and newlines removed.
+          It should be in this form:
+
+	  "g=; k=rsa; t=y; p=MFwwDQYJ...AwEAAQ=="
+
+          ...using, of course, your own public key's base64 data.  The name of
+          the TXT record should be SELECTOR._domainkey.example.com (where
+          "SELECTOR" is the name you chose and "example.com" is your domain
+          name).  You might want to set a short TTL on this record.  Reload
+          your nameserver so that the record gets published.  For a translation
+          of the parameter and value pairs shown here, see the draft spec;
+          basically this just announces an RSA public key and also declares
+          that your site is using this key in test mode so nobody should take
+          any real action based on success or failure of the use of this key to
+          verify a message.
+
+(4) Store the private key in a safe place.  We generally use a path like
+    /var/db/domainkeys/SELECTOR.key.pem (where "SELECTOR" is the name you
+    chose).
+
+(5) Start dkim-filter.  You will need at least the "-p" option.  The current
+    recommended set of command line options is:
+
+	-l -p SOCKETSPEC -d DOMAIN -s KEYPATH -S SELECTOR
+
+    ...where SOCKETSPEC is the socket you told sendmail to use above,
+    DOMAIN is the domain or set of domains for which you want to sign
+    mail, KEYPATH is the path to the private key file you generated, and
+    SELECTOR is the selector name you picked.  You can tack "-f" on there
+    if you want it to run in the foreground instead of in the background
+    as a daemon.
+
+(7) Restart sendmail.
