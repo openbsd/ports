@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.149 2006/07/13 16:45:14 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.150 2006/07/31 12:23:25 espie Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -13,6 +13,7 @@
      SUBDIR += bonk
      SUBDIR += cdparanoia
      SUBDIR += cplay
+     SUBDIR += cmt
      SUBDIR += daapd
      SUBDIR += disc-cover
      SUBDIR += easytag
@@ -31,6 +32,7 @@
      SUBDIR += id3lib
      SUBDIR += ifp-line
      SUBDIR += ksmp3play
+     SUBDIR += ladspa
      SUBDIR += lame
      SUBDIR += lame,no_x11
      SUBDIR += liba52
