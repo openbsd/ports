@@ -1,0 +1,2 @@
+milter-greylist is a mail filter for sendmail that implements grey
+listing, a spam filtering technique proposed by Evan Harris.

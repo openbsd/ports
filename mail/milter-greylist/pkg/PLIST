@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/31 12:36:43 jakob Exp $
+@newuser _milter-greylist:568::daemon:milter-greylist Account:/nonexistent:/sbin/nologin
+libexec/milter-greylist
+@man man/man5/greylist.conf.5
+@man man/man8/milter-greylist.8
+share/examples/milter-greylist/
+share/examples/milter-greylist/greylist.conf
+@sample ${SYSCONFDIR}/mail/greylist.conf
+@mode 0755
+@owner _milter-greylist
+@sample /var/db/milter-greylist/
