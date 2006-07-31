@@ -1,7 +1,7 @@
-$OpenBSD: patch-Source_cmMakefile_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
---- Source/cmMakefile.cxx.orig	Mon Jul  3 12:44:41 2006
-+++ Source/cmMakefile.cxx	Mon Jul  3 12:45:05 2006
-@@ -1811,9 +1811,9 @@ void cmMakefile::AddDefaultDefinitions()
+$OpenBSD: patch-Source_cmMakefile_cxx,v 1.2 2006/07/31 23:55:51 espie Exp $
+--- Source/cmMakefile.cxx.orig	Mon Jul 31 16:49:57 2006
++++ Source/cmMakefile.cxx	Tue Aug  1 00:32:19 2006
+@@ -1908,9 +1908,9 @@ void cmMakefile::AddDefaultDefinitions()
  #endif
  
    char temp[1024];
@@ -11,5 +11,5 @@ $OpenBSD: patch-Source_cmMakefile_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
 -  sprintf(temp, "%d", cmMakefile::GetMajorVersion());
 +  snprintf(temp, sizeof temp, "%d", cmMakefile::GetMajorVersion());
    this->AddDefinition("CMAKE_MAJOR_VERSION", temp);
- }
- 
+   sprintf(temp, "%d", cmMakefile::GetPatchVersion());
+   this->AddDefinition("CMAKE_PATCH_VERSION", temp);

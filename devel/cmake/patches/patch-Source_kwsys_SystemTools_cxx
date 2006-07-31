@@ -1,7 +1,7 @@
-$OpenBSD: patch-Source_kwsys_SystemTools_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
---- Source/kwsys/SystemTools.cxx.orig	Sun Jul  2 19:03:00 2006
-+++ Source/kwsys/SystemTools.cxx	Sun Jul  2 19:25:36 2006
-@@ -916,13 +916,14 @@ char* SystemTools::AppendStrings(const c
+$OpenBSD: patch-Source_kwsys_SystemTools_cxx,v 1.2 2006/07/31 23:55:52 espie Exp $
+--- Source/kwsys/SystemTools.cxx.orig	Mon Jul 31 16:49:59 2006
++++ Source/kwsys/SystemTools.cxx	Tue Aug  1 00:32:20 2006
+@@ -919,13 +919,14 @@ char* SystemTools::AppendStrings(const c
      return SystemTools::DuplicateString(str1);
      }
    size_t len1 = strlen(str1);
@@ -19,7 +19,7 @@ $OpenBSD: patch-Source_kwsys_SystemTools_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie
    return newstr;
  }
  
-@@ -943,14 +944,15 @@ char* SystemTools::AppendStrings(
+@@ -946,14 +947,15 @@ char* SystemTools::AppendStrings(
      }
  
    size_t len1 = strlen(str1), len2 = strlen(str2);
@@ -39,7 +39,7 @@ $OpenBSD: patch-Source_kwsys_SystemTools_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie
    return newstr;
  }
  
-@@ -1118,8 +1120,10 @@ char* SystemTools::DuplicateString(const
+@@ -1121,8 +1123,10 @@ char* SystemTools::DuplicateString(const
  {
    if (str)
      {
@@ -52,7 +52,7 @@ $OpenBSD: patch-Source_kwsys_SystemTools_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie
      }
    return NULL;
  }
-@@ -1775,7 +1779,7 @@ bool SystemTools::ConvertDateMacroString
+@@ -1783,7 +1787,7 @@ bool SystemTools::ConvertDateMacroString
    static char month_names[] = "JanFebMarAprMayJunJulAugSepOctNovDec";
  
    char buffer[12];
@@ -61,7 +61,7 @@ $OpenBSD: patch-Source_kwsys_SystemTools_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie
  
    buffer[3] = 0;
    char *ptr = strstr(month_names, buffer);
-@@ -1826,7 +1830,7 @@ bool SystemTools::ConvertTimeStampMacroS
+@@ -1834,7 +1838,7 @@ bool SystemTools::ConvertTimeStampMacroS
    static char month_names[] = "JanFebMarAprMayJunJulAugSepOctNovDec";
  
    char buffer[27];
@@ -70,7 +70,7 @@ $OpenBSD: patch-Source_kwsys_SystemTools_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie
  
    buffer[7] = 0;
    char *ptr = strstr(month_names, buffer + 4);
-@@ -3228,12 +3232,12 @@ bool SystemTools::GetShortPath(const cha
+@@ -3245,12 +3249,12 @@ bool SystemTools::GetShortPath(const cha
    // if the path passed in has quotes around it, first remove the quotes
    if (path[0] == '"' && path[strlen(path)-1] == '"')
      {

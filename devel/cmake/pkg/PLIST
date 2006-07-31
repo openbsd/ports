@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/07/31 23:55:52 espie Exp $
 bin/ccmake
 bin/cmake
 bin/cpack
@@ -88,6 +88,7 @@ share/CMake/Modules/DartConfiguration.tcl.in
 share/CMake/Modules/Documentation.cmake
 share/CMake/Modules/DummyCXXFile.cxx
 share/CMake/Modules/FindAVIFile.cmake
+share/CMake/Modules/FindBoost.cmake
 share/CMake/Modules/FindCABLE.cmake
 share/CMake/Modules/FindCurses.cmake
 share/CMake/Modules/FindCygwin.cmake
@@ -153,6 +154,7 @@ share/CMake/Modules/FindwxWindows.cmake
 share/CMake/Modules/InstallRequiredSystemLibraries.cmake
 share/CMake/Modules/KDE3Macros.cmake
 share/CMake/Modules/MacOSXBundleInfo.plist.in
+share/CMake/Modules/MacroAddFileDependencies.cmake
 share/CMake/Modules/NSIS.InstallOptions.ini.in
 share/CMake/Modules/NSIS.template.in
 share/CMake/Modules/Platform/

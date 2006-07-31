@@ -1,12 +1,27 @@
-$OpenBSD: patch-Source_cmLocalUnixMakefileGenerator3_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
---- Source/cmLocalUnixMakefileGenerator3.cxx.orig	Tue Jul 18 11:05:28 2006
-+++ Source/cmLocalUnixMakefileGenerator3.cxx	Tue Jul 18 11:05:40 2006
-@@ -1001,7 +1001,7 @@ cmLocalUnixMakefileGenerator3::CreateSaf
-       bool done;
-       int cc = 0;
-       char rpstr[100];
--      sprintf(rpstr, "_p_");
-+      snprintf(rpstr, sizeof rpstr, "_p_");
-       cmSystemTools::ReplaceString(ssin, "+", rpstr);
-       std::string sssin = sin;
-       do
+$OpenBSD: patch-Source_cmLocalUnixMakefileGenerator3_cxx,v 1.2 2006/07/31 23:55:51 espie Exp $
+--- Source/cmLocalUnixMakefileGenerator3.cxx.orig	Mon Jul 31 16:49:57 2006
++++ Source/cmLocalUnixMakefileGenerator3.cxx	Tue Aug  1 00:33:42 2006
+@@ -1105,7 +1105,7 @@ cmLocalUnixMakefileGenerator3
+     while(this->ShortMakeVariableMap.count(ret) && ni < 1000)
+       {
+       ++ni;
+-      sprintf(buffer, "%04d", ni);
++      snprintf(buffer, sizeof buffer, "%04d", ni);
+       ret = unmodified + buffer;
+       }
+     this->ShortMakeVariableMap[ret] = "1";
+@@ -1133,12 +1133,12 @@ cmLocalUnixMakefileGenerator3
+       }
+     char buffer[5];
+     int ni = 0;
+-    sprintf(buffer, "%04d", ni);
++    snprintf(buffer, sizeof buffer, "%04d", ni);
+     ret = str1 + str2 + buffer;
+     while(this->ShortMakeVariableMap.count(ret) && ni < 1000)
+       {
+       ++ni;
+-      sprintf(buffer, "%04d", ni);
++      snprintf(buffer, sizeof buffer, "%04d", ni);
+       ret = str1 + str2 + buffer;
+       }
+     if(ni == 1000)

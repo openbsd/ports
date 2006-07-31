@@ -1,7 +1,7 @@
-$OpenBSD: patch-Source_kwsys_ProcessUNIX_c,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
---- Source/kwsys/ProcessUNIX.c.orig	Wed May 17 15:48:55 2006
-+++ Source/kwsys/ProcessUNIX.c	Tue Jul 18 10:50:19 2006
-@@ -401,12 +401,13 @@ int kwsysProcess_SetWorkingDirectory(kws
+$OpenBSD: patch-Source_kwsys_ProcessUNIX_c,v 1.2 2006/07/31 23:55:52 espie Exp $
+--- Source/kwsys/ProcessUNIX.c.orig	Mon Jul 31 16:49:59 2006
++++ Source/kwsys/ProcessUNIX.c	Tue Aug  1 01:03:42 2006
+@@ -430,12 +430,13 @@ int kwsysProcess_SetWorkingDirectory(kws
      }
    if(dir)
      {
@@ -17,7 +17,7 @@ $OpenBSD: patch-Source_kwsys_ProcessUNIX_c,v 1.1.1.1 2006/07/20 09:23:13 espie E
      }
    return 1;
  }
-@@ -433,12 +434,13 @@ int kwsysProcess_SetPipeFile(kwsysProces
+@@ -462,12 +463,13 @@ int kwsysProcess_SetPipeFile(kwsysProces
      }
    if(file)
      {
@@ -33,7 +33,7 @@ $OpenBSD: patch-Source_kwsys_ProcessUNIX_c,v 1.1.1.1 2006/07/20 09:23:13 espie E
      }
  
    /* If we are redirecting the pipe, do not share it.  */
-@@ -570,7 +572,7 @@ void kwsysProcess_Execute(kwsysProcess* 
+@@ -600,7 +602,7 @@ void kwsysProcess_Execute(kwsysProcess* 
    /* Initialize the control structure for a new process.  */
    if(!kwsysProcessInitialize(cp))
      {
@@ -42,7 +42,7 @@ $OpenBSD: patch-Source_kwsys_ProcessUNIX_c,v 1.1.1.1 2006/07/20 09:23:13 espie E
      cp->State = kwsysProcess_State_Error;
      return;
      }
-@@ -914,7 +916,7 @@ int kwsysProcess_WaitForData(kwsysProces
+@@ -938,7 +940,7 @@ int kwsysProcess_WaitForData(kwsysProces
        {
        /* Select returned an error.  Leave the error description in the
           pipe buffer.  */
@@ -51,16 +51,7 @@ $OpenBSD: patch-Source_kwsys_ProcessUNIX_c,v 1.1.1.1 2006/07/20 09:23:13 espie E
  
        /* Kill the children now.  */
        kwsysProcess_Kill(cp);
-@@ -1003,7 +1005,7 @@ int kwsysProcess_WaitForExit(kwsysProces
-       if(result <= 0 && cp->State != kwsysProcess_State_Error)
-         {
-         /* Unexpected error.  Report the first time this happens.  */
--        strncpy(cp->ErrorMessage, strerror(errno), KWSYSPE_PIPE_BUFFER_SIZE);
-+        strlcpy(cp->ErrorMessage, strerror(errno), sizeof(cp->ErrorMessage));
-         cp->State = kwsysProcess_State_Error;
-         }
-       }
-@@ -1060,7 +1062,7 @@ int kwsysProcess_WaitForExit(kwsysProces
+@@ -1063,7 +1065,7 @@ int kwsysProcess_WaitForExit(kwsysProces
    else
      {
      /* Error getting the child return code.  */
@@ -69,7 +60,7 @@ $OpenBSD: patch-Source_kwsys_ProcessUNIX_c,v 1.1.1.1 2006/07/20 09:23:13 espie E
      cp->State = kwsysProcess_State_Error;
      }
  
-@@ -1121,7 +1123,7 @@ static int kwsysProcessInitialize(kwsysP
+@@ -1139,7 +1141,7 @@ static int kwsysProcessInitialize(kwsysP
    cp->ExitCode = 1;
    cp->ExitValue = 1;
    cp->ErrorMessage[0] = 0;
@@ -78,7 +69,16 @@ $OpenBSD: patch-Source_kwsys_ProcessUNIX_c,v 1.1.1.1 2006/07/20 09:23:13 espie E
  
    if(cp->ForkPIDs)
      {
-@@ -1592,7 +1594,7 @@ static kwsysProcessTime kwsysProcessTime
+@@ -1482,7 +1484,7 @@ static void kwsysProcessDestroy(kwsysPro
+       else if(result < 0 && cp->State != kwsysProcess_State_Error)
+         {
+         /* Unexpected error.  Report the first time this happens.  */
+-        strncpy(cp->ErrorMessage, strerror(errno), KWSYSPE_PIPE_BUFFER_SIZE);
++        strlcpy(cp->ErrorMessage, strerror(errno), sizeof(cp->ErrorMessage));
+         cp->State = kwsysProcess_State_Error;
+         }
+       }
+@@ -1657,7 +1659,7 @@ static kwsysProcessTime kwsysProcessTime
  /*--------------------------------------------------------------------------*/
  #define KWSYSPE_CASE(type, str) \
    cp->ExitException = kwsysProcess_Exception_##type; \
@@ -87,7 +87,7 @@ $OpenBSD: patch-Source_kwsys_ProcessUNIX_c,v 1.1.1.1 2006/07/20 09:23:13 espie E
  static void kwsysProcessSetExitException(kwsysProcess* cp, int sig)
  {
    switch (sig)
-@@ -1711,7 +1713,8 @@ static void kwsysProcessSetExitException
+@@ -1776,7 +1778,8 @@ static void kwsysProcessSetExitException
  #endif
      default:
        cp->ExitException = kwsysProcess_Exception_Other;
@@ -97,7 +97,7 @@ $OpenBSD: patch-Source_kwsys_ProcessUNIX_c,v 1.1.1.1 2006/07/20 09:23:13 espie E
        break;
      }
  }
-@@ -1724,8 +1727,8 @@ static void kwsysProcessSetExitException
+@@ -1789,8 +1792,8 @@ static void kwsysProcessSetExitException
  static void kwsysProcessChildErrorExit(int errorPipe)
  {
    /* Construct the error message.  */
@@ -108,7 +108,7 @@ $OpenBSD: patch-Source_kwsys_ProcessUNIX_c,v 1.1.1.1 2006/07/20 09:23:13 espie E
  
    /* Report the error to the parent through the special pipe.  */
    write(errorPipe, buffer, strlen(buffer));
-@@ -1950,7 +1953,7 @@ static void kwsysProcessKill(pid_t proce
+@@ -2018,7 +2021,7 @@ static void kwsysProcessKill(pid_t proce
        if(sscanf(d->d_name, "%d", &pid) == 1 && pid != 0)
          {
          struct stat finfo;

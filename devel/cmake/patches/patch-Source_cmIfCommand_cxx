@@ -1,7 +1,7 @@
-$OpenBSD: patch-Source_cmIfCommand_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
---- Source/cmIfCommand.cxx.orig	Wed May 17 15:48:53 2006
-+++ Source/cmIfCommand.cxx	Mon Jul  3 15:29:04 2006
-@@ -180,8 +180,7 @@ bool cmIfCommand::IsTrue(const std::vect
+$OpenBSD: patch-Source_cmIfCommand_cxx,v 1.2 2006/07/31 23:55:51 espie Exp $
+--- Source/cmIfCommand.cxx.orig	Mon Jul 31 16:49:57 2006
++++ Source/cmIfCommand.cxx	Tue Aug  1 00:32:19 2006
+@@ -159,8 +159,7 @@ bool cmIfCommand::IsTrue(const std::vect
    const char *def;
    const char *def2;
    const char* msg = "Unknown arguments specified";
@@ -11,7 +11,7 @@ $OpenBSD: patch-Source_cmIfCommand_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
  
    // handle empty invocation
    if (args.size() < 1)
-@@ -334,8 +333,7 @@ bool cmIfCommand::IsTrue(const std::vect
+@@ -313,8 +312,7 @@ bool cmIfCommand::IsTrue(const std::vect
            cmOStringStream error;
            error << "Regular expression \"" << rex << "\" cannot compile";
            delete [] *errorString;

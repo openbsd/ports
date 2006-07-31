@@ -1,6 +1,6 @@
-$OpenBSD: patch-Source_cmSystemTools_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
---- Source/cmSystemTools.cxx.orig	Mon Jul  3 12:59:42 2006
-+++ Source/cmSystemTools.cxx	Mon Jul  3 13:16:24 2006
+$OpenBSD: patch-Source_cmSystemTools_cxx,v 1.2 2006/07/31 23:55:51 espie Exp $
+--- Source/cmSystemTools.cxx.orig	Mon Jul 31 16:49:57 2006
++++ Source/cmSystemTools.cxx	Tue Aug  1 00:34:13 2006
 @@ -48,7 +48,7 @@
  #  include <libtar/libtar.h>
  #  include <memory> // auto_ptr
@@ -35,8 +35,8 @@ $OpenBSD: patch-Source_cmSystemTools_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp
           && ch != '\r' )
        {
        char buffer[33];
--      sprintf(buffer, "&lt;%d&gt;", (int)ch);
-+      snprintf(buffer, sizeof buffer, "&lt;%d&gt;", (int)ch);
+-      sprintf(buffer, "&lt;%d&gt;", static_cast<int>(ch));
++      snprintf(buffer, sizeof buffer, "&lt;%d&gt;", static_cast<int>(ch));
        //sprintf(buffer, "&#x%0x;", (unsigned int)ch);
        result.insert(result.end(), buffer, buffer+strlen(buffer));
        }

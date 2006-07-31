@@ -1,7 +1,7 @@
-$OpenBSD: patch-Source_cmake_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
---- Source/cmake.cxx.orig	Sun Jul  2 19:01:35 2006
-+++ Source/cmake.cxx	Sun Jul  2 19:02:30 2006
-@@ -1279,7 +1279,7 @@ int cmake::Configure()
+$OpenBSD: patch-Source_cmake_cxx,v 1.2 2006/07/31 23:55:52 espie Exp $
+--- Source/cmake.cxx.orig	Mon Jul 31 16:49:56 2006
++++ Source/cmake.cxx	Tue Aug  1 00:32:19 2006
+@@ -1455,7 +1455,7 @@ int cmake::Configure()
    if(!this->CacheManager->GetCacheValue("CMAKE_BACKWARDS_COMPATIBILITY"))
      {
      char ver[256];
@@ -10,7 +10,7 @@ $OpenBSD: patch-Source_cmake_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
              cmMakefile::GetMinorVersion());
      this->CacheManager->AddCacheEntry
        ("CMAKE_BACKWARDS_COMPATIBILITY",ver, 
-@@ -1645,7 +1645,7 @@ int cmake::DumpDocumentationToFile(std::
+@@ -1821,7 +1821,7 @@ int cmake::DumpDocumentationToFile(std::
    const char *terse;
    const char *full;
    char tmp[1024];
@@ -19,7 +19,7 @@ $OpenBSD: patch-Source_cmake_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
            cmake::GetMinorVersion(), cmVersion::GetReleaseVersion().c_str());
    f << "<html>\n";
    f << "<h1>Documentation for commands of CMake " << tmp << "</h1>\n";
-@@ -1752,7 +1752,7 @@ int cmake::LoadCache()
+@@ -1928,7 +1928,7 @@ int cmake::LoadCache()
    if(!this->CacheManager->GetCacheValue("CMAKE_BACKWARDS_COMPATIBILITY"))
      {
      char ver[256];
@@ -28,21 +28,3 @@ $OpenBSD: patch-Source_cmake_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
              cmMakefile::GetMinorVersion());
      this->CacheManager->AddCacheEntry
        ("CMAKE_BACKWARDS_COMPATIBILITY",ver, 
-@@ -2209,7 +2209,7 @@ void cmake::GenerateGraphViz(const char*
-         continue;
-         }
-       //std::cout << "Found target: " << tit->first.c_str() << std::endl;
--      sprintf(tgtName, "%s%d", graphNodePrefix, cnt++);
-+      snprintf(tgtName, sizeof tgtName, "%s%d", graphNodePrefix, cnt++);
-       targetNamesNodes[realTargetName] = tgtName;
-       targetPtrs[realTargetName] = &tit->second;
-       }
-@@ -2246,7 +2246,7 @@ void cmake::GenerateGraphViz(const char*
-           }
-         if ( tarIt == targetNamesNodes.end() )
-           {
--          sprintf(tgtName, "%s%d", graphNodePrefix, cnt++);
-+          snprintf(tgtName, sizeof tgtName, "%s%d", graphNodePrefix, cnt++);
-           targetDeps[libName] = 2;
-           targetNamesNodes[libName] = tgtName;
-           //str << "    \"" << tgtName << "\" [ label=\"" << libName
