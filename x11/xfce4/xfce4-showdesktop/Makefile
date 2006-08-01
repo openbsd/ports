@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2006/06/13 13:39:06 bernd Exp $
+# $OpenBSD: Makefile,v 1.8 2006/08/01 19:49:09 alek Exp $
 
 COMMENT=	"hides/unhides all unsticky windows with one click"
 DISTNAME=	xfce4-showdesktop-plugin-0.4.0
 PKGNAME=	${DISTNAME:S/-plugin//}p5
-MASTER_SITES=	http://download.berlios.de/xfce-goodies/
+MASTER_SITES=	${MASTER_SITE_BERLIOS:=xfce-goodies/}
 
 HOMEPAGE=	http://xfce-goodies.berlios.de/
 

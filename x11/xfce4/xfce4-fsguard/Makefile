@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2006/06/13 13:39:06 bernd Exp $
+# $OpenBSD: Makefile,v 1.7 2006/08/01 19:49:09 alek Exp $
 
 COMMENT=	"monitors a chosen mountpoint for free disk space"
 DISTNAME=	xfce4-fsguard-plugin-0.2.1
 PKGNAME=	${DISTNAME:S/-plugin//}p2
-MASTER_SITES=	http://download.berlios.de/xfce-goodies/
+MASTER_SITES=	${MASTER_SITE_BERLIOS:=xfce-goodies/}
 
 HOMEPAGE=	http://xfce-goodies.berlios.de/
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2006/06/13 13:39:06 bernd Exp $
+# $OpenBSD: Makefile,v 1.6 2006/08/01 19:49:09 alek Exp $
 
 COMMENT=	"xkb layout switcher panel plugin for xfce4"
 DISTNAME=	xfce4-xkb-plugin-0.3.2
 PKGNAME=	${DISTNAME:S/-plugin//}p3
-MASTER_SITES=	http://download.berlios.de/xfce-goodies/
+MASTER_SITES=	${MASTER_SITE_BERLIOS:=xfce-goodies/}
 
 HOMEPAGE=	http://xfce-goodies.berlios.de/
 
