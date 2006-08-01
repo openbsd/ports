@@ -1,0 +1,8 @@
+DBIx:;Class is a relational-databases to Objects framework, where you
+describe your data tables so that they map to objects.
+
+It can deal with about any DBD driver, including SQLite, Postgres, MySQL,
+Oracle, DB2 (on other platforms).
+
+Installing p5-Module-Find and p5-Class-Inspector  will give this package
+some extra functionality.

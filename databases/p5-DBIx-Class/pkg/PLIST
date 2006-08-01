@@ -1,0 +1,171 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/08/01 09:17:17 espie Exp $
+${P5SITE}/DBIx/
+${P5SITE}/DBIx/Class/
+${P5SITE}/DBIx/Class.pm
+${P5SITE}/DBIx/Class/AccessorGroup.pm
+${P5SITE}/DBIx/Class/CDBICompat/
+${P5SITE}/DBIx/Class/CDBICompat.pm
+${P5SITE}/DBIx/Class/CDBICompat/AccessorMapping.pm
+${P5SITE}/DBIx/Class/CDBICompat/AttributeAPI.pm
+${P5SITE}/DBIx/Class/CDBICompat/AutoUpdate.pm
+${P5SITE}/DBIx/Class/CDBICompat/ColumnCase.pm
+${P5SITE}/DBIx/Class/CDBICompat/ColumnGroups.pm
+${P5SITE}/DBIx/Class/CDBICompat/Constraints.pm
+${P5SITE}/DBIx/Class/CDBICompat/Constructor.pm
+${P5SITE}/DBIx/Class/CDBICompat/DestroyWarning.pm
+${P5SITE}/DBIx/Class/CDBICompat/GetSet.pm
+${P5SITE}/DBIx/Class/CDBICompat/HasA.pm
+${P5SITE}/DBIx/Class/CDBICompat/HasMany.pm
+${P5SITE}/DBIx/Class/CDBICompat/ImaDBI.pm
+${P5SITE}/DBIx/Class/CDBICompat/LazyLoading.pm
+${P5SITE}/DBIx/Class/CDBICompat/LiveObjectIndex.pm
+${P5SITE}/DBIx/Class/CDBICompat/MightHave.pm
+${P5SITE}/DBIx/Class/CDBICompat/ObjIndexStubs.pm
+${P5SITE}/DBIx/Class/CDBICompat/Pager.pm
+${P5SITE}/DBIx/Class/CDBICompat/ReadOnly.pm
+${P5SITE}/DBIx/Class/CDBICompat/Retrieve.pm
+${P5SITE}/DBIx/Class/CDBICompat/Stringify.pm
+${P5SITE}/DBIx/Class/CDBICompat/TempColumns.pm
+${P5SITE}/DBIx/Class/CDBICompat/Triggers.pm
+${P5SITE}/DBIx/Class/ClassResolver/
+${P5SITE}/DBIx/Class/ClassResolver/PassThrough.pm
+${P5SITE}/DBIx/Class/Componentised.pm
+${P5SITE}/DBIx/Class/Core.pm
+${P5SITE}/DBIx/Class/Cursor.pm
+${P5SITE}/DBIx/Class/DB.pm
+${P5SITE}/DBIx/Class/InflateColumn.pm
+${P5SITE}/DBIx/Class/Manual/
+${P5SITE}/DBIx/Class/Manual.pod
+${P5SITE}/DBIx/Class/Manual/Component.pod
+${P5SITE}/DBIx/Class/Manual/Cookbook.pod
+${P5SITE}/DBIx/Class/Manual/DocMap.pod
+${P5SITE}/DBIx/Class/Manual/Example.pod
+${P5SITE}/DBIx/Class/Manual/Glossary.pod
+${P5SITE}/DBIx/Class/Manual/Intro.pod
+${P5SITE}/DBIx/Class/Manual/Troubleshooting.pod
+${P5SITE}/DBIx/Class/PK/
+${P5SITE}/DBIx/Class/PK.pm
+${P5SITE}/DBIx/Class/PK/Auto/
+${P5SITE}/DBIx/Class/PK/Auto.pm
+${P5SITE}/DBIx/Class/PK/Auto/DB2.pm
+${P5SITE}/DBIx/Class/PK/Auto/MSSQL.pm
+${P5SITE}/DBIx/Class/PK/Auto/MySQL.pm
+${P5SITE}/DBIx/Class/PK/Auto/Oracle.pm
+${P5SITE}/DBIx/Class/PK/Auto/Pg.pm
+${P5SITE}/DBIx/Class/PK/Auto/SQLite.pm
+${P5SITE}/DBIx/Class/Relationship/
+${P5SITE}/DBIx/Class/Relationship.pm
+${P5SITE}/DBIx/Class/Relationship/Accessor.pm
+${P5SITE}/DBIx/Class/Relationship/Base.pm
+${P5SITE}/DBIx/Class/Relationship/BelongsTo.pm
+${P5SITE}/DBIx/Class/Relationship/CascadeActions.pm
+${P5SITE}/DBIx/Class/Relationship/HasMany.pm
+${P5SITE}/DBIx/Class/Relationship/HasOne.pm
+${P5SITE}/DBIx/Class/Relationship/Helpers.pm
+${P5SITE}/DBIx/Class/Relationship/ManyToMany.pm
+${P5SITE}/DBIx/Class/Relationship/ProxyMethods.pm
+${P5SITE}/DBIx/Class/ResultSet.pm
+${P5SITE}/DBIx/Class/ResultSetManager.pm
+${P5SITE}/DBIx/Class/ResultSetProxy.pm
+${P5SITE}/DBIx/Class/ResultSource/
+${P5SITE}/DBIx/Class/ResultSource.pm
+${P5SITE}/DBIx/Class/ResultSource/Table.pm
+${P5SITE}/DBIx/Class/ResultSourceProxy/
+${P5SITE}/DBIx/Class/ResultSourceProxy.pm
+${P5SITE}/DBIx/Class/ResultSourceProxy/Table.pm
+${P5SITE}/DBIx/Class/Row.pm
+${P5SITE}/DBIx/Class/Schema.pm
+${P5SITE}/DBIx/Class/Serialize/
+${P5SITE}/DBIx/Class/Serialize/Storable.pm
+${P5SITE}/DBIx/Class/Storage/
+${P5SITE}/DBIx/Class/Storage.pm
+${P5SITE}/DBIx/Class/Storage/DBI/
+${P5SITE}/DBIx/Class/Storage/DBI.pm
+${P5SITE}/DBIx/Class/Storage/DBI/Cursor.pm
+${P5SITE}/DBIx/Class/Storage/DBI/DB2.pm
+${P5SITE}/DBIx/Class/Storage/DBI/MSSQL.pm
+${P5SITE}/DBIx/Class/Storage/DBI/MultiDistinctEmulation.pm
+${P5SITE}/DBIx/Class/Storage/DBI/Oracle.pm
+${P5SITE}/DBIx/Class/Storage/DBI/Pg.pm
+${P5SITE}/DBIx/Class/Storage/DBI/SQLite.pm
+${P5SITE}/DBIx/Class/Storage/DBI/mysql.pm
+${P5SITE}/DBIx/Class/Test/
+${P5SITE}/DBIx/Class/Test/SQLite.pm
+${P5SITE}/DBIx/Class/UTF8Columns.pm
+${P5SITE}/DBIx/Class/UUIDColumns.pm
+${P5SITE}/DBIx/Class/UUIDMaker/
+${P5SITE}/DBIx/Class/UUIDMaker.pm
+${P5SITE}/DBIx/Class/UUIDMaker/APR/
+${P5SITE}/DBIx/Class/UUIDMaker/APR/UUID.pm
+${P5SITE}/DBIx/Class/UUIDMaker/Data/
+${P5SITE}/DBIx/Class/UUIDMaker/Data/UUID.pm
+${P5SITE}/DBIx/Class/UUIDMaker/Data/Uniqid.pm
+${P5SITE}/DBIx/Class/UUIDMaker/UUID.pm
+${P5SITE}/DBIx/Class/UUIDMaker/Win32/
+${P5SITE}/DBIx/Class/UUIDMaker/Win32/Guidgen.pm
+${P5SITE}/DBIx/Class/UUIDMaker/Win32API/
+${P5SITE}/DBIx/Class/UUIDMaker/Win32API/GUID.pm
+${P5SITE}/DBIx/Class/Validation.pm
+${P5SITE}/SQL/Translator/
+${P5SITE}/SQL/Translator/Parser/
+${P5SITE}/SQL/Translator/Parser/DBIx/
+${P5SITE}/SQL/Translator/Parser/DBIx/Class.pm
+${P5SITE}/SQL/Translator/Producer/
+${P5SITE}/SQL/Translator/Producer/DBIx/
+${P5SITE}/SQL/Translator/Producer/DBIx/Class/
+${P5SITE}/SQL/Translator/Producer/DBIx/Class/File.pm
+@man man/man3p/DBIx::Class.3p
+@man man/man3p/DBIx::Class::AccessorGroup.3p
+@man man/man3p/DBIx::Class::CDBICompat.3p
+@man man/man3p/DBIx::Class::Core.3p
+@man man/man3p/DBIx::Class::Cursor.3p
+@man man/man3p/DBIx::Class::DB.3p
+@man man/man3p/DBIx::Class::InflateColumn.3p
+@man man/man3p/DBIx::Class::Manual.3p
+@man man/man3p/DBIx::Class::Manual::Component.3p
+@man man/man3p/DBIx::Class::Manual::Cookbook.3p
+@man man/man3p/DBIx::Class::Manual::DocMap.3p
+@man man/man3p/DBIx::Class::Manual::Example.3p
+@man man/man3p/DBIx::Class::Manual::Glossary.3p
+@man man/man3p/DBIx::Class::Manual::Intro.3p
+@man man/man3p/DBIx::Class::Manual::Troubleshooting.3p
+@man man/man3p/DBIx::Class::PK.3p
+@man man/man3p/DBIx::Class::PK::Auto.3p
+@man man/man3p/DBIx::Class::PK::Auto::DB2.3p
+@man man/man3p/DBIx::Class::PK::Auto::MSSQL.3p
+@man man/man3p/DBIx::Class::PK::Auto::MySQL.3p
+@man man/man3p/DBIx::Class::PK::Auto::Oracle.3p
+@man man/man3p/DBIx::Class::PK::Auto::Pg.3p
+@man man/man3p/DBIx::Class::PK::Auto::SQLite.3p
+@man man/man3p/DBIx::Class::Relationship.3p
+@man man/man3p/DBIx::Class::Relationship::Base.3p
+@man man/man3p/DBIx::Class::Relationship::BelongsTo.3p
+@man man/man3p/DBIx::Class::ResultSet.3p
+@man man/man3p/DBIx::Class::ResultSetManager.3p
+@man man/man3p/DBIx::Class::ResultSource.3p
+@man man/man3p/DBIx::Class::ResultSource::Table.3p
+@man man/man3p/DBIx::Class::ResultSourceProxy::Table.3p
+@man man/man3p/DBIx::Class::Row.3p
+@man man/man3p/DBIx::Class::Schema.3p
+@man man/man3p/DBIx::Class::Serialize::Storable.3p
+@man man/man3p/DBIx::Class::Storage::DBI.3p
+@man man/man3p/DBIx::Class::Storage::DBI::Cursor.3p
+@man man/man3p/DBIx::Class::Storage::DBI::DB2.3p
+@man man/man3p/DBIx::Class::Storage::DBI::MSSQL.3p
+@man man/man3p/DBIx::Class::Storage::DBI::MultiDistinctEmulation.3p
+@man man/man3p/DBIx::Class::Storage::DBI::Oracle.3p
+@man man/man3p/DBIx::Class::Storage::DBI::Pg.3p
+@man man/man3p/DBIx::Class::Storage::DBI::SQLite.3p
+@man man/man3p/DBIx::Class::Storage::DBI::mysql.3p
+@man man/man3p/DBIx::Class::Test::SQLite.3p
+@man man/man3p/DBIx::Class::UTF8Columns.3p
+@man man/man3p/DBIx::Class::UUIDColumns.3p
+@man man/man3p/DBIx::Class::UUIDMaker.3p
+@man man/man3p/DBIx::Class::UUIDMaker::APR::UUID.3p
+@man man/man3p/DBIx::Class::UUIDMaker::Data::UUID.3p
+@man man/man3p/DBIx::Class::UUIDMaker::Data::Uniqid.3p
+@man man/man3p/DBIx::Class::UUIDMaker::UUID.3p
+@man man/man3p/DBIx::Class::UUIDMaker::Win32::Guidgen.3p
+@man man/man3p/DBIx::Class::UUIDMaker::Win32API::GUID.3p
+@man man/man3p/DBIx::Class::Validation.3p
+@man man/man3p/SQL::Translator::Producer::DBIx::Class::File.3p
