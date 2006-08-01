@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2005/02/19 11:13:27 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2006/08/01 10:50:19 espie Exp $
 # $RuOBSD: Makefile,v 1.7 2002/03/26 19:14:05 grange Exp $
 
 COMMENT=		"Free Unix Spectrum Emulator"
@@ -24,11 +24,11 @@ USE_X11=		Yes
 
 MODULES=		devel/gettext
 BUILD_DEPENDS=		::devel/pkgconfig
-LIB_DEPENDS=		glib-2.0.0.8::devel/glib2 \
-			spectrum.3::devel/libspectrum \
-			765.3::devel/lib765 \
-			png.3::graphics/png \
-			xml2.7::textproc/libxml
+LIB_DEPENDS=		glib-2.0.>=0.8::devel/glib2 \
+			spectrum.>=3::devel/libspectrum \
+			765.>=3::devel/lib765 \
+			png.>=3::graphics/png \
+			xml2.>=7::textproc/libxml
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng" \

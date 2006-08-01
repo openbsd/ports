@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2005/01/23 21:42:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2006/08/01 10:50:19 espie Exp $
 
 COMMENT=	"full featured GTK Napster client"
 DISTNAME=	lopster-1.2.2
@@ -17,10 +17,10 @@ WANTLIB=	X11 Xext Xi c glib gmodule m pthread z
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+ \
-		gthread.1.2::devel/glib \
-		ogg.4::audio/libogg \
-		FLAC.5::audio/flac
+LIB_DEPENDS=	gtk.>=1.2,gdk.>=1.2::x11/gtk+ \
+		gthread.>=1.2::devel/glib \
+		ogg.>=4::audio/libogg \
+		FLAC.>=5::audio/flac
 
 USE_GMAKE=	Yes
 USE_X11=	Yes

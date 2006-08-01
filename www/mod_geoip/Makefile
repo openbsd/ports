@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2005/02/05 10:56:28 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2006/08/01 10:50:19 espie Exp $
 
 COMMENT=	"Apache module for finding the country of web requests"
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	GeoIP.4::net/GeoIP
+LIB_DEPENDS=	GeoIP.>=4::net/GeoIP
 
 FLAGS=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 

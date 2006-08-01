@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/06/14 12:37:52 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2006/08/01 10:50:19 espie Exp $
 
 COMMENT=		"music player daemon"
 
@@ -22,15 +22,15 @@ MASTER_SITES=		http://mercury.chem.pitt.edu/~shank/
 
 MODULES=		converters/libiconv
 
-LIB_DEPENDS=		vorbis.5,vorbisfile.4::audio/libvorbis \
-			audiofile.0::devel/libaudiofile \
-			ao.3::audio/libao \
-			faad.0::audio/faad \
-			id3tag.3::audio/libid3tag \
-			mad.2::audio/libmad \
-			ogg.5::audio/libogg \
-			FLAC.7::audio/flac \
-			mikmod.2::audio/libmikmod
+LIB_DEPENDS=		vorbis.>=5,vorbisfile.>=4::audio/libvorbis \
+			audiofile::devel/libaudiofile \
+			ao.>=3::audio/libao \
+			faad::audio/faad \
+			id3tag.>=3::audio/libid3tag \
+			mad.>=2::audio/libmad \
+			ogg.>=5::audio/libogg \
+			FLAC.>=7::audio/flac \
+			mikmod.>=2::audio/libmikmod
 
 USE_LIBTOOL=		Yes
 

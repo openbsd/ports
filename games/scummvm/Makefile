@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2006/07/08 04:14:30 jsg Exp $
+# $OpenBSD: Makefile,v 1.22 2006/08/01 10:50:19 espie Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
 BROKEN=		"gcc bug"
@@ -25,9 +25,9 @@ BUILD_DEPENDS=	::devel/nasm
 .endif
 
 LIB_DEPENDS=	SDL::devel/sdl \
-		mad.2::audio/libmad \
+		mad.>=2::audio/libmad \
 		mpeg2::graphics/libmpeg2 \
-		FLAC.5::audio/flac
+		FLAC.>=5::audio/flac
 
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS+=--disable-alsa --disable-debug
@@ -36,9 +36,9 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .if ${MACHINE_ARCH} == "arm"
 CONFIGURE_ARGS+=--enable-tremor --disable-vorbis
-LIB_DEPENDS+=	vorbisidec.1::audio/tremor
+LIB_DEPENDS+=	vorbisidec.>=1::audio/tremor
 .else
-LIB_DEPENDS+=	vorbis.0,vorbisfile.1::audio/libvorbis
+LIB_DEPENDS+=	vorbis.>=0,vorbisfile.>=1::audio/libvorbis
 WANTLIB+=	ogg
 .endif
 

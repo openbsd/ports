@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2005/03/09 00:15:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2006/08/01 10:50:19 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,8 +21,8 @@ WANTLIB=		X11 Xext Xi gdk glib gmodule gtk iconv intl m
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=flac/}
 
-LIB_DEPENDS=	xmms.4::audio/xmms \
-		FLAC.7::audio/flac
+LIB_DEPENDS=	xmms.>=4::audio/xmms \
+		FLAC.>=7::audio/flac
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu

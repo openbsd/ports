@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/11/21 17:51:44 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/08/01 10:50:19 espie Exp $
 
 COMMENT=		"MP3 ID3 tags editor"
 
@@ -24,10 +24,10 @@ PATCHFILES=		patch_easytag_030_030a.diff \
 PATCH_DIST_STRIP=	-p1
 
 MODULES=		devel/gettext
-LIB_DEPENDS=		id3.3.8::audio/id3lib \
-			FLAC.4::audio/flac \
-			vorbis.1,vorbisfile.1::audio/libvorbis \
-			gdk.1.2,gtk.1.2::x11/gtk+
+LIB_DEPENDS=		id3.>=3.8::audio/id3lib \
+			FLAC.>=4::audio/flac \
+			vorbis.>=1,vorbisfile.>=1::audio/libvorbis \
+			gdk.>=1.2,gtk.>=1.2::x11/gtk+
 BUILD_DEPENDS=		:help2man-*:devel/help2man
 
 USE_X11=		Yes

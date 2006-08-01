@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/07/11 15:28:24 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2006/08/01 10:50:19 espie Exp $
 
 COMMENT=	"library that handles the decoding of sound file formats"
 DISTNAME=	SDL_sound-1.0.1
@@ -18,13 +18,13 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 WANTLIB=		X11 Xext c m ogg pthread usbhid z
 
-LIB_DEPENDS+=	physfs.0.0::devel/physfs \
-		SDL.2.0::devel/sdl \
-		smpeg.1.3::devel/smpeg \
-		mikmod.2.4::audio/libmikmod \
-		vorbis.2.0,vorbisenc.2.0,vorbisfile.3.0::audio/libvorbis \
-		FLAC.5.2::audio/flac \
-		speex.2.2::audio/speex
+LIB_DEPENDS+=	physfs::devel/physfs \
+		SDL.>=2.0::devel/sdl \
+		smpeg.>=1.3::devel/smpeg \
+		mikmod.>=2.4::audio/libmikmod \
+		vorbis.>=2.0,vorbisenc.>=2.0,vorbisfile.>=3.0::audio/libvorbis \
+		FLAC.>=5.2::audio/flac \
+		speex.>=2.2::audio/speex
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu

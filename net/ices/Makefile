@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/03/14 20:00:20 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2006/08/01 10:50:19 espie Exp $
 
 COMMENT=	"icecast source for streaming MP3"
 
@@ -28,11 +28,11 @@ CONFIGURE_ARGS=	--with-docdir=${LOCALBASE}/share/doc/ices \
 
 MODULES=	converters/libiconv
 BUILD_DEPENDS=	::devel/pkgconfig
-LIB_DEPENDS=	mp3lame.0:lame-*:audio/lame,no_x11 \
-		shout.3::net/libshout \
-		speex.4::audio/speex \
-		FLAC.5::audio/flac \
-		xml2.7::textproc/libxml
+LIB_DEPENDS=	mp3lame:lame-*:audio/lame,no_x11 \
+		shout.>=3::net/libshout \
+		speex.>=4::audio/speex \
+		FLAC.>=5::audio/flac \
+		xml2.>=7::textproc/libxml
 
 FLAVORS=	python mp4
 FLAVOR?=
@@ -40,7 +40,7 @@ FLAVOR?=
 .if ${FLAVOR:L:Mpython}
 PYTHON_VER=	2.4
 CONFIGURE_ARGS+=--with-python=${LOCALBASE}/bin/python${PYTHON_VER}
-LIB_DEPENDS+=	python${PYTHON_VER}.0.0:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
+LIB_DEPENDS+=	python${PYTHON_VER}:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 .else
 CONFIGURE_ARGS+=--without-python
 .endif

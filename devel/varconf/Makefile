@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/01/13 23:40:24 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/08/01 10:50:19 espie Exp $
 
 COMMENT=	"configuration system for the STAGE server"
 
@@ -21,8 +21,8 @@ MASTER_SITES=	http://purple.worldforge.org/wf/downloads/libs/varconf/ \
 		http://dreadnought.res.cmu.edu/worldforge/libs/varconf/ \
 		http://kafka.i-site.com/~novalis/mirrors/acorn/0.4/src/
 
-LIB_DEPENDS=	Atlas.1.1::devel/atlas \
-		sigc.0.0:libsigc++-1.*:devel/libsigc++
+LIB_DEPENDS=	Atlas.>=1.1::devel/atlas \
+		sigc:libsigc++-1.*:devel/libsigc++
 
 USE_LIBTOOL= Yes
 CONFIGURE_STYLE= gnu

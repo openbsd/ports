@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2006/07/19 13:41:02 steven Exp $
+# $OpenBSD: Makefile,v 1.28 2006/08/01 10:50:19 espie Exp $
 
 COMMENT=	"play, encode, and manage Ogg Vorbis files"
 
@@ -18,11 +18,11 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://downloads.xiph.org/releases/vorbis/
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	ao.3::audio/libao \
-		curl.3::net/curl \
-		FLAC.7,OggFLAC.3::audio/flac \
-		speex.4::audio/speex \
-		vorbis.4,vorbisenc.2,vorbisfile.4::audio/libvorbis
+LIB_DEPENDS=	ao.>=3::audio/libao \
+		curl.>=3::net/curl \
+		FLAC.>=7,OggFLAC.>=3::audio/flac \
+		speex.>=4::audio/speex \
+		vorbis.>=4,vorbisenc.>=2,vorbisfile.>=4::audio/libvorbis
 WANTLIB=	c crypto m ogg pthread ssl z
 
 USE_LIBTOOL=	Yes

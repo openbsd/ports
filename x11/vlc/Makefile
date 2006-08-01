@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2006/07/23 11:44:27 steven Exp $
+# $OpenBSD: Makefile,v 1.36 2006/08/01 10:50:19 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,23 +24,23 @@ MODULES=	devel/gettext
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig	
 
-LIB_DEPENDS=	SDL_image.1.3::devel/sdl-image \
-		png.4.1::graphics/png \
-		id3tag.3.0::audio/libid3tag \
-		mad.2.1::audio/libmad \
-		ogg.5.2::audio/libogg \
-		vorbis.3.0,vorbisenc.2.0::audio/libvorbis \
-		mpeg2.0.0::graphics/libmpeg2 \
-		avcodec.7.0,avformat.7.0,postproc.7.0,avutil.1.0::graphics/ffmpeg \
-		fribidi.0.0::devel/fribidi \
-		faad.0.0::audio/faad \
-		a52.0.0::audio/liba52 \
-		theora.1::multimedia/libtheora \
-		xml2.9::textproc/libxml \
-		FLAC.7.0::audio/flac \
-		mpcdec.1::audio/libmpcdec \
-		matroska.0::multimedia/libmatroska \
-		ebml.0::textproc/libebml
+LIB_DEPENDS=	SDL_image.>=1.3::devel/sdl-image \
+		png.>=4.1::graphics/png \
+		id3tag.>=3.0::audio/libid3tag \
+		mad.>=2.1::audio/libmad \
+		ogg.>=5.2::audio/libogg \
+		vorbis.>=3.0,vorbisenc.>=2.0::audio/libvorbis \
+		mpeg2::graphics/libmpeg2 \
+		avcodec.>=7.0,avformat.>=7.0,postproc.>=7.0,avutil.>=1.0::graphics/ffmpeg \
+		fribidi::devel/fribidi \
+		faad::audio/faad \
+		a52::audio/liba52 \
+		theora.>=1::multimedia/libtheora \
+		xml2.>=9::textproc/libxml \
+		FLAC.>=7.0::audio/flac \
+		mpcdec.>=1::audio/libmpcdec \
+		matroska::multimedia/libmatroska \
+		ebml::textproc/libebml
 
 WANTLIB=	X11 Xext Xinerama Xv c freetype m ncurses ossaudio \
 		pthread stdc++ usbhid z \
@@ -193,8 +193,8 @@ CFLAGS+=-mhard-quad-float
 CONFIGURE_ARGS+=--disable-dvdread --disable-dvdnav
 .else
 CONFIGURE_ARGS+=--enable-dvdread --enable-dvdnav
-LIB_DEPENDS+=	dvdnav.3.0::multimedia/libdvdnav \
-		dvdread.3.0::devel/libdvdread
+LIB_DEPENDS+=	dvdnav.>=3.0::multimedia/libdvdnav \
+		dvdread.>=3.0::devel/libdvdread
 .endif
 
 # win32 codecs support uses i386_set_ldt

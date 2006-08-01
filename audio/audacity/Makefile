@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2006/08/01 10:50:19 espie Exp $
 
 COMMENT=	"free audio editor"
 
@@ -22,13 +22,13 @@ WANTLIB=	c m ossaudio pthread stdc++ \
 		FLAC++ ogg vorbisenc
 
 BUILD_DEPENDS=	::archivers/zip
-LIB_DEPENDS=	wx_gtk.2.4::x11/wxWidgets/gtk \
-		sndfile.1::audio/libsndfile \
-		samplerate.1::audio/libsamplerate \
-		FLAC.4::audio/flac \
-		vorbis.0,vorbisfile.1::audio/libvorbis \
-		id3tag.2::audio/libid3tag \
-		mad.2::audio/libmad
+LIB_DEPENDS=	wx_gtk.>=2.4::x11/wxWidgets/gtk \
+		sndfile.>=1::audio/libsndfile \
+		samplerate.>=1::audio/libsamplerate \
+		FLAC.>=4::audio/flac \
+		vorbis.>=0,vorbisfile.>=1::audio/libvorbis \
+		id3tag.>=2::audio/libid3tag \
+		mad.>=2::audio/libmad
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

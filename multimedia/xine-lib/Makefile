@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/03/27 11:04:27 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.3 2006/08/01 10:50:19 espie Exp $
 
 COMMENT=		"multimedia decoding library"
 
@@ -31,17 +31,17 @@ PKG_ARGS+=		-Di386=0
 
 MODULES=		gettext
 BUILD_DEPENDS=		::devel/pkgconfig
-LIB_DEPENDS=		FLAC.5::audio/flac \
-			SDL.3::devel/sdl \
-			a52.0::audio/liba52 \
-			avcodec.7,postproc.7,avutil.1::graphics/ffmpeg \
-			dvdnav.5::multimedia/libdvdnav \
-			mad.2::audio/libmad \
-			mng.3::graphics/libmng \
-			ogg.5::audio/libogg \
-                        vorbis.4::audio/libvorbis \
-			speex.3::audio/speex \
-			theora.1::multimedia/libtheora
+LIB_DEPENDS=		FLAC.>=5::audio/flac \
+			SDL.>=3::devel/sdl \
+			a52::audio/liba52 \
+			avcodec.>=7,postproc.>=7,avutil.>=1::graphics/ffmpeg \
+			dvdnav.>=5::multimedia/libdvdnav \
+			mad.>=2::audio/libmad \
+			mng.>=3::graphics/libmng \
+			ogg.>=5::audio/libogg \
+                        vorbis.>=4::audio/libvorbis \
+			speex.>=3::audio/speex \
+			theora.>=1::multimedia/libtheora
 
 SHARED_ONLY=		Yes
 USE_X11=		Yes
