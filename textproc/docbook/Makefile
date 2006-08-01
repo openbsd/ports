@@ -1,27 +1,28 @@
-# $OpenBSD: Makefile,v 1.20 2005/09/22 12:28:54 avsm Exp $
+# $OpenBSD: Makefile,v 1.21 2006/08/01 06:34:15 steven Exp $
+
+PKG_ARCH=	*
 
 COMMENT=	"technical documentation XML/SGML definitions"
 
-DISTNAME=	docbook-4.2
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	docbook-4.4
 DIST_SUBDIR=	docbook
 CATEGORIES=	textproc
 
-ROOT_SITE=	http://www.oasis-open.org/docbook/
-MIRROR_SITE=	http://www.docbook.org/
 HOMEPAGE=	http://www.oasis-open.org/docbook/
 
-MASTER_SITES0=	${ROOT_SITE}/sgml/2.4.1/ 
-MASTER_SITES1=	${ROOT_SITE}/sgml/3.0/
-MASTER_SITES2=	${ROOT_SITE}/sgml/3.1/ ${MIRROR_SITE}/sgml/3.1/
-MASTER_SITES3=	${ROOT_SITE}/sgml/4.0/ ${MIRROR_SITE}/sgml/4.0/
-MASTER_SITES4=	${ROOT_SITE}/sgml/4.1/ ${MIRROR_SITE}/sgml/4.1/
-MASTER_SITES5=	${ROOT_SITE}/xml/4.1/ ${MIRROR_SITE}/xml/4.1/
-MASTER_SITES6=	${ROOT_SITE}/xml/4.1.2/ ${MIRROR_SITE}/xml/4.1.2/
-MASTER_SITES7=	${ROOT_SITE}/xml/4.2/ ${MIRROR_SITE}/xml/4.2/
-MASTER_SITES8=	http://www.docbook.org/tdg/
+MASTER_SITES=	${HOMEPAGE} http://www.docbook.org/
 
-DISTFILES=	docbk241.zip:0 docbk30.zip:1 docbk31.zip:2 docbk40.zip:3 docbk41.zip:4 docbkx41.zip:5 docbkx412.zip:6 docbook-xml-4.2.zip:7 examples.zip:8
+DISTFILES=	sgml/2.4.1/docbk241.zip \
+		sgml/3.0/docbk30.zip \
+		sgml/3.1/docbk31.zip \
+		sgml/4.0/docbk40.zip \
+		sgml/4.1/docbk41.zip \
+		xml/4.1/docbkx41.zip \
+		xml/4.1.2/docbkx412.zip \
+		xml/4.2/docbook-xml-4.2.zip \
+		xml/4.3/docbook-xml-4.3.zip \
+		xml/4.4/docbook-xml-4.4.zip \
+		examples.zip
 
 # permission granted in dtd copyright notice
 PERMIT_PACKAGE_CDROM=	Yes
@@ -33,8 +34,9 @@ NO_BUILD=       Yes
 NO_REGRESS=	Yes
 SEPARATE_BUILD=	concurrent
 
-SGML_VERSIONS=	2.4.1 3.0 3.1 4.0 4.1
-XML_VERSIONS=	4.1 4.1.2 4.2
+SGML_VERSIONS=		2.4.1 3.0 3.1 4.0 4.1
+XML_VERSIONS_OLD=	4.1 4.1.2
+XML_VERSIONS_NEW=	4.2 4.3 4.4
 
 SGML_INSTDIR=	${PREFIX}/share/sgml/docbook
 XML_INSTDIR=	${PREFIX}/share/xml/docbook
@@ -44,12 +46,15 @@ RUN_DEPENDS=	::textproc/iso8879 \
 		:docbook-dsssl-*:textproc/docbook-dsssl \
 		:libxml->=2.6.16p6:textproc/libxml
 
-.for i in ${SGML_VERSIONS} ${XML_VERSIONS:C/(.+)/x\1/g}
+.for i in ${SGML_VERSIONS}
 EXTRACT_CASES+=	*docbk${i:S/.//g}.zip) unzip -qa ${FULLDISTDIR}/$$archive -d ${WRKDIR}/$i;;
 .endfor
-
-# new naming system for recent docbook versions
-EXTRACT_CASES+=	*docbook-xml-4.2.zip) unzip -qa ${FULLDISTDIR}/$$archive -d ${WRKDIR}/x4.2;;
+.for i in ${XML_VERSIONS_OLD}
+EXTRACT_CASES+=	*docbkx${i:S/.//g}.zip) unzip -qa ${FULLDISTDIR}/$$archive -d ${WRKDIR}/x$i;;
+.endfor
+.for i in ${XML_VERSIONS_NEW}
+EXTRACT_CASES+=	*docbook-xml-$i.zip) unzip -qa ${FULLDISTDIR}/$$archive -d ${WRKDIR}/x$i;;
+.endfor
 
 do-install:
 	${INSTALL_DATA_DIR} ${SGML_INSTDIR} ${XML_INSTDIR}
@@ -62,7 +67,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/$i/* ${SGML_INSTDIR}/$i
 	${INSTALL_DATA} ${FILESDIR}/sgml_db${i:S/.//g}_catalog ${SGML_INSTDIR}/$i/catalog
 .endfor
-.for i in ${XML_VERSIONS}
+.for i in ${XML_VERSIONS_OLD} ${XML_VERSIONS_NEW}
 	${INSTALL_DATA_DIR} ${XML_INSTDIR}/$i ${XML_INSTDIR}/$i/ent
 	${INSTALL_DATA} ${WRKDIR}/x$i/*.* ${XML_INSTDIR}/$i
 	${INSTALL_DATA} ${WRKDIR}/x$i/ent/* ${XML_INSTDIR}/$i/ent
