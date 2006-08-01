@@ -1,0 +1,4 @@
+There seem to be a growing plethora of Perl modules for creating
+and manipulating PDF files.  This is another one which is designed
+for reuse of PDFs, rather than creation - it copes with
+links and other PDF whistles which many others don't.
