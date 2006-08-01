@@ -1,0 +1,65 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2006/08/01 14:34:33 alek Exp $
+--- Makefile.in.orig	Sun May 22 09:06:14 2005
++++ Makefile.in	Sat Jul 22 18:28:10 2006
+@@ -27,6 +27,7 @@ libdir = $(exec_prefix)/lib
+ incdir = $(exec_prefix)/include
+ manext = 1
+ mandir = $(prefix)/man/man$(manext)
++truebindir = $(TRUEPREFIX)/bin
+ 
+ # HP 9000 series, if you don't have gcc
+ #   CC = cc
+@@ -43,6 +44,7 @@ mandir = $(prefix)/man/man$(manext)
+ RUNNABLE = scheme48
+ MANPAGE = $(RUNNABLE).$(manext)
+ LIB = $(libdir)/$(RUNNABLE)
++TRUELIB = $(TRUEPREFIX)/lib/$(RUNNABLE)
+ 
+ distdir = /tmp
+ 
+@@ -231,7 +233,7 @@ script-interpreter: c/script-interpreter
+ 
+ c/main.o: c/main.c c/scheme48vm.h c/scheme48heap.h
+ 	$(CC) -c $(CFLAGS) -o $@ \
+-		-DDEFAULT_IMAGE_NAME=\"$(LIB)/$(IMAGE)\" \
++		-DDEFAULT_IMAGE_NAME=\"$(TRUELIB)/$(IMAGE)\" \
+ 		$(CPPFLAGS) $(DEFS) $(srcdir)/c/main.c
+ 
+ c/scheme48vm.o: c/prescheme.h c/scheme48vm.h c/scheme48heap.h \
+@@ -259,7 +261,7 @@ c/unix/misc.o: c/sysdep.h $(FAKEHS)
+ c/unix/io.o: c/io.h
+ c/script-interpreter.o: c/sysdep.h $(FAKEHS) c/script-interpreter.c
+ 	$(CC) -c $(CFLAGS) -o $@ \
+-		-DRUNNABLE=\"$(bindir)/$(RUNNABLE)\" \
++		-DRUNNABLE=\"$(truebindir)/$(RUNNABLE)\" \
+ 		$(CPPFLAGS) $(DEFS) \
+ 		-I ./c -I$(srcdir)/c \
+ 		$(srcdir)/c/script-interpreter.c
+@@ -294,15 +296,15 @@ inst-vm:
+ 
+ inst-image:
+ 	rm -f '/tmp/$(IMAGE)' &&					\
+-	$(srcdir)/build/build-usual-image $(srcdir) '$(LIB)'            \
++	$(srcdir)/build/build-usual-image $(srcdir) '$(TRUELIB)'            \
+ 	         '/tmp/$(IMAGE)' './$(VM)' '$(INITIAL)' &&		\
+ 	$(INSTALL_DATA) /tmp/$(IMAGE) $(LIB) &&				\
+ 	rm /tmp/$(IMAGE)
+ 
+ inst-man:
+ 	$(srcdir)/mkinstalldirs $(mandir)
+-	sed 's=LBIN=$(bindir)=g' $(srcdir)/doc/scheme48.man |	   \
+-		sed 's=LLIB=$(LIB)=g' |				   \
++	sed 's=LBIN=$(truebindir)=g' $(srcdir)/doc/scheme48.man |	   \
++		sed 's=LLIB=$(TRUELIB)=g' |				   \
+ 		sed 's=LS48=$(RUNNABLE)=g' >$(MANPAGE) &&	   \
+ 	$(INSTALL_DATA) $(MANPAGE) $(mandir) &&			   \
+ 	rm $(MANPAGE);						   \
+@@ -326,7 +328,7 @@ inst-script:
+ 	script=$(bindir)/$(RUNNABLE) &&					\
+ 	echo '#!/bin/sh'	>$$script &&				\
+ 	echo			>>$$script &&				\
+-	echo 'lib=$(LIB)'	>>$$script &&				\
++	echo 'lib=$(TRUELIB)'	>>$$script &&				\
+ 	echo 'exec $$lib/$(VM) -o $$lib/$(VM) -i $$lib/$(IMAGE) "$$@"'	\
+ 				>>$$script &&				\
+ 	chmod +x $$script
