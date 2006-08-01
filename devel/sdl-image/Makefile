@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/01/13 23:40:24 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2006/08/01 23:39:08 espie Exp $
 
 COMMENT=	"SDL image library"
 DISTNAME=	SDL_image-1.2.4
@@ -19,10 +19,10 @@ FAKE=		lib
 USE_LIBTOOL=	Yes
 USE_X11=	Yes
 
-LIB_DEPENDS=	SDL.::devel/sdl \
-		png.2::graphics/png \
-		tiff.35::graphics/tiff \
-		jpeg.62.::graphics/jpeg
+LIB_DEPENDS=	SDL::devel/sdl \
+		png.>=2::graphics/png \
+		tiff.>=35::graphics/tiff \
+		jpeg.>=62.::graphics/jpeg
 
 WANTLIB=	X11 Xext m usbhid z
 

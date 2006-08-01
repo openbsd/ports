@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2006/08/01 13:23:15 robert Exp $
+# $OpenBSD: Makefile,v 1.19 2006/08/01 23:39:08 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -32,7 +32,7 @@ SUBPACKAGE?=
 CATEGORIES=		devel perl5
 WANTLIB=
 .  if defined(PACKAGING)
-LIB_DEPENDS+=		uuid.12::devel/uuid
+LIB_DEPENDS+=		uuid.>=12::devel/uuid
 .  endif
 .endif
 

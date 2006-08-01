@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2006/02/04 10:07:58 steven Exp $
+# $OpenBSD: Makefile,v 1.24 2006/08/01 23:39:08 espie Exp $
 # NetBSD: Makefile,v 1.6 2000/01/19 12:28:44 hubertf Exp
 # FreeBSD Id: Makefile,v 1.11 1999/04/17 10:51:03 itojun Exp
 
@@ -31,7 +31,7 @@ CONFIGURE_ENV=	OPTFLAG='-D_PATH_SYSEXRC=\"${SYSCONFDIR}/vi.exrc\"'
 CONFIGURE_ARGS+=--enable-multibyte --program-prefix=n --host=${ARCH}-unknown-netbsd
 
 .if ${FLAVOR:L} == "canna"
-LIB_DEPENDS+=	canna.1.::japanese/canna
+LIB_DEPENDS+=	canna.>=1.::japanese/canna
 CONFIGURE_ARGS+=--enable-canna=${LOCALBASE}
 
 CANNA_OPT.euc-jp=canna cannactrl cannakey=

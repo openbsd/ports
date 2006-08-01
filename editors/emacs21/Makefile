@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2006/07/28 06:29:33 steven Exp $
+# $OpenBSD: Makefile,v 1.32 2006/08/01 23:39:08 espie Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
 BROKEN=			"hangs indefinitely until machine panics/hangs"
@@ -58,10 +58,10 @@ myWANTLIB=		c m ncurses ossaudio
 CONFIGURE_ARGS+=	--with-x=no
 .else
 USE_X11=Yes
-myLIB_DEPENDS=		ungif.5::graphics/libungif \
-			jpeg.62::graphics/jpeg \
-			png.2::graphics/png \
-			tiff.35::graphics/tiff
+myLIB_DEPENDS=		ungif.>=5::graphics/libungif \
+			jpeg.>=62::graphics/jpeg \
+			png.>=2::graphics/png \
+			tiff.>=35::graphics/tiff
 myWANTLIB+=		ICE SM X11 Xaw Xext Xmu Xpm Xt z
 .endif
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/08/01 18:38:23 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2006/08/01 23:39:08 espie Exp $
 
 COMMENT=		"Ruby interface to ncurses"
 
@@ -23,7 +23,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		lang/ruby
 
-LIB_DEPENDS=		ruby.1.84::lang/ruby
+LIB_DEPENDS=		ruby.>=1.84::lang/ruby
 
 CONFIGURE_STYLE=	simple
 

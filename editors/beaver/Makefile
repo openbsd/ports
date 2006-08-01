@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2005/08/30 20:32:52 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2006/08/01 23:39:08 espie Exp $
 COMMENT=	"lightweight Gtk text editor with syntax highlighting"
 
 DISTNAME=	beaver-0.2.7
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xi c glib gmodule iconv intl m
 
-LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
+LIB_DEPENDS=	gtk.>=1.2,gdk.>=1.2::x11/gtk+
 
 USE_GMAKE=	Yes
 MAKE_FLAGS=	CC="${CC}" OPTI="${CFLAGS}"

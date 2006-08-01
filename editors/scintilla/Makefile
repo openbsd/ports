@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/01/13 23:40:25 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/08/01 23:39:08 espie Exp $
 
 COMMENT=	"source code editing component for GTK+"
 
@@ -38,7 +38,7 @@ MAKE_ENV+=	LIB$n_VERSION=${LIB$n_VERSION}
 WRKDIST=	${WRKDIR}/scintilla
 WRKSRC=		${WRKDIST}/gtk
 
-LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
+LIB_DEPENDS=	gtk.>=1.2,gdk.>=1.2::x11/gtk+
 
 post-extract:
 	perl -pi -e 's|\x0d||' ${WRKDIST}/include/*.h ${WRKDIST}/gtk/*.cxx \

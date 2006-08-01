@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/11/24 00:11:04 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2006/08/01 23:39:08 espie Exp $
 # $FreeBSD: ports/devel/tclcl/Makefile,v 1.4 1999/11/28 18:31:57 steve Exp $
 
 COMMENT=	"Tcl/C++ interface used by ns and nam"
@@ -19,7 +19,7 @@ WANTLIB=		c m stdc++
 
 MASTER_SITES=	http://www.isi.edu/nsnam/dist/
 
-LIB_DEPENDS=	otcl.1::lang/otcl
+LIB_DEPENDS=	otcl.>=1::lang/otcl
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-tcl-ver=8.3 --with-tk-ver=8.3

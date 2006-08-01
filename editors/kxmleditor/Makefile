@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2006/06/12 15:45:51 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2006/08/01 23:39:08 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,7 +24,7 @@ WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2.0.0 c jpeg m png \
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kxmleditor/}
 
-LIB_DEPENDS=	kdecore.6,DCOP,kdefx,kdeprint,kdesu,kdeui,kio,kparts,kwalletclient::x11/kde/libs3
+LIB_DEPENDS=	kdecore.>=6,DCOP,kdefx,kdeprint,kdesu,kdeui,kio,kparts,kwalletclient::x11/kde/libs3
 
 MODULES=	x11/kde
 MODKDE_VERSION=	3.1

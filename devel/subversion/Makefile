@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2006/07/15 16:55:32 alek Exp $
+# $OpenBSD: Makefile,v 1.21 2006/08/01 23:39:08 espie Exp $
 
 COMMENT=	"subversion revision control system"
 COMMENT-perl=	"perl interface to subversion"
@@ -47,9 +47,9 @@ SUBST_VARS=	PYTHON_VER
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	neon.24:neon->=0.24.7:net/neon \
-		aprutil-1.0::devel/apr-util \
-		expat.4::textproc/expat
+LIB_DEPENDS=	neon.>=24:neon->=0.24.7:net/neon \
+		aprutil-1::devel/apr-util \
+		expat.>=4::textproc/expat
 
 .if !${FLAVOR:L:Mno_bindings}
 MULTI_PACKAGES=	-perl -python
@@ -58,7 +58,7 @@ SUBPACKAGE?=
 .  if defined(PACKAGING) && !empty(SUBPACKAGE)
 SHARED_ONLY=	Yes
 LIB_DEPENDS=	svn_diff-1,svn_ra-1,svn_delta-1,svn_subr-1,svn_fs-1,svn_repos-1,svn_wc-1,svn_client-1::devel/subversion \
-		expat.4::textproc/expat
+		expat.>=4::textproc/expat
 WANTLIB+=	aprutil-1
 
 .    if ${SUBPACKAGE} == "-python"

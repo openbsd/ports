@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2006/02/10 22:12:52 steven Exp $
+# $OpenBSD: Makefile,v 1.23 2006/08/01 23:39:08 espie Exp $
 
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
@@ -28,7 +28,7 @@ MULTI_PACKAGES=		-docs
 SUBPACKAGE?=
 
 .if ${SUBPACKAGE} != "-docs"
-LIB_DEPENDS=		lib/mysql/mysqlclient.10::databases/mysql
+LIB_DEPENDS=		lib/mysql/mysqlclient.>=10::databases/mysql
 WANTLIB=		crypto m ssl z
 .endif
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2005/04/19 09:41:42 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2006/08/01 23:39:08 espie Exp $
 
 COMMENT=	"text editor"
 
@@ -11,7 +11,7 @@ MASTER_SITES=   ftp://space.mit.edu/pub/davis/jed/v0.99/ \
 
 HOMEPAGE=	http://space.mit.edu/~davis/jed/
 
-LIB_DEPENDS=	slang.14::devel/libslang
+LIB_DEPENDS=	slang.>=14::devel/libslang
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

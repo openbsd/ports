@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/02/08 04:54:49 david Exp $
+# $OpenBSD: Makefile,v 1.14 2006/08/01 23:39:08 espie Exp $
 
 
 COMMENT=	"X11 based RTF editor"
@@ -19,9 +19,9 @@ WANTLIB=		ICE SM X11 Xext Xmu Xpm Xp Xt c m z
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 WRKDIST=	${WRKDIR}/Ted-$V
-LIB_DEPENDS=	png.2.::graphics/png \
-		jpeg.62::graphics/jpeg \
-		tiff.35::graphics/tiff
+LIB_DEPENDS=	png.>=2.::graphics/png \
+		jpeg.>=62::graphics/jpeg \
+		tiff.>=35::graphics/tiff
 
 USE_MOTIF=	openmotif
 ALL_TARGET=	compile.shared

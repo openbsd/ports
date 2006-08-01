@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2005/05/20 21:18:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2006/08/01 23:39:08 espie Exp $
 
 COMMENT=	"small, easy to use editor"
 
@@ -31,7 +31,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
 CONFIGURE_ARGS=	--enable-all
 
 .if ${FLAVOR:L:Mslang}
-LIB_DEPENDS+=	slang.14::devel/libslang
+LIB_DEPENDS+=	slang.>=14::devel/libslang
 CONFIGURE_ARGS+=--with-slang="${DEPBASE}"
 WANTLIB+=	m
 .endif

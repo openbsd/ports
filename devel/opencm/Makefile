@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2005/11/30 20:43:44 todd Exp $
+# $OpenBSD: Makefile,v 1.24 2006/08/01 23:39:08 espie Exp $
 
 COMMENT=		"OpenCM change management system"
 
@@ -47,7 +47,7 @@ post-install:
 	gunzip ${PREFIX}/info/opencm.info.gz
 
 
-LIB_DEPENDS=		gc.1:boehm-gc->=6.2:devel/boehm-gc
+LIB_DEPENDS=		gc.>=1:boehm-gc->=6.2:devel/boehm-gc
 
 WRKSRC=			${WRKDIST}/base
 

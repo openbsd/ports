@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2006/06/03 09:37:09 alek Exp $
+# $OpenBSD: Makefile,v 1.39 2006/08/01 23:39:08 espie Exp $
 
 COMMENT=	"simplified wrapper and interface generator"
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m stdc++
 
 MODULES=	lang/python
-LIB_DEPENDS=	guile.9::lang/guile
+LIB_DEPENDS=	guile.>=9::lang/guile
 BUILD_DEPENDS=	::lang/tcl/8.4 \
 		::lang/ruby
 

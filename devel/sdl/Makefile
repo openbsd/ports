@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2006/02/03 06:20:11 aanriot Exp $
+# $OpenBSD: Makefile,v 1.45 2006/08/01 23:39:08 espie Exp $
 # Uses pthreads
 
 COMMENT=	"cross-platform multimedia library"
@@ -66,7 +66,7 @@ CONFIGURE_ARGS+= --disable-openbsdaudio
 .endif
 
 .if ${FLAVOR:L:Mesd}
-LIB_DEPENDS+=	esd.2::audio/esound
+LIB_DEPENDS+=	esd.>=2::audio/esound
 CONFIGURE_ARGS+= --enable-esd
 .else
 CONFIGURE_ARGS+= --disable-esd

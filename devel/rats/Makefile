@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/11/24 00:11:03 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2006/08/01 23:39:08 espie Exp $
 
 COMMENT=		"source code auditing tool"
 
@@ -19,7 +19,7 @@ WANTLIB=		c
 MASTER_SITES=		http://www.securesoftware.com/rats/ \
 			${MASTER_SITE_PACKETSTORM:=UNIX/security/}
 
-LIB_DEPENDS=		expat.2::textproc/expat
+LIB_DEPENDS=		expat.>=2::textproc/expat
 
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS+=	--with-expat-lib=${LOCALBASE}/lib \

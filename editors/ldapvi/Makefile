@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/03/20 16:19:27 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2006/08/01 23:39:08 espie Exp $
 
 COMMENT=	"update LDAP entries with a text editor"
 
@@ -21,7 +21,7 @@ WANTLIB=	c curses crypto
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=	glib-2.0.0.8::devel/glib2 \
+LIB_DEPENDS=	glib-2.0.>=0.8::devel/glib2 \
 		lber,ldap:openldap-client-*:databases/openldap \
 		popt::devel/popt
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2006/06/03 18:23:03 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2006/08/01 23:39:08 espie Exp $
 
 COMMENT=		"library for layout and rendering of text"
 
@@ -24,8 +24,8 @@ WANTLIB=		X11 Xext Xft Xrender c fontconfig freetype \
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/pango/1.12/}
 EXTRACT_SUFX=		.tar.bz2
 
-LIB_DEPENDS=		glib-2.0.1000.0,gmodule-2.0.1000.0,gobject-2.0.1000.0::devel/glib2 \
-			cairo.3::graphics/cairo
+LIB_DEPENDS=		glib-2.0.>=1000.0,gmodule-2.0.>=1000.0,gobject-2.0.>=1000.0::devel/glib2 \
+			cairo.>=3::graphics/cairo
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 
 USE_X11=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/11/24 11:08:03 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/08/01 23:39:08 espie Exp $
 
 COMMENT=		"code editor for GNOME"
 
@@ -25,8 +25,8 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=glimmer/}
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		gnomeprint.16::x11/gnome/print \
-			gnomevfs.0::x11/gnome/vfs
+LIB_DEPENDS=		gnomeprint.>=16::x11/gnome/print \
+			gnomevfs::x11/gnome/vfs
 
 SEPARATE_BUILD=		concurrent
 USE_X11=                Yes

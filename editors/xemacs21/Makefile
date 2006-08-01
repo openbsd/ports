@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2006/07/28 06:29:34 steven Exp $
+# $OpenBSD: Makefile,v 1.39 2006/08/01 23:39:08 espie Exp $
 
 COMMENT=	"heavily customizable and extensible editor"
 
@@ -71,9 +71,9 @@ CONFIGURE_ARGS+=--with-menubars=lucid \
 		--with-tiff \
 		--site-includes="${LOCALBASE}/include/libpng"
 
-LIB_DEPENDS+=	jpeg.62::graphics/jpeg \
-		png.2.::graphics/png \
-		tiff.35::graphics/tiff
+LIB_DEPENDS+=	jpeg.>=62::graphics/jpeg \
+		png.>=2.::graphics/png \
+		tiff.>=35::graphics/tiff
 
 . if ${FLAVOR:L:Mmule}
 CONFIGURE_ARGS+=--with-xim=xlib

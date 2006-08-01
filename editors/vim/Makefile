@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2006/07/09 17:44:16 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.69 2006/08/01 23:39:08 espie Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
@@ -100,7 +100,7 @@ CONFIGURE_ARGS+=--enable-gui="athena" --with-x --enable-fontset --enable-xim
 WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xpm Xt
 .elif ${FLAVOR:L:Mgtk2} && \
 		!${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena}
-LIB_DEPENDS+=	gdk-x11-2.0.0.11,gdk_pixbuf-2.0.0.11,gtk-x11-2.0.0.11::x11/gtk+2
+LIB_DEPENDS+=	gdk-x11-2.0.>=0.11,gdk_pixbuf-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2
 BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 CONFIGURE_ARGS+=--enable-gui="gtk2" --with-x --enable-fontset --enable-xim --disable-gtk-check --enable-gtk2-check
 WANTLIB+=	ICE SM X11 Xt fontconfig freetype m \
