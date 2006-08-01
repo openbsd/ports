@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2006/07/19 17:37:01 kurt Exp $
+# $OpenBSD: Makefile,v 1.9 2006/08/01 20:01:15 kurt Exp $
 
 COMMENT=        "java replacement for make"
 
 DISTNAME=	apache-ant-1.6.5
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	devel
 
 HOMEPAGE=	http://ant.apache.org/
@@ -25,6 +25,7 @@ EXTRACT_SUFX=	-bin.tar.gz
 MODULES=	java
 MODJAVA_VER=	1.3+
 
+RUN_DEPENDS=	::java/javaPathHelper
 BUILD_DEPENDS=	::archivers/gtar
 
 NO_BUILD=	Yes
@@ -38,7 +39,6 @@ TXT=		README WHATSNEW LICENSE NOTICE LICENSE.dom LICENSE.sax LICENSE.xerces
 do-install:
 	@cd ${WRKDIST}/bin; \
 	    perl -pi -e 's|_antlibs_|${TRUEPREFIX}/ant/lib|;' \
-		-e 's|%%DEFAULT_JAVACMD%%|${JAVA_HOME}/bin/java|;' \
 		ant runant.pl; \
 	    ${INSTALL_SCRIPT} ant antRun runant.pl ${PREFIX}/bin
 	@${INSTALL_DATA_DIR} ${ANTDOCS}
