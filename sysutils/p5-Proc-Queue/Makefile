@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/07/23 07:43:33 aanriot Exp $
+# $OpenBSD: Makefile,v 1.2 2006/08/01 05:40:58 steven Exp $
 
 COMMENT=	"limits the number of forked concurrent processes"
 
-DISTNAME=	Proc-Queue-1.16
+DISTNAME=	Proc-Queue-1.18
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	sysutils perl5
 
