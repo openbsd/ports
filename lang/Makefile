@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2006/06/12 13:28:41 alek Exp $
+# $OpenBSD: Makefile,v 1.74 2006/08/01 14:57:04 alek Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -41,6 +41,7 @@
      SUBDIR += python
      SUBDIR += ruby
      SUBDIR += scheme-report
+     SUBDIR += scheme48
      SUBDIR += scm
      SUBDIR += scm,no_x11
      SUBDIR += smlnj
