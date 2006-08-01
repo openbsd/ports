@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2006/07/19 17:27:15 kurt Exp $
+# $OpenBSD: Makefile,v 1.19 2006/08/01 20:07:30 kurt Exp $
 
 ONLY_FOR_ARCHS=		amd64 i386
 
@@ -8,9 +8,9 @@ COMMENT-mozilla=	"mozilla integration library for eclipse HTML Browser Widget"
 
 ECLIPSE_VER=		3.2
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
-PKGNAME=		eclipse-sdk-${ECLIPSE_VER}p0
-PKGNAME-gnome=		eclipse-sdk-gnome-${ECLIPSE_VER}p0
-PKGNAME-mozilla=	eclipse-sdk-mozilla-${ECLIPSE_VER}p0
+PKGNAME=		eclipse-sdk-${ECLIPSE_VER}p1
+PKGNAME-gnome=		eclipse-sdk-gnome-${ECLIPSE_VER}p1
+PKGNAME-mozilla=	eclipse-sdk-mozilla-${ECLIPSE_VER}p1
 SHARED_LIBS=		swt-atk-gtk-3232	3.0 \
 			swt-cde-gtk-3232	3.0 \
 			swt-awt-gtk-3232	3.0 \
@@ -143,7 +143,6 @@ do-install:
 	@tar xzf ${WRKBUILD}/result/${ECLIPSE_OS}-${ECLIPSE_WS}-${ECLIPSE_ARCH}-sdk.tar.gz \
 		-C ${PREFIX}
 	@sed -e "s+%%ECLIPSE_HOME%%+${TRUEPREFIX}/eclipse+g" \
-		-e "s+%%DEFAULT_JAVACMD%%+${JAVA_HOME}/bin/java+g" \
 		-e "s+%%MOZILLA_FIVE_HOME%%+${TRUEPREFIX}/mozilla+g" \
 		${WRKBUILD}/eclipse.in > ${WRKBUILD}/eclipse.tmp
 	${INSTALL_SCRIPT} ${WRKBUILD}/eclipse.tmp $(PREFIX)/bin/eclipse

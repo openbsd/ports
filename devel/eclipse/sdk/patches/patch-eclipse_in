@@ -1,16 +1,15 @@
-$OpenBSD: patch-eclipse_in,v 1.4 2006/07/19 17:27:15 kurt Exp $
---- eclipse.in.orig	Sat Jul 15 09:38:05 2006
-+++ eclipse.in	Mon Jul 17 13:59:52 2006
-@@ -0,0 +1,50 @@
+$OpenBSD: patch-eclipse_in,v 1.5 2006/08/01 20:07:30 kurt Exp $
+--- eclipse.in.orig	Tue Aug  1 14:37:10 2006
++++ eclipse.in	Tue Aug  1 14:40:06 2006
+@@ -0,0 +1,30 @@
 +#!/bin/sh
 +#
-+# $OpenBSD: patch-eclipse_in,v 1.4 2006/07/19 17:27:15 kurt Exp $
++# $OpenBSD: patch-eclipse_in,v 1.5 2006/08/01 20:07:30 kurt Exp $
 +#
 +# OpenBSD-specific startup script for Eclipse Platform
 +#
 +
 +ECLIPSE_HOME=%%ECLIPSE_HOME%%
-+DEFAULT_JAVACMD=%%DEFAULT_JAVACMD%%
 +export MOZILLA_FIVE_HOME=%%MOZILLA_FIVE_HOME%%
 +export LD_LIBRARY_PATH=$MOZILLA_FIVE_HOME:$LD_LIBRARY_PATH
 +
@@ -19,28 +18,9 @@ $OpenBSD: patch-eclipse_in,v 1.4 2006/07/19 17:27:15 kurt Exp $
 +# Determine configuration settings
 +#-----------------------------------------------------------------------------
 +
-+# Determine JAVACMD if not set
-+if [ -z "${JAVACMD}" ]; then
-+	if [ -n "${JAVA_HOME}"  ]; then
-+		# assume Sun style java executable location and command
-+		JAVACMD="${JAVA_HOME}/bin/java"
-+		if [ ! -x "$JAVACMD" ]; then
-+			echo "Error: JAVA_HOME is not defined correctly: ${JAVA_HOME}"
-+			echo "       Unable to find ${JAVACMD} or it is not executable"
-+			exit 1
-+		fi
-+	else
-+		# assume Sun style java command and check path
-+		JAVACMD=`which java > /dev/null 2>&1 && which java`
-+		if [ -z "$JAVACMD" ] ; then
-+			JAVACMD=${DEFAULT_JAVACMD}
-+		fi
-+	fi
-+fi
++JAVACMD=$(javaPathHelper -c eclipse-sdk)
 +
-+if [ ! -x "$JAVACMD" ]; then
-+	echo "Error: JAVACMD is not defined correctly: ${JAVACMD}"
-+	echo "       Unable to find ${JAVACMD} or it is not executable"
++if [ -z "${JAVACMD}" ]; then
 +	exit 1
 +fi
 +
