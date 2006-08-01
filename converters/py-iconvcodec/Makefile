@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/06/03 09:25:40 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2006/08/01 18:38:23 alek Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://download.berlios.de/cjkpython/
+MASTER_SITES=	${MASTER_SITE_BERLIOS:=cjkpython/}
 
 MODPY_DISTUTILS_BUILDARGS=	--with-libiconv=${LOCALBASE}
 

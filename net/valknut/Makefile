@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/11/09 09:23:21 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2006/08/01 18:38:23 alek Exp $
 
 COMMENT=	"Graphical Direct-Connect client"
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	http://download.berlios.de/dcgui/
+MASTER_SITES=	${MASTER_SITE_BERLIOS:=dcgui/}
 
 MODULES=	converters/libiconv x11/qt3
 MODQT_MT=	Yes

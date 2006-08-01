@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/07/28 06:29:33 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2006/08/01 18:38:23 alek Exp $
 
 COMMENT=		"Ruby interface to ncurses"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m ncurses panel
 
-MASTER_SITES=		http://download.berlios.de/ncurses-ruby/
+MASTER_SITES=		${MASTER_SITE_BERLIOS:=ncurses-ruby/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		lang/ruby

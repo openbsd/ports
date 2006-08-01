@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/06/03 09:25:40 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2006/08/01 18:38:22 alek Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://download.berlios.de/cjkpython/
+MASTER_SITES=	${MASTER_SITE_BERLIOS:=cjkpython/}
 
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/04/24 16:38:10 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2006/08/01 18:38:23 alek Exp $
 
 COMMENT=		"service daemon that monitors one or more GPSes"
 COMMENT-motif=		"motif-based test apps using gpsd"
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://download.berlios.de/gpsd/
+MASTER_SITES=		${MASTER_SITE_BERLIOS:=gpsd/}
 
 USE_LIBTOOL=		yes
 CONFIGURE_STYLE=	gnu

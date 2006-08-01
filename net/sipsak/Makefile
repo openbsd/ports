@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/07/08 07:41:00 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2006/08/01 18:38:23 alek Exp $
 
 COMMENT=	"SIP swiss army knife"
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=	c crypto
 
-MASTER_SITES=	http://download.berlios.de/sipsak/
+MASTER_SITES=	${MASTER_SITE_BERLIOS:=sipsak/}
 
 CONFIGURE_STYLE=gnu
 

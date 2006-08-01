@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/01/14 11:46:15 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/08/01 18:38:23 alek Exp $
 
 COMMENT=	"Library for direct-connect protocol"
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://download.berlios.de/dcgui/
+MASTER_SITES=	${MASTER_SITE_BERLIOS:=dcgui/}
 
 MODULES=	converters/libiconv
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig

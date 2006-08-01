@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/02/08 23:18:51 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2006/08/01 18:38:23 alek Exp $
 
 COMMENT=	"window manager improved - key driven window manager"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xft Xrender c fontconfig freetype m \
 			stdc++
 
-MASTER_SITES=	http://download.berlios.de/wmi/
+MASTER_SITES=	${MASTER_SITE_BERLIOS=wmi/}
 
 # not necessary, but to ensure consistent behaviour
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
