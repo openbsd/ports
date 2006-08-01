@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/06/13 13:17:56 bernd Exp $
+# $OpenBSD: Makefile,v 1.20 2006/08/01 12:13:28 espie Exp $
 
 COMMENT=	"generic playlist manager for UNIX"
 
@@ -22,7 +22,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=xhippo/}
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk_pixbuf-2.0.0.0,gdk-x11-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
-		id3tag.2::audio/libid3tag
+		id3tag.>=2::audio/libid3tag
 
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu

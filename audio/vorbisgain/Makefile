@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2005/04/19 20:21:46 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2006/08/01 12:13:28 espie Exp $
 
 COMMENT=		"add tags to Ogg Vorbis files to adjust the volume"
 
@@ -19,7 +19,7 @@ WANTLIB=		c m ogg
 MASTER_SITES=		http://sjeng.org/ftp/vorbis/
 EXTRACT_SUFX=		.zip
 
-LIB_DEPENDS=		vorbis.4,vorbisfile.4::audio/libvorbis
+LIB_DEPENDS=		vorbis.>=4,vorbisfile.>=4::audio/libvorbis
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-recursive

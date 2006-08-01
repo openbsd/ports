@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2005/01/03 17:01:52 alek Exp $
+# $OpenBSD: Makefile,v 1.13 2006/08/01 12:13:28 espie Exp $
 
 COMMENT=	"Diamond Rio 500 utilities"
 DISTNAME=	rio500-0.7
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-LIB_DEPENDS=		glib.1.2::devel/glib
+LIB_DEPENDS=		glib.>=1.2::devel/glib
 
 ONLY_FOR_ARCHS=		i386
 

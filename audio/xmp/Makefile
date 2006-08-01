@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2005/11/16 19:50:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2006/08/01 12:13:29 espie Exp $
 
 COMMENT=	"extended module player"
 COMMENT-xmms=	"extended module player plugin for XMMS"
@@ -31,9 +31,9 @@ MULTI_PACKAGES+= -xmms
 .endif
 SUBPACKAGE?=
 
-LIB_DEPENDS=	esd.2::audio/esound
+LIB_DEPENDS=	esd.>=2::audio/esound
 .if ${MULTI_PACKAGES:M-xmms}
-LIB_DEPENDS+=	xmms.3::audio/xmms
+LIB_DEPENDS+=	xmms.>=3::audio/xmms
 .else
 CONFIGURE_ARGS+= --disable-xmms
 .endif
@@ -59,7 +59,7 @@ WANTLIB=
 LIB_DEPENDS=
 RUN_DEPENDS=	::audio/xmms
 .  else
-LIB_DEPENDS=	esd.2::audio/esound
+LIB_DEPENDS=	esd.>=2::audio/esound
 .  endif
 .endif
 

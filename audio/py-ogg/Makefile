@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/06/03 09:21:21 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2006/08/01 12:13:28 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -21,7 +21,7 @@ MASTER_SITES=	${HOMEPAGE}download/
 
 MODULES=	lang/python
 
-LIB_DEPENDS=	ogg.5.2::audio/libogg
+LIB_DEPENDS=	ogg.>=5.2::audio/libogg
 
 do-configure:
 	@cd ${WRKSRC} && ${MODPY_BIN} ./config_unix.py --prefix ${PREFIX} 

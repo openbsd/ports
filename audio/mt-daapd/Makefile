@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/05/05 05:28:58 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2006/08/01 12:13:28 espie Exp $
 
 COMMENT=	"multi-threaded DAAP server"
 
@@ -17,8 +17,8 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mt-daapd/}
 
-LIB_DEPENDS=	gdbm.3::databases/gdbm \
-		id3tag.3::audio/libid3tag
+LIB_DEPENDS=	gdbm.>=3::databases/gdbm \
+		id3tag.>=3::audio/libid3tag
 
 WANTLIB=	c pthread z
 
@@ -30,7 +30,7 @@ CONFIGURE_ARGS=	--with-gdbm-includes=${LOCALBASE}/include \
 		--with-gdbm-libs=${LOCALBASE}/lib
 
 .if ${FLAVOR:L:Mhowl}
-LIB_DEPENDS+=	howl.0::net/howl
+LIB_DEPENDS+=	howl::net/howl
 CONFIGURE_ARGS+=--enable-howl --with-howl-includes=${LOCALBASE}/include/howl
 .endif
 

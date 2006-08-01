@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2006/05/29 19:34:59 bernd Exp $
+# $OpenBSD: Makefile,v 1.37 2006/08/01 12:13:28 espie Exp $
 
 # mpg123 is unusable without FPU
 NOT_FOR_ARCHS=	arm
@@ -30,7 +30,7 @@ FLAVORS=	esd
 FLAVOR?=
 
 .if ${FLAVOR:L:Mesd}
-LIB_DEPENDS=	esd.2::audio/esound
+LIB_DEPENDS=	esd.>=2::audio/esound
 ALL_TARGET=	openbsd-esd
 WANTLIB+=	audiofile
 .else

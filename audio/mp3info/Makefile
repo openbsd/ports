@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2005/02/07 19:01:48 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.20 2006/08/01 12:13:28 espie Exp $
 
 COMMENT=	"MP3 information tool"
 
@@ -28,7 +28,7 @@ ALL_TARGET=	mp3info doc
 INSTALL_TARGET=	install-no_x11
 .else
 USE_X11=	Yes
-LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+	
+LIB_DEPENDS=	gtk.>=1.2,gdk.>=1.2::x11/gtk+	
 WANTLIB+=	X11 Xext Xi glib gmodule iconv intl m
 .endif
 

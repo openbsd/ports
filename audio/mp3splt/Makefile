@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/10/17 04:39:12 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2006/08/01 12:13:28 espie Exp $
 
 COMMENT=	"split mp3/ogg files without decoding"
 DISTNAME=	mp3splt-2.1c-src
@@ -25,7 +25,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-LIB_DEPENDS+=	mad.2::audio/libmad \
-		vorbis.3,vorbisfile.4::audio/libvorbis
+LIB_DEPENDS+=	mad.>=2::audio/libmad \
+		vorbis.>=3,vorbisfile.>=4::audio/libvorbis
 
 .include <bsd.port.mk>

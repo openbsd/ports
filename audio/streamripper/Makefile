@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/02/08 17:30:12 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2006/08/01 12:13:28 espie Exp $
 
 COMMENT=	"rip shoutcast streams to local mp3s"
 
@@ -20,9 +20,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c m pthread
 
-LIB_DEPENDS=	mad.2::audio/libmad \
-		ogg.5.2::audio/libogg \
-		vorbis.3.0::audio/libvorbis
+LIB_DEPENDS=	mad.>=2::audio/libmad \
+		ogg.>=5.2::audio/libogg \
+		vorbis.>=3.0::audio/libvorbis
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPLAGS="-I${LOCALBASE}/include" \

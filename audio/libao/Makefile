@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2006/02/22 11:05:02 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2006/08/01 12:13:28 espie Exp $
 
 COMMENT=	"portable audio output library"
 COMMENT-arts=	"aRts module for portable audio output library"
@@ -51,21 +51,21 @@ CONFIGURE_ARGS+= --disable-nas
 
 .if defined(PACKAGING)
 .  if   ${SUBPACKAGE} == "-arts"
-LIB_DEPENDS=	artsc.0::x11/kde/arts3
+LIB_DEPENDS=	artsc::x11/kde/arts3
 RUN_DEPENDS=	:libao-${VERSION}:audio/libao
 WANTLIB+=	glib-2.0.0.0 gmodule-2.0.0.0 gthread-2.0.0.0
 MODULES=	devel/gettext
 .  elif ${SUBPACKAGE} == "-esd"
-LIB_DEPENDS=	esd.2::audio/esound
+LIB_DEPENDS=	esd.>=2::audio/esound
 RUN_DEPENDS=	:libao-${VERSION}:audio/libao
 WANTLIB+=	audiofile m
 .  endif
 .else
 .  if ${MULTI_PACKAGES:M-arts}
-LIB_DEPENDS+=	artsc.0::x11/kde/arts3
+LIB_DEPENDS+=	artsc::x11/kde/arts3
 .  endif
 .  if ${MULTI_PACKAGES:M-esd}
-LIB_DEPENDS+=	esd.2::audio/esound
+LIB_DEPENDS+=	esd.>=2::audio/esound
 .  endif
 .endif
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2005/11/28 16:09:52 kurt Exp $
+# $OpenBSD: Makefile,v 1.12 2006/08/01 12:13:28 espie Exp $
 # Uses pthreads
 
 COMMENT=		"Music tracking tool for X11"
@@ -22,7 +22,7 @@ V=v0.6
 MASTER_SITES=		http://www.soundtracker.org/dl/$V/ \
 			http://mirror.csoft.org/soundtracker/
 
-LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+ \
+LIB_DEPENDS=		gtk.>=1.2,gdk.>=1.2::x11/gtk+ \
 			audiofile::devel/libaudiofile
 
 MODULES=		gettext
@@ -41,7 +41,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 .if ${FLAVOR:L:Mgnome}
-LIB_DEPENDS+=	gnome.36,gnomesupport.0,gnomeui.46,art_lgpl.4::x11/gnome/libs \
+LIB_DEPENDS+=	gnome.>=36,gnomesupport,gnomeui.>=46,art_lgpl.>=4::x11/gnome/libs \
 		gdk_pixbuf::graphics/gdk-pixbuf
 CONFIGURE_ARGS+=--with-gdk-pixbuf-prefix=${LOCALBASE}
 WANTLIB+=	ICE SM gdk_imlib jpeg png tiff ungif z
@@ -50,7 +50,7 @@ CONFIGURE_ARGS+=--disable-gnome --disable-splash
 .endif
 
 .if ${FLAVOR:L:Mesd}
-LIB_DEPENDS+=		esd.2::audio/esound
+LIB_DEPENDS+=		esd.>=2::audio/esound
 .else
 CONFIGURE_ARGS+=	--disable-esd
 .endif

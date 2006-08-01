@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2005/01/02 23:36:19 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2006/08/01 12:13:28 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,7 +20,7 @@ WANTLIB=		X11 Xext Xi gdk glib gmodule gtk iconv intl m pthread
 
 MASTER_SITES=	${HOMEPAGE}source/
 
-LIB_DEPENDS=	gthread.1.2::devel/glib
+LIB_DEPENDS=	gthread.>=1.2::devel/glib
 RUN_DEPENDS=	::audio/xmms
 BUILD_DEPENDS=	${RUN_DEPENDS}
 

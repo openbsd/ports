@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/06/03 09:21:21 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2006/08/01 12:13:28 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -21,7 +21,7 @@ MASTER_SITES=	${HOMEPAGE}download/
 
 MODULES=	lang/python
 
-LIB_DEPENDS=	ao.3::audio/libao
+LIB_DEPENDS=	ao.>=3::audio/libao
 
 NO_REGRESS=	Yes
 

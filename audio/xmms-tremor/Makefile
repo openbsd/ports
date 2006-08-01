@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/09/22 05:26:29 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2006/08/01 12:13:29 espie Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	"Ogg Vorbis input plugin for XMMS using tremor"
@@ -13,8 +13,8 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-LIB_DEPENDS=	vorbisidec.1::audio/tremor \
-		xmms.4::audio/xmms
+LIB_DEPENDS=	vorbisidec.>=1::audio/tremor \
+		xmms.>=4::audio/xmms
 
 WANTLIB=	X11 Xext Xi gdk glib gmodule gtk iconv intl m
 

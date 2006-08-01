@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/01/07 22:35:17 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2006/08/01 12:13:28 espie Exp $
 
 COMMENT=	"mikmod sound library"
 
@@ -32,7 +32,7 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mesd}
 CONFIGURE_ARGS+= --enable-esd
-LIB_DEPENDS+=	esd.2::audio/esound
+LIB_DEPENDS+=	esd.>=2::audio/esound
 WANTLIB+=	audiofile m
 .else
 CONFIGURE_ARGS+= --disable-esd

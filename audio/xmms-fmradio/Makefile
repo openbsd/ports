@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/11/21 17:51:48 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/08/01 12:13:28 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,7 +22,7 @@ WANTLIB=		X11 Xext Xi gdk glib gmodule gtk iconv intl m
 MASTER_SITES=	${HOMEPAGE}
 EXTRACT_SUFX=	.tgz
 
-LIB_DEPENDS=	xmms.2::audio/xmms
+LIB_DEPENDS=	xmms.>=2::audio/xmms
 
 MAKE_ENV=	CC="${CC}"
 

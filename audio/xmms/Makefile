@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2006/03/13 14:30:43 robert Exp $
+# $OpenBSD: Makefile,v 1.48 2006/08/01 12:13:28 espie Exp $
 
 COMMENT=		"Multimedia player for the X Window System"
 COMMENT-esd=		"Esound output plugin for XMMS"
@@ -61,8 +61,8 @@ WANTLIB+=		GL ICE c Xxf86vm SM
 
 MODULES=		devel/gettext
 RUN_DEPENDS=		:unzip-*:archivers/unzip
-LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+ \
-			gthread.1.2::devel/glib
+LIB_DEPENDS=		gtk.>=1.2,gdk.>=1.2::x11/gtk+ \
+			gthread.>=1.2::devel/glib
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	autoconf
@@ -79,41 +79,41 @@ DOCS=			README NEWS FAQ
 
 .if defined(PACKAGING)
 . if ${SUBPACKAGE} == "-esd"
-LIB_DEPENDS+=		esd.2::audio/esound
+LIB_DEPENDS+=		esd.>=2::audio/esound
 RUN_DEPENDS=		::audio/xmms
 WANTLIB+=		audiofile
 . endif
 . if ${SUBPACKAGE} == "-vorbis"
-LIB_DEPENDS+=		vorbis.0,vorbisfile.1::audio/libvorbis
+LIB_DEPENDS+=		vorbis,vorbisfile.>=1::audio/libvorbis
 RUN_DEPENDS=		::audio/xmms
 WANTLIB+=		ogg
 . endif
 . if ${SUBPACKAGE} == "-mikmod"
-LIB_DEPENDS+=		mikmod.0::audio/libmikmod
+LIB_DEPENDS+=		mikmod::audio/libmikmod
 RUN_DEPENDS=		::audio/xmms
 . endif
 . if ${SUBPACKAGE} == "-mp3"
 PERMIT_PACKAGE_CDROM=	"patent issues"
 PERMIT_DISTFILES_CDROM= "patent issues"
-LIB_DEPENDS+=		xmms.4:xmms-${VERSION}*:${FULLPKGPATH:S/,-mp3//}
+LIB_DEPENDS+=		xmms.>=4:xmms-${VERSION}*:${FULLPKGPATH:S/,-mp3//}
 WANTLIB+=		z
 . endif
 .else
 . if ${MULTI_PACKAGES:M-esd}
-LIB_DEPENDS+=		esd.2::audio/esound
+LIB_DEPENDS+=		esd.>=2::audio/esound
 CONFIGURE_ARGS+=	--with-esd-prefix=${LOCALBASE}
 . else
 CONFIGURE_ARGS+=	--disable-esd
 . endif
 . if ${MULTI_PACKAGES:M-vorbis}
-LIB_DEPENDS+=		vorbis.0,vorbisfile.1::audio/libvorbis
+LIB_DEPENDS+=		vorbis,vorbisfile.>=1::audio/libvorbis
 CONFIGURE_ARGS+=	--with-ogg-prefix=${LOCALBASE}	\
 			--with-vorbis-prefix=${LOCALBASE}
 . else
 CONFIGURE_ARGS+=	--disable-vorbis
 . endif
 . if ${MULTI_PACKAGES:M-mikmod}
-LIB_DEPENDS+=		mikmod.2::audio/libmikmod
+LIB_DEPENDS+=		mikmod.>=2::audio/libmikmod
 CONFIGURE_ARGS+=	--with-mikmod-prefix=${LOCALBASE}
 . else
 CONFIGURE_ARGS+=	--disable-mikmod

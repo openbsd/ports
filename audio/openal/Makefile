@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/12/23 16:10:48 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/08/01 12:13:28 espie Exp $
 
 COMMENT=	"cross-platform 3D audio API"
 DISTNAME=	openal-20040816
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		m ogg
 
-LIB_DEPENDS=	vorbis.3.0,vorbisfile.4.0::audio/libvorbis
+LIB_DEPENDS=	vorbis.>=3.0,vorbisfile.>=4.0::audio/libvorbis
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes

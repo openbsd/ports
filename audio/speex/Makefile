@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/01/10 11:26:09 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/08/01 12:13:28 espie Exp $
 
 COMMENT=	"patent-free speech codec"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}download/
 
-LIB_DEPENDS=	ogg.5::audio/libogg
+LIB_DEPENDS=	ogg.>=5::audio/libogg
 WANTLIB=	c m
 
 USE_LIBTOOL=	Yes

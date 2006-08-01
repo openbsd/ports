@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/06/16 20:08:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2006/08/01 12:13:29 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}download/
 
-LIB_DEPENDS=	xmms.4::audio/xmms
+LIB_DEPENDS=	xmms.>=4::audio/xmms
 WANTLIB=	X11 Xext Xi m gdk glib gmodule gtk iconv intl
 
 MAKE_FLAGS=	CC="${CC}" OPT="${CFLAGS}" DEBUG=""

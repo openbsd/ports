@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2005/09/10 16:42:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2006/08/01 12:13:28 espie Exp $
 
 # not very useful with static libao
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
@@ -21,9 +21,9 @@ WANTLIB=		c z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mpg321/}
 
-LIB_DEPENDS=	ao.3::audio/libao \
-		id3tag.2::audio/libid3tag \
-		mad.2::audio/libmad
+LIB_DEPENDS=	ao.>=3::audio/libao \
+		id3tag.>=2::audio/libid3tag \
+		mad.>=2::audio/libmad
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE=gnu

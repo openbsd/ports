@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2006/07/14 18:38:23 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2006/08/01 12:13:28 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -18,7 +18,7 @@ WANTLIB=		ogg
 
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=../../authors/id/F/FO/FOOF/}
 
-LIB_DEPENDS=		vorbis.1,vorbisfile.2::audio/libvorbis
+LIB_DEPENDS=		vorbis.>=1,vorbisfile.>=2::audio/libvorbis
 
 CONFIGURE_STYLE=	perl
 

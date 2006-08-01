@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/07/19 13:41:02 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2006/08/01 12:13:28 espie Exp $
 
 COMMENT=	"audio file volume normalizer"
 
@@ -34,7 +34,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
-LIB_DEPENDS=	mad.2::audio/libmad \
+LIB_DEPENDS=	mad.>=2::audio/libmad \
 		audiofile::devel/libaudiofile
 
 USE_LIBTOOL=	Yes
