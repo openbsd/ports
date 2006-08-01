@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2006/01/08 17:58:49 bernd Exp $
+# $OpenBSD: Makefile,v 1.12 2006/08/01 22:55:53 espie Exp $
 
 COMMENT=		"a SOAP implementation in C"
 
@@ -22,7 +22,7 @@ MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libsoup/2.2/}
 EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		glib-2.0.0.0,gobject-2.0.0.0,gthread-2.0.0.0::devel/glib2 \
-			xml2.7::textproc/libxml
+			xml2.>=7::textproc/libxml
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 
@@ -42,7 +42,7 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mssl}
 CONFIGURE_ARGS+=	--enable-ssl
-LIB_DEPENDS+=		gnutls.12::security/gnutls
+LIB_DEPENDS+=		gnutls.>=12::security/gnutls
 WANTLIB+=		gcrypt gpg-error
 .else
 CONFIGURE_ARGS+=	--disable-ssl

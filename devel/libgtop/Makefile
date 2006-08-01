@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2006/02/08 19:42:21 steven Exp $
+# $OpenBSD: Makefile,v 1.26 2006/08/01 22:55:53 espie Exp $
 
 COMMENT=		"portable library for obtaining system information"
 
@@ -35,7 +35,7 @@ CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 MODULES=		devel/gettext
-LIB_DEPENDS=		glib.1.2::devel/glib
+LIB_DEPENDS=		glib.>=1.2::devel/glib
 USE_LIBTOOL=		Yes
 
 .if ${FLAVOR:L:Mgnome}

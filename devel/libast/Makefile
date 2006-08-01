@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/02/10 16:36:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2006/08/01 22:55:52 espie Exp $
 
 COMMENT=		"library of assorted spiffy things"
 
@@ -18,7 +18,7 @@ WANTLIB=		ICE m SM freetype X11 Xext
 
 MASTER_SITES=		http://www.eterm.org/download/
 
-LIB_DEPENDS=		Imlib2.2::graphics/imlib2 \
+LIB_DEPENDS=		Imlib2.>=2::graphics/imlib2 \
 			ltdl::devel/libtool,-ltdl
 
 USE_X11=		Yes

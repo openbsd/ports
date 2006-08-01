@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2006/01/19 17:08:29 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2006/08/01 22:55:52 espie Exp $
 
 COMMENT=		"GNOME Structured File library"
 COMMENT-gnome=		"GNOME specific extensions to libgsf"
@@ -34,9 +34,9 @@ MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:pkgconfig->=0.14.0:devel/pkgconfig
 
-LIB_DEPENDS=		bz2.10.2::archivers/bzip2 \
-			xml2.8.4::textproc/libxml \
-			glib-2.0.0.11,gobject-2.0.0.11::devel/glib2
+LIB_DEPENDS=		bz2.>=10.2::archivers/bzip2 \
+			xml2.>=8.4::textproc/libxml \
+			glib-2.0.>=0.11,gobject-2.0.>=0.11::devel/glib2
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

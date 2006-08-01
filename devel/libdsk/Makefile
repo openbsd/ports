@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/06/19 09:46:43 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/08/01 22:55:52 espie Exp $
 
 COMMENT=		"library for accessing disks and disk image files"
 
@@ -20,7 +20,7 @@ WANTLIB=		c z
 
 MASTER_SITES=		http://www.seasip.demon.co.uk/Unix/LibDsk/
 
-LIB_DEPENDS=		bz2.10::archivers/bzip2
+LIB_DEPENDS=		bz2.>=10::archivers/bzip2
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

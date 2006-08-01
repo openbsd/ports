@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/01/13 23:40:23 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2006/08/01 22:55:53 espie Exp $
 
 COMMENT=	"graphical user interface library for C++"
 
@@ -23,11 +23,11 @@ WANTLIB=	SDL X11 Xext m mikmod ogg pthread stdc++ usbhid \
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libuta/}
 
-LIB_DEPENDS=	smpeg.1.3::devel/smpeg \
+LIB_DEPENDS=	smpeg.>=1.3::devel/smpeg \
 		SDL_mixer::devel/sdl-mixer \
-		png.2::graphics/png \
-		sigc.0.0:libsigc++-1.*:devel/libsigc++ \
-		ttf.1.3::print/freetype
+		png.>=2::graphics/png \
+		sigc:libsigc++-1.*:devel/libsigc++ \
+		ttf.>=1.3::print/freetype
 
 USE_LIBTOOL=	Yes
 USE_X11=	Yes

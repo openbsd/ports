@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2005/08/09 19:09:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2006/08/01 22:55:52 espie Exp $
 
 COMMENT=	"C reimplementation of the BitTorrent core protocols"
 DISTNAME=	libbt-1.03
@@ -20,7 +20,7 @@ WANTLIB=		c crypto m ssl z
 NO_REGRESS=	Yes
 USE_X11=	Yes	# for makedepend
 
-LIB_DEPENDS=	curl.2.2::net/curl
+LIB_DEPENDS=	curl.>=2.2::net/curl
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"

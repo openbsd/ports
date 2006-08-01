@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/02/12 22:29:58 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2006/08/01 22:55:53 espie Exp $
 
 COMMENT=		"ZX Spectrum emulator file format library"
 
@@ -23,9 +23,9 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fuse-emulator/}
 
 MODULES=		devel/gettext
 BUILD_DEPENDS=		::devel/pkgconfig
-LIB_DEPENDS=		glib-2.0.0.11::devel/glib2 \
-			gcrypt.12::security/libgcrypt \
-			bz2.10::archivers/bzip2
+LIB_DEPENDS=		glib-2.0.>=0.11::devel/glib2 \
+			gcrypt.>=12::security/libgcrypt \
+			bz2.>=10::archivers/bzip2
 
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu

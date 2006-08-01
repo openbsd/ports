@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/01/03 14:55:18 bernd Exp $
+# $OpenBSD: Makefile,v 1.20 2006/08/01 22:55:52 espie Exp $
 
 COMMENT=		"library for loading GLADE interface files at runtime"
 
@@ -28,8 +28,8 @@ FLAVORS=		gnome
 FLAVOR?=
 
 MODULES=		devel/gettext
-LIB_DEPENDS=		xml.9::textproc/libxml1 \
-			gtk.1.2,gdk.1.2::x11/gtk+
+LIB_DEPENDS=		xml.>=9::textproc/libxml1 \
+			gtk.>=1.2,gdk.>=1.2::x11/gtk+
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
@@ -41,7 +41,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 .if ${FLAVOR:L:Mgnome}
-LIB_DEPENDS+=		gnome.36,art_lgpl,gnomesupport,gnomeui::x11/gnome/libs
+LIB_DEPENDS+=		gnome.>=36,art_lgpl,gnomesupport,gnomeui::x11/gnome/libs
 WANTLIB+=		ICE SM audiofile esd gdk_imlib jpeg png tiff ungif
 CONFIGURE_ARGS+=	--with-gnome
 PKGNAME=		${DISTNAME}p1

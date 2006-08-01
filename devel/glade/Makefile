@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2005/01/11 07:16:01 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2006/08/01 22:55:52 espie Exp $
 
 COMMENT=		"free user interface builder for GTK+ and GNOME"
 
@@ -12,7 +12,7 @@ MAINTAINER=		Jim Geovedi <jim@corebsd.or.id>
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/glade/0.6/}
 EXTRACT_SUFX=		.tar.bz2
 
-LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+
+LIB_DEPENDS=		gtk.>=1.2,gdk.>=1.2::x11/gtk+
 BUILD_DEPENDS=		:scrollkeeper->=0.3.12:textproc/scrollkeeper
 RUN_DEPENDS=		:automake->=1.4:devel/automake/1.4 \
 			:autoconf->=2.13:devel/autoconf/2.13 \
@@ -36,7 +36,7 @@ CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 
 WANTLIB=		X11 Xext Xi c glib gmodule iconv intl m
 .if ${FLAVOR:L:Mgnome}
-LIB_DEPENDS+=		gnome.36,art_lgpl.4,gnomesupport.0,gnomeui.46::x11/gnome/libs
+LIB_DEPENDS+=		gnome.>=36,art_lgpl.>=4,gnomesupport,gnomeui.>=46::x11/gnome/libs
 WANTLIB+=		ICE SM audiofile esd gdk_imlib jpeg png tiff ungif z
 WANTLIB+=		
 .else

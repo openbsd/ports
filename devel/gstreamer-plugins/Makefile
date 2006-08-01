@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/06/13 13:21:48 bernd Exp $
+# $OpenBSD: Makefile,v 1.15 2006/08/01 22:55:52 espie Exp $
 
 COMMENT=		"GStreamer Streaming-media framework plug-ins."
 
@@ -62,11 +62,11 @@ WANTLIB=		ICE SM X11 Xdamage Xext Xfixes Xrender Xv \
 			gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 gtk-x11-2.0.0.0 \
 			cairo glitz png
 LIB_DEPENDS=		gconf-2::devel/gconf2 \
-			gstcontrol-0.8.5.0::devel/gstreamer
+			gstcontrol-0.8.>=5.0::devel/gstreamer
 .endif
 WANTLIB+=		m z xml2 glib-2.0.0.0 \
 			gthread-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 popt
-LIB_DEPENDS+=		gstreamer-0.8.5.0::devel/gstreamer
+LIB_DEPENDS+=		gstreamer-0.8.>=5.0::devel/gstreamer
 
 PLUGINS=arts audiofile cdda dvdnav dvdread esd faad flac gnome gsm \
 jpeg lame mad mikmod mpeg2 musepack ogg sdl sidplay sndfile speex theora \
@@ -115,6 +115,7 @@ OPTIONS-cdda=		cdparanoia
 COMMENT-dvdnav=		"GStreamer plugin for DVD playback with menus"
 DEPENDS-dvdnav=		dvdnav::multimedia/libdvdnav \
 			dvdread::devel/libdvdread
+WANTLIB-dvdnav=		pthread
 
 # dvdreadsrc
 COMMENT-dvdread=	"GStreamer plugin for DVD playback"
@@ -123,7 +124,7 @@ DEPENDS-dvdread=	dvdread::devel/libdvdread
 # esd
 COMMENT-esd=		"GStreamer plugin for outputting to esd"
 WANTLIB-esd=		audiofile
-DEPENDS-esd=		esd.2::audio/esound
+DEPENDS-esd=		esd.>=2::audio/esound
 
 # faad
 COMMENT-faad=		"GStreamer plugin for decoding AAC files"
@@ -184,7 +185,7 @@ COMMENT-sdl=		"GStreamer plugin for using SDL to diplay video"
 WANTLIB-sdl=		Xext usbhid X11
 DEPENDS-sdl=		SDL::devel/sdl
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-sdl"
-LIB_DEPENDS+= 		gstinterfaces-0.8.1.0::devel/gstreamer-plugins
+LIB_DEPENDS+= 		gstinterfaces-0.8.>=1.0::devel/gstreamer-plugins
 .endif
 
 # sidplay
@@ -197,7 +198,7 @@ DEPENDS-sndfile=	sndfile::audio/libsndfile
 
 # speex
 COMMENT-speex=		"GStreamer plugin for speex"
-DEPENDS-speex=		speex.4:speex->=1.0.5:audio/speex
+DEPENDS-speex=		speex.>=4:speex->=1.0.5:audio/speex
 
 # theora
 COMMENT-theora=		"GStreamer plugin for theora"

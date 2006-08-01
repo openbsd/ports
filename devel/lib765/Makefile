@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/01/02 18:15:52 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2006/08/01 22:55:52 espie Exp $
 
 COMMENT=		"library for the floppy controller emulation"
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.seasip.demon.co.uk/Unix/LibDsk/
 
-LIB_DEPENDS=		dsk.2::devel/libdsk
+LIB_DEPENDS=		dsk.>=2::devel/libdsk
 USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu

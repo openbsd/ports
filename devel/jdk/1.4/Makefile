@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/03/16 16:09:01 kurt Exp $
+# $OpenBSD: Makefile,v 1.15 2006/08/01 22:55:53 espie Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/java/jdk14/Makefile,v 1.79 2004/08/18 07:06:03 glewis Exp $
 
 ONLY_FOR_ARCHS= 	i386
@@ -38,7 +38,7 @@ BUILD_DEPENDS=		:gtar-*:archivers/gtar \
 			:zip-*:archivers/zip
 RUN_DEPENDS=		:zip-*:archivers/zip \
 			:ghostscript-fonts-*:print/ghostscript/gnu-fonts
-LIB_DEPENDS=		iodbc.2::databases/iodbc
+LIB_DEPENDS=		iodbc.>=2::databases/iodbc
 USE_MOTIF=		openmotif
 WANTLIB=		X11 Xext Xi Xm Xmu Xp Xt Xtst c m ossaudio pthread
 

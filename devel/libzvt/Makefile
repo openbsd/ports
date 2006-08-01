@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/06/13 13:21:48 bernd Exp $
+# $OpenBSD: Makefile,v 1.9 2006/08/01 22:55:53 espie Exp $
 
 COMMENT=		"library for handling pseudo terminals"
 
@@ -25,7 +25,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 BUILD_DEPENDS=		:pkgconfig->=0.12.0p1:devel/pkgconfig
 LIB_DEPENDS=		gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
-			art_lgpl_2.5::graphics/libart
+			art_lgpl_2.>=5::graphics/libart
 
 MODULES=		devel/gettext
 

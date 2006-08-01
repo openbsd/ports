@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2006/06/13 13:21:48 bernd Exp $
+# $OpenBSD: Makefile,v 1.18 2006/08/01 22:55:53 espie Exp $
 
 COMMENT=		"window navigator construction kit"
 
@@ -26,7 +26,7 @@ WANTLIB=		ICE SM X11 XRes Xext Xrender m fontconfig \
 MODULES=		devel/gettext
 
 BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=		gdk-x11-2.0.0.10,gdk_pixbuf-2.0.0.10,gtk-x11-2.0.0.10::x11/gtk+2 \
+LIB_DEPENDS=		gdk-x11-2.0.>=0.10,gdk_pixbuf-2.0.>=0.10,gtk-x11-2.0.>=0.10::x11/gtk+2 \
 			startup-notification-1::devel/startup-notification
 
 USE_X11=		Yes
