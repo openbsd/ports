@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2006/07/03 15:55:24 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.27 2006/08/01 11:17:56 espie Exp $
 
 COMMENT=	"MPEG2 and MPEG-4 AAC decoder"
 COMMENT-xmms=	"XMMS input plugin for AAC files"
@@ -44,8 +44,8 @@ SUBPACKAGE?=
 
 .if defined(PACKAGING)
 . if ${SUBPACKAGE} == "-xmms"
-LIB_DEPENDS=	xmms.3::audio/xmms \
-		faad.0,mp4v2.0::audio/faad
+LIB_DEPENDS=	xmms.>=3::audio/xmms \
+		faad,mp4v2::audio/faad
 RUN_DEPENDS=	::audio/xmms
 WANTLIB+=	X11 Xext Xi pthread iconv intl glib gmodule gtk gdk
 . else

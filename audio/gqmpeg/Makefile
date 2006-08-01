@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2005/02/07 19:01:47 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.38 2006/08/01 11:17:56 espie Exp $
 
 COMMENT=		"front-end to various audio players"
 
@@ -20,7 +20,7 @@ MODULES=		devel/gettext
 
 RUN_DEPENDS+=		:mpg321-*:audio/mpg321
 
-LIB_DEPENDS=		gdk_pixbuf.2::graphics/gdk-pixbuf
+LIB_DEPENDS=		gdk_pixbuf.>=2::graphics/gdk-pixbuf
 
 CONFIGURE_STYLE=	gnu
 AUTOCONF_VERSION=	2.52

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2005/09/16 09:51:25 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/08/01 11:17:55 espie Exp $
 
 COMMENT=		"display the phase of the Sun on a map of the Earth"
 COMMENT-maps=		"additional maps of the Earth for sunclock"
@@ -51,7 +51,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xpm c m z
 
 
-LIB_DEPENDS=	jpeg.62::graphics/jpeg
+LIB_DEPENDS=	jpeg.>=62::graphics/jpeg
 .endif
 
 .if ${MULTI_PACKAGES:M-maps} # with maps

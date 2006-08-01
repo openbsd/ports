@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2006/06/13 13:17:56 bernd Exp $
+# $OpenBSD: Makefile,v 1.18 2006/08/01 11:17:56 espie Exp $
 
 COMMENT=	"front-end to external cd audio rippers and mp3 encoders"
 
@@ -32,9 +32,9 @@ MODULES=	devel/gettext
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gnomeui-2::x11/gnome/libgnomeui \
-		id3.3.8::audio/id3lib \
-		curl.3::net/curl \
-		vte.8::devel/vte \
+		id3.>=3.8::audio/id3lib \
+		curl.>=3::net/curl \
+		vte.>=8::devel/vte \
 		cdda_interface,cdda_paranoia::audio/cdparanoia
 RUN_DEPENDS=	::x11/gnome/yelp \
 		::audio/vorbis-tools

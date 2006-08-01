@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/07/19 13:41:02 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2006/08/01 11:17:56 espie Exp $
 
 COMMENT=	"GTK+2 program to synchronize an Apple iPod"
 DISTNAME=	gtkpod-0.99.4
@@ -19,14 +19,14 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_X11=	Yes
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=	atk-1.0.800.0::devel/atk \
-		id3tag.2::audio/libid3tag \
-		gpod.302.0::audio/libgpod \
+LIB_DEPENDS=	atk-1.0.>=800.0::devel/atk \
+		id3tag.>=2::audio/libid3tag \
+		gpod.>=302.0::audio/libgpod \
 		gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
-		glade-2.0.0.4::devel/libglade2 \
+		glade-2.0.>=0.4::devel/libglade2 \
 		glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0,gthread-2.0.0.0::devel/glib2 \
 		pango-1.0.0.0,pangoft2-1.0.0.0,pangocairo-1.0.0.0::devel/pango \
-		mp4v2.0::audio/faad
+		mp4v2::audio/faad
 
 WANTLIB=	X11 c cairo fontconfig freetype m pthread z xml2
 

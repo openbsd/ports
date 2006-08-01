@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2005/07/16 16:27:25 alek Exp $
+# $OpenBSD: Makefile,v 1.20 2006/08/01 11:17:55 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/
 
 HOMEPAGE=	http://www.oberhumer.com/opensource/lzo/
 
-LIB_DEPENDS=	lzo.1::archivers/lzo
+LIB_DEPENDS=	lzo.>=1::archivers/lzo
 
 MAINTAINER=	Dan Harnett <danh@openbsd.org>
 

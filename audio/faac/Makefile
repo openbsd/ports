@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/07/13 16:18:40 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.2 2006/08/01 11:17:56 espie Exp $
 
 COMMENT=	"MPEG-2 and MPEG-4 AAC encoder"
 DISTNAME=	faac-1.24
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m stdc++
 
 BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS}
-LIB_DEPENDS=	mp4v2.1::audio/faad
+LIB_DEPENDS=	mp4v2.>=1::audio/faad
 USE_LIBTOOL=	Yes
 
 WRKDIST=	${WRKDIR}/faac

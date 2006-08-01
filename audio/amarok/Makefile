@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/06/11 11:33:52 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/08/01 11:17:55 espie Exp $
 
 CATEGORIES=	audio x11 x11/kde
 COMMENT=	'music player for kde'
@@ -12,9 +12,9 @@ EXTRACT_SUFX=	.tar.bz2
 
 FLAVORS=	debug
 
-LIB_DEPENDS+=	lib/qt3/qt-mt.3.33::x11/qt3,mt \
-		kdecore.6,DCOP,khtml,kwalletclient,kdefx,kdeprint,kutils,kdeui,kparts,kio,kdesu,kjs,knewstuff::x11/kde/libs3 \
-		tag.5.0:taglib->=1.4:audio/taglib \
+LIB_DEPENDS+=	lib/qt3/qt-mt.>=3.33::x11/qt3,mt \
+		kdecore.>=6,DCOP,khtml,kwalletclient,kdefx,kdeprint,kutils,kdeui,kparts,kio,kdesu,kjs,knewstuff::x11/kde/libs3 \
+		tag.>=5.0:taglib->=1.4:audio/taglib \
 		xine::multimedia/xine-lib \
 		sqlite3::databases/sqlite3
 

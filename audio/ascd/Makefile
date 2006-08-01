@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/02/08 04:54:48 david Exp $
+# $OpenBSD: Makefile,v 1.14 2006/08/01 11:17:55 espie Exp $
 # $FreeBSD: ports/audio/ascd/Makefile,v 1.17 2000/09/25 12:21:17 asami Exp $
 
 COMMENT= 		"cd player for Afterstep or Window Maker"
@@ -21,7 +21,7 @@ MASTER_SITES=		http://worldserver.oleane.com/rsn/Archives/
 DISTFILES=		${DISTNAME}-src.tgz ${DATAFILES}
 DATAFILES=		ascd-0.13pr6-themes.tgz
 
-LIB_DEPENDS=		workman.1::audio/libworkman
+LIB_DEPENDS=		workman.>=1::audio/libworkman
 
 USE_X11=		Yes
 NO_REGRESS=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/07/19 13:41:02 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2006/08/01 11:17:56 espie Exp $
 
 COMMENT=	"gtk+2 media player based on XMMS"
 COMMENT-mp3=	"MP3 input plugin for bmp"
@@ -34,8 +34,8 @@ WANTLIB=	X11 Xext Xrender fontconfig freetype m z \
 		pango-1.0.0.0 pangocairo-1.0.0.0 pangoft2-1.0.0.0 cairo
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=	gdk_pixbuf-2.0.400.3,gdk-x11-2.0.400.3,gtk-x11-2.0.0.5::x11/gtk+2 \
-		glib-2.0.400.2,gthread-2.0.400.2::devel/glib2
+LIB_DEPENDS=	gdk_pixbuf-2.0.>=400.3,gdk-x11-2.0.>=400.3,gtk-x11-2.0.>=0.5::x11/gtk+2 \
+		glib-2.0.>=400.2,gthread-2.0.>=400.2::devel/glib2
 
 MULTI_PACKAGES=
 PSEUDO_FLAVORS=	no_mp3 no_vorbis
