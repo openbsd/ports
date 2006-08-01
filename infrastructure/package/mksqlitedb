@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.11 2006/07/10 15:19:52 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.12 2006/08/01 11:01:15 espie Exp $
 #
 # Copyright (c) 2006 Marc Espie <espie@openbsd.org>
 #
@@ -189,9 +189,9 @@ sub addvalue
 {
 	my ($class, $pkgpath, $db, $value) = @_;
 	$class->SUPER::addvalue($pkgpath, $db, $value);
-	if ($value =~ m/\.\d+\.\d+$/) {
+	if ($value =~ m/\(\>?\=\)?\.\d+\.\d+$/) {
 		$class->SUPER::addvalue($pkgpath, $db, $`);
-	} elsif ($value =~ m/\.\d+$/) {
+	} elsif ($value =~ m/\(\>?\=\)?\.\d+$/) {
 		$class->SUPER::addvalue($pkgpath, $db, $`);
 	}
 }
