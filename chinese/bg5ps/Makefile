@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2006/06/05 16:14:24 alek Exp $
+# $OpenBSD: Makefile,v 1.17 2006/08/01 16:20:46 espie Exp $
 
 COMMENT=	"convert Big5/GB encoded files to postscript"
 
@@ -20,7 +20,7 @@ MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/
 PYTHON_VER=	2.4
 RUN_DEPENDS=	::chinese/arphicttf \
 		:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
-LIB_DEPENDS=	ttf.1::print/freetype
+LIB_DEPENDS=	ttf.>=1::print/freetype
 
 NO_REGRESS=	Yes
 

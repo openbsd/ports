@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/07/19 13:41:02 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2006/08/01 16:20:46 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,7 +20,7 @@ WANTLIB=		z
 BUILD_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 RUN_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
 		::chinese/taipeifonts
-LIB_DEPENDS=	pdf.2::print/pdflib
+LIB_DEPENDS=	pdf.>=2::print/pdflib
 
 WRKDIST=	${WRKDIR}/bg5pdf
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/08/01 12:13:28 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/08/01 16:20:46 espie Exp $
 
 COMMENT=		"Music Management Application"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xrender \
 			c crypto fontconfig freetype pthread m ssl z \
-			ORBit-2 ORBitCosNaming-2 art_lgpl_2.5 atk-1.0.0.0 \
+			ORBit-2 ORBitCosNaming-2 art_lgpl_2.>=5 atk-1.0.0.0 \
 			audiofile bonobo-2 bonobo-activation.>=4.0 bonoboui-2 \
 			esd.>=2 gconf-2 glade-2.0.0.0 jpeg popt xml2 \
 			glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 gthread-2.0.0.0 \
