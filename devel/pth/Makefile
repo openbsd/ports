@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2006/01/06 18:52:12 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2006/08/01 05:09:25 aanriot Exp $
 
 COMMENT=	"GNU portable threads"
 
-DISTNAME=	pth-2.0.4
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=	pth 20.24
+DISTNAME=	pth-2.0.7
+SHARED_LIBS=	pth 20.25
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=pth/}
 
