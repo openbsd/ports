@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.12 2006/08/01 11:01:15 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.13 2006/08/01 16:22:22 espie Exp $
 #
 # Copyright (c) 2006 Marc Espie <espie@openbsd.org>
 #
@@ -69,7 +69,7 @@ sub add
 	AnyVar->add($pkgpath, $db, $var, $value, $rowid);
 	for my $depends (split /\s+/, $value) {
 		my ($libs, $pkgspec, $pkgpath2, $rest) = split(/\:/, $depends);
-		my $stmt = $db->prepare("INSERT INTO Depends (PKGPATH, FULLDEPENDS, DEPENDSPATH, TYPE) VALUES (?, ?, ?, ?)");
+		my $stmt = $db->prepare("INSERT INTO Depends (FULLPKGPATH, FULLDEPENDS, DEPENDSPATH, TYPE) VALUES (?, ?, ?, ?)");
 		$stmt->execute($pkgpath, $depends, $pkgpath2, $class->type());
 		if ($libs ne '') {
 			for my $lib (split(/\,/, $libs)) {
@@ -110,7 +110,7 @@ package SecondaryVar;
 sub addvalue
 {
 	my ($class, $pkgpath, $db, $value) = @_;
-	my $stmt = $db->prepare("INSERT OR REPLACE INTO ".$class->table." (PKGPATH, VALUE) VALUES (?, ?)");
+	my $stmt = $db->prepare("INSERT OR REPLACE INTO ".$class->table." (FULLPKGPATH, VALUE) VALUES (?, ?)");
 	$stmt->execute($pkgpath, $value);
 }
 
@@ -217,7 +217,7 @@ sub add
 {
 	my ($class, $pkgpath, $db, $var, $value, $rowid) = @_;
 	$class->SUPER::add($pkgpath, $db, $var, $value, $rowid);
-	my $stmt = $db->prepare("INSERT INTO Shared_Libs (PKGPATH, LIBNAME, VERSION) VALUES (?, ?, ?)");
+	my $stmt = $db->prepare("INSERT INTO Shared_Libs (FULLPKGPATH, LIBNAME, VERSION) VALUES (?, ?, ?)");
 	my %t = split(/\s+/, $value);
 	while (my ($k, $v) = each %t) {
 		$stmt->execute($pkgpath, $k, $v);
@@ -298,19 +298,22 @@ my $vars = {
 
 for my $t (qw(Categories Flavors Multi Modules Configure ConfigureArgs Wantlib Descr)) {
     $db->do("DROP TABLE $t");
-    $db->do("CREATE TABLE $t (PKGPATH TEXT NOT NULL, VALUE TEXT NOT NULL, UNIQUE(PKGPATH, VALUE))");
+    $db->do("CREATE TABLE $t (FULLPKGPATH TEXT NOT NULL, VALUE TEXT NOT NULL, UNIQUE(FULLPKGPATH, VALUE))");
 }
 $db->do("DROP TABLE Depends");
-$db->do("CREATE TABLE Depends (PKGPATH TEXT NOT NULL, FULLDEPENDS TEXT NOT NULL, DEPENDSPATH TEXT NOT NULL, TYPE TEXT NOT NULL)");
+$db->do("CREATE TABLE Depends (FULLPKGPATH TEXT NOT NULL, FULLDEPENDS TEXT NOT NULL, DEPENDSPATH TEXT NOT NULL, TYPE TEXT NOT NULL)");
 $db->do("DROP TABLE Shared_Libs");
-$db->do("CREATE TABLE Shared_Libs (PKGPATH TEXT NOT NULL, LIBNAME TEXT NOT NULL, VERSION TEXT NOT NULL, UNIQUE (PKGPATH, LIBNAME))");
+$db->do("CREATE TABLE Shared_Libs (FULLPKGPATH TEXT NOT NULL, LIBNAME TEXT NOT NULL, VERSION TEXT NOT NULL, UNIQUE (FULLPKGPATH, LIBNAME))");
 $db->do("DROP TABLE Ports");
-$db->do("CREATE TABLE Ports (PKGPATH TEXT PRIMARY KEY, ".
-join(',', (map {$_." TEXT"} (keys %$vars))).")");
+$db->do("CREATE TABLE Ports (FULLPKGPATH TEXT PRIMARY KEY, ".
+	join(',', (map {$_." TEXT"} (keys %$vars))).")");
+$db->do("DROP TABLE Paths");
+$db->do("CREATE TABLE Paths (FULLPKGPATH TEXT PRIMARY KEY, PKGPATH TEXT NOT NULL)");
 $db->commit();
 
-my $stmt = $db->prepare("SELECT RowID FROM Ports WHERE PKGPATH=(?)");
-my $stmt2= $db->prepare("INSERT INTO Ports (PKGPATH) VALUES (?)");
+my $stmt = $db->prepare("SELECT RowID FROM Ports WHERE FULLPKGPATH=(?)");
+my $stmt2= $db->prepare("INSERT INTO Ports (FULLPKGPATH) VALUES (?)");
+my $stmt3= $db->prepare("INSERT INTO Paths (FULLPKGPATH, PKGPATH) VALUES (?, ?)");
 
 my $i = 0;
 my $rowid;
@@ -337,6 +340,9 @@ while (<STDIN>) {
 		if (@$z == 0) {
 			# if none, we create one
 			$stmt2->execute($key);
+			my $path = $key;
+			$path =~ s/\,.*//;
+			$stmt3->execute($key, $path);
 			$stmt->execute($key);
 			$z = $stmt->fetchall_arrayref;
 		}

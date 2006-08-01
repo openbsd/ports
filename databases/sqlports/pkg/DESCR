@@ -2,7 +2,7 @@ SQLite database of every port in the system. This can be queried through
 e.g., sqlitebrowser, or any kind of programming interface.
 
 Database Schema:
-- Ports(PKGPATH, ...)
+- Ports(FULLPKGPATH, ...)
 holds all the information retrieved through various variables, e.g.,:
     AUTOCONF_VERSION 
     AUTOMAKE_VERSION 
@@ -42,20 +42,24 @@ holds all the information retrieved through various variables, e.g.,:
 This information is mostly unchanged, except for replacing Yes/No variables
 with 1/0. Variables not present in a given port are left undefined.
 
-The PKGPATH is complete, including flavors markers. For each port with
+The FULLPKGPATH is complete, including flavors markers. For each port with
 MULTI_PACKAGES setting, another entry is written with PACKAGING set, and
-the correct SUBPACKAGE.
+the correct SUBPACKAGE.  
 
-- Flavors(PKGPATH, VALUE)
-- Categories(PKGPATH, VALUE)
-- Multi(PKGPATH, VALUE)
-- Modules(PKGPATH, VALUE)
-- Configure(PKGPATH, VALUE)
-- ConfigureArgs(PKGPATH, VALUE)
+- Paths (FULLPKGPATH, PKGPATH)
+PKGPATH is the stripped down version or FULLPKGPATH, without flavors 
+or subpackage markers.
+
+- Flavors(FULLPKGPATH, VALUE)
+- Categories(FULLPKGPATH, VALUE)
+- Multi(FULLPKGPATH, VALUE)
+- Modules(FULLPKGPATH, VALUE)
+- Configure(FULLPKGPATH, VALUE)
+- ConfigureArgs(FULLPKGPATH, VALUE)
 All of these values are actually lists. After disassembling the list,
 one can find many entries in these secondary tables.
 
-- Depends(PKGPATH, FULLDEPENDS, DEPENDSPATH, TYPE)
+- Depends(FULLPKGPATH, FULLDEPENDS, DEPENDSPATH, TYPE)
 All depends are stored in a single table, including the type:
 R -> run
 L -> lib
@@ -63,8 +67,8 @@ B -> build
 Regress -> regress
 with FULLDEPENDS the full text of the dependency, and DEPENDSPATH the PKGPATH
 we depend upon.
-- Wantlib(PKGPATH, VALUE)
-All the libraries the PKGPATH depends upon, with and without version number,
+- Wantlib(FULLPKGPATH, VALUE)
+All the libraries the FULLPKGPATH depends upon, with and without version number,
 coming from either the WANTLIB variable or various LIB_DEPENDS.
 
-- Shared_Libs(PKGPATH, LIBNAME, VERSION)
+- Shared_Libs(FULLPKGPATH, LIBNAME, VERSION)
