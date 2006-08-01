@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2005/10/24 05:04:16 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2006/08/01 22:46:16 espie Exp $
 
 COMMENT=		"graphical representation of CVS repository"
 
@@ -20,7 +20,7 @@ MODULES=		converters/libiconv
 
 MASTER_SITES=		${HOMEPAGE}/release/
 
-LIB_DEPENDS=		gd.18::graphics/gd
+LIB_DEPENDS=		gd.>=18::graphics/gd
 
 ALL_TARGET=		
 

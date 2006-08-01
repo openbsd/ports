@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/01/06 17:23:25 bernd Exp $
+# $OpenBSD: Makefile,v 1.13 2006/08/01 22:46:16 espie Exp $
 
 COMMENT=		"GNOME Application Libs"
 
@@ -29,8 +29,8 @@ BUILD_DEPENDS=		:gnome-libs->1.4:x11/gnome/libs \
 			:libxml1->=1.8.8:textproc/libxml1 \
 			::graphics/gdk-pixbuf,-gnome
 
-LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+ \
-			glib.1.2,gmodule.1.2::devel/glib
+LIB_DEPENDS=		gtk.>=1.2,gdk.>=1.2::x11/gtk+ \
+			glib.>=1.2,gmodule.>=1.2::devel/glib
 
 SEPARATE_BUILD= 	concurrent
 USE_X11=		Yes

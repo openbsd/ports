@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/11/23 11:22:01 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/08/01 22:46:16 espie Exp $
 
 COMMENT=	"XML internationalization tool"
 
@@ -17,8 +17,8 @@ WANTLIB=		c z
 
 MASTER_SITES=	${MASTER_SITE_GNU:=toutdoux/}
 
-LIB_DEPENDS=	xml.9::textproc/libxml1 \
-		glib.1::devel/glib
+LIB_DEPENDS=	xml.>=9::textproc/libxml1 \
+		glib.>=1::devel/glib
 
 CONFIGURE_STYLE=	gnu
 

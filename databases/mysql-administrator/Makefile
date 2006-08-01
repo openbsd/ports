@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/08/01 22:19:46 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/08/01 22:46:16 espie Exp $
 
 COMMENT=	"visual administration console for MySQL"
 
@@ -24,7 +24,7 @@ MASTER_SITES=	ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/M
 WANTLIB=	X11 c crypto fontconfig freetype m pthread \
 		ssl stdc++ z atk-1.0.0.0 atkmm-1.6.0.0 gdk-x11-2.0.0.0 \
 		gdk_pixbuf-2.0.0.0 gdkmm-2.4.0.0 glibmm-2.4.0.0 \
-		gtk-x11-2.0.0.0 pango-1.0.0.0 pangomm-1.4.1.0 \
+		gtk-x11-2.0.0.0 pango-1.0.0.0 pangomm-1.4.>=1.0 \
 		pangoft2-1.0.0.0 pangocairo-1.0.0.0 sigc-2.0.0.0 cairo
 
 MODULES=	devel/gettext

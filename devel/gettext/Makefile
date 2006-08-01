@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2006/01/13 23:40:22 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2006/08/01 22:46:16 espie Exp $
 
 COMMENT=	"GNU gettext"
 
@@ -24,7 +24,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	converters/libiconv
-LIB_DEPENDS=	expat.4::textproc/expat
+LIB_DEPENDS=	expat.>=4::textproc/expat
 WANTLIB=	c
 
 USE_LIBTOOL=	Yes

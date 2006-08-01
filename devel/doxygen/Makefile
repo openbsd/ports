@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2006/02/07 10:20:36 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/08/01 22:46:16 espie Exp $
 
 COMMENT=	"documentation system for C++/C/Java/Objective-C/IDL and others"
 COMMENT-gui=	"GUI front-end for doxygen"
 
-VERSION=	1.4.5
+VERSION=	1.4.7
 DISTNAME=	doxygen-${VERSION}.src
-PKGNAME=	doxygen-${VERSION}p0
+PKGNAME=	doxygen-${VERSION}
 FULLPKGNAME-gui=doxygen-gui-${VERSION}
 CATEGORIES=	devel textproc 
 
@@ -22,7 +22,7 @@ MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/
 PSEUDO_FLAVORS=	gui
 FLAVOR?=
 
-LIB_DEPENDS=	png.4::graphics/png
+LIB_DEPENDS=	png.>=4::graphics/png
 
 WANTLIB=	m c stdc++
 

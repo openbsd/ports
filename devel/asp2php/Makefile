@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/02/03 22:33:00 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2006/08/01 22:46:16 espie Exp $
 
 COMMENT=	"convert ASP code to PHP code"
 
@@ -19,7 +19,7 @@ FLAVOR?=
 
 .if ${FLAVOR} != "no_x11"
 USE_X11=	Yes
-LIB_DEPENDS+=	gtk.1.2,gdk.1.2::x11/gtk+
+LIB_DEPENDS+=	gtk.>=1.2,gdk.>=1.2::x11/gtk+
 ALL_TARGET=	all gui
 WANTLIB+=	X11 Xext Xi glib gmodule iconv intl m
 .endif

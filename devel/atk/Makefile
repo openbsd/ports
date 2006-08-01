@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/01/11 12:26:35 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2006/08/01 22:46:16 espie Exp $
 
 COMMENT=		"accessibility toolkit used by gtk+"
 
@@ -21,7 +21,7 @@ MASTER_SITES=		${MASTER_SITE_GNOME:=sources/atk/1.10/}
 EXTRACT_SUFX=           .tar.bz2
 
 MODULES=		devel/gettext
-LIB_DEPENDS=		glib-2.0.600.0,gmodule-2.0.600.0,gobject-2.0.600.0::devel/glib2
+LIB_DEPENDS=		glib-2.0.>=600.0,gmodule-2.0.>=600.0,gobject-2.0.>=600.0::devel/glib2
 BUILD_DEPENDS=          :pkgconfig-*:devel/pkgconfig
 
 USE_GMAKE=		Yes

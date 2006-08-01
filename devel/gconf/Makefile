@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2006/01/06 17:51:01 bernd Exp $
+# $OpenBSD: Makefile,v 1.23 2006/08/01 22:46:16 espie Exp $
 
 COMMENT=		"configuration database system written for GNOME"
 
@@ -16,8 +16,8 @@ EXTRACT_SUFX=           .tar.bz2
 
 MODULES=		devel/gettext
 LIB_DEPENDS=		oaf.::x11/gnome/oaf \
-			xml.9::textproc/libxml1 \
-			gtk.1,gdk.1::x11/gtk+
+			xml.>=9::textproc/libxml1 \
+			gtk.>=1,gdk.>=1::x11/gtk+
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

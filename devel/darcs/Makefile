@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/07/30 21:02:32 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2006/08/01 22:46:16 espie Exp $
 
 COMMENT=	"advanced revision control system written in Haskell"
 
@@ -10,7 +10,7 @@ MAINTAINER=	Jon Olsson <jon@vexed.se>
 
 MODULES=	lang/ghc
 MODGHC_RUNTIME=	No
-LIB_DEPENDS=	curl.2::net/curl \
+LIB_DEPENDS=	curl.>=2::net/curl \
 		gmp::devel/gmp
 
 CONFIGURE_STYLE=simple

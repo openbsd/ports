@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/02/05 17:46:18 bernd Exp $
+# $OpenBSD: Makefile,v 1.7 2006/08/01 22:46:16 espie Exp $
 
 COMMENT=		"utility library including a imlib2 wrapper"
 
@@ -21,7 +21,7 @@ WANTLIB=		X11 Xext freetype m ltdl
 
 MASTER_SITES=		http://www.linuxbrit.co.uk/downloads/
 
-LIB_DEPENDS=		Imlib2.1::graphics/imlib2
+LIB_DEPENDS=		Imlib2.>=1::graphics/imlib2
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
