@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/04/11 13:00:08 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2006/08/01 12:32:36 alek Exp $
 
 COMMENT=		"remote filesystem snapshot utility"
 
-DISTNAME=		rsnapshot-1.2.1
+DISTNAME=		rsnapshot-1.2.9
 CATEGORIES=		net
 HOMEPAGE=		http://www.rsnapshot.org/
 
@@ -46,10 +46,15 @@ post-build:
 do-install:
 	${INSTALL_DATA_DIR} ${SAMPLES_DIR}
 	${INSTALL_DATA_DIR} ${SAMPLES_DIR}/utils
-	${INSTALL_PROGRAM} ${WRKBUILD}/rsnapshot ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${SAMPLES_DIR}/utils/rsnapshotdb
+	${INSTALL_SCRIPT} ${WRKBUILD}/rsnapshot ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKBUILD}/rsnapshot.1 ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKBUILD}/rsnapshot.conf.default ${SAMPLES_DIR}
 	${INSTALL_DATA} ${WRKBUILD}/README ${SAMPLES_DIR}
-	${INSTALL_DATA} ${WRKSRC}/utils/* ${SAMPLES_DIR}/utils
+	${INSTALL_DATA} ${WRKSRC}/utils/README ${SAMPLES_DIR}/utils
+	${INSTALL_DATA} ${WRKSRC}/utils/rsnaptar ${SAMPLES_DIR}/utils
+	${INSTALL_DATA} ${WRKSRC}/utils/*.pl ${SAMPLES_DIR}/utils
+	${INSTALL_DATA} ${WRKSRC}/utils/*.sh ${SAMPLES_DIR}/utils
+	${INSTALL_DATA} ${WRKSRC}/utils/rsnapshotdb/* ${SAMPLES_DIR}/utils/rsnapshotdb
 
 .include <bsd.port.mk>

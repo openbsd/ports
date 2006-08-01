@@ -1,7 +1,7 @@
-$OpenBSD: patch-README,v 1.1.1.1 2005/02/21 16:08:06 alek Exp $
---- README.orig	Wed Feb  2 05:17:47 2005
-+++ README	Tue Feb 15 19:36:50 2005
-@@ -72,13 +72,13 @@ COMPATIBILITY NOTICE (Please read)
+$OpenBSD: patch-README,v 1.2 2006/08/01 12:32:36 alek Exp $
+--- README.orig	Fri Jul 14 18:26:30 2006
++++ README	Fri Jul 14 18:29:17 2006
+@@ -75,13 +75,13 @@ COMPATIBILITY NOTICES (Please read)
  ------------------------------------------------------------------------------
  
  Once you have installed rsnapshot, you will need to configure it.
@@ -19,3 +19,12 @@ $OpenBSD: patch-README,v 1.1.1.1 2005/02/21 16:08:06 alek Exp $
  check to make sure everything is ready to go:
  
      rsnapshot configtest
+@@ -102,7 +102,7 @@ In the previous example, there will be s
+ taken each day (at 0,4,8,12,16, and 20 hours). There will also
+ be daily snapshots taken every night at 11:50PM. The number of
+ snapshots that are saved depends on the "interval" settings in
+-/etc/rsnapshot.conf.
++!!SYSCONFDIR!!/rsnapshot.conf.
+ 
+ For example:
+     

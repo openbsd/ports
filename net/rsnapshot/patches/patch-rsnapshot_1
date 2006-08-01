@@ -1,6 +1,6 @@
-$OpenBSD: patch-rsnapshot_1,v 1.1.1.1 2005/02/21 16:08:06 alek Exp $
---- rsnapshot.1.orig	Wed Feb  2 05:17:47 2005
-+++ rsnapshot.1	Tue Feb 15 19:41:13 2005
+$OpenBSD: patch-rsnapshot_1,v 1.2 2006/08/01 12:32:36 alek Exp $
+--- rsnapshot.1.orig	Fri Jul 14 18:48:09 2006
++++ rsnapshot.1	Fri Jul 14 18:50:30 2006
 @@ -156,7 +156,7 @@ of cron jobs. It is possible, however, t
  with an alternate configuration file.
  .PP
@@ -10,7 +10,7 @@ $OpenBSD: patch-rsnapshot_1,v 1.1.1.1 2005/02/21 16:08:06 alek Exp $
  specified on the command line. There are also additional options which
  can be passed on the command line.
  .PP
-@@ -179,14 +179,10 @@ The command line options are as follows:
+@@ -179,12 +179,12 @@ The command line options are as follows:
  .RE
  .SH "CONFIGURATION"
  .IX Header "CONFIGURATION"
@@ -22,51 +22,31 @@ $OpenBSD: patch-rsnapshot_1,v 1.1.1.1 2005/02/21 16:08:06 alek Exp $
  .PP
 -It is recommended that you copy \fB/etc/rsnapshot.conf.default\fR to
 -\&\fB/etc/rsnapshot.conf\fR, and then modify \fB/etc/rsnapshot.conf\fR to suit
--your needs.
--.PP
- Here is a list of allowed parameters:
- .Sp
- .RS 4
-@@ -408,9 +404,6 @@ Arguments to be passed to ssh. If not sp
- .Sp
- .RS 4
- Arguments to be passed to du. If not specified, the default is \-csh.
--\&\s-1GNU\s0 du supports \-csh, \s-1BSD\s0 du supports \-csk, Solaris du doesn't support
--\&\-c at all. The \s-1GNU\s0 version is recommended, since it offers the most
--features.
- .RE
- .RE
- .RS 4
-@@ -614,7 +607,7 @@ also want to run it from the command lin
- a feel for what it's doing.
++It is recommended that you copy \fB!!SAMPLES_DIR!!/rsnapshot.conf.default\fR to
++\&\fB!!SYSCONFDIR!!/rsnapshot.conf\fR, and then modify \fB!!SYSCONFDIR!!/rsnapshot.conf\fR to suit
+ your needs.
  .PP
+ Here is a list of allowed parameters:
+@@ -682,7 +682,7 @@ also want to run it from the command lin
+ a feel for what it's doing.
+ .Sp
  Here is an example crontab entry, assuming that intervals \fBhourly\fR,
 -\&\fBdaily\fR, \fBweekly\fR and \fBmonthly\fR have been defined in \fB/etc/rsnapshot.conf\fR
 +\&\fBdaily\fR, \fBweekly\fR and \fBmonthly\fR have been defined in \fB!!SYSCONFDIR!!/rsnapshot.conf\fR
  .Sp
  .RS 4
  \&\fB0 */4 * * *         /usr/local/bin/rsnapshot hourly\fR
-@@ -646,7 +639,7 @@ really comes in handy.
- .PP
+@@ -718,7 +718,7 @@ really comes in handy.
+ .Sp
  Remember that these are just the times that the program runs.
  To set the number of backups stored, set the \fBinterval\fR numbers in
 -\&\fB/etc/rsnapshot.conf\fR
 +\&\fB!!SYSCONFDIR!!/rsnapshot.conf\fR
- .PP
+ .Sp
  To check the disk space used by rsnapshot, you can call it with the \*(L"du\*(R" argument.
- .PP
-@@ -669,9 +662,6 @@ on a particular file or subdirectory.
- \&\fBrsnapshot du localhost/home/\fR
- .RE
- .PP
--The \s-1GNU\s0 version of \*(L"du\*(R" is preferred. The \s-1BSD\s0 version works well also, but does
--not support the \-h flag (use \-k instead, to see the totals in kilobytes). Other
--versions of \*(L"du\*(R", such as Solaris, may not work at all.
- .SH "EXIT VALUES"
- .IX Header "EXIT VALUES"
+ .Sp
+@@ -829,7 +829,7 @@ run rsnapshot again, using example.com/e
  .RS 4
-@@ -683,7 +673,7 @@ versions of \*(L"du\*(R", such as Solari
- .RE
  .SH "FILES"
  .IX Header "FILES"
 -/etc/rsnapshot.conf
@@ -74,7 +54,7 @@ $OpenBSD: patch-rsnapshot_1,v 1.1.1.1 2005/02/21 16:08:06 alek Exp $
  .SH "SEE ALSO"
  .IX Header "SEE ALSO"
  \&\fIrsync\fR\|(1), \fIssh\fR\|(1), \fIlogger\fR\|(1), \fIsshd\fR\|(1), \fIssh\-keygen\fR\|(1), \fIperl\fR\|(1), \fIcp\fR\|(1), \fIdu\fR\|(1), \fIcrontab\fR\|(1)
-@@ -708,8 +698,8 @@ Please report bugs (and other comments) 
+@@ -854,8 +854,8 @@ Please report bugs (and other comments) 
  \&\fBhttp://lists.sourceforge.net/lists/listinfo/rsnapshot\-discuss\fR
  .SH "NOTES"
  .IX Header "NOTES"
@@ -82,15 +62,15 @@ $OpenBSD: patch-rsnapshot_1,v 1.1.1.1 2005/02/21 16:08:06 alek Exp $
 -See /etc/rsnapshot.conf.default for a working example file.
 +Make sure your !!SYSCONFDIR!!/rsnapshot.conf file has all elements separated by tabs.
 +See !!SAMPLES_DIR!!/rsnapshot.conf.default for a working example file.
- .PP
+ .Sp
  Make sure you put a trailing slash on the end of all directory references.
  If you don't, you may have extra directories created in your snapshots.
-@@ -725,7 +715,7 @@ If you would like regular users to be ab
+@@ -871,7 +871,7 @@ If you would like regular users to be ab
  there are a number of ways this can be accomplished. One such scenario
  would be:
- .PP
+ .Sp
 -Set \fBsnapshot_root\fR to \fB/.private/.snapshots\fR in \fB/etc/rsnapshot.conf\fR
 +Set \fBsnapshot_root\fR to \fB/.private/.snapshots\fR in \fB!!SYSCONFDIR!!/rsnapshot.conf\fR
- .PP
+ .Sp
  Set the file permissions on these directories as follows:
  .Sp

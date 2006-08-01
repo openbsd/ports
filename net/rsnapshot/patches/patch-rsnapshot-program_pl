@@ -1,7 +1,7 @@
-$OpenBSD: patch-rsnapshot-program_pl,v 1.2 2005/04/11 13:00:08 robert Exp $
---- rsnapshot-program.pl.orig	Mon Apr 11 06:23:13 2005
-+++ rsnapshot-program.pl	Mon Apr 11 06:31:38 2005
-@@ -303,7 +303,7 @@ sub find_config_file {
+$OpenBSD: patch-rsnapshot-program_pl,v 1.3 2006/08/01 12:32:36 alek Exp $
+--- rsnapshot-program.pl.orig	Fri Jul 14 18:41:47 2006
++++ rsnapshot-program.pl	Fri Jul 14 18:47:25 2006
+@@ -355,7 +355,7 @@ sub find_config_file {
  	# autoconf variables (may have too many slashes)
  	my $autoconf_sysconfdir	= '@sysconfdir@';
  	my $autoconf_prefix		= '@prefix@';
@@ -10,7 +10,7 @@ $OpenBSD: patch-rsnapshot-program_pl,v 1.2 2005/04/11 13:00:08 robert Exp $
  	
  	# consolidate multiple slashes
  	$autoconf_sysconfdir	=~ s/\/+/\//g;
-@@ -4489,7 +4489,7 @@ of cron jobs. It is possible, however, t
+@@ -5651,7 +5651,7 @@ of cron jobs. It is possible, however, t
  with an alternate configuration file.
  
  All important options are specified in a configuration file, which is
@@ -19,7 +19,7 @@ $OpenBSD: patch-rsnapshot-program_pl,v 1.2 2005/04/11 13:00:08 robert Exp $
  specified on the command line. There are also additional options which
  can be passed on the command line.
  
-@@ -4515,12 +4515,12 @@ B<-D> a firehose of diagnostic informati
+@@ -5677,12 +5677,12 @@ B<-D> a firehose of diagnostic informati
  
  =head1 CONFIGURATION
  
@@ -36,7 +36,7 @@ $OpenBSD: patch-rsnapshot-program_pl,v 1.2 2005/04/11 13:00:08 robert Exp $
  your needs.
  
  Here is a list of allowed parameters:
-@@ -4937,7 +4937,7 @@ also want to run it from the command lin
+@@ -6164,7 +6164,7 @@ also want to run it from the command lin
  a feel for what it's doing.
  
  Here is an example crontab entry, assuming that intervals B<hourly>,
@@ -45,7 +45,7 @@ $OpenBSD: patch-rsnapshot-program_pl,v 1.2 2005/04/11 13:00:08 robert Exp $
  
  =over 4
  
-@@ -4973,7 +4973,7 @@ really comes in handy.
+@@ -6200,7 +6200,7 @@ really comes in handy.
  
  Remember that these are just the times that the program runs.
  To set the number of backups stored, set the B<interval> numbers in
@@ -54,7 +54,7 @@ $OpenBSD: patch-rsnapshot-program_pl,v 1.2 2005/04/11 13:00:08 robert Exp $
  
  To check the disk space used by rsnapshot, you can call it with the "du" argument.
  
-@@ -5018,7 +5018,7 @@ B<2>  Some warnings occurred, but the ba
+@@ -6313,7 +6313,7 @@ B<2>  Some warnings occurred, but the ba
  
  =head1 FILES
  
@@ -63,7 +63,7 @@ $OpenBSD: patch-rsnapshot-program_pl,v 1.2 2005/04/11 13:00:08 robert Exp $
  
  =head1 SEE ALSO
  
-@@ -5047,8 +5047,8 @@ B<http://lists.sourceforge.net/lists/lis
+@@ -6342,8 +6342,8 @@ B<http://lists.sourceforge.net/lists/lis
  
  =head1 NOTES
  
@@ -74,7 +74,7 @@ $OpenBSD: patch-rsnapshot-program_pl,v 1.2 2005/04/11 13:00:08 robert Exp $
  
  Make sure you put a trailing slash on the end of all directory references.
  If you don't, you may have extra directories created in your snapshots.
-@@ -5064,7 +5064,7 @@ If you would like regular users to be ab
+@@ -6359,7 +6359,7 @@ If you would like regular users to be ab
  there are a number of ways this can be accomplished. One such scenario
  would be:
  

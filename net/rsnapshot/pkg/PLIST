@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/21 16:08:06 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/08/01 12:32:36 alek Exp $
 bin/rsnapshot
 @man man/man1/rsnapshot.1
 share/examples/rsnapshot/
@@ -14,6 +14,20 @@ share/examples/rsnapshot/utils/backup_rsnapshot_cvsroot.sh
 share/examples/rsnapshot/utils/backup_smb_share.sh
 share/examples/rsnapshot/utils/debug_moving_files.sh
 share/examples/rsnapshot/utils/make_cvs_snapshot.sh
+share/examples/rsnapshot/utils/mysqlbackup.pl
+share/examples/rsnapshot/utils/random_file_verify.sh
+share/examples/rsnapshot/utils/rsnapreport.pl
 share/examples/rsnapshot/utils/rsnapshot_if_mounted.sh
+share/examples/rsnapshot/utils/rsnapshotdb/
+share/examples/rsnapshot/utils/rsnapshotdb/CHANGES.txt
+share/examples/rsnapshot/utils/rsnapshotdb/INSTALL.txt
+share/examples/rsnapshot/utils/rsnapshotdb/LICENSE.txt
+share/examples/rsnapshot/utils/rsnapshotdb/README.txt
+share/examples/rsnapshot/utils/rsnapshotdb/TODO.txt
+share/examples/rsnapshot/utils/rsnapshotdb/rsnapshotDB.conf.sample
+share/examples/rsnapshot/utils/rsnapshotdb/rsnapshotDB.pl
+share/examples/rsnapshot/utils/rsnapshotdb/rsnapshotDB.xsd
+share/examples/rsnapshot/utils/rsnapshotdb/rsnapshotdb.list
+share/examples/rsnapshot/utils/rsnapshotdb/rsnapshotdb.pl
 share/examples/rsnapshot/utils/rsnaptar
 share/examples/rsnapshot/utils/sign_packages.sh
