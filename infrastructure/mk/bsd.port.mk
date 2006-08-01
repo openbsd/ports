@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.758 2006/07/17 16:23:14 steven Exp $
+#	$OpenBSD: bsd.port.mk,v 1.759 2006/08/01 10:00:54 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1513,7 +1513,7 @@ ${_DEPlibs_COOKIES}: ${_WRKDIR_COOKIE}
 ${_DEPlibs_COOKIE}: ${_DEPlibs_COOKIES} ${_DEPlib_COOKIES} ${_DEPbuild_COOKIES} ${_WRKDIR_COOKIE}
 	@${ECHO_MSG} "===>  Verifying specs: ${_DEPLIBS}"
 	@listlibs="echo ${LOCALBASE}/lib/lib* /usr/lib/lib* ${X11BASE}/lib/lib*"; \
-	for d in ${_DEPLIBS}; do \
+	for d in ${_DEPLIBS:S/>/\>/g}; do \
 		case "$$d" in \
 		/*) listlibs="$$listlibs $${d%/*}/lib*";; \
 		*/*) listlibs="$$listlibs ${DEPBASE}/$${d%/*}/lib*";; \
@@ -1521,7 +1521,7 @@ ${_DEPlibs_COOKIE}: ${_DEPlibs_COOKIES} ${_DEPlib_COOKIES} ${_DEPbuild_COOKIES} 
 	done; \
 	if found=`eval $$listlibs 2>/dev/null| \
 		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} perl \
-		${PORTSDIR}/infrastructure/build/resolve-lib ${_noshared} ${_DEPLIBS}`; then \
+		${PORTSDIR}/infrastructure/build/resolve-lib ${_noshared} ${_DEPLIBS:S/>/\>/g}`; then \
 		line="===>  found"; \
 		for k in $$found; do line="$$line $$k"; done; \
 		${ECHO_MSG} "$$line"; \
@@ -2599,7 +2599,7 @@ _print-package-signature-run:
 .endfor
 
 _print-package-signature-lib:
-	@echo $$LIST_LIBS| LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} perl ${PORTSDIR}/infrastructure/build/resolve-lib ${_DEPLIBS}
+	@echo $$LIST_LIBS| LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} perl ${PORTSDIR}/infrastructure/build/resolve-lib ${_DEPLIBS:S/>/\>/g}
 .for _i in ${LIB_DEPENDS}
 	@echo '${_i}' |{ \
 		IFS=:; read dep pkg subdir target; \
