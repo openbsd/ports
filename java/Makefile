@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/14 05:58:45 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2006/08/01 14:46:05 kurt Exp $
 #
 
      SUBDIR += jlint
      SUBDIR += junit
+     SUBDIR += javaPathHelper
 
 .include <bsd.port.subdir.mk>
