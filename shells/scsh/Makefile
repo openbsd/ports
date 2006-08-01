@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2004/12/06 10:44:33 alek Exp $
+# $OpenBSD: Makefile,v 1.21 2006/08/01 14:25:30 alek Exp $
 
 COMMENT=		"Unix shell embedded in Scheme"
 
 DISTNAME=		scsh-0.6.2
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		lang shells
 
 HOMEPAGE=		http://www.scsh.net/

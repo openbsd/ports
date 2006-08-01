@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 08:57:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/08/01 14:25:30 alek Exp $
+@conflict scheme48-*
 bin/scsh
 include/scheme48.h
 include/write-barrier.h
