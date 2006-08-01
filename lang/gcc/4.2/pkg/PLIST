@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/08/01 08:58:11 espie Exp $
 %%SHARED%%
 bin/ecpp
 bin/egcc
@@ -18,13 +18,8 @@ lib/gcc/${CONFIG}/${V}/finclude/
 lib/gcc/${CONFIG}/${V}/include/
 lib/gcc/${CONFIG}/${V}/include/README
 lib/gcc/${CONFIG}/${V}/include/com_err.h
-lib/gcc/${CONFIG}/${V}/include/emmintrin.h
 lib/gcc/${CONFIG}/${V}/include/limits.h
 lib/gcc/${CONFIG}/${V}/include/math.h
-lib/gcc/${CONFIG}/${V}/include/mm3dnow.h
-lib/gcc/${CONFIG}/${V}/include/mm_malloc.h
-lib/gcc/${CONFIG}/${V}/include/mmintrin.h
-lib/gcc/${CONFIG}/${V}/include/pmmintrin.h
 lib/gcc/${CONFIG}/${V}/include/rpc/
 lib/gcc/${CONFIG}/${V}/include/rpc/rpc_des.h
 lib/gcc/${CONFIG}/${V}/include/rpc/svc.h
@@ -40,19 +35,12 @@ lib/gcc/${CONFIG}/${V}/include/sys/
 lib/gcc/${CONFIG}/${V}/include/sys/types.h
 lib/gcc/${CONFIG}/${V}/include/syslimits.h
 lib/gcc/${CONFIG}/${V}/include/unwind.h
-lib/gcc/${CONFIG}/${V}/include/xmmintrin.h
 lib/gcc/${CONFIG}/${V}/install-tools/
 lib/gcc/${CONFIG}/${V}/install-tools/gsyslimits.h
 lib/gcc/${CONFIG}/${V}/install-tools/include/
 lib/gcc/${CONFIG}/${V}/install-tools/include/README
-lib/gcc/${CONFIG}/${V}/install-tools/include/emmintrin.h
 lib/gcc/${CONFIG}/${V}/install-tools/include/limits.h
-lib/gcc/${CONFIG}/${V}/install-tools/include/mm3dnow.h
-lib/gcc/${CONFIG}/${V}/install-tools/include/mm_malloc.h
-lib/gcc/${CONFIG}/${V}/install-tools/include/mmintrin.h
-lib/gcc/${CONFIG}/${V}/install-tools/include/pmmintrin.h
 lib/gcc/${CONFIG}/${V}/install-tools/include/unwind.h
-lib/gcc/${CONFIG}/${V}/install-tools/include/xmmintrin.h
 lib/gcc/${CONFIG}/${V}/install-tools/macro_list
 lib/gcc/${CONFIG}/${V}/install-tools/mkheaders.conf
 lib/gcc/${CONFIG}/${V}/libgcc.a
@@ -71,6 +59,7 @@ libexec/gcc/${CONFIG}/${V}/install-tools/
 libexec/gcc/${CONFIG}/${V}/install-tools/fixinc.sh
 libexec/gcc/${CONFIG}/${V}/install-tools/fixincl
 libexec/gcc/${CONFIG}/${V}/install-tools/mkheaders
+%%I386%%
 @man man/man1/ecpp.1
 @man man/man1/egcc.1
 @man man/man1/egcov.1

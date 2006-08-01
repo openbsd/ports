@@ -1,0 +1,13 @@
+@comment $OpenBSD: PFRAG.I386,v 1.1 2006/08/01 08:58:11 espie Exp $
+lib/gcc/${CONFIG}/${V}/include/emmintrin.h
+lib/gcc/${CONFIG}/${V}/include/mm3dnow.h
+lib/gcc/${CONFIG}/${V}/include/mm_malloc.h
+lib/gcc/${CONFIG}/${V}/include/mmintrin.h
+lib/gcc/${CONFIG}/${V}/include/pmmintrin.h
+lib/gcc/${CONFIG}/${V}/include/xmmintrin.h
+lib/gcc/${CONFIG}/${V}/install-tools/include/emmintrin.h
+lib/gcc/${CONFIG}/${V}/install-tools/include/mm3dnow.h
+lib/gcc/${CONFIG}/${V}/install-tools/include/mm_malloc.h
+lib/gcc/${CONFIG}/${V}/install-tools/include/mmintrin.h
+lib/gcc/${CONFIG}/${V}/install-tools/include/pmmintrin.h
+lib/gcc/${CONFIG}/${V}/install-tools/include/xmmintrin.h

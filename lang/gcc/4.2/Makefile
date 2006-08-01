@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/08/01 08:58:11 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 #BROKEN='adjust for types changes'
@@ -186,6 +186,11 @@ PKG_ARGS+=-DPIC=0
 PKG_ARGS+=-DPPC=1
 .else
 PKG_ARGS+=-DPPC=0
+.endif
+.if ${MACHINE_ARCH} == "i386"
+PKG_ARGS+=-DI386=1
+.else
+PKG_ARGS+=-DI386=0
 .endif
 
 SUBPACKAGE?=
