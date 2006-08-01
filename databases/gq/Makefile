@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2006/06/13 13:19:47 bernd Exp $
+# $OpenBSD: Makefile,v 1.19 2006/08/01 22:19:46 espie Exp $
 
 COMMENT=	"GTK-based LDAP client"
 
@@ -27,7 +27,7 @@ MODULES=	devel/gettext
 
 BUILD_DEPENDS=  :cyrus-sasl-*:security/cyrus-sasl2
 LIB_DEPENDS=	gtk-x11-2.0.0.0,gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0::x11/gtk+2 \
-		ldap.7,lber.7::databases/openldap \
+		ldap.>=7,lber.>=7::databases/openldap \
 		xml2::textproc/libxml
 
 CONFIGURE_STYLE= autoconf

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2006/06/13 07:38:01 bernd Exp $
+# $OpenBSD: Makefile,v 1.35 2006/08/01 22:19:46 espie Exp $
 
 COMMENT=	"desktop organizer software for the palm pilot"
 
@@ -19,14 +19,14 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c readline crypto m ncurses X11 Xext \
-		Xrender fontconfig freetype atk-1.0.800.0 \
-		gdk_pixbuf-2.0.400.14 glib-2.0.400.8 gmodule-2.0.400.8 \
-		gobject-2.0.400.8 pango-1.0.600.0 pangoft2-1.0.600.0 \
+		Xrender fontconfig freetype atk-1.0.>=800.0 \
+		gdk_pixbuf-2.0.>=400.14 glib-2.0.>=400.8 gmodule-2.0.>=400.8 \
+		gobject-2.0.>=400.8 pango-1.0.>=600.0 pangoft2-1.0.>=600.0 \
 		pangocairo-1.0.0.0 cairo glitz png z
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=	pisock.8::comms/pilot-link \
-		gtk-x11-2.0.400.13,gdk-x11-2.0.400.13,gdk_pixbuf-2.0.400.13::x11/gtk+2
+LIB_DEPENDS=	pisock.>=8::comms/pilot-link \
+		gtk-x11-2.0.>=400.13,gdk-x11-2.0.>=400.13,gdk_pixbuf-2.0.>=400.13::x11/gtk+2
 
 MODULES=	devel/gettext
 

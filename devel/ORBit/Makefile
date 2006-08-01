@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2006/01/11 12:26:35 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2006/08/01 22:19:46 espie Exp $
 
 COMMENT=	"high-performance CORBA ORB with support for the C language"
 
@@ -20,7 +20,7 @@ HOMEPAGE=	http://www.labs.redhat.com/orbit/
 PATCH_LIST=		patch-* sup-alpha-*
 .endif
 
-LIB_DEPENDS=	glib.1.2,gmodule.1.2::devel/glib \
+LIB_DEPENDS=	glib.>=1.2,gmodule.>=1.2::devel/glib \
 		popt::devel/popt
 
 # GPL/LGPL

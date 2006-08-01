@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/06/03 09:29:42 alek Exp $
+# $OpenBSD: Makefile,v 1.11 2006/08/01 22:19:46 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,8 +22,8 @@ WANTLIB=	crypto ssl
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=python-ldap/}
 
-LIB_DEPENDS=	ldap_r.7,lber.7::databases/openldap \
-		sasl2.2::security/cyrus-sasl2
+LIB_DEPENDS=	ldap_r.>=7,lber.>=7::databases/openldap \
+		sasl2.>=2::security/cyrus-sasl2
 
 MODULES=	lang/python
 

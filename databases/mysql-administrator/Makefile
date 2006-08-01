@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/06/13 13:19:47 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2006/08/01 22:19:46 espie Exp $
 
 COMMENT=	"visual administration console for MySQL"
 
@@ -36,7 +36,7 @@ LIB_DEPENDS=	pcre::devel/pcre \
 		glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0:glib2->=2.6.2:devel/glib2 \
 		glade-2.0.0.0::devel/libglade2 \
 		gtkmm-2.4.0.0::x11/gtk2mm \
-		xml2.6:libxml->=2.6.2:textproc/libxml
+		xml2.>=6:libxml->=2.6.2:textproc/libxml
 
 USE_X11=	Yes
 USE_GMAKE=	Yes

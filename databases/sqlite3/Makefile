@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/07/07 21:22:03 sturm Exp $
+# $OpenBSD: Makefile,v 1.20 2006/08/01 22:19:46 espie Exp $
 
 COMMENT=	"Embedded SQL implementation"
 COMMENT-tcl=	"TCL bindings for Sqlite3"
@@ -49,13 +49,13 @@ SUBPACKAGE?=
 
 .if defined(PACKAGING)
 . if ${SUBPACKAGE} == "-tcl"
-LIB_DEPENDS=	sqlite3.8.6::databases/sqlite3 \
-		tcl84.1.0:tcl-8.4.*:lang/tcl/8.4
+LIB_DEPENDS=	sqlite3.>=8.6::databases/sqlite3 \
+		tcl84.>=1.0:tcl-8.4.*:lang/tcl/8.4
 . endif
 .else
 . if ${MULTI_PACKAGES:M-tcl}
 CONFIGURE_ARGS+=--with-tcl=${LOCALBASE}/lib/tcl8.4
-LIB_DEPENDS=	tcl84.1.0:tcl-8.4.*:lang/tcl/8.4
+LIB_DEPENDS=	tcl84.>=1.0:tcl-8.4.*:lang/tcl/8.4
 REGRESS_TARGET=	test
 . else
 CONFIGURE_ARGS+=--disable-tcl

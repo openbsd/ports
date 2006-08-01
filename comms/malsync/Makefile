@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2005/01/03 23:36:12 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.24 2006/08/01 22:19:46 espie Exp $
 
 COMMENT=		"command line tool to synchronize Palm pilot to AvantGo"
 
@@ -20,7 +20,7 @@ WANTLIB=		c
 
 MASTER_SITES=		${HOMEPAGE}
 
-LIB_DEPENDS=		pisock.8::comms/pilot-link
+LIB_DEPENDS=		pisock.>=8::comms/pilot-link
 
 USE_GMAKE=		Yes
 WRKSRC=			${WRKDIR}/malsync

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/07/30 04:51:39 pedro Exp $
+# $OpenBSD: Makefile,v 1.4 2006/08/01 22:19:46 espie Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	"binding of sqlite3 for lua"
@@ -20,7 +20,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--with-lua-dir=${PREFIX}
 CFLAGS+=	-fPIC -DPIC
 
-LIB_DEPENDS=	sqlite3.8::databases/sqlite3
+LIB_DEPENDS=	sqlite3.>=8::databases/sqlite3
 
 BUILD_DEPENDS=	:lua->=5.1:lang/lua
 RUN_DEPENDS=	${BUILD_DEPENDS}

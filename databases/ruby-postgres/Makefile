@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/06/23 08:12:23 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2006/08/01 22:19:46 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,8 +21,8 @@ MASTER_SITES=	http://rubyforge.org/frs/download.php/9553/
 
 MODULES=	lang/ruby
 
-LIB_DEPENDS=	pq.2::databases/postgresql \
-		ruby.1::lang/ruby
+LIB_DEPENDS=	pq.>=2::databases/postgresql \
+		ruby.>=1::lang/ruby
 
 CONFIGURE_STYLE=ruby gem
 

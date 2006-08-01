@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2006/06/03 09:29:42 alek Exp $
+# $OpenBSD: Makefile,v 1.27 2006/08/01 22:19:46 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 MODULES=	lang/python
 
-LIB_DEPENDS=	lib/mysql/mysqlclient_r.14::databases/mysql
+LIB_DEPENDS=	lib/mysql/mysqlclient_r.>=14::databases/mysql
 WANTLIB=	crypto m pthread ssl z
 
 NO_REGRESS=	Yes

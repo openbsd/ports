@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/01/10 18:47:51 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2006/08/01 22:19:46 espie Exp $
 
 COMMENT=		"data backends for the Evolution mail/PIM suite"
 
@@ -42,7 +42,7 @@ BUILD_DEPENDS=		:bison-*:devel/bison \
 			:openldap-client-*:databases/openldap \
 			:libgnomeui-*:x11/gnome/libgnomeui
 LIB_DEPENDS= 		gnome-2::x11/gnome/libgnome \
-			soup-2.2.7.0::devel/libsoup
+			soup-2.2.>=7.0::devel/libsoup
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

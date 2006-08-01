@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2006/05/31 19:53:06 msf Exp $
+# $OpenBSD: Makefile,v 1.12 2006/08/01 22:19:46 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -19,7 +19,7 @@ MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=../../authors/id/C/CA/CAPTTOFU/}
 
 BUILD_DEPENDS=		:p5-DBI->=1.08:databases/p5-DBI
 RUN_DEPENDS=		:p5-DBI->=1.08:databases/p5-DBI
-LIB_DEPENDS=		lib/mysql/mysqlclient.10::databases/mysql
+LIB_DEPENDS=		lib/mysql/mysqlclient.>=10::databases/mysql
 REGRESS_DEPENDS=	:mysql-server-*:databases/mysql,-server
 
 CONFIGURE_STYLE=	perl

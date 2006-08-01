@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/05/09 18:22:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2006/08/01 22:19:46 espie Exp $
 
 COMMENT=		"parse pf logs to XML"
 
@@ -20,7 +20,7 @@ WANTLIB= 		c m pcap stdc++
 MASTER_SITES=		${HOMEPAGE}releases/ \
 			http://humppa.nl/distfiles/
 
-LIB_DEPENDS=		expat.6::textproc/expat
+LIB_DEPENDS=		expat.>=6::textproc/expat
 
 MAKE_FLAGS=		WITH_EXPAT=1
 

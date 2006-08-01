@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/07/19 13:41:02 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2006/08/01 22:19:46 espie Exp $
 
 COMMENT=	"Objective Caml bindings for SQLite3"
 CATEGORIES=	databases
@@ -28,7 +28,7 @@ USE_GMAKE=	Yes
 
 CONFIGURE_ENV=	CFLAGG="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib -L."
 CONFIGURE_ARGS=	--with-sqlite3=${LOCALBASE}
-LIB_DEPENDS=	sqlite3.8::databases/sqlite3
+LIB_DEPENDS=	sqlite3.>=8::databases/sqlite3
 
 BUILD_DEPENDS=	::sysutils/findlib
 RUN_DEPENDS=	::sysutils/findlib

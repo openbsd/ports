@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2005/09/22 13:10:47 avsm Exp $
+# $OpenBSD: Makefile,v 1.9 2006/08/01 22:19:46 espie Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
 BROKEN=		"ocamldoc hangs build"
@@ -26,7 +26,7 @@ NO_REGRESS= 	Yes
 ALL_TARGET=	all ${MODOCAML_NATIVE:S,Yes,allopt,:S,No,,}
 USE_GMAKE=	Yes
 
-LIB_DEPENDS=	pq.3:postgresql-client-*:databases/postgresql
+LIB_DEPENDS=	pq.>=3:postgresql-client-*:databases/postgresql
 MY_CFLAGS=	${CFLAGS} -I${LOCALBASE}/include/postgresql
 MY_LIBDIRS=	${LOCALBASE]/lib
 EXAMPLES_DIR=	${PREFIX}/share/examples/ocaml-postgresql

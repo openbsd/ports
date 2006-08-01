@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/11/21 22:53:59 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/08/01 22:19:46 espie Exp $
 
 COMMENT=	"convert various Microsoft formats into HTML/PNG"
 
@@ -16,10 +16,10 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 c freetype jpeg m xml2 z
 
 MODULES=	converters/libiconv
-LIB_DEPENDS=	wmf.6,wmflite.6::graphics/libwmf \
-		png.2::graphics/png \
-		Magick.5::graphics/ImageMagick \
-		glib.1::devel/glib
+LIB_DEPENDS=	wmf.>=6,wmflite.6::graphics/libwmf \
+		png.>=2::graphics/png \
+		Magick.>=5::graphics/ImageMagick \
+		glib.>=1::devel/glib
 
 USE_GMAKE= Yes
 CONFIGURE_STYLE= gnu dest

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2005/09/05 13:12:47 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2006/08/01 22:19:46 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -19,7 +19,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=DBD/}
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	ct.3::databases/freetds
+LIB_DEPENDS=	ct.>=3::databases/freetds
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	:p5-DBI-*:databases/p5-DBI \
 

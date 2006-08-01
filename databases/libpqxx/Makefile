@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/01/13 19:12:16 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/08/01 22:19:46 espie Exp $
 
 COMMENT=	"C++ client API for PostgreSQL"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://gborg.postgresql.org/download/libpqxx/stable/ \
 		ftp://gborg.postgresql.org/pub/libpqxx/stable/
 
-LIB_DEPENDS=	pq.4:postgresql-client-*:databases/postgresql
+LIB_DEPENDS=	pq.>=4:postgresql-client-*:databases/postgresql
 
 USE_LIBTOOL=	Yes
 

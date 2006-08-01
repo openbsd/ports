@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/06/29 11:21:02 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2006/08/01 22:19:46 espie Exp $
 
 COMMENT=	"tools to talk to GSM cellular phones"	
 
@@ -39,10 +39,11 @@ CONFIGURE_ARGS+=	--without-x
 .else
 CONFIGURE_ARGS+=	--with-x
 WANTLIB+=		X11 Xext Xpm Xrender fontconfig freetype z \
-			iconv intl m pthread atk-1.0.800.0 glib-2.0.400.8 \
-			gmodule-2.0.400.8 gobject-2.0.400.8 pango-1.0.600.0 \
-			pangoft2-1.0.600.0 pangocairo-1.0.0.0 cairo glitz png
-LIB_DEPENDS=		gtk-x11-2.0.400.13,gdk-x11-2.0.400.13,gdk_pixbuf-2.0.400.13::x11/gtk+2
+			iconv intl m pthread atk-1.0.>=800.0 glib-2.0.>=400.8 \
+			gmodule-2.0.>=400.8 gobject-2.0.>=400.8 \
+			pango-1.0.>=600.0 pangoft2-1.0.>=600.0 \
+			pangocairo-1.0.0.0 cairo glitz png
+LIB_DEPENDS=		gtk-x11-2.0.>=400.13,gdk-x11-2.0.>=400.13,gdk_pixbuf-2.0.>=400.13::x11/gtk+2
 .endif
 
 post-install:

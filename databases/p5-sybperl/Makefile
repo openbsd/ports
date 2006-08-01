@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2005/09/05 13:12:47 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2006/08/01 22:19:46 espie Exp $
 
 DISTNAME=	sybperl-2.18
 CATEGORIES=	databases perl5
@@ -19,7 +19,7 @@ MASTER_SITES=	http://www.peppler.org/downloads/
 MAINTAINER=	joshua stein <jcs@openbsd.org>
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	tds.4,sybdb.5,ct.3::databases/freetds
+LIB_DEPENDS=	tds.>=4,sybdb.>=5,ct.>=3::databases/freetds
 
 CONFIGURE_STYLE= perl
 CONFIGURE_ENV=	SYBASE="${LOCALBASE}"

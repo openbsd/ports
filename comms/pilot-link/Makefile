@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2006/03/07 19:31:46 sturm Exp $
+# $OpenBSD: Makefile,v 1.46 2006/08/01 22:19:46 espie Exp $
 # $NetBSD: Makefile,v 1.37 2004/10/03 00:13:16 tv Exp $
 
 COMMENT=	"tools to connect your PalmOS® compatible handheld"
@@ -30,7 +30,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m ncurses readline stdc++ z
 
 MODULES=		converters/libiconv
-LIB_DEPENDS=		png.4::graphics/png
+LIB_DEPENDS=		png.>=4::graphics/png
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
