@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2006/07/18 08:30:17 espie Exp $
+# $OpenBSD: Makefile,v 1.91 2006/08/01 09:18:53 espie Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += db
@@ -45,6 +45,7 @@
      SUBDIR += p5-DBD-mysql
      SUBDIR += p5-DBD-mysqlPP
      SUBDIR += p5-DBI
+     SUBDIR += p5-DBIx-Class
      SUBDIR += p5-DBIx-ContextualFetch
      SUBDIR += p5-DBIx-DBSchema
      SUBDIR += p5-DBIx-SearchBuilder
