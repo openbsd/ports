@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/03/14 22:27:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/08/02 10:00:49 espie Exp $
 bin/digikam
 bin/showfoto
 include/digikam/
@@ -35,10 +35,8 @@ ${KDE}/kio_digikamthumbnail.la
 ${KDE}/kio_digikamthumbnail.so
 lib/libdigikam.la
 @lib lib/libdigikam.so.${LIBdigikam_VERSION}
+share/applications/kde/digikam.desktop
 share/applications/kde/showfoto.desktop
-share/applnk/
-share/applnk/Graphics/
-share/applnk/Graphics/digikam.desktop
 share/apps/digikam/
 share/apps/digikam/data/
 share/apps/digikam/data/autolevels.png
@@ -386,8 +384,6 @@ share/doc/HTML/en/digikam-${V}-apidocs/digikam/
 share/doc/HTML/en/digikam-${V}-apidocs/digikam/digikam/
 share/doc/HTML/en/digikam-${V}-apidocs/digikam/digikam/html/
 share/doc/HTML/en/digikam-${V}-apidocs/digikam/html/
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/digikam.png
 share/icons/hicolor/128x128/apps/showfoto.png
 share/icons/hicolor/16x16/apps/digikam.png
@@ -398,11 +394,10 @@ share/icons/hicolor/32x32/apps/digikam.png
 share/icons/hicolor/32x32/apps/showfoto.png
 share/icons/hicolor/48x48/apps/digikam.png
 share/icons/hicolor/48x48/apps/showfoto.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/digikam.png
 share/icons/hicolor/64x64/apps/showfoto.png
 share/locale/bg/LC_MESSAGES/digikam.mo
+share/locale/bn/LC_MESSAGES/digikam.mo
 share/locale/br/LC_MESSAGES/digikam.mo
 share/locale/ca/LC_MESSAGES/digikam.mo
 share/locale/cs/LC_MESSAGES/digikam.mo
@@ -413,6 +408,7 @@ share/locale/el/LC_MESSAGES/digikam.mo
 share/locale/en_GB/LC_MESSAGES/digikam.mo
 share/locale/es/LC_MESSAGES/digikam.mo
 share/locale/et/LC_MESSAGES/digikam.mo
+share/locale/eu/LC_MESSAGES/digikam.mo
 share/locale/fi/LC_MESSAGES/digikam.mo
 share/locale/fr/LC_MESSAGES/digikam.mo
 share/locale/ga/LC_MESSAGES/digikam.mo
@@ -422,8 +418,12 @@ share/locale/hu/LC_MESSAGES/digikam.mo
 share/locale/is/LC_MESSAGES/digikam.mo
 share/locale/it/LC_MESSAGES/digikam.mo
 share/locale/ja/LC_MESSAGES/digikam.mo
+share/locale/km/
+share/locale/km/LC_MESSAGES/
+share/locale/km/LC_MESSAGES/digikam.mo
 share/locale/lt/LC_MESSAGES/digikam.mo
 share/locale/mk/LC_MESSAGES/digikam.mo
+share/locale/ms/LC_MESSAGES/digikam.mo
 share/locale/mt/LC_MESSAGES/digikam.mo
 share/locale/nb/LC_MESSAGES/digikam.mo
 share/locale/nl/LC_MESSAGES/digikam.mo
@@ -441,8 +441,9 @@ share/locale/sr@Latn/LC_MESSAGES/digikam.mo
 share/locale/sv/LC_MESSAGES/digikam.mo
 share/locale/ta/LC_MESSAGES/digikam.mo
 share/locale/tr/LC_MESSAGES/digikam.mo
+share/locale/uk/LC_MESSAGES/digikam.mo
+share/locale/vi/LC_MESSAGES/digikam.mo
 share/locale/zh_CN/LC_MESSAGES/digikam.mo
-share/mimelnk/image/x-raw.desktop
 share/services/digikamalbums.protocol
 share/services/digikamdates.protocol
 share/services/digikamimageplugin_core.desktop

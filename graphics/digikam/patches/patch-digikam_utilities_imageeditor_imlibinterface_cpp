@@ -1,7 +1,7 @@
-$OpenBSD: patch-digikam_utilities_imageeditor_imlibinterface_cpp,v 1.1 2006/03/14 22:27:35 espie Exp $
---- digikam/utilities/imageeditor/imlibinterface.cpp.orig	Mon Jan 23 11:58:04 2006
-+++ digikam/utilities/imageeditor/imlibinterface.cpp	Mon Jan 23 11:58:24 2006
-@@ -203,7 +203,7 @@ int ImlibInterface::fileFormat(const QSt
+$OpenBSD: patch-digikam_utilities_imageeditor_imlibinterface_cpp,v 1.2 2006/08/02 10:00:49 espie Exp $
+--- digikam/utilities/imageeditor/imlibinterface.cpp.orig	Mon Jul 10 23:03:58 2006
++++ digikam/utilities/imageeditor/imlibinterface.cpp	Tue Aug  1 11:29:52 2006
+@@ -231,7 +231,7 @@ int ImlibInterface::fileFormat(const QSt
      {
          return PNG_IMAGE;
      }

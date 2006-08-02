@@ -1,25 +1,28 @@
-# $OpenBSD: Makefile,v 1.4 2006/06/12 14:32:48 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/08/02 10:00:49 espie Exp $
 
 COMMENT=		"kde image plugins"
 CATEGORIES=		graphics x11 x11/kde
-DISTNAME=		kipi-plugins-0.1.0-rc1
+DISTNAME=		kipi-plugins-0.1.2
 EXTRACT_SUFX=		.tar.bz2
-PKGNAME=		kipi-plugins-0.1.0rc1p0
+PKGNAME=		kipi-plugins-0.1.2
 HOMEPAGE=		http://extragear.kde.org/apps/kipi/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=kipi/}
 
 SHARED_ONLY=Yes
-LIB_DEPENDS+=	lib/qt3/qt-mt.3.33::x11/qt3,mt \
-		kdecore.6,DCOP,kwalletclient,khtml,kjs,kutils,kparts,kdeui,kdesu,kio,kdefx,kdeprint::x11/kde/libs3 \
+LIB_DEPENDS+=	lib/qt3/qt-mt.>=3.33::x11/qt3,mt \
+		kdecore.>=6,DCOP,kwalletclient,khtml,kjs,kutils,kparts,kdeui,kdesu,kio,kdefx,kdeprint::x11/kde/libs3 \
 		kipi::graphics/libkipi \
 		kexif::graphics/libkexif \
 		gphoto2,gphoto2_port::graphics/libgphoto2 \
-		Imlib2::graphics/imlib2
+		Imlib2::graphics/imlib2 \
+		Magick++,Magick,Wand::graphics/ImageMagick
+
 MODULES=	x11/kde
 
 BUILD_DEPENDS=	::devel/pkgconfig
 WANTLIB=	X11 Xext freetype util m c ICE Xrender SM pthread z GL stdc++ \
-		jpeg png pcre pcreposix iconv intl art_lgpl_2 tiff exif ltdl idn
+		jpeg png pcre pcreposix iconv intl art_lgpl_2 tiff exif ltdl \
+		idn bz2 exslt lcms jbig xslt xml2 Xt gpg-error gcrypt jasper
 
 USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static

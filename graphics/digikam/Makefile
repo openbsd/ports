@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.8 2006/06/12 12:05:17 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/08/02 10:00:49 espie Exp $
 
 COMMENT=		"digital image kde application"
 CATEGORIES=		graphics x11 x11/kde
-V=			0.8.1
+V=			0.8.2
 DISTNAME=		digikam-$V
-PKGNAME=		${DISTNAME}p0
-SHARED_LIBS=		digikam	1.0
+PKGNAME=		${DISTNAME}
+SHARED_LIBS=		digikam	1.1
 HOMEPAGE=		http://www.digikam.org/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=digikam/}
 DISTFILES=		${DISTNAME}.tar.bz2
 
 SHARED_ONLY=Yes
-LIB_DEPENDS+=	lib/qt3/qt-mt.3.33::x11/qt3,mt \
-		kdecore.6,kwalletclient,DCOP,kparts,kdeui,kdesu,kio,kdefx,kdeprint,kutils,kabc,vcard,kresources::x11/kde/libs3 \
-		Imlib2.0.0::graphics/imlib2 \
+LIB_DEPENDS+=	lib/qt3/qt-mt.>=3.33::x11/qt3,mt \
+		kdecore.>=6,kwalletclient,DCOP,kparts,kdeui,kdesu,kio,kdefx,kdeprint,kutils,kabc,vcard,kresources::x11/kde/libs3 \
+		Imlib2::graphics/imlib2 \
 		gphoto2,gphoto2_port::graphics/libgphoto2 \
 		kipi::graphics/libkipi \
 		kexif::graphics/libkexif \
@@ -26,7 +26,6 @@ WANTLIB=	util m c ICE Xrender SM pthread z stdc++ \
 
 MODULES=	x11/kde
 
-FLAVORS=		debug
 BUILD_DEPENDS=		::devel/pkgconfig
 USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS+=		--tag=disable-static

@@ -1,0 +1,12 @@
+$OpenBSD: patch-digikam_digikam_albumlister_cpp,v 1.1 2006/08/02 10:00:49 espie Exp $
+--- digikam/digikam/albumlister.cpp.orig	Wed Aug  2 11:14:53 2006
++++ digikam/digikam/albumlister.cpp	Wed Aug  2 11:15:03 2006
+@@ -313,7 +313,7 @@ void AlbumLister::slotData(KIO::Job*, co
+     int     albumID;
+     QString name;
+     QString date;
+-    off_t   size;
++    size_t  size;
+     QSize   dims;
+ 
+     ImageInfoList newItemsList;

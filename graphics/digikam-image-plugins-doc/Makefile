@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/03/14 23:25:22 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/08/02 10:00:49 espie Exp $
 
 COMMENT=		"documentation for digikam"
 CATEGORIES=		graphics x11 x11/kde
-V=			0.8.0
+V=			0.8.2
 DISTNAME=		digikamimageplugins-doc-$V
 PKGNAME=		${DISTNAME}
 HOMEPAGE=		http://www.digikam.org/
