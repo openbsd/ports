@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2006/06/15 22:18:25 bernd Exp $
+# $OpenBSD: Makefile,v 1.46 2006/08/02 10:10:35 espie Exp $
 
 COMMENT=	"library for dynamic creation of images"
 
@@ -10,8 +10,8 @@ MASTER_SITES=	http://www.boutell.com/gd/http/
 
 HOMEPAGE=	http://www.boutell.com/gd/
 
-LIB_DEPENDS=	jpeg.62::graphics/jpeg \
-		png.2::graphics/png
+LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
+		png.>=2::graphics/png
 
 MODULES=	converters/libiconv
 

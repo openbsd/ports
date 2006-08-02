@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/11/30 01:06:34 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/08/02 10:10:35 espie Exp $
 
 COMMENT=	"mpeg-1 video player"
 
@@ -18,7 +18,7 @@ WANTLIB=		SDL X11 Xext c m pthread usbhid
 
 MASTER_SITES=	${HOMEPAGE}
 
-LIB_DEPENDS=	smpeg.1.3:smpeg-*:devel/smpeg
+LIB_DEPENDS=	smpeg.>=1.3:smpeg-*:devel/smpeg
 
 USE_X11=	Yes
 

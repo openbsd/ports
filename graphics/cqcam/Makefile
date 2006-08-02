@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/03/28 15:57:05 jcs Exp $
+# $OpenBSD: Makefile,v 1.11 2006/08/02 10:10:35 espie Exp $
 
 DISTNAME=	cqcam-0.91
 PKGNAME=	${DISTNAME}p0
@@ -17,7 +17,7 @@ MASTER_SITES=	${HOMEPAGE}
 ONLY_FOR_ARCHS=	i386
 
 USE_X11=	Yes
-LIB_DEPENDS=	jpeg.62::graphics/jpeg
+LIB_DEPENDS=	jpeg.>=62::graphics/jpeg
 
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	--enable-jpeg --enable-asm
@@ -35,7 +35,7 @@ FAKE_FLAGS=	CLIENTS="cli webcam"
 .else
 WANTLIB+=	X11 Xext Xi glib gmodule iconv intl
 USE_X11=	Yes
-LIB_DEPENDS+=	gtk.1,gdk.1::x11/gtk+
+LIB_DEPENDS+=	gtk.>=1,gdk.>=1::x11/gtk+
 LIB_DEPENDS+=	xview,olgx::x11/xview/lib
 #BUILD_DEPENDS=	wish8.3::x11/tk/8.3
 CONFIGURE_ARGS+= --with-gtk-prefix=${LOCALBASE} 

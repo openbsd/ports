@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2006/07/31 15:03:15 millert Exp $
+# $OpenBSD: Makefile,v 1.22 2006/08/02 10:10:35 espie Exp $
 
 COMMENT=	"audio/video converter and streamer with bktr(4) support"
 
@@ -24,7 +24,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www.jakemsr.com/
 
 BUILD_DEPENDS=		::textproc/texi2html
-LIB_DEPENDS=		SDL.4::devel/sdl
+LIB_DEPENDS=		SDL.>=4::devel/sdl
 WANTLIB=		X11 Xext c freetype m pthread ossaudio usbhid z
 
 USE_X11=		Yes

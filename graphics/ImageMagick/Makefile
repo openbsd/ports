@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2006/02/06 22:10:24 bernd Exp $
+# $OpenBSD: Makefile,v 1.91 2006/08/02 10:10:35 espie Exp $
 
 COMMENT=		"image processing tools"
 
@@ -25,13 +25,13 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c iconv jpeg m z
 
-LIB_DEPENDS=		bz2.10::archivers/bzip2 \
-			jbig.1.2::graphics/jbigkit \
-			png.4::graphics/png \
-			tiff.36::graphics/tiff \
-			xml2.9::textproc/libxml \
-			lcms.1::graphics/lcms \
-			jasper.1::graphics/jasper
+LIB_DEPENDS=		bz2.>=10::archivers/bzip2 \
+			jbig.>=1.2::graphics/jbigkit \
+			png.>=4::graphics/png \
+			tiff.>=36::graphics/tiff \
+			xml2.>=9::textproc/libxml \
+			lcms.>=1::graphics/lcms \
+			jasper.>=1::graphics/jasper
 
 RUN_DEPENDS=		:netpbm-*:graphics/netpbm
 BUILD_DEPENDS=		:netpbm-*:graphics/netpbm

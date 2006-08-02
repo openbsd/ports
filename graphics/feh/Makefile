@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2005/09/19 16:32:23 bernd Exp $
+# $OpenBSD: Makefile,v 1.8 2006/08/02 10:10:35 espie Exp $
 
 COMMENT=	"lightweight image viewer"
 
@@ -18,7 +18,7 @@ WANTLIB=		Imlib2 X11 Xext c freetype jpeg m png z
 
 MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
 
-LIB_DEPENDS=	giblib.1::devel/giblib
+LIB_DEPENDS=	giblib.>=1::devel/giblib
 
 USE_X11=	Yes
 CONFIGURE_STYLE=gnu

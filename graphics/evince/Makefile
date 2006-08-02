@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/06/18 14:22:26 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2006/08/02 10:10:35 espie Exp $
 
 COMMENT=	"document viewer for multiple document formats"
 
@@ -21,10 +21,10 @@ BUILD_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser \
 		:gnome-doc-utils-*:x11/gnome/doc-utils \
 		:ghostscript-*:print/ghostscript/gnu \
 		:teTeX_base-*:print/teTeX/base
-LIB_DEPENDS=	poppler.1,poppler-glib.1::print/poppler \
+LIB_DEPENDS=	poppler.>=1,poppler-glib.>=1::print/poppler \
 		gnomeui-2.0.0::x11/gnome/libgnomeui \
-		esd.2::audio/esound \
-		audiofile.0::devel/libaudiofile
+		esd.>=2::audio/esound \
+		audiofile::devel/libaudiofile
 RUN_DEPENDS=	:scrollkeeper-*:textproc/scrollkeeper \
 		:ghostscript-*:print/ghostscript/gnu \
 		:teTeX_base-*:print/teTeX/base

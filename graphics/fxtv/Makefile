@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2005/04/11 21:56:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2006/08/02 10:10:35 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 macppc amd64
 
@@ -13,9 +13,9 @@ EXTRACT_SUFX=	.tgz
 MASTER_SITES=	${HOMEPAGE} \
 		http://mirror.csoft.org/fxtv/
 
-LIB_DEPENDS=	tiff.35::graphics/tiff \
-		jpeg.62::graphics/jpeg \
-		Xaw3d.6.1::x11/Xaw3d
+LIB_DEPENDS=	tiff.>=35::graphics/tiff \
+		jpeg.>=62::graphics/jpeg \
+		Xaw3d.>=6.1::x11/Xaw3d
 
 RUN_DEPENDS=	:sox->=12.12:audio/sox \
 		:mpg321-*:audio/mpg321 \

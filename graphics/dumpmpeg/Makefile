@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/11/30 01:06:33 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/08/02 10:10:35 espie Exp $
 
 COMMENT=	"dump frames from mpeg-1 movies"
 
@@ -18,7 +18,7 @@ WANTLIB=		SDL X11 Xext c m pthread usbhid
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dumpmpeg/}
 
-LIB_DEPENDS=	smpeg.1.3:smpeg-*:devel/smpeg
+LIB_DEPENDS=	smpeg.>=1.3:smpeg-*:devel/smpeg
 
 USE_X11=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2005/02/19 11:20:35 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2006/08/02 10:10:35 espie Exp $
 
 COMMENT=		"Free Unix Spectrum Emulator utilities"
 
@@ -20,7 +20,7 @@ WANTLIB=		c gcrypt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fuse-emulator/}
 
 BUILD_DEPENDS=	::devel/gettext
-LIB_DEPENDS=	spectrum.3::devel/libspectrum
+LIB_DEPENDS=	spectrum.>=3::devel/libspectrum
 
 CONFIGURE_STYLE=	gnu
 

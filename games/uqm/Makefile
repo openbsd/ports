@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2006/05/12 01:27:42 jolan Exp $
+# $OpenBSD: Makefile,v 1.19 2006/08/02 10:10:35 espie Exp $
 # XXX hardcoded endian list
 
 COMMENT=		"ur-quan masters: sdl port of star control 2"
@@ -41,7 +41,7 @@ PERMIT_PACKAGE_FTP=	"content must accompany distribution of ur-quan masters"
 PERMIT_DISTFILES_CDROM=	"content must accompany distribution of ur-quan masters"
 PERMIT_DISTFILES_FTP=	"content must accompany distribution of ur-quan masters"
 
-LIB_DEPENDS=	vorbisidec.1::audio/tremor \
+LIB_DEPENDS=	vorbisidec.>=1::audio/tremor \
 		SDL_image::devel/sdl-image
 WANTLIB=	X11 Xext c m pthread usbhid z \
 		SDL

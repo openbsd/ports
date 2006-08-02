@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/08/02 10:00:49 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/08/02 10:10:35 espie Exp $
 
 COMMENT=		"plugins for digikam"
 CATEGORIES=		graphics x11 x11/kde
@@ -9,8 +9,8 @@ HOMEPAGE=		http://extragear.kde.org/apps/digikamimageplugins/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=digikam/}
 
 SHARED_ONLY=Yes
-LIB_DEPENDS+=	lib/qt3/qt-mt.3.33::x11/qt3,mt \
-		kdecore.6,kwalletclient,DCOP,kio,kdefx,kdeprint,kdesu,kdeui,kparts,kutils,kabc,vcard,kresources::x11/kde/libs3 \
+LIB_DEPENDS+=	lib/qt3/qt-mt.>=3.33::x11/qt3,mt \
+		kdecore.>=6,kwalletclient,DCOP,kio,kdefx,kdeprint,kdesu,kdeui,kparts,kutils,kabc,vcard,kresources::x11/kde/libs3 \
 		digikam::graphics/digikam
 
 MODULES=	x11/kde

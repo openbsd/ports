@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/02/14 00:35:53 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2006/08/02 10:10:35 espie Exp $
 
 COMMENT=	"x bust a move clone" 
 
@@ -17,7 +17,7 @@ WANTLIB=		ICE SM X11 c m z
 
 MASTER_SITES=		http://freesoftware.fsf.org/download/xbubble/
 
-LIB_DEPENDS=		png.2::graphics/png
+LIB_DEPENDS=		png.>=2::graphics/png
 
 USE_X11=		Yes
 USE_GMAKE=		Yes

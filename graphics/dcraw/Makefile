@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/06/11 04:12:48 hugh Exp $
+# $OpenBSD: Makefile,v 1.6 2006/08/02 10:10:35 espie Exp $
 
 COMMENT=	"digital camera RAW format conversion tool"
 
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.oxide.org/dcraw/${PKGNAME}/
 DISTFILES=	dcraw.c dcraw.1
 DIST_SUBDIR=	${PKGNAME}
 
-LIB_DEPENDS=	jpeg.6.::graphics/jpeg
+LIB_DEPENDS=	jpeg.>=6::graphics/jpeg
 
 MAINTAINER=	Bruno Rohee <rohee@openbsd.org>
 

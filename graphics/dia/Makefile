@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2006/06/13 19:27:54 steven Exp $
+# $OpenBSD: Makefile,v 1.38 2006/08/02 10:10:35 espie Exp $
 
 COMMENT=	"technical diagrams drawing tool"
 
@@ -24,9 +24,9 @@ BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
 		:p5-XML-Parser-*:textproc/p5-XML-Parser \
 		::textproc/docbook-xsl
 LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
-		art_lgpl_2.5::graphics/libart \
+		art_lgpl_2.>=5::graphics/libart \
 		popt::devel/popt \
-		xslt.1::textproc/libxslt
+		xslt.>=1::textproc/libxslt
 
 MODULES=	devel/gettext
 
