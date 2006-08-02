@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2005/02/14 00:35:53 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.9 2006/08/02 09:36:20 espie Exp $
 
 COMMENT=	"Night Stalker clone for X"
 
@@ -16,7 +16,7 @@ WANTLIB=		SDL SDL_image X11 Xext c m pthread stdc++ usbhid
 
 MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 
-LIB_DEPENDS=	gengameng.4.1::devel/gengameng \
+LIB_DEPENDS=	gengameng.>=4.1::devel/gengameng \
 		SDL_mixer::devel/sdl-mixer
 
 USE_X11=	Yes

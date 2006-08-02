@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/05/03 00:01:44 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2006/08/02 09:36:20 espie Exp $
 # XXX hardcoded endian list
 
 COMMENT=	"sega genesis emulator"
@@ -16,9 +16,9 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	"can't sell"
 PERMIT_PACKAGE_FTP=	Yes
 
-LIB_DEPENDS+=	bz2.10::archivers/bzip2 \
-		SDL.6::devel/sdl \
-		jpeg.62::graphics/jpeg
+LIB_DEPENDS+=	bz2.>=10::archivers/bzip2 \
+		SDL.>=6::devel/sdl \
+		jpeg.>=62::graphics/jpeg
 
 WANTLIB=	ICE SM X11 Xext c m pthread usbhid z
 

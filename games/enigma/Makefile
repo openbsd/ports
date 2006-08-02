@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/07/30 04:33:18 pedro Exp $
+# $OpenBSD: Makefile,v 1.11 2006/08/02 09:36:20 espie Exp $
 
 COMMENT=	"Oxyd/Rock'n'Roll clone"
 
@@ -18,7 +18,7 @@ WANTLIB=		SDL X11 Xext c m pthread stdc++ usbhid z
 MASTER_SITES=	http://savannah.nongnu.org/download/enigma/
 
 BUILD_DEPENDS= :lua->=5.1:lang/lua
-LIB_DEPENDS=	SDL_image.1::devel/sdl-image SDL_mixer.2::devel/sdl-mixer
+LIB_DEPENDS=	SDL_image.>=1::devel/sdl-image SDL_mixer.>=2::devel/sdl-mixer
 
 USE_GMAKE=	Yes
 USE_X11=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2005/11/03 16:14:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2006/08/02 09:36:20 espie Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -22,10 +22,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		GL X11 Xext c m pthread stdc++ usbhid z
 
-BUILD_DEPENDS=		nasm::devel/nasm \
-			automake-1.4::devel/automake/1.4
-LIB_DEPENDS=		SDL.:sdl-*-!no_x11:devel/sdl \
-			png.2::graphics/png
+BUILD_DEPENDS=		::devel/nasm \
+			::devel/automake/1.4
+LIB_DEPENDS=		SDL:sdl-*-!no_x11:devel/sdl \
+			png.>=2::graphics/png
 
 USE_X11=		Yes
 

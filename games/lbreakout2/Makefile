@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2005/11/03 18:28:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2006/08/02 09:36:20 espie Exp $
 
 COMMENT=	"breakout game with many levels, powerups, good graphics" 
 
@@ -18,7 +18,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lgames/}
 
 LIB_DEPENDS=	SDL::devel/sdl \
 		SDL_mixer::devel/sdl-mixer \
-		png.2.0::graphics/png
+		png.>=2.0::graphics/png
 		
 AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE=autoconf

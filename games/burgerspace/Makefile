@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/11/28 22:41:15 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2006/08/02 09:36:20 espie Exp $
 
 COMMENT=	"burgertime clone for X"
 
@@ -17,7 +17,7 @@ WANTLIB=		SDL X11 Xext c m pthread stdc++ usbhid
 
 MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 
-LIB_DEPENDS=	gengameng.4.1::devel/gengameng \
+LIB_DEPENDS=	gengameng.>=4.1::devel/gengameng \
 		SDL_mixer::devel/sdl-mixer \
 		SDL_image::devel/sdl-image
 

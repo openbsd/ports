@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/07/19 15:11:53 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2006/08/02 09:36:20 espie Exp $
 
 COMMENT=	"Settlers of Catan for GNOME/Gtk"
 
@@ -19,7 +19,7 @@ WANTLIB=		ICE SM X11 Xext Xi audiofile c esd gdk gdk_imlib \
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gnocatan/}
 
-LIB_DEPENDS=	art_lgpl.4,gnome.36,gnomeui.46,gnomesupport.0::x11/gnome/libs
+LIB_DEPENDS=	art_lgpl.>=4,gnome.>=36,gnomeui.>=46,gnomesupport::x11/gnome/libs
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

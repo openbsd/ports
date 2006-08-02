@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/06/12 13:38:00 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/08/02 09:36:20 espie Exp $
 
 COMMENT= 		"billiard game"
 CATEGORIES=		x11 x11/kde games
@@ -9,7 +9,7 @@ HOMEPAGE=		http://www.hostnotfound.it/kbilliards.php
 MASTER_SITES=		http://www.hostnotfound.it/kbilliards/
 EXTRACT_SUFX=		.tar.bz2
 
-LIB_DEPENDS=		kdecore.6,kdesu,kdeui,DCOP,kdeprint,kio,kwalletclient,kdefx,artskde,kparts::x11/kde/libs3
+LIB_DEPENDS=		kdecore.>=6,kdesu,kdeui,DCOP,kdeprint,kio,kwalletclient,kdefx,artskde,kparts::x11/kde/libs3
 WANTLIB=		m stdc++ ICE X11 z SM Xext util c ossaudio \
 			Xrender pthread jpeg png ogg vorbis vorbisenc \
 			vorbisfile mad qtmcop intl iconv mcop esd \

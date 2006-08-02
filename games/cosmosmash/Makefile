@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/11/28 23:32:06 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/08/02 09:36:20 espie Exp $
 
 COMMENT=	"astrosmash clone for X"
 
@@ -17,7 +17,7 @@ WANTLIB=		SDL SDL_image X11 Xext c m pthread stdc++ usbhid
 
 MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 
-LIB_DEPENDS=	gengameng.4.1::devel/gengameng \
+LIB_DEPENDS=	gengameng.>=4.1::devel/gengameng \
 		SDL_mixer::devel/sdl-mixer
 
 USE_X11=	Yes

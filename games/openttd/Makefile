@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/06/04 14:30:29 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2006/08/02 09:36:20 espie Exp $
 
 COMMENT=	"open source clone of the game Transport Tycoon Deluxe"
 DISTNAME=	openttd-0.4.7-source
@@ -20,7 +20,7 @@ WANTLIB=		X11 Xext c m pthread usbhid z
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=openttd/}
 
 LIB_DEPENDS=		SDL::devel/sdl \
-			png.2::graphics/png
+			png.>=2::graphics/png
 
 MAKE_ENV+=		WITH_ZLIB=1 WITH_PNG=1 INSTALL=1 VERBOSE=1 \
 			DATA_DIR=share/openttd \

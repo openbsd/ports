@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/11/27 10:39:14 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/08/02 09:36:20 espie Exp $
 
 COMMENT=	"UAE amiga emulator"
 DISTNAME=	uae-0.8.21
@@ -25,8 +25,8 @@ CFLAGS+=	-O0
 .endif
 
 MODULES=	devel/gettext
-LIB_DEPENDS+=	glib.1.2,gmodule.1.2::devel/glib \
-		gtk.1.2,gdk.1.2::x11/gtk+
+LIB_DEPENDS+=	glib.>=1.2,gmodule.>=1.2::devel/glib \
+		gtk.>=1.2,gdk.>=1.2::x11/gtk+
 
 NO_REGRESS=	Yes
 

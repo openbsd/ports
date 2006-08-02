@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/07/14 05:20:45 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2006/08/02 09:36:20 espie Exp $
 
 COMMENT=		"Bomberman clone for GNOME"
 
@@ -21,11 +21,11 @@ WANTLIB=		ICE SM X11 Xext Xi c esd gdk gdk_imlib gtk jpeg m \
 MASTER_SITES=		${HOMEPAGE}packages/
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	gdk_pixbuf.2::graphics/gdk-pixbuf \
-		audiofile.0::devel/libaudiofile \
-		glib.1,gmodule.1::devel/glib \
-	 	ungif.5::graphics/libungif \
-		art_lgpl.4,gnome.36,gnomeui.46,gnomesupport.0::x11/gnome/libs
+LIB_DEPENDS=	gdk_pixbuf.>=2::graphics/gdk-pixbuf \
+		audiofile::devel/libaudiofile \
+		glib.>=1,gmodule.>=1::devel/glib \
+	 	ungif.>=5::graphics/libungif \
+		art_lgpl.>=4,gnome.>=36,gnomeui.>=46,gnomesupport::x11/gnome/libs
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes

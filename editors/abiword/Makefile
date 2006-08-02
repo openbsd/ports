@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2006/08/01 23:39:08 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2006/08/02 09:36:20 espie Exp $
 
 COMMENT=	"free cross-platform WYSIWYG word processor"
 
@@ -27,7 +27,7 @@ WANTLIB=	ICE SM X11 Xext Xft Xrender art_lgpl_2.0.0 atk-1.0.0.0 c \
 		fontconfig freetype glade-2.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 \
 		gnomecanvas-2.0.0 gnomeprint-2-2.0.0 gobject-2.0.0.0 \
 		gthread-2.0.0.0 m pango-1.0.0.0 pangocairo-1.0.0.0 cairo \
-		pangoft2-1.0.0.0 pangoxft-1.0.0.0 png popt.0 pthread stdc++ \
+		pangoft2-1.0.0.0 pangoxft-1.0.0.0 png popt pthread stdc++ \
 		xml2.>=9 z
 
 MASTER_SITES=   ${HOMEPAGE}/downloads/abiword/${VERSION}/source/

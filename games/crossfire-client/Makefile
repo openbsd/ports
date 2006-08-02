@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2005/02/12 19:24:22 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2006/08/02 09:36:20 espie Exp $
 
 COMMENT=	"graphical networked AD&D style game"
 
@@ -21,10 +21,10 @@ WANTLIB=		X11 Xext Xi c glib gmodule iconv intl m pthread usbhid z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=crossfire/}
 
-LIB_DEPENDS=   	gtk.1.2,gdk.1.2::x11/gtk+ \
-	        png.1::graphics/png \
-		SDL.1::devel/sdl \
-		SDL_image.1::devel/sdl-image
+LIB_DEPENDS=   	gtk.>=1.2,gdk.>=1.2::x11/gtk+ \
+	        png.>=1::graphics/png \
+		SDL.>=1::devel/sdl \
+		SDL_image.>=1::devel/sdl-image
 
 CONFIGURE_ARGS=	--disable-gnome	
 

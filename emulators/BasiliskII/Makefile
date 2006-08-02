@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/02/04 10:12:53 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2006/08/02 09:36:20 espie Exp $
 # $RuOBSD: Makefile,v 1.4 2002/04/29 11:07:18 grange Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2001/12/29 00:22:02 abs Exp $
 
@@ -22,8 +22,8 @@ WANTLIB=		ICE SM X11 Xext Xi Xxf86dga Xxf86vm audiofile c \
 
 MASTER_SITES=		http://basilisk.cebix.net/downloads/
 
-LIB_DEPENDS=		gtk.1.2,gdk::x11/gtk+ \
-			esd.2::audio/esound
+LIB_DEPENDS=		gtk.>=1.2,gdk::x11/gtk+ \
+			esd.>=2::audio/esound
 
 USE_X11=		Yes
 USE_GMAKE=		Yes

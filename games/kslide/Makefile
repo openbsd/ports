@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/06/12 14:32:48 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/08/02 09:36:20 espie Exp $
 
 COMMENT=	"puzzle game for KDE"
 
@@ -21,7 +21,7 @@ MASTER_SITES=	http://david.bieder.free.fr/eric/taquin/ \
 		http://perso.wanadoo.fr/coquelle/taquin/
 EXTRACT_SUFX=	.tar.bz2
 
-LIB_DEPENDS=	kdecore.4,DCOP,kdefx,kdesu,kdeui,kio,kwalletclient::x11/kde/libs3
+LIB_DEPENDS=	kdecore.>=4,DCOP,kdefx,kdesu,kdeui,kio,kwalletclient::x11/kde/libs3
 
 MODULES=	x11/qt3
 MODQT_MT=	Yes

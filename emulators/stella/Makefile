@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/02/07 17:38:41 niallo Exp $
+# $OpenBSD: Makefile,v 1.4 2006/08/02 09:36:20 espie Exp $
 
 COMMENT=		"Atari 2600 VCS emulator"
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=stella/}
 
 WANTLIB=		usbhid c stdc++ Xext m X11 z pthread
-LIB_DEPENDS=		SDL.1.2::devel/sdl png.2::graphics/png
+LIB_DEPENDS=		SDL.>=1.2::devel/sdl png.>=2::graphics/png
 
 CXXFLAGS+=		-I${LOCALBASE}/include/libpng \
 			-I${X11BASE}/include

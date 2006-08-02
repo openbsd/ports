@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2005/08/10 05:24:09 jolan Exp $
+# $OpenBSD: Makefile,v 1.7 2006/08/02 09:36:20 espie Exp $
 
 BROKEN=		"problems loading data files; crashes"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=   Yes
 USE_GMAKE=	Yes
 USE_X11=	Yes
 
-LIB_DEPENDS=	SDL.4::devel/sdl
+LIB_DEPENDS=	SDL.>=4::devel/sdl
 
 WANTLIB=	GL GLU ICE SM X11 Xext c m ncurses pthread stdc++ usbhid z
 
