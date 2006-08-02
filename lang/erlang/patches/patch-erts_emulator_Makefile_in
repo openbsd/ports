@@ -1,7 +1,19 @@
-$OpenBSD: patch-erts_emulator_Makefile_in,v 1.1 2006/04/02 16:52:04 steven Exp $
---- erts/emulator/Makefile.in.orig	Tue Mar  7 15:24:20 2006
-+++ erts/emulator/Makefile.in	Sun Apr  2 08:11:31 2006
-@@ -672,7 +672,7 @@ $(OBJDIR)/%.o: hipe/%.S
+$OpenBSD: patch-erts_emulator_Makefile_in,v 1.2 2006/08/02 17:21:19 steven Exp $
+--- erts/emulator/Makefile.in.orig	Mon May 15 15:06:30 2006
++++ erts/emulator/Makefile.in	Tue Aug  1 09:31:04 2006
+@@ -202,9 +202,9 @@ PERL    = @PERL@
+ 
+ ifeq ($(CC), gcc)
+ ifeq (@EMU_LOCK_CHECKING@,yes)
+-GEN_OPT_FLGS = -O3 -fno-inline-functions
++GEN_OPT_FLGS = -fno-inline-functions
+ else
+-GEN_OPT_FLGS = -O3 -fomit-frame-pointer
++GEN_OPT_FLGS = -fomit-frame-pointer
+ endif
+ UNROLL_FLG = -funroll-loops
+ else
+@@ -779,7 +775,7 @@ $(OBJDIR)/%.o: hipe/%.S
  	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
  
  $(OBJDIR)/%.o: hipe/%.c

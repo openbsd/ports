@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_dialyzer_src_dialyzer_hrl_src,v 1.1 2006/08/02 17:21:19 steven Exp $
+$FreeBSD: ports/lang/erlang/files/patch-lib_dialyzer_src_dialyzer.hrl.src,v 1.1 2006/05/28 14:20:46 olgeni Exp $
+
+--- lib/dialyzer/src/dialyzer.hrl.src.orig	Wed May  3 10:13:51 2006
++++ lib/dialyzer/src/dialyzer.hrl.src	Fri Jul 28 20:14:38 2006
+@@ -22,7 +22,7 @@
+ 
+ %% Values will be set by the Makefile
+ -define(DEFAULT_LIBS, %DEF_LIBS%).
+--define(DIALYZER_DIR, %DIALYZER_DIR%).
++-define(DIALYZER_DIR, code:lib_dir (dialyzer)).
+ 
+ -record(analysis, {analysis_pid, core_transform=cerl_typean,
+ 		   defines=[], doc_plt,

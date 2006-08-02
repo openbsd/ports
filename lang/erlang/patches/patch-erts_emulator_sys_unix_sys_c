@@ -1,7 +1,7 @@
-$OpenBSD: patch-erts_emulator_sys_unix_sys_c,v 1.1 2006/04/02 16:52:04 steven Exp $
---- erts/emulator/sys/unix/sys.c.orig	Tue Mar  7 15:24:29 2006
-+++ erts/emulator/sys/unix/sys.c	Sun Apr  2 09:05:33 2006
-@@ -212,8 +212,8 @@ static int              kqueue_fd;
+$OpenBSD: patch-erts_emulator_sys_unix_sys_c,v 1.2 2006/08/02 17:21:19 steven Exp $
+--- erts/emulator/sys/unix/sys.c.orig	Thu May 11 15:20:12 2006
++++ erts/emulator/sys/unix/sys.c	Wed May 17 16:06:25 2006
+@@ -215,8 +215,8 @@ static int              kqueue_fd;
  static struct kevent    *kqueue_res;
  static int              max_poll_idx;   /* highest non kqueue fd */
  

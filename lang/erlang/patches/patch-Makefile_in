@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2006/04/02 16:52:04 steven Exp $
---- Makefile.in.orig	Tue Mar  7 15:26:09 2006
-+++ Makefile.in	Thu Mar 16 17:03:01 2006
+$OpenBSD: patch-Makefile_in,v 1.5 2006/08/02 17:21:19 steven Exp $
+--- Makefile.in.orig	Fri May 12 16:43:44 2006
++++ Makefile.in	Tue Aug  1 12:12:53 2006
 @@ -49,8 +49,7 @@ exec_prefix = @exec_prefix@
  # useful e.g. when installing on a server that stores the files with a
  # different path from where the clients access them. Or when building
@@ -9,9 +9,9 @@ $OpenBSD: patch-Makefile_in,v 1.4 2006/04/02 16:52:04 steven Exp $
 -# Naah...override `prefix' instead.
 +INSTALL_PREFIX = $(DESTDIR)
  
- # The directory in which user executables (erl, erlc and erl_call) are put
+ # The directory in which user executables (ERL_BASE_PUB_FILES) are put
  BINDIR      = $(INSTALL_PREFIX)@bindir@
-@@ -520,7 +519,7 @@ else
+@@ -539,7 +538,7 @@ else
  endif
  
  install.Install:
@@ -19,23 +19,13 @@ $OpenBSD: patch-Makefile_in,v 1.4 2006/04/02 16:52:04 steven Exp $
 +	cd $(ERLANG_LIBDIR) && ./Install -minimal $(ERLANG_ILIBDIR)
  
  #
- # Erlang base public files
-@@ -528,12 +527,12 @@ install.Install:
+ # Install erlang base public files
+@@ -547,7 +546,7 @@ install.Install:
  install.bin:
- 	rm -f $(BINDIR)/erl $(BINDIR)/erlc \
- 	      $(BINDIR)/ecc $(BINDIR)/elink $(BINDIR)/ear $(BINDIR)/escript
--	${LN_S} $(ERLANG_BINDIR)/erl      $(BINDIR)/erl
--	${LN_S} $(ERLANG_BINDIR)/erlc     $(BINDIR)/erlc
--	${LN_S} $(ERLANG_BINDIR)/ecc      $(BINDIR)/ecc
--	${LN_S} $(ERLANG_BINDIR)/elink    $(BINDIR)/elink
--	${LN_S} $(ERLANG_BINDIR)/ear      $(BINDIR)/ear
--	${LN_S} $(ERLANG_BINDIR)/escript  $(BINDIR)/escript
-+	${LN_S} $(ERLANG_ILIBDIR)/bin/erl      $(BINDIR)/erl
-+	${LN_S} $(ERLANG_ILIBDIR)/bin/erlc     $(BINDIR)/erlc
-+	${LN_S} $(ERLANG_ILIBDIR)/bin/ecc      $(BINDIR)/ecc
-+	${LN_S} $(ERLANG_ILIBDIR)/bin/elink    $(BINDIR)/elink
-+	${LN_S} $(ERLANG_ILIBDIR)/bin/ear      $(BINDIR)/ear
-+	${LN_S} $(ERLANG_ILIBDIR)/bin/escript  $(BINDIR)/escript
+ 	for file in $(ERL_BASE_PUB_FILES); do \
+ 		rm -f $(BINDIR)/$$file; \
+-		${LN_S} $(ERLANG_BINDIR)/$$file $(BINDIR)/$$file; \
++		${LN_S} $(ERLANG_ILIBDIR)/bin/$$file $(BINDIR)/$$file; \
+ 	done
  
  #
- # Directories needed before we can install

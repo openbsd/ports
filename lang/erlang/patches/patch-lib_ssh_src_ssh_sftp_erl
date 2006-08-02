@@ -1,0 +1,18 @@
+Bugfix: ssh_sftp:connect/2,3 hangs when the remote host is unknown.
+
+$OpenBSD: patch-lib_ssh_src_ssh_sftp_erl,v 1.1 2006/08/02 17:21:19 steven Exp $
+$FreeBSD: ports/lang/erlang/files/patch-lib_ssh_src_ssh__sftp.erl,v 1.1 2006/06/19 20:45:43 olgeni Exp $
+
+--- lib/ssh/src/ssh_sftp.erl.orig	Thu May  4 16:46:39 2006
++++ lib/ssh/src/ssh_sftp.erl	Fri Jul 28 20:14:38 2006
+@@ -283,8 +283,10 @@ init([CM]) ->
+ 	    {stop, Error }
+     end;
+ init([Host,Port,Opts]) ->
++    SaveFlag = process_flag(trap_exit, true),
+     case ssh_xfer:connect(Host, Port, Opts) of
+ 	{ok, Xf, RBuf} ->
++	    process_flag(trap_exit, SaveFlag),
+ 	    {ok, #state { req_id = 0, xf = Xf, rep_buf=RBuf }};
+ 	Error ->
+ 	    {stop, Error}

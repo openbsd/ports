@@ -1,6 +1,6 @@
-$OpenBSD: patch-erts_etc_unix_Install_src,v 1.2 2006/04/02 16:52:04 steven Exp $
---- erts/etc/unix/Install.src.orig	Fri Dec  2 16:07:40 2005
-+++ erts/etc/unix/Install.src	Thu Mar 23 00:00:17 2006
+$OpenBSD: patch-erts_etc_unix_Install_src,v 1.3 2006/08/02 17:21:19 steven Exp $
+--- erts/etc/unix/Install.src.orig	Wed May  3 09:57:33 2006
++++ erts/etc/unix/Install.src	Wed May 17 16:06:25 2006
 @@ -8,7 +8,8 @@ while [ $# -ne 0 ]; do
  	case $1 in
  		-minimal) start_option=minimal ;;
@@ -37,7 +37,7 @@ $OpenBSD: patch-erts_etc_unix_Install_src,v 1.2 2006/04/02 16:52:04 steven Exp $
    chmod 755 start)
  
  cd $ERL_ROOT/bin
-@@ -84,7 +85,7 @@ if [ -h epmd ]; then
+@@ -85,7 +86,7 @@ if [ -h epmd ]; then
    /bin/rm -f epmd
  fi
  
@@ -46,7 +46,7 @@ $OpenBSD: patch-erts_etc_unix_Install_src,v 1.2 2006/04/02 16:52:04 steven Exp $
  
  cp -p $ERL_ROOT/erts-%I_VSN%/bin/run_erl .
  cp -p $ERL_ROOT/erts-%I_VSN%/bin/to_erl .
-@@ -94,7 +95,7 @@ chmod 755 start_erl
+@@ -95,7 +96,7 @@ chmod 755 start_erl
  echo ""
  
  echo %I_VSN% %I_SYSTEM_VSN% > $ERL_ROOT/releases/start_erl.data
@@ -55,7 +55,7 @@ $OpenBSD: patch-erts_etc_unix_Install_src,v 1.2 2006/04/02 16:52:04 steven Exp $
  
  if [ "$start_option" = "query" ]
  then
-@@ -133,16 +134,4 @@ if [ "X$TARGET" != "Xsunos5" -a -d $ERL_
+@@ -134,16 +135,4 @@ if [ "X$TARGET" != "Xsunos5" -a -d $ERL_
  	(ranlib $library) > /dev/null 2>&1
      done
  fi

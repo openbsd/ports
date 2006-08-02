@@ -1,0 +1,38 @@
+$OpenBSD: patch-lib_dialyzer_src_Makefile,v 1.1 2006/08/02 17:21:19 steven Exp $
+$FreeBSD: ports/lang/erlang/files/patch-lib_dialyzer_src_Makefile,v 1.1 2006/05/28 14:20:46 olgeni Exp $
+
+--- lib/dialyzer/src/Makefile.orig	Thu May  4 16:45:13 2006
++++ lib/dialyzer/src/Makefile	Fri Jul 28 20:14:38 2006
+@@ -65,7 +65,7 @@ MODULES =  \
+ 	dialyzer_plt \
+ 	dialyzer_typesig
+ 
+-EXTRA_FILES= dialyzer.hrl ../plt/dialyzer_init_plt	## automatically generated
++EXTRA_FILES= dialyzer.hrl				## automatically generated
+ 
+ ERL_FILES= $(MODULES:%=%.erl)
+ INSTALL_FILES= $(MODULES:%=$(EBIN)/%.$(EMULATOR)) $(APP_TARGET) $(APPUP_TARGET)
+@@ -89,7 +89,7 @@ ERL_COMPILE_FLAGS += -I$(HIPE_ICODE_DIR)
+ # Targets
+ # ----------------------------------------------------
+ 
+-debug opt: $(TARGET_FILES) $(DIALYZER_DIR)/plt/dialyzer_init_plt
++debug opt: $(TARGET_FILES)
+ 
+ docs:
+ 
+@@ -125,7 +125,6 @@ $(APPUP_TARGET): $(APPUP_SRC) ../vsn.mk
+ dialyzer.hrl: dialyzer.hrl.src ../vsn.mk Makefile
+ 	sed -e "s;%VSN%;$(VSN);" \
+ 	    -e "s;%DEF_LIBS%;\[$(DIALYZER_DEF_LIBS)\];" \
+-	    -e "s;%DIALYZER_DIR%;\"$(DIALYZER_DIR)\";" \
+ 		$< > $@
+ 
+ # ---------------------------------------------------------------------
+@@ -155,6 +154,5 @@ release_spec: opt
+ 	$(INSTALL_DIR) $(RELSYSDIR)/ebin
+ 	$(INSTALL_DATA) $(INSTALL_FILES) $(RELSYSDIR)/ebin
+ 	$(INSTALL_DIR) $(RELSYSDIR)/plt
+-	$(INSTALL_DATA) ../plt/dialyzer_init_plt $(RELSYSDIR)/plt
+ 
+ release_docs_spec:

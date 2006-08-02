@@ -1,0 +1,12 @@
+$OpenBSD: patch-erts_lib_src_Makefile_in,v 1.1 2006/08/02 17:21:19 steven Exp $
+--- erts/lib_src/Makefile.in.orig	Wed May  3 10:09:21 2006
++++ erts/lib_src/Makefile.in	Mon Jul 31 13:04:52 2006
+@@ -37,7 +37,7 @@ ifeq ($(CC), gcc)
+ OMIT_FP=-fomit-frame-pointer
+ endif
+ 
+-CFLAGS=$(subst O2,O3 $(OMIT_FP), @CFLAGS@)
++CFLAGS=$(OMIT_FP) @CFLAGS@
+ 
+ ifeq ($(TYPE),debug)
+ CFLAGS=@DEBUG_CFLAGS@ -DDEBUG
