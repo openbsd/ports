@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/07/30 22:25:41 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2006/08/02 12:15:00 jasper Exp $
 
 COMMENT=	"viewer for IETF RFCs"
 
@@ -18,8 +18,7 @@ WANTLIB=	ICE Xrender SM freetype c pthread stdc++ Xrandr \
 		Xinerama Xcursor Xext m Xi fontconfig X11 z QtGui \
 		QtNetwork png
 
-MASTER_SITES=	http://download.berlios.de/qrfcview/ \
-		http://download2.berlios.de/qrfcview/
+MASTER_SITES=	${MASTER_SITE_BERLIOS:=qrfcview/}
 EXTRACT_SUFX=	.tgz
 
 
