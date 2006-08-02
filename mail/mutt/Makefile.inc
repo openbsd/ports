@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.21 2006/03/22 12:43:09 bernd Exp $
+# $OpenBSD: Makefile.inc,v 1.22 2006/08/02 14:30:09 bernd Exp $
 
 CATEGORIES=	mail
 
@@ -25,6 +25,7 @@ WANTLIB=	c crypto des ssl
 FLAVORS+=	slang mixmaster compressed
 FLAVOR?=
 
+AUTOCONF_VERSION?= 2.59
 CONFIGURE_STYLE= autoconf old
 CONFIGURE_ARGS=	--with-sharedir="${PREFIX}/share/mutt" \
 		--with-docdir="${PREFIX}/share/doc/mutt" \
@@ -70,10 +71,10 @@ RUN_DEPENDS+=		::mail/mixmaster
 .endif
 
 .if ${FLAVOR:L:Mhcache}
-CONFIGURE_ARGS+=	--enable-hcache
+CONFIGURE_ARGS+=	--enable-hcache --without-qdbm
 LIB_DEPENDS+=		gdbm.2::databases/gdbm
 .else
-CONFIGURE_ARGS+=	--without-gdbm
+CONFIGURE_ARGS+=	--without-gdbm --without-qdbm
 .endif
 
 .if ${FLAVOR:L:Midn}
@@ -84,10 +85,10 @@ CONFIGURE_ARGS+=	--without-idn
 .endif
 
 .if ${FLAVOR:L:Msidebar}
-PATCHFILES+=		patch-1.5.10i.sidebar.20050816.txt-fixed:1
+PATCHFILES+=		patch-1.5.12.sidebar.20060720.txt-fixed:1
 PATCH_DIST_STRIP=	-p1
 .else
-SUPDISTFILES+=		patch-1.5.10i.sidebar.20050816.txt-fixed:1
+SUPDISTFILES+=		patch-1.5.12.sidebar.20060720.txt-fixed:1
 .endif
 
 .if defined(HOMESPOOL)

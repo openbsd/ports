@@ -1,23 +1,23 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.4 2005/09/29 17:25:28 bernd Exp $
---- doc/Makefile.in.orig	Thu Sep 15 16:19:54 2005
-+++ doc/Makefile.in	Tue Sep 27 15:52:56 2005
-@@ -68,7 +68,7 @@ topsrcdir_DOCFILES = COPYRIGHT GPL INSTA
- 	ChangeLog.old					\
- 	README NEWS TODO README.SECURITY README.SSL 
+$OpenBSD: patch-doc_Makefile_in,v 1.5 2006/08/02 14:30:09 bernd Exp $
+--- doc/Makefile.in.orig	Wed Jul  5 10:40:07 2006
++++ doc/Makefile.in	Sat Jul 15 11:08:39 2006
+@@ -71,7 +71,7 @@ topsrcdir_DOCFILES = COPYRIGHT GPL INSTA
+ all: ../makedoc$(EXEEXT)
+ 	$(MAKE) makedoc-all
  
--all: mutt.1 muttrc.man manual.html stamp-doc-chunked manual.txt
-+all: mutt.1 muttrc.man
+-makedoc-all: mutt.1 muttrc.man manual.html stamp-doc-chunked manual.txt
++makedoc-all: mutt.1 muttrc.man
  
- install: all instdoc
+ install: makedoc-all instdoc
  	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1
-@@ -169,8 +169,8 @@ update-doc:  ../makedoc$(EXEEXT) stamp-d
+@@ -171,8 +171,8 @@ update-doc: stamp-doc-xml stamp-doc-chun
  
- muttrc.man stamp-doc-man: ../makedoc$(EXEEXT) $(top_srcdir)/init.h muttrc.man.head muttrc.man.tail
+ muttrc.man: ../makedoc$(EXEEXT) $(top_srcdir)/init.h muttrc.man.head muttrc.man.tail
  	$(MAKEDOC_CPP) $(top_srcdir)/init.h | ../makedoc -m | 	    \
 -		cat $(srcdir)/muttrc.man.head - $(srcdir)/muttrc.man.tail\
 -		> muttrc.man
 +		cat $(srcdir)/muttrc.man.head - $(srcdir)/muttrc.man.tail | \
 +		/usr/bin/tbl > muttrc.man
- 	touch stamp-doc-man
  
  EDIT = sed -e 's,@sysconfdir\@,$(sysconfdir),g' \
+ 	-e 's,@bindir\@,$(bindir),g' \

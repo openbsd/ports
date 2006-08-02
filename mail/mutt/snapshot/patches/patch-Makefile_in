@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.3 2006/08/02 14:30:09 bernd Exp $
+--- Makefile.in.orig	Fri Jul 14 20:21:03 2006
++++ Makefile.in	Fri Jul 21 18:08:41 2006
+@@ -939,7 +939,7 @@ info: info-recursive
+ 
+ info-am:
+ 
+-install-data-am: install-data-local
++install-data-am: Muttrc
+ 
+ install-exec-am: install-binPROGRAMS install-binSCRIPTS
+ 	@$(NORMAL_INSTALL)
