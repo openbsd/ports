@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2006/07/19 21:40:47 robert Exp $
+# $OpenBSD: Makefile,v 1.100 2006/08/02 08:24:34 alek Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -7,7 +7,7 @@ COMMENT=		"Movie player supporting MPEG, DivX, AVI, ASF, MOV & more"
 
 DISTNAME=		MPlayer-1.0pre8
 DIST_SUBDIR=		mplayer
-PKGNAME=		${DISTNAME:L}
+PKGNAME=		${DISTNAME:L}p0
 CATEGORIES=		x11
 EXTRACT_SUFX=		.tar.bz2
 
@@ -38,7 +38,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SKIN}-${SKINVER}${EXTRACT_SUFX}:0
 
 .include <bsd.own.mk>
 
-MODULES= converters/libiconv
+MODULES=	converters/libiconv
 
 LIB_DEPENDS=	png::graphics/png \
 		jpeg::graphics/jpeg \
@@ -46,7 +46,8 @@ LIB_DEPENDS=	png::graphics/png \
 		cdda_paranoia,cdda_interface:cdparanoia->=3.a9.8:audio/cdparanoia \
 		theora::multimedia/libtheora \
 		speex::audio/speex \
-		mpcdec::audio/libmpcdec
+		mpcdec::audio/libmpcdec \
+		vorbis::audio/libvorbis
 
 CONFDIR=	${SYSCONFDIR}/mplayer
 SUBST_VARS=	CONFDIR
@@ -63,6 +64,8 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--disable-xvid \
 		--disable-libdv \
 		--disable-smb \
+		--disable-external-tremor \
+		--disable-internal-tremor \
 		--enable-theora \
 		--enable-select \
 		--enable-vorbis \
