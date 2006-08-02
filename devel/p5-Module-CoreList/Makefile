@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2006/06/14 22:03:24 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2006/08/02 16:14:47 jasper Exp $
 
 COMMENT=	"see what modules shipped with versions of Perl"
 
-DISTNAME=	Module-CoreList-2.05
+DISTNAME=	Module-CoreList-2.06
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,5 +18,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Module/}
 
 CONFIGURE_STYLE=perl
 PKG_ARCH=	*
+
+RUN_DEPENDS=	::devel/p5-version
 
 .include <bsd.port.mk>
