@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/09/15 09:09:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2006/08/03 15:18:40 steven Exp $
 bin/razor-admin
 bin/razor-check
 bin/razor-client
@@ -7,24 +7,26 @@ bin/razor-revoke
 ${P5ARCH}/Razor2/
 ${P5ARCH}/Razor2/Client/
 ${P5ARCH}/Razor2/Client/Agent.pm
-@comment ${P5ARCH}/Razor2/Client/Agent.pm.orig
 ${P5ARCH}/Razor2/Client/Config.pm
 ${P5ARCH}/Razor2/Client/Core.pm
 ${P5ARCH}/Razor2/Client/Engine.pm
 ${P5ARCH}/Razor2/Client/Version.pm
+${P5ARCH}/Razor2/Engine/
+${P5ARCH}/Razor2/Engine/VR8.pm
 ${P5ARCH}/Razor2/Errorhandler.pm
 ${P5ARCH}/Razor2/Logger.pm
 ${P5ARCH}/Razor2/Preproc/
 ${P5ARCH}/Razor2/Preproc/Manager.pm
-${P5ARCH}/Razor2/Preproc/VR1.pm
 ${P5ARCH}/Razor2/Preproc/deBase64.pm
 ${P5ARCH}/Razor2/Preproc/deHTML.pm
+${P5ARCH}/Razor2/Preproc/deHTML_comment.pm
 ${P5ARCH}/Razor2/Preproc/deHTMLxs.pm
 ${P5ARCH}/Razor2/Preproc/deNewline.pm
 ${P5ARCH}/Razor2/Preproc/deQP.pm
 ${P5ARCH}/Razor2/Preproc/enBase64.pm
 ${P5ARCH}/Razor2/Signature/
 ${P5ARCH}/Razor2/Signature/Ephemeral.pm
+${P5ARCH}/Razor2/Signature/Whiplash.pm
 ${P5ARCH}/Razor2/String.pm
 ${P5ARCH}/Razor2/Syslog.pm
 ${P5ARCH}/auto/Razor2/

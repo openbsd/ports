@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_PL,v 1.1 2006/08/03 15:18:40 steven Exp $
+--- Makefile.PL.orig	Thu Aug  3 17:11:22 2006
++++ Makefile.PL	Thu Aug  3 17:11:36 2006
+@@ -57,7 +57,7 @@ MAN5PODS = docs/razor-agent.conf.pod \
+ 	   docs/razor-whitelist.pod  \
+ 	   docs/razor-agents.pod
+ INST_MAN5DIR = blib/man5
+-INSTALLMAN5DIR = $(DESTDIR)$(PREFIX)/share/man/man5
++INSTALLMAN5DIR = $(DESTDIR)$(PREFIX)/man/man5
+ INSTALLSITEMAN5DIR = $(DESTDIR)$(SITEPREFIX)/share/man/man5
+ INSTALLVENDORMAN5DIR = $(DESTDIR)$(VENDORPREFIX)/share/man/man5
+ MAN5EXT = 5

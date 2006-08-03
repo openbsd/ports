@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2005/07/06 23:18:11 jolan Exp $
+# $OpenBSD: Makefile,v 1.16 2006/08/03 15:18:40 steven Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=		"agent for Razor spam filtering networks"
 
-DISTNAME=		razor-agents-2.40
+DISTNAME=		razor-agents-2.82
 CATEGORIES=		mail
 HOMEPAGE=		http://razor.sourceforge.net/
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=razor/}
+EXTRACT_SUFX=		.tar.bz2
 
 RUN_DEPENDS=		:p5-Digest-SHA1->=1.0:security/p5-Digest-SHA1 \
 			:p5-Net-DNS->=0.23:net/p5-Net-DNS \
@@ -24,12 +25,5 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 FAKE_FLAGS=		${DESTDIRNAME}=${WRKINST} PERL5LIB=${WRKINST}/${PREFIX}/${P5ARCH}
 
 CONFIGURE_STYLE= 	perl
-
-post-install:
-	@ln -s razor-client ${PREFIX}/bin/razor-check
-	@ln -s razor-client ${PREFIX}/bin/razor-report
-	@ln -s razor-client ${PREFIX}/bin/razor-revoke
-	@ln -s razor-client ${PREFIX}/bin/razor-admin
-	${INSTALL_MAN} ${WRKSRC}/blib/man5/*.5 ${PREFIX}/man/man5
 
 .include <bsd.port.mk>
