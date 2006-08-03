@@ -1,6 +1,0 @@
-$OpenBSD: README.OpenBSD,v 1.1.1.1 2002/01/05 15:28:10 reinhard Exp $
-
-Jakarta Tomcat on OpenBSD uses `/etc/tomcat' for it's configuration files.
-The files in this directory are for reference and backup only.
-
-`$TOMCAT_HOME' is `/var/tomcat'.

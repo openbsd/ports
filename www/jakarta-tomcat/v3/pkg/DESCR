@@ -1,5 +1,0 @@
-Tomcat is the Java Servlet / Java Server Page environment produced
-by the Apache Foundation's Jakarta Project.  Tomcat can be run as a
-standalone web server with Servlet and JSP support, or using Apache
-Server as it's web server via the mod_jserv Apache module (the
-www/jserv package).

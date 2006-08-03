@@ -1,9 +1,0 @@
-For detailed instructions on how to run Tomcat see:
-	${PREFIX}/tomcat/doc/uguide/tomcat_ug.html
-
-For more information on application development with Tomcat, see
-	${PREFIX}/tomcat/doc/appdev/index.html
-
-Note that tomcat may be started with the following command:
-	${PREFIX}/tomcat/bin/startup.sh
-

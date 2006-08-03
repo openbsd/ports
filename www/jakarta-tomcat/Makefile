@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.7 2004/11/04 21:47:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2006/08/03 17:48:50 kurt Exp $
 
-     SUBDIR+= v3
      SUBDIR+= v4
      SUBDIR+= v5
 
