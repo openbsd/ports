@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2005/03/27 17:50:54 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2006/08/03 12:53:18 espie Exp $
 
 COMMENT=	"image viewer/manager"
 DISTNAME=	pornview-0.2.0pre1
@@ -22,7 +22,7 @@ FLAVORS=	mplayer
 FLAVOR?=
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	gdk_pixbuf.2::graphics/gdk-pixbuf
+LIB_DEPENDS=	gdk_pixbuf.>=2::graphics/gdk-pixbuf
 
 
 .if ${FLAVOR:L:Mmplayer}

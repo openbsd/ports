@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/11/30 01:06:40 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/08/03 12:53:18 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -22,8 +22,8 @@ WANTLIB=		X11 Xext Xi gdk glib gmodule gtk iconv intl m z
 MASTER_SITES=	${HOMEPAGE} \
 		http://mirror.csoft.org/xmms-kj/
 
-LIB_DEPENDS=	xmms.2::audio/xmms \
-		png.3::graphics/png
+LIB_DEPENDS=	xmms.>=2::audio/xmms \
+		png.>=3::graphics/png
 
 WRKDIST=	${WRKDIR}/xmms-kj
 MAKE_FILE=      makefile

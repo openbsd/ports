@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/02/08 04:54:49 david Exp $
+# $OpenBSD: Makefile,v 1.9 2006/08/03 12:53:18 espie Exp $
 
 COMMENT=			"3D image rendering package"
 
@@ -22,7 +22,7 @@ DISTFILES=			povuni_s.tgz povuni_d.tgz
 EXTRACT_SUFX=			.tgz
 DIST_SUBDIR=			${PKGNAME}
 
-LIB_DEPENDS=			png.2.::graphics/png
+LIB_DEPENDS=			png.>=2.::graphics/png
 
 FLAVORS=			no_x11
 FLAVOR?=

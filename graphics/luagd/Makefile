@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/07/30 04:46:42 pedro Exp $
+# $OpenBSD: Makefile,v 1.3 2006/08/03 12:53:18 espie Exp $
 
 COMMENT=	"gd binding for the lua language"
 
@@ -19,7 +19,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	freetype fontconfig iconv m z
-LIB_DEPENDS=	jpeg.62::graphics/jpeg png.2::graphics/png gd.20.33::graphics/gd
+LIB_DEPENDS=	jpeg.>=62::graphics/jpeg png.>=2::graphics/png \
+		gd.>=20.33::graphics/gd
 BUILD_DEPENDS=	:lua->=5.1:lang/lua
 
 NO_REGRESS=	Yes

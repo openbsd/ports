@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/10/03 14:36:58 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2006/08/03 12:53:18 espie Exp $
 
 COMMENT=	"tool for extracting metadata from PNG files"
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m z
 
-LIB_DEPENDS=		png.4::graphics/png
+LIB_DEPENDS=		png.>=4::graphics/png
 
 MAKE_FILE=		${FILESDIR}/Makefile
 NO_REGRESS=		Yes

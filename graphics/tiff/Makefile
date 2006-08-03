@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2006/06/12 17:31:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2006/08/03 12:53:18 espie Exp $
 
 COMMENT=	"tools and library routines for working with TIFF images"
 
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 
 HOMEPAGE=	http://www.remotesensing.org/libtiff/
 
-LIB_DEPENDS=	jpeg.62::graphics/jpeg
+LIB_DEPENDS=	jpeg.>=62::graphics/jpeg
 WANTLIB=	c m z
 FAKE=		lib
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/06/03 09:36:00 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2006/08/03 12:53:18 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -26,7 +26,7 @@ MODULES=	lang/python
 
 MODPY_SETUP=	Setup.py
 
-LIB_DEPENDS=	gd.20::graphics/gd
+LIB_DEPENDS=	gd.>=20::graphics/gd
 
 NO_REGRESS=	Yes
 

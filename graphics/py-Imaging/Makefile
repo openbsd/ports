@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2006/06/03 09:36:00 alek Exp $
+# $OpenBSD: Makefile,v 1.29 2006/08/03 12:53:18 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -26,7 +26,7 @@ MODULES=	lang/python
 
 RUN_DEPENDS=	${MODPY_TKINTER_DEPENDS}
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	jpeg.62::graphics/jpeg \
+LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
 		tk84:tk-8.4.*:x11/tk/8.4
 
 do-configure:

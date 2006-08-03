@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2005/10/31 23:24:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2006/08/03 12:53:18 espie Exp $
 
 COMMENT=		"simple paint program"
 
@@ -17,9 +17,9 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xaw Xext Xmu Xp Xpm Xt c m z
 
 FAKE=			lib
-LIB_DEPENDS=		jpeg.62::graphics/jpeg \
-			tiff.36::graphics/tiff \
-			png.4::graphics/png
+LIB_DEPENDS=		jpeg.>=62::graphics/jpeg \
+			tiff.>=36::graphics/tiff \
+			png.>=4::graphics/png
 
 CONFIGURE_STYLE= 	imake
 ALL_TARGET=		xaw

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/01/15 13:56:15 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2006/08/03 12:53:18 espie Exp $
 
 COMMENT=	"medical image conversion"
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://xmedcon.sourceforge.net
 
 MAINTAINER=	Tom Knienieder <tom@knienieder.com>
 
-LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
+LIB_DEPENDS=	gtk.>=1.2::x11/gtk+ \
 		gdk_pixbuf::graphics/gdk-pixbuf
 		
 PERMIT_PACKAGE_CDROM=   Yes

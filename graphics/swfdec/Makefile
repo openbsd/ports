@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/06/13 13:25:31 bernd Exp $
+# $OpenBSD: Makefile,v 1.11 2006/08/03 12:53:18 espie Exp $
 
 COMMENT=	"flash rendering library"
 DISTNAME=	swfdec-0.2.2
@@ -24,9 +24,9 @@ WANTLIB=	X11 Xext Xrender atk-1.0.0.0 c fontconfig \
 BUILD_DEPENDS+=	:pkgconfig->=0.12.0p1:devel/pkgconfig
 MODULES=	devel/gettext
 LIB_DEPENDS=	SDL::devel/sdl \
-		mad.2::audio/libmad \
-		art_lgpl_2.5::graphics/libart \
-		gdk-x11-2.0.0.11,gdk_pixbuf-2.0.0.11,gtk-x11-2.0.0.11::x11/gtk+2
+		mad.>=2::audio/libmad \
+		art_lgpl_2.>=5::graphics/libart \
+		gdk-x11-2.0.>=0.11,gdk_pixbuf-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2005/09/06 23:30:53 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.31 2006/08/03 12:53:18 espie Exp $
 
 COMMENT=	"CAD drawing program for X11"
 
@@ -20,9 +20,9 @@ MASTER_SITES=	http://www.xfig.org/software/xfig/${VERSION}/ \
 		ftp://www-epb.lbl.gov/xfig/previous_versions/
 
 FAKE=		lib
-LIB_DEPENDS=	jpeg.62::graphics/jpeg \
-		png.2::graphics/png \
-		Xaw3d.6.1::x11/Xaw3d
+LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
+		png.>=2::graphics/png \
+		Xaw3d.>=6.1::x11/Xaw3d
 RUN_DEPENDS=	::print/transfig \
 		::textproc/xpdf
 

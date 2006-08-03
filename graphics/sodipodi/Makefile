@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/06/13 13:25:31 bernd Exp $
+# $OpenBSD: Makefile,v 1.7 2006/08/03 12:53:18 espie Exp $
 
 COMMENT=		"SVG vector drawing application."
 
@@ -27,9 +27,9 @@ MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
-			art_lgpl_2.5::graphics/libart \
-			popt.0.3::devel/popt \
-			xml2.9.0::textproc/libxml
+			art_lgpl_2.>=5::graphics/libart \
+			popt.>=0.3::devel/popt \
+			xml2.>=9.0::textproc/libxml
 
 USE_X11=		Yes
 USE_GMAKE=		Yes

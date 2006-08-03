@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/07/19 15:11:53 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2006/08/03 12:53:18 espie Exp $
 
 COMMENT=	"MPEG and VCD video playback in XMMS"
 SHARED_ONLY=	Yes
@@ -19,8 +19,8 @@ WANTLIB=		usbhid SDL Xext X11 m
 
 MASTER_SITES=	http://mirror.csoft.org/smpeg-xmms/
 
-LIB_DEPENDS=	xmms.2::audio/xmms \
-		smpeg.1.3::devel/smpeg
+LIB_DEPENDS=	xmms.>=2::audio/xmms \
+		smpeg.>=1.3::devel/smpeg
 
 USE_X11=	Yes
 

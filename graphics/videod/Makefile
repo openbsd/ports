@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2005/03/12 03:43:01 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2006/08/03 12:53:18 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 macppc amd64
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-LIB_DEPENDS=	jpeg.62::graphics/jpeg
+LIB_DEPENDS=	jpeg.>=62::graphics/jpeg
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/videod ${PREFIX}/bin

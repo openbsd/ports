@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/07/11 06:03:40 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/08/03 12:53:18 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,7 +23,7 @@ MASTER_SITES=	http://cairographics.org/releases/
 WANTLIB=	freetype
 
 MODULES=	lang/python
-LIB_DEPENDS=	cairo.4::graphics/cairo
+LIB_DEPENDS=	cairo.>=4::graphics/cairo
 RUN_DEPENDS=	:py-Numeric-*:math/py-Numeric
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		:pkgconfig-*:devel/pkgconfig

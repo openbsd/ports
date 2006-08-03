@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/01/23 06:19:12 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2006/08/03 12:53:18 espie Exp $
 
 COMMENT=		"commandline screen capture util"
 
@@ -19,8 +19,8 @@ WANTLIB=		X11 Xext c freetype m
 
 MASTER_SITES=		http://www.linuxbrit.co.uk/downloads/
 
-LIB_DEPENDS=            giblib.1::devel/giblib \
-			Imlib2.1::graphics/imlib2
+LIB_DEPENDS=            giblib.>=1::devel/giblib \
+			Imlib2.>=1::graphics/imlib2
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu

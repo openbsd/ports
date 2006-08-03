@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/06/13 13:25:31 bernd Exp $
+# $OpenBSD: Makefile,v 1.16 2006/08/03 12:53:18 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -34,7 +34,7 @@ RUN_DEPENDS=	::math/py-Numeric \
 		::devel/py-dateutil
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		::devel/pkgconfig
-LIB_DEPENDS=	png.3::graphics/png
+LIB_DEPENDS=	png.>=3::graphics/png
 
 MAKE_ENV+=      EXTRA_INCLUDES="${WRKSRC} ${LOCALBASE}/include/libpng"
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/07/21 10:31:47 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2006/08/03 12:53:18 espie Exp $
 
 COMMENT=	"API for accessing scanners, frontends"
 
@@ -24,12 +24,12 @@ MASTER_SITES=	ftp://ftp.sane-project.org/pub/sane/${DISTNAME}/ \
 WANTLIB=	c X11 m freetype fontconfig pthread tiff \
 		jpeg pango-1.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 \
 		gobject-2.0.0.0 pangocairo-1.0.0.0 pangoft2-1.0.0.0 \
-		atk-1.0.0.0 usb gphoto2.2 gphoto2_port.5 cairo
+		atk-1.0.0.0 usb gphoto2.>=2 gphoto2_port.>=5 cairo
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
-		sane.1::graphics/sane-backends
+		sane.>=1::graphics/sane-backends
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
@@ -43,7 +43,7 @@ FLAVORS=	gimp
 FLAVOR?=
 
 .if ${FLAVOR:L} == "gimp"
-LIB_DEPENDS+=	gimp-2.0.200.0,gimpui-2.0.200.0,gimpmath-2.0.200.0,gimpwidgets-2.0.200.0,gimpbase-2.0.200.0,gimpcolor-2.0.200.0::graphics/gimp/stable
+LIB_DEPENDS+=	gimp-2.0.>=200.0,gimpui-2.0.>=200.0,gimpmath-2.0.>=200.0,gimpwidgets-2.0.>=200.0,gimpbase-2.0.>=200.0,gimpcolor-2.0.>=200.0::graphics/gimp/stable
 CONFIGURE_ENV+=	CPPFLAGS+="-I${LOCALBASE}/include/gimp-2.0"
 .else
 CONFIGURE_ARGS+=--disable-gimp

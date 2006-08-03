@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/02/06 22:10:24 bernd Exp $
+# $OpenBSD: Makefile,v 1.13 2006/08/03 12:53:18 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -25,7 +25,7 @@ WANTLIB=		ICE SM X11 Xext bz2 freetype jasper jbig jpeg \
 
 RUN_DEPENDS=		:ImageMagick-${VER}.${DASHVER}:graphics/ImageMagick
 BUILD_DEPENDS=		${RUN_DEPENDS}
-LIB_DEPENDS=		Magick.10::graphics/ImageMagick
+LIB_DEPENDS=		Magick.>=10::graphics/ImageMagick
 USE_X11=		Yes
 CONFIGURE_STYLE=	perl
 

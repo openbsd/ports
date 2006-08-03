@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2006/06/20 18:11:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2006/08/03 12:53:18 espie Exp $
 
 COMMENT=	"toolkit for converting images between different formats"
 
@@ -16,11 +16,11 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netpbm/}
 EXTRACT_SUFX=	.tgz
 
 WANTLIB=	c m z
-LIB_DEPENDS=	tiff.35::graphics/tiff \
-		jpeg.62::graphics/jpeg \
-		png.2::graphics/png \
-		jbig.2::graphics/jbigkit \
-		jasper.1::graphics/jasper
+LIB_DEPENDS=	tiff.>=35::graphics/tiff \
+		jpeg.>=62::graphics/jpeg \
+		png.>=2::graphics/png \
+		jbig.>=2::graphics/jbigkit \
+		jasper.>=1::graphics/jasper
 
 USE_GMAKE=	Yes
 MAKE_FILE=	GNUmakefile

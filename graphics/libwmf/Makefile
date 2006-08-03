@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2006/01/22 10:38:55 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2006/08/03 12:53:18 espie Exp $
 
 COMMENT=	"WMF handling and conversion library"
 
@@ -25,8 +25,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wvware/}
 
 MODULES=	converters/libiconv
 LIB_DEPENDS=	xml2::textproc/libxml \
-		jpeg.62::graphics/jpeg \
-		png.2::graphics/png
+		jpeg.>=62::graphics/jpeg \
+		png.>=2::graphics/png
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.54

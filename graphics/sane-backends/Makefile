@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/07/22 11:52:49 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2006/08/03 12:53:18 espie Exp $
 
 COMMENT=	"API for accessing scanners, backends"
 
@@ -23,10 +23,10 @@ MASTER_SITES=	ftp://ftp.sane-project.org/pub/sane/${DISTNAME}/ \
 		ftp://ftp.sane-project.org/pub/sane/old-versions/${DISTNAME}/
 WANTLIB=	c m pthread exif z
 
-LIB_DEPENDS=	usb.7::devel/libusb \
-		jpeg.62::graphics/jpeg \
-		tiff.38::graphics/tiff \
-		gphoto2.2,gphoto2_port.5::graphics/libgphoto2
+LIB_DEPENDS=	usb.>=7::devel/libusb \
+		jpeg.>=62::graphics/jpeg \
+		tiff.>=38::graphics/tiff \
+		gphoto2.>=2,gphoto2_port.>=5::graphics/libgphoto2
 
 MODULES=	devel/gettext
 USE_LIBTOOL=	Yes

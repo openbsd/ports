@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2006/07/14 21:17:15 steven Exp $
+# $OpenBSD: Makefile,v 1.31 2006/08/03 12:53:18 espie Exp $
 # Original from: Marco S Hyman <marc@OpenBSD.ORG>
 
 COMMENT=	"X11 image display and modification tool"
@@ -17,9 +17,9 @@ DIST_SUBDIR=	xv
 
 HOMEPAGE=	http://www.trilon.com/xv/index.html
 
-LIB_DEPENDS=    jpeg.62.::graphics/jpeg \
-		tiff.35.::graphics/tiff \
-		png.2.::graphics/png
+LIB_DEPENDS=    jpeg.>=62.::graphics/jpeg \
+		tiff.>=35.::graphics/tiff \
+		png.>=2.::graphics/png
 
 FAKE=		lib
 MAINTAINER=	Bruno Rohee <rohee@openbsd.org>

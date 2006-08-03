@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2005/12/22 23:21:50 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2006/08/03 12:53:18 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,7 +21,7 @@ WANTLIB=	fontconfig freetype jpeg m png z
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=GD/}
 
-LIB_DEPENDS=	gd.20.28::graphics/gd
+LIB_DEPENDS=	gd.>=20.28::graphics/gd
 
 MODULES=	converters/libiconv
 

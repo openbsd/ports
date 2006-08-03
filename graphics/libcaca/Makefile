@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/06/06 12:56:00 aanriot Exp $
+# $OpenBSD: Makefile,v 1.6 2006/08/03 12:53:18 espie Exp $
 
 COMMENT=		"color ascii art library"
 DISTNAME=		libcaca-0.9
@@ -24,7 +24,7 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--disable-x11 \
 			--disable-imlib2
 .else
-LIB_DEPENDS=    	Imlib2.1::graphics/imlib2
+LIB_DEPENDS=    	Imlib2.>=1::graphics/imlib2
 USE_X11=		Yes
 WANTLIB+=		X11 Xext freetype
 .endif
