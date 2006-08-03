@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2006/07/29 00:28:48 brad Exp $
+# $OpenBSD: Makefile,v 1.51 2006/08/03 13:09:09 espie Exp $
 
 COMMENT= 	"compact IMAP/POP3 server"
 
@@ -31,13 +31,13 @@ WANTLIB+=		sasl2
 
 .if ${FLAVOR:L:Mmysql}
 CONFIGURE_ARGS+=	--with-mysql
-LIB_DEPENDS+=		lib/mysql/mysqlclient.10::databases/mysql
+LIB_DEPENDS+=		lib/mysql/mysqlclient.>=10::databases/mysql
 WANTLIB+=		m
 .endif
 
 .if ${FLAVOR:L:Mpostgresql}
 CONFIGURE_ARGS+=	--with-pgsql
-LIB_DEPENDS+=		pq.4::databases/postgresql
+LIB_DEPENDS+=		pq.>=4::databases/postgresql
 .endif
 
 USE_LIBTOOL=	Yes

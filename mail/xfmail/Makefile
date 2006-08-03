@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2006/01/14 00:07:30 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2006/08/03 13:09:10 espie Exp $
 # $NetBSD: Makefile,v 1.2 1998/07/04 09:19:04 mycroft Exp $
 # $RuOBSD: Makefile,v 1.4 2002/05/18 04:21:36 form Exp $
 
@@ -19,8 +19,8 @@ EXTRACT_SUFX=		.tar.bz2
 HOMEPAGE=		http://www.xfmail.org/
 
 LIB_DEPENDS=		forms::x11/xforms \
-			jpeg.62::graphics/jpeg \
-			glib.1.2::devel/glib
+			jpeg.>=62::graphics/jpeg \
+			glib.>=1.2::devel/glib
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -46,7 +46,7 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mesd}
 CONFIGURE_ARGS+=	--with-esd-sound
-LIB_DEPENDS+=		esd.2::audio/esound
+LIB_DEPENDS+=		esd.>=2::audio/esound
 WANTLIB+=		audiofile
 .else
 CONFIGURE_ARGS+=	--without-esd-sound

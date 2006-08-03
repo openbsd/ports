@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2005/03/16 15:43:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2006/08/03 13:09:09 espie Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/07/10 14:05:19 kuriyama Exp $
 
 COMMENT=	"Japanized Vim"
@@ -41,7 +41,7 @@ INPUT_METHOD=	canna
 CHOICE=canna
 .endif
 PERMIT_PACKAGE_CDROM=	"Canna prevents it"
-LIB_DEPENDS+= canna.1::japanese/canna
+LIB_DEPENDS+= canna.>=1::japanese/canna
 JPLIB+=			-lcanna
 .endif
 

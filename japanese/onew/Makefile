@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/08/04 13:11:48 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/08/03 13:09:09 espie Exp $
 
 COMMENT=	"library for Japanese Input Method Wnn4"
 
@@ -32,7 +32,7 @@ BUILD_DEPENDS=	::japanese/Wnn
 
 .if ${FLAVOR:L:Mcanna}
 PERMIT_PACKAGE_CDROM=	"Canna prevents it"
-LIB_DEPENDS+=	canna.1::japanese/canna
+LIB_DEPENDS+=	canna.>=1::japanese/canna
 .endif
 
 WRKDIST=	${WRKDIR}/onew

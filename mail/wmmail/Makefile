@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/12/30 19:04:22 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2006/08/03 13:09:09 espie Exp $
 
 COMMENT=		'wm-dockapp; mail notifier'
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xpm Xt c
 
 RUN_DEPENDS=		:windowmaker-*:x11/windowmaker
-LIB_DEPENDS=		PropList.2::devel/libproplist
+LIB_DEPENDS=		PropList.>=2::devel/libproplist
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/06/13 13:27:12 bernd Exp $
+# $OpenBSD: Makefile,v 1.16 2006/08/03 13:09:09 espie Exp $
 
 COMMENT=		"lightweight GTK+ based mail/news client"
 COMMENT-dillo=		"dillo plugin for sylpheed-claws"
@@ -72,7 +72,7 @@ LIB_DEPENDS+=		startup-notification-1::devel/startup-notification
 PERMIT_PACKAGE_CDROM=   "No Fee"
 PERMIT_DISTFILES_CDROM= "No Fee"
 .  if !defined(PACKAGING) || empty(SUBPACKAGE)
-LIB_DEPENDS+=		compface.1::mail/faces
+LIB_DEPENDS+=		compface.>=1::mail/faces
 .  endif
 CONFIGURE_ARGS+=	--enable-compface
 .else
@@ -82,7 +82,7 @@ CONFIGURE_ARGS+=	--disable-compface
 .if ${FLAVOR:L:Mpgpmime}
 BROKEN=			Does not work with current gpgme version
 .  if !defined(PACKAGING) || empty(SUBPACKAGE)
-LIB_DEPENDS+=		gpgme.4::security/gpgme
+LIB_DEPENDS+=		gpgme.>=4::security/gpgme
 .  endif
 CONFIGURE_ARGS+=	--enable-pgpmime-plugin
 .else
@@ -91,7 +91,7 @@ CONFIGURE_ARGS+=	--disable-pgpmime-plugin
 
 .if ${FLAVOR:L:Mjpilot}
 .  if !defined(PACKAGING) || empty(SUBPACKAGE)
-LIB_DEPENDS+=		pisock.4::comms/pilot-link
+LIB_DEPENDS+=		pisock.>=4::comms/pilot-link
 WANTLIB+=		ncurses readline
 .  endif
 RUN_DEPENDS+=		:jpilot-*:comms/jpilot
@@ -100,7 +100,7 @@ CONFIGURE_ARGS+= 	--enable-jpilot
 
 .if ${FLAVOR:L:Mldap}
 .  if !defined(PACKAGING) || empty(SUBPACKAGE)
-LIB_DEPENDS+=		ldap.2,lber.2:openldap-client-*:databases/openldap
+LIB_DEPENDS+=		ldap.>=2,lber.>=2:openldap-client-*:databases/openldap
 .  endif
 CONFIGURE_ARGS+=	--enable-ldap
 .endif

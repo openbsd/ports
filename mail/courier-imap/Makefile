@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2006/04/20 00:40:45 jolan Exp $ 
+# $OpenBSD: Makefile,v 1.48 2006/08/03 13:09:09 espie Exp $ 
 
 COMMENT=	"imap server for maildir format mailboxes"
 COMMENT-pop3=	"pop3 server for maildir format mailboxes"
@@ -74,7 +74,7 @@ CONFIGURE_ARGS+=	--without-authldap
 .else
 MULTI_PACKAGES+=	-ldap
 CONFIGURE_ARGS+=	--with-authldap
-LDAP_DEPENDS+=		ldap.2,lber.2:openldap-client-2.*:databases/openldap
+LDAP_DEPENDS+=		ldap.>=2,lber.>=2:openldap-client-2.*:databases/openldap
 .endif
 
 # postgresql

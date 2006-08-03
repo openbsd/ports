@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2006/03/31 16:50:44 sturm Exp $
+# $OpenBSD: Makefile,v 1.25 2006/08/03 13:09:09 espie Exp $
 
 COMMENT=	"biff-type program, designed to match AfterStep"
 
@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=asmail/}
 
 HOMEPAGE=	http://asmail.sourceforge.net/
 
-LIB_DEPENDS=	jpeg.62::graphics/jpeg
+LIB_DEPENDS=	jpeg.>=62::graphics/jpeg
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

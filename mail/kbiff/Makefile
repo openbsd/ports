@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2006/06/12 13:38:00 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2006/08/03 13:09:09 espie Exp $
 
 COMMENT=		"new mail notification utility for KDE"
 
@@ -22,7 +22,7 @@ WANTLIB=		ICE SM X11 Xext Xrender art_lgpl_2 c jpeg m png \
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=kbiff/}
 
-LIB_DEPENDS=		kdecore.4,kio,kdeui,kdefx,kdesu,DCOP,kwalletclient.1::x11/kde/libs3
+LIB_DEPENDS=		kdecore.>=4,kio,kdeui,kdefx,kdesu,DCOP,kwalletclient.>=1::x11/kde/libs3
 
 MODKDE_VERSION= 	3.3
 MODULES=        	x11/kde

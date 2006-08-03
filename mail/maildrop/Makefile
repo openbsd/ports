@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2005/08/16 18:28:55 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2006/08/03 13:09:09 espie Exp $
 
 COMMENT=	"local mail delivery agent with filtering abilities"
 COMMENT-utils=	"userdb and quota tools for the Courier mail suite"
@@ -27,7 +27,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=            gdbm.3::databases/gdbm
+LIB_DEPENDS=            gdbm.>=3::databases/gdbm
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" 

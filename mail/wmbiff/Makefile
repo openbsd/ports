@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/02/08 04:54:49 david Exp $
+# $OpenBSD: Makefile,v 1.14 2006/08/03 13:09:09 espie Exp $
 
 COMMENT=	"wm-dockapp; multiple mailbox checker"
 DISTNAME=	wmbiff-0.4.22
@@ -18,7 +18,7 @@ WANTLIB=		X11 Xext Xpm c gcrypt gpg-error iconv intl z
 
 USE_X11=	Yes
 
-LIB_DEPENDS=	gnutls.12::security/gnutls
+LIB_DEPENDS=	gnutls.>=12::security/gnutls
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	ac_cv_path_CVS2CL=""

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2006/07/28 06:29:34 steven Exp $
+# $OpenBSD: Makefile,v 1.40 2006/08/03 13:09:09 espie Exp $
 
 COMMENT=		"object oriented script language with threads"
 COMMENT-iconv=		"libiconv interface for ruby"
@@ -37,11 +37,11 @@ MULTI_PACKAGES=		-iconv -gdbm
 SUBPACKAGE?=
 
 MODULES=		converters/libiconv
-LIB_DEPENDS+=		gdbm.3::databases/gdbm
+LIB_DEPENDS+=		gdbm.>=3::databases/gdbm
 
 .if !${FLAVOR:L:Mno_x11}
 MULTI_PACKAGES+=	-tk
-LIB_DEPENDS+=		tk84.::x11/tk/8.4 
+LIB_DEPENDS+=		tk84::x11/tk/8.4 
 .endif 
 
 CONFIGURE_STYLE=	gnu
@@ -68,18 +68,18 @@ MODULES=
 LIB_DEPENDS=
 .  elif ${SUBPACKAGE} == "-iconv"
 MODULES=		converters/libiconv
-LIB_DEPENDS=		ruby.1.84::lang/ruby
+LIB_DEPENDS=		ruby.>=1.84::lang/ruby
 WANTLIB=		c m
 .  elif ${SUBPACKAGE} == "-gdbm"
 MODULES=
-LIB_DEPENDS=		ruby.1.84::lang/ruby \
-			gdbm.3::databases/gdbm
+LIB_DEPENDS=		ruby.>=1.84::lang/ruby \
+			gdbm.>=3::databases/gdbm
 WANTLIB=		c m
 .  elif ${SUBPACKAGE} == "-tk"
 MODULES=		
-LIB_DEPENDS=		ruby.1.84::lang/ruby \
-			tk84.::x11/tk/8.4
-WANTLIB=		X11 tcl84.1 c m
+LIB_DEPENDS=		ruby.>=1.84::lang/ruby \
+			tk84::x11/tk/8.4
+WANTLIB=		X11 tcl84.>=1 c m
 .  endif
 .endif 
 

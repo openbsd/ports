@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2006/06/19 19:13:54 steven Exp $
+# $OpenBSD: Makefile,v 1.17 2006/08/03 13:09:09 espie Exp $
 
 COMMENT=	"anti-spam filter"
 
@@ -69,7 +69,7 @@ CONFIGURE_ARGS+=	--with-storage-driver=pgsql_drv \
 			--with-pgsql-includes=${LOCALBASE}/include/postgresql \
 			--with-pgsql-libraries=${LOCALBASE}/lib \
 			--enable-virtual-users
-LIB_DEPENDS+=		pq.4:postgresql-client-*:databases/postgresql
+LIB_DEPENDS+=		pq.>=4:postgresql-client-*:databases/postgresql
 DRIVER=			pgsql
 .endif
 
@@ -88,7 +88,7 @@ BROKEN=			choose either mysql or pgsql or sqlite or sqlite3 or hash
 CONFIGURE_ARGS+=	--with-storage-driver=sqlite_drv \
 			--with-sqlite-includes=${LOCALBASE}/include \
 			--with-sqlite-libraries=${LOCALBASE}/lib
-LIB_DEPENDS+=		sqlite.8::databases/sqlite
+LIB_DEPENDS+=		sqlite.>=8::databases/sqlite
 DRIVER=			sqlite
 .endif
 
@@ -101,7 +101,7 @@ FLAVOR+=		sqlite3
 CONFIGURE_ARGS+=	--with-storage-driver=sqlite3_drv \
 			--with-sqlite-includes=${LOCALBASE}/include \
 			--with-sqlite-libraries=${LOCALBASE}/lib
-LIB_DEPENDS+=		sqlite3.8::databases/sqlite3
+LIB_DEPENDS+=		sqlite3.>=8::databases/sqlite3
 DRIVER=			sqlite
 .endif
 
@@ -111,14 +111,14 @@ DAEMON_SUPPORT=		Yes
 
 .if ${FLAVOR:L:Mclamav}
 CONFIGURE_ARGS+=	--enable-clamav
-LIB_DEPENDS+=		clamav.1::security/clamav
+LIB_DEPENDS+=		clamav.>=1::security/clamav
 .endif
 
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+=	--enable-ldap
 CONFIGURE_ENV=		CPPFLAGS="-I${DEPBASE}/include" \
 			LDFLAGS="-L${DEPBASE}/lib"
-LIB_DEPENDS+=		ldap.8,lber.8::databases/openldap
+LIB_DEPENDS+=		ldap.>=8,lber.>=8::databases/openldap
 WANTLIB+=		crypto ssl sasl2
 .endif
 

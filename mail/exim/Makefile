@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2006/05/05 06:02:30 sturm Exp $
+# $OpenBSD: Makefile,v 1.54 2006/08/03 13:09:09 espie Exp $
 
 COMMENT=	"Flexible mail transfer agent"
 DISTNAME=	exim-4.62
@@ -38,21 +38,21 @@ WANTLIB+=		X11 Xaw Xext Xmu Xt
 EXIM_MAKECAT+=		"LOOKUP_MYSQL=yes\n"
 EXIM_LOOKUP_INCLUDE+=	-I${LOCALBASE}/include/mysql
 EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient
-LIB_DEPENDS+=		lib/mysql/mysqlclient.10:mysql-client-*:databases/mysql
+LIB_DEPENDS+=		lib/mysql/mysqlclient.>=10:mysql-client-*:databases/mysql
 .endif
 
 .if ${FLAVOR:L:Mpostgresql}
 EXIM_MAKECAT+=		"LOOKUP_PGSQL=yes\n"
 EXIM_LOOKUP_INCLUDE+=	-I${LOCALBASE}/include/postgresql
 EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib/ -lpq
-LIB_DEPENDS+=		pq.2:postgresql-client-*:databases/postgresql
+LIB_DEPENDS+=		pq.>=2:postgresql-client-*:databases/postgresql
 .endif
 
 .if ${FLAVOR:L:Msqlite3}
 EXIM_MAKECAT+=		"LOOKUP_SQLITE=yes\n"
 EXIM_LOOKUP_INCLUDE+=	-I${LOCALBASE}/include
 EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib/ -lsqlite3
-LIB_DEPENDS+=		sqlite3.8::databases/sqlite3
+LIB_DEPENDS+=		sqlite3.>=8::databases/sqlite3
 .endif
 
 .if ${FLAVOR:L:Mldap}
@@ -60,7 +60,7 @@ EXIM_MAKECAT+=		"LOOKUP_LDAP=yes\n"
 EXIM_MAKECAT+=		"LDAP_LIB_TYPE=OPENLDAP2\n"
 EXIM_LOOKUP_INCLUDE+=	-I${LOCALBASE}/include
 EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib -lldap -llber
-LIB_DEPENDS+=		ldap.2,lber:openldap-client-2.*:databases/openldap
+LIB_DEPENDS+=		ldap.>=2,lber:openldap-client-2.*:databases/openldap
 .endif
 
 .if ${FLAVOR:L:Miconv}

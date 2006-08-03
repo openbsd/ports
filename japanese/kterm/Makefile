@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2005/09/04 23:30:16 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2006/08/03 13:09:09 espie Exp $
 
 COMMENT=	"Japanese-capable xterm"
 
@@ -26,7 +26,7 @@ MAKE_FLAGS=	CDEBUGFLAGS=-O2
 FLAVORS=xaw3d tek
 FLAVOR?=
 .if ${FLAVOR:L:Mxaw3d}
-LIB_DEPENDS=	Xaw3d.6.1::x11/Xaw3d
+LIB_DEPENDS=	Xaw3d.>=6.1::x11/Xaw3d
 MAKE_ENV=	EXTRA_DEFINES=-DKTERM_XAW3D
 .endif
 

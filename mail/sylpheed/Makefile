@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2006/07/08 08:49:38 sturm Exp $
+# $OpenBSD: Makefile,v 1.64 2006/08/03 13:09:09 espie Exp $
 
 COMMENT=	"mail/news client in gtk+"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	gtk-x11-2.0.0.9,gdk_pixbuf-2.0.0.9,gdk-x11-2.0.0.9::x11/gtk+2
+LIB_DEPENDS=	gtk-x11-2.0.>=0.9,gdk_pixbuf-2.0.>=0.9,gdk-x11-2.0.>=0.9::x11/gtk+2
 WANTLIB=	X11 Xrender Xext atk-1.0.0.0 c cairo crypto \
 		fontconfig freetype glib-2.0.0.0 glitz gdk-x11-2.0.0.0 \
 		gdk_pixbuf-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 \
@@ -40,13 +40,13 @@ FLAVOR?=
 .if ${FLAVOR:L:Mcompface}
 PERMIT_PACKAGE_CDROM=	"No Fee"
 PERMIT_DISTFILES_CDROM=	"No Fee"
-LIB_DEPENDS+=		compface.1::mail/faces
+LIB_DEPENDS+=		compface.>=1::mail/faces
 .else
 CONFIGURE_ARGS+=	--disable-compface
 .endif
 
 .if ${FLAVOR:L:Mgpgme}
-LIB_DEPENDS+=		gpgme.4::security/gpgme
+LIB_DEPENDS+=		gpgme.>=4::security/gpgme
 CONFIGURE_ARGS+=	--enable-gpgme
 WANTLIB+=		gpg-error
 .else

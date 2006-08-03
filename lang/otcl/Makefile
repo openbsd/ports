@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/01/04 20:26:58 alek Exp $
+# $OpenBSD: Makefile,v 1.20 2006/08/03 13:09:09 espie Exp $
 # $FreeBSD: ports/lang/otcl/Makefile,v 1.6 1999/11/28 18:31:28 steve Exp $
 
 COMMENT=	"MIT Object Tcl"
@@ -18,7 +18,7 @@ WANTLIB=		c m X11 Xext tcl83
 
 MASTER_SITES=	http://www.isi.edu/nsnam/dist/
 
-LIB_DEPENDS=    tk83.1:tk->=8.3,<8.4:x11/tk/8.3
+LIB_DEPENDS=    tk83.>=1:tk->=8.3,<8.4:x11/tk/8.3
 
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+=--includedir=${PREFIX}/include/tcl8.3/generic \

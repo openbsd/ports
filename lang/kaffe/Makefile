@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2006/06/13 13:26:32 bernd Exp $
+# $OpenBSD: Makefile,v 1.30 2006/08/03 13:09:09 espie Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc
 
@@ -31,9 +31,9 @@ BUILD_DEPENDS=	::archivers/zip \
 		:jikes->=1.22p0:lang/jikes \
 		:pkgconfig->=0.19p0:devel/pkgconfig
 LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
-		gmp.4.::devel/gmp \
+		gmp.>=4.::devel/gmp \
 		audiofile::devel/libaudiofile \
-		esd.2::audio/esound \
+		esd.>=2::audio/esound \
 		ltdl::devel/libtool,-ltdl
 RUN_DEPENDS=	::archivers/zip
 
