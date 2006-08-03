@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2006/01/08 01:38:36 steven Exp $
+# $OpenBSD: Makefile,v 1.35 2006/08/03 12:43:20 espie Exp $
 # Uses pthreads
 
 COMMENT=	"Generic Graphics Library"
@@ -20,7 +20,7 @@ WANTLIB=		X11 Xext Xxf86dga Xxf86vm c m ncurses pthread
 MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.1/
 EXTRACT_SUFX=	.src.tar.bz2
 
-LIB_DEPENDS=	gii.0.9,gg:libgii->=0.9*:graphics/gii
+LIB_DEPENDS=	gii.>=0.9,gg:libgii->=0.9*:graphics/gii
 
 USE_X11=	Yes
 USE_GMAKE=	Yes

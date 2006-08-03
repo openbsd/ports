@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/06/01 04:04:45 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2006/08/03 12:43:20 espie Exp $
 
 COMMENT=		"draw maps and charts"
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=		netcdf.1::math/netcdf
+LIB_DEPENDS=		netcdf.>=1::math/netcdf
 
 WANTLIB=		c m
 

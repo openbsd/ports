@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2004/11/30 01:06:35 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2006/08/03 12:43:20 espie Exp $
 
 COMMENT=	"converts GIF images to the PNG format"
 
@@ -15,7 +15,7 @@ WANTLIB=		c m z
 
 MASTER_SITES=	${HOMEPAGE}
 
-LIB_DEPENDS=	png.2::graphics/png
+LIB_DEPENDS=	png.>=2::graphics/png
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu

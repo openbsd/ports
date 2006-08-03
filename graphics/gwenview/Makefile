@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2006/06/12 13:38:00 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2006/08/03 12:43:20 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		art_lgpl_2 jpeg ICE SM X11 Xext Xrender c m png \
 			pthread stdc++ util z idn iconv
 
-LIB_DEPENDS=	kdecore.6,DCOP,kdefx,kdeprint,kdesu,kparts,kdeui,kio,kwalletclient::x11/kde/libs3 \
+LIB_DEPENDS=	kdecore.>=6,DCOP,kdefx,kdeprint,kdesu,kparts,kdeui,kio,kwalletclient::x11/kde/libs3 \
 		kipi::graphics/libkipi
 
 MODULES=	x11/kde

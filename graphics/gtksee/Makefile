@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/08/01 18:38:23 alek Exp $
+# $OpenBSD: Makefile,v 1.20 2006/08/03 12:43:20 espie Exp $
 
 COMMENT=	"image viewer similar to ACDSee for Windows"
 
@@ -13,10 +13,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xi c glib gmodule iconv intl m z
 
-LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+ \
-		jpeg.62::graphics/jpeg \
-		tiff.35::graphics/tiff \
-		png.2::graphics/png
+LIB_DEPENDS=	gtk.>=1.2,gdk.>=1.2::x11/gtk+ \
+		jpeg.>=62::graphics/jpeg \
+		tiff.>=35::graphics/tiff \
+		png.>=2::graphics/png
 RUN_DEPENDS=	:bzip-*:archivers/bzip \
 		:bzip2-*:archivers/bzip2
 

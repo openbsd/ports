@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2006/01/22 10:38:55 steven Exp $
+# $OpenBSD: Makefile,v 1.38 2006/08/03 12:43:20 espie Exp $
 
 COMMENT=	"GdkPixbuf graphics library"
 COMMENT-gnome=	"GdkPixbuf graphics library (GNOME Canvas)"
@@ -51,20 +51,20 @@ SUBPACKAGE?=
 CONFIGURE_ENV+=	ac_cv_path_GNOME_CONFIG=no
 .endif
 
-LIB_DEPENDS+=	jpeg.62::graphics/jpeg \
-		png.2::graphics/png \
-		tiff.35.::graphics/tiff \
-		gtk.1.2,gdk.1.2::x11/gtk+
+LIB_DEPENDS+=	jpeg.>=62::graphics/jpeg \
+		png.>=2::graphics/png \
+		tiff.>=35.::graphics/tiff \
+		gtk.>=1.2,gdk.>=1.2::x11/gtk+
 
 .if defined(PACKAGING)
 . if ${SUBPACKAGE} == "-gnome"
-LIB_DEPENDS+=	gnome.36,art_lgpl,gnomesupport,gnomeui::x11/gnome/libs \
-		gdk_pixbuf.2::graphics/gdk-pixbuf
+LIB_DEPENDS+=	gnome.>=36,art_lgpl,gnomesupport,gnomeui::x11/gnome/libs \
+		gdk_pixbuf.>=2::graphics/gdk-pixbuf
 WANTLIB+=	esd ungif ICE audiofile gdk_imlib SM
 . endif
 .else
 . if ${MULTI_PACKAGES:M-gnome}
-LIB_DEPENDS+=	gnome.36,art_lgpl,gnomesupport,gnomeui::x11/gnome/libs
+LIB_DEPENDS+=	gnome.>=36,art_lgpl,gnomesupport,gnomeui::x11/gnome/libs
 . endif
 .endif
 

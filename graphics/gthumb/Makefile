@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2005/03/13 14:25:55 alek Exp $
+# $OpenBSD: Makefile,v 1.12 2006/08/03 12:43:20 espie Exp $
 
 COMMENT=		"Image viewer and browser for GNOME"
 
@@ -25,9 +25,9 @@ WANTLIB=	IIOP ORBit ORBitCosNaming ORBitutil SM X11 Xext Xi art_lgpl \
 
 LIB_DEPENDS=		bonobo,bonobox::x11/gnome/bonobo \
 			gnomevfs.::x11/gnome/vfs \
-			glade-gnome.4,glade.4:libglade-*-gnome:devel/libglade,gnome \
+			glade-gnome.>=4,glade.>=4:libglade-*-gnome:devel/libglade,gnome \
 			gnomeprint.::x11/gnome/print \
-			gnomecanvaspixbuf.1:gdk-pixbuf-gnome-*:graphics/gdk-pixbuf,-gnome 
+			gnomecanvaspixbuf.>=1:gdk-pixbuf-gnome-*:graphics/gdk-pixbuf,-gnome 
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu

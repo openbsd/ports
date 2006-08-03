@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/07/07 12:24:05 bernd Exp $
+# $OpenBSD: Makefile,v 1.16 2006/08/03 12:43:20 espie Exp $
 
 COMMENT=	"GNU Image Manipulation Program"
 
@@ -25,12 +25,12 @@ BUILD_DEPENDS=	:pkgconfig->=0.12.0p1:devel/pkgconfig \
 		:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS=    :wget-*:net/wget
 LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
-		aa.1.3::graphics/aalib \
-		art_lgpl_2.5::graphics/libart \
+		aa.>=1.3::graphics/aalib \
+		art_lgpl_2.>=5::graphics/libart \
 		exif::graphics/libexif \
 		mng::graphics/libmng \
-		tiff.35::graphics/tiff \
-		wmf.6,wmflite.6::graphics/libwmf
+		tiff.>=35::graphics/tiff \
+		wmf.>=6,wmflite.>=6::graphics/libwmf
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -41,7 +41,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	ICE SM X11 Xext Xmu Xpm Xrender Xt atk-1.0.0.0 c \
 		fontconfig freetype glib-2.0.0.0 gmodule-2.0.0.0 \
 		gobject-2.0.0.0 jpeg.62 lcms.1 m pango-1.0.0.0 \
-		pangocairo-1.0.0.0 pangoft2-1.0.0.0 png.4 \
+		pangocairo-1.0.0.0 pangoft2-1.0.0.0 png.>=4 \
 		ncurses xml2 z cairo glitz
 
 MODULES=	devel/gettext

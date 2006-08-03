@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/06/13 13:25:31 bernd Exp $
+# $OpenBSD: Makefile,v 1.7 2006/08/03 12:43:20 espie Exp $
 
 COMMENT=	"digital camera frontend"
 
@@ -24,7 +24,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gphoto/}
 
 BUILD_DEPENDS=	:pkgconfig->=0.9.0:devel/pkgconfig
 LIB_DEPENDS=	gphoto2,gphoto2_port::graphics/libgphoto2 \
-		gdk_pixbuf-2.0.0.11,gdk-x11-2.0.0.11,gtk-x11-2.0.0.11::x11/gtk+2
+		gdk_pixbuf-2.0.>=0.11,gdk-x11-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2
 
 MODULES=	devel/gettext      
 

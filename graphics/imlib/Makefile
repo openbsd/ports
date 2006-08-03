@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2006/01/08 01:01:17 steven Exp $
+# $OpenBSD: Makefile,v 1.53 2006/08/03 12:43:20 espie Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 COMMENT=	"image manipulation library for X11"
@@ -12,11 +12,11 @@ CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/imlib/1.9/}
 
 MODULES=	devel/gettext
-LIB_DEPENDS= 	gtk.1.2,gdk.1.2::x11/gtk+ \
-		jpeg.62::graphics/jpeg \
-		ungif.5::graphics/libungif \
-		png.2::graphics/png \
-		tiff.35::graphics/tiff
+LIB_DEPENDS= 	gtk.>=1.2,gdk.>=1.2::x11/gtk+ \
+		jpeg.>=62::graphics/jpeg \
+		ungif.>=5::graphics/libungif \
+		png.>=2::graphics/png \
+		tiff.>=35::graphics/tiff
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
