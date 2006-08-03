@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/04/14 22:52:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2006/08/03 23:15:58 espie Exp $
 
 COMMENT=	"multiplatform Jabber client"
 
@@ -24,7 +24,7 @@ MODULES=		x11/qt3
 MODQT_OVERRIDE_UIC=	No
 MODQT_MT=		Yes
 
-LIB_DEPENDS=		qca.1::security/qca
+LIB_DEPENDS=		qca.>=1::security/qca
 
 USE_X11=		Yes
 USE_GMAKE=		Yes

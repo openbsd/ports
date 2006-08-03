@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2006/02/05 15:53:14 alek Exp $
+# $OpenBSD: Makefile,v 1.33 2006/08/03 23:15:57 espie Exp $
 
 COMMENT=	"server for streaming various media formats"
 
@@ -24,11 +24,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_LIBTOOL=	Yes
-LIB_DEPENDS=	curl.2::net/curl \
-		xslt.3::textproc/libxslt \
-		vorbis.3::audio/libvorbis \
-		speex.3::audio/speex \
-		theora.1::multimedia/libtheora
+LIB_DEPENDS=	curl.>=2::net/curl \
+		xslt.>=3::textproc/libxslt \
+		vorbis.>=3::audio/libvorbis \
+		speex.>=3::audio/speex \
+		theora.>=1::multimedia/libtheora
 
 SEPARATE_BUILD=	simple
 

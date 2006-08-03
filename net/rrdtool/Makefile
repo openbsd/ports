@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2006/01/08 10:23:03 steven Exp $
+# $OpenBSD: Makefile,v 1.36 2006/08/03 23:15:58 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -31,7 +31,7 @@ SUBST_VARS=	RRDVERSION
 FLAVORS=	tcl
 FLAVOR?=
 
-LIB_DEPENDS=	gd.18::graphics/gd
+LIB_DEPENDS=	gd.>=18::graphics/gd
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes

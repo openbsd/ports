@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2005/11/19 01:57:25 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2006/08/03 23:15:58 espie Exp $
 
 COMMENT=		"Tcl bindings for Curl"
 NOT_FOR_ARCHS= 		${NO_SHARED_ARCHS}
@@ -18,7 +18,7 @@ WANTLIB=		crypto ssl z
 
 MASTER_SITES=		${HOMEPAGE}download/tarball/
 
-LIB_DEPENDS=    	curl.2.2::net/curl \
+LIB_DEPENDS=    	curl.>=2.2::net/curl \
 			tclstub84:tcl-8.4.*:lang/tcl/8.4
 
 CONFIGURE_STYLE=	gnu dest

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2006/07/16 08:08:20 sturm Exp $
+# $OpenBSD: Makefile,v 1.17 2006/08/03 23:15:58 espie Exp $
 
 COMMENT=	"host and service monitor"
 COMMENT-web=	"cgis and webpages for nagios"
@@ -24,7 +24,7 @@ SUBPACKAGE?=
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nagios/}
 
 BUILD_DEPENDS=	:gd-*:graphics/gd
-LIB_DEPENDS=	ltdl.4::devel/libtool,-ltdl
+LIB_DEPENDS=	ltdl.>=4::devel/libtool,-ltdl
 RUN_DEPENDS=	:nagios-plugins-*:net/nagios/plugins
 
 CONFIGURE_STYLE=gnu

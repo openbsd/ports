@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/07/19 16:07:22 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2006/08/03 23:15:57 espie Exp $
 
 COMMENT=		"GUI for dctc (Direct Connect Text Clone)"
 
@@ -17,7 +17,7 @@ WANTLIB=		ICE SM X11 Xext Xi audiofile c esd gdk gdk_imlib \
 
 MASTER_SITES=		${HOMEPAGE}
 
-LIB_DEPENDS=		gnome.36,art_lgpl.4,gnomesupport.,gnomeui.46::x11/gnome/libs
+LIB_DEPENDS=		gnome.>=36,art_lgpl.>=4,gnomesupport,gnomeui.>=46::x11/gnome/libs
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		:dctc-*:net/dctc
 

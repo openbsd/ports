@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2006/06/28 19:27:42 aanriot Exp $
+# $OpenBSD: Makefile,v 1.47 2006/08/03 23:15:58 espie Exp $
 
 COMMENT=	"highly flexible sniffer/NIDS"
 
@@ -38,12 +38,12 @@ CONFIGURE_ARGS+= --enable-flexresp \
 .endif
 
 .if ${FLAVOR:L:Mpostgresql}
-LIB_DEPENDS+=	pq.2::databases/postgresql
+LIB_DEPENDS+=	pq.>=2::databases/postgresql
 CONFIGURE_ARGS+= --with-postgresql="${LOCALBASE}"
 .endif
 
 .if ${FLAVOR:L:Mmysql}
-LIB_DEPENDS+=	lib/mysql/mysqlclient.10::databases/mysql
+LIB_DEPENDS+=	lib/mysql/mysqlclient.>=10::databases/mysql
 CONFIGURE_ARGS+= --with-mysql="${LOCALBASE}"
 WANTLIB+=	z
 .endif
@@ -51,7 +51,7 @@ WANTLIB+=	z
 .if ${FLAVOR:L:Mprelude}
 MODULES=	devel/gettext
 WANTLIB+=	gcrypt gpg-error pthread z
-LIB_DEPENDS+=	prelude.8::security/prelude/libprelude
+LIB_DEPENDS+=	prelude.>=8::security/prelude/libprelude
 CONFIGURE_ARGS+=--enable-prelude
 MESSAGE=	${PKGDIR}/MESSAGE-prelude
 .endif

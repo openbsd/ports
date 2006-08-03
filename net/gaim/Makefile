@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2006/06/27 17:32:26 fgsch Exp $
+# $OpenBSD: Makefile,v 1.91 2006/08/03 23:15:57 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -54,7 +54,7 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Maudio}
 LIB_DEPENDS+=	audiofile::devel/libaudiofile \
-		ao.3::audio/libao
+		ao.>=3::audio/libao
 WANTLIB+=	pthread
 .else
 CONFIGURE_ARGS+= --disable-audio

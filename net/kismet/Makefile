@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/02/25 22:18:19 martin Exp $
+# $OpenBSD: Makefile,v 1.10 2006/08/03 23:15:57 espie Exp $
 # Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
 
@@ -49,9 +49,9 @@ NO_REGRESS=		Yes
 PSEUDO_FLAVORS=         no_gpsmap
 FLAVOR?=
 
-GPSM_DEPENDS=		Magick.8::graphics/ImageMagick \
-			gmp.6::devel/gmp \
-			expat.4::textproc/expat
+GPSM_DEPENDS=		Magick.>=8::graphics/ImageMagick \
+			gmp.>=6::devel/gmp \
+			expat.>=4::textproc/expat
 
 .if !${FLAVOR:L:Mno_gpsmap}
 MULTI_PACKAGES=		-gpsmap

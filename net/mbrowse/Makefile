@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2005/11/09 01:25:38 jcs Exp $
+# $OpenBSD: Makefile,v 1.6 2006/08/03 23:15:58 espie Exp $
 
 COMMENT=	"graphical MIB browser"
 
@@ -21,8 +21,8 @@ CONFIGURE_ARGS+= --with-snmp-style=net \
 		--with-snmp-include=${LOCALBASE}/include \
 		--with-snmp-lib=${LOCALBASE}/lib
 
-LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+ \
-		glib.1.2::devel/glib \
-		netsnmp.6.2::net/net-snmp
+LIB_DEPENDS=	gtk.>=1.2,gdk.>=1.2::x11/gtk+ \
+		glib.>=1.2::devel/glib \
+		netsnmp.>=6.2::net/net-snmp
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/06/13 13:29:09 bernd Exp $
+# $OpenBSD: Makefile,v 1.8 2006/08/03 23:15:57 espie Exp $
 # $FreeBSD: ports/multimedia/libquicktime/Makefile,v 1.19 2004/03/16 04:23:53 edwin Exp $
 
 SHARED_ONLY=		Yes
@@ -30,13 +30,13 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libquicktime/}
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		vorbis.3,vorbisfile.4,vorbisenc.2::audio/libvorbis \
-			jpeg.9::graphics/jpeg \
-			png.4::graphics/png \
-			dv.4::multimedia/libdv \
-			mp3lame.0::audio/lame \
-			avcodec.7,avutil.1::graphics/ffmpeg \
-			gtk-x11-2.0.800.8,gdk-x11-2.0.800.8,gdk_pixbuf-2.0.800.8::x11/gtk+2
+LIB_DEPENDS=		vorbis.>=3,vorbisfile.>=4,vorbisenc.>=2::audio/libvorbis \
+			jpeg.>=9::graphics/jpeg \
+			png.>=4::graphics/png \
+			dv.>=4::multimedia/libdv \
+			mp3lame::audio/lame \
+			avcodec.>=7,avutil.>=1::graphics/ffmpeg \
+			gtk-x11-2.0.>=800.8,gdk-x11-2.0.>=800.8,gdk_pixbuf-2.0.>=800.8::x11/gtk+2
 
 VMEM_WARNING=		Yes
 AUTOCONF_VERSION=	2.59

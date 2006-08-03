@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/06/13 13:30:30 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2006/08/03 23:15:58 espie Exp $
 
 COMMENT=	"lightweight BitTorrent client"
 COMMENT-gui=	"lightweight BitTorrent client with graphical interface"
@@ -39,7 +39,7 @@ CONFIGURE_ARGS+=--disable-gtk
 .else
 CONFIGURE_ARGS+=--gettext-prefix=${LOCALBASE}
 MODULES+=	devel/gettext
-LIB_DEPENDS+=	gdk_pixbuf-2.0.800.0,gdk-x11-2.0.800.0,gtk-x11-2.0.800.0::x11/gtk+2
+LIB_DEPENDS+=	gdk_pixbuf-2.0.>=800.0,gdk-x11-2.0.>=800.0,gtk-x11-2.0.>=800.0::x11/gtk+2
 .endif
 
 .if defined(PACKAGING)
@@ -48,9 +48,9 @@ MODULES=
 LIB_DEPENDS=
 .  else
 WANTLIB+=	X11 fontconfig freetype \
-		atk-1.0.1011.0 glib-2.0.800.0 gmodule-2.0.800.0 \
-		gobject-2.0.800.0 pango-1.0.1001.0 pangoft2-1.0.1001.0 \
-		pangocairo-1.0.1001.0 cairo
+		atk-1.0.>=1011.0 glib-2.0.>=800.0 gmodule-2.0.>=800.0 \
+		gobject-2.0.>=800.0 pango-1.0.>=1001.0 pangoft2-1.0.>=1001.0 \
+		pangocairo-1.0.>=1001.0 cairo
 .  endif
 .endif
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2006/06/07 07:50:47 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2006/08/03 23:15:58 espie Exp $
 
 COMMENT='e-donkey client'
 CATEGORIES=net
@@ -32,7 +32,7 @@ CONFIGURE_ENV+=LDFLAGS='-L${LOCALBASE}/lib -L${X11BASE}/lib'
 USE_GMAKE=Yes
 MODULES=lang/ocaml
 BUILD_DEPENDS=::x11/lablgtk
-LIB_DEPENDS=gdk.1,gtk.1::x11/gtk+ \
+LIB_DEPENDS=	gdk.>=1,gtk.>=1::x11/gtk+ \
 		bz2::archivers/bzip2 \
 		gd::graphics/gd \
 		magic::devel/libmagic

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/07/05 00:08:08 mjc Exp $
+# $OpenBSD: Makefile,v 1.3 2006/08/03 23:15:58 espie Exp $
 
 COMMENT=	"network traffic visualization and editing tool"
 
@@ -22,7 +22,7 @@ MODULES=	devel/gettext
 
 LIB_DEPENDS=	netdude::net/libnetdude/libnetdude \
 		pcapnav::net/libpcapnav \
-		glib.1,gmodule.1::devel/glib \
+		glib.>=1,gmodule.>=1::devel/glib \
 		gdk,gtk::x11/gtk+
 
 WANTLIB=		Xi X11 m c Xext pcap

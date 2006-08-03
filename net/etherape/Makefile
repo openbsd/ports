@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/06/13 13:30:30 bernd Exp $
+# $OpenBSD: Makefile,v 1.8 2006/08/03 23:15:57 espie Exp $
 
 COMMENT=		"graphical network monitor"
 
@@ -35,8 +35,8 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 MAKE_ENV+=		LIBTOOL="${LOCALBASE}/bin/libtool"
 
 BUILD_DEPENDS=		:pkgconfig->=0.9.0:devel/pkgconfig
-LIB_DEPENDS=		gtk-x11-2.0.0.11::x11/gtk+2 \
-			glade-2.0.0.1::devel/libglade2 \
+LIB_DEPENDS=		gtk-x11-2.0.>=0.11::x11/gtk+2 \
+			glade-2.0.>=0.1::devel/libglade2 \
 			gnomeui-2::x11/gnome/libgnomeui
 
 MODULES=		devel/gettext

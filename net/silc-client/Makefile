@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2005/07/28 21:28:43 brad Exp $
+# $OpenBSD: Makefile,v 1.34 2006/08/03 23:15:58 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -28,7 +28,7 @@ MASTER_SITES=	http://ftp.silcnet.org/client/sources/ \
 		http://the.wiretapped.net/security/network-security/silc/client/sources/ \
 		ftp://ftp.wiretapped.net/pub/security/network-security/silc/client/sources/
 
-LIB_DEPENDS+=	glib.1.2,gmodule.1.2::devel/glib
+LIB_DEPENDS+=	glib.>=1.2,gmodule.>=1.2::devel/glib
 
 MODULES=	converters/libiconv
 

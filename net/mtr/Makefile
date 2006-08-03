@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2006/06/26 20:39:16 aanriot Exp $
+# $OpenBSD: Makefile,v 1.32 2006/08/03 23:15:58 espie Exp $
 
 COMMENT=	"Matt's traceroute - network diagnostic tool"
 
@@ -28,7 +28,7 @@ CONFIGURE_ARGS+=	--without-gtk
 .else
 USE_X11=		Yes
 CONFIGURE_ARGS+=	--with-gtk-prefix=${LOCALBASE}
-LIB_DEPENDS+=		gtk.1.2,gdk.1.2::x11/gtk+
+LIB_DEPENDS+=		gtk.>=1.2,gdk.>=1.2::x11/gtk+
 WANTLIB+=		X11 Xext Xi glib gmodule iconv intl
 .endif
 

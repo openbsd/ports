@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2005/11/03 18:28:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2006/08/03 23:15:57 espie Exp $
 
 COMMENT=		"Direct Connect clone"
 
@@ -15,7 +15,7 @@ WANTLIB=		c pthread
 
 MASTER_SITES=		${HOMEPAGE}
 
-LIB_DEPENDS=    	glib.1.2,gthread.1.2::devel/glib
+LIB_DEPENDS=    	glib.>=1.2,gthread.>=1.2::devel/glib
 
 SEPARATE_BUILD=		concurrent
 AUTOCONF_VERSION=	2.13

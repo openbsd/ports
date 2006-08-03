@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2006/07/13 16:58:46 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2006/08/03 23:15:58 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,7 +23,7 @@ MASTER_SITES=	${HOMEPAGE}download/ \
 
 MODULES=	lang/python
 
-LIB_DEPENDS=	curl.2.2::net/curl
+LIB_DEPENDS=	curl.>=2.2::net/curl
 
 do-regress: fake
 	@cd ${WRKSRC}/tests && ${MAKE_ENV} \

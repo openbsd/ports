@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/04/22 18:37:28 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2006/08/03 23:15:57 espie Exp $
 
 COMMENT=		"multimedia player"
 
@@ -21,9 +21,9 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xine/}
 MODULES=		gettext
 
 BUILD_DEPENDS=		::devel/pkgconfig
-LIB_DEPENDS=		xine.14::multimedia/xine-lib \
-			curl.2::net/curl \
-			png.4::graphics/png
+LIB_DEPENDS=		xine.>=14::multimedia/xine-lib \
+			curl.>=2::net/curl \
+			png.>=4::graphics/png
 
 WANTLIB=		ICE SM X11 Xext Xinerama Xtst Xv Xxf86vm \
 			c crypto freetype m ncurses pthread readline ssl z

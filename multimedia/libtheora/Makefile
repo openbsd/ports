@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/07/21 11:24:07 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2006/08/03 23:15:57 espie Exp $
 
 COMMENT=	"open video codec"
 DISTNAME=	libtheora-1.0alpha7
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 # uses Ogg headers
-LIB_DEPENDS=	ogg.5::audio/libogg
+LIB_DEPENDS=	ogg.>=5::audio/libogg
 
 USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	concurrent

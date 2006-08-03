@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.55 2006/08/03 19:56:08 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.56 2006/08/03 23:15:57 espie Exp $
 
 COMMENT=	"fast, secure sendmail replacement"
 
@@ -60,13 +60,13 @@ MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lldap -llber
 .endif
 
 .if ${FLAVOR:L:Mmysql}
-LIB_DEPENDS+=	lib/mysql/mysqlclient.10::databases/mysql
+LIB_DEPENDS+=	lib/mysql/mysqlclient.>=10::databases/mysql
 MAKE_CCARGS+=	-I${LOCALBASE}/include/mysql -DHAS_MYSQL
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient
 .endif
 
 .if ${FLAVOR:L:Mpgsql}
-LIB_DEPENDS+=	pq.3:postgresql-client-*:databases/postgresql
+LIB_DEPENDS+=	pq.>=3:postgresql-client-*:databases/postgresql
 MAKE_CCARGS+=	-I${LOCALBASE}/include/postgresql -DHAS_PGSQL
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lpq
 .endif

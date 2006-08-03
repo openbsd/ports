@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2005/12/28 13:43:06 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.6 2006/08/03 23:15:57 espie Exp $
 
 COMMENT=		"Quasar DV codec"
 
@@ -27,10 +27,10 @@ SHARED_LIBS=		dv	4.2
 MODGNU_SHARED_LIBS=	dv	''
 
 MODULES=		devel/gettext
-LIB_DEPENDS=		SDL.2::devel/sdl \
-			gdk.1.2,gtk.1.2::x11/gtk+ \
-			glib.1.2,gmodule.1.2::devel/glib \
-			popt.0::devel/popt
+LIB_DEPENDS=		SDL.>=2::devel/sdl \
+			gdk.>=1.2,gtk.>=1.2::x11/gtk+ \
+			glib.>=1.2,gmodule.>=1.2::devel/glib \
+			popt::devel/popt
 
 WANTLIB=		X11 Xext Xi Xv c m ossaudio pthread usbhid
 

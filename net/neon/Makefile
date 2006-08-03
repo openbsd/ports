@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2005/12/30 21:48:20 steven Exp $
+# $OpenBSD: Makefile,v 1.17 2006/08/03 23:15:58 espie Exp $
 
 COMMENT=		"HTTP and WebDAV client library, with C interface"
 
@@ -10,7 +10,7 @@ CATEGORIES=     	net www devel
 
 HOMEPAGE=		http://www.webdav.org/neon/
 
-LIB_DEPENDS=		xml2.6:libxml->=2.4.8:textproc/libxml
+LIB_DEPENDS=		xml2.>=6:libxml->=2.4.8:textproc/libxml
 MODULES=		converters/libiconv
 
 # LGPL

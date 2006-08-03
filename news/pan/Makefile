@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/06/13 13:30:58 bernd Exp $
+# $OpenBSD: Makefile,v 1.20 2006/08/03 23:15:58 espie Exp $
 
 COMMENT=	"powerful Gtk+2 newsreader"
 
@@ -9,10 +9,10 @@ CATEGORIES=	news x11
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${VER}/SOURCE/
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=	gdk_pixbuf-2.0.0.0,gdk-x11-2.0.0.5,gtk-x11-2.0.0.5::x11/gtk+2 \
+LIB_DEPENDS=	gdk_pixbuf-2.0.0.0,gdk-x11-2.0.>=0.5,gtk-x11-2.0.>=0.5::x11/gtk+2 \
 		glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0,gthread-2.0.0.0::devel/glib2 \
-		xml2.6.22::textproc/libxml \
-		gnet-2.0.0.3::net/gnet
+		xml2.>=6.22::textproc/libxml \
+		gnet-2.0.>=0.3::net/gnet
 
 HOMEPAGE=	http://pan.rebelbase.com/
 

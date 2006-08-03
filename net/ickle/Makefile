@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2005/10/18 19:51:59 sturm Exp $
+# $OpenBSD: Makefile,v 1.14 2006/08/03 23:15:57 espie Exp $
 
 COMMENT=	"gtk-based icq 2000 client"
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://ickle.sourceforge.net
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
-LIB_DEPENDS=	gdkmm.2,gtkmm.2::x11/gtkmm \
+LIB_DEPENDS=	gdkmm.>=2,gtkmm.>=2::x11/gtkmm \
 		icq2000:libicq2000->=0.3.1:devel/libicq2000
 
 PERMIT_PACKAGE_CDROM=	Yes

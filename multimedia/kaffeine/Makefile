@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/06/11 10:32:57 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/08/03 23:15:57 espie Exp $
 
 CATEGORIES=	multimedia x11 x11/kde
 COMMENT=	'video player for kde'
@@ -32,7 +32,7 @@ MAKE_ENV=		${CONFIGURE_ENV}
 MAKE_FLAGS+=		${MODKDE_MAKE_FLAGS}
 MAKE_FLAGS+=		LIBRESOLV=
 
-LIB_DEPENDS=		kdecore.7,DCOP,kdesu,kio,kdefx,kparts,kutils,kdeprint,kdeui,kwalletclient,khtml,kjs::x11/kde/libs3 \
+LIB_DEPENDS=		kdecore.>=7,DCOP,kdesu,kio,kdefx,kparts,kutils,kdeprint,kdeui,kwalletclient,khtml,kjs::x11/kde/libs3 \
 			vorbis,vorbisenc::audio/libvorbis \
 			cdda_interface,cdda_paranoia::audio/cdparanoia \
 			xine::multimedia/xine-lib

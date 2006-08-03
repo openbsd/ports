@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/06/13 13:30:30 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2006/08/03 23:15:57 espie Exp $
 
 COMMENT=	"multithreaded gtk2 file transfer client"
 
@@ -40,7 +40,7 @@ LIB_DEPENDS=	glib.1::devel/glib
 CONFIGURE_ARGS+=--disable-gtkport --disable-gtk20
 .else
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=	gtk-x11-2.0.600.10,gdk_pixbuf-2.0.600.0,gdk-x11-2.0.600.0::x11/gtk+2
+LIB_DEPENDS=	gtk-x11-2.0.>=600.10,gdk_pixbuf-2.0.>=600.0,gdk-x11-2.0.>=600.0::x11/gtk+2
 WANTLIB+=	freetype pthread X11 fontconfig \
 		gthread-2.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 \
 		gobject-2.0.0.0 atk-1.0.0.0 pango-1.0.0.0 pangocairo-1.0.0.0 \

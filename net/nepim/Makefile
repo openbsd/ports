@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/06/18 10:22:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2006/08/03 23:15:58 espie Exp $
 
 COMMENT=		"network pipe meter"
 
@@ -19,7 +19,7 @@ WANTLIB= c
 
 MASTER_SITES=		http://download.savannah.gnu.org/releases/nepim/
 
-LIB_DEPENDS=		oop.4::devel/liboop
+LIB_DEPENDS=		oop.>=4::devel/liboop
 
 USE_GMAKE=		Yes
 

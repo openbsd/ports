@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/03/20 05:52:33 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.9 2006/08/03 23:15:57 espie Exp $
 
 COMMENT=		"video stream processing tools"
 
@@ -35,21 +35,21 @@ PKG_ARGS+=		-Di386=0
 PATCH_LIST=		patch-* gcc-*
 .endif
 
-LIB_DEPENDS=		SDL.2::devel/sdl \
-			a52.0::audio/liba52 \
-			avcodec.7,avutil.1::graphics/ffmpeg \
-			dv.4::multimedia/libdv \
-			dvdread.3::devel/libdvdread \
-			gdk.1.2,gtk.1.2::x11/gtk+ \
-			iconv.4::converters/libiconv \
-			jpeg.62::graphics/jpeg \
-			mp3lame.0::audio/lame \
-			mpeg2.0,mpeg2convert.0::graphics/libmpeg2 \
-			ogg.5::audio/libogg \
-			postproc.6::graphics/ffmpeg \
-			theora.1::multimedia/libtheora \
-			vorbis.3,vorbisfile.4::audio/libvorbis \
-			xml2.8::textproc/libxml
+LIB_DEPENDS=		SDL.>=2::devel/sdl \
+			a52::audio/liba52 \
+			avcodec.>=7,avutil.>=1::graphics/ffmpeg \
+			dv.>=4::multimedia/libdv \
+			dvdread.>=3::devel/libdvdread \
+			gdk.>=1.2,gtk.>=1.2::x11/gtk+ \
+			iconv.>=4::converters/libiconv \
+			jpeg.>=62::graphics/jpeg \
+			mp3lame::audio/lame \
+			mpeg2,mpeg2convert::graphics/libmpeg2 \
+			ogg.>=5::audio/libogg \
+			postproc.>=6::graphics/ffmpeg \
+			theora.>=1::multimedia/libtheora \
+			vorbis.>=3,vorbisfile.>=4::audio/libvorbis \
+			xml2.>=8::textproc/libxml
 
 RUN_DEPENDS=		::graphics/ffmpeg \
 			::audio/sox \
@@ -93,7 +93,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 
 .if ${FLAVOR:L:Mlzo}
 CONFIGURE_ARGS+=	--enable-lzo
-LIB_DEPENDS+=		lzo.1::archivers/lzo
+LIB_DEPENDS+=		lzo.>=1::archivers/lzo
 PKG_ARGS+=		-Dlzo=1
 .else
 PKG_ARGS+=		-Dlzo=0
@@ -101,7 +101,7 @@ PKG_ARGS+=		-Dlzo=0
 
 .if ${FLAVOR:L:Mmjpegtools}
 CONFIGURE_ARGS+=	--enable-mjpegtools
-LIB_DEPENDS+=		mjpegutils.3::multimedia/mjpegtools
+LIB_DEPENDS+=		mjpegutils.>=3::multimedia/mjpegtools
 RUN_DEPENDS+=		::multimedia/mjpegtools
 PKG_ARGS+=		-Dmjpegtools=1
 .else
@@ -110,7 +110,7 @@ PKG_ARGS+=		-Dmjpegtools=0
 
 .if ${FLAVOR:L:Mquicktime}
 CONFIGURE_ARGS+=	--enable-libquicktime
-LIB_DEPENDS+=		quicktime.0::multimedia/libquicktime
+LIB_DEPENDS+=		quicktime::multimedia/libquicktime
 WANTLIB+=		png
 PKG_ARGS+=		-Dquicktime=1
 .else

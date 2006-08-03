@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2005/10/07 18:52:58 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2006/08/03 23:15:58 espie Exp $
 
 COMMENT=	"cross-platform remote desktop access"
 COMMENT-viewer=	"client for cross-platform remote desktop access"
@@ -22,7 +22,7 @@ WANTLIB=		X11 Xext c z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=vnc-tight/}
 
-LIB_DEPENDS=	jpeg.62.::graphics/jpeg
+LIB_DEPENDS=	jpeg.>=62.::graphics/jpeg
 USE_X11=	Yes
 
 WRKDIST=	${WRKDIR}/vnc_unixsrc

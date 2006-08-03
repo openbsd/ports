@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/06/12 22:47:06 jolan Exp $
+# $OpenBSD: Makefile,v 1.7 2006/08/03 23:15:57 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -33,9 +33,9 @@ RUN_DEPENDS=	:python-expat-${PYTHON_VER}*:lang/python/${PYTHON_VER},-expat \
 		::databases/py-sqlite2 \
 		::x11/py-gtk2
 WANTLIB=	X11 Xext Xss fontconfig freetype m \
-		aspell atk-1.0.1011.0 cairo gdk-x11-2.0.600.0 \
-		gdk_pixbuf-2.0.600.0 glib-2.0.600.0 gmodule-2.0.600.0 \
-		gobject-2.0.600.0 gtk-x11-2.0.600.0 pango-1.0.800.0 \
+		aspell atk-1.0.>=1011.0 cairo gdk-x11-2.0.>=600.0 \
+		gdk_pixbuf-2.0.>=600.0 glib-2.0.>=600.0 gmodule-2.0.>=600.0 \
+		gobject-2.0.>=600.0 gtk-x11-2.0.>=600.0 pango-1.0.>=800.0 \
 		pangocairo-1.0.0.0 pangoft2-1.0.0.0
 
 MAKE_ENV+=	PY_CFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/python${PYTHON_VER}" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/08/01 18:38:23 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2006/08/03 23:15:58 espie Exp $
 
 COMMENT=	"SIP Express Router"
 
@@ -28,8 +28,8 @@ USE_GMAKE=	Yes
 
 ALL_TARGET=	all ser.cfg
 
-LIB_DEPENDS=	lib/mysql/mysqlclient.10::databases/mysql \
-		expat.2::textproc/expat
+LIB_DEPENDS=	lib/mysql/mysqlclient.>=10::databases/mysql \
+		expat.>=2::textproc/expat
 
 do-install:
 	cd ${WRKDIST}; ${MAKE_PROGRAM} PREFIX=${WRKINST}${TRUEPREFIX} install

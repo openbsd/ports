@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2005/02/07 19:01:49 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2006/08/03 23:15:58 espie Exp $
 
 COMMENT=		"snmp command line utility"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m ncurses readline z 
 
 MODULES=		converters/libiconv
-LIB_DEPENDS=		glib.1.2,gmodule.1.2::devel/glib \
+LIB_DEPENDS=		glib.>=1.2,gmodule.>=1.2::devel/glib \
 			xml2::textproc/libxml
 
 CONFIGURE_STYLE=	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2005/10/30 00:10:42 fgsch Exp $
+# $OpenBSD: Makefile,v 1.50 2006/08/03 23:15:58 espie Exp $
 
 COMMENT=	"multi-router traffic grapher"
 
@@ -10,7 +10,7 @@ MASTER_SITES=	${HOMEPAGE}pub/
 
 HOMEPAGE=	http://people.ee.ethz.ch/~oetiker/webtools/mrtg/
 
-LIB_DEPENDS=	gd.18::graphics/gd
+LIB_DEPENDS=	gd.>=18::graphics/gd
 
 RUN_DEPENDS=	::net/p5-SNMP_Session \
 		::textproc/p5-Pod-Simple

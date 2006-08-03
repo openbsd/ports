@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/07/11 11:30:06 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2006/08/03 23:15:57 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -60,8 +60,8 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
 BUILD_DEPENDS=	::net/net-snmp
-LIB_DEPENDS=	gdbm.3::databases/gdbm \
-		ltdl.4::devel/libtool,-ltdl
+LIB_DEPENDS=	gdbm.>=3::databases/gdbm \
+		ltdl.>=4::devel/libtool,-ltdl
 
 
 .if ${FLAVOR:L:Mno_iodbc}
@@ -102,19 +102,19 @@ CONFIGURE_ARGS+=--with-rlm_sql_postgresql \
 
 .if defined(PACKAGING)
 .  if ${SUBPACKAGE} == "-iodbc"
-LIB_DEPENDS=	iodbc.2::databases/iodbc
+LIB_DEPENDS=	iodbc.>=2::databases/iodbc
 RUN_DEPENDS=	::net/freeradius
 WANTLIB=	pthread
 .  elif ${SUBPACKAGE} == "-ldap"
-LIB_DEPENDS=	lber.8,ldap_r.8:openldap-client-*:databases/openldap \
-		radius.1::net/freeradius
+LIB_DEPENDS=	lber.>=8,ldap_r.>=8:openldap-client-*:databases/openldap \
+		radius.>=1::net/freeradius
 WANTLIB=	crypto pthread sasl2 ssl
 .  elif ${SUBPACKAGE} == "-mysql"
-LIB_DEPENDS=	mysqlclient_r.16:mysql-client-*:databases/mysql
+LIB_DEPENDS=	mysqlclient_r.>=16:mysql-client-*:databases/mysql
 RUN_DEPENDS=	::net/freeradius
 WANTLIB=	crypto m pthread ssl z
 .  elif ${SUBPACKAGE} == "-pgsql"
-LIB_DEPENDS=	pq.2:postgresql-client-*:databases/postgresql
+LIB_DEPENDS=	pq.>=2:postgresql-client-*:databases/postgresql
 RUN_DEPENDS=	::net/freeradius
 .  else
 WANTLIB=	c com_err crypto krb5 pthread ssl

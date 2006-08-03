@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/12/16 00:31:20 alek Exp $
+# $OpenBSD: Makefile,v 1.11 2006/08/03 23:15:57 espie Exp $
 
 COMMENT=		"command-line WebDAV client"
 
@@ -8,7 +8,7 @@ CATEGORIES=     	net www
 
 HOMEPAGE=		http://www.webdav.org/cadaver/
 
-LIB_DEPENDS=		xml2.6:libxml->=2.4.8:textproc/libxml
+LIB_DEPENDS=		xml2.>=6:libxml->=2.4.8:textproc/libxml
 MODULES=		converters/libiconv
 
 # GPL

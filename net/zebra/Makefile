@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2005/06/09 20:44:08 robert Exp $
+# $OpenBSD: Makefile,v 1.30 2006/08/03 23:15:58 espie Exp $
 # KAME Id: Makefile,v 1.5 1999/09/13 16:27:41 itojun Exp
 # Originally by: peter.galbavy@knowledge.com
 
@@ -40,7 +40,7 @@ FLAVORS=	snmp
 FLAVOR?=
 
 .if ${FLAVOR:L:Msnmp}
-LIB_DEPENDS=	netsnmp.6.2::net/net-snmp
+LIB_DEPENDS=	netsnmp.>=6.2::net/net-snmp
 CONFIGURE_ARGS+= --enable-snmp
 WANTLIB+=	crypto
 .else

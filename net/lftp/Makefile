@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2006/07/21 14:48:15 kevlo Exp $
+# $OpenBSD: Makefile,v 1.63 2006/08/03 23:15:57 espie Exp $
 
 COMMENT=	"shell-like command line ftp and sftp client"
 
@@ -20,7 +20,7 @@ MASTER_SITES=	http://ftp.yars.free.net/pub/source/lftp/ \
 		http://ftp.yars.free.net/pub/source/lftp/old/
 EXTRACT_SUFX=	.tar.bz2
 
-LIB_DEPENDS=	expat.6::textproc/expat
+LIB_DEPENDS=	expat.>=6::textproc/expat
 
 CONFIGURE_STYLE= gnu 
 CONFIGURE_ARGS=	--with-openssl \

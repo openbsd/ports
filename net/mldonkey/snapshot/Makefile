@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2005/05/11 17:23:55 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2006/08/03 23:15:58 espie Exp $
 
 BROKEN= "requires update due to ocaml 3.08"
 
@@ -26,7 +26,7 @@ WRKDIST=${WRKDIR}/mldonkey-2.5.22
 USE_GMAKE=Yes
 MODULES=lang/ocaml
 BUILD_DEPENDS=::x11/lablgtk
-LIB_DEPENDS=gdk.1,gtk.1::x11/gtk+
+LIB_DEPENDS=gdk.>=1,gtk.>=1::x11/gtk+
 FAKE_FLAGS=prefix=${DESTDIR}${PREFIX} MODOCAML_NATIVE=${MODOCAML_NATIVE}
 NO_REGRESS=Yes
 

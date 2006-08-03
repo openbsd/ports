@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2006/05/14 17:31:16 steven Exp $
+# $OpenBSD: Makefile,v 1.27 2006/08/03 23:15:57 espie Exp $
 
 COMMENT=		"jabber server"
 DISTNAME=		jabberd-2.0s11
@@ -41,14 +41,14 @@ EXTRA_INCLUDE_PATH=	${LOCALBASE}/include
 EXTRA_LIBRARY_PATH=	${LOCALBASE}/lib
 
 .if ${FLAVOR:L:Mmysql}
-LIB_DEPENDS+=		lib/mysql/mysqlclient.10::databases/mysql
+LIB_DEPENDS+=		lib/mysql/mysqlclient.>=10::databases/mysql
 CONFIGURE_ARGS+=	--enable-mysql
 .else
 CONFIGURE_ARGS+=	--disable-mysql
 .endif
 
 .if ${FLAVOR:L:Mpostgresql}
-LIB_DEPENDS+=		pq.4::databases/postgresql
+LIB_DEPENDS+=		pq.>=4::databases/postgresql
 CONFIGURE_ARGS+=	--enable-pgsql
 .else
 CONFIGURE_ARGS+=	--disable-pgsql
@@ -63,7 +63,7 @@ CONFIGURE_ARGS+=	--disable-db
 .endif
 
 .if ${FLAVOR:L:Mldap}
-LIB_DEPENDS+=		ldap.8,lber.8:openldap-*->=2.3:databases/openldap
+LIB_DEPENDS+=		ldap.>=8,lber.>=8:openldap-*->=2.3:databases/openldap
 CONFIGURE_ARGS+=	--enable-ldap
 WANTLIB+=		sasl2
 .else
