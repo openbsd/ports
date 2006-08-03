@@ -1,11 +1,14 @@
-# $OpenBSD: tomcat.rc,v 1.4 2005/03/05 23:31:58 kurt Exp $
+# $OpenBSD: tomcat.rc,v 1.5 2006/08/03 19:37:04 kurt Exp $
 #
 # Define JAVA_HOME for _tomcat here
 # Start tomcat with following command:
 # $ sudo -u _tomcat %%PREFIX%%/%%DISTNAME%%/bin/startup.sh
 #
 
-JAVA_HOME=%%JAVA_HOME%%
+# javaPathHelper will pickup JAVA_HOME from the env. if
+# it is not set in the env it will default the jdk that
+# satisfied the RUN_DEPEND.
+JAVA_HOME=$(javaPathHelper -h jakarta-tomcat)
 
 # override other environment options:
 #CATALINA_HOME=%%PREFIX%%/%%DISTNAME%%
