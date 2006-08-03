@@ -1,5 +1,5 @@
 # $FreeBSD: Makefile,v 1.9 1998/12/02 05:56:01 asami Exp $
-# $OpenBSD: Makefile,v 1.25 2005/03/08 07:57:51 alek Exp $
+# $OpenBSD: Makefile,v 1.26 2006/08/03 20:04:52 espie Exp $
 
 COMMENT=	"Visual Audio Tool, multicast audioconferencing"
 
@@ -20,8 +20,8 @@ WANTLIB=		m stdc++ tcl80 c X11
 GSM_DIR=	audio/gsm
 
 BUILD_DEPENDS=  ::${GSM_DIR}:patch
-LIB_DEPENDS=	tk80.1.5:tk-8.0.*:x11/tk/8.0 \
-		gsm.1::${GSM_DIR}
+LIB_DEPENDS=	tk80.>=1.5:tk-8.0.*:x11/tk/8.0 \
+		gsm.>=1::${GSM_DIR}
 
 USE_X11=	Yes
 CONFIGURE_STYLE=gnu

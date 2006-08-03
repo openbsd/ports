@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/04/01 16:25:11 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2006/08/03 20:04:51 espie Exp $
 
 COMMENT=	"library of Fortran 77 linear algebra subroutines"
 
@@ -22,7 +22,7 @@ MASTER_SITES=	ftp://ftp.netlib.org/lapack/ \
 		ftp://netlib.bell-labs.com/netlib/lapack/ \
 		http://www.netlib.no/netlib/lapack/
 
-LIB_DEPENDS=	blas.1::math/blas
+LIB_DEPENDS=	blas.>=1::math/blas
 
 DIST_SUBDIR=	${PKGNAME}
 WRKDIST=	${WRKDIR}

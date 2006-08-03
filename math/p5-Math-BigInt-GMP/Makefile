@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/07/10 15:33:58 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2006/08/03 20:04:52 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Math/}
 
-LIB_DEPENDS=	gmp.6::devel/gmp
+LIB_DEPENDS=	gmp.>=6::devel/gmp
 
 CONFIGURE_STYLE=perl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

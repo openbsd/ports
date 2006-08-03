@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2004/12/22 11:50:30 alek Exp $
+# $OpenBSD: Makefile,v 1.20 2006/08/03 20:04:52 espie Exp $
 
 COMMENT=		'wm-dockapp; alarm clock'
 
@@ -18,7 +18,7 @@ WANTLIB=		X11 Xext Xi Xpm c glib gmodule iconv intl m pthread
 
 MASTER_SITES=		${HOMEPAGE}
 
-LIB_DEPENDS=		gtk.1,gdk.1::x11/gtk+
+LIB_DEPENDS=		gtk.>=1,gdk.>=1::x11/gtk+
 
 USE_X11=		Yes
 NO_REGRESS=		Yes

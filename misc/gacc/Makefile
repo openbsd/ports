@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/12/22 11:48:33 alek Exp $
+# $OpenBSD: Makefile,v 1.11 2006/08/03 20:04:52 espie Exp $
 
 COMMENT=	"personal accounts manager"
 
@@ -19,7 +19,7 @@ WANTLIB=		X11 Xext Xi c glib gmodule iconv intl m
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gacc/}
 
-LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
+LIB_DEPENDS=	gtk.>=1.2,gdk.>=1.2::x11/gtk+
 
 USE_GMAKE=	Yes
 

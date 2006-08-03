@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2006/01/06 18:58:31 steven Exp $
+# $OpenBSD: Makefile,v 1.18 2006/08/03 20:04:51 espie Exp $
 
 COMMENT=	"graph drawing software"
 
@@ -40,9 +40,9 @@ WANTLIB=		ICE SM X11 Xaw Xext Xmu Xpm Xt c fontconfig freetype m z
 MASTER_SITES=	${HOMEPAGE}pub/graphviz/ARCHIVE/
 
 MODULES=	converters/libiconv
-LIB_DEPENDS=	expat.4::textproc/expat \
-		jpeg.62::graphics/jpeg \
-		png.2::graphics/png
+LIB_DEPENDS=	expat.>=4::textproc/expat \
+		jpeg.>=62::graphics/jpeg \
+		png.>=2::graphics/png
 BUILD_DEPENDS=	:tk-8.4.*:x11/tk/8.4
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

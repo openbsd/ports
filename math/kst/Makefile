@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/06/12 11:15:56 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/08/03 20:04:51 espie Exp $
 
 CATEGORIES=	math x11/kde
 COMMENT=	'data viewing/plotting tool'
@@ -35,8 +35,8 @@ USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 LIBTOOL_FLAGS =		--tag=disable-static
 
-LIB_DEPENDS+=	kdecore.6,kwalletclient,DCOP,kutils,kparts,kdeui,kdesu,kmdi,kio,kdefx,kdeprint,khtml,kjs::x11/kde/libs3 \
-		gsl.7,gslcblas:gsl->=1.6:devel/gsl \
+LIB_DEPENDS+=	kdecore.>=6,kwalletclient,DCOP,kutils,kparts,kdeui,kdesu,kmdi,kio,kdefx,kdeprint,khtml,kjs::x11/kde/libs3 \
+		gsl.>=7,gslcblas:gsl->=1.6:devel/gsl \
 		netcdf,netcdf_c++::math/netcdf \
 		cfitsio::math/cfitsio
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/07/28 06:29:34 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2006/08/03 20:04:51 espie Exp $
 
 # vax:   no IEEE arithmetic
 # sparc: fPIC version of libgcc.a needed but not available
@@ -35,9 +35,9 @@ MODULES=	gcc3
 MODGCC3_ARCHES=	alpha sparc
 MODGCC3_LANGS=	c++ g77
 
-LIB_DEPENDS=	fftw3.3::math/fftw3 \
-		lapack.3::math/lapack \
-		blas.1::math/blas
+LIB_DEPENDS=	fftw3.>=3::math/fftw3 \
+		lapack.>=3::math/lapack \
+		blas.>=1::math/blas
 REGRESS_DEPENDS=::devel/dejagnu
 
 USE_GMAKE=	Yes

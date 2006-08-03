@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/06/13 13:28:43 bernd Exp $
+# $OpenBSD: Makefile,v 1.11 2006/08/03 20:04:52 espie Exp $
 
 COMMENT=	"gtk livejournal client"
 
@@ -25,7 +25,7 @@ MODULES=	devel/gettext
 BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	glib-2.0.0.0,gobject-2.0.0.0,gmodule-2.0.0.0::devel/glib2 \
 		gtk-x11-2.0.0.0,gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0::x11/gtk+2 \
-		curl.2::net/curl \
+		curl.>=2::net/curl \
 		xml2::textproc/libxml
 
 PORTHOME=	${WRKDIR}

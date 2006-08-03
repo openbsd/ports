@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2005/11/03 18:28:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2006/08/03 20:04:52 espie Exp $
 
 COMMENT=	"MBONE video tool"
 
@@ -15,8 +15,8 @@ WANTLIB=		m stdc++ c X11 Xext
 
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/vic/2.8ucl4/
 
-LIB_DEPENDS=	tcl80.1.5:tcl-8.0.*:lang/tcl/8.0 \
-		tk80.1.5:tk-8.0.*:x11/tk/8.0
+LIB_DEPENDS=	tcl80.>=1.5:tcl-8.0.*:lang/tcl/8.0 \
+		tk80.>=1.5:tk-8.0.*:x11/tk/8.0
 
 USE_X11=	Yes
 AUTOCONF_VERSION=2.13

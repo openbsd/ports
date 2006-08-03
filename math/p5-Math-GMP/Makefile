@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/01/17 15:58:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2006/08/03 20:04:52 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	gmp.4::devel/gmp
+LIB_DEPENDS=	gmp.>=4::devel/gmp
 
 CONFIGURE_STYLE= perl
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \

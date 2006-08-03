@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/06/12 14:32:48 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/08/03 20:04:52 espie Exp $
 
 COMMENT=	"task-based timeclock for KDE"
 
@@ -21,7 +21,7 @@ WANTLIB=		art_lgpl_2 jpeg kwalletclient ICE SM X11 Xext Xrender \
 
 MASTER_SITES=	${HOMEPAGE}/downloads/v${VERSION}/tarball/
 
-LIB_DEPENDS=	kdecore.4,DCOP,kdefx,kdesu,kdeui,kio::x11/kde/libs3
+LIB_DEPENDS=	kdecore.>=4,DCOP,kdefx,kdesu,kdeui,kio::x11/kde/libs3
 
 MODULES=	x11/qt3
 MODQT_MT=	Yes

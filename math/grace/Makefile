@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2006/03/04 15:10:31 sturm Exp $
+# $OpenBSD: Makefile,v 1.23 2006/08/03 20:04:51 espie Exp $
 # $FreeBSD: ports/math/grace/Makefile,v 1.18 2001/04/25 05:59:19 lkoeller Exp $
 # Original from: Lars Koeller <Lars.Koeller@Uni-Bielefeld.de>
 
@@ -30,11 +30,11 @@ CONFIGURE_ARGS+=	--with-bundled-xbae \
 			--with-extra-ldpath=${LOCALBASE}/lib \
 			--enable-grace-home=${PREFIX}/grace
 
-LIB_DEPENDS=	jpeg.62::graphics/jpeg \
-		png.2::graphics/png \
-		t1.5::devel/t1lib \
-		tiff.35::graphics/tiff \
-		pdf.2::print/pdflib
+LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
+		png.>=2::graphics/png \
+		t1.>=5::devel/t1lib \
+		tiff.>=35::graphics/tiff \
+		pdf.>=2::print/pdflib
 
 FLAVORS=	no_x11 fftw netcdf xmhtml
 FLAVOR?=
@@ -53,7 +53,7 @@ USE_X11=		Yes
 USE_MOTIF=		openmotif
 WANTLIB+=		ICE SM X11 Xext Xmu Xp Xpm Xt 
 .  if ${FLAVOR:L:Mxmhtml}
-LIB_DEPENDS+=		XmHTML.1::www/xmhtml
+LIB_DEPENDS+=		XmHTML.>=1::www/xmhtml
 CONFIGURE_ARGS+=	--enable-xmhtml
 .  else
 CONFIGURE_ARGS+=	--disable-xmhtml
@@ -61,14 +61,14 @@ CONFIGURE_ARGS+=	--disable-xmhtml
 .endif
 
 .if ${FLAVOR:L:Mfftw}
-LIB_DEPENDS+=		fftw.2::math/fftw
+LIB_DEPENDS+=		fftw.>=2::math/fftw
 CONFIGURE_ARGS+=	--with-fftw
 .else
 CONFIGURE_ARGS+=	--without-fftw
 .endif
 
 .if ${FLAVOR:L:Mnetcdf}
-LIB_DEPENDS+=		netcdf.1::math/netcdf
+LIB_DEPENDS+=		netcdf.>=1::math/netcdf
 CONFIGURE_ARGS+=	--enable-netcdf
 .else
 CONFIGURE_ARGS+=	--disable-netcdf

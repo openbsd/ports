@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/07/28 06:29:34 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2006/08/03 20:04:52 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -103,7 +103,7 @@ SUBPACKAGE?=
 .  if empty(SUBPACKAGE)
 MODULES=		converters/libiconv
 WANTLIB+=		X11 c fontconfig z png jpeg
-LIB_DEPENDS+=		gd.20::graphics/gd
+LIB_DEPENDS+=		gd.>=20::graphics/gd
 .  else
 LIB_DEPENDS+=		plplotd,csirocsa::math/plplot
 .    if ${SUBPACKAGE} == "-f77"

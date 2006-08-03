@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2005/03/08 07:57:51 alek Exp $
+# $OpenBSD: Makefile,v 1.22 2006/08/03 20:04:52 espie Exp $
 
 COMMENT=	"voice communication over data networks"
 
@@ -13,7 +13,7 @@ PERMIT_DISTFILES_CDROM=	"generally restrictive license"
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		m curses ossaudio c termcap des
 
-LIB_DEPENDS=	gsm.1.0::audio/gsm
+LIB_DEPENDS=	gsm.>=1.0::audio/gsm
 
 MAKE_ENV=	DUPLEX=-DHALF_DUPLEX
 

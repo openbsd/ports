@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2006/05/27 16:54:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2006/08/03 20:04:52 espie Exp $
 
 COMMENT=	"nice X11-based calendar/scheduling tool (using XView)"
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext c m
 
 BUILD_DEPENDS=	::x11/xview/config
-LIB_DEPENDS=    xview.3,olgx.3::x11/xview/lib
+LIB_DEPENDS=    xview.>=3,olgx.>=3::x11/xview/lib
 
 WRKDIST     = ${WRKDIR}/xcalentool-2.3
 

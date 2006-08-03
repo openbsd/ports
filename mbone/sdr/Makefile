@@ -1,4 +1,4 @@
-#   $OpenBSD: Makefile,v 1.22 2005/03/08 07:57:51 alek Exp $
+#   $OpenBSD: Makefile,v 1.23 2006/08/03 20:04:52 espie Exp $
 
 COMMENT=	"MBone Session Directory"
 
@@ -14,8 +14,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c z X11 m
 
-LIB_DEPENDS=	tcl80.1.5:tcl-8.0.*:lang/tcl/8.0 \
-		tk80.1.5:tk-8.0.*:x11/tk/8.0
+LIB_DEPENDS=	tcl80.>=1.5:tcl-8.0.*:lang/tcl/8.0 \
+		tk80.>=1.5:tk-8.0.*:x11/tk/8.0
 
 USE_X11=	Yes
 USE_GMAKE=	Yes

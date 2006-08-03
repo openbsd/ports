@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2006/02/08 04:54:49 david Exp $
+# $OpenBSD: Makefile,v 1.17 2006/08/03 20:04:52 espie Exp $
 
 COMMENT=	"filemanager for X Window"
 
@@ -22,8 +22,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext c jpeg m stdc++ z
 
-LIB_DEPENDS=	tiff.36::graphics/tiff \
-		png.4::graphics/png
+LIB_DEPENDS=	tiff.>=36::graphics/tiff \
+		png.>=4::graphics/png
 
 USE_X11=	Yes
 NO_REGRESS=	Yes

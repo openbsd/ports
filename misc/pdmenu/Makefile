@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2005/04/19 09:41:42 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2006/08/03 20:04:52 espie Exp $
 
 COMMENT=		"simple slang-based menu program"
 
@@ -17,7 +17,7 @@ WANTLIB=		c m termcap
 
 MASTER_SITES=		http://kitenet.net/programs/code/pdmenu/
 
-LIB_DEPENDS=		slang.14::devel/libslang
+LIB_DEPENDS=		slang.>=14::devel/libslang
 
 FAKE_FLAGS=		INSTALL_PREFIX=${WRKINST}
 

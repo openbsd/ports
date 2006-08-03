@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2006/02/08 22:15:33 aanriot Exp $
+# $OpenBSD: Makefile,v 1.44 2006/08/03 20:04:52 espie Exp $
 
 COMMENT=	"X11-based presentation tool"
 
@@ -18,10 +18,10 @@ WANTLIB=		c ICE jpeg lcms m SM util \
 			Xt Xmu Xext X11 Xtst z
 
 # plus sign is for localized (i.e. Japanese) version
-LIB_DEPENDS+=	ttf.1::print/freetype \
-		png.2::graphics/png \
+LIB_DEPENDS+=	ttf.>=1::print/freetype \
+		png.>=2::graphics/png \
 		mng::graphics/libmng \
-		ungif.5::graphics/libungif
+		ungif.>=5::graphics/libungif
 RUN_DEPENDS+=	::graphics/netpbm \
 		::print/ghostscript/gnu-fonts
 

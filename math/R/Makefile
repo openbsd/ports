@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/07/07 22:34:47 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2006/08/03 20:04:51 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,10 +25,10 @@ MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 
 USE_X11=	Yes
 MODULES=	devel/gettext
-LIB_DEPENDS=	bz2.10::archivers/bzip2 \
-		jpeg.62::graphics/jpeg \
-		pcre.0::devel/pcre \
-		tk84.1:tk-8.4.*:x11/tk/8.4
+LIB_DEPENDS=	bz2.>=10::archivers/bzip2 \
+		jpeg.>=62::graphics/jpeg \
+		pcre::devel/pcre \
+		tk84.>=1:tk-8.4.*:x11/tk/8.4
 
 CONFIGURE_STYLE=gnu dest
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/tools

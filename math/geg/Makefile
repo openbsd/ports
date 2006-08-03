@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2005/02/27 09:39:10 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2006/08/03 20:04:51 espie Exp $
 
 COMMENT=	"simple program for plotting 2d mathematical functions"
 
@@ -24,8 +24,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xi c gdk gmodule m
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
-		glib.1::devel/glib
+LIB_DEPENDS=	gtk.>=1.2::x11/gtk+ \
+		glib.>=1::devel/glib
 
 CONFIGURE_STYLE= gnu
 
