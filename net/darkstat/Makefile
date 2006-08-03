@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/06/18 17:26:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2006/08/03 20:08:59 ckuethe Exp $
 
 COMMENT=		"network statistics gatherer with graphs"
 
-DISTNAME=		darkstat-3.0.471
+DISTNAME=		darkstat-3.0.524
 CATEGORIES=		net www
 
 HOMEPAGE=		http://dmr.ath.cx/net/darkstat/
+MAINTAINER=		Chris Kuethe <ckuethe@openbsd.org>
 
 # BSD with some code GPL'ed
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,8 +19,6 @@ MASTER_SITES=		${HOMEPAGE}
 EXTRACT_SUFX=		.tar.bz2
 
 CONFIGURE_STYLE=	gnu
-
-ALL_TARGET=		# Empty
 
 NO_REGRESS=		Yes
 

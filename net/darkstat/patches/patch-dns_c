@@ -1,0 +1,12 @@
+$OpenBSD: patch-dns_c,v 1.1 2006/08/03 20:07:46 ckuethe Exp $
+--- dns.c.orig	Sun Jul  2 11:26:45 2006
++++ dns.c	Sun Jul  2 11:26:58 2006
+@@ -39,7 +39,7 @@ union dns_reply {
+    struct {
+       in_addr_t ip;
+       int error;              /* h_errno, or 0 if no error */
+-      char name[];            /* the rest of the buffer is the name */
++      char *name;            /* the rest of the buffer is the name */
+    } hdr;
+ };
+ 

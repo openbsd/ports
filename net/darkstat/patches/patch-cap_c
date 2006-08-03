@@ -1,0 +1,26 @@
+$OpenBSD: patch-cap_c,v 1.1 2006/08/03 20:07:46 ckuethe Exp $
+--- cap.c.orig	Wed Jun 21 07:58:41 2006
++++ cap.c	Mon Jul 10 10:24:21 2006
+@@ -134,6 +134,22 @@ cap_init(const char *device, const char 
+       err(1, "ioctl(pcap_fd, BIOCSRTIMEOUT)"); }
+ #endif
+ 
++#ifdef BIOCSETWF
++{
++   /* Deny all writes to the socket */
++   struct bpf_insn bpf_wfilter[] = { BPF_STMT(BPF_RET+BPF_K, 0) };
++   int wf_len = sizeof(bpf_wfilter) / sizeof(struct bpf_insn);
++   struct bpf_program pr;
++
++   pr.bf_len = wf_len;
++   pr.bf_insns = bpf_wfilter;
++
++   if (ioctl(pcap_fd, BIOCSETWF, &pr) == -1)
++      err(1, "ioctl(pcap_fd, BIOCSETFW)");
++   verbosef("Filtered out BPF writes");
++}
++#endif
++
+ #ifdef BIOCLOCK
+    if (ioctl(pcap_fd, BIOCLOCK) == -1)
+       err(1, "ioctl(pcap_fd, BIOCLOCK)");
