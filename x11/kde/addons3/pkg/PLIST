@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.24 2006/04/01 10:49:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.25 2006/08/03 23:37:13 espie Exp $
 bin/atlantikdesigner
-bin/exif.py
 bin/fsview
 bin/jpegorient
 bin/kio_media_realfolder
@@ -9,7 +8,6 @@ bin/lnkforward
 bin/noatunsynaescope.bin
 bin/noatuntippecanoe.bin
 bin/noatuntyler.bin
-bin/orient.py
 ${KDE}/katecppsymbolviewerplugin.la
 ${KDE}/katecppsymbolviewerplugin.so
 ${KDE}/katefiletemplates.la
@@ -167,6 +165,9 @@ share/apps/domtreeviewer/
 share/apps/domtreeviewer/domtreeviewerui.rc
 share/apps/fsview/
 share/apps/fsview/fsview_part.rc
+share/apps/imagerotation/
+share/apps/imagerotation/exif.py
+share/apps/imagerotation/orient.py
 share/apps/kaddressbook/geo_xxportui.rc
 share/apps/kaddressbook/gmx_xxportui.rc
 share/apps/kate/plugins/

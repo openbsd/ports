@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.40 2006/06/03 12:47:30 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2006/08/03 23:37:13 espie Exp $
 
 COMMENT=		"K Desktop Environment, addons"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.3
+VERSION=		3.5.4
 DISTNAME=		kdeaddons-${VERSION}
 MODKDE_VERSION=		3.5.3
 
-LIB_DEPENDS= kdecore.6,kdnssd,knewstuff,DCOP,artskde,kabc,katepartinterfaces,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kmediaplayer,kparts,kresources,ktexteditor,kutils,kwalletclient,vcard::x11/kde/libs3 \
-	SDL.1:sdl-*-!no_x11:devel/sdl \
+LIB_DEPENDS= kdecore.>=6,kdnssd,knewstuff,DCOP,artskde,kabc,katepartinterfaces,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kmediaplayer,kparts,kresources,ktexteditor,kutils,kwalletclient,vcard::x11/kde/libs3 \
+	SDL.>=1:sdl-*-!no_x11:devel/sdl \
 	artsbuilder,artsgui,artsgui_idl,artsgui_kde,artsmidi_idl,artsmodules,artsmodulescommon,artsmoduleseffects,artsmodulesmixers,artsmodulessynth,noatun,noatuncontrols,noatuntags::x11/kde/multimedia3 \
 	atlantic,atlantikui,kdegames::x11/kde/games3 \
 	kateinterfaces,kateutils,konq,konqsidebarplugin::x11/kde/base3 \

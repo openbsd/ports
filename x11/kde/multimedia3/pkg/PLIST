@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2006/06/03 12:47:31 espie Exp $
+@comment $OpenBSD: PLIST,v 1.27 2006/08/03 23:37:13 espie Exp $
 bin/artsbuilder
 bin/artscontrol
 bin/juk
@@ -267,14 +267,16 @@ ${KDE}/noatunsimple.so
 ${KDE}/videothumbnail.la
 ${KDE}/videothumbnail.so
 lib/libarts_akode.la
-lib/libarts_akode.so
+@lib lib/libarts_akode.so.${LIBarts_akode_VERSION}
+lib/libarts_audiofile.la
+@lib lib/libarts_audiofile.so.${LIBarts_audiofile_VERSION}
 @lib lib/libarts_mpeglib-0.3.0.so.${LIBarts_mpeglib-0.3.0_VERSION}
 lib/libarts_mpeglib.la
 @lib lib/libarts_mpeglib.so.${LIBarts_mpeglib_VERSION}
 lib/libarts_splay.la
 @lib lib/libarts_splay.so.${LIBarts_splay_VERSION}
 lib/libarts_xine.la
-lib/libarts_xine.so
+@lib lib/libarts_xine.so.${LIBarts_xine_VERSION}
 lib/libartsbuilder.la
 @lib lib/libartsbuilder.so.${LIBartsbuilder_VERSION}
 lib/libartscontrolapplet.la
@@ -305,8 +307,6 @@ lib/libartsmodulessynth.la
 @lib lib/libartsmodulessynth.so.${LIBartsmodulessynth_VERSION}
 lib/libaudiocdplugins.la
 @lib lib/libaudiocdplugins.so.${LIBaudiocdplugins_VERSION}
-lib/libaudiofilearts.la
-lib/libaudiofilearts.so
 lib/libkcddb.la
 @lib lib/libkcddb.so.${LIBkcddb_VERSION}
 lib/libkdeinit_kmix.la
