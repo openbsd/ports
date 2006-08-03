@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.36 2006/07/28 22:36:41 steven Exp $
+# $OpenBSD: Makefile.inc,v 1.37 2006/08/03 19:56:08 espie Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -89,12 +89,12 @@ SETUP_LOCAL+=		Setup.gdbm
 .  if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
 MULTI_PACKAGES+=	-gdbm
 .  else
-LIB_DEPENDS+=		gdbm.3::databases/gdbm
+LIB_DEPENDS+=		gdbm.>=3::databases/gdbm
 .  endif
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-gdbm"
-LIB_DEPENDS=		gdbm.3::databases/gdbm
+LIB_DEPENDS=		gdbm.>=3::databases/gdbm
 .endif
 
 .if empty(FLAVOR:L:Mno_idle) && empty(FLAVOR:L:Mno_tkinter)
@@ -147,12 +147,12 @@ SETUP_LOCAL+=		Setup.expat
 .  if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
 MULTI_PACKAGES+= 	-expat
 .  else if ${VERSION} == "2.3"
-LIB_DEPENDS+=		expat.4.0:expat->=1.95.6:textproc/expat
+LIB_DEPENDS+=		expat.>=4.0:expat->=1.95.6:textproc/expat
 .  endif
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-expat" && ${VERSION} == "2.3"
-LIB_DEPENDS=		expat.4.0:expat->=1.95.6:textproc/expat
+LIB_DEPENDS=		expat.>=4.0:expat->=1.95.6:textproc/expat
 .endif
 
 # Strip off no_xxx flavors from the package name if we are not

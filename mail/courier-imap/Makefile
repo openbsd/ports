@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2006/08/03 13:09:09 espie Exp $ 
+# $OpenBSD: Makefile,v 1.49 2006/08/03 19:56:08 espie Exp $ 
 
 COMMENT=	"imap server for maildir format mailboxes"
 COMMENT-pop3=	"pop3 server for maildir format mailboxes"
@@ -39,7 +39,7 @@ EXAMPLE_DIR= 	${PREFIX}/share/examples/courier-imap
 USE_GMAKE=	Yes
 
 .if $(SUBPACKAGE) != "-pop3"
-LIB_DEPENDS=	gdbm.2::databases/gdbm
+LIB_DEPENDS=	gdbm.>=2::databases/gdbm
 .endif
 
 CONFIGURE_STYLE= gnu old
@@ -63,7 +63,7 @@ MULTI_PACKAGES+=	-mysql
 CONFIGURE_ARGS+=	--with-authmysql \
 			--with-mysql-libs=${LOCALBASE}/lib/mysql \
 			--with-mysql-includes=${LOCALBASE}/include/mysql
-MYSQL_DEPENDS+=		lib/mysql/mysqlclient.10::databases/mysql
+MYSQL_DEPENDS+=		lib/mysql/mysqlclient.>=10::databases/mysql
 MYSQL_WANTLIB=		crypto ssl m z 
 .endif
 
@@ -83,7 +83,7 @@ PSEUDO_FLAVORS+=	no_pgsql
 MULTI_PACKAGES+=	-pgsql
 CONFIGURE_ARGS+=	--with-pgsql-libs=${LOCALBASE}/lib \
 			--with-pgsql-includes=${LOCALBASE}/include/postgresql
-PGSQL_DEPENDS+=		pq.2:postgresql-client-*:databases/postgresql
+PGSQL_DEPENDS+=		pq.>=2:postgresql-client-*:databases/postgresql
 PGSQL_WANTLIB=		m
 .endif
 

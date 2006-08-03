@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2006/08/03 12:43:20 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2006/08/03 19:56:08 espie Exp $
 
 COMMENT=	"GNU Image Manipulation Program"
 
@@ -40,7 +40,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE SM X11 Xext Xmu Xpm Xrender Xt atk-1.0.0.0 c \
 		fontconfig freetype glib-2.0.0.0 gmodule-2.0.0.0 \
-		gobject-2.0.0.0 jpeg.62 lcms.1 m pango-1.0.0.0 \
+		gobject-2.0.0.0 jpeg.>=62 lcms.>=1 m pango-1.0.0.0 \
 		pangocairo-1.0.0.0 pangoft2-1.0.0.0 png.>=4 \
 		ncurses xml2 z cairo glitz
 

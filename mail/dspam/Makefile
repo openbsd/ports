@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2006/08/03 13:09:09 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2006/08/03 19:56:08 espie Exp $
 
 COMMENT=	"anti-spam filter"
 
@@ -56,7 +56,7 @@ CONFIGURE_ARGS+=	--with-storage-driver=mysql_drv \
 			--with-mysql-includes=${LOCALBASE}/include/mysql \
 			--with-mysql-libraries=${LOCALBASE}/lib/mysql \
 			--enable-virtual-users
-LIB_DEPENDS+=		lib/mysql/mysqlclient.14::databases/mysql
+LIB_DEPENDS+=		lib/mysql/mysqlclient.>=14::databases/mysql
 DRIVER=			mysql
 WANTLIB+=		z ssl crypto
 .endif

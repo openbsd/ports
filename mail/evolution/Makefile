@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2006/08/03 13:09:09 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2006/08/03 19:56:08 espie Exp $
 
 COMMENT=		"integrated email and PIM software for GNOME"
 
@@ -37,8 +37,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xrender \
 			c crypto fontconfig freetype pthread m ssl z \
-			ORBit-2 ORBitCosNaming-2 art_lgpl_2.5 atk-1.0.0.0 \
-			audiofile bonobo-2 bonobo-activation.4.0 bonoboui-2 \
+			ORBit-2 ORBitCosNaming-2 art_lgpl_2.>=5 atk-1.0.0.0 \
+			audiofile bonobo-2 bonobo-activation.>=4.0 bonoboui-2 \
 			esd.>=2 gailutil.>=17 gconf-2 glade-2.0.0.0 \
 			glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 gthread-2.0.0.0 \
 			pango-1.0.0.0 pangoft2-1.0.0.0 pangocairo-1.0.0.0 \
