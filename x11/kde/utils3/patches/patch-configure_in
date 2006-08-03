@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.2 2006/02/03 13:31:33 espie Exp $
---- configure.in.orig	Sat Jan 21 21:10:56 2006
-+++ configure.in	Fri Jan 27 12:31:45 2006
-@@ -509,7 +509,7 @@ AC_SUBST(XMMS_LDFLAGS)
+$OpenBSD: patch-configure_in,v 1.3 2006/08/03 10:53:36 espie Exp $
+--- configure.in.orig	Mon Jul 24 17:26:45 2006
++++ configure.in	Wed Aug  2 10:18:28 2006
+@@ -514,7 +514,7 @@ AC_SUBST(XMMS_LDFLAGS)
  AC_SUBST(XMMS_INCLUDES)
  
  kde_have_knewstuff=yes

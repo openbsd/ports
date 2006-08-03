@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2006/06/03 12:47:30 espie Exp $
+@comment $OpenBSD: PLIST,v 1.32 2006/08/03 10:53:36 espie Exp $
 bin/kcolorchooser
 bin/kcoloredit
 bin/kdvi
@@ -567,7 +567,6 @@ share/apps/kview/kpartplugins/kviewscanner.desktop
 share/apps/kview/kpartplugins/kviewscanner.rc
 share/apps/kview/kview.setdlg
 share/apps/kview/kviewui.rc
-share/apps/kview/photobookui.rc
 share/apps/kviewerpart/
 share/apps/kviewerpart/icons/
 share/apps/kviewerpart/icons/hicolor/
@@ -595,6 +594,8 @@ share/apps/kviewviewer/kpartplugins/kviewbrowser.rc
 share/apps/kviewviewer/kviewpopup.rc
 share/apps/kviewviewer/kviewviewer.rc
 share/apps/kviewviewer/kviewviewer_ro.rc
+share/apps/photobook/
+share/apps/photobook/photobookui.rc
 share/config.kcfg/
 share/config.kcfg/djvumultipage.kcfg
 share/config.kcfg/kdvi.kcfg
@@ -609,6 +610,11 @@ share/doc/HTML/en/kcoloredit/
 share/doc/HTML/en/kcoloredit/common
 share/doc/HTML/en/kcoloredit/index.cache.bz2
 share/doc/HTML/en/kcoloredit/index.docbook
+share/doc/HTML/en/kdegraphics-apidocs/
+share/doc/HTML/en/kdegraphics-apidocs/kfaxview/
+share/doc/HTML/en/kdegraphics-apidocs/kfaxview/html/
+share/doc/HTML/en/kdegraphics-apidocs/kviewshell/
+share/doc/HTML/en/kdegraphics-apidocs/kviewshell/html/
 share/doc/HTML/en/kdvi/
 share/doc/HTML/en/kdvi/KDVI-features.dvi
 share/doc/HTML/en/kdvi/KDVI-features.tex
@@ -779,11 +785,6 @@ share/doc/HTML/en/kview/index.cache.bz2
 share/doc/HTML/en/kview/index.docbook
 share/doc/HTML/en/kview/kview-application-configuration.png
 share/doc/HTML/en/kview/kview-viewer-configuration.png
-share/doc/HTML/en/libtext2path-0.1-apidocs/
-share/doc/HTML/en/libtext2path-0.1-apidocs/kfaxview/
-share/doc/HTML/en/libtext2path-0.1-apidocs/kfaxview/html/
-share/doc/HTML/en/libtext2path-0.1-apidocs/kviewshell/
-share/doc/HTML/en/libtext2path-0.1-apidocs/kviewshell/html/
 share/icons/crystalsvg/16x16/actions/camera_test.png
 share/icons/crystalsvg/16x16/apps/camera.png
 share/icons/crystalsvg/16x16/apps/kviewshell.png

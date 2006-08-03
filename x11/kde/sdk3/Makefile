@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2006/06/03 12:47:31 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2006/08/03 10:53:36 espie Exp $
 
 COMMENT= 		"K Desktop Environment, developer extensions"
 CATEGORIES=		x11 x11/kde devel
-VERSION=		3.5.3
+VERSION=		3.5.4
 DISTNAME=		kdesdk-${VERSION}
 PKGNAME=		${DISTNAME}
 MODKDE_VERSION=		3.5.3
@@ -13,7 +13,7 @@ SHARED_LIBS=	cvsservice		1.0 \
 		kspy			4.0 \
 		kunittestgui		1.0 
 
-LIB_DEPENDS=	kdecore.6,DCOP,kabc,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kparts,kresources,kspell,ktexteditor,kutils,kwalletclient,vcard,kunittest::x11/kde/libs3 \
+LIB_DEPENDS=	kdecore.>=6,DCOP,kabc,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kparts,kresources,kspell,ktexteditor,kutils,kwalletclient,vcard,kunittest::x11/kde/libs3 \
 		kcal::x11/kde/pim3
 
 FLAVORS=	debug

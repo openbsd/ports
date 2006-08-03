@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2006/06/03 12:47:31 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2006/08/03 10:53:36 espie Exp $
 
 COMMENT= 		"K Desktop Environment, network applications"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.3
+VERSION=		3.5.4
 DISTNAME=		kdenetwork-${VERSION}
 PKGNAME=		${DISTNAME}
 MODKDE_VERSION=		3.5.3
@@ -14,7 +14,7 @@ SHARED_LIBS=		kopete			2.0 \
 			rss			2.0
 
 BUILD_DEPENDS+=	::devel/pkgconfig
-LIB_DEPENDS= kdecore.6,DCOP,kabc,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kparts,kresources,ktexteditor,kutils,kwalletclient,vcard,kspell,kdnssd,knewstuff::x11/kde/libs3 \
+LIB_DEPENDS= kdecore.>=6,DCOP,kabc,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kparts,kresources,ktexteditor,kutils,kwalletclient,vcard,kspell,kdnssd,knewstuff::x11/kde/libs3 \
 	xmms::audio/xmms \
 	idn::devel/libidn
 

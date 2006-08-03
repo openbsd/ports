@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.68 2006/06/03 12:47:30 espie Exp $
+# $OpenBSD: Makefile,v 1.69 2006/08/03 10:53:36 espie Exp $
 
 COMMENT=		"K Desktop Environment, libraries"
 COMMENT-cups=		"K Desktop Environment, cups support"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.3
+VERSION=		3.5.4
 DISTNAME=		kdelibs-${VERSION}
 MASTER_SITES0=  ftp://ftp.kde.org/pub/kde/security_patches/
 #PATCHFILES=	post-3.4.3-kdelibs-kjs.diff:0
@@ -69,11 +69,11 @@ WANTLIB+=	intl iconv util jpeg m X11 ICE Xrender c SM pthread \
 
 .if !defined(PACKAGING) || ${SUBPACKAGE:L} == ""
 
-LIB_DEPENDS+=	artsflow.1.0,artsflow_idl,qtmcop,soundserver_idl,mcop,kmedia2_idl::x11/kde/arts3 \
+LIB_DEPENDS+=	artsflow.>=1.0,artsflow_idl,qtmcop,soundserver_idl,mcop,kmedia2_idl::x11/kde/arts3 \
 		pcreposix,pcre::devel/pcre \
-		xslt.1.10:libxslt->=1.0.10:textproc/libxslt \
+		xslt.>=1.10:libxslt->=1.0.10:textproc/libxslt \
 		bz2::archivers/bzip2 \
-		tiff.35::graphics/tiff \
+		tiff.>=35::graphics/tiff \
 		jasper::graphics/jasper
 
 WANTLIB+=	audiofile esd glib-2.0.0.0 \
@@ -93,7 +93,7 @@ WANTLIB+=	gcrypt gnutls gpg-error
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE:L} == "-cups"
-LIB_DEPENDS+=	kdecore.6,kwalletclient,kdefakes,kdefx,kdeprint,kio,kparts,kdeui,kdesu,kdeprint_management,DCOP::x11/kde/libs3
+LIB_DEPENDS+=	kdecore.>=6,kwalletclient,kdefakes,kdefx,kdeprint,kio,kparts,kdeui,kdesu,kdeprint_management,DCOP::x11/kde/libs3
 .endif
 
 SEPARATE_BUILD=	flavored

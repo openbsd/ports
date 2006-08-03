@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2006/06/03 12:47:31 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2006/08/03 10:53:36 espie Exp $
 
 COMMENT= 		"K Desktop Environment, utilities"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.3
+VERSION=		3.5.4
 DISTNAME=		kdeutils-${VERSION}
 PKGNAME=		${DISTNAME}
 MODKDE_VERSION=		3.5.3
@@ -12,7 +12,7 @@ SHARED_LIBS=		kcmlaptop		1.0 \
 			kregexpeditorcommon	2.0 \
 			ksimcore		2.0
 
-LIB_DEPENDS=	DCOP,kabc,kdecore.6,kdefx,kdeprint,kdesu,kdeui,kio,knewstuff,kparts,kresources,kutils,kwalletclient,vcard::x11/kde/libs3 \
+LIB_DEPENDS=	DCOP,kabc,kdecore.>=6,kdefx,kdeprint,kdesu,kdeui,kio,knewstuff,kparts,kresources,kutils,kwalletclient,vcard::x11/kde/libs3 \
 		netsnmp::net/net-snmp \
 		gmp::devel/gmp \
 		python2.4.0.0:python-2.4.*:lang/python/2.4 \

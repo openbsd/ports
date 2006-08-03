@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2006/07/28 10:32:55 steven Exp $
+# $OpenBSD: Makefile,v 1.35 2006/08/03 10:53:36 espie Exp $
 
 .if ${MACHINE_ARCH} == "powerpc"
 BROKEN=			"gcc spins on x_20.cpp"
@@ -14,13 +14,13 @@ SHARED_LIBS=		kjsembed	2.0 \
 			smokekde	4.0 \
 			smokeqt		4.0
 
-LIB_DEPENDS=DCOP,kdecore.6,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kmdi,knewstuff,kparts,kscript,kspell,kutils,kwalletclient::x11/kde/libs3 \
+LIB_DEPENDS=DCOP,kdecore.>=6,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kmdi,knewstuff,kparts,kscript,kspell,kutils,kwalletclient::x11/kde/libs3 \
 	qui-mt::x11/qt3,mt \
 	ruby::lang/ruby
 
 WANTLIB=	GLU Xext stdc++ X11 util m ICE Xrender SM pthread \
 		c fontconfig z GL \
-		png pcre jpeg art_lgpl_2.0.0 pcreposix iconv idn
+		png pcre jpeg art_lgpl_2 pcreposix iconv idn
 PYTHON_VER=	2.4
 BUILD_DEPENDS=	::lang/python/${PYTHON_VER}
 #		::devel/tmake

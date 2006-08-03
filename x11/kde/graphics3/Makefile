@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.60 2006/06/03 12:47:30 espie Exp $
+# $OpenBSD: Makefile,v 1.61 2006/08/03 10:53:36 espie Exp $
 
 COMMENT=		"K Desktop Environment, graphic applications"
 COMMENT-kamera=		"KDE interface to digital cameras"
 COMMENT-kpov=		"KDE modeller for povray"
 COMMENT-sane=		"KDE interface to scanners"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.3
+VERSION=		3.5.4
 DISTNAME=		kdegraphics-${VERSION}
 MODKDE_VERSION=		3.5.3
 
@@ -15,7 +15,7 @@ MULTI_PACKAGES=-kpov -kamera -sane
 PKGNAME=${DISTNAME}
 PKGNAME-kamera=kamera-${VERSION}
 PKGNAME-kpov=kpovmodeller-${VERSION}
-PKGNAME-sane=ksane-${VERSION}p0
+PKGNAME-sane=ksane-${VERSION}
 SHARED_LIBS=		kghostviewlib	1.0 \
 			kimageviewer	1.0 \
 			kmultipage	1.0 \
@@ -37,7 +37,7 @@ LIB_DEPENDS+=
 .if !defined(PACKAGING) || ${SUBPACKAGE:L} == ""
 RUN_DEPENDS+=	:ghostscript-*:print/ghostscript/gnu
 LIB_DEPENDS+= \
-	kdecore.6,DCOP,kdefx,kdeprint,kdesu,kdeui,khtml,kjs,kio,kparts,kutils,kwalletclient::x11/kde/libs3
+	kdecore.>=6,DCOP,kdefx,kdeprint,kdesu,kdeui,khtml,kjs,kio,kparts,kutils,kwalletclient::x11/kde/libs3
 LIB_DEPENDS+=	Imlib::graphics/imlib \
 		ungif::graphics/libungif \
 		Iex,Half,Imath,IlmImf::graphics/openexr \
@@ -54,13 +54,13 @@ WANTLIB+=	GL stdc++ freetype Xrender Xmu GLU c Xi iconv
 .endif
 
 .if !defined(PACKAGING) || ${SUBPACKAGE:L} == "-kamera"
-LIB_DEPENDS+= kwalletclient,DCOP,kdecore.6,kio,kdeui,kdefx,kdesu::x11/kde/libs3
+LIB_DEPENDS+= kwalletclient,DCOP,kdecore.>=6,kio,kdeui,kdefx,kdesu::x11/kde/libs3
 LIB_DEPENDS+=	gphoto2,gphoto2_port::graphics/libgphoto2
 WANTLIB+=	iconv exif Xrender intl 
 .endif
 
 .if !defined(PACKAGING) || ${SUBPACKAGE:L} == "-sane"
-LIB_DEPENDS+= kwalletclient,ktexteditor,DCOP,vcard,kabc,kparts,kdeui,kdesu,kdecore.6,kio,kresources,kdefx,kspell,kdeprint::x11/kde/libs3
+LIB_DEPENDS+= kwalletclient,ktexteditor,DCOP,vcard,kabc,kparts,kdeui,kdesu,kdecore.>=6,kio,kresources,kdefx,kspell,kdeprint::x11/kde/libs3
 LIB_DEPENDS+=	sane::graphics/sane-backends
 WANTLIB+=	usb tiff stdc++ c Xrender gphoto2 intl iconv gphoto2_port exif
 .endif

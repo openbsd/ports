@@ -1,12 +1,12 @@
-$OpenBSD: patch-kresources_groupwise_soap_stdsoap2_h,v 1.3 2006/06/03 12:47:31 espie Exp $
---- kresources/groupwise/soap/stdsoap2.h.orig	Mon May 22 20:10:45 2006
-+++ kresources/groupwise/soap/stdsoap2.h	Mon May 29 21:26:30 2006
-@@ -551,7 +551,7 @@ extern "C" {
+$OpenBSD: patch-kresources_groupwise_soap_stdsoap2_h,v 1.4 2006/08/03 10:53:36 espie Exp $
+--- kresources/groupwise/soap/stdsoap2.h.orig	Sun Jul 23 16:21:19 2006
++++ kresources/groupwise/soap/stdsoap2.h	Tue Aug  1 03:44:22 2006
+@@ -545,7 +545,7 @@ extern "C" {
  /* Portability: define SOAP_SOCKLEN_T */
  #if defined(SOCKLEN_T)
  # define SOAP_SOCKLEN_T SOCKLEN_T
 -#elif defined(__socklen_t_defined) || defined(_SOCKLEN_T) || defined(CYGWIN) || defined(FREEBSD) || defined(__FreeBSD__) || defined(__QNX__) || defined(QNX) || defined(_AIX)
 +#elif defined(__socklen_t_defined) || defined(_SOCKLEN_T) || defined(CYGWIN) || defined(FREEBSD) || defined(__FreeBSD__) || defined(__QNX__) || defined(QNX) || defined(_AIX) || defined(__OpenBSD__)
  # define SOAP_SOCKLEN_T socklen_t
- #elif defined(IRIX) || defined(WIN32) || defined(__APPLE__) || defined(HP_UX) || defined(SUN_OS) || defined(OPENSERVER) || defined(TRU64) || defined(VXWORKS)
+ #elif defined(IRIX) || defined(WIN32) || defined(__APPLE__) || defined(HP_UX) || defined(SUN_OS) || defined(OPENSERVER) || defined(__osf__) || defined(VXWORKS)
  # define SOAP_SOCKLEN_T int

@@ -1,7 +1,7 @@
-$OpenBSD: patch-kdm_kfrontend_Makefile_in,v 1.15 2006/02/03 12:23:15 espie Exp $
---- kdm/kfrontend/Makefile.in.orig	Sat Jan 21 08:13:01 2006
-+++ kdm/kfrontend/Makefile.in	Tue Jan 24 12:12:15 2006
-@@ -1128,7 +1128,7 @@ uninstall-info: uninstall-info-recursive
+$OpenBSD: patch-kdm_kfrontend_Makefile_in,v 1.16 2006/08/03 10:53:36 espie Exp $
+--- kdm/kfrontend/Makefile.in.orig	Mon Jul 24 17:56:26 2006
++++ kdm/kfrontend/Makefile.in	Mon Jul 31 18:27:44 2006
+@@ -1127,7 +1127,7 @@ uninstall-info: uninstall-info-recursive
  
  
  install-data-local: genkdmconf

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.62 2006/06/15 12:10:30 bernd Exp $
+# $OpenBSD: Makefile,v 1.63 2006/08/03 10:53:36 espie Exp $
 
 COMMENT= 		"K Desktop Environment, basic applications"
 COMMENT-plugins=	"Konqueror nsplugins, essentially native JDK"
 COMMENT-samba=		"K Desktop Environment, samba support"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.3
+VERSION=		3.5.4
 DISTNAME=		kdebase-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}
 PKGNAME-samba=		kdesamba-${VERSION}
 MODKDE_VERSION?=	3.5.3
 SHARED_LIBS=		kasbar			2.0 \
@@ -32,8 +32,8 @@ BUILD_DEPENDS+=::devel/pkgconfig
 WANTLIB+=ICE Xrender SM pthread util X11 m z png jpeg art_lgpl_2 Xext idn iconv
 
 .if !defined(PACKAGING) || ${SUBPACKAGE:L} == ""
-LIB_DEPENDS+= kdecore.6,kabc,katepartinterfaces,kdefakes,kdefx,kdnssd,kdeprint,kdeprint_management,kdesu,kdeui,khtml,kio,kjs,knewstuff,kmid,kparts,kresources,kscreensaver,ktexteditor,kutils,kwalletclient,DCOP,vcard,artskde::x11/kde/libs3 \
-	lber,ldap.2:openldap-client-2.*:databases/openldap \
+LIB_DEPENDS+= kdecore.>=6,kabc,katepartinterfaces,kdefakes,kdefx,kdnssd,kdeprint,kdeprint_management,kdesu,kdeui,khtml,kio,kjs,knewstuff,kmid,kparts,kresources,kscreensaver,ktexteditor,kutils,kwalletclient,DCOP,vcard,artskde::x11/kde/libs3 \
+	lber,ldap.>=2:openldap-client-2.*:databases/openldap \
 	sasl2::security/cyrus-sasl2 \
 	usb::devel/libusb
 LIB_DEPENDS+= \
@@ -50,7 +50,7 @@ WANTLIB+=	Xcursor Xrandr Xss Xt Xtst Xxf86misc \
 
 .if !defined(PACKAGING) || ${SUBPACKAGE:L} == "-samba"
 LIB_DEPENDS+=	lib/samba/smbclient:samba->=3:net/samba
-LIB_DEPENDS+=	DCOP,kdecore.6,kio,kdeui,kdefx,kdesu,kwalletclient::x11/kde/libs3
+LIB_DEPENDS+=	DCOP,kdecore.>=6,kio,kdeui,kdefx,kdesu,kwalletclient::x11/kde/libs3
 .endif
 
 SEPARATE_BUILD=	flavored

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2006/06/03 12:47:30 espie Exp $
+@comment $OpenBSD: PLIST,v 1.24 2006/08/03 10:53:36 espie Exp $
 bin/apmount
 bin/blinken
 bin/celestrongps
@@ -601,6 +601,7 @@ share/apps/kgeography/flags/lebanon.png
 share/apps/kgeography/flags/lesotho.png
 share/apps/kgeography/flags/liberia.png
 share/apps/kgeography/flags/libya.png
+share/apps/kgeography/flags/liechtenstein.png
 share/apps/kgeography/flags/lithuania.png
 share/apps/kgeography/flags/lower_saxony.png
 share/apps/kgeography/flags/luxembourg.png
@@ -1120,6 +1121,7 @@ share/apps/klettres/cs.txt
 share/apps/klettres/da.txt
 share/apps/klettres/data/
 share/apps/klettres/data/sounds.xml
+share/apps/klettres/de.txt
 share/apps/klettres/en/
 share/apps/klettres/en/alpha/
 share/apps/klettres/en/alpha/A.ogg
