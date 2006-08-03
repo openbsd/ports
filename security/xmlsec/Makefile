@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2005/12/25 15:52:38 sturm Exp $
+# $OpenBSD: Makefile,v 1.12 2006/08/03 23:28:12 espie Exp $
 
 COMMENT=	"XML security library"
 COMMENT-docs=	"XML security library documentation"
@@ -41,8 +41,8 @@ WANTLIB=
 .if ${SUBPACKAGE} != "-docs"
 MODULES=		converters/libiconv
 BUILD_DEPENDS=		::devel/pkgconfig
-LIB_DEPENDS=		xslt.2::textproc/libxslt \
-			gnutls.12::security/gnutls
+LIB_DEPENDS=		xslt.>=2::textproc/libxslt \
+			gnutls.>=12::security/gnutls
 .endif
 
 USE_LIBTOOL=		Yes

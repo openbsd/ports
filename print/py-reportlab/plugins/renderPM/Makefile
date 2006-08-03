@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/06/03 09:41:20 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2006/08/03 23:28:11 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,7 +10,7 @@ PKGNAME=	py-reportlab-renderPM-${VERSION}p1
 
 MASTER_SITES=	http://www.reportlab.org/ftp/
 
-LIB_DEPENDS=	art_lgpl_2.5::graphics/libart
+LIB_DEPENDS=	art_lgpl_2.>=5::graphics/libart
 
 WRKDIST=	${WRKDIR}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2006/07/13 13:11:28 bernd Exp $
+# $OpenBSD: Makefile,v 1.60 2006/08/03 23:28:12 espie Exp $
 
 COMMENT=	"GNU privacy guard - a free PGP replacement"
 
@@ -28,8 +28,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c z readline termcap ssl crypto
 
 MODULES= devel/gettext
-LIB_DEPENDS=	bz2.10::archivers/bzip2 \
-		curl.3::net/curl
+LIB_DEPENDS=	bz2.>=10::archivers/bzip2 \
+		curl.>=3::net/curl
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.59
@@ -65,7 +65,7 @@ CONFIGURE_ARGS+=	--disable-card-support --without-libusb
 
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+=	--enable-ldap
-LIB_DEPENDS+=		ldap.8::databases/openldap
+LIB_DEPENDS+=		ldap.>=8::databases/openldap
 .else
 CONFIGURE_ARGS+=	--disable-ldap
 .endif

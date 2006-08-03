@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/07/19 16:07:22 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2006/08/03 23:28:11 espie Exp $
 
 COMMENT=		"GTK-based time tracker"
 
@@ -17,8 +17,7 @@ WANTLIB=		X11 Xext Xi Xss c glib gmodule iconv intl m
 
 MASTER_SITES=		http://www.k5n.us/gtimer/
 
-LIB_DEPENDS=		gtk.1.2::x11/gtk+  \
-			gdk.1.2::x11/gtk+
+LIB_DEPENDS=		gtk.>=1.2,gdk.>=1.2::x11/gtk+
 
 USE_X11=		Yes
 USE_GMAKE=		Yes

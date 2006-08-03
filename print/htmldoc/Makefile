@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/02/05 16:17:13 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2006/08/03 23:28:11 espie Exp $
 
 COMMENT=	"convert HTML pages to PDF/PS format"
 
@@ -25,7 +25,7 @@ MASTER_SITES=		ftp://ftp.easysw.com/pub/htmldoc/${V}/ \
 			ftp://ftp2.easysw.com/pub/htmldoc/${V}/ \
 			ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/htmldoc/${V}/
 
-LIB_DEPENDS=		fltk.1,fltk_images.1::x11/fltk
+LIB_DEPENDS=		fltk.>=1,fltk_images.>=1::x11/fltk
 
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ENV= 		LDFLAGS="-L${LOCALBASE}/lib" \

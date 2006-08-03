@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/07/29 13:06:18 aanriot Exp $
+# $OpenBSD: Makefile,v 1.5 2006/08/03 23:28:12 espie Exp $
 
 COMMENT=	"Prelude framework library"
 
@@ -14,8 +14,8 @@ CONFIGURE_STYLE=gnu
 
 WANTLIB=	c gcrypt opencdk pthread z
 
-LIB_DEPENDS=	gpg-error.1,gnutls-extra.12::security/libgpg-error \
-		gnutls.12::security/gnutls
+LIB_DEPENDS=	gpg-error.>=1,gnutls-extra.>=12::security/libgpg-error \
+		gnutls.>=12::security/gnutls
 
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc/
 CONFIGURE_ENV=	PYTHON=${MODPY_BIN}

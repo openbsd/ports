@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2005/12/25 11:15:34 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2006/08/03 23:28:12 espie Exp $
 
 COMMENT=		"Open Crypto Development Kit"
 
@@ -26,7 +26,7 @@ MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/alpha/gnutls/opencdk/ \
 		http://ftp.linux.it/pub/mirrors/gnupg/alpha/gnutls/opencdk/
 EXTRACT_SUFX=	.tar.bz2
 
-LIB_DEPENDS=	gcrypt.12::security/libgcrypt
+LIB_DEPENDS=	gcrypt.>=12::security/libgcrypt
 
 USE_LIBTOOL=	Yes
 

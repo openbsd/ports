@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/06/28 11:33:18 aanriot Exp $
+# $OpenBSD: Makefile,v 1.4 2006/08/03 23:28:11 espie Exp $
 
 COMMENT=	"command line double-entry accounting ledger"
 
@@ -19,8 +19,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ledger/}
 
 WANTLIB=	m stdc++ c
 
-LIB_DEPENDS=	gmp.4::devel/gmp \
-		pcre.0::devel/pcre
+LIB_DEPENDS=	gmp.>=4::devel/gmp \
+		pcre::devel/pcre
 
 SEPARATE_BUILD=	concurrent
 

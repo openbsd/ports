@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/07/13 17:14:21 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2006/08/03 23:28:11 espie Exp $
 
 COMMENT=	"next generation scanning tool"
 
@@ -21,7 +21,7 @@ MASTER_SITES=	http://thc.segfault.net/releases/ \
 
 WANTLIB=	c crypto ssl
 
-LIB_DEPENDS=	pcre.0::devel/pcre
+LIB_DEPENDS=	pcre::devel/pcre
 
 CONFIGURE_STYLE=	gnu dest
 

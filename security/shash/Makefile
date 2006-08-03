@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/12/27 13:28:35 alek Exp $
+# $OpenBSD: Makefile,v 1.11 2006/08/03 23:28:12 espie Exp $
 
 COMMENT=	"generates or checks digests or mac"
 
@@ -26,7 +26,7 @@ FLAVOR?=
 BUILD_DEPENDS+=		::security/mhash
 CONFIGURE_ARGS+=	--enable-static-link
 .else
-LIB_DEPENDS+=		mhash.2::security/mhash
+LIB_DEPENDS+=		mhash.>=2::security/mhash
 WANTLIB=		c pthread
 .endif
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2006/02/02 22:23:28 steven Exp $
+# $OpenBSD: Makefile,v 1.36 2006/08/03 23:28:11 espie Exp $
 
 COMMENT=	"RFC 2222 SASL (Simple Authentication and Security Layer)"
 
@@ -61,7 +61,7 @@ CONFIGURE_ARGS+=	--with-dblib=ndbm \
 .endif
 
 .if ${FLAVOR:L:Mldap}
-LIB_DEPENDS+=		ldap.2,lber:openldap-client-2.*:databases/openldap
+LIB_DEPENDS+=		ldap.>=2,lber:openldap-client-2.*:databases/openldap
 CONFIGURE_ARGS+=	--with-ldap=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-ldap
@@ -71,7 +71,7 @@ CONFIGURE_ARGS+=	--without-ldap
 .if ${FLAVOR:L:Mpgsql} || ${FLAVOR:L:Msqlite}
 BROKEN=			choose either mysql or pgsql or sqlite
 .endif
-LIB_DEPENDS+=		lib/mysql/mysqlclient.10::databases/mysql
+LIB_DEPENDS+=		lib/mysql/mysqlclient.>=10::databases/mysql
 WANTLIB+=		m ssl z
 CONFIGURE_ARGS+=	--enable-sql \
 			--with-mysql \
@@ -83,7 +83,7 @@ CONFIGURE_ARGS+=	--enable-sql \
 .if ${FLAVOR:L:Mmysql} || ${FLAVOR:L:Msqlite}
 BROKEN=			choose either mysql or pgsql or sqlite
 .endif
-LIB_DEPENDS+=		pq.3:postgresql-client-*:databases/postgresql
+LIB_DEPENDS+=		pq.>=3:postgresql-client-*:databases/postgresql
 CONFIGURE_ARGS+=	--enable-sql \
 			--without-mysql \
 			--with-pgsql \
@@ -95,7 +95,7 @@ CFLAGS+=		-I${LOCALBASE}/include/postgresql
 .if ${FLAVOR:L:Mmysql} || ${FLAVOR:L:Mpgsql}
 BROKEN=			choose either mysql or pgsql or sqlite
 .endif
-LIB_DEPENDS=		sqlite.8.6::databases/sqlite
+LIB_DEPENDS=		sqlite.>=8.6::databases/sqlite
 CONFIGURE_ARGS+=	--enable-sql \
 			--without-mysql \
 			--without-pgsql \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/06/29 17:26:15 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2006/08/03 23:28:12 espie Exp $
 
 COMMENT=		"client for Cisco 3000 VPN concentrators"
 
@@ -17,7 +17,7 @@ WANTLIB=		c gpg-error iconv intl
 
 MASTER_SITES=		${HOMEPAGE}
 
-LIB_DEPENDS=		gcrypt.12:libgcrypt->=1.2:security/libgcrypt
+LIB_DEPENDS=		gcrypt.>=12:libgcrypt->=1.2:security/libgcrypt
 
 USE_GMAKE=		Yes
 NO_REGRESS=		Yes

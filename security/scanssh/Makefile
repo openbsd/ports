@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2005/11/16 23:23:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2006/08/03 23:28:12 espie Exp $
 
 COMMENT=	"SSH remote version scanner"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c event pcap
 
-LIB_DEPENDS=	dnet.1::net/libdnet
+LIB_DEPENDS=	dnet.>=1::net/libdnet
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu

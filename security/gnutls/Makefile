@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2005/12/24 20:52:58 sturm Exp $
+# $OpenBSD: Makefile,v 1.11 2006/08/03 23:28:12 espie Exp $
 
 COMMENT=		"GNU Transport Layer Security library"
 
@@ -31,8 +31,8 @@ MASTER_SITES=	ftp://ftp.gnutls.org/pub/gnutls/ \
 		http://ftp.linux.it/pub/mirrors/gnupg/gnutls/
 
 MODULES=	converters/libiconv
-LIB_DEPENDS=	gcrypt.12::security/libgcrypt \
-		opencdk.8::security/opencdk
+LIB_DEPENDS=	gcrypt.>=12::security/libgcrypt \
+		opencdk.>=8::security/opencdk
 
 USE_LIBTOOL=	Yes
 

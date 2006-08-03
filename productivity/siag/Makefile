@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2005/02/07 19:01:49 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2006/08/03 23:28:11 espie Exp $
 
 COMMENT=		"office suite"
 
@@ -19,8 +19,8 @@ WANTLIB=		ICE SM X11 Xext Xmu Xpm Xt c m ncurses termcap
 
 USE_X11=		Yes
 
-LIB_DEPENDS=		Mowitz.2::x11/mowitz \
-			neXtaw.13::x11/neXtaw
+LIB_DEPENDS=		Mowitz.>=2::x11/mowitz \
+			neXtaw.>=13::x11/neXtaw
 
 CONFIGURE_STYLE=	gnu
 

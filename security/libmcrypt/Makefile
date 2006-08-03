@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2005/12/24 22:32:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2006/08/03 23:28:12 espie Exp $
 
 COMMENT=	"interface to access block/stream encryption algorithms"
 
@@ -13,8 +13,8 @@ HOMEPAGE=	http://mcrypt.sf.net/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mcrypt/}
 
-LIB_DEPENDS=	mhash.2::security/mhash \
-		ltdl.1::devel/libtool,-ltdl
+LIB_DEPENDS=	mhash.>=2::security/mhash \
+		ltdl.>=1::devel/libtool,-ltdl
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

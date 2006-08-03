@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2006/01/02 22:43:10 sturm Exp $
+# $OpenBSD: Makefile,v 1.31 2006/08/03 23:28:11 espie Exp $
 
 COMMENT=	"AFPL PostScript interpreter"
 
@@ -35,7 +35,7 @@ BUILD_DEPENDS=	::${JPEGDIR}:patch ::${PNGDIR}:patch
 
 RUN_DEPENDS=	:ghostscript-fonts-*:print/ghostscript/gnu-fonts
 
-LIB_DEPENDS=	png.2::${PNGDIR}
+LIB_DEPENDS=	png.>=2::${PNGDIR}
 
 EXTRACT_ONLY=	${GS_SOURCES}
 
@@ -117,7 +117,7 @@ CFLAGS+=	-DA4
 ERRORS+= "Fatal: Conflicting flavors: ${FLAVOR}"
 .elif ${FLAVOR:L:Mgtk}
 MODULES=	devel/gettext
-LIB_DEPENDS+=	gtk.1,gdk::x11/gtk+
+LIB_DEPENDS+=	gtk.>=1,gdk::x11/gtk+
 WANTLIB+=	Xi glib gmodule
 ALL_TARGET+=so
 INSTALL_TARGET+=soinstall

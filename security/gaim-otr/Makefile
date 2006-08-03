@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2005/11/18 04:11:20 marcm Exp $
+# $OpenBSD: Makefile,v 1.6 2006/08/03 23:28:11 espie Exp $
 
 COMMENT=	"Allows deniable private conversations using GAIM"
 
@@ -19,8 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	::net/gaim
 RUN_DEPENDS=	gaim::net/gaim
-LIB_DEPENDS=	otr.2::security/libotr \
-		gcrypt.12:libgcrypt->=1.2:security/libgcrypt
+LIB_DEPENDS=	otr.>=2::security/libotr \
+		gcrypt.>=12:libgcrypt->=1.2:security/libgcrypt
 
 WANTLIB=	gpg-error iconv intl
 

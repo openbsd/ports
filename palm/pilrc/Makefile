@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/12/02 19:05:47 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2006/08/03 23:28:11 espie Exp $
 
 COMMENT=	"generate resources for PalmOS applications from text descr"
 
@@ -30,7 +30,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--disable-pilrcui
 .else
 USE_X11=	Yes
-LIB_DEPENDS=	gtk.1.2,gdk.1.2:gtk+-*:x11/gtk+
+LIB_DEPENDS=	gtk.>=1.2,gdk.>=1.2:gtk+-*:x11/gtk+
 CONFIGURE_ARGS= --enable-pilrcui
 WANTLIB+=	X11 Xext Xi glib gmodule iconv intl m
 .endif

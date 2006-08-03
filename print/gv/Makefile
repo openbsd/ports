@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2006/02/08 04:54:50 david Exp $
+# $OpenBSD: Makefile,v 1.27 2006/08/03 23:28:11 espie Exp $
 
 COMMENT= 	"PostScript and PDF previewer"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		Xpm Xmu X11 m c Xt SM Xp Xext ICE
 
-LIB_DEPENDS=	Xaw3d.6.1::x11/Xaw3d
+LIB_DEPENDS=	Xaw3d.>=6.1::x11/Xaw3d
 RUN_DEPENDS=	:ghostscript-*:print/ghostscript/gnu
 
 CONFIGURE_STYLE=	imake

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/07/21 16:42:40 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2006/08/03 23:28:11 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -27,11 +27,11 @@ WANTLIB=		ICE SM X11 Xi c freetype m xkbui z
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		png.5::graphics/png		\
-			tiff.38::graphics/tiff		\
-			ungif.5::graphics/libungif	\
-			jpeg.62::graphics/jpeg		\
-			xml2.9::textproc/libxml
+LIB_DEPENDS=		png.>=5::graphics/png		\
+			tiff.>=38::graphics/tiff		\
+			ungif.>=5::graphics/libungif	\
+			jpeg.>=62::graphics/jpeg		\
+			xml2.>=9::textproc/libxml
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S,_full,,}
 

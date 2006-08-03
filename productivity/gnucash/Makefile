@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/04/07 14:00:02 todd Exp $
+# $OpenBSD: Makefile,v 1.10 2006/08/03 23:28:11 espie Exp $
 
 NOT_FOR_ARCHS=	${LP64_ARCHS}
 
@@ -54,14 +54,14 @@ CONFIGURE_ENV+=  CPPFLAGS="${CFLAGS}" CFLAGS="${CFLAGS}" \
 		LDFLAGS="${LDFLAGS}" \
 		LIBS="${LDFLAGS}"
 
-LIB_DEPENDS=	glade.4,glade-gnome::devel/libglade,gnome \
-		gnome.36::x11/gnome/libs \
-		gal.16::devel/gal \
-		gnomeprint.16::x11/gnome/print \
-		gdk_pixbuf.2::graphics/gdk-pixbuf \
+LIB_DEPENDS=	glade.>=4,glade-gnome::devel/libglade,gnome \
+		gnome.>=36::x11/gnome/libs \
+		gal.>=16::devel/gal \
+		gnomeprint.>=16::x11/gnome/print \
+		gdk_pixbuf.>=2::graphics/gdk-pixbuf \
 		lib/db4/db.=4:db-4.*:databases/db/v4 \
 		gwrap-glib,gwrap-wct::devel/g-wrap \
-		gtkhtml-1.1.3.5::www/gtkhtml
+		gtkhtml-1.1.>=3.5::www/gtkhtml
 BUILD_DEPENDS=	swig::devel/swig \
 		gnome-print::x11/gnome/print \
 		guppi::graphics/Guppi \

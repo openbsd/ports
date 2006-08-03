@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2005/12/07 21:04:31 bernd Exp $
+# $OpenBSD: Makefile,v 1.39 2006/08/03 23:28:11 espie Exp $
 
 COMMENT=	"TeX distribution, executables"
 COMMENT-fmt=	"format files"
@@ -14,7 +14,7 @@ DISTFILES=	tetex-src-${VERSION}.tar.gz
 WANTLIB=	c m ncurses stdc++ z
 
 BUILD_DEPENDS=	:teTeX_texmf->=3.0:print/teTeX/texmf
-LIB_DEPENDS=	png.3::graphics/png
+LIB_DEPENDS=	png.>=3::graphics/png
 
 CONFIGURE_STYLE=gnu dest
 
@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=--with-system-t1lib \
 		--with-t1lib-libdir=${PREFIX}/lib \
 		--with-t1lib-include=${PREFIX}/include \
 		--with-xdvi-x-toolkit=xaw
-LIB_DEPENDS+=	t1.4::devel/t1lib
+LIB_DEPENDS+=	t1.>=4::devel/t1lib
 USE_X11=	Yes
 WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xp Xpm Xt
 .  if defined(PACKAGING) && ${SUBPACKAGE} != "-fmt"

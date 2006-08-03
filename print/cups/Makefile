@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2006/02/05 10:31:13 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.12 2006/08/03 23:28:11 espie Exp $
 
 COMMENT=		"Common Unix Printing System"
 
@@ -30,9 +30,9 @@ MASTER_SITES=		http://ftp.easysw.com/pub/cups/${VERSION}/ \
 
 EXTRACT_SUFX=		.tar.bz2
 
-LIB_DEPENDS=		png.3::graphics/png \
-			jpeg.62::graphics/jpeg \
-			tiff.35::graphics/tiff
+LIB_DEPENDS=		png.>=3::graphics/png \
+			jpeg.>=62::graphics/jpeg \
+			tiff.>=35::graphics/tiff
 
 FAKE_FLAGS=		BINMODE=${BINMODE} \
 			SHAREMODE=${SHAREMODE}
@@ -78,8 +78,8 @@ WANTLIB+=	crypto ssl
 MODULES=	devel/gettext
 
 CONFIGURE_ARGS+= --disable-openssl --enable-gnutls
-LIB_DEPENDS+=	gnutls.12::security/gnutls
-WANTLIB+=	gpg-error.1 gcrypt.12
+LIB_DEPENDS+=	gnutls.>=12::security/gnutls
+WANTLIB+=	gpg-error.>=1 gcrypt.>=12
 .endif
 
 post-configure:

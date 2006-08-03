@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2005/07/18 17:02:48 aanriot Exp $
+# $OpenBSD: Makefile,v 1.14 2006/08/03 23:28:11 espie Exp $
 
 COMMENT=	"classical cipher cryptanalysis toolkit"
 
@@ -18,8 +18,8 @@ NO_REGRESS=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=crank/}
 
-LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+ \
-			guile.9::lang/guile
+LIB_DEPENDS=		gtk.>=1.2,gdk.>=1.2::x11/gtk+ \
+			guile.>=9::lang/guile
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
