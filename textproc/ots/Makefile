@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/01/07 10:17:12 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2006/08/03 23:55:11 espie Exp $
 
 COMMENT=	"open source tool for summarizing texts"
 DISTNAME=	ots-0.4.2
@@ -20,9 +20,9 @@ MODULES=	converters/libiconv \
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
-LIB_DEPENDS=	glib-2.0.400.8::devel/glib2 \
-		popt.0.3::devel/popt \
-		xml2.9.0::textproc/libxml
+LIB_DEPENDS=	glib-2.0.>=400.8::devel/glib2 \
+		popt.>=0.3::devel/popt \
+		xml2.>=9.0::textproc/libxml
 
 WANTLIB=	c m z
 

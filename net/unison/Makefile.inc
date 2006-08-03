@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2006/06/17 19:14:42 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2006/08/03 23:55:10 espie Exp $
 
 DISTNAME=	unison-${VERSION}
 CATEGORIES=	net
@@ -25,7 +25,7 @@ FLAVOR?=
 MAKE_FLAGS=	UISTYLE=text
 .else
 BUILD_DEPENDS+=	::x11/lablgtk
-LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
+LIB_DEPENDS=	gtk.>=1.2,gdk.>=1.2::x11/gtk+
 MAKE_FLAGS=	UISTYLE=gtk
 USE_X11=	Yes
 WANTLIB+=	X11 Xext Xi glib gmodule iconv intl

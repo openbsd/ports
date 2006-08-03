@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/06/12 14:32:48 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/08/03 23:55:11 espie Exp $
 
 COMMENT=		"KDE UPS Monitoring tool"
 
@@ -25,7 +25,7 @@ EXTRACT_SUFX=		.tar.gz
 # Patch Hack
 MODULES=		x11/kde
 
-LIB_DEPENDS=		DCOP,kdecore.4,kdefx,kdeui::x11/kde/libs3 \
+LIB_DEPENDS=		DCOP,kdecore.>=4,kdefx,kdeui::x11/kde/libs3 \
 			art_lgpl_2::graphics/libart
 
 USE_X11=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2006/01/14 11:46:15 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2006/08/03 23:55:11 espie Exp $
 
 COMMENT=	"fast, compact and portable XSL/XSLT processor"
 
@@ -21,7 +21,7 @@ WANTLIB=		c m ncurses readline stdc++
 MASTER_SITES=	http://download-1.gingerall.cz/download/sablot/
 
 MODULES=	converters/libiconv
-LIB_DEPENDS=	expat.2::textproc/expat
+LIB_DEPENDS=	expat.>=2::textproc/expat
 BUILD_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser
 
 USE_LIBTOOL=	Yes

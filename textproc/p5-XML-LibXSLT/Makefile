@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2005/09/23 19:41:45 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.24 2006/08/03 23:55:11 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -15,8 +15,8 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 
 RUN_DEPENDS=	:p5-XML-LibXML->=0.94:textproc/p5-XML-LibXML
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	xml2.6::textproc/libxml \
-		xslt.1,exslt.7::textproc/libxslt
+LIB_DEPENDS=	xml2.>=6::textproc/libxml \
+		xslt.>=1,exslt.>=7::textproc/libxslt
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/02/03 16:00:09 bernd Exp $
+# $OpenBSD: Makefile,v 1.20 2006/08/03 23:55:11 espie Exp $
 
 COMMENT=		"Scrollkeeper Open Documentation Cataloging System"
 
@@ -27,8 +27,8 @@ MODULES=		devel/gettext
 BUILD_DEPENDS=		:docbook->=4.2p1:textproc/docbook \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS=		:docbook->=4.2p1:textproc/docbook
-LIB_DEPENDS=		xml2.7:libxml->=2.6.16p6:textproc/libxml \
-			xslt.1::textproc/libxslt
+LIB_DEPENDS=		xml2.>=7:libxml->=2.6.16p6:textproc/libxml \
+			xslt.>=1::textproc/libxslt
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes

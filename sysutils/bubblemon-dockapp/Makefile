@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2005/11/20 12:55:08 wilfried Exp $
+# $OpenBSD: Makefile,v 1.11 2006/08/03 23:55:11 espie Exp $
 
 COMMENT=		'wm-dockapp; display CPU and memory load'
 
@@ -19,7 +19,7 @@ WANTLIB=		X11 Xext Xi c glib gmodule iconv intl m
 
 MASTER_SITES=		${HOMEPAGE}software/
 
-LIB_DEPENDS=		gdk.1::x11/gtk+
+LIB_DEPENDS=		gdk.>=1::x11/gtk+
 
 USE_X11=		Yes
 USE_GMAKE=		Yes

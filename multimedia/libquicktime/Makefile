@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/08/03 23:15:57 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/08/03 23:55:10 espie Exp $
 # $FreeBSD: ports/multimedia/libquicktime/Makefile,v 1.19 2004/03/16 04:23:53 edwin Exp $
 
 SHARED_ONLY=		Yes
@@ -20,11 +20,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		GL GLU ICE SM X11 Xaw Xext Xrender Xt Xv \
-			atk-1.0.1011.3 c fontconfig freetype \
-			glib-2.0.800.3 gmodule-2.0.800.3 gobject-2.0.800.3 \
-			m ogg ossaudio pango-1.0.1001.1 \
-			pangocairo-1.0.1001.1 cairo glitz \
-			pangoft2-1.0.1001.1 pthread z
+			atk-1.0.>=1011.3 c fontconfig freetype \
+			glib-2.0.>=800.3 gmodule-2.0.>=800.3 \
+			gobject-2.0.>=800.3 m ogg ossaudio \
+			pango-1.0.>=1001.1 pangocairo-1.0.>=1001.1 \
+			cairo glitz pangoft2-1.0.>=1001.1 pthread z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libquicktime/}
 

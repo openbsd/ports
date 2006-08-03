@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/12/07 00:23:22 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2006/08/03 23:55:11 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -11,7 +11,7 @@ CATEGORIES=	textproc perl5
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 
-LIB_DEPENDS=	xml2.7::textproc/libxml
+LIB_DEPENDS=	xml2.>=7::textproc/libxml
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes

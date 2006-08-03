@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/06/13 13:32:48 bernd Exp $
+# $OpenBSD: Makefile,v 1.11 2006/08/03 23:55:11 espie Exp $
 
 COMMENT=	"XMMS plugin for Gkrellm2"
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://gkrellm.luon.net/gkrellmms.phtml
 
 MASTER_SITES=	http://gkrellm.luon.net/files/
 
-LIB_DEPENDS+=	xmms.3::audio/xmms
+LIB_DEPENDS+=	xmms.>=3::audio/xmms
 
 WRKDIST=	${WRKDIR}/gkrellmms
 ALL_TARGET=	gkrellmms.so

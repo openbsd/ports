@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2006/06/18 13:48:19 steven Exp $
+# $OpenBSD: Makefile,v 1.101 2006/08/03 23:55:11 espie Exp $
 
 COMMENT=		"XML parsing library"
 COMMENT-python=		"Python bindings for libxml"
@@ -51,7 +51,7 @@ FAKE_FLAGS=		EXAMPLE_DIR=${PREFIX}/share/examples/libxml2/ \
 			DEVHELP_DIR=${PREFIX}/share/doc/libxml2/html/devhelp
 
 .  if defined(PACKAGING) && !empty(SUBPACKAGE)
-LIB_DEPENDS=		xml2.9::textproc/libxml
+LIB_DEPENDS=		xml2.>=9::textproc/libxml
 WANTLIB=		m z
 .  endif
 .else

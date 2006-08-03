@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/12/07 00:23:20 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2006/08/03 23:55:11 espie Exp $
 
 COMMENT=	"command line parser generator"
 
@@ -16,7 +16,7 @@ WANTLIB=		c iconv m stdc++ z
 
 MASTER_SITES=	${HOMEPAGE}/download/
 
-LIB_DEPENDS=	xml2.6::textproc/libxml
+LIB_DEPENDS=	xml2.>=6::textproc/libxml
 
 CONFIGURE_STYLE= gnu
 

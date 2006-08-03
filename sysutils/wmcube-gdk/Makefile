@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/12/20 10:35:36 alek Exp $
+# $OpenBSD: Makefile,v 1.11 2006/08/03 23:55:11 espie Exp $
 
 COMMENT=		'wm-dockapp; shows rotating 3d-object and CPU load'
 
@@ -18,7 +18,7 @@ WANTLIB=		X11 Xext c m Xi glib gmodule iconv intl
 
 MASTER_SITES=		${HOMEPAGE}software/
 
-LIB_DEPENDS=		gtk.1,gdk.1::x11/gtk+
+LIB_DEPENDS=		gtk.>=1,gdk.>=1::x11/gtk+
 
 USE_X11=		Yes
 NO_REGRESS=		Yes

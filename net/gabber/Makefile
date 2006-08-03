@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2006/08/03 23:15:57 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2006/08/03 23:55:10 espie Exp $
 # $RuOBSD: Makefile,v 1.9 2002/10/28 16:01:41 grange Exp $
 
 COMMENT=		"GNOME jabber client"
@@ -23,7 +23,7 @@ WANTLIB=		audiofile esd gdk gdk_imlib gdk_pixbuf gdkmm glib \
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gabber/}
 
-LIB_DEPENDS=		sigc:libsigc++-1.*:devel/libsigc++ gal.19::devel/gal \
+LIB_DEPENDS=		sigc:libsigc++-1.*:devel/libsigc++ gal.>=19::devel/gal \
 			gnomemm.>=9::x11/gnomemm \
 			glade.>=5,glade-gnome.>=5:libglade-*-gnome:devel/libglade,gnome \
 			gnomeprint.>=16::x11/gnome/print \

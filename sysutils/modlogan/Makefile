@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2005/10/24 05:14:50 fgsch Exp $
+# $OpenBSD: Makefile,v 1.15 2006/08/03 23:55:11 espie Exp $
 
 COMMENT=	"modular log analyzer"
 
@@ -21,11 +21,11 @@ WANTLIB=		c jpeg m png z
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	expat.3::textproc/expat \
-		gd.18::graphics/gd \
+LIB_DEPENDS=	expat.>=3::textproc/expat \
+		gd.>=18::graphics/gd \
 		pcre::devel/pcre \
-		adns.1::net/adns \
-		bz2.10::archivers/bzip2
+		adns.>=1::net/adns \
+		bz2.>=10::archivers/bzip2
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --libdir=${PREFIX}/lib/modlogan

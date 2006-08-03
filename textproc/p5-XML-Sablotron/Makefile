@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2005/03/15 23:30:00 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2006/08/03 23:55:11 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -13,8 +13,8 @@ HOMEPAGE=	http://www.gingerall.cz/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 MODULES=	converters/libiconv
-LIB_DEPENDS=	sablot.100::textproc/sablotron \
-		expat.4::textproc/expat
+LIB_DEPENDS=	sablot.>=100::textproc/sablotron \
+		expat.>=4::textproc/expat
 
 # GPL/Mozilla
 PERMIT_PACKAGE_CDROM=	Yes

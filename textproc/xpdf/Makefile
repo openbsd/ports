@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2006/02/05 09:59:00 bernd Exp $
+# $OpenBSD: Makefile,v 1.53 2006/08/03 23:55:11 espie Exp $
 
 COMMENT=	"PDF viewer for X"
 
@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
 
 HOMEPAGE=	http://www.foolabs.com/xpdf/
 
-LIB_DEPENDS+=	t1.3::devel/t1lib
+LIB_DEPENDS+=	t1.>=3::devel/t1lib
 RUN_DEPENDS+=	::print/ghostscript/gnu-fonts
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>

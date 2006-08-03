@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2005/09/23 19:41:45 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.21 2006/08/03 23:55:11 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -11,7 +11,7 @@ CATEGORIES=	textproc perl5
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 
-LIB_DEPENDS=	xml2.6::textproc/libxml
+LIB_DEPENDS=	xml2.>=6::textproc/libxml
 RUN_DEPENDS=	::textproc/p5-LibXML-Common \
 		:p5-XML-SAX-*:textproc/p5-XML-SAX
 BUILD_DEPENDS=	${RUN_DEPENDS}

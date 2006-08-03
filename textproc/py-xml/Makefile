@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2006/06/03 09:49:24 alek Exp $
+# $OpenBSD: Makefile,v 1.24 2006/08/03 23:55:11 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -29,7 +29,7 @@ MODPY_DISTUTILS_BUILDARGS=	--with-libexpat=${LOCALBASE}
 FLAVORS=pyexpat
 FLAVOR?=
 
-LIB_DEPENDS=	expat.2::textproc/expat
+LIB_DEPENDS=	expat.>=2::textproc/expat
 
 .if !${FLAVOR:L:Mpyexpat}
 BUILD_DEPENDS=	${MODPY_EXPAT_DEPENDS}
