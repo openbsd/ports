@@ -1,5 +1,5 @@
 javaPathHelper is a script that java applications can use to provide a
-constant and familiar method for launching java applications on
+consistent and familiar method for launching java applications on
 OpenBSD. The use of JAVACMD, JAVA_HOME and PATH environment variables are
 well known methods for users to control which JVM is used to launch a
 java application.  When a user sets up his environment javaPathHelp will

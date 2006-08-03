@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/08/01 14:43:56 kurt Exp $
+# $OpenBSD: Makefile,v 1.2 2006/08/03 19:27:03 kurt Exp $
 
 COMMENT=		"helper script for launching java applications"
 
-DISTNAME=		javaPathHelper-0.1
+DISTNAME=		javaPathHelper-0.2
 CATEGORIES=		java
 
 HOMEPAGE=		http://www.intricatesoftware.com/OpenBSD/java
