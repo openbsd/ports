@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2005/12/13 18:59:09 kurt Exp $
+# $OpenBSD: Makefile,v 1.7 2006/08/03 19:38:51 kurt Exp $
 
 COMMENT=	"Java servlet 2.4 and Java server pages 2.0 server"
 COMMENT-examples="example applications and documentation"
 
 V=		5.0.28
 DISTNAME=	jakarta-tomcat-${V}
-PKGNAME=	${DISTNAME}p2
-PKGNAME-examples=jakarta-tomcat-examples-${V}p2
+PKGNAME=	${DISTNAME}p3
+PKGNAME-examples=jakarta-tomcat-examples-${V}p3
 CATEGORIES=	www
 
 MASTER_SITES=	${MASTER_SITE_APACHE:=tomcat/tomcat-5/v$V/bin/} \
@@ -22,7 +22,8 @@ SUBPACKAGE?=
 MODULES=	java
 MODJAVA_VER=	1.3+
 
-BUILD_DEPENDS=	::archivers/gtar
+BUILD_DEPENDS=	::archivers/gtar \
+		::java/javaPathHelper
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-examples"
 PREFIX=		${CATALINA_BASE}
@@ -71,7 +72,6 @@ do-install:
 		> ${PREFIX}/${DISTNAME}/README.OpenBSD
 	@sed -e 's,%%PREFIX%%,${TRUEPREFIX},' \
 		-e 's,%%DISTNAME%%,${DISTNAME},' \
-		-e 's,%%JAVA_HOME%%,${JAVA_HOME},' \
 		-e 's,%%CATALINA_BASE%%,${CATALINA_BASE},' \
 		< ${FILESDIR}/tomcat.rc > ${SAMPLEDIR}/tomcat.rc
 
