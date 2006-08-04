@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2006/06/03 09:48:04 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2006/08/04 10:20:29 djm Exp $
 
 COMMENT=	"Python clone of WikiWiki"
 
-DISTNAME=	moin-1.3.5
-PKGNAME=	moin${DISTNAME}p0
+DISTNAME=	moin-1.5.4
+PKGNAME=	moin${DISTNAME}
 CATEGORIES=	www
+PKG_ARCH=	*
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=moin/}
 
@@ -23,6 +24,6 @@ NO_REGRESS=	Yes
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/moinmoin
 	cd ${WRKSRC}/docs && ${INSTALL_DATA} INSTALL.html \
-	  README.migration UPDATE.html ${PREFIX}/share/doc/moinmoin
+	  README.migration ${PREFIX}/share/doc/moinmoin
 
 .include <bsd.port.mk>
