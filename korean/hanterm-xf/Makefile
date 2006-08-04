@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2005/02/21 20:06:54 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2006/08/04 19:15:44 sturm Exp $
 
 COMMENT=	"XFree86-based xterm with Korean language support"
 
 DISTNAME=	hanterm-xf-p19
+PKGNAME=	hanterm-xf-311pl19
 CATEGORIES=	korean x11
 
 MASTER_SITES=	http://www.hanterm.org/download/hanterm-xf/
