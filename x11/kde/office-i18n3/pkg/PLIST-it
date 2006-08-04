@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-it,v 1.2 2006/04/03 14:52:19 bernd Exp $
+@comment $OpenBSD: PLIST-it,v 1.3 2006/08/04 10:35:19 espie Exp $
 share/apps/koffice/
 share/apps/koffice/autocorrect/
 share/apps/koffice/autocorrect/it.xml
@@ -131,6 +131,7 @@ ${DOC}kword/a11y.docbook
 ${DOC}kword/basics.docbook
 ${DOC}kword/bookmarks.docbook
 ${DOC}kword/chapnumb.docbook
+${DOC}kword/colorseldlg.png
 ${DOC}kword/columns.docbook
 ${DOC}kword/common
 ${DOC}kword/doccomments.docbook
@@ -139,6 +140,8 @@ ${DOC}kword/docstruct.docbook
 ${DOC}kword/docvariables.docbook
 ${DOC}kword/editing.docbook
 ${DOC}kword/expressions.docbook
+${DOC}kword/finddlg.png
+${DOC}kword/finddlg2.png
 ${DOC}kword/footendnotes.docbook
 ${DOC}kword/formatchar.docbook
 ${DOC}kword/formatframes.docbook
@@ -157,7 +160,18 @@ ${DOC}kword/mailmerge.docbook
 ${DOC}kword/mbtb.docbook
 ${DOC}kword/migrating.docbook
 ${DOC}kword/opt.docbook
+${DOC}kword/opt1.png
+${DOC}kword/opt2.png
+${DOC}kword/opt3.png
+${DOC}kword/opt4.png
+${DOC}kword/opt5.png
+${DOC}kword/optkb.png
+${DOC}kword/optkb2.png
+${DOC}kword/opttb.png
 ${DOC}kword/pageformat.docbook
+${DOC}kword/pntdlg.png
+${DOC}kword/pntdlg1.png
+${DOC}kword/repldlg.png
 ${DOC}kword/storeprint.docbook
 ${DOC}kword/styles.docbook
 ${DOC}kword/table.docbook

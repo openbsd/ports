@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/04/17 11:57:22 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2006/08/04 10:35:19 espie Exp $
 
 LANGS= af ar bg br bs ca cs cy da de el en_GB eo es et eu fi fr ga he hi \
 	hu is it ja lt mk nb nl nn pl pt pt_BR ro ru se sl sr sr@Latn \
@@ -27,9 +27,9 @@ SUBST_VARS+=DOC LOC
 
 DISTNAME=		koffice-i18n-${VERSION}
 CATEGORIES=		x11 x11/kde
-VERSION=		1.5.0
+VERSION=		1.5.2
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}
-MASTER_SITES=	${MASTER_SITE_KDE:=stable/koffice-1.5.0/src/koffice-l10n/}
+MASTER_SITES=	${MASTER_SITE_KDE:=stable/koffice-${VERSION}/src/koffice-l10n/}
 
 BUILD_DEPENDS = ::x11/kde/libs3
 RUN_DEPENDS = ::x11/kde/libs3

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pt_BR,v 1.2 2006/04/03 14:52:19 bernd Exp $
+@comment $OpenBSD: PLIST-pt_BR,v 1.3 2006/08/04 10:35:19 espie Exp $
 share/doc/HTML/pt_BR/
 ${DOC}kchart/
 ${DOC}kchart/common
@@ -261,6 +261,8 @@ ${LOC}example.mo
 ${LOC}karbon.mo
 ${LOC}kchart.mo
 ${LOC}kexi.mo
+${LOC}kfile_abiword.mo
+${LOC}kfile_gnumeric.mo
 ${LOC}kfile_koffice.mo
 ${LOC}kfile_ooo.mo
 ${LOC}kformdesigner.mo
@@ -269,8 +271,10 @@ ${LOC}kivio.mo
 ${LOC}koconverter.mo
 ${LOC}koffice.mo
 ${LOC}kofficefilters.mo
+${LOC}koproperty.mo
 ${LOC}koshell.mo
 ${LOC}kounavail.mo
+${LOC}kplato.mo
 ${LOC}kpresenter.mo
 ${LOC}krita.mo
 ${LOC}kscan_plugin.mo

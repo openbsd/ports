@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2006/06/04 09:15:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.21 2006/08/04 10:35:19 espie Exp $
 bin/karbon
 bin/kchart
 bin/kexi
@@ -631,6 +631,10 @@ ${KDE}/libkrita_openexr_import.la
 ${KDE}/libkrita_openexr_import.so
 ${KDE}/libkrita_raw_import.la
 ${KDE}/libkrita_raw_import.so
+${KDE}/libkritajpegexport.la
+${KDE}/libkritajpegexport.so
+${KDE}/libkritajpegimport.la
+${KDE}/libkritajpegimport.so
 ${KDE}/libkritamagickexport.la
 ${KDE}/libkritamagickexport.so
 ${KDE}/libkritamagickimport.la
@@ -641,6 +645,10 @@ ${KDE}/libkritapngexport.la
 ${KDE}/libkritapngexport.so
 ${KDE}/libkritapngimport.la
 ${KDE}/libkritapngimport.so
+${KDE}/libkritatiffexport.la
+${KDE}/libkritatiffexport.so
+${KDE}/libkritatiffimport.la
+${KDE}/libkritatiffimport.so
 ${KDE}/libkspreadhtmlexport.la
 ${KDE}/libkspreadhtmlexport.so
 ${KDE}/libkspreadinsertcalendar.la
@@ -859,10 +867,12 @@ share/applnk/Office/kformula.desktop
 share/applnk/Office/koshell.desktop
 share/applnk/Office/kplato.desktop
 share/applnk/Office/kpresenter.desktop
+share/applnk/Office/krita_jpeg.desktop
 share/applnk/Office/krita_magick.desktop
 share/applnk/Office/krita_openexr.desktop
 share/applnk/Office/krita_png.desktop
 share/applnk/Office/krita_raw.desktop
+share/applnk/Office/krita_tiff.desktop
 share/applnk/Office/kspread.desktop
 share/applnk/Office/kudesigner.desktop
 share/applnk/Office/kugar.desktop
@@ -5148,6 +5158,8 @@ share/services/kpresenterpart.desktop
 share/services/kprkword.desktop
 share/services/krita_cmyk_u16_plugin.desktop
 share/services/krita_gray_u16_plugin.desktop
+share/services/krita_jpeg_export.desktop
+share/services/krita_jpeg_import.desktop
 share/services/krita_lms_f32_plugin.desktop
 share/services/krita_magick_export.desktop
 share/services/krita_magick_import.desktop
@@ -5159,6 +5171,8 @@ share/services/krita_raw_import.desktop
 share/services/krita_rgb_f16half_plugin.desktop
 share/services/krita_rgb_f32_plugin.desktop
 share/services/krita_rgb_u16_plugin.desktop
+share/services/krita_tiff_export.desktop
+share/services/krita_tiff_import.desktop
 share/services/kritabumpmapfilter.desktop
 share/services/kritacimg.desktop
 share/services/kritacmykplugin.desktop

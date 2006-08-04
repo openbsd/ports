@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST-se,v 1.1 2006/04/17 11:57:22 espie Exp $
+@comment $OpenBSD: PLIST-se,v 1.2 2006/08/04 10:35:19 espie Exp $
 share/locale/se/
 share/locale/se/LC_MESSAGES/
 ${LOC}desktop_koffice.mo
 ${LOC}example.mo
 ${LOC}karbon.mo
 ${LOC}kchart.mo
+${LOC}kfile_abiword.mo
+${LOC}kfile_gnumeric.mo
 ${LOC}kfile_koffice.mo
 ${LOC}kfile_ooo.mo
 ${LOC}kformdesigner.mo
@@ -15,6 +17,7 @@ ${LOC}koffice.mo
 ${LOC}kofficefilters.mo
 ${LOC}koshell.mo
 ${LOC}kounavail.mo
+${LOC}kplato.mo
 ${LOC}kpresenter.mo
 ${LOC}kscan_plugin.mo
 ${LOC}kspread.mo

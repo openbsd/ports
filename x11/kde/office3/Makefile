@@ -1,20 +1,14 @@
-# $OpenBSD: Makefile,v 1.34 2006/06/15 09:13:45 bernd Exp $
+# $OpenBSD: Makefile,v 1.35 2006/08/04 10:35:19 espie Exp $
 
 COMMENT=		"office suite for KDE"
 
+VERSION=		1.5.2
 CATEGORIES=		x11 x11/kde productivity
 VMEM_WARNING=		Yes
-MASTER_SITES?=		${MASTER_SITE_KDE:S@$@stable/koffice-1.5.1/src/@}
+MASTER_SITES?=		${MASTER_SITE_KDE:S@$@stable/koffice-${VERSION}/src/@}
 
-DISTNAME=	koffice-1.5.1
-PATCHFILES=	koffice-1.5.1-kexi-checkbox-data-saving.patch \
-		koffice-1.5.1-kexi-form-plugins.patch
+DISTNAME=	koffice-${VERSION}
 
-do-distpatch:
-	cd ${WRKDIST} && ${PATCH} ${PATCH_DIST_ARGS} <${FULLDISTDIR}/koffice-1.5.1-kexi-checkbox-data-saving.patch
-	cd ${WRKDIST}/kexi && ${PATCH} -z .bak.orig --forward --quiet -E -p0 <${FULLDISTDIR}/koffice-1.5.1-kexi-form-plugins.patch
-
-PKGNAME=	koffice-1.5.1p2
 #SHARED_LIBS=	karbonbase		3.0 \
 #		kexipropertyeditor	1.0 \
 #		koscript		3.0 \
@@ -92,7 +86,8 @@ LIB_DEPENDS=	kdecore.4,DCOP,artskde,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kparts,
 		Magick::graphics/ImageMagick \
 		jbig::graphics/jbigkit \
 		mysqlclient::databases/mysql \
-		ruby::lang/ruby
+		ruby::lang/ruby \
+		exif.12::graphics/libexif
 
 
 WANTLIB=	ICE SM X11 Xext Xrender artsflow artsflow_idl audiofile bz2 c \

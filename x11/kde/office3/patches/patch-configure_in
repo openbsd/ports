@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.8 2006/06/04 23:10:21 brad Exp $
---- configure.in.orig	Wed May 17 06:01:02 2006
-+++ configure.in	Sun Jun  4 13:22:58 2006
+$OpenBSD: patch-configure_in,v 1.9 2006/08/04 10:35:19 espie Exp $
+--- configure.in.orig	Sun Jul  9 04:30:54 2006
++++ configure.in	Fri Jul 14 18:40:32 2006
 @@ -935,8 +935,8 @@ dnl *** Check that the paths given to co
  
      AC_MSG_CHECKING([for PostgreSQL C API libraries])
@@ -32,7 +32,7 @@ $OpenBSD: patch-configure_in,v 1.8 2006/06/04 23:10:21 brad Exp $
  ac_knewstuff_libraries="$knewstuff_libdir"
  
  if test "$ac_knewstuff_includes" = NO || test "$ac_knewstuff_libraries" = NO; then
-@@ -1220,6 +1220,8 @@ AC_SUBST(LCMS_LIBS)
+@@ -1221,6 +1221,8 @@ AC_SUBST(LCMS_LIBS)
  # Check if the 1.14 version of lcms is detected
  if test ! "$LCMS_LIBS" = ""
  then
@@ -41,7 +41,7 @@ $OpenBSD: patch-configure_in,v 1.8 2006/06/04 23:10:21 brad Exp $
  AC_LANG_SAVE
  AC_LANG_CPLUSPLUS
  AC_TRY_COMPILE(
-@@ -1228,6 +1230,7 @@ AC_TRY_COMPILE(
+@@ -1229,6 +1231,7 @@ AC_TRY_COMPILE(
       #error lcms 1.14 detected
       #endif ] , [ ], lcms_version_114='no', lcms_version_114='yes' )
  AC_LANG_RESTORE
@@ -49,7 +49,7 @@ $OpenBSD: patch-configure_in,v 1.8 2006/06/04 23:10:21 brad Exp $
  fi
  
  # IM 6.1.3 changed the number of arguments to GetMagickInfoList
-@@ -1419,7 +1422,7 @@ dnl FILE: ./lib/kotext/configure.in.in
+@@ -1420,7 +1423,7 @@ dnl FILE: ./lib/kotext/configure.in.in
  dnl =======================================================
  
     AC_LANG_SAVE

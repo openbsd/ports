@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-nn,v 1.2 2006/04/03 14:52:19 bernd Exp $
+@comment $OpenBSD: PLIST-nn,v 1.3 2006/08/04 10:35:19 espie Exp $
 share/apps/koffice/
 share/apps/koffice/autocorrect/
 share/apps/koffice/autocorrect/nn.xml
@@ -17,6 +17,7 @@ ${LOC}koffice.mo
 ${LOC}kofficefilters.mo
 ${LOC}koshell.mo
 ${LOC}kounavail.mo
+${LOC}kplato.mo
 ${LOC}kpresenter.mo
 ${LOC}krita.mo
 ${LOC}kscan_plugin.mo
