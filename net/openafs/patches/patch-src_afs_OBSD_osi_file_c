@@ -1,6 +1,7 @@
---- src/afs/OBSD/osi_file.c.orig	Wed Jan  4 22:47:28 2006
-+++ src/afs/OBSD/osi_file.c	Wed Jan  4 22:47:00 2006
-@@ -48,7 +48,7 @@
+$OpenBSD: patch-src_afs_OBSD_osi_file_c,v 1.2 2006/08/04 16:34:43 naddy Exp $
+--- src/afs/OBSD/osi_file.c.orig	Thu Mar 11 00:01:52 2004
++++ src/afs/OBSD/osi_file.c	Fri Aug  4 18:00:04 2006
+@@ -48,7 +48,7 @@ osi_UFSOpen(afs_int32 ainode)
      }
      VOP_UNLOCK(vp, 0, curproc);
      afile->vnode = vp;

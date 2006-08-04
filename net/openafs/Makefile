@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2006/02/18 02:05:49 todd Exp $
+# $OpenBSD: Makefile,v 1.10 2006/08/04 16:34:43 naddy Exp $
+
+ONLY_FOR_ARCHS= 	i386
 
 COMMENT=		"Distributed filesystem OpenAFS"
 
@@ -10,15 +12,13 @@ HOMEPAGE=		http://www.openafs.org
 
 MAINTAINER=		Jaime Fournier <ober@linbsd.org>
 
-ONLY_FOR_ARCHS= i386
-
 # IPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c pthread
+WANTLIB=		c pthread
 
 MASTER_SITES=		http://www.openafs.org/dl/openafs/1.4.0/
 EXTRACT_SUFX=		.tar.bz2
@@ -32,6 +32,9 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-afs-sysname=${ARCH}_obsd${OSrev} 
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S/-src$//}
+
+post-patch:
+	@cp ${FILESDIR}/param.i386_obsd40.h ${WRKSRC}/src/config/
 
 pre-configure:
 	@if [ ! -d /usr/src/sys ]; then \
