@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.760 2006/08/01 10:50:19 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.761 2006/08/04 23:29:47 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2551,7 +2551,7 @@ _print-package-args:
 	}
 .  endfor
 .  for _i in ${WANTLIB}
-	@d=${_i}; listlibs='echo $$shdir/lib*'; \
+	@d='${_i}'; listlibs='echo $$shdir/lib*'; \
 	${_syslibresolve_fragment}; \
 	case "$$check" in \
 	*.a) ;; \
