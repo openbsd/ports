@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2005/11/03 18:28:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2006/08/04 00:10:42 espie Exp $
 #
 # Many variables moved to ../Makefile.inc
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://www.w3.org/Amaya/
 FLAVORS=		motif gtk
 FLAVOR?=		motif
 
-LIB_DEPENDS+=	 	expat.2::textproc/expat
+LIB_DEPENDS+=	 	expat.>=2::textproc/expat
 
 WANTLIB=		ICE SM X11 Xext Xp Xt c m z
 
@@ -21,15 +21,15 @@ WANTLIB=		ICE SM X11 Xext Xp Xt c m z
 
 CONFIGURE_ARGS+=	--with-gtk=${LOCALBASE}
 # I'm too lazy to write a proper imlib autoconf test.
-LIB_DEPENDS+=		gdk_imlib.19::graphics/imlib
+LIB_DEPENDS+=		gdk_imlib.>=19::graphics/imlib
 
 WANTLIB+=		Xi gdk gif glib gmodule gtk iconv intl jpeg png tiff
 
 .elif ${FLAVOR:L} == "motif"
 
 USE_MOTIF=		any
-LIB_DEPENDS+=		jpeg.62::graphics/jpeg \
-			png.2::graphics/png 
+LIB_DEPENDS+=		jpeg.>=62::graphics/jpeg \
+			png.>=2::graphics/png 
 CONFIGURE_ARGS+=	--without-gtk \
 			--with-motif-includes=${LOCALBASE}/include \
 			--with-motif-libraries=${LOCALBASE}/lib

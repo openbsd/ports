@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/12/17 15:18:32 alek Exp $
+# $OpenBSD: Makefile,v 1.11 2006/08/04 00:10:42 espie Exp $
 
 COMMENT=	"3D filesystem visualizer"
 
@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fsv/}
 
 HOMEPAGE=	http://fsv.sourceforge.net
 
-LIB_DEPENDS=	gtkgl.1::x11/gtkglarea
+LIB_DEPENDS=	gtkgl.>=1::x11/gtkglarea
 
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 

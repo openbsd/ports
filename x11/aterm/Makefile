@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2006/03/22 20:17:40 uwe Exp $
+# $OpenBSD: Makefile,v 1.39 2006/08/04 00:10:42 espie Exp $
 
 DISTNAME=	aterm-0.4.2
 PKGNAME=	${DISTNAME}p0
@@ -41,8 +41,8 @@ CONFIGURE_ARGS+= --without-xpm --disable-transparency \
 		--disable-background-image --disable-fading \
 		--without-jpeg --without-png
 .else
-LIB_DEPENDS=	jpeg.62::graphics/jpeg \
-		png.2::graphics/png
+LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
+		png.>=2::graphics/png
 
 CONFIGURE_ARGS+= --with-xpm --enable-transparency \
 		--enable-background-image --enable-fading \

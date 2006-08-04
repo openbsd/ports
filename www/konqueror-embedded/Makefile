@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/12/11 13:29:21 alek Exp $
+# $OpenBSD: Makefile,v 1.14 2006/08/04 00:10:42 espie Exp $
 
 COMMENT='stand-alone Qt-based web browser'
 CATEGORIES=www x11
@@ -30,8 +30,8 @@ CONFIGURE_ARGS+=	--enable-xmlui
 CONFIGURE_ARGS+=	--disable-dlopen
 CONFIGURE_ARGS+=	--disable-debug
 
-LIB_DEPENDS=	png.2::graphics/png \
-		jpeg.62::graphics/jpeg \
+LIB_DEPENDS=	png.>=2::graphics/png \
+		jpeg.>=62::graphics/jpeg \
 		pcreposix,pcre::devel/pcre
 
 MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'

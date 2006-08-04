@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2006/07/18 21:22:56 alek Exp $
+# $OpenBSD: Makefile,v 1.34 2006/08/04 00:10:42 espie Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -42,7 +42,7 @@ PHPXS_SUBST+= -e 's,${i},${${i}},'
 .endfor
 
 .if ${MACHINE_ARCH} == "i386"
-LIB_DEPENDS+=	recode.0::converters/recode
+LIB_DEPENDS+=	recode::converters/recode
 CONFIGURE_ARGS+= --with-recode=${LOCALBASE}
 .endif
 

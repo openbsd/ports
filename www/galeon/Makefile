@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2006/06/13 13:34:56 bernd Exp $
+# $OpenBSD: Makefile,v 1.27 2006/08/04 00:10:42 espie Exp $
 
 COMMENT=	"GNOME web browser based on gecko"
 
@@ -35,7 +35,7 @@ BUILD_DEPENDS=	:mozilla->=1.7.11:www/mozilla \
 		:p5-XML-Parser-*:textproc/p5-XML-Parser \
 		:scrollkeeper->=0.3.12:textproc/scrollkeeper
 LIB_DEPENDS= 	gnome-desktop-2::x11/gnome/desktop \
-		gnomeui-2.0::x11/gnome/libgnomeui \
+		gnomeui-2::x11/gnome/libgnomeui \
 		mozilla/gtkembedmoz,mozilla/xpcom,mozilla/plds4,mozilla/plc4,mozilla/nspr4:mozilla->=1.7.11:www/mozilla
 
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2006/07/18 21:44:40 alek Exp $
+# $OpenBSD: Makefile,v 1.17 2006/08/04 00:10:42 espie Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -52,7 +52,7 @@ RUN_DEPENDS=	:php5-core-${V}:www/php5/core
 WANTLIB=
 MODULES=
 .else
-LIB_DEPENDS=	xml2.8::textproc/libxml
+LIB_DEPENDS=	xml2.>=8::textproc/libxml
 .endif
 
 pre-fake:

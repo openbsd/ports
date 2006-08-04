@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/06/13 13:34:56 bernd Exp $
+# $OpenBSD: Makefile,v 1.6 2006/08/04 00:10:42 espie Exp $
 
 COMMENT=		"lightweight HTML rendering/printing/editing engine"
 
@@ -20,15 +20,15 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xrender fontconfig freetype m z \
 			ssl crypto \
-			ORBit-2 ORBitCosNaming-2.0 audiofile esd jpeg \
-			art_lgpl_2 atk-1.0.0.0 gconf-2 glade-2.0.0.4 \
+			ORBit-2 ORBitCosNaming-2 audiofile esd jpeg \
+			art_lgpl_2 atk-1.0.0.0 gconf-2 glade-2.0.>=0.4 \
 			gnome-keyring bonobo-2 bonobo-activation bonoboui-2 \
-			pango-1.0.600.0 pangoft2-1.0.600.0 cairo \
-			pangocairo-1.0.600.0 glib-2.0.0.0 gmodule-2.0.0.0 \
+			pango-1.0.>=600.0 pangoft2-1.0.>=600.0 cairo \
+			pangocairo-1.0.>=600.0 glib-2.0.0.0 gmodule-2.0.0.0 \
 			gobject-2.0.0.0 gthread-2.0.0.0 glitz png \
 			gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 gtk-x11-2.0.0.0 \
-			gnome-2.800.0 gnomecanvas-2.800.0 gnomeprint-2-2.1.0 \
-			gnomevfs-2.800.2 popt xml2
+			gnome-2.>=800.0 gnomecanvas-2.>=800.0 \
+			gnomeprint-2-2.>=1.0 gnomevfs-2.>=800.2 popt xml2
 			
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gtkhtml/3.6/}
 EXTRACT_SUFX=		.tar.bz2

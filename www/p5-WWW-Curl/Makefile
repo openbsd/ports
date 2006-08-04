@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2005/10/27 20:03:25 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2006/08/04 00:10:42 espie Exp $
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"perl binding for curl"
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 WANTLIB=		crypto ssl z 
 
-LIB_DEPENDS=	curl.2.2::net/curl
+LIB_DEPENDS=	curl.>=2.2::net/curl
 
 CONFIGURE_STYLE=perl
 

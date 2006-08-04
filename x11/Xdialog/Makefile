@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/06/01 04:21:13 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/08/04 00:10:42 espie Exp $
 
 COMMENT=	"X11 counterpart of curses-based misc/dialog"
 
@@ -20,7 +20,7 @@ EXTRACT_SUFX=	.tar.bz2
 
 WANTLIB=	X11 Xext Xi c m gdk glib gmodule
 BUILD_DEPENDS=	::devel/pkgconfig
-LIB_DEPENDS=	gtk.2::x11/gtk+
+LIB_DEPENDS=	gtk.>=2::x11/gtk+
 MODULES=	devel/gettext
 
 USE_X11=	Yes

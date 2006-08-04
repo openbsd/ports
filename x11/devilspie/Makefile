@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/06/07 13:44:21 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2006/08/04 00:10:42 espie Exp $
 
 COMMENT=	"window manipulation tool"
 
@@ -28,7 +28,7 @@ BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
 		:intltool-*:textproc/intltool \
 		:p5-XML-Parser-*:textproc/p5-XML-Parser
 
-LIB_DEPENDS=	wnck-1.16::devel/libwnck
+LIB_DEPENDS=	wnck-1.>=16::devel/libwnck
 
 SEPARATE_BUILD=	concurrent
 USE_X11=	Yes

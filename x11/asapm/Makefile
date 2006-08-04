@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/03/28 15:49:25 jcs Exp $
+# $OpenBSD: Makefile,v 1.16 2006/08/04 00:10:42 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 macppc zaurus
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xpm c
 
-LIB_DEPENDS=		jpeg.62::graphics/jpeg
+LIB_DEPENDS=		jpeg.>=62::graphics/jpeg
 
 USE_X11=		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2005/10/28 01:04:53 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2006/08/04 00:10:42 espie Exp $
 
 COMMENT=	"class 1 and 2 DAV server for the Apache webserver"
 
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=		expat.2::textproc/expat
+LIB_DEPENDS=		expat.>=2::textproc/expat
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2006/07/16 22:08:42 alek Exp $
+# $OpenBSD: Makefile,v 1.23 2006/08/04 00:10:42 espie Exp $
 
 FULLPKGNAME=		php5-extensions-${V}
 COMMENT=		"informational package about PHP5 extensions"
@@ -28,8 +28,8 @@ CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 			--with-iconv=${LOCALBASE} \
 			--disable-dom
 
-GRAPHIC_DEPENDS=	jpeg.62::graphics/jpeg \
-			png.3::graphics/png
+GRAPHIC_DEPENDS=	jpeg.>=62::graphics/jpeg \
+			png.>=3::graphics/png
 
 GRAPHIC_CONFIG=		--with-jpeg-dir=${LOCALBASE} \
 			--with-png-dir=${LOCALBASE} \
@@ -43,7 +43,7 @@ CONFIGURE_ARGS+=	--without-bz2
 MULTI_PACKAGES+=	-bz2
 COMMENT-bz2=		"bzip2 compression extensions for php5"
 CONFIGURE_ARGS+=	--with-bz2=shared,${LOCALBASE}
-BZ2_DEPENDS=		bz2.10::archivers/bzip2
+BZ2_DEPENDS=		bz2.>=10::archivers/bzip2
 .endif
 
 # curl
@@ -54,7 +54,7 @@ CONFIGURE_ARGS+=	--without-curl
 MULTI_PACKAGES+=	-curl
 COMMENT-curl=		"curl URL library extensions for php5"
 CONFIGURE_ARGS+=	--with-curl=shared,${LOCALBASE}
-CURL_DEPENDS=		curl.2::net/curl
+CURL_DEPENDS=		curl.>=2::net/curl
 CURL_WANTLIB=		crypto ssl z
 .endif
 
@@ -66,7 +66,7 @@ CONFIGURE_ARGS+=	--disable-dba
 MULTI_PACKAGES+=	-dba
 COMMENT-dba=		"dba GDBM access extensions for php5"
 CONFIGURE_ARGS+=	--enable-dba=shared --with-gdbm=${LOCALBASE}
-DBA_DEPENDS=		gdbm.2::databases/gdbm
+DBA_DEPENDS=		gdbm.>=2::databases/gdbm
 .endif
 
 # dbase
@@ -97,7 +97,7 @@ CONFIGURE_ARGS+=	--without-gd --without-xpm-dir --without-ttf \
 .else
 MULTI_PACKAGES+=	-gd
 COMMENT-gd=		"image manipulation extensions for php5"
-GD_DEPENDS=		${GRAPHIC_DEPENDS} t1.5::devel/t1lib
+GD_DEPENDS=		${GRAPHIC_DEPENDS} t1.>=5::devel/t1lib
 GD_WANTLIB=		freetype z
 CONFIGURE_ENV+=		CPPFLAGS="${LOCALBASE}/include/libpng"
 CONFIGURE_ARGS+=	--with-gd=shared ${GRAPHIC_CONFIG} \
@@ -125,7 +125,7 @@ CONFIGURE_ARGS+=	--without-gmp
 MULTI_PACKAGES+=	-gmp
 COMMENT-gmp=		"gmp math library support for php5"
 CONFIGURE_ARGS+=	--with-gmp=shared,${LOCALBASE}
-GMP_DEPENDS=		gmp.4::devel/gmp
+GMP_DEPENDS=		gmp.>=4::devel/gmp
 .endif
 
 # imap
@@ -137,7 +137,7 @@ MULTI_PACKAGES+=	-imap
 COMMENT-imap=		"imap, pop3 and nntp extensions for php5"
 CONFIGURE_ARGS+=	--with-imap=shared,${LOCALBASE} \
 			--with-kerberos=/usr --with-imap-ssl
-IMAP_DEPENDS=		c-client.3::mail/c-client
+IMAP_DEPENDS=		c-client.>=3::mail/c-client
 IMAP_WANTLIB=		gssapi crypto krb5 ssl
 FULLPKGNAME-imap=	php5-imap-${V}
 .endif
@@ -150,7 +150,7 @@ CONFIGURE_ARGS+=	--without-ldap
 MULTI_PACKAGES+=	-ldap
 COMMENT-ldap=		"ldap protocol extensions for php5"
 CONFIGURE_ARGS+=	--with-ldap=shared,${LOCALBASE}
-LDAP_DEPENDS=		ldap.2,lber::databases/openldap
+LDAP_DEPENDS=		ldap.>=2,lber::databases/openldap
 .endif
 
 # mbstring
@@ -182,7 +182,7 @@ CONFIGURE_ARGS+=	--without-mhash
 MULTI_PACKAGES+=	-mhash
 COMMENT-mhash=		"mhash extensions for php5"
 CONFIGURE_ARGS+=	--with-mhash=shared,${LOCALBASE}
-MHASH_DEPENDS=		mhash.2::security/mhash
+MHASH_DEPENDS=		mhash.>=2::security/mhash
 .endif
 
 # mysql
@@ -193,7 +193,7 @@ CONFIGURE_ARGS+=	--without-mysql
 MULTI_PACKAGES+=	-mysql
 COMMENT-mysql=		"mysql database access extensions for php5"
 CONFIGURE_ARGS+=	--with-mysql=shared,${LOCALBASE}
-MYSQL_DEPENDS=		lib/mysql/mysqlclient.10::databases/mysql
+MYSQL_DEPENDS=		lib/mysql/mysqlclient.>=10::databases/mysql
 .endif
 
 # mysqli
@@ -204,7 +204,7 @@ CONFIGURE_ARGS+=	--without-mysqli
 MULTI_PACKAGES+=	-mysqli
 COMMENT-mysqli=		"mysql database access extensions for php5"
 CONFIGURE_ARGS+=	--with-mysqli=shared,${LOCALBASE}/bin/mysql_config
-MYSQLI_DEPENDS=		lib/mysql/mysqlclient.10::databases/mysql
+MYSQLI_DEPENDS=		lib/mysql/mysqlclient.>=10::databases/mysql
 MYSQLI_WANTLIB=		crypto ssl z
 .endif
 
@@ -227,7 +227,7 @@ CONFIGURE_ARGS+=	--without-odbc
 MULTI_PACKAGES+=	-odbc
 COMMENT-odbc=		"odbc database access extensions for php5"
 CONFIGURE_ARGS+=        --with-iodbc=shared
-ODBC_DEPENDS=		iodbc.2::databases/iodbc
+ODBC_DEPENDS=		iodbc.>=2::databases/iodbc
 .endif
 
 # pgsql
@@ -238,7 +238,7 @@ CONFIGURE_ARGS+=	--without-pgsql
 MULTI_PACKAGES+=	-pgsql
 COMMENT-pgsql=		"pgsql database access extensions for php5"
 CONFIGURE_ARGS+=	--with-pgsql=shared,${LOCALBASE}
-PGSQL_DEPENDS=		pq.2:postgresql-client-*:databases/postgresql
+PGSQL_DEPENDS=		pq.>=2:postgresql-client-*:databases/postgresql
 .endif
 
 # shmop
@@ -271,7 +271,7 @@ CONFIGURE_ARGS+=	--without-snmp
 MULTI_PACKAGES+=	-snmp
 COMMENT-snmp=		"snmp protocol extensions for php5"
 CONFIGURE_ARGS+=	--with-snmp=shared,${LOCALBASE} --enable-ucd-snmp-hack
-SNMP_DEPENDS=		netsnmp.6.2::net/net-snmp
+SNMP_DEPENDS=		netsnmp.>=6.2::net/net-snmp
 SNMP_WANTLIB=		crypto
 .endif
 
@@ -283,7 +283,7 @@ CONFIGURE_ARGS+=	--without-sqlite
 MULTI_PACKAGES+=	-sqlite
 COMMENT-sqlite=		"sqlite database access extensions for php5"
 CONFIGURE_ARGS+=	--with-sqlite=shared,${LOCALBASE} --enable-sqlite-utf8
-SQLITE_DEPENDS=		sqlite.8::databases/sqlite
+SQLITE_DEPENDS=		sqlite.>=8::databases/sqlite
 .endif
 
 # sybase-ct
@@ -294,7 +294,7 @@ CONFIGURE_ARGS+=	--without-sybase-ct
 MULTI_PACKAGES+=	-sybase_ct
 COMMENT-sybase_ct=	"sybase database access extensions for php5"
 CONFIGURE_ARGS+=        --with-sybase-ct=shared,${LOCALBASE}
-SYBASE_CT_DEPENDS=	ct.0::databases/freetds
+SYBASE_CT_DEPENDS=	ct::databases/freetds
 .endif
 
 # xml-rpc
@@ -316,7 +316,7 @@ CONFIGURE_ARGS+=	--without-xsl
 MULTI_PACKAGES+=	-xsl
 COMMENT-xsl=		"XSL functions for php5"
 CONFIGURE_ARGS+=	--with-xsl=shared --enable-dom
-XSL_DEPENDS=		xslt.3,exslt::textproc/libxslt
+XSL_DEPENDS=		xslt.>=3,exslt::textproc/libxslt
 XSL_WANTLIB=		iconv xml2 z
 FULLPKGNAME-xsl=	php5-xsl-${V}
 .endif
@@ -342,7 +342,7 @@ MESSAGE=		${PKGDIR}/DESCR
 SUBST_VARS=		V
 WANTLIB=
 .else
-BUILD_DEPENDS+=		xml2.8::textproc/libxml
+BUILD_DEPENDS+=		xml2.>=8::textproc/libxml
 .for i in ${MULTI_PACKAGES}
 LIB_DEPENDS+=		${${i:U:S/-//g}_DEPENDS}
 WANTLIB+=		${${i:U:S/-//g}_WANTLIB}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/06/13 13:34:56 bernd Exp $
+# $OpenBSD: Makefile,v 1.20 2006/08/04 00:10:42 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc64 arm
 SHARED_ONLY=	Yes
@@ -38,13 +38,13 @@ BUILD_DEPENDS=	:zip->=2.3:archivers/zip \
 		:unzip-*:archivers/unzip \
 		:libIDL-*:devel/libIDL \
 		:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=	jpeg.62::graphics/jpeg \
-		png.3::graphics/png \
-		gdk-x11-2.0.600.0,gdk_pixbuf-2.0.600.0,gtk-x11-2.0.600.0::x11/gtk+2
+LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
+		png.>=3::graphics/png \
+		gdk-x11-2.0.>=600.0,gdk_pixbuf-2.0.>=600.0,gtk-x11-2.0.>=600.0::x11/gtk+2
 WANTLIB=	ICE SM X11 Xext Xft Xrender Xt \
 		c fontconfig freetype m pthread z \
-		atk-1.0.1011.0 glib-2.0.600.0 gmodule-2.0.600.0 \
-		gobject-2.0.600.0 pango-1.0.800.0 pangocairo-1.0.0.0 \
+		atk-1.0.>=1011.0 glib-2.0.>=600.0 gmodule-2.0.>=600.0 \
+		gobject-2.0.>=600.0 pango-1.0.>=800.0 pangocairo-1.0.0.0 \
 		pangoft2-1.0.0.0 cairo
 .if empty(MACHINE_ARCH:Malpha)
 WANTLIB+=	stdc++

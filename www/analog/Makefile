@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2006/02/08 04:54:50 david Exp $
+# $OpenBSD: Makefile,v 1.48 2006/08/04 00:10:42 espie Exp $
 
 COMMENT=	"extremely fast program for analysing WWW logfiles"
 
@@ -26,8 +26,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	gd.18::graphics/gd \
-		pcre.0::devel/pcre
+LIB_DEPENDS=	gd.>=18::graphics/gd \
+		pcre::devel/pcre
 WANTLIB=	c m jpeg png z
 
 MODULES=	converters/libiconv

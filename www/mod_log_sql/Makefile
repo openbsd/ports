@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2005/02/05 10:49:49 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2006/08/04 00:10:42 espie Exp $
 
 COMMENT=	"Apache module for logging to an SQL database"
 
@@ -22,7 +22,7 @@ WANTLIB=		z
 MASTER_SITES=	http://www.outoforder.cc/downloads/mod_log_sql/
 EXTRACT_SUFX=	.tar.bz2
 
-LIB_DEPENDS=	lib/mysql/mysqlclient.10::databases/mysql
+LIB_DEPENDS=	lib/mysql/mysqlclient.>=10::databases/mysql
 
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/01/17 15:58:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2006/08/04 00:10:42 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	ghttp.1::www/libghttp
+LIB_DEPENDS=	ghttp.>=1::www/libghttp
 
 CONFIGURE_STYLE= perl
 

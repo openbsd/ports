@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/12/11 13:29:22 alek Exp $
+# $OpenBSD: Makefile,v 1.15 2006/08/04 00:10:42 espie Exp $
 
 COMMENT=	"Netscape cache browser"
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 WANTLIB=		X11 Xext Xi c glib gmodule iconv intl m
 
-LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
+LIB_DEPENDS=	gtk.>=1.2,gdk.>=1.2::x11/gtk+
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-gnome

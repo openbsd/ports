@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2006/02/10 18:54:58 sturm Exp $
+# $OpenBSD: Makefile,v 1.61 2006/08/04 00:10:42 espie Exp $
 
 COMMENT=	"pager/text-based web browser"
 
@@ -20,7 +20,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=w3m/}
 MASTER_SITES0=	http://www2u.biglobe.ne.jp/~hsaka/w3m/patch/
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	gc.1::devel/boehm-gc
+LIB_DEPENDS=	gc.>=1::devel/boehm-gc
 
 FLAVORS=	image japanese
 FLAVOR?=
@@ -38,7 +38,7 @@ DOCS=	FAQ.html HISTORY MANUAL.html README README.dict README.func \
 	keymap.default keymap.lynx menu.default menu.submenu
 
 .if ${FLAVOR:L:Mimage}
-LIB_DEPENDS+=	gdk_pixbuf.2,gdk_pixbuf_xlib.2::graphics/gdk-pixbuf
+LIB_DEPENDS+=	gdk_pixbuf.>=2,gdk_pixbuf_xlib.>=2::graphics/gdk-pixbuf
 CONFIGURE_ARGS+=--with-imagelib=gdk-pixbuf
 DOCS+=		README.img
 WANTLIB+=	X11 Xext Xi gdk glib gmodule gtk jpeg png tiff

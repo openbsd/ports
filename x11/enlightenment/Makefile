@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2006/04/05 09:49:59 bernd Exp $
+# $OpenBSD: Makefile,v 1.41 2006/08/04 00:10:42 espie Exp $
 
 COMMENT=	"themed window manager"
 
@@ -39,8 +39,8 @@ CONFIGURE_ARGS=	--enable-fsstd --sysconfdir=${SYSCONFDIR}
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
-LIB_DEPENDS=	esd.2::audio/esound \
-		Imlib2.2::graphics/imlib2
+LIB_DEPENDS=	esd.>=2::audio/esound \
+		Imlib2.>=2::graphics/imlib2
 WANTLIB=	ICE SM X11 Xext Xinerama Xxf86vm \
 		audiofile bz2 c iconv freetype intl jpeg \
 		ltdl m png tiff ungif z

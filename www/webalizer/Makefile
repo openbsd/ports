@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2005/10/24 05:07:04 fgsch Exp $
+# $OpenBSD: Makefile,v 1.21 2006/08/04 00:10:42 espie Exp $
 
 COMMENT=	"web server log file analysis program"
 
@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.mrunix.net/webalizer/
 
-LIB_DEPENDS=	gd.18::graphics/gd
+LIB_DEPENDS=	gd.>=18::graphics/gd
 
 MAINTAINER=	Dan Harnett <danh@openbsd.org>
 

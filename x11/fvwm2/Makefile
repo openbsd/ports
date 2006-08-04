@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2005/07/29 05:01:49 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.38 2006/08/04 00:10:42 espie Exp $
 
 COMMENT=	"multiple virtual desktop window manager, with icons"
 COMMENT-fvicons="multiple virtual desktop window manager icons"
@@ -28,8 +28,8 @@ WANTLIB=		ICE SM X11 Xext Xi Xinerama Xpm c gdk glib gmodule \
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/
 MASTER_SITES0=	http://www.fvwm.org/generated/icon_download/
 
-LIB_DEPENDS=	gtk.1.2:gtk+-*:x11/gtk+ \
-		gdk_imlib.19.:imlib-*:graphics/imlib
+LIB_DEPENDS=	gtk.>=1.2:gtk+-*:x11/gtk+ \
+		gdk_imlib.>=19.:imlib-*:graphics/imlib
 
 MULTI_PACKAGES=	-fvwm2 -fvicons
 SUBPACKAGE?=

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/06/13 13:34:56 bernd Exp $
+# $OpenBSD: Makefile,v 1.8 2006/08/04 00:10:42 espie Exp $
 
 COMMENT=	"CSS editor"
 
@@ -24,7 +24,7 @@ WANTLIB=	c freetype pthread stdc++ m X11 fontconfig \
 		pangocairo-1.0.0.0 cairo
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=	gtk-x11-2.0.600.10,gdk_pixbuf-2.0.600.0,gdk-x11-2.0.600.0::x11/gtk+2 \
+LIB_DEPENDS=	gtk-x11-2.0.>=600.10,gdk_pixbuf-2.0.>=600.0,gdk-x11-2.0.>=600.0::x11/gtk+2 \
 		xml2.8::textproc/libxml
 
 MODULES=	devel/gettext

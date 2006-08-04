@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2006/01/29 00:21:56 couderc Exp $
+# $OpenBSD: Makefile,v 1.22 2006/08/04 00:10:42 espie Exp $
 
 BROKEN=			"broken memory allocation in dpi"
 
@@ -24,9 +24,9 @@ MASTER_SITES=		${HOMEPAGE}download/
 
 EXTRACT_SUFX=	.tar.bz2
 
-LIB_DEPENDS=    jpeg.62::graphics/jpeg \
-                png.2::graphics/png \
-		gtk.1.2,gdk.1.2::x11/gtk+
+LIB_DEPENDS=    jpeg.>=62::graphics/jpeg \
+                png.>=2::graphics/png \
+		gtk.>=1.2,gdk.>=1.2::x11/gtk+
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu

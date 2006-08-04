@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2005/12/31 14:35:36 sturm Exp $
+# $OpenBSD: Makefile,v 1.12 2006/08/04 00:10:42 espie Exp $
 
 COMMENT=		"lightweight HTML rendering/printing/editing engine"
 
@@ -28,12 +28,12 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		bonobo.2,bonobox.2::x11/gnome/bonobo \
+LIB_DEPENDS=		bonobo.>=2,bonobox.>=2::x11/gnome/bonobo \
 			capplet::x11/gnome/controlcenter \
-			gal.22::devel/gal \
-			ghttp.1::www/libghttp \
-			glade.5,glade-gnome.5:libglade-*-gnome:devel/libglade,gnome \
-			gnomecanvaspixbuf.1::graphics/gdk-pixbuf,-gnome
+			gal.>=22::devel/gal \
+			ghttp.>=1::www/libghttp \
+			glade.>=5,glade-gnome.>=5:libglade-*-gnome:devel/libglade,gnome \
+			gnomecanvaspixbuf.>=1::graphics/gdk-pixbuf,-gnome
 
 USE_X11=		Yes
 USE_GMAKE=		Yes

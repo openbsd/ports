@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/07/20 04:43:28 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2006/08/04 00:10:42 espie Exp $
 
 COMMENT=	"text mode rss newsreader"
 DISTNAME=	snownews-1.5.7
@@ -22,7 +22,7 @@ USE_GMAKE=	Yes
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS+=	xml2.7.10::textproc/libxml
+LIB_DEPENDS+=	xml2.>=7.10::textproc/libxml
 
 MAKE_ENV+=	EXTRA_LDFLAGS="-lintl -liconv" INSTALL=install \
 	EXTRA_CFLAGS="-DSTATIC_CONST_ICONV -I${LOCALBASE}/include ${CFLAGS}"

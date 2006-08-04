@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2005/10/09 13:13:25 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.9 2006/08/04 00:10:42 espie Exp $
 
 COMMENT=		"Desktop wallpaper manager and X11 screensaver"
 
@@ -18,7 +18,7 @@ WANTLIB=		X11 Xext Xi c gdk glib gmodule gtk iconv intl jpeg m \
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=chbg/}
 
-LIB_DEPENDS=		gdk_imlib.19::graphics/imlib
+LIB_DEPENDS=		gdk_imlib.>=19::graphics/imlib
 
 CONFIGURE_ARGS=		--with-image-library=gdkimlib \
 			--with-imlib1-config=${LOCALBASE}/bin/imlib-config \
