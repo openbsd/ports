@@ -19,6 +19,7 @@ RUN_DEPENDS=	::www/p5-HTML-Mason \
 		::www/p5-HTML-Parser \
 		::textproc/p5-Syntax-Highlight-Perl \
 		::textproc/p5-Syntax-Highlight-HTML
+REGRESS_DEPENDS=${RUN_DEPENDS}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-Syntax-Highlight-Mason
