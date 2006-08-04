@@ -1,12 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/03/12 22:13:27 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/08/04 16:31:00 espie Exp $
 %%SHARED%%
 bin/autogen
 bin/autoopts-config
 bin/columns
 bin/getdefs
 bin/xml2ag
-include/options.h
-include/usage-txt.h
+include/autogen/
+include/autogen/options.h
+include/autogen/usage-txt.h
 lib/libguileopts.a
 lib/libguileopts.la
 lib/libopts.a
