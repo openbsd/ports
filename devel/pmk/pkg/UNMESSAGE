@@ -1,7 +1,0 @@
-To completely deinstall this package you need to perform these steps as
-root:
-
-rm -r ${SYSCONFDIR}/pmk
-
-Do not do this if you plan on re-installing this package at some future
-time.
