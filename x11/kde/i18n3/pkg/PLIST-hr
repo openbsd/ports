@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hr,v 1.3 2006/06/03 12:47:30 espie Exp $
+@comment $OpenBSD: PLIST-hr,v 1.4 2006/08/04 10:41:01 espie Exp $
 share/doc/HTML/hr/
 ${DOC}docs/
 ${DOC}docs/common/
@@ -262,7 +262,6 @@ ${LOC}kmailcvt.mo
 ${LOC}kmcop.mo
 ${LOC}kmenuapplet.mo
 ${LOC}kmenuedit.mo
-${LOC}kmessedwords.mo
 ${LOC}kmid.mo
 ${LOC}kmines.mo
 ${LOC}kminipagerapplet.mo
@@ -369,7 +368,6 @@ ${LOC}kwriteconfig.mo
 ${LOC}kxkb.mo
 ${LOC}kxsconfig.mo
 ${LOC}libkcal.mo
-${LOC}libkcalsystem.mo
 ${LOC}libkdegames.mo
 ${LOC}libkdepim.mo
 ${LOC}libkicker.mo

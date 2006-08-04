@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-cy,v 1.5 2005/12/01 22:27:37 espie Exp $
+@comment $OpenBSD: PLIST-cy,v 1.6 2006/08/04 10:41:01 espie Exp $
 ${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo
@@ -43,7 +43,6 @@ ${LOC}juk.mo
 ${LOC}kabc2mutt.mo
 ${LOC}kabc_dir.mo
 ${LOC}kabc_file.mo
-${LOC}kabc_ldap.mo
 ${LOC}kabc_ldapkio.mo
 ${LOC}kabc_net.mo
 ${LOC}kabc_slox.mo
@@ -334,7 +333,6 @@ ${LOC}kmathapplet.mo
 ${LOC}kmcop.mo
 ${LOC}kmenuapplet.mo
 ${LOC}kmenuedit.mo
-${LOC}kmessedwords.mo
 ${LOC}kmid.mo
 ${LOC}kmilo_delli8k.mo
 ${LOC}kmilo_generic.mo

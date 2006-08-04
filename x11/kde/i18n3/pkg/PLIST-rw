@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-rw,v 1.1 2006/04/01 12:33:43 espie Exp $
+@comment $OpenBSD: PLIST-rw,v 1.2 2006/08/04 10:41:01 espie Exp $
 ${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo
@@ -333,7 +333,6 @@ ${LOC}kmathapplet.mo
 ${LOC}kmcop.mo
 ${LOC}kmenuapplet.mo
 ${LOC}kmenuedit.mo
-${LOC}kmessedwords.mo
 ${LOC}kmid.mo
 ${LOC}kmilo_delli8k.mo
 ${LOC}kmilo_generic.mo
@@ -499,7 +498,6 @@ ${LOC}libdmctl.mo
 ${LOC}libkaddrbk_geo_xxport.mo
 ${LOC}libkaddrbk_gmx_xxport.mo
 ${LOC}libkcal.mo
-${LOC}libkcalsystem.mo
 ${LOC}libkcddb.mo
 ${LOC}libkdeedu.mo
 ${LOC}libkdegames.mo

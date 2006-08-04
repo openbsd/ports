@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-sl,v 1.8 2006/06/03 12:47:30 espie Exp $
+@comment $OpenBSD: PLIST-sl,v 1.9 2006/08/04 10:41:01 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.sl.xml
 share/apps/khangman/
@@ -694,7 +694,6 @@ ${LOC}kmathapplet.mo
 ${LOC}kmcop.mo
 ${LOC}kmenuapplet.mo
 ${LOC}kmenuedit.mo
-${LOC}kmessedwords.mo
 ${LOC}kmid.mo
 ${LOC}kmilo_delli8k.mo
 ${LOC}kmilo_generic.mo
@@ -729,7 +728,9 @@ ${LOC}konnector_kcal.mo
 ${LOC}konnector_local.mo
 ${LOC}konnector_qtopia.mo
 ${LOC}konnector_remote.mo
+${LOC}konqsidebar_delicious.mo
 ${LOC}konqsidebar_mediaplayer.mo
+${LOC}konqsidebar_metabar.mo
 ${LOC}konqsidebar_news.mo
 ${LOC}konqueror.mo
 ${LOC}konquest.mo
@@ -889,6 +890,7 @@ ${LOC}lskat.mo
 ${LOC}lyrics.mo
 ${LOC}mediaapplet.mo
 ${LOC}mediacontrol.mo
+${LOC}mf_konqplugin.mo
 ${LOC}minitoolsplugin.mo
 ${LOC}multisynk.mo
 ${LOC}naughtyapplet.mo

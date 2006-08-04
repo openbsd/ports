@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-he,v 1.7 2006/06/03 12:47:30 espie Exp $
+@comment $OpenBSD: PLIST-he,v 1.8 2006/08/04 10:41:01 espie Exp $
 share/doc/HTML/he/
 ${DOC}docs/
 ${DOC}docs/common/
@@ -438,6 +438,7 @@ ${LOC}kwifimanager.mo
 ${LOC}kwin.mo
 ${LOC}kwin4.mo
 ${LOC}kwin_art_clients.mo
+${LOC}kwin_clients.mo
 ${LOC}kwin_lib.mo
 ${LOC}kwireless.mo
 ${LOC}kworldclock.mo

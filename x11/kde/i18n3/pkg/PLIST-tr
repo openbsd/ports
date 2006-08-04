@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tr,v 1.5 2006/06/03 12:47:30 espie Exp $
+@comment $OpenBSD: PLIST-tr,v 1.6 2006/08/04 10:41:01 espie Exp $
 share/apps/khangman/
 share/apps/khangman/data/
 share/apps/khangman/data/tr/
@@ -569,7 +569,6 @@ ${LOC}libdmctl.mo
 ${LOC}libkaddrbk_geo_xxport.mo
 ${LOC}libkaddrbk_gmx_xxport.mo
 ${LOC}libkcal.mo
-${LOC}libkcalsystem.mo
 ${LOC}libkcddb.mo
 ${LOC}libkdeedu.mo
 ${LOC}libkdegames.mo

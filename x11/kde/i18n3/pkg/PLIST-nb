@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-nb,v 1.6 2006/02/04 14:49:52 espie Exp $
+@comment $OpenBSD: PLIST-nb,v 1.7 2006/08/04 10:41:01 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/khangman/
 share/apps/khangman/data/
@@ -62,6 +62,7 @@ ${LOC}kaccess.mo
 ${LOC}kaddressbook.mo
 ${LOC}kalarm.mo
 ${LOC}kalzium.mo
+${LOC}kanagram.mo
 ${LOC}kandy.mo
 ${LOC}kappfinder.mo
 ${LOC}karm.mo
@@ -339,7 +340,6 @@ ${LOC}kmathapplet.mo
 ${LOC}kmcop.mo
 ${LOC}kmenuapplet.mo
 ${LOC}kmenuedit.mo
-${LOC}kmessedwords.mo
 ${LOC}kmid.mo
 ${LOC}kmilo_delli8k.mo
 ${LOC}kmilo_generic.mo
@@ -357,6 +357,7 @@ ${LOC}kmouth.mo
 ${LOC}kmplot.mo
 ${LOC}kmrml.mo
 ${LOC}knetattach.mo
+${LOC}knetwalk.mo
 ${LOC}knetworkconf.mo
 ${LOC}knewsticker.mo
 ${LOC}knode.mo
@@ -375,6 +376,7 @@ ${LOC}konnector_qtopia.mo
 ${LOC}konnector_remote.mo
 ${LOC}konqsidebar_delicious.mo
 ${LOC}konqsidebar_mediaplayer.mo
+${LOC}konqsidebar_metabar.mo
 ${LOC}konqsidebar_news.mo
 ${LOC}konqueror.mo
 ${LOC}konquest.mo
@@ -502,7 +504,6 @@ ${LOC}libdmctl.mo
 ${LOC}libkaddrbk_geo_xxport.mo
 ${LOC}libkaddrbk_gmx_xxport.mo
 ${LOC}libkcal.mo
-${LOC}libkcalsystem.mo
 ${LOC}libkcddb.mo
 ${LOC}libkdeedu.mo
 ${LOC}libkdegames.mo

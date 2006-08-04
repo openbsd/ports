@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-br,v 1.3 2006/06/03 12:47:30 espie Exp $
+@comment $OpenBSD: PLIST-br,v 1.4 2006/08/04 10:41:01 espie Exp $
 share/locale/br/
 share/locale/br/LC_MESSAGES/
 ${LOC}akregator.mo
@@ -335,7 +335,6 @@ ${LOC}kmathapplet.mo
 ${LOC}kmcop.mo
 ${LOC}kmenuapplet.mo
 ${LOC}kmenuedit.mo
-${LOC}kmessedwords.mo
 ${LOC}kmid.mo
 ${LOC}kmilo_delli8k.mo
 ${LOC}kmilo_generic.mo

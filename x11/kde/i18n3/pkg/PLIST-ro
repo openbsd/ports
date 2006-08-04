@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ro,v 1.8 2006/06/03 12:47:30 espie Exp $
+@comment $OpenBSD: PLIST-ro,v 1.9 2006/08/04 10:41:01 espie Exp $
 @conflict kde-i18n-de-<3.4
 share/apps/ktuberling/
 share/apps/ktuberling/sounds/
@@ -225,7 +225,6 @@ ${LOC}juk.mo
 ${LOC}kabc2mutt.mo
 ${LOC}kabc_dir.mo
 ${LOC}kabc_file.mo
-${LOC}kabc_ldap.mo
 ${LOC}kabc_ldapkio.mo
 ${LOC}kabc_net.mo
 ${LOC}kabc_sql.mo
@@ -443,6 +442,7 @@ ${LOC}kio_finger.mo
 ${LOC}kio_fish.mo
 ${LOC}kio_floppy.mo
 ${LOC}kio_help.mo
+${LOC}kio_home.mo
 ${LOC}kio_imap4.mo
 ${LOC}kio_lan.mo
 ${LOC}kio_ldap.mo
@@ -482,7 +482,6 @@ ${LOC}kmathapplet.mo
 ${LOC}kmcop.mo
 ${LOC}kmenuapplet.mo
 ${LOC}kmenuedit.mo
-${LOC}kmessedwords.mo
 ${LOC}kmid.mo
 ${LOC}kmilo_generic.mo
 ${LOC}kmilo_kvaio.mo
@@ -616,9 +615,9 @@ ${LOC}kwriteconfig.mo
 ${LOC}kxkb.mo
 ${LOC}kxsconfig.mo
 ${LOC}kxsldbg.mo
+${LOC}libdmctl.mo
 ${LOC}libkaddrbk_geo_xxport.mo
 ${LOC}libkcal.mo
-${LOC}libkcalsystem.mo
 ${LOC}libkcddb.mo
 ${LOC}libkdegames.mo
 ${LOC}libkdepim.mo
@@ -627,6 +626,8 @@ ${LOC}libkickermenu_kdeprint.mo
 ${LOC}libkickermenu_konsole.mo
 ${LOC}libkickermenu_prefmenu.mo
 ${LOC}libkickermenu_recentdocs.mo
+${LOC}libkickermenu_remotemenu.mo
+${LOC}libkickermenu_systemmenu.mo
 ${LOC}libkickermenu_tom.mo
 ${LOC}libkleopatra.mo
 ${LOC}libkonq.mo
@@ -661,6 +662,7 @@ ${LOC}spy.mo
 ${LOC}synaescope.mo
 ${LOC}timezones.mo
 ${LOC}tippecanoe.mo
+${LOC}trashapplet.mo
 ${LOC}tyler.mo
 ${LOC}uachangerplugin.mo
 ${LOC}umbrello.mo

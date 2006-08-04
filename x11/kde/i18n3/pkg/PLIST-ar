@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ar,v 1.5 2005/12/01 22:27:37 espie Exp $
+@comment $OpenBSD: PLIST-ar,v 1.6 2006/08/04 10:41:01 espie Exp $
 ${LOC}alsaplayerui.mo
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
@@ -33,7 +33,6 @@ ${LOC}irkick.mo
 ${LOC}kabc2mutt.mo
 ${LOC}kabc_dir.mo
 ${LOC}kabc_file.mo
-${LOC}kabc_ldap.mo
 ${LOC}kabc_ldapkio.mo
 ${LOC}kabc_net.mo
 ${LOC}kabc_sql.mo
@@ -253,7 +252,6 @@ ${LOC}kmail.mo
 ${LOC}kmcop.mo
 ${LOC}kmenuapplet.mo
 ${LOC}kmenuedit.mo
-${LOC}kmessedwords.mo
 ${LOC}kmid.mo
 ${LOC}kmines.mo
 ${LOC}kminipagerapplet.mo
@@ -367,7 +365,6 @@ ${LOC}kxkb.mo
 ${LOC}kxsconfig.mo
 ${LOC}libkaddrbk_geo_xxport.mo
 ${LOC}libkcal.mo
-${LOC}libkcalsystem.mo
 ${LOC}libkdegames.mo
 ${LOC}libkdepim.mo
 ${LOC}libkicker.mo

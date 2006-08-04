@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-mk,v 1.7 2006/06/03 12:47:30 espie Exp $
+@comment $OpenBSD: PLIST-mk,v 1.8 2006/08/04 10:41:01 espie Exp $
+${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo
 ${LOC}amor.mo
@@ -15,10 +16,12 @@ ${LOC}audiocd_encoder_vorbis.mo
 ${LOC}audiorename_plugin.mo
 ${LOC}autorefresh.mo
 ${LOC}babelfish.mo
+${LOC}blinken.mo
 ${LOC}charlatanui.mo
 ${LOC}clockapplet.mo
 ${LOC}crashesplugin.mo
 ${LOC}cupsdconf.mo
+${LOC}cvsservice.mo
 ${LOC}dcoprss.mo
 ${LOC}dirfilterplugin.mo
 ${LOC}display.mo
@@ -48,6 +51,7 @@ ${LOC}kaccess.mo
 ${LOC}kaddressbook.mo
 ${LOC}kalarm.mo
 ${LOC}kalzium.mo
+${LOC}kanagram.mo
 ${LOC}kappfinder.mo
 ${LOC}karm.mo
 ${LOC}kasbarextension.mo
@@ -80,6 +84,8 @@ ${LOC}kbattleship.mo
 ${LOC}kbinaryclock.mo
 ${LOC}kblackbox.mo
 ${LOC}kbounce.mo
+${LOC}kbruch.mo
+${LOC}kbstateapplet.mo
 ${LOC}kcalc.mo
 ${LOC}kcharselect.mo
 ${LOC}kcharselectapplet.mo
@@ -171,6 +177,7 @@ ${LOC}kdf.mo
 ${LOC}kdialog.mo
 ${LOC}kdict.mo
 ${LOC}kdictapplet.mo
+${LOC}kdjview.mo
 ${LOC}kdmconfig.mo
 ${LOC}kdmgreet.mo
 ${LOC}kdvi.mo
@@ -250,6 +257,7 @@ ${LOC}khtmlkttsd.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
 ${LOC}kiconedit.mo
+${LOC}kig.mo
 ${LOC}kinetd.mo
 ${LOC}kio.mo
 ${LOC}kio_audiocd.mo
@@ -292,6 +300,7 @@ ${LOC}klickety.mo
 ${LOC}klines.mo
 ${LOC}klipper.mo
 ${LOC}klock.mo
+${LOC}kmag.mo
 ${LOC}kmahjongg.mo
 ${LOC}kmail.mo
 ${LOC}kmail_text_calendar_plugin.mo
@@ -312,6 +321,8 @@ ${LOC}kmines.mo
 ${LOC}kminipagerapplet.mo
 ${LOC}kmix.mo
 ${LOC}kmoon.mo
+${LOC}kmousetool.mo
+${LOC}kmouth.mo
 ${LOC}kmplot.mo
 ${LOC}kmrml.mo
 ${LOC}knetattach.mo
@@ -380,6 +391,7 @@ ${LOC}krfb.mo
 ${LOC}kruler.mo
 ${LOC}krunapplet.mo
 ${LOC}ksame.mo
+${LOC}ksayit.mo
 ${LOC}kscd.mo
 ${LOC}kscreensaver.mo
 ${LOC}kshisen.mo
@@ -419,6 +431,7 @@ ${LOC}ktimer.mo
 ${LOC}ktip.mo
 ${LOC}ktouch.mo
 ${LOC}ktron.mo
+${LOC}kttsd.mo
 ${LOC}ktuberling.mo
 ${LOC}kturtle.mo
 ${LOC}ktux.mo
@@ -450,6 +463,7 @@ ${LOC}kworldclock.mo
 ${LOC}kwriteconfig.mo
 ${LOC}kxkb.mo
 ${LOC}kxsconfig.mo
+${LOC}libKTTSD.mo
 ${LOC}libdmctl.mo
 ${LOC}libkaddrbk_geo_xxport.mo
 ${LOC}libkaddrbk_gmx_xxport.mo

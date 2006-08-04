@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-uk,v 1.7 2006/06/03 12:47:30 espie Exp $
+@comment $OpenBSD: PLIST-uk,v 1.8 2006/08/04 10:41:01 espie Exp $
 share/doc/HTML/uk/
 ${DOC}docs/
 ${DOC}docs/common/
@@ -24,6 +24,9 @@ ${DOC}kioslave/bzip2.docbook
 ${DOC}kioslave/file.docbook
 ${DOC}kioslave/finger.docbook
 ${DOC}kioslave/floppy.docbook
+${DOC}kioslave/imaps.docbook
+${DOC}kioslave/smb.docbook
+${DOC}kioslave/tar.docbook
 ${DOC}knotes/
 ${DOC}knotes/common
 ${DOC}knotes/${C}
@@ -214,8 +217,6 @@ ${LOC}kdessh.mo
 ${LOC}kdesu.mo
 ${LOC}kdesud.mo
 ${LOC}kdevdesigner.mo
-${LOC}kdevelop.mo
-${LOC}kdevtipofday.mo
 ${LOC}kdf.mo
 ${LOC}kdgantt.mo
 ${LOC}kdialog.mo
@@ -289,7 +290,6 @@ ${LOC}kfontinst.mo
 ${LOC}kfouleggs.mo
 ${LOC}kgamma.mo
 ${LOC}kgantt.mo
-${LOC}kgeography.mo
 ${LOC}kget.mo
 ${LOC}kghostview.mo
 ${LOC}kgpg.mo
@@ -303,7 +303,6 @@ ${LOC}khtmlkttsd.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
 ${LOC}kiconedit.mo
-${LOC}kig.mo
 ${LOC}kimagemapeditor.mo
 ${LOC}kinetd.mo
 ${LOC}kio.mo
@@ -374,7 +373,6 @@ ${LOC}kmobile.mo
 ${LOC}kmoon.mo
 ${LOC}kmousetool.mo
 ${LOC}kmouth.mo
-${LOC}kmplot.mo
 ${LOC}kmrml.mo
 ${LOC}knetattach.mo
 ${LOC}knetwalk.mo
@@ -459,7 +457,6 @@ ${LOC}ksokoban.mo
 ${LOC}kspaceduel.mo
 ${LOC}ksplash.mo
 ${LOC}ksplashthemes.mo
-${LOC}kstars.mo
 ${LOC}kstart.mo
 ${LOC}kstartperf.mo
 ${LOC}kstyle_highcontrast_config.mo

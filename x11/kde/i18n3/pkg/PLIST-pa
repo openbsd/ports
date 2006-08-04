@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pa,v 1.4 2005/12/01 22:27:38 espie Exp $
+@comment $OpenBSD: PLIST-pa,v 1.5 2006/08/04 10:41:01 espie Exp $
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo
 ${LOC}amor.mo
@@ -426,7 +426,6 @@ ${LOC}libdmctl.mo
 ${LOC}libkaddrbk_geo_xxport.mo
 ${LOC}libkaddrbk_gmx_xxport.mo
 ${LOC}libkcal.mo
-${LOC}libkcalsystem.mo
 ${LOC}libkcddb.mo
 ${LOC}libkdegames.mo
 ${LOC}libkdepim.mo

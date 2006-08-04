@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-lv,v 1.1 2006/04/01 12:33:43 espie Exp $
+@comment $OpenBSD: PLIST-lv,v 1.2 2006/08/04 10:41:01 espie Exp $
 ${LOC}appletproxy.mo
 ${LOC}ark.mo
 ${LOC}artsbuilder.mo
@@ -16,6 +16,7 @@ ${LOC}extensionproxy.mo
 ${LOC}filetypes.mo
 ${LOC}htmlsearch.mo
 ${LOC}imgalleryplugin.mo
+${LOC}kabc_file.mo
 ${LOC}kaboodle.mo
 ${LOC}kaccess.mo
 ${LOC}kaddressbook.mo
@@ -96,6 +97,7 @@ ${LOC}kdat.mo
 ${LOC}kdcop.mo
 ${LOC}kdebugdialog.mo
 ${LOC}kdelibs.mo
+${LOC}kdelibs_colors.mo
 ${LOC}kdepasswd.mo
 ${LOC}kdeprint.mo
 ${LOC}kdeprintfax.mo
@@ -140,6 +142,7 @@ ${LOC}kio_audiocd.mo
 ${LOC}kio_finger.mo
 ${LOC}kio_floppy.mo
 ${LOC}kio_help.mo
+${LOC}kio_home.mo
 ${LOC}kio_imap4.mo
 ${LOC}kio_lan.mo
 ${LOC}kio_man.mo
@@ -169,7 +172,6 @@ ${LOC}kmail.mo
 ${LOC}kmailcvt.mo
 ${LOC}kmcop.mo
 ${LOC}kmenuedit.mo
-${LOC}kmessedwords.mo
 ${LOC}kmid.mo
 ${LOC}kmines.mo
 ${LOC}kminipagerapplet.mo
@@ -210,6 +212,7 @@ ${LOC}kruler.mo
 ${LOC}krunapplet.mo
 ${LOC}ksame.mo
 ${LOC}kscd.mo
+${LOC}kscreensaver.mo
 ${LOC}kshisen.mo
 ${LOC}ksirc.mo
 ${LOC}ksirtet.mo
@@ -270,6 +273,7 @@ ${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}secpolicy.mo
 ${LOC}spy.mo
+${LOC}timezones.mo
 ${LOC}trashapplet.mo
 ${LOC}uachangerplugin.mo
 ${LOC}validatorsplugin.mo

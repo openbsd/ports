@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-fi,v 1.9 2006/06/03 12:47:30 espie Exp $
+@comment $OpenBSD: PLIST-fi,v 1.10 2006/08/04 10:41:01 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/khangman/
 share/apps/khangman/data/
@@ -175,6 +175,7 @@ ${LOC}kcmlaptop.mo
 ${LOC}kcmlaunch.mo
 ${LOC}kcmlayout.mo
 ${LOC}kcmlilo.mo
+${LOC}kcmlirc.mo
 ${LOC}kcmlocale.mo
 ${LOC}kcmmedia.mo
 ${LOC}kcmnic.mo
@@ -362,7 +363,6 @@ ${LOC}kmathapplet.mo
 ${LOC}kmcop.mo
 ${LOC}kmenuapplet.mo
 ${LOC}kmenuedit.mo
-${LOC}kmessedwords.mo
 ${LOC}kmid.mo
 ${LOC}kmilo_delli8k.mo
 ${LOC}kmilo_generic.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ca,v 1.8 2006/06/03 12:47:30 espie Exp $
+@comment $OpenBSD: PLIST-ca,v 1.9 2006/08/04 10:41:01 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.ca.xml
 share/apps/khangman/
@@ -53,9 +53,12 @@ ${DOC}kate-plugins/textfilter.docbook
 ${DOC}kate-plugins/xmlcheck.docbook
 ${DOC}kate-plugins/xmltools.docbook
 ${DOC}kate/advanced.docbook
+${DOC}kate/common
 ${DOC}kate/configuring.docbook
 ${DOC}kate/fundamentals.docbook
 ${DOC}kate/highlighting.docbook
+${DOC}kate/${C}
+${DOC}kate/${I}
 ${DOC}kate/man-kate.1.docbook
 ${DOC}kate/mdi.docbook
 ${DOC}kate/menus.docbook
@@ -492,6 +495,10 @@ ${DOC}kinfocenter/blockdevices/
 ${DOC}kinfocenter/blockdevices/common
 ${DOC}kinfocenter/blockdevices/${C}
 ${DOC}kinfocenter/blockdevices/${I}
+${DOC}kinfocenter/cdinfo/
+${DOC}kinfocenter/cdinfo/common
+${DOC}kinfocenter/cdinfo/${C}
+${DOC}kinfocenter/cdinfo/${I}
 ${DOC}kinfocenter/common
 ${DOC}kinfocenter/devices/
 ${DOC}kinfocenter/devices/common
@@ -888,6 +895,10 @@ ${DOC}ktimer/
 ${DOC}ktimer/common
 ${DOC}ktimer/${C}
 ${DOC}ktimer/${I}
+${DOC}ktnef/
+${DOC}ktnef/common
+${DOC}ktnef/${C}
+${DOC}ktnef/${I}
 ${DOC}ktouch/
 ${DOC}ktouch/common
 ${DOC}ktouch/${C}

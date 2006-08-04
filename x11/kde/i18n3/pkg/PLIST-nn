@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-nn,v 1.5 2006/02/04 14:49:52 espie Exp $
+@comment $OpenBSD: PLIST-nn,v 1.6 2006/08/04 10:41:01 espie Exp $
 share/apps/khangman/
 share/apps/khangman/data/
 share/apps/khangman/data/nn/
@@ -287,7 +287,6 @@ ${LOC}kmathapplet.mo
 ${LOC}kmcop.mo
 ${LOC}kmenuapplet.mo
 ${LOC}kmenuedit.mo
-${LOC}kmessedwords.mo
 ${LOC}kmid.mo
 ${LOC}kmines.mo
 ${LOC}kminipagerapplet.mo
@@ -413,7 +412,6 @@ ${LOC}kxkb.mo
 ${LOC}kxsconfig.mo
 ${LOC}libdmctl.mo
 ${LOC}libkcal.mo
-${LOC}libkcalsystem.mo
 ${LOC}libkcddb.mo
 ${LOC}libkdegames.mo
 ${LOC}libkdepim.mo

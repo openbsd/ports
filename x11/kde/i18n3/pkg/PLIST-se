@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST-se,v 1.2 2005/12/01 22:27:39 espie Exp $
+@comment $OpenBSD: PLIST-se,v 1.3 2006/08/04 10:41:01 espie Exp $
 share/locale/se/
 share/locale/se/ChangeLog
 share/locale/se/LC_MESSAGES/
 ${LOC}akregator.mo
 ${LOC}appletproxy.mo
+${LOC}atlantik.mo
 ${LOC}clockapplet.mo
 ${LOC}cupsdconf.mo
 ${LOC}display.mo
@@ -32,6 +33,7 @@ ${LOC}kasbarextension.mo
 ${LOC}kate.mo
 ${LOC}katepart.mo
 ${LOC}kbabel.mo
+${LOC}kbounce.mo
 ${LOC}kcm_kviewcanvasconfig.mo
 ${LOC}kcm_kviewgeneralconfig.mo
 ${LOC}kcm_kviewpluginsconfig.mo
@@ -204,6 +206,7 @@ ${LOC}korganizer.mo
 ${LOC}korn.mo
 ${LOC}kpackage.mo
 ${LOC}kpager.mo
+${LOC}kpat.mo
 ${LOC}kpdf.mo
 ${LOC}kpersonalizer.mo
 ${LOC}kpilot.mo
@@ -220,8 +223,10 @@ ${LOC}kres_remote.mo
 ${LOC}kres_xmlrpc.mo
 ${LOC}kruler.mo
 ${LOC}krunapplet.mo
+${LOC}ksame.mo
 ${LOC}kscreensaver.mo
 ${LOC}ksirc.mo
+${LOC}ksirtet.mo
 ${LOC}ksmserver.mo
 ${LOC}ksnapshot.mo
 ${LOC}ksplash.mo
@@ -261,8 +266,8 @@ ${LOC}kwireless.mo
 ${LOC}kwriteconfig.mo
 ${LOC}kxkb.mo
 ${LOC}libkcal.mo
-${LOC}libkcalsystem.mo
 ${LOC}libkcddb.mo
+${LOC}libkdegames.mo
 ${LOC}libkdepim.mo
 ${LOC}libkicker.mo
 ${LOC}libkickermenu_kdeprint.mo
@@ -276,6 +281,7 @@ ${LOC}libkleopatra.mo
 ${LOC}libkonq.mo
 ${LOC}libkscan.mo
 ${LOC}libkscreensaver.mo
+${LOC}libksirtet.mo
 ${LOC}libtaskbar.mo
 ${LOC}libtaskmanager.mo
 ${LOC}lockout.mo

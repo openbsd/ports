@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-it,v 1.8 2006/06/03 12:47:30 espie Exp $
+@comment $OpenBSD: PLIST-it,v 1.9 2006/08/04 10:41:01 espie Exp $
 @conflict kde-i18n-ca-<3.4
 share/apps/kanagram/
 share/apps/kanagram/data/
@@ -842,6 +842,7 @@ ${DOC}khelpcenter/userguide/getting-started.docbook
 ${DOC}khelpcenter/userguide/glossary.docbook
 ${DOC}khelpcenter/userguide/history.docbook
 ${DOC}khelpcenter/userguide/installation.docbook
+${DOC}khelpcenter/userguide/internet-shortcuts.docbook
 ${DOC}khelpcenter/userguide/intro.docbook
 ${DOC}khelpcenter/userguide/kde-edutainment.docbook
 ${DOC}khelpcenter/userguide/kdeadmin-apps.docbook
@@ -856,6 +857,7 @@ ${DOC}khelpcenter/userguide/kdetoys-apps.docbook
 ${DOC}khelpcenter/userguide/kdeutils-apps.docbook
 ${DOC}khelpcenter/userguide/koffice-apps.docbook
 ${DOC}khelpcenter/userguide/konsole-intro.docbook
+${DOC}khelpcenter/userguide/messaging-intro.docbook
 ${DOC}khelpcenter/userguide/migrator-dictionary.docbook
 ${DOC}khelpcenter/userguide/more-help.docbook
 ${DOC}khelpcenter/userguide/net-connection-setup.docbook
@@ -870,6 +872,7 @@ ${DOC}khelpcenter/userguide/screen-captures.docbook
 ${DOC}khelpcenter/userguide/shared-sessions.docbook
 ${DOC}khelpcenter/userguide/shortcuts.docbook
 ${DOC}khelpcenter/userguide/staff.docbook
+${DOC}khelpcenter/userguide/standard-menu-entries.docbook
 ${DOC}khelpcenter/userguide/switching-sessions.docbook
 ${DOC}khelpcenter/userguide/troubleshooting-network-x.docbook
 ${DOC}khelpcenter/userguide/troubleshooting-no-open.docbook
@@ -894,6 +897,7 @@ ${DOC}kicker-applets/ktimemon.docbook
 ${DOC}kicker/common
 ${DOC}kicker/${C}
 ${DOC}kicker/${I}
+${DOC}kicker/man-kicker.1.docbook
 ${DOC}kiconedit/
 ${DOC}kiconedit/common
 ${DOC}kiconedit/${C}
@@ -1408,8 +1412,12 @@ ${DOC}kreversi/${C}
 ${DOC}kreversi/${I}
 ${DOC}krfb/
 ${DOC}krfb/common
+${DOC}krfb/email_invitation.png
 ${DOC}krfb/${C}
 ${DOC}krfb/${I}
+${DOC}krfb/invitation_management.png
+${DOC}krfb/personal_invitation.png
+${DOC}krfb/screenshot.png
 ${DOC}kruler/
 ${DOC}kruler/common
 ${DOC}kruler/${C}
@@ -1749,16 +1757,22 @@ ${DOC}noatun/${C}
 ${DOC}noatun/${I}
 ${DOC}quanta/
 ${DOC}quanta/adv-quanta.docbook
+${DOC}quanta/common
 ${DOC}quanta/config-quanta.docbook
 ${DOC}quanta/credits-license.docbook
 ${DOC}quanta/debugging-quanta.docbook
+${DOC}quanta/extending-quanta.docbook
 ${DOC}quanta/fundamentals.docbook
 ${DOC}quanta/glossary.docbook
+${DOC}quanta/${C}
+${DOC}quanta/${I}
 ${DOC}quanta/installation.docbook
 ${DOC}quanta/introduction.docbook
 ${DOC}quanta/man-quanta.1.docbook
 ${DOC}quanta/q-and-a.docbook
 ${DOC}quanta/quanta-menus.docbook
+${DOC}quanta/quanta-projects.docbook
+${DOC}quanta/working-with-quanta.docbook
 ${DOC}scripts/
 ${DOC}scripts/man-adddebug.1.docbook
 ${DOC}scripts/man-cheatmake.1.docbook

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ko,v 1.2 2006/06/03 12:47:30 espie Exp $
+@comment $OpenBSD: PLIST-ko,v 1.3 2006/08/04 10:41:01 espie Exp $
 share/doc/HTML/ko/
 ${DOC}docs/
 ${DOC}docs/common/
@@ -23,7 +23,6 @@ ${LOC}htmlsearch.mo
 ${LOC}juk.mo
 ${LOC}kabc_dir.mo
 ${LOC}kabc_file.mo
-${LOC}kabc_ldap.mo
 ${LOC}kabc_ldapkio.mo
 ${LOC}kabc_net.mo
 ${LOC}kabc_sql.mo

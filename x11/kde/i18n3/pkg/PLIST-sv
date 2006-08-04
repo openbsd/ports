@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-sv,v 1.8 2006/06/03 12:47:30 espie Exp $
+@comment $OpenBSD: PLIST-sv,v 1.9 2006/08/04 10:41:01 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.sv.xml
 share/apps/khangman/
@@ -1121,6 +1121,10 @@ ${DOC}kinfocenter/blockdevices/
 ${DOC}kinfocenter/blockdevices/common
 ${DOC}kinfocenter/blockdevices/${C}
 ${DOC}kinfocenter/blockdevices/${I}
+${DOC}kinfocenter/cdinfo/
+${DOC}kinfocenter/cdinfo/common
+${DOC}kinfocenter/cdinfo/${C}
+${DOC}kinfocenter/cdinfo/${I}
 ${DOC}kinfocenter/common
 ${DOC}kinfocenter/devices/
 ${DOC}kinfocenter/devices/common

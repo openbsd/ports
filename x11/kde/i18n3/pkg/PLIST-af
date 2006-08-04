@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-af,v 1.4 2006/02/04 14:49:51 espie Exp $
+@comment $OpenBSD: PLIST-af,v 1.5 2006/08/04 10:41:01 espie Exp $
 share/locale/af/
 share/locale/af/LC_MESSAGES/
 ${LOC}alsaplayerui.mo
@@ -242,7 +242,6 @@ ${LOC}kmailcvt.mo
 ${LOC}kmcop.mo
 ${LOC}kmenuapplet.mo
 ${LOC}kmenuedit.mo
-${LOC}kmessedwords.mo
 ${LOC}kmid.mo
 ${LOC}kmines.mo
 ${LOC}kminipagerapplet.mo
@@ -347,7 +346,6 @@ ${LOC}kxkb.mo
 ${LOC}kxsconfig.mo
 ${LOC}libdmctl.mo
 ${LOC}libkcal.mo
-${LOC}libkcalsystem.mo
 ${LOC}libkdegames.mo
 ${LOC}libkdepim.mo
 ${LOC}libkicker.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-vi,v 1.1 2006/06/03 12:47:30 espie Exp $
+@comment $OpenBSD: PLIST-vi,v 1.2 2006/08/04 10:41:02 espie Exp $
 ${LOC}appletproxy.mo
 ${LOC}babelfish.mo
 ${LOC}blinken.mo
@@ -120,6 +120,7 @@ ${LOC}kdmconfig.mo
 ${LOC}kdmgreet.mo
 ${LOC}kdvi.mo
 ${LOC}kedit.mo
+${LOC}keduca.mo
 ${LOC}kenolaba.mo
 ${LOC}kfax.mo
 ${LOC}kfile_drgeo.mo
@@ -171,6 +172,7 @@ ${LOC}kio_trash.mo
 ${LOC}kioexec.mo
 ${LOC}kjobviewer.mo
 ${LOC}kjumpingcube.mo
+${LOC}klettres.mo
 ${LOC}klipper.mo
 ${LOC}klock.mo
 ${LOC}kmag.mo
@@ -180,6 +182,7 @@ ${LOC}kmenuedit.mo
 ${LOC}kminipagerapplet.mo
 ${LOC}kmousetool.mo
 ${LOC}kmouth.mo
+${LOC}kmplot.mo
 ${LOC}knetattach.mo
 ${LOC}knewsticker.mo
 ${LOC}knotify.mo
