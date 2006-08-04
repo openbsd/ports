@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.15 2004/09/15 00:53:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2006/08/04 19:57:32 sturm Exp $
+@newuser _wnn:517:bin::Wnn server:/nonexistent:/sbin/nologin
 bin/atod
 bin/atof
 bin/dtoa
