@@ -1,6 +1,15 @@
-$OpenBSD: patch-src_makefile,v 1.1.1.1 2006/07/31 12:22:15 espie Exp $
---- src/makefile.orig	Mon Jul 31 14:01:59 2006
-+++ src/makefile	Mon Jul 31 14:04:41 2006
+$OpenBSD: patch-src_makefile,v 1.2 2006/08/04 23:54:31 espie Exp $
+--- src/makefile.orig	Thu Dec 19 21:52:51 2002
++++ src/makefile	Sat Aug  5 01:49:13 2006
+@@ -68,7 +68,7 @@ plugin:	$(PLUGIN_LIB)
+ targets:	$(PLUGIN_LIB)
+ 
+ $(PLUGIN_LIB):	$(PLUGIN_OBJECTS)
+-	$(CXX)	-shared							\
++	$(CXX)	-shared	$(CXXFLAGS)					\
+ 		-o $(PLUGIN_LIB)					\
+ 		$(PLUGIN_OBJECTS)					
+ 
 @@ -123,3 +123,7 @@ backup:		clean
  ###############################################################################
  
