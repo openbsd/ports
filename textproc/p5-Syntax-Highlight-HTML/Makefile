@@ -1,3 +1,5 @@
+# $OpenBSD: Makefile,v 1.2 2006/08/04 04:31:52 steven Exp $
+
 COMMENT=	"syntax highlight for HTML"
 
 DISTNAME=	Syntax-Highlight-HTML-0.04

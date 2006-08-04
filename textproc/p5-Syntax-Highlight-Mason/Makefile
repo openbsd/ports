@@ -1,3 +1,5 @@
+# $OpenBSD: Makefile,v 1.3 2006/08/04 04:31:51 steven Exp $
+
 COMMENT=	"syntax highlight for Mason"
 
 DISTNAME=	Syntax-Highlight-Mason-1.21
