@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2006/08/04 04:31:51 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2006/08/04 04:37:08 steven Exp $
 
 COMMENT=	"syntax highlight for Mason"
 
 DISTNAME=	Syntax-Highlight-Mason-1.21
-PKGNAME=	p5-${DISTNAME}
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	textproc perl5 www
 PKG_ARCH=	*
 EXTRACT_SUFX=	.tgz
