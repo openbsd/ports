@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2006/03/04 15:10:31 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2006/08/05 16:41:08 kurt Exp $
 
 COMMENT=	"PDF presentation post processor"
 
 DISTNAME=	ppower4-0.9.4
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	print
 
 HOMEPAGE=	http://www-sp.iti.informatik.tu-darmstadt.de/software/ppower4/
@@ -22,8 +22,12 @@ DISTFILES=		pp4sty.zip pp4p.jar manual.pdf leveldemo.zip
 DIST_SUBDIR=		${DISTNAME}
 
 BUILD_DEPENDS=		::print/teTeX/base
-RUN_DEPENDS=		::devel/jdk/1.3-linux \
+RUN_DEPENDS=		::java/javaPathHelper \
 			::print/teTeX/base
+
+MODULES=		java
+MODJAVA_VER=		1.3+
+MODJAVA_JRERUN=		Yes
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
