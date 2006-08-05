@@ -1,4 +1,4 @@
-# $OpenBSD: java.port.mk,v 1.6 2006/07/28 13:06:24 kurt Exp $
+# $OpenBSD: java.port.mk,v 1.7 2006/08/05 16:38:20 kurt Exp $
 
 # Set MODJAVA_VER to x.y or x.y+ based on the version
 # of the jdk needed for the port. x.y  means any x.y jdk.
@@ -24,16 +24,17 @@ MODJAVA_JRERUN?=no
 .if ${MACHINE_ARCH} == "amd64" && (${MODJAVA_VER} == "1.3+" || ${MODJAVA_VER} == "1.4+")
 # this is a special case for amd64. since amd64 doesn't have 1.3 or 1.4,
 # but 1.5 can run any 1.3+ or 1.4+ port, so special case them to run
-# on 1.5+ for amd64 
+# on 1.5+ for amd64. Also add in jamvm and kaffe since they likely can
+# run these too. 
    ONLY_FOR_ARCHS?= amd64
    JAVA_HOME= ${LOCALBASE}/jdk-1.5.0
 .  if ${NO_BUILD:L} != "yes"
      BUILD_DEPENDS+= :jdk-1.5.0:devel/jdk/1.5
 .  endif
 .  if ${MODJAVA_JRERUN:L} == "yes"
-     RUN_DEPENDS+= :jdk->=1.5.0|jre->=1.5.0:devel/jdk/1.5
+     RUN_DEPENDS+= :jdk->=1.5.0|jre->=1.5.0|kaffe-*|jamvm-*:devel/jdk/1.5
 .  else
-     RUN_DEPENDS+= :jdk->=1.5.0:devel/jdk/1.5
+     RUN_DEPENDS+= :jdk->=1.5.0|kaffe-*:devel/jdk/1.5
 .  endif
 .elif ${MODJAVA_VER:S/+//} == "1.3"
    ONLY_FOR_ARCHS?= arm i386 powerpc sparc
@@ -42,14 +43,17 @@ MODJAVA_JRERUN?=no
      BUILD_DEPENDS+= :jdk-1.3.1:devel/jdk/1.3
 .  endif
 .  if ${MODJAVA_JRERUN:L} == "yes"
-     _MODJAVA_RUNDEP_TMP= jdk-1.3.1|jre-1.3.1
+.    if ${MODJAVA_VER} == "1.3+"
+       _MODJAVA_RUNDEP= jdk->=1.3.1|jre->=1.3.1|kaffe-*|jamvm-*
+.    else
+       _MODJAVA_RUNDEP= jdk-1.3.1|jre-1.3.1
+.    endif
 .  else
-     _MODJAVA_RUNDEP_TMP= jdk-1.3.1
-.  endif
-.  if ${MODJAVA_VER} == "1.3+"
-     _MODJAVA_RUNDEP= ${_MODJAVA_RUNDEP_TMP:S/-/->=/g}
-.  else
-     _MODJAVA_RUNDEP= ${_MODJAVA_RUNDEP_TMP}
+.    if ${MODJAVA_VER} == "1.3+"
+       _MODJAVA_RUNDEP= jdk->=1.3.1|kaffe-*
+.    else
+       _MODJAVA_RUNDEP= jdk-1.3.1
+.    endif
 .  endif
 .  if ${MACHINE_ARCH} == "i386"
      RUN_DEPENDS+= :${_MODJAVA_RUNDEP}|jdk-linux-1.3.1*:devel/jdk/1.3
@@ -63,14 +67,17 @@ MODJAVA_JRERUN?=no
      BUILD_DEPENDS+= :jdk-1.4.2:devel/jdk/1.4
 .  endif
 .  if ${MODJAVA_JRERUN:L} == "yes"
-     _MODJAVA_RUNDEP= jdk-1.4.2|jre-1.4.2
+.    if ${MODJAVA_VER} == "1.4+"
+       RUN_DEPENDS+= :jdk->=1.4.2|jre->=1.4.2|kaffe-*|jamvm-*:devel/jdk/1.4
+.    else
+       RUN_DEPENDS+= :jdk-1.4.2|jre-1.4.2|kaffe-*|jamvm-*:devel/jdk/1.4
+.    endif
 .  else
-     _MODJAVA_RUNDEP= jdk-1.4.2
-.  endif
-.  if ${MODJAVA_VER} == "1.4+"
-     RUN_DEPENDS+= :${_MODJAVA_RUNDEP:S/-/->=/g}:devel/jdk/1.4
-.  else
-     RUN_DEPENDS+= :${_MODJAVA_RUNDEP}:devel/jdk/1.4
+.    if ${MODJAVA_VER} == "1.4+"
+       RUN_DEPENDS+= :jdk->=1.4.2|kaffe-*:devel/jdk/1.4
+.    else
+       RUN_DEPENDS+= :jdk-1.4.2|kaffe-*:devel/jdk/1.4
+.    endif
 .  endif
 .elif ${MODJAVA_VER:S/+//} == "1.5"
    ONLY_FOR_ARCHS?= i386 amd64
