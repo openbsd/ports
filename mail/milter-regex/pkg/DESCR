@@ -2,11 +2,3 @@ milter-regex is a sendmail milter plugin that allows to reject mail
 based on regular expressions matching SMTP envelope parameters and
 mail headers and body.
 
-In order to build milter-regex, sendmail needs to be compiled with
-milter support, installing the libmilter library:
-
-	# cd /usr/src/gnu/usr.sbin/sendmail
-	# make clean cleandir
-	# [set the environment variable WANT_LIBMILTER to 1]
-	# make obj && make && make install
-
