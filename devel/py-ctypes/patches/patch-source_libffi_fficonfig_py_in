@@ -1,0 +1,10 @@
+$OpenBSD: patch-source_libffi_fficonfig_py_in,v 1.1 2006/08/06 13:05:32 djm Exp $
+--- source/libffi/fficonfig.py.in.orig	Sat Aug  5 20:35:43 2006
++++ source/libffi/fficonfig.py.in	Sat Aug  5 20:36:25 2006
+@@ -43,6 +43,3 @@ ffi_sources += ffi_platforms['@MKTARGET@
+ ffi_sources = [os.path.join('@srcdir@', f) for f in ffi_sources]
+ 
+ ffi_cflags = '@CFLAGS@'
+-# I think this may no longer be needed:
+-if sys.platform == "openbsd3":
+-    ffi_cflags += " -fno-stack-protector"

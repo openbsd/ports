@@ -1,0 +1,11 @@
+$OpenBSD: patch-source_libffi_configure_ac,v 1.3 2006/08/06 13:05:32 djm Exp $
+--- source/libffi/configure.ac.orig	Sat Aug  5 20:37:57 2006
++++ source/libffi/configure.ac	Sat Aug  5 20:39:30 2006
+@@ -21,6 +21,7 @@ AC_FUNC_MMAP_BLACKLIST
+ 
+ TARGETDIR="unknown"
+ case "$host" in
++x86_64-*-openbsd*) TARGET=X86_64; TARGETDIR=x86;;
+ mips*-*-openbsd*) TARGET=MIPS; TARGETDIR=mips;;
+ sparc-*-openbsd*) TARGET=SPARC; TARGETDIR=sparc;;
+ sparc64-*-openbsd*) TARGET=SPARC; TARGETDIR=sparc;;
