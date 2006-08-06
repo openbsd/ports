@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/08/01 22:55:52 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2006/08/06 10:16:54 sturm Exp $
 
 COMMENT=		"GStreamer Streaming-media framework plug-ins."
 
@@ -216,7 +216,7 @@ DEPENDS-vorbis=         vorbis,vorbisenc::audio/libvorbis
 
 .for PLUGIN in ${PLUGINS}
 COMMENT-${PLUGIN}?=	"GStreamer plugin for ${PLUGIN}"
-PKGNAME-${PLUGIN}?=	gstreamer-${PLUGIN}-${VERSION}${PATCHLEVEL}p5
+PKGNAME-${PLUGIN}?=	gstreamer-${PLUGIN}-${VERSION}${PATCHLEVEL}p6
 OPTIONS-${PLUGIN}?=	${PLUGIN}
 .  if defined(PACKAGING)
 .    if ${SUBPACKAGE} == "-${PLUGIN}"
