@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.52 2006/08/06 19:48:36 brad Exp $
+# $OpenBSD: Makefile,v 1.53 2006/08/06 19:57:08 sturm Exp $
 
 COMMENT= 	"compact IMAP/POP3 server"
 
-DISTNAME=	dovecot-1.0.rc5
+DISTNAME=	dovecot-1.0.rc2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/
 
