@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.761 2006/08/04 23:29:47 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.762 2006/08/07 08:47:28 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1092,7 +1092,7 @@ MAKE_ENV+=LD_LIBRARY_PATH=${PORT_LD_LIBRARY_PATH}
 CONFIGURE_ENV+=LD_LIBRARY_PATH=${PORT_LD_LIBRARY_PATH}
 DEPBASE=${DEPDIR}${LOCALBASE}
 DEPDIR?=${WRKDIR}/dependencies
-_lib_depends_target=fake
+_lib_depends_target=pseudofake
 .else
 PORT_LD_LIBRARY_PATH=${LOCALBASE}/lib:${X11BASE}/lib:/usr
 _set_ld_library_path=:
@@ -1100,7 +1100,7 @@ DEPBASE=${LOCALBASE}
 DEPDIR=
 .endif
 .if ${FAKE:L} == "all" && ${USE_FAKE_LIB:L} == "yes"
-_build_depends_target=fake
+_build_depends_target=pseudofake
 .endif
 
 _lib_depends_target?=${DEPENDS_TARGET}
@@ -1438,7 +1438,7 @@ ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 		case "X$$target" in \
 		Xinstall|Xreinstall) early_exit=false;; \
 		Xpackage) early_exit=true;; \
-		Xfake) early_exit=true; dep="/fake";; \
+		Xpseudofake) early_exit=true; dep="/fake";; \
 		*) \
 			early_exit=true; mkdir -p ${WRKDIR}/$$dir; \
 			toset="$$toset _MASTER='[${FULLPKGNAME${SUBPACKAGE}}]${_MASTER}' WRKDIR=${WRKDIR}/$$dir"; \
