@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.762 2006/08/07 08:47:28 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.763 2006/08/07 08:57:18 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1437,7 +1437,7 @@ ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 		toset="$$toset _MASTER_LOCK=${_LOCKNAME}"; \
 		case "X$$target" in \
 		Xinstall|Xreinstall) early_exit=false;; \
-		Xpackage) early_exit=true;; \
+		Xpackage|Xfake) early_exit=true;; \
 		Xpseudofake) early_exit=true; dep="/fake";; \
 		*) \
 			early_exit=true; mkdir -p ${WRKDIR}/$$dir; \
