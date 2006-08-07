@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/12/08 09:48:02 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2006/08/07 19:30:52 kurt Exp $
 
 COMMENT=	"software project management and comprehension tool"
 
 DISTNAME=	maven-2.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://maven.apache.org/
@@ -22,6 +23,7 @@ EXTRACT_SUFX=	-bin.tar.gz
 MODULES=	java
 MODJAVA_VER=	1.4+
 BUILD_DEPENDS=	::archivers/gtar
+RUN_DEPENDS=	::java/javaPathHelper
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
@@ -43,8 +45,7 @@ do-install:
 	ln -s ${SYSCONFDIR}/maven ${PREFIX}/${DISTNAME}/conf
 	@perl -pi -e 's,%%SYSCONFDIR%%,${SYSCONFDIR},' \
 		${PREFIX}/${DISTNAME}/bin/mvn
-	@sed -e 's,%%JAVA_HOME%%,${JAVA_HOME},' \
-		-e 's,%%MAVEN_HOME%%,${MAVEN_HOME},' \
+	@sed -e 's,%%MAVEN_HOME%%,${MAVEN_HOME},' \
 		< ${FILESDIR}/maven.rc \
 		> ${SAMPLEDIR}/maven.rc
 	@sed -e 's,%%DISTNAME%%,${DISTNAME},' \
