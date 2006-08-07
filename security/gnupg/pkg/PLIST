@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2006/04/12 09:55:24 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.20 2006/08/07 19:59:20 bernd Exp $
 bin/gpg
 bin/gpg-zip
 bin/gpgsplit
@@ -45,6 +45,7 @@ share/locale/hu/LC_MESSAGES/gnupg.mo
 share/locale/id/LC_MESSAGES/gnupg.mo
 share/locale/it/LC_MESSAGES/gnupg.mo
 share/locale/ja/LC_MESSAGES/gnupg.mo
+share/locale/nb/LC_MESSAGES/gnupg.mo
 share/locale/pl/LC_MESSAGES/gnupg.mo
 share/locale/pt/LC_MESSAGES/gnupg.mo
 share/locale/pt_BR/LC_MESSAGES/gnupg.mo
