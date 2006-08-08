@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/11/10 22:57:41 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/08/08 12:19:20 jasper Exp $
 @conflict xfce4-menueditor-*
 %%SHARED%%
 bin/xfce4-menueditor
@@ -40,6 +40,23 @@ share/examples/xfdesktop/menu.xml.sv
 share/examples/xfdesktop/menu.xml.uk
 share/examples/xfdesktop/menu.xml.vi
 share/examples/xfdesktop/menu.xml.zh_TW
+share/examples/xfdesktop/xfce-registered-categories.xml
+@sample ${SYSCONFDIR}/xdg/xfce4/desktop/xfce-registered-categories.xml
+share/examples/xfdesktop/xfce-registered-categories.xml.cs
+share/examples/xfdesktop/xfce-registered-categories.xml.eu
+share/examples/xfdesktop/xfce-registered-categories.xml.fi
+share/examples/xfdesktop/xfce-registered-categories.xml.he
+share/examples/xfdesktop/xfce-registered-categories.xml.hu
+share/examples/xfdesktop/xfce-registered-categories.xml.ja
+share/examples/xfdesktop/xfce-registered-categories.xml.nl
+share/examples/xfdesktop/xfce-registered-categories.xml.pl
+share/examples/xfdesktop/xfce-registered-categories.xml.pt_BR
+share/examples/xfdesktop/xfce-registered-categories.xml.ro
+share/examples/xfdesktop/xfce-registered-categories.xml.ru
+share/examples/xfdesktop/xfce-registered-categories.xml.sk
+share/examples/xfdesktop/xfce-registered-categories.xml.sv
+share/examples/xfdesktop/xfce-registered-categories.xml.zh_CN
+share/examples/xfdesktop/xfce-registered-categories.xml.zh_TW
 share/icons/hicolor/32x32/
 share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/xfce4-backdrop.png

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2006/06/13 13:39:06 bernd Exp $
+# $OpenBSD: Makefile,v 1.8 2006/08/08 12:19:20 jasper Exp $
 
 COMMENT=	"xfce4 desktop background manager"
 V=		4.2.3
 DISTNAME=	xfdesktop-${V}
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
 
 HOMEPAGE=	http://www.xfce.org/

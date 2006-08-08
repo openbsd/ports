@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_menu_Makefile_in,v 1.1 2006/08/08 12:19:20 jasper Exp $
+--- modules/menu/Makefile.in.orig	Sun Nov  6 11:38:12 2005
++++ modules/menu/Makefile.in	Mon Aug  7 21:18:07 2006
+@@ -290,7 +290,7 @@ xfce4_desktop_menu_la_LIBADD = \
+ 	@GMODULE_LIBS@ \
+ 	@LIBXFCEGUI4_LIBS@
+ 
+-xfceconfdir = $(sysconfdir)/xdg/xfce4/desktop
++xfceconfdir = $(prefix)/share/examples/xfdesktop
+ xfceconf_DATA = \
+ 	xfce-registered-categories.xml \
+ 	xfce-registered-categories.xml.cs \
