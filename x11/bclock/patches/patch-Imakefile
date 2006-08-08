@@ -1,0 +1,11 @@
+$OpenBSD: patch-Imakefile,v 1.1 2006/08/08 11:30:18 bernd Exp $
+
+app-defaults/Clock-color is installed by X.org.
+
+--- Imakefile.orig	Tue Aug  8 13:07:52 2006
++++ Imakefile	Tue Aug  8 13:07:52 2006
+@@ -8,4 +8,3 @@ SRCS = bclock.c Clock.c transform.c
+ OBJS = bclock.o Clock.o transform.o
+ 
+ ComplexProgramTarget(bclock)
+-InstallAppDefaultsLong(Clock-col,Clock-color)

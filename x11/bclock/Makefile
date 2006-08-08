@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2004/12/17 15:18:32 alek Exp $
+# $OpenBSD: Makefile,v 1.15 2006/08/08 11:30:18 bernd Exp $
 
 COMMENT=	"round, analog X11 clock with bezier curve hands"
 
 DISTNAME=	bclock-1.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=X11/clocks/}
