@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.5 2006/06/04 09:37:43 espie Exp $
+@comment $OpenBSD: PLIST-examples,v 1.6 2006/08/08 16:17:54 steven Exp $
 %%SHARED%%
 bin/qtdemo
 lib/qt4/bin/qtdemo
@@ -992,6 +992,8 @@ lib/qt4/examples/tools/regexp/regexpdialog.cpp
 lib/qt4/examples/tools/regexp/regexpdialog.h
 lib/qt4/examples/tools/settingseditor/
 lib/qt4/examples/tools/settingseditor/inifiles/
+lib/qt4/examples/tools/settingseditor/inifiles/licensepage.ini
+lib/qt4/examples/tools/settingseditor/inifiles/qsa.ini
 lib/qt4/examples/tools/settingseditor/locationdialog.cpp
 lib/qt4/examples/tools/settingseditor/locationdialog.h
 lib/qt4/examples/tools/settingseditor/main.cpp

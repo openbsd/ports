@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2006/06/04 09:37:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2006/08/08 16:17:54 steven Exp $
 %%SHARED%%
 bin/assistant4
 bin/designer4
@@ -1703,8 +1703,6 @@ lib/qt4/bin/qtconfig
 lib/qt4/bin/rcc
 lib/qt4/bin/uic
 lib/qt4/bin/uic3
-lib/qt4/examples/tools/settingseditor/inifiles/licensepage.ini
-lib/qt4/examples/tools/settingseditor/inifiles/qsa.ini
 lib/qt4/include
 @comment lib/qt4/libQt3Support.la
 lib/qt4/libQt3Support.prl
