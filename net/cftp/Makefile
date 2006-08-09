@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/16 00:31:20 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2006/08/09 10:24:51 bernd Exp $
 
 COMMENT=	"full screen FTP client"
 
 DISTNAME=	cftp-0.12
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://ftp.giga.or.at/pub/nih/cftp/

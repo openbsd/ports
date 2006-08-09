@@ -5,7 +5,7 @@ COMMENT=	"SSH and SFTP protocol implementation"
 CATEGORIES=	net
 
 DISTNAME=	TwistedConch-0.7.0
-PKGNAME=	py-twisted-conch-0.7.0
+PKGNAME=	py-twisted-conch-0.7.0p0
 
 HOMEPAGE=	http://twistedmatrix.com/trac/wiki/TwistedConch
 
