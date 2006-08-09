@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2006/07/28 12:38:37 bernd Exp $
+# $OpenBSD: Makefile,v 1.17 2006/08/09 09:14:03 bernd Exp $
+
+# fix too intrusive, will be dealt with after 4.0
+BROKEN=		"Missing directories and RUN_DEPENDS"
 
 COMMENT=	"content management system built on top of Zope"
 
