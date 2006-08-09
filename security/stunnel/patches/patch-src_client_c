@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_client_c,v 1.1 2006/08/09 18:44:08 sturm Exp $
+--- src/client.c.orig	Wed Aug  9 07:26:07 2006
++++ src/client.c	Wed Aug  9 07:26:22 2006
+@@ -29,7 +29,7 @@
+  */
+ 
+ /* Undefine if you have problems with make_sockets() */
+-#define INET_SOCKET_PAIR
++/* #define INET_SOCKET_PAIR */
+ 
+ #include "common.h"
+ #include "prototypes.h"
