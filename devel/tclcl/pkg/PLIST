@@ -1,14 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/10/29 22:13:26 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/08/09 09:46:10 bernd Exp $
 bin/otcldoc
 bin/tcl2c++
-include/idlecallback.h
-include/iohandler.h
-include/rate-variable.h
-include/tclcl-config.h
-include/tclcl-internal.h
-include/tclcl-mappings.h
-include/tclcl.h
-include/timer.h
-include/tracedvar.h
+include/tclcl/
+include/tclcl/idlecallback.h
+include/tclcl/iohandler.h
+include/tclcl/rate-variable.h
+include/tclcl/tclcl-config.h
+include/tclcl/tclcl-internal.h
+include/tclcl/tclcl-mappings.h
+include/tclcl/tclcl.h
+include/tclcl/timer.h
+include/tclcl/tracedvar.h
 lib/libTcl.a
 lib/libtclcl.a

@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2006/08/09 09:46:10 bernd Exp $
+--- configure.orig	Tue Aug  8 15:16:00 2006
++++ configure	Tue Aug  8 15:16:00 2006
+@@ -2902,7 +2902,7 @@ TCLCL_H_PLACES="\
+                 /usr/src/local/Tcl \
+                 /usr/src/local/Tcl-1.0 \
+                 /import/Tcl/include \
+-                /usr/local/include \
++                /usr/local/include/tclcl \
+                 /usr/contrib/include \
+                 /usr/include"
+ TCLCL_H_PLACES_D="$d \

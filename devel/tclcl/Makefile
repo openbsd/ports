@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/08/01 23:39:08 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2006/08/09 09:46:10 bernd Exp $
 # $FreeBSD: ports/devel/tclcl/Makefile,v 1.4 1999/11/28 18:31:57 steve Exp $
 
 COMMENT=	"Tcl/C++ interface used by ns and nam"
@@ -6,6 +6,7 @@ COMMENT=	"Tcl/C++ interface used by ns and nam"
 V=1.0b13
 DISTFILES=	tclcl-src-$V.tar.gz
 DISTNAME=	tclcl-$V
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.isi.edu/nsnam/tclcl/index.html
@@ -27,7 +28,8 @@ CONFIGURE_ARGS=	--with-tcl-ver=8.3 --with-tk-ver=8.3
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcl2c++ ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/otcldoc ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include
+	${INSTALL_DATA_DIR} ${PREFIX}/include/tclcl
+	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/tclcl
 	${INSTALL_DATA} ${WRKSRC}/libtclcl.a ${PREFIX}/lib
 	@ln -sf ${TRUEPREFIX}/lib/libtclcl.a ${PREFIX}/lib/libTcl.a
 

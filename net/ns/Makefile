@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2004/12/16 00:31:23 alek Exp $
+# $OpenBSD: Makefile,v 1.26 2006/08/09 09:46:10 bernd Exp $
 # $FreeBSD: ports/net/ns/Makefile,v 1.3 1999/11/28 18:31:26 steve Exp $
 
 COMMENT=	"UCB/LBNL Network Simulator Version 2"
 
 DISTNAME=	ns-2.26
+PKGNAME=	${DISTNAME}p0
 DISTFILES=	ns-src-2.26.tar.gz
 CATEGORIES=	net
 
@@ -21,7 +22,7 @@ WANTLIB=		X11 Xext c m pcap stdc++ tcl83 tk83
 HOMEPAGE=	http://www.isi.edu/nsnam/ns/
 
 LIB_DEPENDS=	otcl::lang/otcl \
-		tclcl::devel/tclcl
+		tclcl:tclcl->=1.0b13p0:devel/tclcl
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-tcl-ver=8.3 --with-tk-ver=8.3
