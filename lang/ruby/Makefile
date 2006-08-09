@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2006/08/03 13:09:09 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2006/08/09 22:14:11 bernd Exp $
 
 COMMENT=		"object oriented script language with threads"
 COMMENT-iconv=		"libiconv interface for ruby"
@@ -12,7 +12,7 @@ SHARED_LIBS=		ruby 1.84
 PKGNAME=		${DISTNAME}p4
 PKGNAME-iconv=		ruby-iconv-${VERSION}p1
 PKGNAME-gdbm=		ruby-gdbm-${VERSION}p1
-PKGNAME-tk=		ruby-tk-${VERSION}p1
+PKGNAME-tk=		ruby-tk-${VERSION}p2
 
 CATEGORIES=		lang
 
@@ -41,7 +41,7 @@ LIB_DEPENDS+=		gdbm.>=3::databases/gdbm
 
 .if !${FLAVOR:L:Mno_x11}
 MULTI_PACKAGES+=	-tk
-LIB_DEPENDS+=		tk84::x11/tk/8.4 
+LIB_DEPENDS+=		tk84:tk-8.4.*:x11/tk/8.4 
 .endif 
 
 CONFIGURE_STYLE=	gnu
@@ -78,7 +78,7 @@ WANTLIB=		c m
 .  elif ${SUBPACKAGE} == "-tk"
 MODULES=		
 LIB_DEPENDS=		ruby.>=1.84::lang/ruby \
-			tk84::x11/tk/8.4
+			tk84:tk-8.4.*:x11/tk/8.4
 WANTLIB=		X11 tcl84.>=1 c m
 .  endif
 .endif 
