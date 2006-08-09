@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.67 2006/02/17 16:02:17 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.68 2006/08/09 12:54:04 bernd Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 COMMENT-docs=	"documentation and examples for samba"
 
 DISTNAME=		samba-3.0.21b
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 SHARED_LIBS=		smbclient	0.2 \
 			msrpc		0.1
@@ -60,7 +60,7 @@ CONFIGURE_ARGS= --localstatedir="/var" \
 		--with-utmp
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -Wl,--export-dynamic"
 
 FLAVORS=        cups ldap
 FLAVOR?=
