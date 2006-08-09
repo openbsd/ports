@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2006/04/03 16:27:57 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2006/08/09 15:26:05 bernd Exp $
 
 COMMENT= 	"object oriented type setting language"
 COMMENT-doc=	"Lout user and expert documentation"
 
 DISTNAME=       lout-3.30
+PKGNAME=	${DISTNAME}p0
 PKGNAME-doc=    ${DISTNAME:S/-/-doc-/}p0
 CATEGORIES=	print
 
