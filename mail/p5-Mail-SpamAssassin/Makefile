@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2006/08/09 07:21:07 robert Exp $
+# $OpenBSD: Makefile,v 1.41 2006/08/10 18:24:45 steven Exp $
 
 COMMENT=		"mailfilter to identify and mark spam"
 
 DISTNAME=		Mail-SpamAssassin-3.1.4
-PKGNAME=		p5-${DISTNAME}
+PKGNAME=		p5-${DISTNAME}p0
 CATEGORIES=		mail perl5
 
 MAINTAINER=		Andreas Voegele <andreas@altroot.de>
@@ -19,15 +19,16 @@ WANTLIB=		c crypto ssl
 
 MASTER_SITES=		${MASTER_SITE_APACHE:=spamassassin/source/}
 
-BUILD_DEPENDS=		:p5-HTML-Parser-*:www/p5-HTML-Parser \
+BUILD_DEPENDS=		:p5-HTML-Parser->=3.31:www/p5-HTML-Parser \
 			:p5-Digest-SHA1-*:security/p5-Digest-SHA1 \
-			:p5-Net-DNS-*:net/p5-Net-DNS \
+			:p5-Net-DNS->=0.34:net/p5-Net-DNS \
 			:p5-Mail-SPF-Query-*:mail/p5-Mail-SPF-Query \
 			:p5-IO-INET6-*:net/p5-IO-INET6 \
 			:p5-IO-Socket-SSL-*:security/p5-IO-Socket-SSL \
 			:p5-libwww-*:www/p5-libwww \
-			:p5-Archive-Tar-*:archivers/p5-Archive-Tar \
-			:p5-IO-Zlib-*:archivers/p5-IO-Zlib
+			:p5-Archive-Tar->=1.23:archivers/p5-Archive-Tar \
+			:p5-IO-Zlib->=1.04:archivers/p5-IO-Zlib \
+			:gnupg-*:security/gnupg
 
 RUN_DEPENDS=		${BUILD_DEPENDS}
 
@@ -36,6 +37,7 @@ MAKE_ENV+=		CC="${CC}"
 CONFIGURE_STYLE=	perl
 CONFIGURE_ARGS+=	RUN_NET_TESTS="no" \
 			SYSCONFDIR=${SYSCONFDIR} \
+			LOCALSTATEDIR=/var/db \
 			CONTACT_ADDRESS="the administrator of this system" \
 			ENABLE_SSL="yes"
 
@@ -73,6 +75,14 @@ post-install:
 	    ${PREFIX}/man/man1/spamc.1
 	cd ${WRKSRC} && pod2man --section=8 spamd/spamd > \
 	    ${PREFIX}/man/man8/spamd.8
+	# Extract the default GnuPG keys for sa-update.  The keys will
+	# be installed as config files in ${CONFDIR}/sa-update-keys.
+	# Otherwise, sa-update would install the keys on its first
+	# invocation.  The sa-update utility also creates the directory
+	# /var/db/spamassassin.
+	${INSTALL_DATA_DIR} ${SAMPLE_CONFDIR}/sa-update-keys
+	${LOCALBASE}/bin/gpg --homedir=${SAMPLE_CONFDIR}/sa-update-keys --batch --import ${WRKSRC}/rules/sa-update-pubkey.txt
+	rm -f ${SAMPLE_CONFDIR}/sa-update-keys/pubring.gpg~
 
 pre-regress:
 	mkdir -p ${PORTHOME}

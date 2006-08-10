@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2006/06/06 17:33:42 steven Exp $
+@comment $OpenBSD: PLIST,v 1.20 2006/08/10 18:24:45 steven Exp $
 bin/sa-learn
 bin/sa-update
 bin/spamassassin
@@ -157,6 +157,16 @@ share/examples/SpamAssassin/init.pre
 @sample ${CONFDIR}/init.pre
 share/examples/SpamAssassin/local.cf
 @sample ${CONFDIR}/local.cf
+share/examples/SpamAssassin/sa-update-keys/
+@mode go=
+@sample ${CONFDIR}/sa-update-keys/
+share/examples/SpamAssassin/sa-update-keys/pubring.gpg
+@sample ${CONFDIR}/sa-update-keys/pubring.gpg
+share/examples/SpamAssassin/sa-update-keys/secring.gpg
+@sample ${CONFDIR}/sa-update-keys/secring.gpg
+share/examples/SpamAssassin/sa-update-keys/trustdb.gpg
+@sample ${CONFDIR}/sa-update-keys/trustdb.gpg
+@mode
 share/examples/SpamAssassin/v310.pre
 @sample ${CONFDIR}/v310.pre
 share/examples/SpamAssassin/v312.pre
@@ -209,3 +219,4 @@ share/spamassassin/languages
 share/spamassassin/sa-update-pubkey.txt
 share/spamassassin/triplets.txt
 share/spamassassin/user_prefs.template
+@extraunexec rm -rf /var/db/spamassassin

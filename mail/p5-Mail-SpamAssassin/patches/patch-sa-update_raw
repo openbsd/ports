@@ -1,0 +1,12 @@
+$OpenBSD: patch-sa-update_raw,v 1.1 2006/08/10 18:24:45 steven Exp $
+--- sa-update.raw.orig	Wed Jul 26 00:02:20 2006
++++ sa-update.raw	Sun Jul 30 19:20:01 2006
+@@ -1197,7 +1197,7 @@ Options:
+ 
+   --updatedir path		Directory to place updates, defaults to the
+ 				SpamAssassin site rules directory (def:
+-				/var/lib/spamassassin/<version>)
++				/var/db/spamassassin/<version>)
+ 
+   --channel channel		Retrieve updates from this channel
+   				Use multiple times for multiple channels
