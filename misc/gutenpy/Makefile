@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2006/07/30 15:19:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2006/08/10 20:26:32 bernd Exp $
+
+SHARED_ONLY=		Yes
 
 COMMENT=		"text reader and catalog browser for Project Gutenberg"
 
 DISTNAME=		gutenpy-0.3.0
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		misc x11
 
 HOMEPAGE=		http://gutenpy.sourceforge.net/
@@ -22,6 +25,7 @@ MODULES=		lang/python
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		:py-xml-*:textproc/py-xml \
+			:python-expat-${MODPY_VERSION}.*:lang/python/${MODPY_VERSION},-expat \
 			:py-gtk2->=2.6.3:x11/py-gtk2
 			
 NO_BUILD=		Yes
