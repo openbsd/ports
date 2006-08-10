@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2006/08/06 10:16:54 sturm Exp $
+# $OpenBSD: Makefile,v 1.17 2006/08/10 22:30:48 steven Exp $
 
 COMMENT=		"GStreamer Streaming-media framework plug-ins."
 
 VERSION=		0.8.11
 PATCHLEVEL=		
 DISTNAME=		gst-plugins-${VERSION}
-PKGNAME=		gstreamer-plugins-${VERSION}p6
+PKGNAME=		gstreamer-plugins-${VERSION}p7
 SHARED_LIBS=		gstgconf-0.8		1.0 \
 			gstinterfaces-0.8	1.0 \
 			gstmedia-info-0.8	1.0 \
@@ -142,7 +142,7 @@ DEPENDS-gnome=		gnomevfs-2::x11/gnome/vfs2
 OPTIONS-gnome=		gnome_vfs
 
 # gsm
-COMMENT-gsm=		"GStremer plugin for using gsm"
+COMMENT-gsm=		"GStreamer plugin for using gsm"
 DEPENDS-gsm=		gsm::audio/gsm
 
 # jpeg
@@ -206,7 +206,7 @@ DEPENDS-theora=		theora::multimedia/libtheora \
 			ogg::audio/libogg
 
 # tremor
-COMMENT-tremor=		"GStreamer plugin for Vorbis audio files,  integer"
+COMMENT-tremor=		"GStreamer plugin for Vorbis audio files, integer"
 DEPENDS-tremor=		vorbisidec::audio/tremor
 
 # vorbis
@@ -216,7 +216,7 @@ DEPENDS-vorbis=         vorbis,vorbisenc::audio/libvorbis
 
 .for PLUGIN in ${PLUGINS}
 COMMENT-${PLUGIN}?=	"GStreamer plugin for ${PLUGIN}"
-PKGNAME-${PLUGIN}?=	gstreamer-${PLUGIN}-${VERSION}${PATCHLEVEL}p6
+PKGNAME-${PLUGIN}?=	gstreamer-${PLUGIN}-${VERSION}${PATCHLEVEL}p7
 OPTIONS-${PLUGIN}?=	${PLUGIN}
 .  if defined(PACKAGING)
 .    if ${SUBPACKAGE} == "-${PLUGIN}"

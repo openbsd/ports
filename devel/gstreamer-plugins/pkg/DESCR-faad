@@ -1,1 +1,2 @@
-todo
+A faad plugin for the GStreamer streaming-media framework, supporting the
+ISO AAC audio codec.

@@ -1,2 +1,2 @@
-A MP3 encoding plugin for the GStreamer Streaming-media framework using
+An MP3 encoding plugin for the GStreamer streaming-media framework using
 LAME.  Please note that there are certain patent issues with this plugin.
