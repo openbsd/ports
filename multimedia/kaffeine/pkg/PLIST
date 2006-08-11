@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/11 10:32:57 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/08/11 13:28:55 steven Exp $
 bin/kaffeine
 include/kaffeine/
 include/kaffeine/kaffeine_part.h
@@ -122,7 +122,7 @@ share/locale/xx/LC_MESSAGES/
 share/locale/xx/LC_MESSAGES/kaffeine.mo
 share/locale/zh_CN/LC_MESSAGES/kaffeine.mo
 share/mimelnk/application/x-kaffeine.desktop
-share/mimelnk/application/x-mplayer2.desktop
+@comment share/mimelnk/application/x-mplayer2.desktop
 share/services/kaffeine_part.desktop
 share/services/kaffeineoggvorbis.desktop
 share/servicetypes/kaffeineaudioencoder.desktop
