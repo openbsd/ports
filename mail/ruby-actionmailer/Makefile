@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/06/12 20:01:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2006/08/12 07:37:15 sturm Exp $
 
 COMMENT=	"easy email delivery and testing for ruby"
 
-DISTNAME=	actionmailer-1.2.1
+DISTNAME=	actionmailer-1.2.5
 PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	mail
 
@@ -14,12 +14,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://rubyforge.org/frs/download.php/9571/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/12316/
 
 MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS= 	::devel/ruby-actionpack
+RUN_DEPENDS= 	:ruby-actionpack-1.12.5:devel/ruby-actionpack
 
 CONFIGURE_STYLE=ruby gem
 
