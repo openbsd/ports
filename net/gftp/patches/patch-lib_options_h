@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_options_h,v 1.1 2006/08/12 15:17:04 naddy Exp $
+--- lib/options.h.orig	Thu Aug 10 21:56:17 2006
++++ lib/options.h	Thu Aug 10 21:56:26 2006
+@@ -137,7 +137,7 @@ gftp_config_vars gftp_global_config_vars
+    N_("This specifies the default protocol to use"), GFTP_PORT_ALL, NULL},
+ #if defined (HAVE_GETADDRINFO) && defined (HAVE_GAI_STRERROR)
+   {"enable_ipv6", N_("Enable IPv6 support"), 
+-   gftp_option_type_checkbox, GINT_TO_POINTER(1), NULL, 
++   gftp_option_type_checkbox, GINT_TO_POINTER(0), NULL, 
+    GFTP_CVARS_FLAGS_SHOW_BOOKMARK,
+    N_("Enable IPv6 support"), GFTP_PORT_ALL, NULL},
+ #endif

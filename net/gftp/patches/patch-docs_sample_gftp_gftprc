@@ -1,0 +1,12 @@
+$OpenBSD: patch-docs_sample_gftp_gftprc,v 1.1 2006/08/12 15:17:04 naddy Exp $
+--- docs/sample.gftp/gftprc.orig	Thu Aug 10 21:56:56 2006
++++ docs/sample.gftp/gftprc	Thu Aug 10 21:57:03 2006
+@@ -80,7 +80,7 @@ trans_blksize=20480
+ default_protocol=FTP
+ 
+ # Enable IPv6 support
+-enable_ipv6=1
++enable_ipv6=0
+ 
+ # This defines what will happen when you double click a file in the file
+ # listboxes. 0=View file 1=Edit file 2=Transfer file
