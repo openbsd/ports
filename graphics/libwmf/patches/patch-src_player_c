@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_player_c,v 1.1 2006/08/12 15:58:44 bernd Exp $
+
+Security fix for CVE-2006-3376. Diff from Ubuntu. (fixed by naddy@)
+
+--- src/player.c.orig	Tue Dec 10 20:30:26 2002
++++ src/player.c	Thu Aug 10 19:14:09 2006
+@@ -130,6 +131,13 @@ wmf_error_t wmf_scan (wmfAPI* API,unsign
+ 		{	WMF_DEBUG (API,"bailing...");
+ 			return (API->err);
+ 		}
++	}
++
++	if (MAX_REC_SIZE(API) > SIZE_MAX / 2)
++	{
++		API->err = wmf_E_InsMem;
++		WMF_DEBUG (API,"bailing...");
++		return (API->err);
+ 	}
+ 
+ /*	P->Parameters = (unsigned char*) wmf_malloc (API,(MAX_REC_SIZE(API)-3) * 2 * sizeof (unsigned char));
