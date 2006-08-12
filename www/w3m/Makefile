@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.61 2006/08/04 00:10:42 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2006/08/12 15:51:38 naddy Exp $
+
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64"
+BROKEN=		crashes
+.endif
 
 COMMENT=	"pager/text-based web browser"
 
