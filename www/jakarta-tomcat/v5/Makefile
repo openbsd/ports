@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2006/08/10 18:26:23 kurt Exp $
+# $OpenBSD: Makefile,v 1.9 2006/08/13 16:14:25 kurt Exp $
 
 COMMENT=	"Java servlet 2.4 and Java server pages 2.0 server"
 COMMENT-examples="example applications and documentation"
 
 V=		5.0.28
 DISTNAME=	jakarta-tomcat-${V}
-PKGNAME=	${DISTNAME}p4
-PKGNAME-examples=jakarta-tomcat-examples-${V}p4
+PKGNAME=	${DISTNAME}p5
+PKGNAME-examples=jakarta-tomcat-examples-${V}p5
 CATEGORIES=	www
 
 MASTER_SITES=	${MASTER_SITE_APACHE:=tomcat/tomcat-5/v$V/bin/} \
@@ -22,8 +22,9 @@ SUBPACKAGE?=
 MODULES=	java
 MODJAVA_VER=	1.3+
 
-BUILD_DEPENDS=	::archivers/gtar \
-		::java/javaPathHelper
+BUILD_DEPENDS=	::archivers/gtar
+
+RUN_DEPENDS=	::java/javaPathHelper
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-examples"
 PREFIX=		${CATALINA_BASE}
