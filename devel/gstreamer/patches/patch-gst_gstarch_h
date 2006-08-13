@@ -1,0 +1,19 @@
+$OpenBSD: patch-gst_gstarch_h,v 1.1 2006/08/13 19:58:58 ian Exp $
+
+This patch should not work but does, and most of "regress" passes.
+See http://archives.neohapsis.com/archives/openbsd/2005-05/1405.html
+
+--- gst/gstarch.h.orig	Thu Jul 13 22:33:27 2006
++++ gst/gstarch.h	Thu Jul 13 22:32:03 2006
+@@ -40,6 +40,11 @@
+ /* assuming the stackframe is 16 bytes */
+ #define GST_ARCH_SETUP_STACK(sp) sp -= 4
+ 
++/***** X86_64 *****/
++#elif defined(HAVE_CPU_X86_64) && defined(__GNUC__)
++#define GST_ARCH_SET_SP(stackpointer);
++#define GST_ARCH_CALL(target);
++#define GST_ARCH_SETUP_STACK(sp) sp -= 4 
+ 
+ /***** PowerPC *****/
+ #elif defined (HAVE_CPU_PPC) && defined(__GNUC__)
