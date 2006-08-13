@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/08/01 20:07:30 kurt Exp $
+# $OpenBSD: Makefile,v 1.20 2006/08/13 16:11:58 kurt Exp $
 
 ONLY_FOR_ARCHS=		amd64 i386
 
@@ -8,9 +8,9 @@ COMMENT-mozilla=	"mozilla integration library for eclipse HTML Browser Widget"
 
 ECLIPSE_VER=		3.2
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
-PKGNAME=		eclipse-sdk-${ECLIPSE_VER}p1
-PKGNAME-gnome=		eclipse-sdk-gnome-${ECLIPSE_VER}p1
-PKGNAME-mozilla=	eclipse-sdk-mozilla-${ECLIPSE_VER}p1
+PKGNAME=		eclipse-sdk-${ECLIPSE_VER}p2
+PKGNAME-gnome=		eclipse-sdk-gnome-${ECLIPSE_VER}p2
+PKGNAME-mozilla=	eclipse-sdk-mozilla-${ECLIPSE_VER}p2
 SHARED_LIBS=		swt-atk-gtk-3232	3.0 \
 			swt-cde-gtk-3232	3.0 \
 			swt-awt-gtk-3232	3.0 \
@@ -79,6 +79,7 @@ WANTLIB=		gnome-2 gnomevfs-2
 RUN_DEPENDS=		:${PKGNAME}:devel/eclipse/sdk
 LIB_DEPENDS=		${MOZILLA_LIB_DEPENDS}
 . else
+RUN_DEPENDS=		::java/javaPathHelper
 MODULES+=		devel/gettext
 WANTLIB=		GL GLU X11 Xtst c m fontconfig \
 			freetype atk-1.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 \
