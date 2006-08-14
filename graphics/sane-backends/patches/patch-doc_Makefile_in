@@ -1,15 +1,6 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1 2006/07/21 10:31:09 alek Exp $
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2006/08/14 12:55:30 kurt Exp $
 --- doc/Makefile.in.orig	Tue Jun  6 18:32:02 2006
-+++ doc/Makefile.in	Fri Jul 21 11:44:03 2006
-@@ -21,7 +21,7 @@ sharedstatedir = @sharedstatedir@
- localstatedir = @localstatedir@
- libdir = @libdir@
- infodir = @infodir@
--mandir = @mandir@
-+mandir = @prefix@/man
- includedir = @includedir@
- oldincludedir = /usr/include
- configdir = ${sysconfdir}/sane.d
++++ doc/Makefile.in	Tue Aug  8 22:52:48 2006
 @@ -77,11 +77,7 @@ MAN2HTML= nroff -man |\
  HTML_PAGES = sane-backends.html sane-backends-external.html \
               sane-mfgs.html sane-mfgs-external.html

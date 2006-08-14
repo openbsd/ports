@@ -1,6 +1,6 @@
-$OpenBSD: patch-backend_Makefile_in,v 1.1 2006/07/21 10:31:09 alek Exp $
---- backend/Makefile.in.orig	Mon Jul  3 10:16:42 2006
-+++ backend/Makefile.in	Mon Jul  3 10:19:17 2006
+$OpenBSD: patch-backend_Makefile_in,v 1.2 2006/08/14 12:55:30 kurt Exp $
+--- backend/Makefile.in.orig	Sun Jun 11 13:10:59 2006
++++ backend/Makefile.in	Tue Aug  8 22:52:13 2006
 @@ -26,7 +26,7 @@ infodir = @infodir@
  mandir = @mandir@
  includedir = @includedir@
@@ -29,6 +29,15 @@ $OpenBSD: patch-backend_Makefile_in,v 1.1 2006/07/21 10:31:09 alek Exp $
  	@# Remove libsane.* links in lib/sane/ as these links to libsane-v4l.so
  	@# cause misdetection of scanners.
  	rm -f $(DESTDIR)$(libsanedir)/libsane.*
+@@ -237,7 +238,7 @@ install-libsane:
+ 	@echo installing libsane.la in $(DESTDIR)$(libdir)/libsane.la...
+ 	@$(LIBTOOL) $(MINST) $(INSTALL_PROGRAM) libsane.la \
+           $(DESTDIR)$(libdir)/libsane.la >/dev/null
+-	@$(LIBTOOL) $(MINST) --finish $(DESTDIR)$(libdir)
++#	@$(LIBTOOL) $(MINST) --finish $(DESTDIR)$(libdir)
+ 
+ install-becfg:
+ 	@list="$(CONFIGS)"; for cfg in $$list; do \
 @@ -255,7 +256,7 @@ install-becfg:
  	 done
  
