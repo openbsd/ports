@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2006/07/01 18:27:47 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2006/08/15 06:47:38 sturm Exp $
 lib/xemacs/
 lib/xemacs/xemacs-packages/
 lib/xemacs/xemacs-packages/etc/
@@ -6532,3 +6532,4 @@ lib/xemacs/xemacs-packages/pkginfo/MANIFEST.xslt-process
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.xwem
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.zenirc
 %%mule%%
+@extra lib/xemacs/xemacs-packages/info/dir

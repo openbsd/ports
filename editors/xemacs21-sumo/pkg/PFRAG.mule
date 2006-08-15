@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.mule,v 1.8 2005/11/03 15:55:07 aanriot Exp $
+@comment $OpenBSD: PFRAG.mule,v 1.9 2006/08/15 06:47:38 sturm Exp $
 lib/xemacs/${MULE}-packages/
 lib/xemacs/${MULE}-packages/etc/
 lib/xemacs/${MULE}-packages/etc/app-defaults/
@@ -570,3 +570,4 @@ lib/xemacs/${MULE}-packages/pkginfo/MANIFEST.lookup
 lib/xemacs/${MULE}-packages/pkginfo/MANIFEST.${MULE}-base
 lib/xemacs/${MULE}-packages/pkginfo/MANIFEST.${MULE}-ucs
 lib/xemacs/${MULE}-packages/pkginfo/MANIFEST.skk
+@extra lib/xemacs/${MULE}-packages/info/dir
