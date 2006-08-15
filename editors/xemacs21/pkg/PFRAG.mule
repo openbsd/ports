@@ -1,13 +1,15 @@
-@comment $OpenBSD: PFRAG.mule,v 1.4 2005/11/03 15:51:05 aanriot Exp $
+@comment $OpenBSD: PFRAG.mule,v 1.5 2006/08/15 06:09:56 sturm Exp $
 lib/xemacs-${VERSION}/lisp/mule/
 lib/xemacs-${VERSION}/lisp/mule/arabic.el
 lib/xemacs-${VERSION}/lisp/mule/arabic.elc
 lib/xemacs-${VERSION}/lisp/mule/auto-autoloads.el
 lib/xemacs-${VERSION}/lisp/mule/auto-autoloads.elc
 lib/xemacs-${VERSION}/lisp/mule/canna-leim.el
+lib/xemacs-${VERSION}/lisp/mule/canna-leim.elc
 lib/xemacs-${VERSION}/lisp/mule/chinese.el
 lib/xemacs-${VERSION}/lisp/mule/chinese.elc
 lib/xemacs-${VERSION}/lisp/mule/custom-load.el
+lib/xemacs-${VERSION}/lisp/mule/custom-load.elc
 lib/xemacs-${VERSION}/lisp/mule/cyrillic.el
 lib/xemacs-${VERSION}/lisp/mule/cyrillic.elc
 lib/xemacs-${VERSION}/lisp/mule/english.el

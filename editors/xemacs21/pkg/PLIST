@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2006/07/01 17:52:45 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2006/08/15 06:09:56 sturm Exp $
 %%mule%%
 bin/ellcc
 bin/gnuattach
@@ -1060,8 +1060,6 @@ lib/xemacs-${VERSION}/lisp/msw-mouse.el
 lib/xemacs-${VERSION}/lisp/msw-mouse.elc
 lib/xemacs-${VERSION}/lisp/msw-select.el
 lib/xemacs-${VERSION}/lisp/msw-select.elc
-lib/xemacs-${VERSION}/lisp/mule/canna-leim.elc
-lib/xemacs-${VERSION}/lisp/mule/custom-load.elc
 lib/xemacs-${VERSION}/lisp/multicast.el
 lib/xemacs-${VERSION}/lisp/multicast.elc
 lib/xemacs-${VERSION}/lisp/mwheel.el
