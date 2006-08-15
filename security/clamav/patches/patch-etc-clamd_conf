@@ -1,5 +1,5 @@
---- etc/clamd.conf.orig	Mon Oct 11 03:14:30 2004
-+++ etc/clamd.conf	Tue Dec 21 16:37:52 2004
+--- etc/clamd.conf.orig	Wed Mar 29 07:01:45 2006
++++ etc/clamd.conf	Fri Jul 28 02:28:02 2006
 @@ -11,7 +11,7 @@ Example
  # LogFile must be writable for the user running daemon.
  # A full path is required.
@@ -8,7 +8,7 @@
 +#LogFile /var/log/clamd.log
  
  # By default the log file is locked for writing - the lock protects against
- # running clamd multiple times (if want to run another clamd, please
+ # running clamd multiple times (if you want to run another clamd instance,
 @@ -62,7 +62,7 @@ Example
  
  # Path to the database directory.
