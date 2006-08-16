@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2006/06/06 09:23:16 aanriot Exp $
+# $OpenBSD: Makefile,v 1.24 2006/08/16 16:55:09 kurt Exp $
 
 COMMENT=	"emulates arcade machines and old home computers"
 COMMENT-mame=	"emulates a massive variety of arcade machines"
@@ -97,9 +97,11 @@ MAKE_FLAGS+=	X11_DGA=1
 . endif
 .elif ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "m68k"
 MAKE_FLAGS+=	MY_CPU=${MACHINE_ARCH}
-.elif ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "powerpc" || \
-      ${MACHINE_ARCH} == "sparc"
+.elif ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "sparc"
 MAKE_FLAGS+=	MY_CPU=risc
+.elif ${MACHINE_ARCH} == "powerpc"
+MAKE_FLAGS+=	MY_CPU=risc \
+		LD="${CC} -Wl,-s,--relax"
 .endif
 
 LIB_DEPENDS+=	expat::textproc/expat
