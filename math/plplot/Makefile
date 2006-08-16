@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/08/03 20:04:52 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/08/16 05:23:49 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,7 +21,7 @@ SHARED_LIBS=	csirocsa	0.1	\
 PKGNAME-c++ =	plplot-c++-${VERSION}
 PKGNAME-f77=	plplot-f77-${VERSION}
 PKGNAME-octave=	plplot-octave-${VERSION}p0
-PKGNAME-tcl=	plplot-tcl-${VERSION}
+PKGNAME-tcl=	plplot-tcl-${VERSION}p0
 
 CATEGORIES=	math graphics
 
@@ -44,7 +44,7 @@ TCLLIB=		tcl${TCL_VERSION:S/.//}
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
-BUILD_DEPENDS=	::lang/tcl/${TCL_VERSION} \
+BUILD_DEPENDS=	:tcl-${TCL_VERSION}.*:lang/tcl/${TCL_VERSION} \
 		::math/octave \
 		::graphics/gd \
 		::print/ghostscript/gnu-fonts \
@@ -113,7 +113,7 @@ WANTLIB+=		g2c ncurses readline blas lapack fftw3
 LIB_DEPENDS+=		cruft,octave,octinterp::math/octave
 .    elif ${SUBPACKAGE} == "-tcl"
 WANTLIB+=		X11 c
-LIB_DEPENDS+=		${TCLLIB}::lang/tcl/${TCL_VERSION}
+LIB_DEPENDS+=		${TCLLIB}:tcl-${TCL_VERSION}.*:lang/tcl/${TCL_VERSION}
 .    endif
 .  endif
 .endif
