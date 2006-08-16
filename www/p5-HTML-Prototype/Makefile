@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/06/11 15:06:50 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/08/16 10:05:31 espie Exp $
 
 COMMENT=	'AJAX framework for perl'
 CATEGORIES=	www p5
@@ -27,7 +27,9 @@ CONFIGURE_STYLE=	perl modbuild
 BUILD_DEPENDS=	::www/p5-HTML-Tree ::devel/p5-Class-Accessor
 RUN_DEPENDS=	::www/p5-HTML-Tree ::devel/p5-Class-Accessor
 
-REGRESS_DEPENDS=::devel/p5-Test-Pod-Coverage
+REGRESS_DEPENDS=::devel/p5-Test-Pod-Coverage \
+		::devel/p5-Test-Pod
+
 MAKE_ENV+=	TEST_POD=Yes
 
 
