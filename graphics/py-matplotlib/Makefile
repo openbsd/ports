@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2006/08/03 12:53:18 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2006/08/16 11:42:06 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"Python charting and plotting API"
 
 DISTNAME=	matplotlib-0.83.2
-PKGNAME=	py-${DISTNAME}p3
+PKGNAME=	py-${DISTNAME}p4
 CATEGORIES=	graphics devel
 
 HOMEPAGE=	http://matplotlib.sourceforge.net/
@@ -36,7 +36,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		::devel/pkgconfig
 LIB_DEPENDS=	png.>=3::graphics/png
 
-MAKE_ENV+=      EXTRA_INCLUDES="${WRKSRC} ${LOCALBASE}/include/libpng"
+MAKE_ENV+=	EXTRA_INCLUDES="${WRKSRC} ${LOCALBASE}/include/libpng" \
+		LDSHARED="${CC} -shared -fPIC"
 
 # The matplotlib distributors seem to have an uncanny knack for breaking 
 # update-patches by shipping .orig and .rej files, over several releases...
