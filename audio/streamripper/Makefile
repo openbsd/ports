@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2006/08/01 12:13:28 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2006/08/17 17:02:13 naddy Exp $
 
 COMMENT=	"rip shoutcast streams to local mp3s"
 
 DISTNAME=	streamripper-1.61.11
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	audio
 
 HOMEPAGE=	http://streamripper.sourceforge.net/
@@ -27,7 +27,5 @@ LIB_DEPENDS=	mad.>=2::audio/libmad \
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

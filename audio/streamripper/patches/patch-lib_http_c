@@ -1,0 +1,30 @@
+$OpenBSD: patch-lib_http_c,v 1.1 2006/08/17 17:02:13 naddy Exp $
+--- lib/http.c.orig	Sat Apr  9 06:06:15 2005
++++ lib/http.c	Thu Aug 17 18:29:22 2006
+@@ -212,7 +212,7 @@ httplib_parse_sc_header(const char *url,
+     int rc;
+     char *start;
+     char versionbuf[64];
+-    char stempbr[50];
++    char stempbr[MAX_ICY_STRING];
+     URLINFO url_info;
+     int url_path_len;
+     int content_type_by_url;
+@@ -328,7 +328,7 @@ httplib_parse_sc_header(const char *url,
+     else if ((start = (char *)strstr(header, "SHOUTcast")) != NULL) {
+ 	strcpy(info->server, "SHOUTcast/");
+ 	if ((start = (char *)strstr(start, "Server/")) != NULL) {
+-	    sscanf(start, "Server/%[^<]<", versionbuf);
++	    sscanf(start, "Server/%63[^<]<", versionbuf);
+ 	    strcat(info->server, versionbuf);
+ 	}
+ 
+@@ -346,7 +346,7 @@ httplib_parse_sc_header(const char *url,
+ 	if (!info->server[0]) {
+ 	    strcpy(info->server, "icecast/");
+ 	    if ((start = (char *)strstr(start, "version ")) != NULL) {
+-		sscanf(start, "version %[^<]<", versionbuf);
++		sscanf(start, "version %63[^<]<", versionbuf);
+ 		strcat(info->server, versionbuf);
+ 	    }
+ 	}
