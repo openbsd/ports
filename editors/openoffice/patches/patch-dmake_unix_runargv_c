@@ -1,0 +1,12 @@
+$OpenBSD: patch-dmake_unix_runargv_c,v 1.1.1.1 2006/08/17 14:56:22 robert Exp $
+--- dmake/unix/runargv.c.orig	Thu Apr 20 14:19:12 2006
++++ dmake/unix/runargv.c	Tue Aug 15 14:03:09 2006
+@@ -132,7 +132,7 @@ private_strerror (errnum)
+ #ifdef arm32
+   extern  const char * const sys_errlist[];
+ #else
+-#if defined(linux) || defined(__FreeBSD__)
++#if defined(linux) || defined(__FreeBSD__) || defined(__OpenBSD__)
+   extern  const char * const sys_errlist[];
+ #else
+   extern  char *sys_errlist[];

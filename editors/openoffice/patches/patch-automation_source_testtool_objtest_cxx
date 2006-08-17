@@ -1,0 +1,12 @@
+$OpenBSD: patch-automation_source_testtool_objtest_cxx,v 1.1.1.1 2006/08/17 14:56:21 robert Exp $
+--- automation/source/testtool/objtest.cxx.orig	Thu Jul  6 16:33:04 2006
++++ automation/source/testtool/objtest.cxx	Tue Aug 15 14:03:09 2006
+@@ -532,6 +532,8 @@ void TestToolObj::LoadIniFile()				// La
+     abGP.Append( "14" );
+ #elif defined LINUX && defined X86_64
+     abGP.Append( "15" );  // Linux x86-64
++#elif defined OPENBSD
++    abGP.Append( "16" );
+ #else
+ #error ("unknown platform. please request an ID for your platform on qa/dev")
+ #endif

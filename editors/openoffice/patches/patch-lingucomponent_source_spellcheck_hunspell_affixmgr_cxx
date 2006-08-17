@@ -1,0 +1,66 @@
+$OpenBSD: patch-lingucomponent_source_spellcheck_hunspell_affixmgr_cxx,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
+--- lingucomponent/source/spellcheck/hunspell/affixmgr.cxx.orig	Wed Jul 19 18:15:53 2006
++++ lingucomponent/source/spellcheck/hunspell/affixmgr.cxx	Tue Aug 15 14:03:10 2006
+@@ -2439,12 +2439,11 @@ char * AffixMgr::suffix_check_twosfx_mor
+                 result3[0] = '\0';
+ #ifdef DEBUG
+                 unsigned short flag = sptr->getFlag();
+-                char flagch[2] = &flag;
+                 if (flag_mode == FLAG_NUM) {
+-                    sprintf(result3, "%d", sptr->getKey());
++                    sprintf(result3, "%p", sptr->getKey());
+                 } else if (flag_mode == FLAG_LONG) {
+-                    sprintf(result3, "%c%c", flagch[0], flagch[1]);                
+-                } else sprintf(result3, "%c", flagch[1]);                
++                    sprintf(result3, "%c%c", (char)(flag>>8), (char)(flag & 0x00ff));                
++                } else sprintf(result3, "%c", (char)(flag & 0x00ff));                
+                 strcat(result3, ":");
+ #endif
+                 if (sptr->getMorph()) strcat(result3, sptr->getMorph());
+@@ -2466,10 +2465,16 @@ char * AffixMgr::suffix_check_morph(cons
+        int sfxopts, AffEntry * ppfx, const FLAG cclass, const FLAG needflag, char in_compound)
+ {
+     char result[MAXLNLEN];
+-    
++#ifdef DEBUG
++    char result2[MAXLNLEN];
++#endif
++
+     struct hentry * rv = NULL;
+ 
+     result[0] = '\0';
++#ifdef DEBUG
++    result2[0] = '\0';
++#endif
+ 
+     PfxEntry* ep = (PfxEntry *) ppfx;
+ 
+@@ -2555,13 +2560,12 @@ char * AffixMgr::suffix_check_morph(cons
+                         !TESTAFF(rv->astr, lemma_present, rv->alen))) strcat(result, rv->word);
+                     if (!complexprefixes && rv->description) strcat(result, rv->description);
+ #ifdef DEBUG
+-                unsigned short flag = sptr->getKey();
+-                char flagch[2] = &flag;
++                unsigned short flag = sptr->getFlag();
+                 if (flag_mode == FLAG_NUM) {
+-                    sprintf(result2, "%d", sptr->getKey());
++                    sprintf(result2, "%p", sptr->getKey());
+                 } else if (flag_mode == FLAG_LONG) {
+-                    sprintf(result2, "%c%c", flagch[0], flagch[1]);                
+-                } else sprintf(result2, "%c", flagch[1]);                
++                    sprintf(result2, "%c%c", (char)(flag>>8), (char)(flag & 0x00FF));                
++                } else sprintf(result2, "%c", (char)(flag & 0x00FF));                
+                 strcat(result2, ":");
+                 strcat(result, result2);
+ #endif
+@@ -3684,7 +3688,9 @@ int  AffixMgr::parse_affix(char * line, 
+    int i = 0;
+ 
+    // checking lines with bad syntax
+-//   int basefieldnum = 0;
++#if DEBUG
++   int basefieldnum = 0;
++#endif
+ 
+    // split affix header line into pieces
+ 

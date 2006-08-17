@@ -1,0 +1,55 @@
+$OpenBSD: patch-sal_osl_unx_security_c,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
+--- sal/osl/unx/security.c.orig	Wed Jul 19 11:55:41 2006
++++ sal/osl/unx/security.c	Tue Aug 15 14:03:10 2006
+@@ -76,7 +76,7 @@ static sal_Bool SAL_CALL osl_psz_getHome
+ static sal_Bool SAL_CALL osl_psz_getConfigDir(oslSecurity Security, sal_Char* pszDirectory, sal_uInt32 nMax);
+ 
+ static oslSecurityImpl * newSecurityImpl(size_t * bufSize) {
+-#if defined (MACOSX) || defined (FREEBSD)
++#if defined (MACOSX) || defined (FREEBSD) || defined(OPENBSD)
+     /* #i64906#: sysconf(_SC_GETPW_R_SIZE_MAX) returns -1 on Mac OS X and FreeBSD */
+     size_t n = 1024;
+ #else
+@@ -102,8 +102,33 @@ oslSecurity SAL_CALL osl_getCurrentSecur
+ 	oslSecurityImpl * p = newSecurityImpl(&n);
+     if (p != NULL) {
+         struct passwd * found;
++#if defined(OPENBSD)
++	/* TODO: not thread safe - protect this */
++        if ((found = getpwuid(getuid())) != 0)
++	{
++            size_t bufsize = n;
++            size_t len;
++            p->m_pPasswd.pw_uid = found->pw_uid;
++            p->m_pPasswd.pw_gid = found->pw_gid;
++            if ((len = strlcpy(p->m_buffer, found->pw_name, bufsize)) >= bufsize)
++            {
++                deleteSecurityImpl(p);
++		return 0;
++            }
++            p->m_pPasswd.pw_name = p->m_buffer;
++            bufsize -= len+1; 
++            if (strlcpy(&p->m_buffer[len+1], found->pw_dir, bufsize) >= bufsize)
++            {
++                deleteSecurityImpl(p);
++		return 0;
++            }
++            p->m_pPasswd.pw_dir = &p->m_buffer[len+1];
++        }
++        else
++#else
+         if (getpwuid_r(getuid(), &p->m_pPasswd, p->m_buffer, n, &found) != 0 ||
+             found == NULL)
++#endif
+         {
+             deleteSecurityImpl(p);
+             p = 0;
+@@ -474,7 +499,7 @@ osl_psz_loginUser(const sal_Char* pszUse
+ 			   oslSecurity* pSecurity)
+ {
+ #if defined NETBSD || defined SCO || defined AIX || defined FREEBSD || \
+-	defined MACOSX
++	defined MACOSX || defined OPENBSD
+ 
+ 	return osl_Security_E_None;
+ 

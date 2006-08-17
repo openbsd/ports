@@ -1,0 +1,21 @@
+$OpenBSD: patch-tools_source_fsys_unx_cxx,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
+--- tools/source/fsys/unx.cxx.orig	Mon Jun 19 15:42:57 2006
++++ tools/source/fsys/unx.cxx	Tue Aug 15 14:03:11 2006
+@@ -49,7 +49,7 @@
+ extern "C" int mntctl( int cmd, size_t size, char* buf );
+ #elif defined(NETBSD) 
+ #include <sys/mount.h>
+-#elif defined(FREEBSD) || defined(MACOSX)
++#elif defined(FREEBSD) || defined(MACOSX) || defined(OPENBSD)
+ #elif defined DECUNIX
+ struct mnttab
+ {
+@@ -102,7 +102,7 @@ struct mymnttab
+ };
+ 
+ 
+-#if defined(NETBSD) || defined(FREEBSD) || defined(MACOSX)
++#if defined(NETBSD) || defined(FREEBSD) || defined(MACOSX) || defined(OPENBSD)
+ BOOL GetMountEntry(dev_t dev, struct mymnttab *mytab)
+ {
+ 	DBG_WARNING( "Sorry, not implemented: GetMountEntry" );

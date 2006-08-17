@@ -1,0 +1,13 @@
+$OpenBSD: patch-dmake_configure_in,v 1.1.1.1 2006/08/17 14:56:22 robert Exp $
+--- dmake/configure.in.orig	Thu Jun 29 13:22:28 2006
++++ dmake/configure.in	Tue Aug 15 14:03:09 2006
+@@ -104,6 +104,9 @@ case "$_os" in
+ 	"AIX")
+ 	  OS_VERSION=sysvr4
+ 	  ;;
++	"OpenBSD")
++	  OS_VERSION=linux
++	  ;;
+    *)
+       AC_MSG_ERROR([$_os operating system is not suitable to build dmake!])
+       ;;

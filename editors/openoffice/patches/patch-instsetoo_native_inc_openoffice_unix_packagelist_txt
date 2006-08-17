@@ -1,0 +1,321 @@
+$OpenBSD: patch-instsetoo_native_inc_openoffice_unix_packagelist_txt,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
+--- instsetoo_native/inc_openoffice/unix/packagelist.txt.orig	Wed Jul  5 23:14:13 2006
++++ instsetoo_native/inc_openoffice/unix/packagelist.txt	Tue Aug 15 14:05:56 2006
+@@ -28,7 +28,7 @@ findrequires = "find-requires-gnome.sh"
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Gnome integration module for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -42,7 +42,7 @@ requires = "%UNIXPRODUCTNAME-core01"
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "KDE integration module for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -56,7 +56,7 @@ freebsdrequires = "%UNIXPRODUCTNAME-core
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Core module for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -71,7 +71,7 @@ requires = "%UNIXPRODUCTNAME-core01"
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Writer module for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -86,7 +86,7 @@ requires = "%UNIXPRODUCTNAME-core01"
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Calc module for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -101,7 +101,7 @@ requires = "%UNIXPRODUCTNAME-core01"
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Draw module for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -116,7 +116,7 @@ requires = "%UNIXPRODUCTNAME-core01"
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Impress module for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -131,7 +131,7 @@ requires = "%UNIXPRODUCTNAME-core01"
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Base module for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -146,7 +146,7 @@ requires = "%UNIXPRODUCTNAME-core01"
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Math module for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -160,7 +160,7 @@ requires = "%UNIXPRODUCTNAME-core01"
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Graphic filter module for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -174,7 +174,7 @@ requires = "%UNIXPRODUCTNAME-core01"
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Testtool module for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -188,7 +188,7 @@ requires = "%UNIXPRODUCTNAME-core01"
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "English spellchecker module for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -202,7 +202,7 @@ requires = "%UNIXPRODUCTNAME-core01"
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "XSLT filter samples module for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -216,7 +216,7 @@ requires = "%UNIXPRODUCTNAME-core01"
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Java filter module for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -230,7 +230,7 @@ requires = "%UNIXPRODUCTNAME-core01"
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Optional gallery for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -244,7 +244,7 @@ requires = "%UNIXPRODUCTNAME-core01"
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Language utilities for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -258,7 +258,7 @@ requires = "%UNIXPRODUCTNAME-core01"
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "ActiveX control for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -272,7 +272,7 @@ requires = "%UNIXPRODUCTNAME-core01"
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Pyuno module for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -282,11 +282,12 @@ solarisrequires = "%WITHOUTDOTUNIXPRODUC
+ packagename = "%UNIXPRODUCTNAME-emailmerge"
+ linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-emailmerge"
+ freebsdrequires = "%UNIXPRODUCTNAME-core01"
++openbsdrequires = "%UNIXPRODUCTNAME-core01"
+ requires = "%UNIXPRODUCTNAME-pyuno"
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Email mailmerge module for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -300,7 +301,7 @@ requires = "%UNIXPRODUCTNAME-core01"
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Mailcap module for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -310,12 +311,12 @@ solarispackagename = "%WITHOUTDOTUNIXPRO
+ solarisrequires = "%WITHOUTDOTUNIXPRODUCTNAME-core01"
+ packagename = "%UNIXPRODUCTNAME-core02"
+ linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-core02"
+-requires = "%UNIXPRODUCTNAME-core01"
++requires = ""
+ freebsdrequires = ""
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -324,12 +325,12 @@ solarispackagename = "%WITHOUTDOTUNIXPRO
+ solarisrequires = "%WITHOUTDOTUNIXPRODUCTNAME-core01"
+ packagename = "%UNIXPRODUCTNAME-core03"
+ linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-core03"
+-requires = "%UNIXPRODUCTNAME-core01"
++requires = ""
+ freebsdrequires = ""
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -338,12 +339,12 @@ solarispackagename = "%WITHOUTDOTUNIXPRO
+ solarisrequires = "%WITHOUTDOTUNIXPRODUCTNAME-core01"
+ packagename = "%UNIXPRODUCTNAME-core04"
+ linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-core04,%UNIXPRODUCTNAME-spellcheck"
+-requires = "%UNIXPRODUCTNAME-core01"
++requires = ""
+ freebsdrequires = ""
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -352,12 +353,12 @@ solarispackagename = "%WITHOUTDOTUNIXPRO
+ solarisrequires = "%WITHOUTDOTUNIXPRODUCTNAME-core01"
+ packagename = "%UNIXPRODUCTNAME-core05"
+ linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-core05"
+-requires = "%UNIXPRODUCTNAME-core01"
++requires = ""
+ freebsdrequires = ""
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -366,12 +367,12 @@ solarispackagename = "%WITHOUTDOTUNIXPRO
+ solarisrequires = "%WITHOUTDOTUNIXPRODUCTNAME-core01"
+ packagename = "%UNIXPRODUCTNAME-core06"
+ linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-core06"
+-requires = "%UNIXPRODUCTNAME-core01"
++requires = ""
+ freebsdrequires = ""
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -380,12 +381,12 @@ solarispackagename = "%WITHOUTDOTUNIXPRO
+ solarisrequires = "%WITHOUTDOTUNIXPRODUCTNAME-core01"
+ packagename = "%UNIXPRODUCTNAME-core07"
+ linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-core07"
+-requires = "%UNIXPRODUCTNAME-core01"
++requires = ""
+ freebsdrequires = ""
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -394,12 +395,12 @@ solarispackagename = "%WITHOUTDOTUNIXPRO
+ solarisrequires = "%WITHOUTDOTUNIXPRODUCTNAME-core01"
+ packagename = "%UNIXPRODUCTNAME-core08"
+ linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-core08"
+-requires = "%UNIXPRODUCTNAME-core01"
++requires = ""
+ freebsdrequires = ""
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -408,12 +409,12 @@ solarispackagename = "%WITHOUTDOTUNIXPRO
+ solarisrequires = "%WITHOUTDOTUNIXPRODUCTNAME-core01"
+ packagename = "%UNIXPRODUCTNAME-core09"
+ linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-core09"
+-requires = "%UNIXPRODUCTNAME-core01"
++requires = ""
+ freebsdrequires = ""
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -423,10 +424,10 @@ solarispackagename = "%WITHOUTDOTUNIXPRO
+ solarisrequires = "%WITHOUTDOTUNIXPRODUCTNAME-core01"
+ packagename = "%UNIXPRODUCTNAME-core10"
+ linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-core10"
+-requires = "%UNIXPRODUCTNAME-core01"
++requires = ""
+ freebsdrequires = ""
+ copyright = "1999-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End

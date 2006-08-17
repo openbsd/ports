@@ -1,0 +1,12 @@
+$OpenBSD: patch-vcl_unx_inc_salunx_h,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
+--- vcl/unx/inc/salunx.h.orig	Tue Jul 25 11:38:23 2006
++++ vcl/unx/inc/salunx.h	Tue Aug 15 14:03:11 2006
+@@ -37,7 +37,7 @@
+ #define _SALUNX_H
+ 
+ // -=-= #includes =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-#if defined SCO || defined LINUX || defined HPUX || defined FREEBSD || defined NETBSD || defined MACOSX
++#if defined SCO || defined LINUX || defined HPUX || defined FREEBSD || defined NETBSD || defined MACOSX || defined OPENBSD
+ #include <sys/time.h>
+ #elif defined AIX
+ #include <time.h>

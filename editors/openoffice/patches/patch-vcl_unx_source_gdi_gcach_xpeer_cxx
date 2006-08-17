@@ -1,0 +1,12 @@
+$OpenBSD: patch-vcl_unx_source_gdi_gcach_xpeer_cxx,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
+--- vcl/unx/source/gdi/gcach_xpeer.cxx.orig	Tue Jun 20 18:20:38 2006
++++ vcl/unx/source/gdi/gcach_xpeer.cxx	Tue Aug 15 14:03:11 2006
+@@ -108,7 +108,7 @@ void X11GlyphPeer::SetDisplay( Display* 
+ #ifdef MACOSX
+     OUString xrenderLibraryName( RTL_CONSTASCII_USTRINGPARAM( "libXrender.dylib" ));
+ #else
+-    OUString xrenderLibraryName( RTL_CONSTASCII_USTRINGPARAM( "libXrender.so.1" ));
++    OUString xrenderLibraryName( RTL_CONSTASCII_USTRINGPARAM( "libXrender.so" ));
+ #endif
+     oslModule pRenderLib=osl_loadModule(xrenderLibraryName.pData, SAL_LOADMODULE_DEFAULT);
+     if( !pRenderLib ) {

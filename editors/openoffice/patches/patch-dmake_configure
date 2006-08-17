@@ -1,0 +1,13 @@
+$OpenBSD: patch-dmake_configure,v 1.1.1.1 2006/08/17 14:56:22 robert Exp $
+--- dmake/configure.orig	Thu Jun 29 13:22:15 2006
++++ dmake/configure	Tue Aug 15 14:03:09 2006
+@@ -3475,6 +3475,9 @@ case "$_os" in
+ 	"AIX")
+ 	  OS_VERSION=sysvr4
+ 	  ;;
++	"OpenBSD")
++	  OS_VERSION=linux
++	  ;;
+    *)
+       { { echo "$as_me:$LINENO: error: $_os operating system is not suitable to build dmake!" >&5
+ echo "$as_me: error: $_os operating system is not suitable to build dmake!" >&2;}

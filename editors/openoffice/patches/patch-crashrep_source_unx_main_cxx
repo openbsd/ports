@@ -1,0 +1,12 @@
+$OpenBSD: patch-crashrep_source_unx_main_cxx,v 1.1.1.1 2006/08/17 14:56:22 robert Exp $
+--- crashrep/source/unx/main.cxx.orig	Mon Jun 19 16:31:28 2006
++++ crashrep/source/unx/main.cxx	Tue Aug 15 14:03:09 2006
+@@ -50,7 +50,7 @@
+ #include <vector>
+ #include <string>
+ 
+-#if defined (LINUX) || (FREEBSD)
++#if defined (LINUX) || (FREEBSD) || (OPENBSD)
+ #include <netinet/in.h>
+ #endif
+ 

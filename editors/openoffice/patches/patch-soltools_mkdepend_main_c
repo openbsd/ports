@@ -1,0 +1,15 @@
+$OpenBSD: patch-soltools_mkdepend_main_c,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
+--- soltools/mkdepend/main.c.orig	Thu Aug 17 15:00:25 2006
++++ soltools/mkdepend/main.c	Thu Aug 17 15:00:44 2006
+@@ -32,6 +32,11 @@
+ #include <sys/stat.h>
+ #endif
+ 
++#if defined(OPENBSD)
++#include <sys/types.h>
++#include <unistd.h>
++#endif
++
+ #ifdef _MSC_VER	    /* Define ssize_t */
+ 
+ #if !defined(_W64)

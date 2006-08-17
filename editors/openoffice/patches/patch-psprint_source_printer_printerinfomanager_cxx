@@ -1,0 +1,12 @@
+$OpenBSD: patch-psprint_source_printer_printerinfomanager_cxx,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
+--- psprint/source/printer/printerinfomanager.cxx.orig	Mon Jul 10 18:30:50 2006
++++ psprint/source/printer/printerinfomanager.cxx	Tue Aug 15 14:03:10 2006
+@@ -1172,7 +1172,7 @@ struct SystemCommandParameters
+ 
+ static const struct SystemCommandParameters aParms[] =
+ {
+-#if defined(LINUX) || defined(NETBSD) || defined(FREEBSD) || defined(MACOSX) 
++#if defined(LINUX) || defined(NETBSD) || defined(FREEBSD) || defined(MACOSX) || defined (OPENBSD)
+     { "/usr/sbin/lpc status", "lpr -P \"(PRINTER)\"", "", ":", 0 },
+     { "lpc status", "lpr -P \"(PRINTER)\"", "", ":", 0 },
+     { "LANG=C;LC_ALL=C;export LANG LC_ALL;lpstat -s", "lp -d \"(PRINTER)\"", "system for ", ": ", 1 }

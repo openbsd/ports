@@ -1,0 +1,93 @@
+$OpenBSD: patch-cppu_source_typelib_typelib_cxx,v 1.1.1.1 2006/08/17 14:56:22 robert Exp $
+--- cppu/source/typelib/typelib.cxx.orig	Mon Jun 19 15:13:24 2006
++++ cppu/source/typelib/typelib.cxx	Tue Aug 15 14:03:09 2006
+@@ -643,7 +643,7 @@ extern "C" void SAL_CALL typelib_typedes
+ 			pRet = (typelib_TypeDescription *)pTmp;
+ #if OSL_DEBUG_LEVEL > 1
+ 			osl_incrementInterlockedCount(
+-                Init::get().nArrayTypeDescriptionCount );
++                &Init::get().nArrayTypeDescriptionCount );
+ #endif
+ 			pIndirect->pType = 0;
+ 			pTmp->nDimensions = 0;
+@@ -658,7 +658,7 @@ extern "C" void SAL_CALL typelib_typedes
+ 			pRet = (typelib_TypeDescription *)pTmp;
+ #if OSL_DEBUG_LEVEL > 1
+ 			osl_incrementInterlockedCount(
+-                Init::get().nIndirectTypeDescriptionCount );
++                &Init::get().nIndirectTypeDescriptionCount );
+ #endif
+ 			pTmp->pType = 0;
+ 		}
+@@ -671,7 +671,7 @@ extern "C" void SAL_CALL typelib_typedes
+ 			pRet = (typelib_TypeDescription *)pTmp;
+ #if OSL_DEBUG_LEVEL > 1
+ 			osl_incrementInterlockedCount(
+-                Init::get().nUnionTypeDescriptionCount );
++                &Init::get().nUnionTypeDescriptionCount );
+ #endif
+ 			pTmp->nMembers = 0;
+ 			pTmp->pDiscriminantTypeRef = 0;
+@@ -690,7 +690,7 @@ extern "C" void SAL_CALL typelib_typedes
+ 			pRet = (typelib_TypeDescription *)pTmp;
+ #if OSL_DEBUG_LEVEL > 1
+ 			osl_incrementInterlockedCount(
+-                Init::get().nCompoundTypeDescriptionCount );
++                &Init::get().nCompoundTypeDescriptionCount );
+ #endif
+ 			pTmp->aBase.pBaseTypeDescription = 0;
+ 			pTmp->aBase.nMembers = 0;
+@@ -709,7 +709,7 @@ extern "C" void SAL_CALL typelib_typedes
+ 			pRet = (typelib_TypeDescription *)pTmp;
+ #if OSL_DEBUG_LEVEL > 1
+ 			osl_incrementInterlockedCount(
+-                Init::get().nCompoundTypeDescriptionCount );
++                &Init::get().nCompoundTypeDescriptionCount );
+ #endif
+ 			pTmp->pBaseTypeDescription = 0;
+ 			pTmp->nMembers = 0;
+@@ -725,7 +725,7 @@ extern "C" void SAL_CALL typelib_typedes
+ 			pRet = (typelib_TypeDescription *)pTmp;
+ #if OSL_DEBUG_LEVEL > 1
+ 			osl_incrementInterlockedCount(
+-                Init::get().nEnumTypeDescriptionCount );
++                &Init::get().nEnumTypeDescriptionCount );
+ #endif
+ 			pTmp->nDefaultEnumValue = 0;
+ 			pTmp->nEnumValues		= 0;
+@@ -740,7 +740,7 @@ extern "C" void SAL_CALL typelib_typedes
+ 			pRet = (typelib_TypeDescription *)pTmp;
+ #if OSL_DEBUG_LEVEL > 1
+ 			osl_incrementInterlockedCount(
+-                Init::get().nInterfaceTypeDescriptionCount );
++                &Init::get().nInterfaceTypeDescriptionCount );
+ #endif
+ 			pTmp->pBaseTypeDescription = 0;
+ 			pTmp->nMembers = 0;
+@@ -761,7 +761,7 @@ extern "C" void SAL_CALL typelib_typedes
+ 			pRet = (typelib_TypeDescription *)pTmp;
+ #if OSL_DEBUG_LEVEL > 1
+ 			osl_incrementInterlockedCount(
+-                Init::get().nInterfaceMethodTypeDescriptionCount );
++                &Init::get().nInterfaceMethodTypeDescriptionCount );
+ #endif
+ 			pTmp->aBase.pMemberName = 0;
+ 			pTmp->pReturnTypeRef = 0;
+@@ -781,7 +781,7 @@ extern "C" void SAL_CALL typelib_typedes
+ 			pRet = (typelib_TypeDescription *)pTmp;
+ #if OSL_DEBUG_LEVEL > 1
+ 			osl_incrementInterlockedCount(
+-                Init::get().nInterfaceAttributeTypeDescriptionCount );
++                &Init::get().nInterfaceAttributeTypeDescriptionCount );
+ #endif
+ 			pTmp->aBase.pMemberName = 0;
+ 			pTmp->pAttributeTypeRef = 0;
+@@ -799,7 +799,7 @@ extern "C" void SAL_CALL typelib_typedes
+ 		{
+ 			pRet = new typelib_TypeDescription();
+ #if OSL_DEBUG_LEVEL > 1
+-			osl_incrementInterlockedCount( Init::get().nTypeDescriptionCount );
++			osl_incrementInterlockedCount( &Init::get().nTypeDescriptionCount );
+ #endif
+ 		}
+ 	}

@@ -1,0 +1,12 @@
+$OpenBSD: patch-jvmaccess_util_makefile_mk,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
+--- jvmaccess/util/makefile.mk.orig	Wed Sep  7 21:23:59 2005
++++ jvmaccess/util/makefile.mk	Tue Aug 15 14:03:10 2006
+@@ -68,6 +68,8 @@ SHL1VERSIONMAP = gcc3_linux_intel.map
+ SHL1VERSIONMAP = gcc3_linux_intel.map
+ .ELIF "$(OS)$(CPU)$(COMNAME)" == "LINUXSgcc3"
+ SHL1VERSIONMAP = gcc3_linux_intel.map
++.ELIF "$(OS)$(CPU)$(COMNAME)" == "OPENBSDIgcc3"
++SHL1VERSIONMAP = gcc3_linux_intel.map
+ .ENDIF
+ 
+ DEF1NAME = $(SHL1TARGET)

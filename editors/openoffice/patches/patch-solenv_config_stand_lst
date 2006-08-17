@@ -1,0 +1,55 @@
+$OpenBSD: patch-solenv_config_stand_lst,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
+--- solenv/config/stand.lst.orig	Fri May 19 11:36:56 2006
++++ solenv/config/stand.lst	Tue Aug 15 14:03:11 2006
+@@ -37,10 +37,10 @@ SRC680
+ 	}
+ 	Environments
+ 	{
+-		unxfbsdi.pro
++		unxobsdi.pro
+ 		{
+ 			prio 12
+-			setsolar -SRC680 -pro -bsclient unxfbsdi
++			setsolar -SRC680 -pro -bsclient unxobsdi
+ 		}
+ 		unxlngi5.pro
+ 		{
+@@ -97,10 +97,10 @@ SRC680
+ 			prio 15
+ 			setsolar -SRC680 -pro -bsclient unxsols64b1
+ 		}
+-		unxfbsdi
++		unxobsdi
+ 		{
+ 			prio 15
+-			setsolar -SRC680 -bsclient unxfbsdi
++			setsolar -SRC680 -bsclient unxobsdi
+ 		}
+ 		unxlngi5
+ 		{
+@@ -996,10 +996,10 @@ OOB680
+ 	}
+ 	Environments
+ 	{
+-		unxfbsdi.pro
++		unxobsdi.pro
+ 		{
+ 			prio 12
+-			setsolar -OOB680 -pro -bsclient unxfbsdi
++			setsolar -OOB680 -pro -bsclient unxobsdi
+ 		}
+ 		unxlngi5.pro
+ 		{
+@@ -1056,10 +1056,10 @@ OOB680
+ 			prio 15
+ 			setsolar -OOB680 -pro -bsclient unxsols64b1
+ 		}
+-		unxfbsdi
++		unxobsdi
+ 		{
+ 			prio 15
+-			setsolar -OOB680 -bsclient unxfbsdi
++			setsolar -OOB680 -bsclient unxobsdi
+ 		}
+ 		unxlngi5
+ 		{

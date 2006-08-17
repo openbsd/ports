@@ -1,0 +1,12 @@
+$OpenBSD: patch-solenv_config_ssolar_cmn,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
+--- solenv/config/ssolar.cmn.orig	Fri Jun  2 14:31:52 2006
++++ solenv/config/ssolar.cmn	Tue Aug 15 14:03:11 2006
+@@ -516,7 +516,7 @@ unxaixp
+ 	}
+ }
+ 
+-unxfbsdi
++unxobsdi
+ {
+ 	standlst
+ 	{

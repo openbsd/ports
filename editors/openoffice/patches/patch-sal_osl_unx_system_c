@@ -1,0 +1,21 @@
+$OpenBSD: patch-sal_osl_unx_system_c,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
+--- sal/osl/unx/system.c.orig	Wed Jul 19 11:39:37 2006
++++ sal/osl/unx/system.c	Tue Aug 15 14:03:10 2006
+@@ -48,7 +48,7 @@
+ static pthread_mutex_t getrtl_mutex = PTHREAD_MUTEX_INITIALIZER;
+ 
+ /* struct passwd differs on some platforms */
+-#if defined NETBSD || defined MACOSX
++#if defined NETBSD || defined MACOSX || defined OPENBSD
+ #include <pwd.h>
+ #include <sys/types.h>
+ 
+@@ -139,7 +139,7 @@ struct passwd *getpwnam_r(const char* na
+ #endif /* MACOSX */
+ }
+ 
+-#if defined(NETBSD) || defined(MACOSX)
++#if defined(NETBSD) || defined(MACOSX) || defined (OPENBSD)
+ int getpwuid_r(uid_t uid, struct passwd *pwd, char *buffer,
+            size_t buflen, struct passwd **result)
+ {

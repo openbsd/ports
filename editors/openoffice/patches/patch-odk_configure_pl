@@ -1,0 +1,14 @@
+$OpenBSD: patch-odk_configure_pl,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
+--- odk/configure.pl.orig	Wed Nov  9 10:28:37 2005
++++ odk/configure.pl	Tue Aug 15 14:03:10 2006
+@@ -28,6 +28,10 @@ if ( $main::operatingSystem =~ /freebsd/
+ {
+     $main::makeName = "gmake";
+ }
++if ( $main::operatingSystem =~ /openbsd/ )
++{
++    $main::makeName = "gmake";
++}
+ $main::OO_SDK_MAKE_HOME_SUGGESTION = searchprog($main::makeName);
+ $main::makeVersion = "3.79.1";
+ $main::correctVersion = 0;

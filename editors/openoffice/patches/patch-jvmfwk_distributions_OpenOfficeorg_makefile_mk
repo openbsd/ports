@@ -1,0 +1,12 @@
+$OpenBSD: patch-jvmfwk_distributions_OpenOfficeorg_makefile_mk,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
+--- jvmfwk/distributions/OpenOfficeorg/makefile.mk.orig	Tue Jan 31 19:28:42 2006
++++ jvmfwk/distributions/OpenOfficeorg/makefile.mk	Tue Aug 15 14:03:10 2006
+@@ -49,7 +49,7 @@ $(BIN)$/javavendors_ooo.xml: javavendors
+ .IF "$(GUI)"=="UNX"
+ .IF "$(OS)"=="MACOSX"
+ 	+-$(COPY) javavendors_macosx.xml $(BIN)$/javavendors_ooo.xml
+-.ELIF "$(OS)"=="LINUX" || "$(OS)"=="FREEBSD"
++.ELIF "$(OS)"=="LINUX" || "$(OS)"=="FREEBSD" || "$(OS)"=="OPENBSD"
+ 	+-$(COPY) javavendors_linux.xml $(BIN)$/javavendors_ooo.xml
+ .ELSE
+ 	+-$(COPY) javavendors_unx.xml $(BIN)$/javavendors_ooo.xml

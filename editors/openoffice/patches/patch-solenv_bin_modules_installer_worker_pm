@@ -1,0 +1,12 @@
+$OpenBSD: patch-solenv_bin_modules_installer_worker_pm,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
+--- solenv/bin/modules/installer/worker.pm.orig	Mon Jul 10 13:00:31 2006
++++ solenv/bin/modules/installer/worker.pm	Tue Aug 15 14:03:11 2006
+@@ -511,7 +511,7 @@ sub clean_output_tree
+ 		if ( -d $installer::globals::removedirs[$i] )
+ 		{
+ 			installer::logger::print_message( "... removing directory $installer::globals::removedirs[$i] ...\n" );
+-			installer::systemactions::remove_complete_directory($installer::globals::removedirs[$i], 1);			
++#			installer::systemactions::remove_complete_directory($installer::globals::removedirs[$i], 1);			
+ 		}
+ 	}
+ 

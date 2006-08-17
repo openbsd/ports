@@ -1,0 +1,21 @@
+$OpenBSD: patch-store_source_fileunx_hxx,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
+--- store/source/fileunx.hxx.orig	Tue Jun 20 02:32:01 2006
++++ store/source/fileunx.hxx	Tue Aug 15 14:03:11 2006
+@@ -46,7 +46,7 @@
+ #include <sys/stat.h>
+ #include <sys/types.h>
+ 
+-#if defined(FREEBSD) || defined(NETBSD) || defined(MACOSX)
++#if defined(FREEBSD) || defined(NETBSD) || defined(MACOSX) || defined(OPENBSD)
+ #define EDEADLOCK EDEADLK
+ #endif /* FREEBSD || NETBSD || MACOSX */
+ 
+@@ -86,7 +86,7 @@ inline sal_Int32 __store_errno (void)
+ /*
+  * __store_malign.
+  */
+-#if   defined(FREEBSD) || defined(LINUX) || defined(MACOSX)
++#if   defined(FREEBSD) || defined(LINUX) || defined(MACOSX) || defined (OPENBSD)
+ inline sal_uInt32 __store_malign (void)
+ {
+ 	return (sal_uInt32)::getpagesize();

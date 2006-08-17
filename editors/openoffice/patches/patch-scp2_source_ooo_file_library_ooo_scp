@@ -1,0 +1,57 @@
+$OpenBSD: patch-scp2_source_ooo_file_library_ooo_scp,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
+--- scp2/source/ooo/file_library_ooo.scp.orig	Thu Jul 13 12:26:22 2006
++++ scp2/source/ooo/file_library_ooo.scp	Tue Aug 15 14:03:11 2006
+@@ -819,7 +819,7 @@ File gid_File_Lib_Freetype
+   #endif
+     TXT_FILE_BODY;
+     Styles = (PACKED);
+-  #if defined (FREEBSD) || defined (NETBSD)
++  #if defined (FREEBSD) || defined (NETBSD) || defined (OPENBSD)
+     Name = "libfreetype.so.9";
+   #else
+     Name = "libfreetype.so.6";
+@@ -862,7 +862,7 @@ STD_UNO_LIB_FILE_PATCH( gid_File_Lib_Fwl
+ 
+ STD_UNO_LIB_FILE_PATCH( gid_File_Lib_Fwm , fwm)
+ 
+-#if ! (defined (FREEBSD) || defined (NETBSD) || defined(MACOSX) || defined(SYSTEM_STDLIBS))
++#if ! (defined (FREEBSD) || defined (NETBSD) || defined(MACOSX) || defined(SYSTEM_STDLIBS) || defined (OPENBSD))
+ #if defined( _gcc3 )
+ 
+ File gid_File_Lib_Gcc
+@@ -876,7 +876,7 @@ End
+ 
+ #endif
+ 
+-#if ! (defined (FREEBSD) || defined (NETBSD) || defined(MACOSX) || defined(SYSTEM_STDLIBS))
++#if ! (defined (FREEBSD) || defined (NETBSD) || defined(MACOSX) || defined(SYSTEM_STDLIBS) || defined (OPENBSD))
+ #if defined( _gcc3 )
+ 
+ File gid_File_Lib_Stdc
+@@ -890,7 +890,7 @@ End
+ 
+ #endif
+ 
+-#if defined(LINUX) || defined(FREEBSD) || defined(NETBSD) || defined(IRIX) || defined(MACOSX)
++#if defined(LINUX) || defined(FREEBSD) || defined(NETBSD) || defined(IRIX) || defined(MACOSX) || defined(OPENBSD)
+ 
+ File gid_File_Lib_Gcc2_Uno
+     TXT_FILE_BODY;
+@@ -1903,7 +1903,7 @@ File gid_File_Lib_Stlport
+   #ifdef _STLP_DEBUG
+   #ifdef UNX
+   #if defined(_gcc3) || defined(_GCC)
+-  #ifdef IRIX
++  #if defined(IRIX) || defined(OPENBSD)
+     Name = STRING(CONCAT3(libstlport_,gcc_stldebug,.so.4.5));
+   #else
+     Name = STRING(CONCAT3(libstlport_,gcc_stldebug,UNXSUFFIX));
+@@ -1927,7 +1927,7 @@ File gid_File_Lib_Stlport
+   #else
+   #ifdef UNX
+   #if defined(_gcc3) || defined(_GCC)
+-  #ifdef IRIX
++  #if defined(IRIX) || defined(OPENBSD)
+     Name = STRING(CONCAT3(libstlport_,gcc,.so.4.5));
+   #else
+     Name = STRING(CONCAT3(libstlport_,gcc,UNXSUFFIX));

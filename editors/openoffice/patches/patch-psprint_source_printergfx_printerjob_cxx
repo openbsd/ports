@@ -1,0 +1,12 @@
+$OpenBSD: patch-psprint_source_printergfx_printerjob_cxx,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
+--- psprint/source/printergfx/printerjob.cxx.orig	Tue Jul 25 11:36:11 2006
++++ psprint/source/printergfx/printerjob.cxx	Tue Aug 15 14:03:10 2006
+@@ -262,7 +262,7 @@ getUserName (char* pName, int nSize)
+ 
+     sal_Bool bSuccess = sal_False;
+ 
+-#ifdef FREEBSD
++#if defined (FREEBSD) || defined (OPENBSD)
+         pPWEntry = getpwuid( getuid());
+ #else
+     if (getpwuid_r(getuid(), &aPWEntry, pPWBuffer, sizeof(pPWBuffer), &pPWEntry) != 0)

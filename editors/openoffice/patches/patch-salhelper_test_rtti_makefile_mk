@@ -1,0 +1,12 @@
+$OpenBSD: patch-salhelper_test_rtti_makefile_mk,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
+--- salhelper/test/rtti/makefile.mk.orig	Thu Sep  8 19:02:46 2005
++++ salhelper/test/rtti/makefile.mk	Tue Aug 15 14:03:10 2006
+@@ -93,6 +93,8 @@ SHL1VERSIONMAP= lngi.map
+ SHL1VERSIONMAP= gcc2_freebsd_intel.map
+ .ELIF "$(OS)$(CPU)$(COMNAME)" == "GCCFREEBSDIgcc3"
+ SHL1VERSIONMAP= gcc3_freebsd_intel.map
++.ELIF "$(OS)$(CPU)$(COMNAME)" == "GCCOPENBSDIgcc3"
++SHL1VERSIONMAP= gcc3_linux_intel.map
+ .ENDIF
+ 
+ 

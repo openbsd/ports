@@ -1,0 +1,60 @@
+$OpenBSD: patch-solenv_config_ssrc680_ini,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
+--- solenv/config/ssrc680.ini.orig	Wed Jul 19 11:38:15 2006
++++ solenv/config/ssrc680.ini	Tue Aug 15 14:03:11 2006
+@@ -2454,7 +2454,7 @@ unxmacxp
+ 	}
+ }
+ 
+-unxfbsdi
++unxobsdi
+ {
+ 	extern
+ 	{
+@@ -2628,7 +2628,7 @@ unxfbsdi
+ 		}
+ 		common2
+ 		{
+-			OS FREEBSD
++			OS OPENBSD
+ 			GLIBC GLIBC
+ 			GUI UNX
+ 			GUIBASE unx
+@@ -2636,22 +2636,22 @@ unxfbsdi
+ 			COM GCC
+ 			CPU I
+ 			CPUNAME INTEL
+-			INPATH unxfbsdi%PROEXT%
+-			GVERDIR unxfbsdi%PROEXT%
+-			OUTPATH unxfbsdi
++			INPATH unxobsdi%PROEXT%
++			GVERDIR unxobsdi%PROEXT%
++			OUTPATH unxobsdi
+ 			CVER C300
+ 			GVER VCL
+ 			XPVERSION 3
+ 			SOLARUPD %UPD%
+ 			TEMP /tmp
+ 			TMP /tmp
+-			BUILD_TOOLS %SOLARROOT%/bt_unxfbsdi/bin
+-			ENV_TOOLS %SOLARROOT%/et_unxfbsdi/bin
++			BUILD_TOOLS %SOLARROOT%/bt_unxobsdi/bin
++			ENV_TOOLS %SOLARROOT%/et_unxobsdi/bin
+ 			COMMON_BUILD_TOOLS %SOLARROOT%$/btools
+ 			COMMON_ENV_TOOLS %SOLARROOT%$/etools
+ 			SYSBASE	%SOLAR_SYSBASE_ROOT%
+-			SOLAR_STLPATH  %SOLARVERSION%$/unxfbsdi%PROEXT%$/inc%UPDMINOREXT%$/stl
+-			SOLAR_STLLIBPATH  %SOLARVERSION%$/unxfbsdi%PROEXT%$/lib%UPDMINOREXT%
++			SOLAR_STLPATH  %SOLARVERSION%$/unxobsdi%PROEXT%$/inc%UPDMINOREXT%$/stl
++			SOLAR_STLLIBPATH  %SOLARVERSION%$/unxobsdi%PROEXT%$/lib%UPDMINOREXT%
+ 			JDK13PATH %SOLAR_JDK13PATH%
+ 			JDK14PATH %SOLAR_JDK14PATH%
+ 			JDK15PATH %SOLAR_JDK15PATH%
+@@ -2668,7 +2668,7 @@ unxfbsdi
+ 			LD_LIBRARY_PATH .:/usr/local/lib:%HOME%/%WORK_STAMP%/%INPATH%/lib:../lib:%SOLARVERSION%/%INPATH%/lib%UPDMINOREXT%:%COMPATH%/libexec
+ 			SOLAREXTRALIB -L../lib -L%SYSBASE%/usr/X11R6/lib -L%SYSBASE%/usr/lib -L/usr/X11R6/lib  -L%SOLAR_STLLIBPATH%
+ 			SOLAREXTRAINC -I%SOLAR_STLPATH% -I%SYSBASE%/usr/include -I%SYSBASE%/usr/include/X11
+-			SOLARDEF -DUNX -DGCC -DC301 -D_PTHREADS -DFREEBSD -DBSD -DINTEL -DX86 -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS -DGLIBC=%GLIBC% -DSUPD=%UPD% %PROSWITCH% -DUPDVER=""'"'"SV%UPD%"'"'""
++			SOLARDEF -DUNX -DGCC -DC301 -D_PTHREADS -DOPENBSD -DBSD -DINTEL -DX86 -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS -DGLIBC=%GLIBC% -DSUPD=%UPD% %PROSWITCH% -DUPDVER=""'"'"SV%UPD%"'"'""
+ 			*build perl %SOLARENV%/bin/build.pl %PROFULLSWITCH%
+ 			*copyprj perl %COMMON_ENV_TOOLS%/copyprj.pl
+ 			COPYPRJ perl %COMMON_ENV_TOOLS%/copyprj.pl

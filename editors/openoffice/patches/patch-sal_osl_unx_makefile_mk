@@ -1,0 +1,12 @@
+$OpenBSD: patch-sal_osl_unx_makefile_mk,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
+--- sal/osl/unx/makefile.mk.orig	Wed Jul 19 11:55:27 2006
++++ sal/osl/unx/makefile.mk	Tue Aug 15 14:03:10 2006
+@@ -110,7 +110,7 @@ OBJFILES=   $(OBJ)$/conditn.obj  \
+ 			$(OBJ)$/file_stat.obj
+ #.ENDIF
+ 
+-.IF "$(OS)"=="SOLARIS" || "$(OS)"=="FREEBSD" || "$(OS)"=="NETBSD" || "$(OS)$(CPU)"=="LINUXS"
++.IF "$(OS)"=="SOLARIS" || "$(OS)"=="FREEBSD" || "$(OS)"=="NETBSD" || "$(OS)$(CPU)"=="LINUXS" || "$(OS)"=="OPENBSD"
+ SLOFILES += $(SLO)$/backtrace.obj
+ OBJFILES += $(OBJ)$/backtrace.obj
+ .ENDIF

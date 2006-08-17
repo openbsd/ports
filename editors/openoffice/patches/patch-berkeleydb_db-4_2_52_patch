@@ -1,0 +1,1340 @@
+$OpenBSD: patch-berkeleydb_db-4_2_52_patch,v 1.1.1.1 2006/08/17 14:56:21 robert Exp $
+--- berkeleydb/db-4.2.52.patch.orig	Tue Jul 25 12:23:22 2006
++++ berkeleydb/db-4.2.52.patch	Tue Aug 15 14:03:09 2006
+@@ -521,6 +521,19 @@
+ *** misc/db-4.2.52.NC/dist/configure	Wed Dec  3 22:10:02 2003
+ --- misc/build/db-4.2.52.NC/dist/configure	Tue Jul 25 09:05:20 2006
+ ***************
++*** 3492,3497 ****
++--- 3492,3501 ----
++  cygwin*)
++  	optimize_def="-O2"
++  	CPPFLAGS="$CPPFLAGS -D_GNU_SOURCE -D_REENTRANT";;
+++ openbsd*)
+++ 	optimize_def="-O2"
+++ 	CPPFLAGS="$CPPFLAGS -D_THREAD_SAFE"
+++ 	LDFLAGS="$LDFLAGS -pthread";;
++  freebsd*)
++  	optimize_def="-O2"
++  	CPPFLAGS="$CPPFLAGS -D_THREAD_SAFE"
++***************
+ *** 5624,5630 ****
+         # Check to see if the program is GNU ld.  I'd rather use --version,
+         # but apparently some GNU ld's only accept -v.
+@@ -529,7 +542,7 @@
+         *GNU* | *'with BFD'*)
+   	test "$with_gnu_ld" != no && break
+   	;;
+---- 5624,5630 ----
++--- 5628,5634 ----
+         # Check to see if the program is GNU ld.  I'd rather use --version,
+         # but apparently some GNU ld's only accept -v.
+         # Break only if it was the GNU/non-GNU ld that we prefer.
+@@ -538,6 +551,41 @@
+   	test "$with_gnu_ld" != no && break
+   	;;
+ ***************
++*** 5889,5900 ****
++    ;;
++  
++  openbsd*)
++-   lt_cv_file_magic_cmd=/usr/bin/file
++-   lt_cv_file_magic_test_file=`echo /usr/lib/libc.so.*`
++    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++!     lt_cv_deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
++    else
++!     lt_cv_deplibs_check_method='file_magic OpenBSD.* shared library'
++    fi
++    ;;
++  
++--- 5893,5902 ----
++    ;;
++  
++  openbsd*)
++    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++!     lt_cv_deplibs_check_method='match_pattern /lib[[^/]]+(\.so\.[[0-9]]+\.[[0-9]]+|\.so|_pic\.a)$'
++    else
++!     lt_cv_deplibs_check_method='match_pattern /lib[[^/]]+(\.so\.[[0-9]]+\.[[0-9]]+|_pic\.a)$'
++    fi
++    ;;
++  
++***************
++*** 8805,8810 ****
++--- 8807,8813 ----
++        hardcode_shlibpath_var=no
++        if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++  	archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
+++ 	archive_expsym_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags ${wl}-retain-symbols-file,$export_symbols'
++  	hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++  	export_dynamic_flag_spec='${wl}-E'
++        else
++***************
+ *** 11180,11186 ****
+       # linker, instead of GNU ld.  If possible, this setting should
+       # overridden to take advantage of the native linker features on
+@@ -546,7 +594,7 @@
+     fi
+   
+     # Commands to make compiler produce verbose output that lists
+---- 11180,11186 ----
++--- 11183,11189 ----
+       # linker, instead of GNU ld.  If possible, this setting should
+       # overridden to take advantage of the native linker features on
+       # the platform it is being used on.
+@@ -1010,3 +1058,1256 @@
+ ! 			$(SLO)$/xa_map.obj
+ ! 
+ ! .INCLUDE :  target.mk
++*** misc/db-4.2.52.NC/dbinc/mutex.h	Sat Sep 20 23:40:49 2003
++--- misc/build/db-4.2.52.NC/dbinc/mutex.h	Wed Jul 26 19:47:01 2006
++***************
++*** 578,610 ****
++   * 'set' mutexes have the value 1, like on Intel; the returned value from
++   * MUTEX_SET() is 1 if the mutex previously had its low bit clear, 0 otherwise.
++   */
++! #ifdef HAVE_MUTEX_PPC_GCC_ASSEMBLY
++! static inline int
++! MUTEX_SET(int *tsl)  {
++!          int __r;
++!          asm volatile (
++! "0:                             \n\t"
++! "       lwarx   %0,0,%1         \n\t"
++! "       cmpwi   %0,0            \n\t"
++! "       bne-    1f              \n\t"
++! "       stwcx.  %1,0,%1         \n\t"
++! "       isync                   \n\t"
++! "       beq+    2f              \n\t"
++! "       b       0b              \n\t"
++! "1:                             \n\t"
++! "       li      %1, 0           \n\t"
++! "2:                             \n\t"
++!          : "=&r" (__r), "+r" (tsl)
++!          :
++!          : "cr0", "memory");
++!          return (int)tsl;
++! }
++! #endif
++! static inline int
++! MUTEX_UNSET(tsl_t *tsl) {
++!          asm volatile("sync" : : : "memory");
++!          return *tsl = 0;
++! }
++  #define	MUTEX_INIT(tsl)		MUTEX_UNSET(tsl)
++  #endif
++  #endif
++--- 578,604 ----
++   * 'set' mutexes have the value 1, like on Intel; the returned value from
++   * MUTEX_SET() is 1 if the mutex previously had its low bit clear, 0 otherwise.
++   */
++! #define MUTEX_SET(tsl)  ({			\
++! 	int __one = 1;				\
++! 	int __r;				\
++! 	tsl_t *__l = (tsl);			\
++! 	asm volatile ("				\
++! 0:						\
++! 	lwarx %0,0,%1;				\
++! 	cmpwi %0,0;				\
++! 	bne 1f;					\
++! 	stwcx. %2,0,%1;				\
++! 	bne- 0b;				\
++! 	isync;					\
++! 1:"						\
++! 	: "=&r" (__r)				\
++! 	: "r" (__l), "r" (__one));		\
++! 	!(__r & 1);				\
++! })
++! #define MUTEX_UNSET(tsl) ({			\
++! 	asm volatile("lwsync":::"memory");	\
++! 	(*(tsl) = 0);				\
++! })
++  #define	MUTEX_INIT(tsl)		MUTEX_UNSET(tsl)
++  #endif
++  #endif
++*** misc/db-4.2.52.NC/env/env_open.c	Sat Sep 13 20:39:34 2003
++--- misc/build/db-4.2.52.NC/env/env_open.c	Wed Jul 26 19:47:08 2006
++***************
++*** 1006,1012 ****
++  		return (__dbenv_set_data_dir(dbenv, value));
++  
++  	if (!strcasecmp(name, "set_flags")) {
++! 		if (sscanf(value, "%40s %c", arg, &v4) != 1)
++  			goto badarg;
++  
++  		if (!strcasecmp(value, "db_auto_commit"))
++--- 1006,1012 ----
++  		return (__dbenv_set_data_dir(dbenv, value));
++  
++  	if (!strcasecmp(name, "set_flags")) {
++! 		if (sscanf(value, "%39s %c", arg, &v4) != 1)
++  			goto badarg;
++  
++  		if (!strcasecmp(value, "db_auto_commit"))
++***************
++*** 1068,1074 ****
++  		return (__log_set_lg_dir(dbenv, value));
++  
++  	if (!strcasecmp(name, "set_lk_detect")) {
++! 		if (sscanf(value, "%40s %c", arg, &v4) != 1)
++  			goto badarg;
++  		if (!strcasecmp(value, "db_lock_default"))
++  			flags = DB_LOCK_DEFAULT;
++--- 1068,1074 ----
++  		return (__log_set_lg_dir(dbenv, value));
++  
++  	if (!strcasecmp(name, "set_lk_detect")) {
++! 		if (sscanf(value, "%39s %c", arg, &v4) != 1)
++  			goto badarg;
++  		if (!strcasecmp(value, "db_lock_default"))
++  			flags = DB_LOCK_DEFAULT;
++***************
++*** 1174,1180 ****
++  	}
++  
++  	if (!strcasecmp(name, "set_verbose")) {
++! 		if (sscanf(value, "%40s %c", arg, &v4) != 1)
++  			goto badarg;
++  
++  		if (!strcasecmp(value, "db_verb_chkpoint"))
++--- 1174,1180 ----
++  	}
++  
++  	if (!strcasecmp(name, "set_verbose")) {
++! 		if (sscanf(value, "%39s %c", arg, &v4) != 1)
++  			goto badarg;
++  
++  		if (!strcasecmp(value, "db_verb_chkpoint"))
++*** misc/db-4.2.52.NC/os/os_rw.c	Mon Jul 28 20:37:58 2003
++--- misc/build/db-4.2.52.NC/os/os_rw.c	Wed Jul 26 19:47:18 2006
++***************
++*** 120,127 ****
++  			if ((ret == EINTR || ret == EBUSY) &&
++  			    ++retries < DB_RETRY)
++  				goto retry;
++! 			__db_err(dbenv, "read: 0x%x, %lu: %s",
++! 			    (u_int)taddr, (u_long)len-offset, strerror(ret));
++  			return (ret);
++  		}
++  		if (nr == 0)
++--- 120,127 ----
++  			if ((ret == EINTR || ret == EBUSY) &&
++  			    ++retries < DB_RETRY)
++  				goto retry;
++! 			__db_err(dbenv, "read: 0x%lx, %lu: %s",
++! 			    (u_long)taddr, (u_long)len-offset, strerror(ret));
++  			return (ret);
++  		}
++  		if (nr == 0)
++***************
++*** 197,204 ****
++  			if ((ret == EINTR || ret == EBUSY) &&
++  			    ++retries < DB_RETRY)
++  				goto retry;
++! 			__db_err(dbenv, "write: 0x%x, %lu: %s",
++! 			    (u_int)taddr, (u_long)len-offset, strerror(ret));
++  			return (ret);
++  		}
++  	*nwp = len;
++--- 197,204 ----
++  			if ((ret == EINTR || ret == EBUSY) &&
++  			    ++retries < DB_RETRY)
++  				goto retry;
++! 			__db_err(dbenv, "write: 0x%lx, %lu: %s",
++! 			    (u_long)taddr, (u_long)len-offset, strerror(ret));
++  			return (ret);
++  		}
++  	*nwp = len;
++*** misc/db-4.2.52.NC/tcl/tcl_compat.c	Mon Mar 10 19:22:09 2003
++--- misc/build/db-4.2.52.NC/tcl/tcl_compat.c	Wed Jul 26 19:47:24 2006
++***************
++*** 71,77 ****
++  	 * in the 'berkdb' command.
++  	 */
++  	if (Tcl_GetIndexFromObj(interp,
++! 	    objv[1], hcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++  		return (IS_HELP(objv[1]));
++  
++  	res = NULL;
++--- 71,77 ----
++  	 * in the 'berkdb' command.
++  	 */
++  	if (Tcl_GetIndexFromObj(interp,
++! 	    objv[1], (CONST84 char **)hcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++  		return (IS_HELP(objv[1]));
++  
++  	res = NULL;
++***************
++*** 101,107 ****
++  		}
++  		item.key = Tcl_GetStringFromObj(objv[2], NULL);
++  		item.data = Tcl_GetStringFromObj(objv[3], NULL);
++! 		if (Tcl_GetIndexFromObj(interp, objv[4], srchacts,
++  		    "action", TCL_EXACT, &actindex) != TCL_OK)
++  			return (IS_HELP(objv[4]));
++  		switch ((enum srchacts)actindex) {
++--- 101,107 ----
++  		}
++  		item.key = Tcl_GetStringFromObj(objv[2], NULL);
++  		item.data = Tcl_GetStringFromObj(objv[3], NULL);
++! 		if (Tcl_GetIndexFromObj(interp, objv[4], (CONST84 char **)srchacts,
++  		    "action", TCL_EXACT, &actindex) != TCL_OK)
++  			return (IS_HELP(objv[4]));
++  		switch ((enum srchacts)actindex) {
++***************
++*** 198,204 ****
++  	 */
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], ndbopen, "option",
++  		    TCL_EXACT, &optindex) != TCL_OK) {
++  			arg = Tcl_GetStringFromObj(objv[i], NULL);
++  			if (arg[0] == '-') {
++--- 198,204 ----
++  	 */
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)ndbopen, "option",
++  		    TCL_EXACT, &optindex) != TCL_OK) {
++  			arg = Tcl_GetStringFromObj(objv[i], NULL);
++  			if (arg[0] == '-') {
++***************
++*** 347,353 ****
++  	 * in the 'berkdb' command.
++  	 */
++  	if (Tcl_GetIndexFromObj(interp,
++! 	    objv[1], dbmcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++  		return (IS_HELP(objv[1]));
++  
++  	switch ((enum dbmcmds)cmdindex) {
++--- 347,353 ----
++  	 * in the 'berkdb' command.
++  	 */
++  	if (Tcl_GetIndexFromObj(interp,
++! 	    objv[1], (CONST84 char **)dbmcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++  		return (IS_HELP(objv[1]));
++  
++  	switch ((enum dbmcmds)cmdindex) {
++***************
++*** 456,462 ****
++  		if (flag == DBTCL_DBM)
++  			ret = store(key, data);
++  		else if (flag == DBTCL_NDBM) {
++! 			if (Tcl_GetIndexFromObj(interp, objv[4], stflag,
++  			    "flag", TCL_EXACT, &stindex) != TCL_OK)
++  				return (IS_HELP(objv[4]));
++  			switch ((enum stflag)stindex) {
++--- 456,462 ----
++  		if (flag == DBTCL_DBM)
++  			ret = store(key, data);
++  		else if (flag == DBTCL_NDBM) {
++! 			if (Tcl_GetIndexFromObj(interp, objv[4], (CONST84 char **)stflag,
++  			    "flag", TCL_EXACT, &stindex) != TCL_OK)
++  				return (IS_HELP(objv[4]));
++  			switch ((enum stflag)stindex) {
++***************
++*** 647,653 ****
++  	 * defined above.
++  	 */
++  	if (Tcl_GetIndexFromObj(interp,
++! 	    objv[1], ndbcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++  		return (IS_HELP(objv[1]));
++  
++  	res = NULL;
++--- 647,653 ----
++  	 * defined above.
++  	 */
++  	if (Tcl_GetIndexFromObj(interp,
++! 	    objv[1], (CONST84 char **)ndbcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++  		return (IS_HELP(objv[1]));
++  
++  	res = NULL;
++*** misc/db-4.2.52.NC/tcl/tcl_db.c	Fri Nov 21 03:40:27 2003
++--- misc/build/db-4.2.52.NC/tcl/tcl_db.c	Wed Jul 26 19:47:29 2006
++***************
++*** 208,214 ****
++  	 * defined above.
++  	 */
++  	if (Tcl_GetIndexFromObj(interp,
++! 	    objv[1], dbcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++  		return (IS_HELP(objv[1]));
++  
++  	res = NULL;
++--- 208,214 ----
++  	 * defined above.
++  	 */
++  	if (Tcl_GetIndexFromObj(interp,
++! 	    objv[1], (CONST84 char **)dbcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++  		return (IS_HELP(objv[1]));
++  
++  	res = NULL;
++***************
++*** 711,717 ****
++  
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], dbclose,
++  		    "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			arg = Tcl_GetStringFromObj(objv[i], NULL);
++  			if (arg[0] == '-')
++--- 711,717 ----
++  
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)dbclose,
++  		    "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			arg = Tcl_GetStringFromObj(objv[i], NULL);
++  			if (arg[0] == '-')
++***************
++*** 826,832 ****
++  	if (type == DB_QUEUE || type == DB_RECNO) {
++  		i = 2;
++  		while (i < objc - 1) {
++! 			if (Tcl_GetIndexFromObj(interp, objv[i++], dbputapp,
++  			    "option", TCL_EXACT, &optindex) != TCL_OK)
++  				continue;
++  			switch ((enum dbputapp)optindex) {
++--- 826,832 ----
++  	if (type == DB_QUEUE || type == DB_RECNO) {
++  		i = 2;
++  		while (i < objc - 1) {
++! 			if (Tcl_GetIndexFromObj(interp, objv[i++], (CONST84 char **)dbputapp,
++  			    "option", TCL_EXACT, &optindex) != TCL_OK)
++  				continue;
++  			switch ((enum dbputapp)optindex) {
++***************
++*** 846,852 ****
++  	auto_commit = 0;
++  	while (i < end) {
++  		if (Tcl_GetIndexFromObj(interp, objv[i],
++! 		    dbputopts, "option", TCL_EXACT, &optindex) != TCL_OK)
++  			return (IS_HELP(objv[i]));
++  		i++;
++  		switch ((enum dbputopts)optindex) {
++--- 846,852 ----
++  	auto_commit = 0;
++  	while (i < end) {
++  		if (Tcl_GetIndexFromObj(interp, objv[i],
++! 		    (CONST84 char **)dbputopts, "option", TCL_EXACT, &optindex) != TCL_OK)
++  			return (IS_HELP(objv[i]));
++  		i++;
++  		switch ((enum dbputopts)optindex) {
++***************
++*** 1058,1064 ****
++  	(void)dbp->get_type(dbp, &type);
++  	end = objc;
++  	while (i < end) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], dbgetopts, "option",
++  		    TCL_EXACT, &optindex) != TCL_OK) {
++  			arg = Tcl_GetStringFromObj(objv[i], NULL);
++  			if (arg[0] == '-') {
++--- 1058,1064 ----
++  	(void)dbp->get_type(dbp, &type);
++  	end = objc;
++  	while (i < end) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)dbgetopts, "option",
++  		    TCL_EXACT, &optindex) != TCL_OK) {
++  			arg = Tcl_GetStringFromObj(objv[i], NULL);
++  			if (arg[0] == '-') {
++***************
++*** 1617,1623 ****
++  	 */
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], dbdelopts, "option",
++  		    TCL_EXACT, &optindex) != TCL_OK) {
++  			/*
++  			 * If we don't have a -auto_commit, -glob or -txn,
++--- 1617,1623 ----
++  	 */
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)dbdelopts, "option",
++  		    TCL_EXACT, &optindex) != TCL_OK) {
++  			/*
++  			 * If we don't have a -auto_commit, -glob or -txn,
++***************
++*** 1858,1864 ****
++  	txn = NULL;
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], dbcuropts, "option",
++  		    TCL_EXACT, &optindex) != TCL_OK) {
++  			result = IS_HELP(objv[i]);
++  			goto out;
++--- 1858,1864 ----
++  	txn = NULL;
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)dbcuropts, "option",
++  		    TCL_EXACT, &optindex) != TCL_OK) {
++  			result = IS_HELP(objv[i]);
++  			goto out;
++***************
++*** 1942,1948 ****
++  
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], dbaopts, "option",
++  		    TCL_EXACT, &optindex) != TCL_OK) {
++  			result = IS_HELP(objv[i]);
++  			if (result == TCL_OK)
++--- 1942,1948 ----
++  
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)dbaopts, "option",
++  		    TCL_EXACT, &optindex) != TCL_OK) {
++  			result = IS_HELP(objv[i]);
++  			if (result == TCL_OK)
++***************
++*** 2122,2128 ****
++  	i = 2;
++  	adj = i;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], dbjopts, "option",
++  		    TCL_EXACT, &optindex) != TCL_OK) {
++  			result = IS_HELP(objv[i]);
++  			if (result == TCL_OK)
++--- 2122,2128 ----
++  	i = 2;
++  	adj = i;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)dbjopts, "option",
++  		    TCL_EXACT, &optindex) != TCL_OK) {
++  			result = IS_HELP(objv[i]);
++  			if (result == TCL_OK)
++***************
++*** 2219,2225 ****
++  	i = 2;
++  	adj = i;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], dbgetjopts, "option",
++  		    TCL_EXACT, &optindex) != TCL_OK) {
++  			result = IS_HELP(objv[i]);
++  			if (result == TCL_OK)
++--- 2219,2225 ----
++  	i = 2;
++  	adj = i;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)dbgetjopts, "option",
++  		    TCL_EXACT, &optindex) != TCL_OK) {
++  			result = IS_HELP(objv[i]);
++  			if (result == TCL_OK)
++***************
++*** 2582,2588 ****
++  	txn = NULL;
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], dbkeyropts, "option",
++  		    TCL_EXACT, &optindex) != TCL_OK) {
++  			result = IS_HELP(objv[i]);
++  			if (result == TCL_OK)
++--- 2582,2588 ----
++  	txn = NULL;
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)dbkeyropts, "option",
++  		    TCL_EXACT, &optindex) != TCL_OK) {
++  			result = IS_HELP(objv[i]);
++  			if (result == TCL_OK)
++***************
++*** 2694,2700 ****
++  
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], dbcuropts, "option",
++  		    TCL_EXACT, &optindex) != TCL_OK) {
++  			result = IS_HELP(objv[i]);
++  			goto out;
++--- 2694,2700 ----
++  
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)dbcuropts, "option",
++  		    TCL_EXACT, &optindex) != TCL_OK) {
++  			result = IS_HELP(objv[i]);
++  			goto out;
++*** misc/db-4.2.52.NC/tcl/tcl_db_pkg.c	Mon Nov 17 21:01:05 2003
++--- misc/build/db-4.2.52.NC/tcl/tcl_db_pkg.c	Wed Jul 26 19:47:40 2006
++***************
++*** 195,201 ****
++  	 * defined above.
++  	 */
++  	if (Tcl_GetIndexFromObj(interp,
++! 	    objv[1], berkdbcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++  		return (IS_HELP(objv[1]));
++  	res = NULL;
++  	switch ((enum berkdbcmds)cmdindex) {
++--- 195,201 ----
++  	 * defined above.
++  	 */
++  	if (Tcl_GetIndexFromObj(interp,
++! 	    objv[1], (CONST84 char **)berkdbcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++  		return (IS_HELP(objv[1]));
++  	res = NULL;
++  	switch ((enum berkdbcmds)cmdindex) {
++***************
++*** 516,522 ****
++  	server_to = client_to = 0;
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i++], envopen, "option",
++  		    TCL_EXACT, &optindex) != TCL_OK) {
++  			Tcl_ResetResult(interp);
++  			continue;
++--- 516,522 ----
++  	server_to = client_to = 0;
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i++], (CONST84 char **)envopen, "option",
++  		    TCL_EXACT, &optindex) != TCL_OK) {
++  			Tcl_ResetResult(interp);
++  			continue;
++***************
++*** 597,603 ****
++  	i = 2;
++  	while (i < objc) {
++  		Tcl_ResetResult(interp);
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], envopen, "option",
++  		    TCL_EXACT, &optindex) != TCL_OK) {
++  			result = IS_HELP(objv[i]);
++  			goto error;
++--- 597,603 ----
++  	i = 2;
++  	while (i < objc) {
++  		Tcl_ResetResult(interp);
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)envopen, "option",
++  		    TCL_EXACT, &optindex) != TCL_OK) {
++  			result = IS_HELP(objv[i]);
++  			goto error;
++***************
++*** 1452,1458 ****
++  	 */
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i++], bdbenvopen,
++  		    "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			/*
++  			 * Reset the result so we don't get
++--- 1452,1458 ----
++  	 */
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i++], (CONST84 char **)bdbenvopen,
++  		    "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			/*
++  			 * Reset the result so we don't get
++***************
++*** 1516,1522 ****
++  	i = 2;
++  	while (i < objc) {
++  		Tcl_ResetResult(interp);
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], bdbopen, "option",
++  		    TCL_EXACT, &optindex) != TCL_OK) {
++  			arg = Tcl_GetStringFromObj(objv[i], NULL);
++  			if (arg[0] == '-') {
++--- 1516,1522 ----
++  	i = 2;
++  	while (i < objc) {
++  		Tcl_ResetResult(interp);
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)bdbopen, "option",
++  		    TCL_EXACT, &optindex) != TCL_OK) {
++  			arg = Tcl_GetStringFromObj(objv[i], NULL);
++  			if (arg[0] == '-') {
++***************
++*** 2149,2155 ****
++  	 */
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], bdbrem,
++  		    "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			arg = Tcl_GetStringFromObj(objv[i], NULL);
++  			if (arg[0] == '-') {
++--- 2149,2155 ----
++  	 */
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)bdbrem,
++  		    "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			arg = Tcl_GetStringFromObj(objv[i], NULL);
++  			if (arg[0] == '-') {
++***************
++*** 2356,2362 ****
++  	 */
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], bdbmv,
++  		    "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			arg = Tcl_GetStringFromObj(objv[i], NULL);
++  			if (arg[0] == '-') {
++--- 2356,2362 ----
++  	 */
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)bdbmv,
++  		    "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			arg = Tcl_GetStringFromObj(objv[i], NULL);
++  			if (arg[0] == '-') {
++***************
++*** 2573,2579 ****
++  	 */
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], bdbverify,
++  		    "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			arg = Tcl_GetStringFromObj(objv[i], NULL);
++  			if (arg[0] == '-') {
++--- 2573,2579 ----
++  	 */
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)bdbverify,
++  		    "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			arg = Tcl_GetStringFromObj(objv[i], NULL);
++  			if (arg[0] == '-') {
++***************
++*** 2760,2766 ****
++  	 */
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], bdbver,
++  		    "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			arg = Tcl_GetStringFromObj(objv[i], NULL);
++  			if (arg[0] == '-') {
++--- 2760,2766 ----
++  	 */
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)bdbver,
++  		    "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			arg = Tcl_GetStringFromObj(objv[i], NULL);
++  			if (arg[0] == '-') {
++***************
++*** 2871,2877 ****
++  
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], bdbupg,
++  		    "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			arg = Tcl_GetStringFromObj(objv[i], NULL);
++  			if (arg[0] == '-') {
++--- 2871,2877 ----
++  
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)bdbupg,
++  		    "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			arg = Tcl_GetStringFromObj(objv[i], NULL);
++  			if (arg[0] == '-') {
++*** misc/db-4.2.52.NC/tcl/tcl_dbcursor.c	Sat May 17 17:15:45 2003
++--- misc/build/db-4.2.52.NC/tcl/tcl_dbcursor.c	Wed Jul 26 19:47:49 2006
++***************
++*** 89,95 ****
++  	 * Get the command name index from the object based on the berkdbcmds
++  	 * defined above.
++  	 */
++! 	if (Tcl_GetIndexFromObj(interp, objv[1], dbccmds, "command",
++  	    TCL_EXACT, &cmdindex) != TCL_OK)
++  		return (IS_HELP(objv[1]));
++  	switch ((enum dbccmds)cmdindex) {
++--- 89,95 ----
++  	 * Get the command name index from the object based on the berkdbcmds
++  	 * defined above.
++  	 */
++! 	if (Tcl_GetIndexFromObj(interp, objv[1], (CONST84 char **)dbccmds, "command",
++  	    TCL_EXACT, &cmdindex) != TCL_OK)
++  		return (IS_HELP(objv[1]));
++  	switch ((enum dbccmds)cmdindex) {
++***************
++*** 202,208 ****
++  	 */
++  	i = 2;
++  	while (i < (objc - 1)) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], dbcutopts, "option",
++  		    TCL_EXACT, &optindex) != TCL_OK) {
++  			/*
++  			 * Reset the result so we don't get
++--- 202,208 ----
++  	 */
++  	i = 2;
++  	while (i < (objc - 1)) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)dbcutopts, "option",
++  		    TCL_EXACT, &optindex) != TCL_OK) {
++  			/*
++  			 * Reset the result so we don't get
++***************
++*** 459,465 ****
++  	 */
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], dbcgetopts,
++  		    "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			/*
++  			 * Reset the result so we don't get
++--- 459,465 ----
++  	 */
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)dbcgetopts,
++  		    "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			/*
++  			 * Reset the result so we don't get
++***************
++*** 852,858 ****
++  	 */
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], dbcdupopts,
++  		    "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			/*
++  			 * Reset the result so we don't get
++--- 852,858 ----
++  	 */
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)dbcdupopts,
++  		    "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			/*
++  			 * Reset the result so we don't get
++*** misc/db-4.2.52.NC/tcl/tcl_env.c	Thu Sep  4 22:45:44 2003
++--- misc/build/db-4.2.52.NC/tcl/tcl_env.c	Wed Jul 26 19:47:56 2006
++***************
++*** 233,239 ****
++  	 * Get the command name index from the object based on the berkdbcmds
++  	 * defined above.
++  	 */
++! 	if (Tcl_GetIndexFromObj(interp, objv[1], envcmds, "command",
++  	    TCL_EXACT, &cmdindex) != TCL_OK)
++  		return (IS_HELP(objv[1]));
++  	res = NULL;
++--- 233,239 ----
++  	 * Get the command name index from the object based on the berkdbcmds
++  	 * defined above.
++  	 */
++! 	if (Tcl_GetIndexFromObj(interp, objv[1], (CONST84 char **)envcmds, "command",
++  	    TCL_EXACT, &cmdindex) != TCL_OK)
++  		return (IS_HELP(objv[1]));
++  	res = NULL;
++***************
++*** 766,772 ****
++  
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], envremopts, "option",
++  		    TCL_EXACT, &optindex) != TCL_OK) {
++  			result = IS_HELP(objv[i]);
++  			goto error;
++--- 766,772 ----
++  
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)envremopts, "option",
++  		    TCL_EXACT, &optindex) != TCL_OK) {
++  			result = IS_HELP(objv[i]);
++  			goto error;
++***************
++*** 1038,1044 ****
++  	int on, optindex, ret;
++  	u_int32_t wh;
++  
++! 	if (Tcl_GetIndexFromObj(interp, which, verbwhich, "option",
++  	    TCL_EXACT, &optindex) != TCL_OK)
++  		return (IS_HELP(which));
++  
++--- 1038,1044 ----
++  	int on, optindex, ret;
++  	u_int32_t wh;
++  
++! 	if (Tcl_GetIndexFromObj(interp, which, (CONST84 char **)verbwhich, "option",
++  	    TCL_EXACT, &optindex) != TCL_OK)
++  		return (IS_HELP(which));
++  
++***************
++*** 1061,1067 ****
++  	default:
++  		return (TCL_ERROR);
++  	}
++! 	if (Tcl_GetIndexFromObj(interp, onoff, verbonoff, "option",
++  	    TCL_EXACT, &optindex) != TCL_OK)
++  		return (IS_HELP(onoff));
++  	switch ((enum verbonoff)optindex) {
++--- 1061,1067 ----
++  	default:
++  		return (TCL_ERROR);
++  	}
++! 	if (Tcl_GetIndexFromObj(interp, onoff, (CONST84 char **)verbonoff, "option",
++  	    TCL_EXACT, &optindex) != TCL_OK)
++  		return (IS_HELP(onoff));
++  	switch ((enum verbonoff)optindex) {
++***************
++*** 1346,1352 ****
++  	/*
++  	 * This must be the "copy" or "abort" portion of the command.
++  	 */
++! 	if (Tcl_GetIndexFromObj(interp, objv[2], envtestcmd, "command",
++  	    TCL_EXACT, &optindex) != TCL_OK) {
++  		result = IS_HELP(objv[2]);
++  		return (result);
++--- 1346,1352 ----
++  	/*
++  	 * This must be the "copy" or "abort" portion of the command.
++  	 */
++! 	if (Tcl_GetIndexFromObj(interp, objv[2], (CONST84 char **)envtestcmd, "command",
++  	    TCL_EXACT, &optindex) != TCL_OK) {
++  		result = IS_HELP(objv[2]);
++  		return (result);
++***************
++*** 1366,1372 ****
++  	/*
++  	 * This must be the location portion of the command.
++  	 */
++! 	if (Tcl_GetIndexFromObj(interp, objv[3], envtestat, "location",
++  	    TCL_EXACT, &optindex) != TCL_OK) {
++  		result = IS_HELP(objv[3]);
++  		return (result);
++--- 1366,1372 ----
++  	/*
++  	 * This must be the location portion of the command.
++  	 */
++! 	if (Tcl_GetIndexFromObj(interp, objv[3], (CONST84 char **)envtestat, "location",
++  	    TCL_EXACT, &optindex) != TCL_OK) {
++  		result = IS_HELP(objv[3]);
++  		return (result);
++***************
++*** 1461,1467 ****
++  	 */
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], envdbrem,
++  		    "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			arg = Tcl_GetStringFromObj(objv[i], NULL);
++  			if (arg[0] == '-') {
++--- 1461,1467 ----
++  	 */
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)envdbrem,
++  		    "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			arg = Tcl_GetStringFromObj(objv[i], NULL);
++  			if (arg[0] == '-') {
++***************
++*** 1590,1596 ****
++  	 */
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], envdbmv,
++  		    "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			arg = Tcl_GetStringFromObj(objv[i], NULL);
++  			if (arg[0] == '-') {
++--- 1590,1596 ----
++  	 */
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)envdbmv,
++  		    "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			arg = Tcl_GetStringFromObj(objv[i], NULL);
++  			if (arg[0] == '-') {
++*** misc/db-4.2.52.NC/tcl/tcl_lock.c	Fri Nov 28 16:42:52 2003
++--- misc/build/db-4.2.52.NC/tcl/tcl_lock.c	Wed Jul 26 19:48:01 2006
++***************
++*** 75,81 ****
++  	i = 2;
++  	while (i < objc) {
++  		if (Tcl_GetIndexFromObj(interp, objv[i],
++! 		    ldopts, "option", TCL_EXACT, &optindex) != TCL_OK)
++  			return (IS_HELP(objv[i]));
++  		i++;
++  		switch ((enum ldopts)optindex) {
++--- 75,81 ----
++  	i = 2;
++  	while (i < objc) {
++  		if (Tcl_GetIndexFromObj(interp, objv[i],
++! 		    (CONST84 char **)ldopts, "option", TCL_EXACT, &optindex) != TCL_OK)
++  			return (IS_HELP(objv[i]));
++  		i++;
++  		switch ((enum ldopts)optindex) {
++***************
++*** 184,190 ****
++  	flag = 0;
++  	if (objc == 6) {
++  		if (Tcl_GetIndexFromObj(interp, objv[(objc - 4)],
++! 		    lgopts, "option", TCL_EXACT, &optindex) != TCL_OK)
++  			return (IS_HELP(objv[(objc - 4)]));
++  		switch ((enum lgopts)optindex) {
++  		case LGNOWAIT:
++--- 184,190 ----
++  	flag = 0;
++  	if (objc == 6) {
++  		if (Tcl_GetIndexFromObj(interp, objv[(objc - 4)],
++! 		    (CONST84 char **)lgopts, "option", TCL_EXACT, &optindex) != TCL_OK)
++  			return (IS_HELP(objv[(objc - 4)]));
++  		switch ((enum lgopts)optindex) {
++  		case LGNOWAIT:
++***************
++*** 354,360 ****
++  	 * defined above.
++  	 */
++  	if (Tcl_GetIndexFromObj(interp,
++! 	    objv[1], lkcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++  		return (IS_HELP(objv[1]));
++  
++  	switch ((enum lkcmds)cmdindex) {
++--- 354,360 ----
++  	 * defined above.
++  	 */
++  	if (Tcl_GetIndexFromObj(interp,
++! 	    objv[1], (CONST84 char **)lkcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++  		return (IS_HELP(objv[1]));
++  
++  	switch ((enum lkcmds)cmdindex) {
++***************
++*** 425,431 ****
++  	 * If -nowait is given, it MUST be first arg.
++  	 */
++  	if (Tcl_GetIndexFromObj(interp, objv[2],
++! 	    lvopts, "option", TCL_EXACT, &optindex) == TCL_OK) {
++  		switch ((enum lvopts)optindex) {
++  		case LVNOWAIT:
++  			flag |= DB_LOCK_NOWAIT;
++--- 425,431 ----
++  	 * If -nowait is given, it MUST be first arg.
++  	 */
++  	if (Tcl_GetIndexFromObj(interp, objv[2],
++! 	    (CONST84 char **)lvopts, "option", TCL_EXACT, &optindex) == TCL_OK) {
++  		switch ((enum lvopts)optindex) {
++  		case LVNOWAIT:
++  			flag |= DB_LOCK_NOWAIT;
++***************
++*** 470,476 ****
++  		 * the return list.
++  		 */
++  		if (Tcl_GetIndexFromObj(interp, myobjv[0],
++! 		    lkops, "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			result = IS_HELP(myobjv[0]);
++  			goto error;
++  		}
++--- 470,476 ----
++  		 * the return list.
++  		 */
++  		if (Tcl_GetIndexFromObj(interp, myobjv[0],
++! 		    (CONST84 char **)lkops, "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			result = IS_HELP(myobjv[0]);
++  			goto error;
++  		}
++***************
++*** 619,625 ****
++  	};
++  	int optindex;
++  
++! 	if (Tcl_GetIndexFromObj(interp, obj, lkmode, "option",
++  	    TCL_EXACT, &optindex) != TCL_OK)
++  		return (IS_HELP(obj));
++  	switch ((enum lkmode)optindex) {
++--- 619,625 ----
++  	};
++  	int optindex;
++  
++! 	if (Tcl_GetIndexFromObj(interp, obj, (CONST84 char **)lkmode, "option",
++  	    TCL_EXACT, &optindex) != TCL_OK)
++  		return (IS_HELP(obj));
++  	switch ((enum lkmode)optindex) {
++*** misc/db-4.2.52.NC/tcl/tcl_log.c	Thu Apr 24 18:25:54 2003
++--- misc/build/db-4.2.52.NC/tcl/tcl_log.c	Wed Jul 26 19:48:16 2006
++***************
++*** 61,67 ****
++  	i = 2;
++  	while (i < objc) {
++  		if (Tcl_GetIndexFromObj(interp, objv[i],
++! 		    archopts, "option", TCL_EXACT, &optindex) != TCL_OK)
++  			return (IS_HELP(objv[i]));
++  		i++;
++  		switch ((enum archopts)optindex) {
++--- 61,67 ----
++  	i = 2;
++  	while (i < objc) {
++  		if (Tcl_GetIndexFromObj(interp, objv[i],
++! 		    (CONST84 char **)archopts, "option", TCL_EXACT, &optindex) != TCL_OK)
++  			return (IS_HELP(objv[i]));
++  		i++;
++  		switch ((enum archopts)optindex) {
++***************
++*** 311,317 ****
++  	 */
++  	if (objc == 4) {
++  		if (Tcl_GetIndexFromObj(interp, objv[2],
++! 		    logputopts, "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			return (IS_HELP(objv[2]));
++  		}
++  		switch ((enum logputopts)optindex) {
++--- 311,317 ----
++  	 */
++  	if (objc == 4) {
++  		if (Tcl_GetIndexFromObj(interp, objv[2],
++! 		    (CONST84 char **)logputopts, "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			return (IS_HELP(objv[2]));
++  		}
++  		switch ((enum logputopts)optindex) {
++***************
++*** 455,461 ****
++  	 * Get the command name index from the object based on the berkdbcmds
++  	 * defined above.
++  	 */
++! 	if (Tcl_GetIndexFromObj(interp, objv[1], logccmds, "command",
++  	    TCL_EXACT, &cmdindex) != TCL_OK)
++  		return (IS_HELP(objv[1]));
++  	switch ((enum logccmds)cmdindex) {
++--- 455,461 ----
++  	 * Get the command name index from the object based on the berkdbcmds
++  	 * defined above.
++  	 */
++! 	if (Tcl_GetIndexFromObj(interp, objv[1], (CONST84 char **)logccmds, "command",
++  	    TCL_EXACT, &cmdindex) != TCL_OK)
++  		return (IS_HELP(objv[1]));
++  	switch ((enum logccmds)cmdindex) {
++***************
++*** 529,535 ****
++  	i = 2;
++  	while (i < objc) {
++  		if (Tcl_GetIndexFromObj(interp, objv[i],
++! 		    logcgetopts, "option", TCL_EXACT, &optindex) != TCL_OK)
++  			return (IS_HELP(objv[i]));
++  		i++;
++  		switch ((enum logcgetopts)optindex) {
++--- 529,535 ----
++  	i = 2;
++  	while (i < objc) {
++  		if (Tcl_GetIndexFromObj(interp, objv[i],
++! 		    (CONST84 char **)logcgetopts, "option", TCL_EXACT, &optindex) != TCL_OK)
++  			return (IS_HELP(objv[i]));
++  		i++;
++  		switch ((enum logcgetopts)optindex) {
++*** misc/db-4.2.52.NC/tcl/tcl_mp.c	Thu Sep  4 22:45:45 2003
++--- misc/build/db-4.2.52.NC/tcl/tcl_mp.c	Wed Jul 26 19:48:23 2006
++***************
++*** 193,199 ****
++  	memset(newname, 0, MSG_SIZE);
++  	while (i < objc) {
++  		if (Tcl_GetIndexFromObj(interp, objv[i],
++! 		    mpopts, "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			/*
++  			 * Reset the result so we don't get an errant
++  			 * error message if there is another error.
++--- 193,199 ----
++  	memset(newname, 0, MSG_SIZE);
++  	while (i < objc) {
++  		if (Tcl_GetIndexFromObj(interp, objv[i],
++! 		    (CONST84 char **)mpopts, "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			/*
++  			 * Reset the result so we don't get an errant
++  			 * error message if there is another error.
++***************
++*** 483,489 ****
++  	 * defined above.
++  	 */
++  	if (Tcl_GetIndexFromObj(interp,
++! 	    objv[1], mpcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++  		return (IS_HELP(objv[1]));
++  
++  	res = NULL;
++--- 483,489 ----
++  	 * defined above.
++  	 */
++  	if (Tcl_GetIndexFromObj(interp,
++! 	    objv[1], (CONST84 char **)mpcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++  		return (IS_HELP(objv[1]));
++  
++  	res = NULL;
++***************
++*** 613,619 ****
++  	flag = 0;
++  	while (i < objc) {
++  		if (Tcl_GetIndexFromObj(interp, objv[i],
++! 		    mpget, "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			/*
++  			 * Reset the result so we don't get an errant
++  			 * error message if there is another error.
++--- 613,619 ----
++  	flag = 0;
++  	while (i < objc) {
++  		if (Tcl_GetIndexFromObj(interp, objv[i],
++! 		    (CONST84 char **)mpget, "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			/*
++  			 * Reset the result so we don't get an errant
++  			 * error message if there is another error.
++***************
++*** 747,753 ****
++  	 * defined above.
++  	 */
++  	if (Tcl_GetIndexFromObj(interp,
++! 	    objv[1], pgcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++  		return (IS_HELP(objv[1]));
++  
++  	res = NULL;
++--- 747,753 ----
++  	 * defined above.
++  	 */
++  	if (Tcl_GetIndexFromObj(interp,
++! 	    objv[1], (CONST84 char **)pgcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++  		return (IS_HELP(objv[1]));
++  
++  	res = NULL;
++***************
++*** 809,815 ****
++  	flag = 0;
++  	while (i < objc) {
++  		if (Tcl_GetIndexFromObj(interp, objv[i],
++! 		    pgopt, "option", TCL_EXACT, &optindex) != TCL_OK)
++  			return (IS_HELP(objv[i]));
++  		i++;
++  		switch ((enum pgopt)optindex) {
++--- 809,815 ----
++  	flag = 0;
++  	while (i < objc) {
++  		if (Tcl_GetIndexFromObj(interp, objv[i],
++! 		    (CONST84 char **)pgopt, "option", TCL_EXACT, &optindex) != TCL_OK)
++  			return (IS_HELP(objv[i]));
++  		i++;
++  		switch ((enum pgopt)optindex) {
++*** misc/db-4.2.52.NC/tcl/tcl_rep.c	Sun Sep 14 00:14:16 2003
++--- misc/build/db-4.2.52.NC/tcl/tcl_rep.c	Wed Jul 26 19:48:29 2006
++***************
++*** 207,213 ****
++  
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], tclrpstrt,
++  		    "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			arg = Tcl_GetStringFromObj(objv[i], NULL);
++  			if (arg[0] == '-')
++--- 207,213 ----
++  
++  	i = 2;
++  	while (i < objc) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)tclrpstrt,
++  		    "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			arg = Tcl_GetStringFromObj(objv[i], NULL);
++  			if (arg[0] == '-')
++*** misc/db-4.2.52.NC/tcl/tcl_txn.c	Thu Apr 24 18:25:54 2003
++--- misc/build/db-4.2.52.NC/tcl/tcl_txn.c	Wed Jul 26 19:48:45 2006
++***************
++*** 94,100 ****
++  	i = 2;
++  	while (i < objc) {
++  		if (Tcl_GetIndexFromObj(interp, objv[i],
++! 		    txnckpopts, "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			return (IS_HELP(objv[i]));
++  		}
++  		i++;
++--- 94,100 ----
++  	i = 2;
++  	while (i < objc) {
++  		if (Tcl_GetIndexFromObj(interp, objv[i],
++! 		    (CONST84 char **)txnckpopts, "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			return (IS_HELP(objv[i]));
++  		}
++  		i++;
++***************
++*** 188,194 ****
++  	i = 2;
++  	while (i < objc) {
++  		if (Tcl_GetIndexFromObj(interp, objv[i],
++! 		    txnopts, "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			return (IS_HELP(objv[i]));
++  		}
++  		i++;
++--- 188,194 ----
++  	i = 2;
++  	while (i < objc) {
++  		if (Tcl_GetIndexFromObj(interp, objv[i],
++! 		    (CONST84 char **)txnopts, "option", TCL_EXACT, &optindex) != TCL_OK) {
++  			return (IS_HELP(objv[i]));
++  		}
++  		i++;
++***************
++*** 466,472 ****
++  	 * defined above.
++  	 */
++  	if (Tcl_GetIndexFromObj(interp,
++! 	    objv[1], txncmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++  		return (IS_HELP(objv[1]));
++  
++  	res = NULL;
++--- 466,472 ----
++  	 * defined above.
++  	 */
++  	if (Tcl_GetIndexFromObj(interp,
++! 	    objv[1], (CONST84 char **)txncmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++  		return (IS_HELP(objv[1]));
++  
++  	res = NULL;
++***************
++*** 572,578 ****
++  		return (TCL_ERROR);
++  	}
++  	if (objc == 3) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[2], commitopt,
++  		    "option", TCL_EXACT, &optindex) != TCL_OK)
++  			return (IS_HELP(objv[2]));
++  		switch ((enum commitopt)optindex) {
++--- 572,578 ----
++  		return (TCL_ERROR);
++  	}
++  	if (objc == 3) {
++! 		if (Tcl_GetIndexFromObj(interp, objv[2], (CONST84 char **)commitopt,
++  		    "option", TCL_EXACT, &optindex) != TCL_OK)
++  			return (IS_HELP(objv[2]));
++  		switch ((enum commitopt)optindex) {
++*** misc/db-4.2.52.NC/tcl/tcl_util.c	Wed Apr 23 20:54:40 2003
++--- misc/build/db-4.2.52.NC/tcl/tcl_util.c	Wed Jul 26 19:48:55 2006
++***************
++*** 59,65 ****
++  	 * in the 'berkdb' command.
++  	 */
++  	if (Tcl_GetIndexFromObj(interp,
++! 	    objv[1], rcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++  		return (IS_HELP(objv[1]));
++  
++  	res = NULL;
++--- 59,65 ----
++  	 * in the 'berkdb' command.
++  	 */
++  	if (Tcl_GetIndexFromObj(interp,
++! 	    objv[1], (CONST84 char **)rcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++  		return (IS_HELP(objv[1]));
++  
++  	res = NULL;
++***************
++*** 294,300 ****
++  	 * defined above.
++  	 */
++  	if (Tcl_GetIndexFromObj(interp,
++! 	    objv[1], mxcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++  		return (IS_HELP(objv[1]));
++  
++  	res = NULL;
++--- 294,300 ----
++  	 * defined above.
++  	 */
++  	if (Tcl_GetIndexFromObj(interp,
++! 	    objv[1], (CONST84 char **)mxcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++  		return (IS_HELP(objv[1]));
++  
++  	res = NULL;
++*** misc/db-4.2.52.NC/test/include.tcl	Wed Oct 22 05:23:36 2003
++--- misc/build/db-4.2.52.NC/test/include.tcl	Wed Jul 26 19:49:05 2006
++***************
++*** 1,7 ****
++  # Automatically built by dist/s_test; may require local editing.
++  
++  set tclsh_path @TCL_TCLSH@
++! set tcllib .libs/libdb_tcl-@DB_VERSION_MAJOR@.@DB_VERSION_MINOR@@LIBTSO_MODSUFFIX@
++  
++  set rpc_server localhost
++  set rpc_path .
++--- 1,7 ----
++  # Automatically built by dist/s_test; may require local editing.
++  
++  set tclsh_path @TCL_TCLSH@
++! set tcllib .libs/libdb_tcl@LIBTSO_MODSUFFIX@.@DB_VERSION_MAJOR@.@DB_VERSION_MINOR@
++  
++  set rpc_server localhost
++  set rpc_path .

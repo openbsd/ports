@@ -1,0 +1,12 @@
+$OpenBSD: patch-slideshow_source_engine_activities_continuouskeytimeactivitybase_cxx,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
+--- slideshow/source/engine/activities/continuouskeytimeactivitybase.cxx.orig	Wed Jul 26 09:28:09 2006
++++ slideshow/source/engine/activities/continuouskeytimeactivitybase.cxx	Tue Aug 15 14:03:11 2006
+@@ -98,7 +98,7 @@ namespace presentation
+                 mnLastIndex = ::std::min< ::std::ptrdiff_t >( 
+                     maKeyTimes.size()-2,
+                     // range is ensured by max below
+-                    ::std::max( 0,
++                    ::std::max( (long int)0,
+                                 ::std::distance( maKeyTimes.begin(),
+                                                  ::std::lower_bound( maKeyTimes.begin(),
+                                                                      maKeyTimes.end(),

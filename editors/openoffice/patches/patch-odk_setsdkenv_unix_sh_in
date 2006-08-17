@@ -1,0 +1,32 @@
+$OpenBSD: patch-odk_setsdkenv_unix_sh_in,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
+--- odk/setsdkenv_unix.sh.in.orig	Wed Nov  9 10:29:22 2005
++++ odk/setsdkenv_unix.sh.in	Tue Aug 15 14:03:10 2006
+@@ -206,6 +206,28 @@ case $sd_platform in
+ 	export PTHREAD_LIBS
+     fi
+     ;;
++  openbsd*)
++    if [ -n "$OO_SDK_CPP_HOME" ]
++    then
++        SDK_GXX_INCLUDE_PATH=`echo "#include <cstring>" | $OO_SDK_CPP_HOME/g++ -E -xc++ - | sed -n '/.*1*"\(.*\)\/cstring".*/s//\1/p' | head -n 1`
++        export SDK_GXX_INCLUDE_PATH   
++    fi
++
++    directoryname=openbsd
++    comid=gcc3
++    pltfrm=gcc
++    soext=so
++    exampleout=OPENBSDexample.out
++    platform=OpenBSD
++    LD_LIBRARY_PATH=$OO_SDK_HOME/$directoryname/lib:$OO_EXAMPLE_OUT/$exampleout/lib:${OO_SDK_URE_LIB_DIR}:.:$LD_LIBRARY_PATH
++    export LD_LIBRARY_PATH
++
++    PTHREAD_CFLAGS=-D_THREAD_SAFE
++    PTHREAD_LIBS=-pthread
++    export PTHREAD_CFLAGS
++    export PTHREAD_LIBS 
++    fi
++    ;;
+ esac
+ 
+ # Add directory of the SDK tools to the path.

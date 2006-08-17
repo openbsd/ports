@@ -1,0 +1,12 @@
+$OpenBSD: patch-crashrep_source_unx_makefile_mk,v 1.1.1.1 2006/08/17 14:56:22 robert Exp $
+--- crashrep/source/unx/makefile.mk.orig	Thu Sep  8 11:42:39 2005
++++ crashrep/source/unx/makefile.mk	Tue Aug 15 14:03:09 2006
+@@ -71,7 +71,7 @@ APP1TARGET=$(TARGET)
+ APP1OBJS=$(OBJFILES)
+ 
+ APP1STDLIBS=$(DYNAMIC) -lXext -lX11
+-.IF "$(OS)" != "FREEBSD"
++.IF "$(OS)" != "FREEBSD" && "$(OS)" != "OPENBSD"
+ APP1STDLIBS+=-ldl -lnsl
+ .ENDIF
+ .IF "$(OS)" == "SOLARIS"

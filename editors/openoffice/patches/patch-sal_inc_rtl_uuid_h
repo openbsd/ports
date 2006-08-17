@@ -1,0 +1,12 @@
+$OpenBSD: patch-sal_inc_rtl_uuid_h,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
+--- sal/inc/rtl/uuid.h.orig	Thu Sep  8 16:46:10 2005
++++ sal/inc/rtl/uuid.h	Tue Aug 15 14:03:10 2006
+@@ -223,6 +223,8 @@ void SAL_CALL rtl_createNamedUuid(
+ #define UUID_SYSTEM_TIME_RESOLUTION_100NS_TICKS 100000
+ #elif IRIX
+ #define UUID_SYSTEM_TIME_RESOLUTION_100NS_TICKS 10
++#elif OPENBSD
++#define UUID_SYSTEM_TIME_RESOLUTION_100NS_TICKS 10
+ #else
+ #error "System time resolution must be calculated!"
+ #endif

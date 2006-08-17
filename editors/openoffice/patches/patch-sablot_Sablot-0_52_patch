@@ -1,0 +1,21 @@
+$OpenBSD: patch-sablot_Sablot-0_52_patch,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
+--- sablot/Sablot-0.52.patch.orig	Mon Jun 19 19:27:11 2006
++++ sablot/Sablot-0.52.patch	Tue Aug 15 14:03:10 2006
+@@ -119,7 +119,7 @@
+ ! .ENDIF
+ ! .ENDIF
+ ! 
+-! .IF "$(OS)"=="LINUX" || "$(OS)"=="MACOSX" || "$(OS)"=="FREEBSD" || "$(OS)"=="IRIX" || "$(OS)"=="NETBSD"
++! .IF "$(OS)"=="LINUX" || "$(OS)"=="MACOSX" || "$(OS)"=="FREEBSD" || "$(OS)"=="IRIX" || "$(OS)"=="OPENBSD" || "$(OS)"=="NETBSD"
+ ! CFLAGS+=      -DHAVE_UNISTD_H
+ ! .ENDIF
+ ! 
+@@ -131,7 +131,7 @@
+ ! .IF "$(OS)"=="NETBSD"
+ ! CFLAGS+=     -DHAVE_SYS_TIMEB_H -DHAVE_GETTIMEOFDAY -DHAVE_ISNAN -DHAVE_FINITE
+ ! .ELSE
+-! .IF "$(OS)"=="MACOSX" || "$(OS)"=="FREEBSD"
++! .IF "$(OS)"=="MACOSX" || "$(OS)"=="OPENBSD" || "$(OS)"=="FREEBSD"
+ ! CFLAGS+=     -DHAVE_GETTIMEOFDAY -DHAVE_SYS_TIME_H -DHAVE_ISNAN -DHAVE_FINITE
+ ! .ELSE
+ ! CFLAGS+=     -DHAVE_SYS_TIMEB_H -DHAVE_FTIME -DHAVE_ISNAN -DHAVE_FINITE

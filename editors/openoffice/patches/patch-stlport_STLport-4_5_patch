@@ -1,0 +1,101 @@
+$OpenBSD: patch-stlport_STLport-4_5_patch,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
+--- stlport/STLport-4.5.patch.orig	Thu Apr 27 09:47:20 2006
++++ stlport/STLport-4.5.patch	Tue Aug 15 14:03:11 2006
+@@ -141,7 +141,7 @@
+ ! #
+ ! #
+ ! LINK=ar cr
+-! DYN_LINK=${CXX} -Wl,-rpath,'$$ORIGIN' ${PTHREAD_LIBS} --fexceptions -shared -o
++! DYN_LINK=${CXX} ${PTHREAD_LIBS} --fexceptions -shared -o
+ ! 
+ ! OBJEXT=o
+ ! DYNEXT=so
+@@ -281,7 +281,7 @@
+ ! #
+ ! #
+ ! LINK=ar cr
+-! DYN_LINK=$(CXX) -Wl,-rpath,'$$ORIGIN' --fexceptions -shared -o
++! DYN_LINK=$(CXX) --fexceptions -shared -o
+ ! 
+ ! OBJEXT=o
+ ! DYNEXT=so
+@@ -848,3 +848,79 @@
+   # define _STLP_MUTEX_INITIALIZER
+   # endif
+   
++*** misc/STLport-4.5/stlport/stl/_config.h	Tue Sep  4 19:10:18 2001
++--- misc/build/STLport-4.5/stlport/stl/_config.h	Sat Apr 29 11:24:36 2006
++***************
++*** 162,168 ****
++  # endif
++  
++  /* Operating system recognition (basic) */
++! # if defined (__unix) || defined (__linux__) || defined (__QNX__) || defined (_AIX)  || defined (__NetBSD__)
++  #  define _STLP_UNIX 1
++  #  if defined (__linux__) && ! defined (_STLP_USE_GLIBC)
++  #   define _STLP_USE_GLIBC 1
++--- 162,168 ----
++  # endif
++  
++  /* Operating system recognition (basic) */
++! # if defined (__unix) || defined (__linux__) || defined (__QNX__) || defined (_AIX)  || defined (__NetBSD__) || defined(__OpenBSD__)
++  #  define _STLP_UNIX 1
++  #  if defined (__linux__) && ! defined (_STLP_USE_GLIBC)
++  #   define _STLP_USE_GLIBC 1
++*** misc/STLport-4.5/stlport/stl/_cwchar.h	Tue Sep  4 19:10:18 2001
++--- misc/build/STLport-4.5/stlport/stl/_cwchar.h	Sat Apr 29 11:22:03 2006
++***************
++*** 30,36 ****
++  # if !  defined (_STLP_NO_CWCHAR) && defined  (_STLP_USE_NEW_C_HEADERS)
++  #  include _STLP_NATIVE_CPP_C_HEADER(cwchar)
++  
++! # elif defined (__MRC__) || defined (__SC__) || defined (__BORLANDC__) || defined(__FreeBSD__) || (defined (__GNUC__) && defined (__APPLE__\
++  )) || defined (_STLP_NO_WCHAR_T)
++  
++  #  include _STLP_NATIVE_C_HEADER(stddef.h)
++--- 30,36 ----
++  # if !  defined (_STLP_NO_CWCHAR) && defined  (_STLP_USE_NEW_C_HEADERS)
++  #  include _STLP_NATIVE_CPP_C_HEADER(cwchar)
++  
++! # elif defined (__MRC__) || defined (__SC__) || defined (__BORLANDC__) || defined(__FreeBSD__) || defined(__OpenBSD__) || (defined (__GNUC__) && defined (__APPLE__\
++  )) || defined (_STLP_NO_WCHAR_T)
++  
++  #  include _STLP_NATIVE_C_HEADER(stddef.h)
++*** misc/STLport-4.5/stlport/stl/_stdio_file.h	Mon Mar 19 08:01:09 2001
++--- misc/build/STLport-4.5/stlport/stl/_stdio_file.h	Sat Apr 29 11:22:03 2006
++***************
++*** 154,160 ****
++  
++  # define _STLP_FILE_I_O_IDENTICAL
++  
++! #elif defined (__CYGWIN__) || defined(__FreeBSD__)  || defined(__NetBSD__) || ( defined(__GNUC__) && defined(__APPLE__) )
++  
++  # if 0
++  inline int   _FILE_fd(const FILE& __f) { return __f._file; }
++--- 154,160 ----
++  
++  # define _STLP_FILE_I_O_IDENTICAL
++  
++! #elif defined (__CYGWIN__) || defined(__FreeBSD__)  || defined(__NetBSD__) || defined(__OpenBSD__) || ( defined(__GNUC__) && defined(__APPLE__) )
++  
++  # if 0
++  inline int   _FILE_fd(const FILE& __f) { return __f._file; }
++*** misc/STLport-4.5/stlport/stl/c_locale.h	Thu May 31 05:24:41 2001
++--- misc/build/STLport-4.5/stlport/stl/c_locale.h	Sat Apr 29 11:22:49 2006
++***************
++*** 179,185 ****
++  # define _Locale_PRINT _CTYPE_R
++  # define _Locale_ALPHA _CTYPE_A
++  
++! # elif defined (__NetBSD__)
++   
++  # define _Locale_CNTRL _C
++  # define _Locale_UPPER _U
++--- 179,185 ----
++  # define _Locale_PRINT _CTYPE_R
++  # define _Locale_ALPHA _CTYPE_A
++  
++! # elif defined (__NetBSD__) || defined (__OpenBSD__)
++   
++  # define _Locale_CNTRL _C
++  # define _Locale_UPPER _U

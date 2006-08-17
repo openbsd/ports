@@ -1,0 +1,12 @@
+$OpenBSD: patch-pyuno_source_module_makefile_mk,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
+--- pyuno/source/module/makefile.mk.orig	Tue Jan 31 19:18:25 2006
++++ pyuno/source/module/makefile.mk	Tue Aug 15 14:03:10 2006
+@@ -130,6 +130,8 @@ $(PYUNO_MODULE) : $(SLO)$/pyuno_dlopenwr
+ 	@+ echo $(LINK) $(LINKFLAGSSHLCUI) -o $@ $(SLO)$/pyuno_dlopenwrapper.o > $(MISC)$/$(@:b).cmd
+ .ELIF "$(OS)" == "MACOSX"
+ 	@+ echo $(CC) -bundle -ldl -o $@ $(SLO)$/pyuno_dlopenwrapper.o > $(MISC)$/$(@:b).cmd
++.ELIF "$(OS)" == "OPEBBSD"
++	@+ echo ld -shared -o $@ $(SLO)$/pyuno_dlopenwrapper.o > $(MISC)$/$(@:b).cmd
+ .ELSE
+ 	@+ echo $(LINK) $(LINKFLAGSSHLCUI) -o $@ $(SLO)$/pyuno_dlopenwrapper.o > $(MISC)$/$(@:b).cmd
+ .ENDIF

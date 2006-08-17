@@ -1,0 +1,12 @@
+$OpenBSD: patch-vcl_unx_source_app_i18n_xkb_cxx,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
+--- vcl/unx/source/app/i18n_xkb.cxx.orig	Mon Jun 19 21:49:52 2006
++++ vcl/unx/source/app/i18n_xkb.cxx	Tue Aug 15 14:03:11 2006
+@@ -36,7 +36,7 @@
+ 
+ #include <stdio.h>
+ 
+-#if defined(LINUX) || defined(FREEBSD) || defined(MACOSX) // should really check for xfree86 or for X11R6.1 and higher
++#if defined(LINUX) || defined(FREEBSD) || defined(MACOSX) || defined(OPENBSD) // should really check for xfree86 or for X11R6.1 and higher
+ #define __XKeyboardExtension__ 1
+ #else
+ #define __XKeyboardExtension__ 0

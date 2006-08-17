@@ -1,0 +1,35 @@
+$OpenBSD: patch-odk_setsdkenv_unix_csh_in,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
+--- odk/setsdkenv_unix.csh.in.orig	Wed Nov  9 10:29:11 2005
++++ odk/setsdkenv_unix.csh.in	Tue Aug 15 14:03:10 2006
+@@ -176,6 +176,31 @@ switch (`${sdkdir}/config.guess | cut -d
+     else	
+ 	setenv PTHREAD_LIBS -pthread
+     endif
++    
++  case "openbsd*":
++    if ( $?OO_SDK_CPP_HOME == 0) then
++        set sdk_gxx_include_path=`echo "#include <cstring>" | ${OO_SDK_CPP_HOME}/g++ -E -xc++ - | sed -n '/.*1*"\(.*\)\/cstring".*/s//\1/p' | head -n 1`
++        setenv SDK_GXX_INCLUDE_PATH ${sdk_gxx_include_path}
++    endif
++
++    set directoryname=openbsd   
++    set comid=gcc3
++    set pltfrm=gcc
++    set soext=so
++    set exampleout=OPENBSDexample.out
++    set platform=OpenBSD
++
++    # set LD_LIBRARY_PATH
++    if ( $?LD_LIBARY_PATH == 0) then
++        setenv LD_LIBRARY_PATH ${OO_SDK_HOME}/${directoryname}/lib:${OO_EXAMPLE_OUT}/${exampleout}/lib:${OO_SDK_URE_LIB_DIR}:.
++    else
++        setenv LD_LIBRARY_PATH ${OO_SDK_HOME}/${directoryname}/lib:${OO_EXAMPLE_OUT}/${exampleout}/lib:${OO_SDK_URE_LIB_DIR}:.:${LD_LIBRARY_PATH}
++    endif
++
++    setenv PTHREAD_CFLAGS -D_THREAD_SAFE
++    setenv PTHREAD_LIBS -pthread
++    
++    endif
+   breaksw
+ endsw
+ 

@@ -1,0 +1,60 @@
+$OpenBSD: patch-vcl_util_makefile_mk,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
+--- vcl/util/makefile.mk.orig	Thu Jun 29 13:25:18 2006
++++ vcl/util/makefile.mk	Tue Aug 15 14:03:11 2006
+@@ -186,8 +186,7 @@ SHL1USE_EXPORTS=ordinal
+ SHL1LIBS=   $(LIB1TARGET)
+ .IF "$(GUI)"!="UNX"
+ SHL1OBJS=   $(SLO)$/salshl.obj
+-.ELIF "$(OS)"!="FREEBSD"
+-SHL1STDLIBS+=-ldl
++.ELIF "$(OS)"!="FREEBSD" && "$(OS)"!="OPENBSD"
+ .ENDIF
+ 
+ .IF "$(GUI)" != "MAC"
+@@ -226,8 +225,7 @@ LINKFLAGSSHL += /ENTRY:LibMain@12
+ 
+ .IF "$(GUI)"=="UNX"
+ 
+-.IF "$(OS)"!="MACOSX" && "$(OS)"!="FREEBSD"
+-SHL1STDLIBS+= -ldl
++.IF "$(OS)"!="MACOSX" && "$(OS)"!="FREEBSD" && "$(OS)"!="OPENBSD"
+ .ENDIF
+ 
+ .IF "$(GUIBASE)"=="aqua"
+@@ -315,9 +313,8 @@ SHL2STDLIBS+=$(LIBSN_LIBS)
+ .ENDIF
+ 
+ SHL2STDLIBS += -lXext -lSM -lICE -lX11
+-.IF "$(OS)"!="MACOSX" && "$(OS)"!="FREEBSD"
++.IF "$(OS)"!="MACOSX" && "$(OS)"!="FREEBSD" && "$(OS)"!="OPENBSD"
+ # needed by salprnpsp.cxx
+-SHL2STDLIBS+= -ldl
+ .ENDIF
+ 
+ .ENDIF          # "$(GUIBASE)"=="unx"
+@@ -371,10 +368,10 @@ SHL4NOCHECK=TRUE
+ 
+ 
+ SHL4STDLIBS+=-l$(SHL2TARGET)
+-.IF "$(OS)"=="FREEBSD" || "$(OS)"=="MACOSX"
++.IF "$(OS)"=="FREEBSD" || "$(OS)"=="MACOSX" || "$(OS)"!="OPENBSD"
+ SHL4STDLIBS+=$(SHL3STDLIBS) -lX11
+ .ELSE
+-SHL4STDLIBS+=$(SHL3STDLIBS) -lX11 -ldl
++SHL4STDLIBS+=$(SHL3STDLIBS) -lX11
+ .ENDIF # "$(OS)"=="FREEBSD" || "$(OS)"=="MACOSX"
+ .ENDIF # "$(ENABLE_GTK)" != ""
+ 
+@@ -389,10 +386,10 @@ SHL5DEPN=$(SHL2TARGETN)
+ # libs for KDE plugin
+ SHL5STDLIBS=$(KDE_LIBS)
+ SHL5STDLIBS+=-l$(SHL2TARGET)
+-.IF "$(OS)"=="FREEBSD" || "$(OS)"=="MACOSX"
++.IF "$(OS)"=="FREEBSD" || "$(OS)"=="MACOSX" || "$(OS)"!="OPENBSD"
+ SHL5STDLIBS+=$(SHL3STDLIBS) -lX11
+ .ELSE
+-SHL5STDLIBS+=$(SHL3STDLIBS) -lX11 -ldl
++SHL5STDLIBS+=$(SHL3STDLIBS) -lX11
+ .ENDIF # "$(OS)"=="FREEBSD" || "$(OS)"=="MACOSX"
+ .ENDIF # "$(ENABLE_KDE)" != ""
+ 

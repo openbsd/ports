@@ -1,0 +1,12 @@
+$OpenBSD: patch-solenv_bin_modules_installer_globals_pm,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
+--- solenv/bin/modules/installer/globals.pm.orig	Mon Jul 10 20:49:40 2006
++++ solenv/bin/modules/installer/globals.pm	Tue Aug 15 14:03:11 2006
+@@ -144,7 +144,7 @@ BEGIN
+ 	$jdklib = "";
+ 	$jrepath = "";
+ 	
+-	$globallogging = 0;
++	$globallogging = 1;
+ 	$logfilename = "logfile.log";	# the default logfile name for global errors
+ 	@logfileinfo = ();
+ 	@errorlogfileinfo = ();

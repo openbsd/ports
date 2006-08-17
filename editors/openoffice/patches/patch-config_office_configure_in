@@ -1,0 +1,44 @@
+$OpenBSD: patch-config_office_configure_in,v 1.1.1.1 2006/08/17 14:56:22 robert Exp $
+--- config_office/configure.in.orig	Wed Jul 19 11:52:02 2006
++++ config_office/configure.in	Tue Aug 15 14:03:09 2006
+@@ -755,6 +755,15 @@ case "$build_os" in
+ 		AC_MSG_RESULT([$PTHREAD_LIBS])
+ 		_os=FreeBSD
+ 		;;
++        openbsd*)
++                test_x=yes
++                test_gtk=yes
++                build_cairo=yes
++                test_kde=yes
++                PTHREAD_CFLAGS="-D_THREAD_SAFE"
++                PTHREAD_LIBS="-pthread"
++                _os=OpenBSD
++                ;;
+ 	osf)
+ 		test_x=dontknow
+ 		test_cups=no
+@@ -2327,11 +2336,11 @@ dnl ====================================
+ dnl Checks for programs.
+ dnl ===================================================================
+ dnl Check whether there's a C pre-processor.
+-if test "$_os" = "Linux" -o "$_os" = "FreeBSD" -o "$_os" = "NetBSD" ; then
++if test "$_os" = "Linux" -o "$_os" = "FreeBSD" -o "$_os" = "NetBSD" -o "$_os" = "OpenBSD" ; then
+    AC_PROG_CPP
+ fi
+ dnl Check whether there's a C++ pre-processor.
+-if test "$_os" = "Linux" -o "$_os" = "FreeBSD" -o "$_os" = "NetBSD" ; then
++if test "$_os" = "Linux" -o "$_os" = "FreeBSD" -o "$_os" = "NetBSD" -o "$_os" = "OpenBSD" ; then
+    AC_PROG_CXXCPP
+ fi
+ 
+@@ -2461,8 +2470,8 @@ if test "$_os" != "WINNT" -a \( "z$enabl
+ 	AIX)
+ 		PKGFORMAT=aix
+ 		;;
+-	*BSD)
+-		PKGFORMAT=bsd
++	OpenBSD)
++		PKGFORMAT=portable
+ 		;;
+ 	OSF1)
+ 		PKGFORMAT=setld

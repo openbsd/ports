@@ -1,0 +1,56 @@
+$OpenBSD: patch-config_office_configure,v 1.1.1.1 2006/08/17 14:56:22 robert Exp $
+--- config_office/configure.orig	Wed Jul 19 11:40:09 2006
++++ config_office/configure	Tue Aug 15 14:03:09 2006
+@@ -3547,6 +3547,15 @@ echo $ECHO_N "checking which thread libr
+ echo "${ECHO_T}$PTHREAD_LIBS" >&6; }
+ 		_os=FreeBSD
+ 		;;
++	openbsd*)
++		test_x=yes
++		test_gtk=yes
++		build_cairo=yes
++		test_kde=yes
++		PTHREAD_CFLAGS="-D_THREAD_SAFE"
++		PTHREAD_LIBS="-pthread"
++		_os=OpenBSD
++		;;
+ 	osf)
+ 		test_x=dontknow
+ 		test_cups=no
+@@ -9890,7 +9899,7 @@ echo "$as_me: error: xsltproc is require
+ fi
+ 
+ 
+-if test "$_os" = "Linux" -o "$_os" = "FreeBSD" -o "$_os" = "NetBSD" ; then
++if test "$_os" = "Linux" -o "$_os" = "FreeBSD" -o "$_os" = "NetBSD" -o "$_os" = "OpenBSD" ; then
+    ac_ext=c
+ ac_cpp='$CPP $CPPFLAGS'
+ ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
+@@ -10150,7 +10159,7 @@ ac_link='$CXX -o conftest$ac_exeext $CXX
+ ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
+ 
+ fi
+-if test "$_os" = "Linux" -o "$_os" = "FreeBSD" -o "$_os" = "NetBSD" ; then
++if test "$_os" = "Linux" -o "$_os" = "FreeBSD" -o "$_os" = "NetBSD" -o "$_os" = "OpenBSD" ; then
+    ac_ext=cpp
+ ac_cpp='$CXXCPP $CPPFLAGS'
+ ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_ext >&5'
+@@ -10631,6 +10640,9 @@ echo $ECHO_N "checking which package for
+ 	AIX)
+ 		PKGFORMAT=aix
+ 		;;
++	OpenBSD)
++		PKGFORMAT=portable
++		;;
+ 	*BSD)
+ 		PKGFORMAT=bsd
+ 		;;
+@@ -12378,7 +12390,7 @@ fi
+ { echo "$as_me:$LINENO: result: $ac_cv_header_db_h" >&5
+ echo "${ECHO_T}$ac_cv_header_db_h" >&6; }
+ if test $ac_cv_header_db_h = yes; then
+-   DB_INCLUDES=/usr/include
++   DB_INCLUDES=/usr/local/include/db4
+ else
+ 
+              CFLAGS=-I/usr/include/db4

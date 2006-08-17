@@ -1,0 +1,21 @@
+$OpenBSD: patch-jvmfwk_plugins_sunmajor_pluginlib_sunversion_cxx,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
+--- jvmfwk/plugins/sunmajor/pluginlib/sunversion.cxx.orig	Tue Jun 20 02:09:54 2006
++++ jvmfwk/plugins/sunmajor/pluginlib/sunversion.cxx	Tue Aug 15 14:03:10 2006
+@@ -205,7 +205,7 @@ bool SunVersion::init(const char *szVers
+         m_preRelease = getPreRelease(pCur);
+         if (m_preRelease == Rel_NONE)
+             return false;
+-#if defined(FREEBSD)        
++#if defined(FREEBSD) || defined(OPENBSD)
+       if (m_preRelease == Rel_FreeBSD)
+       {
+           pCur++; //elemnate `p'
+@@ -256,7 +256,7 @@ SunVersion::PreRelease SunVersion::getPr
+         return Rel_RC2;
+     else if (! strcmp(szRelease, "rc3"))
+         return Rel_RC3;
+-#if defined (FREEBSD)
++#if defined (FREEBSD) || defined (OPENBSD)
+     else if (! strncmp(szRelease, "p", 1))
+         return Rel_FreeBSD;
+ #endif    

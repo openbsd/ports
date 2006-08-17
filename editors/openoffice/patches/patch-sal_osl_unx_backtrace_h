@@ -1,0 +1,21 @@
+$OpenBSD: patch-sal_osl_unx_backtrace_h,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
+--- sal/osl/unx/backtrace.h.orig	Thu Feb  9 18:05:59 2006
++++ sal/osl/unx/backtrace.h	Tue Aug 15 14:03:10 2006
+@@ -34,7 +34,7 @@
+  ************************************************************************/
+ 
+ 
+-#if defined (SOLARIS) || (FREEBSD) 
++#if defined (SOLARIS) || (FREEBSD) || (OPENBSD)
+ 
+ #ifdef __cplusplus
+ extern "C" {
+@@ -47,7 +47,7 @@ int backtrace( void **buffer, int max_fr
+ void backtrace_symbols_fd( void **buffer, int size, int fd );
+ 
+ /* no frame.h on FreeBSD */
+-#if defined FREEBSD
++#if defined FREEBSD || defined OPENBSD
+ struct frame {
+ 	long	arg0[8];
+ 	long	arg1[6];

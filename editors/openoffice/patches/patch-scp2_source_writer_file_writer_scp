@@ -1,0 +1,20 @@
+$OpenBSD: patch-scp2_source_writer_file_writer_scp,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
+--- scp2/source/writer/file_writer.scp.orig	Wed Aug 16 08:07:50 2006
++++ scp2/source/writer/file_writer.scp	Wed Aug 16 08:08:18 2006
+@@ -56,12 +56,16 @@ File gid_File_Exe_Swriter
+     Styles = (PACKED);
+ End
+ 
++#ifdef SOLAR_JAVA
++
+ File gid_File_Jar_Writer2latex
+     TXT_FILE_BODY;
+     Name = "writer2latex.jar";
+     Dir = gid_Dir_Classes;
+     Styles = (PACKED,PATCH);
+ End
++
++#endif
+ 
+ #if defined UNX && ! defined MACOSX
+ 

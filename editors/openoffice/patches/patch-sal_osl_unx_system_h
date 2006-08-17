@@ -1,0 +1,41 @@
+$OpenBSD: patch-sal_osl_unx_system_h,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
+--- sal/osl/unx/system.h.orig	Wed Jul 19 11:39:50 2006
++++ sal/osl/unx/system.h	Tue Aug 15 14:03:10 2006
+@@ -198,6 +198,28 @@
+ #	define  NO_PTHREAD_RTL
+ #endif
+ 
++#ifdef OPENBSD
++#   define  ETIME ETIMEDOUT
++#   define _POSIX_THREAD_SYSCALL_SOFT 1
++#   include <pthread.h>
++#   include <sys/sem.h>
++#   include <semaphore.h>
++#   include <dlfcn.h>
++#   include <sys/filio.h>
++#   include <sys/ioctl.h>
++#   include <sys/param.h>
++#   include <sys/time.h>
++#   include <sys/uio.h>
++#   include <sys/exec.h>
++#       include <sys/un.h>
++#   include <netinet/tcp.h>
++#       define  IORESOURCE_TRANSFER_BSD
++#   include <machine/endian.h>
++#	define  PTR_SIZE_T(s)	((size_t *)&(s))
++#       define  NO_PTHREAD_RTL
++#	define NO_PTHREAD_PRIORITY
++#endif
++
+ #ifdef SCO
+ #   define AF_IPX -1
+ #	include <strings.h>
+@@ -386,7 +408,7 @@ int macxp_resolveAlias(char *path, int b
+     !defined(LINUX)   && !defined(NETBSD) && !defined(FREEBSD) && !defined(SCO)  && \
+ 	!defined(AIX)     && !defined(HPUX)   && \
+ 	!defined(SOLARIS) && !defined(IRIX)   && !defined(MAC) && \
+-	!defined(MACOSX)
++	!defined(MACOSX) && !defined(OPENBSD)
+ #	error "Target platform not specified!"
+ #endif
+ 

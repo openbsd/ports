@@ -1,0 +1,20 @@
+$OpenBSD: patch-cli_ure_version_makefile_mk,v 1.1.1.1 2006/08/17 14:56:22 robert Exp $
+--- cli_ure/version/makefile.mk.orig	Tue Jul 25 09:55:26 2006
++++ cli_ure/version/makefile.mk	Tue Aug 15 14:03:09 2006
+@@ -52,8 +52,6 @@ ECHOQUOTE='
+ ECHOQUOTE=
+ .ENDIF
+ 
+-.IF "$(BUILD_FOR_CLI)" != ""
+-
+ ALLTAR : \
+ 	$(BIN)$/cliureversion.mk 
+ 
+@@ -69,7 +67,4 @@ $(BIN)$/cliureversion.mk: version.txt 
+ #INCVERSION .PHONY: version.txt incversions.txt  
+ #	+$(PERL) $(PRJ)$/source$/scripts$/increment_version.pl \
+ #	$< $(BIN)$/cliureversion.mk $(SOLARBINDIR)$/unotype_statistics.txt
+-
+-.END
+-
+ 

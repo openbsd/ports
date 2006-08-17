@@ -1,0 +1,12 @@
+$OpenBSD: patch-cppuhelper_source_makefile_mk,v 1.1.1.1 2006/08/17 14:56:22 robert Exp $
+--- cppuhelper/source/makefile.mk.orig	Tue Jun 20 13:58:34 2006
++++ cppuhelper/source/makefile.mk	Tue Aug 15 14:03:09 2006
+@@ -177,6 +177,8 @@ SHL1VERSIONMAP=gcc3_linux_intel.map
+ SHL1VERSIONMAP=gcc3_linux_intel.map
+ .ELIF "$(OS)$(CPU)$(COMNAME)"=="LINUXSgcc3"
+ SHL1VERSIONMAP=gcc3_linux_intel.map
++.ELIF "$(OS)$(CPU)$(COMNAME)"=="OPENBSDIgcc3"
++SHL1VERSIONMAP=gcc3_linux_intel.map
+ .ENDIF
+ 
+ # --- Targets ------------------------------------------------------

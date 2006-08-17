@@ -1,0 +1,12 @@
+$OpenBSD: patch-sal_inc_osl_endian_h,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
+--- sal/inc/osl/endian.h.orig	Fri Jan 20 15:27:49 2006
++++ sal/inc/osl/endian.h	Tue Aug 15 14:03:10 2006
+@@ -187,7 +187,7 @@ extern "C" {
+     !defined(LINUX)   && !defined(NETBSD) && !defined(SCO)   && \
+ 	!defined(AIX)     && !defined(HPUX)   && \
+ 	!defined(SOLARIS) && !defined(IRIX)   && !defined(MACOS) && \
+-	!defined(MACOSX) && !defined(FREEBSD)
++	!defined(MACOSX) && !defined(FREEBSD) && !defined(OPENBSD)
+ #	error "Target plattform not specified !"
+ #endif
+ 

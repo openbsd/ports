@@ -1,0 +1,12 @@
+$OpenBSD: patch-sal_inc_sal_config_h,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
+--- sal/inc/sal/config.h.orig	Tue Jun 20 06:15:28 2006
++++ sal/inc/sal/config.h	Tue Aug 15 14:03:10 2006
+@@ -102,7 +102,7 @@ extern "C" {
+ /* don't know what to put in here */
+ #endif
+ 
+-#if defined(SOLARIS) || defined(LINUX) || defined(NETBSD) || defined(FREEBSD) || defined(SCO) || defined(IRIX)
++#if defined(SOLARIS) || defined(LINUX) || defined(NETBSD) || defined(FREEBSD) || defined(SCO) || defined(IRIX) || defined(OPENBSD)
+ #define SAL_UNX
+ #define SAL_DLLEXTENSION ".so"
+ #define SAL_DLLPREFIX "lib"

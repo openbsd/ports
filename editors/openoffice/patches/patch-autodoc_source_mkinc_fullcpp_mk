@@ -1,0 +1,12 @@
+$OpenBSD: patch-autodoc_source_mkinc_fullcpp_mk,v 1.1.1.1 2006/08/17 14:56:21 robert Exp $
+--- autodoc/source/mkinc/fullcpp.mk.orig	Wed Sep  7 20:10:59 2005
++++ autodoc/source/mkinc/fullcpp.mk	Tue Aug 15 14:03:09 2006
+@@ -59,7 +59,7 @@ CFLAGS+= -YX"precomp.h" -Fp$(PRJ)$/$(INP
+ 
+ .ENDIF
+ 
+-.IF "$(OS)"=="LINUX" || "$(OS)"=="FREEBSD" || "$(OS)"=="NETBSD"
++.IF "$(OS)"=="LINUX" || "$(OS)"=="FREEBSD" || "$(OS)"=="NETBSD" || "$(OS)"=="OPENBSD"
+ CFLAGSCXX+= -frtti
+ .ENDIF
+ 

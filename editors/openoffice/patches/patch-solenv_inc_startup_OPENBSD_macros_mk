@@ -1,0 +1,6 @@
+$OpenBSD: patch-solenv_inc_startup_OPENBSD_macros_mk,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
+--- solenv/inc/startup/OPENBSD/macros.mk.orig	Wed Aug 16 10:28:21 2006
++++ solenv/inc/startup/OPENBSD/macros.mk	Tue Aug 15 14:06:56 2006
+@@ -0,0 +1,2 @@
++
++.INCLUDE .NOINFER .IGNORE : $(INCFILENAME:d:d:d)UNIX$/macros.mk

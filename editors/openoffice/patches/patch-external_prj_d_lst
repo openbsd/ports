@@ -1,0 +1,11 @@
+$OpenBSD: patch-external_prj_d_lst,v 1.1.1.1 2006/08/17 14:56:22 robert Exp $
+--- external/prj/d.lst.orig	Mon May  8 18:10:34 2006
++++ external/prj/d.lst	Tue Aug 15 14:03:10 2006
+@@ -46,6 +46,7 @@ mkdir: %_DEST%\pck%_EXT%
+ ..\%__SRC%\slo\PluginNew.* %_DEST%\lib%_EXT%\*
+ ..\%__SRC%\slb\gnu_getopt.lib %_DEST%\lib%_EXT%\gnu_getopt.lib
+ ..\%__SRC%\lib\libgnu_getopt.a %_DEST%\lib%_EXT%\libgnu_getopt.a
++..\%__SRC%\lib\libgnu_readdir_r.a %_DEST%\lib%_EXT%\libgnu_readdir_r.a
+ ..\%__SRC%\slb\zlib.lib %_DEST%\lib%_EXT%\zlib.lib
+ ..\%__SRC%\lib\libzlib.a %_DEST%\lib%_EXT%\libzlib.a
+ ..\%__SRC%\lib\libfreetype.a %_DEST%\lib%_EXT%\libfreetype.a

@@ -1,0 +1,21 @@
+$OpenBSD: patch-vcl_unx_source_app_i18n_ic_cxx,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
+--- vcl/unx/source/app/i18n_ic.cxx.orig	Mon Jun 19 21:48:53 2006
++++ vcl/unx/source/app/i18n_ic.cxx	Tue Aug 15 14:03:11 2006
+@@ -361,7 +361,7 @@ SalI18N_InputContext::SalI18N_InputConte
+ 
+         if ( mnPreeditStyle != XIMPreeditNone )
+         {
+-#if defined LINUX || defined FREEBSD || defined NETBSD || defined IRIX || defined MACOSX
++#if defined LINUX || defined FREEBSD || defined NETBSD || defined IRIX || defined MACOSX || defined OPENBSD
+             if ( mpPreeditAttributes != NULL )
+ #endif
+                 mpAttributes = XVaAddToNestedList( mpAttributes,
+@@ -369,7 +369,7 @@ SalI18N_InputContext::SalI18N_InputConte
+         }
+         if ( mnStatusStyle != XIMStatusNone )
+         {
+-#if defined LINUX || defined FREEBSD || defined NETBSD || defined IRIX || defined MACOSX
++#if defined LINUX || defined FREEBSD || defined NETBSD || defined IRIX || defined MACOSX || defined OPENBSD
+             if ( mpStatusAttributes != NULL )
+ #endif
+                 mpAttributes = XVaAddToNestedList( mpAttributes,

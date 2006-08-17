@@ -1,0 +1,12 @@
+$OpenBSD: patch-salhelper_source_gcc3_linux_intel_map,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
+--- salhelper/source/gcc3_linux_intel.map.orig	Wed Nov  3 10:10:31 2004
++++ salhelper/source/gcc3_linux_intel.map	Tue Aug 15 14:03:10 2006
+@@ -22,7 +22,7 @@ UDK_3_0_0 { # should have been UDK_3.0
+     # _ZTIN9salhelper21SimpleReferenceObjectE;
+     # _ZTSN9salhelper21SimpleReferenceObjectE;
+ 	_ZTVN9salhelper21SimpleReferenceObjectE;
+-
++	_ZN9salhelper21SimpleReferenceObjectnwEm;
+     local:
+         *;
+ };

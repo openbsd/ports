@@ -1,0 +1,21 @@
+$OpenBSD: patch-scp2_source_ure_ure_scp,v 1.1.1.1 2006/08/17 14:56:22 robert Exp $
+--- scp2/source/ure/ure.scp.orig	Fri Sep  9 03:46:59 2005
++++ scp2/source/ure/ure.scp	Tue Aug 15 14:03:11 2006
+@@ -606,7 +606,7 @@ End
+ 
+ #if defined _gcc3 && \
+     !(defined FREEBSD || defined NETBSD || defined MACOSX \
+-      || defined SYSTEM_STDLIBS)
++      || defined SYSTEM_STDLIBS || defined OPENBSD)
+ File gid_File_Dl_GccS
+     TXT_FILE_BODY;
+     Dir = SCP2_URE_DL_DIR;
+@@ -617,7 +617,7 @@ End
+ 
+ #if defined _gcc3 && \
+     !(defined FREEBSD || defined NETBSD || defined MACOSX \
+-      || defined SYSTEM_STDLIBS)
++      || defined SYSTEM_STDLIBS || defined OPENBSD)
+ File gid_File_Dl_Stdcpp
+     TXT_FILE_BODY;
+     Dir = SCP2_URE_DL_DIR;

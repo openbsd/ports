@@ -1,0 +1,19 @@
+$OpenBSD: patch-nas_nas-1_6_patch,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
+--- nas/nas-1.6.patch.orig	Fri Mar 10 16:59:50 2006
++++ nas/nas-1.6.patch	Tue Aug 15 14:03:10 2006
+@@ -763,3 +763,15 @@
+       XtAppAddActions(appContext, actions, XtNumber(actions));
+   
+       if (argc == 3)
++*** misc/nas-1.6/doc/Imakefile	Sat May  8 20:47:19 1999
++--- misc/build/nas-1.6/doc/Imakefile	Sat Apr 15 14:51:40 2006
++***************
++*** 27,33 ****
++  #define IHaveSubdirs
++  #define PassCDebugFlags AuPassCDebugFlags
++  
++- SUBDIRS = man
++- 
++  MakeSubdirs($(SUBDIRS))
++  DependSubdirs($(SUBDIRS))
++--- 27,31 ----

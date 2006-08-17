@@ -1,0 +1,12 @@
+$OpenBSD: patch-sal_osl_unx_time_c,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
+--- sal/osl/unx/time.c.orig	Thu Sep  8 17:02:55 2005
++++ sal/osl/unx/time.c	Tue Aug 15 14:03:10 2006
+@@ -40,7 +40,7 @@
+ #include <osl/time.h>
+ 
+ /* FIXME: detection should be done in configure script */
+-#if defined(MACOSX) || defined(FREEBSD) || defined(NETBSD) || defined(LINUX)
++#if defined(MACOSX) || defined(FREEBSD) || defined(NETBSD) || defined(LINUX) || defined(OPENBSD)
+ #define STRUCT_TM_HAS_GMTOFF 1
+ 
+ #elif defined(SOLARIS)

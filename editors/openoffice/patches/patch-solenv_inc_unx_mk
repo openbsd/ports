@@ -1,0 +1,13 @@
+$OpenBSD: patch-solenv_inc_unx_mk,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
+--- solenv/inc/unx.mk.orig	Wed Jul 19 11:26:37 2006
++++ solenv/inc/unx.mk	Tue Aug 15 14:03:11 2006
+@@ -36,6 +36,9 @@
+ # --- Unix-Environment ---------------------------------------
+ # Used if "$(GUI)" == "UNX"
+ 
++.IF "$(COM)$(OS)$(CPU)" == "GCCOPENBSDI"
++.INCLUDE : unxobsdi.mk
++.ENDIF
+ 
+ # Dieses Define gilt fuer alle  WNT- Plattformen
+ # fuer Compiler, wo kein Java unterstuetzt wird, muss dies ge'undeft werden

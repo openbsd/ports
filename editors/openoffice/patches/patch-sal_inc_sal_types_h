@@ -1,0 +1,12 @@
+$OpenBSD: patch-sal_inc_sal_types_h,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
+--- sal/inc/sal/types.h.orig	Tue Jun 20 06:15:50 2006
++++ sal/inc/sal/types.h	Tue Aug 15 14:03:10 2006
+@@ -282,7 +282,7 @@ typedef struct _sal_Sequence
+     lack RTTI support, dynamic_cast is not included here).
+  */
+ #ifdef __cplusplus
+-#if defined SAL_W32 || defined SOLARIS || defined LINUX || defined MACOSX || defined FREEBSD || defined NETBSD || defined AIX
++#if defined SAL_W32 || defined SOLARIS || defined LINUX || defined MACOSX || defined FREEBSD || defined NETBSD || defined AIX || defined OPENBSD
+ #define SAL_CONST_CAST(type, expr) (const_cast< type >(expr))
+ #define SAL_REINTERPRET_CAST(type, expr) (reinterpret_cast< type >(expr))
+ #define SAL_STATIC_CAST(type, expr) (static_cast< type >(expr))

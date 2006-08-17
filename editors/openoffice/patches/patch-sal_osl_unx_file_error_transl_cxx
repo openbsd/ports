@@ -1,0 +1,38 @@
+$OpenBSD: patch-sal_osl_unx_file_error_transl_cxx,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
+--- sal/osl/unx/file_error_transl.cxx.orig	Thu Sep  8 16:54:25 2005
++++ sal/osl/unx/file_error_transl.cxx	Tue Aug 15 14:03:10 2006
+@@ -219,19 +219,19 @@ oslFileError oslTranslateFileError(sal_B
+             osl_error = osl_File_E_LOOP;
+             break;
+ 
+-#if !(defined(MACOSX) || defined(NETBSD) || defined(FREEBSD))
++#if !(defined(MACOSX) || defined(NETBSD) || defined(FREEBSD) || defined(OPENBSD)) 
+         case EILSEQ:
+             osl_error = osl_File_E_ILSEQ;
+             break;
+ #endif /* MACOSX */
+             
+-#if !(defined(MACOSX) || defined(NETBSD) || defined(FREEBSD))
++#if !(defined(MACOSX) || defined(NETBSD) || defined(FREEBSD) || defined(OPENBSD))
+         case ENOLINK:
+             osl_error = osl_File_E_NOLINK;
+             break;
+ #endif /* MACOSX */
+             
+-#if !(defined(MACOSX) || defined(NETBSD) || defined(FREEBSD))
++#if !(defined(MACOSX) || defined(NETBSD) || defined(FREEBSD) || defined(OPENBSD))
+         case EMULTIHOP:
+             osl_error = osl_File_E_MULTIHOP;
+             break;
+@@ -241,9 +241,11 @@ oslFileError oslTranslateFileError(sal_B
+             osl_error = osl_File_E_USERS;
+             break;
+ 
++#if !defined (OPENBSD)
+         case EOVERFLOW:
+             osl_error = osl_File_E_OVERFLOW;
+             break;
++#endif
+         
+         case ETIMEDOUT:
+             osl_error = osl_File_E_TIMEDOUT;
