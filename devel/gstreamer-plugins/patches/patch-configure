@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.5 2006/03/20 15:33:21 espie Exp $
---- configure.orig	Sun Sep  4 14:21:34 2005
-+++ configure	Mon Mar 20 16:28:55 2006
+$OpenBSD: patch-configure,v 1.6 2006/08/18 17:04:22 kurt Exp $
+--- configure.orig	Sun Sep  4 08:21:34 2005
++++ configure	Wed Aug 16 17:24:06 2006
 @@ -28114,7 +28114,7 @@ DEFAULT_AUDIOSRC="osssrc"
  DEFAULT_VIDEOSRC="v4lsrc"
  DEFAULT_VISUALIZER="goom"
@@ -19,7 +19,15 @@ $OpenBSD: patch-configure,v 1.5 2006/03/20 15:33:21 espie Exp $
  else
    HAVE_XVIDEO="no"
  fi
-@@ -42153,7 +42153,7 @@ fi
+@@ -38321,6 +38321,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+   if test "x$no_arts" = x ; then
+     echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
++    ARTS_LIBS="-lstdc++"
+     HAVE_ARTS=yes
+   else
+     echo "$as_me:$LINENO: result: no" >&5
+@@ -42153,7 +42154,7 @@ fi
      DVDNAV_CFLAGS=
      HAVE_DVDNAV=no
    else
@@ -28,3 +36,12 @@ $OpenBSD: patch-configure,v 1.5 2006/03/20 15:33:21 espie Exp $
        DVDNAV_LIBS=`dvdnav-config --plugin-libs `
      else
        DVDNAV_LIBS=`dvdnav-config --libs `
+@@ -53328,7 +53329,7 @@ echo "${ECHO_T}$HAVE_SIDPLAY" >&6
+ fi
+ 
+ SIDPLAY_CFLAGS=
+-SIDPLAY_LIBS="-lsidplay"
++SIDPLAY_LIBS="-lsidplay -lstdc++"
+ 
+ 
+ 

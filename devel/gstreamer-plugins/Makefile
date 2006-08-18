@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2006/08/10 22:30:48 steven Exp $
+# $OpenBSD: Makefile,v 1.18 2006/08/18 17:04:22 kurt Exp $
 
 COMMENT=		"GStreamer Streaming-media framework plug-ins."
 
 VERSION=		0.8.11
 PATCHLEVEL=		
 DISTNAME=		gst-plugins-${VERSION}
-PKGNAME=		gstreamer-plugins-${VERSION}p7
+PKGNAME=		gstreamer-plugins-${VERSION}p8
 SHARED_LIBS=		gstgconf-0.8		1.0 \
 			gstinterfaces-0.8	1.0 \
 			gstmedia-info-0.8	1.0 \
@@ -94,7 +94,7 @@ OPTIONS-a52=		a52dec
 # arts
 COMMENT-arts=		"GStreamer plugin for interfacing with KDE arts"
 WANTLIB-arts=		vorbis vorbisenc pthread audiofile ossaudio mad ogg \
-			esd vorbisfile
+			esd vorbisfile stdc++
 DEPENDS-arts=		artsflow,mcop,artsflow_idl,artsc::x11/kde/arts3
 OPTIONS-arts=		arts artsc
 
@@ -115,7 +115,6 @@ OPTIONS-cdda=		cdparanoia
 COMMENT-dvdnav=		"GStreamer plugin for DVD playback with menus"
 DEPENDS-dvdnav=		dvdnav::multimedia/libdvdnav \
 			dvdread::devel/libdvdread
-WANTLIB-dvdnav=		pthread
 
 # dvdreadsrc
 COMMENT-dvdread=	"GStreamer plugin for DVD playback"
@@ -190,6 +189,7 @@ LIB_DEPENDS+= 		gstinterfaces-0.8.>=1.0::devel/gstreamer-plugins
 
 # sidplay
 COMMENT-sidplay=	"GStreamer plugin for playing SID files"
+WANTLIB-sidplay=	stdc++
 DEPENDS-sidplay=	sidplay::audio/libsidplay
 
 # sndfile
@@ -216,7 +216,7 @@ DEPENDS-vorbis=         vorbis,vorbisenc::audio/libvorbis
 
 .for PLUGIN in ${PLUGINS}
 COMMENT-${PLUGIN}?=	"GStreamer plugin for ${PLUGIN}"
-PKGNAME-${PLUGIN}?=	gstreamer-${PLUGIN}-${VERSION}${PATCHLEVEL}p7
+PKGNAME-${PLUGIN}?=	gstreamer-${PLUGIN}-${VERSION}${PATCHLEVEL}p8
 OPTIONS-${PLUGIN}?=	${PLUGIN}
 .  if defined(PACKAGING)
 .    if ${SUBPACKAGE} == "-${PLUGIN}"
