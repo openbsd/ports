@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST-es,v 1.3 2006/08/04 10:35:19 espie Exp $
+@comment $OpenBSD: PLIST-es,v 1.4 2006/08/18 08:12:52 bernd Exp $
 share/apps/koffice/
 share/apps/koffice/autocorrect/
 share/apps/koffice/autocorrect/es.xml
 share/doc/HTML/es/
-${DOC}api/
-${DOC}api/kfontdialog.png
+@comment ${DOC}api/
+@comment ${DOC}api/kfontdialog.png
 ${DOC}karbon/
 ${DOC}karbon/common
 ${DOC}karbon/${C}
