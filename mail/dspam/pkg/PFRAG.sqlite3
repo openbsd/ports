@@ -1,2 +1,3 @@
-@comment $OpenBSD: PFRAG.sqlite3,v 1.1 2005/10/26 06:18:39 jakob Exp $
+@comment $OpenBSD: PFRAG.sqlite3,v 1.2 2006/08/18 12:27:19 steven Exp $
+share/examples/dspam/sqlite/
 share/examples/dspam/sqlite/purge-3.sql
