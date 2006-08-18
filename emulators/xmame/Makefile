@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2006/08/16 16:55:09 kurt Exp $
+# $OpenBSD: Makefile,v 1.25 2006/08/18 17:09:23 kurt Exp $
 
 COMMENT=	"emulates arcade machines and old home computers"
 COMMENT-mame=	"emulates a massive variety of arcade machines"
@@ -28,7 +28,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${HISCORE_FILE}:0 \
 		${HISTORY_FILE} ${CHEAT_FILE}
 
 # Need to know endianness
-ONLY_FOR_ARCHS=	amd64 alpha hppa i386 m68k powerpc sparc
+ONLY_FOR_ARCHS=	amd64 alpha hppa i386 m68k sparc
 
 # xmame license, see
 # http://x.mame.net/license.html
@@ -99,9 +99,6 @@ MAKE_FLAGS+=	X11_DGA=1
 MAKE_FLAGS+=	MY_CPU=${MACHINE_ARCH}
 .elif ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "sparc"
 MAKE_FLAGS+=	MY_CPU=risc
-.elif ${MACHINE_ARCH} == "powerpc"
-MAKE_FLAGS+=	MY_CPU=risc \
-		LD="${CC} -Wl,-s,--relax"
 .endif
 
 LIB_DEPENDS+=	expat::textproc/expat
