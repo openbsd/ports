@@ -8,6 +8,7 @@ scripting languages.    Currently, SWIG supports :
 	- PHP
 	- Perl
 	- Python
+	- Ruby
 	- Tcl
 
 Using SWIG, it is possible to greatly simplify interface development

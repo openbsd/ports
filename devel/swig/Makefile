@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2006/08/01 23:39:08 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2006/08/18 16:04:47 sturm Exp $
 
 COMMENT=	"simplified wrapper and interface generator"
 
 VERSION=	1.3.24
 
 DISTNAME=	swig-${VERSION}
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	devel
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=swig/}
 
