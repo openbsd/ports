@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2006/08/13 19:58:58 ian Exp $
+# $OpenBSD: Makefile,v 1.7 2006/08/19 18:58:55 sturm Exp $
 
 COMMENT=		"GStreamer streaming media framework runtime"
 
 DISTNAME=		gstreamer-0.8.11
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 SHARED_LIBS=		gstcontrol-0.8	5.0 \
 			gstreamer-0.8	5.0
 
