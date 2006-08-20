@@ -1,6 +1,6 @@
-$OpenBSD: patch-cppu_source_uno_data_cxx,v 1.1.1.1 2006/08/17 14:56:22 robert Exp $
---- cppu/source/uno/data.cxx.orig	Fri Feb  3 18:32:32 2006
-+++ cppu/source/uno/data.cxx	Tue Aug 15 14:03:09 2006
+$OpenBSD: patch-cppu_source_uno_data_cxx,v 1.2 2006/08/20 03:36:52 kurt Exp $
+--- cppu/source/uno/data.cxx.orig.port	Fri Feb  3 12:32:32 2006
++++ cppu/source/uno/data.cxx	Fri Aug 18 15:47:42 2006
 @@ -364,7 +364,7 @@ sal_Bool SAL_CALL uno_type_isAssignableF
  #endif
  

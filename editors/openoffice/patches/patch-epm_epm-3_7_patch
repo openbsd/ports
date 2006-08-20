@@ -1,6 +1,6 @@
-$OpenBSD: patch-epm_epm-3_7_patch,v 1.1.1.1 2006/08/17 14:56:22 robert Exp $
---- epm/epm-3.7.patch.orig	Wed Jul 19 11:36:49 2006
-+++ epm/epm-3.7.patch	Tue Aug 15 14:03:10 2006
+$OpenBSD: patch-epm_epm-3_7_patch,v 1.2 2006/08/20 03:36:52 kurt Exp $
+--- epm/epm-3.7.patch.orig.port	Wed Jul 19 05:36:49 2006
++++ epm/epm-3.7.patch	Fri Aug 18 15:47:42 2006
 @@ -623,6 +623,35 @@
                  file->dst);
          fprintf(fp, "@exec /bin/chmod %04o %s\n", file->mode, file->dst);

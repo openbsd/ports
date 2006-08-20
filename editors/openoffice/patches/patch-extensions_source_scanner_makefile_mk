@@ -1,6 +1,6 @@
-$OpenBSD: patch-extensions_source_scanner_makefile_mk,v 1.1.1.1 2006/08/17 14:56:22 robert Exp $
---- extensions/source/scanner/makefile.mk.orig	Thu Sep  8 22:36:35 2005
-+++ extensions/source/scanner/makefile.mk	Tue Aug 15 14:03:10 2006
+$OpenBSD: patch-extensions_source_scanner_makefile_mk,v 1.2 2006/08/20 03:36:52 kurt Exp $
+--- extensions/source/scanner/makefile.mk.orig.port	Thu Sep  8 16:36:35 2005
++++ extensions/source/scanner/makefile.mk	Fri Aug 18 15:47:42 2006
 @@ -89,7 +89,9 @@ SHL1STDLIBS=\
  .IF "$(GUI)"=="UNX"
  .IF "$(OS)"!="FREEBSD"

@@ -1,6 +1,6 @@
-$OpenBSD: patch-store_util_makefile_mk,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
---- store/util/makefile.mk.orig	Thu Jun 29 13:27:36 2006
-+++ store/util/makefile.mk	Tue Aug 15 14:03:11 2006
+$OpenBSD: patch-store_util_makefile_mk,v 1.2 2006/08/20 03:36:53 kurt Exp $
+--- store/util/makefile.mk.orig.port	Thu Jun 29 07:27:36 2006
++++ store/util/makefile.mk	Fri Aug 18 15:47:45 2006
 @@ -79,7 +79,7 @@ SHL1STDLIBS+=$(LIBSTLPORT)
  
  # On gcc3 __Unwind_SetIP is not in supc++ but in libgcc_s.so

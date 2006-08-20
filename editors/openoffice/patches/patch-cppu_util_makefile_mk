@@ -1,6 +1,6 @@
-$OpenBSD: patch-cppu_util_makefile_mk,v 1.1.1.1 2006/08/17 14:56:22 robert Exp $
---- cppu/util/makefile.mk.orig	Wed Apr 19 15:50:07 2006
-+++ cppu/util/makefile.mk	Tue Aug 15 14:03:09 2006
+$OpenBSD: patch-cppu_util_makefile_mk,v 1.2 2006/08/20 03:36:52 kurt Exp $
+--- cppu/util/makefile.mk.orig.port	Wed Apr 19 09:50:07 2006
++++ cppu/util/makefile.mk	Fri Aug 18 15:47:42 2006
 @@ -65,7 +65,9 @@ SHL1STDLIBS = $(SALLIB) $(SALHELPERLIB)
  SHL1DEPN=
  SHL1IMPLIB=i$(TARGET)

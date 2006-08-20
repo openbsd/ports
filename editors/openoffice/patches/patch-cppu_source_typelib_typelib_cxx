@@ -1,6 +1,6 @@
-$OpenBSD: patch-cppu_source_typelib_typelib_cxx,v 1.1.1.1 2006/08/17 14:56:22 robert Exp $
---- cppu/source/typelib/typelib.cxx.orig	Mon Jun 19 15:13:24 2006
-+++ cppu/source/typelib/typelib.cxx	Tue Aug 15 14:03:09 2006
+$OpenBSD: patch-cppu_source_typelib_typelib_cxx,v 1.2 2006/08/20 03:36:52 kurt Exp $
+--- cppu/source/typelib/typelib.cxx.orig.port	Mon Jun 19 09:13:24 2006
++++ cppu/source/typelib/typelib.cxx	Fri Aug 18 15:47:42 2006
 @@ -643,7 +643,7 @@ extern "C" void SAL_CALL typelib_typedes
  			pRet = (typelib_TypeDescription *)pTmp;
  #if OSL_DEBUG_LEVEL > 1

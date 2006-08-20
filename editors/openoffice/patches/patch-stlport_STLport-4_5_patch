@@ -1,6 +1,6 @@
-$OpenBSD: patch-stlport_STLport-4_5_patch,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
---- stlport/STLport-4.5.patch.orig	Thu Apr 27 09:47:20 2006
-+++ stlport/STLport-4.5.patch	Tue Aug 15 14:03:11 2006
+$OpenBSD: patch-stlport_STLport-4_5_patch,v 1.2 2006/08/20 03:36:53 kurt Exp $
+--- stlport/STLport-4.5.patch.orig.port	Thu Apr 27 03:47:20 2006
++++ stlport/STLport-4.5.patch	Fri Aug 18 15:47:45 2006
 @@ -141,7 +141,7 @@
  ! #
  ! #

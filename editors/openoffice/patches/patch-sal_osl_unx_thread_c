@@ -1,6 +1,6 @@
-$OpenBSD: patch-sal_osl_unx_thread_c,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
---- sal/osl/unx/thread.c.orig	Thu Jul  6 16:42:32 2006
-+++ sal/osl/unx/thread.c	Tue Aug 15 14:03:10 2006
+$OpenBSD: patch-sal_osl_unx_thread_c,v 1.2 2006/08/20 03:36:53 kurt Exp $
+--- sal/osl/unx/thread.c.orig.port	Thu Jul  6 10:42:32 2006
++++ sal/osl/unx/thread.c	Fri Aug 18 15:47:44 2006
 @@ -35,6 +35,7 @@
  
  #include "system.h"

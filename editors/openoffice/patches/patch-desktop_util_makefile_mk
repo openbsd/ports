@@ -1,6 +1,6 @@
-$OpenBSD: patch-desktop_util_makefile_mk,v 1.1.1.1 2006/08/17 14:56:22 robert Exp $
---- desktop/util/makefile.mk.orig	Tue May  2 19:13:56 2006
-+++ desktop/util/makefile.mk	Tue Aug 15 14:03:09 2006
+$OpenBSD: patch-desktop_util_makefile_mk,v 1.2 2006/08/20 03:36:52 kurt Exp $
+--- desktop/util/makefile.mk.orig.port	Tue May  2 13:13:56 2006
++++ desktop/util/makefile.mk	Fri Aug 18 15:47:42 2006
 @@ -96,7 +96,7 @@ LIB1FILES += $(OBJ)$/copyright_ascii_sun
  LINKFLAGSAPPGUI!:=	$(LINKFLAGSAPPGUI:s/-bind_at_load//)
  .ENDIF # MACOSX

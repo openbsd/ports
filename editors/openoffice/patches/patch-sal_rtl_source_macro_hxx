@@ -1,6 +1,6 @@
-$OpenBSD: patch-sal_rtl_source_macro_hxx,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
---- sal/rtl/source/macro.hxx.orig	Wed Oct  5 13:40:14 2005
-+++ sal/rtl/source/macro.hxx	Tue Aug 15 14:03:10 2006
+$OpenBSD: patch-sal_rtl_source_macro_hxx,v 1.2 2006/08/20 03:36:53 kurt Exp $
+--- sal/rtl/source/macro.hxx.orig.port	Wed Oct  5 07:40:14 2005
++++ sal/rtl/source/macro.hxx	Fri Aug 18 15:47:44 2006
 @@ -53,6 +53,8 @@
  #define THIS_OS "FreeBSD"
  #elif defined IRIX

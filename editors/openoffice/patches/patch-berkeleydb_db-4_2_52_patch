@@ -1,6 +1,6 @@
-$OpenBSD: patch-berkeleydb_db-4_2_52_patch,v 1.1.1.1 2006/08/17 14:56:21 robert Exp $
---- berkeleydb/db-4.2.52.patch.orig	Tue Jul 25 12:23:22 2006
-+++ berkeleydb/db-4.2.52.patch	Tue Aug 15 14:03:09 2006
+$OpenBSD: patch-berkeleydb_db-4_2_52_patch,v 1.2 2006/08/20 03:36:52 kurt Exp $
+--- berkeleydb/db-4.2.52.patch.orig.port	Tue Jul 25 06:23:22 2006
++++ berkeleydb/db-4.2.52.patch	Fri Aug 18 15:47:42 2006
 @@ -521,6 +521,19 @@
  *** misc/db-4.2.52.NC/dist/configure	Wed Dec  3 22:10:02 2003
  --- misc/build/db-4.2.52.NC/dist/configure	Tue Jul 25 09:05:20 2006

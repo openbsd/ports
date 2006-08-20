@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_office_set_soenv_in,v 1.1.1.1 2006/08/17 14:56:22 robert Exp $
---- config_office/set_soenv.in.orig	Wed Jul 19 11:52:27 2006
-+++ config_office/set_soenv.in	Tue Aug 15 14:05:56 2006
+$OpenBSD: patch-config_office_set_soenv_in,v 1.2 2006/08/20 03:36:52 kurt Exp $
+--- config_office/set_soenv.in.orig.port	Wed Jul 19 05:52:27 2006
++++ config_office/set_soenv.in	Fri Aug 18 15:47:46 2006
 @@ -368,6 +368,34 @@ elsif ( $platform =~ m/freebsd/ ) 
        $INPATH         = $OUTPATH.$PROEXT;
        $GVERDIR        = $INPATH;

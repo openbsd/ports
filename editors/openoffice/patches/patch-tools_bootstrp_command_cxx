@@ -1,6 +1,6 @@
-$OpenBSD: patch-tools_bootstrp_command_cxx,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
---- tools/bootstrp/command.cxx.orig	Wed Jul 19 19:12:27 2006
-+++ tools/bootstrp/command.cxx	Tue Aug 15 14:03:11 2006
+$OpenBSD: patch-tools_bootstrp_command_cxx,v 1.2 2006/08/20 03:36:53 kurt Exp $
+--- tools/bootstrp/command.cxx.orig.port	Wed Jul 19 13:12:27 2006
++++ tools/bootstrp/command.cxx	Fri Aug 18 15:47:45 2006
 @@ -73,7 +73,7 @@
  #include <sys/types.h>
  #include <unistd.h>

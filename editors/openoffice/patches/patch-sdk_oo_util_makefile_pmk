@@ -1,6 +1,6 @@
-$OpenBSD: patch-sdk_oo_util_makefile_pmk,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
---- sdk_oo/util/makefile.pmk.orig	Fri Nov 11 11:53:22 2005
-+++ sdk_oo/util/makefile.pmk	Tue Aug 15 14:03:11 2006
+$OpenBSD: patch-sdk_oo_util_makefile_pmk,v 1.2 2006/08/20 03:36:53 kurt Exp $
+--- sdk_oo/util/makefile.pmk.orig.port	Fri Nov 11 05:53:22 2005
++++ sdk_oo/util/makefile.pmk	Fri Aug 18 15:47:45 2006
 @@ -132,6 +132,11 @@ DESTPLATFROM=irix
  # MACOSX
  ###########

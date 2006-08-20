@@ -1,6 +1,6 @@
-$OpenBSD: patch-shell_source_backends_localebe_localebackend_cxx,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
---- shell/source/backends/localebe/localebackend.cxx.orig	Mon Jun 19 16:16:34 2006
-+++ shell/source/backends/localebe/localebackend.cxx	Tue Aug 15 14:03:11 2006
+$OpenBSD: patch-shell_source_backends_localebe_localebackend_cxx,v 1.2 2006/08/20 03:36:53 kurt Exp $
+--- shell/source/backends/localebe/localebackend.cxx.orig.port	Mon Jun 19 10:16:34 2006
++++ shell/source/backends/localebe/localebackend.cxx	Fri Aug 18 15:47:45 2006
 @@ -50,7 +50,7 @@
  
  #include <stdio.h>

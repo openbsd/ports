@@ -1,6 +1,6 @@
-$OpenBSD: patch-store_source_fileunx_hxx,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
---- store/source/fileunx.hxx.orig	Tue Jun 20 02:32:01 2006
-+++ store/source/fileunx.hxx	Tue Aug 15 14:03:11 2006
+$OpenBSD: patch-store_source_fileunx_hxx,v 1.2 2006/08/20 03:36:53 kurt Exp $
+--- store/source/fileunx.hxx.orig.port	Mon Jun 19 20:32:01 2006
++++ store/source/fileunx.hxx	Fri Aug 18 15:47:45 2006
 @@ -46,7 +46,7 @@
  #include <sys/stat.h>
  #include <sys/types.h>

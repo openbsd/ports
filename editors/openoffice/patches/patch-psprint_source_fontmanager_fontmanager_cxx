@@ -1,6 +1,6 @@
-$OpenBSD: patch-psprint_source_fontmanager_fontmanager_cxx,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
---- psprint/source/fontmanager/fontmanager.cxx.orig	Mon Jun 19 12:24:03 2006
-+++ psprint/source/fontmanager/fontmanager.cxx	Tue Aug 15 14:03:10 2006
+$OpenBSD: patch-psprint_source_fontmanager_fontmanager_cxx,v 1.2 2006/08/20 03:36:52 kurt Exp $
+--- psprint/source/fontmanager/fontmanager.cxx.orig.port	Mon Jun 19 06:24:03 2006
++++ psprint/source/fontmanager/fontmanager.cxx	Fri Aug 18 15:47:43 2006
 @@ -427,7 +427,11 @@ bool PrintFontManager::BuiltinFont::quer
  
  // -------------------------------------------------------------------------

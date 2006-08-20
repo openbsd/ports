@@ -1,6 +1,6 @@
-$OpenBSD: patch-solenv_bin_mapgen_pl,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
---- solenv/bin/mapgen.pl.orig	Thu Sep  8 00:10:44 2005
-+++ solenv/bin/mapgen.pl	Tue Aug 15 14:03:11 2006
+$OpenBSD: patch-solenv_bin_mapgen_pl,v 1.2 2006/08/20 03:36:53 kurt Exp $
+--- solenv/bin/mapgen.pl.orig.port	Wed Sep  7 18:10:44 2005
++++ solenv/bin/mapgen.pl	Fri Aug 18 15:47:45 2006
 @@ -143,7 +143,8 @@ sub filter_symbols {
  		$env_section = '1' and next if ((/^# SOLARIS #$/) && ($ENV{OS} eq 'SOLARIS'));
  		$env_section = '1' and next if ((/^# LINUX #$/) && ($ENV{OS} eq 'LINUX'));

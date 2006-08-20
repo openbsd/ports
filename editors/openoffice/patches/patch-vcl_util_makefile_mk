@@ -1,6 +1,6 @@
-$OpenBSD: patch-vcl_util_makefile_mk,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
---- vcl/util/makefile.mk.orig	Thu Jun 29 13:25:18 2006
-+++ vcl/util/makefile.mk	Tue Aug 15 14:03:11 2006
+$OpenBSD: patch-vcl_util_makefile_mk,v 1.2 2006/08/20 03:36:53 kurt Exp $
+--- vcl/util/makefile.mk.orig.port	Thu Jun 29 07:25:18 2006
++++ vcl/util/makefile.mk	Fri Aug 18 15:47:46 2006
 @@ -186,8 +186,7 @@ SHL1USE_EXPORTS=ordinal
  SHL1LIBS=   $(LIB1TARGET)
  .IF "$(GUI)"!="UNX"

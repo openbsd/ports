@@ -1,6 +1,6 @@
-$OpenBSD: patch-automation_source_testtool_objtest_cxx,v 1.1.1.1 2006/08/17 14:56:21 robert Exp $
---- automation/source/testtool/objtest.cxx.orig	Thu Jul  6 16:33:04 2006
-+++ automation/source/testtool/objtest.cxx	Tue Aug 15 14:03:09 2006
+$OpenBSD: patch-automation_source_testtool_objtest_cxx,v 1.2 2006/08/20 03:36:52 kurt Exp $
+--- automation/source/testtool/objtest.cxx.orig.port	Thu Jul  6 10:33:04 2006
++++ automation/source/testtool/objtest.cxx	Fri Aug 18 15:47:41 2006
 @@ -532,6 +532,8 @@ void TestToolObj::LoadIniFile()				// La
      abGP.Append( "14" );
  #elif defined LINUX && defined X86_64

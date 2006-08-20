@@ -1,6 +1,6 @@
-$OpenBSD: patch-solenv_config_ssrc680_ini,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
---- solenv/config/ssrc680.ini.orig	Wed Jul 19 11:38:15 2006
-+++ solenv/config/ssrc680.ini	Tue Aug 15 14:03:11 2006
+$OpenBSD: patch-solenv_config_ssrc680_ini,v 1.2 2006/08/20 03:36:53 kurt Exp $
+--- solenv/config/ssrc680.ini.orig.port	Wed Jul 19 05:38:15 2006
++++ solenv/config/ssrc680.ini	Fri Aug 18 15:47:45 2006
 @@ -2454,7 +2454,7 @@ unxmacxp
  	}
  }

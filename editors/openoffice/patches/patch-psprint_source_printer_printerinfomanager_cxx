@@ -1,6 +1,6 @@
-$OpenBSD: patch-psprint_source_printer_printerinfomanager_cxx,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
---- psprint/source/printer/printerinfomanager.cxx.orig	Mon Jul 10 18:30:50 2006
-+++ psprint/source/printer/printerinfomanager.cxx	Tue Aug 15 14:03:10 2006
+$OpenBSD: patch-psprint_source_printer_printerinfomanager_cxx,v 1.2 2006/08/20 03:36:52 kurt Exp $
+--- psprint/source/printer/printerinfomanager.cxx.orig.port	Mon Jul 10 12:30:50 2006
++++ psprint/source/printer/printerinfomanager.cxx	Fri Aug 18 15:47:43 2006
 @@ -1172,7 +1172,7 @@ struct SystemCommandParameters
  
  static const struct SystemCommandParameters aParms[] =

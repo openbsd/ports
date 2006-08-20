@@ -1,6 +1,6 @@
-$OpenBSD: patch-solenv_inc_unx_mk,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
---- solenv/inc/unx.mk.orig	Wed Jul 19 11:26:37 2006
-+++ solenv/inc/unx.mk	Tue Aug 15 14:03:11 2006
+$OpenBSD: patch-solenv_inc_unx_mk,v 1.2 2006/08/20 03:36:53 kurt Exp $
+--- solenv/inc/unx.mk.orig.port	Wed Jul 19 05:26:37 2006
++++ solenv/inc/unx.mk	Fri Aug 18 15:47:45 2006
 @@ -36,6 +36,9 @@
  # --- Unix-Environment ---------------------------------------
  # Used if "$(GUI)" == "UNX"

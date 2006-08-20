@@ -1,6 +1,6 @@
-$OpenBSD: patch-desktop_source_pkgchk_unopkg_cmdenv_cxx,v 1.1.1.1 2006/08/17 14:56:22 robert Exp $
---- desktop/source/pkgchk/unopkg_cmdenv.cxx.orig	Thu Jul 13 19:08:49 2006
-+++ desktop/source/pkgchk/unopkg_cmdenv.cxx	Tue Aug 15 14:03:09 2006
+$OpenBSD: patch-desktop_source_pkgchk_unopkg_cmdenv_cxx,v 1.2 2006/08/20 03:36:52 kurt Exp $
+--- desktop/source/pkgchk/unopkg_cmdenv.cxx.orig.port	Thu Jul 13 13:08:49 2006
++++ desktop/source/pkgchk/unopkg_cmdenv.cxx	Fri Aug 18 15:47:42 2006
 @@ -180,18 +180,18 @@ CommandEnvironmentImpl::~CommandEnvironm
  void CommandEnvironmentImpl::printLicense(const OUString& sLicense, bool & accept, bool &decline)
  {

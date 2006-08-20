@@ -1,6 +1,6 @@
-$OpenBSD: patch-vcl_unx_inc_saldata_hxx,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
---- vcl/unx/inc/saldata.hxx.orig	Fri Nov 11 12:56:19 2005
-+++ vcl/unx/inc/saldata.hxx	Tue Aug 15 14:03:11 2006
+$OpenBSD: patch-vcl_unx_inc_saldata_hxx,v 1.2 2006/08/20 03:36:53 kurt Exp $
+--- vcl/unx/inc/saldata.hxx.orig.port	Fri Nov 11 06:56:19 2005
++++ vcl/unx/inc/saldata.hxx	Fri Aug 18 15:47:46 2006
 @@ -68,7 +68,7 @@ class SalPrinter;
  
  DECLARE_LIST( SalDisplays, SalDisplay* )

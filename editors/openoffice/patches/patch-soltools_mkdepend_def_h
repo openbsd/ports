@@ -1,7 +1,7 @@
-$OpenBSD: patch-soltools_mkdepend_def_h,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
---- soltools/mkdepend/def.h.orig	Thu Aug 17 14:58:18 2006
-+++ soltools/mkdepend/def.h	Thu Aug 17 14:58:33 2006
-@@ -27,6 +27,7 @@
+$OpenBSD: patch-soltools_mkdepend_def_h,v 1.2 2006/08/20 03:36:53 kurt Exp $
+--- soltools/mkdepend/def.h.orig.port	Thu Jun  6 07:55:03 2002
++++ soltools/mkdepend/def.h	Fri Aug 18 15:47:45 2006
+@@ -27,6 +27,7 @@ in this Software without prior written a
  */
  
  #ifndef NO_X11

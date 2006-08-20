@@ -1,6 +1,6 @@
-$OpenBSD: patch-vcl_unx_source_app_i18n_xkb_cxx,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
---- vcl/unx/source/app/i18n_xkb.cxx.orig	Mon Jun 19 21:49:52 2006
-+++ vcl/unx/source/app/i18n_xkb.cxx	Tue Aug 15 14:03:11 2006
+$OpenBSD: patch-vcl_unx_source_app_i18n_xkb_cxx,v 1.2 2006/08/20 03:36:53 kurt Exp $
+--- vcl/unx/source/app/i18n_xkb.cxx.orig.port	Mon Jun 19 15:49:52 2006
++++ vcl/unx/source/app/i18n_xkb.cxx	Fri Aug 18 15:47:46 2006
 @@ -36,7 +36,7 @@
  
  #include <stdio.h>

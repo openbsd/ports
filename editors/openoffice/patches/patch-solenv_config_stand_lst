@@ -1,6 +1,6 @@
-$OpenBSD: patch-solenv_config_stand_lst,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
---- solenv/config/stand.lst.orig	Fri May 19 11:36:56 2006
-+++ solenv/config/stand.lst	Tue Aug 15 14:03:11 2006
+$OpenBSD: patch-solenv_config_stand_lst,v 1.2 2006/08/20 03:36:53 kurt Exp $
+--- solenv/config/stand.lst.orig.port	Fri May 19 05:36:56 2006
++++ solenv/config/stand.lst	Fri Aug 18 15:47:45 2006
 @@ -37,10 +37,10 @@ SRC680
  	}
  	Environments

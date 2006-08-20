@@ -1,6 +1,6 @@
-$OpenBSD: patch-odk_setsdkenv_unix_csh_in,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
---- odk/setsdkenv_unix.csh.in.orig	Wed Nov  9 10:29:11 2005
-+++ odk/setsdkenv_unix.csh.in	Tue Aug 15 14:03:10 2006
+$OpenBSD: patch-odk_setsdkenv_unix_csh_in,v 1.2 2006/08/20 03:36:52 kurt Exp $
+--- odk/setsdkenv_unix.csh.in.orig.port	Wed Nov  9 04:29:11 2005
++++ odk/setsdkenv_unix.csh.in	Fri Aug 18 15:47:43 2006
 @@ -176,6 +176,31 @@ switch (`${sdkdir}/config.guess | cut -d
      else	
  	setenv PTHREAD_LIBS -pthread

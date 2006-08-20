@@ -1,6 +1,6 @@
-$OpenBSD: patch-external_gcc3_specific_makefile_mk,v 1.1.1.1 2006/08/17 14:56:22 robert Exp $
---- external/gcc3_specific/makefile.mk.orig	Mon Sep 12 16:49:17 2005
-+++ external/gcc3_specific/makefile.mk	Tue Aug 15 14:03:10 2006
+$OpenBSD: patch-external_gcc3_specific_makefile_mk,v 1.2 2006/08/20 03:36:52 kurt Exp $
+--- external/gcc3_specific/makefile.mk.orig.port	Mon Sep 12 10:49:17 2005
++++ external/gcc3_specific/makefile.mk	Fri Aug 18 15:47:42 2006
 @@ -12,8 +12,8 @@ TARGET=gcc3_specific
  .IF "$(OS)"!="MACOSX"
  .IF "$(OS)"!="IRIX"

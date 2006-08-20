@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/08/17 14:56:21 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2006/08/20 03:36:52 kurt Exp $
 
 ONLY_FOR_ARCHS= i386
 
@@ -8,7 +8,7 @@ M=		179
 VERSION=	SRC680_m${M}
 DISTNAME=	OOo_${VERSION}_source
 WRKDIST=	${WRKDIR}/ooo_${VERSION}_src
-PKGNAME=	openoffice-2.0.3m${M}
+PKGNAME=	openoffice-2.0.3m${M}p0
 CATEGORIES=	editors productivity
 
 SHARED_LIBS=	icudata		26.0 \
@@ -52,6 +52,7 @@ USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 VMEM_WARNING=	Yes
 
+PATCHORIG=	.orig.port
 WRKCONF=	${WRKSRC}/config_office
 
 CONFIGURE_STYLE=gnu
@@ -85,7 +86,7 @@ FLAVORS=	debug
 FLAVOR?=
 
 .if ${FLAVOR:L:Mdebug}
-CONFIGURE_ARGS+=	--enable-debug --enable-crashdump=yes --enable-symbols
+CONFIGURE_ARGS+=	--enable-crashdump --enable-symbols
 .endif
 
 NCPU=		`sysctl -n hw.ncpu`
@@ -111,7 +112,7 @@ pre-configure:
 do-build:
 	@cd ${WRKBUILD} && \
 		./bootstrap && \
-		 ${TCSH} -c 'source OpenBSDEnv.Set && cd instsetoo_native && \
+		${TCSH} -c 'source OpenBSDEnv.Set && cd instsetoo_native && \
 			build.pl -P${NCPU} --all'
 
 do-install:

@@ -1,6 +1,6 @@
-$OpenBSD: patch-lingucomponent_source_spellcheck_hunspell_affixmgr_cxx,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
---- lingucomponent/source/spellcheck/hunspell/affixmgr.cxx.orig	Wed Jul 19 18:15:53 2006
-+++ lingucomponent/source/spellcheck/hunspell/affixmgr.cxx	Tue Aug 15 14:03:10 2006
+$OpenBSD: patch-lingucomponent_source_spellcheck_hunspell_affixmgr_cxx,v 1.2 2006/08/20 03:36:52 kurt Exp $
+--- lingucomponent/source/spellcheck/hunspell/affixmgr.cxx.orig.port	Wed Jul 19 12:15:53 2006
++++ lingucomponent/source/spellcheck/hunspell/affixmgr.cxx	Fri Aug 18 15:47:43 2006
 @@ -2439,12 +2439,11 @@ char * AffixMgr::suffix_check_twosfx_mor
                  result3[0] = '\0';
  #ifdef DEBUG

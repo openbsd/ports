@@ -1,6 +1,6 @@
-$OpenBSD: patch-solenv_bin_modules_installer_globals_pm,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
---- solenv/bin/modules/installer/globals.pm.orig	Mon Jul 10 20:49:40 2006
-+++ solenv/bin/modules/installer/globals.pm	Tue Aug 15 14:03:11 2006
+$OpenBSD: patch-solenv_bin_modules_installer_globals_pm,v 1.2 2006/08/20 03:36:53 kurt Exp $
+--- solenv/bin/modules/installer/globals.pm.orig.port	Mon Jul 10 14:49:40 2006
++++ solenv/bin/modules/installer/globals.pm	Fri Aug 18 15:47:45 2006
 @@ -144,7 +144,7 @@ BEGIN
  	$jdklib = "";
  	$jrepath = "";

@@ -1,6 +1,6 @@
-$OpenBSD: patch-solenv_inc_tg_ext_mk,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
---- solenv/inc/tg_ext.mk.orig	Wed Jul  5 23:58:11 2006
-+++ solenv/inc/tg_ext.mk	Tue Aug 15 14:03:11 2006
+$OpenBSD: patch-solenv_inc_tg_ext_mk,v 1.2 2006/08/20 03:36:53 kurt Exp $
+--- solenv/inc/tg_ext.mk.orig.port	Wed Jul  5 17:58:11 2006
++++ solenv/inc/tg_ext.mk	Fri Aug 18 15:47:45 2006
 @@ -48,7 +48,9 @@ INCLUDE!:=$(INCLUDE:s/ -I/;/)
  
  .IF "$(OS)"!="NETBSD"

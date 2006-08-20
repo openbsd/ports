@@ -1,6 +1,6 @@
-$OpenBSD: patch-sal_osl_unx_file_cxx,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
---- sal/osl/unx/file.cxx.orig	Tue Jun 20 06:17:10 2006
-+++ sal/osl/unx/file.cxx	Tue Aug 15 14:03:10 2006
+$OpenBSD: patch-sal_osl_unx_file_cxx,v 1.2 2006/08/20 03:36:52 kurt Exp $
+--- sal/osl/unx/file.cxx.orig.port	Tue Jun 20 00:17:10 2006
++++ sal/osl/unx/file.cxx	Fri Aug 18 15:47:43 2006
 @@ -115,7 +115,7 @@ static const sal_Char* MOUNTTAB="/etc/mn
  #include <ctype.h>
  static const sal_Char* MOUNTTAB="/etc/mtab";

@@ -1,6 +1,6 @@
-$OpenBSD: patch-scp2_source_ure_ure_scp,v 1.1.1.1 2006/08/17 14:56:22 robert Exp $
---- scp2/source/ure/ure.scp.orig	Fri Sep  9 03:46:59 2005
-+++ scp2/source/ure/ure.scp	Tue Aug 15 14:03:11 2006
+$OpenBSD: patch-scp2_source_ure_ure_scp,v 1.2 2006/08/20 03:36:53 kurt Exp $
+--- scp2/source/ure/ure.scp.orig.port	Thu Sep  8 21:46:59 2005
++++ scp2/source/ure/ure.scp	Fri Aug 18 15:47:45 2006
 @@ -606,7 +606,7 @@ End
  
  #if defined _gcc3 && \

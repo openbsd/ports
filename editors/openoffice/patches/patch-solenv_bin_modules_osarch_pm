@@ -1,6 +1,6 @@
-$OpenBSD: patch-solenv_bin_modules_osarch_pm,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
---- solenv/bin/modules/osarch.pm.orig	Thu Mar 27 12:47:56 2003
-+++ solenv/bin/modules/osarch.pm	Tue Aug 15 14:03:11 2006
+$OpenBSD: patch-solenv_bin_modules_osarch_pm,v 1.2 2006/08/20 03:36:53 kurt Exp $
+--- solenv/bin/modules/osarch.pm.orig.port	Thu Mar 27 06:47:56 2003
++++ solenv/bin/modules/osarch.pm	Fri Aug 18 15:47:45 2006
 @@ -22,6 +22,7 @@ chop( $m_str, $s_str );
  			   "Linux",		"linux",
  			   "FreeBSD",	"freebsd",

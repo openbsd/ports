@@ -1,6 +1,6 @@
-$OpenBSD: patch-instsetoo_native_util_makefile_mk,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
---- instsetoo_native/util/makefile.mk.orig	Thu Jul 13 17:15:45 2006
-+++ instsetoo_native/util/makefile.mk	Tue Aug 15 14:03:10 2006
+$OpenBSD: patch-instsetoo_native_util_makefile_mk,v 1.2 2006/08/20 03:36:52 kurt Exp $
+--- instsetoo_native/util/makefile.mk.orig.port	Thu Jul 13 11:15:45 2006
++++ instsetoo_native/util/makefile.mk	Sat Aug 19 09:34:50 2006
 @@ -108,7 +108,7 @@ ALLTAR : $(LOCALPYFILES)
  .IF "$(BUILD_TYPE)"=="$(BUILD_TYPE:s/ODK//)"
  ALLTAR : openoffice
@@ -10,6 +10,15 @@ $OpenBSD: patch-instsetoo_native_util_makefile_mk,v 1.1.1.1 2006/08/17 14:56:23 
  .ENDIF
  .ELSE			# "$(UPDATER)"=="" || "$(USE_PACKAGER)"==""
  ALLTAR : updatepack
+@@ -189,7 +189,7 @@ openoffice_%{$(PKGFORMAT:^".")} :
+ openoffice_% :
+ .ENDIF			# "$(PKGFORMAT)"!=""
+ .IF "$(OS)"!="MACOSX" || "$(PKGFORMAT)"!="portable"
+-	+$(PERL) -w $(SOLARENV)$/bin$/make_installer.pl -f $(PRJ)$/util$/openoffice.lst -l $(subst,$(@:s/_/ /:1)_, $(@:b)) -p OpenOffice -packagelist $(PRJ)$/inc_openoffice$/unix$/packagelist.txt -u $(OUT) -buildid $(BUILD) -msitemplate $(MSIOFFICETEMPLATEDIR) -msilanguage $(COMMONMISC)$/win_ulffiles -addsystemintegration $(subst,xxx,$(@:e:s/.//) $(PKGFORMATSWITCH))
++	+$(PERL) -w $(SOLARENV)$/bin$/make_installer.pl -f $(PRJ)$/util$/openoffice.lst -l $(subst,$(@:s/_/ /:1)_, $(@:b)) -p OpenOffice -packagelist $(PRJ)$/inc_openoffice$/unix$/packagelist.txt -u $(OUT) -buildid $(BUILD) -msitemplate $(MSIOFFICETEMPLATEDIR) -msilanguage $(COMMONMISC)$/win_ulffiles -addsystemintegration $(subst,xxx,$(@:e:s/.//) -dontstrip $(PKGFORMATSWITCH))
+ .ELSE                   # "$(OS)"!="MACOSX" || "$(PKGFORMAT)"!=""
+ 	+$(PERL) -w $(SOLARENV)$/bin$/make_installer.pl -f $(PRJ)$/util$/openoffice.lst -l $(subst,$(@:s/_/ /:1)_, $(@:b)) -p OpenOffice -packagelist $(PRJ)$/inc_openoffice$/unix$/packagelist.txt -u $(OUT) -buildid $(BUILD) -destdir $(subst,$(@:s/_/ /:1)_,$(OUT)$/OpenOffice$/install$/ $(@:b))_inprogress$/ -simple staging
+ 	+$(RM) $(subst,$(@:s/_/ /:1)_,$(OUT)$/OpenOffice$/install$/ $(@:b))$/gid_*
 @@ -394,11 +394,11 @@ hack_msitemplates .PHONY:
  	+-$(MKDIRHIER) $(MSIURETEMPLATEDIR)
  	+-$(MKDIRHIER) $(MSISDKOOTEMPLATEDIR)

@@ -1,6 +1,6 @@
-$OpenBSD: patch-sal_osl_unx_file_error_transl_cxx,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
---- sal/osl/unx/file_error_transl.cxx.orig	Thu Sep  8 16:54:25 2005
-+++ sal/osl/unx/file_error_transl.cxx	Tue Aug 15 14:03:10 2006
+$OpenBSD: patch-sal_osl_unx_file_error_transl_cxx,v 1.2 2006/08/20 03:36:52 kurt Exp $
+--- sal/osl/unx/file_error_transl.cxx.orig.port	Thu Sep  8 10:54:25 2005
++++ sal/osl/unx/file_error_transl.cxx	Fri Aug 18 15:47:43 2006
 @@ -219,19 +219,19 @@ oslFileError oslTranslateFileError(sal_B
              osl_error = osl_File_E_LOOP;
              break;

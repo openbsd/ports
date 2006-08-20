@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_office_configure,v 1.1.1.1 2006/08/17 14:56:22 robert Exp $
---- config_office/configure.orig	Wed Jul 19 11:40:09 2006
-+++ config_office/configure	Tue Aug 15 14:03:09 2006
+$OpenBSD: patch-config_office_configure,v 1.2 2006/08/20 03:36:52 kurt Exp $
+--- config_office/configure.orig.port	Wed Jul 19 05:40:09 2006
++++ config_office/configure	Fri Aug 18 15:47:42 2006
 @@ -3547,6 +3547,15 @@ echo $ECHO_N "checking which thread libr
  echo "${ECHO_T}$PTHREAD_LIBS" >&6; }
  		_os=FreeBSD

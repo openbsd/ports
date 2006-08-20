@@ -1,6 +1,6 @@
-$OpenBSD: patch-vcl_unx_source_plugadapt_salmain_cxx,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
---- vcl/unx/source/plugadapt/salmain.cxx.orig	Mon Jun 19 21:56:52 2006
-+++ vcl/unx/source/plugadapt/salmain.cxx	Tue Aug 15 14:03:11 2006
+$OpenBSD: patch-vcl_unx_source_plugadapt_salmain_cxx,v 1.2 2006/08/20 03:36:53 kurt Exp $
+--- vcl/unx/source/plugadapt/salmain.cxx.orig.port	Mon Jun 19 15:56:52 2006
++++ vcl/unx/source/plugadapt/salmain.cxx	Fri Aug 18 15:47:46 2006
 @@ -33,7 +33,7 @@
   *
   ************************************************************************/

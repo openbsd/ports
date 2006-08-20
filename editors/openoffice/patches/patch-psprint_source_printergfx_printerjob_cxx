@@ -1,6 +1,6 @@
-$OpenBSD: patch-psprint_source_printergfx_printerjob_cxx,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
---- psprint/source/printergfx/printerjob.cxx.orig	Tue Jul 25 11:36:11 2006
-+++ psprint/source/printergfx/printerjob.cxx	Tue Aug 15 14:03:10 2006
+$OpenBSD: patch-psprint_source_printergfx_printerjob_cxx,v 1.2 2006/08/20 03:36:52 kurt Exp $
+--- psprint/source/printergfx/printerjob.cxx.orig.port	Tue Jul 25 05:36:11 2006
++++ psprint/source/printergfx/printerjob.cxx	Fri Aug 18 15:47:43 2006
 @@ -262,7 +262,7 @@ getUserName (char* pName, int nSize)
  
      sal_Bool bSuccess = sal_False;

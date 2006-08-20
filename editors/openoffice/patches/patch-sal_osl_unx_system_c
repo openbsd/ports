@@ -1,6 +1,6 @@
-$OpenBSD: patch-sal_osl_unx_system_c,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
---- sal/osl/unx/system.c.orig	Wed Jul 19 11:39:37 2006
-+++ sal/osl/unx/system.c	Tue Aug 15 14:03:10 2006
+$OpenBSD: patch-sal_osl_unx_system_c,v 1.2 2006/08/20 03:36:52 kurt Exp $
+--- sal/osl/unx/system.c.orig.port	Wed Jul 19 05:39:37 2006
++++ sal/osl/unx/system.c	Fri Aug 18 15:47:44 2006
 @@ -48,7 +48,7 @@
  static pthread_mutex_t getrtl_mutex = PTHREAD_MUTEX_INITIALIZER;
  

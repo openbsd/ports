@@ -1,6 +1,6 @@
-$OpenBSD: patch-bridges_source_cpp_uno_shared_vtablefactory_cxx,v 1.1.1.1 2006/08/17 14:56:22 robert Exp $
---- bridges/source/cpp_uno/shared/vtablefactory.cxx.orig	Tue Jun 20 01:46:29 2006
-+++ bridges/source/cpp_uno/shared/vtablefactory.cxx	Tue Aug 15 14:03:09 2006
+$OpenBSD: patch-bridges_source_cpp_uno_shared_vtablefactory_cxx,v 1.2 2006/08/20 03:36:52 kurt Exp $
+--- bridges/source/cpp_uno/shared/vtablefactory.cxx.orig.port	Mon Jun 19 19:46:29 2006
++++ bridges/source/cpp_uno/shared/vtablefactory.cxx	Fri Aug 18 15:47:42 2006
 @@ -69,7 +69,7 @@ namespace {
  extern "C" void * SAL_CALL allocExec(rtl_arena_type *, sal_Size * size) {
      sal_Size pagesize;

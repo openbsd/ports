@@ -1,6 +1,6 @@
-$OpenBSD: patch-sal_workben_makefile_mk,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
---- sal/workben/makefile.mk.orig	Thu Sep  8 18:50:39 2005
-+++ sal/workben/makefile.mk	Tue Aug 15 14:03:10 2006
+$OpenBSD: patch-sal_workben_makefile_mk,v 1.2 2006/08/20 03:36:53 kurt Exp $
+--- sal/workben/makefile.mk.orig.port	Thu Sep  8 12:50:39 2005
++++ sal/workben/makefile.mk	Fri Aug 18 15:47:44 2006
 @@ -352,7 +352,7 @@ APP4DEPN=	$(SLB)$/sal.lib
  # tgetpwnam
  #

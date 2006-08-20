@@ -1,6 +1,6 @@
-$OpenBSD: patch-scp2_source_writer_file_writer_scp,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
---- scp2/source/writer/file_writer.scp.orig	Wed Aug 16 08:07:50 2006
-+++ scp2/source/writer/file_writer.scp	Wed Aug 16 08:08:18 2006
+$OpenBSD: patch-scp2_source_writer_file_writer_scp,v 1.2 2006/08/20 03:36:53 kurt Exp $
+--- scp2/source/writer/file_writer.scp.orig.port	Thu Jul 13 09:31:34 2006
++++ scp2/source/writer/file_writer.scp	Fri Aug 18 15:47:45 2006
 @@ -56,12 +56,16 @@ File gid_File_Exe_Swriter
      Styles = (PACKED);
  End

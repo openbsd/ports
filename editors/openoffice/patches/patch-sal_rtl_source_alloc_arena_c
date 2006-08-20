@@ -1,6 +1,6 @@
-$OpenBSD: patch-sal_rtl_source_alloc_arena_c,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
---- sal/rtl/source/alloc_arena.c.orig	Tue Jun 20 06:28:24 2006
-+++ sal/rtl/source/alloc_arena.c	Tue Aug 15 14:03:10 2006
+$OpenBSD: patch-sal_rtl_source_alloc_arena_c,v 1.2 2006/08/20 03:36:53 kurt Exp $
+--- sal/rtl/source/alloc_arena.c.orig.port	Tue Jun 20 00:28:24 2006
++++ sal/rtl/source/alloc_arena.c	Fri Aug 18 15:47:44 2006
 @@ -1239,7 +1239,7 @@ static sal_Size
  rtl_machdep_pagesize (void)
  {

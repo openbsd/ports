@@ -1,6 +1,6 @@
-$OpenBSD: patch-udm_source_mkinc_fullcpp_mk,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
---- udm/source/mkinc/fullcpp.mk.orig	Fri Sep  9 16:34:53 2005
-+++ udm/source/mkinc/fullcpp.mk	Tue Aug 15 14:03:11 2006
+$OpenBSD: patch-udm_source_mkinc_fullcpp_mk,v 1.2 2006/08/20 03:36:53 kurt Exp $
+--- udm/source/mkinc/fullcpp.mk.orig.port	Fri Sep  9 10:34:53 2005
++++ udm/source/mkinc/fullcpp.mk	Fri Aug 18 15:47:45 2006
 @@ -62,7 +62,7 @@ CFLAGS+= -YX"precomp.h" /Fp$(PRJ)$/$(INP
  
  .ENDIF

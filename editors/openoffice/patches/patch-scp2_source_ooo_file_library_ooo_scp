@@ -1,6 +1,6 @@
-$OpenBSD: patch-scp2_source_ooo_file_library_ooo_scp,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
---- scp2/source/ooo/file_library_ooo.scp.orig	Thu Jul 13 12:26:22 2006
-+++ scp2/source/ooo/file_library_ooo.scp	Tue Aug 15 14:03:11 2006
+$OpenBSD: patch-scp2_source_ooo_file_library_ooo_scp,v 1.2 2006/08/20 03:36:53 kurt Exp $
+--- scp2/source/ooo/file_library_ooo.scp.orig.port	Thu Jul 13 06:26:22 2006
++++ scp2/source/ooo/file_library_ooo.scp	Fri Aug 18 15:47:45 2006
 @@ -819,7 +819,7 @@ File gid_File_Lib_Freetype
    #endif
      TXT_FILE_BODY;

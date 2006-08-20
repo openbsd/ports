@@ -1,6 +1,6 @@
-$OpenBSD: patch-sal_inc_sal_config_h,v 1.1.1.1 2006/08/17 14:56:23 robert Exp $
---- sal/inc/sal/config.h.orig	Tue Jun 20 06:15:28 2006
-+++ sal/inc/sal/config.h	Tue Aug 15 14:03:10 2006
+$OpenBSD: patch-sal_inc_sal_config_h,v 1.2 2006/08/20 03:36:52 kurt Exp $
+--- sal/inc/sal/config.h.orig.port	Tue Jun 20 00:15:28 2006
++++ sal/inc/sal/config.h	Fri Aug 18 15:47:43 2006
 @@ -102,7 +102,7 @@ extern "C" {
  /* don't know what to put in here */
  #endif
