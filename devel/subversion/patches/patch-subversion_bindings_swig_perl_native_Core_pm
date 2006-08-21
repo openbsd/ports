@@ -1,0 +1,13 @@
+$OpenBSD: patch-subversion_bindings_swig_perl_native_Core_pm,v 1.1 2006/08/21 17:39:00 aanriot Exp $
+--- subversion/bindings/swig/perl/native/Core.pm.orig	Mon Aug 14 15:23:49 2006
++++ subversion/bindings/swig/perl/native/Core.pm	Mon Aug 14 15:23:57 2006
+@@ -50,9 +50,6 @@ BEGIN {
+     SVN::_Core::apr_initialize();
+ }
+ 
+-our $gpool = SVN::Pool->new_default;
+-SVN::Core::utf_initialize($gpool);
+-
+ END {
+     SVN::_Core::apr_terminate();
+ }
