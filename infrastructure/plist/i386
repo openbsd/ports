@@ -1,4 +1,4 @@
-# $OpenBSD: i386,v 1.24 2006/02/28 17:11:55 pvalchev Exp $
+# $OpenBSD: i386,v 1.25 2006/08/22 20:25:35 pvalchev Exp $
 # This is the master list of subdirs used to choose i386 packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -60,8 +60,8 @@ editors/nano
 textproc/antiword
 textproc/xpdf
 editors/ted
-lang/python/2.3
-lang/python/2.3,-tools
+lang/python/2.4
+lang/python/2.4,-tools
 www/mod_perl
 games/xkobo,harder
 games/xlife
@@ -106,25 +106,8 @@ audio/abcde
 devel/smpeg
 mail/mozilla-thunderbird
 graphics/gimp/stable
-emulators/redhat/base
-emulators/redhat/motif
-sysutils/gkrellm/gkrellm
-sysutils/gkrellm/plugins/aclock
-sysutils/gkrellm/plugins/flynn
-sysutils/gkrellm/plugins/itime
-sysutils/gkrellm/plugins/kam
-sysutils/gkrellm/plugins/launch
-sysutils/gkrellm/plugins/mailwatch
-sysutils/gkrellm/plugins/mms
-sysutils/gkrellm/plugins/moon
-sysutils/gkrellm/plugins/mss
-sysutils/gkrellm/plugins/reminder
-sysutils/gkrellm/plugins/shoot
-sysutils/gkrellm/plugins/stock
-sysutils/gkrellm/plugins/sun
-sysutils/gkrellm/plugins/volume
-sysutils/gkrellm/plugins/weather
-sysutils/gkrellm/plugins/wireless
+#emulators/redhat/base
+#emulators/redhat/motif
 misc/xcdroast
 net/unison/stable
 misc/magicpoint
