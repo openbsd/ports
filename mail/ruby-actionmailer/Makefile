@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2006/08/12 07:37:15 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2006/08/23 21:12:24 sturm Exp $
 
 COMMENT=	"easy email delivery and testing for ruby"
 
 DISTNAME=	actionmailer-1.2.5
-PKGNAME=	ruby-${DISTNAME}
+PKGNAME=	ruby-${DISTNAME}p0
 CATEGORIES=	mail
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org> 

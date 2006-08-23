@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/06/12 19:55:48 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2006/08/23 21:12:24 sturm Exp $
 
 COMMENT=	"ruby make"
 
 DISTNAME=	rake-0.7.1
-PKGNAME=	ruby-${DISTNAME}
+PKGNAME=	ruby-${DISTNAME}p0
 CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org> 

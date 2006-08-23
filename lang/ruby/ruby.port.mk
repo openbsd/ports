@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.5 2006/07/14 15:41:21 bernd Exp $
+# $OpenBSD: ruby.port.mk,v 1.6 2006/08/23 21:12:24 sturm Exp $
 
 # ruby module
 
@@ -31,6 +31,7 @@ EXTRACT_SUFX=	.gem
 EXTRACT_ONLY=
 
 BUILD_DEPENDS+=	::devel/ruby-gems
+RUN_DEPENDS+=	::devel/ruby-gems
 NO_BUILD=	Yes
 
 SUBST_VARS+=	DISTNAME
