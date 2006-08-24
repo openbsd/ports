@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2006/08/01 22:19:46 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2006/08/24 09:23:38 bernd Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=		'MySQL drivers for the Perl DBI'
 
-DISTNAME=		DBD-mysql-3.0003
+DISTNAME=		DBD-mysql-2.9004
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		databases perl5
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		crypto m ssl z
 
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=../../authors/id/C/CA/CAPTTOFU/}
+MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=DBD/}
 
 BUILD_DEPENDS=		:p5-DBI->=1.08:databases/p5-DBI
 RUN_DEPENDS=		:p5-DBI->=1.08:databases/p5-DBI
