@@ -1,4 +1,4 @@
-# $OpenBSD: i386,v 1.26 2006/08/22 22:04:00 pvalchev Exp $
+# $OpenBSD: i386,v 1.27 2006/08/29 19:16:07 pvalchev Exp $
 # This is the master list of subdirs used to choose i386 packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -13,6 +13,7 @@ archivers/bzip2
 print/teTeX/base
 net/nmap,no_x11
 sysutils/cdrtools
+sysutils/dvd+rw-tools
 mail/procmail
 mail/fetchmail
 misc/screen
