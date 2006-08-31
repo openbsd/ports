@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.7 2003/07/29 21:06:18 sturm Exp $
+$OpenBSD: README.OpenBSD,v 1.8 2006/08/31 00:25:43 fgsch Exp $
 
 Throughout this document $mailmandir is the directory mailman is installed
 in. This defaults to /usr/local/lib/mailman. If you install your ports
@@ -20,8 +20,8 @@ OpenBSD specific comments added. It's a good time to become root, now.
   accessible to your web server.  E.g. with Apache, you've usually 
   got an `icons' directory that you can drop the images into. You want
   to copy $mailmandir/icons/mailman.jpg, $mailmandir/icons/PythonPowered.png,
-  $mailmandir/icons/gnu-head-tiny.jpg and /var/www/htdocs/openbsd_pb.gif
-  to this directory.
+  $mailmandir/icons/gnu-head-tiny.jpg, $mailmandir/icons/mm-icon.png
+  and /var/www/htdocs/openbsd_pb.gif to this directory.
 
   You then want to add a line to your $mailmandir/Mailman/mm_cfg.py
   file which sets the base URL for the logos.  For example:
