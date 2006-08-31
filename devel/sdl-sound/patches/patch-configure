@@ -1,0 +1,33 @@
+$OpenBSD: patch-configure,v 1.1 2006/08/31 06:14:29 sturm Exp $
+--- configure.orig	Sun Oct 12 20:54:57 2003
++++ configure	Thu Aug 31 08:11:50 2006
+@@ -7363,16 +7363,11 @@ int main (int argc, char *argv[])
+     }
+   else
+     {
+-      printf("\n*** 'smpeg-config --version' returned %d.%d.%d, but the
+-minimum version\n", $smpeg_major_version, $smpeg_minor_version,
+-$smpeg_micro_version);
+-      printf("*** of SMPEG required is %d.%d.%d. If smpeg-config is
+-correct, then it is\n", major, minor, micro);
++      printf("\n*** 'smpeg-config --version' returned %d.%d.%d, but the minimum version\n", $smpeg_major_version, $smpeg_minor_version, $smpeg_micro_version);
++      printf("*** of SMPEG required is %d.%d.%d. If smpeg-config is correct, then it is\n", major, minor, micro);
+       printf("*** best to upgrade to the required version.\n");
+-      printf("*** If smpeg-config was wrong, set the environment variable
+-SMPEG_CONFIG\n");
+-      printf("*** to point to the correct copy of smpeg-config, and remove
+-the file\n");
++      printf("*** If smpeg-config was wrong, set the environment variable SMPEG_CONFIG\n");
++      printf("*** to point to the correct copy of smpeg-config, and remove the file\n");
+       printf("*** config.cache before re-running configure\n");
+       return 1;
+     }
+@@ -7995,7 +7990,7 @@ fi;
+     VORBIS_LIBDIR="-L$vorbis_prefix/lib"
+   fi
+ 
+-  VORBIS_LIBS="$VORBIS_LIBDIR -lvorbis -lm"
++  VORBIS_LIBS="$VORBIS_LIBDIR -lvorbis -lm -logg"
+   VORBISFILE_LIBS="-lvorbisfile"
+   VORBISENC_LIBS="-lvorbisenc"
+ 

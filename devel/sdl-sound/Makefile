@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2006/08/01 10:50:19 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/08/31 06:14:29 sturm Exp $
 
 COMMENT=	"library that handles the decoding of sound file formats"
 DISTNAME=	SDL_sound-1.0.1
-PKGNAME=	${DISTNAME:L:S/_/-/}p2
+PKGNAME=	${DISTNAME:L:S/_/-/}p3
 SHARED_LIBS=	SDL_sound 2.0
 CATEGORIES=	devel audio
 MASTER_SITES=	http://offload1.icculus.org/SDL_sound/downloads/
