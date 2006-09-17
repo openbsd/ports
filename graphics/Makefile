@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.161 2006/07/16 16:50:14 steven Exp $
+# $OpenBSD: Makefile,v 1.162 2006/09/17 17:54:59 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -128,6 +128,7 @@
      SUBDIR += tgif
      SUBDIR += tiff
      SUBDIR += tiff2png
+     SUBDIR += ufraw
      SUBDIR += vcdimager
      SUBDIR += vid
      SUBDIR += videod
