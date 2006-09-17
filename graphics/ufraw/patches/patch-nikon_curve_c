@@ -1,0 +1,96 @@
+$OpenBSD: patch-nikon_curve_c,v 1.1.1.1 2006/09/17 17:52:38 mbalmer Exp $
+--- nikon_curve.c.orig	Wed Apr 26 18:30:10 2006
++++ nikon_curve.c	Tue Jul 11 23:00:25 2006
+@@ -76,8 +76,8 @@ static const unsigned char *FileTypeHead
+ #ifdef _STAND_ALONE_
+ 
+ //filenames
+-char exportFilename[1024];
+-char nikonFilename[1024];
++char exportFilename[FILENAME_MAX];
++char nikonFilename[FILENAME_MAX];
+ 
+ unsigned int standalone_samplingRes = 65536;
+ unsigned int standalone_outputRes = 256;
+@@ -118,8 +118,7 @@ int ProcessArgs(int num_args, char *args
+ 	else if (strcmp(args[i],"-o") == 0 || strcmp(args[i],"-O") == 0)
+ 	{
+ 	    i++;
+-	    strncpy(exportFilename, args[i], 1023);
+-	    exportFilename[1023] = '\0';
++	    strlcpy(exportFilename, args[i], sizeof(exportFilename));
+ 	}
+ 	else if (strcmp(args[i],"-sr") == 0)
+ 	{
+@@ -147,24 +146,21 @@ int ProcessArgs(int num_args, char *args
+ 	{
+ 	    i++;
+ 	    program_mode = NEF_MODE;
+-	    strncpy(nikonFilename, args[i], 1023);
+-	    nikonFilename[1023] = '\0';
++	    strlcpy(nikonFilename, args[i], sizeof(nikonFilename));
+ 	}
+ 	//don't load argument 0
+ 	else if (i != 0)
+ 	{
+ 	    //consider this the file name to load
+-	    strncpy(nikonFilename, args[i], 1023);
+-	    nikonFilename[1023] = '\0';
++	    strlcpy(nikonFilename, args[i], sizeof(nikonFilename));
+ 	}
+     }
+ 
+     if (strlen(exportFilename) == 0)
+     {
+ 	//set it to have a default output file name
+-	strncpy(exportFilename, nikonFilename, 1023);
+-	strncat(exportFilename, "_CURVE_OUTPUT.txt", 1023);
+-	exportFilename[1023] = '\0';
++	strlcpy(exportFilename, nikonFilename, sizeof(exportFilename));
++	strlcat(exportFilename, "_CURVE_OUTPUT.txt", sizeof(exportFilename));
+     }
+ 
+     return NC_SUCCESS;
+@@ -1674,7 +1670,7 @@ int ConvertNikonCurveData(char *inFileNa
+ {
+     //Load the curve data from the ncv/ntc file
+     NikonData data;
+-    char tmpstr[1024];
++    char tmpstr[FILENAME_MAX];
+     
+     if ( samplingRes <= 1 || outputRes <= 1 || samplingRes > MAX_RESOLUTION
+ 	    || outputRes > MAX_RESOLUTION )
+@@ -1704,8 +1700,7 @@ int ConvertNikonCurveData(char *inFileNa
+ 	}
+ 	
+ 	//rename output files
+-	strncpy(tmpstr, outFileName, 1023);
+-	tmpstr[1023] = '\0';
++	strlcpy(tmpstr, outFileName, sizeof(tmpstr));
+ 	//if the name has an extension, attempt to remove it
+ 	if (tmpstr[strlen(tmpstr)-4] == '.')
+ 	{
+@@ -1715,19 +1710,19 @@ int ConvertNikonCurveData(char *inFileNa
+ 	switch(i)
+ 	{
+ 	    case TONE_CURVE:
+-	        strncat(tmpstr, "_TONE.txt", 1023);
++	        strlcat(tmpstr, "_TONE.txt", sizeof(tmpstr));
+ 	    break;
+ 
+ 	    case RED_CURVE:
+-	        strncat(tmpstr, "_RED.txt", 1023);
++	        strlcat(tmpstr, "_RED.txt", sizeof(tmpstr));
+ 	    break;
+ 
+ 	    case GREEN_CURVE:
+-	        strncat(tmpstr, "_GREEN.txt", 1023);
++	        strlcat(tmpstr, "_GREEN.txt", sizeof(tmpstr));
+ 	    break;
+ 
+ 	    case BLUE_CURVE:
+-	        strncat(tmpstr, "_BLUE.txt", 1023);
++	        strlcat(tmpstr, "_BLUE.txt", sizeof(tmpstr));
+ 	    break;
+ 
+ 	    default:

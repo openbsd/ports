@@ -1,0 +1,21 @@
+$OpenBSD: patch-ufraw_developer_c,v 1.1.1.1 2006/09/17 17:52:38 mbalmer Exp $
+--- ufraw_developer.c.orig	Fri Aug  4 10:24:32 2006
++++ ufraw_developer.c	Fri Aug  4 10:25:30 2006
+@@ -30,7 +30,7 @@ developer_data *developer_init()
+     d->saturation = -1;
+     for (i=0; i<profile_types; i++) {
+         d->profile[i] = NULL;
+-        strcpy(d->profileFile[i],"no such file");
++        strlcpy(d->profileFile[i],"no such file",sizeof(d->profileFile[i]));
+     }
+     memset(&d->baseCurveData, 0, sizeof(d->baseCurveData));
+     d->baseCurveData.m_gamma = -1.0;
+@@ -76,7 +76,7 @@ void developer_profile(developer_data *d
+             g_strlcpy(p->productName, cmsTakeProductName(d->profile[type]),
+                         max_name);
+         else
+-            strcpy(p->productName, "");
++            strlcpy(p->productName, "",sizeof(p->productName));
+     }
+ }
+ 
