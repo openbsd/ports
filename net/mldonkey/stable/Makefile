@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/08/03 23:15:58 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2006/09/17 21:46:01 espie Exp $
 
 COMMENT='e-donkey client'
 CATEGORIES=net
@@ -21,7 +21,7 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 HOMEPAGE=http://mldonkey.sourceforge.net/Main_Page
 
 MASTER_SITES=${MASTER_SITE_SOURCEFORGE:=mldonkey/}
-DISTNAME=mldonkey-2.7.6
+DISTNAME=mldonkey-2.7.7
 PKGNAME=${DISTNAME}
 EXTRACT_SUFX=.tar.bz2
 
