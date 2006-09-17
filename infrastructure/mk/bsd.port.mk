@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.763 2006/08/07 08:57:18 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.764 2006/09/17 19:08:59 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1228,6 +1228,7 @@ REORDER_DEPENDENCIES?=
 LOCKDIR?=
 LOCK_CMD?=	perl ${PORTSDIR}/infrastructure/build/dolock
 UNLOCK_CMD?=rm -f
+_LOCKS_HELD?=
 LOCK_VERBOSE?=No
 .if !empty(LOCKDIR)
 .  if ${LOCK_VERBOSE:L} == "yes"
@@ -1242,17 +1243,22 @@ _LOCKNAME=${PKGNAME}
 .  else
 _LOCKNAME=${FULLPKGNAME}
 .  endif
+
+.  for _i in ${_LOCKNAME}
+.    if empty(_LOCKS_HELD:M${_i})
 _DO_LOCK=\
-	: $${lock:=${_LOCKNAME}}; \
-	case X$$lock in \
-	X${_MASTER_LOCK}) \
-		;; \
-	*) \
-		${_LOCK}; trap '${_UNLOCK}' 0 1 2 3 13 15;; \
-	esac
-.else
-_DO_LOCK=:
+	lock=${_LOCKNAME}; \
+	_LOCKS_HELD="${_LOCKS_HELD} ${_LOCKNAME}"; export _LOCKS_HELD; \
+	${_SIMPLE_LOCK}
+.    endif
+.  endfor
+
+_SIMPLE_LOCK= \
+	${_LOCK}; trap '${_UNLOCK}' 0 1 2 3 13 15
+
 .endif
+_SIMPLE_LOCK?=:
+_DO_LOCK?=:
 
 _size_fragment=wc -c $$file 2>/dev/null| awk '{print "SIZE (" $$2 ") = " $$1}' 
 
@@ -1434,7 +1440,6 @@ ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 		extra_msg="(${_DEP:U}_DEPENDS ${_i})"; \
 		${_flavor_fragment}; defaulted=false; \
 		case "X$$target" in X) target=${_${_DEP}_depends_target};; esac; \
-		toset="$$toset _MASTER_LOCK=${_LOCKNAME}"; \
 		case "X$$target" in \
 		Xinstall|Xreinstall) early_exit=false;; \
 		Xpackage|Xfake) early_exit=true;; \
@@ -2121,7 +2126,7 @@ ${_F}:
 .    endfor
 	@exit 1
 .  else
-	@lock=${_F:T}.dist; ${_DO_LOCK}; mkdir -p ${_F:H}; \
+	@lock=${_F:T}.dist; ${_SIMPLE_LOCK}; mkdir -p ${_F:H}; \
 	cd ${_F:H}; \
 	select=${_EVERYTHING:M*${_F:S@^${FULLDISTDIR}/@@}\:[0-9]}; \
 	f=${_F:S@^${FULLDISTDIR}/@@}; \
@@ -2177,7 +2182,7 @@ _internal-clean:
 .if ${_clean:L:Mdepends} && ${_CLEANDEPENDS:L} == "yes"
 	@PACKAGING='${SUBPACKAGE}' ${MAKE} all-dir-depends|tsort -r|${_zap_last_line}|while read subdir; do \
 		${_flavor_fragment}; \
-		eval $$toset ${MAKE} _CLEANDEPENDS=No clean _MASTER_LOCK=${_LOCKNAME}; \
+		eval $$toset ${MAKE} _CLEANDEPENDS=No clean; \
 	done
 .endif
 	@${ECHO_MSG} "===>  Cleaning for ${FULLPKGNAME${SUBPACKAGE}}"
