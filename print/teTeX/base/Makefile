@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2006/08/03 23:28:11 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2006/09/17 22:02:47 espie Exp $
 
 COMMENT=	"TeX distribution, executables"
 COMMENT-fmt=	"format files"
@@ -94,6 +94,6 @@ post-install:
 		-e "s#%%PREFIX%%#${TRUEPREFIX}#;" ${PREFIX}/bin/tetex_setup
 
 # need the texmf part visible...
-pre-regress: _internal-fake
+pre-regress: fake
 
 .include <bsd.port.mk>
