@@ -1,7 +1,7 @@
-$OpenBSD: patch-modules_libpref_src_init_all_js,v 1.4 2006/06/05 09:30:06 bernd Exp $
---- modules/libpref/src/init/all.js.orig	Mon May  8 22:22:51 2006
-+++ modules/libpref/src/init/all.js	Fri Jun  2 10:33:47 2006
-@@ -2052,7 +2052,7 @@ pref("font.scale.outline.min",      6);
+$OpenBSD: patch-modules_libpref_src_init_all_js,v 1.5 2006/09/17 21:02:58 steven Exp $
+--- modules/libpref/src/init/all.js.orig	Sat Aug 19 00:12:03 2006
++++ modules/libpref/src/init/all.js	Fri Sep 15 07:41:32 2006
+@@ -2051,7 +2051,7 @@ pref("font.scale.outline.min",      6);
  
  // TrueType
  pref("font.FreeType2.enable", false);
