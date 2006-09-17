@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2006/08/01 22:19:46 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2006/09/17 19:21:46 jasper Exp $
 
 COMMENT=		"command line tool to synchronize Palm pilot to AvantGo"
 
 VERSION=		2.1.1
 DISTNAME=		malsync_${VERSION}.src
-PKGNAME=		malsync-${VERSION}
+PKGNAME=		malsync-${VERSION}p0
 CATEGORIES=             comms palm
-
-HOMEPAGE=		http://www.tomw.org/malsync/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@lphp.org>
 
@@ -17,8 +15,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
-
-MASTER_SITES=		${HOMEPAGE}
 
 LIB_DEPENDS=		pisock.>=8::comms/pilot-link
 
