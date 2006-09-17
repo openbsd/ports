@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/06/25 12:45:03 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/09/17 19:14:56 espie Exp $
 
 COMMENT= 	"create readonly variables"
 
 DISTNAME=	Readonly-1.03
-PKGNAME=	p5-${DISTNAME}
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel perl5
 
 # perl licence
