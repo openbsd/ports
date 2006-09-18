@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/04/14 21:54:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2006/09/18 11:59:59 espie Exp $
 
 COMMENT=	"IRC proxy to connect to AIM, ICQ, Jabber, MSN and Yahoo"
 
@@ -26,7 +26,7 @@ DOCS=			${WRKSRC}/doc/user-guide/user-guide.html
 DOCDIR=			${PREFIX}/share/doc/bitlbee/
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=		glib-2.0.0.0::devel/glib2
+LIB_DEPENDS=		glib-2.0::devel/glib2
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	--bindir=${PREFIX}/libexec \

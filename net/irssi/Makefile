@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2006/06/13 02:02:04 jolan Exp $
+# $OpenBSD: Makefile,v 1.28 2006/09/18 11:59:59 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,7 +25,7 @@ WANTLIB=	c crypto m ncurses perl ssl util
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	glib-2.0.0.0,gmodule-2.0.0.0::devel/glib2
+LIB_DEPENDS=	glib-2.0,gmodule-2.0::devel/glib2
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
 USE_LIBTOOL=	Yes

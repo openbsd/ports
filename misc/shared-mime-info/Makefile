@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/07/19 15:11:53 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2006/09/18 11:59:59 espie Exp $
 
 COMMENT=		"Shared mime database for desktops"
 
@@ -22,7 +22,7 @@ MASTER_SITES=		http://www.freedesktop.org/software/shared-mime-info/
 
 BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser \
 			:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=		glib-2.0.0.0::devel/glib2 \
+LIB_DEPENDS=		glib-2.0::devel/glib2 \
 			xml2::textproc/libxml
 
 CONFIGURE_STYLE=	gnu

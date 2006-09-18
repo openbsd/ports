@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/06/13 13:32:48 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2006/09/18 12:00:00 espie Exp $
 
 COMMENT=	"small utility which displays system activity."
 
@@ -16,13 +16,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 c fontconfig freetype m \
-		glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 pango-1.0.0.0 \
-		pangocairo-1.0.0.0 pangoft2-1.0.0.0 cairo
+		glib-2.0 gmodule-2.0 gobject-2.0 pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 cairo
 
 MASTER_SITES=	${HOMEPAGE}/downloads/
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0::x11/gtk+2
+LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
 NO_REGRESS=	Yes

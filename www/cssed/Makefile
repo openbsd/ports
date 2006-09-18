@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/09/18 09:04:03 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/09/18 12:00:00 espie Exp $
 
 COMMENT=	"CSS editor"
 
@@ -19,9 +19,9 @@ PERMIT_DISTFILES_FTP=	yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cssed/}
 
 WANTLIB=	c freetype pthread stdc++ m X11 fontconfig \
-		z gthread-2.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 \
-		gobject-2.0.0.0 pangoft2-1.0.0.0 pango-1.0.0.0 atk-1.0.0.0 \
-		pangocairo-1.0.0.0 cairo
+		z gthread-2.0 glib-2.0 gmodule-2.0 \
+		gobject-2.0 pangoft2-1.0 pango-1.0 atk-1.0 \
+		pangocairo-1.0 cairo
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gtk-x11-2.0.>=600.10,gdk_pixbuf-2.0.>=600.0,gdk-x11-2.0.>=600.0::x11/gtk+2 \

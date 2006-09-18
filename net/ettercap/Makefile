@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2006/06/13 13:30:30 bernd Exp $
+# $OpenBSD: Makefile,v 1.34 2006/09/18 11:59:59 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -32,11 +32,11 @@ BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--enable-gtk=no
 .else
-LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
-WANTLIB+=		X11 atk-1.0.0.0 fontconfig \
-			freetype glib-2.0.0.0 gmodule-2.0.0.0 \
-			gobject-2.0.0.0 m pango-1.0.0.0 pangocairo-1.0.0.0 \
-			pangoft2-1.0.0.0 cairo
+LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
+WANTLIB+=		X11 atk-1.0 fontconfig \
+			freetype glib-2.0 gmodule-2.0 \
+			gobject-2.0 m pango-1.0 pangocairo-1.0 \
+			pangoft2-1.0 cairo
 MODULES=	devel/gettext
 USE_X11=	Yes
 .endif

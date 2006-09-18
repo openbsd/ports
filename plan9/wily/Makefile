@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/12/20 13:45:22 alek Exp $
+# $OpenBSD: Makefile,v 1.19 2006/09/18 11:59:59 espie Exp $
 
 COMMENT=	"clone of the Plan9 editor 'acme'"
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xt c m
 
-LIB_DEPENDS=		Xg.0.0,frame.0.0,plan9c.0.0::plan9/9libs
+LIB_DEPENDS=		Xg,frame,plan9c::plan9/9libs
 
 SEPARATE_BUILD=		simple
 USE_X11=		Yes

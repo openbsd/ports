@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2006/08/03 23:15:58 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2006/09/18 11:59:59 espie Exp $
 
 COMMENT=	"powerful Gtk+2 newsreader"
 
@@ -9,8 +9,8 @@ CATEGORIES=	news x11
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${VER}/SOURCE/
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=	gdk_pixbuf-2.0.0.0,gdk-x11-2.0.>=0.5,gtk-x11-2.0.>=0.5::x11/gtk+2 \
-		glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0,gthread-2.0.0.0::devel/glib2 \
+LIB_DEPENDS=	gdk_pixbuf-2.0,gdk-x11-2.0.>=0.5,gtk-x11-2.0.>=0.5::x11/gtk+2 \
+		glib-2.0,gmodule-2.0,gobject-2.0,gthread-2.0::devel/glib2 \
 		xml2.>=6.22::textproc/libxml \
 		gnet-2.0.>=0.3::net/gnet
 
@@ -26,8 +26,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 c cairo fontconfig freetype m \
-			atk-1.0.0.0 pango-1.0.0.0 pangocairo-1.0.0.0 \
-			pangoft2-1.0.0.0 pthread z
+			atk-1.0 pango-1.0 pangocairo-1.0 \
+			pangoft2-1.0 pthread z
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--disable-gtkspell

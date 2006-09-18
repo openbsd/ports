@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2006/06/13 13:32:48 bernd Exp $
+# $OpenBSD: Makefile,v 1.27 2006/09/18 12:00:00 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -34,7 +34,7 @@ MULTI_PACKAGES+=-client
 SUBPACKAGE?=
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=	glib-2.0.0.0,gmodule-2.0.0.0,gthread-2.0.0.0::devel/glib2
+LIB_DEPENDS=	glib-2.0,gmodule-2.0,gthread-2.0::devel/glib2
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
@@ -45,10 +45,10 @@ INSTALL_TARGET=	install_openbsd
 .if ${MULTI_PACKAGES:M-client}
 USE_X11=	Yes
 .  if !defined(PACKAGING) || !empty(SUBPACKAGE)
-LIB_DEPENDS+=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
+LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 WANTLIB+=	ICE SM X11 crypto fontconfig freetype \
-		atk-1.0.0.0 gobject-2.0.0.0 m pango-1.0.0.0 \
-		pangocairo-1.0.0.0 pangoft2-1.0.0.0 ssl cairo
+		atk-1.0 gobject-2.0 m pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 ssl cairo
 .  endif
 .else
 WRKBUILD=	${WRKDIST}/server

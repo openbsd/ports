@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/08/03 23:15:57 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2006/09/18 11:59:59 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,7 +22,7 @@ USE_LIBTOOL=	Yes
 
 PYTHON_VER=	2.4
 LIB_DEPENDS=	dnet.>=1::net/libdnet \
-		python${PYTHON_VER}.0.0:python-${PYTHON_VER}.*:lang/python/${PYTHON_VER}
+		python${PYTHON_VER}:python-${PYTHON_VER}.*:lang/python/${PYTHON_VER}
 RUN_DEPENDS=	::net/rrdtool
 
 CONFIGURE_STYLE=gnu

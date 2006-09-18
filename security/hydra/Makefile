@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2006/07/19 16:07:22 steven Exp $
+# $OpenBSD: Makefile,v 1.27 2006/09/18 11:59:59 espie Exp $
 
 COMMENT=	"parallelized login hacker"
 COMMENT-gui=	"GTK frontend for hydra"
@@ -46,7 +46,7 @@ INSTALL_TARGET=	xinstall
 
 .if !defined(PACKAGING) || !empty(SUBPACKAGE)
 MODULES=	devel/gettext
-LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
+LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 .endif
 
 post-configure:
@@ -55,10 +55,10 @@ post-configure:
 
 .if defined(PACKAGING) && !empty(SUBPACKAGE)
 RUN_DEPENDS=	:hydra-${VERSION}*:security/hydra
-WANTLIB+=	X11 atk-1.0.0.0 freetype fontconfig \
-		gmodule-2.0.0.0 gobject-2.0.0.0 glib-2.0.0.0 \
-		pango-1.0.0.0 pangocairo-1.0.0.0 cairo \
-		pangoft2-1.0.0.0
+WANTLIB+=	X11 atk-1.0 freetype fontconfig \
+		gmodule-2.0 gobject-2.0 glib-2.0 \
+		pango-1.0 pangocairo-1.0 cairo \
+		pangoft2-1.0
 .else
 WANTLIB+=	ssl crypto
 .endif

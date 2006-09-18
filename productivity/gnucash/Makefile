@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/08/03 23:28:11 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2006/09/18 11:59:59 espie Exp $
 
 NOT_FOR_ARCHS=	${LP64_ARCHS}
 
@@ -27,7 +27,7 @@ WANTLIB+=	ORBitCosNaming ICE glib audiofile IIOP jpeg z
 WANTLIB+=	ORBit ungif X11 oaf freetype gconf-1 gmodule SM
 WANTLIB+=	Xext esd tiff xml png gdk_imlib guile guile-ltdl Xi
 WANTLIB+=	gconf-gtk-1 art_lgpl ORBitutil gtk gdk ltdl m ghttp gnomeui
-WANTLIB+=	gdk_pixbuf gnomeprint gtkhtml-1.1.0.0 popt bonobo bonobox
+WANTLIB+=	gdk_pixbuf gnomeprint gtkhtml-1.1 popt bonobo bonobox
 
 MAINTAINER=	Todd T. Fries <todd@OpenBSD.org>
 

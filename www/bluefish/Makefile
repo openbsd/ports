@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2006/08/04 00:10:42 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2006/09/18 12:00:00 espie Exp $
 
 COMMENT=	"HTML editor for experienced web designers"
 
@@ -19,13 +19,13 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		X11 atk-1.0.0.0 c m \
-			fontconfig freetype glib-2.0.0.0 gmodule-2.0.0.0 \
-			gobject-2.0.0.0 pango-1.0.0.0 \
-			pangocairo-1.0.0.0 cairo \
-			gthread-2.0.0.0 SM ICE gnomevfs-2 \
+WANTLIB=		X11 atk-1.0 c m \
+			fontconfig freetype glib-2.0 gmodule-2.0 \
+			gobject-2.0 pango-1.0 \
+			pangocairo-1.0 cairo \
+			gthread-2.0 SM ICE gnomevfs-2 \
 			bonobo-activation art_lgpl_2 bonobo-2 bonoboui-2 \
-			gconf-2 popt pangoft2-1.0.0.0 gnome-2 \
+			gconf-2 popt pangoft2-1.0 gnome-2 \
 			gnomecanvas-2 xml2 ORBit-2 pthread z
 
 MODULES=	devel/gettext

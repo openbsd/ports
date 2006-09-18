@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2006/06/29 18:08:17 steven Exp $
+# $OpenBSD: Makefile,v 1.66 2006/09/18 11:59:59 espie Exp $
 
 COMMENT=	"scan ports and fingerprint stack of network hosts"
 
@@ -40,13 +40,13 @@ ALL_TARGET=	nmap
 CONFIGURE_ARGS+=--without-nmapfe
 .else
 BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS+=	gdk_pixbuf-2.0.0.0,gdk-x11-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
+LIB_DEPENDS+=	gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 
 USE_X11=	Yes
 ALL_TARGET=	nmap nmapfe/nmapfe
 WANTLIB+=	X11 fontconfig freetype \
-		atk-1.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 \
-		pango-1.0.0.0 pangoft2-1.0.0.0 pangocairo-1.0.0.0 cairo
+		atk-1.0 glib-2.0 gmodule-2.0 gobject-2.0 \
+		pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo
 MODULES=	devel/gettext
 .endif
 

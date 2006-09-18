@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/08/03 23:15:58 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/09/18 11:59:59 espie Exp $
 
 COMMENT=		"Ncurses BitTorrent Client based on LibTorrent"
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c crypto m ncurses sigc-2.0.0.0 ssl stdc++ z
+WANTLIB=		c crypto m ncurses sigc-2.0 ssl stdc++ z
 
 MASTER_SITES=		${HOMEPAGE}downloads/
 

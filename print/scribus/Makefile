@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/06/18 15:03:58 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2006/09/18 11:59:59 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -27,10 +27,10 @@ MODQT_MT=	Yes
 
 LIB_DEPENDS=	jpeg::graphics/jpeg \
 		lcms::graphics/lcms \
-		art_lgpl_2.0.0::graphics/libart \
+		art_lgpl_2::graphics/libart \
 		png::graphics/png \
 		tiff::graphics/tiff \
-		python2.4.0.0:python-2.4.*:lang/python/2.4 \
+		python2.4:python-2.4.*:lang/python/2.4 \
 		cups::print/cups \
 		xml2::textproc/libxml
 

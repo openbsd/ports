@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/06/18 13:09:44 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2006/09/18 11:59:59 espie Exp $
 
 COMMENT=	"PDF rendering library"
 
@@ -28,12 +28,12 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0::x11/gtk+2 
+LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 
 
 WANTLIB=	Xrender png z freetype X11 fontconfig m Xext glitz \
-		gmodule-2.0.0.0 cairo jpeg \
-		pango-1.0.0.0 pangocairo-1.0.0.0 pangoft2-1.0.0.0 \
-		gobject-2.0.0.0 glib-2.0.0.0
+		gmodule-2.0 cairo jpeg \
+		pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+		gobject-2.0 glib-2.0
 
 USE_LIBTOOL=	Yes
 USE_X11=	Yes

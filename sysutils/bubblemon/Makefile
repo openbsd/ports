@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2006/08/03 23:55:10 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2006/09/18 12:00:00 espie Exp $
 
 COMMENT=		"GNOME panel applet that displays the CPU + memory load"
 
@@ -22,13 +22,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE ORBit-2 SM X11 Xau c fontconfig \
-			art_lgpl_2 atk-1.0.0.0 \
+			art_lgpl_2 atk-1.0 \
 			bonobo-2 bonobo-activation bonoboui-2 \
-			freetype gconf-2 gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 \
-			glib-2.0.0.0 gmodule-2.0.0.0 gnome-2 gnomecanvas-2 \
-			gnomeui-2 gnomevfs-2 gobject-2.0.0.0 gthread-2.0.0.0 \
-			gtk-x11-2.0.0.0 m pango-1.0.0.0 cairo  \
-			pangoft2-1.0.0.0 pangocairo-1.0.0.0 popt pthread xml2 z
+			freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
+			glib-2.0 gmodule-2.0 gnome-2 gnomecanvas-2 \
+			gnomeui-2 gnomevfs-2 gobject-2.0 gthread-2.0 \
+			gtk-x11-2.0 m pango-1.0 cairo  \
+			pangoft2-1.0 pangocairo-1.0 popt pthread xml2 z
 
 MODULES=		devel/gettext
 
