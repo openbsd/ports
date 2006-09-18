@@ -1,0 +1,12 @@
+$OpenBSD: patch-bin_smtp-vilter_engine_c,v 1.1 2006/09/18 13:18:56 mbalmer Exp $
+--- bin/smtp-vilter/engine.c.orig	Mon Sep 18 15:14:08 2006
++++ bin/smtp-vilter/engine.c	Mon Sep 18 15:15:54 2006
+@@ -1639,8 +1639,6 @@ e_main(uid_t uid, gid_t gid, int pipe_m2
+ 
+ 	if (logfile != NULL && (logfp = fopen(logfile, "a")) == NULL)
+ 		err(1, "can't open logfile %s", logfile);
+-	else
+-		logfp = NULL;
+ 
+ 	if ((fp = fopen(pidfile, "w")) == NULL) 
+ 		err(1, "can't open pidfile %s", pidfile);
