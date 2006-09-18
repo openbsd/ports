@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.24 2006/08/08 12:05:47 bernd Exp $
+# $OpenBSD: Makefile,v 1.25 2006/09/18 13:53:15 bernd Exp $
+
+COMES_WITH=	4.0
 
 COMMENT=	"Perl5 module for Base64 and Quoted-Printable encodings"
 
