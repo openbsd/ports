@@ -1,0 +1,25 @@
+$OpenBSD: patch-lib_silcutil_silcutf8_c,v 1.1 2006/09/18 05:41:10 ray Exp $
+--- lib/silcutil/silcutf8.c.orig	Sun Apr  3 08:20:34 2005
++++ lib/silcutil/silcutf8.c	Sun Aug 27 15:23:38 2006
+@@ -565,15 +565,19 @@ bool silc_utf8_strncasecmp(const char *s
+   if (s1 == s2)
+     return TRUE;
+ 
++  s1u = memchr(s1, '\0', n);
++  s1u_len = (s1u == NULL) ? n : (s1u - (unsigned char *)s1);
+   /* Casefold and normalize */
+-  status = silc_stringprep(s1, strlen(s1), SILC_STRING_UTF8,
++  status = silc_stringprep(s1, s1u_len, SILC_STRING_UTF8,
+ 			   SILC_IDENTIFIERC_PREP, 0, &s1u,
+ 			   &s1u_len, SILC_STRING_UTF8);
+   if (status != SILC_STRINGPREP_OK)
+     return FALSE;
+ 
++  s2u = memchr(s2, '\0', n);
++  s2u_len = (s2u == NULL) ? n : (s2u - (unsigned char *)s2);
+   /* Casefold and normalize */
+-  status = silc_stringprep(s2, strlen(s2), SILC_STRING_UTF8,
++  status = silc_stringprep(s2, s2u_len, SILC_STRING_UTF8,
+ 			   SILC_IDENTIFIERC_PREP, 0, &s2u,
+ 			   &s2u_len, SILC_STRING_UTF8);
+   if (status != SILC_STRINGPREP_OK)
