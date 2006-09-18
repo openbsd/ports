@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2006/07/19 15:11:53 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2006/09/18 11:40:07 espie Exp $
 
 COMMENT=		"high-performance CORBA Object Request Broker"
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c glib-2.0.0.0 m pthread
+WANTLIB=		c glib-2.0 m pthread
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/ORBit2/2.12/}
 EXTRACT_SUFX=		.tar.bz2
@@ -30,7 +30,7 @@ MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:pkgconfig->=0.14.0:devel/pkgconfig
 LIB_DEPENDS=		IDL-2::devel/libIDL \
-			gmodule-2.0.0.0,gobject-2.0.0.0,gthread-2.0.0.0::devel/glib2 \
+			gmodule-2.0,gobject-2.0,gthread-2.0::devel/glib2 \
 			popt::devel/popt
 
 USE_GMAKE=		Yes

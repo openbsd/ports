@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2006/08/18 17:04:22 kurt Exp $
+# $OpenBSD: Makefile,v 1.19 2006/09/18 11:40:07 espie Exp $
 
 COMMENT=		"GStreamer Streaming-media framework plug-ins."
 
@@ -57,15 +57,15 @@ SUBPACKAGE?=
 .if !defined(PACKAGING) || ${SUBPACKAGE} == ""
 WANTLIB=		ICE SM X11 Xdamage Xext Xfixes Xrender Xv \
 			fontconfig freetype ossaudio \
-			atk-1.0.0.0 ORBit-2 \
-			pango-1.0.0.0 pangoft2-1.0.0.0 pangocairo-1.0.0.0 \
-			gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 gtk-x11-2.0.0.0 \
+			atk-1.0 ORBit-2 \
+			pango-1.0 pangoft2-1.0 pangocairo-1.0 \
+			gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 \
 			cairo glitz png
 LIB_DEPENDS=		gconf-2::devel/gconf2 \
 			gstcontrol-0.8.>=5.0::devel/gstreamer
 .endif
-WANTLIB+=		m z xml2 glib-2.0.0.0 \
-			gthread-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 popt
+WANTLIB+=		m z xml2 glib-2.0 \
+			gthread-2.0 gmodule-2.0 gobject-2.0 popt
 LIB_DEPENDS+=		gstreamer-0.8.>=5.0::devel/gstreamer
 
 PLUGINS=arts audiofile cdda dvdnav dvdread esd faad flac gnome gsm \

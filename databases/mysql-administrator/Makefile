@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/08/01 22:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/09/18 11:40:07 espie Exp $
 
 COMMENT=	"visual administration console for MySQL"
 
@@ -22,10 +22,10 @@ MASTER_SITES=	ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/M
 		ftp://mysql.secsup.org/pub/software/mysql/Downloads/MySQLAdministrationSuite/
 
 WANTLIB=	X11 c crypto fontconfig freetype m pthread \
-		ssl stdc++ z atk-1.0.0.0 atkmm-1.6.0.0 gdk-x11-2.0.0.0 \
-		gdk_pixbuf-2.0.0.0 gdkmm-2.4.0.0 glibmm-2.4.0.0 \
-		gtk-x11-2.0.0.0 pango-1.0.0.0 pangomm-1.4.>=1.0 \
-		pangoft2-1.0.0.0 pangocairo-1.0.0.0 sigc-2.0.0.0 cairo
+		ssl stdc++ z atk-1.0 atkmm-1.6 gdk-x11-2.0 \
+		gdk_pixbuf-2.0 gdkmm-2.4 glibmm-2.4 \
+		gtk-x11-2.0 pango-1.0 pangomm-1.4.>=1.0 \
+		pangoft2-1.0 pangocairo-1.0 sigc-2.0 cairo
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
@@ -33,9 +33,9 @@ BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
 RUN_DEPENDS=	::devel/mysql-gui-common
 LIB_DEPENDS=	pcre::devel/pcre \
 		mysqlclient_r::databases/mysql \
-		glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0:glib2->=2.6.2:devel/glib2 \
-		glade-2.0.0.0::devel/libglade2 \
-		gtkmm-2.4.0.0::x11/gtk2mm \
+		glib-2.0,gmodule-2.0,gobject-2.0:glib2->=2.6.2:devel/glib2 \
+		glade-2.0::devel/libglade2 \
+		gtkmm-2.4::x11/gtk2mm \
 		xml2.>=6:libxml->=2.6.2:textproc/libxml
 
 USE_X11=	Yes

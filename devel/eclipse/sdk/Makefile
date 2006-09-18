@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2006/08/13 16:11:58 kurt Exp $
+# $OpenBSD: Makefile,v 1.21 2006/09/18 11:40:07 espie Exp $
 
 ONLY_FOR_ARCHS=		amd64 i386
 
@@ -58,7 +58,7 @@ BUILD_DEPENDS=		:mozilla-devel->=1.7.11:www/mozilla,-devel \
 			:apache-ant->=1.6.1:devel/apache-ant \
 			:pkgconfig-*:devel/pkgconfig
 
-LIB_DEPENDS=		gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
+LIB_DEPENDS=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 
 USE_GMAKE=		Yes
 USE_X11=		Yes
@@ -82,9 +82,9 @@ LIB_DEPENDS=		${MOZILLA_LIB_DEPENDS}
 RUN_DEPENDS=		::java/javaPathHelper
 MODULES+=		devel/gettext
 WANTLIB=		GL GLU X11 Xtst c m fontconfig \
-			freetype atk-1.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 \
-			gobject-2.0.0.0 gthread-2.0.0.0 pango-1.0.0.0 \
-			pangoft2-1.0.0.0 pangocairo-1.0.0.0 cairo
+			freetype atk-1.0 glib-2.0 gmodule-2.0 \
+			gobject-2.0 gthread-2.0 pango-1.0 \
+			pangoft2-1.0 pangocairo-1.0 cairo
 . endif
 .else
 MODULES+=		devel/gettext

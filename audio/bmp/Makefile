@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/08/01 16:20:46 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2006/09/18 11:40:06 espie Exp $
 
 COMMENT=	"gtk+2 media player based on XMMS"
 COMMENT-mp3=	"MP3 input plugin for bmp"
@@ -30,8 +30,8 @@ USE_X11=	Yes
 MODULES=	devel/gettext
 
 WANTLIB=	X11 Xext Xrender fontconfig freetype m z \
-		gmodule-2.0.0.0 atk-1.0.0.0 gobject-2.0.0.0 glitz png \
-		pango-1.0.0.0 pangocairo-1.0.0.0 pangoft2-1.0.0.0 cairo
+		gmodule-2.0 atk-1.0 gobject-2.0 glitz png \
+		pango-1.0 pangocairo-1.0 pangoft2-1.0 cairo
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk_pixbuf-2.0.>=400.3,gdk-x11-2.0.>=400.3,gtk-x11-2.0.>=0.5::x11/gtk+2 \
@@ -74,8 +74,8 @@ PERMIT_DISTFILES_FTP=	"patent issues"
 LIB_DEPENDS+=		beep::audio/bmp
 . elif ${SUBPACKAGE} == "-vorbis"
 LIB_DEPENDS=	vorbisfile.>=4.0,vorbis::audio/libvorbis
-WANTLIB+=	gthread-2.0.0.0 gtk-x11-2.0.0.0 gdk-x11-2.0.0.0 glib-2.0.0.0 \
-		ogg gdk_pixbuf-2.0.0.0
+WANTLIB+=	gthread-2.0 gtk-x11-2.0 gdk-x11-2.0 glib-2.0 \
+		ogg gdk_pixbuf-2.0
 RUN_DEPENDS=	::audio/bmp
 . else
 WANTLIB+=	pthread ICE audiofile c SM

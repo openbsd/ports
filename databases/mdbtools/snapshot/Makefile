@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/06/13 13:19:47 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2006/09/18 11:40:07 espie Exp $
 
 COMMENT=	"read microsoft Access MDB"
 COMMENT-gmdb=	"graphical interface to MDB tools"
@@ -32,24 +32,24 @@ BUILD_DEPENDS=	::devel/bison \
 		::lang/gawk \
 		::devel/pkgconfig
 
-LIB_DEPENDS=	glib-2.0.0.0::devel/glib2
+LIB_DEPENDS=	glib-2.0::devel/glib2
 WANTLIB=	c
 
 MODULES=	devel/gettext
 
 
 .if !defined(PACKAGING) || ${SUBPACKAGE} == "-gmdb"
-LIB_DEPENDS+=	gnomeui-2.0.0::x11/gnome/libgnomeui
-WANTLIB+=	audiofile bonobo-activation popt ORBit-2.0.0 pthread \
-		bonoboui-2.0.0  atk-1.0.0.0 gobject-2.0.0.0 m jpeg \
+LIB_DEPENDS+=	gnomeui-2::x11/gnome/libgnomeui
+WANTLIB+=	audiofile bonobo-activation popt ORBit-2 pthread \
+		bonoboui-2  atk-1.0 gobject-2.0 m jpeg \
 		SM esd fontconfig ssl z cairo glitz png \
-		gthread-2.0.0.0 art_lgpl_2 X11 glade-2.0.0.0 \
-		gconf-2.0.0 ICE Xrender gmodule-2.0.0.0 \
-		pango-1.0.0.0 pangoft2-1.0.0.0 \
-		gnomecanvas-2.0.0 gdk-x11-2.0.0.0 xml2 Xext gnome-2.0.0 \
-		gnome-keyring freetype crypto gtk-x11-2.0.0.0 \
-		pangocairo-1.0.0.0 gdk_pixbuf-2.0.0.0 bonobo-2.0.0 \
-		gnomevfs-2.0.0 ORBitCosNaming-2.0.0
+		gthread-2.0 art_lgpl_2 X11 glade-2.0 \
+		gconf-2 ICE Xrender gmodule-2.0 \
+		pango-1.0 pangoft2-1.0 \
+		gnomecanvas-2 gdk-x11-2.0 xml2 Xext gnome-2 \
+		gnome-keyring freetype crypto gtk-x11-2.0 \
+		pangocairo-1.0 gdk_pixbuf-2.0 bonobo-2 \
+		gnomevfs-2 ORBitCosNaming-2
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-gmdb"

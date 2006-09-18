@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/06/06 12:55:15 bernd Exp $
+# $OpenBSD: Makefile,v 1.8 2006/09/18 11:40:07 espie Exp $
 
 COMMENT=		"C++ interface for glib2"
 COMMENT-docs=		"C++ interface for glib2 documentation"
@@ -34,8 +34,8 @@ BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 PKG_ARCH=		*
 .else
 MODULES=		gettext
-LIB_DEPENDS=		sigc-2.0.0.0:libsigc++-2.*:devel/libsigc++-2 \
-			glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0:glib2->=2.6:devel/glib2 
+LIB_DEPENDS=		sigc-2.0:libsigc++-2.*:devel/libsigc++-2 \
+			glib-2.0,gmodule-2.0,gobject-2.0:glib2->=2.6:devel/glib2 
 .endif
 
 SEPARATE_BUILD=		concurrent

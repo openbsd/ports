@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/08/01 22:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/09/18 11:40:07 espie Exp $
 
 COMMENT=	"utilities for 'desktop' entries"
 
@@ -20,7 +20,7 @@ MASTER_SITES=	http://freedesktop.org/software/desktop-file-utils/releases/
 
 MODULES=	devel/gettext	
 
-LIB_DEPENDS=	glib-2.0.0.0::devel/glib2 \
+LIB_DEPENDS=	glib-2.0::devel/glib2 \
 		popt.>=0.3::devel/popt
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/08/01 22:19:46 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2006/09/18 11:40:07 espie Exp $
 
 COMMENT=	"GTK-based LDAP client"
 
@@ -19,14 +19,14 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gqclient/}
 
 WANTLIB=	X11 c crypto fontconfig freetype m z ssl \
-		atk-1.0.0.0 glib-2.0.0.0 \
-		gmodule-2.0.0.0 gobject-2.0.0.0 krb5 pango-1.0.0.0 \
-		pangocairo-1.0.0.0 pangoft2-1.0.0.0 sasl2 cairo
+		atk-1.0 glib-2.0 \
+		gmodule-2.0 gobject-2.0 krb5 pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 sasl2 cairo
 
 MODULES=	devel/gettext
 
 BUILD_DEPENDS=  :cyrus-sasl-*:security/cyrus-sasl2
-LIB_DEPENDS=	gtk-x11-2.0.0.0,gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0::x11/gtk+2 \
+LIB_DEPENDS=	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
 		ldap.>=7,lber.>=7::databases/openldap \
 		xml2::textproc/libxml
 
