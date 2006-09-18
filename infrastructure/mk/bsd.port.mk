@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.765 2006/09/17 22:08:19 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.766 2006/09/18 08:16:19 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1748,10 +1748,10 @@ update-patches:
 # if locking exists.
 
 _TOP_TARGETS=extract patch distpatch configure build all install fake \
-subpackage subdescribe sublib-depends-check subdump-vars \
+subpackage \
 fetch checksum regress depends lib-depends build-depends run-depends \
 regress-depends clean manpages-check \
-plist update-plist update package describe dump-vars \
+plist update-plist update package \
 install-all
 .for _t in ${_TOP_TARGETS}
 .  if defined(_LOCK)
