@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/07/11 15:54:40 kurt Exp $
+# $OpenBSD: Makefile,v 1.4 2006/09/18 11:50:40 espie Exp $
 
 # max data size too small to build. needs at least 256M
 NOT_FOR_ARCHS=	m68k sparc vax
@@ -29,13 +29,13 @@ BUILD_DEPENDS=	:zip->=2.3p0:archivers/zip \
 
 MODULES=	converters/libiconv
 
-LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
+LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 
-WANTLIB=	z ICE SM X11 Xext Xrender Xtst atk-1.0.0.0 fontconfig \
-		freetype gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 glib-2.0.0.0 \
-		gmodule-2.0.0.0 gobject-2.0.0.0 gthread-2.0.0.0 \
-		gtk-x11-2.0.0.0 intl m pango-1.0.0.0 pangoft2-1.0.0.0 \
-		pangocairo-1.0.0.0 cairo glitz png 
+WANTLIB=	z ICE SM X11 Xext Xrender Xtst atk-1.0 fontconfig \
+		freetype gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
+		gmodule-2.0 gobject-2.0 gthread-2.0 \
+		gtk-x11-2.0 intl m pango-1.0 pangoft2-1.0 \
+		pangocairo-1.0 cairo glitz png 
 
 MASTER_SITES=	${MASTER_SITE_GNU:=classpath/}
 

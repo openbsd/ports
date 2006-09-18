@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2006/08/03 20:04:51 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2006/09/18 11:50:40 espie Exp $
 
 COMMENT=	"RPN and algebraic scientific calculator"
 
@@ -20,7 +20,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=calcoo/} \
 
 WANTLIB=	X11 c fontconfig freetype m atk-1.0.>=800.0 cairo \
 		glib-2.0.>=400.0 gmodule-2.0.>=400.0 gobject-2.0.>=400.0 \
-		pango-1.0.>=600.0 pangocairo-1.0.0.0 pangoft2-1.0.0.0
+		pango-1.0.>=600.0 pangocairo-1.0 pangoft2-1.0
 
 MODULES=	devel/gettext
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/06/13 13:27:12 bernd Exp $
+# $OpenBSD: Makefile,v 1.7 2006/09/18 11:50:40 espie Exp $
 
 COMMENT=		"mail notification for freedesktop.org-compliant system trays"
 DISTNAME=		mail-notification-1.0
@@ -39,12 +39,12 @@ SUBST_VARS=		CONFDIR
 
 WANTLIB=		pthread ICE c z xml2 X11 cairo \
 			SM popt fontconfig crypto freetype ssl m art_lgpl_2 \
-			atk-1.0.0.0 bonobo-2 bonobo-activation bonoboui-2 \
-			gconf-2 gdk-x11-2.0.0.0 ORBit-2 gailutil gnomeui-2 \
-			gdk_pixbuf-2.0.0.0 glade-2.0.0.0 glib-2.0.0.0 \
-			gmodule-2.0.0.0 gnome-2 gnomecanvas-2 gnomevfs-2 \
-			gobject-2.0.0.0 gthread-2.0.0.0 gtk-x11-2.0.0.0 \
-			pango-1.0.0.0 pangoft2-1.0.0.0 pangocairo-1.0.0.0
+			atk-1.0 bonobo-2 bonobo-activation bonoboui-2 \
+			gconf-2 gdk-x11-2.0 ORBit-2 gailutil gnomeui-2 \
+			gdk_pixbuf-2.0 glade-2.0 glib-2.0 \
+			gmodule-2.0 gnome-2 gnomecanvas-2 gnomevfs-2 \
+			gobject-2.0 gthread-2.0 gtk-x11-2.0 \
+			pango-1.0 pangoft2-1.0 pangocairo-1.0
 
 post-patch: 
 	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update

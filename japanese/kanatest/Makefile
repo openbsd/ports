@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/08/03 13:09:09 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/09/18 11:50:40 espie Exp $
 
 COMMENT=	"beginner's drill tool to learn Japanese kana characters" 
 
@@ -14,8 +14,8 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 WANTLIB=	c m freetype X11 fontconfig  cairo \
-		atk-1.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 \
-		pango-1.0.0.0 pangoft2-1.0.0.0 pangocairo-1.0.0.0
+		atk-1.0 glib-2.0 gmodule-2.0 gobject-2.0 \
+		pango-1.0 pangoft2-1.0 pangocairo-1.0
 
 MASTER_SITES=	http://clay.ll.pl/download/
 

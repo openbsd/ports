@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/06/13 13:22:36 bernd Exp $
+# $OpenBSD: Makefile,v 1.6 2006/09/18 11:50:40 espie Exp $
 
 COMMENT=	"simple GTK+ text editor"
 
@@ -18,14 +18,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://savannah.nongnu.org/download/leafpad/
 WANTLIB=	c freetype z fontconfig m X11 cairo \
-		pango-1.0.0.0 pangoft2-1.0.0.0 \
-		pangocairo-1.0.0.0 atk-1.0.0.0 gnomeprint-2-2 \
+		pango-1.0 pangoft2-1.0 \
+		pangocairo-1.0 atk-1.0 gnomeprint-2-2 \
 		gnomecanvas-2 art_lgpl_2 xml2
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
-		glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0::devel/glib2 \
+LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
+		glib-2.0,gmodule-2.0,gobject-2.0::devel/glib2 \
 		gnomeprintui-2-2::x11/gnome/libgnomeprintui
 
 USE_X11=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2006/08/02 10:10:35 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2006/09/18 11:50:40 espie Exp $
 
 COMMENT=	"technical diagrams drawing tool"
 
@@ -15,15 +15,15 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=	X11 Xext Xrender atk-1.0.0.0 c z xml2 pthread gthread-2.0.0.0 \
-		fontconfig freetype glib-2.0.0.0 gmodule-2.0.0.0 \
-		gobject-2.0.0.0 m pango-1.0.0.0 pangocairo-1.0.0.0 \
-		pangoft2-1.0.0.0 png cairo glitz
+WANTLIB=	X11 Xext Xrender atk-1.0 c z xml2 pthread gthread-2.0 \
+		fontconfig freetype glib-2.0 gmodule-2.0 \
+		gobject-2.0 m pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 png cairo glitz
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
 		:p5-XML-Parser-*:textproc/p5-XML-Parser \
 		::textproc/docbook-xsl
-LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
+LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		art_lgpl_2.>=5::graphics/libart \
 		popt::devel/popt \
 		xslt.>=1::textproc/libxslt
@@ -44,7 +44,7 @@ FLAVOR?=
 .if ${FLAVOR:L:Mgnome}
 CONFIGURE_ARGS+=	--enable-gnome
 LIB_DEPENDS+=		gnomeui-2::x11/gnome/libgnomeui
-WANTLIB+=		gthread-2.0.0.0 gnomevfs-2 ORBitCosNaming-2 crypto \
+WANTLIB+=		gthread-2.0 gnomevfs-2 ORBitCosNaming-2 crypto \
 			audiofile bonobo-activation jpeg bonobo-2 gconf-2 \
 			ICE bonoboui-2 gnomecanvas-2 SM ORBit-2 pthread esd \
 			ssl gnome-2 gnome-keyring

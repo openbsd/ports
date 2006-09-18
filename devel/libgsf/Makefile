@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/08/01 22:55:52 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2006/09/18 11:50:39 espie Exp $
 
 COMMENT=		"GNOME Structured File library"
 COMMENT-gnome=		"GNOME specific extensions to libgsf"
@@ -60,9 +60,9 @@ SUBPACKAGE?=
 . if ${SUBPACKAGE} == "-gnome"
 LIB_DEPENDS=	gnomevfs-2::x11/gnome/vfs2 \
 		gsf-1::devel/libgsf
-WANTLIB+=	crypto popt ssl bz2 ORBitCosNaming-2.0.0 \
-		ORBit-2.0.0 bonobo-2.0.0 bonobo-activation gmodule-2.0.0.0 \
-		gthread-2.0.0.0 gconf-2 glib-2.0.0.0 gobject-2.0.0.0 xml2
+WANTLIB+=	crypto popt ssl bz2 ORBitCosNaming-2 \
+		ORBit-2 bonobo-2 bonobo-activation gmodule-2.0 \
+		gthread-2.0 gconf-2 glib-2.0 gobject-2.0 xml2
 . endif
 .else
 . if ${MULTI_PACKAGES:M-gnome}

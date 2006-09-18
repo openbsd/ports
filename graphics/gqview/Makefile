@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2006/06/13 13:25:31 bernd Exp $
+# $OpenBSD: Makefile,v 1.42 2006/09/18 11:50:40 espie Exp $
 
 COMMENT=	"Gtk-based graphic file viewer"
 
@@ -17,13 +17,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 atk-1.0.0.0 c fontconfig cairo \
-		freetype glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 m \
-		pango-1.0.0.0 pangocairo-1.0.0.0 pangoft2-1.0.0.0
+WANTLIB=	X11 atk-1.0 c fontconfig cairo \
+		freetype glib-2.0 gmodule-2.0 gobject-2.0 m \
+		pango-1.0 pangocairo-1.0 pangoft2-1.0
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
+LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
 CONFIGURE_STYLE= gnu

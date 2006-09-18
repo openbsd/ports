@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/08/02 09:36:20 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/09/18 11:50:40 espie Exp $
 
 COMMENT= 		"billiard game"
 CATEGORIES=		x11 x11/kde games
@@ -15,7 +15,7 @@ WANTLIB=		m stdc++ ICE X11 z SM Xext util c ossaudio \
 			vorbisfile mad qtmcop intl iconv mcop esd \
 			art_lgpl_2 artsflow audiofile artsflow_idl \
 			kmedia2_idl soundserver_idl idn \
-			gthread-2.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0
+			gthread-2.0 glib-2.0 gmodule-2.0
 
 MODKDE_VERSION=	3.3.0
 CONFIGURE_STYLE=	autoconf

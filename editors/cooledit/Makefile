@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2006/06/03 17:40:48 steven Exp $
+# $OpenBSD: Makefile,v 1.25 2006/09/18 11:50:39 espie Exp $
 
 COMMENT=	"easy to use, graphical editor"
 
@@ -20,7 +20,7 @@ WANTLIB=	X11 c util
 USE_LIBTOOL=	Yes
 
 .if ${FLAVOR:L:Mpython}
-LIB_DEPENDS+=	python${PYTHON_VER}.0.0:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
+LIB_DEPENDS+=	python${PYTHON_VER}:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 CONFIGURE_ENV+=	PYTHON_VER=${PYTHON_VER} LOCALBASE=${LOCALBASE}
 WANTLIB+=	pthread m 
 .else

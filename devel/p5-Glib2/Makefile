@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/03/15 14:00:26 msf Exp $
+# $OpenBSD: Makefile,v 1.4 2006/09/18 11:50:39 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,7 +22,7 @@ MODULES=	devel/gettext
 
 USE_GMAKE=	Yes
 
-LIB_DEPENDS=	glib-2.0.0.0,gobject-2.0.0.0::devel/glib2
+LIB_DEPENDS=	glib-2.0,gobject-2.0::devel/glib2
 BUILD_DEPENDS=	::devel/p5-ExtUtils-Depends \
 		::devel/p5-ExtUtils-PkgConfig
 

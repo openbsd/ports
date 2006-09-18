@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2006/08/03 13:09:09 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2006/09/18 11:50:40 espie Exp $
 
 COMMENT=		"lightweight GTK+ based mail/news client"
 COMMENT-dillo=		"dillo plugin for sylpheed-claws"
@@ -28,14 +28,14 @@ DISTFILES=		${DISTNAME}.tar.gz ${THEMEFILE}.tar.gz
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		gdk_pixbuf-2.0.0.0::x11/gtk+2
+LIB_DEPENDS=		gdk_pixbuf-2.0::x11/gtk+2
 
 WANTLIB=		X11 Xext Xrender crypto \
 			fontconfig freetype m ssl \
-			atk-1.0.0.0 gdk-x11-2.0.0.0 glib-2.0.0.0 \
-			gmodule-2.0.0.0 gobject-2.0.0.0 gtk-x11-2.0.0.0 \
-			pango-1.0.0.0 pangocairo-1.0.0.0 \
-			pangoft2-1.0.0.0 cairo glitz png z
+			atk-1.0 gdk-x11-2.0 glib-2.0 \
+			gmodule-2.0 gobject-2.0 gtk-x11-2.0 \
+			pango-1.0 pangocairo-1.0 \
+			pangoft2-1.0 cairo glitz png z
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS=		--program-suffix="-claws" \
@@ -106,7 +106,7 @@ CONFIGURE_ARGS+=	--enable-ldap
 .endif
 
 .if empty(SUBPACKAGE)
-WANTLIB+=		ICE SM c pthread gthread-2.0.0.0
+WANTLIB+=		ICE SM c pthread gthread-2.0
 .endif
 
 .if defined(PACKAGING) && !empty(SUBPACKAGE)

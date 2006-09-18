@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/07/30 07:29:13 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2006/09/18 11:50:40 espie Exp $
 
 COMMENT=	"3D creation software"
 
@@ -28,7 +28,7 @@ BUILD_DEPENDS=	:scons-*:devel/scons \
 LIB_DEPENDS=	png::graphics/png \
 		jpeg::graphics/jpeg \
 		SDL::devel/sdl \
-		python${PYTHON_VER}.0.0:python-${PYTHON_VER}.*:lang/python/${PYTHON_VER}
+		python${PYTHON_VER}:python-${PYTHON_VER}.*:lang/python/${PYTHON_VER}
 
 WANTLIB=	GL GLU X11 Xi c m pthread stdc++ util z
 

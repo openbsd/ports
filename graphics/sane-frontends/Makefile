@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/08/03 12:53:18 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/09/18 11:50:40 espie Exp $
 
 COMMENT=	"API for accessing scanners, frontends"
 
@@ -22,13 +22,13 @@ MASTER_SITES=	ftp://ftp.sane-project.org/pub/sane/${DISTNAME}/ \
 		ftp://ftp.sane-project.org/pub/sane/old-versions/${DISTNAME}/
 
 WANTLIB=	c X11 m freetype fontconfig pthread tiff \
-		jpeg pango-1.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 \
-		gobject-2.0.0.0 pangocairo-1.0.0.0 pangoft2-1.0.0.0 \
-		atk-1.0.0.0 usb gphoto2.>=2 gphoto2_port.>=5 cairo
+		jpeg pango-1.0 glib-2.0 gmodule-2.0 \
+		gobject-2.0 pangocairo-1.0 pangoft2-1.0 \
+		atk-1.0 usb gphoto2.>=2 gphoto2_port.>=5 cairo
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
+LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		sane.>=1::graphics/sane-backends
 
 USE_GMAKE=	Yes

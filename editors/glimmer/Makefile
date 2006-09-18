@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/08/01 23:39:08 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2006/09/18 11:50:39 espie Exp $
 
 COMMENT=		"code editor for GNOME"
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		IIOP ORBit ORBitCosNaming ORBitutil \
-			audiofile esd gconf-1.0.0 gconf-gtk-1.0.0 \
+			audiofile esd gconf-1 gconf-gtk-1 \
 			gdk gdk_imlib gdk_pixbuf glib gmodule gnome \
 			gnomesupport gnomeui gthread gtk jpeg oaf \
 			popt ungif xml ICE SM X11 Xext Xi art_lgpl \

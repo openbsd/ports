@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2006/06/13 13:24:17 bernd Exp $
+# $OpenBSD: Makefile,v 1.34 2006/09/18 11:50:40 espie Exp $
 
 COMMENT=	"game where you deal drugs on the streets of NY"
 
@@ -18,7 +18,7 @@ WANTLIB=		c ncurses
 
 MODULES+=	gettext
 
-LIB_DEPENDS+=   glib-2.0.0.0::devel/glib2
+LIB_DEPENDS+=   glib-2.0::devel/glib2
 BUILD_DEPENDS+= :pkgconfig-*:devel/pkgconfig
 
 USE_GMAKE=	Yes
@@ -39,10 +39,10 @@ FLAVOR?=
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+= --disable-gui-client
 .else
-LIB_DEPENDS+=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
+LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 WANTLIB+=	X11 fontconfig freetype m cairo \
-		gmodule-2.0.0.0 gobject-2.0.0.0 atk-1.0.0.0 pango-1.0.0.0 \
-		pangoft2-1.0.0.0 pangocairo-1.0.0.0
+		gmodule-2.0 gobject-2.0 atk-1.0 pango-1.0 \
+		pangoft2-1.0 pangocairo-1.0
 .endif
 
 post-install:

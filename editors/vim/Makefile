@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2006/08/03 19:33:39 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.71 2006/09/18 11:50:40 espie Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
@@ -74,7 +74,7 @@ PYTHON_VER=	2.4
 CONFIGURE_ENV+=	vi_cv_path_python=${DEPBASE}/bin/python${PYTHON_VER}
 CONFIGURE_ARGS+=--enable-pythoninterp \
 	--with-python-config-dir=${DEPBASE}/lib/python${PYTHON_VER}/config
-LIB_DEPENDS+=	python${PYTHON_VER}.0.0:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
+LIB_DEPENDS+=	python${PYTHON_VER}:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 WANTLIB+=	m pthread util
 .endif
 
@@ -104,8 +104,8 @@ LIB_DEPENDS+=	gdk-x11-2.0.>=0.11,gdk_pixbuf-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/g
 BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 CONFIGURE_ARGS+=--enable-gui="gtk2" --with-x --enable-fontset --enable-xim --disable-gtk-check --enable-gtk2-check
 WANTLIB+=	ICE SM X11 Xt fontconfig freetype m \
-	 	atk-1.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 \
-		pango-1.0.0.0 pangoft2-1.0.0.0 pangocairo-1.0.0.0 cairo
+	 	atk-1.0 glib-2.0 gmodule-2.0 gobject-2.0 \
+		pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo
 .else
 ERRORS=		"Fatal: You must select one GUI interface: no_x11, gtk2, athena or motif"
 .endif

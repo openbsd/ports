@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/09/17 17:52:38 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2006/09/18 11:50:40 espie Exp $
 
 COMMENT=		"read and manipulate raw images from digital cameras"
 
@@ -16,14 +16,14 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB=		c fontconfig freetype m stdc++ X11 z gmodule-2.0.0.0 \
-			glib-2.0.0.0 gimpui-2.0.0.0 pango-1.0.0.0 \
-			pangocairo-1.0.0.0 gimpmath-2.0.0.0 gdk_pixbuf-2.0.0.0 \
-			gdk-x11-2.0.0.0 pangoft2-1.0.0.0 gtk-x11-2.0.0.0 cairo \
-			gimpwidgets-2.0.0.0 gimpbase-2.0.0.0 atk-1.0.0.0 \
-			gimpcolor-2.0.0.0 gobject-2.0.0.0
+WANTLIB=		c fontconfig freetype m stdc++ X11 z gmodule-2.0 \
+			glib-2.0 gimpui-2.0 pango-1.0 \
+			pangocairo-1.0 gimpmath-2.0 gdk_pixbuf-2.0 \
+			gdk-x11-2.0 pangoft2-1.0 gtk-x11-2.0 cairo \
+			gimpwidgets-2.0 gimpbase-2.0 atk-1.0 \
+			gimpcolor-2.0 gobject-2.0
 
-LIB_DEPENDS=		gimp-2.0.0.0:gimp-2.*:graphics/gimp/stable \
+LIB_DEPENDS=		gimp-2.0:gimp-2.*:graphics/gimp/stable \
 			tiff.>=37::graphics/tiff \
 			jpeg.>=62::graphics/jpeg \
 			lcms.>=1.15::graphics/lcms \

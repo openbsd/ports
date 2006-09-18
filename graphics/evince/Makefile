@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/08/02 10:10:35 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/09/18 11:50:40 espie Exp $
 
 COMMENT=	"document viewer for multiple document formats"
 
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser \
 		:ghostscript-*:print/ghostscript/gnu \
 		:teTeX_base-*:print/teTeX/base
 LIB_DEPENDS=	poppler.>=1,poppler-glib.>=1::print/poppler \
-		gnomeui-2.0.0::x11/gnome/libgnomeui \
+		gnomeui-2::x11/gnome/libgnomeui \
 		esd.>=2::audio/esound \
 		audiofile::devel/libaudiofile
 RUN_DEPENDS=	:scrollkeeper-*:textproc/scrollkeeper \
@@ -31,14 +31,14 @@ RUN_DEPENDS=	:scrollkeeper-*:textproc/scrollkeeper \
 
 WANTLIB=	freetype crypto c Xext fontconfig pthread SM ICE \
 		Xrender X11 m ssl z \
-		gnomevfs-2.0.0 gnome-2.0.0 glib-2.0.0.0 gnome-keyring png \
-		pango-1.0.0.0 pangoft2-1.0.0.0 pangocairo-1.0.0.0 \
-		bonoboui-2.0.0 popt gdk-x11-2.0.0.0 gnomecanvas-2.0.0 xml2 \
-		ORBit-2.0.0 tiff glitz ORBitCosNaming-2.0.0 \
-		gtk-x11-2.0.0.0 cairo gdk_pixbuf-2.0.0.0 \
-		gthread-2.0.0.0 bonobo-activation art_lgpl_2 jpeg \
-		bonobo-2.0.0 gobject-2.0.0.0 atk-1.0.0.0 glade-2.0.0.0 \
-		gconf-2.0.0 gmodule-2.0.0.0
+		gnomevfs-2 gnome-2 glib-2.0 gnome-keyring png \
+		pango-1.0 pangoft2-1.0 pangocairo-1.0 \
+		bonoboui-2 popt gdk-x11-2.0 gnomecanvas-2 xml2 \
+		ORBit-2 tiff glitz ORBitCosNaming-2 \
+		gtk-x11-2.0 cairo gdk_pixbuf-2.0 \
+		gthread-2.0 bonobo-activation art_lgpl_2 jpeg \
+		bonobo-2 gobject-2.0 atk-1.0 glade-2.0 \
+		gconf-2 gmodule-2.0
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/evince/ \

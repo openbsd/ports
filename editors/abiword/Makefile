@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2006/08/02 09:36:20 espie Exp $
+# $OpenBSD: Makefile,v 1.58 2006/09/18 11:50:39 espie Exp $
 
 COMMENT=	"free cross-platform WYSIWYG word processor"
 
@@ -14,7 +14,7 @@ MODULES=	devel/gettext
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
 LIB_DEPENDS=	fribidi::devel/fribidi \
-		gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
+		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		gnomeprintui-2-2::x11/gnome/libgnomeprintui
 
 # GPL
@@ -23,11 +23,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE SM X11 Xext Xft Xrender art_lgpl_2.0.0 atk-1.0.0.0 c \
-		fontconfig freetype glade-2.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 \
-		gnomecanvas-2.0.0 gnomeprint-2-2.0.0 gobject-2.0.0.0 \
-		gthread-2.0.0.0 m pango-1.0.0.0 pangocairo-1.0.0.0 cairo \
-		pangoft2-1.0.0.0 pangoxft-1.0.0.0 png popt pthread stdc++ \
+WANTLIB=	ICE SM X11 Xext Xft Xrender art_lgpl_2 atk-1.0 c \
+		fontconfig freetype glade-2.0 glib-2.0 gmodule-2.0 \
+		gnomecanvas-2 gnomeprint-2-2 gobject-2.0 \
+		gthread-2.0 m pango-1.0 pangocairo-1.0 cairo \
+		pangoft2-1.0 pangoxft-1.0 png popt pthread stdc++ \
 		xml2.>=9 z
 
 MASTER_SITES=   ${HOMEPAGE}/downloads/abiword/${VERSION}/source/
@@ -45,8 +45,8 @@ FLAVOR?=
 .if ${FLAVOR:L:Mgnome}
 LIB_DEPENDS+=	gnomeui-2::x11/gnome/libgnomeui \
 		ORBit-2::devel/ORBit2
-WANTLIB+=	ORBit-2.0.0 bonobo-2.0.0 bonobo-activation bonoboui-2.0.0 \
-		gconf-2.0.0 gnome-2.0.0 gnomeui-2.0.0 gnomevfs-2.0.0 
+WANTLIB+=	ORBit-2 bonobo-2 bonobo-activation bonoboui-2 \
+		gconf-2 gnome-2 gnomeui-2 gnomevfs-2 
 CONFIGURE_ARGS+= --enable-gnome
 .endif
 

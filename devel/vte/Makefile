@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/08/01 23:39:08 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2006/09/18 11:50:39 espie Exp $
 
 COMMENT=		"terminal emulatation library"
 
@@ -15,10 +15,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xft Xrender c fontconfig freetype \
-			m ncurses util atk-1.0.0.0 glib-2.0.0.0 \
-			gmodule-2.0.0.0 gobject-2.0.0.0 pango-1.0.0.0 \
-			pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 \
-			pangocairo-1.0.0.0 cairo glitz png z
+			m ncurses util atk-1.0 glib-2.0 \
+			gmodule-2.0 gobject-2.0 pango-1.0 \
+			pangoft2-1.0 pangox-1.0 pangoxft-1.0 \
+			pangocairo-1.0 cairo glitz png z
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/vte/0.11/}
 EXTRACT_SUFX=		.tar.bz2

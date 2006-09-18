@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2006/08/21 17:39:00 aanriot Exp $
+# $OpenBSD: Makefile,v 1.23 2006/09/18 11:50:39 espie Exp $
 
 COMMENT=	"subversion revision control system"
 COMMENT-perl=	"perl interface to subversion"
@@ -64,7 +64,7 @@ WANTLIB+=	aprutil-1
 .    if ${SUBPACKAGE} == "-python"
 RUN_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 LIB_DEPENDS+=	svn_diff-1,svn_ra-1,svn_delta-1,svn_subr-1,svn_fs-1,svn_repos-1,svn_wc-1,svn_client-1,svn_fs_fs-1,svn_ra_svn-1,svn_ra_local-1,svn_fs_base-1,svn_ra_dav-1::devel/subversion
-LIB_DEPENDS+=	python${PYTHON_VER}.0.0:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
+LIB_DEPENDS+=	python${PYTHON_VER}:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 WANTLIB+=	neon xml2 m ssl crypto
 .    endif
 .  endif

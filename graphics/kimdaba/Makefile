@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/08/03 12:43:20 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/09/18 11:50:40 espie Exp $
 
 COMMENT=		"kde image database"
 CATEGORIES=		graphics x11 x11/kde
@@ -9,7 +9,7 @@ HOMEPAGE=		http://ktown.kde.org/kphotoalbum/
 MASTER_SITES=		${HOMEPAGE}download/
 
 WANTLIB=	ICE Xrender SM Xext pthread stdc++ c X11 util m z \
-		art_lgpl_2.0.0 jpeg png iconv idn
+		art_lgpl_2 jpeg png iconv idn
 
 LIB_DEPENDS=	kdecore.>=6,DCOP,kdefx,kdesu,kdeui,kio,kwalletclient::x11/kde/libs3 \
 		kipi::graphics/libkipi

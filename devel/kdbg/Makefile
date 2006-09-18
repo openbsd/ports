@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/08/01 22:55:52 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2006/09/18 11:50:39 espie Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	"graphical debugger for KDE"
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		art_lgpl_2.0.0 jpeg ICE SM X11 Xext Xrender c m \
+WANTLIB=		art_lgpl_2 jpeg ICE SM X11 Xext Xrender c m \
 			png pthread stdc++ util z iconv idn
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kdbg/}
