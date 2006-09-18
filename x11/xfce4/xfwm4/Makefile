@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/09/18 10:52:10 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/09/18 11:20:15 espie Exp $
 
 COMMENT=	"xfce4 window manager"
 V=		4.2.3.2
@@ -18,7 +18,7 @@ MODULES=	devel/gettext
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
 		:xfce-mcs-manager-*:x11/xfce4/xfce-mcs-manager
 LIB_DEPENDS=	xfcegui4.>=3.4::x11/xfce4/libxfcegui4 \
-		xfce4mcs-client.>=2.3,xfce4mcs-manager.2.3::x11/xfce4/libxfce4mcs
+		xfce4mcs-client.>=2.3,xfce4mcs-manager.>=2.3::x11/xfce4/libxfce4mcs
 RUN_DEPENDS=	:xfce-mcs-manager-*:x11/xfce4/xfce-mcs-manager
 WANTLIB=	ICE SM X11 Xext Xpm Xrandr Xrender c \
 		fontconfig freetype m \
