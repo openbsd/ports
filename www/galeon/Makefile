@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2006/08/04 00:10:42 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2006/09/18 09:04:03 espie Exp $
 
 COMMENT=	"GNOME web browser based on gecko"
 
@@ -20,7 +20,7 @@ WANTLIB= ORBit-2.0.0 ORBitCosNaming-2.0.0 art_lgpl_2.0.0 atk-1.0.0.0 audiofile \
 	 gmodule-2.0.0.0 gnome-2.0.0 gnome-keyring gnomecanvas-2.0.0 \
 	 gnomevfs-2.0.0 gobject-2.0.0.0 gthread-2.0.0.0 gtk-x11-2.0.0.0 jpeg \
 	 pango-1.0.0.0 pangoft2-1.0.0.0 pangocairo-1.0.0.0 popt cairo glitz \
-	 startup-notification-1.0 xml2.0.0 ICE SM X11 Xext Xrender png \
+	 startup-notification-1 xml2.0.0 ICE SM X11 Xext Xrender png \
 	 c crypto fontconfig freetype m pthread ssl stdc++ z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=galeon/}

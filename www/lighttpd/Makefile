@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2006/03/09 19:00:59 brad Exp $
+# $OpenBSD: Makefile,v 1.32 2006/09/18 09:04:03 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -41,7 +41,7 @@ WANTLIB+=	sasl2
 
 .if ${FLAVOR:L:Mmysql}
 CONFIGURE_ARGS+= --with-mysql
-LIB_DEPENDS+=	mysqlclient.10::databases/mysql
+LIB_DEPENDS+=	mysqlclient.>=10::databases/mysql
 .endif
 
 post-install:

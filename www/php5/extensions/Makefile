@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2006/08/04 00:10:42 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2006/09/18 09:04:03 espie Exp $
 
 FULLPKGNAME=		php5-extensions-${V}
 COMMENT=		"informational package about PHP5 extensions"
@@ -171,7 +171,7 @@ CONFIGURE_ARGS+=	--without-mcrypt
 MULTI_PACKAGES+=	-mcrypt
 COMMENT-mcrypt=		"mcrypt encryption/decryption extensions for php5"
 CONFIGURE_ARGS+=	--with-mcrypt=shared,${LOCALBASE}
-MCRYPT_DEPENDS=		mcrypt::security/libmcrypt ltdl.1::devel/libtool,-ltdl
+MCRYPT_DEPENDS=		mcrypt::security/libmcrypt ltdl.>=1::devel/libtool,-ltdl
 .endif
 
 # mhash

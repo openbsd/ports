@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/06/03 09:21:21 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2006/09/18 09:04:03 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/python
 
-LIB_DEPENDS=	xmms.3::audio/xmms
+LIB_DEPENDS=	xmms.>=3::audio/xmms
 
 MODPY_DISTUTILS_BUILD=		build_ext
 MODPY_DISTUTILS_BUILDARGS=	-I${LOCALBASE}/include \
