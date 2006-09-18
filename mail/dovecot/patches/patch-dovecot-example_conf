@@ -1,12 +1,12 @@
-$OpenBSD: patch-dovecot-example_conf,v 1.23 2006/08/06 19:57:08 sturm Exp $
---- dovecot-example.conf.orig	Sat Jul  1 16:07:32 2006
-+++ dovecot-example.conf	Thu Jul 27 23:50:39 2006
+$OpenBSD: patch-dovecot-example_conf,v 1.24 2006/09/18 05:04:28 brad Exp $
+--- dovecot-example.conf.orig	Thu Aug 10 17:21:05 2006
++++ dovecot-example.conf	Thu Aug 17 18:41:36 2006
 @@ -7,13 +7,12 @@
  # value inside quotes, eg.: key = "# char and trailing whitespace  "
  
- # Default values are shown after each value, it's not required to uncomment
--# any of the lines. Exception to this are paths, they're just examples
--# with real defaults being based on configure options. The paths listed here
+ # Default values are shown for each setting, it's not required to uncomment
+-# any of the lines. Exception to this are paths, they're just examples with
+-# the real defaults being based on configure options. The paths listed here
 -# are for configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var
 -# --with-ssldir=/etc/ssl
 +# any of the lines.
