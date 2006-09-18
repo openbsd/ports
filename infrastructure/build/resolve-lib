@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: resolve-lib,v 1.14 2006/09/18 11:27:47 espie Exp $
+# $OpenBSD: resolve-lib,v 1.15 2006/09/18 11:30:08 espie Exp $
 #
 # Copyright (c) 2001, 2005 Marc Espie <espie@openbsd.org>
 #
@@ -69,10 +69,6 @@ sub parse_spec_versions
 			$req->{minor} = $3;
 			$spec = $`;
 			$req->{strict} = $1 eq '';
-		} elsif ($spec =~ m/\.(\d+)$/) {
-			$req->{major} = $1;
-			$req->{minor} = 0;
-			$spec = $`;
 		} elsif ($spec =~ m/\.(\>?)\=(\d+)$/) {
 			$req->{major} = $2;
 			$req->{minor} = 0;
