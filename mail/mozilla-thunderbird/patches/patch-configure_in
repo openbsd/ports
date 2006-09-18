@@ -1,6 +1,19 @@
-$OpenBSD: patch-configure_in,v 1.8 2006/07/02 15:54:55 steven Exp $
+$OpenBSD: patch-configure_in,v 1.9 2006/09/18 15:18:36 steven Exp $
 --- configure.in.orig	Fri Apr 21 22:50:21 2006
-+++ configure.in	Thu Jun 29 08:50:59 2006
++++ configure.in	Mon Sep 18 16:02:12 2006
+@@ -1287,9 +1287,9 @@ dnl Get mozilla version from central mil
+ MOZILLA_VERSION=`$PERL $srcdir/config/milestone.pl -topsrcdir $srcdir`
+ 
+ dnl Get version of various core apps from the version files.
+-FIREFOX_VERSION=`cat $topsrcdir/browser/config/version.txt`
+-THUNDERBIRD_VERSION=`cat $topsrcdir/mail/config/version.txt`
+-SEAMONKEY_VERSION=`cat $topsrcdir/xpfe/bootstrap/version.txt`
++FIREFOX_VERSION=`cat ./browser/config/version.txt`
++THUNDERBIRD_VERSION=`cat ./mail/config/version.txt`
++SEAMONKEY_VERSION=`cat ./xpfe/bootstrap/version.txt`
+ 
+ AC_DEFINE_UNQUOTED(MOZILLA_VERSION,"$MOZILLA_VERSION")
+ AC_DEFINE_UNQUOTED(MOZILLA_VERSION_U,$MOZILLA_VERSION)
 @@ -1859,7 +1859,7 @@ case "$target" in
  	;;
  
