@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2006/06/18 20:30:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2006/09/18 18:53:32 jasper Exp $
 
 COMMENT=	"light-weight scripting language with C-like syntax"
 
-DISTNAME=	arena-0.9.3
+DISTNAME=	arena-0.9.7
 CATEGORIES=	lang
 
 HOMEPAGE=	http://www.minimalinux.org/arena/
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
