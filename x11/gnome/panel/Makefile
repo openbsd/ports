@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2006/06/13 13:36:44 bernd Exp $
+# $OpenBSD: Makefile,v 1.22 2006/09/18 09:40:32 espie Exp $
 
 COMMENT=		"GNOME panel"
 
@@ -34,9 +34,9 @@ BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser \
 			:scrollkeeper->=0.3.12:textproc/scrollkeeper
 RUN_DEPENDS=		:scrollkeeper->=0.3.12:textproc/scrollkeeper
-LIB_DEPENDS= 		gnome-desktop-2.0::x11/gnome/desktop \
+LIB_DEPENDS= 		gnome-desktop-2::x11/gnome/desktop \
 			gnome-menu::x11/gnome/menus \
-			wnck-1.4::devel/libwnck
+			wnck-1.>=4::devel/libwnck
 
 USE_X11=		Yes
 USE_GMAKE=		Yes

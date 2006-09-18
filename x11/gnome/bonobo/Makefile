@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/01/09 16:31:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2006/09/18 09:40:31 espie Exp $
 
 COMMENT=		"architecture for creating reusable software components"
 COMMENT-docs=		"documentation for the bonobo architecture"
@@ -33,9 +33,9 @@ WANTLIB=		ICE IIOP ORBit ORBitCosNaming ORBitutil SM X11 Xext \
 			Xi audiofile c esd freetype gdk gdk_imlib gdk_pixbuf \
 			glib gmodule gtk jpeg m png popt tiff ungif wrap xml z
 MODULES=		devel/gettext
-LIB_DEPENDS=		art_lgpl.4,gnome.36,gnomesupport,gnomeui.46::x11/gnome/libs \
+LIB_DEPENDS=		art_lgpl.>=4,gnome.>=36,gnomesupport,gnomeui.>=46::x11/gnome/libs \
 			oaf::x11/gnome/oaf \
-			gnomeprint.16::x11/gnome/print
+			gnomeprint.>=16::x11/gnome/print
 .endif
 
 SEPARATE_BUILD=		concurrent

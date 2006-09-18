@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2006/06/13 13:36:44 bernd Exp $
+# $OpenBSD: Makefile,v 1.18 2006/09/18 09:40:32 espie Exp $
 
 COMMENT=		"GNOME session"
 
@@ -30,7 +30,7 @@ MODULES=		devel/gettext
 BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser \
 			:scrollkeeper-*:textproc/scrollkeeper
-LIB_DEPENDS= 		gnomeui-2.0::x11/gnome/libgnomeui
+LIB_DEPENDS= 		gnomeui-2::x11/gnome/libgnomeui
 
 # Here we hang all the additional ports that will make up a satisfying
 # Gnome2 user experience :)

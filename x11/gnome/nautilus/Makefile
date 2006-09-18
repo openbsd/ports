@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/06/13 13:36:44 bernd Exp $
+# $OpenBSD: Makefile,v 1.20 2006/09/18 09:40:32 espie Exp $
 
 COMMENT=		"GNOME shell and file manager"
 
@@ -35,9 +35,9 @@ MODULES=		devel/gettext
 BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS=		::devel/desktop-file-utils
-LIB_DEPENDS=		eel-2.12.1::x11/gnome/eel \
-			gnome-desktop-2.0::x11/gnome/desktop \
-			rsvg-2.2::x11/gnome/librsvg
+LIB_DEPENDS=		eel-2.>=12.1::x11/gnome/eel \
+			gnome-desktop-2::x11/gnome/desktop \
+			rsvg-2.>=2::x11/gnome/librsvg
 RUN_DEPENDS=		:gnome-icon-theme-*:x11/gnome/icon-theme
 
 USE_X11=		Yes

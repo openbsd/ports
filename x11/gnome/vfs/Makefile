@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2006/02/12 01:22:00 steven Exp $
+# $OpenBSD: Makefile,v 1.24 2006/09/18 09:40:32 espie Exp $
 
 COMMENT=		"GNOME Virtual File System"
 
@@ -10,8 +10,8 @@ HOMEPAGE=		http://www.gnome.org/
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-vfs/1.0/}
 
-LIB_DEPENDS=		gnome.36::x11/gnome/libs \
-			xml.9::textproc/libxml1 \
+LIB_DEPENDS=		gnome.>=36::x11/gnome/libs \
+			xml.>=9::textproc/libxml1 \
 			gconf-1,gconf-gtk-1::devel/gconf \
 			cdda_paranoia,cdda_interface::audio/cdparanoia \
 			bz2::archivers/bzip2 \

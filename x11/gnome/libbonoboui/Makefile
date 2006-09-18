@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2006/06/13 13:36:44 bernd Exp $
+# $OpenBSD: Makefile,v 1.18 2006/09/18 09:40:31 espie Exp $
 
 COMMENT=		"user interface components for bonobo"
 
@@ -33,7 +33,7 @@ BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=		gnome-2::x11/gnome/libgnome \
 			gnomecanvas-2::x11/gnome/libgnomecanvas \
-			popt.0.3::devel/popt
+			popt.>=0.3::devel/popt
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

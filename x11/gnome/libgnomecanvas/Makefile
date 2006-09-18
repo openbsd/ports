@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/06/13 13:36:44 bernd Exp $
+# $OpenBSD: Makefile,v 1.16 2006/09/18 09:40:31 espie Exp $
 
 COMMENT=		"graphics library for GNOME"
 
@@ -25,8 +25,8 @@ WANTLIB=		X11 Xext Xrender atk-1.0.0.0 \
 MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=		art_lgpl_2.5::graphics/libart \
-			gdk-x11-2.0.0.3,gdk_pixbuf-2.0.0.3,gtk-x11-2.0.0.3::x11/gtk+2 \
+LIB_DEPENDS=		art_lgpl_2.>=5::graphics/libart \
+			gdk-x11-2.0.>=0.3,gdk_pixbuf-2.0.>=0.3,gtk-x11-2.0.>=0.3::x11/gtk+2 \
 			glade-2.0.0.0::devel/libglade2 \
 			pangoft2-1.0.0.0::devel/pango
 

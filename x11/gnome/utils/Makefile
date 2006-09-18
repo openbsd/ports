@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/06/13 13:36:44 bernd Exp $
+# $OpenBSD: Makefile,v 1.14 2006/09/18 09:40:32 espie Exp $
 
 COMMENT=		"GNOME utility programs"
 
@@ -27,7 +27,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser
-LIB_DEPENDS=		gnomeui-2.200::x11/gnome/libgnomeui \
+LIB_DEPENDS=		gnomeui-2.>=200::x11/gnome/libgnomeui \
 			panel-applet-2::x11/gnome/panel \
 			gnomeprintui-2-2::x11/gnome/libgnomeprintui
 

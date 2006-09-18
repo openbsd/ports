@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/06/13 13:36:44 bernd Exp $
+# $OpenBSD: Makefile,v 1.20 2006/09/18 09:40:31 espie Exp $
 
 COMMENT=		"Eazel Extensions Library"
 
@@ -30,11 +30,11 @@ WANTLIB=	ICE ORBit-2 SM X11 Xext Xrender \
 MODULES=		devel/gettext
 
 BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=		gnomeui-2.0::x11/gnome/libgnomeui \
-			gailutil.17::x11/gnome/gail \
-			gnome-desktop-2.4::x11/gnome/desktop \
+LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
+			gailutil.>=17::x11/gnome/gail \
+			gnome-desktop-2.>=4::x11/gnome/desktop \
 			gnome-menu::x11/gnome/menus \
-			startup-notification-1.0::devel/startup-notification
+			startup-notification-1::devel/startup-notification
 
 USE_X11=		Yes
 USE_GMAKE=		Yes

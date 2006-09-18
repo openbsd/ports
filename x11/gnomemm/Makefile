@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/02/13 17:34:48 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2006/09/18 09:40:32 espie Exp $
 
 COMMENT=		"C++ interface for the GNOME libraries"
 COMMENT-docs=		"C++ interface for the GNOME libraries documentation"
@@ -28,7 +28,7 @@ SUBPACKAGE?=
 .if ${SUBPACKAGE} != "-docs"
 MODULES=		devel/gettext
 LIB_DEPENDS=		::x11/gtkmm \
-			art_lgpl.4,gnome.36,gnomesupport.0,gnomeui.46::x11/gnome/libs
+			art_lgpl.>=4,gnome.>=36,gnomesupport,gnomeui.>=46::x11/gnome/libs
 WANTLIB=		ICE SM X11 Xext Xi audiofile esd gdk gdk_imlib glib \
 			gmodule gtk jpeg m png tiff ungif z
 .endif

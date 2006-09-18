@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2006/06/13 13:36:44 bernd Exp $
+# $OpenBSD: Makefile,v 1.18 2006/09/18 09:40:31 espie Exp $
 
 COMMENT=		"GNOME control center"
 
@@ -16,8 +16,8 @@ MODULES=		devel/gettext
 
 LIB_DEPENDS=		xklavier::x11/gnome/libxklavier \
 			metacity-private::x11/gnome/metacity \
-			nautilus-extension.1::x11/gnome/nautilus \
-			gstinterfaces-0.8.1.0::devel/gstreamer-plugins,minimal
+			nautilus-extension.>=1::x11/gnome/nautilus \
+			gstinterfaces-0.8.>=1.0::devel/gstreamer-plugins,minimal
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS=		::devel/desktop-file-utils
@@ -37,7 +37,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xext Xft Xss \
 		gobject-2.0.0.0 gthread-2.0.0.0 gtk-x11-2.0.0.0 jpeg m \
 		pango-1.0.0.0 pangoft2-1.0.0.0 pangocairo-1.0.0.0 \
 		pangoxft-1.0.0.0 popt pthread ssl startup-notification-1 \
-		xkbfile xml2 z gstreamer-0.8.5.0 cairo glitz png
+		xkbfile xml2 z gstreamer-0.8.>=5.0 cairo glitz png
 
 USE_X11=		Yes
 USE_GMAKE=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/06/13 13:36:44 bernd Exp $
+# $OpenBSD: Makefile,v 1.14 2006/09/18 09:40:32 espie Exp $
 
 COMMENT=		"lightweight HTML rendering/printing/editing engine"
 
@@ -26,7 +26,7 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=		gailutil.17::x11/gnome/gail
+LIB_DEPENDS=		gailutil.>=17::x11/gnome/gail
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

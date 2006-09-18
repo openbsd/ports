@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2006/01/08 22:49:25 alek Exp $
+# $OpenBSD: Makefile,v 1.19 2006/09/18 09:40:32 espie Exp $
 
 COMMENT=		"Object Activation Framework for GNOME"
 
@@ -12,8 +12,8 @@ MASTER_SITES=		${MASTER_SITE_GNOME:=sources/oaf/0.6/}
 EXTRACT_SUFX=           .tar.bz2
 
 MODULES=		devel/gettext
-LIB_DEPENDS=		ORBit.5,IIOP,ORBitCosNaming,ORBitutil::devel/ORBit \
-			xml.9::textproc/libxml1 \
+LIB_DEPENDS=		ORBit.>=5,IIOP,ORBitCosNaming,ORBitutil::devel/ORBit \
+			xml.>=9::textproc/libxml1 \
 			popt::devel/popt
 
 # GPL

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/01/08 13:25:21 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2006/09/18 09:40:31 espie Exp $
 
 COMMENT=		"GNOME component and compound document system" 
 
@@ -26,7 +26,7 @@ MODULES=		devel/gettext
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=		ORBit-2,ORBitCosNaming-2::devel/ORBit2 \
-			xml2.6::textproc/libxml
+			xml2.>=6::textproc/libxml
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

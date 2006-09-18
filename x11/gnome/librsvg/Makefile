@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/06/13 13:36:44 bernd Exp $
+# $OpenBSD: Makefile,v 1.20 2006/09/18 09:40:32 espie Exp $
 
 COMMENT=		"SAX-based render library for SVG files"
 
@@ -28,16 +28,16 @@ WANTLIB=		ORBit-2 ORBitCosNaming-2 X11 Xrender Xext \
 MODULES=		devel/gettext
 
 BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=		art_lgpl_2.5::graphics/libart \
+LIB_DEPENDS=		art_lgpl_2.>=5::graphics/libart \
 			bz2::archivers/bzip2 \
 			gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
-			gnomevfs-2.800.3::x11/gnome/vfs2 \
-			gnomecanvas-2.800.0::x11/gnome/libgnomecanvas \
-			gnomeprintui-2-2.1.0::x11/gnome/libgnomeprintui \
+			gnomevfs-2.>=800.3::x11/gnome/vfs2 \
+			gnomecanvas-2.>=800.0::x11/gnome/libgnomecanvas \
+			gnomeprintui-2-2.>=1.0::x11/gnome/libgnomeprintui \
 			gsf-1::devel/libgsf,no_gnome \
 			pangoft2-1.0.0.0::devel/pango \
-			popt.0.3::devel/popt \
-			xml2.6::textproc/libxml
+			popt.>=0.3::devel/popt \
+			xml2.>=6::textproc/libxml
 
 USE_X11=		Yes
 USE_GMAKE=		Yes

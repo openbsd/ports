@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2006/01/08 13:48:31 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2006/09/18 09:40:31 espie Exp $
 
 COMMENT=		"printing framework for GNOME"
 
@@ -24,11 +24,11 @@ MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser
-LIB_DEPENDS=		art_lgpl_2.5::graphics/libart \
+LIB_DEPENDS=		art_lgpl_2.>=5::graphics/libart \
 			glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0::devel/glib2 \
 			pango-1.0.0.0::devel/pango \
-			popt.0::devel/popt \
-			xml2.6::textproc/libxml
+			popt::devel/popt \
+			xml2.>=6::textproc/libxml
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2006/06/13 13:36:44 bernd Exp $
+# $OpenBSD: Makefile,v 1.26 2006/09/18 09:40:31 espie Exp $
 
 COMMENT=		"applets for use with the GNOME panel"
 COMMENT-battstat=	"GNOME applet for monitoring battery level"
@@ -37,10 +37,10 @@ BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
 			:hicolor-icon-theme-*:x11/hicolor-icon-theme
-LIB_DEPENDS=		panel-applet-2.0::x11/gnome/panel \
-			gailutil.17::x11/gnome/gail \
-			gstinterfaces-0.8.1.0::devel/gstreamer-plugins,minimal \
-			gtop-2.0.3.0::devel/libgtop2 \
+LIB_DEPENDS=		panel-applet-2::x11/gnome/panel \
+			gailutil.>=17::x11/gnome/gail \
+			gstinterfaces-0.8.>=1.0::devel/gstreamer-plugins,minimal \
+			gtop-2.0.>=3.0::devel/libgtop2 \
 			xklavier::x11/gnome/libxklavier
 
 PSEUDO_FLAVORS=		no_battstat
@@ -72,9 +72,9 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 .if defined(PACKAGING)
 . if ${SUBPACKAGE} == "-battstat"
 ONLY_FOR_ARCHS=		i386 powerpc
-LIB_DEPENDS=		panel-applet-2.0::x11/gnome/panel
+LIB_DEPENDS=		panel-applet-2::x11/gnome/panel
 . else
-WANTLIB+=		Xau XRes kvm xkbfile gstreamer-0.8.5.0 \
+WANTLIB+=		Xau XRes kvm xkbfile gstreamer-0.8.>=5.0 \
 			startup-notification-1 wnck-1
 . endif
 .endif

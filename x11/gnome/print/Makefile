@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/01/08 22:27:02 alek Exp $
+# $OpenBSD: Makefile,v 1.11 2006/09/18 09:40:32 espie Exp $
 
 COMMENT=		"printing framework for GNOME"
 
@@ -15,9 +15,9 @@ MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-print/0.36/}
 PATCH_LIST=             patch-* sup-alpha-*
 .endif
 
-LIB_DEPENDS=		gdk_pixbuf.2::graphics/gdk-pixbuf \
-			gnome.36,art_lgpl.4,gnomesupport.0,gnomeui.46::x11/gnome/libs \
-			xml.9::textproc/libxml1
+LIB_DEPENDS=		gdk_pixbuf.>=2::graphics/gdk-pixbuf \
+			gnome.>=36,art_lgpl.>=4,gnomesupport,gnomeui.>=46::x11/gnome/libs \
+			xml.>=9::textproc/libxml1
 
 RUN_DEPENDS=		:ghostscript-*:print/ghostscript/gnu
 
