@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/08/16 10:05:31 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/09/18 09:02:39 espie Exp $
 
 COMMENT=	'AJAX framework for perl'
 CATEGORIES=	www p5
@@ -7,14 +7,14 @@ MASTER_SITES0=	http://script.aculo.us/dist/
 DISTNAME=	HTML-Prototype-1.45
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		scriptaculous-js-1.6.1.tar.gz:0
+		scriptaculous-js-1.6.2.tar.gz:0
 
-PKGNAME=	p5-${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}p1
 PKG_ARCH=	*
 HOMEPAGE=	http://prototype.conio.net/
 
 post-extract:
-	PROTODIR=${WRKDIST} ACULOUSDIR=${WRKDIR}/scriptaculous-js-1.6.1 perl ${FILESDIR}/update Controls src/controls DragDrop src/dragdrop Effects src/effects Js lib/prototype
+	PROTODIR=${WRKDIST} ACULOUSDIR=${WRKDIR}/scriptaculous-js-1.6.2 perl ${FILESDIR}/update Controls src/controls DragDrop src/dragdrop Effects src/effects Js lib/prototype
 
 # Perl licence, javascript code is MIT like
 PERMIT_DISTFILES_CDROM=	Yes
