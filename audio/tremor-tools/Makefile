@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2006/08/01 12:13:28 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/09/18 21:18:37 steven Exp $
 
 COMMENT=	"integer-only ogg vorbis command-line player"
 DISTNAME=	vorbis-tools-1.0
-PKGNAME=	${DISTNAME:S/vorbis/tremor/}p0
+PKGNAME=	${DISTNAME:S/vorbis/tremor/}p1
 CATEGORIES=    	audio
 MASTER_SITES=	http://www.vorbis.com/files/1.0/unix/
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
 
 AUTOCONF_VERSION=2.59
 AUTOMAKE_VERSION=1.4

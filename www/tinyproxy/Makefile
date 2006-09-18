@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2005/04/16 17:14:38 sturm Exp $
+# $OpenBSD: Makefile,v 1.15 2006/09/18 21:13:38 steven Exp $
 
 COMMENT=		"lightweight HTTP/SSL proxy"
 
 VERSION=		1.6.3
 DISTNAME=		tinyproxy-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		www net
 
 HOMEPAGE=		http://tinyproxy.sourceforge.net/
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	--with-config=${SYSCONFDIR}/tinyproxy/tinyproxy.conf
 MAKE_FLAGS=		CFLAGS="${CFLAGS}"
