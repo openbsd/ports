@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2005/11/03 18:28:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2006/09/18 10:52:10 espie Exp $
 # $NetBSD: Makefile,v 1.4 1999/03/04 08:58:42 tron Exp $
 
 COMMENT=	"graphical version of traceroute"
@@ -10,9 +10,9 @@ DISTFILES=	xtraceroute-0.9.0.tar.gz ndg_files.tar.gz
 
 HOMEPAGE=	http://www.dtek.chalmers.se/~d3august/xt/
 
-LIB_DEPENDS=	gtkgl.1.2::x11/gtkglarea \
+LIB_DEPENDS=	gtkgl.>=1.2::x11/gtkglarea \
 		png::graphics/png \
-		gdk_pixbuf.2::graphics/gdk-pixbuf
+		gdk_pixbuf.>=2::graphics/gdk-pixbuf
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

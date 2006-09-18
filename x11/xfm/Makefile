@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2005/05/07 06:52:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2006/09/18 10:52:10 espie Exp $
 
 COMMENT=	"X11 File Manager"
 
@@ -17,7 +17,7 @@ WANTLIB=		ICE SM X11 Xext Xmu Xp Xpm Xt c
 
 MASTER_SITES=	${HOMEPAGE}
 
-LIB_DEPENDS=	Xaw3d.6::x11/Xaw3d
+LIB_DEPENDS=	Xaw3d.>=6::x11/Xaw3d
 
 USE_X11=	Yes
 CONFIGURE_STYLE= imake

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2006/06/13 13:41:20 bernd Exp $
+# $OpenBSD: Makefile,v 1.35 2006/09/18 10:52:10 espie Exp $
 
 COMMENT=		"screen saver and locker for the X Window System"
 
@@ -28,7 +28,7 @@ MODULES=		devel/gettext
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gdk_pixbuf_xlib-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
 			glade-2.0.0.0::devel/libglade2 \
-			xml2.6::textproc/libxml
+			xml2.>=6::textproc/libxml
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
@@ -46,7 +46,7 @@ FLAVORS=		no_gle
 FLAVOR?=		no_gle
 
 .if !${FLAVOR:L:Mno_gle}
-LIB_DEPENDS+=		gle.3::graphics/gle
+LIB_DEPENDS+=		gle.>=3::graphics/gle
 CONFIGURE_ARGS+=	--with-gle
 .else
 CONFIGURE_ARGS+=	--without-gle

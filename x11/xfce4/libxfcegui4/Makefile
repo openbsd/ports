@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/06/13 13:39:06 bernd Exp $
+# $OpenBSD: Makefile,v 1.8 2006/09/18 10:52:09 espie Exp $
 
 COMMENT=	"widget library for xfce4"
 V=		4.2.3
@@ -21,12 +21,12 @@ MODULES=	devel/gettext
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
 		::databases/dbh \
 		::textproc/libxml
-LIB_DEPENDS=	xfce4util.1.6::devel/libxfce4util \
-		atk-1.0.800.0::devel/atk \
-		gmodule-2.0.400.8,gobject-2.0.400.8,glib-2.0.400.8::devel/glib2 \
+LIB_DEPENDS=	xfce4util.>=1.6::devel/libxfce4util \
+		atk-1.0.>=800.0::devel/atk \
+		gmodule-2.0.>=400.8,gobject-2.0.>=400.8,glib-2.0.>=400.8::devel/glib2 \
 		pango-1.0.0.0,pangocairo-1.0.0.0,pangoft2-1.0.0.0::devel/pango \
 		startup-notification-1.0.0::devel/startup-notification \
-		gdk-x11-2.0.400.14,gdk_pixbuf-2.0.400.14,gtk-x11-2.0.400.14::x11/gtk+2
+		gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.14::x11/gtk+2
 WANTLIB=	ICE SM X11 Xext Xrender cairo fontconfig freetype glitz m png z
 
 CONFIGURE_ARGS+=--disable-gtk-doc

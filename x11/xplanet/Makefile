@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2006/07/13 13:48:52 mglocker Exp $
+# $OpenBSD: Makefile,v 1.24 2006/09/18 10:52:10 espie Exp $
 
 COMMENT=	"Draw pictures of the earth textured by an image"
 
@@ -20,10 +20,10 @@ WANTLIB=		c charset fontconfig freetype glib-2.0.0.0 gmodule-2.0.0.0 \
 			gobject-2.0.0.0 iconv intl jpeg m png stdc++ z X11
 
 BUILD_DEPENDS=		::x11/xglobe:license-check
-LIB_DEPENDS=		pango-1.0.399.1,pangoft2-1.0.399.1::devel/pango \
-			gif.5::graphics/libungif \
-			jpeg.62::graphics/jpeg \
-			png.4::graphics/png
+LIB_DEPENDS=		pango-1.0.>=399.1,pangoft2-1.0.>=399.1::devel/pango \
+			gif.>=5::graphics/libungif \
+			jpeg.>=62::graphics/jpeg \
+			png.>=4::graphics/png
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--without-xscreensaver \

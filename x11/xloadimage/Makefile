@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2006/04/21 15:46:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2006/09/18 10:52:10 espie Exp $
 
 COMMENT=	"graphics file viewer for X11"
 
@@ -25,7 +25,7 @@ MASTER_SITES0=	ftp://ftp.debian.org/debian/pool/main/x/xloadimage/ \
 PATCHFILES=	xloadimage_${VERSION}-${REVISION}.diff.gz:0
 PATCH_DIST_STRIP= -p1
 
-LIB_DEPENDS=	png.2::graphics/png tiff.35::graphics/tiff
+LIB_DEPENDS=	png.>=2::graphics/png tiff.>=35::graphics/tiff
 WANTLIB=	X11 c jpeg m z 
 
 USE_X11=	Yes

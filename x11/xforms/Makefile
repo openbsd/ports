@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2005/12/31 17:29:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2006/09/18 10:52:10 espie Exp $
 
 COMMENT=	"GUI toolkit for X11"
 
@@ -28,7 +28,7 @@ FAKE_FLAGS=		${DESTNAMEDIR}=${WRKINST} ${MAKE_FLAGS}
 
 BUILD_DEPENDS=		::graphics/jpeg
 
-LIB_DEPENDS=		tiff.35::graphics/tiff
+LIB_DEPENDS=		tiff.>=35::graphics/tiff
 
 NO_REGRESS=		Yes
 

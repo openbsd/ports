@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2006/07/14 21:17:15 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2006/09/18 10:52:10 espie Exp $
 
 COMMENT=	"OpenLook applications and man pages"
 
@@ -7,7 +7,7 @@ CATEGORIES=	x11
 
 EXTRACT_ONLY=
 BUILD_DEPENDS=	::x11/xview/config ::x11/xview/lib:configure
-LIB_DEPENDS=	xview.3,olgx::x11/xview/lib
+LIB_DEPENDS=	xview.>=3,olgx::x11/xview/lib
 
 WRKDIST=	${WRKDIR}/x11/xview/lib/${DISTNAME}
 WRKSRC=		${WRKDIST}/clients
