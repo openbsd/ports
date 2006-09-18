@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/09/18 09:40:31 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2006/09/18 12:19:40 espie Exp $
 
 COMMENT=		"printing framework for GNOME"
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 fontconfig freetype m pangoft2-1.0.0.0 z
+WANTLIB=		X11 fontconfig freetype m pangoft2-1.0 z
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgnomeprint/2.10/}
 EXTRACT_SUFX=		.tar.bz2
@@ -25,8 +25,8 @@ MODULES=		devel/gettext
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=		art_lgpl_2.>=5::graphics/libart \
-			glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0::devel/glib2 \
-			pango-1.0.0.0::devel/pango \
+			glib-2.0,gmodule-2.0,gobject-2.0::devel/glib2 \
+			pango-1.0::devel/pango \
 			popt::devel/popt \
 			xml2.>=6::textproc/libxml
 

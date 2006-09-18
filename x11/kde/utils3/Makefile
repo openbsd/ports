@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2006/08/03 10:53:36 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2006/09/18 12:19:40 espie Exp $
 
 COMMENT= 		"K Desktop Environment, utilities"
 CATEGORIES=		x11 x11/kde
@@ -15,7 +15,7 @@ SHARED_LIBS=		kcmlaptop		1.0 \
 LIB_DEPENDS=	DCOP,kabc,kdecore.>=6,kdefx,kdeprint,kdesu,kdeui,kio,knewstuff,kparts,kresources,kutils,kwalletclient,vcard::x11/kde/libs3 \
 		netsnmp::net/net-snmp \
 		gmp::devel/gmp \
-		python2.4.0.0:python-2.4.*:lang/python/2.4 \
+		python2.4:python-2.4.*:lang/python/2.4 \
 		xmms::audio/xmms \
 		gtk,gdk::x11/gtk+
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2006/08/03 10:53:36 espie Exp $
+# $OpenBSD: Makefile,v 1.70 2006/09/18 12:19:40 espie Exp $
 
 COMMENT=		"K Desktop Environment, libraries"
 COMMENT-cups=		"K Desktop Environment, cups support"
@@ -76,8 +76,8 @@ LIB_DEPENDS+=	artsflow.>=1.0,artsflow_idl,qtmcop,soundserver_idl,mcop,kmedia2_id
 		tiff.>=35::graphics/tiff \
 		jasper::graphics/jasper
 
-WANTLIB+=	audiofile esd glib-2.0.0.0 \
-		gmodule-2.0.0.0 gthread-2.0.0.0 mad ogg \
+WANTLIB+=	audiofile esd glib-2.0 \
+		gmodule-2.0 gthread-2.0 mad ogg \
 		ossaudio vorbisenc vorbis vorbisfile \
 		xml2 krb5 gssapi crypto asn1
 

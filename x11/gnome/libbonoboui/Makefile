@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2006/09/18 09:40:31 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2006/09/18 12:19:40 espie Exp $
 
 COMMENT=		"user interface components for bonobo"
 
@@ -17,12 +17,12 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xext Xrender \
 		c crypto fontconfig freetype pthread ssl z \
-		art_lgpl_2 atk-1.0.0.0 audiofile bonobo-2 \
+		art_lgpl_2 atk-1.0 audiofile bonobo-2 \
 		bonobo-activation esd gconf-2 \
-		gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 glade-2.0.0.0 \
-		glib-2.0.0.0 gmodule-2.0.0.0 gnomevfs-2 gobject-2.0.0.0 \
-		gthread-2.0.0.0 gtk-x11-2.0.0.0 m pango-1.0.0.0 \
-		pangoft2-1.0.0.0 pangocairo-1.0.0.0 xml2 cairo glitz png
+		gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0 \
+		glib-2.0 gmodule-2.0 gnomevfs-2 gobject-2.0 \
+		gthread-2.0 gtk-x11-2.0 m pango-1.0 \
+		pangoft2-1.0 pangocairo-1.0 xml2 cairo glitz png
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libbonoboui/2.10/}
 EXTRACT_SUFX=		.tar.bz2

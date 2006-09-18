@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2006/08/16 15:17:15 biorn Exp $
+# $OpenBSD: Makefile,v 1.103 2006/09/18 12:19:41 espie Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -99,7 +99,7 @@ FLAVOR+=	mad
 .if ${FLAVOR:L:Marts}
 CONFIGURE_ARGS+=--enable-arts
 LIB_DEPENDS+=	artsc::x11/kde/arts3
-WANTLIB+=	glib-2.0.0.0 gmodule-2.0.0.0 gthread-2.0.0.0
+WANTLIB+=	glib-2.0 gmodule-2.0 gthread-2.0
 .else
 CONFIGURE_ARGS+=--disable-arts
 .endif
@@ -128,13 +128,13 @@ LIB_DEPENDS+=	mp3lame:lame-*:audio/lame,no_x11
 CONFIGURE_ARGS+=--enable-gui \
 		--enable-gl
 USE_X11=	Yes
-LIB_DEPENDS+=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
+LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		mp3lame:lame-*:audio/lame
 BUILD_DEPENDS+=	:pkgconfig->=0.15.0p0:devel/pkgconfig
-WANTLIB+=	GL X11 Xext Xinerama Xv Xxf86dga Xxf86vm atk-1.0.0.0 \
-		cairo freetype fontconfig glib-2.0.0.0 gmodule-2.0.0.0 \
-		gobject-2.0.0.0 intl pango-1.0.0.0 pangocairo-1.0.0.0 \
-		pangoft2-1.0.0.0
+WANTLIB+=	GL X11 Xext Xinerama Xv Xxf86dga Xxf86vm atk-1.0 \
+		cairo freetype fontconfig glib-2.0 gmodule-2.0 \
+		gobject-2.0 intl pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0
 .endif
 
 .if ${FLAVOR:L:Msdl}

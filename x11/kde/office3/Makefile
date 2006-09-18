@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2006/09/18 10:21:49 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2006/09/18 12:19:40 espie Exp $
 
 COMMENT=		"office suite for KDE"
 
@@ -80,7 +80,7 @@ AUTOCONF?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
 AUTOCONF_VERSION=2.59
 
 LIB_DEPENDS=	kdecore.>=4,DCOP,artskde,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kparts,kspell,kabc,kjs,kresources,ktexteditor,kutils,kwalletclient,vcard,kspell2,knewstuff,kmdi::x11/kde/libs3 \
-		python2.4.0.0:python-2.4.*:lang/python/2.4 \
+		python2.4:python-2.4.*:lang/python/2.4 \
 		art_lgpl_2.>=5::graphics/libart \
 		wv2::converters/wv2 \
 		Magick::graphics/ImageMagick \
@@ -91,8 +91,8 @@ LIB_DEPENDS=	kdecore.>=4,DCOP,artskde,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kpart
 
 
 WANTLIB=	ICE SM X11 Xext Xrender artsflow artsflow_idl audiofile bz2 c \
-		esd freetype glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 \
-		gsf-1 gthread-2.0.0.0 iconv intl jasper jpeg kmedia2_idl lcms \
+		esd freetype glib-2.0 gmodule-2.0 gobject-2.0 \
+		gsf-1 gthread-2.0 iconv intl jasper jpeg kmedia2_idl lcms \
 		m mad mcop ogg ossaudio pcre pcreposix png pthread qtmcop \
 		soundserver_idl stdc++ tiff util vorbis vorbisenc vorbisfile \
 		xml2 xslt z Xt termcap Xi fontconfig crypto readline ssl \

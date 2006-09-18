@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2006/08/03 10:53:36 espie Exp $
+# $OpenBSD: Makefile,v 1.64 2006/09/18 12:19:40 espie Exp $
 
 COMMENT= 		"K Desktop Environment, basic applications"
 COMMENT-plugins=	"Konqueror nsplugins, essentially native JDK"
@@ -37,7 +37,7 @@ LIB_DEPENDS+= kdecore.>=6,kabc,katepartinterfaces,kdefakes,kdefx,kdnssd,kdeprint
 	sasl2::security/cyrus-sasl2 \
 	usb::devel/libusb
 LIB_DEPENDS+= \
-	glib-2.0.0.0,gmodule-2.0.0.0,gthread-2.0.0.0::devel/glib2
+	glib-2.0,gmodule-2.0,gthread-2.0::devel/glib2
 WANTLIB+=	Xcursor Xrandr Xss Xt Xtst Xxf86misc \
 		artsflow artsflow_idl audiofile c crypto esd \
 		freetype intl kmedia2_idl mad mcop ogg ossaudio \

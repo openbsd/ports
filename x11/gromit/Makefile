@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/06/13 13:41:20 bernd Exp $
+# $OpenBSD: Makefile,v 1.6 2006/09/18 12:19:40 espie Exp $
 
 COMMENT=		"small tool to make annotations on the screen"
 
@@ -19,14 +19,14 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		devel/gettext
 
 WANTLIB=		c freetype X11 m fontconfig \
-			atk-1.0.0.0 glib-2.0.0.0 gobject-2.0.0.0 \
-			gmodule-2.0.0.0 pango-1.0.0.0 pangocairo-1.0.0.0 \
-			pangoft2-1.0.0.0 cairo
+			atk-1.0 glib-2.0 gobject-2.0 \
+			gmodule-2.0 pango-1.0 pangocairo-1.0 \
+			pangoft2-1.0 cairo
 			
 
 MASTER_SITES=		${HOMEPAGE}
 
-LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
+LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
 		${LIB_DEPENDS}
 	

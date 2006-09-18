@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/09/18 10:21:48 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/09/18 12:19:40 espie Exp $
 
 COMMENT=	"GTK+ 2.x engine based on Bluecurve"
 
@@ -21,8 +21,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=clearlooks/}
 EXTRACT_SUFX=	.tar.bz2
 
 WANTLIB=	Xext Xrender freetype m X11 fontconfig z png \
-		atk-1.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 glib-2.0.0.0 \
-		pango-1.0.0.0 pangoft2-1.0.0.0 pangocairo-1.0.0.0 cairo glitz
+		atk-1.0 gmodule-2.0 gobject-2.0 glib-2.0 \
+		pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo glitz
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	gdk-x11-2.0.>=600.10,gdk_pixbuf-2.0.>=600.10,gtk-x11-2.0.>=600.10::x11/gtk+2

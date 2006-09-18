@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/06/13 13:36:44 bernd Exp $
+# $OpenBSD: Makefile,v 1.9 2006/09/18 12:19:40 espie Exp $
 
 COMMENT=		"dialogs for Gnome"
 
@@ -14,10 +14,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	ICE SM X11 art_lgpl_2 \
-		atk-1.0.0.0 c fontconfig freetype gdk-x11-2.0.0.0 \
-		gdk_pixbuf-2.0.0.0 glade-2.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 \
-		gobject-2.0.0.0 gtk-x11-2.0.0.0 m pango-1.0.0.0 \
-		pangocairo-1.0.0.0 pangoft2-1.0.0.0 xml2 z cairo
+		atk-1.0 c fontconfig freetype gdk-x11-2.0 \
+		gdk_pixbuf-2.0 glade-2.0 glib-2.0 gmodule-2.0 \
+		gobject-2.0 gtk-x11-2.0 m pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 xml2 z cairo
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/zenity/2.8/}
 EXTRACT_SUFX=		.tar.bz2

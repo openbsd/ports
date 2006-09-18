@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2006/09/18 10:21:49 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2006/09/18 12:19:41 espie Exp $
 
 COMMENT=	"small, fast & usable window manager"
 
@@ -12,7 +12,7 @@ MASTER_SITES=	http://offload1.icculus.org/openbox/releases/
 HOMEPAGE=	http://icculus.org/openbox/
 
 MODULES=	devel/gettext
-LIB_DEPENDS+=	pango-1.0.0.0,pangoxft-1.0.0.0,pangoft2-1.0.0.0::devel/pango \
+LIB_DEPENDS+=	pango-1.0,pangoxft-1.0,pangoft2-1.0::devel/pango \
 		xml2.>=6::textproc/libxml \
 		startup-notification-1::devel/startup-notification
 BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
@@ -23,8 +23,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xft Xinerama Xrandr Xrender Xxf86vm c \
-			fontconfig freetype m z glib-2.0.0.0 gmodule-2.0.0.0 \
-			gobject-2.0.0.0
+			fontconfig freetype m z glib-2.0 gmodule-2.0 \
+			gobject-2.0
 
 USE_X11=	Yes
 USE_GMAKE=	Yes

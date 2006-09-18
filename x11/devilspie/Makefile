@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/08/04 00:10:42 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/09/18 12:19:39 espie Exp $
 
 COMMENT=	"window manipulation tool"
 
@@ -15,10 +15,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 cairo atk-1.0.0.0 c fontconfig freetype \
-		gdk_pixbuf-2.0.0.0 gdk-x11-2.0.0.0 glib-2.0.0.0 \
-		gmodule-2.0.0.0 gobject-2.0.0.0 gtk-x11-2.0.0.0 m \
-		pango-1.0.0.0 pangoft2-1.0.0.0 pangocairo-1.0.0.0
+WANTLIB=	X11 cairo atk-1.0 c fontconfig freetype \
+		gdk_pixbuf-2.0 gdk-x11-2.0 glib-2.0 \
+		gmodule-2.0 gobject-2.0 gtk-x11-2.0 m \
+		pango-1.0 pangoft2-1.0 pangocairo-1.0
 
 MASTER_SITES=	http://www.burtonini.com/computing/
 

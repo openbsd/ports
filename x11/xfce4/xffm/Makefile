@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/09/18 11:20:15 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2006/09/18 12:23:06 espie Exp $
 
 COMMENT=	"xfce4 file manager"
 V=		4.2.3
@@ -37,11 +37,11 @@ LIB_DEPENDS=	dbh.>=1.0::databases/dbh \
 		xfce4mcs-client.>=2.3,xfce4mcs-manager.>=2.3::x11/xfce4/libxfce4mcs
 RUN_DEPENDS=	:xfce-mcs-manager-*:x11/xfce4/xfce-mcs-manager
 WANTLIB=	ICE SM X11 Xext Xrender c fontconfig freetype m pthread z \
-		atk-1.0.0.0 gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 glib-2.0.0.0 \
-		gmodule-2.0.0.0 gobject-2.0.0.0 gthread-2.0.0.0 \
-		gtk-x11-2.0.0.0 pango-1.0.0.0 \
-		pangoft2-1.0.0.0 pangocairo-1.0.0.0 cairo glitz png \
-		startup-notification-1.0.0 xfce4util.>=1
+		atk-1.0 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
+		gmodule-2.0 gobject-2.0 gthread-2.0 \
+		gtk-x11-2.0 pango-1.0 \
+		pangoft2-1.0 pangocairo-1.0 cairo glitz png \
+		startup-notification-1 xfce4util.>=1
 
 CONFIGURE_ARGS+=--disable-librsvg \
 		--enable-panel \

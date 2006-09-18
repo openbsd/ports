@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/06/13 13:41:20 bernd Exp $
+# $OpenBSD: Makefile,v 1.9 2006/09/18 12:23:06 espie Exp $
 
 COMMENT=	"virtual sticky pad system"
 
@@ -13,11 +13,11 @@ HOMEPAGE=	http://xpad.sourceforge.net/
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
+LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 
-WANTLIB=	ICE SM X11 atk-1.0.0.0 c fontconfig freetype \
-		glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 m pango-1.0.0.0 \
-		pangocairo-1.0.0.0 pangoft2-1.0.0.0 cairo
+WANTLIB=	ICE SM X11 atk-1.0 c fontconfig freetype \
+		glib-2.0 gmodule-2.0 gobject-2.0 m pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 cairo
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

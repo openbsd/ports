@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/09/18 09:40:31 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2006/09/18 12:19:40 espie Exp $
 
 COMMENT=		"Lightweight GNOME text editor"
 DISTNAME=		gedit-2.8.3
@@ -15,13 +15,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xext \
-		Xrender art_lgpl_2 atk-1.0.0.0 audiofile bonobo-2 \
+		Xrender art_lgpl_2 atk-1.0 audiofile bonobo-2 \
 		bonobo-activation bonoboui-2 c crypto esd fontconfig \
-		freetype gailutil gconf-2 gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 \
-		glade-2.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 gnome-2 \
+		freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
+		glade-2.0 glib-2.0 gmodule-2.0 gnome-2 \
 		gnome-keyring gnomecanvas-2 gnomeprint-2-2 gnomevfs-2 \
-		gobject-2.0.0.0 gthread-2.0.0.0 gtk-x11-2.0.0.0 jpeg m \
-		pango-1.0.0.0 pangocairo-1.0.0.0 pangoft2-1.0.0.0 \
+		gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg m \
+		pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		popt pthread ssl stdc++ xml2 z cairo glitz png \
 		gnome-menu gnome-desktop-2 startup-notification-1
 
@@ -37,7 +37,7 @@ LIB_DEPENDS=		aspell.>=15.2::textproc/aspell/core \
 			eel-2::x11/gnome/eel \
 			gnomeprintui-2-2::x11/gnome/libgnomeprintui \
 			gnomeui-2::x11/gnome/libgnomeui \
-			gtksourceview-1.0.0.0::x11/gtksourceview
+			gtksourceview-1.0::x11/gtksourceview
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
 			
 

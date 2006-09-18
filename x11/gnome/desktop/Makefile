@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2006/06/13 13:36:44 bernd Exp $
+# $OpenBSD: Makefile,v 1.18 2006/09/18 12:19:39 espie Exp $
 
 COMMENT=		"components for the GNOME desktop"
 
@@ -15,13 +15,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xext Xrender \
-		Xrender art_lgpl_2 atk-1.0.0.0 audiofile bonobo-2 \
+		Xrender art_lgpl_2 atk-1.0 audiofile bonobo-2 \
 		bonobo-activation bonoboui-2 c crypto esd fontconfig \
-		freetype gconf-2 gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 \
-		glib-2.0.0.0 gmodule-2.0.0.0 gnome-2 gnome-keyring \
-		gnomecanvas-2 gnomevfs-2 gobject-2.0.0.0 gthread-2.0.0.0 \
-		gtk-x11-2.0.0.0 jpeg m pango-1.0.0.0 pangoft2-1.0.0.0 \
-		pangocairo-1.0.0.0 cairo glitz png popt pthread ssl xml2 z
+		freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
+		glib-2.0 gmodule-2.0 gnome-2 gnome-keyring \
+		gnomecanvas-2 gnomevfs-2 gobject-2.0 gthread-2.0 \
+		gtk-x11-2.0 jpeg m pango-1.0 pangoft2-1.0 \
+		pangocairo-1.0 cairo glitz png popt pthread ssl xml2 z
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-desktop/2.10/}
 EXTRACT_SUFX=		.tar.bz2

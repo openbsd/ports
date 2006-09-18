@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2006/08/03 23:37:13 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2006/09/18 12:19:40 espie Exp $
 
 COMMENT=		"K Desktop Environment, addons"
 CATEGORIES=		x11 x11/kde
@@ -24,11 +24,11 @@ USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 
 WANTLIB=	ICE SM X11 Xext Xi Xrender art_lgpl_2 artsflow artsflow_idl \
-		audiofile c esd glib glib-2.0.0.0 gmodule gmodule-2.0.0.0 \
+		audiofile c esd glib glib-2.0 gmodule gmodule-2.0 \
 		iconv intl jpeg kimproxy kmedia2_idl m mad mcop ogg \
 		ossaudio pcre pcreposix png pthread qtmcop soundserver_idl \
 		stdc++ usbhid util vorbis vorbisenc vorbisfile z \
-		gthread-2.0.0.0 idn
+		gthread-2.0 idn
 #WANTLIB+=	noatunarts 
 
 .include <bsd.port.mk>

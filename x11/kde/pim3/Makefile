@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2006/08/13 07:41:37 sturm Exp $
+# $OpenBSD: Makefile,v 1.36 2006/09/18 12:19:40 espie Exp $
 
 COMMENT= 		"KDE personal information applications"
 COMMENT-kpilot=		"KDE interface to sync with Palm Pilot"
@@ -64,11 +64,11 @@ SHARED_LIBS=		gpgme++				3.0 \
 LIB_DEPENDS+= 		kdecore.>=6,artskde,kmedia2_idl,knewstuff,DCOP,kabc,kabc_file,kimproxy,kdefakes,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kparts,kresources,kspell,kutils,kwalletclient,vcard::x11/kde/libs3
 
 WANTLIB=	Xss audiofile stdc++ ossaudio X11 jpeg util m \
-		vorbisfile gmodule-2.0.0.0 gthread-2.0.0.0 \
+		vorbisfile gmodule-2.0 gthread-2.0 \
 		pcreposix intl vorbisenc qui SM pthread \
 		c artsflow ogg ncurses mcop png iconv Xext \
-		artsflow_idl art_lgpl_2.0.0 mad qtmcop glib-2.0.0.0 \
-		glib-2.0.0.0 ICE readline soundserver_idl Xrender \
+		artsflow_idl art_lgpl_2 mad qtmcop glib-2.0 \
+		glib-2.0 ICE readline soundserver_idl Xrender \
 		gpg-error vorbis pcre esd z sasl2 idn
 
 FLAVORS=	debug

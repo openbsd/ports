@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2006/09/18 09:40:31 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2006/09/18 12:19:40 espie Exp $
 
 COMMENT=		"graphics library for GNOME"
 
@@ -17,18 +17,18 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xrender atk-1.0.0.0 \
-			fontconfig freetype glib-2.0.0.0 gmodule-2.0.0.0 \
-			gobject-2.0.0.0 pango-1.0.0.0 pangocairo-1.0.0.0 \
-			pangoft2-1.0.0.0 xml2 m z cairo glitz png
+WANTLIB=		X11 Xext Xrender atk-1.0 \
+			fontconfig freetype glib-2.0 gmodule-2.0 \
+			gobject-2.0 pango-1.0 pangocairo-1.0 \
+			pangoft2-1.0 xml2 m z cairo glitz png
 
 MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		art_lgpl_2.>=5::graphics/libart \
 			gdk-x11-2.0.>=0.3,gdk_pixbuf-2.0.>=0.3,gtk-x11-2.0.>=0.3::x11/gtk+2 \
-			glade-2.0.0.0::devel/libglade2 \
-			pangoft2-1.0.0.0::devel/pango
+			glade-2.0::devel/libglade2 \
+			pangoft2-1.0::devel/pango
 
 USE_X11=		Yes
 USE_GMAKE=		Yes

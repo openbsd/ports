@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2006/08/03 10:53:35 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2006/09/18 12:19:40 espie Exp $
 
 COMMENT= 		"K Desktop Environment, additional artwork"
 CATEGORIES=		x11 x11/kde
@@ -17,8 +17,8 @@ BUILD_DEPENDS=::x11/xscreensaver,no_gle
 RUN_DEPENDS=:xscreensaver-*:x11/xscreensaver,no_gle
 
 WANTLIB=	GL GLU ICE SM X11 Xext Xrender Xt art_lgpl_2 artsflow \
-		artsflow_idl artskde audiofile c esd glib-2.0.0.0 \
-		gmodule-2.0.0.0 gthread-2.0.0.0 iconv intl jpeg kmedia2_idl \
+		artsflow_idl artskde audiofile c esd glib-2.0 \
+		gmodule-2.0 gthread-2.0 iconv intl jpeg kmedia2_idl \
 		kwalletclient m mad mcop ogg ossaudio png pthread qtmcop \
 		soundserver_idl stdc++ util vorbis vorbisenc vorbisfile z \
 		idn

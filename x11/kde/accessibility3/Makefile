@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2006/08/03 10:53:35 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2006/09/18 12:19:40 espie Exp $
 
 COMMENT= 		"X11 toolkit, accessibility aids"
 CATEGORIES=		x11 x11/kde
@@ -18,8 +18,8 @@ SEPARATE_BUILD=	flavored
 WANTLIB=	ICE SM X11 Xext Xrender Xtst art_lgpl_2 c jpeg \
 		m png pthread stdc++ util z iconv ogg esd intl \
 		vorbisenc artsflow_idl audiofile ossaudio mad \
-		vorbisfile qtmcop gmodule-2.0.0.0 gthread-2.0.0.0 \
-		glib-2.0.0.0 soundserver_idl \
+		vorbisfile qtmcop gmodule-2.0 gthread-2.0 \
+		glib-2.0 soundserver_idl \
 		kmedia2_idl artsflow vorbis mcop idn
 
 USE_LIBTOOL=	Yes

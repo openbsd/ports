@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2006/08/03 10:53:35 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2006/09/18 12:19:40 espie Exp $
 
 COMMENT=		"K Desktop Environment, aRTs"
 CATEGORIES=		x11 x11/kde
@@ -25,7 +25,7 @@ SHARED_LIBS=		artsc			1.0 \
 
 SHARED_ONLY=		No
 LIB_DEPENDS= 	audiofile::devel/libaudiofile \
-		glib-2.0.0.0,gmodule-2.0.0.0,gthread-2.0.0.0::devel/glib2 \
+		glib-2.0,gmodule-2.0,gthread-2.0::devel/glib2 \
 		vorbis,vorbisfile::audio/libvorbis \
 		ogg::audio/libogg \
 		mad::audio/libmad \

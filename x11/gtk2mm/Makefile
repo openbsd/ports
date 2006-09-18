@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/06/14 18:37:10 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2006/09/18 12:19:40 espie Exp $
 
 COMMENT=		"C++ interface for gtk2+"
 COMMENT-docs=		"C++ interface for gtk2+ documentation"
@@ -34,13 +34,13 @@ BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
 PKG_ARCH=	*
 .else
-WANTLIB=		X11 Xext Xrender atk-1.0.0.0 fontconfig freetype \
-			glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 m z \
-			pango-1.0.0.0 pangocairo-1.0.0.0 \
-			pangoft2-1.0.0.0 sigc-2.0.0.0 cairo glitz png
+WANTLIB=		X11 Xext Xrender atk-1.0 fontconfig freetype \
+			glib-2.0 gmodule-2.0 gobject-2.0 m z \
+			pango-1.0 pangocairo-1.0 \
+			pangoft2-1.0 sigc-2.0 cairo glitz png
 MODULES=		devel/gettext
-LIB_DEPENDS=		glibmm-2.4.0.0:glib2mm->=2.4:devel/glib2mm \
-			gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0:gtk+2->=2.4:x11/gtk+2
+LIB_DEPENDS=		glibmm-2.4:glib2mm->=2.4:devel/glib2mm \
+			gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0:gtk+2->=2.4:x11/gtk+2
 .endif
 
 SEPARATE_BUILD=		concurrent

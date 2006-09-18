@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/06/13 13:41:20 bernd Exp $
+# $OpenBSD: Makefile,v 1.7 2006/09/18 12:19:41 espie Exp $
 
 COMMENT=		"graphical ports system frontend"
 
@@ -14,17 +14,17 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	X11 c cairo fontconfig freetype m glib-2.0.0.0 \
-		gmodule-2.0.0.0 gobject-2.0.0.0 gthread-2.0.0.0 \
-		atk-1.0.0.0 pango-1.0.0.0 pangocairo-1.0.0.0 \
-		pangoft2-1.0.0.0 pthread util
+WANTLIB=	X11 c cairo fontconfig freetype m glib-2.0 \
+		gmodule-2.0 gobject-2.0 gthread-2.0 \
+		atk-1.0 pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pthread util
 
 MASTER_SITES=		http://www.bytelabs.org/	
 EXTRACT_SUFX=		.tgz
 
 MODULES=		devel/gettext
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig	
-LIB_DEPENDS=	        gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 	
+LIB_DEPENDS=	        gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 	
 
 CFLAGS+=		-DIMAGEDIR=\"${PREFIX}/share/icons/pbrowser/\"
 

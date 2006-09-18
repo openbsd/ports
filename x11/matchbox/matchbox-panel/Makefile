@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/09/18 10:21:49 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/09/18 12:19:40 espie Exp $
 # XXX hardcoded apm list
 
 COMMENT=	"window bar for holding application launchers"
@@ -22,7 +22,7 @@ RUN_DEPENDS=	:matchbox-common-*:x11/matchbox/matchbox-common
 MODULES=	devel/gettext
 WANTLIB=	X11 Xext Xft Xrender c fontconfig freetype m z \
 		glib-2.0.>=600.0 gmodule-2.0.>=600.0 gobject-2.0.>=600.0 jpeg \
-		pango-1.0.0.0 pangoft2-1.0.0.0 pangoxft-1.0.0.0 png
+		pango-1.0 pangoft2-1.0 pangoxft-1.0 png
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--enable-nls

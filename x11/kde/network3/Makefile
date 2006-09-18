@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2006/08/13 07:41:38 sturm Exp $
+# $OpenBSD: Makefile,v 1.44 2006/09/18 12:19:40 espie Exp $
 
 COMMENT= 		"K Desktop Environment, network applications"
 CATEGORIES=		x11 x11/kde
@@ -22,7 +22,7 @@ SEPARATE_BUILD=	flavored
 
 WANTLIB=	ICE SM X11 Xext Xi Xrender Xss Xtst Xxf86vm art_lgpl_2 c \
 		crypto gdk glib gmodule gtk iconv intl jpeg m pcre pcreposix \
-		png pthread ssl stdc++ util xml2 xslt z glib-2.0.0.0
+		png pthread ssl stdc++ util xml2 xslt z glib-2.0
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static

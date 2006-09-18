@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2006/09/18 10:52:10 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2006/09/18 12:23:06 espie Exp $
 
 COMMENT=	"Draw pictures of the earth textured by an image"
 
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c charset fontconfig freetype glib-2.0.0.0 gmodule-2.0.0.0 \
-			gobject-2.0.0.0 iconv intl jpeg m png stdc++ z X11
+WANTLIB=		c charset fontconfig freetype glib-2.0 gmodule-2.0 \
+			gobject-2.0 iconv intl jpeg m png stdc++ z X11
 
 BUILD_DEPENDS=		::x11/xglobe:license-check
 LIB_DEPENDS=		pango-1.0.>=399.1,pangoft2-1.0.>=399.1::devel/pango \

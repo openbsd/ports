@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2006/09/18 09:40:31 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2006/09/18 12:19:39 espie Exp $
 
 COMMENT=		"Eazel Extensions Library"
 
@@ -18,12 +18,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	ICE ORBit-2 SM X11 Xext Xrender \
-		art_lgpl_2 atk-1.0.0.0 bonobo-2 bonobo-activation bonoboui-2 \
-		fontconfig freetype gconf-2 gdk-x11-2.0.0.0 \
-		gdk_pixbuf-2.0.0.0 glade-2.0.0.0 glib-2.0.0.0 \
-		gmodule-2.0.0.0 gnome-2 gnomecanvas-2 gnomevfs-2 \
-		gobject-2.0.0.0 gthread-2.0.0.0 gtk-x11-2.0.0.0 m \
-		pango-1.0.0.0 pangoft2-1.0.0.0 pangocairo-1.0.0.0 \
+		art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation bonoboui-2 \
+		fontconfig freetype gconf-2 gdk-x11-2.0 \
+		gdk_pixbuf-2.0 glade-2.0 glib-2.0 \
+		gmodule-2.0 gnome-2 gnomecanvas-2 gnomevfs-2 \
+		gobject-2.0 gthread-2.0 gtk-x11-2.0 m \
+		pango-1.0 pangoft2-1.0 pangocairo-1.0 \
 		popt xml2 z crypto audiofile jpeg esd ssl gnome-keyring \
 		ORBitCosNaming-2 cairo glitz png
 

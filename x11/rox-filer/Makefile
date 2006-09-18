@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2006/09/18 10:21:49 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2006/09/18 12:19:41 espie Exp $
 
 COMMENT=		"gtk file manager with desktop features"
 
@@ -15,9 +15,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 c fontconfig freetype z \
-			glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 m \
-			atk-1.0.0.0 pango-1.0.0.0 pangocairo-1.0.0.0 \
-			pangoft2-1.0.0.0 cairo
+			glib-2.0 gmodule-2.0 gobject-2.0 m \
+			atk-1.0 pango-1.0 pangocairo-1.0 \
+			pangoft2-1.0 cairo
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=rox/}
 EXTRACT_SUFX=	.tgz

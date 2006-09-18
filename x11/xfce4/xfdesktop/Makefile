@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/09/18 10:52:10 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/09/18 12:23:06 espie Exp $
 
 COMMENT=	"xfce4 desktop background manager"
 V=		4.2.3
@@ -24,9 +24,9 @@ LIB_DEPENDS=	xfcegui4.>=3.3::x11/xfce4/libxfcegui4 \
 RUN_DEPENDS=	:xfce-mcs-manager-*:x11/xfce4/xfce-mcs-manager \
 		:xfce4-panel-*:x11/xfce4/xfce4-panel
 WANTLIB=	ICE SM X11 Xext Xrender c fontconfig freetype m z \
-		atk-1.0.0.0 gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 glib-2.0.0.0 \
-		gmodule-2.0.0.0 gobject-2.0.0.0 gtk-x11-2.0.0.0 pango-1.0.0.0 \
-		pangoft2-1.0.0.0 pangocairo-1.0.0.0 cairo glitz png \
-		startup-notification-1.0.0 xfce4util.>=1
+		atk-1.0 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
+		gmodule-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 \
+		pangoft2-1.0 pangocairo-1.0 cairo glitz png \
+		startup-notification-1 xfce4util.>=1
 
 .include <bsd.port.mk>

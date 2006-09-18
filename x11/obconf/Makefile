@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/09/18 10:21:49 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/09/18 12:19:41 espie Exp $
 
 COMMENT=	"configuration utility for openbox"
 
@@ -8,13 +8,13 @@ MASTER_SITES=	http://tr.openmonkey.com/files/obconf/
 
 HOMEPAGE=	http://tr.openmonkey.com/pages/obconf/
 
-WANTLIB=	glib-2.0.0.0 ICE SM X11 Xext Xft Xrender \
-		atk-1.0.0.0 c fontconfig iconv intl xml2 \
-		gmodule-2.0.0.0 gobject-2.0.0.0 m pango-1.0.0.0 \
-		pangocairo-1.0.0.0 pangoft2-1.0.0.0 freetype \
+WANTLIB=	glib-2.0 ICE SM X11 Xext Xft Xrender \
+		atk-1.0 c fontconfig iconv intl xml2 \
+		gmodule-2.0 gobject-2.0 m pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 freetype \
 		cairo z
 
-LIB_DEPENDS+=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
+LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		glade-2.0.>=0.1::devel/libglade2 \
 		startup-notification-1::devel/startup-notification \
 		obparser,obrender::x11/openbox
