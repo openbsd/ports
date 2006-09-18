@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2004/12/19 17:36:31 alek Exp $
+# $OpenBSD: Makefile,v 1.22 2006/09/18 10:21:49 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -24,9 +24,9 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Gtk/}
 
 USE_X11=	Yes
 
-LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
-		gdk_pixbuf.2::graphics/gdk-pixbuf \
-		gdk_imlib.19::graphics/imlib
+LIB_DEPENDS=	gtk.>=1.2::x11/gtk+ \
+		gdk_pixbuf.>=2::graphics/gdk-pixbuf \
+		gdk_imlib.>=19::graphics/imlib
 RUN_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser \
 		:p5-XML-Writer-*:textproc/p5-XML-Writer
 BUILD_DEPENDS=	${RUN_DEPENDS}
@@ -52,14 +52,14 @@ FLAVORS=	gtkglarea gnome
 FLAVOR?=	
 
 .if ${FLAVOR:L:Mgtkglarea}
-LIB_DEPENDS+=	gtkgl.1.2::x11/gtkglarea
+LIB_DEPENDS+=	gtkgl.>=1.2::x11/gtkglarea
 CONFIGURE_ARGS+= --with-gtkglarea-force
 .else
 CONFIGURE_ARGS+= --without-gtkglarea
 .endif
 
 .if ${FLAVOR:L:Mgnome}
-LIB_DEPENDS+=	zvt.5::x11/gnome/libs
+LIB_DEPENDS+=	zvt.>=5::x11/gnome/libs
 CONFIGURE_ARGS+= --with-gnome
 LIB_DEPENDS+=zvt::x11/gnome/libs
 WANTLIB+=	ICE SM art_lgpl audiofile esd gnome gnomesupport gnomeui util

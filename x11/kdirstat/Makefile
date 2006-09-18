@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/06/12 13:38:00 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2006/09/18 10:21:49 espie Exp $
 
 COMMENT=	"graphical disk usage utility for KDE"
 
@@ -22,7 +22,7 @@ WANTLIB=		ICE SM X11 Xext Xrender art_lgpl_2 c jpeg \
 MASTER_SITES=	${HOMEPAGE}/download/
 EXTRACT_SUFX=	.tar.bz2
 
-LIB_DEPENDS=	kdecore.6,DCOP,kdesu,kdeui,kio,kdefx::x11/kde/libs3
+LIB_DEPENDS=	kdecore.>=6,DCOP,kdesu,kdeui,kio,kdefx::x11/kde/libs3
 
 MODULES=	x11/kde
 

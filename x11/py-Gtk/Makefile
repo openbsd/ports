@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2006/06/04 09:44:23 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2006/09/18 10:21:49 espie Exp $
 
 COMMENT=	"Gtk bindings for Python"
 
@@ -25,9 +25,9 @@ WANTLIB=		GL GLU X11 Xext Xi gdk glib gmodule gtk \
 
 MODULES=	devel/gettext
 LIB_DEPENDS+=	gdk_imlib::graphics/imlib \
-		gtkgl.1.2::x11/gtkglarea \
+		gtkgl.>=1.2::x11/gtkglarea \
 		gdk_pixbuf::graphics/gdk-pixbuf \
-		gthread.1.2::devel/glib
+		gthread.>=1.2::devel/glib
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
@@ -46,7 +46,7 @@ BUILD_DEPENDS+=	${RUN_DEPENDS}
 PATCH_STRIP=  -p1
 PATCH_LIST=   patch-pygtk_configure
 
-LIB_DEPENDS+= glade.4::devel/libglade
+LIB_DEPENDS+= glade.>=4::devel/libglade
 WRKDIST=      ${WRKDIR}/${DISTNAME}/pygtk
 
 .include <bsd.port.mk>

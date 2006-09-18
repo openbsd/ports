@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/12/19 17:27:04 alek Exp $
+# $OpenBSD: Makefile,v 1.15 2006/09/18 10:21:49 espie Exp $
 
 COMMENT=		"window manager theme utility"
 
@@ -18,7 +18,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=wmtheme/}
 
 NO_REGRESS=		Yes
 
-LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+
+LIB_DEPENDS=		gtk.>=1.2,gdk.>=1.2::x11/gtk+
 USE_GMAKE=		Yes
 EXTRA_THEMES=		gotheme ortheme
 

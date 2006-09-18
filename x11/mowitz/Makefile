@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/01/12 01:05:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2006/09/18 10:21:49 espie Exp $
 
 COMMENT=		"widgets library"
 
@@ -20,7 +20,7 @@ WANTLIB=		m
 
 USE_X11=		Yes
 
-LIB_DEPENDS=		XawM.1::x11/XawMu
+LIB_DEPENDS=		XawM.>=1::x11/XawMu
 
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/08/08 16:17:54 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2006/09/18 10:21:48 espie Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples for qt4"
@@ -110,7 +110,7 @@ CONFIGURE_ARGS+= -I${LOCALBASE}/include/mysql -L${LOCALBASE}/lib/mysql \
 .if !defined(PACKAGING) || ${SUBPACKAGE} == "-mysql"
 LIB_DEPENDS+=mysqlclient_r::databases/mysql
 .  if defined(PACKAGING)
-LIB_DEPENDS+=	QtCore.4,QtSql::x11/qt4
+LIB_DEPENDS+=	QtCore.>=4,QtSql::x11/qt4
 .  endif
 WANTLIB+=	m z
 .endif
@@ -122,9 +122,9 @@ CONFIGURE_ARGS+= -I${LOCALBASE}/include/postgresql \
 	    -L${LOCALBASE}/lib \
 	    -I${LOCALBASE}/include -plugin-sql-psql
 .if !defined(PACKAGING) || ${SUBPACKAGE} == "-postgresql" 
-LIB_DEPENDS+=pq.2:postgresql-client-*:databases/postgresql
+LIB_DEPENDS+=pq.>=2:postgresql-client-*:databases/postgresql
 .  if defined(PACKAGING)
-LIB_DEPENDS+=	QtCore.4,QtSql::x11/qt4
+LIB_DEPENDS+=	QtCore.>=4,QtSql::x11/qt4
 .  endif
 WANTLIB+=	m z
 .endif
@@ -135,7 +135,7 @@ MULTI_PACKAGES+=	-sqlite2
 .if !defined(PACKAGING) || ${SUBPACKAGE} == "-sqlite2"
 LIB_DEPENDS+=	sqlite::databases/sqlite
 .  if defined(PACKAGING)
-LIB_DEPENDS+=	QtCore.4,QtSql::x11/qt4
+LIB_DEPENDS+=	QtCore.>=4,QtSql::x11/qt4
 .  endif
 WANTLIB+=	m z
 .endif
@@ -144,19 +144,19 @@ MULTI_PACKAGES+=	-sqlite
 .if !defined(PACKAGING) || ${SUBPACKAGE} == "-sqlite"
 LIB_DEPENDS+=	sqlite3::databases/sqlite3
 .  if defined(PACKAGING)
-LIB_DEPENDS+=	QtCore.4,QtSql::x11/qt4
+LIB_DEPENDS+=	QtCore.>=4,QtSql::x11/qt4
 .  endif
 WANTLIB+=	m z
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-examples"
-LIB_DEPENDS+=	QtCore.4,QtGui,QtNetwork,QtOpenGL,QtSql,QtXml,QtSvg,QtTest::x11/qt4
+LIB_DEPENDS+=	QtCore.>=4,QtGui,QtNetwork,QtOpenGL,QtSql,QtXml,QtSvg,QtTest::x11/qt4
 .endif
 
 .if !defined(PACKAGING) || ${SUBPACKAGE} == "" || ${SUBPACKAGE} == "-examples"
 WANTLIB+=	ICE Xrender c GLU SM freetype pthread Xrandr Xinerama \
 		stdc++ Xcursor Xext GL Xi m X11 z fontconfig
-LIB_DEPENDS+=	png.2::graphics/png
+LIB_DEPENDS+=	png.>=2::graphics/png
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-html"

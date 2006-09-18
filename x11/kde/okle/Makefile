@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/06/12 15:45:51 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/09/18 10:21:49 espie Exp $
 
 COMMENT= 		"kde front end for ogle"
 CATEGORIES=		x11 x11/kde 
@@ -8,7 +8,7 @@ PKGNAME=		${DISTNAME}p0
 HOMEPAGE=		http://okle.sourceforge.net/
 MASTER_SITES=		http://okle.sourceforge.net/src/
 EXTRACT_SUFX=		.tar.gz
-LIB_DEPENDS= kdecore.4,DCOP,kdefx,kdesu,kdeui,kio::x11/kde/libs3 \
+LIB_DEPENDS= kdecore.>=4,DCOP,kdefx,kdesu,kdeui,kio::x11/kde/libs3 \
 	dvdcontrol,msgevents::x11/ogle
 
 CONFIGURE_ARGS+=--with-ogle-libs='${LOCALBASE}/lib/ogle -L${LOCALBASE}/lib'

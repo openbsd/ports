@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2006/08/03 10:53:36 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2006/09/18 10:21:48 espie Exp $
 
 COMMENT=		"K Desktop Environment, graphic applications"
 COMMENT-kamera=		"KDE interface to digital cameras"
@@ -48,7 +48,7 @@ WANTLIB+=	tiff fontconfig lcms Xrender ICE c iconv \
 .endif
 
 .if !defined(PACKAGING) || ${SUBPACKAGE:L} == "-kpov"
-LIB_DEPENDS+= kwalletclient,DCOP,kdecore.6,kio,kparts,kdeui,kdefx,kdesu::x11/kde/libs3
+LIB_DEPENDS+= kwalletclient,DCOP,kdecore.>=6,kio,kparts,kdeui,kdefx,kdesu::x11/kde/libs3
 RUN_DEPENDS+=	::graphics/povray
 WANTLIB+=	GL stdc++ freetype Xrender Xmu GLU c Xi iconv
 .endif

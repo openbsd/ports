@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/02/12 01:44:09 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2006/09/18 10:21:48 espie Exp $
 
 COMMENT=		"sample theme engines for GTK+ provided with GNOME"
 
@@ -10,7 +10,7 @@ HOMEPAGE=		http://www.gnome.org
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gtk-engines/0.12/}
 
-LIB_DEPENDS=		gdk_imlib.19::graphics/imlib
+LIB_DEPENDS=		gdk_imlib.>=19::graphics/imlib
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

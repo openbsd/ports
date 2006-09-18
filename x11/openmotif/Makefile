@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2006/02/08 04:54:50 david Exp $
+# $OpenBSD: Makefile,v 1.26 2006/09/18 10:21:49 espie Exp $
 
 COMMENT=	"Motif toolkit"
 COMMENT-debuglibs="Motif toolkit debug libraries"
@@ -103,7 +103,7 @@ post-install:
 	@${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${DOCDIR}
 
 .if ${SUBPACKAGE} == "-demos"
-LIB_DEPENDS+=	Xm.2.1,Uil.2.1,Mrm.2.1::x11/openmotif
+LIB_DEPENDS+=	Xm.>=2.1,Uil.>=2.1,Mrm.>=2.1::x11/openmotif
 .endif
 .if ${SUBPACKAGE} == "-debuglibs"
 RUN_DEPENDS+=	::x11/openmotif

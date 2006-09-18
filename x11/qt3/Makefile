@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2006/03/07 19:29:19 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2006/09/18 10:21:49 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -134,7 +134,7 @@ CONFIGURE_ARGS+=-no-sql-psql
 .else
 MULTI_PACKAGES+=	-postgresql
 .  if !defined(PACKAGING) || ${SUBPACKAGE} == "-postgresql"
-LIB_DEPENDS+=pq.2:postgresql-client-*:databases/postgresql
+LIB_DEPENDS+=pq.>=2:postgresql-client-*:databases/postgresql
 BUILD_DEPENDS+=::databases/postgresql,-server
 .  endif
 CONFIGURE_ARGS+= -I${LOCALBASE}/include/postgresql \
@@ -148,13 +148,13 @@ myWANTLIB+=	pthread stdc++ c
 .endif
 
 .if !defined(PACKAGING) || ${SUBPACKAGE} != "-html"
-LIB_DEPENDS+=	png.2::graphics/png \
-		mng.1::graphics/libmng
+LIB_DEPENDS+=	png.>=2::graphics/png \
+		mng.>=1::graphics/libmng
 WANTLIB=	${myWANTLIB}
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} != "-html" && ${SUBPACKAGE} != ""
-LIB_DEPENDS+=	qt-mt.3::x11/qt3$e
+LIB_DEPENDS+=	qt-mt.>=3::x11/qt3$e
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-html"

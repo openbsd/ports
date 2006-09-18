@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/12/19 20:18:55 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2006/09/18 10:21:49 espie Exp $
 
 COMMENT=	"Windows 95/98/NT like window manager"
 
@@ -30,7 +30,7 @@ post-patch:
 	rm ${WRKDIST}/src/yaccsrc.{cc,h}
 
 .if ${FLAVOR:L:Mesound}
-LIB_DEPENDS+=	esd.2.::audio/esound
+LIB_DEPENDS+=	esd.>=2::audio/esound
 CONFIGURE_ARGS+= --with-esd-prefix=${LOCALBASE}
 WANTLIB+=	audiofile
 .else
@@ -38,7 +38,7 @@ CONFIGURE_ARGS+= --without-esd
 .endif
 
 .if ${FLAVOR:L:Mimlib}
-LIB_DEPENDS+=	Imlib.19::graphics/imlib
+LIB_DEPENDS+=	Imlib.>=19::graphics/imlib
 CONFIGURE_ARGS+= --with-imlib-prefix=${LOCALBASE}
 WANTLIB+=	tiff ungif z jpeg m png
 .else

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2006/01/12 01:05:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2006/09/18 10:21:49 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 powerpc sparc64 amd64
 
@@ -26,10 +26,10 @@ PERMIT_PACKAGE_FTP=Yes
 WANTLIB=	ICE SM X11 Xext Xinerama Xv Xxf86vm c iconv m z
 
 LIB_DEPENDS=	a52::audio/liba52 \
-		dvdread.3.0::devel/libdvdread \
-		xml2.6.19:libxml->=2.4.19:textproc/libxml \
-		jpeg.62::graphics/jpeg \
-		mad.2::audio/libmad
+		dvdread.>=3.0::devel/libdvdread \
+		xml2.>=6.19:libxml->=2.4.19:textproc/libxml \
+		jpeg.>=62::graphics/jpeg \
+		mad.>=2::audio/libmad
 
 USE_X11=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2006/06/13 12:28:33 bernd Exp $
+# $OpenBSD: Makefile,v 1.28 2006/09/18 10:21:49 espie Exp $
 
 COMMENT=	"small, fast & usable window manager"
 
@@ -13,8 +13,8 @@ HOMEPAGE=	http://icculus.org/openbox/
 
 MODULES=	devel/gettext
 LIB_DEPENDS+=	pango-1.0.0.0,pangoxft-1.0.0.0,pangoft2-1.0.0.0::devel/pango \
-		xml2.6::textproc/libxml \
-		startup-notification-1.0.0::devel/startup-notification
+		xml2.>=6::textproc/libxml \
+		startup-notification-1::devel/startup-notification
 BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 
 # GPL

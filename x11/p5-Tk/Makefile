@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2005/09/23 19:41:45 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.26 2006/09/18 10:21:49 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -22,7 +22,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Tk/}
 MULTI_PACKAGES=	-demo
 SUBPACKAGE?=
 
-LIB_DEPENDS=	png.4::graphics/png
+LIB_DEPENDS=	png.>=4::graphics/png
 RUN_DEPENDS=	:p5-HTML-Parser-*:www/p5-HTML-Parser
 BUILD_DEPENDS=	${RUN_DEPENDS}
 

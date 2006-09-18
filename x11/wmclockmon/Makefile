@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/03/07 21:45:00 niallo Exp $
+# $OpenBSD: Makefile,v 1.2 2006/09/18 10:21:49 espie Exp $
 
 COMMENT=		"Window Maker dock.app clock"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xi Xpm c gmodule iconv intl m glib
 
-LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+
+LIB_DEPENDS=		gtk.>=1.2,gdk.>=1.2::x11/gtk+
 
 USE_X11=		Yes
 NO_REGRESS=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/05/24 20:48:07 matthieu Exp $
+# $OpenBSD: Makefile,v 1.13 2006/09/18 10:21:49 espie Exp $
 
 COMMENT=	"X11 Cursors themes generator"
 DISTNAME=	xcursorgen-X11R7.1-1.0.1
@@ -10,7 +10,7 @@ HOMEPAGE=	http://wiki.X.Org/
 MAINTAINER=	Matthieu Herrb <matthieu@openbsd.org>
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=	png.2::graphics/png
+LIB_DEPENDS=	png.>=2::graphics/png
 
 # X11
 PERMIT_PACKAGE_CDROM=	Yes

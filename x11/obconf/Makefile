@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/05/14 01:15:56 brad Exp $
+# $OpenBSD: Makefile,v 1.2 2006/09/18 10:21:49 espie Exp $
 
 COMMENT=	"configuration utility for openbox"
 
@@ -15,7 +15,7 @@ WANTLIB=	glib-2.0.0.0 ICE SM X11 Xext Xft Xrender \
 		cairo z
 
 LIB_DEPENDS+=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
-		glade-2.0.0.1::devel/libglade2 \
+		glade-2.0.>=0.1::devel/libglade2 \
 		startup-notification-1::devel/startup-notification \
 		obparser,obrender::x11/openbox
 BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig

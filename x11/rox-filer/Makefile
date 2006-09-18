@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2006/07/07 16:43:10 steven Exp $
+# $OpenBSD: Makefile,v 1.31 2006/09/18 10:21:49 espie Exp $
 
 COMMENT=		"gtk file manager with desktop features"
 
@@ -25,7 +25,7 @@ EXTRACT_SUFX=	.tgz
 MODULES=	devel/gettext
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
 		${RUN_DEPENDS}
-LIB_DEPENDS=	gtk-x11-2.0.0.9,gdk_pixbuf-2.0.0.9,gdk-x11-2.0.0.9::x11/gtk+2 \
+LIB_DEPENDS=	gtk-x11-2.0.>=0.9,gdk_pixbuf-2.0.>=0.9,gdk-x11-2.0.>=0.9::x11/gtk+2 \
 		xml2::textproc/libxml
 RUN_DEPENDS=	::misc/shared-mime-info
 

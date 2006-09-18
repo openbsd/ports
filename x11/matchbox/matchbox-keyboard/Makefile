@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/07/20 21:14:21 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2006/09/18 10:21:49 espie Exp $
 
 COMMENT=	"on-screen virtual keyboard"
 DISTNAME=	matchbox-keyboard-0.1
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 USE_X11=	Yes
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=	fakekey.0::x11/matchbox/libfakekey \
-		expat.6::textproc/expat
+LIB_DEPENDS=	fakekey::x11/matchbox/libfakekey \
+		expat.>=6::textproc/expat
 RUN_DEPENDS=	:matchbox-common-*:x11/matchbox/matchbox-common
 WANTLIB=	X11 Xext Xft Xrender Xtst c expat fontconfig freetype
 

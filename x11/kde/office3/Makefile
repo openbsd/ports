@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2006/08/04 10:35:19 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2006/09/18 10:21:49 espie Exp $
 
 COMMENT=		"office suite for KDE"
 
@@ -79,15 +79,15 @@ MODKDE_VERSION=	3.5.3
 AUTOCONF?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
 AUTOCONF_VERSION=2.59
 
-LIB_DEPENDS=	kdecore.4,DCOP,artskde,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kparts,kspell,kabc,kjs,kresources,ktexteditor,kutils,kwalletclient,vcard,kspell2,knewstuff,kmdi::x11/kde/libs3 \
+LIB_DEPENDS=	kdecore.>=4,DCOP,artskde,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kparts,kspell,kabc,kjs,kresources,ktexteditor,kutils,kwalletclient,vcard,kspell2,knewstuff,kmdi::x11/kde/libs3 \
 		python2.4.0.0:python-2.4.*:lang/python/2.4 \
-		art_lgpl_2.5::graphics/libart \
+		art_lgpl_2.>=5::graphics/libart \
 		wv2::converters/wv2 \
 		Magick::graphics/ImageMagick \
 		jbig::graphics/jbigkit \
 		mysqlclient::databases/mysql \
 		ruby::lang/ruby \
-		exif.12::graphics/libexif
+		exif.>=12::graphics/libexif
 
 
 WANTLIB=	ICE SM X11 Xext Xrender artsflow artsflow_idl audiofile bz2 c \

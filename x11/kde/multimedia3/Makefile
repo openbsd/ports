@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2006/08/03 23:37:13 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2006/09/18 10:21:49 espie Exp $
 
 COMMENT= 		"K Desktop Environment, multimedia applications"
 CATEGORIES=		x11 x11/kde
@@ -35,7 +35,7 @@ SHARED_LIBS=		arts_mpeglib-0.3.0	1.0 \
 			yafxplayer		1.0
 
 FLAVORS=		debug
-LIB_DEPENDS= DCOP,kdecore.6,kdefakes,kdefx,kdesu,kdeui,kio,khtml,kmid,kparts,kmediaplayer,kjs,kutils,kwalletclient,kdeprint::x11/kde/libs3 \
+LIB_DEPENDS= DCOP,kdecore.>=6,kdefakes,kdefx,kdesu,kdeui,kio,khtml,kmid,kparts,kmediaplayer,kjs,kutils,kwalletclient,kdeprint::x11/kde/libs3 \
 	artsc,artskde::x11/kde/arts3 \
 	ogg::audio/libogg \
 	FLAC::audio/flac \

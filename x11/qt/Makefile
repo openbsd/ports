@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2006/02/08 04:54:50 david Exp $
+# $OpenBSD: Makefile,v 1.72 2006/09/18 10:21:49 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=	"C++ X11 GUI toolkit"
@@ -39,7 +39,7 @@ SUBPACKAGE?=
 
 .if defined(PACKAGING)
 .  if ${SUBPACKAGE} == "-examples"
-LIB_DEPENDS+=	lib/qt/qt.1::x11/qt
+LIB_DEPENDS+=	lib/qt/qt.>=1::x11/qt
 .  elif ${SUBPACKAGE} == "-html"
 PKG_ARCH=	*
 WANTLIB=

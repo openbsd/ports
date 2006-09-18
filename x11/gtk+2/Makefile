@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2006/07/10 14:47:32 steven Exp $
+# $OpenBSD: Makefile,v 1.41 2006/09/18 10:21:48 espie Exp $
 
 NOT_FOR_ARCHS=			${NO_SHARED_ARCHS}
 
@@ -35,12 +35,12 @@ WANTLIB=			X11 Xcursor Xext Xfixes Xi Xinerama Xrender \
 				Xrandr c cairo fontconfig freetype glitz m z
 MODULES=			devel/gettext
 
-LIB_DEPENDS=			glib-2.0.1000.0,gmodule-2.0.1000.0,gobject-2.0.1000.0::devel/glib2 \
-				pango-1.0.1200.0,pangocairo-1.0.1200.0,pangoft2-1.0.1200.0::devel/pango \
-				atk-1.0.0.1::devel/atk \
-				tiff.35::graphics/tiff \
-				png.3::graphics/png \
-				jpeg.62::graphics/jpeg
+LIB_DEPENDS=			glib-2.0.>=1000.0,gmodule-2.0.>=1000.0,gobject-2.0.>=1000.0::devel/glib2 \
+				pango-1.0.>=1200.0,pangocairo-1.0.>=1200.0,pangoft2-1.0.>=1200.0::devel/pango \
+				atk-1.0.>=0.1::devel/atk \
+				tiff.>=35::graphics/tiff \
+				png.>=3::graphics/png \
+				jpeg.>=62::graphics/jpeg
 BUILD_DEPENDS=          	:pkgconfig-*:devel/pkgconfig
 RUN_DEPENDS=			::x11/hicolor-icon-theme
 .endif

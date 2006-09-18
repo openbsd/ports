@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2005/11/10 12:18:25 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/09/18 10:21:49 espie Exp $
 
 COMMENT=	"C++ cross-platform GUI toolkit - GTK headers"
 PKGNAME=		wxWidgets-gtkheaders-${VERSION}
@@ -6,7 +6,7 @@ PKGNAME=		wxWidgets-gtkheaders-${VERSION}
 CONFIGURE_ARGS+=	--with-gtk
 
 .if !defined(PACKAGING)
-LIB_DEPENDS+=		gtk.1.2::x11/gtk+
+LIB_DEPENDS+=		gtk.>=1.2::x11/gtk+
 .endif
 
 RUN_DEPENDS+=		::x11/wxWidgets/headers

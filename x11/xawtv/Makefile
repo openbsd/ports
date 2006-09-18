@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/02/06 17:48:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2006/09/18 10:21:49 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 macppc amd64
 
@@ -24,7 +24,7 @@ WANTLIB=		ICE SM X11 Xaw Xext Xft Xinerama Xmu Xpm Xrandr \
 			ncurses ossaudio pthread
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=	jpeg.62::graphics/jpeg
+LIB_DEPENDS=	jpeg.>=62::graphics/jpeg
 
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+=--enable-mmx

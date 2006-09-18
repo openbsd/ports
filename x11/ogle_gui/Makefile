@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2006/06/13 13:41:20 bernd Exp $
+# $OpenBSD: Makefile,v 1.17 2006/09/18 10:21:49 espie Exp $
 
 CATEGORIES=	x11
 
@@ -18,15 +18,15 @@ PERMIT_PACKAGE_CDROM=Yes
 PERMIT_PACKAGE_FTP=Yes
 WANTLIB=	X11 Xext pthread z m c
 
-LIB_DEPENDS=	dvdcontrol.9,msgevents.6::x11/ogle \
+LIB_DEPENDS=	dvdcontrol.>=9,msgevents.>=6::x11/ogle \
 		xml2::textproc/libxml \
 
 FLAVORS=gtk1
 FLAVOR?=
 
 .if ${FLAVOR:L} == "gtk1"
-LIB_DEPENDS+= 	glade.5.0::devel/libglade \
-		gtk.1.2::x11/gtk+
+LIB_DEPENDS+= 	glade.>=5.0::devel/libglade \
+		gtk.>=1.2::x11/gtk+
 WANTLIB+=	Xi gdk glib gmodule xml
 .else
 BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig

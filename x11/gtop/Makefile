@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/02/08 23:15:19 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2006/09/18 10:21:48 espie Exp $
 
 COMMENT=		"GNOME version of top"
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://www.gnome.org
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gtop/1.0/}
 
-LIB_DEPENDS=		gnome.36,art_lgpl,gnomeui::x11/gnome/libs \
+LIB_DEPENDS=		gnome.>=36,art_lgpl,gnomeui::x11/gnome/libs \
 			gtop,gtop_common,gtop_sysdeps::devel/libgtop,gnome
 
 # GPL

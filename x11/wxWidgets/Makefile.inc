@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2004/08/18 01:02:06 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2006/09/18 10:21:48 espie Exp $
 #
 # This library can be built for several GUI toolkits.
 # Most can be installed side-by-side.
@@ -33,12 +33,12 @@ PERMIT_DISTFILES_FTP=	Yes
 # Depend on various system libraries
 MODULES+=	converters/libiconv
 
-LIB_DEPENDS+=	jpeg.62::graphics/jpeg
+LIB_DEPENDS+=	jpeg.>=62::graphics/jpeg
 
 MY_INC+=	-I${LOCALBASE}/include/libpng
-LIB_DEPENDS+=	png.4.0::graphics/png
+LIB_DEPENDS+=	png.>=4.0::graphics/png
 
-LIB_DEPENDS+=	tiff.36.1::graphics/tiff
+LIB_DEPENDS+=	tiff.>=36.1::graphics/tiff
 
 ##############################
 WRKDIST=	${WRKDIR}/wxWindows-${VERSION}

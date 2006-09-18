@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/06/12 15:45:51 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/09/18 10:21:49 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,7 +20,7 @@ WANTLIB=		ICE SM X11 Xext Xrender jpeg m png pthread util z \
 			iconv idn
 
 LIB_DEPENDS=	art_lgpl_2::graphics/libart \
-		kdecore.6,DCOP,kdefx,kdeui::x11/kde/libs3 \
+		kdecore.>=6,DCOP,kdefx,kdeui::x11/kde/libs3 \
 		kdecorations::x11/kde/base3
 
 AUTOCONF_VERSION= 2.57

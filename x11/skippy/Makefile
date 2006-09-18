@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/03/22 20:29:44 matthieu Exp $
+# $OpenBSD: Makefile,v 1.4 2006/09/18 10:21:49 espie Exp $
 
 COMMENT=		"a full-screen X11 task-switcher like Apple's Expose"
 
@@ -23,7 +23,7 @@ USE_X11=		Yes
 NO_REGRESS=		Yes
 
 BUILD_DEPENDS=          :pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=		Imlib2.2::graphics/imlib2
+LIB_DEPENDS=		Imlib2.>=2::graphics/imlib2
 
 MAKE_FLAGS+=		PKG_CONFIG_PATH="${X11BASE}/lib/pkgconfig"
 

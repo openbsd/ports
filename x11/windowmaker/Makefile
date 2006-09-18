@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2006/04/14 20:12:34 sturm Exp $
+# $OpenBSD: Makefile,v 1.67 2006/09/18 10:21:49 espie Exp $
 
 COMMENT=		'window manager that emulates NEXTSTEP(tm)'
 COMMENT-lang=		"language subpackage for Window Maker"
@@ -50,10 +50,10 @@ MULTI_PACKAGES=         -lang
 RUN_DEPENDS=		:windowmaker->=0.90.0:x11/windowmaker
 .else
 MODULES=		devel/gettext
-LIB_DEPENDS=		jpeg.62::graphics/jpeg \
-			tiff.35::graphics/tiff \
-			png.2::graphics/png \
-			ungif.5::graphics/libungif
+LIB_DEPENDS=		jpeg.>=62::graphics/jpeg \
+			tiff.>=35::graphics/tiff \
+			png.>=2::graphics/png \
+			ungif.>=5::graphics/libungif
 WANTLIB=		X11 Xext Xft Xpm Xrender c fontconfig freetype m z
 . if ${FLAVOR:L:Mxinerama}
 WANTLIB+=		Xinerama

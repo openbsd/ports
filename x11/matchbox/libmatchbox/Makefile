@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/07/20 20:59:25 robert Exp $
+# $OpenBSD: Makefile,v 1.4 2006/09/18 10:21:48 espie Exp $
 
 COMMENT=	"matchbox base library"
 DISTNAME=	libmatchbox-1.8
@@ -19,12 +19,12 @@ USE_LIBTOOL=	Yes
 USE_X11=	Yes
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=	pango-1.0.800.1,pangoft2-1.0.800.1,pangoxft-1.0.800.1::devel/pango \
-		jpeg.62::graphics/jpeg \
-		png.3::graphics/png
+LIB_DEPENDS=	pango-1.0.>=800.1,pangoft2-1.0.>=800.1,pangoxft-1.0.>=800.1::devel/pango \
+		jpeg.>=62::graphics/jpeg \
+		png.>=3::graphics/png
 MODULES=	devel/gettext
 WANTLIB=	X11 Xext Xft Xrender fontconfig freetype m z \
-		glib-2.0.600.0 gmodule-2.0.600.0 gobject-2.0.600.0
+		glib-2.0.>=600.0 gmodule-2.0.>=600.0 gobject-2.0.>=600.0
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--enable-jpeg \

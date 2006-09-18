@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/03/04 15:10:31 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2006/09/18 10:21:49 espie Exp $
 
 COMMENT=	"OCaml interface to GTK+"
 
@@ -17,7 +17,7 @@ WANTLIB=		X11 Xext Xi c curses glib gmodule iconv intl m pthread
 
 MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/
 
-LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
+LIB_DEPENDS=	gtk.>=1.2,gdk.>=1.2::x11/gtk+
 RUN_DEPENDS=	::lang/ocaml
 
 FAKE_FLAGS=	BINDIR=${WRKINST}${PREFIX}/bin \

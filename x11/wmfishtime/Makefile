@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/12/19 17:27:03 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2006/09/18 10:21:49 espie Exp $
 
 COMMENT=		'wm-dockapp; clock application with clock, date and fish'
 
@@ -18,7 +18,7 @@ WANTLIB=		X11 Xext Xi c glib gmodule iconv intl m
 
 MASTER_SITES=		${HOMEPAGE}software/
 
-LIB_DEPENDS=		gtk.1,gdk.1::x11/gtk+
+LIB_DEPENDS=		gtk.>=1,gdk.>=1::x11/gtk+
 
 MAKE_FLAGS=		CC="${CC}" \
 			CFLAGS="${CFLAGS} -Wall `gtk-config --cflags`" \

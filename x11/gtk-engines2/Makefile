@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/06/13 13:41:20 bernd Exp $
+# $OpenBSD: Makefile,v 1.14 2006/09/18 10:21:48 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -25,7 +25,7 @@ MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gtk-engines/2.6/}
 EXTRACT_SUFX=		.tar.bz2
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=		gdk-x11-2.0.600.0,gdk_pixbuf-2.0.600.0,gtk-x11-2.0.600.0::x11/gtk+2
+LIB_DEPENDS=		gdk-x11-2.0.>=600.0,gdk_pixbuf-2.0.>=600.0,gtk-x11-2.0.>=600.0::x11/gtk+2
 RUN_DEPENDS=		:hicolor-icon-theme-*:x11/hicolor-icon-theme
 
 MODULES=		devel/gettext

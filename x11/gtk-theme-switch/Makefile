@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/17 15:18:33 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2006/09/18 10:21:48 espie Exp $
 
 COMMENT=		"switch GTK+ themes quickly"
 
@@ -18,7 +18,7 @@ WANTLIB=		X11 Xext Xi c glib gmodule iconv intl m
 
 MASTER_SITES=		http://www.muhri.net/
 
-LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+
+LIB_DEPENDS=		gtk.>=1.2,gdk.>=1.2::x11/gtk+
 
 MAKE_FLAGS=		CC="${CC}" \
 			CFLAGS="${CFLAGS} `gtk-config --cflags`" \

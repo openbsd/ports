@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2006/02/04 23:50:19 steven Exp $
+# $OpenBSD: Makefile,v 1.23 2006/09/18 10:21:49 espie Exp $
 # $FreeBSD: Makefile,v 1.7 1997/12/01 16:50:58 pst Exp $
 
 COMMENT=	"graphical toolkit for Tcl"
@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tcl/}
 
 HOMEPAGE=	http://dev.scriptics.com/software/tcltk/
 
-LIB_DEPENDS=	tcl80.1.5:tcl-8.0.5:lang/tcl/8.0
+LIB_DEPENDS=	tcl80.>=1.5:tcl-8.0.5:lang/tcl/8.0
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes

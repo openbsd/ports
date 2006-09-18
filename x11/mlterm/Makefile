@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/06/13 13:41:20 bernd Exp $
+# $OpenBSD: Makefile,v 1.13 2006/09/18 10:21:49 espie Exp $
 
 COMMENT=	"color terminal emulator with transparency and unicode support"
 DISTNAME=	mlterm-2.9.0
@@ -26,7 +26,7 @@ USE_X11=	Yes
 SHARED_ONLY=Yes
 
 BUILD_DEPENDS=	:pkgconfig->=0.14.0p1:devel/pkgconfig
-LIB_DEPENDS=	gdk_pixbuf-2.0.0.14,gtk-x11-2.0.0.14::x11/gtk+2
+LIB_DEPENDS=	gdk_pixbuf-2.0.>=0.14,gtk-x11-2.0.>=0.14::x11/gtk+2
 
 MODULES=	devel/gettext
 
