@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.766 2006/09/18 08:16:19 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.767 2006/09/18 18:17:30 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1297,13 +1297,13 @@ _grab_libs_from_plist= sed -n -e '/^@lib /{ s///; p; }' \
 
 _fetch_packages_fragment= \
 	${ECHO_MSG} -n "===>  Looking for $$fullpkgname in \$$PKG_PATH - "; \
-	if ${SETENV} PKG_CACHE=${_PKGREPOSITORY} PKG_PATH=${_PKGREPOSITORY}/:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add -n -q ${_PKG_ADD_FORCE} $$fullpkgname >/dev/null 2>&1; then \
+	if ${SETENV} PKG_CACHE=${_PKG_REPO} PKG_PATH=${_PKG_REPO}/:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add -n -q ${_PKG_ADD_FORCE} $$fullpkgname >/dev/null 2>&1; then \
 		${ECHO_MSG} "found"; \
 		if [ ! -f $$pkg_cookie ]; then \
 			for _d in ${PKG_PATH:S,/:,/ ,g}; do \
 				if [ -f $${_d}$$fullpkgname${PKG_SUFX} ]; then \
- 					ln $${_d}$$fullpkgname${PKG_SUFX} ${_PKGREPOSITORY} 2>/dev/null || \
- 					  cp -p $${_d}$$fullpkgname${PKG_SUFX} ${_PKGREPOSITORY}; \
+ 					ln $${_d}$$fullpkgname${PKG_SUFX} ${_PKG_REPO} 2>/dev/null || \
+ 					  cp -p $${_d}$$fullpkgname${PKG_SUFX} ${_PKG_REPO}; \
 					break; \
 				fi; \
 			done; \
