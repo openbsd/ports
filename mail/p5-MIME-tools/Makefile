@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2006/06/03 07:04:14 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2006/09/18 13:49:24 bernd Exp $
 
 COMMENT=		"modules for parsing (and creating) MIME entities"
 
 DISTNAME=		MIME-tools-5.420
-PKGNAME=		p5-${DISTNAME}
+PKGNAME=		p5-${DISTNAME}p0
 CATEGORIES=		mail perl5
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
@@ -20,8 +20,7 @@ MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=MIME/}
 
 RUN_DEPENDS=		:p5-IO-stringy->=1.211:devel/p5-IO-stringy \
 			:p5-Mail-Tools-*:mail/p5-Mail-Tools  \
-			:p5-Convert-BinHex-*:converters/p5-Convert-BinHex \
-			:p5-MIME-Base64->=3.03:converters/p5-MIME-Base64
+			:p5-Convert-BinHex-*:converters/p5-Convert-BinHex
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
 CONFIGURE_STYLE= 	perl
