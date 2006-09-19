@@ -1,0 +1,12 @@
+$OpenBSD: patch-test_Makefile_am,v 1.1.1.1 2006/09/19 18:10:14 espie Exp $
+--- test/Makefile.am.orig	Mon Aug 21 20:13:46 2006
++++ test/Makefile.am	Mon Aug 21 20:14:08 2006
+@@ -91,7 +91,7 @@ TESTDIRS=					\
+ 	data/equiv-config-files/entities/basic.d
+ 
+ 
+-FIND_TESTS=find -name "*.message" -o -name "*.message-raw" -o -name "*.auth-script" -o -name "*.sha1" -o -name "*.txt" -o -name "*.conf" -o -name "*.service"
++FIND_TESTS=find . -name "*.message" -o -name "*.message-raw" -o -name "*.auth-script" -o -name "*.sha1" -o -name "*.txt" -o -name "*.conf" -o -name "*.service"
+ 
+ dist-hook:
+ 	for D in $(TESTDIRS); do						\

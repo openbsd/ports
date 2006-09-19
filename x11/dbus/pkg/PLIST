@@ -1,0 +1,52 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/09/19 18:10:14 espie Exp $
+%%SHARED%%
+bin/dbus-cleanup-sockets
+bin/dbus-daemon
+bin/dbus-launch
+bin/dbus-monitor
+bin/dbus-send
+include/dbus-1.0/
+include/dbus-1.0/dbus/
+include/dbus-1.0/dbus/dbus-address.h
+include/dbus-1.0/dbus/dbus-bus.h
+include/dbus-1.0/dbus/dbus-connection.h
+include/dbus-1.0/dbus/dbus-errors.h
+include/dbus-1.0/dbus/dbus-macros.h
+include/dbus-1.0/dbus/dbus-memory.h
+include/dbus-1.0/dbus/dbus-message.h
+include/dbus-1.0/dbus/dbus-pending-call.h
+include/dbus-1.0/dbus/dbus-protocol.h
+include/dbus-1.0/dbus/dbus-server.h
+include/dbus-1.0/dbus/dbus-shared.h
+include/dbus-1.0/dbus/dbus-signature.h
+include/dbus-1.0/dbus/dbus-threads.h
+include/dbus-1.0/dbus/dbus-types.h
+include/dbus-1.0/dbus/dbus.h
+lib/dbus-1.0/
+lib/dbus-1.0/include/
+lib/dbus-1.0/include/dbus/
+lib/dbus-1.0/include/dbus/dbus-arch-deps.h
+lib/libdbus-1.a
+lib/libdbus-1.la
+lib/pkgconfig/
+lib/pkgconfig/dbus-1.pc
+@man man/man1/dbus-cleanup-sockets.1
+@man man/man1/dbus-daemon.1
+@man man/man1/dbus-launch.1
+@man man/man1/dbus-monitor.1
+@man man/man1/dbus-send.1
+share/dbus-1/
+share/dbus-1/services/
+share/sample/
+share/sample/dbus/
+@sample ${SYSCONFDIR}/dbus-1/
+share/sample/dbus/dbus-1/
+share/sample/dbus/dbus-1/session.conf
+@sample ${SYSCONFDIR}/dbus-1/session.conf
+share/sample/dbus/dbus-1/system.conf
+@sample ${SYSCONFDIR}/dbus-1/system.conf
+share/sample/dbus/dbus-1/system.d/
+@sample ${SYSCONFDIR}/dbus-1/system.d/
+var/
+var/run/
+var/run/dbus/

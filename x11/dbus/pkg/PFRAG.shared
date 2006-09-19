@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/09/19 18:10:14 espie Exp $
+@lib lib/libdbus-1.so.${LIBdbus-1_VERSION}

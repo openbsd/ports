@@ -1,0 +1,12 @@
+$OpenBSD: patch-test_Makefile_in,v 1.1.1.1 2006/09/19 18:10:14 espie Exp $
+--- test/Makefile.in.orig	Mon Aug 21 20:20:12 2006
++++ test/Makefile.in	Mon Aug 21 20:20:22 2006
+@@ -365,7 +365,7 @@ TESTDIRS = \
+ 	data/equiv-config-files/entities	\
+ 	data/equiv-config-files/entities/basic.d
+ 
+-FIND_TESTS = find -name "*.message" -o -name "*.message-raw" -o -name "*.auth-script" -o -name "*.sha1" -o -name "*.txt" -o -name "*.conf" -o -name "*.service"
++FIND_TESTS = find . -name "*.message" -o -name "*.message-raw" -o -name "*.auth-script" -o -name "*.sha1" -o -name "*.txt" -o -name "*.conf" -o -name "*.service"
+ all: all-recursive
+ 
+ .SUFFIXES:

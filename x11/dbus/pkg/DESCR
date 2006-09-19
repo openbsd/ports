@@ -1,0 +1,7 @@
+D-BUS is a simple IPC library based on messages.
+
+It replaces DCOP in kde4.
+
+"libdbus" is intended to be a low-level API, similar to Xlib. 
+Most programmers will use the bindings to GLib, Qt, Python, Mono, 
+Java, or whatever.
