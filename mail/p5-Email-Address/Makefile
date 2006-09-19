@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/01/15 15:35:01 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2006/09/19 11:39:53 dhill Exp $
 
 COMMENT=	"RFC 2822 Address Parsing and Creation"
 
-DISTNAME=	Email-Address-1.80
+DISTNAME=	Email-Address-1.870
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	mail perl5
 
