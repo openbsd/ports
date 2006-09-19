@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.20 2006/08/01 22:19:46 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2006/09/19 11:26:38 espie Exp $
 
 COMMENT=	"Embedded SQL implementation"
 COMMENT-tcl=	"TCL bindings for Sqlite3"
-V=		3.3.6
+V=		3.3.7
 DISTNAME=	sqlite-${V}
 PKGNAME=	sqlite3-${V}
-PKGNAME-tcl=	sqlite3-tcl-${V}p0
+PKGNAME-tcl=	sqlite3-tcl-${V}
 CATEGORIES=	databases
-SHARED_LIBS=	sqlite3	8.6
+SHARED_LIBS=	sqlite3	8.7 \
+		tclsqlite3 8.7
 
 MASTER_SITES=	${HOMEPAGE}
 
@@ -71,7 +72,7 @@ pre-configure:
 # XXX libtool issue
 pre-install:
 .if ${MULTI_PACKAGES:M-tcl}
-	@cp -p ${WRKSRC}/.libs/libtclsqlite3.so.8.6 ${WRKSRC}/.libs/libtclsqlite3.so
+	@cp -p ${WRKSRC}/.libs/libtclsqlite3.so.$(LIBtclsqlite3_VERSION) ${WRKSRC}/.libs/libtclsqlite3.so
 .endif
 
 .include <bsd.port.mk>
