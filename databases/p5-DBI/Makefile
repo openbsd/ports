@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2006/06/17 09:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2006/09/19 08:05:22 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"unified perl interface for database access"
 
-DISTNAME=	DBI-1.51
+DISTNAME=	DBI-1.52
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	databases perl5
 

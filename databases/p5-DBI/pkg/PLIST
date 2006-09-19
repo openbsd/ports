@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2004/12/30 11:37:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.26 2006/09/19 08:05:22 espie Exp $
 bin/dbiprof
 bin/dbiproxy
 ${P5ARCH}/
@@ -29,6 +29,7 @@ ${P5ARCH}/DBI/ProfileData.pm
 ${P5ARCH}/DBI/ProfileDumper/
 ${P5ARCH}/DBI/ProfileDumper.pm
 ${P5ARCH}/DBI/ProfileDumper/Apache.pm
+${P5ARCH}/DBI/ProfileSubs.pm
 ${P5ARCH}/DBI/ProxyServer.pm
 ${P5ARCH}/DBI/PurePerl.pm
 ${P5ARCH}/DBI/Roadmap.pm
@@ -68,6 +69,7 @@ ${P5ARCH}/auto/DBI/dbivport.h
 @man man/man3p/DBI::ProfileData.3p
 @man man/man3p/DBI::ProfileDumper.3p
 @man man/man3p/DBI::ProfileDumper::Apache.3p
+@man man/man3p/DBI::ProfileSubs.3p
 @man man/man3p/DBI::ProxyServer.3p
 @man man/man3p/DBI::PurePerl.3p
 @man man/man3p/DBI::SQL::Nano.3p
