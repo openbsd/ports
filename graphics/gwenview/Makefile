@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.31 2006/08/03 12:43:20 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2006/09/19 01:54:54 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"image viewer for KDE"
 
-DISTNAME=	gwenview-1.3.1
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=	gwenviewcore	3.0
+DISTNAME=	gwenview-1.4.0
+SHARED_LIBS=	gwenviewcore	4.0
 CATEGORIES=	graphics x11 x11/kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gwenview/}
 EXTRACT_SUFX=	.tar.bz2
 
-HOMEPAGE=	http://gwenview.sourceforge.net/home/
+HOMEPAGE=	http://gwenview.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,10 +18,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		art_lgpl_2 jpeg ICE SM X11 Xext Xrender c m png \
-			pthread stdc++ util z idn iconv
+			pthread stdc++ util z idn iconv intl
 
-LIB_DEPENDS=	kdecore.>=6,DCOP,kdefx,kdeprint,kdesu,kparts,kdeui,kio,kwalletclient::x11/kde/libs3 \
-		kipi::graphics/libkipi
+LIB_DEPENDS=	kdecore.>=6,DCOP,kdefx,kdeprint,kdesu,kparts,kdeui,kio,kwalletclient,kmediaplayer,kutils::x11/kde/libs3 \
+		kipi::graphics/libkipi \
+		exif::graphics/libexif
 
 MODULES=	x11/kde
 MODKDE_VERSION= 3.5
