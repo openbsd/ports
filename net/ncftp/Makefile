@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.34 2005/05/04 14:43:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2006/09/19 14:27:32 naddy Exp $
 
 COMMENT=	"ftp replacement with advanced user interface"
 
-DISTNAME=	ncftp-3.1.9
+DISTNAME=	ncftp-3.2.0
 CATEGORIES=	net
 HOMEPAGE=	http://www.ncftp.com/ncftp/
 
@@ -21,16 +21,12 @@ MASTER_SITES0=	ftp://ftp.kame.net/pub/kame/misc/ \
 		ftp://ftp.belnet.be/mirror/ftp.kame.net/pub/kame/misc/
 DISTFILES=	${DISTNAME}-src.tar.gz
 
-PATCHFILES=	ncftp-319-v6-20050419.diff.gz:0
+PATCHFILES=	ncftp-320-v6-20060806.diff.gz:0
 PATCH_DIST_STRIP=-p1
 
-CONFIGURE_STYLE=gnu dest
+CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	TAR=/bin/tar
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/sh
-
-# configure script switches to /usr/local/share/man if there's a
-# /usr/local/share around, so enforce /usr/local/man manually.
-CONFIGURE_ARGS+=--mandir='$${DESTDIR}${PREFIX}/man'
 
 NO_REGRESS=	Yes
 
