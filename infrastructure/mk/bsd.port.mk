@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.767 2006/09/18 18:17:30 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.768 2006/09/19 11:25:17 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2080,7 +2080,8 @@ ${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIES}
 	@-${SUDO} ${_MAKE_COOKIE} $@
 .endif
 
-${_UPDATE_COOKIE}: ${_PACKAGE_COOKIES}
+${_UPDATE_COOKIE}: 
+	@cd ${.CURDIR} && SUBPACKAGE=${SUBPACKAGE} PACKAGING='${SUBPACKAGE}' exec ${MAKE} _internal-subpackage
 .if empty(UPDATE_COOKIES_DIR)
 	@exec ${MAKE} ${WRKDIR}
 .else
