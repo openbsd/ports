@@ -1,13 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2006/06/17 09:09:28 espie Exp $
---- Makefile.in.orig	Tue Jun  6 12:52:26 2006
-+++ Makefile.in	Fri Jun 16 23:57:37 2006
-@@ -249,7 +249,8 @@ last_change:	$(SRC)
+$OpenBSD: patch-Makefile_in,v 1.4 2006/09/19 10:00:09 espie Exp $
+--- Makefile.in.orig	Tue Sep 19 11:59:04 2006
++++ Makefile.in	Tue Sep 19 11:59:16 2006
+@@ -676,3 +676,5 @@ sqlite3.lib: sqlite3.dll
  
- libsqlite3.la:	$(LIBOBJ)
- 	$(LTLINK) -o libsqlite3.la $(LIBOBJ) $(LIBPTHREAD) \
--		${ALLOWRELEASE} -rpath $(libdir) -version-info "8:6:8"
-+		${ALLOWRELEASE} -rpath $(libdir) \
-+		${libsqlite3_la_LDFLAGS}
- 
- libtclsqlite3.la:	tclsqlite.lo libsqlite3.la
- 	$(LTLINK) -o libtclsqlite3.la tclsqlite.lo \
+ distclean:	clean
+ 	rm -f config.log config.status libtool Makefile config.h
++
++.PHONY: test
