@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.768 2006/09/19 11:25:17 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.769 2006/09/19 19:54:14 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1325,12 +1325,8 @@ ${_PACKAGE_COOKIE}:
 	tried=_TRIED_FETCHING_${_PACKAGE_COOKIE}; \
 	${_fetch_packages_fragment}
 .else
-.  if ${BIN_PACKAGES:L} == "yes"
 ${_PACKAGE_COOKIE}:
-	@cd ${.CURDIR} && exec ${MAKE} ${_PACKAGE_COOKIE_DEPS} ${_PKG_PREREQ}
-.  else
-${_PACKAGE_COOKIE}: ${_PACKAGE_COOKIE_DEPS} ${_PKG_PREREQ}
-.  endif
+	@cd ${.CURDIR} && unset PACKAGING && exec ${MAKE} ${_PACKAGE_COOKIE_DEPS} ${_PKG_PREREQ}
 	@mkdir -p ${@D}
 .  if target(pre-package)
 	@cd ${.CURDIR} && exec ${MAKE} pre-package
