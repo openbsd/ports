@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/03/18 18:56:15 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2006/09/19 04:00:35 dhill Exp $
 
 COMMENT=	"simple standalone HTTP server"
 
-DISTNAME=	HTTP-Server-Simple-0.18
+DISTNAME=	HTTP-Server-Simple-0.20
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
 
