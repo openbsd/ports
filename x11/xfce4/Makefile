@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/01/25 00:04:22 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2006/09/20 17:36:26 jasper Exp $
 
      SUBDIR+= gtk-xfce-engine
      SUBDIR+= libxfce4mcs
@@ -17,6 +17,7 @@
      SUBDIR+= xfce4-iconbox
      SUBDIR+= xfce4-lua-graph
      SUBDIR+= xfce4-minicmd
+     SUBDIR+= xfce4-mixer
      SUBDIR+= xfce4-netload
      SUBDIR+= xfce4-notes
      SUBDIR+= xfce4-panel
