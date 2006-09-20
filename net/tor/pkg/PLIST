@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2006/07/17 19:23:03 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.4 2006/09/20 22:06:36 ray Exp $
 @newgroup _tor:566
 @newuser _tor:566:566:daemon:tor:/nonexistent:/sbin/nologin
 bin/tor
@@ -13,3 +13,7 @@ share/examples/tor/tor-tsocks.conf
 @sample ${SYSCONFDIR}/tor/tor-tsocks.conf
 share/examples/tor/torrc.sample
 @sample ${SYSCONFDIR}/tor/torrc
+@mode 0700
+@owner _tor
+@group _tor
+@sample ${DB_DIR}/
