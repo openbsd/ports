@@ -1,0 +1,12 @@
+$OpenBSD: patch-BitTorrent_Storage_py,v 1.1 2006/09/20 16:02:03 naddy Exp $
+--- BitTorrent/Storage.py.orig	Wed Sep 20 16:51:21 2006
++++ BitTorrent/Storage.py	Wed Sep 20 16:51:50 2006
+@@ -231,7 +231,7 @@ class Storage(object):
+                 line = resumefile.readline()
+                 size, mtime = line.split()[:2] # allow adding extra fields
+                 size = int(size)
+-                mtime = int(mtime)
++                mtime = int(float(mtime))
+             if os.path.exists(filename):
+                 fsize = os.path.getsize(filename)
+             else:
