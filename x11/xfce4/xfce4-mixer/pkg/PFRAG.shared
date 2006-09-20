@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/09/20 17:30:04 jasper Exp $
+@lib lib/libxfce4mixer.so.${LIBxfce4mixer_VERSION}
+lib/xfce4/mcs-plugins/sound_settings.so
+lib/xfce4/panel-plugins/libmixer.so

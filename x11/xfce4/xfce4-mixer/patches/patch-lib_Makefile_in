@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Makefile_in,v 1.1.1.1 2006/09/20 17:30:04 jasper Exp $
+--- lib/Makefile.in.orig	Fri Jul 14 15:18:04 2006
++++ lib/Makefile.in	Fri Jul 14 15:18:19 2006
+@@ -233,7 +233,7 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ CLEANFILES = *~ *.bak core *.core *.o *.lo
+ INCLUDES = -I$(top_srcdir)/include
+-plugindir = $(libdir)/xfce4/modules
++plugindir = $(libdir)
+ plugin_LTLIBRARIES = libxfce4mixer.la
+ libxfce4mixer_la_SOURCES = trans.c  vc_alsa.c  vc_alsa_fallback.c  vc.c  vc.h  vc_oss.c  vcs.c  vc_sun.c stringlist.inc
+ libxfce4mixer_la_LDFLAGS = -export-dynamic
