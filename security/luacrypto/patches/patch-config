@@ -1,0 +1,33 @@
+$OpenBSD: patch-config,v 1.1.1.1 2006/09/20 14:08:47 pedro Exp $
+--- config.orig	Sun Jan 22 21:16:35 2006
++++ config	Fri Aug 11 16:31:35 2006
+@@ -3,9 +3,9 @@
+ # and the Lua include files (LUAINC) are required to compile and install. Set
+ # USE_COMPAT to 1 if you building for a Lua 5.0 environment, or leave it blank
+ # if you are building for a Lua 5.1 environment.
+-LUA_PATH = /usr/share/lua
+-LUA_CPATH = /usr/local/lua
+-LUAINC = -I/usr/include/lua
++LUA_PATH = $(PREFIX)/share/lua/5.1
++LUA_CPATH = $(PREFIX)/lib/lua/5.1
++LUAINC = -I$(PREFIX)/include
+ 
+ # If your target environment is Lua 5.1, leave both of these COMPAT flags unset.
+ # If your target environment is Lua 5.0, the USE_COMPAT flag must be set to 1
+@@ -19,8 +19,8 @@ INSTALL_COMPAT =
+ # The location of the Lua interpreter and Lua compiler are required to run the
+ # test suite and to generate precompiled Lua libraries instead of source Lua
+ # libraries for install.
+-LUA = /usr/bin/lua
+-LUAC = /usr/bin/luac
++LUA = $(PREFIX)/bin/lua
++LUAC = $(PREFIX)/bin/luac
+ 
+ # This provides the necessary flags for linking against your OpenSSL libcrypto
+ # installation. Change it to suit your system if necessary.
+@@ -29,4 +29,4 @@ CRYPTOINC =
+ 
+ # Set this to lc to install the precompiled Lua libraries (compiled with luac),
+ # or to lua to install the source Lua libraries.
+-LUATYPE = lc
++LUATYPE = lua

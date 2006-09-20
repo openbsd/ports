@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/09/20 14:08:47 pedro Exp $
+%%SHARED%%
+share/lua/5.1/crypto/
+share/lua/5.1/crypto.lua
+share/lua/5.1/crypto/evp.lua
+share/lua/5.1/crypto/hmac.lua

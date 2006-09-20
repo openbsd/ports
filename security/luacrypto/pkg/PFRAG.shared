@@ -1,0 +1,7 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/09/20 14:08:47 pedro Exp $
+lib/lua/5.1/crypto/
+lib/lua/5.1/crypto/core.so
+lib/lua/5.1/crypto/evp/
+lib/lua/5.1/crypto/evp/core.so
+lib/lua/5.1/crypto/hmac/
+lib/lua/5.1/crypto/hmac/core.so

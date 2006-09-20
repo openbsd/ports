@@ -1,0 +1,4 @@
+LuaCrypto provides digest functions, such as MD5, SHA-1, and HMAC;
+cipher functions, such as RC5 and Blowfish; public key crypto, such as
+RSA and Diffie-Hellman; and some other assorted tools (i.e. random
+number generation).
