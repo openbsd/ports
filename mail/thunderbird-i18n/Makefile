@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/07/02 16:32:35 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2006/09/20 11:03:01 steven Exp $
 
 COMMENT=	"${MAINLANG} language pack for Thunderbird"
-V=		1.5.0.4
+V=		1.5.0.7
 NAME=		thunderbird-i18n
 PKGNAME=	${NAME}-${MAINLANG}-$V
 
@@ -23,8 +23,8 @@ MASTER_SITES=	http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/${V
 # define one language for the main package
 MAINLANG=	en-GB
 OTHERLANGS=	bg ca cs da de el es-AR es-ES eu fi fr gu-IN \
-		he hu it ja nb-NO nl pl pt-BR ro ru sk sl sv-SE tr zh-CN
-#		broken: ko mk pa-IN
+		he hu it ja nb-NO nl pl pt-BR ru sk sl sv-SE tr zh-CN
+#		broken: ko mk pa-IN ro
 
 BUILD_DEPENDS=	:unzip-*:archivers/unzip
 RUN_DEPENDS=	:mozilla-thunderbird->=${V}:mail/mozilla-thunderbird
