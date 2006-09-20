@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.9 2006/09/18 15:18:36 steven Exp $
---- configure.in.orig	Fri Apr 21 22:50:21 2006
-+++ configure.in	Mon Sep 18 16:02:12 2006
-@@ -1287,9 +1287,9 @@ dnl Get mozilla version from central mil
+$OpenBSD: patch-configure_in,v 1.10 2006/09/20 08:35:31 steven Exp $
+--- configure.in.orig	Wed Aug 23 18:31:03 2006
++++ configure.in	Mon Sep 18 18:13:02 2006
+@@ -1291,9 +1291,9 @@ dnl Get mozilla version from central mil
  MOZILLA_VERSION=`$PERL $srcdir/config/milestone.pl -topsrcdir $srcdir`
  
  dnl Get version of various core apps from the version files.
@@ -14,7 +14,7 @@ $OpenBSD: patch-configure_in,v 1.9 2006/09/18 15:18:36 steven Exp $
  
  AC_DEFINE_UNQUOTED(MOZILLA_VERSION,"$MOZILLA_VERSION")
  AC_DEFINE_UNQUOTED(MOZILLA_VERSION_U,$MOZILLA_VERSION)
-@@ -1859,7 +1859,7 @@ case "$target" in
+@@ -1863,7 +1863,7 @@ case "$target" in
  	;;
  
  *-openbsd*)
@@ -23,7 +23,7 @@ $OpenBSD: patch-configure_in,v 1.9 2006/09/18 15:18:36 steven Exp $
      DSO_CFLAGS=''
      DSO_PIC_CFLAGS='-fPIC'
      DSO_LDOPTS='-shared -fPIC'
-@@ -3643,7 +3643,7 @@ _SAVE_LIBS=$LIBS
+@@ -3647,7 +3647,7 @@ _SAVE_LIBS=$LIBS
  CFLAGS="$ZLIB_CFLAGS $CFLAGS"
  LDFLAGS="$ZLIB_LIBS -lz $LDFLAGS"
  if test -n "${PNG_DIR}" -a "${PNG_DIR}" != "yes"; then
@@ -32,7 +32,7 @@ $OpenBSD: patch-configure_in,v 1.9 2006/09/18 15:18:36 steven Exp $
      LDFLAGS="-L${PNG_DIR}/lib $LDFLAGS"
  fi
  if test -z "$PNG_DIR" -o "$PNG_DIR" = no; then
-@@ -3673,7 +3673,7 @@ LDFLAGS=$_SAVE_LDFLAGS
+@@ -3677,7 +3677,7 @@ LDFLAGS=$_SAVE_LDFLAGS
  LIBS=$_SAVE_LIBS
  
  if test "${PNG_DIR}" -a -d "${PNG_DIR}" -a "$SYSTEM_PNG" = 1; then

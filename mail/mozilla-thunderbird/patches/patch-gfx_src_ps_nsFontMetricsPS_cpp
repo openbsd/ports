@@ -1,7 +1,7 @@
-$OpenBSD: patch-gfx_src_ps_nsFontMetricsPS_cpp,v 1.3 2006/01/23 12:34:06 wilfried Exp $
---- gfx/src/ps/nsFontMetricsPS.cpp.orig	Tue Dec 20 11:16:58 2005
-+++ gfx/src/ps/nsFontMetricsPS.cpp	Tue Dec 20 11:17:37 2005
-@@ -1033,8 +1033,10 @@ nsFontPSXft::Init(nsXftEntry* aEntry,
+$OpenBSD: patch-gfx_src_ps_nsFontMetricsPS_cpp,v 1.4 2006/09/20 08:35:31 steven Exp $
+--- gfx/src/ps/nsFontMetricsPS.cpp.orig	Sun May  7 04:01:25 2006
++++ gfx/src/ps/nsFontMetricsPS.cpp	Sun Sep 17 17:56:59 2006
+@@ -1040,8 +1040,10 @@ nsFontPSXft::Init(nsXftEntry* aEntry,
  
  nsFontPSXft::~nsFontPSXft()
  {
@@ -13,7 +13,7 @@ $OpenBSD: patch-gfx_src_ps_nsFontMetricsPS_cpp,v 1.3 2006/01/23 12:34:06 wilfrie
  
    if (FT_Done_FreeType(mFreeTypeLibrary))
      return;
-@@ -2323,8 +2325,10 @@ nsXftType1Generator::Init(nsXftEntry* aE
+@@ -2332,8 +2334,10 @@ nsXftType1Generator::Init(nsXftEntry* aE
  
  nsXftType1Generator::~nsXftType1Generator()
  {
