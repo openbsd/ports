@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/06/15 09:19:52 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/09/20 13:22:42 xsa Exp $
 lib/python${MODPY_VERSION}/site-packages/tagger/
 lib/python${MODPY_VERSION}/site-packages/tagger/__init__.py
 lib/python${MODPY_VERSION}/site-packages/tagger/__init__.pyc
@@ -21,4 +21,5 @@ lib/python${MODPY_VERSION}/site-packages/tagger/utility.pyc
 share/doc/py-tagger/
 share/doc/py-tagger/README
 share/examples/py-tagger/
+share/examples/py-tagger/apic.py
 share/examples/py-tagger/mp3check.py

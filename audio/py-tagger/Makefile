@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2006/06/03 09:21:21 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2006/09/20 13:22:42 xsa Exp $
 
 COMMENT=	"Python ID3 tag reader/writer module"
 
-DISTNAME=	pytagger-0.4
-PKGNAME=	${DISTNAME:S/^py/py-/}p0
+DISTNAME=	pytagger-0.5
+PKGNAME=	${DISTNAME:S/^py/py-/}
 CATEGORIES=	audio
 
 HOMEPAGE=	http://www.liquidx.net/pytagger/
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,6 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.liquidx.net/static/pytagger/
+EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	lang/python
 
@@ -33,6 +32,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKBUILD}/mp3check.py ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKBUILD}/{apic,mp3check}.py ${EXAMPLESDIR}
 
 .include <bsd.port.mk>
