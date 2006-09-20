@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/08/17 14:56:28 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/09/20 09:06:20 robert Exp $
 %%SHARED%%
 bin/scalc
 bin/sdraw
@@ -54,7 +54,6 @@ openoffice/presets/gallery/sg100.thm
 openoffice/presets/gallery/sg30.sdv
 openoffice/presets/gallery/sg30.thm
 openoffice/program/
-openoffice/program/.testtoolrc
 openoffice/program/bootstraprc
 openoffice/program/cde-open-url
 openoffice/program/configimport
@@ -153,6 +152,7 @@ openoffice/program/resource/textconversiondlgs680en-US.res
 openoffice/program/resource/tfu680en-US.res
 openoffice/program/resource/tk680en-US.res
 openoffice/program/resource/tpl680en-US.res
+openoffice/program/resource/updchk680en-US.res
 openoffice/program/resource/uui680en-US.res
 openoffice/program/resource/vcl680en-US.res
 openoffice/program/resource/wzi680en-US.res
@@ -174,6 +174,7 @@ openoffice/program/spadmin
 openoffice/program/spadmin.bin
 openoffice/program/swriter
 openoffice/program/testtool.bin
+openoffice/program/testtoolrc
 openoffice/program/types.rdb
 openoffice/program/uno
 openoffice/program/uno.bin
@@ -1845,6 +1846,7 @@ openoffice/share/registry/schema/org/openoffice/LDAP.xcs
 openoffice/share/registry/schema/org/openoffice/Office/
 openoffice/share/registry/schema/org/openoffice/Office/Addons.xcs
 openoffice/share/registry/schema/org/openoffice/Office/Calc.xcs
+openoffice/share/registry/schema/org/openoffice/Office/CalcAddIns.xcs
 openoffice/share/registry/schema/org/openoffice/Office/Chart.xcs
 openoffice/share/registry/schema/org/openoffice/Office/Commands.xcs
 openoffice/share/registry/schema/org/openoffice/Office/Common.xcs

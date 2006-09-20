@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/08/17 14:56:24 robert Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2006/09/20 09:06:20 robert Exp $
 openoffice/program/acceptor.uno.so
 openoffice/program/basprov680.uno.so
 openoffice/program/behelper.uno.so
@@ -9,6 +9,7 @@ openoffice/program/configmgr2.uno.so
 openoffice/program/connector.uno.so
 openoffice/program/deployment680.uno.so
 openoffice/program/deploymentgui680.uno.so
+openoffice/program/desktopbe1.uno.so
 openoffice/program/dlgprov680.uno.so
 openoffice/program/fpicker.uno.so
 openoffice/program/fps_gnome.uno.so
@@ -188,6 +189,7 @@ openoffice/program/libuno_cppuhelpergcc3.so
 openoffice/program/libuno_sal.so
 openoffice/program/libuno_salhelpergcc3.so
 openoffice/program/libunoxml680.so
+openoffice/program/libupdchk680.so
 openoffice/program/liburp_uno.so
 openoffice/program/libutl680.so
 openoffice/program/libuui680.so

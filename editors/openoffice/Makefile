@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2006/08/20 03:36:52 kurt Exp $
+# $OpenBSD: Makefile,v 1.3 2006/09/20 09:06:19 robert Exp $
 
 ONLY_FOR_ARCHS= i386
 
 COMMENT=	"a multi-platform productivity suite"
 
-M=		179
-VERSION=	SRC680_m${M}
+M=		m4
+VERSION=	OOD680_${M}
 DISTNAME=	OOo_${VERSION}_source
 WRKDIST=	${WRKDIR}/ooo_${VERSION}_src
-PKGNAME=	openoffice-2.0.3m${M}p0
+PKGNAME=	openoffice-2.0.4${M}
 CATEGORIES=	editors productivity
 
 SHARED_LIBS=	icudata		26.0 \
@@ -18,7 +18,8 @@ SHARED_LIBS=	icudata		26.0 \
 		stlport_gcc	4.5
 
 HOMEPAGE=	http://www.openoffice.org/
-MASTER_SITES=	http://humppa.hu/
+MASTER_SITES=	http://humppa.hu/ \
+		http://ftp.linux.cz/pub/localization/OpenOffice.org/devel/build/Sources/
 
 # See http://www.openoffice.org/about.html#licenses
 # and http://www.openoffice.org/license.html
@@ -35,17 +36,18 @@ BUILD_DEPENDS=	:zip-*:archivers/zip \
 		:tcsh-*:shells/tcsh \
 		:p5-Archive-Zip-*:archivers/p5-Archive-Zip
 
-LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
-		python2.3.0.0:python-2.3.*:lang/python/2.3 \
+LIB_DEPENDS=	gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.14::x11/gtk+2 \
+		python2.3:python-2.3.*:lang/python/2.3 \
 		db.>=4::databases/db/v4 \
 		curl.>=2::net/curl \
 		neon.>=24::net/neon \
-		xslt.>=2::textproc/libxslt
+		xslt.>=2::textproc/libxslt \
+		sndfile.>=1::audio/libsndfile
 
-WANTLIB=	ICE SM X11 Xext atk-1.0.0.0 c cairo expat fontconfig \
-		freetype glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 \
-		gthread-2.0.0.0 iconv intl jpeg m pango-1.0.0.0 \
-		pangocairo-1.0.0.0 pangoft2-1.0.0.0 pthread stdc++ xml2 z 
+WANTLIB=	ICE SM X11 Xext atk-1.0 c cairo expat fontconfig \
+		freetype glib-2.0 gmodule-2.0 gobject-2.0 \
+		gthread-2.0 iconv intl jpeg m pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 pthread stdc++ xml2 z 
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
@@ -55,7 +57,10 @@ VMEM_WARNING=	Yes
 PATCHORIG=	.orig.port
 WRKCONF=	${WRKSRC}/config_office
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.59
+AUTOCONF_DIR=		${WRKCONF}
+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
@@ -78,6 +83,7 @@ CONFIGURE_ARGS=	--disable-gnome-vfs \
 		--with-system-neon \
 		--with-system-python \
 		--with-system-db \
+		--with-system-sndfile \
 		--with-epm=internal \
 		--with-package-format=portable \
 		--without-java

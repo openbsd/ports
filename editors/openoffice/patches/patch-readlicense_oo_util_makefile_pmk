@@ -1,0 +1,21 @@
+$OpenBSD: patch-readlicense_oo_util_makefile_pmk,v 1.1 2006/09/20 09:06:19 robert Exp $
+--- readlicense_oo/util/makefile.pmk.orig	Fri Sep  1 09:56:11 2006
++++ readlicense_oo/util/makefile.pmk	Fri Sep  1 09:57:53 2006
+@@ -70,7 +70,7 @@
+ $(MISC)$/readme%.html :
+     @+-$(MKDIR) $(@:d)
+ .IF "$(XSLTPROC)"=="NO_XSLTPROC"
+-	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/xt.jar$(PATH_SEPERATOR)$(XERCES_JAR) -Dcom.jclark.xsl.sax.parser=org.apache.xerces.parsers.SAXParser com.jclark.xsl.sax.Driver $(subst,_$(@:b:s/_/./:e:s/.//), $(COMMONMISC)$/$(TARGET)$/$(@:b).xrm) ..$/readme.xsl os1=$(OS) gui1=$(GUI) cp1=$(CPUNAME) com1=$(COM) lang1=$(@:b:s/_/./:e:s/.//) type=html file=$@
++	$(JAVAI) $(JAVACPS) $(XT_JAR)$(PATH_SEPERATOR)$(XML_APIS_JAR)$(PATH_SEPERATOR)$(XERCES_JAR) -Dcom.jclark.xsl.sax.parser=org.apache.xerces.parsers.SAXParser com.jclark.xsl.sax.Driver $(subst,_$(@:b:s/_/./:e:s/.//), $(COMMONMISC)$/$(TARGET)$/$(@:b).xrm) ..$/readme.xsl os1=$(OS) gui1=$(GUI) cp1=$(CPUNAME) com1=$(COM) lang1=$(@:b:s/_/./:e:s/.//) type=html file=$@
+ .ELSE
+ 	sed 's|xmlns:xt="http://www.jclark.com/xt"||;s|extension-element-prefixes="xt"||;s|.*xt:document.*||;s|<xsl:output method = "HTML" doctype-public = "-//W3C//DTD HTML 3.2//EN" />|<xsl:output method="html" doctype-public="-//W3C//DTD HTML 3.2//EN" />|' < ..$/readme.xsl | xsltproc -o $@ \
+ 	         --stringparam os1 $(OS) \
+@@ -86,7 +86,7 @@
+ $(MISC)$/readme%.txt :
+     @+-$(MKDIR) $(@:d)
+ .IF "$(XSLTPROC)"=="NO_XSLTPROC"
+-	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/xt.jar$(PATH_SEPERATOR)$(XERCES_JAR) -Dcom.jclark.xsl.sax.parser=org.apache.xerces.parsers.SAXParser com.jclark.xsl.sax.Driver $(subst,_$(@:b:s/_/./:e:s/.//), $(COMMONMISC)$/$(TARGET)$/$(@:b).xrm) ..$/readme.xsl os1=$(OS) gui1=$(GUI) cp1=$(CPUNAME) com1=$(COM) lang1=$(@:b:s/_/./:e:s/.//) type=text file=$@
++	$(JAVAI) $(JAVACPS) $(XT_JAR)$(PATH_SEPERATOR)$(XML_APIS_JAR)$(PATH_SEPERATOR)$(XERCES_JAR) -Dcom.jclark.xsl.sax.parser=org.apache.xerces.parsers.SAXParser com.jclark.xsl.sax.Driver $(subst,_$(@:b:s/_/./:e:s/.//), $(COMMONMISC)$/$(TARGET)$/$(@:b).xrm) ..$/readme.xsl os1=$(OS) gui1=$(GUI) cp1=$(CPUNAME) com1=$(COM) lang1=$(@:b:s/_/./:e:s/.//) type=text file=$@
+ .ELSE
+ 	sed 's|xmlns:xt="http://www.jclark.com/xt"||;s|extension-element-prefixes="xt"||;s|.*xt:document.*||;s|<xsl:output method = "HTML" doctype-public = "-//W3C//DTD HTML 3.2//EN" />|<xsl:output method="text" />|' < ..$/readme.xsl | xsltproc -o $@ \
+ 	         --stringparam os1 $(OS) \
