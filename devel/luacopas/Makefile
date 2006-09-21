@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2006/07/27 21:13:56 pedro Exp $
+# $OpenBSD: Makefile,v 1.5 2006/09/21 01:21:19 pedro Exp $
 
-BROKEN=		"Pending update for Lua 5.1"
 COMMENT=	"coroutine oriented portable asynchronous services for lua"
-DISTNAME=	copas-1.0
-PKGNAME=	luacopas-1.0p0
+V=		1.1.0
+DISTNAME=	copas-${V}
+PKGNAME=	luacopas-${V}
 CATEGORIES=	devel
-MASTER_SITES=	http://luaforge.net/frs/download.php/823/
+MASTER_SITES=	http://luaforge.net/frs/download.php/1768/
 
 HOMEPAGE=	http://www.keplerproject.org/copas/
 
@@ -21,14 +21,9 @@ NO_BUILD=	Yes
 NO_REGRESS=	Yes
 RUN_DEPENDS=	::lang/lua ::net/luasocket
 
-post-extract:
-	@sed -e "s:@copaspath@:${PREFIX}/lua/luacopas/?.lua:g" \
-		${FILESDIR}/init.lua > ${WRKSRC}/init.lua
-
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lua/luacopas
-	${INSTALL_DATA} ${WRKSRC}/init.lua ${PREFIX}/lua/luacopas
-	${INSTALL_DATA} ${WRKSRC}/src/copas/copas.lua ${PREFIX}/lua/luacopas
+	${INSTALL_DATA_DIR} ${PREFIX}/share/lua/5.1
+	${INSTALL_DATA} ${WRKSRC}/src/copas/copas.lua ${PREFIX}/share/lua/5.1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/luacopas
 	${INSTALL_DATA} ${WRKSRC}/doc/us/*.html ${WRKSRC}/doc/us/*.png \
 		${PREFIX}/share/doc/luacopas

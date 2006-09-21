@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/08/02 17:31:30 pedro Exp $
-@unexec lua ${SYSCONFDIR}/lua/luapkg.lua del luacopas
-lua/luacopas/
-lua/luacopas/copas.lua
-lua/luacopas/init.lua
-@exec lua ${SYSCONFDIR}/lua/luapkg.lua add luacopas ${PREFIX}/lua/luacopas/init.lua
+@comment $OpenBSD: PLIST,v 1.3 2006/09/21 01:21:19 pedro Exp $
 share/doc/luacopas/
 share/doc/luacopas/copas.png
 share/doc/luacopas/index.html
 share/doc/luacopas/license.html
 share/doc/luacopas/manual.html
 share/doc/luacopas/reference.html
+share/lua/
+share/lua/5.1/
+share/lua/5.1/copas.lua
