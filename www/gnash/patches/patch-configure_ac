@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2006/09/21 15:48:10 jolan Exp $
+--- configure.ac.orig	Tue Sep 19 08:39:04 2006
++++ configure.ac	Wed Sep 20 15:54:37 2006
+@@ -456,7 +456,7 @@ if test x"$pthreads" = x"yes"; then
+ 	fi
+ fi
+ 
+-AX_GCC_ARCHFLAG(no)
++#AX_GCC_ARCHFLAG(no)
+ 
+ dnl enable more warnings. These should be cleaned up to make Gnash a
+ dnl better project, but for now they generate too many messages,
