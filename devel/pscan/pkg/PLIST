@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/09/21 20:52:26 steven Exp $
+bin/find_formats.sh
+bin/pscan
+share/examples/pscan/
+share/examples/pscan/test.c

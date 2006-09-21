@@ -1,0 +1,2 @@
+PScan is a program which attempts to scan C source files for common
+function abuses, which often lead to buffer overflows.
