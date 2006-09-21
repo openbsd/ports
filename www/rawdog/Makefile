@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2006/06/03 09:48:04 alek Exp $
+# $OpenBSD: Makefile,v 1.14 2006/09/21 08:20:28 xsa Exp $
 
 COMMENT=	"RSS Aggregator Without Delusions Of Grandeur"
 
-DISTNAME=	rawdog-2.5
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	rawdog-2.10
 CATEGORIES=	www news
 
 HOMEPAGE=	http://offog.org/code/rawdog.html
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
