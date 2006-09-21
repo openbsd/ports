@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/09/21 15:48:10 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2006/09/21 23:14:48 jolan Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	"flash player with firefox browser plugin"
@@ -20,12 +20,18 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+AUTOCONF_VERSION=2.59
+AUTOMAKE_VERSION=1.9
 LIBTOOL_FLAGS+=	--tag=disable-static
 MODULES=	gettext
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_X11=	Yes
+
+BUILD_DEPENDS+=	::devel/autoconf/${AUTOCONF_VERSION} \
+		::devel/automake/${AUTOMAKE_VERSION} \
+		::devel/metaauto
 
 LIB_DEPENDS+=	atk-1.0.>=1011::devel/atk \
 		SDL_mixer.>=3::devel/sdl-mixer \
@@ -40,8 +46,6 @@ WANTLIB=	GL GLU ICE SM X11 Xext Xmu Xrender Xt c crypto fontconfig \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pangox-1.0 png smpeg \
 		vorbis vorbisfile
 
-AUTOCONF_VERSION=2.59
-AUTOMAKE_VERSION=1.9
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
