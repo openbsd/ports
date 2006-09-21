@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2006/09/18 21:02:57 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2006/09/21 19:56:26 naddy Exp $
 
 COMMENT=		"Ncurses BitTorrent Client based on LibTorrent"
 
-DISTNAME=		rtorrent-0.4.5
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		rtorrent-0.5.3
 CATEGORIES=		net
 HOMEPAGE=		http://libtorrent.rakshasa.no/
 
@@ -20,7 +19,7 @@ WANTLIB=		c crypto m ncurses sigc-2.0 ssl stdc++ z
 MASTER_SITES=		${HOMEPAGE}downloads/
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=		torrent.>=5::net/libtorrent \
+LIB_DEPENDS=		torrent.>=8::net/libtorrent \
 			curl.>=3::net/curl
 
 USE_LIBTOOL=		Yes
