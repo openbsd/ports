@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.397 2006/07/30 20:03:02 alek Exp $
+# $OpenBSD: Makefile,v 1.398 2006/09/21 20:53:36 steven Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -367,6 +367,7 @@
      SUBDIR += pmk
      SUBDIR += popt
      SUBDIR += prc-tools
+     SUBDIR += pscan
      SUBDIR += pth
      SUBDIR += py-Checker
      SUBDIR += py-SOAPpy
