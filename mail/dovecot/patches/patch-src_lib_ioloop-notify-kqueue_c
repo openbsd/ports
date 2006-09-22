@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_lib_ioloop-notify-kqueue_c,v 1.4 2006/09/22 15:46:28 brad Exp $
+--- src/lib/ioloop-notify-kqueue.c.orig	Fri Sep 22 10:39:05 2006
++++ src/lib/ioloop-notify-kqueue.c	Fri Sep 22 10:40:08 2006
+@@ -111,7 +111,10 @@ struct io *io_loop_notify_add(struct iol
+ 	io->callback = callback;
+ 	io->context = context;
+ 
+-	EV_SET(&ev, fd, EVFILT_VNODE, EV_ADD,
++	/* EV_CLEAR flag is needed because the EVFILT_VNODE filter reports
++	   event state transitions and not the current state.  With this flag,
++	   the same event is only returned once. */
++	EV_SET(&ev, fd, EVFILT_VNODE, EV_ADD | EV_CLEAR,
+ 	       NOTE_DELETE | NOTE_WRITE | NOTE_EXTEND | NOTE_REVOKE, 0, io);
+ 	if (kevent(ctx->kq, &ev, 1, NULL, 0, NULL) < 0) {
+ 		i_error("kevent(%d, %s) for notify failed: %m", fd, path);
