@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.24 2006/08/03 23:55:11 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2006/09/22 10:39:27 fgsch Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"Python module for writing basic XML applications"
 
-VERSION=	0.7.1
+VERSION=	0.8.4
 DISTNAME=	PyXML-${VERSION}
-PKGNAME=	py-xml-${VERSION}p0
+PKGNAME=	py-xml-${VERSION}
 CATEGORIES=	textproc devel
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pyxml/}
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 MODULES=	lang/python
 
-MODPY_DISTUTILS_BUILDARGS=	--with-libexpat=${LOCALBASE}
+MODPY_DISTUTILS_BUILDARGS=	--with-libexpat=${LOCALBASE} --with-xslt
 
 # pyexpat - use our own pyexpat.so
 # otherwise use the python-expat version
