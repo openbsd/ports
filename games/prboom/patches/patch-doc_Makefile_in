@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2006/09/22 05:54:38 jsg Exp $
+--- doc/Makefile.in.orig	Sat Aug 12 21:33:32 2006
++++ doc/Makefile.in	Fri Sep 22 13:30:07 2006
+@@ -175,7 +175,7 @@ target_alias = @target_alias@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-docdir = $(prefix)/share/doc/@PACKAGE@-@VERSION@
++docdir = $(prefix)/share/doc/prboom
+ man_MANS = prboom.6 boom.cfg.5 prboom-game-server.6
+ doc_DATA = boom.txt MBF.txt MBFFAQ.txt README.demos README.compat
+ EXTRA_DIST = boom.txt prboom.6 boom.cfg.5 prboom-game-server.6 \

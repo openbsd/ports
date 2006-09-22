@@ -1,36 +1,28 @@
-$OpenBSD: patch-configure,v 1.4 2006/04/13 02:27:24 jolan Exp $
---- configure.orig	Thu Apr  6 09:00:39 2006
-+++ configure	Wed Apr 12 15:21:46 2006
-@@ -1871,9 +1871,9 @@ am__tar='${AMTAR} chof - "$$tardir"'; am
- 
- 
- if test "x$prefix" != xNONE; then
+$OpenBSD: patch-configure,v 1.5 2006/09/22 05:54:38 jsg Exp $
+--- configure.orig	Fri Sep 22 13:13:57 2006
++++ configure	Fri Sep 22 13:14:38 2006
+@@ -1914,9 +1914,9 @@ if test "${with_waddir+set}" = set; then
+   DOOMWADDIR="$withval"
+ else
+   if test "x$prefix" != xNONE; then
 -  DOOMWADDIR="$prefix/share/games/doom"
 +  DOOMWADDIR="$prefix/share/prboom"
  else
 -  DOOMWADDIR="$ac_default_prefix/share/games/doom"
 +  DOOMWADDIR="$ac_default_prefix/share/prboom"
  fi
- cat >>confdefs.h <<_ACEOF
- #define DOOMWADDIR "$DOOMWADDIR"
-@@ -3085,7 +3085,6 @@ _ACEOF
-   echo '    the source to insert the relevant pragmas so structures are packed.'
- fi
  
--CFLAGS_OPT="-O2 -fomit-frame-pointer"
- # Check whether --enable-debug or --disable-debug was given.
- if test "${enable_debug+set}" = set; then
-   enableval="$enable_debug"
-@@ -7057,7 +7056,7 @@ if test "${ac_cv_lib_png_png_create_info
+ fi;
+@@ -6005,7 +6005,7 @@ if test "${ac_cv_lib_png_png_create_info
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpng  $LIBS"
-+LIBS="-lpng -lz  $LIBS"
++LIBS="-lpng  -lz $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -7119,7 +7118,7 @@ if test $ac_cv_lib_png_png_create_info_s
+@@ -6067,7 +6067,7 @@ if test $ac_cv_lib_png_png_create_info_s
  #define HAVE_LIBPNG 1
  _ACEOF
  

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2006/08/02 09:36:20 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/09/22 05:54:38 jsg Exp $
 
 COMMENT=	"enhanced clone of Id Software's Doom game; multiplayer"
-DISTNAME=	prboom-2.4.1
+DISTNAME=	prboom-2.4.5
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=prboom/}
 
@@ -23,7 +23,7 @@ LIB_DEPENDS=	SDL_mixer.>=3::devel/sdl-mixer \
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--disable-cpu-opt
+CONFIGURE_ARGS+=--disable-cpu-opt --disable-gl
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 
 .include <bsd.port.mk>

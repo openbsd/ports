@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_Makefile_in,v 1.4 2006/04/13 02:27:24 jolan Exp $
---- src/Makefile.in.orig	Thu Apr  6 09:00:38 2006
-+++ src/Makefile.in	Wed Apr 12 15:17:07 2006
-@@ -249,7 +249,7 @@ target_os = @target_os@
+$OpenBSD: patch-src_Makefile_in,v 1.5 2006/09/22 05:54:38 jsg Exp $
+--- src/Makefile.in.orig	Fri Sep 22 13:15:09 2006
++++ src/Makefile.in	Fri Sep 22 13:15:28 2006
+@@ -245,7 +245,7 @@ target_cpu = @target_cpu@
+ target_os = @target_os@
  target_vendor = @target_vendor@
- EXTRA_SUBDIRS = Posix SDL
- SUBDIRS = SDL POSIX
+ SUBDIRS = SDL POSIX MAC
 -gamesdir = $(prefix)/games
 +gamesdir = $(prefix)/bin
  prboom_game_server_SOURCES = d_server.c i_udp_sdl.c protocol.h

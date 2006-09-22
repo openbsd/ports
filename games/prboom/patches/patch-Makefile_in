@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2006/09/22 05:54:38 jsg Exp $
+--- Makefile.in.orig	Fri Sep 22 13:30:36 2006
++++ Makefile.in	Fri Sep 22 13:30:54 2006
+@@ -207,7 +207,7 @@ AUX_DIST_GEN = \
+ 	$(ac_aux_dir)/missing
+ 
+ MAINTAINERCLEANFILES = $(AUX_DIST_GEN)
+-docdir = $(prefix)/share/doc/@PACKAGE@-@VERSION@
++docdir = $(prefix)/share/doc/prboom
+ SUBDIRS = doc data src ICONS VisualC8 VisualC6
+ EXTRA_DIST = prboom.spec.in prboom.spec config.h bootstrap $(AUX_DIST_GEN)
+ doc_DATA = README COPYING AUTHORS NEWS
