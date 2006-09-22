@@ -1,19 +1,12 @@
-$OpenBSD: patch-src_dns_c,v 1.8 2004/12/04 20:44:27 couderc Exp $
---- src/dns.c.orig	Fri May 21 16:13:07 2004
-+++ src/dns.c	Wed Aug 18 17:46:09 2004
-@@ -31,14 +31,13 @@
- #include "dns.h"
- #include "list.h"
- 
--#define DEBUG_LEVEL 5
- #include "debug.h"
- 
- 
+$OpenBSD: patch-src_dns_c,v 1.9 2006/09/22 04:13:19 pvalchev Exp $
+--- src/dns.c.orig	Wed Mar 15 09:01:00 2006
++++ src/dns.c	Tue Jun 20 21:14:46 2006
+@@ -38,7 +38,7 @@
  /*
-  * Note: comment the following line for debugging or gprof profiling.
+  * Uncomment the following line for debugging or gprof profiling.
   */
--#define G_DNS_THREADED
-+/* #define G_DNS_THREADED */
+-/* #undef D_DNS_THREADED */
++#undef D_DNS_THREADED
  
  /*
   * Uncomment the following line for libc5 optimization

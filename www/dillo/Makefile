@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.22 2006/08/04 00:10:42 espie Exp $
-
-BROKEN=			"broken memory allocation in dpi"
+# $OpenBSD: Makefile,v 1.23 2006/09/22 04:13:19 pvalchev Exp $
 
 COMMENT=		"Fast and light gtk-based web browser"
 
-VERSION=		0.8.3
+VERSION=		0.8.6
 DISTNAME=		dillo-${VERSION}
 CATEGORIES=     	www
 
 HOMEPAGE=		http://www.dillo.org/
 
-MAINTAINER=		Damien Couderc <couderc@openbsd.org>
+MAINTAINER=		Jim Uhl <juhl@mala.bc.ca>
 
 # GPL license
 PERMIT_PACKAGE_CDROM=	Yes
@@ -30,7 +28,7 @@ LIB_DEPENDS=    jpeg.>=62::graphics/jpeg \
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--enable-cookies --enable-ipv6
+CONFIGURE_ARGS=		--enable-cookies --enable-ipv6 --disable-dlgui
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

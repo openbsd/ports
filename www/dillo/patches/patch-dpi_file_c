@@ -1,0 +1,12 @@
+$OpenBSD: patch-dpi_file_c,v 1.1 2006/09/22 04:13:19 pvalchev Exp $
+--- dpi/file.c.orig	Tue Apr 11 10:50:23 2006
++++ dpi/file.c	Sat Jul  1 16:30:45 2006
+@@ -615,7 +615,7 @@
+    /* Send HTTP stream */
+    sock_handler_printf(Client->sh, 0,
+       "Content-Type: %s\n"
+-      "Content-length: %ld\n\n",
++      "Content-length: %lld\n\n",
+       ct, sb->st_size);
+ 
+    /* Send raw file contents */

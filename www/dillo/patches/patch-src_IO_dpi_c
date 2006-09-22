@@ -1,15 +1,15 @@
-$OpenBSD: patch-src_IO_dpi_c,v 1.6 2004/12/04 20:44:27 couderc Exp $
---- src/IO/dpi.c.orig	Thu Jul 15 15:37:28 2004
-+++ src/IO/dpi.c	Sat Dec  4 19:28:46 2004
-@@ -339,9 +339,9 @@ static gint Dpi_start_dpid()
+$OpenBSD: patch-src_IO_dpi_c,v 1.7 2006/09/22 04:13:19 pvalchev Exp $
+--- src/IO/dpi.c.orig	Wed Mar 15 07:50:04 2006
++++ src/IO/dpi.c	Tue Jun 20 21:20:04 2006
+@@ -330,9 +330,9 @@
        /* This is the child process.  Execute the command. */
        gchar *path1 = a_Misc_prepend_user_home(".dillo/dpid");
-       close(st_pipe[0]);
+       Dpi_close_fd(st_pipe[0]);
 -      if (execl(path1, "dpid", NULL) == -1) {
 +      if (execl(path1, "dpid", (void *)NULL) == -1) {
           g_free(path1);
 -         if (execlp("dpid", "dpid", NULL) == -1) {
 +         if (execlp("dpid", "dpid", (void *)NULL) == -1) {
              DEBUG_MSG(4, "Dpi_start_dpid (child): %s\n", g_strerror(errno));
-             write(st_pipe[1], "ERROR", 5);
-             close(st_pipe[1]);
+             do
+                n = write(st_pipe[1], "ERROR", 5);

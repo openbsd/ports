@@ -1,11 +1,28 @@
-$OpenBSD: patch-src_cookies_c,v 1.4 2004/12/04 20:44:27 couderc Exp $
---- src/cookies.c.orig	Fri May 21 16:13:07 2004
-+++ src/cookies.c	Wed Aug 18 17:46:55 2004
-@@ -32,7 +32,6 @@
- #include "list.h"
- #include "cookies.h"
+$OpenBSD: patch-src_cookies_c,v 1.5 2006/09/22 04:13:19 pvalchev Exp $
+--- src/cookies.c.orig	Wed Mar 29 10:48:13 2006
++++ src/cookies.c	Sun Jul  2 18:00:44 2006
+@@ -15,7 +15,6 @@
+  * http://www.cis.ohio-state.edu/cs/Services/rfc/rfc-text/rfc2965.txt
+  */
  
--#define DEBUG_LEVEL 8
+-#define DEBUG_LEVEL 10
  #include "debug.h"
  
- /* The maximum length of a line in the cookie file */
+ 
+@@ -97,13 +96,13 @@ static FILE *Cookies_fopen(const char *f
+ 
+          DEBUG_MSG(10, "Cookies: Created file: %s\n", filename);
+          F_in = Cookies_fopen(filename, NULL);
++
++	 /* set close on exec */
++	 fcntl(fileno(F_in), F_SETFD, FD_CLOEXEC | fcntl(fileno(F_in), F_GETFD));
+       } else {
+          DEBUG_MSG(10, "Cookies: Could not create file: %s!\n", filename);
+       }
+    }
+-
+-   /* set close on exec */
+-   fcntl(fileno(F_in), F_SETFD, FD_CLOEXEC | fcntl(fileno(F_in), F_GETFD));
+ 
+    return F_in;
+ }
