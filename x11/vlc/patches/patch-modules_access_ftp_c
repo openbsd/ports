@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_access_ftp_c,v 1.1 2006/09/22 02:23:13 pvalchev Exp $
+--- modules/access/ftp.c.orig	Thu Sep 21 19:06:22 2006
++++ modules/access/ftp.c	Thu Sep 21 19:06:43 2006
+@@ -540,7 +540,7 @@ static int ftp_ReadCommand( access_t *p_
+     return( i_answer / 100 );
+ }
+ 
+-static int ftp_StartStream( access_t *p_access, off_t i_start )
++static int ftp_StartStream( access_t *p_access, int64_t i_start )
+ {
+     access_sys_t *p_sys = p_access->p_sys;
+ 
