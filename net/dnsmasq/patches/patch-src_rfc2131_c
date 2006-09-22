@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_rfc2131_c,v 1.1 2006/09/22 00:44:28 pvalchev Exp $
+--- src/rfc2131.c.orig	Thu Sep 21 17:46:43 2006
++++ src/rfc2131.c	Thu Sep 21 17:47:02 2006
+@@ -109,8 +109,9 @@ size_t dhcp_reply(struct daemon *daemon,
+   unsigned short fuzz = 0;
+   unsigned int mess_type = 0;
+   unsigned char fqdn_flags = 0;
+-  subnet_addr.s_addr = 0;
+   unsigned char *agent_id = NULL;
++
++  subnet_addr.s_addr = 0;
+ 
+   if (mess->op != BOOTREQUEST || mess->hlen > DHCP_CHADDR_MAX)
+     return 0;
