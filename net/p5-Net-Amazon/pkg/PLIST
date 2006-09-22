@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/04/24 20:28:12 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2006/09/22 13:33:00 steven Exp $
 ${P5SITE}/Net/Amazon/
 ${P5SITE}/Net/Amazon.pm
 ${P5SITE}/Net/Amazon/Attribute/
@@ -95,6 +95,8 @@ share/examples/p5-Net-Amazon/rate_limit
 share/examples/p5-Net-Amazon/reviews
 share/examples/p5-Net-Amazon/seller
 share/examples/p5-Net-Amazon/sim
+share/examples/p5-Net-Amazon/similar
+share/examples/p5-Net-Amazon/similar2
 share/examples/p5-Net-Amazon/textstream
 share/examples/p5-Net-Amazon/upc
 share/examples/p5-Net-Amazon/wishlist

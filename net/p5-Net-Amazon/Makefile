@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2005/04/24 20:28:12 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2006/09/22 13:33:00 steven Exp $
 
 COMMENT=		"Perl Interface to Amazon.{co.uk,com} Web Services"
 
-DISTNAME=		Net-Amazon-0.33
+DISTNAME=		Net-Amazon-0.35
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		net perl5
 
