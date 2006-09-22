@@ -1,0 +1,12 @@
+$OpenBSD: patch-imap_backend_c,v 1.1 2006/09/22 09:08:24 jasper Exp $
+--- imap/backend.c.orig	Sun Sep 17 16:40:12 2006
++++ imap/backend.c	Sun Sep 17 16:40:45 2006
+@@ -271,7 +271,7 @@ struct backend *backend_connect(struct b
+     /* need to (re)establish connection to server or create one */
+     int sock = -1;
+     int r;
+-    int err = 0;
++    int err = -1;
+     struct addrinfo hints, *res0 = NULL, *res1 = NULL, *res;
+     struct sockaddr_un sunsock;
+     char buf[2048], *mechlist = NULL;
