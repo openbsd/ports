@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2006/07/29 12:58:53 aanriot Exp $
+# $OpenBSD: Makefile,v 1.3 2006/09/22 12:08:56 aanriot Exp $
 
 COMMENT=	"GTK C code documentation system"
 
-VERSION=	1.6
+VERSION=	1.7
 DISTNAME=	gtk-doc-${VERSION}
 CATEGORIES=    	textproc devel
 
 HOMEPAGE=	http://www.gtk.org/gtk-doc/
-
-MAINTAINER=	Alexandre Anriot <aanriot@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -26,7 +24,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::textproc/openjade 	\
 		::textproc/docbook 	\
 		::textproc/docbook-xsl 	\
-		::textproc/libxslt
+		::textproc/libxslt	\
+		::textproc/scrollkeeper
 
 post-extract:
 	cp ${LOCALBASE}/share/xml/docbook/catalog.xml \

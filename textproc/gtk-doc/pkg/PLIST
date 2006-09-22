@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/07/29 12:58:53 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/09/22 12:08:56 aanriot Exp $
 bin/gtkdoc-fixxref
 bin/gtkdoc-mkdb
 bin/gtkdoc-mkhtml
@@ -10,6 +10,12 @@ bin/gtkdoc-scanobj
 bin/gtkdocize
 lib/pkgconfig/gtk-doc.pc
 share/aclocal/gtk-doc.m4
+share/gnome/
+share/gnome/help/
+share/gnome/help/gtk-doc-manual/
+share/gnome/help/gtk-doc-manual/C/
+share/gnome/help/gtk-doc-manual/C/fdl-appendix.xml
+share/gnome/help/gtk-doc-manual/C/gtk-doc-manual.xml
 share/gtk-doc/
 share/gtk-doc/data/
 share/gtk-doc/data/devhelp.xsl
@@ -25,5 +31,7 @@ share/gtk-doc/data/right.png
 share/gtk-doc/data/style.css
 share/gtk-doc/data/up.png
 share/gtk-doc/data/version-greater-or-equal.xsl
+share/omf/gtk-doc/
+share/omf/gtk-doc/gtk-doc-manual-C.omf
 share/sgml/gtk-doc/
 share/sgml/gtk-doc/gtk-doc.cat
