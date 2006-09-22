@@ -1,0 +1,11 @@
+$OpenBSD: patch-etc_cnid_dbd_dbd_delete_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+--- etc/cnid_dbd/dbd_delete.c.orig	Wed Jan 21 16:28:42 2004
++++ etc/cnid_dbd/dbd_delete.c	Fri Dec 30 23:47:29 2005
+@@ -11,6 +11,7 @@
+ 
+ #include <string.h>
+ #include <errno.h>
++#include <sys/types.h>
+ #include <netatalk/endian.h>
+ #include <atalk/logger.h>
+ #include <atalk/cnid_dbd_private.h>

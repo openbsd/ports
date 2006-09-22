@@ -1,0 +1,101 @@
+$OpenBSD: patch-libatalk_adouble_ad_open_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+--- libatalk/adouble/ad_open.c.orig	Sat Feb 12 06:22:05 2005
++++ libatalk/adouble/ad_open.c	Fri Dec 30 21:36:40 2005
+@@ -677,31 +677,30 @@ ad_path( path, adflags )
+     const char	*path;
+     int		adflags;
+ {
+-    static char	pathbuf[ MAXPATHLEN + 1];
+-    char	c, *slash, buf[MAXPATHLEN + 1];
++    static char	pathbuf[MAXPATHLEN];
++    char	c, *slash, buf[MAXPATHLEN];
+     size_t      l;
+ 
+-    l = strlcpy(buf, path, MAXPATHLEN +1);
++    l = strlcpy(buf, path, MAXPATHLEN);
+     if ( adflags & ADFLAGS_DIR ) {
+-	strcpy( pathbuf, buf);
+-	if ( *buf != '\0' && l < MAXPATHLEN) {
+-	    pathbuf[l++] = '/';
+-	    pathbuf[l] = 0;
++	strlcpy(pathbuf, buf, sizeof(pathbuf));
++	if ( *buf != '\0' ) {
++		strlcat(pathbuf, "/", sizeof(pathbuf));
+ 	}
+ 	slash = ".Parent";
+     } else {
+ 	if (NULL != ( slash = strrchr( buf, '/' )) ) {
+ 	    c = *++slash;
+ 	    *slash = '\0';
+-	    strcpy( pathbuf, buf);
++	    strlcpy(pathbuf, buf, sizeof(pathbuf));
+ 	    *slash = c;
+ 	} else {
+ 	    pathbuf[ 0 ] = '\0';
+ 	    slash = buf;
+ 	}
+     }
+-    strlcat( pathbuf, ".AppleDouble/", MAXPATHLEN +1);
+-    strlcat( pathbuf, slash, MAXPATHLEN +1);
++    strlcat( pathbuf, ".AppleDouble/", MAXPATHLEN);
++    strlcat( pathbuf, slash, MAXPATHLEN);
+ 
+     return( pathbuf );
+ }
+@@ -715,27 +714,27 @@ ad_path_osx( path, adflags )
+     const char	*path;
+     int		adflags;
+ {
+-    static char	pathbuf[ MAXPATHLEN + 1];
+-    char	c, *slash, buf[MAXPATHLEN + 1];
++    static char	pathbuf[MAXPATHLEN];
++    char	c, *slash, buf[MAXPATHLEN];
+     
+     if (!strcmp(path,".")) {
+             /* fixme */
+         getcwd(buf, MAXPATHLEN);
+     }
+     else {
+-        strlcpy(buf, path, MAXPATHLEN +1);
++        strlcpy(buf, path, MAXPATHLEN);
+     }
+     if (NULL != ( slash = strrchr( buf, '/' )) ) {
+ 	c = *++slash;
+ 	*slash = '\0';
+-	strlcpy( pathbuf, buf, MAXPATHLEN +1);
++	strlcpy( pathbuf, buf, MAXPATHLEN);
+ 	*slash = c;
+     } else {
+ 	pathbuf[ 0 ] = '\0';
+ 	slash = buf;
+     }
+-    strlcat( pathbuf, "._", MAXPATHLEN  +1);  
+-    strlcat( pathbuf, slash, MAXPATHLEN +1);
++    strlcat( pathbuf, "._", MAXPATHLEN);  
++    strlcat( pathbuf, slash, MAXPATHLEN);
+     return pathbuf;
+ }
+ 
+@@ -751,11 +750,11 @@ char 
+ *ad_dir(path)
+     const char		*path;
+ {
+-    static char		modebuf[ MAXPATHLEN + 1];
++    static char		modebuf[ MAXPATHLEN];
+     char 		*slash;
+     size_t              len;
+ 
+-    if ( (len = strlen( path )) >= MAXPATHLEN ) {
++    if ( (len = strlen( path )) >= MAXPATHLEN - 1) {
+         errno = ENAMETOOLONG;
+ 	return NULL;  /* can't do it */
+     }
+@@ -765,7 +764,7 @@ char 
+      * (path or subdirectory name) to get the name we want to stat.
+      * For a path which is just a filename, use "." instead.
+      */
+-    strcpy( modebuf, path );
++    strlcpy( modebuf, path, sizeof(modebuf) );
+     slash = strrchr( modebuf, '/' );
+     /* is last char a '/' */
+     if (slash && slash[1] == 0) {

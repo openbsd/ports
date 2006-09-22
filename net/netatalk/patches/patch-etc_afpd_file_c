@@ -1,0 +1,21 @@
+$OpenBSD: patch-etc_afpd_file_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+--- etc/afpd/file.c.orig	Thu Apr 28 05:24:04 2005
++++ etc/afpd/file.c	Fri Dec 30 23:30:05 2005
+@@ -1026,7 +1026,7 @@ const struct vol *vol;
+ char	*src, *dst, *newname;
+ struct adouble    *adp;
+ {
+-    char	adsrc[ MAXPATHLEN + 1];
++    char	adsrc[ MAXPATHLEN];
+     int		rc;
+ 
+ #ifdef DEBUG
+@@ -1061,7 +1061,7 @@ struct adouble    *adp;
+         }
+     }
+ 
+-    strcpy( adsrc, vol->ad_path( src, 0 ));
++    strlcpy( adsrc, vol->ad_path( src, 0 ), sizeof(adsrc));
+ 
+     if (unix_rename( adsrc, vol->ad_path( dst, 0 )) < 0 ) {
+         struct stat st;

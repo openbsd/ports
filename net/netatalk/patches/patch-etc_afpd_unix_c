@@ -1,0 +1,140 @@
+$OpenBSD: patch-etc_afpd_unix_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+--- etc/afpd/unix.c.orig	Tue Jun 15 18:53:55 2004
++++ etc/afpd/unix.c	Fri Dec 30 23:04:27 2005
+@@ -342,8 +342,8 @@ const mode_t	mode;
+                 strcmp( deskp->d_name, ".." ) == 0 || strlen( deskp->d_name ) > 2 ) {
+             continue;
+         }
+-        strcpy( modbuf, deskp->d_name );
+-        strcat( modbuf, "/" );
++        strlcpy( modbuf, deskp->d_name, sizeof(modbuf) );
++        strlcat( modbuf, "/", sizeof(modbuf) );
+         m = strchr( modbuf, '\0' );
+         if (( sub = opendir( deskp->d_name )) == NULL ) {
+             continue;
+@@ -354,7 +354,7 @@ const mode_t	mode;
+                 continue;
+             }
+             *m = '\0';
+-            strcat( modbuf, subp->d_name );
++            strlcat( modbuf, subp->d_name, sizeof(modbuf) );
+             /* XXX: need to preserve special modes */
+             if (stat(modbuf, &st) < 0) {
+                 LOG(log_error, logtype_afpd, "setdeskmode: stat %s: %s",fullpathname(modbuf), strerror(errno) );
+@@ -471,7 +471,7 @@ const struct vol *vol;
+ const char       *name;
+ const mode_t mode;
+ {
+-    char		buf[ MAXPATHLEN + 1];
++    char		buf[ MAXPATHLEN];
+     struct stat		st;
+     char		*m;
+     struct dirent	*dirp;
+@@ -540,8 +540,8 @@ const mode_t mode;
+         LOG(log_error, logtype_afpd, "setdirmode: opendir %s: %s", fullpathname(".AppleDouble"),strerror(errno) );
+         return( -1 );
+     }
+-    strcpy( buf, adouble_p);
+-    strcat( buf, "/" );
++    strlcpy( buf, adouble_p, sizeof(buf));
++    strlcat( buf, "/", sizeof(buf) );
+     m = strchr( buf, '\0' );
+     for ( dirp = readdir( dir ); dirp != NULL; dirp = readdir( dir )) {
+         if ( strcmp( dirp->d_name, "." ) == 0 ||
+@@ -549,7 +549,7 @@ const mode_t mode;
+             continue;
+         }
+         *m = '\0';
+-        strcat( buf, dirp->d_name );
++        strlcat( buf, dirp->d_name, sizeof(buf) );
+ 
+         if ( stat( buf, &st ) < 0 ) {
+             LOG(log_error, logtype_afpd, "setdirmode: stat %s: %s", buf, strerror(errno) );
+@@ -582,7 +582,7 @@ int setdeskowner( uid, gid )
+ const uid_t	uid;
+ const gid_t	gid;
+ {
+-    char		wd[ MAXPATHLEN + 1];
++    char		wd[ MAXPATHLEN];
+     char		modbuf[12 + 1], *m;
+     struct dirent	*deskp, *subp;
+     DIR			*desk, *sub;
+@@ -605,8 +605,8 @@ const gid_t	gid;
+                 strlen( deskp->d_name ) > 2 ) {
+             continue;
+         }
+-        strcpy( modbuf, deskp->d_name );
+-        strcat( modbuf, "/" );
++        strlcpy( modbuf, deskp->d_name, sizeof(modbuf));
++        strlcat( modbuf, "/", sizeof(modbuf) );
+         m = strchr( modbuf, '\0' );
+         if (( sub = opendir( deskp->d_name )) == NULL ) {
+             continue;
+@@ -617,7 +617,7 @@ const gid_t	gid;
+                 continue;
+             }
+             *m = '\0';
+-            strcat( modbuf, subp->d_name );
++            strlcat( modbuf, subp->d_name, sizeof(modbuf) );
+             /* XXX: add special any uid, ignore group bits */
+             if ( chown( modbuf, uid, gid ) < 0 && errno != EPERM ) {
+                 LOG(log_error, logtype_afpd, "setdeskown: chown %s: %s", fullpathname(modbuf), strerror(errno) );
+@@ -692,7 +692,7 @@ const char      *name;
+ const uid_t	uid;
+ const gid_t	gid;
+ {
+-    char		buf[ MAXPATHLEN + 1];
++    char		buf[ MAXPATHLEN];
+     struct stat		st;
+     char		*m;
+     struct dirent	*dirp;
+@@ -735,16 +735,16 @@ const gid_t	gid;
+             goto setdirowner_noadouble;
+         return( -1 );
+     }
+-    strcpy( buf, adouble_p );
+-    strcat( buf, "/" );
+-    m = strchr( buf, '\0' );
++    strlcpy( buf, adouble_p, sizeof(buf) );
++    strlcat( buf, "/", sizeof(buf) );
++    m = strchr(buf, '\0');
+     for ( dirp = readdir( dir ); dirp != NULL; dirp = readdir( dir )) {
+         if ( strcmp( dirp->d_name, "." ) == 0 ||
+                 strcmp( dirp->d_name, ".." ) == 0 ) {
+             continue;
+         }
+         *m = '\0';
+-        strcat( buf, dirp->d_name );
++        strlcat( buf, dirp->d_name, sizeof(buf));
+         if ( chown( buf, uid, gid ) < 0 && errno != EPERM ) {
+             LOG(log_debug, logtype_afpd, "setdirowner: chown %d/%d %s: %s",
+                 uid, gid, fullpathname(buf), strerror(errno) );
+@@ -788,8 +788,8 @@ static int recursive_chown(const char *p
+     struct dirent *entry;
+     char *name;
+     int ret = 0;
+-    char newpath[PATH_MAX+1];
+-    newpath[PATH_MAX] = '\0';
++    char newpath[PATH_MAX];
++    newpath[PATH_MAX - 1] = '\0';
+     
+     if (chown(path, uid, gid) < 0) {
+         LOG(log_error, logtype_afpd, "cannot chown() file [%s] (uid = %d): %s", path, uid, strerror(errno));
+@@ -831,7 +831,7 @@ recursive_chown_end:
+ int unix_rename(const char *oldpath, const char *newpath)
+ {
+ #if 0
+-	char pd_name[PATH_MAX+1];
++	char pd_name[PATH_MAX];
+ 	int i;
+         struct stat pd_stat;
+         uid_t uid;
+@@ -840,7 +840,7 @@ int unix_rename(const char *oldpath, con
+ 	if (rename(oldpath, newpath) < 0)
+ 		return -1;
+ #if 0
+-	for (i = 0; i <= PATH_MAX && newpath[i] != '\0'; i++)
++	for (i = 0; i < PATH_MAX && newpath[i] != '\0'; i++)
+ 		pd_name[i] = newpath[i];
+ 	pd_name[i] = '\0';
+ 

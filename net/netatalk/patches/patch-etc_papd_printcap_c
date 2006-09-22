@@ -1,0 +1,12 @@
+$OpenBSD: patch-etc_papd_printcap_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+--- etc/papd/printcap.c.orig	Fri Jun 18 03:56:04 2004
++++ etc/papd/printcap.c	Sat Dec 31 13:04:13 2005
+@@ -289,7 +289,7 @@ int tnchktc( cap )
+ 	/* p now points to beginning of last field */
+ 	if (p[0] != 't' || p[1] != 'c')
+ 		return(1);
+-	strcpy(tcname,p+3);
++	strlcpy(tcname,p+3,sizeof(tcname));
+ 	q = tcname;
+ 	while (q && *q != ':')
+ 		q++;

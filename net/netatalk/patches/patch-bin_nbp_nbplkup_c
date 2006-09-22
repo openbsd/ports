@@ -1,0 +1,32 @@
+$OpenBSD: patch-bin_nbp_nbplkup_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+--- bin/nbp/nbplkup.c.orig	Mon Jan 31 14:50:35 2005
++++ bin/nbp/nbplkup.c	Sat Dec 31 00:15:28 2005
+@@ -126,25 +126,22 @@ int main( ac, av )
+ 	    exit( 1 );
+ 	}
+ 
+-	if (( name = (char *)malloc( strlen( Obj ) + 1 )) == NULL ) {
++	if (asprintf(&name, "%s", Obj)) {
+ 	    perror( "malloc" );
+ 	    exit( 1 );
+ 	}
+-	strcpy( name, Obj );
+ 	Obj = name;
+ 
+-	if (( name = (char *)malloc( strlen( Type ) + 1 )) == NULL ) {
++	if (asprintf(&name, "%s", Type)) {
+ 	    perror( "malloc" );
+ 	    exit( 1 );
+ 	}
+-	strcpy( name, Type );
+ 	Type = name;
+ 
+-	if (( name = (char *)malloc( strlen( Zone ) + 1 )) == NULL ) {
++	if (asprintf(&name, "%s", Zone)) {
+ 	    perror( "malloc" );
+ 	    exit( 1 );
+ 	}
+-	strcpy( name, Zone );
+ 	Zone = name;
+ 
+     }

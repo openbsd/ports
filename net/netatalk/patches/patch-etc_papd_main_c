@@ -1,0 +1,195 @@
+$OpenBSD: patch-etc_papd_main_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+--- etc/papd/main.c.orig	Tue Jun  8 21:25:53 2004
++++ etc/papd/main.c	Sat Dec 31 02:51:53 2005
+@@ -196,12 +196,10 @@ int main( ac, av )
+     if (( p = strchr( hostname, '.' )) != 0 ) {
+ 	*p = '\0';
+     }
+-    if (( defprinter.p_name = (char *)malloc( strlen( hostname ) + 1 ))
+-	    == NULL ) {
++    if (( defprinter.p_name = strdup(hostname)) == NULL ) {
+ 	perror( "malloc" );
+ 	exit( 1 );
+     }
+-    strcpy( defprinter.p_name, hostname );
+     defprinter.p_type = "LaserWriter";
+     defprinter.p_zone = "*";
+     memset(&defprinter.p_addr, 0, sizeof(defprinter.p_addr));
+@@ -583,8 +581,8 @@ int getstatus( pr, buf )
+     int			fd = -1, rc;
+ 
+     if ( pr->p_flags & P_SPOOLED && ( pr->p_spool != NULL )) {
+-	strcpy( path, pr->p_spool );
+-	strcat( path, "/status" );
++	strlcpy( path, pr->p_spool, sizeof(path));
++	strlcat( path, "/status", sizeof(path));
+ 	fd = open( path, O_RDONLY);
+     }
+ 
+@@ -643,29 +641,26 @@ static void getprinters( cf )
+ 	    exit( 1 );
+ 	}
+ 	if ( name != defprinter.p_name ) {
+-	    if (( pr->p_name = (char *)malloc( strlen( name ) + 1 )) == NULL ) {
++	    if (( pr->p_name = strdup(name)) == NULL ) {
+ 		perror( "malloc" );
+ 		exit( 1 );
+ 	    }
+-	    strcpy( pr->p_name, name );
+ 	} else {
+ 	    pr->p_name = name;
+ 	}
+ 	if ( type != defprinter.p_type ) {
+-	    if (( pr->p_type = (char *)malloc( strlen( type ) + 1 )) == NULL ) {
++	    if (( pr->p_type = strdup( type )) == NULL ) {
+ 		perror( "malloc" );
+ 		exit( 1 );
+ 	    }
+-	    strcpy( pr->p_type, type );
+ 	} else {
+ 	    pr->p_type = type;
+ 	}
+ 	if ( zone != defprinter.p_zone ) {
+-	    if (( pr->p_zone = (char *)malloc( strlen( zone ) + 1 )) == NULL ) {
++	    if (( pr->p_zone = strdup( zone )) == NULL ) {
+ 		perror( "malloc" );
+ 		exit( 1 );
+ 	    }
+-	    strcpy( pr->p_zone, zone );
+ 	} else {
+ 	    pr->p_zone = zone;
+ 	}
+@@ -681,11 +676,10 @@ static void getprinters( cf )
+ 	if (( p = pgetstr( "pd", &a )) == NULL ) {
+ 	    pr->p_ppdfile = defprinter.p_ppdfile;
+ 	} else {
+-	    if (( pr->p_ppdfile = (char *)malloc( strlen( p ) + 1 )) == NULL ) {
++	    if (( pr->p_ppdfile = strdup( p )) == NULL ) {
+ 		perror( "malloc" );
+ 		exit( 1 );
+ 	    }
+-	    strcpy( pr->p_ppdfile, p );
+ 	}
+ 
+ 	/*
+@@ -701,22 +695,20 @@ static void getprinters( cf )
+ 	    } else {
+ 		pr->p_flags = P_SPOOLED;
+ 	    }
+-	    if (( pr->p_printer = (char *)malloc( strlen( p ) + 1 )) == NULL ) {
++	    if (( pr->p_printer = strdup( p )) == NULL ) {
+ 		perror( "malloc" );
+ 		exit( 1 );
+ 	    }
+-	    strcpy( pr->p_printer, p );
+ 	}
+ 
+ 	/*
+ 	 * Do we want authenticated printing?
+ 	 */
+ 	if ((p = pgetstr( "ca", &a )) != NULL ) {
+-	    if ((pr->p_authprintdir = (char *)malloc(strlen(p)+1)) == NULL) {
++	    if ((pr->p_authprintdir = strdup(p)) == NULL) {
+ 		perror( "malloc" );
+ 		exit(1);
+ 	    }
+-	    strcpy( pr->p_authprintdir, p );
+ 	    pr->p_flags |= P_AUTH;
+ 	    pr->p_flags |= P_AUTH_CAP;
+ 	} else { pr->p_authprintdir = NULL; }
+@@ -727,11 +719,10 @@ static void getprinters( cf )
+ 	}
+ 
+ 	if ((p = pgetstr("am", &a)) != NULL ) {
+-		if ((uamlist = (char *)malloc(strlen(p)+1)) == NULL ) {
++		if ((uamlist = strdup(p)) == NULL ) {
+ 			perror("malloc");
+ 			exit(1);
+ 		}
+-		strcpy(uamlist, p);
+ 	}
+ 
+ 	if ( pr->p_flags & P_SPOOLED ) {
+@@ -741,12 +732,10 @@ static void getprinters( cf )
+ 	    if (( p = pgetstr( "op", &a )) == NULL ) {
+ 		pr->p_operator = defprinter.p_operator;
+ 	    } else {
+-		if (( pr->p_operator = (char *)malloc( strlen( p ) + 1 ))
+-			== NULL ) {
++		if (( pr->p_operator = strdup( p )) == NULL ) {
+ 		    perror( "malloc" );
+ 		    exit( 1 );
+ 		}
+-		strcpy( pr->p_operator, p );
+ 	    }
+ 	}
+ 
+@@ -821,11 +810,10 @@ int rprintcap( pr )
+ 
+     if ( pr->p_ppdfile == defprinter.p_ppdfile ) {
+ 	if ( (p = (char *) cups_get_printer_ppd ( pr->p_printer )) != NULL ) {
+-	    if (( pr->p_ppdfile = (char *)malloc( strlen( p ) + 1 )) == NULL ) {
+-	    	LOG(log_error, logtype_papd, "malloc: %m" );
+-		exit( 1 );
++	    if (( pr->p_ppdfile = strdup( p )) == NULL ) {
++			LOG(log_error, logtype_papd, "malloc: %m" );
++			exit( 1 );
+ 	    }
+-	    strcpy( pr->p_ppdfile, p );
+ 	    pr->p_flags |= P_CUPS_PPD;
+ 	    /*LOG(log_info, logtype_papd, "PPD File for %s set to %s", pr->p_printer, pr->p_ppdfile );*/
+ 	}
+@@ -856,11 +844,10 @@ int rprintcap( pr )
+ 	if (( p = pgetstr( "sd", &a )) == NULL ) {
+ 	    pr->p_spool = defprinter.p_spool;
+ 	} else {
+-	    if (( pr->p_spool = (char *)malloc( strlen( p ) + 1 )) == NULL ) {
++	    if (( pr->p_spool = strdup( p )) == NULL ) {
+ 		LOG(log_error, logtype_papd, "malloc: %m" );
+ 		exit( 1 );
+ 	    }
+-	    strcpy( pr->p_spool, p );
+ 	}
+ 
+ 	/*
+@@ -879,12 +866,10 @@ int rprintcap( pr )
+ 	    if (( p = pgetstr( "ro", &a )) == NULL ) {
+ 		pr->p_role = defprinter.p_role;
+ 	    } else {
+-		if (( pr->p_role =
+-			(char *)malloc( strlen( p ) + 1 )) == NULL ) {
++		if (( pr->p_role = strdup( p )) == NULL ) {
+ 		    LOG(log_error, logtype_papd, "malloc: %m" );
+ 		    exit( 1 );
+ 		}
+-		strcpy( pr->p_role, p );
+ 	    }
+ 
+ 	    if (( c = pgetnum( "si" )) < 0 ) {
+@@ -905,12 +890,10 @@ int rprintcap( pr )
+ 	}
+ 	a = area;
+ 	if (( p = pgetstr( "pc", &a )) != NULL ) {
+-	    if (( pr->p_pagecost_msg =
+-		    (char *)malloc( strlen( p ) + 1 )) == NULL ) {
++	    if (( pr->p_pagecost_msg = strdup( p )) == NULL ) {
+ 		LOG(log_error, logtype_papd, "malloc: %m" );
+ 		exit( 1 );
+ 	    }
+-	    strcpy( pr->p_pagecost_msg, p );
+ 	    pr->p_pagecost = 0;
+ 	} else if ( pr->p_flags & P_ACCOUNT ) {
+ 	    if (( c = pgetnum( "pc" )) < 0 ) {
+@@ -931,11 +914,10 @@ int rprintcap( pr )
+ 	if (( p = pgetstr( "lo", &a )) == NULL ) {
+ 	    pr->p_lock = defprinter.p_lock;
+ 	} else {
+-	    if (( pr->p_lock = (char *)malloc( strlen( p ) + 1 )) == NULL ) {
++	    if (( pr->p_lock = strdup( p )) == NULL ) {
+ 		LOG(log_error, logtype_papd, "malloc: %m" );
+ 		exit( 1 );
+ 	    }
+-	    strcpy( pr->p_lock, p );
+ 	}
+ 
+ #ifdef KRB

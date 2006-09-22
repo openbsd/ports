@@ -1,0 +1,181 @@
+$OpenBSD: patch-etc_afpd_directory_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+--- etc/afpd/directory.c.orig	Wed Feb  9 20:23:10 2005
++++ etc/afpd/directory.c	Sat Dec 31 14:16:49 2005
+@@ -681,7 +681,7 @@ int netatalk_unlink(const char *name)
+ /* ------------------- */
+ static int deletedir(char *dir)
+ {
+-    char path[MAXPATHLEN + 1];
++    char path[MAXPATHLEN];
+     DIR *dp;
+     struct dirent	*de;
+     struct stat st;
+@@ -696,8 +696,8 @@ static int deletedir(char *dir)
+     if ((dp = opendir(dir)) == NULL)
+         return AFP_OK;
+ 
+-    strcpy(path, dir);
+-    strcat(path, "/");
++    strlcpy(path, dir, sizeof(path));
++    strlcat(path, "/", sizeof(path));
+     len++;
+     remain = sizeof(path) -len -1;
+     while ((de = readdir(dp)) && err == AFP_OK) {
+@@ -709,7 +709,7 @@ static int deletedir(char *dir)
+             err = AFPERR_PARAM;
+             break;
+         }
+-        strcpy(path + len, de->d_name);
++        strlcat(path, de->d_name, sizeof(path));
+         if (stat(path, &st)) {
+             continue;
+         }
+@@ -732,7 +732,7 @@ static int deletedir(char *dir)
+ /* do a recursive copy. */
+ static int copydir(const struct vol *vol, char *src, char *dst)
+ {
+-    char spath[MAXPATHLEN + 1], dpath[MAXPATHLEN + 1];
++    char spath[MAXPATHLEN], dpath[MAXPATHLEN];
+     DIR *dp;
+     struct dirent	*de;
+     struct stat st;
+@@ -754,13 +754,13 @@ static int copydir(const struct vol *vol
+     }
+ 
+     /* set things up to copy */
+-    strcpy(spath, src);
+-    strcat(spath, "/");
++    strlcpy(spath, src, sizeof(spath));
++    strlcat(spath, "/", sizeof(spath));
+     slen++;
+     srem = sizeof(spath) - slen -1;
+     
+-    strcpy(dpath, dst);
+-    strcat(dpath, "/");
++    strlcpy(dpath, dst, sizeof(dpath));
++    strlcat(dpath, "/", sizeof(dpath));
+     dlen++;
+     drem = sizeof(dpath) - dlen -1;
+ 
+@@ -774,14 +774,14 @@ static int copydir(const struct vol *vol
+             err = AFPERR_PARAM;
+             break;
+         }
+-        strcpy(spath + slen, de->d_name);
++        strlcat(spath, de->d_name, sizeof(spath));
+ 
+         if (stat(spath, &st) == 0) {
+             if (strlen(de->d_name) > drem) {
+                 err = AFPERR_PARAM;
+                 break;
+             }
+-            strcpy(dpath + dlen, de->d_name);
++            strlcpy(dpath, de->d_name, sizeof(dpath));
+ 
+             if (S_ISDIR(st.st_mode)) {
+                 if (AFP_OK != (err = copydir(vol, spath, dpath)))
+@@ -969,7 +969,7 @@ struct dir	*dir;
+ char	**cpath;
+ {
+     struct dir		   *cdir;
+-    static char		   path[ MAXPATHLEN + 1];
++    static char		   path[ MAXPATHLEN ];
+     static struct path ret;
+ 
+     char		*data, *p;
+@@ -1045,16 +1045,13 @@ char	**cpath;
+                     if ( movecwd( vol, dir->d_parent ) < 0 ) {
+             	         return NULL;    		
+             	    }
+-            	    strcpy(path, dir->d_m_name);
++            	    strlcpy(path, dir->d_m_name, sizeof(path));
+             	    if (dir->d_m_name == dir->d_u_name) {
+             	        ret.u_name = path;
+             	    }
+             	    else {
+-            	        size_t tp = strlen(path)+1;
+-
+-            	        strcpy(path +tp, dir->d_u_name);
+-            	        ret.u_name =  path +tp;
+-            	        
++						ret.u_name = path + (strlen(path) + 1);
++            	        strlcat(path, dir->d_u_name, sizeof(path));
+             	    }
+             	    /* FIXME should we set :
+             	      ret.st_valid = 1;
+@@ -1120,7 +1117,7 @@ char	**cpath;
+                         afp_errno = AFPERR_PARAM;
+                         return( NULL );
+                     }
+-                    strcpy(path, temp);
++                    strlcpy(path, temp, sizeof(path));
+                 }
+                 /* check for OS X mangled filename :( */
+ 	    
+@@ -1132,8 +1129,8 @@ char	**cpath;
+                     */
+                     if ( (t = utompath(vol, ret.u_name, fileid, utf8_encoding())) ) {
+                         /* at last got our view of mac name */
+-                        strcpy(path,t);
+-                    }                    
++                        strlcpy(path, t, sizeof(path));
++                    }
+                 }
+             }
+             if ( !extend ) {
+@@ -1192,7 +1189,7 @@ int movecwd( vol, dir)
+ const struct vol	*vol;
+ struct dir	*dir;
+ {
+-    char path[MAXPATHLEN + 1];
++    char path[MAXPATHLEN];
+     struct dir	*d;
+     char	*p, *u;
+     int		n;
+@@ -2111,25 +2108,25 @@ struct dir	*dir, *newparent;
+     if (dir->d_m_name == dir->d_u_name)
+         dir->d_u_name = NULL;
+ 
+-    if ((buf = (char *) realloc( dir->d_m_name, len + 1 )) == NULL ) {
++    if ((buf = strdup(newname)) == NULL ) {
+         LOG(log_error, logtype_afpd, "renamedir: realloc mac name: %s", strerror(errno) );
+         /* FIXME : fatal ? */
+         return AFPERR_MISC;
+     }
++	free(dir->d_m_name);
+     dir->d_m_name = buf;
+-    strcpy( dir->d_m_name, newname );
+ 
+     if (newname == dst) {
+     	free(dir->d_u_name);
+     	dir->d_u_name = dir->d_m_name;
+     }
+     else {
+-        if ((buf = (char *) realloc( dir->d_u_name, strlen(dst) + 1 )) == NULL ) {
++        if ((buf = strdup(dst)) == NULL ) {
+             LOG(log_error, logtype_afpd, "renamedir: realloc unix name: %s", strerror(errno) );
+             return AFPERR_MISC;
+         }
++		free(dir->d_u_name);
+         dir->d_u_name = buf;
+-        strcpy( dir->d_u_name, dst );
+     }
+ 
+     if (( parent = dir->d_parent ) == NULL ) {
+@@ -2146,7 +2143,6 @@ struct dir	*dir, *newparent;
+     return( AFP_OK );
+ }
+ 
+-#define DOT_APPLEDOUBLE_LEN 13
+ /* delete an empty directory */
+ int deletecurdir( vol, path, pathlen )
+ const struct vol	*vol;
+@@ -2200,7 +2196,7 @@ int pathlen;
+                     return AFPERR_DIRNEMPT;
+                 }
+ 
+-                strcpy(path + DOT_APPLEDOUBLE_LEN, de->d_name);
++                strcat(path, de->d_name);
+                 if ((err = netatalk_unlink(path))) {
+                     closedir(dp);
+                     return err;

@@ -1,0 +1,39 @@
+$OpenBSD: patch-etc_afpd_mangle_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+--- etc/afpd/mangle.c.orig	Mon Feb 14 11:01:54 2005
++++ etc/afpd/mangle.c	Sat Dec 31 14:19:54 2005
+@@ -235,7 +235,7 @@ unsigned char *
+ mangle(const struct vol *vol, unsigned char *filename, size_t filenamelen, unsigned char *uname, cnid_t id, int flags) {
+     unsigned char *ext = NULL;
+     unsigned char *m = NULL;
+-    static unsigned char mfilename[MAXPATHLEN + 1];
++    static unsigned char mfilename[MAXPATHLEN];
+     unsigned char mangle_suffix[MANGLE_LENGTH + 1];
+     size_t ext_len = 0;
+     size_t maxlen;
+@@ -259,19 +259,19 @@ mangle(const struct vol *vol, unsigned c
+ 	    ext_len = MAX_EXT_LENGTH;
+ 	}
+     }
+-    m = mfilename;
+-    k = sprintf(mangle_suffix, "%c%X", MANGLE_CHAR, ntohl(id));
++    k = snprintf(mangle_suffix, sizeof(mangle_suffix), "%c%X", MANGLE_CHAR, ntohl(id));
+ 
+-    strlcpy(m, filename, maxlen  - k - ext_len +1);
++    strlcpy(mfilename, filename, maxlen - k - ext_len +1);
++	m = mfilename;
+     if (flags & 2)
+         m = utf8_mangle_validate(m, maxlen - k - ext_len +1);
+     if (*m == 0) {
+-        strcat(m, "???");
++        strlcat(mfilename, "???", sizeof(mfilename));
+     }
+-    strcat(m, mangle_suffix);
++    strlcat(mfilename, mangle_suffix, sizeof(mfilename));
+     if (ext) {
+-	strncat(m, ext, ext_len);
++	strlcat(mfilename, ext, sizeof(mfilename));
+     }
+ 
+-    return m;
++    return mfilename;
+ }

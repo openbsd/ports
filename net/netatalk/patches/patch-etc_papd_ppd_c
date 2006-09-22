@@ -1,0 +1,32 @@
+$OpenBSD: patch-etc_papd_ppd_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+--- etc/papd/ppd.c.orig	Sun Feb  6 05:16:02 2005
++++ etc/papd/ppd.c	Sat Dec 31 13:36:19 2005
+@@ -219,12 +219,10 @@ int read_ppd( file, fcnt )
+ 		LOG(log_error, logtype_papd, "malloc: %m" );
+ 		exit( 1 );
+ 	    }
+-	    if (( pfo->pd_font =
+-		    (char *)malloc( strlen( pe->pe_option ) + 1 )) == NULL ) {
++	    if (( pfo->pd_font = strdup( pe->pe_option )) == NULL ) {
+ 		LOG(log_error, logtype_papd, "malloc: %m" );
+ 		exit( 1 );
+ 	    }
+-	    strcpy( pfo->pd_font, pe->pe_option );
+ 	    pfo->pd_next = ppd_fonts;
+ 	    ppd_fonts = pfo;
+ 	    continue;
+@@ -238,13 +236,10 @@ int read_ppd( file, fcnt )
+ 	    }
+ 	}
+ 	if ( pfe->pd_name ) { /*&& (pfe->pd_value == NULL) ) { */
+-	    if (( pfe->pd_value =
+-		    (char *)malloc( strlen( pe->pe_value ) + 1 )) == NULL ) {
++	    if (( pfe->pd_value = strdup( pe->pe_value )) == NULL ) {
+ 		LOG(log_error, logtype_papd, "malloc: %m" );
+ 		exit( 1 );
+ 	    }
+-
+-	    strcpy( pfe->pd_value, pe->pe_value );
+ 	    continue;
+ 	}
+     }

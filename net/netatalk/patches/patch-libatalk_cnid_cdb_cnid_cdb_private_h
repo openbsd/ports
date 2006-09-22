@@ -1,0 +1,11 @@
+$OpenBSD: patch-libatalk_cnid_cdb_cnid_cdb_private_h,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+--- libatalk/cnid/cdb/cnid_cdb_private.h.orig	Sun Mar 21 23:38:51 2004
++++ libatalk/cnid/cdb/cnid_cdb_private.h	Fri Dec 30 19:05:17 2005
+@@ -9,6 +9,7 @@
+ #include "config.h"
+ #endif /* HAVE_CONFIG_H */
+ 
++#include <sys/types.h>
+ #include <netatalk/endian.h>
+ 
+ #ifdef HAVE_UNISTD_H

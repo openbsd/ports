@@ -1,0 +1,21 @@
+$OpenBSD: patch-bin_uniconv_uniconv_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+--- bin/uniconv/uniconv.c.orig	Sun Jul 11 20:15:18 2004
++++ bin/uniconv/uniconv.c	Fri Dec 30 22:51:44 2005
+@@ -105,7 +105,7 @@ static int veto(const char *path)
+ 
+ static int do_rename( char* src, char *dst, struct stat *st)
+ {
+-    char        adsrc[ MAXPATHLEN + 1];
++    char        adsrc[ MAXPATHLEN];
+     struct      stat tmp_st;
+ 
+     if (!stat(dst, &tmp_st)) {
+@@ -121,7 +121,7 @@ static int do_rename( char* src, char *d
+     if (S_ISDIR(st->st_mode))
+ 	return 0;
+ 
+-    strcpy( adsrc, ad_path( src, 0 ));
++    strlcpy( adsrc, ad_path( src, 0 ), sizeof(adsrc));
+ 
+     if (rename( adsrc, ad_path( dst, 0 )) < 0 ) {
+         struct stat ad_st;

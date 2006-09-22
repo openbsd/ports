@@ -1,0 +1,69 @@
+$OpenBSD: patch-libatalk_cnid_cdb_cnid_cdb_open_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+--- libatalk/cnid/cdb/cnid_cdb_open.c.orig	Sun Mar 21 23:38:51 2004
++++ libatalk/cnid/cdb/cnid_cdb_open.c	Sat Dec 31 00:26:34 2005
+@@ -179,21 +179,22 @@ static struct _cnid_db *cnid_cdb_new(con
+ /* --------------- */
+ static int upgrade_required(char *dbdir)
+ {
+-    char path[MAXPATHLEN + 1];
+-    int len, i;
++    char path[MAXPATHLEN];
++	char *p;
++    int i;
+     int found = 0;
+     struct stat st;
+     
+-    strcpy(path, dbdir);
++    strlcpy(path, dbdir, sizeof(path));
+ 
+-    len = strlen(path);
+-    if (path[len - 1] != '/') {
+-        strcat(path, "/");
+-        len++;
++    p = strchr(path, '\0');
++    if (path[strlen(path) - 1] != '/') {
++        strlcat(path, "/", sizeof(path));
+     }
+     
+     for (i = 0; old_dbfiles[i] != NULL; i++) {
+-	strcpy(path + len, old_dbfiles[i]);
++	*p = '\0';
++	strlcat(path, old_dbfiles[i], sizeof(path));
+ 	if ( !(stat(path, &st) < 0) ) {
+ 	    found++;
+ 	    continue;
+@@ -210,7 +211,7 @@ static int upgrade_required(char *dbdir)
+ struct _cnid_db *cnid_cdb_open(const char *dir, mode_t mask)
+ {
+     struct stat st;
+-    char path[MAXPATHLEN + 1];
++    char path[MAXPATHLEN];
+     CNID_private *db;
+     struct _cnid_db *cdb;
+     int open_flag, len;
+@@ -223,7 +224,7 @@ struct _cnid_db *cnid_cdb_open(const cha
+ 
+     /* this checks .AppleDB.
+        We need space for dir + '/' + DBHOMELEN + '/' + DBLEN */
+-    if ((len = strlen(dir)) > (MAXPATHLEN - DBHOMELEN - DBLEN - 2)) {
++    if ((len = strlen(dir)) > (MAXPATHLEN - DBHOMELEN - DBLEN - 2 - 1)) {
+         LOG(log_error, logtype_default, "cnid_open: Pathname too large: %s", dir);
+         return NULL;
+     }
+@@ -241,13 +242,12 @@ struct _cnid_db *cnid_cdb_open(const cha
+     cdb->_private = (void *) db;
+     db->magic = CNID_DB_MAGIC;
+ 
+-    strcpy(path, dir);
++    strlcpy(path, dir, sizeof(path));
+     if (path[len - 1] != '/') {
+-        strcat(path, "/");
+-        len++;
++        strlcat(path, "/", sizeof(path));
+     }
+ 
+-    strcpy(path + len, DBHOME);
++    strlcat(path, DBHOME, sizeof(path));
+     if ((stat(path, &st) < 0) && (ad_mkdir(path, 0777 & ~mask) < 0)) {
+         LOG(log_error, logtype_default, "cnid_open: DBHOME mkdir failed for %s", path);
+         goto fail_adouble;

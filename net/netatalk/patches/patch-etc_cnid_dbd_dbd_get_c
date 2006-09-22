@@ -1,0 +1,11 @@
+$OpenBSD: patch-etc_cnid_dbd_dbd_get_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+--- etc/cnid_dbd/dbd_get.c.orig	Wed Jan 21 16:28:42 2004
++++ etc/cnid_dbd/dbd_get.c	Fri Dec 30 23:51:53 2005
+@@ -13,6 +13,7 @@
+ #include <sys/param.h>
+ #include <atalk/logger.h>
+ #include <errno.h>
++#include <sys/types.h>
+ #include <netatalk/endian.h>
+ #include <atalk/cnid_dbd_private.h>
+ 

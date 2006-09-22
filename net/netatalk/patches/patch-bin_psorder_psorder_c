@@ -1,0 +1,36 @@
+$OpenBSD: patch-bin_psorder_psorder_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+--- bin/psorder/psorder.c.orig	Fri Jun 29 10:14:46 2001
++++ bin/psorder/psorder.c	Sat Dec 31 11:48:01 2005
+@@ -151,7 +151,7 @@ filesetup( inputfile, infd, tfile, tfd )
+ 	make temporary file
+  */
+ 
+-    (void *)strncpy( tfile, template, MAXNAMLEN );
++    (void *)strlcpy( tfile, template, MAXNAMLEN );
+     if (( *tfd = mkstemp( tfile )) == -1 ) {
+ 	fprintf( stderr, "can't create temporary file %s\n", tfile );
+ 	filecleanup( -1, -1, "" );
+@@ -391,11 +391,12 @@ writeps( tempfd, tempfile )
+     } else if (( strncmp( psinfo.pages.order, "", ORDERLEN ) == 0 ) ||
+ 	    ( strncmp( psinfo.pages.order, "1", ORDERLEN ) == 0 )) {
+ 	order = orderflag;
+-	if ( order == REVERSE ) strcpy( psinfo.pages.order, "-1" );
++	if ( order == REVERSE ) 
++	    strlcpy( psinfo.pages.order, "-1", sizeof(psinfo.pages.order) );
+     } else if ( strncmp( psinfo.pages.order, "-1", ORDERLEN ) == 0 ) {
+ 	if ( orderflag == FORWARD ) {
+ 	    order = REVERSE;
+-	    strcpy( psinfo.pages.order, "1" );
++	    strlcpy( psinfo.pages.order, "1", sizeof(psinfo.pages.order) );
+ 	} else order = FORWARD;
+     } else if (( strncmp( psinfo.pages.order, "0", ORDERLEN ) == 0 ) &&
+ 	    forceflag ) {
+@@ -481,7 +482,7 @@ writelable( tempfd, tempfile, lable )
+     } else {
+ 	argone = argtwo = NULL;
+     }
+-    (void)sprintf( line, "%s %s %s", lable, argone, argtwo );
++    (void)snprintf( line, sizeof(line), "%s %s %s", lable, argone, argtwo );
+     linelen = strlen( line );
+ 
+     ccwrite = write( 1, line, linelen );

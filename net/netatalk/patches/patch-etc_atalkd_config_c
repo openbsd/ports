@@ -1,0 +1,53 @@
+$OpenBSD: patch-etc_atalkd_config_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+--- etc/atalkd/config.c.orig	Sun Feb  6 05:16:02 2005
++++ etc/atalkd/config.c	Sat Dec 31 01:17:42 2005
+@@ -101,12 +101,11 @@ char **parseline(const char *line)
+ 	return NULL;
+     }
+ 
+-    buffer = (char *) malloc( strlen( p ) + 1 );
+-    if ( !buffer ) {
+-	/* FIXME: error handling */
+-	return NULL;
+-    }
+-    strcpy( buffer, p );
++    buffer = strdup(p);
++	if (buffer == NULL) {
++		/* FIXME: error handling */
++		return NULL;
++	}
+     tmpbuf = buffer;
+ 
+     argv = (char **) malloc( ARGV_CHUNK_SIZE * sizeof( char * ) );
+@@ -207,9 +206,9 @@ int writeconf( cf )
+     }
+ 
+     if (( p = strrchr( path, '/' )) == NULL ) {
+-	strcpy( newpath, _PATH_ATALKDTMP );
++	strlcpy( newpath, _PATH_ATALKDTMP, sizeof(newpath) );
+     } else {
+-	sprintf( newpath, "%.*s/%s", (int)(p - path), path, _PATH_ATALKDTMP );
++	snprintf( newpath, sizeof(newpath), "%.*s/%s", (int)(p - path), path, _PATH_ATALKDTMP );
+     }
+     if (( fd = open( newpath, O_WRONLY|O_CREAT|O_TRUNC, mode )) < 0 ) {
+ 	LOG(log_error, logtype_atalkd, "%s: %s", newpath, strerror(errno) );
+@@ -832,7 +831,7 @@ struct interface *newiface( name )
+ int plumb()
+ {
+     struct interface	*iface;
+-    char		device[ MAXPATHLEN + 1], *p;
++    char		device[ MAXPATHLEN ], *p;
+     int			fd, ppa;
+ 
+     for ( iface = interfaces; iface != NULL; iface = iface->i_next ) {
+@@ -840,8 +839,8 @@ int plumb()
+ 	    continue;
+ 	}
+ 
+-	strcpy( device, "/dev/" );
+-	strcat( device, iface->i_name );
++	strlcpy( device, "/dev/", sizeof(device) );
++	strlcat( device, iface->i_name, sizeof(device) );
+ 	if (( p = strpbrk( device, "0123456789" )) == NULL ) {
+ 	    LOG(log_error, logtype_atalkd, "plumb: invalid device: %s", device );
+ 	    return -1;

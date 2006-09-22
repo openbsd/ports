@@ -1,0 +1,12 @@
+$OpenBSD: patch-libatalk_nbp_nbp_util_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+--- libatalk/nbp/nbp_util.c.orig	Thu Jan 17 01:12:02 2002
++++ libatalk/nbp/nbp_util.c	Fri Dec 30 21:49:37 2005
+@@ -148,7 +148,7 @@ int nbp_name( name, objp, typep, zonep )
+ 	if ( strlen( name ) + 1 > sizeof( buf )) {
+ 	    return( -1 );
+ 	}
+-	strcpy( buf, name );
++	strlcpy( buf, name, sizeof(buf) );
+ 
+ 	if (( p = strrchr( buf, '@' )) != NULL ) {
+ 	    *p++ = '\0';

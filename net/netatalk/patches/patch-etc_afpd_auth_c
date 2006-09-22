@@ -1,0 +1,42 @@
+$OpenBSD: patch-etc_afpd_auth_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+--- etc/afpd/auth.c.orig	Fri Mar 11 10:36:58 2005
++++ etc/afpd/auth.c	Fri Dec 30 23:14:23 2005
+@@ -244,7 +244,7 @@ static int login(AFPObj *obj, struct pas
+ 		int mypid = getpid();
+                 struct stat stat_buf;
+ 
+-                sprintf(nodename, "%s/net%d.%dnode%d", obj->options.authprintdir,
++                snprintf(nodename, sizeof(nodename), "%s/net%d.%dnode%d", obj->options.authprintdir,
+                         addr_net / 256, addr_net % 256, addr_node);
+                 LOG(log_info, logtype_afpd, "registering %s (uid %d) on %u.%u as %s",
+                     pwd->pw_name, pwd->pw_uid, addr_net, addr_node, nodename);
+@@ -333,7 +333,7 @@ static int login(AFPObj *obj, struct pas
+         else
+             clientname = inet_ntoa( dsi->client.sin_addr );
+ 
+-        sprintf( hostname, "%s@%s", pwd->pw_name, clientname );
++        snprintf( hostname, sizeof(hostname), "%s@%s", pwd->pw_name, clientname );
+ 
+         if( sia_become_user( NULL, argc, argv, hostname, pwd->pw_name,
+                              NULL, FALSE, NULL, NULL,
+@@ -999,7 +999,7 @@ int auth_register(const int type, struct
+ /* load all of the modules */
+ int auth_load(const char *path, const char *list)
+ {
+-    char name[MAXPATHLEN + 1], buf[MAXPATHLEN + 1], *p;
++    char name[MAXPATHLEN], buf[MAXPATHLEN], *p;
+     struct uam_mod *mod;
+     struct stat st;
+     size_t len;
+@@ -1011,9 +1011,9 @@ int auth_load(const char *path, const ch
+     if ((p = strtok(buf, ",")) == NULL)
+         return -1;
+ 
+-    strcpy(name, path);
++    strlcpy(name, path, sizeof(name));
+     if (name[len - 1] != '/') {
+-        strcat(name, "/");
++        strlcat(name, "/", sizeof(name));
+         len++;
+     }
+ 

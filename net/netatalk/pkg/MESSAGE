@@ -1,0 +1,6 @@
+To start netatalk automatically at boot time, add these lines to
+/etc/rc.local:
+
+if [ -f ${SYSCONFDIR}/netatalk/rc.atalk ]; then
+        . ${SYSCONFDIR}/netatalk/rc.atalk
+fi

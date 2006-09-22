@@ -1,0 +1,208 @@
+$OpenBSD: patch-etc_afpd_volume_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+--- etc/afpd/volume.c.orig	Sun Apr 24 18:26:31 2005
++++ etc/afpd/volume.c	Sat Dec 31 12:09:29 2005
+@@ -231,13 +231,14 @@ static char *volxlate(AFPObj *obj, char 
+         return NULL;
+     }
+     if (!dest) {
+-        dest = calloc(destlen +1, 1);
++		destlen++;
++        dest = malloc(destlen);
+     }
+     ret = dest;
+     if (!ret) {
+         return NULL;
+     }
+-    strlcpy(dest, src, destlen +1);
++    strlcpy(dest, src, destlen);
+     if ((p = strchr(src, '$')) == NULL) /* nothing to do */
+         return ret;
+ 
+@@ -262,7 +263,7 @@ static char *volxlate(AFPObj *obj, char 
+             if (obj->proto == AFPPROTO_ASP) {
+                 ASP asp = obj->handle;
+ 
+-                len = sprintf(dest, "%u.%u", ntohs(asp->asp_sat.sat_addr.s_net),
++                len = snprintf(dest, destlen, "%u.%u", ntohs(asp->asp_sat.sat_addr.s_net),
+                               asp->asp_sat.sat_addr.s_node);
+                 dest += len;
+                 destlen -= len;
+@@ -270,7 +271,7 @@ static char *volxlate(AFPObj *obj, char 
+             } else if (obj->proto == AFPPROTO_DSI) {
+                 DSI *dsi = obj->handle;
+ 
+-                len = sprintf(dest, "%s:%u", inet_ntoa(dsi->client.sin_addr),
++                len = snprintf(dest, destlen, "%s:%u", inet_ntoa(dsi->client.sin_addr),
+                               ntohs(dsi->client.sin_port));
+                 dest += len;
+                 destlen -= len;
+@@ -291,7 +292,7 @@ static char *volxlate(AFPObj *obj, char 
+             if (obj->proto == AFPPROTO_ASP) {
+                 ASP asp = obj->handle;
+  
+-                len = sprintf(dest, "%u", ntohs(asp->asp_sat.sat_addr.s_net));
++                len = snprintf(dest, destlen, "%u", ntohs(asp->asp_sat.sat_addr.s_net));
+                 dest += len;
+                 destlen -= len;
+  
+@@ -606,14 +607,13 @@ static int creatvol(AFPObj *obj, struct 
+         free(volume);
+         return -1;
+     }
+-    if (!( volume->v_path = (char *)malloc( strlen( path ) + 1 )) ) {
++    if ((volume->v_path = strdup( path )) == NULL) {
+         LOG(log_error, logtype_afpd, "creatvol: malloc: %s", strerror(errno) );
+         free(volume->v_name);
+         free(volume);
+         return -1;
+     }
+     volume->v_hide = hide;
+-    strcpy( volume->v_path, path );
+ 
+ #ifdef __svr4__
+     volume->v_qfd = -1;
+@@ -910,8 +910,8 @@ int		user;
+ struct passwd *pwent;
+ {
+     FILE		*fp;
+-    char		path[ MAXPATHLEN + 1], tmp[ MAXPATHLEN + 1],
+-    volname[ AFPVOL_NAMELEN + 1 ], buf[ BUFSIZ ],
++    char		path[ MAXPATHLEN ], tmp[ MAXPATHLEN ],
++    volname[ AFPVOL_NAMELEN ], buf[ BUFSIZ ],
+     type[ 5 ], creator[ 5 ];
+     char		*u, *p;
+     struct passwd	*pw;
+@@ -923,10 +923,10 @@ struct passwd *pwent;
+     if (!p1->name)
+         return -1;
+     p1->mtime = 0;
+-    strcpy( path, p1->name );
++    strlcpy( path, p1->name , sizeof(path));
+     if ( p2 != NULL ) {
+-        strcat( path, "/" );
+-        strcat( path, p2 );
++        strlcat( path, "/", sizeof(path) );
++        strlcat( path, p2, sizeof(path) );
+         if (p1->full_name) {
+             free(p1->full_name);
+         }
+@@ -942,9 +942,9 @@ struct passwd *pwent;
+     }
+ 
+     memset(save_options, 0, sizeof(save_options));
+-    while ( myfgets( buf, sizeof( buf ), fp ) != NULL ) {
++    while ( myfgets( buf, sizeof( buf ) - 1, fp ) != NULL ) {
+         initline( strlen( buf ), buf );
+-        parseline( sizeof( path ) - 1, path );
++        parseline( sizeof( path ) , path );
+         switch ( *path ) {
+         case '\0' :
+         case '#' :
+@@ -955,10 +955,10 @@ struct passwd *pwent;
+             if (strncmp(path, VOLOPT_DEFAULT, VOLOPT_DEFAULT_LEN) == 0) {
+                 *tmp = '\0';
+                 for (i = 0; i < VOLOPT_NUM; i++) {
+-                    if (parseline( sizeof( path ) - VOLOPT_DEFAULT_LEN - 1,
++                    if (parseline( sizeof( path ) - VOLOPT_DEFAULT_LEN,
+                                    path + VOLOPT_DEFAULT_LEN) < 0)
+                         break;
+-                    volset(save_options, NULL, tmp, sizeof(tmp) - 1,
++                    volset(save_options, NULL, tmp, sizeof(tmp),
+                            path + VOLOPT_DEFAULT_LEN);
+                 }
+             }
+@@ -976,10 +976,10 @@ struct passwd *pwent;
+             if ( u == NULL || *u == '\0' || ( pw = getpwnam( u )) == NULL ) {
+                 continue;
+             }
+-            strcpy( tmp, pw->pw_dir );
++            strlcpy( tmp, pw->pw_dir, sizeof(tmp) );
+             if ( p != NULL && *p != '\0' ) {
+-                strcat( tmp, "/" );
+-                strcat( tmp, p );
++                strlcat( tmp, "/", sizeof(tmp) );
++                strlcat( tmp, p, sizeof(tmp) );
+             }
+ 	    /* Tag a user's home directory with their umask.  Note, this will
+ 	     * be overwritten if the user actually specifies a umask: option
+@@ -990,7 +990,7 @@ struct passwd *pwent;
+         case '/' :
+             /* send path through variable substitution */
+             if (*path != '~') /* need to copy path to tmp */
+-                strcpy(tmp, path);
++                strlcpy(tmp, path, sizeof(tmp));
+             if (!pwent)
+                 pwent = getpwnam(obj->username);
+             volxlate(obj, path, sizeof(path) - 1, tmp, pwent, NULL, NULL);
+@@ -1019,10 +1019,10 @@ struct passwd *pwent;
+ 
+             /* read in up to VOLOP_NUM possible options */
+             for (i = 0; i < VOLOPT_NUM; i++) {
+-                if (parseline( sizeof( tmp ) - 1, tmp ) < 0)
++                if (parseline( sizeof( tmp ), tmp ) < 0)
+                     break;
+ 
+-                volset(options, save_options, volname, sizeof(volname) - 1, tmp);
++                volset(options, save_options, volname, sizeof(volname), tmp);
+             }
+ 
+             /* check allow/deny lists:
+@@ -2103,9 +2103,9 @@ static int create_special_folder (const 
+ 	u_int16_t	attr;
+ 	struct stat	st;
+ 	int		ret;
++	size_t plen = strlen(vol->v_path) + strlen(folder->name) + 2;
+ 
+-
+-	p = (char *) malloc ( strlen(vol->v_path)+strlen(folder->name)+2);
++	p = (char *) malloc(plen);
+ 	if ( p == NULL) {
+ 		LOG(log_error, logtype_afpd,"malloc failed");
+ 		exit (EXITERR_SYS);
+@@ -2117,8 +2117,8 @@ static int create_special_folder (const 
+ 		exit (EXITERR_SYS);
+ 	}
+ 
+-	strcpy(p, vol->v_path);
+-	strcat(p, "/");
++	strlcpy(p, vol->v_path, plen);
++	strlcat(p, "/", plen);
+ 
+ 	r=q;
+ 	while (*r) {
+@@ -2128,7 +2128,7 @@ static int create_special_folder (const 
+ 			*r=tolower(*r);
+ 		r++;
+ 	}
+-	strcat(p, q);
++	strlcat(p, q, plen);
+ 
+     	if ( (ret = stat( p, &st )) < 0 ) {
+ 		if (folder->precreate) {
+@@ -2259,7 +2259,7 @@ static int savevoloptions (const struct 
+     snprintf(item, sizeof(item), "CNIDDBDPORT:%u\n", Cnid_port);
+     strlcat(buf, item, sizeof(buf));
+ 
+-    strcpy(item, "CNID_DBPATH:");
++    strlcpy(item, "CNID_DBPATH:", sizeof(item));
+     if (vol->v_dbpath)
+         strlcat(item, vol->v_dbpath, sizeof(item));
+     else
+@@ -2268,7 +2268,7 @@ static int savevoloptions (const struct 
+     strlcat(buf, item, sizeof(buf));
+ 
+     /* volume flags */
+-    strcpy(item, "VOLUME_OPTS:");
++    strlcpy(item, "VOLUME_OPTS:", sizeof(item));
+     for (;op->name; op++) {
+ 	if ( (vol->v_flags & op->option) ) {
+             strlcat(item, op->name, sizeof(item));
+@@ -2279,7 +2279,7 @@ static int savevoloptions (const struct 
+     strlcat(buf, item, sizeof(buf));
+ 
+     /* casefold flags */
+-    strcpy(item, "VOLCASEFOLD:");
++    strlcpy(item, "VOLCASEFOLD:", sizeof(item));
+     for (;cf->name; cf++) {
+         if ( (vol->v_casefold & cf->option) ) {
+             strlcat(item, cf->name, sizeof(item));

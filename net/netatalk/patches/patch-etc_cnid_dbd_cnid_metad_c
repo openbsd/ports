@@ -1,0 +1,56 @@
+$OpenBSD: patch-etc_cnid_dbd_cnid_metad_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+--- etc/cnid_dbd/cnid_metad.c.orig	Mon Sep  6 03:19:21 2004
++++ etc/cnid_dbd/cnid_metad.c	Sat Dec 31 12:40:35 2005
+@@ -270,8 +270,8 @@ static int maybe_start_dbd(char *dbdpn, 
+             }
+         }
+ 
+-	sprintf(buf1, "%i", sv[1]);
+-	sprintf(buf2, "%i", rqstfd);
++	snprintf(buf1, sizeof(buf1), "%i", sv[1]);
++	snprintf(buf2, sizeof(buf2), "%i", rqstfd);
+ 	
+ 	if (up->count == MAXSPAWN) {
+ 	    /* there's a pb with the db inform child 
+@@ -298,7 +298,7 @@ static int maybe_start_dbd(char *dbdpn, 
+ }
+ 
+ /* ------------------ */
+-static int set_dbdir(char *dbdir, int len)
++static int set_dbdir(char *dbdir, size_t len)
+ {
+    struct stat st;
+ 
+@@ -310,11 +310,11 @@ static int set_dbdir(char *dbdir, int le
+         return -1;
+     }
+ 
+-    if (dbdir[len - 1] != '/') {
+-         strcat(dbdir, "/");
++    if (dbdir[strlen(dbdir) - 1] != '/') {
++         strlcat(dbdir, "/", len);
+          len++;
+     }
+-    strcpy(dbdir + len, DBHOME);
++    strlcat(dbdir, DBHOME, len);
+     if (stat(dbdir, &st) < 0 && mkdir(dbdir, 0755 ) < 0) {
+         LOG(log_error, logtype_cnid, "set_dbdir: mkdir failed for %s", dbdir);
+         return -1;
+@@ -365,7 +365,7 @@ char    *group;
+ /* ------------------ */
+ int main(int argc, char *argv[])
+ {
+-    char  dbdir[MAXPATHLEN + 1];
++    char  dbdir[MAXPATHLEN];
+     int   len;
+     pid_t pid;
+     int   status;
+@@ -529,7 +529,7 @@ int main(int argc, char *argv[])
+         }
+         dbdir[len] = '\0';
+         
+-        if (set_dbdir(dbdir, len) < 0) {
++        if (set_dbdir(dbdir, sizeof(dbdir)) < 0) {
+             goto loop_end;
+         }
+         

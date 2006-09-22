@@ -1,0 +1,30 @@
+$OpenBSD: patch-bin_megatron_megatron_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+--- bin/megatron/megatron.c.orig	Sun Apr 28 21:52:49 2002
++++ bin/megatron/megatron.c	Fri Dec 30 22:34:51 2005
+@@ -246,7 +246,7 @@ int megatron( path, module, newname, fla
+  */
+ 
+     if (*newname)
+-        strcpy(fh.name, newname);
++        strlcpy(fh.name, newname, sizeof(fh.name));
+ 
+     if ( to_open( module, path, &fh, flags ) < 0 ) {
+ 	(void)from_close( module );
+@@ -302,7 +302,7 @@ int main( argc, argv )
+     int		converts = sizeof(name) / sizeof(char *);
+     int		module = -1;
+     int         flags = 0;
+-    char	*progname, newname[ADEDLEN_NAME + 1];
++    char	*progname, newname[ADEDLEN_NAME];
+ 
+     progname = strrchr( argv[ 0 ], '/' );
+     if (( progname == NULL ) || ( progname == '\0' )) {
+@@ -334,7 +334,7 @@ int main( argc, argv )
+ 	    continue;
+ 	}
+ 	if ( strcmp( argv [ c ], "--filename" ) == 0 ) {
+-	  if(++c < argc) strncpy(newname,argv[c], ADEDLEN_NAME);
++	  if(++c < argc) strlcpy(newname,argv[c], sizeof(newname));
+ 	  continue;
+ 	}
+ 	if (strcmp(argv[c], "--stdout") == 0) {

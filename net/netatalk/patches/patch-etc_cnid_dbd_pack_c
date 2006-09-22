@@ -1,0 +1,21 @@
+$OpenBSD: patch-etc_cnid_dbd_pack_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+--- etc/cnid_dbd/pack.c.orig	Sat Feb  7 14:46:08 2004
++++ etc/cnid_dbd/pack.c	Fri Dec 30 21:11:40 2005
+@@ -9,8 +9,6 @@
+ #include "config.h"
+ #endif /* HAVE_CONFIG_H */
+ 
+-#include <netatalk/endian.h>
+-
+ #include <string.h>
+ #ifdef HAVE_SYS_TYPES_H
+ #include <sys/types.h>
+@@ -18,6 +16,8 @@
+ #include <sys/param.h>
+ #include <sys/cdefs.h>
+ #include <db.h>
++
++#include <netatalk/endian.h>
+ 
+ #include <atalk/cnid_dbd_private.h>
+ #include "pack.h"

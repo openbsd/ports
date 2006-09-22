@@ -1,0 +1,12 @@
+$OpenBSD: patch-etc_atalkd_main_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+--- etc/atalkd/main.c.orig	Mon Jan 31 12:01:04 2005
++++ etc/atalkd/main.c	Sat Dec 31 12:43:51 2005
+@@ -1456,7 +1456,7 @@ int ifconfig( iname, cmd, sa )
+     int			s;
+ 
+     memset(&ifr, 0, sizeof(ifr));
+-    strcpy( ifr.ifr_name, iname );
++    strlcpy( ifr.ifr_name, iname, ifr.ifr_name );
+     ifr.ifr_addr = *(struct sockaddr *)sa;
+ 
+     if (( s = socket( AF_APPLETALK, SOCK_DGRAM, 0 )) < 0 ) {

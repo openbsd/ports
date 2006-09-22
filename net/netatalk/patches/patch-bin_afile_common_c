@@ -1,0 +1,65 @@
+$OpenBSD: patch-bin_afile_common_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+--- bin/afile/common.c.orig	Fri Jun 29 10:14:46 2001
++++ bin/afile/common.c	Sat Dec 31 11:14:53 2005
+@@ -64,22 +64,23 @@ char *dataname_to_adname(const char *dat
+ {
+   const char *filepart;
+   char *adname;
+-  size_t adlen = strlen(AD_PREFIX);
++  size_t adlen = strlen(AD_PREFIX) + strlen(dataname) + 1;
+   size_t dirlen;
+ 
+   /* Construct the AppleDouble file name from data fork file name. */
+-  adname = calloc(adlen + strlen(dataname) + 1, sizeof(char));
++  adname = (char *)malloc(adlen);
+   filepart = rindex(dataname, '/');
+   if (filepart == NULL) {
+     /* Filename doesn't contain a path. */
+-    strcpy(adname, AD_PREFIX);
+-    strcpy(adname + adlen, dataname);
++    strlcpy(adname, AD_PREFIX, adlen);
++    strlcat(adname, dataname, adlen);
+   } else {
+     /* Filename does contain a path. */
+-    dirlen = (size_t) (filepart - dataname);
+-    strncpy(adname, dataname, dirlen + 1);
+-    strcpy(adname + dirlen + 1, AD_PREFIX);
+-    strcpy(adname + dirlen + adlen + 1, filepart + 1);
++	dirlen = (filepart - dataname) + 1;
++    strncpy(adname, dataname, dirlen);
++	adname[dirlen] = '\0';
++    strlcat(adname, AD_PREFIX, adlen);
++    strlcat(adname, filepart + 1, adlen);
+   }
+ 
+   return adname;
+@@ -89,20 +90,21 @@ char *adname_to_dataname(const char *adn
+ {
+   const char *filepart;
+   char *dataname;
+-  size_t plen = strlen(PARENT_PREFIX);
++  size_t datalen = strlen(adname) + strlen(PARENT_PREFIX) + 1;
+   size_t dirlen;
+ 
+   /* Construct the data file name from the AppleDouble file name. */
+-  dataname = calloc(strlen(adname) + plen + 1, sizeof(char));
++  dataname = (char *)malloc(datalen);
+   filepart = rindex(adname, '/');
+   if (filepart == NULL) {
+-    strcpy(dataname, PARENT_PREFIX);
+-    strcpy(dataname + plen, adname);
++    strlcpy(dataname, PARENT_PREFIX, datalen);
++    strlcat(dataname, adname, datalen);
+   } else {
+-    dirlen = (size_t) (filepart - adname);
+-    strncpy(dataname, adname, dirlen + 1);
+-    strcpy(dataname + dirlen + 1, PARENT_PREFIX);
+-    strcpy(dataname + dirlen + plen + 1, filepart + 1);
++    dirlen = (size_t) (filepart - adname) + 1;
++    strncpy(dataname, adname, dirlen);
++	dataname[dirlen] = '\0';
++    strlcpy(dataname, PARENT_PREFIX, datalen);
++    strlcpy(dataname, filepart + 1, datalen);
+   }
+ 
+   return dataname;

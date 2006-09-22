@@ -1,0 +1,118 @@
+$OpenBSD: patch-bin_afppasswd_afppasswd_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+--- bin/afppasswd/afppasswd.c.orig	Wed Feb  9 20:23:07 2005
++++ bin/afppasswd/afppasswd.c	Fri Dec 30 22:25:07 2005
+@@ -64,7 +64,7 @@
+ #define HEXPASSWDLEN 16
+ #define PASSWDLEN 8
+ 
+-static char buf[MAXPATHLEN + 1];
++static char buf[MAXPATHLEN];
+ 
+ /* if newpwd is null, convert buf from hex to binary. if newpwd isn't
+  * null, convert newpwd to hex and save it in buf. */
+@@ -117,7 +117,7 @@ static void convert_passwd(char *buf, ch
+ /* this matches the code in uam_randnum.c */
+ static int update_passwd(const char *path, const char *name, int flags)
+ {
+-  char password[PASSWDLEN + 1], *p, *passwd;
++  char password[PASSWDLEN], *p, *passwd;
+   FILE *fp;
+   off_t pos;
+   int keyfd = -1, err = 0;
+@@ -128,9 +128,9 @@ static int update_passwd(const char *pat
+   }
+ 
+   /* open the key file if it exists */
+-  strcpy(buf, path);
++  strlcpy(buf, path, sizeof(buf));
+   if (strlen(path) < sizeof(buf) - 5) {
+-    strcat(buf, ".key");
++    strlcat(buf, ".key", sizeof(buf));
+     keyfd = open(buf, O_RDONLY);
+   } 
+ 
+@@ -154,8 +154,8 @@ static int update_passwd(const char *pat
+   }
+ 
+   if (flags & OPT_ADDUSER) {
+-    strcpy(buf, name);
+-    strcat(buf, FORMAT);
++    strlcpy(buf, name, sizeof(buf));
++    strlcat(buf, FORMAT, sizeof(buf));
+     p = strchr(buf, ':') + 1;
+     fwrite(buf, strlen(buf), 1, fp);
+   } else {
+@@ -239,8 +239,8 @@ static int create_file(const char *path,
+     /* a little paranoia */
+     if (strlen(pwd->pw_name) + FORMAT_LEN > sizeof(buf) - 1)
+       continue;
+-    strcpy(buf, pwd->pw_name);
+-    strcat(buf, FORMAT);
++    strlcpy(buf, pwd->pw_name, sizeof(buf));
++    strlcat(buf, FORMAT, sizeof(buf));
+     len = strlen(buf);
+     if (write(fd, buf, len) != len) {
+       fprintf(stderr, "afppasswd: problem writing to %s: %s\n", path,
+@@ -255,6 +255,22 @@ static int create_file(const char *path,
+   return err;
+ }
+ 
++void usage(void) {
++#ifdef USE_CRACKLIB
++    fprintf(stderr, "Usage: afppasswd [-acfn] [-u minuid] [-p path] [username]\n");
++#else /* USE_CRACKLIB */
++    fprintf(stderr, "Usage: afppasswd [-acf] [-u minuid] [-p path] [username]\n");
++#endif /* USE_CRACKLIB */
++    fprintf(stderr, "  -a        add a new user\n");
++    fprintf(stderr, "  -c        create and initialize password file or specific user\n");
++    fprintf(stderr, "  -f        force an action\n");
++#ifdef USE_CRACKLIB
++    fprintf(stderr, "  -n        disable cracklib checking of passwords\n");
++#endif /* USE_CRACKLIB */
++    fprintf(stderr, "  -u uid    minimum uid to use, defaults to 100\n");
++    fprintf(stderr, "  -p path   path to afppasswd file\n");
++    exit(-1);
++}
+ 
+ int main(int argc, char **argv)
+ {
+@@ -270,16 +286,7 @@ int main(int argc, char **argv)
+   flags = ((uid = getuid()) == 0) ? OPT_ISROOT : 0;
+ 
+   if (((flags & OPT_ISROOT) == 0) && (argc > 1)) {
+-    fprintf(stderr, "Usage: afppasswd [-acfn] [-u minuid] [-p path] [username]\n");
+-    fprintf(stderr, "  -a        add a new user\n");
+-    fprintf(stderr, "  -c        create and initialize password file or specific user\n");
+-    fprintf(stderr, "  -f        force an action\n");
+-#ifdef USE_CRACKLIB
+-    fprintf(stderr, "  -n        disable cracklib checking of passwords\n");
+-#endif /* USE_CRACKLIB */
+-    fprintf(stderr, "  -u uid    minimum uid to use, defaults to 100\n");
+-    fprintf(stderr, "  -p path   path to afppasswd file\n");
+-    return -1;
++	  usage();
+   }
+ 
+   while ((i = getopt(argc, argv, OPTIONS)) != EOF) {
+@@ -312,20 +319,7 @@ int main(int argc, char **argv)
+   
+   if (err || (optind + ((flags & OPT_CREATE) ? 0 : 
+ 			(flags & OPT_ISROOT)) != argc)) {
+-#ifdef USE_CRACKLIB
+-    fprintf(stderr, "Usage: afppasswd [-acfn] [-u minuid] [-p path] [username]\n");
+-#else /* USE_CRACKLIB */
+-    fprintf(stderr, "Usage: afppasswd [-acf] [-u minuid] [-p path] [username]\n");
+-#endif /* USE_CRACKLIB */
+-    fprintf(stderr, "  -a        add a new user\n");
+-    fprintf(stderr, "  -c        create and initialize password file or specific user\n");
+-    fprintf(stderr, "  -f        force an action\n");
+-#ifdef USE_CRACKLIB
+-    fprintf(stderr, "  -n        disable cracklib checking of passwords\n");
+-#endif /* USE_CRACKLIB */
+-    fprintf(stderr, "  -u uid    minimum uid to use, defaults to 100\n");
+-    fprintf(stderr, "  -p path   path to afppasswd file\n");
+-    return -1;
++	  usage();
+   }
+ 
+   i = stat(path, &st);

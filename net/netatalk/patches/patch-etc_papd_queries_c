@@ -1,0 +1,21 @@
+$OpenBSD: patch-etc_papd_queries_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+--- etc/papd/queries.c.orig	Sun Feb  6 05:16:02 2005
++++ etc/papd/queries.c	Sat Dec 31 13:06:26 2005
+@@ -228,7 +228,7 @@ int gq_pagecost( out )
+ #ifdef ABS_PRINT
+ 	lp_pagecost();
+ #endif /* ABS_PRINT */
+-	sprintf( cost, "%d", printer->p_pagecost );
++	snprintf( cost, sizeof(cost), "%d", printer->p_pagecost );
+ 	append( out, cost, strlen( cost ));
+     } else {
+ 	return( -1 );
+@@ -246,7 +246,7 @@ int gq_balance( out )
+     if ( lp_pagecost() != 0 ) {
+ 	return( -1 );
+     }
+-    sprintf( balance, "$%1.2f\n", printer->p_balance );
++    snprintf( balance, sizeof(balance), "$%1.2f\n", printer->p_balance );
+     append( out, balance, strlen( balance ));
+     return( 0 );
+ }

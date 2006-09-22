@@ -1,0 +1,65 @@
+$OpenBSD: patch-bin_megatron_nad_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+--- bin/megatron/nad.c.orig	Wed Feb  9 20:23:08 2005
++++ bin/megatron/nad.c	Sat Dec 31 11:43:27 2005
+@@ -414,8 +414,8 @@ void select_charset( int options)
+ #endif /* HEXOUTPUT */
+ 
+ struct nad_file_data {
+-    char		macname[ MAXPATHLEN + 1 ];
+-    char		adpath[ 2 ][ MAXPATHLEN + 1];
++    char		macname[ MAXPATHLEN];
++    char		adpath[ 2 ][ MAXPATHLEN];
+     int			offset[ NUMFORKS ];
+     struct adouble	ad;
+ } nad;
+@@ -451,9 +451,10 @@ int nad_open( path, openflags, fh, optio
+ 
+     if ( openflags == O_RDONLY ) {
+     	initvol(path);
+-	strcpy( nad.adpath[0], path );
+-	strcpy( nad.adpath[1], 
+-		nad.ad.ad_path( nad.adpath[0], ADFLAGS_DF|ADFLAGS_HF ));
++	strlcpy( nad.adpath[0], path, sizeof(nad.adpath[0]) );
++	strlcpy( nad.adpath[1], 
++			 nad.ad.ad_path( nad.adpath[0], ADFLAGS_DF|ADFLAGS_HF ), 
++			 sizeof(nad.adpath[1]));
+ 	for ( fork = 0 ; fork < NUMFORKS ; fork++ ) {
+ 	    if ( stat( nad.adpath[ fork ], &st ) < 0 ) {
+ 		if ( errno == ENOENT ) {
+@@ -478,10 +479,11 @@ int nad_open( path, openflags, fh, optio
+ 
+     } else {
+ 	initvol (".");
+-	strcpy( nad.macname, fh->name );
+-	strcpy( nad.adpath[0], mtoupath( nad.macname ));
+-	strcpy( nad.adpath[1], 
+-		nad.ad.ad_path( nad.adpath[0], ADFLAGS_DF|ADFLAGS_HF ));
++	strlcpy( nad.macname, fh->name, sizeof(nad.macname) );
++	strlcpy( nad.adpath[0], mtoupath( nad.macname ), sizeof(nad.adpath[0]));
++	strlcpy( nad.adpath[1], 
++			nad.ad.ad_path( nad.adpath[0], ADFLAGS_DF|ADFLAGS_HF ), 
++			sizeof(nad.adpath[1]) );
+ #if DEBUG
+     fprintf(stderr, "%s\n", nad.macname);
+     fprintf(stderr, "%s is adpath[0]\n", nad.adpath[0]);
+@@ -512,7 +514,7 @@ int nad_header_read( fh )
+     memcpy( nad.macname, ad_entry( &nad.ad, ADEID_NAME ), 
+ 	    ad_getentrylen( &nad.ad, ADEID_NAME ));
+     nad.macname[ ad_getentrylen( &nad.ad, ADEID_NAME ) ] = '\0';
+-    strcpy( fh->name, nad.macname );
++    strlcpy( fh->name, nad.macname, sizeof(fh->name) );
+ #endif
+ 
+     /* just in case there's nothing in macname */
+@@ -521,9 +523,9 @@ int nad_header_read( fh )
+         p = nad.adpath[DATA];
+       else p++;
+ #if 0      
+-      strcpy(fh->name, utompath(nad.adpath[DATA]));
++      strlcpy(fh->name, utompath(nad.adpath[DATA]), sizeof(fh->name));
+ #endif      
+-      strcpy(fh->name, utompath(p));
++      strlcpy(fh->name, utompath(p), sizeof(fh->name));
+     }
+ 
+     if ( stat( nad.adpath[ DATA ], &st ) < 0 ) {

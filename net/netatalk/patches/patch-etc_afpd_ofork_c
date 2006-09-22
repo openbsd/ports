@@ -1,0 +1,23 @@
+$OpenBSD: patch-etc_afpd_ofork_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+--- etc/afpd/ofork.c.orig	Wed Feb  9 20:23:15 2005
++++ etc/afpd/ofork.c	Sat Dec 31 00:29:55 2005
+@@ -289,7 +289,7 @@ int ret;
+ /* -------------------------- */
+ int of_statdir  (const struct vol *vol, struct path *path)
+ {
+-static char pathname[ MAXPATHLEN + 1];
++static char pathname[ MAXPATHLEN];
+ int ret;
+ 
+     if (*path->m_name) {
+@@ -299,8 +299,8 @@ int ret;
+     path->st_errno = 0;
+     path->st_valid = 1;
+     /* FIXME, what about: we don't have r-x perm anymore ? */
+-    strcpy(pathname, "../");
+-    strlcat(pathname, path->d_dir->d_u_name, MAXPATHLEN);
++    strlcpy(pathname, "../", sizeof(pathname));
++    strlcat(pathname, path->d_dir->d_u_name, sizeof(pathname));
+ 
+     if (!(ret = stat(pathname, &path->st)))
+         return 0;

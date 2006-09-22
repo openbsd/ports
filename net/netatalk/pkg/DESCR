@@ -1,0 +1,11 @@
+Netatalk is an open-source software package to deal with the AppleTalk
+procotol suite and its relative.  It can do file- and print- sharing for 
+macintosh and contains an equivalent of "routed" for the DDP protocol.
+
+It also comes with a load of small utilities to ease dealing with 
+Macintosh file from the unix side.
+
+New in 2.0:
+ - AFP 3.1
+ - large files (>2G) support
+ - long file names (up to 255 bytes)
