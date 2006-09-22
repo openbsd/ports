@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/09/20 09:06:19 robert Exp $
+# $OpenBSD: Makefile,v 1.4 2006/09/22 07:44:09 jolan Exp $
 
 ONLY_FOR_ARCHS= i386
 
@@ -18,7 +18,8 @@ SHARED_LIBS=	icudata		26.0 \
 		stlport_gcc	4.5
 
 HOMEPAGE=	http://www.openoffice.org/
-MASTER_SITES=	http://humppa.hu/ \
+MASTER_SITES=	http://mirrors.protection.cx/~jolan/ \
+		http://humppa.hu/ \
 		http://ftp.linux.cz/pub/localization/OpenOffice.org/devel/build/Sources/
 
 # See http://www.openoffice.org/about.html#licenses
