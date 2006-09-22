@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_bzflag_playing_cxx,v 1.1 2006/09/22 03:42:57 pvalchev Exp $
+--- src/bzflag/playing.cxx.orig	Sat Aug  5 04:59:14 2006
++++ src/bzflag/playing.cxx	Sat Aug  5 04:59:28 2006
+@@ -6375,11 +6375,12 @@ static void		defaultErrorCallback(const 
+ 
+ static void		startupErrorCallback(const char* msg)
+ {
+-  controlPanel->addMessage(msg);
+-  glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+-  glClear(GL_COLOR_BUFFER_BIT);
+-  controlPanel->render(*sceneRenderer);
+-  mainWindow->getWindow()->swapBuffers();
++//   controlPanel->addMessage(msg);
++//   glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
++//   glClear(GL_COLOR_BUFFER_BIT);
++//   controlPanel->render(*sceneRenderer);
++//   mainWindow->getWindow()->swapBuffers();
++  std::cerr << msg << std::endl << std::flush;
+ }
+ 
+ 

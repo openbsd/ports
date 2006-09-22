@@ -1,0 +1,28 @@
+$OpenBSD: patch-configure_ac,v 1.1 2006/09/22 03:42:57 pvalchev Exp $
+--- configure.ac.orig	Mon Apr 17 16:11:11 2006
++++ configure.ac	Sun Aug  6 00:55:20 2006
+@@ -125,7 +125,7 @@ AC_SUBST(AR)
+ AC_CHECK_PROG(AR, ar, ar)
+ AC_SUBST(AR_FLAGS)
+ 
+-AC_CHECK_LIB(z, compress, BUILDZLIB=no, BUILDZLIB=yes)
++AC_CHECK_LIB(z, compress, BUILDZLIB=yes, BUILDZLIB=yes)
+ AM_CONDITIONAL(BUILDZLIB, test $BUILDZLIB = yes)
+ 
+   #checking for libcurl library
+@@ -187,6 +187,7 @@ AC_CHECK_HEADERS( \
+ 	SDL/SDL.h \
+ 	X11/Xlib.h \
+ 	bstring.h \
++	arpa/nameser_compat.h \
+ 	linux/input.h \
+ 	stdint.h \
+ 	sys/param.h \
+@@ -194,6 +195,7 @@ AC_CHECK_HEADERS( \
+ 	values.h \
+ 	dsound.h \
+ )
++# nameser_compat.h used by src/c-ares
+ 
+ #Checks for types
+ #AM_CHECK_TYPES(socklen_t)

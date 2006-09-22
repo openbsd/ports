@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_3D_FontManager_cxx,v 1.1 2005/08/10 05:24:10 jolan Exp $
---- src/3D/FontManager.cxx.orig	Tue Feb 22 18:19:29 2005
-+++ src/3D/FontManager.cxx	Tue Aug  9 22:48:43 2005
-@@ -280,6 +280,8 @@ void FontManager::drawString(float x, fl
-   // negatives are invalid, we use them to signal "no change"
-   GLfloat color[3] = {-1.0f, -1.0f, -1.0f};
+$OpenBSD: patch-src_3D_FontManager_cxx,v 1.2 2006/09/22 03:42:57 pvalchev Exp $
+--- src/3D/FontManager.cxx.orig	Tue Jan  3 19:50:35 2006
++++ src/3D/FontManager.cxx	Sun Aug  6 08:00:32 2006
+@@ -271,6 +271,8 @@ void FontManager::drawString(float x, fl
+   }
+ 
  
 +  OpenGLGState::resetState(); /* full reset needed for bitmap renderer? */
 +
    /*
-    * ANSI code interpretation is somewhat limited, we only accept values
-    * which have been defined in AnsiCodes.h
+    * Colorize text based on ANSI codes embedded in it
+    * Break the text every time an ANSI code

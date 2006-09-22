@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/08/10 05:24:10 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/09/22 03:42:57 pvalchev Exp $
 bin/bzadmin
 bin/bzflag
 bin/bzfs
@@ -8,10 +8,12 @@ bin/bzfs
 @man man/man6/bzfquery.6
 @man man/man6/bzfs.6
 share/bzflag/
-share/bzflag/blade.png
+share/bzflag/automatic_icon.png
+share/bzflag/blend_flash.png
 share/bzflag/blue_basetop.png
 share/bzflag/blue_basewall.png
 share/bzflag/blue_bolt.png
+share/bzflag/blue_icon.png
 share/bzflag/blue_laser.png
 share/bzflag/blue_super_bolt.png
 share/bzflag/blue_tank.png
@@ -25,6 +27,7 @@ share/bzflag/bzflag-32x32.xpm
 share/bzflag/bzflag-48x48.png
 share/bzflag/caution.png
 share/bzflag/clouds.png
+share/bzflag/dusty_flare.png
 share/bzflag/explode1.png
 share/bzflag/explode2.png
 share/bzflag/explosion.wav
@@ -84,6 +87,7 @@ share/bzflag/frog.png
 share/bzflag/green_basetop.png
 share/bzflag/green_basewall.png
 share/bzflag/green_bolt.png
+share/bzflag/green_icon.png
 share/bzflag/green_laser.png
 share/bzflag/green_super_bolt.png
 share/bzflag/green_tank.png
@@ -123,12 +127,14 @@ share/bzflag/moon.png
 share/bzflag/mountain1.png
 share/bzflag/mountain2.png
 share/bzflag/mountain3.png
+share/bzflag/observer_icon.png
 share/bzflag/phantom.wav
 share/bzflag/pop.wav
 share/bzflag/puddle.png
 share/bzflag/purple_basetop.png
 share/bzflag/purple_basewall.png
 share/bzflag/purple_bolt.png
+share/bzflag/purple_icon.png
 share/bzflag/purple_laser.png
 share/bzflag/purple_super_bolt.png
 share/bzflag/purple_tank.png
@@ -142,17 +148,23 @@ share/bzflag/raindrop.png
 share/bzflag/red_basetop.png
 share/bzflag/red_basewall.png
 share/bzflag/red_bolt.png
+share/bzflag/red_icon.png
 share/bzflag/red_laser.png
 share/bzflag/red_super_bolt.png
 share/bzflag/red_tank.png
 share/bzflag/ricochet.wav
 share/bzflag/rogue_bolt.png
+share/bzflag/rogue_icon.png
 share/bzflag/rogue_laser.png
 share/bzflag/rogue_super_bolt.png
 share/bzflag/rogue_tank.png
 share/bzflag/roof.png
 share/bzflag/shock.wav
 share/bzflag/snowflake.png
+share/bzflag/spree1.wav
+share/bzflag/spree2.wav
+share/bzflag/spree3.wav
+share/bzflag/spree4.wav
 share/bzflag/std_ground.png
 share/bzflag/steamroller.wav
 share/bzflag/teamgrab.wav

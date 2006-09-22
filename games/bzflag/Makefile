@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2006/08/02 09:36:20 espie Exp $
-
-BROKEN=		"problems loading data files; crashes"
+# $OpenBSD: Makefile,v 1.8 2006/09/22 03:42:56 pvalchev Exp $
 
 COMMENT=	"graphical multiplayer 3-d tank war game"
-DISTNAME=	bzflag-2.0.2.20050318
+DISTNAME=	bzflag-2.0.8
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bzflag/}
 
 HOMEPAGE=	http://www.bzflag.org/
 
-# GPL
+# LGPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -18,12 +16,13 @@ PERMIT_DISTFILES_FTP=   Yes
 USE_GMAKE=	Yes
 USE_X11=	Yes
 
-LIB_DEPENDS=	SDL.>=4::devel/sdl
+LIB_DEPENDS=	SDL.>=4::devel/sdl curl.>=3::net/curl
 
-WANTLIB=	GL GLU ICE SM X11 Xext c m ncurses pthread stdc++ usbhid z
+WANTLIB=	GL GLU ICE SM X11 Xext c m ncurses pthread stdc++ usbhid z ssl crypto
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--disable-adns --disable-curl --enable-debug
+AUTOCONF_VERSION=2.59
+CONFIGURE_STYLE=gnu autoconf
+CONFIGURE_ARGS+=--disable-adns --enable-debug
 CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include" LDFLAGS="-L${LOCALBASE}/include"
 
 pre-build:
