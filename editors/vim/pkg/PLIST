@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2006/05/24 18:37:35 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.16 2006/09/22 20:39:57 ckuethe Exp $
 %%gtk2%%
 bin/ex
 bin/rview
@@ -1244,6 +1244,7 @@ share/vim/${P}/tutor/tutor.es
 share/vim/${P}/tutor/tutor.fr
 share/vim/${P}/tutor/tutor.gr
 share/vim/${P}/tutor/tutor.gr.cp737
+share/vim/${P}/tutor/tutor.gr.utf-8
 share/vim/${P}/tutor/tutor.it
 share/vim/${P}/tutor/tutor.ja.euc
 share/vim/${P}/tutor/tutor.ja.sjis
@@ -1256,6 +1257,7 @@ share/vim/${P}/tutor/tutor.pl.cp1250
 share/vim/${P}/tutor/tutor.pl.utf-8
 share/vim/${P}/tutor/tutor.ru
 share/vim/${P}/tutor/tutor.ru.cp1251
+share/vim/${P}/tutor/tutor.ru.utf-8
 share/vim/${P}/tutor/tutor.sk
 share/vim/${P}/tutor/tutor.sk.cp1250
 share/vim/${P}/tutor/tutor.sv

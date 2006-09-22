@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.71 2006/09/18 11:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.72 2006/09/22 20:39:57 ckuethe Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
 
 DISTNAME=	vim-7.0
-REVISION=	42
+REVISION=	109
 VERSION=	7.0.${REVISION}
 # keep PKGNAME for full version number
 PKGNAME=	vim-${VERSION}
@@ -26,7 +26,8 @@ PATCHFILES=	#
 # The patches ignored with egrep are for non-unix platforms. If we
 # attempt to use them, patch fails because they refer to files only
 # found in the vim-extra (ie. non-unix) source archive.
-_patches!=	jot -w%03d - 1 ${REVISION} 1 | egrep -v '005|027|028|032'
+_patches!=	jot -w%03d - 1 ${REVISION} 1 | \
+	egrep -v '005|027|028|032|045|057|065|074|108'
 .for p in ${_patches}
 PATCHFILES+=	7.0.${p}:0
 .endfor
@@ -100,12 +101,14 @@ CONFIGURE_ARGS+=--enable-gui="athena" --with-x --enable-fontset --enable-xim
 WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xpm Xt
 .elif ${FLAVOR:L:Mgtk2} && \
 		!${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena}
+LD+=		-pthread
+CC+=		-pthread
 LIB_DEPENDS+=	gdk-x11-2.0.>=0.11,gdk_pixbuf-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2
 BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 CONFIGURE_ARGS+=--enable-gui="gtk2" --with-x --enable-fontset --enable-xim --disable-gtk-check --enable-gtk2-check
-WANTLIB+=	ICE SM X11 Xt fontconfig freetype m \
-	 	atk-1.0 glib-2.0 gmodule-2.0 gobject-2.0 \
-		pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo
+WANTLIB+=	ICE SM X11 Xext Xrender Xt fontconfig freetype m z\
+	 	atk-1.0 glib-2.0 gmodule-2.0 gobject-2.0 png\
+		pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo pthread glitz
 .else
 ERRORS=		"Fatal: You must select one GUI interface: no_x11, gtk2, athena or motif"
 .endif
