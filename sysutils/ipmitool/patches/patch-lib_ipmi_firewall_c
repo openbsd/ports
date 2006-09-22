@@ -1,0 +1,21 @@
+$OpenBSD: patch-lib_ipmi_firewall_c,v 1.1 2006/09/22 01:54:59 pvalchev Exp $
+--- lib/ipmi_firewall.c.orig	Thu Sep 21 18:55:44 2006
++++ lib/ipmi_firewall.c	Thu Sep 21 18:56:10 2006
+@@ -877,6 +877,7 @@ ipmi_firewall_info(struct ipmi_intf * in
+ 	ret = _gather_info(intf, &p, bmc_fn_support);
+ 
+ 	if (p.command >= 0) {
++		struct command_support *cmd;
+ 		if (!((p.lun < 0 || bmc_fn_support->lun[p.lun].support) &&
+ 			(p.netfn < 0 || bmc_fn_support->lun[p.lun].netfn[p.netfn>>1].support) &&
+ 			bmc_fn_support->lun[p.lun].netfn[p.netfn>>1].command[p.command].support))
+@@ -886,8 +887,7 @@ ipmi_firewall_info(struct ipmi_intf * in
+ 			free(bmc_fn_support);
+ 			return 0;
+ 		}
+-		struct command_support * cmd =
+-			&bmc_fn_support->lun[p.lun].netfn[p.netfn>>1].command[p.command];
++		cmd = &bmc_fn_support->lun[p.lun].netfn[p.netfn>>1].command[p.command];
+ 		c = cmd->support;
+ 		printf("(A)vailable, (C)onfigurable, (E)nabled: | A | C | E |\n");
+ 		printf("-----------------------------------------------------\n");
