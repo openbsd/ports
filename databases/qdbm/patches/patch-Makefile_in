@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2006/06/20 10:42:05 bernd Exp $
---- Makefile.in.orig	Wed Jun  7 12:48:18 2006
-+++ Makefile.in	Tue Jun 20 11:48:38 2006
+$OpenBSD: patch-Makefile_in,v 1.7 2006/09/23 13:44:35 bernd Exp $
+--- Makefile.in.orig	Sun Aug 20 17:17:27 2006
++++ Makefile.in	Thu Sep 21 20:00:24 2006
 @@ -24,7 +24,7 @@ LIBREV = @LIBREV@
  # Targets
  MYHEADS = depot.h curia.h relic.h hovel.h cabin.h villa.h vista.h odeum.h
@@ -8,9 +8,9 @@ $OpenBSD: patch-Makefile_in,v 1.6 2006/06/20 10:42:05 bernd Exp $
 -MYLIBS = libqdbm.a libqdbm.so.$(LIBVER).$(LIBREV).0 libqdbm.so.$(LIBVER) libqdbm.so
 +MYLIBS = libqdbm.a libqdbm.so.$(LIBVER).$(LIBREV)
  MYBINS = dpmgr dptest dptsv crmgr crtest crtsv rlmgr rltest hvmgr hvtest \
-   cbtest cbcodec vlmgr vltest vltsv odmgr odtest odidx
+   cbtest cbcodec vlmgr vltest vltsv odmgr odtest odidx qmttest
  MYMAN1S = dpmgr.1 dptest.1 dptsv.1 crmgr.1 crtest.1 crtsv.1 rlmgr.1 rltest.1 hvmgr.1 hvtest.1 \
-@@ -45,26 +45,26 @@ MYLIBDIR = @libdir@
+@@ -45,25 +45,25 @@ MYLIBDIR = @libdir@
  MYBINDIR = @bindir@
  MYMAN1DIR = @mandir@/man1
  MYMAN3DIR = @mandir@/man3
@@ -21,23 +21,21 @@ $OpenBSD: patch-Makefile_in,v 1.6 2006/06/20 10:42:05 bernd Exp $
  
  # Building binaries
 -CC = @CC@
--RELCFLAGS = -O2 -fomit-frame-pointer -DNDEBUG
 -CPPFLAGS = -I$(srcdir) -I$(HOME)/include -I/usr/local/include @MYDEFS@ \
 +#CC = @CC@
-+RELCFLAGS = -DNDEBUG
 +CPPFLAGS += -I$(srcdir) -I${LOCALBASE}/include @MYDEFS@ \
    -D_XOPEN_SOURCE_EXTENDED=1 -D_GNU_SOURCE=1 -D__EXTENSIONS__=1 -D_HPUX_SOURCE=1 \
    -D_POSIX_MAPPED_FILES=1 -D_POSIX_SYNCHRONIZED_IO=1 \
-   -DPIC=1 -D_REENTRANT=1
--CFLAGS = -Wall -ansi -pedantic -fPIC -fsigned-char $(RELCFLAGS)
-+CFLAGS += -Wall -ansi -pedantic -fPIC -fsigned-char $(RELCFLAGS)
+   -DPIC=1 -D_THREAD_SAFE=1 -D_REENTRANT=1 -DNDEBUG
+-CFLAGS = -Wall -pedantic -fPIC -fsigned-char -O3 -fomit-frame-pointer -fforce-addr @MYOPTS@
++CFLAGS += -Wall -pedantic -fPIC -fsigned-char -fforce-addr @MYOPTS@
  LD = @LD@
  LIBS = -lqdbm @LIBS@
 -LIBLDFLAGS = -L. -L$(HOME)/lib -L/usr/local/lib @LIBS@
 -LDFLAGS = -L. -L$(HOME)/lib -L/usr/local/lib $(LIBS)
 -LDENV = LD_RUN_PATH=/lib:/usr/lib:$(HOME)/lib:/usr/local/lib:$(MYLIBDIR)
-+LIBLDFLAGS += -L. -L${LOCALBASE}/lib @LIBS@
-+LDFLAGS += -L. -L${LOCALBASE}/lib $(LIBS)
++LIBLDFLAGS = -L. -L${LOCALBASE}/lib @LIBS@
++LDFLAGS = -L. -L${LOCALBASE}/lib $(LIBS)
 +LDENV = LD_RUN_PATH=/lib:/usr/lib:${LOCALBASE}/lib:$(MYLIBDIR)
  AR = @AR@
 -ARFLAGS = rcsv
@@ -47,7 +45,7 @@ $OpenBSD: patch-Makefile_in,v 1.6 2006/06/20 10:42:05 bernd Exp $
  
  
  
-@@ -145,20 +145,20 @@ version :
+@@ -155,20 +155,20 @@ version :
  
  
  install :
@@ -82,7 +80,7 @@ $OpenBSD: patch-Makefile_in,v 1.6 2006/06/20 10:42:05 bernd Exp $
  	@printf '\n'
  	@printf '#================================================================\n'
  	@printf '# Thanks for using QDBM.\n'
-@@ -436,12 +436,12 @@ libqdbm.a : $(MYLIBOBJS)
+@@ -466,12 +466,12 @@ libqdbm.a : $(MYLIBOBJS)
  	$(AR) $(ARFLAGS) $@ $(MYLIBOBJS)
  
  
