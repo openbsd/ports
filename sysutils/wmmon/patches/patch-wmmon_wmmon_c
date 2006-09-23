@@ -1,6 +1,6 @@
-$OpenBSD: patch-wmmon_wmmon_c,v 1.4 2004/08/12 09:33:10 claudio Exp $
---- wmmon/wmmon.c.orig	1998-05-19 23:12:55.000000000 +0200
-+++ wmmon/wmmon.c	2004-07-28 16:09:09.000000000 +0200
+$OpenBSD: patch-wmmon_wmmon_c,v 1.5 2006/09/23 15:49:36 ckuethe Exp $
+--- wmmon/wmmon.c.orig	Tue May 19 15:13:16 1998
++++ wmmon/wmmon.c	Sat Sep 23 09:43:02 2006
 @@ -28,6 +28,10 @@
  	Changes:
  	----
@@ -127,16 +127,6 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.4 2004/08/12 09:33:10 claudio Exp $
  	long		ref_time = 0;
  	long		cnt_time;
  
--
--	fp = fopen("/proc/uptime", "r");
--	fp_meminfo = fopen("/proc/meminfo", "r");
--	fp_loadavg = fopen("/proc/loadavg", "r");
--	fp_stat = fopen("/proc/stat", "r");
--
--	if (fp) {
--		fscanf(fp, "%ld", &online_time);
--		ref_time = time(0);
--		fclose(fp);
 +	mib[0] = CTL_KERN;
 +	mib[1] = KERN_BOOTTIME;
 +	size = sizeof(boottime);
@@ -144,7 +134,11 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.4 2004/08/12 09:33:10 claudio Exp $
 +		ref_time = time(NULL);
 +		online_time = ref_time - boottime.tv_sec + 30;
 +	}
-+
+ 
+-	fp = fopen("/proc/uptime", "r");
+-	fp_meminfo = fopen("/proc/meminfo", "r");
+-	fp_loadavg = fopen("/proc/loadavg", "r");
+-	fp_stat = fopen("/proc/stat", "r");
 +	/* get the page size and calculate pageshift from it */
 +	pagesize = sysconf(_SC_PAGESIZE);
 +	pageshift = 0;
@@ -152,7 +146,11 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.4 2004/08/12 09:33:10 claudio Exp $
 +		pageshift++;
 +		pagesize >>= 1;
 +	}
-+
+ 
+-	if (fp) {
+-		fscanf(fp, "%ld", &online_time);
+-		ref_time = time(0);
+-		fclose(fp);
 +	/* we only need the amount of log(2)1024 for our conversion */
 +	pageshift -= 10;
 +
@@ -172,7 +170,7 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.4 2004/08/12 09:33:10 claudio Exp $
  		stat_device[i].hisaddcnt = 0;
  	}
  
-@@ -246,19 +272,21 @@ void wmmon_routine(int argc, char **argv
+@@ -246,38 +272,40 @@ void wmmon_routine(int argc, char **argv
  	if (RIGHT_ACTION) right_action = strdup(RIGHT_ACTION);
  	if (MIDDLE_ACTION) middle_action = strdup(MIDDLE_ACTION);
  
@@ -199,12 +197,12 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.4 2004/08/12 09:33:10 claudio Exp $
 +	}
  
 +	parse_rcfile("/etc/wmmonrc.fixed", wmmon_keys);
-+
-+	stat_online = checksysdevs();
  
++	stat_online = checksysdevs();
++
  	openXwindow(argc, argv, wmmon_master_xpm, wmmon_mask_bits, wmmon_mask_width, wmmon_mask_height);
  
-@@ -266,18 +294,18 @@ void wmmon_routine(int argc, char **argv
+ 	/* add mouse region */
  	AddMouseRegion(0, 12, 13, 58, 57);
  	AddMouseRegion(1, 5, 5, 24, 14);
  
@@ -264,7 +262,7 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.4 2004/08/12 09:33:10 claudio Exp $
  						if (stat_current == stat_online)
  							stat_current = 0;
  
-@@ -460,9 +486,28 @@ void wmmon_routine(int argc, char **argv
+@@ -460,146 +486,116 @@ void wmmon_routine(int argc, char **argv
  
  void update_stat_cpu(stat_dev *st) {
  
@@ -283,7 +281,7 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.4 2004/08/12 09:33:10 claudio Exp $
 +	size = sizeof(cp_time);
 +	if (sysctl(cp_time_mib, 2, &cp_time, &size, NULL, 0) < 0)
 +		warn("sysctl kern.cp_time failed");
-+
+ 
 +	size = sizeof(sysload);
 +	if (sysctl(sysload_mib, 2, &sysload, &size, NULL, 0) < 0)
 +		warn("sysctl failed");
@@ -292,10 +290,10 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.4 2004/08/12 09:33:10 claudio Exp $
 +	for (i = 0, istat = 0; i < CPUSTATES; i++)
 +		if (i != CP_IDLE) istat += cp_time[i];
 +	idle = cp_time[CP_IDLE];
- 
++
  	st->rt_idle = idle - st->idlelast;
  	st->idlelast = idle;
-@@ -470,136 +515,80 @@ void update_stat_cpu(stat_dev *st) {
+ 
  	st->rt_stat = istat - st->statlast;
  	st->statlast = istat;
  
@@ -308,18 +306,30 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.4 2004/08/12 09:33:10 claudio Exp $
  
 -	long			j, k, istat, idle;
 -	static long		maxdiskio = 0;
--
--	get_statistics(st->name, &k, &istat, &idle);
--
--	st->rt_idle = idle - st->idlelast;
--	st->idlelast = idle;
 +	struct diskstats	*q;
 +	static int		 io_mib[] = {CTL_HW, HW_DISKSTATS};
++	int			 mib[] = {CTL_HW, HW_DISKCOUNT};
 +	static long		 maxdiskxfers = 0;
 +	long			 xfers, rwstat;
 +	size_t			 size;
 +	int			 i;
-+
+ 
+-	get_statistics(st->name, &k, &istat, &idle);
++	size = sizeof(ndrives);
++	if (sysctl(mib, 2, &ndrives, &size, NULL, 0) < 0 ) {
++		warn("could not read hw.diskcount");
++		return;
++	}
+ 
+-	st->rt_idle = idle - st->idlelast;
+-	st->idlelast = idle;
+-
+-	st->rt_stat = istat - st->statlast;
+-	st->statlast = istat;
+-
+-	j = st->rt_stat;
+-	if (maxdiskio < j) {
+-		maxdiskio = j;
 +	size = ndrives * sizeof(struct diskstats);
 +	q = malloc(size);
 +	if (q == NULL)
@@ -327,47 +337,18 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.4 2004/08/12 09:33:10 claudio Exp $
 +	if (sysctl(io_mib, 2, q, &size, NULL, 0) < 0) {
 +		warn("could not read hw.diskstats");
 +		bzero(q, ndrives * sizeof(struct diskstats));
-+	}
-+
-+	for (i = 0; i < ndrives; i++) {
-+		rwstat += q[i].ds_rbytes + q[i].ds_wbytes;
-+		xfers += q[i].ds_rxfer + q[i].ds_wxfer;
-+	}
-+	free(q);
-+	
-+	if (st->statlast == 0)
-+		st->statlast = xfers;
-+	if (xfers < st->statlast)
-+		xfers = st->statlast;
-+	st->rt_stat = xfers - st->statlast;
-+	st->statlast = xfers;
- 
--	st->rt_stat = istat - st->statlast;
--	st->statlast = istat;
-+	if (maxdiskxfers < st->rt_stat)
-+		maxdiskxfers = st->rt_stat;
- 
--	j = st->rt_stat;
--	if (maxdiskio < j) {
--		maxdiskio = j;
--	}
+ 	}
 -	st->rt_idle = maxdiskio - j;
-+	st->rt_idle = maxdiskxfers - st->rt_stat;
-+	st->idlelast = 0;
  
 -	st->his[54] += st->rt_stat;
-+	st->his[54] += rwstat;
- 	st->hisaddcnt += 1;
- }
- 
- void update_stat_mem(stat_dev *st, stat_dev *st2) {
- 
+-	st->hisaddcnt += 1;
+-}
+-
+-void update_stat_mem(stat_dev *st, stat_dev *st2) {
+-
 -	char	temp[128];
 -	unsigned long free, shared, buffers, cached;
-+	struct vmtotal total;
-+	size_t size = sizeof(total);
-+	static int mib[] = { CTL_VM, VM_METER };
- 
+-
 -	freopen("/proc/meminfo", "r", fp_meminfo);
 -	while (fgets(temp, 128, fp_meminfo)) {
 -		if (strstr(temp, "Mem:")) {
@@ -385,13 +366,28 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.4 2004/08/12 09:33:10 claudio Exp $
 -			st2->rt_stat >>= 10;
 -			break;
 -		}
--	}
++	for (i = 0; i < ndrives; i++) {
++		rwstat += q[i].ds_rbytes + q[i].ds_wbytes;
++		xfers += q[i].ds_rxfer + q[i].ds_wxfer;
+ 	}
 -}
--
++	free(q);
++	
++	if (st->statlast == 0)
++		st->statlast = xfers;
++	if (xfers < st->statlast)
++		xfers = st->statlast;
++	st->rt_stat = xfers - st->statlast;
++	st->statlast = xfers;
+ 
 -void update_stat_swp(stat_dev *st) {
--
++	if (maxdiskxfers < st->rt_stat)
++		maxdiskxfers = st->rt_stat;
+ 
 -	char	temp[128];
--
++	st->rt_idle = maxdiskxfers - st->rt_stat;
++	st->idlelast = 0;
+ 
 -	fseek(fp_meminfo, 0, SEEK_SET);
 -	while (fgets(temp, 128, fp_meminfo)) {
 -		if (strstr(temp, "Swap:")) {
@@ -402,28 +398,37 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.4 2004/08/12 09:33:10 claudio Exp $
 -		}
 -	}
 -
--}
--
++	st->his[54] += rwstat;
++	st->hisaddcnt += 1;
+ }
+ 
 -/*******************************************************************************\
 -|* get_statistics															   *|
 -\*******************************************************************************/
-+	/* get total -- systemwide main memory usage structure */
-+	if ( sysctl(mib, 2, &total, &size, NULL, 0) < 0 )
-+		bzero(&total, sizeof(total));
++void update_stat_mem(stat_dev *st, stat_dev *st2) {
  
 -void get_statistics(char *devname, long *is, long *ds, long *idle) {
--
++	struct vmtotal total;
++	size_t size = sizeof(total);
++	static int mib[] = { CTL_VM, VM_METER };
+ 
 -	int	i;
 -	char	temp[128];
 -	char	*p;
 -	char	*tokens = " \t\n";
 -	float	f;
 -	long	maxdiskio=0;
--
++	/* get total -- systemwide main memory usage structure */
++	if ( sysctl(mib, 2, &total, &size, NULL, 0) < 0 )
++		bzero(&total, sizeof(total));
+ 
 -	*is = 0;
 -	*ds = 0;
 -	*idle = 0;
--
++	/* FIXME: is it right to count memory like this */
++	st->rt_idle = pagetok(total.t_rm + total.t_free);
++	st->rt_stat = pagetok(total.t_rm);
+ 
 -	if (!strncmp(devname, "cpu", 3)) {
 -		fseek(fp_stat, 0, SEEK_SET);
 -		while (fgets(temp, 128, fp_stat)) {
@@ -441,11 +446,11 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.4 2004/08/12 09:33:10 claudio Exp $
 -		fp_loadavg = freopen("/proc/loadavg", "r", fp_loadavg);
 -		fscanf(fp_loadavg, "%f", &f);
 -		*is = (long) (100 * f);
--	}
-+	/* FIXME: is it right to count memory like this */
-+	st->rt_idle = pagetok(total.t_rm + total.t_free);
-+	st->rt_stat = pagetok(total.t_rm);
- 
++	if ( !swapmode(&st2->rt_stat, &st2->rt_idle) ) {
++		st2->rt_idle = 0;
++		st2->rt_stat = 0;
+ 	}
+-
 -	if (!strncmp(devname, "i/o", 3)) {
 -
 -		fseek(fp_stat, 0, SEEK_SET);
@@ -460,10 +465,7 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.4 2004/08/12 09:33:10 claudio Exp $
 -			}
 -		}
 -		if (*ds > maxdiskio) maxdiskio = *ds;
-+	if ( !swapmode(&st2->rt_stat, &st2->rt_idle) ) {
-+		st2->rt_idle = 0;
-+		st2->rt_stat = 0;
- 	}
+-	}
  }
  
 -/*******************************************************************************\
@@ -484,7 +486,7 @@ $OpenBSD: patch-wmmon_wmmon_c,v 1.4 2004/08/12 09:33:10 claudio Exp $
  
  	return 3;
  }
-@@ -733,7 +722,35 @@ void usage(void) {
+@@ -733,7 +729,35 @@ void usage(void) {
  
  void printversion(void) {
  
