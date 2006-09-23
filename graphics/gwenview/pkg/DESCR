@@ -16,3 +16,5 @@ Features:
 - image rotation and mirroring
 - advanced keyboard navigation, Opera-like next / previous mouse navigation
 				and customizable mouse-wheel navigation
+
+International messages are in a separate gwenview-i18n package.

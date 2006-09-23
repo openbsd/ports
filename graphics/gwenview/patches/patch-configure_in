@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1 2006/09/23 12:24:48 espie Exp $
+--- configure.in.orig	Sat Sep 23 13:03:23 2006
++++ configure.in	Sat Sep 23 13:05:11 2006
+@@ -167,7 +167,7 @@ KDE_CHECK_HEADER(libmng.h,
+         [
+         AC_DEFINE_UNQUOTED(HAVE_LIBMNG, 1, [Define if you have libmng])
+         LIBMNG="-lmng $LIBZ -lm"
+-        ], [], $LIBZ -lm)
++        ], [], -llcms -ljpeg $LIBZ -lm)
+     ])
+ AC_SUBST(LIBMNG)
+ if test -z "$LIBMNG"; then
