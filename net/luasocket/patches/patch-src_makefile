@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_makefile,v 1.1 2005/11/25 15:09:44 pedro Exp $
---- src/makefile.orig	Tue Nov 22 19:19:38 2005
-+++ src/makefile	Wed Nov 23 21:53:20 2005
-@@ -10,27 +10,13 @@ include ../config
- #------
+$OpenBSD: patch-src_makefile,v 1.2 2006/09/23 18:05:31 pedro Exp $
+--- src/makefile.orig	Thu Apr 27 00:23:21 2006
++++ src/makefile	Sat Sep 23 14:14:11 2006
+@@ -11,42 +11,21 @@ include ../config
  # Modules belonging to socket-core
  #
+ 
 -SOCKET_OBJS:= \
 -	$(COMPAT)/compat-5.1.o \
 -	luasocket.o \
@@ -19,8 +19,8 @@ $OpenBSD: patch-src_makefile,v 1.1 2005/11/25 15:09:44 pedro Exp $
 -	except.o \
 -	select.o \
 -	usocket.o 
-+SOCKET_OBJS:=	luasocket.o timeout.o buffer.o io.o auxiliar.o options.o inet.o\
-+		tcp.o udp.o except.o select.o usocket.o 
++SOCKET_OBJS:= luasocket.o timeout.o buffer.o io.o auxiliar.o options.o inet.o \
++	      tcp.o udp.o except.o select.o usocket.o 
  
  #------
  # Modules belonging mime-core
@@ -28,24 +28,24 @@ $OpenBSD: patch-src_makefile,v 1.1 2005/11/25 15:09:44 pedro Exp $
 -MIME_OBJS:=\
 -	$(COMPAT)/compat-5.1.o \
 -	mime.o 
-+MIME_OBJS:=	mime.o 
++MIME_OBJS:= mime.o
  
  
  #------
-@@ -48,13 +34,13 @@ UNIX_OBJS:=\
- all: $(SOCKET_SO) $(MIME_SO) 
+ # Modules belonging unix (local domain sockets)
+ #
+-UNIX_OBJS:=\
+-	buffer.o \
+-	auxiliar.o \
+-	options.o \
+-	timeout.o \
+-	io.o \
+-	usocket.o \
+-	unix.o
++UNIX_OBJS:= buffer.o auxiliar.o options.o timeout.o io.o usocket.o unix.o
+ 
+-all: $(SOCKET_SO) $(MIME_SO) 
++all: $(SOCKET_SO) $(MIME_SO) $(UNIX_SO)
  
  $(SOCKET_SO): $(SOCKET_OBJS)
--	$(LD) $(LDFLAGS) -o $@ $^
-+	$(LD) $(LDFLAGS) $(SOCKET_OBJS) -o $@
- 
- $(MIME_SO): $(MIME_OBJS)
--	$(LD) $(LDFLAGS) -o $@ $^
-+	$(LD) $(LDFLAGS) $(MIME_OBJS) -o $@
- 
- $(UNIX_SO): $(UNIX_OBJS)
--	$(LD) $(LDFLAGS) -o $@ $^
-+	$(LD) $(LDFLAGS) $(UNIX_OBJS) -o $@
- 
- #------
- # List of dependencies
+ 	$(LD) $(LDFLAGS) -o $@ $(SOCKET_OBJS)

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2006/07/30 04:42:52 pedro Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2006/09/23 18:05:31 pedro Exp $
 lib/lua/5.1/mime/
 lib/lua/5.1/mime/core.so
 lib/lua/5.1/socket/
 lib/lua/5.1/socket/core.so
+lib/lua/5.1/socket/unix.so
