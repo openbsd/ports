@@ -1,30 +1,30 @@
-$OpenBSD: patch-htmldoc_file_c,v 1.2 2002/08/10 20:12:36 wilfried Exp $
---- htmldoc/file.c.orig	Tue May  7 22:40:53 2002
-+++ htmldoc/file.c	Fri Aug  9 14:37:13 2002
-@@ -73,7 +73,7 @@
+$OpenBSD: patch-htmldoc_file_c,v 1.3 2006/09/23 10:14:34 steven Exp $
+--- htmldoc/file.c.orig	Fri Sep 22 19:27:41 2006
++++ htmldoc/file.c	Fri Sep 22 19:28:11 2006
+@@ -78,7 +78,7 @@
  #  define OPENPERM	(_S_IREAD | _S_IWRITE)
  #else
- #  define TEMPLATE	"%s/%06d.%06d.tmp"
+ #  define TEMPLATE	"%s/%06ld.%06d.tmp"
 -#  define OPENMODE	(O_CREAT | O_RDWR | O_EXCL | O_TRUNC)
 +#  define OPENMODE	(O_CREAT | O_RDWR | O_EXCL)
  #  define OPENPERM	0600
  #endif /* WIN32 */
  
-@@ -166,7 +166,7 @@ file_cleanup(void)
-   GetTempPath(sizeof(tmpdir), tmpdir);
+@@ -176,7 +176,7 @@ file_cleanup(void)
+   }
  #else
    if ((tmpdir = getenv("TMPDIR")) == NULL)
 -    tmpdir = "/var/tmp";
 +    tmpdir = "/tmp";
  #endif /* WIN32 */
  
-   while (web_files > 0)
-@@ -983,7 +983,7 @@ file_temp(char *name,			/* O - Filename 
-   GetTempPath(sizeof(tmpdir), tmpdir);
+  /*
+@@ -1097,7 +1097,7 @@ file_temp(char *name,			/* O - Filename 
+   }
  #else
    if ((tmpdir = getenv("TMPDIR")) == NULL)
 -    tmpdir = "/var/tmp";
 +    tmpdir = "/tmp";
  #endif /* WIN32 */
  
-   snprintf(name, len, TEMPLATE, tmpdir, getpid(), web_files);
+   snprintf(name, (size_t)len, TEMPLATE, tmpdir, (long)getpid(), web_files);
