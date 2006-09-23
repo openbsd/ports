@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/10/02 15:41:19 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/09/23 16:51:04 steven Exp $
 bin/nikto
 @man man/man1/nikto.1
 share/doc/nikto/
+@comment no checksum
+share/doc/nikto/CHANGES.txt
 share/doc/nikto/README_plugins.txt
 share/doc/nikto/nikto_usage.txt
 share/examples/nikto/
@@ -9,21 +11,39 @@ share/examples/nikto/nikto.conf
 @sample ${SYSCONFDIR}/nikto.conf
 share/nikto/
 share/nikto/LW.pm
+@comment no checksum
 share/nikto/nikto_apacheusers.plugin
+@comment no checksum
 share/nikto/nikto_core.plugin
+@comment no checksum
 share/nikto/nikto_headers.plugin
+@comment no checksum
 share/nikto/nikto_httpoptions.plugin
+@comment no checksum
 share/nikto/nikto_msgs.plugin
+@comment no checksum
 share/nikto/nikto_mutate.plugin
+@comment no checksum
 share/nikto/nikto_outdated.plugin
+@comment no checksum
 share/nikto/nikto_passfiles.plugin
+@comment no checksum
 share/nikto/nikto_plugin_order.txt
+@comment no checksum
 share/nikto/nikto_realms.plugin
+@comment no checksum
 share/nikto/nikto_robots.plugin
+@comment no checksum
 share/nikto/nikto_user_enum_apache.plugin
+@comment no checksum
 share/nikto/nikto_user_enum_cgiwrap.plugin
+@comment no checksum
 share/nikto/outdated.db
+@comment no checksum
 share/nikto/realms.db
+@comment no checksum
 share/nikto/scan_database.db
+@comment no checksum
 share/nikto/server_msgs.db
+@comment no checksum
 share/nikto/servers.db
