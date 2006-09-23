@@ -1,6 +1,25 @@
-$OpenBSD: patch-configure_ac,v 1.1 2006/09/22 03:42:57 pvalchev Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2006/09/23 13:54:09 kurt Exp $
 --- configure.ac.orig	Mon Apr 17 16:11:11 2006
-+++ configure.ac	Sun Aug  6 00:55:20 2006
++++ configure.ac	Sat Sep 23 09:43:43 2006
+@@ -73,12 +73,12 @@ AC_PROG_MAKE_SET
+ AC_PROG_CC
+ AC_PROG_CXX
+ 
+-AC_PATH_PROG(CCACHE, ccache)
+-if test "$CCACHE"
+-then
+-  CC="ccache $CC"
+-  CXX="ccache $CXX"
+-fi
++dnl AC_PATH_PROG(CCACHE, ccache)
++dnl if test "$CCACHE"
++dnl then
++dnl   CC="ccache $CC"
++dnl   CXX="ccache $CXX"
++dnl fi
+ 
+ AC_CHECK_TOOL(WINDRES, windres, :)
+ 
 @@ -125,7 +125,7 @@ AC_SUBST(AR)
  AC_CHECK_PROG(AR, ar, ar)
  AC_SUBST(AR_FLAGS)
