@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.771 2006/09/21 11:31:33 bernd Exp $
+#	$OpenBSD: bsd.port.mk,v 1.772 2006/09/23 09:40:06 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1152,9 +1152,6 @@ _DEP${_DEP}_COOKIES+=${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}
 _INSTALL_DEPS=${_INSTALL_COOKIE}
 _PACKAGE_DEPS=${_PACKAGE_COOKIES}
 _UPDATE_DEPS=${_UPDATE_COOKIE}
-.if defined(ALWAYS_PACKAGE)
-_INSTALL_DEPS+=${_PACKAGE_COOKIES}
-.endif
 .if ${BULK_${PKGPATH}:L} == "yes"
 _INSTALL_DEPS+=${_BULK_COOKIE}
 _PACKAGE_DEPS+=${_BULK_COOKIE}
@@ -2056,7 +2053,8 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
 
 # The real install
 
-${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIES}
+${_INSTALL_COOKIE}: ${_PACKAGE_COOKIES}
+	@cd ${.CURDIR} && exec ${MAKE} package
 	@cd ${.CURDIR} && DEPENDS_TARGET=install PACKAGING='${SUBPACKAGE}' exec ${MAKE} _internal-run-depends _internal-lib-depends
 	@${ECHO_MSG} "===>  Installing ${FULLPKGNAME${SUBPACKAGE}} from ${_PKG_REPO}"
 .  for _m in ${MODULES}
@@ -2203,10 +2201,10 @@ _internal-clean:
 .  endif
 .endif
 .if ${_clean:L:Mpackages} || ${_clean:L:Mpackage} && ${_clean:L:Msub}
-	rm -f ${_PACKAGE_COOKIES}
+	@cd ${.CURDIR} && PACKAGING='' SUBPACKAGE='' exec ${MAKE} clean=package
 .  if defined(MULTI_PACKAGES)
 .    for _s in ${MULTI_PACKAGES}
-	@cd ${.CURDIR} && SUBPACKAGE='${_s}' exec ${MAKE} clean=package
+	@cd ${.CURDIR} && PACKAGING='${_s}' SUBPACKAGE='${_s}' exec ${MAKE} clean=package
 .    endfor
 .  endif
 .elif ${_clean:L:Mpackage}
