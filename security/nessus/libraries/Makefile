@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2006/06/01 05:16:32 aanriot Exp $
+# $OpenBSD: Makefile,v 1.5 2006/09/23 08:45:04 aanriot Exp $
 
 COMMENT=	"libraries for Nessus"
 DISTNAME=	nessus-libraries-${V}
 
-SHARED_LIBS=	hosts_gatherer	4.6 \
-		nessus		4.6
+SHARED_LIBS=	hosts_gatherer	4.7 \
+		nessus		4.7
 
 USE_LIBTOOL=	Yes
 

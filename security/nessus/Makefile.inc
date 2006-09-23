@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.6 2006/06/01 05:16:32 aanriot Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2006/09/23 08:45:04 aanriot Exp $
 
-V=		2.2.7
+V=		2.2.8
 CATEGORIES=	security
 
 HOMEPAGE=	http://www.nessus.org/

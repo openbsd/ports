@@ -1,7 +1,20 @@
-$OpenBSD: patch-Makefile,v 1.1 2006/06/01 05:16:32 aanriot Exp $
+$OpenBSD: patch-Makefile,v 1.2 2006/09/23 08:45:04 aanriot Exp $
 --- Makefile.orig	Sun Jan 15 16:37:55 2006
-+++ Makefile	Sat Apr 29 21:24:39 2006
-@@ -23,22 +23,11 @@ install-bin:
++++ Makefile	Fri Sep 22 18:24:32 2006
+@@ -10,35 +10,16 @@ nessus.tmpl: nessus.tmpl.in configure VE
+ 	touch $@
+ 
+ install: all $(CLIENT_INSTALL) install-bin install-man
+-	@echo
+-	@echo ' --------------------------------------------------------------'
+-	@echo ' nessus-core has been sucessfully installed. '
+-	@echo " Make sure that $(bindir) and $(sbindir) are in your PATH before"
+-	@echo " you continue."
+-	@echo " nessusd has been installed into $(sbindir)"
+-	@echo ' --------------------------------------------------------------'
+-	@echo
+ 
+ install-bin:
  	test -d $(DESTDIR)${sbindir} || $(INSTALL_DIR) -m 755 $(DESTDIR)${sbindir}
  	$(INSTALL) -m $(SERVERMODE)  ${make_bindir}/nessusd $(DESTDIR)${sbindir}
  	$(INSTALL) -m $(SERVERMODE) ${make_bindir}/nessus-check-signature $(DESTDIR)${sbindir}
