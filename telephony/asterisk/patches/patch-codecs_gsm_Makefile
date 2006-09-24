@@ -1,23 +1,23 @@
-$OpenBSD: patch-codecs_gsm_Makefile,v 1.4 2006/02/02 03:41:36 todd Exp $
---- codecs/gsm/Makefile.orig	Tue Nov 29 13:24:39 2005
-+++ codecs/gsm/Makefile	Wed Dec 28 13:32:56 2005
+$OpenBSD: patch-codecs_gsm_Makefile,v 1.5 2006/09/24 21:09:26 jolan Exp $
+--- codecs/gsm/Makefile.orig	Mon Jul 24 12:05:56 2006
++++ codecs/gsm/Makefile	Tue Sep 19 14:26:50 2006
 @@ -37,6 +37,7 @@ WAV49	= -DWAV49
  ######### ppro's, etc, as well as the AMD K6 and K7.  The compile will
  ######### probably require gcc. 
  
 +ifneq (${OSARCH},OpenBSD)
  ifneq (${OSARCH},Darwin)
- ifneq (${OSARCH},SunOS)
- ifneq (${PROC},x86_64)
-@@ -62,6 +63,7 @@ endif
- endif
- endif
+  ifneq (${OSARCH},SunOS)
+   ifneq (${PROC},x86_64)
+@@ -66,6 +67,7 @@ OPTIMIZE+=-march=$(PROC)
+   endif
+  endif
  endif
 +endif
  
  #The problem with sparc is the best stuff is in newer versions of gcc (post 3.0) only.
  #This works for even old (2.96) versions of gcc and provides a small boost either way.
-@@ -69,7 +71,9 @@ endif
+@@ -73,7 +75,9 @@ endif
  #So we go lowest common available by gcc and go a step down, still a step up from
  #the default as we now have a better instruction set to work with. - Belgarath
  ifeq (${PROC},ultrasparc)

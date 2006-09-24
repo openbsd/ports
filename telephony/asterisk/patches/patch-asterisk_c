@@ -1,7 +1,7 @@
-$OpenBSD: patch-asterisk_c,v 1.4 2006/02/02 03:41:36 todd Exp $
---- asterisk.c.orig	Tue Nov 29 13:24:39 2005
-+++ asterisk.c	Wed Dec 28 13:18:17 2005
-@@ -433,7 +433,7 @@ int ast_safe_system(const char *s)
+$OpenBSD: patch-asterisk_c,v 1.5 2006/09/24 21:09:26 jolan Exp $
+--- asterisk.c.orig	Mon Aug 21 17:34:26 2006
++++ asterisk.c	Tue Sep 19 14:26:50 2006
+@@ -448,7 +448,7 @@ int ast_safe_system(const char *s)
  		/* Close file descriptors and launch system command */
  		for (x = STDERR_FILENO + 1; x < 4096; x++)
  			close(x);
@@ -10,7 +10,7 @@ $OpenBSD: patch-asterisk_c,v 1.4 2006/02/02 03:41:36 todd Exp $
  		exit(1);
  	} else if (pid > 0) {
  		for(;;) {
-@@ -1927,7 +1927,7 @@ int main(int argc, char *argv[])
+@@ -2010,7 +2010,7 @@ int main(int argc, char *argv[])
  	int num;
  	int is_child_of_nonroot=0;
  	char *buf;
@@ -19,8 +19,8 @@ $OpenBSD: patch-asterisk_c,v 1.4 2006/02/02 03:41:36 todd Exp $
  
  	/* Remember original args for restart */
  	if (argc > sizeof(_argv) / sizeof(_argv[0]) - 1) {
-@@ -2065,6 +2065,8 @@ int main(int argc, char *argv[])
- 			ast_log(LOG_WARNING, "Unable to disable core size resource limit: %s\n", strerror(errno));
+@@ -2138,6 +2138,8 @@ int main(int argc, char *argv[])
+ 			argv[x] = argv[0] + 10;
  		}
  	}
 +
