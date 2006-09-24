@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2006/07/27 17:06:25 aanriot Exp $
+# $OpenBSD: Makefile,v 1.4 2006/09/24 20:39:40 aanriot Exp $
 
 COMMENT=	"Prelude Management Console"
 
-DISTNAME=	prewikka-0.9.6
+DISTNAME=	prewikka-0.9.7.1
 PKGNAME=	prelude-${DISTNAME}
 
 # only postgresql support for now
