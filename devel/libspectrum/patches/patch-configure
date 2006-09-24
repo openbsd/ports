@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.1 2004/05/08 06:46:10 sturm Exp $
---- configure.orig	2004-04-25 12:07:33.000000000 +0200
-+++ configure	2004-04-25 12:09:06.000000000 +0200
-@@ -6149,7 +6149,7 @@ if eval "test \"`echo '$ac_cv_header_'$a
-   cat >> confdefs.h <<EOF
- #define $ac_tr_hdr 1
- EOF
+$OpenBSD: patch-configure,v 1.2 2006/09/24 18:26:08 grange Exp $
+--- configure.orig	Fri Jul 16 13:47:12 2004
++++ configure	Sun Sep 24 21:57:42 2006
+@@ -19911,7 +19911,7 @@ if test `eval echo '${'$as_ac_Header'}'`
+   cat >>confdefs.h <<_ACEOF
+ #define `echo "HAVE_$ac_header" | $as_tr_cpp` 1
+ _ACEOF
 - LIBS="$LIBS -lgcrypt"
 + LIBS="$LIBS -lgcrypt -lgpg-error"
- else
-   echo "$ac_t""no" 1>&6
  fi
+ 
+ done
