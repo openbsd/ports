@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/08/01 22:19:46 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/09/24 18:33:44 grange Exp $
 
 COMMENT=		"file copying over the OBEX protocol"
 DISTNAME=		obexftp-0.10.4
@@ -9,7 +9,6 @@ SHARED_LIBS=		bfb		0.4 \
 
 CATEGORIES=		comms
 HOMEPAGE=		http://triq.net/obex/
-MAINTAINER=		Alexander Yurchenko <grange@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

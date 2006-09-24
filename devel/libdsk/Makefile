@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/08/01 22:55:52 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/09/24 18:30:58 grange Exp $
 
 COMMENT=		"library for accessing disks and disk image files"
 
@@ -8,8 +8,6 @@ SHARED_LIBS=		dsk 2.2
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.seasip.demon.co.uk/Unix/LibDsk/
-
-MAINTAINER=		Alexander Yurchenko <grange@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

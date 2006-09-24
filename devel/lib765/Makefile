@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/08/01 22:55:52 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/09/24 18:31:55 grange Exp $
 
 COMMENT=		"library for the floppy controller emulation"
 
@@ -9,8 +9,6 @@ MODGNU_SHARED_LIBS=	765 ''
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.seasip.demon.co.uk/Unix/LibDsk/
-
-MAINTAINER=		Alexander Yurchenko <grange@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
