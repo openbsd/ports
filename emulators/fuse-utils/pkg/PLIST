@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 00:42:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/09/24 18:17:33 grange Exp $
+bin/createhdf
 bin/listbasic
 bin/rzxcheck
 bin/rzxdump
@@ -8,6 +9,7 @@ bin/snap2tzx
 bin/snapconv
 bin/tapeconv
 bin/tzxlist
+@man man/man1/createhdf.1
 @man man/man1/fuse-utils.1
 @man man/man1/listbasic.1
 @man man/man1/rzxcheck.1
