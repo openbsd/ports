@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2006/07/16 00:41:24 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2006/09/24 20:38:52 aanriot Exp $
 %%SHARED%%
 bin/prelude-lml
 include/prelude-lml/
@@ -22,8 +22,12 @@ share/examples/prelude-lml/ruleset/arbor.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/arbor.rules
 share/examples/prelude-lml/ruleset/arpwatch.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/arpwatch.rules
-share/examples/prelude-lml/ruleset/cisco-pix.rules
-@sample ${SYSCONFDIR}/prelude-lml/ruleset/cisco-pix.rules
+share/examples/prelude-lml/ruleset/checkpoint.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/checkpoint.rules
+share/examples/prelude-lml/ruleset/cisco-asa.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/cisco-asa.rules
+share/examples/prelude-lml/ruleset/cisco-css.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/cisco-css.rules
 share/examples/prelude-lml/ruleset/cisco-router.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/cisco-router.rules
 share/examples/prelude-lml/ruleset/cisco-vpn.rules
