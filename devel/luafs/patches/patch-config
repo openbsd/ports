@@ -1,7 +1,7 @@
-$OpenBSD: patch-config,v 1.4 2006/07/30 04:38:39 pedro Exp $
---- config.orig	Thu Jul 27 16:38:52 2006
-+++ config	Thu Jul 27 16:39:09 2006
-@@ -1,20 +1,20 @@
+$OpenBSD: patch-config,v 1.5 2006/09/24 16:56:08 pedro Exp $
+--- config.orig	Sun Sep 24 13:34:34 2006
++++ config	Sun Sep 24 13:36:22 2006
+@@ -1,20 +1,22 @@
  # Installation directories
  # System's libraries directory (where binary libraries are installed)
 -LUA_LIBDIR= /usr/local/lib/lua/5.0
@@ -9,6 +9,8 @@ $OpenBSD: patch-config,v 1.4 2006/07/30 04:38:39 pedro Exp $
  # Lua includes directory
 -LUA_INC= /usr/local/include
 +LUA_INC= $(LOCALBASE)/include
++# Location of the Lua interpreter.
++LUA= $(PREFIX)/bin/lua
  
  # OS dependent
  LIB_OPTION= -shared #for Linux
@@ -27,4 +29,4 @@ $OpenBSD: patch-config,v 1.4 2006/07/30 04:38:39 pedro Exp $
 +CFLAGS+= -fPIC
 +CC= cc
  
- # $Id: patch-config,v 1.4 2006/07/30 04:38:39 pedro Exp $
+ # $Id: patch-config,v 1.5 2006/09/24 16:56:08 pedro Exp $

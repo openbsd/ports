@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2006/07/30 04:38:39 pedro Exp $
+# $OpenBSD: Makefile,v 1.5 2006/09/24 16:56:08 pedro Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	"file system library for the lua language"
 DISTNAME=	luafilesystem-1.2
-PKGNAME=	luafs-1.2p0
+PKGNAME=	luafs-1.2p1
 CATEGORIES=	devel
 MASTER_SITES=	http://luaforge.net/frs/download.php/1487/
 
@@ -17,7 +17,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-NO_REGRESS=	Yes
 BUILD_DEPENDS=  ::lang/lua
 RUN_DEPENDS=    ${BUILD_DEPENDS}
 
