@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2006/09/24 17:37:43 grange Exp $
+# $OpenBSD: Makefile,v 1.13 2006/09/24 19:02:46 grange Exp $
 # $RuOBSD: Makefile,v 1.1.1.1 2002/04/08 02:46:36 form Exp $
 
 COMMENT=		"IP accounting daemon simulating Cisco ip accounting"
 
 DISTNAME=		ipcad-3.4.4
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		net
 HOMEPAGE=		http://sourceforge.net/projects/ipcad/
 

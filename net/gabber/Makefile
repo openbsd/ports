@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2006/09/24 17:40:30 grange Exp $
+# $OpenBSD: Makefile,v 1.14 2006/09/24 19:02:46 grange Exp $
 # $RuOBSD: Makefile,v 1.9 2002/10/28 16:01:41 grange Exp $
 
 COMMENT=		"GNOME jabber client"
 
 DISTNAME=		gabber-0.8.7
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		net x11/gnome
 
 HOMEPAGE=		http://gabber.sourceforge.net/

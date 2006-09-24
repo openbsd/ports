@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2006/09/24 18:36:23 grange Exp $
+# $OpenBSD: Makefile,v 1.5 2006/09/24 19:02:46 grange Exp $
 # $RuOBSD: Makefile,v 1.7 2003/08/18 18:40:14 grange Exp $
 
 COMMENT=		"Bohlin's IrDA utilities"
 
 DISTNAME=		birda-1.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		comms
 MASTER_SITES=		ftp://ftp.augustsson.net/pub/netbsd/
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2006/09/24 18:30:58 grange Exp $
+# $OpenBSD: Makefile,v 1.10 2006/09/24 19:02:46 grange Exp $
 
 COMMENT=		"library for accessing disks and disk image files"
 
 DISTNAME=		libdsk-1.0.0
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 SHARED_LIBS=		dsk 2.2
 CATEGORIES=		devel
 

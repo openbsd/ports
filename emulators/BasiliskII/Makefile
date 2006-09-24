@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2006/09/24 18:24:49 grange Exp $
+# $OpenBSD: Makefile,v 1.13 2006/09/24 19:02:46 grange Exp $
 # $RuOBSD: Makefile,v 1.4 2002/04/29 11:07:18 grange Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2001/12/29 00:22:02 abs Exp $
 
 COMMENT=		"open source 68k Macintosh emulator"
 
 DISTNAME=		BasiliskII_src_31052001
-PKGNAME=		BasiliskII-0.9.1p0
+PKGNAME=		BasiliskII-0.9.1p1
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://basilisk.cebix.net/

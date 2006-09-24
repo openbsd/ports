@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2006/09/24 18:31:55 grange Exp $
+# $OpenBSD: Makefile,v 1.7 2006/09/24 19:02:46 grange Exp $
 
 COMMENT=		"library for the floppy controller emulation"
 
 DISTNAME=		lib765-0.3.1.1
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 SHARED_LIBS=		765 3.1
 MODGNU_SHARED_LIBS=	765 ''
 CATEGORIES=		devel

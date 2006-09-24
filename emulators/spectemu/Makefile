@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2006/09/24 18:42:32 grange Exp $
+# $OpenBSD: Makefile,v 1.6 2006/09/24 19:02:46 grange Exp $
 
 COMMENT=		"ZX Spectrum 48k emulator"
 
 DISTNAME=		spectemu-0.94
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://www.inf.bme.hu/~mszeredi/spectemu/
