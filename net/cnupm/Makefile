@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/01/06 16:39:26 grange Exp $
+# $OpenBSD: Makefile,v 1.9 2006/09/24 17:41:31 grange Exp $
 
 COMMENT=		"IPv4/IPv6 traffic collector"
 
@@ -6,7 +6,6 @@ DISTNAME=		cnupm-3.11
 CATEGORIES=		net
 
 HOMEPAGE=		http://pdp-11.org.ru/~form/cnupm
-MAINTAINER=		Alexander Yurchenko <grange@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
