@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2006/08/02 09:36:20 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2006/09/24 18:24:49 grange Exp $
 # $RuOBSD: Makefile,v 1.4 2002/04/29 11:07:18 grange Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2001/12/29 00:22:02 abs Exp $
 
@@ -9,8 +9,6 @@ PKGNAME=		BasiliskII-0.9.1p0
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://basilisk.cebix.net/
-
-MAINTAINER=		Alexander Yurchenko <grange@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
