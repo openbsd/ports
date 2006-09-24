@@ -1,0 +1,9 @@
+$OpenBSD: patch-test_lua,v 1.1 2006/09/24 17:18:16 pedro Exp $
+--- test.lua.orig	Sun Sep 24 14:10:11 2006
++++ test.lua	Sun Sep 24 14:10:17 2006
+@@ -1,4 +1,5 @@
+ -- test alarm
++require("alarm")
+ 
+ function myalarm()
+  print("in alarm!",os.date"%T",a,math.floor(100*a/N).."%")
