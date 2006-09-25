@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2006/09/18 12:19:41 espie Exp $
+# $OpenBSD: Makefile,v 1.104 2006/09/25 17:11:37 steven Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -159,7 +159,7 @@ CONFIGURE_ARGS+=--enable-debug=3
 
 .if ${FLAVOR:L:Mmad}
 CONFIGURE_ARGS+=--enable-mad
-LIB_DEPENDS+=	mad.2::audio/libmad
+LIB_DEPENDS+=	mad.>=2::audio/libmad
 .else
 CONFIGURE_ARGS+=--disable-mad
 .endif
@@ -177,9 +177,9 @@ CONFIGURE_ARGS+=--disable-win32 \
 .if ${FLAVOR:L:Maa}
 CONFIGURE_ARGS+=--enable-aa
 .if ${FLAVOR:L:Mno_x11}
-LIB_DEPENDS+=	aa.1.3:aalib-*-no_x11:graphics/aalib,no_x11
+LIB_DEPENDS+=	aa.>=1.3:aalib-*-no_x11:graphics/aalib,no_x11
 .else
-LIB_DEPENDS+=	aa.1.3:aalib-*:graphics/aalib
+LIB_DEPENDS+=	aa.>=1.3:aalib-*:graphics/aalib
 .endif
 .else
 CONFIGURE_ARGS+=--disable-aa
