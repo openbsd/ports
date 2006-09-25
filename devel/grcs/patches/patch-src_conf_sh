@@ -1,6 +1,15 @@
-$OpenBSD: patch-src_conf_sh,v 1.1 2006/06/16 15:07:06 jolan Exp $
---- src/conf.sh.orig	Fri Jun 16 01:19:24 1995
-+++ src/conf.sh	Fri Jun 16 10:05:14 2006
+$OpenBSD: patch-src_conf_sh,v 1.2 2006/09/25 23:23:10 ray Exp $
+--- src/conf.sh.orig	Fri Jun 16 02:19:05 1995
++++ src/conf.sh	Fri Sep  1 13:08:45 2006
+@@ -36,7 +36,7 @@ Id='$Id: conf.sh,v 5.25 1995/06/16 06:19
+ : ${ALL_CFLAGS=-Dhas_conf_h}
+ : ${CC=cc}
+ : ${COMPAT2=0}
+-: ${DIFF=${RCSPREFIX}diff}
++: ${DIFF=/usr/bin/diff}
+ : ${DIFF3=${DIFF}3}
+ : ${DIFF3_BIN=1}
+ : ${DIFFFLAGS=-an}
 @@ -73,16 +73,16 @@ case `echo -n` in
  	ech='echo -n' dots='... '
  esac
@@ -28,3 +37,21 @@ $OpenBSD: patch-src_conf_sh,v 1.1 2006/06/16 15:07:06 jolan Exp $
  
  $ech >&3 "$0: testing compiler for plausibility $dots"
  echo 'main() { return 0; }' >a.c
+@@ -1933,7 +1933,7 @@ echo >&3 $ok
+ echo "#define has_utimbuf $h /* Does struct utimbuf work?  */"
+ 
+ : configuring CO
+-echo "#define CO \"${RCSPREFIX}co\" /* name of 'co' program */"
++echo "#define CO \"${RCSPREFIX}gco\" /* name of 'co' program */"
+ 
+ : configuring COMPAT2
+ echo "#define COMPAT2 $COMPAT2 /* Are version 2 files supported?  */"
+@@ -1964,7 +1964,7 @@ EOF
+ echo "#define ED \"${ED}\" /* name of 'ed' program (used only if !DIFF3_BIN) */"
+ 
+ : configuring MERGE
+-echo "#define MERGE \"${RCSPREFIX}merge\" /* name of 'merge' program */"
++echo "#define MERGE \"${RCSPREFIX}gmerge\" /* name of 'merge' program */"
+ 
+ : configuring '*SLASH*', ROOTPATH, TMPDIR, X_DEFAULT
+ case ${PWD-`pwd`} in
