@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2006/09/25 12:55:30 fgsch Exp $
+# $OpenBSD: Makefile,v 1.27 2006/09/25 16:08:53 fgsch Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	"Python module for writing basic XML applications"
 
 VERSION=	0.8.4
 DISTNAME=	PyXML-${VERSION}
-PKGNAME=	py-xml-${VERSION}p0
+PKGNAME=	py-xml-${VERSION}p1
 CATEGORIES=	textproc devel
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pyxml/}
@@ -50,6 +50,7 @@ post-install:
 	@cd ${SRC_DOCDIR}/ && ${INSTALL_DATA} ${DOCEXT} ${DOC_DIR}
 
 do-regress:
-	@cd ${WRKSRC}/test && PYTHONPATH=${WRKSRC} ./regrtest.py
+	@cd ${WRKSRC}/test && \
+	  PYTHONPATH=${WRKSRC} python${MODPY_VERSION} ./regrtest.py
 
 .include <bsd.port.mk>
