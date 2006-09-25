@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile,v 1.1 2006/07/30 04:25:41 pedro Exp $
---- src/Makefile.orig	Thu Jul 27 12:27:04 2006
-+++ src/Makefile	Thu Jul 27 12:48:49 2006
+$OpenBSD: patch-src_Makefile,v 1.2 2006/09/25 02:39:06 pedro Exp $
+--- src/Makefile.orig	Tue Mar 21 21:41:49 2006
++++ src/Makefile	Sun Sep 24 19:01:18 2006
 @@ -7,8 +7,8 @@
  # Your platform. See PLATS for possible values.
  PLAT= none
@@ -8,11 +8,33 @@ $OpenBSD: patch-src_Makefile,v 1.1 2006/07/30 04:25:41 pedro Exp $
 -CC= gcc
 -CFLAGS= -O2 -Wall $(MYCFLAGS)
 +CC= cc
-+CFLAGS+= $(MYCFLAGS)
++CFLAGS+= $(MYCFLAGS) -fPIC
  AR= ar rcu
  RANLIB= ranlib
  RM= rm -f
-@@ -86,7 +86,7 @@ ansi:
+@@ -34,9 +34,10 @@ LUA_O=	lua.o
+ 
+ LUAC_T=	luac
+ LUAC_O=	luac.o print.o
++LUA_SO= liblua.so.5.1
+ 
+ ALL_O= $(CORE_O) $(LIB_O) $(LUA_O) $(LUAC_O)
+-ALL_T= $(LUA_A) $(LUA_T) $(LUAC_T)
++ALL_T= $(LUA_A) $(LUA_T) $(LUAC_T) $(LUA_SO)
+ ALL_A= $(LUA_A)
+ 
+ default: $(PLAT)
+@@ -57,6 +58,9 @@ $(LUA_T): $(LUA_O) $(LUA_A)
+ $(LUAC_T): $(LUAC_O) $(LUA_A)
+ 	$(CC) -o $@ $(MYLDFLAGS) $(LUAC_O) $(LUA_A) $(LIBS)
+ 
++$(LUA_SO):
++	$(CC) -o $@ -shared -fPIC $(MYLDFLAGS) $(CORE_O) $(LIB_O)
++
+ clean:
+ 	$(RM) $(ALL_T) $(ALL_O)
+ 
+@@ -86,7 +90,7 @@ ansi:
  	$(MAKE) all MYCFLAGS=-DLUA_ANSI
  
  bsd:

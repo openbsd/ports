@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2006/08/01 15:50:27 pedro Exp $
+# $OpenBSD: Makefile,v 1.25 2006/09/25 02:39:06 pedro Exp $
 
 COMMENT=	"powerful, light-weight programming language"
 
 DISTNAME=	lua-5.1.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	lang
 
 MASTER_SITES=	http://www.lua.org/ftp/ \
@@ -22,10 +23,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+SHARED_ONLY=	Yes
+SHARED_LIBS=	lua 5.1
 WANTLIB=	c m edit curses
 NO_REGRESS=	Yes
 
-post-patch:
+pre-configure:
 	@perl -pi -e 's:\@prefix@:${PREFIX}/:g;' ${WRKSRC}/src/luaconf.h
 
 .include <bsd.port.mk>
