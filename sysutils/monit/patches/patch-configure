@@ -1,14 +1,14 @@
-$OpenBSD: patch-configure,v 1.6 2006/03/22 15:58:01 sturm Exp $
---- configure.orig	Wed Jan 11 23:01:35 2006
-+++ configure	Wed Mar 22 16:55:32 2006
-@@ -3367,13 +3367,13 @@ fi
+$OpenBSD: patch-configure,v 1.7 2006/09/25 19:20:03 pvalchev Exp $
+--- configure.orig	Mon Sep 25 13:17:57 2006
++++ configure	Mon Sep 25 13:18:03 2006
+@@ -3877,13 +3877,13 @@ fi
  
  # Wacky pthread madness
  pthread_libs=""
--echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
--echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6
-+echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
-+echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6
+-{ echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6; }
++{ echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
++echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6; }
  if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
@@ -18,12 +18,12 @@ $OpenBSD: patch-configure,v 1.6 2006/03/22 15:58:01 sturm Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -3431,7 +3431,7 @@ fi
- echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
- echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6
+@@ -3942,7 +3942,7 @@ fi
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
+ echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6; }
  if test $ac_cv_lib_pthread_pthread_create = yes; then
 -  pthread_libs="-lpthread"
 +  pthread_libs="-pthread"
  fi
  
- echo "$as_me:$LINENO: checking for pthread_create in -lc_r" >&5
+ { echo "$as_me:$LINENO: checking for pthread_create in -lc_r" >&5
