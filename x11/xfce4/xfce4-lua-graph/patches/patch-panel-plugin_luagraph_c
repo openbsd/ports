@@ -1,6 +1,6 @@
-$OpenBSD: patch-panel-plugin_luagraph_c,v 1.1.1.1 2006/01/25 00:01:27 jolan Exp $
---- panel-plugin/luagraph.c.orig	Wed Dec 21 17:28:13 2005
-+++ panel-plugin/luagraph.c	Tue Jan 24 13:46:34 2006
+$OpenBSD: patch-panel-plugin_luagraph_c,v 1.2 2006/09/25 03:01:46 pedro Exp $
+--- panel-plugin/luagraph.c.orig	Wed Dec 21 21:28:13 2005
++++ panel-plugin/luagraph.c	Mon Aug  7 17:12:16 2006
 @@ -49,9 +49,9 @@
  #include <panel/icons.h>
  #include <panel/plugins.h>
@@ -14,3 +14,16 @@ $OpenBSD: patch-panel-plugin_luagraph_c,v 1.1.1.1 2006/01/25 00:01:27 jolan Exp 
  
  const char *demo_script = 
  "function init() \n" \
+@@ -514,11 +514,7 @@ luagraph_call_lua_initialization(XfceLua
+ 	ac->lua = lua_open();
+ 	g_return_if_fail(ac->lua != NULL) ;
+ 
+-	luaopen_base(ac->lua);
+-	luaopen_table(ac->lua);
+-	luaopen_io(ac->lua);
+-	luaopen_string(ac->lua);
+-	luaopen_math(ac->lua);
++	luaL_openlibs(ac->lua);
+ 
+ //	printf("script=\n%s\n\n",demo_script);
+ 	

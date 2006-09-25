@@ -1,14 +1,13 @@
-$OpenBSD: patch-panel-plugin_Makefile_in,v 1.1.1.1 2006/01/25 00:01:27 jolan Exp $
---- panel-plugin/Makefile.in.orig	Tue Dec 20 17:14:33 2005
-+++ panel-plugin/Makefile.in	Tue Jan 24 13:47:27 2006
-@@ -183,8 +183,8 @@ plugin_LTLIBRARIES = \
+$OpenBSD: patch-panel-plugin_Makefile_in,v 1.2 2006/09/25 03:01:46 pedro Exp $
+--- panel-plugin/Makefile.in.orig	Tue Dec 20 21:14:33 2005
++++ panel-plugin/Makefile.in	Sat Aug  5 23:48:27 2006
+@@ -183,8 +183,7 @@ plugin_LTLIBRARIES = \
  	libluagraph.la
  
  libluagraph_la_LDFLAGS = \
 -	-llua50	\
 -	-llualib50 \
 +	-llua \
-+	-llualib \
  	-avoid-version							\
  	-export-dynamic							\
  	-module
