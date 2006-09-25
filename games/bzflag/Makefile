@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2006/09/22 03:42:56 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.9 2006/09/25 22:16:30 steven Exp $
 
 COMMENT=	"graphical multiplayer 3-d tank war game"
 DISTNAME=	bzflag-2.0.8
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bzflag/}
 
@@ -13,6 +14,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
+USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 USE_X11=	Yes
 
