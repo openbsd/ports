@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2006/07/10 17:55:44 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.22 2006/09/25 11:21:26 fgsch Exp $
 bin/simh-altair
 bin/simh-altairz80
 bin/simh-eclipse
@@ -41,6 +41,7 @@ share/doc/simh/i7094_bugs.txt
 share/doc/simh/id_diag.txt
 share/doc/simh/pdp10_diag.txt
 share/doc/simh/pdp18b_diag.txt
+share/doc/simh/pdp1_diag.txt
 share/doc/simh/readme1130.txt
 share/doc/simh/readme_s3.txt
 share/doc/simh/readme_update.txt

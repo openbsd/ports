@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.55 2006/07/10 17:55:44 fgsch Exp $
+# $OpenBSD: Makefile,v 1.56 2006/09/25 11:21:26 fgsch Exp $
 # $NetBSD: Makefile,v 1.2 1998/08/23 20:48:03 frueauf Exp $
 
 COMMENT=		"PDP, IBM 1401, Nova and other CPUs simulator"
 
-DISTNAME=		simh-3.6.0
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		simh-3.6.1
+PKGNAME=		${DISTNAME}
 CATEGORIES=		emulators
 MASTER_SITES=		http://simh.trailing-edge.com/sources/
-DISTFILES=		simhv36-0.zip
+DISTFILES=		simhv36-1.zip
 
 HOMEPAGE=		http://simh.trailing-edge.com/
 
