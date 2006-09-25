@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.65 2006/09/18 11:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.66 2006/09/25 19:14:28 martin Exp $
 
 COMMENT=	"mail/news client in gtk+"
 
-VERSION=	2.2.5
+VERSION=	2.2.9
 DISTNAME=	sylpheed-${VERSION}
-PKGNAME=	${DISTNAME}p1
 CATEGORIES=    	mail news x11
-HOMEPAGE=	http://sylpheed.good-day.net/
+HOMEPAGE=	http://sylpheed.sraoss.jp/en
 
 MAINTAINER=	Damien Couderc <couderc@openbsd.org>
 
@@ -25,7 +24,7 @@ WANTLIB=	X11 Xrender Xext atk-1.0 c cairo crypto \
 		pangocairo-1.0 pangoft2-1.0 png ssl z
 
 
-MASTER_SITES=	${HOMEPAGE}/sylpheed/v2.2/
+MASTER_SITES=	${HOMEPAGE}/../sylpheed/v2.2/
 MASTER_SITES0=	${MASTER_SITE_SOURCEFORGE:=sylpheed-claws/}
 
 CONFIGURE_STYLE=	gnu
