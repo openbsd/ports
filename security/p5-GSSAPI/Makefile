@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2006/06/01 04:36:41 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/09/25 17:18:26 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"perl interface to the GSSAPIv2 library"
 
-DISTNAME=	GSSAPI-0.22
+DISTNAME=	GSSAPI-0.23
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 HOMEPAGE=	http://perlgssapi.sourceforge.net/
 
