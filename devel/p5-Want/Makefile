@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2006/05/05 16:57:11 msf Exp $
+# $OpenBSD: Makefile,v 1.4 2006/09/25 17:17:42 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"implementation of the want command"
 
-DISTNAME=	Want-0.10
+DISTNAME=	Want-0.12
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
