@@ -1,3 +1,2 @@
-This version of hanterm is based on XFree86 3.3.1 xterm code, and
-features automatic font detection, support for johab844 fonts, 
-and a scrollbar on the right.
+hanterm-xf is a X hangul terminal based on XFree86 xterm code and
+it has its own hangul automata, so doesn't need any hangul input methods.

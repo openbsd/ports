@@ -1,0 +1,11 @@
+--- sinstall.sh.orig	Wed Sep 20 19:19:43 2006
++++ sinstall.sh	Wed Sep 20 19:19:54 2006
+@@ -67,7 +67,7 @@
+ 		PROG_GRP=
+ 		;;
+ 	.??????s*)
+-		PROG_MODE=2711
++		PROG_MODE=755
+ 		PROG_USR=
+ 		;;
+ 	esac

@@ -1,33 +1,33 @@
-# $OpenBSD: Makefile,v 1.9 2006/08/04 19:15:44 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2006/09/25 14:25:56 kevlo Exp $
 
-COMMENT=	"XFree86-based xterm with Korean language support"
+COMMENT=	"X Hangul Terminal (XFree86 xterm Based)"
 
-DISTNAME=	hanterm-xf-p19
-PKGNAME=	hanterm-xf-311pl19
-CATEGORIES=	korean x11
+DISTNAME=	hanterm-xf-2.0.6-177
+CATEGORIES=	korean
 
-MASTER_SITES=	http://www.hanterm.org/download/hanterm-xf/
-HOMEPAGE=	http://www.hanterm.org/
+MASTER_SITES=	http://kldp.net/frs/download.php/3281/
+HOMEPAGE=	http://hanterm-xf.kldp.net
 
 PERMIT_PACKAGE_CDROM=	yes
 PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
-WANTLIB=		c Xt SM Xmu Xaw termcap X11 Xext ICE
+
+MAINTAINER=	Jung <moorang@gmail.com>
+
+WANTLIB=	c Xmu Xt SM X11 Xaw Xext util termcap ICE
 
 MODULES=	converters/libiconv
-
 USE_X11=	Yes
+NO_REGRESS=	Yes 
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${PREFIX}/include" \
-		X_EXTRA_LIBS="-L${PREFIX}/lib -liconv"
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -liconv"
 
-NO_REGRESS=	Yes
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/hanterm ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/Hanterm.ad \
-		${PREFIX}/lib/X11/app-defaults/Hanterm
+CONFIGURE_ARGS=	--enable-box-char \
+		--enable-ansi-color \
+		--enable-256-color \
+		--enable-tcap-query
 
 .include <bsd.port.mk>

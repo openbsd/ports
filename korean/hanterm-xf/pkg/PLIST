@@ -1,3 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/05/23 03:29:06 dugsong Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/09/25 14:25:56 kevlo Exp $
 bin/hanterm
 lib/X11/app-defaults/Hanterm
+lib/X11/app-defaults/Hanterm-color
+@man man/man1/hanterm.1
+share/hangul_keyboard/
+share/hangul_keyboard/2bul.kbd
+share/hangul_keyboard/3bul_390.kbd
+share/hangul_keyboard/3bul_final.kbd
+share/hangul_keyboard/dvorak.map
+share/hangul_keyboard/dvorak_2bul.kbd
+share/hangul_keyboard/dvorak_3bul_390.kbd
+share/hangul_keyboard/dvorak_3bul_final.kbd
