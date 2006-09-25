@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2006/09/25 18:56:00 grange Exp $
+--- configure.orig	Thu Jan 19 01:03:01 2006
++++ configure	Mon Sep 25 00:06:45 2006
+@@ -4971,6 +4971,7 @@ cat >>confdefs.h <<\_ACEOF
+ _ACEOF
+ 
+ 	features_list="${features_list} (OSS)"
++	ac_libraries="${ac_libraries} -lossaudio"
+ else
+ 	echo "OSS support disabled."
+ fi

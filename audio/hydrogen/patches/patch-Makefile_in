@@ -1,0 +1,19 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2006/09/25 18:56:00 grange Exp $
+--- Makefile.in.orig	Mon Sep 25 00:27:37 2006
++++ Makefile.in	Mon Sep 25 00:28:00 2006
+@@ -219,13 +219,12 @@ hydrogenCUI: hydrogenCUI.mak $(hydrogen_
+ 	@make -f hydrogenCUI.mak hydrogenCUI
+ 
+ install:
+-	@install -vD hydrogen $(DESTDIR)$(prefix)/bin/hydrogen
+-	@install -vD hydrogenPlayer $(DESTDIR)$(prefix)/bin/hydrogenPlayer
++	@install -s hydrogen $(DESTDIR)$(prefix)/bin
++	@install -s hydrogenPlayer $(DESTDIR)$(prefix)/bin
+ 	@rm -rf $(DESTDIR)$(prefix)/share/hydrogen
+ 	mkdir -p $(DESTDIR)$(prefix)/share/hydrogen/data/
+ 	cp -R data $(DESTDIR)$(prefix)/share/hydrogen
+ 	mkdir -p $(DESTDIR)$(prefix)/share/hydrogen/data/
+-	@install -vD hydrogen.desktop $(DESTDIR)$(prefix)/share/applications/hydrogen.desktop
+ 	cd plugins;make install;cd ..
+ 	
+ 	

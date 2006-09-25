@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_lib_drivers_OssDriver_cpp,v 1.1.1.1 2006/09/25 18:56:00 grange Exp $
+--- src/lib/drivers/OssDriver.cpp.orig	Tue Oct 18 02:32:04 2005
++++ src/lib/drivers/OssDriver.cpp	Mon Sep 25 00:10:41 2006
+@@ -41,6 +41,7 @@ unsigned nNextFrames = 0;
+ 
+ void* ossDriver_processCaller(void* param)
+ {
++#ifndef __OpenBSD__
+ 	// stolen from amSynth
+ 	struct sched_param sched;
+ 	sched.sched_priority = 50;
+@@ -50,6 +51,7 @@ void* ossDriver_processCaller(void* para
+ 		m_pOssDriverInstance->warningLog("Can't set realtime scheduling for OSS Driver");
+ 	}
+ 	m_pOssDriverInstance->infoLog( "Scheduling priority = " + toString( sched.sched_priority ) );
++#endif
+ 
+ 	OssDriver *ossDriver = (OssDriver*)param;
+ 
+@@ -126,7 +128,7 @@ int OssDriver::connect() {
+ 	int bs;
+ 
+ 	string audioDevice;
+-#ifdef __NetBSD__
++#if defined(__NetBSD__) || defined(__OpenBSD__)
+ 	audioDevice = "/dev/audio";
+ #else
+ 	audioDevice = preferencesMng->m_sOSSDevice;

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_lib_drivers_OssDriver_h,v 1.1.1.1 2006/09/25 18:56:00 grange Exp $
+--- src/lib/drivers/OssDriver.h.orig	Sun Sep 24 23:55:12 2006
++++ src/lib/drivers/OssDriver.h	Sun Sep 24 23:55:42 2006
+@@ -34,7 +34,7 @@
+ #ifdef OSS_SUPPORT
+ 
+ 
+-#ifdef __NetBSD__
++#if defined(__NetBSD__) || defined(__OpenBSD__)
+ 	#include <soundcard.h>
+ #else
+ 	#include <sys/soundcard.h>

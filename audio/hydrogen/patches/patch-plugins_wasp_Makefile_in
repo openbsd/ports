@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_wasp_Makefile_in,v 1.1.1.1 2006/09/25 18:56:00 grange Exp $
+--- plugins/wasp/Makefile.in.orig	Mon Sep 25 00:36:29 2006
++++ plugins/wasp/Makefile.in	Mon Sep 25 00:36:49 2006
+@@ -24,7 +24,7 @@ clean:
+ install:
+ 	@echo "Installing WASP plugins"
+ 	mkdir -p $(DESTDIR)$(prefix)/lib/hydrogen/plugins/
+-	@install -vD *.so $(DESTDIR)$(prefix)/lib/hydrogen/plugins
++	@install *.so $(DESTDIR)$(prefix)/lib/hydrogen/plugins
+ 
+ uninstall:
+ 	@rm -rf $(DESTDIR)$(prefix)/lib/hydrogen

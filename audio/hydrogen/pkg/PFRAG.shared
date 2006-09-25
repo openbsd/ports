@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/09/25 18:56:01 grange Exp $
+lib/hydrogen/plugins/wasp_booster.so
+lib/hydrogen/plugins/wasp_noisifier.so
+lib/hydrogen/plugins/wasp_xshaper.so
