@@ -1,0 +1,11 @@
+$OpenBSD: patch-app_Makefile_in,v 1.1 2006/09/26 21:36:39 kurt Exp $
+--- app/Makefile.in.orig	Sun Sep  3 19:45:11 2006
++++ app/Makefile.in	Sun Sep  3 19:46:53 2006
+@@ -554,6 +554,7 @@ INCLUDES = \
+ 
+ gimp_2_2_LDFLAGS = $(mwindows)
+ gimp_2_2_LDADD = \
++	-pthread			\
+ 	gui/libappgui.a			\
+ 	actions/libappactions.a		\
+ 	dialogs/libappdialogs.a		\
