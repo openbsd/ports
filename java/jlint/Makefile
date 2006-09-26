@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2005/02/22 14:35:08 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2006/09/26 12:26:21 kevlo Exp $
 
 COMMENT=	"Java program analyzer and checker"
 
-VERSION=	2.3
-DISTNAME=	jlint
-PKGNAME=	${DISTNAME}-${VERSION}
+DISTNAME=	jlint-3.0
 CATEGORIES=	java
 
 HOMEPAGE=	http://artho.com/jlint/
@@ -15,9 +13,9 @@ PERMIT_PACKAGE_CDROM=  Yes
 PERMIT_PACKAGE_FTP=    Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=  Yes
-WANTLIB=		c m stdc++
+WANTLIB=		c z m stdc++
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=jlint/}
 
 MAKE_ENV+=	CC="${CC}" CPP="${CXX}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
