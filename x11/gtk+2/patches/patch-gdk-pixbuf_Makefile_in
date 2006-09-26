@@ -1,6 +1,15 @@
-$OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.12 2006/05/28 10:07:25 steven Exp $
---- gdk-pixbuf/Makefile.in.orig	Fri Dec  9 13:28:12 2005
-+++ gdk-pixbuf/Makefile.in	Sat May 13 16:59:37 2006
+$OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.13 2006/09/26 20:06:08 kurt Exp $
+--- gdk-pixbuf/Makefile.in.orig	Sun Jul  2 09:57:38 2006
++++ gdk-pixbuf/Makefile.in	Fri Sep  1 16:16:21 2006
+@@ -526,7 +526,7 @@ gdk_pixbuf_csource_SOURCES = gdk-pixbuf-
+ gdk_pixbuf_csource_LDADD = $(LDADDS)
+ 
+ gdk_pixbuf_query_loaders_DEPENDENCIES = $(DEPS)
+-gdk_pixbuf_query_loaders_LDADD = $(LDADDS)
++gdk_pixbuf_query_loaders_LDADD = $(LDADDS) -pthread
+ 
+ gdk_pixbuf_query_loaders_SOURCES = queryloaders.c
+ 
 @@ -1604,13 +1604,6 @@ install-data-hook: install-ms-lib instal
  	@if $(RUN_QUERY_LOADER_TEST) ; then \
  	  $(mkinstalldirs) $(DESTDIR)$(sysconfdir)/gtk-2.0 ; \
