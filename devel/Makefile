@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.399 2006/09/26 13:47:35 kevlo Exp $
+# $OpenBSD: Makefile,v 1.400 2006/09/26 15:27:39 djm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -383,6 +383,7 @@
      SUBDIR += py-pexpect
      SUBDIR += py-psyco
      SUBDIR += py-radix
+     SUBDIR += py-setuptools
      SUBDIR += py-rcsparse
      SUBDIR += py-tpg
      SUBDIR += py-twisted
