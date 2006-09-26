@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/09/26 13:46:27 kevlo Exp $
+${P5ARCH}/
+${P5ARCH}/Taint/
+${P5ARCH}/Taint/Runtime.pm
+${P5ARCH}/Taint/is_taint_bench.pl
+${P5ARCH}/auto/
+${P5ARCH}/auto/Taint/
+${P5ARCH}/auto/Taint/Runtime/
+${P5ARCH}/auto/Taint/Runtime/Runtime.bs
+${P5ARCH}/auto/Taint/Runtime/Runtime.so
+@man man/man3p/Taint::Runtime.3p
