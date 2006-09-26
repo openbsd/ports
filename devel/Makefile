@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.398 2006/09/21 20:53:36 steven Exp $
+# $OpenBSD: Makefile,v 1.399 2006/09/26 13:47:35 kevlo Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -314,6 +314,7 @@
      SUBDIR += p5-String-Scanf
      SUBDIR += p5-Sub-Name
      SUBDIR += p5-Sub-Uplevel
+     SUBDIR += p5-Taint-Runtime
      SUBDIR += p5-Term-ReadKey
      SUBDIR += p5-Term-ReadLine-Gnu
      SUBDIR += p5-Term-ReadPassword
