@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.6 2006/04/11 00:45:42 kurt Exp $
---- hotspot/src/os/bsd/vm/os_bsd.cpp.orig	Sat Apr  8 11:31:03 2006
-+++ hotspot/src/os/bsd/vm/os_bsd.cpp	Sat Apr  8 11:31:33 2006
+$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.7 2006/09/26 17:48:19 kurt Exp $
+--- hotspot/src/os/bsd/vm/os_bsd.cpp.orig	Mon Sep 25 22:47:23 2006
++++ hotspot/src/os/bsd/vm/os_bsd.cpp	Mon Sep 25 22:56:32 2006
 @@ -447,7 +447,9 @@ void os::init_system_properties_values()
  #define malloc(n) (char*)NEW_C_HEAP_ARRAY(char, (n))
  #define getenv(n) ::getenv(n)
@@ -11,3 +11,35 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.6 2006/04/11 00:45:42 kurt 
  #define EXTENSIONS_DIR "/lib/ext"
  #define ENDORSED_DIR "/lib/endorsed"
  
+@@ -1968,16 +1970,23 @@ static int os_nanosleep(jlong *millis) {
+ 
+ static int os_sleep(jlong millis, bool interruptible) {
+   int res;
+-  if (!interruptible) {
+-    do {
+-	res = os_nanosleep(&millis);
+-    } while ((res == OS_ERR) && (errno == EINTR) && (millis > 0));
+-  } else {
+-    INTERRUPTIBLE_NORESTART_VM(os_nanosleep(&millis), res, os::Bsd::clear_interrupted);
++
++  while (millis > 0) {
++    if (!interruptible) {
++      res = os_nanosleep(&millis);
++    } else {
++      INTERRUPTIBLE_NORESTART_VM(os_nanosleep(&millis), res, os::Bsd::clear_interrupted);
++    }
++    // INTERRUPTIBLE_NORESTART_VM returns res == OS_INTRPT for thread.Interrupt
++
++    if((res == OS_ERR) && (errno == EINTR)) {
++      if(millis <= 0)
++	return OS_OK;
++    } else
++      return res;
+   }
+-  // INTERRUPTIBLE_NORESTART_VM returns res == OS_INTRPT for thread.Interrupt
+ 
+-  return res;
++  return OS_OK;
+ }
+ 
+ int os::Bsd::naked_sleep() {
