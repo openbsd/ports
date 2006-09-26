@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/10 03:23:11 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2006/09/26 12:50:01 kevlo Exp $
 
 COMMENT=	"represent a series of changes in annotate form"
 
 DISTNAME=	Algorithm-Annotate-0.10
-PKGNAME=	p5-${DISTNAME}
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel perl5 
+PKG_ARCH=	*
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
