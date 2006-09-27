@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2006/08/04 00:10:42 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/09/27 12:13:10 jasper Exp $
 
 COMMENT=	"X11 counterpart of curses-based misc/dialog"
 
-DISTNAME=	Xdialog-2.2.1
+DISTNAME=	Xdialog-2.3.1
 CATEGORIES=	x11 misc
 
 HOMEPAGE=	http://xdialog.dyns.net/
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
