@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.772 2006/09/23 09:40:06 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.773 2006/09/27 10:09:34 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1128,7 +1128,7 @@ _run_depends_target=${DEPENDS_TARGET}
 _regress_depends_target=${DEPENDS_TARGET}
 
 .if ${FORCE_UPDATE:L} == "yes"
-_force_update_fragment=eval $$toset ${MAKE} update
+_force_update_fragment=eval $$toset ${MAKE} subupdate
 _PKG_ADD_FORCE=-F update -F updatedepends -F installed -r
 .else
 _force_update_fragment=:
@@ -1548,7 +1548,7 @@ _internal-fetch _internal-checksum _internal-extract _internal-patch \
 _internal-configure _internal-all _internal-build _internal-install \
 _internal-regress _internal-uninstall _internal-deinstall _internal-fake \
 _internal-update _internal-plist _internal-package _internal-install-all \
-_internal-update-plist update-patches \
+_internal-update-plist update-patches _internal-subupdate \
 dump-vars describe _internal-subpackage sublib-depends-check \
 _internal-manpages-check:
 .  if !defined(IGNORE_SILENT)
@@ -1672,7 +1672,7 @@ _internal-build _internal-all: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} \
 	${_DEPlibs_COOKIE} ${_BUILD_COOKIE}
 _internal-install: ${_INSTALL_DEPS}
 _internal-fake: ${_FAKE_COOKIE}
-_internal-update: ${_UPDATE_DEPS}
+_internal-subupdate: ${_UPDATE_DEPS}
 
 .  if defined(_IGNORE_REGRESS)
 _internal-regress:
@@ -1741,7 +1741,7 @@ update-patches:
 # if locking exists.
 
 _TOP_TARGETS=extract patch distpatch configure build all install fake \
-subpackage \
+subpackage subupdate \
 fetch checksum regress depends lib-depends build-depends run-depends \
 regress-depends clean manpages-check \
 plist update-plist update package \
@@ -1756,7 +1756,7 @@ ${_t}: _internal-${_t}
 .endfor
 
 # Redirectors for top-level targets involving subpackages
-.for _t _r in _internal-package _internal-subpackage describe subdescribe lib-depends-check sublib-depends-check dump-vars subdump-vars _internal-install-all _internal-install readmes _readme
+.for _t _r in _internal-package _internal-subpackage describe subdescribe lib-depends-check sublib-depends-check dump-vars subdump-vars _internal-install-all _internal-install readmes _readme _internal-update _internal-subupdate
 ${_t}:
 	@cd ${.CURDIR} && SUBPACKAGE='' PACKAGING='' exec ${MAKE} ${_r}
 .  if defined(MULTI_PACKAGES)
@@ -2075,7 +2075,7 @@ ${_INSTALL_COOKIE}: ${_PACKAGE_COOKIES}
 .endif
 
 ${_UPDATE_COOKIE}: 
-	@cd ${.CURDIR} && SUBPACKAGE=${SUBPACKAGE} PACKAGING='${SUBPACKAGE}' exec ${MAKE} _internal-subpackage
+	@cd ${.CURDIR} && exec ${MAKE} _internal-package
 .if empty(UPDATE_COOKIES_DIR)
 	@exec ${MAKE} ${WRKDIR}
 .else
@@ -2804,4 +2804,4 @@ subdump-vars:
 	_list-port-libs _print-package-signature-lib _print-package-signature-run \
 	show-required-by peek-ftp _internal-subpackage subdescribe \
 	sublib-depends-check subdump-vars _internal-install-all install-all \
-	subpackage
+	subpackage _internal-subupdate _internal-update
