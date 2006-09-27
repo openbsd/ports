@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2006/07/30 12:53:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2006/09/27 10:45:55 steven Exp $
 
 COMMENT=	"event-driven IRC-client module"
 
 DISTNAME=	POE-Component-IRC-4.97
-PKGNAME=	p5-${DISTNAME}
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	net perl5
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -18,7 +18,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=POE/}
 
 CONFIGURE_STYLE=perl
 
-BUILD_DEPENDS=	:p5-POE->=0.3202:devel/p5-POE \
+BUILD_DEPENDS=	::devel/p5-POE \
 		:p5-POE-Component-Client-DNS->=0.99:net/p5-POE-Component-Client-DNS \
 		:p5-POE-Filter-IRCD->=1.7:net/p5-POE-Filter-IRCD
 RUN_DEPENDS=	${BUILD_DEPENDS}
