@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2006/09/27 10:45:55 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2006/09/27 15:19:14 jasper Exp $
 
 COMMENT=		"POE-based parser for the IRC protocol"
 
-DISTNAME=		POE-Filter-IRCD-1.8
+DISTNAME=		POE-Filter-IRCD-2.1
 PKGNAME=		p5-${DISTNAME}p0
 CATEGORIES=		net perl5
 
