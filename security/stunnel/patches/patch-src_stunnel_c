@@ -1,12 +1,12 @@
---- src/stunnel.c.orig	Fri Mar 10 22:22:06 2006
-+++ src/stunnel.c	Thu Mar 23 16:29:20 2006
-@@ -153,8 +153,8 @@ static void daemon_loop(void) {
- #if !defined (USE_WIN32) && !defined (__vms)
+--- src/stunnel.c.orig	Tue Sep 26 10:03:59 2006
++++ src/stunnel.c	Wed Sep 27 16:37:40 2006
+@@ -150,8 +150,8 @@ static void daemon_loop(void) {
+ #if !defined (USE_WIN32) && !defined (__vms) && !defined(USE_OS2)
      if(!(options.option.foreground))
          daemonize();
 -    drop_privileges();
      create_pid();
 +    drop_privileges();
  #endif /* !defined USE_WIN32 && !defined (__vms) */
- 
      /* create exec+connect services */
+     for(opt=local_options.next; opt; opt=opt->next) {
