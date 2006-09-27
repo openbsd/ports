@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2006/07/30 12:52:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2006/09/27 20:45:25 jasper Exp $
 
 COMMENT=	"perl extension for unparsed raw whois information"
 
-DISTNAME=	Net-Whois-Raw-1.10
+DISTNAME=	Net-Whois-Raw-1.14
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net perl5
 
