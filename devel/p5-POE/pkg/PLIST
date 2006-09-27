@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/06/07 08:13:20 alek Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/09/27 15:15:07 jasper Exp $
 ${P5SITE}/POE/
 ${P5SITE}/POE.pm
 ${P5SITE}/POE/API/
@@ -109,6 +109,7 @@ ${P5SITE}/POE/Wheel/SocketFactory.pm
 @man man/man3p/POE::Resource::Sessions.3p
 @man man/man3p/POE::Resource::Signals.3p
 @man man/man3p/POE::Resource::Statistics.3p
+@man man/man3p/POE::Resources.3p
 @man man/man3p/POE::Session.3p
 @man man/man3p/POE::Wheel.3p
 @man man/man3p/POE::Wheel::Curses.3p

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2006/06/19 06:32:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2006/09/27 15:15:07 jasper Exp $
 
 COMMENT=	"portable multitasking and networking framework for perl"
 
-DISTNAME=	POE-0.3502
+DISTNAME=	POE-0.38
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
