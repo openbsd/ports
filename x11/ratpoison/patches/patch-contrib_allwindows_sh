@@ -1,0 +1,18 @@
+$OpenBSD: patch-contrib_allwindows_sh,v 1.1 2006/09/27 20:12:14 jasper Exp $
+--- contrib/allwindows.sh.orig	Mon Aug 11 07:12:48 2003
++++ contrib/allwindows.sh	Wed Aug 16 15:44:36 2006
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ # Copyright (C) 2003 Rupert Levene
+ # Author: Rupert Levene <r.levene@lancaster.ac.uk>
+ 
+@@ -12,7 +12,7 @@ IFS='
+ list=''
+ 
+ # Allow external scripts to tell it where ratpoison is
+-if [ -z $RATPOISON ]; then
++if [ -z "$RATPOISON" ]; then
+     RATPOISON=ratpoison
+ fi
+ 

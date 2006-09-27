@@ -1,0 +1,29 @@
+$OpenBSD: patch-configure_in,v 1.1 2006/09/27 20:12:14 jasper Exp $
+--- configure.in.orig	Sun Apr  2 21:28:59 2006
++++ configure.in	Wed Aug 16 15:43:46 2006
+@@ -49,10 +49,6 @@ dnl Checks for programs.
+ AC_CHECK_TOOL(CC, gcc)
+ AC_PROG_CC
+ 
+-if test "x$CC" = "xgcc"; then
+-	CFLAGS="$CFLAGS -Wall -O2"
+-fi
+-
+ dnl check for an x terminal emulator
+ AC_MSG_CHECKING(terminal emulator)
+ AC_MSG_RESULT($term_prog)
+@@ -78,10 +74,11 @@ AC_ARG_ENABLE(history,
+ 
+ if test x$check_for_libhistory = xyes ; then
+   AC_CHECK_HEADERS([readline/history.h],
+-    AC_CHECK_LIB(history, add_history,
+-      [LIBS="$LIBS -lhistory"
++    AC_CHECK_LIB(readline, add_history,
++      [LIBS="$LIBS -lreadline -lcurses"
+        AC_DEFINE_UNQUOTED(HAVE_HISTORY, 1, Define this to enable history)],
+-      AC_MSG_WARN([*** Can't find History lib. Install readline dev libs for history.])),
++      AC_MSG_WARN([*** Can't find History lib. Install readline dev libs for history.]),
++      -lcurses),
+     AC_MSG_WARN([*** Can't find History header. Install readline dev libs for history.]))
+ fi
+ 
