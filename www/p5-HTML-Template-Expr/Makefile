@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2002/12/11 16:40:43 margarida Exp $
+# $OpenBSD: Makefile,v 1.3 2006/09/28 22:03:45 steven Exp $
 
 COMMENT=	"use HTML Templates which allows expressions"
 
-VERSION=	0.04
-DISTNAME=	HTML-Template-Expr-${VERSION}
+DISTNAME=	HTML-Template-Expr-0.07
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
 
 HOMEPAGE=	http://sourceforge.net/projects/html-template/
 
-MAINTAINER=	Jim Geovedi <jim@corebsd.or.id>
+MAINTAINER=	Jim Dew <jdew@yggdrasil.ca>
 
 # GPL/Artistic license
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,5 +23,7 @@ RUN_DEPENDS=	:p5-HTML-Template-*:www/p5-HTML-Template \
 		:p5-Parse-RecDescent-*:devel/p5-Parse-RecDescent
 
 CONFIGURE_STYLE=perl
+
+PKG_ARCH=	*
 
 .include <bsd.port.mk>
