@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.400 2006/09/26 15:27:39 djm Exp $
+# $OpenBSD: Makefile,v 1.401 2006/09/28 17:15:10 xsa Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -372,6 +372,7 @@
      SUBDIR += pth
      SUBDIR += py-Checker
      SUBDIR += py-SOAPpy
+     SUBDIR += py-asn1
      SUBDIR += py-cheetah
      SUBDIR += py-ctypes
      SUBDIR += py-dateutil
