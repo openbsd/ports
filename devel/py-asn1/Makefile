@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/09/28 17:13:32 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2006/09/28 17:19:13 xsa Exp $
 
 COMMENT=	"ASN.1 library for Python"
 
 DISTNAME=	pyasn1-0.0.5a
 PKGNAME=	${DISTNAME:S/py/py-/}
-CATEGORIES=	devel security
+CATEGORIES=	devel
 PKG_ARCH=	*
 
 HOMEPAGE=	http://pyasn1.sourceforge.net/
