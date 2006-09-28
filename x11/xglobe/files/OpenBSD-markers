@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD-markers,v 1.81 2006/09/28 06:14:43 david Exp $
+# $OpenBSD: OpenBSD-markers,v 1.82 2006/09/28 07:36:20 robert Exp $
 #
 # THE PKGNAME MUST BE BUMPED FOR THE FOLLOWING PORTS WHEN YOU COMMIT
 # TO THIS FILE:
@@ -38,7 +38,7 @@
 45.4745		-73.6556	"msf"		# Mathieu Sauve-Frankel
 47.3154		7.3526		"mglocker"	# Marcus Glocker
 47.50		7.60		"dhartmei"	# Daniel Hartmeier
-47.53		21.63		"robert"	# Robert Nagy
+47.29		19.3		"robert"	# Robert Nagy
 47.581		7.589		"mbalmer"	# Marc Balmer
 48.0718		11.9582		"grunk"		# Alexander von Gernler
 48.08		11.31		"sturm"		# Nikolay Sturm

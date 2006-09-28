@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2006/09/28 06:14:43 david Exp $
+# $OpenBSD: Makefile,v 1.28 2006/09/28 07:36:20 robert Exp $
 
 COMMENT=	"Draw pictures of the earth textured by an image"
 
 DISTNAME=	xplanet-1.1.2
-PKGNAME=	${DISTNAME}p23
+PKGNAME=	${DISTNAME}p24
 CATEGORIES=	astro x11
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
