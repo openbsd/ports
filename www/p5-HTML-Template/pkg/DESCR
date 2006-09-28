@@ -1,1 +1,7 @@
-Perl module to use HTML Templates from CGI scripts.
+This module attempts to make using HTML templates simple and natural.
+It extends standard HTML with a few new HTML-esque tags. The file
+written with HTML and these new tags is called a template. It is
+usually saved separately from your script. Using this module you fill
+in the values for the variables, loops and branches declared in the
+template. This allows to separate design - the HTML - from the data,
+which you generate in the Perl script.
