@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2005/12/06 19:26:28 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2006/09/29 08:42:32 jasper Exp $
 PKG_ARCH=	*
 
 COMMENT=	"perl module for a plain virtual filesystem"
-DISTNAME=	Filesys-Virtual-Plain-0.08
+DISTNAME=	Filesys-Virtual-Plain-0.10
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	sysutils perl5
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Filesys/}
 
