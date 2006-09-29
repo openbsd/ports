@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.11 2005/12/14 17:29:38 steven Exp $
+@comment $OpenBSD: PLIST,v 1.12 2006/09/29 08:57:13 jasper Exp $
 ${P5SITE}/Font/
 ${P5SITE}/Font/TTF/
+${P5SITE}/Font/TTF.pm
 ${P5SITE}/Font/TTF/AATKern.pm
 ${P5SITE}/Font/TTF/AATutils.pm
 ${P5SITE}/Font/TTF/Anchor.pm
@@ -10,6 +11,8 @@ ${P5SITE}/Font/TTF/Cmap.pm
 ${P5SITE}/Font/TTF/Coverage.pm
 ${P5SITE}/Font/TTF/Cvt_.pm
 ${P5SITE}/Font/TTF/Delta.pm
+${P5SITE}/Font/TTF/EBDT.pm
+${P5SITE}/Font/TTF/EBLC.pm
 ${P5SITE}/Font/TTF/Fdsc.pm
 ${P5SITE}/Font/TTF/Feat.pm
 ${P5SITE}/Font/TTF/Fmtx.pm
@@ -64,6 +67,7 @@ ${P5SITE}/Font/TTF/Vmtx.pm
 ${P5SITE}/Font/TTF/Win32.pm
 ${P5SITE}/Font/TTF/XMLparse.pm
 ${P5SITE}/ttfmod.pl
+@man man/man3p/Font::TTF.3p
 @man man/man3p/Font::TTF::AATKern.3p
 @man man/man3p/Font::TTF::AATutils.3p
 @man man/man3p/Font::TTF::Anchor.3p
@@ -72,6 +76,8 @@ ${P5SITE}/ttfmod.pl
 @man man/man3p/Font::TTF::Coverage.3p
 @man man/man3p/Font::TTF::Cvt_.3p
 @man man/man3p/Font::TTF::Delta.3p
+@man man/man3p/Font::TTF::EBDT.3p
+@man man/man3p/Font::TTF::EBLC.3p
 @man man/man3p/Font::TTF::Fdsc.3p
 @man man/man3p/Font::TTF::Feat.3p
 @man man/man3p/Font::TTF::Fmtx.3p
