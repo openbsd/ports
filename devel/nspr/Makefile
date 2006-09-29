@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2006/01/07 19:45:35 bernd Exp $
+# $OpenBSD: Makefile,v 1.6 2006/09/29 15:59:34 kurt Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/devel/nspr/Makefile,v 1.13 2003/12/13 21:30:19 peter Exp $
 
-# currently only supporting i386, but alpha sparc sparc64 are possible
-ONLY_FOR_ARCHS=		i386
+ONLY_FOR_ARCHS=		i386 powerpc
 
 COMMENT=		"Netscape Portable Runtime"
 
 VER=			4.4.1
 DISTNAME=		nspr-${VER}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 SHARED_LIBS=		nspr4	1.0 \
 			plc4	1.0 \
 			plds4	1.0
@@ -17,7 +16,7 @@ CATEGORIES=		devel
 
 HOMEPAGE=		http://www.mozilla.org/projects/nspr/index.html
 
-MAINTAINER=		Kurt Miller <truk@optonline.net>
+MAINTAINER=		Kurt Miller <kurt@openbsd.org>
 
 # MPL - Mozilla Public License
 PERMIT_PACKAGE_CDROM=	Yes
