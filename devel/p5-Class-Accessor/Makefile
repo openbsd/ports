@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2006/04/11 04:43:05 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2006/09/30 13:45:21 kevlo Exp $
 
 COMMENT=	"automated accessor generation"
 
-DISTNAME=	Class-Accessor-0.25
+DISTNAME=	Class-Accessor-0.27
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 

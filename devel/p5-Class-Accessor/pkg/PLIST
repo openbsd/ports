@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/14 23:43:57 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2006/09/30 13:45:21 kevlo Exp $
 ${P5SITE}/Class/
 ${P5SITE}/Class/Accessor/
 ${P5SITE}/Class/Accessor.pm
 ${P5SITE}/Class/Accessor/Fast.pm
+${P5SITE}/Class/Accessor/Faster.pm
 @man man/man3p/Class::Accessor.3p
 @man man/man3p/Class::Accessor::Fast.3p
+@man man/man3p/Class::Accessor::Faster.3p
