@@ -1,0 +1,12 @@
+$OpenBSD: patch-subversion_bindings_swig_perl_native_Ra_pm,v 1.1 2006/09/30 06:23:58 steven Exp $
+--- subversion/bindings/swig/perl/native/Ra.pm.orig	Thu Sep 21 16:04:27 2006
++++ subversion/bindings/swig/perl/native/Ra.pm	Thu Sep 21 16:07:55 2006
+@@ -64,7 +64,7 @@ objects, with the session_baton and pool
+ 
+ require SVN::Client;
+ 
+-my $ralib = SVN::_Ra::svn_ra_init_ra_libs($SVN::Core::gpool);
++my $ralib = SVN::_Ra::svn_ra_init_ra_libs(SVN::Core->gpool);
+ 
+ # Ra methods that returns reporter
+ my %reporter = map { $_ => 1 } qw(do_diff do_switch do_status do_update);

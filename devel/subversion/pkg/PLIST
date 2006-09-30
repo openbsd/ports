@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2006/07/15 16:55:32 alek Exp $
+@comment $OpenBSD: PLIST,v 1.8 2006/09/30 06:23:58 steven Exp $
 @pkgpath devel/subversion,no_bindings
 %%SHARED%%
 bin/svn
@@ -6,6 +6,7 @@ bin/svnadmin
 bin/svndumpfilter
 bin/svnlook
 bin/svnserve
+bin/svnsync
 bin/svnversion
 include/subversion-1/
 include/subversion-1/mod_dav_svn.h
@@ -19,6 +20,7 @@ include/subversion-1/svn_ctype.h
 include/subversion-1/svn_dav.h
 include/subversion-1/svn_delta.h
 include/subversion-1/svn_diff.h
+include/subversion-1/svn_dso.h
 include/subversion-1/svn_error.h
 include/subversion-1/svn_error_codes.h
 include/subversion-1/svn_fs.h
@@ -39,6 +41,7 @@ include/subversion-1/svn_string.h
 include/subversion-1/svn_subst.h
 include/subversion-1/svn_time.h
 include/subversion-1/svn_types.h
+include/subversion-1/svn_user.h
 include/subversion-1/svn_utf.h
 include/subversion-1/svn_version.h
 include/subversion-1/svn_wc.h
@@ -73,19 +76,28 @@ lib/libsvn_wc-1.la
 @man man/man1/svnadmin.1
 @man man/man1/svndumpfilter.1
 @man man/man1/svnlook.1
+@man man/man1/svnsync.1
 @man man/man1/svnversion.1
 @man man/man5/svnserve.conf.5
 @man man/man8/svnserve.8
 share/examples/subversion/
 share/examples/subversion/backup/
 share/examples/subversion/backup/hot-backup.py
+share/examples/subversion/backup/svn-backup-dumps.py
 share/examples/subversion/backup/svn-fast-backup
 share/examples/subversion/hook-scripts/
 share/examples/subversion/hook-scripts/README
+share/examples/subversion/hook-scripts/check-case-insensitive.pl
+share/examples/subversion/hook-scripts/check-case-insensitive.py
 share/examples/subversion/hook-scripts/commit-access-control.cfg.example
 share/examples/subversion/hook-scripts/commit-access-control.pl
 share/examples/subversion/hook-scripts/commit-email.pl
 share/examples/subversion/hook-scripts/commit-email.rb
+share/examples/subversion/hook-scripts/detect-merge-conflicts.sh
+share/examples/subversion/hook-scripts/enforcer/
+share/examples/subversion/hook-scripts/enforcer/enforcer
+share/examples/subversion/hook-scripts/enforcer/enforcer.conf
+share/examples/subversion/hook-scripts/log-police.py
 share/examples/subversion/hook-scripts/mailer/
 share/examples/subversion/hook-scripts/mailer/mailer.conf.example
 share/examples/subversion/hook-scripts/mailer/mailer.py
@@ -94,7 +106,6 @@ share/examples/subversion/hook-scripts/mailer/tests/mailer-init.sh
 share/examples/subversion/hook-scripts/mailer/tests/mailer-t1.output
 share/examples/subversion/hook-scripts/mailer/tests/mailer-t1.sh
 share/examples/subversion/hook-scripts/mailer/tests/mailer-tweak.py
-share/examples/subversion/hook-scripts/propchange-email.pl
 share/examples/subversion/hook-scripts/svnperms.conf.example
 share/examples/subversion/hook-scripts/svnperms.py
 share/locale/de/LC_MESSAGES/subversion.mo

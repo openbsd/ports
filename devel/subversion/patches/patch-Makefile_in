@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2006/04/15 10:27:38 steven Exp $
---- Makefile.in.orig	Wed Nov 16 01:56:15 2005
-+++ Makefile.in	Wed Apr  5 20:10:11 2006
+$OpenBSD: patch-Makefile_in,v 1.5 2006/09/30 06:23:58 steven Exp $
+--- Makefile.in.orig	Sat Jul 15 01:24:31 2006
++++ Makefile.in	Sat Jul 15 01:28:07 2006
 @@ -66,8 +66,8 @@ swig_pl_libdir = @libdir@
  swig_rb_libdir = @libdir@
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-Makefile_in,v 1.4 2006/04/15 10:27:38 steven Exp $
  swig_pldir = @libdir@/svn-perl
  swig_rbdir = $(SWIG_RB_SITE_ARCH_DIR)/svn/ext
  
-@@ -94,8 +94,8 @@ EXEEXT = @EXEEXT@
+@@ -90,8 +90,8 @@ EXEEXT = @EXEEXT@
  
  SHELL = @SHELL@
  LIBTOOL = @SVN_LIBTOOL@
@@ -23,8 +23,8 @@ $OpenBSD: patch-Makefile_in,v 1.4 2006/04/15 10:27:38 steven Exp $
  LT_LDFLAGS = @LT_LDFLAGS@
  LT_NO_UNDEFINED = @LT_NO_UNDEFINED@
  LT_CXX_LIBADD = @LT_CXX_LIBADD@
-@@ -116,8 +116,8 @@ SWIG_INCLUDES = -I$(SWIG_BUILD_DIR) \
-                 $(SVN_APR_INCLUDES) $(SVN_APRUTIL_INCLUDES)
+@@ -108,8 +108,8 @@ APACHE_LDFLAGS = @APACHE_LDFLAGS@
+ SWIG = @SWIG@
  SWIG_PY_INCLUDES = @SWIG_PY_INCLUDES@ -I$(SWIG_SRC_DIR)/python/libsvn_swig_py
  SWIG_PY_COMPILE = @SWIG_PY_COMPILE@
 -SWIG_PY_LINK = @SWIG_PY_LINK@
@@ -34,3 +34,25 @@ $OpenBSD: patch-Makefile_in,v 1.4 2006/04/15 10:27:38 steven Exp $
  SWIG_PL_INCLUDES = @SWIG_PL_INCLUDES@
  SWIG_RB_INCLUDES = @SWIG_RB_INCLUDES@ -I$(SWIG_SRC_DIR)/ruby/libsvn_swig_ruby
  SWIG_RB_COMPILE = @SWIG_RB_COMPILE@
+@@ -196,19 +196,14 @@ INSTALL_JAVAHL_LIB = $(INSTALL_LIB)
+ 
+ # additional installation rules for the SWIG wrappers
+ INSTALL_EXTRA_SWIG_PY=\
+-  $(MKDIR) $(DESTDIR)$(swig_pydir); \
+-  $(MKDIR) $(DESTDIR)$(swig_pydir_extra); \
++  $(INSTALL) -d $(DESTDIR)$(swig_pydir); \
++  $(INSTALL) -d $(DESTDIR)$(swig_pydir_extra); \
+   for i in $(abs_srcdir)/subversion/bindings/swig/python/svn/*.py; do \
+     $(INSTALL_DATA) "$$i" $(DESTDIR)$(swig_pydir_extra); \
+   done; \
+   for i in $(abs_srcdir)/subversion/bindings/swig/python/*.py; do \
+     $(INSTALL_DATA) "$$i" $(DESTDIR)$(swig_pydir); \
+   done; \
+-  if test "$(abs_srcdir)" != "$(abs_builddir)"; then \
+-    for i in $(abs_builddir)/subversion/bindings/swig/python/*.py; do \
+-      $(INSTALL_DATA) "$$i" $(DESTDIR)$(swig_pydir); \
+-    done; \
+-  fi; \
+   $(PYTHON) -c 'import compileall; \
+     compileall.compile_dir("$(DESTDIR)$(swig_pydir)", 1, "$(swig_pydir)"); \
+     compileall.compile_dir("$(DESTDIR)$(swig_pydir_extra)", 1, \
