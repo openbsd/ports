@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2006/01/06 13:14:28 bernd Exp $
+# $OpenBSD: Makefile,v 1.6 2006/09/30 19:08:22 alek Exp $
 
 COMMENT=	"companion library to APR"
 
 DISTNAME=	apr-util-1.0.1
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 SHARED_LIBS=	aprutil-1 0.1
 
 CATEGORIES=	devel
@@ -21,10 +21,10 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://www.apache.org/dist/apr/ \
 		http://www.eu.apache.org/dist/apr/
 
-BUILD_DEPENDS=	lib/db4/db.=4:db-4.*:databases/db/v4 \
+RUN_DEPENDS=	lib/db4/db.=4:db-4.*:databases/db/v4 \
 		expat.4:expat->=1.95.6:textproc/expat \
 		apr-1.0:apr-1.0.1:devel/apr
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MODULES=	converters/libiconv		
 USE_LIBTOOL=	Yes

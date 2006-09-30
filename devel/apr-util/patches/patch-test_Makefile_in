@@ -1,0 +1,16 @@
+$OpenBSD: patch-test_Makefile_in,v 1.1 2006/09/30 19:08:22 alek Exp $
+--- test/Makefile.in.orig	Sat Sep 30 21:51:12 2006
++++ test/Makefile.in	Sat Sep 30 21:51:14 2006
+@@ -19,7 +19,11 @@ all: $(PROGRAMS)
+ 
+ check: $(PROGRAMS)
+ 	for prog in $(PROGRAMS); do \
+-		./$$prog ;\
++		if test $$prog = "testdbm"; then \
++			./$$prog auto db;  \
++		else \
++			./$$prog ;\
++		fi; \
+ 		if test $$? = 255; then \
+ 			echo "$$prog failed"; \
+ 			break; \
