@@ -1,4 +1,5 @@
 	native-__getcwd: permit
+	native-__semctl: permit
 	native-__sysctl: permit
 	native-accept: permit
 	native-bind: sockaddr match "/tmp" then permit
@@ -141,6 +142,9 @@
 	native-rename: filename match "/<non-existent filename>: *" then deny[enoent]
 	native-rfork: permit
 	native-select: permit
+	native-semctl: permit
+	native-semget: permit
+	native-semop: permit
 	native-sendmsg: permit
 	native-sendto: permit
 	native-setegid: permit
