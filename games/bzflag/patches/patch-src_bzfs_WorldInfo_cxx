@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_bzfs_WorldInfo_cxx,v 1.1 2006/09/30 12:45:16 steven Exp $
+--- src/bzfs/WorldInfo.cxx.orig	Fri Sep 22 13:10:43 2006
++++ src/bzfs/WorldInfo.cxx	Fri Sep 22 13:11:01 2006
+@@ -51,7 +51,7 @@
+ #include "CustomZone.h"
+ 
+ /* compression library header */
+-#include "../zlib/zlib.h"
++#include <zlib.h>
+ 
+ 
+ WorldInfo::WorldInfo() :

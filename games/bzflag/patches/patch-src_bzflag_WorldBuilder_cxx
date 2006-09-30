@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_bzflag_WorldBuilder_cxx,v 1.1 2006/09/30 12:45:16 steven Exp $
+--- src/bzflag/WorldBuilder.cxx.orig	Fri Sep 22 13:11:38 2006
++++ src/bzflag/WorldBuilder.cxx	Fri Sep 22 13:11:49 2006
+@@ -24,7 +24,7 @@
+ #include "BaseBuilding.h"
+ 
+ /* compression library header */
+-#include "../zlib/zlib.h"
++#include <zlib.h>
+ 
+ 
+ WorldBuilder::WorldBuilder()

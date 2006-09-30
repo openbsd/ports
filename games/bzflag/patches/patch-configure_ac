@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.2 2006/09/23 13:54:09 kurt Exp $
+$OpenBSD: patch-configure_ac,v 1.3 2006/09/30 12:45:16 steven Exp $
 --- configure.ac.orig	Mon Apr 17 16:11:11 2006
 +++ configure.ac	Sat Sep 23 09:43:43 2006
 @@ -73,12 +73,12 @@ AC_PROG_MAKE_SET
@@ -20,15 +20,6 @@ $OpenBSD: patch-configure_ac,v 1.2 2006/09/23 13:54:09 kurt Exp $
  
  AC_CHECK_TOOL(WINDRES, windres, :)
  
-@@ -125,7 +125,7 @@ AC_SUBST(AR)
- AC_CHECK_PROG(AR, ar, ar)
- AC_SUBST(AR_FLAGS)
- 
--AC_CHECK_LIB(z, compress, BUILDZLIB=no, BUILDZLIB=yes)
-+AC_CHECK_LIB(z, compress, BUILDZLIB=yes, BUILDZLIB=yes)
- AM_CONDITIONAL(BUILDZLIB, test $BUILDZLIB = yes)
- 
-   #checking for libcurl library
 @@ -187,6 +187,7 @@ AC_CHECK_HEADERS( \
  	SDL/SDL.h \
  	X11/Xlib.h \
