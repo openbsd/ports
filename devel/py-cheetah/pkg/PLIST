@@ -1,7 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/09/20 10:06:57 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/09/30 15:12:00 djm Exp $
 bin/cheetah
 bin/cheetah-compile
 lib/python${MODPY_VERSION}/site-packages/Cheetah/
+lib/python${MODPY_VERSION}/site-packages/Cheetah-2.0rc7-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/Cheetah-2.0rc7-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/Cheetah-2.0rc7-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/Cheetah-2.0rc7-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/Cheetah-2.0rc7-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/Cheetah/CacheRegion.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/CacheRegion.pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/CacheStore.py
