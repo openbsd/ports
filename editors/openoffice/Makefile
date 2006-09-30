@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/09/22 07:44:09 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2006/09/30 18:47:25 robert Exp $
 
 ONLY_FOR_ARCHS= i386
 
@@ -8,7 +8,7 @@ M=		m4
 VERSION=	OOD680_${M}
 DISTNAME=	OOo_${VERSION}_source
 WRKDIST=	${WRKDIR}/ooo_${VERSION}_src
-PKGNAME=	openoffice-2.0.4${M}
+PKGNAME=	openoffice-2.0.4${M}p0
 CATEGORIES=	editors productivity
 
 SHARED_LIBS=	icudata		26.0 \
@@ -68,10 +68,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 
 CONFIGURE_ARGS=	--disable-gnome-vfs \
 		--disable-mozilla \
-		--disable-qadevooo \
 		--disable-pasf \
-		--disable-binfilter \
-		--disable-odk \
 		--disable-cups \
 		--with-system-jpeg \
 		--with-system-python \
@@ -87,6 +84,7 @@ CONFIGURE_ARGS=	--disable-gnome-vfs \
 		--with-system-sndfile \
 		--with-epm=internal \
 		--with-package-format=portable \
+		--with-alloc=system \
 		--without-java
 
 FLAVORS=	debug

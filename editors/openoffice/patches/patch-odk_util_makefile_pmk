@@ -1,0 +1,25 @@
+$OpenBSD: patch-odk_util_makefile_pmk,v 1.1 2006/09/30 18:47:25 robert Exp $
+--- odk/util/makefile.pmk.orig	Fri Sep 29 13:49:47 2006
++++ odk/util/makefile.pmk	Fri Sep 29 14:23:04 2006
+@@ -65,7 +65,7 @@
+ XMLOUT=$(SOLARXMLDIR)
+ LIBOUT=$(SOLARLIBDIR)
+ 
+-.IF "$(OS)"=="FREEBSD" || "$(OS)"=="NETBSD"
++.IF "$(OS)"=="FREEBSD" || "$(OS)"=="NETBSD" || "$(OS)"=="OPENBSD"
+ MY_COPY=$(GNUCOPY)
+ MY_COPY_RECURSIVE=$(GNUCOPY) -r
+ .ELSE
+@@ -143,6 +143,12 @@
+ # FREEBSD
+ ###########
+ DESTPLATFROM=freebsd
++
++.ELIF "$(OS)"=="OPENBSD"
++###########
++# OPENBSD
++###########
++DESTPLATFROM=openbsd
+ 
+ .ELIF "$(OS)"=="IRIX"
+ ###########

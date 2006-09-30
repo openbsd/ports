@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2006/09/20 09:06:20 robert Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.3 2006/09/30 18:47:25 robert Exp $
 openoffice/program/acceptor.uno.so
 openoffice/program/basprov680.uno.so
 openoffice/program/behelper.uno.so
@@ -29,7 +29,20 @@ openoffice/program/libanimcore.so
 openoffice/program/libavmedia680.so
 openoffice/program/libbasctl680.so
 openoffice/program/libbasegfx680.so
+openoffice/program/libbf_frm680.so
+openoffice/program/libbf_lng680.so
+openoffice/program/libbf_migratefilter680.so
+openoffice/program/libbf_ofa680.so
+openoffice/program/libbf_sc680.so
+openoffice/program/libbf_sch680.so
+openoffice/program/libbf_sd680.so
+openoffice/program/libbf_sm680.so
+openoffice/program/libbf_svx680.so
+openoffice/program/libbf_sw680.so
+openoffice/program/libbf_wrapper680.so
+openoffice/program/libbf_xo680.so
 openoffice/program/libbib680.so
+openoffice/program/libbindet680.so
 openoffice/program/libcached1.so
 openoffice/program/libcalc680.so
 openoffice/program/libcanvastools680.so
@@ -110,6 +123,7 @@ openoffice/program/libira680.so
 openoffice/program/libitg680.so
 openoffice/program/libiti680.so
 openoffice/program/libj680_g.so
+openoffice/program/liblegacy_binfilters680.so
 openoffice/program/liblng680.so
 openoffice/program/liblnth680.so
 openoffice/program/liblocaledata_en.so

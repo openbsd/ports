@@ -1,0 +1,147 @@
+$OpenBSD: patch-epm_epm_3_7_patch,v 1.1 2006/09/30 18:47:25 robert Exp $
+--- epm/epm-3.7.patch.orig	Sat Sep 30 10:33:12 2006
++++ epm/epm-3.7.patch	Sat Sep 30 10:33:16 2006
+@@ -1,5 +1,5 @@
+ *** misc/epm-3.7/bsd.c	Tue Jan 14 18:05:01 2003
+---- misc/build/epm-3.7/bsd.c	Wed Jul 26 20:59:48 2006
++--- misc/build/epm-3.7/bsd.c	Sat Sep 30 09:56:51 2006
+ ***************
+ *** 26,31 ****
+ --- 26,38 ----
+@@ -88,7 +88,7 @@
+    /*
+     * Remove temporary files...
+ *** misc/epm-3.7/deb.c	Wed Jan 15 15:29:24 2003
+---- misc/build/epm-3.7/deb.c	Wed Jul 26 21:01:11 2006
++--- misc/build/epm-3.7/deb.c	Sat Sep 30 09:56:51 2006
+ ***************
+ *** 26,31 ****
+ --- 26,53 ----
+@@ -215,11 +215,12 @@
+     * Write the preinst file for DPKG...
+     */
+ ***************
+-*** 417,422 ****
+---- 454,480 ----
++*** 416,421 ****
++--- 453,479 ----
++            break;
+       }
+     }
+-  
+++ 
+ +   
+ +   /* 
+ +    * Calculate and append Installed-Size to DEBIAN/control
+@@ -240,12 +241,11 @@
+ +   add_size(fp, filename);
+ +   fclose(fp);
+ +  
+-+ 
++  
+    /*
+     * Build the distribution from the spec file...
+-    */
+ *** misc/epm-3.7/dist.c	Thu Aug  7 16:14:40 2003
+---- misc/build/epm-3.7/dist.c	Wed Jul 26 21:01:11 2006
++--- misc/build/epm-3.7/dist.c	Sat Sep 30 09:56:51 2006
+ ***************
+ *** 394,401 ****
+     strcpy(platform->machine, "mips");
+@@ -293,7 +293,7 @@
+       strcpy(platform->machine, "sparc");
+   #endif /* __sgi */
+ *** misc/epm-3.7/epm.c	Tue Oct 28 15:48:30 2003
+---- misc/build/epm-3.7/epm.c	Wed Jul 26 20:59:48 2006
++--- misc/build/epm-3.7/epm.c	Sat Sep 30 09:56:51 2006
+ ***************
+ *** 547,552 ****
+ --- 547,553 ----
+@@ -305,7 +305,7 @@
+     puts("EPM is free software and comes with ABSOLUTELY NO WARRANTY; for details");
+     puts("see the GNU General Public License in the file COPYING or at");
+ *** misc/epm-3.7/file.c	Wed Jul 23 23:41:08 2003
+---- misc/build/epm-3.7/file.c	Wed Jul 26 20:59:48 2006
++--- misc/build/epm-3.7/file.c	Sat Sep 30 09:56:51 2006
+ ***************
+ *** 108,114 ****
+     fclose(dstfile);
+@@ -337,7 +337,7 @@
+     return (0);
+ --- 149,154 ----
+ *** misc/epm-3.7/osx.c	Wed Jul 23 23:41:08 2003
+---- misc/build/epm-3.7/osx.c	Wed Jul 26 20:59:48 2006
++--- misc/build/epm-3.7/osx.c	Sat Sep 30 09:56:51 2006
+ ***************
+ *** 373,379 ****
+     else
+@@ -356,7 +356,7 @@
+   		    "-p %s/%s.pkg -f %s/Package -r %s/Resources -d %s/%s-desc.plist -i %s/%s-info.plist",
+   	      filename, prodname, filename, filename, filename, prodname, filename, prodname);
+ *** misc/epm-3.7/pkg.c	Tue Dec 17 19:57:56 2002
+---- misc/build/epm-3.7/pkg.c	Wed Jul 26 20:59:48 2006
++--- misc/build/epm-3.7/pkg.c	Sat Sep 30 09:56:51 2006
+ ***************
+ *** 429,503 ****
+   
+@@ -435,8 +435,21 @@
+   }
+   
+ --- 429,434 ----
++*** misc/epm-3.7/portable.c	Wed Jul 23 23:41:08 2003
++--- misc/build/epm-3.7/portable.c	Sat Sep 30 10:28:14 2006
++***************
++*** 1515,1520 ****
++--- 1515,1522 ----
++    fputs("# Determine correct extract options for the tar command...\n", fp);
++    fputs("if test `uname` = Darwin; then\n", fp);
++    fputs("	ac_tar=\"tar -xpPf\"\n", fp);
+++   fputs("else if test `uname` = OpenBSD; then\n", fp);
+++   fputs("	ac_tar=\"tar -xpPf\"\n", fp);
++    fputs("else if test \"`tar --help 2>&1 | grep GNU`\" = \"\"; then\n", fp);
++    fputs("	ac_tar=\"tar -xpf\"\n", fp);
++    fputs("else\n", fp);
+ *** misc/epm-3.7/qprintf.c	Mon Jan 27 22:48:03 2003
+---- misc/build/epm-3.7/qprintf.c	Wed Jul 26 20:59:48 2006
++--- misc/build/epm-3.7/qprintf.c	Sat Sep 30 09:56:51 2006
+ ***************
+ *** 181,192 ****
+   
+@@ -472,7 +485,7 @@
+   	    }
+   
+ *** misc/epm-3.7/rpm.c	Wed Oct  1 21:27:15 2003
+---- misc/build/epm-3.7/rpm.c	Wed Jul 26 20:59:48 2006
++--- misc/build/epm-3.7/rpm.c	Sat Sep 30 09:56:51 2006
+ ***************
+ *** 38,44 ****
+            dist_t         *dist,		/* I - Distribution information */
+@@ -642,10 +655,12 @@
+     fputs("%files\n", fp);
+     for (i = dist->num_files, file = dist->files; i > 0; i --, file ++)
+ ***************
+-*** 415,467 ****
++*** 413,465 ****
++            make_link(filename, file->src);
++            break;
+       }
+-    }
+-  
++-   }
++- 
+ -  /*
+ -   * Build the distribution from the spec file...
+ -   */
+@@ -691,9 +706,7 @@
+ -     run_command(NULL, "/bin/rm -rf %s/buildroot", directory);
+ - 
+ -     unlink(specname);
+--   }
+-- 
+-    return (0);
+-  }
++    }
+   
+---- 457,462 ----
++    return (0);
++--- 455,460 ----

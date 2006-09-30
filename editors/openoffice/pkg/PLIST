@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/09/20 09:06:20 robert Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/09/30 18:47:25 robert Exp $
 %%SHARED%%
 bin/scalc
 bin/sdraw
@@ -67,6 +67,7 @@ openoffice/program/hid.lst
 openoffice/program/intro.bmp
 openoffice/program/jvmfwk3rc
 openoffice/program/kde-open-url
+openoffice/program/legacy_binfilters.rdb
 openoffice/program/libcppu.so.3
 openoffice/program/libcppuhelpergcc3.so.3
 openoffice/program/libicudata.so.26
@@ -105,6 +106,15 @@ openoffice/program/resource/abp680en-US.res
 openoffice/program/resource/analysis680en-US.res
 openoffice/program/resource/avmedia680en-US.res
 openoffice/program/resource/basctl680en-US.res
+openoffice/program/resource/bf_frm680en-US.res
+openoffice/program/resource/bf_ofa680en-US.res
+openoffice/program/resource/bf_sc680en-US.res
+openoffice/program/resource/bf_sch680en-US.res
+openoffice/program/resource/bf_sd680en-US.res
+openoffice/program/resource/bf_sfx680en-US.res
+openoffice/program/resource/bf_sm680en-US.res
+openoffice/program/resource/bf_svx680en-US.res
+openoffice/program/resource/bf_sw680en-US.res
 openoffice/program/resource/bib680en-US.res
 openoffice/program/resource/cal680en-US.res
 openoffice/program/resource/cnr680en-US.res

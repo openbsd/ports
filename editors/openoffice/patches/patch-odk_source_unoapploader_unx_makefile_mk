@@ -1,0 +1,12 @@
+$OpenBSD: patch-odk_source_unoapploader_unx_makefile_mk,v 1.1 2006/09/30 18:47:25 robert Exp $
+--- odk/source/unoapploader/unx/makefile.mk.orig	Fri Sep 29 13:46:37 2006
++++ odk/source/unoapploader/unx/makefile.mk	Fri Sep 29 13:46:55 2006
+@@ -51,7 +51,7 @@
+ LINK=$(CC)
+ .ENDIF
+ 
+-.IF "$(OS)"!="FREEBSD"
++.IF "$(OS)"!="FREEBSD" && "$(OS)"!="OPENBSD"
+ STDLIB= -ldl
+ .ENDIF
+ 
