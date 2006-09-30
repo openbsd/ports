@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2006/04/11 06:05:32 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2006/09/30 12:08:48 kevlo Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"extension for generating GUIDs/UUIDs"
 
-DISTNAME=	Data-UUID-0.14
+DISTNAME=	Data-UUID-0.145
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Data/}
@@ -19,5 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= perl
 CONFIGURE_ARGS= </dev/null
+
+REGRESS_DEPENDS=	::devel/p5-Test-Pod \
+			::devel/p5-Test-Pod-Coverage
 
 .include <bsd.port.mk>
