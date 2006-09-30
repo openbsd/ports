@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/10 02:53:09 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2006/09/30 11:35:39 kevlo Exp $
 
 COMMENT=	"simple interface to Locale::Maketext::Lexicon"
 
-DISTNAME=	Locale-Maketext-Simple-0.12
+DISTNAME=	Locale-Maketext-Simple-0.18
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
@@ -17,5 +17,7 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Locale/}
 
 CONFIGURE_STYLE= perl
+
+PKG_ARCH=	*
 
 .include <bsd.port.mk>
