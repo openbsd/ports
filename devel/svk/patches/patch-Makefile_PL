@@ -1,20 +1,12 @@
-$OpenBSD: patch-Makefile_PL,v 1.2 2005/09/26 03:18:53 kevlo Exp $
---- Makefile.PL.orig	Thu Aug 18 00:09:36 2005
-+++ Makefile.PL	Mon Sep 26 11:04:43 2005
-@@ -16,7 +16,7 @@ requires(
- #        'SVN::Core'   => $required_svn,
-         'Algorithm::Annotate'   => '0',
-         'Algorithm::Diff'       => '0',
--        'YAML'                  => '0.38',
-+        'YAML'                  => '0.36',
-         'Regexp::Shellish'      => '0',
-         'Data::Hierarchy'       => '0.21',
-         'File::Temp'            => '0.14',
-@@ -33,7 +33,6 @@ requires(
-         'PerlIO::eol'           => '0.13',
+$OpenBSD: patch-Makefile_PL,v 1.3 2006/09/30 14:34:28 kevlo Exp $
+--- Makefile.PL.orig	Sat Sep 30 22:27:14 2006
++++ Makefile.PL	Sat Sep 30 22:27:23 2006
+@@ -34,7 +34,7 @@ requires(
  	'Class::Autouse'	=> '1.15',
  	'Getopt::Long'		=> '2.34',
--	'Encode'		=> '2.10',
+ 	'Encode'		=> '2.10',
+-        'File::Spec'            => '3.18',
++        'File::Spec'            => '3.12',
  );
  features(
      'Localized messages' => [
