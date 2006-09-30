@@ -1,4 +1,4 @@
-.\" $OpenBSD: pptp_8,v 1.3 2004/05/30 21:54:03 jmc Exp $
+.\" $OpenBSD: pptp_8,v 1.4 2006/09/30 20:40:10 grunk Exp $
 .\" Manual page for pptp-1.1.0
 .\" Information gleaned from USING file in the distribution
 .\" SH section heading
@@ -18,7 +18,7 @@
 .Op Ar --phone <phone number>
 .Op Ar --quirks ISP_NAME
 -- ]
-.Op Ar pppd options
+.Op Ar ppp options
 .Sh DESCRIPTION
 .Nm
 manages
@@ -26,7 +26,7 @@ a virtual private network (VPN) connection using Microsoft
 PPTP protocols using IP GRE tunneling protocols.
 .Nm
 uses
-.Xr pppd 8
+.Xr ppp 8
 on a pseudo-tty
 to negotiate the connection with MS-CHAP authentication.
 .Pp
@@ -45,7 +45,7 @@ The
 .Ar hostname
 parameter specifies which host should be contacted as the PPTP server.
 Additional parameters are passed on to
-.Ic pppd
+.Ic ppp
 and typically include a remote username or a file containing options.
 .Pp
 .Nm
@@ -54,7 +54,7 @@ must be run as root.
 .Sh EXAMPLE
 .Nm
 .Ar hostname
-.Op Ar pppd options
+.Op Ar ppp options
 .Sh FILES
 .Pa /var/run/pptp/<ip-address>
 is created as a socket.  It is used for communicating with an existing
@@ -63,7 +63,7 @@ PPTP call manager for a given remote server host.
 .Pa PREFIX/sbin/pptp-reconnect
 can be used to (re)establish a pptp connection.
 .Sh SEE ALSO
-.Xr pppd 8 ,
+.Xr ppp 8 ,
 .Xr gre 4 ,
 .Pa PREFIX/share/doc/pptp/USING .
 .Sh BUGS

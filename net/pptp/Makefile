@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2006/01/29 18:40:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.14 2006/09/30 20:40:10 grunk Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2000/04/10 01:14:01 jtk Exp $
 
 COMMENT=	'PPTP client package for Microsoft VPN servers'
 
 DISTNAME=	pptp-1.7.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 MASTER_SITES= 	${MASTER_SITE_SOURCEFORGE:=pptpclient/}
 
