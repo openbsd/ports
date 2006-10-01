@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2006/08/01 14:57:04 alek Exp $
+# $OpenBSD: Makefile,v 1.75 2006/10/01 23:03:24 steven Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -45,6 +45,7 @@
      SUBDIR += scm
      SUBDIR += scm,no_x11
      SUBDIR += smlnj
+     SUBDIR += spidermonkey
      SUBDIR += squeak
      SUBDIR += tcl
      SUBDIR += tendra
