@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2006/08/03 23:28:11 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2006/10/01 10:43:38 mbalmer Exp $
 
 COMMENT=		"Common Unix Printing System"
 
-VERSION=		1.1.23
+VERSION=		1.2.4
 DISTNAME=		cups-${VERSION}-source
-PKGNAME=		${DISTNAME:S/-source//}p8
+PKGNAME=		${DISTNAME:S/-source//}
 CATEGORIES=		print sysutils
-SHARED_LIBS=		cups		2.2 \
-			cupsimage	2.2
+SHARED_LIBS=		cups		2.3 \
+			cupsimage	2.3
 
 HOMEPAGE=		http://www.cups.org/
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m z
+WANTLIB=		c m z stdc++ pthread
 
 MASTER_SITES=		http://ftp.easysw.com/pub/cups/${VERSION}/ \
 			http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${VERSION}/ \
@@ -47,10 +47,11 @@ CONFIGURE_ARGS+=	--with-cups-user=_cups \
 			${CONFIGURE_SHARED} \
 			--localstatedir=/var \
 			--enable-ssl \
+			--disable-ldap \
 			--without-java \
 			--without-perl \
 			--without-php \
-			--without-python 
+			--without-python
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 			  -I${LOCALBASE}/include/libpng" \
@@ -63,6 +64,7 @@ CFLAGS+=		"-I${LOCALBASE}/include" \
 			"-I${LOCALBASE}/include/libpng"
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S/-source//}
+USE_GMAKE=		Yes
 
 REGRESS_FLAGS=		LOCALBASE=${LOCALBASE}
 
@@ -83,16 +85,15 @@ WANTLIB+=	gpg-error.>=1 gcrypt.>=12
 .endif
 
 post-configure:
-.for i in cups.sh config.h cups-config conf/cupsd.conf
-	@mv ${WRKBUILD}/${i} ${WRKBUILD}/${i}.bak
-	@sed -e s#\$${DESTDIR}##g ${WRKBUILD}/${i}.bak > ${WRKBUILD}/${i}
-.endfor
+	cd ${WRKBUILD} && perl -pi -e 's|\$${DESTDIR}||g' init/cups.sh \
+	    config.h cups-config conf/cupsd.conf man/*.man
 
 post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/cups
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/cups/init
 	@cd ${WRKINST}${SYSCONFDIR}/cups && cp -Rp * \
 		${PREFIX}/share/examples/cups
-	@${INSTALL_DATA} ${WRKBUILD}/cups.sh ${PREFIX}/share/cups
+	@rm -r ${WRKINST}${SYSCONFDIR}/cups
+	@${INSTALL_DATA} ${WRKBUILD}/init/cups.sh ${PREFIX}/share/cups/init
 .for file in cups-enable cups-disable
 	@sed s,y0y0y0,${LOCALBASE}, < ${FILESDIR}/${file} > \
 		${PREFIX}/sbin/${file}

@@ -1,6 +1,7 @@
---- test/run-stp-tests.sh.orig	Tue Jun 29 01:31:34 2004
-+++ test/run-stp-tests.sh	Sun Nov  7 15:19:29 2004
-@@ -28,7 +28,7 @@
+$OpenBSD: patch-test_run-stp-tests_sh,v 1.2 2006/10/01 10:43:38 mbalmer Exp $
+--- test/run-stp-tests.sh.orig	Wed Sep 20 11:35:02 2006
++++ test/run-stp-tests.sh	Wed Sep 20 11:36:00 2006
+@@ -30,7 +30,7 @@ argcount=$#
  # Make the IPP test program...
  #
  
@@ -8,16 +9,4 @@
 +${MAKE_PROGRAM}
  
  #
- # Greet the tester...
-@@ -442,9 +442,9 @@ cat str-trailer.html >>$strfile
- htmlfile=`basename $strfile .shtml`.html
- pdffile=`basename $strfile .shtml`.pdf
- 
--htmldoc --numbered --verbose --titleimage ../doc/images/cups-large.gif \
-+htmldoc --datadir ${LOCALBASE}/share/htmldoc --numbered --verbose --titleimage ../doc/images/cups-large.gif \
- 	-f $htmlfile $strfile
--htmldoc --numbered --verbose --titleimage ../doc/images/cups-large.gif \
-+htmldoc --datadir ${LOCALBASE}/share/htmldoc --numbered --verbose --titleimage ../doc/images/cups-large.gif \
- 	-f $pdffile $strfile
- 
- echo ""
+ # Figure out the proper echo options...

@@ -1,7 +1,7 @@
-$OpenBSD: patch-filter_imagetoraster_c,v 1.1.1.1 2005/01/16 12:36:50 mbalmer Exp $
---- filter/imagetoraster.c.orig	Fri Dec 24 16:26:14 2004
-+++ filter/imagetoraster.c	Fri Dec 24 16:26:54 2004
-@@ -309,7 +309,7 @@ main(int  argc,		/* I - Number of comman
+$OpenBSD: patch-filter_imagetoraster_c,v 1.2 2006/10/01 10:43:38 mbalmer Exp $
+--- filter/imagetoraster.c.orig	Wed Sep 20 11:19:56 2006
++++ filter/imagetoraster.c	Wed Sep 20 11:20:47 2006
+@@ -258,7 +258,7 @@ main(int  argc,				/* I - Number of comm
        close(mypipes[1]);
  
        execlp("pstoraster", argv[0], argv[1], argv[2], argv[3], argv[4], argv[5],
@@ -10,7 +10,7 @@ $OpenBSD: patch-filter_imagetoraster_c,v 1.1.1.1 2005/01/16 12:36:50 mbalmer Exp
        perror("ERROR: Unable to exec pstoraster");
        return (errno);
      }
-@@ -338,7 +338,7 @@ main(int  argc,		/* I - Number of comman
+@@ -287,7 +287,7 @@ main(int  argc,				/* I - Number of comm
      */
  
      execlp("imagetops", argv[0], argv[1], argv[2], argv[3], argv[4], argv[5],

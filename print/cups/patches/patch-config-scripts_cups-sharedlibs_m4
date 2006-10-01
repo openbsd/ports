@@ -1,7 +1,8 @@
---- config-scripts/cups-sharedlibs.m4.orig	Wed Aug 11 16:39:26 2004
-+++ config-scripts/cups-sharedlibs.m4	Sun Nov  7 15:21:47 2004
+$OpenBSD: patch-config-scripts_cups-sharedlibs_m4,v 1.3 2006/10/01 10:43:38 mbalmer Exp $
+--- config-scripts/cups-sharedlibs.m4.orig	Wed Sep 20 10:53:05 2006
++++ config-scripts/cups-sharedlibs.m4	Wed Sep 20 10:54:16 2006
 @@ -48,8 +48,8 @@ if test x$enable_shared != xno; then
- 			DSOFLAGS="$DSOFLAGS -Wl,-rpath,\$(libdir),-set_version,sgi2.5,-soname,\$@ -shared \$(OPTIM)"
+ 			DSOFLAGS="$DSOFLAGS -set_version,sgi2.6,-soname,\`basename \$@\` -shared \$(OPTIM)"
  			;;
  		OSF1* | Linux | GNU | *BSD*)
 -			LIBCUPS="libcups.so.2"
@@ -9,5 +10,5 @@
 +			LIBCUPS="libcups.so.${LIBcups_VERSION}"
 +			LIBCUPSIMAGE="libcupsimage.so.${LIBcupsimage_VERSION}"
  			DSO="\$(CC)"
- 			DSOFLAGS="$DSOFLAGS -Wl,-soname,\$@ -shared \$(OPTIM)"
+ 			DSOFLAGS="$DSOFLAGS -Wl,-soname,\`basename \$@\` -shared \$(OPTIM)"
  			;;

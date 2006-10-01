@@ -1,21 +1,21 @@
-$OpenBSD: patch-cgi-bin_admin_c,v 1.1.1.1 2005/01/16 12:36:50 mbalmer Exp $
---- cgi-bin/admin.c.orig	Tue Jun 29 15:18:35 2004
-+++ cgi-bin/admin.c	Sat Dec 25 15:24:50 2004
-@@ -196,7 +196,7 @@ do_am_class(http_t      *http,		/* I - H
+$OpenBSD: patch-cgi-bin_admin_c,v 1.2 2006/10/01 10:43:38 mbalmer Exp $
+--- cgi-bin/admin.c.orig	Wed Sep 20 10:51:31 2006
++++ cgi-bin/admin.c	Wed Sep 20 10:52:38 2006
+@@ -237,7 +237,7 @@ do_am_class(http_t *http,		/* I - HTTP c
+ 		*response;		/* IPP response */
    ipp_attribute_t *attr;		/* member-uris attribute */
-   ipp_status_t	status;			/* Request status */
    char		uri[HTTP_MAX_URI];	/* Device or printer URI */
 -  const char	*name,			/* Pointer to class name */
 +  const signed char	*name,			/* Pointer to class name */
  		*ptr;			/* Pointer to CGI variable */
- 
- 
-@@ -487,7 +487,7 @@ do_am_printer(http_t      *http,	/* I - 
+   const char	*title;			/* Title of page */
+   static const char * const pattrs[] =	/* Requested printer attributes */
+@@ -517,7 +517,7 @@ do_am_printer(http_t *http,		/* I - HTTP
+ 		*uriptr;		/* Pointer into URI */
    int		maxrate;		/* Maximum baud rate */
    char		baudrate[255];		/* Baud rate string */
-   char		make[255];		/* Make string */
 -  const char	*name,			/* Pointer to class name */
 +  const signed char	*name,			/* Pointer to class name */
  		*ptr;			/* Pointer to CGI variable */
+   const char	*title;			/* Title of page */
    static int	baudrates[] =		/* Baud rates */
- 		{

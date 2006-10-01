@@ -1,29 +1,35 @@
-@comment $OpenBSD: PLIST,v 1.8 2006/02/05 10:26:23 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.9 2006/10/01 10:43:38 mbalmer Exp $
 @conflict LPRng-*
 @newgroup _cups:541
 @newuser _cups:541:541:daemon:CUPS:/nonexistent:/sbin/nologin
+%%SHARED%%
 bin/cancel
 bin/cups-config
+bin/cupstestdsc
 bin/cupstestppd
-bin/disable
-bin/enable
 bin/lp
 bin/lpoptions
+bin/lppasswd
 bin/lpq
 bin/lpr
 bin/lprm
 bin/lpstat
 include/cups/
+include/cups/adminutil.h
+include/cups/array.h
+include/cups/backend.h
 include/cups/cups.h
+include/cups/dir.h
+include/cups/file.h
 include/cups/http.h
+include/cups/i18n.h
 include/cups/image.h
 include/cups/ipp.h
 include/cups/language.h
 include/cups/md5.h
 include/cups/ppd.h
 include/cups/raster.h
-lib/libcups.a
-lib/libcupsimage.a
+include/cups/transcode.h
 libexec/cups/
 libexec/cups/backend/
 libexec/cups/backend/http
@@ -32,16 +38,21 @@ libexec/cups/backend/lpd
 libexec/cups/backend/parallel
 libexec/cups/backend/scsi
 libexec/cups/backend/serial
+libexec/cups/backend/snmp
 libexec/cups/backend/socket
 libexec/cups/backend/usb
 libexec/cups/cgi-bin/
 libexec/cups/cgi-bin/admin.cgi
 libexec/cups/cgi-bin/classes.cgi
+libexec/cups/cgi-bin/help.cgi
 libexec/cups/cgi-bin/jobs.cgi
 libexec/cups/cgi-bin/printers.cgi
 libexec/cups/daemon/
+libexec/cups/daemon/cups-deviced
+libexec/cups/daemon/cups-driverd
 libexec/cups/daemon/cups-lpd
 libexec/cups/daemon/cups-polld
+libexec/cups/driver/
 libexec/cups/filter/
 @mode 0755
 libexec/cups/filter/foomatic-rip
@@ -55,171 +66,18 @@ libexec/cups/filter/pstops
 libexec/cups/filter/rastertodymo
 libexec/cups/filter/rastertoepson
 libexec/cups/filter/rastertohp
+libexec/cups/filter/rastertolabel
 libexec/cups/filter/texttops
-@man man/cat1/backend.0
-@man man/cat1/cancel.0
-@man man/cat1/cups-config.0
-@man man/cat1/cupstestppd.0
-@man man/cat1/filter.0
-@man man/cat1/lp.0
-@man man/cat1/lpoptions.0
-@man man/cat1/lppasswd.0
-@man man/cat1/lpq.0
-@man man/cat1/lpr.0
-@man man/cat1/lprm.0
-@man man/cat1/lpstat.0
-@man man/cat5/classes.conf.0
-@man man/cat5/cupsd.conf.0
-@man man/cat5/mime.convs.0
-@man man/cat5/mime.types.0
-@man man/cat5/printers.conf.0
-@man man/cat8/accept.0
-@man man/cat8/cups-lpd.0
-@man man/cat8/cups-polld.0
-@man man/cat8/cupsaddsmb.0
-@man man/cat8/cupsd.0
-@man man/cat8/disable.0
-@man man/cat8/enable.0
-@man man/cat8/lpadmin.0
-@man man/cat8/lpc.0
-@man man/cat8/lpinfo.0
-@man man/cat8/lpmove.0
-@man man/cat8/reject.0
-@comment man/es/
-@comment man/es/cat1/
-@comment @man man/es/cat1/backend.0
-@comment @man man/es/cat1/cancel.0
-@comment @man man/es/cat1/cups-config.0
-@comment @man man/es/cat1/cupstestppd.0
-@comment @man man/es/cat1/filter.0
-@comment @man man/es/cat1/lp.0
-@comment @man man/es/cat1/lpoptions.0
-@comment @man man/es/cat1/lppasswd.0
-@comment @man man/es/cat1/lpq.0
-@comment @man man/es/cat1/lpr.0
-@comment @man man/es/cat1/lprm.0
-@comment @man man/es/cat1/lpstat.0
-@comment man/es/cat5/
-@comment @man man/es/cat5/classes.conf.0
-@comment @man man/es/cat5/cupsd.conf.0
-@comment @man man/es/cat5/mime.convs.0
-@comment @man man/es/cat5/mime.types.0
-@comment @man man/es/cat5/printers.conf.0
-@comment man/es/cat8/
-@comment @man man/es/cat8/accept.0
-@comment @man man/es/cat8/cups-lpd.0
-@comment @man man/es/cat8/cups-polld.0
-@comment @man man/es/cat8/cupsaddsmb.0
-@comment @man man/es/cat8/cupsd.0
-@comment @man man/es/cat8/disable.0
-@comment @man man/es/cat8/enable.0
-@comment @man man/es/cat8/lpadmin.0
-@comment @man man/es/cat8/lpc.0
-@comment @man man/es/cat8/lpinfo.0
-@comment @man man/es/cat8/lpmove.0
-@comment @man man/es/cat8/reject.0
-@comment man/es/man1/
-@comment @man man/es/man1/backend.1
-@comment @man man/es/man1/cancel.1
-@comment @man man/es/man1/cups-config.1
-@comment @man man/es/man1/cupstestppd.1
-@comment @man man/es/man1/filter.1
-@comment @man man/es/man1/lp.1
-@comment @man man/es/man1/lpoptions.1
-@comment @man man/es/man1/lppasswd.1
-@comment @man man/es/man1/lpq.1
-@comment @man man/es/man1/lpr.1
-@comment @man man/es/man1/lprm.1
-@comment @man man/es/man1/lpstat.1
-@comment man/es/man5/
-@comment @man man/es/man5/classes.conf.5
-@comment @man man/es/man5/cupsd.conf.5
-@comment @man man/es/man5/mime.convs.5
-@comment @man man/es/man5/mime.types.5
-@comment @man man/es/man5/printers.conf.5
-@comment man/es/man8/
-@comment @man man/es/man8/accept.8
-@comment @man man/es/man8/cups-lpd.8
-@comment @man man/es/man8/cups-polld.8
-@comment @man man/es/man8/cupsaddsmb.8
-@comment @man man/es/man8/cupsd.8
-@comment @man man/es/man8/disable.8
-@comment @man man/es/man8/enable.8
-@comment @man man/es/man8/lpadmin.8
-@comment @man man/es/man8/lpc.8
-@comment @man man/es/man8/lpinfo.8
-@comment @man man/es/man8/lpmove.8
-@comment @man man/es/man8/reject.8
-@comment man/fr/
-@comment man/fr/cat1/
-@comment @man man/fr/cat1/backend.0
-@comment @man man/fr/cat1/cancel.0
-@comment @man man/fr/cat1/cups-config.0
-@comment @man man/fr/cat1/cupstestppd.0
-@comment @man man/fr/cat1/filter.0
-@comment @man man/fr/cat1/lp.0
-@comment @man man/fr/cat1/lpoptions.0
-@comment @man man/fr/cat1/lppasswd.0
-@comment @man man/fr/cat1/lpq.0
-@comment @man man/fr/cat1/lpr.0
-@comment @man man/fr/cat1/lprm.0
-@comment @man man/fr/cat1/lpstat.0
-@comment man/fr/cat5/
-@comment @man man/fr/cat5/classes.conf.0
-@comment @man man/fr/cat5/cupsd.conf.0
-@comment @man man/fr/cat5/mime.convs.0
-@comment @man man/fr/cat5/mime.types.0
-@comment @man man/fr/cat5/printers.conf.0
-@comment man/fr/cat8/
-@comment @man man/fr/cat8/accept.0
-@comment @man man/fr/cat8/cups-lpd.0
-@comment @man man/fr/cat8/cups-polld.0
-@comment @man man/fr/cat8/cupsaddsmb.0
-@comment @man man/fr/cat8/cupsd.0
-@comment @man man/fr/cat8/disable.0
-@comment @man man/fr/cat8/enable.0
-@comment @man man/fr/cat8/lpadmin.0
-@comment @man man/fr/cat8/lpc.0
-@comment @man man/fr/cat8/lpinfo.0
-@comment @man man/fr/cat8/lpmove.0
-@comment @man man/fr/cat8/reject.0
-@comment man/fr/man1/
-@comment @man man/fr/man1/backend.1
-@comment @man man/fr/man1/cancel.1
-@comment @man man/fr/man1/cups-config.1
-@comment @man man/fr/man1/cupstestppd.1
-@comment @man man/fr/man1/filter.1
-@comment @man man/fr/man1/lp.1
-@comment @man man/fr/man1/lpoptions.1
-@comment @man man/fr/man1/lppasswd.1
-@comment @man man/fr/man1/lpq.1
-@comment @man man/fr/man1/lpr.1
-@comment @man man/fr/man1/lprm.1
-@comment @man man/fr/man1/lpstat.1
-@comment man/fr/man5/
-@comment @man man/fr/man5/classes.conf.5
-@comment @man man/fr/man5/cupsd.conf.5
-@comment @man man/fr/man5/mime.convs.5
-@comment @man man/fr/man5/mime.types.5
-@comment @man man/fr/man5/printers.conf.5
-@comment man/fr/man8/
-@comment @man man/fr/man8/accept.8
-@comment @man man/fr/man8/cups-lpd.8
-@comment @man man/fr/man8/cups-polld.8
-@comment @man man/fr/man8/cupsaddsmb.8
-@comment @man man/fr/man8/cupsd.8
-@comment @man man/fr/man8/disable.8
-@comment @man man/fr/man8/enable.8
-@comment @man man/fr/man8/lpadmin.8
-@comment @man man/fr/man8/lpc.8
-@comment @man man/fr/man8/lpinfo.8
-@comment @man man/fr/man8/lpmove.8
-@comment @man man/fr/man8/reject.8
-@man man/man1/backend.1
+libexec/cups/monitor/
+libexec/cups/monitor/bcp
+libexec/cups/monitor/tbcp
+libexec/cups/notifier/
+libexec/cups/notifier/mailto
+libexec/cups/notifier/testnotify
 @man man/man1/cancel.1
 @man man/man1/cups-config.1
+@man man/man1/cupstestdsc.1
 @man man/man1/cupstestppd.1
-@man man/man1/filter.1
 @man man/man1/lp.1
 @man man/man1/lpoptions.1
 @man man/man1/lppasswd.1
@@ -228,17 +86,25 @@ libexec/cups/filter/texttops
 @man man/man1/lprm.1
 @man man/man1/lpstat.1
 @man man/man5/classes.conf.5
+@man man/man5/client.conf.5
+@man man/man5/cups-snmp.conf.5
 @man man/man5/cupsd.conf.5
+@man man/man5/mailto.conf.5
 @man man/man5/mime.convs.5
 @man man/man5/mime.types.5
 @man man/man5/printers.conf.5
+@man man/man5/subscriptions.conf.5
+@man man/man7/backend.7
+@man man/man7/filter.7
 @man man/man8/accept.8
+@man man/man8/cups-deviced.8
+@man man/man8/cups-driverd.8
 @man man/man8/cups-lpd.8
 @man man/man8/cups-polld.8
 @man man/man8/cupsaddsmb.8
 @man man/man8/cupsd.8
-@man man/man8/disable.8
-@man man/man8/enable.8
+@man man/man8/cupsdisable.8
+@man man/man8/cupsenable.8
 @man man/man8/lpadmin.8
 @man man/man8/lpc.8
 @man man/man8/lpinfo.8
@@ -251,6 +117,8 @@ sbin/cups-enable
 @mode
 sbin/cupsaddsmb
 sbin/cupsd
+sbin/cupsdisable
+sbin/cupsenable
 sbin/lpadmin
 sbin/lpc
 sbin/lpinfo
@@ -264,6 +132,44 @@ share/cups/banners/secret
 share/cups/banners/standard
 share/cups/banners/topsecret
 share/cups/banners/unclassified
+share/cups/charmaps/
+share/cups/charmaps/euc-cn.txt
+share/cups/charmaps/euc-jp.txt
+share/cups/charmaps/euc-kr.txt
+share/cups/charmaps/euc-tw.txt
+share/cups/charmaps/iso-8859-1.txt
+share/cups/charmaps/iso-8859-10.txt
+share/cups/charmaps/iso-8859-11.txt
+share/cups/charmaps/iso-8859-13.txt
+share/cups/charmaps/iso-8859-14.txt
+share/cups/charmaps/iso-8859-15.txt
+share/cups/charmaps/iso-8859-16.txt
+share/cups/charmaps/iso-8859-2.txt
+share/cups/charmaps/iso-8859-3.txt
+share/cups/charmaps/iso-8859-4.txt
+share/cups/charmaps/iso-8859-5.txt
+share/cups/charmaps/iso-8859-6.txt
+share/cups/charmaps/iso-8859-7.txt
+share/cups/charmaps/iso-8859-8.txt
+share/cups/charmaps/iso-8859-9.txt
+share/cups/charmaps/koi8-r.txt
+share/cups/charmaps/koi8-u.txt
+share/cups/charmaps/mac-roman.txt
+share/cups/charmaps/windows-1250.txt
+share/cups/charmaps/windows-1251.txt
+share/cups/charmaps/windows-1252.txt
+share/cups/charmaps/windows-1253.txt
+share/cups/charmaps/windows-1254.txt
+share/cups/charmaps/windows-1255.txt
+share/cups/charmaps/windows-1256.txt
+share/cups/charmaps/windows-1257.txt
+share/cups/charmaps/windows-1258.txt
+share/cups/charmaps/windows-1361.txt
+share/cups/charmaps/windows-874.txt
+share/cups/charmaps/windows-932.txt
+share/cups/charmaps/windows-936.txt
+share/cups/charmaps/windows-949.txt
+share/cups/charmaps/windows-950.txt
 share/cups/charsets/
 share/cups/charsets/iso-8859-1
 share/cups/charsets/iso-8859-10
@@ -291,7 +197,6 @@ share/cups/charsets/windows-1256
 share/cups/charsets/windows-1257
 share/cups/charsets/windows-1258
 share/cups/charsets/windows-874
-share/cups/cups.sh
 share/cups/data/
 share/cups/data/HPGLprolog
 share/cups/data/psglyphs
@@ -302,6 +207,7 @@ share/cups/fonts/Courier-Bold
 share/cups/fonts/Courier-BoldOblique
 share/cups/fonts/Courier-Oblique
 share/cups/fonts/Symbol
+share/cups/init
 share/cups/model/
 share/cups/model/deskjet.ppd
 share/cups/model/deskjet2.ppd
@@ -316,447 +222,804 @@ share/cups/model/stcolor2.ppd
 share/cups/model/stphoto.ppd
 share/cups/model/stphoto2.ppd
 share/cups/model/zebra.ppd
+share/cups/model/zebraep1.ppd
+share/cups/model/zebraep2.ppd
+share/cups/profiles/
 share/cups/templates/
 share/cups/templates/add-class.tmpl
 share/cups/templates/add-printer.tmpl
-share/cups/templates/admin-op.tmpl
 share/cups/templates/admin.tmpl
-@comment share/cups/templates/be/
-@comment share/cups/templates/be/add-class.tmpl
-@comment share/cups/templates/be/add-printer.tmpl
-@comment share/cups/templates/be/admin-op.tmpl
-@comment share/cups/templates/be/admin.tmpl
-@comment share/cups/templates/be/choose-device.tmpl
-@comment share/cups/templates/be/choose-make.tmpl
-@comment share/cups/templates/be/choose-members.tmpl
-@comment share/cups/templates/be/choose-model.tmpl
-@comment share/cups/templates/be/choose-serial.tmpl
-@comment share/cups/templates/be/choose-uri.tmpl
-@comment share/cups/templates/be/class-added.tmpl
-@comment share/cups/templates/be/class-confirm.tmpl
-@comment share/cups/templates/be/class-deleted.tmpl
-@comment share/cups/templates/be/class-modified.tmpl
-@comment share/cups/templates/be/classes.tmpl
-@comment share/cups/templates/be/config-printer.tmpl
-@comment share/cups/templates/be/config-printer2.tmpl
-@comment share/cups/templates/be/error.tmpl
-@comment share/cups/templates/be/header.tmpl
-@comment share/cups/templates/be/job-cancel.tmpl
-@comment share/cups/templates/be/job-hold.tmpl
-@comment share/cups/templates/be/job-op.tmpl
-@comment share/cups/templates/be/job-release.tmpl
-@comment share/cups/templates/be/job-restart.tmpl
-@comment share/cups/templates/be/jobs.tmpl
-@comment share/cups/templates/be/modify-class.tmpl
-@comment share/cups/templates/be/modify-printer.tmpl
-@comment share/cups/templates/be/option-boolean.tmpl
-@comment share/cups/templates/be/option-conflict.tmpl
-@comment share/cups/templates/be/option-header.tmpl
-@comment share/cups/templates/be/option-pickmany.tmpl
-@comment share/cups/templates/be/option-pickone.tmpl
-@comment share/cups/templates/be/option-trailer.tmpl
-@comment share/cups/templates/be/printer-accept.tmpl
-@comment share/cups/templates/be/printer-added.tmpl
-@comment share/cups/templates/be/printer-configured.tmpl
-@comment share/cups/templates/be/printer-confirm.tmpl
-@comment share/cups/templates/be/printer-deleted.tmpl
-@comment share/cups/templates/be/printer-modified.tmpl
-@comment share/cups/templates/be/printer-purge.tmpl
-@comment share/cups/templates/be/printer-reject.tmpl
-@comment share/cups/templates/be/printer-start.tmpl
-@comment share/cups/templates/be/printer-stop.tmpl
-@comment share/cups/templates/be/printers.tmpl
-@comment share/cups/templates/be/test-page.tmpl
-@comment share/cups/templates/be/trailer.tmpl
 share/cups/templates/choose-device.tmpl
 share/cups/templates/choose-make.tmpl
-share/cups/templates/choose-members.tmpl
 share/cups/templates/choose-model.tmpl
 share/cups/templates/choose-serial.tmpl
 share/cups/templates/choose-uri.tmpl
 share/cups/templates/class-added.tmpl
 share/cups/templates/class-confirm.tmpl
 share/cups/templates/class-deleted.tmpl
+share/cups/templates/class-jobs-header.tmpl
 share/cups/templates/class-modified.tmpl
+share/cups/templates/classes-header.tmpl
 share/cups/templates/classes.tmpl
-share/cups/templates/config-printer.tmpl
-share/cups/templates/config-printer2.tmpl
-@comment share/cups/templates/de/
-@comment share/cups/templates/de/add-class.tmpl
-@comment share/cups/templates/de/add-printer.tmpl
-@comment share/cups/templates/de/admin-op.tmpl
-@comment share/cups/templates/de/admin.tmpl
-@comment share/cups/templates/de/choose-device.tmpl
-@comment share/cups/templates/de/choose-make.tmpl
-@comment share/cups/templates/de/choose-members.tmpl
-@comment share/cups/templates/de/choose-model.tmpl
-@comment share/cups/templates/de/choose-serial.tmpl
-@comment share/cups/templates/de/choose-uri.tmpl
-@comment share/cups/templates/de/class-added.tmpl
-@comment share/cups/templates/de/class-confirm.tmpl
-@comment share/cups/templates/de/class-deleted.tmpl
-@comment share/cups/templates/de/class-modified.tmpl
-@comment share/cups/templates/de/classes.tmpl
-@comment share/cups/templates/de/config-printer.tmpl
-@comment share/cups/templates/de/config-printer2.tmpl
-@comment share/cups/templates/de/error.tmpl
-@comment share/cups/templates/de/header.tmpl
-@comment share/cups/templates/de/job-cancel.tmpl
-@comment share/cups/templates/de/job-hold.tmpl
-@comment share/cups/templates/de/job-op.tmpl
-@comment share/cups/templates/de/job-release.tmpl
-@comment share/cups/templates/de/job-restart.tmpl
-@comment share/cups/templates/de/jobs.tmpl
-@comment share/cups/templates/de/modify-class.tmpl
-@comment share/cups/templates/de/modify-printer.tmpl
-@comment share/cups/templates/de/option-boolean.tmpl
-@comment share/cups/templates/de/option-conflict.tmpl
-@comment share/cups/templates/de/option-header.tmpl
-@comment share/cups/templates/de/option-pickmany.tmpl
-@comment share/cups/templates/de/option-pickone.tmpl
-@comment share/cups/templates/de/option-trailer.tmpl
-@comment share/cups/templates/de/printer-accept.tmpl
-@comment share/cups/templates/de/printer-added.tmpl
-@comment share/cups/templates/de/printer-configured.tmpl
-@comment share/cups/templates/de/printer-confirm.tmpl
-@comment share/cups/templates/de/printer-deleted.tmpl
-@comment share/cups/templates/de/printer-modified.tmpl
-@comment share/cups/templates/de/printer-purge.tmpl
-@comment share/cups/templates/de/printer-reject.tmpl
-@comment share/cups/templates/de/printer-start.tmpl
-@comment share/cups/templates/de/printer-stop.tmpl
-@comment share/cups/templates/de/printers.tmpl
-@comment share/cups/templates/de/test-page.tmpl
-@comment share/cups/templates/de/trailer.tmpl
+share/cups/templates/de/
+share/cups/templates/de/add-class.tmpl
+share/cups/templates/de/add-printer.tmpl
+share/cups/templates/de/admin.tmpl
+share/cups/templates/de/choose-device.tmpl
+share/cups/templates/de/choose-make.tmpl
+share/cups/templates/de/choose-model.tmpl
+share/cups/templates/de/choose-serial.tmpl
+share/cups/templates/de/choose-uri.tmpl
+share/cups/templates/de/class-added.tmpl
+share/cups/templates/de/class-confirm.tmpl
+share/cups/templates/de/class-deleted.tmpl
+share/cups/templates/de/class-jobs-header.tmpl
+share/cups/templates/de/class-modified.tmpl
+share/cups/templates/de/classes-header.tmpl
+share/cups/templates/de/classes.tmpl
+share/cups/templates/de/edit-config.tmpl
+share/cups/templates/de/error-op.tmpl
+share/cups/templates/de/error.tmpl
+share/cups/templates/de/header.tmpl
+share/cups/templates/de/help-header.tmpl
+share/cups/templates/de/help-printable.tmpl
+share/cups/templates/de/job-cancel.tmpl
+share/cups/templates/de/job-hold.tmpl
+share/cups/templates/de/job-move.tmpl
+share/cups/templates/de/job-moved.tmpl
+share/cups/templates/de/job-release.tmpl
+share/cups/templates/de/job-restart.tmpl
+share/cups/templates/de/jobs-header.tmpl
+share/cups/templates/de/jobs.tmpl
+share/cups/templates/de/maintenance.tmpl
+share/cups/templates/de/modify-class.tmpl
+share/cups/templates/de/modify-printer.tmpl
+share/cups/templates/de/option-boolean.tmpl
+share/cups/templates/de/option-conflict.tmpl
+share/cups/templates/de/option-header.tmpl
+share/cups/templates/de/option-pickmany.tmpl
+share/cups/templates/de/option-pickone.tmpl
+share/cups/templates/de/option-trailer.tmpl
+share/cups/templates/de/pager.tmpl
+share/cups/templates/de/printer-accept.tmpl
+share/cups/templates/de/printer-added.tmpl
+share/cups/templates/de/printer-configured.tmpl
+share/cups/templates/de/printer-confirm.tmpl
+share/cups/templates/de/printer-default.tmpl
+share/cups/templates/de/printer-deleted.tmpl
+share/cups/templates/de/printer-jobs-header.tmpl
+share/cups/templates/de/printer-modified.tmpl
+share/cups/templates/de/printer-purge.tmpl
+share/cups/templates/de/printer-reject.tmpl
+share/cups/templates/de/printer-start.tmpl
+share/cups/templates/de/printer-stop.tmpl
+share/cups/templates/de/printers-header.tmpl
+share/cups/templates/de/printers.tmpl
+share/cups/templates/de/restart.tmpl
+share/cups/templates/de/samba-export.tmpl
+share/cups/templates/de/samba-exported.tmpl
+share/cups/templates/de/search.tmpl
+share/cups/templates/de/set-printer-options-header.tmpl
+share/cups/templates/de/set-printer-options-trailer.tmpl
+share/cups/templates/de/test-page.tmpl
+share/cups/templates/de/trailer.tmpl
+share/cups/templates/de/users.tmpl
+share/cups/templates/edit-config.tmpl
+share/cups/templates/error-op.tmpl
 share/cups/templates/error.tmpl
-@comment share/cups/templates/es/
-@comment share/cups/templates/es/add-class.tmpl
-@comment share/cups/templates/es/add-printer.tmpl
-@comment share/cups/templates/es/admin-op.tmpl
-@comment share/cups/templates/es/admin.tmpl
-@comment share/cups/templates/es/choose-device.tmpl
-@comment share/cups/templates/es/choose-make.tmpl
-@comment share/cups/templates/es/choose-members.tmpl
-@comment share/cups/templates/es/choose-model.tmpl
-@comment share/cups/templates/es/choose-serial.tmpl
-@comment share/cups/templates/es/choose-uri.tmpl
-@comment share/cups/templates/es/class-added.tmpl
-@comment share/cups/templates/es/class-confirm.tmpl
-@comment share/cups/templates/es/class-deleted.tmpl
-@comment share/cups/templates/es/class-modified.tmpl
-@comment share/cups/templates/es/classes.tmpl
-@comment share/cups/templates/es/config-printer.tmpl
-@comment share/cups/templates/es/config-printer2.tmpl
-@comment share/cups/templates/es/error.tmpl
-@comment share/cups/templates/es/header.tmpl
-@comment share/cups/templates/es/job-cancel.tmpl
-@comment share/cups/templates/es/job-hold.tmpl
-@comment share/cups/templates/es/job-op.tmpl
-@comment share/cups/templates/es/job-release.tmpl
-@comment share/cups/templates/es/job-restart.tmpl
-@comment share/cups/templates/es/jobs.tmpl
-@comment share/cups/templates/es/modify-class.tmpl
-@comment share/cups/templates/es/modify-printer.tmpl
-@comment share/cups/templates/es/option-boolean.tmpl
-@comment share/cups/templates/es/option-conflict.tmpl
-@comment share/cups/templates/es/option-header.tmpl
-@comment share/cups/templates/es/option-pickmany.tmpl
-@comment share/cups/templates/es/option-pickone.tmpl
-@comment share/cups/templates/es/option-trailer.tmpl
-@comment share/cups/templates/es/printer-accept.tmpl
-@comment share/cups/templates/es/printer-added.tmpl
-@comment share/cups/templates/es/printer-configured.tmpl
-@comment share/cups/templates/es/printer-confirm.tmpl
-@comment share/cups/templates/es/printer-deleted.tmpl
-@comment share/cups/templates/es/printer-modified.tmpl
-@comment share/cups/templates/es/printer-purge.tmpl
-@comment share/cups/templates/es/printer-reject.tmpl
-@comment share/cups/templates/es/printer-start.tmpl
-@comment share/cups/templates/es/printer-stop.tmpl
-@comment share/cups/templates/es/printers.tmpl
-@comment share/cups/templates/es/test-page.tmpl
-@comment share/cups/templates/es/trailer.tmpl
-@comment share/cups/templates/fr/
-@comment share/cups/templates/fr/add-class.tmpl
-@comment share/cups/templates/fr/add-printer.tmpl
-@comment share/cups/templates/fr/admin-op.tmpl
-@comment share/cups/templates/fr/admin.tmpl
-@comment share/cups/templates/fr/choose-device.tmpl
-@comment share/cups/templates/fr/choose-make.tmpl
-@comment share/cups/templates/fr/choose-members.tmpl
-@comment share/cups/templates/fr/choose-model.tmpl
-@comment share/cups/templates/fr/choose-serial.tmpl
-@comment share/cups/templates/fr/choose-uri.tmpl
-@comment share/cups/templates/fr/class-added.tmpl
-@comment share/cups/templates/fr/class-confirm.tmpl
-@comment share/cups/templates/fr/class-deleted.tmpl
-@comment share/cups/templates/fr/class-modified.tmpl
-@comment share/cups/templates/fr/classes.tmpl
-@comment share/cups/templates/fr/config-printer.tmpl
-@comment share/cups/templates/fr/config-printer2.tmpl
-@comment share/cups/templates/fr/error.tmpl
-@comment share/cups/templates/fr/header.tmpl
-@comment share/cups/templates/fr/job-cancel.tmpl
-@comment share/cups/templates/fr/job-hold.tmpl
-@comment share/cups/templates/fr/job-op.tmpl
-@comment share/cups/templates/fr/job-release.tmpl
-@comment share/cups/templates/fr/job-restart.tmpl
-@comment share/cups/templates/fr/jobs.tmpl
-@comment share/cups/templates/fr/modify-class.tmpl
-@comment share/cups/templates/fr/modify-printer.tmpl
-@comment share/cups/templates/fr/option-boolean.tmpl
-@comment share/cups/templates/fr/option-conflict.tmpl
-@comment share/cups/templates/fr/option-header.tmpl
-@comment share/cups/templates/fr/option-pickmany.tmpl
-@comment share/cups/templates/fr/option-pickone.tmpl
-@comment share/cups/templates/fr/option-trailer.tmpl
-@comment share/cups/templates/fr/printer-accept.tmpl
-@comment share/cups/templates/fr/printer-added.tmpl
-@comment share/cups/templates/fr/printer-configured.tmpl
-@comment share/cups/templates/fr/printer-confirm.tmpl
-@comment share/cups/templates/fr/printer-deleted.tmpl
-@comment share/cups/templates/fr/printer-modified.tmpl
-@comment share/cups/templates/fr/printer-purge.tmpl
-@comment share/cups/templates/fr/printer-reject.tmpl
-@comment share/cups/templates/fr/printer-start.tmpl
-@comment share/cups/templates/fr/printer-stop.tmpl
-@comment share/cups/templates/fr/printers.tmpl
-@comment share/cups/templates/fr/test-page.tmpl
-@comment share/cups/templates/fr/trailer.tmpl
+share/cups/templates/es/
+share/cups/templates/es/add-class.tmpl
+share/cups/templates/es/add-printer.tmpl
+share/cups/templates/es/admin.tmpl
+share/cups/templates/es/choose-device.tmpl
+share/cups/templates/es/choose-make.tmpl
+share/cups/templates/es/choose-model.tmpl
+share/cups/templates/es/choose-serial.tmpl
+share/cups/templates/es/choose-uri.tmpl
+share/cups/templates/es/class-added.tmpl
+share/cups/templates/es/class-confirm.tmpl
+share/cups/templates/es/class-deleted.tmpl
+share/cups/templates/es/class-jobs-header.tmpl
+share/cups/templates/es/class-modified.tmpl
+share/cups/templates/es/classes-header.tmpl
+share/cups/templates/es/classes.tmpl
+share/cups/templates/es/edit-config.tmpl
+share/cups/templates/es/error-op.tmpl
+share/cups/templates/es/error.tmpl
+share/cups/templates/es/header.tmpl
+share/cups/templates/es/help-header.tmpl
+share/cups/templates/es/help-printable.tmpl
+share/cups/templates/es/job-cancel.tmpl
+share/cups/templates/es/job-hold.tmpl
+share/cups/templates/es/job-move.tmpl
+share/cups/templates/es/job-moved.tmpl
+share/cups/templates/es/job-release.tmpl
+share/cups/templates/es/job-restart.tmpl
+share/cups/templates/es/jobs-header.tmpl
+share/cups/templates/es/jobs.tmpl
+share/cups/templates/es/maintenance.tmpl
+share/cups/templates/es/modify-class.tmpl
+share/cups/templates/es/modify-printer.tmpl
+share/cups/templates/es/norestart.tmpl
+share/cups/templates/es/option-boolean.tmpl
+share/cups/templates/es/option-conflict.tmpl
+share/cups/templates/es/option-header.tmpl
+share/cups/templates/es/option-pickmany.tmpl
+share/cups/templates/es/option-pickone.tmpl
+share/cups/templates/es/option-trailer.tmpl
+share/cups/templates/es/pager.tmpl
+share/cups/templates/es/printer-accept.tmpl
+share/cups/templates/es/printer-added.tmpl
+share/cups/templates/es/printer-configured.tmpl
+share/cups/templates/es/printer-confirm.tmpl
+share/cups/templates/es/printer-default.tmpl
+share/cups/templates/es/printer-deleted.tmpl
+share/cups/templates/es/printer-jobs-header.tmpl
+share/cups/templates/es/printer-modified.tmpl
+share/cups/templates/es/printer-purge.tmpl
+share/cups/templates/es/printer-reject.tmpl
+share/cups/templates/es/printer-start.tmpl
+share/cups/templates/es/printer-stop.tmpl
+share/cups/templates/es/printers-header.tmpl
+share/cups/templates/es/printers.tmpl
+share/cups/templates/es/restart.tmpl
+share/cups/templates/es/samba-export.tmpl
+share/cups/templates/es/samba-exported.tmpl
+share/cups/templates/es/search.tmpl
+share/cups/templates/es/set-printer-options-header.tmpl
+share/cups/templates/es/set-printer-options-trailer.tmpl
+share/cups/templates/es/test-page.tmpl
+share/cups/templates/es/trailer.tmpl
+share/cups/templates/es/users.tmpl
 share/cups/templates/header.tmpl
+share/cups/templates/help-header.tmpl
+share/cups/templates/help-printable.tmpl
+share/cups/templates/ja/
+share/cups/templates/ja/add-class.tmpl
+share/cups/templates/ja/add-printer.tmpl
+share/cups/templates/ja/admin.tmpl
+share/cups/templates/ja/choose-device.tmpl
+share/cups/templates/ja/choose-make.tmpl
+share/cups/templates/ja/choose-model.tmpl
+share/cups/templates/ja/choose-serial.tmpl
+share/cups/templates/ja/choose-uri.tmpl
+share/cups/templates/ja/class-added.tmpl
+share/cups/templates/ja/class-confirm.tmpl
+share/cups/templates/ja/class-deleted.tmpl
+share/cups/templates/ja/class-jobs-header.tmpl
+share/cups/templates/ja/class-modified.tmpl
+share/cups/templates/ja/classes-header.tmpl
+share/cups/templates/ja/classes.tmpl
+share/cups/templates/ja/edit-config.tmpl
+share/cups/templates/ja/error-op.tmpl
+share/cups/templates/ja/error.tmpl
+share/cups/templates/ja/header.tmpl
+share/cups/templates/ja/help-header.tmpl
+share/cups/templates/ja/job-cancel.tmpl
+share/cups/templates/ja/job-hold.tmpl
+share/cups/templates/ja/job-move.tmpl
+share/cups/templates/ja/job-moved.tmpl
+share/cups/templates/ja/job-release.tmpl
+share/cups/templates/ja/job-restart.tmpl
+share/cups/templates/ja/jobs-header.tmpl
+share/cups/templates/ja/jobs.tmpl
+share/cups/templates/ja/maintenance.tmpl
+share/cups/templates/ja/modify-class.tmpl
+share/cups/templates/ja/modify-printer.tmpl
+share/cups/templates/ja/option-conflict.tmpl
+share/cups/templates/ja/option-trailer.tmpl
+share/cups/templates/ja/pager.tmpl
+share/cups/templates/ja/printer-accept.tmpl
+share/cups/templates/ja/printer-added.tmpl
+share/cups/templates/ja/printer-configured.tmpl
+share/cups/templates/ja/printer-confirm.tmpl
+share/cups/templates/ja/printer-default.tmpl
+share/cups/templates/ja/printer-deleted.tmpl
+share/cups/templates/ja/printer-jobs-header.tmpl
+share/cups/templates/ja/printer-modified.tmpl
+share/cups/templates/ja/printer-purge.tmpl
+share/cups/templates/ja/printer-reject.tmpl
+share/cups/templates/ja/printer-start.tmpl
+share/cups/templates/ja/printer-stop.tmpl
+share/cups/templates/ja/printers-header.tmpl
+share/cups/templates/ja/printers.tmpl
+share/cups/templates/ja/restart.tmpl
+share/cups/templates/ja/samba-export.tmpl
+share/cups/templates/ja/samba-exported.tmpl
+share/cups/templates/ja/search.tmpl
+share/cups/templates/ja/test-page.tmpl
+share/cups/templates/ja/users.tmpl
 share/cups/templates/job-cancel.tmpl
 share/cups/templates/job-hold.tmpl
-share/cups/templates/job-op.tmpl
+share/cups/templates/job-move.tmpl
+share/cups/templates/job-moved.tmpl
 share/cups/templates/job-release.tmpl
 share/cups/templates/job-restart.tmpl
+share/cups/templates/jobs-header.tmpl
 share/cups/templates/jobs.tmpl
+share/cups/templates/maintenance.tmpl
 share/cups/templates/modify-class.tmpl
 share/cups/templates/modify-printer.tmpl
+share/cups/templates/norestart.tmpl
 share/cups/templates/option-boolean.tmpl
 share/cups/templates/option-conflict.tmpl
 share/cups/templates/option-header.tmpl
 share/cups/templates/option-pickmany.tmpl
 share/cups/templates/option-pickone.tmpl
 share/cups/templates/option-trailer.tmpl
+share/cups/templates/pager.tmpl
+share/cups/templates/pl/
+share/cups/templates/pl/add-class.tmpl
+share/cups/templates/pl/add-printer.tmpl
+share/cups/templates/pl/admin.tmpl
+share/cups/templates/pl/choose-device.tmpl
+share/cups/templates/pl/choose-make.tmpl
+share/cups/templates/pl/choose-model.tmpl
+share/cups/templates/pl/choose-serial.tmpl
+share/cups/templates/pl/choose-uri.tmpl
+share/cups/templates/pl/class-added.tmpl
+share/cups/templates/pl/class-confirm.tmpl
+share/cups/templates/pl/class-deleted.tmpl
+share/cups/templates/pl/class-jobs-header.tmpl
+share/cups/templates/pl/class-modified.tmpl
+share/cups/templates/pl/classes-header.tmpl
+share/cups/templates/pl/classes.tmpl
+share/cups/templates/pl/edit-config.tmpl
+share/cups/templates/pl/error-op.tmpl
+share/cups/templates/pl/error.tmpl
+share/cups/templates/pl/header.tmpl
+share/cups/templates/pl/help-header.tmpl
+share/cups/templates/pl/help-printable.tmpl
+share/cups/templates/pl/job-cancel.tmpl
+share/cups/templates/pl/job-hold.tmpl
+share/cups/templates/pl/job-move.tmpl
+share/cups/templates/pl/job-moved.tmpl
+share/cups/templates/pl/job-release.tmpl
+share/cups/templates/pl/job-restart.tmpl
+share/cups/templates/pl/jobs-header.tmpl
+share/cups/templates/pl/jobs.tmpl
+share/cups/templates/pl/maintenance.tmpl
+share/cups/templates/pl/modify-class.tmpl
+share/cups/templates/pl/modify-printer.tmpl
+share/cups/templates/pl/option-boolean.tmpl
+share/cups/templates/pl/option-conflict.tmpl
+share/cups/templates/pl/option-header.tmpl
+share/cups/templates/pl/option-pickmany.tmpl
+share/cups/templates/pl/option-pickone.tmpl
+share/cups/templates/pl/option-trailer.tmpl
+share/cups/templates/pl/pager.tmpl
+share/cups/templates/pl/printer-accept.tmpl
+share/cups/templates/pl/printer-added.tmpl
+share/cups/templates/pl/printer-configured.tmpl
+share/cups/templates/pl/printer-confirm.tmpl
+share/cups/templates/pl/printer-default.tmpl
+share/cups/templates/pl/printer-deleted.tmpl
+share/cups/templates/pl/printer-jobs-header.tmpl
+share/cups/templates/pl/printer-modified.tmpl
+share/cups/templates/pl/printer-purge.tmpl
+share/cups/templates/pl/printer-reject.tmpl
+share/cups/templates/pl/printer-start.tmpl
+share/cups/templates/pl/printer-stop.tmpl
+share/cups/templates/pl/printers-header.tmpl
+share/cups/templates/pl/printers.tmpl
+share/cups/templates/pl/restart.tmpl
+share/cups/templates/pl/samba-export.tmpl
+share/cups/templates/pl/samba-exported.tmpl
+share/cups/templates/pl/search.tmpl
+share/cups/templates/pl/set-printer-options-header.tmpl
+share/cups/templates/pl/set-printer-options-trailer.tmpl
+share/cups/templates/pl/test-page.tmpl
+share/cups/templates/pl/trailer.tmpl
+share/cups/templates/pl/users.tmpl
 share/cups/templates/printer-accept.tmpl
 share/cups/templates/printer-added.tmpl
 share/cups/templates/printer-configured.tmpl
 share/cups/templates/printer-confirm.tmpl
 share/cups/templates/printer-default.tmpl
 share/cups/templates/printer-deleted.tmpl
+share/cups/templates/printer-jobs-header.tmpl
 share/cups/templates/printer-modified.tmpl
 share/cups/templates/printer-purge.tmpl
 share/cups/templates/printer-reject.tmpl
 share/cups/templates/printer-start.tmpl
 share/cups/templates/printer-stop.tmpl
+share/cups/templates/printers-header.tmpl
 share/cups/templates/printers.tmpl
+share/cups/templates/restart.tmpl
+share/cups/templates/samba-export.tmpl
+share/cups/templates/samba-exported.tmpl
+share/cups/templates/search.tmpl
+share/cups/templates/set-printer-options-header.tmpl
+share/cups/templates/set-printer-options-trailer.tmpl
+share/cups/templates/sv/
+share/cups/templates/sv/add-class.tmpl
+share/cups/templates/sv/add-printer.tmpl
+share/cups/templates/sv/admin.tmpl
+share/cups/templates/sv/choose-device.tmpl
+share/cups/templates/sv/choose-make.tmpl
+share/cups/templates/sv/choose-model.tmpl
+share/cups/templates/sv/choose-serial.tmpl
+share/cups/templates/sv/choose-uri.tmpl
+share/cups/templates/sv/class-added.tmpl
+share/cups/templates/sv/class-confirm.tmpl
+share/cups/templates/sv/class-deleted.tmpl
+share/cups/templates/sv/class-jobs-header.tmpl
+share/cups/templates/sv/class-modified.tmpl
+share/cups/templates/sv/classes-header.tmpl
+share/cups/templates/sv/classes.tmpl
+share/cups/templates/sv/edit-config.tmpl
+share/cups/templates/sv/error-op.tmpl
+share/cups/templates/sv/error.tmpl
+share/cups/templates/sv/header.tmpl
+share/cups/templates/sv/help-header.tmpl
+share/cups/templates/sv/help-printable.tmpl
+share/cups/templates/sv/job-cancel.tmpl
+share/cups/templates/sv/job-hold.tmpl
+share/cups/templates/sv/job-move.tmpl
+share/cups/templates/sv/job-moved.tmpl
+share/cups/templates/sv/job-release.tmpl
+share/cups/templates/sv/job-restart.tmpl
+share/cups/templates/sv/jobs-header.tmpl
+share/cups/templates/sv/jobs.tmpl
+share/cups/templates/sv/maintenance.tmpl
+share/cups/templates/sv/modify-class.tmpl
+share/cups/templates/sv/modify-printer.tmpl
+share/cups/templates/sv/option-boolean.tmpl
+share/cups/templates/sv/option-conflict.tmpl
+share/cups/templates/sv/option-header.tmpl
+share/cups/templates/sv/option-pickmany.tmpl
+share/cups/templates/sv/option-pickone.tmpl
+share/cups/templates/sv/option-trailer.tmpl
+share/cups/templates/sv/pager.tmpl
+share/cups/templates/sv/printer-accept.tmpl
+share/cups/templates/sv/printer-added.tmpl
+share/cups/templates/sv/printer-configured.tmpl
+share/cups/templates/sv/printer-confirm.tmpl
+share/cups/templates/sv/printer-default.tmpl
+share/cups/templates/sv/printer-deleted.tmpl
+share/cups/templates/sv/printer-jobs-header.tmpl
+share/cups/templates/sv/printer-modified.tmpl
+share/cups/templates/sv/printer-purge.tmpl
+share/cups/templates/sv/printer-reject.tmpl
+share/cups/templates/sv/printer-start.tmpl
+share/cups/templates/sv/printer-stop.tmpl
+share/cups/templates/sv/printers-header.tmpl
+share/cups/templates/sv/printers.tmpl
+share/cups/templates/sv/restart.tmpl
+share/cups/templates/sv/samba-export.tmpl
+share/cups/templates/sv/samba-exported.tmpl
+share/cups/templates/sv/search.tmpl
+share/cups/templates/sv/set-printer-options-header.tmpl
+share/cups/templates/sv/set-printer-options-trailer.tmpl
+share/cups/templates/sv/test-page.tmpl
+share/cups/templates/sv/trailer.tmpl
+share/cups/templates/sv/users.tmpl
 share/cups/templates/test-page.tmpl
 share/cups/templates/trailer.tmpl
+share/cups/templates/users.tmpl
 share/doc/cups/
-@comment share/doc/cups/be/
-@comment share/doc/cups/be/documentation.html
-@comment share/doc/cups/be/images/
-@comment share/doc/cups/be/images/accept-jobs.gif
-@comment share/doc/cups/be/images/add-class.gif
-@comment share/doc/cups/be/images/add-printer.gif
-@comment share/doc/cups/be/images/cancel-job.gif
-@comment share/doc/cups/be/images/config-printer.gif
-@comment share/doc/cups/be/images/continue.gif
-@comment share/doc/cups/be/images/delete-class.gif
-@comment share/doc/cups/be/images/delete-printer.gif
-@comment share/doc/cups/be/images/hold-job.gif
-@comment share/doc/cups/be/images/manage-classes.gif
-@comment share/doc/cups/be/images/manage-jobs.gif
-@comment share/doc/cups/be/images/manage-printers.gif
-@comment share/doc/cups/be/images/modify-class.gif
-@comment share/doc/cups/be/images/modify-printer.gif
-@comment share/doc/cups/be/images/navbar.gif
-@comment share/doc/cups/be/images/print-test-page.gif
-@comment share/doc/cups/be/images/reject-jobs.gif
-@comment share/doc/cups/be/images/release-job.gif
-@comment share/doc/cups/be/images/restart-job.gif
-@comment share/doc/cups/be/images/show-active.gif
-@comment share/doc/cups/be/images/show-completed.gif
-@comment share/doc/cups/be/images/start-class.gif
-@comment share/doc/cups/be/images/start-printer.gif
-@comment share/doc/cups/be/images/stop-class.gif
-@comment share/doc/cups/be/images/stop-printer.gif
-@comment share/doc/cups/be/index.html
-share/doc/cups/cmp.html
-@comment share/doc/cups/cmp.pdf
+share/doc/cups/cups-printable.css
 share/doc/cups/cups.css
-share/doc/cups/cupsdoc.css
-@comment share/doc/cups/de/
-@comment share/doc/cups/de/documentation.html
-@comment share/doc/cups/de/images/
-@comment share/doc/cups/de/images/accept-jobs.gif
-@comment share/doc/cups/de/images/add-class.gif
-@comment share/doc/cups/de/images/add-printer.gif
-@comment share/doc/cups/de/images/cancel-job.gif
-@comment share/doc/cups/de/images/config-printer.gif
-@comment share/doc/cups/de/images/continue.gif
-@comment share/doc/cups/de/images/delete-class.gif
-@comment share/doc/cups/de/images/delete-printer.gif
-@comment share/doc/cups/de/images/hold-job.gif
-@comment share/doc/cups/de/images/manage-classes.gif
-@comment share/doc/cups/de/images/manage-jobs.gif
-@comment share/doc/cups/de/images/manage-printers.gif
-@comment share/doc/cups/de/images/modify-class.gif
-@comment share/doc/cups/de/images/modify-printer.gif
-@comment share/doc/cups/de/images/navbar.gif
-@comment share/doc/cups/de/images/print-test-page.gif
-@comment share/doc/cups/de/images/reject-jobs.gif
-@comment share/doc/cups/de/images/release-job.gif
-@comment share/doc/cups/de/images/restart-job.gif
-@comment share/doc/cups/de/images/show-active.gif
-@comment share/doc/cups/de/images/show-completed.gif
-@comment share/doc/cups/de/images/start-class.gif
-@comment share/doc/cups/de/images/start-printer.gif
-@comment share/doc/cups/de/images/stop-class.gif
-@comment share/doc/cups/de/images/stop-printer.gif
-@comment share/doc/cups/de/index.html
-share/doc/cups/documentation.html
-@comment share/doc/cups/es/
-@comment share/doc/cups/es/documentation.html
-@comment share/doc/cups/es/images/
-@comment share/doc/cups/es/images/accept-jobs.gif
-@comment share/doc/cups/es/images/add-class.gif
-@comment share/doc/cups/es/images/add-printer.gif
-@comment share/doc/cups/es/images/cancel-job.gif
-@comment share/doc/cups/es/images/config-printer.gif
-@comment share/doc/cups/es/images/continue.gif
-@comment share/doc/cups/es/images/delete-class.gif
-@comment share/doc/cups/es/images/delete-printer.gif
-@comment share/doc/cups/es/images/hold-job.gif
-@comment share/doc/cups/es/images/manage-classes.gif
-@comment share/doc/cups/es/images/manage-jobs.gif
-@comment share/doc/cups/es/images/manage-printers.gif
-@comment share/doc/cups/es/images/modify-class.gif
-@comment share/doc/cups/es/images/modify-printer.gif
-@comment share/doc/cups/es/images/navbar.gif
-@comment share/doc/cups/es/images/print-test-page.gif
-@comment share/doc/cups/es/images/reject-jobs.gif
-@comment share/doc/cups/es/images/release-job.gif
-@comment share/doc/cups/es/images/restart-job.gif
-@comment share/doc/cups/es/images/set-as-default.gif
-@comment share/doc/cups/es/images/show-active.gif
-@comment share/doc/cups/es/images/show-completed.gif
-@comment share/doc/cups/es/images/start-class.gif
-@comment share/doc/cups/es/images/start-printer.gif
-@comment share/doc/cups/es/images/stop-class.gif
-@comment share/doc/cups/es/images/stop-printer.gif
-@comment share/doc/cups/es/index.html
-@comment share/doc/cups/fr/
-@comment share/doc/cups/fr/cups.css
-@comment share/doc/cups/fr/cupsdoc.css
-@comment share/doc/cups/fr/documentation.html
-@comment share/doc/cups/fr/images/
-@comment share/doc/cups/fr/images/accept-jobs.gif
-@comment share/doc/cups/fr/images/add-class.gif
-@comment share/doc/cups/fr/images/add-printer.gif
-@comment share/doc/cups/fr/images/cancel-job.gif
-@comment share/doc/cups/fr/images/config-printer.gif
-@comment share/doc/cups/fr/images/continue.gif
-@comment share/doc/cups/fr/images/delete-class.gif
-@comment share/doc/cups/fr/images/delete-printer.gif
-@comment share/doc/cups/fr/images/hold-job.gif
-@comment share/doc/cups/fr/images/manage-classes.gif
-@comment share/doc/cups/fr/images/manage-jobs.gif
-@comment share/doc/cups/fr/images/manage-printers.gif
-@comment share/doc/cups/fr/images/modify-class.gif
-@comment share/doc/cups/fr/images/modify-printer.gif
-@comment share/doc/cups/fr/images/navbar.gif
-@comment share/doc/cups/fr/images/print-test-page.gif
-@comment share/doc/cups/fr/images/reject-jobs.gif
-@comment share/doc/cups/fr/images/release-job.gif
-@comment share/doc/cups/fr/images/restart-job.gif
-@comment share/doc/cups/fr/images/show-active.gif
-@comment share/doc/cups/fr/images/show-completed.gif
-@comment share/doc/cups/fr/images/start-class.gif
-@comment share/doc/cups/fr/images/start-printer.gif
-@comment share/doc/cups/fr/images/stop-class.gif
-@comment share/doc/cups/fr/images/stop-printer.gif
-@comment share/doc/cups/fr/index.html
-@comment share/doc/cups/fr/overview.html
-@comment share/doc/cups/fr/overview.pdf
-@comment share/doc/cups/fr/sam.html
-@comment share/doc/cups/fr/sam.pdf
-@comment share/doc/cups/fr/sum.html
-@comment share/doc/cups/fr/sum.pdf
-share/doc/cups/idd.html
-@comment share/doc/cups/idd.pdf
+share/doc/cups/de/
+share/doc/cups/de/images/
+share/doc/cups/de/images/button-accept-jobs.gif
+share/doc/cups/de/images/button-add-class.gif
+share/doc/cups/de/images/button-add-printer.gif
+share/doc/cups/de/images/button-add-this-printer.gif
+share/doc/cups/de/images/button-cancel-all-jobs.gif
+share/doc/cups/de/images/button-cancel-job.gif
+share/doc/cups/de/images/button-change-settings.gif
+share/doc/cups/de/images/button-clean-print-heads.gif
+share/doc/cups/de/images/button-clear.gif
+share/doc/cups/de/images/button-continue.gif
+share/doc/cups/de/images/button-delete-class.gif
+share/doc/cups/de/images/button-delete-printer.gif
+share/doc/cups/de/images/button-edit-configuration-file.gif
+share/doc/cups/de/images/button-export-samba.gif
+share/doc/cups/de/images/button-help.gif
+share/doc/cups/de/images/button-hold-job.gif
+share/doc/cups/de/images/button-manage-classes.gif
+share/doc/cups/de/images/button-manage-jobs.gif
+share/doc/cups/de/images/button-manage-printers.gif
+share/doc/cups/de/images/button-manage-server.gif
+share/doc/cups/de/images/button-modify-class.gif
+share/doc/cups/de/images/button-modify-printer.gif
+share/doc/cups/de/images/button-move-job.gif
+share/doc/cups/de/images/button-move-jobs.gif
+share/doc/cups/de/images/button-print-self-test-page.gif
+share/doc/cups/de/images/button-print-test-page.gif
+share/doc/cups/de/images/button-publish-printer.gif
+share/doc/cups/de/images/button-reject-jobs.gif
+share/doc/cups/de/images/button-release-job.gif
+share/doc/cups/de/images/button-restart-job.gif
+share/doc/cups/de/images/button-save-changes.gif
+share/doc/cups/de/images/button-search.gif
+share/doc/cups/de/images/button-set-allowed-users.gif
+share/doc/cups/de/images/button-set-as-default.gif
+share/doc/cups/de/images/button-set-printer-options.gif
+share/doc/cups/de/images/button-show-active.gif
+share/doc/cups/de/images/button-show-all.gif
+share/doc/cups/de/images/button-show-completed.gif
+share/doc/cups/de/images/button-show-next.gif
+share/doc/cups/de/images/button-show-previous.gif
+share/doc/cups/de/images/button-sort-ascending.gif
+share/doc/cups/de/images/button-sort-descending.gif
+share/doc/cups/de/images/button-start-class.gif
+share/doc/cups/de/images/button-start-printer.gif
+share/doc/cups/de/images/button-stop-class.gif
+share/doc/cups/de/images/button-stop-printer.gif
+share/doc/cups/de/images/button-unpublish-printer.gif
+share/doc/cups/de/images/button-view-access-log.gif
+share/doc/cups/de/images/button-view-error-log.gif
+share/doc/cups/de/images/button-view-page-log.gif
+share/doc/cups/de/images/button-view-printable-version.gif
+share/doc/cups/de/index.html
+share/doc/cups/es/
+share/doc/cups/es/images/
+share/doc/cups/es/images/button-accept-jobs.gif
+share/doc/cups/es/images/button-add-class.gif
+share/doc/cups/es/images/button-add-printer.gif
+share/doc/cups/es/images/button-add-this-printer.gif
+share/doc/cups/es/images/button-cancel-all-jobs.gif
+share/doc/cups/es/images/button-cancel-job.gif
+share/doc/cups/es/images/button-change-settings.gif
+share/doc/cups/es/images/button-clean-print-heads.gif
+share/doc/cups/es/images/button-clear.gif
+share/doc/cups/es/images/button-continue.gif
+share/doc/cups/es/images/button-delete-class.gif
+share/doc/cups/es/images/button-delete-printer.gif
+share/doc/cups/es/images/button-edit-configuration-file.gif
+share/doc/cups/es/images/button-export-samba.gif
+share/doc/cups/es/images/button-help.gif
+share/doc/cups/es/images/button-hold-job.gif
+share/doc/cups/es/images/button-manage-classes.gif
+share/doc/cups/es/images/button-manage-jobs.gif
+share/doc/cups/es/images/button-manage-printers.gif
+share/doc/cups/es/images/button-manage-server.gif
+share/doc/cups/es/images/button-modify-class.gif
+share/doc/cups/es/images/button-modify-printer.gif
+share/doc/cups/es/images/button-move-job.gif
+share/doc/cups/es/images/button-move-jobs.gif
+share/doc/cups/es/images/button-print-self-test-page.gif
+share/doc/cups/es/images/button-print-test-page.gif
+share/doc/cups/es/images/button-publish-printer.gif
+share/doc/cups/es/images/button-reject-jobs.gif
+share/doc/cups/es/images/button-release-job.gif
+share/doc/cups/es/images/button-restart-job.gif
+share/doc/cups/es/images/button-save-changes.gif
+share/doc/cups/es/images/button-search.gif
+share/doc/cups/es/images/button-set-allowed-users.gif
+share/doc/cups/es/images/button-set-as-default.gif
+share/doc/cups/es/images/button-set-printer-options.gif
+share/doc/cups/es/images/button-show-active.gif
+share/doc/cups/es/images/button-show-all.gif
+share/doc/cups/es/images/button-show-completed.gif
+share/doc/cups/es/images/button-show-next.gif
+share/doc/cups/es/images/button-show-previous.gif
+share/doc/cups/es/images/button-sort-ascending.gif
+share/doc/cups/es/images/button-sort-descending.gif
+share/doc/cups/es/images/button-start-class.gif
+share/doc/cups/es/images/button-start-printer.gif
+share/doc/cups/es/images/button-stop-class.gif
+share/doc/cups/es/images/button-stop-printer.gif
+share/doc/cups/es/images/button-unpublish-printer.gif
+share/doc/cups/es/images/button-use-default-config.gif
+share/doc/cups/es/images/button-view-access-log.gif
+share/doc/cups/es/images/button-view-error-log.gif
+share/doc/cups/es/images/button-view-page-log.gif
+share/doc/cups/es/images/button-view-printable-version.gif
+share/doc/cups/es/index.html
+share/doc/cups/favicon.ico
+share/doc/cups/help/
+share/doc/cups/help/api-array.html
+share/doc/cups/help/api-cups.html
+share/doc/cups/help/api-filedir.html
+share/doc/cups/help/api-filter.html
+share/doc/cups/help/api-httpipp.html
+share/doc/cups/help/api-ppd.html
+share/doc/cups/help/api-raster.html
+share/doc/cups/help/cgi.html
+share/doc/cups/help/glossary.html
+share/doc/cups/help/license.html
+share/doc/cups/help/man-accept.html
+share/doc/cups/help/man-backend.html
+share/doc/cups/help/man-cancel.html
+share/doc/cups/help/man-classes.conf.html
+share/doc/cups/help/man-client.conf.html
+share/doc/cups/help/man-cups-config.html
+share/doc/cups/help/man-cups-lpd.html
+share/doc/cups/help/man-cups-polld.html
+share/doc/cups/help/man-cupsaddsmb.html
+share/doc/cups/help/man-cupsd.conf.html
+share/doc/cups/help/man-cupsd.html
+share/doc/cups/help/man-cupsenable.html
+share/doc/cups/help/man-cupstestdsc.html
+share/doc/cups/help/man-cupstestppd.html
+share/doc/cups/help/man-filter.html
+share/doc/cups/help/man-lp.html
+share/doc/cups/help/man-lpadmin.html
+share/doc/cups/help/man-lpc.html
+share/doc/cups/help/man-lpinfo.html
+share/doc/cups/help/man-lpmove.html
+share/doc/cups/help/man-lpoptions.html
+share/doc/cups/help/man-lppasswd.html
+share/doc/cups/help/man-lpq.html
+share/doc/cups/help/man-lpr.html
+share/doc/cups/help/man-lprm.html
+share/doc/cups/help/man-lpstat.html
+share/doc/cups/help/man-mime.convs.html
+share/doc/cups/help/man-mime.types.html
+share/doc/cups/help/man-printers.conf.html
+share/doc/cups/help/network.html
+share/doc/cups/help/options.html
+share/doc/cups/help/overview.html
+share/doc/cups/help/policies.html
+share/doc/cups/help/ref-access_log.html
+share/doc/cups/help/ref-classes-conf.html
+share/doc/cups/help/ref-client-conf.html
+share/doc/cups/help/ref-cupsd-conf.html
+share/doc/cups/help/ref-error_log.html
+share/doc/cups/help/ref-mailto-conf.html
+share/doc/cups/help/ref-page_log.html
+share/doc/cups/help/ref-printers-conf.html
+share/doc/cups/help/ref-snmp-conf.html
+share/doc/cups/help/ref-subscriptions-conf.html
+share/doc/cups/help/security.html
+share/doc/cups/help/spec-cmp.html
+share/doc/cups/help/spec-command.html
+share/doc/cups/help/spec-design.html
+share/doc/cups/help/spec-ipp.html
+share/doc/cups/help/spec-ppd.html
+share/doc/cups/help/spec-raster.html
+share/doc/cups/help/spec-stp.html
+share/doc/cups/help/standard.html
+share/doc/cups/help/translation.html
+share/doc/cups/help/whatsnew.html
 share/doc/cups/images/
-share/doc/cups/images/accept-jobs.gif
-share/doc/cups/images/add-class.gif
-share/doc/cups/images/add-printer.gif
-share/doc/cups/images/cancel-job.gif
+share/doc/cups/images/bottom-left.gif
+share/doc/cups/images/bottom-right.gif
+share/doc/cups/images/button-accept-jobs.gif
+share/doc/cups/images/button-add-class.gif
+share/doc/cups/images/button-add-printer.gif
+share/doc/cups/images/button-add-this-printer.gif
+share/doc/cups/images/button-cancel-all-jobs.gif
+share/doc/cups/images/button-cancel-job.gif
+share/doc/cups/images/button-change-settings.gif
+share/doc/cups/images/button-clean-print-heads.gif
+share/doc/cups/images/button-clear.gif
+share/doc/cups/images/button-continue.gif
+share/doc/cups/images/button-delete-class.gif
+share/doc/cups/images/button-delete-printer.gif
+share/doc/cups/images/button-edit-configuration-file.gif
+share/doc/cups/images/button-export-samba.gif
+share/doc/cups/images/button-help.gif
+share/doc/cups/images/button-hold-job.gif
+share/doc/cups/images/button-manage-classes.gif
+share/doc/cups/images/button-manage-jobs.gif
+share/doc/cups/images/button-manage-printers.gif
+share/doc/cups/images/button-manage-server.gif
+share/doc/cups/images/button-modify-class.gif
+share/doc/cups/images/button-modify-printer.gif
+share/doc/cups/images/button-move-job.gif
+share/doc/cups/images/button-move-jobs.gif
+share/doc/cups/images/button-print-self-test-page.gif
+share/doc/cups/images/button-print-test-page.gif
+share/doc/cups/images/button-publish-printer.gif
+share/doc/cups/images/button-reject-jobs.gif
+share/doc/cups/images/button-release-job.gif
+share/doc/cups/images/button-restart-job.gif
+share/doc/cups/images/button-save-changes.gif
+share/doc/cups/images/button-search.gif
+share/doc/cups/images/button-set-allowed-users.gif
+share/doc/cups/images/button-set-as-default.gif
+share/doc/cups/images/button-set-printer-options.gif
+share/doc/cups/images/button-show-active.gif
+share/doc/cups/images/button-show-all.gif
+share/doc/cups/images/button-show-completed.gif
+share/doc/cups/images/button-show-next.gif
+share/doc/cups/images/button-show-previous.gif
+share/doc/cups/images/button-sort-ascending.gif
+share/doc/cups/images/button-sort-descending.gif
+share/doc/cups/images/button-start-class.gif
+share/doc/cups/images/button-start-printer.gif
+share/doc/cups/images/button-stop-class.gif
+share/doc/cups/images/button-stop-printer.gif
+share/doc/cups/images/button-unpublish-printer.gif
+share/doc/cups/images/button-use-default-config.gif
+share/doc/cups/images/button-view-access-log.gif
+share/doc/cups/images/button-view-error-log.gif
+share/doc/cups/images/button-view-page-log.gif
+share/doc/cups/images/button-view-printable-version.gif
 share/doc/cups/images/classes.gif
-share/doc/cups/images/config-printer.gif
-share/doc/cups/images/continue.gif
 share/doc/cups/images/cups-block-diagram.gif
-share/doc/cups/images/cups-large.gif
-share/doc/cups/images/cups-medium.gif
-share/doc/cups/images/cups-small.gif
-share/doc/cups/images/delete-class.gif
-share/doc/cups/images/delete-printer.gif
-share/doc/cups/images/hold-job.gif
-share/doc/cups/images/left.gif
+share/doc/cups/images/esp-logo.gif
+share/doc/cups/images/happy.gif
 share/doc/cups/images/logo.gif
-share/doc/cups/images/manage-classes.gif
-share/doc/cups/images/manage-jobs.gif
-share/doc/cups/images/manage-printers.gif
-share/doc/cups/images/modify-class.gif
-share/doc/cups/images/modify-printer.gif
-share/doc/cups/images/navbar.gif
-share/doc/cups/images/print-test-page.gif
 share/doc/cups/images/printer-idle.gif
 share/doc/cups/images/printer-processing.gif
 share/doc/cups/images/printer-stopped.gif
-share/doc/cups/images/reject-jobs.gif
-share/doc/cups/images/release-job.gif
-share/doc/cups/images/restart-job.gif
-share/doc/cups/images/right.gif
-share/doc/cups/images/set-as-default.gif
-share/doc/cups/images/show-active.gif
-share/doc/cups/images/show-completed.gif
-share/doc/cups/images/start-class.gif
-share/doc/cups/images/start-printer.gif
-share/doc/cups/images/stop-class.gif
-share/doc/cups/images/stop-printer.gif
+share/doc/cups/images/smiley.jpg
+share/doc/cups/images/tab-left.gif
+share/doc/cups/images/tab-right.gif
+share/doc/cups/images/top-left.gif
+share/doc/cups/images/top-middle.gif
+share/doc/cups/images/top-right.gif
+share/doc/cups/images/web-add-this-printer.gif
+share/doc/cups/images/web-password.gif
+share/doc/cups/images/web-printer-driver.gif
+share/doc/cups/images/web-printer-status.gif
+share/doc/cups/images/web-set-printer-options.gif
+share/doc/cups/images/web-test-page.gif
 share/doc/cups/index.html
-share/doc/cups/ipp.html
-@comment share/doc/cups/ipp.pdf
-share/doc/cups/overview.html
-@comment share/doc/cups/overview.pdf
+share/doc/cups/ja/
+share/doc/cups/ja/images/
+share/doc/cups/ja/images/button-accept-jobs.gif
+share/doc/cups/ja/images/button-add-class.gif
+share/doc/cups/ja/images/button-add-printer.gif
+share/doc/cups/ja/images/button-add-this-printer.gif
+share/doc/cups/ja/images/button-cancel-all-jobs.gif
+share/doc/cups/ja/images/button-cancel-job.gif
+share/doc/cups/ja/images/button-change-settings.gif
+share/doc/cups/ja/images/button-continue.gif
+share/doc/cups/ja/images/button-delete-class.gif
+share/doc/cups/ja/images/button-delete-printer.gif
+share/doc/cups/ja/images/button-edit-configuration-file.gif
+share/doc/cups/ja/images/button-export-samba.gif
+share/doc/cups/ja/images/button-help.gif
+share/doc/cups/ja/images/button-hold-job.gif
+share/doc/cups/ja/images/button-manage-classes.gif
+share/doc/cups/ja/images/button-manage-jobs.gif
+share/doc/cups/ja/images/button-manage-printers.gif
+share/doc/cups/ja/images/button-manage-server.gif
+share/doc/cups/ja/images/button-modify-class.gif
+share/doc/cups/ja/images/button-modify-printer.gif
+share/doc/cups/ja/images/button-move-job.gif
+share/doc/cups/ja/images/button-move-jobs.gif
+share/doc/cups/ja/images/button-print-test-page.gif
+share/doc/cups/ja/images/button-publish-printer.gif
+share/doc/cups/ja/images/button-reject-jobs.gif
+share/doc/cups/ja/images/button-release-job.gif
+share/doc/cups/ja/images/button-restart-job.gif
+share/doc/cups/ja/images/button-save-changes.gif
+share/doc/cups/ja/images/button-search.gif
+share/doc/cups/ja/images/button-set-allowed-users.gif
+share/doc/cups/ja/images/button-set-as-default.gif
+share/doc/cups/ja/images/button-set-printer-options.gif
+share/doc/cups/ja/images/button-show-active.gif
+share/doc/cups/ja/images/button-show-all.gif
+share/doc/cups/ja/images/button-show-completed.gif
+share/doc/cups/ja/images/button-show-next.gif
+share/doc/cups/ja/images/button-show-previous.gif
+share/doc/cups/ja/images/button-sort-ascending.gif
+share/doc/cups/ja/images/button-sort-descending.gif
+share/doc/cups/ja/images/button-start-class.gif
+share/doc/cups/ja/images/button-start-printer.gif
+share/doc/cups/ja/images/button-stop-class.gif
+share/doc/cups/ja/images/button-stop-printer.gif
+share/doc/cups/ja/images/button-unpublish-printer.gif
+share/doc/cups/ja/images/button-use-default-config.gif
+share/doc/cups/ja/images/button-view-access-log.gif
+share/doc/cups/ja/images/button-view-error-log.gif
+share/doc/cups/ja/images/button-view-page-log.gif
+share/doc/cups/ja/index.html
+share/doc/cups/pl/
+share/doc/cups/pl/images/
+share/doc/cups/pl/images/button-accept-jobs.gif
+share/doc/cups/pl/images/button-add-class.gif
+share/doc/cups/pl/images/button-add-printer.gif
+share/doc/cups/pl/images/button-add-this-printer.gif
+share/doc/cups/pl/images/button-cancel-all-jobs.gif
+share/doc/cups/pl/images/button-cancel-job.gif
+share/doc/cups/pl/images/button-change-settings.gif
+share/doc/cups/pl/images/button-clean-print-heads.gif
+share/doc/cups/pl/images/button-clear.gif
+share/doc/cups/pl/images/button-continue.gif
+share/doc/cups/pl/images/button-delete-class.gif
+share/doc/cups/pl/images/button-delete-printer.gif
+share/doc/cups/pl/images/button-edit-configuration-file.gif
+share/doc/cups/pl/images/button-export-samba.gif
+share/doc/cups/pl/images/button-help.gif
+share/doc/cups/pl/images/button-hold-job.gif
+share/doc/cups/pl/images/button-manage-classes.gif
+share/doc/cups/pl/images/button-manage-jobs.gif
+share/doc/cups/pl/images/button-manage-printers.gif
+share/doc/cups/pl/images/button-manage-server.gif
+share/doc/cups/pl/images/button-modify-class.gif
+share/doc/cups/pl/images/button-modify-printer.gif
+share/doc/cups/pl/images/button-move-job.gif
+share/doc/cups/pl/images/button-move-jobs.gif
+share/doc/cups/pl/images/button-print-self-test-page.gif
+share/doc/cups/pl/images/button-print-test-page.gif
+share/doc/cups/pl/images/button-publish-printer.gif
+share/doc/cups/pl/images/button-reject-jobs.gif
+share/doc/cups/pl/images/button-release-job.gif
+share/doc/cups/pl/images/button-restart-job.gif
+share/doc/cups/pl/images/button-save-changes.gif
+share/doc/cups/pl/images/button-search.gif
+share/doc/cups/pl/images/button-set-allowed-users.gif
+share/doc/cups/pl/images/button-set-as-default.gif
+share/doc/cups/pl/images/button-set-printer-options.gif
+share/doc/cups/pl/images/button-show-active.gif
+share/doc/cups/pl/images/button-show-all.gif
+share/doc/cups/pl/images/button-show-completed.gif
+share/doc/cups/pl/images/button-show-next.gif
+share/doc/cups/pl/images/button-show-previous.gif
+share/doc/cups/pl/images/button-sort-ascending.gif
+share/doc/cups/pl/images/button-sort-descending.gif
+share/doc/cups/pl/images/button-start-class.gif
+share/doc/cups/pl/images/button-start-printer.gif
+share/doc/cups/pl/images/button-stop-class.gif
+share/doc/cups/pl/images/button-stop-printer.gif
+share/doc/cups/pl/images/button-unpublish-printer.gif
+share/doc/cups/pl/images/button-use-default-config.gif
+share/doc/cups/pl/images/button-view-access-log.gif
+share/doc/cups/pl/images/button-view-error-log.gif
+share/doc/cups/pl/images/button-view-page-log.gif
+share/doc/cups/pl/images/button-view-printable-version.gif
+share/doc/cups/pl/index.html
 share/doc/cups/robots.txt
-share/doc/cups/sam.html
-@comment share/doc/cups/sam.pdf
-share/doc/cups/sdd.html
-@comment share/doc/cups/sdd.pdf
-share/doc/cups/spm.html
-@comment share/doc/cups/spm.pdf
-share/doc/cups/sps.html
-@comment share/doc/cups/sps.pdf
-share/doc/cups/ssr.html
-@comment share/doc/cups/ssr.pdf
-share/doc/cups/stp.html
-@comment share/doc/cups/stp.pdf
-share/doc/cups/sum.html
-@comment share/doc/cups/sum.pdf
-share/doc/cups/svd.html
-@comment share/doc/cups/svd.pdf
-share/doc/cups/translation.html
-@comment share/doc/cups/translation.pdf
+share/doc/cups/sv/
+share/doc/cups/sv/images/
+share/doc/cups/sv/images/button-accept-jobs.gif
+share/doc/cups/sv/images/button-add-class.gif
+share/doc/cups/sv/images/button-add-printer.gif
+share/doc/cups/sv/images/button-add-this-printer.gif
+share/doc/cups/sv/images/button-cancel-all-jobs.gif
+share/doc/cups/sv/images/button-cancel-job.gif
+share/doc/cups/sv/images/button-change-settings.gif
+share/doc/cups/sv/images/button-clean-print-heads.gif
+share/doc/cups/sv/images/button-clear.gif
+share/doc/cups/sv/images/button-continue.gif
+share/doc/cups/sv/images/button-delete-class.gif
+share/doc/cups/sv/images/button-delete-printer.gif
+share/doc/cups/sv/images/button-edit-configuration-file.gif
+share/doc/cups/sv/images/button-export-samba.gif
+share/doc/cups/sv/images/button-help.gif
+share/doc/cups/sv/images/button-hold-job.gif
+share/doc/cups/sv/images/button-manage-classes.gif
+share/doc/cups/sv/images/button-manage-jobs.gif
+share/doc/cups/sv/images/button-manage-printers.gif
+share/doc/cups/sv/images/button-manage-server.gif
+share/doc/cups/sv/images/button-modify-class.gif
+share/doc/cups/sv/images/button-modify-printer.gif
+share/doc/cups/sv/images/button-move-job.gif
+share/doc/cups/sv/images/button-move-jobs.gif
+share/doc/cups/sv/images/button-print-self-test-page.gif
+share/doc/cups/sv/images/button-print-test-page.gif
+share/doc/cups/sv/images/button-publish-printer.gif
+share/doc/cups/sv/images/button-reject-jobs.gif
+share/doc/cups/sv/images/button-release-job.gif
+share/doc/cups/sv/images/button-restart-job.gif
+share/doc/cups/sv/images/button-save-changes.gif
+share/doc/cups/sv/images/button-search.gif
+share/doc/cups/sv/images/button-set-allowed-users.gif
+share/doc/cups/sv/images/button-set-as-default.gif
+share/doc/cups/sv/images/button-set-printer-options.gif
+share/doc/cups/sv/images/button-show-active.gif
+share/doc/cups/sv/images/button-show-all.gif
+share/doc/cups/sv/images/button-show-completed.gif
+share/doc/cups/sv/images/button-show-next.gif
+share/doc/cups/sv/images/button-show-previous.gif
+share/doc/cups/sv/images/button-sort-ascending.gif
+share/doc/cups/sv/images/button-sort-descending.gif
+share/doc/cups/sv/images/button-start-class.gif
+share/doc/cups/sv/images/button-start-printer.gif
+share/doc/cups/sv/images/button-stop-class.gif
+share/doc/cups/sv/images/button-stop-printer.gif
+share/doc/cups/sv/images/button-unpublish-printer.gif
+share/doc/cups/sv/images/button-use-default-config.gif
+share/doc/cups/sv/images/button-view-access-log.gif
+share/doc/cups/sv/images/button-view-error-log.gif
+share/doc/cups/sv/images/button-view-page-log.gif
+share/doc/cups/sv/images/button-view-printable-version.gif
+share/doc/cups/sv/index.html
 share/examples/cups/
 @sample ${SYSCONFDIR}/cups/
-share/examples/cups/certs/
-@sample ${SYSCONFDIR}/cups/certs/
-share/examples/cups/classes.conf
-@sample ${SYSCONFDIR}/cups/classes.conf
-share/examples/cups/client.conf
-@sample ${SYSCONFDIR}/cups/client.conf
 share/examples/cups/cupsd.conf
 @sample ${SYSCONFDIR}/cups/cupsd.conf
+share/examples/cups/cupsd.conf.default
+share/examples/cups/init/
+@sample ${SYSCONFDIR}/cups/init/
 share/examples/cups/interfaces/
 @sample ${SYSCONFDIR}/cups/interfaces/
 share/examples/cups/mime.convs
@@ -765,34 +1028,15 @@ share/examples/cups/mime.types
 @sample ${SYSCONFDIR}/cups/mime.types
 share/examples/cups/ppd/
 @sample ${SYSCONFDIR}/cups/ppd/
-share/examples/cups/printers.conf
-@sample ${SYSCONFDIR}/cups/printers.conf
-%%SHARED%%
+share/examples/cups/ssl/
+@sample ${SYSCONFDIR}/cups/ssl/
+share/locale/de/cups_de.po
+share/locale/es/cups_es.po
+share/locale/ja/cups_ja.po
+share/locale/pl/cups_pl.po
+share/locale/sv/cups_sv.po
 @owner _cups
 @group _cups
 @sample /var/log/cups/
 @sample /var/spool/cups/
 @sample /var/spool/cups/tmp/
-@owner
-@group
-share/locale/C/
-share/locale/C/cups_C
-share/locale/be/cups_be
-share/locale/cs/cups_cs
-share/locale/de/cups_de
-share/locale/en/cups_en
-share/locale/en_US/
-share/locale/en_US/cups_en_US
-share/locale/es/cups_es
-share/locale/fr/cups_fr
-share/locale/he/cups_he
-share/locale/it/cups_it
-share/locale/ru_RU/
-share/locale/ru_RU/cups_ru_RU
-share/locale/sv/cups_sv
-share/locale/uk/cups_uk
-share/locale/uk_UA/
-share/locale/uk_UA/cups_uk_UA
-share/locale/zh_CN/cups_zh_CN
-@extraunexec rm -fr /var/log/cups
-@extraunexec rm -fr /var/spool/cups

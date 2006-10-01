@@ -1,12 +1,13 @@
---- cups.sh.in.orig	Tue Jun 29 05:14:19 2004
-+++ cups.sh.in	Sun Nov  7 15:19:29 2004
+$OpenBSD: patch-init_cups_sh_in,v 1.1 2006/10/01 10:43:38 mbalmer Exp $
+--- init/cups.sh.in.orig	Wed Sep 20 11:48:50 2006
++++ init/cups.sh.in	Wed Sep 20 11:50:07 2006
 @@ -91,6 +91,16 @@ case "`uname`" in
  		fi
  		;;
  
 +	OpenBSD*)
 +		# Set the timezone.  /etc/localtime is a symlink in
-+		# the default install, but it could be a regular file
++		# defualt install, but it could be a regular file
 +		if test -e /etc/localtime; then
 +			export TZ=/etc/localtime
 +		fi
