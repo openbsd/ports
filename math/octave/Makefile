@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2006/10/01 22:23:47 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2006/10/01 23:18:07 steven Exp $
 
 # vax:   no IEEE arithmetic
 # sparc: fPIC version of libgcc.a needed but not available
@@ -30,10 +30,6 @@ WANTLIB=	c g2c m ncurses readline stdc++
 MASTER_SITES=	ftp://ftp.octave.org/pub/octave/bleeding-edge/ \
 		ftp://neacm.fe.up.pt/pub/octave/bleeding-edge/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave/bleeding-edge/
-
-MODULES=	gcc3
-MODGCC3_ARCHES=	sparc
-MODGCC3_LANGS=	c++ g77
 
 LIB_DEPENDS=	fftw3.>=3::math/fftw3 \
 		lapack.>=3::math/lapack \
