@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2006/09/22 04:13:19 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.24 2006/10/01 12:35:47 jasper Exp $
 
 COMMENT=		"Fast and light gtk-based web browser"
 
 VERSION=		0.8.6
 DISTNAME=		dillo-${VERSION}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=     	www
 
 HOMEPAGE=		http://www.dillo.org/
@@ -16,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xi c crypto glib gmodule iconv intl m \
-			pthread ssl z 
+			pthread ssl stdc++ z 
 
 MASTER_SITES=		${HOMEPAGE}download/
 
