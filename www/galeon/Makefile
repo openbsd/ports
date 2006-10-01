@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2006/09/18 12:00:00 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2006/10/01 22:23:47 brad Exp $
 
 COMMENT=	"GNOME web browser based on gecko"
 
 V=		1.3.21
 DISTNAME=	galeon-${V}
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	www
 
 HOMEPAGE=	http://galeon.sourceforge.net/
@@ -25,9 +25,7 @@ WANTLIB= ORBit-2 ORBitCosNaming-2 art_lgpl_2 atk-1.0 audiofile \
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=galeon/}
 
-MODULES=	devel/gettext gcc3
-MODGCC3_ARCHES=	alpha
-MODGCC3_LANGS=	C++
+MODULES=	devel/gettext
 
 BUILD_DEPENDS=	:mozilla->=1.7.11:www/mozilla \
 		:mozilla-devel->=1.7.11:www/mozilla,-devel \

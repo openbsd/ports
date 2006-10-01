@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2006/09/18 12:00:00 espie Exp $
+# $OpenBSD: Makefile,v 1.108 2006/10/01 22:23:47 brad Exp $
 
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64 amd64 powerpc
 
@@ -7,8 +7,8 @@ COMMENT-devel=	"devel files for Gecko"
 
 VER=		1.7.13
 DISTNAME=	mozilla
-PKGNAME=	mozilla-${VER}p0
-PKGNAME-devel=	mozilla-devel-${VER}p0
+PKGNAME=	mozilla-${VER}p1
+PKGNAME-devel=	mozilla-devel-${VER}p1
 DISTFILES=	mozilla-${VER}-source.tar.bz2
 SO_VERSION=	7.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -47,9 +47,7 @@ VMEM_WARNING=yes
 MULTI_PACKAGES=	-devel
 SUBPACKAGE?=
 
-MODULES=	gcc3 devel/gettext
-MODGCC3_ARCHES=	alpha
-MODGCC3_LANGS=	C++
+MODULES=	devel/gettext
 BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
 		:zip->=2.3:archivers/zip \
 		:pkgconfig-*:devel/pkgconfig
@@ -64,9 +62,7 @@ RUN_DEPENDS=	:${PKGNAME}:www/mozilla
 .else
 RUN_DEPENDS=	:esound-0.2.*:audio/esound
 WANTLIB+=	Xext Xft Xp Xrender c jpeg png pthread z
-.  if empty(MACHINE_ARCH:Malpha)
 WANTLIB+=	stdc++
-.  endif
 .endif
 
 USE_X11=	Yes

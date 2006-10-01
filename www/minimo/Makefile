@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2006/09/18 12:00:00 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2006/10/01 22:23:47 brad Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc64 arm
 SHARED_ONLY=	Yes
 
 COMMENT=	"mini mozilla"
 DISTNAME=	minimo-20050802
-PKGNAME=	${DISTNAME}p8
+PKGNAME=	${DISTNAME}p9
 SO_VERSION=	2.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -30,9 +30,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=	devel/gettext gcc3
-MODGCC3_ARCHES=	alpha
-MODGCC3_LANGS=	C++
+MODULES=	devel/gettext
 
 BUILD_DEPENDS=	:zip->=2.3:archivers/zip \
 		:unzip-*:archivers/unzip \
@@ -46,9 +44,7 @@ WANTLIB=	ICE SM X11 Xext Xft Xrender Xt \
 		atk-1.0.>=1011.0 glib-2.0.>=600.0 gmodule-2.0.>=600.0 \
 		gobject-2.0.>=600.0 pango-1.0.>=800.0 pangocairo-1.0 \
 		pangoft2-1.0 cairo
-.if empty(MACHINE_ARCH:Malpha)
 WANTLIB+=	stdc++
-.endif
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
