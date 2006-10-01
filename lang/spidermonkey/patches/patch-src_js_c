@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_js_c,v 1.1.1.1 2006/10/01 23:02:12 steven Exp $
+--- src/js.c.orig	Wed Jun 16 23:15:35 2004
++++ src/js.c	Mon Oct  2 00:43:51 2006
+@@ -921,7 +921,7 @@ SrcNotes(JSContext *cx, JSScript *script
+     for (sn = notes; !SN_IS_TERMINATOR(sn); sn = SN_NEXT(sn)) {
+         delta = SN_DELTA(sn);
+         offset += delta;
+-        fprintf(gOutFile, "%3u: %5u [%4u] %-8s",
++        fprintf(gOutFile, "%3tu: %5u [%4u] %-8s",
+                 PTRDIFF(sn, notes, jssrcnote), offset, delta,
+                 js_SrcNoteSpec[SN_TYPE(sn)].name);
+         type = (JSSrcNoteType) SN_TYPE(sn);
+@@ -1006,7 +1006,7 @@ TryNotes(JSContext *cx, JSScript *script
+         return JS_TRUE;
+     fprintf(gOutFile, "\nException table:\nstart\tend\tcatch\n");
+     while (tn->start && tn->catchStart) {
+-        fprintf(gOutFile, "  %d\t%d\t%d\n",
++        fprintf(gOutFile, "  %td\t%td\t%td\n",
+                tn->start, tn->start + tn->length, tn->catchStart);
+         tn++;
+     }
+@@ -1222,7 +1222,7 @@ DumpScope(JSContext *cx, JSObject *obj, 
+         DUMP_ATTR(SETTER);
+ #undef  DUMP_ATTR
+ 
+-        fprintf(fp, " slot %lu flags %x shortid %d\n",
++        fprintf(fp, " slot %u flags %x shortid %d\n",
+                 sprop->slot, sprop->flags, sprop->shortid);
+     }
+ }

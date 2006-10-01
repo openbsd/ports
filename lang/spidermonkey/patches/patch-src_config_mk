@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_config_mk,v 1.1.1.1 2006/10/01 23:02:12 steven Exp $
+--- src/config.mk.orig	Sat Nov 15 01:10:55 2003
++++ src/config.mk	Mon Sep 25 16:40:30 2006
+@@ -90,6 +90,9 @@ endif
+ ifeq ($(OS_ARCH),Linux)
+ OS_CONFIG      := Linux_All
+ else
++ifeq ($(OS_ARCH), OpenBSD)
++OS_CONFIG      := Linux_All
++else
+ ifeq ($(OS_ARCH),dgux)
+ OS_CONFIG      := dgux
+ else
+@@ -100,6 +103,7 @@ OS_CONFIG       := $(OS_ARCH)$(OS_OBJTYP
+ endif
+ endif
+ endif
++endif
+ 
+ ASFLAGS         =
+ DEFINES         =
+@@ -122,7 +126,7 @@ OPTIMIZER  = -Zi
+ else
+ OPTIMIZER  = -g
+ endif
+-DEFINES    += -DDEBUG -DDEBUG_$(shell whoami)
++DEFINES    += -DDEBUG
+ OBJDIR_TAG = _DBG
+ endif
+ 

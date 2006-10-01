@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_jscntxt_c,v 1.1.1.1 2006/10/01 23:02:12 steven Exp $
+--- src/jscntxt.c.orig	Thu Aug 19 19:57:36 2004
++++ src/jscntxt.c	Mon Sep 25 16:40:30 2006
+@@ -334,7 +334,7 @@ resolving_HashKey(JSDHashTable *table, c
+ {
+     const JSResolvingKey *key = (const JSResolvingKey *)ptr;
+ 
+-    return ((JSDHashNumber)key->obj >> JSVAL_TAGBITS) ^ key->id;
++    return ((JSDHashNumber)JS_PTR_TO_UINT32(key->obj) >> JSVAL_TAGBITS) ^ key->id;
+ }
+ 
+ JS_PUBLIC_API(JSBool)

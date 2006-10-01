@@ -1,0 +1,41 @@
+$OpenBSD: patch-src_jsapi_c,v 1.1.1.1 2006/10/01 23:02:12 steven Exp $
+--- src/jsapi.c.orig	Sat Oct 22 12:19:14 2005
++++ src/jsapi.c	Mon Sep 25 16:40:30 2006
+@@ -125,7 +125,7 @@ JS_GetEmptyStringValue(JSContext *cx)
+ 
+ static JSBool
+ TryArgumentFormatter(JSContext *cx, const char **formatp, JSBool fromJS,
+-                     jsval **vpp, va_list *app)
++                     jsval **vpp, va_list app)
+ {
+     const char *format;
+     JSArgumentFormatMap *map;
+@@ -263,8 +263,7 @@ JS_ConvertArgumentsVA(JSContext *cx, uin
+             break;
+           default:
+             format--;
+-            if (!TryArgumentFormatter(cx, &format, JS_TRUE, &sp,
+-                                      JS_ADDRESSOF_VA_LIST(ap))) {
++            if (!TryArgumentFormatter(cx, &format, JS_TRUE, &sp, ap)) {
+                 return JS_FALSE;
+             }
+             /* NB: the formatter already updated sp, so we continue here. */
+@@ -366,8 +365,7 @@ JS_PushArgumentsVA(JSContext *cx, void *
+             break;
+           default:
+             format--;
+-            if (!TryArgumentFormatter(cx, &format, JS_FALSE, &sp,
+-                                      JS_ADDRESSOF_VA_LIST(ap))) {
++            if (!TryArgumentFormatter(cx, &format, JS_FALSE, &sp, ap)) {
+                 goto bad;
+             }
+             /* NB: the formatter already updated sp, so we continue here. */
+@@ -2211,7 +2209,7 @@ DefineProperty(JSContext *cx, JSObject *
+     JSAtom *atom;
+ 
+     if (attrs & JSPROP_INDEX) {
+-        id = INT_TO_JSVAL((jsint)name);
++        id = INT_TO_JSVAL(name);
+         atom = NULL;
+         attrs &= ~JSPROP_INDEX;
+     } else {

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_jsprf_c,v 1.1.1.1 2006/10/01 23:02:12 steven Exp $
+--- src/jsprf.c.orig	Fri Sep 24 05:31:15 2004
++++ src/jsprf.c	Mon Sep 25 16:40:31 2006
+@@ -55,7 +55,7 @@
+ ** and requires array notation.
+ */
+ #ifdef HAVE_VA_COPY
+-#define VARARGS_ASSIGN(foo, bar)        VA_COPY(foo,bar)
++#define VARARGS_ASSIGN(foo, bar)        va_copy(foo,bar)
+ #elif defined(HAVE_VA_LIST_AS_ARRAY)
+ #define VARARGS_ASSIGN(foo, bar)        foo[0] = bar[0]
+ #else

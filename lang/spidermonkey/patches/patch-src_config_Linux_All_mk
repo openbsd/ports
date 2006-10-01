@@ -1,0 +1,50 @@
+$OpenBSD: patch-src_config_Linux_All_mk,v 1.1.1.1 2006/10/01 23:02:12 steven Exp $
+--- src/config/Linux_All.mk.orig	Tue May 10 21:53:44 2005
++++ src/config/Linux_All.mk	Sun Oct  1 17:59:02 2006
+@@ -41,13 +41,13 @@
+ # Config for all versions of Linux
+ #
+ 
+-CC = gcc
+-CCC = g++
++#CC = gcc
++#CCC = g++
+ CFLAGS +=  -Wall -Wno-format
+ OS_CFLAGS = -DXP_UNIX -DSVR4 -DSYSV -D_BSD_SOURCE -DPOSIX_SOURCE -DHAVE_LOCALTIME_R
+ 
+ RANLIB = echo
+-MKSHLIB = $(LD) -shared $(XMKSHLIBOPTS)
++MKSHLIB = $(CC) -shared $(XMKSHLIBOPTS)
+ 
+ #.c.o:
+ #      $(CC) -c -MD $*.d $(CFLAGS) $<
+@@ -74,7 +74,7 @@ endif
+ 
+ GFX_ARCH = x
+ 
+-OS_LIBS = -lm -lc
++OS_LIBS = -lm
+ 
+ ASFLAGS += -x assembler-with-cpp
+ 
+@@ -88,16 +88,12 @@ OS_CFLAGS += -mieee
+ endif
+ 
+ # Use the editline library to provide line-editing support.
+-JS_EDITLINE = 1
++JS_READLINE = 1
+ 
+-ifeq ($(CPU_ARCH),x86_64)
+-# Use VA_COPY() standard macro on x86-64
+-# FIXME: better use it everywhere
+ OS_CFLAGS += -DHAVE_VA_COPY -DVA_COPY=va_copy
+-endif
+ 
+-ifeq ($(CPU_ARCH),x86_64)
+-# We need PIC code for shared libraries
+-# FIXME: better patch rules.mk & fdlibm/Makefile*
++ifeq ($(CPU_ARCH),sparc64)
+ OS_CFLAGS += -DPIC -fPIC
++else
++OS_CFLAGS += -DPIC -fpic
+ endif

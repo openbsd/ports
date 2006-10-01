@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_rules_mk,v 1.1.1.1 2006/10/01 23:02:12 steven Exp $
+--- src/rules.mk.orig	Sun Oct  1 17:58:25 2006
++++ src/rules.mk	Sun Oct  1 17:58:50 2006
+@@ -58,7 +58,7 @@ ifdef USE_MSVC
+ # TARGETS = $(LIBRARY)   # $(PROGRAM) not supported for MSVC yet
+ TARGETS += $(SHARED_LIBRARY) $(PROGRAM)  # it is now
+ else
+-TARGETS += $(LIBRARY) $(SHARED_LIBRARY) $(PROGRAM) 
++TARGETS += $(SHARED_LIBRARY) $(PROGRAM) 
+ endif
+ 
+ all:

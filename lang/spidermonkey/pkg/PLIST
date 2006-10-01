@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/01 23:02:12 steven Exp $
+%%SHARED%%
+bin/js
+include/js/
+include/js/jsapi.h
+include/js/jsautocfg.h
+include/js/jscompat.h
+include/js/jshash.h
+include/js/jslong.h
+include/js/jsosdep.h
+include/js/jsotypes.h
+include/js/jsprvtd.h
+include/js/jspubtd.h
+include/js/jsstr.h
+include/js/jstypes.h

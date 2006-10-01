@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_jsosdep_h,v 1.1.1.1 2006/10/01 23:02:12 steven Exp $
+--- src/jsosdep.h.orig	Sat Nov 15 01:10:59 2003
++++ src/jsosdep.h	Tue Sep 26 19:56:47 2006
+@@ -101,7 +101,7 @@ JS_END_EXTERN_C
+ #elif defined(SOLARIS)
+ #define JS_HAVE_LONG_LONG
+ 
+-#elif defined(FREEBSD)
++#elif defined(FREEBSD) || defined(__OpenBSD__)
+ #define JS_HAVE_LONG_LONG
+ 
+ #elif defined(SUNOS4)
