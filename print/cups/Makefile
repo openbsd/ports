@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2006/10/01 10:43:38 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.14 2006/10/01 16:02:24 mbalmer Exp $
 
 COMMENT=		"Common Unix Printing System"
 
 VERSION=		1.2.4
 DISTNAME=		cups-${VERSION}-source
-PKGNAME=		${DISTNAME:S/-source//}
+PKGNAME=		${DISTNAME:S/-source//}p0
 CATEGORIES=		print sysutils
 SHARED_LIBS=		cups		2.3 \
 			cupsimage	2.3
@@ -84,6 +84,9 @@ LIB_DEPENDS+=	gnutls.>=12::security/gnutls
 WANTLIB+=	gpg-error.>=1 gcrypt.>=12
 .endif
 
+a:
+	echo $(DESTDIR)
+
 post-configure:
 	cd ${WRKBUILD} && perl -pi -e 's|\$${DESTDIR}||g' init/cups.sh \
 	    config.h cups-config conf/cupsd.conf man/*.man
@@ -92,7 +95,8 @@ post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/cups/init
 	@cd ${WRKINST}${SYSCONFDIR}/cups && cp -Rp * \
 		${PREFIX}/share/examples/cups
-	@rm -r ${WRKINST}${SYSCONFDIR}/cups
+	@rm -r ${WRKINST}${SYSCONFDIR}/cups ${WRKINST}/var/run \
+	    ${WRKINST}/var/cache
 	@${INSTALL_DATA} ${WRKBUILD}/init/cups.sh ${PREFIX}/share/cups/init
 .for file in cups-enable cups-disable
 	@sed s,y0y0y0,${LOCALBASE}, < ${FILESDIR}/${file} > \
