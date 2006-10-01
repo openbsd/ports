@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2006/01/17 14:25:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2006/10/01 04:46:19 brad Exp $
 
 COMMENT=	"USB access library"
 
 DISTNAME=	libusb-0.1.10a
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SHARED_LIBS=		usb	8.2 \
 			usbpp	9.0
 MODGNU_SHARED_LIBS=	usb	'-export-dynamic' \
@@ -27,6 +27,6 @@ USE_LIBTOOL=		Yes
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
-			--enable-static --disable-build-docs
+			--disable-build-docs
 
 .include <bsd.port.mk>

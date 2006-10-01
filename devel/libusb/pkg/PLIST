@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/05/21 22:24:21 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/10/01 04:46:19 brad Exp $
 %%SHARED%%
 bin/libusb-config
 include/usb.h
 include/usbpp.h
 lib/libusb.a
+lib/libusb.la
 lib/libusbpp.a
+lib/libusbpp.la
