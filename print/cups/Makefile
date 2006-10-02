@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/10/02 09:59:05 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.16 2006/10/02 10:06:03 mbalmer Exp $
 
 COMMENT=		"Common Unix Printing System"
 
@@ -83,9 +83,6 @@ CONFIGURE_ARGS+= --disable-openssl --enable-gnutls
 LIB_DEPENDS+=	gnutls.>=12::security/gnutls
 WANTLIB+=	gpg-error.>=1 gcrypt.>=12
 .endif
-
-a:
-	echo $(DESTDIR)
 
 post-configure:
 	cd ${WRKBUILD} && perl -pi -e 's|\$${DESTDIR}||g' init/cups.sh \
