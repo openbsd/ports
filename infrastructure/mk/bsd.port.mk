@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.774 2006/10/02 09:37:14 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.775 2006/10/02 17:26:34 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1128,9 +1128,12 @@ _build_depends_target?=${DEPENDS_TARGET}
 _run_depends_target=${DEPENDS_TARGET}
 _regress_depends_target=${DEPENDS_TARGET}
 
-.if ${FORCE_UPDATE:L} == "yes"
+.if ${FORCE_UPDATE:L} == "yes" || ${FORCE_UPDATE:L} == "hard"
 _force_update_fragment=eval $$toset ${MAKE} subupdate
-_PKG_ADD_FORCE=-F update -F updatedepends -F installed -r
+_PKG_ADD_FORCE=-F update -F updatedepends -r
+.  if ${FORCE_UPDATE:L} == "hard"
+_PKG_ADD_FORCE+= -F installed
+.  endif
 .else
 _force_update_fragment=:
 _PKG_ADD_FORCE=
@@ -1153,9 +1156,9 @@ _DEP${_DEP}_COOKIES+=${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}
 _INSTALL_DEPS=${_INSTALL_COOKIE}
 _PACKAGE_DEPS=${_PACKAGE_COOKIES}
 _UPDATE_DEPS=${_UPDATE_COOKIE}
+_BULK__internal-package=Yes
 .if ${BULK_${PKGPATH}:L} == "yes"
 _INSTALL_DEPS+=${_BULK_COOKIE}
-_PACKAGE_DEPS+=${_BULK_COOKIE}
 _UPDATE_DEPS+=${_BULK_COOKIE}
 .endif
 
@@ -1316,7 +1319,7 @@ ${_PACKAGE_COOKIE}:
 		{ ln $$f $@ 2>/dev/null || cp -p $$f $@ ; } || \
 		cd ${.CURDIR} && ${MAKE} _TRIED_FETCHING=Yes $@
 .else
-	@cd ${.CURDIR} && unset PACKAGING SUBPACKAGE|| true && exec ${MAKE} ${_PACKAGE_COOKIE_DEPS} ${_PKG_PREREQ}
+	@cd ${.CURDIR} && unset PACKAGING || true && exec ${MAKE} ${_PACKAGE_COOKIE_DEPS} ${_PKG_PREREQ}
 .  if target(pre-package)
 	@cd ${.CURDIR} && exec ${MAKE} pre-package
 .  endif
@@ -1755,6 +1758,9 @@ ${_t}:
 .    for _s in ${MULTI_PACKAGES}
 	@cd ${.CURDIR} && SUBPACKAGE='${_s}' PACKAGING='${_s}' exec ${MAKE} ${_r}
 .    endfor
+.  endif
+.  if defined(_BULK_${_t}) && ${BULK_${PKGPATH}:L} == "yes"
+	@cd ${.CURDIR} && exec ${MAKE} ${_BULK_COOKIE}
 .  endif
 .endfor
 
