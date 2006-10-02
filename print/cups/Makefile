@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2006/10/02 10:06:03 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.17 2006/10/02 11:48:06 mbalmer Exp $
 
 COMMENT=		"Common Unix Printing System"
 
 VERSION=		1.2.4
 DISTNAME=		cups-${VERSION}-source
-PKGNAME=		${DISTNAME:S/-source//}p1
+PKGNAME=		${DISTNAME:S/-source//}p2
 CATEGORIES=		print sysutils
 SHARED_LIBS=		cups		2.3 \
 			cupsimage	2.3
@@ -47,7 +47,6 @@ CONFIGURE_ARGS+=	--with-cups-user=_cups \
 			${CONFIGURE_SHARED} \
 			--localstatedir=/var \
 			--enable-ssl \
-			--disable-ldap \
 			--without-java \
 			--without-perl \
 			--without-php \
@@ -71,7 +70,7 @@ REGRESS_FLAGS=		LOCALBASE=${LOCALBASE}
 REGRESS_DEPENDS=	::print/htmldoc
 REGRESS_IS_INTERACTIVE=	Yes
 
-FLAVORS=	no_gnutls
+FLAVORS=	no_gnutls ldap
 FLAVOR?=
 
 .if ${FLAVOR:L:Mno_gnutls}
@@ -82,6 +81,13 @@ MODULES=	devel/gettext
 CONFIGURE_ARGS+= --disable-openssl --enable-gnutls
 LIB_DEPENDS+=	gnutls.>=12::security/gnutls
 WANTLIB+=	gpg-error.>=1 gcrypt.>=12
+.endif
+
+.if ${FLAVOR:L:Mldap}
+CONFIGURE_ARGS+=	--enable-ldap
+LIB_DEPENDS+=		ldap,lber::databases/openldap
+.else
+CONFIGURE_ARGS+=	--disable-ldap
 .endif
 
 post-configure:

@@ -11,3 +11,8 @@ PostScript Printer Description ("PPD") based printing options to
 support real-world printing under UNIX.
 
 For extra printer drivers check http://www.cups.org/ppd.php.
+
+Available flavors:
+
+ldap		Enable printer sharing via LDAP
+no_gnutls	Don't use GNU TLS
