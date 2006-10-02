@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.37 2006/08/03 19:56:08 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.38 2006/10/02 18:54:09 alek Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -34,20 +34,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS=	no_expat no_gdbm no_idle no_mpz no_tkinter no_bsddb \
-		no_tests no_tools
+FLAVORS=	no_expat no_gdbm no_idle no_mpz no_tkinter no_bsddb
 FLAVOR?=
 
-MULTI_PACKAGES?=
+MULTI_PACKAGES=	-tests -tools
 SUBPACKAGE?=
-
-.if empty(FLAVOR:L:Mno_tests)
-MULTI_PACKAGES+=-tests
-.endif
-
-.if empty(FLAVOR:L:Mno_tools)
-MULTI_PACKAGES+=-tools
-.endif
 
 LIB_DEPENDS=	bz2::archivers/bzip2
 
@@ -159,7 +150,7 @@ LIB_DEPENDS=		expat.>=4.0:expat->=1.95.6:textproc/expat
 # building the "monster" Python for platforms without shared libraries.
 
 .if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
-FULLPKGNAME=${PKGNAME}${FLAVOR_EXT:S/-no_bsddb//:S/-no_expat//:S/-no_gdbm//:S/-no_idle//:S/-no_mpz//:S/-no_tkinter//:S/-no_tools//:S/-no_tests//}
+FULLPKGNAME=${PKGNAME}${FLAVOR_EXT:S/-no_bsddb//:S/-no_expat//:S/-no_gdbm//:S/-no_idle//:S/-no_mpz//:S/-no_tkinter//}
 .endif
 
 FULLPKGNAME-expat=	python-expat-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
