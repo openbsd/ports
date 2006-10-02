@@ -1,0 +1,12 @@
+$OpenBSD: patch-testing_Makefile,v 1.1.1.1 2006/10/02 21:58:25 steven Exp $
+--- testing/Makefile.orig	Sun Oct  1 15:52:32 2006
++++ testing/Makefile	Sun Oct  1 15:52:39 2006
+@@ -3,7 +3,7 @@
+ #
+ 
+ dlvl = ../.
+-include $(dlvl)/Makefile.in
++#include $(dlvl)/Makefile.in
+ INC = -I$(CBDIR)/src
+ 
+ # Archive files necessary to compile
