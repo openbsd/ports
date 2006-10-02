@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.9 2006/07/17 16:51:53 espie Exp $
+# $OpenBSD: register-plist,v 1.10 2006/10/02 18:48:01 espie Exp $
 # Copyright (c) 2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -243,7 +243,8 @@ for my $pkgfile (@ARGV) {
 			if ($r == 1) {
 				my $t = "$result-new";
 				$plist->tofile($t);
-				print STDERR "Error: $t and $result are different\n";
+				print STDERR "Error: change in plist\n";
+				print STDERR "\tdiff -u $result $t\n";
 				$error++;
 			}
 			if ($r == 2) {
