@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2006/09/18 10:21:49 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2006/10/02 21:42:27 naddy Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples and tutorial for qt2"
@@ -157,7 +157,3 @@ do-install:
 	ln -s ${TRUEPREFIX}/share/doc/qt2/html ${QT_LIBDIR}/doc/html
 
 .include <bsd.port.mk>
-
-.if ${MACHINE_ARCH} == "alpha"
-CXXFLAGS:=	${CXXFLAGS:N-O*}
-.endif
