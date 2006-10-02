@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2006/10/01 10:43:38 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.10 2006/10/02 09:59:05 mbalmer Exp $
 @conflict LPRng-*
 @newgroup _cups:541
 @newuser _cups:541:541:daemon:CUPS:/nonexistent:/sbin/nologin
@@ -1040,3 +1040,4 @@ share/locale/sv/cups_sv.po
 @sample /var/log/cups/
 @sample /var/spool/cups/
 @sample /var/spool/cups/tmp/
+@sample /var/cache/cups/

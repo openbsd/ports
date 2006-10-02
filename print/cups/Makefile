@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2006/10/01 16:02:24 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.15 2006/10/02 09:59:05 mbalmer Exp $
 
 COMMENT=		"Common Unix Printing System"
 
 VERSION=		1.2.4
 DISTNAME=		cups-${VERSION}-source
-PKGNAME=		${DISTNAME:S/-source//}p0
+PKGNAME=		${DISTNAME:S/-source//}p1
 CATEGORIES=		print sysutils
 SHARED_LIBS=		cups		2.3 \
 			cupsimage	2.3
