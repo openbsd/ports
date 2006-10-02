@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.38 2006/10/02 18:54:09 alek Exp $
+# $OpenBSD: Makefile.inc,v 1.39 2006/10/02 20:29:40 alek Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -176,12 +176,9 @@ REGRESS_TARGET=	test
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64"
 NO64BIT=	\#
-.endif
-
-.if defined(NO64BIT)
-PKG_ARGS+=-Dmm=0
+PKG_ARGS+=	-Dmm=0
 .else
-PKG_ARGS+=-Dmm=1
+PKG_ARGS+=	-Dmm=1
 .endif
 
 .if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:U} == YES
