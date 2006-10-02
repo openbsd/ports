@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2006/01/08 10:39:31 alek Exp $
---- configure.orig	Sat Jan  7 10:48:17 2006
-+++ configure	Sat Jan  7 10:48:34 2006
-@@ -15113,7 +15113,7 @@ if test "$enable_shared" = 'yes'; then
+$OpenBSD: patch-configure,v 1.2 2006/10/02 07:48:08 bernd Exp $
+--- configure.orig	Fri Aug 25 10:34:16 2006
++++ configure	Fri Sep  1 12:14:56 2006
+@@ -18967,7 +18967,7 @@ if test "$enable_shared" = 'yes'; then
   	;;
      openbsd*)
  	SOLIBS='$(LIBS)'
@@ -10,3 +10,12 @@ $OpenBSD: patch-configure,v 1.1 2006/01/08 10:39:31 alek Exp $
  	;;
      solaris*)
  	SOLIBS='$(LIBS)'
+@@ -19211,7 +19211,7 @@ else
+   sitedir='${prefix}/lib/ruby/site_ruby'
+ fi
+ 
+-SITE_DIR="`eval \"echo ${sitedir}\"`"
++SITE_DIR="`eval echo ${sitedir}`"
+ case "$target_os" in
+   cygwin*|mingw*|*djgpp*|os2-emx*)
+     RUBY_SITE_LIB_PATH="`expr "$SITE_DIR" : "$prefix\(/.*\)"`" ||
