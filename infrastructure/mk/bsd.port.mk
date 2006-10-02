@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.773 2006/09/27 10:09:34 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.774 2006/10/02 09:37:14 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -607,6 +607,7 @@ _PACKAGE_COOKIES+=	${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE}
 _PACKAGE_COOKIE=	${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE}
 .endif
 _PKG_REPO=		${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/
+_CACHE_REPO=	${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/cache/
 PKGFILE=${_PKG_REPO}${_PKGFILE}
 
 _PACKAGE_COOKIES += ${_PACKAGE_COOKIE}
@@ -1291,40 +1292,31 @@ _grab_libs_from_plist= sed -n -e '/^@lib /{ s///; p; }' \
 	-e '/^@file .*\/lib\/lib.*\.a$$/{ s/^@file //; p; }'
 
 
-
-_fetch_packages_fragment= \
-	${ECHO_MSG} -n "===>  Looking for $$fullpkgname in \$$PKG_PATH - "; \
-	if ${SETENV} PKG_CACHE=${_PKG_REPO} PKG_PATH=${_PKG_REPO}/:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add -n -q ${_PKG_ADD_FORCE} $$fullpkgname >/dev/null 2>&1; then \
-		${ECHO_MSG} "found"; \
-		if [ ! -f $$pkg_cookie ]; then \
-			for _d in ${PKG_PATH:S,/:,/ ,g}; do \
-				if [ -f $${_d}$$fullpkgname${PKG_SUFX} ]; then \
- 					ln $${_d}$$fullpkgname${PKG_SUFX} ${_PKG_REPO} 2>/dev/null || \
- 					  cp -p $${_d}$$fullpkgname${PKG_SUFX} ${_PKG_REPO}; \
-					break; \
-				fi; \
-			done; \
-		fi; \
-		exit 0; \
-	fi; \
-	${ECHO_MSG} "not found"; \
-	cd ${.CURDIR} && exec ${MAKE} $$tried=Yes $$pkg_cookie
-
 ###
 ### end of variable setup. Only targets now
 ###
 
-.if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING_${_PACKAGE_COOKIE})
+
+${_CACHE_REPO}/${_PKGFILE}:
+	@mkdir -p ${@D}
+	@${ECHO_MSG} -n "===>  Looking for ${_PKGFILE} in \$$PKG_PATH - "
+	@if ${SETENV} PKG_CACHE=${_CACHE_REPO} PKG_PATH=${_CACHE_REPO}:${_PKG_REPO}:${PACKAGE_REPOSITORY}/no-arch/:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add -n -q ${_PKG_ADD_FORCE} ${_PKGFILE} >/dev/null 2>&1; then \
+		${ECHO_MSG} "found"; \
+		exit 0; \
+	else \
+		${ECHO_MSG} "not found"; \
+		exit 1; \
+	fi
+
 ${_PACKAGE_COOKIE}:
 	@mkdir -p ${@D}
-	@fullpkgname=${FULLPKGNAME${SUBPACKAGE}}; \
-	pkg_cookie=${_PACKAGE_COOKIE} \
-	tried=_TRIED_FETCHING_${_PACKAGE_COOKIE}; \
-	${_fetch_packages_fragment}
+.if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING)
+	@f=${_CACHE_REPO}/${_PKGFILE}; \
+	cd ${.CURDIR} && ${MAKE} $$f && \
+		{ ln $$f $@ 2>/dev/null || cp -p $$f $@ ; } || \
+		cd ${.CURDIR} && ${MAKE} _TRIED_FETCHING=Yes $@
 .else
-${_PACKAGE_COOKIE}:
-	@cd ${.CURDIR} && unset PACKAGING || true && exec ${MAKE} ${_PACKAGE_COOKIE_DEPS} ${_PKG_PREREQ}
-	@mkdir -p ${@D}
+	@cd ${.CURDIR} && unset PACKAGING SUBPACKAGE|| true && exec ${MAKE} ${_PACKAGE_COOKIE_DEPS} ${_PKG_PREREQ}
 .  if target(pre-package)
 	@cd ${.CURDIR} && exec ${MAKE} pre-package
 .  endif
