@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2006/08/03 12:53:18 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2006/10/02 16:00:21 naddy Exp $
 
 COMMENT=	"toolkit for converting images between different formats"
 
-DISTNAME=	netpbm-10.26.29
-SHARED_LIBS=	netpbm	0.0
+DISTNAME=	netpbm-10.26.31
+SHARED_LIBS=	netpbm	0.1
 CATEGORIES=	graphics
 HOMEPAGE=	http://netpbm.sourceforge.net/
 
@@ -45,9 +45,4 @@ NO_REGRESS=	Yes
 MAKE_FLAGS+=	NETPBMLIBTYPE=unixstatic
 .else
 MAKE_FLAGS+=	NETPBMLIBTYPE=unixshared
-.endif
-
-# multiple internal compiler errors
-.if ${MACHINE_ARCH} == "alpha"
-CFLAGS:=	${CFLAGS:N-O*}
 .endif
