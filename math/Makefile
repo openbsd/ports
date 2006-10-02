@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2006/07/10 15:34:22 steven Exp $
+# $OpenBSD: Makefile,v 1.58 2006/10/02 21:59:12 steven Exp $
 #
 
      SUBDIR += R
@@ -7,6 +7,7 @@
      SUBDIR += blas
      SUBDIR += calc
      SUBDIR += calcoo
+     SUBDIR += cblas
      SUBDIR += cfitsio
      SUBDIR += coq
      SUBDIR += fftw
