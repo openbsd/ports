@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2006/09/25 16:08:53 fgsch Exp $
+# $OpenBSD: Makefile,v 1.28 2006/10/03 16:53:50 xsa Exp $
 
 SHARED_ONLY=	Yes
 
@@ -49,8 +49,8 @@ post-install:
 	${INSTALL_DATA} ${SRC_DOCDIR}/xmlproc/* ${DOC_DIR}/xmlproc/
 	@cd ${SRC_DOCDIR}/ && ${INSTALL_DATA} ${DOCEXT} ${DOC_DIR}
 
-do-regress:
-	@cd ${WRKSRC}/test && \
-	  PYTHONPATH=${WRKSRC} python${MODPY_VERSION} ./regrtest.py
+do-regress: fake
+	@cd ${WRKSRC}/test && ${MAKE_ENV} \
+		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} ./regrtest.py
 
 .include <bsd.port.mk>
