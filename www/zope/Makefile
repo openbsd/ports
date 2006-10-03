@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.28 2006/07/22 18:18:36 steven Exp $
+# $OpenBSD: Makefile,v 1.29 2006/10/03 09:16:16 mbalmer Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"object-oriented web application server"
 
-VERSION=	2.8.6
+VERSION=	2.10.0
 DISTNAME=	Zope-${VERSION}-final
-PKGNAME=	${DISTNAME:S/-final//:L}p0
+PKGNAME=	${DISTNAME:S/-final//:L}
 CATEGORIES=     www
 
 HOMEPAGE=	http://www.zope.org/
@@ -54,6 +54,7 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/README.OpenBSD ${ZOPEHOME}/doc
+	@find ${WRKINST} -type f -exec chmod 755 {} \;
 
 do-regress: fake
 	${PYTHON_BIN} ${WRKINST}/${ZOPEHOME}/bin/test.py \

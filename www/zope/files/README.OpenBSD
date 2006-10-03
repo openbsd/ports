@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.1 2004/08/03 10:16:36 xsa Exp $
+$OpenBSD: README.OpenBSD,v 1.2 2006/10/03 09:16:16 mbalmer Exp $
 
 In this document we'll see how to create a zope instance and have it
 start at boot time. Throughout this document, we will assume that the
@@ -24,9 +24,9 @@ Our instance will thus be /var/www/zope.
    Verify password:
 
  - as we want to run our instance(s) with the _zope user, we should
-   grant him the rights on the log/ and var/ directories.
+   grant him the rights on the log/, var/, and etc/ directories.
 
-   # chown _zope /var/www/zope/{log,var}
+   # chown _zope /var/www/zope/{log,var,etc}
 
 2) Have your instance start at boot time:
 
