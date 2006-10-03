@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/04/01 19:02:23 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2006/10/03 06:00:03 ckuethe Exp $
 
 COMMENT=	"Basic Linear Algebra Subprograms"
 
@@ -34,7 +34,7 @@ FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
 
 MANSRC=		${WRKDIR}/${DISTNAME}/man/manl
 
-pre-build:
+post-build:
 	@rm -f ${MANSRC}/{lsame,xerbla}.l
 	@perl -pi -e 's/(\.TH\s+\w+)\s+l(.*)/\1 3\2/' ${MANSRC}/*.l
 	@cd ${MANSRC} && for m in *.l; do mv $$m $${m%\.l}.3; done
