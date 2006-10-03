@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2006/08/01 22:19:46 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2006/10/03 19:46:08 naddy Exp $
 
 COMMENT=	"high-performance CORBA ORB with support for the C language"
 
 DISTNAME=	ORBit-0.5.13
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SHARED_LIBS=	IDL		4.4 \
 		IIOP		5.13 \
 		ORBit		5.13 \
@@ -14,11 +14,6 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/ORBit/0.5/}
 
 HOMEPAGE=	http://www.labs.redhat.com/orbit/
-
-# workaround for a ld.so problem on alpha w/ orbit-idl
-.if (${MACHINE_ARCH} == "alpha")
-PATCH_LIST=		patch-* sup-alpha-*
-.endif
 
 LIB_DEPENDS=	glib.>=1.2,gmodule.>=1.2::devel/glib \
 		popt::devel/popt

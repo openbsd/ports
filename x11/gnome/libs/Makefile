@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2006/08/01 10:50:19 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2006/10/03 19:46:08 naddy Exp $
 
 COMMENT=		"libraries for the GNOME project"
 
 DISTNAME=		gnome-libs-1.4.2
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 SHARED_LIBS=		art_lgpl	4.0	\
 			gnome		36.3	\
 			gnomesupport	0.0	\
@@ -18,11 +18,6 @@ CATEGORIES=		x11 x11/gnome
 HOMEPAGE=		http://www.gnome.org/
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-libs/1.4/}
-
-# fix for Alpha
-.if (${MACHINE_ARCH} == "alpha")
-PATCH_LIST+=		patch-* sup-alpha-*
-.endif
 
 LIB_DEPENDS=		gdk_imlib.>=19::graphics/imlib \
 			esd.>=2::audio/esound \

@@ -1,19 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2006/09/18 09:40:32 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2006/10/03 19:46:08 naddy Exp $
 
 COMMENT=		"printing framework for GNOME"
 
 DISTNAME=		gnome-print-0.36
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 SHARED_LIBS=		gnomeprint 17.0
 CATEGORIES=		x11/gnome print
 HOMEPAGE=		http://www.gnome.org/projects/gnome-print/
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-print/0.36/}
-
-# fix for Alpha
-.if (${MACHINE_ARCH} == "alpha")
-PATCH_LIST=             patch-* sup-alpha-*
-.endif
 
 LIB_DEPENDS=		gdk_pixbuf.>=2::graphics/gdk-pixbuf \
 			gnome.>=36,art_lgpl.>=4,gnomesupport,gnomeui.>=46::x11/gnome/libs \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2006/09/18 11:40:07 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2006/10/03 19:46:08 naddy Exp $
 
 COMMENT=		"high-performance CORBA Object Request Broker"
 
 DISTNAME=		ORBit2-2.12.2
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 SHARED_LIBS=		ORBit-2			0.0 \
 			ORBit-imodule-2		0.0 \
 			ORBitCosNaming-2	0.0
@@ -20,11 +20,6 @@ WANTLIB=		c glib-2.0 m pthread
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/ORBit2/2.12/}
 EXTRACT_SUFX=		.tar.bz2
-
-# fix for Alpha
-.if (${MACHINE_ARCH} == "alpha")
-PATCH_LIST=		patch-* sup-alpha-*
-.endif
 
 MODULES=		devel/gettext
 
