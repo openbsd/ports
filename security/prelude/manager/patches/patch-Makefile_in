@@ -1,16 +1,16 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2006/07/26 07:07:16 aanriot Exp $
---- Makefile.in.orig	Wed Jun 14 10:47:37 2006
-+++ Makefile.in	Tue Jul 25 19:07:32 2006
-@@ -223,7 +223,7 @@ build_alias = @build_alias@
+$OpenBSD: patch-Makefile_in,v 1.3 2006/10/03 05:17:29 aanriot Exp $
+--- Makefile.in.orig	Thu Aug 24 16:05:20 2006
++++ Makefile.in	Tue Oct  3 06:49:08 2006
+@@ -225,7 +225,7 @@ build_alias = @build_alias@
  build_cpu = @build_cpu@
  build_os = @build_os@
  build_vendor = @build_vendor@
 -configdir = @configdir@
 +configdir = @prefix@/share/examples/prelude-manager
  datadir = @datadir@
+ datarootdir = @datarootdir@
  decode_plugin_dir = @decode_plugin_dir@
- defined = @defined@
-@@ -705,9 +705,6 @@ uninstall-info: uninstall-info-recursive
+@@ -714,9 +714,6 @@ uninstall-info: uninstall-info-recursive
  
  install-data-local:
  	$(INSTALL) -d -m 700 $(DESTDIR)$(configdir);

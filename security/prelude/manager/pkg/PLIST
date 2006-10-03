@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/26 18:04:25 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/10/03 05:17:29 aanriot Exp $
 %%SHARED%%
 bin/prelude-manager
 include/prelude-manager/
@@ -28,12 +28,16 @@ share/examples/prelude-manager/prelude-manager.conf
 share/prelude-manager/
 share/prelude-manager/xmlmod/
 share/prelude-manager/xmlmod/idmef-message.dtd
-@sample /var/prelude/
+@mode 700
+@owner _prelude
+@group _prelude
 @sample /var/prelude/manager/
+@sample /var/run/prelude-manager/
 @sample /var/spool/prelude/
 @sample /var/spool/prelude/prelude-manager/
 @sample /var/spool/prelude-manager/
 @sample /var/spool/prelude-manager/failover/
 @sample /var/spool/prelude-manager/scheduler/
 @extraunexec rm -rf /var/prelude/manager/*
+@extraunexec rm -rf /var/run/prelude-manager/*
 @extraunexec rm -rf /var/spool/prelude/prelude-manager/*
