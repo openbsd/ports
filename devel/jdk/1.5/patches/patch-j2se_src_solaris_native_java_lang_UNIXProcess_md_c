@@ -1,0 +1,32 @@
+$OpenBSD: patch-j2se_src_solaris_native_java_lang_UNIXProcess_md_c,v 1.1 2006/10/03 13:36:28 kurt Exp $
+--- j2se/src/solaris/native/java/lang/UNIXProcess_md.c.orig	Tue Sep 26 13:59:08 2006
++++ j2se/src/solaris/native/java/lang/UNIXProcess_md.c	Tue Sep 26 14:16:50 2006
+@@ -302,7 +302,20 @@ Java_java_lang_UNIXProcess_waitForProces
+ 
+ #if defined(_ALLBSD_SOURCE)
+ 
++#if defined(__OpenBSD__)
+ /*
++ * On OpenBSD closefrom will close only the opened fds without
++ * having to use heuristics and is safe to use when single
++ * threaded.
++ */
++static int
++closeDescriptors(void)
++{
++	return closefrom(3);
++}
++
++#else
++/*
+  * BSDNOTE: This function was returning 'int' originally.  But it assumed
+  * that OS has some intelegent functionality to close opened-only fds
+  * associated with current process.  Since we have to close them lineary
+@@ -342,6 +355,7 @@ int closeDescriptors()
+     }
+     return (0);
+ }
++#endif
+ 
+ #if defined(__FreeBSD__)
+ 

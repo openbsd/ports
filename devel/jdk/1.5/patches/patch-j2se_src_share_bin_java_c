@@ -1,0 +1,21 @@
+$OpenBSD: patch-j2se_src_share_bin_java_c,v 1.3 2006/10/03 13:36:28 kurt Exp $
+--- j2se/src/share/bin/java.c.orig	Mon Sep 25 13:23:45 2006
++++ j2se/src/share/bin/java.c	Mon Sep 25 13:24:09 2006
+@@ -44,17 +44,6 @@
+ #include "manifest_info.h"
+ #include "version_comp.h"
+ 
+-#ifdef __OpenBSD__
+-/*
+- * Disable Junk malloc option. java mprotects portions of the thread
+- * stack. When forking, the child process deallocates the threads stacks
+- * it inheritated from the parent. The junk malloc option then attempts
+- * to write to the deallocated memory and segfaults because its not all
+- * writable. The child proc stays in a SIGSEGV loop when this happens.
+- */
+-char *malloc_options = "j";
+-#endif
+-
+ #ifndef FULL_VERSION
+ #define FULL_VERSION JDK_MAJOR_VERSION "." JDK_MINOR_VERSION
+ #endif
