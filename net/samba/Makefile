@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.68 2006/08/09 12:54:04 bernd Exp $
+# $OpenBSD: Makefile,v 1.69 2006/10/03 14:07:10 mbalmer Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 COMMENT-docs=	"documentation and examples for samba"
 
-DISTNAME=		samba-3.0.21b
-PKGNAME=		${DISTNAME}p3
+DISTNAME=		samba-3.0.23c
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
-SHARED_LIBS=		smbclient	0.2 \
-			msrpc		0.1
+SHARED_LIBS=		smbclient	0.3 \
+			msrpc		0.2
 
 CATEGORIES=	net
 
@@ -131,5 +130,7 @@ post-install:
 	 ${PREFIX}/lib/libsmbclient.so.${LIBsmbclient_VERSION}
 	@ln -s samba/libmsrpc.so.${LIBmsrpc_VERSION} \
 	 ${PREFIX}/lib/libmsrpc.so.${LIBmsrpc_VERSION}
+	@rmdir ${WRKINST}/etc/samba
+	@rmdir ${WRKINST}/var/spool/samba
 
 .include <bsd.port.mk>

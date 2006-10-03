@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2006/02/08 16:20:48 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.27 2006/10/03 14:07:10 mbalmer Exp $
 bin/eventlogadm
 bin/findsmb
 bin/mksmbpasswd
@@ -83,10 +83,12 @@ libexec/swat
 @man man/man8/umount.cifs.8
 @man man/man8/winbindd.8
 share/examples/samba/
-share/examples/samba/smb.conf.default
 @sample ${SYSCONFDIR}/samba/
+share/examples/samba/smb.conf.default
 @sample ${SYSCONFDIR}/samba/smb.conf
 share/swat/
+share/swat/help/
+share/swat/help/welcome-no-samba-doc.html
 share/swat/images/
 share/swat/images/globals.gif
 share/swat/images/home.gif
@@ -102,4 +104,3 @@ share/swat/include/footer.html
 share/swat/include/header.html
 @sample /var/spool/samba/
 %%SHARED%%
-@extraunexec rm -fr /var/spool/samba/
