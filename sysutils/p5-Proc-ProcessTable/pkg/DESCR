@@ -1,0 +1,2 @@
+This module provides a consistent interface to UNIX process table
+information.
