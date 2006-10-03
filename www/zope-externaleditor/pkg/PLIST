@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/11/21 10:32:15 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/10/03 13:46:28 mbalmer Exp $
+@conflict plone-*
 lib/zope/lib/python/Products/ExternalEditor/
 lib/zope/lib/python/Products/ExternalEditor/CHANGES.txt
 lib/zope/lib/python/Products/ExternalEditor/ExternalEditor.py

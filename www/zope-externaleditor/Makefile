@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/11/21 10:32:15 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2006/10/03 13:46:28 mbalmer Exp $
 
 COMMENT=	"Zope product for using an external editor to modify Zope objects"
 
 VERSION=	0.8
 DISTNAME=	ExternalEditor-${VERSION}-src
-PKGNAME=	zope-externaleditor-${VERSION}
+PKGNAME=	zope-externaleditor-${VERSION}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.zope.org/Members/Caseman/ExternalEditor
