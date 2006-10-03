@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.19 2006/05/10 03:21:30 brad Exp $
+@comment $OpenBSD: PLIST-tests,v 1.20 2006/10/03 04:52:03 brad Exp $
 share/mysql-test/
 share/mysql-test/README
 share/mysql-test/cacert.pem
@@ -53,6 +53,7 @@ share/mysql-test/include/master-slave.inc
 share/mysql-test/include/mysqltest-x.inc
 share/mysql-test/include/mysqltest_while.inc
 share/mysql-test/include/ndb_default_cluster.inc
+share/mysql-test/include/not_as_root.inc
 share/mysql-test/include/not_embedded.inc
 share/mysql-test/include/not_openssl.inc
 share/mysql-test/include/not_windows.inc
@@ -130,6 +131,7 @@ share/mysql-test/r/count_distinct.result
 share/mysql-test/r/count_distinct2.result
 share/mysql-test/r/count_distinct3.result
 share/mysql-test/r/create.result
+share/mysql-test/r/create_not_windows.result
 share/mysql-test/r/create_select_tmp.result
 share/mysql-test/r/csv.result
 share/mysql-test/r/ctype_big5.result
@@ -249,6 +251,7 @@ share/mysql-test/r/have_latin2_ch.require
 share/mysql-test/r/have_met_timezone.require
 share/mysql-test/r/have_moscow_leap_timezone.require
 share/mysql-test/r/have_ndb.require
+share/mysql-test/r/have_ndb_status_ok.require
 share/mysql-test/r/have_openssl.require
 share/mysql-test/r/have_outfile.require
 share/mysql-test/r/have_query_cache.require
@@ -258,6 +261,7 @@ share/mysql-test/r/have_symlink.require
 share/mysql-test/r/have_tis620.require
 share/mysql-test/r/have_ucs2.require
 share/mysql-test/r/have_udf.require
+share/mysql-test/r/have_udf_example.require
 share/mysql-test/r/have_ujis.require
 share/mysql-test/r/having.result
 share/mysql-test/r/heap.result
@@ -277,6 +281,7 @@ share/mysql-test/r/index_merge_innodb2.result
 share/mysql-test/r/index_merge_ror.result
 share/mysql-test/r/index_merge_ror_cpk.result
 share/mysql-test/r/information_schema.result
+share/mysql-test/r/information_schema_chmod.result
 share/mysql-test/r/information_schema_db.result
 share/mysql-test/r/information_schema_inno.result
 share/mysql-test/r/init_connect.result
@@ -342,6 +347,7 @@ share/mysql-test/r/ndb_alter_table.result
 share/mysql-test/r/ndb_alter_table2.result
 share/mysql-test/r/ndb_autodiscover.result
 share/mysql-test/r/ndb_autodiscover2.result
+share/mysql-test/r/ndb_autodiscover3.result
 share/mysql-test/r/ndb_basic.result
 share/mysql-test/r/ndb_bitfield.result
 share/mysql-test/r/ndb_blob.result
@@ -362,10 +368,12 @@ share/mysql-test/r/ndb_index_unique.result
 share/mysql-test/r/ndb_insert.result
 share/mysql-test/r/ndb_limit.result
 share/mysql-test/r/ndb_load.result
+share/mysql-test/r/ndb_loaddatalocal.result
 share/mysql-test/r/ndb_lock.result
 share/mysql-test/r/ndb_minmax.result
 share/mysql-test/r/ndb_multi.result
 share/mysql-test/r/ndb_read_multi_range.result
+share/mysql-test/r/ndb_rename.result
 share/mysql-test/r/ndb_replace.result
 share/mysql-test/r/ndb_restore.result
 share/mysql-test/r/ndb_subquery.result
@@ -374,6 +382,7 @@ share/mysql-test/r/ndb_truncate.result
 share/mysql-test/r/ndb_types.result
 share/mysql-test/r/ndb_update.result
 share/mysql-test/r/negation_elimination.result
+share/mysql-test/r/not_as_root.require
 share/mysql-test/r/not_embedded.require
 share/mysql-test/r/not_embedded_server.result
 share/mysql-test/r/not_openssl.require
@@ -430,6 +439,7 @@ share/mysql-test/r/rpl000018.result
 share/mysql-test/r/rpl_EE_error.result
 share/mysql-test/r/rpl_alter.result
 share/mysql-test/r/rpl_auto_increment.result
+share/mysql-test/r/rpl_auto_increment_11932.result
 share/mysql-test/r/rpl_chain_temp_table.result
 share/mysql-test/r/rpl_change_master.result
 share/mysql-test/r/rpl_charset.result
@@ -597,6 +607,7 @@ share/mysql-test/server-cert.pem
 share/mysql-test/server-key.pem
 share/mysql-test/std_data/
 share/mysql-test/std_data/Moscow_leap
+share/mysql-test/std_data/bug15328.cnf
 share/mysql-test/std_data/bug16266.000001
 share/mysql-test/std_data/cacert.pem
 share/mysql-test/std_data/client-cert.pem
@@ -619,6 +630,7 @@ share/mysql-test/std_data/rpl_timezone.dat
 share/mysql-test/std_data/server-cert.pem
 share/mysql-test/std_data/server-key.pem
 share/mysql-test/std_data/trunc_binlog.000001
+share/mysql-test/std_data/untrusted-cacert.pem
 share/mysql-test/std_data/vchar.frm
 share/mysql-test/std_data/warnings_loaddata.dat
 share/mysql-test/std_data/words.dat
@@ -665,6 +677,7 @@ share/mysql-test/t/count_distinct2-master.opt
 share/mysql-test/t/count_distinct2.test
 share/mysql-test/t/count_distinct3.test
 share/mysql-test/t/create.test
+share/mysql-test/t/create_not_windows.test
 share/mysql-test/t/create_select_tmp.test
 share/mysql-test/t/csv.test
 share/mysql-test/t/ctype_big5.test
@@ -777,9 +790,11 @@ share/mysql-test/t/heap_hash.test
 share/mysql-test/t/help.test
 share/mysql-test/t/im_daemon_life_cycle-im.opt
 share/mysql-test/t/im_daemon_life_cycle.imtest
+share/mysql-test/t/im_life_cycle-im.opt
 share/mysql-test/t/im_life_cycle.imtest
 share/mysql-test/t/im_options_set.imtest
 share/mysql-test/t/im_options_unset.imtest
+share/mysql-test/t/im_utils-im.opt
 share/mysql-test/t/im_utils.imtest
 share/mysql-test/t/index_merge.test
 share/mysql-test/t/index_merge_bdb.test
@@ -788,6 +803,7 @@ share/mysql-test/t/index_merge_innodb2.test
 share/mysql-test/t/index_merge_ror.test
 share/mysql-test/t/index_merge_ror_cpk.test
 share/mysql-test/t/information_schema.test
+share/mysql-test/t/information_schema_chmod.test
 share/mysql-test/t/information_schema_db.test
 share/mysql-test/t/information_schema_inno.test
 share/mysql-test/t/init_connect-master.opt
@@ -853,6 +869,7 @@ share/mysql-test/t/myisam-blob-master.opt
 share/mysql-test/t/myisam-blob.test
 share/mysql-test/t/myisam.test
 share/mysql-test/t/mysql.test
+share/mysql-test/t/mysql_client_test.opt
 share/mysql-test/t/mysql_client_test.test
 share/mysql-test/t/mysql_delimiter.sql
 share/mysql-test/t/mysql_delimiter_source.sql
@@ -870,6 +887,7 @@ share/mysql-test/t/ndb_alter_table2.test
 share/mysql-test/t/ndb_autodiscover.test
 share/mysql-test/t/ndb_autodiscover2-master.opt
 share/mysql-test/t/ndb_autodiscover2.test
+share/mysql-test/t/ndb_autodiscover3.test
 share/mysql-test/t/ndb_basic.test
 share/mysql-test/t/ndb_bitfield.test
 share/mysql-test/t/ndb_blob.test
@@ -888,10 +906,12 @@ share/mysql-test/t/ndb_index_unique.test
 share/mysql-test/t/ndb_insert.test
 share/mysql-test/t/ndb_limit.test
 share/mysql-test/t/ndb_load.test
+share/mysql-test/t/ndb_loaddatalocal.test
 share/mysql-test/t/ndb_lock.test
 share/mysql-test/t/ndb_minmax.test
 share/mysql-test/t/ndb_multi.test
 share/mysql-test/t/ndb_read_multi_range.test
+share/mysql-test/t/ndb_rename.test
 share/mysql-test/t/ndb_replace.test
 share/mysql-test/t/ndb_restore.test
 share/mysql-test/t/ndb_subquery.test
@@ -967,6 +987,7 @@ share/mysql-test/t/rpl_EE_error.test
 share/mysql-test/t/rpl_alter.test
 share/mysql-test/t/rpl_auto_increment-master.opt
 share/mysql-test/t/rpl_auto_increment.test
+share/mysql-test/t/rpl_auto_increment_11932.test
 share/mysql-test/t/rpl_chain_temp_table.test
 share/mysql-test/t/rpl_change_master.test
 share/mysql-test/t/rpl_charset.test
@@ -1170,11 +1191,11 @@ share/mysql-test/t/user_limits.test
 share/mysql-test/t/user_var-binlog.test
 share/mysql-test/t/user_var.test
 share/mysql-test/t/varbinary.test
-share/mysql-test/t/variables-master.opt
 share/mysql-test/t/variables.test
 share/mysql-test/t/view.test
 share/mysql-test/t/view_grant.test
 share/mysql-test/t/view_query_cache.test
+share/mysql-test/t/wait_for_process.sh
 share/mysql-test/t/wait_timeout-master.opt
 share/mysql-test/t/wait_timeout.test
 share/mysql-test/t/warnings-master.opt

@@ -1,0 +1,14 @@
+$OpenBSD: patch-config_ac-macros_openssl_m4,v 1.1 2006/10/03 04:52:03 brad Exp $
+--- config/ac-macros/openssl.m4.orig	Tue Oct  3 00:17:53 2006
++++ config/ac-macros/openssl.m4	Tue Oct  3 00:19:47 2006
+@@ -30,8 +30,8 @@ AC_DEFUN([MYSQL_FIND_OPENSSL], [
+         OPENSSL_INCLUDE=-I$incs
+       fi
+       # Test for libssl using all known library file endings
+-      if test -f $d/libssl.a || test -f $d/libssl.so || \
+-         test -f $d/libssl.sl || test -f $d/libssl.dylib ; then
++      if test -f $libs/libssl.a || test -f $libs/libssl.so || \
++         test -f $libs/libssl.sl || test -f $libs/libssl.dylib ; then
+         OPENSSL_LIB=$libs
+       fi
+       ;;

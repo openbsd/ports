@@ -1,0 +1,25 @@
+$OpenBSD: patch-sql_sp_head_h,v 1.1 2006/10/03 04:52:03 brad Exp $
+--- sql/sp_head.h.orig	Fri Aug 25 17:12:29 2006
++++ sql/sp_head.h	Mon Oct  2 11:28:32 2006
+@@ -207,6 +207,10 @@ public:
+   destroy();
+ 
+   bool
++  execute_trigger(THD *thd, const char *db, const char *table,
++                  GRANT_INFO *grant_onfo);
++
++  bool
+   execute_function(THD *thd, Item **args, uint argcount, Field *return_fld);
+ 
+   bool
+@@ -1149,6 +1153,10 @@ sp_change_security_context(THD *thd, sp_
+                            Security_context **backup);
+ void
+ sp_restore_security_context(THD *thd, Security_context *backup);
++
++bool
++set_routine_security_ctx(THD *thd, sp_head *sp, bool is_proc,
++                         Security_context **save_ctx);
+ #endif /* NO_EMBEDDED_ACCESS_CHECKS */
+ 
+ TABLE_LIST *
