@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2006/08/09 09:14:03 bernd Exp $
-
-# fix too intrusive, will be dealt with after 4.0
-BROKEN=		"Missing directories and RUN_DEPENDS"
+# $OpenBSD: Makefile,v 1.18 2006/10/03 10:02:47 mbalmer Exp $
 
 COMMENT=	"content management system built on top of Zope"
 
-DISTNAME=	Plone-2.1.1
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	Plone-2.1.4
+PKGNAME=	${DISTNAME:L}
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.plone.org/
@@ -23,22 +20,12 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=plone/}
 
 MODULES=	www/zope
 
-RUN_DEPENDS=	::www/zope-cmf \
-		::lang/python/${MODZOPE_PYTHON_VERSION},-expat
-
-PLONEITEMS=	CMFPlone CMFQuickInstallerTool GroupUserFolder \
-		PlacelessTranslationService PloneLanguageTool  \
-		PloneTranslations
-
-do-build:
-.for i in ${PLONEITEMS}
-	${PYTHON_BIN} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/${i} || true
-.endfor
+RUN_DEPENDS=	:python-expat-${MODZOPE_PYTHON_VERSION}*:lang/python/${MODZOPE_PYTHON_VERSION},-expat \
+		::graphics/py-Imaging
 
 do-install:
 	${INSTALL_PROGRAM_DIR} ${MODZOPE_PRODUCTSDIR}
-.for p in ${PLONEITEMS}
-	cd ${WRKBUILD}; cp -R ${p} ${MODZOPE_PRODUCTSDIR}
-.endfor
+	cp -R ${WRKBUILD}/* ${MODZOPE_PRODUCTSDIR}
+	rm -r ${MODZOPE_PRODUCTSDIR}/BTreeFolder2
 
 .include <bsd.port.mk>
