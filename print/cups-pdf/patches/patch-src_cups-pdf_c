@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_cups-pdf_c,v 1.1.1.1 2006/10/03 14:21:42 mbalmer Exp $
+--- src/cups-pdf.c.orig	Sun May 14 14:51:17 2006
++++ src/cups-pdf.c	Mon May 15 17:16:40 2006
+@@ -146,11 +146,11 @@ void log_event(char type, char message[4
+     timestring[strlen(timestring)-1]='\0';
+ 
+     if (type == CPERROR) 
+-      sprintf(ctype, "ERROR");
++      snprintf(ctype, sizeof(ctype), "ERROR");
+     else if (type == CPSTATUS)
+-      sprintf(ctype, "STATUS");
++      snprintf(ctype, sizeof(ctype), "STATUS");
+     else
+-      sprintf(ctype, "DEBUG");
++      snprintf(ctype, sizeof(ctype), "DEBUG");
+     if (detail != NULL)  {
+       while (detail[strlen(detail)-1] == '\n') 
+         detail[strlen(detail)-1]='\0';
+@@ -568,7 +568,7 @@ int preparespoolfile(FILE *fpsrc, char *
+   }
+   else {
+     if (conf.label) {
+-      strcpy(buffer, title);
++      strlcpy(buffer, title, sizeof(buffer));
+       snprintf(title, BUFSIZE, "job_%i-%s", job, buffer);
+     }
+     log_event(CPDEBUG, "title successfully retrieved", title);

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_cups-pdf_h,v 1.1.1.1 2006/10/03 14:21:42 mbalmer Exp $
+--- src/cups-pdf.h.orig	Sun May 14 14:51:10 2006
++++ src/cups-pdf.h	Mon May 15 15:17:53 2006
+@@ -67,9 +67,9 @@ struct {
+ void _set_defaults() {
+   snprintf(conf.anondirname,BUFSIZE,"%s","/var/spool/cups-pdf/ANONYMOUS");
+   snprintf(conf.anonuser,BUFSIZE,"%s","nobody");
+-  snprintf(conf.ghostscript,BUFSIZE,"/usr/bin/gs");
++  snprintf(conf.ghostscript,BUFSIZE,"/usr/local/bin/gs");
+   snprintf(conf.gscall,BUFSIZE,"%s","%s -q -dCompatibilityLevel=%s -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -sOutputFile=\"%s\" -dAutoRotatePages=/PageByPage -dAutoFilterColorImages=false -dColorImageFilter=/FlateEncode -dPDFSETTINGS=/prepress -c save pop -f %s");
+-  snprintf(conf.grp,BUFSIZE,"%s","lp");
++  snprintf(conf.grp,BUFSIZE,"%s","_cups");
+   snprintf(conf.gstmp,BUFSIZE,"%s","/var/tmp");
+   snprintf(conf.log,BUFSIZE,"%s","/var/log/cups");
+   snprintf(conf.pdfver,BUFSIZE,"%s","1.4");
