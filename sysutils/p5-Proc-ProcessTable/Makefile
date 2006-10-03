@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2006/10/03 16:26:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2006/10/03 21:34:18 steven Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"interface to the system's process table"
 
 DISTNAME=	Proc-ProcessTable-0.41
-PKGNAME=	p5-${DISTNAME}
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	sysutils perl5
 
 MAINTAINER=	William Yodlowsky <bsd@openbsd.rutgers.edu>
