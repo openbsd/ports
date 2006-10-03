@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.226 2006/09/23 15:41:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.227 2006/10/03 13:43:46 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -147,6 +147,7 @@
      SUBDIR += php5
      SUBDIR += phpicalendar
      SUBDIR += phpldapadmin
+     SUBDIR += phplist
      SUBDIR += phpmyadmin
      SUBDIR += phppgadmin
      SUBDIR += plans
