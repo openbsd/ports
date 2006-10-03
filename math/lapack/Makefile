@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/08/03 20:04:51 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/10/03 10:26:49 steven Exp $
 
 COMMENT=	"library of Fortran 77 linear algebra subroutines"
 
@@ -37,7 +37,7 @@ REGRESS_FLAGS=	OPTS= LOADOPTS= \
 		TMGLIB=libtmg.a \
 		BLASLIB=${LOCALBASE}/lib/libblas.a
 
-pre-build:
+post-build:
 	@rm -f ${WRKDIR}/man/manl/zbcon.l
 	@perl -pi -e 's/(\.TH\s+\w+)\s+l(.*)"\)"/\1 3\2/' \
 		${WRKDIR}/man/manl/*.l
