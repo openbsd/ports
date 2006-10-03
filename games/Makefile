@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2006/07/30 09:13:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.126 2006/10/03 00:04:14 msf Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -73,6 +73,7 @@
      SUBDIR += openttd
      SUBDIR += pathological
      SUBDIR += prboom
+     SUBDIR += qgo
      SUBDIR += qstat
      SUBDIR += quake
      SUBDIR += quake,
