@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.4 2006/10/03 18:12:22 jasper Exp $
+%%SHARED%%
+${P5ARCH}/
+${P5ARCH}/Proc/
+${P5ARCH}/Proc/Killall.pm
+${P5ARCH}/Proc/Killfam.pm
+${P5ARCH}/Proc/ProcessTable/
+${P5ARCH}/Proc/ProcessTable.pm
+${P5ARCH}/Proc/ProcessTable/Process.pm
+${P5ARCH}/Proc/example.pl
+${P5ARCH}/auto/
+${P5ARCH}/auto/Proc/
+${P5ARCH}/auto/Proc/ProcessTable/
+${P5ARCH}/auto/Proc/ProcessTable/Process/
+${P5ARCH}/auto/Proc/ProcessTable/Process/autosplit.ix
+${P5ARCH}/auto/Proc/ProcessTable/ProcessTable.bs
+@man man/man3p/Proc::Killall.3p
+@man man/man3p/Proc::Killfam.3p
+@man man/man3p/Proc::ProcessTable.3p
+@man man/man3p/Proc::ProcessTable::Process.3p
