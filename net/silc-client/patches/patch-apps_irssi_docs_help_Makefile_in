@@ -1,0 +1,19 @@
+$OpenBSD: patch-apps_irssi_docs_help_Makefile_in,v 1.1 2006/10/03 18:34:50 brad Exp $
+--- apps/irssi/docs/help/Makefile.in.orig	Fri Jan  6 08:46:28 2006
++++ apps/irssi/docs/help/Makefile.in	Tue Oct  3 14:20:37 2006
+@@ -403,12 +403,12 @@ distclean-libtool:
+ uninstall-info-am:
+ install-helpDATA: $(help_DATA)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(helpdir)" || $(mkdir_p) "$(DESTDIR)$(helpdir)"
++	test -z "$(helpdir)" || $(mkdir_p) "$(helpdir)"
+ 	@list='$(help_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f=$(am__strip_dir) \
+-	  echo " $(helpDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(helpdir)/$$f'"; \
+-	  $(helpDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(helpdir)/$$f"; \
++	  echo " $(helpDATA_INSTALL) '$$d$$p' '$(helpdir)/$$f'"; \
++	  $(helpDATA_INSTALL) "$$d$$p" "$(helpdir)/$$f"; \
+ 	done
+ 
+ uninstall-helpDATA:

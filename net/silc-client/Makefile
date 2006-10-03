@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2006/09/18 05:41:10 ray Exp $
+# $OpenBSD: Makefile,v 1.36 2006/10/03 18:34:50 brad Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"Secure Internet Live Conferencing (SILC) client"
 
-DISTNAME=	silc-client-1.0.2
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	silc-client-1.0.3
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.silcnet.org/
@@ -37,7 +36,6 @@ SUBST_VARS=	CONFDIR
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.59
-MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/irssi ${WRKSRC}/lib/silcmath/mpi
 CONFIGURE_ARGS+= --enable-ipv6 \
 		 --with-helpdir=${PREFIX}/share/silc/help \
 		 --with-docdir=${PREFIX}/share/doc/silc \
@@ -53,7 +51,5 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/silc
 	@mv -f ${PREFIX}/share/doc/silc/example_silc.conf \
 		${PREFIX}/share/examples/silc/silc.conf
-	${INSTALL_DATA} ${WRKSRC}/doc/silcalgs.conf \
-		${PREFIX}/share/examples/silc
 
 .include <bsd.port.mk>

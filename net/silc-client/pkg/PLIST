@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.17 2005/04/07 15:38:17 brad Exp $
+@comment $OpenBSD: PLIST,v 1.18 2006/10/03 18:34:50 brad Exp $
+@conflict irssi-silc-*
 bin/silc
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/
@@ -18,15 +19,11 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Silc/Silc.bs
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.bs
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.so
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/perllocal.pod
-@man man/man1/silc.1
 @comment modules/
 share/doc/silc/
 @comment share/doc/silc/CHANGES
 @comment share/doc/silc/COPYING
 @comment share/doc/silc/CREDITS
-@comment share/doc/silc/CodingStyle
-share/doc/silc/FAQ
 @comment share/doc/silc/INSTALL
 share/doc/silc/README
 @comment share/doc/silc/TODO
@@ -45,7 +42,6 @@ share/examples/silc/
 @sample ${CONFDIR}/
 share/examples/silc/silc.conf
 @sample ${CONFDIR}/silc.conf
-share/examples/silc/silcalgs.conf
 share/silc/
 share/silc/help/
 share/silc/help/action

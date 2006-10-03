@@ -1,0 +1,11 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2006/10/03 18:34:50 brad Exp $
+--- doc/Makefile.in.orig	Fri Jan  6 08:46:28 2006
++++ doc/Makefile.in	Tue Oct  3 14:20:37 2006
+@@ -234,6 +234,7 @@ target_os = @target_os@
+ target_vendor = @target_vendor@
+ with_irssi_FALSE = @with_irssi_FALSE@
+ with_irssi_TRUE = @with_irssi_TRUE@
++docdir = $(DESTDIR)$(DOCDIR)
+ AUTOMAKE_OPTIONS = 1.0 no-dependencies foreign
+ all: all-am
+ 

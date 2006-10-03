@@ -1,0 +1,19 @@
+$OpenBSD: patch-apps_irssi_docs_Makefile_in,v 1.1 2006/10/03 18:34:50 brad Exp $
+--- apps/irssi/docs/Makefile.in.orig	Fri Jan  6 08:46:28 2006
++++ apps/irssi/docs/Makefile.in	Tue Oct  3 14:20:37 2006
+@@ -313,12 +313,12 @@ distclean-libtool:
+ uninstall-info-am:
+ install-docDATA: $(doc_DATA)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(docdir)" || $(mkdir_p) "$(DESTDIR)$(docdir)"
++	test -z "$(docdir)" || $(mkdir_p) "$(docdir)"
+ 	@list='$(doc_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f=$(am__strip_dir) \
+-	  echo " $(docDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
+-	  $(docDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
++	  echo " $(docDATA_INSTALL) '$$d$$p' '$(docdir)/$$f'"; \
++	  $(docDATA_INSTALL) "$$d$$p" "$(docdir)/$$f"; \
+ 	done
+ 
+ uninstall-docDATA:
