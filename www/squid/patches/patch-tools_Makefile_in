@@ -1,0 +1,11 @@
+$OpenBSD: patch-tools_Makefile_in,v 1.1 2006/10/03 05:00:49 brad Exp $
+--- tools/Makefile.in.orig	Fri Sep 22 05:09:50 2006
++++ tools/Makefile.in	Tue Sep 26 19:32:49 2006
+@@ -65,6 +65,7 @@ PROGRAMS = $(bin_PROGRAMS) $(libexec_PRO
+ am_cachemgr__CGIEXT__OBJECTS = cachemgr__CGIEXT_-cachemgr.$(OBJEXT)
+ cachemgr__CGIEXT__OBJECTS = $(am_cachemgr__CGIEXT__OBJECTS)
+ cachemgr__CGIEXT__LDADD = $(LDADD)
++cachemgr__CGIEXT__LDFLAGS = -static
+ am__DEPENDENCIES_1 =
+ cachemgr__CGIEXT__DEPENDENCIES = $(am__DEPENDENCIES_1)
+ am_cossdump_OBJECTS = cossdump.$(OBJEXT)

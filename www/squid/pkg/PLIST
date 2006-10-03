@@ -1,25 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.24 2006/04/13 23:46:56 brad Exp $
+@comment $OpenBSD: PLIST,v 1.25 2006/10/03 05:00:49 brad Exp $
 @newgroup _squid:515
 @newuser _squid:515:_squid:daemon:Squid Account:/nonexistent:/sbin/nologin
-bin/RunAccel
 bin/RunCache
 bin/squidclient
 libexec/cachemgr.cgi
 libexec/digest_pw_auth
-libexec/diskd
+libexec/diskd-daemon
 libexec/ip_user_check
 libexec/ncsa_auth
 libexec/squid_unix_group
 libexec/unlinkd
 libexec/yp_auth
 @man man/man8/cachemgr.cgi.8
+@man man/man8/ncsa_auth.8
 @man man/man8/squid.8
 @man man/man8/squid_unix_group.8
 sbin/squid
 share/examples/squid/
 @sample ${SYSCONFDIR}/squid/
-share/examples/squid/cachemgr.conf
-@sample ${SYSCONFDIR}/squid/cachemgr.conf
 share/examples/squid/errors/
 @sample share/squid/errors/
 share/examples/squid/errors/Azerbaijani/

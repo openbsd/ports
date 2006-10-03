@@ -1,12 +1,12 @@
-$OpenBSD: patch-errors_Makefile_in,v 1.7 2005/10/29 23:26:39 brad Exp $
---- errors/Makefile.in.orig	Wed Sep 28 16:57:16 2005
-+++ errors/Makefile.in	Tue Oct 25 21:27:32 2005
-@@ -121,7 +121,7 @@ am__quote = @am__quote@
- install_sh = @install_sh@
- makesnmplib = @makesnmplib@
- 
+$OpenBSD: patch-errors_Makefile_in,v 1.8 2006/10/03 05:00:49 brad Exp $
+--- errors/Makefile.in.orig	Fri Sep 22 05:09:37 2006
++++ errors/Makefile.in	Tue Sep 26 19:32:48 2006
+@@ -228,7 +228,7 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
 -errordir = $(datadir)/errors
 +errordir = $(prefix)/share/examples/squid/errors
- 
  DEFAULT_ERROR_DIR = $(errordir)
- 
+ INSTALL_LANGUAGES = @ERR_LANGUAGES@
+ LANGUAGES = \

@@ -1,104 +1,93 @@
-$OpenBSD: patch-src_Makefile_in,v 1.10 2005/10/29 23:26:39 brad Exp $
---- src/Makefile.in.orig	Wed Sep 28 16:57:21 2005
-+++ src/Makefile.in	Wed Oct 26 21:42:47 2005
-@@ -33,7 +33,7 @@ bindir = @bindir@
+$OpenBSD: patch-src_Makefile_in,v 1.11 2006/10/03 05:00:49 brad Exp $
+--- src/Makefile.in.orig	Fri Sep 22 05:09:48 2006
++++ src/Makefile.in	Tue Sep 26 19:32:48 2006
+@@ -223,7 +223,7 @@ CPP = @CPP@
+ CPPFLAGS = @CPPFLAGS@
+ CRYPTLIB = @CRYPTLIB@
+ CYGPATH_W = @CYGPATH_W@
+-DEFS = @DEFS@ -DDEFAULT_CONFIG_FILE=\"$(DEFAULT_CONFIG_FILE)\"
++DEFS = @DEFS@ -DDEFAULT_CONFIG_FILE=\"$(sysconfdir)/squid.conf\"
+ DEPDIR = @DEPDIR@
+ DIGEST_AUTH_HELPERS = @DIGEST_AUTH_HELPERS@
+ ECHO_C = @ECHO_C@
+@@ -372,7 +372,7 @@ prefix = @prefix@
+ program_transform_name = @program_transform_name@
  sbindir = @sbindir@
- libexecdir = @libexecdir@
- datadir = @datadir@
+ sharedstatedir = @sharedstatedir@
 -sysconfdir = @sysconfdir@
 +sysconfdir = @sysconfdir@/squid
- sharedstatedir = @sharedstatedir@
- localstatedir = @localstatedir@
- libdir = @libdir@
-@@ -380,9 +380,9 @@ EXTRA_DIST = \
+ target_alias = @target_alias@
+ @USE_DNSSERVER_FALSE@DNSSOURCE = dns_internal.c
+ @USE_DNSSERVER_TRUE@DNSSOURCE = dns.c
+@@ -601,8 +601,8 @@ EXTRA_DIST = \
  DEFAULT_HTTP_PORT = @CACHE_HTTP_PORT@
  DEFAULT_ICP_PORT = @CACHE_ICP_PORT@
  DEFAULT_PREFIX = $(prefix)
 -DEFAULT_CONFIG_FILE = $(sysconfdir)/squid.conf
--DEFAULT_CACHEMGR_CONFIG = $(sysconfdir)/cachemgr.conf
 -DEFAULT_MIME_TABLE = $(sysconfdir)/mime.conf
 +DEFAULT_CONFIG_FILE = $(prefix)/share/examples/squid/squid.conf
-+DEFAULT_CACHEMGR_CONFIG = $(prefix)/share/examples/squid/cachemgr.conf
 +DEFAULT_MIME_TABLE = $(prefix)/share/examples/squid/mime.conf
  DEFAULT_DNSSERVER = $(libexecdir)/`echo dnsserver | sed '$(transform);s/$$/$(EXEEXT)/'`
  DEFAULT_LOG_PREFIX = $(localstatedir)/logs
  DEFAULT_CACHE_LOG = $(DEFAULT_LOG_PREFIX)/cache.log
-@@ -397,7 +397,7 @@ DEFAULT_ICON_DIR = $(datadir)/icons
- DEFAULT_ERROR_DIR = $(datadir)/errors/@ERR_DEFAULT_LANGUAGE@
- DEFAULT_MIB_PATH = $(datadir)/mib.txt
- 
--DEFS = @DEFS@ -DDEFAULT_CONFIG_FILE=\"$(DEFAULT_CONFIG_FILE)\"
-+DEFS = @DEFS@ -DDEFAULT_CONFIG_FILE=\"$(sysconfdir)/squid.conf\"
- 
- 
- # Don't automatically uninstall config files
-@@ -451,7 +451,7 @@ am_cachemgr__CGIEXT__OBJECTS = cachemgr_
- cachemgr__CGIEXT__OBJECTS = $(am_cachemgr__CGIEXT__OBJECTS)
- cachemgr__CGIEXT__LDADD = $(LDADD)
- cachemgr__CGIEXT__DEPENDENCIES =
--cachemgr__CGIEXT__LDFLAGS =
-+cachemgr__CGIEXT__LDFLAGS = -static
- am_cf_gen_OBJECTS = cf_gen.$(OBJEXT)
- cf_gen_OBJECTS = $(am_cf_gen_OBJECTS)
- cf_gen_LDADD = $(LDADD)
-@@ -860,37 +860,37 @@ CCDEPMODE = @CCDEPMODE@
+@@ -861,37 +861,37 @@ distclean-compile:
  uninstall-info-am:
  install-dataDATA: $(data_DATA)
  	@$(NORMAL_INSTALL)
--	$(mkinstalldirs) $(DESTDIR)$(datadir)
-+	$(mkinstalldirs) $(DESTDIR)$(prefix)/share/examples/squid
+-	test -z "$(datadir)" || $(mkdir_p) "$(DESTDIR)$(datadir)"
++	test -z "$(datadir)" || $(mkdir_p) "$(DESTDIR)$(prefix)/share/examples/squid"
  	@list='$(data_DATA)'; for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
- 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
--	  echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(datadir)/$$f"; \
--	  $(INSTALL_DATA) $$d$$p $(DESTDIR)$(datadir)/$$f; \
-+	  echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(prefix)/share/examples/squid/$$f"; \
-+	  $(INSTALL_DATA) $$d$$p $(DESTDIR)$(prefix)/share/examples/squid/$$f; \
+ 	  f=$(am__strip_dir) \
+-	  echo " $(dataDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(datadir)/$$f'"; \
+-	  $(dataDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(datadir)/$$f"; \
++	  echo " $(dataDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(prefix)/share/examples/squid/$$f'"; \
++	  $(dataDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(prefix)/share/examples/squid/$$f"; \
  	done
  
  uninstall-dataDATA:
  	@$(NORMAL_UNINSTALL)
  	@list='$(data_DATA)'; for p in $$list; do \
- 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
--	  echo " rm -f $(DESTDIR)$(datadir)/$$f"; \
--	  rm -f $(DESTDIR)$(datadir)/$$f; \
-+	  echo " rm -f $(DESTDIR)$(prefix)/share/examples/squid/$$f"; \
-+	  rm -f $(DESTDIR)$(prefix)/share/examples/squid/$$f; \
+ 	  f=$(am__strip_dir) \
+-	  echo " rm -f '$(DESTDIR)$(datadir)/$$f'"; \
+-	  rm -f "$(DESTDIR)$(datadir)/$$f"; \
++	  echo " rm -f '$(DESTDIR)$(prefix)/share/examples/squid/$$f'"; \
++	  rm -f "$(DESTDIR)$(prefix)/share/examples/squid/$$f"; \
  	done
  install-sysconfDATA: $(sysconf_DATA)
  	@$(NORMAL_INSTALL)
--	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
-+	$(mkinstalldirs) $(DESTDIR)$(prefix)/share/examples/squid
+-	test -z "$(sysconfdir)" || $(mkdir_p) "$(DESTDIR)$(sysconfdir)"
++	test -z "$(DESTDIR)$(prefix)/share/examples/squid" || $(mkdir_p) "$(DESTDIR)$(prefix)/share/examples/squid"
  	@list='$(sysconf_DATA)'; for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
- 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
--	  echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(sysconfdir)/$$f"; \
--	  $(INSTALL_DATA) $$d$$p $(DESTDIR)$(sysconfdir)/$$f; \
-+	  echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(prefix)/share/examples/squid/$$f"; \
-+	  $(INSTALL_DATA) $$d$$p $(DESTDIR)$(prefix)/share/examples/squid/$$f; \
+ 	  f=$(am__strip_dir) \
+-	  echo " $(sysconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(sysconfdir)/$$f'"; \
+-	  $(sysconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(sysconfdir)/$$f"; \
++	  echo " $(sysconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(prefix)/share/examples/squid/$$f'"; \
++	  $(sysconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(prefix)/share/examples/squid/$$f"; \
  	done
  
  uninstall-sysconfDATA:
  	@$(NORMAL_UNINSTALL)
  	@list='$(sysconf_DATA)'; for p in $$list; do \
- 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
--	  echo " rm -f $(DESTDIR)$(sysconfdir)/$$f"; \
--	  rm -f $(DESTDIR)$(sysconfdir)/$$f; \
-+	  echo " rm -f $(DESTDIR)$(prefix)/share/examples/squid/$$f"; \
-+	  rm -f $(DESTDIR)$(prefix)/share/examples/squid/$$f; \
+ 	  f=$(am__strip_dir) \
+-	  echo " rm -f '$(DESTDIR)$(sysconfdir)/$$f'"; \
+-	  rm -f "$(DESTDIR)$(sysconfdir)/$$f"; \
++	  echo " rm -f '$(DESTDIR)$(prefix)/share/examples/squid/$$f'"; \
++	  rm -f "$(DESTDIR)$(prefix)/share/examples/squid/$$f"; \
  	done
  
  # This directory's subdirectories are mostly independent; you can cd
-@@ -1024,7 +1024,7 @@ check: check-recursive
+@@ -1074,7 +1074,7 @@ check: $(BUILT_SOURCES)
  all-am: Makefile $(PROGRAMS) $(DATA)
  installdirs: installdirs-recursive
  installdirs-am:
--	$(mkinstalldirs) $(DESTDIR)$(bindir) $(DESTDIR)$(libexecdir) $(DESTDIR)$(sbindir) $(DESTDIR)$(datadir) $(DESTDIR)$(sysconfdir)
-+	$(mkinstalldirs) $(DESTDIR)$(bindir) $(DESTDIR)$(libexecdir) $(DESTDIR)$(sbindir) $(DESTDIR)$(prefix)/share/examples/squid
- 
- install: install-recursive
- install-exec: install-exec-recursive
-@@ -1150,7 +1150,7 @@ cf.data: cf.data.pre Makefile
+-	for dir in "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(datadir)" "$(DESTDIR)$(sysconfdir)"; do \
++	for dir in "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(DESTDIR)$(prefix)/share/examples/squid"; do \
+ 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+ 	done
+ install: $(BUILT_SOURCES)
+@@ -1212,7 +1212,7 @@ cf.data: cf.data.pre Makefile
  	sed "\
  	s%@DEFAULT_HTTP_PORT@%$(DEFAULT_HTTP_PORT)%g;\
  	s%@DEFAULT_ICP_PORT@%$(DEFAULT_ICP_PORT)%g;\

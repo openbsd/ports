@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_cf_data_pre,v 1.19 2005/10/29 23:26:39 brad Exp $
---- src/cf.data.pre.orig	Thu Oct 20 13:28:08 2005
-+++ src/cf.data.pre	Tue Oct 25 21:27:32 2005
-@@ -2482,7 +2482,7 @@ DOC_END
+$OpenBSD: patch-src_cf_data_pre,v 1.20 2006/10/03 05:00:49 brad Exp $
+--- src/cf.data.pre.orig	Fri Sep 22 02:36:51 2006
++++ src/cf.data.pre	Tue Sep 26 19:30:13 2006
+@@ -3280,7 +3280,7 @@ DOC_END
  
  NAME: cache_effective_user
  TYPE: string
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_cf_data_pre,v 1.19 2005/10/29 23:26:39 brad Exp $
  LOC: Config.effectiveUser
  DOC_START
  	If you start Squid as root, it will change its effective/real
-@@ -2497,7 +2497,7 @@ DOC_END
+@@ -3295,7 +3295,7 @@ DOC_END
  
  NAME: cache_effective_group
  TYPE: string

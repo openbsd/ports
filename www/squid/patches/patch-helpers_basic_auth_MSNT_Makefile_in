@@ -1,12 +1,12 @@
-$OpenBSD: patch-helpers_basic_auth_MSNT_Makefile_in,v 1.1 2002/08/23 14:10:20 brad Exp $
---- helpers/basic_auth/MSNT/Makefile.in.orig	Fri Aug 23 09:57:08 2002
-+++ helpers/basic_auth/MSNT/Makefile.in	Fri Aug 23 09:57:36 2002
-@@ -33,7 +33,7 @@ bindir = @bindir@
+$OpenBSD: patch-helpers_basic_auth_MSNT_Makefile_in,v 1.2 2006/10/03 05:00:49 brad Exp $
+--- helpers/basic_auth/MSNT/Makefile.in.orig	Fri Sep 22 05:09:39 2006
++++ helpers/basic_auth/MSNT/Makefile.in	Tue Sep 26 19:32:48 2006
+@@ -262,7 +262,7 @@ prefix = @prefix@
+ program_transform_name = @program_transform_name@
  sbindir = @sbindir@
- libexecdir = @libexecdir@
- datadir = @datadir@
+ sharedstatedir = @sharedstatedir@
 -sysconfdir = @sysconfdir@
 +sysconfdir = @sysconfdir@/squid
- sharedstatedir = @sharedstatedir@
- localstatedir = @localstatedir@
- libdir = @libdir@
+ target_alias = @target_alias@
+ msnt_auth_SOURCES = md4.c rfcnb-io.c rfcnb-util.c session.c msntauth.c \
+ 		msntauth.h smbdes.c smbencrypt.c smblib-util.c smblib.c \
