@@ -1,0 +1,30 @@
+$OpenBSD: patch-public_html_lists_config_config_php,v 1.1.1.1 2006/10/03 13:42:11 mbalmer Exp $
+--- public_html/lists/config/config.php.orig	Wed Sep 28 02:55:05 2005
++++ public_html/lists/config/config.php	Fri Apr 14 10:29:18 2006
+@@ -16,7 +16,7 @@ General settings for language and databa
+ # to find your language
+ # this is the language for the frontend pages. In the admin pages you can
+ # choose your language by using the dropdown in the pages.
+-$language_module = "english.inc";
++$GLOBALS['language_module'] = "english.inc";
+ 
+ # what is your Mysql database server
+ $database_host = "localhost";
+@@ -474,7 +474,7 @@ define("MANUALLY_PROCESS_RSS",1);
+ # the FCKeditor is now included in PHPlist, but the use of it is experimental
+ # if it's not working for you, set this to 0
+ # NOTE: If you enable TinyMCE please disable FCKeditor and vice-versa.
+-define("USEFCK",1);
++define("USEFCK",0);
+ 
+ # If you want to upload images to the FCKeditor, you need to specify the location
+ # of the directory where the images go. This needs to be writable by the webserver,
+@@ -620,7 +620,7 @@ $tmpdir = '/tmp';
+ # select the database module to use
+ # anyone wanting to submit other database modules is
+ # very welcome!
+-$database_module = "mysql.inc";
++$GLOBALS['database_module'] = "mysql.inc";
+ 
+ # you can store sessions in the database instead of the default place by assigning
+ # a tablename to this value. The table will be created and will not use any prefixes

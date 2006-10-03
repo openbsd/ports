@@ -1,0 +1,18 @@
+$OpenBSD: patch-public_html_lists_texts_english_inc,v 1.1.1.1 2006/10/03 13:42:11 mbalmer Exp $
+--- public_html/lists/texts/english.inc.orig	Mon May  8 15:41:33 2006
++++ public_html/lists/texts/english.inc	Mon May  8 15:42:05 2006
+@@ -82,6 +82,7 @@ $strForgotPassword     = 'Forgot Passwor
+ $strPassword           = 'Password';
+ $strPassword2           = 'Confirm Password';
+ $strPasswordsNoMatch    = 'Passwords are not the same';
++$strConfirmEmail        = 'Confirm email';
+ $strEmailsNoMatch     = 'Email Addresses you entered do not match';
+ $strInvalidPassword     = 'Error: invalid email or password';
+ $strPasswordSent        = 'Your password has been sent to your by email. You should receive it in the next few minutes';
+@@ -114,4 +115,4 @@ $strForwardFooter = 'This message has be
+   To subscribe to this newsletter go to';
+ $strForward = 'Forward';
+ $strFwd = 'Fwd'; # short version of forward for email subject
+-?>
+\ No newline at end of file
++?>

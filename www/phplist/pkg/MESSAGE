@@ -1,0 +1,16 @@
+PHPlist has been installed into ${INSTDIR}
+
+You should point this to the DocumentRoot of your web-server:
+  # ln -s ../lists /var/www/htdocs/lists
+(make sure you use a relative symlink since Apache is chrooted)
+
+Basic configuration of PHPlist cwmust be is done by editing the file
+${INSTDIR}/config/config.php.
+
+Enable the MySQL and IMAP extensions of PHP5 and create a database for phplist
+named phplistdb with username/password phplist/phplist and access the admin
+interface of PHPlist at
+
+http://localhost/lists/admin/
+
+Make sure PHP5 can connect to the MySQL server through a local socket.

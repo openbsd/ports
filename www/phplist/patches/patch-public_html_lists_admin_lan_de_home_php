@@ -1,0 +1,19 @@
+$OpenBSD: patch-public_html_lists_admin_lan_de_home_php,v 1.1.1.1 2006/10/03 13:42:11 mbalmer Exp $
+--- public_html/lists/admin/lan/de/home.php.orig	Sat Mar 25 12:06:47 2006
++++ public_html/lists/admin/lan/de/home.php	Sat Mar 25 12:07:03 2006
+@@ -62,7 +62,7 @@ $lan = array(
+   'adminattributes' => 'Attribute',
+   'send' => 'Neue Nachricht',
+   'templates' => 'Templates',
+-  'processqueue' => 'Warteschlage',
++  'processqueue' => 'Warteschlange',
+   'processbounces' => 'Retouren abholen',
+   'getrss' => 'RSS-Meldungen importieren',
+   'viewrss' => 'RSS-Meldungen anzeigen',
+@@ -76,4 +76,4 @@ $lan = array(
+   
+ );
+ 
+-?>
+\ No newline at end of file
++?>

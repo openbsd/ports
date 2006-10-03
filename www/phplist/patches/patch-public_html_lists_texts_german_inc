@@ -1,0 +1,106 @@
+$OpenBSD: patch-public_html_lists_texts_german_inc,v 1.1.1.1 2006/10/03 13:42:11 mbalmer Exp $
+--- public_html/lists/texts/german.inc.orig	Sat Mar 25 12:15:53 2006
++++ public_html/lists/texts/german.inc	Sat Mar 25 12:20:21 2006
+@@ -16,7 +16,7 @@ $strSubmit              = 'Anmelden bei 
+ $strNotAvailable        = 'Derzeit sind keine Listen verf&uuml;gbar';
+ $strEnterName           = 'Bitte geben Sie ihren Namen ein';
+ $strEnterEmail          = 'Bitte geben Sie ihre E-Mail Adresse ein';
+-$strInvalidHostInEmail  = 'Entschuldigung, aber E-Mail an diese Adresse ist unzustellbar. Bitte prüfen Sie Ihre Adresse erneut.';
++$strInvalidHostInEmail  = 'Entschuldigung, aber E-Mail an diese Adresse ist unzustellbar. Bitte pr&uuml;fen Sie Ihre Adresse erneut.';
+ $strEnterList           = 'Bitte w&auml;hlen Sie ein Liste aus, bei der Sie sich anmelden wollen';
+ $strPleaseEnter		= 'Bitte geben Sie ein';
+ # the thanks message can contain placeholders
+@@ -25,7 +25,7 @@ $strThanks              = 'Danke f&uuml;
+ # the EmailConfirmation message can contain placeholders
+ #$strEmailConfirmation   = 'Your email [email] has been added to our system. You will be e-mailed shortly with confirmation of the lists you have subscribed to.';
+ $strEmailConfirmation   = 'Sie erhalten in k&uuml;rze eine E-Mail mit der Best&auml;tigung der Listen bei denen Sie sich angemeldet haben.';
+-$strEmailFailed		= 'Entschuldigung, aber die E-Mail mit der Bestätigungsanfrage wurde nicht versandt, bitte drücken Sie Aktualisieren und versuchen Sie es nochmals.';
++$strEmailFailed		= 'Entschuldigung, aber die E-Mail mit der Best&auml;tigungsanfrage wurde nicht versandt, bitte dr&uuml;cken Sie Aktualisieren und versuchen Sie es nochmals.';
+ $strUnsubscribeTitle    = 'Abmelden von unseren Mailinglisten';
+ $strUnsubscribeDone     = 'Sie wurden von den Mailinglisten die Sie ausgew&auml;hlt haben abgemeldet, eine Best&auml;tigung erhalten Sie in k&uuml;rze per E-Mail.';
+ $strBack                = 'Zur&uuml;ck';
+@@ -45,56 +45,56 @@ $strUserAlreadyInitialised = 'Ihre Passw
+ $strConfirmFailInfo	= 'Es trat ein Fehler auf. Details:';
+ $strPreferHTMLEmail     = 'Ich bevorzuge E-Mails im HTML-Format';
+ $strPreferTextEmail     = 'Ich bevorzuge E-Mails im Text-Format';
+-$strPreferredFormat	= 'Bevorzugtes Format für E-Mails:';
++$strPreferredFormat	= 'Bevorzugtes Format f&uuml;r E-Mails:';
+ $strText                = 'Text';
+ $strHTML                = 'HTML';
+-$strPreferencesTitle    = 'Einstellungen Ändern';
+-$strPreferencesInfo     = 'Bitte bestätigen Sie, daß die folgenden Informationen korrekt sind und drücken Sie den Update-Button';
++$strPreferencesTitle    = 'Einstellungen ÄAuml;ndern';
++$strPreferencesInfo     = 'Bitte best&auml;tigen Sie, daß die folgenden Informationen korrekt sind und dr&uuml;cken Sie den Update-Button';
+ $strUpdatePreferences   = 'Update';
+-$strPreferencesEmailChanged = 'Ihre E-Mail wurde geändert. Bitte besuchen Sie den Link, welcher in der  E-Mail genannt wird, die Sie an Ihre neue Adresse erhalten.';
+-$strPreferencesNotificationSent = 'Sie werden eine E-Mail mit den Änderungen erhalten';
+-$strPreferencesUpdated = 'Danke für Ihre Änderungen. Wir haben Ihre Informationen aktualisiert.';
+-$strClickHere          = 'Drücken Sie hier';
++$strPreferencesEmailChanged = 'Ihre E-Mail wurde ge&auml;ndert. Bitte besuchen Sie den Link, welcher in der  E-Mail genannt wird, die Sie an Ihre neue Adresse erhalten.';
++$strPreferencesNotificationSent = 'Sie werden eine E-Mail mit den ÄAuml;nderungen erhalten';
++$strPreferencesUpdated = 'Danke f&uuml;r Ihre ÄAuml;nderungen. Wir haben Ihre Informationen aktualisiert.';
++$strClickHere          = 'Dr&uuml;cken Sie hier';
+ $strThisLink           = 'dieser Link';
+ $strToUnsubscribe      = 'Um sich aus der Liste auszutragen, besuchen Sie';
+-$strToUpdate           = 'Um Ihre Einstellungen zu ändern, besuchen Sie';
++$strToUpdate           = 'Um Ihre Einstellungen zu &auml;ndern, besuchen Sie';
+ $strSendHTML           = 'Sende HTML E-Mail';
+ $strYes                = 'Ja';
+ $strNo                 = 'Nein';
+ $strUnsubscribe        = 'Abmelden';
+ $strAllMailinglists    = 'Alle Mailinglisten';
+-$strAttachmentIntro    = 'Diese Nachricht beinhaltet Anhänge, die mit einem Webbrowser betrachtet werden können:';
++$strAttachmentIntro    = 'Diese Nachricht beinhaltet Anh&auml;nge, die mit einem Webbrowser betrachtet werden k&ouml;nnen:';
+ $strLocation           = 'Ort';
+-$strFrequency          = 'Wie oft dürfen wir Ihnen Nachrichten senden';
+-$strHourly             = 'Stündlich';
+-$strDaily              = 'Täglich';
+-$strWeeklym            = 'Wöchentlich';
++$strFrequency          = 'Wie oft d&uuml;rfen wir Ihnen Nachrichten senden';
++$strHourly             = 'St&uuml;ndlich';
++$strDaily              = 'T&auml;glich';
++$strWeeklym            = 'W&ouml;chentlich';
+ $strMonthly            = 'Monatlich';
+-$strChoosePassword     = 'Bitte wählen Sie ein Paßwort';
+-$strConfirmPassword    = 'Bitte bestätigen Sie Ihr Paßwort';
++$strChoosePassword     = 'Bitte w&auml;hlen Sie ein Paßwort';
++$strConfirmPassword    = 'Bitte best&auml;tigen Sie Ihr Paßwort';
+ $strEnterPassword      = 'Bitte geben Sie Ihr Paßwort ein';
+ $strForgotPassword     = 'Paßwort vergessen';
+ $strPassword           = 'Paßwort';
+-$strPassword2          = 'Paßwort bestätigen';
+-$strPasswordsNoMatch   = 'Die Paßwörter stimmen nicht überein';
+-$strInvalidPassword    = 'Fehler: ungültige E-Mail oder Paßwort';
+-$strPasswordSent       = 'Ihre Paßwort wurde Ihnen per E-Mail zugesendet. Sie sollten es innerhalb der nächsten Minuten erhalten.';
+-$strPasswordRemindSubject = 'Ihr Paßwort für unsere Listen';
++$strPassword2          = 'Paßwort best&auml;tigen';
++$strPasswordsNoMatch   = 'Die Paßw&ouml;rter stimmen nicht &uuml;berein';
++$strInvalidPassword    = 'Fehler: ung&uuml;ltige E-Mail oder Paßwort';
++$strPasswordSent       = 'Ihre Paßwort wurde Ihnen per E-Mail zugesendet. Sie sollten es innerhalb der n&auml;chsten Minuten erhalten.';
++$strPasswordRemindSubject = 'Ihr Paßwort f&uuml;r unsere Listen';
+ $strPasswordRemindMessage = 'Ihr Paßwort lautet ';
+-$strPasswordRemindInfo = 'Um Ihr Paßwort per E-Mail zu erhalten, geben Sie bitte Ihre E-Mail-Adresse ein und drücken den "'.$strForgotPassword.'" Knopf.';
++$strPasswordRemindInfo = 'Um Ihr Paßwort per E-Mail zu erhalten, geben Sie bitte Ihre E-Mail-Adresse ein und dr&uuml;cken den "'.$strForgotPassword.'" Knopf.';
+ $strLogin              = 'Login';
+ $strLoginTitle         = 'Bitte geben Sie Ihre E-Mail-Adresse und Ihr Paßwort ein';
+-$strLoginInfo          = 'Diese Seite benötigt ein Paßwort. Bitte geben Sie Ihre E-Mail-Adresse und Ihr Paßwort ein';
++$strLoginInfo          = 'Diese Seite ben&ouml;tigt ein Paßwort. Bitte geben Sie Ihre E-Mail-Adresse und Ihr Paßwort ein';
+ $strPersonalLocationInfo = '
+-  <p>Diese Seite benötigt eine persäönliche Identifikation, welche auf jeder von uns an Sie gesendeten E-Mail angegeben ist.<br/>
+-  Wenn Sie diesen Bereich angeklickt haben und diesen Fehler erhalten, vergewissern Sie sich, daß Sie die vollständige Linie in die 
+-  Adressezeile Ihres Browsers eigetragen haben. Manchmal ist die Adresse über mehrere Zeilen umgebrochen.</p>
+-  <p>Wenn Sie den Bereich nicht kennen, können Sie Ihn per E-Mail erfragen.
++  <p>Diese Seite ben&ouml;tigt eine pers&ouml;nliche Identifikation, welche auf jeder von uns an Sie gesendeten E-Mail angegeben ist.<br/>
++  Wenn Sie diesen Bereich angeklickt haben und diesen Fehler erhalten, vergewissern Sie sich, daß Sie die vollst&auml;ndige Linie in die 
++  Adressezeile Ihres Browsers eigetragen haben. Manchmal ist die Adresse &uuml;ber mehrere Zeilen umgebrochen.</p>
++  <p>Wenn Sie den Bereich nicht kennen, k&ouml;nnen Sie Ihn per E-Mail erfragen.
+   Bitte geben Sie dazu Ihre E-Mail-Adresse ein und klicken Sie auf Weiter
+ ';
+-$strPersonalLocationSent = '<h1>Erfolg! Sie sollten eine Nachricht mit Ihrem persönlichen Bereich in Kürze erhalten</h1>';
++$strPersonalLocationSent = '<h1>Erfolg! Sie sollten eine Nachricht mit Ihrem pers&ouml;nlichen Bereich in K&uuml;rze erhalten</h1>';
+ $strUserExists         = '<br/>Ein Benutzer mit dieser E-Mail-Adresse existiert bereit und hat ein anderes Paßwort';
+ $strUserExistsExplanationStart = '<br/>Um Ihr Paßwort zu erhalten, klicken Sie';
+ $strUserExistsExplanationLink = 'hier';
+-$strUserExistsExplanationEnd = ' um zu der Seite zu gelangen, wo Sie Ihren persönlichen Bereich anfordern können';
++$strUserExistsExplanationEnd = ' um zu der Seite zu gelangen, wo Sie Ihren pers&ouml;nlichen Bereich anfordern k&ouml;nnen';
+ ?>

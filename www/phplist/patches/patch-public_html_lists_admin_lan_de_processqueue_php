@@ -1,0 +1,19 @@
+$OpenBSD: patch-public_html_lists_admin_lan_de_processqueue_php,v 1.1.1.1 2006/10/03 13:42:11 mbalmer Exp $
+--- public_html/lists/admin/lan/de/processqueue.php.orig	Sun Mar 26 12:45:55 2006
++++ public_html/lists/admin/lan/de/processqueue.php	Sun Mar 26 12:46:23 2006
+@@ -25,7 +25,7 @@ $lan = array(
+ 'Finished, All done' => 'Verarbeitung abgeschlossen',
+ 'Script finished, but not all messages have been sent yet.' =>
+ 	'Das Skript wurde abgeschlossen, es wurden aber noch nicht alle Mails versendet.',
+-'Finished this run' => 'AusfÜhrung beendet',
++'Finished this run' => 'Ausführung beendet',
+ '(test)' => '(Test)',
+ 'Would have sent' => 'Hätte versendet',
+ '(test)' => '(Test)',
+@@ -102,4 +102,4 @@ $lan = array(
+ 
+ );
+ 
+-?>
+\ No newline at end of file
++?>
