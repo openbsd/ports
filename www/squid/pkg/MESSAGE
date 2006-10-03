@@ -1,4 +1,4 @@
-NOTES ON OpenBSD POST-INSTALLATION OF SQUID 2.5
+NOTES ON OpenBSD POST-INSTALLATION OF SQUID 2.6
 
 The local (OpenBSD) differences are:
 - configuration files are in		${SYSCONFDIR}/squid

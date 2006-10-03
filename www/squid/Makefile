@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.81 2006/10/03 05:00:49 brad Exp $
+# $OpenBSD: Makefile,v 1.82 2006/10/03 18:32:44 brad Exp $
 
 COMMENT=	"WWW and FTP proxy cache and accelerator"
 
 DISTNAME=	squid-2.6.STABLE4
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	www
 MASTER_SITES=	${HOMEPAGE}Versions/v2/2.6/
 DIST_SUBDIR=	squid
