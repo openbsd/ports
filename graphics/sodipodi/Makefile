@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2006/09/18 11:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/10/04 21:00:53 mbalmer Exp $
 
 COMMENT=		"SVG vector drawing application."
 
 DISTNAME=		sodipodi-0.34
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://sodipodi.sourceforge.net/
-
-MAINTAINER=		Marc Balmer <mbalmer@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
