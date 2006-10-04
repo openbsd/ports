@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2006/09/18 11:40:07 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2006/10/04 20:56:01 mbalmer Exp $
 
 COMMENT=		"editor for the GConf configuration system"
 
 VERSION=		2.10.0
 DISTNAME=		gconf-editor-${VERSION}
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		devel x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
-
-MAINTAINER=		Marc Balmer <marc@msys.ch>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
