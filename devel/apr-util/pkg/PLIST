@@ -1,15 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/11/28 14:42:08 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/10/04 09:30:01 alek Exp $
 %%SHARED%%
 bin/apu-1-config
-include/apr-1/
 include/apr-1/apr_anylock.h
 include/apr-1/apr_base64.h
 include/apr-1/apr_buckets.h
 include/apr-1/apr_date.h
+include/apr-1/apr_dbd.h
 include/apr-1/apr_dbm.h
 include/apr-1/apr_hooks.h
 include/apr-1/apr_ldap.h
 include/apr-1/apr_ldap_init.h
+include/apr-1/apr_ldap_option.h
 include/apr-1/apr_ldap_url.h
 include/apr-1/apr_md4.h
 include/apr-1/apr_md5.h
@@ -31,5 +32,4 @@ include/apr-1/apu_want.h
 @comment lib/aprutil.exp
 lib/libaprutil-1.a
 lib/libaprutil-1.la
-lib/pkgconfig/
 lib/pkgconfig/apr-util-1.pc
