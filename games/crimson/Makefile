@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/03/16 05:44:05 jsg Exp $
+# $OpenBSD: Makefile,v 1.13 2006/10/04 22:20:32 naddy Exp $
 
 COMMENT=	"tactical war game like Battle Isle"
 DISTNAME=	crimson-0.4.9
@@ -6,10 +6,6 @@ CATEGORIES=	games x11
 MASTER_SITES=	${HOMEPAGE}files/
 
 HOMEPAGE=	http://crimson.seul.org/
-
-.if ${MACHINE_ARCH} == "alpha"
-BROKEN=		"Suspected binutils issue"
-.endif
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
