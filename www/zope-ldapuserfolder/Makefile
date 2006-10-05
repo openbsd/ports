@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/01/17 16:18:39 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2006/10/05 08:35:45 mbalmer Exp $
 
 COMMENT=	"Zope LDAPUserFolder product"
 
-VERSION=	2_4
+VERSION=	2_6
 DISTNAME=	LDAPUserFolder-${VERSION}
 PKGNAME=	zope-${DISTNAME:S/_/./:L}
 CATEGORIES=	www
