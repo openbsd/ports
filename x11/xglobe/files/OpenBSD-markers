@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD-markers,v 1.83 2006/09/30 18:36:41 henning Exp $
+# $OpenBSD: OpenBSD-markers,v 1.84 2006/10/05 14:58:12 jasper Exp $
 #
 # THE PKGNAME MUST BE BUMPED FOR THE FOLLOWING PORTS WHEN YOU COMMIT
 # TO THIS FILE:
@@ -57,8 +57,8 @@
 51.0333		-114.0500	"pvalchev"	# Peter Valchev
 51.05		3.60		"wvdputte"	# Wim Vandeputte
 51.32		0.5		"fgsch"		# Federico G. Schwindt
+51.5		5		"jasper"	# Jasper Lievisse Adriaanse
 51.6		-114.1		"deraadt"	# Theo de Raadt
-51.84		4.97		"jasper"	# Jasper Lievisse Adriaanse
 52.2		12.75		"uwe"		# Uwe Stuehler
 52.26		4.63		"camield"	# Camiel Dobbelaar
 52.35		4.62		"otto"		# Otto Moerbeek
