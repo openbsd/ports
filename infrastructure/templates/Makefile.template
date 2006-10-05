@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.46 2005/11/12 00:07:22 sturm Exp $
+# $OpenBSD: Makefile.template,v 1.47 2006/10/05 14:55:56 jasper Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -9,6 +9,7 @@
 #
 #ONLY_FOR_ARCHS=	???
 #NOT_FOR_ARCHS=		???
+#SHARED_ONLY=		???
 #COMES_WITH=		???
 #BROKEN=		"reason"
 
@@ -24,6 +25,7 @@ COMMENT=		"???"
 DISTNAME=		???
 #PKGNAME=		???
 #PKGNAME-foo=		???	for multi packages
+#SHARED_LIBS=		???
 CATEGORIES=		???
 
 #HOMEPAGE=		???	URL
@@ -69,6 +71,7 @@ MASTER_SITES=		???
 
 # Dependencies
 #
+#MODULES=		???
 #BUILD_DEPENDS=		???
 #RUN_DEPENDS=		???
 #LIB_DEPENDS=		???
