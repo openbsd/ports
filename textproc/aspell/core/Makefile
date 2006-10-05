@@ -1,10 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/01/14 11:46:15 espie Exp $
-
-# memory fault at -O2/-O1 when building with gcc2. -O0 reveals some C++ issue
-# with gcc2 (same as the powerpc issue which is why it uses the gcc module).
-# gcc3 with has memory faults regardless of optimization level.
-# gdb doesn't do anything useful.
-NOT_FOR_ARCHS=	alpha
+# $OpenBSD: Makefile,v 1.14 2006/10/05 18:05:57 naddy Exp $
 
 COMMENT=	"spell checker designed to eventually replace Ispell"
 DISTNAME=	aspell-0.50.5
