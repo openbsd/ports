@@ -1,0 +1,12 @@
+$OpenBSD: patch-database_mysql2sqlite_sh,v 1.1 2006/10/06 08:04:23 aanriot Exp $
+--- database/mysql2sqlite.sh.orig	Tue Jan 10 09:22:21 2006
++++ database/mysql2sqlite.sh	Thu Oct  5 15:59:49 2006
+@@ -2,7 +2,7 @@
+ sed \
+ 	-e 's/#.*//' \
+ 	-e '/^DROP /d' \
+-	-e 's/\w*INT /INTEGER /' \
++	-e 's/[a-zA-Z]*INT[ E]/INTEGER /' \
+ 	-e 's/UNSIGNED //' \
+ 	-e 's/ENUM([^)]\+)/TEXT/' \
+ 	-e 's/VARCHAR([^)]\+)/TEXT/' \

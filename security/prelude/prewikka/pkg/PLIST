@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2006/09/24 20:39:40 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2006/10/06 08:04:23 aanriot Exp $
 bin/prewikka-httpd
 lib/python${MODPY_VERSION}/site-packages/prewikka/
 lib/python${MODPY_VERSION}/site-packages/prewikka/Auth.py
@@ -129,6 +129,8 @@ lib/python${MODPY_VERSION}/site-packages/prewikka/views/sensor.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/views/sensor.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/views/usermanagement.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/views/usermanagement.pyc
+share/doc/prewikka/
+share/doc/prewikka/README.OpenBSD
 share/prewikka/
 share/prewikka/cgi-bin/
 share/prewikka/cgi-bin/prewikka.cgi
@@ -160,4 +162,6 @@ share/prewikka/htdocs/images/table_order_down.gif
 share/prewikka/htdocs/images/table_order_up.gif
 share/prewikka/htdocs/js/
 share/prewikka/htdocs/js/functions.js
+@sample /var/prelude/prewikka/
+@extraunexec rm -rf /var/prelude/prewikka/*
 @extraunexec rm -rf %D/lib/python${MODPY_VERSION}/site-packages/prewikka/*

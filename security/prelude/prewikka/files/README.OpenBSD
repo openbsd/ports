@@ -1,0 +1,39 @@
+To start with prewikka, you have to create the "prewikka" database.
+
+Instructions for PotsgreSQL:
+
+  # su - _postgresql
+  $ createdb -O prelude prewikka
+  $ cd ${PREFIX}/share/prewikka/database/
+  $ psql -U prelude -W prewikka < pgsql.sql
+
+  Then, fill-in prewikka.conf, sections [idmef_database] and [database]
+  to use postgresql ("type", "host", "user", "pass", "name").
+
+Instructions for MySQL:
+
+  Login as a privileged user, e.g. 'root':
+
+  # mysql -u root -p
+  mysql> CREATE DATABASE prewikka;
+  mysql> GRANT ALL PRIVILEGES on prelude.* to prewikka IDENTIFIED by '...';
+
+  # cd ${PREFIX}/share/prewikka/database/
+  # mysql -u prelude -p prewikka < mysql.sql
+
+  Then, fill-in prewikka.conf, sections [idmef_database] and [database]
+  ("host", "user", "pass", "name").
+
+Instructions for SQLite:
+
+  # cd /var/prelude/prewikka/
+  # sqlite3 prewikka.db < ${PREFIX}/share/prewikka/database/sqlite.sql
+
+  Then, fill-in prewikka.conf, sections [idmef_database] and [database]
+  to use this/these database file(s), thanks to the "file" keyword
+  (which indicates the location of the database).
+
+Eventually, you can start prewikka's webserver, prewikka-httpd
+(listening by default on 8000/tcp) or use Apache. The default user is
+"admin", with "admin" as password and should be changed.
+

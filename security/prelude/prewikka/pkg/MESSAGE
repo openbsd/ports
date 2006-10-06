@@ -1,20 +1,3 @@
-To start with prelude-prewikka, you have to create the "prewikka"
-database.
+You should read ${PREFIX}/share/doc/prewikka/README.OpenBSD for more
+details about prewikka settings.
 
-Here is the instructions for PotsgreSQL:
-
-# su - _postgresql
-$ createdb -O prelude prewikka
-$ cd ${PREFIX}/share/prewikka/database/
-$ psql -U prelude -W prewikka < pgsql.sql
-
-
-Then, update ${SYSCONFDIR}/prewikka/prewikka.conf with your database
-settings.
-
-
-Eventually, start prewikka's webserver (listening by default on 8000):
-
-# prewikka-httpd
-
-The default user is "admin", with "admin" as password.
