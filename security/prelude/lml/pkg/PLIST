@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/09/24 20:38:52 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/10/06 07:51:51 aanriot Exp $
 %%SHARED%%
 bin/prelude-lml
 include/prelude-lml/
@@ -8,6 +8,8 @@ lib/prelude-lml/debug.a
 lib/prelude-lml/debug.la
 lib/prelude-lml/pcre.a
 lib/prelude-lml/pcre.la
+share/doc/prelude-lml/
+share/doc/prelude-lml/README.OpenBSD
 share/examples/prelude-lml/
 @sample ${SYSCONFDIR}/prelude-lml/
 share/examples/prelude-lml/plugins.rules

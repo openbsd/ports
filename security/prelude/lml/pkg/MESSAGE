@@ -1,11 +1,3 @@
-To start with prelude-lml, you have to create a starting profile,
-e.g. "prelude-lml" by running on the manager side:
-
-# prelude-adduser registration-server prelude-manager \
-	--uid=564 --gid=564
-
-and on the sensor side:
-
-# prelude-adduser register prelude-lml "idmef:w" \
-	<manager address> --uid 564 --gid 564
+You should read ${PREFIX}/share/doc/prelude-lml/README.OpenBSD for more
+details about prelude-lml settings.
 
