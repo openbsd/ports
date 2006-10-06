@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2006/01/10 11:35:14 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/10/06 07:19:57 steven Exp $
 
 COMMENT=	"convert Excel and PowerPoint to HTML"
 
 V=		0.2.9.8
 DISTNAME=	xlHtml-${V}
-PKGNAME=	xlhtml-${V}p0
+PKGNAME=	xlhtml-${V}p1
 SHARED_LIBS=	cole	2.1
 CATEGORIES=	converters
 
-MASTER_SITES=	http://www.xlhtml.org/
-HOMEPAGE=	http://www.xlhtml.org/
+MASTER_SITES=	http://gd.tuwien.ac.at/utils/format-conv/xlHtml/
+HOMEPAGE=	http://chicago.sourceforge.net/xlhtml/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
