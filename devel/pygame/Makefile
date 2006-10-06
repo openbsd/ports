@@ -1,9 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2006/06/03 09:37:09 alek Exp $
+# $OpenBSD: Makefile,v 1.12 2006/10/06 14:24:12 naddy Exp $
 
 SHARED_ONLY=	Yes
-.if ${MACHINE_ARCH} == "alpha"
-BROKEN=		"smpeg"
-.endif
 
 COMMENT=	"set of Python modules designed for writing games"
 
