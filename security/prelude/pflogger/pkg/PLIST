@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/26 18:04:26 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/10/06 07:59:55 aanriot Exp $
 bin/prelude-pflogger
+share/doc/pflogger/
+share/doc/pflogger/README.OpenBSD
 share/examples/pflogger/
 share/examples/pflogger/prelude-pflogger.conf
 @sample ${SYSCONFDIR}/prelude-pflogger/
