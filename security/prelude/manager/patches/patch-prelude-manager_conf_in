@@ -1,6 +1,6 @@
-$OpenBSD: patch-prelude-manager_conf_in,v 1.3 2006/10/03 05:17:29 aanriot Exp $
+$OpenBSD: patch-prelude-manager_conf_in,v 1.4 2006/10/06 07:55:31 aanriot Exp $
 --- prelude-manager.conf.in.orig	Tue Dec 13 13:39:58 2005
-+++ prelude-manager.conf.in	Tue Oct  3 06:50:13 2006
++++ prelude-manager.conf.in	Wed Oct  4 16:55:29 2006
 @@ -28,8 +28,8 @@ listen = 127.0.0.1
  # Sets the user/group ID as which prelude-manager will run.
  # In order to use this option, prelude-manager must be run initially as root
@@ -12,30 +12,6 @@ $OpenBSD: patch-prelude-manager_conf_in,v 1.3 2006/10/03 05:17:29 aanriot Exp $
  
  
  # Number of bits of the prime used in the Diffie Hellman key exchange. 
-@@ -83,15 +83,17 @@ listen = 127.0.0.1
- # message locally).
  
  
-+
-+# Name of the database connection
- # [db]
- 
--# The type of database (mysql/pgsql).
-+# The type of database (mysql/pgsql/sqlite).
- # type = mysql
- 
- # Host the database is listening on.
- # host = localhost
- 
--# Port the database is listening on.
-+# Port the database is listening on (3306/5432/x).
- # port = 3306
- 
- # Name of the database.
-@@ -101,7 +103,7 @@ listen = 127.0.0.1
- # user = prelude
- 
- # Password used to connect the database.
--# pass = xxxxxx
-+# pass = prelude
  

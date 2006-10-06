@@ -1,0 +1,14 @@
+To start with prelude-manager, you have to create a starting profile,
+e.g. "prelude-manager" by running:
+
+# prelude-adduser add prelude-manager --uid=564 --gid=564
+
+Then, alter prelude-manager.conf with your database settings (at least
+"type", "host", "user" and "pass") according to the DBMS you selected
+when installing libpreludedb; the type parameter can be either "pgsql",
+"mysql" or "sqlite3".
+
+If you are using sqlite, you need only two parameters, "type", and "file"
+which indicates the location of the database file (/var/prelude/manager/
+is the recommended directory to store this file).
+

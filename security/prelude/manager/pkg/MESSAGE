@@ -1,7 +1,3 @@
-To start with prelude-manager, you have to create a starting profile,
-e.g. "prelude-manager" by running:
+You should read ${PREFIX}/share/doc/prelude-manager/README.OpenBSD for
+more details about prelude-manager settings.
 
-# prelude-adduser add prelude-manager --uid=564 --gid=564
-
-Then, update ${SYSCONFDIR}/prelude-manager/prelude-manager.conf with
-your database settings.
