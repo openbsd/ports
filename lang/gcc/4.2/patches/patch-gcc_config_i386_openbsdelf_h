@@ -1,0 +1,16 @@
+$OpenBSD: patch-gcc_config_i386_openbsdelf_h,v 1.1 2006/10/06 12:42:43 kurt Exp $
+--- gcc/config/i386/openbsdelf.h.orig	Tue Oct  3 20:52:02 2006
++++ gcc/config/i386/openbsdelf.h	Tue Oct  3 20:52:18 2006
+@@ -56,10 +56,10 @@ Boston, MA 02110-1301, USA.  */
+ 
+ /* This must agree with <machine/ansi.h> */
+ #undef SIZE_TYPE
+-#define SIZE_TYPE "unsigned int"
++#define SIZE_TYPE "long unsigned int"
+ 
+ #undef PTRDIFF_TYPE
+-#define PTRDIFF_TYPE "int"
++#define PTRDIFF_TYPE "long int"
+ 
+ #undef WCHAR_TYPE
+ #define WCHAR_TYPE "int"
