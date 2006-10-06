@@ -1,0 +1,29 @@
+To start with libpreludedb, you have to install at least one DBMS module
+for libpreludedb (e.g. prelude-libpreludedb-pgsql). Then, install the
+database with the database-dependent instructions.
+
+Instructions for PotsgreSQL:
+
+  # su - _postgresql
+  $ createuser --pwprompt prelude (default password "prelude" / n,n,n)
+  $ createdb -O prelude prelude
+  $ cd $PREFIX/share/libpreludedb/classic/
+  $ psql -U prelude -W prelude < pgsql.sql
+
+Instructions for MySQL:
+
+  Login as a privileged user, e.g. 'root':
+
+  # mysql -u root -p
+  mysql> CREATE DATABASE prelude;
+  mysql> GRANT ALL PRIVILEGES on prelude.* to prelude IDENTIFIED by '...';
+
+  # cd $PREFIX/share/libpreludedb/classic/
+  # mysql -u prelude -p prelude < mysql.sql
+
+Instructions for SQLite:
+
+  # cd /var/prelude/manager/
+  # sqlite3 prelude.db < $PREFIX/share/libpreludedb/classic/sqlite.sql
+  # chown _prelude:_prelude prelude.db
+
