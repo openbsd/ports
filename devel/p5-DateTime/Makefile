@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2006/05/22 06:07:19 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/10/07 12:23:33 steven Exp $
 
 COMMENT=		"perl objected oriented Date Time"
 
-DISTNAME=		DateTime-0.31
+DISTNAME=		DateTime-0.34
 PKGNAME=		p5-${DISTNAME}
 SHARED_ONLY=		Yes
 CATEGORIES=		devel perl5
