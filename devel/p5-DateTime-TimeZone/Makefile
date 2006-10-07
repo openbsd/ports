@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2006/05/22 06:19:18 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/10/07 12:24:25 steven Exp $
 
 COMMENT=		"perl DateTime submodule for TZ"
 
-DISTNAME=		DateTime-TimeZone-0.46
+DISTNAME=		DateTime-TimeZone-0.49
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		devel perl5
 

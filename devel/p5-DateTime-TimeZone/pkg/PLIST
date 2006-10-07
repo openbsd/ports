@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/04/18 19:06:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/10/07 12:24:25 steven Exp $
 ${P5SITE}/DateTime/
 ${P5SITE}/DateTime/TimeZone/
 ${P5SITE}/DateTime/TimeZone.pm
@@ -73,10 +73,12 @@ ${P5SITE}/DateTime/TimeZone/America/Argentina/Tucuman.pm
 ${P5SITE}/DateTime/TimeZone/America/Argentina/Ushuaia.pm
 ${P5SITE}/DateTime/TimeZone/America/Aruba.pm
 ${P5SITE}/DateTime/TimeZone/America/Asuncion.pm
+${P5SITE}/DateTime/TimeZone/America/Atikokan.pm
 ${P5SITE}/DateTime/TimeZone/America/Bahia.pm
 ${P5SITE}/DateTime/TimeZone/America/Barbados.pm
 ${P5SITE}/DateTime/TimeZone/America/Belem.pm
 ${P5SITE}/DateTime/TimeZone/America/Belize.pm
+${P5SITE}/DateTime/TimeZone/America/Blanc_Sablon.pm
 ${P5SITE}/DateTime/TimeZone/America/Boa_Vista.pm
 ${P5SITE}/DateTime/TimeZone/America/Bogota.pm
 ${P5SITE}/DateTime/TimeZone/America/Boise.pm
@@ -88,7 +90,6 @@ ${P5SITE}/DateTime/TimeZone/America/Cayenne.pm
 ${P5SITE}/DateTime/TimeZone/America/Cayman.pm
 ${P5SITE}/DateTime/TimeZone/America/Chicago.pm
 ${P5SITE}/DateTime/TimeZone/America/Chihuahua.pm
-${P5SITE}/DateTime/TimeZone/America/Coral_Harbour.pm
 ${P5SITE}/DateTime/TimeZone/America/Costa_Rica.pm
 ${P5SITE}/DateTime/TimeZone/America/Cuiaba.pm
 ${P5SITE}/DateTime/TimeZone/America/Curacao.pm
@@ -339,6 +340,7 @@ ${P5SITE}/DateTime/TimeZone/Europe/Uzhgorod.pm
 ${P5SITE}/DateTime/TimeZone/Europe/Vaduz.pm
 ${P5SITE}/DateTime/TimeZone/Europe/Vienna.pm
 ${P5SITE}/DateTime/TimeZone/Europe/Vilnius.pm
+${P5SITE}/DateTime/TimeZone/Europe/Volgograd.pm
 ${P5SITE}/DateTime/TimeZone/Europe/Warsaw.pm
 ${P5SITE}/DateTime/TimeZone/Europe/Zaporozhye.pm
 ${P5SITE}/DateTime/TimeZone/Europe/Zurich.pm
