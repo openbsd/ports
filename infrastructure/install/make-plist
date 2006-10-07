@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.79 2006/04/03 13:53:43 espie Exp $
+# $OpenBSD: make-plist,v 1.80 2006/10/07 10:04:09 espie Exp $
 # Copyright (c) 2004-2006 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -464,6 +464,7 @@ sub is_info
 	$filename = resolve_link($filename);
 	open my $fh, '<', $filename or return 0;
 	my $tag = <$fh>;
+	return 0 unless defined $tag;
 	chomp $tag;
 	$tag.=<$fh>;
 	close $fh;
@@ -630,8 +631,11 @@ sub get_files
 	$mtree->{'/usr/local/include/X11'} = 1;
 	$mtree->{'/usr/local/lib/X11/app-defaults'} = 1;
 	# add directories from dependencies, insist on having the real package.
+	my $stripped = {};
 	for my $pkg (split(/\s+/, $ENV{'DEPS'})) {
+		next if defined $stripped->{$pkg};
 		print STDERR "Stripping dirs from $pkg\n";
+		$stripped->{$pkg} = 1;
 		augment_mtree($mtree, $ENV{'PKGREPOSITORY'}."/$pkg.tgz");
 	}
 	# make sure mtree is removed 
