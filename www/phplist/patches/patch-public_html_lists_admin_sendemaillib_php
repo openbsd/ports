@@ -1,7 +1,7 @@
-$OpenBSD: patch-public_html_lists_admin_sendemaillib_php,v 1.1.1.1 2006/10/03 13:42:11 mbalmer Exp $
---- public_html/lists/admin/sendemaillib.php.orig	Sun Mar 26 10:23:12 2006
-+++ public_html/lists/admin/sendemaillib.php	Sun Mar 26 10:24:12 2006
-@@ -108,7 +108,7 @@ function sendEmail ($messageid,$email,$h
+$OpenBSD: patch-public_html_lists_admin_sendemaillib_php,v 1.2 2006/10/07 10:36:37 mbalmer Exp $
+--- public_html/lists/admin/sendemaillib.php.orig	Thu Oct  5 19:37:53 2006
++++ public_html/lists/admin/sendemaillib.php	Sat Oct  7 12:29:32 2006
+@@ -118,7 +118,7 @@ function sendEmail ($messageid,$email,$h
    $url = getConfig("public_baseurl");
    # make sure there are no newlines, otherwise they get turned into <br/>s
    $html["forwardform"] = sprintf('<form method="get" action="%s" name="forwardform" class="forwardform"><input type=hidden name="uid" value="%s" /><input type=hidden name="mid" value="%d" /><input type=hidden name="p" value="forward" /><input type=text name="email" value="" class="forwardinput" /><input name="Send" type="submit" value="%s" class="forwardsubmit"/></form>',$url,$hash,$messageid,$GLOBALS['strForward']);
@@ -10,7 +10,7 @@ $OpenBSD: patch-public_html_lists_admin_sendemaillib_php,v 1.1.1.1 2006/10/03 13
    $url = getConfig("preferencesurl");$sep = ereg('\?',$url)?'&':'?';
    $html["preferences"] = sprintf('<a href="%s%suid=%s">%s</a>',$url,$sep,$hash,$strThisLink);
    $text["preferences"] = sprintf('%s%suid=%s',$url,$sep,$hash);
-@@ -132,7 +132,7 @@ function sendEmail ($messageid,$email,$h
+@@ -142,7 +142,7 @@ function sendEmail ($messageid,$email,$h
    } else {
      $html["signature"] = $PoweredByText;
    }

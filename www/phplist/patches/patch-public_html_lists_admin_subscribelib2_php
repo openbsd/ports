@@ -1,12 +1,12 @@
-$OpenBSD: patch-public_html_lists_admin_subscribelib2_php,v 1.1.1.1 2006/10/03 13:42:11 mbalmer Exp $
---- public_html/lists/admin/subscribelib2.php.orig	Fri Oct 28 03:15:01 2005
-+++ public_html/lists/admin/subscribelib2.php	Mon May  8 15:50:26 2006
-@@ -665,7 +665,7 @@ $html .= sprintf('
+$OpenBSD: patch-public_html_lists_admin_subscribelib2_php,v 1.2 2006/10/07 10:36:37 mbalmer Exp $
+--- public_html/lists/admin/subscribelib2.php.orig	Fri Oct  6 19:31:26 2006
++++ public_html/lists/admin/subscribelib2.php	Sat Oct  7 12:20:55 2006
+@@ -681,7 +681,7 @@ $html .= sprintf('
    <tr><td><div class="required">%s</div></td>
    <td class="attributeinput"><input type=text name=emailconfirm value="%s" size="%d">
    <script language="Javascript" type="text/javascript">addFieldToCheck("emailconfirm","%s");</script></td></tr>',
-- 'Confirm email',htmlspecialchars($_REQUEST["emailconfirm"]),$textlinewidth,'Confirm email');
-+ $GLOBALS["strConfirmEmail"],htmlspecialchars($_REQUEST["emailconfirm"]),$textlinewidth,$GLOBALS["strConfirmEmail"]);
+- 'Confirm email',htmlspecialchars(stripslashes($_REQUEST["emailconfirm"])),$textlinewidth,'Confirm email');
++ $GLOBALS["strConfirmEmail"],htmlspecialchars(stripslashes($_REQUEST["emailconfirm"])),$textlinewidth,'Confirm email');
  }
  // BPM 12 May 2004 - Finish
  

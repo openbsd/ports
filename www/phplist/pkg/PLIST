@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/03 13:42:10 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/10/07 10:36:37 mbalmer Exp $
 lists/
 lists/.htaccess
 lists/admin/
@@ -173,6 +173,8 @@ lists/admin/FCKeditor/editor/filemanager/upload/phplist/
 lists/admin/FCKeditor/editor/filemanager/upload/phplist/config.php
 lists/admin/FCKeditor/editor/filemanager/upload/phplist/upload.php
 lists/admin/FCKeditor/editor/filemanager/upload/phplist/util.php
+lists/admin/FCKeditor/editor/images/
+lists/admin/FCKeditor/editor/images/spacer.gif
 lists/admin/FCKeditor/editor/js/
 lists/admin/FCKeditor/editor/js/fck_startup.js
 lists/admin/FCKeditor/editor/js/fckeditorcode_gecko_1.js
@@ -353,6 +355,7 @@ lists/admin/commonlib/pages/users.php
 lists/admin/community.php
 lists/admin/configure.php
 lists/admin/connect.php
+@comment lists/admin/connect.php.orig
 lists/admin/data/
 lists/admin/data/br-states.txt
 lists/admin/data/can-provinces.txt
@@ -360,6 +363,7 @@ lists/admin/data/countries.txt
 lists/admin/data/gendersp.txt
 lists/admin/data/india-states.txt
 lists/admin/data/mexico-state.txt
+lists/admin/data/nl-provinces.txt
 lists/admin/data/uk-counties.txt
 lists/admin/data/usa-states.txt
 lists/admin/date.php
@@ -652,7 +656,6 @@ lists/admin/lan/de/frontend.php
 lists/admin/lan/de/generatebouncerules.php
 lists/admin/lan/de/getrss.php
 lists/admin/lan/de/home.php
-@comment lists/admin/lan/de/home.php.orig
 lists/admin/lan/de/import1.php
 lists/admin/lan/de/import2.php
 lists/admin/lan/de/import3.php
@@ -669,6 +672,7 @@ lists/admin/lan/de/mviews.php
 lists/admin/lan/de/pagetitles.php
 lists/admin/lan/de/processbounces.php
 lists/admin/lan/de/processqueue.php
+@comment lists/admin/lan/de/processqueue.php.orig
 lists/admin/lan/de/reconcileusers.php
 lists/admin/lan/de/send.php
 lists/admin/lan/de/setup.php
@@ -917,26 +921,58 @@ lists/admin/lan/zh-tw/adminattributes.php
 lists/admin/lan/zh-tw/admins.php
 lists/admin/lan/zh-tw/attributes.php
 lists/admin/lan/zh-tw/bounce.php
+lists/admin/lan/zh-tw/bouncemgt.php
+lists/admin/lan/zh-tw/bouncerule.php
+lists/admin/lan/zh-tw/bouncerules.php
 lists/admin/lan/zh-tw/bounces.php
+lists/admin/lan/zh-tw/checkbouncerules.php
 lists/admin/lan/zh-tw/common.php
 lists/admin/lan/zh-tw/configure.php
 lists/admin/lan/zh-tw/defaults.php
 lists/admin/lan/zh-tw/dlusers.php
+lists/admin/lan/zh-tw/domainstats.php
 lists/admin/lan/zh-tw/editattributes.php
 lists/admin/lan/zh-tw/editlist.php
 lists/admin/lan/zh-tw/eventlog.php
 lists/admin/lan/zh-tw/export.php
+lists/admin/lan/zh-tw/frontend.php
+lists/admin/lan/zh-tw/generatebouncerules.php
 lists/admin/lan/zh-tw/getrss.php
 lists/admin/lan/zh-tw/home.php
 lists/admin/lan/zh-tw/import1.php
+lists/admin/lan/zh-tw/import2.php
 lists/admin/lan/zh-tw/import3.php
 lists/admin/lan/zh-tw/import4.php
 lists/admin/lan/zh-tw/importadmin.php
 lists/admin/lan/zh-tw/initialise.php
 lists/admin/lan/zh-tw/list.php
+lists/admin/lan/zh-tw/login.php
+lists/admin/lan/zh-tw/massunconfirm.php
+lists/admin/lan/zh-tw/mclicks.php
 lists/admin/lan/zh-tw/members.php
 lists/admin/lan/zh-tw/message.php
 lists/admin/lan/zh-tw/messages.php
+lists/admin/lan/zh-tw/mviews.php
+lists/admin/lan/zh-tw/pagetitles.php
+lists/admin/lan/zh-tw/processbounces.php
+lists/admin/lan/zh-tw/processqueue.php
+lists/admin/lan/zh-tw/purgerss.php
+lists/admin/lan/zh-tw/reconcileusers.php
+lists/admin/lan/zh-tw/send.php
+lists/admin/lan/zh-tw/setup.php
+lists/admin/lan/zh-tw/spage.php
+lists/admin/lan/zh-tw/spageedit.php
+lists/admin/lan/zh-tw/statsmgt.php
+lists/admin/lan/zh-tw/template.php
+lists/admin/lan/zh-tw/templates.php
+lists/admin/lan/zh-tw/uclicks.php
+lists/admin/lan/zh-tw/user.php
+lists/admin/lan/zh-tw/usercheck.php
+lists/admin/lan/zh-tw/userclicks.php
+lists/admin/lan/zh-tw/userhistory.php
+lists/admin/lan/zh-tw/usermgt.php
+lists/admin/lan/zh-tw/users.php
+lists/admin/lan/zh-tw/viewtemplate.php
 lists/admin/languages.php
 lists/admin/lib.php
 lists/admin/list.php
@@ -1004,6 +1040,7 @@ lists/admin/rsslib.php
 lists/admin/send.php
 lists/admin/send_core.php
 lists/admin/sendemaillib.php
+@comment lists/admin/sendemaillib.php.orig
 lists/admin/sendprepared.php
 lists/admin/sessionlib.php
 lists/admin/setup.php
@@ -1026,6 +1063,7 @@ lists/admin/styles/styles_win_ie.css
 lists/admin/styles/styles_win_ns.css
 lists/admin/styles/tabs.css
 lists/admin/subscribelib2.php
+@comment lists/admin/subscribelib2.php.orig
 lists/admin/subscriberstats.php
 lists/admin/template.php
 lists/admin/templates.php
@@ -1047,9 +1085,9 @@ lists/config/.htaccess
 @group www
 lists/config/config.php.dist
 @sample lists/config/config.php
+@comment lists/config/config.php.orig
 @mode
 @group
-@comment lists/config/config.php.orig
 lists/config/footer.inc
 lists/config/header.inc
 lists/dl.php
@@ -1166,29 +1204,37 @@ lists/styles/styles_unix1.css
 lists/styles/styles_win_ie.css
 lists/styles/styles_win_ns.css
 lists/texts/
+lists/texts/croatian.inc
+lists/texts/croatian2.inc
 lists/texts/czech.inc
 lists/texts/danish.inc
 lists/texts/dutch.inc
+lists/texts/english-usa.inc
 lists/texts/english.inc
+@comment lists/texts/english.inc.orig
+lists/texts/estonian.inc
 lists/texts/french.inc
+lists/texts/french2.inc
 lists/texts/german.inc
-@comment lists/texts/german.inc.orig
 lists/texts/german2.inc
 lists/texts/greek.inc
 lists/texts/hebrew.inc
 lists/texts/italian.inc
 lists/texts/italian2.inc
 lists/texts/italian3.inc
+lists/texts/japanese.inc
 lists/texts/latinamerican.inc
 lists/texts/norwegian.inc
 lists/texts/polish.inc
 lists/texts/portuguese.inc
 lists/texts/portuguese_pt.inc
 lists/texts/romanian.inc
+lists/texts/russian.inc
+lists/texts/slovenian.inc
 lists/texts/spanish.inc
 lists/texts/swedish.inc
 lists/texts/swissgerman.inc
-@comment lists/texts/swissgerman.inc.orig
 lists/texts/tchinese.inc
 lists/texts/turkish.inc
+lists/texts/usa.inc
 lists/ut.php
