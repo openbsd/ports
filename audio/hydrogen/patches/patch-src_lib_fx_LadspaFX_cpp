@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_lib_fx_LadspaFX_cpp,v 1.1 2006/10/08 16:41:59 grange Exp $
+--- src/lib/fx/LadspaFX.cpp.orig	Sun Oct  8 20:22:06 2006
++++ src/lib/fx/LadspaFX.cpp	Sun Oct  8 20:22:22 2006
+@@ -449,7 +449,7 @@ vector<LadspaFXInfo*> LadspaFX::getPlugi
+ 		QDir dir( QString( sPluginDir.c_str() ) );
+ 		if (!dir.exists()) {
+ 			//Logger::getInstance()->log( "[LadspaFX::getPluginList] directory " + sPluginDir + " not found" );
+-			return pluginList;
++			continue;
+ 		}
+ 
+ 		Logger::getInstance()->log( "[LadspaFX::getPluginList] reading directory: " + sPluginDir );
