@@ -1,9 +1,0 @@
-$OpenBSD: patch-examples_designer_worldtimeclockplugin_worldtimeclockplugin_pro,v 1.1 2005/12/31 15:59:50 espie Exp $
---- examples/designer/worldtimeclockplugin/worldtimeclockplugin.pro.orig	Sat Dec 31 14:44:32 2005
-+++ examples/designer/worldtimeclockplugin/worldtimeclockplugin.pro	Sat Dec 31 14:44:43 2005
-@@ -1,4 +1,4 @@
--CONFIG      += designer plugin debug_and_release
-+CONFIG      += designer plugin 
- TEMPLATE    = lib
- DESTDIR     = $$QT_BUILD_TREE/plugins/designer
- 
