@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/08 16:57:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2006/10/08 22:01:06 steven Exp $
 
 COMMENT=	"shapefile manipulation library"
 
@@ -17,5 +17,13 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://dl.maptools.org/dl/shapelib/
+
+MAKE_ENV=	SHLIB_MAJOR=${LIBshp_VERSION:R} \
+		SHLIB_MINOR=${LIBshp_VERSION:E}
+FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/include/libshp
+	${INSTALL_DATA} ${WRKSRC}/shapefil.h ${PREFIX}/include/libshp
 
 .include <bsd.port.mk>
