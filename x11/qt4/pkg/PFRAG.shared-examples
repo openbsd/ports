@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared-examples,v 1.1.1.1 2005/07/04 11:10:15 espie Exp $
-lib/qt4/examples/tools/plugandpaint/plugins/libpnp_basictools.so
+@comment $OpenBSD: PFRAG.shared-examples,v 1.2 2006/10/08 21:43:50 espie Exp $
 lib/qt4/examples/tools/plugandpaint/plugins/libpnp_extrafilters.so

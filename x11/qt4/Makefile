@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2006/09/18 10:21:48 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2006/10/08 21:43:50 espie Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples for qt4"
@@ -11,25 +11,30 @@ COMMENT-sqlite=		"sqlite plugin for qt4"
 PKGNAME=		qt4-${VERSION}
 PKGNAME-mysql=		qt4-mysql-${VERSION}
 PKGNAME-postgresql=	qt4-postgresql-${VERSION}
-PKGNAME-examples=	qt4-examples-${VERSION}p0
+PKGNAME-examples=	qt4-examples-${VERSION}
 PKGNAME-sqlite2=	qt4-sqlite2-${VERSION}
 PKGNAME-sqlite=		qt4-sqlite-${VERSION}
-FULLPKGNAME=		qt4-${VERSION}p0
+FULLPKGNAME=		qt4-${VERSION}
 FULLPKGNAME-html=	qt4-html-${VERSION}
-SHARED_LIBS=	Qt3Support 5.0 \
-		QtCore 5.0 \
-		QtDesigner 5.0 \
-		QtDesignerComponents 5.0 \
-		QtGui 5.0 \
-		QtNetwork 5.0 \
-		QtOpenGL 5.0 \
-		QtSql 5.0 \
-		QtXml 5.0 \
-		QtSvg 5.0 \
-		QtTest 5.0
+SHARED_LIBS=	Qt3Support 6.0 \
+		QtCore 6.0 \
+		QtDesigner 6.0 \
+		QtDesignerComponents 6.0 \
+		QtGui 6.0 \
+		QtNetwork 6.0 \
+		QtOpenGL 6.0 \
+		QtSql 6.0 \
+		QtXml 6.0 \
+		QtSvg 6.0 \
+		QtTest 6.0 \
+		QtAssistantClient 2.0 \
+		QtDBus 0.0 
 
-VERSION=	4.1.3
-DISTNAME=	qt-x11-opensource-src-4.1.3
+
+VERSION=	4.2.0
+DISTNAME=	qt-x11-opensource-src-4.2.0
+
+
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.rediris.es/mirror/Qt/source/ \
 		ftp://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/source/ \
@@ -60,7 +65,7 @@ PORTHOME=	${WRKDIST}
 
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS=	-qt-gif -system-libpng -system-libjpeg -system-zlib \
-		-sm -no-g++-exceptions \
+		-sm -no-g++-exceptions -system-sqlite \
 		-v -stl -xrender -fast \
 		-no-sql-odbc \
 		-tablet \
@@ -99,7 +104,8 @@ MULTI_PACKAGES+=-html -examples
 
 .if !defined(PACKAGING) || ${SUBPACKAGE} == ""
 LIB_DEPENDS+=	jpeg::graphics/jpeg \
-		mng::graphics/libmng 
+		mng::graphics/libmng \
+		dbus-1::x11/dbus
 
 WANTLIB+=	lcms
 .endif
@@ -112,7 +118,7 @@ LIB_DEPENDS+=mysqlclient_r::databases/mysql
 .  if defined(PACKAGING)
 LIB_DEPENDS+=	QtCore.>=4,QtSql::x11/qt4
 .  endif
-WANTLIB+=	m z
+WANTLIB+=	m z crypto ssl pthread
 .endif
 
 MULTI_PACKAGES+=	-postgresql
@@ -150,13 +156,20 @@ WANTLIB+=	m z
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-examples"
-LIB_DEPENDS+=	QtCore.>=4,QtGui,QtNetwork,QtOpenGL,QtSql,QtXml,QtSvg,QtTest::x11/qt4
+LIB_DEPENDS+=	QtCore.>=4,QtGui,QtNetwork,QtOpenGL,QtSql,QtXml,QtSvg,QtTest,Qt3Support,QtAssistantClient,QtDBus::x11/qt4
+WANTLIB+=	dbus-1
 .endif
 
 .if !defined(PACKAGING) || ${SUBPACKAGE} == "" || ${SUBPACKAGE} == "-examples"
 WANTLIB+=	ICE Xrender c GLU SM freetype pthread Xrandr Xinerama \
-		stdc++ Xcursor Xext GL Xi m X11 z fontconfig
+		stdc++ Xcursor Xext GL Xi m X11 z fontconfig Xfixes
 LIB_DEPENDS+=	png.>=2::graphics/png
+.endif
+
+.if !defined(PACKAGING) || ${SUBPACKAGE} != "-html"
+LIB_DEPENDS+=	glib-2.0::devel/glib2
+WANTLIB+=	iconv intl
+
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-html"
@@ -171,7 +184,7 @@ QT_PLUGINSDIR=	${QT_BASEDIR}/plugins
 QT_BINDIR=	${QT_BASEDIR}/bin
 QT_PKGCFGDIR=	${QT_BASEDIR}
 
-DOCS=	LICENSE.GPL README OPENSOURCE-NOTICE.TXT
+DOCS=	OPENSOURCE-NOTICE.TXT README
 
 VMEM_WARNING=	Yes
 NO_REGRESS=	Yes
@@ -183,6 +196,8 @@ PROGRAMS= rcc qtdemo qt3to4 syncqt
 
 QMAKE=${WRKBUILD}/bin/qmake
 
+MAKE_FLAGS+=	INSTALL_PROGRAM='${INSTALL_PROGRAM}' \
+		INSTALL_FILE='${INSTALL_DATA}'
 .for l v in $(SHARED_LIBS)
 MAKE_FLAGS+=LIB$l_VERSION=$v
 .endfor
@@ -204,21 +219,15 @@ DIRECTORIES= src/corelib src/gui src/network src/opengl src/qt3support src/sql s
 	tools/designer/src/plugins/widgets
 
 post-install:
-	# extra debugging stuff
-.for i in ${DIRECTORIES}
-#	cd ${WRKBUILD}/$i && ${MAKE_PROGRAM} LOCALBASE=${LOCALBASE} ${FAKE_FLAGS} debug-install
-.endfor
 	# extra doc
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${QT_DOC}
 	# programs
 	${INSTALL_PROGRAM_DIR} ${QT_BINDIR} 
 .for p in ${PROGRAMS4} 
-	strip ${PREFIX}/lib/qt4/bin/$p
 	@ln -sf ${TRUEPREFIX}/lib/qt4/bin/$p ${PREFIX}/bin/$p4
 .endfor
 	@ln -sf assistant ${PREFIX}/lib/qt4/bin/assistant4
 .for p in ${PROGRAMS}
-	strip ${QT_BASEDIR}/bin/$p
 	@ln -sf ${TRUEPREFIX}/lib/qt4/bin/$p ${PREFIX}/bin/$p
 .endfor
 	# fix pkgconfig stuff

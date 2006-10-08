@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_gui_dialogs_qprintdialog_unix_cpp,v 1.2 2006/03/05 21:58:07 espie Exp $
---- src/gui/dialogs/qprintdialog_unix.cpp.orig	Thu Feb 16 11:51:12 2006
-+++ src/gui/dialogs/qprintdialog_unix.cpp	Sun Mar  5 12:10:38 2006
-@@ -66,6 +66,8 @@
- #define BOOL_DEFINED
- #endif
+$OpenBSD: patch-src_gui_dialogs_qprintdialog_unix_cpp,v 1.3 2006/10/08 21:43:50 espie Exp $
+--- src/gui/dialogs/qprintdialog_unix.cpp.orig	Fri Sep 29 16:45:01 2006
++++ src/gui/dialogs/qprintdialog_unix.cpp	Sat Oct  7 13:10:23 2006
+@@ -56,6 +56,8 @@
+ #    define BOOL_DEFINED
+ #  endif
  
-+#include <sys/types.h>
-+#include <rpc/rpc.h>
- #include <rpcsvc/ypclnt.h>
- #include <rpcsvc/yp_prot.h>
- 
++#  include <sys/types.h>
++#  include <rpc/rpc.h>
+ #  include <rpcsvc/ypclnt.h>
+ #  include <rpcsvc/yp_prot.h>
+ #endif // QT_NO_NIS

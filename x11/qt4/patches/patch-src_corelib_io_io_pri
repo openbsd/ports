@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_corelib_io_io_pri,v 1.1 2006/10/08 21:43:50 espie Exp $
+--- src/corelib/io/io.pri.orig	Sun Oct  8 16:44:55 2006
++++ src/corelib/io/io.pri	Sun Oct  8 16:45:06 2006
+@@ -60,7 +60,7 @@ win32 {
+             HEADERS += io/qfilesystemwatcher_inotify_p.h
+         }
+ 
+-        freebsd-*|macx-*:{
++        freebsd-*|macx-*|openbsd-*:{
+             SOURCES += io/qfilesystemwatcher_kqueue.cpp
+             HEADERS += io/qfilesystemwatcher_kqueue_p.h
+         }

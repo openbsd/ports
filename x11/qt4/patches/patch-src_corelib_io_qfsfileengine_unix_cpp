@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_corelib_io_qfsfileengine_unix_cpp,v 1.1 2006/06/04 09:37:43 espie Exp $
---- src/corelib/io/qfsfileengine_unix.cpp.orig	Mon May 22 12:22:02 2006
-+++ src/corelib/io/qfsfileengine_unix.cpp	Mon May 22 12:25:43 2006
-@@ -539,13 +539,13 @@ uint QFSFileEngine::ownerId(FileOwner ow
+$OpenBSD: patch-src_corelib_io_qfsfileengine_unix_cpp,v 1.2 2006/10/08 21:43:50 espie Exp $
+--- src/corelib/io/qfsfileengine_unix.cpp.orig	Fri Sep 29 16:44:58 2006
++++ src/corelib/io/qfsfileengine_unix.cpp	Sat Oct  7 13:10:23 2006
+@@ -575,13 +575,13 @@ uint QFSFileEngine::ownerId(FileOwner ow
  
  QString QFSFileEngine::owner(FileOwner own) const
  {
@@ -17,7 +17,7 @@ $OpenBSD: patch-src_corelib_io_qfsfileengine_unix_cpp,v 1.1 2006/06/04 09:37:43 
          struct passwd entry;
          getpwuid_r(ownerId(own), &entry, buf.data(), buf.size(), &pw);
  #else
-@@ -555,7 +555,7 @@ QString QFSFileEngine::owner(FileOwner o
+@@ -591,7 +591,7 @@ QString QFSFileEngine::owner(FileOwner o
              return QFile::decodeName(QByteArray(pw->pw_name));
      } else if(own == OwnerGroup) {
          struct group *gr = 0;

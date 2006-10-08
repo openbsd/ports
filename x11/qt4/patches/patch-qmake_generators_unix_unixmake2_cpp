@@ -1,20 +1,20 @@
-$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.2 2006/03/05 21:58:07 espie Exp $
---- qmake/generators/unix/unixmake2.cpp.orig	Thu Feb 16 11:51:34 2006
-+++ qmake/generators/unix/unixmake2.cpp	Sun Mar  5 12:23:57 2006
-@@ -200,10 +200,8 @@ UnixMakefileGenerator::writeMakeParts(QT
-             t << "TARGETD       = " << var("TARGET_x.y") << endl;
-             t << "TARGET0       = " << var("TARGET_") << endl;
+$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.3 2006/10/08 21:43:50 espie Exp $
+--- qmake/generators/unix/unixmake2.cpp.orig	Fri Sep 29 16:45:13 2006
++++ qmake/generators/unix/unixmake2.cpp	Sat Oct  7 13:10:23 2006
+@@ -206,10 +206,8 @@ UnixMakefileGenerator::writeMakeParts(QT
+             t << "TARGETD       = " << escapeFilePath(var("TARGET_x.y")) << endl;
+             t << "TARGET0       = " << escapeFilePath(var("TARGET_")) << endl;
          } else if(project->isEmpty("QMAKE_HPUX_SHLIB")) {
--            t << "TARGETD       = " << var("TARGET_x.y.z") << endl;
--            t << "TARGET0       = " << var("TARGET_") << endl;
--            t << "TARGET1       = " << var("TARGET_x") << endl;
--            t << "TARGET2       = " << var("TARGET_x.y") << endl;
+-            t << "TARGETD       = " << escapeFilePath(var("TARGET_x.y.z")) << endl;
+-            t << "TARGET0       = " << escapeFilePath(var("TARGET_")) << endl;
+-            t << "TARGET1       = " << escapeFilePath(var("TARGET_x")) << endl;
+-            t << "TARGET2       = " << escapeFilePath(var("TARGET_x.y")) << endl;
 +	    t << "LIB" << var("OBSD_TARGET_NAME") << "_VERSION = " << var("OBSD_TARGET_VERSION") << endl;
 +            t << "TARGETD       = " << var("OBSD_TARGET_x.y") << endl;
          } else {
-             t << "TARGETD       = " << var("TARGET_x") << endl;
-             t << "TARGET0       = " << var("TARGET_") << endl;
-@@ -490,31 +488,22 @@ UnixMakefileGenerator::writeMakeParts(QT
+             t << "TARGETD       = " << escapeFilePath(var("TARGET_x")) << endl;
+             t << "TARGET0       = " << escapeFilePath(var("TARGET_")) << endl;
+@@ -518,31 +516,22 @@ UnixMakefileGenerator::writeMakeParts(QT
              t << endl << endl;
          } else if(project->isEmpty("QMAKE_HPUX_SHLIB")) {
              t << "\n\t"
@@ -49,9 +49,9 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.2 2006/03/05 21:58:07 es
              if(!project->isEmpty("QMAKE_POST_LINK"))
                  t << "\n\t" << var("QMAKE_POST_LINK");
              t << endl << endl;
-@@ -817,8 +806,7 @@ UnixMakefileGenerator::writeMakeParts(QT
+@@ -857,8 +846,7 @@ UnixMakefileGenerator::writeMakeParts(QT
          t << "\t-$(DEL_FILE) " << "$(TARGET)" << " " << endl;
-     if(!project->isActiveConfig("staticlib") && project->variables()["QMAKE_APP_FLAG"].isEmpty() &&
+     if(!project->isActiveConfig("staticlib") && project->values("QMAKE_APP_FLAG").isEmpty() &&
         !project->isActiveConfig("plugin") && !project->isActiveConfig("compile_libtool"))
 -        t << "\t-$(DEL_FILE) " << destdir << "$(TARGET0) " << destdir << "$(TARGET1) "
 -          << destdir << "$(TARGET2) $(TARGETA)" << endl;
@@ -59,24 +59,23 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.2 2006/03/05 21:58:07 es
      {
          QString ofile = Option::fixPathToTargetOS(fileFixify(Option::output.fileName()));
          if(!ofile.isEmpty())
-@@ -870,6 +858,11 @@ void UnixMakefileGenerator::init2()
-     project->variables()["VER_MAJ"].append(l[0]);
-     project->variables()["VER_MIN"].append(l[1]);
-     project->variables()["VER_PAT"].append(l[2]);
-+
-+    project->variables()["OBSD_TARGET_NAME"].append(project->first("TARGET"));
-+    project->variables()["OBSD_TARGET_VERSION"].append(project->first("VER_MAJ") +  "."  + project->first("VER_MIN"));
-+    project->variables()["OBSD_TARGET_x.y"].append("lib" + project->first("TARGET") + "." + project->first("QMAKE_EXTENSION_SHLIB") + ".$(LIB" + project->first("TARGET") + "_VERSION)");
+@@ -927,6 +915,10 @@ void UnixMakefileGenerator::init2()
+     project->values("VER_MAJ").append(l[0]);
+     project->values("VER_MIN").append(l[1]);
+     project->values("VER_PAT").append(l[2]);
++    project->values("OBSD_TARGET_NAME").append(project->first("TARGET"));
++    project->values("OBSD_TARGET_VERSION").append(project->first("VER_MAJ") +  "."  + project->first("VER_MIN"));
++    project->values("OBSD_TARGET_x.y").append("lib" + project->first("TARGET") + "." + project->first("QMAKE_EXTENSION_SHLIB") + ".$(LIB" + project->first("TARGET") + "_VERSION)");
 +
      if(project->isEmpty("QMAKE_FRAMEWORK_VERSION"))
-         project->variables()["QMAKE_FRAMEWORK_VERSION"].append(project->variables()["VER_MAJ"].first());
+         project->values("QMAKE_FRAMEWORK_VERSION").append(project->values("VER_MAJ").first());
  
-@@ -991,7 +984,7 @@ void UnixMakefileGenerator::init2()
+@@ -1058,7 +1050,7 @@ void UnixMakefileGenerator::init2()
                                                              project->first("VER_MIN") +  "." +
                                                              project->first("VER_PAT"));
              }
--            project->variables()["TARGET"] = project->variables()["TARGET_x.y.z"];
-+            project->variables()["TARGET"] = project->variables()["OBSD_TARGET_x.y"];
+-            project->values("TARGET") = project->values("TARGET_x.y.z");
++            project->values("TARGET") = project->values("OBSD_TARGET_x.y");
          }
          if(project->isEmpty("QMAKE_LN_SHLIB"))
-             project->variables()["QMAKE_LN_SHLIB"].append("ln -s");
+             project->values("QMAKE_LN_SHLIB").append("ln -s");

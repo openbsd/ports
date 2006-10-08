@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_plugins_sqldrivers_sqlite_sqlite_pro,v 1.1 2006/05/15 21:09:39 espie Exp $
---- src/plugins/sqldrivers/sqlite/sqlite.pro.orig	Mon May 15 18:31:44 2006
-+++ src/plugins/sqldrivers/sqlite/sqlite.pro	Mon May 15 18:34:20 2006
-@@ -4,49 +4,8 @@ HEADERS		= ../../../sql/drivers/sqlite/q
+$OpenBSD: patch-src_plugins_sqldrivers_sqlite_sqlite_pro,v 1.2 2006/10/08 21:43:50 espie Exp $
+--- src/plugins/sqldrivers/sqlite/sqlite.pro.orig	Mon Aug 28 15:10:00 2006
++++ src/plugins/sqldrivers/sqlite/sqlite.pro	Mon Aug 28 15:11:15 2006
+@@ -4,53 +4,7 @@ HEADERS		= ../../../sql/drivers/sqlite/q
  SOURCES		= smain.cpp \
  		  ../../../sql/drivers/sqlite/qsql_sqlite.cpp
  
--!contains( LIBS, .*sqlite.* ) {
+-!system-sqlite:!contains( LIBS, .*sqlite.* ) {
 -    CONFIG(release, debug|release):DEFINES *= NDEBUG
 -    INCLUDEPATH += ../../../3rdparty/sqlite
 -
@@ -25,6 +25,7 @@ $OpenBSD: patch-src_plugins_sqldrivers_sqlite_sqlite_pro,v 1.1 2006/05/15 21:09:
 -               ../../../3rdparty/sqlite/legacy.c \
 -               ../../../3rdparty/sqlite/main.c \
 -               ../../../3rdparty/sqlite/opcodes.c \
+-               ../../../3rdparty/sqlite/os.c \
 -               ../../../3rdparty/sqlite/pager.c \
 -               ../../../3rdparty/sqlite/parse.c \
 -               ../../../3rdparty/sqlite/pragma.c \
@@ -48,8 +49,9 @@ $OpenBSD: patch-src_plugins_sqldrivers_sqlite_sqlite_pro,v 1.1 2006/05/15 21:09:
 -
 -               unix:SOURCES += ../../../3rdparty/sqlite/os_unix.c
 -               win32:SOURCES += ../../../3rdparty/sqlite/os_win.c
-+!contains( LIBS, .*sqlite3.* ) {
-+	LIBS *= -lsqlite3
- }
+-} else {
+     LIBS *= $$QT_LFLAGS_SQLITE
+     QMAKE_CXXFLAGS *= $$QT_CFLAGS_SQLITE
+-}
  
  include(../qsqldriverbase.pri)
