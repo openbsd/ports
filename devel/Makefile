@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.401 2006/09/28 17:15:10 xsa Exp $
+# $OpenBSD: Makefile,v 1.402 2006/10/08 16:59:54 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -410,6 +410,7 @@
      SUBDIR += sdl-ttf
      SUBDIR += sdlmm
      SUBDIR += sfio
+     SUBDIR += shapelib
      SUBDIR += shtool
      SUBDIR += silc-toolkit
      SUBDIR += slib
