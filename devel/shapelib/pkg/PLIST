@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/08 16:57:08 jasper Exp $
+%%SHARED%%
+include/libshp/
+include/libshp/shapefil.h
+lib/libshp.a
+lib/libshp_p.a
+lib/libshp_pic.a

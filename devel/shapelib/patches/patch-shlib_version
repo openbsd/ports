@@ -1,0 +1,6 @@
+$OpenBSD: patch-shlib_version,v 1.1.1.1 2006/10/08 16:57:08 jasper Exp $
+--- shlib_version.orig	Fri Aug 11 16:03:06 2006
++++ shlib_version	Fri Aug 11 16:03:06 2006
+@@ -0,0 +1,2 @@
++major=1
++minor=2
