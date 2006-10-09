@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2006/10/06 07:50:36 aanriot Exp $
+# $OpenBSD: Makefile,v 1.8 2006/10/09 15:15:18 aanriot Exp $
 
 COMMENT=	"Prelude framework database-access library"
 COMMENT-pgsql=	"PostgreSQL module for libpreludedb"
 COMMENT-mysql=	"MySQL module for libpreludedb"
 COMMENT-sqlite=	"SQLite3 module for libpreludedb"
 
-VERSION=	0.9.9
+VERSION=	0.9.10
 DISTNAME=	libpreludedb-${VERSION}
-PKGNAME=	${DISTNAME}p0
 
 PKGNAME=	prelude-${DISTNAME}
 PKGNAME-pgsql=	prelude-libpreludedb-pgsql-${VERSION}
@@ -17,7 +16,7 @@ PKGNAME-sqlite=	prelude-libpreludedb-sqlite-${VERSION}
 MODULES=	lang/python \
 		devel/gettext
 
-SHARED_LIBS=	preludedb	4.1
+SHARED_LIBS=	preludedb	4.2
 
 WANTLIB=	z
 
@@ -70,7 +69,6 @@ CONFIGURE_ARGS+=--without-sqlite3
 .if defined(PACKAGING)
 .  if !empty(SUBPACKAGE)
 LIB_DEPENDS+=	preludedb.>=3::security/prelude/libpreludedb
-WANTLIB=
 .  else
 WANTLIB+=	pthread c
 .  endif
