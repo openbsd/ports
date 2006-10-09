@@ -1,0 +1,17 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2006/10/09 13:10:34 alek Exp $
+--- setup.py.orig	Mon Jul 10 10:44:43 2006
++++ setup.py	Mon Oct  9 13:23:48 2006
+@@ -9,10 +9,11 @@ except:
+ 
+ ext_modules = [
+     Extension('silc', ['src/pysilc.c'],
+-              libraries = ['silc', 'silcclient'],
++              library_dirs = ['/usr/lib', '%%LOCALBASE%%/lib'],
++              libraries = ['iconv', 'silc', 'silcclient'],
+               extra_compile_args = ['-g'],
+               include_dirs = ['/usr/include/silc-toolkit',
+-                              '/usr/local/include/silc'],
++                              '%%LOCALBASE%%/include/silc'],
+               depends = ['src/pysilc_callbacks.c',
+                          'src/pysilc_channel.c',
+                          'src/pysilc_user.c',

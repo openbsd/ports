@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_pysilc_h,v 1.1.1.1 2006/10/09 13:10:34 alek Exp $
+--- src/pysilc.h.orig	Mon Jul 10 10:42:36 2006
++++ src/pysilc.h	Mon Oct  9 13:23:30 2006
+@@ -402,7 +402,8 @@ static PyMemberDef pysilc_client_members
+ };
+ 
+ #define PYSILC_CLIENT_DOC  "\
+-  SilcClient(keys, nickname = \"\", username = \"\",\n\ realname = \"\",\
++  SilcClient(keys, nickname = \"\", username = \"\",\n\
++             realname = \"\",\
+              hostname = \"\")\n\n\
+   A SILC Client. 'keys' is a SilcKeys representing a public private\n\
+   key pair. 'nickname', 'username', 'realname' and 'hostname'\n\
