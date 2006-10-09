@@ -1,11 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.10 2005/03/16 15:34:49 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.11 2006/10/09 09:15:22 espie Exp $
 @conflict cups-*
 bin/cancel
 bin/lp
+@mode u+s
+@owner root
 bin/lpq
 bin/lpr
 bin/lprm
 bin/lpstat
+@mode
+@owner
 lib/liblpr.a
 lib/liblpr.la
 libexec/filters/
@@ -33,7 +37,11 @@ libexec/filters/psbanner
 @man man/man8/lpc.8
 @man man/man8/lpd.8
 sbin/checkpc
+@mode u+s
+@owner root
 sbin/lpc
+@mode
+@owner
 sbin/lpd
 sbin/lprng_certs
 sbin/lprng_index_certs
