@@ -1,0 +1,15 @@
+$OpenBSD: patch-markdown_py,v 1.1.1.1 2006/10/09 16:01:25 alek Exp $
+--- markdown.py.orig	Wed Jun  7 10:48:55 2006
++++ markdown.py	Wed Jun  7 10:48:47 2006
+@@ -1658,9 +1658,9 @@ def get_vars(args):
+ 
+ 
+ USAGE = """
+-\nUsing markdown.py:
++\nUsing markdown:
+ 
+-    python markdown.py [option] input_file_with_markdown.txt [output_file.html]
++    markdown [option] input_file_with_markdown.txt [output_file.html]
+ 
+ Options:
+ 
