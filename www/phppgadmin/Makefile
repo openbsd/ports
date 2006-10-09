@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2005/10/20 20:19:42 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2006/10/09 14:29:00 aanriot Exp $
 
 COMMENT=	"tool to handle the administration of PostgreSQL over the web"
 
 DISTNAME=	phpPgAdmin-3.5.5
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www databases
 HOMEPAGE=	http://phppgadmin.sourceforge.net/	
 
@@ -30,5 +31,6 @@ RUN_DEPENDS=	:php${PHP_VERSION}-pgsql-*:www/php${PHP_VERSION}/extensions,-pgsql
 
 do-install:
 	@cd ${PREFIX} && tar zxf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
+	@chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 .include <bsd.port.mk>

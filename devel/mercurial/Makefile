@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2006/09/22 04:22:26 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2006/10/09 14:29:54 aanriot Exp $
 
 COMMENT=		"fast, lightweight source control management"
 
 VERSION=		0.9.1
 DISTNAME=		mercurial-${VERSION}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=     	devel
 HOMEPAGE=		http://www.selenic.com/mercurial/
 
@@ -35,7 +36,7 @@ post-install:
 .endfor
 .for dir in git-viz hgsh purge vim
 	@cp -rp ${WRKSRC}/contrib/${dir} ${PREFIX}/share/mercurial/.
+	@chown ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/mercurial/${dir}/*
 .endfor
-
 
 .include <bsd.port.mk>
