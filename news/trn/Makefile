@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2005/05/29 14:19:08 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/10/09 09:54:01 espie Exp $
 
 COMMENT=	"threaded newsreader"
 
@@ -8,7 +8,7 @@ MAINTAINER= 	Marc Espie <espie@openbsd.org>
 MASTER_SITES=${MASTER_SITE_SOURCEFORGE:=trn/}
 V=76
 DISTNAME=trn-4.0-test$V
-PKGNAME=trn-4.0.$Vp0
+PKGNAME=trn-4.0.$Vp1
 
 PERMIT_PACKAGE_FTP=Yes
 PERMIT_DISTFILES_FTP=Yes
@@ -33,6 +33,9 @@ FAKE_FLAGS= \
 	inewsbin=${WRKINST}${PREFIX}/bin \
 	mansrc=${WRKINST}${PREFIX}/man/man1 \
 	installfilexp=${WRKINST}${PREFIX}/lib/trn/filexp
+
+post-install:
+	find ${PREFIX}/lib/trn/HelpFiles | xargs chown ${SHAREOWN}:${SHAREGRP} 
 
 NO_REGRESS=	Yes
 
