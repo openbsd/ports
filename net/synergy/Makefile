@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2006/06/17 22:57:01 dim Exp $
+# $OpenBSD: Makefile,v 1.5 2006/10/09 10:41:27 espie Exp $
 
 COMMENT=		"mouse and keyboard sharing utility"
 
 DISTNAME=		synergy-1.3.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		net
 
 HOMEPAGE=		http://synergy2.sourceforge.net/
@@ -28,5 +29,6 @@ post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/synergy
 	@cd ${WRKDIST}/doc && tar cf - * | tar -C ${PREFIX}/share/doc/synergy \
 		-xpf -
+	find ${PREFIX}/share/doc/synergy |xargs chown ${SHAREOWN}:${SHAREGRP}
 
 .include <bsd.port.mk>
