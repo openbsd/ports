@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2006/08/09 11:59:04 kurt Exp $
+# $OpenBSD: Makefile,v 1.5 2006/10/09 11:34:39 bernd Exp $
 
 COMMENT=	"a free, standards-compilant jvm with a small footprint"
 
 ONLY_FOR_ARCHS=	i386 powerpc arm
 
 DISTNAME=	jamvm-1.4.3
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	lang java
 
@@ -29,5 +30,8 @@ RUN_DEPENDS=		:classpath->=0.91:lang/classpath
 WANTLIB=		c m z pthread
 
 CONFIGURE_ARGS+=	--with-classpath-install-dir=${LOCALBASE}
+
+post-install:
+	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share
 
 .include <bsd.port.mk>
