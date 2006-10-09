@@ -1,0 +1,18 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/10/09 10:20:24 espie Exp $
+lib/pl-${V}/lib/${MACHINE_ARCH}-openbsd4.0/cgi.so
+lib/pl-${V}/lib/${MACHINE_ARCH}-openbsd4.0/double_metaphone.so
+lib/pl-${V}/lib/${MACHINE_ARCH}-openbsd4.0/files.so
+lib/pl-${V}/lib/${MACHINE_ARCH}-openbsd4.0/libpl.so
+@lib lib/pl-${V}/lib/${MACHINE_ARCH}-openbsd4.0/libpl.so.${LIBpl_VERSION}
+lib/pl-${V}/lib/${MACHINE_ARCH}-openbsd4.0/memfile.so
+lib/pl-${V}/lib/${MACHINE_ARCH}-openbsd4.0/mime.so
+lib/pl-${V}/lib/${MACHINE_ARCH}-openbsd4.0/porter_stem.so
+lib/pl-${V}/lib/${MACHINE_ARCH}-openbsd4.0/rdf_db.so
+lib/pl-${V}/lib/${MACHINE_ARCH}-openbsd4.0/readutil.so
+lib/pl-${V}/lib/${MACHINE_ARCH}-openbsd4.0/rlimit.so
+lib/pl-${V}/lib/${MACHINE_ARCH}-openbsd4.0/sgml2pl.so
+lib/pl-${V}/lib/${MACHINE_ARCH}-openbsd4.0/socket.so
+lib/pl-${V}/lib/${MACHINE_ARCH}-openbsd4.0/table.so
+lib/pl-${V}/lib/${MACHINE_ARCH}-openbsd4.0/time.so
+lib/pl-${V}/lib/${MACHINE_ARCH}-openbsd4.0/unix.so
+lib/pl-${V}/xpce-6.6.18/lib/${MACHINE_ARCH}-openbsd4.0/pl2xpce.so

@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_test_memmodel_c,v 1.1.1.1 2006/10/09 10:20:24 espie Exp $
+--- src/test/memmodel.c.orig	Wed Sep  6 19:42:06 2006
++++ src/test/memmodel.c	Wed Sep  6 19:42:27 2006
+@@ -84,8 +84,11 @@ char *argv[];
+   else if ( (gva & 0xf0000000L) == 0x10000000L )
+     decl[ndecl++] = "DATA_AT_0X1=1;";
+   else if ( (gva & 0xf0000000L) )
+-  { printf("PROBLEM: Memory model not supported; see \"pl-incl.h\"\n");
++  { 
++#if 0
++  printf("PROBLEM: Memory model not supported; see \"pl-incl.h\"\n");
+     exit(1);
++#endif
+   }
+   
+   if ( stack_up )

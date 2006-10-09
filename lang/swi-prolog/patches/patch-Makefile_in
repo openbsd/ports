@@ -1,0 +1,39 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2006/10/09 10:20:24 espie Exp $
+--- Makefile.in.orig	Wed May 11 10:45:37 2005
++++ Makefile.in	Thu Sep  7 19:01:23 2006
+@@ -32,13 +32,13 @@ check::
+ clean::
+ 	@cd $(BUILDARCH) && $(MAKE) $@
+ 	@if [ -f packages/Makefile ]; then \
+-	   cd packages && make clean; \
++	   cd packages && ${MAKE} clean; \
+ 	fi
+ 
+ distclean::
+ 	rm -f .pkg-config
+ 	@if [ -f packages/Makefile ]; then \
+-	   cd packages && make distclean; \
++	   cd packages && ${MAKE} distclean; \
+ 	fi
+ 	@cd $(BUILDARCH) && $(MAKE) $@
+ 	rm -f Makefile
+@@ -50,14 +50,14 @@ distclean::
+ world:	lite .pkg-config packages
+ 
+ .pkg-config:
+-	cd packages && ./configure
++	cd packages && ./configure $(CONFIGURE_ARGS)
+ 	touch $@
+ 
+ packages::
+-	cd packages && make
++	cd packages && ${MAKE}
+ 
+ install-world::
+-	cd $(BUILDARCH) && make install
+-	cd packages && make install
+-	cd packages && make html-install
++	cd $(BUILDARCH) && ${MAKE} install
++	cd packages && ${MAKE} install
++	cd packages && ${MAKE} html-install
+ 

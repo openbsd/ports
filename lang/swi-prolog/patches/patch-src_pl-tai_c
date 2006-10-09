@@ -1,0 +1,47 @@
+$OpenBSD: patch-src_pl-tai_c,v 1.1.1.1 2006/10/09 10:20:24 espie Exp $
+--- src/pl-tai.c.orig	Wed Sep  6 18:58:22 2006
++++ src/pl-tai.c	Wed Sep  6 19:06:00 2006
+@@ -47,9 +47,11 @@ is supposed to give the POSIX standard o
+ #define daylight _daylight
+ #else
+ extern char *tzname[2];
++#if !defined(__OpenBSD__)
+ extern long timezone;
+ extern int daylight;
+ #endif
++#endif
+ 
+ 
+ #define TAI_UTC_OFFSET LL(4611686018427387914)
+@@ -89,7 +91,11 @@ do_tzset()
+ static int
+ tz_offset()
+ { do_tzset();
++#if defined(__OpenBSD__)
++  return 0;
++#else
+   return timezone;
++#endif
+ }
+ 
+ 
+@@ -318,7 +324,9 @@ PRED_IMPL("stamp_date_time", 3, stamp_da
+ 	  ct.hour       = tm.tm_hour;
+ 	  ct.minute     = tm.tm_min;
+ 	  tzatom = tz_name_as_atom(tm.tm_isdst);
++#if !defined(__OpenBSD__)
+ 	  if ( daylight )			/* from tzset() */
++#endif
+ 	  { if ( tm.tm_isdst )
+ 	    { utcoffset -= 3600;
+ 	      dstatom    = ATOM_true;
+@@ -728,7 +736,9 @@ PRED_IMPL("format_time", 3, format_time,
+     { tb.utcoff = tz_offset();
+       localtime_r(&unixt, &tb.tm);
+       tb.sec = (double)tb.tm.tm_sec + modf(tb.stamp, &ip);
++#if !defined(__OpenBSD__)
+       if ( daylight )
++#endif
+       { if ( tb.tm.tm_isdst )
+ 	{ tb.utcoff -= 3600;
+ 	  tb.isdst = TRUE;

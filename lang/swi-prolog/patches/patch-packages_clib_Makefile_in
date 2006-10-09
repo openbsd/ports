@@ -1,0 +1,15 @@
+$OpenBSD: patch-packages_clib_Makefile_in,v 1.1.1.1 2006/10/09 10:20:24 espie Exp $
+--- packages/clib/Makefile.in.orig	Thu Sep  7 15:58:15 2006
++++ packages/clib/Makefile.in	Thu Sep  7 15:58:34 2006
+@@ -83,9 +83,9 @@ readutil.@SO@:	$(READUTILOBJ)
+ 		$(LD) $(LDFLAGS) -o $@ $(READUTILOBJ)
+ 
+ maildrop/rfc822/librfc822.a:
+-		(cd maildrop/rfc822 && make)
++		(cd maildrop/rfc822 && ${MAKE})
+ maildrop/rfc2045/librfc2045.a:
+-		(cd maildrop/rfc2045 && make)
++		(cd maildrop/rfc2045 && ${MAKE})
+ 
+ 
+ install:	$(TARGETS) $(LIBPL)

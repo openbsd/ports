@@ -1,0 +1,12 @@
+SWI-Prolog started life in 1986 as a Prolog in the Edinburgh
+tradition. Its development has been guided from the very beginning by
+the desire to build large scale applications in Prolog. For this
+reason it stresses connectivity to the C-language, few system limits,
+comprehensive memory management, modules, multi-threading,
+coroutining, constraints and a fast and interactive development
+environment. Portable libraries for graphics, databases, networking,
+web-services, XML, RDF and many more complete the system.
+
+SWI-Prolog is compliant to part one of ISO standard Prolog. In
+addition it provides functionality compatible to Quintus, SICStus,
+LPA, Ciao and many more.
