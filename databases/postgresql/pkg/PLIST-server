@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.9 2006/02/05 09:23:22 mbalmer Exp $
+@comment $OpenBSD: PLIST-server,v 1.10 2006/10/09 11:55:18 aanriot Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-clients-*
@@ -6,6 +6,7 @@
 @conflict postgresql-*
 @newgroup _postgresql:503
 @newuser _postgresql:503:_postgresql:daemon:PostgreSQL Manager:/var/postgresql:/bin/sh
+%%SHARED%%
 bin/initdb
 bin/ipcclean
 bin/pg_controldata
@@ -398,4 +399,8 @@ share/postgresql/pg_ident.conf.sample
 share/postgresql/pg_service.conf.sample
 share/postgresql/postgres.bki
 share/postgresql/postgresql.conf.sample
-%%SHARED%%
+@mode 755
+@owner _postgresql
+@group _postgresql
+@sample /var/postgresql/
+@exec su _postgresql -c "%D/bin/initdb -D /var/postgresql/data"
