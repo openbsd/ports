@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/07/19 01:36:52 ian Exp $
+# $OpenBSD: Makefile,v 1.2 2006/10/09 11:21:03 bernd Exp $
 
 COMMENT=		"Web Tools Platform for Eclipse"
 
 V=			1.5.0
 DISTNAME=		wtp-sdk-R-${V}-200606281455
-PKGNAME=		eclipse-plugin-wtp-sdk-${V}
+PKGNAME=		eclipse-plugin-wtp-sdk-${V}p0
 CATEGORIES=		devel/eclipse/plugins java
 
 HOMEPAGE=		http://www.eclipse.org/webtools/
@@ -38,5 +38,6 @@ do-install:
 	cd ${WRKDIST} && ${TAR} cf - eclipse | \
 		(cd ${PREFIX} && ${TAR} -xf -)
 	cd ${PREFIX}/eclipse && rm epl-v10.html notice.html
+	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}
 
 .include <bsd.port.mk>
