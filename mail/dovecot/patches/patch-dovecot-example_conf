@@ -1,6 +1,6 @@
-$OpenBSD: patch-dovecot-example_conf,v 1.24 2006/09/18 05:04:28 brad Exp $
---- dovecot-example.conf.orig	Thu Aug 10 17:21:05 2006
-+++ dovecot-example.conf	Thu Aug 17 18:41:36 2006
+$OpenBSD: patch-dovecot-example_conf,v 1.25 2006/10/09 19:26:53 brad Exp $
+--- dovecot-example.conf.orig	Fri Sep 22 10:40:56 2006
++++ dovecot-example.conf	Mon Oct  9 15:20:25 2006
 @@ -7,13 +7,12 @@
  # value inside quotes, eg.: key = "# char and trailing whitespace  "
  
@@ -18,8 +18,8 @@ $OpenBSD: patch-dovecot-example_conf,v 1.24 2006/09/18 05:04:28 brad Exp $
 +base_dir = /var/dovecot/
  
  # Protocols we want to be serving: imap imaps pop3 pop3s
- #protocols = imap imaps
-@@ -41,7 +40,7 @@
+ # If you only want to use dovecot-auth, you can set this to "none".
+@@ -42,7 +41,7 @@
  # SSL/TLS is used (LOGINDISABLED capability). Note that if the remote IP
  # matches the local IP (ie. you're connecting from the same computer), the
  # connection is considered secure and plaintext authentication is allowed.
@@ -28,7 +28,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.24 2006/09/18 05:04:28 brad Exp $
  
  # Should all IMAP and POP3 processes be killed when Dovecot master process
  # shuts down. Setting this to "no" means that Dovecot can be upgraded without
-@@ -86,7 +85,7 @@
+@@ -87,7 +86,7 @@
  # dropping root privileges, so keep the key file unreadable by anyone but
  # root. Included doc/mkcert.sh can be used to easily generate self-signed
  # certificate, just make sure to update the domains in dovecot-openssl.cnf
@@ -37,7 +37,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.24 2006/09/18 05:04:28 brad Exp $
  #ssl_key_file = /etc/ssl/private/dovecot.pem
  
  # If key file is password protected, give the password here. Alternatively
-@@ -118,7 +117,7 @@
+@@ -119,7 +118,7 @@
  # which login needs to be able to connect to. The sockets are created when
  # running as root, so you don't have to worry about permissions. Note that
  # everything in this directory is deleted when Dovecot is started.
@@ -46,7 +46,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.24 2006/09/18 05:04:28 brad Exp $
  
  # chroot login process to the login_dir. Only reason not to do this is if you
  # wish to run the whole Dovecot without roots.
-@@ -130,7 +129,7 @@
+@@ -131,7 +130,7 @@
  # only it has access, it's used to control access for authentication process.
  # Note that this user is NOT used to access mails.
  # http://wiki.dovecot.org/UserIds
@@ -55,7 +55,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.24 2006/09/18 05:04:28 brad Exp $
  
  # Set max. process size in megabytes. If you don't use
  # login_process_per_connection you might need to grow this.
-@@ -265,7 +264,7 @@
+@@ -266,7 +265,7 @@
  
  # Don't write() to mmaped files. This is required for some operating systems
  # which use separate caches for them, such as OpenBSD.
@@ -64,7 +64,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.24 2006/09/18 05:04:28 brad Exp $
  
  # Locking method for index files. Alternatives are fcntl, flock and dotlock.
  # Dotlocking uses some tricks which may create more disk I/O than other locking
-@@ -412,7 +411,7 @@
+@@ -413,7 +412,7 @@
  # locking methods as well. Some operating systems don't allow using some of
  # them simultaneously.
  #mbox_read_locks = fcntl
@@ -73,7 +73,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.24 2006/09/18 05:04:28 brad Exp $
  
  # Maximum time in seconds to wait for lock (all of them) before aborting.
  #mbox_lock_timeout = 300
-@@ -467,19 +466,19 @@
+@@ -468,19 +467,19 @@
  
  protocol imap {
    # Login executable location.
@@ -97,7 +97,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.24 2006/09/18 05:04:28 brad Exp $
  
    # Maximum IMAP command line length in bytes. Some clients generate very long
    # command lines with huge mailboxes, so you may need to raise this if you get
-@@ -520,7 +519,7 @@ protocol imap {
+@@ -521,7 +520,7 @@ protocol imap {
    #     but not both. Thunderbird separates these two by forcing server to
    #     accept '/' suffix in mailbox names in subscriptions list.
    # The list is space-separated.
@@ -106,20 +106,21 @@ $OpenBSD: patch-dovecot-example_conf,v 1.24 2006/09/18 05:04:28 brad Exp $
  }
    
  ##
-@@ -529,10 +528,10 @@ protocol imap {
+@@ -530,11 +529,11 @@ protocol imap {
  
  protocol pop3 {
    # Login executable location.
 -  #login_executable = /usr/libexec/dovecot/pop3-login
 +  #login_executable = /usr/local/libexec/dovecot/pop3-login
  
-   # POP3 executable location
+   # POP3 executable location. See IMAP's mail_executable above for examples
+   # how this could be changed.
 -  #mail_executable = /usr/libexec/dovecot/pop3
 +  #mail_executable = /usr/local/libexec/dovecot/pop3
  
    # Don't try to set mails non-recent or seen with POP3 sessions. This is
    # mostly intended to reduce disk I/O. With maildir it doesn't move files
-@@ -576,7 +575,7 @@ protocol pop3 {
+@@ -578,7 +577,7 @@ protocol pop3 {
    # installations. %08Xu%08Xv will be the new default, so use it for new
    # installations.
    #
@@ -128,7 +129,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.24 2006/09/18 05:04:28 brad Exp $
  
    # POP3 logout format string:
    #  %t - number of TOP commands
-@@ -601,7 +600,7 @@ protocol pop3 {
+@@ -603,7 +602,7 @@ protocol pop3 {
    #     Outlook Express and Netscape Mail breaks if end of headers-line is
    #     missing. This option simply sends it if it's missing.
    # The list is space-separated.
@@ -137,7 +138,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.24 2006/09/18 05:04:28 brad Exp $
  }
  
  ##
-@@ -633,7 +632,7 @@ protocol lda {
+@@ -635,7 +634,7 @@ protocol lda {
  ##
  
  # Executable location
@@ -146,7 +147,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.24 2006/09/18 05:04:28 brad Exp $
  
  # Set max. process size in megabytes.
  #auth_process_size = 256
-@@ -745,7 +744,7 @@ auth default {
+@@ -747,7 +746,7 @@ auth default {
    # database (passwd usually), you can use static userdb.
    # REMEMBER: You'll need /etc/pam.d/dovecot file created for PAM
    # authentication to actually work.
@@ -155,7 +156,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.24 2006/09/18 05:04:28 brad Exp $
      #  [session=yes] [setcred=yes] [cache_key=<key>] [<service name>]
      #
      # session=yes makes Dovecot open and immediately close PAM session. Some
-@@ -773,13 +772,13 @@ auth default {
+@@ -775,13 +774,13 @@ auth default {
      #   args = session=yes *
      #   args = cache_key=%u dovecot
      #args = dovecot
