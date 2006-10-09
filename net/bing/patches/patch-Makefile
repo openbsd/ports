@@ -1,6 +1,15 @@
-$OpenBSD: patch-Makefile,v 1.1 2002/09/17 09:04:05 pvalchev Exp $
---- Makefile.orig	Thu Jul 20 18:03:30 1995
-+++ Makefile	Tue Sep 17 02:57:12 2002
+$OpenBSD: patch-Makefile,v 1.2 2006/10/09 09:42:24 espie Exp $
+--- Makefile.orig	Fri Jul 21 02:03:30 1995
++++ Makefile	Mon Oct  9 11:38:37 2006
+@@ -2,7 +2,7 @@
+ # Makefile,v 1.4 1995/07/21 00:03:30 pb Exp
+ #
+ MANDIR=/usr/local/man
+-BINDIR=/usr/local/bin
++BINDIR=/usr/local/sbin
+ INSTALL=install -c
+ GROFF=groff
+ NROFF=nroff
 @@ -28,5 +28,5 @@ clean:
  	$(RM) -f bing bing.ps bing.0
  
@@ -8,4 +17,4 @@ $OpenBSD: patch-Makefile,v 1.1 2002/09/17 09:04:05 pvalchev Exp $
 -	$(INSTALL) -m 644 -o man -g man bing.8 $(MANDIR)/man8
 -	$(INSTALL) -m 4555 -o root -g staff bing $(BINDIR)
 +	$(INSTALL) -m 644 -o root -g bin bing.8 $(DESTDIR)$(MANDIR)/man8
-+	$(INSTALL) -m 4555 -o root -g staff bing $(DESTDIR)$(BINDIR)
++	$(INSTALL) -m 4555 -o root -g bin bing $(DESTDIR)$(BINDIR)

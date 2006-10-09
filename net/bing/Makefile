@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2004/12/16 00:31:20 alek Exp $
+# $OpenBSD: Makefile,v 1.17 2006/10/09 09:42:24 espie Exp $
 
 COMMENT=	"point-to-point bandwidth measurement tool"
 
 DISTNAME=	bing-1.0.4
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.lip6.fr/pub/networking/
 

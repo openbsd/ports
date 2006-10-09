@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:17:38 espie Exp $
-bin/bing
+@comment $OpenBSD: PLIST,v 1.6 2006/10/09 09:42:24 espie Exp $
 @man man/man8/bing.8
+@mode u+s
+sbin/bing
+@mode
 share/doc/bing/
 share/doc/bing/README
