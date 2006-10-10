@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2006/01/07 20:03:39 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2006/10/10 05:57:49 kevlo Exp $
 
 COMMENT=	"module to determine the size of images in several formats"
 
-DISTNAME=	Image-Size-2.992
+DISTNAME=	Image-Size-3.01
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	graphics perl5 
 
@@ -17,7 +17,10 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Image/}
 
-CONFIGURE_STYLE= perl
+CONFIGURE_STYLE= perl modbuild
+
+REGRESS_DEPENDS=	::devel/p5-Test-Pod \
+			::devel/p5-Test-Pod-Coverage
 
 PKG_ARCH=	*
 
