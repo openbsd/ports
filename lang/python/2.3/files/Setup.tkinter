@@ -1,6 +1,6 @@
-# $OpenBSD: Setup.tkinter,v 1.2 2004/12/30 23:45:08 alek Exp $
+# $OpenBSD: Setup.tkinter,v 1.3 2006/10/10 19:08:06 alek Exp $
 
-@NOSHARED@*shared*
+*shared*
 
 # The _tkinter module.
 #

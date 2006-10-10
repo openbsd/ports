@@ -1,4 +1,4 @@
-# $OpenBSD: Setup,v 1.1.1.1 2005/06/07 01:12:58 alek Exp $
+# $OpenBSD: Setup,v 1.2 2006/10/10 19:08:06 alek Exp $
 
 # -*- makefile -*-
 # The file Setup is used by the makesetup script to construct the files
@@ -149,7 +149,7 @@ GLHACK=-Dclear=__GLclear
 # modules are to be built as shared libraries (see above for more
 # detail; also note that *static* reverses this effect):
 
-@NOSHARED@*shared*
+*shared*
 
 # GNU readline.  Unlike previous Python incarnations, GNU readline is
 # now incorporated in an optional module, configured in the Setup file

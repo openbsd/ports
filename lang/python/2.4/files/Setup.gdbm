@@ -1,6 +1,6 @@
-# $OpenBSD: Setup.gdbm,v 1.1.1.1 2005/06/07 01:12:57 alek Exp $
+# $OpenBSD: Setup.gdbm,v 1.2 2006/10/10 19:08:06 alek Exp $
 
-@NOSHARED@*shared*
+*shared*
 
 # Anthony Baxter's gdbm module.  GNU dbm(3) will require -lgdbm:
 #
