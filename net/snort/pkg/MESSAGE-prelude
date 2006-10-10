@@ -2,18 +2,11 @@ An up-to-date set of rules is needed for Snort to be useful as an IDS.
 These can be downloaded manually or net/oinkmaster can be used to
 download the latest rules from several different sources.
 
-It is recommended that snort be run as an unprivileged chrooted user.
-An _snort user/group and log directory has been created for this
-purpose.  You should start snort with the following options to take
-advantage of this:
-        -u _snort -g _snort -t /var/snort
-and if you want to log:
-        -l /var/snort/log
-
 To start with snort as sensor for prelude, you have to create a
 starting profile, e.g. "snort" by running on the manager side:
 
-# prelude-adduser registration-server prelude-manager --uid=564 --gid=564
+# prelude-adduser registration-server prelude-manager \
+	--uid=564 --gid=564
 
 and on the sensor side:
 
@@ -21,4 +14,10 @@ and on the sensor side:
 	<manager address> --uid 557 --gid 557
 
 Then, fill in the prelude section in ${SYSCONFDIR}/snort/snort.conf
-before starting snort.
+before starting snort (the name of the profile is "snort" in the
+example).
+
+Eventually, you should start snort with the following options:
+
+    -c /etc/snort/snort.conf -u _snort -g _snort -l /var/snort/log
+

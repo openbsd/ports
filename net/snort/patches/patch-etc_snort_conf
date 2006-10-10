@@ -1,0 +1,22 @@
+$OpenBSD: patch-etc_snort_conf,v 1.1 2006/10/10 13:33:17 aanriot Exp $
+--- etc/snort.conf.orig	Wed Sep 13 21:44:31 2006
++++ etc/snort.conf	Tue Oct 10 12:54:59 2006
+@@ -82,6 +82,9 @@ var SNMP_SERVERS $HOME_NET
+ # Port lists must either be continuous [eg 80:8080], or a single port [eg 80].
+ # We will adding support for a real list of ports in the future.
+ 
++# Ports you run ssh servers on
++var SSH_PORTS 22
++
+ # Ports you run web servers on
+ #
+ # Please note:  [80,8080] does not work.
+@@ -108,7 +111,7 @@ var AIM_SERVERS [64.12.24.0/23,64.12.28.
+ # Path to your rules files (this can be a relative path)
+ # Note for Windows users:  You are advised to make this an absolute path,
+ # such as:  c:\snort\rules
+-var RULE_PATH ../rules
++var RULE_PATH %%SYSCONFDIR%%/snort/rules
+ 
+ # Configure the snort decoder
+ # ============================

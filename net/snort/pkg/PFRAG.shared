@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2006/10/10 13:33:17 aanriot Exp $
+@lib lib/snort_dynamicengine/libsf_engine.so.${LIBsf_engine_VERSION}
+@lib lib/snort_dynamicpreprocessor/libsf_dns_preproc.so.${LIBsf_dns_preproc_VERSION}
+@lib lib/snort_dynamicpreprocessor/libsf_ftptelnet_preproc.so.${LIBsf_ftptelnet_preproc_VERSION}
+@lib lib/snort_dynamicpreprocessor/libsf_smtp_preproc.so.${LIBsf_smtp_preproc_VERSION}

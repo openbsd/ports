@@ -1,25 +1,33 @@
-# $OpenBSD: Makefile,v 1.47 2006/08/03 23:15:58 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2006/10/10 13:33:17 aanriot Exp $
 
 COMMENT=	"highly flexible sniffer/NIDS"
 
-DISTNAME=	snort-2.4.5
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	snort-2.6.0.2
 CATEGORIES=	net security
 MASTER_SITES=	${HOMEPAGE}/dl/current/
 
 HOMEPAGE=       http://www.snort.org/
 
-# License: GPL
+# GPL
 PERMIT_PACKAGE_CDROM= 	Yes
 PERMIT_PACKAGE_FTP=   	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP= 	Yes
 WANTLIB=		c m pcap 
 
-SEPARATE_BUILD=	concurrent
-CONFIGURE_STYLE= gnu
+SHARED_LIBS=	sf_engine 0.0 \
+		sf_dns_preproc 0.0 \
+		sf_ftptelnet_preproc 0.0 \
+		sf_smtp_preproc 0.0
 
-LIB_DEPENDS=     pcre::devel/pcre
+USE_LIBTOOL=	Yes
+
+SEPARATE_BUILD=	concurrent
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
+		--enable-dynamicplugin
+
+LIB_DEPENDS=	pcre::devel/pcre
 
 # gcc 3.3.5, Bus errors
 .if ${MACHINE_ARCH} == "sparc64"
@@ -30,21 +38,18 @@ FLAVORS=	postgresql mysql flexresp prelude
 FLAVOR?=	
 
 .if ${FLAVOR:L:Mflexresp}
-LIB_DEPENDS+=	lib/libnet-1.0/net.=0:libnet-1.0*:net/libnet/1.0
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+= --enable-flexresp \
-		--with-libnet-includes=${LOCALBASE}/include/libnet-1.0 \
-		--with-libnet-libraries=${LOCALBASE}/lib/libnet-1.0
+LIB_DEPENDS+=	dnet.=1::net/libdnet
+CONFIGURE_ARGS+=--enable-flexresp2
 .endif
 
 .if ${FLAVOR:L:Mpostgresql}
 LIB_DEPENDS+=	pq.>=2::databases/postgresql
-CONFIGURE_ARGS+= --with-postgresql="${LOCALBASE}"
+CONFIGURE_ARGS+=--with-postgresql="${LOCALBASE}"
 .endif
 
 .if ${FLAVOR:L:Mmysql}
 LIB_DEPENDS+=	lib/mysql/mysqlclient.>=10::databases/mysql
-CONFIGURE_ARGS+= --with-mysql="${LOCALBASE}"
+CONFIGURE_ARGS+=--with-mysql="${LOCALBASE}"
 WANTLIB+=	z
 .endif
 
@@ -59,10 +64,21 @@ MESSAGE=	${PKGDIR}/MESSAGE-prelude
 CONFIGS=	classification.config gen-msg.map generators reference.config \
 		sid sid-msg.map snort.conf threshold.conf unicode.map
 
+DOCS=		AUTHORS CREDITS README.* *.pdf
+
+post-build:
+	@perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR}," \
+		${WRKSRC}/etc/snort.conf
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/snort
 .for i in ${CONFIGS}
 	${INSTALL_DATA} ${WRKSRC}/etc/${i} ${PREFIX}/share/examples/snort
+.endfor
+
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/snort
+.for j in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/${j} ${PREFIX}/share/doc/snort
 .endfor
 
 .include <bsd.port.mk>

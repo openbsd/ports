@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_dynamic-preprocessors_Makefile_in,v 1.1 2006/10/10 13:33:17 aanriot Exp $
+--- src/dynamic-preprocessors/Makefile.in.orig	Wed Sep 13 21:40:06 2006
++++ src/dynamic-preprocessors/Makefile.in	Sun Oct  1 17:38:17 2006
+@@ -480,7 +480,7 @@ maintainer-clean-generic:
+ 	@echo "This command is intended for maintainers to use"
+ 	@echo "it deletes files that may require special tools to rebuild."
+ 	-test -z "$(BUILT_SOURCES)" || rm -f $(BUILT_SOURCES)
+-@HAVE_DYNAMIC_PLUGINS_FALSE@install-data-local:
++install-data-local:
+ clean: clean-recursive
+ 
+ clean-am: clean-generic clean-libtool clean-local mostlyclean-am
+@@ -608,13 +608,6 @@ include/str_search.h: $(srcdir)/../prepr
+ clean-local:
+ 	rm -rf include build
+ 
+-@HAVE_DYNAMIC_PLUGINS_TRUE@install-data-local:
+-@HAVE_DYNAMIC_PLUGINS_TRUE@	@for f in $(exported_files); do \
+-@HAVE_DYNAMIC_PLUGINS_TRUE@		truefile=`echo $$f | sed -e "s/.*\///"`; \
+-@HAVE_DYNAMIC_PLUGINS_TRUE@		$(mkinstalldirs) $(DESTDIR)$(srcinstdir); \
+-@HAVE_DYNAMIC_PLUGINS_TRUE@		if test -f $(srcdir)/$$f; then p=$(srcdir)/$$f; else p=$$f; fi; \
+-@HAVE_DYNAMIC_PLUGINS_TRUE@		$(INSTALL_DATA) $$p $(DESTDIR)$(srcinstdir)/$$truefile; \
+-@HAVE_DYNAMIC_PLUGINS_TRUE@	done
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

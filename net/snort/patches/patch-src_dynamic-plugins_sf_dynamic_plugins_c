@@ -1,0 +1,11 @@
+--- src/dynamic-plugins/sf_dynamic_plugins.c.orig	Wed Sep 20 16:10:44 2006
++++ src/dynamic-plugins/sf_dynamic_plugins.c	Wed Sep 20 16:09:23 2006
+@@ -42,6 +42,8 @@
+ #define EXT "*.sl"
+ #elif defined(MACOS)
+ #define EXT "*.dylib"
++#elif defined(OPENBSD)
++#define EXT "*.so.*"
+ #else
+ #define EXT "*.so"
+ #endif

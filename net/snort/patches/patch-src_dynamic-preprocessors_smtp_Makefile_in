@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_dynamic-preprocessors_smtp_Makefile_in,v 1.1 2006/10/10 13:33:17 aanriot Exp $
+--- src/dynamic-preprocessors/smtp/Makefile.in.orig	Tue Oct 10 12:22:47 2006
++++ src/dynamic-preprocessors/smtp/Makefile.in	Tue Oct 10 12:23:13 2006
+@@ -387,7 +387,7 @@ distdir: $(DISTFILES)
+ check-am: all-am
+ check: $(BUILT_SOURCES)
+ 	$(MAKE) $(AM_MAKEFLAGS) check-am
+-all-am: Makefile $(LTLIBRARIES) all-local
++all-am: Makefile $(LTLIBRARIES)
+ installdirs:
+ 	for dir in "$(DESTDIR)$(libdir)"; do \
+ 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
