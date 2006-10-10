@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2005/09/10 18:07:43 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2006/10/10 08:34:22 bernd Exp $
 
 COMMENT=		"Quake/Quake-world client"
 COMMENT-server=		"Quake world server"
 CATEGORIES=		games
 
-FULLPKGNAME-server=	quakeworld-server-20000101p0
-PKGNAME=		quake-20000101
+FULLPKGNAME-server=	quakeworld-server-20000101p1
+PKGNAME=		quake-20000101p0
 DISTNAME=		quake-v6-bsd-kame
 PATCHFILES=		quake6-00-v6-20000202b.diff.gz:0
 PATCH_DIST_STRIP=	-p1
@@ -75,5 +75,8 @@ post-extract:
 
 post-patch:
 	cd ${WRKDIST}; PATH=${PORTPATH} AUTOCONF_VERSION="${AUTOCONF_VERSION}" autoreconf
+
+post-install:
+	@chown -R ${BINOWN}:${BINGRP} ${PREFIX}/bin/*
 
 .include <bsd.port.mk>
