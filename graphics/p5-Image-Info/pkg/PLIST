@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/12/24 15:36:30 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.9 2006/10/10 06:17:14 kevlo Exp $
 ${P5SITE}/Image/
 ${P5SITE}/Image/Info/
 ${P5SITE}/Image/Info.pm
@@ -14,6 +14,8 @@ ${P5SITE}/Image/Info/XPM.pm
 ${P5SITE}/Image/TIFF.pm
 @man man/man3p/Image::Info.3p
 @man man/man3p/Image::Info::BMP.3p
+@man man/man3p/Image::Info::PPM.3p
 @man man/man3p/Image::Info::SVG.3p
+@man man/man3p/Image::Info::TIFF.3p
 @man man/man3p/Image::Info::XBM.3p
 @man man/man3p/Image::Info::XPM.3p
