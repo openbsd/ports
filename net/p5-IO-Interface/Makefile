@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2006/01/11 20:12:45 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2006/10/10 05:40:05 kevlo Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"module for access to network card configuration information"
 
-DISTNAME=	IO-Interface-0.98
+DISTNAME=	IO-Interface-1.02
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net perl5 
 
