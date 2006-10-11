@@ -1,0 +1,19 @@
+$OpenBSD: patch-admin_install_php,v 1.1.1.1 2006/10/11 18:28:27 mbalmer Exp $
+--- admin/install.php.orig	Fri May  5 18:03:25 2006
++++ admin/install.php	Sun Oct  8 15:11:51 2006
+@@ -640,6 +640,15 @@ if ( 5 == $t_install_state ) {
+ 				print_test_result( BAD, false, 'cannot write ' . $t_config_filename );
+ 			}
+ 		} else {
++			# already exists, see if it is the placeholder file
++			if ( ( config_get( 'placeholder', '' ) == "yes" ) ) {
++				if ( $fd = @fopen( $t_config_filename, 'w' ) ) {
++					fwrite( $fd, $t_config );
++					fclose( $fd );
++					print_test_result( GOOD );
++					$t_write_failed = false;
++				}
++			} else
+ 			# already exists, see if the information is the same
+ 			if ( ( $f_hostname != config_get( 'hostname', '' ) ) ||
+ 					( $f_db_type != config_get( 'db_type', '' ) ) ||

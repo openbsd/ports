@@ -1,0 +1,43 @@
+READ THIS MESSAGE CAREFULLY, IT CONTAINS IMPORTANT SECURITY INFORMATION
+
+Mantis has been installed into ${INSTDIR}
+
+You should point this to the DocumentRoot of your web-server:
+  # ln -s ../mantis /var/www/htdocs/mantis
+(make sure you use a relative symlink since Apache is chrooted)
+
+You can ensure you have a working install by accessing:
+http://localhost/mantis
+
+Some important notes:
+
+MySQL Database:
+
+Install the database such that the Unix socket is in
+/var/www/var/run/mysql/
+
+Configuring:
+
+Configure most of Mantis over the browser.  You will then need to edit the file
+${INSTDIR}/mantis/config_defaults_inc.php.  Consult the
+${INSTDIR}/mantis/doc/README file for more information.
+
+Protecting the admin directory:
+
+Make sure that you properly protect the /mantis/admin location to prevent
+accessing it by unauthorized persons.  The following fragment for
+/var/www/conf/httpd.conf limits access to clients connecting from localhost.
+You might want to even password protect this location.
+
+<Location "/mantis/admin">
+        <Limit GET>
+                Order allow,deny
+                Allow from localhost
+        </Limit>
+</Location>
+
+Changing the administrator password
+
+Once you have configured you Mantis installation, login as the administrator
+user with the default password 'root' and change it before you make yourxi
+installation available.

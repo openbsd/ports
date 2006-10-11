@@ -1,0 +1,14 @@
+$OpenBSD: patch-login_page_php,v 1.1.1.1 2006/10/11 18:28:27 mbalmer Exp $
+--- login_page.php.orig	Sun Oct  8 15:38:53 2006
++++ login_page.php	Sun Oct  8 15:39:52 2006
+@@ -146,10 +146,6 @@
+ 	# Check if the admin directory is available and is readable.
+ 	$t_admin_dir = dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR;
+ 	if ( is_dir( $t_admin_dir ) && is_readable( $t_admin_dir ) ) {
+-		echo '<div class="warning" align="center">', "\n";
+-		echo '<p><font color="red"><strong>WARNING:</strong> Admin directory should be removed.</font></p>', "\n";
+-		echo '</div>', "\n";
+-			
+ 		# since admin directory and db_upgrade lists are available check for missing db upgrades	
+ 		# Check for db upgrade for versions < 1.0.0 using old upgrader
+ 		$t_db_version = config_get( 'database_version' , 0 );
