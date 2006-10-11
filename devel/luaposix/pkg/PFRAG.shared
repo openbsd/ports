@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/12/16 21:21:14 pedro Exp $
-lib/luaposix.so

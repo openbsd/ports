@@ -1,8 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/16 21:21:14 pedro Exp $
-@unexec lua ${SYSCONFDIR}/lua/luapkg.lua del luaposix
-%%SHARED%%
-lua/
-lua/luaposix/
-lua/luaposix/init.lua
-lua/luaposix/posix.lua
-@exec lua ${SYSCONFDIR}/lua/luapkg.lua add luaposix ${PREFIX}/lua/luaposix/init.lua
+@comment $OpenBSD: PLIST,v 1.2 2006/10/11 21:03:24 pedro Exp $
+lib/lua/5.1/posix.so
