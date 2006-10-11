@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2006/09/30 18:47:25 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2006/10/11 11:19:55 robert Exp $
 
 ONLY_FOR_ARCHS= i386
 
 COMMENT=	"a multi-platform productivity suite"
 
-M=		m4
-VERSION=	OOD680_${M}
-DISTNAME=	OOo_${VERSION}_source
-WRKDIST=	${WRKDIR}/ooo_${VERSION}_src
-PKGNAME=	openoffice-2.0.4${M}p0
+VERSION=	2.0.4rc3
+DISTNAME=	OOo_${VERSION}_061002_src
+WRKDIST=	${WRKDIR}/OOD680_m5
+PKGNAME=	openoffice-${VERSION}
 CATEGORIES=	editors productivity
 
 SHARED_LIBS=	icudata		26.0 \
@@ -18,9 +17,12 @@ SHARED_LIBS=	icudata		26.0 \
 		stlport_gcc	4.5
 
 HOMEPAGE=	http://www.openoffice.org/
-MASTER_SITES=	http://mirrors.protection.cx/~jolan/ \
-		http://humppa.hu/ \
-		http://ftp.linux.cz/pub/localization/OpenOffice.org/devel/build/Sources/
+MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/mirror/OpenOffice/contrib/rc/2.0.4rc3/ \
+		ftp://ftp.tu-chemnitz.de/pub/openoffice/contrib/rc/${VERSION}/ \
+		ftp://ftp.nluug.nl/pub/office/openoffice/contrib/rc/${VERSION}/ \
+		http://vlaai.snt.utwente.nl/pub/software/openoffice/contrib/rc/${VERSION}/ \
+		ftp://openoffice.mirror.cygnal.ca/openoffice/contrib/rc/${VERSION}/ \
+		http://mirrors.protection.cx/~jolan/
 
 # See http://www.openoffice.org/about.html#licenses
 # and http://www.openoffice.org/license.html
