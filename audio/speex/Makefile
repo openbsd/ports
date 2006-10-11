@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/08/01 12:13:28 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2006/10/11 21:55:47 steven Exp $
 
 COMMENT=	"patent-free speech codec"
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}download/
+MASTER_SITES=	http://downloads.xiph.org/releases/speex/
 
 LIB_DEPENDS=	ogg.>=5::audio/libogg
 WANTLIB=	c m
