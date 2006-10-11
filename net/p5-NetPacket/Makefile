@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/24 06:16:53 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2006/10/11 05:39:59 msf Exp $
 
-COMMENT=	"Perl module for ecoding/decoding network traffic"
+COMMENT=	"Perl module for encoding/decoding network traffic"
 
 DISTNAME=	NetPacket-0.04
-PKGNAME=	p5-${DISTNAME}
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	net perl5
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>

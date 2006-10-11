@@ -1,7 +1,7 @@
-$OpenBSD: patch-NetPacket_PFLog_pm,v 1.1.1.1 2005/05/24 06:16:53 msf Exp $
---- NetPacket/PFLog.pm.orig	Thu Apr 14 10:10:49 2005
-+++ NetPacket/PFLog.pm	Thu Apr 14 10:10:49 2005
-@@ -0,0 +1,359 @@
+$OpenBSD: patch-NetPacket_PFLog_pm,v 1.2 2006/10/11 05:39:59 msf Exp $
+--- NetPacket/PFLog.pm.orig	Wed Oct 11 14:13:35 2006
++++ NetPacket/PFLog.pm	Wed Oct 11 14:31:46 2006
+@@ -0,0 +1,385 @@
 +#
 +# PFLog.pm
 +# NetPacket::PFLog
@@ -62,7 +62,7 @@ $OpenBSD: patch-NetPacket_PFLog_pm,v 1.1.1.1 2005/05/24 06:16:53 msf Exp $
 +use constant DLT_PFLOG => 117;
 +
 +#  maximum size of the header (in bytes) in the pcap dump
-+use constant PFLOG_HDRLEN => 48;
++use constant PFLOG_HDRLEN => 64;
 +
 +#  packet filter constants (src/sys/net/pfvar.h)
 +my %PF_DIR = (
@@ -97,11 +97,12 @@ $OpenBSD: patch-NetPacket_PFLog_pm,v 1.1.1.1 2005/05/24 06:16:53 msf Exp $
 +	$self->{_frame} = $pkt;
 +
 +	# based on pfloghdr struct in:
-+	# [OpenBSD]/src/sys/net/if_pflog.h v1.10
++	# [OpenBSD]/src/sys/net/if_pflog.h v1.12
 +	if (defined $pkt) {
 +		my ($len, $af, $action, $reason, $ifname, $ruleset, $rulenr, 
-+			$subrulenr, $dir, $pad, $data) =
-+			unpack("CCCCa16a16NNCa3a*", $pkt);
++			$subrulenr, $uid, $pid, $rule_uid, $rule_pid, $dir, 
++			$pad, $data) =
++			unpack("CCCCa16a16NNIiIiCa3a*", $pkt);
 +	
 +		#  strip trailing NULs
 +		$ifname =~ s/\W//g;
@@ -115,6 +116,10 @@ $OpenBSD: patch-NetPacket_PFLog_pm,v 1.1.1.1 2005/05/24 06:16:53 msf Exp $
 +		$self->{ruleset} = $ruleset;
 +		$self->{rulenr} = $rulenr;
 +		$self->{subrulenr} = $subrulenr;
++		$self->{uid} = $uid;
++		$self->{pid} = $pid;
++		$self->{rule_uid} = $rule_uid;
++		$self->{rule_pid} = $rule_pid;
 +		$self->{dir} = $PF_DIR{$dir};
 +		$self->{pad} = $pad;
 +
@@ -153,11 +158,12 @@ $OpenBSD: patch-NetPacket_PFLog_pm,v 1.1.1.1 2005/05/24 06:16:53 msf Exp $
 +	my $reason = $rev_REASON{$self->{reason}};
 +
 +	# based on pfloghdr struct in:
-+	# [OpenBSD]/src/sys/net/if_pflog.h v1.10
-+	my $packet = pack("CCCCa16a16NNCa3a*", 
++	# [OpenBSD]/src/sys/net/if_pflog.h v1.12
++	my $packet = pack("CCCCa16a16NNIiIiCa3a*", 
 +		$self->{len}. $self->{af}, $action, $reason, $self->{ifname}, 
 +		$self->{ruleset}, $self->{rulenr}, $self->{subrulenr},
-+		$dir, $self->{pad}, $ip);
++		$self->{uid}, $self->{pid}, $self->{rule_uid},
++		$self->{rule_pid}, $dir, $self->{pad}, $ip);
 +
 +	return $packet;
 +}
@@ -259,6 +265,26 @@ $OpenBSD: patch-NetPacket_PFLog_pm,v 1.1.1.1 2005/05/24 06:16:53 msf Exp $
 +
 +The rule number in the subruleset that the packet matched. The value
 +will be 2^32-1 if the packet matched in the main ruleset only.
++
++=item uid
++
++The uid of the process that inserted the rule that caused the packet to be 
++logged. 
++
++=item pid
++
++The pid of the process that inserted the rult that caused the packet to be 
++logged. 
++
++=item rule_uid
++
++The uid of the local process that generated the packet that was logged, if
++applicable.
++
++=item rule_pid
++
++The pid of the local process that generated the packer that was logged, if
++applicable.
 +
 +=item dir
 +
