@@ -1,6 +1,0 @@
-wxWidgets normally installs a symlink from wx-config to the config
-script which is specific to the GUI library.
-
-OpenBSD supports installing multiple GUI libraries side-by-side, so you
-must either call the script directly (eg wxgtk-2.4-config), or set an
-environment variable WXCONFIG before calling wx-config.

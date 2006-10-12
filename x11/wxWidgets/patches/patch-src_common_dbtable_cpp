@@ -1,52 +1,14 @@
-$OpenBSD: patch-src_common_dbtable_cpp,v 1.1.1.1 2004/07/16 21:01:35 todd Exp $
---- src/common/dbtable.cpp.orig	Mon Dec 16 23:56:26 2002
-+++ src/common/dbtable.cpp	Tue Apr 29 22:22:20 2003
-@@ -2148,11 +2148,8 @@ void wxDbTable::SetColDefs(UWORD index, 
-     if (!colDefs)  // May happen if the database connection fails
-         return;
+$OpenBSD: patch-src_common_dbtable_cpp,v 1.2 2006/10/12 14:09:33 alek Exp $
+--- src/common/dbtable.cpp.orig	Fri Sep 16 06:03:53 2005
++++ src/common/dbtable.cpp	Thu Jun  1 02:33:07 2006
+@@ -63,6 +63,10 @@
+ #  endif
+ #endif
  
--    if (fieldName.Length() > (unsigned int) DB_MAX_COLUMN_NAME_LEN)
-+    if (strlcpy(colDefs[index].ColName, fieldName, DB_MAX_COLUMN_NAME_LEN) >= DB_MAX_COLUMN_NAME_LEN)
-     {
--        wxStrncpy(colDefs[index].ColName, fieldName, DB_MAX_COLUMN_NAME_LEN);
--        colDefs[index].ColName[DB_MAX_COLUMN_NAME_LEN] = 0;
--
- #ifdef __WXDEBUG__
-         wxString tmpMsg;
-         tmpMsg.Printf(_T("Column name '%s' is too long. Truncated to '%s'."),
-@@ -2160,8 +2157,6 @@ void wxDbTable::SetColDefs(UWORD index, 
-         wxFAIL_MSG(tmpMsg);
- #endif // __WXDEBUG__
-     }
--    else
--        wxStrcpy(colDefs[index].ColName, fieldName);
- 
-     colDefs[index].DbDataType       = dataType;
-     colDefs[index].PtrDataObj       = pData;
-@@ -2604,14 +2599,6 @@ wxVariant wxDbTable::GetCol(const int co
- }  // wxDbTable::GetCol()
++#ifndef __SQLTCHAR
++#define __SQLTCHAR SQLCHAR
++#endif
++
+ ULONG lastTableID = 0;
  
  
--void csstrncpyt(char *s, const char *t, int n)
--{
--    while ( (*s++ = *t++) != '\0' && --n )
--        ;
--
--    *s = '\0';
--}
--
- void wxDbTable::SetCol(const int colNo, const wxVariant val)
- {
-     //FIXME: Add proper wxDateTime support to wxVariant..
-@@ -2634,9 +2621,9 @@ void wxDbTable::SetCol(const int colNo, 
-         {
-             case SQL_CHAR:
-             case SQL_VARCHAR:
--                csstrncpyt((char *)(colDefs[colNo].PtrDataObj),
-+                strlcpy((char *)(colDefs[colNo].PtrDataObj),
-                            val.GetString().c_str(),
--                           colDefs[colNo].SzDataObj-1);
-+                           colDefs[colNo].SzDataObj);
-                 break;
-             case SQL_C_LONG:
-             case SQL_C_SLONG:

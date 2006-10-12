@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2005/12/31 15:18:44 naddy Exp $
-@lib lib/libwx_motif.so.${LIBwx_motif_VERSION}

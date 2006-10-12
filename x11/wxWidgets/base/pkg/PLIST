@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/19 08:54:44 pvalchev Exp $
-%%SHARED%%
-!%%SHARED%%
-bin/wxbase-2.4-config
-lib/wx/include/base-2.4/wx/setup.h

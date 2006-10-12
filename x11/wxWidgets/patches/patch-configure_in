@@ -1,0 +1,103 @@
+$OpenBSD: patch-configure_in,v 1.1 2006/10/12 14:09:33 alek Exp $
+--- configure.in.orig	Tue Mar 21 21:34:49 2006
++++ configure.in	Thu Oct  5 03:49:41 2006
+@@ -3475,7 +3475,7 @@ if test "$TOOLKIT" != "MSW" ; then
+ 
+         AC_CHECK_HEADER([sql.h], [found_sql_h=1])
+         if test "x$found_sql_h" = "x1" ; then
+-            AC_CHECK_LIB(iodbc, SQLAllocEnv, ODBC_LINK=" -liodbc",
++            AC_CHECK_LIB(iodbc, SQLAllocEnv, ODBC_LINK="-pthread -liodbc",
+             [
+                 AC_CHECK_LIB(unixodbc, SQLAllocEnv, ODBC_LINK=" -lunixodbc",
+                 [
+@@ -3768,7 +3768,7 @@ UNICODE=0
+ lib_unicode_suffix=
+ WX_CHARTYPE="ansi"
+ if test "$wxUSE_UNICODE" = "yes"; then
+-    lib_unicode_suffix=u
++    lib_unicode_suffix=
+     WX_CHARTYPE="unicode"
+     UNICODE=1
+ fi
+@@ -3777,8 +3777,8 @@ lib_debug_suffix=
+ WX_DEBUGTYPE="release"
+ DEBUG_FLAG=0
+ if test "$wxUSE_DEBUG_FLAG" = "yes"; then
+-    lib_debug_suffix=d
+-    WX_DEBUGTYPE="debug"
++    lib_debug_suffix=
++    WX_DEBUGTYPE="release"
+     DEBUG_FLAG=1
+ fi
+ 
+@@ -3792,7 +3792,7 @@ fi
+ 
+ WX_VERSION_TAG=`echo WX${lib_unicode_suffix}${lib_debug_suffix}${WX_LIB_FLAVOUR}_${WX_RELEASE} | tr "[[a-z]]" "[[A-Z]]"`
+ 
+-TOOLCHAIN_NAME="${TOOLKIT_DIR}${TOOLKIT_VERSION}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}${WX_LIB_FLAVOUR}-${WX_RELEASE}"
++TOOLCHAIN_NAME="${TOOLKIT_DIR}${TOOLKIT_VERSION}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}${WX_LIB_FLAVOUR}"
+ 
+ TOOLCHAIN_FULLNAME="${TOOLKIT_DIR}${TOOLKIT_VERSION}${WIDGET_SET}-${WX_CHARTYPE}-${WX_DEBUGTYPE}${config_linkage_component}-${WX_RELEASE}${WX_FLAVOUR}"
+ 
+@@ -4016,14 +4016,6 @@ if test "$wxUSE_WCHAR_T" = "yes"; then
+     if test "$USE_HPUX" = 1 -a "$GCC" != "yes"; then
+         CPPFLAGS="$CPPFLAGS -D_INCLUDE__STDC_A1_SOURCE "
+     fi
+-
+-    dnl Try to use wcsrtombs instead of wcstombs which is buggy in old GNU
+-    dnl libc versions if possible. AC_CHECK_FUNCS only checks it's in the
+-    dnl library, not the header, so do a header check for mbstate_t first.
+-    AC_CHECK_TYPES([mbstate_t],
+-                   [AC_CHECK_FUNCS(wcsrtombs)],
+-                   [],
+-                   [#include <wchar.h>])
+ else
+     AC_MSG_WARN([Wide character support is unavailable])
+ fi
+@@ -5252,8 +5244,37 @@ if test "$USE_UNIX" = "1" ; then
+         )
+     ])
+ 
++    AC_CACHE_CHECK([for ioctl() in soundcard.h], ac_cv_header_soundcard, [
++        AC_TRY_LINK([
++                #include <soundcard.h>
++            ],
++            [
++                ioctl(0, SNDCTL_DSP_SYNC, 0);
++            ],
++            ac_cv_header_soundcard=yes,
++            [
++                saveLibs="$LIBS"
++                LIBS="$saveLibs -lossaudio"
++                AC_TRY_LINK([
++                        #include <soundcard.h>
++                    ],
++                    [
++                        ioctl(0, SNDCTL_DSP_SYNC, 0);
++                    ],
++                    ac_cv_header_soundcard=yes,
++                    [
++                        LIBS="$saveLibs"
++                        ac_cv_header_soundcard=no
++                    ]
++                )
++            ]
++        )
++    ])
++
+     if test "$ac_cv_header_sys_soundcard" = "yes"; then
+         AC_DEFINE(HAVE_SYS_SOUNDCARD_H)
++    elif test "$ac_cv_header_soundcard" = "yes"; then
++        AC_DEFINE(HAVE_SOUNDCARD_H)
+     else
+         DISABLED_CONTRIB="$DISABLED_CONTRIB mmedia"
+     fi
+@@ -6852,7 +6873,7 @@ if test "$wxUSE_GUI" = "yes"; then
+     SAMPLES_SUBDIRS="$SAMPLES_SUBDIRS artprov controls dialogs drawing \
+                      dynamic erase event exec font image minimal mobile \
+                      mobile/wxedit mobile/styles propsize render \
+-                     richedit rotate shaped vscroll widgets"
++                     rotate shaped vscroll widgets"
+ 
+     if test "$wxUSE_MONOLITHIC" != "yes"; then
+         SAMPLES_SUBDIRS="$SAMPLES_SUBDIRS console"

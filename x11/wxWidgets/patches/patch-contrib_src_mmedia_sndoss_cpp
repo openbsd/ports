@@ -1,0 +1,12 @@
+$OpenBSD: patch-contrib_src_mmedia_sndoss_cpp,v 1.1 2006/10/12 14:09:33 alek Exp $
+--- contrib/src/mmedia/sndoss.cpp.orig	Tue Aug  1 21:50:05 2006
++++ contrib/src/mmedia/sndoss.cpp	Tue Aug  1 21:50:27 2006
+@@ -14,7 +14,7 @@
+ // System dependent headers
+ // --------------------------------------------------------------------------
+ 
+-#include <sys/soundcard.h>
++#include <soundcard.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <sys/ioctl.h>

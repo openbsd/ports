@@ -1,14 +1,18 @@
-$OpenBSD: patch-src_common_db_cpp,v 1.1.1.1 2004/07/16 21:01:35 todd Exp $
---- src/common/db.cpp.orig	Mon Dec 16 23:56:26 2002
-+++ src/common/db.cpp	Sat May  3 10:59:20 2003
-@@ -81,6 +81,15 @@ wxChar const *SQL_CATALOG_FILENAME     =
+$OpenBSD: patch-src_common_db_cpp,v 1.2 2006/10/12 14:09:33 alek Exp $
+--- src/common/db.cpp.orig	Tue Jan 17 12:14:16 2006
++++ src/common/db.cpp	Thu Jun  1 02:33:00 2006
+@@ -72,6 +72,19 @@ wxChar const *SQL_CATALOG_FILENAME     =
      extern wxList TablesInUse;
  #endif
  
++#ifndef ___SQLTCHAR
++#define ___SQLTCHAR SQLCHAR
++#endif
++
 +FILE*	fopen_create(char *path, char *mode)
 +{
 +	// Only open the file if it does not already exist
-+	int fd = open(path, O_WRONLY | O_CREAT | O_EXCL, 0600)
++	int fd = open(path, O_WRONLY | O_CREAT | O_EXCL, 0600);
 +	if (fd < 0)
 +		return NULL;
 +	return fdopen(fd, mode);
@@ -17,34 +21,3 @@ $OpenBSD: patch-src_common_db_cpp,v 1.1.1.1 2004/07/16 21:01:35 todd Exp $
  // SQL Log defaults to be used by GetDbConnection
  wxDbSqlLogState SQLLOGstate = sqlLogOFF;
  
-@@ -2994,7 +3003,7 @@ bool wxDb::Catalog(const wxChar *userID,
-     wxChar    typeName[30+1];
-     SDWORD    precision, length;
- 
--    FILE *fp = fopen(fileName.c_str(),wxT("wt"));
-+    FILE *fp = fopen_create(fileName.c_str(),wxT("wt"));
-     if (fp == NULL)
-         return(FALSE);
- 
-@@ -3331,7 +3340,10 @@ bool wxDb::SetSqlLogging(wxDbSqlLogState
-     {
-         if (fpSqlLog == 0)
-         {
--            fpSqlLog = fopen(filename, (append ? wxT("at") : wxT("wt")));
-+            if (append)
-+		fpSqlLog = fopen(filename, wxT("at"));
-+	    else
-+		fpSqlLog = fopen_create(filename, wxT("wt"));
-             if (fpSqlLog == NULL)
-                 return(FALSE);
-         }
-@@ -3442,8 +3454,7 @@ wxDBMS wxDb::Dbms(void)
-         return(dbmsType);
- 
-     wxChar baseName[25+1];
--    wxStrncpy(baseName,dbInf.dbmsName,25);
--    baseName[25] = 0;
-+    strlcpy(baseName,dbInf.dbmsName,sizeof(baseName));
- 
-     // RGG 20001025 : add support for Interbase
-     // GT : Integrated to base classes on 20001121
