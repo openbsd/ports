@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_FileLock_h,v 1.1 2006/10/12 14:18:53 alek Exp $
+--- src/FileLock.h.orig	Fri Oct  6 19:28:24 2006
++++ src/FileLock.h	Fri Oct  6 19:28:28 2006
+@@ -31,7 +31,7 @@
+ #include <sys/stat.h>
+ #include <fcntl.h>
+ #include <cerrno>
+-
++#include <unistd.h>
+ 
+ /**
+  * This class provides an easy way to lock non-critical
