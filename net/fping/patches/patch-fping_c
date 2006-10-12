@@ -1,101 +1,250 @@
-$OpenBSD: patch-fping_c,v 1.4 2003/01/28 05:03:32 fgsch Exp $
---- fping.c.orig	Wed Jan  8 17:29:43 1997
-+++ fping.c	Tue Jan 28 01:55:42 2003
-@@ -186,7 +186,11 @@ extern "C" {
+$OpenBSD: patch-fping_c,v 1.5 2006/10/12 08:22:37 jakob Exp $
+--- fping.c.orig	Mon Jan 21 02:06:30 2002
++++ fping.c	Mon Jun 19 22:22:42 2006
+@@ -42,7 +42,6 @@
+  * IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+  * WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  */
+-#define IPV6 1						/* This should be a compiler option, or even better be done from the Makefile... ;) */
  
+ #ifndef _NO_PROTO
+ #if !__STDC__ && !defined( __cplusplus ) && !defined( FUNCPROTO ) \
+@@ -67,7 +66,7 @@ extern "C"
+ 
+ /*** autoconf includes ***/
+ 
+-
++#include <sys/types.h>
+ #include <stdio.h>
+ #include <errno.h>
+ #include <time.h>
+@@ -88,7 +87,6 @@ extern "C"
  #include <string.h>
+ #include <stddef.h>
  
-+#if (defined(__unix__) || defined(unix)) && !defined(USG)
-+#include <sys/param.h>
-+#else
- #include <sys/types.h>
-+#endif
+-#include <sys/types.h>
  #include <sys/time.h>
  #include <sys/socket.h>
  
-@@ -217,10 +221,19 @@ extern "C" {
+@@ -112,6 +110,10 @@ extern "C"
+ #include <arpa/inet.h>
+ #include <netdb.h>
  
- /* externals */
- 
-+#if !(defined(BSD) && (BSD >= 199103))
-+extern char *sys_errlist[];
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#include <sys/param.h>
 +#endif
 +
+ /* RS6000 has sys/select.h */
+ #ifdef HAVE_SYS_SELECT_H
+ #include <sys/select.h>
+@@ -123,10 +125,16 @@ extern "C"
+ 
+ /*** externals ***/
+ 
 +#ifndef __OpenBSD__
  extern char *optarg;
  extern int optind,opterr;
--extern char *sys_errlist[];
  extern int h_errno;
 +#endif
-+
+ 
 +#ifdef HAVE_PROGNAME
 +extern char *__progname;
 +#endif
- 
++
  #ifdef __cplusplus
  }
-@@ -473,9 +486,14 @@ int main(int argc, char **argv)
-   s = socket(AF_INET, SOCK_RAW, proto->p_proto);
-   if (s<0) errno_crash_and_burn("can't create raw socket");
+ #endif /* __cplusplus */
+@@ -246,13 +254,13 @@ typedef struct host_entry
+      struct timeval       last_send_time;     /* time of last packet sent */
+      int                  num_sent;           /* number of ping packets sent */
+      int                  num_recv;           /* number of pings received */
+-     int                  max_reply;          /* longest response time */
+-     int                  min_reply;          /* shortest response time */
++     long                 max_reply;          /* longest response time */
++     long                 min_reply;          /* shortest response time */
+      int                  total_time;         /* sum of response times */
+      int                  num_sent_i;         /* number of ping packets sent */
+      int                  num_recv_i;         /* number of pings received */
+-     int                  max_reply_i;        /* longest response time */
+-     int                  min_reply_i;        /* shortest response time */
++     long                 max_reply_i;        /* longest response time */
++     long                 min_reply_i;        /* shortest response time */
+      int                  total_time_i;       /* sum of response times */
+      int                  *resp_times;        /* individual response times */
+ #if defined( DEBUG ) || defined( _DEBUG )
+@@ -482,7 +490,11 @@ int main( int argc, char **argv )
  
--  /*seteuid(getuid());*/
-+  seteuid(getuid());
-+  setuid(getuid());
+ 	}/* IF */
  
--  prog = argv[0];
+-	prog = argv[0];
 +#ifdef HAVE_PROGNAME
-+  prog = __progname;
++	prog = __progname;
 +#else
-+  prog = (prog = strrchr(argv[0], '/')) ? prog + 1 : argv[0];
++	prog = (prog = strrchr(argv[0], '/')) ? prog + 1 : argv[0];
 +#endif
-   ident = getpid() & 0xFFFF;
+ 	ident = getpid() & 0xFFFF;
  
-   verbose_flag = 1;
-@@ -662,8 +680,12 @@ int main(int argc, char **argv)
-              ++argv;
-   } else if (filename) {
-          FILE *ping_file;
--         char line[132];
--         char host[132],*p;
+ 	verbose_flag = 1;
+@@ -502,9 +514,9 @@ int main( int argc, char **argv )
+ 			break;
+ 		
+ 		case 'r':
+-			if( !( retry = ( u_int )atoi( optarg ) ) )
+-				usage();
++			retry = ( u_int )atoi( optarg );
+ 
++
+ 			break;
+ 		
+ 		case 'i':
+@@ -808,8 +820,13 @@ int main( int argc, char **argv )
+ 	else if( filename )
+ 	{
+ 		FILE *ping_file;
 +#ifdef MAXHOSTNAMELEN
-+         char line[MAXHOSTNAMELEN], host[MAXHOSTNAMELEN];
++		char line[MAXHOSTNAMELEN];
++		char host[MAXHOSTNAMELEN];
 +#else
-+         char line[256], char host[256];
+ 		char line[132];
+ 		char host[132];
 +#endif
-+         char *p;
-          if (strcmp(filename,"-")==0) {
-              ping_file=fdopen(0,"r");
-          } else {
-@@ -1099,6 +1121,8 @@ int wait_for_reply()
+ 		char *p;
+ 		
+ 		if( strcmp( filename, "-" ) == 0 )
+@@ -823,6 +840,7 @@ int main( int argc, char **argv )
  
-   result=recvfrom_wto(s,buffer,4096,
-                      (struct sockaddr *)&response_addr,select_time);
-+  /* get time of receipt as close to the real time as possible */
-+  gettimeofday(&current_time,&tz);
-   if (result<0) { return 0; } /* timeout */
+ 		while( fgets( line, 132, ping_file ) )
+ 		{
++			line[132-1] = '\0';
+ 			if( sscanf( line, "%s", host ) != 1 )
+ 				continue;
+ 			
+@@ -864,7 +882,7 @@ int main( int argc, char **argv )
+ 			if( pCopy )
+ 			{
+ 				/* make a copy of the arg, so we don't damage the original */
+-				strcpy( pCopy, pStart );
++				strncpy( pCopy, pStart, sizeof(pCopy) );
+ 
+ 				/* look for token '/' */
+ 				if( strtok( pCopy, "/" ) != NULL )
+@@ -1503,7 +1521,6 @@ void send_ping( int s, HOST_ENTRY *h )
+ 	memset( buffer, 0, ping_pkt_size * sizeof( char ) );
+ 	icp = ( FPING_ICMPHDR* )buffer;
+ 
+-	gettimeofday( &h->last_send_time, &tz );
+ #ifndef IPV6
+ 	icp->icmp_type = ICMP_ECHO;
+ 	icp->icmp_code = 0;
+@@ -1512,6 +1529,8 @@ void send_ping( int s, HOST_ENTRY *h )
+ 	icp->icmp_id = ident;
+ 
+ 	pdp = ( PING_DATA* )( buffer + SIZE_ICMP_HDR );
++	/* set the time at the very last possible point */
++	gettimeofday(&h->last_send_time,&tz);
+ 	pdp->ping_ts = h->last_send_time;
+ 	pdp->ping_count = h->num_sent;
+ 
+@@ -1523,6 +1542,8 @@ void send_ping( int s, HOST_ENTRY *h )
+ 	icp->icmp6_id = ident;
+ 
+ 	pdp = ( PING_DATA* )( buffer + SIZE_ICMP_HDR );
++	/* set the time at the very last possible point */
++	gettimeofday(&h->last_send_time,&tz);
+ 	pdp->ping_ts = h->last_send_time;
+ 	pdp->ping_count = h->num_sent;
+ 
+@@ -1611,6 +1632,9 @@ int wait_for_reply( void )
+ 
+ 	result = recvfrom_wto( s, buffer, sizeof(buffer), &response_addr, select_time );
+ 
++	/* get time of receipt as close to the real time as possible */
++	gettimeofday(&current_time,&tz);
++
+ 	if( result < 0 )
+ 		return 0;	/* timeout */
    
- #ifdef DEBUG
-@@ -1107,7 +1131,7 @@ int wait_for_reply()
-       return 0;
- #endif
-   ip = (struct ip *) buffer;
--#if defined(__alpha__) && __STDC__
-+#if defined(__FreeBSD__) && defined(__alpha__) && __STDC__
-   /* The alpha headers are decidedly broken.
-    * Using an ANSI compiler, it provides ip_vhl instead of ip_hl and
-    * ip_v.  So, to get ip_hl, we mask off the bottom four bits.
-@@ -1144,13 +1168,12 @@ int wait_for_reply()
-   h=table[n];
+@@ -1625,7 +1649,7 @@ int wait_for_reply( void )
  
-   /* received ping is cool, so process it */
--  gettimeofday(&current_time,&tz);
-   h->waiting = 0;
-   h->timeout = timeout;
-   h->num_recv++;  h->num_recv_i++;
+ 	ip = ( struct ip* )buffer;
+ #ifndef IPV6
+-#if defined( __alpha__ ) && __STDC__ && !defined( __GLIBC__ )
++#if defined( __alpha__ ) && defined(__osf1__) && __STDC__ && !defined( __GLIBC__ )
+ 	/* The alpha headers are decidedly broken.
+ 	 * Using an ANSI compiler, it provides ip_vhl instead of ip_hl and
+ 	 * ip_v.  So, to get ip_hl, we mask off the bottom four bits.
+@@ -1633,7 +1657,7 @@ int wait_for_reply( void )
+ 	hlen = ( ip->ip_vhl & 0x0F ) << 2;
+ #else
+ 	hlen = ip->ip_hl << 2;
+-#endif /* defined(__alpha__) && __STDC__ */
++#endif /* defined(__alpha__) && defined(__osf1__) && __STDC__ */
+ 	if( result < hlen + ICMP_MINLEN )
+ #else
+ 	if( result < sizeof(FPING_ICMPHDR) )
+@@ -1690,7 +1714,6 @@ int wait_for_reply( void )
+ 	h = table[n];
  
-   pdp = (PING_DATA *)icp->icmp_data;
--  sent_time = pdp->ping_ts;
-+  memcpy(&sent_time, &(pdp->ping_ts), sizeof(struct timeval));                
-   this_count = pdp->ping_count;
- #ifdef DEBUG
-   if (trace_flag) 
+ 	/* received ping is cool, so process it */
+-	gettimeofday( &current_time, &tz );
+ 	h->waiting = 0;
+ 	h->timeout = timeout;
+ 	h->num_recv++;
+@@ -2214,10 +2237,10 @@ char *na_cat( char *name, struct in_addr
+ 	if( !nm )
+ 		crash_and_burn( "can't allocate some space for a string" );
+ 	
+-	strcpy( nm, name );
+-	strcat( nm, " (" );
+-	strcat( nm, as );
+-	strcat( nm, ")" );
++	strlcpy( nm, name, sizeof(nm) );
++	strlcat( nm, " (", sizeof(nm) );
++	strlcat( nm, as, sizeof(nm) );
++	strlcat( nm, ")", sizeof(nm) );
+ 
+ 	return( nm );
+ 
+@@ -2444,7 +2467,7 @@ char *cpystr( char *string )
+ 		if( !dst )
+ 			crash_and_burn( "can't allocate some space for a string" );
+ 		
+-		strcpy( dst, string );
++		strlcpy( dst, string, sizeof(dst) );
+ 		return dst;
+ 	
+ 	}/* IF */
+@@ -2570,7 +2593,7 @@ char * sprint_tm( int t )
+ 	/* <= 0.99 ms */
+ 	if( t < 100 )
+ 	{
+-		sprintf( buf, "0.%02d", t );
++		snprintf( buf, sizeof(buf), "0.%02d", t );
+ 		return( buf );
+ 
+ 	}/* IF */
+@@ -2578,7 +2601,7 @@ char * sprint_tm( int t )
+ 	/* 1.00 - 9.99 ms */
+ 	if( t < 1000 )
+ 	{
+-		sprintf( buf, "%d.%02d", t / 100, t % 100 );
++		snprintf( buf, sizeof(buf), "%d.%02d", t / 100, t % 100 );
+ 		return( buf );
+ 
+ 	}/* IF */
+@@ -2586,13 +2609,13 @@ char * sprint_tm( int t )
+ 	/* 10.0 - 99.9 ms */
+ 	if( t < 10000 )
+ 	{
+-		sprintf( buf, "%d.%d", t / 100, ( t % 100 ) / 10 );
++		snprintf( buf, sizeof(buf), "%d.%d", t / 100, ( t % 100 ) / 10 );
+ 		return( buf );
+ 	
+ 	}/* IF */
+   
+ 	/* >= 100 ms */
+-	sprintf( buf, "%d", t / 100 );
++	snprintf( buf, sizeof(buf), "%d", t / 100 );
+ 	return( buf );
+ 
+ } /* sprint_tm() */
