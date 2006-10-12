@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/11/24 11:47:52 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/10/12 18:34:59 jasper Exp $
 
 COMMENT=	"typing tutor for dvorak keyboards"
 
@@ -18,6 +18,8 @@ WANTLIB=		c ncurses
 MASTER_SITES=	http://www.linalco.com/ragnar/
 
 MAKE_FLAGS=	CC="${CC}" PROF="${CFLAGS}"
+
+NO_REGRESS=	Yes
 
 pre-build:
 	@cd ${WRKBUILD}; ${MAKE_PROGRAM} clean
