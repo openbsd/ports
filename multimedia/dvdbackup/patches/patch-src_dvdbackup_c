@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_dvdbackup_c,v 1.1.1.1 2005/11/03 07:46:02 jakemsr Exp $
---- src/dvdbackup.c.orig	Sun Aug  4 23:08:39 2002
-+++ src/dvdbackup.c	Wed Nov  2 23:24:35 2005
+$OpenBSD: patch-src_dvdbackup_c,v 1.2 2006/10/12 11:30:41 claudio Exp $
+--- src/dvdbackup.c.orig	Mon Aug  5 08:08:17 2002
++++ src/dvdbackup.c	Tue Oct  3 18:48:52 2006
 @@ -30,11 +30,11 @@
  #include <unistd.h>
  #include <string.h>
@@ -130,7 +130,52 @@ $OpenBSD: patch-src_dvdbackup_c,v 1.1.1.1 2005/11/03 07:46:02 jakemsr Exp $
  	}
  
  
-@@ -1687,7 +1688,7 @@ title_set_info_t *DVDGetFileSet(dvd_read
+@@ -1518,7 +1519,7 @@ int DVDMirrorTitleX(dvd_reader_t * dvd, 
+ int DVDGetTitleName(const char *device, char *title)
+ {
+ 	/* Variables for filehandel and title string interaction */
+-
++	char buf[2048];
+ 	int  filehandle, i, last;
+ 
+ 	/* Open DVD device */
+@@ -1530,7 +1531,7 @@ int DVDGetTitleName(const char *device, 
+ 
+ 	/* Seek to title of first track, which is at (track_no * 32768) + 40 */
+ 
+-	if ( 32808 != lseek(filehandle, 32808, SEEK_SET) ) {
++	if ( 32768 != lseek(filehandle, 32768, SEEK_SET) ) {
+ 		close(filehandle);
+ 		fprintf(stderr, "Can't seek DVD device %s - check your DVD device\n", device);
+ 		return(1);
+@@ -1538,21 +1539,20 @@ int DVDGetTitleName(const char *device, 
+ 
+ 	/* Read the DVD-Video title */
+ 
+-	if ( 32 != read(filehandle, title, 32)) {
++	if (read(filehandle, buf, sizeof(buf)) == -1) {
+ 		close(filehandle);
+ 		fprintf(stderr, "Can't read title from DVD device %s\n", device);
+ 		return(1);
+ 	}
+ 
+ 	/* Terminate the title string */
++	strlcpy(title, buf + 40, 32);
+ 
+-	title[32] = '\0';
+-
+-
+ 	/* Remove trailing white space */
+-
+-	last = 32;
++	last = 31;
+ 	for ( i = 0; i < 32; i++ ) {
++		if (title[i] == '\0')
++			break;
+ 		if ( title[i] != ' ' ) { last = i; }
+ 	}
+ 
+@@ -1687,7 +1687,7 @@ title_set_info_t *DVDGetFileSet(dvd_read
  
  	/* Find VIDEO_TS.IFO is present - must be present since we did a ifo open 0*/
  
@@ -139,7 +184,7 @@ $OpenBSD: patch-src_dvdbackup_c,v 1.1.1.1 2005/11/03 07:46:02 jakemsr Exp $
  
  	if ( UDFFindFile(_dvd, filename, &size) != 0 ) {
  		title_set_info->title_set[0].size_ifo = size;
-@@ -1700,7 +1701,7 @@ title_set_info_t *DVDGetFileSet(dvd_read
+@@ -1700,7 +1700,7 @@ title_set_info_t *DVDGetFileSet(dvd_read
  
  	/* Find VIDEO_TS.VOB if present*/
  
@@ -148,7 +193,7 @@ $OpenBSD: patch-src_dvdbackup_c,v 1.1.1.1 2005/11/03 07:46:02 jakemsr Exp $
  
  	if ( UDFFindFile(_dvd, filename, &size) != 0 ) {
  		title_set_info->title_set[0].size_menu = size;
-@@ -1710,7 +1711,7 @@ title_set_info_t *DVDGetFileSet(dvd_read
+@@ -1710,7 +1710,7 @@ title_set_info_t *DVDGetFileSet(dvd_read
  
  	/* Find VIDEO_TS.BUP if present */
  
@@ -157,7 +202,7 @@ $OpenBSD: patch-src_dvdbackup_c,v 1.1.1.1 2005/11/03 07:46:02 jakemsr Exp $
  
  	if ( UDFFindFile(_dvd, filename, &size) != 0 ) {
  		title_set_info->title_set[0].size_bup = size;
-@@ -1745,7 +1746,7 @@ title_set_info_t *DVDGetFileSet(dvd_read
+@@ -1745,7 +1745,7 @@ title_set_info_t *DVDGetFileSet(dvd_read
  			}
  
  
@@ -166,7 +211,7 @@ $OpenBSD: patch-src_dvdbackup_c,v 1.1.1.1 2005/11/03 07:46:02 jakemsr Exp $
  
  			if ( UDFFindFile(_dvd, filename, &size) != 0 ) {
  				title_set_info->title_set[counter + 1].size_ifo = size;
-@@ -1761,7 +1762,7 @@ title_set_info_t *DVDGetFileSet(dvd_read
+@@ -1761,7 +1761,7 @@ title_set_info_t *DVDGetFileSet(dvd_read
  
  			/* Find VTS_XX_0.VOB if present*/
  
@@ -175,7 +220,7 @@ $OpenBSD: patch-src_dvdbackup_c,v 1.1.1.1 2005/11/03 07:46:02 jakemsr Exp $
  
  			if ( UDFFindFile(_dvd, filename, &size) != 0 ) {
  				title_set_info->title_set[counter + 1].size_menu = size;
-@@ -1778,7 +1779,7 @@ title_set_info_t *DVDGetFileSet(dvd_read
+@@ -1778,7 +1778,7 @@ title_set_info_t *DVDGetFileSet(dvd_read
  			/* Find all VTS_XX_[1 to 9].VOB files if they are present*/
  
  			for( i = 0; i < 9; ++i ) {
@@ -184,7 +229,7 @@ $OpenBSD: patch-src_dvdbackup_c,v 1.1.1.1 2005/11/03 07:46:02 jakemsr Exp $
  				if(UDFFindFile(_dvd, filename, &size) == 0 ) {
  					break;
  				}
-@@ -1791,7 +1792,7 @@ title_set_info_t *DVDGetFileSet(dvd_read
+@@ -1791,7 +1791,7 @@ title_set_info_t *DVDGetFileSet(dvd_read
  			}
  
  
@@ -193,7 +238,7 @@ $OpenBSD: patch-src_dvdbackup_c,v 1.1.1.1 2005/11/03 07:46:02 jakemsr Exp $
  
  			if ( UDFFindFile(_dvd, filename, &size) != 0 ) {
  				title_set_info->title_set[counter +1].size_bup = size;
-@@ -2265,9 +2266,9 @@ int main(int argc, char *argv[]){
+@@ -2265,9 +2265,9 @@ int main(int argc, char *argv[]){
  
  	/* Switches */
  	int title_set = 0;
@@ -206,7 +251,7 @@ $OpenBSD: patch-src_dvdbackup_c,v 1.1.1.1 2005/11/03 07:46:02 jakemsr Exp $
  
  	int do_mirror = 0;
  	int do_title_set = 0;
-@@ -2278,7 +2279,7 @@ int main(int argc, char *argv[]){
+@@ -2278,7 +2278,7 @@ int main(int argc, char *argv[]){
  
  
  
@@ -215,7 +260,7 @@ $OpenBSD: patch-src_dvdbackup_c,v 1.1.1.1 2005/11/03 07:46:02 jakemsr Exp $
  
  	/* DVD Video device */
  	char * dvd=NULL;
-@@ -2499,7 +2500,7 @@ int main(int argc, char *argv[]){
+@@ -2499,7 +2499,7 @@ int main(int argc, char *argv[]){
  
  
  
@@ -224,7 +269,7 @@ $OpenBSD: patch-src_dvdbackup_c,v 1.1.1.1 2005/11/03 07:46:02 jakemsr Exp $
  
  	if (stat(targetname, &fileinfo) == 0) {
  		if (! S_ISDIR(fileinfo.st_mode)) {
-@@ -2515,7 +2516,7 @@ int main(int argc, char *argv[]){
+@@ -2515,7 +2515,7 @@ int main(int argc, char *argv[]){
  	}
  
  
@@ -233,7 +278,7 @@ $OpenBSD: patch-src_dvdbackup_c,v 1.1.1.1 2005/11/03 07:46:02 jakemsr Exp $
  
  	if (stat(targetname, &fileinfo) == 0) {
  		if (! S_ISDIR(fileinfo.st_mode)) {
-@@ -2530,7 +2531,7 @@ int main(int argc, char *argv[]){
+@@ -2530,7 +2530,7 @@ int main(int argc, char *argv[]){
  		}
  	}
  
