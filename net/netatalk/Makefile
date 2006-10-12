@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2006/09/22 05:54:33 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.20 2006/10/12 06:46:42 sturm Exp $
 
 COMMENT=	"AFP file and print services for AppleTalk/IP networks"
 
 DISTNAME=	netatalk-2.0.3
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 HOMEPAGE=	http://netatalk.sourceforge.net/
 
@@ -21,7 +22,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netatalk/}
 CONFIGURE_STYLE=	gnu
 USE_LIBTOOL=		Yes
 
-LIB_DEPENDS=	db.4::databases/db/v4
+LIB_DEPENDS=	db.=4:db-4.*:databases/db/v4
 
 CONFIGURE_ARGS+=	--with-db4=${LOCALBASE}
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} 
