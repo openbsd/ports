@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2006/08/01 10:50:19 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/10/12 04:48:14 brad Exp $
 
 COMMENT=		"multimedia decoding library"
 
-V=			1.1.1
+V=			1.1.2
 DISTNAME=		xine-lib-${V}
-PKGNAME=		${DISTNAME}p0
+EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		multimedia
-SHARED_LIBS=		xine	14.0
+SHARED_LIBS=		xine	14.1
 
 HOMEPAGE=		http://xinehq.de/
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xine/}
 
-WANTLIB=		X11 Xext Xinerama Xv freetype \
+WANTLIB=		ICE SM X11 Xext Xinerama Xv freetype \
 			jpeg lcms m usbhid z
 
 .if ${MACHINE_ARCH} == "i386"
@@ -46,6 +46,7 @@ LIB_DEPENDS=		FLAC.>=5::audio/flac \
 SHARED_ONLY=		Yes
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
+USE_GMAKE=		Yes
 LIBTOOL_FLAGS+=		--tag=disable-static
 
 SUBST_VARS+=		V
@@ -70,6 +71,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-vcd \
 			--enable-shared-xv \
 			--disable-static-xv \
+			--disable-gnomevfs \
+			--disable-gdkpixbuf \
 			--with-external-ffmpeg=${LOCALBASE} \
 			--with-external-dvdnav \
 			--with-external-a52dec \

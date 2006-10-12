@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/10/12 04:48:15 brad Exp $
 %%i386%%
 bin/xine-config
 include/xine/
 include/xine.h
 include/xine/alphablend.h
+include/xine/array.h
 include/xine/attributes.h
 include/xine/audio_decoder.h
 include/xine/audio_out.h
@@ -15,14 +16,18 @@ include/xine/demux.h
 include/xine/info_helper.h
 include/xine/input_plugin.h
 include/xine/io_helper.h
+include/xine/list.h
 include/xine/metronom.h
 include/xine/os_types.h
 include/xine/osd.h
 include/xine/plugin_catalog.h
+include/xine/pool.h
 include/xine/post.h
 include/xine/refcounter.h
 include/xine/resample.h
+include/xine/ring_buffer.h
 include/xine/scratch.h
+include/xine/sorted_array.h
 include/xine/spu_decoder.h
 include/xine/video_decoder.h
 include/xine/video_out.h

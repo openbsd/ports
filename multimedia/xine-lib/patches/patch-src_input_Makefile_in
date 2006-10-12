@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_input_Makefile_in,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
---- src/input/Makefile.in.orig	Tue Nov 15 05:39:45 2005
-+++ src/input/Makefile.in	Thu Dec 29 23:39:05 2005
+$OpenBSD: patch-src_input_Makefile_in,v 1.2 2006/10/12 04:48:14 brad Exp $
+--- src/input/Makefile.in.orig	Sun Jul  9 10:51:15 2006
++++ src/input/Makefile.in	Fri Sep 15 17:53:21 2006
 @@ -150,11 +150,11 @@ xineplug_inp_v4l_la_DEPENDENCIES = $(am_
  am_xineplug_inp_v4l_la_OBJECTS = input_v4l.lo
  xineplug_inp_v4l_la_OBJECTS = $(am_xineplug_inp_v4l_la_OBJECTS)
@@ -18,7 +18,7 @@ $OpenBSD: patch-src_input_Makefile_in,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp 
  DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
  depcomp = $(SHELL) $(top_srcdir)/depcomp
  am__depfiles_maybe = depfiles
-@@ -630,7 +630,7 @@ EXTRA_DIST = input_dvd.c input_vcd.c inp
+@@ -638,7 +638,7 @@ EXTRA_DIST = input_dvd.c input_vcd.c inp
  # ---------
  # All of xine input plugins should be named like the scheme "xineplug_inp_"
  #

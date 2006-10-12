@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_audio_out_audio_sun_out_c,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
---- src/audio_out/audio_sun_out.c.orig	Sun Dec 12 16:01:02 2004
-+++ src/audio_out/audio_sun_out.c	Fri Dec 30 02:22:36 2005
+$OpenBSD: patch-src_audio_out_audio_sun_out_c,v 1.2 2006/10/12 04:48:14 brad Exp $
+--- src/audio_out/audio_sun_out.c.orig	Sun Jul  9 10:37:12 2006
++++ src/audio_out/audio_sun_out.c	Fri Sep 15 18:26:24 2006
 @@ -41,7 +41,12 @@
  #ifdef	__svr4__
  #include <stropts.h>
@@ -24,7 +24,7 @@ $OpenBSD: patch-src_audio_out_audio_sun_out_c,v 1.1.1.1 2006/03/24 22:43:41 jake
  
    enum {
        RTSC_UNKNOWN = 0,
-@@ -113,12 +120,14 @@ typedef struct sun_driver_s {
+@@ -114,12 +121,14 @@ typedef struct sun_driver_s {
    unsigned	 buf_len;
  #endif
  
@@ -39,7 +39,7 @@ $OpenBSD: patch-src_audio_out_audio_sun_out_c,v 1.1.1.1 2006/03/24 22:43:41 jake
  } sun_driver_t;
  
  
-@@ -128,6 +137,7 @@ typedef struct sun_driver_s {
+@@ -129,6 +138,7 @@ typedef struct sun_driver_s {
   */
  static int realtime_samplecounter_available(xine_t *xine, char *dev)
  {
@@ -47,7 +47,7 @@ $OpenBSD: patch-src_audio_out_audio_sun_out_c,v 1.1.1.1 2006/03/24 22:43:41 jake
    int fd = -1;
    audio_info_t info;
    int rtsc_ok = RTSC_DISABLED;
-@@ -246,6 +256,9 @@ error:
+@@ -247,6 +257,9 @@ error:
    }
  
    return rtsc_ok;
@@ -57,7 +57,7 @@ $OpenBSD: patch-src_audio_out_audio_sun_out_c,v 1.1.1.1 2006/03/24 22:43:41 jake
  }
  
  
-@@ -429,7 +442,9 @@ static int ao_sun_open(ao_driver_t *this
+@@ -430,7 +443,9 @@ static int ao_sun_open(ao_driver_t *this
    
    this->mode			= mode;
    this->input_sample_rate	= rate;
@@ -67,7 +67,7 @@ $OpenBSD: patch-src_audio_out_audio_sun_out_c,v 1.1.1.1 2006/03/24 22:43:41 jake
  
    /*
     * open audio device
-@@ -461,6 +476,9 @@ static int ao_sun_open(ao_driver_t *this
+@@ -462,6 +477,9 @@ static int ao_sun_open(ao_driver_t *this
        info.play.sample_rate = this->input_sample_rate;
        info.play.eof = 0;
        info.play.samples = 0;
@@ -77,7 +77,7 @@ $OpenBSD: patch-src_audio_out_audio_sun_out_c,v 1.1.1.1 2006/03/24 22:43:41 jake
  
        this->convert_u8_s8 = 0;
  
-@@ -522,7 +540,9 @@ static int ao_sun_open(ao_driver_t *this
+@@ -523,7 +541,9 @@ static int ao_sun_open(ao_driver_t *this
        return 0;
    }
  
@@ -87,7 +87,7 @@ $OpenBSD: patch-src_audio_out_audio_sun_out_c,v 1.1.1.1 2006/03/24 22:43:41 jake
  
    this->output_sample_rate = info.play.sample_rate;
    this->num_channels = info.play.channels;
-@@ -563,6 +583,7 @@ static int ao_sun_delay(ao_driver_t *thi
+@@ -564,6 +584,7 @@ static int ao_sun_delay(ao_driver_t *thi
    sun_driver_t *this = (sun_driver_t *) this_gen;
    audio_info_t info;
  
@@ -95,7 +95,7 @@ $OpenBSD: patch-src_audio_out_audio_sun_out_c,v 1.1.1.1 2006/03/24 22:43:41 jake
    if (ioctl(this->audio_fd, AUDIO_GETINFO, &info) == 0 &&
        (this->frames_in_buffer == 0 || info.play.samples > 0)) {
  
-@@ -609,6 +630,10 @@ static int ao_sun_delay(ao_driver_t *thi
+@@ -610,6 +631,10 @@ static int ao_sun_delay(ao_driver_t *thi
      }
  #endif
    }
@@ -106,7 +106,7 @@ $OpenBSD: patch-src_audio_out_audio_sun_out_c,v 1.1.1.1 2006/03/24 22:43:41 jake
    return NOT_REAL_TIME;
  }
  
-@@ -717,7 +742,9 @@ static int ao_sun_write(ao_driver_t *thi
+@@ -718,7 +743,9 @@ static int ao_sun_write(ao_driver_t *thi
    if (num_written > 0) {
      int buffered_samples;
  
@@ -116,16 +116,16 @@ $OpenBSD: patch-src_audio_out_audio_sun_out_c,v 1.1.1.1 2006/03/24 22:43:41 jake
  
      /* 
       * Avoid storing too much data in the sound driver's buffers.
-@@ -776,7 +803,7 @@ static int ao_sun_get_property (ao_drive
-     if (ioctl(this->audio_fd, AUDIO_GETINFO, &info) < 0)
-       return 0;
-     return info.play.gain * 100 / AUDIO_MAX_GAIN;
+@@ -778,7 +805,7 @@ static int ao_sun_get_property (ao_drive
+       this->mixer_volume = info.play.gain * 100 / AUDIO_MAX_GAIN;
+     }
+     return this->mixer_volume;
 -#if !defined(__NetBSD__)    /* audio_info.output_muted is missing on NetBSD */
 +#if !defined(__OpenBSD__)    /* audio_info.output_muted is missing on NetBSD */
    case AO_PROP_MUTE_VOL:
      if (ioctl(this->audio_fd, AUDIO_GETINFO, &info) < 0)
        return 0;
-@@ -804,7 +831,7 @@ static int ao_sun_set_property (ao_drive
+@@ -807,7 +834,7 @@ static int ao_sun_set_property (ao_drive
      if (ioctl(this->audio_fd, AUDIO_SETINFO, &info) < 0)
        return ~value;
      return value;

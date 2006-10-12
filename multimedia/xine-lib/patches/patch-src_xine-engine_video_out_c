@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_xine-engine_video_out_c,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
---- src/xine-engine/video_out.c.orig	Mon Nov 14 15:48:19 2005
-+++ src/xine-engine/video_out.c	Mon Jan  9 20:55:41 2006
-@@ -1839,7 +1839,9 @@ xine_video_port_t *_x_vo_new_port (xine_
+$OpenBSD: patch-src_xine-engine_video_out_c,v 1.2 2006/10/12 04:48:14 brad Exp $
+--- src/xine-engine/video_out.c.orig	Fri Mar 24 20:26:34 2006
++++ src/xine-engine/video_out.c	Fri Sep 15 17:53:21 2006
+@@ -1848,7 +1848,9 @@ xine_video_port_t *_x_vo_new_port (xine_
      this->grab_only            = 0;
      
      pthread_attr_init(&pth_attrs);

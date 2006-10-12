@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_libreal_xine_decoder_c,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
---- src/libreal/xine_decoder.c.orig	Mon Feb 21 02:02:03 2005
-+++ src/libreal/xine_decoder.c	Mon Feb 21 02:04:41 2005
+$OpenBSD: patch-src_libreal_xine_decoder_c,v 1.2 2006/10/12 04:48:14 brad Exp $
+--- src/libreal/xine_decoder.c.orig	Sun Jul  9 10:39:11 2006
++++ src/libreal/xine_decoder.c	Fri Sep 15 17:53:21 2006
 @@ -32,8 +32,10 @@
  #include <fcntl.h>
  #include <unistd.h>
@@ -32,9 +32,9 @@ $OpenBSD: patch-src_libreal_xine_decoder_c,v 1.1.1.1 2006/03/24 22:43:41 jakemsr
  #endif
  
  /*
-@@ -161,10 +165,12 @@ static int load_syms_linux (realdec_deco
- 
-   snprintf (path, sizeof(path), "%s/%s", entry->str_value, codec_name);
+@@ -165,10 +169,12 @@ static int load_syms_linux (realdec_deco
+   if (stat(path, &sb))
+     snprintf (path, sizeof(path), "%s/%s", entry->str_value, alt_codec_name);
  
 -#ifdef __x86_64__
 +#ifdef __linux__

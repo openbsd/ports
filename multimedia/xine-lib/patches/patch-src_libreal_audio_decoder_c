@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_libreal_audio_decoder_c,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
---- src/libreal/audio_decoder.c.orig	Mon Feb 21 02:05:15 2005
-+++ src/libreal/audio_decoder.c	Mon Feb 21 02:06:50 2005
+$OpenBSD: patch-src_libreal_audio_decoder_c,v 1.2 2006/10/12 04:48:14 brad Exp $
+--- src/libreal/audio_decoder.c.orig	Sun Jul  9 10:39:11 2006
++++ src/libreal/audio_decoder.c	Fri Sep 15 17:53:21 2006
 @@ -32,8 +32,10 @@
  #include <fcntl.h>
  #include <unistd.h>
@@ -31,18 +31,4 @@ $OpenBSD: patch-src_libreal_audio_decoder_c,v 1.1.1.1 2006/03/24 22:43:41 jakems
 +  #endif
  #endif
  
- static int load_syms_linux (realdec_decoder_t *this, char *codec_name) {
-@@ -172,10 +176,12 @@ static int load_syms_linux (realdec_deco
- 
-   snprintf (path, sizeof(path), "%s/%s", entry->str_value, codec_name);
- 
--#ifdef __x86_64__
-+#ifdef __linux__
-+  #ifdef __x86_64__
-   /* check whether it's a real x86-64 library */
-   if (!is_x86_64_object(path))
- 	return 0;
-+  #endif
- #endif
- 
-   lprintf ("(audio) opening shared obj '%s'\n", path);
+ static int load_syms_linux (realdec_decoder_t *this, char *codec_name,

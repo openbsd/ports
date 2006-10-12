@@ -1,20 +1,11 @@
-$OpenBSD: patch-src_xine-utils_utils_c,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
---- src/xine-utils/utils.c.orig	Mon Sep  5 12:02:57 2005
-+++ src/xine-utils/utils.c	Thu Dec 29 23:39:06 2005
+$OpenBSD: patch-src_xine-utils_utils_c,v 1.2 2006/10/12 04:48:14 brad Exp $
+--- src/xine-utils/utils.c.orig	Fri Jun 23 14:24:22 2006
++++ src/xine-utils/utils.c	Fri Sep 15 17:53:22 2006
 @@ -52,6 +52,7 @@
  
- #ifdef HAVE_LANGINFO_CODESET
+ #ifdef HAVE_NL_LANGINFO
  #include <langinfo.h>
 +#include <localcharset.h>
  #endif
  
  #if defined(__CYGWIN__) || defined(WIN32)
-@@ -523,7 +524,7 @@ char *xine_get_system_encoding(void) {
-   char *codeset = NULL;
-   
- #ifdef HAVE_LANGINFO_CODESET
--  codeset = nl_langinfo(CODESET);
-+  codeset = locale_charset();
- #endif
-   /*
-    * guess locale codeset according to shell variables

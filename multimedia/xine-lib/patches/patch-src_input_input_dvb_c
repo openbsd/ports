@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_input_input_dvb_c,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
---- src/input/input_dvb.c.orig	Fri Oct 14 16:02:16 2005
-+++ src/input/input_dvb.c	Thu Dec 29 23:39:05 2005
-@@ -965,8 +965,8 @@ static int tuner_tune_it (tuner_t *this,
+$OpenBSD: patch-src_input_input_dvb_c,v 1.2 2006/10/12 04:48:14 brad Exp $
+--- src/input/input_dvb.c.orig	Sun Jul  9 10:37:35 2006
++++ src/input/input_dvb.c	Fri Sep 15 17:53:21 2006
+@@ -986,8 +986,8 @@ static int tuner_tune_it (tuner_t *this,
  
    if (poll(pfd,1,3000)){
        if (pfd[0].revents & POLLIN){

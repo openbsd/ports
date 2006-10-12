@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_xine-engine_audio_out_c,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
---- src/xine-engine/audio_out.c.orig	Sat Oct 29 19:18:35 2005
-+++ src/xine-engine/audio_out.c	Mon Jan  9 20:55:41 2006
-@@ -2152,7 +2152,9 @@ xine_audio_port_t *_x_ao_new_port (xine_
+$OpenBSD: patch-src_xine-engine_audio_out_c,v 1.2 2006/10/12 04:48:14 brad Exp $
+--- src/xine-engine/audio_out.c.orig	Sun Jul  9 10:40:08 2006
++++ src/xine-engine/audio_out.c	Fri Sep 15 17:53:21 2006
+@@ -2188,7 +2188,9 @@ xine_audio_port_t *_x_ao_new_port (xine_
      this->audio_loop_running = 1;  
      
      pthread_attr_init(&pth_attrs);
