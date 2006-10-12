@@ -3,7 +3,7 @@
 # Date created:		28 April 1998
 # Whom:			Ejovi Nuwere <ejovi@ejovi.net>
 #
-# $OpenBSD: Makefile,v 1.18 2004/12/02 19:19:59 alek Exp $
+# $OpenBSD: Makefile,v 1.19 2006/10/12 13:13:44 jasper Exp $
 #
 
 COMMENT=	"download news articles from NNTP server"
@@ -20,5 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c 
 
 MAKE_ENV+=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" INSTALL_MAN="${INSTALL_MAN}"
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
