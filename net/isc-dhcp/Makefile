@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2005/08/16 18:28:55 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2006/10/12 08:00:19 jakob Exp $
 
 COMMENT=	"ISC DHCP Server"
 COMMENT-client=	"ISC DHCP Client"
 COMMENT-omapi=	"ISC DHCP OMAPI"
 
-VERSION=	3.0.3
+VERSION=	3.0.4
 DISTNAME=	isc-dhcp-${VERSION}
+PKGNAME=	isc-dhcp-${VERSION}
 CATEGORIES=	net
 
 DISTFILES=	dhcp-${VERSION}.tar.gz
@@ -37,9 +38,12 @@ CONFIGURE_STYLE=	simple
 
 EXAMPLEDIR=		share/examples/isc-dhcp
 
+do-configure:
+	cd ${WRKSRC} && ./configure \
+	--copts "${CONFIGURE_ARGS} -DPARANOIA -DEARLY_CHROOT ${CFLAGS}"
+
 post-extract:
 	@sed s,y0y0y0,${PREFIX}, < ${FILESDIR}/site.conf > ${WRKSRC}/site.conf
-
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${EXAMPLEDIR}
