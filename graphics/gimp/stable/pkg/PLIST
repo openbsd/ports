@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2006/07/07 12:24:05 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.9 2006/10/12 11:08:28 steven Exp $
 %%SHARED%%
 bin/gimp
 bin/gimp-2.2
@@ -1304,6 +1304,7 @@ share/gtk-doc/html/libgimp/libgimp-gimpundo.html
 share/gtk-doc/html/libgimp/libgimp-image.html
 share/gtk-doc/html/libgimp/libgimp-selectors.html
 share/gtk-doc/html/libgimp/libgimp.devhelp
+share/gtk-doc/html/libgimp/libgimp.devhelp2
 share/gtk-doc/html/libgimp/libgimp.html
 share/gtk-doc/html/libgimp/libgimpui-hierarchy.html
 share/gtk-doc/html/libgimp/libgimpui.html
@@ -1331,6 +1332,7 @@ share/gtk-doc/html/libgimpbase/libgimpbase-gimputils.html
 share/gtk-doc/html/libgimpbase/libgimpbase-gimpversion.html
 share/gtk-doc/html/libgimpbase/libgimpbase-gimpwire.html
 share/gtk-doc/html/libgimpbase/libgimpbase.devhelp
+share/gtk-doc/html/libgimpbase/libgimpbase.devhelp2
 share/gtk-doc/html/libgimpbase/libgimpbase.html
 share/gtk-doc/html/libgimpbase/right.png
 share/gtk-doc/html/libgimpbase/style.css
@@ -1387,6 +1389,7 @@ share/gtk-doc/html/libgimpthumb/libgimpthumb-gimpthumb-enums.html
 share/gtk-doc/html/libgimpthumb/libgimpthumb-gimpthumb-error.html
 share/gtk-doc/html/libgimpthumb/libgimpthumb-gimpthumb-utils.html
 share/gtk-doc/html/libgimpthumb/libgimpthumb.devhelp
+share/gtk-doc/html/libgimpthumb/libgimpthumb.devhelp2
 share/gtk-doc/html/libgimpthumb/libgimpthumb.html
 share/gtk-doc/html/libgimpthumb/right.png
 share/gtk-doc/html/libgimpthumb/style.css
