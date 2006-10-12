@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.56 2006/08/03 23:15:57 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.57 2006/10/12 08:36:16 jakob Exp $
 
 COMMENT=	"fast, secure sendmail replacement"
 
@@ -44,7 +44,7 @@ LIB_DEPENDS+=	pcre::devel/pcre
 MAKE_CCARGS+=	-DHAS_PCRE -I${LOCALBASE}/include
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lpcre
 
-FLAVORS+=	sasl2 ldap mysql pgsql
+FLAVORS+=	sasl2 ldap mysql pgsql db4
 FLAVOR?=
 
 .if ${FLAVOR:L:Msasl2}
@@ -69,6 +69,12 @@ MAKE_AUXLIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient
 LIB_DEPENDS+=	pq.>=3:postgresql-client-*:databases/postgresql
 MAKE_CCARGS+=	-I${LOCALBASE}/include/postgresql -DHAS_PGSQL
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lpq
+.endif
+
+.if ${FLAVOR:L:Mdb4}
+LIB_DEPENDS+=	lib/db4/db.=4:db-4.*:databases/db/v4
+MAKE_CCARGS+=	-I${LOCALBASE}/include/db4
+MAKE_AUXLIBS+=	-L${LOCALBASE}/lib/db4 -ldb
 .endif
 
 do-configure:

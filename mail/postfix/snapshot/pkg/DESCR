@@ -11,4 +11,4 @@ Extra features always included:
 Optional features included using flavors:
 
 - authenticated SMTP using Cyrus SASL v2
-- table lookups using LDAP, MySQL and PostgreSQL
+- table lookups using LDAP, MySQL, PostgreSQL, BerkeleyDB
