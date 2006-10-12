@@ -1,45 +1,7 @@
-$OpenBSD: patch-src_export_ExportMP3_cpp,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
---- src/export/ExportMP3.cpp.orig	Sun Nov 27 03:33:32 2005
-+++ src/export/ExportMP3.cpp	Sat Dec 31 12:30:31 2005
-@@ -130,28 +130,6 @@ bool MP3Exporter::FindLibrary(wxWindow *
-          
-          if (extension != "")
-             baseName += "." + extension;
--         
--         if (baseName.CmpNoCase(GetLibraryName())) {
--         
--            wxString question;
--            question.Printf(_("Audacity was expecting a library named \"%s\".  "
--                              "Are you sure you want to attempt to export MP3 "
--                              "files using \"%s\"?"),
--                            (const char *)GetLibraryName(),
--                            (const char *)baseName);
--
--            int action = wxMessageBox(question,
--                                      _("Export MP3"),
--                                      wxYES_NO | wxICON_EXCLAMATION,
--                                      parent);
--            
--            if (action != wxYES) {
--               mLibPath = "";
--               gPrefs->Write("/MP3/MP3LibPath", mLibPath);
--            
--               return false;
--            }
--         }
-       }
-       else {
-          mLibPath = "";
-@@ -242,7 +220,7 @@ bool MP3Exporter::FindLibrary(wxWindow *
-          
-       wxString GetLibraryPath()
-       {
--         return "/usr/lib";
-+         return "!!LOCALBASE!!/lib";
-       }
- 
-          wxString GetLibraryName()
-@@ -252,7 +230,7 @@ bool MP3Exporter::FindLibrary(wxWindow *
+$OpenBSD: patch-src_export_ExportMP3_cpp,v 1.2 2006/10/12 14:26:04 alek Exp $
+--- src/export/ExportMP3.cpp.orig	Sun Nov 27 17:47:27 2005
++++ src/export/ExportMP3.cpp	Sat Oct  7 16:57:00 2006
+@@ -250,7 +250,7 @@ bool MP3Exporter::FindLibrary(wxWindow *
           
           wxString GetLibraryTypeString()
           {
@@ -48,7 +10,7 @@ $OpenBSD: patch-src_export_ExportMP3_cpp,v 1.1.1.1 2006/01/12 08:59:27 steven Ex
           }
           
           wxString GetLibraryMessage()
-@@ -260,10 +238,12 @@ bool MP3Exporter::FindLibrary(wxWindow *
+@@ -258,10 +258,12 @@ bool MP3Exporter::FindLibrary(wxWindow *
              /* i18n-hint: This message is used on Unix/Linux */
              return _("Audacity does not export MP3 files directly, but instead uses the \n"
                     "freely available LAME library to handle MP3 file encoding.  You must \n"

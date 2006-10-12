@@ -1,7 +1,45 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
---- configure.orig	Tue Jan 11 19:37:11 2005
-+++ configure	Tue Jan 11 19:42:24 2005
-@@ -7901,7 +7901,7 @@ echo "$as_me: WARNING: no configuration 
+$OpenBSD: patch-configure,v 1.2 2006/10/12 14:26:03 alek Exp $
+--- configure.orig	Sun Nov 27 17:47:27 2005
++++ configure	Sun Oct  8 21:14:07 2006
+@@ -5103,23 +5103,23 @@ fi
+   else
+      PKG_CONFIG_MIN_VERSION=0.9.0
+      if $PKG_CONFIG --atleast-pkgconfig-version $PKG_CONFIG_MIN_VERSION; then
+-        echo "$as_me:$LINENO: checking for samplerate >= 0.15.0" >&5
+-echo $ECHO_N "checking for samplerate >= 0.15.0... $ECHO_C" >&6
++        echo "$as_me:$LINENO: checking for samplerate >= 0.0.15" >&5
++echo $ECHO_N "checking for samplerate >= 0.0.15... $ECHO_C" >&6
+ 
+-        if $PKG_CONFIG --exists "samplerate >= 0.15.0" ; then
++        if $PKG_CONFIG --exists "samplerate >= 0.0.15" ; then
+             echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
+             succeeded=yes
+ 
+             echo "$as_me:$LINENO: checking SAMPLERATE_CFLAGS" >&5
+ echo $ECHO_N "checking SAMPLERATE_CFLAGS... $ECHO_C" >&6
+-            SAMPLERATE_CFLAGS=`$PKG_CONFIG --cflags "samplerate >= 0.15.0"`
++            SAMPLERATE_CFLAGS=`$PKG_CONFIG --cflags "samplerate >= 0.0.15"`
+             echo "$as_me:$LINENO: result: $SAMPLERATE_CFLAGS" >&5
+ echo "${ECHO_T}$SAMPLERATE_CFLAGS" >&6
+ 
+             echo "$as_me:$LINENO: checking SAMPLERATE_LIBS" >&5
+ echo $ECHO_N "checking SAMPLERATE_LIBS... $ECHO_C" >&6
+-            SAMPLERATE_LIBS=`$PKG_CONFIG --libs "samplerate >= 0.15.0"`
++            SAMPLERATE_LIBS=`$PKG_CONFIG --libs "samplerate >= 0.0.15"`
+             echo "$as_me:$LINENO: result: $SAMPLERATE_LIBS" >&5
+ echo "${ECHO_T}$SAMPLERATE_LIBS" >&6
+         else
+@@ -5127,7 +5127,7 @@ echo "${ECHO_T}$SAMPLERATE_LIBS" >&6
+             SAMPLERATE_LIBS=""
+             ## If we have a custom action on failure, don't print errors, but
+             ## do set a variable so people can do so.
+-            SAMPLERATE_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "samplerate >= 0.15.0"`
++            SAMPLERATE_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "samplerate >= 0.0.15"`
+ 
+         fi
+ 
+@@ -7723,7 +7723,7 @@ echo "$as_me: WARNING: no configuration 
        { echo "$as_me:$LINENO: running $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_srcdir" >&5
  echo "$as_me: running $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_srcdir" >&6;}
        # The eval makes quoting arguments work.

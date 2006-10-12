@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib-src_portaudio_pa_unix_oss_Makefile_in,v 1.1 2006/10/12 14:26:04 alek Exp $
+--- lib-src/portaudio/pa_unix_oss/Makefile.in.orig	Sat Oct  7 17:20:37 2006
++++ lib-src/portaudio/pa_unix_oss/Makefile.in	Sat Oct  7 17:20:39 2006
+@@ -5,7 +5,7 @@ srcdir=@srcdir@
+ 
+ DIRS=../pa_common
+ 
+-override CFLAGS += -g -O -I$(srcdir)/../pa_common
++override CFLAGS += -I$(srcdir)/../pa_common
+ PASRC = $(srcdir)/../pa_common/pa_lib.c $(srcdir)/pa_unix_oss.c $(srcdir)/pa_unix.c
+ PAINC = $(srcdir)/../pa_common/portaudio.h
+ PAOBJ = ../pa_common/pa_lib.o pa_unix_oss.o pa_unix.o

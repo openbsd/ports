@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib-src_libresample_Makefile_in,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
---- lib-src/libresample/Makefile.in.orig	Thu Nov 18 07:17:33 2004
-+++ lib-src/libresample/Makefile.in	Tue Jan 11 08:56:46 2005
+$OpenBSD: patch-lib-src_libresample_Makefile_in,v 1.2 2006/10/12 14:26:04 alek Exp $
+--- lib-src/libresample/Makefile.in.orig	Sun Nov 27 17:47:29 2005
++++ lib-src/libresample/Makefile.in	Sun Oct  8 20:52:45 2006
 @@ -7,6 +7,7 @@ CC = @CC@
  CFLAGS = @CFLAGS@ -Wall
  
@@ -9,12 +9,18 @@ $OpenBSD: patch-lib-src_libresample_Makefile_in,v 1.1.1.1 2006/01/12 08:59:27 st
  
  AR = @AR@
  RANLIB = @RANLIB@
-@@ -37,7 +38,7 @@ tests/compareresample: libresample.a tes
- tests/resample-sndfile: libresample.a tests/resample-sndfile.c
+@@ -34,12 +35,12 @@ tests/testresample: libresample.a $(srcd
+ tests/compareresample: libresample.a $(srcdir)/tests/compareresample.c $(DIRS)
+ 	$(CC) -o tests/compareresample \
+ 		$(CFLAGS) $(srcdir)/tests/compareresample.c \
+-		libresample.a -lsamplerate $(LIBS)
++		libresample.a $(LDFLAGS) -lsamplerate $(LIBS)
+ 
+ tests/resample-sndfile: libresample.a $(srcdir)/tests/resample-sndfile.c $(DIRS)
  	$(CC) -o tests/resample-sndfile \
- 		$(CFLAGS) tests/resample-sndfile.c \
+ 		$(CFLAGS) $(srcdir)/tests/resample-sndfile.c \
 -		libresample.a -lsndfile $(LIBS)
 +		libresample.a $(LDFLAGS) -lsndfile $(LIBS)
  
- clean:
- 	rm -f $(TARGETS) $(OBJS)
+ $(DIRS):
+ 	mkdir $(DIRS)

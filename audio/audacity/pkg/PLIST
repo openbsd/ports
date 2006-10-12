@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/10/12 14:26:04 alek Exp $
 bin/audacity
 @man man/man1/audacity.1
+share/applications/
+share/applications/audacity.desktop
 share/audacity/
 share/audacity/audacity-1.2-help.htb
 share/audacity/nyquist/
@@ -117,3 +119,6 @@ share/locale/zh/LC_MESSAGES/audacity.mo
 share/locale/zh_TW/
 share/locale/zh_TW/LC_MESSAGES/
 share/locale/zh_TW/LC_MESSAGES/audacity.mo
+share/mime/
+share/mime/packages/
+share/mime/packages/audacity.xml

@@ -1,0 +1,14 @@
+$OpenBSD: patch-locale_Makefile_in,v 1.1 2006/10/12 14:26:04 alek Exp $
+--- locale/Makefile.in.orig	Sun Oct  8 21:22:47 2006
++++ locale/Makefile.in	Sun Oct  8 21:22:59 2006
+@@ -71,8 +71,8 @@ FORCE:
+ 
+ install: allmo
+ 	linguas='$(LINGUAS)'; for lang in $$linguas ; do \
+-	   $(INSTALL) -d $(INSTALL_PATH)$(DATADIR)/locale/$$lang/LC_MESSAGES ; \
+-	   $(INSTALL) -m 644 $$lang/audacity.mo $(INSTALL_PATH)$(DATADIR)/locale/$$lang/LC_MESSAGES/$(AUDACITY_NAME).mo ; \
++	   $(INSTALL) -d $(DESTDIR)$(DATADIR)/locale/$$lang/LC_MESSAGES ; \
++	   $(INSTALL) -m 644 $$lang/audacity.mo $(DESTDIR)$(DATADIR)/locale/$$lang/LC_MESSAGES/$(AUDACITY_NAME).mo ; \
+ 	done
+ 
+ uninstall:

@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib-src_soundtouch_configure,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
---- lib-src/soundtouch/configure.orig	Sat Nov 26 18:33:39 2005
-+++ lib-src/soundtouch/configure	Mon Dec 26 18:07:33 2005
-@@ -1938,7 +1938,8 @@ fi
+$OpenBSD: patch-lib-src_soundtouch_configure,v 1.2 2006/10/12 14:26:04 alek Exp $
+--- lib-src/soundtouch/configure.orig	Sun Nov 27 17:47:29 2005
++++ lib-src/soundtouch/configure	Sat Oct  7 16:56:59 2006
+@@ -1976,7 +1976,8 @@ ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  
  
  
