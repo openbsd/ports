@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.776 2006/10/09 18:11:38 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.777 2006/10/12 08:45:56 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2052,7 +2052,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
 
 # The real install
 
-${_INSTALL_COOKIE}: ${_PACKAGE_COOKIES}
+${_INSTALL_COOKIE}:
 	@cd ${.CURDIR} && exec ${MAKE} package
 	@cd ${.CURDIR} && DEPENDS_TARGET=install PACKAGING='${SUBPACKAGE}' exec ${MAKE} _internal-run-depends _internal-lib-depends
 	@${ECHO_MSG} "===>  Installing ${FULLPKGNAME${SUBPACKAGE}} from ${_PKG_REPO}"
