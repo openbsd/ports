@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2005/12/26 13:16:16 steven Exp $
+# $OpenBSD: Makefile,v 1.33 2006/10/12 08:23:25 jakob Exp $
 
 COMMENT=	"University of Washington's c-client mail access routines"
 NO_REGRESS=	Yes
 
-VERSION=	4.61
+VERSION=	4.64
 DISTNAME=	pine${VERSION}
 PKGNAME=	c-client-${VERSION}p0
 SHARED_LIBS=	c-client	4.0

@@ -1,13 +1,15 @@
-$OpenBSD: patch-src_osdep_unix_Makefile,v 1.13 2004/07/18 22:30:19 jakob Exp $
---- src/osdep/unix/Makefile.orig	Thu Apr 29 23:10:25 2004
-+++ src/osdep/unix/Makefile	Wed Jul  7 17:49:39 2004
-@@ -24,13 +24,13 @@ EXTRAAUTHENTICATORS=
+--- src/osdep/unix/Makefile.orig	Sat Apr 30 22:51:13 2005
++++ src/osdep/unix/Makefile	Thu Oct 12 10:15:37 2006
+@@ -24,7 +24,7 @@ EXTRAAUTHENTICATORS=
  EXTRADRIVERS=mbox
  PASSWDTYPE=std
  SSLTYPE=nopwd
 -IP=4
 +IP=6
  
+ 
+ # The optimization level here for GCC ports is set here for a reason.  It's
+@@ -41,8 +41,8 @@ GCCOPTLEVEL= -O2
  
  # Extended flags needed for SSL.  You may need to modify.
  
@@ -18,7 +20,7 @@ $OpenBSD: patch-src_osdep_unix_Makefile,v 1.13 2004/07/18 22:30:19 jakob Exp $
  SSLKEYS=$(SSLCERTS)
  SSLINCLUDE=$(SSLDIR)/include
  SSLLIB=$(SSLDIR)/lib
-@@ -109,6 +109,7 @@ RANLIB=ranlib
+@@ -121,6 +121,7 @@ RANLIB=ranlib
  DEFAULTAUTHENTICATORS=md5 pla log
  DEFAULTDRIVERS=imap nntp pop3 mh mx mbx tenex mtx mmdf unix news phile
  
@@ -26,7 +28,7 @@ $OpenBSD: patch-src_osdep_unix_Makefile,v 1.13 2004/07/18 22:30:19 jakob Exp $
  
  # Normally no need to change any of these
  
-@@ -117,6 +118,7 @@ BINARIES=osdep.o mail.o misc.o newsrc.o 
+@@ -129,6 +130,7 @@ BINARIES=osdep.o mail.o misc.o newsrc.o 
   dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
   rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
   unix.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
@@ -34,7 +36,7 @@ $OpenBSD: patch-src_osdep_unix_Makefile,v 1.13 2004/07/18 22:30:19 jakob Exp $
  CFLAGS=-g
  
  CAT=cat
-@@ -125,6 +127,11 @@ MV=mv
+@@ -137,6 +139,11 @@ MV=mv
  RM=rm -rf
  SH=sh
  
@@ -46,16 +48,7 @@ $OpenBSD: patch-src_osdep_unix_Makefile,v 1.13 2004/07/18 22:30:19 jakob Exp $
  
  # Primary build command
  
-@@ -236,7 +243,7 @@ bso:	# OpenBSD
- 	 SPOOLDIR=/var \
- 	 ACTIVEFILE=/usr/local/news/lib/active \
- 	 RSHPATH=/usr/bin/rsh \
--	 BASECFLAGS="-O2 -pipe"
-+	 BASECFLAGS="-pipe"
- 
- cvx:	# Convex
- 	$(BUILD) `$(CAT) SPECIALS` OS=$@ \
-@@ -786,23 +793,32 @@ vu2:	# VAX Ultrix 2.3, etc.
+@@ -801,23 +808,33 @@ vu2:	# VAX Ultrix 2.3, etc.
  
  # Build it!
  
@@ -76,6 +69,7 @@ $OpenBSD: patch-src_osdep_unix_Makefile,v 1.13 2004/07/18 22:30:19 jakob Exp $
 +$(SHLIB): $(SOBINARIES)
 +	$(CC) -shared $(PICFLAG) -o $(SHLIB) $(SOBINARIES)
 +
++
  .c.o:
  	`$(CAT) CCTYPE` -c `$(CAT) CFLAGS` $*.c
  
@@ -90,7 +84,7 @@ $OpenBSD: patch-src_osdep_unix_Makefile,v 1.13 2004/07/18 22:30:19 jakob Exp $
  
  
  # Dependencies
-@@ -835,7 +851,7 @@ utf8.o: mail.h misc.h osdep.h utf8.h
+@@ -850,7 +867,7 @@ utf8.o: mail.h misc.h osdep.h utf8.h
  
  # OS-dependent
  
@@ -98,8 +92,8 @@ $OpenBSD: patch-src_osdep_unix_Makefile,v 1.13 2004/07/18 22:30:19 jakob Exp $
 +OSDEPS=	mail.h misc.h env.h fs.h ftl.h nl.h tcp.h \
  	osdep.h env_unix.h tcp_unix.h \
  	osdep.c env_unix.c fs_unix.c ftl_unix.c nl_unix.c tcp_unix.c ip_unix.c\
- 	auths.c crexcl.c flocksim.c nfstest.c flcksafe.c fsync.c gethstid.c \
-@@ -848,12 +864,12 @@ osdep.o:mail.h misc.h env.h fs.h ftl.h n
+ 	auths.c crexcl.c flockcyg.c flocklnx.c flocksim.c nfstest.c fsync.c \
+@@ -864,12 +881,12 @@ osdep.o:mail.h misc.h env.h fs.h ftl.h n
  	write.c sslstdio.c \
  	strerror.c strpbrk.c strstr.c strtok.c strtoul.c \
  	OSCFLAGS

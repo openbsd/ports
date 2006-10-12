@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.10 2004/07/18 22:30:19 jakob Exp $
---- Makefile.orig	Tue Apr 27 18:55:24 2004
-+++ Makefile	Wed Jul  7 17:45:07 2004
-@@ -178,7 +178,7 @@ SSLTYPE=nopwd
+$OpenBSD: patch-Makefile,v 1.11 2006/10/12 08:23:25 jakob Exp $
+--- Makefile.orig	Sat Apr 30 22:50:20 2005
++++ Makefile	Thu Oct 12 10:15:37 2006
+@@ -180,7 +180,7 @@ SSLTYPE=nopwd
  # 4	(default) IPv4 support only
  # 6	IPv6 and IPv4 support
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile,v 1.10 2004/07/18 22:30:19 jakob Exp $
  
  
  # The following extra compilation flags are defined.  None of these flags are
-@@ -270,7 +270,7 @@ BUILD=$(MAKE) build EXTRACFLAGS='$(EXTRA
+@@ -283,7 +283,7 @@ BUILD=$(MAKE) build EXTRACFLAGS='$(EXTRA
  
  # Make the IMAP Toolkit
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-Makefile,v 1.10 2004/07/18 22:30:19 jakob Exp $
  
  c-client:
  	@echo Not processed yet.  In a first-time build, you must specify
-@@ -442,13 +442,7 @@ sslunix sslsco:
+@@ -470,13 +470,7 @@ sslunix sslsco:
  	@echo ++ TLS/SSL encryption is supported
  	@echo + Non-compliant:
  	@echo ++ Unencrypted plaintext passwords are permitted
@@ -33,7 +33,7 @@ $OpenBSD: patch-Makefile,v 1.10 2004/07/18 22:30:19 jakob Exp $
  
  sslnone:
  	@echo +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-@@ -484,7 +478,7 @@ an ua:
+@@ -512,7 +506,7 @@ an ua:
  	$(TOOLS)/$@ "$(LN)" src/tmail tmail
  	$(LN) $(TOOLS)/$@ .
  
