@@ -1,9 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/11/08 10:41:33 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/10/12 14:13:42 alek Exp $
 bin/xchm
 share/locale/
 share/locale/bg/
 share/locale/bg/LC_MESSAGES/
 share/locale/bg/LC_MESSAGES/xchm.mo
+share/locale/cs/
+share/locale/cs/LC_MESSAGES/
+share/locale/cs/LC_MESSAGES/xchm.mo
 share/locale/de/
 share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/xchm.mo
@@ -34,7 +37,21 @@ share/locale/ro/LC_MESSAGES/xchm.mo
 share/locale/ru/
 share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/xchm.mo
+share/locale/sk/
+share/locale/sk/LC_MESSAGES/
+share/locale/sk/LC_MESSAGES/xchm.mo
+share/locale/uk/
+share/locale/uk/LC_MESSAGES/
+share/locale/uk/LC_MESSAGES/xchm.mo
+share/locale/zh_CN/
+share/locale/zh_CN/LC_MESSAGES/
+share/locale/zh_CN/LC_MESSAGES/xchm.mo
+share/locale/zh_TW/
+share/locale/zh_TW/LC_MESSAGES/
+share/locale/zh_TW/LC_MESSAGES/xchm.mo
 share/pixmaps/
+share/pixmaps/copy.xpm
+share/pixmaps/find.xpm
 share/pixmaps/xchm-128.xpm
 share/pixmaps/xchm-16.xpm
 share/pixmaps/xchm-32.xpm

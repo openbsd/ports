@@ -1,25 +1,26 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/11/08 10:41:33 espie Exp $
-COMMENT="display chm files"
-CATEGORIES=devel textproc x11
+# $OpenBSD: Makefile,v 1.2 2006/10/12 14:13:42 alek Exp $
 
-HOMEPAGE=http://xchm.sourceforge.net/
-MASTER_SITES=${MASTER_SITE_SOURCEFORGE:=xchm/}
+COMMENT=	"display chm files"
 
-DISTNAME=xchm-0.9.8
+DISTNAME=	xchm-1.9
+CATEGORIES=	devel textproc x11
 
-#GPL
-PERMIT_PACKAGE_CDROM=Yes
-PERMIT_PACKAGE_FTP=Yes
-PERMIT_DISTFILES_CDROM=Yes
-PERMIT_DISTFILES_FTP=Yes
+HOMEPAGE=	http://xchm.sourceforge.net/
+
+# GPL
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xchm/}
 
 LIB_DEPENDS=	chm::devel/chmlib \
-		wx_gtk:wxWidgets-gtk-*-!gtk2:x11/wxWidgets/gtk
+		wx_base_xml,wx_gtk2_qa,wx_base_odbc,wx_gtk2_html,wx_base,wx_gtk2_adv,wx_gtk2_xrc,wx_gtk2_core,wx_base_net,wx_gtk2_dbgrid:wxWidgets-gtk2->=2.6.3:x11/wxWidgets
 
 WANTLIB=	m c stdc++ pthread
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	WXCONFIG=${LOCALBASE}/bin/wxgtk-2.4-config
-CONFIGURE_ENV+= LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 .include <bsd.port.mk>
