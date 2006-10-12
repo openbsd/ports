@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-zh_TW,v 1.4 2006/08/04 10:41:02 espie Exp $
+@comment $OpenBSD: PLIST-zh_TW,v 1.5 2006/10/12 23:12:19 espie Exp $
 share/doc/HTML/zh_TW/
 ${DOC}docs/
 ${DOC}docs/common/
@@ -9,6 +9,30 @@ ${DOC}docs/common/lgpl-translated.html
 ${DOC}docs/common/logotp3.png
 ${DOC}khelpcenter/
 ${DOC}khelpcenter/contact.docbook
+${DOC}khelpcenter/faq/
+${DOC}khelpcenter/faq/about.docbook
+${DOC}khelpcenter/faq/common
+${DOC}khelpcenter/faq/configkde.docbook
+${DOC}khelpcenter/faq/contrib.docbook
+${DOC}khelpcenter/faq/desktop.docbook
+${DOC}khelpcenter/faq/filemng.docbook
+${DOC}khelpcenter/faq/getkde.docbook
+${DOC}khelpcenter/faq/${C}
+${DOC}khelpcenter/faq/${I}
+${DOC}khelpcenter/faq/install.docbook
+${DOC}khelpcenter/faq/intro.docbook
+${DOC}khelpcenter/faq/kdeapps.docbook
+${DOC}khelpcenter/faq/misc.docbook
+${DOC}khelpcenter/faq/moreinfo.docbook
+${DOC}khelpcenter/faq/nonkdeapps.docbook
+${DOC}khelpcenter/faq/notrelated.docbook
+${DOC}khelpcenter/faq/panel.docbook
+${DOC}khelpcenter/faq/qt.docbook
+${DOC}khelpcenter/faq/questions.docbook
+${DOC}khelpcenter/faq/sound.docbook
+${DOC}khelpcenter/faq/tips.docbook
+${DOC}khelpcenter/faq/webbrowse.docbook
+${DOC}khelpcenter/faq/winmng.docbook
 ${DOC}khelpcenter/help.docbook
 ${DOC}khelpcenter/links.docbook
 ${DOC}khelpcenter/support.docbook
@@ -195,6 +219,8 @@ ${LOC}kdesktop.mo
 ${LOC}kdessh.mo
 ${LOC}kdesu.mo
 ${LOC}kdesud.mo
+${LOC}kdevdesigner.mo
+${LOC}kdevelop.mo
 ${LOC}kdevtipofday.mo
 ${LOC}kdf.mo
 ${LOC}kdgantt.mo
@@ -260,6 +286,7 @@ ${LOC}kfile_wav.mo
 ${LOC}kfile_xbm.mo
 ${LOC}kfile_xpm.mo
 ${LOC}kfileaudiopreview.mo
+${LOC}kfilereplace.mo
 ${LOC}kfileshare.mo
 ${LOC}kfindpart.mo
 ${LOC}kfloppy.mo
@@ -284,6 +311,7 @@ ${LOC}khtmlkttsd.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
 ${LOC}kiconedit.mo
+${LOC}kimagemapeditor.mo
 ${LOC}kinetd.mo
 ${LOC}kio.mo
 ${LOC}kio_audiocd.mo
@@ -328,6 +356,7 @@ ${LOC}kleopatra.mo
 ${LOC}klettres.mo
 ${LOC}klickety.mo
 ${LOC}klines.mo
+${LOC}klinkstatus.mo
 ${LOC}klipper.mo
 ${LOC}klock.mo
 ${LOC}kmag.mo
@@ -366,6 +395,7 @@ ${LOC}kodo.mo
 ${LOC}kolf.mo
 ${LOC}kolourpaint.mo
 ${LOC}kolourpicker.mo
+${LOC}kommander.mo
 ${LOC}kompare.mo
 ${LOC}konnector_dummy.mo
 ${LOC}konnector_kabc.mo
@@ -396,6 +426,7 @@ ${LOC}kpersonalizer.mo
 ${LOC}kpf.mo
 ${LOC}kpilot.mo
 ${LOC}kpoker.mo
+${LOC}kpovmodeler.mo
 ${LOC}kppp.mo
 ${LOC}kppplogview.mo
 ${LOC}kprinter.mo
@@ -494,6 +525,7 @@ ${LOC}kworldclock.mo
 ${LOC}kwriteconfig.mo
 ${LOC}kxkb.mo
 ${LOC}kxsconfig.mo
+${LOC}kxsldbg.mo
 ${LOC}libKTTSD.mo
 ${LOC}libdmctl.mo
 ${LOC}libkaddrbk_geo_xxport.mo
@@ -554,6 +586,7 @@ ${LOC}tippecanoe.mo
 ${LOC}trashapplet.mo
 ${LOC}tyler.mo
 ${LOC}uachangerplugin.mo
+${LOC}umbrello.mo
 ${LOC}useraccount.mo
 ${LOC}validatorsplugin.mo
 ${LOC}wakeup.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-lv,v 1.2 2006/08/04 10:41:01 espie Exp $
+@comment $OpenBSD: PLIST-lv,v 1.3 2006/10/12 23:12:19 espie Exp $
 ${LOC}appletproxy.mo
 ${LOC}ark.mo
 ${LOC}artsbuilder.mo
@@ -238,6 +238,7 @@ ${LOC}ktip.mo
 ${LOC}ktouch.mo
 ${LOC}ktron.mo
 ${LOC}ktuberling.mo
+${LOC}ktux.mo
 ${LOC}kuick_plugin.mo
 ${LOC}kuickshow.mo
 ${LOC}kuser.mo

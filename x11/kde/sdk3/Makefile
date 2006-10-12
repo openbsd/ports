@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2006/08/03 10:53:36 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2006/10/12 23:12:19 espie Exp $
 
 COMMENT= 		"K Desktop Environment, developer extensions"
 CATEGORIES=		x11 x11/kde devel
-VERSION=		3.5.4
+VERSION=		3.5.5
 DISTNAME=		kdesdk-${VERSION}
 PKGNAME=		${DISTNAME}
 MODKDE_VERSION=		3.5.3
@@ -20,7 +20,8 @@ FLAVORS=	debug
 SEPARATE_BUILD=flavored
 
 WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 c jpeg ktnef m pcre \
-		pcreposix png pthread qui-mt stdc++ util z iconv idn
+		pcreposix png pthread qui-mt stdc++ util z iconv idn \
+		xslt xml2
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static

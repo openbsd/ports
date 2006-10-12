@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2006/06/03 12:47:30 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2006/10/12 23:12:18 espie Exp $
 bin/kcron
 bin/kpackage
 bin/kuser
@@ -41,7 +41,7 @@ share/apps/knetworkconf/pixmaps/fedora.png
 share/apps/knetworkconf/pixmaps/freebsd.png
 share/apps/knetworkconf/pixmaps/gentoo.png
 share/apps/knetworkconf/pixmaps/kubuntu.png
-share/apps/knetworkconf/pixmaps/mandrake.png
+share/apps/knetworkconf/pixmaps/mandriva.png
 share/apps/knetworkconf/pixmaps/openna.png
 share/apps/knetworkconf/pixmaps/pld.png
 share/apps/knetworkconf/pixmaps/redhat.png

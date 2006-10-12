@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2006/09/18 12:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2006/10/12 23:12:19 espie Exp $
 
 COMMENT= 		"KDE personal information applications"
 COMMENT-kpilot=		"KDE interface to sync with Palm Pilot"
 CATEGORIES=		x11 x11/kde productivity
-VERSION=		3.5.4
+VERSION=		3.5.5
 DISTNAME=		kdepim-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}
 MODKDE_VERSION=		3.5.3
 SHARED_LIBS=		gpgme++				3.0 \
 			index				1.0 \
@@ -17,7 +17,7 @@ SHARED_LIBS=		gpgme++				3.0 \
 			kabckolab			1.0 \
 			kabinterfaces			2.0 \
 			kaddressbook			1.0 \
-			kcal				3.0 \
+			kcal				4.0 \
 			kcal_blogging			2.0 \
 			kcal_groupdav			2.0 \
 			kcal_groupwise			2.0 \

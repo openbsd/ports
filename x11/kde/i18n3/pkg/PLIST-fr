@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-fr,v 1.10 2006/08/04 10:41:01 espie Exp $
+@comment $OpenBSD: PLIST-fr,v 1.11 2006/10/12 23:12:18 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.fr_FR.xml
 share/apps/khangman/
@@ -493,6 +493,10 @@ ${DOC}kdebugdialog/${I}
 ${DOC}kdelibs/
 ${DOC}kdelibs/man-artsmessage.1.docbook
 ${DOC}kdelibs/man-checkXML.1.docbook
+${DOC}kdelibs/man-dcop.1.docbook
+${DOC}kdelibs/man-kbuildsycoca.8.docbook
+${DOC}kdelibs/man-kdeoptions.7.docbook
+${DOC}kdelibs/man-qtoptions.7.docbook
 ${DOC}kdelirc/
 ${DOC}kdelirc/irkick/
 ${DOC}kdelirc/irkick/common
@@ -560,9 +564,6 @@ ${DOC}kdict/common
 ${DOC}kdict/${C}
 ${DOC}kdict/${I}
 ${DOC}kdm/
-${DOC}kdm/common
-${DOC}kdm/${C}
-${DOC}kdm/${I}
 ${DOC}kdm/kdmrc-ref.docbook
 ${DOC}kdvi/
 ${DOC}kdvi/common
@@ -958,10 +959,7 @@ ${DOC}kjumpingcube/common
 ${DOC}kjumpingcube/${C}
 ${DOC}kjumpingcube/${I}
 ${DOC}kleopatra/
-${DOC}kleopatra/common
 ${DOC}kleopatra/entities.docbook
-${DOC}kleopatra/${C}
-${DOC}kleopatra/${I}
 ${DOC}klettres/
 ${DOC}klettres/common
 ${DOC}klettres/${C}
@@ -1080,6 +1078,10 @@ ${DOC}kmplot/menu.docbook
 ${DOC}kmplot/reference.docbook
 ${DOC}kmplot/settingsdlg.png
 ${DOC}kmplot/using.docbook
+${DOC}knetworkconf/
+${DOC}knetworkconf/common
+${DOC}knetworkconf/${C}
+${DOC}knetworkconf/${I}
 ${DOC}knewsticker/
 ${DOC}knewsticker/common
 ${DOC}knewsticker/contextmenu.png

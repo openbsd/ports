@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-et,v 1.8 2006/08/04 10:41:01 espie Exp $
+@comment $OpenBSD: PLIST-et,v 1.9 2006/10/12 23:12:18 espie Exp $
 share/apps/kanagram/
 share/apps/kanagram/data/
 share/apps/kanagram/data/et/
@@ -1200,6 +1200,7 @@ ${DOC}kooka/common
 ${DOC}kooka/${C}
 ${DOC}kooka/${I}
 ${DOC}kopete/
+${DOC}kopete/chatstyle.docbook
 ${DOC}kopete/common
 ${DOC}kopete/${C}
 ${DOC}kopete/${I}

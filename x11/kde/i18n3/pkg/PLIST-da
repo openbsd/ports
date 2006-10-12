@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-da,v 1.7 2006/06/03 12:47:30 espie Exp $
+@comment $OpenBSD: PLIST-da,v 1.8 2006/10/12 23:12:18 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/khangman/
 share/apps/khangman/da.txt
@@ -853,6 +853,10 @@ ${DOC}kinfocenter/blockdevices/
 ${DOC}kinfocenter/blockdevices/common
 ${DOC}kinfocenter/blockdevices/${C}
 ${DOC}kinfocenter/blockdevices/${I}
+${DOC}kinfocenter/cdinfo/
+${DOC}kinfocenter/cdinfo/common
+${DOC}kinfocenter/cdinfo/${C}
+${DOC}kinfocenter/cdinfo/${I}
 ${DOC}kinfocenter/common
 ${DOC}kinfocenter/devices/
 ${DOC}kinfocenter/devices/common

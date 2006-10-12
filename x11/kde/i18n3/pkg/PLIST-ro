@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ro,v 1.9 2006/08/04 10:41:01 espie Exp $
+@comment $OpenBSD: PLIST-ro,v 1.10 2006/10/12 23:12:19 espie Exp $
 @conflict kde-i18n-de-<3.4
 share/apps/ktuberling/
 share/apps/ktuberling/sounds/
@@ -561,6 +561,7 @@ ${LOC}ksplashthemes.mo
 ${LOC}kstars.mo
 ${LOC}kstart.mo
 ${LOC}kstartperf.mo
+${LOC}kstyle_highcontrast_config.mo
 ${LOC}kstyle_keramik_config.mo
 ${LOC}kstyle_plastik_config.mo
 ${LOC}ksvgplugin.mo

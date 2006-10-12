@@ -1,7 +1,7 @@
-$OpenBSD: patch-konsole_konsole_TEPty_cpp,v 1.5 2004/02/01 14:59:22 espie Exp $
---- konsole/konsole/TEPty.cpp.orig	2003-07-21 09:32:26.000000000 +0200
-+++ konsole/konsole/TEPty.cpp	2004-01-21 01:20:49.000000000 +0100
-@@ -64,6 +64,9 @@
+$OpenBSD: patch-konsole_konsole_TEPty_cpp,v 1.6 2006/10/12 23:12:18 espie Exp $
+--- konsole/konsole/TEPty.cpp.orig	Sun Oct  1 19:32:08 2006
++++ konsole/konsole/TEPty.cpp	Tue Oct  3 11:02:58 2006
+@@ -73,6 +73,9 @@
  #ifdef HAVE_CONFIG_H
  #include <config.h>
  #endif

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-fi,v 1.10 2006/08/04 10:41:01 espie Exp $
+@comment $OpenBSD: PLIST-fi,v 1.11 2006/10/12 23:12:18 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/khangman/
 share/apps/khangman/data/
@@ -51,6 +51,7 @@ ${LOC}audiocd_encoder_vorbis.mo
 ${LOC}audiorename_plugin.mo
 ${LOC}autorefresh.mo
 ${LOC}babelfish.mo
+${LOC}blinken.mo
 ${LOC}cervisia.mo
 ${LOC}charlatanui.mo
 ${LOC}clockapplet.mo
@@ -87,6 +88,7 @@ ${LOC}kaccess.mo
 ${LOC}kaddressbook.mo
 ${LOC}kalarm.mo
 ${LOC}kalzium.mo
+${LOC}kanagram.mo
 ${LOC}kandy.mo
 ${LOC}kappfinder.mo
 ${LOC}karm.mo
@@ -123,6 +125,7 @@ ${LOC}kbounce.mo
 ${LOC}kbruch.mo
 ${LOC}kbstateapplet.mo
 ${LOC}kbugbuster.mo
+${LOC}kcachegrind.mo
 ${LOC}kcalc.mo
 ${LOC}kcharselect.mo
 ${LOC}kcharselectapplet.mo
@@ -282,6 +285,7 @@ ${LOC}kfile_xbm.mo
 ${LOC}kfile_xpm.mo
 ${LOC}kfileaudiopreview.mo
 ${LOC}kfilereplace.mo
+${LOC}kfileshare.mo
 ${LOC}kfindpart.mo
 ${LOC}kfloppy.mo
 ${LOC}kfmclient.mo
@@ -289,6 +293,7 @@ ${LOC}kfontinst.mo
 ${LOC}kfouleggs.mo
 ${LOC}kgamma.mo
 ${LOC}kgantt.mo
+${LOC}kgeography.mo
 ${LOC}kget.mo
 ${LOC}kghostview.mo
 ${LOC}kgoldrunner.mo

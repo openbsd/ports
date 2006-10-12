@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2006/08/03 10:53:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.41 2006/10/12 23:12:19 espie Exp $
 @conflict kdebase-<3.5
 @conflict kdeartwork-<3.4
 @conflict kdeaddons-<3.4
@@ -62,6 +62,7 @@ bin/make_driver_db_lpr
 bin/makekdewidgets
 bin/meinproc
 bin/preparetips
+bin/start_kdeinit
 include/arts/artskde.h
 include/arts/kartsdispatcher.h
 include/arts/kartsfloatwatch.h

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ru,v 1.7 2006/08/04 10:41:01 espie Exp $
+@comment $OpenBSD: PLIST-ru,v 1.8 2006/10/12 23:12:19 espie Exp $
 share/apps/katepart/syntax/logohighlightstyle.ru.xml
 share/apps/khangman/
 share/apps/khangman/data/
@@ -86,6 +86,10 @@ ${DOC}kamera/
 ${DOC}kamera/common
 ${DOC}kamera/${C}
 ${DOC}kamera/${I}
+${DOC}kanagram/
+${DOC}kanagram/common
+${DOC}kanagram/${C}
+${DOC}kanagram/${I}
 ${DOC}kandy/
 ${DOC}kandy/common
 ${DOC}kandy/${C}
@@ -151,6 +155,10 @@ ${DOC}kbattleship/
 ${DOC}kbattleship/common
 ${DOC}kbattleship/${C}
 ${DOC}kbattleship/${I}
+${DOC}kblackbox/
+${DOC}kblackbox/common
+${DOC}kblackbox/${C}
+${DOC}kblackbox/${I}
 ${DOC}kbounce/
 ${DOC}kbounce/common
 ${DOC}kbounce/${C}
@@ -552,6 +560,10 @@ ${DOC}kgamma/
 ${DOC}kgamma/common
 ${DOC}kgamma/${C}
 ${DOC}kgamma/${I}
+${DOC}kgeography/
+${DOC}kgeography/common
+${DOC}kgeography/${C}
+${DOC}kgeography/${I}
 ${DOC}kget/
 ${DOC}kget/common
 ${DOC}kget/${C}

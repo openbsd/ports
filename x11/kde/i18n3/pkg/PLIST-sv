@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-sv,v 1.9 2006/08/04 10:41:01 espie Exp $
+@comment $OpenBSD: PLIST-sv,v 1.10 2006/10/12 23:12:19 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.sv.xml
 share/apps/khangman/
@@ -1652,6 +1652,7 @@ ${DOC}kooka/toolbar.png
 ${DOC}kooka/toolbar1.png
 ${DOC}kooka/toolbar2.png
 ${DOC}kopete/
+${DOC}kopete/chatstyle.docbook
 ${DOC}kopete/common
 ${DOC}kopete/${C}
 ${DOC}kopete/${I}

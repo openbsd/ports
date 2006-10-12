@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-it,v 1.9 2006/08/04 10:41:01 espie Exp $
+@comment $OpenBSD: PLIST-it,v 1.10 2006/10/12 23:12:18 espie Exp $
 @conflict kde-i18n-ca-<3.4
 share/apps/kanagram/
 share/apps/kanagram/data/
@@ -439,6 +439,10 @@ ${DOC}kcontrol/fonts/
 ${DOC}kcontrol/fonts/common
 ${DOC}kcontrol/fonts/${C}
 ${DOC}kcontrol/fonts/${I}
+${DOC}kcontrol/helpindex/
+${DOC}kcontrol/helpindex/common
+${DOC}kcontrol/helpindex/${C}
+${DOC}kcontrol/helpindex/${I}
 ${DOC}kcontrol/icons/
 ${DOC}kcontrol/icons/common
 ${DOC}kcontrol/icons/${C}
@@ -449,6 +453,10 @@ ${DOC}kcontrol/kalarmd/
 ${DOC}kcontrol/kalarmd/common
 ${DOC}kcontrol/kalarmd/${C}
 ${DOC}kcontrol/kalarmd/${I}
+${DOC}kcontrol/kcmaccess/
+${DOC}kcontrol/kcmaccess/common
+${DOC}kcontrol/kcmaccess/${C}
+${DOC}kcontrol/kcmaccess/${I}
 ${DOC}kcontrol/kcmcss/
 ${DOC}kcontrol/kcmcss/common
 ${DOC}kcontrol/kcmcss/${C}
@@ -546,6 +554,10 @@ ${DOC}kcontrol/passwords/
 ${DOC}kcontrol/passwords/common
 ${DOC}kcontrol/passwords/${C}
 ${DOC}kcontrol/passwords/${I}
+${DOC}kcontrol/performance/
+${DOC}kcontrol/performance/common
+${DOC}kcontrol/performance/${C}
+${DOC}kcontrol/performance/${I}
 ${DOC}kcontrol/powerctrl/
 ${DOC}kcontrol/powerctrl/common
 ${DOC}kcontrol/powerctrl/${C}
@@ -629,6 +641,7 @@ ${DOC}kdesu/
 ${DOC}kdesu/common
 ${DOC}kdesu/${C}
 ${DOC}kdesu/${I}
+${DOC}kdesu/man-kdesu.1.docbook
 ${DOC}kdevelop/
 ${DOC}kdevelop/SF-general.png
 ${DOC}kdevelop/SF-indent.png
@@ -744,6 +757,7 @@ ${DOC}kfind/
 ${DOC}kfind/common
 ${DOC}kfind/${C}
 ${DOC}kfind/${I}
+${DOC}kfind/man-kfind.1.docbook
 ${DOC}kfloppy/
 ${DOC}kfloppy/common
 ${DOC}kfloppy/${C}
@@ -830,6 +844,7 @@ ${DOC}khelpcenter/quickstart/${I}
 ${DOC}khelpcenter/support.docbook
 ${DOC}khelpcenter/userguide/
 ${DOC}khelpcenter/userguide/about-desktop.docbook
+${DOC}khelpcenter/userguide/accessibility.docbook
 ${DOC}khelpcenter/userguide/browser-fine-tuning.docbook
 ${DOC}khelpcenter/userguide/burning-cds.docbook
 ${DOC}khelpcenter/userguide/control-center.docbook
@@ -844,6 +859,7 @@ ${DOC}khelpcenter/userguide/history.docbook
 ${DOC}khelpcenter/userguide/installation.docbook
 ${DOC}khelpcenter/userguide/internet-shortcuts.docbook
 ${DOC}khelpcenter/userguide/intro.docbook
+${DOC}khelpcenter/userguide/kde-as-root.docbook
 ${DOC}khelpcenter/userguide/kde-edutainment.docbook
 ${DOC}khelpcenter/userguide/kdeadmin-apps.docbook
 ${DOC}khelpcenter/userguide/kdebase-apps.docbook
@@ -874,9 +890,11 @@ ${DOC}khelpcenter/userguide/shortcuts.docbook
 ${DOC}khelpcenter/userguide/staff.docbook
 ${DOC}khelpcenter/userguide/standard-menu-entries.docbook
 ${DOC}khelpcenter/userguide/switching-sessions.docbook
+${DOC}khelpcenter/userguide/the-filemanager.docbook
 ${DOC}khelpcenter/userguide/troubleshooting-network-x.docbook
 ${DOC}khelpcenter/userguide/troubleshooting-no-open.docbook
 ${DOC}khelpcenter/userguide/ug-faq.docbook
+${DOC}khelpcenter/userguide/under-the-hood.docbook
 ${DOC}khelpcenter/userguide/usenet.docbook
 ${DOC}khelpcenter/userguide/where-next.docbook
 ${DOC}khelpcenter/userguide/windows-how-to.docbook
@@ -897,6 +915,7 @@ ${DOC}kicker-applets/ktimemon.docbook
 ${DOC}kicker/common
 ${DOC}kicker/${C}
 ${DOC}kicker/${I}
+${DOC}kicker/man-appletproxy.1.docbook
 ${DOC}kicker/man-kicker.1.docbook
 ${DOC}kiconedit/
 ${DOC}kiconedit/common
@@ -912,6 +931,10 @@ ${DOC}kinfocenter/blockdevices/
 ${DOC}kinfocenter/blockdevices/common
 ${DOC}kinfocenter/blockdevices/${C}
 ${DOC}kinfocenter/blockdevices/${I}
+${DOC}kinfocenter/cdinfo/
+${DOC}kinfocenter/cdinfo/common
+${DOC}kinfocenter/cdinfo/${C}
+${DOC}kinfocenter/cdinfo/${I}
 ${DOC}kinfocenter/common
 ${DOC}kinfocenter/devices/
 ${DOC}kinfocenter/devices/common
@@ -1149,12 +1172,15 @@ ${DOC}knetworkconf/common
 ${DOC}knetworkconf/${C}
 ${DOC}knetworkconf/${I}
 ${DOC}knode/
+${DOC}knode/commands.docbook
 ${DOC}knode/credits.docbook
 ${DOC}knode/faq.docbook
 ${DOC}knode/gloss.docbook
 ${DOC}knode/install.docbook
 ${DOC}knode/introduction.docbook
+${DOC}knode/journey.docbook
 ${DOC}knode/more.docbook
+${DOC}knode/using-subscribing.docbook
 ${DOC}knotes/
 ${DOC}knotes/common
 ${DOC}knotes/${C}
@@ -1276,6 +1302,10 @@ ${DOC}konsole/${C}
 ${DOC}konsole/${I}
 ${DOC}konsole/konsole.png
 ${DOC}konsole/tabbar.png
+${DOC}konsolekalendar/
+${DOC}konsolekalendar/common
+${DOC}konsolekalendar/${C}
+${DOC}konsolekalendar/${I}
 ${DOC}kontact/
 ${DOC}kontact/common
 ${DOC}kontact/${C}
@@ -1814,6 +1844,7 @@ ${DOC}umbrello/uml_basics.docbook
 ${DOC}umbrello/working_with_umbrello.docbook
 ${DOC}xsldbg/
 ${DOC}xsldbg/credits.docbook
+${DOC}xsldbg/usage.docbook
 ${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2006/06/03 12:47:31 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2006/10/12 23:12:19 espie Exp $
 @conflict quanta-*
 @pkgpath x11/kde/quanta
 bin/kfilereplace
@@ -44,6 +44,7 @@ share/apps/kafkapart/entities
 share/apps/kafkapart/pics/
 share/apps/kafkapart/pics/comment.png
 share/apps/kafkapart/pics/php.png
+share/apps/katepart/syntax/kommander.xml
 share/apps/kfilereplace/
 share/apps/kfilereplace/kfilereplaceui.rc
 share/apps/kfilereplacepart/

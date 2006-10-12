@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-es,v 1.10 2006/08/04 10:41:01 espie Exp $
+@comment $OpenBSD: PLIST-es,v 1.11 2006/10/12 23:12:18 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.es.xml
 share/apps/khangman/
@@ -356,6 +356,9 @@ ${DOC}blinken/blinken_helpbutton.png
 ${DOC}blinken/blinken_highscoresbutton.png
 ${DOC}blinken/blinken_nickprompt.png
 ${DOC}blinken/blinken_quitbutton.png
+${DOC}blinken/common
+${DOC}blinken/${C}
+${DOC}blinken/${I}
 ${DOC}cervisia/
 ${DOC}cervisia/annotate.png
 ${DOC}cervisia/checkout.png
@@ -634,6 +637,7 @@ ${DOC}kbruch/factorize.png
 ${DOC}kbruch/gui_main.png
 ${DOC}kbruch/${C}
 ${DOC}kbruch/${I}
+${DOC}kbruch/man-kbruch.1.docbook
 ${DOC}kbruch/reduced.png
 ${DOC}kbruch/settings.png
 ${DOC}kbugbuster/
@@ -1097,6 +1101,7 @@ ${DOC}keduca/common
 ${DOC}keduca/${C}
 ${DOC}keduca/${I}
 ${DOC}keduca/man-keduca.1.docbook
+${DOC}keduca/man-keducabuilder.1.docbook
 ${DOC}keduca/screenshot.png
 ${DOC}kenolaba/
 ${DOC}kenolaba/common
@@ -1213,6 +1218,7 @@ ${DOC}khangman/${C}
 ${DOC}khangman/${I}
 ${DOC}khangman/khangman1.png
 ${DOC}khangman/khangman2.png
+${DOC}khangman/man-khangman.6.docbook
 ${DOC}khangman/settings1.png
 ${DOC}khangman/settings2.png
 ${DOC}khangman/settings3.png
@@ -1441,6 +1447,10 @@ ${DOC}kinfocenter/blockdevices/
 ${DOC}kinfocenter/blockdevices/common
 ${DOC}kinfocenter/blockdevices/${C}
 ${DOC}kinfocenter/blockdevices/${I}
+${DOC}kinfocenter/cdinfo/
+${DOC}kinfocenter/cdinfo/common
+${DOC}kinfocenter/cdinfo/${C}
+${DOC}kinfocenter/cdinfo/${I}
 ${DOC}kinfocenter/common
 ${DOC}kinfocenter/devices/
 ${DOC}kinfocenter/devices/common
@@ -2071,6 +2081,7 @@ ${DOC}kooka/toolbar.png
 ${DOC}kooka/toolbar1.png
 ${DOC}kooka/toolbar2.png
 ${DOC}kopete/
+${DOC}kopete/chatstyle.docbook
 ${DOC}kopete/common
 ${DOC}kopete/${C}
 ${DOC}kopete/${I}
@@ -2746,6 +2757,9 @@ ${DOC}kwin4/common
 ${DOC}kwin4/${C}
 ${DOC}kwin4/${I}
 ${DOC}kwordquiz/
+${DOC}kwordquiz/common
+${DOC}kwordquiz/${C}
+${DOC}kwordquiz/${I}
 ${DOC}kwordquiz/kwq-dlg-characters.png
 ${DOC}kwordquiz/kwq-dlg-configure-appearance.png
 ${DOC}kwordquiz/kwq-dlg-configure-characters.png

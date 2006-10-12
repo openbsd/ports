@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2006/08/03 10:53:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.39 2006/10/12 23:12:18 espie Exp $
 @conflict kdeartwork-<=3.4
 @conflict kdeedu-<3.4
 bin/appletproxy
@@ -1880,6 +1880,7 @@ share/apps/konsole/vt100.keytab
 share/apps/konsole/vt420pc.keytab
 share/apps/konsole/wallpapers/
 share/apps/konsole/wallpapers/Blkmarble.jpg
+share/apps/konsole/wallpapers/Metric-Monospace-14.png
 share/apps/konsole/wallpapers/Paper01.jpg
 share/apps/konsole/wallpapers/gray02.jpg
 share/apps/konsole/x11r5.keytab

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hr,v 1.4 2006/08/04 10:41:01 espie Exp $
+@comment $OpenBSD: PLIST-hr,v 1.5 2006/10/12 23:12:18 espie Exp $
 share/doc/HTML/hr/
 ${DOC}docs/
 ${DOC}docs/common/
@@ -137,6 +137,7 @@ ${LOC}kcmperformance.mo
 ${LOC}kcmprintmgr.mo
 ${LOC}kcmsamba.mo
 ${LOC}kcmscreensaver.mo
+${LOC}kcmshell.mo
 ${LOC}kcmsmartcard.mo
 ${LOC}kcmsmserver.mo
 ${LOC}kcmspellchecking.mo
@@ -211,6 +212,7 @@ ${LOC}kgamma.mo
 ${LOC}kgantt.mo
 ${LOC}kget.mo
 ${LOC}kghostview.mo
+${LOC}kgoldrunner.mo
 ${LOC}kgpg.mo
 ${LOC}kgreet_classic.mo
 ${LOC}kgreet_winbind.mo
@@ -270,6 +272,7 @@ ${LOC}kmobile.mo
 ${LOC}kmoon.mo
 ${LOC}kmplot.mo
 ${LOC}kmrml.mo
+${LOC}knetwalk.mo
 ${LOC}knewsticker.mo
 ${LOC}knode.mo
 ${LOC}knotes.mo
@@ -367,6 +370,7 @@ ${LOC}kworldclock.mo
 ${LOC}kwriteconfig.mo
 ${LOC}kxkb.mo
 ${LOC}kxsconfig.mo
+${LOC}libdmctl.mo
 ${LOC}libkcal.mo
 ${LOC}libkdegames.mo
 ${LOC}libkdepim.mo
@@ -375,6 +379,9 @@ ${LOC}libkickermenu_kdeprint.mo
 ${LOC}libkickermenu_konsole.mo
 ${LOC}libkickermenu_prefmenu.mo
 ${LOC}libkickermenu_recentdocs.mo
+${LOC}libkickermenu_remotemenu.mo
+${LOC}libkickermenu_systemmenu.mo
+${LOC}libkickermenu_tom.mo
 ${LOC}libkonq.mo
 ${LOC}libkpimexchange.mo
 ${LOC}libkscan.mo
@@ -385,18 +392,23 @@ ${LOC}libtaskbar.mo
 ${LOC}libtaskmanager.mo
 ${LOC}lockout.mo
 ${LOC}lskat.mo
+${LOC}mediaapplet.mo
 ${LOC}naughtyapplet.mo
 ${LOC}noatun.mo
 ${LOC}nsplugin.mo
 ${LOC}ppdtranslations.mo
+${LOC}privacy.mo
 ${LOC}qeditor.mo
 ${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}secpolicy.mo
 ${LOC}spy.mo
 ${LOC}timezones.mo
+${LOC}trashapplet.mo
+${LOC}tyler.mo
 ${LOC}uachangerplugin.mo
 ${LOC}umbrello.mo
+${LOC}useraccount.mo
 ${LOC}validatorsplugin.mo
 ${LOC}webarchiver.mo
 share/locale/hr/charset

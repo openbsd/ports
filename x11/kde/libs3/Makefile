@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.70 2006/09/18 12:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.71 2006/10/12 23:12:19 espie Exp $
 
 COMMENT=		"K Desktop Environment, libraries"
 COMMENT-cups=		"K Desktop Environment, cups support"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.4
+VERSION=		3.5.5
 DISTNAME=		kdelibs-${VERSION}
 MASTER_SITES0=  ftp://ftp.kde.org/pub/kde/security_patches/
 #PATCHFILES=	post-3.4.3-kdelibs-kjs.diff:0

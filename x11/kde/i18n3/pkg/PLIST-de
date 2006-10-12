@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-de,v 1.10 2006/08/04 10:41:01 espie Exp $
+@comment $OpenBSD: PLIST-de,v 1.11 2006/10/12 23:12:18 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.de_DE.xml
 share/apps/khangman/
@@ -293,6 +293,7 @@ ${DOC}kbabel/catman.docbook
 ${DOC}kbabel/faq.docbook
 ${DOC}kbabel/glossary.docbook
 ${DOC}kbabel/kbabeldict.docbook
+${DOC}kbabel/man-catalogmanager.1.docbook
 ${DOC}kbabel/menu.docbook
 ${DOC}kbabel/preferences.docbook
 ${DOC}kbabel/using.docbook
@@ -658,9 +659,35 @@ ${DOC}kenolaba/${C}
 ${DOC}kenolaba/${I}
 ${DOC}kenolaba/man-kenolaba.6.docbook
 ${DOC}kfilereplace/
+${DOC}kfilereplace/addstringsdialog_window.png
+${DOC}kfilereplace/backup_option.png
+${DOC}kfilereplace/casesensitive_option.png
+${DOC}kfilereplace/command_option.png
 ${DOC}kfilereplace/common
+${DOC}kfilereplace/edit.png
+${DOC}kfilereplace/edit_add.png
+${DOC}kfilereplace/edit_remove.png
+${DOC}kfilereplace/eraser.png
+${DOC}kfilereplace/filereplace.png
+${DOC}kfilereplace/filesearch.png
+${DOC}kfilereplace/filesimulate.png
 ${DOC}kfilereplace/${C}
 ${DOC}kfilereplace/${I}
+${DOC}kfilereplace/invert.png
+${DOC}kfilereplace/kfr_standalone_main_window_1.png
+${DOC}kfilereplace/optionsdialog_main_window_1.png
+${DOC}kfilereplace/optionsdialog_main_window_2.png
+${DOC}kfilereplace/project.png
+${DOC}kfilereplace/projectdialog_main_window_1.png
+${DOC}kfilereplace/projectdialog_main_window_2.png
+${DOC}kfilereplace/recursive_option.png
+${DOC}kfilereplace/regularexpression_option.png
+${DOC}kfilereplace/report_example.png
+${DOC}kfilereplace/results_view.png
+${DOC}kfilereplace/stop.png
+${DOC}kfilereplace/strings_view.png
+${DOC}kfilereplace/toolbar.png
+${DOC}kfilereplace/unsortedList.png
 ${DOC}kfind/
 ${DOC}kfind/common
 ${DOC}kfind/${C}
@@ -1038,6 +1065,7 @@ ${DOC}klinkstatus/
 ${DOC}klinkstatus/common
 ${DOC}klinkstatus/${C}
 ${DOC}klinkstatus/${I}
+${DOC}klinkstatus/screenshot.png
 ${DOC}klipper/
 ${DOC}klipper/common
 ${DOC}klipper/${C}
@@ -1139,6 +1167,21 @@ ${DOC}knetattach/
 ${DOC}knetattach/common
 ${DOC}knetattach/${C}
 ${DOC}knetattach/${I}
+${DOC}knetworkconf/
+${DOC}knetworkconf/01.png
+${DOC}knetworkconf/02.png
+${DOC}knetworkconf/03.png
+${DOC}knetworkconf/04.png
+${DOC}knetworkconf/05.png
+${DOC}knetworkconf/06.png
+${DOC}knetworkconf/07.png
+${DOC}knetworkconf/08.png
+${DOC}knetworkconf/09.png
+${DOC}knetworkconf/11.png
+${DOC}knetworkconf/about1.png
+${DOC}knetworkconf/common
+${DOC}knetworkconf/${C}
+${DOC}knetworkconf/${I}
 ${DOC}knewsticker/
 ${DOC}knewsticker/common
 ${DOC}knewsticker/contextmenu.png

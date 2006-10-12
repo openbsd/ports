@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2006/09/23 13:48:28 bernd Exp $
+# $OpenBSD: Makefile,v 1.46 2006/10/12 23:12:19 espie Exp $
 
 COMMENT= 		"K Desktop Environment, network applications"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.4
+VERSION=		3.5.5
 DISTNAME=		kdenetwork-${VERSION}
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}
 MODKDE_VERSION=		3.5.3
 FLAVORS=debug
 SHARED_LIBS=		kopete			2.0 \
@@ -22,7 +22,7 @@ SEPARATE_BUILD=	flavored
 
 WANTLIB=	ICE SM X11 Xext Xi Xrender Xss Xtst Xxf86vm art_lgpl_2 c \
 		crypto gdk glib gmodule gtk iconv intl jpeg m pcre pcreposix \
-		png pthread ssl stdc++ util xml2 xslt z glib-2.0
+		png pthread ssl stdc++ util xml2 xslt z glib-2.0 gmodule-2.0
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static

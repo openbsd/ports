@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-mk,v 1.8 2006/08/04 10:41:01 espie Exp $
+@comment $OpenBSD: PLIST-mk,v 1.9 2006/10/12 23:12:19 espie Exp $
 ${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo
@@ -44,6 +44,7 @@ ${LOC}kabc_dir.mo
 ${LOC}kabc_file.mo
 ${LOC}kabc_ldapkio.mo
 ${LOC}kabc_net.mo
+${LOC}kabc_slox.mo
 ${LOC}kabc_sql.mo
 ${LOC}kabcformat_binary.mo
 ${LOC}kaboodle.mo
@@ -514,6 +515,7 @@ ${LOC}tippecanoe.mo
 ${LOC}trashapplet.mo
 ${LOC}tyler.mo
 ${LOC}uachangerplugin.mo
+${LOC}umbrello.mo
 ${LOC}useraccount.mo
 ${LOC}validatorsplugin.mo
 ${LOC}wakeup.mo
