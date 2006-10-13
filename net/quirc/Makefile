@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/12/30 16:17:34 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/10/13 09:16:50 kevlo Exp $
 
 COMMENT=	"irc client that uses Tcl/Tk"
 
@@ -6,7 +6,7 @@ DISTNAME=	quirc-0.9.84
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
-HOMEPAGE=	http://quirc.org/
+HOMEPAGE=	http://quirc.sourceforge.net/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		ICE SM X11 c m stdc++ tcl84 
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITE_OPENBSD=	Yes
 
 LIB_DEPENDS=	tk84:tk-8.4.*:x11/tk/8.4
 
