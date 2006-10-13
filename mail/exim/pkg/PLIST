@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.16 2006/05/05 06:02:30 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.17 2006/10/13 15:18:54 alek Exp $
 @newgroup _exim:521
 @newuser _exim:521:_exim:daemon:Exim Account:/var/spool/exim:/sbin/nologin
 bin/exicyclog
 bin/exigrep
 bin/exim
-bin/exim-4.62
+bin/exim-4.63
 bin/exim_checkaccess
 bin/exim_dbmbuild
 bin/exim_dumpdb

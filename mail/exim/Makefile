@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.54 2006/08/03 13:09:09 espie Exp $
+# $OpenBSD: Makefile,v 1.55 2006/10/13 15:18:54 alek Exp $
 
 COMMENT=	"Flexible mail transfer agent"
-DISTNAME=	exim-4.62
+DISTNAME=	exim-4.63
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.exim.org/pub/exim/exim4/ \
 		http://mirror.switch.ch/ftp/mirror/exim/exim/exim4/ \

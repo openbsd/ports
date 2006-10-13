@@ -6,7 +6,7 @@
    if [ $name = exim${EXE} ]; then
 -    version=exim-`./exim -bV -C /dev/null | \
 -      awk '/Exim version/ { OFS=""; print $3,"-",substr($4,2,length($4)-1) }'`${EXE}
-+    version=exim-4.62
++    version=exim-4.63
  
      if [ "${version}" = "exim-${EXE}" ]; then
        echo $com ""
