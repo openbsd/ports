@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2006/09/22 02:23:13 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.38 2006/10/13 02:08:22 jolan Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"videolan client; multimedia player"
 V=		0.8.4a
 DISTNAME=	vlc-${V}
-PKGNAME=	${DISTNAME}p7
+PKGNAME=	${DISTNAME}p8
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -40,7 +40,10 @@ LIB_DEPENDS=	SDL_image.>=1.3::devel/sdl-image \
 		FLAC.>=7.0::audio/flac \
 		mpcdec.>=1::audio/libmpcdec \
 		matroska::multimedia/libmatroska \
-		ebml::textproc/libebml
+		ebml::textproc/libebml \
+		dvdnav.>=3.0::multimedia/libdvdnav \
+                dvdread.>=3.0::devel/libdvdread \
+		wx_base,wx_base_net,wx_base_odbc,wx_base_xml,wx_gtk2_adv,wx_gtk2_core,wx_gtk2_dbgrid,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_xrc:wxWidgets-gtk2->=2.6.3:x11/wxWidgets
 
 WANTLIB=	X11 Xext Xinerama Xv c freetype m ncurses ossaudio \
 		pthread stdc++ usbhid z \
@@ -130,7 +133,6 @@ CONFIGURE_ARGS+=--disable-pth \
 		--disable-bonjour \
 		--disable-daap \
 		--disable-pda \
-		--disable-wxwidgets \
 		--disable-xosd
 
 CONFIGURE_ARGS+=--enable-ncurses \
@@ -155,12 +157,12 @@ CONFIGURE_ARGS+=--enable-ncurses \
 		--enable-theora \
 		--enable-flac \
 		--enable-mkv \
-		--enable-mpc
+		--enable-mpc \
+		--enable-wxwidgets \
+		--enable-dvdread \
+		--enable-dvdnav
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
-
-FLAVORS=	no_dvd
-FLAVOR?=
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 PKG_ARGS+=-Dx86opt=1
@@ -187,14 +189,6 @@ PKG_ARGS+=-Daltivec=0
 # XXX video window initialization fails without this
 .if ${MACHINE_ARCH} == "sparc64"
 CFLAGS+=-mhard-quad-float
-.endif
-
-.if ${FLAVOR:L:Mno_dvd}
-CONFIGURE_ARGS+=--disable-dvdread --disable-dvdnav
-.else
-CONFIGURE_ARGS+=--enable-dvdread --enable-dvdnav
-LIB_DEPENDS+=	dvdnav.>=3.0::multimedia/libdvdnav \
-		dvdread.>=3.0::devel/libdvdread
 .endif
 
 # win32 codecs support uses i386_set_ldt

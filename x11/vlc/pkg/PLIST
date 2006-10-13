@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.19 2006/03/22 01:33:06 jolan Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.20 2006/10/13 02:08:22 jolan Exp $
 %%altivec%%
 %%win32%%
 %%x86opt%%
 bin/vlc
 bin/vlc-config
+bin/wxvlc
 include/vlc/
 include/vlc/aout.h
 include/vlc/control.h
@@ -25,6 +25,9 @@ lib/vlc/access/libaccess_http_plugin.so
 lib/vlc/access/libaccess_mms_plugin.so
 lib/vlc/access/libaccess_tcp_plugin.so
 lib/vlc/access/libaccess_udp_plugin.so
+lib/vlc/access/libdvdnav_plugin.so
+lib/vlc/access/libdvdread_plugin.so
+lib/vlc/access/libscreen_plugin.so
 lib/vlc/access_filter/
 lib/vlc/access_filter/libaccess_filter_record_plugin.so
 lib/vlc/access_filter/libaccess_filter_timeshift_plugin.so
@@ -36,9 +39,11 @@ lib/vlc/access_output/libaccess_output_udp_plugin.so
 lib/vlc/audio_filter/
 lib/vlc/audio_filter/liba52tofloat32_plugin.so
 lib/vlc/audio_filter/liba52tospdif_plugin.so
+lib/vlc/audio_filter/libaudio_format_plugin.so
 lib/vlc/audio_filter/libbandlimited_resampler_plugin.so
 lib/vlc/audio_filter/libdolby_surround_decoder_plugin.so
 lib/vlc/audio_filter/libdtstospdif_plugin.so
+lib/vlc/audio_filter/libequalizer_plugin.so
 lib/vlc/audio_filter/libfixed32tofloat32_plugin.so
 lib/vlc/audio_filter/libfixed32tos16_plugin.so
 lib/vlc/audio_filter/libfloat32tos16_plugin.so
@@ -48,10 +53,12 @@ lib/vlc/audio_filter/libfloat32tou8_plugin.so
 lib/vlc/audio_filter/libheadphone_channel_mixer_plugin.so
 lib/vlc/audio_filter/liblinear_resampler_plugin.so
 lib/vlc/audio_filter/libmpgatofixed32_plugin.so
+lib/vlc/audio_filter/libnormvol_plugin.so
 lib/vlc/audio_filter/libs16tofixed32_plugin.so
 lib/vlc/audio_filter/libs16tofloat32_plugin.so
 lib/vlc/audio_filter/libs16tofloat32swab_plugin.so
 lib/vlc/audio_filter/libs8tofloat32_plugin.so
+lib/vlc/audio_filter/libsimple_channel_mixer_plugin.so
 lib/vlc/audio_filter/libtrivial_channel_mixer_plugin.so
 lib/vlc/audio_filter/libtrivial_resampler_plugin.so
 lib/vlc/audio_filter/libu8tofixed32_plugin.so
@@ -89,7 +96,9 @@ lib/vlc/control/
 lib/vlc/control/libgestures_plugin.so
 lib/vlc/control/libhotkeys_plugin.so
 lib/vlc/control/libhttp_plugin.so
+lib/vlc/control/libnetsync_plugin.so
 lib/vlc/control/librc_plugin.so
+lib/vlc/control/libshowintf_plugin.so
 lib/vlc/control/libtelnet_plugin.so
 lib/vlc/demux/
 lib/vlc/demux/liba52sys_plugin.so
@@ -103,7 +112,9 @@ lib/vlc/demux/libflac_plugin.so
 lib/vlc/demux/libh264_plugin.so
 lib/vlc/demux/libid3tag_plugin.so
 lib/vlc/demux/libm3u_plugin.so
+lib/vlc/demux/libm4a_plugin.so
 lib/vlc/demux/libm4v_plugin.so
+lib/vlc/demux/libmjpeg_plugin.so
 lib/vlc/demux/libmp4_plugin.so
 lib/vlc/demux/libmpc_plugin.so
 lib/vlc/demux/libmpga_plugin.so
@@ -118,12 +129,15 @@ lib/vlc/demux/libpva_plugin.so
 lib/vlc/demux/librawdv_plugin.so
 lib/vlc/demux/libreal_plugin.so
 lib/vlc/demux/libsgimb_plugin.so
+lib/vlc/demux/libsubtitle_plugin.so
 lib/vlc/demux/libty_plugin.so
+lib/vlc/demux/libvobsub_plugin.so
 lib/vlc/demux/libvoc_plugin.so
 lib/vlc/demux/libwav_plugin.so
 lib/vlc/demux/libxa_plugin.so
 lib/vlc/gui/
 lib/vlc/gui/libncurses_plugin.so
+lib/vlc/gui/libwxwidgets_plugin.so
 lib/vlc/libffmpeg.a
 lib/vlc/libmkv.a
 lib/vlc/libstream_out_switcher.a
@@ -138,6 +152,7 @@ lib/vlc/misc/libipv6_plugin.so
 lib/vlc/misc/liblogger_plugin.so
 lib/vlc/misc/libmemcpy_plugin.so
 lib/vlc/misc/libscreensaver_plugin.so
+lib/vlc/misc/libvod_rtsp_plugin.so
 lib/vlc/misc/libxml_plugin.so
 lib/vlc/misc/libxtag_plugin.so
 lib/vlc/mux/
@@ -145,8 +160,10 @@ lib/vlc/mux/libmux_asf_plugin.so
 lib/vlc/mux/libmux_avi_plugin.so
 lib/vlc/mux/libmux_dummy_plugin.so
 lib/vlc/mux/libmux_mp4_plugin.so
+lib/vlc/mux/libmux_mpjpeg_plugin.so
 lib/vlc/mux/libmux_ogg_plugin.so
 lib/vlc/mux/libmux_ps_plugin.so
+lib/vlc/mux/libmux_wav_plugin.so
 lib/vlc/packetizer/
 lib/vlc/packetizer/libpacketizer_copy_plugin.so
 lib/vlc/packetizer/libpacketizer_h264_plugin.so
@@ -158,6 +175,7 @@ lib/vlc/services_discovery/libsap_plugin.so
 lib/vlc/services_discovery/libshout_plugin.so
 lib/vlc/stream_out/
 lib/vlc/stream_out/libstream_out_bridge_plugin.so
+lib/vlc/stream_out/libstream_out_description_plugin.so
 lib/vlc/stream_out/libstream_out_display_plugin.so
 lib/vlc/stream_out/libstream_out_dummy_plugin.so
 lib/vlc/stream_out/libstream_out_duplicate_plugin.so
@@ -166,6 +184,7 @@ lib/vlc/stream_out/libstream_out_gather_plugin.so
 lib/vlc/stream_out/libstream_out_mosaic_bridge_plugin.so
 lib/vlc/stream_out/libstream_out_rtp_plugin.so
 lib/vlc/stream_out/libstream_out_standard_plugin.so
+lib/vlc/stream_out/libstream_out_transcode_plugin.so
 lib/vlc/video_chroma/
 lib/vlc/video_chroma/libi420_rgb_plugin.so
 lib/vlc/video_chroma/libi420_ymga_plugin.so
@@ -173,18 +192,22 @@ lib/vlc/video_chroma/libi420_yuy2_plugin.so
 lib/vlc/video_chroma/libi422_yuy2_plugin.so
 lib/vlc/video_filter/
 lib/vlc/video_filter/libadjust_plugin.so
+lib/vlc/video_filter/libblend_plugin.so
 lib/vlc/video_filter/libclone_plugin.so
 lib/vlc/video_filter/libcrop_plugin.so
 lib/vlc/video_filter/libdeinterlace_plugin.so
 lib/vlc/video_filter/libdistort_plugin.so
 lib/vlc/video_filter/libinvert_plugin.so
 lib/vlc/video_filter/liblogo_plugin.so
+lib/vlc/video_filter/libmarq_plugin.so
 lib/vlc/video_filter/libmosaic_plugin.so
 lib/vlc/video_filter/libmotionblur_plugin.so
 lib/vlc/video_filter/libmotiondetect_plugin.so
 lib/vlc/video_filter/libosdmenu_plugin.so
 lib/vlc/video_filter/librss_plugin.so
 lib/vlc/video_filter/librv32_plugin.so
+lib/vlc/video_filter/libscale_plugin.so
+lib/vlc/video_filter/libtime_plugin.so
 lib/vlc/video_filter/libtransform_plugin.so
 lib/vlc/video_filter/libwall_plugin.so
 lib/vlc/video_output/
@@ -324,4 +347,3 @@ share/vlc/vlc32x32.png
 share/vlc/vlc32x32.xpm
 share/vlc/vlc48x48.ico
 share/vlc/vlc48x48.png
-!%%no_dvd%%
