@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/13 14:58:42 alek Exp $
+lib/
+lib/php/
+lib/php/modules/
+lib/php/modules/apc.so
+pecl-APC/
+pecl-APC/INSTALL
+pecl-APC/apc.php
