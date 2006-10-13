@@ -1,14 +1,14 @@
-$OpenBSD: patch-makefile,v 1.3 2006/07/17 07:48:40 steven Exp $
---- makefile.orig	Fri Jul  7 22:33:27 2006
-+++ makefile	Fri Jul 14 15:29:40 2006
-@@ -2,8 +2,8 @@
- # Currently uses gcc only options in CFLAGS, just remove them for other C compilers.
+$OpenBSD: patch-makefile,v 1.4 2006/10/13 19:24:41 steven Exp $
+--- makefile.orig	Sun Sep 10 23:52:41 2006
++++ makefile	Fri Oct 13 21:11:21 2006
+@@ -3,8 +3,8 @@
  
  VERSION		= `cat VERSION`
--CFLAGS		+= -O -Wunused -Wshadow -Wformat -Wparentheses -Wcast-align -DUNIX -DVERSION=\"$(VERSION)\"
+ CFLAGS		+= -Wuninitialized -Wunused -Wshadow -Wformat -Wparentheses -Wcast-align
+-CFLAGS		+= -O -DUNIX -DVERSION=\"$(VERSION)\"
 -LDFLAGS		+= -s
-+CFLAGS		+= -Wunused -Wshadow -Wformat -Wparentheses -Wcast-align -DUNIX -DVERSION=\"$(VERSION)\"
-+LDFLAGS		+= 
++CFLAGS		+= -DUNIX -DVERSION=\"$(VERSION)\"
++LDFLAGS		+=
  LIBS		+= -lm
  
  CFLAGS		+= $(READLINE:1=-DREADLINE)
