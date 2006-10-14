@@ -1,6 +1,6 @@
-$OpenBSD: patch-dovecot-example_conf,v 1.25 2006/10/09 19:26:53 brad Exp $
---- dovecot-example.conf.orig	Fri Sep 22 10:40:56 2006
-+++ dovecot-example.conf	Mon Oct  9 15:20:25 2006
+$OpenBSD: patch-dovecot-example_conf,v 1.26 2006/10/14 01:41:19 brad Exp $
+--- dovecot-example.conf.orig	Fri Oct 13 12:34:00 2006
++++ dovecot-example.conf	Fri Oct 13 21:18:01 2006
 @@ -7,13 +7,12 @@
  # value inside quotes, eg.: key = "# char and trailing whitespace  "
  
@@ -147,7 +147,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.25 2006/10/09 19:26:53 brad Exp $
  
  # Set max. process size in megabytes.
  #auth_process_size = 256
-@@ -747,7 +746,7 @@ auth default {
+@@ -749,7 +748,7 @@ auth default {
    # database (passwd usually), you can use static userdb.
    # REMEMBER: You'll need /etc/pam.d/dovecot file created for PAM
    # authentication to actually work.
@@ -156,7 +156,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.25 2006/10/09 19:26:53 brad Exp $
      #  [session=yes] [setcred=yes] [cache_key=<key>] [<service name>]
      #
      # session=yes makes Dovecot open and immediately close PAM session. Some
-@@ -775,13 +774,13 @@ auth default {
+@@ -777,13 +776,13 @@ auth default {
      #   args = session=yes *
      #   args = cache_key=%u dovecot
      #args = dovecot
