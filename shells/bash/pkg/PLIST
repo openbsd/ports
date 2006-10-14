@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2006/02/10 11:33:17 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2006/10/14 18:03:10 naddy Exp $
 @pkgpath shells/bash,static
 @shell bin/bash
 bin/bashbug
@@ -7,3 +7,4 @@ bin/bashbug
 @man man/man1/bashbug.1
 share/locale/en@boldquot/LC_MESSAGES/bash.mo
 share/locale/en@quot/LC_MESSAGES/bash.mo
+share/locale/ru/LC_MESSAGES/bash.mo
