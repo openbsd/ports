@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_Makefile_in,v 1.4 2006/05/10 03:21:30 brad Exp $
---- scripts/Makefile.in.orig	Wed Apr 26 14:32:21 2006
-+++ scripts/Makefile.in	Sun May  7 03:14:55 2006
-@@ -650,6 +650,7 @@ mysqlbug: ${top_builddir}/config.status 
+$OpenBSD: patch-scripts_Makefile_in,v 1.5 2006/10/14 05:04:54 brad Exp $
+--- scripts/Makefile.in.orig	Wed Oct  4 07:26:06 2006
++++ scripts/Makefile.in	Thu Oct 12 05:18:57 2006
+@@ -652,6 +652,7 @@ mysqlbug: ${top_builddir}/config.status 
  	  -e 's!@''datadir''@!$(datadir)!g' \
  	  -e 's!@''localstatedir''@!$(localstatedir)!g' \
  	  -e 's!@''libexecdir''@!$(libexecdir)!g' \

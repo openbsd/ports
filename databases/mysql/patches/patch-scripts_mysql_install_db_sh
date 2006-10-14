@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.3 2006/05/10 03:21:30 brad Exp $
---- scripts/mysql_install_db.sh.orig	Wed Apr 26 14:30:55 2006
-+++ scripts/mysql_install_db.sh	Sun May  7 03:16:59 2006
-@@ -8,10 +8,9 @@
+$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.4 2006/10/14 05:04:54 brad Exp $
+--- scripts/mysql_install_db.sh.orig	Wed Oct  4 07:24:11 2006
++++ scripts/mysql_install_db.sh	Thu Oct 12 05:18:57 2006
+@@ -7,10 +7,9 @@
  #
  # All unrecognized arguments to this script are passed to mysqld.
  
@@ -14,7 +14,7 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.3 2006/05/10 03:21:30 brad Exp $
  
  case "$1" in
      --no-defaults|--defaults-file=*|--defaults-extra-file=*)
-@@ -32,7 +31,6 @@ parse_arguments() {
+@@ -31,7 +30,6 @@ parse_arguments() {
  
    for arg do
      case "$arg" in
@@ -22,7 +22,7 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.3 2006/05/10 03:21:30 brad Exp $
        --basedir=*) basedir=`echo "$arg" | sed -e 's/^[^=]*=//'` ;;
        --ldata=*|--datadir=*) ldata=`echo "$arg" | sed -e 's/^[^=]*=//'` ;;
        --user=*)
-@@ -40,10 +38,9 @@ parse_arguments() {
+@@ -39,10 +37,9 @@ parse_arguments() {
          # as 'user' (crucial e.g. if log-bin=/some_other_path/
          # where a chown of datadir won't help)
  	 user=`echo "$arg" | sed -e 's/^[^=]*=//'` ;;
@@ -34,7 +34,7 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.3 2006/05/10 03:21:30 brad Exp $
        *)
          if test -n "$pick_args"
          then
-@@ -79,7 +76,6 @@ ldata=
+@@ -78,7 +75,6 @@ ldata=
  execdir=
  bindir=
  basedir=
@@ -42,7 +42,7 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.3 2006/05/10 03:21:30 brad Exp $
  verbose=0
  fill_help_tables=""
  
-@@ -128,44 +124,28 @@ mysqld=$execdir/mysqld
+@@ -127,44 +123,28 @@ mysqld=$execdir/mysqld
  mysqld_opt=""
  scriptdir=$bindir
  
@@ -96,7 +96,7 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.3 2006/05/10 03:21:30 brad Exp $
      fi
      echo "WARNING: The host '$hostname' could not be looked up with resolveip."
      echo "This probably means that your libc libraries are not 100 % compatible"
-@@ -173,7 +153,6 @@ then
+@@ -172,7 +152,6 @@ then
      echo "normally with the exception that host name resolving will not work."
      echo "This means that you should use IP addresses instead of hostnames"
      echo "when specifying MySQL privileges !"
@@ -104,7 +104,7 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.3 2006/05/10 03:21:30 brad Exp $
  fi
  
  if test "$ip_only" = "1"
-@@ -184,12 +163,10 @@ fi
+@@ -183,12 +162,10 @@ fi
  
  # Create database directories mysql & test
  
@@ -121,7 +121,7 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.3 2006/05/10 03:21:30 brad Exp $
  
  if test ! -f $mdata/db.frm
  then
-@@ -207,10 +184,7 @@ if test -n "$user"; then
+@@ -206,10 +183,7 @@ if test -n "$user"; then
    args="$args --user=$user"
  fi
  
@@ -133,7 +133,7 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.3 2006/05/10 03:21:30 brad Exp $
  mysqld_install_cmd_line="$mysqld $defaults $mysqld_opt --bootstrap \
  --skip-grant-tables --basedir=$basedir --datadir=$ldata --skip-innodb \
  --skip-bdb --skip-ndbcluster $args --max_allowed_packet=8M --net_buffer_length=16K"
-@@ -219,10 +193,7 @@ if $scriptdir/mysql_create_system_tables
+@@ -218,10 +192,7 @@ if $scriptdir/mysql_create_system_tables
  then
    if test -n "$fill_help_tables"
    then
@@ -145,7 +145,7 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.3 2006/05/10 03:21:30 brad Exp $
      (echo "use mysql;"; cat $fill_help_tables) | eval "$mysqld_install_cmd_line"
      res=$?
      if test $res != 0
-@@ -233,15 +204,6 @@ then
+@@ -232,15 +203,6 @@ then
        echo ""
      fi
    fi
@@ -161,7 +161,7 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.3 2006/05/10 03:21:30 brad Exp $
    echo "PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER !"
    echo "To do so, start the server, then issue the following commands:"
    echo "$bindir/mysqladmin -u root password 'new-password'"
-@@ -257,21 +219,11 @@ then
+@@ -256,21 +218,11 @@ then
      echo "able to use the new GRANT command!"
    fi
    echo

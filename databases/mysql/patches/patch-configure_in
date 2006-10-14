@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure_in,v 1.18 2006/10/03 04:52:03 brad Exp $
---- configure.in.orig	Thu Jul 27 14:51:22 2006
-+++ configure.in	Mon Aug  7 21:04:20 2006
+$OpenBSD: patch-configure_in,v 1.19 2006/10/14 05:04:54 brad Exp $
+--- configure.in.orig	Wed Oct  4 07:24:11 2006
++++ configure.in	Thu Oct 12 05:19:50 2006
 @@ -453,44 +453,7 @@ AC_SUBST(MAKEINDEX)
  AC_PATH_PROG(PS, ps, ps)
  AC_MSG_CHECKING("how to check if pid exists")
  PS=$ac_cv_path_PS
 -# Linux style
--if $PS p $$ 2> /dev/null | grep $0 > /dev/null
+-if $PS p $$ 2> /dev/null | grep `echo $0 | sed s/\-//` > /dev/null
 -then
 -  FIND_PROC="$PS p \$\$PID | grep -v grep | grep \$\$MYSQLD > /dev/null"
 -# Solaris
@@ -57,7 +57,7 @@ $OpenBSD: patch-configure_in,v 1.18 2006/10/03 04:52:03 brad Exp $
  int allow_severity = 0;
  int deny_severity  = 0;
  
-@@ -1554,7 +1518,7 @@ then
+@@ -1555,7 +1519,7 @@ then
    AC_CHECK_LIB(c_r,strtok_r)
    case "$with_osf32_threads---$target_os" in
      # Don't keep -lc_r in LIBS; -pthread handles it magically
@@ -66,7 +66,7 @@ $OpenBSD: patch-configure_in,v 1.18 2006/10/03 04:52:03 brad Exp $
  
    esac
    AC_CHECK_FUNCS(strtok_r pthread_init)
-@@ -1602,29 +1566,6 @@ case $SYSTEM_TYPE in
+@@ -1603,29 +1567,6 @@ case $SYSTEM_TYPE in
  AC_SYS_RESTARTABLE_SYSCALLS
      ;;
  esac
