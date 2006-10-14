@@ -1,0 +1,3 @@
+Integer factorization library and program using the Elliptic
+Curve Method (ECM), the P-1 or P+1 methods (which the ECM
+method can be viewed as a generalization of).

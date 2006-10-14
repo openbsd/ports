@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/14 18:52:12 pvalchev Exp $
+bin/ecm
+include/ecm.h
+lib/libecm.a
+@man man/man1/ecm.1
