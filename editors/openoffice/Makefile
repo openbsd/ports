@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2006/10/11 11:19:55 robert Exp $
+# $OpenBSD: Makefile,v 1.7 2006/10/14 17:33:55 robert Exp $
 
 ONLY_FOR_ARCHS= i386
 
 COMMENT=	"a multi-platform productivity suite"
 
-VERSION=	2.0.4rc3
-DISTNAME=	OOo_${VERSION}_061002_src
+VERSION=	2.0.4
+DISTNAME=	OOo_${VERSION}_src
 WRKDIST=	${WRKDIR}/OOD680_m5
 PKGNAME=	openoffice-${VERSION}
 CATEGORIES=	editors productivity
@@ -17,11 +17,11 @@ SHARED_LIBS=	icudata		26.0 \
 		stlport_gcc	4.5
 
 HOMEPAGE=	http://www.openoffice.org/
-MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/mirror/OpenOffice/contrib/rc/2.0.4rc3/ \
-		ftp://ftp.tu-chemnitz.de/pub/openoffice/contrib/rc/${VERSION}/ \
-		ftp://ftp.nluug.nl/pub/office/openoffice/contrib/rc/${VERSION}/ \
-		http://vlaai.snt.utwente.nl/pub/software/openoffice/contrib/rc/${VERSION}/ \
-		ftp://openoffice.mirror.cygnal.ca/openoffice/contrib/rc/${VERSION}/ \
+MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/mirror/OpenOffice/stable/${VERSION}/ \
+		ftp://ftp.tu-chemnitz.de/pub/openoffice/stable/${VERSION}/ \
+		ftp://ftp.nluug.nl/pub/office/openoffice/stable/${VERSION}/ \
+		http://vlaai.snt.utwente.nl/pub/software/openoffice/stable/${VERSION}/ \
+		ftp://openoffice.mirror.cygnal.ca/openoffice/stable/${VERSION}/ \
 		http://mirrors.protection.cx/~jolan/
 
 # See http://www.openoffice.org/about.html#licenses
