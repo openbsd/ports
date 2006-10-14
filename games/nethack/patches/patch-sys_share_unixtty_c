@@ -1,0 +1,12 @@
+$OpenBSD: patch-sys_share_unixtty_c,v 1.1 2006/10/14 10:01:09 espie Exp $
+--- sys/share/unixtty.c.orig	Sat Oct 14 11:31:59 2006
++++ sys/share/unixtty.c	Sat Oct 14 11:32:33 2006
+@@ -121,7 +121,7 @@ struct tchars inittyb2, curttyb2;
+ 
+ #endif	/* V7 */
+ 
+-#if defined(TTY_GRAPHICS) && ((!defined(SYSV) && !defined(HPUX)) || defined(UNIXPC) || defined(SVR4))
++#if defined(TTY_GRAPHICS) && ((!defined(SYSV) && !defined(HPUX)) || defined(UNIXPC) || defined(SVR4)) || defined(__OpenBSD__)
+ # ifndef LINT
+ extern			/* it is defined in libtermlib (libtermcap) */
+ # endif
