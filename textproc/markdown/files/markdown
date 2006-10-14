@@ -1,0 +1,16 @@
+#!%MODPY_BIN%
+
+# $OpenBSD: markdown,v 1.1 2006/10/14 12:04:11 alek Exp $
+
+from markdown import *
+
+""" Run Markdown from the command line. """
+
+options = parse_options()
+
+#if os.access(inFile, os.R_OK):
+
+if not options :
+    sys.exit(0)
+
+markdownFromFile(**options)

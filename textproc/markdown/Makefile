@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/09 16:01:25 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2006/10/14 12:04:11 alek Exp $
 
 COMMENT=	"text-to-HTML conversion tool"
 
-DISTNAME=	markdown-1-5.py
-PKGNAME=	markdown-1.5
+DISTNAME=	markdown-1.6a
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.freewisdom.org/projects/python-markdown/
@@ -19,20 +18,19 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	lang/python
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=python-markdown/}
-EXTRACT_SUFX=
+EXTRACT_SUFX=	.zip
 
-WRKDIST=	${WRKDIR}/${PKGNAME}
+WRKDIST=	${WRKDIR}/markdown-1.6
 
-do-extract:
-	@mkdir ${WRKDIST}
-	@sed -e "1s|!.*|!${MODPY_BIN}|" ${FULLDISTDIR}/${DISTNAME} \
-		> ${WRKDIST}/markdown.py
-	@cp ${FILESDIR}/setup.py ${WRKDIST}/.
+NO_REGRESS=	Yes
 
-do-regress:
-	@cd ${WRKSRC} && ${MODPY_BIN} markdown.py -test
+pre-build:
+	@sed -e "1s|%MODPY_BIN%|${MODPY_BIN}|" ${FILESDIR}/markdown > \
+	    ${WRKSRC}/markdown
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/markdown.py ${PREFIX}/bin/markdown
+	${INSTALL_SCRIPT} ${WRKSRC}/markdown ${PREFIX}/bin/markdown
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/markdown
+	${INSTALL_DATA} ${WRKSRC}/mdx_*py ${PREFIX}/share/examples/markdown/
 
 .include <bsd.port.mk>
