@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2006/10/10 13:33:17 aanriot Exp $
+# $OpenBSD: Makefile,v 1.49 2006/10/14 09:54:04 aanriot Exp $
 
 COMMENT=	"highly flexible sniffer/NIDS"
 
 DISTNAME=	snort-2.6.0.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net security
 MASTER_SITES=	${HOMEPAGE}/dl/current/
 
@@ -68,6 +69,8 @@ DOCS=		AUTHORS CREDITS README.* *.pdf
 
 post-build:
 	@perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR}," \
+		${WRKSRC}/etc/snort.conf
+	@perl -pi -e "s,/usr/local/,${LOCALBASE}/," \
 		${WRKSRC}/etc/snort.conf
 
 post-install:
