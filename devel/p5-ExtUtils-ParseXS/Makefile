@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2006/02/03 16:10:42 msf Exp $
+# $OpenBSD: Makefile,v 1.3 2006/10/15 00:33:31 msf Exp $
 
 COMMENT=	"converts Perl XS code into C code" 
 
-DISTNAME=	ExtUtils-ParseXS-2.15
+DISTNAME=	ExtUtils-ParseXS-2.16
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
