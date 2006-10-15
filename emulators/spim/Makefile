@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2005/10/16 18:04:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2006/10/15 06:44:58 steven Exp $
 
 COMMENT=	"MIPS R2000/R3000 simulator"
 
-V=		7.2.1
-DISTNAME=	spim
-PKGNAME=	spim-$V
+DISTNAME=	spim-7.2.1
 CATEGORIES=	emulators
 
 HOMEPAGE=	http://www.cs.wisc.edu/~larus/spim.html
@@ -19,8 +17,6 @@ PERMIT_DISTFILES_FTP=   "may not bundle with commercial product"
 WANTLIB=		ICE SM X11 Xaw Xext Xmu Xp Xpm Xt c m
 
 MASTER_SITES=	http://www.cs.wisc.edu/~larus/SPIM/
-
-DIST_SUBDIR=	${DISTNAME}-$V
 
 BUILD_DEPENDS=	:bison-*:devel/bison
 
