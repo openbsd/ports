@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2006/10/04 19:13:16 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.68 2006/10/15 20:26:33 mbalmer Exp $
 
 COMMENT=	"Open source LDAP software (client)"
 COMMENT-server=	"Open source LDAP software (server)"
@@ -36,14 +36,12 @@ EXTRACT_SUFX=		.tgz
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
 
-CONFIGURE_ARGS+=	\
-			${CONFIGURE_SHARED} \
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--localstatedir="/var" \
 			--enable-ipv6
 
 # slapd options
-CONFIGURE_ARGS+=	\
-			--enable-slapd \
+CONFIGURE_ARGS+=	--enable-slapd \
 			--enable-cleartext \
 			--enable-crypt \
 			--enable-rewrite \
@@ -52,8 +50,7 @@ CONFIGURE_ARGS+=	\
 			--enable-spasswd
 
 # slapd modules
-CONFIGURE_ARGS+=	\
-			--enable-dnssrv \
+CONFIGURE_ARGS+=	--enable-dnssrv \
 			--enable-ldap \
 			--enable-ldbm \
 			--enable-meta \
@@ -64,8 +61,7 @@ CONFIGURE_ARGS+=	\
 			--enable-shell
 
 # slurpd modules
-CONFIGURE_ARGS+=	\
-			--enable-slurpd
+CONFIGURE_ARGS+=	 --enable-slurpd
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/build
 
@@ -106,7 +102,8 @@ pre-build:
 
 pre-configure:
 .if ${FLAVOR:L:Msasl}
-	perl -pi -e 's,KRB5_LIBS=,KRB5_LIBS="-lgssapi -lkrb5 -lasn1 -lcom_err",g' \
+	perl -pi -e 's,KRB5_LIBS=,KRB5_LIBS="-lgssapi -lkrb5 -lasn1
+	    -lcom_err",g' \
 		${WRKSRC}/configure
 .endif
 
