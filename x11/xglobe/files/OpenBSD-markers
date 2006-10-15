@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD-markers,v 1.86 2006/10/15 10:14:01 ajacoutot Exp $
+# $OpenBSD: OpenBSD-markers,v 1.87 2006/10/15 16:41:42 ckuethe Exp $
 #
 # THE PKGNAME MUST BE BUMPED FOR THE FOLLOWING PORTS WHEN YOU COMMIT
 # TO THIS FILE:
@@ -78,6 +78,7 @@
 57.717		11.967		"niklas"	# Niklas Hallqvist
 59.33		18.08		"art"		# Artur Grabowski
 59.43		17.81		"maja"		# Mats O Jansson
+53.538		-113.500	"ckuethe"	# Chris Kuethe
 
 #-27.48         153.20          "d"             # David Leonard
 #-33.536466     151.093514      "dons"          # Don Stewart
