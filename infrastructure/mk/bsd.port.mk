@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.779 2006/10/15 09:22:49 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.780 2006/10/15 19:29:06 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -446,15 +446,8 @@ _DISTPATCH_COOKIE=	${WRKDIR}/.distpatch_done
 _PREPATCH_COOKIE=	${WRKDIR}/.prepatch_done
 _INSTALL_COOKIE=	${PKG_DBDIR}/${FULLPKGNAME${SUBPACKAGE}}/+CONTENTS
 _BULK_COOKIE=		${BULK_COOKIES_DIR}/${FULLPKGNAME}
-.if ${FAKE:L} != "no"
 _FAKE_COOKIE=		${WRKINST}/.fake_done
 _INSTALL_PRE_COOKIE=${WRKINST}/.install_started
-.elif ${SEPARATE_BUILD:L} != "no"
-_INSTALL_PRE_COOKIE=${WRKBUILD}/.install_started
-.else
-_INSTALL_PRE_COOKIE=${WRKDIR}/.install_started
-_FAKE_COOKIE=		${WRKDIR}/.fake_done
-.endif
 .if !empty(UPDATE_COOKIES_DIR)
 _UPDATE_COOKIE=		${UPDATE_COOKIES_DIR}/${FULLPKGNAME${SUBPACKAGE}}
 .else
@@ -588,11 +581,7 @@ FAKE_TARGET ?= ${INSTALL_TARGET}
 REGRESS_TARGET ?= regress
 REGRESS_FLAGS ?= ${MAKE_FLAGS}
 
-.if ${FAKE:L} != "no"
 _PACKAGE_COOKIE_DEPS=${_FAKE_COOKIE}
-.else
-_PACKAGE_COOKIE_DEPS=${_INSTALL_COOKIE}
-.endif
 
 .for _s in ${MULTI_PACKAGES}
 PKGNAMES += ${FULLPKGNAME${_s}}
@@ -770,9 +759,7 @@ PKG_ARGS+=		-M ${MESSAGE}
 .if defined(UNMESSAGE)
 PKG_ARGS+=		-U ${UNMESSAGE}
 .endif
-.if ${FAKE:L} != "no"
 PKG_ARGS+=		-B ${WRKINST}
-.endif
 PKG_ARGS+=-A'${PKG_ARCH}'
 .if ${LOCALBASE} != "/usr/local"
 PKG_ARGS+=-L${LOCALBASE}
@@ -1685,12 +1672,11 @@ _internal-regress: ${_DEPregress_COOKIES} ${_REGRESS_COOKIE}
 # Note: add @comment PACKAGE(arch=${MACHINE_ARCH}, opsys=${OPSYS}, vers=${OPSYS_VER})
 # when port is installed or package created.
 #
-.if ${FAKE:L} != "no"
-.  if ${SHARED_ONLY:L} == "yes"
+.if ${SHARED_ONLY:L} == "yes"
 _do_libs_too=
-.  else
+.else
 _do_libs_too=NO_SHARED_LIBS=Yes
-.  endif
+.endif
 
 _extra_prefixes=
 .if defined(MULTI_PACKAGES)
@@ -1717,7 +1703,6 @@ _internal-plist _internal-update-plist: _internal-fake ${_DEPrun_COOKIES}
 	GROUP=`id -g` \
 	${SUDO} perl ${PORTSDIR}/infrastructure/install/make-plist \
 	${_extra_prefixes} ${_tmpvars}
-.endif
 
 update-patches:
 	@toedit=`WRKDIST=${WRKDIST} PATCHDIR=${PATCHDIR} \
@@ -2009,7 +1994,6 @@ ${_REGRESS_COOKIE}: ${_BUILD_COOKIE}
 .endif
 	@${_MAKE_COOKIE} $@
 
-.if ${FAKE:L} != "no"
 ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
 	@${ECHO_MSG} "===>  Faking installation for ${FULLPKGNAME}${_MASTER}"
 	@if [ x`${SUDO} ${SH} -c umask` != x${DEF_UMASK} ]; then \
@@ -2019,35 +2003,35 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
 	@${SUDO} install -d -m 755 -o root -g wheel ${WRKINST}
 	@${SUDO} /usr/sbin/mtree -U -e -d -n -p ${WRKINST} \
 		-f ${WRKPKG}/mtree.spec  >/dev/null
-.  for _p in ${PROTECT_MOUNT_POINTS}
+.for _p in ${PROTECT_MOUNT_POINTS}
 	@${SUDO} mount -u -r ${_p}
-.  endfor
-.  for _m in ${MODULES}
-.    if defined(MOD${_m:U}_pre-fake)
+.endfor
+.for _m in ${MODULES}
+.  if defined(MOD${_m:U}_pre-fake)
 	@${MOD${_m:U}_pre-fake}
-.    endif
-.  endfor
+.  endif
+.endfor
 
-.  if target(pre-fake)
+.if target(pre-fake)
 	@cd ${.CURDIR} && exec ${SUDO} ${_SYSTRACE_CMD} ${MAKE} pre-fake ${_FAKE_SETUP}
-.  endif
+.endif
 	@${SUDO} ${_MAKE_COOKIE} ${_INSTALL_PRE_COOKIE}
-.  if target(pre-install)
+.if target(pre-install)
 	@cd ${.CURDIR} && exec ${SUDO} ${_SYSTRACE_CMD} ${MAKE} pre-install ${_FAKE_SETUP}
-.  endif
-.  if target(do-install)
+.endif
+.if target(do-install)
 	@cd ${.CURDIR} && exec ${SUDO} ${_SYSTRACE_CMD} ${MAKE} do-install ${_FAKE_SETUP}
-.  else
+.else
 # What FAKE normally does:
 	@cd ${WRKBUILD} && exec ${SUDO} ${_SYSTRACE_CMD} ${SETENV} ${MAKE_ENV} ${_FAKE_SETUP} ${MAKE_PROGRAM} ${FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
 # End of FAKE.
-.  endif
-.  if target(post-install)
+.endif
+.if target(post-install)
 	@cd ${.CURDIR} && exec ${SUDO} ${_SYSTRACE_CMD} ${MAKE} post-install ${_FAKE_SETUP}
-.  endif
-.  for _p in ${PROTECT_MOUNT_POINTS}
+.endif
+.for _p in ${PROTECT_MOUNT_POINTS}
 	@${SUDO} mount -u -w ${_p}
-.  endfor
+.endfor
 	@${SUDO} ${_MAKE_COOKIE} $@
 
 # The real install
@@ -2056,22 +2040,21 @@ ${_INSTALL_COOKIE}:
 	@cd ${.CURDIR} && exec ${MAKE} package
 	@cd ${.CURDIR} && DEPENDS_TARGET=install PACKAGING='${SUBPACKAGE}' exec ${MAKE} _internal-run-depends _internal-lib-depends
 	@${ECHO_MSG} "===>  Installing ${FULLPKGNAME${SUBPACKAGE}} from ${_PKG_REPO}"
-.  for _m in ${MODULES}
-.    if defined(MOD${_m:U}_pre_install)
+.for _m in ${MODULES}
+.  if defined(MOD${_m:U}_pre_install)
 	@${MOD${_m:U}_pre_install}
-.    endif
-.  endfor
-.  if ${TRUST_PACKAGES:L} == "yes"
+.  endif
+.endfor
+.if ${TRUST_PACKAGES:L} == "yes"
 	@if pkg_info -q -e ${FULLPKGNAME${SUBPACKAGE}}; then \
 		echo "Package ${FULLPKGNAME${SUBPACKAGE}} is already installed"; \
 	else \
 		${SUDO} ${SETENV} PKG_PATH=${_PKG_REPO} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKG_ADD_AUTO} ${PKGFILE}; \
 	fi
-.  else
+.else
 	@${SUDO} ${SETENV} PKG_PATH=${_PKG_REPO} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKG_ADD_AUTO} ${PKGFILE}
-.  endif
-	@-${SUDO} ${_MAKE_COOKIE} $@
 .endif
+	@-${SUDO} ${_MAKE_COOKIE} $@
 
 ${_UPDATE_COOKIE}: 
 	@cd ${.CURDIR} && exec ${MAKE} _internal-package
@@ -2680,10 +2663,6 @@ homepage-links:
 	@echo '<li><A HREF="${HOMEPAGE}">${PKGNAME}</A>'
 .else
 	@echo '<li>${PKGNAME}'
-.endif
-
-.if ${FAKE:L} == "no"
-.  include "${PORTSDIR}/infrastructure/mk/old-install.mk"
 .endif
 
 #####################################################
