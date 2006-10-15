@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2006/10/12 15:20:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2006/10/15 22:10:49 sturm Exp $
 
 COMMENT=		'wm-dockapp; space weather monitor'
 
 DISTNAME=		wmSpaceWeather-1.04
-PKGNAME=		${DISTNAME:L}
+PKGNAME=		${DISTNAME:L}p0
 CATEGORIES=		astro x11 x11/windowmaker
 
 HOMEPAGE=		http://dockapps.org/file.php/id/15
