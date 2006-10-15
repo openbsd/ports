@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_libdvd_c,v 1.1 2006/10/15 23:00:43 jolan Exp $
+--- src/libdvd.c.orig	Sun Apr 17 13:48:13 2005
++++ src/libdvd.c	Sun Oct 15 14:54:04 2006
+@@ -348,16 +348,7 @@ extern libdvd_t libdvd_open ( char *psz_
+ 	close(i_fd);
+ 
+     if (libdvd->psz_challenge[0] == '\0') {
+-	char *tmp;
+-
+-	tmp = getpass("Enter challenge, e.g. the name of your OS: ");
+-
+-	if (tmp == NULL) {
+-	    _libdvd_error(libdvd, "getpass failed");
+-	    return NULL;
+-	}
+-
+-	strlcpy(libdvd->psz_challenge, tmp, sizeof(libdvd->psz_challenge));
++	strlcpy(libdvd->psz_challenge, "OpenBSD", sizeof(libdvd->psz_challenge));
+ 
+ 	/* We do this later, as $HOME/.libdvd/ might not yet exist. */
+ 	i_savechallenge = 1;
