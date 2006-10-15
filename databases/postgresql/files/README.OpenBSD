@@ -1,14 +1,14 @@
 Requirements
 ------------
 
-Please note that OpenBSD port of the PostgreSQL server requires a
+Please note that the OpenBSD port of the PostgreSQL server requires a
 kernel compiled with SYSVSEM and SYSVSHM options for proper operation.
 The GENERIC kernel has these settings.
 
 Using PostgreSQL in an OpenBSD environment
 ------------------------------------------
 
-If you are installing PostgreSQL for the first time a default database
+If you are installing PostgreSQL for the first time, a default database
 will have been created for you. If this failed for any reason or if you
 want to use non-default paramaters, you can do something similar to the
 following steps manually:
@@ -23,7 +23,7 @@ user. It is suggested that you follow the steps in
 	!!PREFIX!!/share/doc/postgresql/INSTALL
 
 for more information on how to upgrade your existing databases. See
-also `Special notes for OpenBSD port' below. Replace references to
+also `Special notes for the OpenBSD port' below. Replace references to
 the `postgresql' user below with `pgsql' or whatever other user you
 have selected to be the database administration account.
 
