@@ -1,0 +1,92 @@
+$OpenBSD: patch-src_file_itunesdb_c,v 1.1 2006/10/15 22:44:35 ckuethe Exp $
+--- src/file_itunesdb.c.orig	Tue Oct  3 11:45:05 2006
++++ src/file_itunesdb.c	Tue Oct  3 11:48:46 2006
+@@ -547,7 +547,7 @@ iTunesDB *gp_import_itdb (iTunesDB *old_
+     gp_itdb_add_extra_full (itdb);
+ 
+     eitdb = itdb->userdata;
+-    g_return_val_if_fail (eitdb, (release_widgets(), NULL));
++    g_return_val_if_fail (eitdb, (release_widgets(), (iTunesDB *)NULL));
+ 
+     eitdb->offline = offline;
+ 
+@@ -571,9 +571,9 @@ iTunesDB *gp_import_itdb (iTunesDB *old_
+     {
+ 	Track *track = gl->data;
+ 	ExtraTrackData *etr;
+-	g_return_val_if_fail (track, (release_widgets(), NULL));
++	g_return_val_if_fail (track, (release_widgets(), (iTunesDB *)NULL));
+ 	etr = track->userdata;
+-	g_return_val_if_fail (etr, (release_widgets(), NULL));
++	g_return_val_if_fail (etr, (release_widgets(), (iTunesDB *)NULL));
+ 	fill_in_extended_info (track, total, num);
+ 	gp_track_validate_entries (track);
+ 	/* properly set value for has_artwork */
+@@ -609,7 +609,7 @@ iTunesDB *gp_import_itdb (iTunesDB *old_
+     while (extendeddeletion)
+     {
+ 	Track *track = extendeddeletion->data;
+-	g_return_val_if_fail (track, (release_widgets(), NULL));
++	g_return_val_if_fail (track, (release_widgets(), (iTunesDB *)NULL));
+ 	mark_track_for_deletion (itdb, track);
+ 	extendeddeletion = g_list_delete_link (extendeddeletion,
+ 					       extendeddeletion);
+@@ -632,15 +632,15 @@ iTunesDB *gp_import_itdb (iTunesDB *old_
+ 	GHashTable *track_hash = g_hash_table_new (g_direct_hash,
+ 						   g_direct_equal);
+ 	Playlist *mpl = itdb_playlist_mpl (itdb);
+-	g_return_val_if_fail (mpl, (release_widgets(), NULL));
+-	g_return_val_if_fail (old_eitdb, (release_widgets(), NULL));
++	g_return_val_if_fail (mpl, (release_widgets(), (iTunesDB *)NULL));
++	g_return_val_if_fail (old_eitdb, (release_widgets(), (iTunesDB *)NULL));
+ 
+ 	/* add tracks from @old_itdb to new itdb */
+ 	for (gl=old_itdb->tracks; gl; gl=gl->next)
+ 	{
+ 	    Track *duptr, *addtr;
+ 	    Track *track = gl->data;
+-	    g_return_val_if_fail (track, (release_widgets(), NULL));
++	    g_return_val_if_fail (track, (release_widgets(), (iTunesDB *)NULL));
+ 	    duptr = itdb_track_duplicate (track);
+ 	    /* add to database -- if duplicate detection is on and the
+ 	       same track already exists in the database, the already
+@@ -659,15 +659,15 @@ iTunesDB *gp_import_itdb (iTunesDB *old_
+ 	    GList *glm;
+ 	    Playlist *duppl;
+ 	    Playlist *pl = gl->next->data; /* skip MPL */
+-	    g_return_val_if_fail (pl, (release_widgets(), NULL));
++	    g_return_val_if_fail (pl, (release_widgets(), (iTunesDB *)NULL));
+ 	    duppl = itdb_playlist_duplicate (pl);
+ 	    /* switch members */
+ 	    for (glm=duppl->members; glm; glm=glm->next)
+ 	    {
+ 		Track *newtr;
+-		g_return_val_if_fail (glm->data, (release_widgets(), NULL));
++		g_return_val_if_fail (glm->data, (release_widgets(), (iTunesDB *)NULL));
+ 		newtr = g_hash_table_lookup (track_hash, glm->data);
+-		g_return_val_if_fail (newtr, (release_widgets(), NULL));
++		g_return_val_if_fail (newtr, (release_widgets(), (iTunesDB *)NULL));
+ 		glm->data = newtr;
+ 	    }
+ 	    /* if it's the podcasts list, don't add the list again if
+@@ -678,7 +678,7 @@ iTunesDB *gp_import_itdb (iTunesDB *old_
+ 		Playlist *podcasts = itdb_playlist_podcasts (itdb);
+ 		for (glm=duppl->members; glm; glm=glm->next)
+ 		{
+-		    g_return_val_if_fail (glm->data, (release_widgets(), NULL));
++		    g_return_val_if_fail (glm->data, (release_widgets(), (iTunesDB *)NULL));
+ 		    itdb_playlist_add_track (podcasts, glm->data, -1);
+ 		}
+ 		itdb_playlist_free (duppl);
+@@ -740,9 +740,9 @@ iTunesDB *gp_merge_itdb (iTunesDB *old_i
+     ExtraiTunesDBData *old_eitdb;
+     iTunesDB *new_itdb;
+ 
+-    g_return_val_if_fail (old_itdb, NULL);
++    g_return_val_if_fail (old_itdb, (iTunesDB *)NULL);
+     old_eitdb = old_itdb->userdata;
+-    g_return_val_if_fail (old_eitdb, NULL);
++    g_return_val_if_fail (old_eitdb, (iTunesDB *)NULL);
+ 
+     if (old_itdb->usertype & GP_ITDB_TYPE_LOCAL)
+     {

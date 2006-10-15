@@ -1,0 +1,41 @@
+$OpenBSD: patch-src_info_c,v 1.1 2006/10/15 22:44:35 ckuethe Exp $
+--- src/info.c.orig	Tue Oct  3 12:05:13 2006
++++ src/info.c	Tue Oct  3 12:07:38 2006
+@@ -576,14 +576,17 @@ gboolean ipod_connected (void)
+ 
+ /* we'll use statvfs to determine free space on the iPod where
+    available, df otherwise */
+-#ifdef HAVE_STATVFS
++#if 1
+ #include <sys/types.h>
+-#include <sys/statvfs.h>
++#include <sys/stat.h>
++#include <sys/param.h>
++#include <sys/mount.h>
++
+ /* update space_ipod_free and space_ipod_used */
+ static void th_space_update (void)
+ {
+     gchar *mp=NULL;
+-    struct statvfs stat;
++    struct statfs sf;
+     int	status;
+ 
+     g_mutex_lock (space_mutex);
+@@ -595,13 +598,13 @@ static void th_space_update (void)
+     }
+     if (mp)
+     {
+-	status = statvfs (mp, &stat);
++	status = statfs (mp, &sf);
+ 	if (status != 0) {
+ 	    /* XXX: why would this fail - what to do here??? */
+ 	    goto done;
+ 	}
+-	space_ipod_free = (gdouble)stat.f_bavail * stat.f_frsize;
+-	space_ipod_used = ((gdouble)stat.f_blocks * stat.f_frsize) -
++	space_ipod_free = (gdouble)sf.f_bavail * sf.f_bsize;
++	space_ipod_used = ((gdouble)sf.f_blocks * sf.f_bsize) -
+ 	    space_ipod_free;
+ 	space_uptodate = TRUE;
+ 	
