@@ -1,7 +1,7 @@
-$OpenBSD: patch-fontforge_fontview_c,v 1.1 2006/07/21 09:20:34 steven Exp $
---- fontforge/fontview.c.orig	Thu Jul 20 14:28:20 2006
-+++ fontforge/fontview.c	Thu Jul 20 14:28:47 2006
-@@ -9021,8 +9021,8 @@ static void FVExpose(FontView *fv,GWindo
+$OpenBSD: patch-fontforge_fontview_c,v 1.2 2006/10/15 18:53:00 kili Exp $
+--- fontforge/fontview.c.orig	Fri Aug 18 03:37:33 2006
++++ fontforge/fontview.c	Sat Oct  7 16:53:23 2006
+@@ -9056,8 +9056,8 @@ static void FVExpose(FontView *fv,GWindo
  	    (event->u.expose.rect.y+event->u.expose.rect.height+fv->cbh-1)/fv->cbh; ++i ) for ( j=0; j<fv->colcnt; ++j ) {
  	int index = (i+fv->rowoff)*fv->colcnt+j;
  	int feat_gid;

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2006/06/18 13:33:25 steven Exp $
---- configure.in.orig	Sun Apr  9 18:30:21 2006
-+++ configure.in	Wed Jun 14 21:52:36 2006
-@@ -163,22 +163,15 @@ AC_CHECK_FILE(/usr/include/libxml2/libxm
+$OpenBSD: patch-configure_in,v 1.2 2006/10/15 18:53:00 kili Exp $
+--- configure.in.orig	Fri Aug 18 21:33:41 2006
++++ configure.in	Sat Oct  7 16:53:26 2006
+@@ -165,22 +165,15 @@ AC_CHECK_FILE(/usr/include/libxml2/libxm
   AC_CHECK_FILE(/usr/local/include/libxml2/libxml,[CFLAGS="$CFLAGS -I/usr/local/include -I/usr/local/include/libxml2/"],
    AC_DEFINE(_NO_LIBXML))])
  
