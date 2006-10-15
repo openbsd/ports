@@ -1,14 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.11 2006/03/04 10:38:58 mbalmer Exp $
-@conflict hylafax-*
+@comment $OpenBSD: PLIST,v 1.12 2006/10/15 16:07:07 ajacoutot Exp $
 bin/autopvf
 bin/basictopvf
 bin/faxq
-bin/faxrm
 bin/faxrunq
 bin/faxspool
 bin/g32pbm
 bin/g3cat
 bin/lintopvf
+bin/mgetty-faxrm
 bin/newslock
 bin/pbm2g3
 bin/pvfamp
@@ -42,11 +41,11 @@ lib/mgetty+sendfax/faxq-helper
 lib/mgetty+sendfax/setup
 @man man/man1/coverpg.1
 @man man/man1/faxq.1
-@man man/man1/faxrm.1
 @man man/man1/faxrunq.1
 @man man/man1/faxspool.1
 @man man/man1/g32pbm.1
 @man man/man1/g3cat.1
+@man man/man1/mgetty-faxrm.1
 @man man/man1/pbm2g3.1
 @man man/man1/pvf.1
 @man man/man1/sff2g3.1
