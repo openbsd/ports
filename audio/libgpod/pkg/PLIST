@@ -1,13 +1,34 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/03/18 07:07:43 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/10/15 22:43:49 ckuethe Exp $
 %%SHARED%%
 include/gpod-1.0/
 include/gpod-1.0/gpod/
-include/gpod-1.0/gpod/ipod-device.h
 include/gpod-1.0/gpod/itdb.h
 lib/libgpod.a
 lib/libgpod.la
 lib/pkgconfig/
 lib/pkgconfig/libgpod-1.0.pc
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/libgpod/
+share/gtk-doc/html/libgpod/ch01.html
+share/gtk-doc/html/libgpod/ch02.html
+share/gtk-doc/html/libgpod/home.png
+share/gtk-doc/html/libgpod/index.html
+share/gtk-doc/html/libgpod/index.sgml
+share/gtk-doc/html/libgpod/left.png
+share/gtk-doc/html/libgpod/libgpod-Artwork.html
+share/gtk-doc/html/libgpod/libgpod-Device.html
+share/gtk-doc/html/libgpod/libgpod-File-handling-functions.html
+share/gtk-doc/html/libgpod/libgpod-Low-level-functions.html
+share/gtk-doc/html/libgpod/libgpod-Playlists.html
+share/gtk-doc/html/libgpod/libgpod-The-Itdb-iTunesDB-structure.html
+share/gtk-doc/html/libgpod/libgpod-Time-handling.html
+share/gtk-doc/html/libgpod/libgpod-Tracks.html
+share/gtk-doc/html/libgpod/libgpod.devhelp
+share/gtk-doc/html/libgpod/libgpod.devhelp2
+share/gtk-doc/html/libgpod/right.png
+share/gtk-doc/html/libgpod/style.css
+share/gtk-doc/html/libgpod/up.png
 share/locale/de/LC_MESSAGES/libgpod.mo
 share/locale/es/LC_MESSAGES/libgpod.mo
 share/locale/fr/LC_MESSAGES/libgpod.mo

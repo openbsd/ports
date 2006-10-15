@@ -1,0 +1,22 @@
+$OpenBSD: patch-tests_Makefile_in,v 1.1 2006/10/15 22:43:49 ckuethe Exp $
+--- tests/Makefile.in.orig	Mon Oct  9 20:55:23 2006
++++ tests/Makefile.in	Mon Oct  9 21:01:46 2006
+@@ -127,7 +127,7 @@ LIBGPOD_LIBS = @LIBGPOD_LIBS@
+ LIBGPOD_REVISION = @LIBGPOD_REVISION@
+ LIBGPOD_VERSION = @LIBGPOD_VERSION@
+ LIBOBJS = @LIBOBJS@
+-LIBS = $(LIBGPOD_LIBS) $(top_builddir)/src/libgpod.la
++LIBS= $(top_builddir)/src/libgpod.la $(LIBGPOD_LIBS) $(LDFLAGS)
+ LIBTOOL = @LIBTOOL@
+ LN_S = @LN_S@
+ LTLIBOBJS = @LTLIBOBJS@
+@@ -338,8 +338,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUD
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) \
+ 	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+-LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+-	$(AM_LDFLAGS) $(LDFLAGS) -o $@
++LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) -o $@
+ CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+ 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
+ LTCXXCOMPILE = $(LIBTOOL) --mode=compile $(CXX) $(DEFS) \

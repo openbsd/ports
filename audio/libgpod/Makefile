@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2006/09/18 11:40:06 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/10/15 22:43:49 ckuethe Exp $
 
 COMMENT=	"library to access the contents of an iPod"
-DISTNAME=	libgpod-0.3.2
-SHARED_LIBS=	gpod	302.0
+DISTNAME=	libgpod-0.4.0
+SHARED_LIBS=	gpod	400.0
 CATEGORIES=	audio
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=gtkpod/}
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_LIBTOOL=	Yes
+USE_GMAKE=	Yes
 
 MODULES=	gettext
 
