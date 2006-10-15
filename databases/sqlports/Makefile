@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/08/01 16:22:22 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/10/15 09:41:44 espie Exp $
 
 CATEGORIES=	databases
 DISTNAME=	sqlports-0.3
@@ -15,7 +15,7 @@ DBNAME=	${WRKBUILD}/sqlports
 
 do-build:
 	cd ${PORTSDIR} && ${MAKE} dump-vars| \
-	perl ${PORTSDIR}/infrastructure/package/mksqlitedb ${DBNAME}
+	perl ${FILESDIR}/mksqlitedb ${DBNAME}
 
 do-install:
 	${INSTALL_DATA} ${DBNAME} ${PREFIX}/share
