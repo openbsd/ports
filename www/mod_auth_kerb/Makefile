@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2006/05/27 16:08:16 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2006/10/15 21:49:50 ckuethe Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"Apache Kerberos authentication module"
 
-VERSION=	5.0rc7
-DISTNAME=	mod_auth_kerb-${VERSION}
+DISTNAME=	mod_auth_kerb-5.0
 CATEGORIES=	www
 
 HOMEPAGE=	http://modauthkerb.sourceforge.net/
 
-MAINTAINER=	Chris Kuethe <ckuethe@ualberta.ca>
+MAINTAINER=	Chris Kuethe <ckuethe@openbsd.org>
 
 # combination of 2- and 3-clause BSD, MIT, and export crypto warnings
 PERMIT_PACKAGE_CDROM=	Yes
