@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2006/10/12 11:36:11 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2006/10/15 19:20:20 steven Exp $
 
 COMMENT=	"integrated LaTeX environment for KDE"
 DISTNAME=	kile-1.9.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	editors x11/kde
 
 HOMEPAGE=	http://kile.sourceforge.net/
 
-MAINTAINER=	David Love <david@dcs.shef.ac.uk>
+MAINTAINER=	David Love <david@homeunix.org.uk>
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kile/}
 EXTRACT_SUFX=	.tar.bz2
