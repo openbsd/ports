@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_platform_X11_Makefile_am,v 1.1.1.1 2006/10/16 11:42:04 steven Exp $
+--- src/platform/X11/Makefile.am.orig	Sat Oct  7 21:53:49 2006
++++ src/platform/X11/Makefile.am	Sat Oct  7 21:54:52 2006
+@@ -3,6 +3,6 @@ lib_LTLIBRARIES = libaggplatformX11.la
+ 
+ libaggplatformX11_la_LDFLAGS = -version-info @AGG_LIB_VERSION@  -L@x_libraries@
+ libaggplatformX11_la_SOURCES = agg_platform_support.cpp
+-libaggplatformX11_la_CXXFLAGS =  -I$(top_srcdir)/include @x_includes@
++libaggplatformX11_la_CXXFLAGS =  -I$(top_srcdir)/include
+ libaggplatformX11_la_LIBADD = -lX11
+ endif

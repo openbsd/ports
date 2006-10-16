@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/10/16 11:42:04 steven Exp $
+@lib lib/libagg.so.${LIBagg_VERSION}
+@lib lib/libaggfontfreetype.so.${LIBaggfontfreetype_VERSION}
+@lib lib/libaggplatformX11.so.${LIBaggplatformX11_VERSION}
+@lib lib/libaggplatformsdl.so.${LIBaggplatformsdl_VERSION}

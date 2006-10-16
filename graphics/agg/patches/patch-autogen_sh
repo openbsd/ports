@@ -1,0 +1,11 @@
+$OpenBSD: patch-autogen_sh,v 1.1.1.1 2006/10/16 11:42:04 steven Exp $
+--- autogen.sh.orig	Sat Oct  7 18:10:35 2006
++++ autogen.sh	Sat Oct  7 18:10:43 2006
+@@ -18,6 +18,6 @@ libtoolize --force
+ automake --foreign --add-missing --ignore-deps
+ 
+ # and finally invoke our new configure
+-./configure $*
++#./configure $*
+ 
+ # end

@@ -1,0 +1,8 @@
+Anti-Grain Geometry (AGG) is a general purpose graphical toolkit
+written completely in standard and platform independent C++. It can be
+used in many areas of computer programming where high quality 2D
+graphics is an essential part of the project. For example, if you
+render 2D geographic maps, AGG is a must. AGG uses only C++ and
+standard C runtime functions. The basic algorithms don't even use C++
+Standard Template Library. Thus, AGG can be used in a very large number
+of applications, including embedded systems.
