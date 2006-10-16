@@ -6,7 +6,7 @@ It will help you to create the following configuration files in
 ${SYSCONFDIR}/mgetty+sendfax:
 faxheader mgetty.config sendfax.config
 
-The faxrm utility and man page have been rename to avoid conflict with
+The faxrm utility and man page have been renamed to avoid conflict with
 comms/hylafax:
  faxrm -> mgetty-faxrm
  faxrm(1) -> mgetty-faxrm(1)
