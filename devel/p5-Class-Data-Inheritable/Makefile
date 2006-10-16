@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2005/12/22 20:33:41 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/10/16 14:48:37 jasper Exp $
 
 COMMENT=	"inheritable, overridable class data"
 
-DISTNAME=	Class-Data-Inheritable-0.04
+DISTNAME=	Class-Data-Inheritable-0.06
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
