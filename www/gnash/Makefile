@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/09/21 23:14:48 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2006/10/16 08:27:19 steven Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	"flash player with firefox browser plugin"
@@ -55,7 +55,7 @@ CONFIGURE_ARGS+=--enable-plugin \
 		--without-arts
 
 pre-configure:
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
+	cd ${WRKSRC} && ${SETENV} AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 
 .include <bsd.port.mk>
