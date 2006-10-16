@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2006/06/19 15:27:03 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.17 2006/10/16 13:57:58 kevlo Exp $
 phpMyAdmin/
 phpMyAdmin/CREDITS
 phpMyAdmin/ChangeLog
@@ -7,12 +7,20 @@ phpMyAdmin/Documentation.txt
 phpMyAdmin/INSTALL
 phpMyAdmin/LICENSE
 phpMyAdmin/README
-phpMyAdmin/RELEASE-DATE-2.8.1
+phpMyAdmin/RELEASE-DATE-2.9.0.2
 phpMyAdmin/TODO
 phpMyAdmin/browse_foreigners.php
 phpMyAdmin/calendar.php
 phpMyAdmin/changelog.php
 phpMyAdmin/chk_rel.php
+phpMyAdmin/config.sample.inc.php
+@sample phpMyAdmin/config.inc.php
+phpMyAdmin/contrib/
+phpMyAdmin/contrib/README
+phpMyAdmin/contrib/packaging/
+phpMyAdmin/contrib/packaging/Fedora/
+phpMyAdmin/contrib/packaging/Fedora/phpMyAdmin-http.conf
+phpMyAdmin/contrib/packaging/Fedora/phpMyAdmin.spec
 phpMyAdmin/css/
 phpMyAdmin/css/phpmyadmin.css.php
 phpMyAdmin/css/print.css
@@ -172,6 +180,7 @@ phpMyAdmin/left.php
 phpMyAdmin/libraries/
 phpMyAdmin/libraries/.htaccess
 phpMyAdmin/libraries/Config.class.php
+phpMyAdmin/libraries/Table.class.php
 phpMyAdmin/libraries/Theme.class.php
 phpMyAdmin/libraries/Theme_Manager.class.php
 phpMyAdmin/libraries/auth/
@@ -183,8 +192,8 @@ phpMyAdmin/libraries/bookmark.lib.php
 phpMyAdmin/libraries/charset_conversion.lib.php
 phpMyAdmin/libraries/check_user_privileges.lib.php
 phpMyAdmin/libraries/common.lib.php
+phpMyAdmin/libraries/compat/
 phpMyAdmin/libraries/config.default.php
-@sample phpMyAdmin/config.inc.php
 phpMyAdmin/libraries/database_interface.lib.php
 phpMyAdmin/libraries/db_config.lib.php
 phpMyAdmin/libraries/db_details_common.inc.php
@@ -192,7 +201,6 @@ phpMyAdmin/libraries/db_details_db_info.inc.php
 phpMyAdmin/libraries/db_details_links.inc.php
 phpMyAdmin/libraries/db_table_exists.lib.php
 phpMyAdmin/libraries/dbg/
-phpMyAdmin/libraries/dbg/profiling.php
 phpMyAdmin/libraries/dbg/setup.php
 phpMyAdmin/libraries/dbi/
 phpMyAdmin/libraries/dbi/mysql.dbi.lib.php
@@ -217,16 +225,18 @@ phpMyAdmin/libraries/engines/myisam.lib.php
 phpMyAdmin/libraries/engines/ndbcluster.lib.php
 phpMyAdmin/libraries/export/
 phpMyAdmin/libraries/export/csv.php
+phpMyAdmin/libraries/export/excel.php
 phpMyAdmin/libraries/export/htmlexcel.php
 phpMyAdmin/libraries/export/htmlword.php
 phpMyAdmin/libraries/export/latex.php
+phpMyAdmin/libraries/export/ods.php
+phpMyAdmin/libraries/export/odt.php
 phpMyAdmin/libraries/export/pdf.php
 phpMyAdmin/libraries/export/sql.php
 phpMyAdmin/libraries/export/xls.php
 phpMyAdmin/libraries/export/xml.php
 phpMyAdmin/libraries/file_listing.php
 phpMyAdmin/libraries/footer.inc.php
-phpMyAdmin/libraries/footer_custom.inc.php
 phpMyAdmin/libraries/fpdf/
 phpMyAdmin/libraries/fpdf/README
 phpMyAdmin/libraries/fpdf/font/
@@ -254,10 +264,10 @@ phpMyAdmin/libraries/fpdf/ufpdf.php
 phpMyAdmin/libraries/get_foreign.lib.php
 phpMyAdmin/libraries/grab_globals.lib.php
 phpMyAdmin/libraries/header.inc.php
-phpMyAdmin/libraries/header_custom.inc.php
 phpMyAdmin/libraries/header_http.inc.php
 phpMyAdmin/libraries/header_meta_style.inc.php
 phpMyAdmin/libraries/header_printview.inc.php
+phpMyAdmin/libraries/iconv_wrapper.lib.php
 phpMyAdmin/libraries/import/
 phpMyAdmin/libraries/import.lib.php
 phpMyAdmin/libraries/import/README
@@ -267,11 +277,13 @@ phpMyAdmin/libraries/import/sql.php
 phpMyAdmin/libraries/information_schema_relations.lib.php
 phpMyAdmin/libraries/ip_allow_deny.lib.php
 phpMyAdmin/libraries/kanji-encoding.lib.php
+phpMyAdmin/libraries/language.lib.php
 phpMyAdmin/libraries/left_header.inc.php
 phpMyAdmin/libraries/mcrypt.lib.php
 phpMyAdmin/libraries/mult_submits.inc.php
 phpMyAdmin/libraries/mysql_charsets.lib.php
 phpMyAdmin/libraries/ob.lib.php
+phpMyAdmin/libraries/opendocument.lib.php
 phpMyAdmin/libraries/plugin_interface.lib.php
 phpMyAdmin/libraries/read_dump.lib.php
 phpMyAdmin/libraries/relation.lib.php
@@ -290,7 +302,6 @@ phpMyAdmin/libraries/sqlvalidator.lib.php
 phpMyAdmin/libraries/storage_engines.lib.php
 phpMyAdmin/libraries/string.lib.php
 phpMyAdmin/libraries/tbl_indexes.lib.php
-phpMyAdmin/libraries/tbl_move_copy.php
 phpMyAdmin/libraries/tbl_properties.inc.php
 phpMyAdmin/libraries/tbl_properties_common.php
 phpMyAdmin/libraries/tbl_properties_links.inc.php
@@ -350,6 +361,7 @@ phpMyAdmin/server_processlist.php
 phpMyAdmin/server_sql.php
 phpMyAdmin/server_status.php
 phpMyAdmin/server_variables.php
+phpMyAdmin/show_config_errors.php
 phpMyAdmin/sql.php
 phpMyAdmin/tbl_addfield.php
 phpMyAdmin/tbl_alter.php
@@ -373,8 +385,6 @@ phpMyAdmin/themes/
 phpMyAdmin/themes.php
 phpMyAdmin/themes/darkblue_orange/
 phpMyAdmin/themes/darkblue_orange/css/
-phpMyAdmin/themes/darkblue_orange/css/theme_left.css.php
-phpMyAdmin/themes/darkblue_orange/css/theme_print.css.php
 phpMyAdmin/themes/darkblue_orange/css/theme_right.css.php
 phpMyAdmin/themes/darkblue_orange/img/
 phpMyAdmin/themes/darkblue_orange/img/arrow_ltr.png
@@ -490,6 +500,7 @@ phpMyAdmin/themes/darkblue_orange/img/s_warn.png
 phpMyAdmin/themes/darkblue_orange/img/spacer.png
 phpMyAdmin/themes/darkblue_orange/img/tbl_header.png
 phpMyAdmin/themes/darkblue_orange/img/tbl_th.png
+phpMyAdmin/themes/darkblue_orange/img/window-new.png
 phpMyAdmin/themes/darkblue_orange/info.inc.php
 phpMyAdmin/themes/darkblue_orange/layout.inc.php
 phpMyAdmin/themes/darkblue_orange/screen.png
@@ -611,6 +622,7 @@ phpMyAdmin/themes/original/img/s_views.png
 phpMyAdmin/themes/original/img/s_warn.png
 phpMyAdmin/themes/original/img/spacer.png
 phpMyAdmin/themes/original/img/vertical_line.png
+phpMyAdmin/themes/original/img/window-new.png
 phpMyAdmin/themes/original/info.inc.php
 phpMyAdmin/themes/original/layout.inc.php
 phpMyAdmin/themes/original/screen.png
