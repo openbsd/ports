@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/12 11:30:05 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/10/16 14:50:51 jasper Exp $
 ${P5SITE}/POE/Component/IRC/
 ${P5SITE}/POE/Component/IRC.pm
 ${P5SITE}/POE/Component/IRC/Common.pm
@@ -48,8 +48,10 @@ ${P5SITE}/POE/Filter/IRC/Compat.pm
 @man man/man3p/POE::Component::IRC::Qnet::State.3p
 @man man/man3p/POE::Component::IRC::State.3p
 @man man/man3p/POE::Component::IRC::Test::Harness.3p
+@man man/man3p/POE::Component::IRC::Test::Plugin.3p
 @man man/man3p/POE::Filter::CTCP.3p
 @man man/man3p/POE::Filter::IRC.3p
+@man man/man3p/POE::Filter::IRC::Compat.3p
 share/doc/p5-POE-Component-IRC/
 share/doc/p5-POE-Component-IRC/ctcpspec.html
 share/doc/p5-POE-Component-IRC/dccspec.html
