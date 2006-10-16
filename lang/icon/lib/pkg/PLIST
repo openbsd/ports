@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/18 12:52:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2006/10/16 10:01:55 espie Exp $
 @conflict unicon-*
 share/ipl/bin/
 share/ipl/bin/adlcheck
@@ -19,6 +19,7 @@ share/ipl/bin/calc
 share/ipl/bin/catlines
 share/ipl/bin/chars
 share/ipl/bin/chkhtml
+share/ipl/bin/choose
 share/ipl/bin/chop
 share/ipl/bin/colm
 share/ipl/bin/comfiles
@@ -32,10 +33,8 @@ share/ipl/bin/crypt
 share/ipl/bin/csgen
 share/ipl/bin/cstrings
 share/ipl/bin/cwd
+share/ipl/bin/datmerge
 share/ipl/bin/daystil
-share/ipl/bin/dd2draft
-share/ipl/bin/dd2res
-share/ipl/bin/dd2wif
 share/ipl/bin/ddfdump
 share/ipl/bin/deal
 share/ipl/bin/declchck
@@ -137,8 +136,6 @@ share/ipl/bin/ipsplit
 share/ipl/bin/ipxref
 share/ipl/bin/irsort
 share/ipl/bin/irunerr
-share/ipl/bin/isd2disd
-share/ipl/bin/isd2wif
 share/ipl/bin/iseq
 share/ipl/bin/isize
 share/ipl/bin/isrcline
@@ -195,6 +192,7 @@ share/ipl/bin/newicon
 share/ipl/bin/newsrc
 share/ipl/bin/nim
 share/ipl/bin/nocr
+share/ipl/bin/noise
 share/ipl/bin/normalize
 share/ipl/bin/oldicon
 share/ipl/bin/pack
@@ -238,6 +236,7 @@ share/ipl/bin/setmerge
 share/ipl/bin/shar
 share/ipl/bin/shortest
 share/ipl/bin/shuffile
+share/ipl/bin/shuffle
 share/ipl/bin/sing
 share/ipl/bin/slice
 share/ipl/bin/snake
@@ -320,6 +319,8 @@ share/ipl/ucode/bkutil.u1
 share/ipl/ucode/bkutil.u2
 share/ipl/ucode/bold.u1
 share/ipl/ucode/bold.u2
+share/ipl/ucode/boolops.u1
+share/ipl/ucode/boolops.u2
 share/ipl/ucode/bufread.u1
 share/ipl/ucode/bufread.u2
 share/ipl/ucode/calendar.u1
@@ -366,6 +367,8 @@ share/ipl/ucode/dif.u1
 share/ipl/ucode/dif.u2
 share/ipl/ucode/digitcnt.u1
 share/ipl/ucode/digitcnt.u2
+share/ipl/ucode/dijkstra.u1
+share/ipl/ucode/dijkstra.u2
 share/ipl/ucode/divide.u1
 share/ipl/ucode/divide.u2
 share/ipl/ucode/ebcdic.u1
@@ -476,8 +479,6 @@ share/ipl/ucode/iolib.u1
 share/ipl/ucode/iolib.u2
 share/ipl/ucode/iscreen.u1
 share/ipl/ucode/iscreen.u2
-share/ipl/ucode/ispf.u1
-share/ipl/ucode/ispf.u2
 share/ipl/ucode/iterfncs.u1
 share/ipl/ucode/iterfncs.u2
 share/ipl/ucode/itlib.u1
@@ -516,6 +517,8 @@ share/ipl/ucode/lrgapprx.u1
 share/ipl/ucode/lrgapprx.u2
 share/ipl/ucode/lstfncs.u1
 share/ipl/ucode/lstfncs.u2
+share/ipl/ucode/lterps.u1
+share/ipl/ucode/lterps.u2
 share/ipl/ucode/lu.u1
 share/ipl/ucode/lu.u2
 share/ipl/ucode/makelsys.u1
@@ -530,6 +533,8 @@ share/ipl/ucode/math.u1
 share/ipl/ucode/math.u2
 share/ipl/ucode/matrix.u1
 share/ipl/ucode/matrix.u2
+share/ipl/ucode/matrix2.u1
+share/ipl/ucode/matrix2.u2
 share/ipl/ucode/memlog.u1
 share/ipl/ucode/memlog.u2
 share/ipl/ucode/memrfncs.u1
@@ -544,6 +549,8 @@ share/ipl/ucode/mset.u1
 share/ipl/ucode/mset.u2
 share/ipl/ucode/namepfx.u1
 share/ipl/ucode/namepfx.u2
+share/ipl/ucode/nestlist.u1
+share/ipl/ucode/nestlist.u2
 share/ipl/ucode/ngrams.u1
 share/ipl/ucode/ngrams.u2
 share/ipl/ucode/noncase.u1
@@ -590,6 +597,8 @@ share/ipl/ucode/plural.u1
 share/ipl/ucode/plural.u2
 share/ipl/ucode/polynom.u1
 share/ipl/ucode/polynom.u2
+share/ipl/ucode/polyseq.u1
+share/ipl/ucode/polyseq.u2
 share/ipl/ucode/polystuf.u1
 share/ipl/ucode/polystuf.u2
 share/ipl/ucode/popen.u1
@@ -640,8 +649,6 @@ share/ipl/ucode/revadd.u1
 share/ipl/ucode/revadd.u2
 share/ipl/ucode/rewrap.u1
 share/ipl/ucode/rewrap.u2
-share/ipl/ucode/rexx.u1
-share/ipl/ucode/rexx.u2
 share/ipl/ucode/rng.u1
 share/ipl/ucode/rng.u2
 share/ipl/ucode/sandgen.u1

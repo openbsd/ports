@@ -1,9 +1,0 @@
-$OpenBSD: patch-config_unix_openbsd_Makedefs,v 1.1 2001/07/03 13:13:13 espie Exp $
---- config/unix/openbsd/Makedefs.orig	Sat Jun  9 00:59:50 2001
-+++ config/unix/openbsd/Makedefs	Sun Jul  1 13:07:23 2001
-@@ -18,3 +18,5 @@ RLINK =
- RLIBS = -lm
- XLIBS = -L$(X11BASE)/lib -lX11
- XPMDEFS = -DZPIPE -I$(X11BASE)/include
-+XLLINK= $(XLIBS) -lXpm
-+XPM=FORCE

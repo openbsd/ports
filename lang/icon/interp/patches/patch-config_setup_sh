@@ -1,0 +1,24 @@
+$OpenBSD: patch-config_setup_sh,v 1.1 2006/10/16 10:01:55 espie Exp $
+--- config/setup.sh.orig	Sat Dec 20 18:29:00 2003
++++ config/setup.sh	Mon Oct 16 10:59:06 2006
+@@ -12,7 +12,7 @@ SRC=$TOP/src
+ 
+ # check parameters
+ case "$GPX" in
+-   Graphics)	XL='-L../../bin -lIgpx $(XLIBS)';;
++   Graphics)	XL='-L../../bin $(XLIBS)';;
+    NoGraphics)	XL= ;;
+    *)		echo "$USAGE" 1>&2; exit 1;;
+ esac
+@@ -31,10 +31,7 @@ fi
+ # find and copy the context switch code.
+ # use pthreads version if specified, or as a last resort.
+ # first try `uname -p`.[cs] or `uname -m`.[cs] and then rswitch.[cs].
+-ARCH=`uname -p 2>/dev/null || echo unknown`
+-if [ "$ARCH" = "unknown" ]; then
+-   ARCH=`uname -m`
+-fi
++ARCH=`uname -m`
+ if [ "$CSW" = "pthreads" ]; then
+    RSW=pthreads.c
+    COCLEAN="#define CoClean"

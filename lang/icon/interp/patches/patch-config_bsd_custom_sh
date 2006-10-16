@@ -1,0 +1,14 @@
+$OpenBSD: patch-config_bsd_custom_sh,v 1.1 2006/10/16 10:01:55 espie Exp $
+--- config/bsd/custom.sh.orig	Mon Oct 16 10:35:53 2006
++++ config/bsd/custom.sh	Mon Oct 16 10:37:25 2006
+@@ -0,0 +1,10 @@
++#!/bin/sh
++#
++#  custom setup script for openbsd
++
++SRC=../../../src
++ARCH=`uname -m`
++
++if [ -f define.$ARCH ]; then
++        cat define.$ARCH >>$SRC/h/define.h
++fi

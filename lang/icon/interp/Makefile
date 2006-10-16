@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2005/02/24 13:20:41 alek Exp $
+# $OpenBSD: Makefile,v 1.14 2006/10/16 10:01:55 espie Exp $
 
 COMMENT=	"programming language with generators, X11 and more"
 COMMENT-no_x11=	"programming language with generators"
 COMMENT-compiler="icon compiler"
-VERSION=	9.4
-DISTNAME=	icon.v940src
+VERSION=	9.4.3
+DISTNAME=	icon.v943src
 PKGNAME=	icon-interp-${VERSION}
 CATEGORIES=	lang
 MASTER_SITES= http://www.cs.arizona.edu/icon/ftp/packages/unix/
 #DIST_SUBDIR=	icon/${VERSION}
-DISTFILES=	icon.v940src.tgz
+DISTFILES=	icon.v943src.tgz
 
 MULTI_PACKAGES=	-compiler
 SUBPACKAGE?=
@@ -53,7 +53,7 @@ USE_X11=Yes
 .endif
 
 do-configure:
-	cd ${WRKSRC} && ${MAKE} ${CONFIGURE_TARGET} name=openbsd
+	cd ${WRKSRC} && ${MAKE} ${CONFIGURE_TARGET} name=bsd
 
 post-build:
 	if [ x${NO_SHARED_LIBS:L} != "yes" ]; then \
@@ -82,10 +82,6 @@ do-install:
 	${INSTALL_DATA} ${WRKBUILD}/bin/rt.a ${WRKINST}${LIBDIR}
 	${INSTALL_DATA} ${WRKBUILD}/bin/rt.db ${WRKINST}${LIBDIR}
 	${INSTALL_DATA} ${WRKBUILD}/bin/dlrgint.o ${WRKINST}${LIBDIR}
-	cd ${PREFIX}/bin && \
-	    ${WRKSRC}/bin/patchstr ${WRKINST}${LIBDIR}/icont ${TRUEPREFIX}/bin/iconx
-	cd ${PREFIX}/bin && \
-	    ${WRKSRC}/bin/patchstr ${PREFIX}/bin/iconc ${LIBDIR}/
 	if [ x${NO_SHARED_LIBS:L} != "yes" ]; then \
 	    ${INSTALL_DATA_DIR} ${PREFIX}/share/ipl/ucode; \
 	    ${INSTALL_DATA} ${WRKBUILD}/ipl/cfuncs/cfunc.u?  ${PREFIX}/share/ipl/ucode; \

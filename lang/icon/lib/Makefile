@@ -1,13 +1,13 @@
 # Icon library port
-# $OpenBSD: Makefile,v 1.18 2002/10/27 14:12:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2006/10/16 10:01:55 espie Exp $
 
 COMMENT=	"useful and interesting programs for Icon"
 
-VERSION=9.4
-DISTNAME=	icon.v940src
+VERSION=9.4.3
+DISTNAME=	icon.v943src
 PKGNAME=	icon-lib-${VERSION}
 #DIST_SUBDIR=icon/${VERSION}
-DISTFILES=	icon.v940src.tgz
+DISTFILES=	icon.v943src.tgz
 
 CATEGORIES=lang
 
@@ -45,10 +45,6 @@ FLAVOR?=
 .if ${FLAVOR:L:Mno_x11}
 PATCH_LIST=patch-progs*
 .endif
-
-post-extract:
-	mv ${WRKSRC}/procs/wifisd.icn ${WRKSRC}/gprocs
-	mv ${WRKSRC}/progs/wif2isd.icn ${WRKSRC}/gprogs
 
 do-build:
 # first build library

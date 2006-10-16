@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_general_Makefile,v 1.1 2006/10/16 10:01:55 espie Exp $
+--- tests/general/Makefile.orig	Mon Oct 16 11:55:42 2006
++++ tests/general/Makefile	Mon Oct 16 11:56:37 2006
+@@ -13,7 +13,7 @@ Test Test-icont:  Test-programs Test-pre
+ # test programs
+ 
+ Programs Programs-icont Test-programs:
+-		IC=icont sh Test-icon
++		-IC=icont sh Test-icon
+ 
+ Samples Samples-icont:
+ 		IC=icont sh Test-icon $(SAMPLES)

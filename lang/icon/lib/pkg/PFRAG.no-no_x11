@@ -1,10 +1,12 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.5 2004/09/15 19:16:08 espie Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.6 2006/10/16 10:01:55 espie Exp $
 bin/vib
 bin/xtiles
 @man man/man6/xtiles.6
 share/ipl/bin/autotile
 share/ipl/bin/binpack
 share/ipl/bin/bitdemo
+share/ipl/bin/blp2grid
+share/ipl/bin/blp2rows
 share/ipl/bin/bme
 share/ipl/bin/bpack
 share/ipl/bin/breakout
@@ -24,6 +26,11 @@ share/ipl/bin/colrpick
 share/ipl/bin/concen
 share/ipl/bin/cquilts
 share/ipl/bin/cw
+share/ipl/bin/dd2draft
+share/ipl/bin/dd2res
+share/ipl/bin/dd2unit
+share/ipl/bin/dd2wif
+share/ipl/bin/ddextend
 share/ipl/bin/design1
 share/ipl/bin/design2
 share/ipl/bin/design3
@@ -47,7 +54,9 @@ share/ipl/bin/fractlin
 share/ipl/bin/fstarlab
 share/ipl/bin/gallery
 share/ipl/bin/gamma
+share/ipl/bin/gif2blp
 share/ipl/bin/gif2isd
+share/ipl/bin/gif2rows
 share/ipl/bin/gif2wif
 share/ipl/bin/gifs2pdb
 share/ipl/bin/giftoims
@@ -69,9 +78,12 @@ share/ipl/bin/imltogif
 share/ipl/bin/ims2pat
 share/ipl/bin/imstogif
 share/ipl/bin/ipicker
+share/ipl/bin/isd2disd
 share/ipl/bin/isd2gif
 share/ipl/bin/isd2grid
 share/ipl/bin/isd2ill
+share/ipl/bin/isd2wif
+share/ipl/bin/isd2xgrid
 share/ipl/bin/iview
 share/ipl/bin/julia1
 share/ipl/bin/kaleid
@@ -94,6 +106,7 @@ share/ipl/bin/orbit
 share/ipl/bin/painterc
 share/ipl/bin/palcheck
 share/ipl/bin/palette
+share/ipl/bin/pat2gif
 share/ipl/bin/patfetch
 share/ipl/bin/penelope
 share/ipl/bin/pextract
@@ -115,6 +128,8 @@ share/ipl/bin/rects
 share/ipl/bin/repeater
 share/ipl/bin/rings
 share/ipl/bin/rolypoly
+share/ipl/bin/rows2blp
+share/ipl/bin/rows2isd
 share/ipl/bin/rstarlab
 share/ipl/bin/scroll
 share/ipl/bin/scroller
@@ -128,6 +143,7 @@ share/ipl/bin/sier1
 share/ipl/bin/sier2
 share/ipl/bin/snapper
 share/ipl/bin/spectra
+share/ipl/bin/spider
 share/ipl/bin/spiral
 share/ipl/bin/spiro
 share/ipl/bin/splat
@@ -142,9 +158,11 @@ share/ipl/bin/textures
 share/ipl/bin/tgdemo
 share/ipl/bin/tilescan
 share/ipl/bin/travels
+share/ipl/bin/trkvu
 share/ipl/bin/trycolor
 share/ipl/bin/tryfont
 share/ipl/bin/uix
+share/ipl/bin/unitgenr
 share/ipl/bin/viewpane
 share/ipl/bin/vqueens
 share/ipl/bin/webimage
@@ -277,6 +295,8 @@ share/ipl/ucode/interact.u1
 share/ipl/ucode/interact.u2
 share/ipl/ucode/isdplot.u1
 share/ipl/ucode/isdplot.u2
+share/ipl/ucode/isdxplot.u1
+share/ipl/ucode/isdxplot.u2
 share/ipl/ucode/joinpair.u1
 share/ipl/ucode/joinpair.u2
 share/ipl/ucode/jolygs.u1
@@ -291,6 +311,8 @@ share/ipl/ucode/lindterp.u1
 share/ipl/ucode/lindterp.u2
 share/ipl/ucode/lsystem.u1
 share/ipl/ucode/lsystem.u2
+share/ipl/ucode/mapnav.u1
+share/ipl/ucode/mapnav.u2
 share/ipl/ucode/mirror.u1
 share/ipl/ucode/mirror.u2
 share/ipl/ucode/modlines.u1
@@ -305,6 +327,8 @@ share/ipl/ucode/overlay.u1
 share/ipl/ucode/overlay.u2
 share/ipl/ucode/palettes.u1
 share/ipl/ucode/palettes.u2
+share/ipl/ucode/pattread.u1
+share/ipl/ucode/pattread.u2
 share/ipl/ucode/patutils.u1
 share/ipl/ucode/patutils.u2
 share/ipl/ucode/patxform.u1

@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_iconc_ccomp_c,v 1.1 2006/10/16 10:01:55 espie Exp $
+--- src/iconc/ccomp.c.orig	Mon Oct 16 10:53:16 2006
++++ src/iconc/ccomp.c	Mon Oct 16 10:54:01 2006
+@@ -75,9 +75,6 @@ char *exename;
+       }
+ 
+ #ifdef Graphics
+-   lib_sz += strlen(" -L") +
+-             strlen(refpath) +
+-	     strlen(" -lIgpx ");
+    lib_sz += strlen(ICONC_XLIB);
+ #endif					/* Graphics */
+ 
+@@ -109,9 +106,6 @@ char *exename;
+       }
+ 
+ #ifdef Graphics
+-   strcpy(s," -L");
+-   strcat(s, refpath);
+-   strcat(s," -lIgpx ");
+    strcat(s, ICONC_XLIB);
+    s += strlen(s);
+ #endif					/* Graphics */

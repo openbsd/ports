@@ -1,0 +1,14 @@
+$OpenBSD: patch-tests_general_Test-icon,v 1.1 2006/10/16 10:01:55 espie Exp $
+--- tests/general/Test-icon.orig	Mon Oct 16 11:33:08 2006
++++ tests/general/Test-icon	Mon Oct 16 11:51:37 2006
+@@ -13,6 +13,10 @@ ICONX=../../bin/iconx
+ unset IPATH LPATH FPATH
+ unset BLKSIZE STRSIZE MSTKSIZE COEXPSIZE QLSIZE
+ 
++IPATH=/usr/local/share/ipl/ucode
++export IPATH
++FPATH=/usr/local/lib
++export FPATH
+ # may be needed with Icon is built with BinaryHeader defined
+ export ICONX
+ 

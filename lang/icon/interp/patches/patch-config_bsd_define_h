@@ -1,0 +1,11 @@
+$OpenBSD: patch-config_bsd_define_h,v 1.1 2006/10/16 10:01:55 espie Exp $
+--- config/bsd/define.h.orig	Mon Oct 16 10:32:47 2006
++++ config/bsd/define.h	Mon Oct 16 10:32:55 2006
+@@ -6,5 +6,5 @@
+ #define LoadFunc
+ 
+ #define CComp "gcc"
+-#define COpts "-O -I/usr/X11R6/include"
+-#define ICONC_XLIB "-Wl,-R/usr/X11R6/lib -L/usr/X11R6/lib -lX11"
++#define COpts "-O2 -I/usr/X11R6/include"
++#define ICONC_XLIB "-L/usr/X11R6/lib -lX11"
