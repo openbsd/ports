@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.780 2006/10/15 19:29:06 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.781 2006/10/16 10:39:40 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1300,6 +1300,9 @@ ${_CACHE_REPO}/${_PKGFILE}:
 	fi
 
 ${_PACKAGE_COOKIE}:
+.if !defined(PACKAGING)
+	@echo "Error: can't make $@ without PACKAGING set"; exit 1
+.endif
 	@mkdir -p ${@D}
 .if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING)
 	@f=${_CACHE_REPO}/${_PKGFILE}; \
