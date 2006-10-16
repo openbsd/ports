@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.47 2006/10/05 14:55:56 jasper Exp $
+# $OpenBSD: Makefile.template,v 1.48 2006/10/16 14:08:00 steven Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -89,7 +89,7 @@ MASTER_SITES=		???
 #USE_X11=		Yes
 #USE_GMAKE=		Yes
 # Programs that uses libtool should use this option,
-# unless there is a really good reson not to.
+# unless there is a really good reason not to.
 #USE_LIBTOOL=		Yes
 # Set CONFIGURE_STYLE to value corresponding to some standard configuration
 # 	  perl [modbuild]: perl's MakeMaker Makefile.PL (modbuild: perl's
