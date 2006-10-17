@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2006/01/25 07:08:53 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.14 2006/10/17 23:00:32 sturm Exp $
 @conflict linux_lib-*
 @sample /emul/
 @sample ${PREFIX}/
@@ -8491,7 +8491,7 @@ var/lib/rpm/
 var/spool/
 var/spool/repackage/
 @sysctl kern.emul.linux=1
-@exec ln -sf %D /emul/linux
+@exec ln -fhs %D /emul/linux
 @unexec rm /emul/linux
 @exec %D/sbin/ldconfig
 @exec ${PREFIX}/usr/bin/gtk-query-immodules-2.0 > ${PREFIX}/etc/gtk-2.0/gtk.immodules

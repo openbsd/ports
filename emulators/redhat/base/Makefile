@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2006/07/13 14:36:10 steven Exp $
+# $OpenBSD: Makefile,v 1.27 2006/10/17 23:00:32 sturm Exp $
 
 COMMENT=	"Linux compatibility package based on RedHat 8.0"
 
-PKGNAME=	redhat_base-8.0p8
+PKGNAME=	redhat_base-8.0p9
 
 MAINTAINER=	Jason Ish <ish@openbsd.org>
 
