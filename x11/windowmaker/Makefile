@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.67 2006/09/18 10:21:49 espie Exp $
+# $OpenBSD: Makefile,v 1.68 2006/10/17 12:14:50 wilfried Exp $
 
 COMMENT=		'window manager that emulates NEXTSTEP(tm)'
 COMMENT-lang=		"language subpackage for Window Maker"
 
 V=			0.92.0
 DISTNAME=		WindowMaker-${V}
-PKGNAME=		${DISTNAME:L}p2
+PKGNAME=		${DISTNAME:L}p3
 FULLPKGNAME-lang=       windowmaker-lang-${V}p1
 SHARED_LIBS=		wraster 5.0
 CATEGORIES=		x11 x11/windowmaker
@@ -23,10 +23,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_WINDOWMAKER:=source/release/}
 EXTRACT_SUFX=		.tar.bz2
 
-FLAVORS=		xinerama
-FLAVOR?=
-
-
 NO_REGRESS=		Yes
 SEPARATE_BUILD=		simple
 USE_X11=		Yes
@@ -34,11 +30,9 @@ USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-static \
+			--enable-xinerama \
 			--with-datadir="${LOCALBASE}/share/WindowMaker" \
 			--with-nlsdir="${LOCALBASE}/share/locale"
-.if ${FLAVOR:L:Mxinerama}
-CONFIGURE_ARGS+=	--enable-xinerama
-.endif
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" LIBS="-L${LOCALBASE}/lib" \
 			LINGUAS='be bg bs ca cs da de el es et fi fr gl hr hu it ja ko ms nl no pl pt ro ru sk sv tr zh_CN zh_TW'
@@ -54,10 +48,7 @@ LIB_DEPENDS=		jpeg.>=62::graphics/jpeg \
 			tiff.>=35::graphics/tiff \
 			png.>=2::graphics/png \
 			ungif.>=5::graphics/libungif
-WANTLIB=		X11 Xext Xft Xpm Xrender c fontconfig freetype m z
-. if ${FLAVOR:L:Mxinerama}
-WANTLIB+=		Xinerama
-. endif
+WANTLIB=		X11 Xext Xft Xinerama Xpm Xrender c fontconfig freetype m z
 .endif
 
 post-patch:
