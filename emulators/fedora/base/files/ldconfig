@@ -1,0 +1,13 @@
+#! /bin/sh
+#
+# $Id: ldconfig,v 1.1.1.1 2006/10/17 22:33:44 sturm Exp $
+#
+
+if [ x`sysctl -n kern.emul.linux` = x1 ]; then
+    /emul/linux/sbin/ldconfig.bin $@
+else
+    echo "ERROR: kern.emul.linux must be 1"
+    exit 1
+fi
+
+exit 0

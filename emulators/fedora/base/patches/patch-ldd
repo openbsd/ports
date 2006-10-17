@@ -1,0 +1,20 @@
+--- usr/bin/ldd.orig	Sun Apr 20 11:11:03 2003
++++ usr/bin/ldd	Sun Apr 20 14:43:47 2003
+@@ -27,7 +27,7 @@
+ TEXTDOMAIN=libc
+ TEXTDOMAINDIR=/usr/share/locale
+ 
+-RTLDLIST=/lib/ld-linux.so.2
++RTLDLIST=/emul/linux/usr/bin/ld-2.3.6-olf.so
+ warn=
+ bind_now=
+ verbose=
+@@ -91,7 +91,7 @@
+   # Maybe extra code for non-ELF binaries.
+   file=$1
+   # Run the ldd stub.
+-  lddlibc4 "$file"
++  /emul/linux/usr/bin/lddlibc4 "$file"
+   # Test the result.
+   if test $? -lt 3; then
+     return 0;

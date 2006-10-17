@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/17 22:33:50 sturm Exp $
+@pkgpath emulators/redhat/motif
+emul/fedora/usr/X11R6/lib/libMrm.so.${LIBMrm_VERSION}
+emul/fedora/usr/X11R6/lib/libUil.so.${LIBUil_VERSION}
+emul/fedora/usr/X11R6/lib/libXm.so.${LIBXm_VERSION}
