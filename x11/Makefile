@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.244 2006/10/14 16:44:29 alek Exp $
+# $OpenBSD: Makefile,v 1.245 2006/10/17 11:43:46 alek Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -124,6 +124,7 @@
      SUBDIR += py-Gtk
      SUBDIR += py-gtk2
      SUBDIR += py-osd
+     SUBDIR += py-wxPython
      SUBDIR += qinx
      SUBDIR += qlwm
      SUBDIR += qrfcview
