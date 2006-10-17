@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/17 22:33:50 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/10/17 22:46:10 sturm Exp $
 @conflict redhat_base-*
 @pkgpath emulators/redhat/base
 emul/
@@ -9681,7 +9681,7 @@ emul/fedora/usr/share/themes/Raleigh/gtk-2.0/
 emul/fedora/usr/share/themes/Raleigh/gtk-2.0/gtkrc
 @sysctl kern.emul.linux=1
 @sample /emul/
-@exec ln -s %D/emul/fedora /emul/linux
+@exec ln -fhs %D/emul/fedora /emul/linux
 @exec %D/emul/fedora/sbin/ldconfig
 @exec %D/emul/fedora/usr/bin/gdk-pixbuf-query-loaders-32 > %D/emul/fedora/etc/gtk-2.0/gdk-pixbuf.loaders
 @exec %D/emul/fedora/usr/bin/gtk-query-immodules-2.0-32 > %D/emul/fedora/etc/gtk-2.0/gtk.immodules
