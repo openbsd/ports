@@ -1,0 +1,8 @@
+ZSyncer is a Zope 2 product that allows you to synchronize and compare
+objects from one zope (source) to another (destination).  It is a lot
+more convenient than the old manual export/transfer/import procedure.
+
+ZSyncer supports SSL as well as insecure HTTP.
+
+ZSyncer also allows you to view a diff against the destination object,
+for many types of objects.
