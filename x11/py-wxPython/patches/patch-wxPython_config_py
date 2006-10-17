@@ -1,0 +1,73 @@
+$OpenBSD: patch-wxPython_config_py,v 1.1.1.1 2006/10/17 10:04:17 alek Exp $
+--- wxPython/config.py.orig	Tue Apr  4 06:00:19 2006
++++ wxPython/config.py	Fri Oct 13 12:46:25 2006
+@@ -107,7 +107,7 @@ FULL_DOCS = 0      # Some docstrings are
+                    # cause the two strings to be combined and output
+                    # as the full docstring.
+ 
+-UNICODE = 0        # This will pass the 'wxUSE_UNICODE' flag to SWIG and
++UNICODE = 1        # This will pass the 'wxUSE_UNICODE' flag to SWIG and
+                    # will ensure that the right headers are found and the
+                    # right libs are linked.
+ 
+@@ -123,7 +123,7 @@ UNDEF_NDEBUG = 1   # Python 2.2 on Unix/
+ NO_SCRIPTS = 0     # Don't install the tool scripts
+ NO_HEADERS = 0     # Don't install the wxPython *.h and *.i files
+ 
+-INSTALL_MULTIVERSION = 1 # Install the packages such that multiple versions
++INSTALL_MULTIVERSION = 0 # Install the packages such that multiple versions
+                    # can co-exist.  When turned on the wx and wxPython
+                    # pacakges will be installed in a versioned subdir
+                    # of site-packages, and a *.pth file will be
+@@ -136,7 +136,7 @@ INSTALL_MULTIVERSION = 1 # Install the p
+ FLAVOUR = ""       # Optional flavour string to be appended to VERSION
+                    # in MULTIVERSION installs
+ 
+-EP_ADD_OPTS = 1    # When doing MULTIVERSION installs the wx port and
++EP_ADD_OPTS = 0    # When doing MULTIVERSION installs the wx port and
+                    # ansi/unicode settings can optionally be added to the
+                    # subdir path used in site-packages
+ 
+@@ -179,7 +179,7 @@ CONTRIBS_INC = ""  # A dir to add as an 
+ 
+ # Some MSW build settings
+ 
+-MONOLITHIC = 1     # The core wxWidgets lib can be built as either a
++MONOLITHIC = 0     # The core wxWidgets lib can be built as either a
+                    # single monolithic DLL or as a collection of DLLs.
+                    # This flag controls which set of libs will be used
+                    # on Windows.  (For other platforms it is automatic
+@@ -512,13 +512,13 @@ class wx_install_headers(distutils.comma
+         if not headers:
+             return
+ 
+-        root = self.root
++        root = "!!WRKINST!!"
+         if root is None or WXPREFIX.startswith(root):
+             root = ''
+         for header, location in headers:
+             install_dir = os.path.normpath(root +
+                                            WXPREFIX +
+-                                           '/include/wx-%d.%d/wx' % (VER_MAJOR, VER_MINOR) +
++                                           '/include/wx' +
+                                            location)
+             self.mkpath(install_dir)
+             (out, _) = self.copy_file(header, install_dir)
+@@ -573,7 +573,7 @@ def find_data_files(srcdir, *wildcards):
+ 
+ def makeLibName(name):
+     if os.name == 'posix':
+-        libname = '%s_%s-%s' % (WXBASENAME, name, WXRELEASE)
++        libname = '%s_%s' % (WXBASENAME, name)
+     elif name:
+         libname = 'wxmsw%s%s_%s' % (WXDLLVER, libFlag(), name)
+     else:
+@@ -780,8 +780,6 @@ elif os.name == 'posix':
+     if debug:
+         cflags.append('-g')
+         cflags.append('-O0')
+-    else:
+-        cflags.append('-O3')
+ 
+     lflags = os.popen(WX_CONFIG + ' --libs', 'r').read()[:-1]
+     lflags = lflags.split()
