@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2006/03/14 21:36:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2006/10/17 20:31:09 espie Exp $
 include/libkexif/
 include/libkexif/kexifdata.h
 include/libkexif/kexifdialog.h
@@ -23,8 +23,10 @@ share/locale/es/LC_MESSAGES/libkexif.mo
 share/locale/et/LC_MESSAGES/libkexif.mo
 share/locale/fr/LC_MESSAGES/libkexif.mo
 share/locale/ga/LC_MESSAGES/libkexif.mo
+share/locale/gl/LC_MESSAGES/libkexif.mo
 share/locale/is/LC_MESSAGES/libkexif.mo
 share/locale/it/LC_MESSAGES/libkexif.mo
+share/locale/ja/LC_MESSAGES/libkexif.mo
 share/locale/lt/LC_MESSAGES/libkexif.mo
 share/locale/mt/
 share/locale/mt/LC_MESSAGES/
@@ -43,4 +45,5 @@ share/locale/sr@Latn/LC_MESSAGES/libkexif.mo
 share/locale/sv/LC_MESSAGES/libkexif.mo
 share/locale/ta/LC_MESSAGES/libkexif.mo
 share/locale/tr/LC_MESSAGES/libkexif.mo
+share/locale/uk/LC_MESSAGES/libkexif.mo
 share/locale/zh_CN/LC_MESSAGES/libkexif.mo
