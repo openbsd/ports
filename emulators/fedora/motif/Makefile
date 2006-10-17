@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/17 22:33:50 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2006/10/17 23:41:58 sturm Exp $
 
 COMMENT=	"Motif toolkit Linux libraries"
 
-PKGNAME=	fedora_motif-2.1.30
+PKGNAME=	fedora_motif-2.1.30p0
 # clean up after make plist
 #	perl -pi -e "s,^\@lib ,," pkg/PLIST
 SHARED_LIBS=	Mrm	2.1 \
