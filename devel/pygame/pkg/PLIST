@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/14 23:44:01 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2006/10/17 23:31:12 alek Exp $
 include/python${MODPY_VERSION}/pygame/
+include/python${MODPY_VERSION}/pygame/fastevents.h
+include/python${MODPY_VERSION}/pygame/ffmovie.h
 include/python${MODPY_VERSION}/pygame/font.h
 include/python${MODPY_VERSION}/pygame/mixer.h
 include/python${MODPY_VERSION}/pygame/pygame.h
@@ -18,6 +20,7 @@ lib/python${MODPY_VERSION}/site-packages/pygame/cursors.pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/display.so
 lib/python${MODPY_VERSION}/site-packages/pygame/draw.so
 lib/python${MODPY_VERSION}/site-packages/pygame/event.so
+lib/python${MODPY_VERSION}/site-packages/pygame/fastevent.so
 lib/python${MODPY_VERSION}/site-packages/pygame/font.so
 lib/python${MODPY_VERSION}/site-packages/pygame/freesansbold.ttf
 lib/python${MODPY_VERSION}/site-packages/pygame/image.so
@@ -32,6 +35,9 @@ lib/python${MODPY_VERSION}/site-packages/pygame/mixer.so
 lib/python${MODPY_VERSION}/site-packages/pygame/mixer_music.so
 lib/python${MODPY_VERSION}/site-packages/pygame/mouse.so
 lib/python${MODPY_VERSION}/site-packages/pygame/movie.so
+lib/python${MODPY_VERSION}/site-packages/pygame/overlay.so
+lib/python${MODPY_VERSION}/site-packages/pygame/pkgdata.py
+lib/python${MODPY_VERSION}/site-packages/pygame/pkgdata.pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/pygame.ico
 lib/python${MODPY_VERSION}/site-packages/pygame/pygame_icon.bmp
 lib/python${MODPY_VERSION}/site-packages/pygame/pygame_icon.icns
@@ -57,7 +63,6 @@ share/doc/pygame/pygame_logo.gif
 share/doc/pygame/pygame_powered.gif
 share/doc/pygame/pygame_small.gif
 share/doc/pygame/pygame_tiny.gif
-share/doc/pygame/readme.html
 share/doc/pygame/readme.txt
 share/doc/pygame/ref/
 share/doc/pygame/ref/CD.html
@@ -66,6 +71,7 @@ share/doc/pygame/ref/Clock.html
 share/doc/pygame/ref/Font.html
 share/doc/pygame/ref/Joystick.html
 share/doc/pygame/ref/Movie.html
+share/doc/pygame/ref/Overlay.html
 share/doc/pygame/ref/Rect.html
 share/doc/pygame/ref/Sound.html
 share/doc/pygame/ref/Surface.html
@@ -73,6 +79,7 @@ share/doc/pygame/ref/pygame.html
 share/doc/pygame/ref/pygame_cdrom.html
 share/doc/pygame/ref/pygame_color.html
 share/doc/pygame/ref/pygame_constants.html
+share/doc/pygame/ref/pygame_cursor.html
 share/doc/pygame/ref/pygame_cursors.html
 share/doc/pygame/ref/pygame_display.html
 share/doc/pygame/ref/pygame_draw.html
@@ -139,7 +146,6 @@ share/examples/pygame/data/alien3.gif
 share/examples/pygame/data/arraydemo.bmp
 share/examples/pygame/data/background.gif
 share/examples/pygame/data/bomb.gif
-share/examples/pygame/data/bong.wav
 share/examples/pygame/data/boom.wav
 share/examples/pygame/data/car_door.wav
 share/examples/pygame/data/chimp.bmp
@@ -154,14 +160,17 @@ share/examples/pygame/data/punch.wav
 share/examples/pygame/data/secosmic_lo.wav
 share/examples/pygame/data/shot.gif
 share/examples/pygame/data/whiff.wav
+share/examples/pygame/data/yuv_1.pgm
 share/examples/pygame/eventlist.py
+share/examples/pygame/fastevents.py
 share/examples/pygame/fonty.py
 @comment share/examples/pygame/glcube.py
 share/examples/pygame/liquid.py
 share/examples/pygame/moveit.py
 share/examples/pygame/oldalien.py
+share/examples/pygame/overlay.py
 share/examples/pygame/readme.txt
 share/examples/pygame/sound.py
+share/examples/pygame/sound_array_demos.py
 share/examples/pygame/stars.py
-share/examples/pygame/uberball.py
 share/examples/pygame/vgrade.py

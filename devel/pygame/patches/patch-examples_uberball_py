@@ -1,9 +1,0 @@
-$OpenBSD: patch-examples_uberball_py,v 1.2 2004/04/10 23:08:11 xsa Exp $
---- examples/uberball.py.orig	2002-05-29 02:03:40.000000000 +0200
-+++ examples/uberball.py	2003-12-26 00:56:41.000000000 +0100
-@@ -1,4 +1,4 @@
--#/usr/bin/env python
-+#!/usr/bin/env %%PYTHON%% 
- """
- ÜberBall python source by Geoff Howland.  04-28-02
- 

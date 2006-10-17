@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2006/10/06 14:24:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2006/10/17 23:31:12 alek Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"set of Python modules designed for writing games"
 
-DISTNAME=	pygame-1.6
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	pygame-1.7.1release
+PKGNAME=	${DISTNAME:S/release//}
 CATEGORIES=	devel games
 HOMEPAGE=	http://www.pygame.org/
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		SDL X11 Xext m smpeg usbhid
+WANTLIB=               SDL X11 Xext m smpeg usbhid
 
 MASTER_SITES=	${HOMEPAGE}ftp/
 
@@ -35,12 +35,8 @@ DOCSUBDIRS=	ref tut tut/chimp tut/surfarray \
 		tut/tom util
 
 do-configure:
+	@perl -pi -e "s,!!X11BASE!!,${X11BASE},g" ${WRKSRC}/Setup.in
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} config.py
-
-post-build:
-	@perl -pi -e 's,/usr/bin/env python,/usr/bin/env python${MODPY_VERSION},g' \
-		${WRKSRC}/examples/*.py
-	@perl -pi -e 's,%%PYTHON%%,python${MODPY_VERSION},g' ${WRKSRC}/examples/*.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
@@ -56,6 +52,8 @@ post-install:
 	${INSTALL_DATA} `find ${WRKSRC}/docs/$i -maxdepth 1 -type f` \
 		${DOCDIR}/$i
 .endfor
+	@perl -pi -e 's,/usr/bin/env python,/usr/bin/env python${MODPY_VERSION},g' \
+		${PREFIX}/share/examples/pygame/*.py
 
 do-regress: fake
 	@cd ${WRKSRC} && ${MAKE_ENV} \
