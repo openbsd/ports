@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2006/01/13 23:40:22 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2006/10/18 18:40:26 pvalchev Exp $
 
 COMMENT=	"X11 game engine library"
 
 VERSION=	4.1
 DISTNAME=	gengameng-${VERSION}
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 SHARED_LIBS=	gengameng 5.0
 
 CATEGORIES=	devel x11
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		X11 Xext m usbhid
+WANTLIB=		X11 Xrandr Xrender Xext m usbhid iconv
 
 MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 

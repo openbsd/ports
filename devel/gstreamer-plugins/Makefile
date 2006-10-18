@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2006/09/18 11:40:07 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2006/10/18 18:40:27 pvalchev Exp $
 
 COMMENT=		"GStreamer Streaming-media framework plug-ins."
 
 VERSION=		0.8.11
 PATCHLEVEL=		
 DISTNAME=		gst-plugins-${VERSION}
-PKGNAME=		gstreamer-plugins-${VERSION}p8
+PKGNAME=		gstreamer-plugins-${VERSION}p9
 SHARED_LIBS=		gstgconf-0.8		1.0 \
 			gstinterfaces-0.8	1.0 \
 			gstmedia-info-0.8	1.0 \
@@ -181,7 +181,6 @@ DEPENDS-ogg=		ogg::audio/libogg
 
 # sdlvideosink
 COMMENT-sdl=		"GStreamer plugin for using SDL to diplay video"
-WANTLIB-sdl=		Xext usbhid X11
 DEPENDS-sdl=		SDL::devel/sdl
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-sdl"
 LIB_DEPENDS+= 		gstinterfaces-0.8.>=1.0::devel/gstreamer-plugins
@@ -216,7 +215,7 @@ DEPENDS-vorbis=         vorbis,vorbisenc::audio/libvorbis
 
 .for PLUGIN in ${PLUGINS}
 COMMENT-${PLUGIN}?=	"GStreamer plugin for ${PLUGIN}"
-PKGNAME-${PLUGIN}?=	gstreamer-${PLUGIN}-${VERSION}${PATCHLEVEL}p8
+PKGNAME-${PLUGIN}?=	gstreamer-${PLUGIN}-${VERSION}${PATCHLEVEL}p9
 OPTIONS-${PLUGIN}?=	${PLUGIN}
 .  if defined(PACKAGING)
 .    if ${SUBPACKAGE} == "-${PLUGIN}"

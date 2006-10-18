@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2006/10/17 23:31:12 alek Exp $
+# $OpenBSD: Makefile,v 1.14 2006/10/18 18:40:27 pvalchev Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"set of Python modules designed for writing games"
 
 DISTNAME=	pygame-1.7.1release
-PKGNAME=	${DISTNAME:S/release//}
+PKGNAME=	${DISTNAME:S/release//}p0
 CATEGORIES=	devel games
 HOMEPAGE=	http://www.pygame.org/
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=               SDL X11 Xext m smpeg usbhid
+WANTLIB=               SDL smpeg
 
 MASTER_SITES=	${HOMEPAGE}ftp/
 
