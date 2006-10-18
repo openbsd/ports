@@ -1,0 +1,2 @@
+The mysql-server package doesn't initialize a default database.
+Please run ${PREFIX}/bin/mysql_install_db to create one.
