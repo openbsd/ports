@@ -1,24 +1,15 @@
 --- configure.orig	Wed Oct 23 19:45:50 2002
-+++ configure	Tue Jan 14 23:08:34 2003
-@@ -2438,9 +2438,14 @@
- if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
++++ configure	Wed Oct 18 15:47:12 2006
+@@ -2440,7 +2440,7 @@ if eval "test \"`echo '$ac_cv_header_'$a
    
--		# NetBSD/SPARC needs -fPIC, -fpic will not do.
--		SHLIB_CFLAGS="-fPIC"
+ 		# NetBSD/SPARC needs -fPIC, -fpic will not do.
+ 		SHLIB_CFLAGS="-fPIC"
 -		SHLIB_LD="ld -Bshareable -x"
-+		# OpenBSD/SPARC[64] needs -fPIC, -fpic will not do.
-+		case `machine` in
-+		sparc|sparc64)
-+			SHLIB_CFLAGS="-fPIC";;
-+		*)
-+			SHLIB_CFLAGS="-fpic";;
-+		esac
 +		SHLIB_LD="${CC} -shared ${SHLIB_CFLAGS}"
  		SHLIB_LD_LIBS=""
  		SHLIB_SUFFIX=".so"
  		DL_OBJS="tclLoadDl.o"
-@@ -2462,11 +2467,11 @@
+@@ -2462,11 +2462,11 @@ if (eval "$ac_cpp conftest.$ac_ext") 2>&
    egrep "yes" >/dev/null 2>&1; then
    rm -rf conftest*
    echo "$ac_t""yes" 1>&6
@@ -32,7 +23,7 @@
  		
  fi
  rm -f conftest*
-@@ -3074,6 +3079,7 @@
+@@ -3074,6 +3074,7 @@ EOF
  	fi
      fi
  
@@ -40,7 +31,7 @@
  
  LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
  
-@@ -4029,16 +4035,16 @@
+@@ -4029,16 +4030,16 @@ echo "configure:4027: checking for X11 l
  	for i in $dirs ; do
  	    if test -r $i/libX11.a -o -r $i/libX11.so -o -r $i/libX11.sl; then
  		echo "$ac_t""$i" 1>&6
@@ -60,7 +51,7 @@
  	fi
      fi
      if test "$XLIBSW" = nope ; then
-@@ -4778,13 +4784,12 @@
+@@ -4778,13 +4779,12 @@ if test "${SHARED_BUILD}" = "1" -a "${SH
      TK_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
      TK_LIB_FILE=libtk${TK_SHARED_LIB_SUFFIX}
      MAKE_LIB="\${SHLIB_LD} -o \$@ \${OBJS} \$(TK_LD_SEARCH_FLAGS) \${TCL_STUB_LIB_SPEC} \${SHLIB_LD_LIBS}"
@@ -76,7 +67,7 @@
  
      TCL_STUB_FLAGS=""
  fi
-@@ -4833,7 +4838,7 @@
+@@ -4833,7 +4833,7 @@ TK_SHARED_BUILD=${SHARED_BUILD}
  eval "TK_STUB_LIB_FILE=libtkstub${TK_UNSHARED_LIB_SUFFIX}"
  
  # FIXME: Should we add MAKE_STUB_LIB to tclConfig.sh ?

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2006/01/08 20:56:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2006/10/18 14:27:43 naddy Exp $
 
 COMMENT=	"graphical toolkit for Tcl"
 
 VERSION=	8.4.7
 
 DISTNAME=	tk${VERSION}-src
-PKGNAME=	tk-${VERSION}
+PKGNAME=	tk-${VERSION}p0
 SHARED_LIBS=	tk84 1.0
 CATEGORIES=	x11 x11/tk
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tcl/}

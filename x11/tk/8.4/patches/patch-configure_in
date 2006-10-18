@@ -1,16 +1,16 @@
-$OpenBSD: patch-configure_in,v 1.2 2004/05/20 21:25:46 miod Exp $
---- configure.in.orig	2004-03-02 00:04:48.000000000 +0000
-+++ configure.in	2004-05-17 10:34:16.000000000 +0000
-@@ -108,6 +108,8 @@ SC_CONFIG_CFLAGS
- 
- SC_ENABLE_SYMBOLS
+$OpenBSD: patch-configure_in,v 1.3 2006/10/18 14:27:43 naddy Exp $
+--- configure.in.orig	Thu Jul 29 23:57:48 2004
++++ configure.in	Wed Oct 18 16:07:09 2006
+@@ -114,6 +114,8 @@ SC_TCL_64BIT_FLAGS
+ # search path to reflect this.
+ #------------------------------------------------------------------------
  
 +TCL_SRC_DIR=${prefix}/include/tcl${TCL_VERSION}
 +
  LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
  
- TK_DBGX=${DBGX}
-@@ -361,7 +363,7 @@ eval eval "TK_UNSHARED_LIB_SUFFIX=${UNSH
+ if test "$TCL_EXEC_PREFIX" != "$exec_prefix"; then
+@@ -346,7 +348,7 @@ eval eval "TK_UNSHARED_LIB_SUFFIX=${UNSH
  
  if test "${SHARED_BUILD}" = "1" -a "${SHLIB_SUFFIX}" != ""; then
      SHLIB_LD_LIBS="${SHLIB_LD_LIBS} \${TCL_STUB_LIB_SPEC}"

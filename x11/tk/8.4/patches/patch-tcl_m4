@@ -1,7 +1,7 @@
-$OpenBSD: patch-tcl_m4,v 1.5 2006/01/08 20:56:08 naddy Exp $
---- tcl.m4.orig	Sat Aug  7 13:40:15 2004
-+++ tcl.m4	Sat Aug  7 13:44:10 2004
-@@ -1256,24 +1256,48 @@ dnl AC_CHECK_TOOL(AR, ar)
+$OpenBSD: patch-tcl_m4,v 1.6 2006/10/18 14:27:43 naddy Exp $
+--- tcl.m4.orig	Thu Jul 29 23:57:48 2004
++++ tcl.m4	Wed Oct 18 16:08:46 2006
+@@ -1256,24 +1256,42 @@ dnl AC_CHECK_TOOL(AR, ar)
  	    TCL_LIB_VERSIONS_OK=nodots
  	    ;;
  	OpenBSD-*)
@@ -28,13 +28,7 @@ $OpenBSD: patch-tcl_m4,v 1.5 2006/01/08 20:56:08 naddy Exp $
 +		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
 +		;;
 +	    *)
-+		# OpenBSD/SPARC[64] needs -fPIC, -fpic will not do.
-+		case `machine` in
-+		sparc|sparc64)
-+		    SHLIB_CFLAGS="-fPIC";;
-+		*)
-+		    SHLIB_CFLAGS="-fpic";;
-+		esac
++		SHLIB_CFLAGS="-fPIC"
 +		SHLIB_LD="${CC} -shared ${SHLIB_CFLAGS}"
 +	        SHLIB_LD_LIBS=""
 +		SHLIB_SUFFIX=".so"
