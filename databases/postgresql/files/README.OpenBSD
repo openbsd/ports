@@ -1,56 +1,40 @@
-Requirements
-------------
-
-Please note that the OpenBSD port of the PostgreSQL server requires a
-kernel compiled with SYSVSEM and SYSVSHM options for proper operation.
-The GENERIC kernel has these settings.
-
 Using PostgreSQL in an OpenBSD environment
-------------------------------------------
 
-If you are installing PostgreSQL for the first time, a default database
-will have been created for you. If this failed for any reason or if you
-want to use non-default paramaters, you can do something similar to the
-following steps manually:
+If you are installing PostgreSQL for the first time, you have to create
+a default database first.  In the following example we install a database
+in /var/postgresql/data with a dba account 'postgres' and md5 authentication.
+We will be prompted for a password to protect the dba account:
 
        # su - _postgresql
        $ mkdir /var/postgresql/data
-       $ initdb -D /var/postgresql/data
+       $ initdb -D /var/postgresql/data -U postgres -A md5 -W
 
-If you are upgrading PostgreSQL then you may have a `pgsql' or `postgresql'
-user. It is suggested that you follow the steps in
-
-	!!PREFIX!!/share/doc/postgresql/INSTALL
-
-for more information on how to upgrade your existing databases. See
-also `Special notes for the OpenBSD port' below. Replace references to
-the `postgresql' user below with `pgsql' or whatever other user you
-have selected to be the database administration account.
+Please consult the PostgreSQL website for more information, especially when
+you are upgrading an existing database installation.
 
 Auto Start and Stop
--------------------
 
-If you wish to start PostgreSQL automatically during system startup,
-add the following lines to /etc/rc.local:
+To start PostgreSQL at boot and shut it down when the system shuts down,
+add the following lines to /etc/rc.local and /etc/rc.shutdown, respectively:
+
+/etc/rc.local:
 
 if [ -x !!PREFIX!!/bin/pg_ctl ]; then
 	su -l _postgresql -c "nohup !!PREFIX!!/bin/pg_ctl start \
-		-D /var/postgresql/data -l /var/postgresql/logfile \
-		-o '-D /var/postgresql/data'"
+	    -D /var/postgresql/data -l /var/postgresql/logfile \
+	    -o '-D /var/postgresql/data'"
 	echo -n ' postgresql'
 fi
 
-To automatically shutdown the database as part of the system shutdown, 
-add the following lines to /etc/rc.shutdown:
+/etc/rc.shutdown:
 
 if [ -f /var/postgresql/data/postmaster.pid ]; then
 	su -l _postgresql -c "!!PREFIX!!/bin/pg_ctl stop -m fast \
-		-D /var/postgresql/data"
+	     -D /var/postgresql/data"
 	rm -f /var/postgresql/data/postmaster.pid
 fi
 
 Network Connections and Tuning
-------------------------------
 
 To allow connections over TCP (and other options) edit the file:
 

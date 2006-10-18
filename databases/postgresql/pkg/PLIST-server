@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.10 2006/10/09 11:55:18 aanriot Exp $
+@comment $OpenBSD: PLIST-server,v 1.11 2006/10/18 13:54:22 mbalmer Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-clients-*
@@ -403,4 +403,3 @@ share/postgresql/postgresql.conf.sample
 @owner _postgresql
 @group _postgresql
 @sample /var/postgresql/
-@exec su _postgresql -c "%D/bin/initdb -D /var/postgresql/data"
