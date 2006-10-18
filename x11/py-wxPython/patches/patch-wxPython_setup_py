@@ -1,0 +1,12 @@
+$OpenBSD: patch-wxPython_setup_py,v 1.1 2006/10/18 16:37:12 alek Exp $
+--- wxPython/setup.py.orig	Wed Oct 18 18:23:05 2006
++++ wxPython/setup.py	Wed Oct 18 18:23:14 2006
+@@ -858,7 +858,7 @@ if __name__ == "__main__":
+               )
+ 
+ 
+-        if INSTALL_MULTIVERSION:
++        if 1:
+             setup(name             = 'wxPython-common',
+                   version          = VERSION,
+                   description      = DESCRIPTION,

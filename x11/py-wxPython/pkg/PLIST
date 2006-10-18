@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/17 10:04:17 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/10/18 16:37:12 alek Exp $
 bin/helpviewer
 bin/img2png
 bin/img2py
@@ -146,6 +146,7 @@ include/wx/wxPython/swigver.h
 include/wx/wxPython/wxPython.h
 include/wx/wxPython/wxPython_int.h
 lib/python${MODPY_VERSION}/site-packages/wx/
+lib/python${MODPY_VERSION}/site-packages/wx.pth
 lib/python${MODPY_VERSION}/site-packages/wx/__init__.py
 lib/python${MODPY_VERSION}/site-packages/wx/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/wx/__version__.py
@@ -709,6 +710,8 @@ lib/python${MODPY_VERSION}/site-packages/wxPython/wizard.py
 lib/python${MODPY_VERSION}/site-packages/wxPython/wizard.pyc
 lib/python${MODPY_VERSION}/site-packages/wxPython/xrc.py
 lib/python${MODPY_VERSION}/site-packages/wxPython/xrc.pyc
+lib/python${MODPY_VERSION}/site-packages/wxversion.py
+lib/python${MODPY_VERSION}/site-packages/wxversion.pyc
 share/examples/py-wxPython/
 share/examples/py-wxPython/demo/
 share/examples/py-wxPython/demo/About.py
