@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.58 2005/10/30 00:10:42 fgsch Exp $
+# $OpenBSD: Makefile,v 1.59 2006/10/18 18:19:50 naddy Exp $
 # $FreeBSD: Makefile,v 1.13 1999/03/01 16:18:30 mph Exp $
 
 COMMENT=	"(E)nhanced (P)rogrammable (I)RC-II (C)lient"
 
-VERSION=	2.2
+VERSION=	2.4
 HELP_DATE=	20050315
 DISTNAME=	epic4-${VERSION}
 CATEGORIES=	net
