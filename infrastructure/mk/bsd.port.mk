@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.784 2006/10/18 11:09:30 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.785 2006/10/18 16:53:04 sturm Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1594,8 +1594,11 @@ _internal-fetch:
 _internal-checksum: _internal-fetch
 .  if ! defined(NO_CHECKSUM)
 	@checksum_file=${CHECKSUM_FILE}; \
-	if [ ! -f $$checksum_file ]; then \
+	if [ -z "${DISTFILES}" ]; then \
+	  ${ECHO_MSG} ">> No distfiles."; \
+	elif [ ! -f $$checksum_file ]; then \
 	  ${ECHO_MSG} ">> No checksum file."; \
+	  exit 1; \
 	else \
 	  cd ${DISTDIR}; OK=true; list=''; \
 		for file in ${_CKSUMFILES}; do \
@@ -2118,7 +2121,10 @@ ${_F}:
 		if ${FETCH_CMD} $${site}$$f; then \
 				file=${_F:S@^${DISTDIR}/@@}; \
 				ck=`cd ${DISTDIR} && ${_size_fragment}`; \
-				if grep -q "^$$ck\$$" ${CHECKSUM_FILE}; then \
+				if [ ! -f ${CHECKSUM_FILE} ]; then \
+					${ECHO_MSG} ">> Checksum file does not exist"; \
+					exit 0; \
+				elif grep -q "^$$ck\$$" ${CHECKSUM_FILE}; then \
 					${ECHO_MSG} ">> Size matches for ${_F}"; \
 					exit 0; \
 				else \
