@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.57 2006/10/12 08:36:16 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.58 2006/10/18 17:42:28 sturm Exp $
 
 COMMENT=	"fast, secure sendmail replacement"
 
 DISTNAME?=	postfix-${VERSION}
-PKGNAME?=	postfix-${VERSION:S/-/./}
+PKGNAME?=	postfix-${VERSION:S/-/./}p0
 CATEGORIES=	mail
 
 MASTER_SITE_POSTFIX=\
