@@ -1,5 +1,0 @@
-This dockapp kills (and restarts) Netscape when you click on the
-icon! You can now specify which program to kill and if you want to
-restart it or not.
-
-See wmNetscapeKiller --help for command line options.
