@@ -1,3 +1,4 @@
+# $OpenBSD: Makefile,v 1.2 2006/10/18 23:57:58 espie Exp $
 COMMENT=	'japanese input method'
 COMMENT-emacs=	'emacs files for anthy'
 
