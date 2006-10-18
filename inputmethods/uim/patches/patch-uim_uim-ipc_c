@@ -1,0 +1,11 @@
+$OpenBSD: patch-uim_uim-ipc_c,v 1.1.1.1 2006/10/18 23:57:22 espie Exp $
+--- uim/uim-ipc.c.orig	Wed Oct 18 23:39:07 2006
++++ uim/uim-ipc.c	Wed Oct 18 23:39:14 2006
+@@ -297,6 +297,7 @@ uim_helper_check_connection_fd(int fd)
+ {
+   uid_t euid;
+   gid_t egid;
++  return 0;
+   if (getpeereid(fd, &euid, &egid) < 0) {
+     perror("getpeereid failed");
+     return -1;

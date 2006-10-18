@@ -1,0 +1,7 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/10/18 23:57:22 espie Exp $
+lib/gtk-2.0/2.4.0/immodules/im-uim.so
+@lib lib/libuim-custom.so.${LIBuim-custom_VERSION}
+@lib lib/libuim.so.${LIBuim_VERSION}
+lib/uim/plugin/libuim-anthy.so
+lib/uim/plugin/libuim-custom-enabler.so
+lib/uim/plugin/libuim-skk.so
