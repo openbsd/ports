@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2006/06/12 19:04:10 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/10/18 00:18:36 jolan Exp $
 @newgroup _asterisk:545
 @newuser _asterisk:545:_asterisk:daemon:asterisk user:/nonexistent:/sbin/nologin
 include/asterisk/
@@ -89,9 +89,9 @@ sbin/safe_asterisk
 sbin/stereorize
 sbin/streamplayer
 share/asterisk/
-@comment share/asterisk/firmware/
-@comment share/asterisk/firmware/iax/
-@comment share/asterisk/firmware/iax/iaxy.bin
+share/asterisk/firmware/
+share/asterisk/firmware/iax/
+share/asterisk/firmware/iax/iaxy.bin
 @comment share/asterisk/images/
 @comment share/asterisk/images/asterisk-intro.jpg
 share/asterisk/keys/
@@ -253,6 +253,7 @@ share/asterisk/sounds/dir-intro.gsm
 share/asterisk/sounds/dir-nomatch.gsm
 share/asterisk/sounds/dir-nomore.gsm
 share/asterisk/sounds/hello-world.gsm
+share/asterisk/sounds/hours.gsm
 share/asterisk/sounds/invalid.gsm
 share/asterisk/sounds/letters/
 share/asterisk/sounds/letters/a.gsm
@@ -291,6 +292,7 @@ share/asterisk/sounds/letters/x.gsm
 share/asterisk/sounds/letters/y.gsm
 share/asterisk/sounds/letters/z.gsm
 share/asterisk/sounds/letters/zed.gsm
+share/asterisk/sounds/minutes.gsm
 share/asterisk/sounds/pbx-invalid.gsm
 share/asterisk/sounds/pbx-invalidpark.gsm
 share/asterisk/sounds/pbx-transfer.gsm
@@ -342,6 +344,7 @@ share/asterisk/sounds/queue-thankyou.gsm
 share/asterisk/sounds/queue-thereare.gsm
 share/asterisk/sounds/queue-youarenext.gsm
 share/asterisk/sounds/screen-callee-options.gsm
+share/asterisk/sounds/seconds.gsm
 share/asterisk/sounds/spy-agent.gsm
 share/asterisk/sounds/spy-h323.gsm
 share/asterisk/sounds/spy-iax.gsm
