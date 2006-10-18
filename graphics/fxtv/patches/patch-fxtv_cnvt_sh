@@ -1,6 +1,6 @@
-$OpenBSD: patch-fxtv_cnvt_sh,v 1.3 2004/01/03 14:23:24 espie Exp $
---- fxtv_cnvt.sh.orig	Mon Feb 12 17:18:40 2001
-+++ fxtv_cnvt.sh	Wed Aug 15 13:47:57 2001
+$OpenBSD: patch-fxtv_cnvt_sh,v 1.4 2006/10/18 11:10:31 ajacoutot Exp $
+--- fxtv_cnvt.sh.orig	Mon Feb 12 22:18:40 2001
++++ fxtv_cnvt.sh	Wed Oct 18 12:38:30 2006
 @@ -40,12 +40,12 @@
  
  # Default to $PATH
@@ -79,6 +79,17 @@ $OpenBSD: patch-fxtv_cnvt_sh,v 1.3 2004/01/03 14:23:24 espie Exp $
  
  MPEG_ENC_PARAM_STR_INP_STDIN=\
  'INPUT_DIR         stdin'
+@@ -181,8 +181,8 @@ GenAudioPipe() {
+ 
+    # Do we need an intermediate file?
+    if [ $mpeg_enc = YES ]; then
+-      out_soxfn="$out_fnbase.aiff"
+-      out_soxfmt="AIFF"
++      out_soxfn="$out_fnbase.raw"
++      out_soxfmt="RAW"
+    else
+       out_soxfn="$GAout_fn"
+       out_soxfmt="$out_fmt"
 @@ -344,12 +344,8 @@ vars='$AV_RAW_FILES $AV_TARGET $TARGET_F
  set -- $vars
  missing_var=NO
