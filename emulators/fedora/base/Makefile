@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/10/17 23:41:58 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2006/10/18 13:54:09 pvalchev Exp $
 
 COMMENT=	"Linux compatibility package based on Fedora Core 4"
 
@@ -147,7 +147,7 @@ do-install:
 	mv ${FEDORADIR}/lib/obsolete/linuxthreads/* ${FEDORADIR}/lib
 	rm -fr ${FEDORADIR}/lib/obsolete
 
-# better save than sorry
+# better safe than sorry
 	find ${FEDORADIR} -perm -4000 | xargs -r chmod u-s
 	find ${FEDORADIR} \( -user 37 -o -user 5041 -o -group 37 \) -print | \
 		xargs -r chown -h root:wheel
