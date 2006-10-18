@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST-emacs,v 1.1.1.1 2006/10/18 23:13:34 espie Exp $
+share/emacs/
+share/emacs/site-lisp/
+share/emacs/site-lisp/anthy/
+share/emacs/site-lisp/anthy/anthy-azik.el
+share/emacs/site-lisp/anthy/anthy-azik.elc
+share/emacs/site-lisp/anthy/anthy-conf.el
+share/emacs/site-lisp/anthy/anthy-conf.elc
+share/emacs/site-lisp/anthy/anthy-dic.el
+share/emacs/site-lisp/anthy/anthy-dic.elc
+share/emacs/site-lisp/anthy/anthy-isearch.el
+share/emacs/site-lisp/anthy/anthy-isearch.elc
+share/emacs/site-lisp/anthy/anthy-kyuri.el
+share/emacs/site-lisp/anthy/anthy-kyuri.elc
+share/emacs/site-lisp/anthy/anthy.el
+share/emacs/site-lisp/anthy/anthy.elc
+share/emacs/site-lisp/anthy/leim-list.el
+share/emacs/site-lisp/anthy/leim-list.elc

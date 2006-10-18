@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/10/18 23:13:34 espie Exp $
+@lib lib/libanthy.so.${LIBanthy_VERSION}
+@lib lib/libanthydic.so.${LIBanthydic_VERSION}
+@lib lib/libanthyinput.so.${LIBanthyinput_VERSION}

@@ -1,0 +1,7 @@
+Anthy is a japanese input method library that can be used
+from many setups.
+
+With its complement package anthy-emacs, it can be used with
+emacs, using the simple anthy-agent wedge for communication.
+
+It can also be accessed from uim.

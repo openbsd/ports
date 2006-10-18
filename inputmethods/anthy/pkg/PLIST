@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/18 23:13:34 espie Exp $
+%%SHARED%%
+bin/anthy-agent
+bin/anthy-dic-tool
+bin/anthy-morphological-analyzer
+include/anthy/
+include/anthy/anthy.h
+include/anthy/dicutil.h
+include/anthy/input.h
+lib/libanthy.a
+lib/libanthy.la
+lib/libanthydic.a
+lib/libanthydic.la
+lib/libanthyinput.a
+lib/libanthyinput.la
+lib/pkgconfig/
+lib/pkgconfig/anthy.pc
+share/anthy/
+share/anthy/anthy.dic
+share/anthy/dic-tool-usage.txt
+share/anthy/typetab
+share/anthy/zipcode.t
+share/examples/anthy/
+share/examples/anthy/anthy-conf
+@sample ${SYSCONFDIR}/anthy-conf
