@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_base_appbase_cpp,v 1.1.1.1 2006/10/18 13:54:09 aanriot Exp $
+--- src/base/appbase.cpp.orig	Tue Oct 17 14:52:17 2006
++++ src/base/appbase.cpp	Tue Oct 17 16:38:33 2006
+@@ -32,7 +32,7 @@ wxString uiPath;                // Where
+ wxString i18nPath;              // Where i18n data is stored
+ wxLog *logger;
+ 
+-#define DOC_DIR     wxT("/docs")
++#define DOC_DIR     wxT("%%DOCDIR%%")
+ #define UI_DIR      wxT("/ui")
+ #define I18N_DIR    wxT("/i18n")
+ 
+@@ -123,8 +123,8 @@ void pgAppBase::InitPaths()
+         if (wxDir::Exists(dataDir + UI_DIR))
+             uiPath = dataDir + UI_DIR;
+ 
+-        if (wxDir::Exists(dataDir + DOC_DIR))
+-            docPath = dataDir + DOC_DIR ;
++        if (wxDir::Exists(DOC_DIR))
++            docPath = DOC_DIR ;
+     }
+ 
+     if (i18nPath.IsEmpty())
