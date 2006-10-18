@@ -1,0 +1,16 @@
+To finish the install of ${PKGNAME}, you need
+to enable the module using the following command
+
+  ${PREFIX}/sbin/mod_bandwidth-enable
+
+If you already have Apache running on your machine,
+you should not use "apachectl restart" - instead,
+you should fully stop and then start the server.
+
+Help is available in:
+${PREFIX}/share/doc/mod_bandwidth/README.mod_bandwidth
+
+For correct results, it is important that there aren't any "dead" links
+in the "link" directory of mod_bandwidth when you start the server.
+It may be a good idea to run the ${PREFIX}/sbin/cleanlink.pl daemon to
+remove them automatically.

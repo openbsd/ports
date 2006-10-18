@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/18 14:58:30 ajacoutot Exp $
+lib/mod_bandwidth.so
+sbin/cleanlink.pl
+sbin/mod_bandwidth-enable
+share/doc/mod_bandwidth/
+share/doc/mod_bandwidth/README.mod_bandwidth
+@unexec rm -f /usr/lib/apache/modules/mod_bandwidth.so

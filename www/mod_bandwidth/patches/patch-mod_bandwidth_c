@@ -1,0 +1,30 @@
+$OpenBSD: patch-mod_bandwidth_c,v 1.1.1.1 2006/10/18 14:58:30 ajacoutot Exp $
+--- mod_bandwidth.c.orig	Fri Sep 22 08:50:16 2006
++++ mod_bandwidth.c	Fri Sep 22 08:59:52 2006
+@@ -144,11 +144,15 @@
+  *  /==== by Awesome Walrus <walrus@amur.ru> =====================\
+  * -  BandWidthDataDir
+  *    Syntax  : BandWidthDataDir <directory>
+- *    Default : "/tmp/apachebw"
++ *    Default : "tmp/apachebw"
+  *    Context : server config
+  *
+  *    Sets the name of the directory used by mod_bandwidth to store
+  *    its internal temporary information.
++ *    If Apache is running in a chroot(2), this directive must be
++ *    set relatively to ServerRoot ("tmp/apachebw").
++ *    If Apache is running in an "unsecure" not chroot(2)ed mode,
++ *    then the absolute path is needed ("/var/www/tmp/apachebw")
+  *  \==== by Awesome Walrus <walrus@amur.ru> =====================/
+  *
+  * -  BandWidthModule 
+@@ -496,7 +500,8 @@ static const char *bandwidthmodule(cmd_p
+ static const char *set_bandwidth_data_dir(cmd_parms *cmd, void *dummy, char *arg) {
+     arg = ap_os_canonical_filename(cmd->pool, arg);
+ 
+-    if (!ap_is_directory(arg)) {
++    const char *fpath = ap_server_root_relative(cmd->pool, arg);
++    if (!ap_is_directory(fpath)) {
+         return "BandWidthDataDir must be a valid directory";
+     }
+     ap_cpystrn(bandwidth_data_dir, arg, sizeof(bandwidth_data_dir));

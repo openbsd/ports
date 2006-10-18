@@ -1,0 +1,8 @@
+To completely deinstall the mod_bandwidth package you
+need to perform these steps as root:
+
+        edit /var/www/conf/httpd.conf
+        remove the line LoadModule bandwidth_module
+
+Do not do this if you plan on re-installing the mod_bandwidth
+package at some future time.
