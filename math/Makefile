@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2006/10/14 18:53:00 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.60 2006/10/18 17:41:47 steven Exp $
 #
 
      SUBDIR += R
@@ -13,6 +13,7 @@
      SUBDIR += ecm
      SUBDIR += fftw
      SUBDIR += fftw3
+     SUBDIR += fftw3,float
      SUBDIR += galculator
      SUBDIR += geg
      SUBDIR += gnumeric
