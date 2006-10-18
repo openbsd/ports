@@ -1,0 +1,13 @@
+$OpenBSD: patch-library_utilities_include_myx_util_functions_h,v 1.1 2006/10/18 14:23:56 wilfried Exp $
+--- library/utilities/include/myx_util_functions.h.orig	Wed Sep 20 17:26:07 2006
++++ library/utilities/include/myx_util_functions.h	Tue Oct 17 16:49:35 2006
+@@ -108,9 +108,6 @@ extern "C" {
+   typedef short int16;                  
+   typedef unsigned long uint32;                 
+   typedef long int32;
+-  #ifndef __GLIBC__
+-    typedef unsigned long ulong;
+-  #endif
+   typedef long long longlong;
+   typedef unsigned long long ulonglong;
+ #endif

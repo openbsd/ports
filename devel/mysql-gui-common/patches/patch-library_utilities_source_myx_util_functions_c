@@ -1,0 +1,91 @@
+$OpenBSD: patch-library_utilities_source_myx_util_functions_c,v 1.1 2006/10/18 14:23:56 wilfried Exp $
+--- library/utilities/source/myx_util_functions.c.orig	Wed Sep 20 17:26:07 2006
++++ library/utilities/source/myx_util_functions.c	Wed Oct 18 11:59:33 2006
+@@ -52,6 +52,10 @@
+ # include <sys/types.h>
+ # include <sys/stat.h>
+ # include <unistd.h>
++# if defined (__OpenBSD__)
++#  include <sys/param.h>
++#  include <sys/sysctl.h>
++# endif
+ #endif
+ 
+ // MacOS X
+@@ -1323,7 +1327,56 @@ static int _get_hardware_info(char **cpu
+ 
+ //----------------------------------------------------------------------------------------------------------------------
+ 
++#elif defined (__OpenBSD__)
++static int _get_hardware_info(char **cpu, char **clock, int *cpu_count, unsigned long *mem_kb)
++{
++	int mib[2];
++	size_t len;
++	int val;
++	char *p;
++
++#if 0 // string too long
++	mib[0] = CTL_HW;
++	mib[1] = HW_MODEL;
++	if (sysctl(mib, 2, NULL, &len, NULL, 0) != -1)
++		if ((p = malloc(len)) != NULL)
++		{
++			if (sysctl(mib, 2, p, &len, NULL, 0) != -1)
++				*cpu = g_strdup(p);
++			free(p);
++		}
+ #else
++	*cpu = g_strdup("");
++#endif
++
++	mib[0] = CTL_HW;
++	mib[1] = HW_CPUSPEED;
++	len = sizeof(val);
++	if (sysctl(mib, 2, &val, &len, NULL, 0) != -1)
++	{
++		if ((p = malloc(16)) != NULL)
++		{
++			snprintf(p, 16, "%d", val);
++			*clock = g_strdup(p);
++			free(p);
++		}
++	}
++
++	mib[0] = CTL_HW;
++	mib[1] = HW_NCPU;
++	len = sizeof(val);
++	if (sysctl(mib, 2, &val, &len, NULL, 0) != -1)
++		*cpu_count = val;
++
++	mib[0] = CTL_HW;
++	mib[1] = HW_PHYSMEM;
++	len = sizeof(val);
++	if (sysctl(mib, 2, &val, &len, NULL, 0) != -1)
++		*mem_kb = val/1024;
++
++	return 0;
++}
++#else
+ // Linux
+ static int _get_hardware_info(char **cpu, char **clock, int *cpu_count, unsigned long *mem_kb)
+ {
+@@ -1562,6 +1615,19 @@ bigint get_physical_memory_size()
+   }
+   
+   return mem64;
++#elif defined (__OpenBSD__)
++	bigint mem64 = 0;
++	int mib[2];
++	size_t len;
++	int val;
++
++	mib[0] = CTL_HW;
++	mib[1] = HW_PHYSMEM;
++	len = sizeof(val);
++	if (sysctl(mib, 2, &val, &len, NULL, 0) != -1)
++		mem64 = val;
++
++	return mem64;
+ #else
+   FILE *proc;
+   bigint mem64;

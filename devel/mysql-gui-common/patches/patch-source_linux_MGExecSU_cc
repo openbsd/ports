@@ -1,0 +1,23 @@
+$OpenBSD: patch-source_linux_MGExecSU_cc,v 1.1 2006/10/18 14:23:56 wilfried Exp $
+--- source/linux/MGExecSU.cc.orig	Tue Oct 17 16:59:35 2006
++++ source/linux/MGExecSU.cc	Tue Oct 17 17:01:32 2006
+@@ -4,11 +4,19 @@
+ #include "myg_utils.h"
+ #include "myg_gtkutils.h"
+ #include "mygpriv.h"
++#if defined(__OpenBSD__)
++#include <signal.h>
++#else
+ #include <sys/signal.h>
++#endif
+ #include <sys/wait.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#if defined(__OpenBSD__)
++#include <util.h>
++#else
+ #include <pty.h>
++#endif
+ #include <fcntl.h>
+ 
+ 
