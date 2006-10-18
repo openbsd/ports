@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2004/02/01 20:17:44 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2006/10/18 22:14:23 wilfried Exp $
 
 COMMENT=		"Pure Perl MySQL network protocol interface"
 
-VERSION=		0.08
+VERSION=		0.09
 DISTNAME=		Net-MySQL-${VERSION}
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		net perl5

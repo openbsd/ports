@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2004/12/16 00:31:27 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2006/10/18 22:19:08 wilfried Exp $
 
 COMMENT=		"wm-dockapp; shows basic network info"
 
-DISTNAME=		wmifinfo-0.06
+DISTNAME=		wmifinfo-0.09
 CATEGORIES=		net x11 x11/windowmaker
 
 HOMEPAGE=		http://www.zevv.nl/wmifinfo/
