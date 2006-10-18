@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2006/10/18 17:53:08 pvalchev Exp $
+--- Makefile.in.orig	Mon Jun 19 23:49:00 2006
++++ Makefile.in	Sat Oct  7 23:51:35 2006
+@@ -44,7 +44,7 @@ LT_AGE      = @LT_AGE@
+ LT_CURRENT  = @LT_CURRENT@
+ LT_RELEASE  = @LT_RELEASE@
+ LT_REVISION = @LT_REVISION@
+-LT_LDFLAGS  = -no-undefined -rpath $(libdir) -release $(LT_RELEASE) -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++LT_LDFLAGS  = -no-undefined -rpath $(libdir) $(LT_RELEASE) -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ 
+ all: $(srcdir)/configure Makefile $(objects) $(objects)/$(TARGET) $(objects)/$(SDLMAIN_TARGET)
+ 
+@@ -98,7 +98,7 @@ install-data:
+ 	$(SHELL) $(auxdir)/mkinstalldirs $(datadir)/aclocal
+ 	$(INSTALL) -m 644 $(srcdir)/sdl.m4 $(datadir)/aclocal/sdl.m4
+ 	$(SHELL) $(auxdir)/mkinstalldirs $(libdir)/pkgconfig
+-	$(INSTALL) -m 644 $(srcdir)/sdl.pc $(libdir)/pkgconfig
++	$(INSTALL) -m 644 sdl.pc $(libdir)/pkgconfig
+ install-man:
+ 	$(SHELL) $(auxdir)/mkinstalldirs $(mandir)/man3
+ 	for src in $(srcdir)/docs/man3/*.3; do \

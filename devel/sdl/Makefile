@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.45 2006/08/01 23:39:08 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2006/10/18 17:53:08 pvalchev Exp $
 # Uses pthreads
 
 COMMENT=	"cross-platform multimedia library"
 
-VERSION=	1.2.9
+VERSION=	1.2.11
 DISTNAME=	SDL-${VERSION}
-PKGNAME=	${DISTNAME:L}p1
+PKGNAME=	${DISTNAME:L}
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.libsdl.org/
@@ -28,13 +28,12 @@ FLAVORS=	sun esd arts aa caca no_x11
 FLAVOR?=	sun
 
 USE_LIBTOOL=	Yes
+MODULES=	converters/libiconv
 
-AUTOCONF_VERSION=	2.59
-AUTOMAKE_VERSION=	1.9
 SEPARATE_BUILD=	concurrent
-CONFIGURE_STYLE= autoconf
+CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/test
-SHARED_LIBS=	SDL	6.0
+SHARED_LIBS=	SDL	7.0
 CONFIGURE_ENV+=	X11BASE="${X11BASE}" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
@@ -100,7 +99,7 @@ CONFIGURE_ARGS+= --without-x \
 		 --disable-video-x11
 .else
 USE_X11=	Yes
-WANTLIB+=	X11 Xext
+WANTLIB+=	X11 Xext Xrandr Xrender
 .endif
 
 NO_REGRESS=	Yes
