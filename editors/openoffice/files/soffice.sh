@@ -1,22 +1,22 @@
 #!/bin/sh
 #
-# $OpenBSD: soffice.sh,v 1.2 2006/10/18 17:05:57 ian Exp $
+# $OpenBSD: soffice.sh,v 1.3 2006/10/18 18:17:12 ian Exp $
 #
 
 case "$0"
 in
 	*swriter)
-		%%LOCALBASE%%/openoffice/program/soffice -writer $*
+		exec %%LOCALBASE%%/openoffice/program/soffice -writer $*
 		;;
 	*scalc)
-		%%LOCALBASE%%/openoffice/program/soffice -calc $*
+		exec %%LOCALBASE%%/openoffice/program/soffice -calc $*
 		;;
 	*sdraw)
-		%%LOCALBASE%%/openoffice/program/soffice -draw $*
+		exec %%LOCALBASE%%/openoffice/program/soffice -draw $*
 		;;
 	*simpress)
-		%%LOCALBASE%%/openoffice/program/soffice -impress $*
+		exec %%LOCALBASE%%/openoffice/program/soffice -impress $*
 		;;
 	*)
-		%%LOCALBASE%%/openoffice/program/soffice $*
+		exec %%LOCALBASE%%/openoffice/program/soffice $*
 esac
