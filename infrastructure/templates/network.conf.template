@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.101 2006/08/01 17:19:50 alek Exp $
+# $OpenBSD: network.conf.template,v 1.102 2006/10/18 10:42:54 steven Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -98,7 +98,6 @@ MASTER_SITE_SUNSITE+=	\
 	ftp://ftp.funet.fi/pub/Linux/mirrors/metalab/ \
 	ftp://sunsite.org.uk/packages/linux/sunsite.unc-mirror/ \
 	ftp://ftp.nluug.nl/vol/4/metalab/ \
-	ftp://ftp.is.co.za/linux/sunsite/ \
 	ftp://ftp.chg.ru/pub/Linux/sunsite/
 
 MASTER_SITE_SOURCEFORGE+=	\
@@ -146,7 +145,6 @@ MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.ucr.ac.cr/pub/Unix/CPAN/modules/by-module/ \
 	ftp://ftp.duke.edu/pub/perl/modules/by-module/ \
 	ftp://cpan.pop-mg.com.br/pub/CPAN/modules/by-module/ \
-	ftp://ftp.is.co.za/programming/perl/CPAN/modules/by-module/ \
 	ftp://sunsite.org.uk/package/cpan/modules/by-module/ \
 	ftp://ftp.chg.ru/pub/lang/perl/CPAN/modules/by-module/ \
 	http://www.cpan.dk/modules/by-module/ \
