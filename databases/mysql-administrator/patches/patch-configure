@@ -1,35 +1,35 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2005/11/04 14:00:11 wilfried Exp $
---- configure.orig	Tue Oct 18 02:18:32 2005
-+++ configure	Thu Nov  3 15:47:23 2005
-@@ -3479,30 +3479,7 @@ fi
+$OpenBSD: patch-configure,v 1.2 2006/10/18 14:25:58 wilfried Exp $
+--- configure.orig	Tue Sep 26 20:13:44 2006
++++ configure	Tue Oct 17 18:17:20 2006
+@@ -3542,30 +3542,7 @@ fi
  #
  # internal libraries
  #
--echo "$as_me:$LINENO: checking for ../mysql-gui-common/library/include" >&5
--echo $ECHO_N "checking for ../mysql-gui-common/library/include... $ECHO_C" >&6
--if test "${ac_cv_file____mysql_gui_common_library_include+set}" = set; then
+-echo "$as_me:$LINENO: checking for ../mysql-gui-common/library/base-library" >&5
+-echo $ECHO_N "checking for ../mysql-gui-common/library/base-library... $ECHO_C" >&6
+-if test "${ac_cv_file____mysql_gui_common_library_base_library+set}" = set; then
 -  echo $ECHO_N "(cached) $ECHO_C" >&6
 -else
 -  test "$cross_compiling" = yes &&
 -  { { echo "$as_me:$LINENO: error: cannot check for file existence when cross compiling" >&5
 -echo "$as_me: error: cannot check for file existence when cross compiling" >&2;}
 -   { (exit 1); exit 1; }; }
--if test -r "../mysql-gui-common/library/include"; then
--  ac_cv_file____mysql_gui_common_library_include=yes
+-if test -r "../mysql-gui-common/library/base-library"; then
+-  ac_cv_file____mysql_gui_common_library_base_library=yes
 -else
--  ac_cv_file____mysql_gui_common_library_include=no
+-  ac_cv_file____mysql_gui_common_library_base_library=no
 -fi
 -fi
--echo "$as_me:$LINENO: result: $ac_cv_file____mysql_gui_common_library_include" >&5
--echo "${ECHO_T}$ac_cv_file____mysql_gui_common_library_include" >&6
--if test $ac_cv_file____mysql_gui_common_library_include = yes; then
+-echo "$as_me:$LINENO: result: $ac_cv_file____mysql_gui_common_library_base_library" >&5
+-echo "${ECHO_T}$ac_cv_file____mysql_gui_common_library_base_library" >&6
+-if test $ac_cv_file____mysql_gui_common_library_base_library = yes; then
 -  :
 -else
 -  { { echo "$as_me:$LINENO: error: mysql-gui-common source tree must be present in the same directory as this program" >&5
 -echo "$as_me: error: mysql-gui-common source tree must be present in the same directory as this program" >&2;}
 -   { (exit 1); exit 1; }; }
 -fi
-+ac_cv_file____mysql_gui_common_library_include=yes
++ac_cv_file____mysql_gui_common_library_base_library=yes
  
  
  #AC_CHECK_FILE(../mysql-gui-common/source/linux/libmacommongui.a, [],

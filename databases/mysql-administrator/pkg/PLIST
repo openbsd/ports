@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/11/04 14:00:11 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/10/18 14:25:58 wilfried Exp $
 bin/mabackup
 bin/mysql-administrator
 bin/mysql-administrator-bin
@@ -83,6 +83,10 @@ share/mysql-gui/administrator/health_level_bg.png
 share/mysql-gui/administrator/health_level_fg.png
 share/mysql-gui/administrator/innodb_data_file.glade
 share/mysql-gui/administrator/main_window.glade
+share/mysql-gui/administrator/merlin_advisors_sticker.png
+share/mysql-gui/administrator/merlin_alerts.png
+share/mysql-gui/administrator/merlin_graphs_sticker.png
+share/mysql-gui/administrator/merlin_grid_graph.png
 share/mysql-gui/administrator/mysqladmin_health.xml
 share/mysql-gui/administrator/mysqladmin_startup_variables_description.dtd
 share/mysql-gui/administrator/mysqladmin_startup_variables_description.xml

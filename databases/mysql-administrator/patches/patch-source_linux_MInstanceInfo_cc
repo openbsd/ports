@@ -1,16 +1,16 @@
-$OpenBSD: patch-source_linux_MInstanceInfo_cc,v 1.1.1.1 2005/11/04 14:00:11 wilfried Exp $
---- source/linux/MInstanceInfo.cc.orig	Fri Oct  7 16:53:54 2005
-+++ source/linux/MInstanceInfo.cc	Wed Nov  2 21:53:54 2005
-@@ -830,7 +830,7 @@ static bool do_get_info(MInstanceInfo::F
+$OpenBSD: patch-source_linux_MInstanceInfo_cc,v 1.2 2006/10/18 14:25:58 wilfried Exp $
+--- source/linux/MInstanceInfo.cc.orig	Thu Aug  3 04:44:46 2006
++++ source/linux/MInstanceInfo.cc	Tue Oct 17 18:49:23 2006
+@@ -888,6 +888,8 @@ static bool do_get_info(MInstanceInfo::F
  
- 
- #else // !sun
--#define FSTAB_FILE "/etc/mtab"
-+#define FSTAB_FILE "/etc/fstab"
- 
- static bool do_get_info(MInstanceInfo::FilesystemInfo &info, const std::string &path)
- {
-@@ -847,14 +847,6 @@ static bool do_get_info(MInstanceInfo::F
+ #if defined(hpux) || defined(__hpux)
+ # define FSTAB_FILE "/etc/mnttab"
++#elif defined(__OpenBSD__)
++# define FSTAB_FILE "/etc/fstab"
+ #else
+ # define FSTAB_FILE "/etc/mtab"
+ #endif
+@@ -907,14 +909,6 @@ static bool do_get_info(MInstanceInfo::F
    info.free= (long long)fs.f_bsize * fs.f_bavail;
  
    info.type= "unknown";
@@ -25,3 +25,12 @@ $OpenBSD: patch-source_linux_MInstanceInfo_cc,v 1.1.1.1 2005/11/04 14:00:11 wilf
    return true;
  }
  
+@@ -1122,7 +1116,7 @@ Glib::ustring MInstanceInfo::fetch_logs_
+       char *buffer= (char*)g_malloc(diff+1);
+       int fd= open(path.c_str(), O_RDONLY);
+ 
+-      lseek64(fd, _log_file_pos, SEEK_SET);
++      lseek(fd, _log_file_pos, SEEK_SET);
+       if ((len= read(fd, buffer, diff)) < 0)
+       {
+         close(fd);

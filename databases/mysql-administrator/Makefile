@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2006/09/18 11:40:07 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/10/18 14:25:58 wilfried Exp $
 
 COMMENT=	"visual administration console for MySQL"
 
-DISTNAME=	mysql-administrator-1.1.4
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	mysql-gui-tools-5.0r4
+PKGNAME=	mysql-administrator-1.2.4
 CATEGORIES=	databases
 
 HOMEPAGE=	http://www.mysql.com/products/tools/administrator/
@@ -16,21 +16,21 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MySQLAdministrationSuite/ \
+MASTER_SITES=	ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MySQLGUITools/ \
 		ftp://sunsite.dk/mirrors/mysql/Downloads/MySQLAdministrationSuite/ \
 		ftp://gd.tuwien.ac.at/db/mysql/Downloads/MySQLAdministrationSuite/ \
 		ftp://mysql.secsup.org/pub/software/mysql/Downloads/MySQLAdministrationSuite/
 
 WANTLIB=	X11 c crypto fontconfig freetype m pthread \
-		ssl stdc++ z atk-1.0 atkmm-1.6 gdk-x11-2.0 \
+		ssl stdc++ util z atk-1.0 atkmm-1.6 gdk-x11-2.0 \
 		gdk_pixbuf-2.0 gdkmm-2.4 glibmm-2.4 \
 		gtk-x11-2.0 pango-1.0 pangomm-1.4.>=1.0 \
 		pangoft2-1.0 pangocairo-1.0 sigc-2.0 cairo
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
-		::devel/mysql-gui-common
-RUN_DEPENDS=	::devel/mysql-gui-common
+		:mysql-gui-common->=5:devel/mysql-gui-common
+RUN_DEPENDS=	:mysql-gui-common->=5:devel/mysql-gui-common
 LIB_DEPENDS=	pcre::devel/pcre \
 		mysqlclient_r::databases/mysql \
 		glib-2.0,gmodule-2.0,gobject-2.0:glib2->=2.6.2:devel/glib2 \
@@ -45,8 +45,5 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--disable-dependency-tracking
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/mysql-administrator
-
-post-extract:
-	@rm -rf ${WRKSRC}/../mysql-gui-common
 
 .include <bsd.port.mk>

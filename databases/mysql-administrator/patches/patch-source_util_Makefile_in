@@ -1,32 +1,38 @@
-$OpenBSD: patch-source_util_Makefile_in,v 1.1.1.1 2005/11/04 14:00:11 wilfried Exp $
---- source/util/Makefile.in.orig	Tue Oct 18 02:18:31 2005
-+++ source/util/Makefile.in	Thu Nov  3 16:43:15 2005
-@@ -54,7 +54,7 @@ PROGRAMS = $(bin_PROGRAMS)
+$OpenBSD: patch-source_util_Makefile_in,v 1.2 2006/10/18 14:25:58 wilfried Exp $
+--- source/util/Makefile.in.orig	Tue Sep 26 20:13:44 2006
++++ source/util/Makefile.in	Tue Oct 17 18:19:21 2006
+@@ -52,8 +52,8 @@ PROGRAMS = $(bin_PROGRAMS)
  am_mabackup_OBJECTS = mabackup.$(OBJEXT)
  mabackup_OBJECTS = $(am_mabackup_OBJECTS)
  mabackup_DEPENDENCIES = $(top_srcdir)/library/source/libadmin.a \
--	$(top_srcdir)/../mysql-gui-common/library/source/libmysqlx.a
-+	${LOCALBASE}/share/mysql-gui/common/library/source/libmysqlx.a
+-	$(top_srcdir)/../mysql-gui-common/library/base-library/source/.libs/libmysqlx.a \
+-	$(top_srcdir)/../mysql-gui-common/library/utilities/source/.libs/libguiutil.a
++	$(LOCALBASE)/share/mysql-gui/common/library/base-library/source/.libs/libmysqlx.a \
++	$(LOCALBASE)/share/mysql-gui/common/library/utilities/source/.libs/libguiutil.a
  DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)/source/linux
  depcomp = $(SHELL) $(top_srcdir)/depcomp
  am__depfiles_maybe = depfiles
-@@ -171,8 +171,8 @@ sysconfdir = @sysconfdir@
+@@ -185,9 +185,9 @@ sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  mabackup_SOURCES = mabackup.cc
  INCLUDES = @GLIB_CFLAGS@ @MYSQL_CFLAGS@ @PCRE_CFLAGS@\
--        -I$(top_srcdir)/../mysql-gui-common/library/include\
--        -I$(top_srcdir)/../mysql-gui-common/library/shared_include\
-+        -I${LOCALBASE}/share/mysql-gui/common/library/include\
-+        -I${LOCALBASE}/share/mysql-gui/common/library/shared_include\
+-        -I$(top_srcdir)/../mysql-gui-common/library/base-library/include\
+-        -I$(top_srcdir)/../mysql-gui-common/library/utilities/shared_include\
+-        -I$(top_srcdir)/../mysql-gui-common/library/utilities/include\
++        -I$(LOCALBASE)/share/mysql-gui/common/library/base-library/include\
++        -I$(LOCALBASE)/share/mysql-gui/common/library/utilities/shared_include\
++        -I$(LOCALBASE)/share/mysql-gui/common/library/utilities/include\
          -I$(top_srcdir)/library/include\
          -DPREFIX=\""$(PREFIX)"\"\
          -DDATADIRNAME=\""$(DATADIRNAME)"\"\
-@@ -180,7 +180,7 @@ INCLUDES = @GLIB_CFLAGS@ @MYSQL_CFLAGS@ 
+@@ -195,8 +195,8 @@ INCLUDES = @GLIB_CFLAGS@ @MYSQL_CFLAGS@ 
  
  mabackup_LDADD = \
          $(top_srcdir)/library/source/libadmin.a\
--        $(top_srcdir)/../mysql-gui-common/library/source/libmysqlx.a\
-+        ${LOCALBASE}/share/mysql-gui/common/library/source/libmysqlx.a\
+-        $(top_srcdir)/../mysql-gui-common/library/base-library/source/.libs/libmysqlx.a\
+-        $(top_srcdir)/../mysql-gui-common/library/utilities/source/.libs/libguiutil.a\
++        $(LOCALBASE)/share/mysql-gui/common/library/base-library/source/.libs/libmysqlx.a\
++        $(LOCALBASE)/share/mysql-gui/common/library/utilities/source/.libs/libguiutil.a\
          @MYSQL_LIBS@ @PCRE_LIBS@ @GLIB_LIBS@
  
  all: all-am
