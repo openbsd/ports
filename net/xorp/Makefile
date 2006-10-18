@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2005/04/17 19:25:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2006/10/18 23:18:02 naddy Exp $
 
 COMMENT=	"eXtensible Open Router Platform"
 
-VERSION=	1.1
+VERSION=	1.3
 DISTNAME=	xorp-${VERSION}
 CATEGORIES=	net
 HOMEPAGE=	http://www.xorp.org/
-
-MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,6 +23,7 @@ WANTLIB=	c crypto curses m stdc++
 # Python only used to rebuild already included file with no changes.
 
 USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 .if !defined(PACKAGING)
@@ -34,10 +33,12 @@ PREFIX=${LOCALBASE}/xorp
 CONFIGURE_ARGS=	--enable-optimize
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config ${WRKSRC}/cli/libtecla
 
-REGRESS_DEPENDS=	::shells/bash
+REGRESS_DEPENDS=	::shells/bash \
+			::lang/python/2.4
 
 # some regression tests must be run as root
 do-regress:
+	@ln -s ${LOCALBASE}/bin/python2.4 ${WRKDIR}/bin
 	@cd ${WRKBUILD}; ${SUDO} ${MAKE_PROGRAM} ${REGRESS_TARGET}
 
 .include <bsd.port.mk>

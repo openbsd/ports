@@ -1,7 +1,7 @@
-$OpenBSD: patch-cli_libtecla_Makefile_in,v 1.1 2005/01/30 19:48:02 naddy Exp $
---- cli/libtecla/Makefile.in.orig	Sun Jan 30 10:43:03 2005
-+++ cli/libtecla/Makefile.in	Sun Jan 30 10:43:23 2005
-@@ -80,7 +80,7 @@ DEFINES_R = -D_POSIX_C_SOURCE=199506L
+$OpenBSD: patch-cli_libtecla_Makefile_in,v 1.2 2006/10/18 23:18:02 naddy Exp $
+--- cli/libtecla/Makefile.in.orig	Mon Jan  9 21:30:25 2006
++++ cli/libtecla/Makefile.in	Wed Oct 18 18:09:42 2006
+@@ -85,7 +85,7 @@ DEFINES_R = -D_POSIX_C_SOURCE=200112L
  # on modifying the library, leave this set to -O.
  #
  

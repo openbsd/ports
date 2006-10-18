@@ -4,6 +4,7 @@ routing protocols for IPv4 and IPv6 and a unified means to configure
 them.
 
 Currently, XORP implements the following protocols:
+* OSPF v2
 * RIP and RIPng
 * BGP4
 * PIM-SM
