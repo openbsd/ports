@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.782 2006/10/17 22:32:45 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.783 2006/10/18 10:51:39 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -589,9 +589,10 @@ PKGNAMES += ${FULLPKGNAME${_s}}
 
 _PACKAGE_LINKS=
 _PKGFILE=		${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
+NO_ARCH?=		no-arch
 .if ${PKG_ARCH} == "*"
-_PACKAGE_COOKIE=	${PACKAGE_REPOSITORY}/no-arch/${_PKGFILE}
-_PACKAGE_LINKS+=	${MACHINE_ARCH}/all no-arch
+_PACKAGE_COOKIE=	${PACKAGE_REPOSITORY}/${NO_ARCH}/${_PKGFILE}
+_PACKAGE_LINKS+=	${MACHINE_ARCH}/all ${NO_ARCH}
 _PACKAGE_COOKIES+=	${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE}
 .else
 _PACKAGE_COOKIE=	${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE}
@@ -1291,7 +1292,7 @@ _grab_libs_from_plist= sed -n -e '/^@lib /{ s///; p; }' \
 ${_CACHE_REPO}/${_PKGFILE}:
 	@mkdir -p ${@D}
 	@${ECHO_MSG} -n "===>  Looking for ${_PKGFILE} in \$$PKG_PATH - "
-	@if ${SETENV} PKG_CACHE=${_CACHE_REPO} PKG_PATH=${_CACHE_REPO}:${_PKG_REPO}:${PACKAGE_REPOSITORY}/no-arch/:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add -n -q ${_PKG_ADD_FORCE} ${_PKGFILE} >/dev/null 2>&1; then \
+	@if ${SETENV} PKG_CACHE=${_CACHE_REPO} PKG_PATH=${_CACHE_REPO}:${_PKG_REPO}:${PACKAGE_REPOSITORY}/${NO_ARCH}/:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add -n -q ${_PKG_ADD_FORCE} ${_PKGFILE} >/dev/null 2>&1; then \
 		${ECHO_MSG} "found"; \
 		exit 0; \
 	else \
