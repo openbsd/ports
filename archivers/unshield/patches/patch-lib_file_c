@@ -1,8 +1,8 @@
-$OpenBSD: patch-lib_file_c,v 1.1.1.1 2005/07/25 09:58:16 jsg Exp $
---- lib/file.c.orig	Sat Jul  9 18:39:00 2005
-+++ lib/file.c	Sat Jul  9 18:39:23 2005
-@@ -1,14 +1,15 @@
- /* $Id: patch-lib_file_c,v 1.1.1.1 2005/07/25 09:58:16 jsg Exp $ */
+$OpenBSD: patch-lib_file_c,v 1.2 2006/10/18 13:47:36 jsg Exp $
+--- lib/file.c.orig	Wed Jun 29 04:49:36 2005
++++ lib/file.c	Wed Oct 18 23:10:28 2006
+@@ -1,14 +1,14 @@
+ /* $Id: patch-lib_file_c,v 1.2 2006/10/18 13:47:36 jsg Exp $ */
 -#include "internal.h"
 -#include "md5/global.h"
 -#include "md5/md5.h"
@@ -13,10 +13,9 @@ $OpenBSD: patch-lib_file_c,v 1.1.1.1 2005/07/25 09:58:16 jsg Exp $
  #include <string.h>
  #include <sys/param.h>    /* for MIN(a,b) */
  #include <zlib.h>
++#include <crypto/md5.h>
 +
 +#include "internal.h"
-+#include "md5/global.h"
-+#include "md5/md5.h"
 +#include "cabfile.h"
 +#include "log.h"
  

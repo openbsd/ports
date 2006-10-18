@@ -1,8 +1,8 @@
-$OpenBSD: patch-lib_file_group_c,v 1.1.1.1 2005/07/25 09:58:16 jsg Exp $
---- lib/file_group.c.orig	Sat Jul  9 18:39:37 2005
-+++ lib/file_group.c	Sat Jul  9 18:39:55 2005
+$OpenBSD: patch-lib_file_group_c,v 1.2 2006/10/18 13:47:36 jsg Exp $
+--- lib/file_group.c.orig	Wed Jun 29 04:49:36 2005
++++ lib/file_group.c	Wed Oct 18 23:08:15 2006
 @@ -1,8 +1,9 @@
- /* $Id: patch-lib_file_group_c,v 1.1.1.1 2005/07/25 09:58:16 jsg Exp $ */
+ /* $Id: patch-lib_file_group_c,v 1.2 2006/10/18 13:47:36 jsg Exp $ */
 -#include "internal.h"
 -#include "log.h"
  #include <stdlib.h>

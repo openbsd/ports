@@ -1,8 +1,8 @@
-$OpenBSD: patch-lib_helper_c,v 1.1.1.1 2005/07/25 09:58:16 jsg Exp $
---- lib/helper.c.orig	Sat Jul  9 18:40:07 2005
-+++ lib/helper.c	Sat Jul  9 18:40:20 2005
+$OpenBSD: patch-lib_helper_c,v 1.2 2006/10/18 13:47:36 jsg Exp $
+--- lib/helper.c.orig	Fri Jul 30 04:19:21 2004
++++ lib/helper.c	Wed Oct 18 23:08:15 2006
 @@ -1,11 +1,12 @@
- /* $Id: patch-lib_helper_c,v 1.1.1.1 2005/07/25 09:58:16 jsg Exp $ */
+ /* $Id: patch-lib_helper_c,v 1.2 2006/10/18 13:47:36 jsg Exp $ */
  #define _BSD_SOURCE 1
 -#include "internal.h"
 -#include "log.h"

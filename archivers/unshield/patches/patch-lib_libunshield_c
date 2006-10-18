@@ -1,8 +1,8 @@
-$OpenBSD: patch-lib_libunshield_c,v 1.1.1.1 2005/07/25 09:58:16 jsg Exp $
---- lib/libunshield.c.orig	Sat Jul  9 18:40:36 2005
-+++ lib/libunshield.c	Sat Jul  9 18:40:48 2005
+$OpenBSD: patch-lib_libunshield_c,v 1.2 2006/10/18 13:47:36 jsg Exp $
+--- lib/libunshield.c.orig	Tue Aug 24 16:10:27 2004
++++ lib/libunshield.c	Wed Oct 18 23:08:15 2006
 @@ -1,11 +1,12 @@
- /* $Id: patch-lib_libunshield_c,v 1.1.1.1 2005/07/25 09:58:16 jsg Exp $ */
+ /* $Id: patch-lib_libunshield_c,v 1.2 2006/10/18 13:47:36 jsg Exp $ */
  #define _BSD_SOURCE 1
 -#include "internal.h"
 -#include "log.h"
