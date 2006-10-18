@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/10/25 02:34:21 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.10 2006/10/18 17:54:33 pvalchev Exp $
 bin/sdl-config
 include/SDL/
 include/SDL/SDL.h
@@ -6,6 +6,14 @@ include/SDL/SDL_active.h
 include/SDL/SDL_audio.h
 include/SDL/SDL_byteorder.h
 include/SDL/SDL_cdrom.h
+include/SDL/SDL_config.h
+include/SDL/SDL_config_amiga.h
+include/SDL/SDL_config_dreamcast.h
+include/SDL/SDL_config_macos.h
+include/SDL/SDL_config_macosx.h
+include/SDL/SDL_config_minimal.h
+include/SDL/SDL_config_os2.h
+include/SDL/SDL_config_win32.h
 include/SDL/SDL_copying.h
 include/SDL/SDL_cpuinfo.h
 include/SDL/SDL_endian.h
@@ -21,8 +29,10 @@ include/SDL/SDL_mouse.h
 include/SDL/SDL_mutex.h
 include/SDL/SDL_name.h
 include/SDL/SDL_opengl.h
+include/SDL/SDL_platform.h
 include/SDL/SDL_quit.h
 include/SDL/SDL_rwops.h
+include/SDL/SDL_stdinc.h
 include/SDL/SDL_syswm.h
 include/SDL/SDL_thread.h
 include/SDL/SDL_timer.h
@@ -34,6 +44,8 @@ include/SDL/close_code.h
 lib/libSDL.a
 lib/libSDL.la
 lib/libSDLmain.a
+lib/pkgconfig/
+lib/pkgconfig/sdl.pc
 @man man/man3/SDLKey.3
 @man man/man3/SDL_ActiveEvent.3
 @man man/man3/SDL_AddTimer.3
