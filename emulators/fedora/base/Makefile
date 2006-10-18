@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2006/10/18 13:54:09 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2006/10/18 16:04:07 sturm Exp $
 
 COMMENT=	"Linux compatibility package based on Fedora Core 4"
 
-PKGNAME=	fedora_base-4.0p1
+PKGNAME=	fedora_base-4.0p2
 # clean up after make plist:
 #	- perl -pi -e "s,^\@lib ,," pkg/PLIST
 #	- change the 2nd LIBXaw_version to LIBXaw7_version in pkg/PLIST
@@ -71,6 +71,7 @@ RPMDIR=		${FULLDISTDIR}
 RPMS=		atk-1.9.1-1.i386.rpm \
 		bash-3.0-31.i386.rpm \
 		binutils-2.15.94.0.2.2-2.1.i386.rpm:0 \
+		compat-libstdc++-296-2.96-132.fc4.i386.rpm \
 		compat-libstdc++-33-3.2.3-47.fc4.i386.rpm \
 		expat-1.95.8-6.i386.rpm \
 		file-4.16-fc4.1.i386.rpm:0 \
