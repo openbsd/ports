@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.230 2006/10/17 10:16:10 xsa Exp $
+# $OpenBSD: Makefile,v 1.231 2006/10/18 13:33:16 sturm Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -78,7 +78,6 @@
      SUBDIR += mozilla-firefox
      SUBDIR += mycalendar
      SUBDIR += nag
-     SUBDIR += netscape
      SUBDIR += nostromo
      SUBDIR += nscache
      SUBDIR += opera
