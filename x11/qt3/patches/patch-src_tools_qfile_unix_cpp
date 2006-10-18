@@ -1,0 +1,55 @@
+$OpenBSD: patch-src_tools_qfile_unix_cpp,v 1.1 2006/10/18 18:05:31 espie Exp $
+--- src/tools/qfile_unix.cpp.orig	Wed Oct 18 13:23:15 2006
++++ src/tools/qfile_unix.cpp	Wed Oct 18 13:36:59 2006
+@@ -53,6 +53,17 @@ static inline int qt_open(const char *pa
+ #include <errno.h>
+ #include <limits.h>
+ 
++class QFilePrivate
++{
++public:
++    QString errorString;
++    int lastAccess;
++};
++
++#define ACCESS_NONE -1
++#define ACCESS_READ 0
++#define ACCESS_WRITE 1
++
+ extern const char* qt_fileerr_read;
+ 
+ bool qt_file_access( const QString& fn, int t )
+@@ -522,6 +533,7 @@ bool QFile::at( Offset pos )
+ #else
+ 	ok = ( ::fseek(fh, pos, SEEK_SET) == 0 );
+ #endif
++	d->lastAccess = ACCESS_NONE;
+     }
+     if ( ok )
+ #if defined(QT_LARGEFILE_SUPPORT) && !defined(QT_ABI_QT4)
+@@ -590,6 +602,10 @@ Q_LONG QFile::readBlock( char *p, Q_ULON
+ 		setErrorStringErrno( errno );
+ 	    }
+ 	} else {					// buffered file
++	    if (d->lastAccess == ACCESS_WRITE) {
++		::fseek(fh, 0, SEEK_CUR);
++		d->lastAccess = ACCESS_READ;
++	    }
+ 	    nread += fread( p, 1, len-nread, fh );
+ 	    if ( (uint)nread != len ) {
+ 		if ( ferror( fh ) || nread==0 ) {
+@@ -641,8 +657,13 @@ Q_LONG QFile::writeBlock( const char *p,
+     Q_ULONG nwritten;				// number of bytes written
+     if ( isRaw() )				// raw file
+ 	nwritten = ::write( fd, (void *)p, len );
+-    else					// buffered file
++    else {					// buffered file
++	if (d->lastAccess == ACCESS_READ) {
++	    ::fseek(fh, 0, SEEK_CUR);
++	    d->lastAccess = ACCESS_WRITE;
++	}
+ 	nwritten = fwrite( p, 1, len, fh );
++    }
+     if ( nwritten != len ) {		// write error
+ 	if ( errno == ENOSPC )			// disk is full
+ 	    setStatus( IO_ResourceError );
