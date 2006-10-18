@@ -1,8 +1,0 @@
-Netscape Navigator 4.75
-
-This version of Netscape has known security issues.
-You are using this *AT YOUR OWN RISK*.
-
-This package requires the sysctl kern.emul.${EMUL_TYPE}
-being set to 1 and just did so. To make this change
-permanent, edit /etc/sysctl.conf.
