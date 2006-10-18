@@ -1,0 +1,22 @@
+$OpenBSD: patch-configure_in,v 1.1 2006/10/18 14:25:11 wilfried Exp $
+--- configure.in.orig	Tue Sep 26 17:07:13 2006
++++ configure.in	Wed Oct 18 10:11:22 2006
+@@ -17,9 +17,6 @@ AC_CHECK_TOOL(PKG_CONFIG, pkg-config)
+ #
+ # internal libraries
+ #
+-AC_CHECK_FILE(../mysql-gui-common/library/base-library/include, 
+-        [MYSQLA_INCLUDE='-I$(top_srcdir)/../mysql-gui-common/library/base-library/include -I$(top_srcdir)/../mysql-gui-common/source/linux'],
+-	        AC_MSG_ERROR([mysql-gui-common source tree must be present in the same directory as this program]))
+ 
+ #AC_CHECK_FILE(../mysql-gui-common/source/linux/libqbcommongui.a, [],
+ #	AC_MSG_ERROR([mysql-gui-common source tree must be compiled and present in the same directory as this program]))
+@@ -120,7 +117,7 @@ AC_SUBST(mydatadir)
+ qbdatadir='$(datadir)/mysql-gui/query-browser'
+ AC_SUBST(qbdatadir)
+ 
+-
++AC_CONFIG_SUBDIRS(source/linux/gtksourceview)
+ 
+ AC_CONFIG_FILES([
+ mysql-query-browser.spec

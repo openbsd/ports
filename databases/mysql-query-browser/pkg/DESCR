@@ -1,25 +1,4 @@
 MySQL Query Browser is the easiest visual tool for creating,
 executing, and optimizing SQL queries for your MySQL Database Server.
 The MySQL Query Browser gives you a complete set of drag-and-drop
-tools to visually build, analyze and manage your queries. Plus, the
-integrated environment provides:
-
-* Query Toolbar to easily create and execute queries and navigate
-query history
-
-* Script Editor giving you control to manually create or edit SQL
-statements
-
-* Results Window so you can also easily compare and work with
-multiple queries
-
-* Object Browser enabling you to manage your databases, bookmarks,
-and history using a Web Browser like interface
-
-* Database Explorer where you can select tables and fields to query,
-as well as create and delete tables
-
-* Table Editor allows you easily create, modify and delete tables
-
-* Inline Help giving you instant help access to selected objects,
-parameters, and functions
+tools to visually build, analyze and manage your queries.

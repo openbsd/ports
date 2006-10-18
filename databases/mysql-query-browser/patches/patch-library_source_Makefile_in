@@ -1,16 +1,18 @@
-$OpenBSD: patch-library_source_Makefile_in,v 1.1.1.1 2005/11/04 14:01:53 wilfried Exp $
---- library/source/Makefile.in.orig	Sat Oct 22 02:02:12 2005
-+++ library/source/Makefile.in	Thu Nov  3 17:57:14 2005
-@@ -193,9 +193,9 @@ sysconfdir = @sysconfdir@
+$OpenBSD: patch-library_source_Makefile_in,v 1.2 2006/10/18 14:25:11 wilfried Exp $
+--- library/source/Makefile.in.orig	Tue Sep 26 20:13:57 2006
++++ library/source/Makefile.in	Tue Oct 17 19:09:02 2006
+@@ -193,10 +193,10 @@ sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  noinst_LIBRARIES = libqb.a
  INCLUDES = -I../include -I../public_interface/linux\
 -        -I$(top_srcdir)/../mysql-gui-common/source/linux\
--        -I$(top_srcdir)/../mysql-gui-common/library/include\
--        -I$(top_srcdir)/../mysql-gui-common/library/shared_include\
-+        -I${LOCALBASE}/share/mysql-gui/common/source/linux\
-+        -I${LOCALBASE}/share/mysql-gui/common/library/include\
-+        -I${LOCALBASE}/share/mysql-gui/common/library/shared_include\
+-        -I$(top_srcdir)/../mysql-gui-common/library/base-library/include\
+-        -I$(top_srcdir)/../mysql-gui-common/library/utilities/shared_include\
+-        -I$(top_srcdir)/../mysql-gui-common/library/utilities/include\
++        -I$(LOCALBASE)/share/mysql-gui/common/source/linux\
++        -I$(LOCALBASE)/share/mysql-gui/common/library/base-library/include\
++        -I$(LOCALBASE)/share/mysql-gui/common/library/utilities/shared_include\
++        -I$(LOCALBASE)/share/mysql-gui/common/library/utilities/include\
  	@MYSQL_CFLAGS@ @GLIB_CFLAGS@ @PCRE_CFLAGS@
  
  libqb_a_SOURCES = \

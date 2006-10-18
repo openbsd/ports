@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2006/09/18 11:40:07 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/10/18 14:25:11 wilfried Exp $
 
 COMMENT=	"visual query tool for MySQL"
 
-DISTNAME=	mysql-query-browser-1.1.17
-PKGNAME=	${DISTNAME}p3
+DISTNAME=	mysql-gui-tools-5.0r4
+PKGNAME=	mysql-query-browser-1.2.4
 CATEGORIES=	databases
 
 HOMEPAGE=	http://www.mysql.com/products/tools/query-browser/
@@ -16,16 +16,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MySQLAdministrationSuite/ \
-		ftp://sunsite.dk/mirrors/mysql/Downloads/MySQLAdministrationSuite/ \
-		ftp://gd.tuwien.ac.at/db/mysql/Downloads/MySQLAdministrationSuite/ \
-		ftp://mysql.secsup.org/pub/software/mysql/Downloads/MySQLAdministrationSuite/
+MASTER_SITES=	ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MySQLGUITools/ \
+		ftp://sunsite.dk/mirrors/mysql/Downloads/MySQLGUITools/ \
+		ftp://gd.tuwien.ac.at/db/mysql/Downloads/MySQLGUITools/ \
+		ftp://mysql.secsup.org/pub/software/mysql/Downloads/MySQLGUITools/
 
 WANTLIB=	ICE SM X11 c crypto fontconfig freetype m \
 		pthread ssl stdc++ z \
 		ORBit-2 art_lgpl_2 atk-1.0 atkmm-1.6 bonobo-2 \
 		bonobo-activation bonoboui-2 gconf-2 gdk-x11-2.0 \
-		gdk_pixbuf-2.0 gdkmm-2.4 glade-2.0 glibmm-2.4 \
+		gdk_pixbuf-2.0 gdkmm-2.4 glibmm-2.4 \
 		gnome-2 gnomecanvas-2 gnomeprint-2-2.>=1.0 \
 		gnomeprintui-2-2.>=1.0 gnomeui-2 gnomevfs-2 gtk-x11-2.0 \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 \
@@ -33,28 +33,30 @@ WANTLIB=	ICE SM X11 c crypto fontconfig freetype m \
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
-		::devel/mysql-gui-common \
-		::textproc/p5-XML-Parser
-RUN_DEPENDS=	::devel/mysql-gui-common
+		::textproc/p5-XML-Parser \
+		:mysql-gui-common->=5:devel/mysql-gui-common
+RUN_DEPENDS=	:mysql-gui-common->=5:devel/mysql-gui-common
 LIB_DEPENDS=	pcre::devel/pcre \
 		mysqlclient_r::databases/mysql \
 		glib-2.0,gmodule-2.0,gobject-2.0,gthread-2.0:glib2->=2.6.2:devel/glib2 \
+		glade-2.0::devel/libglade2 \
 		gtkmm-2.4::x11/gtk2mm \
 		xml2.>=6:libxml->=2.6.2:textproc/libxml \
 		gtkhtml-3.6:gtkhtml3-3.6.*:www/gtkhtml3
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
-CONFIGURE_STYLE=gnu
+USE_LIBTOOL=	Yes
+AUTOCONF_VERSION=2.59
+CONFIGURE_STYLE=autoconf
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--disable-dependency-tracking \
 		 --with-gtkhtml=libgtkhtml-3.6
 CONFIGURE_ENV+= CPPFLAGS=-I${LOCALBASE}/include
 CONFIGURE_ENV+= LDFLAGS=-L${LOCALBASE}/lib
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC} \
+			 ${WRKSRC}/source/linux/gtksourceview
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/mysql-query-browser
-
-post-extract:
-	@rm -rf ${WRKSRC}/../mysql-gui-common
 
 .include <bsd.port.mk>
