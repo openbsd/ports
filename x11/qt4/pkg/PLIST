@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2006/10/08 21:43:50 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2006/10/18 16:57:33 sturm Exp $
 %%SHARED%%
 bin/assistant4
 bin/designer4
@@ -161,7 +161,7 @@ include/X11/qt4/Qt/qatomic_arch.h
 include/X11/qt4/Qt/qatomic_arm.h
 include/X11/qt4/Qt/qatomic_boundschecker.h
 include/X11/qt4/Qt/qatomic_generic.h
-include/X11/qt4/Qt/qatomic_${MACHINE_ARCH}.h
+include/X11/qt4/Qt/qatomic_i386.h
 include/X11/qt4/Qt/qatomic_ia64.h
 include/X11/qt4/Qt/qatomic_mips.h
 include/X11/qt4/Qt/qatomic_parisc.h
@@ -963,7 +963,7 @@ include/X11/qt4/QtCore/qatomic_arch.h
 include/X11/qt4/QtCore/qatomic_arm.h
 include/X11/qt4/QtCore/qatomic_boundschecker.h
 include/X11/qt4/QtCore/qatomic_generic.h
-include/X11/qt4/QtCore/qatomic_${MACHINE_ARCH}.h
+include/X11/qt4/QtCore/qatomic_i386.h
 include/X11/qt4/QtCore/qatomic_ia64.h
 include/X11/qt4/QtCore/qatomic_mips.h
 include/X11/qt4/QtCore/qatomic_parisc.h
