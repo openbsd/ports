@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.5 2006/03/18 17:19:21 naddy Exp $
+$OpenBSD: patch-configure,v 1.6 2006/10/18 08:09:43 ajacoutot Exp $
 --- configure.orig	Tue Oct  1 16:05:55 2002
-+++ configure	Sat Mar 18 18:13:47 2006
++++ configure	Tue Oct 17 15:39:54 2006
 @@ -37,10 +37,10 @@
  #
  # Setup general configuration parameters.
@@ -16,6 +16,15 @@ $OpenBSD: patch-configure,v 1.5 2006/03/18 17:19:21 naddy Exp $
  DIR_LIBEXEC=$DIR_SBIN
  DIR_SPOOL=/var/spool/hylafax
  DIR_HTML=/var/httpd/htdocs/hylafax
+@@ -59,7 +59,7 @@ DSO=auto
+ GETTY=auto
+ HTML=no
+ PS=auto
+-SYSVINIT=auto
++SYSVINIT=no
+ FAXQ_SERVER=yes			# init script starts faxq
+ HFAXD_SERVER=yes		# init script starts hfaxd
+ HFAXD_OLD_PROTOCOL=no		# don't start old protocol
 @@ -72,8 +72,8 @@ DPS=no
  GS=no
  IMP=no
@@ -68,3 +77,22 @@ $OpenBSD: patch-configure,v 1.5 2006/03/18 17:19:21 naddy Exp $
  EOF
  	boom
  	return 1
+@@ -3669,17 +3669,8 @@ else
+ fi
+ 
+ # vgetty support
+-if [ -z "$PATH_VGETTY" ]; then
+-    PATH_VGETTY=`findApp vgetty /usr/libexec:/sbin:$PATH` 
+-    if [ -z "$PATH_VGETTY" ]; then
+-	PATH_VGETTY=/bin/vgetty
+-	Note "WARNING, no vgetty program found to handle a voice call, using $PATH_VGETTY."
+-    else
+-	Note "Looks like $PATH_VGETTY is the program to exec for a voice call."
+-    fi
+-else
++	PATH_VGETTY=${LOCALBASE}/libexec/vgetty
+     Note "Using $PATH_VGETTY as the program to exec for a voice call."
+-fi
+ 
+ # egetty support
+ if [ -z "$PATH_EGETTY" ]; then
