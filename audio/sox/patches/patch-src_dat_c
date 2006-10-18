@@ -1,22 +1,35 @@
-$OpenBSD: patch-src_dat_c,v 1.1 2005/07/02 16:27:56 naddy Exp $
---- src/dat.c.orig	Tue Sep 28 04:33:09 2004
-+++ src/dat.c	Fri Jun 24 11:15:45 2005
-@@ -85,7 +85,7 @@ int st_datstartwrite(ft_t ft)
-    srate = ft->info.rate;
-    dat->deltat = 1.0 / srate;
-    rate = ft->info.rate;
--   sprintf(s,"; Sample Rate %ld\015\n",rate);
-+   snprintf(s, sizeof(s), "; Sample Rate %ld\015\n", rate);
-    st_writes(ft, s);
+$OpenBSD: patch-src_dat_c,v 1.2 2006/10/18 15:41:06 naddy Exp $
+--- src/dat.c.orig	Wed Oct 18 15:57:26 2006
++++ src/dat.c	Wed Oct 18 15:58:46 2006
+@@ -90,9 +90,9 @@ int st_datstartwrite(ft_t ft)
+     dat->timevalue = 0.0;
+     dat->deltat = 1.0 / (double)ft->info.rate;
+     /* Write format comments to start of file */
+-    sprintf(s,"; Sample Rate %ld\015\n", (long)ft->info.rate);
++    snprintf(s, sizeof(s), "; Sample Rate %ld\015\n", (long)ft->info.rate);
+     st_writes(ft, s);
+-    sprintf(s,"; Channels %d\015\n", (int)ft->info.channels);
++    snprintf(s, sizeof(s), "; Channels %d\015\n", (int)ft->info.channels);
+     st_writes(ft, s);
  
-    return (ST_SUCCESS);
-@@ -130,7 +130,8 @@ st_ssize_t st_datwrite(ft_t ft, st_sampl
+     return (ST_SUCCESS);
+@@ -159,16 +159,16 @@ st_ssize_t st_datwrite(ft_t ft, st_sampl
+ 
+     /* Write time, then sample values, then CRLF newline */
      while(done < nsamp) {
-        sampval = *buf++ ;
-        sampval = sampval / 2.147483648e9;  /* normalize to approx 1.0 */
--       sprintf(s," %15.8g  %15.8g \015\n",dat->timevalue,sampval);
-+       snprintf(s, sizeof(s), " %15.8g  %15.8g \015\n",
-+                dat->timevalue, sampval);
-        st_writes(ft, s);
-        dat->timevalue += dat->deltat;
-        done++;
+-      sprintf(s," %15.8g ",dat->timevalue);
++      snprintf(s, sizeof(s), " %15.8g ",dat->timevalue);
+       st_writes(ft, s);
+       for (i=0; i<ft->info.channels; i++) {
+         sampval = *buf++ ;
+         sampval = sampval * LONGTOFLOAT;
+-        sprintf(s," %15.8g", sampval);
++        snprintf(s, sizeof(s), " %15.8g", sampval);
+         st_writes(ft, s);
+         done++;
+       }
+-      sprintf(s," \015\n");
++      snprintf(s, sizeof(s), " \015\n");
+       st_writes(ft, s);
+       dat->timevalue += dat->deltat;
+     }

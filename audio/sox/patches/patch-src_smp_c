@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_smp_c,v 1.1 2005/07/02 16:27:56 naddy Exp $
---- src/smp.c.orig	Tue Sep 28 04:33:09 2004
-+++ src/smp.c	Fri Jun 24 12:49:38 2005
-@@ -249,8 +249,9 @@ int st_smpstartread(ft_t ft) 
+$OpenBSD: patch-src_smp_c,v 1.2 2006/10/18 15:41:06 naddy Exp $
+--- src/smp.c.orig	Sat Sep  2 04:12:36 2006
++++ src/smp.c	Wed Oct 18 16:22:27 2006
+@@ -251,8 +251,9 @@ int st_smpstartread(ft_t ft) 
          for (commentlen = COMMENTLEN-1;
              commentlen >= 0 && header.comments[commentlen] == ' '; commentlen--)
            ;
@@ -13,7 +13,7 @@ $OpenBSD: patch-src_smp_c,v 1.1 2005/07/02 16:27:56 naddy Exp $
          ft->comment = smp->comment;
  
          st_report("SampleVision file name and comments: %s", ft->comment);
-@@ -380,8 +381,10 @@ int st_smpstartwrite(ft_t ft) 
+@@ -382,8 +383,10 @@ int st_smpstartwrite(ft_t ft) 
  
          strcpy(header.Id, SVmagic);
          strcpy(header.version, SVvers);
@@ -25,4 +25,4 @@ $OpenBSD: patch-src_smp_c,v 1.1 2005/07/02 16:27:56 naddy Exp $
 +		 "%-*.*s", NAMELEN, NAMELEN, ft->comment);
  
          /* Write file header */
-         if(st_write(ft, &header, 1, HEADERSIZE) != HEADERSIZE)
+         if(st_writebuf(ft, &header, 1, HEADERSIZE) != HEADERSIZE)

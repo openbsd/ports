@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_sndrtool_c,v 1.1 2005/07/02 16:27:56 naddy Exp $
---- src/sndrtool.c.orig	Tue Sep 28 04:33:09 2004
-+++ src/sndrtool.c	Fri Jun 24 11:48:21 2005
+$OpenBSD: patch-src_sndrtool_c,v 1.2 2006/10/18 15:41:06 naddy Exp $
+--- src/sndrtool.c.orig	Sat Sep  2 04:12:36 2006
++++ src/sndrtool.c	Wed Oct 18 16:27:38 2006
 @@ -252,7 +252,8 @@ static void sndtwriteheader(ft_t ft, st_
      st_writew (ft,10);
      st_writew (ft,4);
@@ -8,6 +8,6 @@ $OpenBSD: patch-src_sndrtool_c,v 1.1 2005/07/02 16:27:56 naddy Exp $
 -    sprintf (name_buf,"%.62s - File created by Sound Exchange",ft->filename);
 +    snprintf (name_buf, sizeof(name_buf),
 +	      "%.62s - File created by Sound Exchange", ft->filename);
-     st_write(ft, name_buf, 1, 96);
+     st_writebuf(ft, name_buf, 1, 96);
  }
  
