@@ -1,8 +1,0 @@
---- des/Makefile.orig	Wed Sep  1 08:02:06 1999
-+++ des/Makefile	Tue Sep 21 09:43:48 1999
-@@ -1,4 +1,4 @@
--CFLAGS=-O
-+#CFLAGS=-O
- 
- all:	des.a
- 

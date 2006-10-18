@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:02:07 espie Exp $
-bin/imm
-bin/immserv
-bin/lscomp
-share/doc/imm/
-share/doc/imm/README
-share/doc/imm/imm_readme.txt
-share/doc/imm/sdr2.plugin.S53.image.imm

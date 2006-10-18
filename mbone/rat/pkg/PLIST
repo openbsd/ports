@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:02:07 espie Exp $
-bin/rat
-@man man/man1/rat.1
-share/doc/rat/
-share/doc/rat/COPYRIGHT

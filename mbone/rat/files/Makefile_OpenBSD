@@ -1,7 +1,0 @@
-# $OpenBSD: Makefile_OpenBSD,v 1.1 2001/10/01 02:00:06 naddy Exp $
-
-INCS   = -I${X11BASE}/include -I${LOCALBASE}/include/tcl8.0\
-	 -I${LOCALBASE}/include/tcl8.0/generic -I${LOCALBASE}/include/tk8.0 \
-	 -I${LOCALBASE}/include/tk8.0/generic
-LDLIBS = -L${LOCALBASE}/lib -L${X11BASE}/lib -ltk80 -ltcl80 -lXext -lX11 -lm \
-	 -lossaudio

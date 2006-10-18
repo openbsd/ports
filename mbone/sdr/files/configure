@@ -1,9 +1,0 @@
-#!/bin/sh
-#
-# configure script for ${WRKSRC}.  It just decends into the
-# freebsd subdirectory and execs configure.
-#
-cd common
-./configure $@
-cd ../sdr/freebsd
-exec ./configure $@

@@ -1,7 +1,0 @@
-#!/bin/sh
-#
-# configure script for ${WRKSRC}.  It just decends into the
-# linux subdirectory and execs configure.
-#
-cd linux
-exec ./configure $@

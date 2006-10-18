@@ -1,8 +1,0 @@
---- md5/Makefile.orig	Sat Jun 19 22:01:01 1999
-+++ md5/Makefile	Sat Jun 19 22:01:05 1999
-@@ -1,4 +1,4 @@
--CFLAGS=-O
-+#CFLAGS=-O
- 
- all:	md5.o
- 
