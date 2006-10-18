@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.double,v 1.1 2006/10/18 17:40:38 steven Exp $
+bin/fftw-wisdom
+lib/libfftw3.a
+lib/libfftw3.la
+lib/pkgconfig/fftw3.pc
+@man man/man1/fftw-wisdom.1

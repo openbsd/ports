@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST-common,v 1.1 2006/10/18 17:40:38 steven Exp $
+bin/fftw-wisdom-to-conf
+include/fftw3.f
+include/fftw3.h
+@info info/fftw3.info
+@man man/man1/fftw-wisdom-to-conf.1
+share/doc/fftw3/
+share/doc/fftw3/fftw3.pdf

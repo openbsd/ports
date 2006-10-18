@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.float-shared,v 1.1 2006/10/18 17:40:38 steven Exp $
+@lib lib/libfftw3f.so.${LIBfftw3f_VERSION}

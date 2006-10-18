@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.double-shared,v 1.1 2006/10/18 17:40:38 steven Exp $
+@lib lib/libfftw3.so.${LIBfftw3_VERSION}
