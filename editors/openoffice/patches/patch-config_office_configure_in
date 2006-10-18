@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_office_configure_in,v 1.2 2006/08/20 03:36:52 kurt Exp $
---- config_office/configure.in.orig.port	Wed Jul 19 05:52:02 2006
-+++ config_office/configure.in	Fri Aug 18 15:47:42 2006
-@@ -755,6 +755,15 @@ case "$build_os" in
+$OpenBSD: patch-config_office_configure_in,v 1.3 2006/10/18 12:45:59 kurt Exp $
+--- config_office/configure.in.orig.port	Mon Aug 28 04:37:20 2006
++++ config_office/configure.in	Tue Oct 17 15:29:20 2006
+@@ -773,6 +773,15 @@ case "$build_os" in
  		AC_MSG_RESULT([$PTHREAD_LIBS])
  		_os=FreeBSD
  		;;
@@ -10,14 +10,14 @@ $OpenBSD: patch-config_office_configure_in,v 1.2 2006/08/20 03:36:52 kurt Exp $
 +                test_gtk=yes
 +                build_cairo=yes
 +                test_kde=yes
-+                PTHREAD_CFLAGS="-D_THREAD_SAFE"
++                PTHREAD_CFLAGS="-pthread -D_THREAD_SAFE"
 +                PTHREAD_LIBS="-pthread"
 +                _os=OpenBSD
 +                ;;
  	osf)
  		test_x=dontknow
  		test_cups=no
-@@ -2327,11 +2336,11 @@ dnl ====================================
+@@ -2367,11 +2376,11 @@ dnl ====================================
  dnl Checks for programs.
  dnl ===================================================================
  dnl Check whether there's a C pre-processor.
@@ -31,7 +31,7 @@ $OpenBSD: patch-config_office_configure_in,v 1.2 2006/08/20 03:36:52 kurt Exp $
     AC_PROG_CXXCPP
  fi
  
-@@ -2461,8 +2470,8 @@ if test "$_os" != "WINNT" -a \( "z$enabl
+@@ -2501,8 +2510,8 @@ if test "$_os" != "WINNT" -a \( "z$enabl
  	AIX)
  		PKGFORMAT=aix
  		;;
