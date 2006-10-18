@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: setup,v 1.2 2005/09/25 18:18:23 aanriot Exp $
+# $OpenBSD: setup,v 1.3 2006/10/18 08:20:25 ajacoutot Exp $
 
 $confdir = "@sysconfdir@/mgetty+sendfax";
 $defport = "cua00";
@@ -83,7 +83,7 @@ foreach $tty (@ttys) {
     foreach $port (split) {
 	if ($tty =~ /^\s*$port/) {
 	    print STDERR "replacing line $tty";
-	    $tty = "$port\t\"@prefix@/sbin/mgetty\"\tunknown\ton\n";
+	    $tty = "$port\t\"@prefix@/libexec/mgetty\"\tunknown\ton\n";
 	    $replaced{$port} = 1;
 	}
     }
@@ -92,7 +92,7 @@ $_ = $devices;
 foreach $port (split) {
     if (!$replaced{$port}) {
 	print STDERR "adding port $port\n";
-	push (@ttys, "$port\t\"@prefix@/sbin/mgetty\"\tunknown\ton\n");
+	push (@ttys, "$port\t\"@prefix@/libexec/mgetty\"\tunknown\ton\n");
     }
 }
 system ("mv -f /etc/ttys /etc/ttys.old");
