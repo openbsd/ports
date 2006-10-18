@@ -1,5 +1,5 @@
---- include/imapproxy.h.orig	Wed Feb  9 01:30:49 2005
-+++ include/imapproxy.h	Wed Feb  9 01:31:09 2005
+--- include/imapproxy.h.orig	Mon Feb 21 20:14:51 2005
++++ include/imapproxy.h	Wed Oct 18 11:47:02 2006
 @@ -141,7 +141,7 @@
  /* 
   * Common definitions 
@@ -9,3 +9,12 @@
  #define IMAP_UNTAGGED_OK        "* OK "           /* untagged OK response    */
  #define IMAP_TAGGED_OK          "1 OK "           /* tagged OK response      */
  #define BUFSIZE                 4096              /* default buffer size     */
+@@ -159,7 +159,7 @@
+ #define SELECT_STATUS_BUF_SIZE  256               /* size of select status   */
+ 
+ #ifndef DEFAULT_CONFIG_FILE
+-#define DEFAULT_CONFIG_FILE     "/etc/imapproxy.conf"
++#define DEFAULT_CONFIG_FILE     "!!SYSCONFDIR!!/imapproxy.conf"
+ #endif
+ 
+ #define LITERAL_PASSWORD        1
