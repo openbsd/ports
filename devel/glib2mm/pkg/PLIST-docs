@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.3 2006/06/06 12:55:15 bernd Exp $
+@comment $OpenBSD: PLIST-docs,v 1.4 2006/10/18 21:17:13 wilfried Exp $
 share/doc/glibmm-${V}/
 share/doc/glibmm-${V}/docs/
 share/doc/glibmm-${V}/docs/images/
@@ -15,7 +15,6 @@ share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1ArrayHandle.html
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1Cond-members.html
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1Cond.html
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1Container__Helpers_1_1ArrayHandleIterator.html
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1Container__Helpers_1_1ListHandleIterator-members.html
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1Container__Helpers_1_1ListHandleIterator.html
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1Container__Helpers_1_1SListHandleIterator.html
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1ConvertError-members.html
@@ -103,24 +102,6 @@ share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1PollFD-members.html
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1PollFD.html
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1Private-members.html
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1Private.html
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1Property-members.html
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1Property.html
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1PropertyBase-members.html
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1PropertyBase.html
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1PropertyBase__inherit__graph.png
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1PropertyProxy-members.html
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1PropertyProxy.html
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1PropertyProxy__Base-members.html
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1PropertyProxy__Base.html
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1PropertyProxy__Base__inherit__graph.png
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1PropertyProxy__ReadOnly-members.html
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1PropertyProxy__ReadOnly.html
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1PropertyProxy__ReadOnly__inherit__graph.png
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1PropertyProxy__WriteOnly-members.html
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1PropertyProxy__WriteOnly.html
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1PropertyProxy__WriteOnly__inherit__graph.png
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1PropertyProxy__inherit__graph.png
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1Property__inherit__graph.png
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1Quark-members.html
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1Quark.html
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1Quark__inherit__graph.png
@@ -185,9 +166,6 @@ share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1SignalProxyConnectionNode
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1SignalProxyNormal-members.html
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1SignalProxyNormal.html
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1SignalProxyNormal__inherit__graph.png
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1SignalProxyProperty-members.html
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1SignalProxyProperty.html
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1SignalProxyProperty__inherit__graph.png
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1SignalTimeout-members.html
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1SignalTimeout.html
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1Source-members.html
@@ -309,6 +287,7 @@ share/doc/glibmm-${V}/docs/reference/html/containers_8h.html
 share/doc/glibmm-${V}/docs/reference/html/convert_8h.html
 share/doc/glibmm-${V}/docs/reference/html/date_8h.html
 share/doc/glibmm-${V}/docs/reference/html/debug_8h.html
+share/doc/glibmm-${V}/docs/reference/html/deprecated.html
 share/doc/glibmm-${V}/docs/reference/html/dispatcher_8h.html
 share/doc/glibmm-${V}/docs/reference/html/doxygen.css
 share/doc/glibmm-${V}/docs/reference/html/doxygen.png
@@ -507,8 +486,6 @@ share/doc/glibmm-${V}/docs/reference/html/inherit__graph__81.png
 share/doc/glibmm-${V}/docs/reference/html/inherit__graph__82.png
 share/doc/glibmm-${V}/docs/reference/html/inherit__graph__83.png
 share/doc/glibmm-${V}/docs/reference/html/inherit__graph__84.png
-share/doc/glibmm-${V}/docs/reference/html/inherit__graph__85.png
-share/doc/glibmm-${V}/docs/reference/html/inherit__graph__86.png
 share/doc/glibmm-${V}/docs/reference/html/inherit__graph__9.png
 share/doc/glibmm-${V}/docs/reference/html/inherits.html
 share/doc/glibmm-${V}/docs/reference/html/init_8h.html

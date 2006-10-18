@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2006/09/18 11:40:07 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/10/18 21:17:13 wilfried Exp $
 
 COMMENT=		"C++ interface for glib2"
 COMMENT-docs=		"C++ interface for glib2 documentation"
 
-VERSION=		2.8.8
+VERSION=		2.10.7
 V=			2.4
 DISTNAME=		glibmm-${VERSION}
 PKGNAME=		glib2mm-${VERSION}
 PKGNAME-docs=		glib2mm-docs-${VERSION}
-SHARED_LIBS=		glibmm-2.4 			3.0 \
-			glibmm_generate_extra_defs-2.4	3.0
+SHARED_LIBS=		glibmm-2.4 			4.0 \
+			glibmm_generate_extra_defs-2.4	4.0
 
 CATEGORIES=		devel
 
@@ -23,7 +23,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/glibmm/2.8/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/glibmm/2.10/}
 
 MULTI_PACKAGES=		-docs
 SUBPACKAGE?=
@@ -35,7 +35,7 @@ PKG_ARCH=		*
 .else
 MODULES=		gettext
 LIB_DEPENDS=		sigc-2.0:libsigc++-2.*:devel/libsigc++-2 \
-			glib-2.0,gmodule-2.0,gobject-2.0:glib2->=2.6:devel/glib2 
+			glib-2.0,gmodule-2.0,gobject-2.0:glib2->=2.9:devel/glib2 
 .endif
 
 SEPARATE_BUILD=		concurrent

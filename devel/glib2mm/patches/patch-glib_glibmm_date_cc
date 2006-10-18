@@ -1,0 +1,20 @@
+$OpenBSD: patch-glib_glibmm_date_cc,v 1.1 2006/10/18 21:17:13 wilfried Exp $
+--- glib/glibmm/date.cc.orig	Thu May 11 19:29:44 2006
++++ glib/glibmm/date.cc	Wed Oct 18 19:19:09 2006
+@@ -71,16 +71,6 @@ void Date::set_parse(const Glib::ustring
+   g_date_set_parse(&gobject_, str.c_str());
+ }
+ 
+-#ifndef GLIBMM_DISABLE_DEPRECATED
+-
+-void Date::set_time(GTime time)
+-{
+-  //This method, and the C function that it wraps, are deprecated.
+-  g_date_set_time(&gobject_, time);
+-}
+-#endif // GLIBMM_DISABLE_DEPRECATED
+-
+-
+ void Date::set_time(time_t timet)
+ {
+   g_date_set_time_t(&gobject_, timet);

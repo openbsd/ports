@@ -1,0 +1,21 @@
+$OpenBSD: patch-glib_glibmm_date_h,v 1.1 2006/10/18 21:17:13 wilfried Exp $
+--- glib/glibmm/date.h.orig	Wed May 10 10:01:21 2006
++++ glib/glibmm/date.h	Wed Oct 18 19:19:15 2006
+@@ -119,17 +119,6 @@ enum DMY
+    */
+   void set_parse (const Glib::ustring& str);
+ 
+-  #ifndef GLIBMM_DISABLE_DEPRECATED
+-
+-  /** Sets the value of a date from a GTime (time_t) value. 
+-   *
+-   * @param time GTime value to set.
+-   *
+-   * @deprecated Please use set_time(time_t) or set_time(const GTimeVal&).
+-   */
+-  void set_time(GTime time);
+-  #endif // GLIBMM_DISABLE_DEPRECATED
+-
+ 
+   /** Sets the value of a date from a <type>time_t</type> value. 
+    *
