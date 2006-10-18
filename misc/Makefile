@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2006/07/15 20:21:24 steven Exp $
+# $OpenBSD: Makefile,v 1.91 2006/10/18 21:49:00 wilfried Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -70,7 +70,6 @@
      SUBDIR += ttyrec
      SUBDIR += viz
      SUBDIR += wmmand
-     SUBDIR += wmnetscapekiller
      SUBDIR += wmtimer
      SUBDIR += xcdroast
      SUBDIR += xd
