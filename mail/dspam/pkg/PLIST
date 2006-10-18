@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2006/06/08 14:41:08 todd Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/10/18 05:12:35 aanriot Exp $
 @newgroup _dspam:540
 @newuser _dspam:540:540:daemon:DSPAM Account:/var/dspam:/sbin/nologin
 %%SHARED%%
@@ -60,11 +60,15 @@ share/doc/dspam/relay.txt
 share/doc/dspam/sendmail.txt
 share/examples/dspam/
 share/examples/dspam/dspam.conf
+@sample ${SYSCONFDIR}/dspam.conf
 %%sqlite3%%
 %%sqlite%%
 %%mysql%%
 %%pgsql%%
 %%hash%%
-@exec install -o _dspam -g _dspam -m 755 -d /var/dspam
+@mode 755
+@owner _dspam
+@group _dspam
+@sample /var/dspam/
+@sample /var/dspam/data/
 @extraunexec rm -rf /var/dspam
-@extra ${SYSCONFDIR}/dspam.conf
