@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2006/10/18 18:22:56 pvalchev Exp $
+@lib lib/libtidy.so.${LIBtidy_VERSION}

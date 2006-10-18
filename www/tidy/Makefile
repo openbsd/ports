@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2005/10/05 09:39:20 bernd Exp $
+# $OpenBSD: Makefile,v 1.20 2006/10/18 18:22:56 pvalchev Exp $
 
 COMMENT=	"validate, correct, and pretty-print HTML files"
 
-TIDYDATE=	050921
+TIDYDATE=	051026
 DISTNAME=	tidy_src_${TIDYDATE}
 PKGNAME=	tidy-${TIDYDATE}
+SHARED_LIBS=	tidy 1.0
 
 CATEGORIES=     www
 
@@ -23,8 +24,8 @@ MASTER_SITES0=	${HOMEPAGE}docs/
 MASTER_SITES1=	${HOMEPAGE}test/
 EXTRACT_SUFX=	.tgz
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		tidy_docs_050705${EXTRACT_SUFX}:0 \
-		tidy_test_050919${EXTRACT_SUFX}:1
+		tidy_docs_051020${EXTRACT_SUFX}:0 \
+		tidy_test_051026${EXTRACT_SUFX}:1
 
 USE_GMAKE=	Yes
 
@@ -34,6 +35,9 @@ WRKDIST=	${WRKDIR}/tidy
 WRKBUILD=	${WRKDIST}/build/gmake
 
 DOCDIR=		${PREFIX}/share/doc/tidy
+
+MAKE_FLAGS=	TIDY_MAJOR=${LIBtidy_VERSION:R} TIDY_MINOR=${LIBtidy_VERSION:E}
+FAKE_FLAGS=	TIDY_MAJOR=${LIBtidy_VERSION:R} TIDY_MINOR=${LIBtidy_VERSION:E}
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}

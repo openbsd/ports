@@ -1,6 +1,5 @@
-$OpenBSD: patch-build_gmake_Makefile,v 1.2 2005/07/19 08:10:10 aanriot Exp $
---- build/gmake/Makefile.orig	Tue May  3 08:58:08 2005
-+++ build/gmake/Makefile	Tue Jul 12 12:03:54 2005
+--- build/gmake/Makefile.orig	Fri Jul 15 08:58:10 2005
++++ build/gmake/Makefile	Wed Oct 18 19:34:22 2006
 @@ -58,8 +58,8 @@ SHELL=/bin/sh
  PROJECT=tidy
  
@@ -19,7 +18,7 @@ $OpenBSD: patch-build_gmake_Makefile,v 1.2 2005/07/19 08:10:10 aanriot Exp $
 -CC= gcc
 -CFLAGS= -g -Wall -Wno-switch -Wno-parentheses -I $(INCDIR)
 +#CC= gcc
-+CFLAGS+= -I $(INCDIR)
++CFLAGS+= -fPIC -I $(INCDIR)
  # flags only supported with gcc 3.x
  # CFLAGS += -Wunused-parameter
  
@@ -29,16 +28,28 @@ $OpenBSD: patch-build_gmake_Makefile,v 1.2 2005/07/19 08:10:10 aanriot Exp $
  # OTHERCFLAGS+= -DSUPPORT_ACCESSIBILITY_CHECKS=1 -DSUPPORT_UTF16_ENCODINGS=1 -DSUPPORT_ASIAN_ENCODINGS=1
  ifdef SUPPORT_UTF16_ENCODINGS
  CFLAGS += -DSUPPORT_UTF16_ENCODINGS=$(SUPPORT_UTF16_ENCODINGS)
-@@ -115,7 +115,7 @@ LIBSUFFIX = .a
+@@ -112,10 +112,12 @@ TIDY_MINOR = 0
+ # This will come from autoconf again
+ LIBPREFIX = lib
+ LIBSUFFIX = .a
++SHAREDLIBSUFFIX = .so
  OBJSUF = .o
  
  LIBRARY = $(LIBDIR)/$(LIBPREFIX)$(PROJECT)$(LIBSUFFIX)
 -AR=ar -r
++SHAREDLIBRARY = $(LIBDIR)/$(LIBPREFIX)$(PROJECT)$(SHAREDLIBSUFFIX).$(TIDY_MAJOR).$(TIDY_MINOR)
 +#AR=ar -r
  
  XSLTPROC = xsltproc
  
-@@ -164,7 +164,7 @@ doc:    $(DOCS)
+@@ -158,17 +160,21 @@ LIBHFILES= \
+         $(SRCDIR)/tidy-int.h
+ 
+ 
+-all:    $(LIBRARY) $(EXES)
++all:    $(LIBRARY) $(SHAREDLIBRARY) $(EXES)
+ 
+ doc:    $(DOCS)
  
  $(LIBRARY): $(OBJFILES)
  	if [ ! -d $(LIBDIR) ]; then mkdir $(LIBDIR); fi
@@ -47,7 +58,28 @@ $OpenBSD: patch-build_gmake_Makefile,v 1.2 2005/07/19 08:10:10 aanriot Exp $
  ifdef RANLIB
  	$(RANLIB) $@
  endif
-@@ -205,19 +205,19 @@ clean:
+ 
++$(SHAREDLIBRARY): $(OBJFILES)
++	if [ ! -d $(LIBDIR) ]; then mkdir $(LIBDIR); fi
++	$(CC) -shared -fPIC -o $(SHAREDLIBRARY) $(OBJFILES)
++
+ $(OBJDIR)/%$(OBJSUF):	$(SRCDIR)/%.c $(HFILES) $(LIBHFILES) Makefile
+ 	if [ ! -d $(OBJDIR) ]; then mkdir $(OBJDIR); fi
+ 	$(CC) $(CFLAGS) $(OTHERCFLAGS) -o $@ -c $<
+@@ -182,10 +188,10 @@ $(BINDIR)/tab2space: $(APPDIR)/tab2space
+ 	$(CC) $(CFLAGS) $(OTHERCFLAGS) -o $@ $(APPDIR)/tab2space.c $(LIBS)
+ 
+ $(HELPXML): $(BINDIR)/$(PROJECT)
+-	$(BINDIR)/$(PROJECT) -xml-help > $@
++	LD_LIBRARY_PATH=$(libinst) $(bininst)/$(PROJECT) -xml-help > $@
+ 
+ $(CONFIGXML): $(BINDIR)/$(PROJECT)
+-	$(BINDIR)/$(PROJECT) -xml-config > $@
++	LD_LIBRARY_PATH=$(libinst) $(bininst)/$(PROJECT) -xml-config > $@
+ 
+ $(DOCDIR)/quickref.html: $(DOCDIR)/quickref-html.xsl $(CONFIGXML)
+ 	$(XSLTPROC) -o $@ $(DOCDIR)/quickref-html.xsl $(CONFIGXML)
+@@ -205,19 +211,20 @@ clean:
  	if [ "$(BINDIR)" != "$(TOPDIR)" -a -d $(BINDIR) ]; then rmdir $(BINDIR); fi
  
  installhdrs: $(HFILES)
@@ -59,6 +91,7 @@ $OpenBSD: patch-build_gmake_Makefile,v 1.2 2005/07/19 08:10:10 aanriot Exp $
  	if [ ! -d "$(libinst)" ]; then mkdir -p "$(libinst)"; fi
 -	cp -f $(LIBRARY) "$(libinst)/"
 +	${BSD_INSTALL_DATA} $(LIBRARY) "$(libinst)/"
++	${BSD_INSTALL_DATA} $(SHAREDLIBRARY) "$(libinst)/"
  
  installexes: $(EXES)
 -	if [ ! -d "$(bininst)" ]; then mkdir -p "$(bininst)"; fi
@@ -72,4 +105,5 @@ $OpenBSD: patch-build_gmake_Makefile,v 1.2 2005/07/19 08:10:10 aanriot Exp $
 +	if [ ! -d "$(maninst)/man1" ]; then ${BSD_INSTALL_MAN_DIR} "$(maninst)/man1"; fi;
 +	${BSD_INSTALL_MAN} $(DOCDIR)/tidy.1 "$(maninst)/man1/tidy.1";
  
- install: installhdrs installib installmanpage installexes
+-install: installhdrs installib installmanpage installexes
++install: installib installexes installmanpage installhdrs

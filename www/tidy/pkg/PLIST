@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/07/19 08:10:10 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/10/18 18:22:56 pvalchev Exp $
+%%SHARED%%
 bin/tab2space
 bin/tidy
 include/tidy/
