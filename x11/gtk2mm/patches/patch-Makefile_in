@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2006/10/18 21:18:30 wilfried Exp $
+--- Makefile.in.orig	Fri Sep 22 18:19:22 2006
++++ Makefile.in	Wed Oct 18 20:43:46 2006
+@@ -217,7 +217,7 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ @GTKMM_ATKMM_ENABLED_FALSE@ATK_SUBDIR = 
+ @GTKMM_ATKMM_ENABLED_TRUE@ATK_SUBDIR = atk
+-SUBDIRS = tools $(ATK_SUBDIR) pango gdk gtk @EXAMPLE_SUBDIR@ @DEMO_SUBDIR@ @DOCS_SUBDIR@ tests MSVC_Net2003
++SUBDIRS = tools $(ATK_SUBDIR) pango gdk gtk @DOCS_SUBDIR@ MSVC_Net2003
+ DIST_SUBDIRS = $(SUBDIRS) scripts
+ EXTRA_DIST = build_shared/Makefile_build.am_fragment \
+ 		  build_shared/Makefile_build_gensrc.am_fragment \
