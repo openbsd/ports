@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_file_export_c,v 1.4 2006/10/18 18:02:13 ckuethe Exp $
+--- src/file_export.c.orig	Wed Oct 18 11:25:05 2006
++++ src/file_export.c	Wed Oct 18 11:24:15 2006
+@@ -43,6 +43,7 @@
+ #include <math.h>
+ #include <stdio.h>
+ #include <string.h>
++#include <stdlib.h>
+ #include <sys/stat.h>
+ #include <sys/types.h>
+ #include <unistd.h>
+@@ -102,8 +103,11 @@ static gboolean
+ copy_file_fd_sync (FILE *from, FILE *to)
+ {
+     gboolean result = FALSE;
+-    gchar data[READ_WRITE_BLOCKSIZE];
++    char *data;
+ 
++    if ((data = malloc(READ_WRITE_BLOCKSIZE)) == NULL)
++	return FALSE;
++
+     if((from) && (to))
+     {
+ 	int read_bytes = 0, write_bytes = 0;
+@@ -140,6 +144,7 @@ copy_file_fd_sync (FILE *from, FILE *to)
+ 	    
+ 	} while(!(feof(from)));
+     }
++    free(data);
+     if (!result)
+ 	result = fsync (fileno (to));
+     return(result);
