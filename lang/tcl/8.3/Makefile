@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2006/02/04 23:50:20 steven Exp $
+# $OpenBSD: Makefile,v 1.23 2006/10/18 13:10:37 naddy Exp $
 # Uses pthreads (can but does not at the moment)
 
 COMMENT=	"Tool Command Language"
@@ -6,7 +6,7 @@ COMMENT=	"Tool Command Language"
 VERSION=	8.3.5
 
 DISTNAME=	tcl${VERSION}-src
-PKGNAME=	tcl-${VERSION}
+PKGNAME=	tcl-${VERSION}p0
 SHARED_LIBS=	tcl83 1.3
 CATEGORIES=	lang lang/tcl
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tcl/}

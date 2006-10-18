@@ -1,25 +1,16 @@
-$OpenBSD: patch-configure,v 1.10 2006/01/08 12:57:04 alek Exp $
---- configure.orig	Fri Oct 18 20:44:46 2002
-+++ configure	Fri Nov 29 16:28:19 2002
-@@ -5441,9 +5441,14 @@ fi
- if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
+$OpenBSD: patch-configure,v 1.11 2006/10/18 13:10:37 naddy Exp $
+--- configure.orig	Fri Oct 18 22:44:46 2002
++++ configure	Wed Oct 18 13:02:50 2006
+@@ -5443,7 +5443,7 @@ if eval "test \"`echo '$ac_cv_header_'$a
    
--		# NetBSD/SPARC needs -fPIC, -fpic will not do.
--		SHLIB_CFLAGS="-fPIC"
+ 		# NetBSD/SPARC needs -fPIC, -fpic will not do.
+ 		SHLIB_CFLAGS="-fPIC"
 -		SHLIB_LD="ld -Bshareable -x"
-+		# OpenBSD/SPARC[64] needs -fPIC, -fpic will not do.
-+		case `machine` in
-+		sparc|sparc64)
-+			SHLIB_CFLAGS="-fPIC";;
-+		*)
-+			SHLIB_CFLAGS="-fpic";;
-+		esac
 +		SHLIB_LD="${CC} -shared ${SHLIB_CFLAGS}"
  		SHLIB_LD_LIBS=""
  		SHLIB_SUFFIX=".so"
  		DL_OBJS="tclLoadDl.o"
-@@ -5465,11 +5470,11 @@ if (eval "$ac_cpp conftest.$ac_ext") 2>&
+@@ -5465,11 +5465,11 @@ if (eval "$ac_cpp conftest.$ac_ext") 2>&
    egrep "yes" >/dev/null 2>&1; then
    rm -rf conftest*
    echo "$ac_t""yes" 1>&6
@@ -33,7 +24,7 @@ $OpenBSD: patch-configure,v 1.10 2006/01/08 12:57:04 alek Exp $
  		
  fi
  rm -f conftest*
-@@ -6292,7 +6297,7 @@ else
+@@ -6292,7 +6292,7 @@ else
      esac
      TCL_SHLIB_CFLAGS=""
      eval "TCL_LIB_FILE=libtcl${TCL_UNSHARED_LIB_SUFFIX}"
@@ -42,7 +33,7 @@ $OpenBSD: patch-configure,v 1.10 2006/01/08 12:57:04 alek Exp $
  fi
  
  # tclConfig.sh needs a version of the _LIB_SUFFIX that has been eval'ed
-@@ -6359,7 +6364,7 @@ eval "TCL_STUB_LIB_FILE=libtclstub${TCL_
+@@ -6359,7 +6359,7 @@ eval "TCL_STUB_LIB_FILE=libtclstub${TCL_
  # Replace DBGX with TCL_DBGX
  eval "TCL_STUB_LIB_FILE=\"${TCL_STUB_LIB_FILE}\""
  

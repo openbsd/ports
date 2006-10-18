@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2002/11/29 09:45:51 kevlo Exp $
---- Makefile.in.orig	Fri Oct 18 20:44:46 2002
-+++ Makefile.in	Fri Nov 29 16:28:19 2002
+$OpenBSD: patch-Makefile_in,v 1.2 2006/10/18 13:10:37 naddy Exp $
+--- Makefile.in.orig	Fri Oct 18 22:44:46 2002
++++ Makefile.in	Wed Oct 18 12:59:42 2006
 @@ -37,6 +37,9 @@ mandir			= @mandir@
  # when installing files.
  INSTALL_ROOT		=
@@ -20,7 +20,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2002/11/29 09:45:51 kevlo Exp $
  
  libraries:
  
-@@ -418,12 +421,15 @@ doc:
+@@ -418,13 +421,16 @@ doc:
  ${TCL_LIB_FILE}: ${OBJS} ${STUB_LIB_FILE}
  	rm -f ${TCL_LIB_FILE}
  	@MAKE_LIB@
@@ -30,14 +30,15 @@ $OpenBSD: patch-Makefile_in,v 1.1 2002/11/29 09:45:51 kevlo Exp $
  	rm -f ${STUB_LIB_FILE}
  	@MAKE_STUB_LIB@
 -	$(RANLIB) ${STUB_LIB_FILE}
-+
+ 
 +libtcl83.a: ${OBJS}
 +	rm -f libtcl83.a
 +	ar cr libtcl83.a ${OBJS}
 +	$(RANLIB) libtcl83.a
- 
++
  # Make target which outputs the list of the .o contained in the Tcl lib
  # usefull to build a single big shared library containing Tcl and other
+ # extensions.  used for the Tcl Plugin.  -- dl
 @@ -559,8 +565,10 @@ install-binaries: binaries
  	    fi
  	@echo "Installing $(TCL_LIB_FILE) to $(LIB_INSTALL_DIR)/"
@@ -78,15 +79,15 @@ $OpenBSD: patch-Makefile_in,v 1.1 2002/11/29 09:45:51 kevlo Exp $
 -		$(GENERIC_DIR)/tclPlatDecls.h ; \
 +	@echo "Installing libraries, tcl.h and other headers"
 +	@for i in $(GENERIC_DIR)/*.h ; \
-+	    do \
-+	    echo "Installing $$i"; \
-+	    $(INSTALL_DATA) $$i $(INSTALL_ROOT)$(GENERIC_INCLUDE_INSTALL_DIR); \
-+	    done;
-+	@for i in $(UNIX_DIR)/*.h ; \
  	    do \
 -	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR); \
-+	    $(INSTALL_DATA) $$i $(INSTALL_ROOT)$(UNIX_INCLUDE_INSTALL_DIR); \
++	    echo "Installing $$i"; \
++	    $(INSTALL_DATA) $$i $(INSTALL_ROOT)$(GENERIC_INCLUDE_INSTALL_DIR); \
  	    done;
++	@for i in $(UNIX_DIR)/*.h ; \
++	    do \
++	    $(INSTALL_DATA) $$i $(INSTALL_ROOT)$(UNIX_INCLUDE_INSTALL_DIR); \
++	    done;
 +	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tcl.h $(INCLUDE_INSTALL_DIR)/tcl.h
 +	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tclDecls.h $(INCLUDE_INSTALL_DIR)/tclDecls.h
 +	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tclPlatDecls.h $(INCLUDE_INSTALL_DIR)/tclPlatDecls.h

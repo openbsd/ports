@@ -1,6 +1,6 @@
-$OpenBSD: patch-tclConfig_sh_in,v 1.1 2003/11/08 04:50:58 kevlo Exp $
---- tclConfig.sh.in.orig	2002-10-18 20:44:46.000000000 +0000
-+++ tclConfig.sh.in	2003-11-08 09:30:18.000000000 +0000
+$OpenBSD: patch-tclConfig_sh_in,v 1.2 2006/10/18 13:10:37 naddy Exp $
+--- tclConfig.sh.in.orig	Fri Oct 18 22:44:46 2002
++++ tclConfig.sh.in	Wed Oct 18 12:59:42 2006
 @@ -109,10 +109,6 @@ TCL_RANLIB='@RANLIB@'
  TCL_LIB_FLAG='@TCL_LIB_FLAG@'
  
@@ -37,9 +37,9 @@ $OpenBSD: patch-tclConfig_sh_in,v 1.1 2003/11/08 04:50:58 kevlo Exp $
 -# String to pass to linker to pick up the Tcl stub library from its
  # installed directory.
  TCL_STUB_LIB_SPEC='@TCL_STUB_LIB_SPEC@'
- 
+-
 -# Path to the Tcl stub library in the build directory.
 -TCL_BUILD_STUB_LIB_PATH='@TCL_BUILD_STUB_LIB_PATH@'
--
+ 
  # Path to the Tcl stub library in the install directory.
  TCL_STUB_LIB_PATH='@TCL_STUB_LIB_PATH@'

@@ -1,20 +1,13 @@
-$OpenBSD: patch-configure,v 1.4 2006/01/08 12:43:52 alek Exp $
---- configure.orig	Mon Mar  8 23:51:26 1999
-+++ configure	Tue Feb  5 16:06:42 2002
-@@ -4095,16 +4095,21 @@ rm -f conftest*
- fi
+$OpenBSD: patch-configure,v 1.5 2006/10/18 13:10:37 naddy Exp $
+--- configure.orig	Tue Mar  9 07:51:26 1999
++++ configure	Wed Oct 18 12:33:05 2006
+@@ -4096,15 +4096,15 @@ fi
  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
    echo "$ac_t""yes" 1>&6
--  
+   
 -	    SHLIB_CFLAGS="-fpic"
 -	    SHLIB_LD="ld -Bshareable -x"
-+
-+	    case `machine` in
-+	    sparc|sparc64)
-+		SHLIB_CFLAGS="-fPIC";;
-+	    *)
-+		SHLIB_CFLAGS="-fpic";;
-+	    esac
++	    SHLIB_CFLAGS="-fPIC"
 +	    SHLIB_LD="${CC} -shared ${SHLIB_CFLAGS}"
  	    SHLIB_LD_LIBS=""
  	    SHLIB_SUFFIX=".so"
@@ -27,7 +20,7 @@ $OpenBSD: patch-configure,v 1.4 2006/01/08 12:43:52 alek Exp $
  	
  else
    echo "$ac_t""no" 1>&6
-@@ -4656,10 +4661,9 @@ if test "$tcl_ok" = "yes" -a "${SHLIB_SU
+@@ -4656,10 +4656,9 @@ if test "$tcl_ok" = "yes" -a "${SHLIB_SU
      TCL_LD_SEARCH_FLAGS="${LD_SEARCH_FLAGS}"
      eval "TCL_LIB_FILE=libtcl${TCL_SHARED_LIB_SUFFIX}"
      if test "x$DL_OBJS" = "xtclLoadAout.o"; then
