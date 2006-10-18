@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/09 10:20:24 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/10/18 17:56:14 espie Exp $
 
 CATEGORIES=		lang
 V=			5.6.18
@@ -39,5 +39,13 @@ WANTLIB=		ICE Xrender readline SM freetype Xt pthread \
 			c Xinerama Xft Xpm m fontconfig X11 ncurses
 
 LIB_DEPENDS=		jpeg::graphics/jpeg
+SUBST_VARS+=		BOOT
 
 .include <bsd.port.mk>
+
+.for _m in ${MACHINE_ARCH}
+.  if !empty(LP64_ARCHS:M${_m})
+BOOT=boot64
+.  endif
+.endfor
+BOOT?=boot32

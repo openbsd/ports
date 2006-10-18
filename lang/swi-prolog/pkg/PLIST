@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/09 10:20:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/10/18 17:56:14 espie Exp $
 %%SHARED%%
 bin/pl
 bin/plld
@@ -34,7 +34,7 @@ lib/pl-${V}/boot/syspred.pl
 lib/pl-${V}/boot/toplevel.pl
 lib/pl-${V}/boot/topvars.pl
 lib/pl-${V}/boot/writef.pl
-lib/pl-${V}/boot32.prc
+lib/pl-${V}/${BOOT}.prc
 lib/pl-${V}/doc/
 lib/pl-${V}/doc/Manual/
 lib/pl-${V}/doc/Manual/Bibliography.html
