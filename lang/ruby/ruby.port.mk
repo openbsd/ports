@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.6 2006/08/23 21:12:24 sturm Exp $
+# $OpenBSD: ruby.port.mk,v 1.7 2006/10/18 13:41:36 bernd Exp $
 
 # ruby module
 
@@ -28,7 +28,6 @@ SUBST_VARS=MODRUBY_REV MODRUBY_ARCH SUB REV
 
 .if ${CONFIGURE_STYLE:L:Mgem}
 EXTRACT_SUFX=	.gem
-EXTRACT_ONLY=
 
 BUILD_DEPENDS+=	::devel/ruby-gems
 RUN_DEPENDS+=	::devel/ruby-gems
@@ -39,7 +38,24 @@ SUBST_VARS+=	DISTNAME
 GEM=		${LOCALBASE}/bin/gem
 GEM_BASE=	${PREFIX}/lib/ruby/gems/${MODRUBY_REV}
 GEM_FLAGS=	--local --rdoc --no-force
+_GEM_CONTENT=	${WRKDIR}/gem-content
+_GEM_DATAFILE=	${_GEM_CONTENT}/data.tar.gz
+_GEM_PATCHED=	${DISTNAME}${EXTRACT_SUFX}
 
+.  if !target(do-extract)
+do-extract:
+	@mkdir -p ${_GEM_CONTENT} ${WRKDIST}
+	@cd ${_GEM_CONTENT} && tar -xf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
+	@cd ${WRKDIST} && tar -xzf ${_GEM_DATAFILE} && rm ${_GEM_DATAFILE}
+.  endif
+.  if !target(pre-fake)
+pre-fake:
+	@${ECHO_MSG} "===>  Writing patched gem for ${FULLPKGNAME}${_MASTER}"
+# "special" handling for ruby tar, included in ruby-gems
+	@cd ${WRKDIST} && find . -type f \! -name '*.orig' -print | \
+		pax -wz -s '/^\.\///' -f ${_GEM_DATAFILE}
+	@cd ${_GEM_CONTENT} && tar -cf ${WRKDIR}/${_GEM_PATCHED} *.gz
+.  endif
 .  if !target(do-regress)
 # XXX gem errors out w/o unit tests to run and I have not found any gem
 # which actually supports tests
@@ -62,7 +78,7 @@ NO_REGRESS=	Yes
 do-install:
 	@${INSTALL_DATA_DIR} ${GEM_BASE}
 	@${SUDO} ${GEM} install ${GEM_FLAGS} --install-dir ${GEM_BASE} \
-		${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
+		${WRKDIR}/${_GEM_PATCHED}
 	@if [ -d ${GEM_BASE}/bin ]; then \
 		for f in ${GEM_BASE}/bin/*; do \
 			mv $$f ${PREFIX}/bin; \
