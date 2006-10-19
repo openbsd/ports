@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.7 2005/12/25 20:23:18 naddy Exp $
+$OpenBSD: patch-Makefile_in,v 1.8 2006/10/19 09:16:32 wilfried Exp $
 --- Makefile.in.orig	Fri Jun 14 23:12:25 2002
-+++ Makefile.in	Sat Aug 10 19:49:59 2002
-@@ -29,7 +29,7 @@ FLTKLIBDIR	=	@ac_fltk_libraries@
++++ Makefile.in	Thu Oct 19 11:14:03 2006
+@@ -29,25 +29,25 @@ FLTKLIBDIR	=	@ac_fltk_libraries@
  # Program options...
  #
  
@@ -9,8 +9,11 @@ $OpenBSD: patch-Makefile_in,v 1.7 2005/12/25 20:23:18 naddy Exp $
 +ARFLAGS	=	r
  CFLAGS	=	-I. -I.. -I$(FLTKROOT)/include @CFLAGS@ @ac_fltk2@
  CXXFLAGS =	-I. -I.. -I$(FLTKROOT)/include @CXXFLAGS@ @ac_fltk2@
- LIBS	=	@ac_fltk_static@ -L$(FLTKROOT)/lib @LIBS@ -lXext -lX11 -lm -ljpeg -lpng @ac_fltk_dso@ $(GLLIB)
-@@ -39,15 +39,15 @@ LDFLAGS	=	@LDFLAGS@
+-LIBS	=	@ac_fltk_static@ -L$(FLTKROOT)/lib @LIBS@ -lXext -lX11 -lm -ljpeg -lpng @ac_fltk_dso@ $(GLLIB)
++LIBS	=	@ac_fltk_static@ -L$(FLTKROOT)/lib @LIBS@ -lXext -lX11 -lm -ljpeg -lpng -lz @ac_fltk_dso@ $(GLLIB)
+ LDFLAGS	=	@LDFLAGS@
+ 
+ #
  # Rules...
  #
  
