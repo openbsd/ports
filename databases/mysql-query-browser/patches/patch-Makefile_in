@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2006/10/19 07:16:32 wilfried Exp $
+--- Makefile.in.orig	Wed Oct 18 13:48:29 2006
++++ Makefile.in	Wed Oct 18 14:01:16 2006
+@@ -199,7 +199,7 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = library source res images po
++SUBDIRS = library source res images
+ mysqlqb_in_files = MySQLQueryBrowser.desktop.in
+ mysqlqbdatadir = $(datadir)/applications
+ mysqlqbdata_DATA = MySQLQueryBrowser.desktop
