@@ -1,0 +1,23 @@
+$OpenBSD: patch-SrcUnix_espws-2_0_FileBrowser_cxx,v 1.1.1.1 2006/10/19 16:24:52 mbalmer Exp $
+--- SrcUnix/espws-2.0/FileBrowser.cxx.orig	Fri Mar 29 14:11:11 2002
++++ SrcUnix/espws-2.0/FileBrowser.cxx	Thu Oct 19 17:59:13 2006
+@@ -467,7 +467,7 @@ FileBrowser::load(const char *directory)
+ 
+     num_files = filename_list(filename, &files);
+ #else
+-    num_files = filename_list(directory_, &files);
++    num_files = fl_filename_list(directory_, &files);
+ #endif /* WIN32 || __EMX__ */
+ 
+     if (num_files <= 0)
+@@ -480,8 +480,8 @@ FileBrowser::load(const char *directory)
+       {
+ 	sprintf(filename, "%s/%s", directory_, files[i]->d_name);
+ 
+-	if (filename_isdir(filename) ||
+-            filename_match(files[i]->d_name, pattern_))
++	if (fl_filename_isdir(filename) ||
++            fl_filename_match(files[i]->d_name, pattern_))
+           add(files[i]->d_name, FileIcon::find(filename));
+       }
+ 

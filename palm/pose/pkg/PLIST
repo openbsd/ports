@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/19 16:24:52 mbalmer Exp $
+bin/pose

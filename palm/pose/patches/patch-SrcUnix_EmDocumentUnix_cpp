@@ -1,0 +1,12 @@
+$OpenBSD: patch-SrcUnix_EmDocumentUnix_cpp,v 1.1.1.1 2006/10/19 16:24:52 mbalmer Exp $
+--- SrcUnix/EmDocumentUnix.cpp.orig	Fri Mar 29 14:11:19 2002
++++ SrcUnix/EmDocumentUnix.cpp	Thu Oct 19 17:59:13 2006
+@@ -95,7 +95,7 @@ void EmDocumentUnix::HostSaveScreen (con
+ 	string	fullPath = destRef.GetFullPath ();
+ 	char*	fNameExt = (char*) malloc (fullPath.size () + 4);
+ 	strcpy (fNameExt, fullPath.c_str ());
+-	filename_setext (fNameExt, ".ppm");
++	fl_filename_setext (fNameExt, ".ppm");
+ 
+ 	FILE* f = fopen (fNameExt, "wb");
+ 	if (f)

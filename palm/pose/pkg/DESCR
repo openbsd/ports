@@ -1,0 +1,11 @@
+Palm OS Emulator is an application that emulates the hardware for most
+Palm Computing Platform Hardware devices (e.g., Pilot, PalmPilot, Palm
+III, Palm V, Palm VII, etc.).
+
+With the Palm OS Emulator, you can emulate the functions of a Palm
+hardware device, including running the built-in application, as well as
+installing and running 3rd party applications.
+
+To use the Palm OS Emulator you will also need to download the Emulator
+Skins from http://www.palmos.com/dev/tools/emulator/ and you need to
+get hold of a Palm OS ROM Image.

@@ -1,0 +1,14 @@
+$OpenBSD: patch-SrcShared_EmCommon_h,v 1.1.1.1 2006/10/19 16:24:52 mbalmer Exp $
+--- SrcShared/EmCommon.h.orig	Fri Mar 29 14:11:14 2002
++++ SrcShared/EmCommon.h	Thu Oct 19 17:59:13 2006
+@@ -25,6 +25,10 @@
+ // EmTypes.h could pull in some system headers before we have a chance to include
+ // EmCommonMac.h.
+ 
++#if defined(__OpenBSD__)
++#define BROKEN_VIRTUAL_DEFAULT_ARGUMENTS
++#endif
++
+ #define PP_Suppress_Notes_20			1
+ #define PP_Suppress_Notes_21			1
+ #define PP_Suppress_Notes_22			1

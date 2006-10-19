@@ -1,0 +1,39 @@
+$OpenBSD: patch-SrcUnix_espws-2_0_FileIcon_cxx,v 1.1.1.1 2006/10/19 16:24:52 mbalmer Exp $
+--- SrcUnix/espws-2.0/FileIcon.cxx.orig	Fri Mar 29 14:11:11 2002
++++ SrcUnix/espws-2.0/FileIcon.cxx	Thu Oct 19 17:59:13 2006
+@@ -230,7 +230,7 @@ FileIcon::find(const char *filename,	// 
+   // is found...
+   for (current = first_; current != (FileIcon *)0; current = current->next_)
+     if ((current->type_ == filetype || current->type_ == ANY) &&
+-        filename_match(filename, current->pattern_))
++        fl_filename_match(filename, current->pattern_))
+       break;
+ 
+   // Return the match (if any)...
+@@ -472,7 +472,7 @@ FileIcon::load(const char *f)	// I - Fil
+   const char	*ext;		// File extension
+ 
+ 
+-  if ((ext = filename_ext(f)) == NULL)
++  if ((ext = fl_filename_ext(f)) == NULL)
+   {
+     fprintf(stderr, "FileIcon::load(): Unknown file type for \"%s\".\n", f);
+     return;
+@@ -1089,7 +1089,7 @@ load_kde_icons(const char *directory)	//
+ 
+ 
+   entries = (dirent **)0;
+-  n       = filename_list(directory, &entries);
++  n       = fl_filename_list(directory, &entries);
+ 
+   for (i = 0; i < n; i ++)
+   {
+@@ -1099,7 +1099,7 @@ load_kde_icons(const char *directory)	//
+       strcat(full,"/");
+       strcat(full, entries[i]->d_name);
+ 
+-      if (filename_isdir(full))
++      if (fl_filename_isdir(full))
+ 	load_kde_icons(full);
+       else
+ 	load_kde_mimelnk(full);				

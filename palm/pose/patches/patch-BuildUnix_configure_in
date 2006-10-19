@@ -1,0 +1,12 @@
+$OpenBSD: patch-BuildUnix_configure_in,v 1.1.1.1 2006/10/19 16:24:51 mbalmer Exp $
+--- BuildUnix/configure.in.orig	Fri Mar 29 14:11:13 2002
++++ BuildUnix/configure.in	Thu Oct 19 17:59:13 2006
+@@ -136,7 +136,7 @@ dnl ====================================
+ dnl Define the standard OMNITHREAD options
+ dnl ========================================================
+ 
+-THREAD_FLAGS="-D_REENTRANT -DNoNanoSleep -DPthreadDraftVersion=10"
++THREAD_FLAGS="-D_REENTRANT -DPthreadDraftVersion=10"
+ THREAD_LIBS="-lpthread"
+ USE_SOLARIS_CPP="false"
+ 
