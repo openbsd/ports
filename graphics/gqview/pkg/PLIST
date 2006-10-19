@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2006/01/20 07:14:33 steven Exp $
+@comment $OpenBSD: PLIST,v 1.22 2006/10/19 15:40:07 pvalchev Exp $
 bin/gqview
 @man man/man1/gqview.1
 share/applications/
@@ -62,7 +62,9 @@ share/gnome/apps/Graphics/gqview.desktop
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/gqview.mo
+share/locale/be/LC_MESSAGES/gqview.mo
 share/locale/bg/LC_MESSAGES/gqview.mo
+share/locale/ca/LC_MESSAGES/gqview.mo
 share/locale/cs/LC_MESSAGES/gqview.mo
 share/locale/da/LC_MESSAGES/gqview.mo
 share/locale/de/LC_MESSAGES/gqview.mo
@@ -74,6 +76,7 @@ share/locale/hu/LC_MESSAGES/gqview.mo
 share/locale/id/LC_MESSAGES/gqview.mo
 share/locale/it/LC_MESSAGES/gqview.mo
 share/locale/ja/LC_MESSAGES/gqview.mo
+share/locale/ko/LC_MESSAGES/gqview.mo
 share/locale/nl/LC_MESSAGES/gqview.mo
 share/locale/no/LC_MESSAGES/gqview.mo
 share/locale/pl/LC_MESSAGES/gqview.mo
