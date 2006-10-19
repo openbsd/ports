@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2006/10/18 17:41:47 steven Exp $
+# $OpenBSD: Makefile,v 1.61 2006/10/19 10:51:57 steven Exp $
 #
 
      SUBDIR += R
@@ -31,6 +31,7 @@
      SUBDIR += maple
      SUBDIR += maple-share
      SUBDIR += mathomatic
+     SUBDIR += matio
      SUBDIR += maxima
      SUBDIR += mcl
      SUBDIR += mcsim
