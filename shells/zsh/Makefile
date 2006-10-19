@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2006/02/07 21:06:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2006/10/19 13:44:51 naddy Exp $
 
 COMMENT=	"Z shell, Bourne shell-compatible"
 COMMENT-zftp=	"Z shell embedded ftp client"
 
 VERSION=	4.2.6
 DISTNAME=	zsh-${VERSION}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 PKGNAME-zftp=	zsh-zftp-${VERSION}
 CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
@@ -43,6 +43,9 @@ RUN_DEPENDS=	::shells/zsh
 .endif
 
 SUBST_VARS=	VERSION
+
+# required for regression tests
+PORTHOME=	${WRKDIR}
 
 REGRESS_FLAGS=	INSTALL_PROGRAM="install -c -s -m 555" \
 	        INSTALL_DATA="install -c -m 444" \

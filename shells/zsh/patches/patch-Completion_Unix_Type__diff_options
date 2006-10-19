@@ -1,0 +1,41 @@
+$OpenBSD: patch-Completion_Unix_Type__diff_options,v 1.1 2006/10/19 13:44:51 naddy Exp $
+--- Completion/Unix/Type/_diff_options.orig	Thu Sep 30 04:28:18 2004
++++ Completion/Unix/Type/_diff_options	Wed Oct 11 14:23:55 2006
+@@ -120,9 +120,35 @@ else
+         '-S+[set first file in comparison]:start with file:_files'
+       )
+     ;;
++    openbsd*)
++      args=(
++        '(-c -e -f -q -u -C -D -U)-n[produce an rcsdiff(1)-compatible diff]'
++        '(-c -e -f -n -u -C -D -U)-q[only print a line when the files differ; does not produce a list of changes]'
++        '(-c -e -f -n -q -C -D -U)-u[produce a unified diff with 3 lines of context]'
++        '(-c -e -f -n -q -u -D -U)-C+[produce a context diff]:number of lines of context'
++        '(-c -e -f -n -q -u -C -U)-D[produce a merged file with preprocessor directives]:preprocessor symbol'
++        '(-c -e -f -n -q -u -C -D)-U+[produce a unified diff with NUMBER lines of context]:number of lines of context'
++        '-a[treat all files as ASCII text]'
++        '-d[try to produce the smallest diff possible]'
++        '-I[ignore changes whose lines match the extended regular expression]:extended regular expression pattern'
++        '-i[ignore case]'
++        '-l[long output format (paginate with pr(1))]'
++        '-L[print a label instead of the file name and time]:label'
++        '-p[show characters from the last line before the context]'
++        '-t[expand tabs in output lines]'
++        '-T[consistently align tabs]'
++        '-w[like -b, but totally ignore whitespace]'
++        '-N[treat absent files in either directory as if they were empty]'
++        '-P[treat absent files in the second directory as if they were empty]'
++        '-s[report files that are the same]'
++        '-S[start a directory diff from a file name]:file name'
++        '-X[Exclude files and subdirectories whose basenames match lines in a file]:file name'
++        '-x[Exclude files and subdirectories whose basenames match a pattern]:pattern'
++      )
++    ;;
+   esac
+-  
+-  _arguments "$args[@]" \
++
++  _arguments -s "$args[@]" \
+     "(-e -f -u -n)-c[output a context diff]" \
+     "(-c -f -u -n)-e[output an ed script]" \
+     "(-c -e -u -n)-f[output a reversed ed script]" \
