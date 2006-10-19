@@ -1,0 +1,10 @@
+$OpenBSD: patch-post-install_rb,v 1.1 2006/10/19 00:53:55 bernd Exp $
+--- post-install.rb.orig	Fri Sep  1 09:36:29 2006
++++ post-install.rb	Fri Sep  1 09:36:36 2006
+@@ -77,6 +77,5 @@ def install_sources
+ end
+ 
+ install_windows_batch_files
+-remove_stubs
+ install_sources
+ 
