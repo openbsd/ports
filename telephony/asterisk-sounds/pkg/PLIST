@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2006/02/13 03:59:52 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.4 2006/10/19 21:22:34 jolan Exp $
 share/asterisk/
 share/asterisk/sounds/
 share/asterisk/sounds/1-for-am-2-for-pm.gsm
@@ -521,7 +521,7 @@ share/asterisk/sounds/hit.gsm
 share/asterisk/sounds/hold-or-dial-0.gsm
 share/asterisk/sounds/home.gsm
 share/asterisk/sounds/honolulu.gsm
-share/asterisk/sounds/hours.gsm
+@comment share/asterisk/sounds/hours.gsm
 share/asterisk/sounds/housekeeping.gsm
 share/asterisk/sounds/houston.gsm
 share/asterisk/sounds/http.gsm
@@ -710,7 +710,7 @@ share/asterisk/sounds/minneapolis.gsm
 share/asterisk/sounds/minnesota.gsm
 share/asterisk/sounds/minus.gsm
 share/asterisk/sounds/minute.gsm
-share/asterisk/sounds/minutes.gsm
+@comment share/asterisk/sounds/minutes.gsm
 share/asterisk/sounds/missed.gsm
 share/asterisk/sounds/mississippi.gsm
 share/asterisk/sounds/missouri.gsm
@@ -1021,7 +1021,7 @@ share/asterisk/sounds/scattered.gsm
 share/asterisk/sounds/sciences.gsm
 share/asterisk/sounds/seattle.gsm
 share/asterisk/sounds/second.gsm
-share/asterisk/sounds/seconds.gsm
+@comment share/asterisk/sounds/seconds.gsm
 share/asterisk/sounds/secretary.gsm
 share/asterisk/sounds/security.gsm
 share/asterisk/sounds/self-destruct-in.gsm

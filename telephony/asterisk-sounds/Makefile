@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2006/02/13 03:59:52 jolan Exp $
+# $OpenBSD: Makefile,v 1.4 2006/10/19 21:22:34 jolan Exp $
 
 COMMENT=	"extra sound files for Asterisk open source PBX"
 DISTNAME=	asterisk-sounds-1.2.1
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	telephony
-MASTER_SITES=	ftp://ftp.digium.com/pub/asterisk/
+MASTER_SITES=	http://ftp.digium.com/pub/asterisk/releases/
 
 HOMEPAGE=	http://www.asterisk.org/
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
+PKG_ARCH=	*
 
 MAKE_ENV+=	VARLIBDIR=${PREFIX}/share
 
