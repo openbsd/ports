@@ -1,0 +1,19 @@
+$OpenBSD: patch-avidemux_ADM_audiodevice_ADM_deviceoss_cpp,v 1.1.1.1 2006/10/19 16:22:06 ajacoutot Exp $
+--- avidemux/ADM_audiodevice/ADM_deviceoss.cpp.orig	Thu Nov 17 22:50:23 2005
++++ avidemux/ADM_audiodevice/ADM_deviceoss.cpp	Thu Oct  5 11:14:16 2006
+@@ -26,9 +26,14 @@
+ #include <fcntl.h>
+ #include <sys/ioctl.h>
+ 
+-#if defined(ADM_BSD_FAMILY) && !defined(__FreeBSD__)
++#if defined(ADM_BSD_FAMILY) && !defined(__FreeBSD__) && !defined(__OpenBSD__)
+ 	#include <soundcard.h>
+ 	const char *dsp = DEVOSSAUDIO;;
++
++#elif defined(__OpenBSD__)
++	#include <soundcard.h>
++	const char *dsp = "/dev/audio";
++        const char *device_mixer = "/dev/mixer";
+ 
+ #else
+ 	#include <sys/soundcard.h>

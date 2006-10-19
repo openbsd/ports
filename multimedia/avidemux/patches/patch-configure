@@ -1,0 +1,32 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2006/10/19 16:22:06 ajacoutot Exp $
+--- configure.orig	Wed Mar  1 22:33:47 2006
++++ configure	Thu Oct  5 12:32:50 2006
+@@ -19142,7 +19142,7 @@ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ 
+-		#ifdef __NetBSD__
++		#if defined(__NetBSD__) || defined(__OpenBSD__)
+ 		#include <sys/ioccom.h>
+ 		#include <soundcard.h>
+ 		#else
+@@ -19199,6 +19199,8 @@ cat >>confdefs.h <<\_ACEOF
+ #define OSS_SUPPORT 1
+ _ACEOF
+ 
++  LIBS="-lossaudio $LIBS"
++
+ 	fi
+ fi
+ 
+@@ -22849,8 +22851,8 @@ else
+ 		CXXFLAGS="$CXXFLAGS -O3"
+ 		CFLAGS="$CFLAGS -O3"
+ 	else
+-		CXXFLAGS="$CXXFLAGS -O2"
+-		CFLAGS="$CFLAGS -O2"
++		CXXFLAGS="$CXXFLAGS"
++		CFLAGS="$CFLAGS"
+ 	fi
+ fi
+ CFLAGS="$CFLAGS -falign-loops=16"

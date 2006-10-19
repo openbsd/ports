@@ -1,0 +1,15 @@
+$OpenBSD: patch-avidemux_MPlayer_pp_yuv2rgb_c,v 1.1.1.1 2006/10/19 16:22:06 ajacoutot Exp $
+--- avidemux/MPlayer_pp/yuv2rgb.c.orig	Thu Oct  5 17:32:42 2006
++++ avidemux/MPlayer_pp/yuv2rgb.c	Thu Oct  5 17:32:54 2006
+@@ -619,7 +619,10 @@ SwsFunc yuv2rgb_get_func_ptr (SwsContext
+     MSG_WARN("No accelerated colorspace conversion found\n");
+ 
+     switch(c->dstFormat){
+-	case IMGFMT_RGB32:
++    case IMGFMT_RGB32:
++#ifdef ADM_BIG_ENDIAN
++    case IMGFMT_BGRA:
++#endif      
+     case IMGFMT_BGR32: return yuv2rgb_c_32;
+     case IMGFMT_RGB24: return yuv2rgb_c_24_rgb;
+     case IMGFMT_BGR24: return yuv2rgb_c_24_bgr;

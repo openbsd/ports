@@ -1,0 +1,29 @@
+$OpenBSD: patch-avidemux_ADM_toolkit_toolkit_hxx,v 1.1.1.1 2006/10/19 16:22:06 ajacoutot Exp $
+--- avidemux/ADM_toolkit/toolkit.hxx.orig	Thu Oct  5 09:02:35 2006
++++ avidemux/ADM_toolkit/toolkit.hxx	Thu Oct  5 09:04:00 2006
+@@ -57,9 +57,9 @@ void 		ms2time(uint32_t len2,uint16_t * 
+ uint32_t 		getTimeOfTheDay(void);
+ /** return 1 if we are in silent mode */
+ uint8_t		isQuiet(void);
+-uint64_t 		swap64(uint64_t in);
+-uint32_t 		swap32(uint32_t in);
+-uint16_t 		swap16(uint16_t in);
++uint64_t 	ADM_swap64(uint64_t in);
++uint32_t 	ADM_swap32(uint32_t in);
++uint16_t 	ADM_swap16(uint16_t in);
+ inline uint32_t 		dontswap(uint32_t in) {return in;};
+ char 		*ADM_rindex(const char *s, int c);
+ char 		*ADM_index(const char *s, int c);
+@@ -93,9 +93,9 @@ void            GUI_Quiet(void);
+ uint8_t 	identMovieType(uint32_t fps1000); // identify the movie type (mainly for mpeg1/2) 
+ uint8_t 	ms2time(uint32_t ms, uint32_t *h,uint32_t *m, uint32_t *s);
+ #ifdef ADM_BIG_ENDIAN	
+-	#define R64 swap64
+-	#define R32 swap32
+-	#define R16 swap16
++	#define R64 ADM_swap64
++	#define R32 ADM_swap32
++	#define R16 ADM_swap16
+ #else
+ 	#define R64(x) (x)
+ 	#define R32(x) (x) 
