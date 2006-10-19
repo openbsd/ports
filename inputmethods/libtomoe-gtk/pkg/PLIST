@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/19 00:40:15 espie Exp $
+%%SHARED%%
+include/tomoe/
+include/tomoe/tomoe-gtk.h
+include/tomoe/tomoe_candidates_view.h
+include/tomoe/tomoe_canvas.h
+include/tomoe/tomoe_window.h
+lib/libtomoe-gtk.a
+lib/libtomoe-gtk.la
+lib/pkgconfig/
+lib/pkgconfig/libtomoe-gtk.pc
