@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2006/07/14 19:06:46 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2006/10/19 00:14:00 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"color terminal emulator Linux binary"
 
-PKGNAME=	zh-rxvt-big5-2.7.8p1
+PKGNAME=	zh-rxvt-big5-2.7.8p2
 CATEGORIES=	chinese
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
@@ -23,13 +23,13 @@ EXTRACT_ONLY=
 DIST_SUBDIR=	rpm
 
 BUILD_DEPENDS=	:rpm->=3.0.6p1:misc/rpm
-RUN_DEPENDS=	::emulators/redhat/base \
+RUN_DEPENDS=	::emulators/fedora/base \
 		::chinese/taipeifonts
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
-PREFIX=		${LOCALBASE}/emul/redhat
+PREFIX=		${LOCALBASE}/emul/fedora
 
 RPMDIR=		${FULLDISTDIR}
 

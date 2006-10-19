@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/14 23:21:38 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/10/19 00:14:00 sturm Exp $
 @exec ln -sf %D/usr/X11R6/bin/xcin /usr/local/bin/xcin25
 @unexec rm -rf /usr/local/bin/xcin25
 etc/chinese/
@@ -76,3 +76,4 @@ usr/share/tabe/tsi.db
 usr/share/tabe/yin.db
 @exec %D/sbin/ldconfig
 @unexec %D/sbin/ldconfig
+@extra usr/X11R6/lib/libxcin.so.0

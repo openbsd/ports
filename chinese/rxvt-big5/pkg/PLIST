@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/14 23:21:38 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/10/19 00:14:00 sturm Exp $
 @exec ln -sf %D/usr/X11R6/bin/rxvt /usr/local/bin/rxvt-big5
 @unexec rm -rf /usr/local/bin/rxvt-big5
 @unexec rm -f %D/usr/lib/libutempter.so.0
@@ -6,7 +6,6 @@ etc/X11/
 etc/X11/applnk/
 etc/X11/applnk/Utilities/
 etc/X11/applnk/Utilities/rxvt.desktop
-etc/default/
 etc/default/useradd
 etc/login.defs
 usr/X11R6/bin/
@@ -28,8 +27,8 @@ usr/X11R6/lib/X11/zh_TW/app-defaults/
 usr/X11R6/lib/X11/zh_TW/app-defaults/Rxvt
 usr/X11R6/lib/X11/zh_TW/rxvt/
 usr/X11R6/lib/X11/zh_TW/rxvt/rxvt.menu
-@man usr/X11R6/man/man1/rclock.1.gz
-@man usr/X11R6/man/man1/rxvt.1.gz
+@comment usr/X11R6/man/man1/rclock.1.gz
+@comment usr/X11R6/man/man1/rxvt.1.gz
 usr/bin/chage
 usr/bin/faillog
 usr/bin/gpasswd
@@ -60,27 +59,27 @@ usr/share/locale/el/LC_MESSAGES/shadow.mo
 usr/share/locale/fr/LC_MESSAGES/shadow.mo
 usr/share/locale/pl/LC_MESSAGES/shadow.mo
 usr/share/locale/sv/LC_MESSAGES/shadow.mo
-@man usr/share/man/man1/chage.1.gz
-@man usr/share/man/man1/gpasswd.1.gz
-@man usr/share/man/man3/shadow.3.gz
-@man usr/share/man/man5/faillog.5.gz
-@man usr/share/man/man5/shadow.5.gz
-@man usr/share/man/man8/adduser.8.gz
-@man usr/share/man/man8/chpasswd.8.gz
-@man usr/share/man/man8/faillog.8.gz
-@man usr/share/man/man8/groupadd.8.gz
-@man usr/share/man/man8/groupdel.8.gz
-@man usr/share/man/man8/groupmod.8.gz
-@man usr/share/man/man8/grpck.8.gz
-@man usr/share/man/man8/grpconv.8.gz
-@man usr/share/man/man8/grpunconv.8.gz
-@man usr/share/man/man8/lastlog.8.gz
-@man usr/share/man/man8/newusers.8.gz
-@man usr/share/man/man8/pwck.8.gz
-@man usr/share/man/man8/pwconv.8.gz
-@man usr/share/man/man8/pwunconv.8.gz
-@man usr/share/man/man8/useradd.8.gz
-@man usr/share/man/man8/userdel.8.gz
-@man usr/share/man/man8/usermod.8.gz
+@comment usr/share/man/man1/chage.1.gz
+@comment usr/share/man/man1/gpasswd.1.gz
+@comment usr/share/man/man3/shadow.3.gz
+@comment usr/share/man/man5/faillog.5.gz
+@comment usr/share/man/man5/shadow.5.gz
+@comment usr/share/man/man8/adduser.8.gz
+@comment usr/share/man/man8/chpasswd.8.gz
+@comment usr/share/man/man8/faillog.8.gz
+@comment usr/share/man/man8/groupadd.8.gz
+@comment usr/share/man/man8/groupdel.8.gz
+@comment usr/share/man/man8/groupmod.8.gz
+@comment usr/share/man/man8/grpck.8.gz
+@comment usr/share/man/man8/grpconv.8.gz
+@comment usr/share/man/man8/grpunconv.8.gz
+@comment usr/share/man/man8/lastlog.8.gz
+@comment usr/share/man/man8/newusers.8.gz
+@comment usr/share/man/man8/pwck.8.gz
+@comment usr/share/man/man8/pwconv.8.gz
+@comment usr/share/man/man8/pwunconv.8.gz
+@comment usr/share/man/man8/useradd.8.gz
+@comment usr/share/man/man8/userdel.8.gz
+@comment usr/share/man/man8/usermod.8.gz
 @exec %D/sbin/ldconfig
 @unexec %D/sbin/ldconfig

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2006/07/14 19:06:46 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2006/10/19 00:14:00 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"Chinese input method Linux binary"
 
-PKGNAME=	zh-xcin25-2.5.3p0
+PKGNAME=	zh-xcin25-2.5.3p1
 CATEGORIES=	chinese
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
@@ -26,7 +26,7 @@ RUN_DEPENDS=	::chinese/rxvt-big5
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
-PREFIX=		${LOCALBASE}/emul/redhat
+PREFIX=		${LOCALBASE}/emul/fedora
 
 RPMDIR=		${FULLDISTDIR}
 
