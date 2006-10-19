@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gxfcopy_c,v 1.1 2006/10/19 13:12:37 kili Exp $
+--- src/gxfcopy.c.orig	Thu Mar 23 13:39:23 2006
++++ src/gxfcopy.c	Thu Oct 19 01:05:43 2006
+@@ -2391,7 +2391,7 @@ order_font_data(gs_copied_font_data_t *c
+ 	    a[j++] = &cfdata->names[i];
+ 	}
+     }
+-    qsort(a, cfdata->num_glyphs, sizeof(int), compare_glyph_names);
++    qsort(a, cfdata->num_glyphs, sizeof(*a), compare_glyph_names);
+     for (; j >= 0; j--)
+ 	cfdata->glyphs[j].order_index = a[j] - cfdata->names;    
+     gs_free_object(memory, a, "order_font_data");

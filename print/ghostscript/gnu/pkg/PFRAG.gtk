@@ -1,6 +1,6 @@
-@comment $OpenBSD: PFRAG.gtk,v 1.3 2006/01/02 22:44:50 sturm Exp $
+@comment $OpenBSD: PFRAG.gtk,v 1.4 2006/10/19 13:12:37 kili Exp $
 bin/gsc
 bin/gsx
 @comment lib/libgs.so
-@comment lib/libgs.so.7
+@comment lib/libgs.so.
 @lib lib/libgs.so.${LIBgs_VERSION}
