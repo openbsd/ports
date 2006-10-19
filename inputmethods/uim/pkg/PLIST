@@ -1,17 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/18 23:57:22 espie Exp $
-%%SHARED%%
-bin/uim-dict-gtk
+@comment $OpenBSD: PLIST,v 1.2 2006/10/19 09:35:16 espie Exp $
 bin/uim-el-agent
 bin/uim-el-helper-agent
 bin/uim-fep
 bin/uim-fep-tick
-bin/uim-im-switcher-gtk
-bin/uim-input-pad-ja
 bin/uim-module-manager
-bin/uim-pref-gtk
 bin/uim-sh
-bin/uim-toolbar-gtk
-bin/uim-toolbar-gtk-systray
 bin/uim-xim
 include/uim/
 include/uim/plugin.h
@@ -22,26 +15,24 @@ include/uim/uim-im-switcher.h
 include/uim/uim-scm.h
 include/uim/uim-util.h
 include/uim/uim.h
-lib/gtk-2.0/
-lib/gtk-2.0/2.4.0/
-lib/gtk-2.0/2.4.0/immodules/
-lib/gtk-2.0/2.4.0/immodules/im-uim.a
-lib/gtk-2.0/2.4.0/immodules/im-uim.la
 lib/libuim-custom.a
 lib/libuim-custom.la
+@lib lib/libuim-custom.so.${LIBuim-custom_VERSION}
 lib/libuim.a
 lib/libuim.la
-lib/pkgconfig/
+@lib lib/libuim.so.${LIBuim_VERSION}
 lib/pkgconfig/uim.pc
 lib/uim/
 lib/uim/plugin/
 lib/uim/plugin/libuim-anthy.a
 lib/uim/plugin/libuim-anthy.la
+lib/uim/plugin/libuim-anthy.so
 lib/uim/plugin/libuim-custom-enabler.a
 lib/uim/plugin/libuim-custom-enabler.la
+lib/uim/plugin/libuim-custom-enabler.so
 lib/uim/plugin/libuim-skk.a
 lib/uim/plugin/libuim-skk.la
-libexec/uim-candwin-gtk
+lib/uim/plugin/libuim-skk.so
 libexec/uim-helper-server
 @man man/man1/uim-xim.1
 share/applications/
@@ -58,6 +49,7 @@ share/emacs/site-lisp/uim-el/uim-util.el
 share/emacs/site-lisp/uim-el/uim-var.el
 share/emacs/site-lisp/uim-el/uim.el
 share/locale/fr/LC_MESSAGES/uim.mo
+share/locale/ja/LC_MESSAGES/uim-chardict-qt.mo
 share/locale/ja/LC_MESSAGES/uim.mo
 share/locale/ko/LC_MESSAGES/uim.mo
 share/uim/
@@ -84,6 +76,7 @@ share/uim/hangul.scm
 share/uim/hangul2.scm
 share/uim/hangul3.scm
 share/uim/helperdata/
+share/uim/helperdata/bushu.t
 share/uim/helperdata/uim-dict-ui.xml
 share/uim/i18n.scm
 share/uim/im-custom.scm
@@ -214,6 +207,4 @@ share/uim/uim-sh.scm
 share/uim/ustr.scm
 share/uim/util.scm
 share/uim/viqr.scm
-@exec %D/bin/gtk-query-immodules-2.0 > /var/db/gtk-2.0/gtk.immodules
-@unexec %D/bin/gtk-query-immodules-2.0 > /var/db/gtk-2.0/gtk.immodules
 share/uim/zaurus.scm

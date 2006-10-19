@@ -1,17 +1,10 @@
 Universal input method.
 
-In order to use it, you have to put something like
+Contains the basic library and utilities like uim-xim (wedge for XIM), 
+refer to packages uim-gtk and uim-qt to make use of it under gtk+/qt.
 
-export XMODIFIERS=@im=uim
-export GTK_IM_MODULE="uim"
+Note that one of these packages is generally required in most 
+circumstances.
 
-in your .xinitrc.
 
-Under gtk+,
-uim-pref-gtk can be used to set up basic preferences.
-uim-toolbar-gtk should be run along the application in
-order to be able to enter japanese text.
 
-uim is using the utf8 encoding internally, so this
-should be used in various applications (e.g.,
-set encoding=utf8 in gvim).

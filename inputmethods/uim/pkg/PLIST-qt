@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST-qt,v 1.1 2006/10/19 09:35:16 espie Exp $
+bin/uim-chardict-qt
+bin/uim-im-switcher-qt
+bin/uim-pref-qt
+bin/uim-toolbar-qt
+@comment ${MODQT_PLUGINS}/inputmethods/libquiminputcontextplugin.a
+@comment ${MODQT_PLUGINS}/inputmethods/libquiminputcontextplugin.la
+${MODQT_PLUGINS}/inputmethods/libquiminputcontextplugin.so
+libexec/uim-candwin-qt
