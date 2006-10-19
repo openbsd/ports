@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/10/19 16:19:54 steven Exp $
+@lib lib/libarpack.so.${LIBarpack_VERSION}
