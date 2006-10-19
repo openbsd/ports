@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/14 23:44:01 espie Exp $
-lib/ruby/site_ruby/${REV}/${SUB}/ncurses.so
-lib/ruby/site_ruby/${REV}/ncurses.rb
+@comment $OpenBSD: PLIST,v 1.4 2006/10/19 01:26:39 bernd Exp $
+lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/ncurses.so
+lib/ruby/site_ruby/${MODRUBY_REV}/ncurses.rb
 share/doc/ruby/
 share/doc/ruby/ruby-ncurses/
 share/doc/ruby/ruby-ncurses/README
