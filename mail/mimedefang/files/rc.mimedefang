@@ -1,0 +1,30 @@
+# $OpenBSD: rc.mimedefang,v 1.1.1.1 2006/10/19 01:06:22 alek Exp $
+
+mimedefang=/usr/local/bin/mimedefang                                                                                                        
+multiplexor=/usr/local/bin/mimedefang-multiplexor                                                                                           
+                                                                                                                                            
+if [ -x $mimedefang -a -x $multiplexor ]; then                                                                                              
+	MAX_SLAVES=16                                                                                                                           
+	MIN_SLAVES=2                                                                                                                            
+	BUSY_TIMEOUT=720                                                                                                                        
+	IDLE_TIMEOUT=300                                                                                                                        
+	WAIT_START=10                                                                                                                           
+	MX_QUEUE_SIZE=10                                                                                                                        
+	MX_QUEUE_TIMEOUT=30                                                                                                                     
+
+	echo -n " mimedefang-multiplexor"                                                                                                       
+
+	$multiplexor -U _mdefang -l \
+		-x $MAX_SLAVES -m $MIN_SLAVES -b $BUSY_TIMEOUT -i $IDLE_TIMEOUT \
+		-w $WAIT_START -q $MX_QUEUE_SIZE -Q $MX_QUEUE_TIMEOUT \
+		-p /var/run/mdefang/multiplexor.pid \
+		-s /var/run/mdefang/multiplexor.socket                                                                                              
+
+	echo -n " mimedefang"
+
+	$mimedefang -U _mdefang -r -s -t \
+		-p /var/run/mdefang/mimedefang.socket \
+		-m /var/run/mdefang/multiplexor.socket                                                                                              
+
+	sleep 3 # for socket creation                                                                                                           
+fi

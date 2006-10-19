@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/19 01:06:22 alek Exp $
+@newgroup _mdefang:570
+@newuser _mdefang:570:_mdefang:daemon:MIMEDefang:/nonexistent:/sbin/nologin
+bin/md-mx-ctrl
+bin/mimedefang
+bin/mimedefang-multiplexor
+bin/mimedefang.pl
+bin/watch-mimedefang
+@man man/man5/mimedefang-filter.5
+@man man/man7/mimedefang-notify.7
+@man man/man7/mimedefang-protocol.7
+@man man/man8/md-mx-ctrl.8
+@man man/man8/mimedefang-multiplexor.8
+@man man/man8/mimedefang.8
+@man man/man8/mimedefang.pl.8
+@man man/man8/watch-mimedefang.8
+share/examples/mimedefang/
+@sample ${SYSCONFDIR}/mail/
+share/examples/mimedefang/mimedefang-filter
+@sample ${SYSCONFDIR}/mail/mimedefang-filter
+share/examples/mimedefang/rc.mimedefang
+@mode 755
+@sample ${SYSCONFDIR}/rc.mimedefang
+@mode
+share/examples/mimedefang/sa-mimedefang.cf
+@sample ${SYSCONFDIR}/mail/sa-mimedefang.cf
+@mode 0750
+@owner _mdefang
+@group _mdefang
+@sample /var/spool/MIMEDefang/
+@sample /var/spool/MD-Quarantine/
+@mode 0755
+@sample /var/run/mdefang/
+@unexec rm -rf /var/run/mdefang/*
+@extraunexec rm -rf /var/spool/MIMEDefang/*
+@extraunexec rm -rf /var/spool/MD-Quarantine/*

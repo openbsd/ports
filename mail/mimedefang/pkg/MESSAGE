@@ -1,0 +1,13 @@
+To finish installation you should add following line to
+your .mc files:
+
+INPUT_MAIL_FILTER(`mimedefang', \
+	`S=unix:/var/run/mdefang/mimedefang.socket, \
+	F=T, T=S:360s;R:360s;E:15m')dnl
+
+If you wish to start up mimedefang automatically during system
+startup, add following lines to /etc/rc.local:
+
+if [ -f ${SYSCONFDIR}/rc.mimedefang ]; then
+	. ${SYSCONFDIR}/rc.mimedefang
+fi
