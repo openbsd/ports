@@ -1,7 +1,7 @@
-$OpenBSD: patch-odk_util_makefile_pmk,v 1.1 2006/09/30 18:47:25 robert Exp $
---- odk/util/makefile.pmk.orig	Fri Sep 29 13:49:47 2006
-+++ odk/util/makefile.pmk	Fri Sep 29 14:23:04 2006
-@@ -65,7 +65,7 @@
+$OpenBSD: patch-odk_util_makefile_pmk,v 1.2 2006/10/19 15:16:50 kurt Exp $
+--- odk/util/makefile.pmk.orig.port	Tue Jul 11 10:54:30 2006
++++ odk/util/makefile.pmk	Thu Oct 19 10:47:53 2006
+@@ -65,7 +65,7 @@ IDLOUT=$(SOLARIDLDIR)
  XMLOUT=$(SOLARXMLDIR)
  LIBOUT=$(SOLARLIBDIR)
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-odk_util_makefile_pmk,v 1.1 2006/09/30 18:47:25 robert Exp $
  MY_COPY=$(GNUCOPY)
  MY_COPY_RECURSIVE=$(GNUCOPY) -r
  .ELSE
-@@ -143,6 +143,12 @@
+@@ -143,6 +143,12 @@ DESTPLATFROM=netbsd
  # FREEBSD
  ###########
  DESTPLATFROM=freebsd

@@ -1,6 +1,6 @@
-$OpenBSD: patch-epm_epm_3_7_patch,v 1.1 2006/09/30 18:47:25 robert Exp $
---- epm/epm-3.7.patch.orig	Sat Sep 30 10:33:12 2006
-+++ epm/epm-3.7.patch	Sat Sep 30 10:33:16 2006
+$OpenBSD: patch-epm_epm-3_7_patch,v 1.4 2006/10/19 15:16:50 kurt Exp $
+--- epm/epm-3.7.patch.orig.port	Tue Aug  1 08:20:23 2006
++++ epm/epm-3.7.patch	Thu Oct 19 10:47:52 2006
 @@ -1,5 +1,5 @@
  *** misc/epm-3.7/bsd.c	Tue Jan 14 18:05:01 2003
 ---- misc/build/epm-3.7/bsd.c	Wed Jul 26 20:59:48 2006

@@ -1,7 +1,7 @@
-$OpenBSD: patch-readlicense_oo_util_makefile_pmk,v 1.1 2006/09/20 09:06:19 robert Exp $
---- readlicense_oo/util/makefile.pmk.orig	Fri Sep  1 09:56:11 2006
-+++ readlicense_oo/util/makefile.pmk	Fri Sep  1 09:57:53 2006
-@@ -70,7 +70,7 @@
+$OpenBSD: patch-readlicense_oo_util_makefile_pmk,v 1.2 2006/10/19 15:16:50 kurt Exp $
+--- readlicense_oo/util/makefile.pmk.orig.port	Wed Apr 19 11:06:24 2006
++++ readlicense_oo/util/makefile.pmk	Thu Oct 19 10:47:53 2006
+@@ -70,7 +70,7 @@ $(MISC)$/$(GUI)$/readme% : $(MISC)$/read
  $(MISC)$/readme%.html :
      @+-$(MKDIR) $(@:d)
  .IF "$(XSLTPROC)"=="NO_XSLTPROC"
@@ -10,7 +10,7 @@ $OpenBSD: patch-readlicense_oo_util_makefile_pmk,v 1.1 2006/09/20 09:06:19 rober
  .ELSE
  	sed 's|xmlns:xt="http://www.jclark.com/xt"||;s|extension-element-prefixes="xt"||;s|.*xt:document.*||;s|<xsl:output method = "HTML" doctype-public = "-//W3C//DTD HTML 3.2//EN" />|<xsl:output method="html" doctype-public="-//W3C//DTD HTML 3.2//EN" />|' < ..$/readme.xsl | xsltproc -o $@ \
  	         --stringparam os1 $(OS) \
-@@ -86,7 +86,7 @@
+@@ -86,7 +86,7 @@ $(MISC)$/readme%.html :
  $(MISC)$/readme%.txt :
      @+-$(MKDIR) $(@:d)
  .IF "$(XSLTPROC)"=="NO_XSLTPROC"

@@ -1,6 +1,6 @@
-$OpenBSD: patch-instsetoo_native_inc_openoffice_unix_packagelist_txt,v 1.2 2006/08/20 03:36:52 kurt Exp $
---- instsetoo_native/inc_openoffice/unix/packagelist.txt.orig.port	Wed Jul  5 17:14:13 2006
-+++ instsetoo_native/inc_openoffice/unix/packagelist.txt	Fri Aug 18 15:47:46 2006
+$OpenBSD: patch-instsetoo_native_inc_openoffice_unix_packagelist_txt,v 1.3 2006/10/19 15:16:50 kurt Exp $
+--- instsetoo_native/inc_openoffice/unix/packagelist.txt.orig.port	Fri Aug  4 05:49:52 2006
++++ instsetoo_native/inc_openoffice/unix/packagelist.txt	Thu Oct 19 10:50:43 2006
 @@ -28,7 +28,7 @@ findrequires = "find-requires-gnome.sh"
  copyright = "1999-2006 by OpenOffice.org"
  vendor = "OpenOffice.org"
@@ -154,7 +154,16 @@ $OpenBSD: patch-instsetoo_native_inc_openoffice_unix_packagelist_txt,v 1.2 2006/
  End
  
  Start
-@@ -272,7 +272,7 @@ requires = "%UNIXPRODUCTNAME-core01"
+@@ -270,7 +270,7 @@ requires = "%UNIXPRODUCTNAME-core01"
+ copyright = "1999-2005 by Sun Microsystems"
+ vendor = "Sun Microsystems, Inc."
+ description = "Online update modul for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -284,7 +284,7 @@ requires = "%UNIXPRODUCTNAME-core01"
  copyright = "1999-2006 by OpenOffice.org"
  vendor = "OpenOffice.org"
  description = "Pyuno module for %PRODUCTNAME %PRODUCTVERSION"
@@ -163,7 +172,7 @@ $OpenBSD: patch-instsetoo_native_inc_openoffice_unix_packagelist_txt,v 1.2 2006/
  End
  
  Start
-@@ -282,11 +282,12 @@ solarisrequires = "%WITHOUTDOTUNIXPRODUC
+@@ -294,11 +294,12 @@ solarisrequires = "%WITHOUTDOTUNIXPRODUC
  packagename = "%UNIXPRODUCTNAME-emailmerge"
  linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-emailmerge"
  freebsdrequires = "%UNIXPRODUCTNAME-core01"
@@ -177,7 +186,7 @@ $OpenBSD: patch-instsetoo_native_inc_openoffice_unix_packagelist_txt,v 1.2 2006/
  End
  
  Start
-@@ -300,7 +301,7 @@ requires = "%UNIXPRODUCTNAME-core01"
+@@ -312,7 +313,7 @@ requires = "%UNIXPRODUCTNAME-core01"
  copyright = "1999-2006 by OpenOffice.org"
  vendor = "OpenOffice.org"
  description = "Mailcap module for %PRODUCTNAME %PRODUCTVERSION"
@@ -186,7 +195,7 @@ $OpenBSD: patch-instsetoo_native_inc_openoffice_unix_packagelist_txt,v 1.2 2006/
  End
  
  Start
-@@ -310,12 +311,12 @@ solarispackagename = "%WITHOUTDOTUNIXPRO
+@@ -322,12 +323,12 @@ solarispackagename = "%WITHOUTDOTUNIXPRO
  solarisrequires = "%WITHOUTDOTUNIXPRODUCTNAME-core01"
  packagename = "%UNIXPRODUCTNAME-core02"
  linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-core02"
@@ -201,7 +210,7 @@ $OpenBSD: patch-instsetoo_native_inc_openoffice_unix_packagelist_txt,v 1.2 2006/
  End
  
  Start
-@@ -324,12 +325,12 @@ solarispackagename = "%WITHOUTDOTUNIXPRO
+@@ -336,12 +337,12 @@ solarispackagename = "%WITHOUTDOTUNIXPRO
  solarisrequires = "%WITHOUTDOTUNIXPRODUCTNAME-core01"
  packagename = "%UNIXPRODUCTNAME-core03"
  linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-core03"
@@ -216,7 +225,7 @@ $OpenBSD: patch-instsetoo_native_inc_openoffice_unix_packagelist_txt,v 1.2 2006/
  End
  
  Start
-@@ -338,12 +339,12 @@ solarispackagename = "%WITHOUTDOTUNIXPRO
+@@ -350,12 +351,12 @@ solarispackagename = "%WITHOUTDOTUNIXPRO
  solarisrequires = "%WITHOUTDOTUNIXPRODUCTNAME-core01"
  packagename = "%UNIXPRODUCTNAME-core04"
  linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-core04,%UNIXPRODUCTNAME-spellcheck"
@@ -231,7 +240,7 @@ $OpenBSD: patch-instsetoo_native_inc_openoffice_unix_packagelist_txt,v 1.2 2006/
  End
  
  Start
-@@ -352,12 +353,12 @@ solarispackagename = "%WITHOUTDOTUNIXPRO
+@@ -364,12 +365,12 @@ solarispackagename = "%WITHOUTDOTUNIXPRO
  solarisrequires = "%WITHOUTDOTUNIXPRODUCTNAME-core01"
  packagename = "%UNIXPRODUCTNAME-core05"
  linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-core05"
@@ -246,7 +255,7 @@ $OpenBSD: patch-instsetoo_native_inc_openoffice_unix_packagelist_txt,v 1.2 2006/
  End
  
  Start
-@@ -366,12 +367,12 @@ solarispackagename = "%WITHOUTDOTUNIXPRO
+@@ -378,12 +379,12 @@ solarispackagename = "%WITHOUTDOTUNIXPRO
  solarisrequires = "%WITHOUTDOTUNIXPRODUCTNAME-core01"
  packagename = "%UNIXPRODUCTNAME-core06"
  linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-core06"
@@ -261,7 +270,7 @@ $OpenBSD: patch-instsetoo_native_inc_openoffice_unix_packagelist_txt,v 1.2 2006/
  End
  
  Start
-@@ -380,12 +381,12 @@ solarispackagename = "%WITHOUTDOTUNIXPRO
+@@ -392,12 +393,12 @@ solarispackagename = "%WITHOUTDOTUNIXPRO
  solarisrequires = "%WITHOUTDOTUNIXPRODUCTNAME-core01"
  packagename = "%UNIXPRODUCTNAME-core07"
  linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-core07"
@@ -276,7 +285,7 @@ $OpenBSD: patch-instsetoo_native_inc_openoffice_unix_packagelist_txt,v 1.2 2006/
  End
  
  Start
-@@ -394,12 +395,12 @@ solarispackagename = "%WITHOUTDOTUNIXPRO
+@@ -406,12 +407,12 @@ solarispackagename = "%WITHOUTDOTUNIXPRO
  solarisrequires = "%WITHOUTDOTUNIXPRODUCTNAME-core01"
  packagename = "%UNIXPRODUCTNAME-core08"
  linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-core08"
@@ -291,7 +300,7 @@ $OpenBSD: patch-instsetoo_native_inc_openoffice_unix_packagelist_txt,v 1.2 2006/
  End
  
  Start
-@@ -408,12 +409,12 @@ solarispackagename = "%WITHOUTDOTUNIXPRO
+@@ -420,12 +421,12 @@ solarispackagename = "%WITHOUTDOTUNIXPRO
  solarisrequires = "%WITHOUTDOTUNIXPRODUCTNAME-core01"
  packagename = "%UNIXPRODUCTNAME-core09"
  linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-core09"
@@ -306,7 +315,7 @@ $OpenBSD: patch-instsetoo_native_inc_openoffice_unix_packagelist_txt,v 1.2 2006/
  End
  
  Start
-@@ -423,10 +424,10 @@ solarispackagename = "%WITHOUTDOTUNIXPRO
+@@ -435,10 +436,10 @@ solarispackagename = "%WITHOUTDOTUNIXPRO
  solarisrequires = "%WITHOUTDOTUNIXPRODUCTNAME-core01"
  packagename = "%UNIXPRODUCTNAME-core10"
  linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-core10"

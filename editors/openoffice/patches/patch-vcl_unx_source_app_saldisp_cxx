@@ -1,7 +1,7 @@
-$OpenBSD: patch-vcl_unx_source_app_saldisp_cxx,v 1.2 2006/08/20 03:36:53 kurt Exp $
---- vcl/unx/source/app/saldisp.cxx.orig.port	Wed Jul 19 12:52:07 2006
-+++ vcl/unx/source/app/saldisp.cxx	Fri Aug 18 15:47:46 2006
-@@ -1020,7 +1020,7 @@ bHandleStartupNotification
+$OpenBSD: patch-vcl_unx_source_app_saldisp_cxx,v 1.3 2006/10/19 15:16:50 kurt Exp $
+--- vcl/unx/source/app/saldisp.cxx.orig.port	Fri Aug 18 04:02:50 2006
++++ vcl/unx/source/app/saldisp.cxx	Thu Oct 19 10:47:55 2006
+@@ -1022,7 +1022,7 @@ bHandleStartupNotification
              sscanf( pProperties, "%li", &nProperties_ );
          else
          {

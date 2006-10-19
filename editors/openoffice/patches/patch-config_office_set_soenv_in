@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_office_set_soenv_in,v 1.2 2006/08/20 03:36:52 kurt Exp $
---- config_office/set_soenv.in.orig.port	Wed Jul 19 05:52:27 2006
-+++ config_office/set_soenv.in	Fri Aug 18 15:47:46 2006
+$OpenBSD: patch-config_office_set_soenv_in,v 1.3 2006/10/19 15:16:50 kurt Exp $
+--- config_office/set_soenv.in.orig.port	Mon Aug 28 04:37:34 2006
++++ config_office/set_soenv.in	Thu Oct 19 10:47:52 2006
 @@ -368,6 +368,34 @@ elsif ( $platform =~ m/freebsd/ ) 
        $INPATH         = $OUTPATH.$PROEXT;
        $GVERDIR        = $INPATH;
@@ -36,7 +36,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.2 2006/08/20 03:36:52 kurt Exp $
  elsif ( $platform =~ m/linux-gnu/ ) 
  {
  # General Linux settings:
-@@ -935,7 +963,7 @@ if ($platform =~ m/solaris/) 
+@@ -943,7 +971,7 @@ if ($platform =~ m/solaris/) 
                          $ps.$JRETHREADDIR.
                          $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB;
  }
@@ -45,7 +45,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.2 2006/08/20 03:36:52 kurt Exp $
  {  $LD_LIBRARY_PATH   = $cur_dir.
                          $ps.'$SOLARENV'.$ds.'$INPATH'.$LIB.
                          $ps.$JRELIBDIR.
-@@ -984,7 +1012,7 @@ if ($platform =~ m/solaris/) 
+@@ -992,7 +1020,7 @@ if ($platform =~ m/solaris/) 
                          $D."SUPD=$UPD".
                          $D."UPDVER=".'""'."'".'"'."'".'"'."SV$UPD".'"'."'".'"'."'".'"'.'"';
  }
@@ -54,7 +54,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.2 2006/08/20 03:36:52 kurt Exp $
  {  $SOLARDEF          = $D."UNX".
                          $D.$COM.
                          $D.$CVER.
-@@ -1021,7 +1049,7 @@ if ($platform =~ m/solaris/) 
+@@ -1029,7 +1057,7 @@ if ($platform =~ m/solaris/) 
                          $L.$USR_DT.$LIB.
                          $L.$USR_OPENWIN.$LIB;
  }
@@ -63,7 +63,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.2 2006/08/20 03:36:52 kurt Exp $
  {
     $SOLAREXTRALIB     = $L.$par_dir.$LIB64;
  }
-@@ -1062,7 +1090,7 @@ if ($platform =~ m/cygwin/)
+@@ -1070,7 +1098,7 @@ if ($platform =~ m/cygwin/)
  }
       
  # The general environment path.
@@ -72,7 +72,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.2 2006/08/20 03:36:52 kurt Exp $
  {  $PATH              = $cur_dir.
                          $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$BIN.
                          $ps.'$SOLARENV'.$ds.'$OUTPATH'.$BIN.
-@@ -1240,7 +1268,7 @@ if ($platform =~ m/solaris/) 
+@@ -1248,7 +1276,7 @@ if ($platform =~ m/solaris/) 
                          $L_STLPORT_LIB.
                          $L.$XLIB;
  }
@@ -81,7 +81,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.2 2006/08/20 03:36:52 kurt Exp $
  {  $SOLARLIB          = $L.$par_dir.$LIB.
                          $L.'$SOLARENV'.$ds.'$OUTPATH'.$LIB.
                          $L.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB.
-@@ -1283,10 +1311,10 @@ $SOLARINC             = $I.$cur_dir.
+@@ -1291,10 +1319,10 @@ $SOLARINC             = $I.$cur_dir.
                          $I.'$SOLARENV'.$INC.
                          $I.'$SRC_ROOT'.$ds."res";
  
@@ -94,7 +94,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.2 2006/08/20 03:36:52 kurt Exp $
  {
  # This simply adds an include path, so even cases that break the FHS work
  $SOLARINC            .= $STLPORT_inc_stlport;
-@@ -1326,6 +1354,11 @@ if ($platform =~ m/linux-gnu/)
+@@ -1334,6 +1362,11 @@ if ($platform =~ m/linux-gnu/)
        		$SOLARINC   .=$I.'$JAVA_HOME'.$INCLUDE.$ds."bsd";
        		$SOLARINC   .=$I.'$JAVA_HOME'.$INCLUDE.$ds."linux";
     		}
@@ -106,7 +106,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.2 2006/08/20 03:36:52 kurt Exp $
     		elsif ($platform =~ m/netbsd/)
     		{  $SOLARINC   .=$I.'$JAVA_HOME'.$INCLUDE.$ds."netbsd";
     		}
-@@ -1338,7 +1371,7 @@ if ($platform =~ m/linux-gnu/)
+@@ -1346,7 +1379,7 @@ if ($platform =~ m/linux-gnu/)
     		$SOLARINC .=$I.'$JAVA_HOME'.$INCLUDE.$ds."native_threads".$ds."include";
  	}
      #The tail, if needed
