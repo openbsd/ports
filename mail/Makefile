@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.162 2006/10/03 21:10:50 steven Exp $
+# $OpenBSD: Makefile,v 1.163 2006/10/19 01:22:01 alek Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -80,6 +80,7 @@
      SUBDIR += milter-greylist
      SUBDIR += milter-regex
      SUBDIR += milter-spamd
+     SUBDIR += mimedefang
      SUBDIR += mini_sendmail
      SUBDIR += mixmaster
      SUBDIR += mlmmj
