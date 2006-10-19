@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/19 00:29:47 espie Exp $
+%%SHARED%%
+bin/tomoe
+bin/tomoe1
+include/tomoe/
+include/tomoe/tomoe.h
+lib/libtomoe.a
+lib/libtomoe.la
+lib/pkgconfig/
+lib/pkgconfig/tomoe.pc
+share/tomoe/
+share/tomoe/all.tdic
+share/tomoe/hiragana.tdic
