@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2006/08/23 21:12:24 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2006/10/19 01:30:26 bernd Exp $
 
 COMMENT=	"ruby make"
 
 DISTNAME=	rake-0.7.1
-PKGNAME=	ruby-${DISTNAME}p0
+PKGNAME=	ruby-${DISTNAME}p1
 CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org> 
@@ -21,5 +21,7 @@ MASTER_SITES=   http://rubyforge.org/frs/download.php/9498/
 MODULES=	lang/ruby
 
 CONFIGURE_STYLE=ruby gem
+
+PKG_ARCH=	*
 
 .include <bsd.port.mk>
