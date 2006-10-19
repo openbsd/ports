@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2006/10/18 00:18:36 jolan Exp $
+# $OpenBSD: Makefile,v 1.13 2006/10/19 21:19:07 jolan Exp $
 
 COMMENT=	"open source PBX"
-DISTNAME=	asterisk-1.2.12.1
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	asterisk-1.2.13
 CATEGORIES=	telephony
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/releases/
 
@@ -10,7 +9,7 @@ HOMEPAGE=	http://www.asterisk.org/
 
 MAINTAINER=	Stuart Henderson <stu@spacehopper.org>
 
-# GPL
+# GPL except iaxy.bin (freely redistributable, see LICENSE)
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
