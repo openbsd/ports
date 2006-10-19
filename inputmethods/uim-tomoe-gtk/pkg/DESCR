@@ -1,0 +1,3 @@
+uim-tomoe-gtk is an helper program for uim
+that is invoked in uim-toolbar-gtk when you
+select the `handwriting input pad'.
