@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.61 2006/10/19 10:51:57 steven Exp $
+# $OpenBSD: Makefile,v 1.62 2006/10/19 16:21:11 steven Exp $
 #
 
      SUBDIR += R
      SUBDIR += aamath
      SUBDIR += abs
+     SUBDIR += arpack
      SUBDIR += blas
      SUBDIR += calc
      SUBDIR += calcoo
