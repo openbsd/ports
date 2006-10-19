@@ -1,7 +1,7 @@
-$OpenBSD: patch-INSTALL,v 1.3 2005/08/20 09:02:16 sturm Exp $
---- INSTALL.orig	Thu Jul 28 21:02:57 2005
-+++ INSTALL	Sat Aug 20 01:32:59 2005
-@@ -160,6 +160,8 @@ PrintRequiredFree()
+$OpenBSD: patch-INSTALL,v 1.4 2006/10/19 00:20:55 sturm Exp $
+--- INSTALL.orig	Tue May 23 03:33:34 2006
++++ INSTALL	Sun Oct  8 20:50:06 2006
+@@ -287,6 +287,8 @@ PrintRequiredFree()
  
          if [ `uname -s` = "Linux" ] ; then
            size=`ls -lLn "$i" | ( read perm links owner group size date ; echo $size )`
@@ -10,24 +10,32 @@ $OpenBSD: patch-INSTALL,v 1.3 2005/08/20 09:02:16 sturm Exp $
          else
            size=`ls -lLon "$i" | ( read perm links owner size date ; echo $size )`
          fi
-@@ -379,7 +381,7 @@ InstallReader()
-   CustomPlatformTar="$4"
-   
-   
--  OutputLicense "$ReadLicense"
-+  # OutputLicense "$ReadLicense"
-   ReadLicense=""
+@@ -589,7 +591,7 @@ InstallBrowserPlugin()
+     while :
+       do
+       $echonl "$ST_IBP_INFO_20 [$ST_SMALL_Y/$ST_SMALL_N] "
+-      read OVERWRITE_CHOICE
++      OVERWRITE_CHOICE="n"
+       
+       if [ "$OVERWRITE_CHOICE" = "$ST_SMALL_Y" ] || [ "$OVERWRITE_CHOICE" = "$ST_CAPS_Y" ] || [ -z "$OVERWRITE_CHOICE" ]
+ 	  then
+@@ -806,15 +808,6 @@ InstallReader()
+     echo "$ST_IBP_INFO_22_1" \"$ReadInstallDir/Browser/install_browser_plugin\" "$ST_IBP_INFO_22_2"
+   fi
  
-   PrintRequiredFree "$ReadTar" "$SearchTar" "$CustomTar" \
-@@ -425,7 +427,6 @@ eval ScriptDirectory=\"${ScriptDirectory
+-  rm -f /usr/bin/acroread 2>/dev/null
+-  ln -s "$ReadInstallDir"/bin/acroread /usr/bin/acroread 2>/dev/null
+-
+-  rm -f /usr/share/applications/AdobeReader.desktop 2>/dev/null
+-  ln -s "$ReadInstallDir"/Resource/Support/AdobeReader_GNOME.desktop /usr/share/applications/AdobeReader.desktop 2>/dev/null
+-
+-  rm -f /usr/share/pixmaps/AdobeReader.desktop 2>/dev/null
+-  ln -s "$ReadInstallDir"/Resource/Icons/AdobeReader.png /usr/share/pixmaps/AdobeReader.png 2>/dev/null
+-
+   if [ "`uname -s`" = "Linux" ]; then
+       check_file_in_path kde-config >/dev/null
  
- AcroSerNum=""
- AcroCompName=""
--ReadInstallDir=""
- case "${ScriptDirectory}" in
-   /*) ;;
-   .) ScriptDirectory="$CurrentDirectory" ;;
-@@ -571,7 +572,7 @@ case "$OSname" in
+@@ -1069,7 +1062,7 @@ case "$OSname" in
        ;;
      esac
      ;;

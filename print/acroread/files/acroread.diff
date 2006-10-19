@@ -1,7 +1,7 @@
---- acroread.orig	Sat Mar 12 02:50:00 2005
-+++ acroread	Wed Apr  6 23:32:51 2005
-@@ -14,7 +14,7 @@
-  ScriptDirectory="`pwd 2> /dev/null`"
+--- acroread.orig	Tue May 23 03:33:35 2006
++++ acroread	Sun Oct  8 20:57:19 2006
+@@ -233,7 +233,7 @@
+  ScriptDirectory="`/bin/pwd 2> /dev/null`"
   cd "$cwd"
  fi
 -install_dir=`dirname "$ScriptDirectory"`/Reader
@@ -9,12 +9,21 @@
  
  
  #
-@@ -168,7 +168,7 @@
+@@ -476,7 +476,7 @@
+     OLD_IFS=""
+ 
+     # This checks for libs in cache /etc/ld.so.cache
+-    for ifile in `/sbin/ldconfig -p|grep "libgtk-x11-2.0.so$"|sed 's/.*[ \t]*=>[ \t]*\(.*\)/\1/g' 2>/dev/null`; do
++    for ifile in `/emul/linux/sbin/ldconfig -p|grep "libgtk-x11-2.0.so$"|sed 's/.*[ \t]*=>[ \t]*\(.*\)/\1/g' 2>/dev/null`; do
+         version=`get_gtk_file_ver "$ifile"`
+ 
+     	while [ ${#version} -gt ${#base_version} ]; do
+@@ -610,7 +610,7 @@
          ;;
      esac
      ;;
--   Linux)
-+   OpenBSD|Linux)
+-  Linux)
++  OpenBSD|Linux)
      ACRO_CONFIG=intellinux
      export ACRO_CONFIG
      ;;

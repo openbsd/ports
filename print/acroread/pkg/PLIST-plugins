@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-plugins,v 1.1 2005/04/17 07:18:53 sturm Exp $
+@comment $OpenBSD: PLIST-plugins,v 1.2 2006/10/19 00:20:55 sturm Exp $
 Acrobat7/Reader/intellinux/plug_ins/Accessibility.api
 Acrobat7/Reader/intellinux/plug_ins/AcroForm/
 Acrobat7/Reader/intellinux/plug_ins/AcroForm.api
@@ -25,3 +25,9 @@ Acrobat7/Reader/intellinux/plug_ins/Spelling.api
 Acrobat7/Reader/intellinux/plug_ins/checkers.api
 Acrobat7/Reader/intellinux/plug_ins/ewh.api
 Acrobat7/Reader/intellinux/plug_ins/wwwlink.api
+Acrobat7/Reader/intellinux/plug_ins3d/
+Acrobat7/Reader/intellinux/plug_ins3d/2d.x3d
+Acrobat7/Reader/intellinux/plug_ins3d/3difr.x3d
+Acrobat7/Reader/intellinux/plug_ins3d/drvOpenGL.x3d
+Acrobat7/Reader/intellinux/plug_ins3d/drvSOFT.x3d
+Acrobat7/Reader/intellinux/plug_ins3d/tesselate.x3d
