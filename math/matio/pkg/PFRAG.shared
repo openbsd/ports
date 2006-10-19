@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/10/19 10:51:01 steven Exp $
+@lib lib/libmatio.so.${LIBmatio_VERSION}

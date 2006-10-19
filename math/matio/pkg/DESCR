@@ -1,0 +1,3 @@
+matio is an ISO C library for reading and writing Matlab MAT files.
+The library is intended for programs/libraries that do not have access
+or want to rely on Matlab's shared libraries.

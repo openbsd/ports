@@ -1,0 +1,13 @@
+$OpenBSD: patch-test_test_mat_c,v 1.1.1.1 2006/10/19 10:51:01 steven Exp $
+--- test/test_mat.c.orig	Wed Oct 18 17:21:19 2006
++++ test/test_mat.c	Wed Oct 18 17:22:32 2006
+@@ -1197,6 +1197,9 @@ int main (int argc, char *argv[])
+     }
+ 
+     printf("%d of %d tests completed successfully\n",ntests-err,ntests);
++
++    if (err > 0)
++      return 1;
+     
+     return 0;
+ }
