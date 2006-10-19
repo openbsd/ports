@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.10 2006/03/31 16:50:44 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2006/10/19 00:16:58 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -19,4 +19,4 @@ BUILD_DEPENDS+=	:rpm->=3.0.6p1:misc/rpm
 
 NO_BUILD=	Yes
 
-PREFIX=		${LOCALBASE}/emul/redhat
+PREFIX?=	${LOCALBASE}/emul/redhat
