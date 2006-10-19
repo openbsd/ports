@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2005/10/07 13:44:21 wilfried Exp $
+# $OpenBSD: Makefile,v 1.15 2006/10/19 07:27:34 wilfried Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		'GNU Readline Library Wrapper Module'
 
-DISTNAME=		Term-ReadLine-Gnu-1.15
+DISTNAME=		Term-ReadLine-Gnu-1.16
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		devel perl5
 
