@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2006/07/20 04:43:28 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2006/10/19 07:35:02 wilfried Exp $
 
 COMMENT=		'wm-dockapp; application launching program'
 
-DISTNAME=		wmbutton-0.4
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		wmbutton-0.6.1
 CATEGORIES=		x11 x11/windowmaker
 
 HOMEPAGE=		http://greek0.net/~greek0/wmbutton/

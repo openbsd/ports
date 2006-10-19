@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2001/01/16 21:29:05 naddy Exp $
---- Makefile.orig	Mon Mar  8 17:59:20 1999
-+++ Makefile	Tue Jan 16 18:10:47 2001
-@@ -1,15 +1,17 @@
+$OpenBSD: patch-Makefile,v 1.2 2006/10/19 07:35:02 wilfried Exp $
+--- Makefile.orig	Sun Jan 16 16:12:54 2005
++++ Makefile	Thu Oct 19 09:16:56 2006
+@@ -1,19 +1,17 @@
 -INCLUDES =-I/usr/X11R6/include/X11 -I/usr/local/include -I/usr/include/X11R6/X11
 -LIBINC =-L/usr/X11R6/lib -L/usr/include/lib
 +INCLUDES =-I${X11BASE}/include
@@ -9,17 +9,20 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2001/01/16 21:29:05 naddy Exp $
  LIBS = -lX11 -lXpm -lXext
  
  TARGET = wmbutton
- OBJECTS = wmbutton.o readln.o
+ OBJECTS = wmbutton.o wmb_libs.o
  
+-CFLAGS += -c -Wall -O2
++all: ${TARGET}
+ 
+-all: ${TARGET} tags
+-
  .c.o:
--	gcc -O2 -c -Wall ${INCLUDES} ${FLAGS} $< -o $*.o
-+	${CC} ${CFLAGS} -c ${INCLUDES} ${FLAGS} $< -o $*.o
+-	gcc ${CFLAGS} ${INCLUDES} $< -o $*.o
++	${CC} ${CFLAGS} -c ${INCLUDES} $< -o $*.o
  
  ${TARGET}: ${OBJECTS}
--	gcc -O2 -o ${TARGET} ${OBJECTS} ${LIBINC} ${LIBS}
+-	gcc -o ${TARGET} ${OBJECTS} ${LIBINC} ${LIBS}
 +	${CC} -o ${TARGET} ${OBJECTS} ${LIBINC} ${LIBS}
-+
-+all:: ${TARGET}
  
  clean::
  	for i in ${OBJECTS}; do if [ -e $$i ] ; then rm $$i; fi; done 
