@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_Makefile_in,v 1.11 2006/10/19 00:26:34 pvalchev Exp $
+--- src/Makefile.in.orig	Sun Aug 28 00:31:37 2005
++++ src/Makefile.in	Sat Sep 10 20:34:34 2005
+@@ -306,7 +306,6 @@ lib_LTLIBRARIES = libSDL.la
+ libSDL_la_SOURCES = $(GENERAL_SRCS)
+ libSDL_la_LDFLAGS = \
+ 	-no-undefined		\
+-        -release $(LT_RELEASE)	\
+ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ 
+ libSDL_la_LIBADD = \
