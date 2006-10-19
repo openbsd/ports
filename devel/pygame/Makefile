@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/10/18 18:40:27 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2006/10/19 00:35:04 pvalchev Exp $
 
 SHARED_ONLY=	Yes
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=               SDL smpeg
+WANTLIB=               SDL X11 Xext m smpeg usbhid
 
 MASTER_SITES=	${HOMEPAGE}ftp/
 

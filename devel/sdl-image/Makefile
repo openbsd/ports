@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2006/10/18 18:07:19 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.22 2006/10/19 00:35:03 pvalchev Exp $
 
 COMMENT=	"SDL image library"
 DISTNAME=	SDL_image-1.2.4
@@ -24,7 +24,7 @@ LIB_DEPENDS=	SDL::devel/sdl \
 		tiff.>=35::graphics/tiff \
 		jpeg.>=62.::graphics/jpeg
 
-WANTLIB=	X11 Xext Xrandr Xrender iconv m usbhid z
+WANTLIB=	X11 Xext m usbhid z
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--enable-tif \

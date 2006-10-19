@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2006/10/18 18:40:27 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.17 2006/10/19 00:35:04 pvalchev Exp $
 
 COMMENT=	"SDL C++ GUI widget library"
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		X11 Xext Xrandr Xrender m usbhid iconv
+WANTLIB=		X11 Xext m usbhid
 
 LIB_DEPENDS=	SDL.::devel/sdl
 

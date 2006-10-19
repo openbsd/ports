@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2006/10/18 18:40:26 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.18 2006/10/19 00:35:04 pvalchev Exp $
 
 COMMENT=	"X11 game engine library"
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		X11 Xrandr Xrender Xext m usbhid iconv
+WANTLIB=		X11 Xext m usbhid
 
 MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 
