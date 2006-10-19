@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2006/09/22 20:22:28 sturm Exp $
+# $OpenBSD: Makefile,v 1.39 2006/10/19 00:21:29 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"fast and customizable WWW browser"
 
-PKGNAME=	opera-9.02
+PKGNAME=	opera-9.02p0
 DISTNAME=	opera-9.02-20060919.1-static-qt.i386-en
 CATEGORIES=	www
 
@@ -32,7 +32,7 @@ MASTER_SITES_OPERA=	ftp://ftp.opera.com/pub/opera/ \
 MASTER_SITES=	${MASTER_SITES_OPERA:=linux/902/final/en/i386/static/}
 EXTRACT_SUFX=	.tar.bz2
 
-RUN_DEPENDS=	:redhat_base->=8.0:emulators/redhat/base
+RUN_DEPENDS=	::emulators/fedora/base
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

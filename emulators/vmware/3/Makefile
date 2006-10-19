@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2006/07/16 15:13:27 mcbride Exp $
+# $OpenBSD: Makefile,v 1.10 2006/10/19 00:15:36 sturm Exp $
 
 ONLY_FOR_ARCHS= i386
 
 COMMENT=	"VMware emulator"
 DISTNAME=	VMware-workstation-3.2.1-2242
-PKGNAME=	vmware-3.2.1_2242p4
+PKGNAME=	vmware-3.2.1_2242p5
 CATEGORIES=	emulators
 MASTER_SITES=	http://download3.vmware.com/software/wkst/
 MASTER_SITES0=	http://monkey.org/~marius/vmware-openbsd/
@@ -26,8 +26,8 @@ WANTLIB=		c
 NO_REGRESS=	Yes
 USE_X11=	Yes
 
-BUILD_DEPENDS+=	::emulators/redhat/base
-RUN_DEPENDS+=	${BUILD_DEPENDS}
+RUN_DEPENDS+=	::emulators/fedora/base
+BUILD_DEPENDS+=	${RUN_DEPENDS}
 
 WRKDIST=	${WRKDIR}/vmware-openbsd
 VMWARE_DISTRIB=	${WRKDIR}/vmware-distrib

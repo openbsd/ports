@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/11/02 01:20:18 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2006/10/19 00:17:40 sturm Exp $
 
 COMMENT=	"Linux libc5"
 
-PKGNAME=	redhat_libc5-6.2p0
+PKGNAME=	redhat_libc5-6.2p1
 
 MASTER_SITES=	${MASTER_SITE_REDHAT:=redhat/linux/6.2/en/os/i386/RedHat/RPMS/}
 MASTER_SITES0=	${MASTER_SITE_REDHAT:=redhat/linux/updates/6.2/en/os/i386/}
@@ -14,8 +14,12 @@ RPMDIR=		${FULLDISTDIR}
 RPMS=		libc-5.3.12-31.i386.rpm \
 		ld.so-1.9.5-13.i386.rpm 
 
+RUN_DEPENDS=	::emulators/fedora/base
+
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+
+PREFIX=		${LOCALBASE}/emul/fedora
 
 pre-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}

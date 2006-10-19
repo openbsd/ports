@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2005/10/01 16:57:09 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2006/10/19 00:18:13 sturm Exp $
 # Author: Thomas Biskup <rpg@saranxis.ruhr.de>
 
 COMMENT=	"Ancient Domains of Mystery - roguelike"
 
 DISTNAME=	adom-1.1.1
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	games
 MASTER_SITES=   http://www.adom.de/adom/download/linux/
 HOMEPAGE=	http://www.adom.de/
@@ -37,7 +37,7 @@ pre-fetch:
 	@echo "Your kernel must have COMPAT_LINUX (GENERIC does)"
 .endif
 
-RUN_DEPENDS=	:redhat_base->=8.0:emulators/redhat/base
+RUN_DEPENDS=	::emulators/fedora/base
 
 do-install:
 	@${INSTALL_DATA_DIR} ${ADOM_DOC}

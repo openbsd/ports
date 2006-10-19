@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2006/09/20 16:15:19 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2006/10/19 00:21:29 sturm Exp $
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"flash support for opera"
 DISTNAME=	flash-7.0r68
-PKGNAME=	opera-flashplugin-7.0r68
+PKGNAME=	opera-flashplugin-7.0r68p0
 CATEGORIES=	www
 MASTER_SITES=	http://mirrors.protection.cx/~jolan/
 
@@ -18,7 +18,7 @@ NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
 RUN_DEPENDS=	:opera-*:www/opera \
-		:redhat_motif-*:emulators/redhat/motif
+		:fedora_motif-*:emulators/fedora/motif
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/opera/plugins
