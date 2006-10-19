@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2006/08/23 21:12:24 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2006/10/19 01:21:47 bernd Exp $
 
 COMMENT=	"eases web-request routing, handling, and response"
 
 DISTNAME=       actionpack-1.12.5
-PKGNAME=	ruby-${DISTNAME}p0
+PKGNAME=	ruby-${DISTNAME}p1
 CATEGORIES=     devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org> 
@@ -22,5 +22,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	:ruby-activesupport-1.3.1:devel/ruby-activesupport
 
 CONFIGURE_STYLE=ruby gem
+
+PKG_ARCH=	*
 
 .include <bsd.port.mk>
