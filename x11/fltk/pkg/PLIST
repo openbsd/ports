@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/15 19:26:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2006/10/19 09:41:32 wilfried Exp $
 bin/fltk-config
 bin/fluid
 include/FL/
@@ -86,6 +86,8 @@ include/FL/Fl_Input.H
 include/FL/Fl_Input.h
 include/FL/Fl_Input_.H
 include/FL/Fl_Input_.h
+include/FL/Fl_Input_Choice.H
+include/FL/Fl_Input_Choice.h
 include/FL/Fl_Int_Input.H
 include/FL/Fl_Int_Input.h
 include/FL/Fl_JPEG_Image.H
@@ -168,6 +170,8 @@ include/FL/Fl_Single_Window.H
 include/FL/Fl_Single_Window.h
 include/FL/Fl_Slider.H
 include/FL/Fl_Slider.h
+include/FL/Fl_Spinner.H
+include/FL/Fl_Spinner.h
 include/FL/Fl_Sys_Menu_Bar.H
 include/FL/Fl_Sys_Menu_Bar.h
 include/FL/Fl_Tabs.H
@@ -291,6 +295,7 @@ share/doc/fltk/Fl_Hold_Browser.html
 share/doc/fltk/Fl_Image.html
 share/doc/fltk/Fl_Input.html
 share/doc/fltk/Fl_Input_.html
+share/doc/fltk/Fl_Input_Choice.html
 share/doc/fltk/Fl_Int_Input.html
 share/doc/fltk/Fl_JPEG_Image.html
 share/doc/fltk/Fl_Light_Button.gif
@@ -328,6 +333,7 @@ share/doc/fltk/Fl_Select_Browser.html
 share/doc/fltk/Fl_Shared_Image.html
 share/doc/fltk/Fl_Single_Window.html
 share/doc/fltk/Fl_Slider.html
+share/doc/fltk/Fl_Spinner.html
 share/doc/fltk/Fl_Tabs.html
 share/doc/fltk/Fl_Text_Buffer.html
 share/doc/fltk/Fl_Text_Display.html
@@ -392,6 +398,7 @@ share/doc/fltk/functions.html
 share/doc/fltk/glut.html
 share/doc/fltk/hello.C.gif
 share/doc/fltk/index.html
+share/doc/fltk/input_choice.jpg
 share/doc/fltk/intro.html
 share/doc/fltk/license.html
 share/doc/fltk/menu.gif

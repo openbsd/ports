@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.32 2006/08/04 00:10:42 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2006/10/19 09:41:32 wilfried Exp $
 
 COMMENT=	"Fast-Light Tool Kit"
 
-VER=		1.1.4
+VER=		1.1.7
 DISTNAME=	fltk-${VER}
-PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
-SHARED_LIBS=	fltk		5.0 \
-		fltk_forms	5.0 \
-		fltk_gl		5.0 \
-		fltk_images	5.0
+SHARED_LIBS=	fltk		6.0 \
+		fltk_forms	6.0 \
+		fltk_gl		6.0 \
+		fltk_images	6.0
 
 HOMEPAGE=	http://www.fltk.org/
 
@@ -23,17 +22,22 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext c m stdc++ z
 
 DISTFILES=	${DISTNAME}-source${EXTRACT_SUFX}
-MASTER_SITES=	ftp://ftp.easysw.com/pub/fltk/${VER}/ \
-		ftp://ftp2.easysw.com/pub/fltk/${VER}/ \
-		ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/fltk/${VER}/ \
-		ftp://gd.tuwien.ac.at/hci/fltk/${VER}/
+
+MASTER_SITES=	ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/fltk/${VER}/ \
+		ftp://ftp.rz.tu-bs.de/pub/mirror/ftp.easysw.com/ftp/pub/fltk/${VER}/ \
+		http://mirror.nu6.org//ftp.easysw.com/pub/fltk/${VER}/ \
+		http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/fltk/${VER}/ \
+		http://ftp.rz.tu-bs.de/pub/mirror/ftp.easysw.com/ftp/pub/fltk/${VER}/ \
+		http://ftp.easysw.com/pub/fltk/${VER}/ \
+		ftp://ftp.easysw.com/pub/fltk/${VER}/ \
+		ftp://ftp3.easysw.com/pub/fltk/${VER}/
 
 LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
 		png.>=2::graphics/png
 
 NO_REGRESS=	Yes
 USE_X11=	Yes
-CONFIGURE_STYLE=autoconf dest no-autoheader
+CONFIGURE_STYLE=autoconf no-autoheader
 AUTOCONF_VERSION=2.54
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

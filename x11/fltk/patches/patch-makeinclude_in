@@ -1,9 +1,9 @@
-$OpenBSD: patch-makeinclude_in,v 1.2 2002/12/16 16:58:12 wilfried Exp $
---- makeinclude.in.orig	Mon Aug  5 19:58:16 2002
-+++ makeinclude.in	Mon Dec 16 17:27:38 2002
-@@ -98,32 +98,24 @@ POSTBUILD	= @POSTBUILD@
- CAT1EXT		= @CAT1EXT@
- CAT3EXT		= @CAT3EXT@
+$OpenBSD: patch-makeinclude_in,v 1.3 2006/10/19 09:41:32 wilfried Exp $
+--- makeinclude.in.orig	Sun Jan 15 19:36:16 2006
++++ makeinclude.in	Thu Oct 19 10:37:16 2006
+@@ -110,32 +110,24 @@ CAT6EXT		= @CAT6EXT@
+ INSTALL_DESKTOP	= @INSTALL_DESKTOP@
+ UNINSTALL_DESKTOP = @UNINSTALL_DESKTOP@
  
 -# Be quiet when building...
 -.SILENT:
@@ -13,16 +13,16 @@ $OpenBSD: patch-makeinclude_in,v 1.2 2002/12/16 16:58:12 wilfried Exp $
  
  .o$(EXEEXT):
 -	echo Linking $@...
- 	$(CXX) -I.. $(CXXFLAGS) $< $(LINKFLTK) $(LDLIBS) -o $@
+ 	$(CXX) $(CXXFLAGS) $< $(LINKFLTK) $(LDLIBS) -o $@
  	$(POSTBUILD) $@ ../FL/mac.r
  
  .c.o:
 -	echo Compiling $<...
- 	$(CC) -I.. $(CFLAGS) -c $<
+ 	$(CC) -I.. @PNGINC@ @JPEGINC@ @ZLIBINC@ $(CFLAGS) -c $<
  
  .cxx.o:
 -	echo Compiling $<...
- 	$(CXX) -I.. $(CXXFLAGS) -c $<
+ 	$(CXX) -I.. @PNGINC@ @JPEGINC@ @ZLIBINC@ $(CXXFLAGS) -c $<
  
  .man.0 .man.1 .man.3:
 -	echo Formatting $<...
