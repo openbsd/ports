@@ -1,4 +1,4 @@
-# $OpenBSD: systrace.policy,v 1.1 2005/02/06 22:06:34 sturm Exp $
+# $OpenBSD: systrace.policy,v 1.2 2006/10/19 09:39:58 sturm Exp $
 Policy: ${WRKDIR}/unpack, Emulation: linux
 	linux-brk: permit
 	linux-close: permit
@@ -11,10 +11,13 @@ Policy: ${WRKDIR}/unpack, Emulation: linux
 	linux-geteuid: permit
 	linux-getgid: permit
 	linux-getuid: permit
+	linux-linux_exit_group: permit
 	linux-mmap: permit
+	linux-mprotect: permit
 	linux-mremap: permit
 	linux-munmap: permit
 	linux-read: permit
+	linux-stat64: permit
 	linux-uname: permit
 	linux-write: permit
 	linux-writev: permit
@@ -38,6 +41,7 @@ Policy: ${LOCALBASE}/jdk1.3.1-linux/bin/i386/green_threads/jar, Emulation: linux
 	linux-gettimeofday: permit
 	linux-getuid: permit
 	linux-ioctl: permit
+	linux-linux_exit_group: permit
 	linux-llseek: permit
 	linux-lstat64: permit
 	linux-mmap: permit
@@ -74,6 +78,7 @@ Policy: ${LOCALBASE}/jdk1.3.1-linux/bin/i386/green_threads/java, Emulation: linu
 	linux-gettimeofday: permit
 	linux-getuid: permit
 	linux-ioctl: permit
+	linux-linux_exit_group: permit
 	linux-llseek: permit
 	linux-lstat64: permit
 	linux-mmap: permit
@@ -109,6 +114,7 @@ Policy: ${LOCALBASE}/jdk1.3.1-linux/bin/i386/green_threads/javac, Emulation: lin
 	linux-gettimeofday: permit
 	linux-getuid: permit
 	linux-ioctl: permit
+	linux-linux_exit_group: permit
 	linux-llseek: permit
 	linux-lstat64: permit
 	linux-mmap: permit
@@ -137,8 +143,10 @@ Policy: ${LOCALBASE}/jdk1.3.1-linux/jre/bin/i386/realpath, Emulation: linux
 	linux-geteuid: permit
 	linux-getgid: permit
 	linux-getuid: permit
+	linux-linux_exit_group: permit
 	linux-lstat64: permit
 	linux-mmap: permit
+	linux-mprotect: permit
 	linux-mremap: permit
 	linux-munmap: permit
 	linux-read: permit

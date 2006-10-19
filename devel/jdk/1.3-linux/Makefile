@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2006/04/01 13:58:49 sturm Exp $
+# $OpenBSD: Makefile,v 1.31 2006/10/19 09:39:58 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -6,13 +6,13 @@ COMMENT=	"Java Development Kit for Java 2 Standard Edition 1.3"
 VERSION=	1.3.1_16
 
 DISTNAME=	jdk${VERSION}
-PKGNAME=	jdk-linux-${VERSION}
+PKGNAME=	jdk-linux-${VERSION}p0
 CATEGORIES=	devel java
 
 HOMEPAGE=	http://java.sun.com/j2se/
 MAINTAINER=	Christian Edward Gruber <cgruber@israfil.net>
 
-RUN_DEPENDS=	:redhat_base->=6.2:emulators/redhat/base
+RUN_DEPENDS=	:fedora_base->=4.0p2:emulators/fedora/base
 BUILD_DEPENDS=	${RUN_DEPENDS}
 DISTFILES=	j2sdk-${VERSION:S/./_/g}-linux-i586.bin
 EXTRACT_CASES+=	*.bin) \

@@ -1,10 +1,11 @@
-# $OpenBSD: systrace.policy,v 1.6 2006/04/01 13:58:49 sturm Exp $
+# $OpenBSD: systrace.policy,v 1.7 2006/10/19 09:39:58 sturm Exp $
 Policy: ${WRKDIR}/j2sdk-1_3_1_16-linux-i586.bin, Emulation: linux
 	linux-brk: permit
 	linux-chmod: permit
 	linux-clone: permit
 	linux-close: permit
 	linux-exit: permit
+	linux-linux_exit_group: permit
 	linux-fsread: permit
 	linux-fstat64: permit
 	linux-fswrite: filename match "${WRKDIR}" then permit
@@ -16,6 +17,7 @@ Policy: ${WRKDIR}/j2sdk-1_3_1_16-linux-i586.bin, Emulation: linux
 	linux-lseek: permit
 	linux-lstat64: permit
 	linux-mmap: permit
+	linux-mprotect: permit
 	linux-munmap: permit
 	linux-read: permit
 	linux-rt_sigaction: permit
@@ -30,6 +32,7 @@ Policy: ${WRKSRC}/bin/i386/green_threads/jar, Emulation: linux
 	linux-brk: permit
 	linux-close: permit
 	linux-exit: permit
+	linux-linux_exit_group: permit
 	linux-fcntl64: permit
 	linux-fsread: permit
 	linux-fstat64: permit
@@ -65,6 +68,7 @@ Policy: ${WRKSRC}/jre/bin/i386/realpath, Emulation: linux
 	linux-brk: permit
 	linux-close: permit
 	linux-exit: permit
+	linux-linux_exit_group: permit
 	linux-fsread: permit
 	linux-fstat64: permit
 	linux-getegid: permit
@@ -73,6 +77,7 @@ Policy: ${WRKSRC}/jre/bin/i386/realpath, Emulation: linux
 	linux-getuid: permit
 	linux-lstat64: permit
 	linux-mmap: permit
+	linux-mprotect: permit
 	linux-munmap: permit
 	linux-read: permit
 	linux-uname: permit
