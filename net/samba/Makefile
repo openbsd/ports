@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2006/10/03 14:07:10 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.70 2006/10/20 13:21:33 sturm Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 COMMENT-docs=	"documentation and examples for samba"
@@ -130,7 +130,7 @@ post-install:
 	 ${PREFIX}/lib/libsmbclient.so.${LIBsmbclient_VERSION}
 	@ln -s samba/libmsrpc.so.${LIBmsrpc_VERSION} \
 	 ${PREFIX}/lib/libmsrpc.so.${LIBmsrpc_VERSION}
-	@rmdir ${WRKINST}/etc/samba
+	@rmdir ${WRKINST}${SYSCONFDIR}/samba
 	@rmdir ${WRKINST}/var/spool/samba
 
 .include <bsd.port.mk>
