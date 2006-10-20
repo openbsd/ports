@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.12 2005/12/30 14:09:47 espie Exp $
+# $OpenBSD: check-newlib-depends,v 1.13 2006/10/20 14:40:29 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -227,13 +227,15 @@ sub analyze
 		register_dependencies($plist);
 		OpenBSD::SharedLibs::add_plist_libs($plist);
 	}
-	while (my ($lib, $fullname) = each %{$t->{needlib}}) {
+	for my $lib (sort keys %{$t->{needlib}}) {
+		my $fullname = $t->{needlib}->{$lib};
 		if (!defined $t->{haslib}->{$lib}) {
 			report_lib_issue($plist, $lib, $fullname);
 		}
 		$t->{haslib}->{$lib} = 2;
 	}
-	while (my ($k, $v) = each %{$t->{haslib}}) {
+	for my $k (sort keys %{$t->{haslib}}) {
+		my $v = $t->{haslib}->{$k};
 		next if $v == 2;
 		print "Extra: $k\n";
 	}
@@ -245,7 +247,7 @@ sub do_pkg
 {
 	my $pkgname = shift;
 
-	print STDERR "$pkgname:\n";
+	print "\n$pkgname:\n";
 	my $true_package = OpenBSD::PackageLocator->find($pkgname);
 	return 0 unless $true_package;
 	my $dir = $true_package->info();
