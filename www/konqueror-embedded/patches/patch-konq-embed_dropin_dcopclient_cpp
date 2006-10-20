@@ -1,0 +1,12 @@
+$OpenBSD: patch-konq-embed_dropin_dcopclient_cpp,v 1.1 2006/10/20 16:08:39 espie Exp $
+--- konq-embed/dropin/dcopclient.cpp.orig	Fri Oct 20 17:16:36 2006
++++ konq-embed/dropin/dcopclient.cpp	Fri Oct 20 17:16:41 2006
+@@ -119,7 +119,7 @@ bool DCOPClient::call( const QCString &r
+     int cmd = 0;
+     int res = globalConnection()->read( &cmd, reply );
+ 
+-    assert( res != -1 );
++//    assert( res != -1 );
+ 
+ #ifndef QT_NO_DATASTREAM
+     QDataStream replyStream( reply, IO_ReadOnly );
