@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.14 2006/10/20 15:09:24 espie Exp $
+# $OpenBSD: check-newlib-depends,v 1.15 2006/10/20 18:10:25 bernd Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -208,6 +208,8 @@ sub report_lib_issue
 		for my $p (@r) {
 			if (defined $done->{$p}) {
 				print "Missing: $want from $p ($binary) (reachable through dependencies: WANTLIB)\n";
+				$want =~ s/\.\d+$//;
+				$r->{wantlib}->{$want} = 1;
 				return;
 			}
 		}
