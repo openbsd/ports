@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2004/12/17 15:18:32 alek Exp $
+# $OpenBSD: Makefile,v 1.23 2006/10/20 15:32:20 jasper Exp $
 
 COMMENT=	"file manager with same look and feel as Windows95(tm)"
 
 DISTNAME=	explorer-0.72
 CATEGORIES=	x11
-MASTER_SITES=	ftp://jungfrau.ptf.hro.nl/pub/explorer/
+MASTER_SITES=	http://humppa.nl/distfiles/
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
