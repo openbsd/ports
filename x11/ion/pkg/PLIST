@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2006/07/30 04:30:55 pedro Exp $
+@comment $OpenBSD: PLIST,v 1.18 2006/10/20 17:36:13 pedro Exp $
 %%SHARED%%
 bin/ion3
 bin/pwm3
@@ -18,16 +18,14 @@ lib/ion3/lc/ioncore_misc.lc
 lib/ion3/lc/ioncore_wd.lc
 lib/ion3/lc/ioncore_winprops.lc
 lib/ion3/lc/mod_dock.lc
-lib/ion3/lc/mod_floatws.lc
-lib/ion3/lc/mod_ionws.lc
 lib/ion3/lc/mod_menu.lc
 lib/ion3/lc/mod_mgmtmode.lc
-lib/ion3/lc/mod_panews.lc
 lib/ion3/lc/mod_query.lc
 lib/ion3/lc/mod_query_chdir.lc
 lib/ion3/lc/mod_sm.lc
 lib/ion3/lc/mod_sp.lc
 lib/ion3/lc/mod_statusbar.lc
+lib/ion3/lc/mod_tiling.lc
 lib/ion3/lc/statusd_date.lc
 lib/ion3/lc/statusd_load.lc
 lib/ion3/lc/statusd_mail.lc
@@ -53,19 +51,16 @@ share/doc/ion3/README
 share/doc/ion3/RELNOTES
 share/examples/ion3/
 share/examples/ion3/cfg_dock.lua
-share/examples/ion3/cfg_floatws.lua
 share/examples/ion3/cfg_ion.lua
 share/examples/ion3/cfg_ioncore.lua
-share/examples/ion3/cfg_ionws.lua
 share/examples/ion3/cfg_kludges.lua
 share/examples/ion3/cfg_menu.lua
 share/examples/ion3/cfg_modules.lua
-share/examples/ion3/cfg_panews.lua
 share/examples/ion3/cfg_pwm.lua
 share/examples/ion3/cfg_query.lua
 share/examples/ion3/cfg_sp.lua
 share/examples/ion3/cfg_statusbar.lua
-share/examples/ion3/detach.lua
+share/examples/ion3/cfg_tiling.lua
 share/examples/ion3/look.lua
 share/examples/ion3/look_brownsteel.lua
 share/examples/ion3/look_clean.lua
@@ -77,7 +72,6 @@ share/examples/ion3/look_ios.lua
 share/examples/ion3/look_simpleblue.lua
 share/examples/ion3/lookcommon_clean.lua
 share/examples/ion3/lookcommon_emboss.lua
-share/examples/ion3/nest-ws.lua
 share/ion3/
 share/ion3/ion-completeman
 share/ion3/ion-runinxterm

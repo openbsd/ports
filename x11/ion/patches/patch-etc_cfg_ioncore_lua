@@ -1,6 +1,6 @@
-$OpenBSD: patch-etc_cfg_ioncore_lua,v 1.3 2006/07/30 18:45:21 pedro Exp $
---- etc/cfg_ioncore.lua.orig	Wed May 24 13:23:26 2006
-+++ etc/cfg_ioncore.lua	Sun Jul 30 15:39:20 2006
+$OpenBSD: patch-etc_cfg_ioncore_lua,v 1.4 2006/10/20 17:36:13 pedro Exp $
+--- etc/cfg_ioncore.lua.orig	Sun Oct 15 15:30:57 2006
++++ etc/cfg_ioncore.lua	Sun Oct 15 15:34:02 2006
 @@ -63,8 +63,8 @@ defbindings("WScreen", {
      kpress(META.."F9", "ioncore.create_ws(_)"),
      
@@ -12,9 +12,9 @@ $OpenBSD: patch-etc_cfg_ioncore_lua,v 1.3 2006/07/30 18:45:21 pedro Exp $
      mpress("Button3", "mod_menu.pmenu(_, _sub, 'mainmenu')"),
      
      bdoc("Display the window list menu."),
-@@ -111,10 +111,10 @@ defbindings("WMPlex.toplevel", {
-                 "_sub:WClientWin"),
+@@ -136,10 +136,10 @@ defbindings("WMPlex", {
  
+ defbindings("WMPlex.toplevel", {
      bdoc("Query for manual page to be displayed."),
 -    kpress(ALTMETA.."F1", "mod_query.query_man(_, ':man')"),
 +    kpress(ALTMETA.."F1", "mod_query.query_man(_, '::man')"),
@@ -24,8 +24,8 @@ $OpenBSD: patch-etc_cfg_ioncore_lua,v 1.3 2006/07/30 18:45:21 pedro Exp $
 +    kpress(META.."F1", "ioncore.exec_on(_, '::man ion3')"),
  
      bdoc("Run a terminal emulator."),
-     kpress(ALTMETA.."F2", "ioncore.exec_on(_, 'xterm')"),
-@@ -130,7 +130,7 @@ defbindings("WMPlex.toplevel", {
+     kpress(ALTMETA.."F2", "ioncore.exec_on(_, XTERM or 'xterm')"),
+@@ -155,7 +155,7 @@ defbindings("WMPlex.toplevel", {
  
      bdoc("Query for file to edit."),
      kpress(ALTMETA.."F5", 
@@ -34,7 +34,7 @@ $OpenBSD: patch-etc_cfg_ioncore_lua,v 1.3 2006/07/30 18:45:21 pedro Exp $
  
      bdoc("Query for file to view."),
      kpress(ALTMETA.."F6", 
-@@ -286,12 +286,7 @@ defmenu("mainmenu", {
+@@ -332,12 +332,7 @@ defmenu("mainmenu", {
  -- Application menu
  defmenu("appmenu", {
      menuentry("XTerm",          "ioncore.exec_on(_, 'xterm')"),
@@ -44,14 +44,14 @@ $OpenBSD: patch-etc_cfg_ioncore_lua,v 1.3 2006/07/30 18:45:21 pedro Exp $
 -    menuentry("Links",          "ioncore.exec_on(_, ':links')"),
 -    menuentry("Konqueror",      "ioncore.exec_on(_, 'konqueror')"),
 -    menuentry("Dillo",          "ioncore.exec_on(_, 'dillo')"),
-+    menuentry("Firefox",        "ioncore.exec_on(_, 'firefox')"),
++    menuentry("Firefox",          "ioncore.exec_on(_, 'firefox')"),
      menuentry("Run...",         "mod_query.query_exec(_)"),
  })
  
-@@ -316,4 +311,6 @@ defctxmenu("WFrame", "Frame", {
-     menuentry("Clear tags",     "ioncore.clear_tags()"),
-     menuentry("Window info",    "mod_query.show_clientwin(_, _sub)",
-                                 "_sub:WClientWin"),
-+    submenu("Attach",		"menuattach"),
-+    submenu("Detach",		"menudetach"),
+@@ -372,4 +367,4 @@ defctxmenu("WScreen", "Screen", {
+     menuentry("Close workspace","WRegion.rqclose(_sub)"),
  })
+ 
+-    
+\ No newline at end of file
++    
