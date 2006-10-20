@@ -1,0 +1,12 @@
+Advchk (Advisory Check) reads security advisories so you don't have to.
+Advisory Check gathers security advisories using RSS / RDF / XML feeds,
+compares them against a list of known softwares, and alerts you if
+you're vulnerable.
+
+Software installed on remote systems can be monitored using SSH-Update.
+SSH-Update retrieves packages list by executing the remote package
+manager as an SSH ForcedCommand using Public-key authentication.
+
+Quite a few CERTs and vendors offer security-relevant feeds. Mailing
+lists can be monitored using feeds provided by some web archives. Some
+usenet gateways like Google Groups also offer RSS subscriptions.

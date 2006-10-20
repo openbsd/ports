@@ -1,0 +1,12 @@
+$OpenBSD: patch-advchk,v 1.1.1.1 2006/10/20 11:32:07 ajacoutot Exp $
+--- advchk.orig	Mon Oct 16 14:44:50 2006
++++ advchk	Mon Oct 16 14:45:07 2006
+@@ -535,7 +535,7 @@ sub loadDb {
+                         $dbFile = "$ENV{'HOME'}/.advchk/advchk.db";
+                         mkdir "$ENV{'HOME'}/.advchk"
+                                 unless -d "ENV{'HOME'}/.advchk";
+-                        my $cmd = "/bin/touch $dbFile";
++                        my $cmd = "/usr/bin/touch $dbFile";
+                         &error( "Oops, this happened:", $!,
+                                 "while executing:", $cmd  )
+                                 if system $cmd;

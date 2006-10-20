@@ -1,0 +1,48 @@
+$OpenBSD: patch-advchk_1,v 1.1.1.1 2006/10/20 11:32:07 ajacoutot Exp $
+--- advchk.1.orig	Thu Oct 12 19:48:48 2006
++++ advchk.1	Fri Oct 20 13:29:11 2006
+@@ -47,19 +47,32 @@ Enabling SSH-Update for a vanilla host i
+ The following
+ .B package managers
+ are supported:
+-.TS
+-tab (@);
+-l l l.
+-MANAGER@OPERATING SYSTEM@COMMAND
+-pkg_info@Open-, Net-, FreeBSD, Darwin/MacOS X@pkg_info
+-dpkg@Debian, Ubuntu, ...@dpkg -l
+-rpm@Redhat/Fedora, SuSE, Turbolinux, ...@rpm -qa
+-lpp@AIX@lslpp -Lc
+-pkginfo@Solaris@pkginfo -x
+-portage@Gentoo@equery list -i
+-\ @Equery is included in "gentoolkit".@\ 
+-.TE
++.TP
++.I pkg_info
++.B pkg_info
++Open-, Net-, FreeBSD, Darwin/MacOS X
++.TP
++.I dpkg
++.B dpkg -l
++Debian, Ubuntu, ...
++.TP
++.I rpm
++.B rpm -qa
++Redhat/Fedora, SuSE, Turbolinux, ...
++.TP
++.I lpp
++.B lslpp -Lc
++AIX
++.TP
++.I pkginfo
++.B pkginfo -x
++Solaris
++.TP
++.I portage
++.B equery list -i
++Gentoo (Equery is included in "gentoolkit")
+ 
++.P
+ Think of 
+ .B advchk
+ as your
