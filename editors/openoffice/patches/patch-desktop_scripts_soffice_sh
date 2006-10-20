@@ -1,0 +1,37 @@
+$OpenBSD: patch-desktop_scripts_soffice_sh,v 1.1 2006/10/20 19:58:23 ian Exp $
+--- desktop/scripts/soffice.sh.orig.port	Thu Oct 19 22:21:22 2006
++++ desktop/scripts/soffice.sh	Thu Oct 19 22:26:17 2006
+@@ -194,33 +194,6 @@ unset XENVIRONMENT
+ # uncomment line below to disable anti aliasing of fonts
+ # SAL_ANTIALIAS_DISABLE=true; export SAL_ANTIALIAS_DISABLE
+ 
+-# pagein
+-for sd_arg in ${1+"$@"} ; do
+-    case ${sd_arg} in
+-    -calc)
+-        sd_pagein_args="${sd_pagein_args:+${sd_pagein_args} }@pagein-calc"
+-        break;
+-        ;;
+-    -draw)
+-        sd_pagein_args="${sd_pagein_args:+${sd_pagein_args} }@pagein-draw"
+-        break;
+-        ;;
+-    -impress)
+-        sd_pagein_args="${sd_pagein_args:+${sd_pagein_args} }@pagein-impress"
+-        break;
+-        ;;
+-    -writer)
+-        sd_pagein_args="${sd_pagein_args:+${sd_pagein_args} }@pagein-writer"
+-        break;
+-        ;;
+-    *)
+-        ;;
+-    esac
+-done
+-
+-sd_pagein_args="${sd_pagein_args:+${sd_pagein_args} }@pagein-common"
+-"${sd_prog}"/pagein -L"${sd_prog}" ${sd_pagein_args}
+-
+ # set path so that other apps can be started from soffice just by name
+ if [ "$PATH" ]; then
+   PATH="$sd_prog":$PATH

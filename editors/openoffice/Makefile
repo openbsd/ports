@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/10/20 14:59:26 kurt Exp $
+# $OpenBSD: Makefile,v 1.13 2006/10/20 19:58:23 ian Exp $
 
 ONLY_FOR_ARCHS= i386
 
@@ -7,7 +7,7 @@ COMMENT=	"a multi-platform productivity suite"
 VERSION=	2.0.4
 DISTNAME=	OOo_${VERSION}_src
 WRKDIST=	${WRKDIR}/OOD680_m5
-PKGNAME=	openoffice-${VERSION}p4
+PKGNAME=	openoffice-${VERSION}p5
 CATEGORIES=	editors productivity
 
 SHARED_LIBS=	icudata		26.0 \
