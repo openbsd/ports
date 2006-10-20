@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2006/10/19 15:16:50 kurt Exp $
+# $OpenBSD: Makefile,v 1.12 2006/10/20 14:59:26 kurt Exp $
 
 ONLY_FOR_ARCHS= i386
 
@@ -7,7 +7,7 @@ COMMENT=	"a multi-platform productivity suite"
 VERSION=	2.0.4
 DISTNAME=	OOo_${VERSION}_src
 WRKDIST=	${WRKDIR}/OOD680_m5
-PKGNAME=	openoffice-${VERSION}p3
+PKGNAME=	openoffice-${VERSION}p4
 CATEGORIES=	editors productivity
 
 SHARED_LIBS=	icudata		26.0 \
@@ -65,8 +65,7 @@ AUTOCONF_VERSION=	2.59
 AUTOCONF_DIR=		${WRKCONF}
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 CONFIGURE_ARGS=	--disable-gnome-vfs \
 		--disable-mozilla \
@@ -96,6 +95,8 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--enable-crashdump --enable-symbols
 .endif
 
+MAKE_ENV+=	envcflags="${CFLAGS}"
+
 # kludge
 OOARCH=		OPENBSDGCCI
 TCSH=		${LOCALBASE}/bin/tcsh
@@ -105,17 +106,10 @@ pre-patch:
 		cp -R gcc3_freebsd_intel gcc3_openbsd_intel && \
 		perl -pi -e "s,FREEBSD,OPENBSD,g" gcc3_openbsd_intel/makefile.mk
 
-pre-configure:
-	perl -pi -e "s,%%LOCALBASE%%,${LOCALBASE},g; \
-		s,%%X11BASE%%,${X11BASE},g; \
-		s,%%TMPDIR%%,${TMPDIR},g" \
-		${WRKCONF}/set_soenv.in \
-		${WRKSRC}/solenv/inc/unxobsdi.mk
-
 do-build:
 	@cd ${WRKBUILD} && \
 		./bootstrap && \
-		${TCSH} -c 'source OpenBSDEnv.Set && dmake'
+		${SETENV} ${MAKE_ENV} ${TCSH} -c 'source OpenBSDEnv.Set && dmake'
 
 do-install:
 	cd ${WRKSRC}/instsetoo_native/unxobsd.pro/OpenOffice/portable/install/en-US/openbsd-* && \

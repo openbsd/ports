@@ -1,6 +1,6 @@
-$OpenBSD: patch-solenv_inc_unxobsdi_mk,v 1.4 2006/10/11 11:19:55 robert Exp $
---- solenv/inc/unxobsdi.mk.orig.port	Fri Aug 18 15:47:45 2006
-+++ solenv/inc/unxobsdi.mk	Fri Aug 18 15:47:46 2006
+$OpenBSD: patch-solenv_inc_unxobsdi_mk,v 1.5 2006/10/20 14:59:26 kurt Exp $
+--- solenv/inc/unxobsdi.mk.orig.port	Thu Oct 19 11:37:15 2006
++++ solenv/inc/unxobsdi.mk	Thu Oct 19 14:43:31 2006
 @@ -0,0 +1,231 @@
 +#*************************************************************************
 +#
@@ -8,9 +8,9 @@ $OpenBSD: patch-solenv_inc_unxobsdi_mk,v 1.4 2006/10/11 11:19:55 robert Exp $
 +#
 +#   $RCSfile: patch-solenv_inc_unxobsdi_mk,v $
 +#
-+#   $Revision: 1.4 $
++#   $Revision: 1.5 $
 +#
-+#   last change: $Author: robert $ $Date: 2006/10/11 11:19:55 $
++#   last change: $Author: kurt $ $Date: 2006/10/20 14:59:26 $
 +#
 +#   The Contents of this file are made available subject to
 +#   the terms of GNU Lesser General Public License Version 2.1.
@@ -77,7 +77,6 @@ $OpenBSD: patch-solenv_inc_unxobsdi_mk,v 1.4 2006/10/11 11:19:55 robert Exp $
 +CC+:=$(CFLAGS_SYSBASE)
 +.ENDIF          # "$(SYSBASE)"!=""
 +CFLAGS+=-fmessage-length=0 -c
-+CLFAGS+=-I%%LOCALBASE%%/include -I%%LOCALBASE%%/include/db4 -I%%X11BASE%%/include
 +
 +# flags to enable build with symbols; required for crashdump feature
 +.IF "$(ENABLE_SYMBOLS)"=="SMALL"
@@ -87,21 +86,21 @@ $OpenBSD: patch-solenv_inc_unxobsdi_mk,v 1.4 2006/10/11 11:19:55 robert Exp $
 +
 +.ENDIF
 +
++INCPOST=$(LOCALBASE)/include
++
 +# flags for the C++ Compiler
-+CFLAGSCC= -pipe $(ARCH_FLAGS)
-+CFLAGSCC+=-I%%LOCALBASE%%/include -I%%LOCALBASE%%/include/db4 -I%%X11BASE%%/include
++CFLAGSCC=$(ARCH_FLAGS)
 +# Flags for enabling exception handling
 +CFLAGSEXCEPTIONS=-fexceptions -fno-enforce-eh-specs
 +# Flags for disabling exception handling
 +CFLAGS_NO_EXCEPTIONS=-fno-exceptions
 +
 +# -fpermissive should be removed as soon as possible
-+CFLAGSCXX= -pipe $(ARCH_FLAGS)
++CFLAGSCXX=$(ARCH_FLAGS)
 +PICSWITCH:=-fpic
 +.IF "$(HAVE_GCC_VISIBILITY_FEATURE)" == "TRUE"
 +CFLAGSCXX += -fvisibility-inlines-hidden
 +.ENDIF # "$(HAVE_GCC_VISIBILITY_FEATURE)" == "TRUE"
-+CFLAGSCXX += -I%%LOCALBASE%%/include -I%%LOCALBASE%%/include/db4 -I%%X11BASE%%/include 
 +
 +# Compiler flags for compiling static object in single threaded environment with graphical user interface
 +CFLAGSOBJGUIST=
@@ -156,7 +155,8 @@ $OpenBSD: patch-solenv_inc_unxobsdi_mk,v 1.4 2006/10/11 11:19:55 robert Exp $
 +#LINKFLAGSDEFS*=#-Wl,-z,defs
 +#LINKFLAGSRUNPATH*=-Wl,-rpath,\''$$ORIGIN'\'
 +#LINKFLAGS=-Wl,-z,combreloc $(LINKFLAGSDEFS) $(LINKFLAGSRUNPATH)
-+LINKFLAGS=-Wl,-z,combreloc -L%%LOCALBASE%%/lib -L%%X11BASE%%/lib
++LINKFLAGS=-Wl,-z,combreloc
++SOLARLIB+=-L$(LOCALBASE)/lib
 +
 +# linker flags for linking applications
 +LINKFLAGSAPPGUI= -Wl,-export-dynamic -Wl,--noinhibit-exec

@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_office_configure_in,v 1.3 2006/10/18 12:45:59 kurt Exp $
+$OpenBSD: patch-config_office_configure_in,v 1.4 2006/10/20 14:59:26 kurt Exp $
 --- config_office/configure.in.orig.port	Mon Aug 28 04:37:20 2006
-+++ config_office/configure.in	Tue Oct 17 15:29:20 2006
++++ config_office/configure.in	Thu Oct 19 11:37:12 2006
 @@ -773,6 +773,15 @@ case "$build_os" in
  		AC_MSG_RESULT([$PTHREAD_LIBS])
  		_os=FreeBSD
@@ -42,3 +42,41 @@ $OpenBSD: patch-config_office_configure_in,v 1.3 2006/10/18 12:45:59 kurt Exp $
  		;;
  	OSF1)
  		PKGFORMAT=setld
+@@ -2903,16 +2912,13 @@ if test -n "$with_system_db" -o -n "$wit
+ 	test "$with_system_db" != "no"; then
+     SYSTEM_DB=YES
+     AC_MSG_RESULT([external])
+-    AC_CHECK_HEADER(db.h, [ DB_INCLUDES=/usr/include ],
+-        [
+-             CFLAGS=-I/usr/include/db4
+-             AC_CHECK_HEADER(db4/db.h,
+-             [ DB_INCLUDES=/usr/include/db4 ],
+-             [ AC_MSG_ERROR(no. install the db4 libraries) ], []+             )
+-        ], []
++    AC_CHECK_HEADER(db4/db.h, [ DB_INCLUDES=${prefix}/include/db4 ],
++             [ AC_MSG_ERROR(no. install the db4 libraries) ], []
+     )
+     AC_MSG_CHECKING([whether db is at least 4.1])
+     # FIXME: Will db 4.3 work? Can't test it since the 4.3 java bindings are not packaged :/
++    save_CXXFLAGS=$CXXFLAGS
++    CXXFLAGS=-I$DB_INCLUDES
+     for v in 1 2; do
+        AC_TRY_RUN([
+ #include <db.h>
+@@ -2923,6 +2929,7 @@ int main(int argc, char **argv) {
+ }
+        ], [DB_VERSION_MINOR=$v], [])
+     done
++    CXXFLAGS=$save_CXXFLAGS
+     if test "$DB_VERSION_MINOR" -gt "1"; then
+        AC_MSG_RESULT([OK])
+        DB_VERSION=4.$DB_VERSION_MINOR
+@@ -3578,7 +3585,7 @@ elif test "$_os" != "WINNT" ; then
+       AC_MSG_ERROR([No X includes found]) # Exit
+    fi
+    CFLAGS=$X_CFLAGS
+-   LDFLAGS="$X_LDFLAGS $X_LIBS"
++   LDFLAGS="$LDFLAGS $X_LDFLAGS $X_LIBS"
+    AC_CHECK_LIB(X11, XOpenDisplay, x_libs="-lX11 $X_EXTRA_LIBS", [AC_MSG_ERROR([X Development libraries not found])])
+ else
+    x_includes="no_x_includes"
