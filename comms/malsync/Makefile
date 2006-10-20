@@ -1,13 +1,17 @@
-# $OpenBSD: Makefile,v 1.25 2006/09/17 19:21:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2006/10/20 11:51:58 ajacoutot Exp $
 
 COMMENT=		"command line tool to synchronize Palm pilot to AvantGo"
 
-VERSION=		2.1.1
+VERSION=		2.2.0
 DISTNAME=		malsync_${VERSION}.src
-PKGNAME=		malsync-${VERSION}p0
+PKGNAME=		malsync-${VERSION}
 CATEGORIES=             comms palm
 
-MAINTAINER=		Antoine Jacoutot <ajacoutot@lphp.org>
+MASTER_SITES=	http://ftp.belnet.be/mirror/rsync.gentoo.org/gentoo/distfiles/ \
+		http://gentoo.oregonstate.edu/distfiles/ \
+		ftp://ftp.fr.freebsd.org/pub/FreeBSD/distfiles/
+
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # MPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,7 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-LIB_DEPENDS=		pisock.>=8::comms/pilot-link
+LIB_DEPENDS=		pisock.>=9::comms/pilot-link
 
 USE_GMAKE=		Yes
 WRKSRC=			${WRKDIR}/malsync

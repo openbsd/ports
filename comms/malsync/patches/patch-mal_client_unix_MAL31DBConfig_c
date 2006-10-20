@@ -1,0 +1,12 @@
+$OpenBSD: patch-mal_client_unix_MAL31DBConfig_c,v 1.3 2006/10/20 11:51:58 ajacoutot Exp $
+--- mal/client/unix/MAL31DBConfig.c.orig	Fri Oct 20 12:22:01 2006
++++ mal/client/unix/MAL31DBConfig.c	Fri Oct 20 12:22:14 2006
+@@ -20,7 +20,7 @@
+  */
+ 
+ #include <MAL31DBConfig.h>
+-#ifdef DARWIN
++#ifdef __OpenBSD__
+ #include <stdlib.h>
+ #else
+ #include <malloc.h>

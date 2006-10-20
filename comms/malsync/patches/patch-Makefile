@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.3 2004/12/29 04:57:15 pvalchev Exp $
---- Makefile.orig	Sun Nov 17 11:52:53 2002
-+++ Makefile	Tue Dec 28 21:48:50 2004
+$OpenBSD: patch-Makefile,v 1.4 2006/10/20 11:51:58 ajacoutot Exp $
+--- Makefile.orig	Tue Sep 19 16:46:31 2006
++++ Makefile	Tue Sep 19 16:48:06 2006
 @@ -1,5 +1,7 @@
  TARGET = malsync
  
@@ -13,7 +13,7 @@ $OpenBSD: patch-Makefile,v 1.3 2004/12/29 04:57:15 pvalchev Exp $
  endif
  
  TREETOP = .
--PILOT_LINK_DIR = $(TREETOP)/pilot-link-0.11.5
+-PILOT_LINK_DIR = $(TREETOP)/pilot-link-0.11.7
 +PILOT_LINK_DIR = $(PREFIX)
  
 -CFLAGS = -Wall -g -DMALSYNC -I$(TREETOP)/mal/common \
@@ -26,7 +26,7 @@ $OpenBSD: patch-Makefile,v 1.3 2004/12/29 04:57:15 pvalchev Exp $
  
  $(TARGET): $(OBJS)
 -	$(CC) $(DYNLINK) $(CFLAGS) -o $@ $(OBJS) \
--          -L${PILOT_LINK_DIR}/libpisock/.libs -lpisock $(LINKLIBS)
+-          ${PILOT_LINK_DIR}/libpisock/.libs/libpisock.a $(LINKLIBS)
 +	$(CC) $(DYNLINK) $(CFLAGS) $(LDFLAGS) -o $@ $(OBJS) \
 +          -L${PILOT_LINK_DIR}/lib -lpisock $(LINKLIBS)
  clean:

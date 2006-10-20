@@ -1,0 +1,312 @@
+$OpenBSD: patch-malsync_c,v 1.1 2006/10/20 11:51:58 ajacoutot Exp $
+--- malsync.c.orig	Wed Jul 23 22:02:30 2003
++++ malsync.c	Thu Oct 19 16:13:29 2006
+@@ -100,8 +100,7 @@ typedef struct {
+     int pilot_rHandle;
+     int pilot_RecIndex;
+     recordid_t id;
+-    uint8  *pilot_buffer;
+-    int pilot_buffer_size;
++    pi_buffer_t *pi_buf;
+     
+     /* Secure Network Library Stuff */
+     AGBool          hasseclib;
+@@ -266,8 +265,8 @@ syncInfoFree(PalmSyncInfo * pInfo)
+         if (NULL != pInfo->userConfig)
+             AGUserConfigFree(pInfo->userConfig);
+ 
+-        if (NULL != pInfo->pilot_buffer)
+-            free(pInfo->pilot_buffer);
++        if (NULL != pInfo->pi_buf)
++            pi_buffer_free (pInfo->pi_buf);
+ 
+         if (NULL != pInfo->commandProcessor)
+             AGCommandProcessorFree(pInfo->commandProcessor);
+@@ -290,9 +289,8 @@ syncInfoNew()
+ 
+         bzero(pInfo, sizeof(PalmSyncInfo));
+ 
+-        pInfo->pilot_buffer_size    = pbs;
+-        pInfo->pilot_buffer         = (uint8 *)malloc(pbs);
+-        if (NULL == pInfo->pilot_buffer)
++        pInfo->pi_buf = pi_buffer_new (pbs);
++        if (NULL == pInfo->pi_buf)
+             goto fail;
+ 
+         /* Allocate the platform calls record. */
+@@ -341,8 +339,7 @@ int16 readInt16(uint8 * p)
+ /*---------------------------------------------------------------------------*/
+ static void 
+ readAndUseDeviceInfoDatabase(AGDeviceInfo * devInfo,
+-                             uint8 *dev_db_info_buffer,
+-                             uint32 dev_db_info_buffer_size)
++                             pi_buffer_t *pi_buf)
+ {
+     int database_id = 0;
+     long result;
+@@ -373,13 +370,13 @@ readAndUseDeviceInfoDatabase(AGDeviceInf
+         int rc;
+ 
+         rc = dlp_ReadRecordByIndex(sd, database_id, 0, 
+-                                   (void *)dev_db_info_buffer, 
+-                                   &id, &dev_db_info_buffer_size, 
++                                   pi_buf, 
++                                   &id,
+                                    &attr, &cat);
+     
+ 
+         if (rc >= 0) {
+-            uint8 *p = dev_db_info_buffer;
++            uint8 *p = pi_buf->data;
+             int16 dev_db_info_version = readInt16(p);
+             p+=sizeof(int16);
+             devInfo->colorDepth = readInt32(p);
+@@ -472,8 +469,7 @@ readDeviceInfo(PalmSyncInfo * pInfo)
+     }
+ 
+     readAndUseDeviceInfoDatabase(devInfo,
+-                                 pInfo->pilot_buffer,
+-                                 pInfo->pilot_buffer_size);
++                                 pInfo->pi_buf);
+ 
+     /* Override the color depth if the user wants low res images. */
+     if (lowres) {
+@@ -663,31 +659,36 @@ static int32 
+ readDeviceUserConfig32(int userConfigDBHandle, AGUserConfig **deviceUserConfig)
+ {
+     recordid_t id;
+-    int bufferSize = BUFFERSIZE;
++    pi_buffer_t *pi_buf;
+     int attr = 0;
+     int cat  = 0;
+     int rc;
+-    uint8 buffer[BUFFERSIZE];
+     AGBufferReader * r = NULL;
+ 
+-    rc = dlp_ReadRecordByIndex(sd, userConfigDBHandle, 0, (void *)buffer, 
+-                               &id, &bufferSize, &attr, &cat);
++    pi_buf = pi_buffer_new (BUFFERSIZE);
++
++    rc = dlp_ReadRecordByIndex(sd, userConfigDBHandle, 0, pi_buf, 
++                               &id, &attr, &cat);
+     
+     if (rc < 0) {
+         if (verbose)
+             printf("readDeviceUserConfig: dlp_ReadRecordByIndex , err = %d\n",
+                    rc);
++        pi_buffer_free (pi_buf);
+         return 0;
+     }
+     
+-    r = AGBufferReaderNew(buffer);
++    r = AGBufferReaderNew(pi_buf->data);
+     if (r) {
+         *deviceUserConfig = AGUserConfigNew();
+         AGUserConfigReadData(*deviceUserConfig, (AGReader*)r);
+         AGBufferReaderFree(r);
++        pi_buffer_free (pi_buf);
+         return id;
+-    } else
++    } else {
++        pi_buffer_free (pi_buf);
+         return 0;
++    }
+ }
+ #define BUFFERSIZE 0xFFFF
+ /*---------------------------------------------------------------------------*/
+@@ -695,31 +696,36 @@ static int32 readDeviceUserConfig31(int 
+                                     AGUserConfig **deviceUserConfig)
+ {
+     recordid_t id;
+-    int bufferSize = BUFFERSIZE;
+     int attr = 0;
+     int cat  = 0;
+     int rc;
+-    uint8 buffer[BUFFERSIZE];
++    pi_buffer_t *pi_buf;
+     AGBufferReader * r = NULL;
+ 
+-    rc = dlp_ReadRecordByIndex(sd, userConfigDBHandle, 0, (void *)buffer, 
+-                               &id, &bufferSize, &attr, &cat);
++    pi_buf = pi_buffer_new (BUFFERSIZE);
++
++    rc = dlp_ReadRecordByIndex(sd, userConfigDBHandle, 0, pi_buf, 
++                               &id, &attr, &cat);
+     
+     if (rc < 0) {
+         if (verbose)
+             printf("readDeviceUserConfig: dlp_ReadRecordByIndex , err = %d\n",
+                    rc);
++        pi_buffer_free (pi_buf);
+         return 0;
+     }
+     
+-    r = AGBufferReaderNew(buffer);
++    r = AGBufferReaderNew(pi_buf->data);
+     if (r) {
+         *deviceUserConfig = AGUserConfigNew();
+         MAL31ReadUserData(*deviceUserConfig, (AGReader*)r);
+         AGBufferReaderFree(r);
++        pi_buffer_free (pi_buf);
+         return id;
+-    } else
++    } else {
++        pi_buffer_free (pi_buf);
+         return 0;
++    }
+ }
+ /*---------------------------------------------------------------------------*/
+ static int32 readDeviceUserConfig(int userConfigDBHandle,
+@@ -740,23 +746,25 @@ static void writeDeviceUserConfig(int us
+ {
+ 
+     recordid_t id;
+-    int bufferSize = BUFFERSIZE;
+     int attr = 0;
+     int cat  = 0;
+-    uint8 buffer[BUFFERSIZE];
+     AGBufferWriter * w = NULL;
++
+     w = AGBufferWriterNew(0);
+     if (w) {
+         long result;
++        pi_buffer_t *pi_buf;
+         
++        pi_buf = pi_buffer_new (BUFFERSIZE);
++        
+         if (threeone) {
+             MAL31WriteUserData(deviceUserConfig, (AGWriter*)w);
+         } else {
+             AGUserConfigWriteData(deviceUserConfig, (AGWriter*)w);
+         }
+ 
+-        result = dlp_ReadRecordByIndex(sd, userConfigDBHandle, 0, (void *)buffer, 
+-                                   &id, &bufferSize, &attr, &cat);
++        result = dlp_ReadRecordByIndex(sd, userConfigDBHandle, 0, pi_buf, 
++                                   &id, &attr, &cat);
+         
+         if (result < 0)
+             id = 0;
+@@ -766,7 +774,7 @@ static void writeDeviceUserConfig(int us
+                                   AGBufferWriterGetBufferSize(w), 
+                                   &id);
+         AGBufferWriterFree(w);
+-
++        pi_buffer_free (pi_buf);
+     }
+ }
+ 
+@@ -1044,17 +1052,17 @@ getRecordBase(PalmSyncInfo * pInfo, AGBo
+     int32 result;
+     int att = 0;
+     int cat = 0;
+-    int size = pInfo->pilot_buffer_size;
++    //int size = pInfo->pi_buf->allocated;
+     int idx   = pInfo->pilot_RecIndex++;
+ 
+     result = (modonly) ?
+-        dlp_ReadNextModifiedRec (sd, pInfo->pilot_rHandle, pInfo->pilot_buffer,
++        dlp_ReadNextModifiedRec (sd, pInfo->pilot_rHandle, pInfo->pi_buf,
+                                  &pInfo->id, &idx,
+-                                 &size, &att, &cat)
++                                 &att, &cat)
+         :
+         dlp_ReadRecordByIndex(sd, pInfo->pilot_rHandle, idx,
+-                              pInfo->pilot_buffer, &pInfo->id,
+-                              &size, &att, &cat);
++                              pInfo->pi_buf, &pInfo->id,
++                              &att, &cat);
+     
+     if (result < 0) {
+         closeDatabase(pInfo);
+@@ -1070,7 +1078,7 @@ getRecordBase(PalmSyncInfo * pInfo, AGBo
+     }
+     pInfo->record = AGRecordInit(pInfo->record, pInfo->id,
+                                  AGPalmPilotAttribsToMALMod((uint8)att),
+-                                 size, pInfo->pilot_buffer, 0, NULL);
++                                 pInfo->pi_buf->used, pInfo->pi_buf->data, 0, NULL);
+ 
+     *record = pInfo->record;
+     return AGCLIENT_CONTINUE;
+@@ -1363,7 +1371,6 @@ main(int argc, char *argv[])
+ static void 
+ Connect(PalmSyncInfo *pi) 
+ {
+-    struct pi_sockaddr addr;
+     int ret;
+     
+     if (sd != 0)
+@@ -1595,40 +1602,39 @@ fill_in_versioninfo(int sd, AGExpansionV
+                             &database_id);
+ 
+     
+-    if (result >= 0) {
+-        long syncReadResult;
+-        int attr = 0;
+-        int cat  = 0;
+-        recordid_t id;
+-        int rc;
+-        const int version_buffer_size = 0x1000;
+-        uint8 version_buffer[version_buffer_size];
+-
+-
+-        rc = dlp_ReadRecordByIndex(sd, database_id, 
+-                                   0, 
+-                                   (void *)version_buffer, 
+-                                   &id, 
+-                                   &version_buffer_size, 
+-                                   &attr, 
+-                                   &cat);
+-
+-        if (rc >= 0) {
+-            ClientVersion cv;
+-            ClientVersionReadData(&cv,
+-                                  version_buffer_size,
+-                                  version_buffer);
+-            vi->device_major = cv.major;
+-            vi->device_minor = cv.minor;
+-            vi->device_build = cv.buildno;
+-
+-            vi->conn_agent_major = cv.major;
+-            vi->conn_agent_minor = cv.minor;
+-            vi->conn_agent_build = cv.buildno;
+-        }
+-        dlp_CloseDB(sd, database_id);
+-
++if (result >= 0) {
++    long syncReadResult;
++    int attr = 0;
++    int cat  = 0;
++    recordid_t id;
++    int rc;
++    pi_buffer_t *version_buffer = pi_buffer_new(0x1000);
++ 
++    rc = dlp_ReadRecordByIndex(sd, database_id, 
++                               0, 
++                               version_buffer, 
++                               &id, 
++                               &attr, 
++                               &cat);
++ 
++    if (rc >= 0) {
++        ClientVersion cv;
++        ClientVersionReadData(&cv,
++                              version_buffer->used,
++                              version_buffer->data);
++        vi->device_major = cv.major;
++        vi->device_minor = cv.minor;
++        vi->device_build = cv.buildno;
++ 
++        vi->conn_agent_major = cv.major;
++        vi->conn_agent_minor = cv.minor;
++        vi->conn_agent_build = cv.buildno;
+     }
++ 
++    pi_buffer_free(version_buffer);
++ 
++    dlp_CloseDB(sd, database_id);
++ 
++ }
+ 
+ }
+-
