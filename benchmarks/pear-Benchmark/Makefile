@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2006/10/19 11:50:14 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.7 2006/10/20 10:14:12 mbalmer Exp $
 
 COMMENT=	"framework to benchmark PHP scripts or function calls"
 
 DISTNAME=	Benchmark-1.2.3
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	pear-${DISTNAME}p0
 CATEGORIES=	benchmarks pear
 
 MASTER_SITES=	http://pear.php.net/get/
