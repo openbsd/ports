@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.406 2006/10/20 13:25:25 bernd Exp $
+# $OpenBSD: Makefile,v 1.407 2006/10/20 17:19:30 bernd Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -398,6 +398,7 @@
      SUBDIR += rats
      SUBDIR += ruby-actionpack
      SUBDIR += ruby-activesupport
+     SUBDIR += ruby-daemons
      SUBDIR += ruby-flexmock
      SUBDIR += ruby-gems
      SUBDIR += ruby-ncurses
