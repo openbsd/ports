@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.46 2006/10/19 13:12:37 kili Exp $
+# $OpenBSD: Makefile,v 1.47 2006/10/20 16:45:58 steven Exp $
 
 COMMENT=	"GNU PostScript interpreter"
 
 VERSION=	8.54
 DISTNAME=	ghostscript-${VERSION}-gpl
-PKGNAME=	${DISTNAME:S,-gpl,,}
+PKGNAME=	${DISTNAME:S,-gpl,,}p0
 CATEGORIES=	print lang
 SHARED_LIBS=	gs	9.0
 
@@ -17,7 +17,9 @@ GS_SOURCES=	${DISTNAME}${EXTRACT_SUFX}
 DISTFILES=	${GS_SOURCES} pdf_sec.ps:1
 EXTRACT_ONLY=	${GS_SOURCES}
 
-SUBST_VARS=	VERSION
+FLAVOR_STRING=	${FLAVOR_EXT:S/-/,/g}
+
+SUBST_VARS=	VERSION FLAVOR_STRING
 DIST_SUBDIR=	gs
 
 # GPL 

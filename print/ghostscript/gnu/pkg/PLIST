@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.9 2006/10/19 13:12:37 kili Exp $
+@comment $OpenBSD: PLIST,v 1.10 2006/10/20 16:45:58 steven Exp $
+@pkgpath print/ghostscript/afpl${FLAVOR_STRING}
 bin/bdftops
 bin/dumphint
 bin/dvipdf
