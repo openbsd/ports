@@ -1,0 +1,12 @@
+$OpenBSD: patch-avidemux_ADM_audiofilter_audiodeng_buildfilters_cpp,v 1.1 2006/10/20 23:35:17 ajacoutot Exp $
+--- avidemux/ADM_audiofilter/audiodeng_buildfilters.cpp.orig	Fri Oct 20 20:30:46 2006
++++ avidemux/ADM_audiofilter/audiodeng_buildfilters.cpp	Fri Oct 20 20:31:08 2006
+@@ -482,7 +482,7 @@ void audioCodecConfigure( void )
+ 								}
+ 								return;
+ 		default:
+-					ADM_assert(0);																				
++					ADM_assert(!0);																				
+ 		
+ 	}
+ 	
