@@ -1,0 +1,27 @@
+@comment $OpenBSD: PFRAG.PIC-c++,v 1.1 2006/10/20 13:43:18 espie Exp $
+include/c++/${V}/${CONFIG}/fpic/
+include/c++/${V}/${CONFIG}/fpic/bits/
+include/c++/${V}/${CONFIG}/fpic/bits/atomic_word.h
+include/c++/${V}/${CONFIG}/fpic/bits/basic_file.h
+include/c++/${V}/${CONFIG}/fpic/bits/c++allocator.h
+include/c++/${V}/${CONFIG}/fpic/bits/c++config.h
+include/c++/${V}/${CONFIG}/fpic/bits/c++io.h
+include/c++/${V}/${CONFIG}/fpic/bits/c++locale.h
+include/c++/${V}/${CONFIG}/fpic/bits/cpu_defines.h
+include/c++/${V}/${CONFIG}/fpic/bits/ctype_base.h
+include/c++/${V}/${CONFIG}/fpic/bits/ctype_inline.h
+include/c++/${V}/${CONFIG}/fpic/bits/ctype_noninline.h
+include/c++/${V}/${CONFIG}/fpic/bits/cxxabi_tweaks.h
+include/c++/${V}/${CONFIG}/fpic/bits/gthr-default.h
+include/c++/${V}/${CONFIG}/fpic/bits/gthr-posix.h
+include/c++/${V}/${CONFIG}/fpic/bits/gthr-single.h
+include/c++/${V}/${CONFIG}/fpic/bits/gthr-tpf.h
+include/c++/${V}/${CONFIG}/fpic/bits/gthr.h
+include/c++/${V}/${CONFIG}/fpic/bits/messages_members.h
+include/c++/${V}/${CONFIG}/fpic/bits/os_defines.h
+include/c++/${V}/${CONFIG}/fpic/bits/time_members.h
+lib/fpic/
+lib/fpic/libestdc++.a
+lib/fpic/libestdc++.la
+lib/fpic/libesupc++.a
+lib/fpic/libesupc++.la

@@ -1,6 +1,17 @@
-$OpenBSD: patch-ltcf-cxx_sh,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
---- ltcf-cxx.sh.orig	Thu May  5 17:04:39 2005
-+++ ltcf-cxx.sh	Mon May 16 17:43:16 2005
+$OpenBSD: patch-ltcf-cxx_sh,v 1.2 2006/10/20 13:43:18 espie Exp $
+--- ltcf-cxx.sh.orig	Sat Jul 16 04:30:53 2005
++++ ltcf-cxx.sh	Fri Oct 20 11:33:10 2006
+@@ -78,8 +78,8 @@ if { ac_try='${CC-c++} -E conftest.$ac_e
+   # to be the same.
+ 
+   if test "$with_gnu_ld" = yes; then
+-    archive_cmds='$CC -shared -nostdlib $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags ${wl}-soname $wl$soname -o $lib'
+-    archive_expsym_cmds='$CC -shared -nostdlib $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags ${wl}-soname $wl$soname ${wl}-retain-symbols-file $wl$export_symbols -o $lib'
++    archive_cmds='$CC $pic_flag -shared -nostdlib $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags ${wl}-soname $wl$soname -o $lib'
++    archive_expsym_cmds='$CC $pic_flag -shared -nostdlib $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags ${wl}-soname $wl$soname ${wl}-retain-symbols-file $wl$export_symbols -o $lib'
+ 
+     hardcode_libdir_flag_spec='${wl}--rpath ${wl}$libdir'
+     export_dynamic_flag_spec='${wl}--export-dynamic'
 @@ -453,6 +453,19 @@ case $host_os in
    netbsd* | knetbsd*-gnu)
      # NetBSD uses g++ - do we need to do anything?
@@ -21,3 +32,26 @@ $OpenBSD: patch-ltcf-cxx_sh,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
    osf3*)
      case $cc_basename in
        KCC)
+@@ -980,8 +993,9 @@ private:
+ };
+ EOF
+ 
++echo $ac_compile_shared >&5
+ 
+-if (eval $ac_compile) 2>&5; then
++if (eval $ac_compile_shared) 2>&5; then
+   # Parse the compiler output and extract the necessary
+   # objects, libraries and library flags.
+ 
+@@ -1011,9 +1025,9 @@ if (eval $ac_compile) 2>&5; then
+ 	   # provided the user.  The postdeps already come after the
+ 	   # user supplied libs so there is no need to process them.
+            if test -z "$compiler_lib_search_path"; then
+-             compiler_lib_search_path="${prev}${p}"
++             compiler_lib_search_path="${prev}${p}/fpic ${p}"
+            else
+-             compiler_lib_search_path="${compiler_lib_search_path} ${prev}${p}"
++             compiler_lib_search_path="${compiler_lib_search_path} ${prev}${p}/fpic ${prev}${p}"
+            fi
+            ;;
+          # The "-l" case would never come before the object being

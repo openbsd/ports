@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-c++,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
+@comment $OpenBSD: PLIST-c++,v 1.2 2006/10/20 13:43:18 espie Exp $
 bin/ec++
 bin/eg++
 bin/${CONFIG}-ec++
@@ -45,7 +45,6 @@ include/c++/${V}/backward/tree.h
 include/c++/${V}/backward/vector.h
 include/c++/${V}/bits/
 include/c++/${V}/bits/allocator.h
-include/c++/${V}/bits/atomicity.h
 include/c++/${V}/bits/basic_ios.h
 include/c++/${V}/bits/basic_ios.tcc
 include/c++/${V}/bits/basic_string.h
@@ -55,7 +54,6 @@ include/c++/${V}/bits/char_traits.h
 include/c++/${V}/bits/cmath.tcc
 include/c++/${V}/bits/codecvt.h
 include/c++/${V}/bits/concept_check.h
-include/c++/${V}/bits/concurrence.h
 include/c++/${V}/bits/cpp_type_traits.h
 include/c++/${V}/bits/deque.tcc
 include/c++/${V}/bits/fstream.tcc
@@ -162,8 +160,10 @@ include/c++/${V}/exception_defines.h
 include/c++/${V}/ext/
 include/c++/${V}/ext/algorithm
 include/c++/${V}/ext/array_allocator.h
+include/c++/${V}/ext/atomicity.h
 include/c++/${V}/ext/bitmap_allocator.h
 include/c++/${V}/ext/codecvt_specializations.h
+include/c++/${V}/ext/concurrence.h
 include/c++/${V}/ext/debug_allocator.h
 include/c++/${V}/ext/functional
 include/c++/${V}/ext/hash_fun.h
@@ -453,18 +453,6 @@ include/c++/${V}/ext/pb_ds/detail/trie_policy/sample_trie_node_update.hpp
 include/c++/${V}/ext/pb_ds/detail/trie_policy/string_trie_e_access_traits_imp.hpp
 include/c++/${V}/ext/pb_ds/detail/trie_policy/trie_policy_base.hpp
 include/c++/${V}/ext/pb_ds/detail/type_utils.hpp
-include/c++/${V}/ext/pb_ds/detail/typelist/
-include/c++/${V}/ext/pb_ds/detail/typelist.hpp
-include/c++/${V}/ext/pb_ds/detail/typelist/typelist_append.hpp
-include/c++/${V}/ext/pb_ds/detail/typelist/typelist_apply.hpp
-include/c++/${V}/ext/pb_ds/detail/typelist/typelist_assoc_container_find.hpp
-include/c++/${V}/ext/pb_ds/detail/typelist/typelist_at_index.hpp
-include/c++/${V}/ext/pb_ds/detail/typelist/typelist_contains.hpp
-include/c++/${V}/ext/pb_ds/detail/typelist/typelist_filter.hpp
-include/c++/${V}/ext/pb_ds/detail/typelist/typelist_flatten.hpp
-include/c++/${V}/ext/pb_ds/detail/typelist/typelist_transform.hpp
-include/c++/${V}/ext/pb_ds/detail/typelist/typelist_typelist_append.hpp
-include/c++/${V}/ext/pb_ds/detail/typelist_assoc_container.hpp
 include/c++/${V}/ext/pb_ds/detail/types_traits.hpp
 include/c++/${V}/ext/pb_ds/detail/unordered_iterator/
 include/c++/${V}/ext/pb_ds/detail/unordered_iterator/const_iterator.hpp
@@ -488,6 +476,8 @@ include/c++/${V}/ext/slist
 include/c++/${V}/ext/sso_string_base.h
 include/c++/${V}/ext/stdio_filebuf.h
 include/c++/${V}/ext/stdio_sync_filebuf.h
+include/c++/${V}/ext/throw_allocator.h
+include/c++/${V}/ext/type_traits.h
 include/c++/${V}/ext/typelist.h
 include/c++/${V}/ext/vstring.h
 include/c++/${V}/ext/vstring.tcc
@@ -565,6 +555,7 @@ include/c++/${V}/tr1/float.h
 include/c++/${V}/tr1/functional
 include/c++/${V}/tr1/functional_iterate.h
 include/c++/${V}/tr1/hashtable
+include/c++/${V}/tr1/hashtable_policy.h
 include/c++/${V}/tr1/inttypes.h
 include/c++/${V}/tr1/limits.h
 include/c++/${V}/tr1/math.h
@@ -599,4 +590,5 @@ lib/libestdc++.la
 lib/libesupc++.a
 lib/libesupc++.la
 libexec/gcc/${CONFIG}/${V}/cc1plus
+%%PIC%%
 @man man/man1/eg++.1

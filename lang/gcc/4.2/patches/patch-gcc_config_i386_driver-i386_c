@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_i386_driver-i386_c,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
---- gcc/config/i386/driver-i386.c.orig	Sun Jul 23 14:55:23 2006
-+++ gcc/config/i386/driver-i386.c	Sun Jul 23 14:55:40 2006
-@@ -161,14 +161,14 @@ const char *host_detect_local_cpu (int a
+$OpenBSD: patch-gcc_config_i386_driver-i386_c,v 1.2 2006/10/20 13:43:18 espie Exp $
+--- gcc/config/i386/driver-i386.c.orig	Sat Sep 23 12:33:27 2006
++++ gcc/config/i386/driver-i386.c	Wed Oct 18 00:37:31 2006
+@@ -158,13 +158,13 @@ const char *host_detect_local_cpu (int a
      }
  
  done:
@@ -16,5 +16,4 @@ $OpenBSD: patch-gcc_config_i386_driver-i386_c,v 1.1.1.1 2006/07/31 09:50:53 espi
 -  return concat ("-m", argv[0], "=i386", NULL);
 +  return concat ("-m", argv[0], "=i386", (void *)0);
  }
- #endif
- #endif
+ #endif /* GCC_VERSION */

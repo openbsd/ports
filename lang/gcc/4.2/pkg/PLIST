@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/08/01 08:58:11 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/10/20 13:43:18 espie Exp $
 %%SHARED%%
 bin/ecpp
 bin/egcc
@@ -14,7 +14,6 @@ bin/${CONFIG}-gcc-${V}
 lib/gcc/
 lib/gcc/${CONFIG}/
 lib/gcc/${CONFIG}/${V}/
-lib/gcc/${CONFIG}/${V}/finclude/
 lib/gcc/${CONFIG}/${V}/include/
 lib/gcc/${CONFIG}/${V}/include/README
 lib/gcc/${CONFIG}/${V}/include/com_err.h
@@ -60,6 +59,7 @@ libexec/gcc/${CONFIG}/${V}/install-tools/fixinc.sh
 libexec/gcc/${CONFIG}/${V}/install-tools/fixincl
 libexec/gcc/${CONFIG}/${V}/install-tools/mkheaders
 %%I386%%
+%%PIC%%
 @man man/man1/ecpp.1
 @man man/man1/egcc.1
 @man man/man1/egcov.1

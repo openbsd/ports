@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_omp-low_c,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
---- gcc/omp-low.c.orig	Sun Jul 23 14:31:14 2006
-+++ gcc/omp-low.c	Sun Jul 23 14:31:35 2006
-@@ -3863,7 +3863,7 @@ lower_omp_critical (tree *stmt_p, omp_co
+$OpenBSD: patch-gcc_omp-low_c,v 1.2 2006/10/20 13:43:18 espie Exp $
+--- gcc/omp-low.c.orig	Tue Aug 15 16:57:52 2006
++++ gcc/omp-low.c	Wed Oct 18 00:37:31 2006
+@@ -3867,7 +3867,7 @@ lower_omp_critical (tree *stmt_p, omp_co
  	  decl = create_tmp_var_raw (ptr_type_node, NULL);
  
  	  new_str = ACONCAT ((".gomp_critical_user_",

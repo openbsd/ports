@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_cp_parser_c,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
---- gcc/cp/parser.c.orig	Sat Jul 15 17:00:28 2006
-+++ gcc/cp/parser.c	Sun Jul 23 11:24:02 2006
-@@ -16284,7 +16284,7 @@ cp_parser_require (cp_parser* parser,
+$OpenBSD: patch-gcc_cp_parser_c,v 1.2 2006/10/20 13:43:18 espie Exp $
+--- gcc/cp/parser.c.orig	Fri Oct 13 10:38:43 2006
++++ gcc/cp/parser.c	Wed Oct 18 00:37:31 2006
+@@ -16322,7 +16322,7 @@ cp_parser_require (cp_parser* parser,
        /* Output the MESSAGE -- unless we're parsing tentatively.  */
        if (!cp_parser_simulate_error (parser))
  	{

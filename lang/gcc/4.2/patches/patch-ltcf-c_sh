@@ -1,6 +1,17 @@
-$OpenBSD: patch-ltcf-c_sh,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
---- ltcf-c.sh.orig	Thu May  5 17:04:38 2005
-+++ ltcf-c.sh	Mon May 16 17:43:16 2005
+$OpenBSD: patch-ltcf-c_sh,v 1.2 2006/10/20 13:43:18 espie Exp $
+--- ltcf-c.sh.orig	Fri Nov 18 23:53:08 2005
++++ ltcf-c.sh	Thu Oct 19 13:07:14 2006
+@@ -219,8 +219,8 @@ EOF
+ 
+   *)
+     if $LD --help 2>&1 | egrep ': supported targets:.* elf' > /dev/null; then
+-      archive_cmds='$CC -shared $libobjs $deplibs $compiler_flags ${wl}-soname $wl$soname -o $lib'
+-      archive_expsym_cmds='$CC -shared $libobjs $deplibs $compiler_flags ${wl}-soname $wl$soname ${wl}-retain-symbols-file $wl$export_symbols -o $lib'
++      archive_cmds='$CC $pic_flag -shared $libobjs $deplibs $compiler_flags ${wl}-soname $wl$soname -o $lib'
++      archive_expsym_cmds='$CC $pic_flag -shared $libobjs $deplibs $compiler_flags ${wl}-soname $wl$soname ${wl}-retain-symbols-file $wl$export_symbols -o $lib'
+     else
+       ld_shlibs=no
+     fi
 @@ -514,10 +514,13 @@ else
      ;;
  

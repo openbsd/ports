@@ -1,7 +1,7 @@
-$OpenBSD: patch-libobjc_Makefile_in,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
---- libobjc/Makefile.in.orig	Wed May 24 03:22:17 2006
-+++ libobjc/Makefile.in	Sun Jul 23 11:24:03 2006
-@@ -273,15 +273,17 @@ doc: info dvi html
+$OpenBSD: patch-libobjc_Makefile_in,v 1.2 2006/10/20 13:43:18 espie Exp $
+--- libobjc/Makefile.in.orig	Wed Oct 11 01:48:09 2006
++++ libobjc/Makefile.in	Wed Oct 18 00:37:32 2006
+@@ -273,15 +273,17 @@ doc: info dvi pdf html
  .PHONY: install-html
  install-html:
  

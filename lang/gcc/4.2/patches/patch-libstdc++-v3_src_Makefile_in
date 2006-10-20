@@ -1,7 +1,7 @@
-$OpenBSD: patch-libstdc++-v3_src_Makefile_in,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
---- libstdc++-v3/src/Makefile.in.orig	Tue Jun 13 01:24:22 2006
-+++ libstdc++-v3/src/Makefile.in	Sun Jul 23 11:28:32 2006
-@@ -296,7 +296,7 @@ WARN_CXXFLAGS = \
+$OpenBSD: patch-libstdc++-v3_src_Makefile_in,v 1.2 2006/10/20 13:43:18 espie Exp $
+--- libstdc++-v3/src/Makefile.in.orig	Fri Jul 28 06:57:34 2006
++++ libstdc++-v3/src/Makefile.in	Wed Oct 18 00:37:32 2006
+@@ -299,7 +299,7 @@ WARN_CXXFLAGS = \
  AM_CPPFLAGS = $(GLIBCXX_INCLUDES)
  
  # Cross compiler support.
@@ -10,7 +10,7 @@ $OpenBSD: patch-libstdc++-v3_src_Makefile_in,v 1.1.1.1 2006/07/31 09:50:53 espie
  @ENABLE_SYMVERS_DARWIN_TRUE@@ENABLE_SYMVERS_TRUE@version_arg = -Wl,-exported_symbols_list,libstdc++-symbols.explist
  @ENABLE_SYMVERS_FALSE@version_arg = 
  @ENABLE_SYMVERS_GNU_NAMESPACE_TRUE@@ENABLE_SYMVERS_TRUE@version_arg = -Wl,--version-script=libstdc++-symbols.ver
-@@ -383,9 +383,11 @@ libstdc___la_LIBADD = \
+@@ -385,9 +385,11 @@ libstdc___la_LIBADD = \
  	$(top_builddir)/libmath/libmath.la \
  	$(top_builddir)/libsupc++/libsupc++convenience.la
  
@@ -23,7 +23,7 @@ $OpenBSD: patch-libstdc++-v3_src_Makefile_in,v 1.1.1.1 2006/07/31 09:50:53 espie
  
  
  # Use special rules for the deprecated source files so that they find
-@@ -497,7 +499,7 @@ clean-toolexeclibLTLIBRARIES:
+@@ -499,7 +501,7 @@ clean-toolexeclibLTLIBRARIES:
  	  echo "rm -f \"$${dir}/so_locations\""; \
  	  rm -f "$${dir}/so_locations"; \
  	done

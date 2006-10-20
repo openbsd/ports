@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_c-common_c,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
---- gcc/c-common.c.orig	Thu Jul  6 04:09:02 2006
-+++ gcc/c-common.c	Sun Jul 23 14:24:16 2006
+$OpenBSD: patch-gcc_c-common_c,v 1.2 2006/10/20 13:43:18 espie Exp $
+--- gcc/c-common.c.orig	Sun Aug 27 01:51:14 2006
++++ gcc/c-common.c	Wed Oct 18 00:37:31 2006
 @@ -543,7 +543,9 @@ static tree handle_cleanup_attribute (tr
  static tree handle_warn_unused_result_attribute (tree *, tree, tree, int,
  						 bool *);
@@ -20,7 +20,7 @@ $OpenBSD: patch-gcc_c-common_c,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
    { "visibility",	      1, 1, false, false, false,
  			      handle_visibility_attribute },
    { "tls_model",	      1, 1, true,  false, false,
-@@ -5590,6 +5594,15 @@ handle_warn_unused_result_attribute (tre
+@@ -5595,6 +5599,15 @@ handle_warn_unused_result_attribute (tre
      }
  
    return NULL_TREE;

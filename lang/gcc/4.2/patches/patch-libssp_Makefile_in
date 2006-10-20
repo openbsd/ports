@@ -1,7 +1,7 @@
-$OpenBSD: patch-libssp_Makefile_in,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
---- libssp/Makefile.in.orig	Sun Mar  5 12:49:20 2006
-+++ libssp/Makefile.in	Sun Mar  5 12:50:03 2006
-@@ -230,9 +230,10 @@ libssp_la_SOURCES = \
+$OpenBSD: patch-libssp_Makefile_in,v 1.2 2006/10/20 13:43:18 espie Exp $
+--- libssp/Makefile.in.orig	Fri Sep 29 23:18:51 2006
++++ libssp/Makefile.in	Wed Oct 18 00:37:32 2006
+@@ -231,9 +231,10 @@ libssp_la_SOURCES = \
  	strcat-chk.c strcpy-chk.c strncat-chk.c strncpy-chk.c \
  	vsnprintf-chk.c vsprintf-chk.c
  
