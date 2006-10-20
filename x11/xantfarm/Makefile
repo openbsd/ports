@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.15 2004/12/19 17:15:17 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2006/10/20 15:37:45 jasper Exp $
 
 COMMENT=	"ant hill simulation on X11 root window"
 
 DISTNAME=	xantfarm
-PKGNAME=        xantfarm-1.16
+PKGNAME=        xantfarm-1.16p0
 CATEGORIES=	x11
 
-MASTER_SITES=   ftp://ftp.kuis.kyoto-u.ac.jp/Linux/JG/other-sources/
-DISTFILES=	xantfarm23oct91.tar.gz
+HOMEPAGE=	http://www.acme.com/software/xantfarm/
+
+MASTER_SITES=	${HOMEPAGE}
+DISTFILES=	xantfarm_23oct1991.tar.gz
 
 # BSD-like, badly worded
 PERMIT_PACKAGE_CDROM=	Yes
