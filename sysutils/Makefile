@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2006/10/03 16:29:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.111 2006/10/20 14:07:05 jasper Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -18,6 +18,7 @@
      SUBDIR += dmassage
      SUBDIR += dmidecode
      SUBDIR += dvd+rw-tools
+     SUBDIR += dwdiff
      SUBDIR += e2fsprogs
      SUBDIR += expiretable
      SUBDIR += findlib
