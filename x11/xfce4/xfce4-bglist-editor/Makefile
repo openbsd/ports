@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/20 00:51:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2006/10/20 08:31:20 steven Exp $
 
 COMMENT=		"editor for XFCE's backdrop list"
 DISTNAME=		xfce4-bglist-editor-4.2.0
-PKGNAME=		${DISTNAME:S/-plugin//}
+PKGNAME=		${DISTNAME}p0
 
 HOMEPAGE=		http://xfce-goodies.berlios.de/
 
