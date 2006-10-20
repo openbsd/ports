@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2006/08/02 15:32:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2006/10/20 15:31:25 jasper Exp $
 
 COMMENT=		"lightweight window manager with emphasis on usability"
 
 DISTNAME=		pwm-20060517
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		x11
 
-HOMEPAGE=		http://iki.fi/tuomov/pwm/
+HOMEPAGE=		http://iki.fi/tuomov/
 MASTER_SITES=		${HOMEPAGE}dl/
 
 MAINTAINER=		Gregory Steuck <greg-openbsd-pwm@nest.cx>
