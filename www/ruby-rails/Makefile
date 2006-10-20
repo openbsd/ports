@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2006/08/23 21:12:24 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2006/10/20 11:24:35 bernd Exp $
 
 COMMENT=	"ruby MVC web application framework"
 
 DISTNAME=	rails-1.1.6
-PKGNAME=	ruby-${DISTNAME}
+PKGNAME=	ruby-${DISTNAME}p0
 CATEGORIES=	www 
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org> 
@@ -24,5 +24,7 @@ RUN_DEPENDS=	::devel/ruby-rake \
 		:ruby-actionwebservice-1.1.6:www/ruby-actionwebservice
 
 CONFIGURE_STYLE=ruby gem
+
+PKG_ARCH=	*
 
 .include <bsd.port.mk>
