@@ -1,0 +1,12 @@
+$OpenBSD: patch-po_Makefile_in,v 1.1.1.1 2006/10/20 17:54:45 ajacoutot Exp $
+--- po/Makefile.in.orig	Fri Oct 20 16:50:13 2006
++++ po/Makefile.in	Fri Oct 20 16:50:34 2006
+@@ -20,7 +20,7 @@ VPATH = @srcdir@
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+ datadir = $(prefix)/@DATADIRNAME@
+-localedir = $(datadir)/locale
++localedir = $(prefix)/share/locale
+ gnulocaledir = $(prefix)/share/locale
+ gettextsrcdir = $(prefix)/share/gettext/po
+ subdir = po

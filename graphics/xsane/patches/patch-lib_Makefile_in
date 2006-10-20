@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_Makefile_in,v 1.1.1.1 2006/10/20 17:54:45 ajacoutot Exp $
+--- lib/Makefile.in.orig	Fri Oct 20 16:42:25 2006
++++ lib/Makefile.in	Fri Oct 20 16:43:14 2006
+@@ -41,8 +41,7 @@ COMPILE = $(CC) -c $(DEFS) $(INCLUDES) $
+ 
+ @SET_MAKE@
+ 
+-LIBLIB_OBJS	= alloca.o getopt.o getopt1.o strndup.o \
+-		  strdup.o strsep.o snprintf.o usleep.o md5.o
++LIBLIB_OBJS	= md5.o
+ LIBLIB_LTOBJS	= alloca.lo getopt.lo getopt1.lo strndup.lo \
+ 		  strdup.lo strsep.lo snprintf.lo usleep.lo md5.lo
+ 

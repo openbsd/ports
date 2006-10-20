@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2006/10/20 17:54:45 ajacoutot Exp $
+--- src/Makefile.in.orig	Sat Jan  7 00:22:47 2006
++++ src/Makefile.in	Thu Sep 21 17:02:53 2006
+@@ -21,8 +21,8 @@ mandir = @mandir@
+ includedir = @includedir@
+ oldincludedir = /usr/include
+ configdir = ${sysconfdir}/sane.d
+-sanedatadir = ${datadir}/sane
+-xsanedocdir = ${datadir}/sane/xsane/doc
++sanedatadir = ${datadir}
++xsanedocdir = ${datadir}/doc/xsane
+ 
+ MKINSTALLDIRS = @MKINSTALLDIRS@
+ INSTALL = @INSTALL@

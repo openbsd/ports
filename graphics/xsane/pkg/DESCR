@@ -1,0 +1,11 @@
+XSane is a graphical scanning frontend. It uses the SANE-library to talk
+to scanners. This means that XSane does not support any scanners itself.
+
+XSane is designed for acquiring images with scanners (there are other
+devices like cameras and videodevices supported by SANE, but XSane is
+not designed for that purpose). You can scan to file, do a photocopy,
+create a fax, create and send a mail and start XSane from the GIMP as
+gimp plug in.
+
+Available flavors:
+        gimp - Build the gimp xsane plugin
