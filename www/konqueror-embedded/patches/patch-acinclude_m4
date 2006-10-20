@@ -1,0 +1,21 @@
+$OpenBSD: patch-acinclude_m4,v 1.1 2006/10/20 16:07:24 espie Exp $
+--- acinclude.m4.orig	Sat Jan 21 12:49:38 2006
++++ acinclude.m4	Fri Oct 20 11:08:32 2006
+@@ -572,8 +572,6 @@ AC_DEFUN([KDE_SUBST_PROGRAMS],
+ 
+         KDE_SET_DEFAULT_BINDIRS
+         kde_default_bindirs="$exec_prefix/bin $prefix/bin $kde_libs_prefix/bin $kde_default_bindirs"
+-        KDE_FIND_PATH(dcopidl, DCOPIDL, [$kde_default_bindirs], [KDE_MISSING_PROG_ERROR(dcopidl)])
+-        KDE_FIND_PATH(dcopidl2cpp, DCOPIDL2CPP, [$kde_default_bindirs], [KDE_MISSING_PROG_ERROR(dcopidl2cpp)])
+         if test "$build_arts" '!=' "no"; then
+           KDE_FIND_PATH(mcopidl, MCOPIDL, [$kde_default_bindirs], [KDE_MISSING_ARTS_ERROR(mcopidl)])
+           KDE_FIND_PATH(artsc-config, ARTSCCONFIG, [$kde_default_bindirs], [KDE_MISSING_ARTS_ERROR(artsc-config)])
+@@ -4938,7 +4936,7 @@ AC_DEFUN([KDE_SET_PREFIX],
+   fi
+ 
+   kde_libs_prefix=`$KDECONFIG --prefix`
+-  if test -z "$kde_libs_prefix" || test ! -x "$kde_libs_prefix"; then
++  if test -z "$kde_libs_prefix"; then
+        AC_MSG_ERROR([$KDECONFIG --prefix outputed the non existant prefix '$kde_libs_prefix' for kdelibs.
+                     This means it has been moved since you installed it.
+                     This won't work. Please recompile kdelibs for the new prefix.

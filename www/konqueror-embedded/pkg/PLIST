@@ -1,8 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:49:49 espie Exp $
-apps/
-apps/Applications/
+@comment $OpenBSD: PLIST,v 1.7 2006/10/20 16:07:24 espie Exp $
+@comment bin/dcopidl
+@comment bin/dcopidl2cpp
 bin/konq-e
-lib/kde2/
+@comment include/kjs/
+@comment include/kjs/completion.h
+@comment include/kjs/function.h
+@comment include/kjs/global.h
+@comment include/kjs/identifier.h
+@comment include/kjs/interpreter.h
+@comment include/kjs/list.h
+@comment include/kjs/lookup.h
+@comment include/kjs/object.h
+@comment include/kjs/operations.h
+@comment include/kjs/property_map.h
+@comment include/kjs/reference.h
+@comment include/kjs/reference_list.h
+@comment include/kjs/scope_chain.h
+@comment include/kjs/simple_number.h
+@comment include/kjs/types.h
+@comment include/kjs/ustring.h
+@comment include/kjs/value.h
+@comment include/kresolver.h
+@comment include/ksocketaddress.h
+${KDE}/
 lib/konq-e/
 lib/konq-e/apps/
 lib/konq-e/apps/Applications/
@@ -14,6 +34,7 @@ lib/konq-e/share/apps/
 lib/konq-e/share/apps/khtml/
 lib/konq-e/share/apps/khtml/css/
 lib/konq-e/share/apps/khtml/css/html4.css
+lib/konq-e/share/apps/khtml/css/quirks.css
 lib/konq-e/share/apps/konq-embed/
 lib/konq-e/share/apps/konq-embed/actions/
 lib/konq-e/share/apps/konq-embed/actions/2rightarrow.png
@@ -47,22 +68,20 @@ lib/konq-e/share/apps/konq-embed/konqe.rc
 lib/konq-e/share/apps/kplaintextpart/
 lib/konq-e/share/apps/kplaintextpart/kplaintextpart.rc
 lib/konq-e/share/apps/kssl/
-lib/konq-e/share/apps/kssl/caroot/
-lib/konq-e/share/apps/kssl/caroot/ca-bundle.crt
+lib/konq-e/share/apps/kssl/ca-bundle.crt
 lib/konq-e/share/config/
-lib/konq-e/share/config/charsets
 lib/konq-e/share/config/khtmlrc
+lib/konq-e/share/config/ksslcalist
 lib/konq-e/share/services/
 lib/konq-e/share/services/kplaintextpart.desktop
+lib/libkonqe.a
+lib/libkonqe.la
+@lib lib/libkonqe.so.${LIBkonqe_VERSION}
 libexec/konq-e
-pics/
-share/apps/
-share/apps/khtml/
-share/apps/khtml/css/
-share/apps/konq-embed/
-share/apps/konq-embed/actions/
-share/apps/kplaintextpart/
-share/apps/kssl/
-share/apps/kssl/caroot/
-share/config/
-share/services/
+share/doc/HTML/
+share/doc/HTML/en/
+share/doc/HTML/en/konqueror-embedded-apidocs/
+share/doc/HTML/en/konqueror-embedded-apidocs/konq-embed/
+share/doc/HTML/en/konqueror-embedded-apidocs/konq-embed/kdesrc/
+share/doc/HTML/en/konqueror-embedded-apidocs/konq-embed/kdesrc/kjs/
+share/doc/HTML/en/konqueror-embedded-apidocs/konq-embed/kdesrc/kjs/html/

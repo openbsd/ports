@@ -1,0 +1,19 @@
+#! /bin/sh
+# $OpenBSD: kde-config,v 1.1 2006/10/20 16:07:24 espie Exp $
+KONQ=/usr/local
+case $1 in
+--prefix) 
+	echo ${KONQ};;
+--install)
+	shift
+	case $1 in
+	html)
+		echo ${KONQ}/share/doc/HTML;;
+	esac;;
+--lib-suffix)
+	echo "";;
+--version)
+	echo "Qt: 3.3.5"
+	echo "KDE: 3.5.5"
+	echo "kde-config: 1.0";;
+esac

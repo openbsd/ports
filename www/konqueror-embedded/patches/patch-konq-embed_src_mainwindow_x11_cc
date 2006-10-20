@@ -1,0 +1,20 @@
+$OpenBSD: patch-konq-embed_src_mainwindow_x11_cc,v 1.1 2006/10/20 16:07:24 espie Exp $
+--- konq-embed/src/mainwindow_x11.cc.orig	Thu Oct 19 18:24:21 2006
++++ konq-embed/src/mainwindow_x11.cc	Thu Oct 19 18:26:00 2006
+@@ -36,6 +36,7 @@
+ #include <qtoolbutton.h>
+ #include <qlabel.h>
+ #include <qlayout.h>
++#include <qregexp.h>
+ 
+ #include <klocale.h>
+ #include <kstdaction.h>
+@@ -278,7 +279,7 @@ void MainWindowX11::initGUI()
+ 			{
+ 			    QAction *act = (QAction*) child( name, "QAction" );
+ 			    if ( act )
+-				list->insert( act );
++				list->add( act );
+ 			}
+ 			break;
+ 		}

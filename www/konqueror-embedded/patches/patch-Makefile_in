@@ -1,0 +1,13 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2006/10/20 16:07:24 espie Exp $
+--- Makefile.in.orig	Sat Jan 21 12:50:23 2006
++++ Makefile.in	Fri Oct 20 02:31:07 2006
+@@ -403,7 +403,8 @@ xdg_menudir = @xdg_menudir@
+ AUTOMAKE_OPTIONS = foreign 1.4
+ EXTRA_DIST = admin configure.in.in
+ MAINTAINERCLEANFILES = configure.files subdirs
+-SUBDIRS = $(TOPSUBDIRS)
++SUBDIRS = konq-embed/kdesrc/dcop/dcopidl konq-embed/kdesrc/dcop/dcopidl2cpp \
++	$(TOPSUBDIRS)
+ #>- all: config.h
+ #>+ 1
+ all: docs-am  config.h

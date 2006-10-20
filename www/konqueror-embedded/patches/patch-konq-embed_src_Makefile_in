@@ -1,0 +1,12 @@
+$OpenBSD: patch-konq-embed_src_Makefile_in,v 1.1 2006/10/20 16:07:24 espie Exp $
+--- konq-embed/src/Makefile.in.orig	Fri Oct 20 10:54:22 2006
++++ konq-embed/src/Makefile.in	Fri Oct 20 10:58:39 2006
+@@ -472,7 +472,7 @@ konqueror_LDADD = $(LIB_ADDONS) \
+ 
+ konqueror_LDFLAGS = $(KONQ_SSL_LDFLAGS) $(all_libraries) -export-dynamic
+ #>- konqueror_METASOURCES = AUTO
+-konqueror_DEPENDENCIES = $(LIB_KJSHTML) $(LIB_KHTML) $(LIB_ADDONS)
++konqueror_DEPENDENCIES = $(LIB_KJSHTML_DEPENDS) $(LIB_KHTML) $(LIB_ADDONS)
+ BUILT_SOURCES = init.inc
+ icon_DATA = konqueror.png
+ icondir = $(kde_icondir)
