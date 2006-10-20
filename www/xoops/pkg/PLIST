@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/10/16 14:05:09 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.6 2006/10/20 13:29:17 kevlo Exp $
 xoops/
 xoops/docs/
 xoops/docs/changelog.txt
@@ -21,7 +21,9 @@ xoops/htdocs/
 xoops/htdocs/admin.php
 xoops/htdocs/backend.php
 xoops/htdocs/banners.php
+@mode 777
 xoops/htdocs/cache/
+@mode
 xoops/htdocs/cache/index.html
 xoops/htdocs/class/
 xoops/htdocs/class/auth/
@@ -412,7 +414,9 @@ xoops/htdocs/language/english/user.php
 xoops/htdocs/language/index.html
 xoops/htdocs/lostpass.php
 xoops/htdocs/mainfile.dist.php
+@mode 666
 xoops/htdocs/mainfile.php
+@mode
 xoops/htdocs/misc.php
 xoops/htdocs/modules/
 xoops/htdocs/modules/index.html
@@ -591,7 +595,9 @@ xoops/htdocs/readpmsg.php
 xoops/htdocs/register.php
 xoops/htdocs/robots.txt
 xoops/htdocs/search.php
+@mode 777
 xoops/htdocs/templates_c/
+@mode
 xoops/htdocs/templates_c/index.html
 xoops/htdocs/themes/
 xoops/htdocs/themes/default/
@@ -678,7 +684,9 @@ xoops/htdocs/themes/x2t/user_editaccount.gif
 xoops/htdocs/themes/x2t/user_inbox.gif
 xoops/htdocs/themes/x2t/user_logout.gif
 xoops/htdocs/themes/x2t/user_notifications.gif
+@mode 777
 xoops/htdocs/uploads/
+@mode
 xoops/htdocs/uploads/blank.gif
 xoops/htdocs/uploads/index.html
 xoops/htdocs/uploads/rank3dbf8e94a6f72.gif
