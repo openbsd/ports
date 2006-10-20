@@ -1,0 +1,4 @@
+daemons provides an easy way to wrap existing ruby scripts (for example a
+self-written server) to be run as a daemon and to be controlled by simple
+start/stop/restart commands. daemons can also run and control blocks of
+Ruby code in a daemon process.
