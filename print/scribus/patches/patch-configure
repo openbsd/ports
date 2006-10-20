@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.2 2005/09/04 23:48:35 espie Exp $
---- configure.orig	Tue Jul  5 15:14:21 2005
-+++ configure	Sun Aug 28 13:43:28 2005
-@@ -4969,7 +4969,7 @@ if test "${ac_cv_lib_tiff_TIFFOpen+set}"
+$OpenBSD: patch-configure,v 1.3 2006/10/20 22:52:47 kili Exp $
+--- configure.orig	Tue Oct  3 01:07:51 2006
++++ configure	Sun Oct 15 13:46:10 2006
+@@ -6039,7 +6039,7 @@ if test "${ac_cv_lib_tiff_TIFFOpen+set}"
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -10,3 +10,28 @@ $OpenBSD: patch-configure,v 1.2 2005/09/04 23:48:35 espie Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
+@@ -34119,10 +34119,10 @@ else
+ 	GS_VER_MINOR=`gs --version | cut -d . -f 2`
+ 	echo "$as_me:$LINENO: result: ${GS_VER_MAJOR}.${GS_VER_MINOR}" >&5
+ echo "${ECHO_T}${GS_VER_MAJOR}.${GS_VER_MINOR}" >&6
+-	if (( "${GS_VER_MAJOR}" < 7 )) ; then
++	if [ "${GS_VER_MAJOR}" -lt 7 ] ; then
+ 		{ echo "$as_me:$LINENO: WARNING: \"GhostScript found" >&5
+ echo "$as_me: WARNING: \"GhostScript found" >&2;}
+-	elif (( "${GS_VER_MAJOR}" < 8 )) ; then
++	elif [ "${GS_VER_MAJOR}" -lt 8 ] ; then
+ 		{ echo "$as_me:$LINENO: WARNING: \"GhostScript v7 found. v8 recommended.\"" >&5
+ echo "$as_me: WARNING: \"GhostScript v7 found. v8 recommended.\"" >&2;}
+ 	fi
+@@ -44116,9 +44116,9 @@ if test -z "${GS_PATH}" ; then
+ 	echo "***GhostScript could not be found. See README.***"
+ else
+ 	echo "GhostScript ${GS_VER_MAJOR}.${GS_VER_MINOR} was found at ${GS_PATH}"
+-	if (( "${GS_VER_MAJOR}" < 7 )) ; then
++	if [ "${GS_VER_MAJOR}" -lt 7 ] ; then
+ 		echo "    *** GhostScript versions older than 7 MAY NOT WORK; v8 recommended ***"
+-	elif (( "${GS_VER_MAJOR}" < 8 )) ; then
++	elif [ "${GS_VER_MAJOR}" -lt 8 ] ; then
+ 		echo "    *** GhostScript 8 is STRONGLY recommended ***"
+ 	fi
+ fi

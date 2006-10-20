@@ -1,0 +1,12 @@
+$OpenBSD: patch-scribus_Makefile_in,v 1.1 2006/10/20 22:52:47 kili Exp $
+--- scribus/Makefile.in.orig	Sun Oct  1 15:36:06 2006
++++ scribus/Makefile.in	Sun Oct  1 15:36:49 2006
+@@ -946,7 +946,7 @@ DISTCLEANFILES = $(scribus_METASOURCES)
+ # this is to enable Qt behavoir of am_edit
+ KDE_OPTIONS = qtonly
+ AM_CPPFLAGS = \
+-    -DDOCDIR=\"$(datadir)/doc/scribus-$(VERSION)/\" \
++    -DDOCDIR=\"$(datadir)/doc/scribus/\" \
+     -DICONDIR=\"$(datadir)/scribus/icons/\" \
+     -DSAMPLESDIR=\"$(datadir)/scribus/samples/\" \
+     -DSCRIPTSDIR=\"$(datadir)/scribus/scripts/\" \

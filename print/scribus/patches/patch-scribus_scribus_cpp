@@ -1,0 +1,23 @@
+$OpenBSD: patch-scribus_scribus_cpp,v 1.4 2006/10/20 22:52:47 kili Exp $
+--- scribus/scribus.cpp.orig	Mon Oct  2 01:08:04 2006
++++ scribus/scribus.cpp	Sun Oct  8 23:02:58 2006
+@@ -2230,7 +2230,6 @@ void ScribusMainWindow::SwitchWin()
+ 	view->updateLayerMenu();
+ 	view->setLayerMenuText(doc->activeLayerName());
+ 	doc->currentParaStyle = 0;
+-	nodePalette->setDoc(doc, view);
+ 	slotChangeUnit(doc->unitIndex(), false);
+ 	if (doc->EditClip)
+ 	{
+@@ -3988,10 +3987,7 @@ bool ScribusMainWindow::DoFileClose()
+ //	if (doc->EditClip)
+ //		nodePalette->doc = 0;
+ 	if (doc->EditClip)
+-	{
+-		ToggleFrameEdit();
+-		nodePalette->setDoc(0,0);
+-	}
++		NoFrameEdit();
+ 
+ 	bookmarkPalette->BView->clear();
+ 	bookmarkPalette->BView->NrItems = 0;
