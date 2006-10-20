@@ -1,0 +1,3 @@
+GemPlugin is a system that lets your users install gems and lets you load
+them as additional features to use in your software. It originated from the
+Mongrel project but proved useful enough to break out into a separate project.
