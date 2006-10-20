@@ -1,9 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2004/12/11 04:59:46 pvalchev Exp $
-bin/addresses
-bin/ccexample
-bin/debugsh
-bin/dlpsh
-bin/hinotes
+@comment $OpenBSD: PLIST,v 1.12 2006/10/20 11:48:06 ajacoutot Exp $
 bin/ietf2datebook
 bin/install-datebook
 bin/install-expenses
@@ -13,44 +8,47 @@ bin/install-netsync
 bin/install-todo
 bin/install-todos
 bin/install-user
-bin/memos
-bin/money2qif
-bin/pi-csd
-bin/pi-getram
-bin/pi-getrom
-bin/pi-getromtoken
-bin/pi-nredir
 bin/pilot-addresses
-bin/pilot-archive
 bin/pilot-clip
-bin/pilot-datebook
+bin/pilot-csd
+bin/pilot-debugsh
 bin/pilot-dedupe
+bin/pilot-dlpsh
 bin/pilot-file
 bin/pilot-foto
-bin/pilot-prc
+bin/pilot-getram
+bin/pilot-getrom
+bin/pilot-getromtoken
+bin/pilot-hinotes
+bin/pilot-memos
+bin/pilot-nredir
+bin/pilot-reminders
 bin/pilot-schlep
+bin/pilot-treofoto
 bin/pilot-undelete
+bin/pilot-wav
 bin/pilot-xfer
 bin/read-expenses
 bin/read-ical
 bin/read-notepad
 bin/read-palmpix
+bin/read-screenshot
 bin/read-todos
-bin/reminders
+bin/read-veo
 bin/sync-plan
 include/pi-address.h
-include/pi-address.hxx
 include/pi-appinfo.h
-include/pi-appinfo.hxx
 include/pi-args.h
+include/pi-buffer.h
 include/pi-cmp.h
+include/pi-contact.h
 include/pi-datebook.h
-include/pi-datebook.hxx
 include/pi-debug.h
 include/pi-dlp.h
-include/pi-dlp.hxx
+include/pi-error.h
 include/pi-expense.h
 include/pi-file.h
+include/pi-foto.h
 include/pi-header.h
 include/pi-hinote.h
 include/pi-inet.h
@@ -58,7 +56,6 @@ include/pi-macros.h
 include/pi-mail.h
 include/pi-md5.h
 include/pi-memo.h
-include/pi-memo.hxx
 include/pi-money.h
 include/pi-net.h
 include/pi-notepad.h
@@ -72,17 +69,22 @@ include/pi-source.h
 include/pi-sync.h
 include/pi-sys.h
 include/pi-syspkt.h
+include/pi-threadsafe.h
 include/pi-todo.h
-include/pi-todo.hxx
 include/pi-usb.h
 include/pi-util.h
+include/pi-veo.h
+include/pi-versamail.h
 include/pi-version.h
-lib/libpisock++.a
-lib/libpisock++.la
 lib/libpisock.a
 lib/libpisock.la
 lib/libpisync.a
 lib/libpisync.la
+lib/pkgconfig/
+lib/pkgconfig/pilot-link.pc
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.8.8/
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.8.8/perllocal.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/PDA/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/PDA/Pilot.pm
@@ -92,9 +94,6 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/PDA/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/PDA/Pilot/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/PDA/Pilot/Pilot.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/PDA/Pilot/autosplit.ix
-@man man/man1/addresses.1
-@man man/man1/dlpsh.1
-@man man/man1/hinotes.1
 @man man/man1/ietf2datebook.1
 @man man/man1/install-datebook.1
 @man man/man1/install-expenses.1
@@ -102,24 +101,41 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/PDA/Pilot/autosplit.ix
 @man man/man1/install-memo.1
 @man man/man1/install-netsync.1
 @man man/man1/install-todo.1
+@man man/man1/install-todos.1
 @man man/man1/install-user.1
-@man man/man1/memos.1
-@man man/man1/pi-getram.1
-@man man/man1/pi-getrom.1
 @man man/man1/pilot-addresses.1
+@man man/man1/pilot-clip.1
+@man man/man1/pilot-csd.1
+@man man/man1/pilot-debugsh.1
+@man man/man1/pilot-dedupe.1
+@man man/man1/pilot-dlpsh.1
+@man man/man1/pilot-file.1
 @man man/man1/pilot-foto.1
+@man man/man1/pilot-getram.1
+@man man/man1/pilot-getrom.1
+@man man/man1/pilot-getromtoken.1
+@man man/man1/pilot-hinotes.1
+@man man/man1/pilot-memos.1
+@man man/man1/pilot-nredir.1
+@man man/man1/pilot-reminders.1
+@man man/man1/pilot-schlep.1
+@man man/man1/pilot-treofoto.1
+@man man/man1/pilot-wav.1
 @man man/man1/pilot-xfer.1
 @man man/man1/read-expenses.1
 @man man/man1/read-ical.1
 @man man/man1/read-notepad.1
 @man man/man1/read-palmpix.1
+@man man/man1/read-screenshot.1
 @man man/man1/read-todos.1
+@man man/man1/read-veo.1
 @man man/man7/pilot-link.7
 share/aclocal/
 share/aclocal/pilot-link.m4
+share/doc/pilot-link/
+share/doc/pilot-link/README.debugging
+share/doc/pilot-link/README.usb
 share/pilot-link/
-share/pilot-link/getrom.prc
-share/pilot-link/getrom2.prc
 share/pilot-link/pix/
 share/pilot-link/pix/b1.gif
 share/pilot-link/pix/b2.gif
@@ -131,4 +147,9 @@ share/pilot-link/pix/b7.gif
 share/pilot-link/pix/case.gif
 share/pilot-link/pix/case.xbm
 share/pilot-link/pix/casemask.xbm
+share/pilot-link/prc/
+share/pilot-link/prc/getrom.prc
+share/pilot-link/prc/getrom2.prc
 %%SHARED%%
+@comment share/pilot-link/udev/
+@comment share/pilot-link/udev/60-libpisock.rules

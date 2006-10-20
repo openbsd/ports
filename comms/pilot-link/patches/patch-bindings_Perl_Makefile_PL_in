@@ -1,0 +1,14 @@
+$OpenBSD: patch-bindings_Perl_Makefile_PL_in,v 1.1 2006/10/20 11:48:06 ajacoutot Exp $
+--- bindings/Perl/Makefile.PL.in.orig	Tue Mar 14 15:48:06 2006
++++ bindings/Perl/Makefile.PL.in	Thu Oct 19 12:24:40 2006
+@@ -41,8 +41,9 @@ WriteMakefile(
+     'INC'        => "-I$plincdir",
+     'DEFINE'     => '-DPERL_POLLUTE',
+     'PREFIX'     => "$prefix",
+-    'INSTALLDIRS'=> 'vendor',
++    'INSTALLDIRS'=> 'site',
+     'dynamic_lib'=> {'OTHERLDFLAGS' => $lib},
+     'depend'     => {'Pilot.c' => 'const-c.inc const-xs.inc'},
+     'clean'      => {'FILES'   => 'const-c.inc const-xs.inc'},
++    'OPTIMIZE'   => "@@CFLAGS@@",
+ );

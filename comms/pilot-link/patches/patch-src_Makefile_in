@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2004/12/11 04:59:46 pvalchev Exp $
---- src/Makefile.in.orig	Tue Jul  1 13:09:01 2003
-+++ src/Makefile.in	Fri Dec 10 21:51:33 2004
-@@ -100,7 +100,7 @@ PISYNC_AGE = @PISYNC_AGE@
+$OpenBSD: patch-src_Makefile_in,v 1.2 2006/10/20 11:48:06 ajacoutot Exp $
+--- src/Makefile.in.orig	Mon Sep 18 10:42:17 2006
++++ src/Makefile.in	Mon Sep 18 10:42:30 2006
+@@ -480,7 +480,7 @@ PISYNC_AGE = @PISYNC_AGE@
  PISYNC_CURRENT = @PISYNC_CURRENT@
  PISYNC_REVISION = @PISYNC_REVISION@
  PNG_CFLAGS = @PNG_CFLAGS@
 -PNG_LIBS = @PNG_LIBS@
 +PNG_LIBS = @PNG_LIBS@ -lz -lm
- PYTHON = @PYTHON@
- RANLIB = @RANLIB@
- RL_CFLAGS = @RL_CFLAGS@
+ POPT_INCLUDES = @POPT_INCLUDES@
+ POPT_LIBS = @POPT_LIBS@
+ PTHREAD_CC = @PTHREAD_CC@

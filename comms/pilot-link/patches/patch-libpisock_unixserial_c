@@ -1,10 +1,10 @@
-$OpenBSD: patch-libpisock_unixserial_c,v 1.1 2004/12/11 04:59:46 pvalchev Exp $
---- libpisock/unixserial.c.orig	Tue Jul 30 09:52:24 2002
-+++ libpisock/unixserial.c	Fri Dec 10 21:51:33 2004
-@@ -178,13 +178,23 @@ s_open(struct pi_socket *ps, struct pi_s
- 		i;
- 	char 	*tty 	= addr->pi_device;
- 	struct pi_serial_data *data = (struct pi_serial_data *)ps->device->data;
+$OpenBSD: patch-libpisock_unixserial_c,v 1.2 2006/10/20 11:48:06 ajacoutot Exp $
+--- libpisock/unixserial.c.orig	Sun Aug 27 18:08:10 2006
++++ libpisock/unixserial.c	Mon Sep 18 10:49:10 2006
+@@ -159,13 +159,23 @@ s_open(pi_socket_t *ps, struct pi_sockad
+ 
+ 	struct pi_serial_data *data =
+ 		(struct pi_serial_data *)ps->device->data;
 +#define maxretries 100
 +	int	retries;
  	
@@ -13,7 +13,7 @@ $OpenBSD: patch-libpisock_unixserial_c,v 1.1 2004/12/11 04:59:46 pvalchev Exp $
  #else
  	struct sgttyb tcn;
  #endif
--	if ((fd = open(tty, O_RDWR | O_NONBLOCK)) == -1) {
+-	if ((fd = open(tty, O_RDWR | O_NONBLOCK)) < 0) {
 +
 +	for (retries = 0 ; retries <= maxretries ; retries++ ) {
 +		if ((fd = open(tty, O_RDWR | O_NONBLOCK)) != -1) {
@@ -23,6 +23,6 @@ $OpenBSD: patch-libpisock_unixserial_c,v 1.1 2004/12/11 04:59:46 pvalchev Exp $
 +	}
 +
 +	if (fd == -1) {
- 		return -1;	/* errno already set */
+ 		ps->last_error = PI_ERR_GENERIC_SYSTEM;
+ 		return PI_ERR_GENERIC_SYSTEM;	/* errno already set */
  	}
- 
