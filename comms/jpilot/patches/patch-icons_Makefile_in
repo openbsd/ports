@@ -1,7 +1,7 @@
-$OpenBSD: patch-icons_Makefile_in,v 1.2 2005/10/31 21:08:15 naddy Exp $
---- icons/Makefile.in.orig	Mon Oct 31 19:27:50 2005
-+++ icons/Makefile.in	Mon Oct 31 19:28:04 2005
-@@ -223,7 +223,7 @@ sbindir = @sbindir@
+$OpenBSD: patch-icons_Makefile_in,v 1.3 2006/10/20 11:49:42 ajacoutot Exp $
+--- icons/Makefile.in.orig	Thu Aug 24 01:22:10 2006
++++ icons/Makefile.in	Mon Aug 28 11:19:49 2006
+@@ -224,7 +224,7 @@ sbindir = @sbindir@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@

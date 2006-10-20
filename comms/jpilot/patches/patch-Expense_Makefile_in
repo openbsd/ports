@@ -1,7 +1,7 @@
-$OpenBSD: patch-Expense_Makefile_in,v 1.7 2005/10/31 21:08:15 naddy Exp $
---- Expense/Makefile.in.orig	Mon Oct 31 19:48:02 2005
-+++ Expense/Makefile.in	Mon Oct 31 19:48:19 2005
-@@ -247,7 +247,7 @@ target_alias = @target_alias@
+$OpenBSD: patch-Expense_Makefile_in,v 1.8 2006/10/20 11:49:42 ajacoutot Exp $
+--- Expense/Makefile.in.orig	Thu Aug 24 01:22:09 2006
++++ Expense/Makefile.in	Mon Aug 28 11:19:49 2006
+@@ -248,7 +248,7 @@ target_alias = @target_alias@
  @MAKE_EXPENSE_TRUE@lib_LTLIBRARIES = libexpense.la
  @MAKE_EXPENSE_TRUE@libexpense_la_SOURCES = expense.c
  @MAKE_EXPENSE_TRUE@libexpense_la_CFLAGS = -Wall @PILOT_FLAGS@ @GTK_CFLAGS@ -I$(top_srcdir)
