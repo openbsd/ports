@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2006/10/20 13:29:17 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2006/10/20 15:46:49 sturm Exp $
+
+BROKEN=		"this port needs to be cleaned up by someone who cares"
 
 COMMENT=	"dynamic object oriented portal script written in PHP"
 
 V=		2.0.15
-DISTNAME=	xoops-${V}p0
-PKGNAME=	${DISTNAME}
+DISTNAME=	xoops-${V}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.xoops.org/
