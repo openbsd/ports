@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:17:45 espie Exp $
-lib/ruby/site_ruby/${REV}/${SUB}/pcap.so
-lib/ruby/site_ruby/${REV}/pcap_misc.rb
-lib/ruby/site_ruby/${REV}/pcaplet.rb
+@comment $OpenBSD: PLIST,v 1.6 2006/10/20 11:16:18 bernd Exp $
+lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/pcap.so
+lib/ruby/site_ruby/${MODRUBY_REV}/pcap_misc.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/pcaplet.rb
 share/doc/ruby/
 share/doc/ruby/ruby-pcap/
 share/doc/ruby/ruby-pcap/Capture.html
