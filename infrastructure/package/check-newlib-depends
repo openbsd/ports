@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.13 2006/10/20 14:40:29 espie Exp $
+# $OpenBSD: check-newlib-depends,v 1.14 2006/10/20 15:09:24 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -165,7 +165,7 @@ sub get_plist
 
 sub report_lib_issue
 {
-	my ($plist, $lib, $binary) = @_;
+	my ($plist, $lib, $binary, $r) = @_;
 
 	OpenBSD::SharedLibs::add_system_libs('/');
 	my $libspec = "$lib.0";
@@ -174,6 +174,8 @@ sub report_lib_issue
 		my @r = OpenBSD::SharedLibs::lookup_libspec($dir, $libspec);
 		if (grep { $_ eq 'system' } @r) {
 			print "Missing system lib: $want ($binary)\n";
+			$want =~ s/\.\d+$//;
+			$r->{wantlib}->{$want} = 1;
 			return;
 		}
 	}
@@ -215,6 +217,23 @@ sub report_lib_issue
 	print "Missing: $want ($binary): NOT REACHABLE\n";
 }
 
+sub print_list
+{
+	my ($head, $h) = @_;
+
+	my $line = "";
+	for my $k (sort keys %$h) {
+		if (length $line > 50) {
+			print $head, $line, "\n";
+			$line = "";
+		}
+		$line .= ' '.$k;
+	}
+	if ($line ne '') {
+		print $head, $line, "\n";
+	}
+}
+
 sub analyze 
 {
 	my ($plist, $db, @l) = @_;
@@ -227,10 +246,11 @@ sub analyze
 		register_dependencies($plist);
 		OpenBSD::SharedLibs::add_plist_libs($plist);
 	}
+	my $r = { wantlib => {}, libdepends => {}, wantlib2 => {} };
 	for my $lib (sort keys %{$t->{needlib}}) {
 		my $fullname = $t->{needlib}->{$lib};
 		if (!defined $t->{haslib}->{$lib}) {
-			report_lib_issue($plist, $lib, $fullname);
+			report_lib_issue($plist, $lib, $fullname, $r);
 		}
 		$t->{haslib}->{$lib} = 2;
 	}
@@ -239,6 +259,7 @@ sub analyze
 		next if $v == 2;
 		print "Extra: $k\n";
 	}
+	print_list("\tWANTLIB +=", $r->{wantlib});
 	rmtree($where);
 }
 
