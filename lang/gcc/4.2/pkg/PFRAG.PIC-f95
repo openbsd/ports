@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.PIC-f95,v 1.1 2006/10/20 15:35:25 espie Exp $
+lib/fpic/libgfortran.a
+lib/fpic/libgfortran.la
+lib/gcc/${CONFIG}/${V}/fpic/libgfortranbegin.a
+lib/gcc/${CONFIG}/${V}/fpic/libgfortranbegin.la
