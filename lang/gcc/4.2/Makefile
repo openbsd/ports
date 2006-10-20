@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/10/06 12:42:42 kurt Exp $
+# $OpenBSD: Makefile,v 1.4 2006/10/20 11:03:38 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 #BROKEN='adjust for types changes'
@@ -27,7 +27,7 @@ SHARED_LIBS=	estdc++		7.0 \
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-ADAI386=	adastrap-i386-3.3.6-3.tgz:0
+ADAI386=	adastrap-i386-3.3.6-4.tgz:0
 DISTFILES=  ${DISTNAME}.tar.bz2
 SUPDISTFILES=	${ADAI386}
 MAKE_GXX=Yes
