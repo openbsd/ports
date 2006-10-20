@@ -1,11 +1,5 @@
-# $OpenBSD: Makefile,v 1.10 2004/07/11 17:04:29 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2006/10/20 15:34:27 steven Exp $
 
-    SUBDIR += afpl
-    SUBDIR += afpl,a4
-    SUBDIR += afpl,gtk
-    SUBDIR += afpl,gtk,a4
-    SUBDIR += afpl,no_x11
-    SUBDIR += afpl,no_x11,a4
     SUBDIR += gnu
     SUBDIR += gnu,a4
     SUBDIR += gnu,gtk
