@@ -6,10 +6,10 @@ Better documentation will be written as this progresses.
 Quick list of what exists, most useful stuff first
 
 build/bundle-readmes: 
-	create README.html files and bundle them as one tar archive.
+	Create README.html files and bundle them as one tar archive.
 
 fetch/check-distfiles
-	heuristic to check the whole contents of /usr/ports/distfiles against
+	Heuristic to check the whole contents of /usr/ports/distfiles against
 	all MD5 files in the ports tree.
 	
 package/check-dependencies
@@ -17,7 +17,7 @@ package/check-dependencies
 	Basically, verifies that the tsort in bsd.port.mk did their job.
 
 build/find-build-order
-	used such as cat plist/i386 | build/find-build-order
+	Used such as cat plist/i386 | build/find-build-order
 	outputs a list of stuff that actually needs to be built to obtain those
 	packages, in a suitable order for removing backward dependencies.
 
@@ -28,18 +28,25 @@ build/find-build-order
 	rearrange the list it gets as input.
 
 build/out-of-date
-	compare installed registered packages with INDEX, try to find out 
+	Compare installed registered packages with INDEX, try to find out 
 	of date ports.
 
 install/make-plist
-	perl helper for the make plist target
+	perl helper for the make plist target.
 
-db/network.conf
-	Distfiles configuration. Tweakable by the user
+templates/network.conf
+	Distfiles configuration. Tweakable by the user.
+
+db/user.list
+	List of users and groups created by the ports (or that are advised
+	to be added.
 
 fetch/check-license
-	legacy script used by Marco to check the LICENSE files
+	Legacy script used by Marco to check the LICENSE files.
 
 build/outdated-perl-ports
-	compare perl ports INDEX entries with the latest module
-	versions available from CPAN
+	Compare perl ports INDEX entries with the latest module
+	versions available from CPAN.
+
+templates/Makefile.template
+	Template Makefile that may be of use when making a port.
