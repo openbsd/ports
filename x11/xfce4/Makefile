@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/09/20 17:36:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2006/10/20 00:52:12 jasper Exp $
 
      SUBDIR+= gtk-xfce-engine
      SUBDIR+= libxfce4mcs
@@ -9,6 +9,7 @@
      SUBDIR+= xfce-utils
      SUBDIR+= xfce4-appfinder
      SUBDIR+= xfce4-battery
+     SUBDIR+= xfce4-bglist-editor
      SUBDIR+= xfce4-clipman
      SUBDIR+= xfce4-datetime
      SUBDIR+= xfce4-diskperf
