@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2006/10/19 17:00:59 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2006/10/20 11:10:15 bernd Exp $
 
 COMMENT=	"easy email delivery and testing for ruby"
 
 DISTNAME=	actionmailer-1.2.5
-PKGNAME=	ruby-${DISTNAME}p1
+PKGNAME=	ruby-${DISTNAME}p2
 CATEGORIES=	mail
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org> 
@@ -22,5 +22,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS= 	:ruby-actionpack-1.12.5:devel/ruby-actionpack
 
 CONFIGURE_STYLE=ruby gem
+
+PKG_ARCH=	*
 
 .include <bsd.port.mk>
