@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 19:26:31 espie Exp $
-lib/ruby/site_ruby/${REV}/${SUB}/gtk.so
+@comment $OpenBSD: PLIST,v 1.8 2006/10/20 11:28:05 bernd Exp $
+lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/gtk.so
 share/doc/ruby/
 share/doc/ruby/ruby-gtk/
 share/doc/ruby/ruby-gtk/gtkbrows.rb

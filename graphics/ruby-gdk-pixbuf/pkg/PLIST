@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 00:50:11 espie Exp $
-lib/ruby/site_ruby/${REV}/gdk_pixbuf.rb
-lib/ruby/site_ruby/${REV}/${SUB}/gdk_pixbuf.so
+@comment $OpenBSD: PLIST,v 1.5 2006/10/20 11:32:53 bernd Exp $
+lib/ruby/site_ruby/${MODRUBY_REV}/gdk_pixbuf.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/gdk_pixbuf.so
 share/doc/ruby/ruby-gdk-pixbuf/
 share/doc/ruby/ruby-gdk-pixbuf/README
 share/examples/ruby/ruby-gdk-pixbuf/
