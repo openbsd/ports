@@ -1,4 +1,4 @@
-# $OpenBSD: gettext.port.mk,v 1.3 2006/08/01 10:50:19 espie Exp $
+# $OpenBSD: gettext.port.mk,v 1.4 2006/10/20 14:15:24 naddy Exp $
 
 LIB_DEPENDS+=	iconv.>=4::converters/libiconv
 
@@ -6,5 +6,5 @@ LIB_DEPENDS+=	iconv.>=4::converters/libiconv
 # necessary so that we have locale.alias installed on static archs.
 # Typically installed in PREFIX/share/locale.
 LIB_DEPENDS+=	intl.>=3:gettext->=0.10.38:devel/gettext
-BUILD_DEPENDS+=	:gettext->=0.14.5:devel/gettext
+BUILD_DEPENDS+=	:gettext->=0.14.6:devel/gettext
 RUN_DEPENDS+=	:gettext->=0.10.38:devel/gettext
