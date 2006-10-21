@@ -1,6 +1,6 @@
-$OpenBSD: patch-ltmain_in,v 1.19 2006/10/21 11:22:29 espie Exp $
+$OpenBSD: patch-ltmain_in,v 1.20 2006/10/21 13:31:51 espie Exp $
 --- ltmain.in.orig	Sun Dec 18 22:43:52 2005
-+++ ltmain.in	Sat Oct 21 13:11:59 2006
++++ ltmain.in	Sat Oct 21 15:00:14 2006
 @@ -2073,6 +2073,17 @@ EOF
  	;;
      esac
@@ -68,25 +68,31 @@ $OpenBSD: patch-ltmain_in,v 1.19 2006/10/21 11:22:29 espie Exp $
  	      add="$libdir/$linklib"
  	    elif test "$hardcode_minus_L" = yes; then
  	      add_dir="-L$libdir"
-@@ -3354,6 +3365,17 @@ EOF
- 	  fi
+@@ -3359,6 +3370,23 @@ EOF
+ 	  major=
+ 	  versuffix=
+ 	  verstring=""
++	else
++	  # XXX
++	  tmp=`echo $libname|sed -e 's,+,_,g' -e 's,-,_,g' -e 's,\.,_,g'`
++	  eval tmp2=\$${tmp}_ltversion
++	  if ! test -z "${SHARED_LIBS_LOG}"; then
++		  if test -f ${SHARED_LIBS_LOG}; then
++			  tmp3="              "
++		  else
++			  tmp3="SHARED_LIBS = "
++			  echo "# SHARED_LIBS= <libname>      <obsd version> # <orig version>" >${SHARED_LIBS_LOG}
++
++		  fi
++		  printf "%s %-20s %-8s # %s \\\\\n" "$tmp3" "$libname" "$tmp2" "$versuffix" >>${SHARED_LIBS_LOG}
++	  fi
++	  if test -n "$versuffix" && test -n "$tmp2"; then
++	    versuffix=".$tmp2"
++	  fi
  	fi
  
-+	# XXX
-+	tmp=`echo $libname|sed -e 's,+,_,g' -e 's,-,_,g' -e 's,\.,_,g'`
-+	eval tmp2=\$${tmp}_ltversion
-+	if ! test -z "${SHARED_LIBS_LOG}"; then
-+		touch ${SHARED_LIBS_LOG}
-+		echo "SHARED_LIBS += $libname	$tmp2	# $versuffix" >>${SHARED_LIBS_LOG}
-+	fi
-+	if test -n "$versuffix" && test -n "$tmp2"; then
-+	  versuffix=".$tmp2"
-+	fi
-+
- 	# Remove version info from name if versioning should be avoided
- 	if test "$avoid_version" = yes && test "$need_version" = no; then
- 	  major=
-@@ -6257,40 +6279,6 @@ relink_command=\"$relink_command\""
+ 	# Check to see if the archive will have undefined symbols.
+@@ -6257,40 +6285,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit $EXIT_SUCCESS
  
