@@ -1,0 +1,4 @@
+AMD is a set of routines for ordering a sparse matrix prior to Cholesky
+factorization (or for LU factorization with diagonal pivoting). There
+are versions in both C and Fortran. A MATLAB interface is provided.
+Note that this software has nothing to do with AMD the company.
