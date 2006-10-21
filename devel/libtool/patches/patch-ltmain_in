@@ -1,6 +1,6 @@
-$OpenBSD: patch-ltmain_in,v 1.18 2006/01/07 09:58:39 brad Exp $
---- ltmain.in.orig	Thu Jan  5 18:24:18 2006
-+++ ltmain.in	Thu Jan  5 18:25:53 2006
+$OpenBSD: patch-ltmain_in,v 1.19 2006/10/21 11:22:29 espie Exp $
+--- ltmain.in.orig	Sun Dec 18 22:43:52 2005
++++ ltmain.in	Sat Oct 21 13:11:59 2006
 @@ -2073,6 +2073,17 @@ EOF
  	;;
      esac
@@ -68,21 +68,25 @@ $OpenBSD: patch-ltmain_in,v 1.18 2006/01/07 09:58:39 brad Exp $
  	      add="$libdir/$linklib"
  	    elif test "$hardcode_minus_L" = yes; then
  	      add_dir="-L$libdir"
-@@ -3354,6 +3365,13 @@ EOF
+@@ -3354,6 +3365,17 @@ EOF
  	  fi
  	fi
  
 +	# XXX
 +	tmp=`echo $libname|sed -e 's,+,_,g' -e 's,-,_,g' -e 's,\.,_,g'`
-+	eval tmp=\$${tmp}_ltversion
-+	if test -n "$versuffix" && test -n "$tmp"; then
-+	  versuffix=".$tmp"
++	eval tmp2=\$${tmp}_ltversion
++	if ! test -z "${SHARED_LIBS_LOG}"; then
++		touch ${SHARED_LIBS_LOG}
++		echo "SHARED_LIBS += $libname	$tmp2	# $versuffix" >>${SHARED_LIBS_LOG}
++	fi
++	if test -n "$versuffix" && test -n "$tmp2"; then
++	  versuffix=".$tmp2"
 +	fi
 +
  	# Remove version info from name if versioning should be avoided
  	if test "$avoid_version" = yes && test "$need_version" = no; then
  	  major=
-@@ -6257,40 +6275,6 @@ relink_command=\"$relink_command\""
+@@ -6257,40 +6279,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit $EXIT_SUCCESS
  
