@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2006/10/21 16:58:41 steven Exp $
+# $OpenBSD: Makefile,v 1.64 2006/10/21 17:23:19 steven Exp $
 #
 
      SUBDIR += R
@@ -57,6 +57,7 @@
      SUBDIR += py-numpy
      SUBDIR += py-probstat
      SUBDIR += sc
+     SUBDIR += umfpack
      SUBDIR += wingz
      SUBDIR += wmcalc
      SUBDIR += xspread
