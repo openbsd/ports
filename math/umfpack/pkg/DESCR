@@ -1,0 +1,6 @@
+UMFPACK is a set of routines for solving unsymmetric sparse linear
+systems, Ax=b, using the Unsymmetric MultiFrontal method. Written
+in ANSI/ISO C, with a MATLAB (Version 6.0 and later) interface.
+Appears as a built-in routine (for lu, backslash, and forward
+slash) in MATLAB. Includes a MATLAB interface, a C-callable
+interface, and a Fortran-callable interface.

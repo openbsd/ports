@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/10/21 17:22:47 steven Exp $
+@lib lib/libumfpack.so.${LIBumfpack_VERSION}
