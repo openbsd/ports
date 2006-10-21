@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.48 2006/10/16 14:08:00 steven Exp $
+# $OpenBSD: Makefile.template,v 1.49 2006/10/21 12:59:35 espie Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -25,7 +25,10 @@ COMMENT=		"???"
 DISTNAME=		???
 #PKGNAME=		???
 #PKGNAME-foo=		???	for multi packages
+
+# for libtool-based ports, have a look at WRKBUILD/shared_libs.log as a basis
 #SHARED_LIBS=		???
+
 CATEGORIES=		???
 
 #HOMEPAGE=		???	URL
