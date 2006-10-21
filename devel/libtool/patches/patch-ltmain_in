@@ -1,6 +1,6 @@
-$OpenBSD: patch-ltmain_in,v 1.20 2006/10/21 13:31:51 espie Exp $
+$OpenBSD: patch-ltmain_in,v 1.21 2006/10/21 13:51:15 espie Exp $
 --- ltmain.in.orig	Sun Dec 18 22:43:52 2005
-+++ ltmain.in	Sat Oct 21 15:00:14 2006
++++ ltmain.in	Sat Oct 21 15:46:13 2006
 @@ -2073,6 +2073,17 @@ EOF
  	;;
      esac
@@ -68,7 +68,7 @@ $OpenBSD: patch-ltmain_in,v 1.20 2006/10/21 13:31:51 espie Exp $
  	      add="$libdir/$linklib"
  	    elif test "$hardcode_minus_L" = yes; then
  	      add_dir="-L$libdir"
-@@ -3359,6 +3370,23 @@ EOF
+@@ -3359,6 +3370,24 @@ EOF
  	  major=
  	  versuffix=
  	  verstring=""
@@ -84,7 +84,8 @@ $OpenBSD: patch-ltmain_in,v 1.20 2006/10/21 13:31:51 espie Exp $
 +			  echo "# SHARED_LIBS= <libname>      <obsd version> # <orig version>" >${SHARED_LIBS_LOG}
 +
 +		  fi
-+		  printf "%s %-20s %-8s # %s \\\\\n" "$tmp3" "$libname" "$tmp2" "$versuffix" >>${SHARED_LIBS_LOG}
++		  tmp4=`echo $libname|sed -e 's/^lib//'`
++		  printf "%s %-20s %-8s # %s \\\\\n" "$tmp3" "$tmp4" "$tmp2" "$versuffix" >>${SHARED_LIBS_LOG}
 +	  fi
 +	  if test -n "$versuffix" && test -n "$tmp2"; then
 +	    versuffix=".$tmp2"
@@ -92,7 +93,7 @@ $OpenBSD: patch-ltmain_in,v 1.20 2006/10/21 13:31:51 espie Exp $
  	fi
  
  	# Check to see if the archive will have undefined symbols.
-@@ -6257,40 +6285,6 @@ relink_command=\"$relink_command\""
+@@ -6257,40 +6286,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit $EXIT_SUCCESS
  
