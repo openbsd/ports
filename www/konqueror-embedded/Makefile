@@ -1,24 +1,24 @@
-# $OpenBSD: Makefile,v 1.16 2006/10/20 16:52:09 jolan Exp $
+# $OpenBSD: Makefile,v 1.17 2006/10/21 00:41:08 espie Exp $
 
 COMMENT=	'stand-alone Qt-based web browser'
-CATEGORIES=www x11
+CATEGORIES=	www x11
 SHARED_ONLY=	Yes
 
 MODULES=	x11/kde
 
-DATE=	20060121
-DISTNAME=konqueror3-embedded-0.2-${DATE}
-EXTRACT_SUFX=.tar.bz2
-EXTRACT_ONLY=konqueror3-embedded-0.2-${DATE}.tar.bz2
+DATE=		20060121
+DISTNAME=	konqueror3-embedded-0.2-${DATE}
+EXTRACT_SUFX=	.tar.bz2
+EXTRACT_ONLY=	konqueror3-embedded-0.2-${DATE}.tar.bz2
 
 DIST_SUBDIR=	kde
-DISTFILES=konqueror3-embedded-0.2-${DATE}.tar.bz2 kdelibs-3.5.5.tar.bz2:0
+DISTFILES=	konqueror3-embedded-0.2-${DATE}.tar.bz2 kdelibs-3.5.5.tar.bz2:0
 
 
-PKGNAME=konqueror-${DATE}
-HOMEPAGE=http://www.konqueror.org/embedded.html
-MASTER_SITES= http://www.cirulla.net/kdenox-snapshots/snapshots/
-MASTER_SITES0= ${MASTER_SITE_KDE:=stable/3.5.5/src/}
+PKGNAME=	konqueror-${DATE}p0
+HOMEPAGE=	http://www.konqueror.org/embedded.html
+MASTER_SITES= 	http://www.cirulla.net/kdenox-snapshots/snapshots/
+MASTER_SITES0= 	${MASTER_SITE_KDE:=stable/3.5.5/src/}
 
 SHARED_LIBS=		konqe	0.0
 USE_GMAKE=		Yes
@@ -34,6 +34,9 @@ CONFIGURE_ARGS+=	--enable-sortdir
 CONFIGURE_ARGS+=	--enable-xmlui
 CONFIGURE_ARGS+=	--disable-final
 CONFIGURE_ARGS+=	--without-arts
+CONFIGURE_ARGS+=	--disable-dlopen
+CONFIGURE_ARGS+=	--enable-printing
+CONFIGURE_ARGS+=	--enable-fontsubs
 
 CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
 LIB_DEPENDS=	png.>=2::graphics/png \
@@ -57,7 +60,7 @@ post-extract:
 	mv ${WRKDIR}/kdelibs-3.5.5/dcop ${WRKSRC}/konq-embed/kdesrc/dcop
 
 post-build:
-	@sed -e s,%PREFIX%,${TRUEPREFIX}, <${FILESDIR}/konq-e >${WRKDIR}/konq-e
+	@sed -e s,%PREFIX%,${TRUEPREFIX}, <${FILESDIR}/konq-e >${WRKDIST}/konq-e
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/konq-e/share
@@ -65,7 +68,7 @@ post-install:
 	mv ${PREFIX}/$d ${PREFIX}/lib/konq-e/$d
 .endfor
 	mv ${PREFIX}/bin/konqueror ${PREFIX}/libexec/konq-e
-	${INSTALL_PROGRAM} ${WRKDIR}/konq-e ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKDIST}/konq-e ${PREFIX}/bin
 
 CONFIGURE_ENV=KDECONFIG='/bin/sh ${FILESDIR}/kde-config'
 

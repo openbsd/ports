@@ -1,0 +1,21 @@
+$OpenBSD: patch-konq-embed_dropin_kssl_kopenssl_cpp,v 1.1 2006/10/21 00:41:09 espie Exp $
+--- konq-embed/dropin/kssl/kopenssl.cpp.orig	Fri Oct 20 20:03:26 2006
++++ konq-embed/dropin/kssl/kopenssl.cpp	Fri Oct 20 20:04:29 2006
+@@ -328,7 +328,7 @@ int KOpenSSLProxy::BIO_free(BIO *a) {
+ 
+ 
+ int KOpenSSLProxy::PEM_write_bio_X509(BIO *bp, X509 *x) {
+-    return ::PEM_ASN1_write_bio ((int (*)())::i2d_X509, PEM_STRING_X509, bp, (char *)x, NULL, NULL, 0, NULL, NULL);
++    return ::PEM_ASN1_write_bio ((int (*)(...))::i2d_X509, PEM_STRING_X509, bp, (char *)x, NULL, NULL, 0, NULL, NULL);
+ }
+ 
+ 
+@@ -338,7 +338,7 @@ ASN1_METHOD *KOpenSSLProxy::X509_asn1_me
+ 
+ 
+ int KOpenSSLProxy::ASN1_i2d_fp(FILE *out,unsigned char *x) {
+-    return ::ASN1_i2d_fp((int (*)())::i2d_ASN1_HEADER, out, x);
++    return ::ASN1_i2d_fp((int (*)(...))::i2d_ASN1_HEADER, out, x);
+ }
+ 
+ 
