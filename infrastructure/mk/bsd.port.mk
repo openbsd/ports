@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.786 2006/10/21 11:20:36 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.787 2006/10/21 11:50:48 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -328,7 +328,7 @@ MAKE_ENV+=			LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
 MAKE_FLAGS+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
 FAKE_FLAGS+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
 .endif
-MAKE_FLAGS+=		SHARED_LIBS_LOG=${WRKDIR}/shared.log
+MAKE_FLAGS+=		SHARED_LIBS_LOG=${WRKBUILD}/shared_libs.log
 
 SUBPACKAGE?=
 FLAVOR?=
