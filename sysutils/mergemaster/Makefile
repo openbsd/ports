@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2005/12/27 21:58:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2006/10/21 09:42:32 naddy Exp $
 
 COMMENT=	"aids with merging configuration files during an upgrade"
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://grappa.unix-ag.uni-kl.de/~naddy/
+MASTER_SITES=	http://sites.inka.de/~mips/unix/distfiles/
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

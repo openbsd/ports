@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2005/02/13 19:49:53 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2006/10/21 09:42:32 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -24,7 +24,7 @@ MASTER_SITES= 	ftp://ftp.FreeBSD.org/pub/FreeBSD/ \
 		ftp://ftp.nectec.or.th/pub/FreeBSD/ \
 		ftp://ftp.dnsbalance.ring.gr.jp/pub/FreeBSD/
 MASTER_SITES:=	${MASTER_SITES:=development/CVSup/ezm3/}
-MASTER_SITES0=	http://grappa.unix-ag.uni-kl.de/~naddy/
+MASTER_SITES0=	http://sites.inka.de/~mips/unix/distfiles/
 
 DISTFILES=	${DISTNAME}b-${M3ARCH}-boot.tar.bz2:0 \
 		${DISTNAME}-src.tar.bz2

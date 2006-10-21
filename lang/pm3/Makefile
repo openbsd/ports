@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2005/08/09 19:23:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2006/10/21 09:42:32 naddy Exp $
 
 CATEGORIES=	lang
 ONLY_FOR_ARCHS=	i386
@@ -21,7 +21,7 @@ EXTRACT_ONLY=pm3-$V-src.tgz
 
 MASTER_SITES= ftp://m3.polymtl.ca/pub/m3/targzip/
 MASTER_SITES0= http://people.freebsd.org/~jdp/pm3-for-bsd/
-MASTER_SITES1= http://grappa.unix-ag.uni-kl.de/~naddy/
+MASTER_SITES1= http://sites.inka.de/~mips/unix/distfiles/
 
 ALL_TARGET=exportall
 

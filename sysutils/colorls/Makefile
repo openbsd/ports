@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2006/05/27 04:35:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2006/10/21 09:42:32 naddy Exp $
 
 COMMENT=	"ls that can use color to display file attributes"
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://grappa.unix-ag.uni-kl.de/~naddy/
+MASTER_SITES=	http://sites.inka.de/~mips/unix/distfiles/
 
 WRKDIST=	${WRKDIR}/ls
 NO_REGRESS=	Yes
