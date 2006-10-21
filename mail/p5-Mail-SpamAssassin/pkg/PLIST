@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.20 2006/08/10 18:24:45 steven Exp $
+@comment $OpenBSD: PLIST,v 1.21 2006/10/21 19:26:14 aanriot Exp $
+@newgroup _spamdaemon:506
+@newuser _spamdaemon:506:506:daemon:SpamAssassin:/nonexistent:/sbin/nologin
 bin/sa-learn
 bin/sa-update
 bin/spamassassin

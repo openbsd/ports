@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.53 2006/07/31 15:41:02 jakob Exp $
+$OpenBSD: user.list,v 1.54 2006/10/21 19:26:14 aanriot Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -14,7 +14,7 @@ id  user		group		port options
 502 _mysql		_mysql		databases/mysql,-server
 503 _postgresql		_postgresql	databases/postgresql,-server
 504 _mailman		_mailman	mail/mailman
-506 _spamdaemon		_spamdaemon	mail/p5-Mail-SpamAssassin noauto
+506 _spamdaemon		_spamdaemon	mail/p5-Mail-SpamAssassin
 507 _postfix		_postfix	mail/postfix/{snapshot,stable}
 508			_postdrop	mail/postfix/{snapshot,stable}
 509 _bitlbee		_bitlbee	net/bitlbee

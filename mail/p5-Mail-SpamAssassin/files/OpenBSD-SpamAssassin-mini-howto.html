@@ -5,17 +5,13 @@
 You can use spamassassin in many ways. But the lightest for the machine is by
 making use of the spamc/spamd combination.
 
-<p>First let's add a user and group for the spamd.
-
-<pre><b># useradd -s /usr/bin/false -b /nonexistent -u 506 -g =uid _spamdaemon</b></pre>
-
 <p>Add this line to <b><code>/etc/rc.local</b></code>:
 <pre><b># @PREFIX@/bin/spamd -u _spamdaemon -d</b></pre>
 <br> Use that same line to start spamd now.
 
 <p>The final step: put this at the top of your <b><code>.procmailrc</b></code>.
 If you do not want to use procmail please check the
- <A HREF="http://spamassassin.org/doc.html">online docs</A>
+<A HREF="http://spamassassin.org/doc.html">online docs</A>
 
 <ul><pre>
 :0fw
