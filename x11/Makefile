@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.245 2006/10/17 11:43:46 alek Exp $
+# $OpenBSD: Makefile,v 1.246 2006/10/21 16:55:10 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -207,6 +207,7 @@
      SUBDIR += xdtm
      SUBDIR += xdu
      SUBDIR += xfce4
+     SUBDIR += xfe
      SUBDIR += xfed
      SUBDIR += xfedor
      SUBDIR += xfishtank
