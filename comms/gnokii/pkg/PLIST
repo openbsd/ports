@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/06/02 01:54:28 robert Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/10/21 11:29:47 robert Exp $
 %%SHARED%%
 !%%no_x11%%
 bin/gnokii
 bin/ppm2nokia
 bin/sendsms
 bin/todologo
+bin/waitcall
 include/gnokii/
 include/gnokii.h
 include/gnokii/bitmaps.h
@@ -19,6 +20,7 @@ include/gnokii/rlp-common.h
 include/gnokii/sms.h
 include/gnokii/statemachine.h
 include/gnokii/virtmodem.h
+include/gnokii/wappush.h
 lib/libgnokii.a
 lib/libgnokii.la
 lib/pkgconfig/

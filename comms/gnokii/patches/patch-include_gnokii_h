@@ -1,0 +1,11 @@
+$OpenBSD: patch-include_gnokii_h,v 1.1 2006/10/21 11:29:47 robert Exp $
+--- include/gnokii.h.orig	Sat Oct 21 12:38:35 2006
++++ include/gnokii.h	Sat Oct 21 12:39:04 2006
+@@ -46,6 +46,7 @@
+ #  include <sys/time.h>
+ #elif defined(__svr4__) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__bsdi__) || defined(__MACH__)
+ #  include <inttypes.h>
++#  include <limits.h>
+ #  include <sys/time.h>
+ #elif defined(_MSC_VER) && defined(WIN32)
+ #  include <Winsock.h>	/* for struct timeval */
