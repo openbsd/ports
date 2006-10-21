@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST-de,v 1.1 2006/10/21 11:47:42 ajacoutot Exp $
+@fontdir lib/X11/fonts/artwiz-aleczapka/
+lib/X11/fonts/artwiz-aleczapka/anorexia.de.pcf
+lib/X11/fonts/artwiz-aleczapka/aqui.de.pcf
+lib/X11/fonts/artwiz-aleczapka/cure.de.pcf
+lib/X11/fonts/artwiz-aleczapka/drift.de.pcf
+lib/X11/fonts/artwiz-aleczapka/edges.de.pcf
+lib/X11/fonts/artwiz-aleczapka/fkp.de.pcf
+lib/X11/fonts/artwiz-aleczapka/gelly.de.pcf
+lib/X11/fonts/artwiz-aleczapka/glisp-bold.de.pcf
+lib/X11/fonts/artwiz-aleczapka/glisp.de.pcf
+lib/X11/fonts/artwiz-aleczapka/kates.de.pcf
+lib/X11/fonts/artwiz-aleczapka/lime.de.pcf
+lib/X11/fonts/artwiz-aleczapka/mints-mild.de.pcf
+lib/X11/fonts/artwiz-aleczapka/mints-strong.de.pcf
+lib/X11/fonts/artwiz-aleczapka/nu.de.pcf
+lib/X11/fonts/artwiz-aleczapka/smoothansi.de.pcf
+lib/X11/fonts/artwiz-aleczapka/snap.de.pcf
