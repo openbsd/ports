@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pear,v 1.8 2006/05/09 14:15:40 robert Exp $
+@comment $OpenBSD: PLIST-pear,v 1.9 2006/10/21 11:44:10 robert Exp $
 @conflict php4-pear-*
 pear/
 pear/build/
@@ -243,6 +243,9 @@ pear/include/main/streams/php_stream_plain_wrapper.h
 pear/include/main/streams/php_stream_transport.h
 pear/include/main/streams/php_stream_userspace.h
 pear/include/main/streams/php_streams_int.h
+pear/include/main/suhosin_globals.h
+pear/include/main/suhosin_logo.h
+pear/include/main/suhosin_patch.h
 pear/include/main/win95nt.h
 pear/include/regex/
 pear/include/regex/cclass.h

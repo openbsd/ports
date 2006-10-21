@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile.inc,v 1.11 2006/07/18 21:44:40 alek Exp $
+# $OpenBSD: Makefile.inc,v 1.12 2006/10/21 11:44:10 robert Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
-V=			5.1.4
+V=			5.1.6
 PEAR_V= 		20060428
+SUHOSIN_V=		0.9.5
 DISTNAME?=		php-${V}
 CATEGORIES=		www lang
 
@@ -67,15 +68,5 @@ REGRESS_FLAGS=		NO_INTERACTION=1
 CHECKSUM_FILE=		${.CURDIR}/../distinfo
 PATCH_LIST=		${.CURDIR}/../patches/patch-* \
 			patch-*
-
-# the hardened flavor is used by both core and extensions
-FLAVORS+=		hardened
-FLAVOR?=
-
-HARDENED_V=		0.4.9
-.if ${FLAVOR:L:Mhardened}
-PATCHFILES=		hardening-patch-${V}-${HARDENED_V}.patch.gz:1
+PATCHFILES=		suhosin-patch-${V}-${SUHOSIN_V}.patch.gz:1
 PATCH_DIST_STRIP=	-p1
-.else
-SUPDISTFILES=		hardening-patch-${V}-${HARDENED_V}.patch.gz:1
-.endif

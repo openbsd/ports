@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2006/09/18 09:04:03 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2006/10/21 11:44:10 robert Exp $
 
 FULLPKGNAME=		php5-extensions-${V}
 COMMENT=		"informational package about PHP5 extensions"
@@ -14,11 +14,7 @@ FLAVOR?=
 
 WANTLIB=		stdc++ m
 
-.if ${FLAVOR:L:Mhardened}
-RUN_DEPENDS=		:php5-core-${V}-hardened:www/php5/core,hardened
-.else
-RUN_DEPENDS=		:php5-core-${V}-!hardened:www/php5/core
-.endif
+RUN_DEPENDS=		:php5-core-${V}:www/php5/core
 .if !defined(PACKAGING)
 MODULES=		devel/gettext
 .endif
@@ -324,9 +320,6 @@ FULLPKGNAME-xsl=	php5-xsl-${V}
 .for i in ${MULTI_PACKAGES}
 .  if !defined(FULLPKGNAME${i})
 FULLPKGNAME${i}=	php5${i}-${V}
-.  endif
-.  if ${FLAVOR:L:Mhardened}
-FULLPKGNAME${i}:=	${FULLPKGNAME${i}}-hardened
 .  endif
 .endfor
 

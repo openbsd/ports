@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST-imap,v 1.2 2004/12/21 12:15:02 espie Exp $
+@comment $OpenBSD: PLIST-imap,v 1.3 2006/10/21 11:44:10 robert Exp $
 @conflict php4-imap-*
+@pkgpath www/php5/extensions,-imap,hardened
 lib/php/modules/imap.so

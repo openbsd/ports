@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST-odbc,v 1.2 2004/12/21 12:15:02 espie Exp $
+@comment $OpenBSD: PLIST-odbc,v 1.3 2006/10/21 11:44:10 robert Exp $
 @conflict php4-odbc-*
+@pkgpath www/php5/extensions,-odbc,hardened
 lib/php/modules/odbc.so

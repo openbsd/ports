@@ -1,12 +1,12 @@
-$OpenBSD: patch-main_php_open_temporary_file_c,v 1.1.1.1 2004/10/02 11:32:37 robert Exp $
---- main/php_open_temporary_file.c.orig	Mon Jul 26 23:14:59 2004
-+++ main/php_open_temporary_file.c	Mon Jul 26 23:15:13 2004
-@@ -130,7 +130,7 @@
+$OpenBSD: patch-main_php_open_temporary_file_c,v 1.2 2006/10/21 11:44:10 robert Exp $
+--- main/php_open_temporary_file.c.orig	Wed May 24 01:22:26 2006
++++ main/php_open_temporary_file.c	Fri Aug 18 21:15:57 2006
+@@ -120,7 +120,7 @@
  		trailing_slash = "/";
  	}
  
--	(void)snprintf(opened_path, MAXPATHLEN, "%s%s%sXXXXXX", path, trailing_slash, pfx);
-+	(void)snprintf(opened_path, MAXPATHLEN, "%s%s%sXXXXXXXXXX", path, trailing_slash, pfx);
- 
- #ifdef PHP_WIN32
- 	if (GetTempFileName(path, pfx, 0, opened_path)) {
+-	if (spprintf(&opened_path, 0, "%s%s%sXXXXXX", path, trailing_slash, pfx) >= MAXPATHLEN) {
++	if (spprintf(&opened_path, 0, "%s%s%sXXXXXXXXXX", path, trailing_slash, pfx) >= MAXPATHLEN) {
+ 		efree(opened_path);
+ 		return -1;
+ 	}

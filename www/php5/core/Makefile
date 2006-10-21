@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2006/08/04 00:10:42 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2006/10/21 11:44:10 robert Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
 
 COMMENT=	"server-side HTML-embedded scripting language"
 COMMENT-pear=	"base classes for common PHP tasks"
-PKGNAME=	php5-core-${V}p1
-FULLPKGNAME-pear= php5-pear-${V}p0
+PKGNAME=	php5-core-${V}
+FULLPKGNAME-pear= php5-pear-${V}
 DISTFILES=	php-${V}.tar.gz \
 		pear-${PEAR_V}.tar.gz:0
 
