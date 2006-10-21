@@ -1,7 +1,31 @@
-$OpenBSD: patch-configure,v 1.1 2006/01/29 15:41:00 sturm Exp $
---- configure.orig	Sun Jan  1 11:39:43 2006
-+++ configure	Wed Jan  4 14:18:10 2006
-@@ -22496,10 +22496,6 @@ ALL_CFLAGS="$CFLAGS $CPPFLAGS"
+$OpenBSD: patch-configure,v 1.2 2006/10/21 17:56:48 jasper Exp $
+--- configure.orig	Sun Jan 29 08:10:47 2006
++++ configure	Thu Oct 19 12:52:57 2006
+@@ -17103,7 +17103,7 @@ if test -z "$disable_lua"; then
+ 	for luadir in "$withval" "" /usr /usr/local; do
+ 		for suffix in "" 50 51; do
+ 			if test "$cf_result" = no; then
+-				LUA_LIBS="-llua$suffix -llualib$suffix -lm"
++				LUA_LIBS="-llua$suffix -lm"
+ 
+ 				if test ! -z "$luadir"; then
+ 					LUA_LIBS="-L$luadir/lib $LUA_LIBS"
+@@ -17127,10 +17127,10 @@ int
+ main ()
+ {
+ 	lua_State *L = lua_open();
+-						lua_baselibopen(L);
+-						lua_mathlibopen(L);
+-						lua_strlibopen(L);
+-						lua_tablibopen(L);
++						luaopen_base(L);
++						luaopen_math(L);
++						luaopen_string(L);
++						luaopen_table(L);
+ 						lua_pushboolean(L, 1);
+ 						lua_close(L);
+   ;
+@@ -22892,10 +22892,6 @@ ALL_CFLAGS="$CFLAGS $CPPFLAGS"
  
  
  

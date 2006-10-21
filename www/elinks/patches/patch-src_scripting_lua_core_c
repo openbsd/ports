@@ -1,0 +1,51 @@
+$OpenBSD: patch-src_scripting_lua_core_c,v 1.1 2006/10/21 17:56:48 jasper Exp $
+--- src/scripting/lua/core.c.orig	Sun Jan 29 08:10:39 2006
++++ src/scripting/lua/core.c	Thu Oct 19 14:10:34 2006
+@@ -633,7 +633,7 @@ do_hooks_file(LS, unsigned char *prefix,
+ 	if (file_can_read(file)) {
+ 		int oldtop = lua_gettop(S);
+ 
+-		if (lua_dofile(S, file) != 0)
++		if (luaL_dofile(S, file) != 0)
+ 			sleep(3); /* Let some time to see error messages. */
+ 		lua_settop(S, oldtop);
+ 	}
+@@ -644,13 +644,24 @@ do_hooks_file(LS, unsigned char *prefix,
+ void
+ init_lua(struct module *module)
+ {
++	static const luaL_Reg lualibs[] = {
++		{"", luaopen_base},
++		{LUA_TABLIBNAME, luaopen_table},
++		{LUA_IOLIBNAME, luaopen_io},
++		{LUA_OSLIBNAME, luaopen_os},
++		{LUA_STRLIBNAME, luaopen_string},
++		{LUA_MATHLIBNAME, luaopen_math},
++		{NULL, NULL}
++	};
++	const luaL_Reg *lib = lualibs;
++
+ 	L = lua_open();
+ 
+-	luaopen_base(L);
+-	luaopen_table(L);
+-	luaopen_io(L);
+-	luaopen_string(L);
+-	luaopen_math(L);
++	for (; lib->func; lib++) {
++		lua_pushcfunction(L, lib->func);
++		lua_pushstring(L, lib->name);
++		lua_call(L, 1, 0);
++	}
+ 
+ 	lua_register(L, LUA_ALERT, l_alert);
+ 	lua_register(L, "current_url", l_current_url);
+@@ -755,7 +766,7 @@ handle_ret_eval(struct session *ses)
+ 		int oldtop = lua_gettop(L);
+ 
+ 		if (prepare_lua(ses) == 0) {
+-			lua_dostring(L, expr);
++			luaL_dostring(L, expr);
+ 			lua_settop(L, oldtop);
+ 			finish_lua();
+ 		}

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2006/06/23 12:32:33 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2006/10/21 17:56:48 jasper Exp $
 
 COMMENT=		"full-featured text WWW browser"
 DISTNAME=		elinks-0.11.1
+PKGNAME=		${DISTNAME}p0
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		www
 MASTER_SITES=		http://elinks.cz/download/
@@ -36,7 +37,7 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mlua}
 CONFIGURE_ARGS+=	--with-lua
-LIB_DEPENDS+=		lua.5,lualib.5::lang/lua
+LIB_DEPENDS+=		lua.>=5.1::lang/lua
 WANTLIB+=		m
 .else
 CONFIGURE_ARGS+=	--without-lua
