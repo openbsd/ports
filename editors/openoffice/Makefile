@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/10/20 19:58:23 ian Exp $
+# $OpenBSD: Makefile,v 1.14 2006/10/21 22:20:50 kurt Exp $
 
 ONLY_FOR_ARCHS= i386
 
@@ -60,7 +60,7 @@ VMEM_WARNING=	Yes
 PATCHORIG=	.orig.port
 WRKCONF=	${WRKSRC}/config_office
 
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	autoconf no-autoheader
 AUTOCONF_VERSION=	2.59
 AUTOCONF_DIR=		${WRKCONF}
 
