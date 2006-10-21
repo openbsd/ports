@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2006/10/20 15:36:08 bernd Exp $
+# $OpenBSD: Makefile,v 1.94 2006/10/21 17:32:39 jasper Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += db
@@ -73,6 +73,7 @@
      SUBDIR += py-sybase
      SUBDIR += qdbm
      SUBDIR += ruby-activerecord
+     SUBDIR += ruby-bdb
      SUBDIR += ruby-postgres
      SUBDIR += ruby-sqlite3
      SUBDIR += sqlite
