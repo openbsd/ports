@@ -1,4 +1,4 @@
-$OpenBSD: patch-ltmain_in,v 1.22 2006/10/21 14:11:34 espie Exp $
+$OpenBSD: patch-ltmain_in,v 1.23 2006/10/21 16:15:28 espie Exp $
 --- ltmain.in.orig	Sun Dec 18 22:43:52 2005
 +++ ltmain.in	Sat Oct 21 16:07:13 2006
 @@ -2073,6 +2073,17 @@ EOF
@@ -77,11 +77,11 @@ $OpenBSD: patch-ltmain_in,v 1.22 2006/10/21 14:11:34 espie Exp $
 +	  tmp=`echo $libname|sed -e 's,+,_,g' -e 's,-,_,g' -e 's,\.,_,g'`
 +	  eval tmp2=\$${tmp}_ltversion
 +	  if ! test -z "${SHARED_LIBS_LOG}"; then
-+		  if !test -f ${SHARED_LIBS_LOG}; then
++		  if ! test -f ${SHARED_LIBS_LOG}; then
 +			  echo "# SHARED_LIBS+= <libname>      <obsd version> # <orig version>" >${SHARED_LIBS_LOG}
 +		  fi
 +		  tmp4=`echo $libname|sed -e 's/^lib//'`
-+		  printf "SHARED_LIBS += %-20s %-8s # %s \\\\\n" "$tmp4" "$tmp2" "$versuffix" >>${SHARED_LIBS_LOG}
++		  printf "SHARED_LIBS += %-20s %-8s # %s\n" "$tmp4" "$tmp2" "$versuffix" >>${SHARED_LIBS_LOG}
 +	  fi
 +	  if test -n "$versuffix" && test -n "$tmp2"; then
 +	    versuffix=".$tmp2"
