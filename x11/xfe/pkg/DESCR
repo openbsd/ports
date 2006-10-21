@@ -1,0 +1,6 @@
+X File Explorer (xfe) is a lightweight file manager for X11, written
+using the FOX toolkit.
+It is desktop independent and can easily be customized. It has Windows
+Commander or MS-Explorer look and it's very fast and small.
+Xfe is based on the popular, but discontinued X Win Commander, written
+by Maxim Baranov.
