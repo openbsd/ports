@@ -1,0 +1,14 @@
+#!/bin/sh
+
+CLASSPATH=$(echo @IVYDIR@/* | tr \  :)
+export CLASSPATH
+
+main=fr.jayasoft.ivy.Main
+
+JAVACMD=$(@JAVAPH@ -c ivy)
+
+if [ -z "${JAVACMD}" ]; then
+        exit 1
+fi
+
+exec ${JAVACMD} $main "$@"

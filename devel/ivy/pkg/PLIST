@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/22 08:27:41 kili Exp $
+bin/ivy
+share/java/
+share/java/classes/
+share/java/classes/ivy-${VERSION}/
+share/java/classes/ivy-${VERSION}/commons-cli.jar
+share/java/classes/ivy-${VERSION}/commons-codec.jar
+share/java/classes/ivy-${VERSION}/commons-httpclient.jar
+share/java/classes/ivy-${VERSION}/commons-logging.jar
+share/java/classes/ivy-${VERSION}/commons-vfs.jar
+share/java/classes/ivy-${VERSION}/ivy.jar
+share/java/classes/ivy-${VERSION}/jdom.jar
+share/java/classes/ivy-${VERSION}/jsch.jar
+share/java/classes/ivy-${VERSION}/oro.jar
+share/java/classes/ivy-${VERSION}/slide-webdavlib.jar
+share/java/ivy-${VERSION}/
+share/java/ivy-${VERSION}/LICENSE.txt

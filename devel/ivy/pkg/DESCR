@@ -1,0 +1,4 @@
+Ivy is an agile dependency manager, primarily focused on managing java
+dependencies.  Ivy has a lot of powerful features, the most popular and
+useful being its flexibily, integration with ant, and its strong
+transitive dependencies management engine.
