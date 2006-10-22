@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.54 2006/10/03 14:23:31 mbalmer Exp $
+#	$OpenBSD: Makefile,v 1.55 2006/10/22 12:03:22 mbalmer Exp $
 
     SUBDIR += a2ps,a4
     SUBDIR += a2ps,letter
@@ -44,5 +44,6 @@
     SUBDIR += t1utils
     SUBDIR += teTeX
     SUBDIR += transfig
+    SUBDIR += xpp
 
 .include <bsd.port.subdir.mk>
