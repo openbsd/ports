@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2006/10/22 09:24:41 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.23 2006/10/22 09:40:23 mbalmer Exp $
 
 COMMENT=	"sendmail milter to scan messages for viruses and spam"
 
@@ -8,8 +8,8 @@ CATEGORIES=    	mail
 SHARED_LIBS=	vilter-attachment	8.0 \
 		vilter-clamd		8.0 \
 		vilter-icap		8.0 \
-		vilter-spamd		8.0 \
-		vilter-regex		8.0
+		vilter-regex		8.0 \
+		vilter-spamd		8.0
 
 HOMEPAGE=	http://www.etc.msys.ch/software/smtp-vilter/
 
