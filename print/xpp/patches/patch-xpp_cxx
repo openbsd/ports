@@ -1,0 +1,24 @@
+$OpenBSD: patch-xpp_cxx,v 1.1.1.1 2006/10/22 12:02:11 mbalmer Exp $
+--- xpp.cxx.orig	Mon Dec  6 20:00:04 2004
++++ xpp.cxx	Mon Aug 22 10:19:54 2005
+@@ -85,6 +85,10 @@ printFiles::printFiles(int  argc, /* I -
+   num_copies  = 1;
+   priority    = 50;
+ 
++  // Clear filelist
++
++  bzero(filelist, BLOCK_SIZE);
++
+   // Set CUPS server, port, and user
+ 
+   CupsHelper::setup();
+@@ -250,7 +254,8 @@ printFiles::printFiles(int  argc, /* I -
+ 
+   // Remove trailing space in the end of the file list
+ 
+-  filelist[strlen(filelist)-1]='\0';
++  if (strlen(filelist) > 0)
++    filelist[strlen(filelist)-1]='\0';
+ 
+   // Prepare variables for printer menu
+ 

@@ -1,0 +1,111 @@
+$OpenBSD: patch-mainwindow_fl,v 1.1.1.1 2006/10/22 12:02:11 mbalmer Exp $
+--- mainwindow.fl.orig	Mon Aug 22 13:07:48 2005
++++ mainwindow.fl	Mon Aug 22 13:08:38 2005
+@@ -22,30 +22,18 @@ print=new printFiles(argc,argv,exitstat)
+ if (exitstat != 0) return;} {}
+     Fl_Window mainWindow {
+       label {X Printing Panel}
+-      xywh {19 257 520 365} type Double resizable visible
++      xywh {293 271 520 310} type Double resizable visible
+     } {
+-      Fl_Group {} {
+-        private xywh {5 5 510 55} box UP_BOX
++      Fl_Group {} {selected
++        private xywh {5 9 510 295} box UP_BOX resizable
+       } {
+-        Fl_Box {} {
+-          label {X Printing Panel}
+-          private xywh {10 10 500 30} labeltype SHADOW_LABEL labelfont 3 labelsize 24 labelcolor 136
+-        }
+-        Fl_Box {} {
+-          label {Version 1.5 by Till Kamppeter (December 2004)} selected
+-          private xywh {10 40 500 15} labelsize 12
+-        }
+-      }
+-      Fl_Group {} {
+-        private xywh {5 65 510 295} box UP_BOX resizable
+-      } {
+         Fl_Input fileList {
+           label {File(s) (blank = std. input): }
+           callback {const char *tmpstr1;
+ tmpstr1 = (char *)((Fl_Input *)o)->value();
+ free(print->filelist);
+ print->filelist = strdup(tmpstr1);}
+-          xywh {190 75 245 25} when 1
++          xywh {190 19 245 25} when 1
+           code0 {\#include "xpp.h"}
+           code1 {o->value(print->filelist);}
+         }
+@@ -69,20 +57,20 @@ if (chosen_file)
+   if (has_space) strcat(print->filelist,"\\"");
+   fileList->value(print->filelist);
+ }}
+-          private xywh {440 75 65 25} down_box DOWN_BOX shortcut 0x80062 align 16
++          private xywh {440 19 65 25} down_box DOWN_BOX shortcut 0x80062 align 16
+           code0 {\#include <FL/fl_file_chooser.H>}
+           code1 {\#include "xpp.h"}
+         }
+         Fl_Scroll printerList {
+           label {Printers:}
+-          xywh {15 120 490 170} box DOWN_BOX align 5 when 1 resizable
++          xywh {15 64 490 170} box DOWN_BOX align 5 when 1 resizable
+           code0 {\#include "xpp.h"}
+           code1 {print->insertPrinterList(o);}
+         } {}
+         Fl_Counter numCopies {
+           label {Copies: }
+           callback {print->num_copies=(int)((Fl_Counter *)o)->value();}
+-          xywh {70 295 65 25} align 4 minimum 1 maximum 100 step 1 value 1
++          xywh {70 239 65 25} align 4 minimum 1 maximum 100 step 1 value 1
+           code0 {\#include "xpp.h"}
+           code1 {o->value(print->num_copies);}
+           code2 {o->lstep(10);}
+@@ -90,26 +78,26 @@ if (chosen_file)
+         Fl_Counter priority {
+           label {Priority: }
+           callback {print->priority=(int)((Fl_Counter *)o)->value();}
+-          xywh {200 295 50 25} type Simple align 4 minimum 1 maximum 100 step 10 value 50
++          xywh {200 239 50 25} type Simple align 4 minimum 1 maximum 100 step 10 value 50
+           code0 {\#include "xpp.h"}
+           code1 {o->value(print->priority);}
+         }
+         Fl_Button {} {
+           label {&Options...}
+           callback {xppOptionDialog();}
+-          private xywh {265 295 115 25} down_box DOWN_BOX shortcut 0x8006f
++          private xywh {265 239 115 25} down_box DOWN_BOX shortcut 0x8006f
+         }
+         Fl_Button {} {
+           label {&Instances...}
+           callback {xppInstanceDialog();}
+-          xywh {390 295 115 25} shortcut 0x80069
++          xywh {390 239 115 25} shortcut 0x80069
+         }
+         Fl_Button {} {
+           label Close
+           callback {if (instanceDialog) instanceDialog->hide();
+ if (optionDialog) optionDialog->hide();
+ mainWindow->hide();}
+-          private xywh {235 325 130 25} down_box DOWN_BOX shortcut 0xff1b
++          private xywh {235 269 130 25} down_box DOWN_BOX shortcut 0xff1b
+         }
+         Fl_Return_Button {} {
+           label Print
+@@ -118,7 +106,7 @@ if (printstat == 0) {
+   if (optionDialog) optionDialog->hide();
+   mainWindow->hide();
+ }}
+-          private xywh {375 325 130 25} down_box DOWN_BOX shortcut 0xff0d
++          private xywh {375 269 130 25} down_box DOWN_BOX shortcut 0xff0d
+           code0 {\#include "xpp.h"}
+         }
+       }
+@@ -166,7 +154,7 @@ for (i = 0; i < print->dests[print->dest
+       &(print->changed_options));} {}
+     Fl_Window optionDialog {
+       label {Printing Options} open
+-      xywh {315 521 540 495} type Double resizable
++      xywh {694 139 540 495} type Double resizable
+       code0 {\#include "xpp.h"}
+       code1 {char str[256];}
+       code2 {sprintf(str,"Options for %s",print->menu_strs[print->dest_pos]);}
