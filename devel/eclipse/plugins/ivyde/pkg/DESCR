@@ -1,0 +1,3 @@
+The IvyDE plugin integrates Ivy dependency management into the
+Eclipse IDE. It includes an Ivy XML editor and a class path container
+for automatic downloads and dependency resolution.

@@ -1,0 +1,106 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/22 08:45:36 kili Exp $
+eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/
+eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/CHANGES.txt
+eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/LICENSE.txt
+eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/icons/
+eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/icons/jsearch_obj.gif
+eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/icons/logo.png
+eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/icons/logo16x16.gif
+eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/icons/refresh.gif
+eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/icons/resolve-all.gif
+eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/icons/sample.gif
+eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/ivy-dev.xml
+eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/ivyde-eclipse.jar
+eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/ivyde-eclipsesrc.zip
+eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/lib/
+eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/lib/ant/
+eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/lib/ant/ivy.jar
+eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/lib/default/
+eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/lib/default/commons-codec.jar
+eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/lib/default/commons-httpclient.jar
+eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/lib/default/commons-logging.jar
+eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/lib/default/commons-vfs.jar
+eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/lib/default/ivy-core.jar
+eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/lib/default/jsch.jar
+eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/lib/default/oro.jar
+eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/plugin.xml
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/IvyPlugin.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/IvyPluginResources.properties
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/cpcontainer/
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/cpcontainer/FileExtFilter.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/cpcontainer/IvyClasspathContainer.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/cpcontainer/IvyClasspathEntry.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/cpcontainer/IvyClasspathInitializer.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/cpcontainer/IvyClasspathUtil.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/cpcontainer/IvydeContainerPage.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/cpcontainer/core/
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/cpcontainer/core/AddClasspathContainer.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/cpcontainer/fragmentinfo/
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/cpcontainer/fragmentinfo/IPackageFragmentExtraInfo.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/cpcontainer/fragmentinfo/PreferenceStoreInfo.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/actions/
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/actions/CreateContainerAction.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/actions/OpenIvyFileAction.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/actions/RefreshAction.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/actions/ResolveAction.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/actions/ResolveAllAction.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/console/
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/console/ConsoleDocument.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/console/IvyConsole.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/console/IvyConsoleFactory.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/core/
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/core/IvyFileEditorInput.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/core/model/
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/core/model/IValueProvider.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/core/model/IvyBooleanTagAttribute.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/core/model/IvyFile.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/core/model/IvyModel.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/core/model/IvyTag.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/core/model/IvyTagAttribute.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/core/model/ListValueProvider.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/core/model/PreferenceValueProvider.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/core/model/Proposal.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/core/model/SingleValueProvider.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/core/model/defaults.properties
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/editors/
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/editors/IvyEditor.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/editors/IvyEditorContributor.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/editors/pages/
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/editors/pages/IvyConfSection.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/editors/pages/IvyInfoSection.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/editors/pages/OverviewFormPage.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/editors/xml/
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/editors/xml/ColorManager.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/editors/xml/IXMLColorConstants.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/editors/xml/IvyContentAssistProcessor.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/editors/xml/NonRuleBasedDamagerRepairer.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/editors/xml/TagRule.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/editors/xml/XMLConfiguration.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/editors/xml/XMLDocumentProvider.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/editors/xml/XMLDoubleClickStrategy.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/editors/xml/XMLEditor.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/editors/xml/XMLPartitionScanner.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/editors/xml/XMLScanner.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/editors/xml/XMLTagScanner.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/editors/xml/XMLWhitespaceDetector.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/preferences/
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/preferences/IvyPreferencePage.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/preferences/PreferenceConstants.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/preferences/PreferenceInitializer.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/properties/
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/properties/IvyProjectPropertyPage.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/search/
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/search/FixedJavaSearchPage.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/views/
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/views/ReportView.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/wizards/
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/wizards/IvyNewWizard.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/wizards/IvyNewWizardPage.java
+@comment eclipse/plugins/org.jayasoft.ivyde.eclipse_${VERSION}/src/java/org/jayasoft/ivyde/eclipse/ui/wizards/ivy-template.xml
