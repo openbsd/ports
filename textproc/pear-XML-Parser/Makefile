@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2006/05/09 14:16:50 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2006/10/22 13:27:46 mbalmer Exp $
 
 COMMENT=	"XML parsing class based on PHP's bundled expat"
 
-DISTNAME=	XML_Parser-1.2.4
-PKGNAME=	pear-${DISTNAME:S/_/-/}p0
+DISTNAME=	XML_Parser-1.2.6
+PKGNAME=	pear-${DISTNAME:S/_/-/}
 CATEGORIES=	textproc pear
 
 MASTER_SITES=	http://pear.php.net/get/

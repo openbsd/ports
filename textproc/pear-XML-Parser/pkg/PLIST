@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/28 12:35:42 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/10/22 13:27:46 mbalmer Exp $
 lib/
 lib/php/
+pear/
+pear/doc/
 pear/doc/XML_Parser/
 pear/doc/XML_Parser/examples/
 pear/doc/XML_Parser/examples/xml_parser_file.php
@@ -11,7 +13,21 @@ pear/doc/XML_Parser/examples/xml_parser_simple1.xml
 pear/doc/XML_Parser/examples/xml_parser_simple2.php
 pear/doc/XML_Parser/examples/xml_parser_simple2.xml
 pear/doc/XML_Parser/examples/xml_parser_simple_handler.php
+pear/lib/
+@comment pear/lib/.channels/
+@comment pear/lib/.channels/.alias/
+@comment pear/lib/.channels/.alias/pear.txt
+@comment pear/lib/.channels/.alias/pecl.txt
+@comment pear/lib/.channels/__uri.reg
+@comment pear/lib/.channels/pear.php.net.reg
+@comment pear/lib/.channels/pecl.php.net.reg
+@comment pear/lib/.depdb
+@comment pear/lib/.depdblock
+pear/lib/.registry/
+@comment pear/lib/.registry/.channel.__uri/
+@comment pear/lib/.registry/.channel.pecl.php.net/
 pear/lib/.registry/xml_parser.reg
+pear/lib/XML/
 pear/lib/XML/Parser/
 pear/lib/XML/Parser.php
 pear/lib/XML/Parser/Simple.php
