@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/22 08:55:38 mbalmer Exp $
+lib/mod_ldapvhost.so
+sbin/mod_ldapvhost-enable
+share/doc/mod_ldapvhost/
+share/doc/mod_ldapvhost/msys.schema
+share/doc/mod_ldapvhost/vhost.schema

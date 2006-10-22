@@ -1,0 +1,8 @@
+To finish the installation of mod_ldapvhost, you need to enable the module
+using the following command
+
+  ${PREFIX}/sbin/mod_ldapvhost-enable
+
+If you already have Apache running on your machine, you should not use
+"apachectl restart" - instead, you should fully stop and then restart the
+server.

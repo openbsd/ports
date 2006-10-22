@@ -1,0 +1,2 @@
+To completely deinstall the mod_ldapvhost package you need to edit your apache
+configuration file and remove the line: LoadModule ldapvhost_module
