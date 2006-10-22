@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2006/06/03 09:17:37 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2006/10/22 13:49:28 mbalmer Exp $
 
 COMMENT=	"Python interface to sendmail milter API"
 
 DISTNAME=	milter-0.7.2
-PKGNAME=	py-${DISTNAME}p1
+PKGNAME=	py-${DISTNAME}p2
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.bmsi.com/python/milter.html
@@ -21,7 +21,7 @@ WANTLIB=	milter
 MASTER_SITES=	http://www.bmsi.com/python/
 
 MODULES=	lang/python
-MODPY_VERSION=	2.3
+MODPY_VERSION=	2.4
 
 DOCSDIR=	${PREFIX}/share/doc/py-milter
 EXAMPLESDIR=	${PREFIX}/share/examples/py-milter

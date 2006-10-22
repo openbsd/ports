@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/11/25 15:19:20 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/10/22 13:49:28 mbalmer Exp $
 %%SHARED%%
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/Milter.py
 lib/python${MODPY_VERSION}/site-packages/Milter.pyc
 lib/python${MODPY_VERSION}/site-packages/mime.py
