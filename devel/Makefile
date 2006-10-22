@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.408 2006/10/20 18:16:18 bernd Exp $
+# $OpenBSD: Makefile,v 1.409 2006/10/22 08:28:20 kili Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -91,6 +91,7 @@
      SUBDIR += id-utils
      SUBDIR += idoc
      SUBDIR += ipython
+     SUBDIR += ivy
      SUBDIR += jad
      SUBDIR += jakarta-servletapi
      SUBDIR += jam
