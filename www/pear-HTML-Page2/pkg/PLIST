@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/22 13:16:35 mbalmer Exp $
+lib/
+lib/php/
+pear/doc/HTML_Page2/
+pear/doc/HTML_Page2/examples/
+pear/doc/HTML_Page2/examples/Page2_Complex.php
+pear/doc/HTML_Page2/examples/Page2_NoDoctype.php
+pear/doc/HTML_Page2/examples/Page2_Simple.php
+pear/lib/.registry/html_page2.reg
+pear/lib/HTML/Page2/
+pear/lib/HTML/Page2.php
+pear/lib/HTML/Page2/Doctypes.php
+pear/lib/HTML/Page2/Namespaces.php
