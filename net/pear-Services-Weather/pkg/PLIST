@@ -1,11 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/15 09:51:34 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/10/22 13:11:14 mbalmer Exp $
 lib/
 lib/php/
+pear/
+pear/data/
 pear/data/Services_Weather/
 pear/data/Services_Weather/buildMetarDB.php
 pear/data/Services_Weather/images/
 pear/data/Services_Weather/images/sunrise.gif
 pear/data/Services_Weather/images/sunset.gif
+pear/doc/
 pear/doc/Services_Weather/
 pear/doc/Services_Weather/examples/
 pear/doc/Services_Weather/examples/ejse-basic.php
@@ -15,6 +18,19 @@ pear/doc/Services_Weather/examples/metar-extensive.php
 pear/doc/Services_Weather/examples/php_sunrise_sunset.php
 pear/doc/Services_Weather/examples/weather.com-basic.php
 pear/doc/Services_Weather/examples/weather.com-extensive.php
+pear/lib/
+@comment pear/lib/.channels/
+@comment pear/lib/.channels/.alias/
+@comment pear/lib/.channels/.alias/pear.txt
+@comment pear/lib/.channels/.alias/pecl.txt
+@comment pear/lib/.channels/__uri.reg
+@comment pear/lib/.channels/pear.php.net.reg
+@comment pear/lib/.channels/pecl.php.net.reg
+@comment pear/lib/.depdb
+@comment pear/lib/.depdblock
+pear/lib/.registry/
+@comment pear/lib/.registry/.channel.__uri/
+@comment pear/lib/.registry/.channel.pecl.php.net/
 pear/lib/.registry/services_weather.reg
 pear/lib/Services/
 pear/lib/Services/Weather/
