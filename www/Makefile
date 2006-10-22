@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.232 2006/10/18 15:02:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.233 2006/10/22 08:59:48 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -63,6 +63,7 @@
      SUBDIR += mod_gzip
      SUBDIR += mod_jk
      SUBDIR += mod_layout
+     SUBDIR += mod_ldapvhost
      SUBDIR += mod_log_sql
      SUBDIR += mod_mp3
      SUBDIR += mod_mp3,mysql
