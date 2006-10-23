@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.15 2006/10/20 18:10:25 bernd Exp $
+# $OpenBSD: check-newlib-depends,v 1.16 2006/10/23 10:54:45 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -30,7 +30,7 @@ use OpenBSD::SharedLibs;
 use File::Temp;
 use Getopt::Std;
 
-our ($opt_o, $opt_d);
+our ($opt_o, $opt_d, $opt_f);
 package OpenBSD::PackingList;
 
 package OpenBSD::PackingElement;
@@ -107,7 +107,14 @@ sub check_wantlibs
 			# don't look for modules
 			next if $lib =~ m/\.so$/;
 			$lib =~ s/^(.*\/)?lib(.*)\.so\.(\d+)\.\d+$/$2.$3/;
-			$t->{needlib}->{$lib} = $fullname;
+			if ($main::opt_f) {
+			    if (!defined $t->{needlib}->{$lib}) {
+				$t->{needlib}->{$lib} = [];
+			    }
+			    push(@{$t->{needlib}->{$lib}}, $fullname);
+			} else {
+			    $t->{needlib}->{$lib} = $fullname;
+			}
 		}
 	}
 	if ($fullname =~ m/^(.*\/)?lib(.*)\.so\.(\d+)\.\d+$/) {
@@ -126,7 +133,7 @@ sub depwalk
 
 package main;
 
-getopts('od:');
+getopts('od:f');
 
 my $dependencies = {};
 
@@ -251,6 +258,7 @@ sub analyze
 	my $r = { wantlib => {}, libdepends => {}, wantlib2 => {} };
 	for my $lib (sort keys %{$t->{needlib}}) {
 		my $fullname = $t->{needlib}->{$lib};
+		$fullname = $fullname->[0] if $opt_f;
 		if (!defined $t->{haslib}->{$lib}) {
 			report_lib_issue($plist, $lib, $fullname, $r);
 		}
@@ -262,6 +270,12 @@ sub analyze
 		print "Extra: $k\n";
 	}
 	print_list("\tWANTLIB +=", $r->{wantlib});
+	for my $lib (sort keys %{$t->{needlib}}) {
+		print "$lib:\t\n";
+		for my $binary (sort @{$t->{needlib}->{$lib}}) {
+			print "\t$binary\n";
+		}
+	}
 	rmtree($where);
 }
 
