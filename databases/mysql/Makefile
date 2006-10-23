@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2006/10/18 18:35:48 bernd Exp $
+# $OpenBSD: Makefile,v 1.123 2006/10/23 03:18:09 brad Exp $
 # Uses pthreads
 
 .if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "m88k"
@@ -12,7 +12,7 @@ COMMENT-tests=	"multithreaded SQL database (regression test suite)"
 VERSION=	5.0.26
 DISTNAME=	mysql-${VERSION}
 FULLPKGNAME=	mysql-client-${VERSION}
-PKGNAME-server=	mysql-server-${VERSION}p0
+PKGNAME-server=	mysql-server-${VERSION}p1
 FULLPKGNAME-tests= mysql-tests-${VERSION}
 CATEGORIES=	databases
 V=		MySQL-5.0
@@ -35,6 +35,11 @@ WANTLIB=		c crypto m pthread ssl z
 DB_DIR?=	/var/mysql
 SOCKET_DIR=	/var/run/mysql
 SUBST_VARS=	DB_DIR SOCKET_DIR VERSION
+
+# XXX gcc bug, gcc/3.3.5
+.if ${MACHINE_ARCH} == "alpha"
+CFLAGS+=	-mbwx
+.endif
 
 # Suggested flags for the C compiler, needed for
 # high load servers otherwise MySQL will crash.
