@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.789 2006/10/21 12:46:09 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.790 2006/10/23 13:42:50 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1143,15 +1143,6 @@ _DEP${_DEP}_COOKIES+=${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}
 # Normal user-mode targets are PHONY targets, e.g., don't create the
 # corresponding file. However, there is nothing phony about the cookie.
 
-_INSTALL_DEPS=${_INSTALL_COOKIE}
-_PACKAGE_DEPS=${_PACKAGE_COOKIES}
-_UPDATE_DEPS=${_UPDATE_COOKIE}
-_BULK__internal-package=Yes
-.if ${BULK_${PKGPATH}:L} == "yes"
-_INSTALL_DEPS+=${_BULK_COOKIE}
-_UPDATE_DEPS+=${_BULK_COOKIE}
-.endif
-
 MODSIMPLE_configure= \
 	cd ${WRKCONF} && ${_SYSTRACE_CMD} ${SETENV} \
 		CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS:C/ *$//}" \
@@ -1337,6 +1328,7 @@ ${_PACKAGE_COOKIE}:
 .  if target(post-package)
 	@cd ${.CURDIR} && exec ${MAKE} post-package
 .  endif
+	@rm -f ${_BULK_COOKIE} ${_UPDATE_COOKIE}
 .endif
 
 .PRECIOUS: ${_PACKAGE_COOKIES} ${_INSTALL_COOKIE}
@@ -1551,7 +1543,8 @@ _NEWLIB_DEPENDS_FLAGS=-o
 _NEWLIB_DEPENDS_FLAGS=
 .  endif
 
-sublib-depends-check: ${_PACKAGE_COOKIES}
+sublib-depends-check:
+	@cd ${.CURDIR} && exec ${MAKE} subpackage
 	@perl ${PORTSDIR}/infrastructure/package/check-newlib-depends \
 		${_NEWLIB_DEPENDS_FLAGS} -d ${_PKG_REPO} ${_PACKAGE_COOKIE}
 
@@ -1661,9 +1654,9 @@ _internal-configure: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} ${_DEPlibs_COOKIE} 
 	${_CONFIGURE_COOKIE}
 _internal-build _internal-all: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} \
 	${_DEPlibs_COOKIE} ${_BUILD_COOKIE}
-_internal-install: ${_INSTALL_DEPS}
+_internal-install: ${_INSTALL_COOKIE}
 _internal-fake: ${_FAKE_COOKIE}
-_internal-subupdate: ${_UPDATE_DEPS}
+_internal-subupdate: ${_UPDATE_COOKIE}
 
 .  if defined(_IGNORE_REGRESS)
 _internal-regress:
@@ -1729,13 +1722,10 @@ update-patches:
 # Top-level targets redirect to the real _internal-target, along with locking
 # if locking exists.
 
-_TOP_TARGETS=extract patch distpatch configure build all install fake \
-subpackage subupdate \
-fetch checksum regress depends lib-depends build-depends run-depends \
-regress-depends clean manpages-check \
-plist update-plist update package \
-install-all
-.for _t in ${_TOP_TARGETS}
+.for _t in extract patch distpatch configure build all install fake \
+subupdate fetch checksum regress depends lib-depends build-depends \
+run-depends regress-depends clean manpages-check \
+plist update-plist update package install-all
 .  if defined(_LOCK)
 ${_t}:
 	@${_DO_LOCK}; cd ${.CURDIR} && ${MAKE} _internal-${_t}
@@ -1744,8 +1734,14 @@ ${_t}: _internal-${_t}
 .  endif
 .endfor
 
+subpackage:
+	@${_DO_LOCK}; cd ${.CURDIR} && PACKAGING='${SUBPACKAGE}' ${MAKE} _internal-subpackage
+
 # Redirectors for top-level targets involving subpackages
-.for _t _r in _internal-package _internal-subpackage describe subdescribe lib-depends-check sublib-depends-check dump-vars subdump-vars _internal-install-all _internal-install readmes _readme _internal-update _internal-subupdate
+.for _t _r in _internal-package-only _internal-subpackage \
+describe subdescribe lib-depends-check sublib-depends-check \
+dump-vars subdump-vars _internal-install-all _internal-install \
+readmes _readme _internal-update _internal-subupdate
 ${_t}:
 	@cd ${.CURDIR} && SUBPACKAGE='' PACKAGING='' exec ${MAKE} ${_r}
 .  if defined(MULTI_PACKAGES)
@@ -1753,13 +1749,23 @@ ${_t}:
 	@cd ${.CURDIR} && SUBPACKAGE='${_s}' PACKAGING='${_s}' exec ${MAKE} ${_r}
 .    endfor
 .  endif
-.  if defined(_BULK_${_t}) && ${BULK_${PKGPATH}:L} == "yes"
-	@cd ${.CURDIR} && exec ${MAKE} ${_BULK_COOKIE}
-.  endif
 .endfor
 
+
+_internal-package:
+	@cd ${.CURDIR} && SUBPACKAGE='' PACKAGING='' exec ${MAKE} _internal-subpackage
+.if defined(MULTI_PACKAGES)
+.  for _s in ${MULTI_PACKAGES}
+	@cd ${.CURDIR} && SUBPACKAGE='${_s}' PACKAGING='${_s}' exec ${MAKE} _internal-subpackage 
+.  endfor
+.endif
+.if ${BULK_${PKGPATH}:L} == "yes"
+	@cd ${.CURDIR} && exec ${MAKE} ${_BULK_COOKIE}
+.endif
+
+
 ${_BULK_COOKIE}: 
-	@cd ${.CURDIR} && exec ${MAKE} _internal-package BULK=No
+	@cd ${.CURDIR} && exec ${MAKE} _internal-package-only
 	@mkdir -p ${BULK_COOKIES_DIR}
 .for _i in ${BULK_TARGETS_${PKGPATH}}
 	@${ECHO_MSG} "===> Running ${_i}"
@@ -2095,7 +2101,7 @@ print-plist:
 print-plist-contents:
 	@${PKG_CMD} -n -Q ${PKG_ARGS} ${_PACKAGE_COOKIE}
 
-_internal-subpackage: ${_PACKAGE_DEPS}
+_internal-subpackage: ${_PACKAGE_COOKIES}
 
 
 fetch-all:
@@ -2792,7 +2798,8 @@ subdump-vars:
 	license-check _license-check \
 	_internal-extract _internal-distpatch _internal-configure \
 	_internal-build _internal-all _internal_install _internal-fake \
-	_internal-package _internal-fetch _internal-checksum \
+	_internal-package _internal-package-only \
+	_internal-fetch _internal-checksum \
 	_internal-depends _internal-lib-depends _internal-libs-depends \
 	_internal-build-depends \
 	_internal-run-depends _internal-regress-depends \
