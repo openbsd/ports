@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/10/18 13:47:36 jsg Exp $
+# $OpenBSD: Makefile,v 1.5 2006/10/23 11:21:28 espie Exp $
 
 COMMENT=		"extract files from InstallShield CAB archives"
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c z
 
 AUTOCONF_VERSION=	2.59
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 USE_LIBTOOL=		Yes
 
