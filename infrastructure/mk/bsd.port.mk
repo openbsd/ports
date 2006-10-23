@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.790 2006/10/23 13:42:50 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.791 2006/10/23 14:33:01 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -77,6 +77,7 @@ RECURSIVE_FETCH_LIST?=	Yes
 WRKOBJDIR?=
 FAKEOBJDIR?=
 BULK_TARGETS?=
+BULK_DO?=
 FORCE_UPDATE?=No
 PKGNAMES=${FULLPKGNAME}
 # All variables relevant to the port's description
@@ -135,6 +136,7 @@ WRKOBJDIR_${PKGPATH}?= ${WRKOBJDIR}
 FAKEOBJDIR_${PKGPATH}?= ${FAKEOBJDIR}
 BULK_${PKGPATH}?= ${BULK}
 BULK_TARGETS_${PKGPATH}?= ${BULK_TARGETS}
+BULK_DO_${PKGPATH}?= ${BULK_DO}
 CLEANDEPENDS_${PKGPATH}?= ${CLEANDEPENDS}
 
 # Commands and command settings.
@@ -1771,6 +1773,9 @@ ${_BULK_COOKIE}:
 	@${ECHO_MSG} "===> Running ${_i}"
 	@cd ${.CURDIR} && exec ${MAKE} ${_i} ${BULK_FLAGS}
 .endfor
+.if !empty(BULK_DO_${PKGPATH})
+	@${BULK_DO_${PKGPATH}}
+.endif
 	@cd ${.CURDIR} && exec ${SUDO} ${MAKE} _internal-clean
 	@${_MAKE_COOKIE} $@
 
