@@ -1,6 +1,6 @@
-$OpenBSD: patch-dovecot-example_conf,v 1.26 2006/10/14 01:41:19 brad Exp $
---- dovecot-example.conf.orig	Fri Oct 13 12:34:00 2006
-+++ dovecot-example.conf	Fri Oct 13 21:18:01 2006
+$OpenBSD: patch-dovecot-example_conf,v 1.27 2006/10/23 18:23:12 brad Exp $
+--- dovecot-example.conf.orig	Sun Oct 15 18:12:31 2006
++++ dovecot-example.conf	Mon Oct 16 02:58:49 2006
 @@ -7,13 +7,12 @@
  # value inside quotes, eg.: key = "# char and trailing whitespace  "
  
@@ -37,7 +37,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.26 2006/10/14 01:41:19 brad Exp $
  #ssl_key_file = /etc/ssl/private/dovecot.pem
  
  # If key file is password protected, give the password here. Alternatively
-@@ -119,7 +118,7 @@
+@@ -121,7 +120,7 @@
  # which login needs to be able to connect to. The sockets are created when
  # running as root, so you don't have to worry about permissions. Note that
  # everything in this directory is deleted when Dovecot is started.
@@ -46,7 +46,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.26 2006/10/14 01:41:19 brad Exp $
  
  # chroot login process to the login_dir. Only reason not to do this is if you
  # wish to run the whole Dovecot without roots.
-@@ -131,7 +130,7 @@
+@@ -133,7 +132,7 @@
  # only it has access, it's used to control access for authentication process.
  # Note that this user is NOT used to access mails.
  # http://wiki.dovecot.org/UserIds
@@ -55,7 +55,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.26 2006/10/14 01:41:19 brad Exp $
  
  # Set max. process size in megabytes. If you don't use
  # login_process_per_connection you might need to grow this.
-@@ -266,7 +265,7 @@
+@@ -268,7 +267,7 @@
  
  # Don't write() to mmaped files. This is required for some operating systems
  # which use separate caches for them, such as OpenBSD.
@@ -64,7 +64,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.26 2006/10/14 01:41:19 brad Exp $
  
  # Locking method for index files. Alternatives are fcntl, flock and dotlock.
  # Dotlocking uses some tricks which may create more disk I/O than other locking
-@@ -413,7 +412,7 @@
+@@ -415,7 +414,7 @@
  # locking methods as well. Some operating systems don't allow using some of
  # them simultaneously.
  #mbox_read_locks = fcntl
@@ -73,7 +73,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.26 2006/10/14 01:41:19 brad Exp $
  
  # Maximum time in seconds to wait for lock (all of them) before aborting.
  #mbox_lock_timeout = 300
-@@ -468,19 +467,19 @@
+@@ -470,19 +469,19 @@
  
  protocol imap {
    # Login executable location.
@@ -97,7 +97,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.26 2006/10/14 01:41:19 brad Exp $
  
    # Maximum IMAP command line length in bytes. Some clients generate very long
    # command lines with huge mailboxes, so you may need to raise this if you get
-@@ -521,7 +520,7 @@ protocol imap {
+@@ -523,7 +522,7 @@ protocol imap {
    #     but not both. Thunderbird separates these two by forcing server to
    #     accept '/' suffix in mailbox names in subscriptions list.
    # The list is space-separated.
@@ -106,7 +106,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.26 2006/10/14 01:41:19 brad Exp $
  }
    
  ##
-@@ -530,11 +529,11 @@ protocol imap {
+@@ -532,11 +531,11 @@ protocol imap {
  
  protocol pop3 {
    # Login executable location.
@@ -120,7 +120,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.26 2006/10/14 01:41:19 brad Exp $
  
    # Don't try to set mails non-recent or seen with POP3 sessions. This is
    # mostly intended to reduce disk I/O. With maildir it doesn't move files
-@@ -578,7 +577,7 @@ protocol pop3 {
+@@ -580,7 +579,7 @@ protocol pop3 {
    # installations. %08Xu%08Xv will be the new default, so use it for new
    # installations.
    #
@@ -129,7 +129,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.26 2006/10/14 01:41:19 brad Exp $
  
    # POP3 logout format string:
    #  %t - number of TOP commands
-@@ -603,7 +602,7 @@ protocol pop3 {
+@@ -605,7 +604,7 @@ protocol pop3 {
    #     Outlook Express and Netscape Mail breaks if end of headers-line is
    #     missing. This option simply sends it if it's missing.
    # The list is space-separated.
@@ -138,7 +138,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.26 2006/10/14 01:41:19 brad Exp $
  }
  
  ##
-@@ -635,7 +634,7 @@ protocol lda {
+@@ -637,7 +636,7 @@ protocol lda {
  ##
  
  # Executable location
@@ -147,7 +147,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.26 2006/10/14 01:41:19 brad Exp $
  
  # Set max. process size in megabytes.
  #auth_process_size = 256
-@@ -749,7 +748,7 @@ auth default {
+@@ -751,7 +750,7 @@ auth default {
    # database (passwd usually), you can use static userdb.
    # REMEMBER: You'll need /etc/pam.d/dovecot file created for PAM
    # authentication to actually work.
@@ -156,7 +156,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.26 2006/10/14 01:41:19 brad Exp $
      #  [session=yes] [setcred=yes] [cache_key=<key>] [<service name>]
      #
      # session=yes makes Dovecot open and immediately close PAM session. Some
-@@ -777,13 +776,13 @@ auth default {
+@@ -779,14 +778,14 @@ auth default {
      #   args = session=yes *
      #   args = cache_key=%u dovecot
      #args = dovecot
@@ -165,7 +165,8 @@ $OpenBSD: patch-dovecot-example_conf,v 1.26 2006/10/14 01:41:19 brad Exp $
  
    # /etc/passwd or similar, using getpwnam()
    # In many systems nowadays this uses Name Service Switch, which is
-   # configured in /etc/nsswitch.conf.
+   # configured in /etc/nsswitch.conf. WARNING: nss_ldap is known to be broken
+   # with Dovecot. Don't use it, or users might log in as each others!
 -  #passdb passwd {
 -  #}
 +  passdb passwd {
