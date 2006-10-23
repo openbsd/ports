@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.16 2006/10/23 10:54:45 espie Exp $
+# $OpenBSD: check-newlib-depends,v 1.17 2006/10/23 11:19:35 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -270,11 +270,13 @@ sub analyze
 		print "Extra: $k\n";
 	}
 	print_list("\tWANTLIB +=", $r->{wantlib});
-	for my $lib (sort keys %{$t->{needlib}}) {
-		print "$lib:\t\n";
-		for my $binary (sort @{$t->{needlib}->{$lib}}) {
-			print "\t$binary\n";
-		}
+	if ($opt_f) {
+	    for my $lib (sort keys %{$t->{needlib}}) {
+		    print "$lib:\t\n";
+		    for my $binary (sort @{$t->{needlib}->{$lib}}) {
+			    print "\t$binary\n";
+		    }
+	    }
 	}
 	rmtree($where);
 }
