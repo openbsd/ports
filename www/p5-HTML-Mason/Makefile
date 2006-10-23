@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2006/06/17 22:51:34 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2006/10/23 13:53:44 espie Exp $
 
 COMMENT=	"high-performance dynamic web authoring system"
 
-DISTNAME=	HTML-Mason-1.33
+DISTNAME=	HTML-Mason-1.35
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
 
