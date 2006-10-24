@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.12 2006/10/21 11:44:10 robert Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2006/10/24 09:30:25 wilfried Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -18,7 +18,7 @@ MASTER_SITES=		http://us2.php.net/distributions/ \
 			http://no.php.net/distributions/ \
 			http://uk.php.net/distributions/
 MASTER_SITES0=		http://anoncvs.silihost.hu/
-MASTER_SITES1=		http://www.hardened-php.net/
+MASTER_SITES1=		http://www.hardened-php.net/suhosin/_media/
 
 # UPGRADERS: please read BOTH the PHP and Zend licenses
 # and make sure they are safe before an upgrade
