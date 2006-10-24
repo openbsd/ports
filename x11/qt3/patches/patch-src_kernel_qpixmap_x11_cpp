@@ -1,0 +1,68 @@
+$OpenBSD: patch-src_kernel_qpixmap_x11_cpp,v 1.1 2006/10/24 22:39:36 espie Exp $
+--- src/kernel/qpixmap_x11.cpp.orig	Fri Sep  2 14:43:00 2005
++++ src/kernel/qpixmap_x11.cpp	Tue Oct 24 22:30:51 2006
+@@ -953,6 +953,9 @@ bool QPixmap::convertFromImage( const QI
+     bool force_mono = (dd == 1 || isQBitmap() ||
+ 		       (conversion_flags & ColorMode_Mask)==MonoOnly );
+ 
++    if ( w >= 32768 || h >= 32768 )
++        return FALSE;
++
+     // get rid of the mask
+     delete data->mask;
+     data->mask = 0;
+@@ -1678,11 +1681,11 @@ QPixmap QPixmap::grabWindow( WId window,
+ 
+ QPixmap QPixmap::xForm( const QWMatrix &matrix ) const
+ {
+-    int	   w = 0;
+-    int	   h = 0;				// size of target pixmap
+-    int	   ws, hs;				// size of source pixmap
++    uint   w = 0;
++    uint   h = 0;				// size of target pixmap
++    uint   ws, hs;				// size of source pixmap
+     uchar *dptr;				// data in target pixmap
+-    int	   dbpl, dbytes;			// bytes per line/bytes total
++    uint   dbpl, dbytes;			// bytes per line/bytes total
+     uchar *sptr;				// data in original pixmap
+     int	   sbpl;				// bytes per line in original
+     int	   bpp;					// bits per pixel
+@@ -1697,19 +1700,24 @@ QPixmap QPixmap::xForm( const QWMatrix &
+ 
+     QWMatrix mat( matrix.m11(), matrix.m12(), matrix.m21(), matrix.m22(), 0., 0. );
+ 
++    double scaledWidth;
++    double scaledHeight;
++
+     if ( matrix.m12() == 0.0F && matrix.m21() == 0.0F ) {
+ 	if ( matrix.m11() == 1.0F && matrix.m22() == 1.0F )
+ 	    return *this;			// identity matrix
+-	h = qRound( matrix.m22()*hs );
+-	w = qRound( matrix.m11()*ws );
+-	h = QABS( h );
+-	w = QABS( w );
++	scaledHeight = matrix.m22()*hs;
++	scaledWidth = matrix.m11()*ws;
++	h = QABS( qRound( scaledHeight ) );
++	w = QABS( qRound( scaledWidth ) );
+     } else {					// rotation or shearing
+ 	QPointArray a( QRect(0,0,ws+1,hs+1) );
+ 	a = mat.map( a );
+ 	QRect r = a.boundingRect().normalize();
+ 	w = r.width()-1;
+ 	h = r.height()-1;
++        scaledWidth = w;
++        scaledHeight = h;
+     }
+ 
+     mat = trueMatrix( mat, ws, hs ); // true matrix
+@@ -1718,7 +1726,8 @@ QPixmap QPixmap::xForm( const QWMatrix &
+     bool invertible;
+     mat = mat.invert( &invertible );		// invert matrix
+ 
+-    if ( h == 0 || w == 0 || !invertible ) {	// error, return null pixmap
++    if ( h == 0 || w == 0 || !invertible
++         || QABS(scaledWidth) >= 32768 || QABS(scaledHeight) >= 32768 ) {	// error, return null pixmap
+ 	QPixmap pm;
+ 	pm.data->bitmap = data->bitmap;
+ 	return pm;

@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_kernel_qfontengine_x11_cpp,v 1.1 2006/10/24 22:39:36 espie Exp $
+--- src/kernel/qfontengine_x11.cpp.orig	Fri Sep  2 14:43:04 2005
++++ src/kernel/qfontengine_x11.cpp	Tue Oct 24 22:30:51 2006
+@@ -171,7 +171,8 @@ static void drawScaled(int x, int y, con
+ 
+     QRect br = xmat.mapRect(QRect(x, y - si->ascent, w, h));
+     QRect br2 = br & pdevRect;
+-    if (br2.width() <= 0 || br2.height() <= 0)
++    if (br2.width() <= 0 || br2.height() <= 0
++        || br2.width() >= 32768 || br2.height() >= 32768)
+         return;
+     QWMatrix mat = QPixmap::trueMatrix( xmat, w, h );
+     QBitmap wx_bm = ::transform(dpy, bm, br2.x() - br.x(), br2.y() - br.y(), br2.width(), br2.height(), mat);
