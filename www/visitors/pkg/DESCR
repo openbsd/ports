@@ -1,0 +1,3 @@
+Visitors is a very fast web log analyzer for Linux, Windows, and other
+Unix-like operating systems. It takes as input a web server log file,
+and outputs statistics in form of different reports. 
