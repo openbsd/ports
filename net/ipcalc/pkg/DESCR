@@ -1,0 +1,3 @@
+ipcalc is a small tool that operates on IPv4 networks.  It can operate
+in one of four modes: network describing, netmask describing, finding or
+splitting.
