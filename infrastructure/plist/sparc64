@@ -1,5 +1,5 @@
-# $OpenBSD: sparc64,v 1.23 2006/08/28 23:08:55 pvalchev Exp $
-# This is the master list of subdirs used to choose sparc packages.
+# $OpenBSD: sparc64,v 1.24 2006/10/24 16:42:10 david Exp $
+# This is the master list of subdirs used to choose sparc64 packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
 net/rsync
