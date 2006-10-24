@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.426 2006/10/24 11:58:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.427 2006/10/24 16:47:27 david Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -202,8 +202,8 @@
      SUBDIR += p5-Net-IPv4Addr
      SUBDIR += p5-Net-IRC
      SUBDIR += p5-Net-MySQL
-     SUBDIR += p5-Net-Patricia
      SUBDIR += p5-Net-ParseWhois
+     SUBDIR += p5-Net-Patricia
      SUBDIR += p5-Net-Pcap
      SUBDIR += p5-Net-Ping-External
      SUBDIR += p5-Net-Radius

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2006/10/19 00:55:34 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/10/24 16:47:27 david Exp $
 
 SUBDIR += anthy
-SUBDIR += uim
-SUBDIR += tomoe
 SUBDIR += libtomoe-gtk
+SUBDIR += tomoe
+SUBDIR += uim
 SUBDIR += uim-tomoe-gtk
 
 .include <bsd.port.subdir.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.409 2006/10/22 08:28:20 kili Exp $
+# $OpenBSD: Makefile,v 1.410 2006/10/24 16:47:27 david Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -386,9 +386,9 @@
      SUBDIR += py-pexpect
      SUBDIR += py-psyco
      SUBDIR += py-radix
+     SUBDIR += py-rcsparse
      SUBDIR += py-setuptools
      SUBDIR += py-silc
-     SUBDIR += py-rcsparse
      SUBDIR += py-tpg
      SUBDIR += py-twisted
      SUBDIR += py-tz
@@ -401,8 +401,8 @@
      SUBDIR += ruby-activesupport
      SUBDIR += ruby-daemons
      SUBDIR += ruby-flexmock
-     SUBDIR += ruby-gems
      SUBDIR += ruby-gem_plugin
+     SUBDIR += ruby-gems
      SUBDIR += ruby-ncurses
      SUBDIR += ruby-rake
      SUBDIR += scons
