@@ -1,0 +1,10 @@
+$OpenBSD: patch-instsetoo_native_inc_sdkoo_unix_packagelist_txt,v 1.1 2006/10/25 22:49:50 kurt Exp $
+--- instsetoo_native/inc_sdkoo/unix/packagelist.txt.orig.port	Tue Oct 24 16:54:44 2006
++++ instsetoo_native/inc_sdkoo/unix/packagelist.txt	Tue Oct 24 16:56:21 2006
+@@ -35,5 +35,5 @@ packagename = "openoffice.org-sdk"
+ copyright = "2005-2006 by OpenOffice.org"
+ vendor = "OpenOffice.org"
+ description = "OpenOffice.org %PRODUCTVERSION SDK"
+-destpath = "/opt/openoffice.org%PRODUCTVERSION_sdk"
++destpath = "openoffice-sdk"
+ End

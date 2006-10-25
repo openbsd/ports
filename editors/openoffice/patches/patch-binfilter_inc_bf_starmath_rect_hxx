@@ -1,0 +1,12 @@
+$OpenBSD: patch-binfilter_inc_bf_starmath_rect_hxx,v 1.1 2006/10/25 22:49:50 kurt Exp $
+--- binfilter/inc/bf_starmath/rect.hxx.orig.port	Tue Oct 24 16:47:40 2006
++++ binfilter/inc/bf_starmath/rect.hxx	Tue Oct 24 16:47:49 2006
+@@ -36,7 +36,7 @@
+ #ifndef RECT_HXX
+ #define RECT_HXX
+ 
+-#include <new.h>
++#include <new>
+ 
+ 
+ #ifndef _GEN_HXX //autogen

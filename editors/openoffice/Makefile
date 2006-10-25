@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/10/21 22:20:50 kurt Exp $
+# $OpenBSD: Makefile,v 1.15 2006/10/25 22:49:50 kurt Exp $
 
 ONLY_FOR_ARCHS= i386
 
@@ -7,7 +7,7 @@ COMMENT=	"a multi-platform productivity suite"
 VERSION=	2.0.4
 DISTNAME=	OOo_${VERSION}_src
 WRKDIST=	${WRKDIR}/OOD680_m5
-PKGNAME=	openoffice-${VERSION}p5
+PKGNAME=	openoffice-${VERSION}p6
 CATEGORIES=	editors productivity
 
 SHARED_LIBS=	icudata		26.0 \
@@ -50,7 +50,7 @@ LIB_DEPENDS=	gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.14::
 WANTLIB=	ICE SM X11 Xext atk-1.0 c cairo expat fontconfig \
 		freetype glib-2.0 gmodule-2.0 gobject-2.0 \
 		gthread-2.0 iconv intl jpeg m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pthread stdc++ xml2 z 
+		pangocairo-1.0 pangoft2-1.0 pthread stdc++ util xml2 z
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
@@ -84,7 +84,6 @@ CONFIGURE_ARGS=	--disable-gnome-vfs \
 		--with-system-db \
 		--with-system-sndfile \
 		--with-epm=internal \
-		--with-package-format=portable \
 		--with-alloc=system \
 		--without-java
 

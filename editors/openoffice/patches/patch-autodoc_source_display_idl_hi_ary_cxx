@@ -1,0 +1,21 @@
+$OpenBSD: patch-autodoc_source_display_idl_hi_ary_cxx,v 1.1 2006/10/25 22:49:50 kurt Exp $
+--- autodoc/source/display/idl/hi_ary.cxx.orig.port	Wed Sep  7 13:50:24 2005
++++ autodoc/source/display/idl/hi_ary.cxx	Tue Oct 24 14:06:38 2006
+@@ -177,7 +177,7 @@ AryAccess::Search_Ce( StringVector &    
+     o_mainEntity = sNextName;
+ 
+     // Find member:
+-    if ( *pNext == 0 )
++    if ( *pNext == '\0' )
+         return true; 
+ 	nextName(pNext, o_memberEntity);
+     if (strchr(o_memberEntity,':') != 0)
+@@ -185,7 +185,7 @@ AryAccess::Search_Ce( StringVector &    
+                    
+     int nMemberLen = o_memberEntity.length();
+     if ( nMemberLen > 2
+-            ?   *(pNext + nMemberLen - 2) == '('
++            ?  (*pNext && *(pNext + nMemberLen - 2) == '(')
+             : false )
+     {
+         o_memberEntity.assign(o_memberEntity,nMemberLen-2);

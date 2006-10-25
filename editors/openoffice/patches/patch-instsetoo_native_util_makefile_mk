@@ -1,15 +1,6 @@
-$OpenBSD: patch-instsetoo_native_util_makefile_mk,v 1.2 2006/08/20 03:36:52 kurt Exp $
+$OpenBSD: patch-instsetoo_native_util_makefile_mk,v 1.3 2006/10/25 22:49:50 kurt Exp $
 --- instsetoo_native/util/makefile.mk.orig.port	Thu Jul 13 11:15:45 2006
-+++ instsetoo_native/util/makefile.mk	Sat Aug 19 09:34:50 2006
-@@ -108,7 +108,7 @@ ALLTAR : $(LOCALPYFILES)
- .IF "$(BUILD_TYPE)"=="$(BUILD_TYPE:s/ODK//)"
- ALLTAR : openoffice
- .ELSE
--ALLTAR : openoffice sdkoo_en-US ure_en-US
-+ALLTAR : openoffice
- .ENDIF
- .ELSE			# "$(UPDATER)"=="" || "$(USE_PACKAGER)"==""
- ALLTAR : updatepack
++++ instsetoo_native/util/makefile.mk	Tue Oct 24 21:12:54 2006
 @@ -189,7 +189,7 @@ openoffice_%{$(PKGFORMAT:^".")} :
  openoffice_% :
  .ENDIF			# "$(PKGFORMAT)"!=""
