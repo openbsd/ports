@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2006/04/08 20:46:20 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2006/10/25 07:51:58 ajacoutot Exp $
 @newgroup _cyrus:543
 @newuser _cyrus:543:_cyrus:daemon:Cyrus Account:/var/empty:/sbin/nologin
 bin/imtest
@@ -209,6 +209,3 @@ share/examples/cyrus-imapd/tools/upgradesieve
 @sample /var/spool/imap/stage./
 @mode 750
 @sample /var/sieve/
-@extraunexec rm -rf /var/imap/*
-@extraunexec rm -rf /var/spool/imap/*
-@extraunexec rm -rf /var/sieve/*

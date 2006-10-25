@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2006/09/22 09:08:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2006/10/25 07:51:58 ajacoutot Exp $
 
 COMMENT=	"Cyrus IMAP server"
 COMMENT-perl=	"perl utils for the Cyrus IMAP server"
 
-V=		2.2.13
-DISTNAME=	cyrus-imapd-${V}
-PKGNAME=	${DISTNAME}p1
-FULLPKGNAME-perl=cyrus-imapd-perl-${V}
+DISTNAME=	cyrus-imapd-2.2.13
+PKGNAME=	${DISTNAME}p2
+FULLPKGNAME-perl=${DISTNAME:S/imapd/imapd-perl/}
 CATEGORIES=	mail
 HOMEPAGE=	http://cyrusimap.web.cmu.edu
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@lphp.org>
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # see the COPYRIGHT file in package sources
 PERMIT_PACKAGE_CDROM=	yes
