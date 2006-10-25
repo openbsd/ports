@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.235 2006/10/24 09:05:40 msf Exp $
+# $OpenBSD: Makefile,v 1.236 2006/10/25 18:12:44 kurt Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -29,7 +29,6 @@
      SUBDIR += http_load
      SUBDIR += http_ping
      SUBDIR += igal
-     SUBDIR += jakarta-tomcat
      SUBDIR += japana
      SUBDIR += jesred
      SUBDIR += junkbuster
@@ -175,6 +174,7 @@
      SUBDIR += thttpd
      SUBDIR += tidy
      SUBDIR += tinyproxy
+     SUBDIR += tomcat
      SUBDIR += trac
      SUBDIR += transproxy
      SUBDIR += turba
