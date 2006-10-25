@@ -1,6 +1,0 @@
-This package does not install the example webapps.  You must supply
-your own webapps or install the jakarta-tomcat-examples package to use
-the example webapps.
-
-Please read ${PREFIX}/${DISTNAME}/README.OpenBSD for information
-on running Jakarta Tomcat on OpenBSD.
