@@ -1,0 +1,10 @@
+Tomcat 5 is a Servlet/JSP container that implements the Servlet 2.4
+and JavaServer Pages 2.0 specifications from the Java Community 
+Process. Tomcat includes many additional features that make it a 
+useful platform for developing and deploying web applications and
+web services.  Tomcat can be run as a standalone web server with 
+Servlet and JSP support, or using Apache HTTP Server as its web 
+server via the mod_jk Apache module (the www/mod_jk package).
+
+See ${PREFIX}/tomcat/README.OpenBSD for
+information on running Tomcat on OpenBSD.

@@ -1,0 +1,12 @@
+$OpenBSD: patch-webapps_manager_xml,v 1.1.1.1 2006/10/25 18:10:17 kurt Exp $
+--- webapps/manager.xml.orig	Wed Dec  8 00:20:31 2004
++++ webapps/manager.xml	Wed Dec  8 00:21:22 2004
+@@ -7,7 +7,7 @@
+ -->
+ 
+ 
+-<Context path="/manager" docBase="../server/webapps/manager"
++<Context path="/manager" docBase="%%PREFIX%%/tomcat/server/webapps/manager"
+         debug="0" privileged="true">
+ 
+   <!-- Link to the user database we will get roles from -->

@@ -1,0 +1,12 @@
+$OpenBSD: patch-webapps_admin_xml,v 1.1.1.1 2006/10/25 18:10:17 kurt Exp $
+--- webapps/admin.xml.orig	Wed Dec  8 00:20:25 2004
++++ webapps/admin.xml	Wed Dec  8 00:20:58 2004
+@@ -7,7 +7,7 @@
+ -->
+ 
+ 
+-<Context path="/admin" docBase="../server/webapps/admin"
++<Context path="/admin" docBase="%%PREFIX%%/tomcat/server/webapps/admin"
+         debug="0" privileged="true">
+ 
+   <!-- Uncomment this Valve to limit access to the Admin app to localhost

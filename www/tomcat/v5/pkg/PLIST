@@ -1,0 +1,181 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/25 18:10:18 kurt Exp $
+@conflict jakarta-tomcat-*
+@pkgpath www/jakarta-tomcat/v5
+@newgroup _tomcat:526
+@newuser _tomcat:526:_tomcat:daemon:Tomcat Account:/nonexistent:/sbin/nologin
+share/examples/tomcat/
+@owner _tomcat
+@group _tomcat
+@sample ${SYSCONFDIR}/tomcat/
+@owner
+@group
+share/examples/tomcat/catalina.policy
+@owner _tomcat
+@group _tomcat
+@sample ${SYSCONFDIR}/tomcat/catalina.policy
+@owner
+@group
+share/examples/tomcat/catalina.properties
+@owner _tomcat
+@group _tomcat
+@sample ${SYSCONFDIR}/tomcat/catalina.properties
+@owner
+@group
+share/examples/tomcat/context.xml
+@owner _tomcat
+@group _tomcat
+@sample ${SYSCONFDIR}/tomcat/context.xml
+@owner
+@group
+share/examples/tomcat/host-manager.xml
+share/examples/tomcat/logging.properties
+@owner _tomcat
+@group _tomcat
+@sample ${SYSCONFDIR}/tomcat/logging.properties
+@owner
+@group
+share/examples/tomcat/manager.xml
+share/examples/tomcat/server-minimal.xml
+@owner _tomcat
+@group _tomcat
+@sample ${SYSCONFDIR}/tomcat/server-minimal.xml
+@owner
+@group
+share/examples/tomcat/server.xml
+@owner _tomcat
+@group _tomcat
+@sample ${SYSCONFDIR}/tomcat/server.xml
+@owner
+@group
+share/examples/tomcat/tomcat-users.xml
+@mode 600
+@owner _tomcat
+@group _tomcat
+@sample ${SYSCONFDIR}/tomcat/tomcat-users.xml
+@mode
+@owner
+@group
+share/examples/tomcat/tomcat.rc
+@owner _tomcat
+@group _tomcat
+@sample ${SYSCONFDIR}/tomcat/tomcat.rc
+@owner
+@group
+share/examples/tomcat/web.xml
+@owner _tomcat
+@group _tomcat
+@sample ${SYSCONFDIR}/tomcat/web.xml
+@sample ${CATALINA_BASE}/
+@sample ${CATALINA_BASE}/logs/
+@sample ${CATALINA_BASE}/shared/
+@sample ${CATALINA_BASE}/shared/classes/
+@sample ${CATALINA_BASE}/shared/lib/
+@sample ${CATALINA_BASE}/temp/
+@sample ${CATALINA_BASE}/webapps/
+@sample ${CATALINA_BASE}/work/
+@exec if [ ! -e ${CATALINA_BASE}/conf ]; then ln -sf ${CONFDIR} ${CATALINA_BASE}/conf; fi
+@unexec if [ -h ${CATALINA_BASE}/conf ]; then rm ${CATALINA_BASE}/conf; fi
+@owner
+@group
+tomcat/
+tomcat/LICENSE
+tomcat/NOTICE
+tomcat/README.OpenBSD
+tomcat/RELEASE-NOTES
+tomcat/RUNNING.txt
+tomcat/bin/
+tomcat/bin/bootstrap.jar
+tomcat/bin/catalina-tasks.xml
+tomcat/bin/catalina.sh
+tomcat/bin/commons-daemon.jar
+tomcat/bin/commons-logging-api.jar
+tomcat/bin/digest.sh
+tomcat/bin/jkstatus-tasks.xml
+tomcat/bin/jmxaccessor-tasks.xml
+tomcat/bin/jsvc.tar.gz
+tomcat/bin/setclasspath.sh
+tomcat/bin/shutdown.sh
+tomcat/bin/startup.sh
+tomcat/bin/tomcat-juli.jar
+tomcat/bin/tomcat-native.tar.gz
+tomcat/bin/tool-wrapper.sh
+tomcat/bin/version.sh
+tomcat/common/
+tomcat/common/classes/
+tomcat/common/endorsed/
+tomcat/common/i18n/
+tomcat/common/i18n/tomcat-i18n-en.jar
+tomcat/common/i18n/tomcat-i18n-es.jar
+tomcat/common/i18n/tomcat-i18n-fr.jar
+tomcat/common/i18n/tomcat-i18n-ja.jar
+tomcat/common/lib/
+tomcat/common/lib/commons-el.jar
+tomcat/common/lib/jasper-compiler-jdt.jar
+tomcat/common/lib/jasper-compiler.jar
+tomcat/common/lib/jasper-runtime.jar
+tomcat/common/lib/jsp-api.jar
+tomcat/common/lib/naming-factory-dbcp.jar
+tomcat/common/lib/naming-factory.jar
+tomcat/common/lib/naming-resources.jar
+tomcat/common/lib/servlet-api.jar
+tomcat/server/
+tomcat/server/classes/
+tomcat/server/lib/
+tomcat/server/lib/catalina-ant-jmx.jar
+tomcat/server/lib/catalina-ant.jar
+tomcat/server/lib/catalina-cluster.jar
+tomcat/server/lib/catalina-optional.jar
+tomcat/server/lib/catalina-storeconfig.jar
+tomcat/server/lib/catalina.jar
+tomcat/server/lib/commons-modeler.jar
+tomcat/server/lib/servlets-cgi.renametojar
+tomcat/server/lib/servlets-default.jar
+tomcat/server/lib/servlets-invoker.jar
+tomcat/server/lib/servlets-ssi.renametojar
+tomcat/server/lib/servlets-webdav.jar
+tomcat/server/lib/tomcat-ajp.jar
+tomcat/server/lib/tomcat-apr.jar
+tomcat/server/lib/tomcat-coyote.jar
+tomcat/server/lib/tomcat-http.jar
+tomcat/server/lib/tomcat-jkstatus-ant.jar
+tomcat/server/lib/tomcat-util.jar
+tomcat/server/webapps/
+tomcat/server/webapps/host-manager/
+tomcat/server/webapps/host-manager/WEB-INF/
+tomcat/server/webapps/host-manager/WEB-INF/lib/
+tomcat/server/webapps/host-manager/WEB-INF/lib/catalina-host-manager.jar
+tomcat/server/webapps/host-manager/WEB-INF/web.xml
+tomcat/server/webapps/host-manager/host-manager.xml
+tomcat/server/webapps/host-manager/images/
+tomcat/server/webapps/host-manager/images/add.gif
+tomcat/server/webapps/host-manager/images/asf-logo.gif
+tomcat/server/webapps/host-manager/images/code.gif
+tomcat/server/webapps/host-manager/images/design.gif
+tomcat/server/webapps/host-manager/images/docs.gif
+tomcat/server/webapps/host-manager/images/fix.gif
+tomcat/server/webapps/host-manager/images/tomcat.gif
+tomcat/server/webapps/host-manager/images/update.gif
+tomcat/server/webapps/host-manager/images/void.gif
+tomcat/server/webapps/host-manager/manager.xml
+tomcat/server/webapps/manager/
+tomcat/server/webapps/manager/WEB-INF/
+tomcat/server/webapps/manager/WEB-INF/lib/
+tomcat/server/webapps/manager/WEB-INF/lib/catalina-manager.jar
+tomcat/server/webapps/manager/WEB-INF/lib/commons-fileupload-1.0.jar
+tomcat/server/webapps/manager/WEB-INF/web.xml
+tomcat/server/webapps/manager/html-manager-howto.html
+tomcat/server/webapps/manager/images/
+tomcat/server/webapps/manager/images/add.gif
+tomcat/server/webapps/manager/images/asf-logo.gif
+tomcat/server/webapps/manager/images/code.gif
+tomcat/server/webapps/manager/images/design.gif
+tomcat/server/webapps/manager/images/docs.gif
+tomcat/server/webapps/manager/images/fix.gif
+tomcat/server/webapps/manager/images/tomcat.gif
+tomcat/server/webapps/manager/images/update.gif
+tomcat/server/webapps/manager/images/void.gif
+tomcat/server/webapps/manager/manager-howto.html
+tomcat/server/webapps/manager/manager.xml
+tomcat/server/webapps/manager/status.xsd
+tomcat/server/webapps/manager/xform.xsl
+@extraunexec rm -rf ${CATALINA_BASE}/logs/* ${CATALINA_BASE}/work/*

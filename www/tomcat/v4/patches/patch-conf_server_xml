@@ -1,0 +1,12 @@
+$OpenBSD: patch-conf_server_xml,v 1.1.1.1 2006/10/25 18:10:17 kurt Exp $
+--- conf/server.xml.orig	2003-12-15 20:22:46.000000000 +0100
++++ conf/server.xml	2003-12-15 20:23:08.000000000 +0100
+@@ -231,7 +231,7 @@
+       -->
+ 
+       <!-- Define the default virtual host -->
+-      <Host name="localhost" debug="0" appBase="webapps"
++      <Host name="localhost" debug="0" appBase="/var/tomcat/webapps"
+        unpackWARs="true" autoDeploy="true">
+ 
+         <!-- Normally, users must authenticate themselves to each web app

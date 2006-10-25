@@ -1,0 +1,147 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/25 18:10:17 kurt Exp $
+@conflict jakarta-tomcat-*
+@pkgpath www/jakarta-tomcat/v4
+@newgroup _tomcat:526
+@newuser _tomcat:526:_tomcat:daemon:Tomcat Account:/nonexistent:/sbin/nologin
+share/examples/tomcat/
+@owner _tomcat
+@group _tomcat
+@sample ${SYSCONFDIR}/tomcat/
+@owner
+@group
+share/examples/tomcat/catalina.policy
+@owner _tomcat
+@group _tomcat
+@sample ${SYSCONFDIR}/tomcat/catalina.policy
+@owner
+@group
+share/examples/tomcat/jk2.properties
+@owner _tomcat
+@group _tomcat
+@sample ${SYSCONFDIR}/tomcat/jk2.properties
+@owner
+@group
+share/examples/tomcat/manager.xml
+share/examples/tomcat/server-noexamples.xml.config
+@owner _tomcat
+@group _tomcat
+@sample ${SYSCONFDIR}/tomcat/server-noexamples.xml.config
+@owner
+@group
+share/examples/tomcat/server.xml
+@owner _tomcat
+@group _tomcat
+@sample ${SYSCONFDIR}/tomcat/server.xml
+@owner
+@group
+share/examples/tomcat/tomcat-users.xml
+@mode 600
+@owner _tomcat
+@group _tomcat
+@sample ${SYSCONFDIR}/tomcat/tomcat-users.xml
+@mode
+@owner
+@group
+share/examples/tomcat/tomcat.rc
+@owner _tomcat
+@group _tomcat
+@sample ${SYSCONFDIR}/tomcat/tomcat.rc
+@owner
+@group
+share/examples/tomcat/web.xml
+@owner _tomcat
+@group _tomcat
+@sample ${SYSCONFDIR}/tomcat/web.xml
+@sample ${CATALINA_BASE}/
+@sample ${CATALINA_BASE}/logs/
+@sample ${CATALINA_BASE}/shared/
+@sample ${CATALINA_BASE}/shared/classes/
+@sample ${CATALINA_BASE}/shared/lib/
+@sample ${CATALINA_BASE}/temp/
+@sample ${CATALINA_BASE}/webapps/
+@sample ${CATALINA_BASE}/work/
+@exec if [ ! -e ${CATALINA_BASE}/conf ]; then ln -sf ${CONFDIR} ${CATALINA_BASE}/conf; fi
+@unexec if [ -h ${CATALINA_BASE}/conf ]; then rm ${CATALINA_BASE}/conf; fi
+@owner
+@group
+tomcat/
+tomcat/BUILDING.txt
+tomcat/LICENSE
+tomcat/README.OpenBSD
+tomcat/README.txt
+tomcat/RELEASE-NOTES-4.1.txt
+tomcat/RUNNING.txt
+tomcat/bin/
+tomcat/bin/bootstrap.jar
+tomcat/bin/catalina.sh
+tomcat/bin/commons-daemon.jar
+tomcat/bin/digest.sh
+tomcat/bin/jasper.sh
+tomcat/bin/jspc.sh
+tomcat/bin/setclasspath.sh
+tomcat/bin/shutdown.sh
+tomcat/bin/startup.sh
+tomcat/bin/tomcat-jni.jar
+tomcat/bin/tool-wrapper.sh
+tomcat/common/
+tomcat/common/classes/
+tomcat/common/endorsed/
+tomcat/common/endorsed/xercesImpl.jar
+tomcat/common/endorsed/xml-apis.jar
+tomcat/common/lib/
+tomcat/common/lib/activation.jar
+tomcat/common/lib/ant-launcher.jar
+tomcat/common/lib/ant.jar
+tomcat/common/lib/commons-collections-3.2.jar
+tomcat/common/lib/commons-dbcp-1.2.1.jar
+tomcat/common/lib/commons-logging-api-1.1.jar
+tomcat/common/lib/commons-pool-1.3.jar
+tomcat/common/lib/jasper-compiler.jar
+tomcat/common/lib/jasper-runtime.jar
+tomcat/common/lib/jdbc2_0-stdext.jar
+tomcat/common/lib/jndi.jar
+tomcat/common/lib/jta.jar
+tomcat/common/lib/mail.jar
+tomcat/common/lib/naming-common.jar
+tomcat/common/lib/naming-factory.jar
+tomcat/common/lib/naming-resources.jar
+tomcat/common/lib/servlet.jar
+tomcat/server/
+tomcat/server/classes/
+tomcat/server/lib/
+tomcat/server/lib/catalina-ant.jar
+tomcat/server/lib/catalina.jar
+tomcat/server/lib/commons-beanutils.jar
+tomcat/server/lib/commons-digester-1.7.jar
+tomcat/server/lib/commons-fileupload-1.1.1.jar
+tomcat/server/lib/commons-io-1.2.jar
+tomcat/server/lib/commons-logging-1.1.jar
+tomcat/server/lib/commons-modeler.jar
+tomcat/server/lib/jaas.jar
+tomcat/server/lib/jakarta-regexp-1.4.jar
+tomcat/server/lib/mx4j-jmx.jar
+tomcat/server/lib/mx4j.license
+tomcat/server/lib/servlets-cgi.renametojar
+tomcat/server/lib/servlets-common.jar
+tomcat/server/lib/servlets-default.jar
+tomcat/server/lib/servlets-invoker.jar
+tomcat/server/lib/servlets-manager.jar
+tomcat/server/lib/servlets-ssi.renametojar
+tomcat/server/lib/servlets-webdav.jar
+tomcat/server/lib/tomcat-coyote.jar
+tomcat/server/lib/tomcat-http11.jar
+tomcat/server/lib/tomcat-jk.jar
+tomcat/server/lib/tomcat-jk2.jar
+tomcat/server/lib/tomcat-util.jar
+tomcat/server/lib/tomcat4-coyote.jar
+tomcat/server/webapps/
+tomcat/server/webapps/manager/
+tomcat/server/webapps/manager/WEB-INF/
+tomcat/server/webapps/manager/WEB-INF/web.xml
+tomcat/server/webapps/manager/html-manager-howto.html
+tomcat/server/webapps/manager/images/
+tomcat/server/webapps/manager/images/asf-logo.gif
+tomcat/server/webapps/manager/images/tomcat.gif
+tomcat/server/webapps/manager/images/void.gif
+tomcat/server/webapps/manager/manager-howto.html
+@extraunexec rm -rf ${CATALINA_BASE}/logs/* ${CATALINA_BASE}/work/*

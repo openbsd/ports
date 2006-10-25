@@ -1,0 +1,12 @@
+$OpenBSD: patch-conf_server_xml,v 1.1.1.1 2006/10/25 18:10:18 kurt Exp $
+--- conf/server.xml.orig	Mon Jul 31 12:58:18 2006
++++ conf/server.xml	Mon Jul 31 12:58:40 2006
+@@ -188,7 +188,7 @@
+       <!-- Define the default virtual host
+            Note: XML Schema validation will not work with Xerces 2.2.
+        -->
+-      <Host name="localhost" appBase="webapps"
++      <Host name="localhost" appBase="/var/tomcat/webapps"
+        unpackWARs="true" autoDeploy="true"
+        xmlValidation="false" xmlNamespaceAware="false">
+ 

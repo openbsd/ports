@@ -1,0 +1,12 @@
+$OpenBSD: patch-bin_catalina_sh,v 1.1.1.1 2006/10/25 18:10:18 kurt Exp $
+--- bin/catalina.sh.orig	Sat Aug 28 20:02:20 2004
++++ bin/catalina.sh	Thu Oct 14 09:14:40 2004
+@@ -107,7 +107,7 @@ fi
+ CLASSPATH="$CLASSPATH":"$CATALINA_HOME"/bin/bootstrap.jar:"$CATALINA_HOME"/bin/commons-logging-api.jar
+ 
+ if [ -z "$CATALINA_BASE" ] ; then
+-  CATALINA_BASE="$CATALINA_HOME"
++  CATALINA_BASE="/var/tomcat"
+ fi
+ 
+ if [ -z "$CATALINA_TMPDIR" ] ; then

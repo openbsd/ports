@@ -1,0 +1,43 @@
+$OpenBSD: README.OpenBSD,v 1.1.1.1 2006/10/25 18:10:18 kurt Exp $
+
+The tomcat package does not install the example webapps, documentation
+or admin webapp.  You must supply your own webapps and configuration or
+install the tomcat-examples package for the example webapps and
+documentation.  Sample config files for the host-manager and manager
+webapps can be found in %%PREFIX%%/share/examples/tomcat.
+
+The tomcat-admin package contains the admin webapp but you must supply
+your own configuration for it or use the tomcat-examples package.  A
+sample config file can be found in %%PREFIX%%/share/examples/tomcat.
+
+The tomcat-examples package includes the examples, full documentation
+and localhost config files for admin, host-manager and manager webapps.
+
+The packages are structured this way to facilate mantaining a server
+which normally would not contain the examples and documentation webapp
+and optionally contain the admin webapp.
+
+Tomcat on OpenBSD uses the `%%SYSCONFDIR%%/tomcat' directory for its configuration
+files. `$CATALINA_BASE' is `%%CATALINA_BASE%%'. All files contained within
+these directories should be owned by the _tomcat user.
+
+The startup.sh script has been modified to get important environment
+variables from `%%SYSCONFDIR%%/tomcat/tomcat.rc'. You should define environment
+variables such as JAVA_HOME and JAVA_OPTS in `%%SYSCONFDIR%%/tomcat/tomcat.rc'.
+
+With the following command Tomcat is started as user `_tomcat':
+$ sudo -u _tomcat %%PREFIX%%/tomcat/bin/startup.sh
+
+If you want Tomcat to serve on privileged ports (e.g. 80), then makes
+sure the Connector port is 80 in your `%%SYSCONFDIR%%/tomcat/server.xml', or even
+more secure: redirect all tcp traffic to port 80 to Tomcat's default
+listener port 8080 using a pf.conf(5) rule like:
+
+   rdr on $NIC proto tcp from any to any port 80 -> 127.0.0.1 port 8080
+
+If you are upgrading and use database drivers, don't forget to copy them
+into %%PREFIX%%/tomcat/common/lib. If you use ssi or cgi, remember to
+rename to jar the appropriate .renametojar files in
+%%PREFIX%%/tomcat/server/lib. You must also delete any work files in
+`%%CATALINA_BASE%%/work' unless you are reinstalling the same full version of
+Tomcat.
