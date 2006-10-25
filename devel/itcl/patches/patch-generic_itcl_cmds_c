@@ -1,0 +1,12 @@
+$OpenBSD: patch-generic_itcl_cmds_c,v 1.1.1.1 2006/10/25 14:24:03 steven Exp $
+--- generic/itcl_cmds.c.orig	Fri Mar 25 23:58:08 2005
++++ generic/itcl_cmds.c	Wed Oct 25 16:22:20 2006
+@@ -64,7 +64,7 @@ namespace eval ::itcl {\n\
+             }\n\
+             lappend dirs [file join [file dirname $tcl_library] itcl$version]\n\
+             set bindir [file dirname [info nameofexecutable]]\n\
+-            lappend dirs [file join $bindir .. lib itcl$version]\n\
++            lappend dirs [file join $bindir .. lib itcl]\n\
+             lappend dirs [file join $bindir .. library]\n\
+             lappend dirs [file join $bindir .. .. library]\n\
+             lappend dirs [file join $bindir .. .. itcl library]\n\

@@ -1,0 +1,26 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2006/10/25 14:24:03 steven Exp $
+--- configure.orig	Fri Mar 25 20:37:41 2005
++++ configure	Wed Oct 25 16:24:20 2006
+@@ -8034,11 +8034,11 @@ if (eval "$ac_cpp conftest.$ac_ext") 2>&
+   $EGREP "yes" >/dev/null 2>&1; then
+   echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
+-		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.1.0'
++		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.${LIBitcl33_VERSION}'
+ else
+   echo "$as_me:$LINENO: result: no" >&5
+ echo "${ECHO_T}no" >&6
+-		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.1.0'
++		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.${LIBitcl33_VERSION}'
+ 
+ fi
+ rm -f conftest*
+@@ -9474,7 +9474,7 @@ echo "$as_me: error: No tclsh found in P
+ #--------------------------------------------------------------------
+ 
+ # pkglibdir must be a fully qualified path and (not ${exec_prefix}/lib)
+-eval pkglibdir="${libdir}/${PACKAGE_NAME}${PACKAGE_VERSION}"
++eval pkglibdir="${libdir}"
+ if test "${TCL_LIB_VERSIONS_OK}" = "ok"; then
+     eval itcl_LIB_FLAG="-litcl${PACKAGE_VERSION}${DBGX}"
+     eval itcl_STUB_LIB_FLAG="-litclstub${PACKAGE_VERSION}${DBGX}"

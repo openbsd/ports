@@ -1,0 +1,7 @@
+[incr Tcl] is an object-oriented extension of the Tcl language. It
+was created to support more structured programming in Tcl. Tcl scripts
+that grow beyond a few thousand lines become extremely difficult to
+maintain. This is because the building blocks of vanilla Tcl are
+procedures and global variables, and all of these building blocks
+must reside in a single global namespace. There is no support for
+protection or encapsulation.

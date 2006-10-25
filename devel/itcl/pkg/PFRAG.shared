@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/10/25 14:24:03 steven Exp $
+@lib lib/libitcl33.so.${LIBitcl33_VERSION}
