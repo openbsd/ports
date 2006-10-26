@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/10/28 19:40:32 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2006/10/26 19:45:58 bernd Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -6,8 +6,7 @@ SHARED_ONLY=		Yes
 
 COMMENT=		"module that embeds Ruby into Apache"
 
-DISTNAME=		mod_ruby-1.2.3
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		mod_ruby-1.2.6
 CATEGORIES=		www
 
 HOMEPAGE=		http://modruby.net/

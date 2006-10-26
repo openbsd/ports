@@ -1,13 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/01/16 23:44:39 couderc Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/10/26 19:45:58 bernd Exp $
 lib/mod_ruby.so
 lib/ruby/1.8/apache/
 lib/ruby/1.8/apache/erb-run.rb
 lib/ruby/1.8/apache/eruby-debug.rb
 lib/ruby/1.8/apache/eruby-run.rb
 lib/ruby/1.8/apache/query.rb
+lib/ruby/1.8/apache/rails-dispatcher.rb
 lib/ruby/1.8/apache/rd2html.rb
 lib/ruby/1.8/apache/registry.rb
 lib/ruby/1.8/apache/ruby-debug.rb
+lib/ruby/1.8/apache/ruby-profile.rb
 lib/ruby/1.8/apache/ruby-run.rb
 lib/ruby/1.8/auto-reload.rb
 sbin/mod_ruby-enable
