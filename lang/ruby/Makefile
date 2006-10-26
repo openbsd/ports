@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2006/10/22 08:45:39 steven Exp $
+# $OpenBSD: Makefile,v 1.45 2006/10/26 17:57:16 bernd Exp $
 
 SHARED_ONLY=		Yes
 
@@ -11,9 +11,9 @@ VERSION=		1.8.5
 DISTNAME=		ruby-${VERSION}
 SHARED_LIBS=		ruby 1.85
 PKGNAME=		${DISTNAME}p0
-PKGNAME-iconv=		ruby-iconv-${VERSION}p0
-PKGNAME-gdbm=		ruby-gdbm-${VERSION}p0
-PKGNAME-tk=		ruby-tk-${VERSION}p0
+PKGNAME-iconv=		ruby-iconv-${VERSION}p1
+PKGNAME-gdbm=		ruby-gdbm-${VERSION}p1
+PKGNAME-tk=		ruby-tk-${VERSION}p1
 
 CATEGORIES=		lang
 
@@ -62,14 +62,14 @@ WANTLIB+=		readline termcap util crypto ncurses ssl z
 .if !defined(PACKAGING) || ${SUBPACKAGE} == "-iconv"
 MODULES+=		converters/libiconv
 .  if defined(PACKAGING)
-LIB_DEPENDS+=		ruby.>=1:${PKGNAME}:lang/ruby
+LIB_DEPENDS+=		ruby.>=1:ruby-${VERSION}*:lang/ruby
 .  endif
 .endif
 
 .if !defined(PACKAGING) || ${SUBPACKAGE} == "-gdbm"
 LIB_DEPENDS+=		gdbm.>=3::databases/gdbm
 .  if defined(PACKAGING)
-LIB_DEPENDS+=		ruby.>=1:${PKGNAME}:lang/ruby
+LIB_DEPENDS+=		ruby.>=1:ruby-${VERSION}*:lang/ruby
 .  endif
 .endif
 
@@ -77,11 +77,11 @@ LIB_DEPENDS+=		ruby.>=1:${PKGNAME}:lang/ruby
 WANTLIB+=		X11 tcl84
 LIB_DEPENDS+=		tk84:tk-8.4.*:x11/tk/8.4
 .  if defined(PACKAGING)
-LIB_DEPENDS+=		ruby.>=1:${PKGNAME}:lang/ruby
+LIB_DEPENDS+=		ruby.>=1:ruby-${VERSION}*:lang/ruby
 .  endif
 .endif
 
-REGRESS_DEPENDS=	:${PKGNAME}:lang/ruby
+REGRESS_DEPENDS=	:ruby-${VERSION}*:lang/ruby
 INSTALL_TARGET=		install install-doc
 REV=			1.8
 SUB=			${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
