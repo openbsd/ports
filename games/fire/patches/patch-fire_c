@@ -1,0 +1,12 @@
+$OpenBSD: patch-fire_c,v 1.1 2006/10/26 06:10:01 ray Exp $
+--- fire.c.orig	Tue Dec 21 00:19:06 1999
++++ fire.c	Thu Aug 24 06:10:54 2006
+@@ -105,7 +105,7 @@ unsigned char *p3, *p4;
+ 
+ 	for(y=2;y<YSIZE;y++)
+ 	{
+-		for(x=0;x<XSIZE;x++)
++		for(x=1;x<XSIZE - 1;x++)
+ 		{
+ 			p3 = p1+y*XSIZE+x;
+ 			p4 = p2+y*pitch+x;
