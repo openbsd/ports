@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/03/07 09:19:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2006/10/27 07:23:50 espie Exp $
 bin/mlbt
 bin/mlbt+gui
 bin/mldc
@@ -9,7 +9,6 @@ bin/mldonkey_gui
 bin/mlgnut
 bin/mlgnut+gui
 bin/mlgui
-bin/mlim
 bin/mlnet
 bin/mlnet+gui
 bin/mlslsk
@@ -73,6 +72,7 @@ share/mldonkey/distrib/i18n/gui_messages.ini.sp
 share/mldonkey/distrib/i18n/gui_messages.ini.sv
 share/mldonkey/distrib/i18n/mlnet_strings.catalan
 share/mldonkey/distrib/i18n/mlnet_strings.de
+share/mldonkey/distrib/i18n/mlnet_strings.de_DE.utf8
 share/mldonkey/distrib/i18n/mlnet_strings.dutch
 share/mldonkey/distrib/i18n/mlnet_strings.fr
 share/mldonkey/distrib/i18n/mlnet_strings.fr.noaccents

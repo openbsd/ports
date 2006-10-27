@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/09/17 21:46:01 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2006/10/27 07:23:50 espie Exp $
 
 COMMENT='e-donkey client'
 CATEGORIES=net
@@ -21,7 +21,7 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 HOMEPAGE=http://mldonkey.sourceforge.net/Main_Page
 
 MASTER_SITES=${MASTER_SITE_SOURCEFORGE:=mldonkey/}
-DISTNAME=mldonkey-2.7.7
+DISTNAME=mldonkey-2.8.1
 PKGNAME=${DISTNAME}
 EXTRACT_SUFX=.tar.bz2
 
@@ -48,7 +48,7 @@ post-install:
 .include <bsd.port.mk>
 
 .if ${MODOCAML_NATIVE:L} == "yes"
-strip_binaries=cd ${PREFIX}/bin && strip mlnet mlgui mlnet+gui mlim
+strip_binaries=cd ${PREFIX}/bin && strip mlnet mlgui mlnet+gui
 .else
 strip_binaries=:
 .endif
