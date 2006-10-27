@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/09/30 11:44:30 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2006/10/27 16:34:52 espie Exp $
 
 COMMENT=	"select a pager if destination is a TTY"
 
@@ -19,5 +19,7 @@ EXTRACT_SUFX=	.tgz
 CONFIGURE_STYLE= perl
 
 PKG_ARCH=	*
+
+REGRESS_IS_INTERACTIVE=	Yes
 
 .include <bsd.port.mk>
