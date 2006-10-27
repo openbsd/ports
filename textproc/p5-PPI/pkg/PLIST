@@ -1,0 +1,164 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/27 09:33:53 jasper Exp $
+${P5SITE}/PPI/
+${P5SITE}/PPI.pm
+${P5SITE}/PPI/Cache.pm
+${P5SITE}/PPI/Document/
+${P5SITE}/PPI/Document.pm
+${P5SITE}/PPI/Document/File.pm
+${P5SITE}/PPI/Document/Fragment.pm
+${P5SITE}/PPI/Document/Normalized.pm
+${P5SITE}/PPI/Dumper.pm
+${P5SITE}/PPI/Element.pm
+${P5SITE}/PPI/Find.pm
+${P5SITE}/PPI/Lexer.pm
+${P5SITE}/PPI/Node.pm
+${P5SITE}/PPI/Normal/
+${P5SITE}/PPI/Normal.pm
+${P5SITE}/PPI/Normal/Standard.pm
+${P5SITE}/PPI/Statement/
+${P5SITE}/PPI/Statement.pm
+${P5SITE}/PPI/Statement/Break.pm
+${P5SITE}/PPI/Statement/Compound.pm
+${P5SITE}/PPI/Statement/Data.pm
+${P5SITE}/PPI/Statement/End.pm
+${P5SITE}/PPI/Statement/Expression.pm
+${P5SITE}/PPI/Statement/Include.pm
+${P5SITE}/PPI/Statement/Null.pm
+${P5SITE}/PPI/Statement/Package.pm
+${P5SITE}/PPI/Statement/Scheduled.pm
+${P5SITE}/PPI/Statement/Sub.pm
+${P5SITE}/PPI/Statement/Unknown.pm
+${P5SITE}/PPI/Statement/UnmatchedBrace.pm
+${P5SITE}/PPI/Statement/Variable.pm
+${P5SITE}/PPI/Structure/
+${P5SITE}/PPI/Structure.pm
+${P5SITE}/PPI/Structure/Block.pm
+${P5SITE}/PPI/Structure/Condition.pm
+${P5SITE}/PPI/Structure/Constructor.pm
+${P5SITE}/PPI/Structure/ForLoop.pm
+${P5SITE}/PPI/Structure/List.pm
+${P5SITE}/PPI/Structure/Subscript.pm
+${P5SITE}/PPI/Structure/Unknown.pm
+${P5SITE}/PPI/Token/
+${P5SITE}/PPI/Token.pm
+${P5SITE}/PPI/Token/ArrayIndex.pm
+${P5SITE}/PPI/Token/Attribute.pm
+${P5SITE}/PPI/Token/Cast.pm
+${P5SITE}/PPI/Token/Comment.pm
+${P5SITE}/PPI/Token/DashedWord.pm
+${P5SITE}/PPI/Token/Data.pm
+${P5SITE}/PPI/Token/End.pm
+${P5SITE}/PPI/Token/HereDoc.pm
+${P5SITE}/PPI/Token/Label.pm
+${P5SITE}/PPI/Token/Magic.pm
+${P5SITE}/PPI/Token/Number.pm
+${P5SITE}/PPI/Token/Operator.pm
+${P5SITE}/PPI/Token/Pod.pm
+${P5SITE}/PPI/Token/Prototype.pm
+${P5SITE}/PPI/Token/Quote/
+${P5SITE}/PPI/Token/Quote.pm
+${P5SITE}/PPI/Token/Quote/Double.pm
+${P5SITE}/PPI/Token/Quote/Interpolate.pm
+${P5SITE}/PPI/Token/Quote/Literal.pm
+${P5SITE}/PPI/Token/Quote/Single.pm
+${P5SITE}/PPI/Token/QuoteLike/
+${P5SITE}/PPI/Token/QuoteLike.pm
+${P5SITE}/PPI/Token/QuoteLike/Backtick.pm
+${P5SITE}/PPI/Token/QuoteLike/Command.pm
+${P5SITE}/PPI/Token/QuoteLike/Readline.pm
+${P5SITE}/PPI/Token/QuoteLike/Regexp.pm
+${P5SITE}/PPI/Token/QuoteLike/Words.pm
+${P5SITE}/PPI/Token/Regexp/
+${P5SITE}/PPI/Token/Regexp.pm
+${P5SITE}/PPI/Token/Regexp/Match.pm
+${P5SITE}/PPI/Token/Regexp/Substitute.pm
+${P5SITE}/PPI/Token/Regexp/Transliterate.pm
+${P5SITE}/PPI/Token/Separator.pm
+${P5SITE}/PPI/Token/Structure.pm
+${P5SITE}/PPI/Token/Symbol.pm
+${P5SITE}/PPI/Token/Unknown.pm
+${P5SITE}/PPI/Token/Whitespace.pm
+${P5SITE}/PPI/Token/Word.pm
+${P5SITE}/PPI/Token/_QuoteEngine/
+${P5SITE}/PPI/Token/_QuoteEngine.pm
+${P5SITE}/PPI/Token/_QuoteEngine/Full.pm
+${P5SITE}/PPI/Token/_QuoteEngine/Simple.pm
+${P5SITE}/PPI/Tokenizer.pm
+${P5SITE}/PPI/Transform.pm
+${P5SITE}/PPI/Util.pm
+@man man/man3p/PPI.3p
+@man man/man3p/PPI::Cache.3p
+@man man/man3p/PPI::Document.3p
+@man man/man3p/PPI::Document::File.3p
+@man man/man3p/PPI::Document::Fragment.3p
+@man man/man3p/PPI::Document::Normalized.3p
+@man man/man3p/PPI::Dumper.3p
+@man man/man3p/PPI::Element.3p
+@man man/man3p/PPI::Find.3p
+@man man/man3p/PPI::Lexer.3p
+@man man/man3p/PPI::Node.3p
+@man man/man3p/PPI::Normal.3p
+@man man/man3p/PPI::Normal::Standard.3p
+@man man/man3p/PPI::Statement.3p
+@man man/man3p/PPI::Statement::Break.3p
+@man man/man3p/PPI::Statement::Compound.3p
+@man man/man3p/PPI::Statement::Data.3p
+@man man/man3p/PPI::Statement::End.3p
+@man man/man3p/PPI::Statement::Expression.3p
+@man man/man3p/PPI::Statement::Include.3p
+@man man/man3p/PPI::Statement::Null.3p
+@man man/man3p/PPI::Statement::Package.3p
+@man man/man3p/PPI::Statement::Scheduled.3p
+@man man/man3p/PPI::Statement::Sub.3p
+@man man/man3p/PPI::Statement::Unknown.3p
+@man man/man3p/PPI::Statement::UnmatchedBrace.3p
+@man man/man3p/PPI::Statement::Variable.3p
+@man man/man3p/PPI::Structure.3p
+@man man/man3p/PPI::Structure::Block.3p
+@man man/man3p/PPI::Structure::Condition.3p
+@man man/man3p/PPI::Structure::Constructor.3p
+@man man/man3p/PPI::Structure::ForLoop.3p
+@man man/man3p/PPI::Structure::List.3p
+@man man/man3p/PPI::Structure::Subscript.3p
+@man man/man3p/PPI::Structure::Unknown.3p
+@man man/man3p/PPI::Token.3p
+@man man/man3p/PPI::Token::ArrayIndex.3p
+@man man/man3p/PPI::Token::Attribute.3p
+@man man/man3p/PPI::Token::Cast.3p
+@man man/man3p/PPI::Token::Comment.3p
+@man man/man3p/PPI::Token::DashedWord.3p
+@man man/man3p/PPI::Token::Data.3p
+@man man/man3p/PPI::Token::End.3p
+@man man/man3p/PPI::Token::HereDoc.3p
+@man man/man3p/PPI::Token::Label.3p
+@man man/man3p/PPI::Token::Magic.3p
+@man man/man3p/PPI::Token::Number.3p
+@man man/man3p/PPI::Token::Operator.3p
+@man man/man3p/PPI::Token::Pod.3p
+@man man/man3p/PPI::Token::Prototype.3p
+@man man/man3p/PPI::Token::Quote.3p
+@man man/man3p/PPI::Token::Quote::Double.3p
+@man man/man3p/PPI::Token::Quote::Interpolate.3p
+@man man/man3p/PPI::Token::Quote::Literal.3p
+@man man/man3p/PPI::Token::Quote::Single.3p
+@man man/man3p/PPI::Token::QuoteLike.3p
+@man man/man3p/PPI::Token::QuoteLike::Backtick.3p
+@man man/man3p/PPI::Token::QuoteLike::Command.3p
+@man man/man3p/PPI::Token::QuoteLike::Readline.3p
+@man man/man3p/PPI::Token::QuoteLike::Regexp.3p
+@man man/man3p/PPI::Token::QuoteLike::Words.3p
+@man man/man3p/PPI::Token::Regexp.3p
+@man man/man3p/PPI::Token::Regexp::Match.3p
+@man man/man3p/PPI::Token::Regexp::Substitute.3p
+@man man/man3p/PPI::Token::Regexp::Transliterate.3p
+@man man/man3p/PPI::Token::Separator.3p
+@man man/man3p/PPI::Token::Structure.3p
+@man man/man3p/PPI::Token::Symbol.3p
+@man man/man3p/PPI::Token::Unknown.3p
+@man man/man3p/PPI::Token::Whitespace.3p
+@man man/man3p/PPI::Token::Word.3p
+@man man/man3p/PPI::Token::_QuoteEngine.3p
+@man man/man3p/PPI::Token::_QuoteEngine::Full.3p
+@man man/man3p/PPI::Token::_QuoteEngine::Simple.3p
+@man man/man3p/PPI::Tokenizer.3p
+@man man/man3p/PPI::Transform.3p
