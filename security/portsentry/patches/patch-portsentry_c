@@ -1,0 +1,13 @@
+$OpenBSD: patch-portsentry_c,v 1.1 2006/10/27 09:49:27 aanriot Exp $
+--- portsentry.c.orig	Wed Oct 25 07:17:38 2006
++++ portsentry.c	Wed Oct 25 07:18:02 2006
+@@ -1581,8 +1581,7 @@ void
+ Usage (void)
+ {
+   printf ("PortSentry - Port Scan Detector.\n");
+-  printf ("Copyright 1997-2003 Craig H. Rowland <craigrowland at users dot 
+-sourceforget dot net>\n");
++  printf ("Copyright 1997-2003 Craig H. Rowland <craigrowland at users dot sourceforget dot net>\n");
+   printf ("Licensing restrictions apply. Please see documentation\n");
+   printf ("Version: %s\n\n", VERSION);
+ #ifdef SUPPORT_STEALTH

@@ -1,0 +1,16 @@
+$OpenBSD: patch-portsentry_conf,v 1.1 2006/10/27 09:49:27 aanriot Exp $
+--- portsentry.conf.orig	Fri May 23 20:10:13 2003
++++ portsentry.conf	Wed Oct 25 22:02:13 2006
+@@ -211,10 +211,10 @@ BLOCK_TCP="1"
+ #KILL_ROUTE="/sbin/ipfw add 1 deny all from $TARGET$:255.255.255.255 to any"
+ #
+ #
+-# For those running ipfilt (OpenBSD, etc.)
++# For those running pf (OpenBSD, etc.)
+ # NOTE THAT YOU NEED TO CHANGE external_interface TO A VALID INTERFACE!!
+ #
+-#KILL_ROUTE="/bin/echo 'block in log on external_interface from $TARGET$/32 to any' | /sbin/ipf -f -"
++#KILL_ROUTE="/bin/echo 'block in log on external_interface from $TARGET$/32 to any' | /sbin/pfctl -f -"
+ 
+ 
+ ###############
