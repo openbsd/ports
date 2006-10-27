@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2006/09/21 08:57:02 xsa Exp $
+# $OpenBSD: Makefile,v 1.14 2006/10/27 06:05:00 steven Exp $
 
 COMMENT=	"Python module that implements the SSH2 protocol"
 
 DISTNAME=	paramiko-1.6.2
-PKGNAME=	py-${DISTNAME}
+PKGNAME=	py-${DISTNAME}p0
 CATEGORIES=	security
 
 HOMEPAGE=	http://www.lag.net/paramiko/
@@ -17,6 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}download/
 
 MODULES=	lang/python
+
+MODPY_SETUPTOOLS=Yes
 
 RUN_DEPENDS=	::security/py-crypto
 
