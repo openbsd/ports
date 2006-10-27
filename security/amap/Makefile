@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2006/08/03 23:28:11 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/10/27 09:44:21 aanriot Exp $
 
 COMMENT=	"next generation scanning tool"
 
 DISTNAME=	amap-5.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=    	security
 
 HOMEPAGE=	http://thc.segfault.net/thc-amap/
-
-MAINTAINER=	Alexandre Anriot <aanriot@openbsd.org>
 
 # GPL with changes
 PERMIT_PACKAGE_CDROM=	No
