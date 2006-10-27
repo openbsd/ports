@@ -1,25 +1,89 @@
-$OpenBSD: patch-stlport_STLport-4_5_patch,v 1.3 2006/10/25 22:49:50 kurt Exp $
+$OpenBSD: patch-stlport_STLport-4_5_patch,v 1.4 2006/10/27 16:02:02 kurt Exp $
 --- stlport/STLport-4.5.patch.orig.port	Thu Apr 27 03:47:20 2006
-+++ stlport/STLport-4.5.patch	Tue Oct 24 20:47:05 2006
-@@ -141,7 +141,7 @@
- ! #
- ! #
- ! LINK=ar cr
--! DYN_LINK=${CXX} -Wl,-rpath,'$$ORIGIN' ${PTHREAD_LIBS} --fexceptions -shared -o
-+! DYN_LINK=${CXX} ${PTHREAD_LIBS} --fexceptions -shared -o
- ! 
- ! OBJEXT=o
- ! DYNEXT=so
-@@ -281,7 +281,7 @@
- ! #
- ! #
- ! LINK=ar cr
--! DYN_LINK=$(CXX) -Wl,-rpath,'$$ORIGIN' --fexceptions -shared -o
-+! DYN_LINK=$(CXX) --fexceptions -shared -o
- ! 
- ! OBJEXT=o
- ! DYNEXT=so
-@@ -848,3 +848,115 @@
++++ stlport/STLport-4.5.patch	Thu Oct 26 15:40:08 2006
+@@ -115,6 +115,81 @@
+   template class _STLP_CLASS_DECLSPEC __node_alloc<false,0>;
+   template class _STLP_CLASS_DECLSPEC __node_alloc<true,0>;
+   template class _STLP_CLASS_DECLSPEC __debug_alloc< __node_alloc<true,0> >;
++*** misc/STLport-4.5/src/gcc-3.0-openbsd.mak	2006-02-16 16:21:24.224363000 +0100
++--- misc/build/STLport-4.5/src/gcc-3.0-openbsd.mak	2006-02-16 16:18:28.228881000 +0100
++***************
++*** 1 ****
++! dummy
++--- 1,69 ----
++! #
++! # Note : this makefile is for gcc-3 !
++! #
++! 
++! #
++! # compiler
++! # take these from the OOo build environment
++! CC*= gcc 
++! CXX*= g++
++! 
++! #
++! # Basename for libraries
++! #
++! LIB_BASENAME = libstlport_gcc
++! 
++! #
++! # guts for common stuff
++! #
++! #
++! LINK=ar cr
++! DYN_LINK=${CXX} ${PTHREAD_LIBS} -lstdc++ --fexceptions -shared -o
++! 
++! OBJEXT=o
++! DYNEXT=so
++! STEXT=a
++! RM=rm -rf
++! PATH_SEP=/
++! MKDIR=mkdir -p
++! COMP=GCC$(ARCH)
++! INSTALL_STEP = install_unix 
++! 
++! all:  all_dynamic all_static symbolic_links 
++! 
++! include common_macros.mak
++! 
++! WARNING_FLAGS= -Wall -W -Wno-sign-compare -Wno-unused -Wno-uninitialized
++! 
++! CXXFLAGS_COMMON = ${PTHREAD_CFLAGS} -DGXX_INCLUDE_PATH=${GXX_INCLUDE_PATH} -fexceptions -ftemplate-depth-32 -I${STLPORT_DIR} ${WARNING_FLAGS} ${ARCH_FLAGS}
++! CFLAGS_COMMON = ${PTHREAD_CFLAGS} -DGXX_INCLUDE_PATH=${GXX_INCLUDE_PATH} -fexceptions -I${STLPORT_DIR} ${WARNING_FLAGS} ${ARCH_FLAGS}
++! 
++! CXXFLAGS_RELEASE_static = $(CXXFLAGS_COMMON) -O2 -fPIC
++! CXXFLAGS_RELEASE_dynamic = $(CXXFLAGS_COMMON) -O2 -fPIC
++! 
++! CXXFLAGS_DEBUG_static = $(CXXFLAGS_COMMON) -g -fPIC
++! CXXFLAGS_DEBUG_dynamic = $(CXXFLAGS_COMMON) -g -fPIC
++! 
++! CXXFLAGS_STLDEBUG_static = $(CXXFLAGS_DEBUG_static) -D_STLP_DEBUG
++! CXXFLAGS_STLDEBUG_dynamic = $(CXXFLAGS_DEBUG_dynamic) -D_STLP_DEBUG
++! 
++! CFLAGS_RELEASE_static = $(CFLAGS_COMMON) -O2 -fPIC
++! CFLAGS_RELEASE_dynamic = $(CFLAGS_COMMON) -O2 -fPIC
++! 
++! CFLAGS_DEBUG_static = $(CFLAGS_COMMON) -g -fPIC
++! CFLAGS_DEBUG_dynamic = $(CFLAGS_COMMON) -g -fPIC
++! 
++! CFLAGS_STLDEBUG_static = $(CFLAGS_DEBUG_static) -D_STLP_DEBUG
++! CFLAGS_STLDEBUG_dynamic = $(CFLAGS_DEBUG_dynamic) -D_STLP_DEBUG
++! 
++! include common_percent_rules.mak
++! include common_rules.mak
++! 
++! 
++! #install: all
++! #	cp -p $(LIB_TARGET) ${D_LIB_TARGET} ../lib
++! 
++! #%.s: %.cpp
++! #	$(CXX) $(CXXFLAGS) -O4 -S -pto $<  -o $@
++! 
++! 
+ *** misc/STLport-4.5/src/gcc-3.0-freebsd.mak	2006-02-16 16:21:24.224363000 +0100
+ --- misc/build/STLport-4.5/src/gcc-3.0-freebsd.mak	2006-02-16 16:18:28.228881000 +0100
+ ***************
+@@ -848,3 +923,115 @@
    # define _STLP_MUTEX_INITIALIZER
    # endif
    

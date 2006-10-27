@@ -1,257 +1,256 @@
-$OpenBSD: patch-portaudio_portaudio_v18_1_patch,v 1.1 2006/09/20 09:06:19 robert Exp $
---- portaudio/portaudio_v18_1.patch.orig.port	Fri Mar 10 10:09:02 2006
-+++ portaudio/portaudio_v18_1.patch	Tue Aug 22 08:09:41 2006
-@@ -1,60 +1,6 @@
--*** misc/portaudio_v18_1/configure	2003-02-12 05:24:56.000000000 +0100
----- misc/build/portaudio_v18_1/configure	2006-01-31 20:10:00.317442000 +0100
-+*** misc/portaudio_v18_1/Makefile.in	Wed Feb 12 05:24:56 2003
-+--- misc/build/portaudio_v18_1/Makefile.in	Tue Aug 22 00:07:45 2006
- ***************
--*** 1883,1892 ****
--  case "${host_os}" in
--    darwin* )
--  
--! 	OTHER_OBJS="pa_mac_core/pa_mac_core.o";
--! 	LIBS="-framework CoreAudio -lm";
--  	PADLL="libportaudio.dylib";
--! 	SHARED_FLAGS="-framework CoreAudio -dynamiclib";
--  	;;
--  
--    mingw* )
+$OpenBSD: patch-portaudio_portaudio_v18_1_patch,v 1.2 2006/10/27 16:02:02 kurt Exp $
+--- portaudio/portaudio_v18_1.patch.orig.port	Wed Mar  8 09:03:33 2006
++++ portaudio/portaudio_v18_1.patch	Thu Oct 26 23:34:46 2006
+@@ -12,7 +12,7 @@
+   	;;
+   
+     mingw* )
 ---- 1883,1921 ----
--  case "${host_os}" in
--    darwin* )
--  
--! 	OTHER_OBJS="pa_mac_core/pa_mac_core.o pablio/pablio.o pablio/ringbuffer.o";
--! 	LIBS="-framework CoreAudio -framework AudioToolbox -lm";
--  	PADLL="libportaudio.dylib";
--! 	SHARED_FLAGS="-framework CoreAudio -framework AudioToolbox -dynamiclib -single_module -install_name '@executable_path/libportaudio.dylib.0'";
--! 	CFLAGS="-malign-natural -O2 -Ipa_common -Ipablio ${ARCH_FLAGS}"
--! 	;;
--! 
--!   linux* )
--! 
--! 	OTHER_OBJS="pa_unix_oss/pa_unix_oss.o pa_unix_oss/pa_unix.o";
--! 	LIBS="-lm -lpthread";
--! 	PADLL="libportaudio.so";
--! 	SHARED_FLAGS="-shared -Wl,-soname=libportaudio.so.0 -Wl,-rpath,'\$\$ORIGIN'";
--! 	CFLAGS="-O2 -fPIC ${ARCH_FLAGS}"
--! 	;;
--! 
--!   freebsd* )
--! 	if test "$OSVERSION" -lt "500016"; then
--!              PTHREAD_CFLAGS="-D_THREAD_SAFE"
--!              PTHREAD_LIBS="-pthread"
--!         elif test "$OSVERSION" -lt "502102"; then
--!              PTHREAD_CFLAGS="-D_THREAD_SAFE"
--!              PTHREAD_LIBS="-lc_r"
--!         else
--!              PTHREAD_CFLAGS=""
--!              PTHREAD_LIBS="-pthread"
--!         fi
--! 
--! 	OTHER_OBJS="pa_unix_oss/pa_unix_oss.o pa_unix_oss/pa_unix.o";
--! 	LIBS="-lm ${PTHREAD_LIBS}";
--! 	PADLL="libportaudio.so";
--! 	SHARED_FLAGS="-shared -Wl,-soname=libportaudio.so.0";
--! 	CFLAGS="-O2 -fPIC ${PTHREAD_CFLAGS} ${ARCH_FLAGS}"
--  	;;
--  
--    mingw* )
--*** misc/portaudio_v18_1/Makefile.in	2003-02-12 05:24:56.000000000 +0100
----- misc/build/portaudio_v18_1/Makefile.in	2006-02-06 16:24:03.977957000 +0100
--***************
- *** 52,58 ****
++--- 1883,1931 ----
+   case "${host_os}" in
+     darwin* )
    
-   OBJS = $(COMMON_OBJS) $(OTHER_OBJS)
-@@ -67,52 +13,166 @@
+@@ -49,6 +49,16 @@
+ ! 	PADLL="libportaudio.so";
+ ! 	SHARED_FLAGS="-shared -Wl,-soname=libportaudio.so.0";
+ ! 	CFLAGS="-O2 -fPIC ${PTHREAD_CFLAGS} ${ARCH_FLAGS}"
++! 	;;
++! 
++!   openbsd* )
++! 
++! 	OTHER_OBJS="pa_unix_oss/pa_unix_oss.o pa_unix_oss/pa_unix.o";
++! 	LIBS="-lm -lpthread";
++! 	PADLL="libportaudio.so";
++! 	SHARED_FLAGS="-shared -Wl,-soname=libportaudio.so.0";
++! 	CFLAGS="${CFLAGS} -fPIC -pthread ${ARCH_FLAGS}"
++! 	DLL_LIBS="-lossaudio";
+   	;;
    
-   OBJS = $(COMMON_OBJS) $(OTHER_OBJS)
-   
--! all: lib/$(PADLLV)
-+! all: lib/$(PALIB) lib/$(PADLLV)
-   
-   tests: bin/ $(TESTS)
-   
--*** misc/portaudio_v18_1/Makefile.linux	2002-06-25 23:31:06.000000000 +0200
----- misc/build/portaudio_v18_1/Makefile.linux	2006-01-31 20:10:00.349348000 +0100
-+*** misc/portaudio_v18_1/Makefile.linux	Tue Jun 25 23:31:06 2002
-+--- misc/build/portaudio_v18_1/Makefile.linux	Tue Aug 22 00:07:45 2006
- ***************
--*** 17,23 ****
--  LIBS =  -lm -lpthread
-+*** 14,23 ****
-+  # someone tell me the right way, please
-   
-+  
-+! LIBS =  -lm -lpthread
-+  
-   CDEFINES = -I../pa_common
- ! CFLAGS = -g
-   LIBINST = /usr/local/lib
-   
-   TESTS:= $(wildcard pa_tests/pa*.c pa_tests/debug*.c)
----- 17,23 ----
--  LIBS =  -lm -lpthread
-+--- 14,23 ----
-+  # someone tell me the right way, please
-   
-+  
-+! LIBS =  -lm -pthread -lossaudio
-+  
-   CDEFINES = -I../pa_common
- ! CFLAGS = -O2 -fPIC $(ARCH_FLAGS)
+     mingw* )
+@@ -90,29 +100,216 @@
    LIBINST = /usr/local/lib
    
    TESTS:= $(wildcard pa_tests/pa*.c pa_tests/debug*.c)
 -*** misc/portaudio_v18_1/pa_unix_oss/pa_unix_oss.c	2003-06-30 17:05:50.000000000 +0200
 ---- misc/build/portaudio_v18_1/pa_unix_oss/pa_unix_oss.c	2006-01-31 20:10:00.363708000 +0100
-+*** misc/portaudio_v18_1/pa_unix_oss/Makefile	Fri Oct 18 16:54:44 2002
-+--- misc/build/portaudio_v18_1/pa_unix_oss/Makefile	Tue Aug 22 00:07:45 2006
++*** misc/portaudio_v18_1/pa_tests/patest_buffer.c.old	2003-02-11 19:41:32.000000000 +0100
++--- misc/build/portaudio_v18_1/pa_tests/patest_buffer.c	2005-08-15 11:46:53.000000000 +0200
  ***************
--*** 43,48 ****
----- 43,50 ----
-+*** 16,22 ****
-   
-+  PAOBJS = pa_lib.o pa_unix_oss.o pa_unix.o
-+  PAINC  = portaudio.h pa_unix.h
-+! PALIBS =  -lm -lpthread
++*** 125,130 ****
++--- 125,131 ----
++          if( err < 0 ) return 0;
 +  
-+  all: patest_sine.run
-+  
-+--- 16,22 ----
-+  
-+  PAOBJS = pa_lib.o pa_unix_oss.o pa_unix.o
-+  PAINC  = portaudio.h pa_unix.h
-+! PALIBS =  -lm -pthread -lossaudio
-+  
-+  all: patest_sine.run
-+  
-+*** misc/portaudio_v18_1/pa_unix_oss/pa_unix.c	Mon Jun 30 17:05:50 2003
-+--- misc/build/portaudio_v18_1/pa_unix_oss/pa_unix.c	Tue Aug 22 00:07:45 2006
-+***************
-+*** 411,417 ****
-+  
-+  static PaError PaHost_WatchDogProc( PaHostSoundControl   *pahsc )
-+  {
-+-     struct sched_param    schp = { 0 };
-+      int                   maxPri;
-+  
-+  #ifdef GNUSTEP
-+--- 411,416 ----
-+***************
-+*** 420,434 ****
-+  
-+  /* Run at a priority level above audio thread so we can still run if it hangs. */
-+  /* Rise more than 1 because of rumored off-by-one scheduler bugs. */
-+-     schp.sched_priority = pahsc->pahsc_AudioPriority + 4;
-+-     maxPri = sched_get_priority_max(SCHEDULER_POLICY);
-+-     if( schp.sched_priority > maxPri ) schp.sched_priority = maxPri;
-+  
-+      if (sched_setscheduler(0, SCHEDULER_POLICY, &schp) != 0)
-+      {
-+          ERR_RPT(("PaHost_WatchDogProc: cannot set watch dog priority!\n"));
-+          goto killAudio;
 +      }
+++     return 0;
++  }
 +  
-+      /* Compare watchdog time with audio and canary thread times. */
-+      /* Sleep for a while or until thread cancelled. */
-+--- 419,432 ----
 +  
-+  /* Run at a priority level above audio thread so we can still run if it hangs. */
-+  /* Rise more than 1 because of rumored off-by-one scheduler bugs. */
-+  
-++ #if 0
-+      if (sched_setscheduler(0, SCHEDULER_POLICY, &schp) != 0)
-+      {
-+          ERR_RPT(("PaHost_WatchDogProc: cannot set watch dog priority!\n"));
-+          goto killAudio;
-+      }
-++ #endif
-+  
-+      /* Compare watchdog time with audio and canary thread times. */
-+      /* Sleep for a while or until thread cancelled. */
++*** misc/portaudio_v18_1/pa_unix_oss/pa_unix.c	Mon Jun 30 11:05:50 2003
++--- misc/build/portaudio_v18_1/pa_unix_oss/pa_unix.c	Thu Oct 26 11:50:21 2006
 +***************
-+*** 466,471 ****
-+--- 464,470 ----
++*** 401,406 ****
++--- 401,407 ----
++      return result;
++  }
 +  
-+  lowerAudio:
-+      {
-++ #if 0
-+          struct sched_param    schat = { 0 };
-+          if( sched_setscheduler(pahsc->pahsc_AudioThreadPID, SCHED_OTHER, &schat) != 0)
-+          {
+++ #ifndef __OpenBSD__
++  /*******************************************************************************************
++   * Monitor audio thread and lower its it if it hogs the CPU.
++   * To prevent getting killed, the audio thread must update a
 +***************
-+*** 477,482 ****
-+--- 476,482 ----
-+              ERR_RPT(("PaHost_WatchDogProc: lowered audio priority to prevent hogging of CPU.\n"));
-+              goto cleanup;
-+          }
-++ #endif
-+      }
-+  
-+  killAudio:
-+***************
-+*** 574,580 ****
-+  {
-+      PaHostSoundControl  *pahsc;
-+      PaError              result = paNoError;
-+-     struct sched_param   schp = { 0 };
-+  
-+      pahsc = (PaHostSoundControl *) past->past_DeviceData;
-+      if( pahsc == NULL ) return paInternalError;
-+--- 574,579 ----
-+***************
-+*** 582,587 ****
-+--- 581,587 ----
-+      pahsc->pahsc_AudioThreadPID = getpid();
-+      DBUG(("PaHost_BoostPriority: audio PID = %d\n", pahsc->pahsc_AudioThreadPID ));
-+  
-++ #if 0
-+      /* Choose a priority in the middle of the range. */
-+      pahsc->pahsc_AudioPriority = (sched_get_priority_max(SCHEDULER_POLICY) -
-+                                    sched_get_priority_min(SCHEDULER_POLICY)) / 2;
-+***************
-+*** 597,602 ****
-+--- 597,603 ----
-+          /* We are running at high priority so we should have a watchdog in case audio goes wild. */
-+          result = PaHost_StartWatchDog( pahsc );
-+      }
-++ #endif
++*** 600,605 ****
++--- 601,607 ----
 +  
 +      return result;
 +  }
-+*** misc/portaudio_v18_1/pa_unix_oss/pa_unix_oss.c	Mon Jun 30 17:05:50 2003
-+--- misc/build/portaudio_v18_1/pa_unix_oss/pa_unix_oss.c	Tue Aug 22 00:07:45 2006
-+***************
-+*** 43,49 ****
+++ #endif  /* Watchdog */
 +  
++  /*******************************************************************************************/
++  static PaError Pa_AudioThreadProc( internalPortAudioStream   *past )
++***************
++*** 615,622 ****
++--- 617,626 ----
++      GSRegisterCurrentThread(); /* SB20010904 */
++  #endif
++  
+++ #ifndef __OpenBSD__
++      result = PaHost_BoostPriority( past );
++      if( result < 0 ) goto error;
+++ #endif
++  
++      past->past_IsActive = 1;
++      DBUG(("entering thread.\n"));
++***************
++*** 682,688 ****
++--- 686,694 ----
++      DBUG(("Pa_AudioThreadProc: left audio loop.\n"));
++  
++      past->past_IsActive = 0;
+++ #ifndef __OpenBSD__
++      PaHost_StopWatchDog( pahsc );
+++ #endif
++  
++  error:
++      DBUG(("leaving audio thread.\n"));
++***************
++*** 812,818 ****
++                             past->past_NumUserBuffers, past->past_FramesPerUserBuffer,
++                             past->past_NumOutputChannels );
++              result = Pa_SetupDeviceFormat( pahsc->pahsc_OutputHandle,
++!                                            past->past_NumOutputChannels, (int)past->past_SampleRate );
++          }
++      }
++      else
++--- 818,824 ----
++                             past->past_NumUserBuffers, past->past_FramesPerUserBuffer,
++                             past->past_NumOutputChannels );
++              result = Pa_SetupDeviceFormat( pahsc->pahsc_OutputHandle,
++!                                            past->past_NumOutputChannels, (int)past->past_SampleRate, 2 );
++          }
++      }
++      else
++*** misc/portaudio_v18_1/pa_unix_oss/pa_unix.h	Thu Apr 10 17:42:34 2003
++--- misc/build/portaudio_v18_1/pa_unix_oss/pa_unix.h	Thu Oct 26 11:50:03 2006
++***************
++*** 133,139 ****
++  internalPortAudioDevice *Pa_GetInternalDevice( PaDeviceID id );
++  PaError Pa_QueryDevices( void );
++  PaError Pa_QueryDevice( const char *deviceName, internalPortAudioDevice *pad );
++! PaError Pa_SetupDeviceFormat( int devHandle, int numChannels, int sampleRate );
++  PaError Pa_SetupInputDeviceFormat( int devHandle, int numChannels, int sampleRate );
++  PaError Pa_SetupOutputDeviceFormat( int devHandle, int numChannels, int sampleRate );
++  void Pa_SetLatency( int devHandle, int numBuffers, int framesPerBuffer, int channelsPerFrame  );
++--- 133,139 ----
++  internalPortAudioDevice *Pa_GetInternalDevice( PaDeviceID id );
++  PaError Pa_QueryDevices( void );
++  PaError Pa_QueryDevice( const char *deviceName, internalPortAudioDevice *pad );
++! PaError Pa_SetupDeviceFormat( int devHandle, int numChannels, int sampleRate, int input );
++  PaError Pa_SetupInputDeviceFormat( int devHandle, int numChannels, int sampleRate );
++  PaError Pa_SetupOutputDeviceFormat( int devHandle, int numChannels, int sampleRate );
++  void Pa_SetLatency( int devHandle, int numBuffers, int framesPerBuffer, int channelsPerFrame  );
++*** misc/portaudio_v18_1/pa_unix_oss/pa_unix_oss.c	Mon Jun 30 11:05:50 2003
++--- misc/build/portaudio_v18_1/pa_unix_oss/pa_unix_oss.c	Thu Oct 26 11:49:47 2006
++***************
+ *** 43,48 ****
+---- 43,50 ----
++--- 43,53 ----
+   
    #ifdef __linux__
    #include <linux/soundcard.h>
--+ #elif defined (__FreeBSD__)
--+ #include <sys/soundcard.h>
--  #else
-+! #else
+ + #elif defined (__FreeBSD__)
+ + #include <sys/soundcard.h>
+++ #elif defined (__OpenBSD__)
+++ #include <soundcard.h>
+++ #include <sys/audioio.h>
+   #else
    #include <machine/soundcard.h> /* JH20010905 */
    #endif
 -
 -*** misc/portaudio_v18_1/pa_tests/patest_buffer.c.old	2003-02-11 19:41:32.000000000 +0100
 ---- misc/build/portaudio_v18_1/pa_tests/patest_buffer.c	2005-08-15 11:46:53.000000000 +0200
--***************
+ ***************
 -*** 125,130 ****
 ---- 125,131 ----
 -          if( err < 0 ) return 0;
++*** 218,228 ****
++  }
    
--      }
++  /*******************************************************************************************/
++! PaError Pa_SetupDeviceFormat( int devHandle, int numChannels, int sampleRate )
++  {
++      PaError result = paNoError;
++      int     tmp;
++  
++      /* Set format, channels, and rate in this order to keep OSS happy. */
++      /* Set data format. FIXME - handle more native formats. */
++      tmp = AFMT_S16_NE;
++--- 223,237 ----
++  }
++  
++  /*******************************************************************************************/
++! PaError Pa_SetupDeviceFormat( int devHandle, int numChannels, int sampleRate, int input )
++  {
++      PaError result = paNoError;
++      int     tmp;
++  
+++ #ifdef __OpenBSD__
+++     audio_info_t audio_if;
+++ #endif
+++ 
++      /* Set format, channels, and rate in this order to keep OSS happy. */
++      /* Set data format. FIXME - handle more native formats. */
++      tmp = AFMT_S16_NE;
++***************
++*** 272,289 ****
++             return paHostError;
++          }
+       }
 -+     return 0;
--  }
-+--- 43,51 ----
++!     
++      return result;
++  }
++  
++  PaError Pa_SetupOutputDeviceFormat( int devHandle, int numChannels, int sampleRate )
++  {
++!   return Pa_SetupDeviceFormat(devHandle, numChannels, sampleRate);
++  }
++  
++  PaError Pa_SetupInputDeviceFormat( int devHandle, int numChannels, int sampleRate )
++  {
++!   return Pa_SetupDeviceFormat(devHandle, numChannels, sampleRate);
++  }
++  
++  
++--- 281,332 ----
++             return paHostError;
++          }
++      }
++! 
++! #ifdef __OpenBSD__
++! 
++!     AUDIO_INITINFO(&audio_if);
++! 
++!     switch(input) {
++!     case 2:
++!         audio_if.record.open = 1;
++!         audio_if.record.pause = 0;
++!         audio_if.play.open = 1;
++!         audio_if.play.pause = 0;
++!         break;
++! 
++!     case 1:
++!         audio_if.record.open = 1;
++!         audio_if.record.pause = 0;
++!         break;
++! 
++!     case 0:
++!         audio_if.play.open = 1;
++!         audio_if.play.pause = 0;
++!         break;
++! 
++!     default:
++!        break;
++!     }
++! 
++!     if (ioctl(devHandle, AUDIO_SETINFO, &audio_if) == -1)
++!     {
++!         ERR_RPT(("Pa_SetupDeviceFormat: could not AUDIO_SETINFO for recording on OpenBSD\n" ));
++!         return paHostError;
++!     }
++! 
++! #endif
++! 
++      return result;
++  }
++  
++  PaError Pa_SetupOutputDeviceFormat( int devHandle, int numChannels, int sampleRate )
++  {
++!   return Pa_SetupDeviceFormat(devHandle, numChannels, sampleRate, 0);
++  }
++  
++  PaError Pa_SetupInputDeviceFormat( int devHandle, int numChannels, int sampleRate )
++  {
++!   return Pa_SetupDeviceFormat(devHandle, numChannels, sampleRate, 1);
+   }
    
-+  #ifdef __linux__
-+  #include <linux/soundcard.h>
-+! #elif defined (__OpenBSD__)
-+! #include <soundcard.h>
-+! #else 
-+  #include <machine/soundcard.h> /* JH20010905 */
-+  #endif
    

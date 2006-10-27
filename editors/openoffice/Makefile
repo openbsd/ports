@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/10/25 22:49:50 kurt Exp $
+# $OpenBSD: Makefile,v 1.16 2006/10/27 16:02:02 kurt Exp $
 
 ONLY_FOR_ARCHS= i386
 
@@ -7,7 +7,7 @@ COMMENT=	"a multi-platform productivity suite"
 VERSION=	2.0.4
 DISTNAME=	OOo_${VERSION}_src
 WRKDIST=	${WRKDIR}/OOD680_m5
-PKGNAME=	openoffice-${VERSION}p6
+PKGNAME=	openoffice-${VERSION}p7
 CATEGORIES=	editors productivity
 
 SHARED_LIBS=	icudata		26.0 \
@@ -37,19 +37,19 @@ BUILD_DEPENDS=	:zip-*:archivers/zip \
 		:bison-*:devel/bison \
 		:pkgconfig-*:devel/pkgconfig \
 		:tcsh-*:shells/tcsh \
-		:p5-Archive-Zip-*:archivers/p5-Archive-Zip
+		:p5-Archive-Zip-*:archivers/p5-Archive-Zip \
+		::textproc/libxslt
 
 LIB_DEPENDS=	gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.14::x11/gtk+2 \
 		python2.3:python-2.3.*:lang/python/2.3 \
 		db.>=4::databases/db/v4 \
 		curl.>=2::net/curl \
 		neon.>=24::net/neon \
-		xslt.>=2::textproc/libxslt \
 		sndfile.>=1::audio/libsndfile
 
-WANTLIB=	ICE SM X11 Xext atk-1.0 c cairo expat fontconfig \
+WANTLIB=	ICE SM X11 Xext Xrender atk-1.0 c cairo expat fontconfig \
 		freetype glib-2.0 gmodule-2.0 gobject-2.0 \
-		gthread-2.0 iconv intl jpeg m pango-1.0 \
+		gthread-2.0 iconv intl ossaudio jpeg m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pthread stdc++ util xml2 z
 
 USE_X11=	Yes
@@ -69,8 +69,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 
 CONFIGURE_ARGS=	--disable-gnome-vfs \
 		--disable-mozilla \
-		--disable-pasf \
 		--disable-cups \
+		--enable-cairo \
 		--with-system-jpeg \
 		--with-system-python \
 		--with-system-libxml \

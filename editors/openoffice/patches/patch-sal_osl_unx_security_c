@@ -1,6 +1,6 @@
-$OpenBSD: patch-sal_osl_unx_security_c,v 1.2 2006/08/20 03:36:52 kurt Exp $
+$OpenBSD: patch-sal_osl_unx_security_c,v 1.3 2006/10/27 16:02:02 kurt Exp $
 --- sal/osl/unx/security.c.orig.port	Wed Jul 19 05:55:41 2006
-+++ sal/osl/unx/security.c	Fri Aug 18 15:47:44 2006
++++ sal/osl/unx/security.c	Thu Oct 26 09:30:08 2006
 @@ -76,7 +76,7 @@ static sal_Bool SAL_CALL osl_psz_getHome
  static sal_Bool SAL_CALL osl_psz_getConfigDir(oslSecurity Security, sal_Char* pszDirectory, sal_uInt32 nMax);
  
@@ -10,53 +10,6 @@ $OpenBSD: patch-sal_osl_unx_security_c,v 1.2 2006/08/20 03:36:52 kurt Exp $
      /* #i64906#: sysconf(_SC_GETPW_R_SIZE_MAX) returns -1 on Mac OS X and FreeBSD */
      size_t n = 1024;
  #else
-@@ -102,12 +102,46 @@ oslSecurity SAL_CALL osl_getCurrentSecur
- 	oslSecurityImpl * p = newSecurityImpl(&n);
-     if (p != NULL) {
-         struct passwd * found;
-+#if defined(OPENBSD)
-+	static pthread_mutex_t getpwuid_mutex = PTHREAD_MUTEX_INITIALIZER;
-+	pthread_mutex_lock(&getpwuid_mutex);
-+        if ((found = getpwuid(getuid())) != 0)
-+	{
-+            size_t bufsize = n;
-+            size_t len;
-+            p->m_pPasswd.pw_uid = found->pw_uid;
-+            p->m_pPasswd.pw_gid = found->pw_gid;
-+            if ((len = strlcpy(p->m_buffer, found->pw_name, bufsize)) >= bufsize)
-+            {
-+	        pthread_mutex_unlock(&getpwuid_mutex);
-+                deleteSecurityImpl(p);
-+		return 0;
-+            }
-+            p->m_pPasswd.pw_name = p->m_buffer;
-+            bufsize -= len+1; 
-+            if (strlcpy(&p->m_buffer[len+1], found->pw_dir, bufsize) >= bufsize)
-+            {
-+	        pthread_mutex_unlock(&getpwuid_mutex);
-+                deleteSecurityImpl(p);
-+		return 0;
-+            }
-+            p->m_pPasswd.pw_dir = &p->m_buffer[len+1];
-+	    pthread_mutex_unlock(&getpwuid_mutex);
-+        }
-+        else
-+        {
-+	    pthread_mutex_unlock(&getpwuid_mutex);
-+            deleteSecurityImpl(p);
-+            p = 0;
-+        }
-+#else
-         if (getpwuid_r(getuid(), &p->m_pPasswd, p->m_buffer, n, &found) != 0 ||
-             found == NULL)
-         {
-             deleteSecurityImpl(p);
-             p = 0;
-         }
-+#endif
-     }
-     return p;
- }
 @@ -474,7 +508,7 @@ osl_psz_loginUser(const sal_Char* pszUse
  			   oslSecurity* pSecurity)
  {

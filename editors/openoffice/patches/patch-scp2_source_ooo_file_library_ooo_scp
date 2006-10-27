@@ -1,16 +1,16 @@
-$OpenBSD: patch-scp2_source_ooo_file_library_ooo_scp,v 1.3 2006/10/19 15:16:50 kurt Exp $
+$OpenBSD: patch-scp2_source_ooo_file_library_ooo_scp,v 1.4 2006/10/27 16:02:02 kurt Exp $
 --- scp2/source/ooo/file_library_ooo.scp.orig.port	Fri Aug  4 08:39:52 2006
-+++ scp2/source/ooo/file_library_ooo.scp	Thu Oct 19 10:47:54 2006
-@@ -829,7 +829,7 @@ File gid_File_Lib_Freetype
-   #endif
-     TXT_FILE_BODY;
++++ scp2/source/ooo/file_library_ooo.scp	Thu Oct 26 11:00:11 2006
+@@ -831,6 +831,8 @@ File gid_File_Lib_Freetype
      Styles = (PACKED);
--  #if defined (FREEBSD) || defined (NETBSD)
-+  #if defined (FREEBSD) || defined (NETBSD) || defined (OPENBSD)
+   #if defined (FREEBSD) || defined (NETBSD)
      Name = "libfreetype.so.9";
++  #elif defined (OPENBSD)
++    Name = "libfreetype.so";
    #else
      Name = "libfreetype.so.6";
-@@ -872,7 +872,7 @@ STD_UNO_LIB_FILE_PATCH( gid_File_Lib_Fwl
+   #endif
+@@ -872,7 +874,7 @@ STD_UNO_LIB_FILE_PATCH( gid_File_Lib_Fwl
  
  STD_UNO_LIB_FILE_PATCH( gid_File_Lib_Fwm , fwm)
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-scp2_source_ooo_file_library_ooo_scp,v 1.3 2006/10/19 15:16:50 k
  #if defined( _gcc3 )
  
  File gid_File_Lib_Gcc
-@@ -886,7 +886,7 @@ End
+@@ -886,7 +888,7 @@ End
  
  #endif
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-scp2_source_ooo_file_library_ooo_scp,v 1.3 2006/10/19 15:16:50 k
  #if defined( _gcc3 )
  
  File gid_File_Lib_Stdc
-@@ -900,7 +900,7 @@ End
+@@ -900,7 +902,7 @@ End
  
  #endif
  
@@ -37,7 +37,7 @@ $OpenBSD: patch-scp2_source_ooo_file_library_ooo_scp,v 1.3 2006/10/19 15:16:50 k
  
  File gid_File_Lib_Gcc2_Uno
      TXT_FILE_BODY;
-@@ -1913,7 +1913,7 @@ File gid_File_Lib_Stlport
+@@ -1913,7 +1915,7 @@ File gid_File_Lib_Stlport
    #ifdef _STLP_DEBUG
    #ifdef UNX
    #if defined(_gcc3) || defined(_GCC)
@@ -46,7 +46,7 @@ $OpenBSD: patch-scp2_source_ooo_file_library_ooo_scp,v 1.3 2006/10/19 15:16:50 k
      Name = STRING(CONCAT3(libstlport_,gcc_stldebug,.so.4.5));
    #else
      Name = STRING(CONCAT3(libstlport_,gcc_stldebug,UNXSUFFIX));
-@@ -1937,7 +1937,7 @@ File gid_File_Lib_Stlport
+@@ -1937,7 +1939,7 @@ File gid_File_Lib_Stlport
    #else
    #ifdef UNX
    #if defined(_gcc3) || defined(_GCC)

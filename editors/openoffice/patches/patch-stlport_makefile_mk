@@ -1,0 +1,21 @@
+$OpenBSD: patch-stlport_makefile_mk,v 1.1 2006/10/27 16:02:02 kurt Exp $
+--- stlport/makefile.mk.orig.port	Thu Oct 26 14:53:02 2006
++++ stlport/makefile.mk	Thu Oct 26 14:58:56 2006
+@@ -111,7 +111,7 @@ PATCH_FILE_NAME=STLport-4.5-0119.patch
+ TAR_EXCLUDES=*/SC5/*
+ .ENDIF          # "$(USE_SHELL)"=="4nt"
+ 
+-ADDITIONAL_FILES=src$/gcc-3.0.mak src$/gcc-3.0-macosx.mak src$/gcc-3.0-freebsd.mak src$/sunpro8.mak src$/sunpro11.mak
++ADDITIONAL_FILES=src$/gcc-3.0.mak src$/gcc-3.0-macosx.mak src$/gcc-3.0-freebsd.mak src$/gcc-3.0-openbsd.mak src$/sunpro8.mak src$/sunpro11.mak
+ 
+ 
+ CONFIGURE_ACTION=none
+@@ -133,6 +133,8 @@ BUILD_FLAGS=-f vc7.mak
+ 		# FreeBSD needs a special makefile
+ 		.IF "$(OS)"=="FREEBSD"
+ 			BUILD_FLAGS=-f gcc-3.0-freebsd.mak
++		.ELIF "$(OS)"=="OPENBSD"
++			BUILD_FLAGS=-f gcc-3.0-openbsd.mak
+ 		.ELIF "$(OS)"=="MACOSX"
+ 			BUILD_FLAGS=-f gcc-3.0-macosx.mak
+ 		.ELSE

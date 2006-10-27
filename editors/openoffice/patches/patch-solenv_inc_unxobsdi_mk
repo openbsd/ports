@@ -1,16 +1,16 @@
-$OpenBSD: patch-solenv_inc_unxobsdi_mk,v 1.5 2006/10/20 14:59:26 kurt Exp $
---- solenv/inc/unxobsdi.mk.orig.port	Thu Oct 19 11:37:15 2006
-+++ solenv/inc/unxobsdi.mk	Thu Oct 19 14:43:31 2006
-@@ -0,0 +1,231 @@
+$OpenBSD: patch-solenv_inc_unxobsdi_mk,v 1.6 2006/10/27 16:02:02 kurt Exp $
+--- solenv/inc/unxobsdi.mk.orig.port	Wed Oct 25 07:34:21 2006
++++ solenv/inc/unxobsdi.mk	Thu Oct 26 08:52:12 2006
+@@ -0,0 +1,228 @@
 +#*************************************************************************
 +#
 +#   OpenOffice.org - a multi-platform office productivity suite
 +#
 +#   $RCSfile: patch-solenv_inc_unxobsdi_mk,v $
 +#
-+#   $Revision: 1.5 $
++#   $Revision: 1.6 $
 +#
-+#   last change: $Author: kurt $ $Date: 2006/10/20 14:59:26 $
++#   last change: $Author: kurt $ $Date: 2006/10/27 16:02:02 $
 +#
 +#   The Contents of this file are made available subject to
 +#   the terms of GNU Lesser General Public License Version 2.1.
@@ -86,8 +86,6 @@ $OpenBSD: patch-solenv_inc_unxobsdi_mk,v 1.5 2006/10/20 14:59:26 kurt Exp $
 +
 +.ENDIF
 +
-+INCPOST=$(LOCALBASE)/include
-+
 +# flags for the C++ Compiler
 +CFLAGSCC=$(ARCH_FLAGS)
 +# Flags for enabling exception handling
@@ -156,7 +154,6 @@ $OpenBSD: patch-solenv_inc_unxobsdi_mk,v 1.5 2006/10/20 14:59:26 kurt Exp $
 +#LINKFLAGSRUNPATH*=-Wl,-rpath,\''$$ORIGIN'\'
 +#LINKFLAGS=-Wl,-z,combreloc $(LINKFLAGSDEFS) $(LINKFLAGSRUNPATH)
 +LINKFLAGS=-Wl,-z,combreloc
-+SOLARLIB+=-L$(LOCALBASE)/lib
 +
 +# linker flags for linking applications
 +LINKFLAGSAPPGUI= -Wl,-export-dynamic -Wl,--noinhibit-exec
