@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_PL,v 1.5 2006/06/06 17:33:41 steven Exp $
---- Makefile.PL.orig	Wed May 24 22:07:30 2006
-+++ Makefile.PL	Fri May 26 08:21:11 2006
-@@ -857,7 +857,7 @@ sub MY::install {
+$OpenBSD: patch-Makefile_PL,v 1.6 2006/10/27 10:12:44 ajacoutot Exp $
+--- Makefile.PL.orig	Thu Oct 26 14:47:10 2006
++++ Makefile.PL	Thu Oct 26 14:47:26 2006
+@@ -862,7 +862,7 @@ sub MY::install {
  
    foreach (@code) {
      # Add our install targets as a dependency to all top-level install targets
@@ -10,17 +10,3 @@ $OpenBSD: patch-Makefile_PL,v 1.5 2006/06/06 17:33:41 steven Exp $
  
      # Now do the DESTDIR hack, if necessary.
      next if !$mm_needs_destdir;
-@@ -1143,13 +1143,6 @@ qmail/qmail-spamc$(EXE_EXT): spamc/qmail
- #bin__install: $(INST_SCRIPT)/sa-filter
- #        # $(RM_F) $(B_SCRIPTDIR)/spamassassin
- #        # $(SYMLINK) $(INST_SCRIPT)/sa-filter $(B_SCRIPTDIR)/spamassassin
--
--conf__install:
--	-$(MKPATH) $(B_CONFDIR)
--	$(PERL) -MFile::Copy -e "copy(q{rules/local.cf}, q{$(B_CONFDIR)/local.cf}) unless -f q{$(B_CONFDIR)/local.cf}"
--	$(PERL) -MFile::Copy -e "copy(q{rules/init.pre}, q{$(B_CONFDIR)/init.pre}) unless -f q{$(B_CONFDIR)/init.pre}"
--	$(PERL) -MFile::Copy -e "copy(q{rules/v310.pre}, q{$(B_CONFDIR)/v310.pre}) unless -f q{$(B_CONFDIR)/v310.pre}"
--	$(PERL) -MFile::Copy -e "copy(q{rules/v312.pre}, q{$(B_CONFDIR)/v312.pre}) unless -f q{$(B_CONFDIR)/v312.pre}"
- 
- data__install:
- 	-$(MKPATH) $(B_DATADIR)

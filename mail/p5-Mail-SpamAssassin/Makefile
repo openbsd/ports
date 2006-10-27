@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2006/10/21 19:26:14 aanriot Exp $
+# $OpenBSD: Makefile,v 1.43 2006/10/27 10:12:44 ajacoutot Exp $
 
 COMMENT=		"mailfilter to identify and mark spam"
 
-DISTNAME=		Mail-SpamAssassin-3.1.4
-PKGNAME=		p5-${DISTNAME}p1
+DISTNAME=		Mail-SpamAssassin-3.1.7
+PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		mail perl5
 
 MAINTAINER=		Andreas Voegele <andreas@altroot.de>
@@ -27,29 +27,25 @@ BUILD_DEPENDS=		:p5-HTML-Parser->=3.31:www/p5-HTML-Parser \
 			:p5-IO-Socket-SSL-*:security/p5-IO-Socket-SSL \
 			:p5-libwww-*:www/p5-libwww \
 			:p5-Archive-Tar->=1.23:archivers/p5-Archive-Tar \
-			:p5-IO-Zlib->=1.04:archivers/p5-IO-Zlib \
-			:gnupg-*:security/gnupg
+			:p5-IO-Zlib->=1.04:archivers/p5-IO-Zlib
 
-RUN_DEPENDS=		${BUILD_DEPENDS}
+RUN_DEPENDS=		${BUILD_DEPENDS} \
+			:gnupg-*:security/gnupg
 
 MAKE_ENV+=		CC="${CC}"
 
 CONFIGURE_STYLE=	perl
-CONFIGURE_ARGS+=	RUN_NET_TESTS="no" \
+CONFIGURE_ARGS+=	DESTDIR=${WRKINST} \
 			SYSCONFDIR=${SYSCONFDIR} \
-			LOCALSTATEDIR=/var/db \
+			LOCALSTATEDIR=${LOCALSTATEDIR} \
 			CONTACT_ADDRESS="the administrator of this system" \
 			ENABLE_SSL="yes"
 
 CONFDIR=		${SYSCONFDIR}/mail/spamassassin
-RULES_DIR=		${PREFIX}/share/spamassassin
+LOCALSTATEDIR=		/var/db/spamassassin
 SAMPLE_CONFDIR=		${PREFIX}/share/examples/SpamAssassin
 
-SUBST_VARS=		CONFDIR SAMPLE_CONFDIR
-
-FAKE_FLAGS=		${DESTDIRNAME}=${WRKINST} \
-			DEFRULESDIR=${WRKINST}${RULES_DIR} \
-			LOCALRULESDIR=${WRKINST}${SAMPLE_CONFDIR}
+SUBST_VARS=		CONFDIR LOCALSTATEDIR
 
 # regress insists on creating files in $HOME
 PORTHOME=		${WRKDIR}/temp-home
@@ -57,32 +53,20 @@ PORTHOME=		${WRKDIR}/temp-home
 FAQ=		OpenBSD-SpamAssassin-mini-howto.html
 DOCS=		README UPGRADE LICENSE procmailrc.example \
 		sample-nonspam.txt sample-spam.txt
-LOCALCF=	local.cf init.pre v310.pre v312.pre
-
-pre-configure:
-	@perl -pi -e "s#\@\@LOCAL_RULES_DIR\@\@#${CONFDIR}#" ${WRKSRC}/rules/*
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/SpamAssassin
 	${INSTALL_DATA_DIR} ${SAMPLE_CONFDIR}
 	@sed -e "s|@SYSCONFDIR@|${SYSCONFDIR}|" \
-	    -e "s|@PREFIX@|${TRUEPREFIX}|" \
-	    ${FILESDIR}/${FAQ} > ${WRKSRC}/${FAQ}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${FAQ} ${DOCS} \
-		${PREFIX}/share/doc/SpamAssassin
-	cd ${WRKSRC}/rules && ${INSTALL_DATA} ${LOCALCF} ${SAMPLE_CONFDIR}
-	cd ${WRKSRC} && pod2man --section=1 spamc/spamc.pod > \
-	    ${PREFIX}/man/man1/spamc.1
-	cd ${WRKSRC} && pod2man --section=8 spamd/spamd > \
-	    ${PREFIX}/man/man8/spamd.8
-	# Extract the default GnuPG keys for sa-update.  The keys will
-	# be installed as config files in ${CONFDIR}/sa-update-keys.
-	# Otherwise, sa-update would install the keys on its first
-	# invocation.  The sa-update utility also creates the directory
-	# /var/db/spamassassin.
-	${INSTALL_DATA_DIR} ${SAMPLE_CONFDIR}/sa-update-keys
-	${LOCALBASE}/bin/gpg --homedir=${SAMPLE_CONFDIR}/sa-update-keys --batch --import ${WRKSRC}/rules/sa-update-pubkey.txt
-	rm -f ${SAMPLE_CONFDIR}/sa-update-keys/pubring.gpg~
+		-e "s|@PREFIX@|${TRUEPREFIX}|" \
+		${FILESDIR}/${FAQ} > ${WRKSRC}/${FAQ}
+	pod2man --section=1 ${WRKSRC}/spamc/spamc.pod > \
+		${PREFIX}/man/man1/spamc.1
+	${INSTALL_DATA} ${WRKSRC}/rules/local.cf ${WRKSRC}/rules/*.pre \
+		${SAMPLE_CONFDIR}
+.for i in ${FAQ} ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/SpamAssassin
+.endfor
 
 pre-regress:
 	mkdir -p ${PORTHOME}

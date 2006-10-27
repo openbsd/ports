@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.21 2006/10/21 19:26:14 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2006/10/27 10:12:44 ajacoutot Exp $
 @newgroup _spamdaemon:506
-@newuser _spamdaemon:506:506:daemon:SpamAssassin:/nonexistent:/sbin/nologin
+@newuser _spamdaemon:506:506:daemon:SpamAssassin:${LOCALSTATEDIR}:/sbin/nologin
 bin/sa-learn
 bin/sa-update
 bin/spamassassin
@@ -8,6 +8,7 @@ bin/spamc
 bin/spamd
 ${P5SITE}/Mail/SpamAssassin/
 ${P5SITE}/Mail/SpamAssassin.pm
+${P5SITE}/Mail/SpamAssassin/AICache.pm
 ${P5SITE}/Mail/SpamAssassin/ArchiveIterator.pm
 ${P5SITE}/Mail/SpamAssassin/AutoWhitelist.pm
 ${P5SITE}/Mail/SpamAssassin/Bayes/
@@ -94,6 +95,7 @@ ${P5SITE}/spamassassin-run.pod
 @man man/man1/spamc.1
 @man man/man1/spamd.1
 @man man/man3p/Mail::SpamAssassin.3p
+@man man/man3p/Mail::SpamAssassin::AICache.3p
 @man man/man3p/Mail::SpamAssassin::ArchiveIterator.3p
 @man man/man3p/Mail::SpamAssassin::AutoWhitelist.3p
 @man man/man3p/Mail::SpamAssassin::Bayes.3p
@@ -144,7 +146,6 @@ ${P5SITE}/spamassassin-run.pod
 @man man/man3p/Mail::SpamAssassin::Util.3p
 @man man/man3p/Mail::SpamAssassin::Util::Progress.3p
 @man man/man3p/spamassassin-run.3p
-@man man/man8/spamd.8
 share/doc/SpamAssassin/
 share/doc/SpamAssassin/LICENSE
 share/doc/SpamAssassin/OpenBSD-SpamAssassin-mini-howto.html
@@ -159,16 +160,6 @@ share/examples/SpamAssassin/init.pre
 @sample ${CONFDIR}/init.pre
 share/examples/SpamAssassin/local.cf
 @sample ${CONFDIR}/local.cf
-share/examples/SpamAssassin/sa-update-keys/
-@mode go=
-@sample ${CONFDIR}/sa-update-keys/
-share/examples/SpamAssassin/sa-update-keys/pubring.gpg
-@sample ${CONFDIR}/sa-update-keys/pubring.gpg
-share/examples/SpamAssassin/sa-update-keys/secring.gpg
-@sample ${CONFDIR}/sa-update-keys/secring.gpg
-share/examples/SpamAssassin/sa-update-keys/trustdb.gpg
-@sample ${CONFDIR}/sa-update-keys/trustdb.gpg
-@mode
 share/examples/SpamAssassin/v310.pre
 @sample ${CONFDIR}/v310.pre
 share/examples/SpamAssassin/v312.pre
@@ -214,6 +205,7 @@ share/spamassassin/30_text_pt_br.cf
 share/spamassassin/50_scores.cf
 share/spamassassin/60_awl.cf
 share/spamassassin/60_whitelist.cf
+share/spamassassin/60_whitelist_dk.cf
 share/spamassassin/60_whitelist_dkim.cf
 share/spamassassin/60_whitelist_spf.cf
 share/spamassassin/60_whitelist_subject.cf
@@ -221,4 +213,7 @@ share/spamassassin/languages
 share/spamassassin/sa-update-pubkey.txt
 share/spamassassin/triplets.txt
 share/spamassassin/user_prefs.template
-@extraunexec rm -rf /var/db/spamassassin
+@owner _spamdaemon
+@group _spamdaemon
+@sample ${LOCALSTATEDIR}/
+@extraunexec rm -rf ${CONFDIR}/sa-update-keys
