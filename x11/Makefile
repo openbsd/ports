@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.246 2006/10/21 16:55:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.247 2006/10/27 07:19:45 steven Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -76,6 +76,7 @@
      SUBDIR += icewm
      SUBDIR += idesk
      SUBDIR += ion
+     SUBDIR += itk
      SUBDIR += jmk-fonts
      SUBDIR += kde
      SUBDIR += kdirstat
