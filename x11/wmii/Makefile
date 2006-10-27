@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2006/10/27 16:34:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2006/10/27 17:52:33 steven Exp $
 
 COMMENT=	"dynamic window manager"
 
 DISTNAME=	wmii-3.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11
 
-HOMEPAGE=	http://wmii.de
+HOMEPAGE=	http://wmii.suckless.org
 
 MAINTAINER=	Tobias Ulmer <tobiasu@tmux.org>
 
