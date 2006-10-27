@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.17 2006/09/23 10:14:34 steven Exp $
+# $OpenBSD: Makefile,v 1.18 2006/10/27 12:53:01 ajacoutot Exp $
 
 COMMENT=	"convert HTML pages to PDF/PS format"
 
 V=			1.8.27
 DISTNAME=		htmldoc-${V}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=     	print www
 
 HOMEPAGE=		http://www.htmldoc.org/
 
-MAINTAINER=		Antoine Jacoutot <ajacoutot@lphp.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

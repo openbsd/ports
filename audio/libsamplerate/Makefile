@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2006/08/01 12:13:28 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/10/27 12:53:01 ajacoutot Exp $
 
 COMMENT=	"audio sample rate conversion library"
 
 DISTNAME=	libsamplerate-0.1.2
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	samplerate	1.1
 CATEGORIES=	audio
 
 HOMEPAGE=	http://mega-nerd.com/SRC/
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@lphp.org>
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

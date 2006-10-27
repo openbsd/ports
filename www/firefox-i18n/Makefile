@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.3 2006/09/18 07:35:51 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2006/10/27 12:53:01 ajacoutot Exp $
 
 PKG_ARCH=	*
 
 COMMENT=	"${MAINLANG} language pack for Firefox"
 V=		1.5.0.7
 NAME=		firefox-i18n
-PKGNAME=	${NAME}-${MAINLANG}-$V
+PKGNAME=	${NAME}-${MAINLANG}-$Vp0
 
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.mozilla.org/projects/l10n/
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@lphp.org>
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # Mozilla public license
 PERMIT_PACKAGE_CDROM=	Yes
@@ -41,7 +41,7 @@ LPACKDIR-${MAINLANG}=${PREFIX}/mozilla-firefox/extensions/langpack-${MAINLANG}@f
 .for i in ${OTHERLANGS}
 MULTI_PACKAGES+=-$i
 DISTFILES+=	$i.xpi
-PKGNAME-$i=	${NAME}-$i-${V}
+PKGNAME-$i=	${NAME}-$i-${V}p0
 COMMENT-$i=	$i language pack for Firefox
 LPACKDIR-$i=	${PREFIX}/mozilla-firefox/extensions/langpack-$i@firefox.mozilla.org
 .endfor

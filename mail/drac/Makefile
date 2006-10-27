@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/01/27 20:51:41 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2006/10/27 12:53:01 ajacoutot Exp $
 
 COMMENT=	"dynamic relay authorization control daemon"
 
 DISTNAME=	drac
-PKGNAME=	${DISTNAME}-1.12
+PKGNAME=	${DISTNAME}-1.12p0
 CATEGORIES=	mail
 
 HOMEPAGE=	http://mail.cc.umanitoba.ca/drac/
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@lphp.org>
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # BSD alike
 PERMIT_PACKAGE_CDROM=	Yes

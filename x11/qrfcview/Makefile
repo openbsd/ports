@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2006/08/02 12:15:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2006/10/27 12:53:01 ajacoutot Exp $
 
 COMMENT=	"viewer for IETF RFCs"
 
 DISTNAME=	qrfcview-0.62
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://qrfcview.berlios.de/
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@lphp.org>
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

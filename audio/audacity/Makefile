@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2006/10/12 14:26:03 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2006/10/27 12:53:01 ajacoutot Exp $
 
 COMMENT=	"free audio editor"
 
 DISTNAME=	audacity-src-1.3.0b
-PKGNAME=	${DISTNAME:S/-src//}
+PKGNAME=	${DISTNAME:S/-src//}p0
 CATEGORIES=     audio
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=audacity/}
 
 HOMEPAGE=	http://audacity.sourceforge.net/
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@lphp.org>
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes

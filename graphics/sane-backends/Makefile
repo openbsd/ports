@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2006/08/14 12:55:30 kurt Exp $
+# $OpenBSD: Makefile,v 1.13 2006/10/27 12:53:01 ajacoutot Exp $
 
 COMMENT=	"API for accessing scanners, backends"
 
 DISTNAME=	sane-backends-1.0.18
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS=	sane 1.17
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.sane-project.org/
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@lphp.org>
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

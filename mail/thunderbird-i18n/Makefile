@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2006/09/20 11:03:01 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/10/27 12:53:01 ajacoutot Exp $
 
 COMMENT=	"${MAINLANG} language pack for Thunderbird"
 V=		1.5.0.7
 NAME=		thunderbird-i18n
-PKGNAME=	${NAME}-${MAINLANG}-$V
+PKGNAME=	${NAME}-${MAINLANG}-$Vp0
 
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.mozilla.org/projects/l10n/
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@lphp.org>
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # Mozilla public license
 PERMIT_PACKAGE_CDROM=	Yes
@@ -39,7 +39,7 @@ LPACKDIR-${MAINLANG}=${PREFIX}/mozilla-thunderbird/extensions/langpack-${MAINLAN
 .for i in ${OTHERLANGS}
 MULTI_PACKAGES+=-$i
 DISTFILES+=	$i.xpi
-PKGNAME-$i=	${NAME}-$i-${V}
+PKGNAME-$i=	${NAME}-$i-${V}p0
 COMMENT-$i=	$i language pack for Thunderbird
 LPACKDIR-$i=	${PREFIX}/mozilla-thunderbird/extensions/langpack-$i@thunderbird.mozilla.org
 .endfor

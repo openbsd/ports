@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/01 23:02:12 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2006/10/27 12:53:01 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,13 +6,13 @@ COMMENT=	"Mozilla's C implementation of JavaScript"
 
 V=		1.5
 DISTNAME=	js-${V}
-PKGNAME=	spidermonkey-${V}
+PKGNAME=	spidermonkey-${V}p0
 SHARED_LIBS=	js 1.0
 CATEGORIES=     lang
 
 HOMEPAGE=	http://www.mozilla.org/js/spidermonkey/
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@lphp.org>
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # Mozilla Public License
 PERMIT_PACKAGE_CDROM=	Yes

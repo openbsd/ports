@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2006/09/18 12:00:00 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2006/10/27 12:53:01 ajacoutot Exp $
 
 COMMENT=	"CSS editor"
 
 DISTNAME=	cssed-0.4.0
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	www editors
 
 HOMEPAGE=	http://cssed.sourceforge.net/
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@lphp.org>
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	yes
