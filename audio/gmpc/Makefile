@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/27 14:11:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2006/10/27 14:24:21 jasper Exp $
 
 COMMENT=		"gnome music player client"
 
@@ -27,6 +27,7 @@ MODULES=		devel/gettext gcc3
 MODGCC3_ARCHES= 	sparc
 MODGCC3_LANGS=  	c
 
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 
 BUILD_DEPENDS=		::devel/pkgconfig \
