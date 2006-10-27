@@ -1,7 +1,7 @@
-$OpenBSD: patch-gpsd_c,v 1.1.1.1 2005/09/05 00:34:59 marcm Exp $
---- gpsd.c.orig	Fri Aug  5 04:59:38 2005
-+++ gpsd.c	Sun Aug 21 18:16:13 2005
-@@ -68,7 +68,7 @@
+$OpenBSD: patch-gpsd_c,v 1.2 2006/10/27 23:47:23 ckuethe Exp $
+--- gpsd.c.orig	Fri Jun  9 06:34:09 2006
++++ gpsd.c	Wed Jun 14 19:24:24 2006
+@@ -64,7 +64,7 @@
   * The name of a tty device from which to pick up whatever the local
   * owning group for tty devices is.  Used when we drop privileges.
   */
@@ -10,7 +10,16 @@ $OpenBSD: patch-gpsd_c,v 1.1.1.1 2005/09/05 00:34:59 marcm Exp $
  
  static fd_set all_fds;
  static int debuglevel;
-@@ -1174,7 +1174,7 @@ int main(int argc, char *argv[])
+@@ -1244,7 +1244,7 @@ int main(int argc, char *argv[])
+ 		(void)chmod(argv[i], stb.st_mode|S_IRGRP|S_IWGRP);
+ 	/*
+ 	 * Drop privileges.  Up to now we've been running as root.  Instead,
+-	 * set the user ID to 'nobody' and the group ID to the owning group 
++	 * set the user ID to '_gpsd' and the group ID to the owning group 
+ 	 * of a prototypical TTY device.  This limits the scope of any
+ 	 * compromises in the code.  It requires that all GPS devices have
+ 	 * their group read/write permissions set.
+@@ -1254,7 +1254,7 @@ int main(int argc, char *argv[])
  	    if (setgid(stb.st_gid) != 0)
  		gpsd_report(0, "setgid() failed, errno %s\n", strerror(errno));
  	}
