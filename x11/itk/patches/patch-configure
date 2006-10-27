@@ -1,0 +1,59 @@
+--- configure.orig	Fri Mar 25 20:39:53 2005
++++ configure	Wed Oct 25 16:48:46 2006
+@@ -8830,11 +8830,11 @@ if (eval "$ac_cpp conftest.$ac_ext") 2>&
+   $EGREP "yes" >/dev/null 2>&1; then
+   echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
+-		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.1.0'
++		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.${LIBitk33_VERSION}'
+ else
+   echo "$as_me:$LINENO: result: no" >&5
+ echo "${ECHO_T}no" >&6
+-		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.1.0'
++		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.${LIBitk33_VERSION}'
+ 
+ fi
+ rm -f conftest*
+@@ -10117,21 +10117,6 @@ echo "${ECHO_T}enabled $tcl_ok debugging
+ # link against the non-stubbed Tcl library.
+ #--------------------------------------------------------------------
+ 
+-if test "${SHARED_BUILD}" = "1" ; then
+-    cat >>confdefs.h <<\_ACEOF
+-#define USE_TCL_STUBS 1
+-_ACEOF
+-
+-    cat >>confdefs.h <<\_ACEOF
+-#define USE_TK_STUBS 1
+-_ACEOF
+-
+-    cat >>confdefs.h <<\_ACEOF
+-#define USE_ITCL_STUBS 1
+-_ACEOF
+-
+-fi
+-
+ #--------------------------------------------------------------------
+ # This macro generates a line to use when building a library.  It
+ # depends on values set by the TEA_ENABLE_SHARED, TEA_ENABLE_SYMBOLS,
+@@ -10181,9 +10166,9 @@ fi
+     else
+ 	RANLIB_STUB="${RANLIB}"
+ 	if test "${SHARED_BUILD}" = "1" ; then
+-	    SHLIB_LD_LIBS="${SHLIB_LD_LIBS} ${TCL_STUB_LIB_SPEC}"
++	    SHLIB_LD_LIBS="${SHLIB_LD_LIBS} ${TCL_LIB_SPEC}"
+ 	    if test x"${TK_BIN_DIR}" != x ; then
+-		SHLIB_LD_LIBS="${SHLIB_LD_LIBS} ${TK_STUB_LIB_SPEC}"
++		SHLIB_LD_LIBS="${SHLIB_LD_LIBS} ${TK_LIB_SPEC}"
+ 	    fi
+ 	    eval eval "PKG_LIB_FILE=lib${PACKAGE_NAME}${SHARED_LIB_SUFFIX}"
+ 	    RANLIB=:
+@@ -10216,7 +10201,7 @@ fi
+ if test "${TEA_PLATFORM}" = "windows" -a "$GCC" != "yes" ; then
+     SHLIB_LD_LIBS="${SHLIB_LD_LIBS} \"`${CYGPATH} ${itcl_STUB_LIB_PATH}`\""
+ else
+-    SHLIB_LD_LIBS="${SHLIB_LD_LIBS} ${itcl_STUB_LIB_SPEC}"
++    SHLIB_LD_LIBS="${SHLIB_LD_LIBS} ${itcl_LIB_SPEC}"
+ fi
+ 
+ #--------------------------------------------------------------------

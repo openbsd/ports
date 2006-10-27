@@ -1,0 +1,6 @@
+[incr Tk] is a framework for building mega-widgets using the
+[incr Tcl] object system. Mega-widgets are high-level widgets like
+a file browser or a tab notebook that act like ordinary Tk widgets
+but are constructed using Tk widgets as component parts, without
+having to write C code. In effect, a mega-widget looks and acts
+exactly like a Tk widget, but is considerably easier to implement.

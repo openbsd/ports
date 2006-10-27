@@ -1,0 +1,22 @@
+--- Makefile.in.orig	Fri Mar 25 23:58:48 2005
++++ Makefile.in	Wed Oct 25 16:47:12 2006
+@@ -96,7 +96,7 @@ DESTDIR		=
+ 
+ PKG_DIR		= $(PACKAGE_NAME)$(PACKAGE_VERSION)
+ pkgdatadir	= $(datadir)/$(PKG_DIR)
+-pkglibdir	= $(libdir)/$(PKG_DIR)
++pkglibdir	= $(libdir)
+ pkgincludedir	= $(includedir)/$(PKG_DIR)
+ 
+ top_builddir	= .
+@@ -366,8 +366,8 @@ install-lib-binaries:
+ 	@mkdir -p $(DESTDIR)$(pkglibdir)
+ 	@list='$(lib_BINARIES)'; for p in $$list; do \
+ 	  if test -f $$p; then \
+-	    echo " $(INSTALL_PROGRAM) $$p $(DESTDIR)$(pkglibdir)/$$p"; \
+-	    $(INSTALL_PROGRAM) $$p $(DESTDIR)$(pkglibdir)/$$p; \
++	    echo " $(INSTALL_PROGRAM) $$p $(DESTDIR)$(pkglibdir)/../$$p"; \
++	    $(INSTALL_PROGRAM) $$p $(DESTDIR)$(pkglibdir)/../$$p; \
+ 	    stub=`echo $$p|sed -e "s/.*\(stub\).*/\1/"`; \
+ 	    if test "x$$stub" = "xstub"; then \
+ 		echo " $(RANLIB_STUB) $(DESTDIR)$(pkglibdir)/$$p"; \

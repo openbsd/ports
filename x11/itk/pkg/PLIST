@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/27 07:19:34 steven Exp $
+%%SHARED%%
+include/itk/
+include/itk/itk.h
+include/itk/itkDecls.h
+lib/itk/
+lib/itk/Archetype.itk
+lib/itk/Toplevel.itk
+lib/itk/Widget.itk
+lib/itk/itk.tcl
+lib/itk/pkgIndex.tcl
+lib/itk/tclIndex
+@man man/mann/Archetype.n
+@man man/mann/Toplevel.n
+@man man/mann/Widget.n
+@man man/mann/itk.n
+@man man/mann/itkvars.n
+@man man/mann/usual.n
