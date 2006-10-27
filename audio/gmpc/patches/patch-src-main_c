@@ -1,0 +1,37 @@
+--- src/main.c.orig	Wed Oct 25 19:53:00 2006
++++ src/main.c	Wed Oct 25 19:55:28 2006
+@@ -379,6 +379,8 @@
+ {
+ 	MpdData *data = NULL;
+ 	long long new_playlist_id = mpd_playlist_get_playlist_id(connection);
++	char *string;
++	
+ 	/*
+ 	 * so I don't have to check all the time
+ 	 */
+@@ -387,7 +389,7 @@
+ 	gchar buffer[1024];
+ 	debug_printf(DEBUG_INFO, "playlist changed length: %i %i\n",info.playlist_length, mpd_playlist_get_playlist_length(mi));
+ 	old_length = info.playlist_length;
+-	char *string = cfg_get_single_value_as_string_with_default(config,
++	string = cfg_get_single_value_as_string_with_default(config,
+ 			"playlist","markup", DEFAULT_PLAYLIST_MARKUP);
+ 
+ 	data = mpd_playlist_get_changes(mi,info.playlist_id);
+@@ -804,6 +806,7 @@
+ void error_callback(MpdObj *mi, int error_id, char *error_msg, gpointer data)
+ {
+ 	int autoconnect = cfg_get_single_value_as_int_with_default(config, "connection","autoconnect", DEFAULT_AUTOCONNECT);
++	GtkWidget *dialog;
+ 	/* if we are not connected we show a reconnect */
+ 	if(!mpd_check_connected(mi))
+ 	{
+@@ -816,7 +819,7 @@
+ 			gchar *path = gmpc_get_full_glade_path("gmpc.glade");
+ 			xml_error_window = glade_xml_new(path,"error_dialog",NULL);
+ 			g_free(path);
+-			GtkWidget *dialog = glade_xml_get_widget(xml_error_window, "error_dialog");
++			dialog = glade_xml_get_widget(xml_error_window, "error_dialog");
+ 			gtk_label_set_markup(GTK_LABEL(glade_xml_get_widget(xml_error_window,"em_label")), str);
+ 			gtk_widget_show_all(dialog);
+ 			g_signal_connect(G_OBJECT(dialog), "response", G_CALLBACK(error_window_destroy), GINT_TO_POINTER(autoconnect));

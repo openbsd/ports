@@ -1,0 +1,10 @@
+--- src/TreeSearchWidget.c.orig	Wed Oct 25 19:25:08 2006
++++ src/TreeSearchWidget.c	Wed Oct 25 19:25:25 2006
+@@ -2,6 +2,7 @@
+ #include <gtk/gtksignal.h>
+ #include <gdk/gdkkeysyms.h>
+ #include <regex.h>
++#include <sys/types.h>
+ #include "TreeSearchWidget.h"
+ static void treesearch_class_init          (TreeSearchClass *klass);
+ static void treesearch_init                (TreeSearch      *ts);

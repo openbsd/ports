@@ -1,0 +1,3 @@
+GMPC is a frontend for the mpd (Music Player Daemon).  It's focused on
+being fast and easy to use, while still making optimal use of all the
+functions in mpd.

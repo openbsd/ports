@@ -1,0 +1,20 @@
+--- src/player.c.orig	Wed Oct 25 19:27:30 2006
++++ src/player.c	Wed Oct 25 19:27:58 2006
+@@ -300,6 +300,8 @@
+ 
+ int update_player()
+ {
++	GtkRange *scale;
++
+ 	if(!xml_main_window) return FALSE;
+ 	if(!mpd_check_connected(connection)) return FALSE;
+ 	/* things that only need to be updated during playing */
+@@ -308,7 +310,7 @@
+ 		int elapsedTime = mpd_status_get_elapsed_song_time(connection);		
+ 		/* update the progress bar */
+ 		if(!seek){
+-			GtkRange *scale = (GtkRange *)glade_xml_get_widget(xml_main_window, "progress_slider");
++			scale = (GtkRange *)glade_xml_get_widget(xml_main_window, "progress_slider");
+ 			gdouble  prog = ((double)elapsedTime/(double)totalTime)*100;
+ 			gtk_range_set_value(scale, prog);
+ 		}

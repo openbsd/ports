@@ -1,0 +1,23 @@
+--- src/misc.c.orig	Wed Oct 25 19:28:10 2006
++++ src/misc.c	Wed Oct 25 19:29:26 2006
+@@ -23,16 +23,18 @@
+ 
+ gchar * format_time(unsigned long seconds)
+ {
++	
++	GString *str;
+ 	int days = seconds/86400;
+ 	int houres = (seconds % 86400)/3600;
+ 	int minutes = (seconds % 3600)/60;
+ 	char *ret;
+ 	if(seconds == 0)
+ 	{
+-		GString *str = g_string_new(NULL);
++		str = g_string_new(NULL);
+ 		return str->str;
+ 	}
+-	GString *str = g_string_new(" Total time: ");
++	str = g_string_new(" Total time: ");
+ 	if(days != 0)
+ 	{
+ 		g_string_append_printf(str, "%i days ", days);

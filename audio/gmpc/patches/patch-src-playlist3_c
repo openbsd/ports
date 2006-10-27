@@ -1,0 +1,17 @@
+--- src/playlist3.c.orig	Wed Oct 25 19:26:07 2006
++++ src/playlist3.c	Wed Oct 25 19:27:03 2006
+@@ -105,10 +105,12 @@
+ void pl3_initialize_tree()
+ {
+ 	int i;
++	GtkTreePath *path;
++	GtkTreeSelection *sel;
+ 	if(pl3_xml == NULL) return;
+ 
+-	GtkTreePath *path = gtk_tree_path_new_from_string("0");
+-	GtkTreeSelection *sel = gtk_tree_view_get_selection(GTK_TREE_VIEW(glade_xml_get_widget(pl3_xml, "cat_tree")));
++	path = gtk_tree_path_new_from_string("0");
++	sel = gtk_tree_view_get_selection(GTK_TREE_VIEW(glade_xml_get_widget(pl3_xml, "cat_tree")));
+ 	if((old_type&PLUGIN_ID_MARK || old_type&PLUGIN_ID_INTERNALL) != 0)
+ 	{
+ 		if(old_type >= 0)
