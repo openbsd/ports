@@ -1,7 +1,13 @@
-This is a program for viewing MS Word documents.  It produces plain
+catdoc is a program for viewing MS Word documents. It produces plain
 text output and can optionally convert non-standard characters into 
 TeX control sequences.
 
+xls2csv is a program which converts an MS Excel spreadsheet into a
+comma-separated value file.
+
+catppt is a utility to extract textual information from MS Powerpoint
+files.
+
 Flavors:
-        tk - a Tcl/Tk GUI frontend to catdoc for viewing MW Word
+        tk - a Tcl/Tk GUI frontend to catdoc for viewing MS Word
              documents

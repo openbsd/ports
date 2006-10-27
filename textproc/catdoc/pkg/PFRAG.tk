@@ -1,3 +1,3 @@
-@comment $OpenBSD: PFRAG.tk,v 1.1 2001/10/29 19:12:34 jasoni Exp $
+@comment $OpenBSD: PFRAG.tk,v 1.2 2006/10/27 20:41:47 steven Exp $
 bin/wordview
-bin/xlsview
+@man man/man1/wordview.1
