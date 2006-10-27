@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2006/06/17 17:42:03 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/10/27 16:34:02 jasper Exp $
 
 COMMENT=	"dynamic window manager"
 
 DISTNAME=	wmii-3.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://wmii.de
@@ -26,7 +27,8 @@ NO_REGRESS=	Yes
 FAKE_FLAGS=	SYSCONFDIR=${SYSCONFDIR}
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
-	mv ${WRKINST}${SYSCONFDIR}/wmii-3 ${PREFIX}/share/examples
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/wmii-3
+	${INSTALL_DATA} ${WRKINST}${SYSCONFDIR}/wmii-3/* \
+		${PREFIX}/share/examples/wmii-3
 
 .include <bsd.port.mk>
