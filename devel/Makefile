@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.411 2006/10/25 14:24:18 steven Exp $
+# $OpenBSD: Makefile,v 1.412 2006/10/27 09:30:45 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -297,6 +297,7 @@
      SUBDIR += p5-POE
      SUBDIR += p5-Parallel-ForkManager
      SUBDIR += p5-Params-CallbackRequest
+     SUBDIR += p5-Params-Util
      SUBDIR += p5-Params-Validate
      SUBDIR += p5-Parse-RecDescent
      SUBDIR += p5-PerlIO-eol
@@ -318,6 +319,7 @@
      SUBDIR += p5-Sub-Name
      SUBDIR += p5-Sub-Uplevel
      SUBDIR += p5-Taint-Runtime
+     SUBDIR += p5-Task-Weaken
      SUBDIR += p5-Term-ReadKey
      SUBDIR += p5-Term-ReadLine-Gnu
      SUBDIR += p5-Term-ReadPassword
