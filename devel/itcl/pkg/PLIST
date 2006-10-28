@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/25 14:24:03 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/10/28 17:52:18 steven Exp $
 %%SHARED%%
-include/itcl/
-include/itcl/itcl.h
-include/itcl/itclDecls.h
-include/itcl/itclInt.h
-include/itcl/itclIntDecls.h
-lib/itcl/
-lib/itcl/itcl.tcl
-lib/itcl/itclConfig.sh
-lib/itcl/pkgIndex.tcl
+include/itcl${VERSION}/
+include/itcl${VERSION}/itcl.h
+include/itcl${VERSION}/itclDecls.h
+include/itcl${VERSION}/itclInt.h
+include/itcl${VERSION}/itclIntDecls.h
+lib/itcl${VERSION}/
+lib/itcl${VERSION}/itcl.tcl
+lib/itcl${VERSION}/itclConfig.sh
+lib/itcl${VERSION}/pkgIndex.tcl
 lib/libitclstub33.a
 @man man/mann/body.n
 @man man/mann/class.n
