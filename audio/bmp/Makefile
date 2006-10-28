@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2006/09/18 11:40:06 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2006/10/28 10:30:41 espie Exp $
 
 COMMENT=	"gtk+2 media player based on XMMS"
 COMMENT-mp3=	"MP3 input plugin for bmp"
@@ -8,7 +8,7 @@ DISTNAME=	bmp-$V
 PKGNAME=	bmp-$Vp8
 PKGNAME-mp3=	bmp-mp3-$Vp8
 PKGNAME-vorbis=	bmp-vorbis-$Vp7
-SHARED_LIBS=	beep	2.0
+SHARED_LIBS +=	beep                 2.0      # .2.0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=beepmp/}
 

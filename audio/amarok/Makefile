@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/09/18 09:03:30 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/10/28 10:30:41 espie Exp $
 
 CATEGORIES=	audio x11 x11/kde
 COMMENT=	'music player for kde'
@@ -27,8 +27,9 @@ WANTLIB=	stdc++ Xext Xrender z X11 util m SM c \
 LIB_DEPENDS+=	konqsidebarplugin::x11/kde/base3
 
 SHARED_ONLY=Yes
-SHARED_LIBS=	amarok	0.0 \
-		http11	0.0
+SHARED_LIBS +=	amarok               0.0      # .0.0
+SHARED_LIBS +=	http11               0.0      # .0.0
+
 MODULES=	x11/kde
 USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static

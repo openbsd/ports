@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/03/10 15:53:52 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2006/10/28 10:30:41 espie Exp $
 COMMENT=	"musepack, high quality audio compression format"
 
 DISTNAME=	libmpcdec-1.2.2
@@ -29,7 +29,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
 	cp -r ${WRKDIST}/docs/* ${DOCDIR}
 
-SHARED_LIBS=	mpcdec 1.0
+SHARED_LIBS +=	mpcdec               1.0      # .4.1
 
 USE_LIBTOOL=	Yes
 WANTLIB=	c m stdc++

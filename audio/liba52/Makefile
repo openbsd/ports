@@ -1,4 +1,4 @@
-#$OpenBSD: Makefile,v 1.11 2006/02/07 07:43:11 steven Exp $
+#$OpenBSD: Makefile,v 1.12 2006/10/28 10:30:41 espie Exp $
 
 CATEGORIES=	audio
 
@@ -7,7 +7,7 @@ DISTNAME=	a52dec-0.7.4
 PKGNAME=	liba52-0.7.4p2
 MASTER_SITES=	http://liba52.sourceforge.net/files/
 HOMEPAGE=	http://liba52.sourceforge.net/
-SHARED_LIBS=	a52	0.0
+SHARED_LIBS +=	a52                  0.0      # .0.0
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 

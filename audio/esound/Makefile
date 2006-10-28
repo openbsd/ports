@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2006/01/10 11:14:49 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2006/10/28 10:30:41 espie Exp $
 # $FreeBSD: Makefile,v 1.8 1999/03/09 01:08:46 nectar Exp $
 
 COMMENT=	"sound library for Enlightenment"
 
 DISTNAME=	esound-0.2.34
 PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=	esd	2.34
+SHARED_LIBS +=	esd                  2.34     # .2.34
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/esound/0.2/}
 

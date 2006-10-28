@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2006/08/01 12:13:28 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2006/10/28 10:30:41 espie Exp $
 
 COMMENT=	"portable audio output library"
 COMMENT-arts=	"aRts module for portable audio output library"
@@ -11,7 +11,7 @@ PKGNAME-arts=	libao-arts-${VERSION}p2
 PKGNAME-esd=	libao-esd-${VERSION}p3
 CATEGORIES=    	audio
 HOMEPAGE=	http://www.xiph.org/ao/
-SHARED_LIBS=	ao	3.2
+SHARED_LIBS +=	ao                   3.2      # .3.2
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/03/10 10:40:16 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/10/28 10:30:41 espie Exp $
 COMMENT=	"Decoding Library for KDE Multimedia"
 
 DISTNAME=	akode-2.0
 PKGNAME=	${DISTNAME}
-SHARED_LIBS=	akode  2.0
+SHARED_LIBS +=	akode                2.0      # .2.0
 
 CATEGORIES=	audio multimedia x11/kde
 

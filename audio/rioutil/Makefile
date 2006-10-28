@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2006/08/01 12:13:28 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/10/28 10:30:41 espie Exp $
 
 COMMENT=		"utility for Rio mp3 players"
 
 DISTNAME=		rioutil-1.4.4
 PKGNAME=		${DISTNAME}p0
-SHARED_LIBS=		rioutil	5.1
+SHARED_LIBS +=	rioutil              5.1      # .5.1
 CATEGORIES=		audio
 
 HOMEPAGE=		http://rioutil.sf.net

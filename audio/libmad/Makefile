@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/01/10 11:21:21 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/10/28 10:30:41 espie Exp $
 
 COMMENT=	"high-quality MPEG audio decoder"
 
@@ -6,7 +6,7 @@ DISTNAME=	libmad-0.15.1b
 PKGNAME=	${DISTNAME}p1
 CATEGORIES=	audio
 HOMEPAGE=	http://www.underbit.com/products/mad/
-SHARED_LIBS=	mad	2.1
+SHARED_LIBS +=	mad                  2.1      # .2.1
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
