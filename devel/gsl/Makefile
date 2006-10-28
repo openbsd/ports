@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2006/07/20 12:05:50 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2006/10/28 11:19:21 espie Exp $
 
 COMMENT=	"GNU Scientific Library"
 
 DISTNAME=	gsl-1.8
-SHARED_LIBS=	gsl		9.0 \
-		gslcblas	0.0
+SHARED_LIBS +=	gslcblas             0.0      # .0.0
+SHARED_LIBS +=	gsl                  9.0      # .9.0
 
 CATEGORIES=	devel
 

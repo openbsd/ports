@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2006/01/03 14:55:18 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2006/10/28 11:19:21 espie Exp $
 
 COMMENT=	"simple library designed for DVD navigation"
 
 DISTNAME=	libdvdplay-1.0.1
 PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=	dvdplay 0.1
+SHARED_LIBS +=	dvdplay              0.1      # .0.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.videolan.org/pub/libdvdplay/1.0.1/
 

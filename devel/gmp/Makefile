@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2006/01/06 20:30:26 bernd Exp $
+# $OpenBSD: Makefile,v 1.15 2006/10/28 11:19:21 espie Exp $
 
 COMMENT=	"library for arbitrary precision arithmetic"
 
 DISTNAME=	gmp-4.1.4
 PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=	gmp 6.3
+SHARED_LIBS +=	gmp                  6.3      # .6.3
 CATEGORIES=	devel math
 
 HOMEPAGE=	http://www.swox.com/gmp/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/09/18 11:50:39 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2006/10/28 11:19:21 espie Exp $
 
 COMMENT=		"GNOME Structured File library"
 COMMENT-gnome=		"GNOME specific extensions to libgsf"
@@ -7,12 +7,8 @@ VERSION=		1.11.1
 DISTNAME=		libgsf-${VERSION}
 PKGNAME=		${DISTNAME}p2
 PKGNAME-gnome=		libgsf-gnome-${VERSION}p2
-SHARED_LIBS=		gsf-1		12.1 \
-			gsf-gnome-1	12.1
-MODGNU_SHARED_LIBS=	gsf-1		'' \
-			gsf-gnome-1	''
-LIBgsf-1_ALIAS=		gsf_1
-LIBgsf-gnome-1_ALIAS=	gsf_gnome_1
+SHARED_LIBS +=	gsf-1                12.1     # .12.1
+SHARED_LIBS +=	gsf-gnome-1          12.1     # .12.1
 
 CATEGORIES=		devel
 

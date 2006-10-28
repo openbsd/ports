@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2006/10/23 03:18:09 brad Exp $
+# $OpenBSD: Makefile,v 1.124 2006/10/28 11:19:20 espie Exp $
 # Uses pthreads
 
 .if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "m88k"
@@ -16,8 +16,8 @@ PKGNAME-server=	mysql-server-${VERSION}p1
 FULLPKGNAME-tests= mysql-tests-${VERSION}
 CATEGORIES=	databases
 V=		MySQL-5.0
-SHARED_LIBS=	mysqlclient	16.0 \
-		mysqlclient_r	16.0
+SHARED_LIBS +=	mysqlclient_r        16.0     # .15.0
+SHARED_LIBS +=	mysqlclient          16.0     # .15.0
 
 MASTER_SITES=	http://mysql.serenitynet.com/Downloads/$V/
 

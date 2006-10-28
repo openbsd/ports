@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/06/19 18:14:59 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2006/10/28 11:19:20 espie Exp $
 COMMENT=	"handling CHM files"
 CATEGORIES=	devel textproc
 
@@ -6,7 +6,7 @@ HOMEPAGE=	http://66.93.236.84/~jedwin/projects/chmlib/
 MASTER_SITES=	${HOMEPAGE}
 
 DISTNAME=	chmlib-0.38
-SHARED_LIBS=	chm 0.1
+SHARED_LIBS +=	chm                  0.1      # .0.0
 
 CONFIGURE_STYLE=gnu
 USE_LIBTOOL=	Yes

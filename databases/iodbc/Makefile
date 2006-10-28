@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2006/07/18 19:44:27 alek Exp $
+# $OpenBSD: Makefile,v 1.11 2006/10/28 11:19:20 espie Exp $
 
 COMMENT=	"ODBC 3.x driver manager"
 
 DISTNAME=	libiodbc-3.52.4
 PKGNAME=	${DISTNAME:S/lib//}
 CATEGORIES=	databases
-SHARED_LIBS=	iodbc		3.15 \
-		iodbcinst	3.15
+SHARED_LIBS +=	iodbcinst            3.15     # .3.15
+SHARED_LIBS +=	iodbc                3.15     # .3.15
 
 HOMEPAGE=	http://www.iodbc.org/
 

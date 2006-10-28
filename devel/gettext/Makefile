@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.43 2006/10/20 14:15:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2006/10/28 11:19:20 espie Exp $
 
 COMMENT=	"GNU gettext"
 
 DISTNAME=	gettext-0.14.6
-SHARED_LIBS=	asprintf	1.0 \
-		gettextlib	0.0 \
-		gettextpo	1.0 \
-		gettextsrc	0.0 \
-		intl		3.0
+SHARED_LIBS +=	intl                 3.0      # .7.3
+SHARED_LIBS +=	asprintf             1.0      # .0.0
+SHARED_LIBS +=	gettextlib           0.0      # .0.0
+SHARED_LIBS +=	gettextsrc           0.0      # .0.0
+SHARED_LIBS +=	gettextpo            1.0      # .1.0
 
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=gettext/}

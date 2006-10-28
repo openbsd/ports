@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.27 2006/01/10 18:47:51 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2006/10/28 11:19:20 espie Exp $
 
 V=		0.63
 DISTNAME=	freetds-$V
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	databases
-SHARED_LIBS=	ct	3.0 \
-		sybdb	5.0 \
-		tds	4.0 \
-		tdssrv	2.0
+SHARED_LIBS +=	tds                  4.0      # .4.0
+SHARED_LIBS +=	ct                   3.0      # .3.0
+SHARED_LIBS +=	sybdb                5.0      # .5.0
+SHARED_LIBS +=	tdssrv               2.0      # .2.0
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

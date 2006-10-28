@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2006/08/01 22:19:46 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/10/28 11:19:20 espie Exp $
 
 COMMENT=	"C++ client API for PostgreSQL"
 
 DISTNAME=	libpqxx-2.5.3
 PKGNAME=	$(DISTNAME)p0
 CATEGORIES=	databases
-SHARED_LIBS=	pqxx	1.0
+SHARED_LIBS +=	pqxx                 1.0      # .0.0
 
 HOMEPAGE=	http://gborg.postgresql.org/project/libpqxx/
 

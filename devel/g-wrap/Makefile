@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2006/08/01 22:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/10/28 11:19:20 espie Exp $
 
 COMMENT=	"provides scheme wrappers"
 DISTNAME=	g-wrap-1.3.4
 PKGNAME=	${DISTNAME}p3
-SHARED_LIBS=	gw-glib		0.0 \
-		gw-standard	0.0 \
-		gw-wct		0.0 \
-		gwrap-glib	1.0 \
-		gwrap-wct	1.0
+SHARED_LIBS +=	gw-standard          0.0      # .0.0
+SHARED_LIBS +=	gwrap-wct            1.0      # .1.0
+SHARED_LIBS +=	gw-wct               0.0      # .0.0
+SHARED_LIBS +=	gwrap-glib           1.0      # .1.0
+SHARED_LIBS +=	gw-glib              0.0      # .0.0
 
 CATEGORIES=	x11/gnome databases
 MASTER_SITES=	http://www.gnucash.org/pub/g-wrap/source/

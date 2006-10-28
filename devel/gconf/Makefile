@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2006/08/01 22:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2006/10/28 11:19:20 espie Exp $
 
 COMMENT=		"configuration database system written for GNOME"
 
 DISTNAME=		GConf-1.0.9
 PKGNAME=		${DISTNAME:L}p1
-SHARED_LIBS=		gconf-1		1.4 \
-			gconf-gtk-1	1.0
+SHARED_LIBS +=	gconf-1              1.4      # .1.4
+SHARED_LIBS +=	gconf-gtk-1          1.0      # .1.0
 
 CATEGORIES=		devel x11/gnome
 

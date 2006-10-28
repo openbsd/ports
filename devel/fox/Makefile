@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2006/01/14 16:36:06 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/10/28 11:19:20 espie Exp $
 
 COMMENT='C++ toolkit for GUI'
 CATEGORIES=devel
 
 DISTNAME=fox-1.4.17
 PKGNAME=${DISTNAME}p0
-SHARED_LIBS=		CHART-1.4	1.0 \
-			FOX-1.4		1.0
+SHARED_LIBS +=	FOX-1.4              1.0      # .0.17
+SHARED_LIBS +=	CHART-1.4            1.0      # .0.17
 MASTER_SITES=${HOMEPAGE}/ftp/
 HOMEPAGE=http://www.fox-toolkit.org/
 MAINTAINER=Marc Espie <espie@openbsd.org>

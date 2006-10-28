@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2006/08/01 22:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2006/10/28 11:19:20 espie Exp $
 
 COMMENT=		"GNOME Application Libs"
 
 DISTNAME=		gal-0.24
 PKGNAME=		${DISTNAME}p2
-SHARED_LIBS=		gal 24.0
+SHARED_LIBS +=	gal                  24.0     # .24.0
 
 CATEGORIES=    		devel x11/gnome
 HOMEPAGE=		http://www.gnome.org/

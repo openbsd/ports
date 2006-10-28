@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2006/10/19 00:35:04 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.18 2006/10/28 11:19:21 espie Exp $
 
 COMMENT=	"SDL C++ GUI widget library"
 
 DISTNAME=	GUIlib-1.1.1
 PKGNAME=	${DISTNAME:L}p3
-SHARED_LIBS=	GUI 1.0
+SHARED_LIBS +=	GUI                  1.0      # .0.1
 
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.libsdl.org/projects/GUIlib/src/

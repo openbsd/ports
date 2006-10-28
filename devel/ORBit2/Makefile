@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.20 2006/10/03 19:46:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2006/10/28 11:19:20 espie Exp $
 
 COMMENT=		"high-performance CORBA Object Request Broker"
 
 DISTNAME=		ORBit2-2.12.2
 PKGNAME=		${DISTNAME}p3
-SHARED_LIBS=		ORBit-2			0.0 \
-			ORBit-imodule-2		0.0 \
-			ORBitCosNaming-2	0.0
+SHARED_LIBS +=	ORBit-2              0.0      # .0.0
+SHARED_LIBS +=	ORBitCosNaming-2     0.0      # .0.0
+SHARED_LIBS +=	ORBit-imodule-2      0.0      # .0.0
 
 CATEGORIES=		devel
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2006/01/07 22:26:07 brad Exp $
+# $OpenBSD: Makefile,v 1.28 2006/10/28 11:19:20 espie Exp $
 
 COMMENT=	"convert files between character sets and usages"
 
 DISTNAME=	recode-3.6
 PKGNAME=	${DISTNAME}p3
-SHARED_LIBS=	recode	0.0
+SHARED_LIBS +=	recode               0.0      # .0.0
 
 CATEGORIES=	converters textproc
 

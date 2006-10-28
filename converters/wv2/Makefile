@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2006/09/18 11:40:07 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2006/10/28 11:19:20 espie Exp $
 
 COMMENT=	"library providing routines to access Microsoft Word/Excel files"
 
 DISTNAME=	wv2-0.2.3
-SHARED_LIBS=	wv2	2.1
+SHARED_LIBS +=	wv2                  2.1      # .1.8
 CATEGORIES=	converters
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wvware/}
 EXTRACT_SUFX=	.tar.bz2

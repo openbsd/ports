@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2006/09/18 11:50:39 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2006/10/28 11:19:21 espie Exp $
 
 COMMENT=		"portable library for obtaining system information"
 
 V=			2.10.1
 DISTNAME=		libgtop-${V}
 PKGNAME=		libgtop2-${V}p2
-SHARED_LIBS=		gtop-2.0 5.0
+SHARED_LIBS +=	gtop-2.0             5.0      # .5.0
 
 CATEGORIES=		devel
 

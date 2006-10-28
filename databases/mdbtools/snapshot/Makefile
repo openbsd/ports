@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/09/18 11:40:07 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/10/28 11:19:20 espie Exp $
 
 COMMENT=	"read microsoft Access MDB"
 COMMENT-gmdb=	"graphical interface to MDB tools"
@@ -15,8 +15,8 @@ MULTI_PACKAGES=	-gmdb
 
 SUBPACKAGE?=
 
-SHARED_LIBS=	mdb	1.0 \
-		mdbsql	1.0
+SHARED_LIBS +=	mdb                  1.0      # .1.0
+SHARED_LIBS +=	mdbsql               1.0      # .1.0
 
 # LGPL
 PERMIT_DISTFILES_FTP=	Yes

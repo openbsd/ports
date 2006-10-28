@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2006/09/18 11:50:39 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2006/10/28 11:19:21 espie Exp $
 
 COMMENT=		"IDL parsing library"
 
 DISTNAME=		libIDL-0.8.5
 PKGNAME=		${DISTNAME}p0
-SHARED_LIBS=		IDL-2 0.0
+SHARED_LIBS +=	IDL-2                0.0      # .0.0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/

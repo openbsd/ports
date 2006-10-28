@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2006/08/01 22:55:52 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2006/10/28 11:19:21 espie Exp $
 
 COMMENT=		"library for loading GLADE interface files at runtime"
 
 DISTNAME=		libglade-0.17
 PKGNAME=		${DISTNAME}p0
-SHARED_LIBS=		glade		5.0 \
-			glade-gnome	5.0
-MODGNU_SHARED_LIBS=	glade		'' \
-			glade-gnome	''
-LIBglade-gnome_ALIAS=	glade_gnome
+SHARED_LIBS +=	glade                5.0      # .5.0
+SHARED_LIBS +=	glade-gnome          5.0      # .5.0
 
 CATEGORIES=		devel
 
