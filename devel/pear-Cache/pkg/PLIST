@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/28 12:35:11 mbalmer Exp $
+lib/
+lib/php/
+pear/data/Cache/
+pear/data/Cache/Container/
+pear/data/Cache/Container/mdb_cache_schema.xml
+@comment pear/lib/.channels/.alias/pear.txt
+@comment pear/lib/.channels/.alias/pecl.txt
+@comment pear/lib/.channels/__uri.reg
+@comment pear/lib/.channels/pear.php.net.reg
+@comment pear/lib/.channels/pecl.php.net.reg
+@comment pear/lib/.depdb
+@comment pear/lib/.depdblock
+pear/lib/.registry/cache.reg
+pear/lib/Cache/
+pear/lib/Cache.php
+pear/lib/Cache/Application.php
+pear/lib/Cache/Container/
+pear/lib/Cache/Container.php
+pear/lib/Cache/Container/db.php
+pear/lib/Cache/Container/dbx.php
+pear/lib/Cache/Container/file.php
+pear/lib/Cache/Container/mdb.php
+pear/lib/Cache/Container/msession.php
+pear/lib/Cache/Container/phplib.php
+pear/lib/Cache/Container/shm.php
+pear/lib/Cache/Container/trifile.php
+pear/lib/Cache/Error.php
+pear/lib/Cache/Function.php
+pear/lib/Cache/Graphics.php
+pear/lib/Cache/HTTP_Request.php
+pear/lib/Cache/Output.php
+pear/lib/Cache/OutputCompression.php
