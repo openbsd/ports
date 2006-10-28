@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/20 14:05:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/10/28 17:44:09 jasper Exp $
 bin/dwdiff
 @man man/man1/dwdiff.1
 share/doc/dwdiff/
 share/doc/dwdiff/README
+share/locale/de/LC_MESSAGES/de.mo
 share/locale/nl/LC_MESSAGES/nl.mo

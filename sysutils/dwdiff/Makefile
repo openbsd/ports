@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/20 14:05:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2006/10/28 17:44:09 jasper Exp $
 
 COMMENT=		"word-based diff program"
 
-DISTNAME=		dwdiff-1.2
+DISTNAME=		dwdiff-1.2.1
 CATEGORIES=		sysutils textproc
 
 HOMEPAGE=		http://os.ghalkes.nl/dwdiff.html
@@ -22,18 +22,21 @@ CONFIGURE_STYLE=	simple
 
 MODULES=		devel/gettext
 
-CONFIGURE_ENV=		CFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=		CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
 NO_REGRESS=		Yes
+
+LANGS=			de nl
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dwdiff ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/dwdiff.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dwdiff
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/dwdiff
-	${INSTALL_DATA_DIR} ${PREFIX}/share/locale/nl/LC_MESSAGES
-	${INSTALL_DATA} ${WRKSRC}/po/nl.mo \
-		${PREFIX}/share/locale/nl/LC_MESSAGES
+.for l in ${LANGS}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/locale/${l}/LC_MESSAGES
+	${INSTALL_DATA} ${WRKSRC}/po/${l}.mo \
+		${PREFIX}/share/locale/${l}/LC_MESSAGES
+.endfor
 
 .include <bsd.port.mk>
