@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2006/05/09 14:16:50 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2006/10/28 17:54:37 mbalmer Exp $
 
 COMMENT=	"configuration file library for PHP"
 
-DISTNAME=	Config-1.10.3
-PKGNAME=	pear-${DISTNAME}p0
+DISTNAME=	Config-1.10.7
+PKGNAME=	pear-${DISTNAME}
 CATEGORIES=	devel pear
 
 MASTER_SITES=	http://pear.php.net/get/

@@ -1,9 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/02/27 22:58:25 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.6 2006/10/28 17:54:37 mbalmer Exp $
+lib/
+lib/php/
 pear/doc/Config/
 pear/doc/Config/docs/
 pear/doc/Config/docs/Apache.php
 pear/doc/Config/docs/IniCommented.php
 pear/doc/Config/docs/IniFromScratch.php
+@comment pear/lib/.channels/.alias/pear.txt
+@comment pear/lib/.channels/.alias/pecl.txt
+@comment pear/lib/.channels/__uri.reg
+@comment pear/lib/.channels/pear.php.net.reg
+@comment pear/lib/.channels/pecl.php.net.reg
+@comment pear/lib/.depdb
+@comment pear/lib/.depdblock
 pear/lib/.registry/config.reg
 pear/lib/Config/
 pear/lib/Config.php
@@ -14,4 +23,33 @@ pear/lib/Config/Container/GenericConf.php
 pear/lib/Config/Container/IniCommented.php
 pear/lib/Config/Container/IniFile.php
 pear/lib/Config/Container/PHPArray.php
+pear/lib/Config/Container/PHPConstants.php
 pear/lib/Config/Container/XML.php
+pear/tests/Config/
+pear/tests/Config/test/
+pear/tests/Config/test/bug2742.ini
+pear/tests/Config/test/bug2742.phpt
+pear/tests/Config/test/bug2780.phpt
+pear/tests/Config/test/bug3051.phpt
+pear/tests/Config/test/bug3051.xml
+pear/tests/Config/test/bug3137.phpt
+pear/tests/Config/test/bug3298.phpt
+pear/tests/Config/test/bug3298.xml
+pear/tests/Config/test/bug3398.ini
+pear/tests/Config/test/bug3398.phpt
+pear/tests/Config/test/bug3590-input.php
+pear/tests/Config/test/bug3590.phpt
+pear/tests/Config/test/bug4623.conf
+pear/tests/Config/test/bug4623.phpt
+pear/tests/Config/test/bug6441.ini
+pear/tests/Config/test/bug6441.phpt
+pear/tests/Config/test/bug7544-inicommented.phpt
+pear/tests/Config/test/bug7544-inifile.phpt
+pear/tests/Config/test/bug7544.ini
+pear/tests/Config/test/bug7652.phpt
+pear/tests/Config/test/bug7652.xml
+pear/tests/Config/test/bug8357-inicommented.phpt
+pear/tests/Config/test/bug8357-inifile.phpt
+pear/tests/Config/test/bug8357.ini
+pear/tests/Config/test/phpt_test.php.inc
+pear/tests/Config/test/setup.php.inc
