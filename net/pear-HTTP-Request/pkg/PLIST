@@ -1,10 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/15 09:47:57 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/10/28 22:19:00 mbalmer Exp $
 lib/
 lib/php/
 pear/doc/HTTP_Request/
 pear/doc/HTTP_Request/docs/
 pear/doc/HTTP_Request/docs/download-progress.php
 pear/doc/HTTP_Request/docs/example.php
+@comment pear/lib/.channels/.alias/pear.txt
+@comment pear/lib/.channels/.alias/pecl.txt
+@comment pear/lib/.channels/__uri.reg
+@comment pear/lib/.channels/pear.php.net.reg
+@comment pear/lib/.channels/pecl.php.net.reg
+@comment pear/lib/.depdb
+@comment pear/lib/.depdblock
 pear/lib/.registry/http_request.reg
 pear/lib/HTTP/
 pear/lib/HTTP/Request/
