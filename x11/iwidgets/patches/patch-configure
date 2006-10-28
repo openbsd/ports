@@ -1,0 +1,25 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2006/10/28 20:38:25 steven Exp $
+--- configure.orig	Thu Nov 29 21:51:34 2001
++++ configure	Sat Oct 28 22:10:20 2006
+@@ -529,7 +529,7 @@ fi
+ 
+ # RCS: $Id: patch-configure,v 1.1.1.1 2006/10/28 20:38:25 steven Exp $
+ 
+-ITCL_VERSION=3.2
++#ITCL_VERSION=3.2
+ 
+ 
+ PACKAGE=iwidgets
+@@ -817,9 +817,9 @@ if test -r $itcl_search/itcl/library/itc
+     fi
+ fi
+ 
+-if test -z "$ITCL_LIB_DIR"; then
+-    { echo "configure: error: Can't find Itcl source.  Use --with-itcl to specify the the toplevel incr Tcl directory on your system.  (This directory should contain itcl/library/itcl.tcl, itk/library/itk.tcl, and config/mkinstalldirs.)" 1>&2; exit 1; }
+-fi
++#if test -z "$ITCL_LIB_DIR"; then
++#    { echo "configure: error: Can't find Itcl source.  Use --with-itcl to specify the the toplevel incr Tcl directory on your system.  (This directory should contain itcl/library/itcl.tcl, itk/library/itk.tcl, and config/mkinstalldirs.)" 1>&2; exit 1; }
++#fi
+ 
+ 
+ #--------------------------------------------------------------------

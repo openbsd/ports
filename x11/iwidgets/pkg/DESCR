@@ -1,0 +1,13 @@
+[incr Widgets] is an object-oriented mega-widget set which extends
+Tcl/Tk and is based on [incr Tcl] and [incr Tk]. This set of
+mega-widgets delivers many new, general purpose widgets like option
+menus, comboboxes, selection boxes, and various dialogs whose
+couterparts are found in Motif and Windows.
+
+Since [incr Widgets] is based on the [incr Tk] extension, the Tk
+framework of configuration options, widget commands, and default
+bindings is maintained. In other words, each [incr Widgets] mega-widget
+seamlessly blends with the standard Tk widgets. They look, act and feel
+like Tk widgets. In addition, all [incr Widgets] mega-widgets are
+object oriented and may themselves be extended, using either
+inheritance or composition.

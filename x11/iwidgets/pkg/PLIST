@@ -1,0 +1,249 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/28 20:38:25 steven Exp $
+lib/iwidgets/
+lib/iwidgets/iwidgets.tcl
+lib/iwidgets/license.terms
+lib/iwidgets/pkgIndex.tcl
+lib/iwidgets/scripts/
+lib/iwidgets/scripts/buttonbox.itk
+lib/iwidgets/scripts/calendar.itk
+lib/iwidgets/scripts/canvasprintbox.itk
+lib/iwidgets/scripts/canvasprintdialog.itk
+lib/iwidgets/scripts/checkbox.itk
+lib/iwidgets/scripts/colors.itcl
+lib/iwidgets/scripts/combobox.itk
+lib/iwidgets/scripts/dateentry.itk
+lib/iwidgets/scripts/datefield.itk
+lib/iwidgets/scripts/dialog.itk
+lib/iwidgets/scripts/dialogshell.itk
+lib/iwidgets/scripts/disjointlistbox.itk
+lib/iwidgets/scripts/entryfield.itk
+lib/iwidgets/scripts/extbutton.itk
+lib/iwidgets/scripts/extfileselectionbox.itk
+lib/iwidgets/scripts/extfileselectiondialog.itk
+lib/iwidgets/scripts/feedback.itk
+lib/iwidgets/scripts/fileselectionbox.itk
+lib/iwidgets/scripts/fileselectiondialog.itk
+lib/iwidgets/scripts/finddialog.itk
+lib/iwidgets/scripts/hierarchy.itk
+lib/iwidgets/scripts/hyperhelp.itk
+lib/iwidgets/scripts/labeledframe.itk
+lib/iwidgets/scripts/labeledwidget.itk
+lib/iwidgets/scripts/mainwindow.itk
+lib/iwidgets/scripts/menubar.itk
+lib/iwidgets/scripts/messagebox.itk
+lib/iwidgets/scripts/messagedialog.itk
+lib/iwidgets/scripts/notebook.itk
+lib/iwidgets/scripts/optionmenu.itk
+lib/iwidgets/scripts/pane.itk
+lib/iwidgets/scripts/panedwindow.itk
+lib/iwidgets/scripts/promptdialog.itk
+lib/iwidgets/scripts/pushbutton.itk
+lib/iwidgets/scripts/radiobox.itk
+lib/iwidgets/scripts/regexpfield.itk
+lib/iwidgets/scripts/roman.itcl
+lib/iwidgets/scripts/scopedobject.itcl
+lib/iwidgets/scripts/scrolledcanvas.itk
+lib/iwidgets/scripts/scrolledframe.itk
+lib/iwidgets/scripts/scrolledhtml.itk
+lib/iwidgets/scripts/scrolledlistbox.itk
+lib/iwidgets/scripts/scrolledtext.itk
+lib/iwidgets/scripts/scrolledwidget.itk
+lib/iwidgets/scripts/selectionbox.itk
+lib/iwidgets/scripts/selectiondialog.itk
+lib/iwidgets/scripts/shell.itk
+lib/iwidgets/scripts/spindate.itk
+lib/iwidgets/scripts/spinint.itk
+lib/iwidgets/scripts/spinner.itk
+lib/iwidgets/scripts/spintime.itk
+lib/iwidgets/scripts/tabnotebook.itk
+lib/iwidgets/scripts/tabset.itk
+lib/iwidgets/scripts/tclIndex
+lib/iwidgets/scripts/timeentry.itk
+lib/iwidgets/scripts/timefield.itk
+lib/iwidgets/scripts/toolbar.itk
+lib/iwidgets/scripts/unknownimage.gif
+lib/iwidgets/scripts/watch.itk
+@man man/mann/iwidgets_buttonbox.n
+@man man/mann/iwidgets_calendar.n
+@man man/mann/iwidgets_canvasprintbox.n
+@man man/mann/iwidgets_canvasprintdialog.n
+@man man/mann/iwidgets_checkbox.n
+@man man/mann/iwidgets_combobox.n
+@man man/mann/iwidgets_dateentry.n
+@man man/mann/iwidgets_datefield.n
+@man man/mann/iwidgets_dialog.n
+@man man/mann/iwidgets_dialogshell.n
+@man man/mann/iwidgets_disjointlistbox.n
+@man man/mann/iwidgets_entryfield.n
+@man man/mann/iwidgets_extbutton.n
+@man man/mann/iwidgets_extfileselectionbox.n
+@man man/mann/iwidgets_extfileselectiondialog.n
+@man man/mann/iwidgets_feedback.n
+@man man/mann/iwidgets_fileselectionbox.n
+@man man/mann/iwidgets_fileselectiondialog.n
+@man man/mann/iwidgets_finddialog.n
+@man man/mann/iwidgets_hierarchy.n
+@man man/mann/iwidgets_hyperhelp.n
+@man man/mann/iwidgets_labeledframe.n
+@man man/mann/iwidgets_labeledwidget.n
+@man man/mann/iwidgets_mainwindow.n
+@man man/mann/iwidgets_menubar.n
+@man man/mann/iwidgets_messagebox.n
+@man man/mann/iwidgets_messagedialog.n
+@man man/mann/iwidgets_notebook.n
+@man man/mann/iwidgets_optionmenu.n
+@man man/mann/iwidgets_panedwindow.n
+@man man/mann/iwidgets_promptdialog.n
+@man man/mann/iwidgets_pushbutton.n
+@man man/mann/iwidgets_radiobox.n
+@man man/mann/iwidgets_scopedobject.n
+@man man/mann/iwidgets_scrolledcanvas.n
+@man man/mann/iwidgets_scrolledframe.n
+@man man/mann/iwidgets_scrolledhtml.n
+@man man/mann/iwidgets_scrolledlistbox.n
+@man man/mann/iwidgets_scrolledtext.n
+@man man/mann/iwidgets_selectionbox.n
+@man man/mann/iwidgets_selectiondialog.n
+@man man/mann/iwidgets_shell.n
+@man man/mann/iwidgets_spindate.n
+@man man/mann/iwidgets_spinint.n
+@man man/mann/iwidgets_spinner.n
+@man man/mann/iwidgets_spintime.n
+@man man/mann/iwidgets_tabnotebook.n
+@man man/mann/iwidgets_tabset.n
+@man man/mann/iwidgets_timeentry.n
+@man man/mann/iwidgets_timefield.n
+@man man/mann/iwidgets_toolbar.n
+@man man/mann/iwidgets_watch.n
+share/examples/iwidgets/
+share/examples/iwidgets/buttonbox
+share/examples/iwidgets/calendar
+share/examples/iwidgets/canvasprintbox
+share/examples/iwidgets/canvasprintdialog
+share/examples/iwidgets/catalog
+share/examples/iwidgets/checkbox
+share/examples/iwidgets/combobox
+share/examples/iwidgets/dateentry
+share/examples/iwidgets/datefield
+share/examples/iwidgets/demo.html
+share/examples/iwidgets/dialog
+share/examples/iwidgets/dialogshell
+share/examples/iwidgets/disjointlistbox
+share/examples/iwidgets/entryfield
+share/examples/iwidgets/extbutton
+share/examples/iwidgets/extfileselectionbox
+share/examples/iwidgets/extfileselectiondialog
+share/examples/iwidgets/feedback
+share/examples/iwidgets/fileselectionbox
+share/examples/iwidgets/fileselectiondialog
+share/examples/iwidgets/finddialog
+share/examples/iwidgets/hierarchy
+share/examples/iwidgets/html/
+share/examples/iwidgets/html/buttonbox.n.html
+share/examples/iwidgets/html/calendar.n.html
+share/examples/iwidgets/html/canvasprintbox.n.html
+share/examples/iwidgets/html/canvasprintdialog.n.html
+share/examples/iwidgets/html/checkbox.n.html
+share/examples/iwidgets/html/combobox.n.html
+share/examples/iwidgets/html/dateentry.n.html
+share/examples/iwidgets/html/datefield.n.html
+share/examples/iwidgets/html/dialog.n.html
+share/examples/iwidgets/html/dialogshell.n.html
+share/examples/iwidgets/html/disjointlistbox.n.html
+share/examples/iwidgets/html/entryfield.n.html
+share/examples/iwidgets/html/extbutton.n.html
+share/examples/iwidgets/html/extfileselectionbox.n.html
+share/examples/iwidgets/html/extfileselectiondialog.n.html
+share/examples/iwidgets/html/feedback.n.html
+share/examples/iwidgets/html/fileselectionbox.n.html
+share/examples/iwidgets/html/fileselectiondialog.n.html
+share/examples/iwidgets/html/finddialog.n.html
+share/examples/iwidgets/html/hierarchy.n.html
+share/examples/iwidgets/html/hyperhelp.n.html
+share/examples/iwidgets/html/iwidgets4.0.0UserCmds.html
+share/examples/iwidgets/html/labeledframe.n.html
+share/examples/iwidgets/html/labeledwidget.n.html
+share/examples/iwidgets/html/mainwindow.n.html
+share/examples/iwidgets/html/menubar.n.html
+share/examples/iwidgets/html/messagebox.n.html
+share/examples/iwidgets/html/messagedialog.n.html
+share/examples/iwidgets/html/notebook.n.html
+share/examples/iwidgets/html/optionmenu.n.html
+share/examples/iwidgets/html/panedwindow.n.html
+share/examples/iwidgets/html/promptdialog.n.html
+share/examples/iwidgets/html/pushbutton.n.html
+share/examples/iwidgets/html/radiobox.n.html
+share/examples/iwidgets/html/scopedobject.n.html
+share/examples/iwidgets/html/scrolledcanvas.n.html
+share/examples/iwidgets/html/scrolledframe.n.html
+share/examples/iwidgets/html/scrolledhtml.n.html
+share/examples/iwidgets/html/scrolledlistbox.n.html
+share/examples/iwidgets/html/scrolledtext.n.html
+share/examples/iwidgets/html/selectionbox.n.html
+share/examples/iwidgets/html/selectiondialog.n.html
+share/examples/iwidgets/html/shell.n.html
+share/examples/iwidgets/html/spindate.n.html
+share/examples/iwidgets/html/spinint.n.html
+share/examples/iwidgets/html/spinner.n.html
+share/examples/iwidgets/html/spintime.n.html
+share/examples/iwidgets/html/tabnotebook.n.html
+share/examples/iwidgets/html/tabset.n.html
+share/examples/iwidgets/html/timeentry.n.html
+share/examples/iwidgets/html/timefield.n.html
+share/examples/iwidgets/html/toolbar.n.html
+share/examples/iwidgets/html/watch.n.html
+share/examples/iwidgets/hyperhelp
+share/examples/iwidgets/images/
+share/examples/iwidgets/images/box.xbm
+share/examples/iwidgets/images/clear.gif
+share/examples/iwidgets/images/close.gif
+share/examples/iwidgets/images/copy.gif
+share/examples/iwidgets/images/cut.gif
+share/examples/iwidgets/images/exit.gif
+share/examples/iwidgets/images/find.gif
+share/examples/iwidgets/images/help.gif
+share/examples/iwidgets/images/line.xbm
+share/examples/iwidgets/images/mag.gif
+share/examples/iwidgets/images/new.gif
+share/examples/iwidgets/images/open.gif
+share/examples/iwidgets/images/oval.xbm
+share/examples/iwidgets/images/paste.gif
+share/examples/iwidgets/images/points.xbm
+share/examples/iwidgets/images/poly.gif
+share/examples/iwidgets/images/print.gif
+share/examples/iwidgets/images/ruler.gif
+share/examples/iwidgets/images/save.gif
+share/examples/iwidgets/images/select.gif
+share/examples/iwidgets/images/text.xbm
+share/examples/iwidgets/iwidgets.gif
+share/examples/iwidgets/labeledframe
+share/examples/iwidgets/labeledwidget
+share/examples/iwidgets/mainwindow
+share/examples/iwidgets/menubar
+share/examples/iwidgets/messagebox
+share/examples/iwidgets/messagedialog
+share/examples/iwidgets/notebook
+share/examples/iwidgets/optionmenu
+share/examples/iwidgets/panedwindow
+share/examples/iwidgets/promptdialog
+share/examples/iwidgets/pushbutton
+share/examples/iwidgets/radiobox
+share/examples/iwidgets/scopedobject
+share/examples/iwidgets/scrolledcanvas
+share/examples/iwidgets/scrolledframe
+share/examples/iwidgets/scrolledhtml
+share/examples/iwidgets/scrolledlistbox
+share/examples/iwidgets/scrolledtext
+share/examples/iwidgets/selectionbox
+share/examples/iwidgets/selectiondialog
+share/examples/iwidgets/shell
+share/examples/iwidgets/spindate
+share/examples/iwidgets/spinint
+share/examples/iwidgets/spinner
+share/examples/iwidgets/spintime
+share/examples/iwidgets/tabnotebook
+share/examples/iwidgets/tabset
+share/examples/iwidgets/timeentry
+share/examples/iwidgets/timefield
+share/examples/iwidgets/toolbar
+share/examples/iwidgets/watch
