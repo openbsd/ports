@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Makefile_in,v 1.1 2006/10/28 10:51:29 espie Exp $
+--- lib/Makefile.in.orig	Sat Oct 28 12:49:28 2006
++++ lib/Makefile.in	Sat Oct 28 12:49:34 2006
+@@ -189,7 +189,7 @@ distclean-libtool:
+ maintainer-clean-libtool:
+ 
+ lib765.la: $(lib765_la_OBJECTS) $(lib765_la_DEPENDENCIES)
+-	$(LINK) -rpath $(libdir) $(lib765_la_LDFLAGS) $(lib765_la_OBJECTS) $(lib765_la_LIBADD) $(LIBS)
++	$(LINK) $(lib765_la_LDFLAGS) $(lib765_la_OBJECTS) $(lib765_la_LIBADD) $(LIBS)
+ 
+ tags: TAGS
+ 
