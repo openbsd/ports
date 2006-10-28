@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2005/02/28 12:19:51 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.9 2006/10/28 17:49:11 mbalmer Exp $
 lib/
 lib/php/
 pear/data/Log/
@@ -22,6 +22,13 @@ pear/doc/Log/docs/examples/sqlite.php
 pear/doc/Log/docs/examples/syslog.php
 pear/doc/Log/docs/examples/win.php
 pear/doc/Log/docs/guide.txt
+@comment pear/lib/.channels/.alias/pear.txt
+@comment pear/lib/.channels/.alias/pecl.txt
+@comment pear/lib/.channels/__uri.reg
+@comment pear/lib/.channels/pear.php.net.reg
+@comment pear/lib/.channels/pecl.php.net.reg
+@comment pear/lib/.depdb
+@comment pear/lib/.depdblock
 pear/lib/.registry/log.reg
 pear/lib/Log/
 pear/lib/Log.php
@@ -33,13 +40,13 @@ pear/lib/Log/error_log.php
 pear/lib/Log/file.php
 pear/lib/Log/mail.php
 pear/lib/Log/mcal.php
+pear/lib/Log/mdb2.php
 pear/lib/Log/null.php
 pear/lib/Log/observer.php
 pear/lib/Log/sql.php
 pear/lib/Log/sqlite.php
 pear/lib/Log/syslog.php
 pear/lib/Log/win.php
-pear/tests/
 pear/tests/Log/
 pear/tests/Log/tests/
 pear/tests/Log/tests/composite.phpt
@@ -49,6 +56,8 @@ pear/tests/Log/tests/error_log.phpt
 pear/tests/Log/tests/extract.phpt
 pear/tests/Log/tests/extract2.phpt
 pear/tests/Log/tests/factory.phpt
+pear/tests/Log/tests/file.phpt
+pear/tests/Log/tests/levels.phpt
 pear/tests/Log/tests/null.phpt
 pear/tests/Log/tests/priority.phpt
 pear/tests/Log/tests/singleton.phpt

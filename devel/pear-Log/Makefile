@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2006/05/15 12:08:25 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2006/10/28 17:49:11 mbalmer Exp $
 
 COMMENT=	"logging utilities for PHP"
 
-DISTNAME=	Log-1.8.7
-PKGNAME=	pear-${DISTNAME}p0
+DISTNAME=	Log-1.9.9
+PKGNAME=	pear-${DISTNAME}
 CATEGORIES=	devel pear
 
 MASTER_SITES=	http://pear.php.net/get/
