@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2006/10/21 17:23:19 steven Exp $
+# $OpenBSD: Makefile,v 1.65 2006/10/28 19:53:28 steven Exp $
 #
 
      SUBDIR += R
@@ -16,6 +16,7 @@
      SUBDIR += fftw
      SUBDIR += fftw3
      SUBDIR += fftw3,float
+     SUBDIR += freemat
      SUBDIR += galculator
      SUBDIR += geg
      SUBDIR += gnumeric
