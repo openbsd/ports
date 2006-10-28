@@ -1,0 +1,47 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/28 12:43:42 mbalmer Exp $
+lib/
+lib/php/
+pear/data/XML_Serializer/
+pear/data/XML_Serializer/doc/
+pear/data/XML_Serializer/doc/todo.txt
+pear/doc/XML_Serializer/
+pear/doc/XML_Serializer/examples/
+pear/doc/XML_Serializer/examples/example.xml
+pear/doc/XML_Serializer/examples/serializeAndEncode.php
+pear/doc/XML_Serializer/examples/serializeAndReturn.php
+pear/doc/XML_Serializer/examples/serializeArrayWithObjects.php
+pear/doc/XML_Serializer/examples/serializeCData.php
+pear/doc/XML_Serializer/examples/serializeEmptyArray.php
+pear/doc/XML_Serializer/examples/serializeIndexedArray.php
+pear/doc/XML_Serializer/examples/serializeIndexedArrayWithContext.php
+pear/doc/XML_Serializer/examples/serializeNullProperties.php
+pear/doc/XML_Serializer/examples/serializeObject.php
+pear/doc/XML_Serializer/examples/serializeRDF.php
+pear/doc/XML_Serializer/examples/serializeSelectiveAttributes.php
+pear/doc/XML_Serializer/examples/serializeWithAttributes.php
+pear/doc/XML_Serializer/examples/serializeWithAttributes2.php
+pear/doc/XML_Serializer/examples/serializeWithComment.php
+pear/doc/XML_Serializer/examples/serializeWithDtd.php
+pear/doc/XML_Serializer/examples/serializeWithIndentedAttributes.php
+pear/doc/XML_Serializer/examples/serializeWithNamespace.php
+pear/doc/XML_Serializer/examples/serializeWithTagMap.php
+pear/doc/XML_Serializer/examples/unserializeAnyXML.php
+pear/doc/XML_Serializer/examples/unserializeClassNames.php
+pear/doc/XML_Serializer/examples/unserializeEncoded.php
+pear/doc/XML_Serializer/examples/unserializeEnum.php
+pear/doc/XML_Serializer/examples/unserializeObject.php
+pear/doc/XML_Serializer/examples/unserializeRDF.php
+pear/doc/XML_Serializer/examples/unserializeWhitespace.php
+pear/doc/XML_Serializer/examples/unserializeWithAttributes.php
+pear/doc/XML_Serializer/examples/unserializeWithTagMap.php
+pear/doc/XML_Serializer/examples/unserializeWithTypeGuessing.php
+@comment pear/lib/.channels/.alias/pear.txt
+@comment pear/lib/.channels/.alias/pecl.txt
+@comment pear/lib/.channels/__uri.reg
+@comment pear/lib/.channels/pear.php.net.reg
+@comment pear/lib/.channels/pecl.php.net.reg
+@comment pear/lib/.depdb
+@comment pear/lib/.depdblock
+pear/lib/.registry/xml_serializer.reg
+pear/lib/XML/Serializer.php
+pear/lib/XML/Unserializer.php
