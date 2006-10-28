@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/10/18 17:40:38 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2006/10/28 23:23:29 steven Exp $
 
 COMMENT=	"C routines for computing the Discrete Fourier Transform"
 COMMENT-common=	"common files for the fftw3 packages"
@@ -6,7 +6,7 @@ COMMENT-common=	"common files for the fftw3 packages"
 V=		3.1.2
 DISTNAME=	fftw-${V}
 PKGNAME=	fftw3-${V}
-FULLPKGNAME=	fftw3-${V}p0
+FULLPKGNAME=	fftw3-${V}p1
 FULLPKGNAME-common=	fftw3-common-${V}
 SHARED_LIBS=	fftw3	4.2 \
 		fftw3f	4.2
