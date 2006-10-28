@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2006/10/12 23:12:19 espie Exp $
+# $OpenBSD: Makefile,v 1.72 2006/10/28 11:52:13 espie Exp $
 
 COMMENT=		"K Desktop Environment, libraries"
 COMMENT-cups=		"K Desktop Environment, cups support"
@@ -11,46 +11,46 @@ MASTER_SITES0=  ftp://ftp.kde.org/pub/kde/security_patches/
 PKGNAME=		${DISTNAME}
 PKGNAME-cups=		kdecups-${VERSION}
 MODKDE_VERSION?=	3.5.3
-SHARED_LIBS=		DCOP			7.0 \
-			artskde			4.0 \
-			kabc			4.0 \
-			kabc_dir		2.0 \
-			kabc_file		2.0 \
-			kabc_ldapkio		2.0 \
-			kabc_net		2.0 \
-			katepartinterfaces	1.0 \
-			kdecore			7.0 \
-			kdefakes		7.0 \
-			kdefx			7.0 \
-			kdeprint		7.0 \
-			kdeprint_management	7.0 \
-			kdesasl			4.0 \
-			kdesu			7.0 \
-			kdeui			7.0 \
-			kdnssd			2.0 \
-			khtml			7.0 \
-			kimproxy		1.0 \
-			kio			7.0 \
-			kjava			2.0 \
-			kjs			4.0 \
-			kmdi			2.0 \
-			kmdi2			2.0 \
-			kmediaplayer		1.0 \
-			kmid			1.0 \
-			knewstuff		2.0 \
-			kntlm			1.0 \
-			kparts			4.0 \
-			kresources		4.0 \
-			kscreensaver		7.0 \
-			kscript			1.0 \
-			kspell			7.0 \
-			kspell2			2.0 \
-			ktexteditor		1.0 \
-			kunittest		2.0 \
-			kutils			4.0 \
-			kwalletbackend		2.0 \
-			kwalletclient		2.0 \
-			vcard			1.0
+SHARED_LIBS +=	DCOP                 7.0      # .6.0
+SHARED_LIBS +=	kdefx                7.0      # .6.0
+SHARED_LIBS +=	kdefakes             7.0      # .6.0
+SHARED_LIBS +=	kdecore              7.0      # .6.0
+SHARED_LIBS +=	kunittest            2.0      # .1.0
+SHARED_LIBS +=	kdeui                7.0      # .6.0
+SHARED_LIBS +=	kspell               7.0      # .6.0
+SHARED_LIBS +=	kdesu                7.0      # .6.0
+SHARED_LIBS +=	kjs                  4.0      # .3.0
+SHARED_LIBS +=	kwalletclient        2.0      # .1.1
+SHARED_LIBS +=	kwalletbackend       2.0      # .1.0
+SHARED_LIBS +=	kio                  7.0      # .6.0
+SHARED_LIBS +=	kdesasl              4.0      # .3.0
+SHARED_LIBS +=	kntlm                1.0      # .0.0
+SHARED_LIBS +=	artskde              4.0      # .3.0
+SHARED_LIBS +=	kdnssd               2.0      # .1.0
+SHARED_LIBS +=	knewstuff            2.0      # .1.0
+SHARED_LIBS +=	kparts               4.0      # .3.0
+SHARED_LIBS +=	kresources           4.0      # .3.0
+SHARED_LIBS +=	kutils               4.0      # .3.0
+SHARED_LIBS +=	kmid                 1.0      # .0.95
+SHARED_LIBS +=	kscreensaver         7.0      # .6.0
+SHARED_LIBS +=	kdeprint             7.0      # .6.0
+SHARED_LIBS +=	kdeprint_management  7.0      # .6.0
+SHARED_LIBS +=	vcard                1.0      # .0.0
+SHARED_LIBS +=	kabc                 4.0      # .3.0
+SHARED_LIBS +=	kabc_file            2.0      # .1.0
+SHARED_LIBS +=	kabc_dir             2.0      # .1.0
+SHARED_LIBS +=	kabc_net             2.0      # .1.0
+SHARED_LIBS +=	kabc_ldapkio         2.0      # .1.0
+SHARED_LIBS +=	kspell2              2.0      # .1.0
+SHARED_LIBS +=	kmdi2                2.0      # .1.0
+SHARED_LIBS +=	kmdi                 2.0      # .1.0
+SHARED_LIBS +=	kjava                2.0      # .1.0
+SHARED_LIBS +=	khtml                7.0      # .6.0
+SHARED_LIBS +=	ktexteditor          1.0      # .0.0
+SHARED_LIBS +=	kscript              1.0      # .0.0
+SHARED_LIBS +=	kmediaplayer         1.0      # .0.0
+SHARED_LIBS +=	kimproxy             1.0      # .0.0
+SHARED_LIBS +=	katepartinterfaces   1.0      # .0.0
 
 FLAVORS=debug
 VMEM_WARNING=	Yes

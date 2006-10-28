@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2006/10/12 23:12:18 espie Exp $
+# $OpenBSD: Makefile,v 1.66 2006/10/28 11:52:13 espie Exp $
 
 COMMENT= 		"K Desktop Environment, basic applications"
 COMMENT-plugins=	"Konqueror nsplugins, essentially native JDK"
@@ -9,19 +9,23 @@ DISTNAME=		kdebase-${VERSION}
 PKGNAME=		${DISTNAME}
 PKGNAME-samba=		kdesamba-${VERSION}
 MODKDE_VERSION?=	3.5.3
-SHARED_LIBS=		kasbar			2.0 \
-			kateinterfaces		1.0 \
-			kateutils		1.0 \
-			kdecorations		2.0 \
-			kfontinst		1.0 \
-			khotkeys_shared		2.0 \
-			kickermain		2.0 \
-			konq			7.0 \
-			konqsidebarplugin	4.0 \
-			ksgrd			4.0 \
-			ksplashthemes		1.0 \
-			taskbar			4.0 \
-			taskmanager		2.0
+SHARED_LIBS +=	konq                 7.0      # .6.0
+SHARED_LIBS +=	kateutils            1.0      # .0.0
+SHARED_LIBS +=	kateinterfaces       1.0      # .0.0
+SHARED_LIBS +=	khotkeys_shared      2.0      # .1.0
+SHARED_LIBS +=	ksplashthemes        1.0      # .0.0
+SHARED_LIBS +=	ksgrd                4.0      # .3.0
+SHARED_LIBS +=	kdecorations         2.0      # .1.0
+SHARED_LIBS +=	konqsidebarplugin    4.0      # .3.0
+SHARED_LIBS +=	kickermain           2.0      # .1.0
+SHARED_LIBS +=	taskmanager          2.0      # .1.0
+SHARED_LIBS +=	taskbar              4.0      # .3.0
+SHARED_LIBS +=	kasbar               2.0      # .1.0
+SHARED_LIBS +=	kfontinst            1.0      # .0.0
+SHARED_LIBS +=	kateinterfaces       1.0      # .0.0
+SHARED_LIBS +=	taskmanager          2.0      # .1.0
+SHARED_LIBS +=	taskbar              4.0      # .3.0
+SHARED_LIBS +=	kasbar               2.0      # .1.0
 
 MULTI_PACKAGES=		-samba
 SUBPACKAGE?=
