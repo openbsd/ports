@@ -1,0 +1,32 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2006/10/28 19:53:05 steven Exp $
+--- configure.orig	Tue Jun  6 03:29:51 2006
++++ configure	Thu Oct 19 11:44:29 2006
+@@ -4887,8 +4887,8 @@ esac
+   eval $_lcl_result_var='$_lcl_result_tmp'
+ done
+ 
+-CPPFLAGS="$CPPFLAGS -I$cdir/extern/Root/include -DBASEPATH=\\\"$bin_to_data/FreeMat-$VERSION\\\""
+-FOO=`echo $QT_LIBS | sed -e 's/-L/-Wl,-rpath,/g' | sed -e 's/-l\w*//g'`
++CPPFLAGS="$CPPFLAGS -I$cdir/extern/Root/include"
++FOO=`echo $QT_LIBS`
+ { echo "$as_me:$LINENO: Extra lib flags added $FOO" >&5
+ echo "$as_me: Extra lib flags added $FOO" >&6;}
+ LDFLAGS="$LDFLAGS -L$cdir/extern/Root/lib $FOO"
+@@ -5476,7 +5476,7 @@ if test "${ac_cv_lib_umfpack_umfpack_zl_
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lumfpack  $LIBS"
++LIBS="-lumfpack -lblas $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -5541,7 +5541,7 @@ else
+ fi
+ 
+ if test x"$found_umfpack" == xyes; then
+-  LIBS="-lumfpack $LIBS"
++  LIBS="-lumfpack -lblas $LIBS"
+ fi
+ echo "$as_me:$LINENO: checking for fftwf_malloc in -lfftw3f" >&5
+ echo $ECHO_N "checking for fftwf_malloc in -lfftw3f... $ECHO_C" >&6

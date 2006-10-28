@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2006/10/28 19:53:05 steven Exp $
+--- src/Makefile.in.orig	Tue Jun  6 03:29:49 2006
++++ src/Makefile.in	Thu Oct 19 12:40:35 2006
+@@ -79,7 +79,7 @@ DEFAULT_INCLUDES = -I. -I$(srcdir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+ CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+-	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
++	$(AM_CPPFLAGS) $(MYDEFS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
+ CXXLD = $(CXX)
+ CXXLINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \
+ 	-o $@

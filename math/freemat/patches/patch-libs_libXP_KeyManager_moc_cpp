@@ -1,0 +1,12 @@
+$OpenBSD: patch-libs_libXP_KeyManager_moc_cpp,v 1.1.1.1 2006/10/28 19:53:05 steven Exp $
+--- libs/libXP/KeyManager.moc.cpp.orig	Wed Oct 18 10:01:50 2006
++++ libs/libXP/KeyManager.moc.cpp	Wed Oct 18 10:02:02 2006
+@@ -7,7 +7,7 @@
+ ** WARNING! All changes made in this file will be lost!
+ *****************************************************************************/
+ 
+-#include "../../../libs/libXP/KeyManager.hpp"
++#include "KeyManager.hpp"
+ #if !defined(Q_MOC_OUTPUT_REVISION)
+ #error "The header file 'KeyManager.hpp' doesn't include <QObject>."
+ #elif Q_MOC_OUTPUT_REVISION != 59

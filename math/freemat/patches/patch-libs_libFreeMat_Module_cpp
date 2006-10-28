@@ -1,0 +1,12 @@
+$OpenBSD: patch-libs_libFreeMat_Module_cpp,v 1.1.1.1 2006/10/28 19:53:05 steven Exp $
+--- libs/libFreeMat/Module.cpp.orig	Thu Oct 19 14:16:02 2006
++++ libs/libFreeMat/Module.cpp	Thu Oct 19 14:16:16 2006
+@@ -366,7 +366,7 @@ namespace FreeMat {
+ 		      "return type, argument list");
+     libfile = arg[0].getContentsAsCString();
+     libfullpath = psearch.ResolvePath(libfile);
+-    char buffer[1000];
++    char buffer[PATH_MAX];
+     // Prepend the current working directory... ugly, but necessary
+ #ifdef WIN32
+     _getcwd(buffer,sizeof(buffer));

@@ -1,0 +1,12 @@
+$OpenBSD: patch-libs_libCore_Makefile_in,v 1.1.1.1 2006/10/28 19:53:05 steven Exp $
+--- libs/libCore/Makefile.in.orig	Tue Jun  6 03:29:48 2006
++++ libs/libCore/Makefile.in	Thu Oct 19 12:40:54 2006
+@@ -66,7 +66,7 @@ DEFAULT_INCLUDES = -I. -I$(srcdir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+ CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+-	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
++	$(AM_CPPFLAGS) $(MYDEFS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
+ CXXLD = $(CXX)
+ CXXLINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \
+ 	-o $@
