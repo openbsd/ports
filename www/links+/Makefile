@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.27 2006/08/04 00:10:42 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2006/10/28 22:52:13 fgsch Exp $
 
 COMMENT=	"graphics and text browser with javascript support"
 
-VER=		2.1pre21
+VER=		2.1pre23
 DISTNAME=	links-${VER}
 PKGNAME=	links+-${VER}
 CATEGORIES=	www
 MASTER_SITES=	${HOMEPAGE}download/
-
-MAINTAINER=	Federico G. Schwindt <fgsch@openbsd.org>
 
 HOMEPAGE=	http://links.twibright.com/
 
@@ -26,14 +24,14 @@ AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS+= --enable-javascript --with-ssl --without-sdl
 
+BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
+
 .if !${FLAVOR:L:Mno_x11}
 LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
 		png.>=2::graphics/png \
 		tiff.>=35::graphics/tiff
 USE_X11=	Yes
 CONFIGURE_ARGS+= --with-x --enable-graphics
-CONFIGURE_ENV= CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
-	       LDFLAGS="-L${LOCALBASE}/lib"
 WANTLIB+=	X11 z
 .endif
 
