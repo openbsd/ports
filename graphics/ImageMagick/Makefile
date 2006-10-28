@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.91 2006/08/02 10:10:35 espie Exp $
+# $OpenBSD: Makefile,v 1.92 2006/10/28 16:20:52 steven Exp $
 
 COMMENT=		"image processing tools"
 
-VER=			6.2.6
-DASHVER=		1
+VER=			6.3.0
+DASHVER=		0
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
-SHARED_LIBS=		Magick++	10.1	\
-			Magick		10.1	\
-			Wand		10.1
+SHARED_LIBS=		Magick++	11.0	\
+			Magick		11.0	\
+			Wand		11.0
 
 CATEGORIES=		graphics
 MAINTAINER=		Bernd Ahlers <bernd@openbsd.org>
@@ -18,7 +18,7 @@ HOMEPAGE=		http://www.imagemagick.org
 MASTER_SITES=		${HOMEPAGE}/download/ \
 			${MASTER_SITE_SOURCEFORGE:=imagemagick/}
 
-# http://www.imagemagick.org/www/Copyright.html
+# http://www.imagemagick.org/script/license.php
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.3 2006/02/06 22:10:24 bernd Exp $
---- configure.ac.orig	Fri Jan 27 02:20:07 2006
-+++ configure.ac	Fri Feb  3 13:45:01 2006
-@@ -352,9 +352,9 @@ AM_CONDITIONAL(WITH_MODULES, test "$with
+$OpenBSD: patch-configure_ac,v 1.4 2006/10/28 16:20:52 steven Exp $
+--- configure.ac.orig	Tue Oct 10 18:47:49 2006
++++ configure.ac	Sat Oct 21 13:08:37 2006
+@@ -350,9 +350,9 @@ AM_CONDITIONAL(WITH_MODULES, test "$with
  # Enable building/use of libltdl if we are building shared libraries regardless
  # of whether modules are built or not.
  with_ltdl='no'
@@ -14,7 +14,7 @@ $OpenBSD: patch-configure_ac,v 1.3 2006/02/06 22:10:24 bernd Exp $
  
  AM_CONDITIONAL(WITH_LTDL, test "$with_ltdl" != 'no')
  if test "$with_ltdl" != 'no' ; then
-@@ -1996,7 +1996,7 @@ AC_SUBST(PERLMAINCC)
+@@ -1998,7 +1998,7 @@ AC_SUBST(PERLMAINCC)
  #
  
  # Subdirectory under lib to place ImageMagick lib files
@@ -23,7 +23,7 @@ $OpenBSD: patch-configure_ac,v 1.3 2006/02/06 22:10:24 bernd Exp $
  AC_DEFINE_UNQUOTED(MagickLibSubdir,"$MagickLibSubdir",Subdirectory of lib where ImageMagick architecture dependent files are installed)
  
  # Path to ImageMagick bin directory
-@@ -2059,7 +2059,7 @@ AC_SUBST(MagickFilterModulesPath)
+@@ -2061,7 +2061,7 @@ AC_SUBST(MagickFilterModulesPath)
  
  #
  # Path to ImageMagick document files
@@ -32,7 +32,7 @@ $OpenBSD: patch-configure_ac,v 1.3 2006/02/06 22:10:24 bernd Exp $
  MagickDocumentPath="${DATA_DIR}/doc/${MagickDocumentSubdir}"
  MagickDocumentPathDefine="${MagickDocumentPath}/"
  if test "$native_win32_build" = 'yes'
-@@ -2071,7 +2071,7 @@ AC_SUBST(MagickDocumentPath)
+@@ -2073,7 +2073,7 @@ AC_SUBST(MagickDocumentPath)
  
  #
  # Path to ImageMagick share files
@@ -41,3 +41,11 @@ $OpenBSD: patch-configure_ac,v 1.3 2006/02/06 22:10:24 bernd Exp $
  MagickSharePath="${DATA_DIR}/${MagickShareSubdir}"
  MagickSharePathDefine="${MagickSharePath}/"
  if test "$native_win32_build" = 'yes'
+@@ -2751,6 +2751,7 @@ AC_CONFIG_FILES( \
+         utilities/import.1 \
+         utilities/mogrify.1 \
+         utilities/montage.1 \
++        utilities/stream.1 \
+         wand/Wand-config \
+         wand/Wand.pc )
+ 

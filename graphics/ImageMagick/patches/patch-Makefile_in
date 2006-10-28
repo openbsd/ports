@@ -1,0 +1,29 @@
+$OpenBSD: patch-Makefile_in,v 1.6 2006/10/28 16:20:52 steven Exp $
+--- Makefile.in.orig	Sat Oct 14 21:21:05 2006
++++ Makefile.in	Sat Oct 21 12:48:09 2006
+@@ -246,6 +246,7 @@ DIST_COMMON = $(am__configure_deps) $(am
+ 	$(top_srcdir)/utilities/import.1.in \
+ 	$(top_srcdir)/utilities/mogrify.1.in \
+ 	$(top_srcdir)/utilities/montage.1.in \
++	$(top_srcdir)/utilities/stream.1.in \
+ 	$(top_srcdir)/wand/Wand-config.in \
+ 	$(top_srcdir)/wand/Wand.pc.in \
+ 	$(top_srcdir)/wand/wand-config.h.in $(wandinc_HEADERS) AUTHORS \
+@@ -277,7 +278,7 @@ CONFIG_CLEAN_FILES = config/delegates.xm
+ 	utilities/composite.1 utilities/conjure.1 utilities/convert.1 \
+ 	utilities/display.1 utilities/identify.1 \
+ 	utilities/ImageMagick.1 utilities/import.1 utilities/mogrify.1 \
+-	utilities/montage.1 wand/Wand-config wand/Wand.pc
++	utilities/montage.1 utilities/stream.1 wand/Wand-config wand/Wand.pc
+ am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
+ am__vpath_adj = case $$p in \
+     $(srcdir)/*) f=`echo "$$p" | sed "s|^$$srcdirstrip/||"`;; \
+@@ -4780,6 +4781,8 @@ utilities/import.1: $(top_builddir)/conf
+ utilities/mogrify.1: $(top_builddir)/config.status $(top_srcdir)/utilities/mogrify.1.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
+ utilities/montage.1: $(top_builddir)/config.status $(top_srcdir)/utilities/montage.1.in
++	cd $(top_builddir) && $(SHELL) ./config.status $@
++utilities/stream.1: $(top_builddir)/config.status $(top_srcdir)/utilities/stream.1.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
+ wand/Wand-config: $(top_builddir)/config.status $(top_srcdir)/wand/Wand-config.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@

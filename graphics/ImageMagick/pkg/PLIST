@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2006/01/27 17:40:05 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.34 2006/10/28 16:20:52 steven Exp $
 !%%no_x11%%
 %%SHARED%%
 bin/Magick++-config
@@ -11,6 +11,7 @@ bin/convert
 bin/identify
 bin/mogrify
 bin/montage
+bin/stream
 include/Magick++/
 include/Magick++.h
 include/Magick++/Blob.h
@@ -59,6 +60,7 @@ include/magick/geometry.h
 include/magick/hashmap.h
 include/magick/identify.h
 include/magick/image.h
+include/magick/layer.h
 include/magick/list.h
 include/magick/locale_.h
 include/magick/log.h
@@ -90,6 +92,7 @@ include/magick/splay-tree.h
 include/magick/statistic.h
 include/magick/stream.h
 include/magick/string_.h
+include/magick/threshold.h
 include/magick/timer.h
 include/magick/token.h
 include/magick/transform.h
@@ -118,6 +121,7 @@ include/wand/mogrify.h
 include/wand/montage.h
 include/wand/pixel-iterator.h
 include/wand/pixel-wand.h
+include/wand/stream.h
 include/wand/wand-config.h
 lib/ImageMagick/
 lib/ImageMagick/config/
@@ -154,6 +158,7 @@ lib/pkgconfig/Wand.pc
 @man man/man1/identify.1
 @man man/man1/mogrify.1
 @man man/man1/montage.1
+@man man/man1/stream.1
 share/ImageMagick/
 share/ImageMagick/ChangeLog
 share/ImageMagick/LICENSE
@@ -162,31 +167,34 @@ share/ImageMagick/config/
 share/ImageMagick/config/coder.xml
 share/ImageMagick/config/log.xml
 share/ImageMagick/config/magic.xml
+share/ImageMagick/config/thresholds.xml
 share/doc/ImageMagick/
 share/doc/ImageMagick/images/
 share/doc/ImageMagick/images/arc.png
 share/doc/ImageMagick/images/background.jpg
+share/doc/ImageMagick/images/black.png
 share/doc/ImageMagick/images/button.gif
 share/doc/ImageMagick/images/configure.jpg
-share/doc/ImageMagick/images/devlib.gif
+share/doc/ImageMagick/images/definitive-guide.png
 share/doc/ImageMagick/images/difference.png
 share/doc/ImageMagick/images/dogwaffle.jpg
 share/doc/ImageMagick/images/donate.png
 share/doc/ImageMagick/images/examples.jpg
 share/doc/ImageMagick/images/frame.jpg
 share/doc/ImageMagick/images/fuzzy-magick.png
-share/doc/ImageMagick/images/georeviews.gif
 share/doc/ImageMagick/images/granite.png
 share/doc/ImageMagick/images/label.gif
 share/doc/ImageMagick/images/logo.eps
 share/doc/ImageMagick/images/logo.jpg
 share/doc/ImageMagick/images/montage.jpg
+share/doc/ImageMagick/images/navy.png
 share/doc/ImageMagick/images/piechart.png
 share/doc/ImageMagick/images/reconstruct.jpg
 share/doc/ImageMagick/images/red-ball.png
 share/doc/ImageMagick/images/red-circle.png
 share/doc/ImageMagick/images/right.gif
 share/doc/ImageMagick/images/rose-over.png
+share/doc/ImageMagick/images/rose-sigmoidal.png
 share/doc/ImageMagick/images/rose.jpg
 share/doc/ImageMagick/images/rose.png
 share/doc/ImageMagick/images/script.png
@@ -194,6 +202,7 @@ share/doc/ImageMagick/images/smile.gif
 share/doc/ImageMagick/images/sponsor.jpg
 share/doc/ImageMagick/images/sprite.jpg
 share/doc/ImageMagick/images/travelsur.gif
+share/doc/ImageMagick/images/tricks.png
 share/doc/ImageMagick/images/wand.ico
 share/doc/ImageMagick/images/white-highlight.png
 share/doc/ImageMagick/index.html
@@ -261,12 +270,14 @@ share/doc/ImageMagick/www/api/enhance.html
 share/doc/ImageMagick/www/api/exception.html
 share/doc/ImageMagick/www/api/fx.html
 share/doc/ImageMagick/www/api/image.html
+share/doc/ImageMagick/www/api/layer.html
 share/doc/ImageMagick/www/api/list.html
 share/doc/ImageMagick/www/api/magick-attribute.html
 share/doc/ImageMagick/www/api/magick-image.html
 share/doc/ImageMagick/www/api/magick-wand.html
 share/doc/ImageMagick/www/api/magick.html
 share/doc/ImageMagick/www/api/memory.html
+share/doc/ImageMagick/www/api/module.html
 share/doc/ImageMagick/www/api/monitor.html
 share/doc/ImageMagick/www/api/montage.html
 share/doc/ImageMagick/www/api/paint.html
@@ -283,6 +294,7 @@ share/doc/ImageMagick/www/api/signature.html
 share/doc/ImageMagick/www/api/stream.html
 share/doc/ImageMagick/www/api/transform.html
 share/doc/ImageMagick/www/api/version.html
+share/doc/ImageMagick/www/architecture.html
 share/doc/ImageMagick/www/binary-releases.html
 share/doc/ImageMagick/www/changelog.html
 share/doc/ImageMagick/www/color.html
@@ -299,6 +311,8 @@ share/doc/ImageMagick/www/display.html
 share/doc/ImageMagick/www/download.html
 share/doc/ImageMagick/www/examples.html
 share/doc/ImageMagick/www/formats.html
+share/doc/ImageMagick/www/fx.html
+share/doc/ImageMagick/www/history.html
 share/doc/ImageMagick/www/identify.html
 share/doc/ImageMagick/www/import.html
 share/doc/ImageMagick/www/index.html
@@ -318,4 +332,5 @@ share/doc/ImageMagick/www/quantize.html
 share/doc/ImageMagick/www/resources.html
 share/doc/ImageMagick/www/search.html
 share/doc/ImageMagick/www/sponsors.html
+share/doc/ImageMagick/www/stream.html
 share/doc/ImageMagick/www/subversion.html

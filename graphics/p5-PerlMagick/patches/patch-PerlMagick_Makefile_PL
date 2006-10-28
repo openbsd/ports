@@ -1,8 +1,8 @@
-$OpenBSD: patch-PerlMagick_Makefile_PL,v 1.7 2006/01/27 17:40:05 bernd Exp $
---- PerlMagick/Makefile.PL.orig	Wed Jan 18 20:39:17 2006
-+++ PerlMagick/Makefile.PL	Mon Jan 23 13:42:18 2006
+$OpenBSD: patch-PerlMagick_Makefile_PL,v 1.8 2006/10/28 16:20:52 steven Exp $
+--- PerlMagick/Makefile.PL.orig	Sat Oct 14 21:45:43 2006
++++ PerlMagick/Makefile.PL	Sat Oct 21 13:34:16 2006
 @@ -44,13 +44,13 @@ WriteMakefile
-    'DEFINE'	=> ' -DHAVE_CONFIG_H',     # e.g., '-DHAVE_SOMETHING' 
+    'DEFINE'	=> ' -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H',     # e.g., '-DHAVE_SOMETHING' 
  
     # Header search specfication and preprocessor flags
 -   'INC'	=> '-I../ -I.. -I/usr/include/freetype2 -I/usr/include/libxml2',
@@ -12,17 +12,17 @@ $OpenBSD: patch-PerlMagick_Makefile_PL,v 1.7 2006/01/27 17:40:05 bernd Exp $
     # 'CPPFLAGS'    => "$Config{'cppflags'} -I/usr/include/freetype2 -I/usr/include/libxml2",
  
     # C compiler flags (e.g. -O -g)
--   'CCFLAGS'     => "$Config{'ccflags'} -O3 -g -Wall -pthread",
+-   'CCFLAGS'     => "$Config{'ccflags'} -O3 -g -Wall -W -pthread",
 +   'CCFLAGS'     => "$Config{'ccflags'} %%CFLAGS%%",
  
     # Linker flags for building an executable
-    'LDFLAGS'    =>  "-L/usr/lib $Config{'ldflags'}",
+    'LDFLAGS'    =>  "-L../magick/.libs -lMagick $Config{'ldflags'}",
 @@ -62,7 +62,7 @@ WriteMakefile
     'INSTALLBIN'	=> '/usr/bin',
  
     # Library specification
--   'LIBS'	=> ['-L/usr/lib -L../magick/.libs -lMagick -L/usr/lib64 -lfreetype -lz -L/usr/lib -llcms -ltiff -lfreetype -ljpeg -lpng -lXext -lXt -lSM -lICE -lX11 -lbz2 -lxml2 -lz -lpthread -lm -lpthread'],
-+   'LIBS'	=> ['-L%%LOCALBASE%%/lib -lMagick -L%%X11BASE%%/lib -ljbig -llcms -ltiff -lfreetype -ljasper -ljpeg -lpng -lXext -lXt -lSM -lICE -lX11 -lbz2 -lxml2 -lz -lm'],
+-   'LIBS'	=> [ '-L/usr/lib -lfreetype -L/usr/lib -llcms -ltiff -lfreetype -ljpeg -lfontconfig -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lpthread -lm -lpthread' ],
++   'LIBS'	=> [ '-L%%LOCALBASE%%/lib -lMagick -L%%X11BASE%%/lib -ljbig -llcms -ltiff -lfreetype -ljasper -ljpeg -lpng -lXext -lXt -lSM -lICE -lX11 -lbz2 -lxml2 -lz -lm' ],
  
     # Perl binary name (if a Perl binary is built)
     'MAP_TARGET'	=> 'PerlMagick',
