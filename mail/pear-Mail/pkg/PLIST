@@ -1,6 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/15 10:07:33 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/10/28 17:58:48 mbalmer Exp $
 lib/
 lib/php/
+@comment pear/lib/.channels/.alias/pear.txt
+@comment pear/lib/.channels/.alias/pecl.txt
+@comment pear/lib/.channels/__uri.reg
+@comment pear/lib/.channels/pear.php.net.reg
+@comment pear/lib/.channels/pecl.php.net.reg
+@comment pear/lib/.depdb
+@comment pear/lib/.depdblock
 pear/lib/.registry/mail.reg
 pear/lib/Mail/
 pear/lib/Mail.php
@@ -9,7 +16,7 @@ pear/lib/Mail/mail.php
 pear/lib/Mail/null.php
 pear/lib/Mail/sendmail.php
 pear/lib/Mail/smtp.php
-pear/tests/
 pear/tests/Mail/
 pear/tests/Mail/tests/
 pear/tests/Mail/tests/rfc822.phpt
+pear/tests/Mail/tests/smtp_error.phpt
