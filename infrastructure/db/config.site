@@ -1,4 +1,4 @@
-# $OpenBSD: config.site,v 1.10 2006/01/13 15:34:06 naddy Exp $
+# $OpenBSD: config.site,v 1.11 2006/10/28 18:59:10 steven Exp $
 # Quick start macros for autoconf.
 # XXX kludge for a function we don't actually have.
 #ac_cv_func_getservbyname_r=${ac_cv_func_getservbyname_r=no}
@@ -305,6 +305,8 @@ ac_cv_func_htons=${ac_cv_func_htons=yes}
 ac_cv_func_if_indextoname=${ac_cv_func_if_indextoname=yes}	
 ac_cv_func_if_nameindex=${ac_cv_func_if_nameindex=yes}	
 ac_cv_func_if_nametoindex=${ac_cv_func_if_nametoindex=yes}	
+ac_cv_func_imaxabs=${ac_cv_func_imaxabs=yes}	
+ac_cv_func_imaxdiv=${ac_cv_func_imaxdiv=yes}	
 ac_cv_func_index=${ac_cv_func_index=yes}	
 ac_cv_func_inet_addr=${ac_cv_func_inet_addr=yes}	
 ac_cv_func_inet_aton=${ac_cv_func_inet_aton=yes}	
@@ -341,6 +343,7 @@ ac_cv_func_lchown=${ac_cv_func_lchown=yes}
 ac_cv_func_lfind=${ac_cv_func_lfind=yes}	
 ac_cv_func_link=${ac_cv_func_link=yes}
 ac_cv_func_listen=${ac_cv_func_listen=yes}	
+ac_cv_func_lldiv=${ac_cv_func_lldiv=yes}	
 ac_cv_func_localeconv=${ac_cv_func_localeconv=yes}	
 ac_cv_func_localtime=${ac_cv_func_localtime=yes}
 ac_cv_func_localtime_r=${ac_cv_func_localtime_r=yes}	
@@ -350,6 +353,7 @@ ac_cv_func_login_tty=${ac_cv_func_login_tty=yes}
 ac_cv_func_logout=${ac_cv_func_logout=yes}	
 ac_cv_func_longjmp=${ac_cv_func_longjmp=yes}	
 ac_cv_func_lrand48=${ac_cv_func_lrand48=yes}	
+ac_cv_func_lsearch=${ac_cv_func_lsearch=yes}	
 ac_cv_func_lseek=${ac_cv_func_lseek=yes}	
 ac_cv_func_lstat=${ac_cv_func_lstat=yes}
 ac_cv_func_madvise=${ac_cv_func_madvise=yes}	
@@ -555,6 +559,7 @@ ac_cv_func_strsignal=${ac_cv_func_strsignal=yes}
 ac_cv_func_strspn=${ac_cv_func_strspn=yes}	
 ac_cv_func_strstr=${ac_cv_func_strstr=yes}	
 ac_cv_func_strtod=${ac_cv_func_strtod=yes}	
+ac_cv_func_strtoimax=${ac_cv_func_strtoimax=yes}	
 ac_cv_func_strtok=${ac_cv_func_strtok=yes}	
 ac_cv_func_strtok_r=${ac_cv_func_strtok_r=yes}	
 ac_cv_func_strtol=${ac_cv_func_strtol=yes}	
@@ -562,6 +567,7 @@ ac_cv_func_strtoll=${ac_cv_func_strtoll=yes}
 ac_cv_func_strtoq=${ac_cv_func_strtoq=yes}	
 ac_cv_func_strtoul=${ac_cv_func_strtoul=yes}
 ac_cv_func_strtoull=${ac_cv_func_strtoull=yes}	
+ac_cv_func_strtoumax=${ac_cv_func_strtoumax=yes}
 ac_cv_func_strtouq=${ac_cv_func_strtouq=yes}	
 ac_cv_func_strvis=${ac_cv_func_strvis=yes}	
 ac_cv_func_swapctl=${ac_cv_func_swapctl=yes}	
@@ -734,12 +740,13 @@ ac_cv_header_regex_h=${ac_cv_header_regex_h=yes}
 ac_cv_header_rpc_rpc_h=${ac_cv_header_rpc_rpc_h=yes}
 ac_cv_header_rpcsvc_yp_prot_h=${ac_cv_header_rpcsvc_yp_prot_h=yes}
 ac_cv_header_rpcsvc_ypclnt_h=${ac_cv_header_rpcsvc_ypclnt_h=yes}
+ac_cv_header_search_h=${ac_cv_header_search_h=yes}
 ac_cv_header_sgtty_h=${ac_cv_header_sgtty_h=yes}
 ac_cv_header_signal_h=${ac_cv_header_signal_h=yes}
 ac_cv_header_stat_h=${ac_cv_header_stat_h=no}
 ac_cv_header_stdarg_h=${ac_cv_header_stdarg_h=yes}
 ac_cv_header_stdc=${ac_cv_header_stdc=yes}
-#ac_cv_header_stdint_h=${ac_cv_header_stdint_h=yes}
+ac_cv_header_stdint_h=${ac_cv_header_stdint_h=yes}
 ac_cv_header_stdio_h=${ac_cv_header_stdio_h=yes}
 ac_cv_header_stddef_h=${ac_cv_header_stddef_h=yes}
 ac_cv_header_stdlib_h=${ac_cv_header_stdlib_h=yes}
@@ -818,9 +825,11 @@ ac_cv_lib_m_open=${ac_cv_lib_m_open=yes}
 ac_cv_lib_m_pow=${ac_cv_lib_m_pow=yes}	
 ac_cv_lib_m_rand=${ac_cv_lib_m_rand=yes}	
 ac_cv_lib_m_rintf=${ac_cv_lib_m_rintf=yes}	
+ac_cv_lib_m_round=${ac_cv_lib_m_round=yes}	
 ac_cv_lib_m_sin=${ac_cv_lib_m_sin=yes}
 ac_cv_lib_m_sqrt=${ac_cv_lib_m_sqrt=yes}	
 ac_cv_lib_m_tanh=${ac_cv_lib_m_tanh=yes}	
+ac_cv_lib_m_trunc=${ac_cv_lib_m_trunc=yes}	
 ac_cv_lib_ncurses_tgetent=${ac_cv_lib_ncurses_tgetent=yes}
 ac_cv_lib_ncurses_tputs=${ac_cv_lib_ncurses_tputs=yes}
 ac_cv_lib_poll_poll=${ac_cv_lib_poll_poll=no}
