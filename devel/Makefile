@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.412 2006/10/27 09:30:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.413 2006/10/28 12:41:24 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -363,6 +363,7 @@
      SUBDIR += pccts
      SUBDIR += pcre
      SUBDIR += pcre++
+     SUBDIR += pear-Cache
      SUBDIR += pear-Config
      SUBDIR += pear-Date
      SUBDIR += pear-Log
