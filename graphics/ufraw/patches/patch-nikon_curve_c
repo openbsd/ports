@@ -1,6 +1,6 @@
-$OpenBSD: patch-nikon_curve_c,v 1.1.1.1 2006/09/17 17:52:38 mbalmer Exp $
---- nikon_curve.c.orig	Wed Apr 26 18:30:10 2006
-+++ nikon_curve.c	Tue Jul 11 23:00:25 2006
+$OpenBSD: patch-nikon_curve_c,v 1.2 2006/10/28 16:48:16 mbalmer Exp $
+--- nikon_curve.c.orig	Sun Aug 13 17:13:12 2006
++++ nikon_curve.c	Sat Oct 28 18:39:51 2006
 @@ -76,8 +76,8 @@ static const unsigned char *FileTypeHead
  #ifdef _STAND_ALONE_
  
@@ -51,7 +51,7 @@ $OpenBSD: patch-nikon_curve_c,v 1.1.1.1 2006/09/17 17:52:38 mbalmer Exp $
      }
  
      return NC_SUCCESS;
-@@ -1674,7 +1670,7 @@ int ConvertNikonCurveData(char *inFileNa
+@@ -1675,7 +1671,7 @@ int ConvertNikonCurveData(char *inFileNa
  {
      //Load the curve data from the ncv/ntc file
      NikonData data;
@@ -60,7 +60,7 @@ $OpenBSD: patch-nikon_curve_c,v 1.1.1.1 2006/09/17 17:52:38 mbalmer Exp $
      
      if ( samplingRes <= 1 || outputRes <= 1 || samplingRes > MAX_RESOLUTION
  	    || outputRes > MAX_RESOLUTION )
-@@ -1704,8 +1700,7 @@ int ConvertNikonCurveData(char *inFileNa
+@@ -1705,8 +1701,7 @@ int ConvertNikonCurveData(char *inFileNa
  	}
  	
  	//rename output files
@@ -70,7 +70,7 @@ $OpenBSD: patch-nikon_curve_c,v 1.1.1.1 2006/09/17 17:52:38 mbalmer Exp $
  	//if the name has an extension, attempt to remove it
  	if (tmpstr[strlen(tmpstr)-4] == '.')
  	{
-@@ -1715,19 +1710,19 @@ int ConvertNikonCurveData(char *inFileNa
+@@ -1716,19 +1711,19 @@ int ConvertNikonCurveData(char *inFileNa
  	switch(i)
  	{
  	    case TONE_CURVE:

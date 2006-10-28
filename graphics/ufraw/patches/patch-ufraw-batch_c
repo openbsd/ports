@@ -1,7 +1,7 @@
-$OpenBSD: patch-ufraw-batch_c,v 1.1.1.1 2006/09/17 17:52:38 mbalmer Exp $
---- ufraw-batch.c.orig	Fri Aug  4 10:27:39 2006
-+++ ufraw-batch.c	Fri Aug  4 10:28:21 2006
-@@ -55,9 +55,9 @@ int main (int argc, char **argv)
+$OpenBSD: patch-ufraw-batch_c,v 1.2 2006/10/28 16:48:16 mbalmer Exp $
+--- ufraw-batch.c.orig	Wed Oct 25 23:35:56 2006
++++ ufraw-batch.c	Sat Oct 28 18:39:51 2006
+@@ -59,9 +59,9 @@ int main (int argc, char **argv)
      if (strlen(cmd.inputFilename)>0) {
  	status = conf_load(&conf, cmd.inputFilename);
  	if (status==UFRAW_SUCCESS) {
