@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/28 17:11:29 mbalmer Exp $
+@comment pear/lib/.channels/.alias/pear.txt
+@comment pear/lib/.channels/.alias/pecl.txt
+@comment pear/lib/.channels/__uri.reg
+@comment pear/lib/.channels/pear.php.net.reg
+@comment pear/lib/.channels/pecl.php.net.reg
+@comment pear/lib/.depdb
+@comment pear/lib/.depdblock
+pear/lib/.registry/file.reg
+pear/lib/File/
+pear/lib/File.php
+pear/lib/File/CSV.php
+pear/lib/File/Util.php
+pear/tests/File/
+pear/tests/File/tests/
+pear/tests/File/tests/CSV/
+pear/tests/File/tests/CSV/001.csv
+pear/tests/File/tests/CSV/001.phpt
+pear/tests/File/tests/CSV/002.csv
+pear/tests/File/tests/CSV/002.phpt
+pear/tests/File/tests/CSV/003.csv
+pear/tests/File/tests/CSV/003.phpt
+pear/tests/File/tests/CSV/004.csv
+pear/tests/File/tests/CSV/004.phpt
+pear/tests/File/tests/CSV/005.csv
+pear/tests/File/tests/CSV/005.phpt
+pear/tests/File/tests/CSV/006.csv
+pear/tests/File/tests/CSV/006.phpt
+pear/tests/File/tests/CSV/tests.txt
+pear/tests/File/tests/FileTest.php
+pear/tests/File/tests/parser.php
+pear/tests/File/tests/test.csv
