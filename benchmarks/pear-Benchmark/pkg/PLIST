@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2006/10/19 11:50:14 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/10/28 13:54:47 mbalmer Exp $
 lib/
 lib/php/
 pear/doc/Benchmark/
+pear/doc/Benchmark/LICENSE
 pear/doc/Benchmark/doc/
 pear/doc/Benchmark/doc/timer_example.php
 @comment pear/lib/.channels/.alias/pear.txt
@@ -11,7 +12,7 @@ pear/doc/Benchmark/doc/timer_example.php
 @comment pear/lib/.channels/pecl.php.net.reg
 @comment pear/lib/.depdb
 @comment pear/lib/.depdblock
-@comment pear/lib/.registry/benchmark.reg
+pear/lib/.registry/benchmark.reg
 pear/lib/Benchmark/
 pear/lib/Benchmark/Iterate.php
 pear/lib/Benchmark/Profiler.php
