@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.69 2006/10/28 11:19:20 espie Exp $
+# $OpenBSD: Makefile,v 1.70 2006/10/29 10:37:59 mbalmer Exp $
 
 COMMENT=	"Open source LDAP software (client)"
 COMMENT-server=	"Open source LDAP software (server)"
 
 DISTNAME=	openldap-2.3.27
-FULLPKGNAME=	${DISTNAME:S/-/-client-/}
-PKGNAME-server=	${DISTNAME:S/-/-server-/}
+FULLPKGNAME=	${DISTNAME:S/-/-client-/}p0
+PKGNAME-server=	${DISTNAME:S/-/-server-/}p0
 SHARED_LIBS +=	lber                 9.1      # .2.15
 SHARED_LIBS +=	ldap                 9.1      # .2.15
 SHARED_LIBS +=	ldap_r               9.1      # .2.15
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes 
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto ssl
+WANTLIB=		c crypto ssl asn1 com_err gssapi krb5
 
 MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/openldap-release/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenLDAP/openldap-release/ \
@@ -101,11 +101,8 @@ pre-build:
 	@cd ${WRKBUILD}; ${MAKE_PROGRAM} depend
 
 pre-configure:
-.if ${FLAVOR:L:Msasl}
-	perl -pi -e 's,KRB5_LIBS=,KRB5_LIBS="-lgssapi -lkrb5 -lasn1
-	    -lcom_err",g' \
-		${WRKSRC}/configure
-.endif
+	perl -pi -e 's,KRB5_LIBS=,KRB5_LIBS="-lgssapi -lkrb5 -lasn1 \
+		-lcom_err",g' ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openldap
