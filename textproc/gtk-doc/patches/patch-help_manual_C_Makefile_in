@@ -1,0 +1,11 @@
+$OpenBSD: patch-help_manual_C_Makefile_in,v 1.1 2006/10/29 18:18:47 alek Exp $
+--- help/manual/C/Makefile.in.orig	Sun Oct 29 20:19:56 2006
++++ help/manual/C/Makefile.in	Sun Oct 29 20:20:14 2006
+@@ -391,7 +391,6 @@ uninstall-am: uninstall-info-am uninstal
+ @ENABLE_SCROLLKEEPER_TRUE@	for file in $(omffile); do \
+ @ENABLE_SCROLLKEEPER_TRUE@		$(INSTALL_DATA) $$file.out $(DESTDIR)$(omf_dest_dir)/$$file; \
+ @ENABLE_SCROLLKEEPER_TRUE@	done
+-@ENABLE_SCROLLKEEPER_TRUE@	-scrollkeeper-update -p $(scrollkeeper_localstate_dir) -o $(DESTDIR)$(omf_dest_dir)
+ 
+ @ENABLE_SCROLLKEEPER_TRUE@uninstall-local-omf:
+ @ENABLE_SCROLLKEEPER_TRUE@	-for file in $(srcdir)/*.omf; do \

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2006/09/22 12:08:56 aanriot Exp $
+# $OpenBSD: Makefile,v 1.4 2006/10/29 18:18:47 alek Exp $
 
 COMMENT=	"GTK C code documentation system"
 
 VERSION=	1.7
 DISTNAME=	gtk-doc-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=    	textproc devel
 
 HOMEPAGE=	http://www.gtk.org/gtk-doc/
