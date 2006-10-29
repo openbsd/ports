@@ -1,0 +1,15 @@
+smtp-benchmark consists of two programs, smtpsend and smtpsink.
+Whereas smtpsend is used to send generated e-mail messages using SMTP
+to a mail transfer agent, smtpsink is designed to dispose of received
+messages as quick as possible.
+
+smtpsend measures the time spent sending e-mails and the number
+of e-mails actually sent and outputs statistics after the program
+run.
+
+smtpsend can fork one or more parallel senders each using one or more
+sequential connections to a SMTP server to deliver one or more
+messages per connection.
+
+smtpsink comes in handy when the relaying performance of a MTA is
+to be measured.
