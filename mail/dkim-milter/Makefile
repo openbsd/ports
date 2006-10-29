@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2006/10/17 06:21:57 jakob Exp $
+# $OpenBSD: Makefile,v 1.3 2006/10/29 18:34:25 steven Exp $
 
 COMMENT=	"DKIM milter"
 
 DISTNAME=	dkim-milter-0.5.2
-PKGNAME=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	mail
 HOMEPAGE=	http://sourceforge.net/projects/dkim-milter/
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=		Yes
 PERMIT_DISTFILES_CDROM=		Patent
 PERMIT_DISTFILES_FTP=		Yes
 
-WANTLIB=	c pthread milter
+WANTLIB=	c crypto pthread milter ssl
 
 EXAMPLESDIR=	share/examples/dkim-milter
 

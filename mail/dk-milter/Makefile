@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/07/31 12:35:07 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2006/10/29 18:34:25 steven Exp $
 
 COMMENT=	"DomainKeys milter"
 
 DISTNAME=	dk-milter-0.4.1
-PKGNAME=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	mail
 HOMEPAGE=	http://sourceforge.net/projects/dk-milter/
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=		Yes
 PERMIT_DISTFILES_CDROM=		Patent
 PERMIT_DISTFILES_FTP=		Yes
 
-WANTLIB=	c pthread milter
+WANTLIB=	c crypto pthread milter ssl
 
 EXAMPLESDIR=	share/examples/dk-milter
 
