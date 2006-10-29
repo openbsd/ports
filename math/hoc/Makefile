@@ -1,10 +1,10 @@
 # Ports collection makefile for	"hoc", the High Order Calculator
-# $OpenBSD: Makefile,v 1.22 2004/12/27 07:16:44 alek Exp $
+# $OpenBSD: Makefile,v 1.23 2006/10/29 23:14:43 ian Exp $
 
 COMMENT=	"from Kernighan & Pike: High Order Calculator"
 
 DISTNAME=	hoc
-PKGNAME=	hoc-1.1
+PKGNAME=	hoc-1.1p0
 CATEGORIES=	math
 
 MASTER_SITES=	http://cm.bell-labs.com/cm/cs/who/bwk/
@@ -28,8 +28,6 @@ ALL_TARGET=	hoc
 MAKE_FILE=	makefile
 
 WRKDIST=	${WRKDIR}
-
-NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hoc ${PREFIX}/bin

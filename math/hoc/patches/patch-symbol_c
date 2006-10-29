@@ -1,0 +1,15 @@
+$OpenBSD: patch-symbol_c,v 1.1 2006/10/29 23:14:43 ian Exp $
+--- symbol.c.orig	Sun Oct 29 17:00:59 2006
++++ symbol.c	Sun Oct 29 17:01:25 2006
+@@ -21,8 +21,9 @@ install(char* s, int t, double d)  /* in
+ 	Symbol *sp;
+ 
+ 	sp = emalloc(sizeof(Symbol));
+-	sp->name = emalloc(strlen(s)+1); /* +1 for '\0' */
+-	strcpy(sp->name, s);
++	size_t len = strlen(s) + 1;
++	sp->name = emalloc(len); /* +1 for '\0' */
++	strlcpy(sp->name, s, len);
+ 	sp->type = t;
+ 	sp->u.val = d;
+ 	sp->next = symlist; /* put at front of list */

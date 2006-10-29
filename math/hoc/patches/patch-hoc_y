@@ -1,0 +1,30 @@
+--- hoc.y.orig	Sun Oct 29 16:58:33 2006
++++ hoc.y	Sun Oct 29 16:58:52 2006
+@@ -223,8 +223,9 @@ yylex(void)		/* hoc6 */
+ 			*p = backslash(c);
+ 		}
+ 		*p = 0;
+-		yylval.sym = (Symbol *)emalloc(strlen(sbuf)+1);
+-		strcpy((char*)yylval.sym, sbuf);
++		size_t buflen = strlen(sbuf) + 1;
++		yylval.sym = (Symbol *)emalloc(buflen);
++		strlcpy((char*)yylval.sym, sbuf, buflen);
+ 		return STRING;
+ 	}
+ 	switch (c) {
+@@ -284,13 +285,13 @@ execerror(char* s, char* t)	/* recover f
+ }
+ 
+ void
+-fpecatch(void)	/* catch floating point exceptions */
++fpecatch(int signum)	/* catch floating point exceptions */
+ {
+ 	execerror("floating point exception", (char *) 0);
+ }
+ 
+ void
+-intcatch(void)	/* catch interrupts */
++intcatch(int signum)	/* catch interrupts */
+ {
+ 	execerror("interrupt", (char *) 0);
+ }

@@ -1,6 +1,6 @@
---- makefile.orig	Thu Feb 22 23:04:59 2001
-+++ makefile	Thu Feb 22 23:06:41 2001
-@@ -1,26 +1,30 @@
+--- makefile.orig	Sun Oct 29 17:03:34 2006
++++ makefile	Sun Oct 29 17:11:52 2006
+@@ -1,29 +1,38 @@
  YFLAGS = -d
 -CFLAGS = -g
 +#CFLAGS = -g
@@ -31,9 +31,17 @@
  install:	hoc
  	cp hoc /usr/bin
  	strip /usr/bin/hoc
-+
+ 
 +y.tab.h y.tab.c: hoc.y
 +	yacc ${YFLAGS} hoc.y
- 
++
  clean:
  	rm -f $(OBJS) [xy].tab.[ch]  hoc
+ 
+ bundle:
+ 	@bundle $(SRC) makefile README
++
++# a few basic tests
++regress:
++	echo 2/3 | hoc | grep '^0.66666666*7$$' >/dev/null
++	echo 'x=22/7\nprint x' | hoc | grep '^3.142857' >/dev/null
