@@ -1,5 +1,13 @@
 Using PostgreSQL in an OpenBSD environment
 
+At least two different accounts are involved when working with PostgreSQL:
+One is an OpenBSD userid, '_posgresql', which is used as the userid of files
+that are part of PostgreSQL.  The other, usually named 'postgres', is not an
+OpenBSD userid, i.e. you will not find it in /etc/passwd, but an account
+internal to the database system.  The 'postgres' account is called the dba
+account (database administrator) and is created when a new database is
+initialized using the initdb command.
+
 If you are installing PostgreSQL for the first time, you have to create
 a default database first.  In the following example we install a database
 in /var/postgresql/data with a dba account 'postgres' and md5 authentication.
@@ -8,6 +16,11 @@ We will be prompted for a password to protect the dba account:
        # su - _postgresql
        $ mkdir /var/postgresql/data
        $ initdb -D /var/postgresql/data -U postgres -A md5 -W
+
+It is strongly advised that you do not work with the postgres dba account
+other than creating more users and/or databases or for administrative task.
+Use the PostgreSQL permission system to make sure that a database is only
+accessed by programs/users that have the right to do so.
 
 Please consult the PostgreSQL website for more information, especially when
 you are upgrading an existing database installation.
@@ -84,3 +97,11 @@ Change the login class with either vipw(8) or chsh(8).
 For more than about 250 connections, these numbers should be
 increased. Please report any changes and experiences to the package
 maintainers so that we can update this file for future versions.
+
+Clients/Frontends
+
+Many applications can use the PostgreSQL database right away.  To faciliate
+administration of a PostgreSQL database, two clients are notable:
+
+www/phppgadmin		A web based user interface that uses PHP5
+databases/pgadmin3	A graphical user interface that uses wxWidgets
