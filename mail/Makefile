@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.163 2006/10/19 01:22:01 alek Exp $
+# $OpenBSD: Makefile,v 1.164 2006/10/29 14:38:34 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -130,6 +130,7 @@
      SUBDIR += ruby-actionmailer
      SUBDIR += signify
      SUBDIR += sma
+     SUBDIR += smsmail
      SUBDIR += smtp-vilter
      SUBDIR += smtpclient
      SUBDIR += solid-pop3d
