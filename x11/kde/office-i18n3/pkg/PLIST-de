@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-de,v 1.3 2006/08/04 10:35:19 espie Exp $
+@comment $OpenBSD: PLIST-de,v 1.4 2006/10/29 22:58:47 espie Exp $
 share/apps/koffice/
 share/apps/koffice/autocorrect/
 share/apps/koffice/autocorrect/de.xml
@@ -34,6 +34,8 @@ ${DOC}kchart/kchart-wizard3.png
 ${DOC}kchart/kchart-wizard4.png
 ${DOC}kchart/shortcut.png
 ${DOC}kchart/toolbars.png
+${DOC}kexi/
+${DOC}kexi/credits.docbook
 ${DOC}kformula/
 ${DOC}kformula/ambiguous-string.png
 ${DOC}kformula/common
@@ -81,6 +83,8 @@ ${DOC}kpresenter/menus.docbook
 ${DOC}kpresenter/options.docbook
 ${DOC}kpresenter/screen.docbook
 ${DOC}kpresenter/tutorial.docbook
+${DOC}krita/
+${DOC}krita/credits.docbook
 ${DOC}kspread/
 ${DOC}kspread/a11y.docbook
 ${DOC}kspread/advanced.docbook

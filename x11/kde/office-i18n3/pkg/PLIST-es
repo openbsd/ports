@@ -1,10 +1,8 @@
-@comment $OpenBSD: PLIST-es,v 1.4 2006/08/18 08:12:52 bernd Exp $
+@comment $OpenBSD: PLIST-es,v 1.5 2006/10/29 22:58:47 espie Exp $
 share/apps/koffice/
 share/apps/koffice/autocorrect/
 share/apps/koffice/autocorrect/es.xml
 share/doc/HTML/es/
-@comment ${DOC}api/
-@comment ${DOC}api/kfontdialog.png
 ${DOC}karbon/
 ${DOC}karbon/common
 ${DOC}karbon/${C}
@@ -52,10 +50,12 @@ ${DOC}kchart/toolbars.png
 ${DOC}kexi/
 ${DOC}kexi/basics.docbook
 ${DOC}kexi/building.docbook
+${DOC}kexi/comparing.docbook
 ${DOC}kexi/configuration.docbook
 ${DOC}kexi/contact-example.png
 ${DOC}kexi/credits.docbook
 ${DOC}kexi/database.docbook
+${DOC}kexi/enteringdataintotables.docbook
 ${DOC}kexi/intro.docbook
 ${DOC}kexi/menus.docbook
 ${DOC}kformula/
@@ -115,6 +115,7 @@ ${DOC}koshell/new-dialog.png
 ${DOC}koshell/side-pane.png
 ${DOC}kplato/
 ${DOC}kplato/commands.docbook
+${DOC}kplato/common
 ${DOC}kplato/configure-wbs.png
 ${DOC}kplato/configure2.1.png
 ${DOC}kplato/configure2.png
@@ -127,6 +128,8 @@ ${DOC}kplato/edit-calendar2.png
 ${DOC}kplato/edit-resources.png
 ${DOC}kplato/edit-resources1.png
 ${DOC}kplato/edit-worktime.png
+${DOC}kplato/${C}
+${DOC}kplato/${I}
 ${DOC}kplato/mainwindow.docbook
 ${DOC}kplato/mainwindow1.png
 ${DOC}kplato/options.docbook
@@ -251,6 +254,7 @@ ${DOC}krita/commands-menus.docbook
 ${DOC}krita/commands-palettes.docbook
 ${DOC}krita/commands-toolbars.docbook
 ${DOC}krita/commands.docbook
+${DOC}krita/common
 ${DOC}krita/createdocument.png
 ${DOC}krita/credits.docbook
 ${DOC}krita/crocusses-bumpmap.png
@@ -299,6 +303,8 @@ ${DOC}krita/dialogs-shearimage.png
 ${DOC}krita/dialogs-shearlayer.png
 ${DOC}krita/faq.docbook
 ${DOC}krita/filters-customconvolution.png
+${DOC}krita/${C}
+${DOC}krita/${I}
 ${DOC}krita/installation.docbook
 ${DOC}krita/introduction.docbook
 ${DOC}krita/mainscreen.png

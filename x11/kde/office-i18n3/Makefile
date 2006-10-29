@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2006/08/18 08:12:52 bernd Exp $
+# $OpenBSD: Makefile,v 1.17 2006/10/29 22:58:47 espie Exp $
 
-LANGS= af ar bg br bs ca cs cy da de el en_GB eo es et eu fi fr ga he hi \
-	hu is it ja lt mk nb nl nn pl pt pt_BR ro ru se sl sr sr@Latn \
-	sv ta tg tr uk uz zh_CN
+LANGS= ca cs cy da de el en_GB es et eu fi fr \
+	hu it ja lv ms nb nl pl pt pt_BR ru sk sl sr sr@Latn \
+	sv tr uk zh_CN zh_TW
 
 # some extra vars to compact PLISTs
 I=index.docbook
@@ -15,7 +15,7 @@ FLAVORS+=$l
 .  if ${FLAVOR:L:M${l:L}}
 DISTFILES=koffice-l10n-$l-${VERSION}.tar.bz2
 WRKDIST=${WRKDIR}/koffice-l10n-$l-${VERSION}
-FULLPKGNAME=koffice-i18n-$l-${VERSION:S/-//g}p0
+FULLPKGNAME=koffice-i18n-$l-${VERSION:S/-//g}
 COMMENT= "$l translations for KDE"
 PLIST=${PKGDIR}/PLIST-$l
 DOC=share/doc/HTML/$l/
@@ -27,7 +27,7 @@ SUBST_VARS+=DOC LOC
 
 DISTNAME=		koffice-i18n-${VERSION}
 CATEGORIES=		x11 x11/kde
-VERSION=		1.5.2
+VERSION=		1.6.0
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}
 MASTER_SITES=	${MASTER_SITE_KDE:=stable/koffice-${VERSION}/src/koffice-l10n/}
 

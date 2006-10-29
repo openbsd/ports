@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2006/06/03 12:47:30 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2006/10/29 22:58:47 espie Exp $
 
      SUBDIR+= arts3
      SUBDIR+= libs3
@@ -82,7 +82,6 @@
      SUBDIR+=i18n3,vi
      SUBDIR+=i18n3,zh_CN
      SUBDIR+=i18n3,zh_TW
-     SUBDIR+=office-i18n3,bg
      SUBDIR+=office-i18n3,ca
      SUBDIR+=office-i18n3,cs
      SUBDIR+=office-i18n3,cy
@@ -97,20 +96,24 @@
      SUBDIR+=office-i18n3,fr
      SUBDIR+=office-i18n3,hu
      SUBDIR+=office-i18n3,it
+     SUBDIR+=office-i18n3,ja
+     SUBDIR+=office-i18n3,lv
+     SUBDIR+=office-i18n3,ms
      SUBDIR+=office-i18n3,nb
      SUBDIR+=office-i18n3,nl
-     SUBDIR+=office-i18n3,nn
      SUBDIR+=office-i18n3,pl
      SUBDIR+=office-i18n3,pt
      SUBDIR+=office-i18n3,pt_BR
      SUBDIR+=office-i18n3,ru
+     SUBDIR+=office-i18n3,sk
      SUBDIR+=office-i18n3,sl
      SUBDIR+=office-i18n3,sr
      SUBDIR+=office-i18n3,sr@Latn
      SUBDIR+=office-i18n3,sv
-     SUBDIR+=office-i18n3,ta
-     SUBDIR+=office-i18n3,tg
+     SUBDIR+=office-i18n3,tr
+     SUBDIR+=office-i18n3,uk
      SUBDIR+=office-i18n3,zh_CN
+     SUBDIR+=office-i18n3,zh_TW
 #     SUBDIR+= anime-sitters
      SUBDIR+= kdoc3
      SUBDIR+= libs3-doc

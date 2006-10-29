@@ -1,8 +1,12 @@
-@comment $OpenBSD: PLIST-fr,v 1.4 2006/08/04 10:35:19 espie Exp $
+@comment $OpenBSD: PLIST-fr,v 1.5 2006/10/29 22:58:47 espie Exp $
 share/apps/koffice/
 share/apps/koffice/autocorrect/
 share/apps/koffice/autocorrect/fr.xml
 share/doc/HTML/fr/
+${DOC}karbon/
+${DOC}karbon/common
+${DOC}karbon/${C}
+${DOC}karbon/${I}
 ${DOC}kchart/
 ${DOC}kchart/common
 ${DOC}kchart/file-toolbar.png
