@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.9 2006/08/04 10:35:19 espie Exp $
---- configure.in.orig	Sun Jul  9 04:30:54 2006
-+++ configure.in	Fri Jul 14 18:40:32 2006
-@@ -935,8 +935,8 @@ dnl *** Check that the paths given to co
+$OpenBSD: patch-configure_in,v 1.10 2006/10/29 22:55:57 espie Exp $
+--- configure.in.orig	Sun Oct  8 01:05:47 2006
++++ configure.in	Sat Oct 28 16:12:11 2006
+@@ -984,8 +984,8 @@ dnl *** Check that the paths given to co
  
      AC_MSG_CHECKING([for PostgreSQL C API libraries])
      pgsql_libdirs="$ac_pgsql_libdir /usr/local/lib$kdelibsuff /usr/lib$kdelibsuff"
@@ -12,7 +12,7 @@ $OpenBSD: patch-configure_in,v 1.9 2006/08/04 10:35:19 espie Exp $
        PG_LIBDIR=$pgsql_libdir
        AC_MSG_RESULT([$PG_LIBDIR])
        AC_SUBST(PG_LIBDIR)
-@@ -1015,8 +1015,8 @@ dnl ====================================
+@@ -1064,8 +1064,8 @@ dnl ====================================
  if test "$compile_pgsql_plugin" = "yes"; then
    AC_MSG_CHECKING([for PostgreSQL C++ libraries])
    pqxx_libdirs="$ac_pqxx_libdir /usr/local/lib$kdelibsuff /usr/lib$kdelibsuff"
@@ -23,7 +23,7 @@ $OpenBSD: patch-configure_in,v 1.9 2006/08/04 10:35:19 espie Exp $
      PQXX_LIBDIR=$pqxx_libdir
      AC_MSG_RESULT([$PQXX_LIBDIR])
      AC_SUBST(PQXX_LIBDIR)
-@@ -1053,7 +1053,7 @@ AC_CACHE_VAL(ac_cv_have_knewstuff,
+@@ -1102,7 +1102,7 @@ AC_CACHE_VAL(ac_cv_have_knewstuff,
  AC_FIND_FILE(knewstuff/downloaddialog.h, $kde_incdirs, knewstuff_incdir)
  ac_knewstuff_includes="$knewstuff_incdir"
  
@@ -32,7 +32,7 @@ $OpenBSD: patch-configure_in,v 1.9 2006/08/04 10:35:19 espie Exp $
  ac_knewstuff_libraries="$knewstuff_libdir"
  
  if test "$ac_knewstuff_includes" = NO || test "$ac_knewstuff_libraries" = NO; then
-@@ -1221,6 +1221,8 @@ AC_SUBST(LCMS_LIBS)
+@@ -1302,6 +1302,8 @@ AC_SUBST(LCMS_LIBS)
  # Check if the 1.14 version of lcms is detected
  if test ! "$LCMS_LIBS" = ""
  then
@@ -41,7 +41,7 @@ $OpenBSD: patch-configure_in,v 1.9 2006/08/04 10:35:19 espie Exp $
  AC_LANG_SAVE
  AC_LANG_CPLUSPLUS
  AC_TRY_COMPILE(
-@@ -1229,6 +1231,7 @@ AC_TRY_COMPILE(
+@@ -1310,6 +1312,7 @@ AC_TRY_COMPILE(
       #error lcms 1.14 detected
       #endif ] , [ ], lcms_version_114='no', lcms_version_114='yes' )
  AC_LANG_RESTORE
@@ -49,7 +49,7 @@ $OpenBSD: patch-configure_in,v 1.9 2006/08/04 10:35:19 espie Exp $
  fi
  
  # IM 6.1.3 changed the number of arguments to GetMagickInfoList
-@@ -1420,7 +1423,7 @@ dnl FILE: ./lib/kotext/configure.in.in
+@@ -1494,7 +1497,7 @@ dnl FILE: ./lib/kotext/configure.in.in
  dnl =======================================================
  
     AC_LANG_SAVE

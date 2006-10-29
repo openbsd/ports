@@ -1,73 +1,68 @@
-# $OpenBSD: Makefile,v 1.39 2006/10/20 11:07:58 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.40 2006/10/29 22:55:57 espie Exp $
 
 COMMENT=		"office suite for KDE"
 
-VERSION=		1.5.2
+VERSION=		1.6.0
 CATEGORIES=		x11 x11/kde productivity
 VMEM_WARNING=		Yes
 MASTER_SITES?=		${MASTER_SITE_KDE:S@$@stable/koffice-${VERSION}/src/@}
 
 DISTNAME=	koffice-${VERSION}
 
-#SHARED_LIBS=	karbonbase		3.0 \
-#		kexipropertyeditor	1.0 \
-#		koscript		3.0 \
-
-SHARED_LIBS=	kchartimageexport	4.0 \
-		kexiutils		1.0 \
-		kopalette		1.0 \
-		koproperty		0.0 \
-		kpresenterimageexport	4.0 \
-		kpresenterprivate	4.0 \
-		krita_cmyk_u16		0.0 \
-		krita_gray_u16		0.0 \
-		krita_lms_f32		0.0 \
-		krita_rgb_f16half	0.0 \
-		krita_rgb_f32		0.0 \
-		krita_rgb_u16		0.0 \
-		kritacolor		1.0 \
-		kritagrayscale		0.0 \
-		kritaimage		1.0 \
-		kritargb		0.0 \
-		kritascripting		0.0 \
-		kritaui			1.0 \
-		krossapi		1.0 \
-		krossmain		1.0 \
-		kwordprivate		4.0
-
-# need to check version of these
-SHARED_LIBS+=				    \
-		karboncommon		1.0 \
-		kchartcommon		3.0 \
-		kdchart			1.0 \
-		kexicore		1.0 \
-		kexidatatable		1.0 \
-		kexidb			1.0 \
-		kexidbparser		1.0 \
-		kexiextendedwidgets	1.0 \
-		kexiformutils		1.0 \
-		kexiguiutils		1.0 \
-		keximain		1.0 \
-		keximigrate		1.0 \
-		kexirelationsview	1.0 \
-		kexisql2		3.0 \
-		kexisql3		4.0 \
-		kformdesigner		1.0 \
-		kformulalib		4.0 \
-		kiviocommon		1.0 \
-		kochart			2.0 \
-		kofficecore		3.0 \
-		kofficeui		3.0 \
-		kopainter		2.0 \
-		kotext			3.0 \
-		kowmf			2.0 \
-		kritacommon		2.0 \
-		kspreadcommon		1.0 \
-		kstore			3.0 \
-		kugarlib		2.0 \
-		kwmailmerge_interface	5.0 \
-		kwmf			3.0 \
-		kwordexportfilters	2.0
+SHARED_LIBS +=	kstore               3.0      # .3.0
+SHARED_LIBS +=	kwmf                 3.0      # .3.0
+SHARED_LIBS +=	kowmf                2.0      # .2.0
+SHARED_LIBS +=	kofficecore          3.0      # .3.0
+SHARED_LIBS +=	kofficeui            3.0      # .3.0
+SHARED_LIBS +=	kotext               3.0      # .3.0
+SHARED_LIBS +=	kopainter            2.0      # .2.0
+SHARED_LIBS +=	kformulalib          4.0      # .4.0
+SHARED_LIBS +=	koproperty           1.0      # .2.0
+SHARED_LIBS +=	kopalette            1.0      # .1.0
+SHARED_LIBS +=	krossapi             1.0      # .1.0
+SHARED_LIBS +=	krossmain            1.0      # .1.0
+SHARED_LIBS +=	kochart              2.0      # .1.0
+SHARED_LIBS +=	karboncommon         1.0      # .0.0
+SHARED_LIBS +=	kdchart              1.0      # .0.0
+SHARED_LIBS +=	kchartcommon         3.0      # .2.0
+SHARED_LIBS +=	kiviocommon          1.0      # .0.0
+SHARED_LIBS +=	kpresenterprivate    4.0      # .4.0
+SHARED_LIBS +=	kritacolor           1.0      # .1.0
+SHARED_LIBS +=	kritaimage           1.0      # .1.0
+SHARED_LIBS +=	kritaui              1.0      # .1.0
+SHARED_LIBS +=	kritacommon          2.0      # .1.0
+SHARED_LIBS +=	kritargb             0.0      # .0.0
+SHARED_LIBS +=	krita_rgb_u16        0.0      # .0.0
+SHARED_LIBS +=	krita_rgb_f32        0.0      # .0.0
+SHARED_LIBS +=	kritagrayscale       0.0      # .0.0
+SHARED_LIBS +=	krita_gray_u16       0.0      # .0.0
+SHARED_LIBS +=	krita_cmyk_u16       0.0      # .0.0
+SHARED_LIBS +=	krita_lms_f32        0.0      # .0.0
+SHARED_LIBS +=	krita_ycbcr_u8       0.0      # .0.0
+SHARED_LIBS +=	krita_ycbcr_u16      0.0      # .0.0
+SHARED_LIBS +=	krita_rgb_f16half    0.0      # .0.0
+SHARED_LIBS +=	kritascripting       0.0      # .0.0
+SHARED_LIBS +=	kspreadcommon        1.0      # .0.0
+SHARED_LIBS +=	kugarlib             2.0      # .1.2
+SHARED_LIBS +=	kwmailmerge_interface 5.0      # .4.0
+SHARED_LIBS +=	kwordprivate         4.0      # .4.0
+SHARED_LIBS +=	kexisql3             4.1      # .3.2
+SHARED_LIBS +=	kexisql2             3.0      # .2.8
+SHARED_LIBS +=	kexiutils            2.0      # .2.0
+SHARED_LIBS +=	kexidb               2.0      # .2.0
+SHARED_LIBS +=	kexidbparser         2.0      # .2.0
+SHARED_LIBS +=	kexicore             2.0      # .2.0
+SHARED_LIBS +=	kexiguiutils         2.0      # .2.0
+SHARED_LIBS +=	kexidatatable        2.0      # .2.0
+SHARED_LIBS +=	kexiextendedwidgets  2.0      # .2.0
+SHARED_LIBS +=	kexirelationsview    2.0      # .2.0
+SHARED_LIBS +=	kformdesigner        2.0      # .2.0
+SHARED_LIBS +=	keximain             2.0      # .2.0
+SHARED_LIBS +=	keximigrate          2.0      # .2.0
+SHARED_LIBS +=	kexiformutils        2.0      # .2.0
+SHARED_LIBS +=	kchartimageexport    4.0      # .4.0
+SHARED_LIBS +=	kwordexportfilters   2.0      # .1.1
+SHARED_LIBS +=	kpresenterimageexport 4.0      # .4.0
 
 FLAVORS=debug
 FAKE_FLAGS=	${MAKE_FLAGS} TAR=tar DESTDIR=${WRKINST}
@@ -87,7 +82,9 @@ LIB_DEPENDS=	kdecore.>=4,DCOP,artskde,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kpart
 		jbig::graphics/jbigkit \
 		mysqlclient::databases/mysql \
 		ruby::lang/ruby \
-		exif.>=12::graphics/libexif
+		exif.>=12::graphics/libexif \
+		poppler-qt::print/poppler,-qt \
+		GraphicsMagick::graphics/GraphicsMagick
 
 
 WANTLIB=	ICE SM X11 Xext Xrender artsflow artsflow_idl audiofile bz2 c \
@@ -96,7 +93,7 @@ WANTLIB=	ICE SM X11 Xext Xrender artsflow artsflow_idl audiofile bz2 c \
 		m mad mcop ogg ossaudio pcre pcreposix png pthread qtmcop \
 		soundserver_idl stdc++ tiff util vorbis vorbisenc vorbisfile \
 		xml2 xslt z Xt termcap Xi fontconfig crypto readline ssl \
-		IlmImf Half Imath Iex idn GL GLU
+		IlmImf Half Imath Iex idn GL GLU poppler
 
 
 CONFIGURE_ARGS+= --with-pgsqlincdir=${LOCALBASE}/include/postgresql
