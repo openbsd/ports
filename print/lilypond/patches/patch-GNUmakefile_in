@@ -1,0 +1,15 @@
+$OpenBSD: patch-GNUmakefile_in,v 1.1.1.1 2006/10/29 19:27:12 kili Exp $
+
+# We don't want to use GNU tar for this.
+
+--- GNUmakefile.in.orig	Tue Aug  8 23:32:18 2006
++++ GNUmakefile.in	Sat Oct  7 22:03:19 2006
+@@ -93,7 +93,7 @@ local-WWW-post:
+ ## rewrite file names so we lose out-www
+ 	rm -rf $(outdir)/web-root/
+ 	mkdir $(outdir)/web-root/  
+-	cat $(outdir)/weblist | (cd $(top-build-dir); tar -cf-  -T- ) | \
++	tar -cf- -C $(top-build-dir) -I $(outdir)/weblist | \
+ 		tar -C $(outdir)/web-root/ -xf -  
+ 	for dir in $(outdir)/web-root/ ; do  \
+ 		cd $$dir && \

@@ -1,0 +1,26 @@
+$OpenBSD: patch-mf_GNUmakefile,v 1.1.1.1 2006/10/29 19:27:12 kili Exp $
+
+# Don't pollute everything with font caches.
+
+--- mf/GNUmakefile.orig	Tue May  9 12:11:16 2006
++++ mf/GNUmakefile	Sat Jun 10 21:01:00 2006
+@@ -92,8 +92,8 @@ $(outdir)/fonts.cache-1: $(PFA_FILES) $(
+ local-install: install-fc-cache
+ 
+ install-fc-cache:
+-	$(foreach suff, $(INSTALLATION_OUT_SUFFIXES), rm -f $(DESTDIR)$(INSTALLATION_OUT_DIR$(suff))/fonts.cache-1 && ) true
+-	fc-cache $(foreach suff, $(INSTALLATION_OUT_SUFFIXES), $(DESTDIR)$(INSTALLATION_OUT_DIR$(suff)))
++	$(foreach suff, 2 5, rm -f $(DESTDIR)$(INSTALLATION_OUT_DIR$(suff))/fonts.cache-1 && ) true
++	fc-cache $(foreach suff, 2 5, $(DESTDIR)$(INSTALLATION_OUT_DIR$(suff)))
+ 
+ ALL_FONTS = $(FETA_FONTS) $(SAUTER_FONTS)
+ PFA_FILES = $(ALL_FONTS:%=$(outdir)/%.pfa)
+@@ -107,7 +107,7 @@ ALL_GEN_FILES= $(TFM_FILES) $(TEXTABLES)
+ INSTALLATION_DIR=$(local_lilypond_datadir)/fonts/source
+ INSTALLATION_FILES=$(MF_FILES) $(AF_FILES)
+ 
+-INSTALLATION_OUT_SUFFIXES=1 2 3 4 5 6
++INSTALLATION_OUT_SUFFIXES=1 2 3 4 5
+ 
+ INSTALLATION_OUT_DIR1=$(local_lilypond_datadir)/tex
+ INSTALLATION_OUT_FILES1=$(TEXTABLES)
