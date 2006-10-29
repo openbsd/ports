@@ -1,0 +1,12 @@
+$OpenBSD: patch-etc_lua_pc,v 1.1 2006/10/29 19:45:54 pedro Exp $
+--- etc/lua.pc.orig	Sun Oct 29 15:51:01 2006
++++ etc/lua.pc	Sun Oct 29 15:51:09 2006
+@@ -8,7 +8,7 @@ V= 5.1
+ R= 5.1.1
+ 
+ # grep '^INSTALL_.*=' ../Makefile | sed 's/INSTALL_TOP/prefix/'
+-prefix= /usr/local
++prefix= @prefix@
+ INSTALL_BIN= ${prefix}/bin
+ INSTALL_INC= ${prefix}/include
+ INSTALL_LIB= ${prefix}/lib
