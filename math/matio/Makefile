@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/19 10:51:01 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2006/10/29 18:05:50 steven Exp $
 
 COMMENT=	"library for reading and writing Matlab MAT files"
 
 DISTNAME=	matio-1.3.1
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	matio	0.0
 CATEGORIES=	math
 
@@ -15,6 +16,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=matio/}
+
+WANTLIB=	g2c m
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
