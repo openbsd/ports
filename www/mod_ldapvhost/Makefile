@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/10/22 09:04:03 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.3 2006/10/29 18:48:24 steven Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -7,7 +7,7 @@ SHARED_ONLY=		Yes
 COMMENT=		"Apache LDAP based virtual hosts module"
 
 DISTNAME=		mod_ldapvhost-1.0.2
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		www
 
 HOMEPAGE=		https://www.msys.ch/products/unix/mod_ldapvhost/
@@ -25,7 +25,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 NO_REGRESS=		Yes
 
-RUN_DEPENDS=		ldap,lber::databases/openldap
+LIB_DEPENDS=		ldap,lber::databases/openldap
 
 do-build:
 	(cd ${WRKBUILD}; make)
