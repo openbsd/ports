@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2006/07/30 17:26:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2006/10/29 18:16:55 steven Exp $
 
 COMMENT=	"aewm++ based pretty themable window manager"
 
-VERSION=	0.1.5
-DISTNAME=	pekwm-${VERSION}
+DISTNAME=	pekwm-0.1.5
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://pekwm.org/
@@ -13,7 +13,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xpm c m stdc++
+
+WANTLIB=	ICE SM X11 Xext Xft Xpm Xrandr Xrender \
+		c fontconfig freetype m stdc++
 
 MASTER_SITES=		${HOMEPAGE}files/
 
