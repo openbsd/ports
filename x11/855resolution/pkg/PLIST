@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/08/09 20:14:27 sturm Exp $
-sbin/855resolution
-share/doc/855resolution/
-share/doc/855resolution/README.txt

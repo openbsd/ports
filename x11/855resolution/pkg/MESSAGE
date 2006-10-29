@@ -1,7 +1,0 @@
-To set the resolution at reboot, add something like this to
-rc.securelevel:
-
-if [ -x ${PREFIX}/sbin/855resolution ]; then
-	echo -n ' 855resolution'
-	${PREFIX}/sbin/855resolution 4d 1400 1050 > /dev/null
-fi
