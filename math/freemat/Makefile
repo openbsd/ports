@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/28 19:53:04 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2006/10/29 11:03:30 steven Exp $
 
 COMMENT=	"environment for rapid engineering and scientific processing"
 
@@ -34,6 +34,7 @@ LIB_DEPENDS=	avcall::devel/ffcall \
 		matio::math/matio \
 		umfpack::math/umfpack
 
+USE_X11=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	F77=${FC} \
