@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/29 14:37:30 mbalmer Exp $
+bin/smsmail
+@man man/cat1/smsmail.0
+@man man/cat5/smsmail.conf.0
+share/examples/smsmail/
+share/examples/smsmail/sms.schema
+share/examples/smsmail/smsmail.conf
+@sample ${SYSCONFDIR}/smsmail.conf
