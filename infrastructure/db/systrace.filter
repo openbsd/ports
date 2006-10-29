@@ -145,7 +145,11 @@
 	native-semctl: permit
 	native-semget: permit
 	native-semop: permit
-	native-sendmsg: permit
+	native-sendmsg: sockaddr match "/tmp" then permit
+	native-sendmsg: sockaddr match "/var/tmp" then permit
+	native-sendmsg: sockaddr match "${TMPDIR}" then permit
+	native-sendmsg: sockaddr match "${WRKDIR}" then permit
+	native-sendmsg: sockaddr match "/<non-existent filename>: *" then deny[enoent]
 	native-sendto: permit
 	native-setegid: permit
 	native-setgid: permit
