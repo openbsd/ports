@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.161 2006/10/28 17:12:14 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.162 2006/10/29 17:44:42 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -129,6 +129,7 @@
      SUBDIR += p5-XML-XPath
      SUBDIR += p5-XML-XSLT
      SUBDIR += p5-sdf
+     SUBDIR += p5-tkispell
      SUBDIR += par
      SUBDIR += pear-File
      SUBDIR += pear-XML-Parser
