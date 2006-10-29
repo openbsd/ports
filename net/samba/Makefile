@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.70 2006/10/20 13:21:33 sturm Exp $
+# $OpenBSD: Makefile,v 1.71 2006/10/29 12:55:50 mbalmer Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 COMMENT-docs=	"documentation and examples for samba"
 
 DISTNAME=		samba-3.0.23c
+PKGNAME=		${DISTNAME}p0
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 SHARED_LIBS=		smbclient	0.3 \
 			msrpc		0.2
@@ -56,6 +57,7 @@ CONFIGURE_ARGS= --localstatedir="/var" \
 		--with-ssl \
 		--with-sslinc="/usr/include/ssl" \
 		--with-ssllib="/usr/lib" \
+		--with-syslog \
 		--with-utmp
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
