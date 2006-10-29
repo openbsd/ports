@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.3 2006/08/11 13:28:55 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2006/10/29 23:36:39 espie Exp $
 
 CATEGORIES=	multimedia x11 x11/kde
 COMMENT=	'video player for kde'
 
 HOMEPAGE=	http://kaffeine.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kaffeine/}
-DISTNAME=	kaffeine-0.8.1
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	kaffeine-0.8.2
+PKGNAME=	${DISTNAME}
 EXTRACT_SUFX=	.tar.bz2
 
 		
 SHARED_ONLY=	Yes
-SHARED_LIBS=	kaffeineaudioencoder 0.0 \
-		kmediapart	0.0
+SHARED_LIBS +=	kaffeinepart         0.0      # .0.1
+SHARED_LIBS +=	kaffeineaudioencoder 0.0      # .0.1
 
 MODULES=	x11/kde
 USE_LIBTOOL=		Yes
@@ -31,6 +31,7 @@ CONFIGURE_ENV+=		${MODKDE_CONFIGURE_ENV}
 MAKE_ENV=		${CONFIGURE_ENV}
 MAKE_FLAGS+=		${MODKDE_MAKE_FLAGS}
 MAKE_FLAGS+=		LIBRESOLV=
+SEPARATE_BUILD=		Yes
 
 LIB_DEPENDS=		kdecore.>=7,DCOP,kdesu,kio,kdefx,kparts,kutils,kdeprint,kdeui,kwalletclient,khtml,kjs::x11/kde/libs3 \
 			vorbis,vorbisenc::audio/libvorbis \

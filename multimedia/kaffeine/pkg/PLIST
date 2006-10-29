@@ -1,25 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/08/11 13:28:55 steven Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/10/29 23:36:39 espie Exp $
 bin/kaffeine
 include/kaffeine/
-include/kaffeine/kaffeine_part.h
-include/kaffeine/kaffeine_part_iface.h
 include/kaffeine/kaffeineaudioencoder.h
-include/kaffeine/kmediapart.h
+include/kaffeine/kaffeinepart.h
 include/kaffeine/mrl.h
 include/kaffeine/playlistimport.h
+include/kaffeine/xine_part.h
+include/kaffeine/xine_part_iface.h
 include/kaffeine_export.h
 ${KDE}/libkaffeineoggvorbis.la
 ${KDE}/libkaffeineoggvorbis.so
-${KDE}/libkaffeinepart.la
-${KDE}/libkaffeinepart.so
+${KDE}/libxinepart.la
+${KDE}/libxinepart.so
 lib/libkaffeineaudioencoder.la
 @lib lib/libkaffeineaudioencoder.so.${LIBkaffeineaudioencoder_VERSION}
-lib/libkmediapart.la
-@lib lib/libkmediapart.so.${LIBkmediapart_VERSION}
+lib/libkaffeinepart.la
+@lib lib/libkaffeinepart.so.${LIBkaffeinepart_VERSION}
 share/applications/kde/kaffeine.desktop
 share/apps/kaffeine/
 share/apps/kaffeine/dvbdata.tar.gz
-share/apps/kaffeine/kaffeine_part.rc
 share/apps/kaffeine/kaffeinedisc.rc
 share/apps/kaffeine/kaffeineplaylist.rc
 share/apps/kaffeine/kaffeineui.rc
@@ -30,6 +29,7 @@ share/apps/kaffeine/nocover
 share/apps/kaffeine/pics/
 share/apps/kaffeine/pics/playing.png
 share/apps/kaffeine/rtsp.protocol
+share/apps/kaffeine/xine_part.rc
 share/apps/konqueror/
 share/apps/konqueror/servicemenus/
 share/apps/konqueror/servicemenus/kaffeine_append_file.desktop
@@ -69,6 +69,7 @@ share/icons/hicolor/16x16/mimetypes/mime_kaffeine.png
 share/icons/hicolor/22x22/actions/player_mute.png
 share/icons/hicolor/22x22/actions/player_record.png
 share/icons/hicolor/22x22/apps/kaffeine.png
+share/icons/hicolor/22x22/apps/kilogram.png
 share/icons/hicolor/32x32/actions/player_mute.png
 share/icons/hicolor/32x32/actions/player_record.png
 share/icons/hicolor/32x32/apps/kaffeine-pause.png
@@ -80,6 +81,7 @@ share/icons/hicolor/32x32/mimetypes/mime_kaffeine.png
 share/icons/hicolor/48x48/apps/kaffeine.png
 share/icons/hicolor/48x48/mimetypes/mime_kaffeine.png
 share/icons/hicolor/64x64/apps/kaffeine.png
+share/locale/ar/LC_MESSAGES/kaffeine.mo
 share/locale/bg/LC_MESSAGES/kaffeine.mo
 share/locale/bn/LC_MESSAGES/kaffeine.mo
 share/locale/br/
@@ -91,6 +93,7 @@ share/locale/da/LC_MESSAGES/kaffeine.mo
 share/locale/de/LC_MESSAGES/kaffeine.mo
 share/locale/el/LC_MESSAGES/kaffeine.mo
 share/locale/es/LC_MESSAGES/kaffeine.mo
+share/locale/et/LC_MESSAGES/kaffeine.mo
 share/locale/fi/LC_MESSAGES/kaffeine.mo
 share/locale/fr/LC_MESSAGES/kaffeine.mo
 share/locale/ga/LC_MESSAGES/kaffeine.mo
@@ -99,6 +102,10 @@ share/locale/he/LC_MESSAGES/kaffeine.mo
 share/locale/hu/LC_MESSAGES/kaffeine.mo
 share/locale/it/LC_MESSAGES/kaffeine.mo
 share/locale/ja/LC_MESSAGES/kaffeine.mo
+share/locale/ka/LC_MESSAGES/kaffeine.mo
+share/locale/km/
+share/locale/km/LC_MESSAGES/
+share/locale/km/LC_MESSAGES/kaffeine.mo
 share/locale/lt/LC_MESSAGES/kaffeine.mo
 share/locale/mk/LC_MESSAGES/kaffeine.mo
 share/locale/nb/LC_MESSAGES/kaffeine.mo
@@ -121,8 +128,9 @@ share/locale/xx/
 share/locale/xx/LC_MESSAGES/
 share/locale/xx/LC_MESSAGES/kaffeine.mo
 share/locale/zh_CN/LC_MESSAGES/kaffeine.mo
+share/locale/zh_TW/LC_MESSAGES/kaffeine.mo
 share/mimelnk/application/x-kaffeine.desktop
 @comment share/mimelnk/application/x-mplayer2.desktop
-share/services/kaffeine_part.desktop
 share/services/kaffeineoggvorbis.desktop
+share/services/xine_part.desktop
 share/servicetypes/kaffeineaudioencoder.desktop

@@ -1,0 +1,11 @@
+$OpenBSD: patch-kaffeine_src_instwizard_h,v 1.1 2006/10/29 23:36:39 espie Exp $
+--- kaffeine/src/instwizard.h.orig	Mon Oct 30 00:03:53 2006
++++ kaffeine/src/instwizard.h	Mon Oct 30 00:04:01 2006
+@@ -44,6 +44,7 @@ private:
+ 
+ 	void internalWizard();
+ 
++#undef stdout
+ 	QString stdout;
+ 
+ 	InstWizard(const InstWizard &);
