@@ -178,6 +178,7 @@
 	native-symlink: filename match "/var/tmp" then permit
 	native-symlink: filename match "${TMPDIR}" then permit
 	native-symlink: filename match "${WRKDIR}" then permit
+	native-symlink: filename match "/<non-existent filename>: *" then deny[enoent]
 	native-symlink: string eq "" and filename eq "" then deny[enoent]
 	native-sync: permit
 	native-umask: permit
