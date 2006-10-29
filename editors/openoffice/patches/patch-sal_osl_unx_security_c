@@ -1,6 +1,6 @@
-$OpenBSD: patch-sal_osl_unx_security_c,v 1.3 2006/10/27 16:02:02 kurt Exp $
+$OpenBSD: patch-sal_osl_unx_security_c,v 1.4 2006/10/29 22:42:50 kurt Exp $
 --- sal/osl/unx/security.c.orig.port	Wed Jul 19 05:55:41 2006
-+++ sal/osl/unx/security.c	Thu Oct 26 09:30:08 2006
++++ sal/osl/unx/security.c	Sat Oct 28 09:19:15 2006
 @@ -76,7 +76,7 @@ static sal_Bool SAL_CALL osl_psz_getHome
  static sal_Bool SAL_CALL osl_psz_getConfigDir(oslSecurity Security, sal_Char* pszDirectory, sal_uInt32 nMax);
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-sal_osl_unx_security_c,v 1.3 2006/10/27 16:02:02 kurt Exp $
      /* #i64906#: sysconf(_SC_GETPW_R_SIZE_MAX) returns -1 on Mac OS X and FreeBSD */
      size_t n = 1024;
  #else
-@@ -474,7 +508,7 @@ osl_psz_loginUser(const sal_Char* pszUse
+@@ -474,7 +474,7 @@ osl_psz_loginUser(const sal_Char* pszUse
  			   oslSecurity* pSecurity)
  {
  #if defined NETBSD || defined SCO || defined AIX || defined FREEBSD || \

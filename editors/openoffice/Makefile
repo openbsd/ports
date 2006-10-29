@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2006/10/27 16:02:02 kurt Exp $
+# $OpenBSD: Makefile,v 1.17 2006/10/29 22:42:49 kurt Exp $
 
 ONLY_FOR_ARCHS= i386
 
@@ -7,7 +7,7 @@ COMMENT=	"a multi-platform productivity suite"
 VERSION=	2.0.4
 DISTNAME=	OOo_${VERSION}_src
 WRKDIST=	${WRKDIR}/OOD680_m5
-PKGNAME=	openoffice-${VERSION}p7
+PKGNAME=	openoffice-${VERSION}p8
 CATEGORIES=	editors productivity
 
 SHARED_LIBS=	icudata		26.0 \
@@ -38,7 +38,8 @@ BUILD_DEPENDS=	:zip-*:archivers/zip \
 		:pkgconfig-*:devel/pkgconfig \
 		:tcsh-*:shells/tcsh \
 		:p5-Archive-Zip-*:archivers/p5-Archive-Zip \
-		::textproc/libxslt
+		::textproc/libxslt \
+		::print/cups
 
 LIB_DEPENDS=	gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.14::x11/gtk+2 \
 		python2.3:python-2.3.*:lang/python/2.3 \
@@ -69,7 +70,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 
 CONFIGURE_ARGS=	--disable-gnome-vfs \
 		--disable-mozilla \
-		--disable-cups \
+		--disable-odk \
 		--enable-cairo \
 		--with-system-jpeg \
 		--with-system-python \
@@ -80,7 +81,6 @@ CONFIGURE_ARGS=	--disable-gnome-vfs \
 		--with-system-zlib \
 		--with-system-expat \
 		--with-system-neon \
-		--with-system-python \
 		--with-system-db \
 		--with-system-sndfile \
 		--with-epm=internal \
@@ -91,7 +91,7 @@ FLAVORS=	debug
 FLAVOR?=
 
 .if ${FLAVOR:L:Mdebug}
-CONFIGURE_ARGS+=	--enable-crashdump --enable-symbols
+CONFIGURE_ARGS+=	--enable-symbols
 .endif
 
 MAKE_ENV+=	envcflags="${CFLAGS}"
