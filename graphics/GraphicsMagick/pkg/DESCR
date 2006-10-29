@@ -1,0 +1,3 @@
+GraphicsMagic is an X11 package for display and interactive manipulation
+of images.  It is a fork from ImageMagick, the intention being to provide
+a stable API for developping other applications.
