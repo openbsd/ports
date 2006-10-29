@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD-markers,v 1.88 2006/10/24 04:51:23 jcs Exp $
+# $OpenBSD: OpenBSD-markers,v 1.89 2006/10/29 19:39:22 kili Exp $
 #
 # THE PKGNAME MUST BE BUMPED FOR THE FOLLOWING PORTS WHEN YOU COMMIT
 # TO THIS FILE:
@@ -62,6 +62,7 @@
 51.6		-114.1		"deraadt"	# Theo de Raadt
 52.2		12.75		"uwe"		# Uwe Stuehler
 52.26		4.63		"camield"	# Camiel Dobbelaar
+52.28083	10.57271	"kili"		# Matthias Kilian
 52.35		4.62		"otto"		# Otto Moerbeek
 52.3667		9.71667		"reyk"		# Reyk Floeter
 52.5		21		"alek"		# Aleksander Piotrowski
