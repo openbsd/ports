@@ -1,7 +1,7 @@
-$OpenBSD: patch-goo_Makefile_in,v 1.1.1.1 2006/06/18 13:09:44 alek Exp $
---- goo/Makefile.in.orig	Mon Apr 17 13:28:31 2006
-+++ goo/Makefile.in	Mon Apr 17 13:28:54 2006
-@@ -329,25 +329,25 @@ distclean-compile:
+$OpenBSD: patch-goo_Makefile_in,v 1.2 2006/10/29 11:03:26 espie Exp $
+--- goo/Makefile.in.orig	Wed May 31 06:57:29 2006
++++ goo/Makefile.in	Sat Oct 28 21:18:33 2006
+@@ -333,25 +333,25 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gmempp.Plo@am__quote@
  
  .c.o:
