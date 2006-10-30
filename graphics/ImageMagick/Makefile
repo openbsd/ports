@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.92 2006/10/28 16:20:52 steven Exp $
+# $OpenBSD: Makefile,v 1.93 2006/10/30 09:45:41 steven Exp $
 
 COMMENT=		"image processing tools"
 
 VER=			6.3.0
 DASHVER=		0
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
-PKGNAME=		ImageMagick-${VER}.${DASHVER}
+PKGNAME=		ImageMagick-${VER}.${DASHVER}p0
 SHARED_LIBS=		Magick++	11.0	\
 			Magick		11.0	\
 			Wand		11.0
@@ -49,6 +49,7 @@ CONFIGURE_ARGS+=	--with-quantum-depth=16 \
 			--without-modules \
 			--without-threads \
 			--without-perl \
+			--without-rsvg \
 			--without-wmf \
 			--disable-ltdl-install
 
@@ -62,7 +63,7 @@ FLAVOR?=
 .if ${FLAVOR:L:Mno_x11}
 BUILD_DEPENDS+=		:ghostscript-*:print/ghostscript/gnu,no_x11
 RUN_DEPENDS+=		:ghostscript-*:print/ghostscript/gnu,no_x11
-CONFIGURE_ARGS+=	--without-x --without-ttf
+CONFIGURE_ARGS+=	--without-x --without-ttf --without-freetype
 CONFIGURE_ENV+=		ac_cv_path_FIGDecodeDelegate=no
 .else
 BUILD_DEPENDS+=		:ghostscript-*:print/ghostscript/gnu
