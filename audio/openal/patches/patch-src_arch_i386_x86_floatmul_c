@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_arch_i386_x86_floatmul_c,v 1.1 2006/10/30 23:31:37 steven Exp $
+--- src/arch/i386/x86_floatmul.c.orig	Sat Oct 21 11:22:41 2006
++++ src/arch/i386/x86_floatmul.c	Sat Oct 21 11:22:57 2006
+@@ -34,7 +34,7 @@ void _alFloatMul(ALshort *bpt, ALfloat s
+ 	ALint scaled_sa = sa * SCALING_FACTOR;
+ 	ALint iter;
+ 	
+-#ifdef __MMX__
++#if defined(__MMX__) && !defined(__amd64__)
+ 	if (_alHaveMMX()) {
+ 		union {
+ 			short s[4];

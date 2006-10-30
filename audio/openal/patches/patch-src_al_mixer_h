@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_al_mixer_h,v 1.1 2006/10/30 23:31:37 steven Exp $
+--- src/al_mixer.h.orig	Sat Oct 21 11:19:57 2006
++++ src/al_mixer.h	Sat Oct 21 11:20:27 2006
+@@ -26,7 +26,7 @@
+ #define GENMIXSOURCES 64
+ #endif /* USE_LIGHT_GEN_MIXING */
+ 
+-#ifdef __MMX__
++#if defined(__MMX__) && !defined(__amd64__)
+ #define MMXMIXSOURCES 32
+ #else
+ #define MMXMIXSOURCES 0

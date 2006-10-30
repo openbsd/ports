@@ -1,8 +1,11 @@
-$OpenBSD: patch-linux_src_arch_bsd_bsd_dsp_c,v 1.1.1.1 2004/10/21 05:04:16 jolan Exp $
---- linux/src/arch/bsd/bsd_dsp.c.orig	2003-06-20 11:18:33.000000000 -0700
-+++ linux/src/arch/bsd/bsd_dsp.c	2004-01-10 08:23:30.000000000 -0800
-@@ -15,7 +15,7 @@
+$OpenBSD: patch-src_backends_alc_backend_bsd_c,v 1.1 2006/10/30 23:31:37 steven Exp $
+--- src/backends/alc_backend_bsd.c.orig	Thu Jan  5 16:11:20 2006
++++ src/backends/alc_backend_bsd.c	Thu Oct 26 21:51:24 2006
+@@ -10,14 +10,16 @@
+ #include "al_siteconfig.h"
  
+ #include <AL/al.h>
++#include <AL/alext.h>
  #include <assert.h>
  #include <fcntl.h>
 -#include <sys/soundcard.h>
@@ -10,16 +13,22 @@ $OpenBSD: patch-linux_src_arch_bsd_bsd_dsp_c,v 1.1.1.1 2004/10/21 05:04:16 jolan
  #include <stdio.h>
  #include <stdlib.h>
  #include <string.h>
-@@ -112,7 +112,7 @@ static int AL2BSDFMT(int fmt)
+ #include <sys/ioctl.h>
+ #include <sys/mman.h>
++#include <sys/select.h>
+ #include <sys/stat.h>
+ #include <sys/time.h>
+ #include <sys/types.h>
+@@ -112,7 +114,7 @@ static int AL2BSDFMT(int fmt)
   *
   */
- void *grab_write_native(void) {
+ static void *grab_write_native(void) {
 -	const char *dsppath = "/dev/dsp";
 +	const char *dsppath = "/dev/audio";
  	int divisor = _alSpot(_AL_DEF_BUFSIZ) | (2<<16);
  
  	dsp_fd = open(dsppath, O_WRONLY | O_NONBLOCK);
-@@ -148,9 +148,11 @@ int grab_mixerfd(void) {
+@@ -146,9 +148,11 @@ int grab_mixerfd(void) {
  	mixer_fd = open("/dev/mixer", O_WRONLY | O_NONBLOCK);
  
  	if(mixer_fd > 0) {
@@ -31,7 +40,7 @@ $OpenBSD: patch-linux_src_arch_bsd_bsd_dsp_c,v 1.1.1.1 2004/10/21 05:04:16 jolan
  
  		return mixer_fd;
  	} else {
-@@ -212,7 +214,7 @@ void release_native(void *handle) {
+@@ -210,7 +214,7 @@ void release_native(void *handle) {
  
  	handle_fd = *(int *) handle;
  

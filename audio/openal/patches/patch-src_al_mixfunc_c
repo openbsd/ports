@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_al_mixfunc_c,v 1.1 2006/10/30 23:31:37 steven Exp $
+--- src/al_mixfunc.c.orig	Sat Oct 21 11:20:39 2006
++++ src/al_mixfunc.c	Sat Oct 21 11:21:02 2006
+@@ -38,7 +38,7 @@ ALboolean _alMixFuncInit( ALMixFunc *mf,
+ 		return AL_FALSE;
+ 	}
+ 
+-#ifdef __MMX__
++#if defined(__MMX__) && !defined(__amd64__)
+ 	if (_alHaveMMX()) {
+ 		/* FIXME: we really ignore size. */
+ 		mf->max      = MMXMIXSOURCES;

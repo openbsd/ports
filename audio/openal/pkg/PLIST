@@ -1,14 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/12/23 16:10:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/10/30 23:31:37 steven Exp $
+bin/openal-config
 include/AL/
 include/AL/al.h
 include/AL/alc.h
-include/AL/alctypes.h
 include/AL/alext.h
-include/AL/alexttypes.h
-include/AL/altypes.h
-include/AL/alu.h
-include/AL/alut.h
-include/AL/aluttypes.h
-include/AL/alutypes.h
 lib/libopenal.a
+lib/libopenal.la
 %%SHARED%%
+lib/pkgconfig/
+lib/pkgconfig/openal.pc

@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2006/10/30 23:31:37 steven Exp $
+--- configure.orig	Sat Oct 21 11:10:20 2006
++++ configure	Sat Oct 21 11:10:37 2006
+@@ -22428,7 +22428,7 @@ _ACEOF
+ esac
+ 
+ case "$target" in
+-    *i386* | *i486* | *i586* | *i686* | *x86_64*)
++    *i386* | *i486* | *i586* | *i686* )
+     openal_x86_support_yn=yes
+ 
+     echo "$as_me:$LINENO: checking for MMX support" >&5
