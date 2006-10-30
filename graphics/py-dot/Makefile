@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2006/06/03 09:36:00 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2006/10/30 10:47:28 xsa Exp $
 
 COMMENT=	"Python interface to Graphiz's Dot"
 
-DISTNAME=	pydot-0.9.9
-PKGNAME=	${DISTNAME:S/py/py-/}p0
+DISTNAME=	pydot-0.9.10
+PKGNAME=	${DISTNAME:S/py/py-/}
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://dkbza.org/pydot.html
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
