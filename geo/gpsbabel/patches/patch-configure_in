@@ -1,0 +1,42 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2006/10/30 17:44:57 ckuethe Exp $
+--- configure.in.orig	Tue Oct 10 18:42:22 2006
++++ configure.in	Tue Oct 10 18:47:43 2006
+@@ -49,16 +49,22 @@ if test "$cet" = "default"; then
+ fi
+ 
+ AC_MSG_CHECKING(whether to support shapefiles)
+-AC_ARG_ENABLE(shapefile,
+-  [  --enable-shapefile=[(yes)|no]],
+-  [ enable_shapefile="$enableval"],[enable_shapefile="yes"])
+-    if test "$enable_shapefile" != "no" ; then
++AC_ARG_WITH(shapefile, [  --enable-shapefile=[(included)|system|no]])
++  case $with_shapefile in 
++    "system") 
++	AC_CHECK_LIB([shp], [SHPOpen])
+         AC_DEFINE(SHAPELIB_ENABLED, 1, [1 to enable shapefile support])
+-	AC_MSG_RESULT(yes)
+-    else
+-	AC_MSG_RESULT(no)
+-    fi
++	;;
++    "no") 
++	AC_MSG_RESULT(no) 
++	;;
++    *) 	SHAPE="\$(SHAPE)" 
++        AC_DEFINE(SHAPELIB_ENABLED, 1, [1 to enable shapefile support])
++	AC_MSG_RESULT(using included version)
++	;;
++  esac
+ 
++
+ AC_MSG_CHECKING(whether to support Palm/OS pdb formats)
+ AC_ARG_ENABLE(pdb,
+   [  --enable-pdb=[(yes)|no]],
+@@ -179,6 +185,7 @@ AC_SUBST(USB_LIBS)
+ AC_SUBST(USB_CFLAGS)
+ AC_SUBST(OSJEEPS)
+ AC_SUBST(GBSER)
++AC_SUBST(SHAPE)
+ AC_SUBST(ZLIB)
+ 
+ AC_MSG_CHECKING(for random stuff to make you feel better)

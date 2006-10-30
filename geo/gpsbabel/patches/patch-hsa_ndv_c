@@ -1,0 +1,12 @@
+$OpenBSD: patch-hsa_ndv_c,v 1.1.1.1 2006/10/30 17:44:57 ckuethe Exp $
+--- hsa_ndv.c.orig	Thu Oct 19 13:21:16 2006
++++ hsa_ndv.c	Thu Oct 19 13:25:28 2006
+@@ -233,7 +233,7 @@ hsa_ndv_read(void)
+ 	{
+ 		char *bad;
+ 
+-		buf[len] = 0;
++		buf[len-1] = '\0';
+ 		if (NULL != strstr(buf, "nver=1"))
+ 		{//its the older format, not xml
+ 			fseek(fd, 0, SEEK_SET);

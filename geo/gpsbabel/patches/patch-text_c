@@ -1,0 +1,39 @@
+$OpenBSD: patch-text_c,v 1.1.1.1 2006/10/30 17:44:57 ckuethe Exp $
+--- text.c.orig	Tue Oct 10 18:28:52 2006
++++ text.c	Tue Oct 10 18:29:31 2006
+@@ -28,7 +28,7 @@ static gbfile *file_out;
+ static short_handle mkshort_handle;
+ 
+ static char *suppresssep = NULL;
+-static char *encrypt = NULL;
++static char *txt_encrypt = NULL;
+ static char *includelogs = NULL;
+ 
+ #define MYNAME "TEXT"
+@@ -38,7 +38,7 @@ arglist_t text_args[] = {
+ 	{ "nosep", &suppresssep, 
+ 		"Suppress separator lines between waypoints", 
+ 		NULL, ARGTYPE_BOOL, ARG_NOMINMAX },
+-	{ "encrypt", &encrypt,
++	{ "encrypt", &txt_encrypt,
+ 		"Encrypt hints using ROT13", NULL, ARGTYPE_BOOL, ARG_NOMINMAX },
+ 	{ "logs", &includelogs,
+ 		 "Include groundspeak logs if present", NULL, ARGTYPE_BOOL, ARG_NOMINMAX },
+@@ -108,7 +108,7 @@ text_disp(const waypoint *wpt)
+        		}
+ 		if (wpt->gc_data.hint) {
+ 			char *hint = NULL;
+-			if ( encrypt ) 
++			if ( txt_encrypt ) 
+ 				hint = rot13( wpt->gc_data.hint );
+ 			else
+ 				hint = xstrdup( wpt->gc_data.hint );
+@@ -193,7 +193,7 @@ text_disp(const waypoint *wpt)
+ 				encstr = xml_attribute( logpart, "encoded" );
+ 				encoded = (encstr[0] != 'F');
+ 				
+-				if ( encrypt && encoded ) {
++				if ( txt_encrypt && encoded ) {
+ 					s = rot13( logpart->cdata );
+ 				}
+ 				else {

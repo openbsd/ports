@@ -1,0 +1,28 @@
+$OpenBSD: patch-vcf_c,v 1.1.1.1 2006/10/30 17:44:57 ckuethe Exp $
+--- vcf.c.orig	Tue Oct 10 18:32:35 2006
++++ vcf.c	Tue Oct 10 18:32:55 2006
+@@ -26,13 +26,13 @@
+ static FILE *file_out;
+ static short_handle mkshort_handle;
+ 
+-static char *encrypt = NULL;
++static char *vcf_encrypt = NULL;
+ 
+ #define MYNAME "VCF"
+ 
+ static
+ arglist_t vcf_args[] = {
+-	{ "encrypt", &encrypt,
++	{ "encrypt", &vcf_encrypt,
+ 		"Encrypt hints using ROT13", NULL, ARGTYPE_BOOL, ARG_NOMINMAX },
+ 	ARG_TERMINATOR
+ };
+@@ -107,7 +107,7 @@ vcf_disp(const waypoint *wpt)
+ 	fprintf(file_out, "\\n");
+ 	vcf_print_utf(&wpt->gc_data.desc_long);
+ 	fprintf(file_out, "\\n\\nHINT:\\n");
+-	if (encrypt) {
++	if (vcf_encrypt) {
+ 		char *s = rot13(wpt->gc_data.hint);
+ 		vcf_print(s);
+ 		xfree(s);

@@ -1,0 +1,29 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2006/10/30 17:44:57 ckuethe Exp $
+--- Makefile.in.orig	Sat Sep  2 17:41:01 2006
++++ Makefile.in	Mon Oct 30 10:06:04 2006
+@@ -84,7 +84,7 @@ LIBOBJS = queue.o route.o waypt.o filter
+           uuid.o formspec.o xmltag.o cet.o cet_util.o fatal.o rgbcolors.o \
+ 	  inifile.o garmin_fs.o gbsleep.o units.o @GBSER@ gbser.o \
+ 	  gbfile.o \
+-	$(COLDSYNC) $(GARMIN) $(JEEPS) $(SHAPE) @ZLIB@ $(FMTS) $(FILTERS)
++	$(COLDSYNC) $(GARMIN) $(JEEPS) @SHAPE@ @ZLIB@ $(FMTS) $(FILTERS)
+ OBJS = main.o globals.o $(LIBOBJS) @FILEINFO@
+ 
+ .c.o:
+@@ -93,7 +93,7 @@ OBJS = main.o globals.o $(LIBOBJS) @FILE
+ 
+ 
+ # Directory of local web doc.  Traditionally a sibling to the GPSBabel tree.
+-WEB=../babelweb/
++WEB=babelweb/
+ 
+ 
+ all: gpsbabel$(EXEEXT)
+@@ -149,6 +149,7 @@ dep:
+ 	echo Edit Makefile.in and bring in /tmp/dep
+ 
+ $(WEB)/htmldoc-$(DOCVERSION)/readme.html: FORCE
++	mkdir -p $(WEB)/htmldoc-$(DOCVERSION)
+ 	perl xmldoc/makedoc
+ 	xmlwf xmldoc/readme.xml		#check for well-formedness
+ 	xmllint --noout --valid xmldoc/readme.xml    	#validate

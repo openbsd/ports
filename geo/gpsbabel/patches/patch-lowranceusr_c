@@ -1,0 +1,30 @@
+$OpenBSD: patch-lowranceusr_c,v 1.1.1.1 2006/10/30 17:44:57 ckuethe Exp $
+--- lowranceusr.c.orig	Mon Oct 16 11:14:44 2006
++++ lowranceusr.c	Mon Oct 16 11:15:35 2006
+@@ -363,10 +363,10 @@ lowranceusr_parse_waypt(waypoint *wpt_tm
+ 
+     if (global_opts.debug_level >= 2)
+ 	{
+-		printf("LOWRANCE parse_waypt: creation time %ld\n", 
++		printf("LOWRANCE parse_waypt: creation time %d\n", 
+ 			wpt_tmp->creation_time);
+-		printf("LOWRANCE parse_waypt: base_time %ld\n", base_time_secs);
+-		printf("LOWRANCE parse_waypt: waypt time %ld\n", waypt_time);
++		printf("LOWRANCE parse_waypt: base_time %d\n", base_time_secs);
++		printf("LOWRANCE parse_waypt: waypt time %d\n", waypt_time);
+ 	}
+ 
+ 	/* Symbol ID */
+@@ -699,9 +699,9 @@ lowranceusr_waypt_disp(const waypoint *w
+     if (global_opts.debug_level >= 2)
+ 	{
+ 		time_t wpt_time = Time;
+-		printf("LOWRANCE waypt_disp: base_time : %ld\n",base_time_secs);
+-		printf("LOWRANCE waypt_disp: creation time : %ld\n",wpt->creation_time);
+-		printf("LOWRANCE waypt_disp: waypt time : %ld\n",wpt_time);
++		printf("LOWRANCE waypt_disp: base_time : %d\n",base_time_secs);
++		printf("LOWRANCE waypt_disp: creation time : %d\n",wpt->creation_time);
++		printf("LOWRANCE waypt_disp: waypt time : %d\n",wpt_time);
+ 		printf("LOWRANCE waypt_disp: waypt time (local): %s\n",ctime(&wpt_time));
+ 	}
+ 

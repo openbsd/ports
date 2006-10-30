@@ -1,0 +1,30 @@
+$OpenBSD: patch-testo,v 1.1.1.1 2006/10/30 17:44:57 ckuethe Exp $
+--- testo.orig	Tue Aug 29 15:25:31 2006
++++ testo	Thu Oct 19 14:41:16 2006
+@@ -1,3 +1,4 @@
++#!/bin/sh
+ GPSBABEL_FREEZE_TIME=y
+ export GPSBABEL_FREEZE_TIME
+ 
+@@ -8,7 +9,11 @@ export MALLOC_CHECK_
+ PNAME=${PNAME:-./gpsbabel}
+ DIFF=${DIFF:-diff}
+ REFERENCE=reference
+-OD=${OD:-od -Ax -txC -v}
++if [ -x /usr/bin/hexdump ] ; then
++	OD=${OD:-hexdump -v -C}
++else
++	OD=${OD:-od -Ax -txC -v}
++fi
+ 
+ TMPDIR=/tmp/gpsbabel.$$
+ mkdir -p $TMPDIR
+@@ -86,7 +91,7 @@ ${PNAME} -i gtm -f ${REFERENCE}/sample.g
+ ${PNAME} -i gpx -f ${TMPDIR}/gtm1.gpx -o gtm -F ${TMPDIR}/gtm.gtm
+ ${PNAME} -i gtm -f ${TMPDIR}/gtm.gtm -o gpx -F ${TMPDIR}/gtm2.gpx
+ compare ${TMPDIR}/gtm1.gpx ${TMPDIR}/gtm2.gpx
+-compare ${TMPDIR}/gtm.gtm ${REFERENCE}/sample.gtm
++bincompare ${TMPDIR}/gtm.gtm ${REFERENCE}/sample.gtm
+ 
+ # Magellan Mapsend
+ rm -f ${TMPDIR}/mm.mapsend ${TMPDIR}/mm.gps

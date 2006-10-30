@@ -1,0 +1,39 @@
+$OpenBSD: patch-palmdoc_c,v 1.1.1.1 2006/10/30 17:44:57 ckuethe Exp $
+--- palmdoc.c.orig	Tue Oct 10 18:30:59 2006
++++ palmdoc.c	Tue Oct 10 18:31:22 2006
+@@ -44,7 +44,7 @@ static char *includelogs = NULL;
+ static int ct = 1;
+ static int offset = 0;
+ 
+-static char *encrypt;
++static char *palm_encrypt;
+ 
+ #define MYNAME "PALMDOC"
+ 
+@@ -71,7 +71,7 @@ arglist_t palmdoc_args[] = {
+ 		"No separator lines between waypoints", NULL,
+ 		ARGTYPE_BOOL, ARG_NOMINMAX },
+ 	{"dbname", &dbname, "Database name", NULL, ARGTYPE_STRING, ARG_NOMINMAX },
+-	{"encrypt", &encrypt, "Encrypt hints with ROT13", NULL,
++	{"encrypt", &palm_encrypt, "Encrypt hints with ROT13", NULL,
+ 		ARGTYPE_BOOL, ARG_NOMINMAX },
+ 	{ "logs", &includelogs,
+ 		"Include groundspeak logs if present", NULL, ARGTYPE_BOOL, ARG_NOMINMAX },
+@@ -477,7 +477,7 @@ palmdoc_disp(const waypoint *wpt)
+        		}
+ 		if (wpt->gc_data.hint) {
+ 			char *hint = NULL;
+-			if ( encrypt )
++			if ( palm_encrypt )
+ 				hint = rot13( wpt->gc_data.hint );
+ 			else
+ 				hint = xstrdup( wpt->gc_data.hint );
+@@ -562,7 +562,7 @@ palmdoc_disp(const waypoint *wpt)
+ 				encstr = xml_attribute( logpart, "encoded" );
+ 				encoded = (encstr[0] != 'F');
+ 				
+-				if ( encrypt && encoded ) {
++				if ( palm_encrypt && encoded ) {
+ 					s = rot13( logpart->cdata );
+ 				}
+ 				else {

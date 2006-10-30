@@ -1,0 +1,38 @@
+$OpenBSD: patch-easygps_c,v 1.1.1.1 2006/10/30 17:44:57 ckuethe Exp $
+--- easygps.c.orig	Tue Oct 10 18:28:02 2006
++++ easygps.c	Tue Oct 10 18:28:37 2006
+@@ -77,7 +77,7 @@ wr_deinit(void)
+  *  storage.
+  */
+ static void *
+-pread(void)
++pas_read(void)
+ {
+ 	char *d;
+ 	int ilen;
+@@ -106,20 +106,20 @@ data_read(void)
+ 		for (tag = fgetc(file_in); tag != 0xff; tag = fgetc(file_in)) {
+ 		switch (tag) {
+ 			case 1:
+-				wpt_tmp->shortname = (char *) pread();
++				wpt_tmp->shortname = (char *) pas_read();
+ 				break;
+ 			case 2:
+ 			case 3:
+-				wpt_tmp->description = (char *) pread();
++				wpt_tmp->description = (char *) pas_read();
+ 				break;
+ 			case 5:
+-				wpt_tmp->notes = (char *) pread();
++				wpt_tmp->notes = (char *) pas_read();
+ 				break;
+ 			case 6:
+-				wpt_tmp->url_link_text = (char *) pread();
++				wpt_tmp->url_link_text = (char *) pas_read();
+ 				break;
+ 			case 7:
+-				wpt_tmp->icon_descr = (char *) pread();
++				wpt_tmp->icon_descr = (char *) pas_read();
+ 				wpt_tmp->wpt_flags.icon_descr_is_dynamic = 1;
+ 				break;
+ 			case 8:  /* NULL Terminated (vs. pascal) descr */

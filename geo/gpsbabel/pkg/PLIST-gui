@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-gui,v 1.1.1.1 2006/10/30 17:44:57 ckuethe Exp $
+bin/guibabel

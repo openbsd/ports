@@ -1,0 +1,11 @@
+$OpenBSD: patch-guibabel,v 1.1.1.1 2006/10/30 17:44:57 ckuethe Exp $
+--- guibabel.orig	Thu Oct 12 19:37:40 2006
++++ guibabel	Thu Oct 12 19:37:51 2006
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ # the next line restarts using wish \
+-exec wish "$0" "$@"
++exec wish8.4 "$0" "$@"
+ 
+ # 
+ # This was largely cribbed from the TCL demo code.  My TCL skills weren't

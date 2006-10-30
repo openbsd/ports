@@ -1,0 +1,12 @@
+$OpenBSD: patch-igc_c,v 1.1.1.1 2006/10/30 17:44:57 ckuethe Exp $
+--- igc.c.orig	Mon Oct 16 11:14:38 2006
++++ igc.c	Mon Oct 16 11:15:15 2006
+@@ -305,7 +305,7 @@ static void data_read(void)
+ 	case rec_fix:
+ 	    // Date must appear in file before the first fix record
+ 	    if (date < 1000000L) {
+-		fatal(MYNAME ": bad date %ld\n", date);
++		fatal(MYNAME ": bad date %d\n", date);
+ 	    }
+ 	    // Create a track for pressure altitude waypoints
+ 	    if (!pres_head) {
