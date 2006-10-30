@@ -1,0 +1,9 @@
+GOCR is an OCR (Optical Character Recognition) program.
+It reads images in many formats and output a text file. Possible image
+formats are pnm, pbm, pgm, ppm, some pcx and tga image files. Other
+formats like pnm.gz, pnm.bz2, png, jpg, tiff, gif, bmp will be
+automatically converted using the netpbm-progs, gzip and bzip2
+via unix pipe.
+Gocr is also able to recognize and translate barcodes.
+You do not have to train the program or store large font bases.
+Simply call gocr from the command line and get your results.

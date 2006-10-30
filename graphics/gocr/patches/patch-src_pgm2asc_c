@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_pgm2asc_c,v 1.1.1.1 2006/10/30 08:17:30 ajacoutot Exp $
+--- src/pgm2asc.c.orig	Mon Oct 16 22:19:41 2006
++++ src/pgm2asc.c	Mon Oct 16 22:19:54 2006
+@@ -1662,7 +1662,7 @@ int glue_broken_chars( pix *pp ){
+   	  }
+         } end_for_each(&(JOB->res.boxlist));
+ 	box4=box5;
+-      	if (box4) {
++      	if (box2 && box4) {
+           if( /* umlaut "a "o "u, ij; box2 is the dot, box4 the body */
+             (      y1<=box2->m2
+               &&   box4->x1+JOB->res.avX/2>=x0

@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/30 08:17:30 ajacoutot Exp $
+bin/gocr
+include/gocr.h
+lib/libPgm2asc.a
+@man man/man1/gocr.1
+share/doc/gocr/
+share/doc/gocr/README
+share/doc/gocr/gocr.html

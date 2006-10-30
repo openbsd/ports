@@ -1,0 +1,47 @@
+$OpenBSD: patch-bin_gocr_tcl,v 1.1.1.1 2006/10/30 08:17:30 ajacoutot Exp $
+--- bin/gocr.tcl.orig	Fri Feb  6 10:38:46 2004
++++ bin/gocr.tcl	Fri Oct 27 10:35:15 2006
+@@ -9,7 +9,7 @@
+ #  - Reading from stderr of child???
+ #
+ # this is a multiline comment in wish, but not in sh \
+-exec wish -f $0 $@
++exec wish8.4 -f $0 $@
+ 
+ set ver 0.3.6
+ set gocrver 0.3.5
+@@ -31,10 +31,10 @@ wm title . "GOCR Tcl frontend $ver"
+ set spacewidth 0
+ set graylevel 160
+ set dustsize 20
+-set imgviewer "xli -geometry 400x400 "
++set imgviewer ""
+ set gocrpath "gocr"
+ set gocraddopt "-e - -f UTF8"
+-set file "../examples/text.pbm"
++set file ""
+ set ofile "out01.txt"
+ # entry out{n+1}.txt can automaticly generated!
+ if  $argc {
+@@ -217,8 +217,8 @@ proc Scan {} {
+ proc SaveOpt {} {
+   global v0 v1 v2 v3 v4 v5 m1 m2 m3 m4 m5 m6 spacewidth graylevel dustsize imgviewer ofile
+   global autos autod autol gocrpath gocraddopt
+-  if [catch {open .gocr w} out] {
+-    puts "open .gocr failed"
++  if [catch {open ~/.gocr w} out] {
++    puts "open ~/.gocr failed"
+     return
+   }
+   set file [.abar.entf get]
+@@ -246,8 +246,8 @@ proc LoadOpt {} {
+   set file [.abar.entf get]
+   set vvv  [expr $v0 + $v1 + $v2 + $v3 + $v4 + $v5 ]
+   set mode [expr $m1 + $m2 + $m3 + $m4 + $m5 + $m6 ]
+-  if [catch {open .gocr r} in] {
+-    puts "open .gocr failed"
++  if [catch {open ~/.gocr r} in] {
++    puts "open ~/.gocr failed"
+     return
+   }
+   while {[ gets $in line] >=0} {
