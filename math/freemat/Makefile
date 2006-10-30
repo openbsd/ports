@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2006/10/29 11:03:30 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/10/30 09:57:20 steven Exp $
 
 COMMENT=	"environment for rapid engineering and scientific processing"
 
 VERSION=	2.0
 DISTNAME=	FreeMat-${VERSION}
-PKGNAME=	freemat-${VERSION}
+PKGNAME=	freemat-${VERSION}p0
 
 CATEGORIES=	math
 
@@ -32,7 +32,8 @@ LIB_DEPENDS=	avcall::devel/ffcall \
 		fftw3f.>=4::math/fftw3,float \
 		lapack.>=1::math/lapack \
 		matio::math/matio \
-		umfpack::math/umfpack
+		umfpack::math/umfpack \
+		QtGui,QtOpenGL::x11/qt4
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
