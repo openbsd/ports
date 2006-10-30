@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/29 10:53:40 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/10/30 09:25:10 brad Exp $
 
 HOMEPAGE=	http://www.graphicsmagick.org/
 CATEGORIES=	devel graphics
@@ -9,7 +9,8 @@ SHARED_LIBS +=	GraphicsMagick       0.0      # .1.7
 SHARED_LIBS +=	GraphicsMagickWand   0.0      # .0.3
 SHARED_LIBS +=	GraphicsMagick++     0.0      # .1.2
 
-MASTER_SITES=	ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/
+MASTER_SITES=	ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/ \
+		${MASTER_SITE_SOURCEFORGE:=graphicsmagick/}
 
 # very detailed licence info on:
 # http://www.graphicsmagick.org/www/Copyright.html
