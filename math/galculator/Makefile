@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2006/09/18 11:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2006/10/30 23:26:47 naddy Exp $
 
 COMMENT=	"GTK2-based scientific calculator"
 
 DISTNAME=	galculator-1.2.5.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	math
 HOMEPAGE=	http://galculator.sourceforge.net/
 
@@ -30,6 +30,7 @@ BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
 SEPARATE_BUILD=	simple
 USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
