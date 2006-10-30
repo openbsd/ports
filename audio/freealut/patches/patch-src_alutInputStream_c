@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_alutInputStream_c,v 1.1.1.1 2006/10/30 23:37:24 steven Exp $
+--- src/alutInputStream.c.orig	Mon Oct 16 15:18:11 2006
++++ src/alutInputStream.c	Mon Oct 16 15:18:20 2006
+@@ -4,7 +4,7 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ 
+-#if HAVE_STAT
++#if HAVE_STAT || HAVE_SYS_STAT_H
+ #if HAVE_UNISTD_H
+ #include <unistd.h>
+ #endif

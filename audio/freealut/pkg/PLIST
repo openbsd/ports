@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/30 23:37:24 steven Exp $
+%%SHARED%%
+bin/freealut-config
+include/AL/
+include/AL/alut.h
+lib/libalut.a
+lib/libalut.la
+lib/pkgconfig/
+lib/pkgconfig/freealut.pc
