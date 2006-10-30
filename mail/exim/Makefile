@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.55 2006/10/13 15:18:54 alek Exp $
+# $OpenBSD: Makefile,v 1.56 2006/10/30 20:54:27 fkr Exp $
 
 COMMENT=	"Flexible mail transfer agent"
 DISTNAME=	exim-4.63
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.exim.org/pub/exim/exim4/ \
 		http://mirror.switch.ch/ftp/mirror/exim/exim/exim4/ \
@@ -9,7 +10,7 @@ MASTER_SITES=	ftp://ftp.exim.org/pub/exim/exim4/ \
 
 HOMEPAGE=	http://www.exim.org/
 
-MAINTAINER=	Andreas Voegele <andreas@altroot.de>
+MAINTAINER=	Felix Kronlage <fkr@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes
