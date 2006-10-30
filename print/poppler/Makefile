@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/10/29 11:03:26 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/10/30 08:28:26 espie Exp $
 
 COMMENT=	"PDF rendering library"
 COMMENT-qt=	"qt interface to PDF rendering library"
@@ -40,6 +40,8 @@ MAKE_FLAGS=	POPPLER_QT_CXXFLAGS='-pthread -I${MODQT_INCDIR}' \
 
 .  if !defined(PACKAGING) || defined(PACKAGING) && ${SUBPACKAGE} == "-qt"
 MODULES+=	x11/qt3
+.  endif
+.  if defined(PACKAGING) && ${SUBPACKAGE} == "-qt"
 LIB_DEPENDS+=	poppler::print/poppler
 .  endif
 .endif
