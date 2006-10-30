@@ -1,0 +1,13 @@
+$OpenBSD: patch-python_Makefile_in,v 1.7 2006/10/30 11:20:08 bernd Exp $
+--- python/Makefile.in.orig	Thu Oct 19 01:26:49 2006
++++ python/Makefile.in	Thu Oct 19 01:27:05 2006
+@@ -732,9 +732,6 @@ uninstall-info: uninstall-info-recursive
+ @WITH_PYTHON_TRUE@	$(mkinstalldirs) $(DESTDIR)$(pythondir)
+ @WITH_PYTHON_TRUE@	@INSTALL@ -m 0644 libxml2.py $(DESTDIR)$(pythondir)
+ @WITH_PYTHON_TRUE@	@INSTALL@ -m 0644 $(srcdir)/drv_libxml2.py $(DESTDIR)$(pythondir)
+-@WITH_PYTHON_TRUE@	$(mkinstalldirs) $(DESTDIR)$(DOCS_DIR)
+-@WITH_PYTHON_TRUE@	@(for doc in $(DOCS) ; \
+-@WITH_PYTHON_TRUE@	   do @INSTALL@ -m 0644 $$doc $(DESTDIR)$(DOCS_DIR) ; done)
+ 
+ @WITH_PYTHON_TRUE@$(GENERATED): gen_prog
+ 
