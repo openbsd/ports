@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2006/10/08 21:43:50 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2006/10/30 18:17:32 espie Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples for qt4"
@@ -20,7 +20,7 @@ SHARED_LIBS=	Qt3Support 6.0 \
 		QtCore 6.0 \
 		QtDesigner 6.0 \
 		QtDesignerComponents 6.0 \
-		QtGui 6.0 \
+		QtGui 6.1 \
 		QtNetwork 6.0 \
 		QtOpenGL 6.0 \
 		QtSql 6.0 \
@@ -31,8 +31,8 @@ SHARED_LIBS=	Qt3Support 6.0 \
 		QtDBus 0.0 
 
 
-VERSION=	4.2.0
-DISTNAME=	qt-x11-opensource-src-4.2.0
+VERSION=	4.2.1
+DISTNAME=	qt-x11-opensource-src-4.2.1
 
 
 CATEGORIES=	x11
@@ -46,7 +46,8 @@ MASTER_SITES=	ftp://ftp.rediris.es/mirror/Qt/source/ \
 HOMEPAGE=	http://www.trolltech.com/qt/
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
-
+ 
+PSEUDO_FLAVORS=	no_examples
 FLAVOR?=
 
 # GPL/QPL
@@ -100,7 +101,18 @@ LIB_DEPENDS=
 WANTLIB=
 BUILD_DEPENDS+=::print/cups
 
-MULTI_PACKAGES+=-html -examples
+MULTI_PACKAGES+=-html 
+
+
+.if ${FLAVOR:L:Mno_examples}
+ALL_TARGET=sub-src-all-ordered sub-tools-all-ordered
+INSTALL_TARGET=sub-src-install_subtargets-ordered \
+	sub-tools-install_subtargets-ordered install_htmldocs \
+	install_translations install_qmake install_mkspecs
+.else
+MULTI_PACKAGES+=-examples
+PROGRAMS+=	qtdemo
+.endif
 
 .if !defined(PACKAGING) || ${SUBPACKAGE} == ""
 LIB_DEPENDS+=	jpeg::graphics/jpeg \
@@ -191,7 +203,7 @@ NO_REGRESS=	Yes
 
 PROGRAMS4=assistant designer findtr linguist lrelease lupdate moc qm2ts qmake \
 	qtconfig uic uic3
-PROGRAMS= rcc qtdemo qt3to4 syncqt
+PROGRAMS+= rcc qt3to4 syncqt
 
 
 QMAKE=${WRKBUILD}/bin/qmake
@@ -203,20 +215,6 @@ MAKE_FLAGS+=LIB$l_VERSION=$v
 .endfor
 
 FAKE_FLAGS=$(MAKE_FLAGS) INSTALL_ROOT=${WRKINST}
-
-DIRECTORIES= src/corelib src/gui src/network src/opengl src/qt3support src/sql src/xml \
-	src/plugins/accessible/compat \
-	src/plugins/accessible/widgets \
-	src/plugins/codecs/cn \
-	src/plugins/codecs/jp \
-	src/plugins/codecs/kr \
-	src/plugins/codecs/tw \
-	src/plugins/imageformats/jpeg \
-	src/plugins/sqldrivers/mysql \
-	src/plugins/sqldrivers/psql \
-	tools/designer/src/components/lib \
-	tools/designer/src/lib \
-	tools/designer/src/plugins/widgets
 
 post-install:
 	# extra doc

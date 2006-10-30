@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.8 2006/10/08 21:43:50 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.9 2006/10/30 18:17:32 espie Exp $
 @lib lib/libQt3Support.so.${LIBQt3Support_VERSION}
 @lib lib/libQtAssistantClient.so.${LIBQtAssistantClient_VERSION}
 @lib lib/libQtCore.so.${LIBQtCore_VERSION}
@@ -31,12 +31,7 @@ lib/qt4/plugins/codecs/libqcncodecs.so
 lib/qt4/plugins/codecs/libqjpcodecs.so
 lib/qt4/plugins/codecs/libqkrcodecs.so
 lib/qt4/plugins/codecs/libqtwcodecs.so
-lib/qt4/plugins/designer/libarthurplugin.so
-lib/qt4/plugins/designer/libcontainerextension.so
-lib/qt4/plugins/designer/libcustomwidgetplugin.so
 lib/qt4/plugins/designer/libqt3supportwidgets.so
-lib/qt4/plugins/designer/libtaskmenuextension.so
-lib/qt4/plugins/designer/libworldtimeclockplugin.so
 lib/qt4/plugins/iconengines/libqsvg.so
 lib/qt4/plugins/imageformats/libqgif.so
 lib/qt4/plugins/imageformats/libqjpeg.so
