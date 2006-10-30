@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.429 2006/10/29 14:47:48 alek Exp $
+# $OpenBSD: Makefile,v 1.430 2006/10/30 13:48:22 bernd Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -28,7 +28,6 @@
      SUBDIR += centericq
      SUBDIR += cftp
      SUBDIR += charm
-     SUBDIR += cidr
      SUBDIR += clive
      SUBDIR += clog
      SUBDIR += cnupm
