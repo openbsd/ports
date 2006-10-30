@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/10/19 00:53:55 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2006/10/30 07:28:21 sturm Exp $
 
 COMMENT=	"package management framework for the Ruby language"
 
@@ -24,6 +24,6 @@ MODULES= 	lang/ruby
 
 CONFIGURE_STYLE=ruby setup
 
-MAKE_ENV=	GEM_HOME=${PREFIX}/lib/ruby/gems/${REV}
+MAKE_ENV=	GEM_HOME=${PREFIX}/lib/ruby/gems/${MODRUBY_REV}
 
 .include <bsd.port.mk>
