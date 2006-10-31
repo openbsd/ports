@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2006/10/31 14:38:17 dhill Exp $
+--- Makefile.in.orig	Thu Oct 26 22:11:32 2006
++++ Makefile.in	Thu Oct 26 22:11:51 2006
+@@ -98,11 +98,6 @@ install-main: all
+ 	@-$(INSTALL_PROGRAM) $(ERUBY) $(bindir)/$(ERUBY)
+ 	@-if [ -f $(LIBERUBY_SO) ]; then \
+ 		$(INSTALL_DATA) $(LIBERUBY_SO) $(libdir)/$(LIBERUBY_SO); \
+-		cd $(libdir); \
+-		$(RUBY) -e 'ARGV.each{|link| File.delete link \
+-			if File.exist? link; \
+-			File.symlink "$(LIBERUBY_SO)", link}' \
+-			$(LIBERUBY_ALIASES); \
+ 	fi
+ 	@-$(INSTALL_DATA) $(LIBERUBY_A) $(libdir)/$(LIBERUBY_A)
+ 	@-$(INSTALL_DATA) $(srcdir)/eruby.h $(includedir)/eruby.h

@@ -1,0 +1,4 @@
+eruby is an implementation of eRuby by C.
+
+eRuby is a language to embed Ruby codes into text files. For example,
+you can embed Ruby codes into HTML files.

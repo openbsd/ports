@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_rb,v 1.1.1.1 2006/10/31 14:38:17 dhill Exp $
+--- configure.rb.orig	Mon Feb 10 04:18:10 2003
++++ configure.rb	Thu Oct 26 22:21:26 2006
+@@ -443,7 +443,7 @@ $LIBERUBY_A = "liberuby.a"
+ $LIBERUBY = "${LIBERUBY_A}"
+ $LIBERUBYARG="$(LIBERUBY_A)"
+ 
+-$LIBERUBY_SO = "liberuby.#{CONFIG['DLEXT']}.$(MAJOR).$(MINOR).$(TEENY)"
++$LIBERUBY_SO = "liberuby.#{CONFIG['DLEXT']}.$(LIBeruby_MAJOR).$(LIBeruby_MINOR)"
+ $LIBERUBY_ALIASES = "liberuby.#{CONFIG['DLEXT']}"
+ 
+ if $ENABLE_SHARED
