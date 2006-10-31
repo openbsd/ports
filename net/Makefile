@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.430 2006/10/30 13:48:22 bernd Exp $
+# $OpenBSD: Makefile,v 1.431 2006/10/31 19:37:06 brad Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -72,8 +72,8 @@
      SUBDIR += ftpsesame
      SUBDIR += gabber
      SUBDIR += gaim
-     SUBDIR += gaim,audio
-     SUBDIR += gaim,audio,gtkspell
+#     SUBDIR += gaim,audio
+#     SUBDIR += gaim,audio,gtkspell
      SUBDIR += gaim,gtkspell
      SUBDIR += gaim-icb
      SUBDIR += gajim
