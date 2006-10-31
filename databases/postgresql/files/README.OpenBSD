@@ -108,11 +108,7 @@ krb_server_keyfile line in postgresql.conf.
 To generate the keytab:
 
 	# mkdir /etc/postgresql
-	# kadmin
-
-	kadmin> add -r postgres/server.domain
-	kadmin> ext --keytab=/etc/postgresql/krb5.keytab postgres/server.domain
-
+	# ktutil -k /etc/postgresql/krb5.keytab get postgres/server.domain
 	# chown _postgresql:_postgresql /etc/postgresql/krb5.keytab
 
 Clients/Frontends
