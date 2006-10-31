@@ -1,0 +1,239 @@
+$OpenBSD: patch-otr-plugin_c,v 1.1 2006/10/31 20:15:30 alek Exp $
+--- otr-plugin.c.orig	Thu Oct 27 18:01:59 2005
++++ otr-plugin.c	Sat Oct 28 23:01:28 2006
+@@ -32,11 +32,11 @@
+ 
+ /* gaim headers */
+ #include "gaim.h"
+-#include "core.h"
+ #include "notify.h"
+ #include "version.h"
+ #include "util.h"
+ #include "debug.h"
++#include "core.h"
+ 
+ #ifdef USING_GTK
+ /* gaim GTK headers */
+@@ -60,6 +60,20 @@
+ #include "gtk-dialog.h"
+ #endif
+ 
++/* If we're using glib on Windows, we need to use g_fopen to open files.
++ * On other platforms, it's also safe to use it.  If we're not using
++ * glib, just use fopen. */
++#ifdef USING_GTK
++/* If we're cross-compiling, this might be wrong, so fix it. */
++#ifdef WIN32
++#undef G_OS_UNIX
++#define G_OS_WIN32
++#endif
++#include <glib/gstdio.h>
++#else
++#define g_fopen fopen
++#endif
++
+ GaimPlugin *otrg_plugin_handle;
+ 
+ /* We'll only use the one OtrlUserState. */
+@@ -119,19 +133,26 @@ void otrg_plugin_create_privkey(const ch
+ 	const char *protocol)
+ {
+     OtrgDialogWaitHandle waithandle;
++    FILE *privf;
+ 
+     gchar *privkeyfile = g_build_filename(gaim_user_dir(), PRIVKEYFNAME, NULL);
+     if (!privkeyfile) {
+ 	fprintf(stderr, "Out of memory building filenames!\n");
+ 	return;
+     }
++    privf = g_fopen(privkeyfile, "w+b");
++    g_free(privkeyfile);
++    if (!privf) {
++	fprintf(stderr, "Could not write private key file\n");
++	return;
++    }
+ 
+     waithandle = otrg_dialog_private_key_wait_start(accountname, protocol);
+ 
+     /* Generate the key */
+-    otrl_privkey_generate(otrg_plugin_userstate, privkeyfile,
++    otrl_privkey_generate_FILEp(otrg_plugin_userstate, privf,
+ 	    accountname, protocol);
+-    g_free(privkeyfile);
++    fclose(privf);
+     otrg_ui_update_fingerprint();
+ 
+     /* Mark the dialog as done. */
+@@ -156,7 +177,11 @@ static int is_logged_in_cb(void *opdata,
+     buddy = gaim_find_buddy(account, recipient);
+     if (!buddy) return -1;
+ 
++#if GAIM_MAJOR_VERSION < 2
+     return (buddy->present == GAIM_BUDDY_ONLINE);
++#else
++    return (GAIM_BUDDY_IS_ONLINE(buddy));
++#endif
+ }
+ 
+ static void inject_message_cb(void *opdata, const char *accountname,
+@@ -395,6 +420,8 @@ static void process_connection_change(Ga
+     otrg_dialog_resensitize_all();
+ }
+ 
++#if GAIM_MAJOR_VERSION < 2
++/* gaim-2.0.0 no longer has the row of buttons in question */
+ static void process_button_type_change(const char *name, GaimPrefType type,
+ 	gpointer value, gpointer data)
+ {
+@@ -404,6 +431,7 @@ static void process_button_type_change(c
+      * buttons as well. */
+     otrg_dialog_resensitize_all();
+ }
++#endif
+ 
+ static void otr_options_cb(GaimBlistNode *node, gpointer user_data)
+ {
+@@ -416,7 +444,11 @@ static void otr_options_cb(GaimBlistNode
+ 
+ static void supply_extended_menu(GaimBlistNode *node, GList **menu)
+ {
++#if GAIM_MAJOR_VERSION < 2
+     GaimBlistNodeAction *act;
++#else
++    GaimMenuAction *act;
++#endif
+     GaimBuddy *buddy;
+     GaimAccount *acct;
+     const char *proto;
+@@ -430,7 +462,12 @@ static void supply_extended_menu(GaimBli
+     proto = gaim_account_get_protocol_id(acct);
+     if (!otrg_plugin_proto_supports_otr(proto)) return;
+ 
++#if GAIM_MAJOR_VERSION < 2
+     act = gaim_blist_node_action_new("OTR Settings", otr_options_cb, NULL);
++#else
++    act = gaim_menu_action_new("OTR Settings", (GaimCallback)otr_options_cb,
++	    NULL, NULL);
++#endif
+     *menu = g_list_append(*menu, act);
+ }
+ 
+@@ -445,9 +482,13 @@ void otrg_plugin_disconnect(ConnContext 
+ /* Write the fingerprints to disk. */
+ void otrg_plugin_write_fingerprints(void)
+ {
++    FILE *storef;
+     gchar *storefile = g_build_filename(gaim_user_dir(), STOREFNAME, NULL);
+-    otrl_privkey_write_fingerprints(otrg_plugin_userstate, storefile);
++    storef = g_fopen(storefile, "wb");
+     g_free(storefile);
++    if (!storef) return;
++    otrl_privkey_write_fingerprints_FILEp(otrg_plugin_userstate, storef);
++    fclose(storef);
+ }
+ 
+ /* Find the ConnContext appropriate to a given GaimConversation. */
+@@ -482,9 +523,17 @@ GaimConversation *otrg_plugin_context_to
+     account = gaim_accounts_find(context->accountname, context->protocol);
+     if (account == NULL) return NULL;
+ 
++#if GAIM_MAJOR_VERSION < 2
+     conv = gaim_find_conversation_with_account(context->username, account);
++#else
++    conv = gaim_find_conversation_with_account(GAIM_CONV_TYPE_IM, context->username, account);
++#endif
+     if (conv == NULL && force_create) {
++#if GAIM_MAJOR_VERSION < 2
+ 	conv = gaim_conversation_new(GAIM_CONV_IM, account, context->username);
++#else
++	conv = gaim_conversation_new(GAIM_CONV_TYPE_IM, account, context->username);
++#endif
+     }
+ 
+     return conv;
+@@ -523,7 +572,10 @@ static void process_quitting(void)
+     }
+ }
+ 
++#if GAIM_MAJOR_VERSION < 2
++/* gaim-2.0.0 no longer has the row of buttons in question */
+ static guint button_type_cbid;
++#endif
+ 
+ static gboolean otr_plugin_load(GaimPlugin *handle)
+ {
+@@ -533,6 +585,8 @@ static gboolean otr_plugin_load(GaimPlug
+     void *conn_handle = gaim_connections_get_handle();
+     void *blist_handle = gaim_blist_get_handle();
+     void *core_handle = gaim_get_core();
++    FILE *privf;
++    FILE *storef;
+ 
+     if (!privkeyfile || !storefile) {
+ 	g_free(privkeyfile);
+@@ -540,16 +594,21 @@ static gboolean otr_plugin_load(GaimPlug
+ 	return 0;
+     }
+ 
++    privf = g_fopen(privkeyfile, "rb");
++    storef = g_fopen(storefile, "rb");
++    g_free(privkeyfile);
++    g_free(storefile);
++
+     otrg_plugin_handle = handle;
+ 
+     /* Make our OtrlUserState; we'll only use the one. */
+     otrg_plugin_userstate = otrl_userstate_create();
+ 
+-    otrl_privkey_read(otrg_plugin_userstate, privkeyfile);
+-    g_free(privkeyfile);
+-    otrl_privkey_read_fingerprints(otrg_plugin_userstate, storefile,
++    otrl_privkey_read_FILEp(otrg_plugin_userstate, privf);
++    otrl_privkey_read_fingerprints_FILEp(otrg_plugin_userstate, storef,
+ 	    NULL, NULL);
+-    g_free(storefile);
++    if (privf) fclose(privf);
++    if (storef) fclose(storef);
+ 
+     otrg_ui_update_fingerprint();
+ 
+@@ -567,9 +626,11 @@ static gboolean otr_plugin_load(GaimPlug
+ 	    GAIM_CALLBACK(process_connection_change), NULL);
+     gaim_signal_connect(blist_handle, "blist-node-extended-menu",
+ 	    otrg_plugin_handle, GAIM_CALLBACK(supply_extended_menu), NULL);
++#if GAIM_MAJOR_VERSION < 2
+     button_type_cbid = gaim_prefs_connect_callback(
+ 	    "/gaim/gtk/conversations/button_type",
+ 	    process_button_type_change, NULL);
++#endif
+ 
+     gaim_conversation_foreach(otrg_dialog_new_conv);
+ 
+@@ -601,7 +662,9 @@ static gboolean otr_plugin_unload(GaimPl
+ 	    GAIM_CALLBACK(process_connection_change));
+     gaim_signal_disconnect(blist_handle, "blist-node-extended-menu",
+ 	    otrg_plugin_handle, GAIM_CALLBACK(supply_extended_menu));
++#if GAIM_MAJOR_VERSION < 2
+     gaim_prefs_disconnect_callback(button_type_cbid);
++#endif
+ 
+     gaim_conversation_foreach(otrg_dialog_remove_conv);
+ 
+@@ -640,10 +703,16 @@ static GaimPluginInfo info =
+ {
+ 	GAIM_PLUGIN_MAGIC,
+ 
++#if GAIM_MAJOR_VERSION < 2
+ 	/* We stick with the functions in the gaim 1.0.x API for
+ 	 * compatibility. */
+-	1,                                                /* major version  */
++        1,                                                /* major version  */
+ 	0,                                                /* minor version  */
++#else
++        /* Use the 2.0.x API */
++        2,                                                /* major version  */
++	0,                                                /* minor version  */
++#endif
+ 
+ 	GAIM_PLUGIN_STANDARD,                             /* type           */
+ 	PLUGIN_TYPE,                                      /* ui_requirement */

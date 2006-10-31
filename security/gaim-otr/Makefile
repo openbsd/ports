@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2006/08/03 23:28:11 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/10/31 20:15:30 alek Exp $
 
 COMMENT=	"Allows deniable private conversations using GAIM"
 
-VERSION=	3.0.0
-DISTNAME=	gaim-otr-${VERSION}
-#PKGNAME=	${DISTNAME}p0
+DISTNAME=	gaim-otr-3.0.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	security net
 
 HOMEPAGE=	http://www.cypherpunks.ca/otr/ \
@@ -17,12 +16,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	::net/gaim
-RUN_DEPENDS=	gaim::net/gaim
-LIB_DEPENDS=	otr.>=2::security/libotr \
+RUN_DEPENDS=	:gaim-2.0.0beta4:net/gaim
+BUILD_DEPENDS=	${RUN_DEPENDS}
+LIB_DEPENDS=	otr.>=3:libotr->=3.0.0p0:security/libotr \
 		gcrypt.>=12:libgcrypt->=1.2:security/libgcrypt
 
-WANTLIB=	gpg-error iconv intl
+MODULES=	devel/gettext
+WANTLIB=	gpg-error
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
