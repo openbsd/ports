@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2006/10/29 22:42:49 kurt Exp $
+# $OpenBSD: Makefile,v 1.18 2006/10/31 09:33:35 robert Exp $
 
 ONLY_FOR_ARCHS= i386
 
@@ -7,7 +7,7 @@ COMMENT=	"a multi-platform productivity suite"
 VERSION=	2.0.4
 DISTNAME=	OOo_${VERSION}_src
 WRKDIST=	${WRKDIR}/OOD680_m5
-PKGNAME=	openoffice-${VERSION}p8
+PKGNAME=	openoffice-${VERSION}p9
 CATEGORIES=	editors productivity
 
 SHARED_LIBS=	icudata		26.0 \
@@ -43,7 +43,7 @@ BUILD_DEPENDS=	:zip-*:archivers/zip \
 
 LIB_DEPENDS=	gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.14::x11/gtk+2 \
 		python2.3:python-2.3.*:lang/python/2.3 \
-		db.>=4::databases/db/v4 \
+		db.>=4:db-4.*:databases/db/v4 \
 		curl.>=2::net/curl \
 		neon.>=24::net/neon \
 		sndfile.>=1::audio/libsndfile
