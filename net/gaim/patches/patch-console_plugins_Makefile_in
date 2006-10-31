@@ -1,0 +1,12 @@
+$OpenBSD: patch-console_plugins_Makefile_in,v 1.1 2006/10/31 19:32:51 brad Exp $
+--- console/plugins/Makefile.in.orig	Sun Oct 29 02:39:35 2006
++++ console/plugins/Makefile.in	Sun Oct 29 02:40:00 2006
+@@ -426,7 +426,7 @@ gntlastlog_la_LDFLAGS = -module -avoid-v
+ @PLUGINS_TRUE@gntlastlog_la_SOURCES = lastlog.c
+ @PLUGINS_TRUE@gntgf_la_LIBADD = $(GLIB_LIBS) $(X11_LIBS) $(top_builddir)/console/libgnt/libgnt.la
+ @PLUGINS_TRUE@gnthistory_la_LIBADD = $(GLIB_LIBS)
+-@PLUGINS_TRUE@gntlastlog_la_LIBADD = $(GLIB_LIBS)
++@PLUGINS_TRUE@gntlastlog_la_LIBADD = $(GLIB_LIBS) $(top_builddir)/console/libgnt/libgnt.la
+ EXTRA_DIST = 
+ AM_CPPFLAGS = \
+ 	-DDATADIR=\"$(datadir)\" \

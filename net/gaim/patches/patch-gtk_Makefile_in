@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.9 2005/07/23 20:57:02 brad Exp $
---- src/Makefile.in.orig	Thu Jul  7 21:57:05 2005
-+++ src/Makefile.in	Sat Jul 23 14:51:33 2005
-@@ -92,7 +92,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUD
+$OpenBSD: patch-gtk_Makefile_in,v 1.1 2006/10/31 19:32:51 brad Exp $
+--- gtk/Makefile.in.orig	Sun Oct 29 02:33:23 2006
++++ gtk/Makefile.in	Sun Oct 29 02:33:34 2006
+@@ -100,7 +100,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUD
  LTCOMPILE = $(LIBTOOL) --tag=CC --mode=compile $(CC) $(DEFS) \
  	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
  	$(AM_CFLAGS) $(CFLAGS)
@@ -9,4 +9,4 @@ $OpenBSD: patch-src_Makefile_in,v 1.9 2005/07/23 20:57:02 brad Exp $
 +CCLD = $(CXX)
  LINK = $(LIBTOOL) --tag=CC --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
  	$(AM_LDFLAGS) $(LDFLAGS) -o $@
- SOURCES = $(gaim_SOURCES) $(gaim_remote_SOURCES)
+ SOURCES = $(gaim_SOURCES)

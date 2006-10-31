@@ -1,0 +1,31 @@
+$OpenBSD: patch-libgaim_plugins_ssl_Makefile_am,v 1.1 2006/10/31 19:32:51 brad Exp $
+--- libgaim/plugins/ssl/Makefile.am.orig	Fri Oct 20 21:45:25 2006
++++ libgaim/plugins/ssl/Makefile.am	Fri Oct 20 21:47:49 2006
+@@ -4,6 +4,7 @@ EXTRA_DIST = \
+ plugindir = $(libdir)/gaim
+ 
+ ssl_la_LDFLAGS        = -module -avoid-version
++ssl_openssl_la_LDFLAGS = -module -avoid-version
+ ssl_gnutls_la_LDFLAGS = -module -avoid-version
+ ssl_nss_la_LDFLAGS    = -module -avoid-version
+ 
+@@ -15,10 +16,12 @@ plugin_LTLIBRARIES = \
+ 	ssl-nss.la
+ 
+ ssl_la_SOURCES        = ssl.c
++ssl_openssl_la_SOURCES = ssl-openssl.c
+ ssl_gnutls_la_SOURCES = ssl-gnutls.c
+ ssl_nss_la_SOURCES    = ssl-nss.c
+ 
+ ssl_la_LIBADD        = $(GLIB_LIBS)
++ssl_openssl_la_LIBADD = $(GLIB_LIBS) $(OPENSSL_LIBS)
+ ssl_gnutls_la_LIBADD = $(GLIB_LIBS) $(GNUTLS_LIBS)
+ ssl_nss_la_LIBADD    = $(GLIB_LIBS) $(NSS_LIBS)
+ 
+@@ -32,4 +35,5 @@ AM_CPPFLAGS = \
+ 	$(GLIB_CFLAGS) \
+ 	$(PLUGIN_CFLAGS) \
+ 	$(NSS_CFLAGS) \
+-	$(GNUTLS_CFLAGS)
++	$(GNUTLS_CFLAGS) \
++	$(OPENSSL_CFLAGS)

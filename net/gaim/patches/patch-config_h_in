@@ -1,13 +1,16 @@
-$OpenBSD: patch-config_h_in,v 1.7 2005/07/23 20:57:02 brad Exp $
---- config.h.in.orig	Thu Jul  7 21:56:35 2005
-+++ config.h.in	Sat Jul 23 14:49:20 2005
-@@ -156,6 +156,9 @@
- /* Define to 1 if you have the <gnutls/gnutls.h> header file. */
- #undef HAVE_GNUTLS_GNUTLS_H
+$OpenBSD: patch-config_h_in,v 1.8 2006/10/31 19:32:51 brad Exp $
+--- config.h.in.orig	Wed Oct 18 15:59:47 2006
++++ config.h.in	Sat Oct 21 00:08:06 2006
+@@ -159,6 +159,12 @@
+ /* Define to 1 if you have the <nss.h> header file. */
+ #undef HAVE_NSS_H
  
 +/* Define if you have OpenSSL */
 +#undef HAVE_OPENSSL
 +
- /* Define if you have the iconv() function. */
- #undef HAVE_ICONV
++/* Define to 1 if you have the <openssl/ssl.h> header file. */
++#undef HAVE_OPENSSL_SSL_H
++
+ /* Define to 1 if you have the <paths.h> header file. */
+ #undef HAVE_PATHS_H
  

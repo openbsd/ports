@@ -1,0 +1,20 @@
+$OpenBSD: patch-gtk_gtknotify_c,v 1.1 2006/10/31 19:32:51 brad Exp $
+--- gtk/gtknotify.c.orig	Sat Oct 28 13:08:03 2006
++++ gtk/gtknotify.c	Sat Oct 28 13:09:43 2006
+@@ -906,7 +906,16 @@ uri_command(const char *command, gboolea
+ 			g_error_free(error);
+ 		}
+ 		else
++#if HAVE_SIGNAL_H
++		{
++			extern int real_status;
++
++			if (WIFEXITED(real_status))
++				ret = WEXITSTATUS(real_status);
++		}
++#else
+ 			ret = status;
++#endif
+ 	}
+ 	else
+ 	{

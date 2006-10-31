@@ -1,4 +1,4 @@
-/*	$OpenBSD: ssl-openssl.c,v 1.9 2006/05/22 06:14:51 brad Exp $	*/
+/*	$OpenBSD: ssl-openssl.c,v 1.10 2006/10/31 19:32:51 brad Exp $	*/
 
 /*
  * OpenSSL SSL-plugin for gaim
@@ -35,6 +35,7 @@ typedef struct
 {
 	SSL	*ssl;
 	SSL_CTX	*ssl_ctx;
+	guint	handshake_handler;
 } GaimSslOpensslData;
 
 #define GAIM_SSL_OPENSSL_DATA(gsc) ((GaimSslOpensslData *)gsc->private_data)
@@ -84,29 +85,57 @@ ssl_openssl_uninit(void)
 }
 
 /*
- * ssl_openssl_connect_cb
- *
- * given a socket, put an openssl connection around it.
+ * ssl_openssl_handshake_cb
  */
 static void
-ssl_openssl_connect_cb(gpointer data, gint source, GaimInputCondition cond)
+ssl_openssl_handshake_cb(gpointer data, gint source, GaimInputCondition cond)
 {
 	GaimSslConnection *gsc = (GaimSslConnection *)data;
-	GaimSslOpensslData *openssl_data;
+	GaimSslOpensslData *openssl_data = GAIM_SSL_OPENSSL_DATA(gsc);
+	int ret, ret2;
+
+	gaim_debug_info("openssl", "Connecting\n");
 
 	/*
-	 * we need a valid file descriptor to associate the SSL connection with.
+	 * do the negotiation that sets up the SSL connection between
+	 * here and there.
 	 */
-	if (source < 0) {
+	ret = SSL_connect(openssl_data->ssl);
+	if (ret <= 0) {
+		gaim_debug_info("openssl", "SSL_get_error\n");
+		ret2 = SSL_get_error(openssl_data->ssl, ret);
+
+		if (ret2 == SSL_ERROR_WANT_READ || ret2 == SSL_ERROR_WANT_WRITE)
+			return;
+
+		gaim_debug_error("openssl", "SSL_connect failed\n");
+
 		if (gsc->error_cb != NULL)
-			gsc->error_cb(gsc, GAIM_SSL_CONNECT_FAILED,
+			gsc->error_cb(gsc, GAIM_SSL_HANDSHAKE_FAILED,
 				gsc->connect_cb_data);
 
 		gaim_ssl_close(gsc);
 		return;
 	}
 
-	gsc->fd = source;
+	gaim_input_remove(openssl_data->handshake_handler);
+	openssl_data->handshake_handler = 0;
+
+	gaim_debug_info("openssl", "SSL_connect complete\n");
+
+	/* SSL connected now */
+	gsc->connect_cb(gsc->connect_cb_data, gsc, cond);
+}
+
+/*
+ * ssl_openssl_connect
+ *
+ * given a socket, put an openssl connection around it.
+ */
+static void
+ssl_openssl_connect(GaimSslConnection *gsc)
+{
+	GaimSslOpensslData *openssl_data;
 
 	/*
 	 * allocate some memory to store variables for the openssl connection.
@@ -134,7 +163,7 @@ ssl_openssl_connect_cb(gpointer data, gint source, GaimInputCondition cond)
 	 * allocate a new SSL object
 	 */
 	openssl_data->ssl = SSL_new(openssl_data->ssl_ctx);
-	if(openssl_data->ssl == NULL) {
+	if (openssl_data->ssl == NULL) {
 		gaim_debug_error("openssl", "SSL_new failed\n");
 		if (gsc->error_cb != NULL)
 			gsc->error_cb(gsc, GAIM_SSL_HANDSHAKE_FAILED,
@@ -147,7 +176,7 @@ ssl_openssl_connect_cb(gpointer data, gint source, GaimInputCondition cond)
 	/*
 	 * now we associate the file descriptor we have with the SSL connection
 	 */
-	if (SSL_set_fd(openssl_data->ssl, source) == 0) {
+	if (SSL_set_fd(openssl_data->ssl, gsc->fd) == 0) {
 		gaim_debug_error("openssl", "SSL_set_fd failed\n");
 		if (gsc->error_cb != NULL)
 			gsc->error_cb(gsc, GAIM_SSL_HANDSHAKE_FAILED,
@@ -157,22 +186,10 @@ ssl_openssl_connect_cb(gpointer data, gint source, GaimInputCondition cond)
 		return;
 	}
 
-	/*
-	 * finally, do the negotiation that sets up the SSL connection between
-	 * here and there.
-	 */
-	if (SSL_connect(openssl_data->ssl) <= 0) {
-		gaim_debug_error("openssl", "SSL_connect failed\n");
-		if (gsc->error_cb != NULL)
-			gsc->error_cb(gsc, GAIM_SSL_HANDSHAKE_FAILED,
-				gsc->connect_cb_data);
+	openssl_data->handshake_handler = gaim_input_add(gsc->fd,
+		GAIM_INPUT_READ, ssl_openssl_handshake_cb, gsc);
 
-		gaim_ssl_close(gsc);
-		return;
-	}
-
-	/* SSL connected now */
-	gsc->connect_cb(gsc->connect_cb_data, gsc, cond);
+	ssl_openssl_handshake_cb(gsc, gsc->fd, GAIM_INPUT_READ);
 }
 
 static void
@@ -183,6 +200,9 @@ ssl_openssl_close(GaimSslConnection *gsc)
 
 	if (openssl_data == NULL)
 		return;
+
+	if (openssl_data->handshake_handler)
+		gaim_input_remove(openssl_data->handshake_handler);
 
 	if (openssl_data->ssl != NULL) {
 		i = SSL_shutdown(openssl_data->ssl);
@@ -195,32 +215,53 @@ ssl_openssl_close(GaimSslConnection *gsc)
 		SSL_CTX_free(openssl_data->ssl_ctx);
 
 	g_free(openssl_data);
+	gsc->private_data = NULL;
 }
 
 static size_t
 ssl_openssl_read(GaimSslConnection *gsc, void *data, size_t len)
 {
 	GaimSslOpensslData *openssl_data = GAIM_SSL_OPENSSL_DATA(gsc);
-	int i;
+	ssize_t s;
+	int ret;
 
-	i = SSL_read(openssl_data->ssl, data, len);
-	if (i < 0)
-		i = 0;
+	s = SSL_read(openssl_data->ssl, data, len);
+	if (s <= 0) {
+		ret = SSL_get_error(openssl_data->ssl, s);
 
-	return (i);
+		if (ret == SSL_ERROR_WANT_READ || ret == SSL_ERROR_WANT_WRITE) {
+			errno = EAGAIN;
+			return (-1);
+		}
+
+		gaim_debug_error("openssl", "receive failed: %d\n", s);
+		s = 0;
+	}
+
+	return (s);
 }
 
 static size_t
 ssl_openssl_write(GaimSslConnection *gsc, const void *data, size_t len)
 {
 	GaimSslOpensslData *openssl_data = GAIM_SSL_OPENSSL_DATA(gsc);
-	int s = 0;
+	ssize_t s = 0;
+	int ret;
 
 	if (openssl_data != NULL)
-		s = SSL_write(openssl_data->ssl, data, len);      
+		s = SSL_write(openssl_data->ssl, data, len);
 
-	if (s < 0)
+	if (s <= 0) {
+		ret = SSL_get_error(openssl_data->ssl, s);
+
+		if (ret == SSL_ERROR_WANT_READ || ret == SSL_ERROR_WANT_WRITE) {
+			errno = EAGAIN;
+			return (-1);
+		}
+
+		gaim_debug_error("openssl", "send failed: %d\n", s);
 		s = 0;
+	}
 
 	return (s);
 }
@@ -228,7 +269,7 @@ ssl_openssl_write(GaimSslConnection *gsc, const void *data, size_t len)
 static GaimSslOps ssl_ops = {
 	ssl_openssl_init,
 	ssl_openssl_uninit,
-	ssl_openssl_connect_cb,
+	ssl_openssl_connect,
 	ssl_openssl_close,
 	ssl_openssl_read,
 	ssl_openssl_write
@@ -287,7 +328,9 @@ static GaimPluginInfo info = {
 	NULL,						/* destroy */
 
 	NULL,						/* ui_info */
-	NULL						/* extra_info */
+	NULL,						/* extra_info */
+	NULL,						/* prefs_info */
+	NULL						/* actions */
 };
 
 static void

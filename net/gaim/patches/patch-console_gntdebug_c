@@ -1,0 +1,12 @@
+$OpenBSD: patch-console_gntdebug_c,v 1.1 2006/10/31 19:32:51 brad Exp $
+--- console/gntdebug.c.orig	Sun Oct 29 02:50:41 2006
++++ console/gntdebug.c	Sun Oct 29 02:50:44 2006
+@@ -193,7 +193,7 @@ gaim_glib_log_handler(const gchar *domai
+ 
+ void gg_debug_window_show()
+ {
+-	debug.paused = false;
++	debug.paused = FALSE;
+ 	debug.timestamps = gaim_prefs_get_bool("/core/debug/timestamps");
+ 	if (debug.window == NULL)
+ 	{

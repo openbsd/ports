@@ -1,0 +1,16 @@
+$OpenBSD: patch-gtk_gtkdialogs_c,v 1.1 2006/10/31 19:32:51 brad Exp $
+--- gtk/gtkdialogs.c.orig	Fri Oct 20 21:54:24 2006
++++ gtk/gtkdialogs.c	Fri Oct 20 21:55:26 2006
+@@ -513,6 +513,12 @@ g_string_append(str, "<br/>  <b>Library 
+ 	g_string_append(str, "    <b>GtkSpell:</b> Disabled<br/>");
+ #endif
+ 
++#ifdef HAVE_OPENSSL
++	g_string_append(str, "    <b>OpenSSL:</b> Enabled<br/>");
++#else
++	g_string_append(str, "    <b>OpenSSL:</b> Disabled<br/>");
++#endif
++
+ #ifdef HAVE_GNUTLS
+ 	g_string_append(str, "    <b>GnuTLS:</b> Enabled<br/>");
+ #else

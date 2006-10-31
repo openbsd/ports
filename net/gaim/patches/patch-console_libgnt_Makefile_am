@@ -1,0 +1,9 @@
+$OpenBSD: patch-console_libgnt_Makefile_am,v 1.1 2006/10/31 19:32:51 brad Exp $
+--- console/libgnt/Makefile.am.orig	Sun Oct 29 14:25:09 2006
++++ console/libgnt/Makefile.am	Sun Oct 29 14:25:29 2006
+@@ -1,4 +1,4 @@
+-SUBDIRS = . wms
++SUBDIRS = .
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = gnt.pc
+ 

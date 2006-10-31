@@ -1,0 +1,12 @@
+$OpenBSD: patch-console_libgnt_Makefile_in,v 1.1 2006/10/31 19:32:51 brad Exp $
+--- console/libgnt/Makefile.in.orig	Sun Oct 29 16:14:11 2006
++++ console/libgnt/Makefile.in	Sun Oct 29 16:14:12 2006
+@@ -414,7 +414,7 @@ target_alias = @target_alias@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-SUBDIRS = . wms
++SUBDIRS = .
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = gnt.pc
+ lib_LTLIBRARIES = libgnt.la

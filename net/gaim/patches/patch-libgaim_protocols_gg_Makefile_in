@@ -1,0 +1,12 @@
+$OpenBSD: patch-libgaim_protocols_gg_Makefile_in,v 1.1 2006/10/31 19:32:51 brad Exp $
+--- libgaim/protocols/gg/Makefile.in.orig	Sat Oct 28 13:52:42 2006
++++ libgaim/protocols/gg/Makefile.in	Sat Oct 28 13:52:45 2006
+@@ -486,7 +486,7 @@ libgg_la_LDFLAGS = -module -avoid-versio
+ @STATIC_GG_TRUE@libgg_a_CFLAGS = $(AM_CFLAGS)
+ @STATIC_GG_TRUE@libgg_a_LIBADD = $(GADU_LIBS)
+ @STATIC_GG_FALSE@libgg_la_SOURCES = $(GGSOURCES)
+-@STATIC_GG_FALSE@libgg_la_LIBADD = $(GLIB_LIBS) $(GADU_LIBS)
++@STATIC_GG_FALSE@libgg_la_LIBADD = $(GLIB_LIBS) $(GADU_LIBS) $(LIBGADU_LIBS)
+ AM_CPPFLAGS = \
+ 	-I$(top_srcdir)/libgaim \
+ 	$(INTGG_CFLAGS) \

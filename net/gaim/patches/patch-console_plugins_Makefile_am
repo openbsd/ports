@@ -1,0 +1,12 @@
+$OpenBSD: patch-console_plugins_Makefile_am,v 1.1 2006/10/31 19:32:51 brad Exp $
+--- console/plugins/Makefile.am.orig	Sun Oct 29 14:25:42 2006
++++ console/plugins/Makefile.am	Sun Oct 29 14:27:04 2006
+@@ -17,7 +17,7 @@ gntlastlog_la_SOURCES    = lastlog.c
+ 
+ gntgf_la_LIBADD       = $(GLIB_LIBS) $(X11_LIBS) $(top_builddir)/console/libgnt/libgnt.la
+ gnthistory_la_LIBADD  = $(GLIB_LIBS)
+-gntlastlog_la_LIBADD  = $(GLIB_LIBS)
++gntlastlog_la_LIBADD  = $(GLIB_LIBS) $(top_builddir)/console/libgnt/libgnt.la
+ 
+ endif # PLUGINS
+ 
