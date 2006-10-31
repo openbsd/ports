@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.163 2006/10/30 11:00:47 bernd Exp $
+# $OpenBSD: Makefile,v 1.164 2006/10/31 14:41:13 dhill Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -15,6 +15,7 @@
      SUBDIR += docbook-dsssl
      SUBDIR += docbook-to-man
      SUBDIR += docbook-xsl
+     SUBDIR += eruby
      SUBDIR += expat
      SUBDIR += gdiff
      SUBDIR += glimpse
