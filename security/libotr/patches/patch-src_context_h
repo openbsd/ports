@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_context_h,v 1.1 2006/10/31 19:54:22 alek Exp $
+--- src/context.h.orig	Wed Oct 19 19:24:57 2005
++++ src/context.h	Sun Oct 29 00:31:54 2006
+@@ -38,9 +38,9 @@ typedef enum {
+ 					  sent to him. */
+ } OtrlMessageState;
+ 
+-typedef struct fingerprint {
+-    struct fingerprint *next;          /* The next fingerprint in the list */
+-    struct fingerprint **tous;         /* A pointer to the pointer to us */
++typedef struct s_fingerprint {
++    struct s_fingerprint *next;        /* The next fingerprint in the list */
++    struct s_fingerprint **tous;       /* A pointer to the pointer to us */
+     unsigned char *fingerprint;        /* The fingerprint, or NULL */
+     struct context *context;           /* The context to which we belong */
+     char *trust;                       /* The trust level of the fingerprint */

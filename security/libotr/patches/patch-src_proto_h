@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_proto_h,v 1.1 2006/10/31 19:54:22 alek Exp $
+--- src/proto.h.orig	Thu Oct 27 18:01:04 2005
++++ src/proto.h	Sun Oct 29 00:31:54 2006
+@@ -40,8 +40,8 @@ typedef unsigned int OtrlPolicy;
+ #define OTRL_POLICY_ALLOW_V2			0x02
+ #define OTRL_POLICY_REQUIRE_ENCRYPTION		0x04
+ #define OTRL_POLICY_SEND_WHITESPACE_TAG		0x08
+-#define OTRL_POLICY_WHITESPACE_START_AKE	0x08
+-#define OTRL_POLICY_ERROR_START_AKE		0x10
++#define OTRL_POLICY_WHITESPACE_START_AKE	0x10
++#define OTRL_POLICY_ERROR_START_AKE		0x20
+ 
+ #define OTRL_POLICY_VERSION_MASK (OTRL_POLICY_ALLOW_V1 | OTRL_POLICY_ALLOW_V2)
+ 

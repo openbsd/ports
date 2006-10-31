@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_auth_c,v 1.1 2006/10/31 19:54:22 alek Exp $
+--- src/auth.c.orig	Sun Oct 30 22:01:15 2005
++++ src/auth.c	Sun Oct 29 00:31:54 2006
+@@ -1188,7 +1188,7 @@ gcry_error_t otrl_auth_handle_v1_key_exc
+     unsigned char *buf = NULL, *bufp = NULL;
+     unsigned char *fingerprintstart, *fingerprintend;
+     unsigned char fingerprintbuf[20], hashbuf[20];
+-    gcry_mpi_t p, q, g, y, received_pub;
++    gcry_mpi_t p, q, g, y, received_pub = NULL;
+     gcry_sexp_t pubs = NULL;
+     size_t buflen, lenp;
+     unsigned char received_reply;

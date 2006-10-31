@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/11/18 04:10:35 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/10/31 19:54:22 alek Exp $
 %%SHARED%%
 bin/otr_mackey
 bin/otr_modify
@@ -29,5 +29,4 @@ lib/libotr.la
 @man man/man1/otr_remac.1
 @man man/man1/otr_sesskeys.1
 @man man/man1/otr_toolkit.1
-share/aclocal/
 share/aclocal/libotr.m4

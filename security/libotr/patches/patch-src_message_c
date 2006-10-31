@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_message_c,v 1.1 2006/10/31 19:54:22 alek Exp $
+--- src/message.c.orig	Thu Oct 27 22:24:11 2005
++++ src/message.c	Sun Oct 29 00:31:54 2006
+@@ -830,7 +830,7 @@ int otrl_message_receiving(OtrlUserState
+ 			    break;
+ 			}
+ 			format = is_conflict ? "We received an unreadable "
+-			    "encrypted messahe from %s." :
++			    "encrypted message from %s." :
+ 			    "We received a malformed data message from %s.";
+ 			buf = malloc(strlen(format) + strlen(sender) - 1);
+ 			if (buf) {
