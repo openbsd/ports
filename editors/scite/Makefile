@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2006/08/01 23:39:08 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/10/31 19:52:36 espie Exp $
 
 COMMENT=		"flexible and small GTK+ editor"
 
 VERSION=		1.54
 DISTNAME=		scite${VERSION:S/.//}
-PKGNAME=		scite-${VERSION}
+PKGNAME=		scite-${VERSION}p0
 CATEGORIES=		editors x11
 
 HOMEPAGE=		http://www.scintilla.org/SciTE.html
-
-MAINTAINER=		Joerg Sonnenberger <joerg@bec.de>
 
 # old Python license
 PERMIT_PACKAGE_CDROM=	"may not sell"
