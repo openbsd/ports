@@ -1,0 +1,15 @@
+$OpenBSD: patch-taskjuggler_Project_h,v 1.1 2006/10/31 20:56:43 sturm Exp $
+
+	Align 'now' date to timing resolution. from svn
+
+--- taskjuggler/Project.h.orig	Mon Oct 23 20:57:21 2006
++++ taskjuggler/Project.h	Mon Oct 23 20:57:43 2006
+@@ -216,7 +216,7 @@ public:
+      * Set the date that TaskJuggler uses as current date for all
+      * computations. This mainly affects status reporting and the computation
+      * of the completion degree of tasks. */
+-    void setNow(time_t n) { now = n; }
++    void setNow(time_t n);
+     /**
+      * Get the date that TaskJuggler uses as current date.
+      */

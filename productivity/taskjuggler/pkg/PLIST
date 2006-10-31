@@ -1,15 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/03/11 14:06:31 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/10/31 20:56:43 sturm Exp $
 %%SHARED%%
 bin/TaskJugglerUI
 bin/taskjuggler
 lib/libtaskjuggler.a
 lib/libtaskjuggler.la
-share/applications/
-share/applications/kde/
 share/applications/kde/taskjuggler.desktop
-share/apps/
-share/apps/katepart/
-share/apps/katepart/syntax/
 share/apps/katepart/syntax/taskjuggler.xml
 share/apps/taskjuggler/
 share/apps/taskjuggler/icons/
@@ -65,10 +60,7 @@ share/apps/taskjuggler/templates/en_US/Blank_Project.tjp
 share/apps/taskjuggler/templates/en_US/Large_Project.tjp
 share/apps/taskjuggler/templates/en_US/Simple_Project.tjp
 share/apps/taskjuggler/tips
-share/config/
 share/config/taskjugglerrc
-share/doc/HTML/
-share/doc/HTML/en/
 share/doc/HTML/en/taskjuggler/
 share/doc/HTML/en/taskjuggler/ChangeLog.xml
 share/doc/HTML/en/taskjuggler/Example.xml
@@ -109,18 +101,12 @@ share/examples/taskjuggler/ShiftSchedule/ShiftSchedule.tjp
 share/examples/taskjuggler/ShiftSchedule/ShiftTimes-06-03.html
 share/examples/taskjuggler/ShiftSchedule/ShiftTimes-06-10.html
 share/examples/taskjuggler/ShiftSchedule/TaskCoverage-Jun.html
-share/icons/
-share/icons/crystalsvg/
-share/icons/crystalsvg/32x32/
-share/icons/crystalsvg/32x32/mimetypes/
 share/icons/crystalsvg/32x32/mimetypes/taskjuggler_tji.png
 share/icons/crystalsvg/32x32/mimetypes/taskjuggler_tjp.png
 share/icons/crystalsvg/32x32/mimetypes/taskjuggler_tjx.png
-share/icons/hicolor/
 share/icons/hicolor/16x16/apps/taskjuggler.png
 share/icons/hicolor/32x32/apps/taskjuggler.png
-share/mimelnk/
-share/mimelnk/application/
+share/locale/tr/LC_MESSAGES/taskjuggler.mo
 share/mimelnk/application/x-tji.desktop
 share/mimelnk/application/x-tjp.desktop
 share/mimelnk/application/x-tjx.desktop

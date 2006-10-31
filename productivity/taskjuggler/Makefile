@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2006/06/12 15:45:51 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/10/31 20:56:42 sturm Exp $
 
 COMMENT=	"project management tool"
 
-DISTNAME=	taskjuggler-2.2.0
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	taskjuggler-2.3.0
 CATEGORIES=	productivity
-SHARED_LIBS=	taskjuggler	3.3
+SHARED_LIBS=	taskjuggler	3.4
 
 HOMEPAGE=	http://www.taskjuggler.org/
 
@@ -35,10 +34,23 @@ CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.59
 CONFIGURE_ARGS+=${MODKDE_CONFIGURE_ARGS} \
 		--enable-dependency-tracking \
-		--disable-final
+		--disable-final \
+		--with-docdir=${PREFIX}/share/examples/taskjuggler/
 CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::x11/kde/pim3
+
+# XXX tries building the documentation from XML, which fails
+NO_REGRESS=	Yes
+
+# broken test file
+post-extract:
+	@rm ${WRKSRC}/TestSuite/Syntax/Errors/Timezone.tjp
+
+pre-configure:
+	@perl -pi -e "s,\@PACKAGES_DIR\@Examples/,\@PACKAGES_DIR\@," \
+		${WRKSRC}/Examples/*/Makefile.in \
+		${WRKSRC}/Examples/*/*/Makefile.in
 
 .include <bsd.port.mk>

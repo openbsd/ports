@@ -1,0 +1,15 @@
+$OpenBSD: patch-taskjuggler_ProjectFile_cpp,v 1.1 2006/10/31 20:56:43 sturm Exp $
+
+	Align 'now' date to timing resolution. from svn
+
+--- taskjuggler/ProjectFile.cpp.orig	Mon Oct 23 20:57:57 2006
++++ taskjuggler/ProjectFile.cpp	Mon Oct 23 20:58:42 2006
+@@ -653,6 +653,8 @@ ProjectFile::readProject()
+                     return FALSE;
+                 }
+                 proj->setScheduleGranularity(resolution);
++
++                proj->setNow(proj->getNow());
+             }
+             else if (token == KW("timezone"))
+             {
