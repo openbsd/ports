@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2006/10/27 12:53:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2006/10/31 12:54:23 ajacoutot Exp $
 
 COMMENT=	"viewer for IETF RFCs"
 
 DISTNAME=	qrfcview-0.62
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11
 
 HOMEPAGE=	http://qrfcview.berlios.de/
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	ICE Xrender SM freetype c pthread stdc++ Xrandr \
 		Xinerama Xcursor Xext m Xi fontconfig X11 z QtGui \
-		QtNetwork png
+		QtNetwork png Xfixes glib-2.0 iconv intl
 
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=qrfcview/}
 EXTRACT_SUFX=	.tgz
