@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2005/08/07 21:25:55 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2006/10/31 20:41:40 pvalchev Exp $
 
 COMMENT=		"interface between mailer MTA and content checkers"
 
 VERSION=		2.3.2
+PKGNAME=		${DISTNAME}p0
 DISTNAME=		amavisd-new-${VERSION}
 CATEGORIES=		mail security
 
