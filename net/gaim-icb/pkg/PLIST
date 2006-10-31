@@ -1,8 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/08/07 12:41:58 alek Exp $
-lib/gaim/
+@comment $OpenBSD: PLIST,v 1.3 2006/10/31 19:43:48 alek Exp $
 lib/gaim/libicb.so
-share/pixmaps/
-share/pixmaps/gaim/
-share/pixmaps/gaim/status/
-share/pixmaps/gaim/status/default/
 share/pixmaps/gaim/status/default/icb.png
