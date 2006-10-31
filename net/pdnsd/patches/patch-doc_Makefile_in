@@ -1,11 +1,21 @@
---- doc/Makefile.in.orig	Mon Jul 11 20:37:39 2005
-+++ doc/Makefile.in	Sun Nov 13 17:07:23 2005
-@@ -398,7 +398,7 @@
+--- doc/Makefile.in.orig	Sat Sep  2 16:24:25 2006
++++ doc/Makefile.in	Tue Oct 31 10:52:40 2006
+@@ -397,12 +397,12 @@ uninstall-man: uninstall-man5 uninstall-
+ # XXX: Do not insist to set the config file owner to root to avoid breaking RPM
  # builds
  install-data-hook:
- 	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
+-	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
 -	if test `whoami` = "root"; then \
-+	if test `userinfo -e _pdnsd`; then \
- 	  $(INSTALL) -o 0 -g 0 -m 644 pdnsd.conf $(DESTDIR)$(sysconfdir)/pdnsd.conf.sample ; \
- 	else \
- 	  $(INSTALL) -m 644 pdnsd.conf $(DESTDIR)$(sysconfdir)/pdnsd.conf.sample ; \
+-	  $(INSTALL) -o 0 -g 0 -m 644 pdnsd.conf $(DESTDIR)$(sysconfdir)/pdnsd.conf.sample ; \
+-	else \
+-	  $(INSTALL) -m 644 pdnsd.conf $(DESTDIR)$(sysconfdir)/pdnsd.conf.sample ; \
+-	fi
++	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(prefix)/share/examples/pdnsd/ ; \
++	$(BSD_INSTALL_DATA) pdnsd.conf $(DESTDIR)$(prefix)/share/examples/pdnsd/ ; \
++
++	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(prefix)/share/doc/pdnsd/ ; \
++	$(BSD_INSTALL_DATA) txt/*.txt $(DESTDIR)$(prefix)/share/doc/pdnsd/ ; \
++
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

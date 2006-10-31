@@ -1,6 +1,15 @@
---- Makefile.in.orig	Mon Jul 11 20:37:41 2005
-+++ Makefile.in	Sun Nov 13 17:06:06 2005
-@@ -584,7 +584,7 @@
+--- Makefile.in.orig	Sat Sep  2 16:24:27 2006
++++ Makefile.in	Tue Oct 31 07:44:41 2006
+@@ -531,7 +531,7 @@ info-am:
+ 
+ install-data-am:
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
++	$(MAKE) $(AM_MAKEFLAGS)
+ 
+ install-exec-am:
+ 
+@@ -584,7 +584,7 @@ install-data-hook:
  	$(mkinstalldirs) $(DESTDIR)$(cachedir)
  	test -f $(DESTDIR)$(cachedir)/pdnsd.cache || \
  	  touch $(DESTDIR)$(cachedir)/pdnsd.cache

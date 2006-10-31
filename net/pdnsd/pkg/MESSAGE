@@ -1,6 +1,0 @@
-You may want to put the following in /etc/rc.local:
-
-if [ -x ${PREFIX}/sbin/pdnsd ]; then
-        echo -n ' pdnsd';
-        ${PREFIX}/sbin/pdnsd -4 -s -d -p /var/run/pdnsd.pid
-fi

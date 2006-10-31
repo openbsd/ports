@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2005/11/25 10:45:39 sturm Exp $
+# $OpenBSD: Makefile,v 1.12 2006/10/31 14:58:46 aanriot Exp $
 # Uses pthreads
 
 COMMENT=		"threaded DNS daemon, optimized for caching"
@@ -7,13 +7,12 @@ COMMENT=		"threaded DNS daemon, optimized for caching"
 # good enough shape to run this app.
 ONLY_FOR_ARCHS=	i386
 
-PORTNAME=		pdnsd-1.2.3
-DISTNAME=		${PORTNAME}-par
-PKGNAME=		${PORTNAME}
+DISTNAME=		pdnsd-1.2.5-par
+PKGNAME=		${DISTNAME:S/-par//}
 CATEGORIES=     	net
-HOMEPAGE=		http://www.phys.uu.nl/~rombouts/pdnsd
+HOMEPAGE=		http://www.phys.uu.nl/~rombouts/pdnsd/
 
-WRKDIST=		${WRKDIR}/${PORTNAME}
+WRKDIST=		${WRKDIR}/${DISTNAME:S/-par//}
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -26,8 +25,6 @@ MASTER_SITES=		${HOMEPAGE}/releases/
 
 NO_REGRESS=		Yes
 
-SEPARATE_BUILD=		concurrent
-
 USE_GMAKE=		yes
 
 CONFIGURE_STYLE=	gnu
@@ -37,14 +34,8 @@ CONFIGURE_ARGS+=	--with-target=BSD \
 			--with-cachedir="/var/pdnsd" \
 			--with-default-id=_pdnsd
 
-DOCFILES=		faq.txt intro.txt manual.txt
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pdnsd
-	${INSTALL_DATA} ${WRKBUILD}/doc/pdnsd.conf ${PREFIX}/share/examples/pdnsd
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pdnsd
-.for file in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/doc/txt/${file} ${PREFIX}/share/doc/pdnsd
-.endfor
+post-build:
+	@perl -pi -e "s,/usr/share/doc/,${PREFIX}/share/doc/," \
+		${WRKSRC}/doc/pdnsd.8.in
 
 .include <bsd.port.mk>
