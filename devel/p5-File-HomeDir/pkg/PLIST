@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/31 18:57:39 jasper Exp $
+${P5SITE}/File/
+${P5SITE}/File/HomeDir/
+${P5SITE}/File/HomeDir.pm
+${P5SITE}/File/HomeDir/Darwin.pm
+${P5SITE}/File/HomeDir/MacOS9.pm
+${P5SITE}/File/HomeDir/Unix.pm
+${P5SITE}/File/HomeDir/Windows.pm
+@man man/man3p/File::HomeDir.3p
