@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/08/01 22:55:53 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2006/10/31 19:48:12 kurt Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/java/jdk14/Makefile,v 1.79 2004/08/18 07:06:03 glewis Exp $
 
 ONLY_FOR_ARCHS= 	i386
@@ -7,8 +7,8 @@ COMMENT=		"Java2(TM) Standard Edition Dev Kit v${V}"
 COMMENT-jre=		"Java2(TM) Standard Edition Runtime Environment v${V}"
 V=			1.4.2
 DISTNAME=		j2sdk-1_4_2
-PKGNAME=		jdk-${V}p8
-PKGNAME-jre=		jre-${V}p8
+PKGNAME=		jdk-${V}p9
+PKGNAME-jre=		jre-${V}p9
 
 CATEGORIES=		devel/jdk java
 
@@ -40,7 +40,7 @@ RUN_DEPENDS=		:zip-*:archivers/zip \
 			:ghostscript-fonts-*:print/ghostscript/gnu-fonts
 LIB_DEPENDS=		iodbc.>=2::databases/iodbc
 USE_MOTIF=		openmotif
-WANTLIB=		X11 Xext Xi Xm Xmu Xp Xt Xtst c m ossaudio pthread
+WANTLIB=		X11 Xext Xi Xm Xmu Xp Xt Xtst c m ossaudio pthread z
 
 USE_GMAKE=		Yes
 
@@ -53,7 +53,8 @@ MAKE_ENV=		ALT_MOTIF_DIR="${LOCALBASE}" \
 			LANG="C" \
 			CC="${CC}" \
 			CXX="${CXX}" \
-			DEFAULT_LD_LIBRARY_PATH="/usr/lib:/usr/X11R6/lib:${LOCALBASE}/lib"
+			DEFAULT_LD_LIBRARY_PATH="/usr/lib:/usr/X11R6/lib:${LOCALBASE}/lib" \
+			HOTSPOT_BUILD_JOBS=`sysctl -n hw.ncpu`
 
 # Error message for distfile.
 FETCH_MANUALLY=		"You must manually fetch the distribution files, place"

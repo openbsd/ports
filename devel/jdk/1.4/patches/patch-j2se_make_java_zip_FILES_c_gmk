@@ -1,0 +1,22 @@
+$OpenBSD: patch-j2se_make_java_zip_FILES_c_gmk,v 1.1 2006/10/31 19:48:12 kurt Exp $
+--- j2se/make/java/zip/FILES_c.gmk.orig	Tue Aug  8 13:11:43 2006
++++ j2se/make/java/zip/FILES_c.gmk	Tue Aug  8 13:13:40 2006
+@@ -8,6 +8,10 @@ FILES_c = \
+ 	$(CTARGDIR)Inflater.c \
+ 	$(CTARGDIR)ZipFile.c \
+ 	$(CTARGDIR)ZipEntry.c \
++	$(CTARGDIR)zip_util.c
++
++ifneq ($(SYSTEM_ZLIB),true)
++FILES_c += \
+ 	$(CTARGDIR)zadler32.c \
+ 	$(CTARGDIR)zcrc32.c \
+ 	$(CTARGDIR)deflate.c \
+@@ -18,5 +22,5 @@ FILES_c = \
+ 	$(CTARGDIR)inftrees.c \
+ 	$(CTARGDIR)infcodes.c \
+ 	$(CTARGDIR)infutil.c \
+-	$(CTARGDIR)inffast.c \
+-	$(CTARGDIR)zip_util.c
++	$(CTARGDIR)inffast.c
++endif

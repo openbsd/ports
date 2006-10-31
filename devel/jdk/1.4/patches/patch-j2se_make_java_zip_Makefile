@@ -1,0 +1,27 @@
+$OpenBSD: patch-j2se_make_java_zip_Makefile,v 1.1 2006/10/31 19:48:12 kurt Exp $
+--- j2se/make/java/zip/Makefile.orig	Tue Aug  8 13:02:06 2006
++++ j2se/make/java/zip/Makefile	Tue Aug  8 13:11:02 2006
+@@ -58,12 +58,14 @@ else
+ CPPFLAGS += -UDEBUG 
+ endif
+ 
++ifneq ($(SYSTEM_ZLIB),true)
+ CPPFLAGS += -I$(SHARE_SRC)/native/java/util/zip/zlib-$(ZLIB_VERSION)
+ 
+ #
+ # Add to ambient vpath so we pick up the library files
+ #
+ vpath %.c $(SHARE_SRC)/native/$(PKGDIR)/zlib-$(ZLIB_VERSION)
++endif
+ 
+ #
+ # Has been converted to the JNI: generate JNI-style header files
+@@ -73,4 +75,8 @@ JAVAHFLAGS += -jni
+ #
+ # Link to JVM library for JVM_Zip* functions
+ #
++ifeq ($(SYSTEM_ZLIB),true)
++OTHER_LDLIBS = -lz
++else
+ OTHER_LDLIBS = $(JVMLIB)
++endif

@@ -1,6 +1,6 @@
-$OpenBSD: patch-j2se_make_common_Defs-bsd_gmk,v 1.2 2005/04/19 14:35:56 kurt Exp $
---- j2se/make/common/Defs-bsd.gmk.orig	Fri Apr  1 17:00:21 2005
-+++ j2se/make/common/Defs-bsd.gmk	Fri Apr  1 17:02:14 2005
+$OpenBSD: patch-j2se_make_common_Defs-bsd_gmk,v 1.3 2006/10/31 19:48:12 kurt Exp $
+--- j2se/make/common/Defs-bsd.gmk.orig	Tue Aug  8 12:27:37 2006
++++ j2se/make/common/Defs-bsd.gmk	Tue Aug  8 15:38:30 2006
 @@ -332,6 +332,10 @@ ifeq ($(TRUE_PLATFORM), NetBSD)
  EXTRA_LIBS += -pthread
  endif
@@ -12,7 +12,7 @@ $OpenBSD: patch-j2se_make_common_Defs-bsd_gmk,v 1.2 2005/04/19 14:35:56 kurt Exp
  LDFLAGS_COMMON  =
  
  ifneq ($(LIBRARY),JdbcOdbc)
-@@ -492,6 +496,14 @@ ifdef ALT_MOTIF_DIR
+@@ -492,6 +496,18 @@ ifdef ALT_MOTIF_DIR
    MOTIF_DIR = $(ALT_MOTIF_DIR)
  endif
  MOTIF_LIB = $(MOTIF_DIR)/lib
@@ -23,6 +23,10 @@ $OpenBSD: patch-j2se_make_common_Defs-bsd_gmk,v 1.2 2005/04/19 14:35:56 kurt Exp
 +# 
 +ifdef ALT_ODBCDIR
 +  ODBCDIR = $(ALT_ODBCDIR)
++endif
++
++ifeq ($(TRUE_PLATFORM), OpenBSD)
++  SYSTEM_ZLIB = true
 +endif
  
  #

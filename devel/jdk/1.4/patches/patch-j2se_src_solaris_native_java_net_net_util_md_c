@@ -1,0 +1,84 @@
+$OpenBSD: patch-j2se_src_solaris_native_java_net_net_util_md_c,v 1.1 2006/10/31 19:48:12 kurt Exp $
+--- j2se/src/solaris/native/java/net/net_util_md.c.orig	Thu Oct 19 22:52:04 2006
++++ j2se/src/solaris/native/java/net/net_util_md.c	Thu Oct 19 22:53:32 2006
+@@ -33,6 +33,10 @@
+ #include <sys/sysctl.h>
+ #endif
+ 
++#ifdef __OpenBSD__
++#include <sys/socketvar.h>
++#endif
++
+ #ifdef __linux__
+ #include <arpa/inet.h>
+ #include <net/route.h>
+@@ -886,9 +890,12 @@ NET_SetSockOpt(int fd, int level, int  o
+ #define IPTOS_PREC_MASK 0xe0
+ #endif
+ 
+-#if defined(__FreeBSD__)
++#if defined(_ALLBSD_SOURCE)
++#if defined(KIPC_MAXSOCKBUF)
+     int mib[3];
+     size_t rlen;
++#endif
++
+     int *bufsize;
+ 
+     static int maxsockbuf = -1;
+@@ -980,7 +987,7 @@ NET_SetSockOpt(int fd, int level, int  o
+     }
+ #endif
+ 
+-#if defined(__FreeBSD__)
++#if defined(_ALLBSD_SOURCE)
+     /*
+      * SOL_SOCKET/{SO_SNDBUF,SO_RCVBUF} - On FreeBSD need to
+      * ensure that value is <= kern.ipc.maxsockbuf as otherwise we get
+@@ -988,6 +995,7 @@ NET_SetSockOpt(int fd, int level, int  o
+      */
+     if (level == SOL_SOCKET) {
+         if (opt == SO_SNDBUF || opt == SO_RCVBUF) {
++#ifdef KIPC_MAXSOCKBUF
+             if (maxsockbuf == -1) {
+ 	        mib[0] = CTL_KERN;
+ 	        mib[1] = KERN_IPC;
+@@ -1003,6 +1011,11 @@ NET_SetSockOpt(int fd, int level, int  o
+ 		maxsockbuf = (maxsockbuf/5)*4;
+ #endif
+ 	    }
++#elif defined(__OpenBSD__)
++	   maxsockbuf = SB_MAX;
++#else
++	   maxsockbuf = 64 * 1024;      /* XXX: NetBSD */
++#endif
+ 
+ 	    bufsize = (int *)arg;
+ 	    if ((*bufsize > maxsockbuf) && (bufsize != 0)) {
+@@ -1012,11 +1025,23 @@ NET_SetSockOpt(int fd, int level, int  o
+     }
+ 
+     /*
+-     * If SO_REUSEADDR option requested, unconditionally set SO_REUSEPORT.
++     * On Solaris, SO_REUSEADDR will allow multiple datagram
++     * sockets to bind to the same port.  The network jck tests
++     * for this "feature", so we need to emulate it by turning on
++     * SO_REUSEPORT as well for that combination.
+      */
+     if (level == SOL_SOCKET && opt == SO_REUSEADDR) {
+-	addopt = SO_REUSEPORT;
+-	setsockopt(fd, level, addopt, arg, len);
++        int sotype, arglen;
++
++        arglen = sizeof(sotype);
++        if (getsockopt(fd, SOL_SOCKET, SO_TYPE, (void *)&sotype, &arglen) < 0) {
++            return -1;
++        }
++
++        if (sotype == SOCK_DGRAM) {
++            addopt = SO_REUSEPORT;
++            setsockopt(fd, level, addopt, arg, len);
++        }
+     }
+ 
+     /*
