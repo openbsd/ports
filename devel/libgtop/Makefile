@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.27 2006/10/28 11:19:21 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2006/10/31 08:41:54 sturm Exp $
 
 COMMENT=		"portable library for obtaining system information"
 
 DISTNAME=		libgtop-1.0.13
 PKGNAME=		${DISTNAME}p4
 SHARED_LIBS +=	gnomesupport         0.0      # .0.0
+SHARED_LIBS +=	gtop                 1.12     # .1.12
+SHARED_LIBS +=	gtop_common          1.12     # .1.12
+SHARED_LIBS +=	gtop_guile           1.12     # .1.12
+SHARED_LIBS +=	gtop_guile_names     1.12     # .1.12
+SHARED_LIBS +=	gtop_names           1.12     # .1.12
+SHARED_LIBS +=	gtop_suid_common     1.12     # .1.12
 SHARED_LIBS +=	gtop_sysdeps         1.12     # .1.12
 SHARED_LIBS +=	gtop_sysdeps_suid    1.12     # .1.12
-SHARED_LIBS +=	gtop_common          1.12     # .1.12
-SHARED_LIBS +=	gtop_suid_common     1.12     # .1.12
-SHARED_LIBS +=	gtop_names           1.12     # .1.12
-SHARED_LIBS +=	gtop                 1.12     # .1.12
 
 CATEGORIES=		devel
 
