@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/10/31 15:37:25 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/11/01 10:49:41 mbalmer Exp $
 horde/turba/
 horde/turba/LICENSE
 horde/turba/README
 horde/turba/add.php
+horde/turba/addressbooks.php
 horde/turba/browse.php
 @mode 700
 @owner www
@@ -15,6 +16,8 @@ horde/turba/config/attributes.php.dist
 horde/turba/config/conf.xml
 horde/turba/config/menu.php.dist
 @sample horde/turba/config/menu.php
+horde/turba/config/mime_drivers.php.dist
+@sample horde/turba/config/mime_drivers.php
 horde/turba/config/prefs.php.dist
 @sample horde/turba/config/prefs.php
 horde/turba/config/sources.php.dist
@@ -48,20 +51,23 @@ horde/turba/edit.php
 horde/turba/index.php
 horde/turba/lib/
 horde/turba/lib/.htaccess
-horde/turba/lib/AbstractObject.php
 horde/turba/lib/Block/
 horde/turba/lib/Block/minisearch.php
+horde/turba/lib/Block/tree_menu.php
 horde/turba/lib/Driver/
 horde/turba/lib/Driver.php
 horde/turba/lib/Driver/imsp.php
 horde/turba/lib/Driver/kolab.php
 horde/turba/lib/Driver/ldap.php
+horde/turba/lib/Driver/null.php
 horde/turba/lib/Driver/prefs.php
 horde/turba/lib/Driver/sql.php
 horde/turba/lib/Group.php
 horde/turba/lib/List.php
 horde/turba/lib/ListView.php
+horde/turba/lib/Object/
 horde/turba/lib/Object.php
+horde/turba/lib/Object/Group.php
 horde/turba/lib/ObjectView.php
 horde/turba/lib/Renderer.php
 horde/turba/lib/Turba.php
@@ -105,6 +111,7 @@ horde/turba/locale/et_EE/LC_MESSAGES/turba.mo
 horde/turba/locale/fa_IR/
 horde/turba/locale/fa_IR/LC_MESSAGES/
 horde/turba/locale/fa_IR/LC_MESSAGES/turba.mo
+horde/turba/locale/fa_IR/help.xml
 horde/turba/locale/fi_FI/
 horde/turba/locale/fi_FI/LC_MESSAGES/
 horde/turba/locale/fi_FI/LC_MESSAGES/turba.mo
@@ -118,6 +125,9 @@ horde/turba/locale/gl_ES/LC_MESSAGES/turba.mo
 horde/turba/locale/hu_HU/
 horde/turba/locale/hu_HU/LC_MESSAGES/
 horde/turba/locale/hu_HU/LC_MESSAGES/turba.mo
+horde/turba/locale/is_IS/
+horde/turba/locale/is_IS/LC_MESSAGES/
+horde/turba/locale/is_IS/LC_MESSAGES/turba.mo
 horde/turba/locale/it_IT/
 horde/turba/locale/it_IT/LC_MESSAGES/
 horde/turba/locale/it_IT/LC_MESSAGES/turba.mo
@@ -175,6 +185,7 @@ horde/turba/locale/sv_SE/LC_MESSAGES/turba.mo
 horde/turba/locale/tr_TR/
 horde/turba/locale/tr_TR/LC_MESSAGES/
 horde/turba/locale/tr_TR/LC_MESSAGES/turba.mo
+horde/turba/locale/tr_TR/help.xml
 horde/turba/locale/uk_UA/
 horde/turba/locale/uk_UA/LC_MESSAGES/
 horde/turba/locale/uk_UA/LC_MESSAGES/turba.mo
@@ -202,6 +213,7 @@ horde/turba/po/fi_FI.po
 horde/turba/po/fr_FR.po
 horde/turba/po/gl_ES.po
 horde/turba/po/hu_HU.po
+horde/turba/po/is_IS.po
 horde/turba/po/it_IT.po
 horde/turba/po/ja_JP.po
 horde/turba/po/ko_KR.po
@@ -227,23 +239,30 @@ horde/turba/po/zh_TW.po
 horde/turba/scripts/
 horde/turba/scripts/.htaccess
 horde/turba/scripts/Turba.reg
+horde/turba/scripts/import_vcards.php
 horde/turba/scripts/ldap/
 horde/turba/scripts/ldap/addou
 horde/turba/scripts/ldap/addou.pl
 horde/turba/scripts/ldap/core.schema.patch
 horde/turba/scripts/ldap/rfc2739.schema
 horde/turba/scripts/sql/
+horde/turba/scripts/sql/turba_objects.mssql.sql
 horde/turba/scripts/sql/turba_objects.mysql.sql
 horde/turba/scripts/sql/turba_objects.oci8.sql
 horde/turba/scripts/sql/turba_objects.pgsql.sql
 horde/turba/scripts/sql/turba_objects.sql
+horde/turba/scripts/sql/turba_objects.xml
 horde/turba/scripts/sql/turba_weddingguests.sql
 horde/turba/scripts/upgrades/
+horde/turba/scripts/upgrades/1.1_to_1.2.sql
+horde/turba/scripts/upgrades/1.2_to_2.0.oci8.sql
 horde/turba/scripts/upgrades/1.2_to_2.0.sql
-horde/turba/scripts/upgrades/2004-10-26_create_default_histories.php
+horde/turba/scripts/upgrades/create_default_histories.php
+horde/turba/scripts/upgrades/public_to_horde_share.php
 horde/turba/search.php
 horde/turba/templates/
 horde/turba/templates/.htaccess
+horde/turba/templates/addressbooks.inc
 horde/turba/templates/block/
 horde/turba/templates/block/minisearch.inc
 horde/turba/templates/browse/
@@ -255,16 +274,18 @@ horde/turba/templates/browse/footer.inc
 horde/turba/templates/browse/footerAlpha.inc
 horde/turba/templates/browse/header.inc
 horde/turba/templates/browse/javascript.inc
+horde/turba/templates/browse/row.inc
 horde/turba/templates/browse/search.inc
 horde/turba/templates/browse/search_criteria.inc
-horde/turba/templates/browse/select.inc
 horde/turba/templates/common-header.inc
 horde/turba/templates/data/
 horde/turba/templates/data/export.inc
 horde/turba/templates/data/import.inc
 horde/turba/templates/menu.inc
 horde/turba/templates/prefs/
+horde/turba/templates/prefs/addressbookselect.inc
 horde/turba/templates/prefs/columnselect.inc
+horde/turba/templates/prefs/imsp_opt.inc
 horde/turba/test.php
 horde/turba/themes/
 horde/turba/themes/graphics/
@@ -276,5 +297,8 @@ horde/turba/themes/graphics/menu/browse.png
 horde/turba/themes/graphics/menu/new.png
 horde/turba/themes/graphics/new.png
 horde/turba/themes/graphics/turba.png
+horde/turba/themes/ideas/
+horde/turba/themes/ideas/screen.css
 horde/turba/themes/screen.css
 horde/turba/vcard.php
+horde/turba/view.php
