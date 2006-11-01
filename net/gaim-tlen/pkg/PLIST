@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/01 01:59:26 alek Exp $
+lib/gaim/libtlen.so
+share/pixmaps/gaim/status/default/tlen.png
