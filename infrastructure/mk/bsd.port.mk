@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.791 2006/10/23 14:33:01 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.792 2006/11/01 12:41:34 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -41,7 +41,6 @@ ERRORS+= "Fatal: Variable $v is obsolete, use PACKAGE_REPOSITORY instead."
 # change without notice.
 #
 #
-# NO_PKG_REGISTER - Don't register a port install as a package.
 # SCRIPTS_ENV	- Additional environment vars passed to scripts in
 #                 ${SCRIPTDIR} executed by bsd.port.mk.
 #
@@ -68,7 +67,6 @@ ERRORS+= "Fatal: Variable $v is obsolete, use PACKAGE_REPOSITORY instead."
 
 # User settings
 TRUST_PACKAGES?=No
-BIN_PACKAGES?=No
 FETCH_PACKAGES?=No
 CLEANDEPENDS?=No
 USE_SYSTRACE?=	No
@@ -81,7 +79,7 @@ BULK_DO?=
 FORCE_UPDATE?=No
 PKGNAMES=${FULLPKGNAME}
 # All variables relevant to the port's description
-ALL_VARIABLES?=HOMEPAGE DISTNAME LIB_DEPENDS \
+_ALL_VARIABLES?=HOMEPAGE DISTNAME LIB_DEPENDS \
 BUILD_DEPENDS RUN_DEPENDS REGRESS_DEPENDS USE_GMAKE MODULES FLAVORS \
 NO_BUILD NO_REGRESS PKG_ARCH SHARED_ONLY ONLY_FOR_ARCHS IS_INTERACTIVE \
 BROKEN MULTI_PACKAGES PSEUDO_FLAVORS CATEGORIES \
@@ -94,7 +92,8 @@ MASTER_SITES0 MASTER_SITES1 MASTER_SITES2 MASTER_SITES3 MASTER_SITES4 \
 MASTER_SITES5 MASTER_SITES6 MASTER_SITES7 MASTER_SITES8 MASTER_SITES9 \
 MAINTAINER SUBPACKAGE PACKAGING DESCR SUPDISTFILES \
 AUTOCONF_VERSION AUTOMAKE_VERSION CONFIGURE_ARGS
-ALL_VARIABLES2?=COMMENT FULLPKGNAME PKGNAME
+# and stuff needing to be MULTI_PACKAGE'd
+_ALL_VARIABLES2?=COMMENT FULLPKGNAME PKGNAME
 
 # special purpose user settings
 PATCH_CHECK_ONLY?=No
@@ -2753,12 +2752,12 @@ verbose-show:
 .endfor
 
 subdump-vars:
-.for _s in ${ALL_VARIABLES}
+.for _s in ${_ALL_VARIABLES}
 . if defined(${_s})
 	@echo ${FULLPKGPATH}.${_s}=${${_s}:Q}
 . endif
 .endfor
-.for _s in ${ALL_VARIABLES2}
+.for _s in ${_ALL_VARIABLES2}
 . if defined(${_s}${SUBPACKAGE})
 	@echo ${FULLPKGPATH}.${_s}=${${_s}${SUBPACKAGE}:Q}
 . endif

@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.7 2006/07/08 09:20:30 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.8 2006/11/01 12:41:35 espie Exp $
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
 
@@ -70,7 +70,7 @@ _flavor_fragment= \
 
 _depfile_fragment= \
 	case X$${_DEPENDS_FILE} in \
-		X) _DEPENDS_FILE=`mktemp /tmp/depends.XXXXXXXXX|| exit 1`; \
+		X) _DEPENDS_FILE=`mktemp ${TMPDIR}/depends.XXXXXXXXX|| exit 1`; \
 		export _DEPENDS_FILE; \
 		trap "rm -f $${_DEPENDS_FILE}" 0 1 2 3 13 15;; \
 	esac
