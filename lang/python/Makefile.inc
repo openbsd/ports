@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.40 2006/10/10 19:08:06 alek Exp $
+# $OpenBSD: Makefile.inc,v 1.41 2006/11/01 21:11:55 alek Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -16,6 +16,8 @@ COMMENT-mpz=	"GNU arbitrary magnitude integer module for Python"
 COMMENT-tests=	"Python test suite"
 COMMENT-tkinter="tk GUI module for Python"
 COMMENT-tools=	"extra tools for Python"
+COMMENT-sqlite=	"sqlite database module for Python"
+COMMENT-bz2=	"bz2 module for Python"
 
 PKGNAME=	python-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 DISTNAME=	Python-${VERSION}${PATCHLEVEL}
@@ -36,13 +38,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-PSEUDO_FLAVORS=	no_expat no_gdbm no_idle no_mpz no_tkinter no_bsddb
+PSEUDO_FLAVORS=	no_expat no_gdbm no_idle no_mpz no_tkinter no_bsddb no_bz2 \
+		no_sqlite
 FLAVOR?=
 
 MULTI_PACKAGES=	-tests -tools
 SUBPACKAGE?=
-
-LIB_DEPENDS=	bz2::archivers/bzip2
 
 # All subpackages depend on the main python package.
 
@@ -51,61 +52,96 @@ LIB_DEPENDS=	bz2::archivers/bzip2
 RUN_DEPENDS=	:python-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}:lang/python/${VERSION}
 LIB_DEPENDS=
 .  else
-WANTLIB=	ssl curses termcap panel m crypto c util z readline pthread \
-		ncurses stdc++
+WANTLIB=	ssl panel m crypto c util z readline pthread ncurses
 .  endif 
 .endif
 
+SETUP_PY=	"s,!!LOCALBASE!!,${LOCALBASE},g" \
+		"s,!!X11BASE!!,${X11BASE},g"
+
 .if empty(FLAVOR:L:Mno_bsddb)
-SETUP_LOCAL+=		Setup.bsddb
-MULTI_PACKAGES+=	-bsddb
+SETUP_PY+=	"s,!!USE_BSDDB!!,1,g"
+MULTI_PACKAGES+=-bsddb
 .  if !defined(PACKAGING) || ${SUBPACKAGE} == "-bsddb"
-LIB_DEPENDS+=		lib/db4/db.=4:db-4.*:databases/db/v4
+LIB_DEPENDS+=	lib/db4/db.=4:db-4.*:databases/db/v4
 .  endif
+.else
+SETUP_PY+=	"s,!!USE_BSDDB!!,0,g"
 .endif
 
 .if empty(FLAVOR:L:Mno_gdbm)
-SETUP_LOCAL+=		Setup.gdbm
-MULTI_PACKAGES+=	-gdbm
+SETUP_PY+=	"s,!!USE_GDBM!!,1,g"
+MULTI_PACKAGES+=-gdbm
 .  if !defined(PACKAGING) || ${SUBPACKAGE} == "-gdbm"
-LIB_DEPENDS+=		gdbm.>=3::databases/gdbm
+LIB_DEPENDS+=	gdbm.>=3::databases/gdbm
 .  endif
+.else
+SETUP_PY+=	"s,!!USE_GDBM!!,0,g"
+.endif
+
+.if empty(FLAVOR:L:Mno_bz2)
+SETUP_PY+=	"s,!!USE_BZ2!!,1,g"
+MULTI_PACKAGES+=-bz2
+.  if !defined(PACKAGING) || ${SUBPACKAGE} == "-bz2"
+LIB_DEPENDS+=	bz2::archivers/bzip2
+.  endif
+.else
+SETUP_PY+=	"s,!!USE_BZ2!!,0,g"
 .endif
 
 .if empty(FLAVOR:L:Mno_idle) && empty(FLAVOR:L:Mno_tkinter)
-MULTI_PACKAGES+=	-idle
+MULTI_PACKAGES+=-idle
 .endif
 
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-idle"
-RUN_DEPENDS+=		::lang/python/${VERSION},-tkinter
+.if defined(PACKAGING)
+.  if ${SUBPACKAGE} == "-idle"
+RUN_DEPENDS+=	::lang/python/${VERSION},-tkinter
+LIB_DEPENDS=
+.  endif
+.  if ${SUBPACKAGE} == "-tools" || ${SUBPACKAGE} == "-test"
+LIB_DEPENDS=
+.  endif
 .endif
 
 .if empty(FLAVOR:L:Mno_tkinter)
-SETUP_LOCAL+=		Setup.tkinter
-PKG_ARGS+=		-Dtkinter=1
-MULTI_PACKAGES+=	-tkinter
+SETUP_PY+=	"s,!!USE_TKINTER!!,1,g"
+MULTI_PACKAGES+=-tkinter
 .  if !defined(PACKAGING) || ${SUBPACKAGE} == "-tkinter"
-LIB_DEPENDS+=		tk84:tk-8.4.*:x11/tk/8.4
-WANTLIB=		tcl84 X11
+LIB_DEPENDS+=	tk84:tk-8.4.*:x11/tk/8.4
+WANTLIB=	tcl84 X11
 .  endif
 .else
-PKG_ARGS+=		-Dtkinter=0
+SETUP_PY+=	"s,!!USE_TKINTER!!,0,g"
 .endif
 
 .if empty(FLAVOR:L:Mno_mpz) && ${VERSION} == "2.3"
-SETUP_LOCAL+=		Setup.mpz
-MULTI_PACKAGES+= 	-mpz
+SETUP_PY+=	"s,!!USE_MPZ!!,1,g"
+MULTI_PACKAGES+=-mpz
 .  if !defined(PACKAGING) || ${SUBPACKAGE} == "-mpz"
-LIB_DEPENDS+=		gmp::devel/gmp
+LIB_DEPENDS+=	gmp::devel/gmp
 .  endif
+.else
+SETUP_PY+=	"s,!!USE_MPZ!!,0,g"
 .endif
 
 .if empty(FLAVOR:L:Mno_expat)
-SETUP_LOCAL+=		Setup.expat
-MULTI_PACKAGES+= 	-expat
+SETUP_PY+=	"s,!!USE_EXPAT!!,1,g"
+MULTI_PACKAGES+=-expat
 .  if !defined(PACKAGING) || ${SUBPACKAGE} == "-expat"
-LIB_DEPENDS+=		expat.>=4.0:expat->=1.95.6:textproc/expat
+LIB_DEPENDS+=	expat.>=4.0:expat->=1.95.6:textproc/expat
 .  endif
+.else
+SETUP_PY+=	"s,!!USE_EXPAT!!,0,g"
+.endif
+
+.if empty(FLAVOR:L:Mno_sqlite) && ${VERSION} == "2.5"
+SETUP_PY+=	"s,!!USE_SQLITE!!,1,g"
+MULTI_PACKAGES+=-sqlite
+.  if !defined(PACKAGING) || ${SUBPACKAGE} == "-sqlite"
+LIB_DEPENDS+=	sqlite3.>=8.7::databases/sqlite3
+.  endif
+.else
+SETUP_PY+=	"s,!!USE_SQLITE!!,0,g"
 .endif
 
 FULLPKGNAME-expat=	python-expat-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
@@ -116,21 +152,22 @@ FULLPKGNAME-mpz=	python-mpz-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 FULLPKGNAME-tests=	python-tests-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 FULLPKGNAME-tkinter=	python-tkinter-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 FULLPKGNAME-tools=	python-tools-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
+FULLPKGNAME-sqlite=	python-sqlite-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
+FULLPKGNAME-bz2=	python-bz2-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 
-AUTOCONF_VERSION=	2.57
-CONFIGURE_STYLE=	autoconf
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+AUTOCONF_VERSION=2.59
+CONFIGURE_STYLE=autoconf
+CONFIGURE_ARGS+=${CONFIGURE_SHARED}
 # --srcdir is needed for systrace to work correctly
-CONFIGURE_ARGS+=	--with-fpectl --with-threads --srcdir=${WRKSRC}
-CONFIGURE_ARGS+=	--enable-ipv6
+CONFIGURE_ARGS+=--with-fpectl --with-threads --srcdir=${WRKSRC}
+CONFIGURE_ARGS+=--enable-ipv6
 
 # THREAD_STACK_SIZE value might be changed by particular python release
-THREAD_STACK_SIZE?=    0x20000
+THREAD_STACK_SIZE?=0x20000
 
 REGRESS_TARGET=	test
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64"
-NO64BIT=	\#
 PKG_ARGS+=	-Dmm=0
 .else
 PKG_ARGS+=	-Dmm=1
@@ -146,12 +183,10 @@ FAKE_FLAGS+=	LDLIBRARY=libpython${VERSION}.so.${LIBpython${VERSION}_VERSION} \
 ALL_TARGET=	all ${WRKSRC}/Lib/plat-openbsd4
 
 post-configure:
-	@sed -e 's,@NO64BIT@,${NO64BIT},g'   \
-		${FILESDIR}/Setup > ${WRKSRC}/Modules/Setup
-.for file in ${SETUP_LOCAL}
-	@cat ${FILESDIR}/${file} >> ${WRKSRC}/Modules/Setup.local
-.endfor
 	@cd ${WRKSRC} && ${MAKE_PROGRAM} Makefile
+	for i in ${SETUP_PY}; do \
+		perl -pi -e "$$i" ${WRKSRC}/setup.py; \
+	done
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/Tools/scripts/pydoc \
