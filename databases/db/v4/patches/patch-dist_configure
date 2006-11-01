@@ -1,6 +1,6 @@
-$OpenBSD: patch-dist_configure,v 1.6 2005/12/25 20:35:42 sturm Exp $
---- dist/configure.orig	Wed Dec  3 22:10:02 2003
-+++ dist/configure	Sun Dec 25 20:49:31 2005
+$OpenBSD: patch-dist_configure,v 1.7 2006/11/01 22:26:28 kurt Exp $
+--- dist/configure.orig	Wed Dec  3 16:10:02 2003
++++ dist/configure	Wed Jul 26 16:57:11 2006
 @@ -5889,12 +5889,10 @@ nto-qnx | nto-qnx6*)
    ;;
  
@@ -45,7 +45,7 @@ $OpenBSD: patch-dist_configure,v 1.6 2005/12/25 20:35:42 sturm Exp $
    osf3*)
      case $cc_basename in
        KCC)
-@@ -20135,13 +20148,14 @@ echo "${ECHO_T}$JMODSUFFIX" >&6
+@@ -20135,13 +20148,15 @@ echo "${ECHO_T}$JMODSUFFIX" >&6
  
  
  
@@ -56,6 +56,7 @@ $OpenBSD: patch-dist_configure,v 1.6 2005/12/25 20:35:42 sturm Exp $
 -MAKEFILE_SOLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CCLINK} -avoid-version"
 +MAKEFILE_dbLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CCLINK} \${libdb_la_LDFLAGS}"
 +MAKEFILE_dbtclLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CCLINK} \${libdb_tcl_la_LDFLAGS}"
++MAKEFILE_dbjavaLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CCLINK} \${libdb_java_la_LDFLAGS}"
  MAKEFILE_CCLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CCLINK}"
  MAKEFILE_CXX="\$(LIBTOOL) --mode=compile ${MAKEFILE_CXX}"
 -MAKEFILE_XSOLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CXXLINK} -avoid-version"
@@ -63,7 +64,15 @@ $OpenBSD: patch-dist_configure,v 1.6 2005/12/25 20:35:42 sturm Exp $
  MAKEFILE_CXXLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CXXLINK}"
  
  LIBTOOL="\$(SHELL) ./libtool"
-@@ -21441,7 +21455,7 @@ fi
+@@ -20876,6 +20891,7 @@ if test "$_JTOPDIR" != "/usr"; then
+ 	aix*)		_JNI_INC_SUBDIRS="aix";;
+ 	bsdi*)		_JNI_INC_SUBDIRS="bsdos";;
+ 	freebsd*)	_JNI_INC_SUBDIRS="freebsd";;
++	openbsd*)	_JNI_INC_SUBDIRS="openbsd";;
+ 	hp*)		_JNI_INC_SUBDIRS="hp-ux";;
+ 	linux*)		_JNI_INC_SUBDIRS="linux genunix";;
+ 	osf*)		_JNI_INC_SUBDIRS="alpha";;
+@@ -21441,7 +21457,7 @@ fi
  
  # Optional utilities.
  if test "$db_cv_dump185" = "yes"; then
@@ -72,7 +81,7 @@ $OpenBSD: patch-dist_configure,v 1.6 2005/12/25 20:35:42 sturm Exp $
  fi
  
  # Checks for include files, structures, C types.
-@@ -28525,7 +28539,7 @@ int
+@@ -28525,7 +28541,7 @@ int
  main ()
  {
  
@@ -81,13 +90,14 @@ $OpenBSD: patch-dist_configure,v 1.6 2005/12/25 20:35:42 sturm Exp $
  	exit(0);
  #else
  	FAIL TO COMPILE/LINK
-@@ -31043,7 +31057,8 @@ s,@MAKEFILE_CC@,$MAKEFILE_CC,;t t
+@@ -31043,7 +31059,9 @@ s,@MAKEFILE_CC@,$MAKEFILE_CC,;t t
  s,@MAKEFILE_CCLINK@,$MAKEFILE_CCLINK,;t t
  s,@MAKEFILE_CXX@,$MAKEFILE_CXX,;t t
  s,@MAKEFILE_CXXLINK@,$MAKEFILE_CXXLINK,;t t
 -s,@MAKEFILE_SOLINK@,$MAKEFILE_SOLINK,;t t
 +s,@MAKEFILE_dbLINK@,$MAKEFILE_dbLINK,;t t
 +s,@MAKEFILE_dbtclLINK@,$MAKEFILE_dbtclLINK,;t t
++s,@MAKEFILE_dbjavaLINK@,$MAKEFILE_dbjavaLINK,;t t
  s,@MAKEFILE_XSOLINK@,$MAKEFILE_XSOLINK,;t t
  s,@OSDIR@,$OSDIR,;t t
  s,@POSTLINK@,$POSTLINK,;t t

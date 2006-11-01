@@ -1,0 +1,12 @@
+$OpenBSD: patch-java_src_com_sleepycat_db_db_javaJNI_java,v 1.1 2006/11/01 22:26:28 kurt Exp $
+--- java/src/com/sleepycat/db/db_javaJNI.java.orig	Tue Aug  1 00:45:19 2006
++++ java/src/com/sleepycat/db/db_javaJNI.java	Tue Aug  1 00:46:55 2006
+@@ -30,6 +30,8 @@ class db_javaJNI {
+ 				    DbConstants.DB_VERSION_MAJOR +
+ 				    DbConstants.DB_VERSION_MINOR +
+ 				    (DbConstants.DB_DEBUG ? "d" : ""));
++			} else if (os != null && os.startsWith("OpenBSD")) {
++				System.loadLibrary("db_java");
+ 			} else {
+ 				// library name is e.g. "libdb_java-3.0.so"
+ 				// on UNIX

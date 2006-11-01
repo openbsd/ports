@@ -1,0 +1,12 @@
+$OpenBSD: patch-libdb_java_java_util_i,v 1.1 2006/11/01 22:26:28 kurt Exp $
+--- libdb_java/java_util.i.orig	Tue Oct 14 21:53:50 2003
++++ libdb_java/java_util.i	Tue Aug  1 00:47:23 2006
+@@ -18,6 +18,8 @@
+ 				    DbConstants.DB_VERSION_MAJOR +
+ 				    DbConstants.DB_VERSION_MINOR +
+ 				    (DbConstants.DB_DEBUG ? "d" : ""));
++			} else if (os != null && os.startsWith("OpenBSD")) {
++				System.loadLibrary("db_java");
+ 			} else {
+ 				// library name is e.g. "libdb_java-3.0.so"
+ 				// on UNIX
