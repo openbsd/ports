@@ -1,6 +1,6 @@
-$OpenBSD: patch-conf_kismet_conf_in,v 1.3 2005/10/07 14:13:57 bernd Exp $
---- conf/kismet.conf.in.orig	Tue Aug 16 03:22:41 2005
-+++ conf/kismet.conf.in	Wed Sep 28 15:49:47 2005
+$OpenBSD: patch-conf_kismet_conf_in,v 1.4 2006/11/01 21:13:19 kili Exp $
+--- conf/kismet.conf.in.orig	Mon Aug 15 17:52:16 2005
++++ conf/kismet.conf.in	Fri Oct 20 13:42:27 2006
 @@ -10,7 +10,7 @@ version=2005.06.R1
  servername=Kismet
  
@@ -39,7 +39,18 @@ $OpenBSD: patch-conf_kismet_conf_in,v 1.3 2005/10/07 14:13:57 bernd Exp $
  # Do we want ESSID or BSSID as the waypoint name ?
  waypoint_essid=false
  
-@@ -317,14 +321,14 @@ logdefault=Kismet
+@@ -271,6 +275,10 @@ mangledatalog=true
+ #  on, or 'all'
+ fuzzycrypt=wtapfile,wlanng,wlanng_legacy,wlanng_avs,hostap,wlanng_wext,ipw2200,ipw2915
+ 
++# Do we do forgiving fuzzy packet decoding?  This lets us handle borked drivers
++# which don't indicate they're including FCS, and then do.
++fuzzydecode=wtapfile,radiotap_bsd_a,radiotap_bsd_g,radiotap_bsd_bg,radiotap_bsd_b,pcapfile
++
+ # Do we use network-classifier fuzzy-crypt detection?  This means we expect 
+ # packets that are associated with an encrypted network to be encrypted too, 
+ # and we process them by the same fuzzy compare. 
+@@ -317,14 +325,14 @@ logdefault=Kismet
  # crypt/Pok-Dec-20-01-1
  # and so on.  The "dump", "crypt", etc, dirs must exist before kismet is run
  # in this case.

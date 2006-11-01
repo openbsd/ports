@@ -1,0 +1,32 @@
+$OpenBSD: patch-expat_cc,v 1.1 2006/11/01 21:13:19 kili Exp $
+
+# Fix a potential overflow.
+# Some diffs from upstream SVN.
+
+--- expat.cc.orig	Wed Mar 23 17:36:56 2005
++++ expat.cc	Fri Oct 20 13:42:27 2006
+@@ -52,7 +52,7 @@ cdp_packet *building_cdp;
+ // Vector of networks
+ vector<wireless_network *> netvec;
+ 
+-char net_kisversion[32];
++char net_kisversion[33];
+ time_t net_run_start, net_run_end;
+ 
+ // Every fricking possible XML node.
+@@ -192,12 +192,14 @@ int NetXmlStr2Struct(wireless_network *i
+         return -1;
+     }
+ 
+-    if (sscanf(xmlstrnodes[net_node_wn_maxrate].c_str(), "%f", (float *) &in_net->maxrate) < 1) {
++    float	tmpmaxrate;
++    if (sscanf(xmlstrnodes[net_node_wn_maxrate].c_str(), "%f", &tmpmaxrate) < 1) {
+         if (verbose)
+             fprintf(stderr, "WARNING:  Illegal maxrate '%s', skipping rest of network.\n",
+                     xmlstrnodes[net_node_wn_maxrate].c_str());
+         return -1;
+     }
++    in_net->maxrate = tmpmaxrate;
+ 
+     if (sscanf(xmlstrnodes[net_node_pk_LLC].c_str(), "%d", &in_net->llc_packets) < 1) {
+         if (verbose)

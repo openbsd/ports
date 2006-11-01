@@ -1,0 +1,14 @@
+$OpenBSD: patch-macaddr_h,v 1.1 2006/11/01 21:13:20 kili Exp $
+
+# From upstream SVN.
+
+--- macaddr.h.orig	Wed Jan  4 16:32:46 2006
++++ macaddr.h	Fri Oct 20 15:38:06 2006
+@@ -290,6 +290,7 @@ public:
+             } else {
+                 singleton_itr = owner->singleton_map.end();
+                 vector_itr = owner->mask_vec.size();
++		second     = NULL;
+             }
+         }
+ 

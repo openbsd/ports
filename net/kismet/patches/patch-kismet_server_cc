@@ -1,0 +1,51 @@
+$OpenBSD: patch-kismet_server_cc,v 1.1 2006/11/01 21:13:19 kili Exp $
+
+# From upstream SVN.
+
+--- kismet_server.cc.orig	Thu Apr 13 00:42:59 2006
++++ kismet_server.cc	Fri Oct 20 15:38:06 2006
+@@ -1989,11 +1989,20 @@ int ProcessBulkConf(ConfigFile *conf) {
+                                  &filter_export_dest_invert);
+ 
+     // Push the packparms into each source...
+-    packet_parm fuzzparms;
+-    fuzzparms.fuzzy_crypt = 1;
++    packet_parm optparms;
+ 
+-    sourcetracker.SetTypeParms(conf->FetchOpt("fuzzycrypt"), fuzzparms);
++	// Set the fuzzy options
++    optparms.fuzzy_crypt = 1;
++	optparms.fuzzy_decode = -1;
+ 
++    sourcetracker.SetTypeParms(conf->FetchOpt("fuzzycrypt"), optparms);
++
++	// Set the fuzzy decode to be forgiving on FCS
++    optparms.fuzzy_crypt = -1;
++	optparms.fuzzy_decode = 1;
++
++    sourcetracker.SetTypeParms(conf->FetchOpt("fuzzydecode"), optparms);
++
+ 	// Fetch the netcryptdetect value
+ 	if (conf->FetchOpt("netfuzzycrypt") == "true") {
+ 		fprintf(stderr, "Using network-classifier based data encryption detection\n");
+@@ -2927,8 +2936,7 @@ int main(int argc,char *argv[]) {
+                     }
+ 
+                     if (gps_log == 1 && info.type != packet_noise && 
+-                        info.type != packet_unknown && info.type != packet_phy && 
+-                        info.corrupt == 0) {
++                        info.type != packet_unknown && info.type != packet_phy) {
+                         if (gpsdump.DumpPacket(&info) < 0) {
+                             snprintf(status, STATUS_MAX, "%s", gpsdump.FetchError());
+                             if (!silent || NetWriteStatus(status) == 0)
+@@ -3007,8 +3015,8 @@ int main(int argc,char *argv[]) {
+                     if (fifo)
+                         fifodump.DumpPacket(&info, &packet);
+ 
+-                    if (data_log && !(info.type == packet_noise && noise_log == 1) &&
+-                        !(info.corrupt != 0 && corrupt_log == 1)) {
++                    if (data_log && !(info.type == packet_noise && noise_log == 0) &&
++                        !(info.corrupt != 0 && corrupt_log == 0)) {
+                         if (limit_logs && log_packnum > limit_logs) {
+                             dumpfile->CloseDump();
+ 

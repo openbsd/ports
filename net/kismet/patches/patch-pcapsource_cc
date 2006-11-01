@@ -1,27 +1,292 @@
-$OpenBSD: patch-pcapsource_cc,v 1.1 2006/01/16 21:28:19 sturm Exp $
---- pcapsource.cc.orig	Tue Aug 16 03:22:51 2005
-+++ pcapsource.cc	Fri Jan 13 23:26:52 2006
-@@ -2085,6 +2085,7 @@ int monitor_openbsd_prism2(const char *i
-         close(s);
-         snprintf(in_err, 1024, "Power management ioctl failed: %s",
-                  strerror(errno));
-+        return -1;
+$OpenBSD: patch-pcapsource_cc,v 1.2 2006/11/01 21:13:20 kili Exp $
+
+# Partially from upstream SVN (pcap stuff and some bugfixes).
+# Additionally, remove outdated stuff like ancontrol, fix some use after
+# close(2).
+
+--- pcapsource.cc.orig	Sun Apr  2 17:13:00 2006
++++ pcapsource.cc	Fri Oct 20 13:42:27 2006
+@@ -124,17 +124,17 @@ int PcapSource::OpenSource() {
+ 
+     pd = pcap_open_live(unconst, MAX_PACKET_LEN, 1, 1000, errstr);
+ 
++    free(unconst);
++
++    if (strlen(errstr) > 0)
++        return -1; // Error is already in errstr
++
+     #if defined (SYS_OPENBSD) || defined(SYS_NETBSD) && defined(HAVE_RADIOTAP)
+     /* Request desired DLT on multi-DLT systems that default to EN10MB. We do this
+        later anyway but doing it here ensures we have the desired DLT from the get go. */
+      pcap_set_datalink(pd, DLT_IEEE802_11_RADIO);
+     #endif
+ 
+-    free(unconst);
+-
+-    if (strlen(errstr) > 0)
+-        return -1; // Error is already in errstr
+-
+     paused = 0;
+ 
+     errstr[0] = '\0';
+@@ -146,7 +146,7 @@ int PcapSource::OpenSource() {
+ 
+ #ifdef HAVE_PCAP_NONBLOCK
+     pcap_setnonblock(pd, 1, errstr);
+-#elif !defined(SYS_OPENBSD)
++#elif !defined(SYS_OPENBSD) && defined(HAVE_PCAP_GETSELFD)
+     // do something clever  (Thanks to Guy Harris for suggesting this).
+     int save_mode = fcntl(pcap_get_selectable_fd(pd), F_GETFL, 0);
+     if (fcntl(pcap_get_selectable_fd(pd), F_SETFL, save_mode | O_NONBLOCK) < 0) {
+@@ -180,6 +180,20 @@ int PcapSource::FetchSignalLevels(int *i
+     return 0;
+ }
+ 
++void PcapSource::SetSmartCRC(int in_smart) {
++	if (in_smart && crc32_table == NULL) {
++		crc32_table = new unsigned int[256];
++		crc32_init_table_80211(crc32_table);
++	}
++
++	if (in_smart == 0 && crc32_table != NULL) {
++		delete[] crc32_table;
++		crc32_table = NULL;
++	}
++
++	decode_fcs = in_smart;
++}
++
+ // Errorcheck the datalink type
+ int PcapSource::DatalinkType() {
+     datalink_type = pcap_datalink(pd);
+@@ -233,7 +247,13 @@ int PcapSource::CloseSource() {
+ }
+ 
+ int PcapSource::FetchDescriptor() {
++#ifdef HAVE_PCAP_GETSELFD
+     return pcap_get_selectable_fd(pd);
++#elif defined(HAVE_PCAP_GETEVENT)
++	return pcap_event(pd);
++#else
++	return -1;
++#endif
+ }
+ 
+ void PcapSource::Callback(u_char *bp, const struct pcap_pkthdr *header,
+@@ -291,7 +311,8 @@ int PcapSource::ManglePacket(kis_packet 
+     int ret = 0;
+     memset(packet, 0, sizeof(kis_packet));
+     
+-    packet->ts = callback_header.ts;
++    packet->ts.tv_sec = callback_header.ts.tv_sec;
++    packet->ts.tv_usec = callback_header.ts.tv_usec;
+     packet->data = data;
+     packet->moddata = moddata;
+     packet->modified = 0;
+@@ -310,9 +331,35 @@ int PcapSource::ManglePacket(kis_packet 
+         ret = Radiotap2KisPack(packet, data, moddata);
+ #endif
+     } else {
+-        packet->caplen = kismin(callback_header.caplen, (uint32_t) MAX_PACKET_LEN);
++        unsigned int fcs = FCSBytes();
++		if (callback_header.caplen <= fcs) {
++			packet->error = 1;
++			packet->caplen = 0;
++			packet->len = 0;
++			return 0;
++		}
++
++        packet->caplen = kismin(callback_header.caplen - fcs, 
++				(uint32_t) MAX_PACKET_LEN);
+         packet->len = packet->caplen;
+         memcpy(packet->data, callback_data, packet->caplen);
++
++		// If we're going to validate fcs, check it here */
++		if (fcs && decode_fcs) {
++			uint32_t *frame_crc = 
++				(uint32_t *) &(callback_data[callback_header.caplen - 4]);
++			uint32_t calc_crc = 
++				crc32_le_80211(crc32_table, packet->data, packet->caplen);
++
++			if (memcmp(frame_crc, &calc_crc, 4)) {
++				packet->error = 1;
++				// printf("debug - crc corrupt, got %08x expected %08x\n", calc_crc, *frame_crc);
++				return 1;
++			}
++
++			// printf("debug - good - got crc %08x, expected %08x\n", calc_crc, *frame_crc);
++		}
++
+         ret = 1;
      }
  
-     // Lower AP density, better radio threshold settings? 
-@@ -2097,6 +2098,7 @@ int monitor_openbsd_prism2(const char *i
-         close(s);
-         snprintf(in_err, 1024, "AP Density ioctl failed: %s",
-                  strerror(errno));
-+        return -1;
+@@ -2054,7 +2101,10 @@ int monitor_ipwlivetap(const char *in_de
+ 		return -1;
+ 	}
+ 
+-	fgets(dynif, 32, sysf);
++	if (fgets(dynif, 32, sysf) == NULL) {
++	        fclose(sysf);
++	        return -1;
++	}
+ 
+ 	// We're done with the RO 
+ 	fclose(sysf);
+@@ -2084,7 +2134,10 @@ int monitor_ipwlivetap(const char *in_de
+ 			return -1;
+ 		}
+ 
+-		fgets(dynif, 32, sysf);
++		if (fgets(dynif, 32, sysf) == NULL) {
++		        fclose(sysf);
++			return -1;
++		}
+ 
+ 		fclose(sysf);
+ 
+@@ -2353,38 +2406,10 @@ int monitor_wrt54g(const char *in_dev, i
+ #endif
+ 
+ #ifdef SYS_OPENBSD
+-// This should be done programattically...
+ int monitor_openbsd_cisco(const char *in_dev, int initch, char *in_err, void **in_if, void *in_ext) {
+-    char cmdline[2048];
+-
+-    // Sanitize the device just to be safe.  The ifconfig should fail if
+-    // the device is invalid, but why take risks
+-    for (unsigned int x = 0; x < strlen(in_dev); x++) {
+-        if (!isalnum(in_dev[x])) {
+-            snprintf(in_err, STATUS_MAX, "Invalid device '%s'", in_dev);
+-            return -1;
+-        }
+-    }
+-
+-    snprintf(cmdline, 2048, "ancontrol -i %s -o 1", in_dev);
+-    if (RunSysCmd(cmdline) < 0) {
+-        snprintf(in_err, 1024, "Unable to execute '%s'", cmdline);
+-        return -1;
+-    }
+-
+-    snprintf(cmdline, 2048, "ancontrol -i %s -p 1", in_dev);
+-    if (RunSysCmd(cmdline) < 0) {
+-        snprintf(in_err, 1024, "Unable to execute '%s'", cmdline);
+-        return -1;
+-    }
+-
+-    snprintf(cmdline, 2048, "ancontrol -i %s -M 7", in_dev);
+-    if (RunSysCmd(cmdline) < 0) {
+-        snprintf(in_err, 1024, "Unable to execute '%s'", cmdline);
+-        return -1;
+-    }
+-    
+-    return 0;
++    // Lost cause. Since Feb '06 an(4) can do radiotap_bsd_b.
++    snprintf(in_err, STATUS_MAX, "cisco_openbsd is deprecated. Try radiotap_bsd_b.");
++    return -1;
+ }
+ 
+ int monitor_openbsd_prism2(const char *in_dev, int initch, char *in_err, void **in_if, void *in_ext) {
+@@ -2436,30 +2461,6 @@ int monitor_openbsd_prism2(const char *i
+         return -1;
      }
  
+-    // Disable power managment
+-    bzero((char *)&wreq, sizeof(wreq));
+-    wreq.wi_len = WI_MAX_DATALEN;
+-    wreq.wi_type = WI_RID_PM_ENABLED;
+-    wreq.wi_val[0] = 0;
+-
+-    if (ioctl(s, SIOCSWAVELAN, &ifr) < 0) {
+-        close(s);
+-        snprintf(in_err, 1024, "Power management ioctl failed: %s",
+-                 strerror(errno));
+-    }
+-
+-    // Lower AP density, better radio threshold settings? 
+-    bzero((char *)&wreq, sizeof(wreq));
+-    wreq.wi_len = WI_MAX_DATALEN;
+-    wreq.wi_type = WI_RID_SYSTEM_SCALE;
+-    wreq.wi_val[0] = 1;
+-
+-    if (ioctl(s, SIOCSWAVELAN, &ifr) < 0) {
+-        close(s);
+-        snprintf(in_err, 1024, "AP Density ioctl failed: %s",
+-                 strerror(errno));
+-    }
+-
      // Enable driver processing of 802.11b frames
-@@ -2122,6 +2124,7 @@ int monitor_openbsd_prism2(const char *i
-         close(s);
+     bzero((char *)&wreq, sizeof(wreq));
+     wreq.wi_len = WI_MAX_DATALEN;
+@@ -2473,14 +2474,17 @@ int monitor_openbsd_prism2(const char *i
+         return -1;
+     }
+ 
+-    // Disable roaming, we don't want the card to probe
++    /*
++     * Disable roaming, we don't want the card to probe
++     * If this fails, don't consider it fatal.
++     */
++
+     bzero((char *)&wreq, sizeof(wreq));
+     wreq.wi_len = WI_MAX_DATALEN;
+     wreq.wi_type = WI_RID_ROAMING_MODE;
+     wreq.wi_val[0] = 3;
+ 
+     if (ioctl(s, SIOCSWAVELAN, &ifr) < 0) {
+-        close(s);
          snprintf(in_err, 1024, "Roaming disable ioctl failed: %s",
                   strerror(errno));
-+        return -1;
      }
+@@ -2750,7 +2754,7 @@ bool RadiotapBSD::getmediaopt(int& optio
+         return false;
  
-     // Enable monitor mode
+     memset(&ifmr, 0, sizeof(ifmr));
+-    strncpy(ifmr.ifm_name, ifname.c_str(), sizeof(ifmr.ifm_name));
++    strncpy(ifmr.ifm_name, ifname.c_str(), sizeof(ifmr.ifm_name)-1);
+ 
+     /*
+      * We must go through the motions of reading all
+@@ -2775,7 +2779,7 @@ bool RadiotapBSD::setmediaopt(int option
+         return false;
+ 
+     memset(&ifmr, 0, sizeof(ifmr));
+-    strncpy(ifmr.ifm_name, ifname.c_str(), sizeof(ifmr.ifm_name));
++    strncpy(ifmr.ifm_name, ifname.c_str(), sizeof(ifmr.ifm_name)-1);
+ 
+     /*
+      * We must go through the motions of reading all
+@@ -2803,7 +2807,7 @@ bool RadiotapBSD::setmediaopt(int option
+     delete mwords;
+ 
+     memset(&ifr, 0, sizeof(ifr));
+-    strncpy(ifr.ifr_name, ifname.c_str(), sizeof(ifr.ifr_name));
++    strncpy(ifr.ifr_name, ifname.c_str(), sizeof(ifr.ifr_name)-1);
+     ifr.ifr_media = (ifmr.ifm_current &~ IFM_OMASK) | options;
+     ifr.ifr_media = (ifr.ifr_media &~ IFM_MMASK) | IFM_MAKEMODE(mode);
+ 
+@@ -2857,7 +2861,7 @@ bool RadiotapBSD::get80211(int type, int
+     if (!checksocket())
+         return false;
+     memset(&ireq, 0, sizeof(ireq));
+-    strncpy(ireq.i_name, ifname.c_str(), sizeof(ireq.i_name));
++    strncpy(ireq.i_name, ifname.c_str(), sizeof(ireq.i_name)-1);
+     ireq.i_type = type;
+     ireq.i_len = len;
+     ireq.i_data = data;
+@@ -2875,7 +2879,7 @@ bool RadiotapBSD::set80211(int type, int
+     if (!checksocket())
+ 	return false;
+     memset(&ireq, 0, sizeof(ireq));
+-    strncpy(ireq.i_name, ifname.c_str(), sizeof(ireq.i_name));
++    strncpy(ireq.i_name, ifname.c_str(), sizeof(ireq.i_name)-1);
+     ireq.i_type = type;
+     ireq.i_val = val;
+     ireq.i_len = len;
+@@ -2892,6 +2896,7 @@ bool RadiotapBSD::getifflags(int& flags)
+         return false;
+ 
+     strncpy(ifr.ifr_name, ifname.c_str(), sizeof (ifr.ifr_name));
++    ifr.ifr_name[sizeof (ifr.ifr_name)-1] = '\0';
+     if (ioctl(s, SIOCGIFFLAGS, (caddr_t)&ifr) < 0) {
+         perror("SIOCGIFFLAGS ioctl failed");
+         return false;

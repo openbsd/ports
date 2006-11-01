@@ -1,4 +1,7 @@
-$OpenBSD: patch-scripts_kismet_in,v 1.1.1.1 2005/07/27 21:37:26 robert Exp $
+$OpenBSD: patch-scripts_kismet_in,v 1.2 2006/11/01 21:13:20 kili Exp $
+
+# Kill some bashisms (doesn't help much, though).
+
 --- scripts/kismet.in.orig	Wed Jun 22 06:22:08 2005
 +++ scripts/kismet.in	Sun Jun 26 12:22:44 2005
 @@ -7,8 +7,6 @@ BIN=@bindir@

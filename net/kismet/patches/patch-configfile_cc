@@ -1,0 +1,18 @@
+$OpenBSD: patch-configfile_cc,v 1.1 2006/11/01 21:13:19 kili Exp $
+
+# From upstream SVN.
+
+--- configfile.cc.orig	Wed Jan  4 16:32:46 2006
++++ configfile.cc	Fri Oct 20 15:38:06 2006
+@@ -38,9 +38,8 @@ int ConfigFile::ParseConfig(const char *
+     }
+ 
+     while (!feof(configf)) {
+-        fgets(confline, 8192, configf);
+-
+-        if (feof(configf)) break;
++        if (fgets(confline, 8192, configf) == NULL ||
++	    feof(configf)) break;
+ 
+         // It's easier to parse this using C++ functions
+         string parsestr = StrStrip(confline);

@@ -1,0 +1,14 @@
+$OpenBSD: patch-packetsource_h,v 1.1 2006/11/01 21:13:20 kili Exp $
+
+# From upstream SVN.
+
+--- packetsource.h.orig	Sun Mar 19 08:01:08 2006
++++ packetsource.h	Fri Oct 20 15:38:06 2006
+@@ -48,6 +48,7 @@ public:
+         fcsbytes = 0;
+ 
+ 		parameters.fuzzy_crypt = 0;
++		parameters.fuzzy_decode = 0;
+     }
+ 
+     virtual ~KisPacketSource() { };

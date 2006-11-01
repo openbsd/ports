@@ -1,0 +1,16 @@
+$OpenBSD: patch-prism2source_cc,v 1.1 2006/11/01 21:13:20 kili Exp $
+
+# From upstream SVN.
+
+--- prism2source.cc.orig	Thu Aug 12 03:59:50 2004
++++ prism2source.cc	Fri Oct 20 15:38:06 2006
+@@ -107,7 +107,8 @@ int Prism2Source::FetchPacket(kis_packet
+ 
+     if (FD_ISSET(read_sock, &rs)) {
+         char a;
+-        read(read_sock, &a, 1);
++        if (read(read_sock, &a, 1)!=1)
++	  return -1;
+     }
+ 
+ //    u_char buf[MAX_PACKET_LEN];
