@@ -1,4 +1,4 @@
-# $OpenBSD: java.port.mk,v 1.7 2006/08/05 16:38:20 kurt Exp $
+# $OpenBSD: java.port.mk,v 1.8 2006/11/01 20:34:24 kurt Exp $
 
 # Set MODJAVA_VER to x.y or x.y+ based on the version
 # of the jdk needed for the port. x.y  means any x.y jdk.
@@ -44,13 +44,13 @@ MODJAVA_JRERUN?=no
 .  endif
 .  if ${MODJAVA_JRERUN:L} == "yes"
 .    if ${MODJAVA_VER} == "1.3+"
-       _MODJAVA_RUNDEP= jdk->=1.3.1|jre->=1.3.1|kaffe-*|jamvm-*
+       _MODJAVA_RUNDEP= jdk-1.3.1*|jre-1.3.1*|jdk->=1.4.2p9|jre->=1.4.2p9|kaffe-*|jamvm-*
 .    else
        _MODJAVA_RUNDEP= jdk-1.3.1|jre-1.3.1
 .    endif
 .  else
 .    if ${MODJAVA_VER} == "1.3+"
-       _MODJAVA_RUNDEP= jdk->=1.3.1|kaffe-*
+       _MODJAVA_RUNDEP= jdk-1.3.1*|jdk->=1.4.2p9|kaffe-*
 .    else
        _MODJAVA_RUNDEP= jdk-1.3.1
 .    endif
@@ -68,15 +68,15 @@ MODJAVA_JRERUN?=no
 .  endif
 .  if ${MODJAVA_JRERUN:L} == "yes"
 .    if ${MODJAVA_VER} == "1.4+"
-       RUN_DEPENDS+= :jdk->=1.4.2|jre->=1.4.2|kaffe-*|jamvm-*:devel/jdk/1.4
+       RUN_DEPENDS+= :jdk->=1.4.2p9|jre->=1.4.2p9|kaffe-*|jamvm-*:devel/jdk/1.4
 .    else
-       RUN_DEPENDS+= :jdk-1.4.2|jre-1.4.2|kaffe-*|jamvm-*:devel/jdk/1.4
+       RUN_DEPENDS+= :jdk->=1.4.2p9,<1.5|jre->=1.4.2p9,<1.5|kaffe-*|jamvm-*:devel/jdk/1.4
 .    endif
 .  else
 .    if ${MODJAVA_VER} == "1.4+"
-       RUN_DEPENDS+= :jdk->=1.4.2|kaffe-*:devel/jdk/1.4
+       RUN_DEPENDS+= :jdk->=1.4.2p9|kaffe-*:devel/jdk/1.4
 .    else
-       RUN_DEPENDS+= :jdk-1.4.2|kaffe-*:devel/jdk/1.4
+       RUN_DEPENDS+= :jdk->=1.4.2p9,<1.5|kaffe-*:devel/jdk/1.4
 .    endif
 .  endif
 .elif ${MODJAVA_VER:S/+//} == "1.5"
