@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2005/10/31 15:11:21 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.10 2006/11/01 10:48:30 mbalmer Exp $
 horde/${HORDE_MODULE}/
 horde/${HORDE_MODULE}/COPYING
 horde/${HORDE_MODULE}/README
@@ -14,8 +14,8 @@ horde/${HORDE_MODULE}/config/.htaccess
 horde/${HORDE_MODULE}/config/conf.xml
 horde/${HORDE_MODULE}/config/filter.txt.dist
 @sample horde/${HORDE_MODULE}/config/filter.txt
-horde/${HORDE_MODULE}/config/header.txt.dist
-@sample horde/${HORDE_MODULE}/config/header.txt
+horde/${HORDE_MODULE}/config/header.php.dist
+@sample horde/${HORDE_MODULE}/config/header.php
 horde/${HORDE_MODULE}/config/menu.php.dist
 @sample horde/${HORDE_MODULE}/config/menu.php
 horde/${HORDE_MODULE}/config/mime_drivers.php.dist
@@ -65,6 +65,10 @@ horde/${HORDE_MODULE}/lib/Filter.php
 horde/${HORDE_MODULE}/lib/Folder.php
 horde/${HORDE_MODULE}/lib/IMAP/
 horde/${HORDE_MODULE}/lib/IMAP.php
+horde/${HORDE_MODULE}/lib/IMAP/Client.php
+horde/${HORDE_MODULE}/lib/IMAP/Search.php
+horde/${HORDE_MODULE}/lib/IMAP/Sort.php
+horde/${HORDE_MODULE}/lib/IMAP/Thread.php
 horde/${HORDE_MODULE}/lib/IMAP/Tree.php
 horde/${HORDE_MODULE}/lib/${HORDE_NAME}.php
 horde/${HORDE_MODULE}/lib/Identity/
@@ -116,7 +120,6 @@ horde/${HORDE_MODULE}/lib/Quota/mercury32.php
 horde/${HORDE_MODULE}/lib/Search.php
 horde/${HORDE_MODULE}/lib/Session.php
 horde/${HORDE_MODULE}/lib/Spam.php
-horde/${HORDE_MODULE}/lib/VFolder.php
 horde/${HORDE_MODULE}/lib/api.php
 horde/${HORDE_MODULE}/lib/base.php
 horde/${HORDE_MODULE}/lib/prefs.php
@@ -180,6 +183,9 @@ horde/${HORDE_MODULE}/locale/fr_FR/help.xml
 horde/${HORDE_MODULE}/locale/gl_ES/
 horde/${HORDE_MODULE}/locale/gl_ES/LC_MESSAGES/
 horde/${HORDE_MODULE}/locale/gl_ES/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/he_IL/
+horde/${HORDE_MODULE}/locale/he_IL/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/he_IL/LC_MESSAGES/${HORDE_MODULE}.mo
 horde/${HORDE_MODULE}/locale/hu_HU/
 horde/${HORDE_MODULE}/locale/hu_HU/LC_MESSAGES/
 horde/${HORDE_MODULE}/locale/hu_HU/LC_MESSAGES/${HORDE_MODULE}.mo
@@ -197,6 +203,9 @@ horde/${HORDE_MODULE}/locale/it_IT/help.xml
 horde/${HORDE_MODULE}/locale/ja_JP/
 horde/${HORDE_MODULE}/locale/ja_JP/LC_MESSAGES/
 horde/${HORDE_MODULE}/locale/ja_JP/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/km_KH/
+horde/${HORDE_MODULE}/locale/km_KH/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/km_KH/LC_MESSAGES/${HORDE_MODULE}.mo
 horde/${HORDE_MODULE}/locale/ko_KR/
 horde/${HORDE_MODULE}/locale/ko_KR/LC_MESSAGES/
 horde/${HORDE_MODULE}/locale/ko_KR/LC_MESSAGES/${HORDE_MODULE}.mo
@@ -257,6 +266,7 @@ horde/${HORDE_MODULE}/locale/th_TH/LC_MESSAGES/${HORDE_MODULE}.mo
 horde/${HORDE_MODULE}/locale/tr_TR/
 horde/${HORDE_MODULE}/locale/tr_TR/LC_MESSAGES/
 horde/${HORDE_MODULE}/locale/tr_TR/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/tr_TR/help.xml
 horde/${HORDE_MODULE}/locale/uk_UA/
 horde/${HORDE_MODULE}/locale/uk_UA/LC_MESSAGES/
 horde/${HORDE_MODULE}/locale/uk_UA/LC_MESSAGES/${HORDE_MODULE}.mo
@@ -291,12 +301,14 @@ horde/${HORDE_MODULE}/po/fa_IR.po
 horde/${HORDE_MODULE}/po/fi_FI.po
 horde/${HORDE_MODULE}/po/fr_FR.po
 horde/${HORDE_MODULE}/po/gl_ES.po
+horde/${HORDE_MODULE}/po/he_IL.po
 horde/${HORDE_MODULE}/po/hu_HU.po
 horde/${HORDE_MODULE}/po/id_ID.po
 horde/${HORDE_MODULE}/po/${HORDE_MODULE}.pot
 horde/${HORDE_MODULE}/po/is_IS.po
 horde/${HORDE_MODULE}/po/it_IT.po
 horde/${HORDE_MODULE}/po/ja_JP.po
+horde/${HORDE_MODULE}/po/km_KH.po
 horde/${HORDE_MODULE}/po/ko_KR.po
 horde/${HORDE_MODULE}/po/lt_LT.po
 horde/${HORDE_MODULE}/po/lv_LV.po
@@ -319,14 +331,15 @@ horde/${HORDE_MODULE}/po/zh_CN.po
 horde/${HORDE_MODULE}/po/zh_TW.po
 horde/${HORDE_MODULE}/recompose.php
 horde/${HORDE_MODULE}/redirect.php
+horde/${HORDE_MODULE}/saveimage.php
 horde/${HORDE_MODULE}/scripts/
 horde/${HORDE_MODULE}/scripts/.htaccess
 horde/${HORDE_MODULE}/scripts/Imp.reg
 horde/${HORDE_MODULE}/scripts/custom_login.php
-horde/${HORDE_MODULE}/scripts/singlescript.php
 horde/${HORDE_MODULE}/search.php
 horde/${HORDE_MODULE}/smime.php
 horde/${HORDE_MODULE}/spelling.php
+horde/${HORDE_MODULE}/stationery.php
 horde/${HORDE_MODULE}/templates/
 horde/${HORDE_MODULE}/templates/.htaccess
 horde/${HORDE_MODULE}/templates/acl/
@@ -363,10 +376,10 @@ horde/${HORDE_MODULE}/templates/folders/folders_confirm.html
 horde/${HORDE_MODULE}/templates/folders/foot.inc
 horde/${HORDE_MODULE}/templates/folders/head.inc
 horde/${HORDE_MODULE}/templates/folders/${HORDE_MODULE}ort.inc
-horde/${HORDE_MODULE}/templates/folders/javascript.inc
 horde/${HORDE_MODULE}/templates/javascript/
-horde/${HORDE_MODULE}/templates/javascript/open_compose_win.js
-horde/${HORDE_MODULE}/templates/javascript/open_print_win.js
+horde/${HORDE_MODULE}/templates/javascript/addressesBlocks.js
+horde/${HORDE_MODULE}/templates/javascript/folders.js
+horde/${HORDE_MODULE}/templates/javascript/popup.js
 horde/${HORDE_MODULE}/templates/login/
 horde/${HORDE_MODULE}/templates/login/login.inc
 horde/${HORDE_MODULE}/templates/mailbox/
@@ -394,11 +407,10 @@ horde/${HORDE_MODULE}/templates/message/navbar_top.inc
 horde/${HORDE_MODULE}/templates/pgp/
 horde/${HORDE_MODULE}/templates/pgp/${HORDE_MODULE}ort_key.inc
 horde/${HORDE_MODULE}/templates/pgp/notactive.inc
-horde/${HORDE_MODULE}/templates/pgp/open_pgp_${HORDE_MODULE}ort.js
-horde/${HORDE_MODULE}/templates/pgp/open_pgp_win.js
 horde/${HORDE_MODULE}/templates/pgp/passphrase.inc
 horde/${HORDE_MODULE}/templates/pgp/pgp.inc
 horde/${HORDE_MODULE}/templates/prefs/
+horde/${HORDE_MODULE}/templates/prefs/defaultsearchselect.inc
 horde/${HORDE_MODULE}/templates/prefs/encryptselect.inc
 horde/${HORDE_MODULE}/templates/prefs/folderselect.inc
 horde/${HORDE_MODULE}/templates/prefs/initialpageselect.inc
@@ -408,6 +420,8 @@ horde/${HORDE_MODULE}/templates/prefs/spamselect.inc
 horde/${HORDE_MODULE}/templates/prefs/trashselect.inc
 horde/${HORDE_MODULE}/templates/quota/
 horde/${HORDE_MODULE}/templates/quota/quota.inc
+horde/${HORDE_MODULE}/templates/saveimage/
+horde/${HORDE_MODULE}/templates/saveimage/saveimage.inc
 horde/${HORDE_MODULE}/templates/search/
 horde/${HORDE_MODULE}/templates/search/fields.inc
 horde/${HORDE_MODULE}/templates/search/header.inc
@@ -416,14 +430,12 @@ horde/${HORDE_MODULE}/templates/search/main.inc
 horde/${HORDE_MODULE}/templates/smime/
 horde/${HORDE_MODULE}/templates/smime/${HORDE_MODULE}ort_key.inc
 horde/${HORDE_MODULE}/templates/smime/notactive.inc
-horde/${HORDE_MODULE}/templates/smime/open_smime_${HORDE_MODULE}ort.js
-horde/${HORDE_MODULE}/templates/smime/open_smime_win.js
 horde/${HORDE_MODULE}/templates/smime/passphrase.inc
 horde/${HORDE_MODULE}/templates/smime/smime.inc
+horde/${HORDE_MODULE}/templates/stationery/
+horde/${HORDE_MODULE}/templates/stationery/prefs.inc
 horde/${HORDE_MODULE}/templates/thread/
-horde/${HORDE_MODULE}/templates/thread/bottom.inc
 horde/${HORDE_MODULE}/templates/thread/thread.html
-horde/${HORDE_MODULE}/templates/thread/top.inc
 horde/${HORDE_MODULE}/test.php
 horde/${HORDE_MODULE}/themes/
 horde/${HORDE_MODULE}/themes/azur/
@@ -443,11 +455,14 @@ horde/${HORDE_MODULE}/themes/cornflower/screen.css
 horde/${HORDE_MODULE}/themes/gennevilliers/
 horde/${HORDE_MODULE}/themes/gennevilliers/screen.css
 horde/${HORDE_MODULE}/themes/graphics/
-horde/${HORDE_MODULE}/themes/graphics/addressbook-blue.png
-horde/${HORDE_MODULE}/themes/graphics/addressbook-red.png
+horde/${HORDE_MODULE}/themes/graphics/addressbook_add.png
+horde/${HORDE_MODULE}/themes/graphics/addressbook_browse.png
 horde/${HORDE_MODULE}/themes/graphics/apple.png
 horde/${HORDE_MODULE}/themes/graphics/attachment.png
+horde/${HORDE_MODULE}/themes/graphics/audio/
+horde/${HORDE_MODULE}/themes/graphics/audio/theetone.wav
 horde/${HORDE_MODULE}/themes/graphics/compose.png
+horde/${HORDE_MODULE}/themes/graphics/empty_spam.png
 horde/${HORDE_MODULE}/themes/graphics/empty_trash.png
 horde/${HORDE_MODULE}/themes/graphics/encrypted.png
 horde/${HORDE_MODULE}/themes/graphics/expand.png
@@ -460,14 +475,13 @@ horde/${HORDE_MODULE}/themes/graphics/folders/folder.png
 horde/${HORDE_MODULE}/themes/graphics/folders/folder_open.png
 horde/${HORDE_MODULE}/themes/graphics/folders/inbox.png
 horde/${HORDE_MODULE}/themes/graphics/folders/sent.png
-horde/${HORDE_MODULE}/themes/graphics/folders/templates.png
 horde/${HORDE_MODULE}/themes/graphics/folders/trash.png
-horde/${HORDE_MODULE}/themes/graphics/forward.png
 horde/${HORDE_MODULE}/themes/graphics/${HORDE_MODULE}.png
 horde/${HORDE_MODULE}/themes/graphics/mail_answered.png
 horde/${HORDE_MODULE}/themes/graphics/mail_deleted.png
 horde/${HORDE_MODULE}/themes/graphics/mail_draft.png
 horde/${HORDE_MODULE}/themes/graphics/mail_flagged.png
+horde/${HORDE_MODULE}/themes/graphics/mail_forwarded.png
 horde/${HORDE_MODULE}/themes/graphics/mail_personal.png
 horde/${HORDE_MODULE}/themes/graphics/mail_priority_high.png
 horde/${HORDE_MODULE}/themes/graphics/mail_priority_low.png
@@ -483,7 +497,6 @@ horde/${HORDE_MODULE}/themes/graphics/mime/itip.png
 horde/${HORDE_MODULE}/themes/graphics/mime/mail.png
 horde/${HORDE_MODULE}/themes/graphics/mime/text.png
 horde/${HORDE_MODULE}/themes/graphics/newmail.png
-horde/${HORDE_MODULE}/themes/graphics/reply.png
 horde/${HORDE_MODULE}/themes/graphics/shared.png
 horde/${HORDE_MODULE}/themes/graphics/signed.png
 horde/${HORDE_MODULE}/themes/graphics/spacer_red.png
@@ -500,6 +513,7 @@ horde/${HORDE_MODULE}/themes/lucblue/
 horde/${HORDE_MODULE}/themes/lucblue/screen.css
 horde/${HORDE_MODULE}/themes/postnuke/
 horde/${HORDE_MODULE}/themes/postnuke/screen.css
+horde/${HORDE_MODULE}/themes/rtl.css
 horde/${HORDE_MODULE}/themes/screen.css
 horde/${HORDE_MODULE}/themes/s${HORDE_MODULE}lex/
 horde/${HORDE_MODULE}/themes/s${HORDE_MODULE}lex/screen.css

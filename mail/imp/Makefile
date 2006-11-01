@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2005/10/31 15:11:20 mbalmer Exp $ 
+# $OpenBSD: Makefile,v 1.15 2006/11/01 10:48:30 mbalmer Exp $ 
 
 COMMENT=	"highly configurable pop3/imap4 webmail client"
 
 HORDE_MODULE=	imp
 HORDE_NAME=	IMP
 
-DISTNAME=	${HORDE_MODULE}-h3-4.0.4
+DISTNAME=	${HORDE_MODULE}-h3-4.1.3
 CATEGORIES=	mail www
 HOMEPAGE=	http://www.horde.org/${HORDE_MODULE}/
 
@@ -28,9 +28,13 @@ PREFIX=		/var/www
 INSTDIR=	${PREFIX}/horde
 SUBST_VARS=	INSTDIR HORDE_NAME HORDE_MODULE
 
-PHP_VERSION=	5
 RUN_DEPENDS=	:horde->=3.0:devel/horde \
-		:php${PHP_VERSION}-imap-*:www/php${PHP_VERSION}/extensions,-imap
+		:php5-imap-*:www/php5/extensions,-imap \
+		:pear-Mail-*:mail/pear-Mail \
+		:pear-Mail-Mime-*:mail/pear-Mail-Mime \
+		:pear-Net-SMTP-*:net/pear-Net-SMTP \
+		:pear-Auth-SASL-*:security/pear-Auth-SASL \
+		:pear-HTTP-Request-*:net/pear-HTTP-Request
 
 pre-fake:
 	${INSTALL_DATA_DIR} ${INSTDIR}
