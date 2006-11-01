@@ -1,0 +1,2 @@
+Don't forget to remove ${PREFIX}/bin/idle
+if it was a symlink to ${PREFIX}/bin/idle2.3.

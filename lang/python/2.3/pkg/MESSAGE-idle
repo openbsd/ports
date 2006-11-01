@@ -1,0 +1,3 @@
+If you want to use this package as your system default idle, create
+symbolic links like so:
+ln -s ${PREFIX}/bin/idle2.3 ${PREFIX}/bin/idle
