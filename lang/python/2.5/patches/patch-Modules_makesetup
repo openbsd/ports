@@ -1,0 +1,11 @@
+$OpenBSD: patch-Modules_makesetup,v 1.1 2006/11/01 20:59:18 alek Exp $
+--- Modules/makesetup.orig	Fri Mar 29 19:00:19 2002
++++ Modules/makesetup	Thu Oct 19 03:59:06 2006
+@@ -164,6 +164,7 @@ sed -e 's/[ 	]*#.*//' -e '/^[ 	]*$/d' |
+ 			-rpath)		libs="$libs $arg"; skip=libs;;
+ 			--rpath)	libs="$libs $arg"; skip=libs;;
+ 			-[A-Zl]*)	libs="$libs $arg";;
++			-pthread*)	libs="$libs $arg";;
+ 			*.a)		libs="$libs $arg";;
+ 			*.so)		libs="$libs $arg";;
+ 			*.sl)		libs="$libs $arg";;

@@ -1,0 +1,24 @@
+As required by item 3 of the PSF license, here is a brief summary
+of changes made to this version of Python for the OpenBSD package.
+
+1.  tempfile.py was patched to not try /usr/tmp as a possible
+    tempfile directory.
+
+2.  libpython is created as a shared library, and the pthread stack
+    size was doubled to support this with complex applications such
+    as Zope.
+
+3.  OpenBSD threads are used for threading support.
+
+4.  The interpreter is called "python2.4" in order to support multiple
+    versions of Python coexisting on the same system.  If no "python"
+    binary exists, a symlink to "python2.4" is created when package
+    is installed.
+    Same process applies to IDLE binary (idle) and pydoc.
+
+5.  Regression tests have been taught about OpenBSD.
+
+These changes are available in the OpenBSD CVS repository
+<http://www.openbsd.org/anoncvs.html> in ports/lang/python.
+
+$OpenBSD: CHANGES.OpenBSD,v 1.1 2006/11/01 20:59:18 alek Exp $

@@ -1,0 +1,4 @@
+#!/bin/sh
+# $OpenBSD: idle,v 1.1 2006/11/01 20:59:18 alek Exp $
+
+/usr/bin/env python@VERSION@ @LOCALBASE@/lib/python@VERSION@/idlelib/idle.py

@@ -1,0 +1,4 @@
+If you want to use this package as your default system python, create
+symbolic links like so:
+ln -s ${PREFIX}/bin/python2.5 ${PREFIX}/bin/python
+ln -s ${PREFIX}/bin/pydoc2.5  ${PREFIX}/bin/pydoc

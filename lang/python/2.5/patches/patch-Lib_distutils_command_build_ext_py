@@ -1,0 +1,18 @@
+$OpenBSD: patch-Lib_distutils_command_build_ext_py,v 1.1 2006/11/01 20:59:18 alek Exp $
+--- Lib/distutils/command/build_ext.py.orig	Tue May 23 13:47:16 2006
++++ Lib/distutils/command/build_ext.py	Sat Oct 21 10:39:59 2006
+@@ -695,13 +695,6 @@ class build_ext (Command):
+             return ext.libraries
+ 
+         else:
+-            from distutils import sysconfig
+-            if sysconfig.get_config_var('Py_ENABLE_SHARED'):
+-                template = "python%d.%d"
+-                pythonlib = (template %
+-                             (sys.hexversion >> 24, (sys.hexversion >> 16) & 0xff))
+-                return ext.libraries + [pythonlib]
+-            else:
+-                return ext.libraries
++            return ext.libraries
+ 
+ # class build_ext

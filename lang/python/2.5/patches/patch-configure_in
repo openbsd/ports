@@ -1,0 +1,36 @@
+$OpenBSD: patch-configure_in,v 1.1 2006/11/01 20:59:18 alek Exp $
+--- configure.in.orig	Tue Sep  5 12:54:42 2006
++++ configure.in	Mon Sep 18 06:31:10 2006
+@@ -1508,19 +1508,7 @@ then
+ 			LDSHARED="ld -Bshareable ${LDFLAGS}"
+ 		fi;;
+ 	OpenBSD*)
+-		if [[ "`$CC -dM -E - </dev/null | grep __ELF__`" != "" ]]
+-		then
+-				LDSHARED='$(CC) -shared $(CCSHARED) ${LDFLAGS}'
+-		else
+-				case `uname -r` in
+-				[[01]].* | 2.[[0-7]] | 2.[[0-7]].*)
+-				   LDSHARED="ld -Bshareable ${LDFLAGS}"
+-				   ;;
+-				*)
+-				   LDSHARED='$(CC) -shared $(CCSHARED) ${LDFLAGS}'
+-				   ;;
+-				esac
+-		fi;;
++		LDSHARED="$CC -shared ${LDFLAGS}";;
+ 	NetBSD*|DragonFly*) LDSHARED="cc -shared ${LDFLAGS}";;
+ 	OpenUNIX*|UnixWare*)
+ 		if test "$GCC" = "yes"
+@@ -1662,9 +1650,10 @@ AC_CHECK_LIB(dld, shl_load)	# Dynamic li
+ 
+ # only check for sem_ini if thread support is requested
+ if test "$with_threads" = "yes" -o -z "$with_threads"; then
+-    AC_SEARCH_LIBS(sem_init, pthread rt posix4) # 'Real Time' functions on Solaris
++#   AC_SEARCH_LIBS(sem_init, pthread rt posix4) # 'Real Time' functions on Solaris
+ 						# posix4 on Solaris 2.6
+ 						# pthread (first!) on Linux
++	LIBS="-pthread $(LIBS)"
+ fi
+ 
+ # check if we need libintl for locale functions

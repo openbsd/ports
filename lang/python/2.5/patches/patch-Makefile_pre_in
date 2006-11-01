@@ -1,0 +1,65 @@
+$OpenBSD: patch-Makefile_pre_in,v 1.1 2006/11/01 20:59:18 alek Exp $
+--- Makefile.pre.in.orig	Mon Jul 31 02:20:10 2006
++++ Makefile.pre.in	Mon Sep 18 06:31:10 2006
+@@ -337,6 +337,7 @@ $(BUILDPYTHON):	Modules/python.o $(LIBRA
+ 		$(LINKCC) $(LDFLAGS) $(LINKFORSHARED) -o $@ \
+ 			Modules/python.o \
+ 			$(BLDLIBRARY) $(LIBS) $(MODLIBS) $(SYSLIBS) $(LDLAST)
++			-lpython$(VERSION) $(LIBS) $(MODLIBS) $(SYSLIBS) $(LDLAST)
+ 
+ platform: $(BUILDPYTHON)
+ 	$(RUNSHARED) ./$(BUILDPYTHON) -E -c 'import sys ; from distutils.util import get_platform ; print get_platform()+"-"+sys.version[0:3]' >platform
+@@ -373,6 +374,11 @@ libpython$(VERSION).so: $(LIBRARY_OBJS)
+ libpython$(VERSION).sl: $(LIBRARY_OBJS)
+ 	$(LDSHARED) -o $@ $(LIBRARY_OBJS) $(SHLIBS) $(LIBC) $(LIBM)
+ 
++# This rule for OpenBSD...
++$(LDLIBRARY):      $(LIBRARY)
++	$(LDSHARED) -o $@ $(LIBRARY_OBJS)
++
++
+ # This rule is here for OPENSTEP/Rhapsody/MacOSX. It builds a temporary
+ # minimal framework (not including the Lib directory and such) in the current
+ # directory.
+@@ -650,13 +656,12 @@ bininstall:	altbininstall
+ 	then rm -f $(DESTDIR)$(BINDIR)/$(PYTHON); \
+ 	else true; \
+ 	fi
+-	(cd $(DESTDIR)$(BINDIR); $(LN) python$(VERSION)$(EXE) $(PYTHON))
+ 	(cd $(DESTDIR)$(BINDIR); $(LN) -sf python$(VERSION)-config python-config)
+ 
+ # Install the interpreter with $(VERSION) affixed
+ # This goes into $(exec_prefix)
+ altbininstall:	$(BUILDPYTHON)
+-	@for i in $(BINDIR) $(LIBDIR); \
++	@for i in $(BINDIR) $(LIBDIR) $(LIBPL); \
+ 	do \
+ 		if test ! -d $(DESTDIR)$$i; then \
+ 			echo "Creating directory $$i"; \
+@@ -665,14 +670,12 @@ altbininstall:	$(BUILDPYTHON)
+ 		fi; \
+ 	done
+ 	$(INSTALL_PROGRAM) $(BUILDPYTHON) $(DESTDIR)$(BINDIR)/python$(VERSION)$(EXE)
+-	if test -f libpython$(VERSION)$(SO); then \
++	if test -f $(LDLIBRARY); then \
+ 		if test "$(SO)" = .dll; then \
+ 			$(INSTALL_SHARED) libpython$(VERSION)$(SO) $(DESTDIR)$(BINDIR); \
+ 		else \
+-			$(INSTALL_SHARED) libpython$(VERSION)$(SO) $(DESTDIR)$(LIBDIR)/$(INSTSONAME); \
+-			if test libpython$(VERSION)$(SO) != $(INSTSONAME); then \
+-				(cd $(DESTDIR)$(LIBDIR); $(LN) -sf $(INSTSONAME) libpython$(VERSION)$(SO)); \
+-			fi \
++			$(INSTALL_SHARED) $(LDLIBRARY) $(DESTDIR)$(LIBPL)/$(LDLIBRARY); \
++			(cd $(DESTDIR)$(LIBDIR); $(LN) -s python$(VERSION)/config/$(LDLIBRARY)); \
+ 		fi; \
+ 	else	true; \
+ 	fi
+@@ -688,7 +691,7 @@ maninstall:
+ 		fi; \
+ 	done
+ 	$(INSTALL_DATA) $(srcdir)/Misc/python.man \
+-		$(DESTDIR)$(MANDIR)/man1/python.1
++		$(DESTDIR)$(MANDIR)/man1/python$(VERSION).1
+ 
+ # Install the library
+ PLATDIR=	plat-$(MACHDEP)

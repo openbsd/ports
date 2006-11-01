@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-expat,v 1.1 2006/11/01 20:59:18 alek Exp $
+@option no-default-conflict
+@conflict python-expat->=2.5,<2.6
+lib/python2.5/lib-dynload/_elementtree.so
+lib/python2.5/lib-dynload/pyexpat.so

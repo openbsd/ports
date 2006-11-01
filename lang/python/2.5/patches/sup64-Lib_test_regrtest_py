@@ -1,0 +1,13 @@
+$OpenBSD: sup64-Lib_test_regrtest_py,v 1.1 2006/11/01 20:59:18 alek Exp $
+--- Lib/test/regrtest.py.orig	Sun Oct 22 02:21:34 2006
++++ Lib/test/regrtest.py	Sun Oct 22 02:25:17 2006
+@@ -1246,6 +1246,9 @@ _expectations = {
+         """,
+     'openbsd3':
+         """
++        test_audioop
++        test_rgbimg
++        test_imageop
+         test_aepack
+         test_al
+         test_applesingle

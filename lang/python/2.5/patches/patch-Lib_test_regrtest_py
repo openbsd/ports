@@ -1,0 +1,12 @@
+$OpenBSD: patch-Lib_test_regrtest_py,v 1.1 2006/11/01 20:59:18 alek Exp $
+--- Lib/test/regrtest.py.orig	Mon Sep 18 06:33:05 2006
++++ Lib/test/regrtest.py	Mon Sep 18 06:31:49 2006
+@@ -1312,6 +1312,8 @@ _expectations['freebsd5'] = _expectation
+ _expectations['freebsd6'] = _expectations['freebsd4']
+ _expectations['freebsd7'] = _expectations['freebsd4']
+ 
++_expectations['openbsd4'] = _expectations['openbsd3']
++
+ class _ExpectedSkips:
+     def __init__(self):
+         import os.path

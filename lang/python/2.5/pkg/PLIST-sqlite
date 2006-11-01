@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST-sqlite,v 1.1 2006/11/01 20:59:18 alek Exp $
+@option no-default-conflict
+@conflict python-sqlite3->=2.5,<2.6
+lib/python2.5/lib-dynload/_sqlite3.so
+lib/python2.5/sqlite3/
+lib/python2.5/sqlite3/__init__.py
+lib/python2.5/sqlite3/__init__.pyc
+lib/python2.5/sqlite3/__init__.pyo
+lib/python2.5/sqlite3/dbapi2.py
+lib/python2.5/sqlite3/dbapi2.pyc
+lib/python2.5/sqlite3/dbapi2.pyo
+lib/python2.5/sqlite3/test/
+lib/python2.5/sqlite3/test/__init__.py
+lib/python2.5/sqlite3/test/__init__.pyc
+lib/python2.5/sqlite3/test/__init__.pyo
+lib/python2.5/sqlite3/test/dbapi.py
+lib/python2.5/sqlite3/test/dbapi.pyc
+lib/python2.5/sqlite3/test/dbapi.pyo
+lib/python2.5/sqlite3/test/factory.py
+lib/python2.5/sqlite3/test/factory.pyc
+lib/python2.5/sqlite3/test/factory.pyo
+lib/python2.5/sqlite3/test/hooks.py
+lib/python2.5/sqlite3/test/hooks.pyc
+lib/python2.5/sqlite3/test/hooks.pyo
+lib/python2.5/sqlite3/test/regression.py
+lib/python2.5/sqlite3/test/regression.pyc
+lib/python2.5/sqlite3/test/regression.pyo
+lib/python2.5/sqlite3/test/transactions.py
+lib/python2.5/sqlite3/test/transactions.pyc
+lib/python2.5/sqlite3/test/transactions.pyo
+lib/python2.5/sqlite3/test/types.py
+lib/python2.5/sqlite3/test/types.pyc
+lib/python2.5/sqlite3/test/types.pyo
+lib/python2.5/sqlite3/test/userfunctions.py
+lib/python2.5/sqlite3/test/userfunctions.pyc
+lib/python2.5/sqlite3/test/userfunctions.pyo
