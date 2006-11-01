@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2005/10/31 15:52:43 mbalmer Exp $ 
+# $OpenBSD: Makefile,v 1.9 2006/11/01 10:50:34 mbalmer Exp $ 
 
 COMMENT=	"multiuser task list manager"
 
 HORDE_MODULE=	nag
 HORDE_NAME=	Nag
 
-DISTNAME=	${HORDE_MODULE}-h3-2.0.3
+DISTNAME=	${HORDE_MODULE}-h3-2.1.1
 CATEGORIES=	www
 HOMEPAGE=	http://www.horde.org/${HORDE_MODULE}/
 
@@ -28,9 +28,8 @@ PREFIX=		/var/www
 INSTDIR=	${PREFIX}/horde
 SUBST_VARS=	INSTDIR HORDE_NAME HORDE_MODULE
 
-PHP_VERSION=	5
 RUN_DEPENDS=	:horde->=3.0:devel/horde \
-		:php${PHP_VERSION}-imap-*:www/php${PHP_VERSION}/extensions,-imap
+		:php5-imap-*:www/php5/extensions,-imap
 
 pre-fake:
 	${INSTALL_DATA_DIR} ${INSTDIR}

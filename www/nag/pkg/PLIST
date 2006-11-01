@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/10/31 15:52:43 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/11/01 10:50:34 mbalmer Exp $
 horde/${HORDE_MODULE}/
 horde/${HORDE_MODULE}/COPYING
 horde/${HORDE_MODULE}/README
@@ -26,14 +26,17 @@ horde/${HORDE_MODULE}/docs/TODO
 horde/${HORDE_MODULE}/docs/UPGRADING
 horde/${HORDE_MODULE}/docs/vtodo/
 horde/${HORDE_MODULE}/docs/vtodo/todo.ics
+horde/${HORDE_MODULE}/ics.php
 horde/${HORDE_MODULE}/index.php
+horde/${HORDE_MODULE}/js/
+horde/${HORDE_MODULE}/js/fixUnstyledOptions.js
+horde/${HORDE_MODULE}/js/tables.js
 horde/${HORDE_MODULE}/lib/
 horde/${HORDE_MODULE}/lib/.htaccess
 horde/${HORDE_MODULE}/lib/Block/
 horde/${HORDE_MODULE}/lib/Block/summary.php
 horde/${HORDE_MODULE}/lib/Driver/
 horde/${HORDE_MODULE}/lib/Driver.php
-horde/${HORDE_MODULE}/lib/Driver/datatree.php
 horde/${HORDE_MODULE}/lib/Driver/kolab.php
 horde/${HORDE_MODULE}/lib/Driver/sql.php
 horde/${HORDE_MODULE}/lib/${HORDE_NAME}.php
@@ -118,6 +121,9 @@ horde/${HORDE_MODULE}/locale/pl_PL/LC_MESSAGES/${HORDE_MODULE}.mo
 horde/${HORDE_MODULE}/locale/pt_BR/
 horde/${HORDE_MODULE}/locale/pt_BR/LC_MESSAGES/
 horde/${HORDE_MODULE}/locale/pt_BR/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/pt_PT/
+horde/${HORDE_MODULE}/locale/pt_PT/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/pt_PT/LC_MESSAGES/${HORDE_MODULE}.mo
 horde/${HORDE_MODULE}/locale/ro_RO/
 horde/${HORDE_MODULE}/locale/ro_RO/LC_MESSAGES/
 horde/${HORDE_MODULE}/locale/ro_RO/LC_MESSAGES/${HORDE_MODULE}.mo
@@ -131,6 +137,8 @@ horde/${HORDE_MODULE}/locale/sk_SK/help.xml
 horde/${HORDE_MODULE}/locale/sv_SE/
 horde/${HORDE_MODULE}/locale/sv_SE/LC_MESSAGES/
 horde/${HORDE_MODULE}/locale/sv_SE/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/tr_TR/
+horde/${HORDE_MODULE}/locale/tr_TR/help.xml
 horde/${HORDE_MODULE}/locale/zh_CN/
 horde/${HORDE_MODULE}/locale/zh_CN/LC_MESSAGES/
 horde/${HORDE_MODULE}/locale/zh_CN/LC_MESSAGES/${HORDE_MODULE}.mo
@@ -161,6 +169,7 @@ horde/${HORDE_MODULE}/po/nl_NL.po
 horde/${HORDE_MODULE}/po/nn_NO.po
 horde/${HORDE_MODULE}/po/pl_PL.po
 horde/${HORDE_MODULE}/po/pt_BR.po
+horde/${HORDE_MODULE}/po/pt_PT.po
 horde/${HORDE_MODULE}/po/ro_RO.po
 horde/${HORDE_MODULE}/po/ru_RU.po
 horde/${HORDE_MODULE}/po/sk_SK.po
@@ -169,11 +178,15 @@ horde/${HORDE_MODULE}/po/zh_CN.po
 horde/${HORDE_MODULE}/po/zh_TW.po
 horde/${HORDE_MODULE}/scripts/
 horde/${HORDE_MODULE}/scripts/.htaccess
-horde/${HORDE_MODULE}/scripts/migrate_to_datatree_driver.php
+horde/${HORDE_MODULE}/scripts/import_vtodos.php
 horde/${HORDE_MODULE}/scripts/sql/
+horde/${HORDE_MODULE}/scripts/sql/${HORDE_MODULE}.mssql.sql
+horde/${HORDE_MODULE}/scripts/sql/${HORDE_MODULE}.oci8.sql
 horde/${HORDE_MODULE}/scripts/sql/${HORDE_MODULE}.sql
+horde/${HORDE_MODULE}/scripts/sql/${HORDE_MODULE}.xml
 horde/${HORDE_MODULE}/scripts/upgrades/
 horde/${HORDE_MODULE}/scripts/upgrades/1.1_to_2.0.mysql.sql
+horde/${HORDE_MODULE}/scripts/upgrades/1.1_to_2.0.oci8.sql
 horde/${HORDE_MODULE}/scripts/upgrades/1.1_to_2.0.pgsql.sql
 horde/${HORDE_MODULE}/scripts/upgrades/2004-09-13_add_uid_field.php
 horde/${HORDE_MODULE}/search.php
@@ -202,10 +215,12 @@ horde/${HORDE_MODULE}/templates/tasklists/tasklists.inc
 horde/${HORDE_MODULE}/templates/view/
 horde/${HORDE_MODULE}/templates/view/task.inc
 horde/${HORDE_MODULE}/themes/
+horde/${HORDE_MODULE}/themes/categoryCSS.php
 horde/${HORDE_MODULE}/themes/graphics/
 horde/${HORDE_MODULE}/themes/graphics/add.png
 horde/${HORDE_MODULE}/themes/graphics/alarm.png
 horde/${HORDE_MODULE}/themes/graphics/alarm_small.png
+horde/${HORDE_MODULE}/themes/graphics/az.png
 horde/${HORDE_MODULE}/themes/graphics/checkbox.png
 horde/${HORDE_MODULE}/themes/graphics/checked.png
 horde/${HORDE_MODULE}/themes/graphics/favicon.ico
@@ -213,5 +228,6 @@ horde/${HORDE_MODULE}/themes/graphics/${HORDE_MODULE}.png
 horde/${HORDE_MODULE}/themes/graphics/note.png
 horde/${HORDE_MODULE}/themes/graphics/tasklists.png
 horde/${HORDE_MODULE}/themes/graphics/unchecked.png
+horde/${HORDE_MODULE}/themes/graphics/za.png
 horde/${HORDE_MODULE}/themes/screen.css
 horde/${HORDE_MODULE}/view.php
