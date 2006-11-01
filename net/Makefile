@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.431 2006/10/31 19:37:06 brad Exp $
+# $OpenBSD: Makefile,v 1.432 2006/11/01 02:02:25 alek Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -76,6 +76,7 @@
 #     SUBDIR += gaim,audio,gtkspell
      SUBDIR += gaim,gtkspell
      SUBDIR += gaim-icb
+     SUBDIR += gaim-tlen
      SUBDIR += gajim
      SUBDIR += gftp
      SUBDIR += gmudix
