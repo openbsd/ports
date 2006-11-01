@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/10/31 15:34:35 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/11/01 10:51:19 mbalmer Exp $
 horde/${HORDE_MODULE}/
 horde/${HORDE_MODULE}/COPYING
 horde/${HORDE_MODULE}/README
 horde/${HORDE_MODULE}/addevent.php
 horde/${HORDE_MODULE}/addeventaction.php
+horde/${HORDE_MODULE}/attend.php
 horde/${HORDE_MODULE}/attendees.php
+horde/${HORDE_MODULE}/calendar_search.php
 horde/${HORDE_MODULE}/calendars.php
 @mode 700
 @owner www
@@ -37,13 +39,18 @@ horde/${HORDE_MODULE}/docs/UPGRADING
 horde/${HORDE_MODULE}/editevent.php
 horde/${HORDE_MODULE}/editeventaction.php
 horde/${HORDE_MODULE}/fb.php
+horde/${HORDE_MODULE}/ics.php
 horde/${HORDE_MODULE}/index.php
+horde/${HORDE_MODULE}/js/
+horde/${HORDE_MODULE}/js/fixUnstyledOptions.js
+horde/${HORDE_MODULE}/js/stripe.js
 horde/${HORDE_MODULE}/lib/
 horde/${HORDE_MODULE}/lib/Block/
 horde/${HORDE_MODULE}/lib/Block/month.php
 horde/${HORDE_MODULE}/lib/Block/monthlist.php
 horde/${HORDE_MODULE}/lib/Block/prevmonthlist.php
 horde/${HORDE_MODULE}/lib/Block/summary.php
+horde/${HORDE_MODULE}/lib/Block/tree_alarms.php
 horde/${HORDE_MODULE}/lib/Block/tree_menu.php
 horde/${HORDE_MODULE}/lib/Day.php
 horde/${HORDE_MODULE}/lib/DayView.php
@@ -51,7 +58,6 @@ horde/${HORDE_MODULE}/lib/Driver/
 horde/${HORDE_MODULE}/lib/Driver.php
 horde/${HORDE_MODULE}/lib/Driver/ical.php
 horde/${HORDE_MODULE}/lib/Driver/kolab.php
-horde/${HORDE_MODULE}/lib/Driver/mcal.php
 horde/${HORDE_MODULE}/lib/Driver/sql.php
 horde/${HORDE_MODULE}/lib/FBView/
 horde/${HORDE_MODULE}/lib/FBView.php
@@ -138,6 +144,9 @@ horde/${HORDE_MODULE}/locale/pt_BR/
 horde/${HORDE_MODULE}/locale/pt_BR/LC_MESSAGES/
 horde/${HORDE_MODULE}/locale/pt_BR/LC_MESSAGES/${HORDE_MODULE}.mo
 horde/${HORDE_MODULE}/locale/pt_BR/help.xml
+horde/${HORDE_MODULE}/locale/pt_PT/
+horde/${HORDE_MODULE}/locale/pt_PT/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/pt_PT/LC_MESSAGES/${HORDE_MODULE}.mo
 horde/${HORDE_MODULE}/locale/ro_RO/
 horde/${HORDE_MODULE}/locale/ro_RO/LC_MESSAGES/
 horde/${HORDE_MODULE}/locale/ro_RO/LC_MESSAGES/${HORDE_MODULE}.mo
@@ -150,6 +159,8 @@ horde/${HORDE_MODULE}/locale/sk_SK/LC_MESSAGES/${HORDE_MODULE}.mo
 horde/${HORDE_MODULE}/locale/sv_SE/
 horde/${HORDE_MODULE}/locale/sv_SE/LC_MESSAGES/
 horde/${HORDE_MODULE}/locale/sv_SE/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/tr_TR/
+horde/${HORDE_MODULE}/locale/tr_TR/help.xml
 horde/${HORDE_MODULE}/locale/zh_CN/
 horde/${HORDE_MODULE}/locale/zh_CN/LC_MESSAGES/
 horde/${HORDE_MODULE}/locale/zh_CN/LC_MESSAGES/${HORDE_MODULE}.mo
@@ -180,6 +191,7 @@ horde/${HORDE_MODULE}/po/nl_NL.po
 horde/${HORDE_MODULE}/po/nn_NO.po
 horde/${HORDE_MODULE}/po/pl_PL.po
 horde/${HORDE_MODULE}/po/pt_BR.po
+horde/${HORDE_MODULE}/po/pt_PT.po
 horde/${HORDE_MODULE}/po/ro_RO.po
 horde/${HORDE_MODULE}/po/ru_RU.po
 horde/${HORDE_MODULE}/po/sk_SK.po
@@ -188,15 +200,19 @@ horde/${HORDE_MODULE}/po/zh_CN.po
 horde/${HORDE_MODULE}/po/zh_TW.po
 horde/${HORDE_MODULE}/scripts/
 horde/${HORDE_MODULE}/scripts/.htaccess
+horde/${HORDE_MODULE}/scripts/import_icals.php
 horde/${HORDE_MODULE}/scripts/migrate_to_sql_driver.php
 horde/${HORDE_MODULE}/scripts/reminders.php
 horde/${HORDE_MODULE}/scripts/sql/
+horde/${HORDE_MODULE}/scripts/sql/${HORDE_MODULE}.mssql.sql
 horde/${HORDE_MODULE}/scripts/sql/${HORDE_MODULE}.mysql.sql
 horde/${HORDE_MODULE}/scripts/sql/${HORDE_MODULE}.oci8.sql
 horde/${HORDE_MODULE}/scripts/sql/${HORDE_MODULE}.pgsql.sql
 horde/${HORDE_MODULE}/scripts/sql/${HORDE_MODULE}.sql
+horde/${HORDE_MODULE}/scripts/sql/${HORDE_MODULE}.xml
 horde/${HORDE_MODULE}/scripts/upgrades/
 horde/${HORDE_MODULE}/scripts/upgrades/1.1_to_2.0.mysql.sql
+horde/${HORDE_MODULE}/scripts/upgrades/1.1_to_2.0.oci8.sql
 horde/${HORDE_MODULE}/scripts/upgrades/1.1_to_2.0.pgsql.sql
 horde/${HORDE_MODULE}/scripts/upgrades/2004-05-19_convert_categories_to_strings.php
 horde/${HORDE_MODULE}/scripts/upgrades/2004-12-21_add_event_uid.pgsql.sql
@@ -207,6 +223,7 @@ horde/${HORDE_MODULE}/templates/attendees/
 horde/${HORDE_MODULE}/templates/attendees/attendees.inc
 horde/${HORDE_MODULE}/templates/calendars/
 horde/${HORDE_MODULE}/templates/calendars/calendars.inc
+horde/${HORDE_MODULE}/templates/calendars/search.inc
 horde/${HORDE_MODULE}/templates/category_legend.inc
 horde/${HORDE_MODULE}/templates/common-header.inc
 horde/${HORDE_MODULE}/templates/contacts/
@@ -216,11 +233,11 @@ horde/${HORDE_MODULE}/templates/data/export.inc
 horde/${HORDE_MODULE}/templates/data/import.inc
 horde/${HORDE_MODULE}/templates/day/
 horde/${HORDE_MODULE}/templates/day/all_day.inc
-horde/${HORDE_MODULE}/templates/day/foot.inc
 horde/${HORDE_MODULE}/templates/day/head.inc
 horde/${HORDE_MODULE}/templates/day/head_side_by_side.inc
 horde/${HORDE_MODULE}/templates/day/row.inc
 horde/${HORDE_MODULE}/templates/day/row_half.inc
+horde/${HORDE_MODULE}/templates/day/rows.html
 horde/${HORDE_MODULE}/templates/delete/
 horde/${HORDE_MODULE}/templates/delete/delete.inc
 horde/${HORDE_MODULE}/templates/delete/one.inc
@@ -230,9 +247,9 @@ horde/${HORDE_MODULE}/templates/edit/edit_timespan.inc
 horde/${HORDE_MODULE}/templates/edit/javascript.inc
 horde/${HORDE_MODULE}/templates/fbview/
 horde/${HORDE_MODULE}/templates/fbview/busyblock.tpl
+horde/${HORDE_MODULE}/templates/fbview/emptyblock.tpl
 horde/${HORDE_MODULE}/templates/fbview/header.tpl
-horde/${HORDE_MODULE}/templates/fbview/legend.inc
-horde/${HORDE_MODULE}/templates/fbview/linesblock.tpl
+horde/${HORDE_MODULE}/templates/fbview/legend.tpl
 horde/${HORDE_MODULE}/templates/fbview/meetingblock.tpl
 horde/${HORDE_MODULE}/templates/fbview/row.tpl
 horde/${HORDE_MODULE}/templates/fbview/section.tpl
@@ -240,11 +257,13 @@ horde/${HORDE_MODULE}/templates/fbview/unknownblock.tpl
 horde/${HORDE_MODULE}/templates/javascript/
 horde/${HORDE_MODULE}/templates/javascript/goto.inc
 horde/${HORDE_MODULE}/templates/javascript/open_attendees_win.js
+horde/${HORDE_MODULE}/templates/javascript/open_calendar_search.js
 horde/${HORDE_MODULE}/templates/menu.inc
 horde/${HORDE_MODULE}/templates/month/
 horde/${HORDE_MODULE}/templates/month/head.inc
 horde/${HORDE_MODULE}/templates/month/head_side_by_side.inc
 horde/${HORDE_MODULE}/templates/prefs/
+horde/${HORDE_MODULE}/templates/prefs/fb_cals_select.inc
 horde/${HORDE_MODULE}/templates/prefs/remote_cal_management.inc
 horde/${HORDE_MODULE}/templates/prefs/search_abook_select.inc
 horde/${HORDE_MODULE}/templates/prefs/shareselect.inc
@@ -261,27 +280,35 @@ horde/${HORDE_MODULE}/templates/view/view.inc
 horde/${HORDE_MODULE}/templates/week/
 horde/${HORDE_MODULE}/templates/week/head.inc
 horde/${HORDE_MODULE}/templates/week/head_side_by_side.inc
+horde/${HORDE_MODULE}/templates/year/
+horde/${HORDE_MODULE}/templates/year/head.inc
 horde/${HORDE_MODULE}/themes/
 horde/${HORDE_MODULE}/themes/bluewhite/
 horde/${HORDE_MODULE}/themes/bluewhite/screen.css
 horde/${HORDE_MODULE}/themes/burntorange/
 horde/${HORDE_MODULE}/themes/burntorange/screen.css
+horde/${HORDE_MODULE}/themes/categoryCSS.php
 horde/${HORDE_MODULE}/themes/graphics/
+horde/${HORDE_MODULE}/themes/graphics/addressbook_browse.png
+horde/${HORDE_MODULE}/themes/graphics/alarm.png
 horde/${HORDE_MODULE}/themes/graphics/alarm_small.png
 horde/${HORDE_MODULE}/themes/graphics/attendees.png
 horde/${HORDE_MODULE}/themes/graphics/calendars.png
 horde/${HORDE_MODULE}/themes/graphics/dayview.png
+horde/${HORDE_MODULE}/themes/graphics/expand.png
 horde/${HORDE_MODULE}/themes/graphics/favicon.ico
 horde/${HORDE_MODULE}/themes/graphics/goto.png
 horde/${HORDE_MODULE}/themes/graphics/${HORDE_MODULE}.png
 horde/${HORDE_MODULE}/themes/graphics/monthview.png
 horde/${HORDE_MODULE}/themes/graphics/new.png
+horde/${HORDE_MODULE}/themes/graphics/new_big.png
 horde/${HORDE_MODULE}/themes/graphics/new_small.png
 horde/${HORDE_MODULE}/themes/graphics/recur.png
 horde/${HORDE_MODULE}/themes/graphics/today.png
 horde/${HORDE_MODULE}/themes/graphics/unknown-background.png
 horde/${HORDE_MODULE}/themes/graphics/weekview.png
 horde/${HORDE_MODULE}/themes/graphics/workweekview.png
+horde/${HORDE_MODULE}/themes/graphics/yearview.png
 horde/${HORDE_MODULE}/themes/mozilla/
 horde/${HORDE_MODULE}/themes/mozilla/screen.css
 horde/${HORDE_MODULE}/themes/print/
@@ -292,3 +319,4 @@ horde/${HORDE_MODULE}/themes/simplex/screen.css
 horde/${HORDE_MODULE}/viewevent.php
 horde/${HORDE_MODULE}/week.php
 horde/${HORDE_MODULE}/workweek.php
+horde/${HORDE_MODULE}/year.php

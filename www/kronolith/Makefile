@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2005/11/13 19:47:34 mbalmer Exp $ 
+# $OpenBSD: Makefile,v 1.10 2006/11/01 10:51:19 mbalmer Exp $ 
 
 COMMENT=	"addressbook for imp"
 
 HORDE_MODULE=	kronolith
 HORDE_NAME=	Kronolith
 
-DISTNAME=	${HORDE_MODULE}-h3-2.0.5
+DISTNAME=	${HORDE_MODULE}-h3-2.1.2
 CATEGORIES=	www mail
 HOMEPAGE=	http://www.horde.org/${HORDE_MODULE}/
 
@@ -28,9 +28,9 @@ PREFIX=		/var/www
 INSTDIR=	${PREFIX}/horde
 SUBST_VARS=	INSTDIR HORDE_NAME HORDE_MODULE
 
-PHP_VERSION=	5
 RUN_DEPENDS=	:horde->=3.0:devel/horde \
-		:php${PHP_VERSION}-imap-*:www/php${PHP_VERSION}/extensions,-imap
+		:pear-Date-*:devel/pear-Date \
+		:imp-h3-*:mail/imp
 
 pre-fake:
 	${INSTALL_DATA_DIR} ${INSTDIR}
