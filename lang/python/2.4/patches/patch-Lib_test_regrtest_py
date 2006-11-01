@@ -1,9 +1,9 @@
-$OpenBSD: patch-Lib_test_regrtest_py,v 1.1.1.1 2005/06/07 01:12:58 alek Exp $
---- Lib/test/regrtest.py.orig	Sat Nov 13 12:13:35 2004
-+++ Lib/test/regrtest.py	Fri Dec 31 16:52:45 2004
-@@ -1064,6 +1064,32 @@ _expectations = {
-         test_winreg
-         test_winsound
+$OpenBSD: patch-Lib_test_regrtest_py,v 1.2 2006/11/01 20:38:37 alek Exp $
+--- Lib/test/regrtest.py.orig	Mon Mar 13 06:53:04 2006
++++ Lib/test/regrtest.py	Fri Oct 20 10:26:06 2006
+@@ -1113,6 +1113,32 @@ _expectations = {
+         test_zipimport
+         test_zlib
          """,
 +     'openbsd3':
 +         """

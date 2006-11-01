@@ -1,7 +1,7 @@
-$OpenBSD: patch-Modules_posixmodule_c,v 1.1.1.1 2005/06/07 01:12:58 alek Exp $
---- Modules/posixmodule.c.orig	Fri Feb 18 17:13:36 2005
-+++ Modules/posixmodule.c	Fri Feb 18 17:14:28 2005
-@@ -789,7 +789,7 @@ statresult_new(PyTypeObject *type, PyObj
+$OpenBSD: patch-Modules_posixmodule_c,v 1.2 2006/11/01 20:38:37 alek Exp $
+--- Modules/posixmodule.c.orig	Mon Oct  9 21:29:06 2006
++++ Modules/posixmodule.c	Sat Oct 21 15:06:38 2006
+@@ -805,7 +805,7 @@ statresult_new(PyTypeObject *type, PyObj
  
  
  /* If true, st_?time is float. */
@@ -10,7 +10,7 @@ $OpenBSD: patch-Modules_posixmodule_c,v 1.1.1.1 2005/06/07 01:12:58 alek Exp $
  
  PyDoc_STRVAR(stat_float_times__doc__,
  "stat_float_times([newval]) -> oldval\n\n\
-@@ -5350,6 +5349,10 @@ posix_read(PyObject *self, PyObject *arg
+@@ -5417,6 +5417,10 @@ posix_read(PyObject *self, PyObject *arg
  	PyObject *buffer;
  	if (!PyArg_ParseTuple(args, "ii:read", &fd, &size))
  		return NULL;

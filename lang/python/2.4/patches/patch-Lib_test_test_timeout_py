@@ -1,6 +1,6 @@
-$OpenBSD: patch-Lib_test_test_timeout_py,v 1.1.1.1 2005/06/07 01:12:58 alek Exp $
---- Lib/test/test_timeout.py.orig	Sun Jul 11 12:10:16 2004
-+++ Lib/test/test_timeout.py	Sun Jul 11 18:04:16 2004
+$OpenBSD: patch-Lib_test_test_timeout_py,v 1.2 2006/11/01 20:38:37 alek Exp $
+--- Lib/test/test_timeout.py.orig	Sat Mar 18 03:47:38 2006
++++ Lib/test/test_timeout.py	Fri Oct 20 10:26:08 2006
 @@ -108,7 +108,7 @@ class TimeoutTestCase(unittest.TestCase)
  
      def testConnectTimeout(self):
@@ -9,4 +9,4 @@ $OpenBSD: patch-Lib_test_test_timeout_py,v 1.1.1.1 2005/06/07 01:12:58 alek Exp 
 +        _timeout = 0.0001
          self.sock.settimeout(_timeout)
  
-         _t1 = time.time()
+         # If we are too close to www.python.org, this test will fail.

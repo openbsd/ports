@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_pre_in,v 1.2 2005/12/27 19:41:21 alek Exp $
---- Makefile.pre.in.orig	Tue Mar 29 01:23:01 2005
-+++ Makefile.pre.in	Sat Dec 24 10:36:43 2005
-@@ -311,7 +311,7 @@ all:		$(BUILDPYTHON) oldsharedmods share
+$OpenBSD: patch-Makefile_pre_in,v 1.3 2006/11/01 20:38:37 alek Exp $
+--- Makefile.pre.in.orig	Sun Oct  8 19:41:25 2006
++++ Makefile.pre.in	Sat Oct 21 15:06:35 2006
+@@ -315,7 +315,7 @@ all:		$(BUILDPYTHON) oldsharedmods share
  $(BUILDPYTHON):	Modules/$(MAINOBJ) $(LIBRARY) $(LDLIBRARY)
  		$(LINKCC) $(LDFLAGS) $(LINKFORSHARED) -o $@ \
  			Modules/$(MAINOBJ) \
@@ -10,9 +10,9 @@ $OpenBSD: patch-Makefile_pre_in,v 1.2 2005/12/27 19:41:21 alek Exp $
  
  platform: $(BUILDPYTHON)
  	$(RUNSHARED) ./$(BUILDPYTHON) -E -c 'import sys ; from distutils.util import get_platform ; print get_platform()+"-"+sys.version[0:3]' >platform
-@@ -360,6 +360,11 @@ libpython$(VERSION).so: $(LIBRARY_OBJS)
+@@ -364,6 +364,11 @@ libpython$(VERSION).so: $(LIBRARY_OBJS)
  libpython$(VERSION).sl: $(LIBRARY_OBJS)
- 	$(LDSHARED) -o $@ $(LIBRARY_OBJS) $(LIBC) $(LIBM)
+ 	$(LDSHARED) -o $@ $(LIBRARY_OBJS) $(SHLIBS) $(LIBC) $(LIBM)
  
 +# This rule for OpenBSD...
 +$(LDLIBRARY):      $(LIBRARY)
@@ -22,7 +22,7 @@ $OpenBSD: patch-Makefile_pre_in,v 1.2 2005/12/27 19:41:21 alek Exp $
  # This rule is here for OPENSTEP/Rhapsody/MacOSX. It builds a temporary
  # minimal framework (not including the Lib directory and such) in the current
  # directory.
-@@ -596,7 +601,6 @@ bininstall:	altbininstall
+@@ -626,7 +631,6 @@ bininstall:	altbininstall
  	then rm -f $(DESTDIR)$(BINDIR)/$(PYTHON); \
  	else true; \
  	fi
@@ -30,7 +30,7 @@ $OpenBSD: patch-Makefile_pre_in,v 1.2 2005/12/27 19:41:21 alek Exp $
  
  # Install the interpreter with $(VERSION) affixed
  # This goes into $(exec_prefix)
-@@ -607,7 +611,7 @@ altbininstall:	$(BUILDPYTHON)
+@@ -637,7 +641,7 @@ altbininstall:	$(BUILDPYTHON)
  			exit 1; \
  		fi; \
  	fi
@@ -39,7 +39,7 @@ $OpenBSD: patch-Makefile_pre_in,v 1.2 2005/12/27 19:41:21 alek Exp $
  	do \
  		if test ! -d $(DESTDIR)$$i; then \
  			echo "Creating directory $$i"; \
-@@ -616,14 +620,12 @@ altbininstall:	$(BUILDPYTHON)
+@@ -646,14 +650,12 @@ altbininstall:	$(BUILDPYTHON)
  		fi; \
  	done
  	$(INSTALL_PROGRAM) $(BUILDPYTHON) $(DESTDIR)$(BINDIR)/python$(VERSION)$(EXE)
@@ -57,7 +57,7 @@ $OpenBSD: patch-Makefile_pre_in,v 1.2 2005/12/27 19:41:21 alek Exp $
  		fi; \
  	else	true; \
  	fi
-@@ -639,7 +641,7 @@ maninstall:
+@@ -669,7 +671,7 @@ maninstall:
  		fi; \
  	done
  	$(INSTALL_DATA) $(srcdir)/Misc/python.man \

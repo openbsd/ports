@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-gdbm,v 1.2 2006/04/18 17:29:35 alek Exp $
-lib/python2.4/lib-dynload/gdbmmodule.so

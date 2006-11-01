@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tools,v 1.3 2006/04/18 17:29:35 alek Exp $
+@comment $OpenBSD: PLIST-tools,v 1.4 2006/11/01 20:38:37 alek Exp $
 @option no-default-conflict
 @conflict python-tools->=2.4,<2.5
 lib/python2.4/Tools/
@@ -24,11 +24,13 @@ lib/python2.4/Tools/bgen/bgen/bgenVariable.py
 lib/python2.4/Tools/bgen/bgen/macsupport.py
 lib/python2.4/Tools/bgen/bgen/scantools.py
 lib/python2.4/Tools/buildbot/
+lib/python2.4/Tools/buildbot/Makefile
 lib/python2.4/Tools/buildbot/README.txt
 lib/python2.4/Tools/buildbot/build.bat
 lib/python2.4/Tools/buildbot/clean.bat
 lib/python2.4/Tools/buildbot/external.bat
 lib/python2.4/Tools/buildbot/fetch_data_files.py
+lib/python2.4/Tools/buildbot/kill_python.c
 lib/python2.4/Tools/buildbot/test.bat
 lib/python2.4/Tools/compiler/
 lib/python2.4/Tools/compiler/ACKS
@@ -118,6 +120,7 @@ lib/python2.4/Tools/msi/msisupport.mak
 lib/python2.4/Tools/msi/schema.py
 lib/python2.4/Tools/msi/sequence.py
 lib/python2.4/Tools/msi/uisample.py
+lib/python2.4/Tools/msi/uuids.py
 lib/python2.4/Tools/pynche/
 lib/python2.4/Tools/pynche/ChipViewer.py
 lib/python2.4/Tools/pynche/ColorDB.py

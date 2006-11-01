@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.2 2006/04/18 17:29:35 alek Exp $
+@comment $OpenBSD: PLIST-tests,v 1.3 2006/11/01 20:38:37 alek Exp $
 @option no-default-conflict
 @conflict python-tests->=2.4,<2.5
 lib/python2.4/test/
@@ -142,6 +142,7 @@ lib/python2.4/test/sample_doctest.pyo
 lib/python2.4/test/seq_tests.py
 lib/python2.4/test/seq_tests.pyc
 lib/python2.4/test/seq_tests.pyo
+lib/python2.4/test/sgml_input.html
 lib/python2.4/test/sortperf.py
 lib/python2.4/test/sortperf.pyc
 lib/python2.4/test/sortperf.pyo
@@ -1051,6 +1052,9 @@ lib/python2.4/test/testtar.tar
 lib/python2.4/test/tf_inherit_check.py
 lib/python2.4/test/tf_inherit_check.pyc
 lib/python2.4/test/tf_inherit_check.pyo
+lib/python2.4/test/threaded_import_hangers.py
+lib/python2.4/test/threaded_import_hangers.pyc
+lib/python2.4/test/threaded_import_hangers.pyo
 lib/python2.4/test/tokenize_tests.txt
 lib/python2.4/test/xmltests.py
 lib/python2.4/test/xmltests.pyc
