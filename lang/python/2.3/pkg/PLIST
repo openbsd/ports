@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/07/28 22:36:41 steven Exp $
+@comment $OpenBSD: PLIST,v 1.6 2006/11/01 20:02:06 alek Exp $
 @option no-default-conflict
 @conflict python->=2.3,<2.4
-%%tkinter%%
 bin/pydoc2.3
 bin/python2.3
 include/python2.3/
@@ -76,6 +75,7 @@ include/python2.3/tupleobject.h
 include/python2.3/ucnhash.h
 include/python2.3/unicodeobject.h
 include/python2.3/weakrefobject.h
+@lib lib/libpython2.3.so.${LIBpython2.3_VERSION}
 lib/python2.3/
 lib/python2.3/BaseHTTPServer.py
 lib/python2.3/BaseHTTPServer.pyc
@@ -318,6 +318,7 @@ lib/python2.3/config/config.c
 lib/python2.3/config/config.c.in
 lib/python2.3/config/install-sh
 lib/python2.3/config/libpython2.3.a
+@lib lib/python2.3/config/libpython2.3.so.${LIBpython2.3_VERSION}
 lib/python2.3/config/makesetup
 lib/python2.3/config/python.o
 lib/python2.3/copy.py
@@ -951,6 +952,52 @@ lib/python2.3/inspect.pyo
 lib/python2.3/keyword.py
 lib/python2.3/keyword.pyc
 lib/python2.3/keyword.pyo
+lib/python2.3/lib-dynload/
+lib/python2.3/lib-dynload/_csv.so
+lib/python2.3/lib-dynload/_curses.so
+lib/python2.3/lib-dynload/_curses_panel.so
+lib/python2.3/lib-dynload/_hotshot.so
+lib/python2.3/lib-dynload/_locale.so
+lib/python2.3/lib-dynload/_random.so
+lib/python2.3/lib-dynload/_socket.so
+lib/python2.3/lib-dynload/_ssl.so
+lib/python2.3/lib-dynload/_testcapi.so
+lib/python2.3/lib-dynload/_weakref.so
+lib/python2.3/lib-dynload/array.so
+lib/python2.3/lib-dynload/binascii.so
+lib/python2.3/lib-dynload/bsddb185.so
+lib/python2.3/lib-dynload/cPickle.so
+lib/python2.3/lib-dynload/cStringIO.so
+lib/python2.3/lib-dynload/cmath.so
+lib/python2.3/lib-dynload/crypt.so
+lib/python2.3/lib-dynload/datetime.so
+lib/python2.3/lib-dynload/dbm.so
+lib/python2.3/lib-dynload/fcntl.so
+lib/python2.3/lib-dynload/grp.so
+lib/python2.3/lib-dynload/itertools.so
+lib/python2.3/lib-dynload/math.so
+lib/python2.3/lib-dynload/md5.so
+lib/python2.3/lib-dynload/mmap.so
+lib/python2.3/lib-dynload/nis.so
+lib/python2.3/lib-dynload/operator.so
+lib/python2.3/lib-dynload/parser.so
+lib/python2.3/lib-dynload/pcre.so
+lib/python2.3/lib-dynload/pwd.so
+lib/python2.3/lib-dynload/readline.so
+lib/python2.3/lib-dynload/regex.so
+lib/python2.3/lib-dynload/resource.so
+lib/python2.3/lib-dynload/rotor.so
+lib/python2.3/lib-dynload/select.so
+lib/python2.3/lib-dynload/sha.so
+lib/python2.3/lib-dynload/strop.so
+lib/python2.3/lib-dynload/struct.so
+lib/python2.3/lib-dynload/syslog.so
+lib/python2.3/lib-dynload/termios.so
+lib/python2.3/lib-dynload/time.so
+lib/python2.3/lib-dynload/timing.so
+lib/python2.3/lib-dynload/unicodedata.so
+lib/python2.3/lib-dynload/xreadlines.so
+lib/python2.3/lib-dynload/zlib.so
 lib/python2.3/lib-old/
 lib/python2.3/lib-old/Para.py
 lib/python2.3/lib-old/Para.pyc
@@ -1012,58 +1059,6 @@ lib/python2.3/lib-old/whatsound.pyo
 lib/python2.3/lib-old/zmod.py
 lib/python2.3/lib-old/zmod.pyc
 lib/python2.3/lib-old/zmod.pyo
-@comment lib/python2.3/lib-tk/
-@comment lib/python2.3/lib-tk/Canvas.py
-@comment lib/python2.3/lib-tk/Canvas.pyc
-@comment lib/python2.3/lib-tk/Canvas.pyo
-@comment lib/python2.3/lib-tk/Dialog.py
-@comment lib/python2.3/lib-tk/Dialog.pyc
-@comment lib/python2.3/lib-tk/Dialog.pyo
-@comment lib/python2.3/lib-tk/FileDialog.py
-@comment lib/python2.3/lib-tk/FileDialog.pyc
-@comment lib/python2.3/lib-tk/FileDialog.pyo
-@comment lib/python2.3/lib-tk/FixTk.py
-@comment lib/python2.3/lib-tk/FixTk.pyc
-@comment lib/python2.3/lib-tk/FixTk.pyo
-@comment lib/python2.3/lib-tk/ScrolledText.py
-@comment lib/python2.3/lib-tk/ScrolledText.pyc
-@comment lib/python2.3/lib-tk/ScrolledText.pyo
-@comment lib/python2.3/lib-tk/SimpleDialog.py
-@comment lib/python2.3/lib-tk/SimpleDialog.pyc
-@comment lib/python2.3/lib-tk/SimpleDialog.pyo
-@comment lib/python2.3/lib-tk/Tix.py
-@comment lib/python2.3/lib-tk/Tix.pyc
-@comment lib/python2.3/lib-tk/Tix.pyo
-@comment lib/python2.3/lib-tk/Tkconstants.py
-@comment lib/python2.3/lib-tk/Tkconstants.pyc
-@comment lib/python2.3/lib-tk/Tkconstants.pyo
-@comment lib/python2.3/lib-tk/Tkdnd.py
-@comment lib/python2.3/lib-tk/Tkdnd.pyc
-@comment lib/python2.3/lib-tk/Tkdnd.pyo
-@comment lib/python2.3/lib-tk/Tkinter.py
-@comment lib/python2.3/lib-tk/Tkinter.pyc
-@comment lib/python2.3/lib-tk/Tkinter.pyo
-@comment lib/python2.3/lib-tk/tkColorChooser.py
-@comment lib/python2.3/lib-tk/tkColorChooser.pyc
-@comment lib/python2.3/lib-tk/tkColorChooser.pyo
-@comment lib/python2.3/lib-tk/tkCommonDialog.py
-@comment lib/python2.3/lib-tk/tkCommonDialog.pyc
-@comment lib/python2.3/lib-tk/tkCommonDialog.pyo
-@comment lib/python2.3/lib-tk/tkFileDialog.py
-@comment lib/python2.3/lib-tk/tkFileDialog.pyc
-@comment lib/python2.3/lib-tk/tkFileDialog.pyo
-@comment lib/python2.3/lib-tk/tkFont.py
-@comment lib/python2.3/lib-tk/tkFont.pyc
-@comment lib/python2.3/lib-tk/tkFont.pyo
-@comment lib/python2.3/lib-tk/tkMessageBox.py
-@comment lib/python2.3/lib-tk/tkMessageBox.pyc
-@comment lib/python2.3/lib-tk/tkMessageBox.pyo
-@comment lib/python2.3/lib-tk/tkSimpleDialog.py
-@comment lib/python2.3/lib-tk/tkSimpleDialog.pyc
-@comment lib/python2.3/lib-tk/tkSimpleDialog.pyo
-@comment lib/python2.3/lib-tk/turtle.py
-@comment lib/python2.3/lib-tk/turtle.pyc
-@comment lib/python2.3/lib-tk/turtle.pyo
 lib/python2.3/linecache.py
 lib/python2.3/linecache.pyc
 lib/python2.3/linecache.pyo
@@ -1468,4 +1463,4 @@ lib/python2.3/zipfile.pyo
 @man man/man1/python2.3.1
 share/doc/python2.3/
 share/doc/python2.3/CHANGES.OpenBSD
-%%SHARED%%
+%%mm%%

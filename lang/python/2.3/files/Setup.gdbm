@@ -1,9 +1,0 @@
-# $OpenBSD: Setup.gdbm,v 1.3 2006/10/10 19:08:06 alek Exp $
-
-*shared*
-
-# Anthony Baxter's gdbm module.  GNU dbm(3) will require -lgdbm:
-#
-# First, look at Setup.config; configure may have set this for you.
-
-gdbm gdbmmodule.c -I${LOCALBASE}/include -L${LOCALBASE}/lib -lgdbm

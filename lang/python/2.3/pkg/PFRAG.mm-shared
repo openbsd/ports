@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.mm-shared,v 1.1 2004/09/15 21:27:01 espie Exp $
-lib/python2.3/lib-dynload/audioop.so
-lib/python2.3/lib-dynload/dl.so
-lib/python2.3/lib-dynload/imageop.so
-lib/python2.3/lib-dynload/rgbimgmodule.so

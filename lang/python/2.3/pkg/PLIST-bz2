@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-bz2,v 1.1 2006/11/01 20:02:06 alek Exp $
+@option no-default-conflict
+@conflict python-bz2->=2.3,<2.4
+lib/python2.3/lib-dynload/bz2.so

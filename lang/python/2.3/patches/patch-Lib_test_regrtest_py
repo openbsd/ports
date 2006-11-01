@@ -1,6 +1,6 @@
-$OpenBSD: patch-Lib_test_regrtest_py,v 1.1.1.1 2003/12/31 17:38:33 sturm Exp $
---- Lib/test/regrtest.py.orig	2003-07-23 02:30:39.000000000 +0200
-+++ Lib/test/regrtest.py	2003-09-07 13:31:27.000000000 +0200
+$OpenBSD: patch-Lib_test_regrtest_py,v 1.2 2006/11/01 20:02:06 alek Exp $
+--- Lib/test/regrtest.py.orig	Mon Jul 26 14:09:30 2004
++++ Lib/test/regrtest.py	Sat Oct 21 13:56:30 2006
 @@ -934,6 +934,31 @@ _expectations = {
         test_winreg
         test_winsound
@@ -31,5 +31,5 @@ $OpenBSD: patch-Lib_test_regrtest_py,v 1.1.1.1 2003/12/31 17:38:33 sturm Exp $
 +       test_winsound
 +        """,
  }
+ _expectations['freebsd5'] = _expectations['freebsd4']
  
- class _ExpectedSkips:

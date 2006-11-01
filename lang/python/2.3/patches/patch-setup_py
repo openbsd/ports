@@ -1,7 +1,201 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2003/12/31 17:38:33 sturm Exp $
---- setup.py.orig	2003-10-21 22:01:21.000000000 +0200
-+++ setup.py	2003-12-31 12:22:59.000000000 +0100
-@@ -1140,7 +1140,7 @@ def main():
+$OpenBSD: patch-setup_py,v 1.2 2006/11/01 20:02:06 alek Exp $
+--- setup.py.orig	Mon Jan 17 22:07:49 2005
++++ setup.py	Sat Oct 21 15:56:12 2006
+@@ -476,97 +476,13 @@ class PyBuildExt(build_ext):
+         # NOTE: 3.1 is only partially supported; expect the extended bsddb module
+         # test suite to show failures due to some missing methods and behaviours
+         # in BerkeleyDB 3.1.
+-
+-        # when sorted in reverse order, keys for this dict must appear in the
+-        # order you wish to search - e.g., search for db4 before db3
+-        db_try_this = {
+-            'db4': {'libs': ('db-4.2', 'db42', 'db-4.1', 'db41', 'db-4.0', 'db4',),
+-                    'libdirs': ('/usr/local/BerkeleyDB.4.2/lib',
+-                                '/usr/local/BerkeleyDB.4.1/lib',
+-                                '/usr/local/BerkeleyDB.4.0/lib',
+-                                '/usr/local/lib',
+-                                '/opt/sfw',
+-                                '/sw/lib',
+-                                ),
+-                    'incdirs': ('/usr/local/BerkeleyDB.4.2/include',
+-                                '/usr/local/include/db42',
+-                                '/usr/local/BerkeleyDB.4.1/include',
+-                                '/usr/local/include/db41',
+-                                '/usr/local/BerkeleyDB.4.0/include',
+-                                '/usr/local/include/db4',
+-                                '/opt/sfw/include/db4',
+-                                '/sw/include/db4',
+-                                '/usr/include/db4',
+-                                )},
+-            'db3': {'libs': ('db-3.3', 'db-3.2', 'db-3.1', 'db3',),
+-                    'libdirs': ('/usr/local/BerkeleyDB.3.3/lib',
+-                                '/usr/local/BerkeleyDB.3.2/lib',
+-                                '/usr/local/BerkeleyDB.3.1/lib',
+-                                '/usr/local/lib',
+-                                '/opt/sfw/lib',
+-                                '/sw/lib',
+-                                ),
+-                    'incdirs': ('/usr/local/BerkeleyDB.3.3/include',
+-                                '/usr/local/BerkeleyDB.3.2/include',
+-                                '/usr/local/BerkeleyDB.3.1/include',
+-                                '/usr/local/include/db3',
+-                                '/opt/sfw/include/db3',
+-                                '/sw/include/db3',
+-                                '/usr/include/db3',
+-                                )},
+-            }
+-
+-        db_search_order = db_try_this.keys()
+-        db_search_order.sort()
+-        db_search_order.reverse()
+-
+-        class found(Exception): pass
+-        try:
+-            # See whether there is a Sleepycat header in the standard
+-            # search path.
+-            std_dbinc = None
+-            for d in inc_dirs:
+-                f = os.path.join(d, "db.h")
+-                if os.path.exists(f):
+-                    f = open(f).read()
+-                    m = re.search(r"#define\WDB_VERSION_MAJOR\W([1-9]+)", f)
+-                    if m:
+-                        std_dbinc = 'db' + m.group(1)
+-            for dbkey in db_search_order:
+-                dbd = db_try_this[dbkey]
+-                for dblib in dbd['libs']:
+-                    # Prefer version-specific includes over standard
+-                    # include locations.
+-                    db_incs = find_file('db.h', [], dbd['incdirs'])
+-                    dblib_dir = find_library_file(self.compiler,
+-                                                  dblib,
+-                                                  lib_dirs,
+-                                                  list(dbd['libdirs']))
+-                    if (db_incs or dbkey == std_dbinc) and \
+-                           dblib_dir is not None:
+-                        dblibs = [dblib]
+-                        raise found
+-        except found:
+-            dblibs = [dblib]
+-            # A default source build puts Berkeley DB in something like
+-            # /usr/local/Berkeley.3.3 and the lib dir under that isn't
+-            # normally on ld.so's search path, unless the sysadmin has hacked
+-            # /etc/ld.so.conf.  We add the directory to runtime_library_dirs
+-            # so the proper -R/--rpath flags get passed to the linker.  This
+-            # is usually correct and most trouble free, but may cause problems
+-            # in some unusual system configurations (e.g. the directory is on
+-            # an NFS server that goes away).
++        if !!USE_BSDDB!!:
+             exts.append(Extension('_bsddb', ['_bsddb.c'],
+-                                  library_dirs=dblib_dir,
+-                                  runtime_library_dirs=dblib_dir,
+-                                  include_dirs=db_incs,
+-                                  libraries=dblibs))
+-        else:
+-            db_incs = None
+-            dblibs = []
+-            dblib_dir = None
++                                  library_dirs=["!!LOCALBASE!!/lib/db4/"],
++                                  runtime_library_dirs=["!!LOCALBASE!!/lib/db4/"],
++                                  include_dirs=["!!LOCALBASE!!/include/db4"],
++                                  libraries=["db"]))
+ 
+-
+         # Look for Berkeley db 1.85.   Note that it is built as a different
+         # module name so it can be included even when later versions are
+         # available.  A very restrictive search is performed to avoid
+@@ -615,7 +531,7 @@ class PyBuildExt(build_ext):
+                                        libraries=dblibs))
+ 
+         # Anthony Baxter's gdbm module.  GNU dbm(3) will require -lgdbm:
+-        if (self.compiler.find_library_file(lib_dirs, 'gdbm')):
++        if !!USE_GDBM!!:
+             exts.append( Extension('gdbm', ['gdbmmodule.c'],
+                                    libraries = ['gdbm'] ) )
+ 
+@@ -717,7 +633,7 @@ class PyBuildExt(build_ext):
+                                            libraries = ['z']) )
+ 
+         # Gustavo Niemeyer's bz2 module.
+-        if (self.compiler.find_library_file(lib_dirs, 'bz2')):
++        if !!USE_BZ2!!:
+             exts.append( Extension('bz2', ['bz2module.c'],
+                                    libraries = ['bz2']) )
+ 
+@@ -732,31 +648,30 @@ class PyBuildExt(build_ext):
+         #
+         # More information on Expat can be found at www.libexpat.org.
+         #
+-        if sys.byteorder == "little":
+-            xmlbo = "1234"
+-        else:
+-            xmlbo = "4321"
+-        expatinc = os.path.join(os.getcwd(), srcdir, 'Modules', 'expat')
+-        define_macros = [
+-            ('XML_NS', '1'),
+-            ('XML_DTD', '1'),
+-            ('BYTEORDER', xmlbo),
+-            ('XML_CONTEXT_BYTES','1024'),
+-            ]
+-        config_h = sysconfig.get_config_h_filename()
+-        config_h_vars = sysconfig.parse_config_h(open(config_h))
+-        for feature_macro in ['HAVE_MEMMOVE', 'HAVE_BCOPY']:
+-            if config_h_vars.has_key(feature_macro):
+-                define_macros.append((feature_macro, '1'))
+-        exts.append(Extension('pyexpat',
+-                              define_macros = define_macros,
+-                              include_dirs = [expatinc],
+-                              sources = ['pyexpat.c',
+-                                         'expat/xmlparse.c',
+-                                         'expat/xmlrole.c',
+-                                         'expat/xmltok.c',
+-                                         ],
+-                              ))
++        if !!USE_EXPAT!!:
++            if sys.byteorder == "little":
++                xmlbo = "1234"
++            else:
++                xmlbo = "4321"
++            expatinc = os.path.join(os.getcwd(), srcdir, 'Modules', 'expat')
++            define_macros = [
++                ('XML_NS', '1'),
++                ('XML_DTD', '1'),
++                ('BYTEORDER', xmlbo),
++                ('XML_CONTEXT_BYTES','1024'),
++                ]
++            config_h = sysconfig.get_config_h_filename()
++            config_h_vars = sysconfig.parse_config_h(open(config_h))
++            for feature_macro in ['HAVE_MEMMOVE', 'HAVE_BCOPY']:
++                if config_h_vars.has_key(feature_macro):
++                    define_macros.append((feature_macro, '1'))
++            exts.append(Extension('pyexpat',
++                                  define_macros = define_macros,
++                                  include_dirs = ["!!LOCALBASE!!/include", expatinc],
++                                  sources = ['pyexpat.c',
++                                             ],
++                                  libraries = ["expat"]
++                                  ))
+ 
+         # Dynamic loading module
+         if sys.maxint == 0x7fffffff:
+@@ -879,7 +794,15 @@ class PyBuildExt(build_ext):
+         self.extensions.extend(exts)
+ 
+         # Call the method for detecting whether _tkinter can be compiled
+-        self.detect_tkinter(inc_dirs, lib_dirs)
++        if !!USE_TKINTER!!:
++            ext = Extension('_tkinter', ['_tkinter.c', 'tkappinit.c'],
++                            define_macros=[('WITH_APPINIT', 1)],
++                            include_dirs = ["!!LOCALBASE!!/include/tcl8.4",
++                                            "!!LOCALBASE!!/include/tk8.4",
++                                            "!!X11BASE!!/include"],
++                            library_dirs = ["!!LOCALBASE!!/lib", "!!X11BASE!!/lib"], libraries = ["tk84", "tcl84", "X11"],
++                            )
++            self.extensions.append(ext)
+ 
+     def detect_tkinter_darwin(self, inc_dirs, lib_dirs):
+         # The _tkinter module, using frameworks. Since frameworks are quite
+@@ -1148,7 +1071,7 @@ def main():
            ext_modules=[Extension('struct', ['structmodule.c'])],
  
            # Scripts to install

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-gdbm,v 1.2 2004/09/18 10:11:57 espie Exp $
+@comment $OpenBSD: PLIST-gdbm,v 1.3 2006/11/01 20:02:06 alek Exp $
 @option no-default-conflict
 @conflict python-gdbm->=2.3,<2.4
 lib/python2.3/lib-dynload/gdbm.so
-lib/python2.3/lib-dynload/gdbmmodule.so

@@ -1,4 +1,4 @@
-$OpenBSD: patch-Lib_test_test_fcntl_py,v 1.1.1.1 2003/12/31 17:38:33 sturm Exp $
+$OpenBSD: patch-Lib_test_test_fcntl_py,v 1.2 2006/11/01 20:02:06 alek Exp $
 --- Lib/test/test_fcntl.py.orig	2003-12-31 12:13:00.000000000 +0100
 +++ Lib/test/test_fcntl.py	2003-12-31 12:14:14.000000000 +0100
 @@ -22,9 +22,13 @@ if sys.platform.startswith('atheos'):
@@ -9,7 +9,7 @@ $OpenBSD: patch-Lib_test_test_fcntl_py,v 1.1.1.1 2003/12/31 17:38:33 sturm Exp $
 -                    'openbsd', 'openbsd2', 'openbsd3'):
 +                    'bsdos2', 'bsdos3', 'bsdos4'):
      lockdata = struct.pack('lxxxxlxxxxlhh', 0, 0, 0, fcntl.F_WRLCK, 0)
-+elif sys.platform in ['openbsd', 'openbsd2', 'openbsd3']:
++elif sys.platform in ['openbsd', 'openbsd2', 'openbsd3', 'openbsd4']:
 +    if sys.maxint == 2147483647:
 +        lockdata = struct.pack('lxxxxlxxxxlhh', 0, 0, 0, fcntl.F_WRLCK, 0)
 +    else:

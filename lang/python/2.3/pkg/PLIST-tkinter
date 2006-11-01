@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-tkinter,v 1.4 2005/03/03 22:29:49 alek Exp $
+@comment $OpenBSD: PLIST-tkinter,v 1.5 2006/11/01 20:02:06 alek Exp $
 @option no-default-conflict
 @conflict python-tkinter->=2.3,<2.4
 lib/python2.3/lib-dynload/_tkinter.so
+lib/python2.3/lib-tk/
 lib/python2.3/lib-tk/Canvas.py
 lib/python2.3/lib-tk/Canvas.pyc
 lib/python2.3/lib-tk/Canvas.pyo
