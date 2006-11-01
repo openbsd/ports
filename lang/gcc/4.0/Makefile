@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2006/10/20 11:03:38 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2006/11/01 23:57:24 naddy Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 BROKEN='adjust for types changes'
@@ -6,6 +6,8 @@ BROKEN='adjust for types changes'
 V=4.0.3
 FULL_VERSION=4.0-20060105
 FULL_PKGVERSION=4.0.20060105
+
+PKGNAME-f95=	g95-${FULL_PKGVERSION}p0
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 SHARED_LIBS=	mudflap		0.0 \
@@ -187,7 +189,8 @@ RUN_DEPENDS+=::${PKGPATH},-estdc
 .  endif
 .endif
 .if !defined(PACKAGING) || ${SUBPACKAGE} == "-f95"
-LIB_DEPENDS+=gmp:gmp->=4.1.4:devel/gmp
+LIB_DEPENDS+=gmp:gmp->=4.2:devel/gmp
+LIB_DEPENDS+=mpfr::devel/mpfr
 .endif
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/10/20 13:43:18 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/01 23:57:24 naddy Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN='adjust for types changes'
@@ -12,6 +12,7 @@ PKGNAME=       gcc-${FULL_PKGVERSION}
 PKGNAME-c++ =  g++-${FULL_PKGVERSION}
 PKGNAME-estdc= libstdc++-${FULL_PKGVERSION}
 PKGNAME-g77=   g77-${FULL_PKGVERSION}
+PKGNAME-f95=   g95-${FULL_PKGVERSION}p0
 PKGNAME-java=  gcj-${FULL_PKGVERSION}
 PKGNAME-objc=  gobjc-${FULL_PKGVERSION}
 PKGNAME-ada=   gnat-${FULL_PKGVERSION}
@@ -211,7 +212,8 @@ RUN_DEPENDS+=:gcc-${FULL_PKGVERSION}:${PKGPATH},-estdc
 .  endif
 .endif
 .if !defined(PACKAGING) || ${SUBPACKAGE} == "-f95"
-LIB_DEPENDS+=gmp:gmp->=4.1.4:devel/gmp
+LIB_DEPENDS+=gmp:gmp->=4.2:devel/gmp
+LIB_DEPENDS+=mpfr::devel/mpfr
 .endif
 
 .include <bsd.port.mk>
