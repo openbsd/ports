@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2006/08/10 18:26:23 kurt Exp $
+# $OpenBSD: Makefile,v 1.11 2006/11/01 20:47:41 kurt Exp $
 
 COMMENT=        "java replacement for make"
 
 DISTNAME=	apache-ant-1.6.5
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	devel
 
 HOMEPAGE=	http://ant.apache.org/
