@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2006/05/28 09:33:52 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2006/11/01 21:06:12 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"perl extension for version objects"
-DISTNAME=	version-0.63
+DISTNAME=	version-0.68
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
@@ -18,7 +18,5 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
 CONFIGURE_STYLE=	perl modbuild
-
-PKG_ARCH= *
 
 .include <bsd.port.mk>
