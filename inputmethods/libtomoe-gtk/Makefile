@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/19 00:40:15 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/01 03:00:13 mcbride Exp $
 COMMENT=	'japanese handwriting input widget'
 
 DISTNAME=	libtomoe-gtk-0.1.0
@@ -20,6 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_ENV=CPPFLAGS=-I${LOCALBASE}/include
 CONFIGURE_STYLE=gnu
 USE_LIBTOOL=	Yes
+
+BUILD_DEPENDS=	::devel/pkgconfig
 
 LIB_DEPENDS=	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
 		tomoe::inputmethods/tomoe
