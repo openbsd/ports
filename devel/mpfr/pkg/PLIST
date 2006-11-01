@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/01 18:41:21 naddy Exp $
+@conflict gmp-<4.2
+%%SHARED%%
+include/mpf2mpfr.h
+include/mpfr.h
+@info info/mpfr.info
+lib/libmpfr.a
+lib/libmpfr.la

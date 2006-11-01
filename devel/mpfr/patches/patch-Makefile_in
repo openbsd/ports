@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2006/11/01 18:41:21 naddy Exp $
+--- Makefile.in.orig	Wed Jul 19 17:55:59 2006
++++ Makefile.in	Wed Jul 19 17:57:13 2006
+@@ -387,7 +387,7 @@ clean-libLTLIBRARIES:
+ 	  rm -f "$${dir}/so_locations"; \
+ 	done
+ libmpfr.la: $(libmpfr_la_OBJECTS) $(libmpfr_la_DEPENDENCIES) 
+-	$(LINK) -rpath $(libdir) $(libmpfr_la_LDFLAGS) $(libmpfr_la_OBJECTS) $(libmpfr_la_LIBADD) $(LIBS)
++	$(LINK) -rpath $(libdir) $(libmpfr_la_LDFLAGS) $(libmpfr_la_OBJECTS) $(libmpfr_la_LIBADD)
+ tuneup$(EXEEXT): $(tuneup_OBJECTS) $(tuneup_DEPENDENCIES) 
+ 	@rm -f tuneup$(EXEEXT)
+ 	$(LINK) $(tuneup_LDFLAGS) $(tuneup_OBJECTS) $(tuneup_LDADD) $(LIBS)
