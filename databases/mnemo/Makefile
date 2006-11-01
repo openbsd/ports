@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2006/08/04 23:09:00 steven Exp $ 
+# $OpenBSD: Makefile,v 1.4 2006/11/01 10:51:55 mbalmer Exp $ 
 
 COMMENT=	"memo application"
 
 HORDE_MODULE=	mnemo
 HORDE_NAME=	Mnemo
 
-DISTNAME=	${HORDE_MODULE}-h3-2.0.2
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	${HORDE_MODULE}-h3-2.1
 CATEGORIES=	databases
 HOMEPAGE=	http://www.horde.org/${HORDE_MODULE}/
 
@@ -29,9 +28,8 @@ PREFIX=		/var/www
 INSTDIR=	${PREFIX}/horde
 SUBST_VARS=	INSTDIR HORDE_NAME HORDE_MODULE
 
-PHP_VERSION=	5
 RUN_DEPENDS=	:horde->=3.0:devel/horde \
-		:php${PHP_VERSION}-imap-*:www/php${PHP_VERSION}/extensions,-imap
+		:php5-imap-*:www/php5/extensions,-imap
 
 pre-fake:
 	${INSTALL_DATA_DIR} ${INSTDIR}
