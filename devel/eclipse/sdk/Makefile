@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2006/09/18 11:40:07 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2006/11/02 10:59:17 espie Exp $
 
 ONLY_FOR_ARCHS=		amd64 i386
 
@@ -134,7 +134,7 @@ SUBST_VARS=		ECLIPSE_ARCH
 # Build out openbsd source from linux source
 pre-patch:
 	@exec ${SETENV} WRKSRC=${WRKSRC} ECLIPSE_WS=${ECLIPSE_WS} \
-		${SCRIPTDIR}/prepatch.sh
+		${FILESDIR}/prepatch.sh
 
 do-build:
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
