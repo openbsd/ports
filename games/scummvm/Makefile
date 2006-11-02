@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2006/08/01 10:50:19 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2006/11/02 07:48:59 jsg Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
 BROKEN=		"gcc bug"
 .endif
 
 COMMENT=	"graphical adventure game interpreter"
-DISTNAME=	scummvm-0.9.0
+DISTNAME=	scummvm-0.9.1
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 

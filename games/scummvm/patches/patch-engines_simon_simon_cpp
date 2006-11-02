@@ -1,6 +1,6 @@
-$OpenBSD: patch-engines_simon_simon_cpp,v 1.1 2006/07/08 04:14:30 jsg Exp $
---- engines/simon/simon.cpp.orig	Thu Jun 22 07:14:03 2006
-+++ engines/simon/simon.cpp	Fri Jul  7 18:55:58 2006
+$OpenBSD: patch-engines_simon_simon_cpp,v 1.2 2006/11/02 07:48:59 jsg Exp $
+--- engines/simon/simon.cpp.orig	Mon Oct 23 06:58:08 2006
++++ engines/simon/simon.cpp	Wed Nov  1 15:28:02 2006
 @@ -97,10 +97,6 @@ SimonEngine::SimonEngine(OSystem *syst)
  	_itemArraySize = 0;
  	_itemArrayInited = 0;
@@ -12,7 +12,7 @@ $OpenBSD: patch-engines_simon_simon_cpp,v 1.1 2006/07/08 04:14:30 jsg Exp $
  	_iconFilePtr = 0;
  
  	_tblList = 0;
-@@ -588,7 +584,12 @@ SimonEngine::~SimonEngine() {
+@@ -587,7 +583,12 @@ SimonEngine::~SimonEngine() {
  
  	midi.close();
  
@@ -26,28 +26,28 @@ $OpenBSD: patch-engines_simon_simon_cpp,v 1.1 2006/07/08 04:14:30 jsg Exp $
  	free(_tablesHeapPtr - _tablesHeapCurPos);
  
  	free(_gameOffsetsPtr);
-@@ -654,16 +655,11 @@ void SimonEngine::paletteFadeOut(byte *p
+@@ -653,16 +654,10 @@ void SimonEngine::paletteFadeOut(byte *p
  }
  
  byte *SimonEngine::allocateItem(uint size) {
 -	byte *org = _itemHeapPtr;
 -	size = (size + 3) & ~3;
-+	byte *item = new byte[size];
- 
+-
 -	_itemHeapPtr += size;
 -	_itemHeapCurPos += size;
 -
 -	if (_itemHeapCurPos > _itemHeapSize)
--		error("Itemheap overflow");
+-		error("allocateItem: Itemheap overflow");
 -
 -	return org;
++	byte *item = new byte[size];
 +	memset(item, 0, size);
 +	_itemHeap.push_back(item);
 +	return item;
  }
  
  void SimonEngine::setUserFlag(Item *item, int a, int b) {
-@@ -728,9 +724,7 @@ Child *SimonEngine::allocateChildBlock(I
+@@ -727,9 +722,7 @@ Child *SimonEngine::allocateChildBlock(I
  }
  
  void SimonEngine::allocItemHeap() {
@@ -58,7 +58,7 @@ $OpenBSD: patch-engines_simon_simon_cpp,v 1.1 2006/07/08 04:14:30 jsg Exp $
  }
  
  void SimonEngine::allocTablesHeap() {
-@@ -1961,8 +1955,13 @@ void SimonEngine::shutdown() {
+@@ -1961,8 +1954,13 @@ void SimonEngine::shutdown() {
  
  	free(_stringTabPtr);
  	free(_itemArrayPtr);
