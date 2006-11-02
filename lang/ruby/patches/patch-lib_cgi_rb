@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_cgi_rb,v 1.1 2006/11/02 12:46:13 bernd Exp $
+
+Security fix for CVE-2006-5467 from ruby CVS. Should be fixed in >1.8.5.
+
+http://rubyforge.org/pipermail/mongrel-users/2006-October/001946.html
+http://www.securityfocus.com/bid/20777/info
+
+--- lib/cgi.rb.orig	Tue Oct 31 11:56:58 2006
++++ lib/cgi.rb	Tue Oct 31 11:59:48 2006
+@@ -1018,7 +1018,7 @@ class CGI
+               else
+                 stdinput.read(content_length)
+               end
+-          if c.nil?
++          if c.nil? || c.empty?
+             raise EOFError, "bad content body"
+           end
+           buf.concat(c)
