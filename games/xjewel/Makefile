@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/11/28 22:41:26 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2006/11/02 10:54:15 espie Exp $
 
 COMMENT=	"dropping jewels game for X11"
 
@@ -13,6 +13,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext c
+MAKE_FLAGS=		HSCORE_FILE=/var/games/xjewel.scores \
+			USERDEFS='-DICON_WINDOW -DUSE_SELECT -DGETPWENT' \
+			BINDIR='${PREFIX}/bin' \
+			MANDIR='${PREFIX}/man/cat6' \
+			MANSUFFIX=6 \
+			FFILE=pcf.gz
+
+FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 CONFIGURE_STYLE=imake
 
