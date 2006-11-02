@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2006/11/01 10:51:19 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.8 2006/11/02 17:54:59 mbalmer Exp $
 horde/${HORDE_MODULE}/
 horde/${HORDE_MODULE}/COPYING
 horde/${HORDE_MODULE}/README
@@ -156,6 +156,9 @@ horde/${HORDE_MODULE}/locale/ru_RU/LC_MESSAGES/${HORDE_MODULE}.mo
 horde/${HORDE_MODULE}/locale/sk_SK/
 horde/${HORDE_MODULE}/locale/sk_SK/LC_MESSAGES/
 horde/${HORDE_MODULE}/locale/sk_SK/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/sl_SI/
+horde/${HORDE_MODULE}/locale/sl_SI/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/sl_SI/LC_MESSAGES/${HORDE_MODULE}.mo
 horde/${HORDE_MODULE}/locale/sv_SE/
 horde/${HORDE_MODULE}/locale/sv_SE/LC_MESSAGES/
 horde/${HORDE_MODULE}/locale/sv_SE/LC_MESSAGES/${HORDE_MODULE}.mo
@@ -195,6 +198,7 @@ horde/${HORDE_MODULE}/po/pt_PT.po
 horde/${HORDE_MODULE}/po/ro_RO.po
 horde/${HORDE_MODULE}/po/ru_RU.po
 horde/${HORDE_MODULE}/po/sk_SK.po
+horde/${HORDE_MODULE}/po/sl_SI.po
 horde/${HORDE_MODULE}/po/sv_SE.po
 horde/${HORDE_MODULE}/po/zh_CN.po
 horde/${HORDE_MODULE}/po/zh_TW.po
@@ -217,6 +221,7 @@ horde/${HORDE_MODULE}/scripts/upgrades/1.1_to_2.0.pgsql.sql
 horde/${HORDE_MODULE}/scripts/upgrades/2004-05-19_convert_categories_to_strings.php
 horde/${HORDE_MODULE}/scripts/upgrades/2004-12-21_add_event_uid.pgsql.sql
 horde/${HORDE_MODULE}/scripts/upgrades/2004-12-21_add_event_uid.sql
+horde/${HORDE_MODULE}/scripts/upgrades/2006-08-20_fix_recur_int_fields.mysql.sql
 horde/${HORDE_MODULE}/search.php
 horde/${HORDE_MODULE}/templates/
 horde/${HORDE_MODULE}/templates/attendees/
@@ -235,8 +240,6 @@ horde/${HORDE_MODULE}/templates/day/
 horde/${HORDE_MODULE}/templates/day/all_day.inc
 horde/${HORDE_MODULE}/templates/day/head.inc
 horde/${HORDE_MODULE}/templates/day/head_side_by_side.inc
-horde/${HORDE_MODULE}/templates/day/row.inc
-horde/${HORDE_MODULE}/templates/day/row_half.inc
 horde/${HORDE_MODULE}/templates/day/rows.html
 horde/${HORDE_MODULE}/templates/delete/
 horde/${HORDE_MODULE}/templates/delete/delete.inc
@@ -255,7 +258,7 @@ horde/${HORDE_MODULE}/templates/fbview/row.tpl
 horde/${HORDE_MODULE}/templates/fbview/section.tpl
 horde/${HORDE_MODULE}/templates/fbview/unknownblock.tpl
 horde/${HORDE_MODULE}/templates/javascript/
-horde/${HORDE_MODULE}/templates/javascript/goto.inc
+horde/${HORDE_MODULE}/templates/javascript/goto.js
 horde/${HORDE_MODULE}/templates/javascript/open_attendees_win.js
 horde/${HORDE_MODULE}/templates/javascript/open_calendar_search.js
 horde/${HORDE_MODULE}/templates/menu.inc
