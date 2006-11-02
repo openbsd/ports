@@ -1,10 +1,4 @@
-#!/bin/sh
-#
-# Configuration script for exmh-2.6.1.
-# $OpenBSD: configure,v 1.5 2005/04/05 22:50:57 alek Exp $
-#
-
-perl << 'EOPERL'
+#! /usr/bin/perl
 
 use DirHandle;
 use FileHandle;
@@ -98,4 +92,3 @@ $dir->close () or die ("$srcdir: $!\n");
 
 exit (0);
 
-EOPERL

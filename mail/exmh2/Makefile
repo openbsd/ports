@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2006/02/04 23:50:20 steven Exp $
+# $OpenBSD: Makefile,v 1.25 2006/11/02 12:39:12 espie Exp $
 
 COMMENT=		"Tcl/Tk interface to the MH mail system"
 
@@ -27,6 +27,11 @@ USE_X11=		Yes
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
 PKG_ARCH=		*
+
+do-configure:
+	@cd ${WRKDIST} && LOCALBASE=${LOCALBASE} PREFIX=${PREFIX} \
+		WRKSRC=${WRKSRC} WRKBUILD=${WRKBUILD} \
+		perl ${FILESDIR}/configure
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKBUILD}/exmh ${PREFIX}/bin/exmh
