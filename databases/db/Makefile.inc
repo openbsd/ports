@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.19 2006/11/01 22:26:28 kurt Exp $
+# $OpenBSD: Makefile.inc,v 1.20 2006/11/02 12:26:37 bernd Exp $
 
 COMMENT=	"Berkeley DB package, revision ${REVISION}"
 COMMENT-tcl=	"TCL bindings for Berkeley DB, revision ${REVISION}"
@@ -35,7 +35,7 @@ FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 WRKBUILD=	${WRKDIST}/build_unix
 
-PSEUDO_FLAVORS=	no_tcl
+PSEUDO_FLAVORS+=	no_tcl
 FLAVOR?=
 
 .if !${FLAVOR:L:Mno_tcl}
