@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2006/08/01 12:13:28 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2006/11/02 11:07:13 espie Exp $
 
 COMMENT=	"network audio player"
 DISTNAME=	rplay-3.3.2
@@ -31,6 +31,13 @@ FAKE_FLAGS=	${MAKE_FLAGS}	DESTDIR=${WRKINST}
 
 post-extract:
 	@cd ${WRKSRC}/doc && mv rplay.texi rplayd.texi
+
+pre-patch:
+	chmod -R +w ${WRKSRC}
+	find ${WRKSRC} -name '*.[ch]'|xargs fgrep -l malloc.h| \
+	while read i; do \
+		sed -e 's/malloc.h/stdlib.h/' $$i >$$i.bak && mv $$i.bak $$i; \
+	done
 
 post-configure:
 .for ff in rplay.conf.5 rplay.helpers.5 rplay.hosts.5 rplayd.8

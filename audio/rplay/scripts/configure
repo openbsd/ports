@@ -1,6 +1,0 @@
-#!/bin/sh
-
-chmod -R +w ${WRKSRC}
-for i in `find ${WRKSRC} -name '*.[ch]' | xargs fgrep -l malloc.h`; do
-	sed -e 's/malloc.h/stdlib.h/' < $i > $i.bak && mv $i.bak $i
-done
