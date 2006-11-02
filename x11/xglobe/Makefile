@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.56 2006/11/01 11:55:34 fkr Exp $
+# $OpenBSD: Makefile,v 1.57 2006/11/02 07:03:29 steven Exp $
 
 COMMENT=	"display the Earth on X11"
 
-CATEGORIES=	x11
+CATEGORIES=	x11 geo
 HOMEPAGE=	http://www.cs.unc.edu/~scheuerm/xglobe/
 #MASTER_SITES=	${HOMEPAGE}
 # Temporary release

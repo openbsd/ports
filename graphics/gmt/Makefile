@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2006/08/03 12:43:20 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/02 07:03:29 steven Exp $
 
 COMMENT=		"draw maps and charts"
 
 V=			4.1.3
 DISTNAME=		GMT${V}
 PKGNAME=		gmt-${V}
-CATEGORIES=		graphics
+CATEGORIES=		graphics geo
 
 HOMEPAGE=		http://gmt.soest.hawaii.edu/
 

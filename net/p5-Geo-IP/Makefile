@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/08/01 10:50:19 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/11/02 07:03:29 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	"find the country where an IP address/hostname originates from"
 
 DISTNAME=	Geo-IP-1.27
 PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	net perl5
+CATEGORIES=	net geo perl5
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
 
