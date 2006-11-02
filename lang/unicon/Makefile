@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/07/19 15:11:53 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2006/11/02 11:09:01 espie Exp $
 
 # XXX crashes & hangs, to be dealt with
 NOT_FOR_ARCHS=	powerpc m68k hppa arm sparc
@@ -62,7 +62,7 @@ pre-install:
 .endfor
 
 do-install:
-	perl ${SCRIPTDIR}/mk_icont ${TRUEPREFIX} >${WRKBUILD}/icont
+	perl ${FILESDIR}/mk_icont ${TRUEPREFIX} >${WRKBUILD}/icont
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/icont ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/iconx ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/miconx ${PREFIX}/bin
