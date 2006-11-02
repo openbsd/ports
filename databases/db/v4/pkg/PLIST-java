@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-java,v 1.1 2006/11/01 22:26:28 kurt Exp $
+@comment $OpenBSD: PLIST-java,v 1.2 2006/11/02 15:04:39 kurt Exp $
+%%SHARED%%
 lib/db4/db.jar
 lib/db4/libdb_java.a
 lib/db4/libdb_java.la
