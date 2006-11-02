@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2006/11/02 21:30:57 naddy Exp $
+@lib lib/libjday.so.${LIBjday_VERSION}
