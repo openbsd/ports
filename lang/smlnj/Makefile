@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2005/02/24 13:20:41 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2006/11/02 11:22:15 espie Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -54,7 +54,7 @@ do-install:
 	chmod 755 ${SML_BINDIR}/.run-sml
 	cd ${WRKDIR} && tar -cf - `find . -name x86-unix` | \
 		tar -C ${SML_BASE} -xf -
-	cd ${WRKDIR} && tar -cf - `${SCRIPTDIR}/get-cm ${WRKDIR}` | \
+	cd ${WRKDIR} && tar -cf - `${FILESDIR}/get-cm ${WRKDIR}` | \
 		tar -C ${SML_BASE} -xf -
 	for file in ${WRKDIR}/lib/*; do\
 		sed -e "s,${WRKDIR},${TRUEPREFIX}/smlnj," < $$file > \

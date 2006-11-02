@@ -5,7 +5,7 @@
 # Find all .cm Group and Library descriptions that are referenced
 # from the top level alias files in $SML_BASE/lib/
 #
-# $OpenBSD: get-cm,v 1.3 2002/06/30 13:37:42 espie Exp $
+# $OpenBSD: get-cm,v 1.1 2006/11/02 11:22:15 espie Exp $
 
 # temp file
 tmpfile=`mktemp ${TMP:-/tmp}/chomp.XXXXXX`
