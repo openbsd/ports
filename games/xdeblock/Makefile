@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2004/11/28 22:41:25 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2006/11/02 10:56:56 espie Exp $
 
 COMMENT=	"block action game"
 
@@ -20,6 +20,9 @@ CONFIGURE_STYLE=	imake noman
 WRKDIST=		${WRKDIR}/xdeblo_v1.0
 
 NO_REGRESS=	Yes
+
+pre-configure:
+	perl -pi -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/Imakefile ${WRKSRC}/main.c
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/X11/xdeblock/mapf
