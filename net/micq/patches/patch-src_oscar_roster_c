@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_oscar_roster_c,v 1.1 2006/11/03 17:55:07 bernd Exp $
+
+Backport from micq CVS. (Fixed >0.5.1)
+
+* Fix icq login problem
+
+--- src/oscar_roster.c.orig	Fri Nov  3 01:15:05 2006
++++ src/oscar_roster.c	Fri Nov  3 01:15:45 2006
+@@ -100,6 +100,7 @@ JUMP_SNAC_F(SnacSrvReplylists)
+     SnacCliReady (serv);
+     SnacCliAddcontact (serv, NULL, serv->contacts);
+     SnacCliReqofflinemsgs (serv);
++    SnacCliReqinfo (serv);
+     if (serv->flags & CONN_WIZARD)
+     {
+         IMRoster (serv, IMROSTER_IMPORT);
