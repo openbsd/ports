@@ -1,33 +1,24 @@
-$OpenBSD: patch-configure,v 1.2 2005/09/04 19:53:33 aanriot Exp $
---- configure.orig	Sun Jul 24 10:43:47 2005
-+++ configure	Sun Jul 24 10:46:12 2005
-@@ -6888,6 +6888,7 @@ EOF
-         ac_cv_x_app_defaults="$ac_x_app_defaults"
-       fi
- fi
-+ac_cv_x_app_defaults="/usr/local/lib/X11/app-defaults"
- echo "$as_me:$LINENO: result: $ac_cv_x_app_defaults" >&5
- echo "${ECHO_T}$ac_cv_x_app_defaults" >&6
-     eval ac_x_app_defaults="$ac_cv_x_app_defaults"
-@@ -8788,7 +8789,7 @@ if test "${ac_cv_lib_intl_bindtextdomain
+--- configure.orig	Thu Nov  2 21:06:36 2006
++++ configure	Thu Nov  2 21:13:35 2006
+@@ -8925,7 +8925,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lintl  $LIBS"
-+LIBS="-lintl -liconv $LIBS"
++LIBS="-lintl  -liconv $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -8858,7 +8859,7 @@ if test "${ac_cv_lib_intl_dgettext+set}"
+@@ -8995,7 +8995,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lintl  $LIBS"
-+LIBS="-lintl -liconv $LIBS"
++LIBS="-lintl  -liconv $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -8930,7 +8931,7 @@ fi
+@@ -9067,7 +9067,7 @@
  	  fi
  
            if test "$gt_cv_func_dgettext_libintl" = "yes"; then
@@ -36,7 +27,7 @@ $OpenBSD: patch-configure,v 1.2 2005/09/04 19:53:33 aanriot Exp $
            fi
  
  	  if test "$gt_cv_func_dgettext_libc" = "yes" \
-@@ -15820,7 +15821,7 @@ if test "${ac_cv_lib_pthread_pthread_cre
+@@ -16029,7 +16029,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -45,7 +36,7 @@ $OpenBSD: patch-configure,v 1.2 2005/09/04 19:53:33 aanriot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -15879,7 +15880,7 @@ fi
+@@ -16088,7 +16088,7 @@
  echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
  echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6
  if test $ac_cv_lib_pthread_pthread_create = yes; then

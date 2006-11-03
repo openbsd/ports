@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2006/09/18 12:23:06 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2006/11/03 22:44:02 jasper Exp $
 
 COMMENT=		"screen saver and locker for the X Window System"
 
-VERSION=		4.22
-DISTNAME=		xscreensaver-${VERSION}
-PKGNAME=		${DISTNAME}p3
+DISTNAME=		xscreensaver-5.01
 CATEGORIES=     	x11
 
 HOMEPAGE=		http://www.jwz.org/xscreensaver/
@@ -21,7 +19,7 @@ WANTLIB=		GL GLU ICE SM X11 Xext Xinerama Xmu Xrandr Xrender \
 			glib-2.0 gmodule-2.0 gobject-2.0 \
 			pango-1.0 pangoft2-1.0 cairo
 
-MASTER_SITES=		http://www.jwz.org/xscreensaver/
+MASTER_SITES=		${HOMEPAGE}
 
 MODULES=		devel/gettext
 
@@ -36,7 +34,7 @@ NO_REGRESS=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-hackdir="${PREFIX}/libexec/xscreensaver" \
-			--mandir=${PREFIX}/man
+			--with-x-app-defaults="${PREFIX}/lib/X11/app-defaults"
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"
@@ -54,7 +52,7 @@ CONFIGURE_ARGS+=	--without-gle
 
 post-install:
 # rename deco to xdeco, so it doesn't conflict with misc/deco
-	@mv ${PREFIX}/man/man1/deco.1  ${PREFIX}/man/man1/xdeco.1
+	@mv ${PREFIX}/man/man6/deco.6  ${PREFIX}/man/man6/xdeco.6
 	@mv ${PREFIX}/libexec/xscreensaver/deco \
 		${PREFIX}/libexec/xscreensaver/xdeco
 	@mv ${PREFIX}/share/xscreensaver/config/deco.xml \

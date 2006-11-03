@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2006/01/20 21:10:24 steven Exp $
+@comment $OpenBSD: PLIST,v 1.18 2006/11/03 22:44:02 jasper Exp $
 bin/xscreensaver
 bin/xscreensaver-command
 bin/xscreensaver-demo
@@ -11,7 +11,6 @@ lib/X11/app-defaults/XScreenSaver
 libexec/xscreensaver/
 libexec/xscreensaver/anemone
 libexec/xscreensaver/anemotaxis
-libexec/xscreensaver/ant
 libexec/xscreensaver/antinspect
 libexec/xscreensaver/antmaze
 libexec/xscreensaver/antspotlight
@@ -38,6 +37,7 @@ libexec/xscreensaver/bumps
 libexec/xscreensaver/cage
 libexec/xscreensaver/carousel
 libexec/xscreensaver/ccurve
+libexec/xscreensaver/celtic
 libexec/xscreensaver/circuit
 libexec/xscreensaver/cloudlife
 libexec/xscreensaver/compass
@@ -45,6 +45,7 @@ libexec/xscreensaver/coral
 libexec/xscreensaver/crackberg
 libexec/xscreensaver/critical
 libexec/xscreensaver/crystal
+libexec/xscreensaver/cube21
 libexec/xscreensaver/cubenetic
 libexec/xscreensaver/cubestorm
 libexec/xscreensaver/cynosure
@@ -81,9 +82,11 @@ libexec/xscreensaver/gflux
 libexec/xscreensaver/glblur
 libexec/xscreensaver/gleidescope
 libexec/xscreensaver/glforestfire
+libexec/xscreensaver/glhanoi
 libexec/xscreensaver/glknots
 libexec/xscreensaver/glmatrix
 libexec/xscreensaver/glplanet
+libexec/xscreensaver/glschool
 libexec/xscreensaver/glslideshow
 libexec/xscreensaver/glsnake
 libexec/xscreensaver/gltext
@@ -105,6 +108,7 @@ libexec/xscreensaver/intermomentary
 libexec/xscreensaver/jigglypuff
 libexec/xscreensaver/jigsaw
 libexec/xscreensaver/juggle
+libexec/xscreensaver/juggler3d
 libexec/xscreensaver/julia
 libexec/xscreensaver/kaleidescope
 libexec/xscreensaver/klein
@@ -185,6 +189,8 @@ libexec/xscreensaver/swirl
 libexec/xscreensaver/t3d
 libexec/xscreensaver/tangram
 libexec/xscreensaver/thornbird
+libexec/xscreensaver/timetunnel
+libexec/xscreensaver/topblock
 libexec/xscreensaver/triangle
 libexec/xscreensaver/truchet
 libexec/xscreensaver/twang
@@ -207,214 +213,219 @@ libexec/xscreensaver/xmatrix
 libexec/xscreensaver/xrayswarm
 libexec/xscreensaver/xspirograph
 libexec/xscreensaver/xsublim
-libexec/xscreensaver/xteevee
 libexec/xscreensaver/zoom
-@man man/man1/anemone.1
-@man man/man1/anemotaxis.1
-@man man/man1/ant.1
-@man man/man1/antinspect.1
-@man man/man1/antmaze.1
-@man man/man1/antspotlight.1
-@man man/man1/apollonian.1
-@man man/man1/apple2.1
-@man man/man1/atlantis.1
-@man man/man1/attraction.1
-@man man/man1/atunnel.1
-@man man/man1/barcode.1
-@man man/man1/blaster.1
-@man man/man1/blinkbox.1
-@man man/man1/blitspin.1
-@man man/man1/blocktube.1
-@man man/man1/boing.1
-@man man/man1/bouboule.1
-@man man/man1/bouncingcow.1
-@man man/man1/boxed.1
-@man man/man1/boxfit.1
-@man man/man1/braid.1
-@man man/man1/bsod.1
-@man man/man1/bubble3d.1
-@man man/man1/bubbles.1
-@man man/man1/bumps.1
-@man man/man1/cage.1
-@man man/man1/carousel.1
-@man man/man1/ccurve.1
-@man man/man1/circuit.1
-@man man/man1/cloudlife.1
-@man man/man1/compass.1
-@man man/man1/coral.1
-@man man/man1/crackberg.1
-@man man/man1/critical.1
-@man man/man1/crystal.1
-@man man/man1/cubenetic.1
-@man man/man1/cubestorm.1
-@man man/man1/cynosure.1
-@man man/man1/dangerball.1
-@man man/man1/decayscreen.1
-@man man/man1/deluxe.1
-@man man/man1/demon.1
-@man man/man1/discrete.1
-@man man/man1/distort.1
-@man man/man1/drift.1
-@man man/man1/endgame.1
-@man man/man1/engine.1
-@man man/man1/epicycle.1
-@man man/man1/eruption.1
-@man man/man1/euler2d.1
-@man man/man1/fadeplot.1
-@man man/man1/fiberlamp.1
-@man man/man1/fireworkx.1
-@man man/man1/flag.1
-@man man/man1/flame.1
-@man man/man1/flipflop.1
-@man man/man1/flipscreen3d.1
-@man man/man1/fliptext.1
-@man man/man1/flow.1
-@man man/man1/fluidballs.1
-@man man/man1/flurry.1
-@man man/man1/flyingtoasters.1
-@man man/man1/fontglide.1
-@man man/man1/forest.1
-@man man/man1/fuzzyflakes.1
-@man man/man1/galaxy.1
-@man man/man1/gears.1
-@man man/man1/gflux.1
-@man man/man1/glblur.1
-@man man/man1/gleidescope.1
-@man man/man1/glforestfire.1
-@man man/man1/glknots.1
-@man man/man1/glmatrix.1
-@man man/man1/glplanet.1
-@man man/man1/glslideshow.1
-@man man/man1/glsnake.1
-@man man/man1/gltext.1
-@man man/man1/goop.1
-@man man/man1/grav.1
-@man man/man1/greynetic.1
-@man man/man1/halftone.1
-@man man/man1/halo.1
-@man man/man1/helix.1
-@man man/man1/hopalong.1
-@man man/man1/hyperball.1
-@man man/man1/hypercube.1
-@man man/man1/hypertorus.1
-@man man/man1/ifs.1
-@man man/man1/imsmap.1
-@man man/man1/interaggregate.1
-@man man/man1/interference.1
-@man man/man1/intermomentary.1
-@man man/man1/jigglypuff.1
-@man man/man1/jigsaw.1
-@man man/man1/juggle.1
-@man man/man1/julia.1
-@man man/man1/kaleidescope.1
-@man man/man1/klein.1
-@man man/man1/kumppa.1
-@man man/man1/lament.1
-@man man/man1/laser.1
-@man man/man1/lavalite.1
-@man man/man1/lightning.1
-@man man/man1/lisa.1
-@man man/man1/lissie.1
-@man man/man1/ljlatest.1
-@man man/man1/lmorph.1
-@man man/man1/loop.1
-@man man/man1/maze.1
-@man man/man1/memscroller.1
-@man man/man1/menger.1
-@man man/man1/metaballs.1
-@man man/man1/mirrorblob.1
-@man man/man1/mismunch.1
-@man man/man1/moebius.1
-@man man/man1/moire.1
-@man man/man1/moire2.1
-@man man/man1/molecule.1
-@man man/man1/morph3d.1
-@man man/man1/mountain.1
-@man man/man1/munch.1
-@man man/man1/nerverot.1
-@man man/man1/noof.1
-@man man/man1/noseguy.1
-@man man/man1/pacman.1
-@man man/man1/pedal.1
-@man man/man1/penetrate.1
-@man man/man1/penrose.1
-@man man/man1/petri.1
-@man man/man1/phosphor.1
-@man man/man1/piecewise.1
-@man man/man1/pinion.1
-@man man/man1/pipes.1
-@man man/man1/polyhedra.1
-@man man/man1/polyominoes.1
-@man man/man1/polytopes.1
-@man man/man1/pong.1
-@man man/man1/providence.1
-@man man/man1/pulsar.1
-@man man/man1/pyro.1
-@man man/man1/qix.1
-@man man/man1/queens.1
-@man man/man1/rd-bomb.1
-@man man/man1/ripples.1
-@man man/man1/rocks.1
-@man man/man1/rorschach.1
-@man man/man1/rotor.1
-@man man/man1/rotzoomer.1
-@man man/man1/rubik.1
-@man man/man1/sballs.1
-@man man/man1/shadebobs.1
-@man man/man1/sierpinski.1
-@man man/man1/sierpinski3d.1
-@man man/man1/slidescreen.1
-@man man/man1/slip.1
-@man man/man1/sonar.1
-@man man/man1/speedmine.1
-@man man/man1/sphere.1
-@man man/man1/spheremonics.1
-@man man/man1/spiral.1
-@man man/man1/spotlight.1
-@man man/man1/sproingies.1
-@man man/man1/squiral.1
-@man man/man1/stairs.1
-@man man/man1/starfish.1
-@man man/man1/starwars.1
-@man man/man1/stonerview.1
-@man man/man1/strange.1
-@man man/man1/substrate.1
-@man man/man1/superquadrics.1
-@man man/man1/swirl.1
-@man man/man1/t3d.1
-@man man/man1/tangram.1
-@man man/man1/thornbird.1
-@man man/man1/triangle.1
-@man man/man1/truchet.1
-@man man/man1/twang.1
-@man man/man1/vermiculate.1
-@man man/man1/vidwhacker.1
-@man man/man1/vines.1
-@man man/man1/wander.1
-@man man/man1/webcollage.1
-@man man/man1/whirlwindwarp.1
-@man man/man1/whirlygig.1
-@man man/man1/worm.1
-@man man/man1/wormhole.1
-@man man/man1/xanalogtv.1
-@man man/man1/xdeco.1
-@man man/man1/xflame.1
-@man man/man1/xjack.1
-@man man/man1/xlyap.1
-@man man/man1/xmatrix.1
-@man man/man1/xrayswarm.1
 @man man/man1/xscreensaver-command.1
 @man man/man1/xscreensaver-demo.1
 @man man/man1/xscreensaver-getimage-file.1
 @man man/man1/xscreensaver-getimage-video.1
 @man man/man1/xscreensaver-getimage.1
-@man man/man1/xscreensaver-gl-helper.1
 @man man/man1/xscreensaver-text.1
 @man man/man1/xscreensaver.1
-@man man/man1/xspirograph.1
-@man man/man1/xsublim.1
-@man man/man1/xteevee.1
-@man man/man1/zoom.1
+@man man/man6/anemone.6
+@man man/man6/anemotaxis.6
+@man man/man6/antinspect.6
+@man man/man6/antmaze.6
+@man man/man6/antspotlight.6
+@man man/man6/apollonian.6
+@man man/man6/apple2.6
+@man man/man6/atlantis.6
+@man man/man6/attraction.6
+@man man/man6/atunnel.6
+@man man/man6/barcode.6
+@man man/man6/blaster.6
+@man man/man6/blinkbox.6
+@man man/man6/blitspin.6
+@man man/man6/blocktube.6
+@man man/man6/boing.6
+@man man/man6/bouboule.6
+@man man/man6/bouncingcow.6
+@man man/man6/boxed.6
+@man man/man6/boxfit.6
+@man man/man6/braid.6
+@man man/man6/bsod.6
+@man man/man6/bubble3d.6
+@man man/man6/bubbles.6
+@man man/man6/bumps.6
+@man man/man6/cage.6
+@man man/man6/carousel.6
+@man man/man6/ccurve.6
+@man man/man6/celtic.6
+@man man/man6/circuit.6
+@man man/man6/cloudlife.6
+@man man/man6/compass.6
+@man man/man6/coral.6
+@man man/man6/crackberg.6
+@man man/man6/critical.6
+@man man/man6/crystal.6
+@man man/man6/cube21.6
+@man man/man6/cubenetic.6
+@man man/man6/cubestorm.6
+@man man/man6/cynosure.6
+@man man/man6/dangerball.6
+@man man/man6/decayscreen.6
+@man man/man6/deluxe.6
+@man man/man6/demon.6
+@man man/man6/discrete.6
+@man man/man6/distort.6
+@man man/man6/drift.6
+@man man/man6/endgame.6
+@man man/man6/engine.6
+@man man/man6/epicycle.6
+@man man/man6/eruption.6
+@man man/man6/euler2d.6
+@man man/man6/extrusion.6
+@man man/man6/fadeplot.6
+@man man/man6/fiberlamp.6
+@man man/man6/fireworkx.6
+@man man/man6/flag.6
+@man man/man6/flame.6
+@man man/man6/flipflop.6
+@man man/man6/flipscreen3d.6
+@man man/man6/fliptext.6
+@man man/man6/flow.6
+@man man/man6/fluidballs.6
+@man man/man6/flurry.6
+@man man/man6/flyingtoasters.6
+@man man/man6/fontglide.6
+@man man/man6/forest.6
+@man man/man6/fuzzyflakes.6
+@man man/man6/galaxy.6
+@man man/man6/gears.6
+@man man/man6/gflux.6
+@man man/man6/glblur.6
+@man man/man6/gleidescope.6
+@man man/man6/glforestfire.6
+@man man/man6/glhanoi.6
+@man man/man6/glknots.6
+@man man/man6/glmatrix.6
+@man man/man6/glplanet.6
+@man man/man6/glschool.6
+@man man/man6/glslideshow.6
+@man man/man6/glsnake.6
+@man man/man6/gltext.6
+@man man/man6/goop.6
+@man man/man6/grav.6
+@man man/man6/greynetic.6
+@man man/man6/halftone.6
+@man man/man6/halo.6
+@man man/man6/helix.6
+@man man/man6/hopalong.6
+@man man/man6/hyperball.6
+@man man/man6/hypercube.6
+@man man/man6/hypertorus.6
+@man man/man6/ifs.6
+@man man/man6/imsmap.6
+@man man/man6/interaggregate.6
+@man man/man6/interference.6
+@man man/man6/intermomentary.6
+@man man/man6/jigglypuff.6
+@man man/man6/jigsaw.6
+@man man/man6/juggle.6
+@man man/man6/juggler3d.6
+@man man/man6/julia.6
+@man man/man6/kaleidescope.6
+@man man/man6/klein.6
+@man man/man6/kumppa.6
+@man man/man6/lament.6
+@man man/man6/laser.6
+@man man/man6/lavalite.6
+@man man/man6/lightning.6
+@man man/man6/lisa.6
+@man man/man6/lissie.6
+@man man/man6/ljlatest.6
+@man man/man6/lmorph.6
+@man man/man6/loop.6
+@man man/man6/maze.6
+@man man/man6/memscroller.6
+@man man/man6/menger.6
+@man man/man6/metaballs.6
+@man man/man6/mirrorblob.6
+@man man/man6/mismunch.6
+@man man/man6/moebius.6
+@man man/man6/moire.6
+@man man/man6/moire2.6
+@man man/man6/molecule.6
+@man man/man6/morph3d.6
+@man man/man6/mountain.6
+@man man/man6/munch.6
+@man man/man6/nerverot.6
+@man man/man6/noof.6
+@man man/man6/noseguy.6
+@man man/man6/pacman.6
+@man man/man6/pedal.6
+@man man/man6/penetrate.6
+@man man/man6/penrose.6
+@man man/man6/petri.6
+@man man/man6/phosphor.6
+@man man/man6/piecewise.6
+@man man/man6/pinion.6
+@man man/man6/pipes.6
+@man man/man6/polyhedra.6
+@man man/man6/polyominoes.6
+@man man/man6/polytopes.6
+@man man/man6/pong.6
+@man man/man6/providence.6
+@man man/man6/pulsar.6
+@man man/man6/pyro.6
+@man man/man6/qix.6
+@man man/man6/queens.6
+@man man/man6/rd-bomb.6
+@man man/man6/ripples.6
+@man man/man6/rocks.6
+@man man/man6/rorschach.6
+@man man/man6/rotor.6
+@man man/man6/rotzoomer.6
+@man man/man6/rubik.6
+@man man/man6/sballs.6
+@man man/man6/shadebobs.6
+@man man/man6/sierpinski.6
+@man man/man6/sierpinski3d.6
+@man man/man6/slidescreen.6
+@man man/man6/slip.6
+@man man/man6/sonar.6
+@man man/man6/speedmine.6
+@man man/man6/sphere.6
+@man man/man6/spheremonics.6
+@man man/man6/spiral.6
+@man man/man6/spotlight.6
+@man man/man6/sproingies.6
+@man man/man6/squiral.6
+@man man/man6/stairs.6
+@man man/man6/starfish.6
+@man man/man6/starwars.6
+@man man/man6/stonerview.6
+@man man/man6/strange.6
+@man man/man6/substrate.6
+@man man/man6/superquadrics.6
+@man man/man6/swirl.6
+@man man/man6/t3d.6
+@man man/man6/tangram.6
+@man man/man6/thornbird.6
+@man man/man6/timetunnel.6
+@man man/man6/topblock.6
+@man man/man6/triangle.6
+@man man/man6/truchet.6
+@man man/man6/twang.6
+@man man/man6/vermiculate.6
+@man man/man6/vidwhacker.6
+@man man/man6/vines.6
+@man man/man6/wander.6
+@man man/man6/webcollage.6
+@man man/man6/whirlwindwarp.6
+@man man/man6/whirlygig.6
+@man man/man6/worm.6
+@man man/man6/wormhole.6
+@man man/man6/xanalogtv.6
+@man man/man6/xdeco.6
+@man man/man6/xflame.6
+@man man/man6/xjack.6
+@man man/man6/xlyap.6
+@man man/man6/xmatrix.6
+@man man/man6/xrayswarm.6
+@man man/man6/xscreensaver-gl-helper.6
+@man man/man6/xspirograph.6
+@man man/man6/xsublim.6
+@man man/man6/zoom.6
 share/applications/
 share/applications/gnome-screensaver-properties.desktop
 share/locale/ca/LC_MESSAGES/xscreensaver.mo
@@ -450,7 +461,6 @@ share/xscreensaver/config/
 share/xscreensaver/config/README
 share/xscreensaver/config/anemone.xml
 share/xscreensaver/config/anemotaxis.xml
-share/xscreensaver/config/ant.xml
 share/xscreensaver/config/antinspect.xml
 share/xscreensaver/config/antmaze.xml
 share/xscreensaver/config/antspotlight.xml
@@ -477,13 +487,16 @@ share/xscreensaver/config/bumps.xml
 share/xscreensaver/config/cage.xml
 share/xscreensaver/config/carousel.xml
 share/xscreensaver/config/ccurve.xml
+share/xscreensaver/config/celtic.xml
 share/xscreensaver/config/circuit.xml
 share/xscreensaver/config/cloudlife.xml
 share/xscreensaver/config/compass.xml
 share/xscreensaver/config/coral.xml
+share/xscreensaver/config/cosmos.xml
 share/xscreensaver/config/crackberg.xml
 share/xscreensaver/config/critical.xml
 share/xscreensaver/config/crystal.xml
+share/xscreensaver/config/cube21.xml
 share/xscreensaver/config/cubenetic.xml
 share/xscreensaver/config/cubestorm.xml
 share/xscreensaver/config/cynosure.xml
@@ -494,13 +507,16 @@ share/xscreensaver/config/demon.xml
 share/xscreensaver/config/discrete.xml
 share/xscreensaver/config/distort.xml
 share/xscreensaver/config/drift.xml
+share/xscreensaver/config/electricsheep.xml
 share/xscreensaver/config/endgame.xml
 share/xscreensaver/config/engine.xml
 share/xscreensaver/config/epicycle.xml
 share/xscreensaver/config/eruption.xml
 share/xscreensaver/config/euler2d.xml
+share/xscreensaver/config/extrusion.xml
 share/xscreensaver/config/fadeplot.xml
 share/xscreensaver/config/fiberlamp.xml
+share/xscreensaver/config/fireflies.xml
 share/xscreensaver/config/fireworkx.xml
 share/xscreensaver/config/flag.xml
 share/xscreensaver/config/flame.xml
@@ -520,12 +536,15 @@ share/xscreensaver/config/gflux.xml
 share/xscreensaver/config/glblur.xml
 share/xscreensaver/config/gleidescope.xml
 share/xscreensaver/config/glforestfire.xml
+share/xscreensaver/config/glhanoi.xml
 share/xscreensaver/config/glknots.xml
 share/xscreensaver/config/glmatrix.xml
 share/xscreensaver/config/glplanet.xml
+share/xscreensaver/config/glschool.xml
 share/xscreensaver/config/glslideshow.xml
 share/xscreensaver/config/glsnake.xml
 share/xscreensaver/config/gltext.xml
+share/xscreensaver/config/goban.xml
 share/xscreensaver/config/goop.xml
 share/xscreensaver/config/grav.xml
 share/xscreensaver/config/greynetic.xml
@@ -544,6 +563,7 @@ share/xscreensaver/config/intermomentary.xml
 share/xscreensaver/config/jigglypuff.xml
 share/xscreensaver/config/jigsaw.xml
 share/xscreensaver/config/juggle.xml
+share/xscreensaver/config/juggler3d.xml
 share/xscreensaver/config/julia.xml
 share/xscreensaver/config/kaleidescope.xml
 share/xscreensaver/config/klein.xml
@@ -607,6 +627,7 @@ share/xscreensaver/config/slip.xml
 share/xscreensaver/config/sonar.xml
 share/xscreensaver/config/speedmine.xml
 share/xscreensaver/config/sphere.xml
+share/xscreensaver/config/sphereeversion.xml
 share/xscreensaver/config/spheremonics.xml
 share/xscreensaver/config/spiral.xml
 share/xscreensaver/config/spotlight.xml
@@ -623,6 +644,8 @@ share/xscreensaver/config/swirl.xml
 share/xscreensaver/config/t3d.xml
 share/xscreensaver/config/tangram.xml
 share/xscreensaver/config/thornbird.xml
+share/xscreensaver/config/timetunnel.xml
+share/xscreensaver/config/topblock.xml
 share/xscreensaver/config/triangle.xml
 share/xscreensaver/config/truchet.xml
 share/xscreensaver/config/twang.xml
@@ -636,14 +659,18 @@ share/xscreensaver/config/whirlygig.xml
 share/xscreensaver/config/worm.xml
 share/xscreensaver/config/wormhole.xml
 share/xscreensaver/config/xanalogtv.xml
+share/xscreensaver/config/xaos.xml
+share/xscreensaver/config/xdaliclock.xml
 share/xscreensaver/config/xdeco.xml
 share/xscreensaver/config/xflame.xml
 share/xscreensaver/config/xjack.xml
 share/xscreensaver/config/xlyap.xml
 share/xscreensaver/config/xmatrix.xml
+share/xscreensaver/config/xmountains.xml
+share/xscreensaver/config/xplanet.xml
 share/xscreensaver/config/xrayswarm.xml
+share/xscreensaver/config/xsnow.xml
 share/xscreensaver/config/xspirograph.xml
-share/xscreensaver/config/xteevee.xml
 share/xscreensaver/config/zoom.xml
 share/xscreensaver/glade/
 share/xscreensaver/glade/screensaver-cmndln.png

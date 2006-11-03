@@ -1,11 +1,10 @@
-The xscreensaver program waits until the keyboard and mouse have
-been idle for a period, and then runs a graphics demo chosen at
-random. It turns off as soon as there is any mouse or keyboard
-activity. It can also lock the screen (immediately, after a longer
-idle period, or on demand.) xscreensaver consists of two parts:
-xscreensaver itself, the ``driver'' or ``daemon'', which detects
-idleness and does locking; and the many graphics demos that are
-launched by xscreensaver.
+The xscreensaver program waits until the keyboard and mouse have been
+idle for a period, and then runs a graphics demo chosen at random. It
+turns off as soon as there is any mouse or keyboard activity. It can
+also lock the screen (immediately, after a longer idle period, or on
+demand.) xscreensaver consists of two parts: xscreensaver itself, the
+``driver'' or ``daemon'', which detects idleness and does locking; and
+the many graphics demos that are launched by xscreensaver.
 
 Any X program that can draw on the root window can be used with
 xscreensaver, regardless of how that program is written, or what
@@ -14,8 +13,8 @@ daemon takes care of detecting when the user is idle, locking, and
 checking passwords and all the other book-keeping; all the other
 programs need to do is draw.
 
-The benefit that xscreensaver has over the combination of the xlock
-and xautolock programs is the ease with which new graphics hacks
-can be installed.  You don't need to recompile (or even re-run) the
-xscreensaver program to add a new display mode, you just change a
-config file.
+The benefit that xscreensaver has over the combination of the xlock and
+xautolock programs is the ease with which new graphics hacks can be
+installed.  You don't need to recompile (or even re-run) the
+xscreensaver program to add a new display mode, you just change a config
+file.

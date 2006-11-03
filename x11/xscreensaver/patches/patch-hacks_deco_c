@@ -1,12 +1,10 @@
-$OpenBSD: patch-hacks_deco_c,v 1.1 2002/03/27 01:28:58 lebel Exp $
---- hacks/deco.c.orig	Fri Feb 15 14:50:53 2002
-+++ hacks/deco.c	Tue Mar 26 20:08:25 2002
-@@ -58,7 +58,7 @@ deco (Display *dpy,
+--- hacks/deco.c.orig	Thu Nov  2 21:01:08 2006
++++ hacks/deco.c	Thu Nov  2 21:03:06 2006
+@@ -134,7 +134,6 @@
+   free (st);
  }
  
- 
--char *progclass = "Deco";
-+char *progclass = "XDeco";
- 
- char *defaults [] = {
+-
+ static const char *deco_defaults [] = {
    ".background:		black",
+   ".foreground:		white",
