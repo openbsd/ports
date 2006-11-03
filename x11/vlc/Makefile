@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2006/10/13 02:08:22 jolan Exp $
+# $OpenBSD: Makefile,v 1.39 2006/11/03 15:15:07 jolan Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"videolan client; multimedia player"
-V=		0.8.4a
+V=		0.8.5
 DISTNAME=	vlc-${V}
-PKGNAME=	${DISTNAME}p8
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -45,8 +44,8 @@ LIB_DEPENDS=	SDL_image.>=1.3::devel/sdl-image \
                 dvdread.>=3.0::devel/libdvdread \
 		wx_base,wx_base_net,wx_base_odbc,wx_base_xml,wx_gtk2_adv,wx_gtk2_core,wx_gtk2_dbgrid,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_xrc:wxWidgets-gtk2->=2.6.3:x11/wxWidgets
 
-WANTLIB=	X11 Xext Xinerama Xv c freetype m ncurses ossaudio \
-		pthread stdc++ usbhid z \
+WANTLIB=	ICE SM X11 Xext Xinerama Xv Xxf86vm c freetype m ncurses \
+		ossaudio pthread stdc++ usbhid z \
 		SDL jpeg tiff
 
 CONFIGURE_STYLE=autoconf
@@ -194,7 +193,7 @@ CFLAGS+=-mhard-quad-float
 # win32 codecs support uses i386_set_ldt
 post-configure:
 .if ${MACHINE_ARCH} == "i386"
-	@perl -pi -e s,'VLC_ENTRY = vlc_entry__0_8_4','VLC_ENTRY = vlc_entry__0_8_4 -li386',g \
+	@perl -pi -e s,'VLC_ENTRY = vlc_entry__0_8_5','VLC_ENTRY = vlc_entry__0_8_5 -li386',g \
 	${WRKSRC}/modules/codec/Makefile ${WRKSRC}/modules/codec/dmo/Makefile
 .endif
 
@@ -202,5 +201,9 @@ post-configure:
 # re-renabled when it is more usable so leave this here
 #pre-build:
 #	@perl -pi -e 's|_PREFIX_|${PREFIX}|g' ${WRKSRC}/modules/gui/pda/pda.c
+
+# XXX install fails due to this file not being generated properly
+pre-install:
+	@touch ${WRKSRC}/share/skins2/default.vlt
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
-$OpenBSD: patch-modules_access_mms_mmsh_c,v 1.1 2006/09/22 02:23:13 pvalchev Exp $
---- modules/access/mms/mmsh.c.orig	Thu Sep 21 19:13:09 2006
-+++ modules/access/mms/mmsh.c	Thu Sep 21 19:15:03 2006
-@@ -565,7 +565,7 @@ error:
+$OpenBSD: patch-modules_access_mms_mmsh_c,v 1.2 2006/11/03 15:15:07 jolan Exp $
+--- modules/access/mms/mmsh.c.orig	Sat May  6 10:52:18 2006
++++ modules/access/mms/mmsh.c	Fri Oct 20 14:32:38 2006
+@@ -567,7 +567,7 @@ error:
  /*****************************************************************************
   *
   *****************************************************************************/

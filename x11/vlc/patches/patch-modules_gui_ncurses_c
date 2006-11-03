@@ -1,12 +1,12 @@
-$OpenBSD: patch-modules_gui_ncurses_c,v 1.1 2005/12/22 16:36:17 jolan Exp $
---- modules/gui/ncurses.c.orig	Sun Dec 11 15:36:21 2005
-+++ modules/gui/ncurses.c	Thu Dec 22 10:28:05 2005
-@@ -98,7 +98,7 @@ static void ReadDir        ( intf_thread
+$OpenBSD: patch-modules_gui_ncurses_c,v 1.2 2006/11/03 15:15:07 jolan Exp $
+--- modules/gui/ncurses.c.orig	Sat May  6 10:52:17 2006
++++ modules/gui/ncurses.c	Fri Oct 20 14:32:38 2006
+@@ -99,7 +99,7 @@ static void ReadDir        ( intf_thread
  vlc_module_begin();
      set_shortname( "Ncurses" );
      set_description( _("Ncurses interface") );
 -    set_capability( "interface", 10 );
 +    set_capability( "interface", 21 );
      set_category( CAT_INTERFACE );
-     set_subcategory( SUBCAT_INTERFACE_GENERAL );
+     set_subcategory( SUBCAT_INTERFACE_MAIN );
      set_callbacks( Open, Close );

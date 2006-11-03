@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.4 2006/03/20 05:53:18 jakemsr Exp $
---- configure.ac.orig	Sun Dec 11 13:36:29 2005
-+++ configure.ac	Sat Feb  4 22:01:44 2006
-@@ -565,6 +565,9 @@ if test "${SYS}" != "mingw32" -a "${SYS}
+$OpenBSD: patch-configure_ac,v 1.5 2006/11/03 15:15:07 jolan Exp $
+--- configure.ac.orig	Sat May  6 10:52:25 2006
++++ configure.ac	Fri Oct 20 14:32:54 2006
+@@ -648,6 +648,9 @@ if test "${SYS}" != "mingw32" -a "${SYS}
  dnl Check for pthreads - borrowed from XMMS
  THREAD_LIB=error
  if test "${THREAD_LIB}" = "error"; then
@@ -11,16 +11,16 @@ $OpenBSD: patch-configure_ac,v 1.4 2006/03/20 05:53:18 jakemsr Exp $
    AC_CHECK_LIB(pthread,main,THREAD_LIB="-lpthread")
  fi
  if test "${THREAD_LIB}" = "error"; then
-@@ -2213,7 +2216,7 @@ dnl Those options have to be here becaus
- 	fi])
+@@ -2589,7 +2592,7 @@ dnl Look for a ffmpeg-config (we are on 
+  else
  
  dnl Trying with pkg-config
 -   PKG_CHECK_MODULES(FFMPEG,[libavcodec, libavformat],
 +   PKG_CHECK_MODULES(FFMPEG,[libavcodec, libavformat, libpostproc],
      [
       AC_CHECK_HEADERS(ffmpeg/avcodec.h)
-      AC_CHECK_HEADERS(postproc/postprocess.h)
-@@ -2853,13 +2856,13 @@ AC_ARG_ENABLE(png,
+      AC_CHECK_HEADERS(ffmpeg/avformat.h)
+@@ -3236,13 +3239,13 @@ AC_ARG_ENABLE(png,
    [  --enable-png            PNG support (default enabled)])
  if test "${enable_png}" != "no"; then
  AC_CHECK_HEADERS(png.h, [
