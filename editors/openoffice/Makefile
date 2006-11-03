@@ -1,13 +1,17 @@
-# $OpenBSD: Makefile,v 1.18 2006/10/31 09:33:35 robert Exp $
+# $OpenBSD: Makefile,v 1.19 2006/11/03 05:11:09 kurt Exp $
 
 ONLY_FOR_ARCHS= i386
 
 COMMENT=	"a multi-platform productivity suite"
+COMMENT-kde=	"optional integration of OpenOffice to the KDE environment"
+COMMENT-java=	"optional integration of OpenOffice java features"
 
 VERSION=	2.0.4
 DISTNAME=	OOo_${VERSION}_src
 WRKDIST=	${WRKDIR}/OOD680_m5
-PKGNAME=	openoffice-${VERSION}p9
+PKGNAME=	openoffice-${VERSION}p10
+PKGNAME-kde=	openoffice-kde-${VERSION}p10
+PKGNAME-java=	openoffice-java-${VERSION}p10
 CATEGORIES=	editors productivity
 
 SHARED_LIBS=	icudata		26.0 \
@@ -32,6 +36,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+MULTI_PACKAGES=		-kde -java
+SUBPACKAGE?=
+
 BUILD_DEPENDS=	:zip-*:archivers/zip \
 		:unzip-*:archivers/unzip \
 		:bison-*:devel/bison \
@@ -39,19 +46,44 @@ BUILD_DEPENDS=	:zip-*:archivers/zip \
 		:tcsh-*:shells/tcsh \
 		:p5-Archive-Zip-*:archivers/p5-Archive-Zip \
 		::textproc/libxslt \
-		::print/cups
+		::print/cups \
+		::devel/apache-ant \
+		:db-java-4.*:databases/db/v4,-java
 
-LIB_DEPENDS=	gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.14::x11/gtk+2 \
+BASE_LIBS=	gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.14::x11/gtk+2 \
 		python2.3:python-2.3.*:lang/python/2.3 \
 		db.>=4:db-4.*:databases/db/v4 \
 		curl.>=2::net/curl \
 		neon.>=24::net/neon \
 		sndfile.>=1::audio/libsndfile
 
+KDE_LIBS=	kabc,kdecore,kdeui,kio::x11/kde/libs3
+
+.if defined(PACKAGING)
+. if ${SUBPACKAGE} == "-kde"
+RUN_DEPENDS=	::editors/openoffice
+LIB_DEPENDS=	${KDE_LIBS}
+WANTLIB=	X11 m
+MODULES=	x11/qt3
+. elif ${SUBPACKAGE} == "-java"
+RUN_DEPENDS=	::editors/openoffice \
+		:db-java-4.*:databases/db/v4,-java
+WANTLIB=	c m pthread stdc++
+MODULES=	java
+MODJAVA_VER=	1.4+
+MODJAVA_JRERUN=	Yes
+. else
+LIB_DEPENDS=	${BASE_LIBS}
 WANTLIB=	ICE SM X11 Xext Xrender atk-1.0 c cairo expat fontconfig \
 		freetype glib-2.0 gmodule-2.0 gobject-2.0 \
 		gthread-2.0 iconv intl ossaudio jpeg m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pthread stdc++ util xml2 z
+. endif
+.else
+MODULES=	x11/qt3 java
+MODJAVA_VER=	1.4+
+LIB_DEPENDS=	${BASE_LIBS} ${KDE_LIBS}
+.endif
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
@@ -66,12 +98,14 @@ AUTOCONF_VERSION=	2.59
 AUTOCONF_DIR=		${WRKCONF}
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+		QTINC="${MODQT_INCDIR}" QTDIR="${MODQT_LIBDIR}"
 
 CONFIGURE_ARGS=	--disable-gnome-vfs \
 		--disable-mozilla \
 		--disable-odk \
 		--enable-cairo \
+		--enable-kde \
 		--with-system-jpeg \
 		--with-system-python \
 		--with-system-libxml \
@@ -85,7 +119,10 @@ CONFIGURE_ARGS=	--disable-gnome-vfs \
 		--with-system-sndfile \
 		--with-epm=internal \
 		--with-alloc=system \
-		--without-java
+		--with-java \
+		--with-jdk-home=${JAVA_HOME} \
+		--with-ant-home=${LOCALBASE}/ant/lib \
+		--with-db-jar=${LOCALBASE}/lib/db4/db.jar
 
 FLAVORS=	debug
 FLAVOR?=
@@ -122,7 +159,7 @@ do-install:
                 ${PREFIX}/bin/soffice \
 
 	cd ${PREFIX}/bin && \
-	for app in scalc sdraw simpress swriter; do \
+	for app in sbase scalc sdraw simpress smath setofficelang spadmin swriter; do \
 		ln -sf soffice $$app ; done
 
 .include <bsd.port.mk>

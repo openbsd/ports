@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_office_configure_in,v 1.6 2006/10/27 16:02:02 kurt Exp $
+$OpenBSD: patch-config_office_configure_in,v 1.7 2006/11/03 05:11:09 kurt Exp $
 --- config_office/configure.in.orig.port	Mon Aug 28 04:37:20 2006
-+++ config_office/configure.in	Thu Oct 26 12:49:58 2006
++++ config_office/configure.in	Mon Oct 30 08:52:12 2006
 @@ -773,6 +773,16 @@ case "$build_os" in
  		AC_MSG_RESULT([$PTHREAD_LIBS])
  		_os=FreeBSD
@@ -95,3 +95,21 @@ $OpenBSD: patch-config_office_configure_in,v 1.6 2006/10/27 16:02:02 kurt Exp $
     AC_CHECK_LIB(X11, XOpenDisplay, x_libs="-lX11 $X_EXTRA_LIBS", [AC_MSG_ERROR([X Development libraries not found])])
  else
     x_includes="no_x_includes"
+@@ -4552,7 +4564,7 @@ if test "$test_kde" = "yes" -a "$ENABLE_
+ 
+     dnl What to test
+     qt_test_include="qstyle.h"
+-    qt_test_library="libqt-mt.so"
++    qt_test_library="libqt-mt.so*"
+     kde_test_include="ksharedptr.h"
+     kde_test_library="libkdeui.la"
+ 
+@@ -4575,7 +4587,7 @@ your Qt installation by exporting QTDIR 
+     AC_MSG_CHECKING([for Qt libraries])
+     qt_libdir="no"
+     for qt_check in $qt_libdirs ; do
+-        if test -r "$qt_check/$qt_test_library" ; then
++        if test -r "`ls $qt_check/$qt_test_library | head -1`" ; then
+             qt_libdir="$qt_check"
+             break
+         fi

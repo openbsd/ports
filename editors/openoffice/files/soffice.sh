@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: soffice.sh,v 1.3 2006/10/18 18:17:12 ian Exp $
+# $OpenBSD: soffice.sh,v 1.4 2006/11/03 05:11:09 kurt Exp $
 #
 
 case "$0"
@@ -16,6 +16,18 @@ in
 		;;
 	*simpress)
 		exec %%LOCALBASE%%/openoffice/program/soffice -impress $*
+		;;
+	*sbase)
+		exec %%LOCALBASE%%/openoffice/program/soffice -base $*
+		;;
+	*smath)
+		exec %%LOCALBASE%%/openoffice/program/soffice -math $*
+		;;
+	*spadmin)
+		exec %%LOCALBASE%%/openoffice/program/spadmin $*
+		;;
+	*setofficelang)
+		exec %%LOCALBASE%%/openoffice/program/setofficelang $*
 		;;
 	*)
 		exec %%LOCALBASE%%/openoffice/program/soffice $*
