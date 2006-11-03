@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.9 2006/11/03 13:50:54 mbalmer Exp $
-@newgroup _courier:556
-@newuser _courier:556:556:daemon:Courier Mail Server:/var/empty:/sbin/nologin
+@comment $OpenBSD: PLIST,v 1.10 2006/11/03 15:15:02 mbalmer Exp $
+@newgroup _courier:571
+@newuser _courier:571:571:daemon:Courier Mail Server:/var/empty:/sbin/nologin
 bin/lockmail
 bin/mailbot
 bin/maildrop

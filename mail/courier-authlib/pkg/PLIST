@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/03 11:45:31 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/11/03 15:16:41 mbalmer Exp $
 @conflict courier-authlib-*
-@newgroup _courier:556
-@newuser _courier:556:556:daemon:Courier Mail Server:/var/empty:/sbin/nologin
+@newgroup _courier:571
+@newuser _courier:571:571:daemon:Courier Mail Server:/var/empty:/sbin/nologin
 %%SHARED%%
 bin/courierauthconfig
 include/courier_auth_config.h
