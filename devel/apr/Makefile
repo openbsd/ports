@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/10/28 11:19:20 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/11/03 10:56:44 alek Exp $
 
 COMMENT=	"Apache Portable Runtime"
 
@@ -17,8 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://www.apache.org/dist/apr/ \
-		http://www.eu.apache.org/dist/apr/
+MASTER_SITES=	${MASTER_SITE_APACHE:=apr/}
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
