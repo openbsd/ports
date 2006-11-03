@@ -1,0 +1,12 @@
+$OpenBSD: patch-mozilla_nsprpub_pr_include_md__openbsd_h,v 1.1 2006/11/03 18:02:13 ajacoutot Exp $
+--- mozilla/nsprpub/pr/include/md/_openbsd.h.orig	Fri Nov  3 16:18:46 2006
++++ mozilla/nsprpub/pr/include/md/_openbsd.h	Fri Nov  3 16:19:04 2006
+@@ -43,6 +43,8 @@
+ #define _PR_SI_ARCHITECTURE "x86"
+ #elif defined(__alpha__)
+ #define _PR_SI_ARCHITECTURE "alpha"
++#elif defined(__amd64__)
++#define _PR_SI_ARCHITECTURE "amd64"
+ #elif defined(__m68k__)
+ #define _PR_SI_ARCHITECTURE "m68k"
+ #elif defined(__powerpc__)

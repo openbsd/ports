@@ -1,6 +1,6 @@
-$OpenBSD: patch-mozilla_nsprpub_pr_include_md__openbsd_cfg,v 1.1.1.1 2004/01/29 21:57:53 pvalchev Exp $
---- mozilla/nsprpub/pr/include/md/_openbsd.cfg.orig	2004-01-06 21:45:46.000000000 -0500
-+++ mozilla/nsprpub/pr/include/md/_openbsd.cfg	2004-01-06 21:53:01.000000000 -0500
+$OpenBSD: patch-mozilla_nsprpub_pr_include_md__openbsd_cfg,v 1.2 2006/11/03 18:02:13 ajacoutot Exp $
+--- mozilla/nsprpub/pr/include/md/_openbsd.cfg.orig	Tue Jun 20 23:23:14 2000
++++ mozilla/nsprpub/pr/include/md/_openbsd.cfg	Fri Nov  3 16:18:29 2006
 @@ -91,9 +91,9 @@
  #define PR_ALIGN_OF_DOUBLE  4
  #define PR_ALIGN_OF_POINTER 4
@@ -13,10 +13,11 @@ $OpenBSD: patch-mozilla_nsprpub_pr_include_md__openbsd_cfg,v 1.1.1.1 2004/01/29 
  #define  IS_BIG_ENDIAN 1
  #define HAVE_LONG_LONG
  #define  HAVE_ALIGNED_DOUBLES
-@@ -184,6 +184,53 @@
+@@ -183,6 +183,102 @@
+ 
  #define PR_BYTES_PER_WORD_LOG2  3
  #define PR_BYTES_PER_DWORD_LOG2 3
- 
++
 +#elif defined(__sparc_v9__)
 +#undef  IS_LITTLE_ENDIAN
 +#define IS_BIG_ENDIAN 1
@@ -64,6 +65,54 @@ $OpenBSD: patch-mozilla_nsprpub_pr_include_md__openbsd_cfg,v 1.1.1.1 2004/01/29 
 +#define PR_BYTES_PER_WORD_LOG2  3
 +#define PR_BYTES_PER_DWORD_LOG2 3
 +
++#elif defined(__amd64__)
++#define IS_LITTLE_ENDIAN 1
++#undef  IS_BIG_ENDIAN
++#define IS_64
++
++#define PR_BYTES_PER_BYTE   1
++#define PR_BYTES_PER_SHORT  2
++#define PR_BYTES_PER_INT    4
++#define PR_BYTES_PER_INT64  8
++#define PR_BYTES_PER_LONG   8
++#define PR_BYTES_PER_FLOAT  4
++#define PR_BYTES_PER_DOUBLE 8
++#define PR_BYTES_PER_WORD   8
++#define PR_BYTES_PER_DWORD  8
++
++#define PR_BITS_PER_BYTE    8
++#define PR_BITS_PER_SHORT   16
++#define PR_BITS_PER_INT     32
++#define PR_BITS_PER_INT64   64
++#define PR_BITS_PER_LONG    64
++#define PR_BITS_PER_FLOAT   32
++#define PR_BITS_PER_DOUBLE  64
++#define PR_BITS_PER_WORD    64
++
++#define PR_BITS_PER_BYTE_LOG2   3
++#define PR_BITS_PER_SHORT_LOG2  4
++#define PR_BITS_PER_INT_LOG2    5
++#define PR_BITS_PER_INT64_LOG2  6
++#define PR_BITS_PER_LONG_LOG2   6
++#define PR_BITS_PER_FLOAT_LOG2  5
++#define PR_BITS_PER_DOUBLE_LOG2 6
++#define PR_BITS_PER_WORD_LOG2   6
++
++#define PR_ALIGN_OF_SHORT   2
++#define PR_ALIGN_OF_INT     4
++#define PR_ALIGN_OF_LONG    8
++#define PR_ALIGN_OF_INT64   8
++#define PR_ALIGN_OF_FLOAT   4
++#define PR_ALIGN_OF_DOUBLE  8
++#define PR_ALIGN_OF_POINTER 8
++#define PR_ALIGN_OF_WORD    8
++
++#define PR_BYTES_PER_WORD_LOG2  3
++#define PR_BYTES_PER_DWORD_LOG2 3
++
++#define HAVE_LONG_LONG
++#define HAVE_ALIGNED_DOUBLES
++#define HAVE_ALIGNED_LONGLONGS
+ 
  #elif defined(__powerpc__) || defined(__m68k__)
  
- #undef  IS_LITTLE_ENDIAN
