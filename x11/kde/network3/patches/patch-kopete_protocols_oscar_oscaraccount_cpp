@@ -1,0 +1,26 @@
+$OpenBSD: patch-kopete_protocols_oscar_oscaraccount_cpp,v 1.1 2006/11/03 18:00:59 bernd Exp $
+
+Backport SVN commit 600976 by rjarosz:
+
+Fix bug 136566: Connecting to ICQ doesn't work anymore.
+
+* OSCAR server stops sending own user info at logon, we have to send own
+  user info request like ICQ5.
+
+* Fix bug when going online with any other status than online i.e. away,
+  n/a... Kopete indicates the account as online. The status on a server is
+  correct.
+
+Should be fixed in kdenetwork >3.5.5.
+
+--- kopete/protocols/oscar/oscaraccount.cpp.orig	Thu Nov  2 13:11:52 2006
++++ kopete/protocols/oscar/oscaraccount.cpp	Thu Nov  2 13:12:39 2006
+@@ -560,7 +560,7 @@ bool OscarAccount::createContact(const Q
+ 	/* We're not even online or connecting
+ 	 * (when getting server contacts), so don't bother
+ 	 */
+-	if ( !myself()->isOnline() )
++	if ( !engine()->isActive() )
+ 	{
+ 		kdDebug(OSCAR_GEN_DEBUG) << k_funcinfo << "Can't add contact, we are offline!" << endl;
+ 		return false;

@@ -1,0 +1,31 @@
+$OpenBSD: patch-kopete_protocols_oscar_liboscar_client_cpp,v 1.1 2006/11/03 18:00:59 bernd Exp $
+
+Backport SVN commit 600976 by rjarosz:
+
+Fix bug 136566: Connecting to ICQ doesn't work anymore.
+
+* OSCAR server stops sending own user info at logon, we have to send own
+  user info request like ICQ5.
+
+* Fix bug when going online with any other status than online i.e. away,
+  n/a... Kopete indicates the account as online. The status on a server is
+  correct.
+
+Should be fixed in kdenetwork >3.5.5.
+
+--- kopete/protocols/oscar/liboscar/client.cpp.orig	Thu Nov  2 13:12:58 2006
++++ kopete/protocols/oscar/liboscar/client.cpp	Thu Nov  2 13:14:34 2006
+@@ -397,9 +397,12 @@ void Client::serviceSetupFinished()
+ 	d->active = true;
+ 
+ 	if ( isIcq() )
+-	{
+ 		setStatus( d->connectAsStatus, d->connectWithMessage );
+ 
++	d->ownStatusTask->go();
++
++	if ( isIcq() )
++	{
+ 		//retrieve offline messages
+ 		Connection* c = d->connections.connectionForFamily( 0x0015 );
+ 		if ( !c )
