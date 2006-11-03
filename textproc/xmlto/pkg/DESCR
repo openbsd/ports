@@ -1,0 +1,3 @@
+xmlto is a front-end to an XSL toolchain. It chooses an appropriate
+stylesheet for the conversion you want and applies it using an external
+XSL-T processor. It also performs any necessary post-processing.
