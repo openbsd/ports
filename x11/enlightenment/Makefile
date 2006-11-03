@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2006/08/04 00:10:42 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2006/11/03 17:01:10 espie Exp $
 
 COMMENT=	"themed window manager"
 
@@ -48,11 +48,11 @@ MODULES=	converters/libiconv \
 		devel/gettext
 
 post-configure:
-	@cd ${WRKDIR}/${DOCS} && ${SETENV} ${CONFIGURE_ENV} ${SCRIPTS_ENV} \
+	@cd ${WRKDIR}/${DOCS} && ${SETENV} ${CONFIGURE_ENV} \
 	    ${SH} ./configure ${CONFIGURE_ARGS}
 	@for i in ${THEMES}; do \
 		cd ${WRKDIR}/$$i && \
-		    ${SETENV} ${CONFIGURE_ENV} ${SCRIPTS_ENV} ${SH} \
+		    ${SETENV} ${CONFIGURE_ENV} ${SH} \
 		    ./configure ${CONFIGURE_ARGS}; \
 	done
 

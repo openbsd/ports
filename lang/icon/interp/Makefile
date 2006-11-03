@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/10/16 10:01:55 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2006/11/03 17:01:10 espie Exp $
 
 COMMENT=	"programming language with generators, X11 and more"
 COMMENT-no_x11=	"programming language with generators"
@@ -35,7 +35,6 @@ MAINTAINER=	Marc Espie <espie@openbsd.org>
 FLAVORS=	no_x11
 FLAVOR?=	
 
-SCRIPTS_ENV=	ARCH="${MACHINE_ARCH}"
 MAKE_ENV=	ARCH="${MACHINE_ARCH}"
 CONF_DIR=	${WRKSRC}/config/unix/openbsd
 ALL_TARGET=	Icont Iconc
