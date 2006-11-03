@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared-mysql,v 1.1.1.1 2006/11/03 11:45:31 mbalmer Exp $
+@lib lib/libauthmysql.so.${LIBauthmysql_VERSION}

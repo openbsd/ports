@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST-ldap,v 1.1.1.1 2006/11/03 11:45:31 mbalmer Exp $
+%%SHARED%%
+@comment lib/libauthldap.a
+@comment lib/libauthldap.la
+share/doc/courier-authlib/README.ldap
+share/examples/courier-authlib/authldap.schema
+share/examples/courier-authlib/authldaprc.dist
+@sample ${SYSCONFDIR}/courier/authldaprc

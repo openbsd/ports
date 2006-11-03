@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-pgsql,v 1.1.1.1 2006/11/03 11:45:31 mbalmer Exp $
+%%SHARED%%
+@comment lib/libauthpgsql.a
+@comment lib/libauthpgsql.la
+share/examples/courier-authlib/authpgsqlrc.dist
+@sample ${SYSCONFDIR}/courier/authpgsqlrc

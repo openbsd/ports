@@ -1,0 +1,55 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/03 11:45:31 mbalmer Exp $
+@conflict courier-authlib-*
+@newgroup _courier:556
+@newuser _courier:556:556:daemon:Courier Mail Server:/var/empty:/sbin/nologin
+%%SHARED%%
+bin/courierauthconfig
+include/courier_auth_config.h
+include/courierauth.h
+include/courierauthdebug.h
+include/courierauthsasl.h
+include/courierauthsaslclient.h
+@comment lib/courier-authlib/
+@comment lib/libauthpipe.a
+@comment lib/libauthpipe.la
+@comment lib/libauthpwd.a
+@comment lib/libauthpwd.la
+@comment lib/libcourierauth.a
+@comment lib/libcourierauth.la
+@comment lib/libcourierauthcommon.a
+@comment lib/libcourierauthcommon.la
+@comment lib/libcourierauthsasl.a
+@comment lib/libcourierauthsasl.la
+@comment lib/libcourierauthsaslclient.a
+@comment lib/libcourierauthsaslclient.la
+libexec/courier-authlib/
+libexec/courier-authlib/authdaemond
+libexec/courier-authlib/authmigrate
+libexec/courier-authlib/authsystem.passwd
+libexec/courier-authlib/sysconftool
+@man man/man1/authpasswd.1
+@man man/man1/authtest.1
+@man man/man1/courierlogger.1
+@man man/man3/auth_enumerate.3
+@man man/man3/auth_generic.3
+@man man/man3/auth_getoption.3
+@man man/man3/auth_getuserinfo.3
+@man man/man3/auth_login.3
+@man man/man3/auth_passwd.3
+@man man/man3/auth_sasl.3
+@man man/man3/authlib.3
+sbin/authdaemond
+sbin/authenumerate
+sbin/authpasswd
+sbin/authtest
+sbin/courierlogger
+share/doc/courier-authlib/
+share/doc/courier-authlib/COPYING
+share/doc/courier-authlib/COPYING.GPL
+share/doc/courier-authlib/INSTALL
+share/doc/courier-authlib/NEWS
+share/doc/courier-authlib/README
+share/examples/courier-authlib/
+@sample ${SYSCONFDIR}/courier/
+share/examples/courier-authlib/authdaemonrc.dist
+@sample ${SYSCONFDIR}/courier/authdaemonrc

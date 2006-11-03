@@ -1,0 +1,12 @@
+$OpenBSD: patch-authldap_h,v 1.1.1.1 2006/11/03 11:45:31 mbalmer Exp $
+--- authldap.h.orig	Wed Feb  1 13:32:09 2006
++++ authldap.h	Wed Feb  1 13:32:29 2006
+@@ -1,6 +1,8 @@
+ #ifndef	authldap_h
+ #define	authldap_h
+ 
++#define LDAP_DEPRECATED
++
+ /*
+ ** $Id: patch-authldap_h,v 1.1.1.1 2006/11/03 11:45:31 mbalmer Exp $
+ **

@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST-userdb,v 1.1.1.1 2006/11/03 11:45:31 mbalmer Exp $
+%%SHARED%%
+@comment lib/libauthuserdb.a
+@comment lib/libauthuserdb.la
+libexec/courier-authlib/makedatprog
+@comment @man man/man8/makeuserdb.8
+@comment @man man/man8/userdb.8
+@comment @man man/man8/userdbpw.8
+sbin/makeuserdb
+sbin/pw2userdb
+sbin/userdb
+sbin/userdb-test-cram-md5
+sbin/userdbpw
+sbin/vchkpw2userdb

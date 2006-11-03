@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-mysql,v 1.1.1.1 2006/11/03 11:45:31 mbalmer Exp $
+%%SHARED%%
+@comment lib/libauthmysql.a
+@comment lib/libauthmysql.la
+share/doc/courier-authlib/README.authmysql.myownquery
+share/examples/courier-authlib/authmysqlrc.dist
+@sample ${SYSCONFDIR}/courier/authmysqlrc

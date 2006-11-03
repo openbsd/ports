@@ -1,0 +1,12 @@
+$OpenBSD: patch-authpipelib_c,v 1.1.1.1 2006/11/03 11:45:31 mbalmer Exp $
+--- authpipelib.c.orig	Tue Dec 27 15:22:17 2005
++++ authpipelib.c	Tue Dec 27 15:22:52 2005
+@@ -42,7 +42,7 @@ static void execChild(int to[], int from
+ 	close(STDOUT_FILENO); dup2(from[1], STDOUT_FILENO);
+ 	close(to[0]); close(to[1]); close(from[0]); close(from[1]);
+ 
+-	execl(PIPE_PROGRAM, PIPE_PROGRAM, NULL);
++	execl(PIPE_PROGRAM, PIPE_PROGRAM, (char *)NULL);
+ 
+ 	DPRINTF("pipe: failed to execute %s: %s",PIPE_PROGRAM, strerror(errno));
+ 	exit(1);

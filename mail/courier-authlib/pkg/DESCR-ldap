@@ -1,0 +1,5 @@
+This package provides an LDAP authentication backend for Courier-IMAP.
+Install this package in order to enable authentication using LDAP.
+
+Documentation is installed in:
+  ${LOCALBASE}/share/doc/courier-authlib

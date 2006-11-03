@@ -1,0 +1,12 @@
+$OpenBSD: patch-authdaemond_in,v 1.1.1.1 2006/11/03 11:45:31 mbalmer Exp $
+--- authdaemond.in.orig	Sat Aug  6 04:56:27 2005
++++ authdaemond.in	Sat Aug  6 04:56:48 2005
+@@ -10,7 +10,7 @@
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+ sbindir=@sbindir@
+-localstatedir=@localstatedir@
++localstatedir=/var/run/courier-auth
+ 
+ set -a
+ . @authdaemonrc@

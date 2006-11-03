@@ -1,0 +1,7 @@
+This package provides a userDB database authentication backend for 
+Courier-IMAP. Install this package in order to enable to authenticating 
+using userdb. The userdb authentication module includes Perl scripts 
+that maintain a list of available accounts in plain text files.
+
+Documentation is installed in:
+  ${LOCALBASE}/share/doc/courier-authlib
