@@ -1,6 +1,6 @@
-You now need to copy the Courier-POP3 configuration files to
-${COURIERCONF} from ${PREFIX}/share/examples/courier-imap
-and edit them appropriately.
+You now need to edit appropriately the Courier-POP3 configuration files
+installed in ${SYSCONFDIR}/courier-imap from defaults placed in
+${PREFIX}/share/examples/courier-imap.
 
-To use POP3-SSL, be sure to read ssl(8) and run the
-mkpop3dcert script if you require a self-signed certificate
+To use POP3-SSL, be sure to read ssl(8) and run the mkpop3dcert script
+if you require a self-signed certificate.

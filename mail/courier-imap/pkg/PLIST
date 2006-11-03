@@ -1,59 +1,60 @@
-@comment $OpenBSD: PLIST,v 1.19 2004/12/06 22:50:20 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.20 2006/11/03 16:19:56 mbalmer Exp $
 @conflict imap-uw-*
+@conflict courier-utils-*
+@newgroup _courier:571
+@newuser _courier:571:571:daemon:Courier Mail Server:/var/empty:/sbin/nologin
 bin/couriertls
-@comment bin/deliverquota
+bin/deliverquota
 bin/imapd
 bin/maildiracl
 bin/maildirkw
-@comment bin/maildirmake
-libexec/authlib/
-libexec/authlib/authcram
-libexec/authlib/authdaemon
-libexec/authlib/authdaemond
-libexec/authlib/authdaemond.plain
-libexec/authlib/authpwd
-libexec/authlib/authuserdb
+bin/maildirmake
 libexec/couriertcpd
 libexec/imapd-ssl.rc
 libexec/imapd.rc
 libexec/makedatprog
-@man man/man1/courierlogger.1
 @man man/man1/couriertcpd.1
 @man man/man1/maildiracl.1
 @man man/man1/maildirkw.1
-@comment @man man/man1/maildirmake.1
-@man man/man7/authcram.7
-@man man/man7/authdaemon.7
-@man man/man7/authdaemond.7
-@man man/man7/authlib.7
-@man man/man7/authpam.7
-@man man/man7/authpwd.7
-@man man/man7/authshadow.7
-@man man/man7/authuserdb.7
-@man man/man7/authvchkpw.7
-@comment @man man/man8/deliverquota.8
+@man man/man1/maildirmake.1
+@man man/man8/deliverquota.8
 @man man/man8/imapd.8
-@comment @man man/man8/makeuserdb.8
 @man man/man8/mkimapdcert.8
-@comment @man man/man8/pw2userdb.8
-@comment @man man/man8/userdb.8
-@comment @man man/man8/userdbpw.8
-@comment @man man/man8/vchkpw2userdb.8
-sbin/authenumerate
-sbin/courierlogger
 sbin/imaplogin
-@comment sbin/makeuserdb
 sbin/mkimapdcert
-@comment sbin/pw2userdb
 sbin/sharedindexinstall
 sbin/sharedindexsplit
-sbin/userdb
-@comment sbin/userdbpw
-@comment sbin/vchkpw2userdb
-share/doc/courier-imap/
-share/examples/courier-imap/
-share/examples/courier-imap/authdaemonrc
-share/examples/courier-imap/imapd
-share/examples/courier-imap/imapd-ssl
-share/examples/courier-imap/imapd.cnf
-share/examples/courier-imap/quotawarnmsg.example
+share/doc/courier/
+share/doc/courier/AUTHORS
+share/doc/courier/ChangeLog
+share/doc/courier/INSTALL
+share/doc/courier/NEWS
+share/doc/courier/README
+share/doc/courier/README.couriertls
+share/doc/courier/README.imap.txt
+share/doc/courier/README.imapkeywords.html
+share/doc/courier/README.maildirfilter.html
+share/doc/courier/README.maildirquota.txt
+share/doc/courier/README.proxy
+share/doc/courier/README.sharedfolders.txt
+share/doc/courier/README.unicode.txt
+share/examples/courier/
+@sample ${SYSCONFDIR}/
+@mode 600
+share/examples/courier/imapd-ssl.dist
+@sample ${SYSCONFDIR}/imapd-ssl
+share/examples/courier/imapd.cnf
+@sample ${SYSCONFDIR}/imapd.cnf
+share/examples/courier/imapd.dist
+@sample ${SYSCONFDIR}/imapd
+share/examples/courier/quotawarnmsg.example
+@mode 644
+@owner _courier
+@group _courier
+@sample ${SYSCONFDIR}/quotawarnmsg
+@sample ${SYSCONFDIR}/shared/
+@sample ${SYSCONFDIR}/shared.tmp/
+@mode 750
+@sample ${COURIERSTATE}/
+@extraunexec rm -rf ${SYSCONFDIR}/
+@extraunexec rm -rf ${COURIERSTATE}

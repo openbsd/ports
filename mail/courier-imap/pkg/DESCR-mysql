@@ -1,5 +1,0 @@
-This package provides a MySQL database authentication backend for
-Courier-IMAP.
-
-Documentation is installed in:
-  ${LOCALBASE}/share/doc/courier-imap

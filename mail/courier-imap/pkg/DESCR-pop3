@@ -1,8 +1,8 @@
-This server provides POP3 access to Maildir format mailboxes.  It
-does not handle traditional mailbox files.
+This server provides POP3 access to Maildir format mailboxes. It does
+not handle traditional mailbox files.
 
-It is part of the Courier mail server (http://www.courier-mta.org)
-but can be configured as a standalone POP3 server.
+It is part of the Courier mail server (http://www.courier-mta.org) but
+can be configured as a standalone POP3 server.
 
 Features include an extremely small memory footprint, abstract
 authentication modules (e.g. /etc/passwd, LDAP, PAM), virtual mailbox

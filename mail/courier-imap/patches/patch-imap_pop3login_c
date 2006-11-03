@@ -1,0 +1,12 @@
+$OpenBSD: patch-imap_pop3login_c,v 1.1 2006/11/03 16:19:56 mbalmer Exp $
+--- imap/pop3login.c.orig	Sat Aug  6 15:40:34 2005
++++ imap/pop3login.c	Sat Aug  6 15:40:50 2005
+@@ -229,7 +229,7 @@ static int login_callback(struct authinf
+ 				execl(pop3d, pop3d,
+ 				      ainfo->maildir ?
+ 				      ainfo->maildir:defaultmaildir,
+-				      NULL);
++				      (char *)NULL);
+ 				fprintf(stderr, "ERR: exec(%s) failed!!\n",
+ 							 pop3d);
+ 			}

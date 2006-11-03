@@ -1,7 +1,7 @@
-$OpenBSD: patch-imap_mkimapdcert_in,v 1.5 2004/07/01 12:19:35 avsm Exp $
---- imap/mkimapdcert.in.orig	2004-05-16 14:41:01.000000000 +1000
-+++ imap/mkimapdcert.in	2004-05-16 14:52:55.000000000 +1000
-@@ -12,27 +12,28 @@
+$OpenBSD: patch-imap_mkimapdcert_in,v 1.6 2006/11/03 16:19:56 mbalmer Exp $
+--- imap/mkimapdcert.in.orig	Mon Aug  1 00:35:38 2005
++++ imap/mkimapdcert.in	Mon Aug  1 00:37:31 2005
+@@ -12,28 +12,29 @@
  test -x @OPENSSL@ || exit 0
  
  prefix="@prefix@"
@@ -15,6 +15,7 @@ $OpenBSD: patch-imap_mkimapdcert_in,v 1.5 2004/07/01 12:19:35 avsm Exp $
  	exit 1
  fi
  
+ umask 077
 -cp /dev/null @datadir@/imapd.pem
 -chmod 600 @datadir@/imapd.pem
 -chown @mailuser@ @datadir@/imapd.pem

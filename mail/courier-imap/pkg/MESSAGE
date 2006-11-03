@@ -1,22 +1,16 @@
-Example config files for Courier-IMAP have been installed
-in ${PREFIX}/share/examples/courier-imap.
+Example config files for Courier-IMAP have been installed in
+${PREFIX}/share/examples/courier-imap and copied also to
+${SYSCONFDIR}/courier-imap, edit them to your site's needs.
 
-Copy all of the files to ${COURIERCONF} and 
-edit them to your site's needs.  Pay particular attention to 
-the details in imapd.cnf, and read ssl(8) if necessary.
-You MUST set the CN in imapd.cnf to the hostname by which 
-your IMAP server is accessed, or else clients will complain.
-
-When this is done, you can use the 'mkimapdcert' script
-to automatically generate a server certificate, which 
-is installed into /etc/ssl/private/imapd.pem
+Pay particular attention to the details in imapd.cnf, and read ssl(8) if
+necessary. You MUST set the CN in imapd.cnf to the hostname by which
+your IMAP server is accessed, or else clients will complain. When this
+is done, you can use the 'mkimapdcert' script to automatically generate
+a server certificate, which is installed into /etc/ssl/private/imapd.pem
 
 To control the daemon use ${PREFIX}/libexec/imapd.rc and
-${PREFIX}/libexec/imapd-ssl.rc, and to run the authdaemon,
-place the following in /etc/rc.local:
+${PREFIX}/libexec/imapd-ssl.rc, and to run the authdaemon, place the
+following in /etc/rc.local:
 
-mkdir -p ${COURIERSTATE} 
-${PREFIX}/libexec/authlib/authdaemond start
-
-If you require userdb or quota support, then install the
-courier-utils package.
+mkdir -p ${COURIERSTATE}
+${PREFIX}/sbin/authdaemond start

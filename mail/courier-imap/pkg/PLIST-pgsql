@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST-pgsql,v 1.3 2004/09/15 09:09:41 espie Exp $
-libexec/authlib/authdaemond.pgsql
-share/doc/courier-imap/README.authpostgres.html
-share/examples/courier-imap/authpgsqlrc

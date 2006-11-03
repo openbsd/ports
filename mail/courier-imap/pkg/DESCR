@@ -1,9 +1,29 @@
-This server provides IMAP access to Maildir format mailboxes.  It
-does not handle traditional mailbox files.
+Courier-IMAP is a server that provides IMAP access to Maildirs
+mailboxes. This IMAP server does NOT handle traditional mailbox files
+(/var/spool/mail, and derivatives), it was written for the specific
+purpose of providing IMAP access to Maildirs.
 
-It is part of the Courier mail server (http://www.courier-mta.org)
-but can be configured as a standalone IMAP server.
+The Courier-IMAP implements some extensions to the basic Maildir mail
+storage format in order to support some additional features, such as
+folders and "soft" quotas. This is done in a way that's backwards
+compatible with the standard Maildir users (although, of course, they
+will ignore the additional features). Other software that understands
+and uses the same Maildir extensions is SqWebMail, and maildrop.
+
+"Maildir" is a directory-based mail storage format originally introduced
+in the Qmail mail server, and adopted as an alternative mail storage
+format by both Exim and Postfix. Courier-IMAP is popular on
+Qmail/Exim/Postfix sites that are configured to use maildirs.  The
+primary advantage of maildirs is that multiple applications can access
+the same maildir simultaneously without requiring any kind of locking
+whatsoever. It is a faster and more efficient way to store mail. It
+works particularly well over NFS, which has a long history of
+locking-related woes.
+
+It is part of the Courier mail server (http://www.courier-mta.org) but
+can be configured as a standalone IMAP server.
 
 Features include an extremely small memory footprint, abstract
 authentication modules (e.g. /etc/passwd, LDAP, PAM), virtual mailbox
-support, resource controls, SSL/TLS, shared folders, and IPv6 support.
+support, resource controls, SSL/TLS, and IPv6 support.
+

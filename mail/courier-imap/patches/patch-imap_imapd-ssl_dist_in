@@ -1,7 +1,7 @@
-$OpenBSD: patch-imap_imapd-ssl_dist_in,v 1.4 2004/07/01 12:19:35 avsm Exp $
---- imap/imapd-ssl.dist.in.orig	2004-05-16 14:29:23.000000000 +1000
-+++ imap/imapd-ssl.dist.in	2004-05-16 14:31:17.000000000 +1000
-@@ -65,13 +65,13 @@ SSLPIDFILE=@piddir@/imapd-ssl.pid
+$OpenBSD: patch-imap_imapd-ssl_dist_in,v 1.5 2006/11/03 16:19:56 mbalmer Exp $
+--- imap/imapd-ssl.dist.in.orig	Mon Aug  1 00:38:00 2005
++++ imap/imapd-ssl.dist.in	Mon Aug  1 00:39:51 2005
+@@ -72,13 +72,13 @@ SSLLOGGEROPTS="-name=imapd-ssl"
  #
  #  Whether or not to start IMAP over SSL on simap port:
  
@@ -17,7 +17,7 @@ $OpenBSD: patch-imap_imapd-ssl_dist_in,v 1.4 2004/07/01 12:19:35 avsm Exp $
  
  ##NAME: IMAP_TLS_REQUIRED:1
  #
-@@ -146,7 +146,7 @@ TLS_STARTTLS_PROTOCOL=TLS1
+@@ -153,7 +153,7 @@ TLS_STARTTLS_PROTOCOL=TLS1
  # servers, and is optional for SSL/TLS clients.  TLS_CERTFILE is usually
  # treated as confidential, and must not be world-readable.
  #
@@ -26,12 +26,14 @@ $OpenBSD: patch-imap_imapd-ssl_dist_in,v 1.4 2004/07/01 12:19:35 avsm Exp $
  
  ##NAME: TLS_TRUSTCERTS:0
  #
-@@ -187,6 +187,6 @@ TLS_VERIFYPEER=NONE
+@@ -194,8 +194,8 @@ TLS_VERIFYPEER=NONE
  # problems with SSL clients.  Disable SSL caching by commenting out the
  # following settings:
  
 -TLS_CACHEFILE=@localstatedir@/couriersslcache
 -TLS_CACHESIZE=524288
-+#TLS_CACHEFILE=@localstatedir@/couriersslcache
-+#TLS_CACHESIZE=524288
++# TLS_CACHEFILE=@localstatedir@/couriersslcache
++# TLS_CACHESIZE=524288
  
+ ##NAME: MAILDIRPATH:0
+ #

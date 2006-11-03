@@ -1,0 +1,12 @@
+$OpenBSD: patch-tcpd_libcouriertls_c,v 1.1 2006/11/03 16:19:56 mbalmer Exp $
+--- tcpd/libcouriertls.c.orig	Fri Dec 30 18:46:37 2005
++++ tcpd/libcouriertls.c	Fri Dec 30 18:45:27 2005
+@@ -671,7 +671,7 @@ static int get_func(void *rec, size_t re
+ 	time_t timeout;
+ 	size_t session_id_len;
+ 
+-	unsigned char *sess;
++	const unsigned char *sess;
+ 
+ 	if (recsize < sizeof(timeout)+sizeof(session_id_len))
+ 		return (0);
