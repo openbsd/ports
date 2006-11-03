@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2006/09/18 11:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2006/11/03 22:18:41 naddy Exp $
 
 COMMENT=	"technical diagrams drawing tool"
 
 DISTNAME=	dia-0.95-1
-PKGNAME=	dia-0.95.1
+PKGNAME=	dia-0.95.1p0
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.gnome.org/projects/dia/
@@ -31,6 +31,7 @@ LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 MODULES=	devel/gettext
 
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng \

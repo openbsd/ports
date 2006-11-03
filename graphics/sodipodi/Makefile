@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2006/10/04 21:00:53 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.10 2006/11/03 22:18:41 naddy Exp $
 
-COMMENT=		"SVG vector drawing application."
+COMMENT=		"SVG vector drawing application"
 
 DISTNAME=		sodipodi-0.34
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://sodipodi.sourceforge.net/
@@ -31,6 +31,7 @@ LIB_DEPENDS=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS=		--with-xft
