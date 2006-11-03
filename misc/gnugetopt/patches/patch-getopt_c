@@ -1,0 +1,63 @@
+$OpenBSD: patch-getopt_c,v 1.1.1.1 2006/11/03 13:25:02 bernd Exp $
+--- getopt.c.orig	Mon Nov  7 23:17:01 2005
++++ getopt.c	Fri Nov  3 14:18:16 2006
+@@ -88,7 +88,7 @@ void *our_malloc(size_t size)
+ {
+ 	void *ret=malloc(size);
+ 	if (! ret) {
+-		fprintf(stderr,_("%s: Out of memory!\n"),"getopt");
++		fprintf(stderr,_("%s: Out of memory!\n"),"gnugetopt");
+ 		exit(3);
+ 	}
+ 	return(ret);
+@@ -98,7 +98,7 @@ void *our_realloc(void *ptr, size_t size
+ {
+ 	void *ret=realloc(ptr,size);
+ 	if (! ret && size) {
+-		fprintf(stderr,_("%s: Out of memory!\n"),"getopt");
++		fprintf(stderr,_("%s: Out of memory!\n"),"gnugetopt");
+ 		exit(3);
+ 	}
+ 	return(ret);
+@@ -231,8 +231,8 @@ int generate_output(char * argv[],int ar
+ void parse_error(const char *message)
+ {
+ 	if (message)
+-		fprintf(stderr,"getopt: %s\n",message);
+-	fputs(_("Try `getopt --help' for more information.\n"),stderr);
++		fprintf(stderr,"gnugetopt: %s\n",message);
++	fputs(_("Try `gnugetopt --help' for more information.\n"),stderr);
+ 	exit(2);
+ }
+ 
+@@ -323,9 +323,9 @@ void set_shell(const char *new_shell)
+ 
+ void print_help(void)
+ {
+-	fputs(_("Usage: getopt optstring parameters\n"),stderr);
+-	fputs(_("       getopt [options] [--] optstring parameters\n"),stderr);
+-	fputs(_("       getopt [options] -o|--options optstring [options] [--]\n"),stderr);
++	fputs(_("Usage: gnugetopt optstring parameters\n"),stderr);
++	fputs(_("       gnugetopt [options] [--] optstring parameters\n"),stderr);
++	fputs(_("       gnugetopt [options] -o|--options optstring [options] [--]\n"),stderr);
+ 	fputs(_("              parameters\n"),stderr);
+ 	fputs(_("  -a, --alternative            Allow long options starting with single -\n"),stderr);
+ 	fputs(_("  -h, --help                   This small usage guide\n"),stderr);
+@@ -335,7 +335,7 @@ void print_help(void)
+ 	fputs(_("  -q, --quiet                  Disable error reporting by getopt(3)\n"),stderr);
+ 	fputs(_("  -Q, --quiet-output           No normal output\n"),stderr);
+ 	fputs(_("  -s, --shell=shell            Set shell quoting conventions\n"),stderr);	
+-	fputs(_("  -T, --test                   Test for getopt(1) version\n"),stderr);
++	fputs(_("  -T, --test                   Test for gnugetopt(1) version\n"),stderr);
+ 	fputs(_("  -u, --unqote                 Do not quote the output\n"),stderr);
+ 	fputs(_("  -V, --version                Output version information\n"),stderr);
+ 	exit(2);
+@@ -443,7 +443,7 @@ int main(int argc, char *argv[])
+ 			quote=0;
+ 			break;
+ 		case 'V':
+-			printf(_("getopt (enhanced) 1.1.4\n"));
++			printf(_("gnugetopt (enhanced) 1.1.4\n"));
+ 			exit(0);
+ 		case '?':
+ 		case ':':

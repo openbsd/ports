@@ -1,0 +1,42 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2006/11/03 13:25:02 bernd Exp $
+--- Makefile.orig	Mon Nov  7 23:32:46 2005
++++ Makefile	Thu Nov  2 15:07:47 2006
+@@ -1,17 +1,17 @@
+ .SUFFIXES:
+ 
+ DESTDIR=
+-prefix=/usr/local
++prefix=$(PREFIX)
+ bindir=$(prefix)/bin
+ mandir=$(prefix)/man
+ man1dir=$(mandir)/man1
+ libdir=$(prefix)/lib
+ sharedir=$(prefix)/share
+-getoptdir=$(libdir)/getopt
++getoptdir=$(sharedir)/examples/getopt
+ localedir=$(sharedir)/locale
+ 
+ # Define this to 0 to use the getopt(3) routines in this package.
+-LIBCGETOPT=1
++LIBCGETOPT=0
+ 
+ # Define this to 1 if you do not have the gettext routines
+ WITHOUT_GETTEXT=0
+@@ -33,7 +33,7 @@ MSGFMT=msgfmt
+ LANGUAGES = cs de es fr it ja nl pt_BR
+ MOFILES:=$(patsubst %,po/%.mo,$(LANGUAGES))
+ 
+-CPPFLAGS=-DLIBCGETOPT=$(LIBCGETOPT) -DWITH_GETTEXT=$(WITH_GETTEXT) -DLOCALEDIR=\"$(localedir)\" -DNOT_UTIL_LINUX
++CPPFLAGS+=-DLIBCGETOPT=$(LIBCGETOPT) -DWITH_GETTEXT=$(WITH_GETTEXT) -DLOCALEDIR=\"$(localedir)\" -DNOT_UTIL_LINUX
+ ifeq ($(LIBCGETOPT),0)
+ CPPFLAGS+=-I./gnu 
+ endif
+@@ -43,8 +43,6 @@ WARNINGS=-Wall \
+          -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes \
+          -Wnested-externs -Winline
+ OPTIMIZE=-O3 -fno-strength-reduce
+-CFLAGS=$(WARNINGS) $(OPTIMIZE)
+-LDFLAGS=
+ 
+ sources=getopt.c
+ ifeq ($(LIBCGETOPT),0)

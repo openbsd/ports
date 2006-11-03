@@ -1,0 +1,22 @@
+$OpenBSD: patch-getopt-parse_bash,v 1.1.1.1 2006/11/03 13:25:02 bernd Exp $
+--- getopt-parse.bash.orig	Thu Nov  2 15:33:00 2006
++++ getopt-parse.bash	Thu Nov  2 15:33:49 2006
+@@ -1,6 +1,6 @@
+ #!/bin/bash
+ 
+-# A small example program for using the new getopt(1) program.
++# A small example program for using the new gnugetopt(1) program.
+ # This program will only work with bash(1)
+ # An similar program using the tcsh(1) script language can be found
+ # as parse.tcsh
+@@ -18,8 +18,8 @@
+ 
+ # Note that we use `"$@"' to let each command-line parameter expand to a 
+ # separate word. The quotes around `$@' are essential!
+-# We need TEMP as the `eval set --' would nuke the return value of getopt.
+-TEMP=`getopt -o ab:c:: --long a-long,b-long:,c-long:: \
++# We need TEMP as the `eval set --' would nuke the return value of gnugetopt.
++TEMP=`gnugetopt -o ab:c:: --long a-long,b-long:,c-long:: \
+      -n 'example.bash' -- "$@"`
+ 
+ if [ $? != 0 ] ; then echo "Terminating..." >&2 ; exit 1 ; fi

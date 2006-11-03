@@ -1,0 +1,32 @@
+$OpenBSD: patch-getopt-parse_tcsh,v 1.1.1.1 2006/11/03 13:25:02 bernd Exp $
+--- getopt-parse.tcsh.orig	Thu Nov  2 15:33:06 2006
++++ getopt-parse.tcsh	Thu Nov  2 15:33:32 2006
+@@ -1,6 +1,6 @@
+ #!/bin/tcsh
+ 
+-# A small example program for using the new getopt(1) program.
++# A small example program for using the new gnugetopt(1) program.
+ # This program will only work with tcsh(1)
+ # An similar program using the bash(1) script language can be found
+ # as parse.bash
+@@ -17,16 +17,16 @@
+ # --> `wow!*\?'
+ 
+ # Note that we had to escape the exclamation mark in the wow-argument. This
+-# is _not_ a problem with getopt, but with the tcsh command parsing. If you
++# is _not_ a problem with gnugetopt, but with the tcsh command parsing. If you
+ # would give the same line from the bash prompt (ie. call ./parse.tcsh),
+ # you could remove the exclamation mark.
+ 
+ # This is a bit tricky. We use a temp variable, to be able to check the
+-# return value of getopt (eval nukes it). argv contains the command arguments
++# return value of gnugetopt (eval nukes it). argv contains the command arguments
+ # as a list. The ':q`  copies that list without doing any substitutions:
+-# each element of argv becomes a separate argument for getopt. The braces
++# each element of argv becomes a separate argument for gnugetopt. The braces
+ # are needed because the result is also a list.
+-set temp=(`getopt -s tcsh -o ab:c:: --long a-long,b-long:,c-long:: -- $argv:q`)
++set temp=(`gnugetopt -s tcsh -o ab:c:: --long a-long,b-long:,c-long:: -- $argv:q`)
+ if ($? != 0) then 
+   echo "Terminating..." >/dev/stderr
+   exit 1

@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/03 13:25:02 bernd Exp $
+bin/gnugetopt
+@man man/man1/gnugetopt.1
+share/examples/gnugetopt/
+share/examples/gnugetopt/getopt-parse.bash
+share/examples/gnugetopt/getopt-parse.tcsh
