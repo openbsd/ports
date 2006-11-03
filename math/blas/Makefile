@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2006/10/03 06:00:03 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/03 08:29:00 steven Exp $
 
 COMMENT=	"Basic Linear Algebra Subprograms"
 
+VERSION=	1.0
 DISTNAME=	blas
-PKGNAME=	${DISTNAME}-${LIBblas_VERSION}p0
+PKGNAME=	${DISTNAME}-${VERSION}p0
 SHARED_LIBS=	blas	1.0
 
 CATEGORIES=	math
@@ -24,7 +25,7 @@ MASTER_SITES=	ftp://ftp.netlib.org/blas/ \
 		http://www.netlib.no/netlib/blas/
 MASTER_SITES0=	${MASTER_SITES:S/blas/lapack/}
 EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	${PKGNAME}
+DIST_SUBDIR=	${DISTNAME}-${VERSION}
 WRKDIST=	${WRKDIR}
 
 MAKE_FILE=	${FILESDIR}/Makefile

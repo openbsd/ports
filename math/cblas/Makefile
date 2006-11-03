@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/02 21:58:25 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/03 08:29:00 steven Exp $
 
 COMMENT=	"C interface to the BLAS library"
 
+VERSION=	1.0
 DISTNAME=	cblas
-PKGNAME=	${DISTNAME}-${LIBcblas_VERSION}
+PKGNAME=	${DISTNAME}-${VERSION}
 SHARED_LIBS=	cblas	1.0
 
 CATEGORIES=	math
@@ -22,7 +23,7 @@ MASTER_SITES=	http://www.netlib.org/blas/blast-forum/ \
 		ftp://netlib.bell-labs.com/netlib/blas/blast-forum/ \
 		http://www.netlib.no/netlib/blas/blast-forum/
 EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	${PKGNAME}
+DIST_SUBDIR=	${DISTNAME}-${VERSION}
 WRKDIST=	${WRKDIR}/CBLAS
 WRKSRC=		${WRKDIST}/src
 

@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2006/10/03 10:26:49 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2006/11/03 08:29:00 steven Exp $
 
 COMMENT=	"library of Fortran 77 linear algebra subroutines"
 
+VERSION=	3.0
 DISTNAME=	LAPACK
-PKGNAME=	lapack-3.0
+PKGNAME=	${DISTNAME:L}-${VERSION}
 SHARED_LIBS=	lapack 3.0
 CATEGORIES=	math
-DISTFILES=	lapack.tgz manpages.tgz
+DISTFILES=	${DISTNAME:L}.tgz manpages.tgz
 
 HOMEPAGE=	http://www.netlib.org/lapack/
 
@@ -24,7 +25,7 @@ MASTER_SITES=	ftp://ftp.netlib.org/lapack/ \
 
 LIB_DEPENDS=	blas.>=1::math/blas
 
-DIST_SUBDIR=	${PKGNAME}
+DIST_SUBDIR=	${DISTNAME:L}-${VERSION}
 WRKDIST=	${WRKDIR}
 WRKSRC=		${WRKDIR}/${DISTNAME}/SRC
 MAKE_FILE=	${FILESDIR}/Makefile
