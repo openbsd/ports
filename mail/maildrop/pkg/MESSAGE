@@ -1,7 +1,8 @@
 The documentation for maildrop has been installed in
 ${PREFIX}/share/doc/maildrop.
 
-You should also read the pkg/SECURITY file now, as it has
+You should also read ${PREFIX}/share/doc/maildrop/SECURITY
+file now, as it has
 some important information regarding the setuid/setgid
 bits that some of the binaries that have been installed 
 may need for correct operation.

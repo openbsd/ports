@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.ldap,v 1.1 2004/12/06 23:06:01 mbalmer Exp $
-share/examples/maildrop/maildropldap.config
-@sample ${SYSCONFDIR}/maildropldap.config

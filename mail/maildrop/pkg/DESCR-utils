@@ -1,4 +1,2 @@
-The Courier mail suite (courier-imap, maildrop) use the userdb
-format as one method of authenticating users and storing information
-about them.  This package also includes support for the maildir
-soft quota system.
+The Courier mail suite (courier-imap, maildrop) use this package
+to includes support for the maildir soft quota system.

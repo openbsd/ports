@@ -1,24 +1,7 @@
-@comment $OpenBSD: PLIST-utils,v 1.5 2005/08/16 18:28:55 espie Exp $
-@conflict maildrop-<=1.5.3
+@comment $OpenBSD: PLIST-utils,v 1.6 2006/11/03 13:50:54 mbalmer Exp $
+@newgroup _courier:556
+@newuser _courier:556:556:daemon:Courier Mail Server:/var/empty:/sbin/nologin
 bin/deliverquota
 bin/maildirmake
-bin/makeuserdb
-bin/pw2userdb
-bin/userdb
-bin/userdbpw
-bin/vchkpw2userdb
 @man man/man1/maildirmake.1
 @man man/man8/deliverquota.8
-@man man/man8/makeuserdb.8
-@man man/man8/pw2userdb.8
-@man man/man8/userdb.8
-@man man/man8/userdbpw.8
-@man man/man8/vchkpw2userdb.8
-share/doc/maildrop/
-share/doc/maildrop/scripts/
-share/doc/maildrop/scripts/makedat
-share/doc/maildrop/scripts/makeuserdb
-share/doc/maildrop/scripts/pw2userdb
-share/doc/maildrop/scripts/userdb
-share/doc/maildrop/scripts/userdbpw
-share/doc/maildrop/scripts/vchkpw2userdb

@@ -1,18 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/12/06 23:06:01 mbalmer Exp $
-@mode 0555
+@comment $OpenBSD: PLIST,v 1.9 2006/11/03 13:50:54 mbalmer Exp $
+@newgroup _courier:556
+@newuser _courier:556:556:daemon:Courier Mail Server:/var/empty:/sbin/nologin
 bin/lockmail
 bin/mailbot
 bin/maildrop
-bin/makedat
-bin/makedatprog
 bin/makemime
 bin/reformail
 bin/reformime
-@mode
 @man man/man1/lockmail.1
 @man man/man1/mailbot.1
 @man man/man1/maildrop.1
-@man man/man1/makedat.1
 @man man/man1/makemime.1
 @man man/man1/reformail.1
 @man man/man1/reformime.1
@@ -24,7 +21,11 @@ bin/reformime
 share/doc/maildrop/
 share/doc/maildrop/INSTALL
 share/doc/maildrop/README
+share/doc/maildrop/README.maildirquota.txt
 share/doc/maildrop/README.postfix
+share/doc/maildrop/README.sharedfolders.txt
+share/doc/maildrop/README.unicode.txt
+share/doc/maildrop/SECURITY
 share/doc/maildrop/UPGRADE
 share/doc/maildrop/html/
 share/doc/maildrop/html/deliverquota.html
@@ -37,15 +38,11 @@ share/doc/maildrop/html/maildrop.html
 share/doc/maildrop/html/maildropex.html
 share/doc/maildrop/html/maildropfilter.html
 share/doc/maildrop/html/maildropgdbm.html
-share/doc/maildrop/html/makedat.html
 share/doc/maildrop/html/makemime.html
-share/doc/maildrop/html/makeuserdb.html
 share/doc/maildrop/html/manpage.css
 share/doc/maildrop/html/reformail.html
 share/doc/maildrop/html/reformime.html
 share/doc/maildrop/html/rfc2045.html
 share/doc/maildrop/html/rfc822.html
-share/doc/maildrop/html/userdb.html
-share/doc/maildrop/html/userdbpw.html
-%%ldap%%
-%%mysql%%
+share/doc/maildrop/maildroptips.txt
+share/doc/maildrop/quotawarnmsg
