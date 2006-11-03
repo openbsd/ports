@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2006/08/01 12:13:28 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/11/03 14:29:12 naddy Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"XMMS input plugin for playing SID files"
 
 DISTNAME=	xmms-sid-0.7.4
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	audio
 HOMEPAGE=	http://www.tnsp.org/xmms-sid.php
 
@@ -24,6 +24,7 @@ LIB_DEPENDS=	sidplay.>=1::audio/libsidplay
 RUN_DEPENDS=	::audio/xmms
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-sidplay-prefix=${LOCALBASE}
 
