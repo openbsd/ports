@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.164 2006/10/29 14:38:34 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.165 2006/11/03 11:47:30 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -17,6 +17,7 @@
      SUBDIR += c-client
      SUBDIR += clamsmtp
      SUBDIR += cmail
+     SUBDIR += courier-authlib
      SUBDIR += courier-imap
      SUBDIR += cucipop
      SUBDIR += cue
