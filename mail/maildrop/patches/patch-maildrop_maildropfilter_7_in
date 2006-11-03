@@ -1,0 +1,12 @@
+$OpenBSD: patch-maildrop_maildropfilter_7_in,v 1.1 2006/11/03 13:52:19 mbalmer Exp $
+--- maildrop/maildropfilter.7.in.orig	Tue Feb  1 02:46:57 2005
++++ maildrop/maildropfilter.7.in	Tue Feb  1 02:47:22 2005
+@@ -295,7 +295,7 @@ file, in order to avoid a race condition
+ also trying to remove the same stale dot-lock, at the same time.
+ .TP
+ \fBLOGNAME\fR
+-Name of the user to who the message is being
++Name of the user to whom the message is being
+ delivered.
+ .TP
+ \fBMAILFILTER\fR

@@ -1,0 +1,12 @@
+$OpenBSD: patch-maildrop_Makefile_in,v 1.1 2006/11/03 13:52:19 mbalmer Exp $
+--- maildrop/Makefile.in.orig	Fri Jan 21 08:15:18 2005
++++ maildrop/Makefile.in	Fri Jan 21 08:15:49 2005
+@@ -166,7 +166,7 @@ AUTOMAKE = srcdir=${srcdir} @SHELL@ ${sr
+ AWK = @AWK@
+ CC = @CC@
+ CCDEPMODE = @CCDEPMODE@
+-CFLAGS = @CFLAGS@
++CFLAGS = @CFLAGS@ -I/usr/local/include
+ COURIERAUTHCONFIG = @COURIERAUTHCONFIG@
+ CPP = @CPP@
+ CPPFLAGS = @CPPFLAGS@

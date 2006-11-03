@@ -1,0 +1,24 @@
+$OpenBSD: patch-maildir_Makefile_am,v 1.1 2006/11/03 13:52:19 mbalmer Exp $
+--- maildir/Makefile.am.orig	Sat Jan  7 22:49:37 2006
++++ maildir/Makefile.am	Sat Jan  7 22:53:22 2006
+@@ -115,16 +115,16 @@ mailbot.h: config.status
+ 	echo '#define MAILBOT "@MAILBOT@"' >mailbot.h
+ 
+ maildirsharedrc.h: config.status
+-	echo '#define MAILDIRSHAREDRC "$(sysconfdir)/maildirshared"' >maildirsharedrc.h
++	echo '#define MAILDIRSHAREDRC "$(sysconfdir)/maildrop/maildirshared"' >maildirsharedrc.h
+ 
+ maildirfilterconfig.h: config.status
+-	echo '#define MAILDIRFILTERCONFIG "$(sysconfdir)/maildirfilterconfig"' >maildirfilterconfig.h
++	echo '#define MAILDIRFILTERCONFIG "$(sysconfdir)/maildrop/maildirfilterconfig"' >maildirfilterconfig.h
+ 
+ autoresponsequota.h: config.status
+-	echo '#define AUTORESPONSEQUOTA "$(sysconfdir)/autoresponsesquota"' >autoresponsequota.h
++	echo '#define AUTORESPONSEQUOTA "$(sysconfdir)/maildrop/autoresponsesquota"' >autoresponsequota.h
+ 
+ quotawarnmsg.h: config.status
+-	echo '#define QUOTAWARNMSG "$(sysconfdir)/quotawarnmsg"' >quotawarnmsg.h
++	echo '#define QUOTAWARNMSG "$(sysconfdir)/maildrop/quotawarnmsg"' >quotawarnmsg.h
+ maildir.libdeps: config.status
+ 	echo @LIBFAM@ >maildir.libdeps
+ 

@@ -1,0 +1,23 @@
+$OpenBSD: patch-maildrop_configure,v 1.1 2006/11/03 13:52:19 mbalmer Exp $
+--- maildrop/configure.orig	Sat Jan  7 20:08:16 2006
++++ maildrop/configure	Sat Jan  7 20:21:41 2006
+@@ -22317,17 +22317,12 @@ echo "$as_me:$LINENO: result: $maildrop_
+ echo "${ECHO_T}$maildrop_cv_SYS_INSTALL_RESET_GID" >&6
+ 
+ # Check whether --with-default-maildrop or --without-default-maildrop was given.
+-if test "${with_default_maildrop+set}" = set; then
++if false; then
+   withval="$with_default_maildrop"
+   maildrop_cv_SYS_INSTALL_MBOXDIR="$withval"
+ else
+   # Courier defaults to ./Maildir
+-
+-	if test -d $srcdir/../courier
+-	then
+-		maildrop_cv_SYS_INSTALL_MBOXDIR=./Maildir
+-	fi
+-
++  maildrop_cv_SYS_INSTALL_MBOXDIR=./Maildir
+ fi;
+ 
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-maildrop_maildrop_1_in,v 1.1 2006/11/03 13:52:19 mbalmer Exp $
+--- maildrop/maildrop.1.in.orig	Sat Jan 29 12:08:36 2005
++++ maildrop/maildrop.1.in	Sat Jan 29 12:09:03 2005
+@@ -163,7 +163,7 @@ group or world permissions.
+ .SH "TEMPORARY FILES"
+ .PP
+ \fBmaildrop\fR is heavily optimized and tries to use as
+-little resources as possible. \fBmaildrop\fR reads smalle
++little resources as possible. \fBmaildrop\fR reads small
+ messages into
+ memory, then filters and/or delivers the message directly from memory. For
+ larger messages, \fBmaildrop\fR accesses the message directly
