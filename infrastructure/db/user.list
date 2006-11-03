@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.55 2006/11/01 14:56:58 alek Exp $
+$OpenBSD: user.list,v 1.56 2006/11/03 15:13:46 mbalmer Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -79,3 +79,4 @@ id  user		group		port options
 568 _milter-greylist			mail/milter-greylist
 569 _dkim-milter	_dkim-milter	mail/dkim-milter
 570 _mdefang		_mdefang	mail/mimedefang
+571 _courier		_courier	mail/maildrop
