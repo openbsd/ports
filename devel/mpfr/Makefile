@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/01 18:41:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/03 20:16:12 espie Exp $
 
 COMMENT=	"library for multiple-precision floating-point computations"
 
 DISTNAME=	mpfr-2.2.0
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS +=  mpfr                 0.0      # .1.0
 CATEGORIES=	devel math
 HOMEPAGE=	http://www.mpfr.org/
@@ -35,5 +36,14 @@ REORDER_DEPENDENCIES=${PORTSDIR}/infrastructure/mk/automake.dep
 # make sure we do not pick up an installed version of libmpfr
 REGRESS_FLAGS=	LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs} \
 		LDFLAGS="-L${WRKBUILD}/.libs -L${LOCALBASE}/lib"
+
+# needed on sparc64 at least: the mpfr tests are insufficient without 
+# gmp's internals
+
+BUILD_DEPENDS=	:gmp->=4.1.0:devel/gmp:configure
+pre-configure:
+	ln -s ${WRKDIR}/devel/gmp/gmp-* ${WRKDIR}/gmp
+	cd ${WRKDIR}/gmp && ${MAKE} fib_table.h mp_bases.h
+CONFIGURE_ARGS+=--with-gmp-build=${WRKDIR}/gmp
 
 .include <bsd.port.mk>
