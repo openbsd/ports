@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.792 2006/11/01 12:41:34 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.793 2006/11/03 17:03:28 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -40,9 +40,6 @@ ERRORS+= "Fatal: Variable $v is obsolete, use PACKAGE_REPOSITORY instead."
 # is internal to bsd.port.mk, not part of the user's API, and liable to
 # change without notice.
 #
-#
-# SCRIPTS_ENV	- Additional environment vars passed to scripts in
-#                 ${SCRIPTDIR} executed by bsd.port.mk.
 #
 # Variables to change if you want a special behavior:
 #
@@ -273,14 +270,6 @@ PATCHDIR?=		${.CURDIR}/patches
 .endif
 
 PATCH_LIST?=    patch-*
-
-.if exists(${.CURDIR}/scripts.${ARCH})
-SCRIPTDIR?=		${.CURDIR}/scripts.${ARCH}
-.elif exists(${.CURDIR}/scripts.${MACHINE_ARCH})
-SCRIPTDIR?=		${.CURDIR}/scripts.${MACHINE_ARCH}
-.else
-SCRIPTDIR?=		${.CURDIR}/scripts
-.endif
 
 .if exists(${.CURDIR}/files.${ARCH})
 FILESDIR?=		${.CURDIR}/files.${ARCH}
@@ -647,7 +636,6 @@ _INSTALL_MACROS=	BSD_INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 			BSD_INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
 			BSD_INSTALL_MAN_DIR="${INSTALL_MAN_DIR}"
 MAKE_ENV+=	${_INSTALL_MACROS}
-SCRIPTS_ENV+=	${_INSTALL_MACROS}
 
 # setup systrace variables
 NO_SYSTRACE?=	No
@@ -949,19 +937,6 @@ CONFIGURE_ENV+=		PATH=${PORTPATH}
 CONFIGURE_SHARED?=	--disable-shared
 .else
 CONFIGURE_SHARED?=	--enable-shared
-.endif
-
-# Passed to configure invocations, and user scripts
-SCRIPTS_ENV+= CURDIR=${.CURDIR} DISTDIR=${DISTDIR} \
-          PATH=${PORTPATH} WRKDIR=${WRKDIR} WRKDIST=${WRKDIST} \
-		  WRKSRC=${WRKSRC} WRKBUILD=${WRKBUILD} \
-		  PATCHDIR=${PATCHDIR} SCRIPTDIR=${SCRIPTDIR} FILESDIR=${FILESDIR} \
-		  PORTSDIR=${PORTSDIR} DEPENDS="${DEPENDS}" \
-		  PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} DEPBASE='${DEPBASE}' \
-		  X11BASE=${X11BASE}
-
-.if defined(BATCH)
-SCRIPTS_ENV+=	BATCH=yes
 .endif
 
 USE_X11?=No
@@ -1942,10 +1917,6 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} do-configure
 .else
 # What CONFIGURE normally does
-	@if [ -f ${SCRIPTDIR}/configure ]; then \
-		cd ${.CURDIR} &&  ${_SYSTRACE_CMD} ${SETENV} \
-			${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure; \
-	fi
 .  for _c in ${CONFIGURE_STYLE:L}
 .    if defined(MOD${_c:U}_configure)
 	@${MOD${_c:U}_configure}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.49 2006/10/21 12:59:35 espie Exp $
+# $OpenBSD: Makefile.template,v 1.50 2006/11/03 17:03:28 espie Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -156,7 +156,6 @@ MASTER_SITES=		???
 #LDFLAGS=		???
 #MAKE_FILE=		???
 #PKG_ARCH=		???
-#SCRIPTS_ENV=		???
 #WRKDIST=		??? if other than ${WRKDIR}/$DISTNAME
 #WRKSRC=		??? if other than ${WRKDIST}
 #WRKBUILD=		??? if other than ${WRKSRC}
