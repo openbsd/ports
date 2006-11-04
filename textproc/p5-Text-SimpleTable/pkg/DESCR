@@ -1,0 +1,12 @@
+Simple eyecandy ASCII tables, as seen in Catalyst.
+
+use Text::SimpleTable;
+
+my $t1 = Text::SimpleTable->new( 5, 10 );
+$t1->row( 'foobarbaz', 'yadayadayada' );
+print $t1->draw;
+
+.-------+------------.
+| foob- | yadayaday- |
+| arbaz | ada        |
+'-------+------------'
