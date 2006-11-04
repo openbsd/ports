@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/04 19:18:03 espie Exp $
+${P5SITE}/HTTP/
+${P5SITE}/HTTP/Body/
+${P5SITE}/HTTP/Body.pm
+${P5SITE}/HTTP/Body/MultiPart.pm
+${P5SITE}/HTTP/Body/OctetStream.pm
+${P5SITE}/HTTP/Body/UrlEncoded.pm
+@man man/man3p/HTTP::Body.3p
+@man man/man3p/HTTP::Body::MultiPart.3p
+@man man/man3p/HTTP::Body::OctetStream.3p
+@man man/man3p/HTTP::Body::UrlEncoded.3p

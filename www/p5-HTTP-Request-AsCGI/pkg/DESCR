@@ -1,0 +1,2 @@
+Provides a convenient way for setting up a CGI environment from an
+HTTP::Request.

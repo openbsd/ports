@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/04 19:22:26 espie Exp $
+${P5SITE}/HTTP/Request/AsCGI.pm
+@man man/man3p/HTTP::Request::AsCGI.3p
