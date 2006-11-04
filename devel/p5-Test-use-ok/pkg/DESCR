@@ -1,0 +1,8 @@
+According to the Test::More documentation, it is recommended to run
+"use_ok()" inside a "BEGIN" block, so functions are exported at
+compile-time and prototypes are properly honored.
+
+With this module, simply change all "use_ok" in test scripts to "use
+ok", and they will be executed at "BEGIN" time. The explicit space after
+"use" makes it clear that this is a single compile-time action.
+
