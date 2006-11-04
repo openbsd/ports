@@ -1,0 +1,9 @@
+The Static::Simple plugin is designed to make serving static content
+in your application during development quick and easy, without
+requiring a single line of code from you.
+
+It will detect static files used in your application by looking for file
+extensions in the URI. By default, you can simply load this plugin and
+it will immediately begin serving your static files with the correct
+MIME type. The light-weight MIME::Types module is used to map file
+extensions to IANA-registered MIME types.
