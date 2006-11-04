@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/04 13:45:29 espie Exp $
+${P5SITE}/Class/
+${P5SITE}/Class/Throwable.pm
+@man man/man3p/Class::Throwable.3p
