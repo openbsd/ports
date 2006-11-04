@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure_ac,v 1.1 2006/11/04 12:52:06 kili Exp $
+
+From open-cobol-0.33 release candidate.
+
+--- configure.ac.orig	Tue Feb  1 08:40:20 2005
++++ configure.ac	Sat Nov  4 12:06:17 2006
+@@ -107,7 +107,7 @@ AC_CHECK_FUNCS([dbopen],
+ 
+ # Checks for gmp.
+ AC_CHECK_HEADERS([gmp.h], , AC_MSG_ERROR(gmp.h is required))
+-AC_CHECK_LIB([gmp], [__gmp_rand], , AC_MSG_ERROR(GMP 3 or later is required))
++AC_CHECK_LIB([gmp], [__gmp_randinit], , AC_MSG_ERROR(GMP 3 or later is required))
+ LIBCOB_LIBS="$LIBCOB_LIBS -lgmp"
+ 
+ # Checks for ltdl.

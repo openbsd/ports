@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2006/08/03 13:09:09 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/11/04 12:52:06 kili Exp $
 
 COMMENT=	"open source COBOL compiler"
 
-DISTNAME=	open-cobol-0.31
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=	cob 1.0
-MODGNU_SHARED_LIBS=	cob '-no-undefined'
+DISTNAME=	open-cobol-0.32
+SHARED_LIBS +=	cob                  2.0      # .1.0
 CATEGORIES=	lang
 
 HOMEPAGE=	http://open-cobol.sourceforge.net/
@@ -21,12 +19,13 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=open-cobol/}
 LIB_DEPENDS=	ltdl.>=4::devel/libtool \
 	 	gmp.>=6::devel/gmp
 
-MODULES=	gettext
+MODULES=	devel/gettext
 USE_LIBTOOL=	Yes
 
 WANTLIB=	c m ncurses
 
-CONFIGURE_STYLE=gnu
+AUTOCONF_VERSION=	2.59
+CONFIGURE_STYLE=gnu autoconf
 CONFIGURE_ENV=  LDFLAGS="-L${LOCALBASE}/lib" \
 		CFLAGS="-I${LOCALBASE}/include" \
 		CPPFLAGS="-I${LOCALBASE}/include"
