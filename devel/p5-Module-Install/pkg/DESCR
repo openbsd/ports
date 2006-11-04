@@ -1,0 +1,4 @@
+Module::Install is a package for writing installers for CPAN (or
+CPAN-like) distributions that are clean, simple, minimalist, act in a
+strictly correct manner with both the ExtUtils::MakeMaker and
+Module::Build build systems.
