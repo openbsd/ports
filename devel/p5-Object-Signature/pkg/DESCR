@@ -1,0 +1,2 @@
+Object::Signature is an abstract base class that you can inherit from in
+order to allow your objects to generate unique cryptographic signatures.
