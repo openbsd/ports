@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/04 14:43:11 espie Exp $
+${P5SITE}/Config/
+${P5SITE}/Config/General/
+${P5SITE}/Config/General.pm
+${P5SITE}/Config/General/Extended.pm
+${P5SITE}/Config/General/Interpolated.pm
+@man man/man3p/Config::General.3p
+@man man/man3p/Config::General::Extended.3p
+@man man/man3p/Config::General::Interpolated.3p
