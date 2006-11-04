@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/04 19:09:24 espie Exp $
+${P5SITE}/CGI/
+${P5SITE}/CGI/Simple/
+${P5SITE}/CGI/Simple.pm
+${P5SITE}/CGI/Simple/Cookie.pm
+${P5SITE}/CGI/Simple/Standard.pm
+${P5SITE}/CGI/Simple/Util.pm
+@man man/man3p/CGI::Simple.3p
+@man man/man3p/CGI::Simple::Cookie.3p
+@man man/man3p/CGI::Simple::Standard.3p
+@man man/man3p/CGI::Simple::Util.3p
