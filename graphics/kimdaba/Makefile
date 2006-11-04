@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2006/09/18 11:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/11/04 13:30:43 espie Exp $
 
 COMMENT=		"kde image database"
 CATEGORIES=		graphics x11 x11/kde
 DISTNAME=		kphotoalbum-2.2
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 EXTRACT_SUFX=		.tar.bz2
 HOMEPAGE=		http://ktown.kde.org/kphotoalbum/
 MASTER_SITES=		${HOMEPAGE}download/
@@ -12,7 +12,8 @@ WANTLIB=	ICE Xrender SM Xext pthread stdc++ c X11 util m z \
 		art_lgpl_2 jpeg png iconv idn
 
 LIB_DEPENDS=	kdecore.>=6,DCOP,kdefx,kdesu,kdeui,kio,kwalletclient::x11/kde/libs3 \
-		kipi::graphics/libkipi
+		kipi::graphics/libkipi \
+		exiv2::graphics/exiv2
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 SHARED_ONLY=Yes
