@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/21 02:54:50 msf Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/04 15:22:46 espie Exp $
 
-COMMENT= 	"Perl extension for emulating troublesome interfaces"
+COMMENT= 	"perl extension for emulating troublesome interfaces"
 
-DISTNAME=	Test-MockObject-0.20
+DISTNAME=	Test-MockObject-1.07
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
@@ -16,7 +16,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE= perl
+RUN_DEPENDS=		::devel/p5-Universal-isa \
+			::devel/p5-Universal-can
+
+REGRESS_DEPENDS=	${RUN_DEPENDS}
+
+CONFIGURE_STYLE= perl build
 
 PKG_ARCH= *
 
