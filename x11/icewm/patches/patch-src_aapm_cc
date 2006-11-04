@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_aapm_cc,v 1.1 2006/11/04 17:59:19 fgsch Exp $
+--- src/aapm.cc.orig	Tue Oct 24 12:38:18 2006
++++ src/aapm.cc	Tue Oct 24 12:39:12 2006
+@@ -34,7 +34,7 @@
+ #include <machine/apm_bios.h>
+ #endif
+ 
+-#ifdef __NetBSD__
++#if defined __NetBSD__ || defined __OpenBSD__
+ #include <sys/file.h>
+ #include <sys/ioctl.h>
+ #include <sys/types.h>
+@@ -64,7 +64,7 @@ static YColor *taskBarBg = 0;
+ void ApmStr(char *s, bool Tool) {
+ #ifdef __FreeBSD__
+     struct apm_info ai;
+-#elif defined __NetBSD__
++#elif defined __NetBSD__ || defined __OpenBSD__
+     struct apm_power_info ai;
+ #else
+     char buf[80];
+@@ -105,7 +105,7 @@ void ApmStr(char *s, bool Tool) {
+     BATlife = ai.ai_batt_life;
+     BATtime = ai.ai_batt_time == 0 ? -1 : ai.ai_batt_time;
+     strcpy(units, "sec");
+-#elif defined __NetBSD__
++#elif defined __NetBSD__ || defined __OpenBSD__
+     memset(&ai, 0, sizeof(ai));
+     if (ioctl(fd, APM_IOC_GETPOWER, &ai) == -1)
+     {
