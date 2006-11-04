@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2006/06/03 12:47:31 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2006/11/04 23:58:11 espie Exp $
 bin/amor
 bin/kodo
 bin/kteatime
@@ -7,24 +7,24 @@ bin/kweatherreport
 bin/kweatherservice
 bin/kworldclock
 include/AmorIface.h
-${KDE}/eyes_panelapplet.a
 ${KDE}/eyes_panelapplet.la
-${KDE}/fifteen_panelapplet.a
+${KDE}/eyes_panelapplet.so
 ${KDE}/fifteen_panelapplet.la
-${KDE}/kcm_weather.a
+${KDE}/fifteen_panelapplet.so
 ${KDE}/kcm_weather.la
-${KDE}/kcm_weatherservice.a
+${KDE}/kcm_weather.so
 ${KDE}/kcm_weatherservice.la
-${KDE}/kmoon_panelapplet.a
+${KDE}/kcm_weatherservice.so
 ${KDE}/kmoon_panelapplet.la
-${KDE}/kweatherreport.a
+${KDE}/kmoon_panelapplet.so
 ${KDE}/kweatherreport.la
-${KDE}/weather_panelapplet.a
+${KDE}/kweatherreport.so
 ${KDE}/weather_panelapplet.la
-${KDE}/ww_panelapplet.a
+${KDE}/weather_panelapplet.so
 ${KDE}/ww_panelapplet.la
-lib/libkdeinit_kweatherreport.a
+${KDE}/ww_panelapplet.so
 lib/libkdeinit_kweatherreport.la
+lib/libkdeinit_kweatherreport.so
 share/applications/kde/amor.desktop
 share/applications/kde/kodo.desktop
 share/applications/kde/kteatime.desktop
