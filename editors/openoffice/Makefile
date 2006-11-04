@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/11/03 05:11:09 kurt Exp $
+# $OpenBSD: Makefile,v 1.20 2006/11/04 12:29:20 kurt Exp $
 
 ONLY_FOR_ARCHS= i386
 
@@ -48,7 +48,7 @@ BUILD_DEPENDS=	:zip-*:archivers/zip \
 		::textproc/libxslt \
 		::print/cups \
 		::devel/apache-ant \
-		:db-java-4.*:databases/db/v4,-java
+		:db-java-4.*:databases/db/v4,-java,java
 
 BASE_LIBS=	gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.14::x11/gtk+2 \
 		python2.3:python-2.3.*:lang/python/2.3 \
@@ -67,7 +67,7 @@ WANTLIB=	X11 m
 MODULES=	x11/qt3
 . elif ${SUBPACKAGE} == "-java"
 RUN_DEPENDS=	::editors/openoffice \
-		:db-java-4.*:databases/db/v4,-java
+		:db-java-4.*:databases/db/v4,-java,java
 WANTLIB=	c m pthread stdc++
 MODULES=	java
 MODJAVA_VER=	1.4+
