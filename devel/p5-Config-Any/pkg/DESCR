@@ -1,0 +1,4 @@
+Config::Any provides a facility for Perl applications and libraries to
+load configuration data from multiple different file formats. It
+supports XML, YAML, JSON, Apache-style configuration, Windows INI
+files, and even Perl code.
