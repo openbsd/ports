@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/04 18:19:08 espie Exp $
+${P5SITE}/Crypt/
+${P5SITE}/Crypt/PasswdMD5.pm
+@man man/man3p/Crypt::PasswdMD5.3p

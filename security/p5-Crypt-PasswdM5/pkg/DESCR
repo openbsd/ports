@@ -1,0 +1,3 @@
+Simple interface to encrypt passwords for comparison
+against standard md5-based Unix /etc/passwd, or Apache's
+htpasswd.
