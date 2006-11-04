@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2003/12/27 23:37:02 jose Exp $
+# $OpenBSD: Makefile,v 1.9 2006/11/04 19:19:15 kili Exp $
 
 COMMENT=	"publishing and presentation tool"
 
 VERSION=	1.1b9
-DISTNAME=	imp${VERSION}
-PKGNAME=	impress-${VERSION}
+DISTNAME=	impress-${VERSION}
+DISTFILES=	imp${VERSION}.tar.gz
 CATEGORIES=	misc
 
 MASTER_SITES=	${HOMEPAGE}
@@ -19,8 +19,6 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 RUN_DEPENDS=    ::x11/tk/8.4
-
-WRKDIST=        ${WRKDIR}/${PKGNAME}
 
 NO_REGRESS=	Yes
 

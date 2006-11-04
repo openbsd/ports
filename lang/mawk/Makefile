@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2005/02/24 13:20:41 alek Exp $
+# $OpenBSD: Makefile,v 1.17 2006/11/04 19:19:15 kili Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1999/01/18 04:50:26 steve Exp $
 
 COMMENT=	"new POSIX awk"
 
-DISTNAME=	mawk1.3.3
-PKGNAME=	mawk-1.3.3
+DISTNAME=	mawk-1.3.3
+DISTFILES=	${DISTNAME:S,-,,}.tar.gz
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
@@ -18,8 +18,6 @@ CONFIGURE_STYLE= gnu old
 
 ALL_TARGET=	mawk
 REGRESS_TARGET=	mawk_test
-
-WRKDIST=	${WRKDIR}/${PKGNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/mawk ${PREFIX}/bin

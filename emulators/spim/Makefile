@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/10/15 06:44:58 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2006/11/04 19:19:15 kili Exp $
 
 COMMENT=	"MIPS R2000/R3000 simulator"
 
@@ -21,8 +21,6 @@ MASTER_SITES=	http://www.cs.wisc.edu/~larus/SPIM/
 BUILD_DEPENDS=	:bison-*:devel/bison
 
 XMKMF=		xmkmf
-
-WRKDIST=	${WRKDIR}/${PKGNAME}
 
 FAKE_FLAGS=	PREFIX="${PREFIX}"
 

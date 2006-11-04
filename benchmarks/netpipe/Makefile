@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2004/11/21 18:01:03 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2006/11/04 19:19:15 kili Exp $
 # $FreeBSD: Makefile,v 1.2 1999/03/03 03:48:56 jkoshy Exp $
 
 COMMENT=	"self-scaling network benchmark"
 
-DISTNAME=	NetPIPE_2.4
-PKGNAME=	${DISTNAME:L:S/_/-/}
+DISTNAME=	netpipe-2.4
+DISTFILES=	NetPIPE_2.4.tar.gz
 CATEGORIES=	benchmarks net
 
 HOMEPAGE=	http://www.scl.ameslab.gov/netpipe/
@@ -19,8 +19,6 @@ MASTER_SITES=	${HOMEPAGE}/code/
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -DHAVE_GETRUSAGE"
 ALL_TARGET=	NPtcp
-
-WRKDIST=	${WRKDIR}/${PKGNAME}
 
 NO_REGRESS=	Yes
 

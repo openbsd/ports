@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/06/03 09:21:21 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2006/11/04 19:19:15 kili Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cddb-py/}
 # avoid possible conflict with the audio/p5-cddb distfile
-DIST_SUBDIR=	${PKGNAME}
+DIST_SUBDIR=	py-cddb
 
 MODULES=	lang/python
 

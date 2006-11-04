@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2006/08/03 12:53:18 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/11/04 19:19:15 kili Exp $
 
 COMMENT=			"3D image rendering package"
 
-PKGNAME=			povray-3.1g
+DISTNAME=			povray-3.1g
 CATEGORIES=			graphics
 
 HOMEPAGE=			http://www.povray.org
@@ -19,8 +19,7 @@ MASTER_SITES=			ftp://mirror.nucba.ac.jp/mirror/povray/Old-Versions/Official-3.1
 				ftp://ftp.povray.org/pub/povray/Old-Versions/Official-3.1g/Unix/
 
 DISTFILES=			povuni_s.tgz povuni_d.tgz
-EXTRACT_SUFX=			.tgz
-DIST_SUBDIR=			${PKGNAME}
+DIST_SUBDIR=			${DISTNAME}
 
 LIB_DEPENDS=			png.>=2.::graphics/png
 

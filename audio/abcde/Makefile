@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2006/06/29 01:41:23 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2006/11/04 19:19:15 kili Exp $
 
 COMMENT=	"command-line utility to rip and encode audio cds"
 
 V=		2.3.0
 # cd-diskid version number
 V2=		0.9
-DISTNAME=	abcde_$V.orig
-PKGNAME=	abcde-$V
+DISTNAME=	abcde-$V
 CATEGORIES=	audio
 
 HOMEPAGE=	http://www.hispalinux.es/~data/abcde.php
@@ -22,7 +21,7 @@ MS=		http://www.hispalinux.es/~data/files/
 MASTER_SITES=	${MS}
 MASTER_SITES0=	${MS}cd-discid/
 MASTER_SITES1=	http://lly.org/~rcw/id3/
-DISTFILES=	${DISTNAME}.tar.gz \
+DISTFILES=	${DISTNAME:S,-,_,}.orig.tar.gz \
 		cd-discid_${V2}.orig.tar.gz:0
 
 RUN_DEPENDS=	:cdparanoia-*:audio/cdparanoia
@@ -31,7 +30,6 @@ FLAVORS=	lame
 FLAVOR?=	
 
 NO_REGRESS=	Yes
-WRKDIST=	${WRKDIR}/${PKGNAME}
 
 .if ${FLAVOR:L:Mlame}
 DISTFILES+=	id3_0.12.orig.tar.gz:1

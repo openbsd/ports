@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/02 07:03:29 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2006/11/04 19:19:15 kili Exp $
 
 COMMENT=		"draw maps and charts"
 
@@ -35,7 +35,6 @@ DISTFILES=		GMT${V}_src.tar.bz2 \
 SUPDISTFILES=		GMT4.1_high.tar.bz2 \
 			GMT4.1_full.tar.bz2
 
-DIST_SUBDIR=		${PKGNAME}
 EXTRACT_CASES=		GMT4.1_*.tar.bz2) bzip2 -dc ${FULLDISTDIR}/$$archive | \
 				tar xf - -C ${WRKDIST};;
 

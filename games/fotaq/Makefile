@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2004/09/15 01:49:27 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/04 19:19:15 kili Exp $
 
 PKG_ARCH=	*
 
 COMMENT=	"flight of the amazon queen"
-DISTNAME=	FOTAQ_Talkie
-EXTRACT_SUFX=	.zip
-PKGNAME=	fotaq-20040316
-DIST_SUBDIR=	${PKGNAME}
+DISTNAME=	fotaq-20040316
+DISTFILES=	FOTAQ_Talkie.zip
+DIST_SUBDIR=	${DISTNAME}
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
+
+WRKDIST=	${WRKDIR}/${DISTFILES:S,.zip,,}
 
 # Conditional
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2004/11/21 21:41:23 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2006/11/04 19:19:15 kili Exp $
 
 COMMENT=		"Qt-based 2D CAD system"
 
-PKGNAME=		${DISTNAME:S/-src//}
-DISTNAME=		qcad-1.5.4-src
+DISTNAME=		qcad-1.5.4
+DISTFILES=		${DISTNAME}-src.tar.gz
 CATEGORIES=     	cad x11
 
 HOMEPAGE=		http://www.qcad.org/
@@ -33,7 +33,6 @@ MAKE_FLAGS= \
 
 ALL_TARGET=		qcad
 NO_REGRESS=		Yes
-WRKDIST=		${WRKDIR}/${PKGNAME}
 
 do-install:
 	chmod ${DIRMODE} ${WRKSRC}/libraries/mechanical/screws/chc

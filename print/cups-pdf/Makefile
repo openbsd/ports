@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/03 14:21:42 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/04 19:19:15 kili Exp $
 
 COMMENT=		"PDF backend for CUPS"
 
@@ -30,9 +30,9 @@ do-install:
 	mkdir -p ${PREFIX}/share/examples/cups
 	cp ${WRKDIR}/bin/cups-pdf \
 		${PREFIX}/libexec/cups/backend/cups-pdf
-	cp ${WRKDIR}/${PKGNAME}/extra/PostscriptColor.ppd \
+	cp ${WRKDIR}/${DISTNAME}/extra/PostscriptColor.ppd \
 		${PREFIX}/share/cups/model/PostscriptColor.ppd
-	cp ${WRKDIR}/${PKGNAME}/extra/cups-pdf.conf \
+	cp ${WRKDIR}/${DISTNAME}/extra/cups-pdf.conf \
 		${PREFIX}/share/examples/cups/
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2005/10/13 17:22:10 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.9 2006/11/04 19:19:15 kili Exp $
 
 COMMENT=	"graphical display for the current uvm status"
 
 PKGNAME=	xuvmstat-20050909
-DISTNAME=	${PKGNAME:S/-//}
+DISTNAME=	xuvmstat20050909
 CATEGORIES=     sysutils x11
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>

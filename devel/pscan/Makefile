@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/09/21 20:52:26 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/04 19:19:15 kili Exp $
 
 COMMENT=	"limited problem scanner for C source files"
 
+V=		1.6
 DISTNAME=	pscan
-PKGNAME=	${DISTNAME}-1.6
+PKGNAME=	${DISTNAME}-${V}
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.striker.ottawa.on.ca/~aland/pscan/
@@ -20,7 +21,7 @@ MASTER_SITES=	${HOMEPAGE}
 
 WANTLIB=	c
 
-DIST_SUBDIR=	${PKGNAME}
+DIST_SUBDIR=	${DISTNAME}-${V}
 ALL_TARGET=	pscan
 
 NO_REGRESS=	Yes

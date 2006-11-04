@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/12/30 19:04:22 alek Exp $
+# $OpenBSD: Makefile,v 1.12 2006/11/04 19:19:15 kili Exp $
 
 COMMENT=		'wm-dockapp; POP3 mail check'
 
@@ -18,7 +18,7 @@ WANTLIB=		X11 Xext Xpm c
 USE_X11=		Yes
 NO_REGRESS=		Yes
 
-WRKDIST=		${WRKDIR}/${PKGNAME}
+WRKDIST=		${WRKDIR}/${DISTNAME:L}
 WRKSRC=			${WRKDIST}/wmpop3
 
 do-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/09/26 12:26:21 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2006/11/04 19:19:15 kili Exp $
 
 COMMENT=	"Java program analyzer and checker"
 
@@ -21,8 +21,6 @@ MAKE_ENV+=	CC="${CC}" CPP="${CXX}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
 		INSTALL_DATA="${INSTALL_DATA}"
-
-WRKDIST=	${WRKDIR}/${PKGNAME}
 
 NO_REGRESS=	Yes
 
