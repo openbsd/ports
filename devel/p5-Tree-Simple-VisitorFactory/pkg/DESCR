@@ -1,0 +1,4 @@
+Tree:Simple::VisitorFactory is a factory that can create all kind
+of visitors for Tree::Simple.
+The individual visitor classes can be used directly,
+the factory is just a shorthand to avoid typing their long class names.

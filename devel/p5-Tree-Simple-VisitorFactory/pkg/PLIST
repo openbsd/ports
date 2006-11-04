@@ -1,0 +1,38 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/04 19:03:02 espie Exp $
+${P5SITE}/Tree/Simple/Visitor/
+${P5SITE}/Tree/Simple/Visitor/BreadthFirstTraversal.pm
+${P5SITE}/Tree/Simple/Visitor/CreateDirectoryTree.pm
+${P5SITE}/Tree/Simple/Visitor/FindByNodeValue.pm
+${P5SITE}/Tree/Simple/Visitor/FindByPath.pm
+${P5SITE}/Tree/Simple/Visitor/FindByUID.pm
+${P5SITE}/Tree/Simple/Visitor/FromNestedArray.pm
+${P5SITE}/Tree/Simple/Visitor/FromNestedHash.pm
+${P5SITE}/Tree/Simple/Visitor/GetAllDescendents.pm
+${P5SITE}/Tree/Simple/Visitor/LoadClassHierarchy.pm
+${P5SITE}/Tree/Simple/Visitor/LoadDirectoryTree.pm
+${P5SITE}/Tree/Simple/Visitor/PathToRoot.pm
+${P5SITE}/Tree/Simple/Visitor/PostOrderTraversal.pm
+${P5SITE}/Tree/Simple/Visitor/PreOrderTraversal.pm
+${P5SITE}/Tree/Simple/Visitor/Sort.pm
+${P5SITE}/Tree/Simple/Visitor/ToNestedArray.pm
+${P5SITE}/Tree/Simple/Visitor/ToNestedHash.pm
+${P5SITE}/Tree/Simple/Visitor/VariableDepthClone.pm
+${P5SITE}/Tree/Simple/VisitorFactory.pm
+@man man/man3p/Tree::Simple::Visitor::BreadthFirstTraversal.3p
+@man man/man3p/Tree::Simple::Visitor::CreateDirectoryTree.3p
+@man man/man3p/Tree::Simple::Visitor::FindByNodeValue.3p
+@man man/man3p/Tree::Simple::Visitor::FindByPath.3p
+@man man/man3p/Tree::Simple::Visitor::FindByUID.3p
+@man man/man3p/Tree::Simple::Visitor::FromNestedArray.3p
+@man man/man3p/Tree::Simple::Visitor::FromNestedHash.3p
+@man man/man3p/Tree::Simple::Visitor::GetAllDescendents.3p
+@man man/man3p/Tree::Simple::Visitor::LoadClassHierarchy.3p
+@man man/man3p/Tree::Simple::Visitor::LoadDirectoryTree.3p
+@man man/man3p/Tree::Simple::Visitor::PathToRoot.3p
+@man man/man3p/Tree::Simple::Visitor::PostOrderTraversal.3p
+@man man/man3p/Tree::Simple::Visitor::PreOrderTraversal.3p
+@man man/man3p/Tree::Simple::Visitor::Sort.3p
+@man man/man3p/Tree::Simple::Visitor::ToNestedArray.3p
+@man man/man3p/Tree::Simple::Visitor::ToNestedHash.3p
+@man man/man3p/Tree::Simple::Visitor::VariableDepthClone.3p
+@man man/man3p/Tree::Simple::VisitorFactory.3p
