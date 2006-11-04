@@ -1,0 +1,2 @@
+The IO::LockedFile class has the same interface as the IO::File class.
+The only difference is that the files are locked with the Flock mechanism.
