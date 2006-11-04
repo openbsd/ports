@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/04 20:19:23 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/04 20:21:43 espie Exp $
 
 COMMENT= 	"sensible default end action for catalyst"
 
 DISTNAME=	Catalyst-Action-RenderView-0.04
-PKGNAME=	p5-${DISTNAME}
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	www perl5
 
 MAINTAINER=	Simon Dassow <janus@errornet.de>
@@ -24,5 +24,6 @@ REGRESS_DEPENDS=${RUN_DEPENDS} \
 MAKE_ENV=	TEST_POD=Yes
 
 CONFIGURE_STYLE=perl modbuild
+PKG_ARCH=	*
 
 .include <bsd.port.mk>

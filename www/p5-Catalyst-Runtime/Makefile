@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/04 20:12:34 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/04 20:21:43 espie Exp $
 
 COMMENT= 	"MVC Web Application Framework"
 
 DISTNAME=	Catalyst-Runtime-5.7003
-PKGNAME=	p5-${DISTNAME}
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	www perl5
 
 HOMEPAGE=	http://www.catalystframework.org/
@@ -40,5 +40,6 @@ MAKE_ENV=	TEST_POD=Yes
 
 CONFIGURE_STYLE=perl
 CONFIGURE_ARGS=	--skip
+PKG_ARCH=	*
 
 .include <bsd.port.mk>
