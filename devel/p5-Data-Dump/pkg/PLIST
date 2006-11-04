@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/04 14:49:58 espie Exp $
+${P5SITE}/Data/
+${P5SITE}/Data/Dump.pm
+@man man/man3p/Data::Dump.3p
