@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/04 13:54:35 espie Exp $
+${P5SITE}/Devel/
+${P5SITE}/Devel/InnerPackage.pm
+${P5SITE}/Module/
+${P5SITE}/Module/Pluggable/
+${P5SITE}/Module/Pluggable.pm
+${P5SITE}/Module/Pluggable/Object.pm
+@man man/man3p/Devel::InnerPackage.3p
+@man man/man3p/Module::Pluggable.3p
+@man man/man3p/Module::Pluggable::Object.3p

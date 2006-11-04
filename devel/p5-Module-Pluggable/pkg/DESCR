@@ -1,0 +1,8 @@
+Provides a simple but, hopefully, extensible way of having 'plugins'
+for your module, by exporting a method into your namespace that
+looks through a search path for .pm files and turn those into class
+names.
+
+As an option, it can instantiate those classes for you.
+
+
