@@ -1,0 +1,10 @@
+This module scans potential modules used by perl programs, and returns
+a hash reference; its keys are the module names as appears in %INC
+(e.g. Test/More.pm); the values are hash references with this structure:
+
+    {
+        file    => '/usr/local/lib/perl5/5.8.0/Test/More.pm',
+        key     => 'Test/More.pm',
+        type    => 'module',    # or 'autoload', 'data', 'shared'
+        used_by => [ 'Test/Simple.pm', ... ],
+    }
