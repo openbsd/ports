@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile,v 1.1.1.1 2006/11/04 12:11:53 espie Exp $
+--- src/Makefile.orig	Sat Nov  4 11:03:57 2006
++++ src/Makefile	Sat Nov  4 11:04:12 2006
+@@ -247,7 +247,7 @@ $(LIBTOOL): $(LIBTOOL_DEPS)
+ bin: lib $(BINARY) $(EXIV2BIN) $(MCBIN) path-test
+ 
+ lib: $(OBJ)
+-	$(LIBTOOL) --mode=link $(CXX) $(LDFLAGS) $(LOBJ) -o $(LIBRARY) -rpath $(libdir) -release $(EXIV2_VERSION) $(LIBS)
++	$(LIBTOOL) --mode=link $(CXX) $(LDFLAGS) $(LOBJ) -o $(LIBRARY) -rpath $(libdir) -version-info 0:0:0 $(LIBS)
+ 	@touch lib
+ 
+ path-test: path-test.o utils.o
