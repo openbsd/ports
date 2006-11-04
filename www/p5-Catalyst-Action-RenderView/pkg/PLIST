@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/04 20:19:23 espie Exp $
+${P5SITE}/Catalyst/Action/
+${P5SITE}/Catalyst/Action/RenderView.pm
+@man man/man3p/Catalyst::Action::RenderView.3p
