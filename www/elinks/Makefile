@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2006/10/21 17:56:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2006/11/04 00:51:17 steven Exp $
 
 COMMENT=		"full-featured text WWW browser"
 DISTNAME=		elinks-0.11.1
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		www
 MASTER_SITES=		http://elinks.cz/download/
@@ -21,6 +21,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		CFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-bzlib \
+			--without-spidermonkey \
 			--disable-xbel \
 			--enable-gopher \
 			--with-libiconv=${LOCALBASE}
