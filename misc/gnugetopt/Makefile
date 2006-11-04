@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/03 13:25:02 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/04 22:14:33 steven Exp $
 
 COMMENT=	"GNU getopt(1) utility"
 
 DISTNAME=	getopt-1.1.4
-PKGNAME=	${DISTNAME:S/getopt/gnugetopt/}
+PKGNAME=	gnu${DISTNAME}
 CATEGORIES=	misc
 
 # GPL
@@ -23,6 +23,9 @@ MAKE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl -liconv"
 
 NO_REGRESS=	Yes
+
+pre-configure:
+	rm -f ${WRKSRC}/*.orig
 
 do-install:
 	cd ${WRKSRC} && sed -e 's,/usr/local,${LOCALBASE},g' \
