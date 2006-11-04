@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.165 2006/11/03 14:03:39 msf Exp $
+# $OpenBSD: Makefile,v 1.166 2006/11/04 19:29:07 espie Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -96,9 +96,11 @@
      SUBDIR += p5-Text-Quoted
      SUBDIR += p5-Text-RecordParser
      SUBDIR += p5-Text-Reform
+     SUBDIR += p5-Text-SimpleTable
      SUBDIR += p5-Text-Table
      SUBDIR += p5-Text-TabularDisplay
      SUBDIR += p5-Text-Template
+     SUBDIR += p5-Text-Textile
      SUBDIR += p5-Text-Tmpl
      SUBDIR += p5-Text-Unidecode
      SUBDIR += p5-Text-WikiFormat

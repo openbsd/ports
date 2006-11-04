@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.236 2006/10/25 18:12:44 kurt Exp $
+# $OpenBSD: Makefile,v 1.237 2006/11/04 19:29:07 espie Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -93,6 +93,7 @@
      SUBDIR += p5-Blatte-HTML
      SUBDIR += p5-CGI-Ajax
      SUBDIR += p5-CGI-Deurl
+     SUBDIR += p5-CGI-Simple
      SUBDIR += p5-CGI-SpeedyCGI
      SUBDIR += p5-CGI-Untaint
      SUBDIR += p5-CGI-XMLApplication
@@ -117,11 +118,13 @@
      SUBDIR += p5-HTML-Template
      SUBDIR += p5-HTML-Template-Expr
      SUBDIR += p5-HTML-Tree
+     SUBDIR += p5-HTTP-Body
      SUBDIR += p5-HTTP-BrowserDetect
      SUBDIR += p5-HTTP-GHTTP
      SUBDIR += p5-HTTP-GetImages
      SUBDIR += p5-HTTP-Proxy
      SUBDIR += p5-HTTP-Recorder
+     SUBDIR += p5-HTTP-Request-AsCGI
      SUBDIR += p5-HTTP-Request-Params
      SUBDIR += p5-HTTP-Server-Simple
      SUBDIR += p5-HTTP-Server-Simple-Mason

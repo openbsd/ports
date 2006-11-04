@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.173 2006/10/21 12:29:10 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.174 2006/11/04 19:29:07 espie Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -77,6 +77,7 @@
      SUBDIR += otpcalc
      SUBDIR += outguess
      SUBDIR += p0f
+     SUBDIR += p5-Authen-Htpasswd
      SUBDIR += p5-Authen-Krb5-Simple
      SUBDIR += p5-Authen-Radius
      SUBDIR += p5-Authen-SASL
@@ -90,6 +91,7 @@
      SUBDIR += p5-Crypt-OpenSSL-DSA
      SUBDIR += p5-Crypt-OpenSSL-RSA
      SUBDIR += p5-Crypt-OpenSSL-Random
+     SUBDIR += p5-Crypt-PasswdMD5
      SUBDIR += p5-Crypt-Primes
      SUBDIR += p5-Crypt-RC4
      SUBDIR += p5-Crypt-RSA

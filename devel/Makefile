@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.416 2006/11/04 15:39:10 espie Exp $
+# $OpenBSD: Makefile,v 1.417 2006/11/04 19:29:07 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -272,6 +272,7 @@
      SUBDIR += p5-IO-Capture
      SUBDIR += p5-IO-Digest
      SUBDIR += p5-IO-KQueue
+     SUBDIR += p5-IO-LockedFile
      SUBDIR += p5-IO-Multiplex
      SUBDIR += p5-IO-Pager
      SUBDIR += p5-IO-String
@@ -304,12 +305,14 @@
      SUBDIR += p5-Number-Compare-Date
      SUBDIR += p5-OLE-Storage_Lite
      SUBDIR += p5-Object-Realize
+     SUBDIR += p5-Object-Signature
      SUBDIR += p5-POE
      SUBDIR += p5-Parallel-ForkManager
      SUBDIR += p5-Params-CallbackRequest
      SUBDIR += p5-Params-Util
      SUBDIR += p5-Params-Validate
      SUBDIR += p5-Parse-RecDescent
+     SUBDIR += p5-Path-Class
      SUBDIR += p5-PerlIO-eol
      SUBDIR += p5-PerlIO-via-dynamic
      SUBDIR += p5-PerlIO-via-symlink
@@ -362,6 +365,7 @@
      SUBDIR += p5-Time-modules
      SUBDIR += p5-Tree-DAG_Node
      SUBDIR += p5-Tree-Simple
+     SUBDIR += p5-Tree-Simple-VisitorFactory
      SUBDIR += p5-Universal-can
      SUBDIR += p5-Universal-exports
      SUBDIR += p5-Universal-isa
