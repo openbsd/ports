@@ -1,0 +1,118 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/04 20:12:34 espie Exp $
+bin/catalyst.pl
+${P5SITE}/Catalyst/
+${P5SITE}/Catalyst.pm
+${P5SITE}/Catalyst/Action.pm
+${P5SITE}/Catalyst/ActionChain.pm
+${P5SITE}/Catalyst/ActionContainer.pm
+${P5SITE}/Catalyst/AttrContainer.pm
+${P5SITE}/Catalyst/Base.pm
+${P5SITE}/Catalyst/Build.pm
+${P5SITE}/Catalyst/Component.pm
+${P5SITE}/Catalyst/Controller.pm
+${P5SITE}/Catalyst/DispatchType/
+${P5SITE}/Catalyst/DispatchType.pm
+${P5SITE}/Catalyst/DispatchType/Chained.pm
+${P5SITE}/Catalyst/DispatchType/Default.pm
+${P5SITE}/Catalyst/DispatchType/Index.pm
+${P5SITE}/Catalyst/DispatchType/Path.pm
+${P5SITE}/Catalyst/DispatchType/Regex.pm
+${P5SITE}/Catalyst/Dispatcher.pm
+${P5SITE}/Catalyst/Engine/
+${P5SITE}/Catalyst/Engine.pm
+${P5SITE}/Catalyst/Engine/CGI.pm
+${P5SITE}/Catalyst/Engine/FastCGI.pm
+${P5SITE}/Catalyst/Engine/HTTP/
+${P5SITE}/Catalyst/Engine/HTTP.pm
+${P5SITE}/Catalyst/Engine/HTTP/Restarter/
+${P5SITE}/Catalyst/Engine/HTTP/Restarter.pm
+${P5SITE}/Catalyst/Engine/HTTP/Restarter/Watcher.pm
+${P5SITE}/Catalyst/Exception.pm
+${P5SITE}/Catalyst/Log.pm
+${P5SITE}/Catalyst/Manual/
+${P5SITE}/Catalyst/Manual.pod
+${P5SITE}/Catalyst/Manual/About.pod
+${P5SITE}/Catalyst/Manual/Actions.pod
+${P5SITE}/Catalyst/Manual/Cookbook.pod
+${P5SITE}/Catalyst/Manual/DevelopmentProcess.pod
+${P5SITE}/Catalyst/Manual/Installation/
+${P5SITE}/Catalyst/Manual/Installation.pod
+${P5SITE}/Catalyst/Manual/Installation/CentOS4.pod
+${P5SITE}/Catalyst/Manual/Internals.pod
+${P5SITE}/Catalyst/Manual/Intro.pod
+${P5SITE}/Catalyst/Manual/Plugins.pod
+${P5SITE}/Catalyst/Manual/Tutorial/
+${P5SITE}/Catalyst/Manual/Tutorial.pod
+${P5SITE}/Catalyst/Manual/Tutorial/AdvancedCRUD.pod
+${P5SITE}/Catalyst/Manual/Tutorial/Appendices.pod
+${P5SITE}/Catalyst/Manual/Tutorial/Authentication.pod
+${P5SITE}/Catalyst/Manual/Tutorial/Authorization.pod
+${P5SITE}/Catalyst/Manual/Tutorial/BasicCRUD.pod
+${P5SITE}/Catalyst/Manual/Tutorial/CatalystBasics.pod
+${P5SITE}/Catalyst/Manual/Tutorial/Debugging.pod
+${P5SITE}/Catalyst/Manual/Tutorial/Intro.pod
+${P5SITE}/Catalyst/Manual/Tutorial/Testing.pod
+${P5SITE}/Catalyst/Manual/WritingPlugins.pod
+${P5SITE}/Catalyst/Model.pm
+${P5SITE}/Catalyst/Request/
+${P5SITE}/Catalyst/Request.pm
+${P5SITE}/Catalyst/Request/Upload.pm
+${P5SITE}/Catalyst/Response.pm
+${P5SITE}/Catalyst/Runtime.pm
+${P5SITE}/Catalyst/Test.pm
+${P5SITE}/Catalyst/Utils.pm
+${P5SITE}/Catalyst/View.pm
+@man man/man1/catalyst.pl.1
+@man man/man3p/Catalyst.3p
+@man man/man3p/Catalyst::Action.3p
+@man man/man3p/Catalyst::ActionChain.3p
+@man man/man3p/Catalyst::ActionContainer.3p
+@man man/man3p/Catalyst::AttrContainer.3p
+@man man/man3p/Catalyst::Base.3p
+@man man/man3p/Catalyst::Build.3p
+@man man/man3p/Catalyst::Component.3p
+@man man/man3p/Catalyst::Controller.3p
+@man man/man3p/Catalyst::DispatchType.3p
+@man man/man3p/Catalyst::DispatchType::Chained.3p
+@man man/man3p/Catalyst::DispatchType::Default.3p
+@man man/man3p/Catalyst::DispatchType::Index.3p
+@man man/man3p/Catalyst::DispatchType::Path.3p
+@man man/man3p/Catalyst::DispatchType::Regex.3p
+@man man/man3p/Catalyst::Dispatcher.3p
+@man man/man3p/Catalyst::Engine.3p
+@man man/man3p/Catalyst::Engine::CGI.3p
+@man man/man3p/Catalyst::Engine::FastCGI.3p
+@man man/man3p/Catalyst::Engine::HTTP.3p
+@man man/man3p/Catalyst::Engine::HTTP::Restarter.3p
+@man man/man3p/Catalyst::Engine::HTTP::Restarter::Watcher.3p
+@man man/man3p/Catalyst::Exception.3p
+@man man/man3p/Catalyst::Log.3p
+@man man/man3p/Catalyst::Manual.3p
+@man man/man3p/Catalyst::Manual::About.3p
+@man man/man3p/Catalyst::Manual::Actions.3p
+@man man/man3p/Catalyst::Manual::Cookbook.3p
+@man man/man3p/Catalyst::Manual::DevelopmentProcess.3p
+@man man/man3p/Catalyst::Manual::Installation.3p
+@man man/man3p/Catalyst::Manual::Installation::CentOS4.3p
+@man man/man3p/Catalyst::Manual::Internals.3p
+@man man/man3p/Catalyst::Manual::Intro.3p
+@man man/man3p/Catalyst::Manual::Plugins.3p
+@man man/man3p/Catalyst::Manual::Tutorial.3p
+@man man/man3p/Catalyst::Manual::Tutorial::AdvancedCRUD.3p
+@man man/man3p/Catalyst::Manual::Tutorial::Appendices.3p
+@man man/man3p/Catalyst::Manual::Tutorial::Authentication.3p
+@man man/man3p/Catalyst::Manual::Tutorial::Authorization.3p
+@man man/man3p/Catalyst::Manual::Tutorial::BasicCRUD.3p
+@man man/man3p/Catalyst::Manual::Tutorial::CatalystBasics.3p
+@man man/man3p/Catalyst::Manual::Tutorial::Debugging.3p
+@man man/man3p/Catalyst::Manual::Tutorial::Intro.3p
+@man man/man3p/Catalyst::Manual::Tutorial::Testing.3p
+@man man/man3p/Catalyst::Manual::WritingPlugins.3p
+@man man/man3p/Catalyst::Model.3p
+@man man/man3p/Catalyst::Request.3p
+@man man/man3p/Catalyst::Request::Upload.3p
+@man man/man3p/Catalyst::Response.3p
+@man man/man3p/Catalyst::Runtime.3p
+@man man/man3p/Catalyst::Test.3p
+@man man/man3p/Catalyst::Utils.3p
+@man man/man3p/Catalyst::View.3p
