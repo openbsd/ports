@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.415 2006/11/01 18:42:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.416 2006/11/04 15:39:10 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -207,10 +207,13 @@
      SUBDIR += p5-Class-MethodMapper
      SUBDIR += p5-Class-ReturnValue
      SUBDIR += p5-Class-Singleton
+     SUBDIR += p5-Class-Throwable
      SUBDIR += p5-Class-Trigger
      SUBDIR += p5-Class-WhiteHole
      SUBDIR += p5-Class-XPath
      SUBDIR += p5-Clone
+     SUBDIR += p5-Config-Any
+     SUBDIR += p5-Config-General
      SUBDIR += p5-Config-Grammar
      SUBDIR += p5-Config-IniFiles
      SUBDIR += p5-Config-Tiny
@@ -218,10 +221,12 @@
      SUBDIR += p5-Curses-UI
      SUBDIR += p5-Curses-Widgets
      SUBDIR += p5-Data-Buffer
+     SUBDIR += p5-Data-Dump
      SUBDIR += p5-Data-Flow
      SUBDIR += p5-Data-Hierarchy
      SUBDIR += p5-Data-ShowTable
      SUBDIR += p5-Data-UUID
+     SUBDIR += p5-Data-Visitor
      SUBDIR += p5-Date-Calc
      SUBDIR += p5-Date-Handler
      SUBDIR += p5-Date-ICal
@@ -247,9 +252,11 @@
      SUBDIR += p5-ExtUtils-Depends
      SUBDIR += p5-ExtUtils-ParseXS
      SUBDIR += p5-ExtUtils-PkgConfig
+     SUBDIR += p5-File-Copy-Recursive
      SUBDIR += p5-File-Find-Rule
      SUBDIR += p5-File-Find-Rule-Filesys-Virtual
      SUBDIR += p5-File-HomeDir
+     SUBDIR += p5-File-Modified
      SUBDIR += p5-File-ReadBackwards
      SUBDIR += p5-File-Slurp
      SUBDIR += p5-File-Sync
@@ -289,6 +296,7 @@
      SUBDIR += p5-Module-CoreList
      SUBDIR += p5-Module-Find
      SUBDIR += p5-Module-Load
+     SUBDIR += p5-Module-Pluggable
      SUBDIR += p5-Module-Refresh
      SUBDIR += p5-Module-Versions-Report
      SUBDIR += p5-Net-Server
@@ -344,6 +352,7 @@
      SUBDIR += p5-Test-Taint
      SUBDIR += p5-Test-WWW-Mechanize
      SUBDIR += p5-Test-Warn
+     SUBDIR += p5-Test-use-ok
      SUBDIR += p5-Tie-Array-Sorted
      SUBDIR += p5-Tie-CPHash
      SUBDIR += p5-Tie-IxHash
@@ -353,7 +362,9 @@
      SUBDIR += p5-Time-modules
      SUBDIR += p5-Tree-DAG_Node
      SUBDIR += p5-Tree-Simple
+     SUBDIR += p5-Universal-can
      SUBDIR += p5-Universal-exports
+     SUBDIR += p5-Universal-isa
      SUBDIR += p5-Universal-moniker
      SUBDIR += p5-VCP-autrijus
      SUBDIR += p5-Want
