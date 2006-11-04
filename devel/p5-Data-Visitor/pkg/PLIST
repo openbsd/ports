@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/04 15:26:25 espie Exp $
+${P5SITE}/Data/
+${P5SITE}/Data/Visitor/
+${P5SITE}/Data/Visitor.pm
+${P5SITE}/Data/Visitor/Callback.pm
+@man man/man3p/Data::Visitor.3p
+@man man/man3p/Data::Visitor::Callback.3p
