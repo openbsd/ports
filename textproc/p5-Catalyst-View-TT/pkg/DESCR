@@ -1,0 +1,3 @@
+Catalyst view class for the Template Toolkit. 
+Your application should define a view class which is a subclass 
+of this module. 

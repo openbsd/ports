@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/05 09:47:27 espie Exp $
+${P5SITE}/Catalyst/Helper/
+${P5SITE}/Catalyst/Helper/View/
+${P5SITE}/Catalyst/Helper/View/TT.pm
+${P5SITE}/Catalyst/Helper/View/TTSite.pm
+${P5SITE}/Catalyst/View/
+${P5SITE}/Catalyst/View/TT.pm
+@man man/man3p/Catalyst::Helper::View::TT.3p
+@man man/man3p/Catalyst::Helper::View::TTSite.3p
+@man man/man3p/Catalyst::View::TT.3p
