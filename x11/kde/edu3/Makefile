@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2006/10/12 23:12:18 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2006/11/05 13:02:30 espie Exp $
 
 COMMENT=		"K Desktop Environment, edutainment"
 CATEGORIES=		x11 x11/kde
@@ -7,12 +7,12 @@ DISTNAME=		kdeedu-${VERSION}
 PKGNAME=		${DISTNAME}
 MODKDE_VERSION?=	3.5.3
 FLAVORS=debug
-SHARED_LIBS=		extdate		4.0 \
-			kdeeducore	4.0 \
-			kdeeduplot	4.0 \
-			kdeeduui	4.0 \
-			kiten		2.0 \
-			kvoctraincore	1.0
+SHARED_LIBS +=	kdeeducore           4.0      # .3.0
+SHARED_LIBS +=	kdeeduui             4.0      # .3.5
+SHARED_LIBS +=	kdeeduplot           4.0      # .3.0
+SHARED_LIBS +=	extdate              4.0      # .3.0
+SHARED_LIBS +=	kiten                2.0      # .1.0
+SHARED_LIBS +=	kvoctraincore        1.0      # .0.0
 
 LIB_DEPENDS= kdecore.>=6,DCOP,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kparts,kutils,kjs,kwalletclient,vcard,kabc,kresources::x11/kde/libs3
 SEPARATE_BUILD=flavored

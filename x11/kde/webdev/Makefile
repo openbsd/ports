@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2006/10/12 23:12:19 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2006/11/05 13:02:30 espie Exp $
 
 COMMENT= 		"web development tool"
 CATEGORIES=		x11 x11/kde
@@ -6,9 +6,9 @@ VERSION=		3.5.5
 DISTNAME=		kdewebdev-${VERSION}
 PKGNAME=		${DISTNAME}
 MODKDE_VERSION=		3.5.3
-SHARED_LIBS=		kommanderplugin		1.0 \
-			kommanderwidget		1.0 \
-			kommanderwidgets	1.0
+SHARED_LIBS +=	kommanderplugin      1.0      # .0.0
+SHARED_LIBS +=	kommanderwidget      1.0      # .0.0
+SHARED_LIBS +=	kommanderwidgets     1.0      # .0.0
 
 LIB_DEPENDS= kdecore.>=6,DCOP,kabc,katepartinterfaces,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kparts,kresources,kspell,ktexteditor,kutils,kwalletclient,vcard::x11/kde/libs3 \
     exslt::textproc/libxslt \

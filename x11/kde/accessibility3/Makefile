@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2006/10/12 23:12:18 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2006/11/05 13:02:30 espie Exp $
 
 COMMENT= 		"X11 toolkit, accessibility aids"
 CATEGORIES=		x11 x11/kde
@@ -6,8 +6,8 @@ VERSION=		3.5.5
 DISTNAME=		kdeaccessibility-${VERSION}
 PKGNAME=		${DISTNAME}
 MODKDE_VERSION?=	3.5.3
-SHARED_LIBS=		KTTSD_Lib	1.0 \
-			kttsd		2.0
+SHARED_LIBS +=	KTTSD_Lib            1.0      # .0.1
+SHARED_LIBS +=	kttsd                2.0      # .1.0
 
 LIB_DEPENDS=	kdecore.>=6,kresources,kwalletclient,ktexteditor,vcard,kabc,kutils,DCOP,kdefx,kdeprint,kdesu,kdeui,kio,kparts,kspell,artskde::x11/kde/libs3 
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2006/10/12 23:12:19 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2006/11/05 13:02:30 espie Exp $
 
 COMMENT= 		"K Desktop Environment, multimedia applications"
 CATEGORIES=		x11 x11/kde
@@ -6,33 +6,48 @@ VERSION=		3.5.5
 DISTNAME=		kdemultimedia-${VERSION}
 PKGNAME=		${DISTNAME}
 MODKDE_VERSION=		3.5.3
-SHARED_LIBS=		arts_mpeglib-0.3.0	1.0 \
-			arts_mpeglib		1.0 \
-			arts_splay		1.0 \
-			arts_akode		0.0 \
-			arts_xine		0.0 \
-			arts_audiofile		0.0 \
-			artsbuilder		1.0 \
-			artscontrolapplet	2.0 \
-			artscontrolsupport	2.0 \
-			artsgui			1.0 \
-			artsgui_idl		1.0 \
-			artsgui_kde		1.0 \
-			artsmidi		1.0 \
-			artsmidi_idl		1.0 \
-			artsmodules		1.0 \
-			artsmodulescommon	1.0 \
-			artsmoduleseffects	1.0 \
-			artsmodulesmixers	1.0 \
-			artsmodulessynth	1.0 \
-			audiocdplugins		2.0 \
-			kcddb			2.0 \
-			kmidlib			1.0 \
-			noatun			4.0 \
-			noatuncontrols		4.0 \
-			noatuntags		4.0 \
-			yafcore			1.0 \
-			yafxplayer		1.0
+SHARED_LIBS +=	artsbuilder          1.0      # .0.0
+SHARED_LIBS +=	artsmidi_idl         1.0      # .0.0
+SHARED_LIBS +=	artsmidi             1.0      # .0.0
+SHARED_LIBS +=	artsgui_idl          1.0      # .0.0
+SHARED_LIBS +=	artsgui              1.0      # .0.0
+SHARED_LIBS +=	artsgui_kde          1.0      # .0.0
+SHARED_LIBS +=	artsmodulessynth     1.0      # .0.0
+SHARED_LIBS +=	artsmodulescommon    1.0      # .0.0
+SHARED_LIBS +=	artsmoduleseffects   1.0      # .0.0
+SHARED_LIBS +=	artsmodulesmixers    1.0      # .0.0
+SHARED_LIBS +=	artsmodules          1.0      # .0.0
+SHARED_LIBS +=	artscontrolsupport   2.0      # .1.0
+SHARED_LIBS +=	artscontrolapplet    2.0      # .1.0
+SHARED_LIBS +=	arts_audiofile       0.0      # .0.0
+SHARED_LIBS +=	kmidlib              1.0      # .0.0
+SHARED_LIBS +=	kcddb                2.0      # .1.0
+SHARED_LIBS +=	yafcore              1.0      # .0.0
+SHARED_LIBS +=	yafxplayer           1.0      # .0.0
+SHARED_LIBS +=	arts_xine            0.0      # .0.0
+SHARED_LIBS +=	arts_akode           0.0      # .0.0
+SHARED_LIBS +=	noatun               4.0      # .3.0
+SHARED_LIBS +=	noatuncontrols       4.0      # .3.0
+SHARED_LIBS +=	noatuntags           4.0      # .3.0
+SHARED_LIBS +=	audiocdplugins       2.0      # .1.0
+SHARED_LIBS +=	arts_mpeglib         1.0      # .0.3
+SHARED_LIBS +=	arts_splay           1.0      # .0.0
+SHARED_LIBS +=	artsmidi             1.0      # .0.0
+SHARED_LIBS +=	artsgui              1.0      # .0.0
+SHARED_LIBS +=	artsgui_kde          1.0      # .0.0
+SHARED_LIBS +=	artsmodulessynth     1.0      # .0.0
+SHARED_LIBS +=	artsmodulescommon    1.0      # .0.0
+SHARED_LIBS +=	artsmoduleseffects   1.0      # .0.0
+SHARED_LIBS +=	artsmodulesmixers    1.0      # .0.0
+SHARED_LIBS +=	artsmodules          1.0      # .0.0
+SHARED_LIBS +=	artscontrolsupport   2.0      # .1.0
+SHARED_LIBS +=	artscontrolapplet    2.0      # .1.0
+SHARED_LIBS +=	yafxplayer           1.0      # .0.0
+SHARED_LIBS +=	noatun               4.0      # .3.0
+SHARED_LIBS +=	noatuntags           4.0      # .3.0
+SHARED_LIBS +=	audiocdplugins       2.0      # .1.0
+SHARED_LIBS +=	arts_mpeglib         1.0      # .0.3
+SHARED_LIBS +=	arts_splay           1.0      # .0.0
 
 FLAVORS=		debug
 LIB_DEPENDS= DCOP,kdecore.>=6,kdefakes,kdefx,kdesu,kdeui,kio,khtml,kmid,kparts,kmediaplayer,kjs,kutils,kwalletclient,kdeprint::x11/kde/libs3 \

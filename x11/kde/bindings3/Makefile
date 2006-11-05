@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2006/10/12 23:12:18 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2006/11/05 13:02:30 espie Exp $
 
 .if ${MACHINE_ARCH} == "powerpc"
 BROKEN=			"gcc spins on x_20.cpp"
@@ -10,9 +10,13 @@ VERSION=		3.5.5
 DISTNAME=		kdebindings-${VERSION}
 PKGNAME=		${DISTNAME}
 MODKDE_VERSION=		3.5.3
-SHARED_LIBS=		kjsembed	2.0 \
-			smokekde	4.0 \
-			smokeqt		4.0
+SHARED_LIBS +=	kjsembed             2.0      # .1.0
+SHARED_LIBS +=	smokeqt              4.0      # .3.2
+SHARED_LIBS +=	smokekde             4.0      # .3.2
+# XXX
+#SHARED_LIBS +=	qtruby                        # .0.0
+#SHARED_LIBS +=	qui                           # .0.0
+#SHARED_LIBS +=	korundum                      # .0.0
 
 LIB_DEPENDS=DCOP,kdecore.>=6,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kmdi,knewstuff,kparts,kscript,kspell,kutils,kwalletclient::x11/kde/libs3 \
 	qui-mt::x11/qt3,mt \

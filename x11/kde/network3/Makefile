@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2006/11/03 18:00:59 bernd Exp $
+# $OpenBSD: Makefile,v 1.48 2006/11/05 13:02:30 espie Exp $
 
 COMMENT= 		"K Desktop Environment, network applications"
 CATEGORIES=		x11 x11/kde
@@ -7,11 +7,11 @@ DISTNAME=		kdenetwork-${VERSION}
 PKGNAME=		${DISTNAME}p0
 MODKDE_VERSION=		3.5.3
 FLAVORS=debug
-SHARED_LIBS=		kopete			2.0 \
-			kopete_msn_shared	1.0 \
-			kopete_oscar		3.0 \
-			kopete_videodevice	1.0 \
-			rss			2.0
+SHARED_LIBS +=	kopete               2.0      # .1.0
+SHARED_LIBS +=	kopete_videodevice   1.0      # .0.0
+SHARED_LIBS +=	kopete_msn_shared    1.0      # .0.0
+SHARED_LIBS +=	kopete_oscar         3.0      # .2.0
+SHARED_LIBS +=	rss                  2.0      # .1.0
 
 BUILD_DEPENDS+=	::devel/pkgconfig
 LIB_DEPENDS= kdecore.>=6,DCOP,kabc,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kparts,kresources,ktexteditor,kutils,kwalletclient,vcard,kspell,kdnssd,knewstuff::x11/kde/libs3 \
