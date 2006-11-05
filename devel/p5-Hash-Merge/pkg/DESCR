@@ -1,0 +1,4 @@
+Hash::Merge merges two arbitrarily deep hashes into a single hash.  
+
+At any level, it will add non-conflicting key-value pairs from one
+hash to the other, and follow a set of specific rules to resolve conflicts.
