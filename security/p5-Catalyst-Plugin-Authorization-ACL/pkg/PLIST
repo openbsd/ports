@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/05 19:04:00 espie Exp $
+${P5SITE}/Catalyst/Plugin/
+${P5SITE}/Catalyst/Plugin/Authorization/
+${P5SITE}/Catalyst/Plugin/Authorization/ACL/
+${P5SITE}/Catalyst/Plugin/Authorization/ACL.pm
+${P5SITE}/Catalyst/Plugin/Authorization/ACL/Engine.pm
+@man man/man3p/Catalyst::Plugin::Authorization::ACL.3p
+@man man/man3p/Catalyst::Plugin::Authorization::ACL::Engine.3p
