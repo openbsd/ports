@@ -1,0 +1,3 @@
+Role based access control is very simple: every user has a list of
+roles, which that user is allowed to assume, and every restricted part
+of the app makes an assertion about the necessary roles.
