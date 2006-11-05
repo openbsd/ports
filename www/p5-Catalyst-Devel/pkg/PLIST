@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/05 00:04:57 espie Exp $
+${P5SITE}/Catalyst/Devel.pm
+${P5SITE}/Catalyst/Helper.pm
+${P5SITE}/Module/Install/Catalyst.pm
+@man man/man3p/Catalyst::Devel.3p
+@man man/man3p/Catalyst::Helper.3p
+@man man/man3p/Module::Install::Catalyst.3p
