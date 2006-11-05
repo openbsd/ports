@@ -1,6 +1,6 @@
-$OpenBSD: patch-dovecot-example_conf,v 1.27 2006/10/23 18:23:12 brad Exp $
---- dovecot-example.conf.orig	Sun Oct 15 18:12:31 2006
-+++ dovecot-example.conf	Mon Oct 16 02:58:49 2006
+$OpenBSD: patch-dovecot-example_conf,v 1.28 2006/11/05 05:02:38 brad Exp $
+--- dovecot-example.conf.orig	Tue Oct 17 07:00:10 2006
++++ dovecot-example.conf	Sat Nov  4 23:26:59 2006
 @@ -7,13 +7,12 @@
  # value inside quotes, eg.: key = "# char and trailing whitespace  "
  
@@ -55,7 +55,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.27 2006/10/23 18:23:12 brad Exp $
  
  # Set max. process size in megabytes. If you don't use
  # login_process_per_connection you might need to grow this.
-@@ -268,7 +267,7 @@
+@@ -278,7 +277,7 @@
  
  # Don't write() to mmaped files. This is required for some operating systems
  # which use separate caches for them, such as OpenBSD.
@@ -64,7 +64,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.27 2006/10/23 18:23:12 brad Exp $
  
  # Locking method for index files. Alternatives are fcntl, flock and dotlock.
  # Dotlocking uses some tricks which may create more disk I/O than other locking
-@@ -415,7 +414,7 @@
+@@ -425,7 +424,7 @@
  # locking methods as well. Some operating systems don't allow using some of
  # them simultaneously.
  #mbox_read_locks = fcntl
@@ -73,7 +73,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.27 2006/10/23 18:23:12 brad Exp $
  
  # Maximum time in seconds to wait for lock (all of them) before aborting.
  #mbox_lock_timeout = 300
-@@ -470,19 +469,19 @@
+@@ -480,19 +479,19 @@
  
  protocol imap {
    # Login executable location.
@@ -97,7 +97,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.27 2006/10/23 18:23:12 brad Exp $
  
    # Maximum IMAP command line length in bytes. Some clients generate very long
    # command lines with huge mailboxes, so you may need to raise this if you get
-@@ -523,7 +522,7 @@ protocol imap {
+@@ -533,7 +532,7 @@ protocol imap {
    #     but not both. Thunderbird separates these two by forcing server to
    #     accept '/' suffix in mailbox names in subscriptions list.
    # The list is space-separated.
@@ -106,7 +106,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.27 2006/10/23 18:23:12 brad Exp $
  }
    
  ##
-@@ -532,11 +531,11 @@ protocol imap {
+@@ -542,11 +541,11 @@ protocol imap {
  
  protocol pop3 {
    # Login executable location.
@@ -120,7 +120,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.27 2006/10/23 18:23:12 brad Exp $
  
    # Don't try to set mails non-recent or seen with POP3 sessions. This is
    # mostly intended to reduce disk I/O. With maildir it doesn't move files
-@@ -580,7 +579,7 @@ protocol pop3 {
+@@ -590,7 +589,7 @@ protocol pop3 {
    # installations. %08Xu%08Xv will be the new default, so use it for new
    # installations.
    #
@@ -129,7 +129,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.27 2006/10/23 18:23:12 brad Exp $
  
    # POP3 logout format string:
    #  %t - number of TOP commands
-@@ -605,7 +604,7 @@ protocol pop3 {
+@@ -615,7 +614,7 @@ protocol pop3 {
    #     Outlook Express and Netscape Mail breaks if end of headers-line is
    #     missing. This option simply sends it if it's missing.
    # The list is space-separated.
@@ -138,7 +138,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.27 2006/10/23 18:23:12 brad Exp $
  }
  
  ##
-@@ -637,7 +636,7 @@ protocol lda {
+@@ -647,7 +646,7 @@ protocol lda {
  ##
  
  # Executable location
@@ -147,7 +147,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.27 2006/10/23 18:23:12 brad Exp $
  
  # Set max. process size in megabytes.
  #auth_process_size = 256
-@@ -751,7 +750,7 @@ auth default {
+@@ -761,7 +760,7 @@ auth default {
    # database (passwd usually), you can use static userdb.
    # REMEMBER: You'll need /etc/pam.d/dovecot file created for PAM
    # authentication to actually work.
@@ -156,7 +156,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.27 2006/10/23 18:23:12 brad Exp $
      #  [session=yes] [setcred=yes] [cache_key=<key>] [<service name>]
      #
      # session=yes makes Dovecot open and immediately close PAM session. Some
-@@ -779,14 +778,14 @@ auth default {
+@@ -789,14 +788,14 @@ auth default {
      #   args = session=yes *
      #   args = cache_key=%u dovecot
      #args = dovecot
