@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.420 2006/11/05 17:05:42 espie Exp $
+# $OpenBSD: Makefile,v 1.421 2006/11/05 19:21:11 wilfried Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -23,6 +23,7 @@
      SUBDIR += blame
      SUBDIR += bluetooth-libs
      SUBDIR += boehm-gc
+     SUBDIR += boost
      SUBDIR += c2hs
      SUBDIR += ccache
      SUBDIR += cflow
