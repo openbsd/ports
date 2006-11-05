@@ -1,0 +1,27 @@
+$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2006/11/05 20:25:31 espie Exp $
+--- Makefile.PL.orig	Sun Nov  5 21:21:13 2006
++++ Makefile.PL	Sun Nov  5 21:21:24 2006
+@@ -4,15 +4,15 @@ name 'HTML-Widget';
+ all_from 'lib/HTML/Widget.pm';
+ 
+ requires 'perl' => '5.8.1';
+-requires 'HTML::Element';
+-requires 'Class::Accessor::Fast';
+-requires 'Class::Accessor::Chained::Fast';
+-requires 'Class::Data::Accessor';
+-requires 'HTML::Scrubber';
++#requires 'HTML::Element';
++#requires 'Class::Accessor::Fast';
++#requires 'Class::Accessor::Chained::Fast';
++#requires 'Class::Data::Accessor';
++#requires 'HTML::Scrubber';
+ requires 'Storable';
+-requires 'Module::Pluggable::Fast';
+-requires 'Email::Valid';
+-requires 'Date::Calc';
++#requires 'Module::Pluggable::Fast';
++#requires 'Email::Valid';
++#requires 'Date::Calc';
+ requires 'Scalar::Util';
+ 
+ build_requires 'Test::NoWarnings';

@@ -1,0 +1,104 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/05 20:25:31 espie Exp $
+${P5SITE}/HTML/
+${P5SITE}/HTML/Widget/
+${P5SITE}/HTML/Widget.pm
+${P5SITE}/HTML/Widget/Accessor.pm
+${P5SITE}/HTML/Widget/Constraint/
+${P5SITE}/HTML/Widget/Constraint.pm
+${P5SITE}/HTML/Widget/Constraint/ASCII.pm
+${P5SITE}/HTML/Widget/Constraint/All.pm
+${P5SITE}/HTML/Widget/Constraint/AllOrNone.pm
+${P5SITE}/HTML/Widget/Constraint/Any.pm
+${P5SITE}/HTML/Widget/Constraint/Callback.pm
+${P5SITE}/HTML/Widget/Constraint/Date.pm
+${P5SITE}/HTML/Widget/Constraint/DateTime.pm
+${P5SITE}/HTML/Widget/Constraint/DependOn.pm
+${P5SITE}/HTML/Widget/Constraint/Email.pm
+${P5SITE}/HTML/Widget/Constraint/Equal.pm
+${P5SITE}/HTML/Widget/Constraint/HTTP.pm
+${P5SITE}/HTML/Widget/Constraint/In.pm
+${P5SITE}/HTML/Widget/Constraint/Integer.pm
+${P5SITE}/HTML/Widget/Constraint/Length.pm
+${P5SITE}/HTML/Widget/Constraint/Maybe.pm
+${P5SITE}/HTML/Widget/Constraint/Number.pm
+${P5SITE}/HTML/Widget/Constraint/Printable.pm
+${P5SITE}/HTML/Widget/Constraint/Range.pm
+${P5SITE}/HTML/Widget/Constraint/Regex.pm
+${P5SITE}/HTML/Widget/Constraint/String.pm
+${P5SITE}/HTML/Widget/Constraint/Time.pm
+${P5SITE}/HTML/Widget/Container.pm
+${P5SITE}/HTML/Widget/Element/
+${P5SITE}/HTML/Widget/Element.pm
+${P5SITE}/HTML/Widget/Element/Button.pm
+${P5SITE}/HTML/Widget/Element/Checkbox.pm
+${P5SITE}/HTML/Widget/Element/Hidden.pm
+${P5SITE}/HTML/Widget/Element/Password.pm
+${P5SITE}/HTML/Widget/Element/Radio.pm
+${P5SITE}/HTML/Widget/Element/RadioGroup.pm
+${P5SITE}/HTML/Widget/Element/Reset.pm
+${P5SITE}/HTML/Widget/Element/Select.pm
+${P5SITE}/HTML/Widget/Element/Span.pm
+${P5SITE}/HTML/Widget/Element/Submit.pm
+${P5SITE}/HTML/Widget/Element/Textarea.pm
+${P5SITE}/HTML/Widget/Element/Textfield.pm
+${P5SITE}/HTML/Widget/Element/Upload.pm
+${P5SITE}/HTML/Widget/Error.pm
+${P5SITE}/HTML/Widget/Filter/
+${P5SITE}/HTML/Widget/Filter.pm
+${P5SITE}/HTML/Widget/Filter/Callback.pm
+${P5SITE}/HTML/Widget/Filter/HTMLEscape.pm
+${P5SITE}/HTML/Widget/Filter/HTMLStrip.pm
+${P5SITE}/HTML/Widget/Filter/LowerCase.pm
+${P5SITE}/HTML/Widget/Filter/TrimEdges.pm
+${P5SITE}/HTML/Widget/Filter/UpperCase.pm
+${P5SITE}/HTML/Widget/Filter/Whitespace.pm
+${P5SITE}/HTML/Widget/Result.pm
+@man man/man3p/HTML::Widget.3p
+@man man/man3p/HTML::Widget::Accessor.3p
+@man man/man3p/HTML::Widget::Constraint.3p
+@man man/man3p/HTML::Widget::Constraint::ASCII.3p
+@man man/man3p/HTML::Widget::Constraint::All.3p
+@man man/man3p/HTML::Widget::Constraint::AllOrNone.3p
+@man man/man3p/HTML::Widget::Constraint::Any.3p
+@man man/man3p/HTML::Widget::Constraint::Callback.3p
+@man man/man3p/HTML::Widget::Constraint::Date.3p
+@man man/man3p/HTML::Widget::Constraint::DateTime.3p
+@man man/man3p/HTML::Widget::Constraint::DependOn.3p
+@man man/man3p/HTML::Widget::Constraint::Email.3p
+@man man/man3p/HTML::Widget::Constraint::Equal.3p
+@man man/man3p/HTML::Widget::Constraint::HTTP.3p
+@man man/man3p/HTML::Widget::Constraint::In.3p
+@man man/man3p/HTML::Widget::Constraint::Integer.3p
+@man man/man3p/HTML::Widget::Constraint::Length.3p
+@man man/man3p/HTML::Widget::Constraint::Maybe.3p
+@man man/man3p/HTML::Widget::Constraint::Number.3p
+@man man/man3p/HTML::Widget::Constraint::Printable.3p
+@man man/man3p/HTML::Widget::Constraint::Range.3p
+@man man/man3p/HTML::Widget::Constraint::Regex.3p
+@man man/man3p/HTML::Widget::Constraint::String.3p
+@man man/man3p/HTML::Widget::Constraint::Time.3p
+@man man/man3p/HTML::Widget::Container.3p
+@man man/man3p/HTML::Widget::Element.3p
+@man man/man3p/HTML::Widget::Element::Button.3p
+@man man/man3p/HTML::Widget::Element::Checkbox.3p
+@man man/man3p/HTML::Widget::Element::Hidden.3p
+@man man/man3p/HTML::Widget::Element::Password.3p
+@man man/man3p/HTML::Widget::Element::Radio.3p
+@man man/man3p/HTML::Widget::Element::RadioGroup.3p
+@man man/man3p/HTML::Widget::Element::Reset.3p
+@man man/man3p/HTML::Widget::Element::Select.3p
+@man man/man3p/HTML::Widget::Element::Span.3p
+@man man/man3p/HTML::Widget::Element::Submit.3p
+@man man/man3p/HTML::Widget::Element::Textarea.3p
+@man man/man3p/HTML::Widget::Element::Textfield.3p
+@man man/man3p/HTML::Widget::Element::Upload.3p
+@man man/man3p/HTML::Widget::Error.3p
+@man man/man3p/HTML::Widget::Filter.3p
+@man man/man3p/HTML::Widget::Filter::Callback.3p
+@man man/man3p/HTML::Widget::Filter::HTMLEscape.3p
+@man man/man3p/HTML::Widget::Filter::HTMLStrip.3p
+@man man/man3p/HTML::Widget::Filter::LowerCase.3p
+@man man/man3p/HTML::Widget::Filter::TrimEdges.3p
+@man man/man3p/HTML::Widget::Filter::UpperCase.3p
+@man man/man3p/HTML::Widget::Filter::Whitespace.3p
+@man man/man3p/HTML::Widget::Result.3p
