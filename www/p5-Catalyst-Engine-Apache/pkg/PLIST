@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/05 00:16:31 espie Exp $
+${P5SITE}/Catalyst/Engine/Apache/
+${P5SITE}/Catalyst/Engine/Apache.pm
+${P5SITE}/Catalyst/Engine/Apache/MP13.pm
+@comment ${P5SITE}/Catalyst/Engine/Apache2/
+@comment ${P5SITE}/Catalyst/Engine/Apache2.pm
+@comment ${P5SITE}/Catalyst/Engine/Apache2/MP19.pm
+@comment ${P5SITE}/Catalyst/Engine/Apache2/MP20.pm
+@man man/man3p/Catalyst::Engine::Apache.3p
+@comment @man man/man3p/Catalyst::Engine::Apache2.3p
+@comment @man man/man3p/Catalyst::Engine::Apache2::MP19.3p
+@comment @man man/man3p/Catalyst::Engine::Apache2::MP20.3p
+@man man/man3p/Catalyst::Engine::Apache::MP13.3p
