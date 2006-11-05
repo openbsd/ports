@@ -1,0 +1,6 @@
+Supybot is a cross-platform IRC bot written in Python.  Features:
+
+ * offers nested commands
+ * has a powerful and flexible capability system for handling security
+ * includes many plugins
+ * support multiple servers and channels
