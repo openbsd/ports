@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.417 2006/11/04 19:29:07 espie Exp $
+# $OpenBSD: Makefile,v 1.418 2006/11/05 00:22:23 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -296,9 +296,11 @@
      SUBDIR += p5-Module-Build
      SUBDIR += p5-Module-CoreList
      SUBDIR += p5-Module-Find
+     SUBDIR += p5-Module-Install
      SUBDIR += p5-Module-Load
      SUBDIR += p5-Module-Pluggable
      SUBDIR += p5-Module-Refresh
+     SUBDIR += p5-Module-ScanDeps
      SUBDIR += p5-Module-Versions-Report
      SUBDIR += p5-Net-Server
      SUBDIR += p5-Number-Compare
@@ -307,6 +309,7 @@
      SUBDIR += p5-Object-Realize
      SUBDIR += p5-Object-Signature
      SUBDIR += p5-POE
+     SUBDIR += p5-PAR-Dist
      SUBDIR += p5-Parallel-ForkManager
      SUBDIR += p5-Params-CallbackRequest
      SUBDIR += p5-Params-Util

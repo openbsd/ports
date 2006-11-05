@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.237 2006/11/04 19:29:07 espie Exp $
+# $OpenBSD: Makefile,v 1.238 2006/11/05 00:22:23 espie Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -91,6 +91,13 @@
      SUBDIR += p5-Apache-Session
      SUBDIR += p5-Apache-Test
      SUBDIR += p5-Blatte-HTML
+     SUBDIR += p5-Catalyst-Action-RenderView
+     SUBDIR += p5-Catalyst-Devel
+     SUBDIR += p5-Catalyst-Engine-Apache
+     SUBDIR += p5-Catalyst-Plugin-ConfigLoader
+     SUBDIR += p5-Catalyst-Plugin-Static-Simple
+     SUBDIR += p5-Catalyst-Plugin-SubRequest
+     SUBDIR += p5-Catalyst-Runtime
      SUBDIR += p5-CGI-Ajax
      SUBDIR += p5-CGI-Deurl
      SUBDIR += p5-CGI-Simple
