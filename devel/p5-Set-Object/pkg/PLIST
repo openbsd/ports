@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/05 14:53:43 espie Exp $
+${P5ARCH}/
+${P5ARCH}/Set/
+${P5ARCH}/Set/Object.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Set/
+${P5ARCH}/auto/Set/Object/
+${P5ARCH}/auto/Set/Object/Object.bs
+${P5ARCH}/auto/Set/Object/Object.so
+${P5ARCH}/auto/Set/Object/autosplit.ix
+@man man/man3p/Set::Object.3p
