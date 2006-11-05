@@ -1,0 +1,10 @@
+--- Makefile.PL.orig	Wed Nov 30 15:08:08 2005
++++ Makefile.PL	Sun Nov  5 14:48:34 2006
+@@ -6,7 +6,6 @@ WriteMakefile(
+ 	AUTHOR => 'Fergal Daly <fergal@esatclear.ie>',
+ 	NAME => 'Test::Deep',
+ 	VERSION_FROM => './lib/Test/Deep.pm',
+-	INSTALLDIRS => 'perl',
+ 	PREREQ_PM => {
+ 		Test::More => '0',
+ 		Test::Tester => '0.04',

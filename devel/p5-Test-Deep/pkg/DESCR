@@ -1,0 +1,2 @@
+Test::Deep uses the Test::Builder framework.
+It permits tests that perform comparison of deeply nested structures.
