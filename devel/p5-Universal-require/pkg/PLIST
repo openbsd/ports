@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/05 10:37:20 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/11/05 10:54:33 espie Exp $
+@conflict p5-Universal-exports-<=0.03
 ${P5SITE}/UNIVERSAL/
 ${P5SITE}/UNIVERSAL/require.pm
 @man man/man3p/UNIVERSAL::require.3p

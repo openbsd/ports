@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/05 10:37:20 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/05 10:54:33 espie Exp $
 
 COMMENT=	"extends require to work on variables"
 
 DISTNAME=	UNIVERSAL-require-0.10
-PKGNAME=	p5-Universal-require-0.10
+PKGNAME=	p5-Universal-require-0.10p0
 CATEGORIES=	devel perl5
 
 # Same as Perl
