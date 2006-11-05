@@ -1,0 +1,3 @@
+Sometimes subroutines need to be overridden. 
+For instance, when testing, using a Mock Object can be overkill 
+when all you want to do is override one tiny, little function.
