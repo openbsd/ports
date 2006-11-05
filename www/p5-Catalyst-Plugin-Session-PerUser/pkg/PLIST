@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/05 16:11:31 espie Exp $
+${P5SITE}/Catalyst/
+${P5SITE}/Catalyst/Plugin/Session/PerUser.pm
+@man man/man3p/Catalyst::Plugin::Session::PerUser.3p

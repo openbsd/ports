@@ -1,0 +1,8 @@
+Allows logged-in users to keep their sessions across logins.
+
+The session data can be stored within the user,
+or within the session store, depending on other plugins 
+availability.
+
+e.g, based on Catalyst::Plugin::Authentication::Store
+or on Catalyst::Plugin::Session::Store
