@@ -1,0 +1,4 @@
+Use Mason components in catalyst views.
+
+__PACKAGE__->config->{comp_root} = '/path/to/comp_root';
+__PACKAGE__->config->{data_dir} = '/path/to/data_dir';
