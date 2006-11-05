@@ -1,0 +1,4 @@
+This is a Catalyst Model for DBIx::Class::Schema-based Models. 
+
+See the documentation for Catalyst::Helper::Model::DBIC::Schema 
+for information on generating these Models via Helper scripts. 

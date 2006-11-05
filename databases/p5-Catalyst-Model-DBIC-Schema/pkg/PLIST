@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/05 11:53:23 espie Exp $
+${P5SITE}/Catalyst/Helper/
+${P5SITE}/Catalyst/Helper/Model/
+${P5SITE}/Catalyst/Helper/Model/DBIC/
+${P5SITE}/Catalyst/Helper/Model/DBIC/Schema.pm
+${P5SITE}/Catalyst/Model/
+${P5SITE}/Catalyst/Model/DBIC/
+${P5SITE}/Catalyst/Model/DBIC/Schema.pm
+@man man/man3p/Catalyst::Helper::Model::DBIC::Schema.3p
+@man man/man3p/Catalyst::Model::DBIC::Schema.3p
