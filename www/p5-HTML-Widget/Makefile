@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/05 20:25:31 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/05 20:40:19 espie Exp $
 
 COMMENT=	"HTML widget and validation framework"
 
 DISTNAME=	HTML-Widget-1.10
-PKGNAME=	p5-${DISTNAME}
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	www perl5
 
 MAINTAINER=	Simon Dassow <janus@errornet.de>

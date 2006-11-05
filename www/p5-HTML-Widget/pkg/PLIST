@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/05 20:25:31 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/11/05 20:40:19 espie Exp $
 ${P5SITE}/HTML/
 ${P5SITE}/HTML/Widget/
 ${P5SITE}/HTML/Widget.pm
 ${P5SITE}/HTML/Widget/Accessor.pm
+${P5SITE}/HTML/Widget/BlockContainer.pm
 ${P5SITE}/HTML/Widget/Constraint/
 ${P5SITE}/HTML/Widget/Constraint.pm
 ${P5SITE}/HTML/Widget/Constraint/ASCII.pm
@@ -10,6 +11,7 @@ ${P5SITE}/HTML/Widget/Constraint/All.pm
 ${P5SITE}/HTML/Widget/Constraint/AllOrNone.pm
 ${P5SITE}/HTML/Widget/Constraint/Any.pm
 ${P5SITE}/HTML/Widget/Constraint/Callback.pm
+${P5SITE}/HTML/Widget/Constraint/CallbackOnce.pm
 ${P5SITE}/HTML/Widget/Constraint/Date.pm
 ${P5SITE}/HTML/Widget/Constraint/DateTime.pm
 ${P5SITE}/HTML/Widget/Constraint/DependOn.pm
@@ -29,9 +31,12 @@ ${P5SITE}/HTML/Widget/Constraint/Time.pm
 ${P5SITE}/HTML/Widget/Container.pm
 ${P5SITE}/HTML/Widget/Element/
 ${P5SITE}/HTML/Widget/Element.pm
+${P5SITE}/HTML/Widget/Element/Block.pm
 ${P5SITE}/HTML/Widget/Element/Button.pm
 ${P5SITE}/HTML/Widget/Element/Checkbox.pm
+${P5SITE}/HTML/Widget/Element/Fieldset.pm
 ${P5SITE}/HTML/Widget/Element/Hidden.pm
+${P5SITE}/HTML/Widget/Element/NullContainer.pm
 ${P5SITE}/HTML/Widget/Element/Password.pm
 ${P5SITE}/HTML/Widget/Element/Radio.pm
 ${P5SITE}/HTML/Widget/Element/RadioGroup.pm
@@ -52,15 +57,19 @@ ${P5SITE}/HTML/Widget/Filter/LowerCase.pm
 ${P5SITE}/HTML/Widget/Filter/TrimEdges.pm
 ${P5SITE}/HTML/Widget/Filter/UpperCase.pm
 ${P5SITE}/HTML/Widget/Filter/Whitespace.pm
+${P5SITE}/HTML/Widget/Manual/
+${P5SITE}/HTML/Widget/Manual/Developer.pod
 ${P5SITE}/HTML/Widget/Result.pm
 @man man/man3p/HTML::Widget.3p
 @man man/man3p/HTML::Widget::Accessor.3p
+@man man/man3p/HTML::Widget::BlockContainer.3p
 @man man/man3p/HTML::Widget::Constraint.3p
 @man man/man3p/HTML::Widget::Constraint::ASCII.3p
 @man man/man3p/HTML::Widget::Constraint::All.3p
 @man man/man3p/HTML::Widget::Constraint::AllOrNone.3p
 @man man/man3p/HTML::Widget::Constraint::Any.3p
 @man man/man3p/HTML::Widget::Constraint::Callback.3p
+@man man/man3p/HTML::Widget::Constraint::CallbackOnce.3p
 @man man/man3p/HTML::Widget::Constraint::Date.3p
 @man man/man3p/HTML::Widget::Constraint::DateTime.3p
 @man man/man3p/HTML::Widget::Constraint::DependOn.3p
@@ -79,9 +88,12 @@ ${P5SITE}/HTML/Widget/Result.pm
 @man man/man3p/HTML::Widget::Constraint::Time.3p
 @man man/man3p/HTML::Widget::Container.3p
 @man man/man3p/HTML::Widget::Element.3p
+@man man/man3p/HTML::Widget::Element::Block.3p
 @man man/man3p/HTML::Widget::Element::Button.3p
 @man man/man3p/HTML::Widget::Element::Checkbox.3p
+@man man/man3p/HTML::Widget::Element::Fieldset.3p
 @man man/man3p/HTML::Widget::Element::Hidden.3p
+@man man/man3p/HTML::Widget::Element::NullContainer.3p
 @man man/man3p/HTML::Widget::Element::Password.3p
 @man man/man3p/HTML::Widget::Element::Radio.3p
 @man man/man3p/HTML::Widget::Element::RadioGroup.3p
@@ -101,4 +113,5 @@ ${P5SITE}/HTML/Widget/Result.pm
 @man man/man3p/HTML::Widget::Filter::TrimEdges.3p
 @man man/man3p/HTML::Widget::Filter::UpperCase.3p
 @man man/man3p/HTML::Widget::Filter::Whitespace.3p
+@man man/man3p/HTML::Widget::Manual::Developer.3p
 @man man/man3p/HTML::Widget::Result.3p
