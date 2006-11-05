@@ -1,0 +1,21 @@
+$OpenBSD: patch-libs_serialization_build_Jamfile,v 1.1.1.1 2006/11/05 19:20:43 wilfried Exp $
+--- libs/serialization/build/Jamfile.orig	Thu Nov  2 09:50:18 2006
++++ libs/serialization/build/Jamfile	Thu Nov  2 09:50:39 2006
+@@ -124,17 +124,13 @@
+ install serialization lib 
+     :
+         <lib>boost_serialization
+-        <lib>boost_wserialization
+         <dll>boost_serialization
+-        <dll>boost_wserialization
+ ;
+ 
+ stage stage/lib 
+     :
+         <lib>boost_serialization
+-        <lib>boost_wserialization
+         <dll>boost_serialization
+-        <dll>boost_wserialization
+     :
+         # copy to a path rooted at BOOST_ROOT:
+         <locate>$(BOOST_ROOT)

@@ -1,0 +1,12 @@
+$OpenBSD: patch-libs_config_test_boost_has_pthread_yield_ipp,v 1.1.1.1 2006/11/05 19:20:43 wilfried Exp $
+--- libs/config/test/boost_has_pthread_yield.ipp.orig	Tue Oct 14 12:33:07 2003
++++ libs/config/test/boost_has_pthread_yield.ipp	Thu Oct 26 19:39:07 2006
+@@ -17,7 +17,7 @@ namespace boost_has_pthread_yield{
+ void f()
+ {
+     // this is never called, it just has to compile:
+-    int res = pthread_yield();
++    pthread_yield();
+ }
+ 
+ int test()

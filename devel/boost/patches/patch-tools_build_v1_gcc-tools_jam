@@ -1,0 +1,36 @@
+$OpenBSD: patch-tools_build_v1_gcc-tools_jam,v 1.1.1.1 2006/11/05 19:20:43 wilfried Exp $
+--- tools/build/v1/gcc-tools.jam.orig	Sat Nov 19 20:21:16 2005
++++ tools/build/v1/gcc-tools.jam	Fri Nov  3 15:18:51 2006
+@@ -60,7 +60,7 @@ flags gcc LINKFLAGS <runtime-link>static
+ flags gcc CFLAGS <debug-symbols>on : -g ;
+ flags gcc LINKFLAGS <debug-symbols>on : -g ;
+ flags gcc CFLAGS <optimization>off : -O0 ;
+-flags gcc CFLAGS <optimization>speed : -O3 ;
++flags gcc CFLAGS <optimization>speed : -O2 ;
+ 
+ # Other optimizations we might want for GCC
+ # -fforce-mem -fomit-frame-pointer
+@@ -478,6 +478,7 @@ actions gcc-Link-action bind NEEDLIBS NE
+     $(.SET_EXIT)
+     $(SHELL_SET)$(gSHELL_LIBPATH)=$(LINK_LIBPATH)$(gAPPEND_LD_LIBRARY_PATH)
+     $(SHELL_EXPORT)$(gSHELL_LIBPATH)
++    echo "$(.GXX[1]:R=$(GCC_BIN_DIR))" $(.GXX[2-]) "$(DLL_LINK_FLAGS)" "$(IMPLIB_COMMAND)$(<[2])" $(LINKFLAGS) -o "$(<[1])$(OUTTAG)" -L"$(LIBPATH:T)" -L"$(STDLIBPATH:T)" "$(>)" "$(NEEDLIBS)" "$(NEEDLIBS)" "$(IMPLIB_FLAGS)$(NEEDIMPS)" -l$(FINDLIBS) $(LNOPT)$(RPATH_LINK). $(LNOPT)$(SONAME)$(<[1]:D=)$(SOTAG)
+     "$(.GXX[1]:R=$(GCC_BIN_DIR))" $(.GXX[2-]) "$(DLL_LINK_FLAGS)" "$(IMPLIB_COMMAND)$(<[2])" $(LINKFLAGS) -o "$(<[1])$(OUTTAG)" -L"$(LIBPATH:T)" -L"$(STDLIBPATH:T)" "$(>)" "$(NEEDLIBS)" "$(NEEDLIBS)" "$(IMPLIB_FLAGS)$(NEEDIMPS)" -l$(FINDLIBS) $(LNOPT)$(RPATH_LINK). $(LNOPT)$(SONAME)$(<[1]:D=)$(SOTAG)
+     $(ACTION_1)$(LN)$(_)-fs$(_)"$(<[1]:D=)$(OUTTAG)"$(_)"$(<[1])"
+ }
+@@ -494,6 +495,7 @@ rule Cc-action
+ actions gcc-Cc-action
+ {
+     $(.SET_EXIT)
++    echo "$(.GCC[1]:R=$(GCC_BIN_DIR))" $(.GCC[2-]) -c -Wall -U$(UNDEFS) -D$(DEFINES) $(CFLAGS) -I"$(HDRS)" -I$(_)"$(STDHDRS)" -I$(_)"$(SYSHDRS)" -o "$(<)" "$(>)"
+     "$(.GCC[1]:R=$(GCC_BIN_DIR))" $(.GCC[2-]) -c -Wall -U$(UNDEFS) -D$(DEFINES) $(CFLAGS) -I"$(HDRS)" -I$(_)"$(STDHDRS)" -I$(_)"$(SYSHDRS)" -o "$(<)" "$(>)"
+     "$(.OBJCOPY[1])"$(_)$(OBJCOPY_FLAGS)$(_)"$(<)"
+ }
+@@ -509,6 +511,7 @@ rule C++-action
+ actions gcc-C++-action
+ {
+     $(.SET_EXIT)
++    echo "$(.GXX[1]:R=$(GCC_BIN_DIR))" $(.GXX[2-]) -c -Wall -ftemplate-depth-255 -U$(UNDEFS) -D$(DEFINES) $(CFLAGS) $(C++FLAGS) -I"$(HDRS)" -I$(_)"$(STDHDRS)" -I$(_)"$(SYSHDRS)" -o "$(<)" "$(>)"
+     "$(.GXX[1]:R=$(GCC_BIN_DIR))" $(.GXX[2-]) -c -Wall -ftemplate-depth-255 -U$(UNDEFS) -D$(DEFINES) $(CFLAGS) $(C++FLAGS) -I"$(HDRS)" -I$(_)"$(STDHDRS)" -I$(_)"$(SYSHDRS)" -o "$(<)" "$(>)"
+     "$(.OBJCOPY[1])"$(_)$(OBJCOPY_FLAGS)$(_)"$(<)"
+ }

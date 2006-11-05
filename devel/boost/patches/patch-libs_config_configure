@@ -1,0 +1,29 @@
+$OpenBSD: patch-libs_config_configure,v 1.1.1.1 2006/11/05 19:20:43 wilfried Exp $
+--- libs/config/configure.orig	Thu Nov  3 12:23:34 2005
++++ libs/config/configure	Thu Oct 26 19:41:21 2006
+@@ -1955,13 +1955,13 @@ fi
+ 
+ 
+ 
+-echo "$as_me:$LINENO: checking for pthread_exit in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_exit in -lpthread... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking for pthread_exit in -pthread" >&5
++echo $ECHO_N "checking for pthread_exit in -pthread... $ECHO_C" >&6
+ if test "${ac_cv_lib_pthread_pthread_exit+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -2024,7 +2024,7 @@ if test $ac_cv_lib_pthread_pthread_exit 
+ #define HAVE_LIBPTHREAD 1
+ _ACEOF
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="-pthread $LIBS"
+ 
+ fi
+ 

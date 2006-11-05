@@ -1,0 +1,22 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/11/05 19:20:43 wilfried Exp $
+@lib lib/libboost_date_time-mt.so.${LIBboost_date_time-mt_VERSION}
+@lib lib/libboost_date_time.so.${LIBboost_date_time_VERSION}
+@lib lib/libboost_filesystem-mt.so.${LIBboost_filesystem-mt_VERSION}
+@lib lib/libboost_filesystem.so.${LIBboost_filesystem_VERSION}
+@lib lib/libboost_iostreams-mt.so.${LIBboost_iostreams-mt_VERSION}
+@lib lib/libboost_iostreams.so.${LIBboost_iostreams_VERSION}
+@lib lib/libboost_prg_exec_monitor-mt.so.${LIBboost_prg_exec_monitor-mt_VERSION}
+@lib lib/libboost_prg_exec_monitor.so.${LIBboost_prg_exec_monitor_VERSION}
+@lib lib/libboost_program_options-mt.so.${LIBboost_program_options-mt_VERSION}
+@lib lib/libboost_program_options.so.${LIBboost_program_options_VERSION}
+@lib lib/libboost_regex-mt.so.${LIBboost_regex-mt_VERSION}
+@lib lib/libboost_regex.so.${LIBboost_regex_VERSION}
+@lib lib/libboost_serialization-mt.so.${LIBboost_serialization-mt_VERSION}
+@lib lib/libboost_serialization.so.${LIBboost_serialization_VERSION}
+@lib lib/libboost_signals-mt.so.${LIBboost_signals-mt_VERSION}
+@lib lib/libboost_signals.so.${LIBboost_signals_VERSION}
+@lib lib/libboost_test_exec_monitor-mt.so.${LIBboost_test_exec_monitor-mt_VERSION}
+@lib lib/libboost_test_exec_monitor.so.${LIBboost_test_exec_monitor_VERSION}
+@lib lib/libboost_thread-mt.so.${LIBboost_thread-mt_VERSION}
+@lib lib/libboost_unit_test_framework-mt.so.${LIBboost_unit_test_framework-mt_VERSION}
+@lib lib/libboost_unit_test_framework.so.${LIBboost_unit_test_framework_VERSION}

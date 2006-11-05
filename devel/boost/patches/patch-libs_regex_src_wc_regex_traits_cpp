@@ -1,0 +1,12 @@
+$OpenBSD: patch-libs_regex_src_wc_regex_traits_cpp,v 1.1.1.1 2006/11/05 19:20:43 wilfried Exp $
+--- libs/regex/src/wc_regex_traits.cpp.orig	Fri Oct  6 09:19:06 2006
++++ libs/regex/src/wc_regex_traits.cpp	Fri Oct  6 09:20:06 2006
+@@ -29,7 +29,7 @@
+ #include <boost/regex/v4/primary_transform.hpp>
+ #include <boost/regex/v4/regex_traits_defaults.hpp>
+ 
+-#if defined(BOOST_NO_STDC_NAMESPACE)
++#if defined(BOOST_NO_STDC_NAMESPACE) || defined(__OpenBSD__)
+ namespace std{
+    using ::wcstol;
+ }

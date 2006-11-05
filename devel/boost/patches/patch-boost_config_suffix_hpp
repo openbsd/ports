@@ -1,0 +1,13 @@
+$OpenBSD: patch-boost_config_suffix_hpp,v 1.1.1.1 2006/11/05 19:20:43 wilfried Exp $
+--- boost/config/suffix.hpp.orig	Fri Nov  3 17:24:33 2006
++++ boost/config/suffix.hpp	Fri Nov  3 17:25:01 2006
+@@ -213,7 +213,7 @@
+ // from here then add to the appropriate compiler section):
+ //
+ #if (defined(__MT__) || defined(_MT) || defined(_REENTRANT) \
+-    || defined(_PTHREADS)) && !defined(BOOST_HAS_THREADS)
++    || defined(_PTHREADS) || defined(_POSIX_THREADS)) && !defined(BOOST_HAS_THREADS)
+ #  define BOOST_HAS_THREADS
+ #endif
+ 
+

@@ -1,0 +1,12 @@
+$OpenBSD: patch-Jamfile,v 1.1.1.1 2006/11/05 19:20:43 wilfried Exp $
+--- Jamfile.orig	Tue Nov  8 05:39:45 2005
++++ Jamfile	Thu Oct 26 08:17:42 2006
+@@ -204,7 +204,7 @@ if $(lib-sources)
+     local gUNVERSIONED_VARIANT_TAG = [ cond $(layout-system) : TRUE ] ;
+     
+     local lib-build =
+-        debug release
++        release
+         [ cond $(with-debug-python) : debug-python ]
+         [ cond $(NT) : <runtime-link>static/dynamic ]
+         <threading>single/multi

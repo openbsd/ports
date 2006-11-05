@@ -1,0 +1,12 @@
+$OpenBSD: patch-libs_config_test_boost_has_clock_gettime_ipp,v 1.1.1.1 2006/11/05 19:20:43 wilfried Exp $
+--- libs/config/test/boost_has_clock_gettime.ipp.orig	Tue Oct 14 12:33:07 2003
++++ libs/config/test/boost_has_clock_gettime.ipp	Thu Oct 26 19:35:48 2006
+@@ -9,7 +9,7 @@
+ //  TITLE:         clock_gettime
+ //  DESCRIPTION:   The platform supports POSIX standard API clock_gettime.
+ 
+-#include <time.h>
++#include <sys/time.h>
+ 
+ 
+ namespace boost_has_clock_gettime{
