@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.419 2006/11/05 12:32:33 espie Exp $
+# $OpenBSD: Makefile,v 1.420 2006/11/05 17:05:42 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -189,6 +189,7 @@
      SUBDIR += p5-Carp-Assert
      SUBDIR += p5-Carp-Clan
      SUBDIR += p5-Carp-Datum
+     SUBDIR += p5-Catalyst-Plugin-StackTrace
      SUBDIR += p5-Class-Accessor
      SUBDIR += p5-Class-Accessor-Chained
      SUBDIR += p5-Class-AutoClass
@@ -267,6 +268,7 @@
      SUBDIR += p5-Getargs-Long
      SUBDIR += p5-Glib2
      SUBDIR += p5-Graph
+     SUBDIR += p5-Hash-Merge
      SUBDIR += p5-Heap
      SUBDIR += p5-Hook-LexWrap
      SUBDIR += p5-IO-Capture
@@ -329,10 +331,12 @@
      SUBDIR += p5-SVN-Notify
      SUBDIR += p5-SVN-Simple
      SUBDIR += p5-SVN-Web
+     SUBDIR += p5-Set-Object
      SUBDIR += p5-Set-Scalar
      SUBDIR += p5-String-CRC32
      SUBDIR += p5-String-Scanf
      SUBDIR += p5-Sub-Name
+     SUBDIR += p5-Sub-Override
      SUBDIR += p5-Sub-Uplevel
      SUBDIR += p5-Taint-Runtime
      SUBDIR += p5-Task-Weaken
@@ -344,6 +348,7 @@
      SUBDIR += p5-Term-Shell
      SUBDIR += p5-Test-Builder-Tester
      SUBDIR += p5-Test-Class
+     SUBDIR += p5-Test-Deep
      SUBDIR += p5-Test-Differences
      SUBDIR += p5-Test-Exception
      SUBDIR += p5-Test-File-Contents
@@ -353,10 +358,13 @@
      SUBDIR += p5-Test-Memory-Cycle
      SUBDIR += p5-Test-MockModule
      SUBDIR += p5-Test-MockObject
+     SUBDIR += p5-Test-NoWarnings
      SUBDIR += p5-Test-Pod
      SUBDIR += p5-Test-Pod-Coverage
      SUBDIR += p5-Test-Taint
+     SUBDIR += p5-Test-Tester
      SUBDIR += p5-Test-WWW-Mechanize
+     SUBDIR += p5-Test-WWW-Mechanize-Catalyst
      SUBDIR += p5-Test-Warn
      SUBDIR += p5-Test-use-ok
      SUBDIR += p5-Tie-Array-Sorted

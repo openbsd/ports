@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.239 2006/11/05 12:32:33 espie Exp $
+# $OpenBSD: Makefile,v 1.240 2006/11/05 17:05:42 espie Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -91,20 +91,24 @@
      SUBDIR += p5-Apache-Session
      SUBDIR += p5-Apache-Test
      SUBDIR += p5-Blatte-HTML
-     SUBDIR += p5-Catalyst-Action-RenderView
-     SUBDIR += p5-Catalyst-Devel
-     SUBDIR += p5-Catalyst-Engine-Apache
-     SUBDIR += p5-Catalyst-Plugin-ConfigLoader
-     SUBDIR += p5-Catalyst-Plugin-Static-Simple
-     SUBDIR += p5-Catalyst-Plugin-SubRequest
-     SUBDIR += p5-Catalyst-Runtime
-     SUBDIR += p5-Catalyst-View-Mason
      SUBDIR += p5-CGI-Ajax
      SUBDIR += p5-CGI-Deurl
      SUBDIR += p5-CGI-Simple
      SUBDIR += p5-CGI-SpeedyCGI
      SUBDIR += p5-CGI-Untaint
      SUBDIR += p5-CGI-XMLApplication
+     SUBDIR += p5-Catalyst-Action-RenderView
+     SUBDIR += p5-Catalyst-Devel
+     SUBDIR += p5-Catalyst-Engine-Apache
+     SUBDIR += p5-Catalyst-Plugin-ConfigLoader
+     SUBDIR += p5-Catalyst-Plugin-Session
+     SUBDIR += p5-Catalyst-Plugin-Session-PerUser
+     SUBDIR += p5-Catalyst-Plugin-Session-State-Cookie
+     SUBDIR += p5-Catalyst-Plugin-Session-State-URI
+     SUBDIR += p5-Catalyst-Plugin-Static-Simple
+     SUBDIR += p5-Catalyst-Plugin-SubRequest
+     SUBDIR += p5-Catalyst-Runtime
+     SUBDIR += p5-Catalyst-View-Mason
      SUBDIR += p5-HTML-Base
      SUBDIR += p5-HTML-CGIChecker
      SUBDIR += p5-HTML-Calendar-Month-Simple
@@ -125,6 +129,7 @@
      SUBDIR += p5-HTML-Tagset
      SUBDIR += p5-HTML-Template
      SUBDIR += p5-HTML-Template-Expr
+     SUBDIR += p5-HTML-TokeParser-Simple
      SUBDIR += p5-HTML-Tree
      SUBDIR += p5-HTTP-Body
      SUBDIR += p5-HTTP-BrowserDetect
