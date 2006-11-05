@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/05 13:45:24 espie Exp $
+${P5SITE}/Test/
+${P5SITE}/Test/Tester/
+${P5SITE}/Test/Tester.pm
+${P5SITE}/Test/Tester/Capture.pm
+${P5SITE}/Test/Tester/CaptureRunner.pm
+${P5SITE}/Test/Tester/Delegate.pm
+@man man/man3p/Test::Tester.3p
+@man man/man3p/Test::Tester::Capture.3p
+@man man/man3p/Test::Tester::CaptureRunner.3p

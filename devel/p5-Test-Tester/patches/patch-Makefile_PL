@@ -1,0 +1,10 @@
+--- Makefile.PL.orig	Sun Feb  5 18:12:58 2006
++++ Makefile.PL	Sun Feb  5 18:13:07 2006
+@@ -19,7 +19,6 @@
+ 	AUTHOR => 'Fergal Daly <fergal@esatclear.ie>',
+ 	NAME => $module,
+ 	VERSION_FROM => $pm_file,
+-	INSTALLDIRS => 'perl',
+ 	PREREQ_PM => {
+ 		'Test::Builder' => 0,
+ 	},
