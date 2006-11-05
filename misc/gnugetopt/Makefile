@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/04 22:14:33 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/05 14:17:05 bernd Exp $
 
 COMMENT=	"GNU getopt(1) utility"
 
@@ -24,16 +24,15 @@ MAKE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 NO_REGRESS=	Yes
 
-pre-configure:
-	rm -f ${WRKSRC}/*.orig
-
 do-install:
 	cd ${WRKSRC} && sed -e 's,/usr/local,${LOCALBASE},g' \
 		< ${WRKSRC}/getopt.1 > ${WRKSRC}/getopt.1.fixed
 	${INSTALL_PROGRAM} ${WRKBUILD}/getopt ${PREFIX}/bin/gnugetopt
 	${INSTALL_MAN} ${WRKBUILD}/getopt.1.fixed ${PREFIX}/man/man1/gnugetopt.1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnugetopt
-	${INSTALL_DATA} ${WRKBUILD}/getopt-parse.* \
+	${INSTALL_DATA} ${WRKBUILD}/getopt-parse.bash \
+		${PREFIX}/share/examples/gnugetopt
+	${INSTALL_DATA} ${WRKBUILD}/getopt-parse.tcsh \
 		${PREFIX}/share/examples/gnugetopt
 
 .include <bsd.port.mk>
