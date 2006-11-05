@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/05 14:04:04 espie Exp $
+${P5SITE}/Catalyst/Plugin/
+${P5SITE}/Catalyst/Plugin/Session/
+${P5SITE}/Catalyst/Plugin/Session.pm
+${P5SITE}/Catalyst/Plugin/Session/State.pm
+${P5SITE}/Catalyst/Plugin/Session/Store/
+${P5SITE}/Catalyst/Plugin/Session/Store.pm
+${P5SITE}/Catalyst/Plugin/Session/Store/Dummy.pm
+${P5SITE}/Catalyst/Plugin/Session/Test/
+${P5SITE}/Catalyst/Plugin/Session/Test/Store.pm
+${P5SITE}/Catalyst/Plugin/Session/Tutorial.pod
+@man man/man3p/Catalyst::Plugin::Session.3p
+@man man/man3p/Catalyst::Plugin::Session::State.3p
+@man man/man3p/Catalyst::Plugin::Session::Store.3p
+@man man/man3p/Catalyst::Plugin::Session::Store::Dummy.3p
+@man man/man3p/Catalyst::Plugin::Session::Test::Store.3p
+@man man/man3p/Catalyst::Plugin::Session::Tutorial.3p
