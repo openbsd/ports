@@ -1,0 +1,6 @@
+For Catalyst::Plugin::Session to work, a session ID needs to
+be stored on the client side, and the session data itself needs to be 
+stored on the server.
+
+This plugin cheats and embeds the session ID directly in the URI sent
+to the client.
