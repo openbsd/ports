@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/04 23:29:18 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/05 17:12:02 espie Exp $
 
 COMMENT=	"create and manipulate PAR distributions"
 
 DISTNAME=	PAR-Dist-0.21
 PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	devel perl5
+CATEGORIES=	devel perl5 archivers
 
 MAINTAINER=	Simon Dassow <janus@errornet.de>
 
