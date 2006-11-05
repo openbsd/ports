@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/05 14:28:03 espie Exp $
+${P5SITE}/Catalyst/Plugin/
+${P5SITE}/Catalyst/Plugin/StackTrace.pm
+@man man/man3p/Catalyst::Plugin::StackTrace.3p
