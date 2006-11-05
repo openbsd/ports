@@ -10,3 +10,7 @@ The faxrm utility and man page have been renamed to avoid conflict with
 comms/hylafax:
  faxrm -> mgetty-faxrm
  faxrm(1) -> mgetty-faxrm(1)
+
+NOTE: starting with 1.1.35p3, mgetty and vgetty have been moved to
+${PREFIX}/libexec.  If you're updating, you may have to edit your
+/etc/ttys.
