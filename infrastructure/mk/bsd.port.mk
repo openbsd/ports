@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.793 2006/11/03 17:03:28 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.794 2006/11/05 15:46:51 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1172,6 +1172,14 @@ _RUN_DEP = ${_RUN_DEP2:C/[^:]*://}
 .else
 _RUN_DEP2=
 _RUN_DEP=
+.endif
+
+.if defined(REGRESS_DEPENDS)
+_REGRESS_DEP2 = ${REGRESS_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_REGRESS_DEP = ${_REGRESS_DEP2:C/[^:]*://}
+.else
+_REGRESS_DEP2=
+_REGRESS_DEP=
 .endif
 
 _DEPlibs_COOKIES=
@@ -2395,8 +2403,8 @@ print-run-depends:
 	@echo '" to run.'
 .endif
 
-# full-build-depends, full-all-depends, full-run-depends
-.for _i in build all run
+# full-build-depends, full-all-depends, full-run-depends full-regress-depends
+.for _i in build all run regress
 full-${_i}-depends:
 	@${MAKE} ${_i}-dir-depends|${_sort_dependencies}|while read subdir; do \
 		${_flavor_fragment}; \
@@ -2574,6 +2582,32 @@ run-dir-depends:
 	if ! fgrep -q -e "r|${FULLPKGPATH}|" -e "a|${FULLPKGPATH}" $${_DEPENDS_FILE}; then \
 		echo "r|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
 		self=${FULLPKGPATH} PACKAGING='${SUBPACKAGE}' ${MAKE} _recurse-run-dir-depends; \
+	fi
+.else
+	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
+.endif
+
+# recursively build a list of dirs for package regression, ready for tsort
+_recurse-regress-dir-depends:
+.for _dir in ${_REGRESS_DEP}
+	@echo "$$self ${_dir}"; \
+	if ! fgrep -q -e "R|${_dir}|" $${_DEPENDS_FILE}; then \
+		echo "R|${_dir}|" >> $${_DEPENDS_FILE}; \
+		subdir=${_dir}; ${_flavor_fragment}; \
+		toset="$$toset self=\"${_dir}\""; \
+		if ! eval $$toset ${MAKE} _recurse-run-dir-depends; then  \
+			echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
+			exit 1; \
+		fi; \
+	fi
+.endfor
+
+regress-dir-depends:
+.if !empty(_REGRESS_DEP)
+	@${_depfile_fragment}; \
+	if ! fgrep -q -e "R|${FULLPKGPATH}|" $${_DEPENDS_FILE}; then \
+		echo "R|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
+		self=${FULLPKGPATH} PACKAGING='${SUBPACKAGE}' ${MAKE} _recurse-regress-dir-depends; \
 	fi
 .else
 	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
@@ -2785,4 +2819,6 @@ subdump-vars:
 	_list-port-libs _print-package-signature-lib _print-package-signature-run \
 	show-required-by peek-ftp _internal-subpackage subdescribe \
 	sublib-depends-check subdump-vars _internal-install-all install-all \
-	subpackage _internal-subupdate _internal-update
+	subpackage _internal-subupdate _internal-update \
+	regress-dir-depends _recurse-regress-dir-depends \
+	full-regress-depends
