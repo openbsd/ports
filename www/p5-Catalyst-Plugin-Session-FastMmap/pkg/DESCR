@@ -1,0 +1,1 @@
+Store sessions in a shared memory cache for speed.
