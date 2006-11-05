@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.432 2006/11/01 02:02:25 alek Exp $
+# $OpenBSD: Makefile,v 1.433 2006/11/05 21:27:58 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -311,6 +311,7 @@
      SUBDIR += softflowd
      SUBDIR += ssldump
      SUBDIR += sslsniffer
+     SUBDIR += supybot
      SUBDIR += synergy
      SUBDIR += tacacs+
      SUBDIR += tclcurl
