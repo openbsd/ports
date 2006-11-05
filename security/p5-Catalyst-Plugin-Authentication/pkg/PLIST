@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/05 14:12:03 espie Exp $
+${P5SITE}/Catalyst/Plugin/
+${P5SITE}/Catalyst/Plugin/Authentication/
+${P5SITE}/Catalyst/Plugin/Authentication.pm
+${P5SITE}/Catalyst/Plugin/Authentication/Credential/
+${P5SITE}/Catalyst/Plugin/Authentication/Credential/Password.pm
+${P5SITE}/Catalyst/Plugin/Authentication/Store/
+${P5SITE}/Catalyst/Plugin/Authentication/Store.pod
+${P5SITE}/Catalyst/Plugin/Authentication/Store/Minimal/
+${P5SITE}/Catalyst/Plugin/Authentication/Store/Minimal.pm
+${P5SITE}/Catalyst/Plugin/Authentication/Store/Minimal/Backend.pm
+${P5SITE}/Catalyst/Plugin/Authentication/User/
+${P5SITE}/Catalyst/Plugin/Authentication/User.pm
+${P5SITE}/Catalyst/Plugin/Authentication/User/Hash.pm
+@man man/man3p/Catalyst::Plugin::Authentication.3p
+@man man/man3p/Catalyst::Plugin::Authentication::Credential::Password.3p
+@man man/man3p/Catalyst::Plugin::Authentication::Store.3p
+@man man/man3p/Catalyst::Plugin::Authentication::Store::Minimal.3p
+@man man/man3p/Catalyst::Plugin::Authentication::Store::Minimal::Backend.3p
+@man man/man3p/Catalyst::Plugin::Authentication::User.3p
+@man man/man3p/Catalyst::Plugin::Authentication::User::Hash.3p
