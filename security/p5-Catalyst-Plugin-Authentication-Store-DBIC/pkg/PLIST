@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/05 17:04:47 espie Exp $
+${P5SITE}/Catalyst/Plugin/Authentication/Store/DBIC/
+${P5SITE}/Catalyst/Plugin/Authentication/Store/DBIC.pm
+${P5SITE}/Catalyst/Plugin/Authentication/Store/DBIC/Backend.pm
+${P5SITE}/Catalyst/Plugin/Authentication/Store/DBIC/User/
+${P5SITE}/Catalyst/Plugin/Authentication/Store/DBIC/User.pm
+${P5SITE}/Catalyst/Plugin/Authentication/Store/DBIC/User/CDBI.pm
+@man man/man3p/Catalyst::Plugin::Authentication::Store::DBIC.3p
+@man man/man3p/Catalyst::Plugin::Authentication::Store::DBIC::Backend.3p
+@man man/man3p/Catalyst::Plugin::Authentication::Store::DBIC::User.3p
