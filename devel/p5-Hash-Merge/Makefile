@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/05 16:05:24 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/05 19:23:02 espie Exp $
 
 COMMENT=        "merge associative arrays"
 
 DISTNAME=	Hash-Merge-0.08
-PKGNAME=	p5-${DISTNAME}
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=     devel perl5
 
 # perl
@@ -15,6 +15,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Hash/}
 
 CONFIGURE_STYLE=perl
+RUN_DEPENDS=	::devel/p5-Clone
+REGRESS_DEPENDS=${RUN_DEPENDS}
 
 PKG_ARCH=	*
 
