@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/04 20:34:21 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/05 09:59:04 espie Exp $
 
 COMMENT= 	"catalyst plugin to Config::Any"
 
@@ -24,7 +24,7 @@ REGRESS_DEPENDS=${RUN_DEPENDS} \
 		::devel/p5-Test-Pod \
 		::devel/p5-Test-Pod-Coverage
 
-CONFIGURE_STYLE=perl build
+CONFIGURE_STYLE=perl modbuild
 PKG_ARCH=	*
 
 .include <bsd.port.mk>
