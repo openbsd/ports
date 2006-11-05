@@ -9,4 +9,5 @@ problems.
 Flavors:
 
          ldap - Enable LDAP support for authentication in mod_auth.
+          lua - Enable LUA engine for mod_cml. Needed for mod_magnet.
         mysql - Enable MySQL virtual hosting with mod_mysql_vhost.
