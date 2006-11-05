@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.421 2006/11/05 19:21:11 wilfried Exp $
+# $OpenBSD: Makefile,v 1.422 2006/11/05 21:05:32 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -24,6 +24,7 @@
      SUBDIR += bluetooth-libs
      SUBDIR += boehm-gc
      SUBDIR += boost
+     SUBDIR += catalyst-tutorial
      SUBDIR += c2hs
      SUBDIR += ccache
      SUBDIR += cflow
@@ -302,6 +303,7 @@
      SUBDIR += p5-Module-Install
      SUBDIR += p5-Module-Load
      SUBDIR += p5-Module-Pluggable
+     SUBDIR += p5-Module-Pluggable-Fast
      SUBDIR += p5-Module-Refresh
      SUBDIR += p5-Module-ScanDeps
      SUBDIR += p5-Module-Versions-Report
