@@ -1,0 +1,5 @@
+HTML::TokeParser is an excellent module that's often used for parsing
+HTML. However, the tokens returned are not exactly intuitive to parse
+so HTML::TokeParser::Simple allows the user ask more intuitive (read:
+more self-documenting) questions about the tokens returned.
+

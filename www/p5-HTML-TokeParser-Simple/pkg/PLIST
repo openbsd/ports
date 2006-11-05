@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/05 16:32:14 espie Exp $
+${P5SITE}/HTML/TokeParser/Simple/
+${P5SITE}/HTML/TokeParser/Simple.pm
+${P5SITE}/HTML/TokeParser/Simple/Token/
+${P5SITE}/HTML/TokeParser/Simple/Token.pm
+${P5SITE}/HTML/TokeParser/Simple/Token/Comment.pm
+${P5SITE}/HTML/TokeParser/Simple/Token/Declaration.pm
+${P5SITE}/HTML/TokeParser/Simple/Token/ProcessInstruction.pm
+${P5SITE}/HTML/TokeParser/Simple/Token/Tag/
+${P5SITE}/HTML/TokeParser/Simple/Token/Tag.pm
+${P5SITE}/HTML/TokeParser/Simple/Token/Tag/End.pm
+${P5SITE}/HTML/TokeParser/Simple/Token/Tag/Start.pm
+${P5SITE}/HTML/TokeParser/Simple/Token/Text.pm
+@man man/man3p/HTML::TokeParser::Simple.3p
+@man man/man3p/HTML::TokeParser::Simple::Token.3p
+@man man/man3p/HTML::TokeParser::Simple::Token::Comment.3p
+@man man/man3p/HTML::TokeParser::Simple::Token::Declaration.3p
+@man man/man3p/HTML::TokeParser::Simple::Token::ProcessInstruction.3p
+@man man/man3p/HTML::TokeParser::Simple::Token::Tag.3p
+@man man/man3p/HTML::TokeParser::Simple::Token::Tag::End.3p
+@man man/man3p/HTML::TokeParser::Simple::Token::Tag::Start.3p
+@man man/man3p/HTML::TokeParser::Simple::Token::Text.3p
