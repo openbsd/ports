@@ -1,0 +1,14 @@
+The catalyst framework comes with a tutorial.
+This package installs everything needed for the
+tutorial, which is then accessible as
+
+Catalyst::Manual::Tutorial::Intro
+Catalyst::Manual::Tutorial::CatalystBasics
+Catalyst::Manual::Tutorial::BasicCRUD
+Catalyst::Manual::Tutorial::Authentication
+Catalyst::Manual::Tutorial::Authorization
+Catalyst::Manual::Tutorial::Debugging
+Catalyst::Manual::Tutorial::Testing
+Catalyst::Manual::Tutorial::AdvancedCRUD
+Catalyst::Manual::Tutorial::Appendices
+
