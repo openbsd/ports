@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/04 18:24:37 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/05 10:31:49 espie Exp $
 
 COMMENT= 	"read and modify Apache .htpasswd files"
 
@@ -26,7 +26,7 @@ REGRESS_DEPENDS=${RUN_DEPENDS} \
 
 MAKE_ENV=	TEST_POD=Yes
 
-CONFIGURE_STYLE=perl build
+CONFIGURE_STYLE=perl modbuild
 
 PKG_ARCH=	*
 

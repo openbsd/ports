@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/04 15:22:46 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/11/05 10:31:49 espie Exp $
 
 COMMENT= 	"perl extension for emulating troublesome interfaces"
 
@@ -21,7 +21,7 @@ RUN_DEPENDS=		::devel/p5-Universal-isa \
 
 REGRESS_DEPENDS=	${RUN_DEPENDS}
 
-CONFIGURE_STYLE= perl build
+CONFIGURE_STYLE= perl modbuild
 
 PKG_ARCH= *
 

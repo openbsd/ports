@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/04 15:14:59 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/05 10:31:49 espie Exp $
 
 COMMENT=	"calling UNIVERSAL::isa as a function"
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=UNIVERSAL/}
 
-CONFIGURE_STYLE=perl build
+CONFIGURE_STYLE=perl modbuild
 
 PKG_ARCH=	*
 
