@@ -1,133 +1,57 @@
-$OpenBSD: patch-configure,v 1.2 2006/06/14 12:37:52 bernd Exp $
---- configure.orig	Tue Nov  2 05:39:55 2004
-+++ configure	Fri May 26 17:47:58 2006
-@@ -494,7 +494,7 @@ x_libraries=NONE
- # and all the variables that are supposed to be based on exec_prefix
- # by default will actually change.
- # Use braces instead of parens because sh, perl, etc. also accept them.
--bindir='${exec_prefix}/bin'
-+bindir='${exec_prefix}/sbin'
- sbindir='${exec_prefix}/sbin'
- libexecdir='${exec_prefix}/libexec'
- datadir='${prefix}/share'
-@@ -19274,7 +19274,7 @@ fi
-     { echo "$as_me:$LINENO: WARNING: output file \`$ofile' does not exist" >&5
- echo "$as_me: WARNING: output file \`$ofile' does not exist" >&2;}
+$OpenBSD: patch-configure,v 1.3 2006/11/05 14:42:56 bernd Exp $
+--- configure.orig	Wed Oct 11 01:57:30 2006
++++ configure	Fri Oct 27 20:00:53 2006
+@@ -23301,7 +23301,7 @@ if test x$enable_iconv = xyes; then
+ 	oldcppflags=$CPPFLAGS
+ 	CFLAGS="$CFLAGS $MPD_CFLAGS $ICONV_CFLAGS"
+ 	LIBS="$LIBS $MPD_LIBS $ICONV_LIBS"
+-	CPPFLAGS=$CFLAGS
++	CPPFLAGS=$CPPFLAGS
+ 	if test "${ac_cv_header_iconv_h+set}" = set; then
+   echo "$as_me:$LINENO: checking for iconv.h" >&5
+ echo $ECHO_N "checking for iconv.h... $ECHO_C" >&6
+@@ -23548,7 +23548,7 @@ if test x$enable_id3 = xyes; then
+ 	oldcppflags=$CPPFLAGS
+ 	CFLAGS="$CFLAGS $MPD_CFLAGS $ID3TAG_CFLAGS"
+ 	LIBS="$LIBS $MPD_LIBS $ID3TAG_LIBS"
+-	CPPFLAGS=$CFLAGS
++	CPPFLAGS=$CPPFLAGS
+ 
+ for ac_header in id3tag.h
+ do
+@@ -23815,7 +23815,7 @@ if test x$enable_mp3 = xyes; then
+ 	oldcppflags=$CPPFLAGS
+ 	CFLAGS="$CFLAGS $MPD_CFLAGS $MAD_CFLAGS"
+ 	LIBS="$LIBS $MPD_LIBS $MAD_LIBS"
+-	CPPFLAGS=$CFLAGS
++	CPPFLAGS=$CPPFLAGS
+ 
+ for ac_header in mad.h
+ do
+@@ -24080,7 +24080,7 @@ if test x$enable_mpc = xyes; then
+ 	oldcppflags=$CPPFLAGS
+ 	CFLAGS="$CFLAGS $MPD_CFLAGS $MPCDEC_CFLAGS -I."
+ 	LIBS="$LIBS $MPD_LIBS $MPCDEC_LIBS"
+-	CPPFLAGS=$CFLAGS
++	CPPFLAGS=$CPPFLAGS
+ 	if test "${ac_cv_header_mpcdec_mpcdec_h+set}" = set; then
+   echo "$as_me:$LINENO: checking for mpcdec/mpcdec.h" >&5
+ echo $ECHO_N "checking for mpcdec/mpcdec.h... $ECHO_C" >&6
+@@ -24332,7 +24332,7 @@ if test x$enable_aac = xyes; then
+ 	oldcppflags=$CPPFLAGS
+ 	CFLAGS="$CFLAGS $MPD_CFLAGS $FAAD_CFLAGS -I."
+ 	LIBS="$LIBS $MPD_LIBS $FAAD_LIBS"
+-	CPPFLAGS=$CFLAGS
++	CPPFLAGS=$CPPFLAGS
+ 	if test "${ac_cv_header_faad_h+set}" = set; then
+   echo "$as_me:$LINENO: checking for faad.h" >&5
+ echo $ECHO_N "checking for faad.h... $ECHO_C" >&6
+@@ -26179,7 +26179,7 @@ fi;
+     LIBOGGFLAC_LIBS="-L$libdir"
    fi
--  if test -z `grep -e 'shared_ext.*shrext' $ofile`; then
-+  if test -z "`grep -e 'shared_ext.*shrext' $ofile`"; then
-     # Make sure $shared_ext gets set to $shrext
-     if sed -e 's/shared_ext/shrext/g' "$ofile" > "${ofile}T"; then
-       mv "${ofile}T" "$ofile"
-@@ -19357,7 +19357,7 @@ MPD_CFLAGS=""
- if test x$CC = xgcc; then
- 	MPD_CFLAGS="-Wall"
- fi
--MPD_LIBS=""
-+MPD_LIBS="-lossaudio"
  
- # Check whether --enable-audio or --disable-audio was given.
- if test "${enable_audio+set}" = set; then
-@@ -22426,8 +22426,8 @@ _ACEOF
- fi
+-  LIBOGGFLAC_LIBS="$LIBOGGFLAC_LIBS -lOggFLAC -lFLAC -lm"
++  LIBOGGFLAC_LIBS="$LIBOGGFLAC_LIBS -lOggFLAC -logg -lFLAC -lm"
  
- if test "${ac_cv_header_sys_soundcard_h+set}" = set; then
--  echo "$as_me:$LINENO: checking for sys/soundcard.h" >&5
--echo $ECHO_N "checking for sys/soundcard.h... $ECHO_C" >&6
-+  echo "$as_me:$LINENO: checking for soundcard.h" >&5
-+echo $ECHO_N "checking for soundcard.h... $ECHO_C" >&6
- if test "${ac_cv_header_sys_soundcard_h+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- fi
-@@ -22435,8 +22435,8 @@ echo "$as_me:$LINENO: result: $ac_cv_hea
- echo "${ECHO_T}$ac_cv_header_sys_soundcard_h" >&6
- else
-   # Is the header compilable?
--echo "$as_me:$LINENO: checking sys/soundcard.h usability" >&5
--echo $ECHO_N "checking sys/soundcard.h usability... $ECHO_C" >&6
-+echo "$as_me:$LINENO: checking soundcard.h usability" >&5
-+echo $ECHO_N "checking soundcard.h usability... $ECHO_C" >&6
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -22444,7 +22444,7 @@ cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- $ac_includes_default
--#include <sys/soundcard.h>
-+#include <soundcard.h>
- _ACEOF
- rm -f conftest.$ac_objext
- if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
-@@ -22480,15 +22480,15 @@ echo "$as_me:$LINENO: result: $ac_header
- echo "${ECHO_T}$ac_header_compiler" >&6
- 
- # Is the header present?
--echo "$as_me:$LINENO: checking sys/soundcard.h presence" >&5
--echo $ECHO_N "checking sys/soundcard.h presence... $ECHO_C" >&6
-+echo "$as_me:$LINENO: checking soundcard.h presence" >&5
-+echo $ECHO_N "checking soundcard.h presence... $ECHO_C" >&6
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
--#include <sys/soundcard.h>
-+#include <soundcard.h>
- _ACEOF
- if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5
-   (eval $ac_cpp conftest.$ac_ext) 2>conftest.er1
-@@ -22522,25 +22522,25 @@ echo "${ECHO_T}$ac_header_preproc" >&6
- # So?  What about this header?
- case $ac_header_compiler:$ac_header_preproc:$ac_c_preproc_warn_flag in
-   yes:no: )
--    { echo "$as_me:$LINENO: WARNING: sys/soundcard.h: accepted by the compiler, rejected by the preprocessor!" >&5
--echo "$as_me: WARNING: sys/soundcard.h: accepted by the compiler, rejected by the preprocessor!" >&2;}
--    { echo "$as_me:$LINENO: WARNING: sys/soundcard.h: proceeding with the compiler's result" >&5
--echo "$as_me: WARNING: sys/soundcard.h: proceeding with the compiler's result" >&2;}
-+    { echo "$as_me:$LINENO: WARNING: soundcard.h: accepted by the compiler, rejected by the preprocessor!" >&5
-+echo "$as_me: WARNING: soundcard.h: accepted by the compiler, rejected by the preprocessor!" >&2;}
-+    { echo "$as_me:$LINENO: WARNING: soundcard.h: proceeding with the compiler's result" >&5
-+echo "$as_me: WARNING: soundcard.h: proceeding with the compiler's result" >&2;}
-     ac_header_preproc=yes
-     ;;
-   no:yes:* )
--    { echo "$as_me:$LINENO: WARNING: sys/soundcard.h: present but cannot be compiled" >&5
--echo "$as_me: WARNING: sys/soundcard.h: present but cannot be compiled" >&2;}
--    { echo "$as_me:$LINENO: WARNING: sys/soundcard.h:     check for missing prerequisite headers?" >&5
--echo "$as_me: WARNING: sys/soundcard.h:     check for missing prerequisite headers?" >&2;}
--    { echo "$as_me:$LINENO: WARNING: sys/soundcard.h: see the Autoconf documentation" >&5
--echo "$as_me: WARNING: sys/soundcard.h: see the Autoconf documentation" >&2;}
--    { echo "$as_me:$LINENO: WARNING: sys/soundcard.h:     section \"Present But Cannot Be Compiled\"" >&5
--echo "$as_me: WARNING: sys/soundcard.h:     section \"Present But Cannot Be Compiled\"" >&2;}
--    { echo "$as_me:$LINENO: WARNING: sys/soundcard.h: proceeding with the preprocessor's result" >&5
--echo "$as_me: WARNING: sys/soundcard.h: proceeding with the preprocessor's result" >&2;}
--    { echo "$as_me:$LINENO: WARNING: sys/soundcard.h: in the future, the compiler will take precedence" >&5
--echo "$as_me: WARNING: sys/soundcard.h: in the future, the compiler will take precedence" >&2;}
-+    { echo "$as_me:$LINENO: WARNING: soundcard.h: present but cannot be compiled" >&5
-+echo "$as_me: WARNING: soundcard.h: present but cannot be compiled" >&2;}
-+    { echo "$as_me:$LINENO: WARNING: soundcard.h:     check for missing prerequisite headers?" >&5
-+echo "$as_me: WARNING: soundcard.h:     check for missing prerequisite headers?" >&2;}
-+    { echo "$as_me:$LINENO: WARNING: soundcard.h: see the Autoconf documentation" >&5
-+echo "$as_me: WARNING: soundcard.h: see the Autoconf documentation" >&2;}
-+    { echo "$as_me:$LINENO: WARNING: soundcard.h:     section \"Present But Cannot Be Compiled\"" >&5
-+echo "$as_me: WARNING: soundcard.h:     section \"Present But Cannot Be Compiled\"" >&2;}
-+    { echo "$as_me:$LINENO: WARNING: soundcard.h: proceeding with the preprocessor's result" >&5
-+echo "$as_me: WARNING: soundcard.h: proceeding with the preprocessor's result" >&2;}
-+    { echo "$as_me:$LINENO: WARNING: soundcard.h: in the future, the compiler will take precedence" >&5
-+echo "$as_me: WARNING: soundcard.h: in the future, the compiler will take precedence" >&2;}
-     (
-       cat <<\_ASBOX
- ## ------------------------------------------ ##
-@@ -22551,8 +22551,8 @@ _ASBOX
-       sed "s/^/$as_me: WARNING:     /" >&2
-     ;;
- esac
--echo "$as_me:$LINENO: checking for sys/soundcard.h" >&5
--echo $ECHO_N "checking for sys/soundcard.h... $ECHO_C" >&6
-+echo "$as_me:$LINENO: checking for soundcard.h" >&5
-+echo $ECHO_N "checking for soundcard.h... $ECHO_C" >&6
- if test "${ac_cv_header_sys_soundcard_h+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
+   if test "x$libOggFLAC_includes" != "x" ; then
+     LIBOGGFLAC_CFLAGS="-I$libOggFLAC_includes"
