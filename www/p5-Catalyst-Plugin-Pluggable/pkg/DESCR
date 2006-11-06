@@ -1,0 +1,4 @@
+So-called pluggable Catalyst applications.
+
+Introduces forward_all, which forwards to all actions with the 
+same name in an application. (e.g., universal dispatcher).
