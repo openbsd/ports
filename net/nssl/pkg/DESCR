@@ -1,0 +1,2 @@
+nssl is intended to be a netcat-like program with SSL support (both
+clear and encrypted sessions can be used).

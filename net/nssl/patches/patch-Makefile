@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2006/11/06 05:24:55 jolan Exp $
+--- Makefile.orig	Tue Oct 23 12:00:41 2001
++++ Makefile	Sun Nov  5 23:16:18 2006
+@@ -1,13 +1,13 @@
+ TARGET	= nssl
+ OBJS	= nssl.o sslut.o sock.o utils.o
+ 
+-CC	= gcc
+-CFLAGS	= -Wall -O2
+-INCS	= -I /usr/local/ssl/include
++#CC	= gcc
++#CFLAGS	= -Wall -O2
++INCS	= -I /usr/include/ssl
+ LIBS	= -lssl -lcrypto
+ 
+ LIBS_STATIC	= -lssl -lcrypto -ldl
+-INCS_STATIC	= -I /usr/local/ssl/include -L /usr/local/ssl/lib
++INCS_STATIC	= -I /usr/include/ssl -L /usr/lib
+ 
+ all:	${OBJS}
+ 	cc -o ${TARGET} ${OBJS} ${LIBS}

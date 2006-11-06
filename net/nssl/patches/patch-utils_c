@@ -1,0 +1,12 @@
+$OpenBSD: patch-utils_c,v 1.1.1.1 2006/11/06 05:24:55 jolan Exp $
+--- utils.c.orig	Tue Oct 23 12:00:41 2001
++++ utils.c	Sun Nov  5 23:13:54 2006
+@@ -102,7 +102,7 @@ struct fdpipe	*x_popen (char *command)
+ 
+ 			setsid ();
+ 
+-			if ( execl (command, command, NULL) == -1 )
++			if ( execl (command, command, (void *)NULL) == -1 )
+ 			   {
+ 				perror ("exec");
+ 				exit (1);
