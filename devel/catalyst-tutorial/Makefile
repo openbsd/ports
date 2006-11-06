@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/06 01:21:49 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/06 21:27:35 sturm Exp $
 
 COMMENT=	"catalyst packages for the tutorial"
 MAINTAINER=	Marc Espie <espie@openbsd.org>
@@ -30,7 +30,7 @@ RUN_DEPENDS=	::www/p5-Catalyst-Runtime \
 		::www/p5-Catalyst-Plugin-HTML-Widget \
 		::www/p5-Catalyst-Plugin-Session \
 		::www/p5-Catalyst-Plugin-Session-State-Cookie \
-		::www/p5-Catalyst-Plugin-Session-State-FastMmap \
+		::www/p5-Catalyst-Plugin-Session-Store-FastMmap \
 		::devel/p5-Catalyst-Plugin-StackTrace \
 		::www/p5-Catalyst-Plugin-Static-Simple \
 		::databases/p5-DBD-SQLite \
