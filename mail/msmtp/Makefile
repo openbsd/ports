@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2006/07/31 20:53:00 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2006/11/06 22:47:46 steven Exp $
 
 COMMENT=		"SMTP plugin for MUAs"
 
-DISTNAME=		msmtp-1.4.6
+DISTNAME=		msmtp-1.4.9
 CATEGORIES=		mail
 
 HOMEPAGE=		http://msmtp.sourceforge.net/
 
-MAINTAINER=		Victor Sahlstedt <salan@legonet.org>
+MAINTAINER=		Simon Kuhnle <simonkuhnle@web.de>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,7 +23,8 @@ MODULES=		devel/gettext
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--disable-gsasl \
+CONFIGURE_ARGS=		--with-libgsasl=no \
+			--with-libidn=no \
 			--with-ssl=openssl
 
 post-install:
