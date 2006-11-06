@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/06 14:15:15 espie Exp $
+${P5SITE}/Catalyst/
+${P5SITE}/Catalyst/Log/
+${P5SITE}/Catalyst/Log/Log4perl.pm
+@man man/man3p/Catalyst::Log::Log4perl.3p
