@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.423 2006/11/06 10:58:28 msf Exp $
+# $OpenBSD: Makefile,v 1.424 2006/11/06 12:37:45 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -226,6 +226,7 @@
      SUBDIR += p5-Data-Buffer
      SUBDIR += p5-Data-Dump
      SUBDIR += p5-Data-Flow
+     SUBDIR += p5-Data-FormValidator
      SUBDIR += p5-Data-Hierarchy
      SUBDIR += p5-Data-ShowTable
      SUBDIR += p5-Data-UUID

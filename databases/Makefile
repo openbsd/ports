@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2006/11/05 12:32:33 espie Exp $
+# $OpenBSD: Makefile,v 1.96 2006/11/06 12:37:45 espie Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += db
@@ -31,6 +31,7 @@
      SUBDIR += p5-Class-DBI-AbstractSearch
      SUBDIR += p5-Class-DBI-AsForm
      SUBDIR += p5-Class-DBI-FromCGI
+     SUBDIR += p5-Class-DBI-FromForm
      SUBDIR += p5-Class-DBI-Loader
      SUBDIR += p5-Class-DBI-Loader-Relationship
      SUBDIR += p5-Class-DBI-Pager
