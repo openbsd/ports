@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/06 16:44:47 espie Exp $
+${P5SITE}/Catalyst/Helper/View/TT/
+${P5SITE}/Catalyst/Helper/View/TT/ForceUTF8.pm
+${P5SITE}/Catalyst/View/TT/
+${P5SITE}/Catalyst/View/TT/ForceUTF8.pm
+@man man/man3p/Catalyst::Helper::View::TT::ForceUTF8.3p
+@man man/man3p/Catalyst::View::TT::ForceUTF8.3p
