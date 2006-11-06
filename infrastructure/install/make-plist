@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.80 2006/10/07 10:04:09 espie Exp $
+# $OpenBSD: make-plist,v 1.81 2006/11/06 16:35:20 espie Exp $
 # Copyright (c) 2004-2006 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -534,9 +534,7 @@ sub augment_mtree
 	my ($mtree, $pkgname) = @_;
         my $true_package = OpenBSD::PackageLocator->find($pkgname);
 	if (!$true_package) {
-		print STDERR "Can't find $pkgname\n";
-		print STDERR "Directories won't be stripped\n";
-		return;
+		return undef;
 	}
         my $dir = $true_package->info();
 	my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS, \&OpenBSD::PackingList::DirrmOnly);
@@ -544,6 +542,7 @@ sub augment_mtree
 		$item->add_to_mtree($mtree);
 	}
         $true_package->close();
+	return 1;
 }
 
 sub undest
@@ -634,9 +633,12 @@ sub get_files
 	my $stripped = {};
 	for my $pkg (split(/\s+/, $ENV{'DEPS'})) {
 		next if defined $stripped->{$pkg};
-		print STDERR "Stripping dirs from $pkg\n";
 		$stripped->{$pkg} = 1;
-		augment_mtree($mtree, $ENV{'PKGREPOSITORY'}."/$pkg.tgz");
+		if (augment_mtree($mtree, $ENV{'PKGREPOSITORY'}."/$pkg.tgz")) {
+			print STDERR "Stripping dirs from $pkg\n";
+	    	} else {
+			print STDERR "NOT stripping dirs from $pkg: package not found\n";
+		}
 	}
 	# make sure mtree is removed 
 	for my $d (keys %$mtree) {
