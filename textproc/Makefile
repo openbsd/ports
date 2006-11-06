@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.169 2006/11/06 13:42:41 espie Exp $
+# $OpenBSD: Makefile,v 1.170 2006/11/06 18:21:30 espie Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -52,6 +52,7 @@
      SUBDIR += p5-Blatte
      SUBDIR += p5-Catalyst-Plugin-Textile
      SUBDIR += p5-Catalyst-View-TT
+     SUBDIR += p5-Catalyst-View-TT-ForceUTF8
      SUBDIR += p5-Catalyst-View-TT-FunctionGenerator
      SUBDIR += p5-Email-Find
      SUBDIR += p5-Font-AFM
@@ -88,6 +89,7 @@
      SUBDIR += p5-Template
      SUBDIR += p5-Template-Plugin-Class
      SUBDIR += p5-Template-Plugin-Number-Format
+     SUBDIR += p5-Template-Provider-Encoding
      SUBDIR += p5-Template-Timer
      SUBDIR += p5-Text-Aligner
      SUBDIR += p5-Text-Autoformat
