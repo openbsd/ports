@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/06 14:02:45 espie Exp $
+${P5SITE}/Catalyst/
+${P5SITE}/Catalyst/Plugin/
+${P5SITE}/Catalyst/Plugin/XMLRPC/
+${P5SITE}/Catalyst/Plugin/XMLRPC.pm
+${P5SITE}/Catalyst/Plugin/XMLRPC/DispatchType/
+${P5SITE}/Catalyst/Plugin/XMLRPC/DispatchType/XMLRPC.pm
+@man man/man3p/Catalyst::Plugin::XMLRPC.3p
+@man man/man3p/Catalyst::Plugin::XMLRPC::DispatchType::XMLRPC.3p
