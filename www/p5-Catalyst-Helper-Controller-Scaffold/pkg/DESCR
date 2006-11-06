@@ -1,0 +1,5 @@
+Catalyst helper script to simplify CRUD scaffolding,
+using Class::DBI, Template toolkit views, and FormValidator.
+
+A forwarder from the end action must also be installed, such as
+p5-Catalyst-Plugin-DefaultEnd.
