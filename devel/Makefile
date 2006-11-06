@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.422 2006/11/05 21:05:32 espie Exp $
+# $OpenBSD: Makefile,v 1.423 2006/11/06 10:58:28 msf Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -476,6 +476,7 @@
      SUBDIR += uisp
      SUBDIR += uthash
      SUBDIR += uuid
+     SUBDIR += vanessa
      SUBDIR += varconf
      SUBDIR += vtcl
      SUBDIR += vte
