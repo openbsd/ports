@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.424 2006/11/06 12:37:45 espie Exp $
+# $OpenBSD: Makefile,v 1.425 2006/11/06 13:42:41 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -274,6 +274,7 @@
      SUBDIR += p5-Hash-Merge
      SUBDIR += p5-Heap
      SUBDIR += p5-Hook-LexWrap
+     SUBDIR += p5-I18N-LangTags
      SUBDIR += p5-IO-Capture
      SUBDIR += p5-IO-Digest
      SUBDIR += p5-IO-KQueue

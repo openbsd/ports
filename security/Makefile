@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.176 2006/11/05 21:05:32 espie Exp $
+# $OpenBSD: Makefile,v 1.177 2006/11/06 13:42:41 espie Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -83,6 +83,7 @@
      SUBDIR += p5-Authen-SASL
      SUBDIR += p5-Catalyst-Plugin-Authentication
      SUBDIR += p5-Catalyst-Plugin-Authentication-Store-DBIC
+     SUBDIR += p5-Catalyst-Plugin-Authentication-Store-Htpasswd
      SUBDIR += p5-Catalyst-Plugin-Authorization-ACL
      SUBDIR += p5-Catalyst-Plugin-Authorization-Roles
      SUBDIR += p5-Crypt-Blowfish
