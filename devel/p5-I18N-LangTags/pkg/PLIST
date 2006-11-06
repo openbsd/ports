@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/06 13:07:22 espie Exp $
+${P5SITE}/I18N/
+${P5SITE}/I18N/LangTags/
+${P5SITE}/I18N/LangTags.pm
+${P5SITE}/I18N/LangTags/Detect.pm
+${P5SITE}/I18N/LangTags/List.pm
+@man man/man3p/I18N::LangTags.3p
+@man man/man3p/I18N::LangTags::Detect.3p
+@man man/man3p/I18N::LangTags::List.3p

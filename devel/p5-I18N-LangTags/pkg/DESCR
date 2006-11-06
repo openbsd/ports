@@ -1,0 +1,3 @@
+Language tags are a formalism, described in RFC 3066 (obsoleting 1766),
+for declaring what language form (language and possibly dialect) a given
+chunk of information is in.

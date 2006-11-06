@@ -1,0 +1,11 @@
+--- Makefile.PL.orig	Wed Feb  8 01:27:05 2006
++++ Makefile.PL	Wed Feb  8 01:27:20 2006
+@@ -15,8 +15,6 @@
+ 			    'Win32::Locale' => 0.01,
+ 					   ) : (),
+ 	             },
+-    (($] >= 5.007003) ?
+-     ('INSTALLDIRS' => 'perl') : ()),
+ 
+ );
+ 
