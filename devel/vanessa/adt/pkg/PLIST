@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/06 10:57:38 msf Exp $
+%%SHARED%%
+include/vanessa_adt.h
+lib/libvanessa_adt.a
+lib/libvanessa_adt.la

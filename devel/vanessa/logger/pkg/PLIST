@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/06 10:57:38 msf Exp $
+%%SHARED%%
+bin/vanessa_logger_sample
+include/vanessa_logger.h
+lib/libvanessa_logger.a
+lib/libvanessa_logger.la
+@man man/man1/vanessa_logger_sample.1

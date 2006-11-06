@@ -1,0 +1,3 @@
+Simplifies TCP/IP socket operations. It includes code to open a socket to a
+server as a client, to listen on socket for clients as a server and to pipe
+information between sockets. 

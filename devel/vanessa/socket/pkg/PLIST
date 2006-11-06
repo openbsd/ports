@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/06 10:57:38 msf Exp $
+%%SHARED%%
+bin/vanessa_socket_pipe
+include/vanessa_socket.h
+lib/libvanessa_socket.a
+lib/libvanessa_socket.la
+@man man/man1/vanessa_socket_pipe.1
