@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2006/02/03 20:21:07 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2006/11/06 20:01:06 espie Exp $
 
 COMMENT=	"console napster client"
 
 VERSION=	1.3g
 DISTNAME=	TekNap-${VERSION}
-PKGNAME=	teknap-${VERSION}
+PKGNAME=	teknap-${VERSION}p0
 CATEGORIES=	audio
 MASTER_SITES=	http://bwap.clawz.com/downloads/
 
@@ -23,5 +23,9 @@ CONFIGURE_STYLE=	gnu dest
 NO_REGRESS=		Yes
 
 WRKDIST=	${WRKDIR}/TekNap
+
+FAKE_FLAGS=	INSTALL="${INSTALL_PROGRAM}" DESTDIR=${WRKINST}
+post-install:
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/TekNap/help
 
 .include <bsd.port.mk>
