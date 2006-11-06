@@ -1,0 +1,25 @@
+This plugin should usually be invoked from an end action in your Application.
+
+Call generate_functions to create the code references shortcuts to the
+methods used in the template toolkit view.
+
+Then enjoy the shorter syntax.
+
+For instance:
+
+sub action : Local {
+    my ( $self, $c ) = @_;
+
+    $c->view("ViewName")->generate_functions('prototype');
+    # OR
+    $c->view("ViewName")->generate_functions($c->prototype);
+    # OR
+    $c->view("ViewName")->generate_functions([$c, 'uri_for']);
+
+}
+
+# In your template, we can now have:
+[% link_to_remote("foo", { url => uri_for("blah")  } ) %]
+
+# instead of saying this:
+[% c.prototype.link_to_remote("foo", { url => c.uri_for("blah")  } ) %]
