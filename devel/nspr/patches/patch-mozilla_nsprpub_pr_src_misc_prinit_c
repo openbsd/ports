@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prinit_c,v 1.1.1.1 2004/01/29 21:57:53 pvalchev Exp $
---- mozilla/nsprpub/pr/src/misc/prinit.c.orig	2004-01-06 22:06:01.000000000 -0500
-+++ mozilla/nsprpub/pr/src/misc/prinit.c	2004-01-06 22:08:37.000000000 -0500
-@@ -430,6 +430,12 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
+$OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prinit_c,v 1.2 2006/11/06 14:35:45 ajacoutot Exp $
+--- mozilla/nsprpub/pr/src/misc/prinit.c.orig	Sun Apr 25 17:01:01 2004
++++ mozilla/nsprpub/pr/src/misc/prinit.c	Sat Nov  4 13:15:16 2006
+@@ -433,6 +433,12 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
  	    _PR_LogCleanup();
  
          /*
@@ -14,7 +14,7 @@ $OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prinit_c,v 1.1.1.1 2004/01/29 21:57:
           * This part should look like the end of _PR_NativeRunThread
           * and _PR_UserRunThread.
           */
-@@ -441,6 +447,7 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
+@@ -444,6 +450,7 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
              PR_DELETE(me->stack);
              PR_DELETE(me);
          }
@@ -22,7 +22,7 @@ $OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prinit_c,v 1.1.1.1 2004/01/29 21:57:
  
          /*
           * XXX: We are freeing the heap memory here so that Purify won't
-@@ -449,8 +456,6 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
+@@ -452,8 +459,6 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
           * Ideally, for each _PR_InitXXX(), there should be a corresponding
           * _PR_XXXCleanup() that we can call here.
           */

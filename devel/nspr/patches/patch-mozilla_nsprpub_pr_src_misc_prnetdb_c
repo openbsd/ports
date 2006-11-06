@@ -1,12 +1,16 @@
-$OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prnetdb_c,v 1.1.1.1 2004/01/29 21:57:53 pvalchev Exp $
---- mozilla/nsprpub/pr/src/misc/prnetdb.c.orig	2004-01-06 22:10:29.000000000 -0500
-+++ mozilla/nsprpub/pr/src/misc/prnetdb.c	2004-01-06 22:10:55.000000000 -0500
-@@ -321,7 +321,7 @@ _pr_QueryNetIfs(void)
- }
+$OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prnetdb_c,v 1.2 2006/11/06 14:35:45 ajacoutot Exp $
+--- mozilla/nsprpub/pr/src/misc/prnetdb.c.orig	Fri Jul  1 03:19:30 2005
++++ mozilla/nsprpub/pr/src/misc/prnetdb.c	Sat Nov  4 13:15:21 2006
+@@ -2110,7 +2110,12 @@ PR_IMPLEMENT(PRAddrInfo *) PR_GetAddrInf
+          */
+         hints.ai_socktype = SOCK_STREAM;
  
- #elif (defined(DARWIN) && defined(HAVE_GETIFADDRS)) || defined(FREEBSD) \
--    || defined(NETBSD)
-+    || defined(NETBSD) || defined(OPENBSD)
++	LOCK_DNS();
++
+         rv = GETADDRINFO(hostname, NULL, &hints, &res);
++
++	UNLOCK_DNS();
++
+         if (rv == 0)
+             return (PRAddrInfo *) res;
  
- /*
-  * Use the BSD getifaddrs function.

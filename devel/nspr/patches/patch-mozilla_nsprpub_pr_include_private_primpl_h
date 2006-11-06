@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_nsprpub_pr_include_private_primpl_h,v 1.1.1.1 2004/01/29 21:57:53 pvalchev Exp $
---- mozilla/nsprpub/pr/include/private/primpl.h.orig	2004-01-06 22:44:43.000000000 -0500
-+++ mozilla/nsprpub/pr/include/private/primpl.h	2004-01-06 22:45:28.000000000 -0500
-@@ -1857,6 +1857,7 @@ extern void _PR_DestroyZones(void);
+$OpenBSD: patch-mozilla_nsprpub_pr_include_private_primpl_h,v 1.2 2006/11/06 14:35:45 ajacoutot Exp $
+--- mozilla/nsprpub/pr/include/private/primpl.h.orig	Tue Jun 21 00:05:20 2005
++++ mozilla/nsprpub/pr/include/private/primpl.h	Sat Nov  4 13:15:01 2006
+@@ -1867,6 +1867,7 @@ extern void _PR_DestroyZones(void);
          && !defined(DARWIN) \
          && !defined(NEXTSTEP) \
          && !defined(QNX) \

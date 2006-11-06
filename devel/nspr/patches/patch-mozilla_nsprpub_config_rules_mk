@@ -1,12 +1,12 @@
-$OpenBSD: patch-mozilla_nsprpub_config_rules_mk,v 1.1 2006/01/07 19:45:35 bernd Exp $
---- mozilla/nsprpub/config/rules.mk.orig	Wed May 14 03:23:49 2003
-+++ mozilla/nsprpub/config/rules.mk	Sat Jan  7 19:41:37 2006
-@@ -122,7 +122,7 @@ ifeq ($(OS_ARCH)$(OS_RELEASE), AIX4.1)
- SHARED_LIBRARY	= $(OBJDIR)/lib$(LIBRARY_NAME)$(LIBRARY_VERSION)_shr.a
- else
- ifdef MKSHLIB
--SHARED_LIBRARY	= $(OBJDIR)/lib$(LIBRARY_NAME)$(LIBRARY_VERSION).$(DLL_SUFFIX)
-+SHARED_LIBRARY	= $(OBJDIR)/lib$(LIBRARY_NAME)$(LIBRARY_VERSION).$(DLL_SUFFIX).$(SHARED_LIBRARY_VERSION)
+$OpenBSD: patch-mozilla_nsprpub_config_rules_mk,v 1.2 2006/11/06 14:35:45 ajacoutot Exp $
+--- mozilla/nsprpub/config/rules.mk.orig	Wed Feb 22 23:53:55 2006
++++ mozilla/nsprpub/config/rules.mk	Sat Nov  4 13:14:09 2006
+@@ -232,7 +232,7 @@ ifdef RELEASE_HEADERS
+ 	$(NSINSTALL) -t -m 0644 $(RELEASE_HEADERS) $(DESTDIR)$(includedir)/$(include_subdir)
  endif
+ ifdef RELEASE_LIBS
+-	$(NSINSTALL) -t -m 0755 $(RELEASE_LIBS) $(DESTDIR)$(libdir)/$(lib_subdir)
++	$(NSINSTALL) -t -m 0444 $(RELEASE_LIBS) $(DESTDIR)$(libdir)/$(lib_subdir)
  endif
+ 	+$(LOOP_OVER_DIRS)
  

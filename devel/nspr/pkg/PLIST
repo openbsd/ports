@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/08/10 07:25:38 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/11/06 14:35:45 ajacoutot Exp $
 bin/nspr-config
 include/nspr/
 include/nspr/md/
@@ -52,11 +52,12 @@ include/nspr/md/_reliantunix.cfg
 include/nspr/md/_reliantunix.h
 include/nspr/md/_rhapsody.cfg
 include/nspr/md/_rhapsody.h
+include/nspr/md/_riscos.cfg
+include/nspr/md/_riscos.h
 include/nspr/md/_scoos.cfg
 include/nspr/md/_scoos.h
+include/nspr/md/_solaris.cfg
 include/nspr/md/_solaris.h
-include/nspr/md/_solaris32.cfg
-include/nspr/md/_solaris64.cfg
 include/nspr/md/_sony.cfg
 include/nspr/md/_sony.h
 include/nspr/md/_sunos4.cfg
@@ -136,4 +137,6 @@ include/nspr/prwin16.h
 lib/libnspr4.a
 lib/libplc4.a
 lib/libplds4.a
+lib/pkgconfig/
+lib/pkgconfig/nspr.pc
 %%SHARED%%

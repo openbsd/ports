@@ -1,12 +1,12 @@
-$OpenBSD: patch-mozilla_nsprpub_pr_include_md__openbsd_h,v 1.1 2006/11/03 18:02:13 ajacoutot Exp $
---- mozilla/nsprpub/pr/include/md/_openbsd.h.orig	Fri Nov  3 16:18:46 2006
-+++ mozilla/nsprpub/pr/include/md/_openbsd.h	Fri Nov  3 16:19:04 2006
-@@ -43,6 +43,8 @@
- #define _PR_SI_ARCHITECTURE "x86"
- #elif defined(__alpha__)
- #define _PR_SI_ARCHITECTURE "alpha"
-+#elif defined(__amd64__)
-+#define _PR_SI_ARCHITECTURE "amd64"
- #elif defined(__m68k__)
- #define _PR_SI_ARCHITECTURE "m68k"
- #elif defined(__powerpc__)
+$OpenBSD: patch-mozilla_nsprpub_pr_include_md__openbsd_h,v 1.2 2006/11/06 14:35:45 ajacoutot Exp $
+--- mozilla/nsprpub/pr/include/md/_openbsd.h.orig	Sun Apr 25 17:00:47 2004
++++ mozilla/nsprpub/pr/include/md/_openbsd.h	Sat Nov  4 13:14:54 2006
+@@ -56,7 +56,7 @@
+ #define _PR_SI_ARCHITECTURE "sparc"
+ #endif
+ 
+-#define PR_DLL_SUFFIX		".so.1.0"
++#define PR_DLL_SUFFIX		".so._SO_VERSION_"
+ 
+ #define _PR_VMBASE              0x30000000
+ #define _PR_STACK_VMBASE	0x50000000
