@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/06 11:53:51 espie Exp $
+${P5SITE}/Data/
+${P5SITE}/Data/FormValidator/
+${P5SITE}/Data/FormValidator.pm
+${P5SITE}/Data/FormValidator/Constraints/
+${P5SITE}/Data/FormValidator/Constraints.pm
+${P5SITE}/Data/FormValidator/Constraints/Dates.pm
+${P5SITE}/Data/FormValidator/Constraints/Upload.pm
+${P5SITE}/Data/FormValidator/ConstraintsFactory.pm
+${P5SITE}/Data/FormValidator/Filters.pm
+${P5SITE}/Data/FormValidator/Results.pm
+@man man/man3p/Data::FormValidator.3p
+@man man/man3p/Data::FormValidator::Constraints.3p
+@man man/man3p/Data::FormValidator::Constraints::Dates.3p
+@man man/man3p/Data::FormValidator::Constraints::Upload.3p
+@man man/man3p/Data::FormValidator::ConstraintsFactory.3p
+@man man/man3p/Data::FormValidator::Filters.3p
+@man man/man3p/Data::FormValidator::Results.3p

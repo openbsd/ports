@@ -1,0 +1,9 @@
+Data::FormValidator's main aim is to make input validation expressible
+in a simple format.
+
+Data::FormValidator lets you define profiles which declare the
+required and optional fields and any constraints they might have.
+
+The results are provided as an object which makes it easy to handle
+missing and invalid results, return error messages about which
+constraints failed, or process the resulting valid data.
