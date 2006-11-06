@@ -1,0 +1,2 @@
+Instead of having to mention the Catalyst context explicitly,
+use a singleton for lighter syntax.
