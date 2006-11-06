@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/06 16:38:27 espie Exp $
+${P5SITE}/Template/
+${P5SITE}/Template/Plugin/
+${P5SITE}/Template/Plugin/encoding.pm
+${P5SITE}/Template/Provider/
+${P5SITE}/Template/Provider/Encoding.pm
+${P5SITE}/Template/Stash/
+${P5SITE}/Template/Stash/ForceUTF8.pm
+@man man/man3p/Template::Plugin::encoding.3p
+@man man/man3p/Template::Provider::Encoding.3p
+@man man/man3p/Template::Stash::ForceUTF8.3p
