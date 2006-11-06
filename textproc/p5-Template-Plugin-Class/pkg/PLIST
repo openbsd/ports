@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/06 12:24:21 espie Exp $
+${P5SITE}/Template/
+${P5SITE}/Template/Plugin/
+${P5SITE}/Template/Plugin/Class.pm
+@man man/man3p/Template::Plugin::Class.3p

@@ -1,0 +1,9 @@
+Template::Plugin::Class allows you to call class methods
+on arbitrary classes.  One use for this is in Class::DBI
+style applications, where you may do something like this:
+
+  [% USE cd = Class('Music::CD') %]
+  [% FOREACH disc = cd.retrieve_all %]
+  [% disc.artist %] - [% disc.title %]
+  [% END %]
+
