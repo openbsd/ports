@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2006/08/03 12:53:18 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/11/06 12:38:17 steven Exp $
 
 COMMENT=		"color ascii art library"
 DISTNAME=		libcaca-0.9
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		graphics
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
@@ -14,8 +14,8 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		c ncurses m
 
-HOMEPAGE=		http://sam.zoy.org/projects/libcaca/
-MASTER_SITES=		${HOMEPAGE}
+HOMEPAGE=		http://libcaca.zoy.org/
+MASTER_SITES=		${HOMEPAGE}files/
 
 FLAVORS=		no_x11
 FLAVOR?=
