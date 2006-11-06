@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2006/02/18 19:06:33 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2006/11/06 19:40:32 espie Exp $
 
 COMMENT=	"real-time satellite tracking and orbit propagation program"
 DISTNAME=	sattrack-3.1.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	astro
 
 PERMIT_PACKAGE_CDROM=   "May not be bundled, according to copyright."
@@ -21,6 +22,11 @@ pre-configure:
 	@sed -e s,__PREFIX__,$(PREFIX), $(WRKSRC)/../run/gettle > $(WRKSRC)/../run/gettle.new
 	@mv $(WRKSRC)/../run/getsts.new $(WRKSRC)/../run/getsts
 	@mv $(WRKSRC)/../run/gettle.new $(WRKSRC)/../run/gettle
+
+post-install:
+	chown -R ${SHAREOWN}:${SHAREGRP} \
+		${PREFIX}/lib/SatTrack/{data,pred,tle} \
+		${PREFIX}/share/doc/SatTrack
 
 NO_REGRESS=	Yes
 
