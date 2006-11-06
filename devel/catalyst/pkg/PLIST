@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/06 14:28:43 espie Exp $
+${P5SITE}/Task/
+${P5SITE}/Task/Catalyst.pm
+@man man/man3p/Task::Catalyst.3p
