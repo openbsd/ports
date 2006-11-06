@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.433 2006/11/05 21:27:58 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.434 2006/11/06 05:26:30 jolan Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -167,6 +167,7 @@
      SUBDIR += nslint
      SUBDIR += nslint,static
      SUBDIR += nsping
+     SUBDIR += nssl
      SUBDIR += ntop
      SUBDIR += ntp
      SUBDIR += nylon
