@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.241 2006/11/05 21:05:32 espie Exp $
+# $OpenBSD: Makefile,v 1.242 2006/11/06 01:21:49 espie Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -107,6 +107,7 @@
      SUBDIR += p5-Catalyst-Plugin-Session-PerUser
      SUBDIR += p5-Catalyst-Plugin-Session-State-Cookie
      SUBDIR += p5-Catalyst-Plugin-Session-State-URI
+     SUBDIR += p5-Catalyst-Plugin-Session-Store-FastMmap
      SUBDIR += p5-Catalyst-Plugin-Static-Simple
      SUBDIR += p5-Catalyst-Plugin-SubRequest
      SUBDIR += p5-Catalyst-Runtime

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/05 20:59:55 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/06 01:21:49 espie Exp $
 
 COMMENT=	"catalyst packages for the tutorial"
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 CATEGORIES=	devel perl5 www
 DISTFILES=
-DISTNAME=	catalyst-tutorial-0.0
+DISTNAME=	catalyst-tutorial-0.1
 
 NO_BUILD=	"nothing to build"
 NO_REGRESS=	"fat chance"
@@ -30,7 +30,7 @@ RUN_DEPENDS=	::www/p5-Catalyst-Runtime \
 		::www/p5-Catalyst-Plugin-HTML-Widget \
 		::www/p5-Catalyst-Plugin-Session \
 		::www/p5-Catalyst-Plugin-Session-State-Cookie \
-		::www/p5-Catalyst-Plugin-Session-FastMmap \
+		::www/p5-Catalyst-Plugin-Session-State-FastMmap \
 		::devel/p5-Catalyst-Plugin-StackTrace \
 		::www/p5-Catalyst-Plugin-Static-Simple \
 		::databases/p5-DBD-SQLite \
