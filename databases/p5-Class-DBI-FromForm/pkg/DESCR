@@ -1,0 +1,5 @@
+Class::DBI::FromForm - Update Class::DBI data using Data::FormValidator 
+or HTML Widget
+
+This class can be used directly, or as a scaffolding basis for web
+CRUD frameworks.
