@@ -1,0 +1,8 @@
+The RPC::XML package is an implementation of the XML-RPC standard.
+
+The package provides a set of classes for creating values to pass to the
+constructors for requests and responses.  These are lightweight objects,
+most of which are implemented as tied scalars so as to associate specific
+type information with the value.  Classes are also provided for requests,
+responses, faults (errors) and a parser based on the XML::Parser package
+from CPAN.

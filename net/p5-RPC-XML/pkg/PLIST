@@ -1,0 +1,76 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/06 13:56:29 espie Exp $
+bin/make_method
+${P5SITE}/Apache/
+${P5SITE}/Apache/RPC/
+${P5SITE}/Apache/RPC/Server.pm
+${P5SITE}/Apache/RPC/Status.pm
+${P5SITE}/Apache/RPC/status.xpl
+${P5SITE}/RPC/
+${P5SITE}/RPC/XML/
+${P5SITE}/RPC/XML.pm
+${P5SITE}/RPC/XML/Client.pm
+${P5SITE}/RPC/XML/Function.pm
+${P5SITE}/RPC/XML/Method.pm
+${P5SITE}/RPC/XML/Parser.pm
+${P5SITE}/RPC/XML/Procedure.pm
+${P5SITE}/RPC/XML/Server.pm
+${P5SITE}/RPC/XML/identity.xpl
+${P5SITE}/RPC/XML/introspection.xpl
+${P5SITE}/RPC/XML/listMethods.xpl
+${P5SITE}/RPC/XML/methodHelp.xpl
+${P5SITE}/RPC/XML/methodSignature.xpl
+${P5SITE}/RPC/XML/multicall.xpl
+${P5SITE}/RPC/XML/status.xpl
+${P5SITE}/auto/
+${P5SITE}/auto/RPC/
+${P5SITE}/auto/RPC/XML/
+${P5SITE}/auto/RPC/XML/Function/
+${P5SITE}/auto/RPC/XML/Function/autosplit.ix
+${P5SITE}/auto/RPC/XML/Function/clone.al
+${P5SITE}/auto/RPC/XML/Function/is_valid.al
+${P5SITE}/auto/RPC/XML/Function/match_signature.al
+${P5SITE}/auto/RPC/XML/Procedure/
+${P5SITE}/auto/RPC/XML/Procedure/add_signature.al
+${P5SITE}/auto/RPC/XML/Procedure/autosplit.ix
+${P5SITE}/auto/RPC/XML/Procedure/call.al
+${P5SITE}/auto/RPC/XML/Procedure/clone.al
+${P5SITE}/auto/RPC/XML/Procedure/delete_signature.al
+${P5SITE}/auto/RPC/XML/Procedure/is_valid.al
+${P5SITE}/auto/RPC/XML/Procedure/load_XPL_file.al
+${P5SITE}/auto/RPC/XML/Procedure/match_signature.al
+${P5SITE}/auto/RPC/XML/Procedure/reload.al
+${P5SITE}/auto/RPC/XML/Server/
+${P5SITE}/auto/RPC/XML/Server/add_default_methods.al
+${P5SITE}/auto/RPC/XML/Server/add_methods_in_dir.al
+${P5SITE}/auto/RPC/XML/Server/add_proc.al
+${P5SITE}/auto/RPC/XML/Server/add_procs_in_dir.al
+${P5SITE}/auto/RPC/XML/Server/autosplit.ix
+${P5SITE}/auto/RPC/XML/Server/call.al
+${P5SITE}/auto/RPC/XML/Server/copy_methods.al
+${P5SITE}/auto/RPC/XML/Server/copy_procs.al
+${P5SITE}/auto/RPC/XML/Server/delete_method.al
+${P5SITE}/auto/RPC/XML/Server/delete_proc.al
+${P5SITE}/auto/RPC/XML/Server/dispatch.al
+${P5SITE}/auto/RPC/XML/Server/get_method.al
+${P5SITE}/auto/RPC/XML/Server/get_proc.al
+${P5SITE}/auto/RPC/XML/Server/list_methods.al
+${P5SITE}/auto/RPC/XML/Server/list_procs.al
+${P5SITE}/auto/RPC/XML/Server/method_from_file.al
+${P5SITE}/auto/RPC/XML/Server/post_configure_hook.al
+${P5SITE}/auto/RPC/XML/Server/pre_loop_hook.al
+${P5SITE}/auto/RPC/XML/Server/proc_from_file.al
+${P5SITE}/auto/RPC/XML/Server/process_request.al
+${P5SITE}/auto/RPC/XML/Server/server_loop.al
+${P5SITE}/auto/RPC/XML/Server/share_methods.al
+${P5SITE}/auto/RPC/XML/Server/share_procs.al
+${P5SITE}/auto/RPC/XML/Server/timeout.al
+@man man/man1/make_method.1
+@man man/man3p/Apache::RPC::Server.3p
+@man man/man3p/Apache::RPC::Status.3p
+@man man/man3p/RPC::XML.3p
+@man man/man3p/RPC::XML::Client.3p
+@man man/man3p/RPC::XML::Function.3p
+@man man/man3p/RPC::XML::Method.3p
+@man man/man3p/RPC::XML::Parser.3p
+@man man/man3p/RPC::XML::Procedure.3p
+@man man/man3p/RPC::XML::Server.3p
