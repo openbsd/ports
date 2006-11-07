@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2006/09/20 16:02:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2006/11/07 14:09:56 naddy Exp $
 
 COMMENT=	"cooperative file distribution system implemented in Python"
 COMMENT-gui=	"graphical interface components for BitTorrent"
@@ -19,8 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	"may not sell without modification"
 PERMIT_PACKAGE_FTP=	Yes
 
-MASTER_SITES=	http://www.bittorrent.com/dl/ \
-		${MASTER_SITE_SOURCEFORGE:=bittorrent/}
+MASTER_SITES=	http://download.bittorrent.com/dl/
 
 MODULES=	lang/python
 BUILD_DEPENDS=	::devel/gettext
