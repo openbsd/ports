@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/07 11:40:50 espie Exp $
+${P5SITE}/Email/Abstract/
+${P5SITE}/Email/Abstract.pm
+${P5SITE}/Email/Abstract/EmailMIME.pm
+${P5SITE}/Email/Abstract/EmailSimple.pm
+${P5SITE}/Email/Abstract/MIMEEntity.pm
+${P5SITE}/Email/Abstract/MailInternet.pm
+${P5SITE}/Email/Abstract/MailMessage.pm
+@man man/man3p/Email::Abstract.3p
+@man man/man3p/Email::Abstract::EmailMIME.3p
+@man man/man3p/Email::Abstract::EmailSimple.3p
+@man man/man3p/Email::Abstract::MIMEEntity.3p
+@man man/man3p/Email::Abstract::MailInternet.3p
+@man man/man3p/Email::Abstract::MailMessage.3p
