@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2006/09/18 11:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2006/11/07 15:14:30 naddy Exp $
 
 COMMENT=	"game where you deal drugs on the streets of NY"
 
 DISTNAME=	dopewars-1.5.7
-PKGNAME=	${DISTNAME}p6
+PKGNAME=	${DISTNAME}p7
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dopewars/}
 
@@ -22,6 +22,7 @@ LIB_DEPENDS+=   glib-2.0::devel/glib2
 BUILD_DEPENDS+= :pkgconfig-*:devel/pkgconfig
 
 USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
 AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS+= --enable-nls \

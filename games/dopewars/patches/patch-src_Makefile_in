@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile_in,v 1.3 2005/02/13 18:31:15 alek Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.4 2006/11/07 15:14:31 naddy Exp $
 --- src/Makefile.in.orig	Tue Jun 25 19:08:23 2002
-+++ src/Makefile.in	Sun Feb 13 19:23:52 2005
++++ src/Makefile.in	Tue Nov  7 16:00:56 2006
 @@ -133,7 +133,7 @@ plugindir = @plugindir@
  @CURSESPORT_TRUE@CURSESPORTSUBDIR = @CURSESPORT_TRUE@cursesport
  
@@ -17,7 +17,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.3 2005/02/13 18:31:15 alek Exp $
 -INCLUDES = -I../intl -I${srcdir} -I.. @GTK_CFLAGS@
 -DEFS = @DEFS@
 +INCLUDES = -I${srcdir} -I.. @GLIB_CFLAGS@ @GTK_CFLAGS@
-+DEFS = @DEFS@ -DDATADIR="\"/var/games\""
++DEFS = @DEFS@ -DSCOREDIR="\"/var/games\""
  PIXDIR = ${DESTDIR}${datadir}/pixmaps
  DOPEDIR = ${DESTDIR}${bindir}
  DOPEBIN = ${DOPEDIR}/dopewars
