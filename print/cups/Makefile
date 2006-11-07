@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2006/10/21 10:58:24 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.20 2006/11/07 11:20:49 mbalmer Exp $
 
 COMMENT=		"Common Unix Printing System"
 
 VERSION=		1.2.5
 DISTNAME=		cups-${VERSION}-source
-PKGNAME=		${DISTNAME:S/-source//}
+PKGNAME=		${DISTNAME:S/-source//}p0
 CATEGORIES=		print sysutils
 SHARED_LIBS=		cups		2.3 \
 			cupsimage	2.3
@@ -96,7 +96,7 @@ post-configure:
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/cups/init
-	@cd ${WRKINST}${SYSCONFDIR}/cups && cp -Rp * \
+	@cd ${WRKINST}${SYSCONFDIR}/cups && cp -R * \
 		${PREFIX}/share/examples/cups
 	@rm -r ${WRKINST}${SYSCONFDIR}/cups ${WRKINST}/var/run \
 	    ${WRKINST}/var/cache
