@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/05 19:20:41 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/07 10:55:43 espie Exp $
 
 COMMENT=	"free peer-reviewed portable C++ source libraries"
 
 VERSION=	1.33.1
 DISTNAME=	boost_${VERSION:S/./_/g}
-PKGNAME=	boost-${VERSION}
+PKGNAME=	boost-${VERSION}p0
 
 SHARED_LIBS=	boost_date_time			0.0 \
 		boost_date_time-mt		0.0 \
@@ -50,10 +50,10 @@ REGRESS_TARGET=	check
 
 do-configure:
 	@cd ${WRKSRC}/libs/config && \
-		${SETENV} ${SCRIPTS_ENV} ${SH} ./configure && \
+		${SETENV} ${CONFIGURE_ENV} /bin/sh ./configure && \
         	cp user.hpp ${WRKSRC}/boost/config
 
-	@cd ${WRKSRC} && ${SETENV} ${SCRIPTS_ENV} ${SH} ./configure \
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} /bin/sh ./configure \
 		--without-libraries=python
 
 do-install:
@@ -71,5 +71,6 @@ do-install:
 
 	cd ${WRKSRC} && \
 		cp -pR boost ${PREFIX}/include
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/include
 
 .include <bsd.port.mk>
