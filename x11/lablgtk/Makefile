@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2006/09/18 10:21:49 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/11/07 06:42:56 sturm Exp $
 
 COMMENT=	"OCaml interface to GTK+"
 
 DISTNAME=	lablgtk-1.2.7
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11 devel
 
 HOMEPAGE=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/lablgtk.html
@@ -36,6 +36,7 @@ do-configure:
 		cd ${WRKDIST}; PATH=${PORTPATH} gmake configure ${CONFIGURE_ARGS}
 
 post-install:
+		chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/ocaml/lablgtk
 		${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lablgtk
 		${INSTALL_DATA} ${WRKDIST}/README ${PREFIX}/share/doc/lablgtk
 
