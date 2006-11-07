@@ -1,13 +1,13 @@
---- Makefile.PL.orig	2003-05-29 22:54:18.000000000 +0200
-+++ Makefile.PL	2004-01-01 20:10:14.000000000 +0100
-@@ -281,8 +281,8 @@ sub MY::install {
-     $script .= <<"INSTALL";
+--- Makefile.PL.orig	Sun Sep 24 17:27:58 2006
++++ Makefile.PL	Mon Nov  6 18:30:01 2006
+@@ -314,8 +314,8 @@ sub MY::install {
+      $script .= <<"INSTALL";
  
  install_sax_driver :
--\t\@\$(PERL) -MXML::SAX -e "XML::SAX->add_parser(q(XML::LibXML::SAX::Parser))->save_parsers()"
--\t\@\$(PERL) -MXML::SAX -e "XML::SAX->add_parser(q(XML::LibXML::SAX))->save_parsers()"
-+#\t\@\$(PERL) -MXML::SAX -e "XML::SAX->add_parser(q(XML::LibXML::SAX::Parser))->save_parsers()"
-+#\t\@\$(PERL) -MXML::SAX -e "XML::SAX->add_parser(q(XML::LibXML::SAX))->save_parsers()"
-  
+-\t\@\$(PERL) -I\$(INSTALLSITELIB) -MXML::SAX -e "XML::SAX->add_parser(q(XML::LibXML::SAX::Parser))->save_parsers()"
+-\t\@\$(PERL) -I\$(INSTALLSITELIB) -MXML::SAX -e "XML::SAX->add_parser(q(XML::LibXML::SAX))->save_parsers()"
++#\t\@\$(PERL) -I\$(INSTALLSITELIB) -MXML::SAX -e "XML::SAX->add_parser(q(XML::LibXML::SAX::Parser))->save_parsers()"
++#\t\@\$(PERL) -I\$(INSTALLSITELIB) -MXML::SAX -e "XML::SAX->add_parser(q(XML::LibXML::SAX))->save_parsers()"
+ 
  INSTALL
-  
+    } else {

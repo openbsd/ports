@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.21 2006/08/03 23:55:11 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2006/11/07 18:16:02 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"perl interface to the libxml2 library"
 
-VERSION=	1.54
+VERSION=	1.61003
 DISTNAME=	XML-LibXML-${VERSION}
+WRKDIST=	${WRKDIR}/XML-LibXML-1.61
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.14 2004/09/15 18:44:05 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2006/11/07 18:16:02 espie Exp $
 ${P5ARCH}/XML/LibXML.pm
+${P5ARCH}/XML/LibXML.pod
 ${P5ARCH}/XML/LibXML/Attr.pod
 ${P5ARCH}/XML/LibXML/Boolean.pm
 ${P5ARCH}/XML/LibXML/CDATASection.pod
@@ -9,18 +10,26 @@ ${P5ARCH}/XML/LibXML/Document.pod
 ${P5ARCH}/XML/LibXML/DocumentFragment.pod
 ${P5ARCH}/XML/LibXML/Dtd.pod
 ${P5ARCH}/XML/LibXML/Element.pod
+${P5ARCH}/XML/LibXML/InputCallback.pod
 ${P5ARCH}/XML/LibXML/Literal.pm
 ${P5ARCH}/XML/LibXML/Namespace.pod
 ${P5ARCH}/XML/LibXML/Node.pod
 ${P5ARCH}/XML/LibXML/NodeList.pm
 ${P5ARCH}/XML/LibXML/Number.pm
+${P5ARCH}/XML/LibXML/PI.pod
+${P5ARCH}/XML/LibXML/Parser.pod
+${P5ARCH}/XML/LibXML/RelaxNG.pod
 ${P5ARCH}/XML/LibXML/SAX/
 ${P5ARCH}/XML/LibXML/SAX.pm
 ${P5ARCH}/XML/LibXML/SAX.pod
 ${P5ARCH}/XML/LibXML/SAX/Builder.pm
+${P5ARCH}/XML/LibXML/SAX/Builder.pod
 ${P5ARCH}/XML/LibXML/SAX/Generator.pm
 ${P5ARCH}/XML/LibXML/SAX/Parser.pm
+${P5ARCH}/XML/LibXML/Schema.pod
 ${P5ARCH}/XML/LibXML/Text.pod
+${P5ARCH}/XML/LibXML/XPathContext.pm
+${P5ARCH}/XML/LibXML/XPathContext.pod
 ${P5ARCH}/auto/XML/LibXML/LibXML.bs
 ${P5ARCH}/auto/XML/LibXML/LibXML.so
 @man man/man3p/XML::LibXML.3p
@@ -33,13 +42,18 @@ ${P5ARCH}/auto/XML/LibXML/LibXML.so
 @man man/man3p/XML::LibXML::DocumentFragment.3p
 @man man/man3p/XML::LibXML::Dtd.3p
 @man man/man3p/XML::LibXML::Element.3p
+@man man/man3p/XML::LibXML::InputCallback.3p
 @man man/man3p/XML::LibXML::Literal.3p
 @man man/man3p/XML::LibXML::Namespace.3p
 @man man/man3p/XML::LibXML::Node.3p
 @man man/man3p/XML::LibXML::NodeList.3p
 @man man/man3p/XML::LibXML::Number.3p
+@man man/man3p/XML::LibXML::PI.3p
+@man man/man3p/XML::LibXML::Parser.3p
+@man man/man3p/XML::LibXML::RelaxNG.3p
 @man man/man3p/XML::LibXML::SAX.3p
 @man man/man3p/XML::LibXML::SAX::Builder.3p
 @man man/man3p/XML::LibXML::SAX::Generator.3p
-@man man/man3p/XML::LibXML::SAX::Parser.3p
+@man man/man3p/XML::LibXML::Schema.3p
 @man man/man3p/XML::LibXML::Text.3p
+@man man/man3p/XML::LibXML::XPathContext.3p
