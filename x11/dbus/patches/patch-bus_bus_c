@@ -1,0 +1,13 @@
+$OpenBSD: patch-bus_bus_c,v 1.1 2006/11/07 10:40:19 alek Exp $
+--- bus/bus.c.orig	Mon Nov  6 01:22:54 2006
++++ bus/bus.c	Mon Nov  6 01:23:26 2006
+@@ -517,7 +517,8 @@ process_config_postinit (BusContext     
+   /* Watch all conf directories */
+   _dbus_list_foreach (bus_config_parser_get_conf_dirs (parser),
+ 		      (DBusForeachFunction) bus_watch_directory,
+-		      NULL);
++		      bus_context_get_loop (context));
++
+ 
+   return TRUE;
+ }

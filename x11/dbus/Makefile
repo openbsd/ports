@@ -1,30 +1,40 @@
-# $OpenBSD: Makefile,v 1.2 2006/09/20 12:22:07 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/07 10:40:19 alek Exp $
 
-
-DISTNAME=		dbus-0.92
 COMMENT=		"message system"
+
+DISTNAME=		dbus-0.94
+SHARED_LIBS +=  dbus-1               5.0      # .5.0
 CATEGORIES=		x11
+
 HOMEPAGE=		http://dbus.freedesktop.org/
-MASTER_SITES=		http://dbus.freedesktop.org/releases/
+
+# GPL
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+WANTLIB=		ICE X11 SM c pthread
+
+MASTER_SITES=		${HOMEPAGE}releases/dbus/
+
+BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
+LIB_DEPENDS=		expat.>=6::textproc/expat
 
 SEPARATE_BUILD=		simple
-PKGNAME=		${DISTNAME}p0
-
-SHARED_LIBS=		dbus-1		3.0
-# GPL
-PERMIT_DISTFILES_CDROM?=	Yes
-PERMIT_DISTFILES_FTP?=		Yes
-PERMIT_PACKAGE_CDROM?=		Yes
-PERMIT_PACKAGE_FTP?=		Yes
-
-WANTLIB=		ICE X11 SM c
-LIB_DEPENDS=		expat.>=6::textproc/expat
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LDFLAGS=-L${LOCALBASE}/lib \
-			CPPFLAGS=-I${LOCALBASE}/include
+			CFLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread"
+CONFIGURE_ARGS=		--localstatedir=/var \
+			--with-dbus-user=_dbus \
+			--with-xml=expat
+# Tests are disabled as they change the final dbus binaries
+#CONFIGURE_ARGS=		--enable-tests
+#CONFIGURE_ARGS=		--enable-verbose-mode
+
 USE_LIBTOOL=		Yes
 
-FAKE_FLAGS=		sysconfdir=${TRUEPREFIX}/share/sample/dbus DESTDIR=${WRKINST}
+FAKE_FLAGS=		sysconfdir=${TRUEPREFIX}/share/examples/dbus \
+			DESTDIR=${WRKINST}
 
 .include <bsd.port.mk>

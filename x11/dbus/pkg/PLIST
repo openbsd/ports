@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/09/19 18:10:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/11/07 10:40:19 alek Exp $
+@newgroup _dbus:572
+@newuser _dbus:572:_dbus:daemon:dbus user:/nonexistent:/sbin/nologin
 %%SHARED%%
 bin/dbus-cleanup-sockets
 bin/dbus-daemon
 bin/dbus-launch
 bin/dbus-monitor
 bin/dbus-send
+bin/dbus-uuidgen
 include/dbus-1.0/
 include/dbus-1.0/dbus/
 include/dbus-1.0/dbus/dbus-address.h
@@ -35,18 +38,21 @@ lib/pkgconfig/dbus-1.pc
 @man man/man1/dbus-launch.1
 @man man/man1/dbus-monitor.1
 @man man/man1/dbus-send.1
+@man man/man1/dbus-uuidgen.1
 share/dbus-1/
 share/dbus-1/services/
-share/sample/
-share/sample/dbus/
+share/examples/dbus/
+share/examples/dbus/dbus-1/
 @sample ${SYSCONFDIR}/dbus-1/
-share/sample/dbus/dbus-1/
-share/sample/dbus/dbus-1/session.conf
+share/examples/dbus/dbus-1/session.conf
 @sample ${SYSCONFDIR}/dbus-1/session.conf
-share/sample/dbus/dbus-1/system.conf
+share/examples/dbus/dbus-1/system.conf
 @sample ${SYSCONFDIR}/dbus-1/system.conf
-share/sample/dbus/dbus-1/system.d/
+share/examples/dbus/dbus-1/system.d/
 @sample ${SYSCONFDIR}/dbus-1/system.d/
-var/
-var/run/
-var/run/dbus/
+@owner _dbus
+@group _dbus
+@mode 0750
+@sample /var/run/dbus/
+@unexec rm -f /var/run/dbus/*
+@unexec rm -f ${SYSCONFDIR}/dbus-1/machine-id
