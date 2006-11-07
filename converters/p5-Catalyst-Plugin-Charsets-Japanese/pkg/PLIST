@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/07 12:29:20 espie Exp $
+${P5SITE}/Catalyst/Plugin/
+${P5SITE}/Catalyst/Plugin/Charsets/
+${P5SITE}/Catalyst/Plugin/Charsets/Japanese/
+${P5SITE}/Catalyst/Plugin/Charsets/Japanese.pm
+${P5SITE}/Catalyst/Plugin/Charsets/Japanese/Nihongo.pod
+@man man/man3p/Catalyst::Plugin::Charsets::Japanese.3p
+@man man/man3p/Catalyst::Plugin::Charsets::Japanese::Nihongo.3p
