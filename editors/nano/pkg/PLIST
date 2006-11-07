@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.16 2004/09/15 18:01:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2006/11/07 15:31:37 naddy Exp $
 bin/nano
 @info info/nano.info
 @man man/man1/nano.1
 @man man/man5/nanorc.5
 share/examples/nano/
 share/examples/nano/nanorc.sample
-share/locale/ca/
-share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/nano.mo
 share/locale/cs/LC_MESSAGES/nano.mo
 share/locale/da/LC_MESSAGES/nano.mo
@@ -31,8 +29,6 @@ share/locale/pl/LC_MESSAGES/nano.mo
 share/locale/pt_BR/LC_MESSAGES/nano.mo
 share/locale/ro/LC_MESSAGES/nano.mo
 share/locale/ru/LC_MESSAGES/nano.mo
-share/locale/sr/
-share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/nano.mo
 share/locale/sv/LC_MESSAGES/nano.mo
 share/locale/tr/LC_MESSAGES/nano.mo

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2006/09/20 09:11:47 robert Exp $
+# $OpenBSD: Makefile,v 1.59 2006/11/07 15:31:37 naddy Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -29,7 +29,6 @@
      SUBDIR += ldapvi
      SUBDIR += leafpad
      SUBDIR += nano
-     SUBDIR += nano,slang
      SUBDIR += nedit
      SUBDIR += nvi-m17n
      SUBDIR += nvi-m17n,canna
