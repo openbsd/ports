@@ -1,9 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.12 2006/10/15 16:07:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2006/11/07 22:22:28 sturm Exp $
 @conflict p5-SendPage-*
+@mode 4555
+@owner uucp
+@group dialer
 bin/faxalter
+@mode
+@owner
+@group
 bin/faxcover
 bin/faxmail
+@mode 4555
+@owner uucp
+@group dialer
 bin/faxrm
+@mode
+@owner
+@group
 bin/faxstat
 bin/sendfax
 bin/sendpage
@@ -15,8 +27,11 @@ lib/fax/hfaxd.conf
 lib/fax/hylafax.sh.sample
 lib/fax/pagesizes
 lib/fax/typerules
+@owner uucp
+@group dialer
 libdata/hylafax/
 libdata/hylafax/COPYRIGHT
+@comment libdata/hylafax/FIFO
 libdata/hylafax/archive/
 libdata/hylafax/bin/
 libdata/hylafax/bin/archive
@@ -114,6 +129,8 @@ libdata/hylafax/recvq/
 libdata/hylafax/sendq/
 libdata/hylafax/status/
 libdata/hylafax/tmp/
+@owner
+@group
 @man man/man1/faxalter.1
 @man man/man1/faxcover.1
 @man man/man1/faxmail.1
@@ -188,12 +205,24 @@ sbin/faxanswer
 sbin/faxconfig
 sbin/faxcron
 sbin/faxdeluser
+@mode 4555
+@owner uucp
+@group dialer
 sbin/faxgetty
+@mode
+@owner
+@group
 sbin/faxinfo
 sbin/faxlock
 sbin/faxmodem
 sbin/faxmsg
+@mode 4555
+@owner uucp
+@group dialer
 sbin/faxq
+@mode
+@owner
+@group
 sbin/faxqclean
 sbin/faxquit
 sbin/faxsend
