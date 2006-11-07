@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2006/10/26 22:24:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2006/11/07 18:22:29 espie Exp $
 #
 
     SUBDIR += base64
@@ -10,6 +10,7 @@
     SUBDIR += libiconv
     SUBDIR += mimepp
     SUBDIR += mpack
+    SUBDIR += p5-Catalyst-Plugin-Charsets-Japanese
     SUBDIR += p5-Convert-ASCII-Armour
     SUBDIR += p5-Convert-ASN1
     SUBDIR += p5-Convert-BER
