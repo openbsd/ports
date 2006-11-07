@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/07 16:33:29 espie Exp $
+${P5SITE}/Catalyst/Helper/
+${P5SITE}/Catalyst/Helper/Model/
+${P5SITE}/Catalyst/Helper/Model/CDBI.pm
+${P5SITE}/Catalyst/Model/
+${P5SITE}/Catalyst/Model/CDBI.pm
+@man man/man3p/Catalyst::Helper::Model::CDBI.3p
+@man man/man3p/Catalyst::Model::CDBI.3p
