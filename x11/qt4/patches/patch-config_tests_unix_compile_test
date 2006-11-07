@@ -1,0 +1,13 @@
+$OpenBSD: patch-config_tests_unix_compile_test,v 1.1 2006/11/07 08:55:18 alek Exp $
+--- config.tests/unix/compile.test.orig	Mon Nov  6 23:22:25 2006
++++ config.tests/unix/compile.test	Mon Nov  6 23:25:14 2006
+@@ -34,6 +35,9 @@ while [ "$#" -gt 0 ]; do
+     -f*)
+         CXXFLAGS="$CXXFLAGS $PARAM"
+         ;;
++    -pthread*)
++	LIBPATH="$LIBPATH $PARAM"
++    	;;
+     *)  ;;
+     esac
+     shift
