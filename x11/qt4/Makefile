@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2006/10/30 18:17:32 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2006/11/07 09:27:37 alek Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples for qt4"
@@ -11,7 +11,7 @@ COMMENT-sqlite=		"sqlite plugin for qt4"
 PKGNAME=		qt4-${VERSION}
 PKGNAME-mysql=		qt4-mysql-${VERSION}
 PKGNAME-postgresql=	qt4-postgresql-${VERSION}
-PKGNAME-examples=	qt4-examples-${VERSION}
+PKGNAME-examples=	qt4-examples-${VERSION}p0
 PKGNAME-sqlite2=	qt4-sqlite2-${VERSION}
 PKGNAME-sqlite=		qt4-sqlite-${VERSION}
 FULLPKGNAME=		qt4-${VERSION}
@@ -168,7 +168,7 @@ WANTLIB+=	m z
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-examples"
-LIB_DEPENDS+=	QtCore.>=4,QtGui,QtNetwork,QtOpenGL,QtSql,QtXml,QtSvg,QtTest,Qt3Support,QtAssistantClient,QtDBus::x11/qt4
+LIB_DEPENDS+=	QtDesigner,QtCore.>=4,QtGui,QtNetwork,QtOpenGL,QtSql,QtXml,QtSvg,QtTest,Qt3Support,QtAssistantClient,QtDBus::x11/qt4
 WANTLIB+=	dbus-1
 .endif
 
