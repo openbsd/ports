@@ -1,0 +1,71 @@
+$OpenBSD: patch-mozilla_nsprpub_pr_tests_runtests_ksh,v 1.1 2006/11/07 16:22:06 ajacoutot Exp $
+--- mozilla/nsprpub/pr/tests/runtests.ksh.orig	Sun Apr 25 17:01:02 2004
++++ mozilla/nsprpub/pr/tests/runtests.ksh	Tue Nov  7 12:08:02 2006
+@@ -84,11 +84,14 @@ fi
+ # Tests not run (but should)
+ #
+ 
+-#forktest (failed on IRIX)
++#nameshm1 - timeout
+ #nbconn - fails on some platforms 
+-#poll_er - fails on some platforms? limited use?
+ #prpoll -  the bad-FD test needs to be moved to a different test
++#sema - timeout
++#semaerr - timeout
++#semaping - timeout
+ #sleep	-  specific to OS/2
++#socket - timeout
+ 
+ LOGFILE=${NSPR_TEST_LOGFILE:-$NULL_DEVICE}
+ 
+@@ -118,6 +121,7 @@ exit
+ fdcach
+ fileio
+ foreign
++forktest
+ formattm
+ fsync
+ gethost
+@@ -144,7 +148,6 @@ lockfile
+ logger
+ many_cv
+ multiwait
+-nameshm1
+ nblayer
+ nonblock
+ ntioto
+@@ -160,6 +163,7 @@ perf
+ pipeping
+ pipeping2
+ pipeself
++poll_er
+ poll_nm
+ poll_to
+ pollable
+@@ -175,9 +179,6 @@ selct_er
+ selct_nm
+ selct_to
+ selintr
+-sema
+-semaerr
+-semaping
+ sendzlf
+ server_test
+ servr_kk
+@@ -186,7 +187,6 @@ servr_ku
+ servr_uu
+ short_thread
+ sigpipe
+-socket
+ sockopt
+ sockping
+ sprintf
+@@ -250,7 +250,7 @@ else
+ 		echo "$prog\c"
+ 		echo "\nBEGIN TEST: $prog\n" >> ${LOGFILE} 2>&1
+ 		export test_rval
+-		./$prog >> ${LOGFILE} 2>&1 &
++		LD_LIBRARY_PATH=../../dist/lib/ ./$prog >> ${LOGFILE} 2>&1 &
+ 		test_pid=$!
+ 		sleep_pid=0
+ 		if [ "$TEST_TIMEOUT" -gt 0 ]

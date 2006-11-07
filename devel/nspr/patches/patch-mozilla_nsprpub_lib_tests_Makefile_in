@@ -1,0 +1,16 @@
+$OpenBSD: patch-mozilla_nsprpub_lib_tests_Makefile_in,v 1.1 2006/11/07 16:22:06 ajacoutot Exp $
+--- mozilla/nsprpub/lib/tests/Makefile.in.orig	Mon Nov  8 03:52:55 2004
++++ mozilla/nsprpub/lib/tests/Makefile.in	Tue Nov  7 09:54:30 2006
+@@ -131,6 +131,12 @@ ifeq ($(OS_ARCH), Linux)
+     endif
+ endif
+ 
++ifeq ($(OS_ARCH), OpenBSD)
++        ifeq ($(USE_PTHREADS),1)
++            EXTRA_LIBS = -lpthread
++        endif
++endif
++
+ ifeq ($(OS_ARCH), OSF1)
+ LDOPTS += -rpath $(PWD)/$(dist_libdir) -lpthread
+ endif

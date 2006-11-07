@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/11/06 14:35:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2006/11/07 16:22:05 ajacoutot Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/devel/nspr/Makefile,v 1.13 2003/12/13 21:30:19 peter Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
@@ -7,8 +7,9 @@ COMMENT=		"Netscape Portable Runtime"
 
 VER=			4.6.3
 DISTNAME=		nspr-${VER}
+PKGNAME=		${DISTNAME}p0
 
-SO_VERSION=		1.0
+SO_VERSION=		16.0
 .for _lib in nspr4 plc4 plds4
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
@@ -37,8 +38,6 @@ CONFIGURE_ARGS+=	--disable-debug \
 MAKE_ENV=		SO_VERSION="${SO_VERSION}"
 CONFIGURE_ENV=		${MAKE_ENV}
 
-NO_REGRESS=		Yes
-
 WRKSRC=			${WRKDIST}/mozilla/nsprpub
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build/autoconf
 
@@ -56,5 +55,12 @@ do-install:
 		(cd ${PREFIX}/lib && tar -xf -)
 	${INSTALL_SCRIPT} ${WRKSRC}/config/nspr-config ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/config/nspr.pc ${PREFIX}/lib/pkgconfig
+
+do-regress:
+	${MAKE_PROGRAM} -C ${WRKSRC}/pr/tests
+	${MAKE_PROGRAM} -C ${WRKSRC}/lib/tests
+	@cd ${WRKSRC}/pr/tests && /bin/ksh runtests.ksh
+	LD_LIBRARY_PATH=${WRKSRC}/dist/lib/ ${WRKSRC}/lib/tests/string
+	LD_LIBRARY_PATH=${WRKSRC}/dist/lib/ ${WRKSRC}/lib/tests/base64t
 
 .include <bsd.port.mk>
