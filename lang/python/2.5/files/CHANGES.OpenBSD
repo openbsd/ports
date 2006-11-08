@@ -10,9 +10,9 @@ of changes made to this version of Python for the OpenBSD package.
 
 3.  OpenBSD threads are used for threading support.
 
-4.  The interpreter is called "python2.4" in order to support multiple
+4.  The interpreter is called "python2.5" in order to support multiple
     versions of Python coexisting on the same system.  If no "python"
-    binary exists, a symlink to "python2.4" is created when package
+    binary exists, a symlink to "python2.5" is created when package
     is installed.
     Same process applies to IDLE binary (idle) and pydoc.
 
@@ -21,4 +21,4 @@ of changes made to this version of Python for the OpenBSD package.
 These changes are available in the OpenBSD CVS repository
 <http://www.openbsd.org/anoncvs.html> in ports/lang/python.
 
-$OpenBSD: CHANGES.OpenBSD,v 1.1 2006/11/01 20:59:18 alek Exp $
+$OpenBSD: CHANGES.OpenBSD,v 1.2 2006/11/08 18:59:38 djm Exp $
