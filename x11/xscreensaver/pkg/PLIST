@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2006/11/03 22:44:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.19 2006/11/08 22:16:06 dim Exp $
 bin/xscreensaver
 bin/xscreensaver-command
 bin/xscreensaver-demo
@@ -680,4 +680,3 @@ share/xscreensaver/glade/screensaver-locking.png
 share/xscreensaver/glade/screensaver-power.png
 share/xscreensaver/glade/screensaver-snap.png
 share/xscreensaver/glade/xscreensaver-demo.glade2
-!%%no_gle%%
