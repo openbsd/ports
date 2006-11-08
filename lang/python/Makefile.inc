@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.41 2006/11/01 21:11:55 alek Exp $
+# $OpenBSD: Makefile.inc,v 1.42 2006/11/08 19:00:19 djm Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -171,6 +171,18 @@ REGRESS_TARGET=	test
 PKG_ARGS+=	-Dmm=0
 .else
 PKG_ARGS+=	-Dmm=1
+.endif
+
+# The ctypes module is not supported on all platforms (in particular, ARM)
+.if ${VERSION} == "2.5"
+.  if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64" || \
+      ${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "sparc64" || \
+      ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "m68k" || \
+      ${MACHINE_ARCH} == "powerpc"
+PKG_ARGS+=	-Dctypes=1
+.  else
+PKG_ARGS+=	-Dctypes=0
+.  endif
 .endif
 
 CONFIGURE_ENV+= OPT='${CFLAGS} -DTHREAD_STACK_SIZE=${THREAD_STACK_SIZE} -fPIC' \
