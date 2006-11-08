@@ -1,0 +1,13 @@
+$OpenBSD: patch-svx_source_customshapes_makefile_mk,v 1.1 2006/11/08 09:34:03 robert Exp $
+--- svx/source/customshapes/makefile.mk.orig.port	Fri Nov  3 16:43:35 2006
++++ svx/source/customshapes/makefile.mk	Fri Nov  3 16:44:37 2006
+@@ -48,7 +48,8 @@
+ # Disable optimization for SunCC SPARC and MACOSX (funny loops
+ # when parsing e.g. "x+width/2"),
+ # also http://gcc.gnu.org/PR22392
+-.IF ("$(OS)$(CPU)"=="SOLARISS" && "$(COM)"!="GCC") || "$(OS)"=="MACOSX" || ("$(OS)"=="LINUX" && "$(CPU)"=="P") 
++.IF ("$(OS)$(CPU)"=="SOLARISS" && "$(COM)"!="GCC") || "$(OS)"=="MACOSX" || ("$(OS)"=="LINUX" && "$(CPU)"=="P") \
++    || ("$(OS)"=="OPENBSD" 
+ NOOPTFILES= $(SLO)$/EnhancedCustomShapeFunctionParser.obj
+ .ENDIF
+ 

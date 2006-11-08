@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2006/11/04 12:34:18 kurt Exp $
+# $OpenBSD: Makefile,v 1.22 2006/11/08 09:34:03 robert Exp $
 
-ONLY_FOR_ARCHS= i386
+ONLY_FOR_ARCHS= amd64 i386
 
 COMMENT=	"a multi-platform productivity suite"
 COMMENT-kde=	"optional integration of OpenOffice to the KDE environment"
@@ -9,9 +9,9 @@ COMMENT-java=	"optional integration of OpenOffice java features"
 VERSION=	2.0.4
 DISTNAME=	OOo_${VERSION}_src
 WRKDIST=	${WRKDIR}/OOD680_m5
-PKGNAME=	openoffice-${VERSION}p11
-PKGNAME-kde=	openoffice-kde-${VERSION}p11
-PKGNAME-java=	openoffice-java-${VERSION}p11
+PKGNAME=	openoffice-${VERSION}p12
+PKGNAME-kde=	openoffice-kde-${VERSION}p12
+PKGNAME-java=	openoffice-java-${VERSION}p12
 CATEGORIES=	editors productivity
 
 SHARED_LIBS=	icudata		26.0 \
@@ -27,6 +27,10 @@ MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/mirror/OpenOffice/stab
 		http://vlaai.snt.utwente.nl/pub/software/openoffice/stable/${VERSION}/ \
 		ftp://openoffice.mirror.cygnal.ca/openoffice/stable/${VERSION}/ \
 		http://mirrors.protection.cx/~jolan/
+MASTER_SITES0=	http://www.bsd.hu/~robert/ooo/ \
+		http://humppa.hu/ooo/
+
+DIST_SUBDIR=	openoffice
 
 # See http://www.openoffice.org/about.html#licenses
 # and http://www.openoffice.org/license.html
@@ -48,7 +52,8 @@ BUILD_DEPENDS=	:zip-*:archivers/zip \
 		::textproc/libxslt \
 		::print/cups \
 		::devel/apache-ant \
-		:db-java-4.*:databases/db/v4,-java,java
+		:db-java-4.*:databases/db/v4,-java,java \
+		::devel/boost
 
 BASE_LIBS=	gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.14::x11/gtk+2 \
 		python2.3:python-2.3.*:lang/python/2.3 \
@@ -90,6 +95,7 @@ USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 VMEM_WARNING=	Yes
 
+PATCHFILES=	go_oo_src680_20061105.diff:0
 PATCHORIG=	.orig.port
 WRKCONF=	${WRKSRC}/config_office
 
@@ -117,6 +123,7 @@ CONFIGURE_ARGS=	--disable-gnome-vfs \
 		--with-system-neon \
 		--with-system-db \
 		--with-system-sndfile \
+		--with-system-boost \
 		--with-epm=internal \
 		--with-alloc=system \
 		--with-java \
@@ -138,9 +145,11 @@ OOARCH=		OPENBSDGCCI
 TCSH=		${LOCALBASE}/bin/tcsh
 
 pre-patch:
+.for arch in intel x86-64
 	@cd ${WRKSRC}/bridges/source/cpp_uno && \
-		cp -R gcc3_freebsd_intel gcc3_openbsd_intel && \
-		perl -pi -e "s,FREEBSD,OPENBSD,g" gcc3_openbsd_intel/makefile.mk
+		cp -R gcc3_freebsd_${arch} gcc3_openbsd_${arch} && \
+		perl -pi -e "s,FREEBSD,OPENBSD,g" gcc3_openbsd_${arch}/makefile.mk
+.endfor
 
 do-build:
 	@cd ${WRKBUILD} && \

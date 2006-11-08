@@ -1,11 +1,12 @@
-$OpenBSD: patch-bridges_prj_build_lst,v 1.2 2006/08/20 03:36:52 kurt Exp $
---- bridges/prj/build.lst.orig.port	Wed Jul 19 05:28:51 2006
-+++ bridges/prj/build.lst	Fri Aug 18 15:47:42 2006
-@@ -19,6 +19,7 @@ br	bridges\source\cpp_uno\cc50_solaris_i
+$OpenBSD: patch-bridges_prj_build_lst,v 1.3 2006/11/08 09:34:03 robert Exp $
+--- bridges/prj/build.lst.orig.port	Wed Jul 19 11:28:51 2006
++++ bridges/prj/build.lst	Sat Nov  4 22:18:57 2006
+@@ -19,6 +19,8 @@
  br	bridges\source\cpp_uno\gcc3_solaris_sparc			nmake	-	u	br_gcc3sogs br_cppuno_shared br_unotypes NULL
  br	bridges\source\cpp_uno\gcc3_solaris_intel			nmake	-	u	br_gcc3sogi br_cppuno_shared br_unotypes NULL
  br	bridges\source\cpp_uno\gcc3_netbsd_intel	nmake	-	u	br_gccni br_unotypes NULL
 +br	bridges\source\cpp_uno\gcc3_openbsd_intel	nmake	-	u	br_gcc3oi br_cppuno_shared br_unotypes NULL
++br	bridges\source\cpp_uno\gcc3_openbsd_x86-64	nmake	-	u	br_gcc3ox br_cppuno_shared br_unotypes NULL
  br  bridges\source\cpp_uno\shared           nmake   -   all br_cppuno_shared br_unotypes NULL
  br	bridges\source\cli_uno					nmake	-	w,vc7	br_cli_uno br_unotypes NULL
  br	bridges\source\jni_uno					nmake	-	all	br_jni_uno br_unotypes NULL

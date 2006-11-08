@@ -1,4 +1,4 @@
-$OpenBSD: patch-stlport_STLport-4_5_patch,v 1.4 2006/10/27 16:02:02 kurt Exp $
+$OpenBSD: patch-stlport_STLport-4_5_patch,v 1.5 2006/11/08 09:34:03 robert Exp $
 --- stlport/STLport-4.5.patch.orig.port	Thu Apr 27 03:47:20 2006
 +++ stlport/STLport-4.5.patch	Thu Oct 26 15:40:08 2006
 @@ -115,6 +115,81 @@
@@ -31,7 +31,7 @@ $OpenBSD: patch-stlport_STLport-4_5_patch,v 1.4 2006/10/27 16:02:02 kurt Exp $
 +! #
 +! #
 +! LINK=ar cr
-+! DYN_LINK=${CXX} ${PTHREAD_LIBS} -lstdc++ --fexceptions -shared -o
++! DYN_LINK=${CXX} ${PTHREAD_LIBS} -fPIC -lstdc++ --fexceptions -shared -o
 +! 
 +! OBJEXT=o
 +! DYNEXT=so

@@ -1,0 +1,21 @@
+$OpenBSD: patch-solenv_inc_settings_mk,v 1.1 2006/11/08 09:34:03 robert Exp $
+--- solenv/inc/settings.mk.orig.port	Mon Nov  6 23:48:26 2006
++++ solenv/inc/settings.mk	Tue Nov  7 00:05:53 2006
+@@ -1106,6 +1106,8 @@
+ CDEFS+=-DSVX_LIGHT
+ .ENDIF
+ 
++CFLAGS+= $(ENVCFLAGS)
++
+ .IF "$(optimize)"!=""
+ CDEFS+=$(CDEFSOPT)
+ CFLAGS+=$(CFLAGSOPT)
+@@ -1252,7 +1254,7 @@
+ 
+ CDEFS+= $(ADDCDEFS)
+ CDEFS+= $(ENVCDEFS)
+-CFLAGS+= $(CFLAGSCALL) $(ENVCFLAGS)
++CFLAGS+= $(CFLAGSCALL)
+ CFLAGSCXX+= $(ENVCFLAGSCXX)
+ # andersrum wg. -TPxxxx
+ CFLAGSINCXX+:=$(ENVCFLAGSINCXX)

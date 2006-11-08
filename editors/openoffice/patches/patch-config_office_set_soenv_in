@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_office_set_soenv_in,v 1.5 2006/11/03 05:11:09 kurt Exp $
---- config_office/set_soenv.in.orig.port	Mon Aug 28 04:37:34 2006
-+++ config_office/set_soenv.in	Tue Oct 31 12:56:11 2006
-@@ -368,6 +368,34 @@ elsif ( $platform =~ m/freebsd/ ) 
+$OpenBSD: patch-config_office_set_soenv_in,v 1.6 2006/11/08 09:34:03 robert Exp $
+--- config_office/set_soenv.in.orig.port	Mon Aug 28 10:37:34 2006
++++ config_office/set_soenv.in	Fri Nov  3 18:29:03 2006
+@@ -368,6 +368,46 @@
        $INPATH         = $OUTPATH.$PROEXT;
        $GVERDIR        = $INPATH;
  } 
@@ -11,8 +11,24 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.5 2006/11/03 05:11:09 kurt Exp $
 +      $BIG_SVX        = "TRUE";
 +      $COM            = "GCC";
 +      $COMPATH        = '@COMPATH@';
-+      $CPU            = "I";
-+      $CPUNAME        = "INTEL";
++      if ( $platform =~ m/^i386/ )
++      {
++         $CPU            = "I";
++         $CPUNAME        = "INTEL";
++         $JRELIBDIR      = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."i386";
++         $JRETOOLKITDIR  = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."i386".$ds."client";
++         $JRETHREADDIR   = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."i386".$ds."native_threads";
++         $JREEXTRALIBDIR = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."i386".$ds."xawt";
++      }
++      elsif ( $platform =~ m/^x86_64/ )
++      {
++         $CPU            = "X";
++         $CPUNAME        = "X86_64";
++         $JRELIBDIR      = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."amd64";
++         $JRETOOLKITDIR  = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."amd64".$ds."client";
++         $JRETHREADDIR   = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."amd64".$ds."native_threads";
++         $JREEXTRALIBDIR = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."amd64".$ds."xawt";
++      }
 +      $CVER           = "C300";
 +      $GUI            = "UNX";
 +      $GUIBASE        = "unx";
@@ -25,10 +41,6 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.5 2006/11/03 05:11:09 kurt Exp $
 +      $PATH_SEPERATOR = $ps;
 +      $XPVERSION      = "3";
 +      $OSVERSION      = '@OSVERSION@';
-+      $JRELIBDIR      = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."i386";
-+      $JRETOOLKITDIR  = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."i386".$ds."client";
-+      $JRETHREADDIR   = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."i386".$ds."native_threads";
-+      $JREEXTRALIBDIR = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."i386".$ds."xawt";
 +      if( @GCCVER@ >= 30401 ) {
 +         $CVER        = "C341";
 +      }
@@ -36,7 +48,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.5 2006/11/03 05:11:09 kurt Exp $
  elsif ( $platform =~ m/linux-gnu/ ) 
  {
  # General Linux settings:
-@@ -943,7 +971,7 @@ if ($platform =~ m/solaris/) 
+@@ -943,7 +983,7 @@
                          $ps.$JRETHREADDIR.
                          $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB;
  }
@@ -45,7 +57,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.5 2006/11/03 05:11:09 kurt Exp $
  {  $LD_LIBRARY_PATH   = $cur_dir.
                          $ps.'$SOLARENV'.$ds.'$INPATH'.$LIB.
                          $ps.$JRELIBDIR.
-@@ -992,7 +1020,7 @@ if ($platform =~ m/solaris/) 
+@@ -992,7 +1032,7 @@
                          $D."SUPD=$UPD".
                          $D."UPDVER=".'""'."'".'"'."'".'"'."SV$UPD".'"'."'".'"'."'".'"'.'"';
  }
@@ -54,7 +66,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.5 2006/11/03 05:11:09 kurt Exp $
  {  $SOLARDEF          = $D."UNX".
                          $D.$COM.
                          $D.$CVER.
-@@ -1029,7 +1057,7 @@ if ($platform =~ m/solaris/) 
+@@ -1029,7 +1069,7 @@
                          $L.$USR_DT.$LIB.
                          $L.$USR_OPENWIN.$LIB;
  }
@@ -63,7 +75,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.5 2006/11/03 05:11:09 kurt Exp $
  {
     $SOLAREXTRALIB     = $L.$par_dir.$LIB64;
  }
-@@ -1070,7 +1098,7 @@ if ($platform =~ m/cygwin/)
+@@ -1070,7 +1110,7 @@
  }
       
  # The general environment path.
@@ -72,7 +84,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.5 2006/11/03 05:11:09 kurt Exp $
  {  $PATH              = $cur_dir.
                          $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$BIN.
                          $ps.'$SOLARENV'.$ds.'$OUTPATH'.$BIN.
-@@ -1260,6 +1288,19 @@ elsif ($platform =~ m/linux-gnu|netbasd|
+@@ -1260,6 +1300,19 @@
                          $L_STLPORT_LIB.
                          $L.$XLIB;
  }
@@ -92,7 +104,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.5 2006/11/03 05:11:09 kurt Exp $
  elsif ($platform =~ m/cygwin/)
  {  $SOLARLIB          = $L.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB.
                          $L.$par_dir.$LIB.
-@@ -1291,10 +1332,10 @@ $SOLARINC             = $I.$cur_dir.
+@@ -1291,10 +1344,10 @@
                          $I.'$SOLARENV'.$INC.
                          $I.'$SRC_ROOT'.$ds."res";
  
@@ -105,7 +117,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.5 2006/11/03 05:11:09 kurt Exp $
  {
  # This simply adds an include path, so even cases that break the FHS work
  $SOLARINC            .= $STLPORT_inc_stlport;
-@@ -1315,10 +1356,15 @@ if ($platform =~ m/linux-gnu/)
+@@ -1315,10 +1368,15 @@
     $SOLARINC         .= $STLPORT_inc_stlport;
  }
  
@@ -123,7 +135,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.5 2006/11/03 05:11:09 kurt Exp $
  	#include system dependent Java include directory
  	if (!($JDK eq "gcj"))
  	{
-@@ -1334,6 +1380,10 @@ if ($platform =~ m/linux-gnu/)
+@@ -1334,6 +1392,10 @@
        		$SOLARINC   .=$I.'$JAVA_HOME'.$INCLUDE.$ds."bsd";
        		$SOLARINC   .=$I.'$JAVA_HOME'.$INCLUDE.$ds."linux";
     		}
@@ -134,7 +146,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.5 2006/11/03 05:11:09 kurt Exp $
     		elsif ($platform =~ m/netbsd/)
     		{  $SOLARINC   .=$I.'$JAVA_HOME'.$INCLUDE.$ds."netbsd";
     		}
-@@ -1346,7 +1396,7 @@ if ($platform =~ m/linux-gnu/)
+@@ -1346,7 +1408,7 @@
     		$SOLARINC .=$I.'$JAVA_HOME'.$INCLUDE.$ds."native_threads".$ds."include";
  	}
      #The tail, if needed

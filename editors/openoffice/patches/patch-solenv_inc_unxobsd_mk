@@ -1,16 +1,16 @@
-$OpenBSD: patch-solenv_inc_unxobsdi_mk,v 1.6 2006/10/27 16:02:02 kurt Exp $
---- solenv/inc/unxobsdi.mk.orig.port	Wed Oct 25 07:34:21 2006
-+++ solenv/inc/unxobsdi.mk	Thu Oct 26 08:52:12 2006
-@@ -0,0 +1,228 @@
+$OpenBSD: patch-solenv_inc_unxobsd_mk,v 1.1 2006/11/08 09:34:03 robert Exp $
+--- solenv/inc/unxobsd.mk.orig.port	Thu Nov  2 21:12:56 2006
++++ solenv/inc/unxobsd.mk	Thu Nov  2 21:12:49 2006
+@@ -0,0 +1,235 @@
 +#*************************************************************************
 +#
 +#   OpenOffice.org - a multi-platform office productivity suite
 +#
-+#   $RCSfile: patch-solenv_inc_unxobsdi_mk,v $
++#   $RCSfile: patch-solenv_inc_unxobsd_mk,v $
 +#
-+#   $Revision: 1.6 $
++#   $Revision: 1.1 $
 +#
-+#   last change: $Author: kurt $ $Date: 2006/10/27 16:02:02 $
++#   last change: $Author: robert $ $Date: 2006/11/08 09:34:03 $
 +#
 +#   The Contents of this file are made available subject to
 +#   the terms of GNU Lesser General Public License Version 2.1.
@@ -86,16 +86,26 @@ $OpenBSD: patch-solenv_inc_unxobsdi_mk,v 1.6 2006/10/27 16:02:02 kurt Exp $
 +
 +.ENDIF
 +
++INCPOST=$(LOCALBASE)/include
++
 +# flags for the C++ Compiler
 +CFLAGSCC=$(ARCH_FLAGS)
 +# Flags for enabling exception handling
 +CFLAGSEXCEPTIONS=-fexceptions -fno-enforce-eh-specs
 +# Flags for disabling exception handling
-+CFLAGS_NO_EXCEPTIONS=-fno-exceptions
++CFLAGS_NO_EXCEPTIONS=-fno-exceptions -DBOOST_NO_EXCEPTIONS
 +
 +# -fpermissive should be removed as soon as possible
 +CFLAGSCXX=$(ARCH_FLAGS)
++.IF "$(CPUNAME)" == "X86_64"
++PICSWITCH:=-fpic -fPIC
++LINKFLAGSOPTIMIZE*=-Wl,-O1 -fPIC
++.ENDIF
++.IF "$(CPUNAME)" == "INTEL"
 +PICSWITCH:=-fpic
++LINKFLAGSOPTIMIZE*=-Wl,-O1
++.ENDIF
++
 +.IF "$(HAVE_GCC_VISIBILITY_FEATURE)" == "TRUE"
 +CFLAGSCXX += -fvisibility-inlines-hidden
 +.ENDIF # "$(HAVE_GCC_VISIBILITY_FEATURE)" == "TRUE"
@@ -154,6 +164,7 @@ $OpenBSD: patch-solenv_inc_unxobsdi_mk,v 1.6 2006/10/27 16:02:02 kurt Exp $
 +#LINKFLAGSRUNPATH*=-Wl,-rpath,\''$$ORIGIN'\'
 +#LINKFLAGS=-Wl,-z,combreloc $(LINKFLAGSDEFS) $(LINKFLAGSRUNPATH)
 +LINKFLAGS=-Wl,-z,combreloc
++SOLARLIB+=-L$(LOCALBASE)/lib
 +
 +# linker flags for linking applications
 +LINKFLAGSAPPGUI= -Wl,-export-dynamic -Wl,--noinhibit-exec
@@ -170,7 +181,6 @@ $OpenBSD: patch-solenv_inc_unxobsdi_mk,v 1.6 2006/10/27 16:02:02 kurt Exp $
 +
 +# linker flags for optimization (symbol hashtable)
 +# for now, applied to symbol scoped libraries, only
-+LINKFLAGSOPTIMIZE*=-Wl,-O1
 +LINKVERSIONMAPFLAG=$(LINKFLAGSOPTIMIZE) -Wl,--version-script
 +
 +SONAME_SWITCH=-Wl,-h
@@ -207,8 +217,6 @@ $OpenBSD: patch-solenv_inc_unxobsdi_mk,v 1.6 2006/10/27 16:02:02 kurt Exp $
 +LIBSTLPORTST=$(STATIC) -lstlport_gcc $(DYNAMIC)
 +.ENDIF # "$(USE_STLP_DEBUG)" != ""
 +
-+#FILLUPARC=$(STATIC) -lsupc++ $(DYNAMIC)
-+
 +# name of library manager
 +LIBMGR=ar
 +LIBFLAGS=-r
@@ -229,4 +237,3 @@ $OpenBSD: patch-solenv_inc_unxobsdi_mk,v 1.6 2006/10/27 16:02:02 kurt Exp $
 +# platform specific identifier for shared libs
 +DLLPRE=lib
 +DLLPOST=.so
-+
