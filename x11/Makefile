@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.248 2006/10/28 20:38:59 steven Exp $
+# $OpenBSD: Makefile,v 1.249 2006/11/08 22:44:30 sturm Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -234,7 +234,7 @@
      SUBDIR += xprompt
      SUBDIR += xrestop
      SUBDIR += xrootconsole
-     SUBDIR += xscreensaver
+     SUBDIR += xscreensaver,
      SUBDIR += xscreensaver,no_gle
      SUBDIR += xscribble
      SUBDIR += xsnow
