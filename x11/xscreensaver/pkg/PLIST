@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.19 2006/11/08 22:16:06 dim Exp $
+@comment $OpenBSD: PLIST,v 1.20 2006/11/09 08:27:51 dim Exp $
+@mode 4755
 bin/xscreensaver
+@mode
 bin/xscreensaver-command
 bin/xscreensaver-demo
 bin/xscreensaver-getimage
@@ -61,6 +63,7 @@ libexec/xscreensaver/engine
 libexec/xscreensaver/epicycle
 libexec/xscreensaver/eruption
 libexec/xscreensaver/euler2d
+!%%no_gle%%
 libexec/xscreensaver/fadeplot
 libexec/xscreensaver/fiberlamp
 libexec/xscreensaver/fireworkx
