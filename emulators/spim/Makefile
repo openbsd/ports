@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2006/11/04 19:19:15 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2006/11/09 07:01:47 kevlo Exp $
 
 COMMENT=	"MIPS R2000/R3000 simulator"
 
-DISTNAME=	spim-7.2.1
+DISTNAME=	spim-7.3
 CATEGORIES=	emulators
 
 HOMEPAGE=	http://www.cs.wisc.edu/~larus/spim.html
