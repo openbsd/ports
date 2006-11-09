@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/30 17:44:57 ckuethe Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/11/09 02:31:30 ckuethe Exp $
 bin/gpsbabel
 share/doc/gpsbabel/
 share/doc/gpsbabel/Advanced_Usage.html
@@ -20,6 +20,7 @@ share/doc/gpsbabel/The_Formats.html
 share/doc/gpsbabel/The_Problem.html
 share/doc/gpsbabel/The_Solution.html
 share/doc/gpsbabel/Usage.html
+share/doc/gpsbabel/batchfile.html
 share/doc/gpsbabel/filter_arc.html
 share/doc/gpsbabel/filter_discard.html
 share/doc/gpsbabel/filter_duplicate.html
@@ -33,6 +34,7 @@ share/doc/gpsbabel/filter_simplify.html
 share/doc/gpsbabel/filter_sort.html
 share/doc/gpsbabel/filter_stack.html
 share/doc/gpsbabel/filter_track.html
+share/doc/gpsbabel/filter_transform.html
 share/doc/gpsbabel/fmt_an1.html
 share/doc/gpsbabel/fmt_arc.html
 share/doc/gpsbabel/fmt_axim_gpb.html

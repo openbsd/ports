@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/30 17:44:57 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/09 02:31:30 ckuethe Exp $
 
 COMMENT=		"GPS waypoint, track, and route conversion tool"
 COMMENT-gui=		"Tk front-end to gpsbabel"
 
-VERSION=		1.3.1
+VERSION=		1.3.2
 DISTNAME=		gpsbabel-${VERSION}
 PKGNAME-gui=		gpsbabel-gui-${VERSION}
 CATEGORIES=		geo
@@ -22,7 +22,9 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gpsbabel/}
 
 AUTOCONF_VERSION=	2.59
 CONFIGURE_STYLE=	autoconf
-CONFIGURE_ARGS+=	--with-zlib=system --with-shapefile=system
+CONFIGURE_ARGS+=	--with-zlib=system \
+			--with-shapefile=system \
+			--with-doc=./babelweb
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			WEB=${WRKSRC} 
