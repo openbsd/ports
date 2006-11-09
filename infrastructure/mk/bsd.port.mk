@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.796 2006/11/09 08:16:22 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.797 2006/11/09 08:29:47 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1995,8 +1995,8 @@ ${_REGRESS_COOKIE}: ${_BUILD_COOKIE}
 
 ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
 	@${ECHO_MSG} "===>  Faking installation for ${FULLPKGNAME}${_MASTER}"
-	@if [ x`${SUDO} ${SH} -c umask` != x${DEF_UMASK} ]; then \
-		echo >&2 "Error: your umask is \"`${SH} -c umask`"\".; \
+	@if [ x`${SUDO} /bin/sh -c umask` != x${DEF_UMASK} ]; then \
+		echo >&2 "Error: your umask is \"`/bin/sh -c umask`"\".; \
 		exit 1; \
 	fi
 	@${SUDO} install -d -m 755 -o root -g wheel ${WRKINST}
