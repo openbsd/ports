@@ -1,0 +1,59 @@
+$OpenBSD: patch-mozilla_nsprpub_pr_tests_socket_c,v 1.1 2006/11/09 19:00:39 ajacoutot Exp $
+--- mozilla/nsprpub/pr/tests/socket.c.orig	Sun Apr 25 17:01:02 2004
++++ mozilla/nsprpub/pr/tests/socket.c	Thu Nov  9 14:29:45 2006
+@@ -2245,6 +2245,7 @@ main(int argc, char **argv)
+     /*
+      * client-server test, Ipv6-Ipv4
+      */
++    #if !defined(__OpenBSD__)
+ 	client_domain = PR_AF_INET6;
+ 	printf("TCP Client/Server Test - IPv6/Ipv4\n");
+     if (TCP_Socket_Client_Server_Test() < 0) {
+@@ -2252,9 +2253,11 @@ main(int argc, char **argv)
+         goto done;
+     } else
+         printf("TCP_Socket_Client_Server_Test Passed\n");
++    #endif
+     /*
+      * client-server test, Ipv4-Ipv6
+      */
++    #if !defined(__OpenBSD__)
+ 	client_domain = PR_AF_INET;
+ 	server_domain = PR_AF_INET6;
+ 	printf("TCP Client/Server Test - IPv4/Ipv6\n");
+@@ -2263,6 +2266,7 @@ main(int argc, char **argv)
+         goto done;
+     } else
+         printf("TCP_Socket_Client_Server_Test Passed\n");
++    #endif
+     /*
+      * client-server test, Ipv6-Ipv6
+      */
+@@ -2289,6 +2293,7 @@ main(int argc, char **argv)
+     /*
+      * run client-server test with UDP, IPv6/IPv4
+      */
++    #if !defined(__OpenBSD__)
+ 	printf("UDP Client/Server Test - IPv6/Ipv4\n");
+ 	client_domain = PR_AF_INET6;
+ 	server_domain = PR_AF_INET;
+@@ -2297,9 +2302,11 @@ main(int argc, char **argv)
+         goto done;
+     } else
+         printf("UDP_Socket_Client_Server_Test Passed\n");
++    #endif
+     /*
+      * run client-server test with UDP,IPv4-IPv6
+      */
++    #if !defined(__OpenBSD__)
+ 	printf("UDP Client/Server Test - IPv4/Ipv6\n");
+ 	client_domain = PR_AF_INET;
+ 	server_domain = PR_AF_INET6;
+@@ -2308,6 +2315,7 @@ main(int argc, char **argv)
+         goto done;
+     } else
+         printf("UDP_Socket_Client_Server_Test Passed\n");
++    #endif
+     /*
+      * run client-server test with UDP,IPv6-IPv6
+      */

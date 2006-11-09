@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_nsprpub_pr_tests_runtests_ksh,v 1.1 2006/11/07 16:22:06 ajacoutot Exp $
+$OpenBSD: patch-mozilla_nsprpub_pr_tests_runtests_ksh,v 1.2 2006/11/09 19:00:39 ajacoutot Exp $
 --- mozilla/nsprpub/pr/tests/runtests.ksh.orig	Sun Apr 25 17:01:02 2004
-+++ mozilla/nsprpub/pr/tests/runtests.ksh	Tue Nov  7 12:08:02 2006
-@@ -84,11 +84,14 @@ fi
++++ mozilla/nsprpub/pr/tests/runtests.ksh	Thu Nov  9 10:27:17 2006
+@@ -84,10 +84,12 @@ fi
  # Tests not run (but should)
  #
  
@@ -14,11 +14,9 @@ $OpenBSD: patch-mozilla_nsprpub_pr_tests_runtests_ksh,v 1.1 2006/11/07 16:22:06 
 +#semaerr - timeout
 +#semaping - timeout
  #sleep	-  specific to OS/2
-+#socket - timeout
  
  LOGFILE=${NSPR_TEST_LOGFILE:-$NULL_DEVICE}
- 
-@@ -118,6 +121,7 @@ exit
+@@ -118,6 +120,7 @@ exit
  fdcach
  fileio
  foreign
@@ -26,7 +24,7 @@ $OpenBSD: patch-mozilla_nsprpub_pr_tests_runtests_ksh,v 1.1 2006/11/07 16:22:06 
  formattm
  fsync
  gethost
-@@ -144,7 +148,6 @@ lockfile
+@@ -144,7 +147,6 @@ lockfile
  logger
  many_cv
  multiwait
@@ -34,7 +32,7 @@ $OpenBSD: patch-mozilla_nsprpub_pr_tests_runtests_ksh,v 1.1 2006/11/07 16:22:06 
  nblayer
  nonblock
  ntioto
-@@ -160,6 +163,7 @@ perf
+@@ -160,6 +162,7 @@ perf
  pipeping
  pipeping2
  pipeself
@@ -42,7 +40,7 @@ $OpenBSD: patch-mozilla_nsprpub_pr_tests_runtests_ksh,v 1.1 2006/11/07 16:22:06 
  poll_nm
  poll_to
  pollable
-@@ -175,9 +179,6 @@ selct_er
+@@ -175,9 +178,6 @@ selct_er
  selct_nm
  selct_to
  selintr
@@ -52,14 +50,6 @@ $OpenBSD: patch-mozilla_nsprpub_pr_tests_runtests_ksh,v 1.1 2006/11/07 16:22:06 
  sendzlf
  server_test
  servr_kk
-@@ -186,7 +187,6 @@ servr_ku
- servr_uu
- short_thread
- sigpipe
--socket
- sockopt
- sockping
- sprintf
 @@ -250,7 +250,7 @@ else
  		echo "$prog\c"
  		echo "\nBEGIN TEST: $prog\n" >> ${LOGFILE} 2>&1

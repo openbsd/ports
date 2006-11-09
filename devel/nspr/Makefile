@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/11/07 16:22:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2006/11/09 19:00:39 ajacoutot Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/devel/nspr/Makefile,v 1.13 2003/12/13 21:30:19 peter Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
@@ -7,9 +7,9 @@ COMMENT=		"Netscape Portable Runtime"
 
 VER=			4.6.3
 DISTNAME=		nspr-${VER}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
-SO_VERSION=		16.0
+SO_VERSION=		17.0
 .for _lib in nspr4 plc4 plds4
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
