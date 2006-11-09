@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_office_set_soenv_in,v 1.6 2006/11/08 09:34:03 robert Exp $
+$OpenBSD: patch-config_office_set_soenv_in,v 1.7 2006/11/09 08:31:29 robert Exp $
 --- config_office/set_soenv.in.orig.port	Mon Aug 28 10:37:34 2006
 +++ config_office/set_soenv.in	Fri Nov  3 18:29:03 2006
 @@ -368,6 +368,46 @@
@@ -25,7 +25,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.6 2006/11/08 09:34:03 robert Exp 
 +         $CPU            = "X";
 +         $CPUNAME        = "X86_64";
 +         $JRELIBDIR      = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."amd64";
-+         $JRETOOLKITDIR  = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."amd64".$ds."client";
++         $JRETOOLKITDIR  = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."amd64".$ds."server";
 +         $JRETHREADDIR   = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."amd64".$ds."native_threads";
 +         $JREEXTRALIBDIR = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."amd64".$ds."xawt";
 +      }

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2006/11/08 09:34:03 robert Exp $
+# $OpenBSD: Makefile,v 1.23 2006/11/09 08:31:29 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -9,9 +9,9 @@ COMMENT-java=	"optional integration of OpenOffice java features"
 VERSION=	2.0.4
 DISTNAME=	OOo_${VERSION}_src
 WRKDIST=	${WRKDIR}/OOD680_m5
-PKGNAME=	openoffice-${VERSION}p12
-PKGNAME-kde=	openoffice-kde-${VERSION}p12
-PKGNAME-java=	openoffice-java-${VERSION}p12
+PKGNAME=	openoffice-${VERSION}p13
+PKGNAME-kde=	openoffice-kde-${VERSION}p13
+PKGNAME-java=	openoffice-java-${VERSION}p13
 CATEGORIES=	editors productivity
 
 SHARED_LIBS=	icudata		26.0 \
