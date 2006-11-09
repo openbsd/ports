@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.81 2006/11/06 16:35:20 espie Exp $
+# $OpenBSD: make-plist,v 1.82 2006/11/09 08:16:22 espie Exp $
 # Copyright (c) 2004-2006 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -531,18 +531,11 @@ sub is_subinfo
 
 sub augment_mtree
 {
-	my ($mtree, $pkgname) = @_;
-        my $true_package = OpenBSD::PackageLocator->find($pkgname);
-	if (!$true_package) {
-		return undef;
-	}
-        my $dir = $true_package->info();
-	my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS, \&OpenBSD::PackingList::DirrmOnly);
+	my ($mtree, $fh) = @_;
+	my $plist = OpenBSD::PackingList->read($fh, \&OpenBSD::PackingList::DirrmOnly) or die "couldn't read packing-list\n";
 	for my $item (@{$plist->{items}}) {
 		$item->add_to_mtree($mtree);
 	}
-        $true_package->close();
-	return 1;
 }
 
 sub undest
@@ -629,16 +622,15 @@ sub get_files
 	$mtree->{'/usr/local/lib/X11'} = 1;
 	$mtree->{'/usr/local/include/X11'} = 1;
 	$mtree->{'/usr/local/lib/X11/app-defaults'} = 1;
-	# add directories from dependencies, insist on having the real package.
+	# add directories from dependencies
 	my $stripped = {};
-	for my $pkg (split(/\s+/, $ENV{'DEPS'})) {
-		next if defined $stripped->{$pkg};
-		$stripped->{$pkg} = 1;
-		if (augment_mtree($mtree, $ENV{'PKGREPOSITORY'}."/$pkg.tgz")) {
-			print STDERR "Stripping dirs from $pkg\n";
-	    	} else {
-			print STDERR "NOT stripping dirs from $pkg: package not found\n";
-		}
+	for my $pkgpath (split(/\s+/, $ENV{'DEPPATHS'})) {
+		next if defined $stripped->{$pkgpath};
+		$stripped->{$pkgpath} = 1;
+		print STDERR "Stripping dirs from $pkgpath\n";
+		open my $fh, "cd ".$ENV{PORTSDIR}." && env -i SUBDIR=$pkgpath ECHO_MSG=: ".$ENV{MAKE}." print-plist |" or die "blech\n";
+		augment_mtree($mtree, $fh);
+		close($fh);
 	}
 	# make sure mtree is removed 
 	for my $d (keys %$mtree) {

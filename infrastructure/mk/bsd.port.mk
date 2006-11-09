@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.795 2006/11/05 20:20:28 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.796 2006/11/09 08:16:22 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1670,15 +1670,16 @@ _extra_prefixes+=PREFIX${_s}=`cd ${.CURDIR} && SUBPACKAGE=${_s} PACKAGING=${_s} 
 .  endfor
 .endif
 
-_internal-plist _internal-update-plist: _internal-fake ${_DEPrun_COOKIES}
+_internal-plist _internal-update-plist: _internal-fake
 	@${ECHO_MSG} "===>  Updating plist for ${FULLPKGNAME}${_MASTER}"
 	@mkdir -p ${PKGDIR}
 	@DESTDIR=${WRKINST} PREFIX=${WRKINST}${PREFIX} \
 	TRUEPREFIX=${TRUEPREFIX} \
 	MTREE_FILE=${WRKPKG}/mtree.spec \
 	INSTALL_PRE_COOKIE=${_INSTALL_PRE_COOKIE} \
-	DEPS="`${MAKE} full-run-depends ${_do_libs_too}`" \
-	PKGREPOSITORY=${_PKG_REPO} \
+	DEPPATHS="`${MAKE} run-dir-depends ${_do_libs_too}|${_sort_dependencies}`" \
+	MAKE="${MAKE}" \
+	PORTSDIR=${PORTSDIR} \
 	PLIST=${PLIST} \
 	PFRAG=${PKGDIR}/PFRAG \
 	FLAVORS='${FLAVORS}' MULTI_PACKAGES='${MULTI_PACKAGES}' \
