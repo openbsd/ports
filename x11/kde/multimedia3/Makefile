@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2006/11/08 23:59:30 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2006/11/09 23:24:00 steven Exp $
 
 COMMENT= 		"K Desktop Environment, multimedia applications"
 CATEGORIES=		x11 x11/kde
@@ -28,22 +28,6 @@ SHARED_LIBS +=	arts_xine            0.0      # .0.0
 SHARED_LIBS +=	arts_akode           0.0      # .0.0
 SHARED_LIBS +=	noatun               4.0      # .3.0
 SHARED_LIBS +=	noatuncontrols       4.0      # .3.0
-SHARED_LIBS +=	noatuntags           4.0      # .3.0
-SHARED_LIBS +=	audiocdplugins       2.0      # .1.0
-SHARED_LIBS +=	arts_mpeglib         1.0      # .0.3
-SHARED_LIBS +=	arts_splay           1.0      # .0.0
-SHARED_LIBS +=	artsmidi             1.0      # .0.0
-SHARED_LIBS +=	artsgui              1.0      # .0.0
-SHARED_LIBS +=	artsgui_kde          1.0      # .0.0
-SHARED_LIBS +=	artsmodulessynth     1.0      # .0.0
-SHARED_LIBS +=	artsmodulescommon    1.0      # .0.0
-SHARED_LIBS +=	artsmoduleseffects   1.0      # .0.0
-SHARED_LIBS +=	artsmodulesmixers    1.0      # .0.0
-SHARED_LIBS +=	artsmodules          1.0      # .0.0
-SHARED_LIBS +=	artscontrolsupport   2.0      # .1.0
-SHARED_LIBS +=	artscontrolapplet    2.0      # .1.0
-SHARED_LIBS +=	yafxplayer           1.0      # .0.0
-SHARED_LIBS +=	noatun               4.0      # .3.0
 SHARED_LIBS +=	noatuntags           4.0      # .3.0
 SHARED_LIBS +=	audiocdplugins       2.0      # .1.0
 SHARED_LIBS +=	arts_mpeglib         1.0      # .0.3
