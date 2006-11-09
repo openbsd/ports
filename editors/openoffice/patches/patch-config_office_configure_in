@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_office_configure_in,v 1.7 2006/11/03 05:11:09 kurt Exp $
---- config_office/configure.in.orig.port	Mon Aug 28 04:37:20 2006
-+++ config_office/configure.in	Mon Oct 30 08:52:12 2006
-@@ -773,6 +773,16 @@ case "$build_os" in
+$OpenBSD: patch-config_office_configure_in,v 1.8 2006/11/09 15:18:01 kurt Exp $
+--- config_office/configure.in.orig.port	Wed Nov  8 11:46:32 2006
++++ config_office/configure.in	Wed Nov  8 11:47:17 2006
+@@ -784,6 +784,16 @@ case "$build_os" in
  		AC_MSG_RESULT([$PTHREAD_LIBS])
  		_os=FreeBSD
  		;;
@@ -18,7 +18,7 @@ $OpenBSD: patch-config_office_configure_in,v 1.7 2006/11/03 05:11:09 kurt Exp $
  	osf)
  		test_x=dontknow
  		test_cups=no
-@@ -2367,11 +2377,11 @@ dnl ====================================
+@@ -2428,11 +2438,11 @@ dnl ====================================
  dnl Checks for programs.
  dnl ===================================================================
  dnl Check whether there's a C pre-processor.
@@ -32,7 +32,7 @@ $OpenBSD: patch-config_office_configure_in,v 1.7 2006/11/03 05:11:09 kurt Exp $
     AC_PROG_CXXCPP
  fi
  
-@@ -2501,6 +2511,9 @@ if test "$_os" != "WINNT" -a \( "z$enabl
+@@ -2562,6 +2572,9 @@ if test "$_os" != "WINNT" -a \( "z$enabl
  	AIX)
  		PKGFORMAT=aix
  		;;
@@ -42,7 +42,7 @@ $OpenBSD: patch-config_office_configure_in,v 1.7 2006/11/03 05:11:09 kurt Exp $
  	*BSD)
  		PKGFORMAT=bsd
  		;;
-@@ -2873,12 +2886,13 @@ if test -n "$with_system_python" && test
+@@ -2934,12 +2947,13 @@ if test -n "$with_system_python" && test
  
     python_include=`$PYTHON -c "import distutils.sysconfig; print distutils.sysconfig.get_config_var('INCLUDEPY');"`
     python_version=`$PYTHON -c "import distutils.sysconfig; print distutils.sysconfig.get_config_var('VERSION');"`
@@ -57,7 +57,7 @@ $OpenBSD: patch-config_office_configure_in,v 1.7 2006/11/03 05:11:09 kurt Exp $
     fi
     
     dnl check if the headers really work:
-@@ -2903,16 +2917,13 @@ if test -n "$with_system_db" -o -n "$wit
+@@ -2964,16 +2978,13 @@ if test -n "$with_system_db" -o -n "$wit
  	test "$with_system_db" != "no"; then
      SYSTEM_DB=YES
      AC_MSG_RESULT([external])
@@ -78,7 +78,7 @@ $OpenBSD: patch-config_office_configure_in,v 1.7 2006/11/03 05:11:09 kurt Exp $
      for v in 1 2; do
         AC_TRY_RUN([
  #include <db.h>
-@@ -2923,6 +2934,7 @@ int main(int argc, char **argv) {
+@@ -2984,6 +2995,7 @@ int main(int argc, char **argv) {
  }
         ], [DB_VERSION_MINOR=$v], [])
      done
@@ -86,7 +86,7 @@ $OpenBSD: patch-config_office_configure_in,v 1.7 2006/11/03 05:11:09 kurt Exp $
      if test "$DB_VERSION_MINOR" -gt "1"; then
         AC_MSG_RESULT([OK])
         DB_VERSION=4.$DB_VERSION_MINOR
-@@ -3578,7 +3590,7 @@ elif test "$_os" != "WINNT" ; then
+@@ -3639,7 +3651,7 @@ elif test "$_os" != "WINNT" ; then
        AC_MSG_ERROR([No X includes found]) # Exit
     fi
     CFLAGS=$X_CFLAGS
@@ -95,7 +95,7 @@ $OpenBSD: patch-config_office_configure_in,v 1.7 2006/11/03 05:11:09 kurt Exp $
     AC_CHECK_LIB(X11, XOpenDisplay, x_libs="-lX11 $X_EXTRA_LIBS", [AC_MSG_ERROR([X Development libraries not found])])
  else
     x_includes="no_x_includes"
-@@ -4552,7 +4564,7 @@ if test "$test_kde" = "yes" -a "$ENABLE_
+@@ -4613,7 +4625,7 @@ if test "$test_kde" = "yes" -a "$ENABLE_
  
      dnl What to test
      qt_test_include="qstyle.h"
@@ -104,7 +104,7 @@ $OpenBSD: patch-config_office_configure_in,v 1.7 2006/11/03 05:11:09 kurt Exp $
      kde_test_include="ksharedptr.h"
      kde_test_library="libkdeui.la"
  
-@@ -4575,7 +4587,7 @@ your Qt installation by exporting QTDIR 
+@@ -4636,7 +4648,7 @@ your Qt installation by exporting QTDIR 
      AC_MSG_CHECKING([for Qt libraries])
      qt_libdir="no"
      for qt_check in $qt_libdirs ; do

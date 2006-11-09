@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2006/11/09 08:31:29 robert Exp $
+# $OpenBSD: Makefile,v 1.24 2006/11/09 15:18:01 kurt Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -9,9 +9,9 @@ COMMENT-java=	"optional integration of OpenOffice java features"
 VERSION=	2.0.4
 DISTNAME=	OOo_${VERSION}_src
 WRKDIST=	${WRKDIR}/OOD680_m5
-PKGNAME=	openoffice-${VERSION}p13
-PKGNAME-kde=	openoffice-kde-${VERSION}p13
-PKGNAME-java=	openoffice-java-${VERSION}p13
+PKGNAME=	openoffice-${VERSION}p14
+PKGNAME-kde=	openoffice-kde-${VERSION}p14
+PKGNAME-java=	openoffice-java-${VERSION}p14
 CATEGORIES=	editors productivity
 
 SHARED_LIBS=	icudata		26.0 \
@@ -95,7 +95,8 @@ USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 VMEM_WARNING=	Yes
 
-PATCHFILES=	go_oo_src680_20061105.diff:0
+PATCHFILES=	go_oo_src680_20061105.diff:0 \
+		build-java-target.diff:0
 PATCHORIG=	.orig.port
 WRKCONF=	${WRKSRC}/config_office
 
@@ -127,6 +128,7 @@ CONFIGURE_ARGS=	--disable-gnome-vfs \
 		--with-epm=internal \
 		--with-alloc=system \
 		--with-java \
+		--with-java-target-version=1.4 \
 		--with-jdk-home=${JAVA_HOME} \
 		--with-ant-home=${LOCALBASE}/ant/lib \
 		--with-db-jar=${LOCALBASE}/lib/db4/db.jar

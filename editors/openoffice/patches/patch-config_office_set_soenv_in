@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_office_set_soenv_in,v 1.7 2006/11/09 08:31:29 robert Exp $
---- config_office/set_soenv.in.orig.port	Mon Aug 28 10:37:34 2006
-+++ config_office/set_soenv.in	Fri Nov  3 18:29:03 2006
-@@ -368,6 +368,46 @@
+$OpenBSD: patch-config_office_set_soenv_in,v 1.8 2006/11/09 15:18:01 kurt Exp $
+--- config_office/set_soenv.in.orig.port	Thu Nov  9 08:55:33 2006
++++ config_office/set_soenv.in	Thu Nov  9 08:55:34 2006
+@@ -368,6 +368,46 @@ elsif ( $platform =~ m/freebsd/ ) 
        $INPATH         = $OUTPATH.$PROEXT;
        $GVERDIR        = $INPATH;
  } 
@@ -48,7 +48,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.7 2006/11/09 08:31:29 robert Exp 
  elsif ( $platform =~ m/linux-gnu/ ) 
  {
  # General Linux settings:
-@@ -943,7 +983,7 @@
+@@ -943,7 +983,7 @@ if ($platform =~ m/solaris/) 
                          $ps.$JRETHREADDIR.
                          $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB;
  }
@@ -57,7 +57,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.7 2006/11/09 08:31:29 robert Exp 
  {  $LD_LIBRARY_PATH   = $cur_dir.
                          $ps.'$SOLARENV'.$ds.'$INPATH'.$LIB.
                          $ps.$JRELIBDIR.
-@@ -992,7 +1032,7 @@
+@@ -992,7 +1032,7 @@ if ($platform =~ m/solaris/) 
                          $D."SUPD=$UPD".
                          $D."UPDVER=".'""'."'".'"'."'".'"'."SV$UPD".'"'."'".'"'."'".'"'.'"';
  }
@@ -66,7 +66,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.7 2006/11/09 08:31:29 robert Exp 
  {  $SOLARDEF          = $D."UNX".
                          $D.$COM.
                          $D.$CVER.
-@@ -1029,7 +1069,7 @@
+@@ -1029,7 +1069,7 @@ if ($platform =~ m/solaris/) 
                          $L.$USR_DT.$LIB.
                          $L.$USR_OPENWIN.$LIB;
  }
@@ -75,7 +75,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.7 2006/11/09 08:31:29 robert Exp 
  {
     $SOLAREXTRALIB     = $L.$par_dir.$LIB64;
  }
-@@ -1070,7 +1110,7 @@
+@@ -1070,7 +1110,7 @@ if ($platform =~ m/cygwin/)
  }
       
  # The general environment path.
@@ -84,7 +84,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.7 2006/11/09 08:31:29 robert Exp 
  {  $PATH              = $cur_dir.
                          $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$BIN.
                          $ps.'$SOLARENV'.$ds.'$OUTPATH'.$BIN.
-@@ -1260,6 +1300,19 @@
+@@ -1260,6 +1300,19 @@ elsif ($platform =~ m/linux-gnu|netbasd|
                          $L_STLPORT_LIB.
                          $L.$XLIB;
  }
@@ -104,7 +104,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.7 2006/11/09 08:31:29 robert Exp 
  elsif ($platform =~ m/cygwin/)
  {  $SOLARLIB          = $L.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB.
                          $L.$par_dir.$LIB.
-@@ -1291,10 +1344,10 @@
+@@ -1291,10 +1344,10 @@ $SOLARINC             = $I.$cur_dir.
                          $I.'$SOLARENV'.$INC.
                          $I.'$SRC_ROOT'.$ds."res";
  
@@ -117,7 +117,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.7 2006/11/09 08:31:29 robert Exp 
  {
  # This simply adds an include path, so even cases that break the FHS work
  $SOLARINC            .= $STLPORT_inc_stlport;
-@@ -1315,10 +1368,15 @@
+@@ -1315,10 +1368,15 @@ if ($platform =~ m/linux-gnu/)
     $SOLARINC         .= $STLPORT_inc_stlport;
  }
  
@@ -135,7 +135,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.7 2006/11/09 08:31:29 robert Exp 
  	#include system dependent Java include directory
  	if (!($JDK eq "gcj"))
  	{
-@@ -1334,6 +1392,10 @@
+@@ -1334,6 +1392,10 @@ if ($platform =~ m/linux-gnu/)
        		$SOLARINC   .=$I.'$JAVA_HOME'.$INCLUDE.$ds."bsd";
        		$SOLARINC   .=$I.'$JAVA_HOME'.$INCLUDE.$ds."linux";
     		}
@@ -146,7 +146,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.7 2006/11/09 08:31:29 robert Exp 
     		elsif ($platform =~ m/netbsd/)
     		{  $SOLARINC   .=$I.'$JAVA_HOME'.$INCLUDE.$ds."netbsd";
     		}
-@@ -1346,7 +1408,7 @@
+@@ -1346,7 +1408,7 @@ if ($platform =~ m/linux-gnu/)
     		$SOLARINC .=$I.'$JAVA_HOME'.$INCLUDE.$ds."native_threads".$ds."include";
  	}
      #The tail, if needed

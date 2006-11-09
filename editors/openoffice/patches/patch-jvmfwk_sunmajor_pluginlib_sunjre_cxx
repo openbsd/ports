@@ -1,7 +1,7 @@
-$OpenBSD: patch-jvmfwk_sunmajor_pluginlib_sunjre_cxx,v 1.1 2006/11/08 09:34:03 robert Exp $
---- jvmfwk/plugins/sunmajor/pluginlib/sunjre.cxx.orig.port	Sat Nov  4 23:32:36 2006
-+++ jvmfwk/plugins/sunmajor/pluginlib/sunjre.cxx	Sat Nov  4 23:29:40 2006
-@@ -91,6 +91,7 @@
+$OpenBSD: patch-jvmfwk_sunmajor_pluginlib_sunjre_cxx,v 1.2 2006/11/09 15:18:01 kurt Exp $
+--- jvmfwk/plugins/sunmajor/pluginlib/sunjre.cxx.orig.port	Wed Jul 19 05:37:51 2006
++++ jvmfwk/plugins/sunmajor/pluginlib/sunjre.cxx	Wed Nov  8 11:47:18 2006
+@@ -91,6 +91,7 @@ char const* const* SunInfo::getLibraryPa
      static char const * ar[] = {
  
          "/lib/" JFW_PLUGIN_ARCH "/client",
