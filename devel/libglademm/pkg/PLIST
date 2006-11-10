@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/10 13:50:06 ajacoutot Exp $
+%%SHARED%%
+include/libglademm-2.4/
+include/libglademm-2.4/libglademm/
+include/libglademm-2.4/libglademm.h
+include/libglademm-2.4/libglademm/init.h
+include/libglademm-2.4/libglademm/private/
+include/libglademm-2.4/libglademm/private/xml_p.h
+include/libglademm-2.4/libglademm/variablesmap.h
+include/libglademm-2.4/libglademm/wrap_init.h
+include/libglademm-2.4/libglademm/xml.h
+lib/libglademm-2.4/
+lib/libglademm-2.4.a
+lib/libglademm-2.4.la
+lib/libglademm-2.4/include/
+lib/libglademm-2.4/include/libglademmconfig.h
+lib/libglademm-2.4/proc/
+lib/libglademm-2.4/proc/m4/
+lib/libglademm-2.4/proc/m4/convert.m4
+lib/libglademm-2.4/proc/m4/convert_libglademm.m4
+lib/pkgconfig/
+lib/pkgconfig/libglademm-2.4.pc

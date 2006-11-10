@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/11/10 13:50:06 ajacoutot Exp $
+@lib lib/libglademm-2.4.so.${LIBglademm-2.4_VERSION}
