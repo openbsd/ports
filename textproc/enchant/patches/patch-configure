@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2006/11/10 19:11:22 ajacoutot Exp $
+--- configure.orig	Sat Jul 22 19:35:35 2006
++++ configure	Thu Nov  2 17:11:43 2006
+@@ -21880,7 +21880,7 @@ if test "x$check_aspell" != "xno"; then
+    if test "x$aspell_prefix" != "x"; then
+        LDFLAGS="-L$aspell_prefix/lib "$LDFLAGS
+        ASPELL_INC="-I$aspell_prefix/include"
+-       ASPELL_LIBS="-L$aspell_prefix/lib -laspell"
++       ASPELL_LIBS="-L$aspell_prefix/lib -laspell -lstdc++ -lm"
+    else
+        aspell_prefix=${prefix}
+        if test "x$prefix" = "xNONE"; then

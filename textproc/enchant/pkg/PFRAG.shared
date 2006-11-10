@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/11/10 19:11:22 ajacoutot Exp $
+lib/enchant/libenchant_aspell.so
+lib/enchant/libenchant_ispell.so
+@lib lib/libenchant.so.${LIBenchant_VERSION}

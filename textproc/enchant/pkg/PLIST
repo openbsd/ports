@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/10 19:11:22 ajacoutot Exp $
+%%SHARED%%
+bin/enchant
+bin/enchant-lsmod
+include/enchant/
+include/enchant/enchant++.h
+include/enchant/enchant-provider.h
+include/enchant/enchant.h
+lib/enchant/
+lib/enchant/libenchant_aspell.a
+lib/enchant/libenchant_aspell.la
+lib/enchant/libenchant_ispell.a
+lib/enchant/libenchant_ispell.la
+lib/libenchant.a
+lib/libenchant.la
+lib/pkgconfig/
+lib/pkgconfig/enchant.pc
+@man man/man1/enchant.1
+share/enchant/
+share/enchant/enchant.ordering
