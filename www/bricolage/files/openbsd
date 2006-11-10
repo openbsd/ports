@@ -1,0 +1,61 @@
+# $OpenBSD: openbsd,v 1.1.1.1 2006/11/10 17:04:54 sturm Exp $
+# Required programs.  PG_CONFIG_PATH is the location of PostgreSQL's pg_config 
+# script.  APACHE_PATH is the path to the Apache 1.3 executable.  APACHE_EXE is
+# the filename of the executable itself.  EXPAT_PATH is the path to the Expat 
+# library libexpat.so (also looks in library paths that Perl knows about), and
+# EXPAT_FILE is the filename of the library.
+
+PG_CONFIG_PATH = /usr/local/bin
+APACHE_PATH = /usr/sbin
+APACHE_EXE  = httpd
+EXPAT_PATH  = /sw/lib
+EXPAT_FILE  = libexpat.la, libexpat.a
+
+# Apache settings.  APACHE_USER and APACHE_GROUP are the user and group that
+# the Apache process will run as.  APACHE_PORT is the port that Apache will
+# listen on.  APACHE_SSL_PORT is the port that will listen for https requests.
+# APACHE_HOSTNAME is the server's hostname; only set this if you want to 
+# override the value returned by the "hostname" command.
+
+APACHE_USER     = www
+APACHE_GROUP    = www
+APACHE_PORT     = 80
+APACHE_SSL_PORT = 443
+# APACHE_HOSTNAME = localhost
+
+# PostgreSQL settings.  POSTGRES_SUPERUSER is the username of the Postgres
+# superuser (typically "postgres").  POSTGRES_BRICUSER is the username that 
+# Bricolage will use when connecting to the database.  This can be anything 
+# you want, but "bric" is typical. POSTGRES_DB is the name of the database 
+# Bricolage will use.
+#
+# In most installations, Postgres allows local users to access the
+# server without a username.  If your server requires a password, pass the
+# POSTGRES_SUPERPASS environment variable during "make," e.g.:
+#
+#    make POSTGRES_SUPERPASS=abcdef
+#
+# The Bricolage Postgres Password (the password used by Bricolage to
+# connect to the database) is randomly generated during a silent install.  If
+# you need it, it'll be in bricolage.conf after installation.
+#
+# If PostgreSQL is running on a separate box, you must pass a host name or 
+# IP address to "make" through the POSTGRES_HOSTNAME environment variable.
+# If it's running on a port other than the default port (5432), pass the 
+# appropriate port number with POSTGRES_HOSTPORT.
+
+POSTGRES_SUPERUSER   = postgres
+POSTGRES_BRICUSER    = bric
+POSTGRES_DB          = bric
+
+# Installation locations.
+
+BRICOLAGE_ROOT_DIR = %%PREFIX%%/share/bricolage # Bricolage Root Directory
+BRICOLAGE_TMP_DIR  = /var/tmp 	              # Temporary Directory
+BRICOLAGE_PERL_DIR = %%PREFIX%%/libdata/perl5/site_perl # Perl Module Directory
+BRICOLAGE_BIN_DIR  = %%PREFIX%%/bin           # Executable Directory
+BRICOLAGE_MAN_DIR  = %%PREFIX%%/man           # Man-Page Directory (! to skip)
+BRICOLAGE_LOG_DIR  = /var/www/logs            # Log Directory
+BRICOLAGE_PID      = /var/www/logs/httpd.pid  # PID File Location
+BRICOLAGE_COMP_DIR = %%PREFIX%%/share/bricolage/comp # Mason Component Directory
+BRICOLAGE_DATA_DIR = %%PREFIX%%/share/bricolage/data # Mason Data Directory

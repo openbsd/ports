@@ -1,0 +1,30 @@
+$OpenBSD: patch-bin_bric_republish,v 1.1.1.1 2006/11/10 17:04:37 sturm Exp $
+--- bin/bric_republish.orig	Sun Oct 22 10:35:12 2006
++++ bin/bric_republish	Sun Oct 22 10:36:05 2006
+@@ -62,7 +62,7 @@ crontab like this to republish all stori
+ 
+     BRICOLAGE_USERNAME=admin
+     BRICOLAGE_PASSWORD=admin_pass
+-    PATH=/usr/local/bricolage/bin:$PATH
++    PATH=%%PREFIX%%/bin:$PATH
+     MAILTO=your-email@your-domain.com
+     0 * * * * bric_republish
+ 
+@@ -70,7 +70,7 @@ Or to republish Covers hourly and everyt
+ 
+     BRICOLAGE_USERNAME=admin
+     BRICOLAGE_PASSWORD=admin_pass
+-    PATH=/usr/local/bricolage/bin:$PATH
++    PATH=%%PREFIX%%/bin:$PATH
+     MAILTO=your-email@your-domain.com
+     0  *  * * * bric_republish --element Cover
+     30 11 * * * bric_republish
+@@ -79,7 +79,7 @@ Or to republish all stories every other 
+ 
+     BRICOLAGE_USERNAME=admin
+     BRICOLAGE_PASSWORD=admin_pass
+-    PATH=/usr/local/bricolage/bin:$PATH
++    PATH=%%PREFIX%%/bin:$PATH
+     MAILTO=your-email@your-domain.com
+     0 */2 * * * bric_republish --no-media
+ 

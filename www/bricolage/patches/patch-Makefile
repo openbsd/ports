@@ -1,0 +1,52 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2006/11/10 17:04:37 sturm Exp $
+--- Makefile.orig	Sat Mar 18 01:26:34 2006
++++ Makefile	Sat Oct 21 16:14:11 2006
+@@ -22,7 +22,7 @@
+ PERL = /usr/bin/perl
+ 
+ # Blank by default, but set to QUIET to ask essential questions only
+-INSTALL_VERBOSITY?= STANDARD
++INSTALL_VERBOSITY?= QUIET
+ 
+ # can't load Bric since it loads Bric::Config which has dependencies
+ # that won't be solved till make install.
+@@ -35,6 +35,12 @@ BRIC_VERSION = `$(PERL) -ne '/VERSION.*?
+ all 		: required.db modules.db apache.db postgres.db config.db \
+                   bconf/bricolage.conf build_done
+ 
++build		:
++	rm -f lib/Makefile
++	rm -f bin/Makefile
++	cd lib; $(PERL) Makefile.PL PREFIX="${PREFIX}"; $(MAKE)
++	cd bin; $(PERL) Makefile.PL PREFIX="${PREFIX}"; $(MAKE)
++
+ required.db	: inst/required.pl
+ 	$(PERL) inst/required.pl $(INSTALL_VERBOSITY)
+ 
+@@ -170,9 +176,9 @@ clone_tar	:
+ # installation rules     #
+ ##########################
+ 
+-install 	: install_files install_db done
++install 	: install_files
+ 
+-install_files	: all is_root cpan lib bin files
++install_files	: all is_root lib bin files
+ 
+ install_db		: db db_grant
+ 
+@@ -183,12 +189,10 @@ cpan 		: modules.db postgres.db inst/cpa
+ 	$(PERL) inst/cpan.pl
+ 
+ lib 		: 
+-	-rm -f lib/Makefile
+-	cd lib; $(PERL) Makefile.PL; $(MAKE) install
++	cd lib; $(MAKE) install
+ 
+ bin 		:
+-	-rm -f bin/Makefile
+-	cd bin; $(PERL) Makefile.PL; $(MAKE) install
++	cd bin; $(MAKE) install
+ 
+ files 		: config.db bconf/bricolage.conf
+ 	$(PERL) inst/files.pl

@@ -1,0 +1,18 @@
+$OpenBSD: patch-inst_config_pl,v 1.1.1.1 2006/11/10 17:04:37 sturm Exp $
+--- inst/config.pl.orig	Sun Oct 22 10:57:22 2006
++++ inst/config.pl	Sun Oct 22 10:57:53 2006
+@@ -155,14 +155,6 @@ sub confirm_settings {
+   }
+ 
+ 
+-  # make sure this directory doesn't already house a Bricolage install
+-  if (-e $CONFIG{BRICOLAGE_ROOT} and
+-      -e catfile($CONFIG{BRICOLAGE_ROOT}, "conf", "bricolage.conf")) {
+-      print "That directory already contains a Bricolage installation.\n";
+-      print "Consider running `make upgrade`, instead.\n";
+-      exit 1 unless ask_yesno("Continue and overwrite existing installation?", 0);
+-  }
+-
+   # some prefs are based on BRICOLAGE_ROOT, need to eval them now
+   foreach (qw(TEMP_DIR MODULE_DIR BIN_DIR MAN_DIR LOG_DIR PID_FILE
+               MASON_COMP_ROOT MASON_DATA_ROOT)) {

@@ -1,0 +1,14 @@
+$OpenBSD: patch-bin_bric_queued,v 1.1.1.1 2006/11/10 17:04:37 sturm Exp $
+--- bin/bric_queued.orig	Sun Oct 22 10:34:50 2006
++++ bin/bric_queued	Sun Oct 22 10:35:06 2006
+@@ -96,8 +96,8 @@ use Term::ReadPassword;
+ 
+ BEGIN {
+     $ENV{BRIC_QUEUED} = 1;
+-    # $BRICOLAGE_ROOT defaults to /usr/local/bricolage
+-    $ENV{BRICOLAGE_ROOT} ||= "/usr/local/bricolage";
++    # $BRICOLAGE_ROOT defaults to %%PREFIX%%/share/bricolage
++    $ENV{BRICOLAGE_ROOT} ||= "%%PREFIX%%/share/bricolage";
+     # use $BRICOLAGE_ROOT/lib if exists
+     my $lib = catdir($ENV{BRICOLAGE_ROOT}, "lib");
+     if (-e $lib) {

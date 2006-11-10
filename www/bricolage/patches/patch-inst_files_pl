@@ -1,0 +1,17 @@
+$OpenBSD: patch-inst_files_pl,v 1.1.1.1 2006/11/10 17:04:37 sturm Exp $
+--- inst/files.pl.orig	Tue Jun 28 05:21:52 2005
++++ inst/files.pl	Sat Oct 21 16:02:03 2006
+@@ -55,6 +55,13 @@ do "./apache.db" or die "Failed to read 
+ our $UPGRADE;
+ $UPGRADE = 1 if $ARGV[0] and $ARGV[0] eq 'UPGRADE';
+ 
++# fix pathes
++our $DESTDIR = $ENV{DESTDIR} || '';
++$CONFIG->{BRICOLAGE_ROOT} = "$DESTDIR" . "$CONFIG->{BRICOLAGE_ROOT}";
++$CONFIG->{MASON_COMP_ROOT} = "$DESTDIR" . "$CONFIG->{MASON_COMP_ROOT}";
++$CONFIG->{MASON_DATA_ROOT} = "$DESTDIR" . "$CONFIG->{MASON_DATA_ROOT}";
++$CONFIG->{LOG_DIR} = "$DESTDIR" . "$CONFIG->{LOG_DIR}";
++
+ create_paths();
+ 
+ # Remove old object files if this is an upgrade.

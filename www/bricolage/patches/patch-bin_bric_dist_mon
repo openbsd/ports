@@ -1,0 +1,14 @@
+$OpenBSD: patch-bin_bric_dist_mon,v 1.1.1.1 2006/11/10 17:04:37 sturm Exp $
+--- bin/bric_dist_mon.orig	Sun Oct 22 10:33:08 2006
++++ bin/bric_dist_mon	Sun Oct 22 10:33:35 2006
+@@ -120,8 +120,8 @@ use strict;
+ use File::Spec::Functions qw(catdir);
+ 
+ BEGIN {
+-    # $BRICOLAGE_ROOT defaults to /usr/local/bricolage
+-    $ENV{BRICOLAGE_ROOT} ||= "/usr/local/bricolage";
++    # $BRICOLAGE_ROOT defaults to %%PREFIX%%/share/bricolage
++    $ENV{BRICOLAGE_ROOT} ||= "%%PREFIX%%/share/bricolage";
+ 
+     # use $BRICOLAGE_ROOT/lib if exists
+     my $lib = catdir($ENV{BRICOLAGE_ROOT}, "lib");

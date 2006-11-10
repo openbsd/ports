@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Makefile_PL,v 1.1.1.1 2006/11/10 17:04:37 sturm Exp $
+--- lib/Makefile.PL.orig	Sat Oct 21 16:34:16 2006
++++ lib/Makefile.PL	Sat Oct 21 16:34:37 2006
+@@ -41,6 +41,6 @@ WriteMakefile(NAME           => 'Bric',
+                 ( INSTALLSITELIB => $CONFIG->{MODULE_DIR} ) :
+                 ()),
+               ( exists $CONFIG->{MAN_DIR} ?
+-                ( INSTALLMAN3DIR => "$CONFIG->{MAN_DIR}/man3",
+-                  INSTALLSITEMAN3DIR => "$CONFIG->{MAN_DIR}/man3") :
++                ( INSTALLMAN3DIR => "$CONFIG->{MAN_DIR}/man3p",
++                  INSTALLSITEMAN3DIR => "$CONFIG->{MAN_DIR}/man3p") :
+                 ()));

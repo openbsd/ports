@@ -1,0 +1,20 @@
+$OpenBSD: patch-inst_apache_pl,v 1.1.1.1 2006/11/10 17:04:37 sturm Exp $
+--- inst/apache.pl.orig	Fri Oct 20 17:14:27 2006
++++ inst/apache.pl	Fri Oct 20 17:18:48 2006
+@@ -240,12 +240,10 @@ sub check_modules {
+ 
+                 # perl uses libfoo.so format filenames
+                 if ($mod eq 'perl') {
+-                    if (-e ($_ = catfile($path, "lib${mod}.so"))) {
+-                        $AP{add_modules}{"mod_$mod"} = 1;
+-                        $AP{load_modules}{"${mod}_module"} = $_;
+-                        $AP{$mod} = 1 if $mod =~ /ssl$/;
+-                        next MOD;
+-                    }
++                    $AP{add_modules}{"mod_$mod"} = 1;
++                    $AP{load_modules}{"${mod}_module"} = "/usr/lib/apache/modules/mod_perl.so";
++                    $AP{$mod} = 1 if $mod =~ /ssl$/;
++                    next MOD;
+                 }
+ 
+                 # everything else is mod_foo.so.  Not an elsif in case

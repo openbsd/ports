@@ -1,0 +1,6 @@
+For instructions on how to complete the installation or upgrade from an
+older version of bricolage, see ${PREFIX}/share/doc/bricolage/INSTALL.
+
+The section "Bricolage (Manual Installation)" describes the steps
+necessary for initial setup. "UPGRADING" describes how to upgrade from an
+older version of bricolage.

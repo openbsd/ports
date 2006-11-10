@@ -1,0 +1,30 @@
+$OpenBSD: patch-bin_bric_pgimport,v 1.1.1.1 2006/11/10 17:04:37 sturm Exp $
+--- bin/bric_pgimport.orig	Sun Oct 22 10:34:10 2006
++++ bin/bric_pgimport	Sun Oct 22 10:34:45 2006
+@@ -35,7 +35,7 @@ should work if psql is in your path.
+ 
+ The directory with the Subversion SQL files. Defaults to lib subdirectory of
+ BRICOLAGE_ROOT environment variable, which itself defaults to
+-F</usr/local/bricolage>.
++F<%%PREFIX%%/share/bricolage>.
+ 
+ =item -u
+ 
+@@ -186,7 +186,7 @@ sub initialize {
+         # Add on the location of the SQL.
+         $opt_w = catdir($opt_w, 'sql', DBD);
+     } else {
+-	$ENV{BRICOLAGE_ROOT} ||= '/usr/local/bricolage';
++	$ENV{BRICOLAGE_ROOT} ||= '%%PREFIX%%/share/bricolage';
+ 	$opt_w = catdir($ENV{BRICOLAGE_ROOT}, 'sql', DBD);
+     }
+ 
+@@ -246,7 +246,7 @@ Supported Options:
+      This should work if psql is in your path.
+   -w The directory with the Subversion SQL files. Defaults to lib subdirectory
+      of BRICOLAGE_ROOT environment variable, which itself defaults to
+-     /usr/local/bricolage.
++     %%PREFIX%%/share/bricolage.
+   -u Database user login. Defaults to PGUSER environment variable.
+   -p Database user password. Defaults to PGPASSWORD environment variable.
+   -d Database name. Defaults to PGDATABASE environment variable.

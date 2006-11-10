@@ -1,0 +1,5 @@
+Bricolage is a full-featured, enterprise-class content management system.
+It offers a browser-based interface for ease-of use, full-fledged
+templating systems with complete programming language support for
+flexibility, and many other features. It operates in an Apache/mod_perl
+environment, and uses the PostgreSQL RDBMS for its repository.

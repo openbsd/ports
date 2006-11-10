@@ -1,0 +1,23 @@
+$OpenBSD: patch-bin_bric_apachectl,v 1.1.1.1 2006/11/10 17:04:37 sturm Exp $
+--- bin/bric_apachectl.orig	Sun Oct 22 10:30:02 2006
++++ bin/bric_apachectl	Sun Oct 22 10:32:06 2006
+@@ -43,8 +43,8 @@ $|++;
+ use File::Spec::Functions qw(catdir);
+ 
+ BEGIN {
+-    # $BRICOLAGE_ROOT defaults to /usr/local/bricolage
+-    $ENV{BRICOLAGE_ROOT} ||= "/usr/local/bricolage";
++    # $BRICOLAGE_ROOT defaults to %%PREFIX%%/share/bricolage
++    $ENV{BRICOLAGE_ROOT} ||= "%%PREFIX%%/share/bricolage";
+ 
+     # use $BRICOLAGE_ROOT/lib if exists
+     my $lib = catdir($ENV{BRICOLAGE_ROOT}, "lib");
+@@ -75,7 +75,7 @@ END
+ use Bric::Config qw(:apachectl);
+ 
+ # the httpd command
+-my $httpd = APACHE_BIN . ' -f ' . APACHE_CONF;
++my $httpd = APACHE_BIN . ' -f ' . APACHE_CONF . ' -u ';
+ 
+ # the pid file
+ my $pid_file = PID_FILE;

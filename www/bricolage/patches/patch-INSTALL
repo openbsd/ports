@@ -1,0 +1,44 @@
+$OpenBSD: patch-INSTALL,v 1.1.1.1 2006/11/10 17:04:37 sturm Exp $
+--- INSTALL.orig	Fri Nov 10 17:09:58 2006
++++ INSTALL	Fri Nov 10 17:25:23 2006
+@@ -660,10 +660,7 @@ INSTALLATION
+   Bricolage (Manual Installation)
+     Here's how to install Bricolage manually.
+ 
+-    *   Download the latest Bricolage sources from <http://bricolage.cc/>.
+-        Decompress them into /usr/local/bricolage.
+-
+-    *   Change directories into /usr/local/bricolage/bin and run
++    *   Change directories into %%PREFIX%%/bin and run
+         bric_pgimport as follows:
+ 
+           ./bric_pgimport -u postgres -p postgres -d dbname -c -m db_user:db_password
+@@ -677,14 +674,14 @@ INSTALLATION
+         these permissions (the 'dbname' database will be owned by the user
+         passed in via the -u argument), but will be granted full CREATE,
+         DELETE, UPDATE, and SELECT permissions on all objects in the
+-        Bricolage database.
++        Bricolage database. Change conf/bricolage.conf accordingly.
+ 
+         See Bric::DBA for more information on database security. You may
+-        want to alter the default security policy. Also, bric_import uses a
+-        TCP/IP connection so you may need to run postmaster with the *-i*
+-        option.
++        want to alter the default security policy.
+ 
+-    *   Configure Apache to use Bricolage. To have Bricolage run as the main
++    *   You can skip this item, if you use bric_apachectl.
++
++        Configure Apache to use Bricolage. To have Bricolage run as the main
+         server process on your Apache server, simply add the following two
+         lines to your httpd.conf file (an example is provided in
+         conf/httpd.conf):
+@@ -720,7 +717,7 @@ INSTALLATION
+     *   Start Apache. Use one of the scripts in scripts/ if you like. You
+         can manually start it via the following command:
+ 
+-          /usr/local/bricolage/bin/bric_apachectl start
++          %%PREFIX%%/bin/bric_apachectl start
+ 
+     *   Try to hit the web server. If you're prompted for a login, you're
+         in! If not, check the Apache error log to figure out what might have
