@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2004/12/20 10:35:36 alek Exp $
+# $OpenBSD: Makefile,v 1.19 2006/11/10 22:34:14 steven Exp $
 
 COMMENT=	"list tcp connections to/from the local machine"
 
 DISTNAME=	tcplist-2.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	sysutils net
 
 MASTER_SITES=	ftp://ftp.cdf.toronto.edu/pub/jdd/tcplist/
@@ -21,6 +22,8 @@ WRKDIST=	${WRKDIR}
 
 NO_REGRESS=	Yes
 
-INSTALL_TARGET=	install install.man
+do-install:
+	${INSTALL_PROGRAM} ${WRKBUILD}/tcplist ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/tcplist.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
