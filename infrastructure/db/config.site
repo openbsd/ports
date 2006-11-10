@@ -1,4 +1,4 @@
-# $OpenBSD: config.site,v 1.11 2006/10/28 18:59:10 steven Exp $
+# $OpenBSD: config.site,v 1.12 2006/11/10 17:29:38 steven Exp $
 # Quick start macros for autoconf.
 # XXX kludge for a function we don't actually have.
 #ac_cv_func_getservbyname_r=${ac_cv_func_getservbyname_r=no}
@@ -103,7 +103,9 @@ ac_cv_func_bcopy=${ac_cv_func_bcopy=yes}
 ac_cv_func_bind=${ac_cv_func_bind=yes}	
 ac_cv_func_bindresvport=${ac_cv_func_bindresvport=yes}	
 ac_cv_func_brk=${ac_cv_func_brk=yes}	
+ac_cv_func_bsearch=${ac_cv_func_bsearch=yes}
 ac_cv_func_bzero=${ac_cv_func_bzero=yes}
+ac_cv_func_calloc=${ac_cv_func_calloc=yes}	
 ac_cv_func_catclose=${ac_cv_func_catclose=yes}	
 ac_cv_func_catgets=${ac_cv_func_catgets=yes}	
 ac_cv_func_catopen=${ac_cv_func_catopen=yes}	
@@ -184,6 +186,7 @@ ac_cv_func_fcntl=${ac_cv_func_fcntl=yes}
 ac_cv_func_fcvt=${ac_cv_func_fcvt=yes}
 ac_cv_func_fdopen=${ac_cv_func_fdopen=yes}	
 ac_cv_func_fflush=${ac_cv_func_fflush=yes}	
+ac_cv_func_ffs=${ac_cv_func_ffs=yes}	
 ac_cv_func_fgetc=${ac_cv_func_fgetc=yes}	
 ac_cv_func_fgetln=${ac_cv_func_fgetln=yes}	
 ac_cv_func_fgetpos=${ac_cv_func_fgetpos=yes}
@@ -244,6 +247,7 @@ ac_cv_func_gethostbyname2=${ac_cv_func_gethostbyname2=yes}
 ac_cv_func_gethostbyname=${ac_cv_func_gethostbyname=yes}
 ac_cv_func_gethostent=${ac_cv_func_gethostent=yes}	
 ac_cv_func_gethostid=${ac_cv_func_gethostid=yes}	
+ac_cv_func_gethostname=${ac_cv_func_gethostname=yes}
 ac_cv_func_getifaddrs=${ac_cv_func_getifaddrs=yes}	
 ac_cv_func_getitimer=${ac_cv_func_getitimer=yes}	
 ac_cv_func_getloadavg=${ac_cv_func_getloadavg=yes}	
@@ -320,6 +324,7 @@ ac_cv_func_inet_ntop=${ac_cv_func_inet_ntop=yes}
 ac_cv_func_inet_pton=${ac_cv_func_inet_pton=yes}
 ac_cv_func_initgroups=${ac_cv_func_initgroups=yes}
 ac_cv_func_innetgr=${ac_cv_func_innetgr=yes}
+ac_cv_func_insque=${ac_cv_func_insque=yes}
 ac_cv_func_ioctl=${ac_cv_func_ioctl=yes}	
 ac_cv_func_isalnum=${ac_cv_func_isalnum=yes}	
 ac_cv_func_isalpha=${ac_cv_func_isalpha=yes}	
@@ -328,6 +333,8 @@ ac_cv_func_isatty=${ac_cv_func_isatty=yes}
 ac_cv_func_isblank=${ac_cv_func_isblank=yes}	
 ac_cv_func_isdigit=${ac_cv_func_isdigit=yes}	
 ac_cv_func_isgraph=${ac_cv_func_isgraph=yes}	
+ac_cv_func_isinf=${ac_cv_func_isinf=yes}
+ac_cv_func_isnan=${ac_cv_func_isnan=yes}
 ac_cv_func_isprint=${ac_cv_func_isprint=yes}	
 ac_cv_func_ispunct=${ac_cv_func_ispunct=yes}	
 ac_cv_func_issetugid=${ac_cv_func_issetugid=yes}	
@@ -432,6 +439,7 @@ ac_cv_func_recvfrom=${ac_cv_func_recvfrom=yes}
 ac_cv_func_recvmsg=${ac_cv_func_recvmsg=yes}	
 ac_cv_func_regcomp=${ac_cv_func_regcomp=yes}
 ac_cv_func_remove=${ac_cv_func_remove=yes}
+ac_cv_func_remque=${ac_cv_func_remque=yes}
 ac_cv_func_rename=${ac_cv_func_rename=yes}
 ac_cv_func_rename_works=${ac_cv_func_rename_works=yes}	
 ac_cv_func_res_init=${ac_cv_func_res_init=yes}	
@@ -564,6 +572,7 @@ ac_cv_func_strtok=${ac_cv_func_strtok=yes}
 ac_cv_func_strtok_r=${ac_cv_func_strtok_r=yes}	
 ac_cv_func_strtol=${ac_cv_func_strtol=yes}	
 ac_cv_func_strtoll=${ac_cv_func_strtoll=yes}
+ac_cv_func_strtonum=${ac_cv_func_strtonum=yes}
 ac_cv_func_strtoq=${ac_cv_func_strtoq=yes}	
 ac_cv_func_strtoul=${ac_cv_func_strtoul=yes}
 ac_cv_func_strtoull=${ac_cv_func_strtoull=yes}	
@@ -671,6 +680,7 @@ ac_cv_header_glob_h=${ac_cv_header_glob_h=yes}
 ac_cv_header_grp_h=${ac_cv_header_grp_h=yes}
 ac_cv_header_ieeefp_h=${ac_cv_header_ieeefp_h=yes}
 ac_cv_header_inttypes_h=${ac_cv_header_inttypes_h=yes}
+ac_cv_header_libgen_h=${ac_cv_header_libgen_h=yes}
 ac_cv_header_limits_h=${ac_cv_header_limits_h=yes}
 ac_cv_header_locale_h=${ac_cv_header_locale_h=yes}
 ac_cv_header_machine_endian_h=${ac_cv_header_machine_endian_h=yes}	
@@ -737,14 +747,19 @@ ac_cv_header_pwd_h=${ac_cv_header_pwd_h=yes}
 ac_cv_header_readline_history_h=${ac_cv_header_readline_history_h=yes}
 ac_cv_header_readline_readline_h=${ac_cv_header_readline_readline_h=yes}
 ac_cv_header_regex_h=${ac_cv_header_regex_h=yes}
+ac_cv_header_resolv_h=${ac_cv_header_resolv_h=yes}
 ac_cv_header_rpc_rpc_h=${ac_cv_header_rpc_rpc_h=yes}
 ac_cv_header_rpcsvc_yp_prot_h=${ac_cv_header_rpcsvc_yp_prot_h=yes}
 ac_cv_header_rpcsvc_ypclnt_h=${ac_cv_header_rpcsvc_ypclnt_h=yes}
 ac_cv_header_search_h=${ac_cv_header_search_h=yes}
+ac_cv_header_semaphore_h=${ac_cv_header_semaphore_h=yes}
+ac_cv_header_setjmp_h=${ac_cv_header_setjmp_h=yes}
 ac_cv_header_sgtty_h=${ac_cv_header_sgtty_h=yes}
 ac_cv_header_signal_h=${ac_cv_header_signal_h=yes}
+ac_cv_header_soundcard_h=${ac_cv_header_soundcard_h=yes}
 ac_cv_header_stat_h=${ac_cv_header_stat_h=no}
 ac_cv_header_stdarg_h=${ac_cv_header_stdarg_h=yes}
+ac_cv_header_stdbool_h=${ac_cv_header_stdbool_h=yes}
 ac_cv_header_stdc=${ac_cv_header_stdc=yes}
 ac_cv_header_stdint_h=${ac_cv_header_stdint_h=yes}
 ac_cv_header_stdio_h=${ac_cv_header_stdio_h=yes}
@@ -753,22 +768,29 @@ ac_cv_header_stdlib_h=${ac_cv_header_stdlib_h=yes}
 ac_cv_header_string_h=${ac_cv_header_string_h=yes}
 ac_cv_header_strings_h=${ac_cv_header_strings_h=yes}
 ac_cv_header_sys_cdefs_h=${ac_cv_header_sys_cdefs_h=yes}
+ac_cv_header_sys_chio_h=${ac_cv_header_sys_chio_h=yes}
 ac_cv_header_sys_fcntl_h=${ac_cv_header_sys_fcntl_h=yes}
 ac_cv_header_sys_file_h=${ac_cv_header_sys_file_h=yes}
 ac_cv_header_sys_filio_h=${ac_cv_header_sys_filio_h=yes}
 ac_cv_header_sys_ioctl_h=${ac_cv_header_sys_ioctl_h=yes}
 ac_cv_header_sys_ipc_h=${ac_cv_header_sys_ipc_h=yes}
+ac_cv_header_sys_limits_h=${ac_cv_header_sys_limits_h=yes}
 ac_cv_header_sys_mman_h=${ac_cv_header_sys_mman_h=yes}
 ac_cv_header_sys_mount_h=${ac_cv_header_sys_mount_h=yes}
 ac_cv_header_sys_mtio_h=${ac_cv_header_sys_mtio_h=yes}
+ac_cv_header_sys_mutex_h=${ac_cv_header_sys_mutex_h=yes}
 ac_cv_header_sys_param_h=${ac_cv_header_sys_param_h=yes}
+ac_cv_header_sys_poll_h=${ac_cv_header_sys_poll_h=yes}
 ac_cv_header_sys_resource_h=${ac_cv_header_sys_resource_h=yes}
+ac_cv_header_sys_scsiio_h=${ac_cv_header_sys_scsiio_h=yes}
 ac_cv_header_sys_select_h=${ac_cv_header_sys_select_h=yes}
 ac_cv_header_sys_shm_h=${ac_cv_header_sys_shm_h=yes}
+ac_cv_header_sys_signal_h=${ac_cv_header_sys_signal_h=yes}
 ac_cv_header_sys_socket_h=${ac_cv_header_sys_socket_h=yes}
 ac_cv_header_sys_sockio_h=${ac_cv_header_sys_sockio_h=yes}
 ac_cv_header_sys_stat_h=${ac_cv_header_sys_stat_h=yes}
 ac_cv_header_sys_syscall_h=${ac_cv_header_sys_syscall_h=yes}
+ac_cv_header_sys_sysctl_h=${ac_cv_header_sys_sysctl_h=yes}
 ac_cv_header_sys_syslog_h=${ac_cv_header_sys_syslog_h=yes}
 ac_cv_header_sys_time_h=${ac_cv_header_sys_time_h=yes}
 ac_cv_header_sys_times_h=${ac_cv_header_sys_times_h=yes}
@@ -789,6 +811,7 @@ ac_cv_header_util_h=${ac_cv_header_util_h=yes}
 ac_cv_header_utime_h=${ac_cv_header_utime_h=yes}
 ac_cv_header_utmp_h=${ac_cv_header_utmp_h=yes}
 ac_cv_header_values_h=${ac_cv_header_values_h=no}
+ac_cv_header_zlib_h=${ac_cv_header_zlib_h=yes}
 ac_cv_labels_as_values=${ac_cv_labels_as_values=yes}
 ac_cv_lib_ICE_IceConnectionNumber=${ac_cv_lib_ICE_IceConnectionNumber=yes}
 ac_cv_lib_X11_main=${ac_cv_lib_X11_main=yes}
@@ -815,8 +838,6 @@ ac_cv_lib_m_finite=${ac_cv_lib_m_finite=yes}
 ac_cv_lib_m_floor=${ac_cv_lib_m_floor=yes}	
 ac_cv_lib_m_fmod=${ac_cv_lib_m_fmod=yes}	
 ac_cv_lib_m_hypot=${ac_cv_lib_m_hypot=yes}	
-ac_cv_lib_m_isinf=${ac_cv_lib_m_isinf=yes}
-ac_cv_lib_m_isnan=${ac_cv_lib_m_isnan=yes}
 ac_cv_lib_m_ldexp=${ac_cv_lib_m_ldexp=yes}	
 ac_cv_lib_m_log=${ac_cv_lib_m_log=yes}	
 ac_cv_lib_m_main=${ac_cv_lib_m_main=yes}
@@ -891,6 +912,7 @@ ac_cv_type_double=${ac_cv_type_double=yes}
 ac_cv_type_float=${ac_cv_type_float=yes}
 ac_cv_type_ino_t=${ac_cv_type_ino_t=yes}
 ac_cv_type_int=${ac_cv_type_int=yes}
+ac_cv_type_intmax_t=${ac_cv_type_intmax_t=yes}
 ac_cv_type_intp=${ac_cv_type_intp=yes}
 ac_cv_type_long=${ac_cv_type_long=yes}
 ac_cv_type_long_long=${ac_cv_type_long_long=yes}
@@ -918,6 +940,7 @@ fp_cv_const_EADV=${fp_cv_const_EADV=-1}
 fp_cv_const_EAFNOSUPPORT=${fp_cv_const_EAFNOSUPPORT=47}
 fp_cv_const_EAGAIN=${fp_cv_const_EAGAIN=35}
 fp_cv_const_EALREADY=${fp_cv_const_EALREADY=37}
+fp_cv_const_EAUTH=${fp_cv_const_EAUTH=80}
 fp_cv_const_EBADF=${fp_cv_const_EBADF=9}
 fp_cv_const_EBADMSG=${fp_cv_const_EBADMSG=-1}
 fp_cv_const_EBADRPC=${fp_cv_const_EBADRPC=72}
@@ -939,23 +962,27 @@ fp_cv_const_EFTYPE=${fp_cv_const_EFTYPE=79}
 fp_cv_const_EHOSTDOWN=${fp_cv_const_EHOSTDOWN=64}
 fp_cv_const_EHOSTUNREACH=${fp_cv_const_EHOSTUNREACH=65}
 fp_cv_const_EIDRM=${fp_cv_const_EIDRM=-1}
-fp_cv_const_EILSEQ=${fp_cv_const_EILSEQ=-1}
+fp_cv_const_EILSEQ=${fp_cv_const_EILSEQ=84}
 fp_cv_const_EINPROGRESS=${fp_cv_const_EINPROGRESS=36}
 fp_cv_const_EINTR=${fp_cv_const_EINTR=4}
 fp_cv_const_EINVAL=${fp_cv_const_EINVAL=22}
 fp_cv_const_EIO=${fp_cv_const_EIO=5}
+fp_cv_const_EIPSEC=${fp_cv_const_EIPSEC=82}
 fp_cv_const_EISCONN=${fp_cv_const_EISCONN=56}
 fp_cv_const_EISDIR=${fp_cv_const_EISDIR=21}
 fp_cv_const_ELOOP=${fp_cv_const_ELOOP=62}
+fp_cv_const_EMEDIUMTYPE=${fp_cv_const_EMEDIUMTYPE=86}
 fp_cv_const_EMFILE=${fp_cv_const_EMFILE=24}
 fp_cv_const_EMLINK=${fp_cv_const_EMLINK=31}
 fp_cv_const_EMSGSIZE=${fp_cv_const_EMSGSIZE=40}
 fp_cv_const_EMULTIHOP=${fp_cv_const_EMULTIHOP=-1}
 fp_cv_const_ENAMETOOLONG=${fp_cv_const_ENAMETOOLONG=63}
+fp_cv_const_ENEEDAUTH=${fp_cv_const_ENEEDAUTH=81}
 fp_cv_const_ENETDOWN=${fp_cv_const_ENETDOWN=50}
 fp_cv_const_ENETRESET=${fp_cv_const_ENETRESET=52}
 fp_cv_const_ENETUNREACH=${fp_cv_const_ENETUNREACH=51}
 fp_cv_const_ENFILE=${fp_cv_const_ENFILE=23}
+fp_cv_const_ENOATTR=${fp_cv_const_ENOATTR=83}
 fp_cv_const_ENOBUFS=${fp_cv_const_ENOBUFS=55}
 fp_cv_const_ENODATA=${fp_cv_const_ENODATA=-1}
 fp_cv_const_ENODEV=${fp_cv_const_ENODEV=19}
@@ -963,6 +990,7 @@ fp_cv_const_ENOENT=${fp_cv_const_ENOENT=2}
 fp_cv_const_ENOEXEC=${fp_cv_const_ENOEXEC=8}
 fp_cv_const_ENOLCK=${fp_cv_const_ENOLCK=77}
 fp_cv_const_ENOLINK=${fp_cv_const_ENOLINK=-1}
+fp_cv_const_ENOMEDIUM=${fp_cv_const_ENOMEDIUM=85}
 fp_cv_const_ENOMEM=${fp_cv_const_ENOMEM=12}
 fp_cv_const_ENOMSG=${fp_cv_const_ENOMSG=-1}
 fp_cv_const_ENONET=${fp_cv_const_ENONET=-1}
