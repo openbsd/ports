@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_aapm_cc,v 1.1 2006/11/04 17:59:19 fgsch Exp $
+$OpenBSD: apm-patch-src_aapm_cc,v 1.1 2006/11/10 09:31:28 ajacoutot Exp $
 --- src/aapm.cc.orig	Tue Oct 24 12:38:18 2006
 +++ src/aapm.cc	Tue Oct 24 12:39:12 2006
 @@ -34,7 +34,7 @@

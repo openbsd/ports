@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2006/11/04 17:59:19 fgsch Exp $
+# $OpenBSD: Makefile,v 1.25 2006/11/10 09:31:28 ajacoutot Exp $
 
 COMMENT=		"small, fast window manager"
 
@@ -37,6 +37,11 @@ CONFIGURE_ARGS=		--with-imlib=${PREFIX}/bin \
 			--enable-gradients
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+.if ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "i386" \
+ || ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sparc"
+PATCH_LIST+=	apm-patch-src_aapm_cc apm-patch-src_aapm_h
+.endif
 
 post-install:
 	@perl -pi -e 's:%%SYSCONFDIR%%:${SYSCONFDIR}:g;' \
