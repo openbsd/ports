@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2006/10/27 12:53:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2006/11/10 20:57:45 ajacoutot Exp $
 
 COMMENT=	"${MAINLANG} language pack for Thunderbird"
-V=		1.5.0.7
+V=		1.5.0.8
 NAME=		thunderbird-i18n
-PKGNAME=	${NAME}-${MAINLANG}-$Vp0
+PKGNAME=	${NAME}-${MAINLANG}-$V
 
 CATEGORIES=	mail
 
