@@ -1,1 +1,108 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/05 20:59:55 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/11/10 11:12:00 espie Exp $
+@conflict p5-Catalyst-Runtime-<5.7004
+${P5SITE}/Catalyst/Manual/Tutorial.pod
+${P5SITE}/Catalyst/Manual/Tutorial/AdvancedCRUD.pod
+${P5SITE}/Catalyst/Manual/Tutorial/Appendices.pod
+${P5SITE}/Catalyst/Manual/Tutorial/Authentication.pod
+${P5SITE}/Catalyst/Manual/Tutorial/Authorization.pod
+${P5SITE}/Catalyst/Manual/Tutorial/BasicCRUD.pod
+${P5SITE}/Catalyst/Manual/Tutorial/CatalystBasics.pod
+${P5SITE}/Catalyst/Manual/Tutorial/Debugging.pod
+${P5SITE}/Catalyst/Manual/Tutorial/Intro.pod
+${P5SITE}/Catalyst/Manual/Tutorial/Testing.pod
+${P5SITE}/Task/
+${P5SITE}/Task/Catalyst/
+${P5SITE}/Task/Catalyst/Tutorial.pm
+${P5SITE}/auto/Task/
+${P5SITE}/auto/Task/Catalyst/
+${P5SITE}/auto/Task/Catalyst/Tutorial/
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/Changes
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/Makefile.PL
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/README
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/lib/
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/lib/FormElementContainer.pm
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/lib/MyApp/
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/lib/MyApp.pm
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/lib/MyApp/Controller/
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/lib/MyApp/Controller/Books.pm
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/lib/MyApp/Controller/Login.pm
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/lib/MyApp/Controller/Logout.pm
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/lib/MyApp/Controller/Root.pm
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/lib/MyApp/Model/
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/lib/MyApp/Model/MyAppDB.pm
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/lib/MyApp/View/
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/lib/MyApp/View/TT.pm
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/lib/MyAppDB/
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/lib/MyAppDB.pm
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/lib/MyAppDB/Author.pm
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/lib/MyAppDB/Book.pm
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/lib/MyAppDB/BookAuthor.pm
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/lib/MyAppDB/Role.pm
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/lib/MyAppDB/User.pm
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/lib/MyAppDB/UserRole.pm
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/myapp.db
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/myapp.yml
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/myapp01.sql
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/myapp02.sql
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/myapp03.sql
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/myappTEST.db
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/favicon.ico
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/lib/
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/lib/config/
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/lib/config/col
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/lib/config/main
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/lib/config/url
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/lib/site/
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/lib/site/footer
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/lib/site/header
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/lib/site/html
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/lib/site/layout
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/lib/site/wrapper
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/src/
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/src/books/
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/src/books/create_done.tt2
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/src/books/form_create.tt2
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/src/books/hw_form.tt2
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/src/books/list.tt2
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/src/error.tt2
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/src/login.tt2
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/src/message.tt2
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/src/ttsite.css
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/src/welcome.tt2
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/static/
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/static/images/
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/static/images/btn_120x50_built.png
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/static/images/btn_120x50_built_shadow.png
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/static/images/btn_120x50_powered.png
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/static/images/btn_120x50_powered_shadow.png
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/static/images/btn_88x31_built.png
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/static/images/btn_88x31_built_shadow.png
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/static/images/btn_88x31_powered.png
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/static/images/btn_88x31_powered_shadow.png
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/root/static/images/catalyst_logo.png
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/script/
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/script/myapp_cgi.pl
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/script/myapp_create.pl
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/script/myapp_fastcgi.pl
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/script/myapp_server.pl
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/script/myapp_test.pl
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/t/
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/t/01app.t
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/t/02pod.t
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/t/03podcoverage.t
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/t/controller_Login.t
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/t/live_app01.t
+${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/t/model_MyAppDB.t
+@man man/man3p/Catalyst::Manual::Tutorial.3p
+@man man/man3p/Catalyst::Manual::Tutorial::AdvancedCRUD.3p
+@man man/man3p/Catalyst::Manual::Tutorial::Appendices.3p
+@man man/man3p/Catalyst::Manual::Tutorial::Authentication.3p
+@man man/man3p/Catalyst::Manual::Tutorial::Authorization.3p
+@man man/man3p/Catalyst::Manual::Tutorial::BasicCRUD.3p
+@man man/man3p/Catalyst::Manual::Tutorial::CatalystBasics.3p
+@man man/man3p/Catalyst::Manual::Tutorial::Debugging.3p
+@man man/man3p/Catalyst::Manual::Tutorial::Intro.3p
+@man man/man3p/Catalyst::Manual::Tutorial::Testing.3p
+@man man/man3p/Task::Catalyst::Tutorial.3p
