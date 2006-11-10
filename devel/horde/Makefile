@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2006/11/01 10:47:47 mbalmer Exp $ 
+# $OpenBSD: Makefile,v 1.21 2006/11/10 14:14:49 mbalmer Exp $ 
 
 COMMENT=	"modular framework for web-based applications"
 
 DISTNAME=	horde-3.1.3
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel www
 HOMEPAGE=	http://www.horde.org/
 
@@ -49,7 +50,7 @@ RUN_DEPENDS+=	:php5-ldap-*:www/php5/extensions,-ldap
 
 do-install:
 	@cd ${PREFIX} && tar zxf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
-	@chown -R root:daemon ${PREFIX}/${DISTNAME}
+	@chown -R ${BINOWN}:${BINGRP} ${PREFIX}/${DISTNAME}
 	@mv ${PREFIX}/${DISTNAME} ${INSTDIR}
 
 .include <bsd.port.mk>
