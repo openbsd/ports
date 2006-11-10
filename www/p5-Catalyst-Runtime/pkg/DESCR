@@ -1,3 +1,5 @@
 Catalyst is an Elegant Web Framework, supporting the MVC pattern, as well
 as a number of experimental web patterns. It's heavily inspired by such
 frameworks as Ruby On Rails, Maypole, and Spring.
+
+The actual catalyst documentation is in p5-Catalyst-Manual.
