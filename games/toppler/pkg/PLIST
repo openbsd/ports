@@ -1,5 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/10/01 12:51:40 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/11/10 22:51:34 steven Exp $
+@mode g+s
+@group games
 bin/toppler
+@mode
+@group
 share/doc/toppler/
 share/doc/toppler/README
 share/examples/toppler/
