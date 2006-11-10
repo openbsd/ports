@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/10/20 22:52:48 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/11/10 17:17:30 mbalmer Exp $
 bin/scribus
 include/scribus/
 include/scribus/about.h
@@ -298,12 +298,14 @@ lib/scribus/plugins/libsvgimplugin.a
 lib/scribus/plugins/libsvgimplugin.la
 lib/scribus/plugins/libsvgimplugin.so
 lib/scribus/profiles/
-lib/scribus/profiles/Fogra27L.icm
+lib/scribus/profiles/GenericCMYK.icm
+lib/scribus/profiles/GenericCMYK.txt
 lib/scribus/profiles/ReadMe
 lib/scribus/profiles/sRGB.icm
 lib/scribus/profiles/srgb.license
 lib/scribus/scribus.af.qm
 lib/scribus/scribus.bg.qm
+lib/scribus/scribus.br.qm
 lib/scribus/scribus.ca.qm
 lib/scribus/scribus.cs.qm
 lib/scribus/scribus.cy.qm
@@ -312,7 +314,9 @@ lib/scribus/scribus.de.qm
 lib/scribus/scribus.de_ol.qm
 lib/scribus/scribus.dz.qm
 lib/scribus/scribus.el.qm
+lib/scribus/scribus.en_AU.qm
 lib/scribus/scribus.en_GB.qm
+lib/scribus/scribus.en_US.qm
 lib/scribus/scribus.eo.qm
 lib/scribus/scribus.es.qm
 lib/scribus/scribus.es_LA.qm
@@ -560,6 +564,7 @@ share/doc/scribus/en/images/htmlstyle.png
 share/doc/scribus/en/images/hyphen1.png
 share/doc/scribus/en/images/hyphen2.png
 share/doc/scribus/en/images/hyphen3.png
+share/doc/scribus/en/images/imageeffects.png
 share/doc/scribus/en/images/inkscape.png
 share/doc/scribus/en/images/kfontinstaller.png
 share/doc/scribus/en/images/ksnapshot.png
@@ -646,6 +651,7 @@ share/doc/scribus/en/prepress.html
 share/doc/scribus/en/print1.html
 share/doc/scribus/en/print2.html
 share/doc/scribus/en/print3.html
+share/doc/scribus/en/psd.html
 share/doc/scribus/en/readme-win32.html
 share/doc/scribus/en/readme.html
 share/doc/scribus/en/resources.html
@@ -703,6 +709,24 @@ share/doc/scribus/en/tutorials/scribus-short-words/menu.png
 share/doc/scribus/en/tutorials/scribus-short-words/menu.xml
 share/doc/scribus/en/tutorials/scribus-short-words/short-words-manual.html
 share/doc/scribus/fr/
+share/doc/scribus/fr/cms.html
+share/doc/scribus/fr/cms2.html
+share/doc/scribus/fr/cms3.html
+share/doc/scribus/fr/cms4.html
+share/doc/scribus/fr/codingstandards.html
+share/doc/scribus/fr/cross-platform.html
+share/doc/scribus/fr/developers.html
+share/doc/scribus/fr/gettexthowto.html
+share/doc/scribus/fr/lipsum.html
+share/doc/scribus/fr/machints1.html
+share/doc/scribus/fr/machints2.html
+share/doc/scribus/fr/moncal.html
+share/doc/scribus/fr/plugin_howto.html
+share/doc/scribus/fr/readme-win32.html
+share/doc/scribus/fr/scribusfileformat.html
+share/doc/scribus/fr/scripter1.html
+share/doc/scribus/fr/scripterapi-page.html
+share/doc/scribus/fr/scripterapi-pydoc.html
 share/doc/scribus/fr/tutorials/
 share/doc/scribus/fr/tutorials/scribus-short-words/
 share/doc/scribus/fr/tutorials/scribus-short-words/after_short_words.png
