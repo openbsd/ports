@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2006/11/10 14:14:49 mbalmer Exp $ 
+# $OpenBSD: Makefile,v 1.22 2006/11/10 14:42:38 mbalmer Exp $ 
 
 COMMENT=	"modular framework for web-based applications"
 
 DISTNAME=	horde-3.1.3
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	devel www
 HOMEPAGE=	http://www.horde.org/
 
@@ -53,4 +53,6 @@ do-install:
 	@chown -R ${BINOWN}:${BINGRP} ${PREFIX}/${DISTNAME}
 	@mv ${PREFIX}/${DISTNAME} ${INSTDIR}
 
+tst:
+	echo ${SHAREOWN}:${SHAREGRP}
 .include <bsd.port.mk>

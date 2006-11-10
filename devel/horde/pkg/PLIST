@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2006/11/01 10:47:47 mbalmer Exp $
-@owner root
-@group daemon
+@comment $OpenBSD: PLIST,v 1.13 2006/11/10 14:42:38 mbalmer Exp $
 horde/
 horde/COPYING
 horde/README
@@ -53,8 +51,8 @@ horde/config/prefs.php.dist
 horde/config/registry.php.dist
 @sample horde/config/registry.php
 @mode
-@owner root
-@group daemon
+@owner
+@group
 horde/docs/
 horde/docs/CHANGES
 horde/docs/CODING_STANDARDS
