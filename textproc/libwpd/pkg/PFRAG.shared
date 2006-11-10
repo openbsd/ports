@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/11/10 11:13:00 robert Exp $
+@lib lib/libwpd-0.8.so.${LIBwpd-0.8_VERSION}
+@lib lib/libwpd-stream-0.8.so.${LIBwpd-stream-0.8_VERSION}
