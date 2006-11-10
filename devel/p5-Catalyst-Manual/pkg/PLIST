@@ -1,0 +1,48 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/10 10:59:37 espie Exp $
+@conflict p5-Catalyst-Runtime-<5.7004
+${P5SITE}/Catalyst/
+${P5SITE}/Catalyst/Manual/
+${P5SITE}/Catalyst/Manual.pm
+${P5SITE}/Catalyst/Manual/About.pod
+${P5SITE}/Catalyst/Manual/Actions.pod
+${P5SITE}/Catalyst/Manual/Cookbook.pod
+${P5SITE}/Catalyst/Manual/DevelopmentProcess.pod
+${P5SITE}/Catalyst/Manual/Installation/
+${P5SITE}/Catalyst/Manual/Installation.pod
+${P5SITE}/Catalyst/Manual/Installation/CentOS4.pod
+${P5SITE}/Catalyst/Manual/Internals.pod
+${P5SITE}/Catalyst/Manual/Intro.pod
+${P5SITE}/Catalyst/Manual/Plugins.pod
+${P5SITE}/Catalyst/Manual/Tutorial/
+${P5SITE}/Catalyst/Manual/Tutorial.pod
+${P5SITE}/Catalyst/Manual/Tutorial/AdvancedCRUD.pod
+${P5SITE}/Catalyst/Manual/Tutorial/Appendices.pod
+${P5SITE}/Catalyst/Manual/Tutorial/Authentication.pod
+${P5SITE}/Catalyst/Manual/Tutorial/Authorization.pod
+${P5SITE}/Catalyst/Manual/Tutorial/BasicCRUD.pod
+${P5SITE}/Catalyst/Manual/Tutorial/CatalystBasics.pod
+${P5SITE}/Catalyst/Manual/Tutorial/Debugging.pod
+${P5SITE}/Catalyst/Manual/Tutorial/Intro.pod
+${P5SITE}/Catalyst/Manual/Tutorial/Testing.pod
+${P5SITE}/Catalyst/Manual/WritingPlugins.pod
+@man man/man3p/Catalyst::Manual.3p
+@man man/man3p/Catalyst::Manual::About.3p
+@man man/man3p/Catalyst::Manual::Actions.3p
+@man man/man3p/Catalyst::Manual::Cookbook.3p
+@man man/man3p/Catalyst::Manual::DevelopmentProcess.3p
+@man man/man3p/Catalyst::Manual::Installation.3p
+@man man/man3p/Catalyst::Manual::Installation::CentOS4.3p
+@man man/man3p/Catalyst::Manual::Internals.3p
+@man man/man3p/Catalyst::Manual::Intro.3p
+@man man/man3p/Catalyst::Manual::Plugins.3p
+@man man/man3p/Catalyst::Manual::Tutorial.3p
+@man man/man3p/Catalyst::Manual::Tutorial::AdvancedCRUD.3p
+@man man/man3p/Catalyst::Manual::Tutorial::Appendices.3p
+@man man/man3p/Catalyst::Manual::Tutorial::Authentication.3p
+@man man/man3p/Catalyst::Manual::Tutorial::Authorization.3p
+@man man/man3p/Catalyst::Manual::Tutorial::BasicCRUD.3p
+@man man/man3p/Catalyst::Manual::Tutorial::CatalystBasics.3p
+@man man/man3p/Catalyst::Manual::Tutorial::Debugging.3p
+@man man/man3p/Catalyst::Manual::Tutorial::Intro.3p
+@man man/man3p/Catalyst::Manual::Tutorial::Testing.3p
+@man man/man3p/Catalyst::Manual::WritingPlugins.3p
