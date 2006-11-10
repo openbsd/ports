@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/06 14:28:43 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/10 10:45:05 espie Exp $
 
 COMMENT=		"catalyst development bundle"
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=../by-authors/id/S/SR/SRI/}
+MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Task/}
 
 RUN_DEPENDS=	::www/p5-Catalyst-Devel \
 		::www/p5-Catalyst-Runtime \
