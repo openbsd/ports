@@ -1,12 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/06/06 09:32:57 alek Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/11/10 07:46:25 mbalmer Exp $
 bin/trac-admin
 bin/tracd
-bin/tracdb2env
 lib/python${MODPY_VERSION}/site-packages/trac/
 lib/python${MODPY_VERSION}/site-packages/trac/About.py
 lib/python${MODPY_VERSION}/site-packages/trac/About.pyc
-lib/python${MODPY_VERSION}/site-packages/trac/Notify.py
-lib/python${MODPY_VERSION}/site-packages/trac/Notify.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/Search.py
 lib/python${MODPY_VERSION}/site-packages/trac/Search.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/Settings.py
@@ -21,8 +18,23 @@ lib/python${MODPY_VERSION}/site-packages/trac/config.py
 lib/python${MODPY_VERSION}/site-packages/trac/config.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/core.py
 lib/python${MODPY_VERSION}/site-packages/trac/core.pyc
-lib/python${MODPY_VERSION}/site-packages/trac/db.py
-lib/python${MODPY_VERSION}/site-packages/trac/db.pyc
+lib/python${MODPY_VERSION}/site-packages/trac/db/
+lib/python${MODPY_VERSION}/site-packages/trac/db/__init__.py
+lib/python${MODPY_VERSION}/site-packages/trac/db/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trac/db/api.py
+lib/python${MODPY_VERSION}/site-packages/trac/db/api.pyc
+lib/python${MODPY_VERSION}/site-packages/trac/db/mysql_backend.py
+lib/python${MODPY_VERSION}/site-packages/trac/db/mysql_backend.pyc
+lib/python${MODPY_VERSION}/site-packages/trac/db/pool.py
+lib/python${MODPY_VERSION}/site-packages/trac/db/pool.pyc
+lib/python${MODPY_VERSION}/site-packages/trac/db/postgres_backend.py
+lib/python${MODPY_VERSION}/site-packages/trac/db/postgres_backend.pyc
+lib/python${MODPY_VERSION}/site-packages/trac/db/schema.py
+lib/python${MODPY_VERSION}/site-packages/trac/db/schema.pyc
+lib/python${MODPY_VERSION}/site-packages/trac/db/sqlite_backend.py
+lib/python${MODPY_VERSION}/site-packages/trac/db/sqlite_backend.pyc
+lib/python${MODPY_VERSION}/site-packages/trac/db/util.py
+lib/python${MODPY_VERSION}/site-packages/trac/db/util.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/db_default.py
 lib/python${MODPY_VERSION}/site-packages/trac/db_default.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/env.py
@@ -48,6 +60,8 @@ lib/python${MODPY_VERSION}/site-packages/trac/mimeview/silvercity.py
 lib/python${MODPY_VERSION}/site-packages/trac/mimeview/silvercity.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/mimeview/txtl.py
 lib/python${MODPY_VERSION}/site-packages/trac/mimeview/txtl.pyc
+lib/python${MODPY_VERSION}/site-packages/trac/notification.py
+lib/python${MODPY_VERSION}/site-packages/trac/notification.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/perm.py
 lib/python${MODPY_VERSION}/site-packages/trac/perm.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/scripts/
@@ -66,6 +80,8 @@ lib/python${MODPY_VERSION}/site-packages/trac/ticket/api.py
 lib/python${MODPY_VERSION}/site-packages/trac/ticket/api.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/ticket/model.py
 lib/python${MODPY_VERSION}/site-packages/trac/ticket/model.pyc
+lib/python${MODPY_VERSION}/site-packages/trac/ticket/notification.py
+lib/python${MODPY_VERSION}/site-packages/trac/ticket/notification.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/ticket/query.py
 lib/python${MODPY_VERSION}/site-packages/trac/ticket/query.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/ticket/report.py
@@ -91,6 +107,12 @@ lib/python${MODPY_VERSION}/site-packages/trac/upgrades/db15.py
 lib/python${MODPY_VERSION}/site-packages/trac/upgrades/db15.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/upgrades/db16.py
 lib/python${MODPY_VERSION}/site-packages/trac/upgrades/db16.pyc
+lib/python${MODPY_VERSION}/site-packages/trac/upgrades/db17.py
+lib/python${MODPY_VERSION}/site-packages/trac/upgrades/db17.pyc
+lib/python${MODPY_VERSION}/site-packages/trac/upgrades/db18.py
+lib/python${MODPY_VERSION}/site-packages/trac/upgrades/db18.pyc
+lib/python${MODPY_VERSION}/site-packages/trac/upgrades/db19.py
+lib/python${MODPY_VERSION}/site-packages/trac/upgrades/db19.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/upgrades/db3.py
 lib/python${MODPY_VERSION}/site-packages/trac/upgrades/db3.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/upgrades/db4.py
@@ -105,8 +127,19 @@ lib/python${MODPY_VERSION}/site-packages/trac/upgrades/db8.py
 lib/python${MODPY_VERSION}/site-packages/trac/upgrades/db8.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/upgrades/db9.py
 lib/python${MODPY_VERSION}/site-packages/trac/upgrades/db9.pyc
-lib/python${MODPY_VERSION}/site-packages/trac/util.py
-lib/python${MODPY_VERSION}/site-packages/trac/util.pyc
+lib/python${MODPY_VERSION}/site-packages/trac/util/
+lib/python${MODPY_VERSION}/site-packages/trac/util/__init__.py
+lib/python${MODPY_VERSION}/site-packages/trac/util/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trac/util/autoreload.py
+lib/python${MODPY_VERSION}/site-packages/trac/util/autoreload.pyc
+lib/python${MODPY_VERSION}/site-packages/trac/util/daemon.py
+lib/python${MODPY_VERSION}/site-packages/trac/util/daemon.pyc
+lib/python${MODPY_VERSION}/site-packages/trac/util/datefmt.py
+lib/python${MODPY_VERSION}/site-packages/trac/util/datefmt.pyc
+lib/python${MODPY_VERSION}/site-packages/trac/util/html.py
+lib/python${MODPY_VERSION}/site-packages/trac/util/html.pyc
+lib/python${MODPY_VERSION}/site-packages/trac/util/text.py
+lib/python${MODPY_VERSION}/site-packages/trac/util/text.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/
 lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/__init__.pyc
@@ -158,6 +191,8 @@ lib/python${MODPY_VERSION}/site-packages/trac/web/session.py
 lib/python${MODPY_VERSION}/site-packages/trac/web/session.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/web/standalone.py
 lib/python${MODPY_VERSION}/site-packages/trac/web/standalone.pyc
+lib/python${MODPY_VERSION}/site-packages/trac/web/wsgi.py
+lib/python${MODPY_VERSION}/site-packages/trac/web/wsgi.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/wiki/
 lib/python${MODPY_VERSION}/site-packages/trac/wiki/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trac/wiki/__init__.pyc
@@ -165,6 +200,10 @@ lib/python${MODPY_VERSION}/site-packages/trac/wiki/api.py
 lib/python${MODPY_VERSION}/site-packages/trac/wiki/api.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/wiki/formatter.py
 lib/python${MODPY_VERSION}/site-packages/trac/wiki/formatter.pyc
+lib/python${MODPY_VERSION}/site-packages/trac/wiki/intertrac.py
+lib/python${MODPY_VERSION}/site-packages/trac/wiki/intertrac.pyc
+lib/python${MODPY_VERSION}/site-packages/trac/wiki/interwiki.py
+lib/python${MODPY_VERSION}/site-packages/trac/wiki/interwiki.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/wiki/macros.py
 lib/python${MODPY_VERSION}/site-packages/trac/wiki/macros.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/wiki/model.py
@@ -173,14 +212,15 @@ lib/python${MODPY_VERSION}/site-packages/trac/wiki/web_ui.py
 lib/python${MODPY_VERSION}/site-packages/trac/wiki/web_ui.pyc
 @man man/man1/trac-admin.1
 @man man/man1/tracd.1
-@man man/man1/tracdb2env.1
 share/trac/
 share/trac/cgi-bin/
 share/trac/cgi-bin/trac.cgi
 share/trac/cgi-bin/trac.fcgi
+share/trac/conf/
 share/trac/htdocs/
 share/trac/htdocs/README
 share/trac/htdocs/asc.png
+share/trac/htdocs/attachment.png
 share/trac/htdocs/changeset.png
 share/trac/htdocs/closedticket.png
 share/trac/htdocs/css/
@@ -199,14 +239,11 @@ share/trac/htdocs/css/wiki.css
 share/trac/htdocs/desc.png
 share/trac/htdocs/dots.gif
 share/trac/htdocs/draft.png
-share/trac/htdocs/edgewall.png
 share/trac/htdocs/edit_toolbar.png
 share/trac/htdocs/editedticket.png
 share/trac/htdocs/extlink.gif
 share/trac/htdocs/file.png
-share/trac/htdocs/filedeny.png
 share/trac/htdocs/folder.png
-share/trac/htdocs/folderdeny.png
 share/trac/htdocs/ics.png
 share/trac/htdocs/imggrid.png
 share/trac/htdocs/js/
@@ -216,6 +253,7 @@ share/trac/htdocs/js/wikitoolbar.js
 share/trac/htdocs/milestone.png
 share/trac/htdocs/newticket.png
 share/trac/htdocs/parent.png
+share/trac/htdocs/python.png
 share/trac/htdocs/topbar_gradient.png
 share/trac/htdocs/topbar_gradient2.png
 share/trac/htdocs/trac.ico
@@ -223,14 +261,18 @@ share/trac/htdocs/trac_banner.png
 share/trac/htdocs/trac_logo_mini.png
 share/trac/htdocs/wiki.png
 share/trac/htdocs/xml.png
+share/trac/plugins/
 share/trac/templates/
 share/trac/templates/README
+share/trac/templates/about.cs
+share/trac/templates/anydiff.cs
 share/trac/templates/attachment.cs
 share/trac/templates/browser.cs
 share/trac/templates/changeset.cs
 share/trac/templates/error.cs
 share/trac/templates/footer.cs
 share/trac/templates/header.cs
+share/trac/templates/index.cs
 share/trac/templates/log.cs
 share/trac/templates/log_changelog.cs
 share/trac/templates/log_rss.cs
@@ -246,11 +288,15 @@ share/trac/templates/search.cs
 share/trac/templates/settings.cs
 share/trac/templates/ticket.cs
 share/trac/templates/ticket_notify_email.cs
+share/trac/templates/ticket_rss.cs
 share/trac/templates/timeline.cs
 share/trac/templates/timeline_rss.cs
 share/trac/templates/wiki.cs
 share/trac/wiki-default/
 share/trac/wiki-default/CamelCase
+share/trac/wiki-default/InterMapTxt
+share/trac/wiki-default/InterTrac
+share/trac/wiki-default/InterWiki
 share/trac/wiki-default/RecentChanges
 share/trac/wiki-default/SandBox
 share/trac/wiki-default/TitleIndex
@@ -275,6 +321,7 @@ share/trac/wiki-default/TracPermissions
 share/trac/wiki-default/TracPlugins
 share/trac/wiki-default/TracQuery
 share/trac/wiki-default/TracReports
+share/trac/wiki-default/TracRevisionLog
 share/trac/wiki-default/TracRoadmap
 share/trac/wiki-default/TracRss
 share/trac/wiki-default/TracSearch
