@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.44 2006/10/01 22:23:47 brad Exp $
+# $OpenBSD: Makefile,v 1.45 2006/11/10 14:16:41 wilfried Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
 COMMENT=	"redesign of the integrated Mozilla App-Suite mail component"
 
-VER=		1.5.0.7
+VER=		1.5.0.8
 DISTNAME=	mozilla
-PKGNAME=	mozilla-thunderbird-${VER}p1
-SO_VERSION=	9.0
+PKGNAME=	mozilla-thunderbird-${VER}
+SO_VERSION=	10.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 .for _lib in accessibility appcomps auth autoconfig caps chrome commandlines \
@@ -115,9 +115,10 @@ do-install:
 	@cd ${MOB} && ${TAR} -chf - ${dir} | \
 		${TAR} -xf - -C ${MOZ}
 .endfor
-	@cd ${MOB} && ${TAR} -chf - *.so.?.? | \
+	@cd ${MOB} && ${TAR} -chf - *.so.??.? | \
 		${TAR} -xf - -C ${MOZ}
-	@chmod 444 ${MOZ}/*.so.?.? ${MOZ}/components/*.so.?.? ${MOZ}/components/*.js
+	@chmod 444 ${MOZ}/*.so.??.? ${MOZ}/components/*.so.??.? ${MOZ}/components/*.js
+	chown -R ${SHAREOWN}:${SHAREGRP} ${MOZ}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${MOZ}
 
 	${INSTALL_DATA} ${WRKSRC}/mail/app/mozicon16.xpm ${WRKSRC}/mail/app/mozicon50.xpm ${MOZ}
