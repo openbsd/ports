@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2006/10/27 12:53:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2006/11/10 18:24:13 ajacoutot Exp $
 
 COMMENT=	"update LDAP entries with a text editor"
 
-DISTNAME=	ldapvi-1.5
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	ldapvi-1.6
 CATEGORIES=	editors
 
 HOMEPAGE=	http://www.lichteblau.com/ldapvi.html
@@ -18,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.lichteblau.com/download/
 
-WANTLIB=	c curses crypto
+WANTLIB=	c curses crypto readline ssl
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
@@ -39,9 +38,14 @@ pre-build:
 	@perl -pi -e "s,/etc/ldap,${SYSCONFDIR}/openldap,g" ${WRKSRC}/ldapvi.1
 
 do-install:
+	cd ${WRKSRC}/manual && ${MAKE_PROGRAM} ${MAKE_FILE} manual.html
 	${INSTALL_DATA_DIR} ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/man/man1
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ldapvi
 	${INSTALL_PROGRAM} ${WRKSRC}/ldapvi ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/ldapvi.1 ${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/manual/bg.png \
+		${WRKSRC}/manual/manual.css \
+		${WRKSRC}/manual/manual.html ${PREFIX}/share/doc/ldapvi
 
 .include <bsd.port.mk>

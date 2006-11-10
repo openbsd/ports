@@ -1,3 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/03/20 16:19:27 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/11/10 18:24:13 ajacoutot Exp $
 bin/ldapvi
 @man man/man1/ldapvi.1
+share/doc/ldapvi/
+share/doc/ldapvi/bg.png
+share/doc/ldapvi/manual.css
+share/doc/ldapvi/manual.html

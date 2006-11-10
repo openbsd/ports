@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2006/03/20 16:19:27 mbalmer Exp $
---- configure.orig	Tue Mar  7 12:18:37 2006
-+++ configure	Tue Mar  7 12:19:24 2006
-@@ -3922,13 +3922,13 @@ fi
+$OpenBSD: patch-configure,v 1.2 2006/11/10 18:24:13 ajacoutot Exp $
+--- configure.orig	Sat Oct 21 15:29:47 2006
++++ configure	Sun Oct 22 19:26:20 2006
+@@ -4533,13 +4533,13 @@ done
  
  
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2006/03/20 16:19:27 mbalmer Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -3984,7 +3984,7 @@ if test $ac_cv_lib_crypt_main = yes; the
+@@ -4595,7 +4595,7 @@ if test $ac_cv_lib_crypt_main = yes; the
  #define HAVE_LIBCRYPT 1
  _ACEOF
  
