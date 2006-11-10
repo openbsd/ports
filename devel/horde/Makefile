@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2006/11/10 14:42:38 mbalmer Exp $ 
+# $OpenBSD: Makefile,v 1.23 2006/11/10 14:53:22 mbalmer Exp $ 
 
 COMMENT=	"modular framework for web-based applications"
 
@@ -53,6 +53,4 @@ do-install:
 	@chown -R ${BINOWN}:${BINGRP} ${PREFIX}/${DISTNAME}
 	@mv ${PREFIX}/${DISTNAME} ${INSTDIR}
 
-tst:
-	echo ${SHAREOWN}:${SHAREGRP}
 .include <bsd.port.mk>
