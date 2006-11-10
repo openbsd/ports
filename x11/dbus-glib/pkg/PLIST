@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/10 18:46:10 alek Exp $
+%%SHARED%%
+bin/dbus-binding-tool
+include/dbus-1.0/
+include/dbus-1.0/dbus/
+include/dbus-1.0/dbus/dbus-glib-bindings.h
+include/dbus-1.0/dbus/dbus-glib-error-enum.h
+include/dbus-1.0/dbus/dbus-glib-lowlevel.h
+include/dbus-1.0/dbus/dbus-glib.h
+include/dbus-1.0/dbus/dbus-gtype-specialized.h
+lib/libdbus-glib-1.a
+lib/libdbus-glib-1.la
+lib/pkgconfig/
+lib/pkgconfig/dbus-glib-1.pc

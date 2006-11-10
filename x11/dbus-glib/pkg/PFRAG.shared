@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/11/10 18:46:10 alek Exp $
+@lib lib/libdbus-glib-1.so.${LIBdbus-glib-1_VERSION}
