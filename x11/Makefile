@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.249 2006/11/08 22:44:30 sturm Exp $
+# $OpenBSD: Makefile,v 1.250 2006/11/10 18:48:19 alek Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -30,6 +30,7 @@
      SUBDIR += ctwm
      SUBDIR += cwm
      SUBDIR += dbus
+     SUBDIR += dbus-glib
      SUBDIR += dclock
      SUBDIR += devilspie
      SUBDIR += e16keyedit
