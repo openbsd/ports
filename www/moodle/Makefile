@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2006/10/16 14:00:18 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2006/11/10 15:28:25 steven Exp $
 
 COMMENT=	"learning management system"
 
-V=		1.6.3
-DISTNAME=	moodle-${V}
+DISTNAME=	moodle-1.6.3
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www education
 
 HOMEPAGE=	http://www.moodle.org/
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP=  Yes
 MASTER_SITES=	http://download.moodle.org/stable16/
 EXTRACT_SUFX=	.tgz
 
+EXTRACT_ONLY=
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
@@ -43,5 +44,6 @@ RUN_DEPENDS+=	:php5-pgsql-*:www/php5/extensions,-pgsql
 
 do-install:
 	@cd ${PREFIX} && tar zxf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
+	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/*
 
 .include <bsd.port.mk>
