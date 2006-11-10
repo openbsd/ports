@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2006/07/13 12:11:08 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/10 23:10:15 steven Exp $
 
 COMMENT=	"Rogue like adventure game"
 
 DISTNAME=	wanderer-3.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=	games
 
@@ -26,5 +26,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/wanderer
 	${INSTALL_DATA} /dev/null \
 		${PREFIX}/share/examples/wanderer/wandererscores
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/wanderer
+	chown ${MANOWN}:${MANGRP} ${PREFIX}/man/man6/wanderer.6
 
 .include <bsd.port.mk>
