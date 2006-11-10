@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2006/07/20 04:43:28 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2006/11/10 23:51:20 steven Exp $
 # $FreeBSD: ports/x11-toolkits/xmhtml/Makefile,v 1.15 2001/06/29 05:19:06 lkoeller Exp $
 # Original from: Peter Hawkins <thepish@freebsd.org>
 
 COMMENT=	"Motif widget capable of displaying HTML 3.2 conforming text"
 
 DISTNAME=	XmHTML-1.1.7
-PKGNAME=	${DISTNAME:L}p4
+PKGNAME=	${DISTNAME:L}p5
 CATEGORIES=     www x11
 SHARED_LIBS=	XmHTML	1.2
 
@@ -39,5 +39,7 @@ do-install:
 		${TAR} -C ${EXMP_DIR} -xpf-
 	${INSTALL_DATA_DIR} ${DOCS_DIR}
 	${TAR} -C ${WRKSRC}/html -cpf- . | ${TAR} -C ${DOCS_DIR} -xpf-
+	chown -R ${SHAREOWN}:${SHAREGRP} ${EXMP_DIR}/* ${DOCS_DIR}/*
+	chown -h ${SHAREOWN}:${SHAREGRP} ${EXMP_DIR}/examples/gif_decode.c
 
 .include <bsd.port.mk>
