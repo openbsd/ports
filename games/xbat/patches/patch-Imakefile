@@ -1,11 +1,12 @@
+$OpenBSD: patch-Imakefile,v 1.1 2006/11/10 17:07:18 steven Exp $
 --- Imakefile.orig	Mon Mar 17 13:32:22 1997
-+++ Imakefile	Fri Jun  2 19:00:15 2000
++++ Imakefile	Fri Nov 10 11:51:42 2006
 @@ -1,24 +1,24 @@
 +XBATDIR=$(USRLIBDIR)/X11/Xbat
  # TOP10 DIR : directory for socre files
  #
 -SCORE_DIR  = /usr/local/games/Xbat/Score
-+SCORE_DIR  = $(XBATDIR)/Score
++SCORE_DIR  = /var/games/Xbat
  
  # IMAGE DIR : directory for image files
 -IMAGE_DIR = /usr/local/games/Xbat/Image
@@ -32,3 +33,15 @@
  
  #######################################################################
  
+@@ -48,11 +48,6 @@ DependTarget()
+ CleanTarget()
+ 
+ install::
+-	MakeDir($(DESTDIR)$(SCORE_DIR))
+-	chmod 777 $(DESTDIR)$(SCORE_DIR);
+-	@case '${MFLAGS}' in *[i]*) set +e;; esac; for i in Score/?* ; do set -x; $(INSTALL) -c -m 0666 $$i $(DESTDIR)$(SCORE_DIR) ; \
+-	done;
+-	
+ 	MakeDir($(DESTDIR)$(IMAGE_DIR))
+ 	@case '${MFLAGS}' in *[i]*) set +e;; esac; for i in Image/?* ; do (set -x; $(INSTALL) -c $(INSTLIBFLAGS) $$i $(DESTDIR)$(IMAGE_DIR) ); \
+ 	done;
