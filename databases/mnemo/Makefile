@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/11/03 23:03:41 mbalmer Exp $ 
+# $OpenBSD: Makefile,v 1.6 2006/11/10 14:54:50 mbalmer Exp $ 
 
 COMMENT=	"memo application"
 
@@ -6,6 +6,7 @@ HORDE_MODULE=	mnemo
 HORDE_NAME=	Mnemo
 
 DISTNAME=	${HORDE_MODULE}-h3-2.1.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	databases
 HOMEPAGE=	http://www.horde.org/${HORDE_MODULE}/
 
@@ -36,6 +37,7 @@ pre-fake:
 
 do-install:
 	@cd ${INSTDIR} && tar zxf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
+	@chown -R ${BINOWN}:${BINGRP} ${INSTDIR}/${DISTNAME}
 	@mv ${INSTDIR}/${DISTNAME} ${INSTDIR}/${HORDE_MODULE}
 
 .include <bsd.port.mk>
