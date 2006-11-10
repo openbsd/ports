@@ -1,13 +1,17 @@
-# $OpenBSD: Makefile,v 1.11 2006/11/09 19:00:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2006/11/10 16:01:29 ajacoutot Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/devel/nspr/Makefile,v 1.13 2003/12/13 21:30:19 peter Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
 COMMENT=		"Netscape Portable Runtime"
+COMMENT-docs=		"HTML Documentation for NSPR"
 
 VER=			4.6.3
 DISTNAME=		nspr-${VER}
 PKGNAME=		${DISTNAME}p1
+PKGNAME-docs=		${DISTNAME:S/-/-docs-/}
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
+			nspr-reference${EXTRACT_SUFX}:0
 
 SO_VERSION=		17.0
 .for _lib in nspr4 plc4 plds4
@@ -28,6 +32,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://ftp.eu.mozilla.org/pub/mozilla.org/nspr/releases/v${VER}/src/ \
 			http://ftp.mozilla.org/pub/mozilla.org/nspr/releases/v${VER}/src/
+MASTER_SITES0=		http://ftp.eu.mozilla.org/pub/mozilla.org/nspr/doc/ \
+			http://ftp.mozilla.org/pub/mozilla.org/nspr/doc/
+MULTI_PACKAGES= -docs
+SUBPACKAGE?=
+
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
+PKG_ARCH=	*
+.endif
 
 USE_GMAKE=		Yes
 AUTOCONF_VERSION=	2.13
@@ -49,12 +61,16 @@ pre-configure:
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/nspr
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nspr/html
 	cd ${WRKSRC}/dist/include && tar cfL - . | \
 		(cd ${PREFIX}/include && tar -xf -)
 	cd ${WRKSRC}/dist/lib && tar cfL - . | \
 		(cd ${PREFIX}/lib && tar -xf -)
+	cd ${WRKDIR}/nspr/reference/html && \
+		pax -s ',.*/CVS.*,,' -rwvpe . ${PREFIX}/share/doc/nspr/html
 	${INSTALL_SCRIPT} ${WRKSRC}/config/nspr-config ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/config/nspr.pc ${PREFIX}/lib/pkgconfig
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/nspr/html
 
 do-regress:
 	${MAKE_PROGRAM} -C ${WRKSRC}/pr/tests
