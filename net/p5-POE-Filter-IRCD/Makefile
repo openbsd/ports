@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2006/11/10 18:50:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/11 09:16:37 jasper Exp $
 
 COMMENT=		"POE-based parser for the IRC protocol"
 
 DISTNAME=		POE-Filter-IRCD-2.2
-PKGNAME=		p5-${DISTNAME}
+PKGNAME=		p5-${DISTNAME}p0
 CATEGORIES=		net perl5
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -16,9 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=POE/}
 
-BUILD_DEPENDS=		::devel/p5-Module-Install \
-			::devel/p5-POE
-RUN_DEPENDS=		${BUILD_DEPENDS}
+RUN_DEPENDS=		::devel/p5-POE
+BUILD_DEPENDS=		${RUN_DEPENDS}
 
 CONFIGURE_STYLE=	perl
 
