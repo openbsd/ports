@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2006/07/19 06:24:00 sturm Exp $
+# $OpenBSD: Makefile,v 1.12 2006/11/11 14:16:23 mbalmer Exp $
 
 COMMENT=	"nagios base plugins"
 COMMENT-fping=	"fping plugin"
@@ -15,7 +15,7 @@ DISTNAME=	nagios-plugins-${V}
 PKGNAME=	nagios-plugins-${V}p2
 PKGNAME-fping=	nagios-plugins-fping-${V}
 PKGNAME-game=	nagios-plugins-game-${V}
-PKGNAME-ldap=	nagios-plugins-ldap-${V}
+PKGNAME-ldap=	nagios-plugins-ldap-${V}p0
 PKGNAME-mysql=	nagios-plugins-mysql-${V}
 PKGNAME-ntp=	nagios-plugins-ntp-${V}
 PKGNAME-pgsql=	nagios-plugins-pgsql-${V}
@@ -96,7 +96,7 @@ RUN_DEPENDS=	fping::net/fping
 .  elif ${SUBPACKAGE} == "-game"
 RUN_DEPENDS=	qstat::games/qstat
 .  elif ${SUBPACKAGE} == "-ldap"
-WANTLIB+=	sasl2
+WANTLIB+=	sasl2 asn1 com_err gssapi krb5
 LIB_DEPENDS=	lber,ldap:openldap-client-*:databases/openldap
 .  elif ${SUBPACKAGE} == "-mysql"
 WANTLIB+=	m z
