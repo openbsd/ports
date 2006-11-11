@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.17 2006/10/23 11:19:35 espie Exp $
+# $OpenBSD: check-newlib-depends,v 1.18 2006/11/11 12:44:26 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -128,7 +128,7 @@ package OpenBSD::PackingElement::Dependency;
 sub depwalk
 {
 	my ($self, $h) = @_;
-	$h->{$self->{def}} = 1;
+	$h->{$self->{def}} = $self->{pkgpath};
 }
 
 package main;
@@ -146,7 +146,7 @@ sub register_dependencies
 	$plist->visit('depwalk', $h);
 }
 
-sub get_plist
+sub handle_dependency
 {
 	my $pkgname = shift;
 
@@ -189,7 +189,7 @@ sub report_lib_issue
 
 	for my $p (keys %{$dependencies->{$plist->pkgname()}}) {
 		next if defined $dependencies->{$p};
-		get_plist($p);
+		handle_dependency($p);
 	}
 
 	my @r = OpenBSD::SharedLibs::lookup_libspec('/usr/local', $libspec);
@@ -207,7 +207,7 @@ sub report_lib_issue
 	while (my $dep = pop @todo) {
 		next if $done->{$dep};
 		$done->{$dep} = 1;
-		get_plist($dep);
+		handle_dependency($dep) unless defined $dependencies->{$dep};
 		push(@todo, keys %{$dependencies->{$dep}});
 	}
 	@r = OpenBSD::SharedLibs::lookup_libspec('/usr/local', $libspec);
