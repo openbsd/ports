@@ -12,3 +12,11 @@ If you are using sqlite, you need only two parameters, "type", and "file"
 which indicates the location of the database file (/var/prelude/manager/
 is the recommended directory to store this file).
 
+To start prelude-manager at boot-time, you could use:
+
+if [ -x ${LOCALBASE}/bin/prelude-manager ]; then
+	/usr/bin/install -d -o _prelude -g _prelude -m 700 /var/run/prelude-manager/
+	echo -n ' prelude-manager'; ${LOCALBASE}/bin/prelude-manager -d > /dev/null
+fi
+
+Note: the DBMS server to use with Prelude has to be started before.
