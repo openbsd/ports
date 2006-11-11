@@ -1,4 +1,6 @@
-# $OpenBSD: config.x11.site,v 1.1 2006/11/11 15:10:22 steven Exp $
+# $OpenBSD: config.x11.site,v 1.2 2006/11/11 22:57:41 steven Exp $
+ac_cv_have_x=${ac_cv_have_x='have_x=yes ac_x_includes=/usr/X11R6/include ac_x_libraries=/usr/X11R6/lib'}
+ac_cv_prog_freetype_config=${ac_cv_prog_freetype_config=/usr/X11R6/bin/freetype-config}
 ac_cv_file__usr_X11R6_include_freetype2=${ac_cv_file__usr_X11R6_include_freetype2=yes}
 ac_cv_header_GL_gl_h=${ac_cv_header_GL_gl_h=yes}
 ac_cv_header_GL_glu_h=${ac_cv_header_GL_glu_h=yes}
@@ -8,15 +10,20 @@ ac_cv_header_X11_Intrinsic_h=${ac_cv_header_X11_Intrinsic_h=yes}
 ac_cv_header_X11_SM_SMlib_h=${ac_cv_header_X11_SM_SMlib_h=yes}
 ac_cv_header_X11_Sunkeysym_h=${ac_cv_header_X11_Sunkeysym_h=yes}
 ac_cv_header_X11_X_h=${ac_cv_header_X11_X_h=yes}
+ac_cv_header_X11_XInput_h=${ac_cv_header_X11_XInput_h=yes}
 ac_cv_header_X11_XKBlib_h=${ac_cv_header_X11_XKBlib_h=yes}
 ac_cv_header_X11_Xatom_h=${ac_cv_header_X11_Xatom_h=yes}
 ac_cv_header_X11_Xauth_h=${ac_cv_header_X11_Xauth_h=yes}
+ac_cv_header_X11_Xaw_Form_h=${ac_cv_header_X11_Xaw_Form_h=yes}
+ac_cv_header_X11_Xaw_Panner_h=${ac_cv_header_X11_Xaw_Panner_h=yes}
+ac_cv_header_X11_Xaw_Porthole_h=${ac_cv_header_X11_Xaw_Porthole_h=yes}
 ac_cv_header_X11_Xaw_Simple_h=${ac_cv_header_X11_Xaw_Simple_h=yes}
 ac_cv_header_X11_Xaw_SimpleMenu_h=${ac_cv_header_X11_Xaw_SimpleMenu_h=yes}
 ac_cv_header_X11_Xaw_Text_h=${ac_cv_header_X11_Xaw_Text_h=yes}
+ac_cv_header_X11_Xaw_XawInit_h=${ac_cv_header_X11_Xaw_XawInit_h=yes}
+ac_cv_header_X11_Xcursor_Xcursor_h=${ac_cv_header_X11_Xcursor_Xcursor_h=yes}
 ac_cv_header_X11_Xdmcp_h=${ac_cv_header_X11_Xdmcp_h=yes}
 ac_cv_header_X11_Xft_Xft_h=${ac_cv_header_X11_Xft_Xft_h=yes}
-ac_cv_header_X11_Xinput_h=${ac_cv_header_X11_Xinput_h=yes}
 ac_cv_header_X11_Xlib_h=${ac_cv_header_X11_Xlib_h=yes}
 ac_cv_header_X11_Xlocale_h=${ac_cv_header_X11_Xlocale_h=yes}
 ac_cv_header_X11_Xmu_Atoms_h=${ac_cv_header_X11_Xmu_Atoms_h=yes}
@@ -24,6 +31,7 @@ ac_cv_header_X11_Xmu_Editres_h=${ac_cv_header_X11_Xmu_Editres_h=yes}
 ac_cv_header_X11_Xmu_StdCmap_h=${ac_cv_header_X11_Xmu_StdCmap_h=yes}
 ac_cv_header_X11_Xmu_WinUtil_h=${ac_cv_header_X11_Xmu_WinUtil_h=yes}
 ac_cv_header_X11_Xmu_Xmu_h=${ac_cv_header_X11_Xmu_Xmu_h=yes}
+ac_cv_header_X11_Xpm_h=${ac_cv_header_X11_Xpm_h=yes}
 ac_cv_header_X11_Xpoll_h=${ac_cv_header_X11_Xpoll_h=yes}
 ac_cv_header_X11_Xproto_h=${ac_cv_header_X11_Xproto_h=yes}
 ac_cv_header_X11_Xresource_h=${ac_cv_header_X11_Xresource_h=yes}
@@ -41,9 +49,12 @@ ac_cv_header_X11_extensions_Xfixes_h=${ac_cv_header_X11_extensions_Xfixes_h=yes}
 ac_cv_header_X11_extensions_Xinerama_h=${ac_cv_header_X11_extensions_Xinerama_h=yes}
 ac_cv_header_X11_extensions_Xrandr_h=${ac_cv_header_X11_extensions_Xrandr_h=yes}
 ac_cv_header_X11_extensions_Xrender_h=${ac_cv_header_X11_extensions_Xrender_h=yes}
+ac_cv_header_X11_extensions_Xres_h=${ac_cv_header_X11_extensions_Xres_h=yes}
 ac_cv_header_X11_extensions_Xtest_h=${ac_cv_header_X11_extensions_Xtest_h=yes}
 ac_cv_header_X11_extensions_Xv_h=${ac_cv_header_X11_extensions_Xv_h=yes}
-ac_cv_header_X11_extensions_extutil=${ac_cv_header_X11_extensions_extutil_h=yes}
+ac_cv_header_X11_extensions_Xvlib_h=${ac_cv_header_X11_extensions_Xvlib_h=yes}
+ac_cv_header_X11_extensions_dpms_h=${ac_cv_header_X11_extensions_dpms_h=yes}
+ac_cv_header_X11_extensions_extutil_h=${ac_cv_header_X11_extensions_extutil_h=yes}
 ac_cv_header_X11_extensions_scrnsaver_h=${ac_cv_header_X11_extensions_scrnsaver_h=yes}
 ac_cv_header_X11_extensions_shape_h=${ac_cv_header_X11_extensions_shape_h=yes}
 ac_cv_header_X11_extensions_sync_h=${ac_cv_header_X11_extensions_sync_h=yes}
@@ -51,8 +62,12 @@ ac_cv_header_X11_extensions_xf86dga_h=${ac_cv_header_X11_extensions_xf86dga_h=ye
 ac_cv_header_X11_extensions_xf86misc_h=${ac_cv_header_X11_extensions_xf86misc_h=yes}
 ac_cv_header_X11_extensions_xf86vmode_h=${ac_cv_header_X11_extensions_xf86vmode_h=yes}
 ac_cv_header_X11_extensions_xf86vmstr_h=${ac_cv_header_X11_extensions_xf86vmstr_h=yes}
+ac_cv_header_X11_forms_h=${ac_cv_header_X11_forms_h=yes}
 ac_cv_header_X11_keysym_h=${ac_cv_header_X11_keysym_h=yes}
 ac_cv_header_X11_xpm_h=${ac_cv_header_X11_xpm_h=yes}
+ac_cv_header_Xm_Xm_h=${ac_cv_header_Xm_Xm_h=yes}
+ac_cv_header_freetype_freetype_h=${ac_cv_header_freetype_freetype_h=yes}
+ac_cv_header_ft2build_h=${ac_cv_header_ft2build_h=yes}
 ac_cv_lib_GL_main=${ac_cv_lib_GL_main=yes}
 ac_cv_lib_ICE_main=${ac_cv_lib_ICE_main=yes}
 ac_cv_lib_SM_main=${ac_cv_lib_SM_main=yes}
@@ -63,21 +78,22 @@ ac_cv_lib_Xdmcp_main=${ac_cv_lib_Xdmcp_main=yes}
 ac_cv_lib_Xext_main=${ac_cv_lib_Xpm_main=yes}
 ac_cv_lib_Xinerama_main=${ac_cv_lib_Xinerama_main=yes}
 ac_cv_lib_Xmu_main=${ac_cv_lib_Xmu_main=yes}
+ac_cv_lib_Xp_main=${ac_cv_lib_Xp_main=yes}
 ac_cv_lib_Xpm_main=${ac_cv_lib_Xpm_main=yes}
 ac_cv_lib_Xt_main=${ac_cv_lib_Xt_main=yes}
 ac_cv_lib_ICE_IceConnectionNumber=${ac_cv_lib_ICE_IceConnectionNumber=yes}
 ac_cv_lib_SM_SmcOpenConnection=${ac_cv_lib_SM_SmcOpenConnection=yes}
 ac_cv_lib_SM_SmcSaveYourselfDone=${ac_cv_lib_SM_SmcSaveYourselfDone=yes}
-ac_cv_lib_Xrender_XRenderComposite=${ac_cv_lib_Xrender_XRenderComposite=yes}
 ac_cv_lib_X11_XConvertCase=${ac_cv_lib_X11_XConvertCase=yes}
 ac_cv_lib_X11_XCreateIC=${ac_cv_lib_X11_XCreateIC=yes}
 ac_cv_lib_X11_XDrawLines=${ac_cv_lib_X11_XDrawLines=yes}
+ac_cv_lib_X11_XInitThreads=${ac_cv_lib_X11_XInitThreads=yes}
 ac_cv_lib_X11_XInternAtoms=${ac_cv_lib_X11_XInternAtoms=yes}
-ac_cv_lib_X11_XkbBell=${ac_cv_lib_X11_XkbBell=yes}
-ac_cv_lib_X11_XkbQueryExtension=${ac_cv_lib_X11_XkbQueryExtension=yes}
 ac_cv_lib_X11_XMoveWindow=${ac_cv_lib_X11_XMoveWindow=yes}
 ac_cv_lib_X11_XOpenDisplay=${ac_cv_lib_X11_XOpenDisplay=yes}
 ac_cv_lib_X11_XReadBitmapFileData=${ac_cv_lib_X11_XReadBitmapFileData=yes}
-ac_cv_lib_X11_XUnregisterIMInstantiateCallback=${ac_cv_lib_X11_XUnregisterIMInstantiateCallback=yes}
-ac_cv_lib_Xext_XShapeCombineShape=${ac_cv_lib_Xext_XShapeCombineShape=yes}
-ac_cv_lib_Xext_XShmPutImage=${ac_cv_lib_Xext_XShmPutImage=yes}
+ac_cv_lib_X11_XkbBell=${ac_cv_lib_X11_XkbBell=yes}
+ac_cv_lib_X11_XkbQueryExtension=${ac_cv_lib_X11_XkbQueryExtension=yes}
+ac_cv_lib_Xft_XftInit=${ac_cv_lib_Xft_XftInit=yes}
+ac_cv_lib_Xinerama_XineramaIsActive=${ac_cv_lib_Xinerama_XineramaIsActive=yes}
+ac_cv_lib_freetype_FT_Init_FreeType=${ac_cv_lib_freetype_FT_Init_FreeType=yes}
