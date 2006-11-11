@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.797 2006/11/09 08:29:47 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.798 2006/11/11 16:10:36 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1111,7 +1111,7 @@ _FULL_PACKAGE_NAME?=No
 _DEP${_DEP}_COOKIES=
 .  if defined(${_DEP:U}_DEPENDS) && ${NO_DEPENDS:L} == "no"
 .    for _i in ${${_DEP:U}_DEPENDS}
-_DEP${_DEP}_COOKIES+=${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}
+_DEP${_DEP}_COOKIES+=${WRKDIR}/.dep${_i:C,[|:./<=>*],-,g}
 .    endfor
 .  endif
 .endfor
@@ -1401,7 +1401,7 @@ _print-packagename:
 .for _DEP in build run lib regress
 .  if defined(${_DEP:U}_DEPENDS) && ${NO_DEPENDS:L} == "no"
 .    for _i in ${${_DEP:U}_DEPENDS}
-${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
+${WRKDIR}/.dep${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 	@unset PACKAGING DEPENDS_TARGET _MASTER WRKDIR|| true; \
 	echo '${_i}'|{ \
 		IFS=:; read dep pkg subdir target; \
@@ -1726,6 +1726,7 @@ subpackage:
 .for _t _r in _internal-package-only _internal-subpackage \
 describe subdescribe lib-depends-check sublib-depends-check \
 dump-vars subdump-vars _internal-install-all _internal-install \
+print-plist-all print-plist \
 readmes _readme _internal-update _internal-subupdate
 ${_t}:
 	@cd ${.CURDIR} && SUBPACKAGE='' PACKAGING='' exec ${MAKE} ${_r}
@@ -2822,4 +2823,4 @@ subdump-vars:
 	sublib-depends-check subdump-vars _internal-install-all install-all \
 	subpackage _internal-subupdate _internal-update \
 	regress-dir-depends _recurse-regress-dir-depends \
-	full-regress-depends
+	full-regress-depends print-plist-all
