@@ -1,4 +1,4 @@
-# $OpenBSD: config.site,v 1.12 2006/11/10 17:29:38 steven Exp $
+# $OpenBSD: config.site,v 1.13 2006/11/11 15:01:19 steven Exp $
 # Quick start macros for autoconf.
 # XXX kludge for a function we don't actually have.
 #ac_cv_func_getservbyname_r=${ac_cv_func_getservbyname_r=no}
@@ -659,10 +659,6 @@ ac_cv_have_snprintf_decl=${ac_cv_have_snprintf_decl=yes}
 ac_cv_have_ssl=${ac_cv_have_ssl='have_ssl=yes     ac_ssl_includes=/usr/include ac_ssl_libraries=/usr/lib ac_ssl_rsaref=no'}
 ac_cv_have_vasprintf_decl=${ac_cv_have_vasprintf_decl=yes}
 ac_cv_have_vsnprintf_decl=${ac_cv_have_vsnprintf_decl=yes}
-ac_cv_header_X11_ICE_ICElib_h=${ac_cv_header_X11_ICE_ICElib_h=yes}
-ac_cv_header_X11_extensions_XShm_h=${ac_cv_header_X11_extensions_XShm_h=yes}
-ac_cv_header_X11_extensions_Xrender_h=${ac_cv_header_X11_extensions_Xrender_h=yes}
-ac_cv_header_X11_extensions_shape_h=${ac_cv_header_X11_extensions_shape_h=yes}
 ac_cv_header_arpa_inet_h=${ac_cv_header_arpa_inet_h=yes}
 ac_cv_header_assert_h=${ac_cv_header_assert_h=yes}
 ac_cv_header_ctype_h=${ac_cv_header_ctype_h=yes}
@@ -813,15 +809,10 @@ ac_cv_header_utmp_h=${ac_cv_header_utmp_h=yes}
 ac_cv_header_values_h=${ac_cv_header_values_h=no}
 ac_cv_header_zlib_h=${ac_cv_header_zlib_h=yes}
 ac_cv_labels_as_values=${ac_cv_labels_as_values=yes}
-ac_cv_lib_ICE_IceConnectionNumber=${ac_cv_lib_ICE_IceConnectionNumber=yes}
-ac_cv_lib_X11_main=${ac_cv_lib_X11_main=yes}
-ac_cv_lib_Xpm_main=${ac_cv_lib_Xpm_main=yes}
-ac_cv_lib_Xrender_XRenderComposite=${ac_cv_lib_Xrender_XRenderComposite=yes}
 ac_cv_lib_compat_main=${ac_cv_lib_compat_main=yes}
 ac_cv_lib_cposix_strerror=${ac_cv_lib_cposix_strerror=no}
 ac_cv_lib_dir_opendir=${ac_cv_lib_dir_opendir=no}
 ac_cv_lib_fl_yywrap=${ac_cv_lib_fl_yywrap=yes}
-ac_cv_lib_freetype_main=${ac_cv_lib_freetype_main=yes}
 ac_cv_lib_m=${ac_cv_lib_m=yes}	
 ac_cv_lib_m__finite=${ac_cv_lib_m__finite=no}
 ac_cv_lib_m_acos=${ac_cv_lib_m_acos=yes}	
