@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/08/01 10:50:19 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2006/11/11 21:04:27 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,6 +24,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=flac/}
 LIB_DEPENDS=	xmms.>=4::audio/xmms \
 		FLAC.>=7::audio/flac
 
+USE_X11=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-libiconv-prefix="${LOCALBASE}" \

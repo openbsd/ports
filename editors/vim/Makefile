@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2006/10/26 16:34:26 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.74 2006/11/11 21:04:27 steven Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
@@ -94,10 +94,12 @@ CONFIGURE_ARGS+=--disable-gui --without-x
 CONFIGURE_ARGS+=--enable-gui="motif" --with-x --enable-fontset --enable-xim
 CONFIGURE_ENV+=	MOTIFHOME=${X11BASE}
 USE_MOTIF=	any
+USE_X11=	Yes
 WANTLIB+=	ICE SM X11 Xext Xmu Xpm Xt
 .elif ${FLAVOR:L:Mathena} && \
 	!${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mgtk2}
 CONFIGURE_ARGS+=--enable-gui="athena" --with-x --enable-fontset --enable-xim
+USE_X11=	Yes
 WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xpm Xt
 .elif ${FLAVOR:L:Mgtk2} && \
 		!${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena}
@@ -106,6 +108,7 @@ CC+=		-pthread
 LIB_DEPENDS+=	gdk-x11-2.0.>=0.11,gdk_pixbuf-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2
 BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 CONFIGURE_ARGS+=--enable-gui="gtk2" --with-x --enable-fontset --enable-xim --disable-gtk-check --enable-gtk2-check
+USE_X11=	Yes
 WANTLIB+=	ICE SM X11 Xext Xrender Xt fontconfig freetype m z\
 	 	atk-1.0 glib-2.0 gmodule-2.0 gobject-2.0 png\
 		pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo pthread glitz

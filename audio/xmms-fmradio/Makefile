@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/08/01 12:13:28 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/11 21:04:27 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -27,6 +27,7 @@ LIB_DEPENDS=	xmms.>=2::audio/xmms
 MAKE_ENV=	CC="${CC}"
 
 NO_REGRESS=	Yes
+USE_X11=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xmms-fmradio

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/08/31 06:14:29 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2006/11/11 21:04:27 steven Exp $
 
 COMMENT=	"library that handles the decoding of sound file formats"
 DISTNAME=	SDL_sound-1.0.1
@@ -26,6 +26,7 @@ LIB_DEPENDS+=	physfs::devel/physfs \
 		FLAC.>=5.2::audio/flac \
 		speex.>=2.2::audio/speex
 
+USE_X11=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--disable-modplug

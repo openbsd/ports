@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2006/09/18 11:50:39 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2006/11/11 21:04:27 steven Exp $
 
 COMMENT=	"free cross-platform WYSIWYG word processor"
 
@@ -33,6 +33,7 @@ WANTLIB=	ICE SM X11 Xext Xft Xrender art_lgpl_2 atk-1.0 c \
 MASTER_SITES=   ${HOMEPAGE}/downloads/abiword/${VERSION}/source/
 
 USE_GMAKE=	Yes
+USE_X11=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--disable-gucharmap --disable-enchant --without-pspell

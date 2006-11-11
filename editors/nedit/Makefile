@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2006/11/04 19:19:15 kili Exp $
+# $OpenBSD: Makefile,v 1.32 2006/11/11 21:04:27 steven Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 COMMENT=		"X11/Motif GUI text editor"
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xp Xpm Xt c m
 
+USE_X11=		Yes
 USE_MOTIF=		Any
 ALL_TARGET=		openbsd
 

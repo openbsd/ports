@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2006/09/18 11:40:07 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2006/11/11 21:04:27 steven Exp $
 
 COMMENT=	"GTK-based LDAP client"
 
@@ -30,6 +30,7 @@ LIB_DEPENDS=	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
 		ldap.>=7,lber.>=7::databases/openldap \
 		xml2::textproc/libxml
 
+USE_X11=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.57
 CONFIGURE_ARGS=	--with-ldap-prefix=${LOCALBASE} \

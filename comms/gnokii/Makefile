@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/10/28 11:19:20 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/11/11 21:04:27 steven Exp $
 
 COMMENT=	"tools to talk to GSM cellular phones"	
 
@@ -37,6 +37,7 @@ CONFIGURE_ARGS=		--enable-security \
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--without-x
 .else
+USE_X11=		Yes
 CONFIGURE_ARGS+=	--with-x
 WANTLIB+=		X11 Xext Xpm Xrender fontconfig freetype z \
 			iconv intl m pthread atk-1.0.>=800.0 glib-2.0.>=400.8 \

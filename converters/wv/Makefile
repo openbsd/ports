@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/08/01 22:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/11/11 21:04:27 steven Exp $
 
 COMMENT=	"convert various Microsoft formats into HTML/PNG"
 
@@ -21,7 +21,8 @@ LIB_DEPENDS=	wmf.>=6,wmflite.>=6::graphics/libwmf \
 		Magick.>=5::graphics/ImageMagick \
 		glib.>=1::devel/glib
 
-USE_GMAKE= Yes
+USE_X11=	Yes
+USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} --enable-static
 CONFIGURE_ARGS+= --with-png=${LOCALBASE} --with-exporter \

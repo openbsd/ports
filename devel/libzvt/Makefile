@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/09/18 11:50:39 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2006/11/11 21:04:27 steven Exp $
 
 COMMENT=		"library for handling pseudo terminals"
 
@@ -29,6 +29,7 @@ LIB_DEPENDS=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 
 MODULES=		devel/gettext
 
+USE_X11=		Yes
 USE_LIBTOOL=		Yes
 SEPARATE_BUILD= 	concurrent
 CONFIGURE_STYLE=	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/11/03 14:29:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2006/11/11 21:04:27 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,6 +24,7 @@ LIB_DEPENDS=	sidplay.>=1::audio/libsidplay
 RUN_DEPENDS=	::audio/xmms
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+USE_X11=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-sidplay-prefix=${LOCALBASE}

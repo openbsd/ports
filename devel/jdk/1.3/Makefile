@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/03/20 14:40:24 kurt Exp $
+# $OpenBSD: Makefile,v 1.20 2006/11/11 21:04:27 steven Exp $
 # $FreeBSD: ports/java/jdk12/Makefile,v 1.11 2002/08/19 20:47:04 glewis Exp $
 
 ONLY_FOR_ARCHS= 	arm i386 powerpc sparc
@@ -39,6 +39,7 @@ RUN_DEPENDS=		:zip-*:archivers/zip \
 			:ghostscript-fonts-*:print/ghostscript/gnu-fonts
 USE_MOTIF=		openmotif
 
+USE_X11=		Yes
 USE_GMAKE=		Yes
 TAR=			${LOCALBASE}/bin/gtar
 

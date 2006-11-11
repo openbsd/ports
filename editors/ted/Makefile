@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/08/01 23:39:08 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2006/11/11 21:04:27 steven Exp $
 
 
 COMMENT=	"X11 based RTF editor"
@@ -23,6 +23,7 @@ LIB_DEPENDS=	png.>=2.::graphics/png \
 		jpeg.>=62::graphics/jpeg \
 		tiff.>=35::graphics/tiff
 
+USE_X11=	Yes
 USE_MOTIF=	openmotif
 ALL_TARGET=	compile.shared
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}

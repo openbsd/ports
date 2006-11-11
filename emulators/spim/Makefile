@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/11/09 07:01:47 kevlo Exp $
+# $OpenBSD: Makefile,v 1.13 2006/11/11 21:04:28 steven Exp $
 
 COMMENT=	"MIPS R2000/R3000 simulator"
 
@@ -23,6 +23,8 @@ BUILD_DEPENDS=	:bison-*:devel/bison
 XMKMF=		xmkmf
 
 FAKE_FLAGS=	PREFIX="${PREFIX}"
+
+USE_X11=	Yes
 
 do-build:
 	(cd ${WRKSRC}/spim; ./Configure && ${MAKE})

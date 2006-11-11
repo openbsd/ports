@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/09/18 11:50:39 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2006/11/11 21:04:27 steven Exp $
 
 COMMENT=		"terminal emulatation library"
 
@@ -28,6 +28,7 @@ LIB_DEPENDS=		gdk-x11-2.0.>=0.8,gdk_pixbuf-2.0.>=0.8,gtk-x11-2.0.>=0.8::x11/gtk+
 
 MODULES=		devel/gettext
 
+USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu

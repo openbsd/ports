@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/08/01 12:13:29 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/11/11 21:04:27 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,6 +22,7 @@ WANTLIB=	X11 Xext Xi m gdk glib gmodule gtk iconv intl
 
 MAKE_FLAGS=	CC="${CC}" OPT="${CFLAGS}" DEBUG=""
 NO_REGRESS=	Yes
+USE_X11=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/xmms/General

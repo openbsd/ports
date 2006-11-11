@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2006/10/28 10:30:41 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2006/11/11 21:04:27 steven Exp $
 
 COMMENT=	"lame ain't an MP3 encoder"
 
@@ -41,6 +41,7 @@ CONFIGURE_ARGS+= --disable-nasm
 .endif
 
 .if ${FLAVOR:L} != "no_x11"
+USE_X11=		Yes
 CONFIGURE_ARGS+=	--enable-mp3x \
 			--with-gtk-prefix=${LOCALBASE}
 LIB_DEPENDS+=		gtk.>=1.2,gdk.>=1.2::x11/gtk+

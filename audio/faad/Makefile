@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2006/10/28 10:30:41 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2006/11/11 21:04:27 steven Exp $
 
 COMMENT=	"MPEG2 and MPEG-4 AAC decoder"
 COMMENT-xmms=	"XMMS input plugin for AAC files"
@@ -38,6 +38,7 @@ FLAVOR?=
 MULTI_PACKAGES=
 .if !${FLAVOR:L:Mno_xmms}
 MULTI_PACKAGES+=-xmms
+USE_X11=	Yes
 .endif
 
 SUBPACKAGE?=

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/08/02 09:36:20 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/11 21:04:28 steven Exp $
 # XXX hardcoded endian list
 
 COMMENT=	"sega genesis emulator"
@@ -22,6 +22,7 @@ LIB_DEPENDS+=	bz2.>=10::archivers/bzip2 \
 
 WANTLIB=	ICE SM X11 Xext c m pthread usbhid z
 
+USE_X11=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--with-sdl --with-sdl-audio --without-gcc
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2006/10/03 13:36:28 kurt Exp $
+# $OpenBSD: Makefile,v 1.26 2006/11/11 21:04:27 steven Exp $
 
 ONLY_FOR_ARCHS= 	amd64 i386
 
@@ -45,6 +45,7 @@ WANTLIB=		X11 Xext Xi Xp Xt Xtst c m ossaudio pthread stdc++ z
 WANTLIB+=		Xmu
 .endif
 
+USE_X11=		Yes
 USE_GMAKE=		Yes
 
 TAR=			${LOCALBASE}/bin/gtar

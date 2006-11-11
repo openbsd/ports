@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/10/19 00:35:04 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2006/11/11 21:04:27 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,6 +25,8 @@ BUILD_DEPENDS+=	:py-Numeric-*:math/py-Numeric
 LIB_DEPENDS=	SDL_ttf::devel/sdl-ttf \
 		SDL_image::devel/sdl-image \
 		SDL_mixer::devel/sdl-mixer
+
+USE_X11=	Yes
 
 MAKE_ENV+=	LOCALBASE="${LOCALBASE}" \
 		SDL_CONFIG="${LOCALBASE}/bin/sdl-config"

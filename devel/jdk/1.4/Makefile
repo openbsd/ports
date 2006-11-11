@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2006/10/31 19:48:12 kurt Exp $
+# $OpenBSD: Makefile,v 1.17 2006/11/11 21:04:27 steven Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/java/jdk14/Makefile,v 1.79 2004/08/18 07:06:03 glewis Exp $
 
 ONLY_FOR_ARCHS= 	i386
@@ -42,6 +42,7 @@ LIB_DEPENDS=		iodbc.>=2::databases/iodbc
 USE_MOTIF=		openmotif
 WANTLIB=		X11 Xext Xi Xm Xmu Xp Xt Xtst c m ossaudio pthread z
 
+USE_X11=		Yes
 USE_GMAKE=		Yes
 
 TAR=			${LOCALBASE}/bin/gtar

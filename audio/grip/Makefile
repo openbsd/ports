@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/09/18 11:40:06 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2006/11/11 21:04:27 steven Exp $
 
 COMMENT=	"front-end to external cd audio rippers and mp3 encoders"
 
@@ -42,5 +42,7 @@ RUN_DEPENDS=	::x11/gnome/yelp \
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+USE_X11=	Yes
 
 .include <bsd.port.mk>

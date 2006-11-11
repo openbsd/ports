@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2005/06/28 19:31:56 aanriot Exp $
+# $OpenBSD: Makefile,v 1.41 2006/11/11 21:04:27 steven Exp $
 
 COMMENT=	"Data Display Debugger, graphical front-end for GDB, etc"
 
@@ -24,6 +24,7 @@ REGRESS_FLAGS+=	"DISPLAY=$${DISPLAY}" "HOME=$${HOME}"
 VMEM_WARNING=	Yes
 USE_MOTIF=	any
 USE_GMAKE=	Yes
+USE_X11=	Yes
 CONFIGURE_STYLE=gnu autoconf no-autoheader
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
 AUTOCONF_VERSION=2.59

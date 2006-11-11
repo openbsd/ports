@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/08/01 16:20:46 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/11/11 21:04:27 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,6 +23,7 @@ LIB_DEPENDS=	xmms.>=4::audio/xmms mad.>=2::audio/libmad \
 
 WANTLIB=	X11 Xext Xi m gdk glib gmodule gtk iconv intl
 
+USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
