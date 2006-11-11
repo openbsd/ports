@@ -1,0 +1,7 @@
+This module exports one function, "declare", for building named objects
+with a declarative syntax, similar to how Jifty::DBI::Schema defines its
+columns.
+
+In list context, "declare" returns a list of name/object pairs in the
+order of declaration (allowing duplicates), suitable for putting into a
+hash. In scalar context, "declare" returns a hash reference.
