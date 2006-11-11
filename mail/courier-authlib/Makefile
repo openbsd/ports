@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/03 15:16:41 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/11 13:18:39 mbalmer Exp $
 
 COMMENT=		"authentication library for courier"
 COMMENT-ldap=		"ldap authentication module for courier-authLib"
@@ -8,7 +8,7 @@ COMMENT-userdb=		"userdb authentication module for courier-authLib"
 
 DISTNAME=		courier-authlib-0.58
 PKGNAME=		${DISTNAME}p0
-PKGNAME-ldap=		${DISTNAME:S/lib-/lib-ldap-/}p0
+PKGNAME-ldap=		${DISTNAME:S/lib-/lib-ldap-/}p1
 PKGNAME-mysql=		${DISTNAME:S/lib-/lib-mysql-/}p0
 PKGNAME-pgsql=		${DISTNAME:S/lib-/lib-pgsql-/}p0
 PKGNAME-userdb=		${DISTNAME:S/lib-/lib-userdb-/}p0
@@ -82,7 +82,7 @@ MULTI_PACKAGES+=	-ldap
 CONFIGURE_ARGS+=	--with-authldap
 DOCS+=			README.ldap
 .  if !defined(PACKAGING) || ${SUBPACKAGE} == "-ldap"
-WANTLIB+=		crypto ssl
+WANTLIB+=		crypto ssl asn1 com_err gssapi krb5
 LIB_DEPENDS+=		ldap,lber::databases/openldap \
 			sasl2::security/cyrus-sasl2
 .    if defined(PACKAGING)
