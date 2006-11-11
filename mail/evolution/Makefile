@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2006/09/18 11:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2006/11/11 14:48:00 mbalmer Exp $
 
 COMMENT=		"integrated email and PIM software for GNOME"
 
 PARENT_VERS=		2.2
 VERSION=		${PARENT_VERS}.3
 DISTNAME=		evolution-${VERSION}
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=    		mail x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/projects/evolution/
@@ -45,7 +45,8 @@ WANTLIB=		ICE SM X11 Xext Xrender \
 			gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 \
 			gnome-2 gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 \
 			gnomeprint-2-2 gnomeprintui-2-2 cairo glitz png \
-			jpeg popt sasl2 soup-2.2.>=7.0 xml2
+			jpeg popt sasl2 soup-2.2.>=7.0 xml2 \
+			asn1 com_err gssapi krb5
 
 MASTER_SITES=		${MASTER_SITE_GNOME:S@$@sources/evolution/${PARENT_VERS}/@}
 EXTRACT_SUFX=           .tar.bz2
