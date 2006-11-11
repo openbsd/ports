@@ -1,0 +1,45 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2006/11/11 14:34:34 ajacoutot Exp $
+--- Makefile.orig	Thu Jan 12 22:05:47 2006
++++ Makefile	Sat Nov 11 14:24:56 2006
+@@ -3,8 +3,6 @@
+ # Makefile for Angry, Drunken Dwarves.
+ # $Id: patch-Makefile,v 1.1.1.1 2006/11/11 14:34:34 ajacoutot Exp $
+ 
+-PREFIX ?= /usr/local
+-
+ MODULES = ai.py \
+           boxes.py \
+           characters.py \
+@@ -23,7 +21,7 @@ MODULES = ai.py \
+           util.py \
+           wipes.py
+ 
+-TO = share/games/angrydd
++TO = share/angrydd
+ 
+ all: check
+ 
+@@ -33,15 +31,14 @@ check:
+ 	@./check.py
+ 
+ install:
+-	install -d $(DESTDIR)$(PREFIX)/$(TO)/characters
+-	install -m 755 angrydd.py $(DESTDIR)$(PREFIX)/$(TO)
+-	install -m 644 $(MODULES) angrydd.png $(DESTDIR)$(PREFIX)/$(TO)
+-	cp -R music sounds images $(DESTDIR)$(PREFIX)/$(TO)
+-	cp -R characters/*.dwarf* characters/default $(DESTDIR)$(PREFIX)/$(TO)/characters
+-	install -d $(DESTDIR)$(PREFIX)/games
+-	ln -sf ../$(TO)/angrydd.py $(DESTDIR)$(PREFIX)/games/angrydd
+-	mkdir -p $(DESTDIR)$(PREFIX)/share/man/man6/
+-	install -m 644 angrydd.6 $(DESTDIR)$(PREFIX)/share/man/man6/angrydd.6
++	${BSD_INSTALL_DATA_DIR} $(PREFIX)/$(TO)/characters
++	${BSD_INSTALL_SCRIPT} angrydd.py $(PREFIX)/$(TO)
++	${BSD_INSTALL_DATA} $(MODULES) angrydd.png $(PREFIX)/$(TO)
++	cp -R music sounds images $(PREFIX)/$(TO)
++	cp -R characters/*.dwarf* characters/default $(PREFIX)/$(TO)/characters
++	ln -sf ../$(TO)/angrydd.py $(PREFIX)/bin/angrydd
++	${BSD_INSTALL_MAN_DIR} $(PREFIX)/man/man6/
++	${BSD_INSTALL_MAN} angrydd.6 $(PREFIX)/man/man6/angrydd.6
+ 
+ clean:
+ 	rm -f *.pyc
