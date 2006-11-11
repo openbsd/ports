@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.435 2006/11/06 14:32:18 espie Exp $
+# $OpenBSD: Makefile,v 1.436 2006/11/11 04:37:51 alek Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -28,6 +28,7 @@
      SUBDIR += centericq
      SUBDIR += cftp
      SUBDIR += charm
+     SUBDIR += cjc
      SUBDIR += clive
      SUBDIR += clog
      SUBDIR += cnupm
@@ -278,6 +279,7 @@
      SUBDIR += py-libpcap
      SUBDIR += py-msnp
      SUBDIR += py-snmp
+     SUBDIR += py-xmpp
      SUBDIR += quagga
      SUBDIR += queso
      SUBDIR += quirc
