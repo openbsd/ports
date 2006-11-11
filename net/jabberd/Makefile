@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2006/08/03 23:15:57 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2006/11/11 14:38:23 mbalmer Exp $
 
 COMMENT=		"jabber server"
 DISTNAME=		jabberd-2.0s11
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		net
 HOMEPAGE=		http://jabberd.jabberstudio.org/2/
 MAINTAINER=		Gerardo Santana Gomez Garrido <gerardo.santana@gmail.com>
@@ -65,7 +66,7 @@ CONFIGURE_ARGS+=	--disable-db
 .if ${FLAVOR:L:Mldap}
 LIB_DEPENDS+=		ldap.>=8,lber.>=8:openldap-*->=2.3:databases/openldap
 CONFIGURE_ARGS+=	--enable-ldap
-WANTLIB+=		sasl2
+WANTLIB+=		sasl2 asn1 com_err gssapi krb5
 .else
 CONFIGURE_ARGS+=	--disable-ldap
 .endif
