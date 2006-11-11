@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2006/07/23 07:21:15 sturm Exp $
---- configure.orig	Wed Apr 19 05:52:19 2006
-+++ configure	Thu Jul 20 22:42:43 2006
-@@ -24328,13 +24328,13 @@ if test "${with_pgsql+set}" = set; then
+$OpenBSD: patch-configure,v 1.6 2006/11/11 17:17:43 sturm Exp $
+--- configure.orig	Wed Nov  1 22:24:09 2006
++++ configure	Sat Nov 11 14:38:22 2006
+@@ -24329,13 +24329,13 @@ if test "${with_pgsql+set}" = set; then
    PGSQL=$withval
  fi;
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.5 2006/07/23 07:21:15 sturm Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -24391,12 +24391,12 @@ if test $ac_cv_lib_crypt_main = yes; the
+@@ -24392,12 +24392,12 @@ if test $ac_cv_lib_crypt_main = yes; the
  #define HAVE_LIBCRYPT 1
  _ACEOF
  
@@ -33,7 +33,7 @@ $OpenBSD: patch-configure,v 1.5 2006/07/23 07:21:15 sturm Exp $
      LDFLAGS="$LDFLAGS -L$PGSQL/lib"
      CPPFLAGS="$CPPFLAGS -I$PGSQL/include"
    fi
-@@ -24407,7 +24407,7 @@ if test "${ac_cv_lib_pq_PQsetdbLogin+set
+@@ -24408,7 +24408,7 @@ if test "${ac_cv_lib_pq_PQsetdbLogin+set
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -42,7 +42,7 @@ $OpenBSD: patch-configure,v 1.5 2006/07/23 07:21:15 sturm Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -24926,16 +24926,16 @@ fi
+@@ -24927,16 +24927,16 @@ fi
  done
  
      if [ -n "$PGSQL" -a "$ac_cv_header_libpq_fe_h" = "yes" ]; then
@@ -65,3 +65,21 @@ $OpenBSD: patch-configure,v 1.5 2006/07/23 07:21:15 sturm Exp $
        PGINCLUDE="-I$PGSQL/include"
      fi
      if test -z "$PGINCLUDE"; then
+@@ -26866,7 +26866,7 @@ done
+ 
+ if test "$FOUNDINCLUDE" = "no"; then
+   _SAVEDCPPFLAGS="$CPPFLAGS"
+-  CPPFLAGS="$_SAVEDCPPFLAGS -I/usr/kerberos/include"
++  CPPFLAGS="$_SAVEDCPPFLAGS -I/usr/include/kerberosV"
+   unset ac_cv_header_krb5_h
+ 
+ for ac_header in krb5.h
+@@ -27013,7 +27013,7 @@ if test `eval echo '${'$as_ac_Header'}'`
+   cat >>confdefs.h <<_ACEOF
+ #define `echo "HAVE_$ac_header" | $as_tr_cpp` 1
+ _ACEOF
+- KRB5INCLUDE="-I/usr/kerberos/include"
++ KRBINCLUDE="-I/usr/include/kerberosV"
+                    FOUNDINCLUDE=yes
+ else
+   FOUNDINCLUDE=no

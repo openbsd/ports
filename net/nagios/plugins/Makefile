@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/11/11 14:16:23 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.13 2006/11/11 17:17:43 sturm Exp $
 
 COMMENT=	"nagios base plugins"
 COMMENT-fping=	"fping plugin"
@@ -10,12 +10,12 @@ COMMENT-pgsql=	"postgresql plugin"
 COMMENT-samba=	"samba plugin"
 COMMENT-snmp=	"plugins using snmp"
 
-V=		1.4.3
+V=		1.4.5
 DISTNAME=	nagios-plugins-${V}
-PKGNAME=	nagios-plugins-${V}p2
+PKGNAME=	nagios-plugins-${V}
 PKGNAME-fping=	nagios-plugins-fping-${V}
 PKGNAME-game=	nagios-plugins-game-${V}
-PKGNAME-ldap=	nagios-plugins-ldap-${V}p0
+PKGNAME-ldap=	nagios-plugins-ldap-${V}
 PKGNAME-mysql=	nagios-plugins-mysql-${V}
 PKGNAME-ntp=	nagios-plugins-ntp-${V}
 PKGNAME-pgsql=	nagios-plugins-pgsql-${V}
@@ -51,9 +51,8 @@ CONFIGURE_ENV=	PATH_TO_FPING=${LOCALBASE}/sbin/fping \
 		PATH_TO_NTPQ=${LOCALBASE}/sbin/ntpq
 CONFIGURE_ARGS+=--libexecdir=${PREFIX}/libexec/nagios \
 		--with-cgiurl=/cgi-bin/nagios \
-		--with-nagios-user=_nagios \
-		--with-nagios-group=_nagios \
 		--with-openssl=/usr \
+		--without-gnutls
 
 PSEUDO_FLAVORS=	no_db no_ntp no_samba no_snmp
 FLAVOR?=
@@ -102,7 +101,7 @@ LIB_DEPENDS=	lber,ldap:openldap-client-*:databases/openldap
 WANTLIB+=	m z
 LIB_DEPENDS=	mysqlclient:mysql-client-*:databases/mysql
 .  elif ${SUBPACKAGE} == "-ntp"
-WANTLIB=
+WANTLIB+=	m
 RUN_DEPENDS=	ntpdate::net/ntp
 .  elif ${SUBPACKAGE} == "-pgsql"
 WANTLIB+=	crypto
@@ -120,7 +119,8 @@ WANTLIB+=	m
 MODULES=	gettext
 .endif
 
-NO_REGRESS=	lots of broken tests
+# many broken tests, but...
+REGRESS_IS_INTERACTIVE=Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nagios-plugins
