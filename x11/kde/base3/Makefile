@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2006/10/28 11:52:13 espie Exp $
+# $OpenBSD: Makefile,v 1.67 2006/11/11 16:24:41 mbalmer Exp $
 
 COMMENT= 		"K Desktop Environment, basic applications"
 COMMENT-plugins=	"Konqueror nsplugins, essentially native JDK"
@@ -6,7 +6,7 @@ COMMENT-samba=		"K Desktop Environment, samba support"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.5
 DISTNAME=		kdebase-${VERSION}
-PKGNAME=		${DISTNAME}
+PKGNAME=		${DISTNAME}p0
 PKGNAME-samba=		kdesamba-${VERSION}
 MODKDE_VERSION?=	3.5.3
 SHARED_LIBS +=	konq                 7.0      # .6.0
@@ -48,7 +48,7 @@ WANTLIB+=	Xcursor Xrandr Xss Xt Xtst Xxf86misc \
 		pcre pcreposix qtmcop soundserver_idl ssl stdc++ \
 		vorbis vorbisenc vorbisfile xkbfile GLU fontenc \
 		Xinerama Xft Xfixes fontconfig GL Xcomposite Xdamage \
-		Half Imath IlmImf Iex Xdmcp Xau
+		Half Imath IlmImf Iex Xdmcp Xau asn1 com_err gssapi krb5
 
 .endif
 
