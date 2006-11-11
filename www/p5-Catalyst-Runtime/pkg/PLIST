@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/11/10 11:01:32 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/11/11 10:40:30 espie Exp $
 bin/catalyst.pl
 ${P5SITE}/Catalyst/
 ${P5SITE}/Catalyst.pm
@@ -64,7 +64,7 @@ ${P5SITE}/Catalyst/View.pm
 @man man/man3p/Catalyst::Engine::HTTP::Restarter::Watcher.3p
 @man man/man3p/Catalyst::Exception.3p
 @man man/man3p/Catalyst::Log.3p
-@man man/man3p/Catalyst::Manual.3p
+@comment @man man/man3p/Catalyst::Manual.3p
 @man man/man3p/Catalyst::Model.3p
 @man man/man3p/Catalyst::Request.3p
 @man man/man3p/Catalyst::Request::Upload.3p

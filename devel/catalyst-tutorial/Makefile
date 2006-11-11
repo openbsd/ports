@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2006/11/10 11:12:00 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/11 10:40:30 espie Exp $
 
 COMMENT=	"catalyst packages for the tutorial"
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 CATEGORIES=	devel perl5 www
 DISTNAME=	Task-Catalyst-Tutorial-0.02
-PKGNAME=	catalyst-tutorial-0.02v0
+PKGNAME=	catalyst-tutorial-0.02p0v0
 
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Task/}
 

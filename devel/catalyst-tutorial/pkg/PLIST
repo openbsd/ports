@@ -1,15 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/11/10 11:12:00 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/11/11 10:40:30 espie Exp $
 @conflict p5-Catalyst-Runtime-<5.7004
-${P5SITE}/Catalyst/Manual/Tutorial.pod
-${P5SITE}/Catalyst/Manual/Tutorial/AdvancedCRUD.pod
-${P5SITE}/Catalyst/Manual/Tutorial/Appendices.pod
-${P5SITE}/Catalyst/Manual/Tutorial/Authentication.pod
-${P5SITE}/Catalyst/Manual/Tutorial/Authorization.pod
-${P5SITE}/Catalyst/Manual/Tutorial/BasicCRUD.pod
-${P5SITE}/Catalyst/Manual/Tutorial/CatalystBasics.pod
-${P5SITE}/Catalyst/Manual/Tutorial/Debugging.pod
-${P5SITE}/Catalyst/Manual/Tutorial/Intro.pod
-${P5SITE}/Catalyst/Manual/Tutorial/Testing.pod
+@comment ${P5SITE}/Catalyst/Manual/Tutorial.pod
+@comment ${P5SITE}/Catalyst/Manual/Tutorial/AdvancedCRUD.pod
+@comment ${P5SITE}/Catalyst/Manual/Tutorial/Appendices.pod
+@comment ${P5SITE}/Catalyst/Manual/Tutorial/Authentication.pod
+@comment ${P5SITE}/Catalyst/Manual/Tutorial/Authorization.pod
+@comment ${P5SITE}/Catalyst/Manual/Tutorial/BasicCRUD.pod
+@comment ${P5SITE}/Catalyst/Manual/Tutorial/CatalystBasics.pod
+@comment ${P5SITE}/Catalyst/Manual/Tutorial/Debugging.pod
+@comment ${P5SITE}/Catalyst/Manual/Tutorial/Intro.pod
+@comment ${P5SITE}/Catalyst/Manual/Tutorial/Testing.pod
 ${P5SITE}/Task/
 ${P5SITE}/Task/Catalyst/
 ${P5SITE}/Task/Catalyst/Tutorial.pm
@@ -95,14 +95,14 @@ ${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/t/03podcoverage.t
 ${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/t/controller_Login.t
 ${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/t/live_app01.t
 ${P5SITE}/auto/Task/Catalyst/Tutorial/MyApp/t/model_MyAppDB.t
-@man man/man3p/Catalyst::Manual::Tutorial.3p
-@man man/man3p/Catalyst::Manual::Tutorial::AdvancedCRUD.3p
-@man man/man3p/Catalyst::Manual::Tutorial::Appendices.3p
-@man man/man3p/Catalyst::Manual::Tutorial::Authentication.3p
-@man man/man3p/Catalyst::Manual::Tutorial::Authorization.3p
-@man man/man3p/Catalyst::Manual::Tutorial::BasicCRUD.3p
-@man man/man3p/Catalyst::Manual::Tutorial::CatalystBasics.3p
-@man man/man3p/Catalyst::Manual::Tutorial::Debugging.3p
-@man man/man3p/Catalyst::Manual::Tutorial::Intro.3p
-@man man/man3p/Catalyst::Manual::Tutorial::Testing.3p
+@comment @man man/man3p/Catalyst::Manual::Tutorial.3p
+@comment @man man/man3p/Catalyst::Manual::Tutorial::AdvancedCRUD.3p
+@comment @man man/man3p/Catalyst::Manual::Tutorial::Appendices.3p
+@comment @man man/man3p/Catalyst::Manual::Tutorial::Authentication.3p
+@comment @man man/man3p/Catalyst::Manual::Tutorial::Authorization.3p
+@comment @man man/man3p/Catalyst::Manual::Tutorial::BasicCRUD.3p
+@comment @man man/man3p/Catalyst::Manual::Tutorial::CatalystBasics.3p
+@comment @man man/man3p/Catalyst::Manual::Tutorial::Debugging.3p
+@comment @man man/man3p/Catalyst::Manual::Tutorial::Intro.3p
+@comment @man man/man3p/Catalyst::Manual::Tutorial::Testing.3p
 @man man/man3p/Task::Catalyst::Tutorial.3p
