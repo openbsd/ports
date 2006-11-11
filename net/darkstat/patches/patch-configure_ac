@@ -1,0 +1,31 @@
+$OpenBSD: patch-configure_ac,v 1.1 2006/11/11 18:11:09 ckuethe Exp $
+--- configure.ac.orig	Sun Aug  6 20:20:54 2006
++++ configure.ac	Fri Nov  3 17:59:07 2006
+@@ -114,27 +114,6 @@ fi
+ 
+ 
+ 
+-# Check for pcap_get_selectable_fd()
+-AC_CHECK_LIB(pcap, pcap_get_selectable_fd,
+- [AC_DEFINE(HAVE_PCAP_GET_SELECTABLE_FD, 1,
+-  [Define to 1 if libpcap has pcap_get_selectable_fd().])],
+- [cat <<END_MSG
+-$RULE
+-
+-Your libpcap doesn't implement pcap_get_selectable_fd()
+-This is indicative of an outdated libpcap.
+-
+-A workaround for this has been enabled (in cap.c) which may
+-or may not work in your situation.  Either way, I would
+-suggest that you upgrade the libpcap on your system and
+-re-run configure.
+-
+-$RULE
+-END_MSG
+-])
+-
+-
+-
+ # A real OS will have err.h
+ AC_CHECK_HEADERS(err.h)
+ 
