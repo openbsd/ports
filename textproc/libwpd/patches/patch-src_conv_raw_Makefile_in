@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_conv_raw_Makefile_in,v 1.1 2006/11/11 14:39:10 robert Exp $
+--- src/conv/raw/Makefile.in.orig	Fri Nov 10 15:56:10 2006
++++ src/conv/raw/Makefile.in	Fri Nov 10 15:56:18 2006
+@@ -216,7 +216,7 @@ target_alias = @target_alias@
+ AM_CXXFLAGS = $(LIBWPD_CXXFLAGS) $(DEBUG_CXXFLAGS) -I$(top_srcdir)/src/lib/
+ wpd2raw_LDFLAGS = -L../../lib/
+ wpd2raw_DEPENDENCIES = @WPD2RAW_WIN32_RESOURCE@
+-wpd2raw_LDADD = -lwpd-0.8 -lwpd-stream-0.8 $(LIBWPD_LIBS) @WPD2RAW_WIN32_RESOURCE@
++wpd2raw_LDADD = -lwpd -lwpd-stream $(LIBWPD_LIBS) @WPD2RAW_WIN32_RESOURCE@
+ wpd2raw_SOURCES = \
+ 	RawListener.cpp	 \
+ 	RawListener.h	 \

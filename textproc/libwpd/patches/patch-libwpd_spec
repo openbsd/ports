@@ -1,0 +1,27 @@
+$OpenBSD: patch-libwpd_spec,v 1.1 2006/11/11 14:39:10 robert Exp $
+--- libwpd.spec.orig	Fri Nov 10 15:08:47 2006
++++ libwpd.spec	Fri Nov 10 15:09:04 2006
+@@ -71,7 +71,7 @@ umask 022
+ 
+ %files
+ %defattr(644,root,root,755)
+-%{_libdir}/libwpd*-0.8.so.*
++%{_libdir}/libwpd*.so.*
+ 
+ %if %{!?_without_stream:1}%{?_without_stream:0}
+ %files tools
+@@ -81,10 +81,10 @@ umask 022
+ 
+ %files devel
+ %defattr(644,root,root,755)
+-%{_libdir}/libwpd*-0.8.so
+-%{_libdir}/libwpd*-0.8.*a
+-%{_libdir}/pkgconfig/libwpd*-0.8.pc
+-%{_includedir}/libwpd-0.8/libwpd
++%{_libdir}/libwpd*.so
++%{_libdir}/libwpd*.*a
++%{_libdir}/pkgconfig/libwpd*.pc
++%{_includedir}/libwpd
+ 
+ %if %{!?_without_docs:1}%{?_without_docs:0}
+ %files docs

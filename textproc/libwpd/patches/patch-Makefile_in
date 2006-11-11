@@ -1,0 +1,44 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2006/11/11 14:39:10 robert Exp $
+--- Makefile.in.orig	Fri Nov 10 15:06:48 2006
++++ Makefile.in	Fri Nov 10 15:07:40 2006
+@@ -38,7 +38,7 @@ build_triplet = @build@
+ host_triplet = @host@
+ DIST_COMMON = README $(am__configure_deps) $(srcdir)/Makefile.am \
+ 	$(srcdir)/Makefile.in $(srcdir)/config.h.in \
+-	$(srcdir)/libwpd-0.8.pc.in $(srcdir)/libwpd-stream-0.8.pc.in \
++	$(srcdir)/libwpd.pc.in $(srcdir)/libwpd-stream.pc.in \
+ 	$(srcdir)/libwpd-zip.in $(srcdir)/libwpd.spec.in \
+ 	$(top_srcdir)/configure COPYING INSTALL TODO config.guess \
+ 	config.sub depcomp install-sh ltmain.sh missing
+@@ -51,7 +51,7 @@ am__CONFIG_DISTCLEAN_FILES = config.stat
+  configure.lineno configure.status.lineno
+ mkinstalldirs = $(install_sh) -d
+ CONFIG_HEADER = config.h
+-CONFIG_CLEAN_FILES = libwpd-0.8.pc libwpd-stream-0.8.pc libwpd.spec \
++CONFIG_CLEAN_FILES = libwpd.pc libwpd-stream.pc libwpd.spec \
+ 	libwpd-zip
+ SOURCES =
+ DIST_SOURCES =
+@@ -218,8 +218,8 @@ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ pkgconfdir = $(libdir)/pkgconfig
+-@WITH_LIBWPD_STREAM_TRUE@LIBWPD_STREAM_PC = libwpd-stream-0.8.pc
+-pkgconf_DATA = libwpd-0.8.pc $(LIBWPD_STREAM_PC)
++@WITH_LIBWPD_STREAM_TRUE@LIBWPD_STREAM_PC = libwpd-stream.pc
++pkgconf_DATA = libwpd.pc $(LIBWPD_STREAM_PC)
+ SUBDIRS = src build docs autopackage
+ EXTRA_DIST = \
+ 	autogen.sh	\
+@@ -289,9 +289,9 @@ $(srcdir)/config.h.in:  $(am__configure_
+ 
+ distclean-hdr:
+ 	-rm -f config.h stamp-h1
+-libwpd-0.8.pc: $(top_builddir)/config.status $(srcdir)/libwpd-0.8.pc.in
++libwpd.pc: $(top_builddir)/config.status $(srcdir)/libwpd.pc.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
+-libwpd-stream-0.8.pc: $(top_builddir)/config.status $(srcdir)/libwpd-stream-0.8.pc.in
++libwpd-stream.pc: $(top_builddir)/config.status $(srcdir)/libwpd-stream.pc.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
+ libwpd.spec: $(top_builddir)/config.status $(srcdir)/libwpd.spec.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@

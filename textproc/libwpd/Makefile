@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/10 12:41:26 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/11 14:39:10 robert Exp $
 
 COMMENT=	"library for importing and exporting WordPerfect(tm) documents"
 
 DISTNAME=	libwpd-0.8.7
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	textproc
 
-SHARED_LIBS=	wpd-0.8		8.7 \
-		wpd-stream-0.8	8.7
+SHARED_LIBS=	wpd		8.7 \
+		wpd-stream	8.7
 
 HOMEPAGE=	http://libwpd.sourceforge.net/
 
@@ -27,5 +27,12 @@ LIB_DEPENDS=	gsf-1::devel/libgsf
 
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE= 	gnu
+
+pre-configure:
+	@cd ${WRKSRC} && \
+		for PCFILE in *.pc.in; do \
+			cp $$PCFILE \
+			`echo $$PCFILE | sed 's/-0.8//g'`; \
+		done
 
 .include <bsd.port.mk>

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_conv_html_Makefile_in,v 1.1 2006/11/11 14:39:10 robert Exp $
+--- src/conv/html/Makefile.in.orig	Fri Nov 10 15:56:45 2006
++++ src/conv/html/Makefile.in	Fri Nov 10 15:56:53 2006
+@@ -216,7 +216,7 @@ target_alias = @target_alias@
+ AM_CXXFLAGS = $(LIBWPD_CXXFLAGS) $(DEBUG_CXXFLAGS) -I$(top_srcdir)/src/lib/
+ wpd2html_LDFLAGS = -L../../lib/
+ wpd2html_DEPENDENCIES = @WPD2HTML_WIN32_RESOURCE@
+-wpd2html_LDADD = -lwpd-0.8 -lwpd-stream-0.8 $(LIBWPD_LIBS) @WPD2HTML_WIN32_RESOURCE@
++wpd2html_LDADD = -lwpd -lwpd-stream $(LIBWPD_LIBS) @WPD2HTML_WIN32_RESOURCE@
+ wpd2html_SOURCES = \
+ 	HtmlListenerImpl.cpp	\
+ 	HtmlListenerImpl.h	\

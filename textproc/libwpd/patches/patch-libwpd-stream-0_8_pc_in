@@ -1,0 +1,17 @@
+$OpenBSD: patch-libwpd-stream-0_8_pc_in,v 1.1 2006/11/11 14:39:10 robert Exp $
+--- libwpd-stream-0.8.pc.in.orig	Mon Oct  9 05:42:27 2006
++++ libwpd-stream-0.8.pc.in	Fri Nov 10 16:11:26 2006
+@@ -3,9 +3,9 @@ exec_prefix=@exec_prefix@
+ libdir=@libdir@
+ includedir=@includedir@
+                                                                        
+-Name: libwpd-stream-0.8
++Name: libwpd-stream
+ Description: GSFStream support for libwpd, a library for reading and writing Corel WordPerfect(tm) documents
+ Version: @VERSION@
+-Requires: glib-2.0 libgsf-1 libwpd-0.8
+-Libs: -L${libdir} -lwpd-stream-0.8
+-Cflags: -I${includedir}/libwpd-0.8
++Requires: glib-2.0 libgsf-1 libwpd
++Libs: -L${libdir} -lwpd-stream
++Cflags: -I${includedir}

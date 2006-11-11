@@ -1,0 +1,23 @@
+$OpenBSD: patch-configure,v 1.1 2006/11/11 14:39:10 robert Exp $
+--- configure.orig	Fri Nov 10 15:08:09 2006
++++ configure	Fri Nov 10 15:08:23 2006
+@@ -19501,7 +19501,7 @@ LIBWPD_CXXFLAGS="$LIBWPD_CFLAGS"
+ 
+ 
+ 
+-                                                                                                                                                                                                                            ac_config_files="$ac_config_files Makefile src/Makefile src/conv/Makefile src/conv/html/Makefile src/conv/html/wpd2html.rc src/conv/raw/Makefile src/conv/raw/wpd2raw.rc src/conv/text/Makefile src/conv/text/wpd2text.rc src/lib/Makefile src/lib/libwpd.rc src/lib/libwpd-stream.rc docs/Makefile docs/doxygen/Makefile build/Makefile build/win32/Makefile libwpd-0.8.pc libwpd-stream-0.8.pc libwpd.spec libwpd-zip autopackage/Makefile autopackage/default.apspec"
++                                                                                                                                                                                                                            ac_config_files="$ac_config_files Makefile src/Makefile src/conv/Makefile src/conv/html/Makefile src/conv/html/wpd2html.rc src/conv/raw/Makefile src/conv/raw/wpd2raw.rc src/conv/text/Makefile src/conv/text/wpd2text.rc src/lib/Makefile src/lib/libwpd.rc src/lib/libwpd-stream.rc docs/Makefile docs/doxygen/Makefile build/Makefile build/win32/Makefile libwpd.pc libwpd-stream.pc libwpd.spec libwpd-zip autopackage/Makefile autopackage/default.apspec"
+ cat >confcache <<\_ACEOF
+ # This file is a shell script that caches the results of configure
+ # tests run on this system so they can be shared between configure
+@@ -20109,8 +20109,8 @@ do
+   "docs/doxygen/Makefile" ) CONFIG_FILES="$CONFIG_FILES docs/doxygen/Makefile" ;;
+   "build/Makefile" ) CONFIG_FILES="$CONFIG_FILES build/Makefile" ;;
+   "build/win32/Makefile" ) CONFIG_FILES="$CONFIG_FILES build/win32/Makefile" ;;
+-  "libwpd-0.8.pc" ) CONFIG_FILES="$CONFIG_FILES libwpd-0.8.pc" ;;
+-  "libwpd-stream-0.8.pc" ) CONFIG_FILES="$CONFIG_FILES libwpd-stream-0.8.pc" ;;
++  "libwpd.pc" ) CONFIG_FILES="$CONFIG_FILES libwpd.pc" ;;
++  "libwpd-stream.pc" ) CONFIG_FILES="$CONFIG_FILES libwpd-stream.pc" ;;
+   "libwpd.spec" ) CONFIG_FILES="$CONFIG_FILES libwpd.spec" ;;
+   "libwpd-zip" ) CONFIG_FILES="$CONFIG_FILES libwpd-zip" ;;
+   "autopackage/Makefile" ) CONFIG_FILES="$CONFIG_FILES autopackage/Makefile" ;;

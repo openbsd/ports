@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_conv_text_Makefile_in,v 1.1 2006/11/11 14:39:10 robert Exp $
+--- src/conv/text/Makefile.in.orig	Fri Nov 10 15:57:07 2006
++++ src/conv/text/Makefile.in	Fri Nov 10 15:57:17 2006
+@@ -216,7 +216,7 @@ target_alias = @target_alias@
+ AM_CXXFLAGS = $(LIBWPD_CXXFLAGS) $(DEBUG_CXXFLAGS) -I$(top_srcdir)/src/lib/
+ wpd2text_LDFLAGS = -L../../lib/
+ wpd2text_DEPENDENCIES = @WPD2TEXT_WIN32_RESOURCE@ 
+-wpd2text_LDADD = -lwpd-0.8 -lwpd-stream-0.8 $(LIBWPD_LIBS) @WPD2TEXT_WIN32_RESOURCE@ 
++wpd2text_LDADD = -lwpd -lwpd-stream $(LIBWPD_LIBS) @WPD2TEXT_WIN32_RESOURCE@ 
+ wpd2text_SOURCES = \
+ 	TextListenerImpl.cpp \
+ 	TextListenerImpl.h \

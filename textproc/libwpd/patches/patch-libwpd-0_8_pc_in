@@ -1,0 +1,15 @@
+$OpenBSD: patch-libwpd-0_8_pc_in,v 1.1 2006/11/11 14:39:10 robert Exp $
+--- libwpd-0.8.pc.in.orig	Mon Oct  9 05:42:27 2006
++++ libwpd-0.8.pc.in	Fri Nov 10 16:11:19 2006
+@@ -3,8 +3,8 @@ exec_prefix=@exec_prefix@
+ libdir=@libdir@
+ includedir=@includedir@
+ 
+-Name: libwpd-0.8
++Name: libwpd
+ Description: A library for reading and writing Corel WordPerfect(tm) documents
+ Version: @VERSION@
+-Libs: -L${libdir} -lwpd-0.8
+-Cflags: -I${includedir}/libwpd-0.8
++Libs: -L${libdir} -lwpd
++Cflags: -I${includedir}

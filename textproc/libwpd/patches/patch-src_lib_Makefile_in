@@ -1,0 +1,242 @@
+$OpenBSD: patch-src_lib_Makefile_in,v 1.1 2006/11/11 14:39:10 robert Exp $
+--- src/lib/Makefile.in.orig	Mon Oct  9 06:00:16 2006
++++ src/lib/Makefile.in	Fri Nov 10 15:40:29 2006
+@@ -38,8 +38,8 @@ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+ subdir = src/lib
+-DIST_COMMON = $(am__libwpd_stream_0_8_include_HEADERS_DIST) \
+-	$(libwpd_0_8_include_HEADERS) $(srcdir)/Makefile.am \
++DIST_COMMON = $(am__libwpd_stream_include_HEADERS_DIST) \
++	$(libwpd_include_HEADERS) $(srcdir)/Makefile.am \
+ 	$(srcdir)/Makefile.in $(srcdir)/libwpd-stream.rc.in \
+ 	$(srcdir)/libwpd.rc.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+@@ -56,11 +56,11 @@ am__vpath_adj = case $$p in \
+   esac;
+ am__strip_dir = `echo $$p | sed -e 's|^.*/||'`;
+ am__installdirs = "$(DESTDIR)$(libdir)" \
+-	"$(DESTDIR)$(libwpd_0_8_includedir)" \
+-	"$(DESTDIR)$(libwpd_stream_0_8_includedir)"
++	"$(DESTDIR)$(libwpd_includedir)" \
++	"$(DESTDIR)$(libwpd_stream_includedir)"
+ libLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+-am_libwpd_0_8_la_OBJECTS = libwpd_internal.lo libwpd_math.lo \
++am_libwpd_la_OBJECTS = libwpd_internal.lo libwpd_math.lo \
+ 	WP1BottomMarginGroup.lo WP1CenterTextGroup.lo \
+ 	WP1ContentListener.lo WP1ExtendedCharacterGroup.lo \
+ 	WP1FileStructure.lo WP1FixedLengthGroup.lo \
+@@ -124,14 +124,14 @@ am_libwpd_0_8_la_OBJECTS = libwpd_intern
+ 	WPXPart.lo WPXProperty.lo WPXPropertyList.lo \
+ 	WPXPropertyListVector.lo WPXString.lo WPXStylesListener.lo \
+ 	WPXSubDocument.lo WPXTable.lo
+-libwpd_0_8_la_OBJECTS = $(am_libwpd_0_8_la_OBJECTS)
++libwpd_la_OBJECTS = $(am_libwpd_la_OBJECTS)
+ am__DEPENDENCIES_1 =
+-am__libwpd_stream_0_8_la_SOURCES_DIST = GSFStream.cpp
++am__libwpd_stream_la_SOURCES_DIST = GSFStream.cpp
+ am__objects_1 = GSFStream.lo
+-@WITH_LIBWPD_STREAM_TRUE@am_libwpd_stream_0_8_la_OBJECTS =  \
++@WITH_LIBWPD_STREAM_TRUE@am_libwpd_stream_la_OBJECTS =  \
+ @WITH_LIBWPD_STREAM_TRUE@	$(am__objects_1)
+-libwpd_stream_0_8_la_OBJECTS = $(am_libwpd_stream_0_8_la_OBJECTS)
+-@WITH_LIBWPD_STREAM_TRUE@am_libwpd_stream_0_8_la_rpath = -rpath \
++libwpd_stream_la_OBJECTS = $(am_libwpd_stream_la_OBJECTS)
++@WITH_LIBWPD_STREAM_TRUE@am_libwpd_stream_la_rpath = -rpath \
+ @WITH_LIBWPD_STREAM_TRUE@	$(libdir)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+@@ -152,14 +152,14 @@ LTCOMPILE = $(LIBTOOL) --tag=CC --mode=c
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) --tag=CC --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+-SOURCES = $(libwpd_0_8_la_SOURCES) $(libwpd_stream_0_8_la_SOURCES)
+-DIST_SOURCES = $(libwpd_0_8_la_SOURCES) \
+-	$(am__libwpd_stream_0_8_la_SOURCES_DIST)
+-libwpd_0_8_includeHEADERS_INSTALL = $(INSTALL_HEADER)
+-am__libwpd_stream_0_8_include_HEADERS_DIST = GSFStream.h
+-libwpd_stream_0_8_includeHEADERS_INSTALL = $(INSTALL_HEADER)
+-HEADERS = $(libwpd_0_8_include_HEADERS) \
+-	$(libwpd_stream_0_8_include_HEADERS)
++SOURCES = $(libwpd_la_SOURCES) $(libwpd_stream_la_SOURCES)
++DIST_SOURCES = $(libwpd_la_SOURCES) \
++	$(am__libwpd_stream_la_SOURCES_DIST)
++libwpd_includeHEADERS_INSTALL = $(INSTALL_HEADER)
++am__libwpd_stream_include_HEADERS_DIST = GSFStream.h
++libwpd_stream_includeHEADERS_INSTALL = $(INSTALL_HEADER)
++HEADERS = $(libwpd_include_HEADERS) \
++	$(libwpd_stream_include_HEADERS)
+ ETAGS = etags
+ CTAGS = ctags
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+@@ -302,18 +302,18 @@ target_alias = @target_alias@
+ @OS_WIN32_FALSE@version_info = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ @OS_WIN32_TRUE@version_info = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -avoid-version
+ @WITH_LIBWPD_STREAM_FALSE@target_libwpd_stream = 
+-@WITH_LIBWPD_STREAM_TRUE@target_libwpd_stream = libwpd-stream-0.8.la
+-lib_LTLIBRARIES = libwpd-0.8.la $(target_libwpd_stream)
+-libwpd_0_8_includedir = $(includedir)/libwpd-0.8/libwpd
+-libwpd_0_8_include_HEADERS = libwpd.h libwpd_types.h WPXStream.h WPXProperty.h WPXPropertyList.h \
++@WITH_LIBWPD_STREAM_TRUE@target_libwpd_stream = libwpd-stream.la
++lib_LTLIBRARIES = libwpd.la $(target_libwpd_stream)
++libwpd_includedir = $(includedir)/libwpd
++libwpd_include_HEADERS = libwpd.h libwpd_types.h WPXStream.h WPXProperty.h WPXPropertyList.h \
+ WPXString.h WPXPropertyListVector.h WPDocument.h WPXHLListenerImpl.h
+ 
+ INCLUDES = -I$(srcdir)
+ AM_CXXFLAGS = $(LIBWPD_CXXFLAGS) $(DEBUG_CXXFLAGS)
+-libwpd_0_8_la_LIBADD = @LIBWPD_WIN32_RESOURCE@
+-libwpd_0_8_la_DEPENDENCIES = @LIBWPD_WIN32_RESOURCE@
+-libwpd_0_8_la_LDFLAGS = $(version_info) -export-dynamic $(no_undefined)
+-libwpd_0_8_la_SOURCES = \
++libwpd_la_LIBADD = @LIBWPD_WIN32_RESOURCE@
++libwpd_la_DEPENDENCIES = @LIBWPD_WIN32_RESOURCE@
++libwpd_la_LDFLAGS = $(version_info) -export-dynamic $(no_undefined)
++libwpd_la_SOURCES = \
+ 	libwpd_internal.cpp \
+ 	libwpd_math.cpp \
+ 	WP1BottomMarginGroup.cpp \
+@@ -620,12 +620,12 @@ libwpd_0_8_la_SOURCES = \
+ 
+ libwpd_stream_headers = GSFStream.h
+ libwpd_stream_sources = GSFStream.cpp
+-@WITH_LIBWPD_STREAM_TRUE@libwpd_stream_0_8_includedir = $(includedir)/libwpd-0.8/libwpd
+-@WITH_LIBWPD_STREAM_TRUE@libwpd_stream_0_8_include_HEADERS = $(libwpd_stream_headers)
+-@WITH_LIBWPD_STREAM_TRUE@libwpd_stream_0_8_la_LIBADD = $(LIBWPD_LIBS) @LIBWPD_STREAM_WIN32_RESOURCE@
+-@WITH_LIBWPD_STREAM_TRUE@libwpd_stream_0_8_la_DEPENDENCIES = @LIBWPD_STREAM_WIN32_RESOURCE@
+-@WITH_LIBWPD_STREAM_TRUE@libwpd_stream_0_8_la_LDFLAGS = $(version_info) -export-dynamic $(no_undefined)
+-@WITH_LIBWPD_STREAM_TRUE@libwpd_stream_0_8_la_SOURCES = $(libwpd_stream_sources)
++@WITH_LIBWPD_STREAM_TRUE@libwpd_stream_includedir = $(includedir)/libwpd
++@WITH_LIBWPD_STREAM_TRUE@libwpd_stream_include_HEADERS = $(libwpd_stream_headers)
++@WITH_LIBWPD_STREAM_TRUE@libwpd_stream_la_LIBADD = $(LIBWPD_LIBS) @LIBWPD_STREAM_WIN32_RESOURCE@
++@WITH_LIBWPD_STREAM_TRUE@libwpd_stream_la_DEPENDENCIES = @LIBWPD_STREAM_WIN32_RESOURCE@
++@WITH_LIBWPD_STREAM_TRUE@libwpd_stream_la_LDFLAGS = $(version_info) -export-dynamic $(no_undefined)
++@WITH_LIBWPD_STREAM_TRUE@libwpd_stream_la_SOURCES = $(libwpd_stream_sources)
+ 
+ # Include the GSFStream.* in case we build a tarball without stream
+ EXTRA_DIST = \
+@@ -705,10 +705,10 @@ clean-libLTLIBRARIES:
+ 	  echo "rm -f \"$${dir}/so_locations\""; \
+ 	  rm -f "$${dir}/so_locations"; \
+ 	done
+-libwpd-0.8.la: $(libwpd_0_8_la_OBJECTS) $(libwpd_0_8_la_DEPENDENCIES) 
+-	$(CXXLINK) -rpath $(libdir) $(libwpd_0_8_la_LDFLAGS) $(libwpd_0_8_la_OBJECTS) $(libwpd_0_8_la_LIBADD) $(LIBS)
+-libwpd-stream-0.8.la: $(libwpd_stream_0_8_la_OBJECTS) $(libwpd_stream_0_8_la_DEPENDENCIES) 
+-	$(CXXLINK) $(am_libwpd_stream_0_8_la_rpath) $(libwpd_stream_0_8_la_LDFLAGS) $(libwpd_stream_0_8_la_OBJECTS) $(libwpd_stream_0_8_la_LIBADD) $(LIBS)
++libwpd.la: $(libwpd_la_OBJECTS) $(libwpd_la_DEPENDENCIES) 
++	$(CXXLINK) -rpath $(libdir) $(libwpd_la_LDFLAGS) $(libwpd_la_OBJECTS) $(libwpd_la_LIBADD) $(LIBS)
++libwpd-stream.la: $(libwpd_stream_la_OBJECTS) $(libwpd_stream_la_DEPENDENCIES) 
++	$(CXXLINK) $(am_libwpd_stream_la_rpath) $(libwpd_stream_la_LDFLAGS) $(libwpd_stream_la_OBJECTS) $(libwpd_stream_la_LIBADD) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)
+@@ -897,39 +897,39 @@ clean-libtool:
+ distclean-libtool:
+ 	-rm -f libtool
+ uninstall-info-am:
+-install-libwpd_0_8_includeHEADERS: $(libwpd_0_8_include_HEADERS)
++install-libwpd_includeHEADERS: $(libwpd_include_HEADERS)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(libwpd_0_8_includedir)" || $(mkdir_p) "$(DESTDIR)$(libwpd_0_8_includedir)"
+-	@list='$(libwpd_0_8_include_HEADERS)'; for p in $$list; do \
++	test -z "$(libwpd_includedir)" || $(mkdir_p) "$(DESTDIR)$(libwpd_includedir)"
++	@list='$(libwpd_include_HEADERS)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f=$(am__strip_dir) \
+-	  echo " $(libwpd_0_8_includeHEADERS_INSTALL) '$$d$$p' '$(DESTDIR)$(libwpd_0_8_includedir)/$$f'"; \
+-	  $(libwpd_0_8_includeHEADERS_INSTALL) "$$d$$p" "$(DESTDIR)$(libwpd_0_8_includedir)/$$f"; \
++	  echo " $(libwpd_includeHEADERS_INSTALL) '$$d$$p' '$(DESTDIR)$(libwpd_includedir)/$$f'"; \
++	  $(libwpd_includeHEADERS_INSTALL) "$$d$$p" "$(DESTDIR)$(libwpd_includedir)/$$f"; \
+ 	done
+ 
+-uninstall-libwpd_0_8_includeHEADERS:
++uninstall-libwpd_includeHEADERS:
+ 	@$(NORMAL_UNINSTALL)
+-	@list='$(libwpd_0_8_include_HEADERS)'; for p in $$list; do \
++	@list='$(libwpd_include_HEADERS)'; for p in $$list; do \
+ 	  f=$(am__strip_dir) \
+-	  echo " rm -f '$(DESTDIR)$(libwpd_0_8_includedir)/$$f'"; \
+-	  rm -f "$(DESTDIR)$(libwpd_0_8_includedir)/$$f"; \
++	  echo " rm -f '$(DESTDIR)$(libwpd_includedir)/$$f'"; \
++	  rm -f "$(DESTDIR)$(libwpd_includedir)/$$f"; \
+ 	done
+-install-libwpd_stream_0_8_includeHEADERS: $(libwpd_stream_0_8_include_HEADERS)
++install-libwpd_stream_includeHEADERS: $(libwpd_stream_include_HEADERS)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(libwpd_stream_0_8_includedir)" || $(mkdir_p) "$(DESTDIR)$(libwpd_stream_0_8_includedir)"
+-	@list='$(libwpd_stream_0_8_include_HEADERS)'; for p in $$list; do \
++	test -z "$(libwpd_stream_includedir)" || $(mkdir_p) "$(DESTDIR)$(libwpd_stream_includedir)"
++	@list='$(libwpd_stream_include_HEADERS)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f=$(am__strip_dir) \
+-	  echo " $(libwpd_stream_0_8_includeHEADERS_INSTALL) '$$d$$p' '$(DESTDIR)$(libwpd_stream_0_8_includedir)/$$f'"; \
+-	  $(libwpd_stream_0_8_includeHEADERS_INSTALL) "$$d$$p" "$(DESTDIR)$(libwpd_stream_0_8_includedir)/$$f"; \
++	  echo " $(libwpd_stream_includeHEADERS_INSTALL) '$$d$$p' '$(DESTDIR)$(libwpd_stream_includedir)/$$f'"; \
++	  $(libwpd_stream_includeHEADERS_INSTALL) "$$d$$p" "$(DESTDIR)$(libwpd_stream_includedir)/$$f"; \
+ 	done
+ 
+-uninstall-libwpd_stream_0_8_includeHEADERS:
++uninstall-libwpd_stream_includeHEADERS:
+ 	@$(NORMAL_UNINSTALL)
+-	@list='$(libwpd_stream_0_8_include_HEADERS)'; for p in $$list; do \
++	@list='$(libwpd_stream_include_HEADERS)'; for p in $$list; do \
+ 	  f=$(am__strip_dir) \
+-	  echo " rm -f '$(DESTDIR)$(libwpd_stream_0_8_includedir)/$$f'"; \
+-	  rm -f "$(DESTDIR)$(libwpd_stream_0_8_includedir)/$$f"; \
++	  echo " rm -f '$(DESTDIR)$(libwpd_stream_includedir)/$$f'"; \
++	  rm -f "$(DESTDIR)$(libwpd_stream_includedir)/$$f"; \
+ 	done
+ 
+ ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
+@@ -1011,7 +1011,7 @@ check-am: all-am
+ check: check-am
+ all-am: Makefile $(LTLIBRARIES) $(HEADERS)
+ installdirs:
+-	for dir in "$(DESTDIR)$(libdir)" "$(DESTDIR)$(libwpd_0_8_includedir)" "$(DESTDIR)$(libwpd_stream_0_8_includedir)"; do \
++	for dir in "$(DESTDIR)$(libdir)" "$(DESTDIR)$(libwpd_includedir)" "$(DESTDIR)$(libwpd_stream_includedir)"; do \
+ 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+ 	done
+ install: install-am
+@@ -1059,8 +1059,8 @@ info: info-am
+ 
+ info-am:
+ 
+-install-data-am: install-data-local install-libwpd_0_8_includeHEADERS \
+-	install-libwpd_stream_0_8_includeHEADERS
++install-data-am: install-data-local install-libwpd_includeHEADERS \
++	install-libwpd_stream_includeHEADERS
+ 
+ install-exec-am: install-libLTLIBRARIES
+ 
+@@ -1089,8 +1089,8 @@ ps: ps-am
+ ps-am:
+ 
+ uninstall-am: uninstall-info-am uninstall-libLTLIBRARIES \
+-	uninstall-libwpd_0_8_includeHEADERS \
+-	uninstall-libwpd_stream_0_8_includeHEADERS uninstall-local
++	uninstall-libwpd_includeHEADERS \
++	uninstall-libwpd_stream_includeHEADERS uninstall-local
+ 
+ .PHONY: CTAGS GTAGS all all-am check check-am clean clean-generic \
+ 	clean-libLTLIBRARIES clean-libtool ctags distclean \
+@@ -1099,15 +1099,15 @@ uninstall-am: uninstall-info-am uninstal
+ 	install install-am install-data install-data-am \
+ 	install-data-local install-exec install-exec-am install-info \
+ 	install-info-am install-libLTLIBRARIES \
+-	install-libwpd_0_8_includeHEADERS \
+-	install-libwpd_stream_0_8_includeHEADERS install-man \
++	install-libwpd_includeHEADERS \
++	install-libwpd_stream_includeHEADERS install-man \
+ 	install-strip installcheck installcheck-am installdirs \
+ 	maintainer-clean maintainer-clean-generic mostlyclean \
+ 	mostlyclean-compile mostlyclean-generic mostlyclean-libtool \
+ 	pdf pdf-am ps ps-am tags uninstall uninstall-am \
+ 	uninstall-info-am uninstall-libLTLIBRARIES \
+-	uninstall-libwpd_0_8_includeHEADERS \
+-	uninstall-libwpd_stream_0_8_includeHEADERS uninstall-local
++	uninstall-libwpd_includeHEADERS \
++	uninstall-libwpd_stream_includeHEADERS uninstall-local
+ 
+ 
+ @OS_WIN32_TRUE@install-libtool-import-lib:
