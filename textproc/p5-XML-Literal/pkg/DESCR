@@ -1,0 +1,10 @@
+This module takes one function at its "use" line.  Afterwards, 
+every single-line "<...>" call that looks like a XML literal 
+will be processed with that function, instead of the built-in 
+shell "glob".
+
+use XML::Simple;
+use XML::Literal \&XMLin;
+
+# Simple element
+my $xml1 = <hr/>;
