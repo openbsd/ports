@@ -9,3 +9,8 @@ and on the sensor side:
 # prelude-adduser register prelude-lml "idmef:w" \
 	<manager address> --uid 564 --gid 564
 
+To start prelude-lml at boot-time, you could use:
+
+if [ -x ${LOCALBASE}/bin/prelude-lml ]; then
+	echo -n ' prelude-lml'; ${LOCALBASE}/bin/prelude-lml -d
+fi

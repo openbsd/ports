@@ -1,20 +1,39 @@
-$OpenBSD: patch-prelude-lml_conf_in,v 1.2 2006/07/10 14:34:23 aanriot Exp $
---- prelude-lml.conf.in.orig	Mon Jul 10 16:06:25 2006
-+++ prelude-lml.conf.in	Mon Jul 10 16:08:01 2006
-@@ -50,25 +50,34 @@ prefix-regex = "^(?P<timestamp>.{15}) (?
+$OpenBSD: patch-prelude-lml_conf_in,v 1.3 2006/11/11 19:26:48 aanriot Exp $
+--- prelude-lml.conf.in.orig	Fri May 26 12:04:17 2006
++++ prelude-lml.conf.in	Sun Nov  5 14:54:17 2006
+@@ -43,21 +43,43 @@ include = @LIBPRELUDE_CONFIG_PREFIX@/def
+ # The same file entry / udp-server entry might be duplicated accross
+ # differents formats.
+ 
++[format=syslog]
++time-format = "%b %d %H:%M:%S"
++prefix-regex = "^(?P<timestamp>.{15}) (?P<hostname>\S+) (?:(?P<process>\S+?)(?:\[(?P<pid>[0-9]+)\])?: )?"
++file = /var/log/authlog
++# udp-server = 0.0.0.0
+ 
+ [format=syslog]
+-time-format = "%b %d %H:%M:%S" 
++time-format = "%b %d %H:%M:%S"
+ prefix-regex = "^(?P<timestamp>.{15}) (?P<hostname>\S+) (?:(?P<process>\S+?)(?:\[(?P<pid>[0-9]+)\])?: )?"
++file = /var/log/daemon
++# udp-server = 0.0.0.0
++
++[format=syslog]
++time-format = "%b %d %H:%M:%S"
++prefix-regex = "^(?P<timestamp>.{15}) (?P<hostname>\S+) (?:(?P<process>\S+?)(?:\[(?P<pid>[0-9]+)\])?: )?"
++file = /var/log/maillog
++# udp-server = 0.0.0.0
++
++[format=syslog]
++time-format = "%b %d %H:%M:%S"
++prefix-regex = "^(?P<timestamp>.{15}) (?P<hostname>\S+) (?:(?P<process>\S+?)(?:\[(?P<pid>[0-9]+)\])?: )?"
  file = /var/log/messages
  # udp-server = 0.0.0.0
  
 +[format=syslog]
-+time-format = "%b %d %H:%M:%S" 
++time-format = "%b %d %H:%M:%S"
 +prefix-regex = "^(?P<timestamp>.{15}) (?P<hostname>\S+) (?:(?P<process>\S+?)(?:\[(?P<pid>[0-9]+)\])?: )?"
-+file = /var/log/daemon
-+# udp-server = 0.0.0.0
-+ 
-+[format=syslog]
-+time-format = "%b %d %H:%M:%S" 
-+prefix-regex = "^(?P<timestamp>.{15}) (?P<hostname>\S+) (?:(?P<process>\S+?)(?:\[(?P<pid>[0-9]+)\])?: )?"
-+file = /var/log/authlog
++file = /var/log/secure
 +# udp-server = 0.0.0.0
  
  #
@@ -30,16 +49,18 @@ $OpenBSD: patch-prelude-lml_conf_in,v 1.2 2006/07/10 14:34:23 aanriot Exp $
 +# file = /var/log/everything/current
  # udp-server = 0.0.0.0
  
--
- #
- # Example configuration for apache output:
- #
+ 
+@@ -67,8 +89,12 @@ file = /var/log/everything/current
  [format=apache]
  time-format = "%d/%b/%Y:%H:%M:%S"
  prefix-regex = "^(?P<hostname>\S+) - - \[(?P<timestamp>.{20}) \+.{4}\] "
 -file = /var/log/apache2/access_log
--
 +file = /var/www/logs/access_log
+ 
++[format=apache-error]
++time-format = "%a %b %d %H:%M:%S %Y"
++prefix-regex = "^\[(?P<timestamp>.{24})\]"
++file = /var/www/logs/error_log
  
  #
  # Specifies the maximum difference, in seconds, between
