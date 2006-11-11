@@ -1,3 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/15 19:26:29 espie Exp $
-@lib ${KDE}/libkparts_kmplayer.so.0.0
-@lib lib/libkdeinit_kmplayer.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.3 2006/11/11 18:38:02 sturm Exp $
+@lib ${KDE}/libkparts_kmplayer.so.${LIBkparts_kmplayer_VERSION}
+@lib lib/libkdeinit_kmplayer.so.${LIBkdeinit_kmplayer_VERSION}

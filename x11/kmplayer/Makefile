@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/12/30 00:38:41 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/11/11 18:38:02 sturm Exp $
 
 
 BROKEN="Need to resolve various issues"
@@ -6,7 +6,8 @@ COMMENT='front-end/embeddable kpart for mplayer'
 CATEGORIES=	x11	x11/kde
 DISTNAME=	kmplayer-0.6.4
 EXTRACT_SUFX=	.tar.bz2
-
+SHARED_LIBS=	kparts_kmplayer  0.0 \
+		kdeinit_kmplayer 0.0
 
 MASTER_SITES=	http://www.xs4all.nl/~jjvrieze/
 WRKDIST=${WRKDIR}/kmplayer
