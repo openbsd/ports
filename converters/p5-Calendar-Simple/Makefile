@@ -1,0 +1,26 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2006/11/11 18:13:35 espie Exp $
+
+COMMENT= 	"simple calendar month"
+
+DISTNAME=	Calendar-Simple-1.17
+PKGNAME=	p5-${DISTNAME}
+CATEGORIES=	converters perl5
+
+# Perl
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Calendar/}
+
+RUN_DEPENDS=	
+
+REGRESS_DEPENDS=${RUN_DEPENDS}
+
+CONFIGURE_STYLE=perl modbuild
+MAKE_ENV=	TEST_POD=Yes
+
+PKG_ARCH=	*
+
+.include <bsd.port.mk>

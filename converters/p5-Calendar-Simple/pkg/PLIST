@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/11 18:13:35 espie Exp $
+bin/pcal
+${P5SITE}/Calendar/
+${P5SITE}/Calendar/Simple.pm
+@man man/man3p/Calendar::Simple.3p
