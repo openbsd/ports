@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/08/03 23:15:57 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/11 13:16:58 mbalmer Exp $
 
 SHARED_ONLY=		Yes
 
@@ -14,7 +14,7 @@ PKGNAME=		${DISTNAME}p1
 PKGNAME-iodbc=		freeradius-iodbc-$V
 PKGNAME-mysql=		freeradius-mysql-$V
 PKGNAME-pgsql=		freeradius-pgsql-$V
-PKGNAME-ldap=		freeradius-ldap-$V
+PKGNAME-ldap=		freeradius-ldap-${V}p0
 SHARED_LIBS=		eap	1.0 \
 			radius	1.0
 
@@ -108,7 +108,7 @@ WANTLIB=	pthread
 .  elif ${SUBPACKAGE} == "-ldap"
 LIB_DEPENDS=	lber.>=8,ldap_r.>=8:openldap-client-*:databases/openldap \
 		radius.>=1::net/freeradius
-WANTLIB=	crypto pthread sasl2 ssl
+WANTLIB=	crypto pthread sasl2 ssl asn1 com_err gssapi krb5
 .  elif ${SUBPACKAGE} == "-mysql"
 LIB_DEPENDS=	mysqlclient_r.>=16:mysql-client-*:databases/mysql
 RUN_DEPENDS=	::net/freeradius
