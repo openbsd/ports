@@ -1,0 +1,12 @@
+$OpenBSD: patch-conf_prewikka_conf,v 1.4 2006/11/11 19:33:57 aanriot Exp $
+--- conf/prewikka.conf.orig	Sun Nov  5 01:36:37 2006
++++ conf/prewikka.conf	Sun Nov  5 01:37:03 2006
+@@ -31,7 +31,7 @@ user: prelude
+ pass: prelude
+ name: prewikka
+ 
+-[log stderr]
++#[log stderr]
+ 
+ [auth loginpassword]
+ expiration: 60

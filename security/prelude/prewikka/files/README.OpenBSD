@@ -33,7 +33,12 @@ Instructions for SQLite:
   to use this/these database file(s), thanks to the "file" keyword
   (which indicates the location of the database).
 
-Eventually, you can start prewikka's webserver, prewikka-httpd
-(listening by default on 8000/tcp) or use Apache. The default user is
-"admin", with "admin" as password and should be changed.
+Eventually, you can start prewikka's webserver (or Apache) which is
+listening by default on 8000/tcp using:
 
+if [ -x ${LOCALBASE}/bin/prewikka-httpd ]; then
+	echo -n ' prewikka-httpd'; ${LOCALBASE}/bin/prewikka-httpd &
+fi
+
+The default user is "admin", with "admin" as password and should be
+changed.
