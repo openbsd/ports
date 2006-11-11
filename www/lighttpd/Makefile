@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2006/11/05 16:13:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.36 2006/11/11 14:26:03 mbalmer Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"secure, fast, compliant, and very flexible web-server"
 
 DISTNAME=	lighttpd-1.4.13
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	www net
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
@@ -41,7 +41,7 @@ FLAVOR?=
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+= --with-ldap
 LIB_DEPENDS+=	lber,ldap::databases/openldap
-WANTLIB+=	sasl2
+WANTLIB+=	sasl2 asn1 com_err gssapi krb5
 .endif
 
 .if ${FLAVOR:L:Mmysql}
