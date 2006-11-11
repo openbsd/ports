@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.46 2006/10/31 19:32:51 brad Exp $
+@comment $OpenBSD: PLIST,v 1.47 2006/11/11 07:49:45 brad Exp $
 bin/gaim
 bin/gaim-text
 include/gaim/
@@ -108,6 +108,7 @@ include/gaim/whiteboard.h
 include/gaim/xmlnode.h
 include/gnt/
 include/gnt/gnt.h
+include/gnt/gntbindable.h
 include/gnt/gntbox.h
 include/gnt/gntbutton.h
 include/gnt/gntcheckbox.h
@@ -120,6 +121,7 @@ include/gnt/gntline.h
 include/gnt/gntmarshal.h
 include/gnt/gntmenu.h
 include/gnt/gntmenuitem.h
+include/gnt/gntmenuitemcheck.h
 include/gnt/gntstyle.h
 include/gnt/gnttextview.h
 include/gnt/gnttree.h
@@ -128,8 +130,6 @@ include/gnt/gntwidget.h
 include/gnt/gntwindow.h
 include/gnt/gntwm.h
 lib/gaim/
-@comment lib/gaim/docklet.la
-lib/gaim/docklet.so
 @comment lib/gaim/extplacement.la
 lib/gaim/extplacement.so
 @comment lib/gaim/gaimrc.la
@@ -228,6 +228,7 @@ share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/gaim.mo
 share/locale/en_CA/LC_MESSAGES/gaim.mo
 share/locale/en_GB/LC_MESSAGES/gaim.mo
+share/locale/eo/LC_MESSAGES/gaim.mo
 share/locale/es/LC_MESSAGES/gaim.mo
 share/locale/et/LC_MESSAGES/gaim.mo
 share/locale/eu/LC_MESSAGES/gaim.mo
@@ -761,7 +762,6 @@ share/pixmaps/gaim/typed.png
 share/pixmaps/gaim/typing.png
 share/sounds/
 share/sounds/gaim/
-@comment share/sounds/gaim/Makefile.mingw
 share/sounds/gaim/alert.wav
 share/sounds/gaim/login.wav
 share/sounds/gaim/logout.wav

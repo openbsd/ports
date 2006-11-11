@@ -1,7 +1,7 @@
-$OpenBSD: patch-gtk_gtkdialogs_c,v 1.1 2006/10/31 19:32:51 brad Exp $
---- gtk/gtkdialogs.c.orig	Fri Oct 20 21:54:24 2006
-+++ gtk/gtkdialogs.c	Fri Oct 20 21:55:26 2006
-@@ -513,6 +513,12 @@ g_string_append(str, "<br/>  <b>Library 
+$OpenBSD: patch-gtk_gtkdialogs_c,v 1.2 2006/11/11 07:49:45 brad Exp $
+--- gtk/gtkdialogs.c.orig	Fri Nov 10 02:23:00 2006
++++ gtk/gtkdialogs.c	Fri Nov 10 22:02:48 2006
+@@ -519,6 +519,12 @@ g_string_append(str, "<br/>  <b>Library 
  	g_string_append(str, "    <b>GtkSpell:</b> Disabled<br/>");
  #endif
  

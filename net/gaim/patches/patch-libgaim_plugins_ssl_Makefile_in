@@ -1,6 +1,6 @@
-$OpenBSD: patch-libgaim_plugins_ssl_Makefile_in,v 1.1 2006/10/31 19:32:51 brad Exp $
---- libgaim/plugins/ssl/Makefile.in.orig	Wed Oct 18 16:00:20 2006
-+++ libgaim/plugins/ssl/Makefile.in	Sat Oct 21 01:39:44 2006
+$OpenBSD: patch-libgaim_plugins_ssl_Makefile_in,v 1.2 2006/11/11 07:49:45 brad Exp $
+--- libgaim/plugins/ssl/Makefile.in.orig	Fri Nov 10 02:24:50 2006
++++ libgaim/plugins/ssl/Makefile.in	Fri Nov 10 22:02:48 2006
 @@ -57,6 +57,12 @@ am__installdirs = "$(DESTDIR)$(plugindir
  pluginLTLIBRARIES_INSTALL = $(INSTALL)
  LTLIBRARIES = $(plugin_LTLIBRARIES)
@@ -23,7 +23,7 @@ $OpenBSD: patch-libgaim_plugins_ssl_Makefile_in,v 1.1 2006/10/31 19:32:51 brad E
  	$(am__ssl_nss_la_SOURCES_DIST) $(am__ssl_la_SOURCES_DIST)
  ETAGS = etags
  CTAGS = ctags
-@@ -193,6 +199,8 @@ GMOFILES = @GMOFILES@
+@@ -192,6 +198,8 @@ GMOFILES = @GMOFILES@
  GMSGFMT = @GMSGFMT@
  GNT_CFLAGS = @GNT_CFLAGS@
  GNT_LIBS = @GNT_LIBS@
@@ -32,7 +32,7 @@ $OpenBSD: patch-libgaim_plugins_ssl_Makefile_in,v 1.1 2006/10/31 19:32:51 brad E
  GNUTLS_CFLAGS = @GNUTLS_CFLAGS@
  GNUTLS_LIBS = @GNUTLS_LIBS@
  GSTREAMER_CFLAGS = @GSTREAMER_CFLAGS@
-@@ -330,6 +338,8 @@ TCL_LIBS = @TCL_LIBS@
+@@ -327,6 +335,8 @@ TCL_LIBS = @TCL_LIBS@
  TK_LIBS = @TK_LIBS@
  USE_GCONFTOOL_FALSE = @USE_GCONFTOOL_FALSE@
  USE_GCONFTOOL_TRUE = @USE_GCONFTOOL_TRUE@
@@ -41,7 +41,7 @@ $OpenBSD: patch-libgaim_plugins_ssl_Makefile_in,v 1.1 2006/10/31 19:32:51 brad E
  USE_GNUTLS_FALSE = @USE_GNUTLS_FALSE@
  USE_GNUTLS_TRUE = @USE_GNUTLS_TRUE@
  USE_INTERNAL_LIBGADU_FALSE = @USE_INTERNAL_LIBGADU_FALSE@
-@@ -416,17 +426,21 @@ EXTRA_DIST = \
+@@ -413,17 +423,21 @@ EXTRA_DIST = \
  
  plugindir = $(libdir)/gaim
  ssl_la_LDFLAGS = -module -avoid-version
@@ -63,7 +63,7 @@ $OpenBSD: patch-libgaim_plugins_ssl_Makefile_in,v 1.1 2006/10/31 19:32:51 brad E
  @PLUGINS_TRUE@ssl_gnutls_la_LIBADD = $(GLIB_LIBS) $(GNUTLS_LIBS)
  @PLUGINS_TRUE@ssl_nss_la_LIBADD = $(GLIB_LIBS) $(NSS_LIBS)
  AM_CPPFLAGS = \
-@@ -499,6 +513,8 @@ clean-pluginLTLIBRARIES:
+@@ -496,6 +510,8 @@ clean-pluginLTLIBRARIES:
  	  echo "rm -f \"$${dir}/so_locations\""; \
  	  rm -f "$${dir}/so_locations"; \
  	done
@@ -72,7 +72,7 @@ $OpenBSD: patch-libgaim_plugins_ssl_Makefile_in,v 1.1 2006/10/31 19:32:51 brad E
  ssl-gnutls.la: $(ssl_gnutls_la_OBJECTS) $(ssl_gnutls_la_DEPENDENCIES) 
  	$(LINK) $(am_ssl_gnutls_la_rpath) $(ssl_gnutls_la_LDFLAGS) $(ssl_gnutls_la_OBJECTS) $(ssl_gnutls_la_LIBADD) $(LIBS)
  ssl-nss.la: $(ssl_nss_la_OBJECTS) $(ssl_nss_la_DEPENDENCIES) 
-@@ -512,6 +528,7 @@ mostlyclean-compile:
+@@ -509,6 +525,7 @@ mostlyclean-compile:
  distclean-compile:
  	-rm -f *.tab.c
  
