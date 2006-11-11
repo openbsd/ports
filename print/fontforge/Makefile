@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/10/15 18:52:59 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2006/11/11 14:09:04 steven Exp $
 
 SHARED_ONLY=		Yes
 
@@ -43,6 +43,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include		\
 CONFIGURE_ARGS=		--with-regular-link
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
+USE_X11=		Yes
 
 NO_REGRESS=		Yes
 
