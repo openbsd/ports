@@ -1,17 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:01:07 espie Exp $
-@comment $NetBSD: PLIST,v 1.2 1999/08/02 05:11:56 sakamoto Exp $
-bin/nvi
+@comment $OpenBSD: PLIST,v 1.3 2006/11/11 18:20:43 sturm Exp $
 bin/nex
+bin/nvi
+bin/nvi-big5
+bin/nvi-euc-cn
+bin/nvi-euc-jp
+bin/nvi-euc-kr
+bin/nvi-euc-tw
+bin/nvi-hz
+bin/nvi-iso-2022-cn
+bin/nvi-iso-2022-jp
+bin/nvi-iso-2022-kr
+bin/nvi-sjis
 bin/nview
-bin/regular
 bin/qregular
-@man man/man1/nvi.1
+bin/regular
 @man man/man1/nex.1
+@man man/man1/nvi.1
 @man man/man1/nview.1
 share/vi/
 share/vi/README.english
 share/vi/README.japanese
-share/vi/recover
 share/vi/catalog/
 share/vi/catalog/dutch
 share/vi/catalog/english
@@ -25,6 +33,7 @@ share/vi/perl/forall.pl
 share/vi/perl/make.pl
 share/vi/perl/tk.pl
 share/vi/perl/wc.pl
+share/vi/recover
 share/vi/tcl/
 share/vi/tcl/errors.tcl
 share/vi/tcl/gnats.tcl
