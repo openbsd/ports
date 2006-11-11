@@ -1,0 +1,23 @@
+$OpenBSD: patch-libs_m3core_src_Csupport_OpenBSD_386_dtoa_c,v 1.1 2006/11/11 01:44:54 kurt Exp $
+--- libs/m3core/src/Csupport/OpenBSD_386/dtoa.c.orig	Sat Jan 27 14:44:30 2001
++++ libs/m3core/src/Csupport/OpenBSD_386/dtoa.c	Fri Nov 10 17:49:14 2006
+@@ -13,17 +13,6 @@
+ #define IEEE_8087
+ #endif
+ 
+-#include "dtoa.h"
++#define strtod m3_strtod
+ 
+-/* Apparently libc defines both "__dtoa" and "dtoa".  ???  */
+-
+-char * __dtoa       
+-#ifdef KR_headers
+-        (d, mode, ndigits, decpt, sign, rve)
+-        double d; int mode, ndigits, *decpt, *sign; char **rve;
+-#else 
+-        (double d, int mode, int ndigits, int *decpt, int *sign, char **rve)
+-#endif
+-{
+-  return dtoa(d, mode, ndigits, decpt, sign, rve);
+-}
++#include "dtoa.h"

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2006/10/21 09:42:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2006/11/11 01:44:54 kurt Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"Modula-3 distribution for building CVSup"
 DISTNAME=	ezm3-1.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	lang
 
 HOMEPAGE=	http://www.polstra.com/projects/freeware/ezm3/
