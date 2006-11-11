@@ -1,6 +1,6 @@
-$OpenBSD: patch-dovecot-example_conf,v 1.28 2006/11/05 05:02:38 brad Exp $
---- dovecot-example.conf.orig	Tue Oct 17 07:00:10 2006
-+++ dovecot-example.conf	Sat Nov  4 23:26:59 2006
+$OpenBSD: patch-dovecot-example_conf,v 1.29 2006/11/11 06:25:40 brad Exp $
+--- dovecot-example.conf.orig	Sun Nov  5 12:14:37 2006
++++ dovecot-example.conf	Sat Nov 11 01:18:25 2006
 @@ -7,13 +7,12 @@
  # value inside quotes, eg.: key = "# char and trailing whitespace  "
  
@@ -97,7 +97,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.28 2006/11/05 05:02:38 brad Exp $
  
    # Maximum IMAP command line length in bytes. Some clients generate very long
    # command lines with huge mailboxes, so you may need to raise this if you get
-@@ -533,7 +532,7 @@ protocol imap {
+@@ -536,7 +535,7 @@ protocol imap {
    #     but not both. Thunderbird separates these two by forcing server to
    #     accept '/' suffix in mailbox names in subscriptions list.
    # The list is space-separated.
@@ -106,7 +106,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.28 2006/11/05 05:02:38 brad Exp $
  }
    
  ##
-@@ -542,11 +541,11 @@ protocol imap {
+@@ -545,11 +544,11 @@ protocol imap {
  
  protocol pop3 {
    # Login executable location.
@@ -120,7 +120,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.28 2006/11/05 05:02:38 brad Exp $
  
    # Don't try to set mails non-recent or seen with POP3 sessions. This is
    # mostly intended to reduce disk I/O. With maildir it doesn't move files
-@@ -590,7 +589,7 @@ protocol pop3 {
+@@ -593,7 +592,7 @@ protocol pop3 {
    # installations. %08Xu%08Xv will be the new default, so use it for new
    # installations.
    #
@@ -129,7 +129,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.28 2006/11/05 05:02:38 brad Exp $
  
    # POP3 logout format string:
    #  %t - number of TOP commands
-@@ -615,7 +614,7 @@ protocol pop3 {
+@@ -618,7 +617,7 @@ protocol pop3 {
    #     Outlook Express and Netscape Mail breaks if end of headers-line is
    #     missing. This option simply sends it if it's missing.
    # The list is space-separated.
@@ -138,7 +138,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.28 2006/11/05 05:02:38 brad Exp $
  }
  
  ##
-@@ -647,7 +646,7 @@ protocol lda {
+@@ -650,7 +649,7 @@ protocol lda {
  ##
  
  # Executable location
@@ -147,16 +147,16 @@ $OpenBSD: patch-dovecot-example_conf,v 1.28 2006/11/05 05:02:38 brad Exp $
  
  # Set max. process size in megabytes.
  #auth_process_size = 256
-@@ -761,7 +760,7 @@ auth default {
-   # database (passwd usually), you can use static userdb.
+@@ -765,7 +764,7 @@ auth default {
    # REMEMBER: You'll need /etc/pam.d/dovecot file created for PAM
    # authentication to actually work.
+   # http://wiki.dovecot.org/PasswordDatabase/PAM
 -  passdb pam {
 +  #passdb pam {
      #  [session=yes] [setcred=yes] [cache_key=<key>] [<service name>]
      #
      # session=yes makes Dovecot open and immediately close PAM session. Some
-@@ -789,14 +788,14 @@ auth default {
+@@ -793,14 +792,14 @@ auth default {
      #   args = session=yes *
      #   args = cache_key=%u dovecot
      #args = dovecot
@@ -165,12 +165,12 @@ $OpenBSD: patch-dovecot-example_conf,v 1.28 2006/11/05 05:02:38 brad Exp $
  
    # /etc/passwd or similar, using getpwnam()
    # In many systems nowadays this uses Name Service Switch, which is
-   # configured in /etc/nsswitch.conf. WARNING: nss_ldap is known to be broken
-   # with Dovecot. Don't use it, or users might log in as each others!
+   # configured in /etc/nsswitch.conf.
+   # http://wiki.dovecot.org/AuthDatabase/Passwd
 -  #passdb passwd {
 -  #}
 +  passdb passwd {
 +  }
  
    # /etc/shadow or similiar, using getspnam(). Deprecated by PAM nowadays.
-   #passdb shadow {
+   # http://wiki.dovecot.org/PasswordDatabase/Shadow
