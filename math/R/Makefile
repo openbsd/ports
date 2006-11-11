@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2006/08/03 20:04:51 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2006/11/11 18:52:12 mbalmer Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"clone of S, a powerful math/statistics/graphics language"
-DISTNAME=	R-2.1.1
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=	Rlapack 21.1
+DISTNAME=	R-2.4.0
+SHARED_LIBS=	Rlapack 24.0 \
+		Rblas	24.0
+
 CATEGORIES=    	math
 HOMEPAGE=	http://www.r-project.org/
 
@@ -16,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 c g2c m ncurses readline tcl84 z
+WANTLIB=		ICE SM X11 Xt c g2c m ncurses readline tcl84
 
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		http://cran.uk.r-project.org/src/base/R-2/ \
@@ -25,9 +26,7 @@ MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 
 USE_X11=	Yes
 MODULES=	devel/gettext
-LIB_DEPENDS=	bz2.>=10::archivers/bzip2 \
-		jpeg.>=62::graphics/jpeg \
-		pcre::devel/pcre \
+LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
 		tk84.>=1:tk-8.4.*:x11/tk/8.4
 
 CONFIGURE_STYLE=gnu dest

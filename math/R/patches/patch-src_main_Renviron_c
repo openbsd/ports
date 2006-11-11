@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_main_Renviron_c,v 1.1 2005/10/08 09:47:37 mbalmer Exp $
---- src/main/Renviron.c.orig	Mon Apr 18 13:34:05 2005
-+++ src/main/Renviron.c	Wed Aug 10 16:13:14 2005
-@@ -67,10 +67,12 @@ static void Putenv(char *a, char *b)
+$OpenBSD: patch-src_main_Renviron_c,v 1.2 2006/11/11 18:52:12 mbalmer Exp $
+--- src/main/Renviron.c.orig	Mon Apr 10 00:19:51 2006
++++ src/main/Renviron.c	Tue Oct  3 20:04:28 2006
+@@ -126,10 +126,12 @@ static void Putenv(char *a, char *b)
  {
      char *buf, *value, *p, *q, quote='\0';
      int inquote = 0;
@@ -16,16 +16,7 @@ $OpenBSD: patch-src_main_Renviron_c,v 1.1 2005/10/08 09:47:37 mbalmer Exp $
      value = buf+strlen(buf);
  
      /* now process the value */
-@@ -108,7 +110,7 @@ static int process_Renviron(char *filena
-     int errs = 0;
- 
-     if (!filename || !(fp = fopen(filename, "r"))) return 0;
--    snprintf(msg, MSG_SIZE+50, 
-+    snprintf(msg, sizeof(msg), 
- 	     "\n   File %s contains invalid line(s)", filename);
- 
-     while(fgets(sm, BUF_SIZE, fp)) {
-@@ -118,7 +120,8 @@ static int process_Renviron(char *filena
+@@ -181,7 +183,8 @@ static int process_Renviron(char *filena
  	if(!(p = Rf_strchr(s, '='))) {
  	    errs++;
  	    if(strlen(msg) < MSG_SIZE) {
@@ -35,7 +26,7 @@ $OpenBSD: patch-src_main_Renviron_c,v 1.1 2005/10/08 09:47:37 mbalmer Exp $
  	    }
  	    continue;
  	}
-@@ -130,7 +133,7 @@ static int process_Renviron(char *filena
+@@ -193,7 +196,7 @@ static int process_Renviron(char *filena
      }
      fclose(fp);
      if (errs) {
@@ -44,18 +35,22 @@ $OpenBSD: patch-src_main_Renviron_c,v 1.1 2005/10/08 09:47:37 mbalmer Exp $
  	R_ShowMessage(msg);
      }
      return 1;
-@@ -146,8 +149,8 @@ void process_system_Renviron()
- 	R_ShowMessage("path to system Renviron is too long: skipping");
- 	return;
+@@ -210,10 +213,10 @@ void process_system_Renviron()
+         R_ShowMessage("path to system Renviron is too long: skipping");
+         return;
      }
 -    strcpy(buf, R_Home);
--    strcat(buf, "/etc/Renviron");
+-    strcat(buf, "/etc/");
+-    strcat(buf, R_ARCH);
+-    strcat(buf, "/Renviron");
 +    strlcpy(buf, R_Home, sizeof(buf));
-+    strlcat(buf, "/etc/Renviron", sizeof(buf));
-     if(!process_Renviron(buf))
- 	R_ShowMessage("cannot find system Renviron");
- }
-@@ -165,7 +168,7 @@ void process_site_Renviron ()
++    strlcat(buf, "/etc/", sizeof(buf));
++    strlcat(buf, R_ARCH, sizeof(buf));
++    strlcat(buf, "/Renviron", sizeof(buf));
+ #else
+     if(strlen(R_Home) + strlen("/etc/Renviron") > PATH_MAX - 1) {
+ 	R_ShowMessage("path to system Renviron is too long: skipping");
+@@ -239,7 +242,7 @@ void process_site_Renviron ()
  	R_ShowMessage("path to Renviron.site is too long: skipping");
  	return;
      }
@@ -64,3 +59,12 @@ $OpenBSD: patch-src_main_Renviron_c,v 1.1 2005/10/08 09:47:37 mbalmer Exp $
      process_Renviron(buf);
  }
  
+@@ -259,7 +262,7 @@ void process_user_Renviron()
+ 	s = getenv("R_USER");
+ 	if(!s) s = getenv("HOME");
+ 	if(!s) return;
+-	snprintf(buf, 1024, "%s/.Renviron", s);
++	snprintf(buf, sizeof(buf), "%s/.Renviron", s);
+ 	s = buf;
+     }
+ #endif

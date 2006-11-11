@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_main_Rdynload_c,v 1.1 2005/10/08 09:47:37 mbalmer Exp $
---- src/main/Rdynload.c.orig	Fri May 20 14:51:46 2005
-+++ src/main/Rdynload.c	Wed Aug 10 16:11:19 2005
-@@ -496,7 +496,8 @@ static DllInfo* AddDLL(char *path, int a
+$OpenBSD: patch-src_main_Rdynload_c,v 1.2 2006/11/11 18:52:12 mbalmer Exp $
+--- src/main/Rdynload.c.orig	Thu Sep 14 04:05:06 2006
++++ src/main/Rdynload.c	Tue Oct  3 18:12:02 2006
+@@ -516,7 +516,8 @@ static DllInfo* AddDLL(char *path, int a
  
      DeleteDLL(path);
      if(CountDLL == MAX_NUM_DLLS) {
@@ -11,7 +11,7 @@ $OpenBSD: patch-src_main_Rdynload_c,v 1.1 2005/10/08 09:47:37 mbalmer Exp $
  	return NULL;
      }
  
-@@ -548,11 +549,12 @@ DllInfo *R_RegisterDLL(HINSTANCE handle,
+@@ -569,11 +570,12 @@ static DllInfo *R_RegisterDLL(HINSTANCE 
  
      dpath = malloc(strlen(path)+1);
      if(dpath == NULL) {
@@ -26,7 +26,7 @@ $OpenBSD: patch-src_main_Rdynload_c,v 1.1 2005/10/08 09:47:37 mbalmer Exp $
  
      if(R_osDynSymbol->fixPath)
  	R_osDynSymbol->fixPath(dpath);
-@@ -560,7 +562,7 @@ DllInfo *R_RegisterDLL(HINSTANCE handle,
+@@ -581,7 +583,7 @@ static DllInfo *R_RegisterDLL(HINSTANCE 
      /* keep only basename from path */
      p = Rf_strrchr(dpath, FILESEP[0]);
      if(!p) p = dpath; else p++;
@@ -35,7 +35,7 @@ $OpenBSD: patch-src_main_Rdynload_c,v 1.1 2005/10/08 09:47:37 mbalmer Exp $
      else error(_("DLLname '%s' is too long"), p);
  
      /* remove SHLIB_EXT if present */
-@@ -582,14 +584,15 @@ addDLL(char *dpath, char *DLLname, HINST
+@@ -603,14 +605,15 @@ addDLL(char *dpath, char *DLLname, HINST
      int ans = CountDLL;
      char *name = malloc(strlen(DLLname)+1);
      if(name == NULL) {
