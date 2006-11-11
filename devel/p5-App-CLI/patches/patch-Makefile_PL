@@ -1,0 +1,17 @@
+$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2006/11/11 18:12:58 espie Exp $
+--- Makefile.PL.orig	Sat Nov 11 16:22:03 2006
++++ Makefile.PL	Sat Nov 11 16:22:16 2006
+@@ -8,11 +8,13 @@ abstract_from	('lib/App/CLI.pm');
+ license		('perl');
+ version_from	('lib/App/CLI.pm');
+ 
++=pod
+ requires(
+     'Locale::Maketext::Simple' => 0,
+     'Getopt::Long'             => '2.35',
+     'Pod::Simple::Text'        => 0,
+ );
++=cut
+ 
+ include('ExtUtils::AutoInstall');
+ auto_install();
