@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/11 04:13:31 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/11 04:21:28 alek Exp $
 
 COMMENT=	"Python XMPP and Jabber implementation"
 
@@ -29,10 +29,11 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-xmpp
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.py \
 		${PREFIX}/share/examples/py-xmpp
-	perl -pi
+	perl -pi -e "s,/usr/bin/python,${MODPY_BIN}," \
+		${PREFIX}/share/examples/py-xmpp/*.py
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-xmpp
 	cd ${WRKSRC}/doc/www/api && tar cf - . | \
-		(cd ${PREFIX}/share/doc/py-xmpp && tar xvf -)
+		(cd ${PREFIX}/share/doc/py-xmpp && tar xf -)
 
 do-regress:
 	@cd ${WRKSRC}/tests && PYTHONPATH=../ ${MODPY_BIN} all.py
