@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2006/10/19 10:34:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.128 2006/11/11 14:35:44 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -10,6 +10,7 @@
      SUBDIR += an
      SUBDIR += angband
      SUBDIR += angband,no_x11
+     SUBDIR += angrydd
      SUBDIR += bass
      SUBDIR += bombermaze
      SUBDIR += burgerspace
