@@ -1,0 +1,13 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2006/11/12 18:11:25 jolan Exp $
+--- setup.py.orig	Thu Oct 12 16:23:33 2006
++++ setup.py	Sat Nov 11 07:49:49 2006
+@@ -37,6 +37,9 @@ elif -1 != platform.find("darwin"):
+ elif -1 != platform.find("freebsd"):
+ 	extra_link_args = ['-L/usr/local/lib']
+ 	extra_compile_args = ['-I/usr/local/include']
++elif -1 != platform.find("openbsd"):
++	extra_link_args =['-L_LOCALBASE_/lib']
++	extra_compile_args = ['-I_LOCALBASE_/include']
+ 																											
+ 
+ usbmodule = Extension(name = 'usb',

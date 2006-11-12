@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/12 18:11:25 jolan Exp $
+lib/python${MODPY_VERSION}/site-packages/usb.so
+share/examples/pyusb/
+share/examples/pyusb/usbenum.py
+share/examples/pyusb/usbprint.py
