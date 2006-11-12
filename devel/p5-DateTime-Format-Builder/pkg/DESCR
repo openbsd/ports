@@ -1,0 +1,4 @@
+DateTime::Format::Builder creates DateTime parsers.  Many
+string formats of dates and times are simple and just
+require a basic regular expression to extract the relevant
+information. Builder provides a simple way to do this.

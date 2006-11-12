@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/12 18:00:56 espie Exp $
+${P5SITE}/DateTime/Format/Builder/
+${P5SITE}/DateTime/Format/Builder.pm
+${P5SITE}/DateTime/Format/Builder.pod
+${P5SITE}/DateTime/Format/Builder/Parser/
+${P5SITE}/DateTime/Format/Builder/Parser.pm
+${P5SITE}/DateTime/Format/Builder/Parser/Dispatch.pm
+${P5SITE}/DateTime/Format/Builder/Parser/Quick.pm
+${P5SITE}/DateTime/Format/Builder/Parser/Regex.pm
+${P5SITE}/DateTime/Format/Builder/Parser/Strptime.pm
+${P5SITE}/DateTime/Format/Builder/Parser/generic.pm
+${P5SITE}/DateTime/Format/Builder/Tutorial.pod
+@man man/man3p/DateTime::Format::Builder.3p
+@man man/man3p/DateTime::Format::Builder::Parser.3p
+@man man/man3p/DateTime::Format::Builder::Parser::Dispatch.3p
+@man man/man3p/DateTime::Format::Builder::Parser::Quick.3p
+@man man/man3p/DateTime::Format::Builder::Parser::Regex.3p
+@man man/man3p/DateTime::Format::Builder::Parser::Strptime.3p
+@man man/man3p/DateTime::Format::Builder::Parser::generic.3p
+@man man/man3p/DateTime::Format::Builder::Tutorial.3p
