@@ -1,0 +1,2 @@
+Parses almost all ISO8601 date and time formats.  ISO8601
+time-intervals are currently not supported.

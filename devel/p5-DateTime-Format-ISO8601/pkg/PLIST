@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/12 18:01:47 espie Exp $
+${P5SITE}/DateTime/Format/ISO8601.pm
+${P5SITE}/DateTime/Format/ISO8601.pod
+@man man/man3p/DateTime::Format::ISO8601.3p
