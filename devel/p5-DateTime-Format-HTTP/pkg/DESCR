@@ -1,0 +1,2 @@
+This module provides functions that deal with the date formats
+used by the HTTP protocol (and then some).
