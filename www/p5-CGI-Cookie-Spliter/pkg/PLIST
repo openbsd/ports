@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/11 18:15:42 espie Exp $
-${P5SITE}/CGI/Cookie/
-${P5SITE}/CGI/Cookie/Splitter.pm
-@man man/man3p/CGI::Cookie::Splitter.3p

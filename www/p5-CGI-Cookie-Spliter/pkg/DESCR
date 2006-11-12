@@ -1,5 +1,0 @@
-Clients are not required to accept cookies larger than 4K.
-CGI::Cookie::Splitter builds upon CGI::Simple, and gives an
-interface to split big cookie objects into smaller cookies
-for storage on the client side, together with functions to
-reassemble them later.
