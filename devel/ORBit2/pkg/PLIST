@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/12/10 20:33:59 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.11 2006/11/12 17:31:17 alek Exp $
 @conflict linc-*
 bin/ior-decode-2
 bin/linc-cleanup-sockets
@@ -74,6 +74,20 @@ lib/pkgconfig/ORBit-CosNaming-2.0.pc
 lib/pkgconfig/ORBit-idl-2.0.pc
 lib/pkgconfig/ORBit-imodule-2.0.pc
 share/aclocal/ORBit2.m4
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/ORBit2/
+share/gtk-doc/html/ORBit2/ORBit2-orbit2-allocators.html
+share/gtk-doc/html/ORBit2/ORBit2-orbit2-small.html
+share/gtk-doc/html/ORBit2/ORBit2.devhelp
+share/gtk-doc/html/ORBit2/general.html
+share/gtk-doc/html/ORBit2/home.png
+share/gtk-doc/html/ORBit2/index.html
+share/gtk-doc/html/ORBit2/index.sgml
+share/gtk-doc/html/ORBit2/left.png
+share/gtk-doc/html/ORBit2/right.png
+share/gtk-doc/html/ORBit2/style.css
+share/gtk-doc/html/ORBit2/up.png
 share/idl/
 share/idl/orbit-2.0/
 share/idl/orbit-2.0/CosNaming.idl
