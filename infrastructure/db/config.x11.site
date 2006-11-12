@@ -1,4 +1,4 @@
-# $OpenBSD: config.x11.site,v 1.3 2006/11/12 12:17:33 steven Exp $
+# $OpenBSD: config.x11.site,v 1.4 2006/11/12 12:57:28 steven Exp $
 ac_cv_have_x=${ac_cv_have_x='have_x=yes ac_x_includes=/usr/X11R6/include ac_x_libraries=/usr/X11R6/lib'}
 #ac_cv_prog_freetype_config=${ac_cv_prog_freetype_config=/usr/X11R6/bin/freetype-config}
 #ac_cv_file__usr_X11R6_include_freetype2=${ac_cv_file__usr_X11R6_include_freetype2=yes}
@@ -16,7 +16,7 @@ ac_cv_header_X11_Xatom_h=${ac_cv_header_X11_Xatom_h=yes}
 ac_cv_header_X11_Xauth_h=${ac_cv_header_X11_Xauth_h=yes}
 ac_cv_header_X11_Xcursor_Xcursor_h=${ac_cv_header_X11_Xcursor_Xcursor_h=yes}
 ac_cv_header_X11_Xdmcp_h=${ac_cv_header_X11_Xdmcp_h=yes}
-ac_cv_header_X11_Xft_Xft_h=${ac_cv_header_X11_Xft_Xft_h=yes}
+#ac_cv_header_X11_Xft_Xft_h=${ac_cv_header_X11_Xft_Xft_h=yes}
 ac_cv_header_X11_Xlib_h=${ac_cv_header_X11_Xlib_h=yes}
 ac_cv_header_X11_Xlocale_h=${ac_cv_header_X11_Xlocale_h=yes}
 ac_cv_header_X11_Xmu_Atoms_h=${ac_cv_header_X11_Xmu_Atoms_h=yes}
