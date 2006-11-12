@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/12 16:28:11 espie Exp $
+${P5SITE}/File/
+${P5SITE}/File/ShareDir.pm
+${P5SITE}/auto/
+${P5SITE}/auto/File/
+${P5SITE}/auto/File/ShareDir/
+${P5SITE}/auto/File/ShareDir/sample.txt
+@man man/man3p/File::ShareDir.3p

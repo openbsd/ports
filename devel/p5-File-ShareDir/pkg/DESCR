@@ -1,0 +1,6 @@
+Quite often you want or need your Perl module (CPAN or otherwise) to
+have access to a large amount of read-only data that is stored on the
+file-system at run-time.
+
+"File::ShareDir" provides four functions for locating files and
+directories.
