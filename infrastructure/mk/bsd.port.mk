@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.799 2006/11/11 16:32:12 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.800 2006/11/12 10:52:59 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -143,12 +143,6 @@ FETCH_CMD?=		/usr/bin/ftp -V -m
 PKG_TMPDIR?=	/var/tmp
 PKG_CMD?=		/usr/sbin/pkg_create
 PKG_DELETE?=	/usr/sbin/pkg_delete
-.if ${MACHINE_ARCH} != ${ARCH}
-PKG_ARCH?=${MACHINE_ARCH},${ARCH}
-.else
-PKG_ARCH?=${MACHINE_ARCH}
-.endif
-
 # remount those mount points ro before fake.
 # XXX tends to panic the OS
 PROTECT_MOUNT_POINTS?=
@@ -249,6 +243,12 @@ _MODULES_DONE=
 ###
 ### Variable setup that can happen after modules
 ###
+
+.if ${MACHINE_ARCH} != ${ARCH}
+PKG_ARCH?=${MACHINE_ARCH},${ARCH}
+.else
+PKG_ARCH?=${MACHINE_ARCH}
+.endif
 
 SHARED_ONLY?=	No
 SEPARATE_BUILD?=	No
