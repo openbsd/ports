@@ -1,0 +1,8 @@
+The term "Memorable Random String" was thought up by Sean B. Palmer as a
+name for those strings like dopynl, glargen, glonknic, spoopwiddle, and
+kebble etc. that don't have any conventional sense, but can be used as
+random identifiers, especially in URIs to keep them persistent. See
+http://infomesh.net/2001/07/MeRS/
+
+The String::Koremutake module converts to and from Koremutake Memorable
+Random Strings.
