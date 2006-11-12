@@ -1,0 +1,45 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2006/11/12 15:59:05 matthieu Exp $
+--- Makefile.orig	Thu Oct 19 01:32:58 2006
++++ Makefile	Tue Oct 31 23:44:35 2006
+@@ -106,13 +106,13 @@ uname_P := $(shell sh -c 'uname -p 2>/de
+ 
+ # CFLAGS and LDFLAGS are for the users to override from the command line.
+ 
+-CFLAGS = -g -O2 -Wall
++CFLAGS ?= -g -O2 -Wall
+ LDFLAGS =
+ ALL_CFLAGS = $(CFLAGS)
+ ALL_LDFLAGS = $(LDFLAGS)
+ STRIP ?= strip
+ 
+-prefix = $(HOME)
++#prefix = $(HOME)
+ bindir = $(prefix)/bin
+ gitexecdir = $(bindir)
+ template_dir = $(prefix)/share/git-core/templates/
+@@ -135,7 +135,7 @@ GITWEB_FAVICON = git-favicon.png
+ 
+ export prefix bindir gitexecdir template_dir GIT_PYTHON_DIR
+ 
+-CC = gcc
++CC ?= gcc
+ AR = ar
+ TAR = tar
+ INSTALL = install
+@@ -382,7 +382,6 @@ ifeq ($(uname_S),FreeBSD)
+ 	BASIC_LDFLAGS += -L/usr/local/lib
+ endif
+ ifeq ($(uname_S),OpenBSD)
+-	NO_STRCASESTR = YesPlease
+ 	NEEDS_LIBICONV = YesPlease
+ 	BASIC_CFLAGS += -I/usr/local/include
+ 	BASIC_LDFLAGS += -L/usr/local/lib
+@@ -449,7 +448,7 @@ ifndef NO_CURL
+ endif
+ 
+ ifndef NO_OPENSSL
+-	OPENSSL_LIBSSL = -lssl
++	OPENSSL_LIBSSL = -lssl -lcrypto
+ 	ifdef OPENSSLDIR
+ 		# Again this may be problematic -- gcc does not always want -R.
+ 		BASIC_CFLAGS += -I$(OPENSSLDIR)/include
