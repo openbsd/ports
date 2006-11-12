@@ -1,0 +1,4 @@
+The `IO::Tee' constructor, given a list of output handles, returns a
+tied handle that can be written to but not read from. When written to
+(using print or printf), it multiplexes the output to the list of
+handles originally passed to the constructor. 
