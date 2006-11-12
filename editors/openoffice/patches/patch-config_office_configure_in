@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_office_configure_in,v 1.8 2006/11/09 15:18:01 kurt Exp $
---- config_office/configure.in.orig.port	Wed Nov  8 11:46:32 2006
-+++ config_office/configure.in	Wed Nov  8 11:47:17 2006
+$OpenBSD: patch-config_office_configure_in,v 1.9 2006/11/12 19:27:40 robert Exp $
+--- config_office/configure.in.orig.port	Sat Nov 11 15:49:14 2006
++++ config_office/configure.in	Sat Nov 11 18:40:30 2006
 @@ -784,6 +784,16 @@ case "$build_os" in
  		AC_MSG_RESULT([$PTHREAD_LIBS])
  		_os=FreeBSD
@@ -42,6 +42,15 @@ $OpenBSD: patch-config_office_configure_in,v 1.8 2006/11/09 15:18:01 kurt Exp $
  	*BSD)
  		PKGFORMAT=bsd
  		;;
+@@ -2891,7 +2904,7 @@ if test -n "$with_system_libwpd" -o -n "
+         test "$with_system_libwpd" != "no"; then
+     AC_MSG_RESULT([external])
+     SYSTEM_LIBWPD=YES
+-    PKG_CHECK_MODULES( LIBWPD, libwpd-0.8 )
++    PKG_CHECK_MODULES( LIBWPD, libwpd )
+ else
+     AC_MSG_RESULT([internal])
+     SYSTEM_LIBWPD=NO
 @@ -2934,12 +2947,13 @@ if test -n "$with_system_python" && test
  
     python_include=`$PYTHON -c "import distutils.sysconfig; print distutils.sysconfig.get_config_var('INCLUDEPY');"`

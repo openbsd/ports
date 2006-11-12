@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2006/11/09 15:18:01 kurt Exp $
+# $OpenBSD: Makefile,v 1.25 2006/11/12 19:27:40 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -9,9 +9,9 @@ COMMENT-java=	"optional integration of OpenOffice java features"
 VERSION=	2.0.4
 DISTNAME=	OOo_${VERSION}_src
 WRKDIST=	${WRKDIR}/OOD680_m5
-PKGNAME=	openoffice-${VERSION}p14
-PKGNAME-kde=	openoffice-kde-${VERSION}p14
-PKGNAME-java=	openoffice-java-${VERSION}p14
+PKGNAME=	openoffice-${VERSION}p15
+PKGNAME-kde=	openoffice-kde-${VERSION}p15
+PKGNAME-java=	openoffice-java-${VERSION}p15
 CATEGORIES=	editors productivity
 
 SHARED_LIBS=	icudata		26.0 \
@@ -19,6 +19,8 @@ SHARED_LIBS=	icudata		26.0 \
 		icule		26.0 \
 		icuuc		26.0 \
 		stlport_gcc	4.5
+
+MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 HOMEPAGE=	http://www.openoffice.org/
 MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/mirror/OpenOffice/stable/${VERSION}/ \
@@ -60,7 +62,9 @@ BASE_LIBS=	gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.14::x1
 		db.>=4:db-4.*:databases/db/v4 \
 		curl.>=2::net/curl \
 		neon.>=24::net/neon \
-		sndfile.>=1::audio/libsndfile
+		sndfile.>=1::audio/libsndfile \
+		wpd.>=8::textproc/libwpd \
+		sablot.>=101::textproc/sablotron
 
 KDE_LIBS=	kabc,kdecore,kdeui,kio::x11/kde/libs3
 
@@ -125,6 +129,8 @@ CONFIGURE_ARGS=	--disable-gnome-vfs \
 		--with-system-db \
 		--with-system-sndfile \
 		--with-system-boost \
+		--with-system-libwpd \
+		--with-system-sablot \
 		--with-epm=internal \
 		--with-alloc=system \
 		--with-java \
