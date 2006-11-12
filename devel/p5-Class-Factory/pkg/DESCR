@@ -1,0 +1,19 @@
+Class::Factory - Base class for dynamic factory classes
+
+  package My::Factory;
+
+  use strict;
+  use base qw( Class::Factory );
+
+  # Add our default types
+
+  My::Factory->add_factory_type( perl  => 'My::Factory::Perl' );
+  My::Factory->add_factory_type( blech => 'My::Factory::Blech' );
+
+  1;
+
+  # Create new objects using the default types
+
+  my $perl_item = My::Factory->new( 'perl', foo => 'bar' );  
+  my $blech_item = My::Factory->new( 'blech', foo => 'baz' );  
+
