@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/12 16:29:19 espie Exp $
+@comment ${P5SITE}/ExtUtils/
+@comment ${P5SITE}/ExtUtils/Command.pm
+${P5SITE}/Shell/
+${P5SITE}/Shell/Command.pm
+@man man/man3p/ExtUtils::Command.3p
+@comment @man man/man3p/Shell::Command.3p

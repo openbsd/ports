@@ -1,0 +1,2 @@
+Shell::Command is a thin wrapper for ExtUtils::Command
+to provide cross-platform functions emulating common shell commands.
