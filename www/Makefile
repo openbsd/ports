@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.247 2006/11/11 18:29:39 espie Exp $
+# $OpenBSD: Makefile,v 1.248 2006/11/12 16:34:33 espie Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -99,16 +99,17 @@
      SUBDIR += p5-CGI-SpeedyCGI
      SUBDIR += p5-CGI-Untaint
      SUBDIR += p5-CGI-XMLApplication
+     SUBDIR += p5-CSS-Squish
      SUBDIR += p5-Catalyst-Action-RenderView
      SUBDIR += p5-Catalyst-Devel
      SUBDIR += p5-Catalyst-Engine-Apache
      SUBDIR += p5-Catalyst-Helper-Controller-Scaffold
+     SUBDIR += p5-Catalyst-Log-Log4perl
      SUBDIR += p5-Catalyst-Plugin-ConfigLoader
      SUBDIR += p5-Catalyst-Plugin-DefaultEnd
      SUBDIR += p5-Catalyst-Plugin-FormValidator
      SUBDIR += p5-Catalyst-Plugin-HTML-Widget
      SUBDIR += p5-Catalyst-Plugin-I18N
-     SUBDIR += p5-Catalyst-Log-Log4perl
      SUBDIR += p5-Catalyst-Plugin-Pluggable
      SUBDIR += p5-Catalyst-Plugin-Prototype
      SUBDIR += p5-Catalyst-Plugin-Session
@@ -124,7 +125,6 @@
      SUBDIR += p5-Catalyst-Plugin-XMLRPC
      SUBDIR += p5-Catalyst-Runtime
      SUBDIR += p5-Catalyst-View-Mason
-     SUBDIR += p5-CSS-Squish
      SUBDIR += p5-HTML-Base
      SUBDIR += p5-HTML-CGIChecker
      SUBDIR += p5-HTML-Calendar-Month-Simple
@@ -158,6 +158,7 @@
      SUBDIR += p5-HTTP-Request-Params
      SUBDIR += p5-HTTP-Server-Simple
      SUBDIR += p5-HTTP-Server-Simple-Mason
+     SUBDIR += p5-HTTP-Server-Simple-Recorder
      SUBDIR += p5-HTTPD-Log-Filter
      SUBDIR += p5-LWP-UserAgent-Determined
      SUBDIR += p5-MasonX-Interp-WithCallbacks
@@ -166,6 +167,7 @@
      SUBDIR += p5-PHP-Session
      SUBDIR += p5-PodToHTML
      SUBDIR += p5-SOAP-Lite
+     SUBDIR += p5-Test-HTTP-Server-Simple
      SUBDIR += p5-URI
      SUBDIR += p5-URI-Find
      SUBDIR += p5-WWW-Curl

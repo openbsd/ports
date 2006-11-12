@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.432 2006/11/12 16:01:03 matthieu Exp $
+# $OpenBSD: Makefile,v 1.433 2006/11/12 16:34:33 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -24,9 +24,9 @@
      SUBDIR += bluetooth-libs
      SUBDIR += boehm-gc
      SUBDIR += boost
+     SUBDIR += c2hs
      SUBDIR += catalyst
      SUBDIR += catalyst-tutorial
-     SUBDIR += c2hs
      SUBDIR += ccache
      SUBDIR += cflow
      SUBDIR += check
@@ -191,6 +191,7 @@
      SUBDIR += p5-C-Scan
      SUBDIR += p5-Cache-Cache
      SUBDIR += p5-Cache-FastMmap
+     SUBDIR += p5-Cache-Memcached
      SUBDIR += p5-Cache-Mmap
      SUBDIR += p5-Cache-Simple-TimedExpiry
      SUBDIR += p5-Carp-Assert
@@ -209,8 +210,11 @@
      SUBDIR += p5-Class-Data-Inheritable
      SUBDIR += p5-Class-Date
      SUBDIR += p5-Class-ErrorHandler
-     SUBDIR += p5-Class-Inspector
+     SUBDIR += p5-Class-Factory
+     SUBDIR += p5-Class-Factory-Util
      SUBDIR += p5-Class-ISA
+     SUBDIR += p5-Class-InsideOut
+     SUBDIR += p5-Class-Inspector
      SUBDIR += p5-Class-Loader
      SUBDIR += p5-Class-MakeMethods
      SUBDIR += p5-Class-MethodMaker
@@ -269,6 +273,7 @@
      SUBDIR += p5-File-HomeDir
      SUBDIR += p5-File-Modified
      SUBDIR += p5-File-ReadBackwards
+     SUBDIR += p5-File-ShareDir
      SUBDIR += p5-File-Slurp
      SUBDIR += p5-File-Sync
      SUBDIR += p5-File-Tail
@@ -289,6 +294,7 @@
      SUBDIR += p5-IO-Multiplex
      SUBDIR += p5-IO-Pager
      SUBDIR += p5-IO-String
+     SUBDIR += p5-IO-Tee
      SUBDIR += p5-IO-Tty
      SUBDIR += p5-IO-stringy
      SUBDIR += p5-IPC-Run3
@@ -323,8 +329,8 @@
      SUBDIR += p5-Object-Declare
      SUBDIR += p5-Object-Realize
      SUBDIR += p5-Object-Signature
-     SUBDIR += p5-POE
      SUBDIR += p5-PAR-Dist
+     SUBDIR += p5-POE
      SUBDIR += p5-Parallel-ForkManager
      SUBDIR += p5-Params-CallbackRequest
      SUBDIR += p5-Params-Util
@@ -344,8 +350,10 @@
      SUBDIR += p5-SVN-Notify
      SUBDIR += p5-SVN-Simple
      SUBDIR += p5-SVN-Web
+     SUBDIR += p5-Scalar-Defer
      SUBDIR += p5-Set-Object
      SUBDIR += p5-Set-Scalar
+     SUBDIR += p5-Shell-Command
      SUBDIR += p5-String-CRC32
      SUBDIR += p5-String-Scanf
      SUBDIR += p5-Sub-Name
