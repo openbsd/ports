@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2006/11/12 16:30:25 espie Exp $
+--- Makefile.PL.orig	Sun Nov 12 01:43:01 2006
++++ Makefile.PL	Sun Nov 12 01:43:21 2006
+@@ -6,8 +6,8 @@ version_from ('lib/HTTP/Server/Simple/Re
+ abstract_from('lib/HTTP/Server/Simple/Recorder.pm');
+ license('perl');
+ requires('Test::More');
+-requires('Test::HTTP::Server::Simple' => '0.02');
+-requires('IO::Tee');
+-requires('HTTP::Server::Simple' => '0.10');
++#requires('Test::HTTP::Server::Simple' => '0.02');
++#requires('IO::Tee');
++#requires('HTTP::Server::Simple' => '0.10');
+ 
+ &WriteAll;

@@ -1,0 +1,2 @@
+This module allows you to record all HTTP communication between an 
+HTTP::Server::Simple-derived server and its clients.  
