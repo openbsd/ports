@@ -1,0 +1,5 @@
+This module is a direct descendent of DBIx::SearchBuilder. If you're familiar
+with SearchBuilder, Jifty::DBI should be quite familiar to you.
+
+Jifty::DBI was forked from SearchBuilder to give us the opportunity to seriously
+clean up the API and internals without breaking existing applications.
