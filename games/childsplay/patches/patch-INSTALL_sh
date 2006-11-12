@@ -1,0 +1,225 @@
+$OpenBSD: patch-INSTALL_sh,v 1.1.1.1 2006/11/12 18:43:56 ajacoutot Exp $
+--- INSTALL.sh.orig	Thu Oct 26 15:32:34 2006
++++ INSTALL.sh	Sun Nov 12 19:39:13 2006
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ # install childsplay.  
+ # Be aware that childsplay probably won't work when you edit this file :-(
+ # As of 11/2004 childsplay will be converted to follow the File System
+@@ -8,7 +8,7 @@
+ # However, you can change the "prefix" to "/usr" and childsplay will still
+ # work. Set it to anything else and your on your own.
+   
+-PREFIX=/usr/local
++PREFIX=!!LOCALBASE!!
+ 
+ #################################################################
+ # DON'T EDIT BEHIND THIS POINT 
+@@ -18,18 +18,17 @@ then PREFIX=$*
+ fi
+ echo "PREFIX=$PREFIX"
+ 
+-PYTHON=`which python`
++PYTHON=!!MODPY_BIN!!
+ 
+ EXECDIR=$PREFIX/bin
+ LOCALEDIR=$PREFIX/share/locale
+-ASSETMLDIR=/usr/share/assetml
++ASSETMLDIR=$PREFIX/share/assetml
+ SCOREDIR=/var/games
+ SCOREFILE=$SCOREDIR/childsplay.score
+ DOCDIR=$PREFIX/share/doc/childsplay
+ MANDIR=$PREFIX/man/man6
+-CPDIR=$PREFIX/lib/games/childsplay
++CPDIR=$PREFIX/share/childsplay
+ SHAREDIR=$PREFIX/share/childsplay
+-BINDIR=$PREFIX/games
+ LIBDIR=$CPDIR/lib
+ MODULESDIR=$LIBDIR
+ SHARELIBDATADIR=$SHAREDIR/lib
+@@ -42,85 +41,65 @@ CHILDSPLAYRC=childsplayrc
+ OLDCPDIR=$PREFIX/games/childsplay
+ 
+ echo "Making directorys"
+-mkdir -vp $CPDIR
+-mkdir -vp $CPDIR/lib
+-mkdir -vp $DOCDIR
+-mkdir -vp $LOCALEDIR
+-mkdir -vp $ASSETMLDIR
+-mkdir -vp $SCOREDIR
+-mkdir -vp $MANDIR
+-mkdir -vp $SHAREDIR
+-mkdir -vp $SHAREDATADIR
+-mkdir -vp $SHARELIBDATADIR
+-mkdir -vp $BINDIR
+-mkdir -vp $EXECDIR
++mkdir -p !!DESTDIR!!/$CPDIR
++mkdir -p !!DESTDIR!!/$DOCDIR
++mkdir -p !!DESTDIR!!/$LOCALEDIR
++mkdir -p !!DESTDIR!!/$ASSETMLDIR
++mkdir -p !!DESTDIR!!/$MANDIR
++mkdir -p !!DESTDIR!!/$SHAREDIR
++mkdir -p !!DESTDIR!!/$SHAREDATADIR
++mkdir -p !!DESTDIR!!/$SHARELIBDATADIR
++mkdir -p !!DESTDIR!!/$EXECDIR
+ 
+ set -e
+ 
+ CWD=`pwd`
+-USERID=`id | sed -e 's/).*//; s/^.*(//;'`
+-if [ "$USERID" != "root" ]; then
+-    echo " You must be root to install the plugins"
+-    echo " exit"
+-    exit 1
+-fi
+-echo " Looking for obsolete childsplay files in $OLDCPDIR"
+-if [ -e $OLDCPDIR ] && [ -d $OLDCPDIR ]
+-then rm -fr $OLDCPDIR
+-     echo " Old files removed"
+-fi
+ 
+-echo -e "\n>>>>>>>>>>> Install childsplay >>>>>>>>>>>>>>>>>>>>"
+-echo " Installing in $PREFIX"
+-
+ ## Begin install
+ echo " Copy libraries"
+ for DIR in `ls $CWD/lib`
+ do 
+     if [ -d $CWD/lib/$DIR ]
+-	 then cp -rf $CWD/lib/$DIR $SHARELIBDATADIR
+-	 else cp -f $CWD/lib/$DIR $CPDIR/lib
++	 then cp -rf $CWD/lib/$DIR !!DESTDIR!!/$SHARELIBDATADIR
++	 else cp -f $CWD/lib/$DIR !!DESTDIR!!/$CPDIR/lib
+     fi
+ done
+ 
+-cp -f $CWD/*.py $CPDIR/
++cp -f $CWD/*.py !!DESTDIR!!/$CPDIR/
+ 
+ echo " Copy misc. data files"
+ for FILE in `ls $CWD/Data`
+ do 
+     if [ -f $CWD/Data/$FILE ]
+-	 then cp -f $CWD/Data/$FILE $SHAREDATADIR/
++	 then cp -f $CWD/Data/$FILE !!DESTDIR!!/$SHAREDATADIR/
+     fi
+ done
+ 
+-cp -rf $CWD/Data/icons $SHAREDATADIR/
+-cp -f $CWD/Data/childsplay.score $SCOREDIR/
+-chmod 0666 $SCOREDIR/childsplay.score
+-## As we are on *nix we must move the score file and replace it with a symlink 
+-mv -f $SHAREDATADIR/childsplay.score $SHAREDATADIR/childsplay.score.org
+-## Childsplay looks in his Data dir for the score file
+-ln -s $SCOREDIR/childsplay.score $SHAREDATADIR/childsplay.score
++cp -rf $CWD/Data/icons !!DESTDIR!!/$SHAREDATADIR/
+ 
+ echo " Copy assetml files"
+-cp -rf $CWD/assetml/* $ASSETMLDIR/
++cp -rf $CWD/assetml/* !!DESTDIR!!/$ASSETMLDIR/
+ 
+ echo " Copy locale files"
+-cp -rf $CWD/locale/* $LOCALEDIR/
++cp -rf $CWD/locale/* !!DESTDIR!!/$LOCALEDIR/
+ 
+ echo " Copy manpage"
+-cp -f $CWD/man/* $MANDIR/
++for i in $CWD/man/*.gz
++    do zcat $i | /usr/bin/sed -e 's,/usr/local,!!LOCALBASE!!,g' \
++	-e 's,/usr/local/games,!!LOCALBASE!!/share,g' \
++	-e 's,/usr/local/doc,!!LOCALBASE!!/share/doc,g' \
++	> !!DESTDIR!!/$MANDIR/`basename $i .gz`
++done
+ 
+ echo " Copy docs"
+-cp -rf $CWD/doc/* $DOCDIR/
++cp -rf $CWD/doc/* !!DESTDIR!!/$DOCDIR/
+ 
+ echo " Copy executable and setting permissions."
+-cp -f $CWD/childsplay.sh $BINDIR/childsplay
+-cp -f $CWD/childsplay.sh $EXECDIR/childsplay
+-chmod +x $BINDIR/childsplay
+-chmod +x $EXECDIR/childsplay
++cp -f $CWD/childsplay.sh !!DESTDIR!!/$EXECDIR/childsplay
++chmod +x !!DESTDIR!!/$EXECDIR/childsplay
+ 
+-chmod +x $CPDIR/childsplay.py
+-chmod +x $CPDIR/letters-trans.py
++chmod +x !!DESTDIR!!/$CPDIR/childsplay.py
++chmod +x !!DESTDIR!!/$CPDIR/letters-trans.py
+ 
+ #echo " Looking for the old executable, if any"
+ #if [ -e /usr/local/bin/childsplay ]
+@@ -129,52 +108,22 @@ chmod +x $CPDIR/letters-trans.py
+ #fi
+ 
+ echo " Setting the base path in childsplay to $PREFIX"
+-echo "## Automated file please do not edit" > $CPDIR/BASEPATH.py
+-echo "BASEPATH=\"$PREFIX\"" >> $CPDIR/BASEPATH.py
+-echo "EXECDIR=\"$EXECDIR\"" >> $CPDIR/BASEPATH.py
+-echo "LOCALEDIR=\"$LOCALEDIR\"" >> $CPDIR/BASEPATH.py
+-echo "ASSETMLDIR=\"$ASSETMLDIR\"" >> $CPDIR/BASEPATH.py
+-echo "SCOREDIR=\"$SCOREDIR\"" >> $CPDIR/BASEPATH.py
+-echo "SCOREFILE=\"$SCOREFILE\"" >> $CPDIR/BASEPATH.py
+-echo "DOCDIR=\"$DOCDIR\"" >> $CPDIR/BASEPATH.py
+-echo "MANDIR=\"$MANDIR\"" >> $CPDIR/BASEPATH.py
+-echo "CPDIR=\"$CPDIR\"" >> $CPDIR/BASEPATH.py
+-echo "SHAREDIR=\"$SHAREDIR\"" >> $CPDIR/BASEPATH.py
+-echo "BINDIR=\"$BINDIR\"" >> $CPDIR/BASEPATH.py
+-echo "LIBDIR=\"$LIBDIR\"" >> $CPDIR/BASEPATH.py
+-echo "MODULESDIR=\"$MODULESDIR\"" >> $CPDIR/BASEPATH.py
+-echo "SHARELIBDATADIR=\"$SHARELIBDATADIR\"" >> $CPDIR/BASEPATH.py
+-echo "SHAREDATADIR=\"$SHAREDATADIR\"" >> $CPDIR/BASEPATH.py
+-echo "RCDIR=\"$RCDIR\"" >> $CPDIR/BASEPATH.py
+-echo "CHILDSPLAYRC=\"$CHILDSPLAYRC\"" >> $CPDIR/BASEPATH.py
+-echo "HOME_DIR_NAME=\"$HOME_DIR_NAME\"" >> $CPDIR/BASEPATH.py
+-echo "" >> $CPDIR/BASEPATH.py
+-
+-echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+-echo ""
+-echo "  Instalation of childsplay complete"
+-echo "  The childsplay executable is $BINDIR/childsplay"
+-echo ""
+-echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+-echo " One thing left todo..."
+-echo " Translating words"
+-$PYTHON $CPDIR/letters-trans.py $ASSETMLDIR
+-echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+-echo " Be sure to read the README-MEMORY file on how you can"
+-echo " use your own pictures in the memory game."
+-echo ""
+-echo " Have fun, and don't forget that for a program like this"
+-echo " translations are very important."
+-echo " So if your langauge is not yet supported and you want to"
+-echo " give something back to the free-source community."
+-echo " Ask info on how to help:"
+-echo " childsplay@users.sourceforge.net"
+-echo ""
+-echo "***********************************************************************"
+-echo "  Childsplay and some of the games it contains uses"
+-echo "  configuration files."
+-echo "  You can find these files in the dot directory called '.childsplay'"
+-echo "  in your home directory."
+-echo "***********************************************************************"
+-echo "  Enjoy childsplay :-)"
+-echo ""
++echo "## Automated file please do not edit" > !!DESTDIR!!/$CPDIR/BASEPATH.py
++echo "BASEPATH=\"$PREFIX\"" >> !!DESTDIR!!/$CPDIR/BASEPATH.py
++echo "EXECDIR=\"$EXECDIR\"" >> !!DESTDIR!!/$CPDIR/BASEPATH.py
++echo "LOCALEDIR=\"$LOCALEDIR\"" >> !!DESTDIR!!/$CPDIR/BASEPATH.py
++echo "ASSETMLDIR=\"$ASSETMLDIR\"" >> !!DESTDIR!!/$CPDIR/BASEPATH.py
++echo "SCOREDIR=\"$SCOREDIR\"" >> !!DESTDIR!!/$CPDIR/BASEPATH.py
++echo "SCOREFILE=\"$SCOREFILE\"" >> !!DESTDIR!!/$CPDIR/BASEPATH.py
++echo "DOCDIR=\"$DOCDIR\"" >> !!DESTDIR!!/$CPDIR/BASEPATH.py
++echo "MANDIR=\"$MANDIR\"" >> !!DESTDIR!!/$CPDIR/BASEPATH.py
++echo "CPDIR=\"$CPDIR\"" >> !!DESTDIR!!/$CPDIR/BASEPATH.py
++echo "SHAREDIR=\"$SHAREDIR\"" >> !!DESTDIR!!/$CPDIR/BASEPATH.py
++echo "LIBDIR=\"$LIBDIR\"" >> !!DESTDIR!!/$CPDIR/BASEPATH.py
++echo "MODULESDIR=\"$MODULESDIR\"" >> !!DESTDIR!!/$CPDIR/BASEPATH.py
++echo "SHARELIBDATADIR=\"$SHARELIBDATADIR\"" >> !!DESTDIR!!/$CPDIR/BASEPATH.py
++echo "SHAREDATADIR=\"$SHAREDATADIR\"" >> !!DESTDIR!!/$CPDIR/BASEPATH.py
++echo "RCDIR=\"$RCDIR\"" >> !!DESTDIR!!/$CPDIR/BASEPATH.py
++echo "CHILDSPLAYRC=\"$CHILDSPLAYRC\"" >> !!DESTDIR!!/$CPDIR/BASEPATH.py
++echo "HOME_DIR_NAME=\"$HOME_DIR_NAME\"" >> !!DESTDIR!!/$CPDIR/BASEPATH.py
++echo "" >> !!DESTDIR!!/$CPDIR/BASEPATH.py
