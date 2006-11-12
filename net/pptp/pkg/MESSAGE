@@ -1,13 +1,8 @@
-Documentation has been installed in ${PREFIX}/share/doc/pptp/.
+You will need to allow gre traffic for pptp to work:
+	sysctl net.inet.gre.allow=1
 
-A reconnect-script has been installed as ${PREFIX}/sbin/pptp-reconnect,
-edit it to reflect your environment.
-
-Next, setup /etc/ppp/{options,chap-secrets,pap-secrets} with
-information provided by your ISP.
-
-You can enable or disable GRE with sysctl -w net.inet.gre.allow=1.
-It needs to be enabled for some situations.
+See ${PREFIX}/share/doc/pptp/USING for an example configuration
+specific to OpenBSD.
 
 See http://www.counterpane.com/pptp-faq.html for a list of security flaws.
 ==========================================================================

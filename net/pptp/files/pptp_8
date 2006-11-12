@@ -1,4 +1,4 @@
-.\" $OpenBSD: pptp_8,v 1.4 2006/09/30 20:40:10 grunk Exp $
+.\" $OpenBSD: pptp_8,v 1.5 2006/11/12 10:10:09 grunk Exp $
 .\" Manual page for pptp-1.1.0
 .\" Information gleaned from USING file in the distribution
 .\" SH section heading
@@ -32,14 +32,7 @@ to negotiate the connection with MS-CHAP authentication.
 .Pp
 Because
 .Nm
-uses GRE by using a raw IP socket, it will not work if your kernel has
-the
-.Xr gre 4
-pseudo-device
-configured.
-.Pp
-Build a kernel without "GRE encapsulation interface" support.
-(NB: look in /usr/src/sys/conf/GENERIC for "pseudo-device   gre".)
+uses GRE, the net.inet.gre.allow sysctl needs to be enabled.
 .Pp
 The
 .Ar hostname
@@ -66,13 +59,6 @@ can be used to (re)establish a pptp connection.
 .Xr ppp 8 ,
 .Xr gre 4 ,
 .Pa PREFIX/share/doc/pptp/USING .
-.Sh BUGS
-.Nm
-does not work with a GENERIC kernel, because
-.Xr gre 4
-conflicts with
-.Xr pptp 8
-protocol ip (47).
 .Sh HISTORY
 This man page appeared first in 
 .Nx 

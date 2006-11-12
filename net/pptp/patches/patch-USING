@@ -1,30 +1,45 @@
-$OpenBSD: patch-USING,v 1.1 2006/10/03 12:53:50 grunk Exp $
---- USING.orig	Sat Sep 30 22:51:56 2006
-+++ USING	Sat Sep 30 22:51:58 2006
-@@ -95,4 +95,90 @@ See also the following test scripts;
+--- USING.orig	Sat Nov  4 15:37:29 2006
++++ USING	Thu Nov  9 14:17:25 2006
+@@ -1,5 +1,10 @@
+ Usage Notes
+ 
++[ Note by your friendly OpenBSD pptp port maintainer:
++Most examples in this file are quite Linux-centric. See the section
++EXAMPLE CONFIGURATION FOR OPENBSD below for an example that focuses
++on OpenBSD exclusively. ]
++
+ pptp is started as a psuedo-tty child process using pppd's pty option:
+ 
+ 	pppd call provider [pppd-options] \
+@@ -94,5 +99,96 @@
+ 
  test-multiple-tunnels-1.sh  creates multiple source interfaces
  test-multiple-tunnels-2.sh  creates multiple tunnels
- 
++
 +
 +EXAMPLE CONFIGURATION FOR OPENBSD:
 +
 +On OpenBSD, pptp uses the userspace ppp(8) implementation
-+instead of pppd(8). This is a compile-time option.
++by default, instead of using pppd(8). This is a compile-time option
++hardcoded in the port's Makefile, and it is not recommended that you
++change this unless you really have a reason to do so. If your VPN
++requires mppe/mppc in conjunction with pptp, ppp(8) is your
++only option anyway since pppd(8) does not support mppe/mppc.
 +
-+Having ppp start pptp seems to be working much better
-+than the other way round.
-+
-+This example assumes that we want to configure a gateway running
++This example assumes that you want to configure a gateway running
 +OpenBSD to provide PPTP VPN access to a remote network for all hosts
-+on our internal LAN.
++on your internal LAN. While this may not match your situation at
++all, you will hopefully gather enough hints you can use for your
++own setup.
 +
 +Let us assume that the VPN server is called vpn-gateway.net,
 +and that the default route of our OpenBSD box is 42.42.42.42.
 +The remote network is 10.42.0/16; all traffic to this network
 +should go through the VPN tunnel.
 +
-+First, put something like this into /etc/ppp/ppp.conf so we
-+can connect to the vpn gateway:
++Having ppp start pptp seems to be working much better than the
++other way round. So first, put something like this into /etc/ppp/ppp.conf
++to connect to the vpn gateway:
 +
 +  default:
 +	set log Phase Chat LCP IPCP CCP tun command
@@ -32,20 +47,21 @@ $OpenBSD: patch-USING,v 1.1 2006/10/03 12:53:50 grunk Exp $
 +	set device "!PREFIX/sbin/pptp --nolaunchpppd vpn-gateway.net"
 +	set authname User
 +	set authkey MySecret
-+	set mtu max 1490
-+	set mru max 1490
 +	set mppe 128 stateless
 +
-+Next, we need to configure routing in /etc/ppp/ppp.linkup.
++Next, you need to configure routing in /etc/ppp/ppp.linkup.
 +Assuming vpn-gateway.net resides inside 10.42.0/16, we have to add a host
 +route pointing to vpn-gateway.net in order to avoid a chicken-and-egg
 +problem once packets to 10.42.0/16 are routed through the tunnel.
++(Of course, this also applies if you need to configure the tunnel as
++your default route, but that is not covered in this example.)
++
 +We also load packet filter anchors for the vpn interface here.
 +More on that later.
 +
 +/etc/ppp/ppp.linkup:
 +
-+  MYADDR:
++  vpn: 
 +    ! sh -c "/sbin/route add -host vpn-gateway.net 42.42.42.42"
 +    ! sh -c "/sbin/route add -net 10.42.0.0 -netmask 255.255.0.0 HISADDR"
 +    ! sh -c "/sbin/pfctl -a vpn -f /etc/pf.conf.vpn"
@@ -54,7 +70,7 @@ $OpenBSD: patch-USING,v 1.1 2006/10/03 12:53:50 grunk Exp $
 +
 +/etc/ppp/ppp.linkdown:
 +
-+  MYADDR:
++  vpn:
 +    ! sh -c "/sbin/pfctl -a vpn -F all"
 +    ! sh -c "/sbin/route delete -net 10.42.0.0 -netmask 255.255.0.0 HISADDR"
 +    ! sh -c "/sbin/route delete -host vpn-gateway.net 42.42.42.42"
@@ -62,8 +78,8 @@ $OpenBSD: patch-USING,v 1.1 2006/10/03 12:53:50 grunk Exp $
 +To make pf aware of the vpn anchors, put these lines into the
 +nat and filter sections of /etc/pf.conf, respectively:
 +
-+  nat-anchor	"vpn"
-+  anchor	"vpn"
++  nat-anchor	vpn
++  anchor	vpn
 +
 +Now define vpn anchor rules in /etc/pf.conf.vpn:
 +
@@ -90,5 +106,5 @@ $OpenBSD: patch-USING,v 1.1 2006/10/03 12:53:50 grunk Exp $
 +
 +To terminate the connection, kill the ppp process. It creates a PID
 +file in /var/run/tunX.pid, where X is the number of the tun device used.
-+
- $Id: patch-USING,v 1.1 2006/10/03 12:53:50 grunk Exp $	
+ 
+ $Id: patch-USING,v 1.2 2006/11/12 10:10:09 grunk Exp $	

@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/03/24 00:57:58 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/11/12 10:10:09 grunk Exp $
 @man man/man8/pptp.8
 sbin/pptp
-sbin/pptp-reconnect
 share/doc/pptp/
 share/doc/pptp/Documentation/
 share/doc/pptp/Documentation/DESIGN.CALLMGR
@@ -20,3 +19,4 @@ share/doc/pptp/Reference/rfc1990.txt
 share/doc/pptp/Reference/rfc791.txt
 share/doc/pptp/Reference/rfc793.txt
 share/doc/pptp/USING
+@sysctl net.inet.gre.allow=1
