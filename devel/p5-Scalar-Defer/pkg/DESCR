@@ -1,0 +1,6 @@
+This module exports two functions, "defer" and "lazy", for building
+values that are evaluated on demand.
+    
+Unlike the "tie"-based Data::Lazy, this module operates on *values*, not
+*variables*. Therefore, assigning into $dv and $lv above will simply
+replace the value, instead of triggering a "STORE" method call.
