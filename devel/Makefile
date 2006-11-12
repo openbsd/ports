@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.434 2006/11/12 18:05:00 espie Exp $
+# $OpenBSD: Makefile,v 1.435 2006/11/12 18:16:03 jolan Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -452,8 +452,10 @@
      SUBDIR += py-tz
      SUBDIR += py-unit
      SUBDIR += py-unit,no_x11
+     SUBDIR += py-urwid
      SUBDIR += py-zopeinterface
      SUBDIR += pygame
+     SUBDIR += pyusb
      SUBDIR += rats
      SUBDIR += ruby-actionpack
      SUBDIR += ruby-activesupport
