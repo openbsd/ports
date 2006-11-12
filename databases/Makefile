@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2006/11/07 18:22:29 espie Exp $
+# $OpenBSD: Makefile,v 1.99 2006/11/12 18:05:00 espie Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += db
@@ -58,6 +58,7 @@
      SUBDIR += p5-Data-Page
      SUBDIR += p5-GDBM_File
      SUBDIR += p5-Ima-DBI
+     SUBDIR += p5-Jifty-DBI
      SUBDIR += p5-SQL-Abstract
      SUBDIR += p5-SQL-Abstract-Limit
      SUBDIR += p5-SQL-Statement
