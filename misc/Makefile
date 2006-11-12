@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2006/11/03 13:26:12 bernd Exp $
+# $OpenBSD: Makefile,v 1.93 2006/11/12 18:19:01 jolan Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -56,6 +56,7 @@
      SUBDIR += plan
      SUBDIR += py-imdb
      SUBDIR += py-memcached
+     SUBDIR += pymissile
      SUBDIR += remind
      SUBDIR += rpm
      SUBDIR += screen
