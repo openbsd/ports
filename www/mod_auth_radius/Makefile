@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2005/02/07 12:11:09 alek Exp $
+# $OpenBSD: Makefile,v 1.14 2006/11/12 23:28:42 jcs Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
 SHARED_ONLY=	Yes
 
 DISTNAME=	mod_auth_radius-1.5.7
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	www
 
 # Apache
@@ -18,8 +18,6 @@ COMMENT=	"Apache RADIUS authentication module"
 HOMEPAGE=	http://www.freeradius.org/mod_auth_radius/
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/
 EXTRACT_SUFX=	.tar
-
-MAINTAINER=	joshua stein <jcs@openbsd.org>
 
 NO_REGRESS=	Yes
 

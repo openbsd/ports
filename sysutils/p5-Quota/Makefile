@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2006/01/14 09:49:27 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2006/11/12 23:28:42 jcs Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"quota manipulation module"
 
 DISTNAME=	Quota-1.5.1
-PKGNAME=	p5-${DISTNAME}
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	sysutils perl5
-
-MAINTAINER=	Joshua Stein <jcs@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

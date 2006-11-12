@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2006/09/18 09:04:03 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2006/11/12 23:28:42 jcs Exp $
 
 DISTNAME=	sqsh-2.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	databases shells
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -14,8 +14,6 @@ COMMENT=	"SQL shell"
 HOMEPAGE=	http://www.sqsh.org/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sqsh/} ${HOMEPAGE}
 EXTRACT_SUFX=	-src.tar.gz
-
-MAINTAINER=	Joshua Stein <jcs@openbsd.org>
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	tds.>=3,ct.>=2::databases/freetds

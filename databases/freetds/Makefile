@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2006/10/28 11:19:20 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2006/11/12 23:28:42 jcs Exp $
 
 V=		0.63
 DISTNAME=	freetds-$V
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	databases
 SHARED_LIBS +=	tds                  4.0      # .4.0
 SHARED_LIBS +=	ct                   3.0      # .3.0
@@ -20,8 +20,6 @@ WANTLIB=	c ncurses readline
 COMMENT=	"project to document and implement the TDS protocol"
 HOMEPAGE=	http://www.freetds.org/
 MASTER_SITES=	ftp://ftp.ibiblio.org/pub/Linux/ALPHA/freetds/stable/
-
-MAINTAINER=	joshua stein <jcs@openbsd.org>
 
 FLAVORS=	msdblib
 FLAVOR?=
