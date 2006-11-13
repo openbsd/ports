@@ -1,0 +1,28 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/13 00:09:50 espie Exp $
+${P5SITE}/IO/All/
+${P5SITE}/IO/All.pm
+${P5SITE}/IO/All.pod
+${P5SITE}/IO/All/Base.pm
+${P5SITE}/IO/All/DBM.pm
+${P5SITE}/IO/All/Dir.pm
+${P5SITE}/IO/All/File.pm
+${P5SITE}/IO/All/Filesys.pm
+${P5SITE}/IO/All/Link.pm
+${P5SITE}/IO/All/MLDBM.pm
+${P5SITE}/IO/All/Pipe.pm
+${P5SITE}/IO/All/STDIO.pm
+${P5SITE}/IO/All/Socket.pm
+${P5SITE}/IO/All/String.pm
+${P5SITE}/IO/All/Temp.pm
+@man man/man3p/IO::All.3p
+@man man/man3p/IO::All::DBM.3p
+@man man/man3p/IO::All::Dir.3p
+@man man/man3p/IO::All::File.3p
+@man man/man3p/IO::All::Filesys.3p
+@man man/man3p/IO::All::Link.3p
+@man man/man3p/IO::All::MLDBM.3p
+@man man/man3p/IO::All::Pipe.3p
+@man man/man3p/IO::All::STDIO.3p
+@man man/man3p/IO::All::Socket.3p
+@man man/man3p/IO::All::String.3p
+@man man/man3p/IO::All::Temp.3p
