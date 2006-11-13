@@ -1,0 +1,3 @@
+CGI::Application is yet another MVC perl framework.
+It's probably simpler to set up than Catalyst,
+and slightly less flexible.
