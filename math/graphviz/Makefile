@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2006/08/03 20:04:51 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2006/11/13 12:53:08 steven Exp $
 
 COMMENT=	"graph drawing software"
 
@@ -46,6 +46,7 @@ LIB_DEPENDS=	expat.>=4::textproc/expat \
 BUILD_DEPENDS=	:tk-8.4.*:x11/tk/8.4
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_X11=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

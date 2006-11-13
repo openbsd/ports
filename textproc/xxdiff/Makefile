@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2005/04/24 19:02:04 sturm Exp $
+# $OpenBSD: Makefile,v 1.22 2006/11/13 12:51:15 steven Exp $
 
 COMMENT=	"graphical file comparator and merge tool"
 
@@ -27,6 +27,7 @@ MAKE_ENV+=	UIC=${MODQT_UIC}
 # For qsettings to write its setup
 PORTHOME=	${WRKDIST}
 
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
 post-extract:

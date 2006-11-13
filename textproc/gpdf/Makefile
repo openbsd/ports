@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2006/09/18 12:00:00 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2006/11/13 12:51:15 steven Exp $
 
 COMMENT=		"PDF viewer for GNOME"
 
@@ -33,6 +33,7 @@ RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 			gnomeprintui-2-2::x11/gnome/libgnomeprintui
 
+USE_X11=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-schemas-install

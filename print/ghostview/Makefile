@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2005/02/21 14:52:54 alek Exp $
+# $OpenBSD: Makefile,v 1.17 2006/11/13 12:51:15 steven Exp $
 
 COMMENT=	"X11 front-end for ghostscript"
 
@@ -16,8 +16,8 @@ WANTLIB=		Xpm Xmu Xaw m X11 c Xt SM Xp Xext ICE
 
 RUN_DEPENDS=    :ghostscript-*:print/ghostscript/gnu
 
-CONFIGURE_STYLE=	imake
-
+CONFIGURE_STYLE=imake
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

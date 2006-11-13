@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2006/10/27 12:53:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2006/11/13 12:53:08 steven Exp $
 
 COMMENT=	"CSS editor"
 
@@ -29,6 +29,7 @@ LIB_DEPENDS=	gtk-x11-2.0.>=600.10,gdk_pixbuf-2.0.>=600.0,gdk-x11-2.0.>=600.0::x1
 
 MODULES=	devel/gettext
 
+USE_X11=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2006/09/18 11:59:59 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2006/11/13 12:51:15 steven Exp $
 
 COMMENT=	"powerful Gtk+2 newsreader"
 
@@ -29,6 +29,7 @@ WANTLIB=		X11 c cairo fontconfig freetype m \
 			atk-1.0 pango-1.0 pangocairo-1.0 \
 			pangoft2-1.0 pthread z
 
+USE_X11=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--disable-gtkspell
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

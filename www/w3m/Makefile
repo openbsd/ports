@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2006/08/12 15:51:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.63 2006/11/13 12:53:08 steven Exp $
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64"
 BROKEN=		crashes
@@ -42,6 +42,7 @@ DOCS=	FAQ.html HISTORY MANUAL.html README README.dict README.func \
 	keymap.default keymap.lynx menu.default menu.submenu
 
 .if ${FLAVOR:L:Mimage}
+USE_X11=	Yes
 LIB_DEPENDS+=	gdk_pixbuf.>=2,gdk_pixbuf_xlib.>=2::graphics/gdk-pixbuf
 CONFIGURE_ARGS+=--with-imagelib=gdk-pixbuf
 DOCS+=		README.img

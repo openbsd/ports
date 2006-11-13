@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/10/27 07:23:50 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2006/11/13 12:51:14 steven Exp $
 
 COMMENT='e-donkey client'
 CATEGORIES=net
@@ -29,6 +29,7 @@ CONFIGURE_ARGS+=--enable-gui=newgui1
 CONFIGURE_ENV+=CPPFLAGS='-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include -I${X11BASE}/include'
 CONFIGURE_ENV+=LDFLAGS='-L${LOCALBASE}/lib -L${X11BASE}/lib'
 
+USE_X11=Yes
 USE_GMAKE=Yes
 MODULES=lang/ocaml
 BUILD_DEPENDS=::x11/lablgtk

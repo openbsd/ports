@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2006/07/16 18:02:14 sturm Exp $
+# $OpenBSD: Makefile,v 1.39 2006/11/13 12:51:15 steven Exp $
 
 COMMENT=	"graphical frontend for LaTeX (nearly WYSIWYG)"
 
@@ -34,6 +34,7 @@ LIB_DEPENDS=	aspell::textproc/aspell/core
 WANTLIB=	ICE SM X11 c m stdc++ z
 
 USE_GMAKE=	Yes
+USE_X11=	Yes
 
 FLAVORS=	qt xforms
 FLAVOR?=	qt

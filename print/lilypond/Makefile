@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/29 19:27:12 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/13 12:51:15 steven Exp $
 #
 # Credits to Matt Jibson. He did the initial work on this port and many
 # tools it depends on.
+
+SHARED_ONLY=	Yes
 
 COMMENT=	"LilyPond - music notation for everyone"
 COMMENT-docs=	"LilyPond documentation"
@@ -45,9 +47,8 @@ CONFIGURE_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			FLEXLEXER_PATH=/usr/include/g++
 CONFIGURE_ARGS+=	--with-ncsb-dir=${LOCALBASE}/lib/X11/fonts/ghostscript
 USE_GMAKE=		Yes
+USE_X11=		Yes
 MAKE_FILE=		GNUmakefile
-
-SHARED_ONLY=		Yes
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
 PKG_ARCH=	*

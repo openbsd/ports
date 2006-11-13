@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2004/12/16 00:31:27 alek Exp $
+# $OpenBSD: Makefile,v 1.22 2006/11/13 12:51:15 steven Exp $
 COMMENT='enhanced talk that allows for multiple parties'
 
 DISTNAME=	ytalk-3.1.1
@@ -25,6 +25,7 @@ FLAVOR?=
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+= --without-x
 .else
+USE_X11=	Yes
 WANTLIB+=	ICE SM X11 
 .endif
 

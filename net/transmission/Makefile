@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/08/03 23:15:58 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/11/13 12:51:14 steven Exp $
 
 COMMENT=	"lightweight BitTorrent client"
 COMMENT-gui=	"lightweight BitTorrent client with graphical interface"
@@ -24,6 +24,7 @@ FLAVOR?=
 
 MULTI_PACKAGES=
 .if !${FLAVOR:L:Mno_gui}
+USE_X11=	Yes
 MULTI_PACKAGES+=-gui
 .endif
 SUBPACKAGE?=

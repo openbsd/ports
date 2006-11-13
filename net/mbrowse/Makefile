@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/08/03 23:15:58 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/11/13 12:51:14 steven Exp $
 
 COMMENT=	"graphical MIB browser"
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xi c crypto gmodule iconv intl m
 
+USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --with-snmp-style=net \
 		--with-snmp-prefix=${LOCALBASE} \

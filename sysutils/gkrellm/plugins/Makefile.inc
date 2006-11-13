@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.11 2006/09/18 11:59:59 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.12 2006/11/13 12:51:15 steven Exp $
 
 MAINTAINER?=		Peter Hessler <spambox@theapt.org>
 
@@ -24,6 +24,7 @@ RUN_DEPENDS+=	:gkrellm->=2.2.0:sysutils/gkrellm/gkrellm,-client
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
+USE_X11?=	Yes
 
 PLUGINDIR=	${PREFIX}/lib/gkrellm2/plugins
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2006/09/18 11:59:59 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2006/11/13 12:51:15 steven Exp $
 
 NOT_FOR_ARCHS=	${LP64_ARCHS}
 
@@ -40,6 +40,7 @@ MODULES=	devel/gettext
 
 CONFIGURE_STYLE= gnu
 
+USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static

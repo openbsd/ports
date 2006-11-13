@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2006/09/18 11:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2006/11/13 12:53:08 steven Exp $
 
 COMMENT=	"RPN and algebraic scientific calculator"
 
@@ -27,6 +27,7 @@ MODULES=	devel/gettext
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk_pixbuf-2.0.>=400.0,gdk-x11-2.0.>=400.0,gtk-x11-2.0.>=400.0::x11/gtk+2
 
+USE_X11=	Yes
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=gnu
 

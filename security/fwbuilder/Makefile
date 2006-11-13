@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/10/09 10:33:01 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/13 12:51:15 steven Exp $
 
 COMMENT='firewall gui'
 CATEGORIES=net security
@@ -20,6 +20,7 @@ MODULES=	x11/qt3
 FAKE_FLAGS=	INSTALL_ROOT=${WRKINST} ${MAKE_FLAGS}
 LIB_DEPENDS=	fwcompiler.>=8,fwbuilder.>=8::security/libfwbuilder
 NO_REGRESS=	Yes
+USE_X11=	Yes
 
 WANTLIB=	stdc++ c util m X11 ssl z crypto Xext pthread iconv xslt xml2 netsnmp
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/08/04 00:10:42 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2006/11/13 12:53:08 steven Exp $
 #
 # Many variables moved to ../Makefile.inc
 
@@ -16,6 +16,8 @@ FLAVOR?=		motif
 LIB_DEPENDS+=	 	expat.>=2::textproc/expat
 
 WANTLIB=		ICE SM X11 Xext Xp Xt c m z
+
+USE_X11=		Yes
 
 .if ${FLAVOR:L} == "gtk"
 

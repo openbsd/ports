@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/08/03 23:15:57 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/11/13 12:51:14 steven Exp $
 
 COMMENT=		"GUI for dctc (Direct Connect Text Clone)"
 
@@ -21,6 +21,7 @@ LIB_DEPENDS=		gnome.>=36,art_lgpl.>=4,gnomesupport,gnomeui.>=46::x11/gnome/libs
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		:dctc-*:net/dctc
 
+USE_X11=		Yes
 SEPARATE_BUILD=		simple
 AUTOCONF_VERSION=	2.13
 CONFIGURE_STYLE= 	autoconf

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2005/06/18 23:00:25 marco Exp $
+# $OpenBSD: Makefile,v 1.14 2006/11/13 12:51:15 steven Exp $
 # $FreeBSD: Makefile,v 1.4 1997/03/10 12:07:35 asami Exp $
 
 COMMENT=	"laptop battery status display for X11"
@@ -19,6 +19,7 @@ WANTLIB=		ICE SM X11 Xaw Xext Xmu Xpm Xt c
 CONFIGURE_STYLE=	imake noman
 ONLY_FOR_ARCHS=	i386 macppc zaurus sparc
 
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

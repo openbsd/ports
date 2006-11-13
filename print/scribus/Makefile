@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/11/10 17:17:30 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.11 2006/11/13 12:51:15 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -35,6 +35,7 @@ LIB_DEPENDS=	jpeg::graphics/jpeg \
 		cups::print/cups \
 		xml2::textproc/libxml
 
+USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 

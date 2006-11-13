@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2006/08/03 23:28:11 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2006/11/13 12:51:15 steven Exp $
 
 COMMENT=	"tools to convert Xfig's .fig files"
 
@@ -19,7 +19,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE= imake
+CONFIGURE_STYLE=imake
+USE_X11=	Yes
 
 FLAVORS=	a4
 FLAVOR?=

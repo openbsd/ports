@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/08/03 23:28:12 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/11/13 12:51:15 steven Exp $
 
 COMMENT=	"OTP and S/Key calculator for X"
 
@@ -23,6 +23,7 @@ CONFIGURE_STYLE=gnu dest
 
 MODULES=	devel/gettext
 
+USE_X11=	Yes
 USE_GMAKE=	Yes
 ALL_TARGET=	otpCalc otpCalc.1
 LIB_DEPENDS=	gtk.>=2,gdk.>=2::x11/gtk+

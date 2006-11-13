@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/08/03 23:55:11 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/11/13 12:51:15 steven Exp $
 
 COMMENT=	"Objective Caml package manager"
 CATEGORIES=	sysutils
@@ -25,5 +25,6 @@ CONFIGURE_ARGS=	-with-toolbox -config ${PREFIX}/share/examples/findlib/findlib.c
 
 ALL_TARGET=	all ${MODOCAML_NATIVE:S,Yes,all opt,:S,No,,}
 USE_GMAKE=	Yes
+USE_X11=	Yes
 
 .include <bsd.port.mk>

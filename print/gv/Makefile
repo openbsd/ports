@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2006/08/03 23:28:11 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2006/11/13 12:51:15 steven Exp $
 
 COMMENT= 	"PostScript and PDF previewer"
 
@@ -20,8 +20,8 @@ WANTLIB=		Xpm Xmu X11 m c Xt SM Xp Xext ICE
 LIB_DEPENDS=	Xaw3d.>=6.1::x11/Xaw3d
 RUN_DEPENDS=	:ghostscript-*:print/ghostscript/gnu
 
-CONFIGURE_STYLE=	imake
-
+CONFIGURE_STYLE=imake
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
 INSTALL_TARGET=	install install.man install.doc

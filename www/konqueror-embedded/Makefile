@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2006/10/21 00:41:08 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2006/11/13 12:53:08 steven Exp $
 
 COMMENT=	'stand-alone Qt-based web browser'
 CATEGORIES=	www x11
@@ -21,6 +21,7 @@ MASTER_SITES= 	http://www.cirulla.net/kdenox-snapshots/snapshots/
 MASTER_SITES0= 	${MASTER_SITE_KDE:=stable/3.5.5/src/}
 
 SHARED_LIBS=		konqe	0.0
+USE_X11=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/22 12:02:11 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/13 12:51:15 steven Exp $
 
 COMMENT=		"X Printing Panel"
 
@@ -26,5 +26,6 @@ LIB_DEPENDS=		cups::print/cups \
 
 CONFIGURE_STYLE=	gnu
 USE_GMAKE=		Yes
+USE_X11=		Yes
 
 .include <bsd.port.mk>

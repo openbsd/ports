@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/08/03 20:04:51 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2006/11/13 12:53:08 steven Exp $
 
 COMMENT=	"graphical reverse polish notation calculator"
 
@@ -21,7 +21,7 @@ LIB_DEPENDS=	gtk.>=1.2,gdk.>=1.2::x11/gtk+
 
 MAKE_FLAGS=	CC="${CC}"
 ALL_TARGET=
-
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
 do-install:

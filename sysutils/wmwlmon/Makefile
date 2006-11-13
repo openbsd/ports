@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/05/10 21:03:40 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/13 12:51:15 steven Exp $
 
 COMMENT=		"wm-dockapp; wireless interface monitor"
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xpm c m
 
+USE_X11=		Yes
 NO_REGRESS=		Yes
 
 do-install:

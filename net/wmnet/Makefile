@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/12/16 00:31:27 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2006/11/13 12:51:15 steven Exp $
 
 COMMENT=	"little X dock.app network monitor"
 
@@ -17,8 +17,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext c kvm m 
 
-CONFIGURE_STYLE= imake
-
+CONFIGURE_STYLE=imake
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

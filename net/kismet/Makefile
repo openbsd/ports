@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2006/11/01 21:13:19 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2006/11/13 12:51:14 steven Exp $
 # Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
 
@@ -54,6 +54,7 @@ GPSM_DEPENDS=		Magick.>=11,Wand.>=11::graphics/ImageMagick \
 			expat.>=4::textproc/expat
 
 .if !${FLAVOR:L:Mno_gpsmap}
+USE_X11=		Yes
 MULTI_PACKAGES=		-gpsmap
 BUILD_DEPENDS+=		${GPSM_DEPENDS}
 .else

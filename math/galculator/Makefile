@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2006/10/30 23:26:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2006/11/13 12:53:08 steven Exp $
 
 COMMENT=	"GTK2-based scientific calculator"
 
@@ -29,6 +29,7 @@ LIB_DEPENDS=	glade-2.0::devel/libglade2
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
 SEPARATE_BUILD=	simple
+USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu

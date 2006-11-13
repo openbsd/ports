@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/08/03 23:28:11 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2006/11/13 12:51:15 steven Exp $
 
 COMMENT=	"classical cipher cryptanalysis toolkit"
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c iconv intl glib gmodule m X11 Xext Xi
 NO_REGRESS=	Yes
+USE_X11=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=crank/}
 

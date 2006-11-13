@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/09/18 12:00:00 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/11/13 12:53:08 steven Exp $
 
 COMMENT=	"extremely lightweight and simple web browser for gnome"
 
@@ -45,6 +45,7 @@ WANTLIB=	ORBit-2 ORBitCosNaming-2 art_lgpl_2 atk-1.0 \
 		popt xml2 ICE SM X11 Xext Xrender c crypto fontconfig \
 		freetype m pthread ssl stdc++ z
 
+USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}

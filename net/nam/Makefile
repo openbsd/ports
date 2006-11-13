@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2006/08/09 09:46:10 bernd Exp $
+# $OpenBSD: Makefile,v 1.23 2006/11/13 12:51:14 steven Exp $
 # $FreeBSD: ports/net/nam/Makefile,v 1.3 1999/11/29 03:46:08 steve Exp $
 
 COMMENT=	"UCB/LBNL Network Animator"
@@ -29,6 +29,7 @@ CONFIGURE_ARGS=	--with-tcl-ver=8.3 --with-tk-ver=8.3
 
 ALL_TARGET=
 
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
 do-install:
