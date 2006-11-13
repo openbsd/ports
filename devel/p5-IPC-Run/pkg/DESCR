@@ -1,0 +1,8 @@
+IPC::Run allows you run and interact with child processes
+using files, pipes, and pseudo-ttys.  Both system()-style
+and scripted usages are supported and may be mixed.  Like-
+wise, functional and OO API styles are both supported and
+may be mixed.
+
+This is an heavy-weight module. Refer to IPC::Run3 to run
+simple stuff with io redirections.

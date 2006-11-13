@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/13 15:18:26 espie Exp $
+${P5SITE}/IPC/
+${P5SITE}/IPC/Run/
+${P5SITE}/IPC/Run.pm
+${P5SITE}/IPC/Run/Debug.pm
+${P5SITE}/IPC/Run/IO.pm
+${P5SITE}/IPC/Run/Timer.pm
+${P5SITE}/IPC/Run/Win32Helper.pm
+${P5SITE}/IPC/Run/Win32IO.pm
+${P5SITE}/IPC/Run/Win32Pump.pm
+@man man/man3p/IPC::Run.3p
+@man man/man3p/IPC::Run::Debug.3p
+@man man/man3p/IPC::Run::IO.3p
+@man man/man3p/IPC::Run::Timer.3p
+@man man/man3p/IPC::Run::Win32Helper.3p
+@man man/man3p/IPC::Run::Win32IO.3p
+@man man/man3p/IPC::Run::Win32Pump.3p
