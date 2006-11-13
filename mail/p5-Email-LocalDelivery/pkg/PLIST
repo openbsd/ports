@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/13 00:11:49 espie Exp $
+${P5SITE}/Email/LocalDelivery/
+${P5SITE}/Email/LocalDelivery.pm
+${P5SITE}/Email/LocalDelivery/Maildir.pm
+${P5SITE}/Email/LocalDelivery/Mbox.pm
+@man man/man3p/Email::LocalDelivery.3p
