@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2006/02/08 04:54:49 david Exp $
+# $OpenBSD: Makefile,v 1.19 2006/11/13 10:08:13 steven Exp $
 
 COMMENT=	"X11 version of the popular board game"
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xaw Xext Xmu Xp Xpm Xt c
 
 CONFIGURE_STYLE=imake noman
-
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
 pre-configure:

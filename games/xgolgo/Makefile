@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/11/28 22:41:25 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2006/11/13 10:08:12 steven Exp $
 #
 
 COMMENT=	"watch what you are doing -- are you hostile"
@@ -20,6 +20,7 @@ CONFIGURE_STYLE=imake noman
 
 WRKDIST=	${WRKDIR}/xeyes
 
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
 post-install:

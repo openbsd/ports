@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/02/04 11:50:38 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2006/11/13 10:08:13 steven Exp $
 
 COMMENT=	"screen bottom ripples like a pool of water"
 
@@ -18,7 +18,7 @@ WANTLIB=		X11 Xext c m
 
 CONFIGURE_STYLE=imake
 ALL_TARGET=	xripple
-
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
 post-configure:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/11/28 22:41:28 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2006/11/13 10:08:13 steven Exp $
 
 COMMENT=	"solitaire"
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext c oldX
 
 CONFIGURE_STYLE=imake
-
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

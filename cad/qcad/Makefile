@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/11/04 19:19:15 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2006/11/13 10:08:12 steven Exp $
 
 COMMENT=		"Qt-based 2D CAD system"
 
@@ -21,6 +21,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=qcad/}
 
 MODULES=	x11/qt3
 MODQT_MT=	Yes
+USE_X11=	Yes
 
 MAKE_FLAGS= \
 	CXX='${CXX}' \

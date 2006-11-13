@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/10/28 10:30:41 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2006/11/13 10:08:12 steven Exp $
 
 CATEGORIES=	audio x11 x11/kde
 COMMENT=	'music player for kde'
@@ -31,6 +31,7 @@ SHARED_LIBS +=	amarok               0.0      # .0.0
 SHARED_LIBS +=	http11               0.0      # .0.0
 
 MODULES=	x11/kde
+USE_X11=		Yes
 USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 MODKDE_VERSION=		3.5.3

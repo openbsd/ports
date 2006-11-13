@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/11/28 22:41:27 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2006/11/13 10:08:13 steven Exp $
 
 COMMENT=	"Mahjongg"
 
@@ -15,8 +15,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext c
 
-CONFIGURE_STYLE=	imake noman
-
+CONFIGURE_STYLE=imake noman
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

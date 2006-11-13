@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2006/08/01 23:39:08 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2006/11/13 10:08:12 steven Exp $
 
 COMMENT=	"standard OpenLook text editor for X11"
 
@@ -23,6 +23,7 @@ CONFIGURE_STYLE=imake
 
 MAKE_ENV=	IMAKEINCLUDE=-I${LOCALBASE}/lib/X11/config
 
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

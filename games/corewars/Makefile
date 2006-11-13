@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/08/02 09:36:20 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/11/13 10:08:12 steven Exp $
 COMMENT=	"computer simulation game"
 
 DISTNAME=	corewars-0.9.12
@@ -20,5 +20,6 @@ LIB_DEPENDS=	gtk.>=1.2,gdk::x11/gtk+
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=corewars/}
 
 CONFIGURE_STYLE=gnu
+USE_X11=	Yes
 
 .include <bsd.port.mk>

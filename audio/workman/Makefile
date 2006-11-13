@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2006/08/01 12:13:28 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2006/11/13 10:08:12 steven Exp $
 
 COMMENT=	"OpenLook-based CD player"
 DISTNAME=	WorkMan-1.3a
@@ -21,6 +21,7 @@ MAKE_ENV=	IMAKEINCLUDE=-I${LOCALBASE}/lib/X11/config
 
 WRKDIST=	${WRKDIR}/workman
 
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

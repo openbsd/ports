@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/11/21 22:29:51 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2006/11/13 10:08:12 steven Exp $
 
 COMMENT=	"communication package for X11"
 
@@ -20,6 +20,7 @@ CONFIGURE_STYLE=imake
 
 WRKDIST=	${WRKDIR}/seyon
 
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

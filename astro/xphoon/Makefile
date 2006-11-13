@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/11/21 12:50:33 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2006/11/13 10:08:12 steven Exp $
 
 COMMENT=	"set the root window to the moon in its current phase"
 DISTNAME=	xphoon
@@ -15,6 +15,7 @@ WANTLIB=		X11 Xext c m
 
 CONFIGURE_STYLE= imake
 
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

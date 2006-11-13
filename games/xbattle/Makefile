@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/11/28 22:41:22 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2006/11/13 10:08:12 steven Exp $
 
 COMMENT=	"concurrent multi-player battle strategy game"
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext c m
 
 CONFIGURE_STYLE=imake
-
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
 post-install:

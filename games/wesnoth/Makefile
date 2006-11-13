@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/07/04 21:15:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2006/11/13 10:08:12 steven Exp $
 
 COMMENT=	"strategy game with fantasy theme"
 DISTNAME=	wesnoth-1.0.2
@@ -27,6 +27,8 @@ LIB_DEPENDS=	SDL::devel/sdl \
 # png is only required for the tools, which we don't build yet.
 
 MODULES=	devel/gettext
+
+USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
 FLAVORS=	lite tinygui

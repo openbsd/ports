@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/11/28 22:41:25 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2006/11/13 10:08:12 steven Exp $
 #
 
 COMMENT=	"dino puzzle game for X11"
@@ -18,6 +18,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/xpuzzles/}
 WRKDIST=	${WRKDIR}/xdino
 CONFIGURE_STYLE=	imake	
 
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
 post-install:

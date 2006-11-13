@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/11/28 22:41:22 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2006/11/13 10:08:12 steven Exp $
 
 COMMENT=	"save your computers from the evil clutches of Bill"
 
@@ -14,8 +14,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xaw Xext Xmu Xpm Xt c m stdc++
 
-CONFIGURE_STYLE=	imake
-
+CONFIGURE_STYLE=imake
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
 post-install:

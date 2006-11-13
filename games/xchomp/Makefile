@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2006/07/05 07:24:27 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2006/11/13 10:08:12 steven Exp $
 
 COMMENT=	"Pac-man-like game under X11"
 
@@ -21,6 +21,7 @@ CONFIGURE_STYLE=imake noman
 # Change -DFRAME_DELAY=40000 in patchfile/Imakefile value to adjust
 # speed of play depending on X server.
 
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

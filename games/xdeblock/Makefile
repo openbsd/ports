@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2006/11/02 10:56:56 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2006/11/13 10:08:12 steven Exp $
 
 COMMENT=	"block action game"
 
@@ -19,6 +19,7 @@ WANTLIB=		X11 Xext Xpm c
 CONFIGURE_STYLE=	imake noman
 WRKDIST=		${WRKDIR}/xdeblo_v1.0
 
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
 pre-configure:

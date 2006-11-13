@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2006/09/18 11:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2006/11/13 10:08:12 steven Exp $
 
 COMMENT=	"Civilization clone for X11; multiplayer; game server"
 COMMENT-client=	"Freeciv client"
@@ -34,6 +34,7 @@ MODULES=	devel/gettext
 WANTLIB=	c m z ncurses readline
 
 .if !${FLAVOR:L:Mno_x11}
+USE_X11=	Yes
 MULTI_PACKAGES+=-client
 
 BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig

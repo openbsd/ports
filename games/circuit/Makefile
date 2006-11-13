@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/08/02 09:36:20 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/11/13 10:08:12 steven Exp $
 
 COMMENT=	"finish-the-cycle logic puzzle"
 CATEGORIES=	games
@@ -17,6 +17,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 WANTLIB=		X11 Xext Xi c glib gmodule iconv intl m
 
 LIB_DEPENDS=	gtk.>=1.2,gdk.>=1.2::x11/gtk+
+
+USE_X11=	Yes
 
 do-build:
 	cd ${WRKBUILD} && $(CC) $(CFLAGS) `gtk-config --cflags --libs` circuit.c -o circuit

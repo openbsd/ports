@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/11/28 22:41:17 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/13 10:08:12 steven Exp $
 
 COMMENT= 	"Pac-Man clone"
 
@@ -26,6 +26,7 @@ ALL_TARGET=	enablesound
 MAKE_FLAGS=	DATA_DIR=${PREFIX}/share/glutton
 
 NO_REGRESS=	Yes
+USE_X11=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/glutton ${PREFIX}/bin
