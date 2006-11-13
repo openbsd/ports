@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/07 10:55:43 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/13 21:52:52 wilfried Exp $
 
-COMMENT=	"free peer-reviewed portable C++ source libraries"
+COMMENT=	"free peer-reviewed portable C++ source libraries (headers)"
+COMMENT-libs=	"free peer-reviewed portable C++ source libraries (libraries)"
+
+FULLPKGNAME=	boost-headers-${VERSION}
+PKGNAME-libs=	boost-libs-${VERSION}
 
 VERSION=	1.33.1
 DISTNAME=	boost_${VERSION:S/./_/g}
-PKGNAME=	boost-${VERSION}p0
 
 SHARED_LIBS=	boost_date_time			0.0 \
 		boost_date_time-mt		0.0 \
@@ -40,19 +43,27 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	z
-
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=boost/}
 
 MAKE_ENV=	GCC="${CC}" GXX="${CXX}"
 
 REGRESS_TARGET=	check
 
+MULTI_PACKAGES=-libs
+SUBPACKAGE?=
+
+.if defined(PACKAGING) && empty(SUBPACKAGE)
+PKG_ARCH=	*
+.else
+WANTLIB=	z c
+.endif
+
 do-configure:
 	@cd ${WRKSRC}/libs/config && \
 		${SETENV} ${CONFIGURE_ENV} /bin/sh ./configure && \
-        	cp user.hpp ${WRKSRC}/boost/config
+		cp user.hpp ${WRKSRC}/boost/config
 
+post-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} /bin/sh ./configure \
 		--without-libraries=python
 
@@ -69,8 +80,9 @@ do-install:
 			`echo $$LIBS | perl -pi -e "s,-gcc(-mt)?(-d)?-${VERSION:S/./_/g},\1\2,"`; \
 		done
 
-	cd ${WRKSRC} && \
-		cp -pR boost ${PREFIX}/include
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/include
+	@cd ${WRKSRC} && \
+		find boost -type d -exec ${INSTALL_DATA_DIR} ${PREFIX}/include/{} \;
+	@cd ${WRKSRC} && \
+		find boost -type f -exec ${INSTALL_DATA} {} ${PREFIX}/include/{} \;
 
 .include <bsd.port.mk>

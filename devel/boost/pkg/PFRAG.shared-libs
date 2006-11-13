@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/11/05 19:20:43 wilfried Exp $
+@comment $OpenBSD: PFRAG.shared-libs,v 1.1 2006/11/13 21:52:52 wilfried Exp $
 @lib lib/libboost_date_time-mt.so.${LIBboost_date_time-mt_VERSION}
 @lib lib/libboost_date_time.so.${LIBboost_date_time_VERSION}
 @lib lib/libboost_filesystem-mt.so.${LIBboost_filesystem-mt_VERSION}

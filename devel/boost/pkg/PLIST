@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/05 19:20:43 wilfried Exp $
-%%SHARED%%
-bin/bjam
+@comment $OpenBSD: PLIST,v 1.2 2006/11/13 21:52:52 wilfried Exp $
+@conflict boost-*
 include/boost/
 include/boost/algorithm/
 include/boost/algorithm/minmax.hpp
@@ -3596,26 +3595,3 @@ include/boost/wave/util/unput_queue_iterator.hpp
 include/boost/wave/wave_config.hpp
 include/boost/wave/wave_version.hpp
 include/boost/weak_ptr.hpp
-lib/libboost_date_time-mt.a
-lib/libboost_date_time.a
-lib/libboost_filesystem-mt.a
-lib/libboost_filesystem.a
-lib/libboost_iostreams-mt.a
-lib/libboost_iostreams.a
-lib/libboost_prg_exec_monitor-mt.a
-lib/libboost_prg_exec_monitor.a
-lib/libboost_program_options-mt.a
-lib/libboost_program_options.a
-lib/libboost_regex-mt.a
-lib/libboost_regex.a
-lib/libboost_serialization-mt.a
-lib/libboost_serialization.a
-lib/libboost_signals-mt.a
-lib/libboost_signals.a
-lib/libboost_test_exec_monitor-mt.a
-lib/libboost_test_exec_monitor.a
-lib/libboost_thread-mt.a
-lib/libboost_unit_test_framework-mt.a
-lib/libboost_unit_test_framework.a
-lib/libboost_wave-mt.a
-lib/libboost_wave.a
