@@ -1,0 +1,5 @@
+CGI::Application::Generator is intended to create a shell for an
+application module based on the specification you provide. It will not
+output a completely functional application without additional coding. It
+will, however, handle the creation of all the structural parts of your
+application common to all CGI::Application-based modules.
