@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/13 00:11:37 espie Exp $
+${P5SITE}/Email/Folder/
+${P5SITE}/Email/Folder.pm
+${P5SITE}/Email/Folder/Ezmlm.pm
+${P5SITE}/Email/Folder/MH.pm
+${P5SITE}/Email/Folder/Maildir.pm
+${P5SITE}/Email/Folder/Mbox.pm
+${P5SITE}/Email/Folder/Reader.pm
+@man man/man3p/Email::Folder.3p
+@man man/man3p/Email::Folder::MH.3p
+@man man/man3p/Email::Folder::Maildir.3p
+@man man/man3p/Email::Folder::Mbox.3p
+@man man/man3p/Email::Folder::Reader.3p

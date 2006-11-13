@@ -1,0 +1,2 @@
+read all the messages from a folder as Email::Simple objects 
+(or as a subclass of it).
