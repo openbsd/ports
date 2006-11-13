@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/13 15:19:32 espie Exp $
+${P5SITE}/Module/
+${P5SITE}/Module/Install/
+${P5SITE}/Module/Install/TestBase.pm
+${P5SITE}/Test/
+${P5SITE}/Test/Base/
+${P5SITE}/Test/Base.pm
+${P5SITE}/Test/Base/Filter.pm
+@man man/man3p/Module::Install::TestBase.3p
+@man man/man3p/Test::Base.3p
+@man man/man3p/Test::Base::Filter.3p
