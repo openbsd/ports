@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.435 2006/11/12 18:16:03 jolan Exp $
+# $OpenBSD: Makefile,v 1.436 2006/11/13 00:13:55 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -276,6 +276,7 @@
      SUBDIR += p5-File-Find-Rule-Filesys-Virtual
      SUBDIR += p5-File-HomeDir
      SUBDIR += p5-File-Modified
+     SUBDIR += p5-File-Path-Expand
      SUBDIR += p5-File-ReadBackwards
      SUBDIR += p5-File-ShareDir
      SUBDIR += p5-File-Slurp
@@ -291,6 +292,7 @@
      SUBDIR += p5-Heap
      SUBDIR += p5-Hook-LexWrap
      SUBDIR += p5-I18N-LangTags
+     SUBDIR += p5-IO-All
      SUBDIR += p5-IO-Capture
      SUBDIR += p5-IO-Digest
      SUBDIR += p5-IO-KQueue
@@ -350,6 +352,7 @@
      SUBDIR += p5-Readonly
      SUBDIR += p5-Readonly-XS
      SUBDIR += p5-Regexp-Shellish
+     SUBDIR += p5-Return-Value
      SUBDIR += p5-SVN-Mirror
      SUBDIR += p5-SVN-Notify
      SUBDIR += p5-SVN-Simple
