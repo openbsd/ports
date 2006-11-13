@@ -1,0 +1,6 @@
+Email::FolderType - determine the type of a mail folder
+
+By default, it can figure out Mbox, Maildir, MH, and Ezmlm types.
+
+Currently the default matcher is "Mbox" and therefore it is always
+checked last and always returns 1.
