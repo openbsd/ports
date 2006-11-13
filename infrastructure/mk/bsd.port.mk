@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.800 2006/11/12 10:52:59 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.801 2006/11/13 13:55:10 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -971,7 +971,7 @@ IS_INTERACTIVE=Yes
 # Don't build a port if it comes with the base system.
 ################################################################
 
-.if !defined(NO_IGNORE)
+.if !defined(NO_IGNORE) && !defined(DESCRIBE_TARGET)
 .  if (defined(REGRESS_IS_INTERACTIVE) && defined(BATCH))
 _IGNORE_REGRESS=	"has interactive tests"
 .  elif (!defined(REGRESS_IS_INTERACTIVE) && defined(INTERACTIVE))
@@ -983,8 +983,6 @@ IGNORE=	"is an interactive port"
 IGNORE=	"is not an interactive port"
 .  elif ${USE_X11:L} == "yes" && !exists(${X11BASE})
 IGNORE=	"uses X11, but ${X11BASE} not found"
-.  elif defined(BROKEN)
-IGNORE=	"is marked as broken: ${BROKEN}"
 .  elif defined(ONLY_FOR_ARCHS)
 .    for __ARCH in ${MACHINE_ARCH} ${ARCH}
 .      if !empty(ONLY_FOR_ARCHS:M${__ARCH})
@@ -1007,13 +1005,15 @@ IGNORE= "is not for ${NOT_FOR_ARCHS}"
 .  elif ${SHARED_ONLY:L} == "yes" && ${NO_SHARED_LIBS:L} == "yes"
 IGNORE="requires shared libraries"
 .  endif
-.  if !defined(IGNORE) && defined(COMES_WITH)
-.    if ( ${OPSYS_VER} >= ${COMES_WITH} )
-IGNORE= "-- ${FULLPKGNAME${SUBPACKAGE}:C/-[0-9].*//g} comes with ${OPSYS} as of release ${COMES_WITH}"
-.    endif
-.  endif
-
 .endif		# NO_IGNORE
+
+.if !defined(NO_IGNORE)
+.  if defined(BROKEN)
+IGNORE=	"is marked as broken: ${BROKEN}"
+.  elif defined(COMES_WITH)
+IGNORE= "-- ${FULLPKGNAME${SUBPACKAGE}:C/-[0-9].*//g} comes with ${OPSYS} as of release ${COMES_WITH}"
+.  endif
+.endif
 
 .if !defined(DEPENDS_TARGET)
 .  if make(reinstall)

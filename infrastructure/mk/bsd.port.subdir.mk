@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.77 2006/11/11 16:10:36 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.78 2006/11/13 13:55:10 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -93,15 +93,21 @@ _subdir_fragment= \
 	done; set -e
 
 .for __target in all fetch package fake extract patch configure \
-		 build describe distclean deinstall install update \
-		 reinstall checksum show verbose-show dump-vars fetch-makefile \
+		 build distclean deinstall install update \
+		 reinstall checksum fetch-makefile \
 		 link-categories unlink-categories regress lib-depends-check \
-		 newlib-depends-check homepage-links manpages-check license-check \
-		 print-package-signature print-plist print-plist-contents \
-		 print-plist-all
+		 newlib-depends-check manpages-check license-check \
+		 print-package-signature 
 
 ${__target}:
 	@${_subdir_fragment}
+.endfor
+
+.for __target in describe show verbose-show dump-vars \
+		homepage-links print-plist print-plist-contents \
+		 print-plist-all
+${__target}:
+	@DESCRIBE_TARGET=Yes; export DESCRIBE_TARGET; ${_subdir_fragment}
 .endfor
 
 .for __target in all-dir-depends build-dir-depends run-dir-depends regress-dir-depends
@@ -125,7 +131,7 @@ clean:
 .endif
 
 readmes:
-	@${_subdir_fragment}
+	@DESCRIBE_TARGET=Yes; export DESCRIBE_TARGET; ${_subdir_fragment}
 	@rm -f ${.CURDIR}/README.html
 	@cd ${.CURDIR} && exec ${MAKE} README.html
 
@@ -139,7 +145,8 @@ README=	${TEMPLATES}/README.category
 README.html:
 	@>$@.tmp
 .for d in ${_FULLSUBDIR}
-	@subdir=$d; ${_flavor_fragment}; \
+	@subdir=$d; DESCRIBE_TARGET=yes; export DESCRIBE_TARGET; \
+	${_flavor_fragment}; \
 	name=`eval $$toset ${MAKE} _print-packagename`; \
 	case $$name in \
 		README) comment='';; \
