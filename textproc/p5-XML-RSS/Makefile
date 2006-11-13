@@ -1,13 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2006/11/04 00:10:23 jasper Exp $
-
-PKG_ARCH=	*
+# $OpenBSD: Makefile,v 1.21 2006/11/13 17:44:37 jasper Exp $
 
 COMMENT=	"perl module to manage XML RSS files"
 
-DISTNAME=	XML-RSS-1.12
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	textproc perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
+DISTNAME=	XML-RSS-1.20
+CATEGORIES=	textproc
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -17,13 +13,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:p5-XML-Parser->=2.23:textproc/p5-XML-Parser  \
+MODULES=	cpan
+
+RUN_DEPENDS=	::devel/p5-DateTime \
+		::devel/p5-DateTime-Format-Mail \
+		::devel/p5-DateTime-Format-W3CDTF \
+		:p5-XML-Parser->=2.23:textproc/p5-XML-Parser  \
 		::www/p5-HTML-Parser
 BUILD_DEPENDS=	${RUN_DEPENDS}
 REGRESS_DEPENDS=::devel/p5-Test-Differences \
 		:p5-Test-Manifest->=0.9:devel/p5-Test-Manifest
-
-CONFIGURE_STYLE= perl
 
 # Install additional example files
 EXAMPLE_LOC=	${PREFIX}/share/examples/p5-XML-RSS
