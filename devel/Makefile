@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.437 2006/11/13 10:44:18 espie Exp $
+# $OpenBSD: Makefile,v 1.438 2006/11/13 15:25:16 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -302,6 +302,7 @@
      SUBDIR += p5-IO-Tee
      SUBDIR += p5-IO-Tty
      SUBDIR += p5-IO-stringy
+     SUBDIR += p5-IPC-Run
      SUBDIR += p5-IPC-Run3
      SUBDIR += p5-IPC-ShareLite
      SUBDIR += p5-Lchown
@@ -357,9 +358,11 @@
      SUBDIR += p5-SVN-Simple
      SUBDIR += p5-SVN-Web
      SUBDIR += p5-Scalar-Defer
+     SUBDIR += p5-Set-IntRange
      SUBDIR += p5-Set-Object
      SUBDIR += p5-Set-Scalar
      SUBDIR += p5-Shell-Command
+     SUBDIR += p5-Spiffy
      SUBDIR += p5-String-CRC32
      SUBDIR += p5-String-Scanf
      SUBDIR += p5-Sub-Name
@@ -367,12 +370,14 @@
      SUBDIR += p5-Sub-Uplevel
      SUBDIR += p5-Taint-Runtime
      SUBDIR += p5-Task-Weaken
+     SUBDIR += p5-Term-Prompt
      SUBDIR += p5-Term-ReadKey
      SUBDIR += p5-Term-ReadLine-Gnu
      SUBDIR += p5-Term-ReadPassword
      SUBDIR += p5-Term-Screen
      SUBDIR += p5-Term-ScreenColor
      SUBDIR += p5-Term-Shell
+     SUBDIR += p5-Test-Base
      SUBDIR += p5-Test-Builder-Tester
      SUBDIR += p5-Test-Class
      SUBDIR += p5-Test-Deep
