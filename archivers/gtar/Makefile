@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2006/02/27 21:29:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2006/11/13 16:25:10 naddy Exp $
 
 COMMENT=	"GNU version of the traditional tar archiver"
 
-DISTNAME=	tar-1.15.1
-PKGNAME=	g${DISTNAME}p4
+DISTNAME=	tar-1.16
+PKGNAME=	g${DISTNAME}
 CATEGORIES=	archivers
 HOMEPAGE=	http://www.gnu.org/software/tar/
 
@@ -21,6 +21,8 @@ EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	devel/gettext
 RUN_DEPENDS=	:bzip2-*:archivers/bzip2
+REGRESS_DEPENDS=::devel/autoconf/2.60
+REGRESS_FLAGS=	AUTOCONF_VERSION=2.60
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--program-prefix=g
@@ -28,7 +30,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
 		LDFLAGS="-L${DEPBASE}/lib ${LDSTATIC}" \
 		DEFAULT_ARCHIVE=/dev/rst0 \
 		DEFAULT_RMT_COMMAND=/etc/rmt
-MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
 
 FLAVORS=	static
 FLAVOR?=

@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.5 2005/01/01 23:47:44 naddy Exp $
---- lib/Makefile.in.orig	Sat Jan  1 22:11:14 2005
-+++ lib/Makefile.in	Sat Jan  1 22:12:28 2005
-@@ -720,7 +720,7 @@ info-am:
+$OpenBSD: patch-lib_Makefile_in,v 1.6 2006/11/13 16:25:10 naddy Exp $
+--- lib/Makefile.in.orig	Sat Oct 21 17:16:52 2006
++++ lib/Makefile.in	Mon Nov 13 01:58:17 2006
+@@ -938,7 +938,7 @@ info-am:
  
  install-data-am:
  
