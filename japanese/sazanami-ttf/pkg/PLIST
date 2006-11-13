@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/13 23:59:36 msf Exp $
+lib/X11/fonts/
+@fontdir lib/X11/fonts/sazanami/
+lib/X11/fonts/sazanami/fonts.dir
+lib/X11/fonts/sazanami/fonts.scale
+lib/X11/fonts/sazanami/sazanami-gothic.ttf
+lib/X11/fonts/sazanami/sazanami-mincho.ttf
