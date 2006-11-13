@@ -1,0 +1,5 @@
+This class lets you dynamically create sets of arbitrary
+intervals of integers and perform all the basic operations
+for sets on them.
+
+The actual manipulation is based on Bit::Vector.
