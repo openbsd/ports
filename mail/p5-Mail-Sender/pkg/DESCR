@@ -1,0 +1,9 @@
+"Mail::Sender" provides an object oriented interface to
+sending mails.  It doesn't need any outer program. It con-
+nects to a mail server directly from Perl, using Socket.
+
+This package contains no default configuration, so the
+Mail::Sender object should have an smtp parameter.
+
+Some extra modules (Digest::HMAC_MD5 and Authen::NTLM) may
+be needed for some methods of sending email.
