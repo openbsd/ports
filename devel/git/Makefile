@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/12 15:59:05 matthieu Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/13 21:02:26 matthieu Exp $
 
 COMMENT=		"GIT - Tree History Storage Tool"
 
-DISTNAME=		git-1.4.3.4
+DISTNAME=		git-1.4.3.5
 CATEGORIES=		devel
 
 HOMEPAGE=		http://git.or.cz/
