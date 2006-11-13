@@ -1,0 +1,7 @@
+The main function of this module is to accept interactive input.
+You specify the type of inputs allowed, a prompt, help text and
+defaults and it will deal with the user interface, (and the user!),
+by displaying the prompt, showing the default, and checking to be
+sure that the response is one of the legal choices.  Additional
+"types" that could be added would be a phone type, a social secu-
+rity type, a generic numeric pattern type...
