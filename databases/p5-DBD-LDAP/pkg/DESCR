@@ -1,0 +1,2 @@
+DBD::LDAP is a DBI extension module adding an SQL database interface to 
+standard LDAP databases to Perl's database-independent database interface.  
