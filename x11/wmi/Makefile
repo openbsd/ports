@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/08/01 18:38:23 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2006/11/13 13:01:38 steven Exp $
 
 COMMENT=	"window manager improved - key driven window manager"
 
@@ -26,5 +26,6 @@ BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	PKG_CONFIG_PATH="${X11BASE}/lib/pkgconfig"
+USE_X11=	Yes
 
 .include <bsd.port.mk>

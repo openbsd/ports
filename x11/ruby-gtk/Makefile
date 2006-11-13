@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2006/10/20 11:28:05 bernd Exp $
+# $OpenBSD: Makefile,v 1.21 2006/11/13 13:01:37 steven Exp $
 
 SHARED_ONLY=		Yes
 
@@ -28,6 +28,7 @@ LIB_DEPENDS+=	gtk.>=1.2,gdk.>=1.2::x11/gtk+ \
 		ruby.>=1.84::lang/ruby
 
 NO_REGRESS=	Yes
+USE_X11=	Yes
 
 CONFIGURE_STYLE=	simple
 

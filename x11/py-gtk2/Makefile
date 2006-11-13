@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2006/09/18 12:19:41 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2006/11/13 13:01:37 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -35,6 +35,7 @@ BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
 LIB_DEPENDS=	glade-2.0::devel/libglade2
 RUN_DEPENDS=	:py-cairo->=1.0.2p1:graphics/py-cairo
 
+USE_X11=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	PYTHON=${MODPY_BIN}

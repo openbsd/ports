@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/11/07 06:42:56 sturm Exp $
+# $OpenBSD: Makefile,v 1.11 2006/11/13 13:01:37 steven Exp $
 
 COMMENT=	"OCaml interface to GTK+"
 
@@ -23,6 +23,7 @@ RUN_DEPENDS=	::lang/ocaml
 FAKE_FLAGS=	BINDIR=${WRKINST}${PREFIX}/bin \
 		INSTALLDIR=${WRKINST}${PREFIX}/lib/ocaml/lablgtk
 
+USE_X11=	Yes
 USE_GMAKE=	Yes
 MODULES=	lang/ocaml
 

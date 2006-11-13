@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/09/18 09:40:31 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/11/13 13:01:37 steven Exp $
 
 COMMENT=		"GTK+ Graphical filemanager"
 
@@ -23,6 +23,7 @@ LIB_DEPENDS= 		gtk.>=1.2,gdk.>=1.2::x11/gtk+ \
 
 CONFIGURE_STYLE=	gnu
 NO_REGRESS=		Yes
+USE_X11=		Yes
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/gentoo.1x ${PREFIX}/man/man1/gentoo.1

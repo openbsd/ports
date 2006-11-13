@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/07 10:40:19 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2006/11/13 13:01:37 steven Exp $
 
 COMMENT=		"message system"
 
@@ -32,6 +32,7 @@ CONFIGURE_ARGS=		--localstatedir=/var \
 #CONFIGURE_ARGS=		--enable-tests
 #CONFIGURE_ARGS=		--enable-verbose-mode
 
+USE_X11=		Yes
 USE_LIBTOOL=		Yes
 
 FAKE_FLAGS=		sysconfdir=${TRUEPREFIX}/share/examples/dbus \

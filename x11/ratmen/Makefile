@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2005/11/09 01:25:38 jcs Exp $
+# $OpenBSD: Makefile,v 1.5 2006/11/13 13:01:37 steven Exp $
 
 DISTNAME=	ratmen-2.2.2
 CATEGORIES=	x11
@@ -13,7 +13,8 @@ WANTLIB=		X11 c
 COMMENT=	"launch commands with your keyboard"
 MASTER_SITES=	http://www.update.uu.se/~zrajm/programs/ratmen/
 
-NO_REGRESS=	yes
+USE_X11=	Yes
+NO_REGRESS=	Yes
 
 do-build:
 	cd $(WRKSRC) && \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/09/18 10:21:49 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2006/11/13 13:01:38 steven Exp $
 
 ONLY_FOR_ARCHS=	i386 macppc amd64
 
@@ -38,6 +38,7 @@ CONFIGURE_ENV=	PKG_CONFIG_PATH="${X11BASE}/lib/pkgconfig"
 MAKE_FLAGS=	verbose=yes SYSCONFDIR="${SYSCONFDIR}"
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
+USE_X11=	Yes
 
 WRKDIST=	${WRKDIR}/${DISTNAME}
 

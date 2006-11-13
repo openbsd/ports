@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/04/22 23:44:40 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/13 13:01:37 steven Exp $
 
 COMMENT=	"small EWMH compliant pager"
 
@@ -23,6 +23,7 @@ BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
 CONFIGURE_STYLE=simple
 
+USE_X11=	Yes
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 

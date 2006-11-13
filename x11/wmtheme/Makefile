@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/09/18 10:21:49 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2006/11/13 13:01:38 steven Exp $
 
 COMMENT=		"window manager theme utility"
 
@@ -20,6 +20,7 @@ NO_REGRESS=		Yes
 
 LIB_DEPENDS=		gtk.>=1.2,gdk.>=1.2::x11/gtk+
 USE_GMAKE=		Yes
+USE_X11=		Yes
 EXTRA_THEMES=		gotheme ortheme
 
 FAKE_FLAGS+=		prefix=${PREFIX} DESTDIR=${WRKINST}

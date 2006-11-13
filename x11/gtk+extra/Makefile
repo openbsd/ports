@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/09/18 10:21:48 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/13 13:01:37 steven Exp $
 
 COMMENT=	"GTK Extra Widget Set"
 
@@ -24,6 +24,7 @@ MODULES=	devel/gettext
 
 LIB_DEPENDS=	gtk.>=2,gdk.>=2::x11/gtk+
 
+USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu

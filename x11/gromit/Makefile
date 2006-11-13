@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/09/18 12:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/11/13 13:01:37 steven Exp $
 
 COMMENT=		"small tool to make annotations on the screen"
 
@@ -30,7 +30,7 @@ LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
 		${LIB_DEPENDS}
 	
-
+USE_X11=		Yes
 NO_REGRESS=		Yes
 
 DOCDIR=			${PREFIX}/share/doc/gromit/

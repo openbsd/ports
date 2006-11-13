@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/09/18 12:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/13 13:01:37 steven Exp $
 
 COMMENT='gui for ogle'
 CATEGORIES=x11
@@ -20,6 +20,7 @@ WRKSRC=${WRKDIST}/src
 MAKE_FILE=build.mk
 ALL_TARGET=
 USE_GMAKE=	Yes
+USE_X11=	Yes
 
 CONFIGURE_ENV=LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} LP64_ARCHS="${LP64_ARCHS}"
 

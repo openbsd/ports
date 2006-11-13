@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/09/18 12:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/11/13 13:01:37 steven Exp $
 
 COMMENT=	"GTK+ 2.x engine based on Bluecurve"
 
@@ -30,6 +30,7 @@ BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
 SHARED_ONLY=	Yes
 USE_LIBTOOL=	Yes
+USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu 
 

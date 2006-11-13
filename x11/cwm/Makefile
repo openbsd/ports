@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/09/08 22:13:54 marcm Exp $
+# $OpenBSD: Makefile,v 1.4 2006/11/13 13:01:37 steven Exp $
 
 COMMENT=	"calm window manager"
 DISTNAME=	cwm-3
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB=		X11 Xext Xft Xrender c fontconfig freetype
 
+USE_X11=	Yes
 CONFIGURE_STYLE=gnu
 
 .include <bsd.port.mk>
