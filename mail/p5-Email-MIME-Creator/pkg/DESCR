@@ -1,0 +1,4 @@
+This method creates a new MIME part. The header parameter is a list of
+headers to include in the message. attributes is a hash of MIME
+attributes to assign to the part, and may override portions of the
+header set in the header parameter.
