@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/12/19 17:36:31 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2006/11/13 16:31:08 steven Exp $
 
 # sync with mplayer archs due to dependency
 ONLY_FOR_ARCHS=i386 macppc
@@ -21,6 +21,7 @@ MAKE_FLAGS=OPTFLAGS='-I${X11BASE}/include/freetype2 -I${LOCALBASE}/include' \
     LDLIBS='-lm -L/usr/X11R6/lib -lfreetype -L/usr/local/lib -liconv'
 
 USE_GMAKE=Yes
+USE_X11=Yes
 
 OSDDIR=${PREFIX}/libdata/mplayer-osd
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2006/08/03 12:53:18 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2006/11/13 16:31:07 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -28,6 +28,8 @@ RUN_DEPENDS=	${MODPY_TKINTER_DEPENDS}
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
 		tk84:tk-8.4.*:x11/tk/8.4
+
+USE_X11=	Yes
 
 do-configure:
 	@perl -pi -e "s|!LOCALBASE!|${LOCALBASE}|g; s|!X11BASE!|${X11BASE}|g; s|!MODPY_VERSION!|${MODPY_VERSION}|g" \

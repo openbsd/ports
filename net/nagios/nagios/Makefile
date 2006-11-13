@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2006/08/03 23:15:58 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2006/11/13 16:31:07 steven Exp $
 
 COMMENT=	"host and service monitor"
 COMMENT-web=	"cgis and webpages for nagios"
@@ -40,6 +40,8 @@ CONFIGURE_ARGS+=--datadir=/var/www/nagios \
 		--with-nagios-group=_nagios \
 		--with-nagios-user=_nagios
 CONFIGURE_ENV+=	LDFLAGS="-L${X11BASE}/lib"
+
+USE_X11=	Yes
 
 FLAVORS=	chroot
 FLAVOR?=

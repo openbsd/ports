@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/08/03 12:53:18 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/13 16:31:07 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -28,6 +28,7 @@ RUN_DEPENDS=	:py-Numeric-*:math/py-Numeric
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		:pkgconfig-*:devel/pkgconfig
 #USE_LIBTOOL=	Yes
+USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--without-pygtk
