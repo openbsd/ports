@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/13 00:10:54 espie Exp $
+${P5SITE}/Email/Send/
+${P5SITE}/Email/Send.pm
+${P5SITE}/Email/Send/IO.pm
+${P5SITE}/Email/Send/NNTP.pm
+${P5SITE}/Email/Send/Qmail.pm
+${P5SITE}/Email/Send/SMTP.pm
+${P5SITE}/Email/Send/Sendmail.pm
+${P5SITE}/Email/Send/Test.pm
+@man man/man3p/Email::Send.3p
+@man man/man3p/Email::Send::IO.3p
+@man man/man3p/Email::Send::NNTP.3p
+@man man/man3p/Email::Send::Qmail.3p
+@man man/man3p/Email::Send::SMTP.3p
+@man man/man3p/Email::Send::Sendmail.3p
+@man man/man3p/Email::Send::Test.3p
