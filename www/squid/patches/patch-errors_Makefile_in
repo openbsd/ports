@@ -1,7 +1,7 @@
-$OpenBSD: patch-errors_Makefile_in,v 1.8 2006/10/03 05:00:49 brad Exp $
---- errors/Makefile.in.orig	Fri Sep 22 05:09:37 2006
-+++ errors/Makefile.in	Tue Sep 26 19:32:48 2006
-@@ -228,7 +228,7 @@ sbindir = @sbindir@
+$OpenBSD: patch-errors_Makefile_in,v 1.9 2006/11/13 02:11:39 brad Exp $
+--- errors/Makefile.in.orig	Sun Oct 29 21:21:13 2006
++++ errors/Makefile.in	Sat Nov  4 15:50:31 2006
+@@ -229,7 +229,7 @@ sbindir = @sbindir@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
