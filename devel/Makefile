@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.438 2006/11/13 15:25:16 espie Exp $
+# $OpenBSD: Makefile,v 1.439 2006/11/13 17:42:12 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -253,6 +253,7 @@
      SUBDIR += p5-DateTime-Format-ISO8601
      SUBDIR += p5-DateTime-Format-Mail
      SUBDIR += p5-DateTime-Format-Strptime
+     SUBDIR += p5-DateTime-Format-W3CDTF
      SUBDIR += p5-DateTime-Locale
      SUBDIR += p5-DateTime-TimeZone
      SUBDIR += p5-Devel-Cycle
