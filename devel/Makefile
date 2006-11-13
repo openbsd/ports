@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.436 2006/11/13 00:13:55 espie Exp $
+# $OpenBSD: Makefile,v 1.437 2006/11/13 10:44:18 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -212,7 +212,6 @@
      SUBDIR += p5-Class-ErrorHandler
      SUBDIR += p5-Class-Factory
      SUBDIR += p5-Class-Factory-Util
-     SUBDIR += p5-Class-ISA
      SUBDIR += p5-Class-InsideOut
      SUBDIR += p5-Class-Inspector
      SUBDIR += p5-Class-Loader
