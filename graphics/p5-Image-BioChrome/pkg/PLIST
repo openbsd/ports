@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/13 15:19:51 espie Exp $
+${P5SITE}/Apache/
+${P5SITE}/Apache/BioChrome.pm
+${P5SITE}/Image/
+${P5SITE}/Image/BioChrome.pm
+${P5SITE}/Template/
+${P5SITE}/Template/Plugin/
+${P5SITE}/Template/Plugin/BioChrome.pm
+@man man/man3p/Apache::BioChrome.3p
+@man man/man3p/Image::BioChrome.3p
+@man man/man3p/Template::Plugin::BioChrome.3p

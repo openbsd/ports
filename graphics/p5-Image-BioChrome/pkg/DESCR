@@ -1,0 +1,9 @@
+This module is designed to recolor images files. I built it because I am
+regularly producing web sites with many common interface graphics where
+we just need to change the colors. The name BioChrome comes from the
+name of the special color changing cells that give a Chameleon its color
+changing ability.
+
+Also included in the distribution are modules that allow Apache (with
+mod_perl) to build images on the fly and a Template::Toolkit plugin to
+allow the creation of images from within a Template.
