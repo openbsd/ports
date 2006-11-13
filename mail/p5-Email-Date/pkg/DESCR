@@ -1,0 +1,6 @@
+RFC 2822 defines the Date: header. It declares the header a required
+part of an email message. The syntax for date headers is clearly laid
+out. Stil, even a perfectly planned world has storms. The truth is,
+many programs get it wrong. Very wrong. Or, they don't include a Date:
+header at all. This often forces you to look elsewhere for the date,
+and hoping to find something.
