@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2005/02/22 13:52:25 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2006/11/13 11:20:25 steven Exp $
 
 COMMENT-canna=		"X input method for Japanese, canna support"
 COMMENT-canna-wnn=	"X input method for Japanese, canna and wnn support"
 COMMENT-wnn=		"X input method for Japanese, wnn support"
 
 DISTNAME=	kinput2-v3
+PKGNAME=	ja-kinput2-3.0
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/x11/kinput2/
 CATEGORIES=	japanese x11
 
@@ -21,7 +22,7 @@ CONFIGURE_STYLE=imake
 FLAVORS=	canna wnn
 FLAVOR?=	wnn
 
-PKGNAME=	ja-kinput2-3.0
+USE_X11=	Yes
 
 .if ${FLAVOR:L:Mwnn}
 BUILD_DEPENDS+=	::japanese/Wnn

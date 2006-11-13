@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/08/02 10:00:49 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/11/13 11:20:25 steven Exp $
 
 COMMENT=		"kde image plugins api"
 CATEGORIES=		graphics devel x11 x11/kde
@@ -20,6 +20,7 @@ WANTLIB=		ICE Xrender SM Xext pthread X11 util m z \
 FLAVORS=	debug
 MODULES=	x11/kde
 
+USE_X11=		Yes
 USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS+=		--tag=disable-static
 CONFIGURE_STYLE=	autoconf

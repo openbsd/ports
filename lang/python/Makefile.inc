@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.42 2006/11/08 19:00:19 djm Exp $
+# $OpenBSD: Makefile.inc,v 1.43 2006/11/13 11:20:25 steven Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -104,6 +104,7 @@ LIB_DEPENDS=
 .endif
 
 .if empty(FLAVOR:L:Mno_tkinter)
+USE_X11=	Yes
 SETUP_PY+=	"s,!!USE_TKINTER!!,1,g"
 MULTI_PACKAGES+=-tkinter
 .  if !defined(PACKAGING) || ${SUBPACKAGE} == "-tkinter"

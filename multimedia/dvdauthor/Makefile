@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/08/03 23:15:57 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/11/13 11:20:25 steven Exp $
 
 COMMENT=		creates DVD file structures
 DISTNAME=		dvdauthor-0.6.11
@@ -24,7 +24,8 @@ LIB_DEPENDS=		dvdread.>=3::devel/libdvdread \
 WANTLIB=		ICE SM X11 Xext Xt bz2 c freetype iconv jasper jbig \
 			jpeg lcms m png tiff z
 
-USE_GMAKE=		yes
+USE_X11=		Yes
+USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib" \

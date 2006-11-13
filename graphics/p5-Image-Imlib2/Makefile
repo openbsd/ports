@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/08/03 12:53:18 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/11/13 11:20:25 steven Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -25,5 +25,7 @@ REGRESS_DEPENDS=::devel/p5-Test-Pod \
 		::devel/p5-Test-Pod-Coverage
 
 CONFIGURE_STYLE=perl modbuild
+
+USE_X11=	Yes
 
 .include <bsd.port.mk>

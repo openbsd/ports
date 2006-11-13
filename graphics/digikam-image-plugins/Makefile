@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/08/02 10:10:35 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/11/13 11:20:24 steven Exp $
 
 COMMENT=		"plugins for digikam"
 CATEGORIES=		graphics x11 x11/kde
@@ -27,6 +27,7 @@ USE_GMAKE?=		Yes
 CONFIGURE_ENV+=		${MODKDE_CONFIGURE_ENV}
 MAKE_ENV=		${CONFIGURE_ENV}
 
+USE_X11=		Yes
 USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 

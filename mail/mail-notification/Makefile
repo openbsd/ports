@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/09/18 11:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/11/13 11:20:25 steven Exp $
 
 COMMENT=		"mail notification for freedesktop.org-compliant system trays"
 DISTNAME=		mail-notification-1.0
@@ -24,6 +24,7 @@ BUILD_DEPENDS+=         :pkgconfig-*:devel/pkgconfig \
 RUN_DEPENDS+=		:scrollkeeper-*:textproc/scrollkeeper \
 			:gnome-icon-theme-*:x11/gnome/icon-theme
 LIB_DEPENDS+=		eel-2::x11/gnome/eel
+USE_X11=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=        --sysconfdir="${CONFDIR}"

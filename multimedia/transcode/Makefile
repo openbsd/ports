@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/08/03 23:15:57 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/11/13 11:20:25 steven Exp $
 
 COMMENT=		"video stream processing tools"
 
@@ -60,6 +60,7 @@ RUN_DEPENDS=		::graphics/ffmpeg \
 
 SEPARATE_BUILD=		concurrent
 
+USE_X11=		Yes
 USE_LIBTOOL=		Yes
 SHARED_ONLY=		Yes
 CONFIGURE_STYLE=	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/10/18 17:56:14 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/13 11:20:25 steven Exp $
 
 CATEGORIES=		lang
 V=			5.6.18
@@ -27,6 +27,7 @@ CONFIGURE_ARGS=		--enable-mt \
 			--with-jpeg=${LOCALBASE} \
 			${CONFIGURE_SHARED}
 
+USE_X11=		Yes
 USE_GMAKE=		Yes
 
 MAKE_FLAGS=		SONAMEOPT= \

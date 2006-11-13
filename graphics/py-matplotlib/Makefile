@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2006/09/18 11:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2006/11/13 11:20:25 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -35,6 +35,8 @@ RUN_DEPENDS=	::math/py-Numeric \
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		::devel/pkgconfig
 LIB_DEPENDS=	png.>=3::graphics/png
+
+USE_X11=	Yes
 
 MAKE_ENV+=	EXTRA_INCLUDES="${WRKSRC} ${LOCALBASE}/include/libpng" \
 		LDSHARED="${CC} -shared -fPIC"

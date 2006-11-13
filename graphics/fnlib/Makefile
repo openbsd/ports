@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2006/08/02 10:10:35 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2006/11/13 11:20:24 steven Exp $
 
 COMMENT=	"color font rendering library for X"
 
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext jpeg m png tiff ungif z
 
+USE_X11=	Yes
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 SEPARATE_BUILD=	concurrent

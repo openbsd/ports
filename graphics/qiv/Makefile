@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/08/03 12:53:18 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2006/11/13 11:20:25 steven Exp $
 
 COMMENT=		"very small and pretty fast gdk/Imlib image viewer"
 
@@ -22,7 +22,7 @@ WANTLIB=		X11 Xext Xi c gdk glib gmodule gtk iconv intl \
 			jpeg m png tiff ungif z
 
 USE_GMAKE=		Yes
-
+USE_X11=		Yes
 NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

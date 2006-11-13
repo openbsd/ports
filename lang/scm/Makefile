@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2005/10/30 10:10:52 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2006/11/13 11:20:25 steven Exp $
 # losely based on the FreeBSD port
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "vax" || \
@@ -56,6 +56,7 @@ OPTIONS+=--compiler-options=-I${X11BASE}/include --compiler-options=-O2
 OPTIONS+=--linker-options=-L${X11BASE}/lib
 SCM_DATA+=	x11.scm xevent.scm
 WANTLIB+=	X11
+USE_X11=	Yes
 .endif
 
 BUILD_DEPENDS=::devel/slib

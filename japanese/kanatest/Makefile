@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/09/18 11:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/13 11:20:25 steven Exp $
 
 COMMENT=	"beginner's drill tool to learn Japanese kana characters" 
 
@@ -28,6 +28,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
                 LDFLAGS="-L${LOCALBASE}/lib"
 
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

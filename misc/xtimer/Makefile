@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2005/09/22 13:03:50 bernd Exp $
+# $OpenBSD: Makefile,v 1.16 2006/11/13 11:20:25 steven Exp $
 
 COMMENT=	"super simple digital timer for X11"
 
@@ -14,8 +14,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xaw Xext Xmu Xp Xpm Xt c
 
-CONFIGURE_STYLE=	imake
-
+CONFIGURE_STYLE=imake
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

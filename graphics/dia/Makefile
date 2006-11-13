@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2006/11/03 22:18:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2006/11/13 11:20:24 steven Exp $
 
 COMMENT=	"technical diagrams drawing tool"
 
@@ -30,6 +30,7 @@ LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 
 MODULES=	devel/gettext
 
+USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu

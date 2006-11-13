@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2006/05/28 15:28:53 avsm Exp $
+# $OpenBSD: Makefile,v 1.36 2006/11/13 11:20:25 steven Exp $
 
 NOT_FOR_ARCHS=	hppa
 
@@ -37,6 +37,7 @@ LIB_DEPENDS=	tcl84:tcl->=8.4,<8.5:lang/tcl/8.4 \
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
 
 USE_GMAKE=	Yes
+USE_X11=	Yes
 
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "sparc" || \
 	${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || \

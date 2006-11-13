@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/19 00:53:12 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/13 11:20:25 steven Exp $
 COMMENT=	'japanese handwriting'
 
 DISTNAME=	uim-tomoe-gtk-0.2.0
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_ENV=CPPFLAGS=-I${LOCALBASE}/include
 CONFIGURE_STYLE=gnu
 USE_LIBTOOL=	Yes
+USE_X11=	Yes
 
 LIB_DEPENDS=	tomoe-gtk::inputmethods/libtomoe-gtk \
 		uim::inputmethods/uim

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2004/12/30 19:04:22 alek Exp $
+# $OpenBSD: Makefile,v 1.25 2006/11/13 11:20:25 steven Exp $
 
 COMMENT=	"mail image display for X11"
 
@@ -21,6 +21,7 @@ WANTLIB=		ICE SM X11 Xaw Xext Xmu Xp Xpm Xt c m
 LIB_DEPENDS=	compface::mail/faces
 
 CONFIGURE_STYLE=imake
+USE_X11=	Yes
 
 post-extract:
 	@ln -sf ../sounds ${WRKSRC}

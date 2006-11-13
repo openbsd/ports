@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/08/03 23:15:57 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/11/13 11:20:25 steven Exp $
 
 COMMENT=		"tools to edit/modify/encode video streams"
 
@@ -46,6 +46,7 @@ LIB_DEPENDS=		SDL.>=2:sdl-*-!no_x11:devel/sdl \
 			gdk-x11-2.0.>=400.0,gdk_pixbuf-2.0.>=400.0,gtk-x11-2.0.>=400.0::x11/gtk+2 \
 			pango-1.0.>=1001.0,pangoft2-1.0.>=1001.0,pangocairo-1.0.>=1001.0::devel/pango
 
+USE_X11=		Yes
 USE_LIBTOOL=		Yes
 AUTOMAKE_VERSION=	1.9
 AUTOCONF_VERSION=	2.59

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/11/04 13:30:43 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/11/13 11:20:25 steven Exp $
 
 COMMENT=		"kde image database"
 CATEGORIES=		graphics x11 x11/kde
@@ -24,9 +24,9 @@ AUTOCONF_VERSION=	2.59
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS} --disable-final
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
+USE_X11=		Yes
 CONFIGURE_ENV+=		${MODKDE_CONFIGURE_ENV}
 MAKE_ENV=		${CONFIGURE_ENV}
-
 MAKE_FLAGS+=		${MODKDE_MAKE_FLAGS}
 
 # GPL

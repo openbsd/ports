@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/10/27 12:53:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2006/11/13 11:20:25 steven Exp $
 
 COMMENT=	"API for accessing scanners, frontends"
 
@@ -31,6 +31,7 @@ BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		sane.>=1::graphics/sane-backends
 
+USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 

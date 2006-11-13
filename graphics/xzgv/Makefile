@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/08/03 12:53:18 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/11/13 11:20:25 steven Exp $
 
 COMMENT=	"picture viewer for X, with thumbnail-based file selector"
 DISTNAME=	xzgv-0.8
@@ -28,6 +28,7 @@ LIB_DEPENDS=	gtk.>=1.2,gdk.>=1.2::x11/gtk+ \
 
 WANTLIB=	Xi Xext X11 m c z glib gmodule
 
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/08/03 12:53:18 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/13 11:20:25 steven Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -29,6 +29,7 @@ WRKDIST=	${WRKDIR}/xmms-kj
 MAKE_FILE=      makefile
 ALL_TARGET=	vislib
 NO_REGRESS=	Yes
+USE_X11=	Yes
 
 CFLAGS+=	-I${LOCALBASE}/include/libpng
 MAKE_FLAGS=	CC="${CC}"

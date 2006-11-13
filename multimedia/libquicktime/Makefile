@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/08/03 23:55:10 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/11/13 11:20:25 steven Exp $
 # $FreeBSD: ports/multimedia/libquicktime/Makefile,v 1.19 2004/03/16 04:23:53 edwin Exp $
 
 SHARED_ONLY=		Yes
@@ -40,6 +40,7 @@ LIB_DEPENDS=		vorbis.>=3,vorbisfile.>=4,vorbisenc.>=2::audio/libvorbis \
 
 VMEM_WARNING=		Yes
 AUTOCONF_VERSION=	2.59
+USE_X11=		Yes
 USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS+=		--tag=disable-static
 

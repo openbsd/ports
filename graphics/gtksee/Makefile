@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2006/08/03 12:43:20 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2006/11/13 11:20:25 steven Exp $
 
 COMMENT=	"image viewer similar to ACDSee for Windows"
 
@@ -20,6 +20,7 @@ LIB_DEPENDS=	gtk.>=1.2,gdk.>=1.2::x11/gtk+ \
 RUN_DEPENDS=	:bzip-*:archivers/bzip \
 		:bzip2-*:archivers/bzip2
 
+USE_X11=	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \

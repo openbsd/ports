@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2005/01/27 21:29:41 alek Exp $
+# $OpenBSD: Makefile,v 1.15 2006/11/13 11:20:25 steven Exp $
 # $FreeBSD: Makefile,v 1.3 1997/08/26 07:12:20 tg Exp $
 
 COMMENT=	"view complete directories of X bitmaps and X pixmaps"
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xaw Xext Xmu Xp Xpm Xt c
 
 CONFIGURE_STYLE=imake
-
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

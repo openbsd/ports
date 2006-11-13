@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2006/09/25 19:14:28 martin Exp $
+# $OpenBSD: Makefile,v 1.67 2006/11/13 11:20:25 steven Exp $
 
 COMMENT=	"mail/news client in gtk+"
 
@@ -26,6 +26,8 @@ WANTLIB=	X11 Xrender Xext atk-1.0 c cairo crypto \
 
 MASTER_SITES=	${HOMEPAGE}/../sylpheed/v2.2/
 MASTER_SITES0=	${MASTER_SITE_SOURCEFORGE:=sylpheed-claws/}
+
+USE_X11=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-ssl --enable-ipv6 \

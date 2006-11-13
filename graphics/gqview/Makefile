@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2006/10/19 15:40:07 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.44 2006/11/13 11:20:24 steven Exp $
 
 COMMENT=	"Gtk-based graphic file viewer"
 
@@ -26,6 +26,7 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
+USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2006/03/04 15:10:31 sturm Exp $
+# $OpenBSD: Makefile,v 1.23 2006/11/13 11:20:25 steven Exp $
 
 COMMENT=	"two-dimensional drawing tool and hyper-object browser"
 
@@ -21,6 +21,7 @@ WANTLIB=		X11 Xext c m
 RUN_DEPENDS=	::graphics/netpbm
 
 CONFIGURE_STYLE=imake
+USE_X11=	Yes
 
 MAKE_FLAGS=	MODULE_CFLAGS="${CFLAGS}"
 

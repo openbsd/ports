@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/08/02 10:00:49 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/13 11:20:25 steven Exp $
 
 COMMENT=		"kde image plugins"
 CATEGORIES=		graphics x11 x11/kde
@@ -24,6 +24,7 @@ WANTLIB=	X11 Xext freetype util m c ICE Xrender SM pthread z GL stdc++ \
 		jpeg png pcre pcreposix iconv intl art_lgpl_2 tiff exif ltdl \
 		idn bz2 exslt lcms jbig xslt xml2 Xt gpg-error gcrypt jasper
 
+USE_X11=		Yes
 USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_STYLE=	autoconf

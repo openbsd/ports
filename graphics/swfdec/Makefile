@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/09/18 11:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2006/11/13 11:20:25 steven Exp $
 
 COMMENT=	"flash rendering library"
 DISTNAME=	swfdec-0.2.2
@@ -28,6 +28,7 @@ LIB_DEPENDS=	SDL::devel/sdl \
 		art_lgpl_2.>=5::graphics/libart \
 		gdk-x11-2.0.>=0.11,gdk_pixbuf-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2
 
+USE_X11=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--disable-pixbuf-loader

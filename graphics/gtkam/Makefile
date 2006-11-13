@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/09/18 11:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/11/13 11:20:24 steven Exp $
 
 COMMENT=	"digital camera frontend"
 
@@ -29,6 +29,7 @@ LIB_DEPENDS=	gphoto2,gphoto2_port::graphics/libgphoto2 \
 MODULES=	devel/gettext      
 
 SEPARATE_BUILD=	concurrent
+USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--without-gnome \

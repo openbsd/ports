@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2006/08/03 12:53:18 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2006/11/13 11:20:25 steven Exp $
 # Original from: Marco S Hyman <marc@OpenBSD.ORG>
 
 COMMENT=	"X11 image display and modification tool"
@@ -30,6 +30,7 @@ PERMIT_DISTFILES_CDROM=	"Must buy license"
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 c m z
 
+USE_X11=		Yes
 NO_REGRESS=		Yes
 
 MAKE_FLAGS+=		USERCFLAGS="${CFLAGS}"

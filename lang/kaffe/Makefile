@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2006/09/18 11:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2006/11/13 11:20:25 steven Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc
 
@@ -25,7 +25,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	devel/gettext
 USE_LIBTOOL=	Yes
-USE_GMAKE=	yes
+USE_GMAKE=	Yes
+USE_X11=	Yes
 
 BUILD_DEPENDS=	::archivers/zip \
 		:jikes->=1.22p0:lang/jikes \

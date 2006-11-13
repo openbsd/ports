@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2006/08/03 12:43:20 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2006/11/13 11:20:24 steven Exp $
 
 COMMENT=	"GdkPixbuf graphics library"
 COMMENT-gnome=	"GdkPixbuf graphics library (GNOME Canvas)"
@@ -27,6 +27,7 @@ WANTLIB=		iconv intl glib m X11 gmodule Xi Xext z
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gdk-pixbuf/0.22/}
 
 SEPARATE_BUILD=	simple
+USE_X11=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.52

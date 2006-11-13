@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2006/08/03 20:04:52 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2006/11/13 11:20:25 steven Exp $
 
 COMMENT=	"personal accounts manager"
 
@@ -22,7 +22,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gacc/}
 LIB_DEPENDS=	gtk.>=1.2,gdk.>=1.2::x11/gtk+
 
 USE_GMAKE=	Yes
-
+USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/examples/gacc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"

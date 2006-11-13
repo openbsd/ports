@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/07/16 22:23:13 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/11/13 11:20:25 steven Exp $
 
 COMMENT='japanese handwriting recognition'
 CATEGORIES=japanese
@@ -17,8 +17,10 @@ PERMIT_DISTFILES_CDROM=Yes
 LIB_DEPENDS=gmodule,gtk,gdk::x11/gtk+ \
 	glib::devel/glib
 
-MODULES=gettext
+MODULES=	devel/gettext
 WANTLIB=	c Xext Xi X11 m
+
+USE_X11=	Yes
 
 MAKE_FLAGS=OPTIMIZE='${CFLAGS}' PREFIX=${PREFIX}
 FAKE_FLAGS=PREFIX=${WRKINST}${TRUEPREFIX} OPTIMIZE='${CFLAGS}'

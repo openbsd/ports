@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/01/14 00:07:29 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/11/13 11:20:25 steven Exp $
 
 COMMENT=	'high dynamic range image format'
 COMMENT-tools=	'image viewing tools for OpenEXR'
@@ -42,6 +42,7 @@ WANTLIB=	GL GLU X11 Xext c m stdc++ z
 CONFIGURE_STYLE=	gnu
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
+USE_X11=		Yes
 
 DOCDIR=${PREFIX}/share/doc/${DISTNAME}
 

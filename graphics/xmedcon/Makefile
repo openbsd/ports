@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/08/03 12:53:18 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/11/13 11:20:25 steven Exp $
 
 COMMENT=	"medical image conversion"
 
@@ -23,6 +23,7 @@ PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		X11 Xext Xi c gdk glib gmodule iconv intl jpeg m png \
 			tiff z
 
+USE_X11=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}

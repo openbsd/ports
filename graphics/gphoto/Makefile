@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/02/08 20:09:22 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2006/11/13 11:20:24 steven Exp $
 
 COMMENT=	"universal digital camera picture control tool"
 
@@ -38,6 +38,7 @@ WANTLIB=		X11 Xext Xi ICE SM c gdk glib gmodule gtk \
 
 MODULES=	devel/gettext
 
+USE_X11=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS='-DDOCDIR="${PREFIX}/share/doc/gphoto"'

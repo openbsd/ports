@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2006/10/19 09:49:53 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.19 2006/11/13 11:20:25 steven Exp $
 
 COMMENT=		"lightweight GTK+ based mail/news client"
 COMMENT-dillo=		"dillo plugin for sylpheed-claws"
@@ -36,6 +36,8 @@ WANTLIB=		X11 Xext Xrender crypto \
 			gmodule-2.0 gobject-2.0 gtk-x11-2.0 \
 			pango-1.0 pangocairo-1.0 \
 			pangoft2-1.0 cairo glitz png z
+
+USE_X11=		Yes
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS=		--program-suffix="-claws" \

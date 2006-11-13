@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/10/29 23:36:39 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/11/13 11:20:25 steven Exp $
 
 CATEGORIES=	multimedia x11 x11/kde
 COMMENT=	'video player for kde'
@@ -26,6 +26,7 @@ CONFIGURE_ARGS+=	--disable-libsuffix \
 			--without-arts \
 			--without-lame
 
+USE_X11=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_ENV+=		${MODKDE_CONFIGURE_ENV}
 MAKE_ENV=		${CONFIGURE_ENV}

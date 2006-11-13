@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/07/19 15:11:53 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2006/11/13 11:20:25 steven Exp $
 
 COMMENT=		"Qt-based CD creation tool"
 
@@ -35,6 +35,8 @@ CONFIGURE_ARGS=		--datadir=${PREFIX}/share/doc/cdrchive \
 MAKE_FLAGS=		CFLAGS="${CXXFLAGS} -c" CLFLAGS=""
 
 WRKDIST=		${WRKDIR}/cdr-bsd
+
+USE_X11=		Yes
 
 NO_REGRESS=		Yes
 

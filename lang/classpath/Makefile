@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/09/18 11:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/11/13 11:20:25 steven Exp $
 
 # max data size too small to build. needs at least 256M
 NOT_FOR_ARCHS=	m68k sparc vax
@@ -39,6 +39,7 @@ WANTLIB=	z ICE SM X11 Xext Xrender Xtst atk-1.0 fontconfig \
 
 MASTER_SITES=	${MASTER_SITE_GNU:=classpath/}
 
+USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
