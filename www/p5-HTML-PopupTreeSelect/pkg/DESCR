@@ -1,0 +1,4 @@
+This module creates an HTML popup tree selector.  The HTML and
+Javascript produced will work in Mozilla 1+ (Netscape 6+) on all
+operating systems, Microsoft IE 5+ and Safari 1.0.  For an example,
+visit this page:
