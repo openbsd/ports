@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2006/11/12 18:45:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.130 2006/11/13 06:21:48 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -18,6 +18,7 @@
      SUBDIR += castle-combat
      SUBDIR += cgoban
      SUBDIR += childsplay
+     SUBDIR += childsplay-plugins
      SUBDIR += circuit
      SUBDIR += clines
      SUBDIR += connect4
