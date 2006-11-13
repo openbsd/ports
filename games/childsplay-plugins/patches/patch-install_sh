@@ -1,0 +1,179 @@
+$OpenBSD: patch-install_sh,v 1.1.1.1 2006/11/13 06:20:17 ajacoutot Exp $
+--- install.sh.orig	Sun Oct 22 09:03:46 2006
++++ install.sh	Sun Nov 12 17:28:46 2006
+@@ -1,4 +1,4 @@
+-#!/bin/bash 
++#!/bin/sh 
+ # install childsplay.  
+ # Be aware that childsplay probably won't work when you edit this file :-(
+ # As of 11/2004 childsplay will be converted to follow the File System
+@@ -8,7 +8,7 @@
+ # However, you can change the "prefix" to "/usr" and childsplay will still
+ # work. Set it to anything else and your on your own.
+   
+-PREFIX=/usr/local
++PREFIX=!!LOCALBASE!!
+ 
+ #################################################################
+ # DON'T EDIT BEHIND THIS POINT 
+@@ -20,17 +20,29 @@ fi
+ 
+ LOCALEDIR=$PREFIX/share/locale
+ MTDIR=$PREFIX/bin
+-ASSETMLDIR=/usr/share/assetml
+-PYTHON=`which python`
++ASSETMLDIR=$PREFIX/share/assetml
++PYTHON=!!MODPY_BIN!!
+ SCOREDIR=/var/games
+-DOCDIR=$PREFIX/share/doc/childsplay
++DOCDIR=$PREFIX/share/doc/childsplay-plugins
+ MANDIR=$PREFIX/man/man6
+-CPDIR=$PREFIX/lib/games/childsplay
++CPDIR=$PREFIX/share/childsplay
+ SHAREDIR=$PREFIX/share/childsplay
+ BINDIR=$PREFIX/games
+ SHARELIBDATADIR=$SHAREDIR/lib
+ SHAREDATADIR=$SHAREDIR/Data
+ 
++echo "Making directorys"
++mkdir -p !!DESTDIR!!/$CPDIR
++#mkdir -p !!DESTDIR!!/$CPDIR/lib
++mkdir -p !!DESTDIR!!/$DOCDIR
++mkdir -p !!DESTDIR!!/$LOCALEDIR
++mkdir -p !!DESTDIR!!/$ASSETMLDIR
++mkdir -p !!DESTDIR!!/$MANDIR
++mkdir -p !!DESTDIR!!/$SHAREDIR
++mkdir -p !!DESTDIR!!/$SHAREDATADIR/icons
++mkdir -p !!DESTDIR!!/$SHARELIBDATADIR
++mkdir -p !!DESTDIR!!/$MTDIR
++
+ ##################################################
+ #  Package text to be displayed as last step
+ # 0 = no readmes to display, 1 = there are readmes
+@@ -45,118 +57,29 @@ CWD=`pwd`
+ # the names of which plugins are to be added to the score file
+ SCORE="Packid,Numbers,Soundmemory,Fallingletters,Findsound,Findsound2,Billiard"
+ 
+-USERID=`id | sed -e 's/).*//; s/^.*(//;'`
+-if [ "$USERID" != "root" ]; then
+-    echo " You must be root to install the plugins"
+-    echo " exit"
+-    exit 1
+-fi
+-
+-echo -e "\n>>>>>>>>>>> Install childsplay plugins >>>>>>>>>>>>>>>>>>>>"
+-echo -e "\n This release depends on childsplay version >= $DEPEN"
+-echo -n " Checking, version = "
+-#CP=`which childsplay`
+-CP=$BINDIR/childsplay
+-VERSION=$($CP --version)
+-echo $VERSION
+-
+-if [ `expr $VERSION \< $DEPEN` -eq 1 ]                                          
+-then
+-    echo " Childsplay version incorrect, please upgrade to at least";           
+-    echo " version $DEPEN";                                                     
+-    echo "exit";                                                                
+-    exit 1                                                                      
+-fi                    
+-
+-if [ ! -f $CP ]
+-then echo "############# Can\`t find childsplay ###########" && \
+-    echo "Be sure to install childsplay first" && \
+-    exit 1
+-fi
+-
+ set -e
+ 
+-echo -e "\n The path to install the plugins in is $CPDIR."
+-echo " If you have installed childsplay in a other place, you can"
+-echo " give the full path to childsplay, otherwise just hit enter"
+-echo " Hit enter to install in $CPDIR, or give the full path"
+-read path
+-if [ $path ];then
+-    if [ -e $path/install.py ];then
+-        CPDIR=path
+-    else
+-        echo "*********** WARNING *************"
+-        echo " $path does not exists or is not the childsplay directory"
+-        echo " exit"
+-        exit 1
+-    fi
+-fi
+-echo " Installing in $CPDIR"
+-
+-echo "Compiling modules to bytecode..."
+-$PYTHON $CPDIR/install.py --compile $CWD/lib
+-
+ echo " Copy libraries"
+ for DIR in `ls $CWD/lib`
+ do 
+     if [ -d $CWD/lib/$DIR ]
+-	 then cp -rf $CWD/lib/$DIR $SHARELIBDATADIR
+-	 else cp -f $CWD/lib/$DIR $CPDIR/lib
++	 then cp -rf $CWD/lib/$DIR !!DESTDIR!!/$SHARELIBDATADIR
++	 else cp -f $CWD/lib/$DIR !!DESTDIR!!/$CPDIR/lib
+     fi
+ done
+ 
+ echo " Copy misc. data files"
+-cp -rf $CWD/Data/*.icon.png $SHAREDATADIR/icons/
+-cp -rf $CWD/Data/AlphabetSounds $SHAREDATADIR/
++cp -rf $CWD/Data/*.icon.png !!DESTDIR!!/$SHAREDATADIR/icons/
++cp -rf $CWD/Data/AlphabetSounds !!DESTDIR!!/$SHAREDATADIR/
+ 
+ echo " Copy assetml files"
+-cp -rf $CWD/assetml/* $ASSETMLDIR
++cp -rf $CWD/assetml/* !!DESTDIR!!/$ASSETMLDIR
+ 
+ echo " Copy README's to the childsplay doc directory"
+ for name in $READMES;do
+-    cp -f $CWD/$name $DOCDIR/$name
++    cp -f $CWD/$name !!DESTDIR!!/$DOCDIR/$name
+ done
+ 
+-echo -e "\n Trying to add $SCORE to the childsplay score sheet"
+-echo " Start add-score.py"
+-$PYTHON $CWD/add-score.py $SHAREDATADIR $SCORE
+-
+ echo -e "\n Installing MT_users2cvs.py"
+-echo " Look at the file called README.MT_users2csv for info on how"
+-echo " to use it. It usage is intended for teachers who want to an"
+-echo " users resume of the multiplication tables users."
+-cp -f $CWD/MT_users2csv.py $MTDIR/MT_users2csv.py 
+-chmod a+x $MTDIR/MT_users2csv.py
+-
+-echo -e "\n Everything installed, enjoy\n"
+-echo -e "\n***************** IMPORTANT *************************"
+-echo "If you find any bugs please put any output in a email"
+-echo "And send it to: childsplay@users.sourceforge.net."
+-echo "BUG REPORTS ARE THE MOST IMPORTANT THINGS YOU CAN DO"
+-echo ""
+-
+-if [ $README == 1 ];then
+-    echo " Read the README's (if any) that came with these packages,"
+-    echo " they contains directions on how to translate some"
+-    echo " text files used by the games in your own language"
+-    echo -e "\nHit any key to read the readme(s), enter to quit"
+-    read key
+-    if [ $key ];then
+-        for name in $READMES;do
+-            cat $name >> chplREADMEScat
+-        done
+-        `which more` chplREADMEScat
+-        rm chplREADMEScat
+-    fi
+-fi
+-
+-echo ""
+-echo "***********************************************************************"
+-echo "  Childsplay and some of the games it contains uses"
+-echo "  configuration files."
+-echo "  You can find these files in the dot directory called '.childsplay'"
+-echo "  in your home directory."
+-echo "***********************************************************************"
+-echo "  Enjoy childsplay :-)"
+-echo ""
+-
++cp -f $CWD/MT_users2csv.py !!DESTDIR!!/$MTDIR/MT_users2csv.py 
++chmod a+x !!DESTDIR!!/$MTDIR/MT_users2csv.py
