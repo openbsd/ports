@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2006/04/14 22:20:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/14 10:32:37 espie Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
-
+SHARED_ONLY=	Yes
 COMMENT=	"object oriented time interface"
 
+MODULES=	cpan
 DISTNAME=	Time-Piece-1.08
 PKGNAME=	p5-${DISTNAME}p0
-CATEGORIES=	devel perl5
+CATEGORIES=	devel
 
 MAINTAINER=	Gerardo Santana Gomez Garrido <gerardo.santana@gmail.com>
 
@@ -15,9 +15,5 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Time/}
-
-CONFIGURE_STYLE=	perl
 
 .include <bsd.port.mk>
