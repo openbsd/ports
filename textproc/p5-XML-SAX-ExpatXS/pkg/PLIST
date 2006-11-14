@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/14 19:09:21 espie Exp $
+${P5ARCH}/
+${P5ARCH}/XML/
+${P5ARCH}/XML/SAX/
+${P5ARCH}/XML/SAX/ExpatXS/
+${P5ARCH}/XML/SAX/ExpatXS.pm
+${P5ARCH}/XML/SAX/ExpatXS/Encoding.pm
+${P5ARCH}/XML/SAX/ExpatXS/Encodings/
+${P5ARCH}/XML/SAX/ExpatXS/Encodings/big5.enc
+${P5ARCH}/XML/SAX/ExpatXS/Encodings/euc-kr.enc
+${P5ARCH}/XML/SAX/ExpatXS/Encodings/iso-8859-2.enc
+${P5ARCH}/XML/SAX/ExpatXS/Encodings/iso-8859-3.enc
+${P5ARCH}/XML/SAX/ExpatXS/Encodings/iso-8859-4.enc
+${P5ARCH}/XML/SAX/ExpatXS/Encodings/iso-8859-5.enc
+${P5ARCH}/XML/SAX/ExpatXS/Encodings/iso-8859-7.enc
+${P5ARCH}/XML/SAX/ExpatXS/Encodings/iso-8859-8.enc
+${P5ARCH}/XML/SAX/ExpatXS/Encodings/iso-8859-9.enc
+${P5ARCH}/XML/SAX/ExpatXS/Encodings/windows-1250.enc
+${P5ARCH}/XML/SAX/ExpatXS/Encodings/windows-1252.enc
+${P5ARCH}/XML/SAX/ExpatXS/Encodings/x-euc-jp-jisx0221.enc
+${P5ARCH}/XML/SAX/ExpatXS/Encodings/x-euc-jp-unicode.enc
+${P5ARCH}/XML/SAX/ExpatXS/Encodings/x-sjis-cp932.enc
+${P5ARCH}/XML/SAX/ExpatXS/Encodings/x-sjis-jdk117.enc
+${P5ARCH}/XML/SAX/ExpatXS/Encodings/x-sjis-jisx0221.enc
+${P5ARCH}/XML/SAX/ExpatXS/Encodings/x-sjis-unicode.enc
+${P5ARCH}/auto/
+${P5ARCH}/auto/XML/
+${P5ARCH}/auto/XML/SAX/
+${P5ARCH}/auto/XML/SAX/ExpatXS/
+${P5ARCH}/auto/XML/SAX/ExpatXS/ExpatXS.bs
+${P5ARCH}/auto/XML/SAX/ExpatXS/ExpatXS.so
+@man man/man3p/XML::SAX::ExpatXS.3p
+@man man/man3p/XML::SAX::ExpatXS::Encoding.3p

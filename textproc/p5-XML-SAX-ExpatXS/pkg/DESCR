@@ -1,0 +1,2 @@
+This module is a direct XS implementation of Perl SAX parser 
+using Expat. 

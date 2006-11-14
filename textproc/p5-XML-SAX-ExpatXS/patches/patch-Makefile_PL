@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2006/11/14 19:09:21 espie Exp $
+--- Makefile.PL.orig	Tue Nov 14 19:44:32 2006
++++ Makefile.PL	Tue Nov 14 19:46:14 2006
+@@ -97,7 +97,7 @@ WriteMakefile(
+     @extras
+ );
+ 
+-sub MY::install {
++sub dont {
+     package MY;
+     my $script = shift->SUPER::install(@_);
+     if (ExtUtils::MakeMaker::prompt("Do you want to alter ParserDetails.ini?", "Y") =~ /^y/i) {
