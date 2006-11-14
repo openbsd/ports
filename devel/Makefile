@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.439 2006/11/13 17:42:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.440 2006/11/14 09:39:06 msf Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -365,6 +365,7 @@
      SUBDIR += p5-Shell-Command
      SUBDIR += p5-Spiffy
      SUBDIR += p5-String-CRC32
+     SUBDIR += p5-String-Format
      SUBDIR += p5-String-Scanf
      SUBDIR += p5-Sub-Name
      SUBDIR += p5-Sub-Override
@@ -392,6 +393,7 @@
      SUBDIR += p5-Test-MockModule
      SUBDIR += p5-Test-MockObject
      SUBDIR += p5-Test-NoWarnings
+     SUBDIR += p5-Test-Object
      SUBDIR += p5-Test-Pod
      SUBDIR += p5-Test-Pod-Coverage
      SUBDIR += p5-Test-Taint
