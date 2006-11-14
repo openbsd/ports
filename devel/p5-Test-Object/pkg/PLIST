@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/14 09:33:13 msf Exp $
+${P5SITE}/Test/
+${P5SITE}/Test/Object/
+${P5SITE}/Test/Object.pm
+${P5SITE}/Test/Object/Test.pm
+@man man/man3p/Test::Object.3p
