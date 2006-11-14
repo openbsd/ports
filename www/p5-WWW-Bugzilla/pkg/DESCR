@@ -1,0 +1,4 @@
+This module provides a perl API for adding and updating Bugzilla
+bugs.  It can be useful in writing custom frontends to a 
+Bugzilla server, and the frontends do not have to sit on the
+same server as long as they can reach it via HTTP.
