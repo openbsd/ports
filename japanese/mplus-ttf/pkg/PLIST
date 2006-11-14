@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/14 00:00:43 msf Exp $
+lib/X11/fonts/
+@fontdir lib/X11/fonts/mplus/
+lib/X11/fonts/mplus/M+1P+IPAG-circle.ttf
+lib/X11/fonts/mplus/M+1P+IPAG.ttf
+lib/X11/fonts/mplus/M+1VM+IPAG-circle.ttf
+lib/X11/fonts/mplus/M+2P+IPAG-circle.ttf
+lib/X11/fonts/mplus/M+2P+IPAG.ttf
+lib/X11/fonts/mplus/M+2VM+IPAG-circle.ttf
+lib/X11/fonts/mplus/fonts.dir
+lib/X11/fonts/mplus/fonts.scale
+lib/X11/fonts/mplus/ipag.ttf
+lib/X11/fonts/mplus/ipagp.ttf
+lib/X11/fonts/mplus/ipagui.ttf
+lib/X11/fonts/mplus/ipam.ttf
+lib/X11/fonts/mplus/ipamp.ttf
