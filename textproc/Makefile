@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.176 2006/11/12 16:34:33 espie Exp $
+# $OpenBSD: Makefile,v 1.177 2006/11/14 19:16:03 espie Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -83,10 +83,10 @@
      SUBDIR += p5-Regexp-Common
      SUBDIR += p5-Sort-Versions
      SUBDIR += p5-String-Approx
+     SUBDIR += p5-String-Koremutake
      SUBDIR += p5-String-Random
      SUBDIR += p5-String-ShellQuote
      SUBDIR += p5-String-Similarity
-     SUBDIR += p5-String-Koremutake
      SUBDIR += p5-Syntax-Highlight-HTML
      SUBDIR += p5-Syntax-Highlight-Mason
      SUBDIR += p5-Syntax-Highlight-Perl
@@ -123,6 +123,8 @@
      SUBDIR += p5-XML-DOM
      SUBDIR += p5-XML-Dumper
      SUBDIR += p5-XML-Elemental
+     SUBDIR += p5-XML-Filter-BufferText
+     SUBDIR += p5-XML-Filter-ExceptionLocator
      SUBDIR += p5-XML-LibXML
      SUBDIR += p5-XML-LibXSLT
      SUBDIR += p5-XML-Literal
@@ -135,10 +137,14 @@
      SUBDIR += p5-XML-RSS-TimingBot
      SUBDIR += p5-XML-RegExp
      SUBDIR += p5-XML-SAX
+     SUBDIR += p5-XML-SAX-Expat
+     SUBDIR += p5-XML-SAX-ExpatXS
+     SUBDIR += p5-XML-SAX-Writer
      SUBDIR += p5-XML-Sablotron
      SUBDIR += p5-XML-Simple
      SUBDIR += p5-XML-Smart
      SUBDIR += p5-XML-Twig
+     SUBDIR += p5-XML-Validator-Schema
      SUBDIR += p5-XML-Writer
      SUBDIR += p5-XML-XPath
      SUBDIR += p5-XML-XSLT
