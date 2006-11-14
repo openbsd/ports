@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.441 2006/11/14 19:16:03 espie Exp $
+# $OpenBSD: Makefile,v 1.442 2006/11/14 21:20:57 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -451,6 +451,7 @@
      SUBDIR += py-mxDateTime
      SUBDIR += py-openbsd
      SUBDIR += py-optik
+     SUBDIR += py-orbit
      SUBDIR += py-parsing
      SUBDIR += py-pexpect
      SUBDIR += py-psyco
