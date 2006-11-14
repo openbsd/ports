@@ -1,0 +1,16 @@
+This is an implementation of a SAX2 driver sitting on top of 
+Expat (XML::Parser).
+
+It is still incomplete, though most of the basic SAX2 events should be
+available.
+
+XML::Parser has no listed callbacks for the following events, which are
+therefore not presently generated (ways may be found in the future):
+
+  * ignorable_whitespace
+  * skipped_entity
+  * start_entity / end_entity
+  * resolve_entity
+
+Note that this package currently does not register itself with XML::SAX,
+so you have to add the parser manually before you can use it.
