@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/14 19:07:17 espie Exp $
+${P5SITE}/Time/
+${P5SITE}/Time/Piece/
+${P5SITE}/Time/Piece/MySQL.pm
+@man man/man3p/Time::Piece::MySQL.3p

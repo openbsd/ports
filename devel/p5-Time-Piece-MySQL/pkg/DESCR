@@ -1,0 +1,13 @@
+Using this module in addition to "Time::Piece" adds a
+few MySQL-specific date-time methods to "Time::Piece" objects.
+
+OBJECT METHODS
+  mysql_date / mysql_time / mysql_datetime / mysql_timestamp
+    Returns the date and/or time in a format suitable for use by MySQL.
+
+CONSTRUCTORS
+  from_mysql_date / from_mysql_datetime / from_mysql_timestamp
+    Given a date, datetime, or timestamp value as returned from MySQL, these
+    constructors return a new Time::Piece object. If the value is NULL, they
+    will retrun undef.
+
