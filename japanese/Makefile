@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/03/09 21:34:52 msf Exp $
+# $OpenBSD: Makefile,v 1.20 2006/11/14 00:03:09 msf Exp $
 
      SUBDIR += Wnn
      SUBDIR += canna
@@ -20,10 +20,12 @@
      SUBDIR += kterm
      SUBDIR += kterm,xaw3d
      SUBDIR += less
+     SUBDIR += mplus-ttf
      SUBDIR += nkf
      SUBDIR += onew,canna
      SUBDIR += onew,wnn4
      SUBDIR += onew,wnn4,canna
      SUBDIR += p5-Text-Kakasi
+     SUBDIR += sazanmi-ttf
 
 .include <bsd.port.subdir.mk>
