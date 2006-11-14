@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/14 19:09:32 espie Exp $
+${P5SITE}/XML/SAX/Writer/
+${P5SITE}/XML/SAX/Writer.pm
+${P5SITE}/XML/SAX/Writer/XML.pm
+@man man/man3p/XML::SAX::Writer.3p
+@man man/man3p/XML::SAX::Writer::XML.3p
