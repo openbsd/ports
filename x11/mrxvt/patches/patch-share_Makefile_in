@@ -1,0 +1,12 @@
+$OpenBSD: patch-share_Makefile_in,v 1.1.1.1 2006/11/15 22:11:29 jasper Exp $
+--- share/Makefile.in.orig	Mon Nov 13 10:26:07 2006
++++ share/Makefile.in	Mon Nov 13 10:27:13 2006
+@@ -185,7 +185,7 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ docdir = $(datadir)/doc/$(PACKAGE_NAME)
+ dist_conf_DATA = default.menu submenus.menu mrxvtrc mrxvtrc.sample
+-confdir = $(sysconfdir)/$(PACKAGE_NAME)
++confdir = @prefix@/share/examples/$(PACKAGE_NAME)
+ 
+ # Distribute scripts with documentation. Package maintaners can clean them up
+ # and install them if necessary.

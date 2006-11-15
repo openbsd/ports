@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/15 22:11:29 jasper Exp $
+@mode g+s
+@group utmp
+bin/mrxvt
+@mode
+@group
+man/cat1/mrxvt.1
+share/doc/mrxvt/
+share/doc/mrxvt/README.greek
+share/doc/mrxvt/README.menu
+share/doc/mrxvt/README.xvt
+share/doc/mrxvt/behind_mrxvt.txt
+share/doc/mrxvt/hack-mrxvt.txt
+share/doc/mrxvt/mrxvt_seq.txt
+share/doc/mrxvt/rxvtRef.txt
+share/doc/mrxvt/scripts/
+share/doc/mrxvt/scripts/mrxvt.vbs
+share/doc/mrxvt/scripts/mrxvtset.pl
+share/doc/mrxvt/scripts/settitle.c
+share/doc/mrxvt/xterm-ctlseqs.txt
+share/examples/mrxvt/
+@sample ${SYSCONFDIR}/mrxvt/
+share/examples/mrxvt/default.menu
+@sample ${SYSCONFDIR}/mrxvt/default.menu
+share/examples/mrxvt/mrxvtrc
+@sample ${SYSCONFDIR}/mrxvt/mrxvtrc
+share/examples/mrxvt/mrxvtrc.sample
+share/examples/mrxvt/submenus.menu
+@sample ${SYSCONFDIR}/mrxvt/submenus.menu
+share/pixmaps/
+share/pixmaps/mrxvt-csh.png
+share/pixmaps/mrxvt-csh.xpm
+share/pixmaps/mrxvt-root.png
+share/pixmaps/mrxvt-root.xpm
+share/pixmaps/mrxvt.png
+share/pixmaps/mrxvt.xpm
