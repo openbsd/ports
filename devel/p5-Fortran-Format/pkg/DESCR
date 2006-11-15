@@ -1,0 +1,8 @@
+This is a Perl implementation of the Fortran 77 formatted input/output
+facility. One possible use is for producing input files for old Fortran
+programs, making sure that their column-oriented records are rigorously
+correct. Fortran formats may also have some advantages over C<printf> in
+some cases: it is very easy to output an array, reusing the format as
+needed; and the syntax for repeated columns is more concise. Unlike
+C<printf>, for good or ill, Fortran-formatted fields never exceed their
+desired width.
