@@ -1,0 +1,28 @@
+$OpenBSD: patch-j2sdk1_3_1_make_java_zip_Makefile,v 1.1 2006/11/15 17:27:40 kurt Exp $
+--- j2sdk1.3.1/make/java/zip/Makefile.orig	Tue Nov  7 13:03:48 2006
++++ j2sdk1.3.1/make/java/zip/Makefile	Tue Nov  7 13:09:20 2006
+@@ -50,12 +50,14 @@ else
+ CPPFLAGS += -UDEBUG 
+ endif
+ 
++ifneq ($(SYSTEM_ZLIB),true)
+ CPPFLAGS += -I$(SHARE_SRC)/native/java/util/zip/zlib-$(ZLIB_VERSION)
+ 
+ #
+ # Add to ambient vpath so we pick up the library files
+ #
+ vpath %.c $(SHARE_SRC)/native/$(PKGDIR)/zlib-$(ZLIB_VERSION)
++endif
+ 
+ include $(BUILDDIR)/Platform.gmk
+ #
+@@ -68,6 +70,9 @@ JAVAHFLAGS += -jni
+ #
+ ifeq ($(PLATFORM),bsd)
+ JVMLIB =
++ifeq ($(SYSTEM_ZLIB),true)
++OTHER_LDLIBS = -lz
++endif
+ else
+ OTHER_LDLIBS = $(JVMLIB)
+ endif
