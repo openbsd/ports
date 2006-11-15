@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/04/07 01:54:53 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/11/15 14:12:19 aanriot Exp $
 sbin/smurflog
-share/doc/README.smurflog
+share/doc/smurflog/
+share/doc/smurflog/README
