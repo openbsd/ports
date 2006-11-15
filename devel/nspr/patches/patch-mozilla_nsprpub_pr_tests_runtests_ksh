@@ -1,22 +1,21 @@
-$OpenBSD: patch-mozilla_nsprpub_pr_tests_runtests_ksh,v 1.2 2006/11/09 19:00:39 ajacoutot Exp $
+$OpenBSD: patch-mozilla_nsprpub_pr_tests_runtests_ksh,v 1.3 2006/11/15 09:05:36 ajacoutot Exp $
 --- mozilla/nsprpub/pr/tests/runtests.ksh.orig	Sun Apr 25 17:01:02 2004
-+++ mozilla/nsprpub/pr/tests/runtests.ksh	Thu Nov  9 10:27:17 2006
-@@ -84,10 +84,12 @@ fi
++++ mozilla/nsprpub/pr/tests/runtests.ksh	Mon Nov 13 12:44:03 2006
+@@ -84,11 +84,10 @@ fi
  # Tests not run (but should)
  #
  
 -#forktest (failed on IRIX)
-+#nameshm1 - timeout
++#nameshm1 - runs with ClientServerTest deactivated (idles forever) under OpenBSD
  #nbconn - fails on some platforms 
 -#poll_er - fails on some platforms? limited use?
  #prpoll -  the bad-FD test needs to be moved to a different test
-+#sema - timeout
-+#semaerr - timeout
-+#semaping - timeout
- #sleep	-  specific to OS/2
+-#sleep	-  specific to OS/2
++#sema,semaerr and semaping - idles forever under OpenBSD (semaphore/thread)
  
  LOGFILE=${NSPR_TEST_LOGFILE:-$NULL_DEVICE}
-@@ -118,6 +120,7 @@ exit
+ 
+@@ -118,6 +117,7 @@ exit
  fdcach
  fileio
  foreign
@@ -24,15 +23,7 @@ $OpenBSD: patch-mozilla_nsprpub_pr_tests_runtests_ksh,v 1.2 2006/11/09 19:00:39 
  formattm
  fsync
  gethost
-@@ -144,7 +147,6 @@ lockfile
- logger
- many_cv
- multiwait
--nameshm1
- nblayer
- nonblock
- ntioto
-@@ -160,6 +162,7 @@ perf
+@@ -160,6 +160,7 @@ perf
  pipeping
  pipeping2
  pipeself
@@ -40,7 +31,7 @@ $OpenBSD: patch-mozilla_nsprpub_pr_tests_runtests_ksh,v 1.2 2006/11/09 19:00:39 
  poll_nm
  poll_to
  pollable
-@@ -175,9 +178,6 @@ selct_er
+@@ -175,9 +176,6 @@ selct_er
  selct_nm
  selct_to
  selintr
@@ -50,7 +41,7 @@ $OpenBSD: patch-mozilla_nsprpub_pr_tests_runtests_ksh,v 1.2 2006/11/09 19:00:39 
  sendzlf
  server_test
  servr_kk
-@@ -250,7 +250,7 @@ else
+@@ -250,7 +248,7 @@ else
  		echo "$prog\c"
  		echo "\nBEGIN TEST: $prog\n" >> ${LOGFILE} 2>&1
  		export test_rval

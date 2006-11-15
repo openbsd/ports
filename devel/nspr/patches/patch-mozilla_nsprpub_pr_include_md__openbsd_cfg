@@ -1,0 +1,12 @@
+$OpenBSD: patch-mozilla_nsprpub_pr_include_md__openbsd_cfg,v 1.4 2006/11/15 09:05:36 ajacoutot Exp $
+--- mozilla/nsprpub/pr/include/md/_openbsd.cfg.orig	Sun Apr 25 17:00:47 2004
++++ mozilla/nsprpub/pr/include/md/_openbsd.cfg	Fri Nov 10 21:48:56 2006
+@@ -48,7 +48,7 @@
+ 
+ #define PR_AF_INET6 24  /* same as AF_INET6 */
+ 
+-#if defined(__i386__)
++#if defined(__i386__) || defined(__arm__)
+ 
+ #define IS_LITTLE_ENDIAN 1
+ #undef  IS_BIG_ENDIAN

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2006/11/10 16:01:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2006/11/15 09:05:36 ajacoutot Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/devel/nspr/Makefile,v 1.13 2003/12/13 21:30:19 peter Exp $
 
-ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
+ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 
 COMMENT=		"Netscape Portable Runtime"
 COMMENT-docs=		"HTML Documentation for NSPR"
@@ -75,7 +75,7 @@ do-install:
 do-regress:
 	${MAKE_PROGRAM} -C ${WRKSRC}/pr/tests
 	${MAKE_PROGRAM} -C ${WRKSRC}/lib/tests
-	@cd ${WRKSRC}/pr/tests && /bin/ksh runtests.ksh
+	@cd ${WRKSRC}/pr/tests && ulimit -Sn 192 && /bin/ksh runtests.ksh
 	LD_LIBRARY_PATH=${WRKSRC}/dist/lib/ ${WRKSRC}/lib/tests/string
 	LD_LIBRARY_PATH=${WRKSRC}/dist/lib/ ${WRKSRC}/lib/tests/base64t
 
