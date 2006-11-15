@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2006/10/01 04:46:19 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2006/11/15 18:34:13 pvalchev Exp $
 
 COMMENT=	"USB access library"
 
-DISTNAME=	libusb-0.1.10a
-PKGNAME=	${DISTNAME}p2
-SHARED_LIBS=		usb	8.2 \
-			usbpp	9.0
+DISTNAME=	libusb-0.1.12
+SHARED_LIBS=		usb	9.0 \
+			usbpp	10.0
 MODGNU_SHARED_LIBS=	usb	'-export-dynamic' \
 			usbpp	'-export-dynamic'
 

@@ -1,6 +1,7 @@
---- bsd.c.orig	Tue Feb 17 23:34:52 2004
-+++ bsd.c	Fri May 20 22:35:57 2005
-@@ -357,7 +357,7 @@ int usb_bulk_read(usb_dev_handle *dev, i
+$OpenBSD: patch-bsd_c,v 1.7 2006/11/15 18:34:13 pvalchev Exp $
+--- bsd.c.orig	Fri Mar  3 19:52:46 2006
++++ bsd.c	Tue Nov 14 21:00:00 2006
+@@ -361,7 +361,7 @@ int usb_bulk_read(usb_dev_handle *dev, i
  int usb_interrupt_write(usb_dev_handle *dev, int ep, char *bytes, int size,
                          int timeout)
  {
@@ -9,7 +10,7 @@
  
    /* Ensure the endpoint address is correct */
    ep &= ~USB_ENDPOINT_IN;
-@@ -379,8 +379,7 @@ int usb_interrupt_write(usb_dev_handle *
+@@ -383,8 +383,7 @@ int usb_interrupt_write(usb_dev_handle *
      USB_ERROR_STR(-errno, "error setting timeout: %s",
                    strerror(errno));
  
@@ -17,9 +18,9 @@
 -    ret = write(fd, bytes+sent, size-sent);
 +   ret = write(fd, bytes, size);
      if (ret < 0)
- #if __FreeBSD__
+ #ifdef __FreeBSD_kernel__
        USB_ERROR_STR(-errno, "error writing to interrupt endpoint %s.%d: %s",
-@@ -390,16 +389,13 @@ int usb_interrupt_write(usb_dev_handle *
+@@ -394,16 +393,13 @@ int usb_interrupt_write(usb_dev_handle *
                    dev->device->filename, UE_GET_ADDR(ep), strerror(errno));
  #endif
  
@@ -38,7 +39,7 @@
  
    /* Ensure the endpoint address is correct */
    ep |= USB_ENDPOINT_IN;
-@@ -424,8 +420,7 @@ int usb_interrupt_read(usb_dev_handle *d
+@@ -428,8 +424,7 @@ int usb_interrupt_read(usb_dev_handle *d
    if (ret < 0)
      USB_ERROR_STR(-errno, "error setting short xfer: %s", strerror(errno));
  
@@ -46,9 +47,9 @@
 -    ret = read(fd, bytes+retrieved, size-retrieved);
 +    ret = read(fd, bytes, size);
      if (ret < 0)
- #if __FreeBSD__
+ #ifdef __FreeBSD_kernel__
        USB_ERROR_STR(-errno, "error reading from interrupt endpoint %s.%d: %s",
-@@ -434,10 +429,7 @@ int usb_interrupt_read(usb_dev_handle *d
+@@ -438,10 +433,7 @@ int usb_interrupt_read(usb_dev_handle *d
        USB_ERROR_STR(-errno, "error reading from interrupt endpoint %s.%02d: %s",
                    dev->device->filename, UE_GET_ADDR(ep), strerror(errno));
  #endif
