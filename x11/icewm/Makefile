@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2006/11/10 09:31:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2006/11/15 06:21:32 ajacoutot Exp $
 
 COMMENT=		"small, fast window manager"
 
@@ -40,7 +40,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 .if ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "i386" \
  || ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sparc"
-PATCH_LIST+=	apm-patch-src_aapm_cc apm-patch-src_aapm_h
+PATCH_LIST=	patch-* apm-patch-src_aapm_cc apm-patch-src_aapm_h
 .endif
 
 post-install:
