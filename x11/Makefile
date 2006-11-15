@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.250 2006/11/10 18:48:19 alek Exp $
+# $OpenBSD: Makefile,v 1.251 2006/11/15 22:14:56 jasper Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -96,6 +96,7 @@
      SUBDIR += mplayer,no_x11
      SUBDIR += mplayer,sdl
      SUBDIR += mplayer-fontmaker
+     SUBDIR += mrxvt
      SUBDIR += msttcorefonts
      SUBDIR += mterm
      SUBDIR += mxconns
