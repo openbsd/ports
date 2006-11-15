@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2006/11/11 21:04:27 steven Exp $
+# $OpenBSD: Makefile,v 1.23 2006/11/15 02:27:48 todd Exp $
 
 COMMENT=	"powerful programming editor"
 
@@ -7,8 +7,6 @@ CATEGORIES=	editors
 
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/editors/X/} \
 		http://www.identicalsoftware.com/xwpe/ 
-
-MAINTAINER=	Yannick Cote <yanick@fries.net>
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,7 +20,6 @@ ALL_TARGET=	xwpe
 CONFIGURE_STYLE=gnu
 MAKE_FLAGS=	CFLAGS='${CFLAGS} -I${X11BASE}/include'
 FAKE_FLAGS=	${MAKE_FLAGS} prefix=${WRKINST}${PREFIX} MANDIR=${WRKINST}${PREFIX}/man
-#SEPARATE_BUILD=	simple
 
 USE_X11=	Yes
 NO_REGRESS=	Yes
