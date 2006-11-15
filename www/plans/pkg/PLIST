@@ -1,22 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/01/04 08:31:05 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/11/15 06:42:16 steven Exp $
 cgi-bin/plans/
-@mode 666
+@group www
+@mode g+w
 cgi-bin/plans/calendars.xml
-@mode 755
+@group
+@mode
 cgi-bin/plans/email_reminders.cgi
-@mode 666
+@group www
+@mode g+w
 cgi-bin/plans/email_reminders.xml
 cgi-bin/plans/events.xml
 cgi-bin/plans/gpl.txt
 cgi-bin/plans/new_calendars.xml
-@mode 755
+@group
+@mode
 cgi-bin/plans/plans.cgi
-@mode 644
 cgi-bin/plans/plans_config-dist.pl
 @sample cgi-bin/plans/plans_config.pl
 cgi-bin/plans/plans_lib.pl
 cgi-bin/plans/us_english.pl
-@mode
 htdocs/plans/
 htdocs/plans/theme/
 htdocs/plans/theme/color_select.css
