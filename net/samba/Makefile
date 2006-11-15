@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.72 2006/11/11 15:16:24 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.73 2006/11/15 21:11:04 mbalmer Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 COMMENT-docs=	"documentation and examples for samba"
 
-DISTNAME=		samba-3.0.23c
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		samba-3.0.23d
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 SHARED_LIBS=		smbclient	0.3 \
 			msrpc		0.2
