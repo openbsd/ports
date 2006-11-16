@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2005/09/26 08:59:06 aanriot Exp $
+# $OpenBSD: Makefile,v 1.5 2006/11/16 22:25:58 steven Exp $
 
 COMMENT=	"Atmel AVR 8-bit RISC microcontrollers' XGCC"
 
@@ -20,7 +20,7 @@ MAKE_ADA=No
 
 DISTNAME=	gcc-${FULL_VERSION}
 EXTRACT_SUFX=	.tar.bz2
-PKGNAME=	avr-gcc-${V}p1
+PKGNAME=	avr-gcc-${V}p2
 
 MASTER_SITE_GCC=	ftp://gcc.gnu.org/pub/gcc/ \
 			ftp://ftp.uvsq.fr/pub/gcc/ \
@@ -50,5 +50,10 @@ USE_GMAKE=	Yes
 YACC=		bison
 
 REGRESS_DEPENDS=::devel/dejagnu
+
+SUBST_VARS=	V
+
+post-install:
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/avr/${V}/include
 
 .include <bsd.port.mk>

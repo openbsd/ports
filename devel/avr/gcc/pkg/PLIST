@@ -1,70 +1,70 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/09/26 08:59:06 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2006/11/16 22:25:58 steven Exp $
 avr/
 avr/lib/
 bin/avr-c++
 bin/avr-cpp
 bin/avr-g++
 bin/avr-gcc
-bin/avr-gcc-3.4.5
+bin/avr-gcc-${V}
 bin/avr-gccbug
 bin/avr-gcov
 lib/gcc/
 lib/gcc/avr/
-lib/gcc/avr/3.4.5/
-lib/gcc/avr/3.4.5/avr3/
-lib/gcc/avr/3.4.5/avr3/libgcc.a
-lib/gcc/avr/3.4.5/avr3/libgcov.a
-lib/gcc/avr/3.4.5/avr4/
-lib/gcc/avr/3.4.5/avr4/libgcc.a
-lib/gcc/avr/3.4.5/avr4/libgcov.a
-lib/gcc/avr/3.4.5/avr5/
-lib/gcc/avr/3.4.5/avr5/libgcc.a
-lib/gcc/avr/3.4.5/avr5/libgcov.a
-lib/gcc/avr/3.4.5/include/
-lib/gcc/avr/3.4.5/include/README
-lib/gcc/avr/3.4.5/include/fixed
-lib/gcc/avr/3.4.5/include/float.h
-lib/gcc/avr/3.4.5/include/iso646.h
-lib/gcc/avr/3.4.5/include/limits.h
-lib/gcc/avr/3.4.5/include/stdarg.h
-lib/gcc/avr/3.4.5/include/stdbool.h
-lib/gcc/avr/3.4.5/include/stddef.h
-lib/gcc/avr/3.4.5/include/syslimits.h
-lib/gcc/avr/3.4.5/include/unwind.h
-lib/gcc/avr/3.4.5/include/varargs.h
-lib/gcc/avr/3.4.5/install-tools/
-lib/gcc/avr/3.4.5/install-tools/gsyslimits.h
-lib/gcc/avr/3.4.5/install-tools/include/
-lib/gcc/avr/3.4.5/install-tools/include/README
-lib/gcc/avr/3.4.5/install-tools/include/float.h
-lib/gcc/avr/3.4.5/install-tools/include/iso646.h
-lib/gcc/avr/3.4.5/install-tools/include/limits.h
-lib/gcc/avr/3.4.5/install-tools/include/stdarg.h
-lib/gcc/avr/3.4.5/install-tools/include/stdbool.h
-lib/gcc/avr/3.4.5/install-tools/include/stddef.h
-lib/gcc/avr/3.4.5/install-tools/include/unwind.h
-lib/gcc/avr/3.4.5/install-tools/include/varargs.h
-lib/gcc/avr/3.4.5/install-tools/mkheaders.conf
-lib/gcc/avr/3.4.5/libgcc.a
-lib/gcc/avr/3.4.5/libgcov.a
-lib/gcc/avr/3.4.5/specs
+lib/gcc/avr/${V}/
+lib/gcc/avr/${V}/avr3/
+lib/gcc/avr/${V}/avr3/libgcc.a
+lib/gcc/avr/${V}/avr3/libgcov.a
+lib/gcc/avr/${V}/avr4/
+lib/gcc/avr/${V}/avr4/libgcc.a
+lib/gcc/avr/${V}/avr4/libgcov.a
+lib/gcc/avr/${V}/avr5/
+lib/gcc/avr/${V}/avr5/libgcc.a
+lib/gcc/avr/${V}/avr5/libgcov.a
+lib/gcc/avr/${V}/include/
+lib/gcc/avr/${V}/include/README
+lib/gcc/avr/${V}/include/fixed
+lib/gcc/avr/${V}/include/float.h
+lib/gcc/avr/${V}/include/iso646.h
+lib/gcc/avr/${V}/include/limits.h
+lib/gcc/avr/${V}/include/stdarg.h
+lib/gcc/avr/${V}/include/stdbool.h
+lib/gcc/avr/${V}/include/stddef.h
+lib/gcc/avr/${V}/include/syslimits.h
+lib/gcc/avr/${V}/include/unwind.h
+lib/gcc/avr/${V}/include/varargs.h
+lib/gcc/avr/${V}/install-tools/
+lib/gcc/avr/${V}/install-tools/gsyslimits.h
+lib/gcc/avr/${V}/install-tools/include/
+lib/gcc/avr/${V}/install-tools/include/README
+lib/gcc/avr/${V}/install-tools/include/float.h
+lib/gcc/avr/${V}/install-tools/include/iso646.h
+lib/gcc/avr/${V}/install-tools/include/limits.h
+lib/gcc/avr/${V}/install-tools/include/stdarg.h
+lib/gcc/avr/${V}/install-tools/include/stdbool.h
+lib/gcc/avr/${V}/install-tools/include/stddef.h
+lib/gcc/avr/${V}/install-tools/include/unwind.h
+lib/gcc/avr/${V}/install-tools/include/varargs.h
+lib/gcc/avr/${V}/install-tools/mkheaders.conf
+lib/gcc/avr/${V}/libgcc.a
+lib/gcc/avr/${V}/libgcov.a
+lib/gcc/avr/${V}/specs
 libexec/gcc/
 libexec/gcc/avr/
-libexec/gcc/avr/3.4.5/
-libexec/gcc/avr/3.4.5/cc1
-libexec/gcc/avr/3.4.5/cc1plus
-libexec/gcc/avr/3.4.5/collect2
-libexec/gcc/avr/3.4.5/install-tools/
-libexec/gcc/avr/3.4.5/install-tools/fix-header
-libexec/gcc/avr/3.4.5/install-tools/fixinc.sh
-libexec/gcc/avr/3.4.5/install-tools/fixincl
-libexec/gcc/avr/3.4.5/install-tools/fixproto
-libexec/gcc/avr/3.4.5/install-tools/mkheaders
-libexec/gcc/avr/3.4.5/install-tools/mkinstalldirs
+libexec/gcc/avr/${V}/
+libexec/gcc/avr/${V}/cc1
+libexec/gcc/avr/${V}/cc1plus
+libexec/gcc/avr/${V}/collect2
+libexec/gcc/avr/${V}/install-tools/
+libexec/gcc/avr/${V}/install-tools/fix-header
+libexec/gcc/avr/${V}/install-tools/fixinc.sh
+libexec/gcc/avr/${V}/install-tools/fixincl
+libexec/gcc/avr/${V}/install-tools/fixproto
+libexec/gcc/avr/${V}/install-tools/mkheaders
+libexec/gcc/avr/${V}/install-tools/mkinstalldirs
 @man man/man1/avr-cpp.1
 @man man/man1/avr-g++.1
 @man man/man1/avr-gcc.1
 @man man/man1/avr-gcov.1
-@comment man/man7/fsf-funding.7
-@comment man/man7/gfdl.7
-@comment man/man7/gpl.7
+@comment @man man/man7/fsf-funding.7
+@comment @man man/man7/gfdl.7
+@comment @man man/man7/gpl.7
