@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/11/01 00:19:17 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/16 09:15:01 steven Exp $
 
 COMMENT=		"intelligent n-up printing"
 
 DISTNAME=		psdim-1.4
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		print
 
 HOMEPAGE=		http://www.mathstat.dal.ca/~selinger/psdim
 
-MAINTAINER=		Steven Mestdagh <steven.mestdagh@esat.kuleuven.be>
+MAINTAINER=		Steven Mestdagh <steven@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
