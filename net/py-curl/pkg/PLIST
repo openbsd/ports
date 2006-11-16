@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2006/07/13 16:58:46 steven Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/11/16 17:43:24 naddy Exp $
 lib/python${MODPY_VERSION}/site-packages/curl/
 lib/python${MODPY_VERSION}/site-packages/curl/__init__.py
 lib/python${MODPY_VERSION}/site-packages/curl/__init__.pyc
@@ -20,6 +20,7 @@ share/examples/py-curl/tests/
 share/examples/py-curl/tests/test.py
 share/examples/py-curl/tests/test_cb.py
 share/examples/py-curl/tests/test_debug.py
+share/examples/py-curl/tests/test_ftp.py
 share/examples/py-curl/tests/test_getinfo.py
 share/examples/py-curl/tests/test_gtk.py
 share/examples/py-curl/tests/test_internals.py
