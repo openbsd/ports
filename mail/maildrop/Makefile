@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2006/11/03 15:15:02 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.22 2006/11/16 21:48:21 mbalmer Exp $
 
 COMMENT=		"mail delivery agent with filtering abilities"
 COMMENT-utils=		"quota tools for the Courier mail suite"
 
 DISTNAME=		maildrop-2.0.2
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		mail
 
 HOMEPAGE=		http://www.courier-mta.org/maildrop/
