@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2006/06/03 09:29:42 alek Exp $
+# $OpenBSD: Makefile,v 1.25 2006/11/16 22:39:02 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,8 +7,8 @@ COMMENT-zope=	"database adapter for Zope"
 
 VERSION=	1.1.21
 DISTNAME=	psycopg-${VERSION}
-PKGNAME=	py-${DISTNAME}p1
-FULLPKGNAME-zope=py-psycopg-zope-${VERSION}p0
+PKGNAME=	py-${DISTNAME}p2
+PKGNAME-zope=	py-psycopg-zope-${VERSION}p0
 CATEGORIES=	databases
 
 HOMEPAGE=	http://initd.org/projects/psycopg1
@@ -53,5 +53,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-psycopg/
 	${INSTALL_DATA} ${WRKSRC}/doc/examples/* \
 		${PREFIX}/share/examples/py-psycopg/
+	${CHOWN} ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/python${MODPY_VERSION}/lib-dynload/psycopgmodule.so
 
 .include <bsd.port.mk>
