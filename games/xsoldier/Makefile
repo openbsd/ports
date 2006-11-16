@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.20 2005/10/23 18:23:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2006/11/16 09:13:27 steven Exp $
 
 COMMENT=	"space-based shoot'em up game for X11"
 
 DISTNAME=	xsoldier-1.3
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.interq.or.jp/libra/oohara/xsoldier/
-
-MAINTAINER=	Steven Mestdagh <steven.mestdagh@esat.kuleuven.be>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

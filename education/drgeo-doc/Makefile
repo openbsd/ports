@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2005/11/11 20:24:48 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2006/11/16 09:13:27 steven Exp $
 
 COMMENT=	"interactive geometry program, documentation"
 
 DISTNAME=	drgeo-doc-1.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	education math
 
 HOMEPAGE=	http://www.ofset.org/drgeo/
-
-MAINTAINER=	Steven Mestdagh <steven.mestdagh@esat.kuleuven.be>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
