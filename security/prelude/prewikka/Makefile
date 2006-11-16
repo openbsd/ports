@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/11 19:33:57 aanriot Exp $
+# $OpenBSD: Makefile,v 1.7 2006/11/16 13:16:08 aanriot Exp $
 
 COMMENT=	"Prelude Management Console"
 
 DISTNAME=	prewikka-0.9.7.1
-PKGNAME=	prelude-${DISTNAME}p1
+PKGNAME=	prelude-${DISTNAME}p2
 
 MODULES=	lang/python
 
 BUILD_DEPENDS=	:py-cheetah-*:devel/py-cheetah
 
-RUN_DEPENDS=	:prelude-manager-*:security/prelude/manager
+RUN_DEPENDS=	:prelude-manager-*:security/prelude/manager \
+		:py-cheetah-*:devel/py-cheetah
 
 pre-install:
 	@perl -pi -e "s,%%PREFIX%%,${PREFIX},"		\
