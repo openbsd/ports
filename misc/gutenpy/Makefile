@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2006/08/10 20:26:32 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2006/11/16 08:50:54 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		"text reader and catalog browser for Project Gutenberg"
 
 DISTNAME=		gutenpy-0.3.0
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		misc x11
 
 HOMEPAGE=		http://gutenpy.sourceforge.net/
 
-MAINTAINER=		Jasper Lievisse Adriaase <jasper@openbsd.org>
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

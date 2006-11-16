@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/05/22 22:57:50 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/16 08:50:54 jasper Exp $
 
 COMMENT=	"small utility used to manipulate SGML and XML catalogs"
 
 DISTNAME=	xmlcatmgr-2.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://xmlcatmgr.sourceforge.net/
 
-MAINTAINER=	Jasper Lievisse Adriaase <jasper@nedbsd.nl>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
