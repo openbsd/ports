@@ -1,0 +1,11 @@
+$OpenBSD: patch-ogg123_http_transport_c,v 1.1 2006/11/16 16:43:39 naddy Exp $
+--- ogg123/http_transport.c.orig	Thu Nov 16 17:13:25 2006
++++ ogg123/http_transport.c	Thu Nov 16 17:13:43 2006
+@@ -112,7 +112,6 @@ void set_curl_opts (http_private_t *priv
+   if (inputOpts.ProxyTunnel)
+     curl_easy_setopt (handle, CURLOPT_HTTPPROXYTUNNEL, inputOpts.ProxyTunnel);
+   */
+-  curl_easy_setopt(handle, CURLOPT_MUTE, 1);
+   curl_easy_setopt(handle, CURLOPT_ERRORBUFFER, private->error);
+   curl_easy_setopt(handle, CURLOPT_PROGRESSFUNCTION, progress_callback);
+   curl_easy_setopt(handle, CURLOPT_PROGRESSDATA, private);
