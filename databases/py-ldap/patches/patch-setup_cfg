@@ -1,11 +1,13 @@
---- setup.cfg.orig	Fri Sep 23 13:49:19 2005
-+++ setup.cfg	Fri Sep 23 13:50:10 2005
-@@ -7,8 +7,6 @@
+--- setup.cfg.orig	Thu Nov 16 11:00:19 2006
++++ setup.cfg	Thu Nov 16 11:02:19 2006
+@@ -7,8 +7,8 @@
  # for wrapping OpenLDAP 2 libs
  [_ldap]
  
--library_dirs = /opt/openldap-OPENLDAP_REL_ENG_2_3/lib /opt/sasl/lib
--include_dirs = /opt/openldap-OPENLDAP_REL_ENG_2_3/include /opt/sasl/include/sasl /usr/include/sasl
- #library_dirs = /opt/openldap-HEAD/lib /opt/sasl/lib
- #include_dirs = /opt/openldap-HEAD/include /opt/sasl/include/sasl /usr/include/sasl
+-library_dirs = /usr/local/openldap-REL_ENG_2_1/lib /usr/local/cyrus-sasl/lib
+-include_dirs = /usr/local/openldap-REL_ENG_2_1/include /usr/local/cyrus-sasl/include
++library_dirs = /usr/local/lib /usr/local/lib/sasl2/lib
++include_dirs = /usr/local/include /usr/local/include/sasl
  
+ extra_compile_args = 
+ extra_objects = 
