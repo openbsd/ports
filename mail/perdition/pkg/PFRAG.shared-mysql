@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared-mysql,v 1.1.1.1 2006/11/16 23:26:00 msf Exp $
+@lib lib/libperditiondb_mysql.so.${LIBperditiondb_mysql_VERSION}

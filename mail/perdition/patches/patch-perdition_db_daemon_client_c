@@ -1,0 +1,12 @@
+$OpenBSD: patch-perdition_db_daemon_client_c,v 1.1.1.1 2006/11/16 23:26:00 msf Exp $
+--- perdition/db/daemon/client.c.orig	Mon Nov 13 13:31:14 2006
++++ perdition/db/daemon/client.c	Mon Nov 13 13:47:15 2006
+@@ -105,7 +105,7 @@ main(int argc, char **argv)
+ 
+ 	perdition_un_init(&sock);
+ 
+-	memcpy(sock.dir, DIR_TEMPLATE, PERDITION_UN_STR_LEN-1);
++	strlcpy(sock.dir, DIR_TEMPLATE, sizeof(sock.dir));
+ 	if(!mkdtemp(sock.dir)) {
+ 		VANESSA_LOGGER_DEBUG_ERRNO("mkdtemp");
+ 		return (-1);

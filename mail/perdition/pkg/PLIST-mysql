@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-mysql,v 1.1.1.1 2006/11/16 23:26:00 msf Exp $
+%%SHARED%%
+lib/libperditiondb_mysql.a
+lib/libperditiondb_mysql.la
+@man man/man8/perditiondb_mysql_makedb.8
+sbin/perditiondb_mysql_makedb

@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-pgsql,v 1.1.1.1 2006/11/16 23:26:00 msf Exp $
+%%SHARED%%
+lib/libperditiondb_postgresql.a
+lib/libperditiondb_postgresql.la
+@man man/man8/perditiondb_postgresql_makedb.8
+sbin/perditiondb_postgresql_makedb

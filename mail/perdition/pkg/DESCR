@@ -1,0 +1,12 @@
+Perdition is a fully featured POP3 and IMAP4 proxy server. It is able to
+handle both SSL and non-SSL connections and redirect users to a real-server
+based on a database lookup. Perdition supports modular based database access.
+ODBC, MySQL, PostgreSQL, GDBM, POSIX Regular Expression and NIS modules ship
+with the distribution. The API for modules is open allowing arbitrary modules
+to be written to allow access to any data store.
+
+Perdition has many uses. Including, creating large mail systems where an
+end-user's mailbox may be stored on one of several hosts, integrating
+different mail systems together, migrating between different email
+infrastructures, and bridging plain-text, SSL and TLS services. It can also
+be used as part of a firewall.

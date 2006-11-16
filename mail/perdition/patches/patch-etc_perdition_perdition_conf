@@ -1,0 +1,29 @@
+$OpenBSD: patch-etc_perdition_perdition_conf,v 1.1.1.1 2006/11/16 23:26:00 msf Exp $
+--- etc/perdition/perdition.conf.orig	Tue Nov  7 11:44:00 2006
++++ etc/perdition/perdition.conf	Tue Nov  7 11:47:50 2006
+@@ -132,9 +132,9 @@
+ 
+ # g|group GROUP:
+ # Group to run as. 
+-# (default "nobody")
+-#g nobody
+-#group nobody
++# (default "_perdition")
++#g _perdition
++#group _perdition
+ 
+ # I|capability|pop_capability|imap_capability STRING:
+ # Capabilities for the protocol.
+@@ -258,9 +258,9 @@
+ 
+ # u|username USERNAME:
+ # User to run as.
+-# (default "nobody")
+-#u nobody
+-#username nobody
++# (default "_perdition")
++#u _perdition
++#username _perdition
+ 
+ # U|username_from_database:
+ # Substitute username from popmap lookup.
