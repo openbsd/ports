@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2006/10/10 13:38:52 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2006/11/16 23:11:34 espie Exp $
 
 COMMENT=	"Check validity of Internet email addresses"
 
+MODULES=	cpan
 DISTNAME=	Email-Valid-0.176
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	mail perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Email/}
+PKGNAME=	p5-${DISTNAME}p0
+CATEGORIES=	mail
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -17,10 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 RUN_DEPENDS=	:p5-Mail-Tools->=1.67:mail/p5-Mail-Tools
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-CONFIGURE_STYLE= perl
+REGRESS_DEPENDS=	::net/p5-Net-Domain-TLD
 
-REGRESS_DEPENDS=	::devel/p5-Test-Pod \
-			::devel/p5-Test-Pod-Coverage \
-			::net/p5-Net-Domain-TLD
+MAKE_ENV=		TEST_POD=Yes
 
 .include <bsd.port.mk>
