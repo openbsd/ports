@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/13 21:02:26 matthieu Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/16 19:28:53 matthieu Exp $
 
 COMMENT=		"GIT - Tree History Storage Tool"
 
-DISTNAME=		git-1.4.3.5
+V=			1.4.4
+DISTNAME=		git-${V}
 CATEGORIES=		devel
 
 HOMEPAGE=		http://git.or.cz/
@@ -14,6 +15,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
+			git-manpages-${V}${EXTRACT_SUFX}
 
 WANTLIB=		c crypto iconv z
 
@@ -41,5 +45,9 @@ USE_X11=		Yes
 USE_GMAKE=		Yes
 
 NO_REGRESS=		Yes
+
+post-install:
+			cd ${WRKDIR} ; \
+			pax -rw -s,man7/git.7,man1/git.1, man* ${PREFIX}/man
 
 .include <bsd.port.mk>
