@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2006/10/19 09:39:58 sturm Exp $
+# $OpenBSD: Makefile,v 1.32 2006/11/16 15:06:18 kurt Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -6,7 +6,7 @@ COMMENT=	"Java Development Kit for Java 2 Standard Edition 1.3"
 VERSION=	1.3.1_16
 
 DISTNAME=	jdk${VERSION}
-PKGNAME=	jdk-linux-${VERSION}p0
+PKGNAME=	jdk-linux-${VERSION}p1
 CATEGORIES=	devel java
 
 HOMEPAGE=	http://java.sun.com/j2se/
@@ -58,5 +58,7 @@ pre-install:
 
 do-install:
 	@cp -Rp ${WRKDIST}/* ${JDK_HOME}
-	
+	@chown -R ${BINOWN}:${BINGRP} ${JDK_HOME}
+	@find ${JDK_HOME} -type l | xargs chown -h ${BINOWN}:${BINGRP}
+
 .include <bsd.port.mk>
