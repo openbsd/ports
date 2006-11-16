@@ -1,0 +1,11 @@
+--- configure.orig	Tue Nov 14 13:11:56 2006
++++ configure	Tue Nov 14 13:12:06 2006
+@@ -5922,7 +5922,7 @@
+ test x$x_libraries = "x" && x_libraries="/usr/lib"
+ 
+ CFLAGS=""
+-CXXFLAGS="-Os $CXXFLAGS $X_CFLAGS"
++CXXFLAGS="$CXXFLAGS $X_CFLAGS"
+ LIBS="$LIBS $X_LIBS $X_PRE_LIBS"
+ 
+ # Check for required functions in -lX11

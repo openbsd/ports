@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2006/11/13 13:01:38 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/16 21:09:46 steven Exp $
 
 COMMENT=	"window manager improved - key driven window manager"
 
 DISTNAME=	wmi-10
-PKGNAME=	${DISTNAME}p0
-CATEGORIES=	x11	
+PKGNAME=	${DISTNAME}p1
+CATEGORIES=	x11
 
-HOMEPAGE=	http://wmi.modprobe.de/	
+HOMEPAGE=	http://wmii.suckless.org/
 
 MAINTAINER=	Julian Frede <julian.frede@gmail.com>
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xft Xrender c fontconfig freetype m \
 			stdc++
 
-MASTER_SITES=	${MASTER_SITE_BERLIOS=wmi/}
+MASTER_SITES=	${HOMEPAGE}/download/
 
 # not necessary, but to ensure consistent behaviour
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
