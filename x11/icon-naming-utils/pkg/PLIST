@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/17 00:07:42 alek Exp $
+lib/pkgconfig/
+lib/pkgconfig/icon-naming-utils.pc
+libexec/icon-name-mapping
+share/dtds/
+share/dtds/legacy-icon-mapping.dtd
+share/icon-naming-utils/
+share/icon-naming-utils/legacy-icon-mapping.xml
