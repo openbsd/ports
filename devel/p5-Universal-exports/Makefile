@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/20 11:14:50 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/17 16:02:48 espie Exp $
 
 COMMENT=	"lightweight, universal exporting/require of variables"
 
-V=		0.03
+MODULES=	cpan
+V=		0.05
 DISTNAME=	UNIVERSAL-exports-${V}
 PKGNAME=	p5-Universal-exports-${V}
-CATEGORIES=	devel perl5
+CATEGORIES=	devel
 
 MAINTAINER=	Sam Smith <S@msmith.net>
 
@@ -15,13 +16,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=UNIVERSAL/}
-
-CONFIGURE_STYLE=perl
-
 RUN_DEPENDS=	::devel/p5-Exporter-Lite
-REGRESS_DEPENDS=${RUN_DEPENDS}
-
-PKG_ARCH=	*
 
 .include <bsd.port.mk>

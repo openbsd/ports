@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/12 18:02:23 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/17 16:02:48 espie Exp $
 
 COMMENT= 	"database OO schema for Jifty"
 
 MODULES=	cpan
 
 DISTNAME=	Jifty-DBI-0.25
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	databases www
 
 # Artistic + GPL
@@ -22,7 +23,7 @@ RUN_DEPENDS=	::devel/p5-Class-Accessor \
 		::devel/p5-DateTime \
 		::devel/p5-Exporter-Lite \
 		::textproc/p5-Lingua-EN-Inflect \
-		::devel/p5-Universal-exports \
+		::devel/p5-Universal-require \
 		::databases/p5-DBIx-DBSchema \
 		::devel/p5-Cache-Simple-TimedExpiry \
 		::devel/p5-DateTime-Format-Strptime \
