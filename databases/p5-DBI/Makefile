@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.41 2006/09/19 08:05:22 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2006/11/17 20:21:08 espie Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"unified perl interface for database access"
 
+MODULES=	cpan
 DISTNAME=	DBI-1.52
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	databases perl5
-
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=DBI/}
+CATEGORIES=	databases
 
 HOMEPAGE=	http://dbi.perl.org/index.html
 MAINTAINER=	Michael Coulter <mjc@openbsd.org>
@@ -20,7 +18,5 @@ PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	:p5-PlRPC->=0.2017:net/p5-PlRPC
 BUILD_DEPENDS=	${RUN_DEPENDS}
-
-CONFIGURE_STYLE= perl
 
 .include <bsd.port.mk>
