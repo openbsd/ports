@@ -1,0 +1,12 @@
+$OpenBSD: patch-libs_libXP_KeyManager_cpp,v 1.1 2006/11/17 23:31:45 steven Exp $
+--- libs/libXP/KeyManager.cpp.orig	Sat Nov 18 00:12:35 2006
++++ libs/libXP/KeyManager.cpp	Sat Nov 18 00:13:14 2006
+@@ -136,7 +136,7 @@ int KeyManager::DisplayedStringWidth(std
+ 
+ void KeyManager::InsertString(int pos, std::string s) {
+   int len = s.size();
+-  for (int i=4096-len;i>pos;i--)
++  for (int i=4096-len;i>pos && i>=len;i--)
+     lineData[i] = lineData[i-len];
+   const char* sptr = s.c_str();
+   for (int i=0;i<len;i++)
