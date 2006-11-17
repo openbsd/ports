@@ -1,0 +1,4 @@
+This DBIx::Class component resembles the behaviour of Class::DBI::UUID,
+to make some columns implicitly created as uuid.
+
+It can use a variety of uuid generation modules, for instance Data::UUID.

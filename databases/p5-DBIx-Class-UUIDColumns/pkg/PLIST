@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/17 17:12:22 espie Exp $
+@conflict p5-DBIx-Class-<0.7
+${P5SITE}/DBIx/Class/UUIDColumns/
+${P5SITE}/DBIx/Class/UUIDColumns.pm
+${P5SITE}/DBIx/Class/UUIDColumns/UUIDMaker/
+${P5SITE}/DBIx/Class/UUIDColumns/UUIDMaker.pm
+${P5SITE}/DBIx/Class/UUIDColumns/UUIDMaker/APR/
+${P5SITE}/DBIx/Class/UUIDColumns/UUIDMaker/APR/UUID.pm
+${P5SITE}/DBIx/Class/UUIDColumns/UUIDMaker/Data/
+${P5SITE}/DBIx/Class/UUIDColumns/UUIDMaker/Data/UUID.pm
+${P5SITE}/DBIx/Class/UUIDColumns/UUIDMaker/Data/Uniqid.pm
+${P5SITE}/DBIx/Class/UUIDColumns/UUIDMaker/UUID.pm
+${P5SITE}/DBIx/Class/UUIDColumns/UUIDMaker/Win32/
+${P5SITE}/DBIx/Class/UUIDColumns/UUIDMaker/Win32/Guidgen.pm
+${P5SITE}/DBIx/Class/UUIDColumns/UUIDMaker/Win32API/
+${P5SITE}/DBIx/Class/UUIDColumns/UUIDMaker/Win32API/GUID.pm
+@man man/man3p/DBIx::Class::UUIDColumns.3p
+@man man/man3p/DBIx::Class::UUIDColumns::UUIDMaker.3p
+@man man/man3p/DBIx::Class::UUIDColumns::UUIDMaker::APR::UUID.3p
+@man man/man3p/DBIx::Class::UUIDColumns::UUIDMaker::Data::UUID.3p
+@man man/man3p/DBIx::Class::UUIDColumns::UUIDMaker::Data::Uniqid.3p
+@man man/man3p/DBIx::Class::UUIDColumns::UUIDMaker::UUID.3p
+@man man/man3p/DBIx::Class::UUIDColumns::UUIDMaker::Win32::Guidgen.3p
+@man man/man3p/DBIx::Class::UUIDColumns::UUIDMaker::Win32API::GUID.3p
