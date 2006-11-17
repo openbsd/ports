@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2006/07/20 04:43:28 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2006/11/17 20:46:32 mbalmer Exp $
 
 COMMENT=	"web-based collaborative editing environment"
 
-V=		1.5.8
-DISTNAME=	mediawiki-${V}
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	mediawiki-1.8.2
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.mediawiki.org/
 
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
+MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=  Yes
@@ -32,8 +30,8 @@ RUN_DEPENDS=	:php5-mysql-*:www/php5/extensions,-mysql \
 
 do-install:
 	@cd ${PREFIX} && tar zxf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
-	@find ${PREFIX} -name '.cvsignore' | xargs rm
+	@find ${PREFIX} -name '.cvsignore' -exec rm {} \;
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}
-	@mv ${INSTDIR}-${V} ${INSTDIR}
+	@mv ${INSTDIR}-${DISTNAME:S/mediawiki-//} ${INSTDIR}
 
 .include <bsd.port.mk>
