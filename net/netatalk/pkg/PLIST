@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/09/22 05:56:25 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.6 2006/11/17 22:05:02 aanriot Exp $
 bin/achfile
 bin/acleandir.rc
 bin/adv1tov2
 bin/aecho
 bin/afile
 bin/afpd-mtab.pl
+@mode 4755
 bin/afppasswd
+@mode
 bin/apple_cp
 bin/apple_mv
 bin/apple_rm
@@ -173,21 +175,21 @@ share/doc/netatalk/README.logger
 share/doc/netatalk/README.platforms
 share/examples/netatalk/
 @mode 750
-@sample /etc/netatalk/
+@sample ${SYSCONFDIR}/netatalk/
 @mode 640
 share/examples/netatalk/AppleVolumes.default
-@sample /etc/netatalk/AppleVolumes.default
+@sample ${SYSCONFDIR}/netatalk/AppleVolumes.default
 share/examples/netatalk/AppleVolumes.system
-@sample /etc/netatalk/AppleVolumes.system
+@sample ${SYSCONFDIR}/netatalk/AppleVolumes.system
 share/examples/netatalk/afpd.conf
-@sample /etc/netatalk/afpd.conf
+@sample ${SYSCONFDIR}/netatalk/afpd.conf
 share/examples/netatalk/atalkd.conf
-@sample /etc/netatalk/atalkd.conf
+@sample ${SYSCONFDIR}/netatalk/atalkd.conf
 share/examples/netatalk/netatalk.conf
-@sample /etc/netatalk/netatalk.conf
+@sample ${SYSCONFDIR}/netatalk/netatalk.conf
 share/examples/netatalk/papd.conf
-@sample /etc/netatalk/papd.conf
+@sample ${SYSCONFDIR}/netatalk/papd.conf
 share/examples/netatalk/rc.atalk.bsd
-@sample /etc/netatalk/rc.atalk
+@sample ${SYSCONFDIR}/netatalk/rc.atalk
 share/netatalk/
 share/netatalk/pagecount.ps
