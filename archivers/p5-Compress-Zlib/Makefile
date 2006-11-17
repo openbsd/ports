@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.43 2006/09/26 12:37:15 kevlo Exp $
+# $OpenBSD: Makefile,v 1.44 2006/11/17 15:08:16 espie Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"perl interface to the zlib compression library"
-DISTNAME=	Compress-Zlib-1.42
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	archivers perl5
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Compress/}
+MODULES=	cpan
+
+DISTNAME=	Compress-Zlib-1.42
+CATEGORIES=	archivers
 
 # Perl
 PERMIT_PACKAGE_CDROM=   Yes
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB=	z
 
-CONFIGURE_STYLE=perl
 EXAMPLE_FILES=	filtdef filtinf gzcat gzgrep gzstream
 
 post-install:

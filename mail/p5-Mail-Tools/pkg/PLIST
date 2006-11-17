@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2005/04/10 19:12:53 msf Exp $
+@comment $OpenBSD: PLIST,v 1.10 2006/11/17 15:08:16 espie Exp $
 ${P5SITE}/Mail/
 ${P5SITE}/Mail/Address.pm
 ${P5SITE}/Mail/Cap.pm
@@ -46,8 +46,8 @@ ${P5SITE}/auto/Mail/Util/read_mbox.al
 @man man/man3p/Mail::Mailer.3p
 @man man/man3p/Mail::Send.3p
 @man man/man3p/Mail::Util.3p
-share/examples/p5-MailTools/
-share/examples/p5-MailTools/README.demos
-share/examples/p5-MailTools/forwd_demo
-share/examples/p5-MailTools/rplyto_demo
-share/examples/p5-MailTools/send_demo
+share/examples/p5-Mail-Tools/
+share/examples/p5-Mail-Tools/README.demos
+share/examples/p5-Mail-Tools/forwd_demo
+share/examples/p5-Mail-Tools/rplyto_demo
+share/examples/p5-Mail-Tools/send_demo
