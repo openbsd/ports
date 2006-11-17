@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2006/10/01 22:23:47 brad Exp $
+# $OpenBSD: Makefile,v 1.109 2006/11/17 19:33:19 kurt Exp $
 
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64 amd64 powerpc
 
@@ -7,8 +7,8 @@ COMMENT-devel=	"devel files for Gecko"
 
 VER=		1.7.13
 DISTNAME=	mozilla
-PKGNAME=	mozilla-${VER}p1
-PKGNAME-devel=	mozilla-devel-${VER}p1
+PKGNAME=	mozilla-${VER}p2
+PKGNAME-devel=	mozilla-devel-${VER}p2
 DISTFILES=	mozilla-${VER}-source.tar.bz2
 SO_VERSION=	7.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -19,8 +19,8 @@ SO_VERSION=	7.0
 	i18n imglib2 impComm4xMail impText import inspector ipcdc jar50 jsd \
 	jsj localmail mailnews mailview mime mimeemitter mork mozfind mozjs \
 	msgbaseutil msgcompose msgdb msgimap msgmdn msgnews msgsmime myspell \
-	necko necko2 nsappshell nspr4 nsprefm nss3 nssckbi oji p3p pipboot \
-	pipnss pippki plc4 plds4 pref profile rdf smime3 softokn3 \
+	necko necko2 nsappshell nsprefm nss3 nssckbi oji p3p pipboot \
+	pipnss pippki pref profile rdf smime3 softokn3 \
 	spellchecker ssl3 swft system-pref transformiix txmgr typeaheadfind \
 	uconv ucvmath universalchardet vcard wallet walletviewers webbrwsr \
 	websrvcs widget_gtk2 xlibrgb xmlextras xpcom xpcom_compat \
@@ -51,18 +51,18 @@ MODULES=	devel/gettext
 BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
 		:zip->=2.3:archivers/zip \
 		:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
-WANTLIB=	X11 Xt atk-1.0 fontconfig freetype \
+LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
+		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.3p2:devel/nspr
+WANTLIB=	X11 Xt atk-1.0 c cairo fontconfig freetype \
 		glib-2.0 gmodule-2.0 gobject-2.0 m \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 cairo
+		pango-1.0 pangocairo-1.0 pangoft2-1.0
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-devel"
 MODULES=	devel/gettext
 RUN_DEPENDS=	:${PKGNAME}:www/mozilla
 .else
 RUN_DEPENDS=	:esound-0.2.*:audio/esound
-WANTLIB+=	Xext Xft Xp Xrender c jpeg png pthread z
-WANTLIB+=	stdc++
+WANTLIB+=	Xext Xft Xp Xrender jpeg png pthread stdc++ z
 .endif
 
 USE_X11=	Yes
@@ -72,7 +72,6 @@ NO_REGRESS=	Yes
 SUBST_VARS=	LOCALBASE SO_VERSION
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build/autoconf \
-				${WRKSRC}/nsprpub/build/autoconf \
 				${WRKSRC}/directory/c-sdk/config/autoconf
 
 AUTOCONF_VERSION= 2.13
@@ -81,8 +80,8 @@ CONFIGURE_ARGS=					\
 		--with-system-jpeg=${LOCALBASE}	\
 		--with-system-png=${LOCALBASE}	\
 		--with-system-zlib=/usr/lib	\
+		--with-system-nspr		\
 		--with-pthreads			\
-		--without-system-nspr		\
 		--enable-default-toolkit=gtk2	\
 		--enable-xft			\
 		--enable-optimize=-Os		\
@@ -111,12 +110,10 @@ post-extract:
 	@cp ${FILESDIR}/xptc* ${WRKSRC}/xpcom/reflect/xptcall/src/md/unix/
 
 pre-configure:
-	@cd ${WRKSRC}/nsprpub && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	@cd ${WRKSRC}/directory/c-sdk && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	@perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g; s|_X11BASE_|${X11BASE}|g' \
 		${WRKSRC}/xpfe/bootstrap/mozilla.in
 	@perl -pi -e 's|_SO_VERSION_|${SO_VERSION}|g' \
-		${WRKSRC}/nsprpub/pr/include/md/_openbsd.h \
 		${WRKSRC}/xpcom/components/nsNativeComponentLoader.cpp
 
 do-install:

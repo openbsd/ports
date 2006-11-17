@@ -1,0 +1,11 @@
+$OpenBSD: patch-build_unix_mozilla-xpcom_pc_in,v 1.1 2006/11/17 19:33:19 kurt Exp $
+--- build/unix/mozilla-xpcom.pc.in.orig	Mon Nov 13 13:04:06 2006
++++ build/unix/mozilla-xpcom.pc.in	Mon Nov 13 13:04:20 2006
+@@ -7,6 +7,6 @@ idldir=%idldir%
+ Name: XPCOM
+ Description: The Mozilla Cross Platform Component Library
+ Version: %MOZILLA_VERSION%
+-Requires: mozilla-nspr = %MOZILLA_VERSION%
++Requires: nspr
+ Libs: -L${libdir} -lxpcom
+ Cflags: -I${includedir} -I${includedir}/xpcom -I${includedir}/string

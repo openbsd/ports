@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.36 2006/02/05 00:21:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.37 2006/11/17 19:33:19 kurt Exp $
 @pkgpath www/mozilla,gtk2
 %%SHARED%%
 bin/mozilla
-lib/pkgconfig/
 mozilla/
 mozilla/LICENSE
 mozilla/chrome/

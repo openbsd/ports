@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-devel,v 1.10 2006/01/01 16:02:37 sturm Exp $
+@comment $OpenBSD: PFRAG.shared-devel,v 1.11 2006/11/17 19:33:19 kurt Exp $
 @comment @lib mozilla/lib/components/libaccessibility.so.${LIBaccessibility_VERSION}
 @comment @lib mozilla/lib/components/libaddrbook.so.${LIBaddrbook_VERSION}
 @comment @lib mozilla/lib/components/libappcomps.so.${LIBappcomps_VERSION}
@@ -80,11 +80,8 @@
 @lib mozilla/lib/libjsj.so.${LIBjsj_VERSION}
 @lib mozilla/lib/libmozjs.so.${LIBmozjs_VERSION}
 @lib mozilla/lib/libmsgbaseutil.so.${LIBmsgbaseutil_VERSION}
-@lib mozilla/lib/libnspr4.so.${LIBnspr4_VERSION}
 @lib mozilla/lib/libnss3.so.${LIBnss3_VERSION}
 @lib mozilla/lib/libnssckbi.so.${LIBnssckbi_VERSION}
-@lib mozilla/lib/libplc4.so.${LIBplc4_VERSION}
-@lib mozilla/lib/libplds4.so.${LIBplds4_VERSION}
 @lib mozilla/lib/libsmime3.so.${LIBsmime3_VERSION}
 @lib mozilla/lib/libsoftokn3.so.${LIBsoftokn3_VERSION}
 @lib mozilla/lib/libssl3.so.${LIBssl3_VERSION}
