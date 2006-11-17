@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2006/11/12 19:27:40 robert Exp $
+# $OpenBSD: Makefile,v 1.26 2006/11/17 14:08:40 kurt Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -9,9 +9,9 @@ COMMENT-java=	"optional integration of OpenOffice java features"
 VERSION=	2.0.4
 DISTNAME=	OOo_${VERSION}_src
 WRKDIST=	${WRKDIR}/OOD680_m5
-PKGNAME=	openoffice-${VERSION}p15
-PKGNAME-kde=	openoffice-kde-${VERSION}p15
-PKGNAME-java=	openoffice-java-${VERSION}p15
+PKGNAME=	openoffice-${VERSION}p16
+PKGNAME-kde=	openoffice-kde-${VERSION}p16
+PKGNAME-java=	openoffice-java-${VERSION}p16
 CATEGORIES=	editors productivity
 
 SHARED_LIBS=	icudata		26.0 \
@@ -58,7 +58,7 @@ BUILD_DEPENDS=	:zip-*:archivers/zip \
 		::devel/boost
 
 BASE_LIBS=	gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.14::x11/gtk+2 \
-		python2.3:python-2.3.*:lang/python/2.3 \
+		python${MODPY_VERSION}:python-${MODPY_VERSION}*:lang/python/${MODPY_VERSION} \
 		db.>=4:db-4.*:databases/db/v4 \
 		curl.>=2::net/curl \
 		neon.>=24::net/neon \
@@ -82,6 +82,7 @@ MODULES=	java
 MODJAVA_VER=	1.4+
 MODJAVA_JRERUN=	Yes
 . else
+MODULES=	python
 LIB_DEPENDS=	${BASE_LIBS}
 WANTLIB=	ICE SM X11 Xext Xrender atk-1.0 c cairo expat fontconfig \
 		freetype glib-2.0 gmodule-2.0 gobject-2.0 \
@@ -89,7 +90,7 @@ WANTLIB=	ICE SM X11 Xext Xrender atk-1.0 c cairo expat fontconfig \
 		pangocairo-1.0 pangoft2-1.0 pthread stdc++ util xml2 z
 . endif
 .else
-MODULES=	x11/qt3 java
+MODULES=	x11/qt3 java python
 MODJAVA_VER=	1.4+
 LIB_DEPENDS=	${BASE_LIBS} ${KDE_LIBS}
 .endif
@@ -101,6 +102,7 @@ VMEM_WARNING=	Yes
 
 PATCHFILES=	go_oo_src680_20061105.diff:0 \
 		build-java-target.diff:0
+
 PATCHORIG=	.orig.port
 WRKCONF=	${WRKSRC}/config_office
 
@@ -110,7 +112,8 @@ AUTOCONF_DIR=		${WRKCONF}
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		QTINC="${MODQT_INCDIR}" QTDIR="${MODQT_LIBDIR}"
+		QTINC="${MODQT_INCDIR}" QTDIR="${MODQT_LIBDIR}" \
+		PYTHON="${MODPY_BIN}"
 
 CONFIGURE_ARGS=	--disable-gnome-vfs \
 		--disable-mozilla \
