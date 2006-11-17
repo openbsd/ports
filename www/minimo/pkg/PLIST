@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2006/01/10 17:58:47 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/11/17 19:03:14 kurt Exp $
 bin/minimo
 minimo/
 minimo/LICENSE
@@ -359,11 +359,8 @@ minimo/greprefs/security-prefs.js
 @lib minimo/libgtkxtbin.so.${LIBgtkxtbin_VERSION}
 @lib minimo/libjsj.so.${LIBjsj_VERSION}
 @lib minimo/libmozjs.so.${LIBmozjs_VERSION}
-@lib minimo/libnspr4.so.${LIBnspr4_VERSION}
 @lib minimo/libnss3.so.${LIBnss3_VERSION}
 @lib minimo/libnssckbi.so.${LIBnssckbi_VERSION}
-@lib minimo/libplc4.so.${LIBplc4_VERSION}
-@lib minimo/libplds4.so.${LIBplds4_VERSION}
 @lib minimo/libsmime3.so.${LIBsmime3_VERSION}
 @lib minimo/libsoftokn3.so.${LIBsoftokn3_VERSION}
 @lib minimo/libssl3.so.${LIBssl3_VERSION}

@@ -1,0 +1,13 @@
+$OpenBSD: patch-security_nss_cmd_pkiutil_platlibs_mk,v 1.1 2006/11/17 19:03:14 kurt Exp $
+--- security/nss/cmd/pkiutil/platlibs.mk.orig	Tue Nov  7 14:12:03 2006
++++ security/nss/cmd/pkiutil/platlibs.mk	Tue Nov  7 14:12:22 2006
+@@ -50,8 +50,6 @@ EXTRA_SHARED_LIBS += \
+ 	-L$(DIST)/lib/ \
+ 	-lnsspki3 \
+ 	-lnss3 \
+-	-lplc4 \
+-	-lplds4 \
+-	-lnspr4 \
++	$(NSPR_LIBS) \
+ 	$(NULL)
+ 

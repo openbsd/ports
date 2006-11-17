@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.22 2006/10/01 22:23:47 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2006/11/17 19:03:14 kurt Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc64 arm
 SHARED_ONLY=	Yes
 
 COMMENT=	"mini mozilla"
 DISTNAME=	minimo-20050802
-PKGNAME=	${DISTNAME}p9
+PKGNAME=	${DISTNAME}p10
 SO_VERSION=	2.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 .for _lib in DebugRobot MyService caps chrmlite docshell editor \
 	embedcomponents gfx_gtk gkgfx gklayout gtkembedmoz gtkxtbin htmlpars \
-	i18n imglib2 jar50 jsj mork mozjs necko nsappshell nspr4 nss3 nssckbi \
-	oji pipboot pipnss plc4 plds4 popuplite pref remoteservice \
+	i18n imglib2 jar50 jsj mork mozjs necko nsappshell nss3 nssckbi \
+	oji pipboot pipnss popuplite pref remoteservice \
 	searchservice smime3 softkey softokn3 ssl3 testdynamic txmgr uconv \
 	webbrwsr widget_gtk2 xpcom xpcom_compat xpcom_compat_c xpcom_core \
 	xpcomsample xpconnect xpctest
@@ -38,7 +38,8 @@ BUILD_DEPENDS=	:zip->=2.3:archivers/zip \
 		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
 		png.>=3::graphics/png \
-		gdk-x11-2.0.>=600.0,gdk_pixbuf-2.0.>=600.0,gtk-x11-2.0.>=600.0::x11/gtk+2
+		gdk-x11-2.0.>=600.0,gdk_pixbuf-2.0.>=600.0,gtk-x11-2.0.>=600.0::x11/gtk+2 \
+		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.3p2:devel/nspr
 WANTLIB=	ICE SM X11 Xext Xft Xrender Xt \
 		c fontconfig freetype m pthread z \
 		atk-1.0.>=1011.0 glib-2.0.>=600.0 gmodule-2.0.>=600.0 \
@@ -55,7 +56,6 @@ SUBST_VARS=	LOCALBASE SO_VERSION
 WRKDIST=	${WRKDIR}/mozilla
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build/autoconf \
-				${WRKSRC}/nsprpub/build/autoconf \
 				${WRKSRC}/directory/c-sdk/config/autoconf
 
 AUTOCONF_VERSION= 2.13
@@ -64,8 +64,8 @@ CONFIGURE_ARGS+=						\
 		--with-system-jpeg=${LOCALBASE}			\
 		--with-system-png=${LOCALBASE}			\
 		--with-system-zlib=/usr/lib			\
+		--with-system-nspr				\
 		--with-pthreads					\
-		--without-system-nspr				\
 		--enable-optimize=-Os				\
 		--disable-pedantic				\
 		--disable-debug					\
@@ -125,12 +125,10 @@ post-extract:
 	@cp ${FILESDIR}/xptc* ${WRKSRC}/xpcom/reflect/xptcall/src/md/unix/
 
 pre-configure:
-	@cd ${WRKSRC}/nsprpub && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	@cd ${WRKSRC}/directory/c-sdk && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	@perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g; s|_X11BASE_|${X11BASE}|g' \
 		${WRKSRC}/xpfe/bootstrap/mozilla.in
 	@perl -pi -e 's|_SO_VERSION_|${SO_VERSION}|g' \
-		${WRKSRC}/nsprpub/pr/include/md/_openbsd.h \
 		${WRKSRC}/xpcom/components/nsNativeComponentLoader.cpp
 	touch ${WRKSRC}/embedding/minimo/chrome/skin/m.jpg
 
