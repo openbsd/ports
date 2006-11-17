@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2006/10/18 08:20:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2006/11/17 13:37:06 ajacoutot Exp $
 bin/autopvf
 bin/basictopvf
 bin/faxq
@@ -37,7 +37,11 @@ bin/wavtopvf
 lib/mgetty+sendfax/
 lib/mgetty+sendfax/cour25.pbm
 lib/mgetty+sendfax/cour25n.pbm
+@mode u+s
+@owner uucp
 lib/mgetty+sendfax/faxq-helper
+@mode
+@owner
 lib/mgetty+sendfax/setup
 libexec/mgetty
 libexec/vgetty
