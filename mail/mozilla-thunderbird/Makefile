@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2006/11/10 14:16:41 wilfried Exp $
+# $OpenBSD: Makefile,v 1.46 2006/11/17 19:20:19 kurt Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -6,7 +6,7 @@ COMMENT=	"redesign of the integrated Mozilla App-Suite mail component"
 
 VER=		1.5.0.8
 DISTNAME=	mozilla
-PKGNAME=	mozilla-thunderbird-${VER}
+PKGNAME=	mozilla-thunderbird-${VER}p0
 SO_VERSION=	10.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -14,8 +14,8 @@ SO_VERSION=	10.0
 	composer docshell editor embedcomponents fileview gfx_gtk gfxps \
 	gfxpsshar gkgfx gklayout gtkembedmoz gtkxtbin htmlpars i18n imglib2 \
 	import jar50 jsd ldap50 mail mailcomps mork mozfind mozjs mozldap \
-	msgsmime myspell necko necko2 nsappshell nspr4 nss3 nssckbi pipboot \
-	pipnss pippki plc4 plds4 pref prldap50 rdf remoteservice smime3 \
+	msgsmime myspell necko necko2 nsappshell nss3 nssckbi pipboot \
+	pipnss pippki pref prldap50 rdf remoteservice smime3 \
 	softokn3 spellchecker ssl3 system-pref toolkitcomps txmgr uconv \
 	universalchardet wallet walletviewers webbrwsr websrvcs widget_gtk2 \
 	xmlextras xpcom xpcom_compat xpcom_compat_c xpcom_core xpconnect \
@@ -34,8 +34,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xext Xft Xrender Xinerama Xt c fontconfig freetype m pthread z \
 		atk-1.0 cairo glib-2.0 gmodule-2.0 gobject-2.0 \
-		jpeg pango-1.0 pangoft2-1.0 pangocairo-1.0 png
-WANTLIB+=	stdc++
+		jpeg pango-1.0 pangoft2-1.0 pangocairo-1.0 png stdc++
 
 MASTER_SITES=	http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/${VER}/source/ \
 		http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/${VER}/source/
@@ -46,7 +45,8 @@ RUN_DEPENDS=	:esound-*:audio/esound
 BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
 		:zip->=2.3:archivers/zip \
 		:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
+LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
+		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.3p2:devel/nspr
 
 VMEM_WARNING=	Yes
 
@@ -57,7 +57,6 @@ NO_REGRESS=	Yes
 SUBST_VARS=	LOCALBASE SO_VERSION
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build/autoconf \
-				${WRKSRC}/nsprpub/build/autoconf \
 				${WRKSRC}/directory/c-sdk/config/autoconf
 
 AUTOCONF_VERSION= 2.13
@@ -65,8 +64,8 @@ CONFIGURE_STYLE= autoconf no-autoheader
 CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 		--with-system-png=${LOCALBASE}	\
 		--with-system-zlib=/usr/lib	\
+		--with-system-nspr		\
 		--with-pthreads			\
-		--without-system-nspr		\
 		--enable-xft			\
 		--enable-optimize=-Os		\
 		--enable-default-toolkit=gtk2	\

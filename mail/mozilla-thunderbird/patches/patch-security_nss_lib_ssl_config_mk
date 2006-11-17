@@ -1,0 +1,14 @@
+$OpenBSD: patch-security_nss_lib_ssl_config_mk,v 1.1 2006/11/17 19:20:19 kurt Exp $
+--- security/nss/lib/ssl/config.mk.orig	Tue Nov  7 15:30:21 2006
++++ security/nss/lib/ssl/config.mk	Tue Nov  7 15:30:37 2006
+@@ -73,9 +73,7 @@ else
+ EXTRA_SHARED_LIBS += \
+ 	-L$(DIST)/lib/ \
+ 	-lnss3 \
+-	-lplc4 \
+-	-lplds4 \
+-	-lnspr4 \
++	$(NSPR_LIBS) \
+ 	$(NULL)
+ 
+ ifeq ($(OS_ARCH), BeOS)
