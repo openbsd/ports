@@ -1,0 +1,230 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/17 02:16:42 msf Exp $
+bin/perlcritic
+${P5SITE}/Perl/
+${P5SITE}/Perl/Critic/
+${P5SITE}/Perl/Critic.pm
+${P5SITE}/Perl/Critic/Config.pm
+${P5SITE}/Perl/Critic/DEVELOPER.pod
+${P5SITE}/Perl/Critic/Defaults.pm
+${P5SITE}/Perl/Critic/Document.pm
+${P5SITE}/Perl/Critic/Policy/
+${P5SITE}/Perl/Critic/Policy.pm
+${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/
+${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/ProhibitLvalueSubstr.pm
+${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/ProhibitReverseSortBlock.pm
+${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/ProhibitSleepViaSelect.pm
+${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/ProhibitStringyEval.pm
+${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/ProhibitStringySplit.pm
+${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/ProhibitUniversalCan.pm
+${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/ProhibitUniversalIsa.pm
+${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/ProhibitVoidGrep.pm
+${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/ProhibitVoidMap.pm
+${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/RequireBlockGrep.pm
+${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/RequireBlockMap.pm
+${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/RequireGlobFunction.pm
+${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/RequireSimpleSortBlock.pm
+${P5SITE}/Perl/Critic/Policy/ClassHierarchies/
+${P5SITE}/Perl/Critic/Policy/ClassHierarchies/ProhibitAutoloading.pm
+${P5SITE}/Perl/Critic/Policy/ClassHierarchies/ProhibitExplicitISA.pm
+${P5SITE}/Perl/Critic/Policy/ClassHierarchies/ProhibitOneArgBless.pm
+${P5SITE}/Perl/Critic/Policy/CodeLayout/
+${P5SITE}/Perl/Critic/Policy/CodeLayout/ProhibitHardTabs.pm
+${P5SITE}/Perl/Critic/Policy/CodeLayout/ProhibitParensWithBuiltins.pm
+${P5SITE}/Perl/Critic/Policy/CodeLayout/ProhibitQuotedWordLists.pm
+${P5SITE}/Perl/Critic/Policy/CodeLayout/RequireConsistentNewlines.pm
+${P5SITE}/Perl/Critic/Policy/CodeLayout/RequireTidyCode.pm
+${P5SITE}/Perl/Critic/Policy/CodeLayout/RequireTrailingCommas.pm
+${P5SITE}/Perl/Critic/Policy/ControlStructures/
+${P5SITE}/Perl/Critic/Policy/ControlStructures/ProhibitCStyleForLoops.pm
+${P5SITE}/Perl/Critic/Policy/ControlStructures/ProhibitCascadingIfElse.pm
+${P5SITE}/Perl/Critic/Policy/ControlStructures/ProhibitDeepNests.pm
+${P5SITE}/Perl/Critic/Policy/ControlStructures/ProhibitPostfixControls.pm
+${P5SITE}/Perl/Critic/Policy/ControlStructures/ProhibitUnlessBlocks.pm
+${P5SITE}/Perl/Critic/Policy/ControlStructures/ProhibitUnreachableCode.pm
+${P5SITE}/Perl/Critic/Policy/ControlStructures/ProhibitUntilBlocks.pm
+${P5SITE}/Perl/Critic/Policy/Documentation/
+${P5SITE}/Perl/Critic/Policy/Documentation/RequirePodAtEnd.pm
+${P5SITE}/Perl/Critic/Policy/Documentation/RequirePodSections.pm
+${P5SITE}/Perl/Critic/Policy/ErrorHandling/
+${P5SITE}/Perl/Critic/Policy/ErrorHandling/RequireCarping.pm
+${P5SITE}/Perl/Critic/Policy/InputOutput/
+${P5SITE}/Perl/Critic/Policy/InputOutput/ProhibitBacktickOperators.pm
+${P5SITE}/Perl/Critic/Policy/InputOutput/ProhibitBarewordFileHandles.pm
+${P5SITE}/Perl/Critic/Policy/InputOutput/ProhibitInteractiveTest.pm
+${P5SITE}/Perl/Critic/Policy/InputOutput/ProhibitOneArgSelect.pm
+${P5SITE}/Perl/Critic/Policy/InputOutput/ProhibitReadlineInForLoop.pm
+${P5SITE}/Perl/Critic/Policy/InputOutput/ProhibitTwoArgOpen.pm
+${P5SITE}/Perl/Critic/Policy/InputOutput/RequireBracedFileHandleWithPrint.pm
+${P5SITE}/Perl/Critic/Policy/Miscellanea/
+${P5SITE}/Perl/Critic/Policy/Miscellanea/ProhibitFormats.pm
+${P5SITE}/Perl/Critic/Policy/Miscellanea/ProhibitTies.pm
+${P5SITE}/Perl/Critic/Policy/Miscellanea/RequireRcsKeywords.pm
+${P5SITE}/Perl/Critic/Policy/Modules/
+${P5SITE}/Perl/Critic/Policy/Modules/ProhibitAutomaticExportation.pm
+${P5SITE}/Perl/Critic/Policy/Modules/ProhibitEvilModules.pm
+${P5SITE}/Perl/Critic/Policy/Modules/ProhibitMultiplePackages.pm
+${P5SITE}/Perl/Critic/Policy/Modules/RequireBarewordIncludes.pm
+${P5SITE}/Perl/Critic/Policy/Modules/RequireEndWithOne.pm
+${P5SITE}/Perl/Critic/Policy/Modules/RequireExplicitPackage.pm
+${P5SITE}/Perl/Critic/Policy/Modules/RequireFilenameMatchesPackage.pm
+${P5SITE}/Perl/Critic/Policy/Modules/RequireVersionVar.pm
+${P5SITE}/Perl/Critic/Policy/NamingConventions/
+${P5SITE}/Perl/Critic/Policy/NamingConventions/ProhibitAmbiguousNames.pm
+${P5SITE}/Perl/Critic/Policy/NamingConventions/ProhibitMixedCaseSubs.pm
+${P5SITE}/Perl/Critic/Policy/NamingConventions/ProhibitMixedCaseVars.pm
+${P5SITE}/Perl/Critic/Policy/References/
+${P5SITE}/Perl/Critic/Policy/References/ProhibitDoubleSigils.pm
+${P5SITE}/Perl/Critic/Policy/RegularExpressions/
+${P5SITE}/Perl/Critic/Policy/RegularExpressions/ProhibitCaptureWithoutTest.pm
+${P5SITE}/Perl/Critic/Policy/RegularExpressions/RequireExtendedFormatting.pm
+${P5SITE}/Perl/Critic/Policy/RegularExpressions/RequireLineBoundaryMatching.pm
+${P5SITE}/Perl/Critic/Policy/Subroutines/
+${P5SITE}/Perl/Critic/Policy/Subroutines/ProhibitAmpersandSigils.pm
+${P5SITE}/Perl/Critic/Policy/Subroutines/ProhibitBuiltinHomonyms.pm
+${P5SITE}/Perl/Critic/Policy/Subroutines/ProhibitExcessComplexity.pm
+${P5SITE}/Perl/Critic/Policy/Subroutines/ProhibitExplicitReturnUndef.pm
+${P5SITE}/Perl/Critic/Policy/Subroutines/ProhibitSubroutinePrototypes.pm
+${P5SITE}/Perl/Critic/Policy/Subroutines/ProtectPrivateSubs.pm
+${P5SITE}/Perl/Critic/Policy/Subroutines/RequireFinalReturn.pm
+${P5SITE}/Perl/Critic/Policy/TestingAndDebugging/
+${P5SITE}/Perl/Critic/Policy/TestingAndDebugging/ProhibitNoStrict.pm
+${P5SITE}/Perl/Critic/Policy/TestingAndDebugging/ProhibitNoWarnings.pm
+${P5SITE}/Perl/Critic/Policy/TestingAndDebugging/RequireTestLabels.pm
+${P5SITE}/Perl/Critic/Policy/TestingAndDebugging/RequireUseStrict.pm
+${P5SITE}/Perl/Critic/Policy/TestingAndDebugging/RequireUseWarnings.pm
+${P5SITE}/Perl/Critic/Policy/ValuesAndExpressions/
+${P5SITE}/Perl/Critic/Policy/ValuesAndExpressions/ProhibitConstantPragma.pm
+${P5SITE}/Perl/Critic/Policy/ValuesAndExpressions/ProhibitEmptyQuotes.pm
+${P5SITE}/Perl/Critic/Policy/ValuesAndExpressions/ProhibitEscapedCharacters.pm
+${P5SITE}/Perl/Critic/Policy/ValuesAndExpressions/ProhibitInterpolationOfLiterals.pm
+${P5SITE}/Perl/Critic/Policy/ValuesAndExpressions/ProhibitLeadingZeros.pm
+${P5SITE}/Perl/Critic/Policy/ValuesAndExpressions/ProhibitMismatchedOperators.pm
+${P5SITE}/Perl/Critic/Policy/ValuesAndExpressions/ProhibitMixedBooleanOperators.pm
+${P5SITE}/Perl/Critic/Policy/ValuesAndExpressions/ProhibitNoisyQuotes.pm
+${P5SITE}/Perl/Critic/Policy/ValuesAndExpressions/ProhibitVersionStrings.pm
+${P5SITE}/Perl/Critic/Policy/ValuesAndExpressions/RequireInterpolationOfMetachars.pm
+${P5SITE}/Perl/Critic/Policy/ValuesAndExpressions/RequireNumberSeparators.pm
+${P5SITE}/Perl/Critic/Policy/ValuesAndExpressions/RequireQuotedHeredocTerminator.pm
+${P5SITE}/Perl/Critic/Policy/ValuesAndExpressions/RequireUpperCaseHeredocTerminator.pm
+${P5SITE}/Perl/Critic/Policy/Variables/
+${P5SITE}/Perl/Critic/Policy/Variables/ProhibitConditionalDeclarations.pm
+${P5SITE}/Perl/Critic/Policy/Variables/ProhibitLocalVars.pm
+${P5SITE}/Perl/Critic/Policy/Variables/ProhibitMatchVars.pm
+${P5SITE}/Perl/Critic/Policy/Variables/ProhibitPackageVars.pm
+${P5SITE}/Perl/Critic/Policy/Variables/ProhibitPunctuationVars.pm
+${P5SITE}/Perl/Critic/Policy/Variables/ProtectPrivateVars.pm
+${P5SITE}/Perl/Critic/Policy/Variables/RequireInitializationForLocalVars.pm
+${P5SITE}/Perl/Critic/Policy/Variables/RequireLexicalLoopIterators.pm
+${P5SITE}/Perl/Critic/Policy/Variables/RequireNegativeIndices.pm
+${P5SITE}/Perl/Critic/PolicyFactory.pm
+${P5SITE}/Perl/Critic/PolicySummary.pod
+${P5SITE}/Perl/Critic/TestUtils.pm
+${P5SITE}/Perl/Critic/Theme.pm
+${P5SITE}/Perl/Critic/UserProfile.pm
+${P5SITE}/Perl/Critic/Utils.pm
+${P5SITE}/Perl/Critic/Violation.pm
+@man man/man1/perlcritic.1
+@man man/man3p/Perl::Critic.3p
+@man man/man3p/Perl::Critic::Config.3p
+@man man/man3p/Perl::Critic::DEVELOPER.3p
+@man man/man3p/Perl::Critic::Defaults.3p
+@man man/man3p/Perl::Critic::Document.3p
+@man man/man3p/Perl::Critic::Policy.3p
+@man man/man3p/Perl::Critic::Policy::BuiltinFunctions::ProhibitLvalueSubstr.3p
+@man man/man3p/Perl::Critic::Policy::BuiltinFunctions::ProhibitReverseSortBlock.3p
+@man man/man3p/Perl::Critic::Policy::BuiltinFunctions::ProhibitSleepViaSelect.3p
+@man man/man3p/Perl::Critic::Policy::BuiltinFunctions::ProhibitStringyEval.3p
+@man man/man3p/Perl::Critic::Policy::BuiltinFunctions::ProhibitStringySplit.3p
+@man man/man3p/Perl::Critic::Policy::BuiltinFunctions::ProhibitUniversalCan.3p
+@man man/man3p/Perl::Critic::Policy::BuiltinFunctions::ProhibitUniversalIsa.3p
+@man man/man3p/Perl::Critic::Policy::BuiltinFunctions::ProhibitVoidGrep.3p
+@man man/man3p/Perl::Critic::Policy::BuiltinFunctions::ProhibitVoidMap.3p
+@man man/man3p/Perl::Critic::Policy::BuiltinFunctions::RequireBlockGrep.3p
+@man man/man3p/Perl::Critic::Policy::BuiltinFunctions::RequireBlockMap.3p
+@man man/man3p/Perl::Critic::Policy::BuiltinFunctions::RequireGlobFunction.3p
+@man man/man3p/Perl::Critic::Policy::BuiltinFunctions::RequireSimpleSortBlock.3p
+@man man/man3p/Perl::Critic::Policy::ClassHierarchies::ProhibitAutoloading.3p
+@man man/man3p/Perl::Critic::Policy::ClassHierarchies::ProhibitExplicitISA.3p
+@man man/man3p/Perl::Critic::Policy::ClassHierarchies::ProhibitOneArgBless.3p
+@man man/man3p/Perl::Critic::Policy::CodeLayout::ProhibitHardTabs.3p
+@man man/man3p/Perl::Critic::Policy::CodeLayout::ProhibitParensWithBuiltins.3p
+@man man/man3p/Perl::Critic::Policy::CodeLayout::ProhibitQuotedWordLists.3p
+@man man/man3p/Perl::Critic::Policy::CodeLayout::RequireConsistentNewlines.3p
+@man man/man3p/Perl::Critic::Policy::CodeLayout::RequireTidyCode.3p
+@man man/man3p/Perl::Critic::Policy::CodeLayout::RequireTrailingCommas.3p
+@man man/man3p/Perl::Critic::Policy::ControlStructures::ProhibitCStyleForLoops.3p
+@man man/man3p/Perl::Critic::Policy::ControlStructures::ProhibitCascadingIfElse.3p
+@man man/man3p/Perl::Critic::Policy::ControlStructures::ProhibitDeepNests.3p
+@man man/man3p/Perl::Critic::Policy::ControlStructures::ProhibitPostfixControls.3p
+@man man/man3p/Perl::Critic::Policy::ControlStructures::ProhibitUnlessBlocks.3p
+@man man/man3p/Perl::Critic::Policy::ControlStructures::ProhibitUnreachableCode.3p
+@man man/man3p/Perl::Critic::Policy::ControlStructures::ProhibitUntilBlocks.3p
+@man man/man3p/Perl::Critic::Policy::Documentation::RequirePodAtEnd.3p
+@man man/man3p/Perl::Critic::Policy::Documentation::RequirePodSections.3p
+@man man/man3p/Perl::Critic::Policy::ErrorHandling::RequireCarping.3p
+@man man/man3p/Perl::Critic::Policy::InputOutput::ProhibitBacktickOperators.3p
+@man man/man3p/Perl::Critic::Policy::InputOutput::ProhibitBarewordFileHandles.3p
+@man man/man3p/Perl::Critic::Policy::InputOutput::ProhibitInteractiveTest.3p
+@man man/man3p/Perl::Critic::Policy::InputOutput::ProhibitOneArgSelect.3p
+@man man/man3p/Perl::Critic::Policy::InputOutput::ProhibitReadlineInForLoop.3p
+@man man/man3p/Perl::Critic::Policy::InputOutput::ProhibitTwoArgOpen.3p
+@man man/man3p/Perl::Critic::Policy::InputOutput::RequireBracedFileHandleWithPrint.3p
+@man man/man3p/Perl::Critic::Policy::Miscellanea::ProhibitFormats.3p
+@man man/man3p/Perl::Critic::Policy::Miscellanea::ProhibitTies.3p
+@man man/man3p/Perl::Critic::Policy::Miscellanea::RequireRcsKeywords.3p
+@man man/man3p/Perl::Critic::Policy::Modules::ProhibitAutomaticExportation.3p
+@man man/man3p/Perl::Critic::Policy::Modules::ProhibitEvilModules.3p
+@man man/man3p/Perl::Critic::Policy::Modules::ProhibitMultiplePackages.3p
+@man man/man3p/Perl::Critic::Policy::Modules::RequireBarewordIncludes.3p
+@man man/man3p/Perl::Critic::Policy::Modules::RequireEndWithOne.3p
+@man man/man3p/Perl::Critic::Policy::Modules::RequireExplicitPackage.3p
+@man man/man3p/Perl::Critic::Policy::Modules::RequireFilenameMatchesPackage.3p
+@man man/man3p/Perl::Critic::Policy::Modules::RequireVersionVar.3p
+@man man/man3p/Perl::Critic::Policy::NamingConventions::ProhibitAmbiguousNames.3p
+@man man/man3p/Perl::Critic::Policy::NamingConventions::ProhibitMixedCaseSubs.3p
+@man man/man3p/Perl::Critic::Policy::NamingConventions::ProhibitMixedCaseVars.3p
+@man man/man3p/Perl::Critic::Policy::References::ProhibitDoubleSigils.3p
+@man man/man3p/Perl::Critic::Policy::RegularExpressions::ProhibitCaptureWithoutTest.3p
+@man man/man3p/Perl::Critic::Policy::RegularExpressions::RequireExtendedFormatting.3p
+@man man/man3p/Perl::Critic::Policy::RegularExpressions::RequireLineBoundaryMatching.3p
+@man man/man3p/Perl::Critic::Policy::Subroutines::ProhibitAmpersandSigils.3p
+@man man/man3p/Perl::Critic::Policy::Subroutines::ProhibitBuiltinHomonyms.3p
+@man man/man3p/Perl::Critic::Policy::Subroutines::ProhibitExcessComplexity.3p
+@man man/man3p/Perl::Critic::Policy::Subroutines::ProhibitExplicitReturnUndef.3p
+@man man/man3p/Perl::Critic::Policy::Subroutines::ProhibitSubroutinePrototypes.3p
+@man man/man3p/Perl::Critic::Policy::Subroutines::ProtectPrivateSubs.3p
+@man man/man3p/Perl::Critic::Policy::Subroutines::RequireFinalReturn.3p
+@man man/man3p/Perl::Critic::Policy::TestingAndDebugging::ProhibitNoStrict.3p
+@man man/man3p/Perl::Critic::Policy::TestingAndDebugging::ProhibitNoWarnings.3p
+@man man/man3p/Perl::Critic::Policy::TestingAndDebugging::RequireTestLabels.3p
+@man man/man3p/Perl::Critic::Policy::TestingAndDebugging::RequireUseStrict.3p
+@man man/man3p/Perl::Critic::Policy::TestingAndDebugging::RequireUseWarnings.3p
+@man man/man3p/Perl::Critic::Policy::ValuesAndExpressions::ProhibitConstantPragma.3p
+@man man/man3p/Perl::Critic::Policy::ValuesAndExpressions::ProhibitEmptyQuotes.3p
+@man man/man3p/Perl::Critic::Policy::ValuesAndExpressions::ProhibitEscapedCharacters.3p
+@man man/man3p/Perl::Critic::Policy::ValuesAndExpressions::ProhibitInterpolationOfLiterals.3p
+@man man/man3p/Perl::Critic::Policy::ValuesAndExpressions::ProhibitLeadingZeros.3p
+@man man/man3p/Perl::Critic::Policy::ValuesAndExpressions::ProhibitMismatchedOperators.3p
+@man man/man3p/Perl::Critic::Policy::ValuesAndExpressions::ProhibitMixedBooleanOperators.3p
+@man man/man3p/Perl::Critic::Policy::ValuesAndExpressions::ProhibitNoisyQuotes.3p
+@man man/man3p/Perl::Critic::Policy::ValuesAndExpressions::ProhibitVersionStrings.3p
+@man man/man3p/Perl::Critic::Policy::ValuesAndExpressions::RequireInterpolationOfMetachars.3p
+@man man/man3p/Perl::Critic::Policy::ValuesAndExpressions::RequireNumberSeparators.3p
+@man man/man3p/Perl::Critic::Policy::ValuesAndExpressions::RequireQuotedHeredocTerminator.3p
+@man man/man3p/Perl::Critic::Policy::ValuesAndExpressions::RequireUpperCaseHeredocTerminator.3p
+@man man/man3p/Perl::Critic::Policy::Variables::ProhibitConditionalDeclarations.3p
+@man man/man3p/Perl::Critic::Policy::Variables::ProhibitLocalVars.3p
+@man man/man3p/Perl::Critic::Policy::Variables::ProhibitMatchVars.3p
+@man man/man3p/Perl::Critic::Policy::Variables::ProhibitPackageVars.3p
+@man man/man3p/Perl::Critic::Policy::Variables::ProhibitPunctuationVars.3p
+@man man/man3p/Perl::Critic::Policy::Variables::ProtectPrivateVars.3p
+@man man/man3p/Perl::Critic::Policy::Variables::RequireInitializationForLocalVars.3p
+@man man/man3p/Perl::Critic::Policy::Variables::RequireLexicalLoopIterators.3p
+@man man/man3p/Perl::Critic::Policy::Variables::RequireNegativeIndices.3p
+@man man/man3p/Perl::Critic::PolicyFactory.3p
+@man man/man3p/Perl::Critic::PolicySummary.3p
+@man man/man3p/Perl::Critic::TestUtils.3p
+@man man/man3p/Perl::Critic::Theme.3p
+@man man/man3p/Perl::Critic::UserProfile.3p
+@man man/man3p/Perl::Critic::Utils.3p
+@man man/man3p/Perl::Critic::Violation.3p
