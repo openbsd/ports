@@ -1,0 +1,100 @@
+$OpenBSD: patch-j2se_src_share_transport_socket_socketTransport_c,v 1.1 2006/11/17 20:19:33 kurt Exp $
+--- j2se/src/share/transport/socket/socketTransport.c.orig	Mon Mar 13 09:11:51 2006
++++ j2se/src/share/transport/socket/socketTransport.c	Mon Mar 13 09:09:25 2006
+@@ -122,7 +122,7 @@ handshake(int fd, jlong timeout) {
+ 	}
+ 	buf = b;
+ 	buf += received;
+-	n = dbgsysRecv(fd, buf, strlen(hello)-received, 0);
++	n = recv_fully(fd, buf, strlen(hello)-received, 0);
+ 	if (n == 0) {
+ 	    setLastError(0, "handshake failed - connection prematurally closed");
+ 	    return JDWPTRANSPORT_ERROR_IO_ERROR;
+@@ -148,7 +148,7 @@ handshake(int fd, jlong timeout) {
+ 	}
+     }
+ 
+-    if (dbgsysSend(fd, hello, strlen(hello), 0) != (int)strlen(hello)) {
++    if (send_fully(fd, hello, strlen(hello)) != (int)strlen(hello)) {
+ 	RETURN_IO_ERROR("send failed during handshake");
+     }
+     return JDWPTRANSPORT_ERROR_NONE;
+@@ -463,40 +463,40 @@ socketTransport_writePacket(jdwpTranspor
+ 
+     len = (jint)dbgsysHostToNetworkLong(len);
+ 
+-    if (dbgsysSend(socketFD,(char *)&len,sizeof(jint),0) != sizeof(jint)) {
++    if (send_fully(socketFD,(char *)&len,sizeof(jint)) != sizeof(jint)) {
+ 	RETURN_IO_ERROR("send failed");
+     }
+ 
+     id = (jint)dbgsysHostToNetworkLong(packet->type.cmd.id);
+ 
+-    if (dbgsysSend(socketFD,(char *)&(id),sizeof(jint),0) != sizeof(jint)) {
++    if (send_fully(socketFD,(char *)&(id),sizeof(jint)) != sizeof(jint)) {
+ 	RETURN_IO_ERROR("send failed");
+     }
+ 
+-    if (dbgsysSend(socketFD,(char *)&(packet->type.cmd.flags)
+-	    ,sizeof(jbyte),0) != sizeof(jbyte)) {        
++    if (send_fully(socketFD,(char *)&(packet->type.cmd.flags)
++	    ,sizeof(jbyte)) != sizeof(jbyte)) {        
+ 	RETURN_IO_ERROR("send failed");
+     }
+ 
+     if (packet->type.cmd.flags & JDWPTRANSPORT_FLAGS_REPLY) {
+         jshort errorCode = dbgsysHostToNetworkShort(packet->type.reply.errorCode);
+-        if (dbgsysSend(socketFD,(char *)&(errorCode)
+-		       ,sizeof(jshort),0) != sizeof(jshort)) {
++        if (send_fully(socketFD,(char *)&(errorCode)
++		       ,sizeof(jshort)) != sizeof(jshort)) {
+ 	    RETURN_IO_ERROR("send failed");
+ 	}
+     } else {
+-        if (dbgsysSend(socketFD,(char *)&(packet->type.cmd.cmdSet)
+-			,sizeof(jbyte),0) != sizeof(jbyte)) {
++        if (send_fully(socketFD,(char *)&(packet->type.cmd.cmdSet)
++			,sizeof(jbyte)) != sizeof(jbyte)) {
+ 	    RETURN_IO_ERROR("send failed");
+ 	}
+-        if (dbgsysSend(socketFD,(char *)&(packet->type.cmd.cmd)
+-		,sizeof(jbyte),0) != sizeof(jbyte)) {
++        if (send_fully(socketFD,(char *)&(packet->type.cmd.cmd)
++		,sizeof(jbyte)) != sizeof(jbyte)) {
+ 	    RETURN_IO_ERROR("send failed");
+ 	}
+     }
+ 
+     data = packet->type.cmd.data;
+-    if (dbgsysSend(socketFD,(char *)data,data_len,0) != data_len) {
++    if (send_fully(socketFD,(char *)data,data_len) != data_len) {
+ 	RETURN_IO_ERROR("send failed");
+     }
+ 
+@@ -510,6 +510,26 @@ recv_fully(int f, char *buf, int len)
+     while (nbytes < len) {
+         int res = dbgsysRecv(f, buf + nbytes, len - nbytes, 0);
+         if (res < 0) {
++	    if (errno == EINTR)
++		continue;
++            return res;
++        } else if (res == 0) {
++            break; /* eof, return nbytes which is less than len */
++        }
++        nbytes += res;
++    }
++    return nbytes;
++}
++
++static jint
++send_fully(int f, char *buf, int len)
++{
++    int nbytes = 0;
++    while (nbytes < len) {
++        int res = dbgsysSend(f, buf + nbytes, len - nbytes, 0);
++        if (res < 0) {
++	    if (errno == EINTR)
++		continue;
+             return res;
+         } else if (res == 0) {
+             break; /* eof, return nbytes which is less than len */
