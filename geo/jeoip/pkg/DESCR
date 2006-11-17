@@ -1,0 +1,13 @@
+JeoIP is a Java implementation of net/GeoIP, which looks up an IPV4
+address in a local file and returns the country that it is in.
+The database is maintained, and the GeoIP code provided, by MaxMind,
+who sells on subscription more detailed datatabases that identify the
+sender down to particular regions within a country. 
+See http://www.maxmind.com/
+
+JeoIP does not use any code from GeoIP but does use its data file.
+JeoIP was written to make the database accessible from within
+Java Servlet/JSP web sites without having either to run an
+external program or to link with "native code".
+There are functions that return the country name as well as
+its two- and three-letter ISO-3166 country code.

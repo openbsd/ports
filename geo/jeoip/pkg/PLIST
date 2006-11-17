@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/17 19:20:34 ian Exp $
+bin/jeoip
+share/java/
+share/java/jeoip/
+share/java/jeoip/jeoip.jar
