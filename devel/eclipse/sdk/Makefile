@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2006/11/02 10:59:17 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2006/11/17 19:44:11 kurt Exp $
 
 ONLY_FOR_ARCHS=		amd64 i386
 
@@ -8,9 +8,9 @@ COMMENT-mozilla=	"mozilla integration library for eclipse HTML Browser Widget"
 
 ECLIPSE_VER=		3.2
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
-PKGNAME=		eclipse-sdk-${ECLIPSE_VER}p2
-PKGNAME-gnome=		eclipse-sdk-gnome-${ECLIPSE_VER}p2
-PKGNAME-mozilla=	eclipse-sdk-mozilla-${ECLIPSE_VER}p2
+PKGNAME=		eclipse-sdk-${ECLIPSE_VER}p3
+PKGNAME-gnome=		eclipse-sdk-gnome-${ECLIPSE_VER}p3
+PKGNAME-mozilla=	eclipse-sdk-mozilla-${ECLIPSE_VER}p3
 SHARED_LIBS=		swt-atk-gtk-3232	3.0 \
 			swt-cde-gtk-3232	3.0 \
 			swt-awt-gtk-3232	3.0 \
@@ -68,7 +68,12 @@ SUBPACKAGE?=
 
 GNOME_LIB_DEPENDS=	gnomeui-2::x11/gnome/libgnomeui
 
-MOZILLA_LIB_DEPENDS=	mozilla/xpcom,mozilla/gtkembedmoz,mozilla/nspr4,mozilla/plc4,mozilla/plds4:mozilla->=1.7.11:www/mozilla
+MOZILLA_LIB_DEPENDS=	mozilla/gtkembedmoz,mozilla/xpcom:mozilla->=1.7.13p2:www/mozilla
+
+WANTLIB=		GL GLU X11 Xtst c m fontconfig \
+			freetype atk-1.0 glib-2.0 gmodule-2.0 \
+			gobject-2.0 gthread-2.0 \
+			pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo
 
 .if defined(PACKAGING)
 . if ${SUBPACKAGE} == "-gnome"
@@ -78,22 +83,14 @@ WANTLIB=		gnome-2 gnomevfs-2
 . elif ${SUBPACKAGE} == "-mozilla"
 RUN_DEPENDS=		:${PKGNAME}:devel/eclipse/sdk
 LIB_DEPENDS=		${MOZILLA_LIB_DEPENDS}
+WANTLIB=		c nspr4 plc4 plds4
 . else
 RUN_DEPENDS=		::java/javaPathHelper
 MODULES+=		devel/gettext
-WANTLIB=		GL GLU X11 Xtst c m fontconfig \
-			freetype atk-1.0 glib-2.0 gmodule-2.0 \
-			gobject-2.0 gthread-2.0 pango-1.0 \
-			pangoft2-1.0 pangocairo-1.0 cairo
 . endif
 .else
 MODULES+=		devel/gettext
-. if ${MULTI_PACKAGES:M-gnome}
-LIB_DEPENDS+=		${GNOME_LIB_DEPENDS}
-. endif
-. if ${MULTI_PACKAGES:M-mozilla}
-LIB_DEPENDS+=		${MOZILLA_LIB_DEPENDS}
-. endif
+LIB_DEPENDS+=		${GNOME_LIB_DEPENDS} ${MOZILLA_LIB_DEPENDS}
 .endif
 
 MOZILLA_HOME=		${LOCALBASE}/mozilla

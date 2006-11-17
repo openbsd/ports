@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2006/10/01 22:23:47 brad Exp $
+# $OpenBSD: Makefile,v 1.31 2006/11/17 19:41:58 kurt Exp $
 
 COMMENT=	"GNOME web browser based on gecko"
 
 V=		1.3.21
 DISTNAME=	galeon-${V}
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 CATEGORIES=	www
 
 HOMEPAGE=	http://galeon.sourceforge.net/
@@ -21,20 +21,21 @@ WANTLIB= ORBit-2 ORBitCosNaming-2 art_lgpl_2 atk-1.0 audiofile \
 	 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg \
 	 pango-1.0 pangoft2-1.0 pangocairo-1.0 popt cairo glitz \
 	 startup-notification-1 xml2 ICE SM X11 Xext Xrender png \
-	 c crypto fontconfig freetype m pthread ssl stdc++ z
+	 c crypto fontconfig freetype m pthread ssl stdc++ z \
+	 nspr4 plc4 plds4
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=galeon/}
 
 MODULES=	devel/gettext
 
-BUILD_DEPENDS=	:mozilla->=1.7.11:www/mozilla \
-		:mozilla-devel->=1.7.11:www/mozilla,-devel \
+BUILD_DEPENDS=	:mozilla->=1.7.13p2:www/mozilla \
+		:mozilla-devel->=1.7.13p2:www/mozilla,-devel \
  		:pkgconfig-*:devel/pkgconfig \
 		:p5-XML-Parser-*:textproc/p5-XML-Parser \
 		:scrollkeeper->=0.3.12:textproc/scrollkeeper
 LIB_DEPENDS= 	gnome-desktop-2::x11/gnome/desktop \
 		gnomeui-2::x11/gnome/libgnomeui \
-		mozilla/gtkembedmoz,mozilla/xpcom,mozilla/plds4,mozilla/plc4,mozilla/nspr4:mozilla->=1.7.11:www/mozilla
+		mozilla/gtkembedmoz,mozilla/xpcom:mozilla->=1.7.13p2:www/mozilla
 
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/mozilla -L${LOCALBASE}/lib" \
