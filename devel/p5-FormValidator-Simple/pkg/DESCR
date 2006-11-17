@@ -1,0 +1,7 @@
+This module provides you with form data validation through simple
+constraints chains. You can write constraints on a single line for each
+input data.
+
+The idea is based on Sledge::Plugin::Validator, and most of the validation
+code is borrowed from this plugin (Sledge is a MVC web application framework: 
+http://sl.edge.jp [Japanese])
