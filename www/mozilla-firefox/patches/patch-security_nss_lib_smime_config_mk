@@ -1,0 +1,14 @@
+$OpenBSD: patch-security_nss_lib_smime_config_mk,v 1.1 2006/11/17 19:14:51 kurt Exp $
+--- security/nss/lib/smime/config.mk.orig	Mon Nov  6 15:45:25 2006
++++ security/nss/lib/smime/config.mk	Mon Nov  6 15:45:49 2006
+@@ -68,9 +68,7 @@ else
+ EXTRA_SHARED_LIBS += \
+ 	-L$(DIST)/lib/ \
+ 	-lnss3 \
+-	-lplc4 \
+-	-lplds4 \
+-	-lnspr4 \
++	$(NSPR_LIBS) \
+ 	$(NULL)
+ 
+ ifeq ($(OS_ARCH), Darwin)

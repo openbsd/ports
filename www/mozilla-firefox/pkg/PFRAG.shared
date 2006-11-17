@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2005/12/31 18:35:56 sturm Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.10 2006/11/17 19:14:51 kurt Exp $
 @lib mozilla-firefox/components/libaccessibility.so.${LIBaccessibility_VERSION}
 @lib mozilla-firefox/components/libappcomps.so.${LIBappcomps_VERSION}
 @lib mozilla-firefox/components/libauth.so.${LIBauth_VERSION}
@@ -58,11 +58,8 @@
 @lib mozilla-firefox/libgtkxtbin.so.${LIBgtkxtbin_VERSION}
 @lib mozilla-firefox/libjsj.so.${LIBjsj_VERSION}
 @lib mozilla-firefox/libmozjs.so.${LIBmozjs_VERSION}
-@lib mozilla-firefox/libnspr4.so.${LIBnspr4_VERSION}
 @lib mozilla-firefox/libnss3.so.${LIBnss3_VERSION}
 @lib mozilla-firefox/libnssckbi.so.${LIBnssckbi_VERSION}
-@lib mozilla-firefox/libplc4.so.${LIBplc4_VERSION}
-@lib mozilla-firefox/libplds4.so.${LIBplds4_VERSION}
 @lib mozilla-firefox/libsmime3.so.${LIBsmime3_VERSION}
 @lib mozilla-firefox/libsoftokn3.so.${LIBsoftokn3_VERSION}
 @lib mozilla-firefox/libssl3.so.${LIBssl3_VERSION}

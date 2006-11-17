@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2006/11/10 14:15:49 wilfried Exp $
+# $OpenBSD: Makefile,v 1.59 2006/11/17 19:14:51 kurt Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -6,7 +6,7 @@ COMMENT=	"redesign of Mozilla's browser component"
 
 VER=		1.5.0.8
 DISTNAME=	mozilla
-PKGNAME=	mozilla-firefox-${VER}
+PKGNAME=	mozilla-firefox-${VER}p0
 SO_VERSION=	16.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -14,8 +14,8 @@ SO_VERSION=	16.0
 	browserdirprovider caps chrome commandlines composer cookie docshell \
 	editor embedcomponents fileview gfx_gtk gfxps gfxpsshar gkgfx \
 	gklayout gkplugin gtkembedmoz gtkxtbin htmlpars i18n imglib2 inspector \
-	jar50 jsd jsj mork mozfind mozjs necko necko2 nsappshell nspr4 nss3 \
-	nssckbi oji permissions pipboot pipnss pippki plc4 plds4 pref rdf \
+	jar50 jsd jsj mork mozfind mozjs necko necko2 nsappshell nss3 \
+	nssckbi oji permissions pipboot pipnss pippki pref rdf \
 	remoteservice searchservice smime3 softokn3 ssl3 system-pref \
 	toolkitcomps transformiix txmgr uconv ucvmath universalchardet \
 	webbrwsr websrvcs widget_gtk2 xmlextras xpcom xpcom_compat \
@@ -36,8 +36,7 @@ WANTLIB=	X11 Xext Xft Xrender Xinerama Xt c fontconfig freetype m \
 		pthread z \
 		atk-1.0 cairo glib-2.0 gmodule-2.0 gobject-2.0 \
 		jpeg pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 png
-WANTLIB+=	stdc++
+		pangoft2-1.0 png stdc++
 
 MASTER_SITES=	http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/${VER}/source/ \
 		http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${VER}/source/
@@ -48,7 +47,8 @@ RUN_DEPENDS=	:esound-*:audio/esound
 BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
 		:zip->=2.3:archivers/zip \
 		:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
+LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
+		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.3p2:devel/nspr
 
 VMEM_WARNING=	Yes
 
@@ -58,16 +58,15 @@ USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 SUBST_VARS=	LOCALBASE SO_VERSION
 
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build/autoconf \
-				${WRKSRC}/nsprpub/build/autoconf
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build/autoconf
 
 AUTOCONF_VERSION= 2.13
 CONFIGURE_STYLE= autoconf no-autoheader
 CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 		--with-system-png=${LOCALBASE}	\
 		--with-system-zlib=/usr/lib	\
+		--with-system-nspr		\
 		--with-pthreads			\
-		--without-system-nspr		\
 		--enable-xft			\
 		--enable-optimize=-Os		\
 		--enable-default-toolkit=gtk2	\
@@ -103,11 +102,9 @@ post-extract:
 
 pre-configure:
 	@cd ${WRKSRC}/browser/base/branding/ && cp aboutCredits.png about.png
-	@cd ${WRKSRC}/nsprpub && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	@perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g; s|_X11BASE_|${X11BASE}|g' \
 		${WRKSRC}/browser/app/mozilla.in
 	@perl -pi -e 's|_SO_VERSION_|${SO_VERSION}|g' \
-		${WRKSRC}/nsprpub/pr/include/md/_openbsd.h \
 		${WRKSRC}/xpcom/components/nsNativeComponentLoader.cpp
 
 do-install:
