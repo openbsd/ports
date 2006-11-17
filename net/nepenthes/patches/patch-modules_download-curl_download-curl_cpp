@@ -1,0 +1,11 @@
+$OpenBSD: patch-modules_download-curl_download-curl_cpp,v 1.1 2006/11/17 18:16:03 naddy Exp $
+--- modules/download-curl/download-curl.cpp.orig	Fri Nov 17 18:18:57 2006
++++ modules/download-curl/download-curl.cpp	Fri Nov 17 18:19:19 2006
+@@ -230,7 +230,6 @@ bool CurlDownloadHandler::download(Downl
+ 				 down->getDownloadUrl()->getPort(),
+ 				 down->getDownloadUrl()->getPath().c_str());
+ //        string auth = down->getDownloadUrl()->getUser() + ":" + down->getDownloadUrl()->getPass();
+-		curl_easy_setopt(pCurlHandle, CURLOPT_SOURCE_USERPWD,(char *)down->getDownloadUrl()->getAuth().c_str());
+ 		curl_easy_setopt(pCurlHandle, CURLOPT_USERPWD,(char *)down->getDownloadUrl()->getAuth().c_str());
+ 		curl_easy_setopt(pCurlHandle, CURLOPT_URL			, url);
+ 		curl_easy_setopt(pCurlHandle, CURLOPT_FTP_RESPONSE_TIMEOUT, 120);	// 2 min ftp timeout
