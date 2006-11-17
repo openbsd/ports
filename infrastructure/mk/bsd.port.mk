@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.802 2006/11/13 14:14:57 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.803 2006/11/17 17:16:16 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -589,7 +589,7 @@ ${_v}${_s} ?= ${${_v}}
 _PACKAGE_LINKS=
 _PKGFILE=		${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
 NO_ARCH?=		no-arch
-.if ${PKG_ARCH${SUBPACKAGE}} == "*"
+.if ${PKG_ARCH${SUBPACKAGE}} == "*" && ${NO_ARCH} != ${MACHINE_ARCH}/all
 _PACKAGE_COOKIE=	${PACKAGE_REPOSITORY}/${NO_ARCH}/${_PKGFILE}
 _PACKAGE_LINKS+=	${MACHINE_ARCH}/all ${NO_ARCH}
 _PACKAGE_COOKIES+=	${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE}
