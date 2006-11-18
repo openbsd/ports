@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gf_action_c,v 1.1.1.1 2006/11/18 16:38:17 alek Exp $
+--- src/gf_action.c.orig	Fri Nov 17 01:45:45 2006
++++ src/gf_action.c	Fri Nov 17 01:45:47 2006
+@@ -26,7 +26,7 @@
+ #include <gtkdialogs.h>
+ #include <gtklog.h>
+ #include <gtkpounce.h>
+-#include <gtkstock.h>
++#include <gaimstock.h>
+ #include <gtkutils.h>
+ #include <plugin.h>
+ #include <version.h>
