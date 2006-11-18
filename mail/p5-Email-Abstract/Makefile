@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/14 23:00:56 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/18 21:09:46 steven Exp $
 
 COMMENT= 	"unified interface to mail representations"
 
 MODULES=	cpan
 DISTNAME=	Email-Abstract-2.131
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	mail
 
 MAINTAINER=	Simon Dassow <janus@errornet.de>
