@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.73 2006/11/15 21:11:04 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.74 2006/11/18 11:42:26 mbalmer Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 COMMENT-docs=	"documentation and examples for samba"
 
 DISTNAME=		samba-3.0.23d
+PKGNAME=		${DISTNAME}p0
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 SHARED_LIBS=		smbclient	0.3 \
 			msrpc		0.2
@@ -80,6 +81,7 @@ CONFIGURE_ARGS+= --disable-cups
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+= --with-ldap --without-ads
 LIB_DEPENDS+=	ldap,lber::databases/openldap
+BUILD_DEPENDS+=	utf8::misc/libutf8
 .else
 CONFIGURE_ARGS+= --without-ldap --without-ads
 .endif
