@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.445 2006/11/16 22:34:23 espie Exp $
+# $OpenBSD: Makefile,v 1.446 2006/11/18 00:08:10 steven Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -265,6 +265,7 @@
      SUBDIR += p5-Devel-ptkdb
      SUBDIR += p5-Error
      SUBDIR += p5-Event
+     SUBDIR += p5-Event-Lib
      SUBDIR += p5-Exception-Class
      SUBDIR += p5-Expect
      SUBDIR += p5-Exporter-Lite
