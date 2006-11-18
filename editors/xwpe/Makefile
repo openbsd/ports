@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2006/11/15 02:27:48 todd Exp $
+# $OpenBSD: Makefile,v 1.24 2006/11/18 08:24:30 steven Exp $
 
 COMMENT=	"powerful programming editor"
 
 DISTNAME=	xwpe-1.5.22a
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	editors
 
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/editors/X/} \
