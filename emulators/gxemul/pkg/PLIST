@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2006/09/24 17:50:30 grange Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/11/18 05:23:39 brad Exp $
 bin/gxemul
 @man man/man1/gxemul.1
 share/doc/gxemul/
@@ -58,6 +58,8 @@ share/doc/gxemul/20060812-netbsd-malta-3.0.1.png
 share/doc/gxemul/20060812-netbsd-malta-3.0.1_small.png
 share/doc/gxemul/20060814-netbsd-algor-3.0.1.png
 share/doc/gxemul/20060814-netbsd-algor-3.0.1_small.png
+share/doc/gxemul/20061029-netbsd-dreamcast.png
+share/doc/gxemul/20061029-netbsd-dreamcast_small.png
 share/doc/gxemul/configfiles.html
 share/doc/gxemul/debian-1-small.png
 share/doc/gxemul/debian-1.png
@@ -98,6 +100,7 @@ share/doc/gxemul/maddr.gif
 share/doc/gxemul/make_doc_footer.html
 share/doc/gxemul/make_doc_header.html
 share/doc/gxemul/misc.html
+share/doc/gxemul/networking.html
 share/doc/gxemul/openbsd-pmax-20040710.png
 share/doc/gxemul/openbsd-pmax-20040710_small.png
 share/doc/gxemul/simplified_dyntrans.png
