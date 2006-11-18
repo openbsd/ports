@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/18 00:04:26 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/11/18 00:07:13 steven Exp $
 %%SHARED%%
 ${P5ARCH}/
 ${P5ARCH}/Event/
@@ -7,4 +7,5 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/Event/
 ${P5ARCH}/auto/Event/Lib/
 ${P5ARCH}/auto/Event/Lib/Lib.bs
+${P5ARCH}/auto/Event/Lib/Lib.so
 @man man/man3p/Event::Lib.3p
