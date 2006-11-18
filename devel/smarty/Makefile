@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/11/06 20:02:30 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/18 17:49:40 alek Exp $
 
 COMMENT=	"template engine for PHP"
 COMMENT-docs=	"documentation for Smarty"
 
-VERSION=	2.6.5
+VERSION=	2.6.14
 DISTNAME=	Smarty-${VERSION}
 PKGNAME=	${DISTNAME:L}
 PKGNAME-docs=	smarty-docs-${VERSION}
@@ -33,12 +33,10 @@ RUN_DEPENDS=    ::www/php${PHP_VERSION}/core
 
 CHROOT_DIR=	/var/www
 
-.if defined(PACKAGING)
-.  if empty(SUBPACKAGE)
+.if empty(SUBPACKAGE)
 PREFIX=		${CHROOT_DIR}
-.  else
+.else
 RUN_DEPENDS=
-.  endif
 .endif
 
 NO_BUILD=	Yes

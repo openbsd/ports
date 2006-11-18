@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.1.1.1 2004/11/06 20:02:30 alek Exp $
+@comment $OpenBSD: PLIST-docs,v 1.2 2006/11/18 17:49:40 alek Exp $
 share/doc/smarty/
 share/doc/smarty/advanced.features.html
 share/doc/smarty/advanced.features.outputfilters.html
@@ -117,6 +117,7 @@ share/doc/smarty/language.modifiers.html
 share/doc/smarty/language.syntax.attributes.html
 share/doc/smarty/language.syntax.functions.html
 share/doc/smarty/language.syntax.quotes.html
+share/doc/smarty/language.syntax.variables.html
 share/doc/smarty/language.variables.html
 share/doc/smarty/language.variables.smarty.html
 share/doc/smarty/plugins.block.functions.html
