@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.252 2006/11/17 00:12:38 alek Exp $
+# $OpenBSD: Makefile,v 1.253 2006/11/18 16:51:27 alek Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -51,6 +51,7 @@
      SUBDIR += fvwm2
      SUBDIR += fvwm2,i18n
      SUBDIR += fvwm95
+     SUBDIR += gaim-guifications
      SUBDIR += gatos-bin
      SUBDIR += gentoo
      SUBDIR += gnome
