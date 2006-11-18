@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2006/11/18 03:54:54 kurt Exp $
+# $OpenBSD: Makefile,v 1.28 2006/11/18 16:11:33 kurt Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -49,6 +49,7 @@ BUILD_DEPENDS=	:zip-*:archivers/zip \
 		:unzip-*:archivers/unzip \
 		:bison-*:devel/bison \
 		:pkgconfig-*:devel/pkgconfig \
+		:tcsh-*:shells/tcsh \
 		:p5-Archive-Zip-*:archivers/p5-Archive-Zip \
 		::textproc/libxslt \
 		::print/cups \
@@ -152,6 +153,7 @@ MAKE_ENV+=	envcflags="${CFLAGS}"
 
 # kludge
 OOARCH=		OPENBSDGCCI
+TCSH=		${LOCALBASE}/bin/tcsh
 
 pre-patch:
 .for arch in intel x86-64
@@ -163,7 +165,7 @@ pre-patch:
 do-build:
 	@cd ${WRKBUILD} && \
 		./bootstrap && \
-		${SETENV} ${MAKE_ENV} ${SH} -c '. ./OpenBSDEnv.Set.sh; dmake'
+		${SETENV} ${MAKE_ENV} ${TCSH} -c 'source OpenBSDEnv.Set && dmake'
 
 do-install:
 	cd ${WRKSRC}/instsetoo_native/unxobsd.pro/OpenOffice/portable/install/en-US/openbsd-* && \
