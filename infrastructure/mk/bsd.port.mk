@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.803 2006/11/17 17:16:16 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.804 2006/11/18 00:15:33 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -74,7 +74,6 @@ FAKEOBJDIR?=
 BULK_TARGETS?=
 BULK_DO?=
 FORCE_UPDATE?=No
-PKGNAMES=${FULLPKGNAME}
 # All variables relevant to the port's description
 _ALL_VARIABLES?=HOMEPAGE DISTNAME LIB_DEPENDS \
 BUILD_DEPENDS RUN_DEPENDS REGRESS_DEPENDS USE_GMAKE MODULES FLAVORS \
@@ -320,7 +319,14 @@ FAKE_FLAGS+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
 .endif
 MAKE_FLAGS+=		SHARED_LIBS_LOG=${WRKBUILD}/shared_libs.log
 
+.if !defined(MULTI_PACKAGES) || empty(MULTI_PACKAGES:M-main)
 SUBPACKAGE?=
+PKGNAMES=${FULLPKGNAME}
+_FMN=${PKGPATH}/${FULLPKGNAME}
+.else
+SUBPACKAGE?=-main
+_FMN=
+.endif
 FLAVOR?=
 FLAVORS?=
 PSEUDO_FLAVORS?=
@@ -1151,7 +1157,6 @@ _ALLFILES=${ALLFILES:S/^/${DIST_SUBDIR}\//}
 _ALLFILES=${ALLFILES}
 .endif
 
-_FMN=${PKGPATH}/${FULLPKGNAME}
 .if defined(MULTI_PACKAGES)
 .  for _S in ${MULTI_PACKAGES}
 _FMN+= ${PKGPATH}/${FULLPKGNAME${_S}}
@@ -1737,7 +1742,9 @@ dump-vars subdump-vars _internal-install-all _internal-install \
 print-plist-all print-plist \
 readmes _readme _internal-update _internal-subupdate
 ${_t}:
+.  if !defined(MULTI_PACKAGES) || empty(MULTI_PACKAGES:M-main)
 	@cd ${.CURDIR} && SUBPACKAGE='' PACKAGING='' exec ${MAKE} ${_r}
+.  endif
 .  if defined(MULTI_PACKAGES)
 .    for _s in ${MULTI_PACKAGES}
 	@${ECHO_MSG} "===> ${PKGPATH}${FLAVOR_EXT:S/-/,/g},${_s}"
@@ -1748,7 +1755,9 @@ ${_t}:
 
 
 _internal-package:
+.if !defined(MULTI_PACKAGES) || empty(MULTI_PACKAGES:M-main)
 	@cd ${.CURDIR} && SUBPACKAGE='' PACKAGING='' exec ${MAKE} _internal-subpackage
+.endif
 .if defined(MULTI_PACKAGES)
 .  for _s in ${MULTI_PACKAGES}
 	@cd ${.CURDIR} && SUBPACKAGE='${_s}' PACKAGING='${_s}' exec ${MAKE} _internal-subpackage 
@@ -2195,7 +2204,9 @@ _internal-clean:
 .  endif
 .endif
 .if ${_clean:L:Mpackages} || ${_clean:L:Mpackage} && ${_clean:L:Msub}
+.    if !defined(MULTI_PACKAGES) || empty(MULTI_PACKAGES:M-main)
 	@cd ${.CURDIR} && PACKAGING='' SUBPACKAGE='' exec ${MAKE} clean=package
+.    endif
 .  if defined(MULTI_PACKAGES)
 .    for _s in ${MULTI_PACKAGES}
 	@cd ${.CURDIR} && PACKAGING='${_s}' SUBPACKAGE='${_s}' exec ${MAKE} clean=package
@@ -2205,7 +2216,9 @@ _internal-clean:
 	rm -f ${_PACKAGE_COOKIES}
 .endif
 .if ${_clean:L:Mreadmes}
+.    if !defined(MULTI_PACKAGES) || empty(MULTI_PACKAGES:M-main)
 	rm -f ${.CURDIR}/${FULLPKGNAME}.html
+.    endif
 .    for _s in ${MULTI_PACKAGES}
 	rm -f ${.CURDIR}/${FULLPKGNAME${_s}}.html
 .    endfor
@@ -2238,7 +2251,7 @@ _fetch-makefile:
 .endif
 .if !empty(ALLFILES)
 .  for _F in ${_ALLFILES}
-	@if ! fgrep -q "|${_F}|" $${_DONE_FILES}; then \
+	@: $${_DONE_FILES:=/dev/null}; if ! fgrep -q "|${_F}|" $${_DONE_FILES}; then \
 		echo "|${_F}|" >>$${_DONE_FILES}; \
 		${MAKE} _fetch-onefile _file=${_F}; \
 	fi
