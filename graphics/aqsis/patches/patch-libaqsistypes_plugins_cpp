@@ -1,0 +1,12 @@
+$OpenBSD: patch-libaqsistypes_plugins_cpp,v 1.1.1.1 2006/11/19 14:29:22 ajacoutot Exp $
+--- libaqsistypes/plugins.cpp.orig	Thu Nov 16 10:42:04 2006
++++ libaqsistypes/plugins.cpp	Thu Nov 16 10:42:30 2006
+@@ -153,7 +153,7 @@ CqPluginBase::DLError( void )
+     // Free the buffer.
+     LocalFree( lpMsgBuf );
+ #elif not defined AQSIS_SYSTEM_MACOSX
+-    char* error = dlerror();
++    const char* error = dlerror();
+     if( error )
+ 	    errorlog = error;
+ #endif
