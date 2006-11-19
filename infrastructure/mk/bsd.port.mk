@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.809 2006/11/19 16:39:41 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.810 2006/11/19 17:39:15 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1137,8 +1137,8 @@ _DEP${_DEP}_COOKIES=
 _DEP${_DEP}_COOKIES+=${WRKDIR}/.dep${_i:C,[|:./<=>*],-,g}
 .  endfor
 .endfor
-_DEP_BUILDLIB_COOKIES=${_DEPLIB_COOKIES}
-_DEP_RUNLIB_COOKIES=${_DEPLIB_COOKIES}
+_DEPBUILDLIB_COOKIES=${_DEPLIB_COOKIES}
+_DEPRUNLIB_COOKIES=${_DEPLIB_COOKIES}
 
 # Normal user-mode targets are PHONY targets, e.g., don't create the
 # corresponding file. However, there is nothing phony about the cookie.
