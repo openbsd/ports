@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.806 2006/11/19 12:11:30 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.807 2006/11/19 12:32:53 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -88,8 +88,8 @@ MASTER_SITES5 MASTER_SITES6 MASTER_SITES7 MASTER_SITES8 MASTER_SITES9 \
 MAINTAINER SUBPACKAGE PACKAGING DESCR SUPDISTFILES \
 AUTOCONF_VERSION AUTOMAKE_VERSION CONFIGURE_ARGS
 # and stuff needing to be MULTI_PACKAGE'd
-_ALL_VARIABLES2?=COMMENT FULLPKGNAME PKGNAME PKG_ARCH \
-PERMIT_PACKAGE_FTP PERMIT_PACKAGE_CDROM
+_ALL_VARIABLES_INDEXED?=COMMENT FULLPKGNAME PKGNAME PKG_ARCH \
+PERMIT_PACKAGE_FTP PERMIT_PACKAGE_CDROM RUN_DEPENDS
 
 # special purpose user settings
 PATCH_CHECK_ONLY?=No
@@ -586,7 +586,7 @@ PKGNAMES += ${FULLPKGNAME${_s}}
 
 .if defined(MULTI_PACKAGES)
 .  for _s in ${MULTI_PACKAGES}
-.    for _v in PKG_ARCH PERMIT_PACKAGE_FTP PERMIT_PACKAGE_CDROM
+.    for _v in PKG_ARCH PERMIT_PACKAGE_FTP PERMIT_PACKAGE_CDROM RUN_DEPENDS
 ${_v}${_s} ?= ${${_v}}
 .    endfor
 .  endfor
@@ -1121,13 +1121,18 @@ _PKG_ADD_FORCE=
 
 _FULL_PACKAGE_NAME?=No
 
+.if ${NO_DEPENDS:L} == "no"
+_BUILD_DEPLIST=${BUILD_DEPENDS}
+_RUN_DEPLIST=${RUN_DEPENDS${SUBPACKAGE}}
+_REGRESS_DEPLIST=${REGRESS_DEPENDS}
+_LIB_DEPLIST=${LIB_DEPENDS}
+.endif
+
 .for _DEP in BUILD RUN LIB REGRESS
 _DEP${_DEP}_COOKIES=
-.  if ${NO_DEPENDS:L} == "no"
-.    for _i in ${${_DEP}_DEPENDS}
+.  for _i in ${_${_DEP}_DEPLIST}
 _DEP${_DEP}_COOKIES+=${WRKDIR}/.dep${_i:C,[|:./<=>*],-,g}
-.    endfor
-.  endif
+.  endfor
 .endfor
 
 # Normal user-mode targets are PHONY targets, e.g., don't create the
@@ -1412,8 +1417,7 @@ _print-packagename:
 .endif
 
 .for _DEP in BUILD RUN LIB REGRESS
-.  if ${NO_DEPENDS:L} == "no"
-.    for _i in ${${_DEP}_DEPENDS}
+.  for _i in ${_${_DEP}_DEPLIST}
 ${WRKDIR}/.dep${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 	@unset PACKAGING DEPENDS_TARGET _MASTER WRKDIR|| true; \
 	echo '${_i}'|{ \
@@ -1487,8 +1491,7 @@ ${WRKDIR}/.dep${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 	}
 	@mkdir -p ${WRKDIR} ${WRKDIR}/bin
 	@${_MAKE_COOKIE} $@
-.    endfor
-.  endif
+.  endfor
 _internal-${_DEP:L}-depends: ${_DEP${_DEP}_COOKIES}
 .endfor
 
@@ -2786,7 +2789,7 @@ subdump-vars:
 	@echo ${FULLPKGPATH}.${_s}=${${_s}:Q}
 . endif
 .endfor
-.for _s in ${_ALL_VARIABLES2}
+.for _s in ${_ALL_VARIABLES_INDEXED}
 . if defined(${_s}${SUBPACKAGE})
 	@echo ${FULLPKGPATH}.${_s}=${${_s}${SUBPACKAGE}:Q}
 . endif
