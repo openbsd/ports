@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2006/11/02 12:46:13 bernd Exp $
+# $OpenBSD: Makefile,v 1.48 2006/11/19 11:54:44 msf Exp $
 
 SHARED_ONLY=		Yes
 
@@ -73,11 +73,13 @@ LIB_DEPENDS+=		ruby.>=1::lang/ruby
 .  endif
 .endif
 
-.if !defined(PACKAGING) || ${SUBPACKAGE} == "-tk"
+.if !${FLAVOR:L:Mno_x11}
+.  if !defined(PACKAGING) || ${SUBPACKAGE} == "-tk"
 WANTLIB+=		X11 tcl84
 LIB_DEPENDS+=		tk84:tk-8.4.*:x11/tk/8.4
-.  if defined(PACKAGING)
+.    if defined(PACKAGING)
 LIB_DEPENDS+=		ruby.>=1::lang/ruby
+.    endif
 .  endif
 .endif
 
