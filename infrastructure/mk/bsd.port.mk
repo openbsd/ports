@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.808 2006/11/19 12:37:55 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.809 2006/11/19 16:39:41 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -466,7 +466,10 @@ ${_SYSTRACE_COOKIE} ${_PACKAGE_COOKIES} \
 ${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE} ${_FAKE_COOKIE} \
 ${_WRKDIR_COOKIE} ${_DEPLIB_COOKIES} ${_DEPBUILD_COOKIES} \
 ${_DEPRUN_COOKIES} ${_DEPREGRESS_COOKIES} ${_UPDATE_COOKIE} \
-${_DEPWANTLIB_COOKIE} ${_DEPLIBSPECS_COOKIES}
+${_DEPLIBSPECS_COOKIES} \
+${_DEPBUILDLIB_COOKIES} ${_DEPRUNLIB_COOKIES} \
+${_DEPBUILDWANTLIB_COOKIE} ${_DEPBUILDLIBSPECS_COOKIES} \
+${_DEPRUNWANTLIB_COOKIE} ${_DEPRUNLIBSPECS_COOKIES} \
 
 _MAKE_COOKIE=touch
 
@@ -1134,6 +1137,8 @@ _DEP${_DEP}_COOKIES=
 _DEP${_DEP}_COOKIES+=${WRKDIR}/.dep${_i:C,[|:./<=>*],-,g}
 .  endfor
 .endfor
+_DEP_BUILDLIB_COOKIES=${_DEPLIB_COOKIES}
+_DEP_RUNLIB_COOKIES=${_DEPLIB_COOKIES}
 
 # Normal user-mode targets are PHONY targets, e.g., don't create the
 # corresponding file. However, there is nothing phony about the cookie.
@@ -1205,11 +1210,17 @@ _DEPLIBSPECS_COOKIES=
 .  for i in ${WANTLIB:C,[|:./<=>*],-,g}
 _DEPLIBSPECS_COOKIES+=${WRKDIR}/.spec-$i
 .  endfor
-_DEPWANTLIB_COOKIE=${WRKDIR}/.wantlibs
+_DEPBUILDWANTLIB_COOKIE=${WRKDIR}/.buildwantlibs
+_DEPRUNWANTLIB_COOKIE=${WRKDIR}/.runwantlibs${SUBPACKAGE}
 .else
-_DEPWANTLIB_COOKIE=
+_DEPBUILDWANTLIB_COOKIE=
+_DEPRUNWANTLIB_COOKIE=
 .endif
+_DEPBUILDLIBS=${_DEPLIBS}
+_DEPRUNLIBS=${_DEPLIBS}
 
+_DEPBUILDLIBSPECS_COOKIES=${_DEPLIBSPECS_COOKIES}
+_DEPRUNLIBSPECS_COOKIES=${_DEPLIBSPECS_COOKIES}
 
 .if defined(BUILD_DEPENDS)
 _BUILD_DEP2 = ${BUILD_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
@@ -1405,7 +1416,8 @@ addsum: fetch-all
 
 
 _internal-depends: _internal-lib-depends _internal-build-depends \
-	_internal-run-depends _internal-wantlib-depends _internal-regress-depends
+	_internal-run-depends _internal-buildwantlib-depends \
+	_internal-runwantlib-depends _internal-regress-depends
 
 # and the rules for the actual dependencies
 
@@ -1494,15 +1506,18 @@ ${WRKDIR}/.dep${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 .  endfor
 _internal-${_DEP:L}-depends: ${_DEP${_DEP}_COOKIES}
 .endfor
+_internal-buildlib-depends: ${_DEPBUILDLIB_COOKIES}
+_internal-runlib-depends: ${_DEPRUNLIB_COOKIES}
 
-.if !empty(_DEPWANTLIB_COOKIE)
-${_DEPLIBSPECS_COOKIES}: ${_WRKDIR_COOKIE}
+.for _m in BUILD RUN
+.  if !empty(_DEP${_m}WANTLIB_COOKIE)
+${_DEP${_m}LIBSPECS_COOKIES}: ${_WRKDIR_COOKIE}
 	@${_MAKE_COOKIE} $@
 
-${_DEPWANTLIB_COOKIE}: ${_DEPLIBSPECS_COOKIES} ${_DEPLIB_COOKIES} ${_DEPBUILD_COOKIES} ${_WRKDIR_COOKIE}
-	@${ECHO_MSG} "===>  Verifying specs: ${_DEPLIBS}"
+${_DEP${_m}WANTLIB_COOKIE}: ${_DEP${_m}LIBSPECS_COOKIES} ${_DEP${_m}LIB_COOKIES} ${_DEPBUILD_COOKIES} ${_WRKDIR_COOKIE}
+	@${ECHO_MSG} "===>  Verifying specs: ${_DEP${_m}LIBS}"
 	@listlibs="echo ${LOCALBASE}/lib/lib* /usr/lib/lib* ${X11BASE}/lib/lib*"; \
-	for d in ${_DEPLIBS:S/>/\>/g}; do \
+	for d in ${_DEP${_m}LIBS:S/>/\>/g}; do \
 		case "$$d" in \
 		/*) listlibs="$$listlibs $${d%/*}/lib*";; \
 		*/*) listlibs="$$listlibs ${DEPBASE}/$${d%/*}/lib*";; \
@@ -1510,7 +1525,7 @@ ${_DEPWANTLIB_COOKIE}: ${_DEPLIBSPECS_COOKIES} ${_DEPLIB_COOKIES} ${_DEPBUILD_CO
 	done; \
 	if found=`eval $$listlibs 2>/dev/null| \
 		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} perl \
-		${PORTSDIR}/infrastructure/build/resolve-lib ${_noshared} ${_DEPLIBS:S/>/\>/g}`; then \
+		${PORTSDIR}/infrastructure/build/resolve-lib ${_noshared} ${_DEP${_m}LIBS:S/>/\>/g}`; then \
 		line="===>  found"; \
 		for k in $$found; do line="$$line $$k"; done; \
 		${ECHO_MSG} "$$line"; \
@@ -1519,9 +1534,10 @@ ${_DEPWANTLIB_COOKIE}: ${_DEPLIBSPECS_COOKIES} ${_DEPLIB_COOKIES} ${_DEPBUILD_CO
 		exit 1; \
 	fi
 	@${_MAKE_COOKIE} $@
-.endif
+.  endif
 
-_internal-wantlib-depends: ${_DEPWANTLIB_COOKIE}
+_internal-${_m:L}wantlib-depends: ${_DEP${_m}WANTLIB_COOKIE}
+.endfor
 
 .if defined(IGNORE) && !defined(NO_IGNORE)
 _internal-fetch _internal-checksum _internal-extract _internal-patch \
@@ -1646,14 +1662,14 @@ _refetch:
 # The cookie's recipe hold the real rule for each of those targets.
 
 _internal-extract: ${_EXTRACT_COOKIE}
-_internal-patch: ${_DEPBUILD_COOKIES} ${_DEPLIB_COOKIES} ${_DEPWANTLIB_COOKIE} \
+_internal-patch: ${_DEPBUILD_COOKIES} ${_DEPBUILDLIB_COOKIES} ${_DEPBUILDWANTLIB_COOKIE} \
 	${_PATCH_COOKIE}
-_internal-distpatch: ${_DEPBUILD_COOKIES} ${_DEPLIB_COOKIES} ${_DEPWANTLIB_COOKIE} \
+_internal-distpatch: ${_DEPBUILD_COOKIES} ${_DEPBUILDLIB_COOKIES} ${_DEPBUILDWANTLIB_COOKIE} \
 	${_DISTPATCH_COOKIE}
-_internal-configure: ${_DEPBUILD_COOKIES} ${_DEPLIB_COOKIES} ${_DEPWANTLIB_COOKIE} \
+_internal-configure: ${_DEPBUILD_COOKIES} ${_DEPBUILDLIB_COOKIES} ${_DEPBUILDWANTLIB_COOKIE} \
 	${_CONFIGURE_COOKIE}
-_internal-build _internal-all: ${_DEPBUILD_COOKIES} ${_DEPLIB_COOKIES} \
-	${_DEPWANTLIB_COOKIE} ${_BUILD_COOKIE}
+_internal-build _internal-all: ${_DEPBUILD_COOKIES} ${_DEPBUILDLIB_COOKIES} \
+	${_DEPBUILDWANTLIB_COOKIE} ${_BUILD_COOKIE}
 _internal-install: ${_INSTALL_COOKIE}
 _internal-fake: ${_FAKE_COOKIE}
 _internal-subupdate: ${_UPDATE_COOKIE}
@@ -1793,7 +1809,7 @@ ${_WRKDIR_COOKIE}:
 	@${_MAKE_COOKIE} $@
 
 ${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE} ${_SYSTRACE_COOKIE}
-	@cd ${.CURDIR} && exec ${MAKE} _internal-checksum _internal-build-depends _internal-lib-depends _internal-wantlib-depends
+	@cd ${.CURDIR} && exec ${MAKE} _internal-checksum _internal-build-depends _internal-buildlib-depends _internal-buildwantlib-depends
 	@${ECHO_MSG} "===>  Extracting for ${FULLPKGNAME}${_MASTER}"
 .if target(pre-extract)
 	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} pre-extract
@@ -2059,7 +2075,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
 
 ${_INSTALL_COOKIE}:
 	@cd ${.CURDIR} && exec ${MAKE} package
-	@cd ${.CURDIR} && DEPENDS_TARGET=install PACKAGING='${SUBPACKAGE}' exec ${MAKE} _internal-run-depends _internal-lib-depends
+	@cd ${.CURDIR} && DEPENDS_TARGET=install PACKAGING='${SUBPACKAGE}' exec ${MAKE} _internal-run-depends _internal-runlib-depends _internal-runwantlib-depends
 	@${ECHO_MSG} "===>  Installing ${FULLPKGNAME${SUBPACKAGE}} from ${_PKG_REPO}"
 .for _m in ${MODULES}
 .  if defined(MOD${_m:U}_pre_install)
@@ -2836,7 +2852,9 @@ subdump-vars:
 	_internal-build _internal-all _internal_install _internal-fake \
 	_internal-package _internal-package-only \
 	_internal-fetch _internal-checksum \
-	_internal-depends _internal-lib-depends _internal-wantlib-depends \
+	_internal-depends _internal-lib-depends _internal-buildwantlib-depends \
+	_internal-runwantlib-depends \
+	_internal-buildlib-depends _internal_runlib-depends \
 	_internal-build-depends \
 	_internal-run-depends _internal-regress-depends \
 	_internal-regress _internal-clean _internal-lib-depends-check \
