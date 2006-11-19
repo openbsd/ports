@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.169 2006/11/13 15:25:16 espie Exp $
+# $OpenBSD: Makefile,v 1.170 2006/11/19 14:30:28 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -10,6 +10,7 @@
      SUBDIR += aalib
      SUBDIR += aalib,no_x11
      SUBDIR += agg
+     SUBDIR += aqsis
      SUBDIR += blender
      SUBDIR += cadubi
      SUBDIR += cairo
