@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.810 2006/11/19 17:39:15 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.811 2006/11/19 17:40:35 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1046,14 +1046,6 @@ DEPENDS_TARGET=	install
 
 # Various dependency styles
 
-_build_depends_fragment= \
-	if pkg_info -q -e "$$pkg"; then \
-		found=true; \
-	fi
-_run_depends_fragment=${_build_depends_fragment}
-
-_regress_depends_fragment=${_build_depends_fragment}
-
 .if ${NO_SHARED_LIBS:L} == "yes"
 _noshared=-noshared
 .else
@@ -1079,14 +1071,6 @@ _syslibresolve_fragment = \
 			${PORTSDIR}/infrastructure/build/resolve-lib ${_noshared} $$d` \
 			|| check=Failed
 
-_lib_depends_fragment = \
-	if $$defaulted; then \
-		pkg=`echo $$pkg|${_version2default}`; \
-	fi; \
-	what="$$pkg"; \
-	if pkg_info -q -e "$$pkg"; then \
-		found=true; \
-	fi
 
 .if (${FAKE:L} == "lib" || ${FAKE:L} == "all") && ${USE_FAKE_LIB:L} == "yes"
 PORT_LD_LIBRARY_PATH=${DEPBASE}/lib:${LOCALBASE}/lib:${X11BASE}/lib:/usr
@@ -1451,6 +1435,7 @@ ${WRKDIR}/.dep${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 			if pkg=`eval $$toset ${MAKE} _print-packagename`; \
 			then \
 				defaulted=true; \
+				pkg=`echo $$pkg|${_version2default}`; \
 			else \
 				${ECHO_MSG} "===> Error in evaluating dependency ${_i}"; \
 				exit 1; \
@@ -1481,8 +1466,7 @@ ${WRKDIR}/.dep${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 				cd ${_PKG_REPO} && PKG_DBDIR=${DEPDIR}/pkgdb PKG_PATH=${_PKG_REPO} pkg_add -F nonroot -Q ${DEPDIR} $$pkg && exit 0;; \
 			*)  \
 				$$early_exit || ${_force_update_fragment}; \
-				${_${_DEP:L}_depends_fragment}; \
-				if $$found; then \
+				if pkg_info -q -e "$$pkg"; then \
 					${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} depends on: $$what - found"; \
 					break; \
 				else \
