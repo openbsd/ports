@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.811 2006/11/19 17:40:35 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.812 2006/11/19 17:48:14 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1109,16 +1109,16 @@ _PKG_ADD_FORCE=
 _FULL_PACKAGE_NAME?=No
 
 .if ${NO_DEPENDS:L} == "no"
-_BUILD_DEPLIST=${BUILD_DEPENDS}
-_RUN_DEPLIST=${RUN_DEPENDS${SUBPACKAGE}}
-_REGRESS_DEPLIST=${REGRESS_DEPENDS}
-_LIB_DEPLIST=${LIB_DEPENDS}
+_BUILD_DEPLIST=${BUILD_DEPENDS:S/^://}
+_RUN_DEPLIST=${RUN_DEPENDS${SUBPACKAGE}:S/^://}
+_REGRESS_DEPLIST=${REGRESS_DEPENDS:S/^://}
+_LIB_DEPLIST=${LIB_DEPENDS:C/^[^:]*://}
 .endif
 
 .for _DEP in BUILD RUN LIB REGRESS
 _DEP${_DEP}_COOKIES=
 .  for _i in ${_${_DEP}_DEPLIST}
-_DEP${_DEP}_COOKIES+=${WRKDIR}/.dep${_i:C,[|:./<=>*],-,g}
+_DEP${_DEP}_COOKIES+=${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g}
 .  endfor
 .endfor
 _DEPBUILDLIB_COOKIES=${_DEPLIB_COOKIES}
@@ -1191,7 +1191,7 @@ _REGRESS_DEP=
 
 _DEPLIBSPECS_COOKIES=
 .if !empty(_DEPLIBS) && ${NO_DEPENDS:L} == "no"
-.  for i in ${WANTLIB:C,[|:./<=>*],-,g}
+.  for i in ${WANTLIB:C,[|:/<=>*],-,g}
 _DEPLIBSPECS_COOKIES+=${WRKDIR}/.spec-$i
 .  endfor
 _DEPBUILDWANTLIB_COOKIE=${WRKDIR}/.buildwantlibs
@@ -1414,10 +1414,10 @@ _print-packagename:
 
 .for _DEP in BUILD RUN LIB REGRESS
 .  for _i in ${_${_DEP}_DEPLIST}
-${WRKDIR}/.dep${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
+${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g}: ${_WRKDIR_COOKIE}
 	@unset PACKAGING DEPENDS_TARGET _MASTER WRKDIR|| true; \
 	echo '${_i}'|{ \
-		IFS=:; read dep pkg subdir target; \
+		IFS=:; read pkg subdir target; \
 		extra_msg="(${_DEP}_DEPENDS ${_i})"; \
 		${_flavor_fragment}; defaulted=false; \
 		case "X$$target" in X) target=${_${_DEP:L}_depends_target};; esac; \
