@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.812 2006/11/19 17:48:14 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.813 2006/11/19 17:52:32 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1414,6 +1414,7 @@ _print-packagename:
 
 .for _DEP in BUILD RUN LIB REGRESS
 .  for _i in ${_${_DEP}_DEPLIST}
+.    if !target(${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g})
 ${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g}: ${_WRKDIR_COOKIE}
 	@unset PACKAGING DEPENDS_TARGET _MASTER WRKDIR|| true; \
 	echo '${_i}'|{ \
@@ -1487,6 +1488,7 @@ ${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g}: ${_WRKDIR_COOKIE}
 	}
 	@mkdir -p ${WRKDIR} ${WRKDIR}/bin
 	@${_MAKE_COOKIE} $@
+.    endif
 .  endfor
 _internal-${_DEP:L}-depends: ${_DEP${_DEP}_COOKIES}
 .endfor
