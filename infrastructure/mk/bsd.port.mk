@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.815 2006/11/19 18:07:38 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.816 2006/11/19 18:20:01 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1401,15 +1401,21 @@ ${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g}: ${_WRKDIR_COOKIE}
 	echo '${_i}'|{ \
 		IFS=:; read pkg subdir target; \
 		extra_msg="(DEPENDS ${_i})"; \
-		${_flavor_fragment}; defaulted=false; \
+		${_flavor_fragment}; defaulted=false; checkinstall=true; \
 		case "X$$target" in X) target=${DEPENDS_TARGET};; esac; \
 		case "X$$target" in \
 		Xinstall|Xreinstall) early_exit=false;; \
 		Xpackage|Xfake) early_exit=true;; \
-		*) \
+		Xpatch|Xconfigure) \
 			early_exit=true; mkdir -p ${WRKDIR}/$$dir; \
 			toset="$$toset _MASTER='[${FULLPKGNAME${SUBPACKAGE}}]${_MASTER}' WRKDIR=${WRKDIR}/$$dir"; \
-			dep="/nonexistent";; \
+			checkinstall=false;; \
+		Xextract) \
+			${ECHO_MSG} "===> Error: bad dependency ${_i}"; \
+			exit 1;; \
+		*) \
+			${ECHO_MSG} "===> Error: don't know how to depend on $$target"; \
+			exit 1;; \
 		esac; \
 		toset="$$toset _SOLVING_DEP=Yes"; \
 		case "X$$pkg" in X) \
@@ -1428,9 +1434,7 @@ ${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g}: ${_WRKDIR_COOKIE}
 			fi; \
 			found=false; \
 			what=$$pkg; \
-			case "$$dep" in \
-			"/nonexistent") ;; \
-			*)  \
+			if $$checkinstall; then \
 				$$early_exit || ${_force_update_fragment}; \
 				if pkg_info -q -e "$$pkg"; then \
 					${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} depends on: $$what - found"; \
@@ -1438,8 +1442,8 @@ ${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g}: ${_WRKDIR_COOKIE}
 				else \
 					: $${msg:= not found}; \
 					${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} depends on: $$what -$$msg"; \
-				fi;; \
-			esac; \
+				fi; \
+			fi; \
 			${ECHO_MSG} "===>  Verifying $$target for $$what in $$dir"; \
 			if eval $$toset ${MAKE} $$target; then \
 				${ECHO_MSG} "===> Returning to build of ${FULLPKGNAME${SUBPACKAGE}}${_MASTER}"; \
