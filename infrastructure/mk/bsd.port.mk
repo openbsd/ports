@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.813 2006/11/19 17:52:32 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.814 2006/11/19 18:01:44 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -176,7 +176,6 @@ clean=${_internal-clean}
 .endif
 
 FAKE?=Yes
-USE_FAKE_LIB?=No
 
 # need to go through an extra var because clean is set in stone, 
 # on the cmdline.
@@ -1072,28 +1071,10 @@ _syslibresolve_fragment = \
 			|| check=Failed
 
 
-.if (${FAKE:L} == "lib" || ${FAKE:L} == "all") && ${USE_FAKE_LIB:L} == "yes"
-PORT_LD_LIBRARY_PATH=${DEPBASE}/lib:${LOCALBASE}/lib:${X11BASE}/lib:/usr
-_set_ld_library_path=export LD_LIBRARY_PATH=${PORT_LD_LIBRARY_PATH}
-MAKE_ENV+=LD_LIBRARY_PATH=${PORT_LD_LIBRARY_PATH}
-CONFIGURE_ENV+=LD_LIBRARY_PATH=${PORT_LD_LIBRARY_PATH}
-DEPBASE=${DEPDIR}${LOCALBASE}
-DEPDIR?=${WRKDIR}/dependencies
-_lib_depends_target=pseudofake
-.else
 PORT_LD_LIBRARY_PATH=${LOCALBASE}/lib:${X11BASE}/lib:/usr
 _set_ld_library_path=:
 DEPBASE=${LOCALBASE}
 DEPDIR=
-.endif
-.if ${FAKE:L} == "all" && ${USE_FAKE_LIB:L} == "yes"
-_build_depends_target=pseudofake
-.endif
-
-_lib_depends_target?=${DEPENDS_TARGET}
-_build_depends_target?=${DEPENDS_TARGET}
-_run_depends_target=${DEPENDS_TARGET}
-_regress_depends_target=${DEPENDS_TARGET}
 
 .if ${FORCE_UPDATE:L} == "yes" || ${FORCE_UPDATE:L} == "hard"
 _force_update_fragment=eval $$toset ${MAKE} subupdate
@@ -1421,11 +1402,10 @@ ${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g}: ${_WRKDIR_COOKIE}
 		IFS=:; read pkg subdir target; \
 		extra_msg="(${_DEP}_DEPENDS ${_i})"; \
 		${_flavor_fragment}; defaulted=false; \
-		case "X$$target" in X) target=${_${_DEP:L}_depends_target};; esac; \
+		case "X$$target" in X) target=${DEPENDS_TARGET};; esac; \
 		case "X$$target" in \
 		Xinstall|Xreinstall) early_exit=false;; \
 		Xpackage|Xfake) early_exit=true;; \
-		Xpseudofake) early_exit=true; dep="/fake";; \
 		*) \
 			early_exit=true; mkdir -p ${WRKDIR}/$$dir; \
 			toset="$$toset _MASTER='[${FULLPKGNAME${SUBPACKAGE}}]${_MASTER}' WRKDIR=${WRKDIR}/$$dir"; \
@@ -1450,21 +1430,6 @@ ${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g}: ${_WRKDIR_COOKIE}
 			what=$$pkg; \
 			case "$$dep" in \
 			"/nonexistent") ;; \
-			"/fake") \
-				${ECHO_MSG} "===>  Verifying package for $$what in $$dir"; \
-				if eval $$toset ${MAKE} package; then \
-					${ECHO_MSG} "===> Returning to build of ${FULLPKGNAME${SUBPACKAGE}}${_MASTER}"; \
-				else \
-					${ECHO_MSG} "===> Error in evaluating dependency ${_i}"; \
-					${REPORT_PROBLEM}; \
-					exit 1; \
-				fi; \
-				$$defaulted || pkg=`eval $$toset ${MAKE} _print-packagename`; \
-				mkdir -p ${DEPDIR}/pkgdb ${DEPDIR}/usr ${DEPDIR}/usr/X11R6; \
-				ln -sfh /usr/lib ${DEPDIR}/usr/lib; \
-				ln -sfh /usr/X11R6/lib ${DEPDIR}/usr/X11R6/lib; \
-				test -e ${DEPDIR}/pkgdb/$$pkg && exit 0; \
-				cd ${_PKG_REPO} && PKG_DBDIR=${DEPDIR}/pkgdb PKG_PATH=${_PKG_REPO} pkg_add -F nonroot -Q ${DEPDIR} $$pkg && exit 0;; \
 			*)  \
 				$$early_exit || ${_force_update_fragment}; \
 				if pkg_info -q -e "$$pkg"; then \
