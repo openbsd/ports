@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.805 2006/11/19 12:05:10 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.806 2006/11/19 12:11:30 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -466,7 +466,7 @@ ${_SYSTRACE_COOKIE} ${_PACKAGE_COOKIES} \
 ${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE} ${_FAKE_COOKIE} \
 ${_WRKDIR_COOKIE} ${_DEPLIB_COOKIES} ${_DEPBUILD_COOKIES} \
 ${_DEPRUN_COOKIES} ${_DEPREGRESS_COOKIES} ${_UPDATE_COOKIE} \
-${_DEPlibs_COOKIE} ${_DEPlibs_COOKIES}
+${_DEPWANTLIB_COOKIE} ${_DEPLIBSPECS_COOKIES}
 
 _MAKE_COOKIE=touch
 
@@ -1195,14 +1195,14 @@ _REGRESS_DEP2=
 _REGRESS_DEP=
 .endif
 
-_DEPlibs_COOKIES=
+_DEPLIBSPECS_COOKIES=
 .if !empty(_DEPLIBS) && ${NO_DEPENDS:L} == "no"
 .  for i in ${WANTLIB:C,[|:./<=>*],-,g}
-_DEPlibs_COOKIES+=${WRKDIR}/.wantlib-$i
+_DEPLIBSPECS_COOKIES+=${WRKDIR}/.spec-$i
 .  endfor
-_DEPlibs_COOKIE=${WRKDIR}/.wantlibs
+_DEPWANTLIB_COOKIE=${WRKDIR}/.wantlibs
 .else
-_DEPlibs_COOKIE=
+_DEPWANTLIB_COOKIE=
 .endif
 
 
@@ -1400,7 +1400,7 @@ addsum: fetch-all
 
 
 _internal-depends: _internal-lib-depends _internal-build-depends \
-	_internal-run-depends _internal-libs-depends _internal-regress-depends
+	_internal-run-depends _internal-wantlib-depends _internal-regress-depends
 
 # and the rules for the actual dependencies
 
@@ -1492,11 +1492,11 @@ ${WRKDIR}/.dep${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 _internal-${_DEP:L}-depends: ${_DEP${_DEP}_COOKIES}
 .endfor
 
-.if !empty(_DEPlibs_COOKIE)
-${_DEPlibs_COOKIES}: ${_WRKDIR_COOKIE}
+.if !empty(_DEPWANTLIB_COOKIE)
+${_DEPLIBSPECS_COOKIES}: ${_WRKDIR_COOKIE}
 	@${_MAKE_COOKIE} $@
 
-${_DEPlibs_COOKIE}: ${_DEPlibs_COOKIES} ${_DEPLIB_COOKIES} ${_DEPBUILD_COOKIES} ${_WRKDIR_COOKIE}
+${_DEPWANTLIB_COOKIE}: ${_DEPLIBSPECS_COOKIES} ${_DEPLIB_COOKIES} ${_DEPBUILD_COOKIES} ${_WRKDIR_COOKIE}
 	@${ECHO_MSG} "===>  Verifying specs: ${_DEPLIBS}"
 	@listlibs="echo ${LOCALBASE}/lib/lib* /usr/lib/lib* ${X11BASE}/lib/lib*"; \
 	for d in ${_DEPLIBS:S/>/\>/g}; do \
@@ -1518,7 +1518,7 @@ ${_DEPlibs_COOKIE}: ${_DEPlibs_COOKIES} ${_DEPLIB_COOKIES} ${_DEPBUILD_COOKIES} 
 	@${_MAKE_COOKIE} $@
 .endif
 
-_internal-libs-depends: ${_DEPlibs_COOKIE}
+_internal-wantlib-depends: ${_DEPWANTLIB_COOKIE}
 
 .if defined(IGNORE) && !defined(NO_IGNORE)
 _internal-fetch _internal-checksum _internal-extract _internal-patch \
@@ -1643,14 +1643,14 @@ _refetch:
 # The cookie's recipe hold the real rule for each of those targets.
 
 _internal-extract: ${_EXTRACT_COOKIE}
-_internal-patch: ${_DEPBUILD_COOKIES} ${_DEPLIB_COOKIES} ${_DEPlibs_COOKIE} \
+_internal-patch: ${_DEPBUILD_COOKIES} ${_DEPLIB_COOKIES} ${_DEPWANTLIB_COOKIE} \
 	${_PATCH_COOKIE}
-_internal-distpatch: ${_DEPBUILD_COOKIES} ${_DEPLIB_COOKIES} ${_DEPlibs_COOKIE} \
+_internal-distpatch: ${_DEPBUILD_COOKIES} ${_DEPLIB_COOKIES} ${_DEPWANTLIB_COOKIE} \
 	${_DISTPATCH_COOKIE}
-_internal-configure: ${_DEPBUILD_COOKIES} ${_DEPLIB_COOKIES} ${_DEPlibs_COOKIE} \
+_internal-configure: ${_DEPBUILD_COOKIES} ${_DEPLIB_COOKIES} ${_DEPWANTLIB_COOKIE} \
 	${_CONFIGURE_COOKIE}
 _internal-build _internal-all: ${_DEPBUILD_COOKIES} ${_DEPLIB_COOKIES} \
-	${_DEPlibs_COOKIE} ${_BUILD_COOKIE}
+	${_DEPWANTLIB_COOKIE} ${_BUILD_COOKIE}
 _internal-install: ${_INSTALL_COOKIE}
 _internal-fake: ${_FAKE_COOKIE}
 _internal-subupdate: ${_UPDATE_COOKIE}
@@ -1790,7 +1790,7 @@ ${_WRKDIR_COOKIE}:
 	@${_MAKE_COOKIE} $@
 
 ${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE} ${_SYSTRACE_COOKIE}
-	@cd ${.CURDIR} && exec ${MAKE} _internal-checksum _internal-build-depends _internal-lib-depends _internal-libs-depends
+	@cd ${.CURDIR} && exec ${MAKE} _internal-checksum _internal-build-depends _internal-lib-depends _internal-wantlib-depends
 	@${ECHO_MSG} "===>  Extracting for ${FULLPKGNAME}${_MASTER}"
 .if target(pre-extract)
 	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} pre-extract
@@ -2833,7 +2833,7 @@ subdump-vars:
 	_internal-build _internal-all _internal_install _internal-fake \
 	_internal-package _internal-package-only \
 	_internal-fetch _internal-checksum \
-	_internal-depends _internal-lib-depends _internal-libs-depends \
+	_internal-depends _internal-lib-depends _internal-wantlib-depends \
 	_internal-build-depends \
 	_internal-run-depends _internal-regress-depends \
 	_internal-regress _internal-clean _internal-lib-depends-check \
