@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2006/11/15 02:27:48 todd Exp $
+# $OpenBSD: Makefile,v 1.14 2006/11/19 07:12:10 steven Exp $
 
 COMMENT=	"format the display of a shell script"
 
-DISTNAME= 	dialog-0.6z	
+DISTNAME= 	dialog-0.6z
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=utils/shell/}
 
