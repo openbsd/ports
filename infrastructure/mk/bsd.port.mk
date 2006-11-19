@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.804 2006/11/18 00:15:33 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.805 2006/11/19 12:05:10 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -464,8 +464,8 @@ _ALL_COOKIES=${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_CONFIGURE_COOKIE} \
 ${_INSTALL_PRE_COOKIE} ${_BUILD_COOKIE} ${_REGRESS_COOKIE} \
 ${_SYSTRACE_COOKIE} ${_PACKAGE_COOKIES} \
 ${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE} ${_FAKE_COOKIE} \
-${_WRKDIR_COOKIE} ${_DEPlib_COOKIES} ${_DEPbuild_COOKIES} \
-${_DEPrun_COOKIES} ${_DEPregress_COOKIES} ${_UPDATE_COOKIE} \
+${_WRKDIR_COOKIE} ${_DEPLIB_COOKIES} ${_DEPBUILD_COOKIES} \
+${_DEPRUN_COOKIES} ${_DEPREGRESS_COOKIES} ${_UPDATE_COOKIE} \
 ${_DEPlibs_COOKIE} ${_DEPlibs_COOKIES}
 
 _MAKE_COOKIE=touch
@@ -1121,10 +1121,10 @@ _PKG_ADD_FORCE=
 
 _FULL_PACKAGE_NAME?=No
 
-.for _DEP in build run lib regress
+.for _DEP in BUILD RUN LIB REGRESS
 _DEP${_DEP}_COOKIES=
-.  if defined(${_DEP:U}_DEPENDS) && ${NO_DEPENDS:L} == "no"
-.    for _i in ${${_DEP:U}_DEPENDS}
+.  if ${NO_DEPENDS:L} == "no"
+.    for _i in ${${_DEP}_DEPENDS}
 _DEP${_DEP}_COOKIES+=${WRKDIR}/.dep${_i:C,[|:./<=>*],-,g}
 .    endfor
 .  endif
@@ -1411,16 +1411,16 @@ _print-packagename:
 	@echo ${FULLPKGNAME${SUBPACKAGE}}
 .endif
 
-.for _DEP in build run lib regress
-.  if defined(${_DEP:U}_DEPENDS) && ${NO_DEPENDS:L} == "no"
-.    for _i in ${${_DEP:U}_DEPENDS}
+.for _DEP in BUILD RUN LIB REGRESS
+.  if ${NO_DEPENDS:L} == "no"
+.    for _i in ${${_DEP}_DEPENDS}
 ${WRKDIR}/.dep${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 	@unset PACKAGING DEPENDS_TARGET _MASTER WRKDIR|| true; \
 	echo '${_i}'|{ \
 		IFS=:; read dep pkg subdir target; \
-		extra_msg="(${_DEP:U}_DEPENDS ${_i})"; \
+		extra_msg="(${_DEP}_DEPENDS ${_i})"; \
 		${_flavor_fragment}; defaulted=false; \
-		case "X$$target" in X) target=${_${_DEP}_depends_target};; esac; \
+		case "X$$target" in X) target=${_${_DEP:L}_depends_target};; esac; \
 		case "X$$target" in \
 		Xinstall|Xreinstall) early_exit=false;; \
 		Xpackage|Xfake) early_exit=true;; \
@@ -1465,7 +1465,7 @@ ${WRKDIR}/.dep${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 				cd ${_PKG_REPO} && PKG_DBDIR=${DEPDIR}/pkgdb PKG_PATH=${_PKG_REPO} pkg_add -F nonroot -Q ${DEPDIR} $$pkg && exit 0;; \
 			*)  \
 				$$early_exit || ${_force_update_fragment}; \
-				${_${_DEP}_depends_fragment}; \
+				${_${_DEP:L}_depends_fragment}; \
 				if $$found; then \
 					${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} depends on: $$what - found"; \
 					break; \
@@ -1489,14 +1489,14 @@ ${WRKDIR}/.dep${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 	@${_MAKE_COOKIE} $@
 .    endfor
 .  endif
-_internal-${_DEP}-depends: ${_DEP${_DEP}_COOKIES}
+_internal-${_DEP:L}-depends: ${_DEP${_DEP}_COOKIES}
 .endfor
 
 .if !empty(_DEPlibs_COOKIE)
 ${_DEPlibs_COOKIES}: ${_WRKDIR_COOKIE}
 	@${_MAKE_COOKIE} $@
 
-${_DEPlibs_COOKIE}: ${_DEPlibs_COOKIES} ${_DEPlib_COOKIES} ${_DEPbuild_COOKIES} ${_WRKDIR_COOKIE}
+${_DEPlibs_COOKIE}: ${_DEPlibs_COOKIES} ${_DEPLIB_COOKIES} ${_DEPBUILD_COOKIES} ${_WRKDIR_COOKIE}
 	@${ECHO_MSG} "===>  Verifying specs: ${_DEPLIBS}"
 	@listlibs="echo ${LOCALBASE}/lib/lib* /usr/lib/lib* ${X11BASE}/lib/lib*"; \
 	for d in ${_DEPLIBS:S/>/\>/g}; do \
@@ -1643,13 +1643,13 @@ _refetch:
 # The cookie's recipe hold the real rule for each of those targets.
 
 _internal-extract: ${_EXTRACT_COOKIE}
-_internal-patch: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} ${_DEPlibs_COOKIE} \
+_internal-patch: ${_DEPBUILD_COOKIES} ${_DEPLIB_COOKIES} ${_DEPlibs_COOKIE} \
 	${_PATCH_COOKIE}
-_internal-distpatch: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} ${_DEPlibs_COOKIE} \
+_internal-distpatch: ${_DEPBUILD_COOKIES} ${_DEPLIB_COOKIES} ${_DEPlibs_COOKIE} \
 	${_DISTPATCH_COOKIE}
-_internal-configure: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} ${_DEPlibs_COOKIE} \
+_internal-configure: ${_DEPBUILD_COOKIES} ${_DEPLIB_COOKIES} ${_DEPlibs_COOKIE} \
 	${_CONFIGURE_COOKIE}
-_internal-build _internal-all: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} \
+_internal-build _internal-all: ${_DEPBUILD_COOKIES} ${_DEPLIB_COOKIES} \
 	${_DEPlibs_COOKIE} ${_BUILD_COOKIE}
 _internal-install: ${_INSTALL_COOKIE}
 _internal-fake: ${_FAKE_COOKIE}
@@ -1661,7 +1661,7 @@ _internal-regress:
 	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} ${_IGNORE_REGRESS}."
 .    endif
 .  else
-_internal-regress: ${_BUILD_COOKIE} ${_DEPregress_COOKIES} ${_REGRESS_COOKIE}
+_internal-regress: ${_BUILD_COOKIE} ${_DEPREGRESS_COOKIES} ${_REGRESS_COOKIE}
 .  endif
 
 # packing list utilities.  This generates a packing list from a recently
