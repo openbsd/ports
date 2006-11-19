@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.814 2006/11/19 18:01:44 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.815 2006/11/19 18:07:38 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1095,6 +1095,7 @@ _RUN_DEPLIST=${RUN_DEPENDS${SUBPACKAGE}:S/^://}
 _REGRESS_DEPLIST=${REGRESS_DEPENDS:S/^://}
 _LIB_DEPLIST=${LIB_DEPENDS:C/^[^:]*://}
 .endif
+_DEPLIST=${_BUILD_DEPLIST} ${_RUN_DEPLIST} ${_REGRESS_DEPLIST} ${_LIB_DEPLIST}
 
 .for _DEP in BUILD RUN LIB REGRESS
 _DEP${_DEP}_COOKIES=
@@ -1393,14 +1394,13 @@ _print-packagename:
 	@echo ${FULLPKGNAME${SUBPACKAGE}}
 .endif
 
-.for _DEP in BUILD RUN LIB REGRESS
-.  for _i in ${_${_DEP}_DEPLIST}
-.    if !target(${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g})
+.for _i in ${_DEPLIST}
+.  if !target(${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g})
 ${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g}: ${_WRKDIR_COOKIE}
 	@unset PACKAGING DEPENDS_TARGET _MASTER WRKDIR|| true; \
 	echo '${_i}'|{ \
 		IFS=:; read pkg subdir target; \
-		extra_msg="(${_DEP}_DEPENDS ${_i})"; \
+		extra_msg="(DEPENDS ${_i})"; \
 		${_flavor_fragment}; defaulted=false; \
 		case "X$$target" in X) target=${DEPENDS_TARGET};; esac; \
 		case "X$$target" in \
@@ -1453,10 +1453,13 @@ ${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g}: ${_WRKDIR_COOKIE}
 	}
 	@mkdir -p ${WRKDIR} ${WRKDIR}/bin
 	@${_MAKE_COOKIE} $@
-.    endif
-.  endfor
-_internal-${_DEP:L}-depends: ${_DEP${_DEP}_COOKIES}
+.  endif
 .endfor
+
+_internal-build-depends: ${_DEPBUILD_COOKIES}
+_internal-run-depends: ${_DEPRUN_COOKIES}
+_internal-lib-depends: ${_DEPLIB_COOKIES}
+_internal-regress-depends: ${_DEPREGRESS_COOKIES}
 _internal-buildlib-depends: ${_DEPBUILDLIB_COOKIES}
 _internal-runlib-depends: ${_DEPRUNLIB_COOKIES}
 
