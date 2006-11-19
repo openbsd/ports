@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.807 2006/11/19 12:32:53 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.808 2006/11/19 12:37:55 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1184,9 +1184,9 @@ _DEPLIBS=
 _DEPLIBS+=${WANTLIB}
 .endif
 
-.if defined(RUN_DEPENDS)
-_RUN_DEP2 = ${RUN_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
-_RUN_DEP = ${_RUN_DEP2:C/[^:]*://}
+.if defined(RUN_DEPENDS${SUBPACKAGE})
+_RUN_DEP2 = ${RUN_DEPENDS${SUBPACKAGE}:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_RUN_DEP = ${_RUN_DEP2${SUBPACKAGE}:C/[^:]*://}
 .else
 _RUN_DEP2=
 _RUN_DEP=
@@ -2490,7 +2490,7 @@ print-package-signature:
 	@echo
 
 _print-package-args:
-.for _i in ${RUN_DEPENDS}
+.for _i in ${RUN_DEPENDS${SUBPACKAGE}}
 	@echo '${_i}' |{ \
 		IFS=:; read dep pkg subdir target; \
 		${_flavor_fragment}; \
@@ -2568,7 +2568,7 @@ _list-port-libs:
 	@echo /usr/lib/lib* ${X11BASE}/lib/lib*
 
 _print-package-signature-run:
-.for _i in ${RUN_DEPENDS}
+.for _i in ${RUN_DEPENDS${SUBPACKAGE}}
 	@echo '${_i}' |{ \
 		IFS=:; read dep pkg subdir target; \
 		${_flavor_fragment}; \
