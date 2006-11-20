@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2006/11/18 16:11:33 kurt Exp $
+# $OpenBSD: Makefile,v 1.29 2006/11/20 09:33:02 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -9,7 +9,7 @@ COMMENT-java=	"optional integration of OpenOffice java features"
 VERSION=	2.0.4
 DISTNAME=	OOo_${VERSION}_src
 WRKDIST=	${WRKDIR}/OOD680_m5
-PKGNAME=	openoffice-${VERSION}p16
+PKGNAME=	openoffice-${VERSION}p17
 PKGNAME-kde=	openoffice-kde-${VERSION}p16
 PKGNAME-java=	openoffice-java-${VERSION}p16
 CATEGORIES=	editors productivity
@@ -43,6 +43,15 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MULTI_PACKAGES=		-kde -java
+
+LANGS=			bg de es fi fr hu it ja ko pl ru
+
+.for l in ${LANGS}
+MULTI_PACKAGES+=	-i18n-$l
+PKGNAME-i18n-$l=	openoffice-i18n-$l-${VERSION}
+COMMENT-i18n-$l=	$l language pack for OpenOffice.Org
+.endfor
+
 SUBPACKAGE?=
 
 BUILD_DEPENDS=	:zip-*:archivers/zip \
@@ -81,6 +90,8 @@ WANTLIB=	c m pthread stdc++
 MODULES=	java
 MODJAVA_VER=	1.4+
 MODJAVA_JRERUN=	Yes
+. elif ${SUBPACKAGE:M-i18n*}
+RUN_DEPENDS=	::editors//openoffice
 . else
 MODULES=	python
 LIB_DEPENDS=	${BASE_LIBS}
@@ -140,8 +151,10 @@ CONFIGURE_ARGS=	--disable-gnome-vfs \
 		--with-java-target-version=1.4 \
 		--with-jdk-home=${JAVA_HOME} \
 		--with-ant-home=${LOCALBASE}/ant/lib \
-		--with-db-jar=${LOCALBASE}/lib/db4/db.jar
+		--with-db-jar=${LOCALBASE}/lib/db4/db.jar \
+		--with-lang="en-US ${LANGS}"
 
+PSEUDO_FLAVORS=	cleanobj
 FLAVORS=	debug
 FLAVOR?=
 
@@ -155,6 +168,12 @@ MAKE_ENV+=	envcflags="${CFLAGS}"
 OOARCH=		OPENBSDGCCI
 TCSH=		${LOCALBASE}/bin/tcsh
 
+.if ${FLAVOR:L:Mcleanobj}
+BUILD_CMD=	cd instsetoo_native && build.pl --all --dlv_switch -deloutput
+.else
+BUILD_CMD=	dmake
+.endif
+
 pre-patch:
 .for arch in intel x86-64
 	@cd ${WRKSRC}/bridges/source/cpp_uno && \
@@ -165,13 +184,15 @@ pre-patch:
 do-build:
 	@cd ${WRKBUILD} && \
 		./bootstrap && \
-		${SETENV} ${MAKE_ENV} ${TCSH} -c 'source OpenBSDEnv.Set && dmake'
+		${SETENV} ${MAKE_ENV} ${TCSH} -c 'source OpenBSDEnv.Set && ${BUILD_CMD}' 
 
 do-install:
-	cd ${WRKSRC}/instsetoo_native/unxobsd.pro/OpenOffice/portable/install/en-US/openbsd-* && \
+.for l in en-US ${LANGS}
+	cd ${WRKSRC}/instsetoo_native/unxobsd.pro/OpenOffice/portable/install/$l/openbsd-* && \
 		for SW in `ls -1 *.sw`; do \
 			${TAR} xf $$SW -C ${PREFIX}; \
 		done
+.endfor
 
 	${INSTALL_SCRIPT} ${FILESDIR}/soffice.sh ${PREFIX}/bin/soffice
 	perl -pi -e "s,%%LOCALBASE%%,${LOCALBASE},g; \
