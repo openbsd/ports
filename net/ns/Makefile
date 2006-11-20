@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2006/11/13 12:51:14 steven Exp $
+# $OpenBSD: Makefile,v 1.28 2006/11/20 23:17:12 steven Exp $
 # $FreeBSD: ports/net/ns/Makefile,v 1.3 1999/11/28 18:31:26 steve Exp $
 
 COMMENT=	"UCB/LBNL Network Simulator Version 2"
@@ -26,7 +26,9 @@ LIB_DEPENDS=	otcl::lang/otcl \
 
 USE_X11=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--with-tcl-ver=8.3 --with-tk-ver=8.3
+CONFIGURE_ARGS=	--with-tcl-ver=8.3 --with-tk-ver=8.3 \
+		--x-includes=${X11BASE}/include \
+		--x-libraries=${X11BASE}/lib
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ns ${PREFIX}/bin

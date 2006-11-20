@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2006/11/13 12:51:14 steven Exp $
+# $OpenBSD: Makefile,v 1.24 2006/11/20 23:17:12 steven Exp $
 # $FreeBSD: ports/net/nam/Makefile,v 1.3 1999/11/29 03:46:08 steve Exp $
 
 COMMENT=	"UCB/LBNL Network Animator"
@@ -25,7 +25,9 @@ RUN_DEPENDS=	:tclcl->=1.0b13p0:devel/tclcl
 WRKDIST=	${WRKDIR}/${DISTNAME:S/-src//g}
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--with-tcl-ver=8.3 --with-tk-ver=8.3
+CONFIGURE_ARGS=	--with-tcl-ver=8.3 --with-tk-ver=8.3 \
+		--x-includes=${X11BASE}/include \
+		--x-libraries=${X11BASE}/lib
 
 ALL_TARGET=
 
