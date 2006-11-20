@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/02/07 17:38:41 niallo Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/11/20 01:14:11 niallo Exp $
 bin/stella
 share/doc/stella/
 share/doc/stella/debugger.html
@@ -22,4 +22,4 @@ share/doc/stella/graphics/pacman.png
 share/doc/stella/graphics/rom_browser.png
 share/doc/stella/graphics/secret_quest.png
 share/doc/stella/graphics/space_invaders.png
-share/doc/stella/stella.html
+share/doc/stella/index.html
