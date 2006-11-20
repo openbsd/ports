@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2004/09/15 19:16:08 espie Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/20 12:21:04 espie Exp $
 lib/libcfunc.so
 share/ipl/
 share/ipl/ucode/

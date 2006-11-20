@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/18 12:52:54 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/20 12:21:04 espie Exp $
 @conflict unicon-*
+@pkgpath lang/icon/interp
 bin/icont
 bin/iconx
 bin/rtt
