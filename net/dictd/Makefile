@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2006/06/17 15:31:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/20 19:58:26 espie Exp $
 
-COMMENT=	"Dictionary Server Protocol client"
+COMMENT-main=	"Dictionary Server Protocol client"
 COMMENT-server=	"Dictionary Server Protocol server"
 
-DISTNAME=	dictd-1.9.15
-PKGNAME=	${DISTNAME:S/-/-client-/}p0
-PKGNAME-server=	${DISTNAME:S/-/-server-/}
+V=		1.9.15
+DISTNAME=	dictd-$V
+
+PKGNAME-main=	dictd-client-$Vp1
+PKGNAME-server=	dictd-server-$V
 
 CATEGORIES=	net education
 
@@ -28,8 +30,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--without-local-zlib \
 		--enable-dictorg
 
-MULTI_PACKAGES=	-server
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -server
 
 NO_REGRESS=	Yes
 

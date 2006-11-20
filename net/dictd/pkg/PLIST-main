@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/06/17 15:31:52 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/20 19:58:26 espie Exp $
 @conflict p5-Net-Dict-*
+@pkgpath net/dictd
 bin/dict
 bin/dictl
 @man man/man1/dict.1
