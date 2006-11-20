@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2006/08/01 12:13:29 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2006/11/20 19:15:09 espie Exp $
 
-COMMENT=	"extended module player"
+COMMENT-main=	"extended module player"
 COMMENT-xmms=	"extended module player plugin for XMMS"
 DISTNAME=	xmp-2.0.4
-PKGNAME=	${DISTNAME}p2
+PKGNAME-main=	${DISTNAME}p3
 PKGNAME-xmms=	xmms-${DISTNAME}p1
 CATEGORIES=	audio
 
@@ -14,7 +14,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext c m
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xmp/}
 
@@ -25,18 +24,20 @@ FLAVOR?=	no_xmms
 FLAVOR?=
 .endif
 
-MULTI_PACKAGES=
+MULTI_PACKAGES=		-main
 .if !{FLAVOR:L:Mno_xmms}
-MULTI_PACKAGES+= -xmms
-.endif
-SUBPACKAGE?=
-
-LIB_DEPENDS=	esd.>=2::audio/esound
-.if ${MULTI_PACKAGES:M-xmms}
-LIB_DEPENDS+=	xmms.>=3::audio/xmms
+MULTI_PACKAGES+=	-xmms
+LIB_DEPENDS=		xmms.>=3::audio/xmms
 .else
 CONFIGURE_ARGS+= --disable-xmms
 .endif
+
+LIB_DEPENDS-xmms=
+RUN_DEPENDS-xmms=	::audio/xmms
+WANTLIB-xmms=
+
+LIB_DEPENDS-main=	esd.>=2::audio/esound
+WANTLIB-main=		X11 Xext c m
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
@@ -52,15 +53,5 @@ FAKE_FLAGS=	DEST_DIR=${WRKINST} \
 pre-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xmp \
 		${PREFIX}/lib/xmms/Input
-
-.if defined(PACKAGING)
-.  if ${SUBPACKAGE} == "-xmms"
-WANTLIB=
-LIB_DEPENDS=
-RUN_DEPENDS=	::audio/xmms
-.  else
-LIB_DEPENDS=	esd.>=2::audio/esound
-.  endif
-.endif
 
 .include <bsd.port.mk>

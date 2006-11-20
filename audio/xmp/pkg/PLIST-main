@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/09/16 09:51:26 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/20 19:15:09 espie Exp $
 @pkgpath audio/xmp,no_xmms
+@pkgpath audio/xmp
 bin/xmp
 bin/xxmp
 lib/xmms/
