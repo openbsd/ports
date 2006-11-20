@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/03/29 11:50:31 msf Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/20 20:00:05 bernd Exp $
 
 SHARED_ONLY=		Yes
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www2.mindrot.org/files/flowd/
 
 WRKSRC=			${WRKDIR}/${DISTNAME}/Flowd-perl
-BUILD_DEPENDS=		flowd::net/flowd
+BUILD_DEPENDS=		::net/flowd
 CONFIGURE_STYLE=	perl
 
 post-patch:
