@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.73 2006/11/20 08:07:41 steven Exp $
+# $OpenBSD: Makefile,v 1.74 2006/11/20 23:48:04 espie Exp $
 
-COMMENT=		"K Desktop Environment, libraries"
+COMMENT-main=		"K Desktop Environment, libraries"
 COMMENT-cups=		"K Desktop Environment, cups support"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.5
@@ -8,7 +8,7 @@ DISTNAME=		kdelibs-${VERSION}
 MASTER_SITES0=  ftp://ftp.kde.org/pub/kde/security_patches/
 #PATCHFILES=	post-3.4.3-kdelibs-kjs.diff:0
 
-PKGNAME=		${DISTNAME}
+PKGNAME-main=		${DISTNAME}p0
 PKGNAME-cups=		kdecups-${VERSION}
 MODKDE_VERSION?=	3.5.3
 SHARED_LIBS +=	DCOP                 7.0      # .6.0
@@ -56,48 +56,44 @@ FLAVORS=debug
 VMEM_WARNING=	Yes
 
 
-MULTI_PACKAGES=	-cups
+MULTI_PACKAGES=	-main -cups
 CONFIGURE_ARGS+= --enable-cups
 
-SUBPACKAGE?=
+BUILD_DEPENDS= ::devel/pkgconfig
 
-BUILD_DEPENDS+= ::devel/pkgconfig
-LIB_DEPENDS+=	art_lgpl_2::graphics/libart
-LIB_DEPENDS+=	idn::devel/libidn
-WANTLIB+=	intl iconv util jpeg m X11 ICE Xrender c SM pthread \
+LIB_DEPENDS=	art_lgpl_2::graphics/libart \
+		idn::devel/libidn
+WANTLIB=	intl iconv util jpeg m X11 ICE Xrender c SM pthread \
 		stdc++ Xext z png
 
-USE_X11=	Yes
-
-.if !defined(PACKAGING) || ${SUBPACKAGE:L} == ""
-
-LIB_DEPENDS+=	artsflow.>=1.0,artsflow_idl,qtmcop,soundserver_idl,mcop,kmedia2_idl::x11/kde/arts3 \
+LIB_DEPENDS-main=${LIB_DEPENDS} \
+		artsflow.>=1.0,artsflow_idl,qtmcop,soundserver_idl,mcop,kmedia2_idl::x11/kde/arts3 \
 		pcreposix,pcre::devel/pcre \
 		xslt.>=1.10:libxslt->=1.0.10:textproc/libxslt \
 		bz2::archivers/bzip2 \
 		tiff.>=35::graphics/tiff \
-		jasper::graphics/jasper
+		jasper::graphics/jasper \
+		Half,Iex,Imath,IlmImf::graphics/openexr	\
+		aspell::textproc/aspell/core
 
-WANTLIB+=	audiofile esd glib-2.0 \
+WANTLIB-main=	${WANTLIB} \
+		audiofile esd glib-2.0 \
 		gmodule-2.0 gthread-2.0 mad ogg \
 		ossaudio vorbisenc vorbis vorbisfile \
 		xml2 krb5 gssapi crypto asn1
 
 
-LIB_DEPENDS+=	Half,Iex,Imath,IlmImf::graphics/openexr	\
-		aspell::textproc/aspell/core
-RUN_DEPENDS+=	::x11/hicolor-icon-theme
-.endif
+RUN_DEPENDS-main=::x11/hicolor-icon-theme
 
-.if !defined(PACKAGING) || ${SUBPACKAGE:L} == "-cups"
-LIB_DEPENDS+=	cups::print/cups
-WANTLIB+=	gcrypt gnutls gpg-error
-.endif
+LIB_DEPENDS-cups=${LIB_DEPENDS} \
+		kdecore.>=6,kwalletclient,kdefakes,kdefx,kdeprint,kio,kparts,kdeui,kdesu,kdeprint_management,DCOP::x11/kde/libs3 \
+		cups::print/cups
 
-.if defined(PACKAGING) && ${SUBPACKAGE:L} == "-cups"
-LIB_DEPENDS+=	kdecore.>=6,kwalletclient,kdefakes,kdefx,kdeprint,kio,kparts,kdeui,kdesu,kdeprint_management,DCOP::x11/kde/libs3
-.endif
+WANTLIB-cups=	${WANTLIB} \
+		gcrypt gnutls gpg-error
 
+
+USE_X11=	Yes
 SEPARATE_BUILD=	flavored
 SAMPLECONFDIR=${TRUEPREFIX}/share/apps/kde-conf-sample
 EXTRA_CONFIG=xdg/menus/applications.menu

@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.41 2006/10/12 23:12:19 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/20 23:48:04 espie Exp $
 @conflict kdebase-<3.5
 @conflict kdeartwork-<3.4
 @conflict kdeaddons-<3.4
 @conflict kdeadmin-<3.4
+@pkgpath x11/kde/libs3
 bin/artsmessage
 bin/checkXML
 bin/dcop
