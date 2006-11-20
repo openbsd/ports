@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2006/11/07 15:31:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.60 2006/11/20 09:34:56 robert Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -32,7 +32,7 @@
      SUBDIR += nedit
      SUBDIR += nvi-m17n
      SUBDIR += nvi-m17n,canna
-     SUBDIR += openoffice
+     SUBDIR += openoffice,cleanobj
      SUBDIR += scintilla
      SUBDIR += scite
      SUBDIR += ted
