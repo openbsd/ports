@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.819 2006/11/20 09:59:11 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.820 2006/11/20 10:36:13 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -463,12 +463,10 @@ _ALL_COOKIES=${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_CONFIGURE_COOKIE} \
 ${_INSTALL_PRE_COOKIE} ${_BUILD_COOKIE} ${_REGRESS_COOKIE} \
 ${_SYSTRACE_COOKIE} ${_PACKAGE_COOKIES} \
 ${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE} ${_FAKE_COOKIE} \
-${_WRKDIR_COOKIE} ${_DEPLIB_COOKIES} ${_DEPBUILD_COOKIES} \
+${_WRKDIR_COOKIE} ${_DEPBUILD_COOKIES} \
 ${_DEPRUN_COOKIES} ${_DEPREGRESS_COOKIES} ${_UPDATE_COOKIE} \
-${_DEPLIBSPECS_COOKIES} \
 ${_DEPBUILDLIB_COOKIES} ${_DEPRUNLIB_COOKIES} \
-${_DEPBUILDWANTLIB_COOKIE} ${_DEPBUILDLIBSPECS_COOKIES} \
-${_DEPRUNWANTLIB_COOKIE} ${_DEPRUNLIBSPECS_COOKIES} \
+${_DEPBUILDWANTLIB_COOKIE} ${_DEPRUNWANTLIB_COOKIE}${_DEPLIBSPECS_COOKIES}
 
 _MAKE_COOKIE=touch
 
@@ -1089,22 +1087,24 @@ _PKG_ADD_FORCE=
 
 _FULL_PACKAGE_NAME?=No
 
-.if ${NO_DEPENDS:L} == "no"
-_BUILD_DEPLIST=${BUILD_DEPENDS:S/^://}
-_RUN_DEPLIST=${RUN_DEPENDS${SUBPACKAGE}:S/^://}
-_REGRESS_DEPLIST=${REGRESS_DEPENDS:S/^://}
-_LIB_DEPLIST=${LIB_DEPENDS:C/^[^:]*://}
-.endif
-_DEPLIST=${_BUILD_DEPLIST} ${_RUN_DEPLIST} ${_REGRESS_DEPLIST} ${_LIB_DEPLIST}
+_BUILDLIB_DEPENDS=	${LIB_DEPENDS}
+_BUILDWANTLIB=		${WANTLIB}
 
-.for _DEP in BUILD RUN LIB REGRESS
+.if ${NO_DEPENDS:L} == "no"
+_BUILD_DEPLIST=		${BUILD_DEPENDS:S/^://}
+_RUN_DEPLIST=		${RUN_DEPENDS${SUBPACKAGE}:S/^://}
+_REGRESS_DEPLIST=	${REGRESS_DEPENDS:S/^://}
+_BUILDLIB_DEPLIST=	${_BUILDLIB_DEPENDS:C/^[^:]*://}
+_RUNLIB_DEPLIST=	${LIB_DEPENDS:C/^[^:]*://}
+.endif
+_DEPLIST=			${_BUILD_DEPLIST} ${_RUN_DEPLIST} ${_REGRESS_DEPLIST} ${_BUILDLIB_DEPLIST} ${_RUNLIB_DEPLIST}
+
+.for _DEP in BUILD RUN BUILDLIB RUNLIB REGRESS
 _DEP${_DEP}_COOKIES=
 .  for _i in ${_${_DEP}_DEPLIST}
 _DEP${_DEP}_COOKIES+=${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g}
 .  endfor
 .endfor
-_DEPBUILDLIB_COOKIES=${_DEPLIB_COOKIES}
-_DEPRUNLIB_COOKIES=${_DEPLIB_COOKIES}
 
 # Normal user-mode targets are PHONY targets, e.g., don't create the
 # corresponding file. However, there is nothing phony about the cookie.
@@ -1142,47 +1142,47 @@ _FMN+= ${PKGPATH}/${FULLPKGNAME${_S}}
 # Internal variables, used by dependencies targets
 # Only keep pkg:dir spec
 
-_BUILD_DEP2 = ${BUILD_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_BUILD_DEP2=	${BUILD_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_BUILD_DEP3=	${BUILD_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
 
-_RUN_DEP2 = ${RUN_DEPENDS${SUBPACKAGE}:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_RUN_DEP2=	 	${RUN_DEPENDS${SUBPACKAGE}:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_RUN_DEP3=	 	${RUN_DEPENDS${SUBPACKAGE}:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
 
-_REGRESS_DEP2 = ${REGRESS_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_REGRESS_DEP2=	${REGRESS_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
 
 .if ${NO_SHARED_LIBS:L} != "yes"
-_RUN_DEP2 += ${LIB_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
-_DEPLIBS=${LIB_DEPENDS:C/:.*//:S/,/ /g}
+_RUN_DEP2+= 	${LIB_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_LIB_DEP3=		${LIB_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_DEPRUNLIBS=	${LIB_DEPENDS:C/:.*//:S/,/ /g}
 .else
-_DEPLIBS=
+_DEPRUNLIBS=
 .endif
 
-_BUILD_DEP2 += ${LIB_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_BUILD_DEP2+= 	${_BUILDLIB_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_DEPBUILDLIBS=	${_BUILDLIB_DEPENDS:C/:.*//:S/,/ /g}
 
-.if defined(WANTLIB)
-_DEPLIBS+=${WANTLIB}
-.endif
+_DEPBUILDLIBS+=	${_BUILDWANTLIB}
+_DEPRUNLIBS+=	${WANTLIB}
 
-_DEPLIBSPECS_COOKIES=
-.if !empty(_DEPLIBS) && ${NO_DEPENDS:L} == "no"
-.  for i in ${WANTLIB:C,[|:/<=>*],-,g}
-_DEPLIBSPECS_COOKIES+=${WRKDIR}/.spec-$i
+.if ${NO_DEPENDS:L} == "no"
+.  for i in ${_DEPBUILDLIBS:C,[|:/<=>*],-,g}
+_DEPBUILDLIBSPECS_COOKIES+=${WRKDIR}/.spec-$i
 .  endfor
 _DEPBUILDWANTLIB_COOKIE=${WRKDIR}/.buildwantlibs
+.  for i in ${_DEPRUNLIBS:C,[|:/<=>*],-,g}
+_DEPRUNLIBSPECS_COOKIES+=${WRKDIR}/.spec-$i
+.  endfor
 _DEPRUNWANTLIB_COOKIE=${WRKDIR}/.runwantlibs${SUBPACKAGE}
 .else
 _DEPBUILDWANTLIB_COOKIE=
 _DEPRUNWANTLIB_COOKIE=
 .endif
-_DEPBUILDLIBS=${_DEPLIBS}
-_DEPRUNLIBS=${_DEPLIBS}
 
-_DEPBUILDLIBSPECS_COOKIES=${_DEPLIBSPECS_COOKIES}
-_DEPRUNLIBSPECS_COOKIES=${_DEPLIBSPECS_COOKIES}
+_DEPLIBSPECS_COOKIES=${_DEPBUILDLIBSPECS_COOKIES} ${_DEPRUNLIBSPECS_COOKIES}
 
-_LIB_DEP2= ${LIB_DEPENDS}
-
-_BUILD_DEP = ${_BUILD_DEP2:C/[^:]*://}
-_RUN_DEP = ${_RUN_DEP2:C/[^:]*://}
-_REGRESS_DEP = ${_REGRESS_DEP2:C/[^:]*://}
+_BUILD_DEP=		${_BUILD_DEP2:C/[^:]*://}
+_RUN_DEP= 		${_RUN_DEP2:C/[^:]*://}
+_REGRESS_DEP=	${_REGRESS_DEP2:C/[^:]*://}
 
 README_NAME?=	${TEMPLATES}/README.port
 
@@ -1448,16 +1448,18 @@ ${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g}: ${_WRKDIR_COOKIE}
 
 _internal-build-depends: ${_DEPBUILD_COOKIES}
 _internal-run-depends: ${_DEPRUN_COOKIES}
-_internal-lib-depends: ${_DEPLIB_COOKIES}
+_internal-lib-depends: ${_DEPBUILDLIB_COOKIES}
 _internal-regress-depends: ${_DEPREGRESS_COOKIES}
 _internal-buildlib-depends: ${_DEPBUILDLIB_COOKIES}
 _internal-runlib-depends: ${_DEPRUNLIB_COOKIES}
 
+.  if !empty(_DEPLIBSPECS_COOKIES)
+${_DEPLIBSPECS_COOKIES}: ${_WRKDIR_COOKIE}
+	@${_MAKE_COOKIE} $@
+.endif
+
 .for _m in BUILD RUN
 .  if !empty(_DEP${_m}WANTLIB_COOKIE)
-${_DEP${_m}LIBSPECS_COOKIES}: ${_WRKDIR_COOKIE}
-	@${_MAKE_COOKIE} $@
-
 ${_DEP${_m}WANTLIB_COOKIE}: ${_DEP${_m}LIBSPECS_COOKIES} ${_DEP${_m}LIB_COOKIES} ${_DEPBUILD_COOKIES} ${_WRKDIR_COOKIE}
 	@${ECHO_MSG} "===>  Verifying specs: ${_DEP${_m}LIBS}"
 	@listlibs="echo ${LOCALBASE}/lib/lib* /usr/lib/lib* ${X11BASE}/lib/lib*"; \
@@ -2286,7 +2288,7 @@ subdescribe:
 	fi; \
 	echo -n "${MAINTAINER}|${CATEGORIES}|"
 .for _d in LIB BUILD RUN
-.  if !empty(_${_d}_DEP2)
+.  if !empty(_${_d}_DEP3)
 	@cd ${.CURDIR} && _FINAL_ECHO=: _INITIAL_ECHO=: exec ${MAKE} ${_d:L}-depends-list
 .  endif
 	@echo -n "|"
@@ -2420,13 +2422,13 @@ _license-check:
 # run-depends-list, build-depends-list, lib-depends-list
 .for _i in RUN BUILD LIB
 ${_i:L}-depends-list:
-.  if !empty(_${_i}_DEP2)
+.  if !empty(_${_i}_DEP3)
 	@unset FLAVOR SUBPACKAGE || true; \
 	: $${_INITIAL_ECHO:='echo -n "This port requires \""'}; \
 	: $${_ECHO='echo -n'}; \
 	: $${_FINAL_ECHO:='echo "\" for ${_i:L}."'}; space=''; \
 	eval $${_INITIAL_ECHO}; \
-	for spec in `echo '${_${_i}_DEP2}' \
+	for spec in `echo '${_${_i}_DEP3}' \
 		| tr '\040' '\012' | sort -u`; do \
 		$${_ECHO} "$$space$${spec}"; \
 		space=' '; \
@@ -2438,7 +2440,7 @@ ${_i:L}-depends-list:
 
 print-package-signature:
 	@echo -n ${FULLPKGNAME${SUBPACKAGE}}
-.if !empty(_DEPLIBS)
+.if !empty(_DEPRUNLIBS)
 	@cd ${.CURDIR} && PACKAGING='${SUBPACKAGE}' LIST_LIBS=`${MAKE} _list-port-libs` ${MAKE} _print-package-signature-lib _print-package-signature-run| \
 		sort -u| \
 		while read i; do echo -n ",$$i"; done
