@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.818 2006/11/20 09:46:56 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.819 2006/11/20 09:59:11 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1141,34 +1141,24 @@ _FMN+= ${PKGPATH}/${FULLPKGNAME${_S}}
 
 # Internal variables, used by dependencies targets
 # Only keep pkg:dir spec
-.if defined(LIB_DEPENDS) && ${NO_SHARED_LIBS:L} != "yes"
-_ALWAYS_DEP2 = ${LIB_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
-_ALWAYS_DEP= ${_ALWAYS_DEP2:C/[^:]*://}
+
+_BUILD_DEP2 = ${BUILD_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+
+_RUN_DEP2 = ${RUN_DEPENDS${SUBPACKAGE}:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+
+_REGRESS_DEP2 = ${REGRESS_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+
+.if ${NO_SHARED_LIBS:L} != "yes"
+_RUN_DEP2 += ${LIB_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
 _DEPLIBS=${LIB_DEPENDS:C/:.*//:S/,/ /g}
 .else
-_ALWAYS_DEP2=
-_ALWAYS_DEP=
 _DEPLIBS=
 .endif
 
+_BUILD_DEP2 += ${LIB_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+
 .if defined(WANTLIB)
 _DEPLIBS+=${WANTLIB}
-.endif
-
-.if defined(RUN_DEPENDS${SUBPACKAGE})
-_RUN_DEP2 = ${RUN_DEPENDS${SUBPACKAGE}:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
-_RUN_DEP = ${_RUN_DEP2:C/[^:]*://}
-.else
-_RUN_DEP2=
-_RUN_DEP=
-.endif
-
-.if defined(REGRESS_DEPENDS)
-_REGRESS_DEP2 = ${REGRESS_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
-_REGRESS_DEP = ${_REGRESS_DEP2:C/[^:]*://}
-.else
-_REGRESS_DEP2=
-_REGRESS_DEP=
 .endif
 
 _DEPLIBSPECS_COOKIES=
@@ -1188,15 +1178,11 @@ _DEPRUNLIBS=${_DEPLIBS}
 _DEPBUILDLIBSPECS_COOKIES=${_DEPLIBSPECS_COOKIES}
 _DEPRUNLIBSPECS_COOKIES=${_DEPLIBSPECS_COOKIES}
 
-.if defined(BUILD_DEPENDS)
-_BUILD_DEP2 = ${BUILD_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
-_BUILD_DEP = ${_BUILD_DEP2:C/[^:]*://}
-.else
-_BUILD_DEP2=
-_BUILD_DEP=
-.endif
-
 _LIB_DEP2= ${LIB_DEPENDS}
+
+_BUILD_DEP = ${_BUILD_DEP2:C/[^:]*://}
+_RUN_DEP = ${_RUN_DEP2:C/[^:]*://}
+_REGRESS_DEP = ${_REGRESS_DEP2:C/[^:]*://}
 
 README_NAME?=	${TEMPLATES}/README.port
 
@@ -2367,7 +2353,7 @@ ${FULLPKGNAME${SUBPACKAGE}}.html:
 	@>$@.tmp-subpackages
 .endif
 .for _I in build run
-.  if !empty(_ALWAYS_DEP) || !empty(_${_I:U}_DEP)
+.  if !empty(_${_I:U}_DEP)
 	@cd ${.CURDIR} && ${MAKE} full-${_I}-depends _FULL_PACKAGE_NAME=Yes| \
 		while read n; do \
 			j=`dirname $$n|${HTMLIFY}`; k=`basename $$n|${HTMLIFY}`; \
@@ -2391,14 +2377,14 @@ ${FULLPKGNAME${SUBPACKAGE}}.html:
 
 
 print-build-depends:
-.if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP)
+.if !empty(_BUILD_DEP)
 	@echo -n 'This port requires package(s) "'
 	@${MAKE} full-build-depends| ${_lines2list}
 	@echo '" to build.'
 .endif
 
 print-run-depends:
-.if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP)
+.if !empty(_RUN_DEP)
 	@echo -n 'This port requires package(s) "'
 	@${MAKE} full-run-depends| ${_lines2list}
 	@echo '" to run.'
@@ -2564,7 +2550,7 @@ _print-package-signature-lib:
 
 # recursively build a list of dirs for package running, ready for tsort
 _recurse-run-dir-depends:
-.for _dir in ${_ALWAYS_DEP} ${_RUN_DEP}
+.for _dir in ${_RUN_DEP}
 	@echo "$$self ${_dir}"; \
 	if ! fgrep -q -e "r|${_dir}|" -e "a|${_dir}|" $${_DEPENDS_FILE}; then \
 		echo "r|${_dir}|" >> $${_DEPENDS_FILE}; \
@@ -2578,7 +2564,7 @@ _recurse-run-dir-depends:
 .endfor
 
 run-dir-depends:
-.if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP)
+.if !empty(_RUN_DEP)
 	@${_depfile_fragment}; \
 	if ! fgrep -q -e "r|${FULLPKGPATH}|" -e "a|${FULLPKGPATH}" $${_DEPENDS_FILE}; then \
 		echo "r|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
@@ -2617,7 +2603,7 @@ regress-dir-depends:
 # recursively build a list of dirs for package building, ready for tsort
 # second and further stages need _RUN_DEP.
 _recurse-all-dir-depends:
-.for _dir in ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP}
+.for _dir in ${_BUILD_DEP} ${_RUN_DEP}
 	@echo "$$self ${_dir}"; \
 	if ! fgrep -q "a|${_dir}|" $${_DEPENDS_FILE}; then \
 		echo "a|${_dir}|" >> $${_DEPENDS_FILE}; \
@@ -2632,7 +2618,7 @@ _recurse-all-dir-depends:
 
 # first stage does not need _RUN_DEP
 _build-dir-depends:
-.for _dir in ${_ALWAYS_DEP} ${_BUILD_DEP}
+.for _dir in ${_BUILD_DEP}
 	@echo "$$self ${_dir}"; \
 	if ! fgrep -q -e "b|${_dir}|" -e "a|${_dir}|" $${_DEPENDS_FILE}; then \
 		echo "b|${_dir}|" >> $${_DEPENDS_FILE}; \
@@ -2646,7 +2632,7 @@ _build-dir-depends:
 .endfor
 
 build-dir-depends:
-.if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP)
+.if !empty(_BUILD_DEP)
 	@${_depfile_fragment}; \
 	if ! fgrep -q -e "b|${FULLPKGPATH}|" -e "a|${_dir}|" $${_DEPENDS_FILE}; then \
 		echo "b|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
@@ -2657,7 +2643,7 @@ build-dir-depends:
 .endif
 
 all-dir-depends:
-.if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || !empty(_RUN_DEP)
+.if !empty(_BUILD_DEP) || !empty(_RUN_DEP)
 	@${_depfile_fragment}; \
 	if ! fgrep -q "|${FULLPKGPATH}|" $${_DEPENDS_FILE}; then \
 		echo "|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
