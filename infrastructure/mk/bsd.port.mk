@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.826 2006/11/20 12:34:52 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.827 2006/11/20 13:50:16 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -78,7 +78,7 @@ FORCE_UPDATE?=No
 _ALL_VARIABLES?=HOMEPAGE DISTNAME \
 BUILD_DEPENDS RUN_DEPENDS REGRESS_DEPENDS USE_GMAKE MODULES FLAVORS \
 NO_BUILD NO_REGRESS SHARED_ONLY ONLY_FOR_ARCHS IS_INTERACTIVE \
-BROKEN MULTI_PACKAGES PSEUDO_FLAVORS CATEGORIES \
+BROKEN MULTI_PACKAGES PSEUDO_FLAVORS \
 REGRESS_IS_INTERACTIVE DISTFILES DIST_SUBDIR \
 PERMIT_DISTFILES_CDROM PERMIT_DISTFILES_FTP \
 CONFIGURE_STYLE USE_LIBTOOL SEPARATE_BUILD \
@@ -89,7 +89,8 @@ MAINTAINER SUBPACKAGE PACKAGING DESCR SUPDISTFILES \
 AUTOCONF_VERSION AUTOMAKE_VERSION CONFIGURE_ARGS
 # and stuff needing to be MULTI_PACKAGE'd
 _ALL_VARIABLES_INDEXED?=COMMENT FULLPKGNAME PKGNAME PKG_ARCH \
-PERMIT_PACKAGE_FTP PERMIT_PACKAGE_CDROM RUN_DEPENDS LIB_DEPENDS WANTLIB
+PERMIT_PACKAGE_FTP PERMIT_PACKAGE_CDROM RUN_DEPENDS LIB_DEPENDS WANTLIB \
+CATEGORIES 
 
 # special purpose user settings
 PATCH_CHECK_ONLY?=No
@@ -587,7 +588,7 @@ PKGNAMES += ${FULLPKGNAME${_s}}
 .if defined(MULTI_PACKAGES)
 .  for _s in ${MULTI_PACKAGES}
 .    for _v in PKG_ARCH PERMIT_PACKAGE_FTP PERMIT_PACKAGE_CDROM \
-	RUN_DEPENDS WANTLIB LIB_DEPENDS
+	RUN_DEPENDS WANTLIB LIB_DEPENDS PREFIX CATEGORIES
 ${_v}${_s} ?= ${${_v}}
 .    endfor
 .  endfor
@@ -746,7 +747,7 @@ MTREE_FILE+=${PORTSDIR}/infrastructure/db/fake.mtree
 # Fill out package command, and package dependencies
 _PKG_PREREQ= ${WRKPKG}/DESCR${SUBPACKAGE} ${WRKPKG}/COMMENT${SUBPACKAGE}
 PKG_ARGS+= -c '${WRKPKG}/COMMENT${SUBPACKAGE}' -d ${WRKPKG}/DESCR${SUBPACKAGE}
-PKG_ARGS+=-f ${PLIST} -p ${PREFIX} 
+PKG_ARGS+=-f ${PLIST} -p ${PREFIX${SUBPACKAGE}} 
 .if exists(${PKGDIR}/INSTALL${SUBPACKAGE})
 PKG_ARGS+=		-i ${PKGDIR}/INSTALL${SUBPACKAGE}
 .endif
@@ -1653,7 +1654,7 @@ _do_libs_too=NO_SHARED_LIBS=Yes
 _extra_prefixes=
 .if defined(MULTI_PACKAGES)
 .  for _s in ${MULTI_PACKAGES}
-_extra_prefixes+=PREFIX${_s}=`cd ${.CURDIR} && SUBPACKAGE=${_s} PACKAGING=${_s} ${MAKE} show=PREFIX`
+_extra_prefixes+=PREFIX${_s}=`cd ${.CURDIR} && SUBPACKAGE=${_s} PACKAGING=${_s} ${MAKE} show=PREFIX${_s}`
 .  endfor
 .endif
 
@@ -2284,10 +2285,10 @@ _fetch-onefile:
 #
 subdescribe:
 	@echo -n "${FULLPKGNAME${SUBPACKAGE}}|${FULLPKGPATH}|"
-.if ${PREFIX} == ${LOCALBASE}
+.if ${PREFIX${SUBPACKAGE}} == ${LOCALBASE}
 	@echo -n "|"
 .else
-	@echo -n "${PREFIX}|"
+	@echo -n "${PREFIX${SUBPACKAGE}}|"
 .endif
 	@echo -n ${_COMMENT}"|"; \
 	if [ -f ${DESCR} ]; then \
@@ -2295,7 +2296,7 @@ subdescribe:
 	else \
 		echo -n "/dev/null|"; \
 	fi; \
-	echo -n "${MAINTAINER}|${CATEGORIES}|"
+	echo -n "${MAINTAINER}|${CATEGORIES${SUBPACKAGE}}|"
 .for _d in LIB BUILD RUN
 .  if !empty(_${_d}_DEP3)
 	@cd ${.CURDIR} && _FINAL_ECHO=: _INITIAL_ECHO=: exec ${MAKE} ${_d:L}-depends-list
