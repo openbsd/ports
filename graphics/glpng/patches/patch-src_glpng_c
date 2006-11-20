@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_glpng_c,v 1.1.1.1 2006/11/20 09:35:48 ajacoutot Exp $
+--- src/glpng.c.orig	Sun Nov 19 15:49:11 2006
++++ src/glpng.c	Sun Nov 19 15:49:26 2006
+@@ -29,7 +29,7 @@
+ #include <GL/gl.h>
+ #include <stdlib.h>
+ #include <math.h>
+-#include "png/png.h"
++#include <libpng/png.h>
+ 
+ /* Used to decide if GL/gl.h supports the paletted extension */
+ #ifdef GL_COLOR_INDEX1_EXT

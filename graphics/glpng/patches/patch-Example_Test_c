@@ -1,0 +1,14 @@
+$OpenBSD: patch-Example_Test_c,v 1.1.1.1 2006/11/20 09:35:48 ajacoutot Exp $
+--- Example/Test.c.orig	Sun Nov 19 18:49:52 2006
++++ Example/Test.c	Sun Nov 19 18:50:04 2006
+@@ -6,8 +6,8 @@
+  * http://www.wyatt100.freeserve.co.uk/download.htm
+  */
+ 
+-#include <gl/glpng.h>
+-#include <gl/glut.h>
++#include <GL/glpng.h>
++#include <GL/glut.h>
+ #include <stdlib.h>
+ 
+ int angle = 0;
