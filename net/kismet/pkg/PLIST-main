@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/07/27 21:37:26 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/20 20:54:08 bernd Exp $
+@pkgpath net/kismet
 @newgroup _kismet:547
 @newuser _kismet:547:_kismet:daemon:Kismet WLAN detector:/nonexistent:/sbin/nologin
 bin/kismet
