@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/03/20 15:21:43 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/20 17:13:12 bernd Exp $
+@pkgpath devel/gstreamer-plugins
 bin/gst-launch-ext-0.8
 bin/gst-visualise-0.8
 include/gstreamer-0.8/gst/audio/
