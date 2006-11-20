@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.817 2006/11/19 19:52:03 sturm Exp $
+#	$OpenBSD: bsd.port.mk,v 1.818 2006/11/20 09:46:56 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1157,7 +1157,7 @@ _DEPLIBS+=${WANTLIB}
 
 .if defined(RUN_DEPENDS${SUBPACKAGE})
 _RUN_DEP2 = ${RUN_DEPENDS${SUBPACKAGE}:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
-_RUN_DEP = ${_RUN_DEP2${SUBPACKAGE}:C/[^:]*://}
+_RUN_DEP = ${_RUN_DEP2:C/[^:]*://}
 .else
 _RUN_DEP2=
 _RUN_DEP=
