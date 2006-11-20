@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.821 2006/11/20 10:38:31 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.822 2006/11/20 10:49:22 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -75,13 +75,13 @@ BULK_TARGETS?=
 BULK_DO?=
 FORCE_UPDATE?=No
 # All variables relevant to the port's description
-_ALL_VARIABLES?=HOMEPAGE DISTNAME LIB_DEPENDS \
+_ALL_VARIABLES?=HOMEPAGE DISTNAME \
 BUILD_DEPENDS RUN_DEPENDS REGRESS_DEPENDS USE_GMAKE MODULES FLAVORS \
 NO_BUILD NO_REGRESS SHARED_ONLY ONLY_FOR_ARCHS IS_INTERACTIVE \
 BROKEN MULTI_PACKAGES PSEUDO_FLAVORS CATEGORIES \
 REGRESS_IS_INTERACTIVE DISTFILES DIST_SUBDIR \
 PERMIT_DISTFILES_CDROM PERMIT_DISTFILES_FTP \
-CONFIGURE_STYLE USE_LIBTOOL SEPARATE_BUILD WANTLIB \
+CONFIGURE_STYLE USE_LIBTOOL SEPARATE_BUILD \
 SHARED_LIBS USE_MOTIF PACKAGES MASTER_SITES \
 MASTER_SITES0 MASTER_SITES1 MASTER_SITES2 MASTER_SITES3 MASTER_SITES4 \
 MASTER_SITES5 MASTER_SITES6 MASTER_SITES7 MASTER_SITES8 MASTER_SITES9 \
@@ -89,7 +89,7 @@ MAINTAINER SUBPACKAGE PACKAGING DESCR SUPDISTFILES \
 AUTOCONF_VERSION AUTOMAKE_VERSION CONFIGURE_ARGS
 # and stuff needing to be MULTI_PACKAGE'd
 _ALL_VARIABLES_INDEXED?=COMMENT FULLPKGNAME PKGNAME PKG_ARCH \
-PERMIT_PACKAGE_FTP PERMIT_PACKAGE_CDROM RUN_DEPENDS
+PERMIT_PACKAGE_FTP PERMIT_PACKAGE_CDROM RUN_DEPENDS LIB_DEPENDS WANTLIB
 
 # special purpose user settings
 PATCH_CHECK_ONLY?=No
@@ -1089,13 +1089,20 @@ _FULL_PACKAGE_NAME?=No
 
 _BUILDLIB_DEPENDS=	${LIB_DEPENDS}
 _BUILDWANTLIB=		${WANTLIB}
+# strip inter-multi-packages dependencies during building
+.for _path in ${PKGPATH:S,^mystuff/,,}
+.  for _s in ${MULTI_PACKAGES}
+_BUILDLIB_DEPENDS+=	${LIB_DEPENDS${_s}:N*\:${_path}:N*\:${_path},*}
+_BUILDWANTLIB+=		${WANTLIB${_s}}
+.  endfor
+.endfor
 
 .if ${NO_DEPENDS:L} == "no"
 _BUILD_DEPLIST=		${BUILD_DEPENDS:S/^://}
 _RUN_DEPLIST=		${RUN_DEPENDS${SUBPACKAGE}:S/^://}
 _REGRESS_DEPLIST=	${REGRESS_DEPENDS:S/^://}
 _BUILDLIB_DEPLIST=	${_BUILDLIB_DEPENDS:C/^[^:]*://}
-_RUNLIB_DEPLIST=	${LIB_DEPENDS:C/^[^:]*://}
+_RUNLIB_DEPLIST=	${LIB_DEPENDS${SUBPACKAGE}:C/^[^:]*://}
 .endif
 _DEPLIST=			${_BUILD_DEPLIST} ${_RUN_DEPLIST} ${_REGRESS_DEPLIST} ${_BUILDLIB_DEPLIST} ${_RUNLIB_DEPLIST}
 
@@ -1151,9 +1158,9 @@ _RUN_DEP3=	 	${RUN_DEPENDS${SUBPACKAGE}:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
 _REGRESS_DEP2=	${REGRESS_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
 
 .if ${NO_SHARED_LIBS:L} != "yes"
-_RUN_DEP2+= 	${LIB_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
-_LIB_DEP3=		${LIB_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
-_DEPRUNLIBS=	${LIB_DEPENDS:C/:.*//:S/,/ /g}
+_RUN_DEP2+= 	${LIB_DEPENDS${SUBPACKAGE}:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_LIB_DEP3=		${LIB_DEPENDS${SUBPACKAGE}:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_DEPRUNLIBS=	${LIB_DEPENDS${SUBPACKAGE}:C/:.*//:S/,/ /g}
 .else
 _DEPRUNLIBS=
 .endif
@@ -1162,7 +1169,7 @@ _BUILD_DEP2+= 	${_BUILDLIB_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
 _DEPBUILDLIBS=	${_BUILDLIB_DEPENDS:C/:.*//:S/,/ /g}
 
 _DEPBUILDLIBS+=	${_BUILDWANTLIB}
-_DEPRUNLIBS+=	${WANTLIB}
+_DEPRUNLIBS+=	${WANTLIB${SUBPACKAGE}}
 
 .if ${NO_DEPENDS:L} == "no"
 .  for i in ${_DEPBUILDLIBS:C,[|:/<=>*],-,g}
@@ -2462,7 +2469,7 @@ _print-package-args:
 	}
 .endfor
 .if ${NO_SHARED_LIBS:L} != "yes"
-.  for _i in ${LIB_DEPENDS}
+.  for _i in ${LIB_DEPENDS${SUBPACKAGE}}
 	@echo '${_i}'|{ \
 		IFS=:; read dep pkg subdir target; \
 		${_flavor_fragment}; \
@@ -2491,7 +2498,7 @@ _print-package-args:
 		echo "-P $$subdir:$$pkg:$$default"; \
 	}
 .  endfor
-.  for _i in ${WANTLIB}
+.  for _i in ${WANTLIB${SUBPACKAGE}}
 	@d='${_i}'; listlibs='echo $$shdir/lib*'; \
 	${_syslibresolve_fragment}; \
 	case "$$check" in \
@@ -2541,7 +2548,7 @@ _print-package-signature-run:
 
 _print-package-signature-lib:
 	@echo $$LIST_LIBS| LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} perl ${PORTSDIR}/infrastructure/build/resolve-lib ${_DEPRUNLIBS:S/>/\>/g}
-.for _i in ${LIB_DEPENDS}
+.for _i in ${LIB_DEPENDS${SUBPACKAGE}}
 	@echo '${_i}' |{ \
 		IFS=:; read dep pkg subdir target; \
 		${_flavor_fragment}; \
