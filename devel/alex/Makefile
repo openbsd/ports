@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2005/02/14 02:17:34 dons Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/20 13:07:19 espie Exp $
 
 COMMENT=	"lexical analyser generator for Haskell"
 
@@ -29,7 +29,7 @@ MAKE_ENV=	SGML_CATALOG_FILES=${LOCALBASE}/share/sgml/catalog
 DOC_DIR=	${PREFIX}/share/doc/alex
 
 post-build:
-	@(cd ${WRKSRC}/alex/doc ; ${MAKE_ENV} ${GMAKE} html)
+	@cd ${WRKSRC}/alex/doc ; ${MAKE_ENV} ${GMAKE} html
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOC_DIR}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2006/10/29 10:37:59 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.71 2006/11/20 13:07:19 espie Exp $
 
 COMMENT=	"Open source LDAP software (client)"
 COMMENT-server=	"Open source LDAP software (server)"
@@ -91,7 +91,7 @@ CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" \
 			LIBS="${LIBS}"
 
 .if ${SUBPACKAGE} == "-server"
-RUN_DEPENDS=	openldap:${FULLPKGNAME}:databases/openldap
+RUN_DEPENDS=	:${FULLPKGNAME}:databases/openldap
 WANTLIB+=	perl util wrap m pthread
 .endif
 

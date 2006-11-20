@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/11/11 18:36:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2006/11/20 13:07:20 espie Exp $
 
 COMMENT=	"perl scripts for migrating system information to LDAP"
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	openldap:openldap-client-*:databases/openldap
+RUN_DEPENDS=	:openldap-client-*:databases/openldap
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

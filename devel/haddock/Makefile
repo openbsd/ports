@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/11/23 11:22:02 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/11/20 13:07:19 espie Exp $
 
 COMMENT=	"documentation tool for the functional language Haskell"
 
@@ -31,11 +31,11 @@ MAKE_ENV=	SGML_CATALOG_FILES=${LOCALBASE}/share/sgml/catalog
 DOC_DIR=	${PREFIX}/share/doc/haddock
 
 post-build:
-	@(cd ${WRKSRC}/haddock/doc ; ${MAKE_ENV} ${GMAKE} html)
+	@cd ${WRKSRC}/haddock/doc ; ${MAKE_ENV} ${GMAKE} html
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOC_DIR}
-	@(cp -R ${WRKSRC}/haddock/doc/haddock/* ${DOC_DIR})
+	@cp -R ${WRKSRC}/haddock/doc/haddock/* ${DOC_DIR}
 
 # BSD style w/o advertising clause
 PERMIT_PACKAGE_CDROM=   Yes

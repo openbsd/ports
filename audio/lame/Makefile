@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2006/11/11 21:04:27 steven Exp $
+# $OpenBSD: Makefile,v 1.31 2006/11/20 13:07:19 espie Exp $
 
 COMMENT=	"lame ain't an MP3 encoder"
 
@@ -34,7 +34,7 @@ USE_LIBTOOL=	Yes
 
 # XXX gcc3/nasm issue
 .if (${MACHINE_ARCH} == "i386") && (${CC} != "egcc")
-BUILD_DEPENDS=	nasm::devel/nasm
+BUILD_DEPENDS=	::devel/nasm
 CONFIGURE_ARGS+= --enable-nasm
 .else
 CONFIGURE_ARGS+= --disable-nasm

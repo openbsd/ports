@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2006/11/14 10:22:12 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/20 13:07:20 espie Exp $
 
 COMMENT= 	"MVC Web Application Framework"
 
 MODULES=	cpan
 DISTNAME=	Catalyst-Runtime-5.7005
-PKGNAME=	p5-${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}p1
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.catalystframework.org/
@@ -30,7 +30,7 @@ RUN_DEPENDS=	::devel/p5-Class-Accessor \
 		::www/p5-CGI-Simple \
 		::www/p5-HTTP-Body \
 		::www/p5-HTTP-Request-AsCGI \
-		p5-libwww->=5.805::www/p5-libwww
+		:p5-libwww->=5.805:www/p5-libwww
 
 MAKE_ENV=	TEST_POD=Yes
 

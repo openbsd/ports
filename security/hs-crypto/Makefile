@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/08/10 08:23:37 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/20 13:07:20 espie Exp $
 
 COMMENT=	"Haskell cryptographic library"
 CATEGORIES=	security
@@ -20,7 +20,7 @@ MAKE_ENV+=	"WRKDIST=${WRKDIST}"
 ALL_TARGET=
 
 do-regress:
-	@(cd ${WRKDIST} ; /bin/sh test.sh)
+	@cd ${WRKDIST} ; /bin/sh test.sh
 
 # 3 different licenses from 3 authors: BSD, GPL, BSD-ish
 PERMIT_PACKAGE_CDROM=	Yes

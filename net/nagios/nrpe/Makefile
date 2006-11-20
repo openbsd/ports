@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/07/20 05:00:24 david Exp $
+# $OpenBSD: Makefile,v 1.5 2006/11/20 13:07:20 espie Exp $
 
 COMMENT=	"Nagios Remote Plugin Executor"
 
@@ -17,7 +17,7 @@ WANTLIB=		c crypto ssl wrap
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nagios/}
 
-RUN_DEPENDS=	nagios-plugins::net/nagios/plugins
+RUN_DEPENDS=	::net/nagios/plugins
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+=--enable-command-args

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/10/28 11:19:20 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/11/20 13:07:19 espie Exp $
 
 COMMENT=	"provides scheme wrappers"
 DISTNAME=	g-wrap-1.3.4
@@ -25,7 +25,7 @@ WANTLIB=		m
 
 LIB_DEPENDS=		guile.>=9,guile-ltdl.>=1::lang/guile \
 			glib.>=1.2::devel/glib
-BUILD_DEPENDS=		slib::devel/slib
+BUILD_DEPENDS=		::devel/slib
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

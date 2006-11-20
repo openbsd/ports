@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2005/10/24 03:14:57 dons Exp $
+# $OpenBSD: Makefile,v 1.5 2006/11/20 13:07:19 espie Exp $
 
 COMMENT=	"liberalised reimplementation of cpp in Haskell"
 
@@ -23,14 +23,14 @@ HC_OPTS=	-package base
 WANTLIB=	c gmp m
 
 do-build:
-	( cd ${WRKSRC} && ${HC} ${HC_OPTS} cpphs )
+	cd ${WRKSRC} && ${HC} ${HC_OPTS} cpphs
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cpphs        ${PREFIX}/bin
 	${INSTALL_MAN}     ${WRKSRC}/docs/cpphs.1 ${PREFIX}/man/man1
 
 do-regress:
-	( cd ${WRKSRC}/tests && ./runtests )
+	cd ${WRKSRC}/tests && ./runtests
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2005/02/20 00:38:49 dons Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/20 13:07:19 espie Exp $
 
 COMMENT=		"minimalist documentation tool for Haskell"
 
@@ -13,7 +13,7 @@ MASTER_SITES=		${HOMEPAGE}
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
 MODULES=		lang/ghc
 .else
-BUILD_DEPENDS+=		bin/nhc98::lang/nhc98
+BUILD_DEPENDS+=		::lang/nhc98
 MAKE_FLAGS=		HC=nhc98
 .endif
 
@@ -26,7 +26,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/idoc/
 
 do-regress:
-	(cd ${WRKSRC}/test && ../idoc Foo.hs && /usr/bin/lynx --dump Foo.html)
+	cd ${WRKSRC}/test && ../idoc Foo.hs && /usr/bin/lynx --dump Foo.html
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

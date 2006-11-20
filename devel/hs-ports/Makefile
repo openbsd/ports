@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2005/03/26 03:37:09 dons Exp $
+# $OpenBSD: Makefile,v 1.5 2006/11/20 13:07:19 espie Exp $
 # $FreeBSD: ports/devel/hs-hpl/Makefile,v 1.11 2004/03/11 07:48:11 obraun Exp $
 
 # only for archs to which the GHC ffi has been ported
@@ -23,7 +23,7 @@ CONFIGURE_ARGS+=--prefix=${PREFIX}
 SUBST_VARS+=	V	
 
 do-regress:
-	@( cd ${WRKDIST}/tests && sh test.sh )
+	@cd ${WRKDIST}/tests && sh test.sh
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

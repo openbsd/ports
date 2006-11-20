@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/02/08 04:54:49 david Exp $
+# $OpenBSD: Makefile,v 1.4 2006/11/20 13:07:20 espie Exp $
 
 COMMENT=		"Jabber client with whiteboard communication" 
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=coccinella/}	
 
-RUN_DEPENDS=		wish8.4::x11/tk/8.4
+RUN_DEPENDS=		::x11/tk/8.4
 
 USE_X11=		Yes
 NO_BUILD=		Yes

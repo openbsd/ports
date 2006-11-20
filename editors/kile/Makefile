@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/10/15 19:20:20 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2006/11/20 13:07:19 espie Exp $
 
 COMMENT=	"integrated LaTeX environment for KDE"
 DISTNAME=	kile-1.9.2
@@ -23,8 +23,8 @@ WANTLIB=	X11 Xext Xrender ICE SM c m pthread stdc++ util z \
 
 LIB_DEPENDS=	DCOP,kabc,katepartinterfaces.>=1,kdecore.>=4,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kparts,kresources,kspell.>=7,ktexteditor.>=1,kutils,kwalletclient,vcard::x11/kde/libs3
 	
-RUN_DEPENDS=	kdvi,kpdf::x11/kde/graphics3 \
-		latex::print/teTeX/base
+RUN_DEPENDS=	::x11/kde/graphics3 \
+		::print/teTeX/base
 
 MODULES=	x11/kde devel/gettext
 

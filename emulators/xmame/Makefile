@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2006/08/18 17:09:23 kurt Exp $
+# $OpenBSD: Makefile,v 1.26 2006/11/20 13:07:20 espie Exp $
 
 COMMENT=	"emulates arcade machines and old home computers"
 COMMENT-mame=	"emulates a massive variety of arcade machines"
@@ -87,7 +87,7 @@ MAKE_FLAGS+=	SOUND_ESOUND=1
 
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
 . if ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS+=	nasm::devel/nasm
+BUILD_DEPENDS+=	::devel/nasm
 MAKE_FLAGS+=	X86_ASM_68000=1 \
 		EFFECT_MMX_ASM=1
 . endif
