@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.32 2006/08/03 10:53:36 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/20 16:23:22 espie Exp $
+@pkgpath x11/kde/graphics3
 bin/kcolorchooser
 bin/kcoloredit
 bin/kdvi

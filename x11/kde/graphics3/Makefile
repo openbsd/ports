@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.65 2006/11/20 08:07:41 steven Exp $
+# $OpenBSD: Makefile,v 1.66 2006/11/20 16:23:22 espie Exp $
 
-COMMENT=		"K Desktop Environment, graphic applications"
+COMMENT-main=		"K Desktop Environment, graphic applications"
 COMMENT-kamera=		"KDE interface to digital cameras"
 COMMENT-kpov=		"KDE modeller for povray"
 COMMENT-sane=		"KDE interface to scanners"
@@ -11,11 +11,14 @@ MODKDE_VERSION=		3.5.3
 
 FLAVORS=debug
 SEPARATE_BUILD=flavored
-MULTI_PACKAGES=-kpov -kamera -sane
+MULTI_PACKAGES=-main -kpov -kamera -sane
 PKGNAME=${DISTNAME}
-PKGNAME-kamera=kamera-${VERSION}
-PKGNAME-kpov=kpovmodeller-${VERSION}
-PKGNAME-sane=ksane-${VERSION}
+
+PKGNAME-main=	${DISTNAME}p0
+PKGNAME-kamera=	kamera-${VERSION}
+PKGNAME-kpov=	kpovmodeller-${VERSION}
+PKGNAME-sane=	ksane-${VERSION}p0
+
 SHARED_LIBS +=	kghostviewlib        1.0      # .0.0
 SHARED_LIBS +=	kpovmodeler          1.0      # .0.0
 SHARED_LIBS +=	text2path            1.0      # .0.0
@@ -23,47 +26,42 @@ SHARED_LIBS +=	ksvg                 1.0      # .0.1
 SHARED_LIBS +=	kimageviewer         1.0      # .0.0
 SHARED_LIBS +=	kmultipage           1.0      # .0.0
 SHARED_LIBS +=	kscan                2.0      # .1.0
-SUBPACKAGE?=
 
-BUILD_DEPENDS+=	::print/teTeX/base \
-		:pkgconfig-*:devel/pkgconfig
+BUILD_DEPENDS=		::print/teTeX/base \
+			:pkgconfig-*:devel/pkgconfig
+LIB_DEPENDS=		kdecore.>=6,DCOP,kio,kwalletclient,kdefx,kdeui,kdesu::x11/kde/libs3
+WANTLIB=		X11 art_lgpl_2 pthread ICE png util jpeg z SM Xext \
+			m idn iconv
 
 
-WANTLIB+=	X11 art_lgpl_2 pthread ICE png util jpeg z SM Xext m idn
+RUN_DEPENDS-main=	:ghostscript-*:print/ghostscript/gnu
+LIB_DEPENDS-main= 	${LIB_DEPENDS} \
+			kdeprint,khtml,kjs,kparts,kutils::x11/kde/libs3 \
+			Imlib::graphics/imlib \
+			ungif::graphics/libungif \
+			Iex,Half,Imath,IlmImf::graphics/openexr \
+			fribidi::devel/fribidi
+WANTLIB-main=		${WANTLIB} \
+			tiff fontconfig lcms Xrender ICE c \
+			freetype stdc++ pcreposix pcre Xxf86vm SM Xext Xft
 
-LIB_DEPENDS+=	
-	
 
-.if !defined(PACKAGING) || ${SUBPACKAGE:L} == ""
-RUN_DEPENDS+=	:ghostscript-*:print/ghostscript/gnu
-LIB_DEPENDS+= \
-	kdecore.>=6,DCOP,kdefx,kdeprint,kdesu,kdeui,khtml,kjs,kio,kparts,kutils,kwalletclient::x11/kde/libs3
-LIB_DEPENDS+=	Imlib::graphics/imlib \
-		ungif::graphics/libungif \
-		Iex,Half,Imath,IlmImf::graphics/openexr \
-		fribidi::devel/fribidi
+LIB_DEPENDS-kpov=	${LIB_DEPENDS} \
+			kparts::x11/kde/libs3
+RUN_DEPENDS-kpov=	::graphics/povray
+WANTLIB-kpov=		${WANTLIB} GL stdc++ freetype Xrender Xmu GLU c Xi 
 
-WANTLIB+=	tiff fontconfig lcms Xrender ICE c iconv \
-		freetype stdc++ pcreposix pcre Xxf86vm SM Xext Xft
-.endif
 
-.if !defined(PACKAGING) || ${SUBPACKAGE:L} == "-kpov"
-LIB_DEPENDS+= kwalletclient,DCOP,kdecore.>=6,kio,kparts,kdeui,kdefx,kdesu::x11/kde/libs3
-RUN_DEPENDS+=	::graphics/povray
-WANTLIB+=	GL stdc++ freetype Xrender Xmu GLU c Xi iconv
-.endif
+LIB_DEPENDS-kamera= 	${LIB_DEPENDS} \
+			gphoto2,gphoto2_port::graphics/libgphoto2
+WANTLIB-kamera=		${WANTLIB} exif Xrender intl
 
-.if !defined(PACKAGING) || ${SUBPACKAGE:L} == "-kamera"
-LIB_DEPENDS+= kwalletclient,DCOP,kdecore.>=6,kio,kdeui,kdefx,kdesu::x11/kde/libs3
-LIB_DEPENDS+=	gphoto2,gphoto2_port::graphics/libgphoto2
-WANTLIB+=	iconv exif Xrender intl 
-.endif
 
-.if !defined(PACKAGING) || ${SUBPACKAGE:L} == "-sane"
-LIB_DEPENDS+= kwalletclient,ktexteditor,DCOP,vcard,kabc,kparts,kdeui,kdesu,kdecore.>=6,kio,kresources,kdefx,kspell,kdeprint::x11/kde/libs3
-LIB_DEPENDS+=	sane::graphics/sane-backends
-WANTLIB+=	usb tiff stdc++ c Xrender gphoto2 intl iconv gphoto2_port exif
-.endif
+LIB_DEPENDS-sane= 	${LIB_DEPENDS-kamera} \
+			ktexteditor,vcard,kabc,kparts,kresources,kspell,kdeprint::x11/kde/libs3 \
+			sane::graphics/sane-backends
+WANTLIB-sane=		${WANTLIB-kamera} usb tiff stdc++ c
+
 
 CONFIGURE_ENV+=	\
 	PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig"
@@ -76,9 +74,9 @@ SUP_PATCH_LIST=	gcc-*
 .endif
 
 USE_X11=	Yes
-USE_LIBTOOL=Yes
-LIBTOOL_FLAGS=--tag=disable-static
-CONFIGURE_ENV+=TIFF_LIBS='-L${LOCALBASE}/lib -ltiff -ljpeg -lz' \
+USE_LIBTOOL=	Yes
+LIBTOOL_FLAGS=	--tag=disable-static
+CONFIGURE_ENV+=	TIFF_LIBS='-L${LOCALBASE}/lib -ltiff -ljpeg -lz' \
 		TIFF_CFLAGS='-I${LOCALBASE}/include'
 
 .include <bsd.port.mk>
