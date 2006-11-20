@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/11/11 17:17:43 sturm Exp $
+# $OpenBSD: Makefile,v 1.14 2006/11/20 21:18:15 bernd Exp $
 
 COMMENT=	"nagios base plugins"
 COMMENT-fping=	"fping plugin"
@@ -37,8 +37,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nagiosplug/}
 
-BUILD_DEPENDS=	qstat::games/qstat \
-		fping::net/fping
+BUILD_DEPENDS=	::games/qstat \
+		::net/fping
 
 FAKE_FLAGS=	setuid_root_mode=0555
 
@@ -74,26 +74,26 @@ CONFIGURE_ARGS+=--without-mysql --without-pgsql
 
 .if ! ${FLAVOR:L:Mno_ntp}
 MULTI_PACKAGES+=-ntp
-BUILD_DEPENDS+=	ntpdate::net/ntp
+BUILD_DEPENDS+=	::net/ntp
 .endif
 
 .if ! ${FLAVOR:L:Mno_samba}
 MULTI_PACKAGES+=-samba
-BUILD_DEPENDS+=	smbclient::net/samba
+BUILD_DEPENDS+=	::net/samba
 .endif
 
 .if ! ${FLAVOR:L:Mno_snmp}
 MULTI_PACKAGES+=-snmp
 BUILD_DEPENDS+=	::net/p5-Net-SNMP \
-		snmpget::net/net-snmp
+		::net/net-snmp
 .endif
 
 .if defined(PACKAGING)
 WANTLIB=	c crypto ssl
 .  if ${SUBPACKAGE} == "-fping"
-RUN_DEPENDS=	fping::net/fping
+RUN_DEPENDS=	::net/fping
 .  elif ${SUBPACKAGE} == "-game"
-RUN_DEPENDS=	qstat::games/qstat
+RUN_DEPENDS=	::games/qstat
 .  elif ${SUBPACKAGE} == "-ldap"
 WANTLIB+=	sasl2 asn1 com_err gssapi krb5
 LIB_DEPENDS=	lber,ldap:openldap-client-*:databases/openldap
@@ -102,15 +102,15 @@ WANTLIB+=	m z
 LIB_DEPENDS=	mysqlclient:mysql-client-*:databases/mysql
 .  elif ${SUBPACKAGE} == "-ntp"
 WANTLIB+=	m
-RUN_DEPENDS=	ntpdate::net/ntp
+RUN_DEPENDS=	::net/ntp
 .  elif ${SUBPACKAGE} == "-pgsql"
 WANTLIB+=	crypto
 LIB_DEPENDS=	pq:postgresql-client-*:databases/postgresql
 .  elif ${SUBPACKAGE} == "-samba"
 WANTLIB=
-RUN_DEPENDS=	smbclient::net/samba
+RUN_DEPENDS=	::net/samba
 .  elif ${SUBPACKAGE} == "-snmp"
-RUN_DEPENDS=	snmpget::net/net-snmp \
+RUN_DEPENDS=	::net/net-snmp \
 		::net/p5-Net-SNMP
 .  else
 WANTLIB+=	m

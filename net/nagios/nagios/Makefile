@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2006/11/13 16:31:07 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2006/11/20 21:18:15 bernd Exp $
 
 COMMENT=	"host and service monitor"
 COMMENT-web=	"cgis and webpages for nagios"
@@ -61,11 +61,11 @@ PREFIX=		/var/www
 .    if ${FLAVOR:L:Mchroot}
 WANTLIB=
 LIB_DEPENDS=
-RUN_DEPENDS=	nagios:nagios-${V}-chroot:net/nagios/nagios,chroot
+RUN_DEPENDS=	:nagios-${V}-chroot:net/nagios/nagios,chroot
 .    else
 WANTLIB+=	fontconfig freetype jpeg png z
 LIB_DEPENDS=	gd::graphics/gd
-RUN_DEPENDS=	nagios:nagios-${V}-!chroot:net/nagios/nagios
+RUN_DEPENDS=	:nagios-${V}-!chroot:net/nagios/nagios
 .    endif
 .  else
 WANTLIB+=	pthread
