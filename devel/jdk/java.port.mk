@@ -1,4 +1,4 @@
-# $OpenBSD: java.port.mk,v 1.8 2006/11/01 20:34:24 kurt Exp $
+# $OpenBSD: java.port.mk,v 1.9 2006/11/20 19:28:18 espie Exp $
 
 # Set MODJAVA_VER to x.y or x.y+ based on the version
 # of the jdk needed for the port. x.y  means any x.y jdk.
@@ -32,9 +32,9 @@ MODJAVA_JRERUN?=no
      BUILD_DEPENDS+= :jdk-1.5.0:devel/jdk/1.5
 .  endif
 .  if ${MODJAVA_JRERUN:L} == "yes"
-     RUN_DEPENDS+= :jdk->=1.5.0|jre->=1.5.0|kaffe-*|jamvm-*:devel/jdk/1.5
+     MODJAVA_RUN_DEPENDS= :jdk->=1.5.0|jre->=1.5.0|kaffe-*|jamvm-*:devel/jdk/1.5
 .  else
-     RUN_DEPENDS+= :jdk->=1.5.0|kaffe-*:devel/jdk/1.5
+     MODJAVA_RUN_DEPENDS= :jdk->=1.5.0|kaffe-*:devel/jdk/1.5
 .  endif
 .elif ${MODJAVA_VER:S/+//} == "1.3"
    ONLY_FOR_ARCHS?= arm i386 powerpc sparc
@@ -56,9 +56,9 @@ MODJAVA_JRERUN?=no
 .    endif
 .  endif
 .  if ${MACHINE_ARCH} == "i386"
-     RUN_DEPENDS+= :${_MODJAVA_RUNDEP}|jdk-linux-1.3.1*:devel/jdk/1.3
+     MODJAVA_RUN_DEPENDS= :${_MODJAVA_RUNDEP}|jdk-linux-1.3.1*:devel/jdk/1.3
 .  else
-     RUN_DEPENDS+= :${_MODJAVA_RUNDEP}:devel/jdk/1.3
+     MODJAVA_RUN_DEPENDS= :${_MODJAVA_RUNDEP}:devel/jdk/1.3
 .  endif
 .elif ${MODJAVA_VER:S/+//} == "1.4"
    ONLY_FOR_ARCHS?= i386
@@ -68,15 +68,15 @@ MODJAVA_JRERUN?=no
 .  endif
 .  if ${MODJAVA_JRERUN:L} == "yes"
 .    if ${MODJAVA_VER} == "1.4+"
-       RUN_DEPENDS+= :jdk->=1.4.2p9|jre->=1.4.2p9|kaffe-*|jamvm-*:devel/jdk/1.4
+       MODJAVA_RUN_DEPENDS= :jdk->=1.4.2p9|jre->=1.4.2p9|kaffe-*|jamvm-*:devel/jdk/1.4
 .    else
-       RUN_DEPENDS+= :jdk->=1.4.2p9,<1.5|jre->=1.4.2p9,<1.5|kaffe-*|jamvm-*:devel/jdk/1.4
+       MODJAVA_RUN_DEPENDS= :jdk->=1.4.2p9,<1.5|jre->=1.4.2p9,<1.5|kaffe-*|jamvm-*:devel/jdk/1.4
 .    endif
 .  else
 .    if ${MODJAVA_VER} == "1.4+"
-       RUN_DEPENDS+= :jdk->=1.4.2p9|kaffe-*:devel/jdk/1.4
+       MODJAVA_RUN_DEPENDS= :jdk->=1.4.2p9|kaffe-*:devel/jdk/1.4
 .    else
-       RUN_DEPENDS+= :jdk->=1.4.2p9,<1.5|kaffe-*:devel/jdk/1.4
+       MODJAVA_RUN_DEPENDS= :jdk->=1.4.2p9,<1.5|kaffe-*:devel/jdk/1.4
 .    endif
 .  endif
 .elif ${MODJAVA_VER:S/+//} == "1.5"
@@ -91,10 +91,12 @@ MODJAVA_JRERUN?=no
      _MODJAVA_RUNDEP= jdk-1.5.0
 .  endif
 .  if ${MODJAVA_VER} == "1.5+"
-     RUN_DEPENDS+= :${_MODJAVA_RUNDEP:S/-/->=/g}:devel/jdk/1.5
+     MODJAVA_RUN_DEPENDS= :${_MODJAVA_RUNDEP:S/-/->=/g}:devel/jdk/1.5
 .  else
-     RUN_DEPENDS+= :${_MODJAVA_RUNDEP}:devel/jdk/1.5
+     MODJAVA_RUN_DEPENDS= :${_MODJAVA_RUNDEP}:devel/jdk/1.5
 .  endif
 .else
    ERRORS+="Fatal: MODJAVA_VER must be set to a valid value."
 .endif
+
+RUN_DEPENDS+= ${MODJAVA_RUN_DEPENDS}
