@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.6 2006/10/17 01:58:41 jolan Exp $
---- src/Makefile.in.orig	Sat Oct 14 12:48:40 2006
-+++ src/Makefile.in	Mon Oct 16 20:48:01 2006
-@@ -246,7 +246,7 @@ target_cpu = @target_cpu@
+$OpenBSD: patch-src_Makefile_in,v 1.7 2006/11/20 03:15:36 jolan Exp $
+--- src/Makefile.in.orig	Sun Nov 19 11:45:21 2006
++++ src/Makefile.in	Sun Nov 19 21:12:41 2006
+@@ -248,7 +248,7 @@ target_cpu = @target_cpu@
  target_os = @target_os@
  target_vendor = @target_vendor@
  SUBDIRS = SDL POSIX MAC
