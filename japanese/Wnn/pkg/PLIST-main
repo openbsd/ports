@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.16 2006/08/04 19:57:32 sturm Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/20 13:50:58 espie Exp $
 @newuser _wnn:517:bin::Wnn server:/nonexistent:/sbin/nologin
+@pkgpath japanese/Wnn
 bin/atod
 bin/atof
 bin/dtoa

@@ -1,9 +1,9 @@
 # From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.50 2006/08/04 19:57:32 sturm Exp $
+# $OpenBSD: Makefile,v 1.51 2006/11/20 13:50:58 espie Exp $
 
-COMMENT= 	"Japanese input method"
+COMMENT-main= 	"Japanese input method"
 COMMENT-dict=	"dictionaries for Japanese Wnn"
 COMMENT-ko= 	"Korean input method"
 COMMENT-kodict= "dictionaries for Korean Wnn"
@@ -14,12 +14,14 @@ COMMENT-xwnmo=	"X11 input method for Wnn"
 
 DISTNAME=	Wnn4.2
 
+CATEGORIES=	japanese
+
 # If you are building this manually, you can override MULTI_PACKAGES
 # on the command line, and thus avoid building all three languages
 
-MULTI_PACKAGES=-dict -zh -zhdict -ko -kodict -xwnmo -data
+MULTI_PACKAGES=-main -dict -zh -zhdict -ko -kodict -xwnmo -data
 
-PKGNAME=	ja-Wnn-4.2p2
+PKGNAME-main=	ja-Wnn-4.2p3
 PKGNAME-dict=	ja-Wnndict-4.2p0
 PKGNAME-zh=	zh-Wnn-4.2p0
 PKGNAME-zhdict=	zh-Wnndict-4.2p0
@@ -33,38 +35,24 @@ WNNDICDIR=${WNNDICBASE}/dict/Wnn
 WNNBASE=${LOCALBASE}
 SUBST_VARS=WNNBASE
 
-.if defined(PACKAGING)
-SUBPACKAGE?=
-.  if ${SUBPACKAGE} == "-dict"
-CATEGORIES=	japanese
-PREFIX=${WNNDICBASE}
-.  elif ${SUBPACKAGE} == "-zh"
-CATEGORIES=	chinese
-WANTLIB=	c curses
-.  elif ${SUBPACKAGE} == "-zhdict"
-CATEGORIES=	chinese
-PREFIX=${WNNDICBASE}
-.  elif ${SUBPACKAGE} == "-ko"
-CATEGORIES=	korean
-WANTLIB=	c curses
-.  elif ${SUBPACKAGE} == "-kodict"
-CATEGORIES=	korean
-PREFIX=${WNNDICBASE}
-.  elif ${SUBPACKAGE} == "-xwnmo"
-CATEGORIES=	japanese chinese korean
-WANTLIB=	c Xt SM Xmu X11 Xext ICE
-.  elif ${SUBPACKAGE} == "-data"
-CATEGORIES=	japanese chinese korean
-.  else
-WANTLIB=	c curses
-CATEGORIES=	japanese
-.  endif
-.  if ${SUBPACKAGE} != "-data"
-RUN_DEPENDS=	::japanese/Wnn,-data
-.  endif
-.else
-CATEGORIES=	japanese
-.endif
+CATEGORIES-zh=		chinese
+CATEGORIES-zhdict=	chinese
+CATEGORIES-ko=		korean
+CATEGORIES-kodict=	korean
+CATEGORIES-data=	japanese chinese korean
+CATEGORIES-wnmo=	japanese chinese korean
+
+PREFIX-dict=		${WNNDICBASE}
+PREFIX-zhdict=		${WNNDICBASE}
+PREFIX-kodict=		${WNNDICBASE}
+
+WANTLIB-main=		c curses
+WANTLIB-zh=		c curses
+WANTLIB-ko=		c curses
+WANTLIB-xwnmo=		c Xt SM Xmu X11 Xext ICE
+
+RUN_DEPENDS=		::japanese/Wnn,-data
+RUN_DEPENDS-data=	
 
 MASTER_SITES=	ftp://ftp.u-tokyo.ac.jp/pub/Japanese/Wnn/ \
 		ftp://ports.jp.FreeBSD.org/pub/incoming/distfiles/
@@ -120,21 +108,9 @@ do-configure:
 	@echo "  WNNBASEDIR = ${PREFIX}"     >>${CONFIG_FILE}
 	@echo "#define BuildWnn		YES" >>${CONFIG_FILE}
 	@echo "#define BuildJlibV3	YES" >>${CONFIG_FILE}
-.if ${MULTI_PACKAGES:M-zh}
 	@echo "#define BuildCWnn	YES" >>${CONFIG_FILE}
-.else
-	@echo "#define BuildCWnn	NO"  >>${CONFIG_FILE}
-.endif
-.if ${MULTI_PACKAGES:M-ko}
 	@echo "#define BuildKWnn	YES" >>${CONFIG_FILE}
-.else
-	@echo "#define BuildKWnn	NO"  >>${CONFIG_FILE}
-.endif
-.if ${MULTI_PACKAGES:M-xwnmo}
 	@echo "#define BuildXwnmo	YES" >>${CONFIG_FILE}
-.else
-	@echo "#define BuildXwnmo	NO"  >>${CONFIG_FILE}
-.endif
 	@cd ${WRKSRC}/config && ln -sf Project.tmpl X11.tmpl
 
 
@@ -168,5 +144,6 @@ post-install:
 	${INSTALL_DATA} ${WRKDIST}/Wnn/jd/sysV/cvt_key* ${PREFIX}/lib/wnn
 	${INSTALL_DATA} ${WRKDIST}/Wnn/jd/serverdefs ${PREFIX}/lib/wnn
 	${INSTALL_SCRIPT} ${FILESDIR}/install-script ${PREFIX}/lib/wnn
+	chmod u-s ${PREFIX}/bin/*server
 
 .include <bsd.port.mk>
