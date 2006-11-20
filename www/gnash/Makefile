@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/11/20 04:06:41 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2006/11/20 20:37:51 bernd Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	"flash player with firefox browser plugin"
@@ -25,7 +25,7 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_X11=	Yes
 
-BUILD_DEPENDS+=	boost-headers::devel/boost
+BUILD_DEPENDS+=	::devel/boost
 
 LIB_DEPENDS+=	atk-1.0.>=1011::devel/atk \
 		curl.>=4::net/curl \
