@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.8 2006/03/12 23:11:31 robert Exp $
-@lib lib/libuuid++.so.${LIBuuid++_VERSION}
-@lib lib/libuuid.so.${LIBuuid_VERSION}

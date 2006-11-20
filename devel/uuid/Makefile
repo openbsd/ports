@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.19 2006/08/01 23:39:08 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2006/11/20 20:27:34 espie Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"ISO-C API and CLI for generating Universally Unique Identifiers"
+COMMENT-main=	"ISO-C API and CLI for generating Universally Unique Identifiers"
 COMMENT-perl=	"UUID modules for Perl"
 
 VERSION=		1.5.0
 DISTNAME=		uuid-${VERSION}
-FULLPKGNAME=		uuid-${VERSION}
+FULLPKGNAME-main=	uuid-${VERSION}p0
 FULLPKGNAME-perl= 	p5-UUID-${VERSION}
 CATEGORIES=		devel
 SHARED_LIBS=		uuid	13.22 \
@@ -23,18 +23,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c
 
-MULTI_PACKAGES=		-perl
-SUBPACKAGE?=
+MULTI_PACKAGES=		-main -perl
 
-.if ${SUBPACKAGE} == "-perl"
-CATEGORIES=		devel perl5
-WANTLIB=
-.  if defined(PACKAGING)
-LIB_DEPENDS+=		uuid.>=12::devel/uuid
-.  endif
-.endif
+WANTLIB-main=		c
+
+CATEGORIES-perl=	devel perl5
+WANTLIB-perl=
+LIB_DEPENDS-perl=	uuid.>=12::devel/uuid
 
 USE_LIBTOOL=		Yes
 
