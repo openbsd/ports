@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.446 2006/11/18 00:08:10 steven Exp $
+# $OpenBSD: Makefile,v 1.447 2006/11/20 06:51:26 msf Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -347,6 +347,7 @@
      SUBDIR += p5-Params-Validate
      SUBDIR += p5-Parse-RecDescent
      SUBDIR += p5-Path-Class
+     SUBDIR += p5-Perl-Critic
      SUBDIR += p5-PerlIO-eol
      SUBDIR += p5-PerlIO-via-dynamic
      SUBDIR += p5-PerlIO-via-symlink
