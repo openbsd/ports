@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.822 2006/11/20 10:49:22 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.823 2006/11/20 11:11:38 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -586,7 +586,8 @@ PKGNAMES += ${FULLPKGNAME${_s}}
 
 .if defined(MULTI_PACKAGES)
 .  for _s in ${MULTI_PACKAGES}
-.    for _v in PKG_ARCH PERMIT_PACKAGE_FTP PERMIT_PACKAGE_CDROM RUN_DEPENDS
+.    for _v in PKG_ARCH PERMIT_PACKAGE_FTP PERMIT_PACKAGE_CDROM \
+	RUN_DEPENDS WANTLIB LIB_DEPENDS
 ${_v}${_s} ?= ${${_v}}
 .    endfor
 .  endfor
