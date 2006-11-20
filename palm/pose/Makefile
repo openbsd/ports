@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/19 16:24:51 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/20 20:18:38 bernd Exp $
 
 ONLY_FOR_ARCHS=		i386
 COMMENT=		"Palm OS Emulator"
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-BUILD_DEPENDS=		fltk.2::x11/fltk
+BUILD_DEPENDS=		::x11/fltk
 
 MASTER_SITES=		http://www.palmos.com/dev/tools/emulator/sources/
 DISTFILES=		${DISTNAME:L}.tar.gz

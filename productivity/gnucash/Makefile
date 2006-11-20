@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/11/13 12:51:15 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2006/11/20 20:21:22 bernd Exp $
 
 NOT_FOR_ARCHS=	${LP64_ARCHS}
 
@@ -63,10 +63,10 @@ LIB_DEPENDS=	glade.>=4,glade-gnome::devel/libglade,gnome \
 		lib/db4/db.=4:db-4.*:databases/db/v4 \
 		gwrap-glib,gwrap-wct::devel/g-wrap \
 		gtkhtml-1.1.>=3.5::www/gtkhtml
-BUILD_DEPENDS=	swig::devel/swig \
-		gnome-print::x11/gnome/print \
-		guppi::graphics/Guppi \
-		db::databases/db/v4 \
+BUILD_DEPENDS=	::devel/swig \
+		::x11/gnome/print \
+		::graphics/Guppi \
+		::databases/db/v4 \
 		::devel/slib-guile \
 		::devel/libtool \
 		::lang/guile \
