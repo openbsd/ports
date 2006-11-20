@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.824 2006/11/20 11:15:39 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.825 2006/11/20 12:04:40 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -466,7 +466,7 @@ ${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE} ${_FAKE_COOKIE} \
 ${_WRKDIR_COOKIE} ${_DEPBUILD_COOKIES} \
 ${_DEPRUN_COOKIES} ${_DEPREGRESS_COOKIES} ${_UPDATE_COOKIE} \
 ${_DEPBUILDLIB_COOKIES} ${_DEPRUNLIB_COOKIES} \
-${_DEPBUILDWANTLIB_COOKIE} ${_DEPRUNWANTLIB_COOKIE}${_DEPLIBSPECS_COOKIES}
+${_DEPBUILDWANTLIB_COOKIE} ${_DEPRUNWANTLIB_COOKIE} ${_DEPLIBSPECS_COOKIES}
 
 _MAKE_COOKIE=touch
 
