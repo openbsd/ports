@@ -1,0 +1,54 @@
+$OpenBSD: patch-src_modules_loaders_loader_tiff_c,v 1.1 2006/11/20 09:21:09 bernd Exp $
+
+Fix for CVE-2006-4806, CVE-2006-4807, CVE-2006-4808, CVE-2006-4809.
+Should be fixed in >1.3.0.
+
+--- src/modules/loaders/loader_tiff.c.orig	Tue Sep  5 02:37:07 2006
++++ src/modules/loaders/loader_tiff.c	Mon Nov  6 10:41:32 2006
+@@ -75,11 +75,11 @@ static void
+ raster(TIFFRGBAImage_Extra * img, uint32 * rast,
+        uint32 x, uint32 y, uint32 w, uint32 h)
+ {
+-   uint32              image_width, image_height;
++   int                 image_width, image_height;
+    uint32             *pixel, pixel_value;
+    int                 i, j, dy, rast_offset;
+    DATA32             *buffer_pixel, *buffer = img->image->data;
+-   int                 alpha_premult = (EXTRASAMPLE_UNASSALPHA==img->rgba.alpha);
++   int                 alpha_premult;
+ 
+    image_width = img->image->w;
+    image_height = img->image->h;
+@@ -91,6 +91,8 @@ raster(TIFFRGBAImage_Extra * img, uint32
+    /* I don't understand why, but that seems to be what's going on. */
+    /* libtiff needs better docs! */
+ 
++   if (img->rgba.alpha == EXTRASAMPLE_UNASSALPHA)
++     alpha_premult = 1;
+    for (i = y, rast_offset = 0; i > dy; i--, rast_offset--)
+      {
+         pixel = rast + (rast_offset * image_width);
+@@ -204,6 +206,12 @@ load(ImlibImage * im, ImlibProgressFunct
+    rgba_image.image = im;
+    im->w = width = rgba_image.rgba.width;
+    im->h = height = rgba_image.rgba.height;
++   if ((width < 1) || (height < 1) || (width > 8192) || (height > 8192))
++     {
++	TIFFRGBAImageEnd((TIFFRGBAImage *) & rgba_image);
++        TIFFClose(tif);
++        return 0;
++     }
+    rgba_image.num_pixels = num_pixels = width * height;
+    if (rgba_image.rgba.alpha != EXTRASAMPLE_UNSPECIFIED)
+       SET_FLAG(im->flags, F_HAS_ALPHA);
+@@ -397,8 +405,9 @@ save(ImlibImage * im, ImlibProgressFunct
+ 
+    if (has_alpha)
+      {
++	uint16 extras[] = { EXTRASAMPLE_ASSOCALPHA };
+         TIFFSetField(tif, TIFFTAG_SAMPLESPERPIXEL, 4);
+-        TIFFSetField(tif, TIFFTAG_EXTRASAMPLES, EXTRASAMPLE_ASSOCALPHA);
++	TIFFSetField(tif, TIFFTAG_EXTRASAMPLES, 1, extras);
+      }
+    else
+      {

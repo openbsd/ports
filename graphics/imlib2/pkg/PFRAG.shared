@@ -1,17 +1,18 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2005/12/26 14:35:52 steven Exp $
-lib/imlib2_loaders/filter/bump_map.so
-lib/imlib2_loaders/filter/colormod.so
-lib/imlib2_loaders/filter/testfilter.so
-lib/imlib2_loaders/image/argb.so
-lib/imlib2_loaders/image/bmp.so
-lib/imlib2_loaders/image/bz2.so
-lib/imlib2_loaders/image/gif.so
-lib/imlib2_loaders/image/jpeg.so
-lib/imlib2_loaders/image/lbm.so
-lib/imlib2_loaders/image/png.so
-lib/imlib2_loaders/image/pnm.so
-lib/imlib2_loaders/image/tga.so
-lib/imlib2_loaders/image/tiff.so
-lib/imlib2_loaders/image/xpm.so
-lib/imlib2_loaders/image/zlib.so
+@comment $OpenBSD: PFRAG.shared,v 1.5 2006/11/20 09:21:09 bernd Exp $
+lib/imlib2/filters/bumpmap.so
+lib/imlib2/filters/colormod.so
+lib/imlib2/filters/testfilter.so
+lib/imlib2/loaders/argb.so
+lib/imlib2/loaders/bmp.so
+lib/imlib2/loaders/bz2.so
+lib/imlib2/loaders/gif.so
+lib/imlib2/loaders/id3.so
+lib/imlib2/loaders/jpeg.so
+lib/imlib2/loaders/lbm.so
+lib/imlib2/loaders/png.so
+lib/imlib2/loaders/pnm.so
+lib/imlib2/loaders/tga.so
+lib/imlib2/loaders/tiff.so
+lib/imlib2/loaders/xpm.so
+lib/imlib2/loaders/zlib.so
 @lib lib/libImlib2.so.${LIBImlib2_VERSION}
