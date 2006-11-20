@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2006/11/12 13:40:20 robert Exp $
+# $OpenBSD: Makefile,v 1.27 2006/11/20 20:57:22 robert Exp $
 
 FULLPKGNAME=		php5-extensions-${V}
 COMMENT=		"informational package about PHP5 extensions"
@@ -95,21 +95,21 @@ CONFIGURE_ARGS+=	--without-gd --without-xpm-dir --without-ttf \
 MULTI_PACKAGES+=	-gd
 COMMENT-gd=		"image manipulation extensions for php5"
 GD_DEPENDS=		${GRAPHIC_DEPENDS} t1.>=5::devel/t1lib
-GD_WANTLIB=		freetype z
+GD_WANTLIB=		z
 CONFIGURE_ENV+=		CPPFLAGS="${LOCALBASE}/include/libpng"
 CONFIGURE_ARGS+=	--with-gd=shared ${GRAPHIC_CONFIG} \
 			--with-t1lib=${LOCALBASE} \
 			--with-freetype-dir=${X11BASE}
 
 . if ${FLAVOR:L:Mno_x11}
-CONFIGURE_ARGS+=	--without-xpm-dir
-FULLPKGNAME-gd=		php5-gd-${V}-no_x11
+CONFIGURE_ARGS+=	--without-xpm-dir --without-freetype-dir
+FULLPKGNAME-gd=		php5-gd-${V}-no_x11p0
 . else
 USE_X11=		yes
 CONFIGURE_ARGS+=	--with-xpm-dir=${X11BASE}
 FULLPKGNAME-gd=		php5-gd-${V}
 .  if !defined(PACKAGING) || ${SUBPACKAGE} == "-gd"
-GD_WANTLIB+=		X11 Xpm
+GD_WANTLIB+=		X11 Xpm freetype
 .  endif
 . endif
 .endif
