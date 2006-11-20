@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.827 2006/11/20 13:50:16 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.828 2006/11/20 23:18:25 steven Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -217,6 +217,7 @@ DEF_UMASK?=		022
 
 # These variables must be defined before modules
 CONFIGURE_STYLE?=
+USE_X11?= No
 NO_DEPENDS?= No
 NO_BUILD?= No
 NO_REGRESS?= No
@@ -954,8 +955,6 @@ CONFIGURE_SHARED?=	--disable-shared
 .else
 CONFIGURE_SHARED?=	--enable-shared
 .endif
-
-USE_X11?=No
 
 FETCH_MANUALLY?=No
 .if ${FETCH_MANUALLY:L} != "no"

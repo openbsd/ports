@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: gnu.port.mk,v 1.28 2006/11/20 20:52:28 espie Exp $
+# $OpenBSD: gnu.port.mk,v 1.29 2006/11/20 23:18:25 steven Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -32,7 +32,12 @@ MAKE_ENV+=AUTOCONF_VERSION=${AUTOCONF_VERSION}
 CONFIGURE_STYLE+=autoheader
 .  endif
 .endif
-CONFIG_SITE?=${PORTSDIR}/infrastructure/db/config.site
+.if !defined(CONFIG_SITE)
+CONFIG_SITE=${PORTSDIR}/infrastructure/db/config.site
+.  if ${USE_X11:L} == "yes"
+CONFIG_SITE+=${PORTSDIR}/infrastructure/db/config.x11.site
+.  endif
+.endif
 .if !empty(CONFIG_SITE)
 CONFIGURE_ENV+=CONFIG_SITE='${CONFIG_SITE}'
 .endif
