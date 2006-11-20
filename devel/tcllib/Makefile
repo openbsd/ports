@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/05/07 15:28:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/20 18:33:48 bernd Exp $
 
 COMMENT=		"useful routines for Tcl"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=tcllib/}
 SUBST_VARS+=		TCLLIB
 
-BUILD_DEPENDS=		tcl84::lang/tcl/8.4
+BUILD_DEPENDS=		::lang/tcl/8.4
 
 CONFIGURE_STYLE= 	gnu dest
 

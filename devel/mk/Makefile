@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/11/24 00:11:03 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/11/20 18:33:48 bernd Exp $
 
 COMMENT=	"Streamlined replacement for make"
 
@@ -10,10 +10,10 @@ HOMEPAGE=	http://pdos.lcs.mit.edu/~rsc/software/
 MAINTAINER=	Markus Friedl <markus@openbsd.org>
 EXTRACT_SUFX=	.tgz
 
-BUILD_DEPENDS=	fmt::devel/libfmt \
-		bio::devel/libbio \
-		regexp9::devel/libregexp9 \
-		utf::devel/libutf
+BUILD_DEPENDS=	::devel/libfmt \
+		::devel/libbio \
+		::devel/libregexp9 \
+		::devel/libutf
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

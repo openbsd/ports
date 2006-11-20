@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/03/03 00:51:37 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/20 18:33:48 bernd Exp $
 
 COMMENT=	"Simple buffered I/O library from Plan 9"
 
@@ -10,8 +10,8 @@ HOMEPAGE=	http://pdos.lcs.mit.edu/~rsc/software/
 MAINTAINER=	Markus Friedl <markus@openbsd.org>
 EXTRACT_SUFX=	.tgz
 
-BUILD_DEPENDS=	utf::devel/libutf \
-		fmt::devel/libfmt
+BUILD_DEPENDS=	::devel/libutf \
+		::devel/libfmt
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
