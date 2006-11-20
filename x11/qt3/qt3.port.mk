@@ -1,4 +1,4 @@
-# $OpenBSD: qt3.port.mk,v 1.6 2006/10/24 22:39:36 espie Exp $
+# $OpenBSD: qt3.port.mk,v 1.7 2006/11/20 20:41:00 espie Exp $
 
 MODULES+=	gcc3
 MODGCC3_ARCHES+=sparc64
@@ -20,7 +20,7 @@ _MODQT_SETUP+=	UIC=${MODQT_UIC}
 .endif
 
 MODQT_LIB_DEPENDS=lib/qt3/qt-mt.>=3::x11/qt3
-LIB_DEPENDS+=lib/qt3/qt-mt.>=3::x11/qt3
+LIB_DEPENDS+=	${MODQT_LIB_DEPENDS}
 
 # may be needed to find plugins
 MODQT_MOC=	${LOCALBASE}/bin/moc3-mt

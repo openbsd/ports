@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.65 2006/10/24 22:39:36 espie Exp $
+# $OpenBSD: Makefile,v 1.66 2006/11/20 20:41:00 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
-COMMENT=		"C++ X11 GUI toolkit"
+COMMENT-main=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples and tutorial for qt3"
 COMMENT-html=		"off-line html documentation for qt3"
 COMMENT-postgresql=	"PostgresSQL plugin for qt3"
@@ -11,7 +11,7 @@ PKGNAME=		qt3-${VERSION}
 PKGNAME-mysql=		qt3-mysql-${VERSION}p1
 PKGNAME-postgresql=	qt3-postgresql-${VERSION}p1
 PKGNAME-examples=	qt3-examples-${VERSION}
-FULLPKGNAME=		qt3-mt-${VERSION}p8${PKGDEBUG}
+FULLPKGNAME-main=	qt3-mt-${VERSION}p9${PKGDEBUG}
 FULLPKGNAME-html=	qt3-html-${VERSION}
 SHARED_LIBS=		qt-mt	30.2 \
 			qui	2.0 \
@@ -50,8 +50,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-myWANTLIB=		GL GLU ICE SM X11 Xcursor Xext Xft Xi Xinerama Xmu \
-			Xrandr Xrender fontconfig freetype jpeg lcms m z
 
 USE_X11=	Yes
 MAKE_ENV=	QTDIR="${WRKDIST}" EXTRA_SAMPLES="${EXTRA_SAMPLES}" \
@@ -81,7 +79,7 @@ CONFIGURE_ARGS=	-qt-gif -system-libmng -system-libpng -system-libjpeg -system-zl
 		-L${WRKSRC}/lib \
 		-L${LOCALBASE}/lib
 
-MULTI_PACKAGES+=-html
+MULTI_PACKAGES+=-main -html
 
 .if ${FLAVOR:L:Mdebug}
 CONFIGURE_ARGS+=-debug
@@ -91,6 +89,7 @@ PKGDEBUG=
 .endif
 
 CONFIGURE_ARGS+=-thread
+
 
 .if !${FLAVOR:L:Mdebug} && !${FLAVOR:L:Mno_examples}
 MULTI_PACKAGES+=	-examples
@@ -103,8 +102,6 @@ CONFIGURE_ARGS+=	-prefix ${QT_LIBDIR}
 CONFIGURE_ARGS+=	-plugindir ${QT_PLUGINSDIR}
 
 CONFIGURE_ENV=	QTDIR="${WRKSRC}" 
-
-SUBPACKAGE?=
 
 LIB_DEPENDS=
 BUILD_DEPENDS=::graphics/jpeg
@@ -122,44 +119,51 @@ e:=$e,no_postgresql
 CONFIGURE_ARGS+=-no-sql-mysql
 .else
 MULTI_PACKAGES+=	-mysql
-.  if !defined(PACKAGING) || ${SUBPACKAGE} == "-mysql"
-LIB_DEPENDS+=mysqlclient::databases/mysql
-.  endif
 CONFIGURE_ARGS+= -I${LOCALBASE}/include/mysql -L${LOCALBASE}/lib/mysql \
 	-plugin-sql-mysql
 .endif
+
 
 .if !empty(FLAVOR:L:Mno_postgresql)
 CONFIGURE_ARGS+=-no-sql-psql
 .else
 MULTI_PACKAGES+=	-postgresql
-.  if !defined(PACKAGING) || ${SUBPACKAGE} == "-postgresql"
-LIB_DEPENDS+=pq.>=2:postgresql-client-*:databases/postgresql
 BUILD_DEPENDS+=::databases/postgresql,-server
-.  endif
 CONFIGURE_ARGS+= -I${LOCALBASE}/include/postgresql \
 	    -I${LOCALBASE}/include/postgresql/server \
 	    -L${LOCALBASE}/lib \
 	    -I${LOCALBASE}/include -plugin-sql-psql
 .endif
 
-.if ${SUBPACKAGE} == "-examples" || ${SUBPACKAGE} == ""
-myWANTLIB+=	pthread stdc++ c
-.endif
 
-.if !defined(PACKAGING) || ${SUBPACKAGE} != "-html"
-LIB_DEPENDS+=	png.>=2::graphics/png \
-		mng.>=1::graphics/libmng
-WANTLIB=	${myWANTLIB}
-.endif
+LIB_DEPENDS=		png.>=2::graphics/png \
+			mng.>=1::graphics/libmng
+WANTLIB=		GL GLU ICE SM X11 Xcursor Xext Xft Xi Xinerama Xmu \
+			Xrandr Xrender fontconfig freetype jpeg lcms m z
 
-.if defined(PACKAGING) && ${SUBPACKAGE} != "-html" && ${SUBPACKAGE} != ""
-LIB_DEPENDS+=	qt-mt.>=3::x11/qt3$e
-.endif
 
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-html"
-PKG_ARCH=	*
-.endif
+WANTLIB-main=		${WANTLIB} pthread stdc++ c
+
+
+LIB_DEPENDS-mysql=	${LIB_DEPENDS} \
+			qt-mt.>=3::x11/qt3$e \
+			mysqlclient::databases/mysql
+
+
+LIB_DEPENDS-postgresql=	${LIB_DEPENDS} \
+			qt-mt.>=3::x11/qt3$e \
+			pq.>=2:postgresql-client-*:databases/postgresql
+
+
+LIB_DEPENDS-examples=	${LIB_DEPENDS} \
+			qt-mt.>=3::x11/qt3$e
+WANTLIB-examples=	${WANTLIB} pthread stdc++ c
+
+
+LIB_DEPENDS-html=
+WANTLIB-html=
+PKG_ARCH-html=		*
+
 
 QT_INCDIR=	${PREFIX}/include/X11/qt3
 TRUEDIR=	${TRUEPREFIX}/lib/qt3

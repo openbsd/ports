@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.19 2005/12/28 16:50:59 espie Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/20 20:41:01 espie Exp $
 @lib lib/libqt-mt.so.${LIBqt-mt_VERSION}
 @lib lib/libqui-mt.so.${LIBqui-mt_VERSION}
 @lib lib/libqui.so.${LIBqui_VERSION}
