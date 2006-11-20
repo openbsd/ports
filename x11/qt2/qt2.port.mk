@@ -1,8 +1,10 @@
-# $OpenBSD: qt2.port.mk,v 1.2 2006/08/01 22:55:53 espie Exp $
+# $OpenBSD: qt2.port.mk,v 1.3 2006/11/20 12:02:29 espie Exp $
 
 # This fragment uses MODQT_* variables to make it easier to substitute
 # qt1/qt2/qt3 in a port.
-LIB_DEPENDS+=lib/qt2/qt.>=2::x11/qt2
+
+MODQT_LIB_DEPENDS=lib/qt2/qt.>=2::x11/qt2
+LIB_DEPENDS+=	${MODQT_LIB_DEPENDS}
 
 MODQT_LIBDIR=	${LOCALBASE}/lib/qt2
 MODQT_INCDIR=	${LOCALBASE}/include/X11/qt2

@@ -1,15 +1,18 @@
-# $OpenBSD: Makefile,v 1.55 2006/10/02 23:18:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.56 2006/11/20 12:02:29 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
-COMMENT=		"C++ X11 GUI toolkit"
+
+COMMENT-main=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples and tutorial for qt2"
 COMMENT-html=		"off-line html documentation for qt2"
 
 VERSION=	3.2
 DISTNAME=	qt-2.${VERSION}
 CATEGORIES=	x11
-PKGNAME=		qt2-${VERSION}p2
+
+PKGNAME-main=		qt2-${VERSION}p3
 PKGNAME-examples=	qt2-examples-${VERSION}p0
 PKGNAME-html=		qt2-html-${VERSION}p0
+
 SHARED_LIBS=		qt	20.0
 
 
@@ -25,7 +28,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-myWANTLIB=		GL GLU X11 Xext Xmu c m stdc++ z
 
 #CXXFLAGS+=	-g
 
@@ -46,8 +48,7 @@ CONFIGURE_ARGS=	-gif -system-libmng -system-libpng -system-jpeg \
 
 CONFIGURE_ENV=	QTDIR="${WRKSRC}" MODULES="${QTMODULES}"
 
-MULTI_PACKAGES=	-examples -html
-SUBPACKAGE?=
+MULTI_PACKAGES=-main -examples -html
 
 QTMODULES=	tools kernel widgets dialogs \
 		iconview workspace network canvas table xml
@@ -56,27 +57,19 @@ EXTRA_SAMPLES=
 QTMODULES+= opengl
 EXTRA_SAMPLES+=box gear glpixmap overlay overlay_x11 sharedbox
 
-.if ${SUBPACKAGE} != "-examples"
-myWANTLIB+=	lcms ICE Xft SM jpeg 
-.endif
-.if !defined(PACKAGING) || ${SUBPACKAGE} == "-examples"
-myWANTLIB+=	pthread
-.endif
 
-LIB_DEPENDS=
+myWANTLIB=		GL GLU X11 Xext Xmu c m stdc++ z
 
-.if !defined(PACKAGING) || ${SUBPACKAGE} != "-html"
-LIB_DEPENDS+=	png::graphics/png \
-		mng::graphics/libmng
-WANTLIB=	${myWANTLIB}
-.endif
-.if defined(PACKAGING)
-.  if ${SUBPACKAGE} == "-examples"
-LIB_DEPENDS=	lib/qt2/qt.>=2.::x11/qt2
-.  elif ${SUBPACKAGE} == "-html"
-PKG_ARCH=	*
-.  endif
-.endif
+WANTLIB-examples=	${myWANTLIB} pthread
+WANTLIB-main=		${myWANTLIB} lcms ICE Xft SM jpeg
+
+LIB_DEPENDS-main= 	png::graphics/png \
+			mng::graphics/libmng
+
+LIB_DEPENDS-examples= 	lib/qt2/qt.>=2.::x11/qt2
+
+PKG_ARCH-html=		*
+
 
 QT_INCDIR=	${PREFIX}/include/X11/qt2
 TRUEDIR=	${TRUEPREFIX}/lib/qt2
