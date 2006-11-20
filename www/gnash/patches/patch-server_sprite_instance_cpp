@@ -1,0 +1,25 @@
+$OpenBSD: patch-server_sprite_instance_cpp,v 1.1 2006/11/20 04:06:41 jolan Exp $
+--- server/sprite_instance.cpp.orig	Fri Nov 17 14:08:21 2006
++++ server/sprite_instance.cpp	Fri Nov 17 20:38:51 2006
+@@ -1210,12 +1210,12 @@ bool sprite_instance::on_event(event_id 
+ 	// Keep m_as_environment alive during any method calls!
+ 	// Don't do this, make sure caller is keeping us alive instead
+ 	//smart_ptr<as_object>	this_ptr(this);
++	as_value		method;
+ 
+ 	bool called = false;
+ 			
+ 	// First, check for built-in event handler.
+ 	    {
+-		as_value	method;
+ 		if (get_event_handler(id, &method))
+ 		    {
+ 			// Dispatch.
+@@ -1235,7 +1235,6 @@ bool sprite_instance::on_event(event_id 
+ 		const tu_stringi&	method_name = id.get_function_name();
+ 		if (method_name.length() > 0)
+ 		    {
+-			as_value	method;
+ 			if (get_member(method_name, &method))
+ 			    {
+ 				call_method0(method, &m_as_environment, this);
