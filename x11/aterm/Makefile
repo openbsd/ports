@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.39 2006/08/04 00:10:42 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2006/11/20 20:49:34 bernd Exp $
 
 DISTNAME=	aterm-0.4.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11
 
 # GPL
@@ -26,7 +26,7 @@ FLAVOR?=
 PATCH_LIST+=	patch-src_command_c
 
 .if ${FLAVOR:L:Mbig5}
-RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/chinese/taipei16.pcf.gz::chinese/taipeifonts
+RUN_DEPENDS=	::chinese/taipeifonts
 PATCH_LIST+=	patch-src_Makefile_in
 
 CONFIGURE_ARGS+= --enable-big5
