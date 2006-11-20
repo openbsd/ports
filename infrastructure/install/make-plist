@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.82 2006/11/09 08:16:22 espie Exp $
+# $OpenBSD: make-plist,v 1.83 2006/11/20 13:56:37 espie Exp $
 # Copyright (c) 2004-2006 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -745,6 +745,7 @@ sub grab_all_lists
 
 	my $l = [];
 	my $plistname=$ENV{'PLIST'};
+	$plistname =~ s/\-main$//;
 	my $pfragname=$ENV{'PFRAG'};
 	my $psharedname=$pfragname.".shared";
 	# Subpackage rules... better way would be to ask bsd.port.mk directly
