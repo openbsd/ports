@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/30 08:17:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/20 19:49:51 espie Exp $
 
-COMMENT=	"OCR software"
+COMMENT-main=	"OCR software"
 COMMENT-gui=	"gocr tcl/tk frontend"
 
-DISTNAME=	gocr-0.41
-PKGNAME-gui=	${DISTNAME:S/-/-gui-/}
+V=		0.41
+DISTNAME=	gocr-$V
+
+PKGNAME-main=	gocr-$Vp0
+PKGNAME-gui=	gocr-gui-$V
+
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=jocr/}
 
@@ -27,19 +31,16 @@ USE_GMAKE=	Yes
 FAKE_FLAGS+=	DESTDIR=${DESTDIR} \
 			prefix=${PREFIX} exec_prefix=${PREFIX}
 
-MULTI_PACKAGES=	-gui
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -gui
 
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-gui"
-PKG_ARCH=	*
-RUN_DEPENDS=	:tk-8.4.*:x11/tk/8.4 \
+PKG_ARCH-gui=	*
+RUN_DEPENDS-gui=:tk-8.4.*:x11/tk/8.4 \
 		::graphics/xsane \
 		::textproc/p5-tkispell \
 		::graphics/gocr
-.else
-WANTLIB=	c m
-LIB_DEPENDS=	netpbm.>=0::graphics/netpbm
-.endif
+
+WANTLIB-main=	c m
+LIB_DEPENDS-main=netpbm.>=0::graphics/netpbm
 
 pre-configure:
 	perl -pi -e 's,\@\@LOCALBASE\@\@,${LOCALBASE},g' \
