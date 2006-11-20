@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/09 02:31:30 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/20 16:54:25 ckuethe Exp $
 
 COMMENT=		"GPS waypoint, track, and route conversion tool"
 COMMENT-gui=		"Tk front-end to gpsbabel"
@@ -31,7 +31,7 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 USE_GMAKE=		Yes
 NO_REGRESS=		Yes # expects FP conversion to be exact and invertible
-BUILD_DEPENDS=		xsltproc::textproc/libxslt \
+BUILD_DEPENDS=		::textproc/libxslt \
 			::textproc/docbook \
 			::textproc/docbook-xsl
 LIB_DEPENDS=		expat.>=4::textproc/expat \
