@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/13 06:20:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/20 18:31:53 bernd Exp $
 
 COMMENT=	"additional games modules for childsplay"
 
 DISTNAME=	childsplay_plugins-0.84
-PKGNAME=	${DISTNAME:S/_/-/}
+PKGNAME=	${DISTNAME:S/_/-/}p0
 EXTRACT_SUFX=	.tgz
 
 CATEGORIES=	games education
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=childsplay/}
 
 MODULES=	lang/python
-RUN_DEPENDS=	childsplay->=0.84::games/childsplay
+RUN_DEPENDS=	:childsplay->=0.84:games/childsplay
 
 PKG_ARCH=	*
 USE_X11=	Yes
