@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2006/11/09 23:24:00 steven Exp $
+# $OpenBSD: Makefile,v 1.46 2006/11/20 08:07:41 steven Exp $
 
 COMMENT= 		"K Desktop Environment, multimedia applications"
 CATEGORIES=		x11 x11/kde
@@ -53,6 +53,7 @@ LIB_DEPENDS= DCOP,kdecore.>=6,kdefakes,kdefx,kdesu,kdeui,kio,khtml,kmid,kparts,k
 EXTRA_CONFIG=	xdg/menus/applications-merged/kde-multimedia-music.menu 
 SAMPLECONFDIR=${PREFIX}/share/apps/kde-conf-sample
 
+USE_X11=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 

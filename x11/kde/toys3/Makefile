@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2006/11/04 23:58:11 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2006/11/20 08:07:41 steven Exp $
 
 COMMENT= 		"some useless KDE applications"
 CATEGORIES=		x11 x11/kde games
@@ -9,6 +9,7 @@ MODKDE_VERSION?=	3.5.3
 LIB_DEPENDS= 		kdecore.>=6,DCOP,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kparts,kscreensaver,kutils,kwalletclient::x11/kde/libs3
 
 SEPARATE_BUILD=	flavored
+USE_X11=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 

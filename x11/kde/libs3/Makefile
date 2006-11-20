@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2006/10/28 11:52:13 espie Exp $
+# $OpenBSD: Makefile,v 1.73 2006/11/20 08:07:41 steven Exp $
 
 COMMENT=		"K Desktop Environment, libraries"
 COMMENT-cups=		"K Desktop Environment, cups support"
@@ -66,6 +66,8 @@ LIB_DEPENDS+=	art_lgpl_2::graphics/libart
 LIB_DEPENDS+=	idn::devel/libidn
 WANTLIB+=	intl iconv util jpeg m X11 ICE Xrender c SM pthread \
 		stdc++ Xext z png
+
+USE_X11=	Yes
 
 .if !defined(PACKAGING) || ${SUBPACKAGE:L} == ""
 

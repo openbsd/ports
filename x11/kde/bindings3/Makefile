@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2006/11/05 13:02:30 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2006/11/20 08:07:41 steven Exp $
 
 .if ${MACHINE_ARCH} == "powerpc"
 BROKEN=			"gcc spins on x_20.cpp"
@@ -37,6 +37,7 @@ CONFIGURE_ENV+=DO_NOT_COMPILE=python
 
 GNU_ARCH=${MACHINE_ARCH:S/amd64/x86_64/}
 SUBST_VARS=GNU_ARCH OSREV
+USE_X11=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 

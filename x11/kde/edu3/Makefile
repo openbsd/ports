@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2006/11/05 13:02:30 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2006/11/20 08:07:41 steven Exp $
 
 COMMENT=		"K Desktop Environment, edutainment"
 CATEGORIES=		x11 x11/kde
@@ -26,6 +26,7 @@ WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 c jpeg katepartinterfaces \
 		intl iconv artsflow_idl audiofile mad vorbisfile vorbisenc \
 		gthread-2.0.>=800.0 gmodule-2.0.>=800.0 glib-2.0.>=800.0 idn
 
+USE_X11=	Yes
 USE_LIBTOOL=Yes
 LIBTOOL_FLAGS=--tag=disable-static
 

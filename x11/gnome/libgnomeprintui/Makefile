@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/09/18 12:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2006/11/20 08:07:40 steven Exp $
 
 COMMENT=		"user interface components for libgnomeprint"
 
@@ -32,6 +32,7 @@ RUN_DEPENDS=		:gnome-icon-theme->=1.2.0:x11/gnome/icon-theme
 LIB_DEPENDS=		gnomecanvas-2::x11/gnome/libgnomecanvas \
 			gnomeprint-2-2::x11/gnome/libgnomeprint
 
+USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu

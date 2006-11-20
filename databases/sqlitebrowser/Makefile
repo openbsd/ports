@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/05/09 15:18:28 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/20 08:07:40 steven Exp $
 
 COMMENT=	"graphical interface to sqlite databases"
 DISTNAME=	sqlitebrowser-1.3
@@ -11,6 +11,7 @@ HOMEPAGE=	http://sqlitebrowser.sourceforge.net/
 MODULES=	x11/qt3
 LIB_DEPENDS=	sqlite3::databases/sqlite3
 NO_REGRESS=	Yes
+USE_X11=	Yes
 
 WANTLIB=	Xext m X11 stdc++ pthread c
 

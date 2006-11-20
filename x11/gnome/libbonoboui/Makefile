@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/09/18 12:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2006/11/20 08:07:40 steven Exp $
 
 COMMENT=		"user interface components for bonobo"
 
@@ -35,6 +35,7 @@ LIB_DEPENDS=		gnome-2::x11/gnome/libgnome \
 			gnomecanvas-2::x11/gnome/libgnomecanvas \
 			popt.>=0.3::devel/popt
 
+USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu

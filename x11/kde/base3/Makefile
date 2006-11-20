@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2006/11/11 16:24:41 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.68 2006/11/20 08:07:40 steven Exp $
 
 COMMENT= 		"K Desktop Environment, basic applications"
 COMMENT-plugins=	"Konqueror nsplugins, essentially native JDK"
@@ -34,6 +34,8 @@ FLAVORS=		debug
 BUILD_DEPENDS+=::devel/pkgconfig
 
 WANTLIB+=ICE Xrender SM pthread util X11 m z png jpeg art_lgpl_2 Xext idn iconv
+
+USE_X11=	Yes
 
 .if !defined(PACKAGING) || ${SUBPACKAGE:L} == ""
 LIB_DEPENDS+= kdecore.>=6,kabc,katepartinterfaces,kdefakes,kdefx,kdnssd,kdeprint,kdeprint_management,kdesu,kdeui,khtml,kio,kjs,knewstuff,kmid,kparts,kresources,kscreensaver,ktexteditor,kutils,kwalletclient,DCOP,vcard,artskde::x11/kde/libs3 \

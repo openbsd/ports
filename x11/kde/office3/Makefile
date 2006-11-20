@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2006/10/29 22:55:57 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2006/11/20 08:07:41 steven Exp $
 
 COMMENT=		"office suite for KDE"
 
@@ -100,7 +100,7 @@ CONFIGURE_ARGS+= --with-pgsqlincdir=${LOCALBASE}/include/postgresql
 LIB_DEPENDS+=	pqxx::databases/libpqxx \
 		pq::databases/postgresql
 
-
+USE_X11=	Yes
 USE_LIBTOOL=Yes
 LIBTOOL_FLAGS=--tag=disable-static
 .include <bsd.port.mk>

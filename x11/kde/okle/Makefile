@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/09/18 10:21:49 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/11/20 08:07:41 steven Exp $
 
 COMMENT= 		"kde front end for ogle"
 CATEGORIES=		x11 x11/kde 
@@ -16,5 +16,7 @@ CONFIGURE_ARGS+=--with-ogle-includes=${LOCALBASE}/include
 
 WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 c iconv jpeg kwalletclient \
 		m png pthread stdc++ util xml2 z idn
+
+USE_X11=	Yes
 
 .include <bsd.port.mk>

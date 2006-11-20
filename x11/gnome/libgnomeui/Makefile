@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/09/18 12:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2006/11/20 08:07:40 steven Exp $
 
 COMMENT=		"user interface components for GNOME"
 
@@ -32,6 +32,7 @@ BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		bonoboui-2::x11/gnome/libbonoboui \
 			gnome-keyring::x11/gnome/keyring
 
+USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu

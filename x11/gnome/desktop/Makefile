@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2006/09/18 12:19:39 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2006/11/20 08:07:40 steven Exp $
 
 COMMENT=		"components for the GNOME desktop"
 
@@ -35,6 +35,7 @@ RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 			startup-notification-1::devel/startup-notification
 
+USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu

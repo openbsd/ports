@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2006/11/05 13:02:30 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2006/11/20 08:07:41 steven Exp $
 
 COMMENT= 		"KDE personal information applications"
 COMMENT-kpilot=		"KDE interface to sync with Palm Pilot"
@@ -91,6 +91,7 @@ SUBPACKAGE?=
 #LIB_DEPENDS+=	gpgme:gpgme->=0.4.5:security/gpgme
 #.endif
 
+USE_X11=	Yes
 USE_LIBTOOL=Yes
 LIBTOOL_FLAGS+=--tag disable-static
 #SEPARATE_BUILD=	flavored

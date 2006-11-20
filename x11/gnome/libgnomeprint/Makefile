@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/09/18 12:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2006/11/20 08:07:40 steven Exp $
 
 COMMENT=		"printing framework for GNOME"
 
@@ -30,6 +30,7 @@ LIB_DEPENDS=		art_lgpl_2.>=5::graphics/libart \
 			popt::devel/popt \
 			xml2.>=6::textproc/libxml
 
+USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu

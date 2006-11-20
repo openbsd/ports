@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2006/09/18 09:40:32 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2006/11/20 08:07:40 steven Exp $
 
 COMMENT=		"GNOME Virtual File System"
 
@@ -36,6 +36,7 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV= 		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-pthread" \
 			CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 
+USE_X11=		Yes
 USE_LIBTOOL=		Yes
 
 # writes to $HOME and other brokenness

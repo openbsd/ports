@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2006/10/21 22:25:28 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2006/11/20 08:07:40 steven Exp $
 
 COMMENT=		"K Desktop Environment, aRTs"
 CATEGORIES=		x11 x11/kde
@@ -39,6 +39,7 @@ BUILD_DEPENDS=	::devel/pkgconfig
 CONFIGURE_ENV=LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	${ENABLE_SHARED} --enable-static
 
+USE_X11=	Yes
 USE_LIBTOOL=	Yes
 WANTLIB=	ICE SM X11 Xext c iconv intl jpeg m ossaudio png pthread \
 		stdc++ vorbisenc z

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2006/11/05 13:02:30 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2006/11/20 08:07:41 steven Exp $
 
 COMMENT=		"K Desktop Environment, games"
 
@@ -22,6 +22,7 @@ WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 artsflow artsflow_idl \
 		pthread qtmcop soundserver_idl stdc++ util vorbis vorbisenc \
 		vorbisfile z iconv intl idn
 
+USE_X11=	Yes
 USE_LIBTOOL=Yes
 LIBTOOL_FLAGS=--tag=disable-static
 

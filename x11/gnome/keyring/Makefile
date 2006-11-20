@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2006/09/18 12:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2006/11/20 08:07:40 steven Exp $
 
 COMMENT=		"password agent for the GNOME project"
 
@@ -27,6 +27,7 @@ MODULES=		devel/gettext
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		gdk-x11-2.0.>=600.0,gdk_pixbuf-2.0.>=600.0,gtk-x11-2.0.>=600.0::x11/gtk+2
 
+USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu

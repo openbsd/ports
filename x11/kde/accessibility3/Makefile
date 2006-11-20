@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2006/11/05 13:02:30 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2006/11/20 08:07:40 steven Exp $
 
 COMMENT= 		"X11 toolkit, accessibility aids"
 CATEGORIES=		x11 x11/kde
@@ -22,6 +22,7 @@ WANTLIB=	ICE SM X11 Xext Xrender Xtst art_lgpl_2 c jpeg \
 		glib-2.0 soundserver_idl \
 		kmedia2_idl artsflow vorbis mcop idn
 
+USE_X11=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag disable-static
 .include <bsd.port.mk>

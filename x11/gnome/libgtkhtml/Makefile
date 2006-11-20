@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/09/18 12:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2006/11/20 08:07:40 steven Exp $
 
 COMMENT=		"lightweight HTML rendering/printing/editing engine"
 
@@ -28,6 +28,7 @@ MODULES=		devel/gettext
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		gailutil.>=17::x11/gnome/gail
 
+USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu

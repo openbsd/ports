@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2006/11/05 13:02:30 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2006/11/20 08:07:41 steven Exp $
 
 COMMENT=		"K Desktop Environment, graphic applications"
 COMMENT-kamera=		"KDE interface to digital cameras"
@@ -75,6 +75,7 @@ post-patch:
 SUP_PATCH_LIST=	gcc-*
 .endif
 
+USE_X11=	Yes
 USE_LIBTOOL=Yes
 LIBTOOL_FLAGS=--tag=disable-static
 CONFIGURE_ENV+=TIFF_LIBS='-L${LOCALBASE}/lib -ltiff -ljpeg -lz' \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2006/11/05 13:02:30 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2006/11/20 08:07:41 steven Exp $
 
 COMMENT= 		"K Desktop Environment, developer extensions"
 CATEGORIES=		x11 x11/kde devel
@@ -23,6 +23,7 @@ WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 c jpeg ktnef m pcre \
 		pcreposix png pthread qui-mt stdc++ util z iconv idn \
 		xslt xml2
 
+USE_X11=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 post-install:

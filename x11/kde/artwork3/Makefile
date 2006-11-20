@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2006/11/06 12:40:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2006/11/20 08:07:40 steven Exp $
 
 COMMENT= 		"K Desktop Environment, additional artwork"
 CATEGORIES=		x11 x11/kde
@@ -23,6 +23,7 @@ WANTLIB=	GL GLU ICE SM X11 Xext Xrender Xt art_lgpl_2 artsflow \
 		soundserver_idl stdc++ util vorbis vorbisenc vorbisfile z \
 		idn
 
+USE_X11=	Yes
 USE_LIBTOOL=Yes
 LIBTOOL_FLAGS=--tag=disable-static
 .include <bsd.port.mk>

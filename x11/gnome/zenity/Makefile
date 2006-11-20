@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/09/18 12:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/11/20 08:07:40 steven Exp $
 
 COMMENT=		"dialogs for Gnome"
 
@@ -31,6 +31,7 @@ LIB_DEPENDS=		gnomecanvas-2::x11/gnome/libgnomecanvas \
 
 MODULES=		devel/gettext
 
+USE_X11=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

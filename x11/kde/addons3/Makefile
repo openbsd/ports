@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2006/10/12 23:12:18 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2006/11/20 08:07:40 steven Exp $
 
 COMMENT=		"K Desktop Environment, addons"
 CATEGORIES=		x11 x11/kde
@@ -20,6 +20,7 @@ LIB_DEPENDS= kdecore.>=6,kdnssd,knewstuff,DCOP,artskde,kabc,katepartinterfaces,k
 
 SEPARATE_BUILD=flavored
 
+USE_X11=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 

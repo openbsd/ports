@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/11/05 13:02:30 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2006/11/20 08:07:41 steven Exp $
 
 COMMENT= 		"web development tool"
 CATEGORIES=		x11 x11/kde
@@ -20,6 +20,7 @@ WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 c gcrypt gpg-error iconv \
 		intl jpeg kmdi knewstuff m pcre pcreposix png pthread stdc++ \
 		util xml2 xslt z idn
 
+USE_X11=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
