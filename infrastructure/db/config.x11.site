@@ -1,5 +1,7 @@
-# $OpenBSD: config.x11.site,v 1.4 2006/11/12 12:57:28 steven Exp $
-ac_cv_have_x=${ac_cv_have_x='have_x=yes ac_x_includes=/usr/X11R6/include ac_x_libraries=/usr/X11R6/lib'}
+# $OpenBSD: config.x11.site,v 1.5 2006/11/20 23:21:38 steven Exp $
+ac_cv_have_x=${ac_cv_have_x='have_x=yes ac_x_includes=/usr/X11R6/include ac_x_libraries=/usr/X11R6/lib' kde_x_includes=/usr/X11R6/include kde_x_libraries=/usr/X11R6/lib}
+ac_cv_path_opengl_includes=${ac_cv_path_opengl_includes=/usr/X11R6/include}
+ac_cv_path_opengl_lib=${ac_cv_path_opengl_lib=/usr/X11R6/lib}
 #ac_cv_prog_freetype_config=${ac_cv_prog_freetype_config=/usr/X11R6/bin/freetype-config}
 #ac_cv_file__usr_X11R6_include_freetype2=${ac_cv_file__usr_X11R6_include_freetype2=yes}
 ac_cv_header_GL_gl_h=${ac_cv_header_GL_gl_h=yes}
