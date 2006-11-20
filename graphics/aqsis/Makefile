@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/19 14:29:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/20 18:41:42 bernd Exp $
 
 COMMENT=	"photorealistic 3D rendering solution"
 
@@ -42,7 +42,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=aqsis/}
 
 WANTLIB=	X11 Xext c m stdc++ z pthread
 
-BUILD_DEPENDS=	xsltproc::textproc/libxslt \
+BUILD_DEPENDS=	::textproc/libxslt \
 		:boost-headers-1.33.*:devel/boost
 LIB_DEPENDS=	fltk.>=1::x11/fltk \
 		jpeg.>=62::graphics/jpeg \
