@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2006/08/16 05:23:49 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2006/11/21 11:13:09 steven Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"advanced 2D and 3D scientific plotting library"
+COMMENT-main=	"advanced 2D and 3D scientific plotting library"
 COMMENT-c++ =	"C++ interface to plplot"
 COMMENT-f77=	"Fortran 77 interface to plplot"
 COMMENT-octave=	"Octave bindings for plplot"
@@ -18,10 +18,11 @@ SHARED_LIBS=	csirocsa	0.1	\
 		plplottcltkd	11.0	\
 		tclmatrixd	11.0
 
-PKGNAME-c++ =	plplot-c++-${VERSION}
-PKGNAME-f77=	plplot-f77-${VERSION}
-PKGNAME-octave=	plplot-octave-${VERSION}p0
-PKGNAME-tcl=	plplot-tcl-${VERSION}p0
+PKGNAME-main=	${DISTNAME}p0
+PKGNAME-c++ =	plplot-c++-${VERSION}p0
+PKGNAME-f77=	plplot-f77-${VERSION}p0
+PKGNAME-octave=	plplot-octave-${VERSION}p1
+PKGNAME-tcl=	plplot-tcl-${VERSION}p1
 
 CATEGORIES=	math graphics
 
@@ -35,7 +36,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	m freetype
+myWANTLIB=	m freetype
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=plplot/}
 
@@ -49,8 +50,8 @@ BUILD_DEPENDS=	:tcl-${TCL_VERSION}.*:lang/tcl/${TCL_VERSION} \
 		::graphics/gd \
 		::print/ghostscript/gnu-fonts \
 		::devel/pkgconfig
-RUN_DEPENDS=	::print/ghostscript/gnu-fonts
-LIB_DEPENDS=	ltdl::devel/libtool,-ltdl
+myRUN_DEPENDS=	::print/ghostscript/gnu-fonts
+myLIB_DEPENDS=	ltdl::devel/libtool,-ltdl
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
@@ -96,27 +97,35 @@ SUBST_VARS+=	GNU_ARCH
 
 DOCSRC=		${WRKSRC}/doc/docbook/src
 
-MULTI_PACKAGES=	-c++ -f77 -octave -tcl
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -c++ -f77 -octave -tcl
 
-.if defined(PACKAGING)
-.  if empty(SUBPACKAGE)
 MODULES=		converters/libiconv
-WANTLIB+=		X11 c fontconfig z png jpeg
-LIB_DEPENDS+=		gd.>=20::graphics/gd
-.  else
-LIB_DEPENDS+=		plplotd,csirocsa::math/plplot
-.    if ${SUBPACKAGE} == "-f77"
-WANTLIB+=		g2c
-.    elif ${SUBPACKAGE} == "-octave"
-WANTLIB+=		g2c ncurses readline blas lapack fftw3
-LIB_DEPENDS+=		cruft,octave,octinterp::math/octave
-.    elif ${SUBPACKAGE} == "-tcl"
-WANTLIB+=		X11 c
-LIB_DEPENDS+=		${TCLLIB}:tcl-${TCL_VERSION}.*:lang/tcl/${TCL_VERSION}
-.    endif
-.  endif
-.endif
+
+WANTLIB-main=		${myWANTLIB} X11 c fontconfig z png jpeg
+WANTLIB-c++ =		${myWANTLIB}
+WANTLIB-f77+=		${myWANTLIB} g2c
+WANTLIB-octave+=	${myWANTLIB} g2c ncurses readline blas lapack fftw3
+WANTLIB-tcl+=		${myWANTLIB} X11 c
+
+LIB_DEPENDS-main=	${MODLIBICONV_LIB_DEPENDS} \
+			${myLIB_DEPENDS} \
+			gd.>=20::graphics/gd
+LIB_DEPENDS-c++ =	plplotd,csirocsa::math/plplot,-main \
+			${myLIB_DEPENDS}
+LIB_DEPENDS-f77=	plplotd,csirocsa::math/plplot,-main \
+			${myLIB_DEPENDS}
+LIB_DEPENDS-octave=	plplotd,csirocsa::math/plplot,-main \
+			cruft,octave,octinterp::math/octave \
+			${myLIB_DEPENDS}
+LIB_DEPENDS-tcl=	plplotd,csirocsa::math/plplot,-main \
+			${TCLLIB}:tcl-${TCL_VERSION}.*:lang/tcl/${TCL_VERSION} \
+			${myLIB_DEPENDS}
+
+RUN_DEPENDS-main=	${MODLIBICONV_RUN_DEPENDS} ${myRUN_DEPENDS}
+RUN_DEPENDS-c++ =
+RUN_DEPENDS-f77=
+RUN_DEPENDS-octave=
+RUN_DEPENDS-tcl=
 
 pre-configure:
 	@perl -pi -e 's,tclsh,tclsh${TCL_VERSION},' ${WRKSRC}/scripts/mktclIndex

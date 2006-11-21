@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/06/06 13:36:28 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/21 11:13:09 steven Exp $
+@pkgpath math/plplot
 bin/plm2gif
 bin/plplot-config
 bin/plplot_libtool
