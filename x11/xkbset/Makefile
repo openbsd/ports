@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2004/12/19 17:15:18 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/21 20:39:03 espie Exp $
 
-COMMENT=	"X11 keyboard accessibility tool"
+COMMENT-main=	"X11 keyboard accessibility tool"
 COMMENT-gui=	"GUI for xkbset"
 
 DISTNAME=	xkbset-0.5
+PKGNAME-main=	xkbset-0.5p0
 PKGNAME-gui=	xkbset-gui-0.5
 CATEGORIES=	x11
 MAINTAINER=	Sebastian Stark <seb@todesplanet.de>
@@ -24,15 +25,11 @@ FAKE_FLAGS=	X11PREFIX="${PREFIX}" \
 
 USE_X11=	Yes
 
-MULTI_PACKAGES=	-gui
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -gui
 
-.if ${SUBPACKAGE} == "-gui" && defined(PACKAGING)
-RUN_DEPENDS=	::x11/xkbset \
-		:p5-Tk-*:x11/p5-Tk
-.else
-WANTLIB=	X11 c 
-.endif
+WANTLIB-main=	X11 c
+
+RUN_DEPENDS-gui=::x11/xkbset :p5-Tk-*:x11/p5-Tk
 
 NO_REGRESS=	Yes
 

@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/21 20:39:03 espie Exp $
+@pkgpath x11/xkbset
+bin/xkbset
+@man man/man1/xkbset.1
