@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.2 2006/10/19 09:35:16 espie Exp $
-COMMENT=	'multilingual input method library'
+# $OpenBSD: Makefile,v 1.3 2006/11/21 00:47:28 espie Exp $
+COMMENT-main=	'multilingual input method library'
 COMMENT-gtk=	'uim for gtk'
 COMMENT-qt=	'uim for qt'
 
@@ -10,7 +10,7 @@ V=		1.2.1
 DISTNAME=	uim-$V
 MASTER_SITES=	http://uim.freedesktop.org/releases/
 HOMEPAGE=	http://uim.freedesktop.org/wiki/
-PKGNAME=	uim-$Vp0
+PKGNAME-main=	uim-$Vp1
 PKGNAME-gtk=	uim-gtk-$V
 PKGNAME-qt=	uim-qt-$V
 
@@ -23,10 +23,11 @@ PERMIT_DISTFILES_FTP=	Yes
 SHARED_LIBS=		uim 0.0 \
 			uim-custom 0.0
 
-MULTI_PACKAGES=	-gtk -qt
+MULTI_PACKAGES=	-main -gtk -qt
 
 CONFIGURE_STYLE=	autoconf
-MODULES=converters/libiconv devel/gettext
+
+MODULES=converters/libiconv devel/gettext x11/qt3
 
 USE_GMAKE=Yes
 USE_LIBTOOL=Yes
@@ -34,31 +35,27 @@ USE_X11=Yes
 AUTOCONF_VERSION=	2.59
 SUBST_VARS=	MODQT_PLUGINS
 
-SUBPACKAGE?=
-.if !defined(PACKAGING) || (defined(PACKAGING) && ${SUBPACKAGE} == "-qt")
-MODULES+= 	x11/qt3
-WANTLIB+=	pthread
-.endif
 
-.if !defined(PACKAGING) || (defined(PACKAGING) && ${SUBPACKAGE} == "")
-WANTLIB+=	curses util Xft
-.endif
+WANTLIB=	Xrender X11 fontconfig freetype Xext c stdc++ m
 
-.if !defined(PACKAGING) || (defined(PACKAGING) && ${SUBPACKAGE} == "-gtk")
-LIB_DEPENDS+=	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2
-WANTLIB+=	glib-2.0 gmodule-2.0 pangoft2-1.0 \
+LIB_DEPENDS-main=anthy,anthydic::inputmethods/anthy \
+		${MODLIBICONV_LIB_DEPENDS} \
+		${MODGETTEXT_LIB_DEPENDS}
+
+WANTLIB-main=	${WANTLIB} curses util Xft
+
+uim_LIB_DEPENDS=uim,uim-custom::inputmethods/uim
+LIB_DEPENDS-qt=	${LIB_DEPENDS-main} ${MODQT_LIB_DEPENDS} ${uim_LIB_DEPENDS}
+WANTLIB-qt=	${WANTLIB} pthread
+
+LIB_DEPENDS-gtk=${LIB_DEPENDS-main} ${uim_LIB_DEPENDS} \
+		gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
+
+WANTLIB-gtk=	${WANTLIB} glib-2.0 gmodule-2.0 pangoft2-1.0 \
 		gobject-2.0 pango-1.0 atk-1.0 \
 		pangocairo-1.0 cairo util glitz png z
-.endif
 
-.if defined(PACKAGING) && ${SUBPACKAGE} != ""
-LIB_DEPENDS+=	uim,uim-custom::inputmethods/uim
-.endif
 
-LIB_DEPENDS+=	anthy,anthydic::inputmethods/anthy
-
-WANTLIB+=	Xrender X11 fontconfig freetype Xext c stdc++ m
-		
 MAKE_FLAGS=	moduledir='${LOCALBASE}/lib/gtk-2.0/2.4.0/immodules' \
 		UIM_QT_LDFLAGS='-pthread -L${X11BASE}/lib -L${MODQT_LIBDIR} -lqt-mt -lXext -lX11'
 		

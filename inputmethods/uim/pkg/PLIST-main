@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/10/19 09:35:16 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/21 00:47:28 espie Exp $
+@pkgpath inputmethods/uim
 bin/uim-el-agent
 bin/uim-el-helper-agent
 bin/uim-fep
