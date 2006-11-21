@@ -1,0 +1,11 @@
+--- Makefile.PL.orig	Wed Oct 25 14:18:49 2006
++++ Makefile.PL	Tue Nov 21 19:11:51 2006
+@@ -22,7 +22,7 @@ WriteMakefile(
+ 		'File::Spec'     => '0.80', # need splitpath()
+ 		'File::Copy'     => 0,
+ 		'File::Temp'     => 0,
+-		'File::Which'    => '0.05', # Should really be build_requires
++#		'File::Which'    => '0.05', # Not really needed
+ 		# 'Getopt::Std'    => 0,      # examples/extract.pl
+ 		'IO::File'       => 0,
+ 		'IO::Handle'     => 0,

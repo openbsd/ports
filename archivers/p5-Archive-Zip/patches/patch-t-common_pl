@@ -1,0 +1,14 @@
+--- t/common.pl.orig	Wed Oct 25 14:18:49 2006
++++ t/common.pl	Tue Nov 21 19:09:17 2006
+@@ -6,9 +6,8 @@ use constant INPUTZIP  => 'testin.zip';
+ use constant OUTPUTZIP => 'testout.zip';
+ 
+ # Do we have the 'zip' and 'unzip' programs?
+-use File::Which ();
+-use constant HAVEZIP   => !! File::Which::which('zip');
+-use constant HAVEUNZIP => !! File::Which::which('unzip');
++use constant HAVEZIP   => '1';
++use constant HAVEUNZIP => '1';
+ 
+ use constant ZIP     => 'zip ';
+ use constant ZIPTEST => 'unzip -t ';

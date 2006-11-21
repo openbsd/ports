@@ -1,14 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:12:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/11/21 18:33:09 jasper Exp $
 bin/crc32
 ${P5SITE}/Archive/
 ${P5SITE}/Archive/Zip/
 ${P5SITE}/Archive/Zip.pm
-@comment ${P5SITE}/Archive/Zip.pod
+${P5SITE}/Archive/Zip/Archive.pm
 ${P5SITE}/Archive/Zip/BufferedFileHandle.pm
+${P5SITE}/Archive/Zip/DirectoryMember.pm
 @comment ${P5SITE}/Archive/Zip/FAQ.pod
+${P5SITE}/Archive/Zip/FileMember.pm
+${P5SITE}/Archive/Zip/Member.pm
 ${P5SITE}/Archive/Zip/MemberRead.pm
 ${P5SITE}/Archive/Zip/MockFileHandle.pm
+${P5SITE}/Archive/Zip/NewFileMember.pm
+${P5SITE}/Archive/Zip/StringMember.pm
 ${P5SITE}/Archive/Zip/Tree.pm
+${P5SITE}/Archive/Zip/ZipFileMember.pm
 @man man/man3p/Archive::Zip.3p
 @man man/man3p/Archive::Zip::FAQ.3p
 @man man/man3p/Archive::Zip::MemberRead.3p
