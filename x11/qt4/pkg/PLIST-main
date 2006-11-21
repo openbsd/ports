@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/21 19:25:47 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2006/11/21 22:40:31 espie Exp $
+@pkgpath x11/qt4
 %%SHARED%%
 bin/assistant4
 bin/designer4
