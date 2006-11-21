@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/06/14 08:41:14 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/21 04:07:00 pvalchev Exp $
 
 COMMENT=	"Python interface to memcached"
 
-DISTNAME=	python-memcached-1.31
+DISTNAME=	python-memcached-1.34
 PKGNAME=	${DISTNAME:S/python-/py-/}
 CATEGORIES=	misc
 
