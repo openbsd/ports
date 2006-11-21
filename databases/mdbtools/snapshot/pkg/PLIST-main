@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/01 09:55:33 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/21 10:32:38 espie Exp $
+@pkgpath databases/mdbtools/snapshot
 %%SHARED%%
 bin/mdb-array
 bin/mdb-export

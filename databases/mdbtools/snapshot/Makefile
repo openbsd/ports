@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/11 21:04:27 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2006/11/21 10:32:38 espie Exp $
 
-COMMENT=	"read microsoft Access MDB"
+COMMENT-main=	"read microsoft Access MDB"
 COMMENT-gmdb=	"graphical interface to MDB tools"
 DATE=		20060425
 DISTNAME=	mdbtools-${DATE}
+PKGNAME-main=	mdbtools-${DATE}p0
 PKGNAME-gmdb=	gmdb-${DATE}p0
 HOMEPAGE=	http://mdbtools.sourceforge.net/
 
@@ -11,9 +12,7 @@ CATEGORIES=	databases converters
 MASTER_SITES=	ftp://quatramaran.ens.fr/pub/espie/
 
 #MASTER_SITES=${MASTER_SITE_SOURCEFORGE:=mdbtools/}
-MULTI_PACKAGES=	-gmdb
-
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -gmdb
 
 SHARED_LIBS +=	mdb                  1.0      # .1.0
 SHARED_LIBS +=	mdbsql               1.0      # .1.0
@@ -39,9 +38,11 @@ WANTLIB=	c
 MODULES=	devel/gettext
 
 
-.if !defined(PACKAGING) || ${SUBPACKAGE} == "-gmdb"
-LIB_DEPENDS+=	gnomeui-2::x11/gnome/libgnomeui
-WANTLIB+=	audiofile bonobo-activation popt ORBit-2 pthread \
+LIB_DEPENDS-gmdb=${LIB_DEPENDS} \
+		gnomeui-2::x11/gnome/libgnomeui \
+		mdb,mdbsql::databases/mdbtools/snapshot
+WANTLIB-gmdb=	${WANTLIB} \
+		audiofile bonobo-activation popt ORBit-2 pthread \
 		bonoboui-2  atk-1.0 gobject-2.0 m jpeg \
 		SM esd fontconfig ssl z cairo glitz png \
 		gthread-2.0 art_lgpl_2 X11 glade-2.0 \
@@ -51,16 +52,8 @@ WANTLIB+=	audiofile bonobo-activation popt ORBit-2 pthread \
 		gnome-keyring freetype crypto gtk-x11-2.0 \
 		pangocairo-1.0 gdk_pixbuf-2.0 bonobo-2 \
 		gnomevfs-2 ORBitCosNaming-2
-.endif
 
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-gmdb"
-LIB_DEPENDS+=	mdb,mdbsql::databases/mdbtools/snapshot
-.endif
-
-.if defined(PACKAGING) && ${SUBPACKAGE} == ""
-WANTLIB+= readline termcap
-.endif
-
+WANTLIB-main=	${WANTLIB} readline termcap
 
 .include <bsd.port.mk>
 
