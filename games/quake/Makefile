@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2006/10/10 08:34:22 bernd Exp $
+# $OpenBSD: Makefile,v 1.14 2006/11/21 11:03:35 espie Exp $
 
-COMMENT=		"Quake/Quake-world client"
+COMMENT-main=		"Quake/Quake-world client"
 COMMENT-server=		"Quake world server"
 CATEGORIES=		games
 
 FULLPKGNAME-server=	quakeworld-server-20000101p1
-PKGNAME=		quake-20000101p0
+PKGNAME-main=		quake-20000101p1
 DISTNAME=		quake-v6-bsd-kame
 PATCHFILES=		quake6-00-v6-20000202b.diff.gz:0
 PATCH_DIST_STRIP=	-p1
@@ -19,19 +19,13 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-WANTLIB=		c m
+WANTLIB=		c m pthread
 
 USE_GMAKE=		Yes
 
-MULTI_PACKAGES=-server
-FLAVORS=		sdl ggi
+MULTI_PACKAGES=		-main -server
+FLAVORS=		sdl ggi x11
 FLAVOR?=		sdl
-
-.if ${FLAVOR:L:Msdl} && ${FLAVOR:L:Mggi}
-ERRORS="Fatal: Choose only one flavor: sdl or ggi"
-.endif
-
-SUBPACKAGE?=
 
 CONFIGURE_ENV=LDFLAGS='-L${LOCALBASE}/lib -L${X11BASE}/lib'
 CONFIGURE_ENV+=CPPFLAGS='-I${LOCALBASE}/include -I${X11BASE}/include'
@@ -41,31 +35,24 @@ CONFIGURE_ARGS+=	--bindir=/bin
 CONFIGURE_ARGS+=	--with-opengl=no --with-opengl-includes=no
 
 .if ${FLAVOR:L:Msdl}
-.  if !defined(PACKAGING) || ${SUBPACKAGE} == ""
-LIB_DEPENDS=		SDL::devel/sdl
-WANTLIB+=		pthread
-.  endif
+LIB_DEPENDS-main=	SDL::devel/sdl
 CONFIGURE_ARGS+=	--with-sdl=${LOCALBASE} --without-ggi
 MAKE_FLAGS=		HAS_X11=no
 CFLAGS+=		-pthread
 .elif ${FLAVOR:L:Mggi}
-.  if !defined(PACKAGING) || ${SUBPACKAGE} == ""
-LIB_DEPENDS=		ggi.::graphics/ggi
-WANTLIB+=		pthread
-.  endif
+LIB_DEPENDS-main=	ggi::graphics/ggi
 CONFIGURE_ARGS+=	--with-ggi=${LOCALBASE} --without-sdl
 MAKE_FLAGS=		HAS_X11=no
 CFLAGS+=		-pthread
-.else
+.elif ${FLAVOR:L:Mx11}
 CONFIGURE_ARGS+=	--without-sdl --without-ggi
 MAKE_FLAGS=	
-WANTLIB+=		X11 Xext
-.endif
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-server"
-WANTLIB+=		pthread
+WANTLIB-main=		c m X11 Xext
+.else
+ERRORS="Need some non empty flavor"
 .endif
 
-WRKDIST=		${WRKDIR}/quakeforge
+WRKDIST=	${WRKDIR}/quakeforge
 FAKE_FLAGS=	${MAKE_FLAGS}	DESTDIR=${WRKINST}
 
 post-extract:

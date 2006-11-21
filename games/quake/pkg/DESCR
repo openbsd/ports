@@ -1,8 +1,0 @@
-Quake is a 3D action game, which can be played both single-user as multi-
-user. This package holds binaries for Quake, QuakeWorld.
-
-Note that you must have quake datafiles from elsewhere.
-
-Flavors:
-	sdl	uses sdl library, allows full screen.
-	ggi	uses ggi library, somewhat theoretical interest.
