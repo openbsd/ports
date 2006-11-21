@@ -1,34 +1,34 @@
 #!/bin/sh
 #
-# $OpenBSD: soffice.sh,v 1.4 2006/11/03 05:11:09 kurt Exp $
+# $OpenBSD: soffice.sh,v 1.5 2006/11/21 16:47:00 ian Exp $
 #
 
 case "$0"
 in
 	*swriter)
-		exec %%LOCALBASE%%/openoffice/program/soffice -writer $*
+		exec %%LOCALBASE%%/openoffice/program/soffice -writer "$@"
 		;;
 	*scalc)
-		exec %%LOCALBASE%%/openoffice/program/soffice -calc $*
+		exec %%LOCALBASE%%/openoffice/program/soffice -calc "$@"
 		;;
 	*sdraw)
-		exec %%LOCALBASE%%/openoffice/program/soffice -draw $*
+		exec %%LOCALBASE%%/openoffice/program/soffice -draw "$@"
 		;;
 	*simpress)
-		exec %%LOCALBASE%%/openoffice/program/soffice -impress $*
+		exec %%LOCALBASE%%/openoffice/program/soffice -impress "$@"
 		;;
 	*sbase)
-		exec %%LOCALBASE%%/openoffice/program/soffice -base $*
+		exec %%LOCALBASE%%/openoffice/program/soffice -base "$@"
 		;;
 	*smath)
-		exec %%LOCALBASE%%/openoffice/program/soffice -math $*
+		exec %%LOCALBASE%%/openoffice/program/soffice -math "$@"
 		;;
 	*spadmin)
-		exec %%LOCALBASE%%/openoffice/program/spadmin $*
+		exec %%LOCALBASE%%/openoffice/program/spadmin "$@"
 		;;
 	*setofficelang)
-		exec %%LOCALBASE%%/openoffice/program/setofficelang $*
+		exec %%LOCALBASE%%/openoffice/program/setofficelang "S@"
 		;;
 	*)
-		exec %%LOCALBASE%%/openoffice/program/soffice $*
+		exec %%LOCALBASE%%/openoffice/program/soffice "$@"
 esac
