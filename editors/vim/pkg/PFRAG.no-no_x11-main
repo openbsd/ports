@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.7 2006/05/21 20:45:35 marco Exp $
+@comment $OpenBSD: PFRAG.no-no_x11-main,v 1.1 2006/11/21 11:25:03 espie Exp $
 bin/eview
 bin/evim
 bin/gview

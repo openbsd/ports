@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.74 2006/11/11 21:04:27 steven Exp $
+# $OpenBSD: Makefile,v 1.75 2006/11/21 11:25:03 espie Exp $
 
-COMMENT=	"vi clone, many additional features"
+COMMENT-main=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
 
 DISTNAME=	vim-7.0
 REVISION=	145
 VERSION=	7.0.${REVISION}
 # keep PKGNAME for full version number
-PKGNAME=	vim-${VERSION}
+PKGNAME=	vim-${VERSION}p0
 P=		${DISTNAME:C/[-\.]//g}
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unix/ \
@@ -46,12 +46,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c curses
 
-MULTI_PACKAGES=	-lang
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -lang
 
-.for i in ${MULTI_PACKAGES}
-PKGNAME$i=	vim$i-${VERSION}p0
-.endfor
+PKGNAME-main=	vim-${VERSION}p0
+PKGNAME-lang=	vim-lang-${VERSION}p0
 
 FLAVORS=	huge gtk2 athena motif no_x11 perl python ruby
 FLAVOR?=	gtk2
@@ -116,24 +114,18 @@ WANTLIB+=	ICE SM X11 Xext Xrender Xt fontconfig freetype m z\
 ERRORS=		"Fatal: You must select one GUI interface: no_x11, gtk2, athena or motif"
 .endif
 
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-lang"
-.  for i in ${FLAVOR:L}
-_flavor:=	${_flavor},$i
-.  endfor
-RUN_DEPENDS=	::editors/vim${_flavor}
-PKG_ARCH=	*
-LIB_DEPENDS=
-WANTLIB=
-.else
-MODULES=	devel/gettext
-.endif
+MAINPATH=	editors/vim${FLAVOR_EXT:S/-/,/g}
+
+RUN_DEPENDS-lang=	::${MAINPATH}
+PKG_ARCH-lang=		*
+LIB_DEPENDS-lang=
+WANTLIB-lang=
+MODULES=		devel/gettext
 
 WRKDIST=	${WRKDIR}/${P}
 WRKSRC=		${WRKDIST}/src
 
-SUBST_VARS=	P
-
-.include <bsd.own.mk>
+SUBST_VARS=	P MAINPATH
 
 # don't try to regenerate the configure script. Works around the fact that
 # auto/configure.in is newer than auto/configure.
