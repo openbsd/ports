@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2006/10/18 23:57:58 espie Exp $
-COMMENT=	'japanese input method'
+# $OpenBSD: Makefile,v 1.3 2006/11/21 00:12:40 espie Exp $
+COMMENT-main=	'japanese input method'
 COMMENT-emacs=	'emacs files for anthy'
 
 CATEGORIES=	japanese inputmethods
 
 V=		7900
-MULTI_PACKAGES=	-emacs
+MULTI_PACKAGES=	-main -emacs
 DISTNAME=	anthy-$V
+PKGNAME-main=	anthy-$Vp0
 PKGNAME-emacs=	emacs-anthy-$V
 
 HOMEPAGE= 	http://anthy.sourceforge.jp/
@@ -33,11 +34,7 @@ CONFIGURE_ENV+=	LDFLAGS='-L${LOCALBASE}/lib'
 
 FAKE_FLAGS=	DESTDIR=${WRKINST} sysconfdir=$(PREFIX)/share/examples/anthy
 
-SUBPACKAGE?=
-
-.if !defined(PACKAGING) || defined(PACKAGING) && ${SUBPACKAGE} == ""
-WANTLIB=	c m
-.endif
+WANTLIB-main=	c m
 
 # can't make sense of any of these tests
 NO_REGRESS=	Yes
