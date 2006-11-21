@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/10/21 11:47:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/21 09:20:27 espie Exp $
+@pkgpath x11/artwiz-aleczapka
 lib/X11/fonts/
 @fontdir lib/X11/fonts/artwiz-aleczapka/
 lib/X11/fonts/artwiz-aleczapka/anorexia.pcf

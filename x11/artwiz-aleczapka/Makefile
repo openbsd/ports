@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2006/10/21 11:47:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/21 09:20:27 espie Exp $
 
-COMMENT=	"improved artwiz fonts"
+COMMENT-main=	"improved artwiz fonts"
 COMMENT-de=	"improved artwiz fonts (german pack)"
 COMMENT-se=	"improved artwiz fonts (swedish pack)"
 
 V=		1.3
 NAME=		artwiz-aleczapka
 DISTNAME=	${NAME}-en-${V}
-PKGNAME=	${NAME}-${V}p0
+PKGNAME-main=	${NAME}-${V}p1
 PKGNAME-de=	${NAME}-de-${V}
 PKGNAME-se=	${NAME}-se-${V}
 CATEGORIES=	x11
@@ -36,12 +36,10 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${NAME}-de-${V}${EXTRACT_SUFX} \
 		${NAME}-se-${V}${EXTRACT_SUFX}
 
-MULTI_PACKAGES=	-de -se
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -de -se
 
-.if defined(PACKAGING) && !empty(SUBPACKAGE)
-RUN_DEPENDS=	:artwiz-aleczapka->=${V}:x11/artwiz-aleczapka
-.endif
+RUN_DEPENDS-de=	:artwiz-aleczapka->=${V}:x11/artwiz-aleczapka
+RUN_DEPENDS-se=	:artwiz-aleczapka->=${V}:x11/artwiz-aleczapka
 
 do-install:
 	${INSTALL_DATA_DIR} ${INST_DIR}
