@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $OpenBSD: update-patches,v 1.13 2005/11/05 11:38:46 espie Exp $
+# $OpenBSD: update-patches,v 1.14 2006/11/21 11:18:34 espie Exp $
 # Copyright (c) 2000
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -83,28 +83,31 @@ do
 done
 
 # Verify all patches accounted for
-cd $PATCHDIR
-for i in *
-do
-    [ -f $i ] || continue
-    case $i in \
-    *$PATCHORIG|*.rej|*~) ;;
-    *)
-    	if grep '^\\ No newline at end of file' $i >/dev/null; then
-		echo 1>&2 "*** Patch $i needs manual intervention"
-	fi
-	for j in $accounted 
-	do
-	    if [ $j = $i ]
-	    then
-		continue 2
+if cd $PATCHDIR 2>/dev/null; then
+    for i in *
+    do
+	[ -f $i ] || continue
+	case $i in \
+	*$PATCHORIG|*.rej|*~) ;;
+	*)
+	    if grep '^\\ No newline at end of file' $i >/dev/null; then
+		    echo 1>&2 "*** Patch $i needs manual intervention"
 	    fi
-	done
-	echo 1>&2 "*** Patch $i not accounted for.";;
-    esac
-done
+	    for j in $accounted 
+	    do
+		if [ $j = $i ]
+		then
+		    continue 2
+		fi
+	    done
+	    echo 1>&2 "*** Patch $i not accounted for.";;
+	esac
+    done
+else
+    echo 1>&2 "No patch found"
+fi
 
-# Check for $Id: update-patches,v 1.13 2005/11/05 11:38:46 espie Exp $ and similar bugs in all those patch files.
+# Check for $Id: update-patches,v 1.14 2006/11/21 11:18:34 espie Exp $ and similar bugs in all those patch files.
 for i in $accounted
 do
     if sed -e '/1,^---/ d' $i|grep '$(Id|OpenBSD'
