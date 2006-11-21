@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.13 2005/10/07 18:52:58 alek Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/21 10:23:48 espie Exp $
+@pkgpath net/tightvnc
 bin/Xvnc
 bin/vncconnect
 bin/vncpasswd
