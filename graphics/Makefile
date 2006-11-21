@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.171 2006/11/20 09:37:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.172 2006/11/21 18:41:52 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -10,6 +10,7 @@
      SUBDIR += aalib
      SUBDIR += aalib,no_x11
      SUBDIR += agg
+     SUBDIR += animorph
      SUBDIR += aqsis
      SUBDIR += blender
      SUBDIR += cadubi
@@ -85,6 +86,8 @@
      SUBDIR += libungif
      SUBDIR += libwmf
      SUBDIR += luagd
+     SUBDIR += makehuman
+     SUBDIR += mhgui
      SUBDIR += mpeg-lib
      SUBDIR += mpeg_encode
      SUBDIR += mpeg_play
