@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.251 2006/11/16 23:00:57 alek Exp $
+# $OpenBSD: Makefile,v 1.252 2006/11/21 16:09:36 jasper Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -226,6 +226,7 @@
      SUBDIR += w3m,japanese
      SUBDIR += w3m,japanese,image
      SUBDIR += w3mir
+     SUBDIR += wApua
      SUBDIR += webalizer
      SUBDIR += webcollab
      SUBDIR += weblint
