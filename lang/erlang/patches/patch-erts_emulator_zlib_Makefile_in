@@ -1,7 +1,7 @@
-$OpenBSD: patch-erts_emulator_zlib_Makefile_in,v 1.1 2006/04/02 16:52:04 steven Exp $
---- erts/emulator/zlib/Makefile.in.orig	Sun Apr  2 12:13:31 2006
-+++ erts/emulator/zlib/Makefile.in	Sun Apr  2 12:13:56 2006
-@@ -15,7 +15,7 @@ ARFLAGS = rc
+$OpenBSD: patch-erts_emulator_zlib_Makefile_in,v 1.2 2006/11/21 08:59:44 steven Exp $
+--- erts/emulator/zlib/Makefile.in.orig	Tue Aug 29 11:47:55 2006
++++ erts/emulator/zlib/Makefile.in	Wed Aug 30 19:56:31 2006
+@@ -17,7 +17,7 @@ ARFLAGS = rc
  ifeq ($(findstring ose,$(TARGET)),ose)
    TYPE_FLAGS =
  else

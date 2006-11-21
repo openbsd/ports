@@ -1,12 +1,17 @@
-$OpenBSD: patch-erts_configure,v 1.3 2006/08/02 17:21:19 steven Exp $
---- erts/configure.orig	Tue May 16 19:39:04 2006
-+++ erts/configure	Wed May 17 16:06:25 2006
-@@ -6828,7 +6828,7 @@ static void unmask_x87(void)
-     __asm__ __volatile__("fldcw %0" : : "m"(cw));
- }
+$OpenBSD: patch-erts_configure,v 1.4 2006/11/21 08:59:44 steven Exp $
+--- erts/configure.orig	Tue Nov  7 12:01:38 2006
++++ erts/configure	Fri Nov 17 15:57:24 2006
+@@ -7166,11 +7166,11 @@ static __inline__ int check_fpe(double f
  
--#if defined(__x86_64__)
-+#if defined(__x86_64__) && !defined(__OpenBSD__)
- static void unmask_sse2(void)
- {
-     unsigned int mxcsr;
+ #endif
+ 
+-#if (defined(__linux__) && (defined(__i386__) || defined(__x86_64__) || defined(__sparc__) || defined(__powerpc__))) || (defined(__DARWIN__) && (defined(__i386__) || defined(__ppc__))) || (defined(__FreeBSD__) && defined(__x86_64__)) || (defined(__sun__) && defined(__x86_64__))
++#if (defined(__linux__) && (defined(__i386__) || defined(__x86_64__) || defined(__sparc__) || defined(__powerpc__))) || (defined(__DARWIN__) && (defined(__i386__) || defined(__ppc__))) || ((defined(__OpenBSD__) || defined(__FreeBSD__)) && defined(__x86_64__)) || (defined(__sun__) && defined(__x86_64__))
+ 
+ #if defined(__linux__) && defined(__i386__)
+ #include <asm/sigcontext.h>
+-#elif defined(__FreeBSD__) && defined(__x86_64__)
++#elif (defined(__OpenBSD__) || defined(__FreeBSD__)) && defined(__x86_64__)
+ #include <sys/types.h>
+ #include <machine/fpu.h>
+ #endif

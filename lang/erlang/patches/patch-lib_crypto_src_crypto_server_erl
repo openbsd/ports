@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_crypto_src_crypto_server_erl,v 1.1 2006/11/21 08:59:44 steven Exp $
+--- lib/crypto/src/crypto_server.erl.orig	Thu Sep 14 10:55:24 2006
++++ lib/crypto/src/crypto_server.erl	Thu Sep 14 10:55:50 2006
+@@ -78,7 +78,7 @@ code_change(_OldVsn, State, _Extra) ->
+     {ok, State}.
+ 
+ terminate(_Reason, {Port, _Libraries}) ->
+-    Port ! {self, close},
++    Port ! {self(), close},
+     ok.
+ 
+ 

@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2006/08/02 17:21:19 steven Exp $
---- Makefile.in.orig	Fri May 12 16:43:44 2006
-+++ Makefile.in	Tue Aug  1 12:12:53 2006
+$OpenBSD: patch-Makefile_in,v 1.6 2006/11/21 08:59:44 steven Exp $
+--- Makefile.in.orig	Tue Aug 29 11:48:08 2006
++++ Makefile.in	Wed Aug 30 19:56:28 2006
 @@ -49,8 +49,7 @@ exec_prefix = @exec_prefix@
  # useful e.g. when installing on a server that stores the files with a
  # different path from where the clients access them. Or when building
@@ -11,7 +11,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2006/08/02 17:21:19 steven Exp $
  
  # The directory in which user executables (ERL_BASE_PUB_FILES) are put
  BINDIR      = $(INSTALL_PREFIX)@bindir@
-@@ -539,7 +538,7 @@ else
+@@ -619,7 +618,7 @@ else
  endif
  
  install.Install:
@@ -20,7 +20,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2006/08/02 17:21:19 steven Exp $
  
  #
  # Install erlang base public files
-@@ -547,7 +546,7 @@ install.Install:
+@@ -627,7 +626,7 @@ install.Install:
  install.bin:
  	for file in $(ERL_BASE_PUB_FILES); do \
  		rm -f $(BINDIR)/$$file; \
