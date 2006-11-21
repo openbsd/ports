@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2006/11/07 09:27:37 alek Exp $
+# $OpenBSD: Makefile,v 1.24 2006/11/21 19:25:47 espie Exp $
 
-COMMENT=		"C++ X11 GUI toolkit"
+COMMENT-main=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples for qt4"
 COMMENT-html=		"off-line html documentation for qt4"
 COMMENT-postgresql=	"PostgresSQL plugin for qt4"
@@ -11,10 +11,10 @@ COMMENT-sqlite=		"sqlite plugin for qt4"
 PKGNAME=		qt4-${VERSION}
 PKGNAME-mysql=		qt4-mysql-${VERSION}
 PKGNAME-postgresql=	qt4-postgresql-${VERSION}
-PKGNAME-examples=	qt4-examples-${VERSION}p0
+PKGNAME-examples=	qt4-examples-${VERSION}p1
 PKGNAME-sqlite2=	qt4-sqlite2-${VERSION}
 PKGNAME-sqlite=		qt4-sqlite-${VERSION}
-FULLPKGNAME=		qt4-${VERSION}
+FULLPKGNAME-main=	qt4-${VERSION}p0
 FULLPKGNAME-html=	qt4-html-${VERSION}
 SHARED_LIBS=	Qt3Support 6.0 \
 		QtCore 6.0 \
@@ -92,16 +92,20 @@ CONFIGURE_ARGS+=	-datadir ${QT_BASEDIR}
 CONFIGURE_ARGS+=	-sysconfdir ${SYSCONFDIR}
 CONFIGURE_ARGS+=	-examplesdir ${QT_BASEDIR}/examples
 CONFIGURE_ARGS+=	-demosdir ${QT_BASEDIR}/demos
+CONFIGURE_ARGS+= -I${LOCALBASE}/include/mysql -L${LOCALBASE}/lib/mysql \
+	-plugin-sql-mysql
+CONFIGURE_ARGS+= -I${LOCALBASE}/include/postgresql \
+	    -I${LOCALBASE}/include/postgresql/server \
+	    -L${LOCALBASE}/lib \
+	    -I${LOCALBASE}/include -plugin-sql-psql
+CONFIGURE_ARGS+= -plugin-sql-sqlite
 
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE} QTDIR="${WRKSRC}" 
 
-SUBPACKAGE?=
-
-LIB_DEPENDS=
-WANTLIB=
 BUILD_DEPENDS+=::print/cups
+BUILD_DEPENDS+=::databases/postgresql,-server
 
-MULTI_PACKAGES+=-html 
+MULTI_PACKAGES=-main -html -mysql -postgresql -sqlite2 -sqlite
 
 
 .if ${FLAVOR:L:Mno_examples}
@@ -114,79 +118,56 @@ MULTI_PACKAGES+=-examples
 PROGRAMS+=	qtdemo
 .endif
 
-.if !defined(PACKAGING) || ${SUBPACKAGE} == ""
-LIB_DEPENDS+=	jpeg::graphics/jpeg \
-		mng::graphics/libmng \
-		dbus-1::x11/dbus
 
-WANTLIB+=	lcms
-.endif
+LIB_DEPENDS=		glib-2.0::devel/glib2
+WANTLIB=		iconv intl
 
-MULTI_PACKAGES+=	-mysql
-CONFIGURE_ARGS+= -I${LOCALBASE}/include/mysql -L${LOCALBASE}/lib/mysql \
-	-plugin-sql-mysql
-.if !defined(PACKAGING) || ${SUBPACKAGE} == "-mysql"
-LIB_DEPENDS+=mysqlclient_r::databases/mysql
-.  if defined(PACKAGING)
-LIB_DEPENDS+=	QtCore.>=4,QtSql::x11/qt4
-.  endif
-WANTLIB+=	m z crypto ssl pthread
-.endif
+commonWANTLIB=		ICE Xrender c GLU SM freetype pthread Xrandr Xinerama \
+			stdc++ Xcursor Xext GL Xi m X11 z fontconfig Xfixes
+commonLIB_DEPENDS=	png.>=2::graphics/png \
+			dbus-1::x11/dbus
 
-MULTI_PACKAGES+=	-postgresql
-BUILD_DEPENDS+=::databases/postgresql,-server
-CONFIGURE_ARGS+= -I${LOCALBASE}/include/postgresql \
-	    -I${LOCALBASE}/include/postgresql/server \
-	    -L${LOCALBASE}/lib \
-	    -I${LOCALBASE}/include -plugin-sql-psql
-.if !defined(PACKAGING) || ${SUBPACKAGE} == "-postgresql" 
-LIB_DEPENDS+=pq.>=2:postgresql-client-*:databases/postgresql
-.  if defined(PACKAGING)
-LIB_DEPENDS+=	QtCore.>=4,QtSql::x11/qt4
-.  endif
-WANTLIB+=	m z
-.endif
+sqlWANTLIB=		m z
+sqlLIB_DEPENDS= 	QtCore.>=4,QtSql::x11/qt4
 
 
-CONFIGURE_ARGS+= -plugin-sql-sqlite
-MULTI_PACKAGES+=	-sqlite2
-.if !defined(PACKAGING) || ${SUBPACKAGE} == "-sqlite2"
-LIB_DEPENDS+=	sqlite::databases/sqlite
-.  if defined(PACKAGING)
-LIB_DEPENDS+=	QtCore.>=4,QtSql::x11/qt4
-.  endif
-WANTLIB+=	m z
-.endif
+LIB_DEPENDS-main=	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
+			jpeg::graphics/jpeg \
+			mng::graphics/libmng
+WANTLIB-main=		${WANTLIB} ${commonWANTLIB} \
+			lcms
 
-MULTI_PACKAGES+=	-sqlite
-.if !defined(PACKAGING) || ${SUBPACKAGE} == "-sqlite"
-LIB_DEPENDS+=	sqlite3::databases/sqlite3
-.  if defined(PACKAGING)
-LIB_DEPENDS+=	QtCore.>=4,QtSql::x11/qt4
-.  endif
-WANTLIB+=	m z
-.endif
 
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-examples"
-LIB_DEPENDS+=	QtDesigner,QtCore.>=4,QtGui,QtNetwork,QtOpenGL,QtSql,QtXml,QtSvg,QtTest,Qt3Support,QtAssistantClient,QtDBus::x11/qt4
-WANTLIB+=	dbus-1
-.endif
+LIB_DEPENDS-mysql=	${LIB_DEPENDS} ${sqlLIB_DEPENDS} \
+			mysqlclient_r::databases/mysql
+WANTLIB-mysql=		${WANTLIB} ${sqlWANTLIB} \
+			crypto ssl pthread
 
-.if !defined(PACKAGING) || ${SUBPACKAGE} == "" || ${SUBPACKAGE} == "-examples"
-WANTLIB+=	ICE Xrender c GLU SM freetype pthread Xrandr Xinerama \
-		stdc++ Xcursor Xext GL Xi m X11 z fontconfig Xfixes
-LIB_DEPENDS+=	png.>=2::graphics/png
-.endif
 
-.if !defined(PACKAGING) || ${SUBPACKAGE} != "-html"
-LIB_DEPENDS+=	glib-2.0::devel/glib2
-WANTLIB+=	iconv intl
+LIB_DEPENDS-postgresql=	${LIB_DEPENDS} ${sqlLIB_DEPENDS} \
+			pq.>=2:postgresql-client-*:databases/postgresql
+WANTLIB-postgresql=	${WANTLIB} ${sqlWANTLIB}
+			
 
-.endif
+LIB_DEPENDS-sqlite2=	${LIB_DEPENDS} ${sqlLIB_DEPENDS} \
+			sqlite::databases/sqlite
+WANTLIB-sqlite2=	${WANTLIB} ${sqlWANTLIB}
 
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-html"
-PKG_ARCH=	*
-.endif
+
+LIB_DEPENDS-sqlite=	${LIB_DEPENDS} ${sqlLIB_DEPENDS} \
+			sqlite3::databases/sqlite3
+WANTLIB-sqlite=		${WANTLIB} ${sqlWANTLIB}
+
+
+LIB_DEPENDS-examples=	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
+			QtDesigner,QtCore.>=4,QtGui,QtNetwork,QtOpenGL,QtSql,QtXml,QtSvg,QtTest,Qt3Support,QtAssistantClient,QtDBus::x11/qt4
+WANTLIB-examples=	${WANTLIB} ${commonWANTLIB}
+
+
+LIB_DEPENDS-html=
+WANTLIB-html=
+PKG_ARCH-html=	*
+
 
 QT_BASEDIR=	${PREFIX}/lib/qt4
 QT_INCDIR=	${PREFIX}/include/X11/qt4
@@ -240,4 +221,5 @@ post-install:
 	cd ${PREFIX}/lib/qt4 && ln -sf ../../include/X11/qt4 include
 
 USE_GMAKE=Yes
+
 .include <bsd.port.mk>
