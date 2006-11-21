@@ -1,3 +1,5 @@
-nsd is the daemon part of the NSD package written by NLnet Labs in
-collaboration with RIPE NCC. NSD stands for name server daemon and
-provides authoritative DNS information.
+The NLnet Labs Name Server Daemon (NSD) is an authoritative RFC compliant 
+DNS nameserver.  It was first conceived to allow for more genetic 
+diversity for DNS server implementations used by the root-server system 
+and it has been developed for operations in environments where speed, 
+reliability, stability, and security are of high importance.

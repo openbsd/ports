@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.34 2006/11/13 07:55:51 jakob Exp $
+# $OpenBSD: Makefile,v 1.35 2006/11/21 07:24:46 jakob Exp $
 
 COMMENT=	"authoritative-only name server daemon"
 
-VERSION=	2.3.6
+VERSION=	3.0.2
 DISTNAME=	nsd-${VERSION}
 PKGNAME=	nsd-${VERSION}
 CATEGORIES=	net
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c wrap crypto
+WANTLIB=		c crypto
 
 # gcc 3.3.5, Bus errors
 .if ${MACHINE_ARCH} == "sparc64"
@@ -25,38 +25,20 @@ CFLAGS=	-O0
 .endif
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--enable-dnssec \
-			--enable-bind8-stats \
-			--with-libwrap=/usr/lib \
+CONFIGURE_ARGS+=	--enable-bind8-stats \
+			--enable-nsid \
 			--with-ssl=/usr \
 			--with-user=named \
-			--with-pidfile=/var/run/nsd.pid \
-			--with-zonesdir=/var/nsd \
-			--with-dbfile=/var/nsd/nsd.db
+			--with-pidfile=/var/nsd/nsd.pid \
+			--with-zonesdir=/var/nsd/zones \
+			--with-dbfile=/var/nsd/nsd.db \
+			--with-difffile=/var/nsd/ixfr.db \
+			--with-xfrdfile=/var/nsd/xfrd.state
 
 NO_REGRESS=	Yes
 
-EXE=		nsd nsd-notify nsd-xfer zonec
-MAN8=		nsd.8 nsd-notify.8 nsd-xfer.8 zonec.8 nsdc.8
-DOCDIR=		share/doc/nsd
-DOCFILES=	README RELNOTES CREDITS DIFFERENCES REQUIREMENTS
-
-EXAMPLESDIR=	share/examples/nsd
-
-do-install:
-.for f in ${EXE}
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/sbin
-.endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/nsdc.sh ${PREFIX}/sbin/nsdc
-.for f in ${MAN8}
-	${INSTALL_MAN} ${WRKSRC}/${f} ${PREFIX}/man/man8
-.endfor
-	${INSTALL_DATA_DIR} ${PREFIX}/${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/nsd.zones.sample ${PREFIX}/${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/nsdc.conf.sample ${PREFIX}/${EXAMPLESDIR}
-	${INSTALL_DATA_DIR} ${PREFIX}/${DOCDIR}
-.for f in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${DOCDIR}
-.endfor
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nsd
+	mv ${WRKINST}/${SYSCONFDIR}/nsd/nsd.conf.sample ${PREFIX}/share/examples/nsd/nsd.conf
 
 .include <bsd.port.mk>

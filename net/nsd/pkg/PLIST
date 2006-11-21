@@ -1,23 +1,30 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/01/31 18:25:39 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/11/21 07:24:47 jakob Exp $
+@man man/man5/nsd.conf.5
+@man man/man8/nsd-checkconf.8
 @man man/man8/nsd-notify.8
+@man man/man8/nsd-patch.8
 @man man/man8/nsd-xfer.8
 @man man/man8/nsd.8
 @man man/man8/nsdc.8
 @man man/man8/zonec.8
 sbin/nsd
+sbin/nsd-checkconf
 sbin/nsd-notify
+sbin/nsd-patch
 sbin/nsd-xfer
 sbin/nsdc
 sbin/zonec
-share/doc/nsd/
-share/doc/nsd/CREDITS
-share/doc/nsd/DIFFERENCES
-share/doc/nsd/README
-share/doc/nsd/RELNOTES
-share/doc/nsd/REQUIREMENTS
 share/examples/nsd/
-share/examples/nsd/nsd.zones.sample
-share/examples/nsd/nsdc.conf.sample
-@extra /etc/nsd.zones
-@extra /etc/nsdc.conf
-@extra /etc/nsd
+@group named
+@mode 770
+@sample ${SYSCONFDIR}/nsd/
+@group
+@mode
+share/examples/nsd/nsd.conf
+@group named
+@mode 640
+@sample ${SYSCONFDIR}/nsd/nsd.conf
+@group named
+@mode 770
+@sample /var/nsd/
+@sample /var/nsd/zones/
