@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.38 2006/01/08 01:33:16 brad Exp $
+# $OpenBSD: Makefile,v 1.39 2006/11/21 10:07:26 espie Exp $
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
-COMMENT=	"free and portable TrueType font rendering engine"
+COMMENT-main=	"free and portable TrueType font rendering engine"
 COMMENT-doc=	"documentation for FreeType"
 
 VERSION=	1.3.1
 DISTNAME=	freetype-${VERSION}
-PKGNAME=	${DISTNAME}p2
+PKGNAME-main=	${DISTNAME}p3
 PKGNAME-doc=	freetype-doc-${VERSION}
 
 CATEGORIES=	print
@@ -31,13 +31,10 @@ CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-nls
 
-MULTI_PACKAGES= -doc
-SUBPACKAGE?=
+MULTI_PACKAGES= -main -doc
 
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-doc"
-PKG_ARCH=	*
-WANTLIB=
-.endif
+PKG_ARCH-doc=	*
+WANTLIB-doc=
 
 FT_DOC=		${PREFIX}/share/doc/freetype
 SFT_DOC=	${WRKSRC}/docs

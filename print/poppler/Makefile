@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2006/10/30 08:28:26 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/11/21 10:10:01 espie Exp $
 
-COMMENT=	"PDF rendering library"
+COMMENT-main=	"PDF rendering library"
 COMMENT-qt=	"qt interface to PDF rendering library"
 
 V=		0.5.3
 DISTNAME=	poppler-$V
 CATEGORIES=	print
-FULLPKGNAME-qt=	poppler-qt-$V
+PKGNAME-main=	poppler-$Vp0
+FULLPKGNAME-qt=	poppler-qt-$Vp0
 
 SHARED_LIBS +=	poppler              1.0      # .1.0
 SHARED_LIBS +=	poppler-glib         1.0      # .1.0
@@ -23,9 +24,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 MASTER_SITES=	${HOMEPAGE}
 
 PSEUDO_FLAVORS=no_qt
+MULTI_PACKAGES=-main
 FLAVOR?=
-SUBPACKAGE?=	
-
 
 .if empty(FLAVOR:L:Mno_qt)
 MULTI_PACKAGES+=-qt
@@ -38,14 +38,23 @@ MAKE_FLAGS=	POPPLER_QT_CXXFLAGS='-pthread -I${MODQT_INCDIR}' \
 		qt_subdir=qt \
 		qt_pc_file=poppler-qt.pc
 
-.  if !defined(PACKAGING) || defined(PACKAGING) && ${SUBPACKAGE} == "-qt"
 MODULES+=	x11/qt3
-.  endif
-.  if defined(PACKAGING) && ${SUBPACKAGE} == "-qt"
-LIB_DEPENDS+=	poppler::print/poppler
-.  endif
 .endif
 
+BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
+
+WANTLIB=	freetype fontconfig jpeg z 
+
+LIB_DEPENDS-qt=	${MODQT_LIB_DEPENDS} poppler::print/poppler
+
+MODULES+=	devel/gettext
+
+LIB_DEPENDS-main=${MODGETTEXT_LIB_DEPENDS} \
+		gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 
+WANTLIB-main=	${WANTLIB} Xrender png X11 m Xext glitz \
+		gmodule-2.0 cairo \
+		pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+		gobject-2.0 glib-2.0
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS= --enable-xpdf-headers \
@@ -58,19 +67,6 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
 
 FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
-WANTLIB+=	freetype fontconfig jpeg z 
-
-.if !defined(PACKAGING) || defined(PACKAGING) && ${SUBPACKAGE} == ""
-MODULES+=	devel/gettext
-LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 
-WANTLIB+=	Xrender png X11 m Xext glitz \
-		gmodule-2.0 cairo \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		gobject-2.0 glib-2.0
-.endif
-
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
-
 
 USE_LIBTOOL=	Yes
 USE_X11=	Yes

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/18 13:09:44 alek Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/21 10:10:01 espie Exp $
+@pkgpath print/poppler
 %%SHARED%%
 include/poppler/
 include/poppler/Annot.h
