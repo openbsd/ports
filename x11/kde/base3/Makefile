@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.68 2006/11/20 08:07:40 steven Exp $
+# $OpenBSD: Makefile,v 1.69 2006/11/21 08:27:42 espie Exp $
 
-COMMENT= 		"K Desktop Environment, basic applications"
+COMMENT-main= 		"K Desktop Environment, basic applications"
 COMMENT-plugins=	"Konqueror nsplugins, essentially native JDK"
 COMMENT-samba=		"K Desktop Environment, samba support"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.5
 DISTNAME=		kdebase-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME-main=		${DISTNAME}p1
 PKGNAME-samba=		kdesamba-${VERSION}
 MODKDE_VERSION?=	3.5.3
 SHARED_LIBS +=	konq                 7.0      # .6.0
@@ -27,24 +27,22 @@ SHARED_LIBS +=	taskmanager          2.0      # .1.0
 SHARED_LIBS +=	taskbar              4.0      # .3.0
 SHARED_LIBS +=	kasbar               2.0      # .1.0
 
-MULTI_PACKAGES=		-samba
-SUBPACKAGE?=
+MULTI_PACKAGES=		-main -samba
 FLAVORS=		debug
 
-BUILD_DEPENDS+=::devel/pkgconfig
+BUILD_DEPENDS=	::devel/pkgconfig
 
-WANTLIB+=ICE Xrender SM pthread util X11 m z png jpeg art_lgpl_2 Xext idn iconv
+LIB_DEPENDS=	kdecore.>=6,DCOP,kio,kdeui,kdefx,kdesu,kwalletclient::x11/kde/libs3
+WANTLIB=	ICE Xrender SM pthread util X11 m z png jpeg art_lgpl_2 Xext idn iconv
 
-USE_X11=	Yes
-
-.if !defined(PACKAGING) || ${SUBPACKAGE:L} == ""
-LIB_DEPENDS+= kdecore.>=6,kabc,katepartinterfaces,kdefakes,kdefx,kdnssd,kdeprint,kdeprint_management,kdesu,kdeui,khtml,kio,kjs,knewstuff,kmid,kparts,kresources,kscreensaver,ktexteditor,kutils,kwalletclient,DCOP,vcard,artskde::x11/kde/libs3 \
-	lber,ldap.>=2:openldap-client-2.*:databases/openldap \
-	sasl2::security/cyrus-sasl2 \
-	usb::devel/libusb
-LIB_DEPENDS+= \
-	glib-2.0,gmodule-2.0,gthread-2.0::devel/glib2
-WANTLIB+=	Xcursor Xrandr Xss Xt Xtst Xxf86misc \
+LIB_DEPENDS-main= ${LIB_DEPENDS} \
+		kabc,katepartinterfaces,kdefakes,kdnssd,kdeprint,kdeprint_management,khtml,kjs,knewstuff,kmid,kparts,kresources,kscreensaver,ktexteditor,kutils,vcard,artskde::x11/kde/libs3 \
+		lber,ldap.>=2:openldap-client-2.*:databases/openldap \
+		sasl2::security/cyrus-sasl2 \
+		usb::devel/libusb \
+		glib-2.0,gmodule-2.0,gthread-2.0::devel/glib2
+WANTLIB-main=	${WANTLIB} \
+		Xcursor Xrandr Xss Xt Xtst Xxf86misc \
 		artsflow artsflow_idl audiofile c crypto esd \
 		freetype intl kmedia2_idl mad mcop ogg ossaudio \
 		pcre pcreposix qtmcop soundserver_idl ssl stdc++ \
@@ -52,12 +50,9 @@ WANTLIB+=	Xcursor Xrandr Xss Xt Xtst Xxf86misc \
 		Xinerama Xft Xfixes fontconfig GL Xcomposite Xdamage \
 		Half Imath IlmImf Iex Xdmcp Xau asn1 com_err gssapi krb5
 
-.endif
 
-.if !defined(PACKAGING) || ${SUBPACKAGE:L} == "-samba"
-LIB_DEPENDS+=	lib/samba/smbclient:samba->=3:net/samba
-LIB_DEPENDS+=	DCOP,kdecore.>=6,kio,kdeui,kdefx,kdesu,kwalletclient::x11/kde/libs3
-.endif
+LIB_DEPENDS-samba= ${LIB_DEPENDS} \
+		lib/samba/smbclient:samba->=3:net/samba
 
 SEPARATE_BUILD=	flavored
 EXTRA_CONFIG=	xdg/menus/kde-settings.menu \
@@ -79,6 +74,7 @@ post-install:
 
 FAKE_FLAGS=${MAKE_FLAGS} DESTDIR=${WRKINST} sysconfdir=${SAMPLECONFDIR}
 USE_LIBTOOL=Yes
+USE_X11=	Yes
 LIBTOOL_FLAGS=--tag=disable-static
 
 .include <bsd.port.mk>
