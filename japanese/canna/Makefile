@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.24 2005/12/29 13:03:55 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2006/11/21 21:17:31 espie Exp $
 
-COMMENT= 	'canna (kana-kanji converter) libraries'
+COMMENT-main= 	'canna (kana-kanji converter) libraries'
 COMMENT-dict=	'canna (kana-kanji converter) dictionaries'
 COMMENT-server=	'canna (kana-kanji converter) server'
 
 DISTNAME=	Canna35b2
 
-PKGNAME=	cannalib-3.5b2p2
+PKGNAME-main=	cannalib-3.5b2p3
 PKGNAME-dict=	cannadict-3.5b2
 PKGNAME-server=	cannaserver-3.5b2p2
+
 SHARED_LIBS=	RKC	1.0 \
 		RKC16	1.0 \
 		canna	1.0 \
@@ -25,25 +26,19 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-# Will turn into a RUN_DEPENDS when we install non-formatted manpages
 BUILD_DEPENDS=	:ja-groff-*:japanese/groff
+
 HOMEPAGE=	http://www.nec.co.jp/japanese/product/computer/soft/canna/
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	No Fee
 PERMIT_DISTFILES_CDROM=	No Fee
 
-MULTI_PACKAGES=-dict -server
+MULTI_PACKAGES=-main -dict -server
 
-.if defined(PACKAGING) 
-SUBPACKAGE?=
-.  if ${SUBPACKAGE:L}=="-dict"
-PREFIX=		/var/dict
-.  elif ${SUBPACKAGE:L} == "-server"
-LIB_DEPENDS=canna::japanese/canna
-WANTLIB=	c
-.  endif
-.endif
+PREFIX-dict=		/var/dict
+LIB_DEPENDS-server=canna::japanese/canna
+WANTLIB-server=	c
 
 SUBST_VARS=	DICT_DIR
 CONFIGURE_STYLE=imake
