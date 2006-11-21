@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.32 2005/11/25 09:08:01 sturm Exp $
+# $OpenBSD: Makefile,v 1.33 2006/11/21 22:19:01 espie Exp $
 
-COMMENT=	"network-capable tape backup (client and tape server)"
+COMMENT-main=	"network-capable tape backup (client and tape server)"
 COMMENT-client=	"network-capable tape backup (client only)"
 COMMENT-doc=	"network-capable tape backup (documentation)"
 
@@ -13,7 +13,7 @@ PKGVERSION=   ${DISTVERSION:S/p/./}
 
 DISTNAME=	amanda-${DISTVERSION}
 
-PKGNAME=	amanda-${PKGVERSION}
+PKGNAME-main=	amanda-${PKGVERSION}p0
 PKGNAME-client=	amanda-client-${PKGVERSION}
 PKGNAME-doc=	amanda-doc-${PKGVERSION}
 
@@ -28,7 +28,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m readline termcap
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=amanda/}
 
@@ -44,8 +43,11 @@ BUILD_DEPENDS+= :gtar-*:archivers/gtar \
 # if the user creates a configuration that needs them, and then
 # AMANDA will gracefully tell them what is required.
 
-MULTI_PACKAGES=	-client -doc
-SUBPACKAGE?=
+WANTLIB=		c m readline termcap
+PKG_ARCH-doc=               *
+WANTLIB-doc=
+
+MULTI_PACKAGES=	-main -client -doc
 
 FLAVORS=	db gpg
 FLAVOR?=
@@ -78,11 +80,6 @@ CONFIGURE_ENV+=  GZIP=${LOCALBASE}/bin/gpgzip
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-shared
-
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-doc"
-PKG_ARCH=               *
-WANTLIB=
-.endif
 
 OLD_DOC_DIR=	${PREFIX}/share/amanda
 DOC_DIR=	${PREFIX}/share/doc/amanda
