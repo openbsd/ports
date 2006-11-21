@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.72 2006/09/18 10:21:49 espie Exp $
+# $OpenBSD: Makefile,v 1.73 2006/11/21 11:54:02 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
-COMMENT=	"C++ X11 GUI toolkit"
+COMMENT-main=	"C++ X11 GUI toolkit"
 COMMENT-examples="examples and tutorial for qt"
 COMMENT-html=	"off-line html documentation for qt"
 
@@ -9,7 +9,7 @@ VERSION=	1.45
 DISTNAME=	qt-${VERSION}
 PKGNAME-examples=qt-examples-${VERSION}
 PKGNAME-html=	qt-html-${VERSION}
-PKGNAME=	qt-${VERSION}p1
+PKGNAME-main=	qt-${VERSION}p2
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 SHARED_LIBS=	qt	10.0 \
@@ -25,7 +25,6 @@ PERMIT_PACKAGE_CDROM=	"Restrictive license"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"Restrictive license"
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext c m stdc++
 
 MAKE_FLAGS=	QT_VER_MAJ=${LIBqt_VERSION:R} QT_VER_MIN=${LIBqt_VERSION:E} \
     QIMGIO_VER_MAJ=${LIBqimgio_VERSION:R} QIMGIO_VER_MIN=${LIBqimgio_VERSION:E}
@@ -34,17 +33,13 @@ USE_X11=	Yes
 USE_GMAKE=	Yes
 MAKE_ENV=	QTDIR="${WRKSRC}" SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}"
 
-MULTI_PACKAGES=	-examples -html
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -examples -html
 
-.if defined(PACKAGING)
-.  if ${SUBPACKAGE} == "-examples"
-LIB_DEPENDS+=	lib/qt/qt.>=1::x11/qt
-.  elif ${SUBPACKAGE} == "-html"
-PKG_ARCH=	*
-WANTLIB=
-.  endif
-.endif
+
+WANTLIB=		X11 Xext c m stdc++
+LIB_DEPENDS-examples=	lib/qt/qt.>=1::x11/qt
+PKG_ARCH-html=	*
+WANTLIB-html=	
 
 NO_REGRESS=	Yes
 

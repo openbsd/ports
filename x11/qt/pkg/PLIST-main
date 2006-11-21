@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.20 2005/03/06 14:17:45 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/21 11:54:02 espie Exp $
+@pkgpath x11/qt
 bin/moc
 include/X11/qt/
 include/X11/qt/jri.h
