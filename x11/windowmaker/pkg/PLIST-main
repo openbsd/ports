@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.28 2005/11/01 17:28:34 wilfried Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/21 22:07:07 espie Exp $
+@pkgpath x11/windowmaker
 GNUstep/
 GNUstep/Applications/
 GNUstep/Applications/WPrefs.app

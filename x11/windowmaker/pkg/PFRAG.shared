@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2005/12/27 23:12:24 naddy Exp $
-@lib lib/libwraster.so.${LIBwraster_VERSION}

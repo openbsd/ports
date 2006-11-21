@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.68 2006/10/17 12:14:50 wilfried Exp $
+# $OpenBSD: Makefile,v 1.69 2006/11/21 22:07:07 espie Exp $
 
-COMMENT=		'window manager that emulates NEXTSTEP(tm)'
+COMMENT-main=		'window manager that emulates NEXTSTEP(tm)'
 COMMENT-lang=		"language subpackage for Window Maker"
 
 V=			0.92.0
 DISTNAME=		WindowMaker-${V}
-PKGNAME=		${DISTNAME:L}p3
+PKGNAME-main=		${DISTNAME:L}p4
 FULLPKGNAME-lang=       windowmaker-lang-${V}p1
 SHARED_LIBS=		wraster 5.0
 CATEGORIES=		x11 x11/windowmaker
@@ -37,19 +37,18 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" LIBS="-L${LOCALBASE}/lib" \
 			LINGUAS='be bg bs ca cs da de el es et fi fr gl hr hu it ja ko ms nl no pl pt ro ru sk sv tr zh_CN zh_TW'
 
-SUBPACKAGE?=
-MULTI_PACKAGES=         -lang
+MULTI_PACKAGES=         -main -lang
 
-.if defined(PACKAGING) && !empty(SUBPACKAGE)
-RUN_DEPENDS=		:windowmaker->=0.90.0:x11/windowmaker
-.else
 MODULES=		devel/gettext
 LIB_DEPENDS=		jpeg.>=62::graphics/jpeg \
 			tiff.>=35::graphics/tiff \
 			png.>=2::graphics/png \
 			ungif.>=5::graphics/libungif
 WANTLIB=		X11 Xext Xft Xinerama Xpm Xrender c fontconfig freetype m z
-.endif
+
+RUN_DEPENDS-lang=	:windowmaker->=0.90.0:x11/windowmaker
+LIB_DEPENDS-lang=
+WANTLIB-lang=
 
 post-patch:
 # Rename wrongly named locale files
