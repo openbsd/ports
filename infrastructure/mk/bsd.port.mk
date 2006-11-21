@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.828 2006/11/20 23:18:25 steven Exp $
+#	$OpenBSD: bsd.port.mk,v 1.829 2006/11/21 10:32:51 bernd Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1099,9 +1099,9 @@ _BUILDWANTLIB+=		${WANTLIB${_s}}
 .endfor
 
 .if ${NO_DEPENDS:L} == "no"
-_BUILD_DEPLIST=		${BUILD_DEPENDS:C/^[^:]*://}
-_RUN_DEPLIST=		${RUN_DEPENDS${SUBPACKAGE}:C/^[^:]*://}
-_REGRESS_DEPLIST=	${REGRESS_DEPENDS:C/^[^:]*://}
+_BUILD_DEPLIST=		${BUILD_DEPENDS:S/^://}
+_RUN_DEPLIST=		${RUN_DEPENDS${SUBPACKAGE}:S/^://}
+_REGRESS_DEPLIST=	${REGRESS_DEPENDS:S/^://}
 _BUILDLIB_DEPLIST=	${_BUILDLIB_DEPENDS:C/^[^:]*://}
 _RUNLIB_DEPLIST=	${LIB_DEPENDS${SUBPACKAGE}:C/^[^:]*://}
 .endif
