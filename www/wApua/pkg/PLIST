@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/21 16:06:39 jasper Exp $
+bin/wApua
+bin/wbmp2xbm
+${P5SITE}/wApua/
+${P5SITE}/wApua/About.pm
+${P5SITE}/wApua/Cache.pm
+${P5SITE}/wApua/Config.pm
+${P5SITE}/wApua/Helpers.pm
+${P5SITE}/wApua/History.pm
+${P5SITE}/wApua/Phone.pm
+${P5SITE}/wApua/UserAgent.pm
+${P5SITE}/wApua/WBMP2XBM.pm
+${P5SITE}/wApua/images/
+${P5SITE}/wApua/images/back.wbmp
+${P5SITE}/wApua/images/forward.wbmp
+${P5SITE}/wApua/images/home.wbmp
+${P5SITE}/wApua/images/reload.wbmp
+${P5SITE}/wApua/images/stop.wbmp
+${P5SITE}/wApua/images/wApua.wbmp
+@man man/man1/wApua.1
+@man man/man1/wbmp2xbm.1
