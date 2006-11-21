@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.59 2006/10/23 13:55:07 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2006/11/21 11:31:39 espie Exp $
 # $FreeBSD: Makefile,v 1.2 1998/09/23 16:15:53 vanilla Exp $
 
-COMMENT=	"generic shared library support script"
+COMMENT-main=	"generic shared library support script"
 COMMENT-ltdl=	"GNU libtool system independent dlopen wrapper"
 
 VERSION=	1.5.22
 DISTNAME=	libtool-${VERSION}
-PKGNAME=	${DISTNAME}p6
+PKGNAME-main=	${DISTNAME}p7
 PKGNAME-ltdl=	libltdl-${VERSION}p1
 SHARED_LIBS=		ltdl 4.3
 MODGNU_SHARED_LIBS=	ltdl '-no-undefined'
@@ -32,14 +32,9 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		 --infodir=${PREFIX}/info
 FAKE_FLAGS=	 ${MAKE_FLAGS} DESTDIR=${WRKINST}
 
-MULTI_PACKAGES=	-ltdl
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -ltdl
 
-.if defined(PACKAGING)
-. if empty(SUBPACKAGE)
-RUN_DEPENDS+=	::devel/libtool,-ltdl
-. endif
-.endif
+RUN_DEPENDS-main=	::devel/libtool,-ltdl
 
 do-regress:
 	cd ${WRKDIR}/bin && ln -sf ${LOCALBASE}/bin/autoconf-2.59 autoconf
