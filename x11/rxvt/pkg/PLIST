@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/15 19:26:31 espie Exp $
-@mode 4755
-bin/rxvt
-@mode
-@man man/man1/rxvt.1

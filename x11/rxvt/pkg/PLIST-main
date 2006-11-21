@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/21 21:04:56 espie Exp $
+@pkgpath x11/rxvt
+@mode 4755
+bin/rxvt
+@mode
+@man man/man1/rxvt.1

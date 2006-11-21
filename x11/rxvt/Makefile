@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2006/07/14 05:20:45 steven Exp $
+# $OpenBSD: Makefile,v 1.35 2006/11/21 21:04:56 espie Exp $
 
-COMMENT=	"color, low memory usage, xterm replacement"
+COMMENT-main=	"color, low memory usage, xterm replacement"
 COMMENT-clock=	"analog clock for X11 w/appoint. reminder and mail notif"
 
 VER=		2.7.10
 DISTNAME=	rxvt-${VER}
-PKGNAME=	rxvt-${VER}p0
+PKGNAME-main=	rxvt-${VER}p1
 PKGNAME-clock=	rclock-${VER}p0 
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=rxvt/} \
@@ -24,8 +24,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		X11 Xpm c
 
-MULTI_PACKAGES=	-clock
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -clock
 
 USE_X11=		Yes
 CONFIGURE_STYLE= 	gnu
