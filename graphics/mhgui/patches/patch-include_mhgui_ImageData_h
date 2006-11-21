@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_mhgui_ImageData_h,v 1.1.1.1 2006/11/21 18:38:48 ajacoutot Exp $
+--- include/mhgui/ImageData.h.orig	Fri Nov 17 10:14:22 2006
++++ include/mhgui/ImageData.h	Fri Nov 17 10:14:36 2006
+@@ -49,7 +49,7 @@
+ 
+ 
+ #if defined(USE_PNGLIB)
+-  #include <png.h>
++  #include <libpng/png.h>
+ #endif
+ 
+ using std::string;
