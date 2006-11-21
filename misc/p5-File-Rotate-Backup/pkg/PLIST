@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/21 16:00:01 jasper Exp $
+${P5SITE}/File/
+${P5SITE}/File/Rotate/
+${P5SITE}/File/Rotate/Backup/
+${P5SITE}/File/Rotate/Backup.pm
+${P5SITE}/File/Rotate/Backup/Copy.pm
+@man man/man3p/File::Rotate::Backup.3p
+@man man/man3p/File::Rotate::Backup::Copy.3p

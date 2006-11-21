@@ -1,0 +1,6 @@
+This module will make backups and rotate them according to your
+specification. It creates a backup directory based on the file_prefix
+you specify and the current time. It then copies the directories you
+specified in the call to new() to that backup directory. Then a tar'd
+and compressed file is created from that directory. By default, bzip2 is
+used for compression.
