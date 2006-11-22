@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/10/20 11:03:38 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2006/11/22 01:17:45 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
@@ -6,7 +6,7 @@ V=3.3.6
 FULL_VERSION=3.3.6
 FULL_PKGVERSION=3.3.6
 
-PKGNAME=	gcc-${FULL_PKGVERSION}p2
+PKGNAME-main=	gcc-${FULL_PKGVERSION}p3
 PKGNAME-c++ =	g++-${FULL_PKGVERSION}p2
 PKGNAME-estdc=	libstdc++-${FULL_PKGVERSION}p0
 PKGNAME-g77=	g77-${FULL_PKGVERSION}p2
@@ -23,52 +23,31 @@ SHARED_LIBS=	estdc++		6.0 \
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-MAKE_GXX=Yes
-MAKE_FORTRAN=Yes
-MAKE_OBJC=Yes
-#MAKE_JAVA=Yes
+PSEUDO_FLAVORS=c++ fortran objc java ada
+
 .if ${MACHINE_ARCH} == "i386"
-MAKE_ADA=Yes
+FLAVOR?=c++ fortran objc ada
+.else
+FLAVOR?=c++ fortran objc
 .endif
 
-MAKE_GXX?=No
-MAKE_FORTRAN?=No
-MAKE_OBJC?=No
-MAKE_JAVA?=No
-MAKE_ADA?=No
+.if ${FLAVOR:L:Mjava}
+FLAVOR+=c++
+.endif
 
 BUILD_DEPENDS=	::devel/autoconf/2.13
 BUILD_DEPENDS+=	::devel/metaauto
-SUBPACKAGE?=
-
-.if defined(PACKAGING) && ${SUBPACKAGE} != "-estdc"
-WANTLIB=c
-.endif
-
-.if ${MAKE_JAVA:L} == "yes"
-.  if !defined(PACKAGING) || ${SUBPACKAGE} == "-java"
-LIB_DEPENDS+=gc::devel/boehm-gc
-.  endif
-.endif
 
 # This can be patched out, apart from java that wants a pure parser.
 BUILD_DEPENDS+= :bison-*:devel/bison
 
 
-.if ${MAKE_JAVA:L} == "yes"
-MAKE_GXX=Yes
-.endif
-
-MULTI_PACKAGES=
+MULTI_PACKAGES=-main
 # No sub packages description
 DESCR=${PKGDIR}/DESCR
 
 REGRESS_DEPENDS=::devel/dejagnu
 
-# No way around it, java wants a pure parser
-.if ${MAKE_JAVA:L} == "yes"
-BUILD_DEPENDS+=:bison-*:devel/bison
-.endif
 
 
 DISTNAME=	gcc-${FULL_VERSION}
@@ -84,40 +63,41 @@ CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/gcc
 
 LANGS=c
-.if ${MAKE_GXX:L} == "yes"
+
+.if ${FLAVOR:L:Mc++}
 LANGS:=${LANGS},c++
 MULTI_PACKAGES+=-c++ -estdc
 .endif
-.if ${MAKE_FORTRAN:L} == "yes"
+
+.if ${FLAVOR:L:Mfortran}
 LANGS:=${LANGS},f77
 MULTI_PACKAGES+=-g77
 .endif
-.if ${MAKE_OBJC:L} == "yes"
+
+.if ${FLAVOR:L:Mobjc}
 LANGS:=${LANGS},objc
 MULTI_PACKAGES+=-objc
 .endif
-.if ${MAKE_JAVA:L} == "yes"
+
+.if ${FLAVOR:L:Mjava}
 LANGS:=${LANGS},java
 MULTI_PACKAGES+=-java
 CONFIGURE_ARGS+=--enable-java-gc=system-boehm
 .endif
-.if ${MAKE_ADA:L} == "yes"
+
+.if ${FLAVOR:L:Mada}
 LANGS:=${LANGS},ada
 MULTI_PACKAGES+=-ada
 DISTFILES+=adastrap-${MACHINE_ARCH}-3.3.6-4.tgz:0
-#CONFIGURE_ENV=ADAC=${LOCALBASE}/bin/egcc GNATBIND=${LOCALBASE}/bin/gnatbind
-#MAKE_ENV=ADAC=${LOCALBASE}/bin/egcc GNATBIND=${LOCALBASE}/bin/gnatbind
-#BUILD_DEPENDS+=:gnat-*:lang/gcc/3.3,-ada
 CONFIGURE_ENV=ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 MAKE_ENV=ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 
 post-build:
 	cd ${WRKBUILD}/gcc && ${MAKE_PROGRAM} gnatlib_and_tools
-
 .endif
 
 post-extract:
-.if ${MAKE_ADA:L} == "yes"
+.if ${FLAVOR:L:Mada}
 .  for f in egcc gnatbind gnatmake gnatlink
 	echo "#! /bin/sh" >${WRKDIR}/bin/$f
 	echo 'GNAT_ROOT=${WRKDIR}/bootstrap GCC_ROOT=${WRKDIR}/bootstrap exec ${WRKDIR}/bootstrap/bin/$f "$$@"' >>${WRKDIR}/bin/$f
@@ -128,6 +108,12 @@ post-extract:
 .for l v in ${SHARED_LIBS}
 	echo "LIB$l_LTVERSION = -version-info ${v:S/./:/}" >> ${WRKSRC}/libversions
 .endfor
+
+post-install:
+.if ${FLAVOR:L:Mada}
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc-lib/*/$V/adainclude
+.endif
+	chown ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc-lib/*/$V/include/*
 
 CONFIGURE_ENV+=am_cv_func_iconv=no
 
@@ -142,8 +128,10 @@ CONFIGURE_ARGS= \
 # visible beast
 CONFIGURE_ARGS+=--enable-cpp
 
-.if ${MAKE_JAVA:L} == "yes"
+.if ${FLAVOR:L:Mjava}
 CONFIGURE_ARGS+=--enable-sjlj-exceptions
+# No way around it, java wants a pure parser
+BUILD_DEPENDS+=:bison-*:devel/bison
 .endif
 
 
@@ -154,7 +142,7 @@ CONFIGURE_ARGS += --with-gnu-as
 CONFIGURE_ARGS += --with-gnu-ld 
 CONFIGURE_ARGS += ${CONFIGURE_SHARED}
 
-SEPARATE_BUILD=concurrent
+SEPARATE_BUILD=flavored
 
 USE_GMAKE= yes
 
@@ -174,14 +162,17 @@ PKG_ARGS+=-DPPC=1
 PKG_ARGS+=-DPPC=0
 .endif
 
-.if defined(PACKAGING) && defined(SUBPACKAGE)
-.  if !empty(SUBPACKAGE) && ${SUBPACKAGE} != "-estdc"
-RUN_DEPENDS+=:gcc-${FULL_PKGVERSION}:${PKGPATH}
-.  endif
-.  if ${SUBPACKAGE} == "-c++"
-RUN_DEPENDS+=::${PKGPATH},-estdc
-.  endif
-.endif
+RUN_DEPENDS=	:gcc-${FULL_PKGVERSION}:${PKGPATH}
+WANTLIB=c
+
+RUN_DEPENDS-main=
+
+RUN_DEPENDS-estdc=
+WANTLIB-estdc=
+
+LIB_DEPENDS-java=gc::devel/boehm-gc
+
+RUN_DEPENDS-c++ =${RUN_DEPENDS} ::${PKGPATH},-estdc
 
 .include <bsd.port.mk>
 
