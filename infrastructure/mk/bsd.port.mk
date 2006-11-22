@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.830 2006/11/22 08:20:20 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.831 2006/11/22 12:40:50 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1331,10 +1331,6 @@ ${WRKPKG}/DESCR${SUBPACKAGE}: ${DESCR}
 	@fgrep -q '$${HOMEPAGE}' $? || echo "\nWWW: ${HOMEPAGE}" >>$@
 .endif
 
-${WRKPKG}/mtree.spec: ${MTREE_FILE}
-	@${_SED_SUBST} ${MTREE_FILE}>$@.tmp && mv -f $@.tmp $@
-
-
 makesum: fetch-all
 .if !defined(NO_CHECKSUM)
 	@rm -f ${CHECKSUM_FILE}
@@ -1662,7 +1658,6 @@ _internal-plist _internal-update-plist: _internal-fake
 	@mkdir -p ${PKGDIR}
 	@DESTDIR=${WRKINST} PREFIX=${WRKINST}${PREFIX} \
 	TRUEPREFIX=${TRUEPREFIX} \
-	MTREE_FILE=${WRKPKG}/mtree.spec \
 	INSTALL_PRE_COOKIE=${_INSTALL_PRE_COOKIE} \
 	DEPPATHS="`${MAKE} run-dir-depends ${_do_libs_too}|${_sort_dependencies}`" \
 	MAKE="${MAKE}" \
@@ -1986,15 +1981,15 @@ ${_REGRESS_COOKIE}: ${_BUILD_COOKIE}
 .endif
 	@${_MAKE_COOKIE} $@
 
-${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
+${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	@${ECHO_MSG} "===>  Faking installation for ${FULLPKGNAME}${_MASTER}"
 	@if [ x`${SUDO} /bin/sh -c umask` != x${DEF_UMASK} ]; then \
 		echo >&2 "Error: your umask is \"`/bin/sh -c umask`"\".; \
 		exit 1; \
 	fi
 	@${SUDO} install -d -m 755 -o root -g wheel ${WRKINST}
-	@${SUDO} /usr/sbin/mtree -U -e -d -n -p ${WRKINST} \
-		-f ${WRKPKG}/mtree.spec  >/dev/null
+	@${_SED_SUBST} ${MTREE_FILE}| \
+		${SUDO} /usr/sbin/mtree -U -e -d -n -p ${WRKINST} >/dev/null
 .for _p in ${PROTECT_MOUNT_POINTS}
 	@${SUDO} mount -u -r ${_p}
 .endfor
