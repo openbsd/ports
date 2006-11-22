@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2006/11/13 17:12:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2006/11/22 21:58:24 naddy Exp $
 
-COMMENT=	"cooperative file distribution system implemented in Python"
+COMMENT-main=	"cooperative file distribution system implemented in Python"
 COMMENT-gui=	"graphical interface components for BitTorrent"
 
 VERSION=	4.4.0
 DISTNAME=	BitTorrent-${VERSION}
-PKGNAME=	${DISTNAME}p2
+PKGNAME-main=	${DISTNAME}p3
 PKGNAME-gui=	BitTorrent-gui-${VERSION}p2
 CATEGORIES=	net
 
@@ -19,16 +19,13 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MASTER_SITES=	http://download.bittorrent.com/dl/
 
+MULTI_PACKAGES= -main -gui
+
 MODULES=	lang/python
 BUILD_DEPENDS=	::devel/gettext
 
-MULTI_PACKAGES=	-gui
-SUBPACKAGE?=
-
-.if !empty(SUBPACKAGE)
-RUN_DEPENDS=	:${PKGNAME}:net/BitTorrent \
+RUN_DEPENDS-gui=:${PKGNAME}:net/BitTorrent \
 		:py-gtk2->=2.6:x11/py-gtk2
-.endif
 
 NO_REGRESS=	Yes
 
