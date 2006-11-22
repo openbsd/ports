@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2006/11/22 09:46:28 jakob Exp $
+# $OpenBSD: Makefile,v 1.8 2006/11/22 15:36:29 jakob Exp $
 
 COMMENT=	"BIND 8 compatible stub resolver library"
 
 VERSION=	9.3.2
 DISTNAME=	bind-${VERSION}
-PKGNAME=	libbind-${VERSION}
+PKGNAME=	libbind-${VERSION}p0
 SHARED_LIBS=	bind	2.0
 CATEGORIES=	net
 
@@ -43,5 +43,9 @@ CONFIGURE_ARGS+=	--enable-threads
 .else
 CONFIGURE_ARGS+=	--disable-threads
 .endif
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/include/bind
+	mv ${PREFIX}/bind/include/* ${PREFIX}/include/bind
 
 .include <bsd.port.mk>
