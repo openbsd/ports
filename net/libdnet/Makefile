@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2006/06/05 10:50:25 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2006/11/22 08:29:56 espie Exp $
 
-COMMENT=	"portable low-level networking library"
+COMMENT-main=	"portable low-level networking library"
 COMMENT-python= "python interface to libdnet"
 
 DISTNAME=	libdnet-1.10
-PKGNAME=	${DISTNAME}p1
+PKGNAME-main=	${DISTNAME}p2
 PKGNAME-python= ${DISTNAME:S/^libdnet/py-libdnet/}p1
 SHARED_LIBS=	dnet	1.0
 CATEGORIES=	net
@@ -26,12 +26,12 @@ FLAVOR?=
 
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
+MULTI_PACKAGES=		-main
 
 .if ${FLAVOR:L:Mno_python}
 CONFIGURE_ARGS+=	--without-python
 .else
-MULTI_PACKAGES=		-python
-SUBPACKAGE?=
+MULTI_PACKAGES+=	-python
 CONFIGURE_ARGS+=	--with-python
 BUILD_DEPENDS+=		:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 MAKE_FLAGS=		PYTHON=${LOCALBASE}/bin/python${PYTHON_VER}
@@ -40,10 +40,8 @@ PYTHON_VER=		2.4
 SUBST_VARS=		PYTHON_VER
 REGRESS_DEPENDS=	::net/libdnet,-python
 REGRESS_FLAGS=		TESTS_ENVIRONMENT=${LOCALBASE}/bin/python${PYTHON_VER}
-.  if defined(PACKAGING) && ${SUBPACKAGE} == "-python"
-RUN_DEPENDS=		:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
-WANTLIB=
-.  endif
+RUN_DEPENDS-python=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
+WANTLIB-python=
 .endif
 
 .include <bsd.port.mk>

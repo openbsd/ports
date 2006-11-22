@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/22 08:29:56 espie Exp $
+@lib lib/libdnet.so.${LIBdnet_VERSION}
