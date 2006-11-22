@@ -1,0 +1,7 @@
+WordGenerator generates hypothetical words from specifications of their
+syllable structure. You specify the maximum length of the words in
+syllables, the abstract structure of syllables in the language (in terms
+of such units as consonants and vowels or onsets and rhymes), and the
+actual sounds that comprise each abstract class (e.g. the list of vowels
+in the language) and WordGenerator then generates the words that conform
+to this specification.
