@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.829 2006/11/21 10:32:51 bernd Exp $
+#	$OpenBSD: bsd.port.mk,v 1.830 2006/11/22 08:20:20 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2218,7 +2218,7 @@ _fetch-makefile:
 # write generic package dependencies
 	@echo ".PHONY: ${_FMN}"
 .  if ${RECURSIVE_FETCH_LIST:L} == "yes"
-	@echo "${_FMN}: ${_ALLFILES} "`_FULL_PACKAGE_NAME=Yes ${MAKE} full-all-depends`
+	@echo "${_FMN}: ${_ALLFILES} "`_FULL_PACKAGE_NAME=Yes ${MAKE} full-all-depends|fgrep -v ${PKGPATH}/`
 .  else
 	@echo "${_FMN}: ${_ALLFILES}"
 .  endif
