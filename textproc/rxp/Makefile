@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2004/12/07 00:23:23 alek Exp $
+# $OpenBSD: Makefile,v 1.17 2006/11/22 09:35:01 jakob Exp $
 
 COMMENT=	"validating namespace-aware XML parser"
 
-DISTNAME=	rxp-1.3.0
+DISTNAME=	rxp-1.4.8
 CATEGORIES=	textproc
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
@@ -16,7 +16,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c 
 
-MASTER_SITES=	ftp://ftp.cogsci.ed.ac.uk/pub/richard/
+FETCH_MANUALLY=	"The University of Edinburgh requires that you fetch the " \
+		"source code manually from ${HOMEPAGE}."
 
 NO_REGRESS=	Yes
 
