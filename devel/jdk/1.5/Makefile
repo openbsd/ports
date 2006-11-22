@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.27 2006/11/17 20:19:33 kurt Exp $
+# $OpenBSD: Makefile,v 1.28 2006/11/22 19:42:54 kurt Exp $
 
 ONLY_FOR_ARCHS= 	amd64 i386
 
-COMMENT=		"Java2(TM) Standard Edition Dev Kit v${V}"
+COMMENT-main=		"Java2(TM) Standard Edition Dev Kit v${V}"
 COMMENT-jre=		"Java2(TM) Standard Edition Runtime Environment v${V}"
 V=			1.5.0
 DISTNAME=		jdk-1_5_0
-PKGNAME=		jdk-${V}p22
-PKGNAME-jre=		jre-${V}p22
+PKGNAME-main=		jdk-${V}p23
+PKGNAME-jre=		jre-${V}p23
 
 CATEGORIES=		devel/jdk java
 
-MULTI_PACKAGES= 	-jre
-SUBPACKAGE?=
+MULTI_PACKAGES= 	-main -jre
 
 # wwws is not a typo in the following:
 HOMEPAGE=		http://wwws.sun.com/software/communitysource/j2se/java2/
@@ -41,9 +40,7 @@ USE_MOTIF=		openmotif
 MODULES=		converters/libiconv
 WANTLIB=		X11 Xext Xi Xp Xt Xtst c m ossaudio pthread stdc++ z
 
-.if defined(PACKAGING) && empty(SUBPACKAGE)
-WANTLIB+=		Xmu
-.endif
+WANTLIB-main=		${WANTLIB} Xmu
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
