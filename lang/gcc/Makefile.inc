@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2006/04/05 04:42:58 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2006/11/22 17:40:43 bernd Exp $
 
 # common stuff for all gcc ports
 # we assume each one defines a V variable.
@@ -12,6 +12,7 @@ PERMIT_DISTFILES_CDROM=Yes
 
 COM=		'GNU compiler collection'
 COMMENT=	${COM}: core C compiler
+COMMENT-main=	${COMMENT}
 COMMENT-c++ =	${COM}: C++ compiler
 COMMENT-estdc=	${COM}: C++ compiler library
 COMMENT-g77=	${COM}: f77 compiler
