@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/22 07:40:24 steven Exp $
+@pkgpath www/firefox-i18n
+mozilla-firefox/extensions/langpack-${MAINLANG}@firefox.mozilla.org/
+mozilla-firefox/extensions/langpack-${MAINLANG}@firefox.mozilla.org/chrome/
+mozilla-firefox/extensions/langpack-${MAINLANG}@firefox.mozilla.org/chrome.manifest
+mozilla-firefox/extensions/langpack-${MAINLANG}@firefox.mozilla.org/chrome/chromelist.txt
+mozilla-firefox/extensions/langpack-${MAINLANG}@firefox.mozilla.org/chrome/${MAINLANG}.jar
+mozilla-firefox/extensions/langpack-${MAINLANG}@firefox.mozilla.org/install.rdf

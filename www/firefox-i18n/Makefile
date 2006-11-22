@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2006/11/10 20:55:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/22 07:40:24 steven Exp $
 
 PKG_ARCH=	*
 
-COMMENT=	"${MAINLANG} language pack for Firefox"
+COMMENT-main=	"${MAINLANG} language pack for Firefox"
 V=		1.5.0.8
 NAME=		firefox-i18n
 PKGNAME=	${NAME}-${MAINLANG}-$V
+PKGNAME-main=	${PKGNAME}p1
 
 CATEGORIES=	www
 
@@ -38,28 +39,20 @@ NO_REGRESS=	Yes
 DISTFILES=	${MAINLANG}.xpi
 LPACKDIR-${MAINLANG}=${PREFIX}/mozilla-firefox/extensions/langpack-${MAINLANG}@firefox.mozilla.org
 
+MULTI_PACKAGES=	-main
+
 .for i in ${OTHERLANGS}
 MULTI_PACKAGES+=-$i
 DISTFILES+=	$i.xpi
-PKGNAME-$i=	${NAME}-$i-${V}p0
+PKGNAME-$i=	${NAME}-$i-${V}p1
 COMMENT-$i=	$i language pack for Firefox
 LPACKDIR-$i=	${PREFIX}/mozilla-firefox/extensions/langpack-$i@firefox.mozilla.org
 .endfor
 
+SUBST_VARS=	MAINLANG
+
 # use the same for all subpackages
-DESCR=		${PKGDIR}/DESCR
 MESSAGE=	${PKGDIR}/MESSAGE
-
-SUBST_VARS=	LANG
-SUBPACKAGE?=
-
-.if defined(PACKAGING)
-.  if !empty(SUBPACKAGE)
-LANG=		${SUBPACKAGE:C/^-//}
-.  else
-LANG=		${MAINLANG}
-.  endif
-.endif
 
 do-extract:
 .for i in ${MAINLANG} ${OTHERLANGS}
