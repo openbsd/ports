@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2006/11/13 11:20:24 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2006/11/22 18:43:49 bernd Exp $
 
 COMMENT=		"plugins for digikam"
 CATEGORIES=		graphics x11 x11/kde
 DISTNAME=		digikamimageplugins-0.8.2
-PKGNAME=		${DISTNAME}
+PKGNAME=		${DISTNAME}p0
 EXTRACT_SUFX=		.tar.bz2
 HOMEPAGE=		http://extragear.kde.org/apps/digikamimageplugins/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=digikam/}
@@ -17,7 +17,7 @@ MODULES=	x11/kde
 
 WANTLIB=		freetype Xext X11 util m ICE Xrender SM pthread z \
 			jpeg png iconv intl kipi gphoto2 kexif Imlib2 \
-			art_lgpl_2 tiff sqlite3 ltdl gphoto2_port exif idn
+			art_lgpl_2 tiff sqlite3 gphoto2_port exif idn
 
 MODKDE_VERSION=		3.5
 CONFIGURE_STYLE=	autoconf
