@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2006/11/10 20:57:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2006/11/22 07:54:11 steven Exp $
 
-COMMENT=	"${MAINLANG} language pack for Thunderbird"
+COMMENT-main=	"${MAINLANG} language pack for Thunderbird"
 V=		1.5.0.8
 NAME=		thunderbird-i18n
 PKGNAME=	${NAME}-${MAINLANG}-$V
+PKGNAME-main=	${PKGNAME}p1
 
 CATEGORIES=	mail
 
@@ -36,28 +37,20 @@ NO_REGRESS=	Yes
 DISTFILES=	${MAINLANG}.xpi
 LPACKDIR-${MAINLANG}=${PREFIX}/mozilla-thunderbird/extensions/langpack-${MAINLANG}@thunderbird.mozilla.org
 
+MULTI_PACKAGES=	-main
+
 .for i in ${OTHERLANGS}
 MULTI_PACKAGES+=-$i
 DISTFILES+=	$i.xpi
-PKGNAME-$i=	${NAME}-$i-${V}p0
+PKGNAME-$i=	${NAME}-$i-${V}p1
 COMMENT-$i=	$i language pack for Thunderbird
 LPACKDIR-$i=	${PREFIX}/mozilla-thunderbird/extensions/langpack-$i@thunderbird.mozilla.org
 .endfor
 
 # use the same for all subpackages
-DESCR=		${PKGDIR}/DESCR
 MESSAGE=	${PKGDIR}/MESSAGE
 
-SUBST_VARS=	LANG
-SUBPACKAGE?=
-
-.if defined(PACKAGING)
-.  if !empty(SUBPACKAGE)
-LANG=		${SUBPACKAGE:C/^-//}
-.  else
-LANG=		${MAINLANG}
-.  endif
-.endif
+SUBST_VARS=	MAINLANG
 
 do-extract:
 .for i in ${MAINLANG} ${OTHERLANGS}
