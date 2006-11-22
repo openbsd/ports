@@ -1,12 +1,12 @@
-$OpenBSD: patch-greylist_conf,v 1.1.1.1 2006/07/31 12:36:43 jakob Exp $
---- greylist.conf.orig	Mon Jun 19 22:44:51 2006
-+++ greylist.conf	Mon Jun 19 22:45:12 2006
-@@ -157,7 +157,7 @@ acl whitelist addr 127.0.0.0/8
+$OpenBSD: patch-greylist_conf,v 1.2 2006/11/22 22:26:31 jakob Exp $
+--- greylist.conf.orig	Wed Sep 27 22:03:49 2006
++++ greylist.conf	Wed Nov 22 15:54:29 2006
+@@ -8,7 +8,7 @@
+ pidfile "/var/run/milter-greylist.pid"
+ socket "/var/milter-greylist/milter-greylist.sock"
+ dumpfile "/var/milter-greylist/greylist.db"
+-user "smmsp"
++user "_milter-greylist"
  
- # The user the milter should run as.
- # May be overridden by the "-u username" command line argument.
--#user "smmsp"
-+#user "_milter-greylist"
- 
- # This is a list of broken MTAs that break with greylisting. Copied from
- # http://cvs.puremagic.com/viewcvs/greylisting/schema/whitelist_ip.txt?rev=1.12
+ # Be verbose (or use -v flag)
+ #verbose
