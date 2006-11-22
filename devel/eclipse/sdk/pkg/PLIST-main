@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/07/07 01:48:55 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/22 15:42:39 kurt Exp $
 @conflict eclipse-sdk-gtk2-<=3.0.1
 @conflict eclipse-sdk-motif-<=3.0.1
+@pkgpath devel/eclipse/sdk
 %%SHARED%%
 bin/eclipse
 eclipse/

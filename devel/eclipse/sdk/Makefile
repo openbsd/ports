@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.23 2006/11/17 19:44:11 kurt Exp $
+# $OpenBSD: Makefile,v 1.24 2006/11/22 15:42:39 kurt Exp $
 
 ONLY_FOR_ARCHS=		amd64 i386
 
-COMMENT=		"general-purpose, extensible IDE for Java & other langs"
+COMMENT-main=		"general-purpose, extensible IDE for Java & other langs"
 COMMENT-gnome=		"gnome integration library for eclipse"
 COMMENT-mozilla=	"mozilla integration library for eclipse HTML Browser Widget"
 
 ECLIPSE_VER=		3.2
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
-PKGNAME=		eclipse-sdk-${ECLIPSE_VER}p3
-PKGNAME-gnome=		eclipse-sdk-gnome-${ECLIPSE_VER}p3
-PKGNAME-mozilla=	eclipse-sdk-mozilla-${ECLIPSE_VER}p3
+PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}p4
+PKGNAME-gnome=		eclipse-sdk-gnome-${ECLIPSE_VER}p4
+PKGNAME-mozilla=	eclipse-sdk-mozilla-${ECLIPSE_VER}p4
 SHARED_LIBS=		swt-atk-gtk-3232	3.0 \
 			swt-cde-gtk-3232	3.0 \
 			swt-awt-gtk-3232	3.0 \
@@ -51,47 +51,33 @@ EXTRACT_SUFX=		.zip
 
 VMEM_WARNING=		Yes
 
-MODULES=		java
+MODULES=		java devel/gettext
 MODJAVA_VER=		1.5+
 
-BUILD_DEPENDS=		:mozilla-devel->=1.7.11:www/mozilla,-devel \
+BUILD_DEPENDS=		:mozilla-devel->=1.7.13p2:www/mozilla,-devel \
 			:apache-ant->=1.6.1:devel/apache-ant \
 			:pkgconfig-*:devel/pkgconfig
-
-LIB_DEPENDS=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 
 USE_GMAKE=		Yes
 USE_X11=		Yes
 
-MULTI_PACKAGES=		-gnome -mozilla
-SUBPACKAGE?=
+MULTI_PACKAGES=		-main -gnome -mozilla
 
-GNOME_LIB_DEPENDS=	gnomeui-2::x11/gnome/libgnomeui
-
-MOZILLA_LIB_DEPENDS=	mozilla/gtkembedmoz,mozilla/xpcom:mozilla->=1.7.13p2:www/mozilla
-
-WANTLIB=		GL GLU X11 Xtst c m fontconfig \
+RUN_DEPENDS-main=	::java/javaPathHelper \
+			${MODJAVA_RUNDEPENDS}
+LIB_DEPENDS-main=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
+WANTLIB-main=		GL GLU X11 Xtst c m fontconfig \
 			freetype atk-1.0 glib-2.0 gmodule-2.0 \
-			gobject-2.0 gthread-2.0 \
+			gobject-2.0 gthread-2.0 iconv intl \
 			pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo
 
-.if defined(PACKAGING)
-. if ${SUBPACKAGE} == "-gnome"
-RUN_DEPENDS=		:${PKGNAME}:devel/eclipse/sdk
-LIB_DEPENDS=		${GNOME_LIB_DEPENDS}
-WANTLIB=		gnome-2 gnomevfs-2
-. elif ${SUBPACKAGE} == "-mozilla"
-RUN_DEPENDS=		:${PKGNAME}:devel/eclipse/sdk
-LIB_DEPENDS=		${MOZILLA_LIB_DEPENDS}
-WANTLIB=		c nspr4 plc4 plds4
-. else
-RUN_DEPENDS=		::java/javaPathHelper
-MODULES+=		devel/gettext
-. endif
-.else
-MODULES+=		devel/gettext
-LIB_DEPENDS+=		${GNOME_LIB_DEPENDS} ${MOZILLA_LIB_DEPENDS}
-.endif
+RUN_DEPENDS-gnome=	:${PKGNAME-main}:devel/eclipse/sdk
+LIB_DEPENDS-gnome=	gnomeui-2::x11/gnome/libgnomeui
+WANTLIB-gnome=		gnome-2 gnomevfs-2
+
+RUN_DEPENDS-mozilla=	:${PKGNAME-main}:devel/eclipse/sdk
+LIB_DEPENDS-mozilla=	mozilla/gtkembedmoz,mozilla/xpcom:mozilla->=1.7.13p2:www/mozilla
+WANTLIB-mozilla=	c nspr4 plc4 plds4
 
 MOZILLA_HOME=		${LOCALBASE}/mozilla
 ECLIPSE_WS=		gtk
