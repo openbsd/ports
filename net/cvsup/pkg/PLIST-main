@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/22 18:20:40 naddy Exp $
+@pkgpath net/cvsup
+bin/cvsup
+@man man/man1/cvsup.1

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2005/03/28 19:06:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2006/11/22 18:20:40 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
-COMMENT=	"network file distribution system"
+COMMENT-main=	"network file distribution system"
 COMMENT-server=	"network file distribution server"
 
 VERSION=	16.1h
 DISTNAME=	cvsup-snap-${VERSION}
-PKGNAME=	cvsup-${VERSION}
+PKGNAME-main=	cvsup-${VERSION}p0
 PKGNAME-server=	cvsupd-${VERSION}
 CATEGORIES=	net devel
 HOMEPAGE=	http://www.polstra.com/projects/freeware/CVSup/
@@ -18,7 +18,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
-WANTLIB=		c m util z
 
 MASTER_SITES= 	ftp://ftp.FreeBSD.org/pub/FreeBSD/ \
 		ftp://ftp.se.FreeBSD.org/pub/FreeBSD/ \
@@ -29,8 +28,9 @@ MASTER_SITES= 	ftp://ftp.FreeBSD.org/pub/FreeBSD/ \
 		ftp://ftp.dnsbalance.ring.gr.jp/pub/FreeBSD/
 MASTER_SITES:=	${MASTER_SITES:=development/CVSup/snapshots/}
 
-MULTI_PACKAGES=	-server
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -server
+
+WANTLIB=	c m util z
 
 BUILD_DEPENDS=	::lang/ezm3
 
@@ -43,9 +43,7 @@ M3FLAGS=	 -DPREFIX=${PREFIX} -DX11BASE=${X11BASE}
 M3FLAGS+=	-DNOGUI
 .else
 USE_X11=	Yes
-.  if empty(SUBPACKAGE)
-WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xt 
-.  endif
+WANTLIB-main=	${WANTLIB} ICE SM X11 Xaw Xext Xmu Xt 
 .endif
 
 MAKE_FLAGS=	M3FLAGS="${M3FLAGS}"
