@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.17 2006/11/11 21:04:27 steven Exp $
+# $OpenBSD: Makefile,v 1.18 2006/11/22 15:02:07 kurt Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/java/jdk14/Makefile,v 1.79 2004/08/18 07:06:03 glewis Exp $
 
 ONLY_FOR_ARCHS= 	i386
 
-COMMENT=		"Java2(TM) Standard Edition Dev Kit v${V}"
+COMMENT-main=		"Java2(TM) Standard Edition Dev Kit v${V}"
 COMMENT-jre=		"Java2(TM) Standard Edition Runtime Environment v${V}"
 V=			1.4.2
 DISTNAME=		j2sdk-1_4_2
-PKGNAME=		jdk-${V}p9
-PKGNAME-jre=		jre-${V}p9
+PKGNAME-main=		jdk-${V}p10
+PKGNAME-jre=		jre-${V}p10
 
 CATEGORIES=		devel/jdk java
 
-MULTI_PACKAGES= 	-jre
+MULTI_PACKAGES= 	-main -jre
 
 # wwws is not a typo in the following:
 HOMEPAGE=		http://wwws.sun.com/software/communitysource/j2se/java2/

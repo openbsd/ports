@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_plugin,v 1.1.1.1 2004/12/21 04:01:06 kurt Exp $
+@comment $OpenBSD: PFRAG.no-no_plugin-main,v 1.1 2006/11/22 15:02:07 kurt Exp $
 ${JDKHOME}/bin/HtmlConverter
 ${JDKHOME}/demo/plugin/
 ${JDKHOME}/demo/plugin/applets/

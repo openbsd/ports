@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_webstart,v 1.1.1.1 2004/12/21 04:01:06 kurt Exp $
+@comment $OpenBSD: PFRAG.no-no_webstart-main,v 1.1 2006/11/22 15:02:07 kurt Exp $
 ${JDKHOME}/jre/javaws/
 ${JDKHOME}/jre/javaws/cacerts
 ${JDKHOME}/jre/javaws/javalogo52x88.gif
