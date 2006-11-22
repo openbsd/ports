@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2006/10/29 18:34:25 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2006/11/22 13:47:07 jakob Exp $
 
 COMMENT=	"DKIM milter"
 
 DISTNAME=	dkim-milter-0.5.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	mail
 HOMEPAGE=	http://sourceforge.net/projects/dkim-milter/
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dkim-milter/}
+
+MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 # sendmail open source license
 PERMIT_PACKAGE_CDROM=		Patent

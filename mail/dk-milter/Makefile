@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2006/10/29 18:34:25 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/22 13:47:07 jakob Exp $
 
 COMMENT=	"DomainKeys milter"
 
 DISTNAME=	dk-milter-0.4.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	mail
 HOMEPAGE=	http://sourceforge.net/projects/dk-milter/
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dk-milter/}
+
+MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 # sendmail open source license
 PERMIT_PACKAGE_CDROM=		Patent

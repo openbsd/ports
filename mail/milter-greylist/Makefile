@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/07/31 12:36:43 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/22 13:50:44 jakob Exp $
 
 COMMENT=	"greylist milter"
 
 DISTNAME=	milter-greylist-2.0.2
-PKGNAME=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	mail
 HOMEPAGE=	http://hcpnet.free.fr/milter-greylist/
 
 MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/
 EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 # BSD license
 PERMIT_PACKAGE_CDROM=		Yes
