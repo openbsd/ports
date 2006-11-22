@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/08/03 23:15:58 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/11/22 10:09:22 jakob Exp $
 
 COMMENT=	"SIP Express Router"
 
@@ -6,15 +6,13 @@ ONLY_FOR_ARCHS= i386 sparc
 
 VERSION=	0.8.10
 DISTNAME=	ser-${VERSION}_src
-PKGNAME=	ser-${VERSION}
+PKGNAME=	ser-${VERSION}p0
 CATEGORIES=	net
 WANTLIB=	c z 
 
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=ser/}
 
 HOMEPAGE=	http://www.iptel.org/ser/
-
-MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
