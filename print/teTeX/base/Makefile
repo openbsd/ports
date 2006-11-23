@@ -1,20 +1,28 @@
-# $OpenBSD: Makefile,v 1.40 2006/09/17 22:02:47 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2006/11/23 19:31:34 espie Exp $
 
-COMMENT=	"TeX distribution, executables"
+COMMENT-main=	"TeX distribution, executables"
 COMMENT-fmt=	"format files"
 
 VERSION=	3.0
 DISTNAME=	tetex-base-${VERSION}
-PKGNAME=	teTeX_base-${VERSION}p3
+PKGNAME-main=	teTeX_base-${VERSION}p4
 FULLPKGNAME-fmt=teTeX_base-fmt-${VERSION}p0
 CATEGORIES=	print
 
 DISTFILES=	tetex-src-${VERSION}.tar.gz
 
-WANTLIB=	c m ncurses stdc++ z
 
-BUILD_DEPENDS=	:teTeX_texmf->=3.0:print/teTeX/texmf
-LIB_DEPENDS=	png.>=3::graphics/png
+BUILD_DEPENDS=		:teTeX_texmf->=3.0:print/teTeX/texmf
+
+WANTLIB-main=		c m ncurses stdc++ z
+LIB_DEPENDS-main=	png.>=3::graphics/png
+RUN_DEPENDS-main=	:teTeX_base-fmt-${VERSION}:print/teTeX/base,-fmt \
+			:texi2html->=1.56:textproc/texi2html
+
+WANTLIB-fmt=
+LIB_DEPENDS-fmt=
+PREFIX-fmt=		/var
+RUN_DEPENDS-fmt=	:teTeX_texmf->=3.0:print/teTeX/texmf
 
 CONFIGURE_STYLE=gnu dest
 
@@ -33,8 +41,7 @@ CONFIGURE_ARGS= --disable-multiplatform \
 
 FLAVORS=	no_x11
 FLAVOR?= 
-MULTI_PACKAGES=	-fmt
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -fmt
 
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=--without-x
@@ -46,25 +53,12 @@ CONFIGURE_ARGS+=--with-system-t1lib \
 		--with-t1lib-libdir=${PREFIX}/lib \
 		--with-t1lib-include=${PREFIX}/include \
 		--with-xdvi-x-toolkit=xaw
-LIB_DEPENDS+=	t1.>=4::devel/t1lib
 USE_X11=	Yes
-WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xp Xpm Xt
-.  if defined(PACKAGING) && ${SUBPACKAGE} != "-fmt"
-RUN_DEPENDS+=	:ghostscript-*:print/ghostscript/gnu
-.  endif
+LIB_DEPENDS-main+=	t1.>=4::devel/t1lib
+WANTLIB-main+=		ICE SM X11 Xaw Xext Xmu Xp Xpm Xt
+RUN_DEPENDS-main+=	:ghostscript-*:print/ghostscript/gnu
 .endif
 
-.if defined(PACKAGING)
-.  if ${SUBPACKAGE} == "-fmt"
-WANTLIB=
-LIB_DEPENDS=
-PREFIX=		/var
-RUN_DEPENDS=	:teTeX_texmf->=3.0:print/teTeX/texmf
-.  else
-RUN_DEPENDS+=	:teTeX_base-fmt-${VERSION}:print/teTeX/base,-fmt \
-		:texi2html->=1.56:textproc/texi2html
-.  endif
-.endif
 
 WRKDIST=	${WRKDIR}/${DISTNAME:S/base/src/}
 TETEX_EXDIR=	${PREFIX}/share/examples/teTeX

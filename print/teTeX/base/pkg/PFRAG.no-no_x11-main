@@ -1,4 +1,5 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.5 2005/02/21 21:36:07 sturm Exp $
+@comment $OpenBSD: PFRAG.no-no_x11-main,v 1.1 2006/11/23 19:31:34 espie Exp $
+@pkgpath print/teTeX/base
 bin/mf-nowin
 bin/oxdvi
 bin/xdvi
