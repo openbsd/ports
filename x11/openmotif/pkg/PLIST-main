@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/18 13:19:26 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/23 23:30:06 kili Exp $
 @conflict lesstif-*
+@pkgpath x11/openmotif
 bin/mwm
 bin/uil
 bin/xmbind

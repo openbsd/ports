@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.27 2006/11/07 21:32:47 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2006/11/23 23:30:06 kili Exp $
 
-COMMENT=	"Motif toolkit"
+COMMENT-main=	"Motif toolkit"
 COMMENT-debuglibs="Motif toolkit debug libraries"
 COMMENT-demos=	"Motif toolkit demos"
 VERSION=	2.1.30
 DISTNAME=	motif
 PATCHLEVEL=	5
-PKGNAME=	openmotif-${VERSION}.${PATCHLEVEL}p1
+PKGNAME-main=	openmotif-${VERSION}.${PATCHLEVEL}p2
 PKGNAME-demos=	openmotif-demos-${VERSION}.${PATCHLEVEL}p0
 PKGNAME-debuglibs=openmotif-debuglibs-${VERSION}.${PATCHLEVEL}p0
 
@@ -39,8 +39,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MULTI_PACKAGES=	-demos -debuglibs
-SUBPACKAGE?=
+MULTI_PACKAGES=	-demos -debuglibs -main
 
 USE_X11=	Yes
 
@@ -102,18 +101,10 @@ post-install:
 	@for i in ${DOCS}; do ${INSTALL_DATA} ${WRKSRC}/$$i ${DOCDIR}; done
 	@${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${DOCDIR}
 
-.if defined(PACKAGING)
-.  if ${SUBPACKAGE} == "-demos"
-LIB_DEPENDS+=	Xm.>=2.1,Uil.>=2.1,Mrm.>=2.1::x11/openmotif
-.  endif
-.  if ${SUBPACKAGE} == "-debuglibs"
-RUN_DEPENDS+=	::x11/openmotif
-.  endif
-.endif
-
-.if ${SUBPACKAGE} != "-debuglibs"
-WANTLIB=	ICE SM X11 Xext Xp Xt c m 
-.endif
+LIB_DEPENDS-demos=	Xm.>=2.1,Uil.>=2.1,Mrm.>=2.1::x11/openmotif
+RUN_DEPENDS-debuglibs=	::x11/openmotif
+WANTLIB-debuglibs=
+WANTLIB=		ICE SM X11 Xext Xp Xt c m 
 
 # XXX  Large, complicated, only partially automated test suite available
 NO_REGRESS=	Yes
