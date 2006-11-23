@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.14 2006/11/15 17:42:24 kurt Exp $
+# $OpenBSD: Makefile,v 1.15 2006/11/23 09:36:03 ajacoutot Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/devel/nspr/Makefile,v 1.13 2003/12/13 21:30:19 peter Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 
-COMMENT=		"Netscape Portable Runtime"
+COMMENT-main=		"Netscape Portable Runtime"
 COMMENT-docs=		"HTML Documentation for NSPR"
 
-VER=			4.6.3
+VER=			4.6.4
 DISTNAME=		nspr-${VER}
-PKGNAME=		${DISTNAME}p2
+PKGNAME-main=		${DISTNAME}
 PKGNAME-docs=		${DISTNAME:S/-/-docs-/}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
 			nspr-reference${EXTRACT_SUFX}:0
 
-SO_VERSION=		17.0
+SO_VERSION=		18.0
 .for _lib in nspr4 plc4 plds4
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
@@ -24,7 +24,7 @@ HOMEPAGE=		http://www.mozilla.org/projects/nspr/index.html
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-WANTLIB=		c
+WANTLIB-main=		c
 
 # MPL - Mozilla Public License
 PERMIT_PACKAGE_CDROM=	Yes
@@ -36,12 +36,9 @@ MASTER_SITES=		http://ftp.eu.mozilla.org/pub/mozilla.org/nspr/releases/v${VER}/s
 			http://ftp.mozilla.org/pub/mozilla.org/nspr/releases/v${VER}/src/
 MASTER_SITES0=		http://ftp.eu.mozilla.org/pub/mozilla.org/nspr/doc/ \
 			http://ftp.mozilla.org/pub/mozilla.org/nspr/doc/
-MULTI_PACKAGES= -docs
-SUBPACKAGE?=
+MULTI_PACKAGES= -main -docs
 
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
-PKG_ARCH=	*
-.endif
+PKG_ARCH-docs=	*
 
 USE_GMAKE=		Yes
 AUTOCONF_VERSION=	2.13
