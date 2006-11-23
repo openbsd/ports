@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2006/11/03 17:01:10 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2006/11/23 17:29:58 bernd Exp $
 
 COMMENT=	"themed window manager"
 
 DISTNAME=	enlightenment-0.16.7.2
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 DOCS=		enlightenment-docs-0.16.7
 THEMES=		enlightenment-theme-BlueSteel-0.16 \
 		enlightenment-theme-BrushedMetal-Tigert-0.16 \
@@ -41,11 +41,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 
 LIB_DEPENDS=	esd.>=2::audio/esound \
 		Imlib2.>=2::graphics/imlib2
-WANTLIB=	ICE SM X11 Xext Xinerama Xxf86vm \
-		audiofile bz2 c iconv freetype intl jpeg \
-		ltdl m png tiff ungif z
-MODULES=	converters/libiconv \
-		devel/gettext
+WANTLIB=	ICE SM X11 Xext Xinerama Xxf86vm audiofile c freetype m
+MODULES=	devel/gettext
 
 post-configure:
 	@cd ${WRKDIR}/${DOCS} && ${SETENV} ${CONFIGURE_ENV} \

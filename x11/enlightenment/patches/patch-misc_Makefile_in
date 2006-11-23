@@ -1,0 +1,12 @@
+$OpenBSD: patch-misc_Makefile_in,v 1.1 2006/11/23 17:29:58 bernd Exp $
+--- misc/Makefile.in.orig	Thu Nov 23 10:43:36 2006
++++ misc/Makefile.in	Thu Nov 23 10:43:36 2006
+@@ -384,7 +384,7 @@ info: info-am
+ 
+ info-am:
+ 
+-install-data-am: install-miscDATA install-sesmDATA
++install-data-am: install-miscDATA
+ 
+ install-exec-am: install-binSCRIPTS
+ 

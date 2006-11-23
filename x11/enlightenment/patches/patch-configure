@@ -1,0 +1,30 @@
+$OpenBSD: patch-configure,v 1.3 2006/11/23 17:29:58 bernd Exp $
+--- configure.orig	Thu Nov 23 10:34:05 2006
++++ configure	Thu Nov 23 10:34:42 2006
+@@ -10721,7 +10721,7 @@ _ACEOF
+ 
+ 
+ 
+-    INTLLIBS="$LIBINTL"
++    INTLLIBS="$LTLIBINTL"
+ 
+ 
+ 
+@@ -12591,7 +12591,7 @@ s,@RANLIB@,$RANLIB,;t t
+ s,@ac_ct_RANLIB@,$ac_ct_RANLIB,;t t
+ s,@ALLOCA@,$ALLOCA,;t t
+ s,@GLIBC21@,$GLIBC21,;t t
+-s,@LIBICONV@,$LIBICONV,;t t
++s,@LIBICONV@,$LTLIBICONV,;t t
+ s,@LTLIBICONV@,$LTLIBICONV,;t t
+ s,@INTLBISON@,$INTLBISON,;t t
+ s,@BUILD_INCLUDED_LIBINTL@,$BUILD_INCLUDED_LIBINTL,;t t
+@@ -12603,7 +12603,7 @@ s,@GENCAT@,$GENCAT,;t t
+ s,@INTLOBJS@,$INTLOBJS,;t t
+ s,@INTL_LIBTOOL_SUFFIX_PREFIX@,$INTL_LIBTOOL_SUFFIX_PREFIX,;t t
+ s,@INTLLIBS@,$INTLLIBS,;t t
+-s,@LIBINTL@,$LIBINTL,;t t
++s,@LIBINTL@,$LTLIBINTL,;t t
+ s,@LTLIBINTL@,$LTLIBINTL,;t t
+ s,@POSUB@,$POSUB,;t t
+ s,@ENABLE_EWMH_TRUE@,$ENABLE_EWMH_TRUE,;t t
