@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/21 18:38:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/11/23 08:51:10 ajacoutot Exp $
 %%SHARED%%
 include/animorph/
 include/animorph/BodySettings.h
@@ -31,11 +31,3 @@ lib/libanimorph.a
 lib/libanimorph.la
 lib/pkgconfig/
 lib/pkgconfig/animorph.pc
-share/doc/animorph/
-share/doc/animorph/AUTHORS
-share/doc/animorph/COPYING
-share/doc/animorph/ChangeLog
-share/doc/animorph/INSTALL
-share/doc/animorph/NEWS
-share/doc/animorph/README
-share/doc/animorph/TODO

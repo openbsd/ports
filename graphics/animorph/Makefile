@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/21 18:38:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/23 08:51:10 ajacoutot Exp $
 
 COMMENT=	"morphing engine"
 
 DISTNAME=	animorph-0.2
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS +=	animorph 0.0			# .0.0
 CATEGORIES=	graphics
 
