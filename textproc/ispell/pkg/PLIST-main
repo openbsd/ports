@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.11 2005/11/13 18:19:31 jakob Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/23 19:42:45 espie Exp $
+@pkgpath textproc/ispell
 bin/buildhash
 bin/findaffix
 bin/icombine
