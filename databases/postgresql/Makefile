@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.96 2006/10/31 06:50:24 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.97 2006/11/23 21:21:54 kili Exp $
 
-COMMENT=	"PostgreSQL RDBMS (client)"
+COMMENT-main=	"PostgreSQL RDBMS (client)"
 COMMENT-server=	"PostgreSQL RDBMS (server)"
 COMMENT-docs=	"PostgreSQL RDBMS documentation"
 
 VERSION=	8.1.5
 DISTNAME=	postgresql-${VERSION}
-FULLPKGNAME=	postgresql-client-${VERSION}
+PKGNAME-main=	postgresql-client-${VERSION}p1
 PKGNAME-server=	postgresql-server-${VERSION}p4
 PKGNAME-docs=	postgresql-docs-${VERSION}
 
@@ -32,8 +32,7 @@ MASTER_SITES= ftp://ftp2.uk.postgresql.org/sites/ftp.postgresql.org/source/v${VE
 	ftp://ftp5.es.postgresql.org/mirror/postgresql/source/v${VERSION}/ \
 	ftp://ftp.postgresql.org/pub/source/v${VERSION}/
 
-MULTI_PACKAGES=	-server -docs
-SUBPACKAGE?=
+MULTI_PACKAGES=	-docs -main -server
 
 # The -client SUBPACKAGE should build and run fine on static arches,
 # but the server requires loadable library support. Until we figure
@@ -74,18 +73,11 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
 
 INSTALL_TARGET=	install
 
-.if !defined(PACKAGING) || ${SUBPACKAGE} == "-server"
-WANTLIB+=	perl
-.endif
+WANTLIB-server=	${WANTLIB} perl
 
-.if defined(PACKAGING)
-.  if ${SUBPACKAGE} == "-server"
-LIB_DEPENDS=	pq.>=4:postgresql-client-${VERSION}:databases/postgresql
-.  elif ${SUBPACKAGE} == "-docs"
-WANTLIB=
-PKG_ARCH=	*
-.  endif
-.endif
+LIB_DEPENDS-server= pq.>=4:postgresql-client-${VERSION}:databases/postgresql
+WANTLIB-docs=
+PKG_ARCH-docs=	*
 
 MAKE_ENV=	LIBpq_MAJOR=${LIBpq_VERSION:R} \
 		LIBpq_MINOR=${LIBpq_VERSION:E} \
