@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/20 16:54:25 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.4 2006/11/23 19:49:23 ckuethe Exp $
 
-COMMENT=		"GPS waypoint, track, and route conversion tool"
+COMMENT-main=		"GPS waypoint, track, and route conversion tool"
 COMMENT-gui=		"Tk front-end to gpsbabel"
 
 VERSION=		1.3.2
 DISTNAME=		gpsbabel-${VERSION}
-PKGNAME-gui=		gpsbabel-gui-${VERSION}
+PKGNAME-main=		gpsbabel-${VERSION}p0
+PKGNAME-gui=		gpsbabel-gui-${VERSION}p0
 CATEGORIES=		geo
 
 HOMEPAGE=		http://www.gpsbabel.org/
@@ -31,27 +32,21 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 USE_GMAKE=		Yes
 NO_REGRESS=		Yes # expects FP conversion to be exact and invertible
-BUILD_DEPENDS=		::textproc/libxslt \
+MULTI_PACKAGES=		-main -gui
+
+BUILD_DEPENDS-main=	::textproc/libxslt \
 			::textproc/docbook \
 			::textproc/docbook-xsl
-LIB_DEPENDS=		expat.>=4::textproc/expat \
+LIB_DEPENDS-main=	expat.>=4::textproc/expat \
 			usb.>=1::devel/libusb \
 			shp.>=1::devel/shapelib
 
-MULTI_PACKAGES=		-gui
+WANTLIB-main=		m c z
 
-SUBPACKAGE?=
-
-.if defined(PACKAGING)
-. if empty(SUBPACKAGE)
-WANTLIB=		m c z
-. elif ${SUBPACKAGE} == "-gui"
-LIB_DEPENDS=
-PKG_ARCH=	*
-RUN_DEPENDS=	::geo/gpsbabel \
-		:tk-8.4.*:x11/tk/8.4
-. endif
-.endif
+LIB_DEPENDS-gui=
+PKG_ARCH-gui=	*
+RUN_DEPENDS-gui=	::geo/gpsbabel \
+			:tk-8.4.*:x11/tk/8.4
 
 post-build:
 	gmake -C ${WRKSRC} doc

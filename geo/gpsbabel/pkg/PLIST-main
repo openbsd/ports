@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/11/09 02:31:30 ckuethe Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/23 19:49:23 ckuethe Exp $
+@pkgpath geo/gpsbabel
 bin/gpsbabel
 share/doc/gpsbabel/
 share/doc/gpsbabel/Advanced_Usage.html
