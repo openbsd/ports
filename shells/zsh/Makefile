@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2006/10/19 13:44:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.40 2006/11/23 19:52:51 espie Exp $
 
-COMMENT=	"Z shell, Bourne shell-compatible"
+COMMENT-main=	"Z shell, Bourne shell-compatible"
 COMMENT-zftp=	"Z shell embedded ftp client"
 
 VERSION=	4.2.6
 DISTNAME=	zsh-${VERSION}
-PKGNAME=	${DISTNAME}p1
+PKGNAME-main=	${DISTNAME}p2
 PKGNAME-zftp=	zsh-zftp-${VERSION}
 CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
@@ -34,13 +34,10 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED:S/shared/dynamic/} \
 		--enable-zsh-mem --enable-zsh-secure-free \
 		--enable-maildir-support --with-tcsetpgrp
 
-# we only enable sub-packages if shared libraries are available
-MULTI_PACKAGES= ${NO_SHARED_LIBS:S/Yes//:S/No/-zftp/}
-SUBPACKAGE?=
+# we only enable zftp if shared libraries are available
+MULTI_PACKAGES= -main ${NO_SHARED_LIBS:S/Yes//:S/No/-zftp/}
 
-.if defined(PACKAGING) && !empty(SUBPACKAGE)
-RUN_DEPENDS=	::shells/zsh
-.endif
+RUN_DEPENDS-zftp=	::shells/zsh
 
 SUBST_VARS=	VERSION
 
