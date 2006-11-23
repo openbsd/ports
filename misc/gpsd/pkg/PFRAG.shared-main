@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/23 07:52:15 ckuethe Exp $
+@lib lib/libgps.so.${LIBgps_VERSION}
