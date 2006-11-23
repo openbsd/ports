@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2006/11/13 14:59:21 msf Exp $
+# $OpenBSD: Makefile,v 1.101 2006/11/23 18:46:27 espie Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += db
@@ -52,6 +52,8 @@
      SUBDIR += p5-DBIx-Class
      SUBDIR += p5-DBIx-Class-HTMLWidget
      SUBDIR += p5-DBIx-Class-Schema-Loader
+     SUBDIR += p5-DBIx-Class-UUIDColumns
+     SUBDIR += p5-DBIx-Class-Validator
      SUBDIR += p5-DBIx-ContextualFetch
      SUBDIR += p5-DBIx-DBSchema
      SUBDIR += p5-DBIx-SearchBuilder
