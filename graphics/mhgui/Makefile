@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/21 18:38:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/23 08:52:45 ajacoutot Exp $
 
 COMMENT=	"GUI widget library used in MakeHuman"
 
 DISTNAME=	mhgui-0.1
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS +=	mhgui 0.0			# .0.0
 CATEGORIES=	graphics
 
@@ -18,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=makehuman/}
 
-WANTLIB=	GL GLU ICE SM X11 Xi Xmu m pthread z
+WANTLIB=	GL GLU ICE SM X11 Xi Xmu m z
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	animorph::graphics/animorph \
@@ -28,10 +29,10 @@ LIB_DEPENDS=	animorph::graphics/animorph \
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			-I${LOCALBASE}/include/GL \
 			-I${LOCALBASE}/include/libpng" \
-		LDFLAGS="-L${LOCALBASE}/lib -lpthread -lz -lm"
+		LDFLAGS="-L${LOCALBASE}/lib -lz -lm"
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 

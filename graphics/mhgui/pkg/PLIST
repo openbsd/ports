@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/21 18:38:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/11/23 08:52:45 ajacoutot Exp $
 %%SHARED%%
 include/mhgui/
 include/mhgui/AbstractListener.h
@@ -26,11 +26,3 @@ lib/libmhgui.a
 lib/libmhgui.la
 lib/pkgconfig/
 lib/pkgconfig/mhgui.pc
-share/doc/mhgui/
-share/doc/mhgui/AUTHORS
-share/doc/mhgui/COPYING
-share/doc/mhgui/ChangeLog
-share/doc/mhgui/INSTALL
-share/doc/mhgui/NEWS
-share/doc/mhgui/README
-share/doc/mhgui/TODO

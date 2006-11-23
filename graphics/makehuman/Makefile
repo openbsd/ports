@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/21 18:39:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/23 08:54:02 ajacoutot Exp $
 
 COMMENT=	"parametrical modeling of three-dimensional humanoid characters"
 
 DISTNAME=	makehuman-0.9
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.dedalo-3d.com/
@@ -17,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=makehuman/}
 
-WANTLIB=	GL GLU ICE SM X11 Xi Xmu c m pthread stdc++ z
+WANTLIB=	GL GLU ICE SM X11 Xi Xmu c m stdc++ z
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 RUN_DEPENDS=	::graphics/aqsis
@@ -31,7 +32,7 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lpthread"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
