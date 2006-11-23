@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2006/08/04 00:10:42 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2006/11/23 20:08:32 espie Exp $
 
-MULTI_PACKAGES=	-pear
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -pear
 
-COMMENT=	"server-side HTML-embedded scripting language"
+COMMENT-main=	"server-side HTML-embedded scripting language"
 COMMENT-pear=	"base classes for common PHP tasks"
-PKGNAME=	php4-core-${V}p1
-FULLPKGNAME-pear= php4-pear-${V}p0
+PKGNAME-main=	php4-core-${V}p2
+FULLPKGNAME-pear= php4-pear-${V}p1
 
 CONFIGURE_ARGS+= --with-apxs=/usr/sbin/apxs \
 		--without-mysql \
@@ -31,8 +30,6 @@ CONFIGURE_ARGS+= --with-apxs=/usr/sbin/apxs \
 		--enable-yp \
 		--enable-exif
 
-MODULES=	devel/gettext
-
 # some variables to substitute
 SUBST_VARS=	PHP_CONFIG_FILE
 PHP_VERSION=	${V}
@@ -41,19 +38,17 @@ PHP_VERSION=	${V}
 PHPXS_SUBST+= -e 's,${i},${${i}},'
 .endfor
 
+WANTLIB-main=	c crypto des m ssl stdc++ z pthread
+MODULES=	devel/gettext
+
 .if ${MACHINE_ARCH} == "i386"
-LIB_DEPENDS+=	recode::converters/recode
+LIB_DEPENDS-main=${LIB_DEPENDS} recode::converters/recode
 CONFIGURE_ARGS+= --with-recode=${LOCALBASE}
 .endif
 
-.if defined(PACKAGING) && !empty(SUBPACKAGE)
-PREFIX=		${CHROOT_DIR}
-RUN_DEPENDS=	:php4-core-${V}:www/php4/core
-LIB_DEPENDS=
-MODULES=
-.else
-WANTLIB=	c crypto des m ssl stdc++ z pthread
-.endif
+PREFIX-pear=		${CHROOT_DIR}
+RUN_DEPENDS-pear=	:php4-core-${V}:www/php4/core
+LIB_DEPENDS-pear=
 
 pre-fake:
 	${INSTALL_DATA_DIR} ${PREFIX}/${APACHE_MODULE_SUBDIR}
