@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/21 00:12:40 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2006/11/24 07:21:27 steven Exp $
+@pkgpath inputmethods/anthy
 %%SHARED%%
 bin/anthy-agent
 bin/anthy-dic-tool

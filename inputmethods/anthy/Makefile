@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/21 00:12:40 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/11/24 07:21:27 steven Exp $
 COMMENT-main=	'japanese input method'
 COMMENT-emacs=	'emacs files for anthy'
 
@@ -7,7 +7,7 @@ CATEGORIES=	japanese inputmethods
 V=		7900
 MULTI_PACKAGES=	-main -emacs
 DISTNAME=	anthy-$V
-PKGNAME-main=	anthy-$Vp0
+PKGNAME-main=	anthy-$Vp1
 PKGNAME-emacs=	emacs-anthy-$V
 
 HOMEPAGE= 	http://anthy.sourceforge.jp/
