@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2006/11/22 15:02:07 kurt Exp $
+# $OpenBSD: Makefile,v 1.19 2006/11/24 21:35:29 steven Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/java/jdk14/Makefile,v 1.79 2004/08/18 07:06:03 glewis Exp $
 
 ONLY_FOR_ARCHS= 	i386
@@ -7,8 +7,8 @@ COMMENT-main=		"Java2(TM) Standard Edition Dev Kit v${V}"
 COMMENT-jre=		"Java2(TM) Standard Edition Runtime Environment v${V}"
 V=			1.4.2
 DISTNAME=		j2sdk-1_4_2
-PKGNAME-main=		jdk-${V}p10
-PKGNAME-jre=		jre-${V}p10
+PKGNAME-main=		jdk-${V}p11
+PKGNAME-jre=		jre-${V}p11
 
 CATEGORIES=		devel/jdk java
 
@@ -114,7 +114,9 @@ MAKE_ENV+=		NO_JAVAWS="YES"
 JDKHOME=		jdk-${V}
 JREHOME=		jre-${V}
 
-SUBST_VARS=		JDKHOME JREHOME
+MAINPATH=		devel/jdk/1.4${FLAVOR_EXT:S/-/,/g}
+
+SUBST_VARS=		JDKHOME JREHOME MAINPATH
 SYSTRACE_SUBST_VARS=	LOCALBASE
 
 # Deal with Sun's internal build structure

@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/22 15:02:07 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2006/11/24 21:35:29 steven Exp $
 @option no-default-conflict
 @conflict jdk->=1.4,<1.5
-@pkgpath devel/jdk/1.4
+@pkgpath ${MAINPATH}
 @pkgpath devel/jdk/1.4,native_bootstrap
 ${JDKHOME}/
 ${JDKHOME}/COPYRIGHT
