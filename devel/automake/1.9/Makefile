@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2005/08/09 15:52:46 aanriot Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/24 17:35:32 sturm Exp $
 
 COMMENT=	"GNU standards-compliant Makefile generator"
 
 VERSION=	1.9
 DISTNAME=	automake-${VERSION}.6
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=automake/}
