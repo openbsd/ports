@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/24 18:58:02 jolan Exp $
+lib/lua/5.1/pack.so
+share/doc/luapack/
+share/doc/luapack/README
+share/examples/luapack/
+share/examples/luapack/test.lua
