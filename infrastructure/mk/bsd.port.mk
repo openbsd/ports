@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.832 2006/11/24 00:10:00 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.833 2006/11/24 16:49:37 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1659,7 +1659,7 @@ _internal-plist _internal-update-plist: _internal-fake
 	DEPPATHS="`${MAKE} run-dir-depends ${_do_libs_too}|${_sort_dependencies}`" \
 	MAKE="${MAKE}" \
 	PORTSDIR=${PORTSDIR} \
-	PLIST=${PLIST} \
+	PLIST=${PLIST${SUBPACKAGE}} \
 	PFRAG=${PKGDIR}/PFRAG \
 	FLAVORS='${FLAVORS}' MULTI_PACKAGES='${MULTI_PACKAGES}' \
 	OKAY_FILES='${_FAKE_COOKIE} ${_INSTALL_PRE_COOKIE}' \
