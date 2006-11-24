@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2006/08/09 15:26:05 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2006/11/24 22:20:29 kili Exp $
 
-COMMENT= 	"object oriented type setting language"
+COMMENT-main= 	"object oriented type setting language"
 COMMENT-doc=	"Lout user and expert documentation"
 
 DISTNAME=       lout-3.30
-PKGNAME=	${DISTNAME}p0
+PKGNAME-main=	${DISTNAME}p1
 PKGNAME-doc=    ${DISTNAME:S/-/-doc-/}p0
 CATEGORIES=	print
 
@@ -25,12 +25,9 @@ NO_REGRESS=	Yes
 
 WANTLIB=	c m z
 
-MULTI_PACKAGES=	-doc
-SUBPACKAGE?=
+MULTI_PACKAGES=	-doc -main
 
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-doc"
-PKG_ARCH=               *
-WANTLIB=
-.endif
+PKG_ARCH-doc=	*
+WANTLIB-doc=
 
 .include <bsd.port.mk>
