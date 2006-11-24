@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.48 2006/11/19 11:54:44 msf Exp $
+# $OpenBSD: Makefile,v 1.49 2006/11/24 09:45:08 bernd Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT=		"object oriented script language with threads"
+COMMENT-main=		"object oriented script language with threads"
 COMMENT-iconv=		"libiconv interface for ruby"
 COMMENT-gdbm=		"gdbm interface for ruby"
 COMMENT-tk=		"tk interface for ruby"
@@ -10,7 +10,7 @@ COMMENT-tk=		"tk interface for ruby"
 VERSION=		1.8.5
 DISTNAME=		ruby-${VERSION}
 SHARED_LIBS=		ruby 1.85
-PKGNAME=		${DISTNAME}p1
+PKGNAME-main=		${DISTNAME}p2
 PKGNAME-iconv=		ruby-iconv-${VERSION}p2
 PKGNAME-gdbm=		ruby-gdbm-${VERSION}p2
 PKGNAME-tk=		ruby-tk-${VERSION}p2
@@ -39,13 +39,16 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 CONFIGURE_ENV=		PREFIX="${PREFIX}" \
 			LIBruby_VERSION=${LIBruby_VERSION}
 
-WANTLIB= 		c m
+MODULES=		converters/libiconv
+
+WANTLIB-main= 		c m readline termcap util crypto ncurses ssl z
+LIB_DEPENDS-main=
+RUN_DEPENDS-main=
 
 PSEUDO_FLAVORS= 	no_x11
 FLAVOR?=
 
-MULTI_PACKAGES=		-iconv -gdbm
-SUBPACKAGE?=
+MULTI_PACKAGES=		-main -iconv -gdbm
 
 .if !${FLAVOR:L:Mno_x11}
 USE_X11=		Yes
@@ -55,32 +58,21 @@ CONFIGURE_ARGS+=	--with-tcl-include=${PREFIX}/include/tcl8.4 \
 			--with-X11-dir=${X11BASE}
 .endif
 
-.if !defined(PACKAGING) || ${SUBPACKAGE} == ""
-WANTLIB+=		readline termcap util crypto ncurses ssl z
-.endif
+WANTLIB-iconv=		c m
+LIB_DEPENDS-iconv=	ruby.>=1::lang/ruby \
+			${MODLIBICONV_LIB_DEPENDS}
+RUN_DEPENDS-iconv=	${MODLIBICONV_RUN_DEPENDS}
 
-.if !defined(PACKAGING) || ${SUBPACKAGE} == "-iconv"
-MODULES+=		converters/libiconv
-.  if defined(PACKAGING)
-LIB_DEPENDS+=		ruby.>=1::lang/ruby
-.  endif
-.endif
-
-.if !defined(PACKAGING) || ${SUBPACKAGE} == "-gdbm"
-LIB_DEPENDS+=		gdbm.>=3::databases/gdbm
-.  if defined(PACKAGING)
-LIB_DEPENDS+=		ruby.>=1::lang/ruby
-.  endif
-.endif
+WANTLIB-gdbm=		c m
+LIB_DEPENDS-gdbm=	gdbm.>=3::databases/gdbm \
+			ruby.>=1::lang/ruby
+RUN_DEPENDS-gdbm=
 
 .if !${FLAVOR:L:Mno_x11}
-.  if !defined(PACKAGING) || ${SUBPACKAGE} == "-tk"
-WANTLIB+=		X11 tcl84
-LIB_DEPENDS+=		tk84:tk-8.4.*:x11/tk/8.4
-.    if defined(PACKAGING)
-LIB_DEPENDS+=		ruby.>=1::lang/ruby
-.    endif
-.  endif
+WANTLIB-tk=		X11 c m tcl84
+LIB_DEPENDS-tk=		tk84:tk-8.4.*:x11/tk/8.4 \
+			ruby.>=1::lang/ruby
+RUN_DEPENDS-tk=
 .endif
 
 REGRESS_DEPENDS=	::lang/ruby

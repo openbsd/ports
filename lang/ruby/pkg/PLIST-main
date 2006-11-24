@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.14 2006/10/02 07:48:08 bernd Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/24 09:45:08 bernd Exp $
+@pkgpath lang/ruby
 bin/erb
 bin/irb
 bin/rdoc
