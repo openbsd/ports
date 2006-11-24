@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.19 2005/02/20 01:51:43 alek Exp $
+# $OpenBSD: Makefile,v 1.20 2006/11/24 20:00:06 steven Exp $
 
-COMMENT= 		"GNU versions of common file management utilities"
+COMMENT-main= 		"GNU versions of common file management utilities"
 COMMENT-ls=		"colorized GNU 'ls'"
 
 V=			4.1
 DISTNAME=		fileutils-$V
 CATEGORIES=		misc
 
-PKGNAME=		${DISTNAME}p2
+PKGNAME-main=		${DISTNAME}p3
 PKGNAME-ls=		gnuls-$Vp0
 
 # GPL
@@ -29,6 +29,6 @@ CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		--program-prefix=g
 
-MULTI_PACKAGES=		-ls
+MULTI_PACKAGES=		-main -ls
 
 .include <bsd.port.mk>
