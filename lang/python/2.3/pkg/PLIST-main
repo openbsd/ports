@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2006/11/01 20:02:06 alek Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/24 20:48:23 steven Exp $
 @option no-default-conflict
 @conflict python->=2.3,<2.4
+@pkgpath lang/python/2.3
 bin/pydoc2.3
 bin/python2.3
 include/python2.3/

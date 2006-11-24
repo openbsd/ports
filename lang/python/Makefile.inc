@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.43 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile.inc,v 1.44 2006/11/24 20:48:23 steven Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -7,7 +7,7 @@
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"interpreted object-oriented programming language"
+COMMENT-main=	"interpreted object-oriented programming language"
 COMMENT-expat=	"expat module for Python"
 COMMENT-bsddb=	"Berkeley db module for Python"
 COMMENT-gdbm=	"GNU dbm module for Python"
@@ -19,7 +19,7 @@ COMMENT-tools=	"extra tools for Python"
 COMMENT-sqlite=	"sqlite database module for Python"
 COMMENT-bz2=	"bz2 module for Python"
 
-PKGNAME=	python-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
+PKGNAME-main=	python-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 DISTNAME=	Python-${VERSION}${PATCHLEVEL}
 CATEGORIES=	lang
 MASTER_SITES=	http://www.python.org/ftp/${PSUBDIR}/ \
@@ -42,19 +42,26 @@ PSEUDO_FLAVORS=	no_expat no_gdbm no_idle no_mpz no_tkinter no_bsddb no_bz2 \
 		no_sqlite
 FLAVOR?=
 
-MULTI_PACKAGES=	-tests -tools
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -tests -tools
 
 # All subpackages depend on the main python package.
 
-.if defined(PACKAGING)
-.  if !empty(SUBPACKAGE)
-RUN_DEPENDS=	:python-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}:lang/python/${VERSION}
+RUN_DEPENDS=	:python-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}:lang/python/${VERSION},-main
 LIB_DEPENDS=
-.  else
-WANTLIB=	ssl panel m crypto c util z readline pthread ncurses
-.  endif 
-.endif
+
+RUN_DEPENDS-main=
+WANTLIB-main=	ssl panel m crypto c util z readline pthread ncurses
+
+LIB_DEPENDS-bsddb=	lib/db4/db.=4:db-4.*:databases/db/v4
+LIB_DEPENDS-gdbm=	gdbm.>=3::databases/gdbm
+LIB_DEPENDS-bz2=	bz2::archivers/bzip2
+RUN_DEPENDS-idle=	${RUN_DEPENDS} \
+			::lang/python/${VERSION},-tkinter
+LIB_DEPENDS-tkinter=	tk84:tk-8.4.*:x11/tk/8.4
+WANTLIB-tkinter=	tcl84 X11
+LIB_DEPENDS-mpz=	gmp::devel/gmp
+LIB_DEPENDS-expat=	expat.>=4.0:expat->=1.95.6:textproc/expat
+LIB_DEPENDS-sqlite=	sqlite3.>=8.7::databases/sqlite3
 
 SETUP_PY=	"s,!!LOCALBASE!!,${LOCALBASE},g" \
 		"s,!!X11BASE!!,${X11BASE},g"
@@ -62,9 +69,6 @@ SETUP_PY=	"s,!!LOCALBASE!!,${LOCALBASE},g" \
 .if empty(FLAVOR:L:Mno_bsddb)
 SETUP_PY+=	"s,!!USE_BSDDB!!,1,g"
 MULTI_PACKAGES+=-bsddb
-.  if !defined(PACKAGING) || ${SUBPACKAGE} == "-bsddb"
-LIB_DEPENDS+=	lib/db4/db.=4:db-4.*:databases/db/v4
-.  endif
 .else
 SETUP_PY+=	"s,!!USE_BSDDB!!,0,g"
 .endif
@@ -72,9 +76,6 @@ SETUP_PY+=	"s,!!USE_BSDDB!!,0,g"
 .if empty(FLAVOR:L:Mno_gdbm)
 SETUP_PY+=	"s,!!USE_GDBM!!,1,g"
 MULTI_PACKAGES+=-gdbm
-.  if !defined(PACKAGING) || ${SUBPACKAGE} == "-gdbm"
-LIB_DEPENDS+=	gdbm.>=3::databases/gdbm
-.  endif
 .else
 SETUP_PY+=	"s,!!USE_GDBM!!,0,g"
 .endif
@@ -82,9 +83,6 @@ SETUP_PY+=	"s,!!USE_GDBM!!,0,g"
 .if empty(FLAVOR:L:Mno_bz2)
 SETUP_PY+=	"s,!!USE_BZ2!!,1,g"
 MULTI_PACKAGES+=-bz2
-.  if !defined(PACKAGING) || ${SUBPACKAGE} == "-bz2"
-LIB_DEPENDS+=	bz2::archivers/bzip2
-.  endif
 .else
 SETUP_PY+=	"s,!!USE_BZ2!!,0,g"
 .endif
@@ -93,24 +91,10 @@ SETUP_PY+=	"s,!!USE_BZ2!!,0,g"
 MULTI_PACKAGES+=-idle
 .endif
 
-.if defined(PACKAGING)
-.  if ${SUBPACKAGE} == "-idle"
-RUN_DEPENDS+=	::lang/python/${VERSION},-tkinter
-LIB_DEPENDS=
-.  endif
-.  if ${SUBPACKAGE} == "-tools" || ${SUBPACKAGE} == "-test"
-LIB_DEPENDS=
-.  endif
-.endif
-
 .if empty(FLAVOR:L:Mno_tkinter)
 USE_X11=	Yes
 SETUP_PY+=	"s,!!USE_TKINTER!!,1,g"
 MULTI_PACKAGES+=-tkinter
-.  if !defined(PACKAGING) || ${SUBPACKAGE} == "-tkinter"
-LIB_DEPENDS+=	tk84:tk-8.4.*:x11/tk/8.4
-WANTLIB=	tcl84 X11
-.  endif
 .else
 SETUP_PY+=	"s,!!USE_TKINTER!!,0,g"
 .endif
@@ -118,9 +102,6 @@ SETUP_PY+=	"s,!!USE_TKINTER!!,0,g"
 .if empty(FLAVOR:L:Mno_mpz) && ${VERSION} == "2.3"
 SETUP_PY+=	"s,!!USE_MPZ!!,1,g"
 MULTI_PACKAGES+=-mpz
-.  if !defined(PACKAGING) || ${SUBPACKAGE} == "-mpz"
-LIB_DEPENDS+=	gmp::devel/gmp
-.  endif
 .else
 SETUP_PY+=	"s,!!USE_MPZ!!,0,g"
 .endif
@@ -128,9 +109,6 @@ SETUP_PY+=	"s,!!USE_MPZ!!,0,g"
 .if empty(FLAVOR:L:Mno_expat)
 SETUP_PY+=	"s,!!USE_EXPAT!!,1,g"
 MULTI_PACKAGES+=-expat
-.  if !defined(PACKAGING) || ${SUBPACKAGE} == "-expat"
-LIB_DEPENDS+=	expat.>=4.0:expat->=1.95.6:textproc/expat
-.  endif
 .else
 SETUP_PY+=	"s,!!USE_EXPAT!!,0,g"
 .endif
@@ -138,9 +116,6 @@ SETUP_PY+=	"s,!!USE_EXPAT!!,0,g"
 .if empty(FLAVOR:L:Mno_sqlite) && ${VERSION} == "2.5"
 SETUP_PY+=	"s,!!USE_SQLITE!!,1,g"
 MULTI_PACKAGES+=-sqlite
-.  if !defined(PACKAGING) || ${SUBPACKAGE} == "-sqlite"
-LIB_DEPENDS+=	sqlite3.>=8.7::databases/sqlite3
-.  endif
 .else
 SETUP_PY+=	"s,!!USE_SQLITE!!,0,g"
 .endif

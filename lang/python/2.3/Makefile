@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2006/11/01 20:02:06 alek Exp $
+# $OpenBSD: Makefile,v 1.22 2006/11/24 20:48:23 steven Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
 BROKEN=			"compiler hangs on py-Checker for example"
@@ -6,7 +6,7 @@ BROKEN=			"compiler hangs on py-Checker for example"
 
 VERSION=		2.3
 PATCHLEVEL=		.5
-PKG_PATCHLEVEL=		p5
+PKG_PATCHLEVEL=		p6
 SHARED_LIBS=		python2.3 0.0
 
 # needed for www/zope

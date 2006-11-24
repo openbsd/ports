@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.ctypes,v 1.1 2006/11/09 17:36:29 alek Exp $
+@comment $OpenBSD: PFRAG.ctypes-main,v 1.1 2006/11/24 20:48:23 steven Exp $
 lib/python2.5/ctypes/
 lib/python2.5/ctypes/__init__.py
 lib/python2.5/ctypes/__init__.pyc
