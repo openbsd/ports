@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.24 2006/09/30 06:23:58 steven Exp $
+# $OpenBSD: Makefile,v 1.25 2006/11/24 19:52:53 steven Exp $
 
-COMMENT=	"subversion revision control system"
+COMMENT-main=	"subversion revision control system"
 COMMENT-perl=	"perl interface to subversion"
 COMMENT-python=	"python interface to subversion"
 
 VERSION=	1.4.0
 DISTNAME=	subversion-${VERSION}
-PKGNAME-perl=	p5-SVN-${VERSION}
-PKGNAME-python=	py-subversion-${VERSION}
+PKGNAME-main=	${DISTNAME}p0
+PKGNAME-perl=	p5-SVN-${VERSION}p0
+PKGNAME-python=	py-subversion-${VERSION}p0
 
 SO_VERSION=	1.0
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
@@ -28,7 +29,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		apr-1 db z
 
 MASTER_SITES=	${HOMEPAGE}/tarballs/
 
@@ -40,41 +40,39 @@ SUBST_VARS=	PYTHON_VER
 
 MODULES=	devel/gettext
 
+WANTLIB=	apr-1 db z
+
 LIB_DEPENDS=	neon.>=24:neon->=0.24.7:net/neon \
 		aprutil-1::devel/apr-util \
 		expat.>=4::textproc/expat
 
+MULTI_PACKAGES=	-main
+
+WANTLIB-main=	${WANTLIB} c crypto m ssl xml2
+
 .if !${FLAVOR:L:Mno_bindings}
-MULTI_PACKAGES=	-perl -python
-SUBPACKAGE?=
-
-.  if defined(PACKAGING) && !empty(SUBPACKAGE)
+MULTI_PACKAGES+=-perl -python
 SHARED_ONLY=	Yes
-LIB_DEPENDS=	expat.>=4::textproc/expat
-.    for _lib in svn_diff-1 svn_ra-1 svn_delta-1 svn_subr-1 svn_fs-1 \
+
+WANTLIB-perl=	${WANTLIB} aprutil-1
+LIB_DEPENDS-perl=	expat.>=4::textproc/expat \
+			${MODGETTEXT_LIB_DEPENDS}
+.  for _lib in svn_diff-1 svn_ra-1 svn_delta-1 svn_subr-1 svn_fs-1 \
 	svn_repos-1 svn_wc-1 svn_client-1
-LIB_DEPENDS+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversion 
-.    endfor
-WANTLIB+=	aprutil-1
+LIB_DEPENDS-perl+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversion,-main
+.  endfor
 
-.    if ${SUBPACKAGE} == "-python"
-RUN_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
-.      for _lib in ${SVN_LIBS}
-LIB_DEPENDS+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversion
-.      endfor
-LIB_DEPENDS+=	python${PYTHON_VER}:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
-WANTLIB+=	neon xml2 m ssl crypto
-.    endif
-.  endif
+WANTLIB-python=	${WANTLIB} crypto m ssl neon xml2 aprutil-1
+RUN_DEPENDS-python=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
+LIB_DEPENDS-python=	expat.>=4::textproc/expat \
+			python${PYTHON_VER}:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
+			${MODGETTEXT_LIB_DEPENDS}
+.  for _lib in ${SVN_LIBS}
+LIB_DEPENDS-python+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversion,-main
+.  endfor
 
-.  if !defined(PACKAGING)
 BUILD_DEPENDS=	::lang/python/${PYTHON_VER} \
 		::devel/swig
-.  endif
-.endif
-
-.if defined(PACKAGING) && (!defined(SUBPACKAGE) || empty(SUBPACKAGE))
-WANTLIB+=	crypto m ssl xml2 c
 .endif
 
 USE_LIBTOOL=	Yes

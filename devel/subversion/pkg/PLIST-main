@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2006/09/30 06:23:58 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/24 19:52:53 steven Exp $
 @pkgpath devel/subversion,no_bindings
+@pkgpath devel/subversion
 %%SHARED%%
 bin/svn
 bin/svnadmin

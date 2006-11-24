@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2006/01/07 01:10:11 steven Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/24 19:52:53 steven Exp $
 @lib lib/libsvn_client-1.so.${LIBsvn_client-1_VERSION}
 @lib lib/libsvn_delta-1.so.${LIBsvn_delta-1_VERSION}
 @lib lib/libsvn_diff-1.so.${LIBsvn_diff-1_VERSION}
