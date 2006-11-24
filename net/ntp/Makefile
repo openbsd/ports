@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2006/01/24 19:58:58 sturm Exp $
+# $OpenBSD: Makefile,v 1.33 2006/11/24 21:23:19 steven Exp $
 
-COMMENT=	"network time protocol implementation"
+COMMENT-main=	"network time protocol implementation"
 COMMENT-doc=	"network time protocol documentation"
 
 NTP_VERSION=	4.2.0a
 DISTNAME=	ntp-stable-${NTP_VERSION}-20050303
-PKGNAME=	ntp-${NTP_VERSION}p2
+PKGNAME-main=	ntp-${NTP_VERSION}p3
 PKGNAME-doc=	ntp-doc-${NTP_VERSION}p1
 CATEGORIES=	net
 MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/snapshots/ntp-stable/2005/03/ \
@@ -24,14 +24,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 
-MULTI_PACKAGES=	-doc
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -doc
 
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-doc"
-PKG_ARCH=	*
-.else
-WANTLIB=		c crypto curses kvm m readline 
-.endif
+PKG_ARCH-doc=	*
+WANTLIB-main=	c crypto curses kvm m readline 
 
 SEPARATE_BUILD=	concurrent
 AUTOCONF_VERSION= 2.58
