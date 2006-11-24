@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/24 22:53:04 espie Exp $
+@lib lib/libsqlite3.so.${LIBsqlite3_VERSION}
