@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2006/08/02 10:10:35 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2006/11/24 00:15:11 jolan Exp $
 # XXX hardcoded endian list
 
-COMMENT=		"ur-quan masters: sdl port of star control 2"
+COMMENT-main=		"ur-quan masters: sdl port of star control 2"
+COMMENT-content=	"ur-quan masters: game content"
 COMMENT-remix1=		"ur-quan masters: remix pack number one"
 COMMENT-remix2=		"ur-quan masters: remix pack number two"
 COMMENT-remix3=		"ur-quan masters: remix pack number three"
@@ -24,6 +25,8 @@ DISTFILES=		${PDIST}:0 ${CDIST} ${CDIST2}:0
 SUPDISTFILES=		${MDIST} ${VDIST} ${RM1DIST} ${RM2DIST} ${RM3DIST}
 DIST_SUBDIR=		uqm
 CATEGORIES=		games x11
+PKGNAME-main=		uqm-${DATE}p0
+PKGNAME-content=	uqm-content-${VER}
 PKGNAME-remix1=		uqm-remix1-${VER}
 PKGNAME-remix2=		uqm-remix2-${VER}
 PKGNAME-remix3=		uqm-remix3-${VER}
@@ -33,18 +36,27 @@ EXTRACT_ONLY=		${PDIST}
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sc2/}
 MASTER_SITES0=		http://mirrors.protection.cx/~jolan/
 
-HOMEPAGE=	http://sc2.sourceforge.net/
+HOMEPAGE=		http://sc2.sourceforge.net/
 
-# GPL
+# GPL + Conditional licensing on content
 PERMIT_PACKAGE_CDROM=	"content must accompany distribution of ur-quan masters"
 PERMIT_PACKAGE_FTP=	"content must accompany distribution of ur-quan masters"
 PERMIT_DISTFILES_CDROM=	"content must accompany distribution of ur-quan masters"
 PERMIT_DISTFILES_FTP=	"content must accompany distribution of ur-quan masters"
 
-LIB_DEPENDS=	vorbisidec.>=1::audio/tremor \
-		SDL_image::devel/sdl-image
-WANTLIB=	X11 Xext c m pthread usbhid z \
-		SDL
+LIB_DEPENDS-main=	vorbisidec.>=1::audio/tremor \
+			SDL_image::devel/sdl-image
+PKG_ARCH-content=	*
+PKG_ARCH-remix1=	*
+PKG_ARCH-remix2=	*
+PKG_ARCH-remix3=	*
+PKG_ARCH-threedomusic=	*
+PKG_ARCH-voice=		*
+RUN_DEPENDS=		:${PKGNAME-main}:games/uqm
+RUN_DEPENDS-content=	
+RUN_DEPENDS-main=	:${PKGNAME-content}:games/uqm,-content
+WANTLIB-main=		X11 Xext c m pthread usbhid z \
+			SDL
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
@@ -53,7 +65,7 @@ USE_X11=	Yes
 PSEUDO_FLAVORS=	remix1 remix2 remix3 threedomusic voice
 FLAVOR?=
 
-MULTI_PACKAGES=
+MULTI_PACKAGES= -main -content
 .if ${FLAVOR:L:Mremix1}
 DISTFILES+=	${RM1DIST}
 MULTI_PACKAGES+=-remix1
@@ -73,34 +85,6 @@ MULTI_PACKAGES+=-threedomusic
 .if ${FLAVOR:L:Mvoice}
 DISTFILES+=	${VDIST}
 MULTI_PACKAGES+=-voice
-.endif
-
-SUBPACKAGE?=
-
-.if defined(PACKAGING)
-. if !empty(SUBPACKAGE)
-WANTLIB=
-. endif
-. if ${SUBPACKAGE} == "-remix1"
-PKG_ARCH=	*
-RUN_DEPENDS=	::games/uqm
-. endif
-. if ${SUBPACKAGE} == "-remix2"
-PKG_ARCH=	*
-RUN_DEPENDS=    ::games/uqm
-. endif
-. if ${SUBPACKAGE} == "-remix3"
-PKG_ARCH=	*
-RUN_DEPENDS=	::games/uqm
-. endif
-. if ${SUBPACKAGE} == "-threedomusic"
-PKG_ARCH=	*
-RUN_DEPENDS=	::games/uqm
-. endif
-. if ${SUBPACKAGE} == "-voice"
-PKG_ARCH=	*
-RUN_DEPENDS=	::games/uqm
-. endif
 .endif
 
 do-configure:
