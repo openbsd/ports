@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2006/08/03 23:15:58 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2006/11/24 21:46:18 steven Exp $
 
-COMMENT=	"packet filter statistics visualization"
+COMMENT-main=	"packet filter statistics visualization"
 COMMENT-daemon=	"pfstat daemon"
 
 DISTNAME=	pfstat-2.2
 
-PKGNAME-daemon=	${PKGNAME:S/-/d-/}
+PKGNAME-main=	${DISTNAME}p0
+PKGNAME-daemon=	${DISTNAME:S/-/d-/}
 CATEGORIES=	net
 MASTER_SITES=	http://www.benzedrine.cx/
 
@@ -19,22 +20,18 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MULTI_PACKAGES=		-daemon
-SUBPACKAGE?=
-
-WANTLIB=		c
-
 BUILD_DEPENDS=		::graphics/gd
-
-.if defined(PACKAGING)
-. if ${SUBPACKAGE} != "-daemon"
-WANTLIB+=		jpeg m png z
 
 MODULES=		converters/libiconv
 
-LIB_DEPENDS=		gd.>=20::graphics/gd
-. endif
-.endif
+MULTI_PACKAGES=		-main -daemon
+
+WANTLIB-main=		c m z jpeg png
+LIB_DEPENDS-main=	gd.>=20::graphics/gd \
+			${MODLIBICONV_LIB_DEPENDS}
+WANTLIB-daemon=		c
+LIB_DEPENDS-daemon=
+RUN_DEPENDS-daemon=
 
 pre-configure:
 	@perl -pi -e "s,/etc,${SYSCONFDIR}," ${WRKSRC}/pfstat.c \
