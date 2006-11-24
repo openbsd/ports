@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2006/08/01 11:17:55 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/11/24 22:21:48 espie Exp $
 
-COMMENT=		"display the phase of the Sun on a map of the Earth"
+COMMENT-main=		"display the phase of the Sun on a map of the Earth"
 COMMENT-maps=		"additional maps of the Earth for sunclock"
 
 VERSION=		3.50pre1
 DISTNAME=		sunclock-${VERSION}
-PKGNAME=		${DISTNAME}p1
+PKGNAME-main=		${DISTNAME}p2
 PKGNAME-maps=		sunclock-maps-${VERSION}
 CATEGORIES=		astro
 
@@ -27,32 +27,26 @@ NO_REGRESS=		Yes
 PSEUDO_FLAVORS=	no_maps
 FLAVOR?=	no_maps
 
-MULTI_PACKAGES=
+MULTI_PACKAGES=	 -main
 .if !${FLAVOR:L:Mno_maps}
 MULTI_PACKAGES+= -maps
 .endif
-SUBPACKAGE?=
 
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-maps"
-PERMIT_PACKAGE_CDROM=	"no license for additional maps"
-PERMIT_PACKAGE_FTP=	"no license for additional maps"
-PERMIT_DISTFILES_CDROM=	"no license for additional maps"
-PERMIT_DISTFILES_FTP=	"no license for additional maps"
+PERMIT_PACKAGE_CDROM-maps=	"no license for additional maps"
+PERMIT_PACKAGE_FTP-maps=	"no license for additional maps"
+RUN_DEPENDS-maps=    ::astro/sunclock
+PKG_ARCH-maps=	*
 
-RUN_DEPENDS=    ::astro/sunclock
-
-PKG_ARCH=	*
-.else
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xpm c m z
+
+WANTLIB-main=		X11 Xext Xpm c m z
 
 
-LIB_DEPENDS=	jpeg.>=62::graphics/jpeg
-.endif
+LIB_DEPENDS-main=	jpeg.>=62::graphics/jpeg
 
 .if ${MULTI_PACKAGES:M-maps} # with maps
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SUPDISTFILES}
