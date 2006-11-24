@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/11/16 23:26:00 msf Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/24 09:41:09 msf Exp $
 @lib lib/libjain.so.${LIBjain_VERSION}
 @lib lib/libperditiondb_bdb.so.${LIBperditiondb_bdb_VERSION}
 @lib lib/libperditiondb_daemon.so.${LIBperditiondb_daemon_VERSION}

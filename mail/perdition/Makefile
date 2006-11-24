@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/16 23:26:00 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/24 09:41:09 msf Exp $
 
-COMMENT=	"fully featured POP3 and IMAP4 proxy server"
+COMMENT-main=	"fully featured POP3 and IMAP4 proxy server"
 COMMENT-ldap=	"LDAP backend for perdition mail proxy"
 COMMENT-mysql=  "MySQL backend for perdition mail proxy"
 COMMENT-pgsql=	"PostgreSQL backend for perdition mail proxy"
 
 DISTVER=	1.17
 DISTNAME=	perdition-${DISTVER}
+PKGNAME-main=	${DISTNAME}p0
 PKGNAME-ldap=	perdition-ldap-${DISTVER}
 PKGNAME-mysql=  perdition-mysql-${DISTVER}
 PKGNAME-pgsql=  perdition-pgsql-${DISTVER}
@@ -45,68 +46,56 @@ CONFIGURE_ARGS+=	--enable-ssl \
 			--with-group=_perdition \
 			--localstatedir=/var
 
-NO_REGRESS=	Yes
+NO_REGRESS=Yes
 
-MULTI_PACKAGES= 
-SUBPACKAGE?=
+PSEUDO_FLAVORS=		no_bdb no_ldap no_mysql no_pgsql
 FLAVOR?=
-PSEUDO_FLAVORS=	no_bdb no_ldap no_mysql no_pgsql
 
-.if !defined(PACKAGING) || ${SUBPACKAGE} == ""
-WANTLIB+=       c crypto ssl util
-LIB_DEPENDS+=	db.>=4.2::databases/db/v4 \
-		vanessa_adt.>=0.3::devel/vanessa/adt \
-		vanessa_logger.>=0.3::devel/vanessa/logger \
-		vanessa_socket.>=0.3::devel/vanessa/socket \
-		popt.>=0::devel/popt
-.endif
+MULTI_PACKAGES= 	-main
+
+WANTLIB-main=       	c crypto ssl util
+LIB_DEPENDS-main=	db.>=4.2::databases/db/v4 \
+			vanessa_adt.>=0.3::devel/vanessa/adt \
+			vanessa_logger.>=0.3::devel/vanessa/logger \
+			vanessa_socket.>=0.3::devel/vanessa/socket \
+			popt.>=0::devel/popt
 
 .if ${FLAVOR:L:Mno_ldap}
 CONFIGURE_ARGS+=	--disable-ldap
 .else
-SHARED_LIBS +=  perditiondb_ldap             0.0  # .0.0
+SHARED_LIBS +=  	perditiondb_ldap             0.0  # .0.0
 MULTI_PACKAGES+=	-ldap
 CONFIGURE_ARGS+=	--with-ldap-libraries=${LOCALBASE}/lib \
 			--with-ldap-includes=${LOCALBASE}/include \
 			--disable-ldap-doc
-.  if !defined(PACKAGING) || ${SUBPACKAGE} == "-ldap"
-LIB_DEPENDS+=		sasl2::security/cyrus-sasl2 \
+LIB_DEPENDS-ldap=		sasl2::security/cyrus-sasl2 \
 			ldap.>=2,lber.>=2:openldap-client-2.*:databases/openldap
-WANTLIB += 		asn1 com_err crypto gssapi krb5 ssl util
-.  endif
+WANTLIB-ldap= 		asn1 com_err crypto gssapi krb5 ssl util
 .endif
 
 .if ${FLAVOR:L:Mno_mysql}
 CONFIGURE_ARGS+=	--disable-mysql
 .else
-SHARED_LIBS +=  perditiondb_mysql            0.0  # .0.0
+SHARED_LIBS +=  	perditiondb_mysql            0.0  # .0.0
 MULTI_PACKAGES+=	-mysql
 CONFIGURE_ARGS+=	--with-mysql-libraries=${LOCALBASE}/lib/mysql \
 			--with-mysql-includes=${LOCALBASE}/include/mysql
-.  if !defined(PACKAGING) || ${SUBPACKAGE} == "-mysql"
-LIB_DEPENDS+=		lib/mysql/mysqlclient.>=10::databases/mysql
-WANTLIB+=		crypto ssl util m z 
-.    if defined(PACKAGING)
-LIB_DEPENDS+=		vanessa_adt.>=0.3::devel/vanessa/adt \
+LIB_DEPENDS-mysql=	lib/mysql/mysqlclient.>=10::databases/mysql \
+			vanessa_adt.>=0.3::devel/vanessa/adt \
 			vanessa_logger.>=0.3::devel/vanessa/logger
-.    endif
-.  endif
+WANTLIB-mysql=		crypto ssl util m z 
 .endif
 
 .if ${FLAVOR:L:Mno_pgsql}
 CONFIGURE_ARGS+=	--disable-pg
 .else 
-SHARED_LIBS +=  perditiondb_postgresql       0.0  # .0.0
+SHARED_LIBS +=  	perditiondb_postgresql       0.0  # .0.0
 MULTI_PACKAGES+=	-pgsql
 CONFIGURE_ARGS+=	--enable-pg
-.  if !defined(PACKAGING) || ${SUBPACKAGE} == "-pgsql"
-LIB_DEPENDS+=		pq.>=2:postgresql-client-*:databases/postgresql
-WANTLIB+=		crypto ssl util
-.    if defined(PACKAGING)
-LIB_DEPENDS+=		vanessa_adt.>=0.3::devel/vanessa/adt \
+LIB_DEPENDS-pgsql=	pq.>=2:postgresql-client-*:databases/postgresql \
+			vanessa_adt.>=0.3::devel/vanessa/adt \
 			vanessa_logger.>=0.3::devel/vanessa/logger
-.    endif
-.  endif
+WANTLIB-pgsql=		crypto ssl util
 .endif
 
 EXAMPLE_DIR=	${PREFIX}/share/examples/perdition/
