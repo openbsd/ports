@@ -1,0 +1,11 @@
+This module allows the use of objects without classes, like in
+some lesser known object languages based on prototyping.
+
+Instead of having to define classes with methods, one
+creates new objects by cloning existing objects, and then
+adding methods (and attributes) explicitly to a given object.
+
+`Inheritance' is achieved through object lineage: an object
+has been cloned from a line of ancestors, and any method
+not found in an object will be looked up in the object's line
+of ancestors.
