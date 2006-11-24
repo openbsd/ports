@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.42 2006/09/26 20:06:08 kurt Exp $
+# $OpenBSD: Makefile,v 1.43 2006/11/24 17:28:41 steven Exp $
 
 NOT_FOR_ARCHS=			${NO_SHARED_ARCHS}
 
-COMMENT=			"multi-platform graphical toolkit"
+COMMENT-main=			"multi-platform graphical toolkit"
 COMMENT-docs=           	"gtk+-2 documentation"
 
 VERSION=			2.8.20
 DISTNAME=			gtk+-${VERSION}
-PKGNAME=			gtk+2-${VERSION}p0
+PKGNAME-main=			gtk+2-${VERSION}p1
 PKGNAME-docs=			gtk+2-docs-${VERSION}
 CATEGORIES=			x11 devel
 
@@ -27,11 +27,9 @@ PERMIT_DISTFILES_FTP=		Yes
 MASTER_SITES=			${MASTER_SITE_GNOME:=sources/gtk+/2.8/}
 EXTRACT_SUFX=			.tar.bz2
 
-MULTI_PACKAGES=         	-docs
-SUBPACKAGE?=
+MULTI_PACKAGES=         	-main -docs
 
-.if ${SUBPACKAGE} != "-docs"
-WANTLIB=			X11 Xcursor Xext Xfixes Xi Xinerama Xrender \
+WANTLIB-main=			X11 Xcursor Xext Xfixes Xi Xinerama Xrender \
 				Xrandr c cairo fontconfig freetype glitz m pthread z
 MODULES=			devel/gettext
 
@@ -43,11 +41,10 @@ LIB_DEPENDS=			glib-2.0.>=1000.0,gmodule-2.0.>=1000.0,gobject-2.0.>=1000.0::deve
 				jpeg.>=62::graphics/jpeg
 BUILD_DEPENDS=          	:pkgconfig-*:devel/pkgconfig
 RUN_DEPENDS=			::x11/hicolor-icon-theme
-.endif
 
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
-PKG_ARCH=			*
-.endif
+LIB_DEPENDS-docs=
+RUN_DEPENDS-docs=
+PKG_ARCH-docs=			*
 
 USE_X11=			Yes
 USE_GMAKE=			Yes

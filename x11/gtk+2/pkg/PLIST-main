@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.26 2006/06/19 17:59:02 bernd Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/24 17:28:41 steven Exp $
+@pkgpath x11/gtk+2
 bin/gdk-pixbuf-csource
 bin/gdk-pixbuf-query-loaders
 bin/gtk-demo

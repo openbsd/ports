@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.19 2006/01/03 07:33:37 marcm Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/24 17:28:41 steven Exp $
 lib/gtk-2.0/2.4.0/engines/libpixmap.so
 lib/gtk-2.0/2.4.0/immodules/im-am-et.so
 lib/gtk-2.0/2.4.0/immodules/im-cedilla.so
