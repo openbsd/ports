@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2006/11/23 23:19:27 robert Exp $
+# $OpenBSD: Makefile,v 1.33 2006/11/24 10:52:33 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -44,7 +44,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MULTI_PACKAGES=		-kde -java
 
-LANGS=			bg br-pt de es fi fr hu it ja ko pl ru sl
+LANGS=			bg br-pt de es fi fr hu it ja ko \
+			nl pl ru sl
 
 .for l in ${LANGS}
 MULTI_PACKAGES+=	-i18n-$l
