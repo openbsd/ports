@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/11/13 21:52:52 wilfried Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/24 18:46:58 steven Exp $
+@pkgpath devel/boost
 @conflict boost-*
 include/boost/
 include/boost/algorithm/

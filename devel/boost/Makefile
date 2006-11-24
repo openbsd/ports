@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/13 21:52:52 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2006/11/24 18:46:58 steven Exp $
 
-COMMENT=	"free peer-reviewed portable C++ source libraries (headers)"
+COMMENT-main=	"free peer-reviewed portable C++ source libraries (headers)"
 COMMENT-libs=	"free peer-reviewed portable C++ source libraries (libraries)"
 
-FULLPKGNAME=	boost-headers-${VERSION}
+PKGNAME-main=	boost-headers-${VERSION}p0
 PKGNAME-libs=	boost-libs-${VERSION}
 
 VERSION=	1.33.1
@@ -49,14 +49,10 @@ MAKE_ENV=	GCC="${CC}" GXX="${CXX}"
 
 REGRESS_TARGET=	check
 
-MULTI_PACKAGES=-libs
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -libs
 
-.if defined(PACKAGING) && empty(SUBPACKAGE)
-PKG_ARCH=	*
-.else
-WANTLIB=	z c
-.endif
+PKG_ARCH-main=	*
+WANTLIB-libs=	z c
 
 do-configure:
 	@cd ${WRKSRC}/libs/config && \
