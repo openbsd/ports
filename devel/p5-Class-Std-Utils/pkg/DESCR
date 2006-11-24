@@ -1,0 +1,10 @@
+This module provides three utility subroutines:
+
+    anon_scalar()
+
+    ident($some_ref)
+
+    extract_initializers_from(\%hash)
+
+Those can be used to simplify the building of inside-out objects,
+as seen in Damian Conway's book `perl's best practices'.
