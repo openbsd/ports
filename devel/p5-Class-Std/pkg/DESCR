@@ -1,0 +1,4 @@
+This is a second way to achieve inside-out objects.
+In contrast to Class::Std::Util, this module mandates
+standard ways to declare object attributes and to build
+objects.
