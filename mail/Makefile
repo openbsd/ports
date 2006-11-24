@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.170 2006/11/16 23:27:55 msf Exp $
+# $OpenBSD: Makefile,v 1.171 2006/11/24 09:47:52 bernd Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -13,6 +13,8 @@
      SUBDIR += bmf
      SUBDIR += bogofilter
      SUBDIR += bogofilter,db4
+     SUBDIR += bogofilter,qdbm
+     SUBDIR += bogofilter,sqlite3
      SUBDIR += bulk_mailer
      SUBDIR += c-client
      SUBDIR += clamsmtp
