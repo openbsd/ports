@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2006/10/28 11:19:21 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2006/11/24 16:50:10 steven Exp $
 
-COMMENT=		"general-purpose utility library"
+COMMENT-main=		"general-purpose utility library"
 COMMENT-docs=		"glib2 documentation"
 
 VERSION=		2.10.3
 DISTNAME=		glib-${VERSION}
-PKGNAME=		glib2-${VERSION}
+PKGNAME-main=		glib2-${VERSION}p0
 PKGNAME-docs=		glib2-docs-${VERSION}
 CATEGORIES=		devel
 
@@ -25,15 +25,14 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/glib/2.10/}
 EXTRACT_SUFX=		.tar.bz2
 
-MULTI_PACKAGES=		-docs
-SUBPACKAGE?=
+MULTI_PACKAGES=		-main -docs
 
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
-PKG_ARCH=		*
-.else
 MODULES=		devel/gettext
-WANTLIB=		c
-.endif
+WANTLIB-main=		c
+
+PKG_ARCH-docs=		*
+LIB_DEPENDS-docs=
+RUN_DEPENDS-docs=
 
 BUILD_DEPENDS=          :pkgconfig-*:devel/pkgconfig
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.13 2005/12/28 06:25:27 marcm Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/24 16:50:10 steven Exp $
 @lib lib/libglib-2.0.so.${LIBglib-2.0_VERSION}
 @lib lib/libgmodule-2.0.so.${LIBgmodule-2.0_VERSION}
 @lib lib/libgobject-2.0.so.${LIBgobject-2.0_VERSION}
