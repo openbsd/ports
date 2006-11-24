@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.34 2006/10/28 10:30:41 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2006/11/24 16:22:21 naddy Exp $
 
-COMMENT=	"portable audio output library"
+COMMENT-main=	"portable audio output library"
 COMMENT-arts=	"aRts module for portable audio output library"
 COMMENT-esd=	"ESounD module for portable audio output library"
 
 VERSION=	0.8.5
 DISTNAME=	libao-${VERSION}
-FULLPKGNAME=	libao-${VERSION}p2
+PKGNAME-main=	libao-${VERSION}p3
 PKGNAME-arts=	libao-arts-${VERSION}p2
 PKGNAME-esd=	libao-esd-${VERSION}p3
 CATEGORIES=    	audio
@@ -20,26 +20,23 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		pthread
 
 MASTER_SITES=	${HOMEPAGE}src/
 
 PSEUDO_FLAVORS=	no_arts no_esd
 FLAVOR?=	no_arts
 
-MULTI_PACKAGES=
+MULTI_PACKAGES=	-main
 .if !${FLAVOR:L:Mno_arts}
-MULTI_PACKAGES+= -arts
+MULTI_PACKAGES+=-arts
 .endif
 .if !${FLAVOR:L:Mno_esd}
-MULTI_PACKAGES+= -esd
+MULTI_PACKAGES+=-esd
 .endif
-
-SUBPACKAGE?=
 
 USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	simple
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static
 .if ${FLAVOR:L:Mno_arts}
 CONFIGURE_ARGS+= --disable-arts
@@ -49,24 +46,22 @@ CONFIGURE_ARGS+= --disable-esd
 .endif
 CONFIGURE_ARGS+= --disable-nas
 
-.if defined(PACKAGING)
-.  if   ${SUBPACKAGE} == "-arts"
-LIB_DEPENDS=	artsc::x11/kde/arts3
-RUN_DEPENDS=	:libao-${VERSION}:audio/libao
-WANTLIB+=	glib-2.0.0.0 gmodule-2.0.0.0 gthread-2.0.0.0
-MODULES=	devel/gettext
-.  elif ${SUBPACKAGE} == "-esd"
-LIB_DEPENDS=	esd.>=2::audio/esound
-RUN_DEPENDS=	:libao-${VERSION}:audio/libao
-WANTLIB+=	audiofile m
-.  endif
-.else
-.  if ${MULTI_PACKAGES:M-arts}
-LIB_DEPENDS+=	artsc::x11/kde/arts3
-.  endif
-.  if ${MULTI_PACKAGES:M-esd}
-LIB_DEPENDS+=	esd.>=2::audio/esound
-.  endif
+.if ${MULTI_PACKAGES:M-arts}
+MODULES=		devel/gettext
 .endif
+
+LIB_DEPENDS-main=
+RUN_DEPENDS-main=
+WANTLIB-main=		pthread
+
+LIB_DEPENDS-arts=	${MODGETTEXT_LIB_DEPENDS} \
+			artsc::x11/kde/arts3
+RUN_DEPENDS-arts=	${MODGETTEXT_RUN_DEPENDS} \
+			:libao-${VERSION}:audio/libao
+WANTLIB-arts=		glib-2.0 gmodule-2.0 gthread-2.0 pthread
+
+LIB_DEPENDS-esd=	esd.>=2::audio/esound
+RUN_DEPENDS-esd=	:libao-${VERSION}:audio/libao
+WANTLIB-esd=		audiofile m pthread
 
 .include <bsd.port.mk>
