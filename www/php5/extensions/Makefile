@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2006/11/20 20:57:22 robert Exp $
+# $OpenBSD: Makefile,v 1.28 2006/11/24 09:27:33 espie Exp $
 
 FULLPKGNAME=		php5-extensions-${V}
 COMMENT=		"informational package about PHP5 extensions"
@@ -336,7 +336,7 @@ MESSAGE=		${PKGDIR}/DESCR
 SUBST_VARS=		V
 WANTLIB=
 .else
-BUILD_DEPENDS+=		xml2.>=8::textproc/libxml
+BUILD_DEPENDS+=		::textproc/libxml
 .for i in ${MULTI_PACKAGES}
 LIB_DEPENDS+=		${${i:U:S/-//g}_DEPENDS}
 WANTLIB+=		${${i:U:S/-//g}_WANTLIB}
