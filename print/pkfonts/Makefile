@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2004/02/01 20:40:46 sturm Exp $
+# $OpenBSD: Makefile,v 1.22 2006/11/24 22:27:32 steven Exp $
 
-COMMENT=	"English PK fonts (300dpi) for ghostscript, xdvi, etc."
+COMMENT-main=	"English PK fonts (300dpi) for ghostscript, xdvi, etc."
 
 DISTNAME=	pkfonts
 VERSION=	1.0
 PKGNAME=	pkfonts-dpi300-${VERSION}
+PKGNAME-main=	${PKGNAME}p0
 CATEGORIES=	print
 
 PERMIT_PACKAGE_CDROM=	"no license"
@@ -19,15 +20,14 @@ MASTER_SITES=   ftp://ports.jp.FreeBSD.org/pub/$S/ \
 EXTRACT_ONLY=	
 DIST_SUBDIR=	pkfonts-${VERSION}
 
-MULTI_PACKAGES=	-dpi118 -dpi240 -dpi360 -dpi400 -dpi600
-SUBPACKAGE?=	
+MULTI_PACKAGES=	-main -dpi118 -dpi240 -dpi360 -dpi400 -dpi600
 
 DISTFILES=	pk300.tar.gz
 
-.for dpi in ${MULTI_PACKAGES:S/-dpi//} 
+.for dpi in ${MULTI_PACKAGES:M-dpi*:S/-dpi//} 
 DISTFILES+=  		pk${dpi}.tar.gz
 PKGNAME-dpi${dpi}=	pkfonts-dpi${dpi}-${VERSION}
-COMMENT-dpi${dpi}=	${COMMENT:S/300dpi/${dpi}dpi/}
+COMMENT-dpi${dpi}=	${COMMENT-main:S/300dpi/${dpi}dpi/}
 .endfor
 
 NO_BUILD=	Yes
