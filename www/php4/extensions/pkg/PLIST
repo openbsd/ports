@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:49:52 espie Exp $
-lib/
-lib/php/
-lib/php/modules/

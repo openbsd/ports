@@ -1,23 +1,19 @@
-# $OpenBSD: Makefile,v 1.50 2006/09/18 09:04:03 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2006/11/24 08:39:03 espie Exp $
 
-FULLPKGNAME=	php4-extensions-${V}p0
-COMMENT=	"informational package about PHP4 extensions"
+FULLPKGNAME-main=	php4-extensions-${V}p1
+COMMENT-main=	"informational package about PHP4 extensions"
 
-MULTI_PACKAGES=
-SUBPACKAGE?=
+MULTI_PACKAGES=-main
 
 # extensions get installed under the apache chroot
-PREFIX?=	${CHROOT_DIR}
+PREFIX=		${CHROOT_DIR}
 
 FLAVORS=	no_x11
 FLAVOR?=
 
 WANTLIB=	stdc++ m
 
-RUN_DEPENDS=	:php4-core-${V}:www/php4/core
-.if !defined(PACKAGING)
 MODULES=	devel/gettext
-.endif
 
 CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 			--with-iconv-dir=${LOCALBASE} \
@@ -38,7 +34,7 @@ CONFIGURE_ARGS+=	--without-bz2
 MULTI_PACKAGES+=	-bz2
 COMMENT-bz2=		"bzip2 compression extensions for php4"
 CONFIGURE_ARGS+=	--with-bz2=shared,${LOCALBASE}
-BZ2_DEPENDS=		bz2.>=10::archivers/bzip2
+LIB_DEPENDS-bz2=	bz2.>=10::archivers/bzip2
 .endif
 
 # curl
@@ -50,8 +46,8 @@ MULTI_PACKAGES+=	-curl
 COMMENT-curl=		"curl URL library extensions for php4"
 FULLPKGNAME-curl=	php4-curl-${V}p0
 CONFIGURE_ARGS+=	--with-curl=shared,${LOCALBASE}
-CURL_DEPENDS=		curl.>=2::net/curl
-CURL_WANTLIB=		crypto ssl z
+LIB_DEPENDS-curl=	curl.>=2::net/curl
+WANTLIB-curl=		${WANTLIB} crypto ssl z
 .endif
 
 # dba
@@ -62,7 +58,7 @@ CONFIGURE_ARGS+=	--disable-dba
 MULTI_PACKAGES+=	-dba
 COMMENT-dba=		"dba GDBM access extensions for php4"
 CONFIGURE_ARGS+=	--enable-dba=shared --with-gdbm=${LOCALBASE}
-DBA_DEPENDS=		gdbm.>=2::databases/gdbm
+LIB_DEPENDS-dba=	gdbm.>=2::databases/gdbm
 .endif
 
 # dbase
@@ -73,6 +69,7 @@ CONFIGURE_ARGS+=	--disable-dbase
 MULTI_PACKAGES+=	-dbase
 COMMENT-dbase=		"dBase database access extensions for php4"
 CONFIGURE_ARGS+=	--enable-dbase=shared
+LIB_DEPENDS-dbase=
 .endif
 
 # dbx
@@ -83,6 +80,7 @@ CONFIGURE_ARGS+=	--disable-dbx
 MULTI_PACKAGES+=	-dbx
 COMMENT-dbx=		"dbx database abstraction interface for php4"
 CONFIGURE_ARGS+=	--enable-dbx=shared
+LIB_DEPENDS-dbx=
 .endif
 
 # domxml
@@ -93,8 +91,8 @@ CONFIGURE_ARGS+=	--disable-dom
 MULTI_PACKAGES+=	-domxml
 COMMENT-domxml=		"manipulate XML via the DOM API in php4"
 CONFIGURE_ARGS+=	--with-dom=shared,${LOCALBASE}
-DOMXML_DEPENDS=		xml2.>=6::textproc/libxml
-DOMXML_WANTLIB=		z iconv
+LIB_DEPENDS-domxml=	xml2.>=6::textproc/libxml
+WANTLIB-domxml=		${WANTLIB} z iconv
 .endif
 
 # filepro
@@ -105,6 +103,7 @@ CONFIGURE_ARGS+=	--disable-filepro
 MULTI_PACKAGES+=	-filepro
 COMMENT-filepro=	"filepro database access extensions for php4"
 CONFIGURE_ARGS+=	--enable-filepro=shared
+LIB_DEPENDS-filepro=
 .endif
 
 # gd
@@ -115,18 +114,16 @@ CONFIGURE_ARGS+=	--without-gd --without-xpm-dir --without-ttf \
 .else
 MULTI_PACKAGES+=	-gd
 COMMENT-gd=		"image manipulation extensions for php4"
-GD_DEPENDS=		ttf.>=1::print/freetype ${GRAPHIC_DEPENDS} \
+LIB_DEPENDS-gd=		ttf.>=1::print/freetype ${GRAPHIC_DEPENDS} \
 			t1.>=5::devel/t1lib
-GD_WANTLIB=		z
+WANTLIB-gd=		${WANTLIB} z
 CONFIGURE_ARGS+=	--with-gd=shared ${GRAPHIC_CONFIG} \
 			--with-ttf=shared,${LOCALBASE} --without-freetype-dir \
 			--with-t1lib=${LOCALBASE}
 .if !${FLAVOR:L:Mno_x11}
 USE_X11=               yes
 CONFIGURE_ARGS+=       --with-xpm-dir=${X11BASE}
-.  if !defined(PACKAGING) || ${SUBPACKAGE} == "-gd"
-WANTLIB+=		X11 Xpm
-.  endif
+WANTLIB-gd+=		X11 Xpm
 FULLPKGNAME-gd=		php4-gd-${V}p4
 .else
 CONFIGURE_ARGS+=       --without-xpm-dir
@@ -142,7 +139,7 @@ CONFIGURE_ARGS+=	--without-gmp
 MULTI_PACKAGES+=	-gmp
 COMMENT-gmp=		"gmp math library support for php4"
 CONFIGURE_ARGS+=	--with-gmp=shared,${LOCALBASE}
-GMP_DEPENDS=		gmp.>=4::devel/gmp
+LIB_DEPENDS-gmp=	gmp.>=4::devel/gmp
 .endif
 
 # imap
@@ -154,8 +151,8 @@ MULTI_PACKAGES+=	-imap
 COMMENT-imap=		"imap, pop3 and nntp extensions for php4"
 CONFIGURE_ARGS+=	--with-imap=shared,${LOCALBASE} \
 			--with-kerberos=/usr --with-imap-ssl
-IMAP_DEPENDS=		c-client.>=3::mail/c-client
-IMAP_WANTLIB=		des gssapi crypto krb5 ssl
+LIB_DEPENDS-imap=	c-client.>=3::mail/c-client
+WANTLIB-imap=		${WANTLIB} des gssapi crypto krb5 ssl
 .endif
 
 # ldap
@@ -166,7 +163,7 @@ CONFIGURE_ARGS+=	--without-ldap
 MULTI_PACKAGES+=	-ldap
 COMMENT-ldap=		"ldap protocol extensions for php4"
 CONFIGURE_ARGS+=	--with-ldap=shared,${LOCALBASE}
-LDAP_DEPENDS=		ldap.>=2,lber::databases/openldap
+LIB_DEPENDS-ldap=	ldap.>=2,lber::databases/openldap
 .endif
 
 # mcrypt
@@ -177,7 +174,7 @@ CONFIGURE_ARGS+=	--without-mcrypt
 MULTI_PACKAGES+=	-mcrypt
 COMMENT-mcrypt=		"mcrypt encryption/decryption extensions for php4"
 CONFIGURE_ARGS+=	--with-mcrypt=shared,${LOCALBASE}
-MCRYPT_DEPENDS=		mcrypt::security/libmcrypt ltdl.>=1::devel/libtool,-ltdl
+LIB_DEPENDS-mcrypt=	mcrypt::security/libmcrypt ltdl.>=1::devel/libtool,-ltdl
 .endif
 
 # mhash
@@ -188,7 +185,7 @@ CONFIGURE_ARGS+=	--without-mhash
 MULTI_PACKAGES+=	-mhash
 COMMENT-mhash=		"mhash extensions for php4"
 CONFIGURE_ARGS+=	--with-mhash=shared,${LOCALBASE}
-MHASH_DEPENDS=		mhash.>=2::security/mhash
+LIB_DEPENDS-mhash=	mhash.>=2::security/mhash
 .endif
 
 # mysql
@@ -199,7 +196,7 @@ CONFIGURE_ARGS+=	--without-mysql
 MULTI_PACKAGES+=	-mysql
 COMMENT-mysql=		"mysql database access extensions for php4"
 CONFIGURE_ARGS+=	--with-mysql=shared,${LOCALBASE}
-MYSQL_DEPENDS=		lib/mysql/mysqlclient.>=10::databases/mysql
+LIB_DEPENDS-mysql=	lib/mysql/mysqlclient.>=10::databases/mysql
 .endif
 
 # ncurses
@@ -210,7 +207,8 @@ CONFIGURE_ARGS+=	--without-ncurses
 MULTI_PACKAGES+=	-ncurses
 COMMENT-ncurses=	"ncurses extensions for php4"
 CONFIGURE_ARGS+=	--with-ncurses=shared,${LOCALBASE}
-NCURSES_WANTLIB+=	ncurses panel
+LIB_DEPENDS-ncurses=
+WANTLIB-ncurses=	${WANTLIB} ncurses panel
 .endif
 
 # odbc
@@ -221,7 +219,7 @@ CONFIGURE_ARGS+=	--without-odbc
 MULTI_PACKAGES+=	-odbc
 COMMENT-odbc=		"odbc database access extensions for php4"
 CONFIGURE_ARGS+=        --with-iodbc=shared
-ODBC_DEPENDS=		iodbc.>=2::databases/iodbc
+LIB_DEPENDS-odbc=	iodbc.>=2::databases/iodbc
 .endif
 
 # pdf
@@ -233,9 +231,9 @@ MULTI_PACKAGES+=	-pdf
 COMMENT-pdf=		"pdf viewing and creation extensions for php4"
 CONFIGURE_ARGS+=	--with-pdflib=shared,${LOCALBASE} ${GRAPHIC_CONFIG} \
 			--with-tiff-dir=${LOCALBASE}
-PDF_DEPENDS=		pdf.>=2::print/pdflib ${GRAPHIC_DEPENDS} \
+LIB_DEPENDS-pdf=	pdf.>=2::print/pdflib ${GRAPHIC_DEPENDS} \
 			tiff.>=35::graphics/tiff
-PDF_WANTLIB=		z
+WANTLIB-pdf=		${WANTLIB} z
 .endif
 
 # pgsql
@@ -246,7 +244,7 @@ CONFIGURE_ARGS+=	--without-pgsql
 MULTI_PACKAGES+=	-pgsql
 COMMENT-pgsql=		"pgsql database access extensions for php4"
 CONFIGURE_ARGS+=	--with-pgsql=shared,${LOCALBASE}
-PGSQL_DEPENDS=		pq.>=2:postgresql-client-*:databases/postgresql
+LIB_DEPENDS-pgsql=	pq.>=2:postgresql-client-*:databases/postgresql
 .endif
 
 # shmop
@@ -257,6 +255,7 @@ CONFIGURE_ARGS+=	--disable-shmop
 MULTI_PACKAGES+=	-shmop
 COMMENT-shmop=		"shared memory extensions for php4"
 CONFIGURE_ARGS+=	--enable-shmop=shared
+LIB_DEPENDS-shmop=
 .endif
 
 # snmp
@@ -267,8 +266,8 @@ CONFIGURE_ARGS+=	--without-snmp
 MULTI_PACKAGES+=	-snmp
 COMMENT-snmp=		"snmp protocol extensions for php4"
 CONFIGURE_ARGS+=	--with-snmp=shared,${LOCALBASE} --enable-ucd-snmp-hack
-SNMP_DEPENDS=		netsnmp.>=6.2::net/net-snmp
-SNMP_WANTLIB=		crypto
+LIB_DEPENDS-snmp=	netsnmp.>=6.2::net/net-snmp
+WANTLIB-snmp=		${WANTLIB} crypto
 .endif
 
 # sybase-ct
@@ -279,7 +278,7 @@ CONFIGURE_ARGS+=	--without-sybase-ct
 MULTI_PACKAGES+=	-sybase_ct
 COMMENT-sybase_ct=	"sybase database access extensions for php4"
 CONFIGURE_ARGS+=        --with-sybase-ct=shared,${LOCALBASE}
-SYBASE_CT_DEPENDS=	ct::databases/freetds
+LIB_DEPENDS-sybase_ct=	ct::databases/freetds
 .endif
 
 # xml-rpc
@@ -290,8 +289,8 @@ CONFIGURE_ARGS+=	--without-xmlrpc
 MULTI_PACKAGES+=	-xmlrpc
 COMMENT-xmlrpc=		"XML RPC functions for php4"
 CONFIGURE_ARGS+=	--with-xmlrpc=shared
-XMLRPC_DEPENDS=		expat.>=2::textproc/expat
-XMLRPC_WANTLIB=		iconv
+LIB_DEPENDS-xmlrpc=	expat.>=2::textproc/expat
+WANTLIB-xmlrpc=		${WANTLIB} iconv
 .endif
 
 # xslt
@@ -303,37 +302,26 @@ MULTI_PACKAGES+=	-xslt
 COMMENT-xslt=		"xslt transformation extensions for php4"
 CONFIGURE_ARGS+=	--enable-xslt=shared --with-xslt-sablot=shared,${LOCALBASE} \
 			--with-expat-dir=${LOCALBASE}
-XSLT_DEPENDS=		sablot.>=96::textproc/sablotron expat.>=2::textproc/expat
-XSLT_WANTLIB=		iconv
+LIB_DEPENDS-xslt=	sablot.>=96::textproc/sablotron expat.>=2::textproc/expat
+WANTLIB-xslt=		${WANTLIB} iconv
 .endif
 
 .for i in ${MULTI_PACKAGES}
-.if !defined(FULLPKGNAME${i})
-FULLPKGNAME${i}=	php4${i}-${V}p0
-.endif
+FULLPKGNAME${i}?=	php4${i}-${V}p0
+RUN_DEPENDS${i}=	:php4-core-${V}:www/php4/core
 .endfor
 
-.if defined(PACKAGING) && !empty(SUBPACKAGE)
 MODULE_NAME=		${SUBPACKAGE:S/-//g}
-LIB_DEPENDS=		${${MODULE_NAME:U}_DEPENDS}
-WANTLIB+=		${${MODULE_NAME:U}_WANTLIB}
 MESSAGE=		${PKGDIR}/MESSAGE
-SUBST_VARS=		MODULE_NAME PHP_CONFIG_FILE LOCALBASE
-.elif defined(PACKAGING) && empty(SUBPACKAGE)
-LIB_DEPENDS=
-MESSAGE=		${PKGDIR}/DESCR
-SUBST_VARS=		V
-WANTLIB=
-.else
-.for i in ${MULTI_PACKAGES}
-LIB_DEPENDS+=		${${i:U:S/-//g}_DEPENDS}
-WANTLIB+=		${${i:U:S/-//g}_WANTLIB}
-.endfor
-.endif
+SUBST_VARS=		MODULE_NAME PHP_CONFIG_FILE LOCALBASE V
+
+LIB_DEPENDS-main=
+MESSAGE-main=		${PKGDIR}/DESCR-main
+WANTLIB-main=
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${MODULES_SUBDIR}
-.for m in ${MULTI_PACKAGES:S/-//g}
+.for m in ${MULTI_PACKAGES:N-main:S/-//g}
 	${INSTALL_DATA} ${WRKBUILD}/modules/${m}.so \
 		${PREFIX}/${MODULES_SUBDIR}/${m}.so
 .endfor

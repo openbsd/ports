@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/24 08:39:03 espie Exp $
+@pkgpath www/php4/extensions
+lib/
+lib/php/
+lib/php/modules/
