@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.18 2006/09/30 22:03:56 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2006/11/24 21:14:29 steven Exp $
 
-COMMENT=	"extendable SNMP implementation"
+COMMENT-main=	"extendable SNMP implementation"
 COMMENT-perl=	"SNMP modules for Perl"
 
 DISTNAME=	net-snmp-5.1.3
-PKGNAME=	${DISTNAME}p4
-FULLPKGNAME-perl= p5-SNMP-5.1.3p2
+PKGNAME-main=	${DISTNAME}p5
+PKGNAME-perl=	p5-SNMP-5.1.3p3
 SHARED_LIBS=	netsnmp		6.3	\
 		netsnmpagent	6.3	\
 		netsnmphelpers	6.3	\
 		netsnmpmibs	6.3	\
 		netsnmptrapd	6.3
-CATEGORIES=	net
+CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=net-snmp/}
 
 HOMEPAGE=	http://www.net-snmp.org
@@ -25,17 +25,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		crypto kvm m wrap z
 
-MULTI_PACKAGES=	-perl
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -perl
 
-.if ${SUBPACKAGE} == "-perl" 
-CATEGORIES=	net perl5
-.  if defined(PACKAGING)
-LIB_DEPENDS+=	netsnmpmibs,netsnmphelpers,netsnmpagent,netsnmp::net/net-snmp
-.  endif
-.else
-WANTLIB+=	c
-.endif
+LIB_DEPENDS-perl=	netsnmpmibs,netsnmphelpers,netsnmpagent,netsnmp::net/net-snmp,-main
+WANTLIB-main=	${WANTLIB} c
 
 NET_SNMP_MIB_LIST= host disman/event-mib smux mibII/mta_sendmail
 

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.9 2005/11/05 19:09:38 bernd Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/24 21:14:29 steven Exp $
+@pkgpath net/net-snmp
 %%SHARED%%
 bin/encode_keychange
 bin/fixproc

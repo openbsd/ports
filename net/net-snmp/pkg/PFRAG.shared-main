@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2006/01/03 17:37:18 steven Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/24 21:14:29 steven Exp $
 @lib lib/libnetsnmp.so.${LIBnetsnmp_VERSION}
 @lib lib/libnetsnmpagent.so.${LIBnetsnmpagent_VERSION}
 @lib lib/libnetsnmphelpers.so.${LIBnetsnmphelpers_VERSION}
