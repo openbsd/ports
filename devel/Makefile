@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.451 2006/11/24 19:27:21 espie Exp $
+# $OpenBSD: Makefile,v 1.452 2006/11/25 12:11:26 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -372,6 +372,7 @@
      SUBDIR += p5-Set-Object
      SUBDIR += p5-Set-Scalar
      SUBDIR += p5-Shell-Command
+     SUBDIR += p5-Smart-Comments
      SUBDIR += p5-Spiffy
      SUBDIR += p5-String-CRC32
      SUBDIR += p5-String-Format
