@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.48 2006/08/01 12:13:28 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2006/11/25 19:04:39 espie Exp $
 
-COMMENT=		"Multimedia player for the X Window System"
+COMMENT-main=		"Multimedia player for the X Window System"
 COMMENT-esd=		"Esound output plugin for XMMS"
 COMMENT-vorbis=		"Ogg Vorbis input plugin for XMMS"
 COMMENT-mikmod=		"Mikmod input plugin for XMMS"
@@ -8,7 +8,7 @@ COMMENT-mp3=		"MP3 input plugin for XMMS"
 
 VERSION=		1.2.10
 DISTNAME=		xmms-${VERSION}
-PKGNAME=		xmms-${VERSION}p7
+PKGNAME-main=		xmms-${VERSION}p8
 PKGNAME-esd=		xmms-esd-${VERSION}p5
 PKGNAME-vorbis=		xmms-vorbis-${VERSION}p5
 PKGNAME-mikmod=		xmms-mikmod-${VERSION}p5
@@ -35,7 +35,8 @@ MASTER_SITES=		${HOMEPAGE}/files/$V/ \
 
 PSEUDO_FLAVORS=		no_esd no_vorbis no_mikmod no_mp3
 FLAVOR?=
-MULTI_PACKAGES=
+
+MULTI_PACKAGES=		-main
 .if !${FLAVOR:L:Mno_esd}
 MULTI_PACKAGES+=	-esd
 .endif
@@ -53,11 +54,7 @@ MULTI_PACKAGES+=	-mp3
 PATCH_LIST=	patch-* gcc-*
 .endif
 
-SUBPACKAGE?=
-
-.if empty(SUBPACKAGE)
-WANTLIB+=		GL ICE c Xxf86vm SM
-.endif
+WANTLIB-main=		${WANTLIB} GL ICE c Xxf86vm SM
 
 MODULES=		devel/gettext
 RUN_DEPENDS=		:unzip-*:archivers/unzip
@@ -77,47 +74,39 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 
 DOCS=			README NEWS FAQ
 
-.if defined(PACKAGING)
-. if ${SUBPACKAGE} == "-esd"
-LIB_DEPENDS+=		esd.>=2::audio/esound
-RUN_DEPENDS=		::audio/xmms
-WANTLIB+=		audiofile
-. endif
-. if ${SUBPACKAGE} == "-vorbis"
-LIB_DEPENDS+=		vorbis,vorbisfile.>=1::audio/libvorbis
-RUN_DEPENDS=		::audio/xmms
-WANTLIB+=		ogg
-. endif
-. if ${SUBPACKAGE} == "-mikmod"
-LIB_DEPENDS+=		mikmod::audio/libmikmod
-RUN_DEPENDS=		::audio/xmms
-. endif
-. if ${SUBPACKAGE} == "-mp3"
-PERMIT_PACKAGE_CDROM=	"patent issues"
-PERMIT_DISTFILES_CDROM= "patent issues"
-LIB_DEPENDS+=		xmms.>=4:xmms-${VERSION}*:${FULLPKGPATH:S/,-mp3//}
-WANTLIB+=		z
-. endif
-.else
-. if ${MULTI_PACKAGES:M-esd}
-LIB_DEPENDS+=		esd.>=2::audio/esound
+LIB_DEPENDS-esd=	${LIB_DEPENDS} esd.>=2::audio/esound
+RUN_DEPENDS-esd=	::audio/xmms
+WANTLIB-esd=		${WANTLIB} audiofile
+
+LIB_DEPENDS-vorbis=	${LIB_DEPENDS} vorbis,vorbisfile.>=1::audio/libvorbis
+RUN_DEPENDS-vorbis=	::audio/xmms
+WANTLIB-vorbis=		${WANTLIB} ogg
+
+LIB_DEPENDS-mikmod=	${LIB_DEPENDS} mikmod::audio/libmikmod
+RUN_DEPENDS-mikmod=	::audio/xmms
+
+PERMIT_PACKAGE_CDROM-mp3=	"patent issues"
+PERMIT_DISTFILES_CDROM-mp3= 	"patent issues"
+LIB_DEPENDS-mp3=	${LIB_DEPENDS} xmms.>=4:xmms-${VERSION}*:${BUILD_PKGPATH}
+WANTLIB-mp3=		${WANTLIB} z
+
+.if ${MULTI_PACKAGES:M-esd}
 CONFIGURE_ARGS+=	--with-esd-prefix=${LOCALBASE}
-. else
+.else
 CONFIGURE_ARGS+=	--disable-esd
-. endif
-. if ${MULTI_PACKAGES:M-vorbis}
-LIB_DEPENDS+=		vorbis,vorbisfile.>=1::audio/libvorbis
+.endif
+
+.if ${MULTI_PACKAGES:M-vorbis}
 CONFIGURE_ARGS+=	--with-ogg-prefix=${LOCALBASE}	\
 			--with-vorbis-prefix=${LOCALBASE}
-. else
+.else
 CONFIGURE_ARGS+=	--disable-vorbis
-. endif
-. if ${MULTI_PACKAGES:M-mikmod}
-LIB_DEPENDS+=		mikmod.>=2::audio/libmikmod
+.endif
+
+.if ${MULTI_PACKAGES:M-mikmod}
 CONFIGURE_ARGS+=	--with-mikmod-prefix=${LOCALBASE}
-. else
+.else
 CONFIGURE_ARGS+=	--disable-mikmod
-. endif
 .endif
 
 pre-configure:
