@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.30 2005/12/29 14:00:36 bernd Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/25 16:50:24 espie Exp $
 @lib lib/liblber-2.3.so.${LIBlber-2.3_VERSION}
 @lib lib/liblber.so.${LIBlber_VERSION}
 @lib lib/libldap-2.3.so.${LIBldap-2.3_VERSION}

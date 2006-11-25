@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.71 2006/11/20 13:07:19 espie Exp $
+# $OpenBSD: Makefile,v 1.72 2006/11/25 16:50:24 espie Exp $
 
-COMMENT=	"Open source LDAP software (client)"
+COMMENT-main=	"Open source LDAP software (client)"
 COMMENT-server=	"Open source LDAP software (server)"
 
-DISTNAME=	openldap-2.3.27
-FULLPKGNAME=	${DISTNAME:S/-/-client-/}p0
-PKGNAME-server=	${DISTNAME:S/-/-server-/}p0
+V=		2.3.27
+DISTNAME=	openldap-$V
+FULLPKGNAME-main=openldap-client-$Vp1
+PKGNAME-server=	openldap-server-$Vp1
 SHARED_LIBS +=	lber                 9.1      # .2.15
 SHARED_LIBS +=	ldap                 9.1      # .2.15
 SHARED_LIBS +=	ldap_r               9.1      # .2.15
@@ -70,8 +71,7 @@ REGRESS_TARGET=	test
 FLAVORS=	bdb
 FLAVOR?=
 
-MULTI_PACKAGES=	-server
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -server
 
 LIB_DEPENDS+=		sasl2::security/cyrus-sasl2
 CPPFLAGS+=		-I${LOCALBASE}/include/sasl
@@ -90,10 +90,11 @@ CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" \
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}" \
 			LIBS="${LIBS}"
 
-.if ${SUBPACKAGE} == "-server"
-RUN_DEPENDS=	:${FULLPKGNAME}:databases/openldap
-WANTLIB+=	perl util wrap m pthread
-.endif
+RUN_DEPENDS-server=	:${FULLPKGNAME-main}:databases/openldap
+WANTLIB-server=		${WANTLIB} perl util wrap m pthread
+
+BASE_PKGPATH=	${PKGPATH}${FLAVOR_EXT:S/-/,/g}
+SUBST_VARS=	BASE_PKGPATH
 
 USE_LIBTOOL=	Yes
 

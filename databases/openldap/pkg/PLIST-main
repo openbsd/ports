@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.15 2006/02/28 16:27:53 bernd Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/25 16:50:24 espie Exp $
+@pkgpath ${BASE_PKGPATH}
 bin/ldapadd
 bin/ldapcompare
 bin/ldapdelete
