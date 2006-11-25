@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.38 2006/08/04 00:10:42 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2006/11/25 07:55:25 steven Exp $
 
-COMMENT=	"multiple virtual desktop window manager, with icons"
+COMMENT-main=	"multiple virtual desktop window manager, with icons"
 COMMENT-fvicons="multiple virtual desktop window manager icons"
 COMMENT-fvwm2=	"multiple virtual desktop window manager, without icons"
 
 VERSION=	2.4.19
 DISTNAME=	fvwm-${VERSION}
-PKGNAME=	fvwm2+fvicons-${VERSION}
+PKGNAME-main=	fvwm2+fvicons-${VERSION}p0
 FULLPKGNAME-fvicons=fvicons-${VERSION}
 PKGNAME-fvwm2=	fvwm2-${VERSION}
 CATEGORIES=     x11
@@ -31,13 +31,12 @@ MASTER_SITES0=	http://www.fvwm.org/generated/icon_download/
 LIB_DEPENDS=	gtk.>=1.2:gtk+-*:x11/gtk+ \
 		gdk_imlib.>=19.:imlib-*:graphics/imlib
 
-MULTI_PACKAGES=	-fvwm2 -fvicons
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -fvwm2 -fvicons
 
 FLAVORS=	rplay debug i18n
 FLAVOR?=
 
-.if ${FLAVOR:L:Mrplay} && !${SUBPACKAGE} == "-fvicons"
+.if ${FLAVOR:L:Mrplay}
 LIB_DEPENDS+=	rplay.0.:rplay-*:audio/rplay
 CONFIGURE_ARGS+= --with-rplay-includes="${LOCALBASE}/include" \
 		 --with-rplay-library="${LOCALBASE}/lib"
@@ -56,13 +55,13 @@ CONFIGURE_ARGS+= --enable-multibyte
 CONFIGURE_ARGS+= --disable-multibyte
 .endif
 
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-fvicons"
-PKG_ARCH=	*
-LIB_DEPENDS=
-WANTLIB=
-.endif
+PKG_ARCH-fvicons=	*
+LIB_DEPENDS-fvicons=
+WANTLIB-fvicons=
 
-SUBST_VARS=	VERSION
+MAINPATH=	x11/fvwm2${FLAVOR_EXT:S/-/,/g}
+
+SUBST_VARS=	VERSION MAINPATH
 
 USE_X11=	Yes
 
