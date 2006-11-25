@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2006/11/22 09:35:01 jakob Exp $
+# $OpenBSD: Makefile,v 1.18 2006/11/25 12:45:13 espie Exp $
 
 COMMENT=	"validating namespace-aware XML parser"
 
@@ -16,8 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c 
 
-FETCH_MANUALLY=	"The University of Edinburgh requires that you fetch the " \
-		"source code manually from ${HOMEPAGE}."
+MASTER_SITES=	ftp://quatramaran.ens.fr/pub/espie/
 
 NO_REGRESS=	Yes
 
