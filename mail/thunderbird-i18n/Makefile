@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2006/11/22 07:54:11 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/25 13:11:02 steven Exp $
 
 COMMENT-main=	"${MAINLANG} language pack for Thunderbird"
 V=		1.5.0.8
 NAME=		thunderbird-i18n
-PKGNAME=	${NAME}-${MAINLANG}-$V
-PKGNAME-main=	${PKGNAME}p1
+PKGNAME=	${NAME}-${MAINLANG}-$Vp1
+PKGNAME-main=	${NAME}-${MAINLANG}-$Vp1
 
 CATEGORIES=	mail
 
