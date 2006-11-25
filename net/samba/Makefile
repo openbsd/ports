@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.75 2006/11/20 20:00:05 bernd Exp $
+# $OpenBSD: Makefile,v 1.76 2006/11/25 13:00:41 espie Exp $
 
-COMMENT=	"SMB and CIFS client and server for UNIX"
+COMMENT-main=	"SMB and CIFS client and server for UNIX"
 COMMENT-docs=	"documentation and examples for samba"
 
 DISTNAME=		samba-3.0.23d
-PKGNAME=		${DISTNAME}p0
+PKGNAME-main=		${DISTNAME}p1
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 SHARED_LIBS=		smbclient	0.3 \
 			msrpc		0.2
@@ -39,7 +39,8 @@ FAKE_FLAGS=	DESTDIR="${DESTDIR}" \
 
 CONFDIR=        ${SYSCONFDIR}/samba
 SAMBA_LOGDIR=   /var/log
-SUBST_VARS=     CONFDIR LOCALBASE SYSCONFDIR
+MAINPATH=	${PKGPATH}${FLAVOR_EXT:S/-/,/g}
+SUBST_VARS=     CONFDIR LOCALBASE SYSCONFDIR MAINPATH
 
 SEPARATE_BUILD= concurrent
 AUTOCONF_VERSION= 2.59
@@ -66,8 +67,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 FLAVORS=        cups ldap
 FLAVOR?=
 
-MULTI_PACKAGES= -docs
-SUBPACKAGE?=
+MULTI_PACKAGES= -main -docs
 
 .if ${FLAVOR:L:Mcups}
 CONFIGURE_ARGS+= --enable-cups
@@ -86,12 +86,10 @@ BUILD_DEPENDS+=	::misc/libutf8
 CONFIGURE_ARGS+= --without-ldap --without-ads
 .endif
 
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
-PKG_ARCH=	*
-LIB_DEPENDS=
-WANTLIB=
-MODULES=
-.endif
+PKG_ARCH-docs=	*
+LIB_DEPENDS-docs=
+WANTLIB-docs=
+RUN_DEPENDS-docs=
 
 NO_REGRESS=	Yes
 
