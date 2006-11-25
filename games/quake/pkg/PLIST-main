@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2006/11/24 07:21:27 steven Exp $
-@pkgpath games/quake
+@comment $OpenBSD: PLIST-main,v 1.3 2006/11/25 19:50:07 espie Exp $
+@pkgpath ${BASE_PKGPATH}
 bin/quake${FLAVOR_EXT}
 bin/qw-client${FLAVOR_EXT}
