@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2006/11/21 22:40:31 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2006/11/25 18:35:45 espie Exp $
 
 COMMENT-main=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples for qt4"
@@ -128,7 +128,7 @@ commonLIB_DEPENDS=	png.>=2::graphics/png \
 			dbus-1::x11/dbus
 
 sqlWANTLIB=		m z
-sqlLIB_DEPENDS= 	QtCore.>=4,QtSql::x11/qt4
+sqlLIB_DEPENDS= 	QtCore.>=4,QtSql::${BUILD_PKGPATH}
 
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
@@ -160,7 +160,7 @@ WANTLIB-sqlite=		${WANTLIB} ${sqlWANTLIB}
 
 
 LIB_DEPENDS-examples=	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
-			QtDesigner,QtCore.>=4,QtGui,QtNetwork,QtOpenGL,QtSql,QtXml,QtSvg,QtTest,Qt3Support,QtAssistantClient,QtDBus::x11/qt4
+			QtDesigner,QtCore.>=4,QtGui,QtNetwork,QtOpenGL,QtSql,QtXml,QtSvg,QtTest,Qt3Support,QtAssistantClient,QtDBus::${BUILD_PKGPATH}
 WANTLIB-examples=	${WANTLIB} ${commonWANTLIB}
 
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2006/11/20 20:41:00 espie Exp $
+# $OpenBSD: Makefile,v 1.67 2006/11/25 18:35:45 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT-main=		"C++ X11 GUI toolkit"
@@ -107,14 +107,6 @@ LIB_DEPENDS=
 BUILD_DEPENDS=::graphics/jpeg
 BUILD_DEPENDS=::print/cups
 
-e=
-.if ${FLAVOR:L:Mno_mysql}
-e:=$e,no_mysql
-.endif
-.if ${FLAVOR:L:Mno_postgresql}
-e:=$e,no_postgresql
-.endif
-
 .if !empty(FLAVOR:L:Mno_mysql)
 CONFIGURE_ARGS+=-no-sql-mysql
 .else
@@ -146,17 +138,17 @@ WANTLIB-main=		${WANTLIB} pthread stdc++ c
 
 
 LIB_DEPENDS-mysql=	${LIB_DEPENDS} \
-			qt-mt.>=3::x11/qt3$e \
+			qt-mt.>=3::${BUILD_PKGPATH} \
 			mysqlclient::databases/mysql
 
 
 LIB_DEPENDS-postgresql=	${LIB_DEPENDS} \
-			qt-mt.>=3::x11/qt3$e \
+			qt-mt.>=3::${BUILD_PKGPATH} \
 			pq.>=2:postgresql-client-*:databases/postgresql
 
 
 LIB_DEPENDS-examples=	${LIB_DEPENDS} \
-			qt-mt.>=3::x11/qt3$e
+			qt-mt.>=3::${BUILD_PKGPATH} \
 WANTLIB-examples=	${WANTLIB} pthread stdc++ c
 
 
