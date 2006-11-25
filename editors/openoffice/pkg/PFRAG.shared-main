@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2006/10/27 16:02:02 kurt Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/25 10:30:58 espie Exp $
 openoffice/program/acceptor.uno.so
 openoffice/program/basprov680.uno.so
 openoffice/program/behelper.uno.so

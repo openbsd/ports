@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/11/03 05:11:09 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/25 10:30:58 espie Exp $
+@pkgpath editors/openoffice
 %%SHARED%%
 bin/sbase
 bin/scalc

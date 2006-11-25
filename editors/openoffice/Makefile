@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.33 2006/11/24 10:52:33 robert Exp $
+# $OpenBSD: Makefile,v 1.34 2006/11/25 10:30:58 espie Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
-COMMENT=	"a multi-platform productivity suite"
+COMMENT-main=	"a multi-platform productivity suite"
 COMMENT-kde=	"optional integration of OpenOffice to the KDE environment"
 COMMENT-java=	"optional integration of OpenOffice java features"
 
 VERSION=	2.0.4
 DISTNAME=	OOo_${VERSION}_src
 WRKDIST=	${WRKDIR}/OOD680_m5
-PKGNAME=	openoffice-${VERSION}p18
+PKGNAME-main=	openoffice-${VERSION}p19
 PKGNAME-kde=	openoffice-kde-${VERSION}p16
 PKGNAME-java=	openoffice-java-${VERSION}p16
 CATEGORIES=	editors productivity
@@ -42,7 +42,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MULTI_PACKAGES=		-kde -java
+MULTI_PACKAGES=		-main -kde -java
 
 LANGS=			bg br-pt de es fi fr hu it ja ko \
 			nl pl ru sl
@@ -51,9 +51,10 @@ LANGS=			bg br-pt de es fi fr hu it ja ko \
 MULTI_PACKAGES+=	-i18n-$l
 PKGNAME-i18n-$l=	openoffice-i18n-$l-${VERSION}
 COMMENT-i18n-$l=	$l language pack for OpenOffice.Org
+RUN_DEPENDS-i18n-$l=	::editors/openoffice
+WANTLIB-i18n-$l=
+LIB_DEPENDS-i18n-$l=
 .endfor
-
-SUBPACKAGE?=
 
 BUILD_DEPENDS=	:zip-*:archivers/zip \
 		:unzip-*:archivers/unzip \
@@ -67,7 +68,8 @@ BUILD_DEPENDS=	:zip-*:archivers/zip \
 		:db-java-4.*:databases/db/v4,-java,java \
 		::devel/boost
 
-BASE_LIBS=	gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.14::x11/gtk+2 \
+MODULES+=	python
+LIB_DEPENDS-main=gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.14::x11/gtk+2 \
 		python${MODPY_VERSION}:python-${MODPY_VERSION}*:lang/python/${MODPY_VERSION} \
 		db.>=4:db-4.*:databases/db/v4 \
 		curl.>=2::net/curl \
@@ -75,37 +77,27 @@ BASE_LIBS=	gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.14::x1
 		sndfile.>=1::audio/libsndfile \
 		wpd.>=8::textproc/libwpd \
 		sablot.>=101::textproc/sablotron
-
-KDE_LIBS=	kabc,kdecore,kdeui,kio::x11/kde/libs3
-
-.if defined(PACKAGING)
-. if ${SUBPACKAGE} == "-kde"
-RUN_DEPENDS=	::editors/openoffice
-LIB_DEPENDS=	${KDE_LIBS}
-WANTLIB=	X11 m
-MODULES=	x11/qt3
-. elif ${SUBPACKAGE} == "-java"
-RUN_DEPENDS=	::editors/openoffice \
-		:db-java-4.*:databases/db/v4,-java,java
-WANTLIB=	c m pthread stdc++
-MODULES=	java
-MODJAVA_VER=	1.4+
-MODJAVA_JRERUN=	Yes
-. elif ${SUBPACKAGE:M-i18n*}
-RUN_DEPENDS=	::editors//openoffice
-. else
-MODULES=	python
-LIB_DEPENDS=	${BASE_LIBS}
-WANTLIB=	ICE SM X11 Xext Xrender atk-1.0 c cairo expat fontconfig \
+WANTLIB-main=	ICE SM X11 Xext Xrender atk-1.0 c cairo expat fontconfig \
 		freetype glib-2.0 gmodule-2.0 gobject-2.0 \
 		gthread-2.0 iconv intl ossaudio jpeg m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pthread stdc++ util xml2 z
-. endif
-.else
-MODULES=	x11/qt3 java python
-MODJAVA_VER=	1.4+
-LIB_DEPENDS=	${BASE_LIBS} ${KDE_LIBS}
-.endif
+RUN_DEPENDS-main=
+
+MODULES+=		x11/qt3
+RUN_DEPENDS-kde=	::editors/openoffice
+LIB_DEPENDS-kde=	${MODQT_LIB_DEPENDS} \
+			kabc,kdecore,kdeui,kio::x11/kde/libs3
+WANTLIB-kde=		X11 m
+
+MODULES+=		java
+MODJAVA_VER=		1.4+
+MODJAVA_JRERUN=		Yes
+LIB_DEPENDS-java=
+RUN_DEPENDS-java=	${MODJAVA_RUN_DEPENDS} \
+			::editors/openoffice \
+			:db-java-4.*:databases/db/v4,-java,java
+WANTLIB-java=		c m pthread stdc++
+
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
