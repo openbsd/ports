@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.12 2006/11/17 19:33:19 kurt Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/25 14:24:47 steven Exp $
 @lib mozilla/components/libaccessibility.so.${LIBaccessibility_VERSION}
 @lib mozilla/components/libaddrbook.so.${LIBaddrbook_VERSION}
 @lib mozilla/components/libappcomps.so.${LIBappcomps_VERSION}

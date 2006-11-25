@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.109 2006/11/17 19:33:19 kurt Exp $
+# $OpenBSD: Makefile,v 1.110 2006/11/25 14:24:47 steven Exp $
 
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64 amd64 powerpc
 
-COMMENT=	"open source version of the Netscape browser"
+COMMENT-main=	"open source version of the Netscape browser"
 COMMENT-devel=	"devel files for Gecko"
 
 VER=		1.7.13
 DISTNAME=	mozilla
-PKGNAME=	mozilla-${VER}p2
-PKGNAME-devel=	mozilla-devel-${VER}p2
+PKGNAME=	mozilla-${VER}p3
+PKGNAME-main=	mozilla-${VER}p3
+PKGNAME-devel=	mozilla-devel-${VER}p3
 DISTFILES=	mozilla-${VER}-source.tar.bz2
 SO_VERSION=	7.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -44,8 +45,7 @@ MASTER_SITES=	http://ftp.eu.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla
 
 VMEM_WARNING=yes
 
-MULTI_PACKAGES=	-devel
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -devel
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
@@ -57,13 +57,10 @@ WANTLIB=	X11 Xt atk-1.0 c cairo fontconfig freetype \
 		glib-2.0 gmodule-2.0 gobject-2.0 m \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0
 
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-devel"
-MODULES=	devel/gettext
-RUN_DEPENDS=	:${PKGNAME}:www/mozilla
-.else
-RUN_DEPENDS=	:esound-0.2.*:audio/esound
-WANTLIB+=	Xext Xft Xp Xrender jpeg png pthread stdc++ z
-.endif
+RUN_DEPENDS-devel=	:${PKGNAME-main}:www/mozilla,-main
+RUN_DEPENDS-main=	:esound-0.2.*:audio/esound
+WANTLIB-main=		${WANTLIB} \
+			Xext Xft Xp Xrender jpeg png pthread stdc++ z
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
