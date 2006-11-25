@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.50 2006/11/03 16:19:56 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.51 2006/11/25 20:20:07 steven Exp $
 
-COMMENT=		"imap server for maildir format mailboxes"
+COMMENT-main=		"imap server for maildir format mailboxes"
 COMMENT-pop3=		"pop3 server for maildir format mailboxes"
 
-DISTNAME=		courier-imap-4.1.1
-FULLPKGNAME-pop3=	${DISTNAME:S/imap/pop3/}
+V=			4.1.1
+DISTNAME=		courier-imap-${V}
+PKGNAME-main=		${DISTNAME}p0
+FULLPKGNAME-pop3=	courier-pop3-${V}
 
 CATEGORIES=		mail
 
@@ -34,7 +36,7 @@ LIB_DEPENDS=		courierauthsasl.>=0,courierauth.>=0::mail/courier-authlib
 
 COURIERSTATE=           /var/run/courier
 EXAMPLE_DIR=		${PREFIX}/share/examples/courier
-SUBST_VARS=		COURIERSTATE
+SUBST_VARS=		COURIERSTATE BASE_PKGPATH
 SYSCONFDIR=/etc/courier
 
 CONFIGURE_ARGS=		--sbindir=${PREFIX}/sbin \
@@ -53,6 +55,7 @@ CONFIGURE_ARGS=		--sbindir=${PREFIX}/sbin \
 			--with-mailuser=_courier \
 			--with-piddir=${COURIERSTATE} \
 			--with-makedatprog \
+			--with-db=gdbm \
 			--cache-file=${WRKDIR}/courier-imap.cache
 
 CONFIGURE_ENV+=		OPENSSL=/usr/sbin/openssl
@@ -81,16 +84,11 @@ CONFIGURE_ARGS+=	--enable-workarounds-for-imap-client-bugs
 CONFIGURE_ARGS+=	--disable-workarounds-for-imap-client-bugs
 .endif
 
-MULTI_PACKAGES=		-pop3
-SUBPACKAGE?=
-.if $(SUBPACKAGE) !=	"-pop3"
-LIB_DEPENDS+=		gdbm.>=3::databases/gdbm
-CONFIGURE_ARGS+=	--with-db=gdbm
-.endif
+MULTI_PACKAGES=		-main -pop3
 
-.if defined(PACKAGING) && $(SUBPACKAGE) != "-pop3"
-WANTLIB+=               ssl crypto
-.endif
+LIB_DEPENDS-main=	${LIB_DEPENDS} \
+			gdbm.>=3::databases/gdbm
+WANTLIB-main=		${WANTLIB} ssl crypto
 
 CNFFILES=		etc/courier/imapd-ssl.dist etc/courier/imapd.dist \
 			etc/courier/pop3d-ssl.dist etc/courier/pop3d.dist \
