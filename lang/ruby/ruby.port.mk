@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.8 2006/10/28 21:52:02 bernd Exp $
+# $OpenBSD: ruby.port.mk,v 1.9 2006/11/25 10:03:32 msf Exp $
 
 # ruby module
 
@@ -21,7 +21,7 @@ MODRUBY_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
 CONFIGURE_STYLE?=	simple
 CONFIGURE_SCRIPT?=	${LOCALBASE}/bin/ruby extconf.rb
 
-SUBST_VARS=		MODRUBY_REV MODRUBY_ARCH
+SUBST_VARS+=		MODRUBY_REV MODRUBY_ARCH
 
 .if ${CONFIGURE_STYLE:L:Mgem}
 EXTRACT_SUFX=	.gem
