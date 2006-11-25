@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2006/02/08 19:22:41 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2006/11/25 19:12:08 espie Exp $
 
-COMMENT=	"C++ wrapper for the Simple DirectMedia Layer"
+COMMENT-main=	"C++ wrapper for the Simple DirectMedia Layer"
 COMMENT-docs=	"SDLmm documentation"
 
 VERSION=	0.1.8
 DISTNAME=	SDLmm-${VERSION}
-PKGNAME=	${DISTNAME:L}p3
-PKGNAME-docs=	${PKGNAME:S,-,-docs-,}
-SHARED_LIBS=	SDLmm 9.0
+PKGNAME-main=	sdlmm-${VERSION}p4
+PKGNAME-docs=	sdlmm-doc-${VERSION}p3
+SHARED_LIBS +=	SDLmm                9.0      # .8.0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://sdlmm.sourceforge.net/
@@ -21,24 +21,20 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sdlmm/}
 
-MULTI_PACKAGES=	-docs
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -docs
 
-.if ${SUBPACKAGE} != "-docs"
-LIB_DEPENDS=	SDL::devel/sdl
-WANTLIB=	m stdc++ usbhid X11 Xext
-.elif defined(PACKAGING)
-PKG_ARCH=	*
-.endif
+LIB_DEPENDS-main=	SDL::devel/sdl
+WANTLIB-main=	m stdc++ usbhid X11 Xext
+PKG_ARCH-docs=	*
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
 
 post-install:
-	@(cd ${WRKSRC}/docs/html && \
+	@cd ${WRKSRC}/docs/html && \
 	    rm -f Makefile* htmlfiles && \
 	    ${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sdlmm && \
-	    for A in *; do ${INSTALL_DATA} $$A ${PREFIX}/share/doc/sdlmm/; done)
+	    for A in *; do ${INSTALL_DATA} $$A ${PREFIX}/share/doc/sdlmm/; done
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
