@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.20 2006/05/03 17:32:09 henning Exp $
+# $OpenBSD: Makefile,v 1.21 2006/11/25 19:36:43 espie Exp $
 
-COMMENT=		"UPS monitoring program supporting many brands"
+COMMENT-main=		"UPS monitoring program supporting many brands"
 COMMENT-cgi=		"CGIs for monitoring Nut-based UPSs"
 COMMENT-snmp=		"driver for monitoring UPSs via SNMP"
 
 VERSION=		2.0.3
 DISTNAME=		nut-${VERSION}
-PKGNAME=		${DISTNAME}
+PKGNAME-main=		${DISTNAME}p0
 PKGNAME-cgi=		nut-cgi-${VERSION}
 PKGNAME-snmp=		nut-snmp-${VERSION}
 CATEGORIES=		sysutils
@@ -40,24 +40,20 @@ INSTALL_TARGET=		install
 
 PSEUDO_FLAVORS=		no_cgi snmp
 FLAVOR?=
-MULTI_PACKAGES=
+MULTI_PACKAGES=		-main
 .if !${FLAVOR:L:Mno_cgi}
 MULTI_PACKAGES+=	-cgi
 .endif
 .if ${FLAVOR:L:Msnmp}
 MULTI_PACKAGES+=	-snmp
 .endif
-SUBPACKAGE?=
 
-.if defined(PACKAGING)
-. if ${SUBPACKAGE} == "-cgi"
-PREFIX=			${WEB_ROOT}
-WANTLIB=
-. elif ${SUBPACKAGE} == "-snmp"
-LIB_DEPENDS+=		netsnmp::net/net-snmp
-. endif
-.else
-. if ${MULTI_PACKAGES:M-cgi}
+PREFIX-cgi=			${WEB_ROOT}
+WANTLIB-cgi=
+
+LIB_DEPENDS-snmp=	netsnmp::net/net-snmp
+
+.if ${MULTI_PACKAGES:M-cgi}
 BUILD_DEPENDS+=		:gd->=1.8.3:graphics/gd
 
 CONFIGURE_ARGS+=	--with-cgi
@@ -67,13 +63,11 @@ CONFIGURE_ARGS+=	--with-gd-includes="-I${LOCALBASE}/include"
 
 ALL_TARGET+=		cgi
 INSTALL_TARGET+=	install-cgi
-. endif
-. if ${MULTI_PACKAGES:M-snmp}
-LIB_DEPENDS+=		netsnmp::net/net-snmp
+.endif
 
+.if ${MULTI_PACKAGES:M-snmp}
 ALL_TARGET+=		snmp
 INSTALL_TARGET+=	install-snmp
-. endif
 .endif
 
 NO_REGRESS=		Yes
