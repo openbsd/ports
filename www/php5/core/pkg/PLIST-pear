@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-pear,v 1.9 2006/10/21 11:44:10 robert Exp $
+@comment $OpenBSD: PLIST-pear,v 1.10 2006/11/25 11:09:04 espie Exp $
 @conflict php4-pear-*
+@group daemon
 pear/
 pear/build/
 pear/build/Makefile.global
@@ -398,3 +399,4 @@ pear/tests/XML_RPC/tests/extra-lines.php
 pear/tests/XML_RPC/tests/protoport.php
 pear/tests/XML_RPC/tests/test_Dump.php
 pear/tests/XML_RPC/tests/types.php
+@group

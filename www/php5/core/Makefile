@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2006/10/21 11:44:10 robert Exp $
+# $OpenBSD: Makefile,v 1.19 2006/11/25 11:09:04 espie Exp $
 
-MULTI_PACKAGES=	-pear
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -pear
 
-COMMENT=	"server-side HTML-embedded scripting language"
+COMMENT-main=	"server-side HTML-embedded scripting language"
 COMMENT-pear=	"base classes for common PHP tasks"
-PKGNAME=	php5-core-${V}
-FULLPKGNAME-pear= php5-pear-${V}
+PKGNAME-main=	php5-core-${V}p0
+FULLPKGNAME-pear= php5-pear-${V}p0
 DISTFILES=	php-${V}.tar.gz \
 		pear-${PEAR_V}.tar.gz:0
 
@@ -45,15 +44,13 @@ PHPXS_SUBST+= -e 's,${i},${${i}},'
 .endfor
 
 WANTLIB=	c crypto m ssl stdc++ z pthread
-
-.if defined(PACKAGING) && !empty(SUBPACKAGE)
-PREFIX=		${CHROOT_DIR}
-RUN_DEPENDS=	:php5-core-${V}:www/php5/core
-WANTLIB=
-MODULES=
-.else
 LIB_DEPENDS=	xml2.>=8::textproc/libxml
-.endif
+
+PREFIX-pear=		${CHROOT_DIR}
+RUN_DEPENDS-pear=	:php5-core-${V}:www/php5/core
+WANTLIB-pear=
+LIB_DEPENDS-pear=
+
 
 pre-fake:
 	${INSTALL_DATA_DIR} ${PREFIX}/${APACHE_MODULE_SUBDIR}

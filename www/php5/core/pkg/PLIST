@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2006/10/21 11:44:10 robert Exp $
+@comment $OpenBSD: PLIST,v 1.9 2006/11/25 11:09:04 espie Exp $
 @conflict php4-core-*
+@pkgpath www/php5/core
 @pkgpath www/php5/core,hardened
 %%SHARED%%
 bin/pear
