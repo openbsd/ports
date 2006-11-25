@@ -1,0 +1,11 @@
+--- util.c.orig	Thu Nov 23 15:37:47 2006
++++ util.c	Thu Nov 23 15:36:11 2006
+@@ -309,7 +309,7 @@
+ 				*strp = NULL;
+ 				return -1;
+ 			}
+-			bufsize = 1;
++			bufsize = FIRSTSIZE;
+ 		} else if ((newbuf = xrealloc(buf, nextsize)) != NULL) {
+ 			buf = newbuf;
+ 			bufsize = nextsize;
