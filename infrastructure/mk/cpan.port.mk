@@ -1,7 +1,12 @@
-# $OpenBSD: cpan.port.mk,v 1.3 2006/11/12 10:48:17 espie Exp $
+# $OpenBSD: cpan.port.mk,v 1.4 2006/11/25 13:14:40 espie Exp $
 
 PKGNAME?=	p5-${DISTNAME}
+.if !defined(CPAN_AUTHOR)
 MASTER_SITES?=	${MASTER_SITE_PERL_CPAN:=${DISTNAME:C/-.*$//}/}
+.else
+MASTER_SITES?=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/${CPAN_AUTHOR:C/^(.).*/\1/}/${CPAN_AUTHOR:C/^(..).*/\1/}/${CPAN_AUTHOR}/}
+.endif
+
 CATEGORIES+=	perl5
 CONFIGURE_STYLE+=perl
 MODULES+=	perl
