@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/25 18:10:17 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/25 07:42:58 steven Exp $
 @conflict jakarta-tomcat-*
 @pkgpath www/jakarta-tomcat/v4
+@pkgpath www/tomcat/v4
 @newgroup _tomcat:526
 @newuser _tomcat:526:_tomcat:daemon:Tomcat Account:/nonexistent:/sbin/nologin
 share/examples/tomcat/

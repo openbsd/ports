@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/25 18:10:18 kurt Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/25 07:42:58 steven Exp $
 
-COMMENT=	"Java servlet 2.4 and Java server pages 2.0 server"
+COMMENT-main=	"Java servlet 2.4 and Java server pages 2.0 server"
 COMMENT-admin=	"administration web application"
 COMMENT-examples="example applications and documentation"
 
 V=		5.5.20
 DISTNAME=	apache-tomcat-${V}
-PKGNAME=	tomcat-${V}
-PKGNAME-admin=	tomcat-admin-${V}
-PKGNAME-examples=tomcat-examples-${V}
+PKGNAME-main=	tomcat-${V}p0
+PKGNAME-admin=	tomcat-admin-${V}p0
+PKGNAME-examples=tomcat-examples-${V}p0
 CATEGORIES=	www
 
 DISTFILES=	${DISTNAME}.tar.gz \
@@ -22,8 +22,7 @@ HOMEPAGE=	http://tomcat.apache.org/
 
 MAINTAINER=	Kurt Miller <kurt@openbsd.org>
 
-MULTI_PACKAGES=	-admin -examples
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -admin -examples
 
 MODULES=	java
 MODJAVA_VER=	1.5+
@@ -33,14 +32,9 @@ BUILD_DEPENDS=	::archivers/gtar
 
 RUN_DEPENDS=	::java/javaPathHelper
 
-.if defined(PACKAGING)
-.  if ${SUBPACKAGE} == "-admin"
-RUN_DEPENDS=    ::www/tomcat/v5
-.  elif ${SUBPACKAGE} == "-examples"
-PREFIX=		${CATALINA_BASE}
-RUN_DEPENDS=    ::www/tomcat/v5,-admin
-.  endif
-.endif
+RUN_DEPENDS-admin=	:tomcat-5.*:www/tomcat/v5,-main
+PREFIX-examples=	${CATALINA_BASE}
+RUN_DEPENDS-examples=	:tomcat-admin-5.*:www/tomcat/v5,-admin
 
 # Apache Software License 2.0
 PERMIT_PACKAGE_CDROM=	Yes
