@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.833 2006/11/24 16:49:37 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.834 2006/11/25 18:31:23 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -373,9 +373,11 @@ ERRORS+= "Fatal: SUBPACKAGES should always beging with -: ${MULTI_PACKAGES:N-*}.
 
 # Build FLAVOR_EXT, checking that no flavors are misspelled
 FLAVOR_EXT:=
+BASE_PKGPATH:=${PKGPATH}
 # _FLAVOR_EXT2 is used internally for working directories.
 # It encodes flavors and pseudo-flavors.
 _FLAVOR_EXT2:=
+BUILD_PKGPATH:=${PKGPATH}
 
 # (applies only to PLIST for now)
 .if !empty(FLAVORS)
@@ -384,8 +386,10 @@ _FLAVOR_EXT2:=
 PKG_ARGS+=-D${_i}=0
 .    else
 _FLAVOR_EXT2:=${_FLAVOR_EXT2}-${_i}
+BUILD_PKGPATH:=${BUILD_PKGPATH},${_i}
 .    if empty(PSEUDO_FLAVORS:L:M${_i})
 FLAVOR_EXT:=${FLAVOR_EXT}-${_i}
+BASE_PKGPATH:=${BASE_PKGPATH},${_i}
 .    endif
 PKG_ARGS+=-D${_i}=1
 .    endif
