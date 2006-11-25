@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2006/10/09 15:15:18 aanriot Exp $
+# $OpenBSD: Makefile,v 1.9 2006/11/25 19:54:16 espie Exp $
 
-COMMENT=	"Prelude framework database-access library"
+COMMENT-main=	"Prelude framework database-access library"
 COMMENT-pgsql=	"PostgreSQL module for libpreludedb"
 COMMENT-mysql=	"MySQL module for libpreludedb"
 COMMENT-sqlite=	"SQLite3 module for libpreludedb"
@@ -8,7 +8,7 @@ COMMENT-sqlite=	"SQLite3 module for libpreludedb"
 VERSION=	0.9.10
 DISTNAME=	libpreludedb-${VERSION}
 
-PKGNAME=	prelude-${DISTNAME}
+PKGNAME-main=	prelude-${DISTNAME}p0
 PKGNAME-pgsql=	prelude-libpreludedb-pgsql-${VERSION}
 PKGNAME-mysql=	prelude-libpreludedb-mysql-${VERSION}
 PKGNAME-sqlite=	prelude-libpreludedb-sqlite-${VERSION}
@@ -32,14 +32,13 @@ CONFIGURE_ENV=	PYTHON=${MODPY_BIN}
 PSEUDO_FLAVORS=	no_pgsql no_mysql no_sqlite
 FLAVOR?=
 
-MULTI_PACKAGES?=
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main
 
 .if empty(FLAVOR:L:Mno_pgsql)
 MULTI_PACKAGES+=-pgsql
-.  if !defined(PACKAGING) || ${SUBPACKAGE} == "-pgsql"
-LIB_DEPENDS+=	pq.>=4::databases/postgresql
-.  endif
+LIB_DEPENDS-pgsql=	${LIB_DEPENDS} \
+			preludedb.>=3::${BUILD_PKGPATH} \
+			pq.>=4::databases/postgresql
 CONFIGURE_ARGS+=--with-pgsql
 .else
 CONFIGURE_ARGS+=--without-pgsql
@@ -47,10 +46,10 @@ CONFIGURE_ARGS+=--without-pgsql
 
 .if empty(FLAVOR:L:Mno_mysql)
 MULTI_PACKAGES+=-mysql
-.  if !defined(PACKAGING) || ${SUBPACKAGE} == "-mysql"
-LIB_DEPENDS+=	lib/mysql/mysqlclient.>=16::databases/mysql
-WANTLIB+=	m ssl crypto
-.  endif
+LIB_DEPENDS-mysql=	${LIB_DEPENDS} \
+			preludedb.>=3::${BUILD_PKGPATH} \
+			lib/mysql/mysqlclient.>=16::databases/mysql
+WANTLIB-mysql=		${WANTLIB} m ssl crypto
 CONFIGURE_ARGS+=--with-mysql
 .else
 CONFIGURE_ARGS+=--without-mysql
@@ -58,21 +57,15 @@ CONFIGURE_ARGS+=--without-mysql
 
 .if empty(FLAVOR:L:Mno_sqlite)
 MULTI_PACKAGES+=-sqlite
-.  if !defined(PACKAGING) || ${SUBPACKAGE} == "-sqlite"
-LIB_DEPENDS+=	sqlite3.>=8::databases/sqlite3
-.  endif
+LIB_DEPENDS-sqlite=	${LIB_DEPENDS} \
+			preludedb.>=3::${BUILD_PKGPATH} \
+			sqlite3.>=8::databases/sqlite3
 CONFIGURE_ARGS+=--with-sqlite3
 .else
 CONFIGURE_ARGS+=--without-sqlite3
 .endif
 
-.if defined(PACKAGING)
-.  if !empty(SUBPACKAGE)
-LIB_DEPENDS+=	preludedb.>=3::security/prelude/libpreludedb
-.  else
-WANTLIB+=	pthread c
-.  endif
-.endif
+WANTLIB-main=	${WANTLIB} pthread c
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/libpreludedb/plugins/sql/
