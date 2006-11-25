@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.27 2006/09/18 12:00:00 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2006/11/25 20:12:10 espie Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
-COMMENT=	"single process stack of system monitors for GTK+2 (server)"
+COMMENT-main=	"single process stack of system monitors for GTK+2 (server)"
 COMMENT-client=	"single process stack of system monitors for GTK+2"
 
 V=		2.2.4
 DISTNAME=	gkrellm-${V}
-PKGNAME=	gkrellm-server-${V}p5
+PKGNAME-main=	gkrellm-server-${V}p6
 PKGNAME-client=	gkrellm-${V}p6
 CATEGORIES=	sysutils sysutils/gkrellm
 
@@ -27,32 +27,29 @@ EXTRACT_SUFX=	.tar.bz2
 PSEUDO_FLAVORS=	no_client
 FLAVOR?=
 
-MULTI_PACKAGES=
+MULTI_PACKAGES=	-main
 .if !${FLAVOR:L:Mno_client}
 MULTI_PACKAGES+=-client
+USE_X11=	Yes
+.else
+WRKBUILD=	${WRKDIST}/server
 .endif
-SUBPACKAGE?=
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=	glib-2.0,gmodule-2.0,gthread-2.0::devel/glib2
+BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
+
+LIB_DEPENDS=		glib-2.0,gmodule-2.0,gthread-2.0::devel/glib2
+
+LIB_DEPENDS-client=	${LIB_DEPENDS} \
+			gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
+WANTLIB-client=		${WANTLIB} ICE SM X11 crypto fontconfig freetype \
+			atk-1.0 gobject-2.0 m pango-1.0 \
+			pangocairo-1.0 pangoft2-1.0 ssl cairo
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 
 ALL_TARGET=	openbsd
 INSTALL_TARGET=	install_openbsd
-
-.if ${MULTI_PACKAGES:M-client}
-USE_X11=	Yes
-.  if !defined(PACKAGING) || !empty(SUBPACKAGE)
-LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
-WANTLIB+=	ICE SM X11 crypto fontconfig freetype \
-		atk-1.0 gobject-2.0 m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 ssl cairo
-.  endif
-.else
-WRKBUILD=	${WRKDIST}/server
-.endif
 
 pre-configure:
 	@perl -pi -e "s|%%SYSCONFDIR%%|${SYSCONFDIR}|g" \
