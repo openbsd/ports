@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/16 11:42:04 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/25 08:22:27 sturm Exp $
 
 COMMENT=	"anti-grain geometry graphics library"
 
@@ -27,15 +27,14 @@ AUTOCONF_VERSION=	2.59
 AUTOMAKE_VERSION=	1.9
 
 LIB_DEPENDS=	SDL.>=6::devel/sdl
-BUILD_DEPENDS=	::devel/autoconf/${AUTOCONF_VERSION} \
-		::devel/automake/${AUTOMAKE_VERSION} \
+BUILD_DEPENDS=	:autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION} \
 		::devel/metaauto \
 		::devel/pkgconfig
 
 SEPARATE_BUILD=	simple
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=automake
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gpc \
