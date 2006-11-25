@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2006/10/27 16:34:52 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/11/25 16:32:36 espie Exp $
 
 COMMENT=	"select a pager if destination is a TTY"
 
+MODULES=	cpan
 DISTNAME=	IO-Pager-0.06
 PKGNAME=	p5-${DISTNAME}p0
-CATEGORIES=	devel perl5
+CATEGORIES=	devel
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -13,12 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=IO/}
 EXTRACT_SUFX=	.tgz
-
-CONFIGURE_STYLE= perl
-
-PKG_ARCH=	*
 
 REGRESS_IS_INTERACTIVE=	Yes
 

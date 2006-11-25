@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2006/07/19 15:11:53 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2006/11/25 16:32:34 espie Exp $
 
 COMMENT=	"curses(3) based terminal widgets"
 
+MODULES=	cpan
 VERSION=	1.997
 DISTNAME=	CursesWidgets-${VERSION}
-PKGNAME=	p5-${DISTNAME}p0
-CATEGORIES=	devel perl5
+PKGNAME=	p5-${DISTNAME}p1
+CATEGORIES=	devel
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Curses/}
 
@@ -17,8 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	:p5-Curses-*:devel/p5-Curses
 BUILD_DEPENDS=	${RUN_DEPENDS}
-
-CONFIGURE_STYLE= perl
 
 # Regress tests require an interactive terminal
 REGRESS_FLAGS=	${MAKE_FLAGS} TERM=${TERM}

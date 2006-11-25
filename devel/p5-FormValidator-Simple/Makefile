@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/17 16:14:45 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/25 16:32:35 espie Exp $
 
 COMMENT=        "validate user input through a chain of constraints"
 
@@ -28,6 +28,6 @@ RUN_DEPENDS=	::devel/p5-Class-Accessor \
 	
 MAKE_ENV=	TEST_POD=Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/L/LY/LYOKATO/}
+CPAN_AUTHOR=	LYOKATO
 
 .include <bsd.port.mk>

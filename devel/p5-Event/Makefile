@@ -1,23 +1,19 @@
-# $OpenBSD: Makefile,v 1.4 2006/11/04 10:14:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2006/11/25 16:32:35 espie Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"event loop processing"
 
+MODULES=	cpan
 DISTNAME=	Event-1.08
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	devel perl5
+CATEGORIES=	devel
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
-# Artistic/GPL
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Event/}
-
-CONFIGURE_STYLE=perl
 
 .include <bsd.port.mk>

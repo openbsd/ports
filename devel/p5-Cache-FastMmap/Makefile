@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/04/13 22:14:01 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/25 16:32:34 espie Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"fast shared data cache using memory mapped files"
 
+MODULES=	cpan
 DISTNAME=	Cache-FastMmap-1.09
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	devel perl5
+CATEGORIES=	devel
 
 MAINTAINER=	Srebrenko Sehic <haver@insecure.dk>
 
@@ -15,9 +15,5 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Cache/}
-
-CONFIGURE_STYLE=perl
 
 .include <bsd.port.mk>

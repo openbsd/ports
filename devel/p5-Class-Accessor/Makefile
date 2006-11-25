@@ -1,23 +1,17 @@
-# $OpenBSD: Makefile,v 1.4 2006/09/30 13:45:21 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2006/11/25 16:32:34 espie Exp $
 
 COMMENT=	"automated accessor generation"
 
+MODULES=	cpan
 DISTNAME=	Class-Accessor-0.27
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	devel perl5
+CATEGORIES=	devel
 
 MAINTAINER=	Sam Smith <S@msmith.net>
 
-# Same as Perl
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Class/}
-
-CONFIGURE_STYLE=perl
-
-PKG_ARCH=	*
 
 .include <bsd.port.mk>

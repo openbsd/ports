@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2003/01/30 13:51:35 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/25 16:32:35 espie Exp $
 
 COMMENT=		"talk to other applications"
 
+MODULES=		cpan
 DISTNAME=		Expect-1.15
-PKGNAME=		p5-${DISTNAME}
-CATEGORIES=		devel perl5
+PKGNAME=		p5-${DISTNAME}p0
+CATEGORIES=		devel
 
 MAINTAINER=		Michael Lestinsky <michael@lestinsky.de>
 
@@ -14,11 +15,5 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=		::devel/p5-IO-Tty
-
-REGRESS_DEPENDS=	${RUN_DEPENDS}
-
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Expect/}
-
-CONFIGURE_STYLE=	perl
 
 .include <bsd.port.mk>

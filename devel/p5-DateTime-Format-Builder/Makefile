@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/12 18:00:56 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/25 16:32:34 espie Exp $
 
 COMMENT= 	"create DateTime parser classes and objects"
 
 MODULES=	cpan 
-
 DISTNAME=	DateTime-Format-Builder-0.7807
 CATEGORIES=	devel
 
@@ -23,6 +22,5 @@ REGRESS_DEPENDS=::devel/p5-DateTime-Format-HTTP \
 		::devel/p5-DateTime-Format-Mail
 
 CONFIGURE_STYLE=modbuild
-
 
 .include <bsd.port.mk>

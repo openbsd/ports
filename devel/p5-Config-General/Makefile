@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/04 14:43:11 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/25 16:32:34 espie Exp $
 
 COMMENT=        "generic configuration parser, inspired by apache"
 
+MODULES=	cpan
 DISTNAME=	Config-General-2.31
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=     devel perl5
+CATEGORIES=     devel
 HOMEPAGE=	http://www.daemon.de/config-general/
 
-# Same as perl
+# perl
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -17,11 +17,5 @@ PERMIT_DISTFILES_FTP=   Yes
 # which is probably not intentional.
 post-extract:
 	rm ${WRKSRC}/Extended.pm
-
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Config/}
-
-CONFIGURE_STYLE=perl
-
-PKG_ARCH=	*
 
 .include <bsd.port.mk>

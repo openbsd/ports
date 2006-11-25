@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2005/05/14 18:09:32 msf Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/25 16:32:36 espie Exp $
 
 COMMENT=	"dispatches messages to one or more outputs"
 
+MODULES=	cpan
 DISTNAME=	Log-Dispatch-2.10
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	devel perl5
-
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Log/}
+CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
@@ -21,8 +19,6 @@ RUN_DEPENDS=	::devel/p5-Params-Validate
 
 REGRESS_DEPENDS= ::devel/p5-File-Find-Rule
 
-CONFIGURE_STYLE= perl modbuild
-
-PKG_ARCH= *
+CONFIGURE_STYLE= modbuild
 
 .include <bsd.port.mk>

@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/01/27 12:38:17 sturm Exp $
-${P5ARCH}/auto/Cache/Mmap/Mmap.so

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2006/01/03 09:44:48 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2006/11/25 16:32:35 espie Exp $
 
 COMMENT=	"parses long function arguments"
 
+MODULES=	cpan
 DISTNAME=	Getargs-Long-1.1001
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Getargs/}
+CATEGORIES=	devel
 
 MAINTAINER=	Andrew Dalgleish <openbsd@ajd.net.au>
 
@@ -17,9 +16,5 @@ PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	:p5-Log-Agent->=0.105:devel/p5-Log-Agent
-
-CONFIGURE_STYLE= perl
-
-PKG_ARCH=	*
 
 .include <bsd.port.mk>

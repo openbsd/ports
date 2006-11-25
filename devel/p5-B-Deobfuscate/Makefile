@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/19 21:15:47 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/25 16:32:33 espie Exp $
 
 COMMENT=	"Perl module for use in de-obfuscating source code"
 
+MODULES=	cpan
 DISTNAME=	B-Deobfuscate-0.10
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	devel perl5
-
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=B/}
+CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
@@ -19,9 +17,5 @@ PERMIT_DISTFILES_FTP=	Yes
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::devel/p5-B-Keywords \
 		::devel/p5-YAML
-
-CONFIGURE_STYLE= perl
-
-PKG_ARCH=	*
 
 .include <bsd.port.mk>

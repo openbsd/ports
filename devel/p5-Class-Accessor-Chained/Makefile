@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/05/11 11:43:59 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/25 16:32:34 espie Exp $
 
 COMMENT=		"make chained accessors"
 
+MODULES=		cpan
 DISTNAME=		Class-Accessor-Chained-0.01
-PKGNAME=		p5-${DISTNAME}
-CATEGORIES=		devel perl5
+CATEGORIES=		devel
 
 MAINTAINER=		Sean Comeau <scomeau@obscurity.org>
 
@@ -14,13 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Class/}
-
 BUILD_DEPENDS=		::devel/p5-Class-Accessor
 RUN_DEPENDS=		${BUILD_DEPENDS}
-
-CONFIGURE_STYLE= 	perl
-
-PKG_ARCH= *
 
 .include <bsd.port.mk>

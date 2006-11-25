@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2006/09/30 12:18:20 kevlo Exp $
+# $OpenBSD: Makefile,v 1.20 2006/11/25 16:32:34 espie Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"module for easy date and time manipulation"
 
+MODULES=	cpan
 DISTNAME=	Class-Date-1.1.9
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	devel perl5 
+CATEGORIES=	devel
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -14,9 +14,5 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Class/}
-
-CONFIGURE_STYLE= perl
 
 .include <bsd.port.mk>

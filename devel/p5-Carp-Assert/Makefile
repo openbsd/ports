@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/06/10 02:24:04 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/25 16:32:34 espie Exp $
 
 COMMENT=	"Perl module implementing assertions"
 
+MODULES=	cpan
 DISTNAME=	Carp-Assert-0.18
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	devel perl5
+CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
@@ -13,11 +13,5 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-
-MASTER_SITES=   ${MASTER_SITE_PERL_CPAN:=Carp/}
-
-CONFIGURE_STYLE= perl
-
-PKG_ARCH=	*
 
 .include <bsd.port.mk>

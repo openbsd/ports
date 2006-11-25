@@ -1,11 +1,10 @@
-#	$OpenBSD: Makefile,v 1.2 2005/12/03 11:59:58 steven Exp $
+#	$OpenBSD: Makefile,v 1.3 2006/11/25 16:32:34 espie Exp $
 
 COMMENT=	"auto getters/setters for perl"
 
-PKG_ARCH=	*
+MODULES=	cpan
 DISTNAME=	Class-AutoClass-0.093
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	devel perl5
+CATEGORIES=	devel
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
 
@@ -15,10 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Class/}
 EXTRACT_SUFX=		.tgz
-
-CONFIGURE_STYLE= perl
 
 RUN_DEPENDS=	::devel/p5-IO-stringy
 BUILD_DEPENDS=	${RUN_DEPENDS}

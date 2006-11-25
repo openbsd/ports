@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/30 02:43:05 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/25 16:32:35 espie Exp $
 
 COMMENT=	"efficient reading/writing of complete files"
 
+MODULES=	cpan
 DISTNAME=	File-Slurp-9999.06
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	devel perl5
+CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
@@ -13,11 +13,5 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=File/}
-
-CONFIGURE_STYLE= perl
-
-PKG_ARCH= *
 
 .include <bsd.port.mk>

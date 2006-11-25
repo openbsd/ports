@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/12 16:28:11 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/25 16:32:35 espie Exp $
 
 COMMENT= 	"locate install data per-module"
 
 MODULES=	cpan
-
 DISTNAME=	File-ShareDir-0.05
 CATEGORIES=	devel
 

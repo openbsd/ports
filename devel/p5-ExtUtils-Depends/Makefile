@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/10/06 18:11:44 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/25 16:32:35 espie Exp $
 
 COMMENT=	"Easily build XS extensions that depend on XS extensions"
 
+MODULES=	cpan
 DISTNAME=	ExtUtils-Depends-0.205
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	devel perl5
+CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
@@ -13,11 +13,5 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=ExtUtils/}
-
-CONFIGURE_STYLE= perl
-
-PKG_ARCH=	*
 
 .include <bsd.port.mk>
