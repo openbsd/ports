@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2006/01/10 18:17:36 bernd Exp $
+# $OpenBSD: Makefile,v 1.21 2006/11/25 08:41:04 steven Exp $
 
-COMMENT=		"active monitoring tool"
+COMMENT-main=		"active monitoring tool"
 V=			2.72
 DISTNAME=		symon-${V}
-PKGNAME=		${DISTNAME}p0
+PKGNAME-main=		${DISTNAME}p1
 CATEGORIES=		sysutils net
 
 HOMEPAGE=		http://www.xs4all.nl/~wpd/symon
@@ -18,31 +18,20 @@ WANTLIB=		c
 
 MASTER_SITES=		${HOMEPAGE}/philes/
 
-SUBPACKAGE?=
+MULTI_PACKAGES=		-main -mon -mux
 
 # client only package
-MULTI_PACKAGES+=	-mon
+FULLPKGNAME-mon=	symon-mon-${V}p0
 COMMENT-mon=		"active host monitor"
-MON_LIBDEPENDS=
+LIB_DEPENDS-mon=
 # gatherer only package
-MULTI_PACKAGES+=	-mux
+FULLPKGNAME-mux=        symon-mux-${V}p0
 COMMENT-mux=		"symon data gatherer"
-MUX_LIBDEPENDS=		rrd:rrdtool-*:net/rrdtool
+LIB_DEPENDS-mux=	rrd:rrdtool-*:net/rrdtool
 
-.for i in ${MULTI_PACKAGES}
-FULLPKGNAME${i}=        symon${i}-${V}p0
-.endfor
-
-.if defined(PACKAGING) && !empty(SUBPACKAGE)
-MODULE_NAME=            ${SUBPACKAGE:S/-//g}
-LIB_DEPENDS=            ${${MODULE_NAME:U}_LIBDEPENDS}
-MESSAGE=                ${PKGDIR}/MESSAGE${SUBPACKAGE}
-.else
 LIB_DEPENDS=		rrd:rrdtool-*:net/rrdtool
-.endif
 
 USE_X11=		Yes
-
 NO_REGRESS=		Yes
 
 WRKDIST=		${WRKDIR}/symon
