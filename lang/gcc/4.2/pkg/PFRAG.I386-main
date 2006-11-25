@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.I386,v 1.1 2006/08/01 08:58:11 espie Exp $
+@comment $OpenBSD: PFRAG.I386-main,v 1.1 2006/11/25 16:26:46 espie Exp $
 lib/gcc/${CONFIG}/${V}/include/emmintrin.h
 lib/gcc/${CONFIG}/${V}/include/mm3dnow.h
 lib/gcc/${CONFIG}/${V}/include/mm_malloc.h
