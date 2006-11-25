@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/11 13:16:58 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.7 2006/11/25 19:34:54 steven Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT=		"RADIUS server implementation"
+COMMENT-main=		"RADIUS server implementation"
 COMMENT-iodbc=		"freeradius iodbc rlm addon"
 COMMENT-mysql=		"freeradius mysql rlm addon"
 COMMENT-pgsql=		"freeradius pgsql rlm addon"
@@ -10,7 +10,7 @@ COMMENT-ldap=		"freeradius ldap rlm addon"
 
 V=			1.1.1
 DISTNAME=		freeradius-$V
-PKGNAME=		${DISTNAME}p1
+PKGNAME-main=		${DISTNAME}p2
 PKGNAME-iodbc=		freeradius-iodbc-$V
 PKGNAME-mysql=		freeradius-mysql-$V
 PKGNAME-pgsql=		freeradius-pgsql-$V
@@ -50,8 +50,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 	
 NO_REGRESS=	Yes
 
-MULTI_PACKAGES=
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main
 
 PSEUDO_FLAVORS=	no_ldap no_mysql no_pgsql no_iodbc
 FLAVOR?=		
@@ -100,26 +99,18 @@ CONFIGURE_ARGS+=--with-rlm_sql_postgresql \
 		--with-rlm-sql-postgresql-include-dir=${LOCALBASE}/include/postgresql
 .endif
 
-.if defined(PACKAGING)
-.  if ${SUBPACKAGE} == "-iodbc"
-LIB_DEPENDS=	iodbc.>=2::databases/iodbc
-RUN_DEPENDS=	::net/freeradius
-WANTLIB=	pthread
-.  elif ${SUBPACKAGE} == "-ldap"
-LIB_DEPENDS=	lber.>=8,ldap_r.>=8:openldap-client-*:databases/openldap \
-		radius.>=1::net/freeradius
-WANTLIB=	crypto pthread sasl2 ssl asn1 com_err gssapi krb5
-.  elif ${SUBPACKAGE} == "-mysql"
-LIB_DEPENDS=	mysqlclient_r.>=16:mysql-client-*:databases/mysql
-RUN_DEPENDS=	::net/freeradius
-WANTLIB=	crypto m pthread ssl z
-.  elif ${SUBPACKAGE} == "-pgsql"
-LIB_DEPENDS=	pq.>=2:postgresql-client-*:databases/postgresql
-RUN_DEPENDS=	::net/freeradius
-.  else
-WANTLIB=	c com_err crypto krb5 pthread ssl
-.  endif
-.endif
+LIB_DEPENDS-iodbc=	iodbc.>=2::databases/iodbc
+RUN_DEPENDS-iodbc=	::net/freeradius
+WANTLIB-iodbc=		pthread
+LIB_DEPENDS-ldap=	lber.>=8,ldap_r.>=8:openldap-client-*:databases/openldap \
+			radius.>=1::net/freeradius
+WANTLIB-ldap=		crypto pthread sasl2 ssl asn1 com_err gssapi krb5
+LIB_DEPENDS-mysql=	mysqlclient_r.>=16:mysql-client-*:databases/mysql
+RUN_DEPENDS-mysql=	::net/freeradius
+WANTLIB-mysql=		crypto m pthread ssl z
+LIB_DEPENDS-pgsql=	pq.>=2:postgresql-client-*:databases/postgresql
+RUN_DEPENDS-pgsql=	::net/freeradius
+WANTLIB-main=		c com_err crypto krb5 pthread ssl
 
 post-configure:
 	@perl -pi -e 's,/etc/raddb,${SYSCONFDIR}/raddb,g' ${WRKSRC}/man/*/*
