@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/12/25 20:35:42 sturm Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/25 22:54:28 steven Exp $
 @option no-default-conflict
 @conflict db->=3,<4
 @pkgpath databases/db/v3,no_tcl
+@pkgpath databases/db/v3
 bin/db_archive
 bin/db_checkpoint
 bin/db_deadlock

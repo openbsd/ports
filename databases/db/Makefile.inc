@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.20 2006/11/02 12:26:37 bernd Exp $
+# $OpenBSD: Makefile.inc,v 1.21 2006/11/25 22:54:27 steven Exp $
 
-COMMENT=	"Berkeley DB package, revision ${REVISION}"
+COMMENT-main=	"Berkeley DB package, revision ${REVISION}"
 COMMENT-tcl=	"TCL bindings for Berkeley DB, revision ${REVISION}"
 
 DISTNAME=	db-${VERSION}
-PKGNAME-tcl=	db-tcl-${VERSION}p2
+PKGNAME-tcl=	db-tcl-${VERSION}p3
 CATEGORIES=	databases
 HOMEPAGE=	http://www.oracle.com/technology/products/berkeley-db/
 MASTER_SITES=	http://download.oracle.com/berkeley-db/
@@ -38,25 +38,24 @@ WRKBUILD=	${WRKDIST}/build_unix
 PSEUDO_FLAVORS+=	no_tcl
 FLAVOR?=
 
+MULTI_PACKAGES+=	-main
+
+LIB_DEPENDS-main?=
+RUN_DEPENDS-main?=
+WANTLIB-tcl?=
+RUN_DEPENDS-tcl=	:db-${REVISION}.*:databases/db/v${REVISION} \
+			:tcl-${TCL_VERSION}.*:lang/tcl/${TCL_VERSION}
+
 .if !${FLAVOR:L:Mno_tcl}
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 MULTI_PACKAGES+=-tcl
-SUBPACKAGE?=
 
 TCL_VERSION=	8.4
-LIB_DEPENDS=	tcl${TCL_VERSION:S/.//}:tcl-${TCL_VERSION}.*:lang/tcl/${TCL_VERSION}
+BUILD_DEPENDS+=	:tcl-${TCL_VERSION}.*:lang/tcl/${TCL_VERSION}
 CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VERSION}
 CONFIGURE_ARGS+=--enable-tcl \
 		--with-tcl=${LOCALBASE}/lib/tcl${TCL_VERSION}
-
-.  if defined(PACKAGING)
-.    if ${SUBPACKAGE} == "-tcl"
-LIB_DEPENDS+=	${DBLIBDIR}/db.=${REVISION}:db-${REVISION}.*:databases/db/v${REVISION}
-.    else
-LIB_DEPENDS=
-.    endif
-.  endif
 
 # this compiles slightly different code, some tests fail nevertheless
 #CONFIGURE_ARGS+=--enable-test
