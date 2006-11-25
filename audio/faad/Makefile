@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2006/11/11 21:04:27 steven Exp $
+# $OpenBSD: Makefile,v 1.31 2006/11/25 17:04:32 espie Exp $
 
-COMMENT=	"MPEG2 and MPEG-4 AAC decoder"
+COMMENT-main=	"MPEG2 and MPEG-4 AAC decoder"
 COMMENT-xmms=	"XMMS input plugin for AAC files"
 DISTNAME=	faad2-2.0
-PKGNAME=	faad-2.0p4
+PKGNAME-main=	faad-2.0p5
 PKGNAME-xmms=	faad-xmms-2.0p3
 CATEGORIES=    	audio
 MASTER_SITES=	http://mirrors.protection.cx/~jolan/
@@ -35,33 +35,24 @@ CONFIGURE_ARGS+=--with-mp4v2
 
 PSEUDO_FLAVORS=	no_xmms
 FLAVOR?=
-MULTI_PACKAGES=
+MULTI_PACKAGES=-main
+
 .if !${FLAVOR:L:Mno_xmms}
 MULTI_PACKAGES+=-xmms
 USE_X11=	Yes
-.endif
-
-SUBPACKAGE?=
-
-.if defined(PACKAGING)
-. if ${SUBPACKAGE} == "-xmms"
-LIB_DEPENDS=	xmms.>=3::audio/xmms \
-		faad,mp4v2::audio/faad
-RUN_DEPENDS=	::audio/xmms
-WANTLIB+=	X11 Xext Xi pthread iconv intl glib gmodule gtk gdk
-. else
-WANTLIB+=	c
-. endif
-.else
-. if ${MULTI_PACKAGES:M-xmms}
-LIB_DEPENDS=	xmms.>=3::audio/xmms
-BUILD_DEPENDS+=	::audio/xmms \
-		::audio/id3lib
+BUILD_DEPENDS+=		::audio/id3lib
 CONFIGURE_ARGS+= --with-xmms
-. else
+.else
 CONFIGURE_ARGS+= --without-xmms
-. endif
 .endif
+
+LIB_DEPENDS-xmms=	xmms.>=3::audio/xmms \
+			faad,mp4v2::audio/faad
+RUN_DEPENDS-xmms=	::audio/xmms
+WANTLIB-xmms=		${WANTLIB} \
+			X11 Xext Xi pthread iconv intl glib gmodule gtk gdk
+WANTLIB-main=		${WANTLIB} c
+
 
 post-patch:
 	@cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \

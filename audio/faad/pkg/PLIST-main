@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/12/24 19:51:53 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/25 17:04:32 espie Exp $
 @conflict playfair-*
+@pkgpath audio/faad
 @pkgpath audio/faad,no_xmms
 bin/faad
 include/faad.h
