@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2006/11/25 10:30:58 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2006/11/25 12:40:14 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -9,6 +9,7 @@ COMMENT-java=	"optional integration of OpenOffice java features"
 VERSION=	2.0.4
 DISTNAME=	OOo_${VERSION}_src
 WRKDIST=	${WRKDIR}/OOD680_m5
+PKGNAME=	openoffice-${VERSION}p19
 PKGNAME-main=	openoffice-${VERSION}p19
 PKGNAME-kde=	openoffice-kde-${VERSION}p16
 PKGNAME-java=	openoffice-java-${VERSION}p16
@@ -45,7 +46,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MULTI_PACKAGES=		-main -kde -java
 
 LANGS=			bg br-pt de es fi fr hu it ja ko \
-			nl pl ru sl
+			lt nl pl ru sl
 
 .for l in ${LANGS}
 MULTI_PACKAGES+=	-i18n-$l
