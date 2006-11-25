@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.57 2006/11/06 00:57:40 alek Exp $
+$OpenBSD: user.list,v 1.58 2006/11/25 11:01:19 msf Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -81,3 +81,4 @@ id  user		group		port options
 570 _mdefang		_mdefang	mail/mimedefang
 571 _courier		_courier	mail/maildrop
 572 _dbus		_dbus		x11/dbus
+573 _perdition		_perdition	mail/perdition
