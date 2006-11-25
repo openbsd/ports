@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_output-plugins_spo_unified_c,v 1.1 2006/11/25 05:33:28 pvalchev Exp $
+--- src/output-plugins/spo_unified.c.orig	Fri May 12 20:19:56 2006
++++ src/output-plugins/spo_unified.c	Tue Nov  7 20:28:12 2006
+@@ -126,7 +126,7 @@ typedef struct _UnifiedLog
+ typedef struct _UnifiedAlert
+ {
+     Event event;
+-    struct timeval ts;         /* event timestamp */
++    struct pcap_timeval ts;    /* event timestamp */
+     u_int32_t sip;             /* src ip */
+     u_int32_t dip;             /* dest ip */
+     u_int16_t sp;              /* src port */
+@@ -551,7 +551,11 @@ void RealUnifiedLogPacketAlert(Packet *p
+          * this will have to be fixed when we transition to the pa_engine
+          * code (p->pkth is libpcap specific)
+          */ 
+-        memcpy(&logheader.pkth, p->pkth, sizeof(SnortPktHeader));
++        logheader.pkth.ts.tv_sec = p->pkth->ts.tv_sec;
++        logheader.pkth.ts.tv_usec = p->pkth->ts.tv_usec;
++        logheader.pkth.caplen = p->pkth->caplen;
++        logheader.pkth.pktlen = p->pkth->len;
++
+     }
+     else
+     {
+@@ -1260,7 +1264,11 @@ void OldUnifiedLogPacketAlert(Packet *p,
+         {
+             logheader.flags = p->packet_flags;
+ 
+-            memcpy(&logheader.pkth, p->pkth, sizeof(SnortPktHeader));
++            logheader.pkth.ts.tv_sec = p->pkth->ts.tv_sec;
++            logheader.pkth.ts.tv_usec = p->pkth->ts.tv_usec;
++            logheader.pkth.caplen = p->pkth->caplen;
++            logheader.pkth.pktlen = p->pkth->len;
++
+ 
+ #ifdef GIDS
+             /*
