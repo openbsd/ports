@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/24 09:41:09 msf Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2006/11/25 11:00:38 msf Exp $
 @pkgpath mail/perdition
-@newgroup _perdition:572
-@newuser _perdition:572:572:daemon:Perdition proxy:/var/empty:/sbin/nologin
+@newgroup _perdition:573
+@newuser _perdition:573:573:daemon:Perdition proxy:/var/empty:/sbin/nologin
 %%SHARED%%
 bin/makebdb
 include/jain.h
