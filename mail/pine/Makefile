@@ -1,17 +1,19 @@
-# $OpenBSD: Makefile,v 1.65 2005/11/23 13:44:25 jakob Exp $
+# $OpenBSD: Makefile,v 1.66 2006/11/25 17:33:08 espie Exp $
 
-COMMENT=	"program for Internet E-mail and News"
+COMMENT-main=	"program for Internet E-mail and News"
 COMMENT-pico=	"small text editor"
 COMMENT-pilot=	"file system browser"
 
-CATEGORIES=	mail news
+CATEGORIES=		mail news
+CATEGORIES-pico=	editors
+CATEGORIES-pilot=	sysutils
 
 VERSION=	4.64
 PICO_VERSION=	4.10
 PILOT_VERSION=	2.0
 
 DISTNAME=	pine${VERSION}
-PKGNAME=	pine-${VERSION}p1
+PKGNAME-main=	pine-${VERSION}p2
 PKGNAME-pico=	pico-${PICO_VERSION}
 PKGNAME-pilot=	pilot-${PILOT_VERSION}
 
@@ -34,20 +36,15 @@ VMEM_WARNING=	Yes
 FLAVORS=	kerberos ldap
 FLAVOR?=
 
-MULTI_PACKAGES=	-pico -pilot
-SUBPACKAGE?=
+BASE_PKGPATH=	${PGKPATH}${FLAVOR_EXT:S/-/,/g}
 
-.if empty(SUBPACKAGE)
-WANTLIB+=	crypto ssl termlib
-.else
-WANTLIB+=	termcap
-.endif
+SUBST_VARS=	BASE_PKGPATH
 
-.if ${SUBPACKAGE} == "-pico"
-CATEGORIES=	editors
-.elif ${SUBPACKAGE} == "-pilot"
-CATEGORIES=	sysutils
-.endif
+MULTI_PACKAGES=	-main -pico -pilot
+
+WANTLIB-main=	${WANTLIB} crypto ssl termlib
+WANTLIB-pico=	${WANTLIB} termcap
+WANTLIB-pilot=	${WANTLIB} termcap
 
 PINE_BUILD_FLAGS=	CC="${CC}" EXTRACFLAGS="${CFLAGS}" \
 			SSLTYPE="unix" LOCALBASE="${LOCALBASE}"
@@ -60,9 +57,7 @@ WANTLIB+=		asn1 com_err des gssapi krb5
 .if ${FLAVOR:L:Mldap}
 PINE_BUILD_FLAGS+=	LDAPLIBS="-L${LOCALBASE}/lib -lldap -llber" \
 			LDAPCFLAGS="-DENABLE_LDAP -I${LOCALBASE}/include"
-.if ${SUBPACKAGE} == ""
-LIB_DEPENDS+=	lber.2,ldap.2:openldap-client-2.*:databases/openldap
-.endif
+LIB_DEPENDS-main=	lber.2,ldap.2:openldap-client-2.*:databases/openldap
 .endif
 
 do-build:
