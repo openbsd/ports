@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2006/10/18 17:43:01 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2006/11/25 08:30:21 steven Exp $
 
-COMMENT=		"callback framework for C++"
+COMMENT-main=		"callback framework for C++"
 COMMENT-docs=		"callback framework for C++ documentation"
 
 VERSION=		2.0.17
 DISTNAME=		libsigc++-${VERSION}
-PKGNAME=		${DISTNAME}
+PKGNAME-main=		${DISTNAME}p0
 PKGNAME-docs=		libsigc++-docs-${VERSION}
 V=			2.0
 SUBST_VARS=		V
@@ -26,12 +26,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libsigc++/2.0/}
 
-MULTI_PACKAGES=		-docs
-SUBPACKAGE?=
+MULTI_PACKAGES=		-main -docs
 
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
-PKG_ARCH=		*
-.endif
+PKG_ARCH-docs=		*
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 
