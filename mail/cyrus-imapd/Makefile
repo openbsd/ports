@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2006/10/27 06:05:35 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2006/11/25 19:51:14 steven Exp $
 
-COMMENT=	"Cyrus IMAP server"
+COMMENT-main=	"Cyrus IMAP server"
 COMMENT-perl=	"perl utils for the Cyrus IMAP server"
 
-DISTNAME=	cyrus-imapd-2.2.13
-PKGNAME=	${DISTNAME}p2
-FULLPKGNAME-perl=${DISTNAME:S/imapd/imapd-perl/}p0
+V=		2.2.13
+DISTNAME=	cyrus-imapd-${V}
+PKGNAME-main=	${DISTNAME}p3
+FULLPKGNAME-perl=cyrus-imapd-perl-${V}p0
 CATEGORIES=	mail
 HOMEPAGE=	http://cyrusimap.web.cmu.edu
 
@@ -54,8 +55,7 @@ CONFIGURE_ARGS=	--with-service-path=${LOCALBASE}/libexec/cyrus-imapd \
 		--without-zephyr \
 		--without-snmp
 
-MULTI_PACKAGES=	${NO_SHARED_LIBS:S/Yes//:S/No/-perl/}
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main ${NO_SHARED_LIBS:S/Yes//:S/No/-perl/}
 CONFIGURE_ARGS+=--with${NO_SHARED_LIBS:S/Yes/out/:S/No//}-perl
 
 FLAVORS=	drac kerberos
@@ -78,9 +78,10 @@ CONFIGURE_ARGS+=--with-auth=unix \
 		--disable-gssapi
 .endif
 
-.if defined(PACKAGING) && empty(SUBPACKAGE)
-WANTLIB+=	wrap c pthread
-.endif
+WANTLIB-main=	${WANTLIB} wrap c pthread
+
+MAINPATH=	mail/cyrus-imapd${FLAVOR_EXT:S/-/,/g}
+SUBST_VARS=	MAINPATH
 
 NO_REGRESS=	Yes
 

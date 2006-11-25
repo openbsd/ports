@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/10/25 07:51:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/25 19:51:14 steven Exp $
+@pkgpath ${MAINPATH}
 @newgroup _cyrus:543
 @newuser _cyrus:543:_cyrus:daemon:Cyrus Account:/var/empty:/sbin/nologin
 bin/imtest
