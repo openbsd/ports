@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/11/25 19:12:08 espie Exp $
-@pkgpath devel/sdlmm
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/25 19:12:39 espie Exp $
 bin/sdlmm-config
 include/SDLmm/
 include/SDLmm/sdlmm.h

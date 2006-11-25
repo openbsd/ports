@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/25 19:12:39 espie Exp $
+@lib lib/libSDLmm.so.${LIBSDLmm_VERSION}
