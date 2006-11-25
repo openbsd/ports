@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.102 2006/10/30 11:01:58 bernd Exp $
+# $OpenBSD: Makefile,v 1.103 2006/11/25 08:14:06 steven Exp $
 
-COMMENT=		"XML parsing library"
+COMMENT-main=		"XML parsing library"
 COMMENT-python=		"Python bindings for libxml"
 
 VERSION=		2.6.26
 DISTNAME=		libxml2-${VERSION}
-PKGNAME=		libxml-${VERSION}
-PKGNAME-python=		py-libxml-${VERSION}p0
+PKGNAME-main=		libxml-${VERSION}p0
+PKGNAME-python=		py-libxml-${VERSION}p1
 SHARED_LIBS=		xml2	9.3
 CATEGORIES=		textproc
 MASTER_SITES=		ftp://xmlsoft.org/libxml/ \
@@ -34,21 +34,16 @@ CONFIGURE_ARGS+=	--with-iconv="${DEPBASE}"
 PSEUDO_FLAVORS=		no_python
 FLAVOR?=
 
-MULTI_PACKAGES=
-SUBPACKAGE?=
+MULTI_PACKAGES=		-main
 
-.if !defined(PACKAGING) || ${SUBPACKAGE} == ""
-WANTLIB+=		c
-.endif
+WANTLIB-main=		${WANTLIB} c
+RUN_DEPENDS-main=
 
 .if !${FLAVOR:L:Mno_python}
 MULTI_PACKAGES+=	-python
-.  if !defined(PACKAGING) || ${SUBPACKAGE} == "-python"
 MODULES+=		lang/python
-.    if defined(PACKAGING)
-LIB_DEPENDS=		xml2.>=9::textproc/libxml
-.    endif
-.  endif
+LIB_DEPENDS-python=	xml2.>=9::textproc/libxml,-main \
+			${MODLIBICONV_LIB_DEPENDS}
 CONFIGURE_ENV=		PYTHON=${MODPY_BIN}
 FAKE_FLAGS=		EXAMPLE_DIR=${PREFIX}/share/examples/libxml2/ \
 			DEVHELP_DIR=${PREFIX}/share/doc/libxml2/html/devhelp

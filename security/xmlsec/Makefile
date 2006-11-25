@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2006/08/03 23:28:12 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2006/11/25 08:17:17 steven Exp $
 
-COMMENT=	"XML security library"
+COMMENT-main=	"XML security library"
 COMMENT-docs=	"XML security library documentation"
 
 VERSION=	1.2.5
 DISTNAME=	xmlsec1-${VERSION}
-PKGNAME=	xmlsec-${VERSION}p1
+PKGNAME-main=	xmlsec-${VERSION}p2
 PKGNAME-docs=	xmlsec-docs-${VERSION}
 CATEGORIES=	security
 SHARED_LIBS=	xmlsec1-gnutls	3.5 \
@@ -30,20 +30,17 @@ MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
 		ftp://ftp.xmlsoft.org/xmlsec/releases/ \
 		ftp://ftp.rpmfind.net/pub/XML/xmlsec/releases/
 
-MULTI_PACKAGES=		-docs
-SUBPACKAGE?=
+MULTI_PACKAGES=		-main -docs
 
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
-PKG_ARCH=		*
-WANTLIB=
-.endif
+PKG_ARCH-docs=		*
+WANTLIB-docs=
+LIB_DEPENDS-docs=
+RUN_DEPENDS-docs=
 
-.if ${SUBPACKAGE} != "-docs"
 MODULES=		converters/libiconv
 BUILD_DEPENDS=		::devel/pkgconfig
 LIB_DEPENDS=		xslt.>=2::textproc/libxslt \
 			gnutls.>=12::security/gnutls
-.endif
 
 USE_LIBTOOL=		Yes
 

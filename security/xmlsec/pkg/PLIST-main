@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 18:36:03 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/25 08:17:18 steven Exp $
+@pkgpath security/xmlsec
 bin/xmlsec1
 bin/xmlsec1-config
 include/xmlsec1/
