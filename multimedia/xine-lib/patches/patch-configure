@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.4 2006/10/29 23:30:50 espie Exp $
---- configure.orig	Sun Jul  9 16:51:14 2006
-+++ configure	Sun Oct 29 20:16:57 2006
+$OpenBSD: patch-configure,v 1.5 2006/11/25 05:40:31 pvalchev Exp $
+--- configure.orig	Sun Jul  9 08:51:14 2006
++++ configure	Fri Nov 24 21:54:09 2006
 @@ -25613,8 +25613,12 @@ _ACEOF
  fi
  done
@@ -106,3 +106,21 @@ $OpenBSD: patch-configure,v 1.4 2006/10/29 23:30:50 espie Exp $
  else
    { echo "$as_me:$LINENO: result: *** All libmng dependent parts will be disabled ***" >&5
  echo "${ECHO_T}*** All libmng dependent parts will be disabled ***" >&6; }
+@@ -53028,7 +53044,7 @@ cat >>confdefs.h <<_ACEOF
+ _ACEOF
+ 
+         CFLAGS="$CFLAGS -faltivec"
+-        LIBMPEG2_CFLAGS="$LIBMPEG2_CFLAGS -force_cpusubtype_ALL -faltivec"
++        LIBMPEG2_CFLAGS="$LIBMPEG2_CFLAGS -faltivec"
+     fi
+     ;;
+   ppc-*-linux* | powerpc-*)
+@@ -53208,7 +53224,7 @@ cat >>confdefs.h <<_ACEOF
+ _ACEOF
+ 
+         CFLAGS="$CFLAGS -maltivec"
+-        LIBMPEG2_CFLAGS="$LIBMPEG2_CFLAGS -force_cpusubtype_ALL -maltivec"
++        LIBMPEG2_CFLAGS="$LIBMPEG2_CFLAGS -maltivec"
+     fi
+     ;;
+   sparc*-*-linux*)
