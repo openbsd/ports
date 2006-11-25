@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/18 17:49:40 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/25 18:22:06 espie Exp $
 
-COMMENT=	"template engine for PHP"
+COMMENT-main=	"template engine for PHP"
 COMMENT-docs=	"documentation for Smarty"
 
 VERSION=	2.6.14
 DISTNAME=	Smarty-${VERSION}
-PKGNAME=	${DISTNAME:L}
+PKGNAME-main=	smarty-${VERSION}p0
 PKGNAME-docs=	smarty-docs-${VERSION}
 CATEGORIES=	devel www
 
@@ -25,19 +25,14 @@ MASTER_SITES0=	${HOMEPAGE}/distributions/manual/en/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}-docs${EXTRACT_SUFX}:0
 
-MULTI_PACKAGES= -docs
-SUBPACKAGE?=
+MULTI_PACKAGES= -main -docs
 
 PHP_VERSION=	5
-RUN_DEPENDS=    ::www/php${PHP_VERSION}/core
+RUN_DEPENDS-main=::www/php${PHP_VERSION}/core
 
 CHROOT_DIR=	/var/www
 
-.if empty(SUBPACKAGE)
-PREFIX=		${CHROOT_DIR}
-.else
-RUN_DEPENDS=
-.endif
+PREFIX-main=		${CHROOT_DIR}
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
