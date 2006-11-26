@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/09/16 09:51:26 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/26 00:10:26 espie Exp $
+@pkgpath audio/bmp
 @pkgpath audio/bmp,no_mp3
 @pkgpath audio/bmp,no_vorbis
 @pkgpath audio/bmp,no_mp3,no_vorbis
