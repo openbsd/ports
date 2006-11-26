@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2006/01/06 00:13:27 brad Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/26 11:08:32 espie Exp $
 bin/mysql
 bin/mysql_client_test
 bin/mysql_config

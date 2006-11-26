@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.126 2006/10/29 20:28:24 brad Exp $
+# $OpenBSD: Makefile,v 1.127 2006/11/26 11:08:32 espie Exp $
 # Uses pthreads
 
 .if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "m88k"
 BROKEN=		"gen_lex_hash hangs"
 .endif
 
-COMMENT=	"multithreaded SQL database (client)"
+COMMENT-main=	"multithreaded SQL database (client)"
 COMMENT-server=	"multithreaded SQL database (server)"
 COMMENT-tests=	"multithreaded SQL database (regression test suite)"
 
 VERSION=	5.0.27
 DISTNAME=	mysql-${VERSION}
-FULLPKGNAME=	mysql-client-${VERSION}
-PKGNAME-server=	mysql-server-${VERSION}
-FULLPKGNAME-tests= mysql-tests-${VERSION}
+PKGNAME-main=	mysql-client-${VERSION}p0
+PKGNAME-server=	mysql-server-${VERSION}p0
+PKGNAME-tests= 	mysql-tests-${VERSION}
 CATEGORIES=	databases
 V=		MySQL-5.0
 SHARED_LIBS +=	mysqlclient_r        18.0     # .15.0
@@ -82,21 +82,19 @@ CONFIGURE_ARGS+= --with-client-ldflags=-lsupc++ \
 CONFIGURE_ARGS+= --enable-assembler
 .endif
 
-MULTI_PACKAGES=	-server -tests
-SUBPACKAGE?=
+MULTI_PACKAGES=		-main -server -tests
 
-.if ${SUBPACKAGE} == "-server"
-RUN_DEPENDS=	:mysql-client-5.0.*:databases/mysql \
-		:p5-DBD-mysql-*:databases/p5-DBD-mysql
-WANTLIB+=	wrap		
-.elif empty(SUBPACKAGE)
-WANTLIB+=	ncurses readline
-.endif
+RUN_DEPENDS-server=	:mysql-client-5.0.*:databases/mysql \
+			:p5-DBD-mysql-*:databases/p5-DBD-mysql
 
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-tests"
-PKG_ARCH=	*
-WANTLIB=
-.endif
+LIB_DEPENDS-server=	mysqlclient:mysql-client-5.0.*:databases/mysql
+
+WANTLIB-server=		${WANTLIB} wrap		
+
+WANTLIB-main=		${WANTLIB} ncurses readline
+
+PKG_ARCH-tests=	*
+WANTLIB-tests=
 
 DOCS=	manual.html manual.ps manual_toc.html manual.txt
 
