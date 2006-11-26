@@ -1,4 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/07/30 09:13:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/11/26 18:23:07 jasper Exp $
+@mode g+s
+@group games
 bin/clines
+@mode
+@group
+@man man/man6/clines.6
 share/doc/clines/
+@mode g+w
+@group games
+@sample /var/games/clines/
+@mode
+@group
 share/doc/clines/README
+@extraunexec rm -fr /var/games/clines/* 2>/dev/null || true

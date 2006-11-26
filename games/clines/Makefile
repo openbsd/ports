@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2006/07/30 09:13:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/26 18:23:07 jasper Exp $
 
 COMMENT=		"curses-based Lines game"
 
-DISTNAME=		clines-1.0.3
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		clines-1.0.4
 CATEGORIES=		games
 
 HOMEPAGE=		http://manticore.2y.net/prj/clines-a.html

@@ -1,0 +1,21 @@
+--- Makefile.in.orig	Sun Oct  8 06:19:52 2006
++++ Makefile.in	Sun Nov 26 18:28:10 2006
+@@ -632,8 +632,7 @@ info: info-am
+ 
+ info-am:
+ 
+-install-data-am: install-data-local install-dist_pkgdataDATA \
+-	install-man
++install-data-am: install-data-local install-man
+ 
+ install-exec-am: install-binPROGRAMS
+ 
+@@ -689,8 +688,6 @@ dist-hook:
+ 	cd $(distdir) && xsltproc /usr/local/share/xsl/docbook/manpages/docbook.xsl clines-man.xml
+ 
+ install-data-local:
+-	-chown 0 $(pkgdatadir)
+-	-chmod 1777 $(pkgdatadir)
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

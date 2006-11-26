@@ -1,0 +1,12 @@
+--- configure.orig	Sun Oct  8 06:19:54 2006
++++ configure	Sat Nov 18 10:34:58 2006
+@@ -7588,8 +7588,7 @@ _ACEOF
+ fi
+ 
+ 
+-CFLAGS="$CFLAGS -DCLINES_DATA_DIR=\\\"\$(pkgdatadir)\\\""
+-
++CFLAGS="$CFLAGS -DCLINES_DATA_DIR=\\\"/var/games/clines\\\""
+ 
+ 
+ 
