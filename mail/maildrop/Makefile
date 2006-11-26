@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.22 2006/11/16 21:48:21 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.23 2006/11/26 11:36:32 espie Exp $
 
-COMMENT=		"mail delivery agent with filtering abilities"
+COMMENT-main=		"mail delivery agent with filtering abilities"
 COMMENT-utils=		"quota tools for the Courier mail suite"
 
-DISTNAME=		maildrop-2.0.2
-PKGNAME=		${DISTNAME}p1
+V=			2.0.2
+DISTNAME=		maildrop-$V
+PKGNAME-main=		maildrop-$Vp2
+FULLPKGNAME-utils=	courier-utils-$Vp0
 CATEGORIES=		mail
 
 HOMEPAGE=		http://www.courier-mta.org/maildrop/
@@ -16,10 +18,8 @@ EXTRACT_SUFX=		.tar.bz2
 FLAVORS=		postfix
 FLAVOR?=
 
-MULTI_PACKAGES=		-utils
-SUBPACKAGE?=
+MULTI_PACKAGES=		-main -utils
 
-FULLPKGNAME-utils=	${DISTNAME:S/maildrop/courier-utils/}p0
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -72,16 +72,12 @@ CONFIGURE_ARGS+=	--enable-trusted-users="root _courier"
 CONFIGURE_ARGS+=	--enable-trusted-groups="wheel _courier"
 .endif
 
-.if defined(PACKAGING) && $(SUBPACKAGE) == "-utils"
-LIB_DEPENS=
-WANTLIB+=		c
-.else
-WANTLIB+=		c gdbm m stdc++
-LIB_DEPENDS+=		gdbm.>=3::databases/gdbm \
+WANTLIB-utils=		c
+
+WANTLIB-main=		c gdbm m stdc++
+LIB_DEPENDS-main=	gdbm.>=3::databases/gdbm \
 			pcre.>=1::devel/pcre \
 			courierauth::mail/courier-authlib
-.endif
-
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/maildrop
 	@for i in ${DOCFILES}; do \

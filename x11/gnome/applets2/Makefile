@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.27 2006/09/18 12:19:39 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2006/11/26 11:35:12 espie Exp $
 
-COMMENT=		"applets for use with the GNOME panel"
+COMMENT-main=		"applets for use with the GNOME panel"
 COMMENT-battstat=	"GNOME applet for monitoring battery level"
 
 VERSION=		2.10.1
 SUBVERS=		p1
 DISTNAME=		gnome-applets-${VERSION}
-PKGNAME=		gnome-applets2-${VERSION}p4
+PKGNAME-main=		gnome-applets2-${VERSION}p5
 PKGNAME-battstat=	gnome-applets2-battstat-${VERSION}${SUBVERS}p1
 CATEGORIES=		x11 x11/gnome
 
@@ -37,7 +37,8 @@ BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
 			:hicolor-icon-theme-*:x11/hicolor-icon-theme
-LIB_DEPENDS=		panel-applet-2::x11/gnome/panel \
+LIB_DEPENDS-main=	${LIB_DEPENDS} \
+			panel-applet-2::x11/gnome/panel \
 			gailutil.>=17::x11/gnome/gail \
 			gstinterfaces-0.8.>=1.0::devel/gstreamer-plugins,minimal \
 			gtop-2.0.>=3.0::devel/libgtop2 \
@@ -51,13 +52,12 @@ FLAVOR?=
 FLAVOR+=		no_battstat
 .endif
 
-MULTI_PACKAGES=
+MULTI_PACKAGES=		-main
 .if ${FLAVOR:L:Mno_battstat}
 CONFIGURE_ARGS+=	--disable-battstat
 .else
 MULTI_PACKAGES+=	-battstat
 .endif
-SUBPACKAGE?=
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
@@ -69,15 +69,10 @@ CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-a
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-.if defined(PACKAGING)
-. if ${SUBPACKAGE} == "-battstat"
-ONLY_FOR_ARCHS=		i386 powerpc
-LIB_DEPENDS=		panel-applet-2::x11/gnome/panel
-. else
-WANTLIB+=		Xau XRes kvm xkbfile gstreamer-0.8.>=5.0 \
+LIB_DEPENDS-battstat=	${LIB_DEPENDS} panel-applet-2::x11/gnome/panel
+WANTLIB-main=		${WANTLIB} \
+			Xau XRes kvm xkbfile gstreamer-0.8.>=5.0 \
 			startup-notification-1 wnck-1
-. endif
-.endif
 
 post-patch:
 	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
