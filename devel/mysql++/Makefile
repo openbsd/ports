@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.23 2006/08/01 23:39:08 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2006/11/26 00:40:28 espie Exp $
 
-NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
+SHARED_ONLY=		Yes
 
-COMMENT=		"C++ API for MySQL"
+COMMENT-main=		"C++ API for MySQL"
 COMMENT-docs=		"C++ API for MySQL documentation"
 
 VERSION=		2.0.6
 DISTNAME=		mysql++-${VERSION}
-PKGNAME=		${DISTNAME}p2
+PKGNAME-main=		${DISTNAME}p3
 PKGNAME-docs=		mysql++-docs-${VERSION}
-SHARED_LIBS=		mysqlpp 3.0
+SHARED_LIBS +=	mysqlpp              3.0      # .2.6
 CATEGORIES=		devel
 
 HOMEPAGE=		http://tangentsoft.net/mysql++/
@@ -24,16 +24,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}releases/
 
-MULTI_PACKAGES=		-docs
-SUBPACKAGE?=
+MULTI_PACKAGES=		-main -docs
 
-.if ${SUBPACKAGE} != "-docs"
-LIB_DEPENDS=		lib/mysql/mysqlclient.>=10::databases/mysql
-WANTLIB=		crypto m ssl z
-.endif
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
-PKG_ARCH=		*
-.endif
+LIB_DEPENDS-main=	lib/mysql/mysqlclient.>=10::databases/mysql
+WANTLIB-main=		crypto m ssl z
+PKG_ARCH-docs=		*
 
 NO_REGRESS=		Yes
 USE_LIBTOOL=		Yes

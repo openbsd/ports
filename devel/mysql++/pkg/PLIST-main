@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/01/07 17:58:49 bernd Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/26 00:40:28 espie Exp $
+@pkgpath databases/mysql++
 include/mysql++/
 include/mysql++/coldata.h
 include/mysql++/compare.h
@@ -34,3 +34,4 @@ include/mysql++/type_info.h
 include/mysql++/vallist.h
 lib/libmysqlpp.a
 lib/libmysqlpp.la
+@lib lib/libmysqlpp.so.${LIBmysqlpp_VERSION}
