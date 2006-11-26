@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2006/08/03 23:15:58 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/26 01:06:53 espie Exp $
 
-COMMENT=	"nagios service check acceptor"
+COMMENT-main=	"nagios service check acceptor"
 COMMENT-client=	"nagios service check acceptor - client"
 
 VERSION=	2.5
 DISTNAME=	nsca-${VERSION}
+PKGNAME-main=	nsca-${VERSION}p0
 PKGNAME-client=	nsca-client-${VERSION}
 CATEGORIES=	net
 
@@ -30,12 +31,9 @@ CONFIGURE_ARGS=		--with-nsca-user=_nagios \
 
 NO_REGRESS=		Yes
 
-MULTI_PACKAGES=		-client
-SUBPACKAGE?=
+MULTI_PACKAGES=		-main -client
 
-.if defined(PACKAGING) && ${SUBPACKAGE} != "-client"
-RUN_DEPENDS+=		:nagios-*:net/nagios/nagios
-.endif
+RUN_DEPENDS-main=	:nagios-*:net/nagios/nagios
 
 pre-build:
 	@perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR}," ${WRKSRC}/src/nsca.c \
