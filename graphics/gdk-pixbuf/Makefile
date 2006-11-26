@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2006/11/13 11:20:24 steven Exp $
+# $OpenBSD: Makefile,v 1.40 2006/11/26 10:42:52 espie Exp $
 
-COMMENT=	"GdkPixbuf graphics library"
+COMMENT-main=	"GdkPixbuf graphics library"
 COMMENT-gnome=	"GdkPixbuf graphics library (GNOME Canvas)"
 
 VERSION=	0.22.0
 DISTNAME=	gdk-pixbuf-${VERSION}
-PKGNAME=	${DISTNAME}p4
+PKGNAME-main=	${DISTNAME}p5
 PKGNAME-gnome=	gdk-pixbuf-gnome-${VERSION}p0
 SHARED_LIBS=	gdk_pixbuf		2.0	\
 		gdk_pixbuf_xlib		2.0	\
@@ -42,11 +42,10 @@ CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" 
 PSEUDO_FLAVORS=	no_gnome
 FLAVOR?=
 
-MULTI_PACKAGES=
+MULTI_PACKAGES=	-main
 .if !${FLAVOR:L:Mno_gnome}
 MULTI_PACKAGES+= -gnome
 .endif
-SUBPACKAGE?=
 
 .if ${FLAVOR:L:Mno_gnome}
 CONFIGURE_ENV+=	ac_cv_path_GNOME_CONFIG=no
@@ -57,16 +56,9 @@ LIB_DEPENDS+=	jpeg.>=62::graphics/jpeg \
 		tiff.>=35.::graphics/tiff \
 		gtk.>=1.2,gdk.>=1.2::x11/gtk+
 
-.if defined(PACKAGING)
-. if ${SUBPACKAGE} == "-gnome"
-LIB_DEPENDS+=	gnome.>=36,art_lgpl,gnomesupport,gnomeui::x11/gnome/libs \
+LIB_DEPENDS-gnome= ${LIB_DEPENDS} \
+		gnome.>=36,art_lgpl,gnomesupport,gnomeui::x11/gnome/libs \
 		gdk_pixbuf.>=2::graphics/gdk-pixbuf
-WANTLIB+=	esd ungif ICE audiofile gdk_imlib SM
-. endif
-.else
-. if ${MULTI_PACKAGES:M-gnome}
-LIB_DEPENDS+=	gnome.>=36,art_lgpl,gnomesupport,gnomeui::x11/gnome/libs
-. endif
-.endif
+WANTLIB-gnome=	${WANTLIB} esd ungif ICE audiofile gdk_imlib SM
 
 .include <bsd.port.mk>
