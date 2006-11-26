@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/14 21:19:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/26 13:39:07 ajacoutot Exp $
 
 COMMENT=	"ORBit2 Python bindings"
 
 DISTNAME=	pyorbit-2.14.1
-PKGNAME=	${DISTNAME:S/py/py-/}
+PKGNAME=	${DISTNAME:S/py/py-/}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.pygtk.org/
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/${DISTNAME:S/-/\//:R}/}
 
-WANTLIB=	m pthread util IDL-2 glib-2.0 gmodule-2.0 gobject-2.0 \
+WANTLIB=	m util IDL-2 glib-2.0 gmodule-2.0 gobject-2.0 \
 		gthread-2.0 popt
 
 MODULES=	devel/gettext lang/python
@@ -30,7 +30,7 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	LIBS="-lpthread -lm -lutil" \
+CONFIGURE_ENV=	LIBS="-pthread -lm -lutil" \
 		PYTHON=${MODPY_BIN}
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-static
