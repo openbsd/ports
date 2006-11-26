@@ -1,6 +1,6 @@
-$OpenBSD: patch-corewars_6,v 1.1 2002/03/20 16:19:52 espie Exp $
---- corewars.6.orig	Wed Mar 20 16:39:36 2002
-+++ corewars.6	Wed Mar 20 16:55:54 2002
+$OpenBSD: patch-doc-corewars_6,v 1.1 2006/11/26 10:16:07 jasper Exp $
+--- doc/corewars.6.orig	Wed Apr 12 15:10:09 2000
++++ doc/corewars.6	Sun Nov 26 01:28:49 2006
 @@ -38,7 +38,7 @@ called \fBRedcode\fP, is harder to learn
  .\" \fI<whatever>\fP escape sequences to invode bold face and italics, 
  .\" respectively.

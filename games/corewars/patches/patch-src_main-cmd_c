@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_main-cmd_c,v 1.2 2006/02/10 08:53:19 steven Exp $
---- src/main-cmd.c.orig	Fri Sep 29 00:05:10 2000
-+++ src/main-cmd.c	Fri Feb 10 09:00:31 2006
-@@ -19,11 +19,14 @@
+$OpenBSD: patch-src_main-cmd_c,v 1.3 2006/11/26 10:16:07 jasper Exp $
+--- src/main-cmd.c.orig	Wed Oct 23 13:30:59 2002
++++ src/main-cmd.c	Sun Nov 26 01:28:49 2006
+@@ -19,11 +19,13 @@
  
  #include "config.h"
  
 -#ifdef HAVE_ARGP_H
- 
+-
  #include <stdio.h>
  #include <stdlib.h>
 -#include <argp.h>
@@ -18,7 +18,7 @@ $OpenBSD: patch-src_main-cmd_c,v 1.2 2006/02/10 08:53:19 steven Exp $
  #include <math.h>
  #include <string.h>
  #include <time.h>
-@@ -51,6 +54,7 @@ int score_old = 0;
+@@ -51,6 +53,7 @@ int score_old = 0;
  int dump = 0;
  int dump_internal = 0;
  
@@ -26,7 +26,7 @@ $OpenBSD: patch-src_main-cmd_c,v 1.2 2006/02/10 08:53:19 steven Exp $
  static error_t parse_opt (int key, char *arg, struct argp_state *state)
  {
    char *p;
-@@ -260,7 +264,161 @@ struct argp argp = 
+@@ -260,7 +263,162 @@ struct argp argp = 
    "%s for the score, %t for the title, %a for the author and %f for the filename. "
    "The default format string is '%4r %7s %-25t %a'.",
  };
@@ -184,6 +184,7 @@ $OpenBSD: patch-src_main-cmd_c,v 1.2 2006/02/10 08:53:19 steven Exp $
 +	*file_list = argv+optind;
 +}
 +#endif
++
 +
  int main(int argc,char *argv[])
  {
