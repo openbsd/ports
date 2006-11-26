@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2005/05/22 07:10:33 alek Exp $
+# $OpenBSD: Makefile,v 1.22 2006/11/26 11:38:07 espie Exp $
 # 
 # Based on Simon Marlow's port script for FreeBSD:
 # $FreeBSD: ports/lang/ghc/Makefile,v 1.13 2002/08/22 12:53:38 obraun Exp $
@@ -20,27 +20,23 @@ ONLY_FOR_ARCHS= i386 amd64
 # The build process: we build a full GHC from C source. The C source
 # needs to be generated once for each arch, for each version of GHC.
 
-COMMENT=	"compiler for the functional language Haskell"
+COMMENT-main=	"compiler for the functional language Haskell"
 COMMENT-doc=	"documentation for the functional language Haskell"
 
 V=		6.2.2
 
 DISTNAME=	ghc-${V}
+PKGNAME-main=	ghc-${V}p0
+PKGNAME-doc=	ghc-doc-${V}p0
 CATEGORIES=	lang
 HOMEPAGE=	http://www.haskell.org/ghc/
 MAINTAINER=	Don Stewart <dons@openbsd.org>
 
-LIB_DEPENDS=	gmp::devel/gmp
+MULTI_PACKAGES=	-doc -main
 
-MULTI_PACKAGES=	-doc
-SUBPACKAGE?=
-FULLPKGNAME-doc=ghc-doc-${V}p0
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-doc"
-PKG_ARCH=	*
-LIB_DEPENDS=
-.else
-WANTLIB=	c m ncurses readline
-.endif
+PKG_ARCH-doc=	*
+LIB_DEPENDS-main=	gmp::devel/gmp
+WANTLIB-main=	c m ncurses readline
 
 HASKELL=	http://www.haskell.org
 MASTER_SITES=	${HASKELL}/ghc/dist/${V}/

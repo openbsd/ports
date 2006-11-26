@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/02/14 01:26:56 dons Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/26 11:38:07 espie Exp $
+@pkgpath lang/ghc
 bin/ghc
 bin/ghc-6.2.2
 bin/ghc-pkg
