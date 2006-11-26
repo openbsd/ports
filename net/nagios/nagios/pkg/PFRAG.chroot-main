@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.chroot,v 1.1.1.1 2005/07/25 16:32:06 sturm Exp $
+@comment $OpenBSD: PFRAG.chroot-main,v 1.1 2006/11/26 01:01:32 espie Exp $
 @exec ln -s ${CHROOT}${SYSCONFDIR}/nagios ${SYSCONFDIR}
 @exec ln -s ${CHROOT}/var/log/nagios /var/log
 @exec ln -s ${CHROOT}/var/nagios /var

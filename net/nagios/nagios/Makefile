@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2006/11/20 21:18:15 bernd Exp $
+# $OpenBSD: Makefile,v 1.20 2006/11/26 01:01:32 espie Exp $
 
-COMMENT=	"host and service monitor"
+COMMENT-main=	"host and service monitor"
 COMMENT-web=	"cgis and webpages for nagios"
 
 V=		2.5
 DISTNAME=	nagios-${V}
+PKGNAME-main=	nagios-${V}p0
 PKGNAME-web=	nagios-web-${V}
 CATEGORIES=	net
 
@@ -18,8 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MULTI_PACKAGES=	-web
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -web
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nagios/}
 
@@ -53,24 +53,21 @@ PATCH_LIST=	patch-* chroot-*
 CHROOT=
 .endif
 
-.if defined(PACKAGING)
 WANTLIB=	c m
-.  if ${SUBPACKAGE} == "-web"
-PREFIX=		/var/www
+
+PREFIX-web=	/var/www
 # overwrite RUN_DEPENDS in order to only depend on the base package
-.    if ${FLAVOR:L:Mchroot}
-WANTLIB=
-LIB_DEPENDS=
-RUN_DEPENDS=	:nagios-${V}-chroot:net/nagios/nagios,chroot
-.    else
-WANTLIB+=	fontconfig freetype jpeg png z
-LIB_DEPENDS=	gd::graphics/gd
-RUN_DEPENDS=	:nagios-${V}-!chroot:net/nagios/nagios
-.    endif
-.  else
-WANTLIB+=	pthread
-.  endif
+.if ${FLAVOR:L:Mchroot}
+WANTLIB-web=
+LIB_DEPENDS-web=
+RUN_DEPENDS-web=:nagios-${V}-chroot:net/nagios/nagios,chroot
+.else
+WANTLIB-web=	${WANTLIB} fontconfig freetype jpeg png z
+LIB_DEPENDS-web=gd::graphics/gd
+RUN_DEPENDS-web=:nagios-${V}-!chroot:net/nagios/nagios
 .endif
+
+WANTLIB-main=	${WANTLIB} pthread
 
 NO_REGRESS=	Yes
 
