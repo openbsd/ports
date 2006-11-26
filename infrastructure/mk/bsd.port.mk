@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.837 2006/11/26 17:45:59 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.838 2006/11/26 19:12:20 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2282,8 +2282,8 @@ subdescribe:
 	@echo -n "${PREFIX${SUBPACKAGE}}|"
 .endif
 	@echo -n ${_COMMENT}"|"; \
-	if [ -f ${DESCR} ]; then \
-		echo -n "${DESCR:S,^${PORTSDIR}/,,}|"; \
+	if [ -f ${DESCR${SUBPACKAGE}} ]; then \
+		echo -n "${DESCR${SUBPACKAGE}:S,^${PORTSDIR}/,,}|"; \
 	else \
 		echo -n "/dev/null|"; \
 	fi; \
