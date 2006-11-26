@@ -1,24 +1,24 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/13 12:51:15 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/26 11:24:29 steven Exp $
 #
 # Credits to Matt Jibson. He did the initial work on this port and many
 # tools it depends on.
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"LilyPond - music notation for everyone"
+COMMENT-main=	"LilyPond - music notation for everyone"
 COMMENT-docs=	"LilyPond documentation"
 
-DISTNAME=	lilypond-2.8.7
-DISTNAME-docs=	lilypond-2.8.7-1.documentation
-VERSION=	${DISTNAME:S,lilypond-,,}
-PKGNAME-docs=	lilypond-docs-${VERSION}
+VERSION=	2.8.8
+DISTNAME=	lilypond-${VERSION}
+DISTNAME-docs=	${DISTNAME}-1.documentation
+PKGNAME-main=	${DISTNAME}
+PKGNAME-docs=	${DISTNAME:S,-,-docs-,}
 CATEGORIES=	print
 
 DISTFILES=	${DISTNAME}.tar.gz ${DISTNAME-docs}.tar.bz2:0
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
-MULTI_PACKAGES=	-docs
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -docs
 
 DOCDIR=		${PREFIX}/share/doc/lilypond/${VERSION}
 
@@ -50,16 +50,16 @@ USE_GMAKE=		Yes
 USE_X11=		Yes
 MAKE_FILE=		GNUmakefile
 
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
-PKG_ARCH=	*
-.else
-WANTLIB=	c fontconfig freetype m stdc++ X11
-MODULES=        devel/gettext lang/python
+PKG_ARCH-docs=		*
+LIB_DEPENDS-docs=
+RUN_DEPENDS-docs=
+
+WANTLIB-main=	c fontconfig freetype m stdc++ X11
+MODULES=	devel/gettext lang/python
 LIB_DEPENDS=	guile.>=15,guile-ltdl.>=1::lang/guile \
 		glib-2.0.>=1000,gmodule-2.0.>=1000,gobject-2.0.>=1000::devel/glib2 \
 		pango-1.0.>=1200,pangoft2-1.0.>=1200::devel/pango
 RUN_DEPENDS=	::print/ghostscript/gnu
-.endif
 
 BUILD_DEPENDS= 	::print/mftrace \
 		::devel/bison \
@@ -69,6 +69,10 @@ BUILD_DEPENDS= 	::print/mftrace \
 SUBST_VARS+=	VERSION
 
 NO_REGRESS=	Yes
+
+# Fails for yet unknown reason on mf when mftracing feta26 with EINVAL
+# in intercept_get_string.
+NO_SYSTRACE=	Yes
 
 post-extract:
 	mkdir -p ${WRKDIR}/docs
