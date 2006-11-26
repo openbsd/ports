@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-sdl,v 1.6 2005/10/02 01:39:38 fgsch Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/26 09:54:34 espie Exp $
 @conflict xmame-*
 @conflict xmess-*
 bin/chdman
@@ -94,6 +94,18 @@ share/doc/xmame/xmame.css
 share/doc/xmame/xmamerc.dist
 share/doc/xmame/xmessrc.dist
 share/xmame/
+share/xmame/cab/
+share/xmame/cab/glmame/
+share/xmame/cab/glmame/cabfront.jpg
+share/xmame/cab/glmame/cabtitle.jpg
+share/xmame/cab/glmame/glmame.cab
+share/xmame/cab/glmamejau/
+share/xmame/cab/glmamejau/cabfront.jpg
+share/xmame/cab/glmamejau/cabside.jpg
+share/xmame/cab/glmamejau/cabtitle.jpg
+share/xmame/cab/glmamejau/glmamejau.cab
+share/xmame/cab/trans/
+share/xmame/cab/trans/trans.cab
 share/xmame/cheat.dat
 share/xmame/ctrlr/
 share/xmame/ctrlr/hotrod.cfg
@@ -107,6 +119,18 @@ share/xmame/unofficial_hiscore.txt
 share/xmame/xmamerc
 @sample ${SYSCONFDIR}/xmamerc
 share/xmess/
+share/xmess/cab/
+share/xmess/cab/glmame/
+share/xmess/cab/glmame/cabfront.jpg
+share/xmess/cab/glmame/cabtitle.jpg
+share/xmess/cab/glmame/glmame.cab
+share/xmess/cab/glmamejau/
+share/xmess/cab/glmamejau/cabfront.jpg
+share/xmess/cab/glmamejau/cabside.jpg
+share/xmess/cab/glmamejau/cabtitle.jpg
+share/xmess/cab/glmamejau/glmamejau.cab
+share/xmess/cab/trans/
+share/xmess/cab/trans/trans.cab
 share/xmess/hash/
 share/xmess/hash/a2600.hsi
 share/xmess/hash/a5200.hsi
