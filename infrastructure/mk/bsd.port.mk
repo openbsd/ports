@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.838 2006/11/26 19:12:20 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.839 2006/11/26 19:46:16 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1162,7 +1162,7 @@ _REGRESS_DEP2=	${REGRESS_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
 
 .if ${NO_SHARED_LIBS:L} != "yes"
 _RUN_DEP2+= 	${LIB_DEPENDS${SUBPACKAGE}:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
-_LIB_DEP3=		${LIB_DEPENDS${SUBPACKAGE}:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_LIB_DEP3=		${LIB_DEPENDS${SUBPACKAGE}}
 _DEPRUNLIBS=	${LIB_DEPENDS${SUBPACKAGE}:C/:.*//:S/,/ /g}
 .else
 _LIB_DEP3=
@@ -2289,10 +2289,7 @@ subdescribe:
 	fi; \
 	echo -n "${MAINTAINER}|${CATEGORIES${SUBPACKAGE}}|"
 .for _d in LIB BUILD RUN
-.  if !empty(_${_d}_DEP3)
-	@cd ${.CURDIR} && _FINAL_ECHO=: _INITIAL_ECHO=: exec ${MAKE} ${_d:L}-depends-list
-.  endif
-	@echo -n "|"
+	@echo -n '${_${_d}_DEP3}'| tr '\040' '\012'|sort -u|tr '\012' '\040' | sed -e 's, $$,|,'
 .endfor
 	@case "${ONLY_FOR_ARCHS}" in \
 	 "") case "${NOT_FOR_ARCHS}" in \
@@ -2424,16 +2421,9 @@ _license-check:
 .for _i in RUN BUILD LIB
 ${_i:L}-depends-list:
 .  if !empty(_${_i}_DEP3)
-	@unset FLAVOR SUBPACKAGE || true; \
-	: $${_INITIAL_ECHO:='echo -n "This port requires \""'}; \
-	: $${_ECHO='echo -n'}; \
-	: $${_FINAL_ECHO:='echo "\" for ${_i:L}."'}; space=''; \
-	eval $${_INITIAL_ECHO}; \
-	for spec in `echo '${_${_i}_DEP3}' \
-		| tr '\040' '\012' | sort -u`; do \
-		$${_ECHO} "$$space$${spec}"; \
-		space=' '; \
-	done; eval $${_FINAL_ECHO}
+	@echo -n "This port requires \""
+	@echo -n '${_${_i}_DEP3}'| tr '\040' '\012'|sort -u|tr '\012' '\040' | sed -e 's, $$,,'
+	@echo "\" for ${_i:L}."
 .  endif
 .endfor
 
