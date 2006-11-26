@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/01/28 11:18:52 alek Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/26 10:24:36 steven Exp $
 @pkgpath databases/py-psycopg,no_zope
+@pkgpath databases/py-psycopg
 lib/python${MODPY_VERSION}/lib-dynload/psycopgmodule.so
 share/examples/py-psycopg/
 share/examples/py-psycopg/binary.py

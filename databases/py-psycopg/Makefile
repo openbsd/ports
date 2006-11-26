@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.25 2006/11/16 22:39:02 steven Exp $
+# $OpenBSD: Makefile,v 1.26 2006/11/26 10:24:36 steven Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"PostgreSQL database adapter for Python"
+COMMENT-main=	"PostgreSQL database adapter for Python"
 COMMENT-zope=	"database adapter for Zope"
 
 VERSION=	1.1.21
 DISTNAME=	psycopg-${VERSION}
-PKGNAME=	py-${DISTNAME}p2
+PKGNAME=	py-${DISTNAME}p3
+PKGNAME-main=	py-${DISTNAME}p3
 PKGNAME-zope=	py-psycopg-zope-${VERSION}p0
 CATEGORIES=	databases
 
@@ -30,15 +31,13 @@ BUILD_DEPENDS=	:postgresql-server-*:databases/postgresql,-server \
 RUN_DEPENDS=	:postgresql-client-*:databases/postgresql \
 		:py-mxDateTime->=2.0.0:devel/py-mxDateTime
 
-MULTI_PACKAGES=	-zope
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -zope
 
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-zope"
-RUN_DEPENDS=	:zope-*:www/zope \
-		:py-psycopg-${VERSION}*:databases/py-psycopg
-PKG_ARCH=	*
-WANTLIB=
-.endif
+RUN_DEPENDS-zope=	:zope-*:www/zope \
+			:py-psycopg-${VERSION}*:${BUILD_PKGPATH} \
+			${MODPY_RUN_DEPENDS}
+PKG_ARCH-zope=		*
+WANTLIB-zope=
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-mxdatetime-includes=${MODPY_SITEPKG}/mx/DateTime/mxDateTime
