@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2006/10/19 08:21:17 wilfried Exp $
+# $OpenBSD: Makefile,v 1.17 2006/11/26 10:53:32 espie Exp $
 
-COMMENT=		"C++ interface for the GNOME libraries"
+COMMENT-main=		"C++ interface for the GNOME libraries"
 COMMENT-docs=		"C++ interface for the GNOME libraries documentation"
 
 VERSION=		1.2.4
 DISTNAME=		gnomemm-${VERSION}
+PKGNAME-main=		gnomemm-${VERSION}p0
 PKGNAME-docs=		gnomemm-docs-${VERSION}
 SHARED_LIBS=		gnomemm 11.0
 CATEGORIES=		devel x11
@@ -21,19 +22,18 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gtkmm/}
 
-MULTI_PACKAGES=		-docs
-SUBPACKAGE?=
+MULTI_PACKAGES=		-main -docs
 
-.if ${SUBPACKAGE} != "-docs"
 MODULES=		devel/gettext
 LIB_DEPENDS=		::x11/gtkmm \
 			art_lgpl.>=4,gnome.>=36,gnomesupport,gnomeui.>=46::x11/gnome/libs
 WANTLIB=		ICE SM X11 Xext Xi audiofile esd gdk gdk_imlib glib \
 			gmodule gtk jpeg m png tiff ungif z
-.endif
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
-PKG_ARCH=		*
-.endif
+
+PKG_ARCH-docs=		*
+LIB_DEPENDS-docs=
+RUN_DEPENDS-docs=
+WANTLIB-docs=
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
