@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.835 2006/11/25 19:47:53 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.836 2006/11/26 17:36:07 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -320,7 +320,7 @@ FAKE_FLAGS+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
 .endif
 MAKE_FLAGS+=		SHARED_LIBS_LOG=${WRKBUILD}/shared_libs.log
 
-.if !defined(MULTI_PACKAGES) || empty(MULTI_PACKAGES:M-main)
+.if !defined(MULTI_PACKAGES)
 SUBPACKAGE?=
 PKGNAMES=${FULLPKGNAME}
 _FMN=${PKGPATH}/${FULLPKGNAME}
@@ -1713,26 +1713,24 @@ dump-vars subdump-vars _internal-install-all _internal-install \
 print-plist-all print-plist \
 readmes _readme _internal-update _internal-subupdate
 ${_t}:
-.  if !defined(MULTI_PACKAGES) || empty(MULTI_PACKAGES:M-main)
-	@cd ${.CURDIR} && SUBPACKAGE='' PACKAGING='' exec ${MAKE} ${_r}
-.  endif
 .  if defined(MULTI_PACKAGES)
 .    for _s in ${MULTI_PACKAGES}
 	@${ECHO_MSG} "===> ${PKGPATH}${FLAVOR_EXT:S/-/,/g},${_s}"
 	@cd ${.CURDIR} && SUBPACKAGE='${_s}' PACKAGING='${_s}' exec ${MAKE} ${_r}
 .    endfor
+.  else
+	@cd ${.CURDIR} && SUBPACKAGE='' PACKAGING='' exec ${MAKE} ${_r}
 .  endif
 .endfor
 
 
 _internal-package:
-.if !defined(MULTI_PACKAGES) || empty(MULTI_PACKAGES:M-main)
-	@cd ${.CURDIR} && SUBPACKAGE='' PACKAGING='' exec ${MAKE} _internal-subpackage
-.endif
 .if defined(MULTI_PACKAGES)
 .  for _s in ${MULTI_PACKAGES}
 	@cd ${.CURDIR} && SUBPACKAGE='${_s}' PACKAGING='${_s}' exec ${MAKE} _internal-subpackage 
 .  endfor
+.else
+	@cd ${.CURDIR} && SUBPACKAGE='' PACKAGING='' exec ${MAKE} _internal-subpackage
 .endif
 .if ${BULK_${PKGPATH}:L} == "yes"
 	@cd ${.CURDIR} && exec ${MAKE} ${_BULK_COOKIE}
@@ -2175,24 +2173,24 @@ _internal-clean:
 .  endif
 .endif
 .if ${_clean:L:Mpackages} || ${_clean:L:Mpackage} && ${_clean:L:Msub}
-.    if !defined(MULTI_PACKAGES) || empty(MULTI_PACKAGES:M-main)
-	@cd ${.CURDIR} && PACKAGING='' SUBPACKAGE='' exec ${MAKE} clean=package
-.    endif
 .  if defined(MULTI_PACKAGES)
 .    for _s in ${MULTI_PACKAGES}
 	@cd ${.CURDIR} && PACKAGING='${_s}' SUBPACKAGE='${_s}' exec ${MAKE} clean=package
 .    endfor
+.  else
+	@cd ${.CURDIR} && PACKAGING='' SUBPACKAGE='' exec ${MAKE} clean=package
 .  endif
 .elif ${_clean:L:Mpackage}
 	rm -f ${_PACKAGE_COOKIES}
 .endif
 .if ${_clean:L:Mreadmes}
-.    if !defined(MULTI_PACKAGES) || empty(MULTI_PACKAGES:M-main)
+.    if defined(MULTI_PACKAGES)
+.      for _s in ${MULTI_PACKAGES}
+	rm -f ${.CURDIR}/${FULLPKGNAME${_s}}.html
+.      endfor
+.    else
 	rm -f ${.CURDIR}/${FULLPKGNAME}.html
 .    endif
-.    for _s in ${MULTI_PACKAGES}
-	rm -f ${.CURDIR}/${FULLPKGNAME${_s}}.html
-.    endfor
 .endif
 .if ${_clean:L:Mbulk}
 	rm -f ${_BULK_COOKIE}
