@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2006/11/26 11:10:00 steven Exp $
 
-COMMENT=		"lightweight GTK+ based mail/news client"
+COMMENT-main=		"lightweight GTK+ based mail/news client"
 COMMENT-dillo=		"dillo plugin for sylpheed-claws"
 COMMENT-docs=		"sylpheed-claws FAQ and documentation"
 COMMENT-imageviewer=	"image viewer plugin for sylpheed-claws"
@@ -10,7 +10,8 @@ COMMENT-trayicon=	"system tray icon plugin for sylpheed-claws"
 
 VERSION=		1.9.6
 DISTNAME=		sylpheed-claws-${VERSION}
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
+PKGNAME-main=		${DISTNAME}p3
 THEMEFILE=		sylpheed-iconset-20040929
 CATEGORIES=		mail news x11
 
@@ -54,27 +55,41 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 FLAVORS=		compface pgpmime jpilot ldap
 FLAVOR?=
 
-MULTI_PACKAGES=		-dillo -docs -imageviewer -spamassassin -themes \
+MULTI_PACKAGES=		-main -dillo -docs -imageviewer -spamassassin -themes \
 			-trayicon
 
-FULLPKGNAME-docs=	sylpheed-claws-docs-${VERSION}p0
-FULLPKGNAME-themes=	sylpheed-claws-themes-${VERSION}p0
-.for i in ${MULTI_PACKAGES}
-FULLPKGNAME$i?=		sylpheed-claws${i}-${VERSION}p2
-.endfor
+FULLPKGNAME-dillo=	sylpheed-claws-dillo-${VERSION}p2
+FULLPKGNAME-docs=	sylpheed-claws-docs-${VERSION}p2
+FULLPKGNAME-imageviewer=sylpheed-claws-imageviewer-${VERSION}p2
+FULLPKGNAME-spamassassin=sylpheed-claws-spamassassin-${VERSION}p2
+FULLPKGNAME-themes=	sylpheed-claws-themes-${VERSION}p2
+FULLPKGNAME-trayicon=	sylpheed-claws-trayicon-${VERSION}p2
 
-SUBPACKAGE?=
+RUN_DEPENDS-dillo=	::${BUILD_PKGPATH} \
+			:dillo-*:www/dillo
+RUN_DEPENDS-docs=	::${BUILD_PKGPATH}
+RUN_DEPENDS-imageviewer=::${BUILD_PKGPATH}
+RUN_DEPENDS-spamassassin=::${BUILD_PKGPATH} \
+			:p5-Mail-SpamAssassin-*:mail/p5-Mail-SpamAssassin
+RUN_DEPENDS-themes=	::${BUILD_PKGPATH}
+RUN_DEPENDS-trayicon=	::${BUILD_PKGPATH}
 
-.if !defined(PACKAGING) || empty(SUBPACKAGE)
-LIB_DEPENDS+=		startup-notification-1::devel/startup-notification
-.endif
+LIB_DEPENDS-main=	${LIB_DEPENDS} \
+			startup-notification-1::devel/startup-notification
+LIB_DEPENDS-docs=
+LIB_DEPENDS-themes=
+
+PKG_ARCH-themes=	*
+PKG_ARCH-docs=		*
+
+WANTLIB-main=		${WANTLIB} ICE SM c pthread gthread-2.0
+WANTLIB-themes=
+WANTLIB-docs=
 
 .if ${FLAVOR:L:Mcompface}
 PERMIT_PACKAGE_CDROM=   "No Fee"
 PERMIT_DISTFILES_CDROM= "No Fee"
-.  if !defined(PACKAGING) || empty(SUBPACKAGE)
 LIB_DEPENDS+=		compface.>=1::mail/faces
-.  endif
 CONFIGURE_ARGS+=	--enable-compface
 .else
 CONFIGURE_ARGS+=	--disable-compface
@@ -82,64 +97,22 @@ CONFIGURE_ARGS+=	--disable-compface
 
 .if ${FLAVOR:L:Mpgpmime}
 BROKEN=			Does not work with current gpgme version
-.  if !defined(PACKAGING) || empty(SUBPACKAGE)
 LIB_DEPENDS+=		gpgme.>=4::security/gpgme
-.  endif
 CONFIGURE_ARGS+=	--enable-pgpmime-plugin
 .else
 CONFIGURE_ARGS+=	--disable-pgpmime-plugin
 .endif
 
 .if ${FLAVOR:L:Mjpilot}
-.  if !defined(PACKAGING) || empty(SUBPACKAGE)
 LIB_DEPENDS+=		pisock.>=4::comms/pilot-link
 WANTLIB+=		ncurses readline
-.  endif
 RUN_DEPENDS+=		:jpilot-*:comms/jpilot
 CONFIGURE_ARGS+= 	--enable-jpilot
 .endif
 
 .if ${FLAVOR:L:Mldap}
-.  if !defined(PACKAGING) || empty(SUBPACKAGE)
 LIB_DEPENDS+=		ldap.>=2,lber.>=2:openldap-client-*:databases/openldap
-.  endif
 CONFIGURE_ARGS+=	--enable-ldap
-.endif
-
-.if empty(SUBPACKAGE)
-WANTLIB+=		ICE SM c pthread gthread-2.0
-.endif
-
-.if defined(PACKAGING) && !empty(SUBPACKAGE)
-RUN_DEPENDS=            ::mail/sylpheed-claws
-.endif
-
-.if !defined(PACKAGING) || ${SUBPACKAGE} == "-dillo"
-RUN_DEPENDS+=		:dillo-*:www/dillo
-.endif
-
-.if !defined(PACKAGING) || ${SUBPACKAGE} == "-imageviewer"
-.endif
-
-.if !defined(PACKAGING) || ${SUBPACKAGE} == "-spamassassin"
-RUN_DEPENDS+=		:p5-Mail-SpamAssassin-*:mail/p5-Mail-SpamAssassin
-.endif
-
-.if !defined(PACKAGING) || ${SUBPACKAGE} == "-trayicon"
-.endif
-
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-themes"
-PKG_ARCH=		*
-LIB_DEPENDS=
-WANTLIB=
-MODULES=
-.endif
-
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
-PKG_ARCH=		*
-LIB_DEPENDS=
-WANTLIB=
-MODULES=
 .endif
 
 FILES=		OOo2sylpheed.pl calypso_convert.pl convert_mbox.pl  \
@@ -158,7 +131,6 @@ THEMES=		Crystal Everaldo_Kids Gnomeria Gorillaws \
 		SylZilla Sylpholution XeNtish achileus-noname \
 		black blue_anarchy mongrel mongrel2 mozilla orbit-claws \
 		stw tml02c tom_2.1.1
-
 
 DATADIR=	${PREFIX}/share/sylpheed-claws
 DOCSDIR=	${PREFIX}/share/doc/sylpheed-claws
