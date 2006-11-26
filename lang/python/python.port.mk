@@ -1,22 +1,23 @@
-# $OpenBSD: python.port.mk,v 1.13 2006/09/26 15:27:02 djm Exp $
+# $OpenBSD: python.port.mk,v 1.14 2006/11/26 10:16:22 steven Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
 
 MODPY_VERSION?=		2.4
 
+MODPY_RUN_DEPENDS=	:python-${MODPY_VERSION}*:lang/python/${MODPY_VERSION}
 _MODPY_BUILD_DEPENDS=	:python-${MODPY_VERSION}*:lang/python/${MODPY_VERSION}
 
 .if ${NO_BUILD:L} == "no"
 BUILD_DEPENDS+=		${_MODPY_BUILD_DEPENDS}
 .endif
-RUN_DEPENDS+=		${_MODPY_BUILD_DEPENDS}
+RUN_DEPENDS+=		${MODPY_RUN_DEPENDS}
 
 # The setuptools module provides a package locator (site.py) that is
 # required at runtime for the pkg_resources stuff to work
 .if defined(MODPY_SETUPTOOLS) && ${MODPY_SETUPTOOLS:U} == YES
 MODPY_SETUPUTILS_DEPEND?=:py-setuptools-*:devel/py-setuptools
-RUN_DEPENDS+=		${MODPY_SETUPUTILS_DEPEND}
+MODPY_RUN_DEPENDS+=	${MODPY_SETUPUTILS_DEPEND}
 BUILD_DEPENDS+=		${MODPY_SETUPUTILS_DEPEND}
 .endif
 
