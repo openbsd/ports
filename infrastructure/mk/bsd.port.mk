@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.839 2006/11/26 19:46:16 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.840 2006/11/26 20:02:28 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -730,9 +730,9 @@ PLIST${SUBPACKAGE}=		${PKGDIR}/PLIST${SUBPACKAGE}
 
 # Likewise for DESCR/MESSAGE/COMMENT
 .if defined(COMMENT${SUBPACKAGE}${FLAVOR_EXT})
-_COMMENT=${COMMENT${SUBPACKAGE}${FLAVOR_EXT}}
+_COMMENT${SUBPACKAGE}=${COMMENT${SUBPACKAGE}${FLAVOR_EXT}}
 .elif defined(COMMENT${SUBPACKAGE})
-_COMMENT=${COMMENT${SUBPACKAGE}}
+_COMMENT${SUBPACKAGE}=${COMMENT${SUBPACKAGE}}
 .endif
 
 .if exists(${PKGDIR}/MESSAGE${SUBPACKAGE})
@@ -774,7 +774,7 @@ PKG_ARGS+=-A'${PKG_ARCH${SUBPACKAGE}}'
 .if ${LOCALBASE} != "/usr/local"
 PKG_ARGS+=-L${LOCALBASE}
 .endif
-.if !defined(_COMMENT)
+.if !defined(_COMMENT${SUBPACKAGE})
 ERRORS+="Fatal: Missing comment."
 .endif
 
@@ -1195,6 +1195,18 @@ _BUILD_DEP=		${_BUILD_DEP2:C/[^:]*://}
 _RUN_DEP= 		${_RUN_DEP2:C/[^:]*://}
 _REGRESS_DEP=	${_REGRESS_DEP2:C/[^:]*://}
 
+.if defined(MULTI_PACKAGES)
+.  for _S in ${MULTI_PACKAGES}
+_BUILD_DEP3${_S}=${_BUILD_DEP3}
+_RUN_DEP3${_S}=	 	${RUN_DEPENDS${_S}:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+.    if ${NO_SHARED_LIBS:L} != "yes"
+_LIB_DEP3${_S}=		${LIB_DEPENDS${_S}}
+.    else
+_LIB_DEP3${_S}=
+.    endif
+.  endfor
+.endif
+
 README_NAME?=	${TEMPLATES}/README.port
 
 REORDER_DEPENDENCIES?=
@@ -1321,7 +1333,7 @@ ${_SYSTRACE_COOKIE}: ${_WRKDIR_COOKIE}
 
 # create the packing stuff from source
 ${WRKPKG}/COMMENT${SUBPACKAGE}:
-	@echo ${_COMMENT} >$@
+	@echo ${_COMMENT${SUBPACKAGE}} >$@
 
 ${WRKPKG}/DESCR${SUBPACKAGE}: ${DESCR${SUBPACKAGE}}
 	@${_SED_SUBST} <$? >$@.tmp && mv -f $@.tmp $@
@@ -2281,7 +2293,7 @@ subdescribe:
 .else
 	@echo -n "${PREFIX${SUBPACKAGE}}|"
 .endif
-	@echo -n ${_COMMENT}"|"; \
+	@echo -n ${_COMMENT${SUBPACKAGE}}"|"; \
 	if [ -f ${DESCR${SUBPACKAGE}} ]; then \
 		echo -n "${DESCR${SUBPACKAGE}:S,^${PORTSDIR}/,,}|"; \
 	else \
@@ -2289,7 +2301,8 @@ subdescribe:
 	fi; \
 	echo -n "${MAINTAINER}|${CATEGORIES${SUBPACKAGE}}|"
 .for _d in LIB BUILD RUN
-	@echo -n '${_${_d}_DEP3}'| tr '\040' '\012'|sort -u|tr '\012' '\040' | sed -e 's, $$,|,'
+	@echo -n '${_${_d}_DEP3${SUBPACKAGE}:C/ +/ /g}'| tr '\040' '\012'|sort -u|tr '\012' '\040' | sed -e 's, $$,,'
+	@echo -n '|'
 .endfor
 	@case "${ONLY_FOR_ARCHS}" in \
 	 "") case "${NOT_FOR_ARCHS}" in \
@@ -2328,7 +2341,7 @@ _readme:
 	@cd ${.CURDIR} && exec ${MAKE} README_NAME=${README_NAME} ${FULLPKGNAME${SUBPACKAGE}}.html
 
 ${FULLPKGNAME${SUBPACKAGE}}.html:
-	@echo ${_COMMENT} | ${HTMLIFY} >$@.tmp-comment
+	@echo ${_COMMENT${SUBPACKAGE}} | ${HTMLIFY} >$@.tmp-comment
 	@echo ${FULLPKGNAME${SUBPACKAGE}} | ${HTMLIFY} > $@.tmp3
 .if defined(HOMEPAGE)
 	@echo 'See <a href="${HOMEPAGE}">${HOMEPAGE}</a> for details.' >$@.tmp4
@@ -2422,7 +2435,7 @@ _license-check:
 ${_i:L}-depends-list:
 .  if !empty(_${_i}_DEP3)
 	@echo -n "This port requires \""
-	@echo -n '${_${_i}_DEP3}'| tr '\040' '\012'|sort -u|tr '\012' '\040' | sed -e 's, $$,,'
+	@echo -n '${_${_i}_DEP3:C/ +/ /g}'| tr '\040' '\012'|sort -u|tr '\012' '\040' | sed -e 's, $$,,'
 	@echo "\" for ${_i:L}."
 .  endif
 .endfor
