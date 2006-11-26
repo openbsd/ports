@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/11/11 17:17:43 sturm Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2006/11/26 01:29:13 espie Exp $
+@pkgpath net/nagios/plugins
 libexec/nagios/
 libexec/nagios/check_apt
 libexec/nagios/check_by_ssh

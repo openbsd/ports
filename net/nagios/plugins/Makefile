@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2006/11/20 21:18:15 bernd Exp $
+# $OpenBSD: Makefile,v 1.15 2006/11/26 01:29:12 espie Exp $
 
-COMMENT=	"nagios base plugins"
+COMMENT-main=	"nagios base plugins"
 COMMENT-fping=	"fping plugin"
 COMMENT-game=	"gameserver plugin"
 COMMENT-ldap=	"ldap plugin"
@@ -12,7 +12,7 @@ COMMENT-snmp=	"plugins using snmp"
 
 V=		1.4.5
 DISTNAME=	nagios-plugins-${V}
-PKGNAME=	nagios-plugins-${V}
+PKGNAME-main=	nagios-plugins-${V}p0
 PKGNAME-fping=	nagios-plugins-fping-${V}
 PKGNAME-game=	nagios-plugins-game-${V}
 PKGNAME-ldap=	nagios-plugins-ldap-${V}
@@ -57,14 +57,10 @@ CONFIGURE_ARGS+=--libexecdir=${PREFIX}/libexec/nagios \
 PSEUDO_FLAVORS=	no_db no_ntp no_samba no_snmp
 FLAVOR?=
 
-MULTI_PACKAGES=	-fping -game
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -fping -game
 
 .if ! ${FLAVOR:L:Mno_db}
 MULTI_PACKAGES+=-ldap -mysql -pgsql
-BUILD_DEPENDS+=	:mysql-client-*:databases/mysql \
-		:openldap-client-*:databases/openldap \
-		:postgresql-client-*:databases/postgresql
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} \
 		--with-pgsql=${LOCALBASE}
 CFLAGS+=	-DLDAP_DEPRECATED
@@ -88,36 +84,39 @@ BUILD_DEPENDS+=	::net/p5-Net-SNMP \
 		::net/net-snmp
 .endif
 
-.if defined(PACKAGING)
-WANTLIB=	c crypto ssl
-.  if ${SUBPACKAGE} == "-fping"
-RUN_DEPENDS=	::net/fping
-.  elif ${SUBPACKAGE} == "-game"
-RUN_DEPENDS=	::games/qstat
-.  elif ${SUBPACKAGE} == "-ldap"
-WANTLIB+=	sasl2 asn1 com_err gssapi krb5
-LIB_DEPENDS=	lber,ldap:openldap-client-*:databases/openldap
-.  elif ${SUBPACKAGE} == "-mysql"
-WANTLIB+=	m z
-LIB_DEPENDS=	mysqlclient:mysql-client-*:databases/mysql
-.  elif ${SUBPACKAGE} == "-ntp"
-WANTLIB+=	m
-RUN_DEPENDS=	::net/ntp
-.  elif ${SUBPACKAGE} == "-pgsql"
-WANTLIB+=	crypto
-LIB_DEPENDS=	pq:postgresql-client-*:databases/postgresql
-.  elif ${SUBPACKAGE} == "-samba"
-WANTLIB=
-RUN_DEPENDS=	::net/samba
-.  elif ${SUBPACKAGE} == "-snmp"
-RUN_DEPENDS=	::net/net-snmp \
-		::net/p5-Net-SNMP
-.  else
-WANTLIB+=	m
-.  endif
-.else
+WANTLIB=		c crypto ssl
+
+LIB_DEPENDS-fping=
+RUN_DEPENDS-fping=	::net/fping
+
+LIB_DEPENDS-game=
+RUN_DEPENDS-game=	::games/qstat
+
+WANTLIB-ldap=		${WANTLIB} sasl2 asn1 com_err gssapi krb5
+LIB_DEPENDS-ldap=	lber,ldap:openldap-client-*:databases/openldap
+
+WANTLIB-mysql=		${WANTLIB} m z
+LIB_DEPENDS-mysql=	mysqlclient:mysql-client-*:databases/mysql
+
+LIB_DEPENDS-ntp=
+WANTLIB-ntp=		${WANTLIB} m
+RUN_DEPENDS-ntp=	::net/ntp
+
+WANTLIB-pgsql=		${WANTLIB} crypto
+LIB_DEPENDS-pgsql=	pq:postgresql-client-*:databases/postgresql
+
+LIB_DEPENDS-samba=
+WANTLIB-samba=
+RUN_DEPENDS-samba=	::net/samba
+
+LIB_DEPENDS-snmp=
+RUN_DEPENDS-snmp=	::net/net-snmp \
+			::net/p5-Net-SNMP
+
+WANTLIB-main=		${WANTLIB} m
+LIB_DEPENDS-main=
+
 MODULES=	gettext
-.endif
 
 # many broken tests, but...
 REGRESS_IS_INTERACTIVE=Yes
