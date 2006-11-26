@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.836 2006/11/26 17:36:07 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.837 2006/11/26 17:45:59 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -85,7 +85,7 @@ CONFIGURE_STYLE USE_LIBTOOL SEPARATE_BUILD \
 SHARED_LIBS USE_MOTIF PACKAGES MASTER_SITES \
 MASTER_SITES0 MASTER_SITES1 MASTER_SITES2 MASTER_SITES3 MASTER_SITES4 \
 MASTER_SITES5 MASTER_SITES6 MASTER_SITES7 MASTER_SITES8 MASTER_SITES9 \
-MAINTAINER SUBPACKAGE PACKAGING SUPDISTFILES \
+MAINTAINER SUBPACKAGE SUPDISTFILES \
 AUTOCONF_VERSION AUTOMAKE_VERSION CONFIGURE_ARGS
 # and stuff needing to be MULTI_PACKAGE'd
 _ALL_VARIABLES_INDEXED?=COMMENT FULLPKGNAME PKGNAME PKG_ARCH \
@@ -1269,9 +1269,6 @@ ${_CACHE_REPO}/${_PKGFILE}:
 	fi
 
 ${_PACKAGE_COOKIE}:
-.if !defined(PACKAGING)
-	@echo "Error: can't make $@ without PACKAGING set"; exit 1
-.endif
 	@mkdir -p ${@D}
 .if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING)
 	@f=${_CACHE_REPO}/${_PKGFILE}; \
@@ -1279,7 +1276,7 @@ ${_PACKAGE_COOKIE}:
 		{ ln $$f $@ 2>/dev/null || cp -p $$f $@ ; } || \
 		cd ${.CURDIR} && ${MAKE} _TRIED_FETCHING=Yes $@
 .else
-	@cd ${.CURDIR} && unset PACKAGING || true && exec ${MAKE} ${_PACKAGE_COOKIE_DEPS} ${_PKG_PREREQ}
+	@cd ${.CURDIR} && exec ${MAKE} ${_PACKAGE_COOKIE_DEPS} ${_PKG_PREREQ}
 .  if target(pre-package)
 	@cd ${.CURDIR} && exec ${MAKE} pre-package
 .  endif
@@ -1390,7 +1387,7 @@ _print-packagename:
 .for _i in ${_DEPLIST}
 .  if !target(${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g})
 ${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g}: ${_WRKDIR_COOKIE}
-	@unset PACKAGING DEPENDS_TARGET _MASTER WRKDIR|| true; \
+	@unset DEPENDS_TARGET _MASTER WRKDIR|| true; \
 	echo '${_i}'|{ \
 		IFS=:; read pkg subdir target; \
 		extra_msg="(DEPENDS ${_i})"; \
@@ -1651,7 +1648,7 @@ _do_libs_too=NO_SHARED_LIBS=Yes
 _extra_prefixes=
 .if defined(MULTI_PACKAGES)
 .  for _s in ${MULTI_PACKAGES}
-_extra_prefixes+=PREFIX${_s}=`cd ${.CURDIR} && SUBPACKAGE=${_s} PACKAGING=${_s} ${MAKE} show=PREFIX${_s}`
+_extra_prefixes+=PREFIX${_s}=`cd ${.CURDIR} && SUBPACKAGE=${_s} ${MAKE} show=PREFIX${_s}`
 .  endfor
 .endif
 
@@ -1704,7 +1701,7 @@ ${_t}: _internal-${_t}
 .endfor
 
 subpackage:
-	@${_DO_LOCK}; cd ${.CURDIR} && PACKAGING='${SUBPACKAGE}' ${MAKE} _internal-subpackage
+	@${_DO_LOCK}; cd ${.CURDIR} && ${MAKE} _internal-subpackage
 
 # Redirectors for top-level targets involving subpackages
 .for _t _r in _internal-package-only _internal-subpackage \
@@ -1716,10 +1713,10 @@ ${_t}:
 .  if defined(MULTI_PACKAGES)
 .    for _s in ${MULTI_PACKAGES}
 	@${ECHO_MSG} "===> ${PKGPATH}${FLAVOR_EXT:S/-/,/g},${_s}"
-	@cd ${.CURDIR} && SUBPACKAGE='${_s}' PACKAGING='${_s}' exec ${MAKE} ${_r}
+	@cd ${.CURDIR} && SUBPACKAGE='${_s}' exec ${MAKE} ${_r}
 .    endfor
 .  else
-	@cd ${.CURDIR} && SUBPACKAGE='' PACKAGING='' exec ${MAKE} ${_r}
+	@cd ${.CURDIR} && exec ${MAKE} ${_r}
 .  endif
 .endfor
 
@@ -1727,10 +1724,10 @@ ${_t}:
 _internal-package:
 .if defined(MULTI_PACKAGES)
 .  for _s in ${MULTI_PACKAGES}
-	@cd ${.CURDIR} && SUBPACKAGE='${_s}' PACKAGING='${_s}' exec ${MAKE} _internal-subpackage 
+	@cd ${.CURDIR} && SUBPACKAGE='${_s}' exec ${MAKE} _internal-subpackage 
 .  endfor
 .else
-	@cd ${.CURDIR} && SUBPACKAGE='' PACKAGING='' exec ${MAKE} _internal-subpackage
+	@cd ${.CURDIR} && exec ${MAKE} _internal-subpackage
 .endif
 .if ${BULK_${PKGPATH}:L} == "yes"
 	@cd ${.CURDIR} && exec ${MAKE} ${_BULK_COOKIE}
@@ -2025,7 +2022,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 
 ${_INSTALL_COOKIE}:
 	@cd ${.CURDIR} && exec ${MAKE} package
-	@cd ${.CURDIR} && DEPENDS_TARGET=install PACKAGING='${SUBPACKAGE}' exec ${MAKE} _internal-run-depends _internal-runlib-depends _internal-runwantlib-depends
+	@cd ${.CURDIR} && DEPENDS_TARGET=install exec ${MAKE} _internal-run-depends _internal-runlib-depends _internal-runwantlib-depends
 	@${ECHO_MSG} "===>  Installing ${FULLPKGNAME${SUBPACKAGE}} from ${_PKG_REPO}"
 .for _m in ${MODULES}
 .  if defined(MOD${_m:U}_pre_install)
@@ -2134,7 +2131,7 @@ ${PACKAGE_REPOSITORY}/${_l}/${_PKGFILE}: ${PACKAGE_REPOSITORY}/${_o}/${_PKGFILE}
 
 _internal-clean:
 .if ${_clean:L:Mdepends} && ${_CLEANDEPENDS:L} == "yes"
-	@PACKAGING='${SUBPACKAGE}' ${MAKE} all-dir-depends|tsort -r|${_zap_last_line}|while read subdir; do \
+	@${MAKE} all-dir-depends|tsort -r|${_zap_last_line}|while read subdir; do \
 		${_flavor_fragment}; \
 		eval $$toset ${MAKE} _CLEANDEPENDS=No clean; \
 	done
@@ -2175,10 +2172,10 @@ _internal-clean:
 .if ${_clean:L:Mpackages} || ${_clean:L:Mpackage} && ${_clean:L:Msub}
 .  if defined(MULTI_PACKAGES)
 .    for _s in ${MULTI_PACKAGES}
-	@cd ${.CURDIR} && PACKAGING='${_s}' SUBPACKAGE='${_s}' exec ${MAKE} clean=package
+	@cd ${.CURDIR} && SUBPACKAGE='${_s}' exec ${MAKE} clean=package
 .    endfor
 .  else
-	@cd ${.CURDIR} && PACKAGING='' SUBPACKAGE='' exec ${MAKE} clean=package
+	@cd ${.CURDIR} && exec ${MAKE} clean=package
 .  endif
 .elif ${_clean:L:Mpackage}
 	rm -f ${_PACKAGE_COOKIES}
@@ -2445,11 +2442,11 @@ ${_i:L}-depends-list:
 print-package-signature:
 	@echo -n ${FULLPKGNAME${SUBPACKAGE}}
 .if !empty(_DEPRUNLIBS)
-	@cd ${.CURDIR} && PACKAGING='${SUBPACKAGE}' LIST_LIBS=`${MAKE} _list-port-libs` ${MAKE} _print-package-signature-lib _print-package-signature-run| \
+	@cd ${.CURDIR} && LIST_LIBS=`${MAKE} _list-port-libs` ${MAKE} _print-package-signature-lib _print-package-signature-run| \
 		sort -u| \
 		while read i; do echo -n ",$$i"; done
 .else
-	@cd ${.CURDIR} && PACKAGING='${SUBPACKAGE}' ${MAKE} _print-package-signature-run | \
+	@cd ${.CURDIR} && ${MAKE} _print-package-signature-run | \
 		sort -u| \
 		while read i; do echo -n ",$$i"; done
 .endif
@@ -2574,7 +2571,7 @@ run-dir-depends:
 	@${_depfile_fragment}; \
 	if ! fgrep -q -e "r|${FULLPKGPATH}|" -e "a|${FULLPKGPATH}" $${_DEPENDS_FILE}; then \
 		echo "r|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
-		self=${FULLPKGPATH} PACKAGING='${SUBPACKAGE}' ${MAKE} _recurse-run-dir-depends; \
+		self=${FULLPKGPATH} ${MAKE} _recurse-run-dir-depends; \
 	fi
 .else
 	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
@@ -2600,7 +2597,7 @@ regress-dir-depends:
 	@${_depfile_fragment}; \
 	if ! fgrep -q -e "R|${FULLPKGPATH}|" $${_DEPENDS_FILE}; then \
 		echo "R|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
-		self=${FULLPKGPATH} PACKAGING='${SUBPACKAGE}' ${MAKE} _recurse-regress-dir-depends; \
+		self=${FULLPKGPATH} ${MAKE} _recurse-regress-dir-depends; \
 	fi
 .else
 	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
