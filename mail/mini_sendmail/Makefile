@@ -1,9 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2006/06/02 03:44:11 aanriot Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/26 09:37:38 steven Exp $
 
-COMMENT=	"accept email on behalf of real sendmail"
+COMMENT-main=	"accept email on behalf of real sendmail"
 COMMENT-chroot=	"static mini_sendmail for chrooted apache"
-DISTNAME=	mini_sendmail-1.3.6
-PKGNAME-chroot=	mini_sendmail-chroot-1.3.6
+
+V=		1.3.6
+DISTNAME=	mini_sendmail-${V}
+PKGNAME=	mini_sendmail-${V}p0
+PKGNAME-main=	mini_sendmail-${V}p0
+PKGNAME-chroot=	mini_sendmail-chroot-${V}
 CATEGORIES=	mail www
 MASTER_SITES=	${HOMEPAGE}
 
@@ -19,14 +23,10 @@ NO_REGRESS=	Yes
 
 MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 
-MULTI_PACKAGES=	-chroot
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -chroot
 
-.if defined(PACKAGING) && !empty(SUBPACKAGE)
-PREFIX=	/var/www
-.else
-WANTLIB=	c
-.endif
+PREFIX-chroot=	/var/www
+WANTLIB-main=	c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mini_sendmail ${PREFIX}/bin
