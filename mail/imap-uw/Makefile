@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.47 2005/10/07 12:22:07 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.48 2006/11/26 10:09:54 steven Exp $
 
-COMMENT=		"University of Washington IMAP4rev1/POP2/POP3 mail servers"
+COMMENT-main=		"University of Washington IMAP4rev1/POP2/POP3 mail servers"
 COMMENT-mailutil=	"University of Washington IMAP4rev1/POP2/POP3 mail utility"
 
 VERSION=		2004g
 DISTNAME=		imap-2004g
 
-PKGNAME=		imap-uw-${VERSION}
+PKGNAME=		imap-uw-${VERSION}p0
+PKGNAME-main=		imap-uw-${VERSION}p0
 PKGNAME-mailutil=	mailutil-uw-${VERSION}
 CATEGORIES=		mail
 
@@ -28,8 +29,7 @@ WANTLIB=		asn1 c com_err crypto des gssapi kafs krb5 ssl
 ALL_TARGET=	bso
 MAKE_FLAGS=	EXTRACFLAGS="${CFLAGS}" EXTRAAUTHENTICATORS="gss" IP=6
 
-MULTI_PACKAGES=	-mailutil
-SUBPACKAGE?=
+MULTI_PACKAGES=	-main -mailutil
 
 FLAVORS=	plaintext
 FLAVOR?=
