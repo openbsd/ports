@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2006/11/25 18:35:45 espie Exp $
+# $OpenBSD: Makefile,v 1.68 2006/11/26 09:10:43 sturm Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT-main=		"C++ X11 GUI toolkit"
@@ -148,7 +148,7 @@ LIB_DEPENDS-postgresql=	${LIB_DEPENDS} \
 
 
 LIB_DEPENDS-examples=	${LIB_DEPENDS} \
-			qt-mt.>=3::${BUILD_PKGPATH} \
+			qt-mt.>=3::${BUILD_PKGPATH}
 WANTLIB-examples=	${WANTLIB} pthread stdc++ c
 
 
