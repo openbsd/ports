@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2006/11/25 12:40:14 robert Exp $
+# $OpenBSD: Makefile,v 1.36 2006/11/26 20:59:07 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -46,7 +46,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MULTI_PACKAGES=		-main -kde -java
 
 LANGS=			bg br-pt de es fi fr hu it ja ko \
-			lt nl pl ru sl
+			lt lv nl pl ru sl
 
 .for l in ${LANGS}
 MULTI_PACKAGES+=	-i18n-$l
@@ -159,7 +159,6 @@ CONFIGURE_ARGS+=	--enable-symbols
 MAKE_ENV+=	envcflags="${CFLAGS}"
 
 # kludge
-OOARCH=		OPENBSDGCCI
 TCSH=		${LOCALBASE}/bin/tcsh
 
 .if ${FLAVOR:L:Mcleanobj}
