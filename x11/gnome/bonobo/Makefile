@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2006/09/18 09:40:31 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2006/11/26 11:10:07 espie Exp $
 
-COMMENT=		"architecture for creating reusable software components"
+COMMENT-main=		"architecture for creating reusable software components"
 COMMENT-docs=		"documentation for the bonobo architecture"
 
 VERSION=		1.0.22
 DISTNAME=		bonobo-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME-main=		${DISTNAME}p1
 PKGNAME-docs=		bonobo-docs-${VERSION}p0
 SHARED_LIBS=		bonobo-print	2.1 \
 			bonobo		2.1 \
@@ -23,12 +23,13 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/bonobo/1.0/}
 EXTRACT_SUFX=		.tar.bz2
 
-MULTI_PACKAGES=		-docs
-SUBPACKAGE?=		
+MULTI_PACKAGES=		-main -docs
 
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
-PKG_ARCH=		*
-.else
+PKG_ARCH-docs=		*
+WANTLIB-docs=
+LIB_DEPENDS-docs=
+RUN_DEPENDS-docs=
+
 WANTLIB=		ICE IIOP ORBit ORBitCosNaming ORBitutil SM X11 Xext \
 			Xi audiofile c esd freetype gdk gdk_imlib gdk_pixbuf \
 			glib gmodule gtk jpeg m png popt tiff ungif wrap xml z
@@ -36,7 +37,6 @@ MODULES=		devel/gettext
 LIB_DEPENDS=		art_lgpl.>=4,gnome.>=36,gnomesupport,gnomeui.>=46::x11/gnome/libs \
 			oaf::x11/gnome/oaf \
 			gnomeprint.>=16::x11/gnome/print
-.endif
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
