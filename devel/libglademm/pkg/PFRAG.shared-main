@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/26 00:49:22 steven Exp $
+@lib lib/libglademm-2.4.so.${LIBglademm-2.4_VERSION}
