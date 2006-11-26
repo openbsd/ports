@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/26 00:22:16 espie Exp $
+@lib lib/libgsf-1.so.${LIBgsf-1_VERSION}
