@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2005/06/29 21:15:24 sturm Exp $
---- src/Makefile.in.orig	Wed Jun 29 22:55:19 2005
-+++ src/Makefile.in	Wed Jun 29 22:59:37 2005
-@@ -501,7 +501,7 @@ uninstall-am: uninstall-info-am uninstal
+$OpenBSD: patch-src_Makefile_in,v 1.2 2006/11/27 11:16:50 msf Exp $
+--- src/Makefile.in.orig	Mon Jun 19 01:29:03 2006
++++ src/Makefile.in	Sat Nov 25 23:57:50 2006
+@@ -506,7 +506,7 @@ uninstall-am: uninstall-info-am uninstal
  # count BUILDs - each time increment by one and define the
  # C macro BUILDNO. bind it to a file everybody includes (log.h)
  #

@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/06/29 21:15:24 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/27 11:16:50 msf Exp $
 
 COMMENT=	"proxy/masquerading daemon for the SIP protocol"
 
-DISTNAME=	siproxd-0.5.11
+DISTNAME=	siproxd-0.5.13
 CATEGORIES=	telephony net
 
 HOMEPAGE=	http://siproxd.sourceforge.net/
 
-MAINTAINER=	Markus Friedl <markus@openbsd.org> 
+MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

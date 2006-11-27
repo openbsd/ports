@@ -1,8 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/06/29 21:15:24 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/11/27 11:16:50 msf Exp $
+@newgroup _siproxd:574
+@newuser _siproxd:574:574:daemon:SIP proxy:/var/empty:/sbin/nologin
 sbin/siproxd
 share/doc/siproxd/
 share/doc/siproxd/FAQ
 share/doc/siproxd/KNOWN_BUGS
 share/examples/siproxd/
 share/examples/siproxd/siproxd.conf.example
+@sample ${SYSCONFDIR}/siproxd.conf
 share/examples/siproxd/siproxd_passwd.cfg
+@sample ${SYSCONFDIR}/siproxd_passwd.cfg
+@owner root
+@group _siproxd
+@mode 0770
+@sample /var/siproxd/
