@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.253 2006/11/18 16:51:27 alek Exp $
+# $OpenBSD: Makefile,v 1.254 2006/11/27 19:24:18 jasper Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -82,6 +82,7 @@
      SUBDIR += itk
      SUBDIR += iwidgets
      SUBDIR += jmk-fonts
+     SUBDIR += jwm
      SUBDIR += kde
      SUBDIR += kdirstat
      SUBDIR += kmplayer
