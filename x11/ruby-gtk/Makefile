@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2006/11/13 13:01:37 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2006/11/27 09:43:14 msf Exp $
 
 SHARED_ONLY=		Yes
 
@@ -30,7 +30,7 @@ LIB_DEPENDS+=	gtk.>=1.2,gdk.>=1.2::x11/gtk+ \
 NO_REGRESS=	Yes
 USE_X11=	Yes
 
-CONFIGURE_STYLE=	simple
+CONFIGURE_STYLE= ruby extconf
 
 DOC_DIR=	${MODRUBY_DOCDIR}/ruby-gtk/
 EXAMPLE_DIR=	${MODRUBY_EXAMPLEDIR}/ruby-gtk/

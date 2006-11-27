@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/21 17:31:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/27 09:43:14 msf Exp $
 
 SHARED_ONLY=		Yes
 
@@ -23,7 +23,7 @@ MODULES= 		lang/ruby
 LIB_DEPENDS=		db.>=4.2::databases/db/v4 \
 			ruby.>=1::lang/ruby
 
-CONFIGURE_STYLE=	simple
+CONFIGURE_STYLE=	ruby extconf
 CONFIGURE_ARGS=		--with-db-include="${PREFIX}/include/db4" \
 			--with-db-version=""
 

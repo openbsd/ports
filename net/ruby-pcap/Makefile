@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2006/10/20 11:16:18 bernd Exp $
+# $OpenBSD: Makefile,v 1.17 2006/11/27 09:43:14 msf Exp $
 
 SHARED_ONLY=		Yes
 
@@ -28,7 +28,7 @@ LIB_DEPENDS=		ruby.>=1.84::lang/ruby
 
 NO_REGRESS=	Yes
 
-CONFIGURE_STYLE=	simple
+CONFIGURE_STYLE=	ruby extconf
 
 WRKDIST=		${WRKDIR}/pcap
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/10/20 11:30:29 bernd Exp $
+# $OpenBSD: Makefile,v 1.10 2006/11/27 09:43:14 msf Exp $
 
 SHARED_ONLY=	Yes
 
@@ -27,7 +27,7 @@ RUN_DEPENDS=	:ruby-gtk->=0.31:x11/ruby-gtk
 WANTLIB=	c gmodule iconv intl gtk Xmu jpeg ungif \
 		Xext Xi m X11 glib z gdk tiff png
 
-CONFIGURE_STYLE= simple
+CONFIGURE_STYLE= ruby extconf
 INSTALL_TARGET=	site-install
 
 USE_X11=	Yes

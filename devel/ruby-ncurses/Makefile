@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/10/19 01:26:39 bernd Exp $
+# $OpenBSD: Makefile,v 1.11 2006/11/27 09:43:14 msf Exp $
 
 SHARED_ONLY=		Yes
 
@@ -27,7 +27,7 @@ MODULES=		lang/ruby
 
 LIB_DEPENDS=		ruby.>=1.84::lang/ruby
 
-CONFIGURE_STYLE=	simple
+CONFIGURE_STYLE=	ruby extconf
 
 INSTALL_TARGET=		site-install
 
