@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Sat Nov  4 22:08:36 2006
++++ src/Makefile.in	Mon Nov 27 15:34:01 2006
+@@ -31,7 +31,7 @@ $(EXE): $(OBJECTS)
+ 	$(CC) -o $(EXE) $(OBJECTS) $(LDFLAGS)
+ 
+ .c.o:
+-	$(CC) -c $(CFLAGS) $<
++	$(CC) -c $(CFLAGS) $?
+ 
+ clean:
+ 	rm -f $(OBJECTS) $(EXE) core

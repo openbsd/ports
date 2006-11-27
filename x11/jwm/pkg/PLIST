@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/27 19:22:33 jasper Exp $
+bin/jwm
+@man man/man1/jwm.1
+share/examples/jwm/
+share/examples/jwm/system.jwmrc
+@sample ${SYSCONFDIR}/system.jwmrc
