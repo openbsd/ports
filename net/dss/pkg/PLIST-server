@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/12/18 01:19:57 naddy Exp $
+@comment $OpenBSD: PLIST-server,v 1.1 2006/11/27 23:47:56 espie Exp $
+@pkgpath net/dss
 bin/qtpasswd
 bin/mp3broadcaster
 bin/playlistbroadcaster

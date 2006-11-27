@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2006/02/08 04:54:49 david Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/27 23:47:56 espie Exp $
 
 BROKEN=			"security issues"
 
-COMMENT=		"Darwin Streaming Server"
+COMMENT-server=		"Darwin Streaming Server"
 COMMENT-admin=		"Darwin Streaming Server, Admin Interface"
 COMMENT-examples=	"Darwin Streaming Server, Example Movies"
 COMMENT-proxy=		"Darwin Streaming Proxy"
@@ -13,7 +13,7 @@ DISTNAME=	DSS-4_1_3.src
 ONLY_FOR_ARCHS=		i386
 
 PKGNAME=		dss-${VERSION}
-FULLPKGNAME=		dss-server-${VERSION}
+FULLPKGNAME-server=	dss-server-${VERSION}p0
 PKGNAME-admin=		dss-admin-${VERSION}
 PKGNAME-examples=	dss-examples-${VERSION}
 PKGNAME-proxy=		dss-proxy-${VERSION}
@@ -30,12 +30,9 @@ PERMIT_DISTFILES_FTP=	No
 
 HOMEPAGE=		http://developer.apple.com/darwin/projects/streaming/
 
-MULTI_PACKAGES=		-admin -examples -proxy
-SUBPACKAGE?=
+MULTI_PACKAGES=		-server -admin -examples -proxy
 
-.if ${SUBPACKAGE} == "-admin"
-RUN_DEPENDS=		:p5-Net-SSLeay->=1.03:security/p5-Net_SSLeay
-.endif
+RUN_DEPENDS-admin=	:p5-Net-SSLeay->=1.03:security/p5-Net_SSLeay
 
 WRKTMP=		${WRKDIR}/tmp
 
