@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.9 2006/11/25 10:03:32 msf Exp $
+# $OpenBSD: ruby.port.mk,v 1.10 2006/11/27 09:36:14 msf Exp $
 
 # ruby module
 
@@ -18,12 +18,12 @@ MODRUBY_DOCDIR=		${PREFIX}/share/doc/ruby
 MODRUBY_EXAMPLEDIR=	${PREFIX}/share/examples/ruby
 MODRUBY_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
 
-CONFIGURE_STYLE?=	simple
-CONFIGURE_SCRIPT?=	${LOCALBASE}/bin/ruby extconf.rb
-
 SUBST_VARS+=		MODRUBY_REV MODRUBY_ARCH
 
-.if ${CONFIGURE_STYLE:L:Mgem}
+.if ${CONFIGURE_STYLE:L:Mextconf}
+CONFIGURE_STYLE=	simple
+CONFIGURE_SCRIPT=	${LOCALBASE}/bin/ruby extconf.rb
+.elif ${CONFIGURE_STYLE:L:Mgem}
 EXTRACT_SUFX=	.gem
 
 BUILD_DEPENDS+=	::devel/ruby-gems
