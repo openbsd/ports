@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.39 2006/11/13 12:51:15 steven Exp $
+# $OpenBSD: Makefile,v 1.40 2006/11/27 17:16:57 jasper Exp $
 
 COMMENT=	"graphical frontend for LaTeX (nearly WYSIWYG)"
 
-DISTNAME=	lyx-1.4.2
+DISTNAME=	lyx-1.4.3
 CATEGORIES=	print
 
 HOMEPAGE=	http://www.lyx.org/
 
 EXTRACT_SUFX?=	.tar.bz2
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
-		ftp://ftp.sdsc.edu/pub/other/lyx/stable/ \
 		ftp://ftp.lip6.fr/pub/lyx/stable/ \
 		ftp://ftp.chg.ru/pub/TeX/lyx/stable/
 
@@ -65,8 +64,6 @@ CONFIGURE_ENV+=	PYTHON=${MODPY_BIN}
 # Necessary because of compilation error.  See:
 # http://www.boost.org/libs/graph/doc/trouble_shooting.html
 CXXFLAGS+=	-ftemplate-depth-30
-
-NO_REGRESS=	Yes
 
 INSTALL_TARGET=	install-strip
 

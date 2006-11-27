@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.14 2006/07/16 18:02:14 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.15 2006/11/27 17:16:57 jasper Exp $
 bin/lyx
 bin/lyxclient
 bin/tex2lyx
 @man man/man1/lyx.1
 @man man/man1/lyxclient.1
 @man man/man1/tex2lyx.1
+share/locale/cs/LC_MESSAGES/lyx.mo
 share/locale/da/LC_MESSAGES/lyx.mo
 share/locale/de/LC_MESSAGES/lyx.mo
 share/locale/es/LC_MESSAGES/lyx.mo
@@ -46,6 +47,8 @@ share/lyx/chkconfig.ltx
 share/lyx/clipart/
 share/lyx/clipart/platypus.eps
 share/lyx/configure.py
+share/lyx/configure.pyc
+share/lyx/configure.pyo
 share/lyx/doc/
 share/lyx/doc/Customization.lyx
 share/lyx/doc/DocStyle.lyx
@@ -91,6 +94,7 @@ share/lyx/doc/he_TOC.lyx
 share/lyx/doc/he_Tutorial.lyx
 share/lyx/doc/hu_Intro.lyx
 share/lyx/doc/hu_TOC.lyx
+share/lyx/doc/hu_Tutorial.lyx
 share/lyx/doc/it_Customization.lyx
 share/lyx/doc/it_Intro.lyx
 share/lyx/doc/it_TOC.lyx
@@ -139,6 +143,7 @@ share/lyx/examples/amsbook-test.lyx
 share/lyx/examples/ca_splash.lyx
 share/lyx/examples/chess-article.lyx
 share/lyx/examples/chessgame.lyx
+share/lyx/examples/cs_splash.lyx
 share/lyx/examples/currency.lyx
 share/lyx/examples/cv.lyx
 share/lyx/examples/da_splash.lyx
@@ -365,6 +370,7 @@ share/lyx/images/math/dashv.xpm
 share/lyx/images/math/ddagger.xpm
 share/lyx/images/math/ddot.xpm
 share/lyx/images/math/ddots.xpm
+share/lyx/images/math/delim.xpm
 share/lyx/images/math/delta.xpm
 share/lyx/images/math/delta2.xpm
 share/lyx/images/math/diagdown.xpm
@@ -391,12 +397,14 @@ share/lyx/images/math/epsilon.xpm
 share/lyx/images/math/eqcirc.xpm
 share/lyx/images/math/eqslantgtr.xpm
 share/lyx/images/math/eqslantless.xpm
+share/lyx/images/math/equation.xpm
 share/lyx/images/math/equiv.xpm
 share/lyx/images/math/eta.xpm
 share/lyx/images/math/eth.xpm
 share/lyx/images/math/exists.xpm
 share/lyx/images/math/fallingdotseq.xpm
 share/lyx/images/math/flat.xpm
+share/lyx/images/math/font.xpm
 share/lyx/images/math/forall.xpm
 share/lyx/images/math/frac.xpm
 share/lyx/images/math/frown.xpm
@@ -425,12 +433,14 @@ share/lyx/images/math/hbar.xpm
 share/lyx/images/math/heartsuit.xpm
 share/lyx/images/math/hookleftarrow.xpm
 share/lyx/images/math/hookrightarrow.xpm
+share/lyx/images/math/hphantom.xpm
 share/lyx/images/math/hslash.xpm
 share/lyx/images/math/imath.xpm
 share/lyx/images/math/in.xpm
 share/lyx/images/math/infty.xpm
 share/lyx/images/math/int.xpm
 share/lyx/images/math/intercal.xpm
+share/lyx/images/math/intop.xpm
 share/lyx/images/math/iota.xpm
 share/lyx/images/math/jmath.xpm
 share/lyx/images/math/kappa.xpm
@@ -502,6 +512,7 @@ share/lyx/images/math/mathcal_L.xpm
 share/lyx/images/math/mathcal_O.xpm
 share/lyx/images/math/mathcircumflex.xpm
 share/lyx/images/math/mathrm_T.xpm
+share/lyx/images/math/matrix.xpm
 share/lyx/images/math/measuredangle.xpm
 share/lyx/images/math/mho.xpm
 share/lyx/images/math/mid.xpm
@@ -555,6 +566,7 @@ share/lyx/images/math/nvdash3.xpm
 share/lyx/images/math/nwarrow.xpm
 share/lyx/images/math/odot.xpm
 share/lyx/images/math/oint.xpm
+share/lyx/images/math/ointop.xpm
 share/lyx/images/math/omega.xpm
 share/lyx/images/math/omega2.xpm
 share/lyx/images/math/ominus.xpm
@@ -570,6 +582,7 @@ share/lyx/images/math/overset.xpm
 share/lyx/images/math/parallel.xpm
 share/lyx/images/math/partial.xpm
 share/lyx/images/math/perp.xpm
+share/lyx/images/math/phantom.xpm
 share/lyx/images/math/phi.xpm
 share/lyx/images/math/phi2.xpm
 share/lyx/images/math/pi.xpm
@@ -622,10 +635,12 @@ share/lyx/images/math/smallfrown.xpm
 share/lyx/images/math/smallsetminus.xpm
 share/lyx/images/math/smallsmile.xpm
 share/lyx/images/math/smile.xpm
+share/lyx/images/math/space.xpm
 share/lyx/images/math/spadesuit.xpm
 share/lyx/images/math/sphericalangle.xpm
 share/lyx/images/math/sqcap.xpm
 share/lyx/images/math/sqcup.xpm
+share/lyx/images/math/sqrt-square.xpm
 share/lyx/images/math/sqrt.xpm
 share/lyx/images/math/sqsubset.xpm
 share/lyx/images/math/sqsubseteq.xpm
@@ -633,6 +648,9 @@ share/lyx/images/math/sqsupset.xpm
 share/lyx/images/math/sqsupseteq.xpm
 share/lyx/images/math/square.xpm
 share/lyx/images/math/star.xpm
+share/lyx/images/math/style.xbm
+share/lyx/images/math/style.xpm
+share/lyx/images/math/sub.xpm
 share/lyx/images/math/subset.xpm
 share/lyx/images/math/subset2.xpm
 share/lyx/images/math/subseteq.xpm
@@ -647,6 +665,7 @@ share/lyx/images/math/succnapprox.xpm
 share/lyx/images/math/succnsim.xpm
 share/lyx/images/math/succsim.xpm
 share/lyx/images/math/sum.xpm
+share/lyx/images/math/super.xpm
 share/lyx/images/math/supset.xpm
 share/lyx/images/math/supset2.xpm
 share/lyx/images/math/supseteq.xpm
@@ -716,6 +735,7 @@ share/lyx/images/math/vdots.xpm
 share/lyx/images/math/vec.xpm
 share/lyx/images/math/vee.xpm
 share/lyx/images/math/veebar.xpm
+share/lyx/images/math/vphantom.xpm
 share/lyx/images/math/wedge.xpm
 share/lyx/images/math/widehat.xpm
 share/lyx/images/math/widetilde.xpm
@@ -966,18 +986,42 @@ share/lyx/lyx2lyx/profiling.pyo
 share/lyx/lyxrc.example
 share/lyx/scripts/
 share/lyx/scripts/TeXFiles.py
+share/lyx/scripts/TeXFiles.pyc
+share/lyx/scripts/TeXFiles.pyo
 share/lyx/scripts/clean_dvi.py
-share/lyx/scripts/convertDefault.sh
+share/lyx/scripts/clean_dvi.pyc
+share/lyx/scripts/clean_dvi.pyo
+share/lyx/scripts/convertDefault.py
+share/lyx/scripts/convertDefault.pyc
+share/lyx/scripts/convertDefault.pyo
 share/lyx/scripts/fen2ascii.py
-share/lyx/scripts/fig2pdftex.sh
-share/lyx/scripts/fig2pstex.sh
-share/lyx/scripts/fig_copy.sh
+share/lyx/scripts/fen2ascii.pyc
+share/lyx/scripts/fen2ascii.pyo
+share/lyx/scripts/fig2pdftex.py
+share/lyx/scripts/fig2pdftex.pyc
+share/lyx/scripts/fig2pdftex.pyo
+share/lyx/scripts/fig2pstex.py
+share/lyx/scripts/fig2pstex.pyc
+share/lyx/scripts/fig2pstex.pyo
+share/lyx/scripts/fig_copy.py
+share/lyx/scripts/fig_copy.pyc
+share/lyx/scripts/fig_copy.pyo
 share/lyx/scripts/layout2layout.py
+share/lyx/scripts/layout2layout.pyc
+share/lyx/scripts/layout2layout.pyo
 share/lyx/scripts/legacy_lyxpreview2ppm.py
+share/lyx/scripts/legacy_lyxpreview2ppm.pyc
+share/lyx/scripts/legacy_lyxpreview2ppm.pyo
 share/lyx/scripts/listerrors
 share/lyx/scripts/lyxpreview2bitmap.py
+share/lyx/scripts/lyxpreview2bitmap.pyc
+share/lyx/scripts/lyxpreview2bitmap.pyo
 share/lyx/scripts/lyxpreview_tools.py
+share/lyx/scripts/lyxpreview_tools.pyc
+share/lyx/scripts/lyxpreview_tools.pyo
 share/lyx/scripts/tex_copy.py
+share/lyx/scripts/tex_copy.pyc
+share/lyx/scripts/tex_copy.pyo
 share/lyx/symbols
 share/lyx/syntax.default
 share/lyx/templates/

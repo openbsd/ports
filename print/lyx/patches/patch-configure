@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.6 2006/07/16 18:02:14 sturm Exp $
---- configure.orig	Thu Jul 13 10:25:29 2006
-+++ configure	Sun Jul 16 19:53:46 2006
-@@ -23712,7 +23712,7 @@ fi
+$OpenBSD: patch-configure,v 1.7 2006/11/27 17:16:57 jasper Exp $
+--- configure.orig	Thu Sep 21 09:49:11 2006
++++ configure	Sun Nov 26 12:59:48 2006
+@@ -23717,7 +23717,7 @@ fi
  echo "$as_me:$LINENO: result: $ac_cv_lib_forms_fl_initialize" >&5
  echo "${ECHO_T}$ac_cv_lib_forms_fl_initialize" >&6
  if test $ac_cv_lib_forms_fl_initialize = yes; then
