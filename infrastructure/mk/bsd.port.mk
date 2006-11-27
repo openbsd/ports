@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.844 2006/11/27 17:30:18 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.845 2006/11/27 19:09:19 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -707,14 +707,7 @@ PKG_ARGS += -DPERMIT_PACKAGE_FTP=${PERMIT_PACKAGE_FTP${SUBPACKAGE}:Q}
 _tmpvars += FLAVORS='${FLAVOR_EXT}'
 _SED_SUBST += -e 's,$${FLAVORS},${FLAVOR_EXT},g' -e 's,$$\\,$$,g'
 
-# find out the most appropriate PLIST  source
-.if !defined(PLIST${SUBPACKAGE})
-.  if exists(${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT})
-PLIST${SUBPACKAGE} = ${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}
-.  else
-PLIST${SUBPACKAGE} = ${PKGDIR}/PLIST${SUBPACKAGE}
-.  endif
-.endif
+PLIST${SUBPACKAGE} ?= ${PKGDIR}/PLIST${SUBPACKAGE}
 
 # Likewise for DESCR/MESSAGE/COMMENT
 .if defined(COMMENT${SUBPACKAGE}${FLAVOR_EXT})
