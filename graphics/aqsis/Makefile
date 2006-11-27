@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/20 18:41:42 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/27 10:33:28 ajacoutot Exp $
 
 COMMENT=	"photorealistic 3D rendering solution"
 
 DISTNAME=	aqsis-1.0.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	graphics
 
 SHARED_LIBS += argparse		0.0	# 0.0
@@ -40,7 +41,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=aqsis/}
 
-WANTLIB=	X11 Xext c m stdc++ z pthread
+WANTLIB=	X11 Xext c m stdc++ z
 
 BUILD_DEPENDS=	::textproc/libxslt \
 		:boost-headers-1.33.*:devel/boost
@@ -57,7 +58,7 @@ CONFIGURE_STYLE=gnu
 REGRESS_IS_INTERACTIVE=Yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -fPIC" \
-		LDFLAGS="-L${LOCALBASE}/lib -lpthread"
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-static
 
