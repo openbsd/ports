@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/04/03 02:22:31 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/27 06:50:35 msf Exp $
 
 COMMENT=	"flow-based network traffic analyser"
 
-DISTNAME=	softflowd-0.9.7
+DISTNAME=	softflowd-0.9.8
 CATEGORIES=	net
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org> 
@@ -17,7 +17,7 @@ MASTER_SITES=	http://www2.mindrot.org/files/softflowd/
 
 WANTLIB=	c pcap
 
-CONFIGURE_STYLE= gnu dest
+CONFIGURE_STYLE= gnu
 
 NO_REGRESS= Yes
 
