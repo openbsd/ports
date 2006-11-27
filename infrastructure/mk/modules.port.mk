@@ -1,4 +1,4 @@
-# $OpenBSD: modules.port.mk,v 1.3 2004/10/18 15:17:17 robert Exp $
+# $OpenBSD: modules.port.mk,v 1.4 2006/11/27 15:38:01 espie Exp $
 #
 #  Copyright (c) 2001 Marc Espie
 # 
@@ -27,25 +27,25 @@
 #
 
 # XXX need this because make is buggy
-_empty=
+_empty =
 .undef _MODULES_DONE_ON_THIS_ROUND
 .for _m in ${MODULES:L}
 .  if ${_empty} != "${_m:M*/*}"
 .    for _d in ${PORTSDIR_PATH:S/:/ /}
 .      if empty(_MODULES_DONE:M${_m}) && exists(${_d}/${_m}/${_m:T}.port.mk)
 .        include "${_d}/${_m}/${_m:T}.port.mk"
-_MODULES_DONE+=${_m}
-_MODULES_DONE_ON_THIS_ROUND=Yep
+_MODULES_DONE += ${_m}
+_MODULES_DONE_ON_THIS_ROUND = Yep
 .      endif
 .    endfor
 .  endif
 .  if empty(_MODULES_DONE:M${_m})
 .    if exists(${PORTSDIR}/infrastructure/mk/${_m}.port.mk)
 .      include "${PORTSDIR}/infrastructure/mk/${_m}.port.mk"
-_MODULES_DONE+=${_m}
-_MODULES_DONE_ON_THIS_ROUND=Yep
+_MODULES_DONE += ${_m}
+_MODULES_DONE_ON_THIS_ROUND = Yep
 .    else
-ERRORS+="Fatal: Missing support for module ${_m}."
+ERRORS += "Fatal: Missing support for module ${_m}."
 .    endif
 .  endif
 .endfor

@@ -1,33 +1,35 @@
-# $OpenBSD: pkgpath.mk,v 1.9 2006/11/03 23:19:42 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.10 2006/11/27 15:38:01 espie Exp $
+# ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
 
 # definitions common to bsd.port.mk and bsd.port.subdir.mk
 
 .if !defined(PKGPATH)
-_PORTSDIR!=	cd ${PORTSDIR} && pwd -P
-_CURDIR!=	cd ${.CURDIR} && pwd -P
-PKGPATH=${_CURDIR:S,${_PORTSDIR}/,,}
+_PORTSDIR != cd ${PORTSDIR} && pwd -P
+_CURDIR != cd ${.CURDIR} && pwd -P
+PKGPATH = ${_CURDIR:S,${_PORTSDIR}/,,}
 .endif
 .if empty(PKGPATH)
-PKGDEPTH=
+PKGDEPTH =
 .else
-PKGDEPTH=${PKGPATH:C|[^./][^/]*|..|g}/
+PKGDEPTH = ${PKGPATH:C|[^./][^/]*|..|g}/
 .endif
 
-PORTSDIR_PATH?=${PORTSDIR}:${PORTSDIR}/mystuff
+PORTSDIR_PATH ?= ${PORTSDIR}:${PORTSDIR}/mystuff
 
 # Code to invoke to split dir,-multi,flavor
 
-_flavor_fragment= \
+_flavor_fragment = \
 	unset FLAVOR SUBPACKAGE || true; \
 	multi=''; flavor=''; space=''; sawflavor=false; \
 	case "$$subdir" in \
 	"") \
-		    echo 1>&2 ">> Broken dependency: empty directory $$extra_msg"; \
-		    exit 1;; \
+		echo 1>&2 ">> Broken dependency: empty directory $$extra_msg"; \
+		exit 1;; \
 	*,*) \
-		IFS=,; first=true; for i in $$subdir; do \
+		IFS=,; first=true; \
+		for i in $$subdir; do \
 			if $$first; then \
 				dir=$$i; first=false; \
 			else \
@@ -40,7 +42,8 @@ _flavor_fragment= \
 						space=' ';; \
 				esac \
 			fi; \
-		done; unset IFS;; \
+		done; \
+		unset IFS;; \
 	*) \
 		dir=$$subdir;; \
 	esac; \
@@ -68,20 +71,20 @@ _flavor_fragment= \
 	    exit 1; \
 	fi
 
-_depfile_fragment= \
+_depfile_fragment = \
 	case X$${_DEPENDS_FILE} in \
 		X) _DEPENDS_FILE=`mktemp /tmp/depends.XXXXXXXXX|| exit 1`; \
 		export _DEPENDS_FILE; \
 		trap "rm -f $${_DEPENDS_FILE}" 0 1 2 3 13 15;; \
 	esac
 
-HTMLIFY=	sed -e 's/&/\&amp;/g' -e 's/>/\&gt;/g' -e 's/</\&lt;/g'
+HTMLIFY =	sed -e 's/&/\&amp;/g' -e 's/>/\&gt;/g' -e 's/</\&lt;/g'
 
 
-REPORT_PROBLEM_LOGFILE?=
+REPORT_PROBLEM_LOGFILE ?=
 .if !empty(REPORT_PROBLEM_LOGFILE)
-REPORT_PROBLEM?=echo "$$subdir ($@)">>${REPORT_PROBLEM_LOGFILE}
+REPORT_PROBLEM ?= echo "$$subdir ($@)">>${REPORT_PROBLEM_LOGFILE}
 .else
-REPORT_PROBLEM?=exit 1
+REPORT_PROBLEM ?= exit 1
 .endif
 

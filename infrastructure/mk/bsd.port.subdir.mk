@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.78 2006/11/13 13:55:10 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.79 2006/11/27 15:38:01 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -52,32 +52,38 @@
 .endif
 
 .if !defined(DEBUG_FLAGS)
-STRIP?=	-s
+STRIP ?= -s
 .endif
 
 .if !defined(OPSYS)	# XXX !!
-OPSYS=	OpenBSD
+OPSYS = OpenBSD
 .endif
 
 .include "${PORTSDIR}/infrastructure/mk/pkgpath.mk"
 
-ECHO_MSG?=	echo
+ECHO_MSG ?= echo
 
 # create a full list of SUBDIRS...
 .if empty(PKGPATH)
-_FULLSUBDIR:=${SUBDIR}
+_FULLSUBDIR := ${SUBDIR}
 .else
-_FULLSUBDIR:=${SUBDIR:S@^@${PKGPATH}/@g}
+_FULLSUBDIR := ${SUBDIR:S@^@${PKGPATH}/@g}
 .endif
 
-_SKIPPED=
+_SKIPPED =
 .for i in ${SKIPDIR}
-_SKIPPED:+=${_FULLSUBDIR:M$i}
-_FULLSUBDIR:=${_FULLSUBDIR:N$i}
+_SKIPPED :+= ${_FULLSUBDIR:M$i}
+_FULLSUBDIR := ${_FULLSUBDIR:N$i}
 .endfor
 
+TEMPLATES ?= ${PORTSDIR}/infrastructure/templates
+.if defined(PORTSTOP)
+README = ${TEMPLATES}/README.top
+.else
+README = ${TEMPLATES}/README.category
+.endif
 
-_subdir_fragment= \
+_subdir_fragment = \
 	: $${echo_msg:=${ECHO_MSG:Q}}; \
 	: $${target:=${.TARGET}}; \
 	for i in ${_SKIPPED}; do \
@@ -93,19 +99,19 @@ _subdir_fragment= \
 	done; set -e
 
 .for __target in all fetch package fake extract patch configure \
-		 build distclean deinstall install update \
-		 reinstall checksum fetch-makefile \
-		 link-categories unlink-categories regress lib-depends-check \
-		 newlib-depends-check manpages-check license-check \
-		 print-package-signature 
+	build distclean deinstall install update \
+	reinstall checksum fetch-makefile \
+	link-categories unlink-categories regress lib-depends-check \
+	newlib-depends-check manpages-check license-check \
+	print-package-signature 
 
 ${__target}:
 	@${_subdir_fragment}
 .endfor
 
 .for __target in describe show verbose-show dump-vars \
-		homepage-links print-plist print-plist-contents \
-		 print-plist-all
+	homepage-links print-plist print-plist-contents \
+	print-plist-all
 ${__target}:
 	@DESCRIBE_TARGET=Yes; export DESCRIBE_TARGET; ${_subdir_fragment}
 .endfor
@@ -119,7 +125,8 @@ ${__target}:
 clean:
 .if defined(clean) && ${clean:L:Mdepends}
 	@{ target=all-dir-depends; echo_msg=:; \
-	${_depfile_fragment}; ${_subdir_fragment}; }| tsort -r|while read subdir; do \
+	${_depfile_fragment}; ${_subdir_fragment}; }| tsort -r| \
+	while read subdir; do \
 		${_flavor_fragment}; \
 		eval $$toset ${MAKE} _CLEANDEPENDS=No clean; \
 	done
@@ -134,13 +141,6 @@ readmes:
 	@DESCRIBE_TARGET=Yes; export DESCRIBE_TARGET; ${_subdir_fragment}
 	@rm -f ${.CURDIR}/README.html
 	@cd ${.CURDIR} && exec ${MAKE} README.html
-
-TEMPLATES ?= ${PORTSDIR}/infrastructure/templates
-.if defined(PORTSTOP)
-README=	${TEMPLATES}/README.top
-.else
-README=	${TEMPLATES}/README.category
-.endif
 
 README.html:
 	@>$@.tmp
