@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.843 2006/11/27 16:08:05 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.844 2006/11/27 17:30:18 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -709,22 +709,8 @@ _SED_SUBST += -e 's,$${FLAVORS},${FLAVOR_EXT},g' -e 's,$$\\,$$,g'
 
 # find out the most appropriate PLIST  source
 .if !defined(PLIST${SUBPACKAGE})
-.  if exists(${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.${ARCH})
-PLIST${SUBPACKAGE} = ${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.${ARCH}
-.  elif exists(${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.${MACHINE_ARCH})
-PLIST${SUBPACKAGE} = ${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.${MACHINE_ARCH}
-.  elif ${NO_SHARED_LIBS:L} == "yes" && \
-	exists(${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.noshared)
-PLIST${SUBPACKAGE} = ${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.noshared
-.  elif exists(${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT})
+.  if exists(${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT})
 PLIST${SUBPACKAGE} = ${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}
-.  elif exists(${PKGDIR}/PLIST${SUBPACKAGE}.${ARCH})
-PLIST${SUBPACKAGE} = ${PKGDIR}/PLIST${SUBPACKAGE}.${ARCH}
-.  elif exists(${PKGDIR}/PLIST${SUBPACKAGE}.${MACHINE_ARCH})
-PLIST${SUBPACKAGE} = ${PKGDIR}/PLIST${SUBPACKAGE}.${MACHINE_ARCH}
-.  elif ${NO_SHARED_LIBS:L} == "yes" && \
-	exists(${PKGDIR}/PLIST${SUBPACKAGE}.noshared)
-PLIST${SUBPACKAGE} = ${PKGDIR}/PLIST${SUBPACKAGE}.noshared
 .  else
 PLIST${SUBPACKAGE} = ${PKGDIR}/PLIST${SUBPACKAGE}
 .  endif
