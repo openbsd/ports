@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.841 2006/11/26 23:39:41 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.842 2006/11/27 15:28:40 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -21,15 +21,15 @@
 
 
 .if ${.MAKEFLAGS:MFLAVOR=*}
-ERRORS+= "Fatal: Use 'env FLAVOR=${FLAVOR} ${MAKE}' instead."
+ERRORS += "Fatal: Use 'env FLAVOR=${FLAVOR} ${MAKE}' instead."
 .endif
 .if ${.MAKEFLAGS:MSUBPACKAGE=*}
-ERRORS+= "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
+ERRORS += "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 .endif
 
 .for v in PKGREPOSITORY PKGREPOSITORYBASE CDROM_PACKAGES FTP_PACKAGES SED_PLIST
 .  if defined($v)
-ERRORS+= "Fatal: Variable $v is obsolete, use PACKAGE_REPOSITORY instead."
+ERRORS += "Fatal: Variable $v is obsolete, use PACKAGE_REPOSITORY instead."
 .  endif
 .endfor
 
@@ -63,100 +63,100 @@ ERRORS+= "Fatal: Variable $v is obsolete, use PACKAGE_REPOSITORY instead."
 #
 
 # User settings
-TRUST_PACKAGES?=No
-FETCH_PACKAGES?=No
-CLEANDEPENDS?=No
-USE_SYSTRACE?=	No
-BULK?=No
-RECURSIVE_FETCH_LIST?=	Yes
-WRKOBJDIR?=
-FAKEOBJDIR?=
-BULK_TARGETS?=
-BULK_DO?=
-FORCE_UPDATE?=No
+TRUST_PACKAGES ?= No
+FETCH_PACKAGES ?= No
+CLEANDEPENDS ?= No
+USE_SYSTRACE ?= No
+BULK ?= No
+RECURSIVE_FETCH_LIST ?= Yes
+WRKOBJDIR ?=
+FAKEOBJDIR ?=
+BULK_TARGETS ?=
+BULK_DO ?=
+FORCE_UPDATE ?= No
 # All variables relevant to the port's description
-_ALL_VARIABLES?=HOMEPAGE DISTNAME \
-BUILD_DEPENDS RUN_DEPENDS REGRESS_DEPENDS USE_GMAKE MODULES FLAVORS \
-NO_BUILD NO_REGRESS SHARED_ONLY ONLY_FOR_ARCHS IS_INTERACTIVE \
-BROKEN MULTI_PACKAGES PSEUDO_FLAVORS \
-REGRESS_IS_INTERACTIVE DISTFILES DIST_SUBDIR \
-PERMIT_DISTFILES_CDROM PERMIT_DISTFILES_FTP \
-CONFIGURE_STYLE USE_LIBTOOL SEPARATE_BUILD \
-SHARED_LIBS USE_MOTIF PACKAGES MASTER_SITES \
-MASTER_SITES0 MASTER_SITES1 MASTER_SITES2 MASTER_SITES3 MASTER_SITES4 \
-MASTER_SITES5 MASTER_SITES6 MASTER_SITES7 MASTER_SITES8 MASTER_SITES9 \
-MAINTAINER SUBPACKAGE SUPDISTFILES \
-AUTOCONF_VERSION AUTOMAKE_VERSION CONFIGURE_ARGS
+_ALL_VARIABLES ?= HOMEPAGE DISTNAME BUILD_DEPENDS RUN_DEPENDS \
+	REGRESS_DEPENDS USE_GMAKE MODULES FLAVORS \
+	NO_BUILD NO_REGRESS SHARED_ONLY ONLY_FOR_ARCHS IS_INTERACTIVE \
+	BROKEN MULTI_PACKAGES PSEUDO_FLAVORS \
+	REGRESS_IS_INTERACTIVE DISTFILES DIST_SUBDIR \
+	PERMIT_DISTFILES_CDROM PERMIT_DISTFILES_FTP \
+	CONFIGURE_STYLE USE_LIBTOOL SEPARATE_BUILD \
+	SHARED_LIBS USE_MOTIF PACKAGES MASTER_SITES \
+	MASTER_SITES0 MASTER_SITES1 MASTER_SITES2 MASTER_SITES3 MASTER_SITES4 \
+	MASTER_SITES5 MASTER_SITES6 MASTER_SITES7 MASTER_SITES8 MASTER_SITES9 \
+	MAINTAINER SUBPACKAGE SUPDISTFILES \
+	AUTOCONF_VERSION AUTOMAKE_VERSION CONFIGURE_ARGS
 # and stuff needing to be MULTI_PACKAGE'd
-_ALL_VARIABLES_INDEXED?=COMMENT FULLPKGNAME PKGNAME PKG_ARCH \
-PERMIT_PACKAGE_FTP PERMIT_PACKAGE_CDROM RUN_DEPENDS LIB_DEPENDS WANTLIB \
-CATEGORIES DESCR 
+_ALL_VARIABLES_INDEXED ?= COMMENT FULLPKGNAME PKGNAME PKG_ARCH \
+	PERMIT_PACKAGE_FTP PERMIT_PACKAGE_CDROM RUN_DEPENDS LIB_DEPENDS \
+	WANTLIB CATEGORIES DESCR 
 
 # special purpose user settings
-PATCH_CHECK_ONLY?=No
-REFETCH?=false
+PATCH_CHECK_ONLY ?= No
+REFETCH ?= false
 
 # Constants used by the ports tree
-ARCH!=	uname -m
-OPSYS=	OpenBSD
-OPSYS_VER=	${OSREV}
+ARCH != uname -m
+OPSYS = OpenBSD
+OPSYS_VER = ${OSREV}
 
-LP64_ARCHS=alpha amd64 hppa64 sparc64 mips64
-NO_SHARED_ARCHS=m88k sh vax
+LP64_ARCHS = alpha amd64 hppa64 sparc64 mips64
+NO_SHARED_ARCHS = m88k sh vax
 
 # Set NO_SHARED_LIBS for those machines that don't support shared libraries.
 .for _m in ${MACHINE_ARCH}
 .  if !empty(NO_SHARED_ARCHS:M${_m})
-NO_SHARED_LIBS?=	Yes
+NO_SHARED_LIBS ?= Yes
 .  endif
 .endfor
-NO_SHARED_LIBS?=	No
+NO_SHARED_LIBS ?= No
 
 # Global path locations.
-PORTSDIR?=		/usr/ports
-LOCALBASE?=		/usr/local
-X11BASE?=		/usr/X11R6
-DISTDIR?=		${PORTSDIR}/distfiles
-BULK_COOKIES_DIR?= ${PORTSDIR}/bulk/${MACHINE_ARCH}
-UPDATE_COOKIES_DIR?= ${PORTSDIR}/update/${MACHINE_ARCH}
-TEMPLATES?=		${PORTSDIR}/infrastructure/templates
-TMPDIR?=		/tmp
-PLIST_DB?=
+PORTSDIR ?= /usr/ports
+LOCALBASE ?= /usr/local
+X11BASE ?= /usr/X11R6
+DISTDIR ?= ${PORTSDIR}/distfiles
+BULK_COOKIES_DIR ?= ${PORTSDIR}/bulk/${MACHINE_ARCH}
+UPDATE_COOKIES_DIR ?= ${PORTSDIR}/update/${MACHINE_ARCH}
+TEMPLATES ?= ${PORTSDIR}/infrastructure/templates
+TMPDIR ?= /tmp
+PLIST_DB ?=
 
-PACKAGE_REPOSITORY?=${PORTSDIR}/packages
+PACKAGE_REPOSITORY ?= ${PORTSDIR}/packages
 
 # local path locations
 .include "${PORTSDIR}/infrastructure/mk/pkgpath.mk"
 
-WRKOBJDIR_${PKGPATH}?= ${WRKOBJDIR}
-FAKEOBJDIR_${PKGPATH}?= ${FAKEOBJDIR}
-BULK_${PKGPATH}?= ${BULK}
-BULK_TARGETS_${PKGPATH}?= ${BULK_TARGETS}
-BULK_DO_${PKGPATH}?= ${BULK_DO}
-CLEANDEPENDS_${PKGPATH}?= ${CLEANDEPENDS}
+WRKOBJDIR_${PKGPATH} ?= ${WRKOBJDIR}
+FAKEOBJDIR_${PKGPATH} ?= ${FAKEOBJDIR}
+BULK_${PKGPATH} ?= ${BULK}
+BULK_TARGETS_${PKGPATH} ?= ${BULK_TARGETS}
+BULK_DO_${PKGPATH} ?= ${BULK_DO}
+CLEANDEPENDS_${PKGPATH} ?= ${CLEANDEPENDS}
 
 # Commands and command settings.
-PKG_DBDIR?=		/var/db/pkg
+PKG_DBDIR ?= /var/db/pkg
 
-FETCH_CMD?=		/usr/bin/ftp -V -m
+FETCH_CMD ?= /usr/bin/ftp -V -m
 
-PKG_TMPDIR?=	/var/tmp
-PKG_CMD?=		/usr/sbin/pkg_create
-PKG_DELETE?=	/usr/sbin/pkg_delete
+PKG_TMPDIR ?= /var/tmp
+PKG_CMD ?= /usr/sbin/pkg_create
+PKG_DELETE ?= /usr/sbin/pkg_delete
 # remount those mount points ro before fake.
 # XXX tends to panic the OS
-PROTECT_MOUNT_POINTS?=
+PROTECT_MOUNT_POINTS ?=
 
 .if exists(${.CURDIR}/../Makefile.inc)
 .include "${.CURDIR}/../Makefile.inc"
 .endif
 
 .if !defined(PERMIT_PACKAGE_CDROM) || !defined(PERMIT_PACKAGE_FTP) || \
-  !defined(PERMIT_DISTFILES_CDROM) || !defined(PERMIT_DISTFILES_FTP)
-ERRORS+="The licensing info for ${FULLPKGNAME} is incomplete."
-ERRORS+="Please notify the OpenBSD port maintainer:"
-ERRORS+="    ${MAINTAINER}"
-_BAD_LICENSING=Yes
+	!defined(PERMIT_DISTFILES_CDROM) || !defined(PERMIT_DISTFILES_FTP)
+ERRORS += "The licensing info for ${FULLPKGNAME} is incomplete."
+ERRORS += "Please notify the OpenBSD port maintainer:"
+ERRORS += "    ${MAINTAINER}"
+_BAD_LICENSING = Yes
 PERMIT_PACKAGE_CDROM = No
 PERMIT_DISTFILES_CDROM = No
 PERMIT_PACKAGE_FTP = No
@@ -170,40 +170,38 @@ PERMIT_DISTFILES_FTP = No
 .elif defined(clean)
 .MAIN: clean
 .elif defined(_internal-clean)
-clean=${_internal-clean}
+clean = ${_internal-clean}
 .MAIN: _internal-clean
 .else
 .MAIN: all
 .endif
 
-FAKE?=Yes
-
 # need to go through an extra var because clean is set in stone, 
 # on the cmdline.
-_clean=${clean}
+_clean = ${clean}
 .if empty(_clean) || ${_clean:L} == "depends"
-_clean+=work
+_clean += work
 .endif
 .if ${CLEANDEPENDS_${PKGPATH}:L} == "yes"
-_clean+=depends
+_clean += depends
 .endif
 .if ${_clean:L:Mwork}
-_clean+=fake
+_clean += fake
 .endif
 .if ${_clean:L:Mforce}
-_clean+=-f
+_clean += -f
 .endif
 # check that clean is clean
-_okay_words=depends work fake -f flavors dist install sub packages package \
+_okay_words = depends work fake -f flavors dist install sub packages package \
 	readmes bulk force
 .for _w in ${_clean:L}
 .  if !${_okay_words:M${_w}}
-ERRORS+="Fatal: unknown clean command: ${_w}"
+ERRORS += "Fatal: unknown clean command: ${_w}"
 .  endif
 .endfor
 
-NOMANCOMPRESS?=	Yes
-DEF_UMASK?=		022
+NOMANCOMPRESS ?= Yes
+DEF_UMASK ?= 022
 
 .if exists(${.CURDIR}/Makefile.${ARCH})
 .include "${.CURDIR}/Makefile.${ARCH}"
@@ -216,27 +214,28 @@ DEF_UMASK?=		022
 # targets.
 
 # These variables must be defined before modules
-CONFIGURE_STYLE?=
-USE_X11?= No
-NO_DEPENDS?= No
-NO_BUILD?= No
-NO_REGRESS?= No
-INSTALL_TARGET?=	install
+CONFIGURE_STYLE ?=
+USE_X11 ?= No
+NO_DEPENDS ?= No
+NO_BUILD ?= No
+NO_REGRESS ?= No
+INSTALL_TARGET ?= install
 
-.if ${CONFIGURE_STYLE:L:Mautomake} || ${CONFIGURE_STYLE:L:Mautoconf} || ${CONFIGURE_STYLE:L:Mautoupdate}
+.if ${CONFIGURE_STYLE:L:Mautomake} || ${CONFIGURE_STYLE:L:Mautoconf} || \
+	${CONFIGURE_STYLE:L:Mautoupdate}
 .  if !${CONFIGURE_STYLE:L:Mgnu}
-CONFIGURE_STYLE+=gnu
+CONFIGURE_STYLE += gnu
 .  endif
 .endif
 
 .for _i in perl gnu imake
 .  if ${CONFIGURE_STYLE:L:M${_i}}
-MODULES+=${_i}
+MODULES += ${_i}
 .  endif
 .endfor
 
 .if defined(MODULES)
-_MODULES_DONE=
+_MODULES_DONE =
 .  include "${PORTSDIR}/infrastructure/mk/modules.port.mk"
 .endif
 
@@ -245,184 +244,184 @@ _MODULES_DONE=
 ###
 
 .if ${MACHINE_ARCH} != ${ARCH}
-PKG_ARCH?=${MACHINE_ARCH},${ARCH}
+PKG_ARCH ?= ${MACHINE_ARCH},${ARCH}
 .else
-PKG_ARCH?=${MACHINE_ARCH}
+PKG_ARCH ?= ${MACHINE_ARCH}
 .endif
 
-SHARED_ONLY?=	No
-SEPARATE_BUILD?=	No
+SHARED_ONLY ?= No
+SEPARATE_BUILD ?= No
 
-DIST_SUBDIR?=
+DIST_SUBDIR ?=
 
 .if !empty(DIST_SUBDIR)
-FULLDISTDIR?=	${DISTDIR}/${DIST_SUBDIR}
+FULLDISTDIR ?= ${DISTDIR}/${DIST_SUBDIR}
 .else
-FULLDISTDIR?=	${DISTDIR}
+FULLDISTDIR ?= ${DISTDIR}
 .endif
 
 .if exists(${.CURDIR}/patches.${ARCH})
-PATCHDIR?=		${.CURDIR}/patches.${ARCH}
+PATCHDIR ?= ${.CURDIR}/patches.${ARCH}
 .elif exists(${.CURDIR}/patches.${MACHINE_ARCH})
-PATCHDIR?=		${.CURDIR}/patches.${MACHINE_ARCH}
+PATCHDIR ?= ${.CURDIR}/patches.${MACHINE_ARCH}
 .else
-PATCHDIR?=		${.CURDIR}/patches
+PATCHDIR ?= ${.CURDIR}/patches
 .endif
 
-PATCH_LIST?=    patch-*
+PATCH_LIST ?= patch-*
 
 .if exists(${.CURDIR}/files.${ARCH})
-FILESDIR?=		${.CURDIR}/files.${ARCH}
+FILESDIR ?= ${.CURDIR}/files.${ARCH}
 .elif exists(${.CURDIR}/files.${MACHINE_ARCH})
-FILESDIR?=		${.CURDIR}/files.${MACHINE_ARCH}
+FILESDIR ?= ${.CURDIR}/files.${MACHINE_ARCH}
 .else
-FILESDIR?=		${.CURDIR}/files
+FILESDIR ?= ${.CURDIR}/files
 .endif
 
 .if exists(${.CURDIR}/pkg.${ARCH})
-PKGDIR?=		${.CURDIR}/pkg.${ARCH}
+PKGDIR ?= ${.CURDIR}/pkg.${ARCH}
 .elif exists(${.CURDIR}/pkg.${MACHINE_ARCH})
-PKGDIR?=		${.CURDIR}/pkg.${MACHINE_ARCH}
+PKGDIR ?= ${.CURDIR}/pkg.${MACHINE_ARCH}
 .else
-PKGDIR?=		${.CURDIR}/pkg
+PKGDIR ?= ${.CURDIR}/pkg
 .endif
 
-PREFIX?=		${LOCALBASE}
-TRUEPREFIX?=	${PREFIX}
-DESTDIRNAME?=	DESTDIR
-DESTDIR?=		${WRKINST}
+PREFIX ?= ${LOCALBASE}
+TRUEPREFIX ?= ${PREFIX}
+DESTDIRNAME ?= DESTDIR
+DESTDIR ?= ${WRKINST}
 
-MAKE_FLAGS?=
-LIBTOOL_FLAGS?=
+MAKE_FLAGS ?=
+LIBTOOL_FLAGS ?=
 .if !defined(FAKE_FLAGS)
-FAKE_FLAGS=${DESTDIRNAME}=${WRKINST}
+FAKE_FLAGS = ${DESTDIRNAME}=${WRKINST}
 .endif
 
 # where configuration files should go
-SYSCONFDIR?=	/etc
-USE_GMAKE?=		No
+SYSCONFDIR ?= /etc
+USE_GMAKE ?= No
 .if ${USE_GMAKE:L} == "yes"
-BUILD_DEPENDS+=		::devel/gmake
-MAKE_PROGRAM=		${GMAKE}
+BUILD_DEPENDS += ::devel/gmake
+MAKE_PROGRAM = ${GMAKE}
 .else
-MAKE_PROGRAM=		${MAKE}
+MAKE_PROGRAM = ${MAKE}
 .endif
 
-USE_LIBTOOL?=No
-_lt_libs=
+USE_LIBTOOL ?= No
+_lt_libs =
 .if ${USE_LIBTOOL:L} == "yes"
-LIBTOOL?=			${DEPBASE}/bin/libtool
-BUILD_DEPENDS+=		::devel/libtool
-CONFIGURE_ENV+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
-MAKE_ENV+=			LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
-MAKE_FLAGS+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
-FAKE_FLAGS+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
+LIBTOOL ?= ${DEPBASE}/bin/libtool
+BUILD_DEPENDS += ::devel/libtool
+CONFIGURE_ENV += LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
+MAKE_ENV += LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
+MAKE_FLAGS += LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
+FAKE_FLAGS += LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
 .endif
-MAKE_FLAGS+=		SHARED_LIBS_LOG=${WRKBUILD}/shared_libs.log
+MAKE_FLAGS += SHARED_LIBS_LOG=${WRKBUILD}/shared_libs.log
 
 .if !defined(MULTI_PACKAGES)
-SUBPACKAGE?=
-PKGNAMES=${FULLPKGNAME}
-_FMN=${PKGPATH}/${FULLPKGNAME}
+SUBPACKAGE ?=
+PKGNAMES = ${FULLPKGNAME}
+_FMN = ${PKGPATH}/${FULLPKGNAME}
 .else
-SUBPACKAGE?=-main
-_FMN=
+SUBPACKAGE ?= -main
+_FMN =
 .endif
-FLAVOR?=
-FLAVORS?=
-PSEUDO_FLAVORS?=
-FLAVORS+=${PSEUDO_FLAVORS}
+FLAVOR ?=
+FLAVORS ?=
+PSEUDO_FLAVORS ?=
+FLAVORS += ${PSEUDO_FLAVORS}
 
 .if !empty(FLAVORS:L:Mregress) && empty(FLAVOR:L:Mregress)
-NO_REGRESS= Yes
+NO_REGRESS = Yes
 .endif
 
-USE_MOTIF?=No
+USE_MOTIF ?= No
 
 .if ${USE_MOTIF:L} != "no"
 .  if ${USE_MOTIF:L} == "lesstif"
-LIB_DEPENDS+=		Xm.>=1::x11/lesstif
+LIB_DEPENDS += Xm.>=1::x11/lesstif
 .  elif ${USE_MOTIF:L} == "openmotif"
-LIB_DEPENDS+=		Xm.>=2::x11/openmotif
+LIB_DEPENDS += Xm.>=2::x11/openmotif
 .  elif ${USE_MOTIF:L} == "any" || ${USE_MOTIF:L} == "yes"
-FLAVORS+=lesstif
+FLAVORS += lesstif
 .    if ${FLAVOR:L:Mlesstif} && ${FLAVOR:L:Mmotif}
-ERRORS+="Fatal: choose motif or lesstif, not both."
+ERRORS += "Fatal: choose motif or lesstif, not both."
 .    endif
 .    if ${FLAVOR:L:Mlesstif}
-LIB_DEPENDS+=		Xm.>=1::x11/lesstif
+LIB_DEPENDS += Xm.>=1::x11/lesstif
 .    else
-LIB_DEPENDS+=		Xm.>=2::x11/openmotif
+LIB_DEPENDS += Xm.>=2::x11/openmotif
 .    endif
 .  else
-ERRORS+= "Fatal: Unknown USE_MOTIF=${USE_MOTIF} settings."
+ERRORS += "Fatal: Unknown USE_MOTIF=${USE_MOTIF} settings."
 .  endif
-MOTIFLIB=-L${DEPBASE}/lib -lXm
+MOTIFLIB = -L${DEPBASE}/lib -lXm
 .endif
 
 .if !empty(SUBPACKAGE)
 .  for _i in ${SUBPACKAGE}
 .    if !defined(MULTI_PACKAGES) || empty(MULTI_PACKAGES:M${_i})
-ERRORS+= "Fatal: Subpackage ${SUBPACKAGE} does not exist."
+ERRORS += "Fatal: Subpackage ${SUBPACKAGE} does not exist."
 .    endif
 .  endfor
 .endif
 .if defined(MULTI_PACKAGES) && !empty(MULTI_PACKAGES:N-*)
-ERRORS+= "Fatal: SUBPACKAGES should always beging with -: ${MULTI_PACKAGES:N-*}."
+ERRORS += "Fatal: SUBPACKAGES should always beging with -: ${MULTI_PACKAGES:N-*}."
 .endif
 
 # Build FLAVOR_EXT, checking that no flavors are misspelled
-FLAVOR_EXT:=
-BASE_PKGPATH:=${PKGPATH}
+FLAVOR_EXT :=
+BASE_PKGPATH := ${PKGPATH}
 # _FLAVOR_EXT2 is used internally for working directories.
 # It encodes flavors and pseudo-flavors.
-_FLAVOR_EXT2:=
-BUILD_PKGPATH:=${PKGPATH}
+_FLAVOR_EXT2 :=
+BUILD_PKGPATH := ${PKGPATH}
 
 # (applies only to PLIST for now)
 .if !empty(FLAVORS)
 .  for _i in ${FLAVORS:L}
 .    if empty(FLAVOR:L:M${_i})
-PKG_ARGS+=-D${_i}=0
+PKG_ARGS += -D${_i}=0
 .    else
-_FLAVOR_EXT2:=${_FLAVOR_EXT2}-${_i}
-BUILD_PKGPATH:=${BUILD_PKGPATH},${_i}
+_FLAVOR_EXT2 := ${_FLAVOR_EXT2}-${_i}
+BUILD_PKGPATH := ${BUILD_PKGPATH},${_i}
 .    if empty(PSEUDO_FLAVORS:L:M${_i})
-FLAVOR_EXT:=${FLAVOR_EXT}-${_i}
-BASE_PKGPATH:=${BASE_PKGPATH},${_i}
+FLAVOR_EXT := ${FLAVOR_EXT}-${_i}
+BASE_PKGPATH := ${BASE_PKGPATH},${_i}
 .    endif
-PKG_ARGS+=-D${_i}=1
+PKG_ARGS += -D${_i}=1
 .    endif
 .  endfor
 .endif
 .if ${NO_SHARED_LIBS:L} == "yes"
-PKG_ARGS+=-DSHARED_LIBS=0
+PKG_ARGS += -DSHARED_LIBS=0
 .else
-PKG_ARGS+=-DSHARED_LIBS=1
+PKG_ARGS += -DSHARED_LIBS=1
 .endif
 .if !empty(FLAVORS:M[0-9]*)
-ERRORS+="Fatal: flavor should never start with a digit"
+ERRORS += "Fatal: flavor should never start with a digit"
 .endif
 
 .if !empty(FLAVOR)
 .  if !empty(FLAVORS)
 .    for _i in ${FLAVOR:L}
 .      if empty(FLAVORS:L:M${_i})
-ERRORS+=	"Fatal: Unknown flavor: ${_i}"
-ERRORS+= "   (Possible flavors are: ${FLAVORS})."
+ERRORS += "Fatal: Unknown flavor: ${_i}"
+ERRORS += "   (Possible flavors are: ${FLAVORS})."
 .      endif
 .    endfor
 .  else
-ERRORS+=	"Fatal: no flavors for this port."
+ERRORS += "Fatal: no flavors for this port."
 .  endif
 .endif
 
-PKG_SUFX?=		.tgz
+PKG_SUFX ?= .tgz
 
-PKGNAME?=${DISTNAME}
-FULLPKGNAME?=${PKGNAME}${FLAVOR_EXT}
-_MASTER?=
-_SOLVING_DEP?=No
+PKGNAME ?= ${DISTNAME}
+FULLPKGNAME ?= ${PKGNAME}${FLAVOR_EXT}
+_MASTER ?=
+_SOLVING_DEP ?= No
 
 .if defined(MULTI_PACKAGES)
 .  for _s in ${MULTI_PACKAGES}
@@ -436,144 +435,145 @@ FULLPKGNAME${_s} = ${PKGNAME}${_s}${FLAVOR_EXT}
 .  endfor
 .endif
 
-_SYSTRACE_COOKIE=	${WRKDIR}/systrace.policy
-_WRKDIR_COOKIE=		${WRKDIR}/.extract_started
-_EXTRACT_COOKIE=	${WRKDIR}/.extract_done
-_PATCH_COOKIE=		${WRKDIR}/.patch_done
-_DISTPATCH_COOKIE=	${WRKDIR}/.distpatch_done
-_PREPATCH_COOKIE=	${WRKDIR}/.prepatch_done
-_INSTALL_COOKIE=	${PKG_DBDIR}/${FULLPKGNAME${SUBPACKAGE}}/+CONTENTS
-_BULK_COOKIE=		${BULK_COOKIES_DIR}/${FULLPKGNAME}
-_FAKE_COOKIE=		${WRKINST}/.fake_done
-_INSTALL_PRE_COOKIE=${WRKINST}/.install_started
+_SYSTRACE_COOKIE =		${WRKDIR}/systrace.policy
+_WRKDIR_COOKIE =		${WRKDIR}/.extract_started
+_EXTRACT_COOKIE =		${WRKDIR}/.extract_done
+_PATCH_COOKIE =			${WRKDIR}/.patch_done
+_DISTPATCH_COOKIE =		${WRKDIR}/.distpatch_done
+_PREPATCH_COOKIE =		${WRKDIR}/.prepatch_done
+_INSTALL_COOKIE =		${PKG_DBDIR}/${FULLPKGNAME${SUBPACKAGE}}/+CONTENTS
+_BULK_COOKIE =			${BULK_COOKIES_DIR}/${FULLPKGNAME}
+_FAKE_COOKIE =			${WRKINST}/.fake_done
+_INSTALL_PRE_COOKIE =	${WRKINST}/.install_started
 .if !empty(UPDATE_COOKIES_DIR)
-_UPDATE_COOKIE=		${UPDATE_COOKIES_DIR}/${FULLPKGNAME${SUBPACKAGE}}
+_UPDATE_COOKIE =		${UPDATE_COOKIES_DIR}/${FULLPKGNAME${SUBPACKAGE}}
 .else
-_UPDATE_COOKIE=		${WRKDIR}/.update_${FULLPKGNAME${SUBPACKAGE}}
+_UPDATE_COOKIE =		${WRKDIR}/.update_${FULLPKGNAME${SUBPACKAGE}}
 .endif
 .if ${SEPARATE_BUILD:L} != "no"
-_CONFIGURE_COOKIE=	${WRKBUILD}/.configure_done
-_BUILD_COOKIE=		${WRKBUILD}/.build_done
-_REGRESS_COOKIE=	${WRKBUILD}/.regress_done
+_CONFIGURE_COOKIE =		${WRKBUILD}/.configure_done
+_BUILD_COOKIE =			${WRKBUILD}/.build_done
+_REGRESS_COOKIE =		${WRKBUILD}/.regress_done
 .else
-_CONFIGURE_COOKIE=	${WRKDIR}/.configure_done
-_BUILD_COOKIE=		${WRKDIR}/.build_done
-_REGRESS_COOKIE=	${WRKDIR}/.regress_done
+_CONFIGURE_COOKIE =		${WRKDIR}/.configure_done
+_BUILD_COOKIE =			${WRKDIR}/.build_done
+_REGRESS_COOKIE =		${WRKDIR}/.regress_done
 .endif
 
-_ALL_COOKIES=${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_CONFIGURE_COOKIE} \
-${_INSTALL_PRE_COOKIE} ${_BUILD_COOKIE} ${_REGRESS_COOKIE} \
-${_SYSTRACE_COOKIE} ${_PACKAGE_COOKIES} \
-${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE} ${_FAKE_COOKIE} \
-${_WRKDIR_COOKIE} ${_DEPBUILD_COOKIES} \
-${_DEPRUN_COOKIES} ${_DEPREGRESS_COOKIES} ${_UPDATE_COOKIE} \
-${_DEPBUILDLIB_COOKIES} ${_DEPRUNLIB_COOKIES} \
-${_DEPBUILDWANTLIB_COOKIE} ${_DEPRUNWANTLIB_COOKIE} ${_DEPLIBSPECS_COOKIES}
+_ALL_COOKIES = ${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_CONFIGURE_COOKIE} \
+	${_INSTALL_PRE_COOKIE} ${_BUILD_COOKIE} ${_REGRESS_COOKIE} \
+	${_SYSTRACE_COOKIE} ${_PACKAGE_COOKIES} \
+	${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE} ${_FAKE_COOKIE} \
+	${_WRKDIR_COOKIE} ${_DEPBUILD_COOKIES} \
+	${_DEPRUN_COOKIES} ${_DEPREGRESS_COOKIES} ${_UPDATE_COOKIE} \
+	${_DEPBUILDLIB_COOKIES} ${_DEPRUNLIB_COOKIES} \
+	${_DEPBUILDWANTLIB_COOKIE} ${_DEPRUNWANTLIB_COOKIE} ${_DEPLIBSPECS_COOKIES}
 
-_MAKE_COOKIE=touch
+_MAKE_COOKIE = touch
 
 # Miscellaneous overridable commands:
-GMAKE?=			gmake
+GMAKE ?= gmake
 
-CHECKSUM_FILE?=	${.CURDIR}/distinfo
+CHECKSUM_FILE ?= ${.CURDIR}/distinfo
 
 # Don't touch !!! Used for generating checksums.
-_CIPHERS=		sha1 rmd160 md5
+_CIPHERS = sha1 rmd160 md5
 
 # This is the one you can override
-PREFERRED_CIPHERS?= ${_CIPHERS}
+PREFERRED_CIPHERS ?= ${_CIPHERS}
 
-PORTPATH?= ${WRKDIR}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${DEPBASE}/bin:${LOCALBASE}/bin:${X11BASE}/bin
+PORTPATH ?= ${WRKDIR}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${DEPBASE}/bin:${LOCALBASE}/bin:${X11BASE}/bin
 
 # Add any COPTS to CFLAGS.  Note: programs that use imake do not
 # use CFLAGS!  Also, many (most?) ports hard code CFLAGS, ignoring
 # what we pass in.
 .if defined(COPTS)
-CFLAGS+=		${COPTS}
+CFLAGS += ${COPTS}
 .endif
 .if defined(CXXOPTS)
-CXXFLAGS+=		${CXXOPTS}
+CXXFLAGS += ${CXXOPTS}
 .endif
 .if defined(WARNINGS) && ${WARNINGS:L} == "yes"
 .  if defined(CDIAGFLAGS)
-CFLAGS+=		${CDIAGFLAGS}
+CFLAGS += ${CDIAGFLAGS}
 .  endif
 .  if defined(CXXDIAGFLAGS)
-CXXFLAGS+=		${CXXDIAGFLAGS}
+CXXFLAGS += ${CXXDIAGFLAGS}
 .  endif
 .endif
 
-MAKE_FILE?=		Makefile
-PORTHOME?=		/${PKGNAME}_writes_to_HOME
+MAKE_FILE ?= Makefile
+PORTHOME ?= /${PKGNAME}_writes_to_HOME
 
-MAKE_ENV+=		PATH='${PORTPATH}' PREFIX='${PREFIX}' \
+MAKE_ENV += PATH='${PORTPATH}' PREFIX='${PREFIX}' \
 	LOCALBASE='${LOCALBASE}' DEPBASE='${DEPBASE}' X11BASE='${X11BASE}' \
 	MOTIFLIB='${MOTIFLIB}' CFLAGS='${CFLAGS:C/ *$//}' \
 	TRUEPREFIX='${PREFIX}' ${DESTDIRNAME}='' \
 	HOME='${PORTHOME}'
 
-DISTORIG?=	.bak.orig
-PATCH?=			/usr/bin/patch
-PATCHORIG?=	.orig
-PATCH_STRIP?=	-p0
-PATCH_DIST_STRIP?=	-p0
+DISTORIG ?= .bak.orig
+PATCH ?= /usr/bin/patch
+PATCHORIG ?= .orig
+PATCH_STRIP ?= -p0
+PATCH_DIST_STRIP ?= -p0
 
-PATCH_DEBUG?=No
+PATCH_DEBUG ?= No
 .if ${PATCH_DEBUG:L} != "no"
-PATCH_ARGS?=	-d ${WRKDIST} -z ${PATCHORIG} -E ${PATCH_STRIP}
-PATCH_DIST_ARGS?=	-z ${DISTORIG} -d ${WRKDIST} -E ${PATCH_DIST_STRIP}
+PATCH_ARGS ?= -d ${WRKDIST} -z ${PATCHORIG} -E ${PATCH_STRIP}
+PATCH_DIST_ARGS ?= -z ${DISTORIG} -d ${WRKDIST} -E ${PATCH_DIST_STRIP}
 .else
-PATCH_ARGS?=	-d ${WRKDIST} -z ${PATCHORIG} --forward --quiet -E ${PATCH_STRIP}
-PATCH_DIST_ARGS?=	-z ${DISTORIG} -d ${WRKDIST} --forward --quiet -E ${PATCH_DIST_STRIP}
+PATCH_ARGS ?= -d ${WRKDIST} -z ${PATCHORIG} --forward --quiet -E ${PATCH_STRIP}
+PATCH_DIST_ARGS ?= -z ${DISTORIG} -d ${WRKDIST} --forward --quiet -E \
+	${PATCH_DIST_STRIP}
 .endif
 
 .if ${PATCH_CHECK_ONLY:L} == "yes"
-PATCH_ARGS+=	-C
-PATCH_DIST_ARGS+=	-C
+PATCH_ARGS += -C
+PATCH_DIST_ARGS += -C
 .endif
 
-TAR?=	/bin/tar
-UNZIP?=	unzip
-BZIP2?=	bzip2
+TAR ?= /bin/tar
+UNZIP ?= unzip
+BZIP2 ?= bzip2
 
 
-MAKE_ENV+=	EXTRA_SYS_MK_INCLUDES="<bsd.own.mk>"
+MAKE_ENV += EXTRA_SYS_MK_INCLUDES="<bsd.own.mk>"
 
 
 .if !empty(FAKEOBJDIR_${PKGPATH})
-WRKINST?=	${FAKEOBJDIR_${PKGPATH}}/${PKGNAME}${_FLAVOR_EXT2}
+WRKINST ?= ${FAKEOBJDIR_${PKGPATH}}/${PKGNAME}${_FLAVOR_EXT2}
 .else
-WRKINST?=	${WRKDIR}/fake-${ARCH}${_FLAVOR_EXT2}
+WRKINST ?= ${WRKDIR}/fake-${ARCH}${_FLAVOR_EXT2}
 .endif
 
 .if !empty(WRKOBJDIR_${PKGPATH})
 .  if ${SEPARATE_BUILD:L:Mflavored}
-WRKDIR?=		${WRKOBJDIR_${PKGPATH}}/${PKGNAME}
+WRKDIR ?= ${WRKOBJDIR_${PKGPATH}}/${PKGNAME}
 .  else
-WRKDIR?=		${WRKOBJDIR_${PKGPATH}}/${PKGNAME}${_FLAVOR_EXT2}
+WRKDIR ?= ${WRKOBJDIR_${PKGPATH}}/${PKGNAME}${_FLAVOR_EXT2}
 .  endif
 .else
 .  if ${SEPARATE_BUILD:L:Mflavored}
-WRKDIR?=		${.CURDIR}/w-${PKGNAME}
+WRKDIR ?= ${.CURDIR}/w-${PKGNAME}
 .  else
-WRKDIR?=		${.CURDIR}/w-${PKGNAME}${_FLAVOR_EXT2}
+WRKDIR ?= ${.CURDIR}/w-${PKGNAME}${_FLAVOR_EXT2}
 .  endif
 .endif
 
-WRKDIST?=		${WRKDIR}/${DISTNAME}
+WRKDIST ?= ${WRKDIR}/${DISTNAME}
 
-WRKSRC?=	   ${WRKDIST}
+WRKSRC ?= ${WRKDIST}
 
 .if ${SEPARATE_BUILD:L} != "no"
-WRKBUILD?=		${WRKDIR}/build-${MACHINE_ARCH}${_FLAVOR_EXT2}
-WRKPKG?=		${WRKBUILD}/pkg
+WRKBUILD ?= ${WRKDIR}/build-${MACHINE_ARCH}${_FLAVOR_EXT2}
+WRKPKG ?= ${WRKBUILD}/pkg
 .else
-WRKBUILD?=		${WRKSRC}
-WRKPKG?=		${WRKDIR}/pkg
+WRKBUILD ?= ${WRKSRC}
+WRKPKG ?= ${WRKDIR}/pkg
 .endif
-WRKCONF?=		${WRKBUILD}
+WRKCONF ?= ${WRKBUILD}
 
-ALL_TARGET?=		all
+ALL_TARGET ?= all
 
 FAKE_TARGET ?= ${INSTALL_TARGET}
 
@@ -601,19 +601,19 @@ ${_v}${_s} ?= ${${_v}}
 .  endfor
 .endfor
 
-_PACKAGE_LINKS=
-_PKGFILE=		${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
-NO_ARCH?=		no-arch
+_PACKAGE_LINKS =
+_PKGFILE = ${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
+NO_ARCH ?= no-arch
 .if ${PKG_ARCH${SUBPACKAGE}} == "*" && ${NO_ARCH} != ${MACHINE_ARCH}/all
-_PACKAGE_COOKIE=	${PACKAGE_REPOSITORY}/${NO_ARCH}/${_PKGFILE}
-_PACKAGE_LINKS+=	${MACHINE_ARCH}/all ${NO_ARCH}
-_PACKAGE_COOKIES+=	${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE}
+_PACKAGE_COOKIE = ${PACKAGE_REPOSITORY}/${NO_ARCH}/${_PKGFILE}
+_PACKAGE_LINKS += ${MACHINE_ARCH}/all ${NO_ARCH}
+_PACKAGE_COOKIES += ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE}
 .else
-_PACKAGE_COOKIE=	${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE}
+_PACKAGE_COOKIE = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE}
 .endif
-_PKG_REPO=		${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/
-_CACHE_REPO=	${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/cache/
-PKGFILE=${_PKG_REPO}${_PKGFILE}
+_PKG_REPO = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/
+_CACHE_REPO = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/cache/
+PKGFILE = ${_PKG_REPO}${_PKGFILE}
 
 _PACKAGE_COOKIES += ${_PACKAGE_COOKIE}
 .if ${PERMIT_PACKAGE_FTP${SUBPACKAGE}:L} == "yes"
@@ -626,176 +626,178 @@ _PACKAGE_LINKS += ${MACHINE_ARCH}/cdrom ${MACHINE_ARCH}/all
 .endif
 
 .if empty(SUBPACKAGE)
-FULLPKGPATH=${PKGPATH}${FLAVOR_EXT:S/-/,/g}
+FULLPKGPATH = ${PKGPATH}${FLAVOR_EXT:S/-/,/g}
 .else
-FULLPKGPATH=${PKGPATH},${SUBPACKAGE}${FLAVOR_EXT:S/-/,/g}
+FULLPKGPATH = ${PKGPATH},${SUBPACKAGE}${FLAVOR_EXT:S/-/,/g}
 .endif
 
 # A few aliases for *-install targets
-INSTALL_PROGRAM= \
+INSTALL_PROGRAM = \
 	${INSTALL} ${INSTALL_COPY} ${INSTALL_STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
-INSTALL_SCRIPT= \
+INSTALL_SCRIPT = \
 	${INSTALL} ${INSTALL_COPY} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
-INSTALL_DATA= \
+INSTALL_DATA = \
 	${INSTALL} ${INSTALL_COPY} -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE}
-INSTALL_MAN= \
+INSTALL_MAN = \
 	${INSTALL} ${INSTALL_COPY} -o ${MANOWN} -g ${MANGRP} -m ${MANMODE}
 
-INSTALL_PROGRAM_DIR= \
+INSTALL_PROGRAM_DIR = \
 	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${DIRMODE}
-INSTALL_SCRIPT_DIR= \
+INSTALL_SCRIPT_DIR = \
 	${INSTALL_PROGRAM_DIR}
-INSTALL_DATA_DIR= \
+INSTALL_DATA_DIR = \
 	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m ${DIRMODE}
-INSTALL_MAN_DIR= \
+INSTALL_MAN_DIR = \
 	${INSTALL} -d -o ${MANOWN} -g ${MANGRP} -m ${DIRMODE}
 
-_INSTALL_MACROS=	BSD_INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-			BSD_INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-			BSD_INSTALL_DATA="${INSTALL_DATA}" \
-			BSD_INSTALL_MAN="${INSTALL_MAN}" \
-			BSD_INSTALL_PROGRAM_DIR="${INSTALL_PROGRAM_DIR}" \
-			BSD_INSTALL_SCRIPT_DIR="${INSTALL_SCRIPT_DIR}" \
-			BSD_INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
-			BSD_INSTALL_MAN_DIR="${INSTALL_MAN_DIR}"
-MAKE_ENV+=	${_INSTALL_MACROS}
+_INSTALL_MACROS =	BSD_INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+	BSD_INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
+	BSD_INSTALL_DATA="${INSTALL_DATA}" \
+	BSD_INSTALL_MAN="${INSTALL_MAN}" \
+	BSD_INSTALL_PROGRAM_DIR="${INSTALL_PROGRAM_DIR}" \
+	BSD_INSTALL_SCRIPT_DIR="${INSTALL_SCRIPT_DIR}" \
+	BSD_INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
+	BSD_INSTALL_MAN_DIR="${INSTALL_MAN_DIR}"
+MAKE_ENV +=	${_INSTALL_MACROS}
 
 # setup systrace variables
-NO_SYSTRACE?=	No
+NO_SYSTRACE ?= No
 .if ${USE_SYSTRACE:L} == "yes" && ${NO_SYSTRACE:L} == "no"
-_SYSTRACE_CMD?=	/bin/systrace -e -i -a -f ${_SYSTRACE_COOKIE}
+_SYSTRACE_CMD ?= /bin/systrace -e -i -a -f ${_SYSTRACE_COOKIE}
 .else
-_SYSTRACE_CMD=
+_SYSTRACE_CMD =
 .endif
-SYSTRACE_FILTER?=	${PORTSDIR}/infrastructure/db/systrace.filter
-_SYSTRACE_POLICIES+=	/bin/sh /usr/bin/env /usr/bin/make \
+SYSTRACE_FILTER ?=	${PORTSDIR}/infrastructure/db/systrace.filter
+_SYSTRACE_POLICIES +=	/bin/sh /usr/bin/env /usr/bin/make \
 	/usr/bin/patch ${DEPBASE}/bin/gmake
-SYSTRACE_SUBST_VARS+=	DISTDIR PKG_TMPDIR PORTSDIR TMPDIR WRKDIR
+SYSTRACE_SUBST_VARS +=	DISTDIR PKG_TMPDIR PORTSDIR TMPDIR WRKDIR
 .for _v in ${SYSTRACE_SUBST_VARS}
-_SYSTRACE_SED_SUBST+=-e 's,$${${_v}},${${_v}},g'
+_SYSTRACE_SED_SUBST += -e 's,$${${_v}},${${_v}},g'
 .endfor
 
-SHARED_LIBS?=
+SHARED_LIBS ?=
 
 .for _n _v in ${SHARED_LIBS}
-LIB${_n}_VERSION=${_v}
-SUBST_VARS+=LIB${_n}_VERSION
-_lt_libs+=LIB${_n}_LTVERSION='-version-info ${_v:S/./:/}:0'
-_lt_libs+=lib${_n:S/+/_/g:S/-/_/g:S/./_/g}_ltversion=${_v}
+LIB${_n}_VERSION = ${_v}
+SUBST_VARS += LIB${_n}_VERSION
+_lt_libs += LIB${_n}_LTVERSION='-version-info ${_v:S/./:/}:0'
+_lt_libs += lib${_n:S/+/_/g:S/-/_/g:S/./_/g}_ltversion=${_v}
 .endfor
 
 # Create the generic variable substitution list, from subst vars
-SUBST_VARS+=MACHINE_ARCH ARCH HOMEPAGE PREFIX SYSCONFDIR FLAVOR_EXT \
-			MAINTAINER BASE_PKGPATH
-_tmpvars=
-_SED_SUBST=sed
+SUBST_VARS += MACHINE_ARCH ARCH HOMEPAGE PREFIX SYSCONFDIR FLAVOR_EXT \
+	MAINTAINER BASE_PKGPATH
+_tmpvars =
+_SED_SUBST = sed
 
-_PKG_ADD_AUTO?=
+_PKG_ADD_AUTO ?=
 .if ${_SOLVING_DEP:L} == "yes"
-_PKG_ADD_AUTO+=-a
+_PKG_ADD_AUTO += -a
 .endif
 
 .for _v in ${SUBST_VARS}
-_SED_SUBST+=-e 's|$${${_v}}|${${_v}}|g'
-PKG_ARGS+=-D${_v}='${${_v}}'
+_SED_SUBST += -e 's|$${${_v}}|${${_v}}|g'
+PKG_ARGS += -D${_v}='${${_v}}'
 _tmpvars += ${_v}='${${_v}}'
 .endfor
-PKG_ARGS+=-DFLAVORS='${FLAVOR_EXT}'
-PKG_ARGS+=-DFULLPKGPATH=${FULLPKGPATH}
-PKG_ARGS+=-DPERMIT_PACKAGE_CDROM=${PERMIT_PACKAGE_CDROM${SUBPACKAGE}:Q}
-PKG_ARGS+=-DPERMIT_PACKAGE_FTP=${PERMIT_PACKAGE_FTP${SUBPACKAGE}:Q}
+PKG_ARGS += -DFLAVORS='${FLAVOR_EXT}'
+PKG_ARGS += -DFULLPKGPATH=${FULLPKGPATH}
+PKG_ARGS += -DPERMIT_PACKAGE_CDROM=${PERMIT_PACKAGE_CDROM${SUBPACKAGE}:Q}
+PKG_ARGS += -DPERMIT_PACKAGE_FTP=${PERMIT_PACKAGE_FTP${SUBPACKAGE}:Q}
 _tmpvars += FLAVORS='${FLAVOR_EXT}'
-_SED_SUBST+=-e 's,$${FLAVORS},${FLAVOR_EXT},g' -e 's,$$\\,$$,g'
+_SED_SUBST += -e 's,$${FLAVORS},${FLAVOR_EXT},g' -e 's,$$\\,$$,g'
 
 # find out the most appropriate PLIST  source
 .if !defined(PLIST${SUBPACKAGE})
 .  if exists(${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.${ARCH})
-PLIST${SUBPACKAGE} =		${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.${ARCH}
+PLIST${SUBPACKAGE} = ${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.${ARCH}
 .  elif exists(${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.${MACHINE_ARCH})
-PLIST${SUBPACKAGE} =		${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.${MACHINE_ARCH}
-.  elif ${NO_SHARED_LIBS:L} == "yes" && exists(${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.noshared)
-PLIST${SUBPACKAGE} =		${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.noshared
+PLIST${SUBPACKAGE} = ${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.${MACHINE_ARCH}
+.  elif ${NO_SHARED_LIBS:L} == "yes" && \
+	exists(${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.noshared)
+PLIST${SUBPACKAGE} = ${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}.noshared
 .  elif exists(${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT})
-PLIST${SUBPACKAGE} =		${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}
+PLIST${SUBPACKAGE} = ${PKGDIR}/PLIST${SUBPACKAGE}${FLAVOR_EXT}
 .  elif exists(${PKGDIR}/PLIST${SUBPACKAGE}.${ARCH})
-PLIST${SUBPACKAGE} =		${PKGDIR}/PLIST${SUBPACKAGE}.${ARCH}
+PLIST${SUBPACKAGE} = ${PKGDIR}/PLIST${SUBPACKAGE}.${ARCH}
 .  elif exists(${PKGDIR}/PLIST${SUBPACKAGE}.${MACHINE_ARCH})
-PLIST${SUBPACKAGE} =		${PKGDIR}/PLIST${SUBPACKAGE}.${MACHINE_ARCH}
-.  elif ${NO_SHARED_LIBS:L} == "yes" && exists(${PKGDIR}/PLIST${SUBPACKAGE}.noshared)
-PLIST${SUBPACKAGE} =		${PKGDIR}/PLIST${SUBPACKAGE}.noshared
+PLIST${SUBPACKAGE} = ${PKGDIR}/PLIST${SUBPACKAGE}.${MACHINE_ARCH}
+.  elif ${NO_SHARED_LIBS:L} == "yes" && \
+	exists(${PKGDIR}/PLIST${SUBPACKAGE}.noshared)
+PLIST${SUBPACKAGE} = ${PKGDIR}/PLIST${SUBPACKAGE}.noshared
 .  else
-PLIST${SUBPACKAGE} =		${PKGDIR}/PLIST${SUBPACKAGE}
+PLIST${SUBPACKAGE} = ${PKGDIR}/PLIST${SUBPACKAGE}
 .  endif
 .endif
 
 # Likewise for DESCR/MESSAGE/COMMENT
 .if defined(COMMENT${SUBPACKAGE}${FLAVOR_EXT})
-_COMMENT${SUBPACKAGE}=${COMMENT${SUBPACKAGE}${FLAVOR_EXT}}
+_COMMENT${SUBPACKAGE} = ${COMMENT${SUBPACKAGE}${FLAVOR_EXT}}
 .elif defined(COMMENT${SUBPACKAGE})
-_COMMENT${SUBPACKAGE}=${COMMENT${SUBPACKAGE}}
+_COMMENT${SUBPACKAGE} = ${COMMENT${SUBPACKAGE}}
 .endif
 
 .if exists(${PKGDIR}/MESSAGE${SUBPACKAGE})
-MESSAGE${SUBPACKAGE}?= ${PKGDIR}/MESSAGE${SUBPACKAGE}
+MESSAGE${SUBPACKAGE} ?= ${PKGDIR}/MESSAGE${SUBPACKAGE}
 .endif
 .if exists(${PKGDIR}/UNMESSAGE${SUBPACKAGE})
-UNMESSAGE${SUBPACKAGE}?= ${PKGDIR}/UNMESSAGE${SUBPACKAGE}
+UNMESSAGE${SUBPACKAGE} ?= ${PKGDIR}/UNMESSAGE${SUBPACKAGE}
 .endif
 
-DESCR${SUBPACKAGE} ?=		${PKGDIR}/DESCR${SUBPACKAGE}
+DESCR${SUBPACKAGE} ?= ${PKGDIR}/DESCR${SUBPACKAGE}
 
-MTREE_FILE?=
-MTREE_FILE+=${PORTSDIR}/infrastructure/db/fake.mtree
+MTREE_FILE ?=
+MTREE_FILE += ${PORTSDIR}/infrastructure/db/fake.mtree
 
 # Fill out package command, and package dependencies
-_PKG_PREREQ= ${WRKPKG}/DESCR${SUBPACKAGE} ${WRKPKG}/COMMENT${SUBPACKAGE}
-PKG_ARGS+= -c '${WRKPKG}/COMMENT${SUBPACKAGE}' -d ${WRKPKG}/DESCR${SUBPACKAGE}
-PKG_ARGS+=-f ${PLIST${SUBPACKAGE}} -p ${PREFIX${SUBPACKAGE}} 
+_PKG_PREREQ = ${WRKPKG}/DESCR${SUBPACKAGE} ${WRKPKG}/COMMENT${SUBPACKAGE}
+PKG_ARGS += -c '${WRKPKG}/COMMENT${SUBPACKAGE}' -d ${WRKPKG}/DESCR${SUBPACKAGE}
+PKG_ARGS += -f ${PLIST${SUBPACKAGE}} -p ${PREFIX${SUBPACKAGE}} 
 .if exists(${PKGDIR}/INSTALL${SUBPACKAGE})
-PKG_ARGS+=		-i ${PKGDIR}/INSTALL${SUBPACKAGE}
+PKG_ARGS += -i ${PKGDIR}/INSTALL${SUBPACKAGE}
 .endif
 .if exists(${PKGDIR}/DEINSTALL${SUBPACKAGE})
-PKG_ARGS+=		-k ${PKGDIR}/DEINSTALL${SUBPACKAGE}
+PKG_ARGS += -k ${PKGDIR}/DEINSTALL${SUBPACKAGE}
 .endif
 .if exists(${PKGDIR}/REQ${SUBPACKAGE})
-PKG_ARGS+=		-r ${PKGDIR}/REQ${SUBPACKAGE}
+PKG_ARGS += -r ${PKGDIR}/REQ${SUBPACKAGE}
 .endif
 .if exists(${PKGDIR}/MODULE${SUBPACKAGE}.pm)
-PKG_ARGS+=		-m ${PKGDIR}/MODULE${SUBPACKAGE}.pm
+PKG_ARGS += -m ${PKGDIR}/MODULE${SUBPACKAGE}.pm
 .endif
 .if defined(MESSAGE${SUBPACKAGE})
-PKG_ARGS+=		-M ${MESSAGE${SUBPACKAGE}}
+PKG_ARGS += -M ${MESSAGE${SUBPACKAGE}}
 .endif
 .if defined(UNMESSAGE${SUBPACKAGE})
-PKG_ARGS+=		-U ${UNMESSAGE${SUBPACKAGE}}
+PKG_ARGS += -U ${UNMESSAGE${SUBPACKAGE}}
 .endif
-PKG_ARGS+=		-B ${WRKINST}
-PKG_ARGS+=-A'${PKG_ARCH${SUBPACKAGE}}'
+PKG_ARGS += -B ${WRKINST}
+PKG_ARGS += -A'${PKG_ARCH${SUBPACKAGE}}'
 .if ${LOCALBASE} != "/usr/local"
-PKG_ARGS+=-L${LOCALBASE}
+PKG_ARGS += -L${LOCALBASE}
 .endif
 .if !defined(_COMMENT${SUBPACKAGE})
-ERRORS+="Fatal: Missing comment."
+ERRORS += "Fatal: Missing comment."
 .endif
 
-CHMOD?=		/bin/chmod
-CHOWN?=		/usr/sbin/chown
-GUNZIP_CMD?=	/usr/bin/gunzip -f
-GZCAT?=		/usr/bin/gzcat
-GZIP?=		-9
-GZIP_CMD?=	/usr/bin/gzip -nf ${GZIP}
-M4?=		/usr/bin/m4
-STRIP?=		/usr/bin/strip
+CHMOD ?= /bin/chmod
+CHOWN ?= /usr/sbin/chown
+GUNZIP_CMD ?= /usr/bin/gunzip -f
+GZCAT ?= /usr/bin/gzcat
+GZIP ?= -9
+GZIP_CMD ?= /usr/bin/gzip -nf ${GZIP}
+M4 ?= /usr/bin/m4
+STRIP ?= /usr/bin/strip
 
 # Autoconf scripts MAY tend to use bison by default otherwise
-YACC?=yacc
+YACC ?= yacc
 # XXX ${SETENV} is needed in front of var=value lists whenever the next
 # command is expanded from a variable, as this could be a shell construct
-SETENV?=	/usr/bin/env -i
-SH?=		/bin/sh
+SETENV ?= /usr/bin/env -i
+SH ?= /bin/sh
 
 # Used to print all the '===>' style prompts - override this to turn them off.
-ECHO_MSG?=		echo
+ECHO_MSG ?= echo
 
 # basic master sites configuration
 
@@ -806,168 +808,180 @@ ECHO_MSG?=		echo
 .endif
 
 # Empty declarations to avoid "variable XXX is recursive" errors
-MASTER_SITES?=
+MASTER_SITES ?=
 # I guess we're in the master distribution business! :)  As we gain mirror
 # sites for distfiles, add them to this list.
 .if !defined(MASTER_SITE_OVERRIDE)
-MASTER_SITES:=	${MASTER_SITES} ${MASTER_SITE_BACKUP}
+MASTER_SITES := ${MASTER_SITES} ${MASTER_SITE_BACKUP}
 .else
-MASTER_SITES:=	${MASTER_SITE_OVERRIDE} ${MASTER_SITES}
+MASTER_SITES := ${MASTER_SITE_OVERRIDE} ${MASTER_SITES}
 .endif
 
 # _SITE_SELECTOR chooses the value of sites based on select.
-_SITE_SELECTOR=case $$select in
+_SITE_SELECTOR = case $$select in
 
 
 .for _I in 0 1 2 3 4 5 6 7 8 9
 .  if defined(MASTER_SITES${_I})
 .    if !defined(MASTER_SITE_OVERRIDE)
-MASTER_SITES${_I}:=	${MASTER_SITES${_I}} ${MASTER_SITE_BACKUP}
+MASTER_SITES${_I} := ${MASTER_SITES${_I}} ${MASTER_SITE_BACKUP}
 .    else
-MASTER_SITES${_I}:= ${MASTER_SITE_OVERRIDE} ${MASTER_SITES${_I}}
+MASTER_SITES${_I} := ${MASTER_SITE_OVERRIDE} ${MASTER_SITES${_I}}
 .    endif
-_SITE_SELECTOR+=*:${_I}) sites="${MASTER_SITES${_I}}";;
+_SITE_SELECTOR += *:${_I}) sites="${MASTER_SITES${_I}}";;
 .  else
-_SITE_SELECTOR+=*:${_I}) echo >&2 "Error: MASTER_SITES${_I} not defined";;
+_SITE_SELECTOR += *:${_I}) echo >&2 "Error: MASTER_SITES${_I} not defined";;
 .  endif
 .endfor
-_SITE_SELECTOR+=*) sites="${MASTER_SITES}";; esac
+_SITE_SELECTOR += *) sites="${MASTER_SITES}";; esac
 
 
 # OpenBSD code to handle ports distfiles on a CDROM.
 #
-#CDROM_SITE?=	/cdrom/distfiles/${DIST_SUBDIR}
-CDROM_SITE?=
+#CDROM_SITE ?= /cdrom/distfiles/${DIST_SUBDIR}
+CDROM_SITE ?=
 
 .if !empty(CDROM_SITE)
 .  if defined(FETCH_SYMLINK_DISTFILES)
-_CDROM_OVERRIDE=if ln -s ${CDROM_SITE}/$$f .; then exit 0; fi
+_CDROM_OVERRIDE = if ln -s ${CDROM_SITE}/$$f .; then exit 0; fi
 .  else
-_CDROM_OVERRIDE=if cp -f ${CDROM_SITE}/$$f .; then exit 0; fi
+_CDROM_OVERRIDE = if cp -f ${CDROM_SITE}/$$f .; then exit 0; fi
 .  endif
 .else
-_CDROM_OVERRIDE=:
+_CDROM_OVERRIDE =:
 .endif
 
-EXTRACT_SUFX?=		.tar.gz
+EXTRACT_SUFX ?= .tar.gz
 
-DISTFILES?=		${DISTNAME}${EXTRACT_SUFX}
+DISTFILES ?= ${DISTNAME}${EXTRACT_SUFX}
 
-_EVERYTHING=${DISTFILES}
-_DISTFILES=	${DISTFILES:C/:[0-9]$//}
-ALLFILES=	${_DISTFILES}
+_EVERYTHING = ${DISTFILES}
+_DISTFILES = ${DISTFILES:C/:[0-9]$//}
+ALLFILES = ${_DISTFILES}
 
 .if defined(PATCHFILES)
-_PATCHFILES=${PATCHFILES:C/:[0-9]$//}
-_EVERYTHING+=${PATCHFILES}
-ALLFILES+=	${_PATCHFILES}
+_PATCHFILES = ${PATCHFILES:C/:[0-9]$//}
+_EVERYTHING += ${PATCHFILES}
+ALLFILES += ${_PATCHFILES}
 .endif
 
 .if make(makesum) || make(addsum) || defined(__FETCH_ALL)
 .  if defined(SUPDISTFILES)
-_EVERYTHING+= ${SUPDISTFILES}
-ALLFILES+= ${SUPDISTFILES:C/:[0-9]$//}
+_EVERYTHING += ${SUPDISTFILES}
+ALLFILES += ${SUPDISTFILES:C/:[0-9]$//}
 .  endif
 .endif
 
-__CKSUMFILES=
+__CKSUMFILES =
 # First, remove duplicates
 .for _file in ${ALLFILES}
 .  if empty(__CKSUMFILES:M${_file})
-__CKSUMFILES+=${_file}
+__CKSUMFILES += ${_file}
 .  endif
 .endfor
-ALLFILES:=${__CKSUMFILES}
+ALLFILES := ${__CKSUMFILES}
 
 .if defined(IGNOREFILES)
-ERRORS+= "Fatal: don't use IGNOREFILES"
+ERRORS += "Fatal: don't use IGNOREFILES"
 .endif
 
 # List of all files, with ${DIST_SUBDIR} in front.  Used for checksum.
 .if !empty(DIST_SUBDIR)
-_CKSUMFILES=	${__CKSUMFILES:S/^/${DIST_SUBDIR}\//}
+_CKSUMFILES = ${__CKSUMFILES:S/^/${DIST_SUBDIR}\//}
 .else
-_CKSUMFILES=	${__CKSUMFILES}
+_CKSUMFILES = ${__CKSUMFILES}
 .endif
 
 # This is what is actually going to be extracted, and is overridable
 #  by user.
-EXTRACT_ONLY?=	${_DISTFILES}
+EXTRACT_ONLY ?= ${_DISTFILES}
 
 # okay, time for some guess work
 .if !empty(EXTRACT_ONLY:M*.zip)
-_USE_ZIP?=	Yes
+_USE_ZIP ?= Yes
 .endif
-.if !empty(EXTRACT_ONLY:M*.tar.bz2) || (defined(PATCHFILES) && !empty(_PATCHFILES:M*.bz2))
-_USE_BZIP2?=	Yes
+.if !empty(EXTRACT_ONLY:M*.tar.bz2) || \
+	(defined(PATCHFILES) && !empty(_PATCHFILES:M*.bz2))
+_USE_BZIP2 ?= Yes
 .endif
-_USE_ZIP?=	No
-_USE_BZIP2?=	No
+_USE_ZIP ?= No
+_USE_BZIP2 ?= No
 
-EXTRACT_CASES?=
+EXTRACT_CASES ?=
 
-_PERL_FIX_SHAR?=perl -ne 'print if $$s || ($$s = m:^\#(\!\s*/bin/sh\s*| This is a shell archive):)'
+_PERL_FIX_SHAR ?= perl -ne 'print if $$s || ($$s = m:^\#(\!\s*/bin/sh\s*| This is a shell archive):)'
 
 # XXX note that we DON'T set EXTRACT_SUFX.
 .if ${_USE_ZIP:L} != "no"
-BUILD_DEPENDS+=		:unzip-*:archivers/unzip
-EXTRACT_CASES+= *.zip) ${UNZIP} -oq ${FULLDISTDIR}/$$archive -d ${WRKDIR};;
+BUILD_DEPENDS += :unzip-*:archivers/unzip
+EXTRACT_CASES += *.zip) \
+	${UNZIP} -oq ${FULLDISTDIR}/$$archive -d ${WRKDIR};;
 .endif
 .if ${_USE_BZIP2:L} != "no"
-BUILD_DEPENDS+=		:bzip2-*:archivers/bzip2
-EXTRACT_CASES+= *.tar.bz2) ${BZIP2} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
+BUILD_DEPENDS += :bzip2-*:archivers/bzip2
+EXTRACT_CASES += *.tar.bz2) \
+	${BZIP2} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
 .endif
-EXTRACT_CASES+= *.tar) ${TAR} xf ${FULLDISTDIR}/$$archive;;
-EXTRACT_CASES+= *.shar.gz|*.shar.Z|*.sh.gz|*.sh.Z) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${_PERL_FIX_SHAR} | /bin/sh;;
-EXTRACT_CASES+= *.shar | *.sh) ${_PERL_FIX_SHAR} ${FULLDISTDIR}/$$archive | /bin/sh;;
-EXTRACT_CASES+= *.tar.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
-EXTRACT_CASES+= *.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive >`basename $$archive .gz`;;
-EXTRACT_CASES+= *) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
+EXTRACT_CASES += *.tar) \
+	${TAR} xf ${FULLDISTDIR}/$$archive;;
+EXTRACT_CASES += *.shar.gz|*.shar.Z|*.sh.gz|*.sh.Z) \
+	${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${_PERL_FIX_SHAR} | /bin/sh;;
+EXTRACT_CASES += *.shar | *.sh) \
+	${_PERL_FIX_SHAR} ${FULLDISTDIR}/$$archive | /bin/sh;;
+EXTRACT_CASES += *.tar.gz) \
+	${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
+EXTRACT_CASES += *.gz) \
+	${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive >`basename $$archive .gz`;;
+EXTRACT_CASES += *) \
+	${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
 
-PATCH_CASES?=
+PATCH_CASES ?=
 .if ${_USE_BZIP2:L} != "no"
-PATCH_CASES+= *.bz2) ${BZIP2} -dc $$patchfile | ${PATCH} ${PATCH_DIST_ARGS};;
+PATCH_CASES += *.bz2) \
+	${BZIP2} -dc $$patchfile | ${PATCH} ${PATCH_DIST_ARGS};;
 .endif
-PATCH_CASES+= *.Z|*.gz) ${GZCAT} $$patchfile | ${PATCH} ${PATCH_DIST_ARGS};;
-PATCH_CASES+= *) ${PATCH} ${PATCH_DIST_ARGS} < $$patchfile;;
+PATCH_CASES += *.Z|*.gz) \
+	${GZCAT} $$patchfile | ${PATCH} ${PATCH_DIST_ARGS};;
+PATCH_CASES += *) \
+	${PATCH} ${PATCH_DIST_ARGS} < $$patchfile;;
 
 # Documentation
-MAINTAINER?=	The OpenBSD ports mailing-list <ports@openbsd.org>
+MAINTAINER ?= The OpenBSD ports mailing-list <ports@openbsd.org>
 
 .if !defined(CATEGORIES)
-ERRORS+=	"Fatal: CATEGORIES is mandatory."
+ERRORS += "Fatal: CATEGORIES is mandatory."
 .endif
 
 
-CONFIGURE_SCRIPT?=	configure
+CONFIGURE_SCRIPT ?= configure
 .if ${CONFIGURE_SCRIPT:M/*}
-_CONFIGURE_SCRIPT=${CONFIGURE_SCRIPT}
+_CONFIGURE_SCRIPT = ${CONFIGURE_SCRIPT}
 .else
 .  if ${SEPARATE_BUILD:L} != "no"
-_CONFIGURE_SCRIPT=${WRKSRC}/${CONFIGURE_SCRIPT}
+_CONFIGURE_SCRIPT = ${WRKSRC}/${CONFIGURE_SCRIPT}
 .  else
-_CONFIGURE_SCRIPT=./${CONFIGURE_SCRIPT}
+_CONFIGURE_SCRIPT = ./${CONFIGURE_SCRIPT}
 .  endif
 .endif
 
-CONFIGURE_ENV+=		PATH=${PORTPATH}
+CONFIGURE_ENV += PATH=${PORTPATH}
 
 .if ${NO_SHARED_LIBS:L} == "yes"
-CONFIGURE_SHARED?=	--disable-shared
+CONFIGURE_SHARED ?= --disable-shared
 .else
-CONFIGURE_SHARED?=	--enable-shared
+CONFIGURE_SHARED ?= --enable-shared
 .endif
 
-FETCH_MANUALLY?=No
+FETCH_MANUALLY ?= No
 .if ${FETCH_MANUALLY:L} != "no"
-_ALLFILES_PRESENT=Yes
+_ALLFILES_PRESENT = Yes
 .  for _F in ${ALLFILES:S@^@${FULLDISTDIR}/@}
 .    if !exists(${_F})
-_ALLFILES_PRESENT=No
+_ALLFILES_PRESENT = No
 .    endif
 .  endfor
 .  if ${_ALLFILES_PRESENT:L} == "no"
-IS_INTERACTIVE=Yes
+IS_INTERACTIVE = Yes
 .  endif
 .endif
 
@@ -989,54 +1003,54 @@ IS_INTERACTIVE=Yes
 ################################################################
 
 .if !defined(NO_IGNORE) && !defined(DESCRIBE_TARGET)
-.  if (defined(REGRESS_IS_INTERACTIVE) && defined(BATCH))
-_IGNORE_REGRESS=	"has interactive tests"
-.  elif (!defined(REGRESS_IS_INTERACTIVE) && defined(INTERACTIVE))
-_IGNORE_REGRESS=	"does not have interactive tests"
+.  if defined(REGRESS_IS_INTERACTIVE) && defined(BATCH)
+_IGNORE_REGRESS = "has interactive tests"
+.  elif !defined(REGRESS_IS_INTERACTIVE) && defined(INTERACTIVE)
+_IGNORE_REGRESS = "does not have interactive tests"
 .  endif
-.  if (defined(IS_INTERACTIVE) && defined(BATCH))
-IGNORE=	"is an interactive port"
-.  elif (!defined(IS_INTERACTIVE) && defined(INTERACTIVE))
-IGNORE=	"is not an interactive port"
+.  if defined(IS_INTERACTIVE) && defined(BATCH)
+IGNORE = "is an interactive port"
+.  elif !defined(IS_INTERACTIVE) && defined(INTERACTIVE)
+IGNORE = "is not an interactive port"
 .  elif ${USE_X11:L} == "yes" && !exists(${X11BASE})
-IGNORE=	"uses X11, but ${X11BASE} not found"
+IGNORE = "uses X11, but ${X11BASE} not found"
 .  elif defined(ONLY_FOR_ARCHS)
 .    for __ARCH in ${MACHINE_ARCH} ${ARCH}
 .      if !empty(ONLY_FOR_ARCHS:M${__ARCH})
-_ARCH_OK=1
+_ARCH_OK = 1
 .      endif
 .    endfor
 .    if !defined(_ARCH_OK)
 .      if ${MACHINE_ARCH} == "${ARCH}"
-IGNORE= "is only for ${ONLY_FOR_ARCHS}, not ${MACHINE_ARCH}"
+IGNORE = "is only for ${ONLY_FOR_ARCHS}, not ${MACHINE_ARCH}"
 .      else
-IGNORE= "is only for ${ONLY_FOR_ARCHS}, not ${MACHINE_ARCH} \(${ARCH}\)"
+IGNORE = "is only for ${ONLY_FOR_ARCHS}, not ${MACHINE_ARCH} \(${ARCH}\)"
 .      endif
 .    endif
 .  elif defined(NOT_FOR_ARCHS)
 .    for __ARCH in ${MACHINE_ARCH} ${ARCH}
 .      if !empty(NOT_FOR_ARCHS:M${__ARCH})
-IGNORE= "is not for ${NOT_FOR_ARCHS}"
+IGNORE = "is not for ${NOT_FOR_ARCHS}"
 .      endif
 .    endfor
 .  elif ${SHARED_ONLY:L} == "yes" && ${NO_SHARED_LIBS:L} == "yes"
-IGNORE="requires shared libraries"
+IGNORE = "requires shared libraries"
 .  endif
 .endif		# NO_IGNORE
 
 .if !defined(NO_IGNORE)
 .  if defined(BROKEN)
-IGNORE=	"is marked as broken: ${BROKEN}"
+IGNORE = "is marked as broken: ${BROKEN}"
 .  elif defined(COMES_WITH)
-IGNORE= "-- ${FULLPKGNAME${SUBPACKAGE}:C/-[0-9].*//g} comes with ${OPSYS} as of release ${COMES_WITH}"
+IGNORE = "-- ${FULLPKGNAME${SUBPACKAGE}:C/-[0-9].*//g} comes with ${OPSYS} as of release ${COMES_WITH}"
 .  endif
 .endif
 
 .if !defined(DEPENDS_TARGET)
 .  if make(reinstall)
-DEPENDS_TARGET=	reinstall
+DEPENDS_TARGET = reinstall
 .  else
-DEPENDS_TARGET=	install
+DEPENDS_TARGET = install
 .  endif
 .endif
 
@@ -1047,79 +1061,87 @@ DEPENDS_TARGET=	install
 # Various dependency styles
 
 .if ${NO_SHARED_LIBS:L} == "yes"
-_noshared=-noshared
+_noshared = -noshared
 .else
-_noshared=
+_noshared =
 .endif
 
 _libresolve_fragment = \
-		case "$$d" in \
-		*/*) shdir="${LOCALBASE}/$${d%/*}";; \
-		*) shdir="${LOCALBASE}/lib";; \
-		esac; \
-		check=`eval $$listlibs 2>/dev/null| LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} perl \
-			${PORTSDIR}/infrastructure/build/resolve-lib ${_noshared} $$d` \
+	case "$$d" in \
+	*/*) shdir="${LOCALBASE}/$${d%/*}";; \
+	*) shdir="${LOCALBASE}/lib";; \
+	esac; \
+	check=`eval $$listlibs 2>/dev/null| \
+		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
+			perl ${PORTSDIR}/infrastructure/build/resolve-lib \
+				${_noshared} $$d` \
 			|| check=Failed
 
 _syslibresolve_fragment = \
-		case "$$d" in \
-		/*) shdir="$${d%/*}/";; \
-		*/*) shdir="${DEPBASE}/$${d%/*}";; \
-		*) shdir="${DEPBASE}/lib"; listlibs="$$listlibs /usr/lib/lib* ${X11BASE}/lib/lib*";; \
-		esac; \
-		check=`eval $$listlibs 2>/dev/null| LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} perl \
-			${PORTSDIR}/infrastructure/build/resolve-lib ${_noshared} $$d` \
-			|| check=Failed
+	case "$$d" in \
+	/*) \
+		shdir="$${d%/*}/";; \
+	*/*) \
+		shdir="${DEPBASE}/$${d%/*}";; \
+	*) \
+		shdir="${DEPBASE}/lib"; \
+		listlibs="$$listlibs /usr/lib/lib* ${X11BASE}/lib/lib*";; \
+	esac; \
+	check=`eval $$listlibs 2>/dev/null| \
+		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
+		perl ${PORTSDIR}/infrastructure/build/resolve-lib ${_noshared} $$d` \
+		|| check=Failed
 
 
-PORT_LD_LIBRARY_PATH=${LOCALBASE}/lib:${X11BASE}/lib:/usr
-_set_ld_library_path=:
-DEPBASE=${LOCALBASE}
-DEPDIR=
+PORT_LD_LIBRARY_PATH = ${LOCALBASE}/lib:${X11BASE}/lib:/usr
+_set_ld_library_path = :
+DEPBASE = ${LOCALBASE}
+DEPDIR =
 
 .if ${FORCE_UPDATE:L} == "yes" || ${FORCE_UPDATE:L} == "hard"
-_force_update_fragment=eval $$toset ${MAKE} subupdate
-_PKG_ADD_FORCE=-F update -F updatedepends -r
+_force_update_fragment = eval $$toset ${MAKE} subupdate
+_PKG_ADD_FORCE = -F update -F updatedepends -r
 .  if ${FORCE_UPDATE:L} == "hard"
-_PKG_ADD_FORCE+= -F installed
+_PKG_ADD_FORCE += -F installed
 .  endif
 .else
-_force_update_fragment=:
-_PKG_ADD_FORCE=
+_force_update_fragment = :
+_PKG_ADD_FORCE =
 .endif
 
-_FULL_PACKAGE_NAME?=No
+_FULL_PACKAGE_NAME ?= No
 
-_BUILDLIB_DEPENDS=	${LIB_DEPENDS}
-_BUILDWANTLIB=		${WANTLIB}
+_BUILDLIB_DEPENDS = ${LIB_DEPENDS}
+_BUILDWANTLIB = ${WANTLIB}
 # strip inter-multi-packages dependencies during building
 .for _path in ${PKGPATH:S,^mystuff/,,}
 .  for _s in ${MULTI_PACKAGES}
-_BUILDLIB_DEPENDS+=	${LIB_DEPENDS${_s}:N*\:${_path}:N*\:${_path},*}
-_BUILDWANTLIB+=		${WANTLIB${_s}}
+_BUILDLIB_DEPENDS += ${LIB_DEPENDS${_s}:N*\:${_path}:N*\:${_path},*}
+_BUILDWANTLIB += ${WANTLIB${_s}}
 .  endfor
 .endfor
 
 .if ${NO_DEPENDS:L} == "no"
-_BUILD_DEPLIST=		${BUILD_DEPENDS:S/^://}
-_RUN_DEPLIST=		${RUN_DEPENDS${SUBPACKAGE}:S/^://}
-_REGRESS_DEPLIST=	${REGRESS_DEPENDS:S/^://}
-_BUILDLIB_DEPLIST=	${_BUILDLIB_DEPENDS:C/^[^:]*://}
-_RUNLIB_DEPLIST=	${LIB_DEPENDS${SUBPACKAGE}:C/^[^:]*://}
+_BUILD_DEPLIST = ${BUILD_DEPENDS:S/^://}
+_RUN_DEPLIST = ${RUN_DEPENDS${SUBPACKAGE}:S/^://}
+_REGRESS_DEPLIST = ${REGRESS_DEPENDS:S/^://}
+_BUILDLIB_DEPLIST = ${_BUILDLIB_DEPENDS:C/^[^:]*://}
+_RUNLIB_DEPLIST = ${LIB_DEPENDS${SUBPACKAGE}:C/^[^:]*://}
 .endif
-_DEPLIST=			${_BUILD_DEPLIST} ${_RUN_DEPLIST} ${_REGRESS_DEPLIST} ${_BUILDLIB_DEPLIST} ${_RUNLIB_DEPLIST}
+_DEPLIST = ${_BUILD_DEPLIST} ${_RUN_DEPLIST} ${_REGRESS_DEPLIST} \
+	${_BUILDLIB_DEPLIST} ${_RUNLIB_DEPLIST}
 
 .for _DEP in BUILD RUN BUILDLIB RUNLIB REGRESS
-_DEP${_DEP}_COOKIES=
+_DEP${_DEP}_COOKIES =
 .  for _i in ${_${_DEP}_DEPLIST}
-_DEP${_DEP}_COOKIES+=${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g}
+_DEP${_DEP}_COOKIES += ${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g}
 .  endfor
 .endfor
 
 # Normal user-mode targets are PHONY targets, e.g., don't create the
 # corresponding file. However, there is nothing phony about the cookie.
 
-MODSIMPLE_configure= \
+MODSIMPLE_configure = \
 	cd ${WRKCONF} && ${_SYSTRACE_CMD} ${SETENV} \
 		CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS:C/ *$//}" \
 		CXX="${CXX}" ac_cv_path_CXX="${CXX}" CXXFLAGS="${CXXFLAGS:C/ *$//}" \
@@ -1130,137 +1152,139 @@ MODSIMPLE_configure= \
 		YACC="${YACC}" \
 		${CONFIGURE_ENV} ${_CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
 
-VMEM_WARNING?=	No
+VMEM_WARNING ?= No
 
-_FAKE_SETUP=TRUEPREFIX=${PREFIX} PREFIX=${WRKINST}${PREFIX} ${DESTDIRNAME}=${WRKINST}
+_FAKE_SETUP = TRUEPREFIX=${PREFIX} PREFIX=${WRKINST}${PREFIX} \
+	${DESTDIRNAME}=${WRKINST}
 
-_CLEANDEPENDS?=Yes
+_CLEANDEPENDS ?= Yes
 
 # mirroring utilities
 .if !empty(DIST_SUBDIR)
-_ALLFILES=${ALLFILES:S/^/${DIST_SUBDIR}\//}
+_ALLFILES = ${ALLFILES:S/^/${DIST_SUBDIR}\//}
 .else
-_ALLFILES=${ALLFILES}
+_ALLFILES = ${ALLFILES}
 .endif
 
 .if defined(MULTI_PACKAGES)
 .  for _S in ${MULTI_PACKAGES}
-_FMN+= ${PKGPATH}/${FULLPKGNAME${_S}}
+_FMN += ${PKGPATH}/${FULLPKGNAME${_S}}
 .  endfor
 .endif
 
 # Internal variables, used by dependencies targets
 # Only keep pkg:dir spec
 
-_BUILD_DEP2=	${BUILD_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
-_BUILD_DEP3=	${BUILD_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_BUILD_DEP2 = ${BUILD_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_BUILD_DEP3 = ${BUILD_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
 
-_RUN_DEP2=	 	${RUN_DEPENDS${SUBPACKAGE}:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
-_RUN_DEP3=	 	${RUN_DEPENDS${SUBPACKAGE}:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_RUN_DEP2 = ${RUN_DEPENDS${SUBPACKAGE}:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_RUN_DEP3 = ${RUN_DEPENDS${SUBPACKAGE}:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
 
-_REGRESS_DEP2=	${REGRESS_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_REGRESS_DEP2 = ${REGRESS_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
 
 .if ${NO_SHARED_LIBS:L} != "yes"
-_RUN_DEP2+= 	${LIB_DEPENDS${SUBPACKAGE}:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
-_LIB_DEP3=		${LIB_DEPENDS${SUBPACKAGE}}
-_DEPRUNLIBS=	${LIB_DEPENDS${SUBPACKAGE}:C/:.*//:S/,/ /g}
+_RUN_DEP2 += ${LIB_DEPENDS${SUBPACKAGE}:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_LIB_DEP3 = ${LIB_DEPENDS${SUBPACKAGE}}
+_DEPRUNLIBS = ${LIB_DEPENDS${SUBPACKAGE}:C/:.*//:S/,/ /g}
 .else
-_LIB_DEP3=
-_DEPRUNLIBS=
+_LIB_DEP3 =
+_DEPRUNLIBS =
 .endif
 
-_BUILD_DEP2+= 	${_BUILDLIB_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
-_DEPBUILDLIBS=	${_BUILDLIB_DEPENDS:C/:.*//:S/,/ /g}
+_BUILD_DEP2 += ${_BUILDLIB_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_DEPBUILDLIBS = ${_BUILDLIB_DEPENDS:C/:.*//:S/,/ /g}
 
-_DEPBUILDLIBS+=	${_BUILDWANTLIB}
-_DEPRUNLIBS+=	${WANTLIB${SUBPACKAGE}}
+_DEPBUILDLIBS += ${_BUILDWANTLIB}
+_DEPRUNLIBS += ${WANTLIB${SUBPACKAGE}}
 
 .if ${NO_DEPENDS:L} == "no"
 .  for i in ${_DEPBUILDLIBS:C,[|:/<=>*],-,g}
-_DEPBUILDLIBSPECS_COOKIES+=${WRKDIR}/.spec-$i
+_DEPBUILDLIBSPECS_COOKIES += ${WRKDIR}/.spec-$i
 .  endfor
-_DEPBUILDWANTLIB_COOKIE=${WRKDIR}/.buildwantlibs
+_DEPBUILDWANTLIB_COOKIE = ${WRKDIR}/.buildwantlibs
 .  for i in ${_DEPRUNLIBS:C,[|:/<=>*],-,g}
-_DEPRUNLIBSPECS_COOKIES+=${WRKDIR}/.spec-$i
+_DEPRUNLIBSPECS_COOKIES += ${WRKDIR}/.spec-$i
 .  endfor
-_DEPRUNWANTLIB_COOKIE=${WRKDIR}/.runwantlibs${SUBPACKAGE}
+_DEPRUNWANTLIB_COOKIE = ${WRKDIR}/.runwantlibs${SUBPACKAGE}
 .else
-_DEPBUILDWANTLIB_COOKIE=
-_DEPRUNWANTLIB_COOKIE=
+_DEPBUILDWANTLIB_COOKIE =
+_DEPRUNWANTLIB_COOKIE =
 .endif
 
-_DEPLIBSPECS_COOKIES=${_DEPBUILDLIBSPECS_COOKIES} ${_DEPRUNLIBSPECS_COOKIES}
+_DEPLIBSPECS_COOKIES = ${_DEPBUILDLIBSPECS_COOKIES} ${_DEPRUNLIBSPECS_COOKIES}
 
-_BUILD_DEP=		${_BUILD_DEP2:C/[^:]*://}
-_RUN_DEP= 		${_RUN_DEP2:C/[^:]*://}
-_REGRESS_DEP=	${_REGRESS_DEP2:C/[^:]*://}
+_BUILD_DEP = ${_BUILD_DEP2:C/[^:]*://}
+_RUN_DEP = ${_RUN_DEP2:C/[^:]*://}
+_REGRESS_DEP = ${_REGRESS_DEP2:C/[^:]*://}
 
 .if defined(MULTI_PACKAGES)
 .  for _S in ${MULTI_PACKAGES}
-_BUILD_DEP3${_S} =${_BUILD_DEP3}
-_RUN_DEP3${_S} =	 	${RUN_DEPENDS${_S}:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+_BUILD_DEP3${_S} = ${_BUILD_DEP3}
+_RUN_DEP3${_S} = ${RUN_DEPENDS${_S}:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
 .    if ${NO_SHARED_LIBS:L} != "yes"
-_LIB_DEP3${_S} =		${LIB_DEPENDS${_S}}
+_LIB_DEP3${_S} = ${LIB_DEPENDS${_S}}
 .    else
 _LIB_DEP3${_S} =
 .    endif
 .  endfor
 .endif
 
-README_NAME?=	${TEMPLATES}/README.port
+README_NAME ?= ${TEMPLATES}/README.port
 
-REORDER_DEPENDENCIES?=
+REORDER_DEPENDENCIES ?=
 
 # Lock infrastructure:
 # nothing happens unless LOCKDIR is defined to a non-empty value
 
-LOCKDIR?=
-LOCK_CMD?=	perl ${PORTSDIR}/infrastructure/build/dolock
-UNLOCK_CMD?=rm -f
-_LOCKS_HELD?=
-LOCK_VERBOSE?=No
+LOCKDIR ?=
+LOCK_CMD ?= perl ${PORTSDIR}/infrastructure/build/dolock
+UNLOCK_CMD ?= rm -f
+_LOCKS_HELD ?=
+LOCK_VERBOSE ?= No
 .if !empty(LOCKDIR)
 .  if ${LOCK_VERBOSE:L} == "yes"
-_LOCK=echo "Locking $$lock from $@"; ${LOCK_CMD} ${LOCKDIR}/$$lock.lock
-_UNLOCK=echo "Unlocking $$lock from $@"; ${UNLOCK_CMD} ${LOCKDIR}/$$lock.lock
+_LOCK = echo "Locking $$lock from $@"; ${LOCK_CMD} ${LOCKDIR}/$$lock.lock
+_UNLOCK = echo "Unlocking $$lock from $@"; ${UNLOCK_CMD} ${LOCKDIR}/$$lock.lock
 .  else
-_LOCK=${LOCK_CMD} ${LOCKDIR}/$$lock.lock
-_UNLOCK=${UNLOCK_CMD} ${LOCKDIR}/$$lock.lock
+_LOCK = ${LOCK_CMD} ${LOCKDIR}/$$lock.lock
+_UNLOCK = ${UNLOCK_CMD} ${LOCKDIR}/$$lock.lock
 .  endif
 .  if ${SEPARATE_BUILD:L:Mflavored}
-_LOCKNAME=${PKGNAME}
+_LOCKNAME = ${PKGNAME}
 .  else
-_LOCKNAME=${FULLPKGNAME}
+_LOCKNAME = ${FULLPKGNAME}
 .  endif
 
 .  for _i in ${_LOCKNAME}
 .    if empty(_LOCKS_HELD:M${_i})
-_DO_LOCK=\
+_DO_LOCK = \
 	lock=${_LOCKNAME}; \
 	_LOCKS_HELD="${_LOCKS_HELD} ${_LOCKNAME}"; export _LOCKS_HELD; \
 	${_SIMPLE_LOCK}
 .    endif
 .  endfor
 
-_SIMPLE_LOCK= \
+_SIMPLE_LOCK = \
 	${_LOCK}; trap '${_UNLOCK}' 0 1 2 3 13 15
 
 .endif
-_SIMPLE_LOCK?=:
-_DO_LOCK?=:
+_SIMPLE_LOCK ?= :
+_DO_LOCK ?= :
 
-_size_fragment=wc -c $$file 2>/dev/null| awk '{print "SIZE (" $$2 ") = " $$1}' 
+_size_fragment = wc -c $$file 2>/dev/null| \
+	awk '{print "SIZE (" $$2 ") = " $$1}' 
 
 # commands used all the time
-_lines2list= tr '\012' '\040' | sed -e 's, $$,,'
+_lines2list = tr '\012' '\040' | sed -e 's, $$,,'
 
-_zap_last_line= sed -e '$$d'
+_zap_last_line = sed -e '$$d'
 
-_sort_dependencies=tsort -r|${_zap_last_line}
+_sort_dependencies = tsort -r|${_zap_last_line}
 
-_version2default= sed -e 's,-[0-9].*,-*,'
+_version2default = sed -e 's,-[0-9].*,-*,'
 
-_grab_libs_from_plist= sed -n -e '/^@lib /{ s///; p; }' \
+_grab_libs_from_plist = sed -n -e '/^@lib /{ s///; p; }' \
 	-e '/^@file .*\/lib\/lib.*\.a$$/{ s/^@file //; p; }'
 
 
@@ -1476,7 +1500,8 @@ ${_DEPLIBSPECS_COOKIES}: ${_WRKDIR_COOKIE}
 
 .for _m in BUILD RUN
 .  if !empty(_DEP${_m}WANTLIB_COOKIE)
-${_DEP${_m}WANTLIB_COOKIE}: ${_DEP${_m}LIBSPECS_COOKIES} ${_DEP${_m}LIB_COOKIES} ${_DEPBUILD_COOKIES} ${_WRKDIR_COOKIE}
+${_DEP${_m}WANTLIB_COOKIE}: ${_DEP${_m}LIBSPECS_COOKIES} \
+	${_DEP${_m}LIB_COOKIES} ${_DEPBUILD_COOKIES} ${_WRKDIR_COOKIE}
 	@${ECHO_MSG} "===>  Verifying specs: ${_DEP${_m}LIBS}"
 	@listlibs="echo ${LOCALBASE}/lib/lib* /usr/lib/lib* ${X11BASE}/lib/lib*"; \
 	for d in ${_DEP${_m}LIBS:S/>/\>/g}; do \
@@ -1503,12 +1528,12 @@ _internal-${_m:L}wantlib-depends: ${_DEP${_m}WANTLIB_COOKIE}
 
 .if defined(IGNORE) && !defined(NO_IGNORE)
 _internal-fetch _internal-checksum _internal-extract _internal-patch \
-_internal-configure _internal-all _internal-build _internal-install \
-_internal-regress _internal-uninstall _internal-deinstall _internal-fake \
-_internal-update _internal-plist _internal-package _internal-install-all \
-_internal-update-plist update-patches _internal-subupdate \
-dump-vars describe _internal-subpackage sublib-depends-check \
-_internal-manpages-check:
+	_internal-configure _internal-all _internal-build _internal-install \
+	_internal-regress _internal-uninstall _internal-deinstall _internal-fake \
+	_internal-update _internal-plist _internal-package _internal-install-all \
+	_internal-update-plist update-patches _internal-subupdate \
+	dump-vars describe _internal-subpackage sublib-depends-check \
+	_internal-manpages-check:
 .  if !defined(IGNORE_SILENT)
 	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} ${IGNORE}."
 .  endif
@@ -1624,12 +1649,12 @@ _refetch:
 # The cookie's recipe hold the real rule for each of those targets.
 
 _internal-extract: ${_EXTRACT_COOKIE}
-_internal-patch: ${_DEPBUILD_COOKIES} ${_DEPBUILDLIB_COOKIES} ${_DEPBUILDWANTLIB_COOKIE} \
-	${_PATCH_COOKIE}
-_internal-distpatch: ${_DEPBUILD_COOKIES} ${_DEPBUILDLIB_COOKIES} ${_DEPBUILDWANTLIB_COOKIE} \
-	${_DISTPATCH_COOKIE}
-_internal-configure: ${_DEPBUILD_COOKIES} ${_DEPBUILDLIB_COOKIES} ${_DEPBUILDWANTLIB_COOKIE} \
-	${_CONFIGURE_COOKIE}
+_internal-patch: ${_DEPBUILD_COOKIES} ${_DEPBUILDLIB_COOKIES} \
+	${_DEPBUILDWANTLIB_COOKIE} ${_PATCH_COOKIE}
+_internal-distpatch: ${_DEPBUILD_COOKIES} ${_DEPBUILDLIB_COOKIES} \
+	${_DEPBUILDWANTLIB_COOKIE} ${_DISTPATCH_COOKIE}
+_internal-configure: ${_DEPBUILD_COOKIES} ${_DEPBUILDLIB_COOKIES} \
+	${_DEPBUILDWANTLIB_COOKIE} ${_CONFIGURE_COOKIE}
 _internal-build _internal-all: ${_DEPBUILD_COOKIES} ${_DEPBUILDLIB_COOKIES} \
 	${_DEPBUILDWANTLIB_COOKIE} ${_BUILD_COOKIE}
 _internal-install: ${_INSTALL_COOKIE}
@@ -1701,9 +1726,9 @@ update-patches:
 # if locking exists.
 
 .for _t in extract patch distpatch configure build all install fake \
-subupdate fetch checksum regress depends lib-depends build-depends \
-run-depends regress-depends clean manpages-check \
-plist update-plist update package install-all
+	subupdate fetch checksum regress depends lib-depends build-depends \
+	run-depends regress-depends clean manpages-check \
+	plist update-plist update package install-all
 .  if defined(_LOCK)
 ${_t}:
 	@${_DO_LOCK}; cd ${.CURDIR} && ${MAKE} _internal-${_t}
@@ -1717,10 +1742,10 @@ subpackage:
 
 # Redirectors for top-level targets involving subpackages
 .for _t _r in _internal-package-only _internal-subpackage \
-describe subdescribe lib-depends-check sublib-depends-check \
-dump-vars subdump-vars _internal-install-all _internal-install \
-print-plist-all print-plist \
-readmes _readme _internal-update _internal-subupdate
+	describe subdescribe lib-depends-check sublib-depends-check \
+	dump-vars subdump-vars _internal-install-all _internal-install \
+	print-plist-all print-plist \
+	readmes _readme _internal-update _internal-subupdate
 ${_t}:
 .  if defined(MULTI_PACKAGES)
 .    for _s in ${MULTI_PACKAGES}
@@ -1768,7 +1793,9 @@ ${_WRKDIR_COOKIE}:
 	@${_MAKE_COOKIE} $@
 
 ${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE} ${_SYSTRACE_COOKIE}
-	@cd ${.CURDIR} && exec ${MAKE} _internal-checksum _internal-build-depends _internal-buildlib-depends _internal-buildwantlib-depends
+	@cd ${.CURDIR} && exec ${MAKE} \
+		_internal-checksum _internal-build-depends \
+		_internal-buildlib-depends _internal-buildwantlib-depends
 	@${ECHO_MSG} "===>  Extracting for ${FULLPKGNAME}${_MASTER}"
 .if target(pre-extract)
 	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} pre-extract
@@ -1960,7 +1987,8 @@ ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
 	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} do-build
 .  else
 # What BUILD normally does:
-	@cd ${WRKBUILD} && exec ${_SYSTRACE_CMD} ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} ${ALL_TARGET}
+	@cd ${WRKBUILD} && exec ${_SYSTRACE_CMD} ${SETENV} ${MAKE_ENV} \
+		${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} ${ALL_TARGET}
 # End of BUILD
 .  endif
 .  if target(post-build)
@@ -1979,7 +2007,8 @@ ${_REGRESS_COOKIE}: ${_BUILD_COOKIE}
 	@cd ${.CURDIR} && exec ${MAKE} do-regress
 .  else
 # What REGRESS normally does:
-	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${REGRESS_FLAGS} -f ${MAKE_FILE} ${REGRESS_TARGET}
+	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
+		${MAKE_PROGRAM} ${REGRESS_FLAGS} -f ${MAKE_FILE} ${REGRESS_TARGET}
 # End of REGRESS
 .  endif
 .  if target(post-regress)
@@ -2009,17 +2038,22 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 .endfor
 
 .if target(pre-fake)
-	@cd ${.CURDIR} && exec ${SUDO} ${_SYSTRACE_CMD} ${MAKE} pre-fake ${_FAKE_SETUP}
+	@cd ${.CURDIR} && exec ${SUDO} ${_SYSTRACE_CMD} \
+		${MAKE} pre-fake ${_FAKE_SETUP}
 .endif
 	@${SUDO} ${_MAKE_COOKIE} ${_INSTALL_PRE_COOKIE}
 .if target(pre-install)
-	@cd ${.CURDIR} && exec ${SUDO} ${_SYSTRACE_CMD} ${MAKE} pre-install ${_FAKE_SETUP}
+	@cd ${.CURDIR} && exec ${SUDO} ${_SYSTRACE_CMD} \
+		${MAKE} pre-install ${_FAKE_SETUP}
 .endif
 .if target(do-install)
-	@cd ${.CURDIR} && exec ${SUDO} ${_SYSTRACE_CMD} ${MAKE} do-install ${_FAKE_SETUP}
+	@cd ${.CURDIR} && exec ${SUDO} ${_SYSTRACE_CMD} \
+		${MAKE} do-install ${_FAKE_SETUP}
 .else
 # What FAKE normally does:
-	@cd ${WRKBUILD} && exec ${SUDO} ${_SYSTRACE_CMD} ${SETENV} ${MAKE_ENV} ${_FAKE_SETUP} ${MAKE_PROGRAM} ${FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
+	@cd ${WRKBUILD} && exec ${SUDO} ${_SYSTRACE_CMD} \
+		${SETENV} ${MAKE_ENV} ${_FAKE_SETUP} \
+		${MAKE_PROGRAM} ${FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
 # End of FAKE.
 .endif
 .if target(post-install)
@@ -2413,7 +2447,8 @@ full-${_i}-depends:
 .endfor
 
 license-check:
-.if ${PERMIT_PACKAGE_CDROM${SUBPACKAGE}:L} == "yes" || ${PERMIT_PACKAGE_FTP${SUBPACKAGE}:L} == "yes"
+.if ${PERMIT_PACKAGE_CDROM${SUBPACKAGE}:L} == "yes" || \
+	${PERMIT_PACKAGE_FTP${SUBPACKAGE}:L} == "yes"
 	@${MAKE} all-dir-depends|${_sort_dependencies}|while read subdir; do \
 		${_flavor_fragment}; \
 		_MASTER_PERMIT_CDROM=${PERMIT_PACKAGE_CDROM${SUBPACKAGE}:Q}; \
@@ -2425,7 +2460,8 @@ license-check:
 
 _license-check:
 .for _i in FTP CDROM
-.  if defined(_MASTER_PERMIT_${_i}) && ${_MASTER_PERMIT_${_i}:L} == "yes" && ${PERMIT_PACKAGE_${_i}:L} != "yes"
+.  if defined(_MASTER_PERMIT_${_i}) && ${_MASTER_PERMIT_${_i}:L} == "yes" && \
+	${PERMIT_PACKAGE_${_i}:L} != "yes"
 	@echo >&2 "Warning: dependency ${PKGPATH} is not allowed for ${_i}"
 .  endif
 .endfor
@@ -2510,7 +2546,8 @@ _print-package-args:
 .endif
 
 _list-port-libs:
-.if defined(_PORT_LIBS_CACHE) && defined(_DEPENDS_CACHE) && defined(_DEPENDS_FILE)
+.if defined(_PORT_LIBS_CACHE) && defined(_DEPENDS_CACHE) && \
+	defined(_DEPENDS_FILE)
 	@if ! fgrep -q -e "r|${FULLPKGPATH}|" -e "a|${FULLPKGPATH}" $${_DEPENDS_FILE}; then \
 		${MAKE} run-dir-depends >>${_DEPENDS_CACHE}; \
 	fi
@@ -2732,7 +2769,9 @@ uninstall deinstall:
 
 peek-ftp:
 	@mkdir -p ${FULLDISTDIR}; cd ${FULLDISTDIR}; echo "cd ${FULLDISTDIR}"; \
-	for i in ${MASTER_SITES:Mftp*}; do echo "Connecting to $$i"; ${FETCH_CMD} $$i ; break; done
+	for i in ${MASTER_SITES:Mftp*}; do \
+		echo "Connecting to $$i"; ${FETCH_CMD} $$i ; break; \
+	done
 
 show-required-by:
 	@cd ${PORTSDIR} && make all-dir-depends | perl ${PORTSDIR}/infrastructure/build/extract-dependencies -r ${FULLPKGPATH}
