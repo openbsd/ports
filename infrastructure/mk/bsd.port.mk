@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.842 2006/11/27 15:28:40 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.843 2006/11/27 16:08:05 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -90,7 +90,7 @@ _ALL_VARIABLES ?= HOMEPAGE DISTNAME BUILD_DEPENDS RUN_DEPENDS \
 # and stuff needing to be MULTI_PACKAGE'd
 _ALL_VARIABLES_INDEXED ?= COMMENT FULLPKGNAME PKGNAME PKG_ARCH \
 	PERMIT_PACKAGE_FTP PERMIT_PACKAGE_CDROM RUN_DEPENDS LIB_DEPENDS \
-	WANTLIB CATEGORIES DESCR 
+	WANTLIB CATEGORIES DESCR
 
 # special purpose user settings
 PATCH_CHECK_ONLY ?= No
@@ -176,7 +176,7 @@ clean = ${_internal-clean}
 .MAIN: all
 .endif
 
-# need to go through an extra var because clean is set in stone, 
+# need to go through an extra var because clean is set in stone,
 # on the cmdline.
 _clean = ${clean}
 .if empty(_clean) || ${_clean:L} == "depends"
@@ -650,7 +650,7 @@ INSTALL_DATA_DIR = \
 INSTALL_MAN_DIR = \
 	${INSTALL} -d -o ${MANOWN} -g ${MANGRP} -m ${DIRMODE}
 
-_INSTALL_MACROS =	BSD_INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+_INSTALL_MACROS = BSD_INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 	BSD_INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 	BSD_INSTALL_DATA="${INSTALL_DATA}" \
 	BSD_INSTALL_MAN="${INSTALL_MAN}" \
@@ -658,7 +658,7 @@ _INSTALL_MACROS =	BSD_INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 	BSD_INSTALL_SCRIPT_DIR="${INSTALL_SCRIPT_DIR}" \
 	BSD_INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
 	BSD_INSTALL_MAN_DIR="${INSTALL_MAN_DIR}"
-MAKE_ENV +=	${_INSTALL_MACROS}
+MAKE_ENV += ${_INSTALL_MACROS}
 
 # setup systrace variables
 NO_SYSTRACE ?= No
@@ -667,10 +667,10 @@ _SYSTRACE_CMD ?= /bin/systrace -e -i -a -f ${_SYSTRACE_COOKIE}
 .else
 _SYSTRACE_CMD =
 .endif
-SYSTRACE_FILTER ?=	${PORTSDIR}/infrastructure/db/systrace.filter
-_SYSTRACE_POLICIES +=	/bin/sh /usr/bin/env /usr/bin/make \
+SYSTRACE_FILTER ?= ${PORTSDIR}/infrastructure/db/systrace.filter
+_SYSTRACE_POLICIES += /bin/sh /usr/bin/env /usr/bin/make \
 	/usr/bin/patch ${DEPBASE}/bin/gmake
-SYSTRACE_SUBST_VARS +=	DISTDIR PKG_TMPDIR PORTSDIR TMPDIR WRKDIR
+SYSTRACE_SUBST_VARS += DISTDIR PKG_TMPDIR PORTSDIR TMPDIR WRKDIR
 .for _v in ${SYSTRACE_SUBST_VARS}
 _SYSTRACE_SED_SUBST += -e 's,$${${_v}},${${_v}},g'
 .endfor
@@ -740,6 +740,7 @@ _COMMENT${SUBPACKAGE} = ${COMMENT${SUBPACKAGE}}
 .if exists(${PKGDIR}/MESSAGE${SUBPACKAGE})
 MESSAGE${SUBPACKAGE} ?= ${PKGDIR}/MESSAGE${SUBPACKAGE}
 .endif
+
 .if exists(${PKGDIR}/UNMESSAGE${SUBPACKAGE})
 UNMESSAGE${SUBPACKAGE} ?= ${PKGDIR}/UNMESSAGE${SUBPACKAGE}
 .endif
@@ -752,7 +753,7 @@ MTREE_FILE += ${PORTSDIR}/infrastructure/db/fake.mtree
 # Fill out package command, and package dependencies
 _PKG_PREREQ = ${WRKPKG}/DESCR${SUBPACKAGE} ${WRKPKG}/COMMENT${SUBPACKAGE}
 PKG_ARGS += -c '${WRKPKG}/COMMENT${SUBPACKAGE}' -d ${WRKPKG}/DESCR${SUBPACKAGE}
-PKG_ARGS += -f ${PLIST${SUBPACKAGE}} -p ${PREFIX${SUBPACKAGE}} 
+PKG_ARGS += -f ${PLIST${SUBPACKAGE}} -p ${PREFIX${SUBPACKAGE}}
 .if exists(${PKGDIR}/INSTALL${SUBPACKAGE})
 PKG_ARGS += -i ${PKGDIR}/INSTALL${SUBPACKAGE}
 .endif
@@ -1273,7 +1274,7 @@ _SIMPLE_LOCK ?= :
 _DO_LOCK ?= :
 
 _size_fragment = wc -c $$file 2>/dev/null| \
-	awk '{print "SIZE (" $$2 ") = " $$1}' 
+	awk '{print "SIZE (" $$2 ") = " $$1}'
 
 # commands used all the time
 _lines2list = tr '\012' '\040' | sed -e 's, $$,,'
@@ -1761,7 +1762,7 @@ ${_t}:
 _internal-package:
 .if defined(MULTI_PACKAGES)
 .  for _s in ${MULTI_PACKAGES}
-	@cd ${.CURDIR} && SUBPACKAGE='${_s}' exec ${MAKE} _internal-subpackage 
+	@cd ${.CURDIR} && SUBPACKAGE='${_s}' exec ${MAKE} _internal-subpackage
 .  endfor
 .else
 	@cd ${.CURDIR} && exec ${MAKE} _internal-subpackage
@@ -1771,7 +1772,7 @@ _internal-package:
 .endif
 
 
-${_BULK_COOKIE}: 
+${_BULK_COOKIE}:
 	@cd ${.CURDIR} && exec ${MAKE} _internal-package-only
 	@mkdir -p ${BULK_COOKIES_DIR}
 .for _i in ${BULK_TARGETS_${PKGPATH}}
@@ -2086,7 +2087,7 @@ ${_INSTALL_COOKIE}:
 .endif
 	@-${SUDO} ${_MAKE_COOKIE} $@
 
-${_UPDATE_COOKIE}: 
+${_UPDATE_COOKIE}:
 	@cd ${.CURDIR} && exec ${MAKE} _internal-package
 .if empty(UPDATE_COOKIES_DIR)
 	@exec ${MAKE} ${WRKDIR}
@@ -2382,7 +2383,7 @@ ${FULLPKGNAME${SUBPACKAGE}}.html:
 .else
 	@echo "" >$@.tmp4
 .endif
-.if defined(MULTI_PACKAGES) 
+.if defined(MULTI_PACKAGES)
 .  if empty(SUBPACKAGE)
 	@echo "<h2>Subpackages</h2>" >$@.tmp-subpackages
 	@echo "<ul>" >>$@.tmp-subpackages
