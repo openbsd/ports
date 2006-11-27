@@ -16,7 +16,7 @@ Instructions for MySQL:
 
   # mysql -u root -p
   mysql> CREATE DATABASE prewikka;
-  mysql> GRANT ALL PRIVILEGES on prelude.* to prewikka IDENTIFIED by '...';
+  mysql> GRANT ALL PRIVILEGES on prewikka.* to prelude IDENTIFIED by '...';
 
   # cd ${PREFIX}/share/prewikka/database/
   # mysql -u prelude -p prewikka < mysql.sql
