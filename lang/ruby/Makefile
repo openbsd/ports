@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2006/11/24 09:45:08 bernd Exp $
+# $OpenBSD: Makefile,v 1.50 2006/11/27 09:52:52 bernd Exp $
 
 SHARED_ONLY=		Yes
 
@@ -80,5 +80,8 @@ INSTALL_TARGET=		install install-doc
 REV=			1.8
 SUB=			${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
 SUBST_VARS=		SUB REV
+
+# Building the ruby documentation consumes lots of memory.
+VMEM_WARNING=		Yes
 
 .include <bsd.port.mk>
