@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2006/11/26 20:59:07 robert Exp $
+# $OpenBSD: Makefile,v 1.37 2006/11/28 09:35:27 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -9,8 +9,8 @@ COMMENT-java=	"optional integration of OpenOffice java features"
 VERSION=	2.0.4
 DISTNAME=	OOo_${VERSION}_src
 WRKDIST=	${WRKDIR}/OOD680_m5
-PKGNAME=	openoffice-${VERSION}p19
-PKGNAME-main=	openoffice-${VERSION}p19
+PKGNAME=	openoffice-${VERSION}p20
+PKGNAME-main=	openoffice-${VERSION}p20
 PKGNAME-kde=	openoffice-kde-${VERSION}p16
 PKGNAME-java=	openoffice-java-${VERSION}p16
 CATEGORIES=	editors productivity
@@ -33,6 +33,7 @@ MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/mirror/OpenOffice/stab
 MASTER_SITES0=	http://www.bsd.hu/~robert/ooo/ \
 		http://humppa.hu/ooo/
 
+DISTFILES=	${DISTNAME}.tar.gz ooo-desktop.tar.gz:0
 DIST_SUBDIR=	openoffice
 
 # See http://www.openoffice.org/about.html#licenses
@@ -46,7 +47,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MULTI_PACKAGES=		-main -kde -java
 
 LANGS=			bg br-pt de es fi fr hu it ja ko \
-			lt lv nl pl ru sl
+			lt lv nl pl ru sl sv
 
 .for l in ${LANGS}
 MULTI_PACKAGES+=	-i18n-$l
@@ -180,6 +181,18 @@ do-build:
 		${SETENV} ${MAKE_ENV} ${TCSH} -c 'source OpenBSDEnv.Set && ${BUILD_CMD}' 
 
 do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/openoffice
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons
+
+	cd ${WRKDIR}/ooo-desktop && \
+		for DFILE in `ls -1 *.desktop`; do \
+			${INSTALL_DATA} $$DFILE \
+				${PREFIX}/share/applications/openoffice; \
+		done && \
+		for ICONS in `ls -1 *.png`; do \
+			${INSTALL_DATA} $$ICONS ${PREFIX}/share/icons; \
+		done
+
 .for l in en-US ${LANGS}
 	cd ${WRKSRC}/instsetoo_native/unxobsd.pro/OpenOffice/portable/install/$l/openbsd-* && \
 		for SW in `ls -1 *.sw`; do \

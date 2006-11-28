@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/25 10:30:58 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2006/11/28 09:35:28 robert Exp $
 @pkgpath editors/openoffice
 %%SHARED%%
 bin/sbase
@@ -2558,3 +2558,18 @@ openoffice/share/xslt/import/wordml/wordml2ooo_props.xsl
 openoffice/share/xslt/import/wordml/wordml2ooo_settings.xsl
 openoffice/share/xslt/import/wordml/wordml2ooo_table.xsl
 openoffice/share/xslt/import/wordml/wordml2ooo_text.xsl
+share/applications/
+share/applications/openoffice/
+share/applications/openoffice/base.desktop
+share/applications/openoffice/calc.desktop
+share/applications/openoffice/draw.desktop
+share/applications/openoffice/impress.desktop
+share/applications/openoffice/math.desktop
+share/applications/openoffice/writer.desktop
+share/icons/
+share/icons/ooo-base.png
+share/icons/ooo-calc.png
+share/icons/ooo-draw.png
+share/icons/ooo-impress.png
+share/icons/ooo-math.png
+share/icons/ooo-writer.png
