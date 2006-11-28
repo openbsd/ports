@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.852 2006/11/28 19:59:15 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.853 2006/11/28 20:20:25 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -449,11 +449,15 @@ _INSTALL_COOKIE =		${PKG_DBDIR}/${FULLPKGNAME${SUBPACKAGE}}/+CONTENTS
 _BULK_COOKIE =			${BULK_COOKIES_DIR}/${FULLPKGNAME}
 _FAKE_COOKIE =			${WRKINST}/.fake_done
 _INSTALL_PRE_COOKIE =	${WRKINST}/.install_started
-.if !empty(UPDATE_COOKIES_DIR)
-_UPDATE_COOKIE =		${UPDATE_COOKIES_DIR}/${FULLPKGNAME${SUBPACKAGE}}
-.else
-_UPDATE_COOKIE =		${WRKDIR}/.update_${FULLPKGNAME${SUBPACKAGE}}
-.endif
+_UPDATE_COOKIES =
+.for _S in ${MULTI_PACKAGES}
+.  if !empty(UPDATE_COOKIES_DIR)
+_UPDATE_COOKIE${_S} =		${UPDATE_COOKIES_DIR}/${FULLPKGNAME${_S}}
+.  else
+_UPDATE_COOKIE${_S} =		${WRKDIR}/.update_${FULLPKGNAME${_S}}
+.  endif
+_UPDATE_COOKIES += ${_UPDATE_COOKIE${_S}}
+.endfor
 .if ${SEPARATE_BUILD:L} != "no"
 _CONFIGURE_COOKIE =		${WRKBUILD}/.configure_done
 _BUILD_COOKIE =			${WRKBUILD}/.build_done
@@ -469,7 +473,7 @@ _ALL_COOKIES = ${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_CONFIGURE_COOKIE} \
 	${_SYSTRACE_COOKIE} ${_PACKAGE_COOKIES} \
 	${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE} ${_FAKE_COOKIE} \
 	${_WRKDIR_COOKIE} ${_DEPBUILD_COOKIES} \
-	${_DEPRUN_COOKIES} ${_DEPREGRESS_COOKIES} ${_UPDATE_COOKIE} \
+	${_DEPRUN_COOKIES} ${_DEPREGRESS_COOKIES} ${_UPDATE_COOKIES} \
 	${_DEPBUILDLIB_COOKIES} ${_DEPRUNLIB_COOKIES} \
 	${_DEPBUILDWANTLIB_COOKIE} ${_DEPRUNWANTLIB_COOKIE} ${_DEPLIBSPECS_COOKIES}
 
@@ -606,28 +610,33 @@ ${_v}${_s} ?= ${${_v}}
 .endfor
 
 _PACKAGE_LINKS =
-_PKGFILE${SUBPACKAGE} = ${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
 NO_ARCH ?= no-arch
-.if ${PKG_ARCH${SUBPACKAGE}} == "*" && ${NO_ARCH} != ${MACHINE_ARCH}/all
-_PACKAGE_COOKIE${SUBPACKAGE} = ${PACKAGE_REPOSITORY}/${NO_ARCH}/${_PKGFILE${SUBPACKAGE}}
-_PACKAGE_LINKS += ${MACHINE_ARCH}/all/${_PKGFILE${SUBPACKAGE}} ${NO_ARCH}/${_PKGFILE${SUBPACKAGE}}
-_PACKAGE_COOKIES += ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE${SUBPACKAGE}}
-.else
-_PACKAGE_COOKIE${SUBPACKAGE} = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE${SUBPACKAGE}}
-.endif
 _PKG_REPO = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/
 _CACHE_REPO = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/cache/
 PKGFILE = ${_PKG_REPO}${_PKGFILE${SUBPACKAGE}}
 
-_PACKAGE_COOKIES += ${_PACKAGE_COOKIE${SUBPACKAGE}}
-.if ${PERMIT_PACKAGE_FTP${SUBPACKAGE}:L} == "yes"
-_PACKAGE_COOKIES += ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/ftp/${_PKGFILE${SUBPACKAGE}}
-_PACKAGE_LINKS += ${MACHINE_ARCH}/ftp/${_PKGFILE${SUBPACKAGE}} ${MACHINE_ARCH}/all/${_PKGFILE${SUBPACKAGE}}
-.endif
-.if ${PERMIT_PACKAGE_CDROM${SUBPACKAGE}:L} == "yes"
-_PACKAGE_COOKIES += ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/cdrom/${_PKGFILE${SUBPACKAGE}}
-_PACKAGE_LINKS += ${MACHINE_ARCH}/cdrom/${_PKGFILE${SUBPACKAGE}} ${MACHINE_ARCH}/all/${_PKGFILE${SUBPACKAGE}}
-.endif
+.for _S in ${MULTI_PACKAGES}
+_PKGFILE${_S} = ${FULLPKGNAME${_S}}${PKG_SUFX}
+.  if ${PKG_ARCH${_S}} == "*" && ${NO_ARCH} != ${MACHINE_ARCH}/all
+_PACKAGE_COOKIE${_S} = ${PACKAGE_REPOSITORY}/${NO_ARCH}/${_PKGFILE${_S}}
+_PACKAGE_LINKS += ${MACHINE_ARCH}/all/${_PKGFILE${_S}} ${NO_ARCH}/${_PKGFILE${_S}}
+_PACKAGE_COOKIES${_S} += ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE${_S}}
+.  else
+_PACKAGE_COOKIE${_S} = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE${_S}}
+.  endif
+_PACKAGE_COOKIES${_S} += ${_PACKAGE_COOKIE${_S}}
+.  if ${PERMIT_PACKAGE_FTP${_S}:L} == "yes"
+_PACKAGE_COOKIES${_S} += ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/ftp/${_PKGFILE${_S}}
+_PACKAGE_LINKS += ${MACHINE_ARCH}/ftp/${_PKGFILE${_S}} ${MACHINE_ARCH}/all/${_PKGFILE${_S}}
+.  endif
+.  if ${PERMIT_PACKAGE_CDROM${_S}:L} == "yes"
+_PACKAGE_COOKIES${_S} += ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/cdrom/${_PKGFILE${_S}}
+_PACKAGE_LINKS += ${MACHINE_ARCH}/cdrom/${_PKGFILE${_S}} ${MACHINE_ARCH}/all/${_PKGFILE${_S}}
+.  endif
+_PACKAGE_COOKIES += ${_PACKAGE_COOKIES${_S}}
+_PACKAGE_COOKIE += ${_PACKAGE_COOKIE${_S}}
+PKGFILE${_S} = ${_PKG_REPO}${_PKGFILE${_S}}
+.endfor
 
 .if empty(SUBPACKAGE) || ${SUBPACKAGE} == "-"
 FULLPKGPATH = ${PKGPATH}${FLAVOR_EXT:S/-/,/g}
@@ -786,9 +795,11 @@ DESCR${_S} ?= ${PKGDIR}/DESCR${_S}
 MTREE_FILE ?=
 MTREE_FILE += ${PORTSDIR}/infrastructure/db/fake.mtree
 
-_PKG_PREREQ = ${WRKPKG}/DESCR${SUBPACKAGE} ${WRKPKG}/COMMENT${SUBPACKAGE}
+_PKG_PREREQ =
+
 .for _S in ${MULTI_PACKAGES}
 # Fill out package command, and package dependencies
+_PKG_PREREQ += ${WRKPKG}/DESCR${_S} ${WRKPKG}/COMMENT${_S}
 PKG_ARGS${_S} += -c '${WRKPKG}/COMMENT${_S}' -d ${WRKPKG}/DESCR${_S}
 PKG_ARGS${_S} += -f ${PLIST${_S}} -p ${PREFIX${_S}}
 .  if exists(${PKGDIR}/INSTALL${_S})
@@ -1326,11 +1337,12 @@ _grab_libs_from_plist = sed -n -e '/^@lib /{ s///; p; }' \
 ### end of variable setup. Only targets now
 ###
 
+.for _S in ${MULTI_PACKAGES}
 
-${_CACHE_REPO}/${_PKGFILE${SUBPACKAGE}}:
+${_CACHE_REPO}/${_PKGFILE${_S}}:
 	@mkdir -p ${@D}
-	@${ECHO_MSG} -n "===>  Looking for ${_PKGFILE${SUBPACKAGE}} in \$$PKG_PATH - "
-	@if ${SETENV} PKG_CACHE=${_CACHE_REPO} PKG_PATH=${_CACHE_REPO}:${_PKG_REPO}:${PACKAGE_REPOSITORY}/${NO_ARCH}/:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add -n -q ${_PKG_ADD_FORCE} ${_PKGFILE${SUBPACKAGE}} >/dev/null 2>&1; then \
+	@${ECHO_MSG} -n "===>  Looking for ${_PKGFILE${_S}} in \$$PKG_PATH - "
+	@if ${SETENV} PKG_CACHE=${_CACHE_REPO} PKG_PATH=${_CACHE_REPO}:${_PKG_REPO}:${PACKAGE_REPOSITORY}/${NO_ARCH}/:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add -n -q ${_PKG_ADD_FORCE} ${_PKGFILE${_S}} >/dev/null 2>&1; then \
 		${ECHO_MSG} "found"; \
 		exit 0; \
 	else \
@@ -1338,28 +1350,28 @@ ${_CACHE_REPO}/${_PKGFILE${SUBPACKAGE}}:
 		exit 1; \
 	fi
 
-${_PACKAGE_COOKIE${SUBPACKAGE}}:
+${_PACKAGE_COOKIE${_S}}:
 	@mkdir -p ${@D}
-.if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING)
-	@f=${_CACHE_REPO}/${_PKGFILE${SUBPACKAGE}}; \
+.  if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING)
+	@f=${_CACHE_REPO}/${_PKGFILE${_S}}; \
 	cd ${.CURDIR} && ${MAKE} $$f && \
 		{ ln $$f $@ 2>/dev/null || cp -p $$f $@ ; } || \
 		cd ${.CURDIR} && ${MAKE} _TRIED_FETCHING=Yes $@
-.else
+.  else
 	@cd ${.CURDIR} && exec ${MAKE} ${_PACKAGE_COOKIE_DEPS} ${_PKG_PREREQ}
-.  if target(pre-package)
+.    if target(pre-package)
 	@cd ${.CURDIR} && exec ${MAKE} pre-package
-.  endif
+.    endif
 .  if target(do-package)
 	@cd ${.CURDIR} && exec ${MAKE} do-package
-.  else
+.    else
 # What PACKAGE normally does:
-	@${ECHO_MSG} "===>  Building package for ${FULLPKGNAME${SUBPACKAGE}}"
-	@${ECHO_MSG} "Create ${_PACKAGE_COOKIE${SUBPACKAGE}}"
+	@${ECHO_MSG} "===>  Building package for ${FULLPKGNAME${_S}}"
+	@${ECHO_MSG} "Create ${_PACKAGE_COOKIE${_S}}"
 	@cd ${.CURDIR} && \
-      deps=`${MAKE} _print-package-args` && \
-	  if ${SUDO} ${PKG_CMD} `echo "$$deps"|sort -u` ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}; then \
-	    mode=`id -u`:`id -g`; ${SUDO} ${CHOWN} $${mode} ${_PACKAGE_COOKIE${SUBPACKAGE}}; \
+      deps=`SUBPACKAGE=${_S} ${MAKE} _print-package-args` && \
+	  if ${SUDO} ${PKG_CMD} `echo "$$deps"|sort -u` ${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}}; then \
+	    mode=`id -u`:`id -g`; ${SUDO} ${CHOWN} $${mode} ${_PACKAGE_COOKIE${_S}}; \
 		if ${_register_plist}; then \
 			exit 0; \
 		fi; \
@@ -1367,12 +1379,14 @@ ${_PACKAGE_COOKIE${SUBPACKAGE}}:
 	  ${SUDO} ${MAKE} _internal-clean=package && \
 	  exit 1
 # End of PACKAGE.
-.  endif
-.  if target(post-package)
+.    endif
+.    if target(post-package)
 	@cd ${.CURDIR} && exec ${MAKE} post-package
+.    endif
+	@rm -f ${_BULK_COOKIE} ${_UPDATE_COOKIE${_S}}
 .  endif
-	@rm -f ${_BULK_COOKIE} ${_UPDATE_COOKIE}
-.endif
+
+.endfor
 
 .PRECIOUS: ${_PACKAGE_COOKIES} ${_INSTALL_COOKIE}
 
@@ -1389,16 +1403,18 @@ ${_SYSTRACE_COOKIE}: ${_WRKDIR_COOKIE}
 		sed ${_SYSTRACE_SED_SUBST} ${.CURDIR}/systrace.policy >> $@; \
 	fi
 
+.for _S in ${MULTI_PACKAGES}
 # create the packing stuff from source
-${WRKPKG}/COMMENT${SUBPACKAGE}:
-	@echo ${_COMMENT${SUBPACKAGE}} >$@
+${WRKPKG}/COMMENT${_S}:
+	@echo ${_COMMENT${_S}} >$@
 
-${WRKPKG}/DESCR${SUBPACKAGE}: ${DESCR${SUBPACKAGE}}
+${WRKPKG}/DESCR${_S}: ${DESCR${_S}}
 	@${_SED_SUBST} <$? >$@.tmp && mv -f $@.tmp $@
 	@echo "\nMaintainer: ${MAINTAINER}" >>$@
-.if defined(HOMEPAGE)
+.  if defined(HOMEPAGE)
 	@fgrep -q '$${HOMEPAGE}' $? || echo "\nWWW: ${HOMEPAGE}" >>$@
-.endif
+.  endif
+.endfor
 
 makesum: fetch-all
 .if !defined(NO_CHECKSUM)
@@ -1566,7 +1582,7 @@ _internal-fetch _internal-checksum _internal-extract _internal-patch \
 	_internal-regress _internal-uninstall _internal-deinstall _internal-fake \
 	_internal-update _internal-plist _internal-package _internal-install-all \
 	_internal-update-plist update-patches _internal-subupdate \
-	dump-vars describe _internal-subpackage sublib-depends-check \
+	dump-vars describe _internal-subpackage \
 	_internal-manpages-check:
 .  if !defined(IGNORE_SILENT)
 	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} ${IGNORE}."
@@ -1580,10 +1596,10 @@ _NEWLIB_DEPENDS_FLAGS=-o
 _NEWLIB_DEPENDS_FLAGS=
 .  endif
 
-sublib-depends-check:
-	@cd ${.CURDIR} && exec ${MAKE} subpackage
+lib-depends-check:
+	@cd ${.CURDIR} && exec ${MAKE} package
 	@perl ${PORTSDIR}/infrastructure/package/check-newlib-depends \
-		${_NEWLIB_DEPENDS_FLAGS} -d ${_PKG_REPO} ${_PACKAGE_COOKIE${SUBPACKAGE}}
+		${_NEWLIB_DEPENDS_FLAGS} -d ${_PKG_REPO} ${_PACKAGE_COOKIE}
 
 _internal-manpages-check: ${_FAKE_COOKIE}
 	@cd ${WRKINST}${TRUEPREFIX}/man && \
@@ -1693,7 +1709,9 @@ _internal-build _internal-all: ${_DEPBUILD_COOKIES} ${_DEPBUILDLIB_COOKIES} \
 	${_DEPBUILDWANTLIB_COOKIE} ${_BUILD_COOKIE}
 _internal-install: ${_INSTALL_COOKIE}
 _internal-fake: ${_FAKE_COOKIE}
-_internal-subupdate: ${_UPDATE_COOKIE}
+_internal-subupdate: ${_UPDATE_COOKIE${SUBPACKAGE}}
+_internal-update: ${_UPDATE_COOKIES}
+
 
 .  if defined(_IGNORE_REGRESS)
 _internal-regress:
@@ -1773,11 +1791,9 @@ subpackage:
 	@${_DO_LOCK}; cd ${.CURDIR} && ${MAKE} _internal-subpackage
 
 # Redirectors for top-level targets involving subpackages
-.for _t _r in _internal-package-only _internal-subpackage \
-	lib-depends-check sublib-depends-check \
+.for _t _r in \
 	dump-vars subdump-vars _internal-install-all _internal-install \
-	print-plist-all print-plist \
-	readmes _readme _internal-update _internal-subupdate
+	readmes _readme
 ${_t}:
 .  if ${MULTI_PACKAGES} == "-"
 	@cd ${.CURDIR} && exec ${MAKE} ${_r}
@@ -1790,10 +1806,8 @@ ${_t}:
 .endfor
 
 
-_internal-package:
-.for _s in ${MULTI_PACKAGES}
-	@cd ${.CURDIR} && SUBPACKAGE='${_s}' exec ${MAKE} _internal-subpackage
-.endfor
+_internal-package: 
+	@cd ${.CURDIR} && exec ${MAKE} _internal-package-only
 .if ${BULK_${PKGPATH}:L} == "yes"
 	@cd ${.CURDIR} && exec ${MAKE} ${_BULK_COOKIE}
 .endif
@@ -2114,21 +2128,23 @@ ${_INSTALL_COOKIE}:
 .endif
 	@-${SUDO} ${_MAKE_COOKIE} $@
 
-${_UPDATE_COOKIE}:
+.for _S in ${MULTI_PACKAGES}
+${_UPDATE_COOKIE${_S}}:
 	@cd ${.CURDIR} && exec ${MAKE} _internal-package
-.if empty(UPDATE_COOKIES_DIR)
+.  if empty(UPDATE_COOKIES_DIR)
 	@exec ${MAKE} ${WRKDIR}
-.else
+.  else
 	@mkdir -p ${UPDATE_COOKIES_DIR}
-.endif
-	@${ECHO_MSG} "===> Updating for ${FULLPKGNAME${SUBPACKAGE}}"
-	@a=`pkg_info -e ${FULLPKGPATH} 2>/dev/null || true`; \
+.  endif
+	@${ECHO_MSG} "===> Updating for ${FULLPKGNAME${_S}}"
+	@a=`pkg_info -e ${FULLPKGPATH${_S}} 2>/dev/null || true`; \
 	case $$a in \
 		'') ${ECHO_MSG} "Not installed, no update";; \
 		*) ${ECHO_MSG} "Upgrading from $$a"; \
-		   ${SUDO} ${SETENV} PKG_PATH=${_PKG_REPO} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKG_ADD_AUTO} -r ${_PKG_ADD_FORCE} ${PKGFILE};; \
+		   ${SUDO} ${SETENV} PKG_PATH=${_PKG_REPO} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKG_ADD_AUTO} -r ${_PKG_ADD_FORCE} ${PKGFILE${S_}};; \
 	esac
 	@${_MAKE_COOKIE} $@
+.endfor
 
 # The real package
 
@@ -2141,11 +2157,17 @@ _register_plist=perl ${PORTSDIR}/infrastructure/package/register-plist ${PLIST_D
 print-plist:
 	@${PKG_CMD} -n -q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}
 
+print-plist-all:
+.for _S in ${MULTI_PACKAGES}
+	${PKG_CMD} -n -q ${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}} >/dev/null
+.endfor
+
 print-plist-contents:
 	@${PKG_CMD} -n -Q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}
 
-_internal-subpackage: ${_PACKAGE_COOKIES}
+_internal-package-only: ${_PACKAGE_COOKIES}
 
+_internal-subpackage: ${_PACKAGE_COOKIES${SUBPACKAGE}
 
 fetch-all:
 	@cd ${.CURDIR} && exec ${MAKE} __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes fetch
@@ -2244,11 +2266,9 @@ _internal-clean:
 .  endif
 .endif
 .if ${_clean:L:Mpackages} || ${_clean:L:Mpackage} && ${_clean:L:Msub}
-.  for _s in ${MULTI_PACKAGES}
-	@cd ${.CURDIR} && SUBPACKAGE='${_s}' exec ${MAKE} clean=package
-.  endfor
-.elif ${_clean:L:Mpackage}
 	rm -f ${_PACKAGE_COOKIES}
+.elif ${_clean:L:Mpackage}
+	rm -f ${_PACKAGE_COOKIES${SUBPACKAGE}}
 .endif
 .if ${_clean:L:Mreadmes}
 .    for _s in ${MULTI_PACKAGES}
