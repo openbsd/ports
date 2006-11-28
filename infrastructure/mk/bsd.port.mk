@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.853 2006/11/28 20:20:25 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.854 2006/11/28 20:26:38 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -368,7 +368,7 @@ ERRORS += "Fatal: Subpackage ${SUBPACKAGE} does not exist."
 .  endfor
 .endif
 .if !empty(MULTI_PACKAGES:N-*)
-ERRORS += "Fatal: SUBPACKAGES should always beging with -: ${MULTI_PACKAGES:N-*}."
+ERRORS += "Fatal: SUBPACKAGES should always begin with -: ${MULTI_PACKAGES:N-*}."
 .endif
 
 # Build FLAVOR_EXT, checking that no flavors are misspelled
@@ -789,6 +789,19 @@ UNMESSAGE${_S} ?= ${PKGDIR}/UNMESSAGE${_S}
 .    endif
 
 DESCR${_S} ?= ${PKGDIR}/DESCR${_S}
+
+.    if exists(${PKGDIR}/INSTALL${_S})
+PKG_ARGS${_S} += -i ${PKGDIR}/INSTALL${_S}
+.    endif
+.    if exists(${PKGDIR}/DEINSTALL${_S})
+PKG_ARGS${_S} += -k ${PKGDIR}/DEINSTALL${_S}
+.    endif
+.    if exists(${PKGDIR}/REQ${_S})
+PKG_ARGS${_S} += -r ${PKGDIR}/REQ${_S}
+.    endif
+.    if exists(${PKGDIR}/MODULE${_S}.pm)
+PKG_ARGS${_S} += -m ${PKGDIR}/MODULE${_S}.pm
+.    endif
 .  endfor
 .endif
 
@@ -802,18 +815,6 @@ _PKG_PREREQ =
 _PKG_PREREQ += ${WRKPKG}/DESCR${_S} ${WRKPKG}/COMMENT${_S}
 PKG_ARGS${_S} += -c '${WRKPKG}/COMMENT${_S}' -d ${WRKPKG}/DESCR${_S}
 PKG_ARGS${_S} += -f ${PLIST${_S}} -p ${PREFIX${_S}}
-.  if exists(${PKGDIR}/INSTALL${_S})
-PKG_ARGS${_S} += -i ${PKGDIR}/INSTALL${_S}
-.  endif
-.  if exists(${PKGDIR}/DEINSTALL${SUBPACKAGE})
-PKG_ARGS${_S} += -k ${PKGDIR}/DEINSTALL${SUBPACKAGE}
-.  endif
-.  if exists(${PKGDIR}/REQ${SUBPACKAGE})
-PKG_ARGS${_S} += -r ${PKGDIR}/REQ${SUBPACKAGE}
-.  endif
-.  if exists(${PKGDIR}/MODULE${SUBPACKAGE}.pm)
-PKG_ARGS${_S} += -m ${PKGDIR}/MODULE${SUBPACKAGE}.pm
-.  endif
 .  if defined(MESSAGE${_S})
 PKG_ARGS${_S} += -M ${MESSAGE${_S}}
 .  endif
