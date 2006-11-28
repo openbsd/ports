@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.854 2006/11/28 20:26:38 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.855 2006/11/28 20:31:25 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1387,6 +1387,32 @@ ${_PACKAGE_COOKIE${_S}}:
 	@rm -f ${_BULK_COOKIE} ${_UPDATE_COOKIE${_S}}
 .  endif
 
+# create the packing stuff from source
+${WRKPKG}/COMMENT${_S}:
+	@echo ${_COMMENT${_S}} >$@
+
+${WRKPKG}/DESCR${_S}: ${DESCR${_S}}
+	@${_SED_SUBST} <$? >$@.tmp && mv -f $@.tmp $@
+	@echo "\nMaintainer: ${MAINTAINER}" >>$@
+.  if defined(HOMEPAGE)
+	@fgrep -q '$${HOMEPAGE}' $? || echo "\nWWW: ${HOMEPAGE}" >>$@
+.  endif
+
+${_UPDATE_COOKIE${_S}}:
+	@cd ${.CURDIR} && exec ${MAKE} _internal-package
+.  if empty(UPDATE_COOKIES_DIR)
+	@exec ${MAKE} ${WRKDIR}
+.  else
+	@mkdir -p ${UPDATE_COOKIES_DIR}
+.  endif
+	@${ECHO_MSG} "===> Updating for ${FULLPKGNAME${_S}}"
+	@a=`pkg_info -e ${FULLPKGPATH${_S}} 2>/dev/null || true`; \
+	case $$a in \
+		'') ${ECHO_MSG} "Not installed, no update";; \
+		*) ${ECHO_MSG} "Upgrading from $$a"; \
+		   ${SUDO} ${SETENV} PKG_PATH=${_PKG_REPO} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKG_ADD_AUTO} -r ${_PKG_ADD_FORCE} ${PKGFILE${S_}};; \
+	esac
+	@${_MAKE_COOKIE} $@
 .endfor
 
 .PRECIOUS: ${_PACKAGE_COOKIES} ${_INSTALL_COOKIE}
@@ -1403,19 +1429,6 @@ ${_SYSTRACE_COOKIE}: ${_WRKDIR_COOKIE}
 	@if [ -f ${.CURDIR}/systrace.policy ]; then \
 		sed ${_SYSTRACE_SED_SUBST} ${.CURDIR}/systrace.policy >> $@; \
 	fi
-
-.for _S in ${MULTI_PACKAGES}
-# create the packing stuff from source
-${WRKPKG}/COMMENT${_S}:
-	@echo ${_COMMENT${_S}} >$@
-
-${WRKPKG}/DESCR${_S}: ${DESCR${_S}}
-	@${_SED_SUBST} <$? >$@.tmp && mv -f $@.tmp $@
-	@echo "\nMaintainer: ${MAINTAINER}" >>$@
-.  if defined(HOMEPAGE)
-	@fgrep -q '$${HOMEPAGE}' $? || echo "\nWWW: ${HOMEPAGE}" >>$@
-.  endif
-.endfor
 
 makesum: fetch-all
 .if !defined(NO_CHECKSUM)
@@ -2128,24 +2141,6 @@ ${_INSTALL_COOKIE}:
 	@${SUDO} ${SETENV} PKG_PATH=${_PKG_REPO} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKG_ADD_AUTO} ${PKGFILE}
 .endif
 	@-${SUDO} ${_MAKE_COOKIE} $@
-
-.for _S in ${MULTI_PACKAGES}
-${_UPDATE_COOKIE${_S}}:
-	@cd ${.CURDIR} && exec ${MAKE} _internal-package
-.  if empty(UPDATE_COOKIES_DIR)
-	@exec ${MAKE} ${WRKDIR}
-.  else
-	@mkdir -p ${UPDATE_COOKIES_DIR}
-.  endif
-	@${ECHO_MSG} "===> Updating for ${FULLPKGNAME${_S}}"
-	@a=`pkg_info -e ${FULLPKGPATH${_S}} 2>/dev/null || true`; \
-	case $$a in \
-		'') ${ECHO_MSG} "Not installed, no update";; \
-		*) ${ECHO_MSG} "Upgrading from $$a"; \
-		   ${SUDO} ${SETENV} PKG_PATH=${_PKG_REPO} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKG_ADD_AUTO} -r ${_PKG_ADD_FORCE} ${PKGFILE${S_}};; \
-	esac
-	@${_MAKE_COOKIE} $@
-.endfor
 
 # The real package
 
