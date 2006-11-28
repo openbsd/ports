@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/05 11:12:15 espie Exp $
-${P5SITE}/DBIx/
-${P5SITE}/DBIx/Class/
+@comment $OpenBSD: PLIST,v 1.2 2006/11/28 10:15:35 espie Exp $
 ${P5SITE}/DBIx/Class/Schema/
 ${P5SITE}/DBIx/Class/Schema/Loader/
 ${P5SITE}/DBIx/Class/Schema/Loader.pm
