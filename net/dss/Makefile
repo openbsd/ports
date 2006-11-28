@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/27 23:47:56 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/11/28 11:57:05 espie Exp $
 
 BROKEN=			"security issues"
 
@@ -31,6 +31,7 @@ PERMIT_DISTFILES_FTP=	No
 HOMEPAGE=		http://developer.apple.com/darwin/projects/streaming/
 
 MULTI_PACKAGES=		-server -admin -examples -proxy
+SUBPACKAGE?=		-server
 
 RUN_DEPENDS-admin=	:p5-Net-SSLeay->=1.03:security/p5-Net_SSLeay
 
