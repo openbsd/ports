@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.848 2006/11/28 16:28:56 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.849 2006/11/28 18:17:57 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1079,7 +1079,10 @@ DEPBASE = ${LOCALBASE}
 DEPDIR =
 
 .if ${FORCE_UPDATE:L} == "yes" || ${FORCE_UPDATE:L} == "hard"
-_force_update_fragment = eval $$toset ${MAKE} subupdate
+_force_update_fragment = { \
+		${ECHO_MSG} "===>  Verifying update for $$what in $$dir"; \
+		eval $$toset ${MAKE} subupdate; \
+	}
 _PKG_ADD_FORCE = -F update -F updatedepends -r
 .  if ${FORCE_UPDATE:L} == "hard"
 _PKG_ADD_FORCE += -F installed
