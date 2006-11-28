@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/28 14:25:12 jasper Exp $
+bin/herrie
+@man man/man1/herrie.1
+share/locale/nl/LC_MESSAGES/herrie.mo

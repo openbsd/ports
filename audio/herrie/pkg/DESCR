@@ -1,0 +1,6 @@
+Herrie is a minimalistic music player that uses the command line. It is
+written to support a variety of operating systems, audio subsystems and
+file formats, including playlists.
+
+Herrie also has some more exotic features, including support for
+AudioScrobbler and the ability to chroot() itself into a directory.
