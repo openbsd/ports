@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.847 2006/11/28 16:24:00 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.848 2006/11/28 16:28:56 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -602,27 +602,27 @@ ${_v}${_s} ?= ${${_v}}
 .endfor
 
 _PACKAGE_LINKS =
-_PKGFILE = ${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
+_PKGFILE${SUBPACKAGE} = ${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
 NO_ARCH ?= no-arch
 .if ${PKG_ARCH${SUBPACKAGE}} == "*" && ${NO_ARCH} != ${MACHINE_ARCH}/all
-_PACKAGE_COOKIE = ${PACKAGE_REPOSITORY}/${NO_ARCH}/${_PKGFILE}
-_PACKAGE_LINKS += ${MACHINE_ARCH}/all ${NO_ARCH}
-_PACKAGE_COOKIES += ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE}
+_PACKAGE_COOKIE = ${PACKAGE_REPOSITORY}/${NO_ARCH}/${_PKGFILE${SUBPACKAGE}}
+_PACKAGE_LINKS += ${MACHINE_ARCH}/all/${_PKGFILE${SUBPACKAGE}} ${NO_ARCH}/${_PKGFILE${SUBPACKAGE}}
+_PACKAGE_COOKIES += ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE${SUBPACKAGE}}
 .else
-_PACKAGE_COOKIE = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE}
+_PACKAGE_COOKIE = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE${SUBPACKAGE}}
 .endif
 _PKG_REPO = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/
 _CACHE_REPO = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/cache/
-PKGFILE = ${_PKG_REPO}${_PKGFILE}
+PKGFILE = ${_PKG_REPO}${_PKGFILE${SUBPACKAGE}}
 
 _PACKAGE_COOKIES += ${_PACKAGE_COOKIE}
 .if ${PERMIT_PACKAGE_FTP${SUBPACKAGE}:L} == "yes"
-_PACKAGE_COOKIES += ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/ftp/${_PKGFILE}
-_PACKAGE_LINKS += ${MACHINE_ARCH}/ftp ${MACHINE_ARCH}/all
+_PACKAGE_COOKIES += ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/ftp/${_PKGFILE${SUBPACKAGE}}
+_PACKAGE_LINKS += ${MACHINE_ARCH}/ftp/${_PKGFILE${SUBPACKAGE}} ${MACHINE_ARCH}/all/${_PKGFILE${SUBPACKAGE}}
 .endif
 .if ${PERMIT_PACKAGE_CDROM${SUBPACKAGE}:L} == "yes"
-_PACKAGE_COOKIES += ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/cdrom/${_PKGFILE}
-_PACKAGE_LINKS += ${MACHINE_ARCH}/cdrom ${MACHINE_ARCH}/all
+_PACKAGE_COOKIES += ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/cdrom/${_PKGFILE${SUBPACKAGE}}
+_PACKAGE_LINKS += ${MACHINE_ARCH}/cdrom/${_PKGFILE${SUBPACKAGE}} ${MACHINE_ARCH}/all/${_PKGFILE${SUBPACKAGE}}
 .endif
 
 .if empty(SUBPACKAGE)
@@ -1273,10 +1273,10 @@ _grab_libs_from_plist = sed -n -e '/^@lib /{ s///; p; }' \
 ###
 
 
-${_CACHE_REPO}/${_PKGFILE}:
+${_CACHE_REPO}/${_PKGFILE${SUBPACKAGE}}:
 	@mkdir -p ${@D}
-	@${ECHO_MSG} -n "===>  Looking for ${_PKGFILE} in \$$PKG_PATH - "
-	@if ${SETENV} PKG_CACHE=${_CACHE_REPO} PKG_PATH=${_CACHE_REPO}:${_PKG_REPO}:${PACKAGE_REPOSITORY}/${NO_ARCH}/:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add -n -q ${_PKG_ADD_FORCE} ${_PKGFILE} >/dev/null 2>&1; then \
+	@${ECHO_MSG} -n "===>  Looking for ${_PKGFILE${SUBPACKAGE}} in \$$PKG_PATH - "
+	@if ${SETENV} PKG_CACHE=${_CACHE_REPO} PKG_PATH=${_CACHE_REPO}:${_PKG_REPO}:${PACKAGE_REPOSITORY}/${NO_ARCH}/:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add -n -q ${_PKG_ADD_FORCE} ${_PKGFILE${SUBPACKAGE}} >/dev/null 2>&1; then \
 		${ECHO_MSG} "found"; \
 		exit 0; \
 	else \
@@ -1287,7 +1287,7 @@ ${_CACHE_REPO}/${_PKGFILE}:
 ${_PACKAGE_COOKIE}:
 	@mkdir -p ${@D}
 .if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING)
-	@f=${_CACHE_REPO}/${_PKGFILE}; \
+	@f=${_CACHE_REPO}/${_PKGFILE${SUBPACKAGE}}; \
 	cd ${.CURDIR} && ${MAKE} $$f && \
 		{ ln $$f $@ 2>/dev/null || cp -p $$f $@ ; } || \
 		cd ${.CURDIR} && ${MAKE} _TRIED_FETCHING=Yes $@
@@ -2145,7 +2145,7 @@ ${_F}:
 .endfor
 
 .for _l _o in ${_PACKAGE_LINKS}
-${PACKAGE_REPOSITORY}/${_l}/${_PKGFILE}: ${PACKAGE_REPOSITORY}/${_o}/${_PKGFILE}
+${PACKAGE_REPOSITORY}/${_l}: ${PACKAGE_REPOSITORY}/${_o}
 	@echo "Link to $@"
 	@mkdir -p ${@D}
 	@rm -f $@
