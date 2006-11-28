@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.102 2006/10/18 10:42:54 steven Exp $
+# $OpenBSD: network.conf.template,v 1.103 2006/11/28 23:43:54 espie Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -131,6 +131,7 @@ MASTER_SITE_GNOME+=	\
 	
 MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.funet.fi/pub/languages/perl/CPAN/modules/by-module/ \
+	ftp://ftp.mirror.anlx.net/CPAN/modules/by-module/ \
 	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/ \
 	ftp://ftp.dnsbalance.ring.gr.jp/pub/lang/perl/CPAN/modules/by-module/ \
 	http://www.dnsbalance.ring.gr.jp/archives/lang/perl/CPAN/modules/by-module/ \
@@ -138,7 +139,6 @@ MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.sunet.se/pub/lang/perl/CPAN/modules/by-module/ \
 	ftp://mirror.hiwaay.net/CPAN/modules/by-module/ \
 	ftp://ftp.uos.ac.kr/CPAN/modules/by-module/ \
-	ftp://ftp.mirror.anlx.net/CPAN/modules/by-module/ \
 	ftp://csociety-ftp.ecn.purdue.edu/pub/CPAN/modules/by-module/ \
 	ftp://ftp.auckland.ac.nz/pub/perl/CPAN/modules/by-module/ \
 	ftp://ftp.isu.net.sa/pub/CPAN/modules/by-module/ \
