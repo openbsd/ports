@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.855 2006/11/28 20:31:25 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.856 2006/11/28 20:40:55 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -445,18 +445,20 @@ _EXTRACT_COOKIE =		${WRKDIR}/.extract_done
 _PATCH_COOKIE =			${WRKDIR}/.patch_done
 _DISTPATCH_COOKIE =		${WRKDIR}/.distpatch_done
 _PREPATCH_COOKIE =		${WRKDIR}/.prepatch_done
-_INSTALL_COOKIE =		${PKG_DBDIR}/${FULLPKGNAME${SUBPACKAGE}}/+CONTENTS
 _BULK_COOKIE =			${BULK_COOKIES_DIR}/${FULLPKGNAME}
 _FAKE_COOKIE =			${WRKINST}/.fake_done
 _INSTALL_PRE_COOKIE =	${WRKINST}/.install_started
 _UPDATE_COOKIES =
+_INSTALL_COOKIES =
 .for _S in ${MULTI_PACKAGES}
 .  if !empty(UPDATE_COOKIES_DIR)
-_UPDATE_COOKIE${_S} =		${UPDATE_COOKIES_DIR}/${FULLPKGNAME${_S}}
+_UPDATE_COOKIE${_S} =	${UPDATE_COOKIES_DIR}/${FULLPKGNAME${_S}}
 .  else
-_UPDATE_COOKIE${_S} =		${WRKDIR}/.update_${FULLPKGNAME${_S}}
+_UPDATE_COOKIE${_S} =	${WRKDIR}/.update_${FULLPKGNAME${_S}}
 .  endif
-_UPDATE_COOKIES += ${_UPDATE_COOKIE${_S}}
+_INSTALL_COOKIE${_S} =	${PKG_DBDIR}/${FULLPKGNAME${_S}}/+CONTENTS
+_UPDATE_COOKIES += 		${_UPDATE_COOKIE${_S}}
+_INSTALL_COOKIES +=		${_INSTALL_COOKIE${_S}}
 .endfor
 .if ${SEPARATE_BUILD:L} != "no"
 _CONFIGURE_COOKIE =		${WRKBUILD}/.configure_done
@@ -1351,6 +1353,9 @@ ${_CACHE_REPO}/${_PKGFILE${_S}}:
 		exit 1; \
 	fi
 
+
+# The real package
+
 ${_PACKAGE_COOKIE${_S}}:
 	@mkdir -p ${@D}
 .  if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING)
@@ -1387,6 +1392,32 @@ ${_PACKAGE_COOKIE${_S}}:
 	@rm -f ${_BULK_COOKIE} ${_UPDATE_COOKIE${_S}}
 .  endif
 
+
+# The real install
+
+${_INSTALL_COOKIE${_S}}:
+	@cd ${.CURDIR} && exec ${MAKE} package
+	@cd ${.CURDIR} && SUBPACKAGE=${_S} DEPENDS_TARGET=install \
+		exec ${MAKE} _internal-run-depends _internal-runlib-depends \
+		_internal-runwantlib-depends
+	@${ECHO_MSG} "===>  Installing ${FULLPKGNAME${_S}} from ${_PKG_REPO}"
+.  for _m in ${MODULES}
+.    if defined(MOD${_m:U}_pre_install)
+	@${MOD${_m:U}_pre_install}
+.    endif
+.  endfor
+.  if ${TRUST_PACKAGES:L} == "yes"
+	@if pkg_info -q -e ${FULLPKGNAME${_S}}; then \
+		echo "Package ${FULLPKGNAME${_S}} is already installed"; \
+	else \
+		${SUDO} ${SETENV} PKG_PATH=${_PKG_REPO} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKG_ADD_AUTO} ${PKGFILE${_S}}; \
+	fi
+.  else
+	@${SUDO} ${SETENV} PKG_PATH=${_PKG_REPO} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKG_ADD_AUTO} ${PKGFILE${_S}}
+.  endif
+	@-${SUDO} ${_MAKE_COOKIE} $@
+
+
 # create the packing stuff from source
 ${WRKPKG}/COMMENT${_S}:
 	@echo ${_COMMENT${_S}} >$@
@@ -1415,7 +1446,7 @@ ${_UPDATE_COOKIE${_S}}:
 	@${_MAKE_COOKIE} $@
 .endfor
 
-.PRECIOUS: ${_PACKAGE_COOKIES} ${_INSTALL_COOKIE}
+.PRECIOUS: ${_PACKAGE_COOKIES} ${_INSTALL_COOKIES}
 
 ${_SYSTRACE_COOKIE}: ${_WRKDIR_COOKIE}
 	@rm -f $@
@@ -1721,7 +1752,8 @@ _internal-configure: ${_DEPBUILD_COOKIES} ${_DEPBUILDLIB_COOKIES} \
 	${_DEPBUILDWANTLIB_COOKIE} ${_CONFIGURE_COOKIE}
 _internal-build _internal-all: ${_DEPBUILD_COOKIES} ${_DEPBUILDLIB_COOKIES} \
 	${_DEPBUILDWANTLIB_COOKIE} ${_BUILD_COOKIE}
-_internal-install: ${_INSTALL_COOKIE}
+_internal-install: ${_INSTALL_COOKIE${SUBPACKAGE}}
+_internal-install-all: ${_INSTALL_COOKIES}
 _internal-fake: ${_FAKE_COOKIE}
 _internal-subupdate: ${_UPDATE_COOKIE${SUBPACKAGE}}
 _internal-update: ${_UPDATE_COOKIES}
@@ -1805,9 +1837,7 @@ subpackage:
 	@${_DO_LOCK}; cd ${.CURDIR} && ${MAKE} _internal-subpackage
 
 # Redirectors for top-level targets involving subpackages
-.for _t _r in \
-	dump-vars subdump-vars _internal-install-all _internal-install \
-	readmes _readme
+.for _t _r in dump-vars subdump-vars readmes _readme
 ${_t}:
 .  if ${MULTI_PACKAGES} == "-"
 	@cd ${.CURDIR} && exec ${MAKE} ${_r}
@@ -2120,30 +2150,6 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 .endfor
 	@${SUDO} ${_MAKE_COOKIE} $@
 
-# The real install
-
-${_INSTALL_COOKIE}:
-	@cd ${.CURDIR} && exec ${MAKE} package
-	@cd ${.CURDIR} && DEPENDS_TARGET=install exec ${MAKE} _internal-run-depends _internal-runlib-depends _internal-runwantlib-depends
-	@${ECHO_MSG} "===>  Installing ${FULLPKGNAME${SUBPACKAGE}} from ${_PKG_REPO}"
-.for _m in ${MODULES}
-.  if defined(MOD${_m:U}_pre_install)
-	@${MOD${_m:U}_pre_install}
-.  endif
-.endfor
-.if ${TRUST_PACKAGES:L} == "yes"
-	@if pkg_info -q -e ${FULLPKGNAME${SUBPACKAGE}}; then \
-		echo "Package ${FULLPKGNAME${SUBPACKAGE}} is already installed"; \
-	else \
-		${SUDO} ${SETENV} PKG_PATH=${_PKG_REPO} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKG_ADD_AUTO} ${PKGFILE}; \
-	fi
-.else
-	@${SUDO} ${SETENV} PKG_PATH=${_PKG_REPO} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKG_ADD_AUTO} ${PKGFILE}
-.endif
-	@-${SUDO} ${_MAKE_COOKIE} $@
-
-# The real package
-
 .if empty(PLIST_DB)
 _register_plist=:
 .else
@@ -2254,9 +2260,7 @@ _internal-clean:
 .endif
 .if ${_clean:L:Minstall}
 .  if ${_clean:L:Msub}
-.    for _s in ${MULTI_PACKAGES}
-	-${SUDO} ${PKG_DELETE} ${FULLPKGNAME${_s}}
-.    endfor
+	-${SUDO} ${PKG_DELETE} ${PKGNAMES}
 .  else
 	-${SUDO} ${PKG_DELETE} ${FULLPKGNAME${SUBPACKAGE}}
 .  endif
