@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.851 2006/11/28 19:13:47 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.852 2006/11/28 19:59:15 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -378,12 +378,13 @@ BASE_PKGPATH := ${PKGPATH}
 # It encodes flavors and pseudo-flavors.
 _FLAVOR_EXT2 :=
 BUILD_PKGPATH := ${PKGPATH}
+_PKG_ARGS =
 
 # (applies only to PLIST for now)
 .if !empty(FLAVORS)
 .  for _i in ${FLAVORS:L}
 .    if empty(FLAVOR:L:M${_i})
-PKG_ARGS += -D${_i}=0
+_PKG_ARGS += -D${_i}=0
 .    else
 _FLAVOR_EXT2 := ${_FLAVOR_EXT2}-${_i}
 BUILD_PKGPATH := ${BUILD_PKGPATH},${_i}
@@ -391,14 +392,14 @@ BUILD_PKGPATH := ${BUILD_PKGPATH},${_i}
 FLAVOR_EXT := ${FLAVOR_EXT}-${_i}
 BASE_PKGPATH := ${BASE_PKGPATH},${_i}
 .    endif
-PKG_ARGS += -D${_i}=1
+_PKG_ARGS += -D${_i}=1
 .    endif
 .  endfor
 .endif
 .if ${NO_SHARED_LIBS:L} == "yes"
-PKG_ARGS += -DSHARED_LIBS=0
+_PKG_ARGS += -DSHARED_LIBS=0
 .else
-PKG_ARGS += -DSHARED_LIBS=1
+_PKG_ARGS += -DSHARED_LIBS=1
 .endif
 .if !empty(FLAVORS:M[0-9]*)
 ERRORS += "Fatal: flavor should never start with a digit"
@@ -630,8 +631,12 @@ _PACKAGE_LINKS += ${MACHINE_ARCH}/cdrom/${_PKGFILE${SUBPACKAGE}} ${MACHINE_ARCH}
 
 .if empty(SUBPACKAGE) || ${SUBPACKAGE} == "-"
 FULLPKGPATH = ${PKGPATH}${FLAVOR_EXT:S/-/,/g}
+FULLPKGPATH- = ${FULLPKGPATH}
 .else
 FULLPKGPATH = ${PKGPATH},${SUBPACKAGE}${FLAVOR_EXT:S/-/,/g}
+.  for _S in ${MULTI_PACKAGES}
+FULLPKGPATH${_S} = ${PKGPATH},${_S}${FLAVOR_EXT:S/-/,/g}
+.  endfor
 .endif
 
 # A few aliases for *-install targets
@@ -700,15 +705,24 @@ _PKG_ADD_AUTO += -a
 
 .for _v in ${SUBST_VARS}
 _SED_SUBST += -e 's|$${${_v}}|${${_v}}|g'
-PKG_ARGS += -D${_v}='${${_v}}'
+_PKG_ARGS += -D${_v}='${${_v}}'
 _tmpvars += ${_v}='${${_v}}'
 .endfor
-PKG_ARGS += -DFLAVORS='${FLAVOR_EXT}'
-PKG_ARGS += -DFULLPKGPATH=${FULLPKGPATH}
-PKG_ARGS += -DPERMIT_PACKAGE_CDROM=${PERMIT_PACKAGE_CDROM${SUBPACKAGE}:Q}
-PKG_ARGS += -DPERMIT_PACKAGE_FTP=${PERMIT_PACKAGE_FTP${SUBPACKAGE}:Q}
+_PKG_ARGS += -DFLAVORS='${FLAVOR_EXT}'
 _tmpvars += FLAVORS='${FLAVOR_EXT}'
 _SED_SUBST += -e 's,$${FLAVORS},${FLAVOR_EXT},g' -e 's,$$\\,$$,g'
+_PKG_ARGS += -B ${WRKINST}
+.if ${LOCALBASE} != "/usr/local"
+_PKG_ARGS += -L${LOCALBASE}
+.endif
+
+.for _S in ${MULTI_PACKAGES}
+PKG_ARGS${_S} ?= ${PKG_ARGS}
+PKG_ARGS${_S} += ${_PKG_ARGS}
+PKG_ARGS${_S} += -DFULLPKGPATH=${FULLPKGPATH${_S}}
+PKG_ARGS${_S} += -DPERMIT_PACKAGE_CDROM=${PERMIT_PACKAGE_CDROM${_S}:Q}
+PKG_ARGS${_S} += -DPERMIT_PACKAGE_FTP=${PERMIT_PACKAGE_FTP${_S}:Q}
+.endfor
 
 # XXX
 .if ${MULTI_PACKAGES} == "-"
@@ -728,6 +742,18 @@ MESSAGE ?= ${PKGDIR}/MESSAGE
 UNMESSAGE ?= ${PKGDIR}/UNMESSAGE
 .  endif
 
+.  if exists(${PKGDIR}/INSTALL)
+PKG_ARGS- += -i ${PKGDIR}/INSTALL
+.  endif
+.  if exists(${PKGDIR}/DEINSTALL)
+PKG_ARGS- += -k ${PKGDIR}/DEINSTALL
+.  endif
+.  if exists(${PKGDIR}/REQ)
+PKG_ARGS- += -r ${PKGDIR}/REQ
+.  endif
+.  if exists(${PKGDIR}/MODULE.pm)
+PKG_ARGS- += -m ${PKGDIR}/MODULE.pm
+.  endif
 DESCR ?= ${PKGDIR}/DESCR
 
 .  for _v in PLIST _COMMENT MESSAGE UNMESSAGE DESCR
@@ -760,36 +786,34 @@ DESCR${_S} ?= ${PKGDIR}/DESCR${_S}
 MTREE_FILE ?=
 MTREE_FILE += ${PORTSDIR}/infrastructure/db/fake.mtree
 
-# Fill out package command, and package dependencies
 _PKG_PREREQ = ${WRKPKG}/DESCR${SUBPACKAGE} ${WRKPKG}/COMMENT${SUBPACKAGE}
-PKG_ARGS += -c '${WRKPKG}/COMMENT${SUBPACKAGE}' -d ${WRKPKG}/DESCR${SUBPACKAGE}
-PKG_ARGS += -f ${PLIST${SUBPACKAGE}} -p ${PREFIX${SUBPACKAGE}}
-.if exists(${PKGDIR}/INSTALL${SUBPACKAGE})
-PKG_ARGS += -i ${PKGDIR}/INSTALL${SUBPACKAGE}
-.endif
-.if exists(${PKGDIR}/DEINSTALL${SUBPACKAGE})
-PKG_ARGS += -k ${PKGDIR}/DEINSTALL${SUBPACKAGE}
-.endif
-.if exists(${PKGDIR}/REQ${SUBPACKAGE})
-PKG_ARGS += -r ${PKGDIR}/REQ${SUBPACKAGE}
-.endif
-.if exists(${PKGDIR}/MODULE${SUBPACKAGE}.pm)
-PKG_ARGS += -m ${PKGDIR}/MODULE${SUBPACKAGE}.pm
-.endif
-.if defined(MESSAGE${SUBPACKAGE})
-PKG_ARGS += -M ${MESSAGE${SUBPACKAGE}}
-.endif
-.if defined(UNMESSAGE${SUBPACKAGE})
-PKG_ARGS += -U ${UNMESSAGE${SUBPACKAGE}}
-.endif
-PKG_ARGS += -B ${WRKINST}
-PKG_ARGS += -A'${PKG_ARCH${SUBPACKAGE}}'
-.if ${LOCALBASE} != "/usr/local"
-PKG_ARGS += -L${LOCALBASE}
-.endif
-.if !defined(_COMMENT${SUBPACKAGE})
-ERRORS += "Fatal: Missing comment for ${SUBPACKAGE}."
-.endif
+.for _S in ${MULTI_PACKAGES}
+# Fill out package command, and package dependencies
+PKG_ARGS${_S} += -c '${WRKPKG}/COMMENT${_S}' -d ${WRKPKG}/DESCR${_S}
+PKG_ARGS${_S} += -f ${PLIST${_S}} -p ${PREFIX${_S}}
+.  if exists(${PKGDIR}/INSTALL${_S})
+PKG_ARGS${_S} += -i ${PKGDIR}/INSTALL${_S}
+.  endif
+.  if exists(${PKGDIR}/DEINSTALL${SUBPACKAGE})
+PKG_ARGS${_S} += -k ${PKGDIR}/DEINSTALL${SUBPACKAGE}
+.  endif
+.  if exists(${PKGDIR}/REQ${SUBPACKAGE})
+PKG_ARGS${_S} += -r ${PKGDIR}/REQ${SUBPACKAGE}
+.  endif
+.  if exists(${PKGDIR}/MODULE${SUBPACKAGE}.pm)
+PKG_ARGS${_S} += -m ${PKGDIR}/MODULE${SUBPACKAGE}.pm
+.  endif
+.  if defined(MESSAGE${_S})
+PKG_ARGS${_S} += -M ${MESSAGE${_S}}
+.  endif
+.  if defined(UNMESSAGE${_S})
+PKG_ARGS${_S} += -U ${UNMESSAGE${_S}}
+.  endif
+PKG_ARGS${_S} += -A'${PKG_ARCH${_S}}'
+.  if !defined(_COMMENT${_S})
+ERRORS += "Fatal: Missing comment for ${_S}."
+.  endif
+.endfor
 
 CHMOD ?= /bin/chmod
 CHOWN ?= /usr/sbin/chown
@@ -1334,7 +1358,7 @@ ${_PACKAGE_COOKIE${SUBPACKAGE}}:
 	@${ECHO_MSG} "Create ${_PACKAGE_COOKIE${SUBPACKAGE}}"
 	@cd ${.CURDIR} && \
       deps=`${MAKE} _print-package-args` && \
-	  if ${SUDO} ${PKG_CMD} `echo "$$deps"|sort -u` ${PKG_ARGS} ${_PACKAGE_COOKIE${SUBPACKAGE}}; then \
+	  if ${SUDO} ${PKG_CMD} `echo "$$deps"|sort -u` ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}; then \
 	    mode=`id -u`:`id -g`; ${SUDO} ${CHOWN} $${mode} ${_PACKAGE_COOKIE${SUBPACKAGE}}; \
 		if ${_register_plist}; then \
 			exit 0; \
@@ -2115,10 +2139,10 @@ _register_plist=perl ${PORTSDIR}/infrastructure/package/register-plist ${PLIST_D
 .endif
 
 print-plist:
-	@${PKG_CMD} -n -q ${PKG_ARGS} ${_PACKAGE_COOKIE${SUBPACKAGE}}
+	@${PKG_CMD} -n -q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}
 
 print-plist-contents:
-	@${PKG_CMD} -n -Q ${PKG_ARGS} ${_PACKAGE_COOKIE${SUBPACKAGE}}
+	@${PKG_CMD} -n -Q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}
 
 _internal-subpackage: ${_PACKAGE_COOKIES}
 
