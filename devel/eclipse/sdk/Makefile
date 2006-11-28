@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2006/11/22 15:42:39 kurt Exp $
+# $OpenBSD: Makefile,v 1.25 2006/11/28 21:20:16 kurt Exp $
 
 ONLY_FOR_ARCHS=		amd64 i386
 
@@ -8,9 +8,9 @@ COMMENT-mozilla=	"mozilla integration library for eclipse HTML Browser Widget"
 
 ECLIPSE_VER=		3.2
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
-PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}p4
-PKGNAME-gnome=		eclipse-sdk-gnome-${ECLIPSE_VER}p4
-PKGNAME-mozilla=	eclipse-sdk-mozilla-${ECLIPSE_VER}p4
+PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}p5
+PKGNAME-gnome=		eclipse-sdk-gnome-${ECLIPSE_VER}p5
+PKGNAME-mozilla=	eclipse-sdk-mozilla-${ECLIPSE_VER}p5
 SHARED_LIBS=		swt-atk-gtk-3232	3.0 \
 			swt-cde-gtk-3232	3.0 \
 			swt-awt-gtk-3232	3.0 \
@@ -64,7 +64,7 @@ USE_X11=		Yes
 MULTI_PACKAGES=		-main -gnome -mozilla
 
 RUN_DEPENDS-main=	::java/javaPathHelper \
-			${MODJAVA_RUNDEPENDS}
+			${MODJAVA_RUN_DEPENDS}
 LIB_DEPENDS-main=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 WANTLIB-main=		GL GLU X11 Xtst c m fontconfig \
 			freetype atk-1.0 glib-2.0 gmodule-2.0 \
