@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.849 2006/11/28 18:17:57 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.850 2006/11/28 18:25:42 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -319,14 +319,15 @@ FAKE_FLAGS += LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
 .endif
 MAKE_FLAGS += SHARED_LIBS_LOG=${WRKBUILD}/shared_libs.log
 
-.if !defined(MULTI_PACKAGES)
-SUBPACKAGE ?=
-PKGNAMES = ${FULLPKGNAME}
-_FMN = ${PKGPATH}/${FULLPKGNAME}
+.if !defined(MULTI_PACKAGES) || empty(MULTI_PACKAGES)
+# XXX let's cheat so we always have MULTI_PACKAGES
+MULTI_PACKAGES = -
+SUBPACKAGE ?= -
 .else
 SUBPACKAGE ?= -main
-_FMN =
 .endif
+
+_FMN =
 FLAVOR ?=
 FLAVORS ?=
 PSEUDO_FLAVORS ?=
@@ -361,12 +362,12 @@ MOTIFLIB = -L${DEPBASE}/lib -lXm
 
 .if !empty(SUBPACKAGE)
 .  for _i in ${SUBPACKAGE}
-.    if !defined(MULTI_PACKAGES) || empty(MULTI_PACKAGES:M${_i})
+.    if empty(MULTI_PACKAGES:M${_i})
 ERRORS += "Fatal: Subpackage ${SUBPACKAGE} does not exist."
 .    endif
 .  endfor
 .endif
-.if defined(MULTI_PACKAGES) && !empty(MULTI_PACKAGES:N-*)
+.if !empty(MULTI_PACKAGES:N-*)
 ERRORS += "Fatal: SUBPACKAGES should always beging with -: ${MULTI_PACKAGES:N-*}."
 .endif
 
@@ -423,7 +424,9 @@ FULLPKGNAME ?= ${PKGNAME}${FLAVOR_EXT}
 _MASTER ?=
 _SOLVING_DEP ?= No
 
-.if defined(MULTI_PACKAGES)
+.if ${MULTI_PACKAGES} == "-"
+FULLPKGNAME- = ${FULLPKGNAME}
+.else
 .  for _s in ${MULTI_PACKAGES}
 .    if !defined(FULLPKGNAME${_s})
 .      if defined(PKGNAME${_s})
@@ -605,17 +608,17 @@ _PACKAGE_LINKS =
 _PKGFILE${SUBPACKAGE} = ${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
 NO_ARCH ?= no-arch
 .if ${PKG_ARCH${SUBPACKAGE}} == "*" && ${NO_ARCH} != ${MACHINE_ARCH}/all
-_PACKAGE_COOKIE = ${PACKAGE_REPOSITORY}/${NO_ARCH}/${_PKGFILE${SUBPACKAGE}}
+_PACKAGE_COOKIE${SUBPACKAGE} = ${PACKAGE_REPOSITORY}/${NO_ARCH}/${_PKGFILE${SUBPACKAGE}}
 _PACKAGE_LINKS += ${MACHINE_ARCH}/all/${_PKGFILE${SUBPACKAGE}} ${NO_ARCH}/${_PKGFILE${SUBPACKAGE}}
 _PACKAGE_COOKIES += ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE${SUBPACKAGE}}
 .else
-_PACKAGE_COOKIE = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE${SUBPACKAGE}}
+_PACKAGE_COOKIE${SUBPACKAGE} = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE${SUBPACKAGE}}
 .endif
 _PKG_REPO = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/
 _CACHE_REPO = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/cache/
 PKGFILE = ${_PKG_REPO}${_PKGFILE${SUBPACKAGE}}
 
-_PACKAGE_COOKIES += ${_PACKAGE_COOKIE}
+_PACKAGE_COOKIES += ${_PACKAGE_COOKIE${SUBPACKAGE}}
 .if ${PERMIT_PACKAGE_FTP${SUBPACKAGE}:L} == "yes"
 _PACKAGE_COOKIES += ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/ftp/${_PKGFILE${SUBPACKAGE}}
 _PACKAGE_LINKS += ${MACHINE_ARCH}/ftp/${_PKGFILE${SUBPACKAGE}} ${MACHINE_ARCH}/all/${_PKGFILE${SUBPACKAGE}}
@@ -625,7 +628,7 @@ _PACKAGE_COOKIES += ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/cdrom/${_PKGFILE${SUBP
 _PACKAGE_LINKS += ${MACHINE_ARCH}/cdrom/${_PKGFILE${SUBPACKAGE}} ${MACHINE_ARCH}/all/${_PKGFILE${SUBPACKAGE}}
 .endif
 
-.if empty(SUBPACKAGE)
+.if empty(SUBPACKAGE) || ${SUBPACKAGE} == "-"
 FULLPKGPATH = ${PKGPATH}${FLAVOR_EXT:S/-/,/g}
 .else
 FULLPKGPATH = ${PKGPATH},${SUBPACKAGE}${FLAVOR_EXT:S/-/,/g}
@@ -707,24 +710,52 @@ PKG_ARGS += -DPERMIT_PACKAGE_FTP=${PERMIT_PACKAGE_FTP${SUBPACKAGE}:Q}
 _tmpvars += FLAVORS='${FLAVOR_EXT}'
 _SED_SUBST += -e 's,$${FLAVORS},${FLAVOR_EXT},g' -e 's,$$\\,$$,g'
 
-PLIST${SUBPACKAGE} ?= ${PKGDIR}/PLIST${SUBPACKAGE}
+# XXX
+.if ${MULTI_PACKAGES} == "-"
+PLIST ?= ${PKGDIR}/PLIST
 
-# Likewise for DESCR/MESSAGE/COMMENT
-.if defined(COMMENT${SUBPACKAGE}${FLAVOR_EXT})
-_COMMENT${SUBPACKAGE} = ${COMMENT${SUBPACKAGE}${FLAVOR_EXT}}
-.elif defined(COMMENT${SUBPACKAGE})
-_COMMENT${SUBPACKAGE} = ${COMMENT${SUBPACKAGE}}
+.  if defined(COMMENT${FLAVOR_EXT})
+_COMMENT = ${COMMENT${FLAVOR_EXT}}
+.  elif defined(COMMENT)
+_COMMENT = ${COMMENT}
+.  endif
+
+.  if exists(${PKGDIR}/MESSAGE)
+MESSAGE ?= ${PKGDIR}/MESSAGE
+.  endif
+
+.  if exists(${PKGDIR}/UNMESSAGE)
+UNMESSAGE ?= ${PKGDIR}/UNMESSAGE
+.  endif
+
+DESCR ?= ${PKGDIR}/DESCR
+
+.  for _v in PLIST _COMMENT MESSAGE UNMESSAGE DESCR
+.    if defined(${_v})
+${_v}- = ${${_v}}
+.    endif
+.  endfor
+.else 
+.  for _S in ${MULTI_PACKAGES}
+PLIST${_S} ?= ${PKGDIR}/PLIST${_S}
+
+.    if defined(COMMENT${_S}${FLAVOR_EXT})
+_COMMENT${_S} = ${COMMENT${_S}${FLAVOR_EXT}}
+.    elif defined(COMMENT${_S})
+_COMMENT${_S} = ${COMMENT${_S}}
+.    endif
+
+.    if exists(${PKGDIR}/MESSAGE${_S})
+MESSAGE${_S} ?= ${PKGDIR}/MESSAGE${_S}
+.    endif
+
+.    if exists(${PKGDIR}/UNMESSAGE${_S})
+UNMESSAGE${_S} ?= ${PKGDIR}/UNMESSAGE${_S}
+.    endif
+
+DESCR${_S} ?= ${PKGDIR}/DESCR${_S}
+.  endfor
 .endif
-
-.if exists(${PKGDIR}/MESSAGE${SUBPACKAGE})
-MESSAGE${SUBPACKAGE} ?= ${PKGDIR}/MESSAGE${SUBPACKAGE}
-.endif
-
-.if exists(${PKGDIR}/UNMESSAGE${SUBPACKAGE})
-UNMESSAGE${SUBPACKAGE} ?= ${PKGDIR}/UNMESSAGE${SUBPACKAGE}
-.endif
-
-DESCR${SUBPACKAGE} ?= ${PKGDIR}/DESCR${SUBPACKAGE}
 
 MTREE_FILE ?=
 MTREE_FILE += ${PORTSDIR}/infrastructure/db/fake.mtree
@@ -1149,11 +1180,9 @@ _ALLFILES = ${ALLFILES:S/^/${DIST_SUBDIR}\//}
 _ALLFILES = ${ALLFILES}
 .endif
 
-.if defined(MULTI_PACKAGES)
-.  for _S in ${MULTI_PACKAGES}
+.for _S in ${MULTI_PACKAGES}
 _FMN += ${PKGPATH}/${FULLPKGNAME${_S}}
-.  endfor
-.endif
+.endfor
 
 # Internal variables, used by dependencies targets
 # Only keep pkg:dir spec
@@ -1201,17 +1230,15 @@ _BUILD_DEP = ${_BUILD_DEP2:C/[^:]*://}
 _RUN_DEP = ${_RUN_DEP2:C/[^:]*://}
 _REGRESS_DEP = ${_REGRESS_DEP2:C/[^:]*://}
 
-.if defined(MULTI_PACKAGES)
-.  for _S in ${MULTI_PACKAGES}
+.for _S in ${MULTI_PACKAGES}
 _BUILD_DEP3${_S} = ${_BUILD_DEP3}
 _RUN_DEP3${_S} = ${RUN_DEPENDS${_S}:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
-.    if ${NO_SHARED_LIBS:L} != "yes"
+.  if ${NO_SHARED_LIBS:L} != "yes"
 _LIB_DEP3${_S} = ${LIB_DEPENDS${_S}}
-.    else
+.  else
 _LIB_DEP3${_S} =
-.    endif
-.  endfor
-.endif
+.  endif
+.endfor
 
 README_NAME ?= ${TEMPLATES}/README.port
 
@@ -1287,7 +1314,7 @@ ${_CACHE_REPO}/${_PKGFILE${SUBPACKAGE}}:
 		exit 1; \
 	fi
 
-${_PACKAGE_COOKIE}:
+${_PACKAGE_COOKIE${SUBPACKAGE}}:
 	@mkdir -p ${@D}
 .if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING)
 	@f=${_CACHE_REPO}/${_PKGFILE${SUBPACKAGE}}; \
@@ -1304,11 +1331,11 @@ ${_PACKAGE_COOKIE}:
 .  else
 # What PACKAGE normally does:
 	@${ECHO_MSG} "===>  Building package for ${FULLPKGNAME${SUBPACKAGE}}"
-	@${ECHO_MSG} "Create ${_PACKAGE_COOKIE}"
+	@${ECHO_MSG} "Create ${_PACKAGE_COOKIE${SUBPACKAGE}}"
 	@cd ${.CURDIR} && \
       deps=`${MAKE} _print-package-args` && \
-	  if ${SUDO} ${PKG_CMD} `echo "$$deps"|sort -u` ${PKG_ARGS} ${_PACKAGE_COOKIE}; then \
-	    mode=`id -u`:`id -g`; ${SUDO} ${CHOWN} $${mode} ${_PACKAGE_COOKIE}; \
+	  if ${SUDO} ${PKG_CMD} `echo "$$deps"|sort -u` ${PKG_ARGS} ${_PACKAGE_COOKIE${SUBPACKAGE}}; then \
+	    mode=`id -u`:`id -g`; ${SUDO} ${CHOWN} $${mode} ${_PACKAGE_COOKIE${SUBPACKAGE}}; \
 		if ${_register_plist}; then \
 			exit 0; \
 		fi; \
@@ -1532,7 +1559,7 @@ _NEWLIB_DEPENDS_FLAGS=
 sublib-depends-check:
 	@cd ${.CURDIR} && exec ${MAKE} subpackage
 	@perl ${PORTSDIR}/infrastructure/package/check-newlib-depends \
-		${_NEWLIB_DEPENDS_FLAGS} -d ${_PKG_REPO} ${_PACKAGE_COOKIE}
+		${_NEWLIB_DEPENDS_FLAGS} -d ${_PKG_REPO} ${_PACKAGE_COOKIE${SUBPACKAGE}}
 
 _internal-manpages-check: ${_FAKE_COOKIE}
 	@cd ${WRKINST}${TRUEPREFIX}/man && \
@@ -1666,11 +1693,9 @@ _do_libs_too=NO_SHARED_LIBS=Yes
 .endif
 
 _extra_prefixes=
-.if defined(MULTI_PACKAGES)
-.  for _s in ${MULTI_PACKAGES}
+.for _s in ${MULTI_PACKAGES}
 _extra_prefixes+=PREFIX${_s}=`cd ${.CURDIR} && SUBPACKAGE=${_s} ${MAKE} show=PREFIX${_s}`
-.  endfor
-.endif
+.endfor
 
 _internal-plist _internal-update-plist: _internal-fake
 	@${ECHO_MSG} "===>  Updating plist for ${FULLPKGNAME}${_MASTER}"
@@ -1725,30 +1750,26 @@ subpackage:
 
 # Redirectors for top-level targets involving subpackages
 .for _t _r in _internal-package-only _internal-subpackage \
-	describe subdescribe lib-depends-check sublib-depends-check \
+	lib-depends-check sublib-depends-check \
 	dump-vars subdump-vars _internal-install-all _internal-install \
 	print-plist-all print-plist \
 	readmes _readme _internal-update _internal-subupdate
 ${_t}:
-.  if defined(MULTI_PACKAGES)
+.  if ${MULTI_PACKAGES} == "-"
+	@cd ${.CURDIR} && exec ${MAKE} ${_r}
+.  else
 .    for _s in ${MULTI_PACKAGES}
 	@${ECHO_MSG} "===> ${PKGPATH}${FLAVOR_EXT:S/-/,/g},${_s}"
 	@cd ${.CURDIR} && SUBPACKAGE='${_s}' exec ${MAKE} ${_r}
 .    endfor
-.  else
-	@cd ${.CURDIR} && exec ${MAKE} ${_r}
 .  endif
 .endfor
 
 
 _internal-package:
-.if defined(MULTI_PACKAGES)
-.  for _s in ${MULTI_PACKAGES}
+.for _s in ${MULTI_PACKAGES}
 	@cd ${.CURDIR} && SUBPACKAGE='${_s}' exec ${MAKE} _internal-subpackage
-.  endfor
-.else
-	@cd ${.CURDIR} && exec ${MAKE} _internal-subpackage
-.endif
+.endfor
 .if ${BULK_${PKGPATH}:L} == "yes"
 	@cd ${.CURDIR} && exec ${MAKE} ${_BULK_COOKIE}
 .endif
@@ -2090,14 +2111,14 @@ ${_UPDATE_COOKIE}:
 .if empty(PLIST_DB)
 _register_plist=:
 .else
-_register_plist=perl ${PORTSDIR}/infrastructure/package/register-plist ${PLIST_DB} ${_PACKAGE_COOKIE}
+_register_plist=perl ${PORTSDIR}/infrastructure/package/register-plist ${PLIST_DB} ${_PACKAGE_COOKIE${SUBPACKAGE}}
 .endif
 
 print-plist:
-	@${PKG_CMD} -n -q ${PKG_ARGS} ${_PACKAGE_COOKIE}
+	@${PKG_CMD} -n -q ${PKG_ARGS} ${_PACKAGE_COOKIE${SUBPACKAGE}}
 
 print-plist-contents:
-	@${PKG_CMD} -n -Q ${PKG_ARGS} ${_PACKAGE_COOKIE}
+	@${PKG_CMD} -n -Q ${PKG_ARGS} ${_PACKAGE_COOKIE${SUBPACKAGE}}
 
 _internal-subpackage: ${_PACKAGE_COOKIES}
 
@@ -2199,24 +2220,16 @@ _internal-clean:
 .  endif
 .endif
 .if ${_clean:L:Mpackages} || ${_clean:L:Mpackage} && ${_clean:L:Msub}
-.  if defined(MULTI_PACKAGES)
-.    for _s in ${MULTI_PACKAGES}
+.  for _s in ${MULTI_PACKAGES}
 	@cd ${.CURDIR} && SUBPACKAGE='${_s}' exec ${MAKE} clean=package
-.    endfor
-.  else
-	@cd ${.CURDIR} && exec ${MAKE} clean=package
-.  endif
+.  endfor
 .elif ${_clean:L:Mpackage}
 	rm -f ${_PACKAGE_COOKIES}
 .endif
 .if ${_clean:L:Mreadmes}
-.    if defined(MULTI_PACKAGES)
-.      for _s in ${MULTI_PACKAGES}
+.    for _s in ${MULTI_PACKAGES}
 	rm -f ${.CURDIR}/${FULLPKGNAME${_s}}.html
-.      endfor
-.    else
-	rm -f ${.CURDIR}/${FULLPKGNAME}.html
-.    endif
+.    endfor
 .endif
 .if ${_clean:L:Mbulk}
 	rm -f ${_BULK_COOKIE}
@@ -2303,24 +2316,25 @@ _fetch-onefile:
 #  description-file|maintainer|categories|lib-deps|build-deps|run-deps| \
 #  for-arch|package-cdrom|package-ftp|distfiles-cdrom|distfiles-ftp
 #
-subdescribe:
-	@echo -n "${FULLPKGNAME${SUBPACKAGE}}|${FULLPKGPATH}|"
-.if ${PREFIX${SUBPACKAGE}} == ${LOCALBASE}
+describe:
+.for _S in ${MULTI_PACKAGES}
+	@echo -n "${FULLPKGNAME${_S}}|${FULLPKGPATH}|"
+.  if ${PREFIX${_S}} == ${LOCALBASE}
 	@echo -n "|"
-.else
-	@echo -n "${PREFIX${SUBPACKAGE}}|"
-.endif
-	@echo -n ${_COMMENT${SUBPACKAGE}}"|"; \
-	if [ -f ${DESCR${SUBPACKAGE}} ]; then \
-		echo -n "${DESCR${SUBPACKAGE}:S,^${PORTSDIR}/,,}|"; \
+.  else
+	@echo -n "${PREFIX${_S}}|"
+.  endif
+	@echo -n ${_COMMENT${_S}}"|"; \
+	if [ -f ${DESCR${_S}} ]; then \
+		echo -n "${DESCR${_S}:S,^${PORTSDIR}/,,}|"; \
 	else \
 		echo -n "/dev/null|"; \
 	fi; \
-	echo -n "${MAINTAINER}|${CATEGORIES${SUBPACKAGE}}|"
-.for _d in LIB BUILD RUN
-	@echo -n '${_${_d}_DEP3${SUBPACKAGE}:C/ +/ /g}'| tr '\040' '\012'|sort -u|tr '\012' '\040' | sed -e 's, $$,,'
+	echo -n "${MAINTAINER}|${CATEGORIES${_S}}|"
+.  for _d in LIB BUILD RUN
+	@echo -n '${_${_d}_DEP3${_S}:C/ +/ /g}'| tr '\040' '\012'|sort -u|tr '\012' '\040' | sed -e 's, $$,,'
 	@echo -n '|'
-.endfor
+.  endfor
 	@case "${ONLY_FOR_ARCHS}" in \
 	 "") case "${NOT_FOR_ARCHS}" in \
 		 "") echo -n "any|";; \
@@ -2329,30 +2343,31 @@ subdescribe:
 	 *) echo -n "${ONLY_FOR_ARCHS}|";; \
 	 esac
 
-.if defined(_BAD_LICENSING)
+.  if defined(_BAD_LICENSING)
 	@echo "?|?|?|?"
-.else
-.  if ${PERMIT_PACKAGE_CDROM${SUBPACKAGE}:L} == "yes"
-	@echo -n "y|"
 .  else
-	@echo -n "n|"
-.  endif
-.  if ${PERMIT_PACKAGE_FTP${SUBPACKAGE}:L} == "yes"
+.    if ${PERMIT_PACKAGE_CDROM${_S}:L} == "yes"
 	@echo -n "y|"
-.  else
+.    else
 	@echo -n "n|"
-.  endif
-.  if ${PERMIT_DISTFILES_CDROM:L} == "yes"
+.    endif
+.    if ${PERMIT_PACKAGE_FTP${_S}:L} == "yes"
 	@echo -n "y|"
-.  else
+.    else
 	@echo -n "n|"
-.  endif
-.  if ${PERMIT_DISTFILES_FTP:L} == "yes"
+.    endif
+.    if ${PERMIT_DISTFILES_CDROM:L} == "yes"
+	@echo -n "y|"
+.    else
+	@echo -n "n|"
+.    endif
+.    if ${PERMIT_DISTFILES_FTP:L} == "yes"
 	@echo "y"
-.  else
+.    else
 	@echo "n"
+.    endif
 .  endif
-.endif
+.endfor
 
 _readme:
 	@cd ${.CURDIR} && exec ${MAKE} README_NAME=${README_NAME} ${FULLPKGNAME${SUBPACKAGE}}.html
@@ -2834,7 +2849,7 @@ subdump-vars:
 	_internal-manpages-check _internal-plist _internal-update-plist \
 	_internal-update update print-plist print-plist-contents \
 	_list-port-libs _print-package-signature-lib _print-package-signature-run \
-	show-required-by peek-ftp _internal-subpackage subdescribe \
+	show-required-by peek-ftp _internal-subpackage \
 	sublib-depends-check subdump-vars _internal-install-all install-all \
 	subpackage _internal-subupdate _internal-update \
 	regress-dir-depends _recurse-regress-dir-depends \
