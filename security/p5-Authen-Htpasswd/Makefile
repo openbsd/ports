@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/05 10:31:49 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/28 11:09:51 espie Exp $
 
 COMMENT= 	"read and modify Apache .htpasswd files"
 
 DISTNAME=	Authen-Htpasswd-0.14
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	security perl5
+CATEGORIES=	security
 
 MAINTAINER=	Simon Dassow <janus@errornet.de>
 
@@ -14,20 +13,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Authen/}
+MODULES=	cpan
 
 RUN_DEPENDS=	::devel/p5-Class-Accessor \
 		::devel/p5-IO-LockedFile
 
-REGRESS_DEPENDS=${RUN_DEPENDS} \
-		::devel/p5-Test-Pod \
-		::devel/p5-Test-Pod-Coverage \
-		::security/p5-Crypt-PasswdMD5
+REGRESS_DEPENDS=::security/p5-Crypt-PasswdMD5
 
 MAKE_ENV=	TEST_POD=Yes
 
-CONFIGURE_STYLE=perl modbuild
-
-PKG_ARCH=	*
+CONFIGURE_STYLE=modbuild
 
 .include <bsd.port.mk>
