@@ -1,0 +1,17 @@
+$OpenBSD: patch-g10_openfile_c,v 1.1 2006/11/28 10:18:49 bernd Exp $
+
+Fixes a buffer overflow when running gnupg in interactive mode.
+Should be fixed in >1.4.5.
+
+--- g10/openfile.c.orig	Tue Nov 28 11:05:05 2006
++++ g10/openfile.c	Tue Nov 28 11:06:01 2006
+@@ -144,8 +144,8 @@ ask_outfile_name( const char *name, size
+ 
+     s = _("Enter new filename");
+ 
+-    n = strlen(s) + namelen + 10;
+     defname = name && namelen? make_printable_string( name, namelen, 0): NULL;
++    n = strlen(s) + (defname?strlen (defname):0) + 10;
+     prompt = xmalloc(n);
+     if( defname )
+ 	sprintf(prompt, "%s [%s]: ", s, defname );
