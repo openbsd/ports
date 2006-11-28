@@ -1,0 +1,12 @@
+$OpenBSD: patch-dynamic_Makefile_in,v 1.1 2006/11/28 05:19:49 msf Exp $
+--- dynamic/Makefile.in.orig	Mon Nov 27 23:49:07 2006
++++ dynamic/Makefile.in	Mon Nov 27 23:49:30 2006
+@@ -32,8 +32,6 @@ ALLOBJS=	$(addsuffix _p.o, $(basename $(
+ install:
+ 		mkdir -p $(libdir)
+ 		$(INSTALL_PROGRAM) $(SHLIBFILE) $(libdir)/$(SHLIBFILE)
+-		ln -sf $(SHLIBFILE) $(libdir)/$(SHLIBSONAME)
+-		ln -sf $(SHLIBSONAME) $(libdir)/$(SHLIBFORLINK)
+ 
+ uninstall:
+ 		rm -f $(libdir)/$(SHLIBFILE) $(libdir)/$(SHLIBSONAME)
