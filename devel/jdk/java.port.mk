@@ -1,4 +1,4 @@
-# $OpenBSD: java.port.mk,v 1.9 2006/11/20 19:28:18 espie Exp $
+# $OpenBSD: java.port.mk,v 1.10 2006/11/28 14:28:25 kurt Exp $
 
 # Set MODJAVA_VER to x.y or x.y+ based on the version
 # of the jdk needed for the port. x.y  means any x.y jdk.
@@ -16,10 +16,22 @@ MODJAVA_JRERUN?=no
 # Based on the MODJAVA_VER, MODJAVA_JRERUN, NO_BUILD
 # and MACHINE_ARCH, the following things will be setup:
 #   ONLY_FOR_ARCHS if not already set.
-#   BUILD_DEPENDS on a jdk (native preferred).
-#   JAVA_HOME to pass on to the port build.
+#   BUILD_DEPENDS on a jdk (only if not NO_BUILD)
+#   JAVA_HOME to pass on to the port build (only if not NO_BUILD)
 #   RUN_DEPENDS for all jdk's and jre's that can run
 #   the port.
+#   MODJAVA_RUN_DEPENDS with same value as RUN_DEPENDS
+#   to assist with multipackages.
+#
+# NOTE: All source built java ports must properly set
+# javac -source and -target build arguments. Depending
+# on the architecture a 1.3 or 1.4 level port my built
+# by a 1.5 jdk. The JAVA_HOME variable points to the
+# build jdk not the default RUN_DEPEND jdk, so it
+# should not be used to set a default jdk to run with.
+# The javaPathHelper port should be used to set the
+# default JAVA_HOME or JAVACMD vars for a package.
+#
 
 .if ${MACHINE_ARCH} == "amd64" && (${MODJAVA_VER} == "1.3+" || ${MODJAVA_VER} == "1.4+")
 # this is a special case for amd64. since amd64 doesn't have 1.3 or 1.4,
@@ -27,8 +39,8 @@ MODJAVA_JRERUN?=no
 # on 1.5+ for amd64. Also add in jamvm and kaffe since they likely can
 # run these too. 
    ONLY_FOR_ARCHS?= amd64
-   JAVA_HOME= ${LOCALBASE}/jdk-1.5.0
 .  if ${NO_BUILD:L} != "yes"
+     JAVA_HOME= ${LOCALBASE}/jdk-1.5.0
      BUILD_DEPENDS+= :jdk-1.5.0:devel/jdk/1.5
 .  endif
 .  if ${MODJAVA_JRERUN:L} == "yes"
@@ -38,9 +50,14 @@ MODJAVA_JRERUN?=no
 .  endif
 .elif ${MODJAVA_VER:S/+//} == "1.3"
    ONLY_FOR_ARCHS?= arm i386 powerpc sparc
-   JAVA_HOME= ${LOCALBASE}/jdk-1.3.1
 .  if ${NO_BUILD:L} != "yes"
-     BUILD_DEPENDS+= :jdk-1.3.1:devel/jdk/1.3
+.    if ${MACHINE_ARCH} == "i386" 
+       JAVA_HOME= ${LOCALBASE}/jdk-1.5.0
+       BUILD_DEPENDS+= :jdk-1.5.0:devel/jdk/1.5
+.    else
+       JAVA_HOME= ${LOCALBASE}/jdk-1.3.1
+       BUILD_DEPENDS+= :jdk-1.3.1:devel/jdk/1.3
+.    endif
 .  endif
 .  if ${MODJAVA_JRERUN:L} == "yes"
 .    if ${MODJAVA_VER} == "1.3+"
@@ -62,9 +79,9 @@ MODJAVA_JRERUN?=no
 .  endif
 .elif ${MODJAVA_VER:S/+//} == "1.4"
    ONLY_FOR_ARCHS?= i386
-   JAVA_HOME= ${LOCALBASE}/jdk-1.4.2
 .  if ${NO_BUILD:L} != "yes"
-     BUILD_DEPENDS+= :jdk-1.4.2:devel/jdk/1.4
+     JAVA_HOME= ${LOCALBASE}/jdk-1.5.0
+     BUILD_DEPENDS+= :jdk-1.5.0:devel/jdk/1.5
 .  endif
 .  if ${MODJAVA_JRERUN:L} == "yes"
 .    if ${MODJAVA_VER} == "1.4+"
@@ -81,8 +98,8 @@ MODJAVA_JRERUN?=no
 .  endif
 .elif ${MODJAVA_VER:S/+//} == "1.5"
    ONLY_FOR_ARCHS?= i386 amd64
-   JAVA_HOME= ${LOCALBASE}/jdk-1.5.0
 .  if ${NO_BUILD:L} != "yes"
+     JAVA_HOME= ${LOCALBASE}/jdk-1.5.0
      BUILD_DEPENDS+= :jdk-1.5.0:devel/jdk/1.5
 .  endif
 .  if ${MODJAVA_JRERUN:L} == "yes"
