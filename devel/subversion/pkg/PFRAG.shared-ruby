@@ -1,0 +1,11 @@
+@comment $OpenBSD: PFRAG.shared-ruby,v 1.1 2006/11/29 08:52:39 msf Exp $
+@lib lib/libsvn_swig_ruby-1.so.${LIBsvn_swig_ruby-1_VERSION}
+lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/svn/
+lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/svn/ext/
+lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/svn/ext/client.so
+lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/svn/ext/core.so
+lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/svn/ext/delta.so
+lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/svn/ext/fs.so
+lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/svn/ext/ra.so
+lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/svn/ext/repos.so
+lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/svn/ext/wc.so

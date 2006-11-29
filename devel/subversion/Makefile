@@ -1,20 +1,22 @@
-# $OpenBSD: Makefile,v 1.25 2006/11/24 19:52:53 steven Exp $
+# $OpenBSD: Makefile,v 1.26 2006/11/29 08:52:38 msf Exp $
 
 COMMENT-main=	"subversion revision control system"
 COMMENT-perl=	"perl interface to subversion"
 COMMENT-python=	"python interface to subversion"
+COMMENT-ruby=	"ruby interface to subversion"
 
 VERSION=	1.4.0
 DISTNAME=	subversion-${VERSION}
 PKGNAME-main=	${DISTNAME}p0
 PKGNAME-perl=	p5-SVN-${VERSION}p0
 PKGNAME-python=	py-subversion-${VERSION}p0
+PKGNAME-ruby=	ruby-subversion-${VERSION}
 
 SO_VERSION=	1.0
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
 		svn_fs_base-1 svn_fs_fs-1 svn_ra-1 svn_ra_dav-1 \
 		svn_ra_local-1 svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1
-.for _lib in ${SVN_LIBS} svn_swig_perl-1 svn_swig_py-1
+.for _lib in ${SVN_LIBS} svn_swig_perl-1 svn_swig_py-1 svn_swig_ruby-1
 SHARED_LIBS+=	${_lib} ${SO_VERSION} 
 .endfor
 
@@ -36,9 +38,10 @@ PSEUDO_FLAVORS=	no_bindings
 FLAVOR?=
 
 PYTHON_VER=	2.4
-SUBST_VARS=	PYTHON_VER
 
-MODULES=	devel/gettext
+SUBST_VARS=	PYTHON_VER 
+
+MODULES=	devel/gettext lang/ruby
 
 WANTLIB=	apr-1 db z
 
@@ -51,7 +54,7 @@ MULTI_PACKAGES=	-main
 WANTLIB-main=	${WANTLIB} c crypto m ssl xml2
 
 .if !${FLAVOR:L:Mno_bindings}
-MULTI_PACKAGES+=-perl -python
+MULTI_PACKAGES+=-perl -python -ruby
 SHARED_ONLY=	Yes
 
 WANTLIB-perl=	${WANTLIB} aprutil-1
@@ -71,8 +74,16 @@ LIB_DEPENDS-python=	expat.>=4::textproc/expat \
 LIB_DEPENDS-python+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversion,-main
 .  endfor
 
+WANTLIB-ruby=	${WANTLIB} crypto expat m ssl neon xml2 aprutil-1
+RUB_DEPENDS-ruby=	::lang/ruby
+LIB_DEPENDS-ruby=	${MODGETTEXT_LIB_DEPENDS}
+.  for _lib in ${SVN_LIBS}
+LIB_DEPENDS-ruby+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversion,-main
+.  endfor
+
 BUILD_DEPENDS=	::lang/python/${PYTHON_VER} \
-		::devel/swig
+		::lang/ruby \
+		::devel/swig 
 .endif
 
 USE_LIBTOOL=	Yes
@@ -88,7 +99,7 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--without-apxs \
 		--without-jdk
 .if !${FLAVOR:L:Mno_bindings}
-CONFIGURE_ARGS+=--enable-swig-bindings=perl,python \
+CONFIGURE_ARGS+=--enable-swig-bindings=perl,python,ruby \
 		--with-swig=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--disable-swig-bindings \
@@ -106,13 +117,16 @@ pre-build:
 
 .if !${FLAVOR:L:Mno_bindings}
 REGRESS_DEPENDS+=	::devel/p5-IO-String \
-			::devel/subversion,-python
+			::devel/subversion,-python \
+			::devel/subversion,-ruby
 
 post-build: 
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${MAKE_FLAGS} swig-py
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${MAKE_FLAGS} swig-pl
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
+		${MAKE_FLAGS} swig-rb
 
 do-regress:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
@@ -123,6 +137,8 @@ do-regress:
 		${REGRESS_FLAGS} TMPDIR=${WRKBUILD} check-swig-pl
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${REGRESS_FLAGS} check-swig-py
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
+		${REGRESS_FLAGS} check-swig-rb
 .endif
 
 post-install:
@@ -131,6 +147,8 @@ post-install:
 		${FAKE_FLAGS} install-swig-py
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${FAKE_FLAGS} install-swig-pl
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
+		${FAKE_FLAGS} install-swig-rb
 .endif
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/backup

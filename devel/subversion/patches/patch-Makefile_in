@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2006/09/30 06:23:58 steven Exp $
---- Makefile.in.orig	Sat Jul 15 01:24:31 2006
-+++ Makefile.in	Sat Jul 15 01:28:07 2006
+$OpenBSD: patch-Makefile_in,v 1.6 2006/11/29 08:52:39 msf Exp $
+--- Makefile.in.orig	Thu Aug 24 00:12:43 2006
++++ Makefile.in	Mon Nov 20 15:31:13 2006
 @@ -66,8 +66,8 @@ swig_pl_libdir = @libdir@
  swig_rb_libdir = @libdir@
  
@@ -56,3 +56,14 @@ $OpenBSD: patch-Makefile_in,v 1.5 2006/09/30 06:23:58 steven Exp $
    $(PYTHON) -c 'import compileall; \
      compileall.compile_dir("$(DESTDIR)$(swig_pydir)", 1, "$(swig_pydir)"); \
      compileall.compile_dir("$(DESTDIR)$(swig_pydir_extra)", 1, \
+@@ -234,8 +229,8 @@ INSTALL_EXTRA_JAVAHL_JAVA=\
+ INSTALL_EXTRA_JAVAHL_LIB=@INSTALL_EXTRA_JAVAHL_LIB@
+ 
+ INSTALL_EXTRA_SWIG_RB=\
+-  @echo $(MKDIR) $(DESTDIR)$(SWIG_RB_SITE_LIB_DIR)/svn; \
+-  $(MKDIR) $(DESTDIR)$(SWIG_RB_SITE_LIB_DIR)/svn; \
++  @echo $(INSTALL) -d $(DESTDIR)$(SWIG_RB_SITE_LIB_DIR)/svn; \
++  $(INSTALL) -d $(DESTDIR)$(SWIG_RB_SITE_LIB_DIR)/svn; \
+   for i in $(abs_srcdir)/subversion/bindings/swig/ruby/svn/*.rb; do \
+     echo $(INSTALL_DATA) "$$i" $(DESTDIR)$(SWIG_RB_SITE_LIB_DIR)/svn; \
+     $(INSTALL_DATA) "$$i" $(DESTDIR)$(SWIG_RB_SITE_LIB_DIR)/svn; \
