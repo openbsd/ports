@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2005/02/04 05:38:59 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/29 08:23:31 espie Exp $
 
 COMMENT=	"tool for copying resources between repositories"
 
+MODULES=	cpan
 DISTNAME=	VCP-autrijus-snapshot-0.9-20050110
-PKGNAME=	p5-VCP-autrijus-0.9
-CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../../authors/id/A/AU/AUTRIJUS/}
+PKGNAME=	p5-VCP-autrijus-0.9p0
+CATEGORIES=	devel
+CPAN_AUTHOR=	AUTRIJUS
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -21,7 +22,5 @@ BUILD_DEPENDS=	:p5-Regexp-Shellish->=0.93:devel/p5-Regexp-Shellish \
 		:p5-XML-Parser->=2.31:textproc/p5-XML-Parser \
 		:p5-PodToHTML->=0.05:www/p5-PodToHTML
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-CONFIGURE_STYLE= perl
 
 .include <bsd.port.mk>

@@ -1,22 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/07/15 19:43:12 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/29 08:23:30 espie Exp $
 
 COMMENT=	"simple class for OLE document interface"
 
+MODULES=	cpan
 DISTNAME=       OLE-Storage_Lite-0.14
-PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
-# GPL/Artistic
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=   ${MASTER_SITE_PERL_CPAN:=OLE/}
-
-CONFIGURE_STYLE=perl
-
-PKG_ARCH=	*
 
 post-extract:
 	@find ${WRKDIST} -type f -exec perl -pi -e 's/\r$$//' {} \;

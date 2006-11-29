@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/14 09:28:02 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/29 08:23:30 espie Exp $
 
-COMMENT=	""
+COMMENT=	"perl printf extensions"
 
 MODULES=	cpan
 
 DISTNAME=	String-Format-1.14
-CATEGORIES=	devel perl5
+PKGNAME=	p5-${DISTNAME}p0
+CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 

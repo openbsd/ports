@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/10 10:45:05 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/29 08:23:29 espie Exp $
 
 COMMENT=		"catalyst development bundle"
 
+MODULES=		cpan
 DISTNAME=		Task-Catalyst-1.90
 PKGNAME=		catalyst-1.90
-CATEGORIES=		devel perl5 www
+CATEGORIES=		devel www
 
 MAINTAINER=		Sean Comeau <scomeau@obscurity.org>
 
@@ -13,8 +14,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Task/}
 
 RUN_DEPENDS=	::www/p5-Catalyst-Devel \
 		::www/p5-Catalyst-Runtime \
@@ -48,8 +47,5 @@ RUN_DEPENDS=	::www/p5-Catalyst-Devel \
 		::databases/p5-DBD-SQLite 
 
 NO_REGRESS=	"no need to"
-
-CONFIGURE_STYLE=perl
-PKG_ARCH=	*
 
 .include <bsd.port.mk>

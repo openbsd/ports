@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2006/04/11 04:39:56 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2006/11/29 08:23:30 espie Exp $
 
 COMMENT=	"simple interface to subversion's editor interface"
 
+MODULES=	cpan
 DISTNAME=	SVN-Simple-0.27
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/C/CL/CLKAO/}
+PKGNAME=	p5-${DISTNAME}p0
+CATEGORIES=	devel 
+
+CPAN_AUTHOR=	CLKAO
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -16,7 +18,5 @@ PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	:p5-SVN->=1.1.1:devel/subversion,-perl
 BUILD_DEPENDS=	${RUN_DEPENDS}
-
-CONFIGURE_STYLE= perl
 
 .include <bsd.port.mk>

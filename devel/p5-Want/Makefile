@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2006/09/25 17:17:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2006/11/29 08:23:31 espie Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"implementation of the want command"
 
+MODULES=	cpan
 DISTNAME=	Want-0.12
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	devel perl5
+CATEGORIES=	devel
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -16,8 +16,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	 ${MASTER_SITE_PERL_CPAN:=../../authors/id/R/RO/ROBIN/}
-
-CONFIGURE_STYLE= perl
+CPAN_AUTHOR=	ROBIN
 
 .include <bsd.port.mk>

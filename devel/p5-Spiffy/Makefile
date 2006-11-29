@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/13 15:19:02 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/29 08:23:30 espie Exp $
 
 COMMENT= 	"object-oriented framework"
 
@@ -7,7 +7,7 @@ MODULES=	cpan
 DISTNAME=	Spiffy-0.30
 CATEGORIES=	devel
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/I/IN/INGY/}
+CPAN_AUTHOR=	INGY
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

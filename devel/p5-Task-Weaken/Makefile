@@ -1,21 +1,18 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/27 09:23:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/29 08:23:30 espie Exp $
 
 COMMENT=		"ensure that a platform has weaken support"
 
+MODULES=		cpan
 DISTNAME=		Task-Weaken-0.99
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		devel perl5
 
-# Artistic/GPL
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=../../authors/id/A/AD/ADAMK/}
-
-CONFIGURE_STYLE=	perl
-
-PKG_ARCH=		*
+CPAN_AUTHOR=		ADAMK
 
 .include <bsd.port.mk>

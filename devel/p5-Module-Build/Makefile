@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2006/05/11 12:01:34 msf Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/29 08:23:29 espie Exp $
 
 COMMENT=	"build and install Perl modules"
 
+MODULES=	cpan
 DISTNAME=	Module-Build-0.28
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	devel perl5
+CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
@@ -14,9 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Module/}
 
-CONFIGURE_STYLE= perl modbuild
+CONFIGURE_STYLE=modbuild
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::archivers/p5-Archive-Tar \
@@ -25,7 +24,5 @@ RUN_DEPENDS=	::archivers/p5-Archive-Tar \
 
 do-regress:
 	@cd ${WRKSRC} && /usr/bin/perl ${MODPERL_BUILD} ${REGRESS_TARGET}
-
-PKG_ARCH=	*
 
 .include <bsd.port.mk>

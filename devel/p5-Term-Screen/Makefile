@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2005/11/28 21:10:31 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2006/11/29 08:23:30 espie Exp $
 
 COMMENT=		"positioning screen based module"
 
+MODULES=		cpan
 DISTNAME=		Term-Screen-1.03
-PKGNAME=		p5-${DISTNAME}
-CATEGORIES=		devel perl5
+CATEGORIES=		devel
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
 
@@ -13,12 +13,6 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-
-PKG_ARCH=		*
-
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Term/}
-
-CONFIGURE_STYLE=	perl
 
 REGRESS_IS_INTERACTIVE=	Yes
 REGRESS_FLAGS=		TERM=${TERM}

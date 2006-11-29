@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/12/13 21:46:43 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/29 08:23:30 espie Exp $
 
 COMMENT=		"interact with a t/test_manifest file"
+
+MODULES=		cpan
 DISTNAME=		Test-Manifest-1.14
-PKGNAME=		p5-${DISTNAME}
-CATEGORIES=		devel perl5
+CATEGORIES=		devel
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
 
@@ -13,13 +14,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Test/}
-
-REGRESS_DEPENDS=	:p5-Test-Pod->=1.00:devel/p5-Test-Pod \
-			::devel/p5-Test-Pod-Coverage
-
-CONFIGURE_STYLE=	perl
-
-PKG_ARCH=		*
+MAKE_ENV=		TEST_POD=Yes
 
 .include <bsd.port.mk>

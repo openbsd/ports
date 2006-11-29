@@ -1,26 +1,21 @@
-# $OpenBSD: Makefile,v 1.3 2006/03/29 21:23:58 msf Exp $
+# $OpenBSD: Makefile,v 1.4 2006/11/29 08:23:30 espie Exp $
 
 COMES_WITH=	3.9
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"perl module to lint Test::Builder testsuites"
 
+MODULES=	cpan
 DISTNAME=	Test-Builder-Tester-1.01
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Test/}
+CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
-# same as perl
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-CONFIGURE_STYLE= perl
-
-PKG_ARCH= *
 
 .include <bsd.port.mk>

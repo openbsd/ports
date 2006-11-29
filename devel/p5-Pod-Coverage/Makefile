@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/21 02:04:59 msf Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/29 08:23:30 espie Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT= 	"checks if the documentation of a Perl module is comprehensive"
 
+MODULES=	cpan
 DISTNAME=	Pod-Coverage-0.17
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	devel perl5
+CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
@@ -16,11 +16,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Pod/}
-
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::devel/p5-Devel-Symdump
 
-CONFIGURE_STYLE= perl modbuild
+CONFIGURE_STYLE=modbuild
 
 .include <bsd.port.mk>

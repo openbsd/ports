@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2006/07/12 05:25:48 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/29 08:23:30 espie Exp $
 
 COMMENT=	"subversion repository web frontend"
 
+MODULES=	cpan
 DISTNAME=	SVN-Web-0.48
-PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
 # Artistic
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../../authors/id/N/NI/NIKC/}
+CPAN_AUTHOR=	NIKC
 
 RUN_DEPENDS=	::devel/subversion,-perl \
 		::devel/p5-Cache-Cache \
@@ -29,8 +29,6 @@ RUN_DEPENDS=	::devel/subversion,-perl \
 #		::www/p5-HTTP-Server-Simple
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-CONFIGURE_STYLE=perl modbuild
-
-PKG_ARCH=	*
+CONFIGURE_STYLE=modbuild
 
 .include <bsd.port.mk>

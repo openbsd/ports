@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/25 12:10:39 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/29 08:23:30 espie Exp $
 
 COMMENT=		"debugging aid based on comments"
 
@@ -7,7 +7,7 @@ DISTNAME=		Smart-Comments-v1.0.2
 PKGNAME=		p5-Smart-Comments-1.0.2
 CATEGORIES=		devel
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/D/DC/DCONWAY/}
+CPAN_AUTHOR=	DCONWAY
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

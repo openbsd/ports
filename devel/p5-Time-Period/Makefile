@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2005/02/07 19:01:48 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/29 08:23:31 espie Exp $
 
 COMMENT=		"module for dealing with time periods"
 
+MODULES=		cpan
 DISTNAME=		Period-1.20
-PKGNAME=		p5-Time-${DISTNAME}
-CATEGORIES=		devel perl5
+PKGNAME=		p5-Time-${DISTNAME}p0
+CATEGORIES=		devel
 
 # Artistic
 PERMIT_PACKAGE_CDROM=   Yes
@@ -13,7 +14,5 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Time/}
-
-CONFIGURE_STYLE=	perl
 
 .include <bsd.port.mk>	

@@ -1,26 +1,19 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/04 13:54:35 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/29 08:23:29 espie Exp $
 
 COMMENT=	"turn search paths into subclasses/plugins"
 
+MODULES=	cpan
 DISTNAME=	Module-Pluggable-3.1
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	devel perl5
+CATEGORIES=	devel
 
 MAINTAINER=	Simon Dassow <janus@errornet.de>
 
-# Same as Perl
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Module/}
-
 RUN_DEPENDS=	::devel/p5-Class-Inspector
-REGRESS_DEPENDS=${RUN_DEPENDS}
-
-CONFIGURE_STYLE=perl
-
-PKG_ARCH=	*
 
 .include <bsd.port.mk>

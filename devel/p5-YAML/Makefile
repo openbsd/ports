@@ -3,7 +3,7 @@ COMMENT=	"YAML ain't a markup language"
 MODULES=	cpan
 
 DISTNAME=	YAML-0.62
-CATEGORIES=	devel perl5
+CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 

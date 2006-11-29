@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2006/11/05 10:31:49 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/11/29 08:23:30 espie Exp $
 
 COMMENT= 	"perl extension for emulating troublesome interfaces"
 
+MODULES=	cpan
 DISTNAME=	Test-MockObject-1.07
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	devel perl5
-
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Test/}
+CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
@@ -19,10 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 RUN_DEPENDS=		::devel/p5-Universal-isa \
 			::devel/p5-Universal-can
 
-REGRESS_DEPENDS=	${RUN_DEPENDS}
-
-CONFIGURE_STYLE= perl modbuild
-
-PKG_ARCH= *
+CONFIGURE_STYLE= modbuild
 
 .include <bsd.port.mk>

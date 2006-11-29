@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/11 18:25:20 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/29 08:23:30 espie Exp $
 
 COMMENT= 	"declarative object constructor"
 
+MODULES=	cpan
 DISTNAME=	Object-Declare-0.13
-PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
 
 # MIT
@@ -12,14 +12,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Object/}
-
 RUN_DEPENDS=	::devel/p5-Sub-Override
-
-REGRESS_DEPENDS=${RUN_DEPENDS}
-
-CONFIGURE_STYLE=perl
-
-PKG_ARCH=	*
 
 .include <bsd.port.mk>

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/17 02:16:42 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/29 08:23:30 espie Exp $
 
 COMMENT=	"sprintf-like string formatting"
 
 MODULES=	cpan
-
 DISTNAME=	Perl-Critic-0.21
-CATEGORIES=	devel perl5
+CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@kisoku.net> 
 
@@ -24,6 +23,6 @@ RUN_DEPENDS=	::devel/p5-Config-Tiny \
 
 MAKE_ENV+=	TEST_POD=Yes
 
-CONFIGURE_STYLE= perl modbuild
+CONFIGURE_STYLE=modbuild
 
 .include <bsd.port.mk>

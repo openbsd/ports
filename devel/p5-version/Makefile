@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.5 2006/11/01 21:06:12 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/29 08:23:31 espie Exp $
 
 SHARED_ONLY=	Yes
 
+MODULES=	cpan
 COMMENT=	"perl extension for version objects"
 DISTNAME=	version-0.68
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	devel perl5
+CATEGORIES=	devel
 
 MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../../authors/id/J/JP/JPEACOCK/}
+CPAN_AUTHOR=	JPEACOCK
 
-# same as perl
+# perl
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-CONFIGURE_STYLE=	perl modbuild
+CONFIGURE_STYLE=modbuild
 
 .include <bsd.port.mk>

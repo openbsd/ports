@@ -1,25 +1,19 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/05 13:47:47 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/11/29 08:23:30 espie Exp $
 
 COMMENT=        "forbids warnings while testing"
 
+MODULES=	cpan
 DISTNAME=	Test-NoWarnings-0.082
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=     devel perl5
+CATEGORIES=     devel
 
 MAINTAINER=	Simon Dassow <janus@errornet.de>
 
-# Artistic and GPL
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Test/}
-
 RUN_DEPENDS=	::devel/p5-Test-Tester
-REGRESS_DEPENDS=${RUN_DEPENDS}
-
-CONFIGURE_STYLE=perl
-PKG_ARCH=	*
 
 .include <bsd.port.mk>

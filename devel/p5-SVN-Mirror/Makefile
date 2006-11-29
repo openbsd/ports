@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2006/10/02 13:08:12 kevlo Exp $
+# $OpenBSD: Makefile,v 1.12 2006/11/29 08:23:30 espie Exp $
 
 COMMENT=	"subversion repository mirroring tool"
 
+MODULES=	cpan
 DISTNAME=	SVN-Mirror-0.70
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../../authors/id/C/CL/CLKAO/}
+PKGNAME=	p5-${DISTNAME}p0
+CATEGORIES=	devel
+CPAN_AUTHOR=	CLKAO
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -25,7 +26,5 @@ RUN_DEPENDS=	:p5-SVN-Simple->=0.27:devel/p5-SVN-Simple \
 		:p5-Sort-Versions->=1.5:textproc/p5-Sort-Versions \
 		:p5-URI->=1.30:www/p5-URI 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-
-CONFIGURE_STYLE= perl
 
 .include <bsd.port.mk>

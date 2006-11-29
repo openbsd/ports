@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/17 16:02:48 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/11/29 08:23:30 espie Exp $
 
 COMMENT=	"instantiate plugins as they're found"
 
@@ -8,7 +8,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	Simon Dassow <janus@errornet.de>
 
-# Same as Perl
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
