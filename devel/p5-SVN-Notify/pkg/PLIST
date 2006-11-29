@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/22 01:56:27 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/11/29 07:56:29 msf Exp $
 bin/svnnotify
 ${P5SITE}/SVN/
 ${P5SITE}/SVN/Notify/
 ${P5SITE}/SVN/Notify.pm
+${P5SITE}/SVN/Notify/Alternative.pm
 ${P5SITE}/SVN/Notify/HTML/
 ${P5SITE}/SVN/Notify/HTML.pm
 ${P5SITE}/SVN/Notify/HTML/ColorDiff.pm
 @man man/man1/svnnotify.1
 @man man/man3p/SVN::Notify.3p
+@man man/man3p/SVN::Notify::Alternative.3p
 @man man/man3p/SVN::Notify::HTML.3p
 @man man/man3p/SVN::Notify::HTML::ColorDiff.3p

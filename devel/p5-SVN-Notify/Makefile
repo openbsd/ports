@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2006/02/01 16:43:46 msf Exp $
+# $OpenBSD: Makefile,v 1.5 2006/11/29 07:56:29 msf Exp $
 
 COMMENT=	"subversion activity notification"
 
-DISTNAME=	SVN-Notify-2.51
+MODULES=	cpan
+
+DISTNAME=	SVN-Notify-2.64
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
-
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../../authors/id/D/DW/DWHEELER/}
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
@@ -19,8 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 RUN_DEPENDS=	::devel/subversion,-perl \
 		::www/p5-HTML-Parser
 BUILD_DEPENDS=	${RUN_DEPENDS}
-REGRESS_DEPENDS= ::devel/p5-Test-Pod-Coverage \
-		 ::devel/p5-Test-Pod
+
+MAKE_ENV=	TEST_POD=Yes
 
 CONFIGURE_STYLE= perl modbuild
 
