@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2006/11/29 07:56:29 msf Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/29 07:57:04 msf Exp $
 
 COMMENT=	"subversion activity notification"
 
 MODULES=	cpan
 
 DISTNAME=	SVN-Notify-2.64
-PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
