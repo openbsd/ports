@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_PL,v 1.1 2003/09/23 05:09:06 jolan Exp $
---- Makefile.PL.orig	2003-09-15 21:16:20.000000000 -0700
-+++ Makefile.PL	2003-09-15 21:16:35.000000000 -0700
+$OpenBSD: patch-Makefile_PL,v 1.2 2006/11/29 20:21:46 jasper Exp $
+--- Makefile.PL.orig	Tue Nov 28 21:14:32 2006
++++ Makefile.PL	Tue Nov 28 21:15:32 2006
 @@ -4,7 +4,7 @@ use ExtUtils::MakeMaker;
  WriteMakefile(
    'NAME'	   => 'CDDB_get',

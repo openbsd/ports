@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2004/10/08 08:22:28 xsa Exp $
+# $OpenBSD: Makefile,v 1.7 2006/11/29 20:21:46 jasper Exp $
 
 COMMENT=		"perl interface to query for cddb-information"
 
-DISTNAME=		CDDB_get-2.23
-PKGNAME=		p5-${DISTNAME}
-CATEGORIES=		audio perl5
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=../by-authors/id/F/FO/FONKIE/}
+DISTNAME=		CDDB_get-2.27
+CATEGORIES=		audio
 
 HOMEPAGE=		http://armin.emx.at/cddb/
 
@@ -15,7 +13,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE=	perl
+MODULES=		cpan
+CPAN_AUTHOR=		FONKIE
 
 post-patch:
 	@cp ${WRKSRC}/cddb.pl ${WRKSRC}/cddb

@@ -1,10 +1,10 @@
-$OpenBSD: patch-MANIFEST,v 1.1 2003/09/23 05:09:06 jolan Exp $
---- MANIFEST.orig	2003-09-15 21:20:15.000000000 -0700
-+++ MANIFEST	2003-09-15 21:20:23.000000000 -0700
-@@ -1,7 +1,7 @@
- Artistic
+$OpenBSD: patch-MANIFEST,v 1.2 2006/11/29 20:21:46 jasper Exp $
+--- MANIFEST.orig	Tue Nov 28 21:14:25 2006
++++ MANIFEST	Tue Nov 28 21:15:24 2006
+@@ -2,7 +2,7 @@ Artistic
  Copying
  CDDB_get.pm
+ CDDB_cache.pm
 -cddb.pl
 +cddb
  Changes
