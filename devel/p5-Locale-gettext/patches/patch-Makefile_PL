@@ -1,11 +1,21 @@
-$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2004/12/08 19:00:49 msf Exp $
---- Makefile.PL.orig	Thu Jul 22 20:10:58 2004
-+++ Makefile.PL	Thu Jul 22 20:12:39 2004
-@@ -1,6 +1,6 @@
- use ExtUtils::MakeMaker;
+$OpenBSD: patch-Makefile_PL,v 1.2 2006/11/29 09:40:56 ajacoutot Exp $
+--- Makefile.PL.orig	Mon Jan 31 00:30:22 2005
++++ Makefile.PL	Tue Nov 28 16:41:24 2006
+@@ -11,7 +11,7 @@ my $libs = '';
+ 
+ unless (conftest("char *x = gettext(\"foo\");", "gettext", 0)) {
+ 	# try with -lintl
+-	$libs = "-lintl";
++	$libs = "-L%%LOCALBASE%%/lib -lintl -liconv -I%%LOCALBASE%%/include";
+ 	unless (conftest("char *x = gettext(\"foo\");", "gettext", 0)) {
+ 		unlink("conftest.c");
+ 		unlink("conftest");
+@@ -33,7 +33,7 @@ unlink("conftest");
+ 
  WriteMakefile(
      NAME => "Locale::gettext",
--    LIBS => ["-lintl"],
-+    LIBS => ["-L%%LOCALBASE%%/lib -lintl"],
+-    LIBS => ($libs eq '') ? [] : [$libs],
++    LIBS => ($libs eq '') ? [] : ["-L%%LOCALBASE%%/lib -lintl -liconv"],
      VERSION_FROM => 'gettext.pm', 
  );
+ 

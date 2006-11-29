@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 2006/11/25 16:32:36 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/11/29 09:40:56 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"interface to gettext() internationalization function"
 
 MODULES=	cpan
-DISTNAME=	gettext-1.03
-PKGNAME=	p5-Locale-${DISTNAME}p0
+DISTNAME=	gettext-1.05
+PKGNAME=	p5-Locale-${DISTNAME}
+CPAN_AUTHOR=	PVANDRY
 CATEGORIES=	converters
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,9 +22,7 @@ MODULES+=	gettext
 
 DIST_SUBDIR=	p5-Locale-${DISTNAME}
 
-NO_REGRESS= 	Yes
-
 pre-configure:
-	@perl -pi -e 's#%%LOCALBASE%%#${LOCALBASE}#' ${WRKSRC}/Makefile.PL
+	@perl -pi -e 's#%%LOCALBASE%%#${LOCALBASE}#g' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
