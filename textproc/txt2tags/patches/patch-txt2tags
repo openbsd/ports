@@ -1,9 +1,0 @@
-$OpenBSD: patch-txt2tags,v 1.1.1.1 2005/02/11 11:59:23 alek Exp $
---- txt2tags.orig	2004-12-28 22:39:01.000000000 +0300
-+++ txt2tags	2005-02-03 09:56:03.000000000 +0300
-@@ -1,4 +1,4 @@
--#!/usr/bin/env python
-+#!%%PYTHON%%
- # txt2tags - generic text conversion tool
- # http://txt2tags.sf.net
- #

@@ -1,9 +1,0 @@
-$OpenBSD: patch-t2tconv,v 1.1.1.1 2005/02/11 11:59:23 alek Exp $
---- t2tconv.orig	2004-07-18 16:23:24.000000000 +0300
-+++ t2tconv	2005-02-03 09:56:03.000000000 +0300
-@@ -1,4 +1,4 @@
--#!/usr/bin/env python
-+#!%%PYTHON%%
- # t2tconv - txt2tags version 1.7 -> 2.0 convertor
- #
- # This file converts txt2tags source files (.t2t) from the old

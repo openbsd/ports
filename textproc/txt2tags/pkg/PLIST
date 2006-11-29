@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/11 11:59:23 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/11/29 19:12:04 kili Exp $
 bin/t2tconv
 bin/txt2tags
 @man man/man1/txt2tags.1
@@ -6,17 +6,25 @@ share/doc/txt2tags/
 @comment share/doc/txt2tags/manpage.man
 @comment share/doc/txt2tags/manpage.t2t
 share/doc/txt2tags/markup.html
+share/doc/txt2tags/rules.html
+share/doc/txt2tags/rules.t2t
 share/doc/txt2tags/txt2tagsrc
 share/doc/txt2tags/userguide.pdf
 share/doc/txt2tags/writing-book.html
 share/examples/txt2tags/
-share/examples/txt2tags/abuseme.html
-share/examples/txt2tags/abuseme.t2t
+share/examples/txt2tags/css/
+share/examples/txt2tags/css/color.css
+share/examples/txt2tags/css/color.html
+share/examples/txt2tags/css/modern.css
+share/examples/txt2tags/css/modern.html
+share/examples/txt2tags/css/tech.css
+share/examples/txt2tags/css/tech.html
 share/examples/txt2tags/img/
 share/examples/txt2tags/img/madeinbr.png
 share/examples/txt2tags/img/old-poweredby-1.png
 share/examples/txt2tags/img/old-poweredby-2.png
 share/examples/txt2tags/img/photo.jpg
+share/examples/txt2tags/img/t2tbutton.png
 share/examples/txt2tags/img/t2tpowered.png
 share/examples/txt2tags/img/valid-css.png
 share/examples/txt2tags/img/valid-html.png
