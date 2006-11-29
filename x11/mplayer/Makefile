@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2006/09/25 17:11:37 steven Exp $
+# $OpenBSD: Makefile,v 1.105 2006/11/29 19:49:33 robert Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -113,7 +113,7 @@ CONFIGURE_ARGS+=--disable-esd
 .endif
 
 .if ${FLAVOR:L:Mno_x11}
-.  if ${FLAVOR:L:Msdl} || ${FLAVOR:L:Mggi} || ${FLAVOR:L:Mmad}
+.  if ${FLAVOR:L:Msdl} || ${FLAVOR:L:Mggi}
 ERRORS+="Fatal: nonsense combination of flavors"
 .  else
 CONFIGURE_ARGS+=--disable-gui \
