@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.857 2006/11/28 23:13:30 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.858 2006/11/29 09:42:08 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -82,10 +82,10 @@ _ALL_VARIABLES ?= HOMEPAGE DISTNAME BUILD_DEPENDS RUN_DEPENDS \
 	REGRESS_IS_INTERACTIVE DISTFILES DIST_SUBDIR \
 	PERMIT_DISTFILES_CDROM PERMIT_DISTFILES_FTP \
 	CONFIGURE_STYLE USE_LIBTOOL SEPARATE_BUILD \
-	SHARED_LIBS USE_MOTIF PACKAGES MASTER_SITES \
+	SHARED_LIBS USE_MOTIF MASTER_SITES \
 	MASTER_SITES0 MASTER_SITES1 MASTER_SITES2 MASTER_SITES3 MASTER_SITES4 \
 	MASTER_SITES5 MASTER_SITES6 MASTER_SITES7 MASTER_SITES8 MASTER_SITES9 \
-	MAINTAINER SUBPACKAGE SUPDISTFILES \
+	MAINTAINER SUPDISTFILES \
 	AUTOCONF_VERSION AUTOMAKE_VERSION CONFIGURE_ARGS
 # and stuff needing to be MULTI_PACKAGE'd
 _ALL_VARIABLES_INDEXED ?= COMMENT FULLPKGNAME PKGNAME PKG_ARCH \
@@ -1837,7 +1837,7 @@ subpackage:
 	@${_DO_LOCK}; cd ${.CURDIR} && ${MAKE} _internal-subpackage
 
 # Redirectors for top-level targets involving subpackages
-.for _t _r in dump-vars subdump-vars readmes _readme
+.for _t _r in readmes _readme
 ${_t}:
 .  if ${MULTI_PACKAGES} == "-"
 	@cd ${.CURDIR} && exec ${MAKE} ${_r}
@@ -2830,17 +2830,27 @@ verbose-show:
 . endif
 .endfor
 
-subdump-vars:
-.for _s in ${_ALL_VARIABLES}
-. if defined(${_s})
-	@echo ${FULLPKGPATH}.${_s}=${${_s}:Q}
-. endif
-.endfor
-.for _s in ${_ALL_VARIABLES_INDEXED}
-. if defined(${_s}${SUBPACKAGE})
-	@echo ${FULLPKGPATH}.${_s}=${${_s}${SUBPACKAGE}:Q}
-. endif
-.endfor
+dump-vars:
+.if ${MULTI_PACKAGES} == "-"
+.  for _v in ${_ALL_VARIABLES} ${_ALL_VARIABLES_INDEXED}
+.   if defined(${_v})
+	@echo ${FULLPKGPATH}.${_v}=${${_v}:Q}
+.   endif
+.  endfor
+.else
+.  for _S in ${MULTI_PACKAGES}
+.    for _v in ${_ALL_VARIABLES}
+.     if defined(${_v})
+	@echo ${FULLPKGPATH${_S}}.${_v}=${${_v}:Q}
+.     endif
+.    endfor
+.    for _v in ${_ALL_VARIABLES_INDEXED}
+.      if defined(${_v}${_S})
+	@echo ${FULLPKGPATH${_S}}.${_v}=${${_v}${_S}:Q}
+.      endif
+.    endfor
+.  endfor
+.endif
 
 .PHONY: \
 	_build-dir-depends _fetch-makefile _fetch-onefile \
@@ -2894,7 +2904,7 @@ subdump-vars:
 	_internal-update update print-plist print-plist-contents \
 	_list-port-libs _print-package-signature-lib _print-package-signature-run \
 	show-required-by peek-ftp _internal-subpackage \
-	sublib-depends-check subdump-vars _internal-install-all install-all \
+	_internal-install-all install-all \
 	subpackage _internal-subupdate _internal-update \
 	regress-dir-depends _recurse-regress-dir-depends \
 	full-regress-depends print-plist-all
