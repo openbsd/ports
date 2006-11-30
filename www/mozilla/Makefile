@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2006/11/25 14:24:47 steven Exp $
+# $OpenBSD: Makefile,v 1.111 2006/11/30 21:06:35 kurt Exp $
 
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64 amd64 powerpc
 
@@ -7,11 +7,11 @@ COMMENT-devel=	"devel files for Gecko"
 
 VER=		1.7.13
 DISTNAME=	mozilla
-PKGNAME=	mozilla-${VER}p3
-PKGNAME-main=	mozilla-${VER}p3
-PKGNAME-devel=	mozilla-devel-${VER}p3
+PKGNAME=	mozilla-${VER}p4
+PKGNAME-main=	mozilla-${VER}p4
+PKGNAME-devel=	mozilla-devel-${VER}p4
 DISTFILES=	mozilla-${VER}-source.tar.bz2
-SO_VERSION=	7.0
+SO_VERSION=	8.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 .for _lib in accessibility addrbook appcomps autoconfig bayesflt caps chrome \
@@ -52,7 +52,7 @@ BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
 		:zip->=2.3:archivers/zip \
 		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
-		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.3p2:devel/nspr
+		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr
 WANTLIB=	X11 Xt atk-1.0 c cairo fontconfig freetype \
 		glib-2.0 gmodule-2.0 gobject-2.0 m \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2006/11/17 19:14:51 kurt Exp $
+# $OpenBSD: Makefile,v 1.60 2006/11/30 21:07:13 kurt Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -6,8 +6,8 @@ COMMENT=	"redesign of Mozilla's browser component"
 
 VER=		1.5.0.8
 DISTNAME=	mozilla
-PKGNAME=	mozilla-firefox-${VER}p0
-SO_VERSION=	16.0
+PKGNAME=	mozilla-firefox-${VER}p1
+SO_VERSION=	17.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 .for _lib in accessibility appcomps auth autoconfig browsercomps \
@@ -48,7 +48,7 @@ BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
 		:zip->=2.3:archivers/zip \
 		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
-		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.3p2:devel/nspr
+		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr
 
 VMEM_WARNING=	Yes
 

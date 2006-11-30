@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.23 2006/11/17 19:03:14 kurt Exp $
+# $OpenBSD: Makefile,v 1.24 2006/11/30 21:07:40 kurt Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc64 arm
 SHARED_ONLY=	Yes
 
 COMMENT=	"mini mozilla"
 DISTNAME=	minimo-20050802
-PKGNAME=	${DISTNAME}p10
-SO_VERSION=	2.0
+PKGNAME=	${DISTNAME}p11
+SO_VERSION=	3.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 .for _lib in DebugRobot MyService caps chrmlite docshell editor \
@@ -39,7 +39,7 @@ BUILD_DEPENDS=	:zip->=2.3:archivers/zip \
 LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
 		png.>=3::graphics/png \
 		gdk-x11-2.0.>=600.0,gdk_pixbuf-2.0.>=600.0,gtk-x11-2.0.>=600.0::x11/gtk+2 \
-		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.3p2:devel/nspr
+		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr
 WANTLIB=	ICE SM X11 Xext Xft Xrender Xt \
 		c fontconfig freetype m pthread z \
 		atk-1.0.>=1011.0 glib-2.0.>=600.0 gmodule-2.0.>=600.0 \
