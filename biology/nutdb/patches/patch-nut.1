@@ -1,6 +1,7 @@
---- nut.1.orig	Thu Jan 27 00:12:39 2005
-+++ nut.1	Tue Nov  1 17:38:01 2005
-@@ -1,16 +1,16 @@
+$OpenBSD: patch-nut.1,v 1.7 2006/11/30 17:38:27 jasper Exp $
+--- nut.1.orig	Fri Sep  1 02:26:31 2006
++++ nut.1	Sun Nov 26 19:54:27 2006
+@@ -1,17 +1,17 @@
 -.\" manual page [] for nut
 +.\" manual page [] for nutdb
  .\" SH section heading
@@ -8,29 +9,31 @@
  .\" LP paragraph
  .\" IP indented paragraph
  .\" TP hanging label
--.TH NUT 1 "NUT - 2005.01.26"
-+.TH NUTDB 1 "NUTDB - 2005.01.26"
- .SH NAME
- .SH SYNOPSIS
+-.TH "nut" "1" "2006.08.31" "" ""
++.TH "nutdb" "1" "2006.08.31" "" ""
+ .SH "NAME"
+-.B nut \- analyze meals with the USDA Nutrient Database
++.B nutdb \- analyze meals with the USDA Nutrient Database
+ .SH "SYNOPSIS"
 -.B nut [dbname]
 +.B nutdb [dbname]
- .SH DESCRIPTION
- .LP
+ .SH "DESCRIPTION"
+ .LP 
 -.B NUT
 +.B NUTDB
  allows you to record what you eat and analyze your meals for nutrient
  composition.  The database included is the 
- USDA Nutrient Database for Standard Reference, Release 17, which contains
-@@ -39,7 +39,7 @@ You may add your own recipes to the data
+ USDA Nutrient Database for Standard Reference, Release 19, which contains
+@@ -40,7 +40,7 @@ You may add your own recipes to the data
  by creating them from the foods in the database.
- You can also add foods from the information on commercial food labels. The program is completely menu-driven and there are no commands to learn.
+ You can also add foods from the information on commercial food labels. The program is completely menu\-driven and there are no commands to learn.
  
 -.B NUT
 +.B NUTDB
  can be called with an optional argument to specify a database subdirectory.
  For example, if a user tracks meals for other family members, each person
  can have his own database, and each database is entirely separate.
-@@ -122,7 +122,7 @@ desired,
+@@ -144,7 +144,7 @@ desired,
  and provides an opportunity to adjust the weight of the servings to allow
  for water gained or lost in preparation.
  
@@ -39,15 +42,21 @@
  with an ordered list of ingredients and a nutrition statement, 
  The new food will have  additional nutrients that
  were not on the nutrition statement, but that the database says are in the food.
-@@ -141,18 +141,18 @@ the program are the USA standard 2000-ca
- customized options--but users can always set the label's nutrient information in grams.
+@@ -163,10 +163,10 @@ the program are the USA standard 2000\-c
+ customized options\-\-but users can always set the label's nutrient information in grams.
  Only Daily Value nutrients greater than zero are considered as
  constraints when
 -NUT constructs an approximate recipe in order  to fill
 +NUTDB constructs an approximate recipe in order  to fill
  in nutrient values that were not expressed on the food label.
- After the recipe is displayed there is an additional opportunity to 
- edit the
+-Occasionally the "recipe" that NUT estimates for a packaged food will only
+-show a "trace" of every ingredient, and this is NUT's way of saying 
++Occasionally the "recipe" that NUTDB estimates for a packaged food will only
++show a "trace" of every ingredient, and this is NUTDB's way of saying 
+ that according
+ to the food database, there is no way to match the ingredients with the
+ constraints of the nutrition statement.
+@@ -175,11 +175,11 @@ edit the
  nutrient values.
  Perhaps the food was so heavily fortified with vitamins
  that the user waited until
@@ -61,21 +70,21 @@
  in the same manner as a recipe.
  
  To modify the serving size of an existing food, the food is selected
-@@ -226,7 +226,7 @@ non-fiber carb as  "." and fiber as ":".
+@@ -253,7 +253,7 @@ non\-fiber carb as  "." and fiber as ":"
  
- .B Record 'The Usual'--Customary Meals:
+ .B Record 'The Usual'\-\-Customary Meals:
  When 
 -.B NUT 
 +.B NUTDB 
  asks what you are having, you can answer "the usual."  Specifically,
  this function allows you to record a customary meal, 
  and give it a name.  Later, when
-@@ -257,7 +257,7 @@ food.db         Food database
+@@ -284,7 +284,7 @@ food.db         Food database
  meal.db         Meal database
  theusual.db     Customary Meals database
  OPTIONS.txt     Personal Options records
 -version         NUT software version number
 +version         NUTDB software version number
  menus.txt       ASCII print file of meal database
- .fi
- .SH AUTHOR
+ .fi 
+ .SH "AUTHOR"
