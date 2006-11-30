@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_extract_c,v 1.3 2006/11/30 20:37:30 naddy Exp $
+--- src/extract.c.orig	Thu Nov 30 16:56:55 2006
++++ src/extract.c	Thu Nov 30 16:57:55 2006
+@@ -1121,10 +1121,6 @@ prepare_to_extract (char const *file_nam
+       *fun = extract_volhdr;
+       break;
+ 
+-    case GNUTYPE_NAMES:
+-      *fun = extract_mangle_wrapper;
+-      break;
+-
+     case GNUTYPE_MULTIVOL:
+       ERROR ((0, 0,
+ 	      _("%s: Cannot extract -- file is continued from another volume"),
