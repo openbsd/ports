@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2006/11/23 10:13:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2006/11/30 16:53:53 kurt Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/devel/nspr/Makefile,v 1.13 2003/12/13 21:30:19 peter Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -8,7 +8,7 @@ COMMENT-docs=		"HTML Documentation for NSPR"
 
 VER=			4.6.4
 DISTNAME=		nspr-${VER}
-PKGNAME-main=		${DISTNAME}p0
+PKGNAME-main=		${DISTNAME}p1
 PKGNAME-docs=		${DISTNAME:S/-/-docs-/}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
 			nspr-reference${EXTRACT_SUFX}:0
@@ -53,8 +53,6 @@ WRKSRC=			${WRKDIST}/mozilla/nsprpub
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build/autoconf
 
 pre-configure:
-	perl -pi -e 's,_SO_VERSION_,${SO_VERSION},g' \
-		${WRKSRC}/pr/include/md/_openbsd.h
 	@cp ${FILESDIR}/nspr.pc.in ${WRKSRC}/config/
 
 do-install:
