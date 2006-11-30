@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/01/03 10:06:35 steven Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/11/30 21:45:16 jasper Exp $
 ${P5SITE}/Log/
 ${P5SITE}/Log/Log4perl/
 ${P5SITE}/Log/Log4perl.pm
@@ -12,6 +12,7 @@ ${P5SITE}/Log/Log4perl/Appender/RRDs.pm
 ${P5SITE}/Log/Log4perl/Appender/Screen.pm
 ${P5SITE}/Log/Log4perl/Appender/ScreenColoredLevels.pm
 ${P5SITE}/Log/Log4perl/Appender/Socket.pm
+${P5SITE}/Log/Log4perl/Appender/String.pm
 ${P5SITE}/Log/Log4perl/Appender/Synchronized.pm
 ${P5SITE}/Log/Log4perl/Appender/TestArrayBuffer.pm
 ${P5SITE}/Log/Log4perl/Appender/TestBuffer.pm
@@ -59,6 +60,7 @@ ${P5SITE}/Log/Log4perl/Util.pm
 @man man/man3p/Log::Log4perl::Appender::Screen.3p
 @man man/man3p/Log::Log4perl::Appender::ScreenColoredLevels.3p
 @man man/man3p/Log::Log4perl::Appender::Socket.3p
+@man man/man3p/Log::Log4perl::Appender::String.3p
 @man man/man3p/Log::Log4perl::Appender::Synchronized.3p
 @man man/man3p/Log::Log4perl::Appender::TestArrayBuffer.3p
 @man man/man3p/Log::Log4perl::Appender::TestBuffer.3p

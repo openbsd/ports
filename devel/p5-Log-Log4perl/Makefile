@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/25 16:32:36 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/11/30 21:45:16 jasper Exp $
 
-COMMENT=	"module to scan C language files"
+COMMENT=	"Log4j implementation for Perl"
 
 MODULES=	cpan
-DISTNAME=	Log-Log4perl-1.02
+DISTNAME=	Log-Log4perl-1.08
 CATEGORIES=	devel
 
-MAINTAINER=	Sam Smith <S@msmith.net>
+MAINTAINER=	Simon Dassow <janus@errornet.de>
 
 # perl
 PERMIT_PACKAGE_CDROM=   Yes
