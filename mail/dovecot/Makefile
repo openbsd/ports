@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2006/12/01 23:30:49 jakob Exp $
+# $OpenBSD: Makefile,v 1.66 2006/12/01 23:57:28 espie Exp $
 
 COMMENT-server= "compact IMAP/POP3 server"
 COMMENT-sieve=	"sieve mail filtering for Dovecot"
@@ -32,7 +32,7 @@ WANTLIB-sieve=
 MODULES=	converters/libiconv
 
 MULTI_PACKAGES=	-server
-SUBPACKAGE?=
+SUBPACKAGE?=	-server
 
 PSEUDO_FLAVORS=	no_sieve
 FLAVORS=	ldap mysql postgresql
