@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.10 2006/11/27 09:36:14 msf Exp $
+# $OpenBSD: ruby.port.mk,v 1.11 2006/12/01 14:04:06 steven Exp $
 
 # ruby module
 
@@ -6,8 +6,10 @@ MODRUBY_REV=		1.8
 
 RUBY=			${LOCALBASE}/bin/ruby
 
+MODRUBY_RUN_DEPENDS+=	::lang/ruby
+
 BUILD_DEPENDS+=		::lang/ruby
-RUN_DEPENDS+=		::lang/ruby
+RUN_DEPENDS+=		${MODRUBY_RUN_DEPENDS}
 
 # location of ruby libraries
 MODRUBY_LIBDIR=		${LOCALBASE}/lib/ruby
@@ -26,8 +28,8 @@ CONFIGURE_SCRIPT=	${LOCALBASE}/bin/ruby extconf.rb
 .elif ${CONFIGURE_STYLE:L:Mgem}
 EXTRACT_SUFX=	.gem
 
-BUILD_DEPENDS+=	::devel/ruby-gems
-RUN_DEPENDS+=	::devel/ruby-gems
+BUILD_DEPENDS+=		::devel/ruby-gems
+MODRUBY_RUN_DEPENDS+=	::devel/ruby-gems
 NO_BUILD=	Yes
 
 SUBST_VARS+=	DISTNAME
