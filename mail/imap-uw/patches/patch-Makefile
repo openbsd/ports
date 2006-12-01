@@ -1,16 +1,17 @@
-$OpenBSD: patch-Makefile,v 1.6 2005/07/29 17:30:11 jakob Exp $
---- Makefile.orig	Sat Apr 30 22:50:20 2005
-+++ Makefile	Fri Jul 29 09:26:33 2005
-@@ -311,7 +311,7 @@ aos art asv aux bsd cvx dpx dyn isc pyr 
+$OpenBSD: patch-Makefile,v 1.7 2006/12/01 14:40:00 jakob Exp $
+--- Makefile.orig	Fri Sep 15 20:10:32 2006
++++ Makefile	Wed Nov 22 11:56:03 2006
+@@ -320,8 +320,7 @@ aos art asv aux bsd cvx dpx dyn isc pyr 
  
  bsf bso:	an
  	$(BUILD) BUILDTYPE=$@ \
--	SPECIALS="GSSDIR=/usr SSLDIR=/usr SSLINCLUDE=/usr/include/openssl SSLCERTS=/etc/ssl/certs SSLKEYS=/etc/ssl/private LOCKPGM=/usr/sbin/mlock"
-+	SPECIALS="GSSDIR=/usr SSLDIR=/usr SSLINCLUDE=/usr/include/openssl SSLCERTS=/etc/ssl SSLKEYS=/etc/ssl/private LOCKPGM=/usr/sbin/mlock"
+-	PASSWDTYPE=pam \
+-	SPECIALS="SSLINCLUDE=/usr/include/openssl SSLLIB=/usr/lib SSLCERTS=/etc/ssl/certs SSLKEYS=/etc/ssl/private GSSINCLUDE=/usr/include GSSLIB=/usr/lib LOCKPGM=/usr/sbin/mlock PAMLDFLAGS=-lpam"
++	SPECIALS="SSLINCLUDE=/usr/include/openssl SSLLIB=/usr/lib SSLCERTS=/etc/ssl SSLKEYS=/etc/ssl/private GSSINCLUDE=/usr/include/kerberosV GSSLIB=/usr/lib LOCKPGM=/usr/sbin/mlock"
  
  cyg:	an
  	$(BUILD) BUILDTYPE=cyg \
-@@ -475,8 +475,6 @@ sslunix sslsco:
+@@ -486,8 +485,6 @@ sslunix sslsco:
  	@echo ++ SSLTYPE=$(SSLTYPE).nopwd
  	@echo +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  	@echo

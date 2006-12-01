@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/26 10:09:54 steven Exp $
+@comment $OpenBSD: PLIST-server,v 1.1 2006/12/01 14:40:00 jakob Exp $
 @pkgpath ${BASE_PKGPATH}
 @conflict courier-imap-*
 @conflict courier-pop3-*
@@ -20,4 +20,5 @@ share/doc/imap-uw/drivers.txt
 share/doc/imap-uw/formats.txt
 share/doc/imap-uw/imaprc.txt
 share/doc/imap-uw/md5.txt
+share/doc/imap-uw/mixfmt.txt
 share/doc/imap-uw/naming.txt

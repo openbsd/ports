@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_osdep_unix_kerb_mit_c,v 1.1 2003/04/17 08:06:30 jakob Exp $
---- src/osdep/unix/kerb_mit.c.orig	Thu Apr 17 09:29:01 2003
-+++ src/osdep/unix/kerb_mit.c	Thu Apr 17 09:29:19 2003
-@@ -19,8 +19,13 @@
+$OpenBSD: patch-src_osdep_unix_kerb_mit_c,v 1.2 2006/12/01 14:40:00 jakob Exp $
+--- src/osdep/unix/kerb_mit.c.orig	Thu Aug 31 03:40:15 2006
++++ src/osdep/unix/kerb_mit.c	Wed Nov 22 11:50:47 2006
+@@ -27,8 +27,13 @@
   */
  
  #define PROTOTYPE(x) x

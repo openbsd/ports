@@ -1,7 +1,7 @@
-$OpenBSD: patch-tmail_tmail_c,v 1.1 2002/09/18 08:19:06 jakob Exp $
---- src/tmail/tmail.c.orig	Mon Jul 15 00:49:28 2002
-+++ src/tmail/tmail.c	Sun Sep  8 20:51:54 2002
-@@ -189,7 +189,6 @@ int main (int argc,char *argv[])
+$OpenBSD: patch-tmail_tmail_c,v 1.2 2006/12/01 14:40:00 jakob Exp $
+--- src/tmail/tmail.c.orig	Thu Oct 12 19:33:37 2006
++++ src/tmail/tmail.c	Wed Nov 22 11:50:47 2006
+@@ -197,7 +197,6 @@ int main (int argc,char *argv[])
        while ((c = getchar ()) != EOF) putc (c,f);
      }
      else {

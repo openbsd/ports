@@ -1,19 +1,19 @@
-$OpenBSD: patch-src_osdep_unix_Makefile.gss,v 1.5 2003/06/25 21:28:08 jakob Exp $
+$OpenBSD: patch-src_osdep_unix_Makefile.gss,v 1.6 2006/12/01 14:40:00 jakob Exp $
 
---- src/osdep/unix/Makefile.gss.orig	Wed Mar  5 06:26:40 2003
-+++ src/osdep/unix/Makefile.gss	Thu Apr 17 09:14:06 2003
-@@ -21,11 +21,10 @@
- # Extended flags needed for additional authenticators.  You may need to modify.
- 
+--- src/osdep/unix/Makefile.gss.orig	Thu Aug 31 03:32:16 2006
++++ src/osdep/unix/Makefile.gss	Wed Nov 22 12:08:43 2006
+@@ -29,11 +29,10 @@
  GSSDIR=/usr/local
--GSSCFLAGS= -I$(GSSDIR)/include -DGSS_C_NT_HOSTBASED_SERVICE=gss_nt_service_name
--GSSOLDLDFLAGS= -L$(GSSDIR)/lib -lgssapi_krb5 -lkrb5 -lcrypto -lcom_err
--GSSNEWLDFLAGS= -L$(GSSDIR)/lib -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err
-+GSSCFLAGS= -I/usr/include/kerberosV -DHEIMDAL
-+GSSLDFLAGS= -lkafs -lgssapi -lkrb5 -lasn1 -lcom_err -ldes -lcrypto
+ GSSINCLUDE=$(GSSDIR)/include
+ GSSLIB=$(GSSDIR)/lib
+-GSSCFLAGS= -I$(GSSINCLUDE) -DGSS_C_NT_HOSTBASED_SERVICE=gss_nt_service_name
+-GSSOLDLDFLAGS= -L$(GSSLIB) -lgssapi_krb5 -lkrb5 -lcrypto -lcom_err
+-GSSNEWLDFLAGS= -L$(GSSLIB) -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err
++GSSCFLAGS= -I$(GSSINCLUDE) -DHEIMDAL
++GSSLDFLAGS= -L$(GSSLIB) -lkafs -lgssapi -lkrb5 -lasn1 -lcom_err -ldes -lcrypto
  
  gss:	# GSSAPI Kerberos V flags
  	echo $(GSSCFLAGS) >> OSCFLAGS
--	sh -c '(test -f $(GSSDIR)/lib/libk5crypto.a) && echo $(GSSNEWLDFLAGS) || echo $(GSSOLDLDFLAGS)' >> LDFLAGS
+-	sh -c '(test -f $(GSSLIB)/libk5crypto.a) && echo $(GSSNEWLDFLAGS) || echo $(GSSOLDLDFLAGS)' >> LDFLAGS
 +	echo $(GSSLDFLAGS) >> LDFLAGS
  	echo "#include \"kerb_mit.c\"" >> auths.c

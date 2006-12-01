@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.48 2006/11/26 10:09:54 steven Exp $
+# $OpenBSD: Makefile,v 1.49 2006/12/01 14:40:00 jakob Exp $
 
-COMMENT-main=		"University of Washington IMAP4rev1/POP2/POP3 mail servers"
+COMMENT-server=		"University of Washington IMAP4rev1/POP2/POP3 mail servers"
 COMMENT-mailutil=	"University of Washington IMAP4rev1/POP2/POP3 mail utility"
 
-VERSION=		2004g
-DISTNAME=		imap-2004g
+VERSION=		2006c1
+DISTNAME=		imap-2006c1
 
-PKGNAME=		imap-uw-${VERSION}p0
-PKGNAME-main=		imap-uw-${VERSION}p0
+PKGNAME-server=		imap-uw-${VERSION}
 PKGNAME-mailutil=	mailutil-uw-${VERSION}
 CATEGORIES=		mail
 
@@ -29,7 +28,8 @@ WANTLIB=		asn1 c com_err crypto des gssapi kafs krb5 ssl
 ALL_TARGET=	bso
 MAKE_FLAGS=	EXTRACFLAGS="${CFLAGS}" EXTRAAUTHENTICATORS="gss" IP=6
 
-MULTI_PACKAGES=	-main -mailutil
+MULTI_PACKAGES=	-server -mailutil
+SUBPACKAGE?=
 
 FLAVORS=	plaintext
 FLAVOR?=
@@ -44,7 +44,10 @@ NO_REGRESS=	Yes
 
 DOCDIR=		share/doc/imap-uw
 DOCFILES=	FAQ.txt FAQ.html commndmt.txt drivers.txt formats.txt \
-		imaprc.txt md5.txt naming.txt RELNOTES
+		imaprc.txt md5.txt mixfmt.txt naming.txt RELNOTES
+
+post-configure:
+	touch ${WRKSRC}/ip6
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/imapd/imapd ${PREFIX}/libexec
