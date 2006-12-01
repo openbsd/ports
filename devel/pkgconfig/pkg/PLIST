@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/08 17:14:58 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/12/01 16:30:42 espie Exp $
 bin/pkg-config
 @man man/man1/pkg-config.1
-share/aclocal/
-share/aclocal/pkg.m4
+@comment share/aclocal/
+@comment share/aclocal/pkg.m4
