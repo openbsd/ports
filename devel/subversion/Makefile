@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2006/11/29 08:52:38 msf Exp $
+# $OpenBSD: Makefile,v 1.27 2006/12/01 14:10:05 steven Exp $
 
 COMMENT-main=	"subversion revision control system"
 COMMENT-perl=	"perl interface to subversion"
@@ -7,8 +7,9 @@ COMMENT-ruby=	"ruby interface to subversion"
 
 VERSION=	1.4.0
 DISTNAME=	subversion-${VERSION}
-PKGNAME-main=	${DISTNAME}p0
-PKGNAME-perl=	p5-SVN-${VERSION}p0
+PKGNAME=	${DISTNAME}p1
+PKGNAME-main=	${DISTNAME}p1
+PKGNAME-perl=	p5-SVN-${VERSION}p1
 PKGNAME-python=	py-subversion-${VERSION}p0
 PKGNAME-ruby=	ruby-subversion-${VERSION}
 
@@ -41,7 +42,7 @@ PYTHON_VER=	2.4
 
 SUBST_VARS=	PYTHON_VER 
 
-MODULES=	devel/gettext lang/ruby
+MODULES=	devel/gettext
 
 WANTLIB=	apr-1 db z
 
@@ -52,12 +53,14 @@ LIB_DEPENDS=	neon.>=24:neon->=0.24.7:net/neon \
 MULTI_PACKAGES=	-main
 
 WANTLIB-main=	${WANTLIB} c crypto m ssl xml2
+RUN_DEPENDS-main= ${MODGETTEXT_RUN_DEPENDS}
 
 .if !${FLAVOR:L:Mno_bindings}
 MULTI_PACKAGES+=-perl -python -ruby
 SHARED_ONLY=	Yes
 
 WANTLIB-perl=	${WANTLIB} aprutil-1
+RUN_DEPENDS-perl=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-perl=	expat.>=4::textproc/expat \
 			${MODGETTEXT_LIB_DEPENDS}
 .  for _lib in svn_diff-1 svn_ra-1 svn_delta-1 svn_subr-1 svn_fs-1 \
@@ -75,14 +78,14 @@ LIB_DEPENDS-python+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subvers
 .  endfor
 
 WANTLIB-ruby=	${WANTLIB} crypto expat m ssl neon xml2 aprutil-1
-RUB_DEPENDS-ruby=	::lang/ruby
+RUB_DEPENDS-ruby=	${MODRUBY_RUN_DEPENDS}
 LIB_DEPENDS-ruby=	${MODGETTEXT_LIB_DEPENDS}
 .  for _lib in ${SVN_LIBS}
 LIB_DEPENDS-ruby+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversion,-main
 .  endfor
 
+MODULES+=	lang/ruby
 BUILD_DEPENDS=	::lang/python/${PYTHON_VER} \
-		::lang/ruby \
 		::devel/swig 
 .endif
 
