@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/11/21 20:42:30 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2006/12/01 14:24:55 steven Exp $
 
 COMMENT-main=	"C routines for computing the Discrete Fourier Transform"
 COMMENT-common=	"common files for the fftw3 packages"
@@ -7,7 +7,7 @@ V=		3.1.2
 DISTNAME=	fftw-${V}
 PKGNAME=	fftw3-${V}
 FULLPKGNAME-main=	fftw3-${V}p2
-FULLPKGNAME-common=	fftw3-common-${V}
+FULLPKGNAME-common=	fftw3-common-${V}p0
 SHARED_LIBS=	fftw3	4.2 \
 		fftw3f	4.2
 CATEGORIES=	math
@@ -44,7 +44,8 @@ CONFIGURE_ARGS+=--enable-float
 FULLPKGNAME-main=	fftw3-float-${V}p0
 .endif
 
-RUN_DEPENDS-main=	::math/fftw3,-common
+FULLPKGPATH-common=	math/fftw3,-common
+RUN_DEPENDS-main=	::${FULLPKGPATH-common}
 WANTLIB-main=		c m
 PKG_ARCH-common=	*
 
