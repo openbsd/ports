@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.860 2006/12/01 11:34:04 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.861 2006/12/01 17:33:16 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -425,8 +425,10 @@ FULLPKGNAME ?= ${PKGNAME}${FLAVOR_EXT}
 _MASTER ?=
 _SOLVING_DEP ?= No
 
+_READMES =
 .if ${MULTI_PACKAGES} == "-"
 FULLPKGNAME- = ${FULLPKGNAME}
+_READMES += ${FULLPKGNAME}.html
 .else
 .  for _s in ${MULTI_PACKAGES}
 .    if !defined(FULLPKGNAME${_s})
@@ -436,6 +438,7 @@ FULLPKGNAME${_s} = ${PKGNAME${_s}}${FLAVOR_EXT}
 FULLPKGNAME${_s} = ${PKGNAME}${_s}${FLAVOR_EXT}
 .      endif
 .    endif
+_READMES += ${FULLPKGNAME${_s}}.html
 .  endfor
 .endif
 
@@ -1836,20 +1839,6 @@ ${_t}: _internal-${_t}
 subpackage:
 	@${_DO_LOCK}; cd ${.CURDIR} && ${MAKE} _internal-subpackage
 
-# Redirectors for top-level targets involving subpackages
-.for _t _r in readmes _readme
-${_t}:
-.  if ${MULTI_PACKAGES} == "-"
-	@cd ${.CURDIR} && exec ${MAKE} ${_r}
-.  else
-.    for _s in ${MULTI_PACKAGES}
-	@${ECHO_MSG} "===> ${PKGPATH}${FLAVOR_EXT:S/-/,/g},${_s}"
-	@cd ${.CURDIR} && SUBPACKAGE='${_s}' exec ${MAKE} ${_r}
-.    endfor
-.  endif
-.endfor
-
-
 _internal-package: 
 	@cd ${.CURDIR} && exec ${MAKE} _internal-package-only
 .if ${BULK_${PKGPATH}:L} == "yes"
@@ -2271,8 +2260,7 @@ _internal-clean:
 	rm -f ${_PACKAGE_COOKIES${SUBPACKAGE}}
 .endif
 .if ${_clean:L:Mreadmes}
-.    for _s in ${MULTI_PACKAGES}
-	rm -f ${.CURDIR}/${FULLPKGNAME${_s}}.html
+	rm -f ${_READMES}
 .    endfor
 .endif
 .if ${_clean:L:Mbulk}
@@ -2413,57 +2401,54 @@ describe:
 .  endif
 .endfor
 
-_readme:
+readme:
 	@cd ${.CURDIR} && exec ${MAKE} README_NAME=${README_NAME} ${FULLPKGNAME${SUBPACKAGE}}.html
 
-${FULLPKGNAME${SUBPACKAGE}}.html:
-	@echo ${_COMMENT${SUBPACKAGE}} | ${HTMLIFY} >$@.tmp-comment
-	@echo ${FULLPKGNAME${SUBPACKAGE}} | ${HTMLIFY} > $@.tmp3
-.if defined(HOMEPAGE)
-	@echo 'See <a href="${HOMEPAGE}">${HOMEPAGE}</a> for details.' >$@.tmp4
-.else
-	@echo "" >$@.tmp4
-.endif
-.if defined(MULTI_PACKAGES)
-.  if empty(SUBPACKAGE)
-	@echo "<h2>Subpackages</h2>" >$@.tmp-subpackages
-	@echo "<ul>" >>$@.tmp-subpackages
+readmes:
+	@cd ${.CURDIR} && exec ${MAKE} README_NAME=${README_NAME} ${_READMES}
 
-.    for _S in ${MULTI_PACKAGES}
-	@name=`SUBPACKAGE=${_S} ${MAKE} _print-packagename _FULL_PACKAGE_NAME=No`; \
-	echo "<li><a href=\"$$name.html\">$$name</a>" >>$@.tmp-subpackages
+.for _S in ${MULTI_PACKAGES}
+${FULLPKGNAME${_S}}.html:
+	@echo ${_COMMENT${_S}} | ${HTMLIFY} >$@.tmp-comment
+	@echo ${FULLPKGNAME${_S}} | ${HTMLIFY} > $@.tmp3
+.  if defined(HOMEPAGE)
+	@echo 'See <a href="${HOMEPAGE}">${HOMEPAGE}</a> for details.' >$@.tmp4
+.  else
+	@echo "" >$@.tmp4
+.  endif
+.  if ${MULTI_PACKAGES} != "!-"
+	@echo "<h2>Part of a Multi-Package set</h2>" >$@.tmp-subpackages
+	@echo "<ul>" >>$@.tmp-subpackages
+.    for _T in ${MULTI_PACKAGES}
+	@echo "<li><a href=\"${FULLPKGNAME${_T}}.html\">${FULLPKGNAME${_T}}</a>" >>$@.tmp-subpackages
 .    endfor
 	@echo "</ul>" >>$@.tmp-subpackages
 .  else
-	@name=`unset SUBPACKAGE; ${MAKE} _print-packagename _FULL_PACKAGE_NAME=No`; \
-	echo "<h2>Subpackage of <a href=\"$$name.html\">$$name</a></h2>" >$@.tmp-subpackages
-.  endif
-.else
 	@>$@.tmp-subpackages
-.endif
-.for _I in build run
-.  if !empty(_${_I:U}_DEP)
-	@cd ${.CURDIR} && ${MAKE} full-${_I}-depends _FULL_PACKAGE_NAME=Yes| \
+.  endif
+.  for _I in build run
+.    if !empty(_${_I:U}_DEP)
+	@cd ${.CURDIR} && SUBPACKAGE=${_S} ${MAKE} full-${_I}-depends _FULL_PACKAGE_NAME=Yes| \
 		while read n; do \
 			j=`dirname $$n|${HTMLIFY}`; k=`basename $$n|${HTMLIFY}`; \
 			echo "<li><a href=\"${PKGDEPTH}$$j/$$k.html\">$$k</a>"; \
 		 done  >$@.tmp-${_I}
-.  else
+.    else
 	@echo "<li>none" >$@.tmp-${_I}
-.  endif
-.endfor
+.    endif
+.  endfor
 	@cat ${README_NAME} | \
-		sed -e 's|%%PORT%%|'"`echo ${FULLPKGPATH}  | ${HTMLIFY}`"'|g' \
+		sed -e 's|%%PORT%%|'"`echo ${FULLPKGPATH${_S}}  | ${HTMLIFY}`"'|g' \
 			-e '/%%PKG%%/r$@.tmp3' -e '//d' \
 			-e '/%%COMMENT%%/r$@.tmp-comment' -e '//d' \
-			-e '/%%DESCR%%/r${PKGDIR}/DESCR${SUBPACKAGE}' -e '//d' \
+			-e '/%%DESCR%%/r${DESCR${_S}}' -e '//d' \
 			-e '/%%HOMEPAGE%%/r$@.tmp4' -e '//d' \
 			-e '/%%BUILD_DEPENDS%%/r$@.tmp-build' -e '//d' \
 			-e '/%%RUN_DEPENDS%%/r$@.tmp-run' -e '//d' \
  			-e '/%%SUBPACKAGES%%/r$@.tmp-subpackages' -e '//d' \
 		>> $@
 	@rm -f $@.tmp*
-
+.endfor
 
 print-build-depends:
 .if !empty(_BUILD_DEP)
@@ -2882,7 +2867,7 @@ dump-vars:
 	pre-install pre-package pre-patch \
 	pre-regress print-build-depends print-package-signature \
 	print-run-depends \
-	readmes _readme rebuild \
+	readmes readme rebuild \
 	regress regress-depends \
 	reinstall repackage run-depends \
 	run-depends-list run-dir-depends show verbose-show dump-vars \
