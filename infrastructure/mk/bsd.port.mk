@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.859 2006/11/30 23:08:07 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.860 2006/12/01 11:34:04 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -641,12 +641,12 @@ PKGFILE${_S} = ${_PKG_REPO}${_PKGFILE${_S}}
 .endfor
 
 .if empty(SUBPACKAGE) || ${SUBPACKAGE} == "-"
-FULLPKGPATH = ${PKGPATH}${FLAVOR_EXT:S/-/,/g}
+FULLPKGPATH ?= ${PKGPATH}${FLAVOR_EXT:S/-/,/g}
 FULLPKGPATH- = ${FULLPKGPATH}
 .else
 FULLPKGPATH = ${PKGPATH},${SUBPACKAGE}${FLAVOR_EXT:S/-/,/g}
 .  for _S in ${MULTI_PACKAGES}
-FULLPKGPATH${_S} = ${PKGPATH},${_S}${FLAVOR_EXT:S/-/,/g}
+FULLPKGPATH${_S} ?= ${PKGPATH},${_S}${FLAVOR_EXT:S/-/,/g}
 .  endfor
 .endif
 
