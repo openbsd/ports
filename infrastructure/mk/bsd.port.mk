@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.862 2006/12/01 17:37:15 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.863 2006/12/01 17:56:38 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -599,14 +599,14 @@ _PACKAGE_COOKIE_DEPS=${_FAKE_COOKIE}
 PKGNAMES += ${FULLPKGNAME${_s}}
 .endfor
 
-.for _s in ${MULTI_PACKAGES} ${SUBPACKAGE}
+.for _s in ${MULTI_PACKAGES}
 .  for _v in PKG_ARCH PERMIT_PACKAGE_FTP PERMIT_PACKAGE_CDROM \
 	RUN_DEPENDS WANTLIB LIB_DEPENDS PREFIX CATEGORIES
 ${_v}${_s} ?= ${${_v}}
 .  endfor
 .endfor
 
-.for _s in ${MULTI_PACKAGES} ${SUBPACKAGE}
+.for _s in ${MULTI_PACKAGES}
 .  for _v in MESSAGE UNMESSAGE DESCR PLIST
 .    if defined(${_v})
 ${_v}${_s} ?= ${${_v}}
@@ -2475,16 +2475,18 @@ full-${_i}-depends:
 .endfor
 
 license-check:
-.if ${PERMIT_PACKAGE_CDROM${SUBPACKAGE}:L} == "yes" || \
-	${PERMIT_PACKAGE_FTP${SUBPACKAGE}:L} == "yes"
-	@${MAKE} all-dir-depends|${_sort_dependencies}|while read subdir; do \
+.for _S in ${MULTI_PACKAGES}
+.  if ${PERMIT_PACKAGE_CDROM${_S}:L} == "yes" || \
+	${PERMIT_PACKAGE_FTP${_S}:L} == "yes"
+	@SUBPACKAGE=${_S} ${MAKE} all-dir-depends|${_sort_dependencies}|while read subdir; do \
 		${_flavor_fragment}; \
-		_MASTER_PERMIT_CDROM=${PERMIT_PACKAGE_CDROM${SUBPACKAGE}:Q}; \
-		_MASTER_PERMIT_FTP=${PERMIT_PACKAGE_FTP${SUBPACKAGE}:Q}; \
+		_MASTER_PERMIT_CDROM=${PERMIT_PACKAGE_CDROM${_S}:Q}; \
+		_MASTER_PERMIT_FTP=${PERMIT_PACKAGE_FTP${_S}:Q}; \
 		export _MASTER_PERMIT_CDROM _MASTER_PERMIT_FTP; \
 		eval $$toset ${MAKE} _license-check; \
 	done
-.endif
+.  endif
+.endfor
 
 _license-check:
 .for _i in FTP CDROM
