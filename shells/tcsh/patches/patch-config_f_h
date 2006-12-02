@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_f_h,v 1.1 2004/10/11 02:08:53 jolan Exp $
---- config_f.h.orig	Sun Mar 21 10:48:14 2004
-+++ config_f.h	Sun Oct 10 21:06:52 2004
-@@ -61,7 +61,11 @@
+$OpenBSD: patch-config_f_h,v 1.2 2006/12/02 14:36:23 kurt Exp $
+--- config_f.h.orig	Fri Mar  4 08:46:04 2005
++++ config_f.h	Thu Nov 30 21:16:44 2006
+@@ -69,7 +69,11 @@
   *		if you don't have <nl_types.h>, you don't want
   *		to define this.
   */
@@ -13,7 +13,7 @@ $OpenBSD: patch-config_f_h,v 1.1 2004/10/11 02:08:53 jolan Exp $
  
  /*
   * LOGINFIRST   Source ~/.login before ~/.cshrc
-@@ -88,12 +92,12 @@
+@@ -96,12 +100,12 @@
  /*
   * DOTLAST      put "." last in the default path, for security reasons
   */
@@ -28,7 +28,7 @@ $OpenBSD: patch-config_f_h,v 1.1 2004/10/11 02:08:53 jolan Exp $
  
  /*
   * AUTOLOGOUT	tries to determine if it should set autologout depending
-@@ -139,7 +143,7 @@
+@@ -149,7 +153,7 @@
   *		This can be much slower and no memory statistics will be
   *		provided.
   */

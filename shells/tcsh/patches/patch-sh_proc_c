@@ -1,0 +1,11 @@
+$OpenBSD: patch-sh_proc_c,v 1.1 2006/12/02 14:36:23 kurt Exp $
+--- sh.proc.c.orig	Thu Nov 30 21:19:19 2006
++++ sh.proc.c	Thu Nov 30 21:19:34 2006
+@@ -396,6 +396,7 @@ found:
+ #ifdef notdef
+ 		jobflags & PAEXITED ||
+ #endif /* notdef */
++		fp->p_cwd == NULL ||
+ 		!eq(dcwd->di_name, fp->p_cwd->di_name))) {
+ 	    /* PWP: print a newline after ^C */
+ 		if (jobflags & PINTERRUPTED) {

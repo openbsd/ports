@@ -1,7 +1,7 @@
-$OpenBSD: patch-host_defs,v 1.2 2006/01/15 13:58:39 sturm Exp $
---- host.defs.orig	Thu Mar  3 19:49:15 2005
-+++ host.defs	Sun Dec 18 22:00:52 2005
-@@ -510,6 +510,36 @@
+$OpenBSD: patch-host_defs,v 1.3 2006/12/02 14:36:23 kurt Exp $
+--- host.defs.orig	Thu Mar  3 11:49:15 2005
++++ host.defs	Thu Nov 30 21:16:44 2006
+@@ -510,6 +510,36 @@ machtype: defined(vax)					: "vax"
  machtype: defined(alpha)				: "alpha"
  enddef	:
  
