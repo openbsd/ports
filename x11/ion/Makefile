@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.42 2006/10/29 11:09:07 pedro Exp $
+# $OpenBSD: Makefile,v 1.43 2006/12/02 18:12:50 pedro Exp $
 
 COMMENT=	"light, keyboard friendly window manager"
 
 V=		20061029
 DISTNAME=	ion-3ds-${V}
-PKGNAME=	ion-${V}
+PKGNAME=	ion-${V}p0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://modeemi.cs.tut.fi/~tuomov/ion/
 MASTER_SITES=	http://modeemi.cs.tut.fi/~tuomov/dl/
 
-MAINTAINER=	Pedro Martelletto <pedro@openbsd.org>
+MAINTAINER=	Dmitri Alenitchev <dmitri@wave.net.ru>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
