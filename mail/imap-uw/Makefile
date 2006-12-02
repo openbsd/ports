@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2006/12/01 14:40:00 jakob Exp $
+# $OpenBSD: Makefile,v 1.50 2006/12/02 10:35:56 jakob Exp $
 
 COMMENT-server=		"University of Washington IMAP4rev1/POP2/POP3 mail servers"
 COMMENT-mailutil=	"University of Washington IMAP4rev1/POP2/POP3 mail utility"
@@ -29,7 +29,7 @@ ALL_TARGET=	bso
 MAKE_FLAGS=	EXTRACFLAGS="${CFLAGS}" EXTRAAUTHENTICATORS="gss" IP=6
 
 MULTI_PACKAGES=	-server -mailutil
-SUBPACKAGE?=
+SUBPACKAGE?=	-server
 
 FLAVORS=	plaintext
 FLAVOR?=
