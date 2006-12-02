@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2006/10/10 06:17:14 kevlo Exp $
+# $OpenBSD: Makefile,v 1.16 2006/12/02 18:45:54 espie Exp $
 
 COMMENT=	"perl module for getting image information"
 
+MODULES=	cpan
 VERSION=	1.23
 DISTNAME=	Image-Info-${VERSION}
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	graphics perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Image/}
+PKGNAME=	p5-${DISTNAME}p0
+CATEGORIES=	graphics
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -18,10 +18,8 @@ PERMIT_DISTFILES_FTP=   Yes
 RUN_DEPENDS=	:p5-IO-String->=1.08:devel/p5-IO-String
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-CONFIGURE_STYLE= perl
+REGRESS_DEPENDS=::textproc/p5-XML-Simple
 
-REGRESS_DEPENDS=	::devel/p5-Test-Pod \
-			::devel/p5-Test-Pod-Coverage \
-			::textproc/p5-XML-Simple
+MAKE_ENV=	TEST_POD=Yes
 
 .include <bsd.port.mk>
