@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.865 2006/12/02 11:08:49 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.866 2006/12/02 11:27:46 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -120,7 +120,6 @@ DISTDIR ?= ${PORTSDIR}/distfiles
 BULK_COOKIES_DIR ?= ${PORTSDIR}/bulk/${MACHINE_ARCH}
 UPDATE_COOKIES_DIR ?= ${PORTSDIR}/update/${MACHINE_ARCH}
 TEMPLATES ?= ${PORTSDIR}/infrastructure/templates
-TMPDIR ?= /tmp
 PLIST_DB ?=
 
 PACKAGE_REPOSITORY ?= ${PORTSDIR}/packages
@@ -428,7 +427,7 @@ _SOLVING_DEP ?= No
 _READMES =
 .if ${MULTI_PACKAGES} == "-"
 FULLPKGNAME- = ${FULLPKGNAME}
-_READMES += ${FULLPKGNAME}.html
+_READMES += ${READMES_TOP}/${PKGPATH}/${FULLPKGNAME}.html
 .else
 .  for _s in ${MULTI_PACKAGES}
 .    if !defined(FULLPKGNAME${_s})
@@ -438,7 +437,7 @@ FULLPKGNAME${_s} = ${PKGNAME${_s}}${FLAVOR_EXT}
 FULLPKGNAME${_s} = ${PKGNAME}${_s}${FLAVOR_EXT}
 .      endif
 .    endif
-_READMES += ${FULLPKGNAME${_s}}.html
+_READMES += ${READMES_TOP}/${PKGPATH}/${FULLPKGNAME${_s}}.html
 .  endfor
 .endif
 
@@ -2402,13 +2401,20 @@ describe:
 .endfor
 
 readme:
-	@tmpdir=`mktemp -d ${TMPDIR}/readme.XXXXXX`; trap 'rm -r $$tmpdir' 0 1 2 3 13 15; cd ${.CURDIR} && ${MAKE} TMPDIR=$$tmpdir README_NAME=${README_NAME} ${FULLPKGNAME${SUBPACKAGE}}.html
+	@tmpdir=`mktemp -d ${TMPDIR}/readme.XXXXXX`; \
+	trap 'rm -r $$tmpdir' 0 1 2 3 13 15; \
+	cd ${.CURDIR} && ${MAKE} TMPDIR=$$tmpdir README_NAME=${README_NAME} \
+		${READMES_TOP}/${PKGPATH}/${FULLPKGNAME${SUBPACKAGE}}.html
 
 readmes:
-	@tmpdir=`mktemp -d ${TMPDIR}/readme.XXXXXX`; trap 'rm -r $$tmpdir' 0 1 2 3 13 15; cd ${.CURDIR} && ${MAKE} TMPDIR=$$tmpdir README_NAME=${README_NAME} ${_READMES}
+	@tmpdir=`mktemp -d ${TMPDIR}/readme.XXXXXX`; \
+	trap 'rm -r $$tmpdir' 0 1 2 3 13 15; \
+	cd ${.CURDIR} && ${MAKE} TMPDIR=$$tmpdir README_NAME=${README_NAME} \
+		${_READMES}
 
 .for _S in ${MULTI_PACKAGES}
-${FULLPKGNAME${_S}}.html:
+${READMES_TOP}/${PKGPATH}/${FULLPKGNAME${_S}}.html:
+	@mkdir -p ${@D}
 	@echo ${_COMMENT${_S}} | ${HTMLIFY} >${TMPDIR}/comment${_S}
 	@echo ${FULLPKGNAME${_S}} | ${HTMLIFY} > ${TMPDIR}/pkgname${_S}
 .  if defined(HOMEPAGE)

@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.79 2006/11/27 15:38:01 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.80 2006/12/02 11:27:46 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -134,16 +134,19 @@ clean:
 	@${_subdir_fragment}
 .endif
 .if defined(clean) && ${clean:L:Mreadmes}
-	rm -f ${.CURDIR}/README.html
+	rm -f ${README_TOPS}/${PKGPATH}/README.html
 .endif
 
 readmes:
 	@DESCRIBE_TARGET=Yes; export DESCRIBE_TARGET; ${_subdir_fragment}
-	@rm -f ${.CURDIR}/README.html
-	@cd ${.CURDIR} && exec ${MAKE} README.html
+	@tmpdir=`mktemp -d ${TMPDIR}/readme.XXXXXX`; \
+	trap 'rm -r $$tmpdir' 0 1 2 3 13 15; \
+	cd ${.CURDIR} && ${MAKE} TMPDIR=$$tmpdir \
+		${READMES_TOP}/${PKGPATH}/README.html
 
-README.html:
-	@>$@.tmp
+${READMES_TOP}/${PKGPATH}/README.html:
+	@mkdir -p ${@D}
+	@>${TMPDIR}/subdirs
 .for d in ${_FULLSUBDIR}
 	@subdir=$d; DESCRIBE_TARGET=yes; export DESCRIBE_TARGET; \
 	${_flavor_fragment}; \
@@ -153,14 +156,13 @@ README.html:
 		*) comment=`eval $$toset ${MAKE} show=_COMMENT|sed -e 's,^",,' -e 's,"$$,,' |${HTMLIFY}`;; \
 	esac; \
 	cd ${.CURDIR}; \
-	echo "<dt><a href=\"${PKGDEPTH}$$dir/$$name.html\">$d</a><dd>$$comment" >>$@.tmp
+	echo "<dt><a href=\"${PKGDEPTH}$$dir/$$name.html\">$d</a><dd>$$comment" >>${TMPDIR}/subdirs
 .endfor
-	@cat ${README} | \
-		sed -e 's%%CATEGORY%%'`echo ${.CURDIR} | sed -e 's.*/\([^/]*\)$$\1'`'g' \
-			-e '/%%DESCR%%/r${.CURDIR}/pkg/DESCR' -e '//d' \
-			-e '/%%SUBDIR%%/r$@.tmp' -e '//d' \
-		> $@
-	@rm $@.tmp
+	@sed -e 's%%CATEGORY%%'`echo ${.CURDIR} | sed -e 's.*/\([^/]*\)$$\1'`'g' \
+		-e '/%%DESCR%%/r${.CURDIR}/pkg/DESCR' -e '//d' \
+		-e '/%%SUBDIR%%/r${TMPDIR}/subdirs' -e '//d' \
+		${README} > $@
+	@rm ${TMPDIR}/subdirs
 
 _print-packagename:
 	@echo "README"
