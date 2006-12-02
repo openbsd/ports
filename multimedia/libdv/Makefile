@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2006/08/03 23:15:57 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/12/02 20:24:17 pvalchev Exp $
 
 COMMENT=		"Quasar DV codec"
 
 DISTNAME=		libdv-0.104
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://libdv.sourceforge.net/
-
-MAINTAINER=		Jacob Meuser <jakemsr@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

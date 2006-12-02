@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2006/01/22 18:40:36 jolan Exp $
+# $OpenBSD: Makefile,v 1.8 2006/12/02 20:24:17 pvalchev Exp $
 
 COMMENT=	"full featured DVD copy program"
 
 VERSION=	0.50.18
-PKGNAME=	dvdrip-${VERSION}p1
+PKGNAME=	dvdrip-${VERSION}p2
 DISTNAME=	Video-DVDRip-${VERSION}
 CATEGORIES=	graphics audio perl5
 
 HOMEPAGE=	http://www.exit1.org/dvdrip/
-
-MAINTAINER=	Jacob Meuser <jakemsr@openbsd.org>
 
 # Artistic and GPL
 PERMIT_PACKAGE_CDROM=	Yes

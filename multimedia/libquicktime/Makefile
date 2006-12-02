@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2006/12/02 20:24:17 pvalchev Exp $
 # $FreeBSD: ports/multimedia/libquicktime/Makefile,v 1.19 2004/03/16 04:23:53 edwin Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		library for reading and writing quicktime files
 DISTNAME=		libquicktime-0.9.7
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		multimedia
 SHARED_LIBS=		quicktime	2.0
 
 HOMEPAGE=		http://libquicktime.sourceforge.net/
-
-MAINTAINER=		Jacob Meuser <jakemsr@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2006/07/19 13:41:02 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2006/12/02 20:24:17 pvalchev Exp $
 # $FreeBSD: ports/audio/toolame/Makefile,v 1.9 2004/02/08 01:13:48 lioux Exp $
 #
 
 COMMENT=		"optimized mpeg 1/2 layer 2 audio encoder"
 
 DISTNAME=		toolame-02l
-PKGNAME=		toolame-0.2lp0
+PKGNAME=		toolame-0.2lp1
 CATEGORIES=		audio
 
 HOMEPAGE=		http://www.eftel.com/~mikecheng/planckenergy/
-
-MAINTAINER=		Jacob Meuser <jakemsr@jakemsr.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

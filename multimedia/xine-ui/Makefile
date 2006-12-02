@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2006/08/03 23:15:57 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/12/02 20:24:17 pvalchev Exp $
 
 COMMENT=		"multimedia player"
 
 DISTNAME=		xine-ui-0.99.4
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://xinehq.de/
-
-MAINTAINER=		Jacob Meuser <jakemsr@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2006/11/13 10:08:12 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2006/12/02 20:24:17 pvalchev Exp $
 
 COMMENT=		"Qt-based 2D CAD system"
 
 DISTNAME=		qcad-1.5.4
+PKGNAME=		${DISTNAME}p0
 DISTFILES=		${DISTNAME}-src.tar.gz
 CATEGORIES=     	cad x11
 
 HOMEPAGE=		http://www.qcad.org/
-
-MAINTAINER=		Jacob Meuser <jakemsr@jakemsr.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes 

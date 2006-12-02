@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2006/10/12 11:30:41 claudio Exp $
+# $OpenBSD: Makefile,v 1.5 2006/12/02 20:24:17 pvalchev Exp $
 
 COMMENT=		"DVD ripper"
 
 DISTNAME=		dvdbackup-0.1.1
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://dvd-create.sourceforge.net/
-
-MAINTAINER=		Jacob Meuser <jakemsr@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

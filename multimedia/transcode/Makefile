@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2006/12/02 20:24:17 pvalchev Exp $
 
 COMMENT=		"video stream processing tools"
 
 DISTNAME=		transcode-1.0.2
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://www.transcoding.org/
-
-MAINTAINER=		Jacob Meuser <jakemsr@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

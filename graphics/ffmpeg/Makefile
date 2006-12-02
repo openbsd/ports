@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2006/08/02 10:10:35 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2006/12/02 20:24:17 pvalchev Exp $
 
 COMMENT=	"audio/video converter and streamer with bktr(4) support"
 
 DISTNAME=		ffmpeg-cvs-20060312
-PKGNAME=		${DISTNAME:S/-cvs//}p1
+PKGNAME=		${DISTNAME:S/-cvs//}p2
 SHARED_LIBS=		avutil		1.0 \
 			avcodec		7.0 \
 			avformat	7.0 \
@@ -11,8 +11,6 @@ SHARED_LIBS=		avutil		1.0 \
 CATEGORIES=		graphics multimedia
 
 HOMEPAGE=		http://www.ffmpeg.org/
-
-MAINTAINER=		Jacob Meuser <jakemsr@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	"patents"

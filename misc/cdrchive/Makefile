@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2006/12/02 20:24:17 pvalchev Exp $
 
 COMMENT=		"Qt-based CD creation tool"
 
-PKGNAME=		${DISTNAME:S/-OpenBSD//}p0
+PKGNAME=		${DISTNAME:S/-OpenBSD//}p1
 DISTNAME=		cdrchive-1.0.1-OpenBSD
 CATEGORIES=		misc x11
-
-MAINTAINER=		Jacob Meuser <jakemsr@jakemsr.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

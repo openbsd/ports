@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2005/01/27 10:57:20 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/02 20:24:17 pvalchev Exp $
 
 COMMENT=		"mastering tools for DVD+RW/+R/-R/-RW"
 
 DISTNAME=		dvd+rw-tools-5.21.4.10.8
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		sysutils
 HOMEPAGE=		http://fy.chalmers.se/~appro/linux/DVD+RW/
-
-MAINTAINER=		Jacob Meuser <jakemsr@jakemsr.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/25 05:40:31 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2006/12/02 20:24:17 pvalchev Exp $
 
 COMMENT=		"multimedia decoding library"
 
 V=			1.1.2
 DISTNAME=		xine-lib-${V}
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		multimedia
 SHARED_LIBS=		xine	14.1
 
 HOMEPAGE=		http://xinehq.de/
-
-MAINTAINER=		Jacob Meuser <jakemsr@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

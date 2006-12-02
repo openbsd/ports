@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2006/12/02 20:24:17 pvalchev Exp $
 
 COMMENT=		"tools to edit/modify/encode video streams"
 
 DISTNAME=		mjpegtools-1.8.0
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		multimedia
 SHARED_LIBS=		lavfile		3.0 \
 			lavfile-1.8	3.0 \
@@ -19,8 +19,6 @@ SHARED_LIBS=		lavfile		3.0 \
 			mplex2-1.8	4.0
 
 HOMEPAGE=		http://mjpeg.sourceforge.net/
-
-MAINTAINER=		Jacob Meuser <jakemsr@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
