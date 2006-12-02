@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.864 2006/12/02 10:27:40 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.865 2006/12/02 11:08:49 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2402,29 +2402,29 @@ describe:
 .endfor
 
 readme:
-	@cd ${.CURDIR} && exec ${MAKE} README_NAME=${README_NAME} ${FULLPKGNAME${SUBPACKAGE}}.html
+	@tmpdir=`mktemp -d ${TMPDIR}/readme.XXXXXX`; trap 'rm -r $$tmpdir' 0 1 2 3 13 15; cd ${.CURDIR} && ${MAKE} TMPDIR=$$tmpdir README_NAME=${README_NAME} ${FULLPKGNAME${SUBPACKAGE}}.html
 
 readmes:
-	@cd ${.CURDIR} && exec ${MAKE} README_NAME=${README_NAME} ${_READMES}
+	@tmpdir=`mktemp -d ${TMPDIR}/readme.XXXXXX`; trap 'rm -r $$tmpdir' 0 1 2 3 13 15; cd ${.CURDIR} && ${MAKE} TMPDIR=$$tmpdir README_NAME=${README_NAME} ${_READMES}
 
 .for _S in ${MULTI_PACKAGES}
 ${FULLPKGNAME${_S}}.html:
-	@echo ${_COMMENT${_S}} | ${HTMLIFY} >$@.tmp-comment
-	@echo ${FULLPKGNAME${_S}} | ${HTMLIFY} > $@.tmp3
+	@echo ${_COMMENT${_S}} | ${HTMLIFY} >${TMPDIR}/comment${_S}
+	@echo ${FULLPKGNAME${_S}} | ${HTMLIFY} > ${TMPDIR}/pkgname${_S}
 .  if defined(HOMEPAGE)
-	@echo 'See <a href="${HOMEPAGE}">${HOMEPAGE}</a> for details.' >$@.tmp4
+	@echo 'See <a href="${HOMEPAGE}">${HOMEPAGE}</a> for details.' >${TMPDIR}/home${_S}
 .  else
-	@echo "" >$@.tmp4
+	@echo "" >${TMPDIR}/home${_S}
 .  endif
 .  if ${MULTI_PACKAGES} != "-"
-	@echo "<h2>Part of a Multi-Package set</h2>" >$@.tmp-subpackages
-	@echo "<ul>" >>$@.tmp-subpackages
+	@echo "<h2>Part of a Multi-Package set</h2>" >${TMPDIR}/subpackages${_S}
+	@echo "<ul>" >>${TMPDIR}/subpackages${_S}
 .    for _T in ${MULTI_PACKAGES}
-	@echo "<li><a href=\"${FULLPKGNAME${_T}}.html\">${FULLPKGNAME${_T}}</a>" >>$@.tmp-subpackages
+	@echo "<li><a href=\"${FULLPKGNAME${_T}}.html\">${FULLPKGNAME${_T}}</a>" >>${TMPDIR}/subpackages${_S}
 .    endfor
-	@echo "</ul>" >>$@.tmp-subpackages
+	@echo "</ul>" >>${TMPDIR}/subpackages${_S}
 .  else
-	@>$@.tmp-subpackages
+	@>${TMPDIR}/subpackages${_S}
 .  endif
 .  for _I in build run
 .    if !empty(_${_I:U}_DEP)
@@ -2432,22 +2432,21 @@ ${FULLPKGNAME${_S}}.html:
 		while read n; do \
 			j=`dirname $$n|${HTMLIFY}`; k=`basename $$n|${HTMLIFY}`; \
 			echo "<li><a href=\"${PKGDEPTH}$$j/$$k.html\">$$k</a>"; \
-		 done  >$@.tmp-${_I}
+		 done  >${TMPDIR}/${_I}${_S}
 .    else
-	@echo "<li>none" >$@.tmp-${_I}
+	@echo "<li>none" >${TMPDIR}/${_I}${_S}
 .    endif
 .  endfor
-	@cat ${README_NAME} | \
-		sed -e 's|%%PORT%%|'"`echo ${FULLPKGPATH${_S}}  | ${HTMLIFY}`"'|g' \
-			-e '/%%PKG%%/r$@.tmp3' -e '//d' \
-			-e '/%%COMMENT%%/r$@.tmp-comment' -e '//d' \
-			-e '/%%DESCR%%/r${DESCR${_S}}' -e '//d' \
-			-e '/%%HOMEPAGE%%/r$@.tmp4' -e '//d' \
-			-e '/%%BUILD_DEPENDS%%/r$@.tmp-build' -e '//d' \
-			-e '/%%RUN_DEPENDS%%/r$@.tmp-run' -e '//d' \
- 			-e '/%%SUBPACKAGES%%/r$@.tmp-subpackages' -e '//d' \
-		>> $@
-	@rm -f $@.tmp*
+	@sed -e 's|%%PORT%%|'"`echo ${FULLPKGPATH${_S}}  | ${HTMLIFY}`"'|g' \
+		-e '/%%PKG%%/r${TMPDIR}/pkgname${_S}' -e '//d' \
+		-e '/%%COMMENT%%/r${TMPDIR}/comment${_S}' -e '//d' \
+		-e '/%%DESCR%%/r${DESCR${_S}}' -e '//d' \
+		-e '/%%HOMEPAGE%%/r${TMPDIR}/home${_S}' -e '//d' \
+		-e '/%%BUILD_DEPENDS%%/r${TMPDIR}/build${_S}' -e '//d' \
+		-e '/%%RUN_DEPENDS%%/r${TMPDIR}/run${_S}' -e '//d' \
+		-e '/%%SUBPACKAGES%%/r${TMPDIR}/subpackages${_S}' -e '//d' \
+		${README_NAME} > $@
+	@rm -f ${TMPDIR}/*${_S}
 .endfor
 
 print-build-depends:
