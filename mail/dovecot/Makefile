@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.66 2006/12/01 23:57:28 espie Exp $
+# $OpenBSD: Makefile,v 1.67 2006/12/02 10:34:30 jakob Exp $
+
+SHARED_ONLY=	Yes
 
 COMMENT-server= "compact IMAP/POP3 server"
 COMMENT-sieve=	"sieve mail filtering for Dovecot"
