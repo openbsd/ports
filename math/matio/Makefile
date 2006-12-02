@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2006/10/29 18:05:50 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/02 00:19:11 steven Exp $
 
 COMMENT=	"library for reading and writing Matlab MAT files"
 
-DISTNAME=	matio-1.3.1
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=	matio	0.0
+DISTNAME=	matio-1.3.2
+SHARED_LIBS=	matio	1.0
 CATEGORIES=	math
 
 HOMEPAGE=	http://sourceforge.net/projects/matio/
@@ -16,6 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=matio/}
+EXTRACT_SUFX=	.tar.bz2
 
 WANTLIB=	g2c m
 
@@ -25,8 +25,9 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-fortran=no \
 		--enable-test=yes
 
-TESTS=	copy write writecompressed writestruct writecell readslab \
-	writeslab writesparse writenan writeinf readslab4 ind2sub sub2ind
+TESTS=	copy write writecompressed writecell readslab \
+	writeslab writesparse writenan writeinf readslab4 ind2sub sub2ind \
+	write_compressed_cell write_compressed_sparse
 
 do-regress:
 .for t in ${TESTS}
