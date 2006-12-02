@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.863 2006/12/01 17:56:38 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.864 2006/12/02 10:27:40 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2262,7 +2262,6 @@ _internal-clean:
 .endif
 .if ${_clean:L:Mreadmes}
 	rm -f ${_READMES}
-.    endfor
 .endif
 .if ${_clean:L:Mbulk}
 	rm -f ${_BULK_COOKIE}
@@ -2417,7 +2416,7 @@ ${FULLPKGNAME${_S}}.html:
 .  else
 	@echo "" >$@.tmp4
 .  endif
-.  if ${MULTI_PACKAGES} != "!-"
+.  if ${MULTI_PACKAGES} != "-"
 	@echo "<h2>Part of a Multi-Package set</h2>" >$@.tmp-subpackages
 	@echo "<ul>" >>$@.tmp-subpackages
 .    for _T in ${MULTI_PACKAGES}
