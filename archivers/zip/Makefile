@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2006/07/30 17:33:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2006/12/03 08:51:34 matthieu Exp $
 
 COMMENT=	"create/update ZIP files compatible with PKZip(tm)"
 
 DISTNAME=	zip-2.32
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.info-zip.org/pub/infozip/src/ \
+MASTER_SITES=	${MASTER_SITE_TEX_CTAN:=tools/zip/info-zip/src/} \
+		ftp://ftp.info-zip.org/pub/infozip/src/ \
 		${MASTER_SITE_SOURCEFORGE:=infozip/} \
 		http://mirror.switch.ch/ftp/mirror/infozip/src/		
 
