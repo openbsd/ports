@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.40 2006/08/18 16:04:47 sturm Exp $
+# $OpenBSD: Makefile,v 1.41 2006/12/03 14:14:41 kili Exp $
 
-COMMENT=	"simplified wrapper and interface generator"
+COMMENT-main=	"simplified wrapper and interface generator"
 
 VERSION=	1.3.24
 
 DISTNAME=	swig-${VERSION}
-PKGNAME=	${DISTNAME}p3
+PKGNAME-main=	${DISTNAME}p4
+MULTI_PACKAGES=	-main
 CATEGORIES=	devel
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=swig/}
 
@@ -20,9 +21,10 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m stdc++
 
 MODULES=	lang/python
-LIB_DEPENDS=	guile.>=9::lang/guile
+RUN_DEPENDS-main=
 BUILD_DEPENDS=	::lang/tcl/8.4 \
-		::lang/ruby
+		::lang/ruby \
+		::lang/guile
 
 WRKDIST=	${WRKDIR}/SWIG-${VERSION}
 
