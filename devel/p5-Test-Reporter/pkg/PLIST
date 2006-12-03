@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/03 13:09:30 steven Exp $
+bin/cpantest
+${P5SITE}/Test/
+${P5SITE}/Test/Reporter/
+${P5SITE}/Test/Reporter.pm
+${P5SITE}/Test/Reporter/Date/
+${P5SITE}/Test/Reporter/Date/Format.pm
+${P5SITE}/Test/Reporter/Mail/
+${P5SITE}/Test/Reporter/Mail/Util.pm
+${P5SITE}/Test/Reporter/Time/
+${P5SITE}/Test/Reporter/Time/Zone.pm
+@man man/man1/cpantest.1
+@man man/man3p/Test::Reporter.3p
+@man man/man3p/Test::Reporter::Date::Format.3p
+@man man/man3p/Test::Reporter::Mail::Util.3p
+@man man/man3p/Test::Reporter::Time::Zone.3p
