@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2006/10/29 22:55:57 espie Exp $
+@comment $OpenBSD: PLIST,v 1.23 2006/12/03 11:00:34 espie Exp $
 bin/karbon
 bin/kchart
 bin/kexi
@@ -20,19 +20,25 @@ bin/kudesigner
 bin/kugar
 bin/kword
 include/KDChartAxisParams.h
+include/KDChartAxisParamsWrapper.h
 include/KDChartCustomBox.h
+include/KDChartCustomBoxWrapper.h
 include/KDChartDataIntern.h
 include/KDChartDataRegion.h
 include/KDChartEnums.h
 include/KDChartGlobal.h
 include/KDChartListTable.h
+include/KDChartObjectFactory.h
 include/KDChartParams.h
+include/KDChartParamsWrapper.h
 include/KDChartPropertySet.h
 include/KDChartTable.h
 include/KDChartTableBase.h
+include/KDChartTableDataWrapper.h
 include/KDChartTextPiece.h
 include/KDChartVectorTable.h
 include/KDChartWidget.h
+include/KDChartWrapperFactory.h
 include/KDFrame.h
 include/KDFrameProfileSection.h
 include/KoApplication.h
@@ -128,6 +134,7 @@ include/kexidb/object.h
 include/kexidb/parser.h
 include/kexidb/preparedstatement.h
 include/kexidb/queryschema.h
+include/kexidb/queryschemaparameter.h
 include/kexidb/relationship.h
 include/kexidb/schemadata.h
 include/kexidb/tableschema.h
@@ -135,6 +142,8 @@ include/kexidb/transaction.h
 include/kexiutils/
 include/kexiutils/identifier.h
 include/kexiutils/kexiutils_export.h
+include/kexiutils/longlongvalidator.h
+include/kexiutils/styleproxy.h
 include/kexiutils/tristate.h
 include/kexiutils/utils.h
 include/kexiutils/validator.h
@@ -234,6 +243,7 @@ include/kis_progress_display_interface.h
 include/kis_progress_subject.h
 include/kis_rect.h
 include/kis_resource.h
+include/kis_scale_visitor.h
 include/kis_selection.h
 include/kis_shared_ptr_vector.h
 include/kis_substrate.h
@@ -439,6 +449,8 @@ ${KDE}/kritaimagesize.la
 ${KDE}/kritaimagesize.so
 ${KDE}/kritalenscorrectionfilter.la
 ${KDE}/kritalenscorrectionfilter.so
+${KDE}/kritalevelfilter.la
+${KDE}/kritalevelfilter.so
 ${KDE}/kritamodifyselection.la
 ${KDE}/kritamodifyselection.so
 ${KDE}/kritanoisefilter.la
@@ -896,6 +908,14 @@ lib/libkwordprivate.la
 share/applications/kde/kivio.desktop
 share/applications/kde/krita.desktop
 share/applnk/
+share/applnk/.hidden/
+share/applnk/.hidden/krita_jpeg.desktop
+share/applnk/.hidden/krita_magick.desktop
+share/applnk/.hidden/krita_openexr.desktop
+share/applnk/.hidden/krita_pdf.desktop
+share/applnk/.hidden/krita_png.desktop
+share/applnk/.hidden/krita_raw.desktop
+share/applnk/.hidden/krita_tiff.desktop
 share/applnk/Office/
 share/applnk/Office/KThesaurus.desktop
 share/applnk/Office/karbon.desktop
@@ -905,13 +925,6 @@ share/applnk/Office/kformula.desktop
 share/applnk/Office/koshell.desktop
 share/applnk/Office/kplato.desktop
 share/applnk/Office/kpresenter.desktop
-share/applnk/Office/krita_jpeg.desktop
-share/applnk/Office/krita_magick.desktop
-share/applnk/Office/krita_openexr.desktop
-share/applnk/Office/krita_pdf.desktop
-share/applnk/Office/krita_png.desktop
-share/applnk/Office/krita_raw.desktop
-share/applnk/Office/krita_tiff.desktop
 share/applnk/Office/kspread.desktop
 share/applnk/Office/kudesigner.desktop
 share/applnk/Office/kugar.desktop
@@ -3715,6 +3728,7 @@ share/apps/krita/profiles/PAL.icm
 share/apps/krita/profiles/SMPTE-C.icm
 share/apps/krita/profiles/WideGamut.icm
 share/apps/krita/profiles/cmyk.icm
+share/apps/krita/profiles/fogra27l.icm
 share/apps/krita/profiles/lcmslabi.icm
 share/apps/krita/profiles/lcmsxyzi.icm
 share/apps/krita/profiles/monoscnr.icm
@@ -5351,6 +5365,7 @@ share/services/kritahistogramdocker.desktop
 share/services/kritaimageenhancement.desktop
 share/services/kritaimagesize.desktop
 share/services/kritalenscorrectionfilter.desktop
+share/services/kritalevelfilter.desktop
 share/services/kritamodifyselection.desktop
 share/services/kritanoisefilter.desktop
 share/services/kritaoilpaintfilter.desktop

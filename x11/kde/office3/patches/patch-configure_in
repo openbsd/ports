@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.10 2006/10/29 22:55:57 espie Exp $
---- configure.in.orig	Sun Oct  8 01:05:47 2006
-+++ configure.in	Sat Oct 28 16:12:11 2006
+$OpenBSD: patch-configure_in,v 1.11 2006/12/03 11:00:34 espie Exp $
+--- configure.in.orig	Tue Nov  7 09:25:10 2006
++++ configure.in	Tue Nov  7 11:42:07 2006
 @@ -984,8 +984,8 @@ dnl *** Check that the paths given to co
  
      AC_MSG_CHECKING([for PostgreSQL C API libraries])
