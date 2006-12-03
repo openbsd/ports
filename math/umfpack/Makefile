@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/03 08:29:00 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/03 09:25:14 steven Exp $
 
 COMMENT=	"unsymmetric multifrontal sparse LU factorization package"
 
-VERSION=	5.0.1
-DISTNAME=	UMFPACK
-PKGNAME=	${DISTNAME:L}-${VERSION}
+VERSION=	5.0.2
+DISTNAME=	UMFPACK-${VERSION}
+PKGNAME=	umfpack-${VERSION}
 SHARED_LIBS=	umfpack	0.0
 
 CATEGORIES=	math
@@ -23,10 +23,10 @@ AMD_DIR=	math/amd
 BUILD_DEPENDS=	::${AMD_DIR}:patch
 RUN_DEPENDS=	::${AMD_DIR}
 
-MASTER_SITES=	${HOMEPAGE}/current/
-MASTER_SITES0=	${HOMEPAGE}../UFconfig/current/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} UFconfig.tar.gz:0
-DIST_SUBDIR=	${DISTNAME:L}-${VERSION}
+MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES0=	${HOMEPAGE}../UFconfig/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} UFconfig-2.3.0.tar.gz:0
+WRKDIST=	${WRKDIR}/UMFPACK
 WRKSRC=		${WRKDIST}/Source
 
 MAKE_FILE=	${FILESDIR}/Makefile
