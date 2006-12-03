@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/28 11:09:51 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/12/03 10:39:01 steven Exp $
 
 COMMENT=	"HTML widget and validation framework"
 
 DISTNAME=	HTML-Widget-1.10
-PKGNAME=	p5-${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}p1
 CATEGORIES=	www
 
 MAINTAINER=	Simon Dassow <janus@errornet.de>
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	cpan
 
 RUN_DEPENDS=	::devel/p5-Class-Accessor-Chained \
+		::devel/p5-Class-Data-Accessor \
 		::devel/p5-Date-Calc \
 		::devel/p5-Module-Pluggable-Fast \
 		::mail/p5-Email-Valid \
