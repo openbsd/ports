@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2006/11/25 16:32:35 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/12/04 11:12:15 msf Exp $
 
 COMMENT=	"converts Perl XS code into C code" 
 
 MODULES=	cpan
-DISTNAME=	ExtUtils-ParseXS-2.16
+DISTNAME=	ExtUtils-ParseXS-2.17
 CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
