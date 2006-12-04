@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/29 08:23:31 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/12/04 12:41:40 msf Exp $
 
 COMMENT= 	"check for POD errors in files"
 
 MODULES=	cpan
-DISTNAME=	Test-Pod-1.24
+DISTNAME=	Test-Pod-1.26
 CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
