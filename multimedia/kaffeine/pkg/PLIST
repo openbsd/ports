@@ -1,13 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2006/10/29 23:36:39 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2006/12/04 01:20:31 espie Exp $
 bin/kaffeine
 include/kaffeine/
 include/kaffeine/kaffeineaudioencoder.h
 include/kaffeine/kaffeinepart.h
 include/kaffeine/mrl.h
-include/kaffeine/playlistimport.h
 include/kaffeine/xine_part.h
 include/kaffeine/xine_part_iface.h
-include/kaffeine_export.h
 ${KDE}/libkaffeineoggvorbis.la
 ${KDE}/libkaffeineoggvorbis.so
 ${KDE}/libxinepart.la
@@ -15,7 +13,7 @@ ${KDE}/libxinepart.so
 lib/libkaffeineaudioencoder.la
 @lib lib/libkaffeineaudioencoder.so.${LIBkaffeineaudioencoder_VERSION}
 lib/libkaffeinepart.la
-@lib lib/libkaffeinepart.so.${LIBkaffeinepart_VERSION}
+lib/libkaffeinepart.so
 share/applications/kde/kaffeine.desktop
 share/apps/kaffeine/
 share/apps/kaffeine/dvbdata.tar.gz
@@ -25,7 +23,7 @@ share/apps/kaffeine/kaffeineui.rc
 share/apps/kaffeine/logo
 share/apps/kaffeine/logo.mpg
 share/apps/kaffeine/mms.protocol
-share/apps/kaffeine/nocover
+share/apps/kaffeine/nocover.png
 share/apps/kaffeine/pics/
 share/apps/kaffeine/pics/playing.png
 share/apps/kaffeine/rtsp.protocol
@@ -116,6 +114,7 @@ share/locale/pl/LC_MESSAGES/kaffeine.mo
 share/locale/pt/LC_MESSAGES/kaffeine.mo
 share/locale/pt_BR/LC_MESSAGES/kaffeine.mo
 share/locale/ru/LC_MESSAGES/kaffeine.mo
+share/locale/sk/LC_MESSAGES/kaffeine.mo
 share/locale/sr/LC_MESSAGES/kaffeine.mo
 share/locale/sr@Latn/LC_MESSAGES/kaffeine.mo
 share/locale/sv/LC_MESSAGES/kaffeine.mo
