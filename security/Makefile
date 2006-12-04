@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.177 2006/11/06 13:42:41 espie Exp $
+# $OpenBSD: Makefile,v 1.178 2006/12/04 17:22:03 kurt Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -70,6 +70,7 @@
      SUBDIR += nessus
      SUBDIR += nfsshell
      SUBDIR += nikto
+     SUBDIR += nss
      SUBDIR += onesixtyone
      SUBDIR += opencdk
      SUBDIR += openct
