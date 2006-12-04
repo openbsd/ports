@@ -1,0 +1,2 @@
+Carp::Assert::More is a set of wrappers around the Carp::Assert
+functions to make the habit of writing assertions even easier.
