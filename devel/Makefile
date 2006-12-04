@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.454 2006/12/04 10:25:47 msf Exp $
+# $OpenBSD: Makefile,v 1.455 2006/12/04 14:42:23 msf Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -197,6 +197,7 @@
      SUBDIR += p5-Cache-Mmap
      SUBDIR += p5-Cache-Simple-TimedExpiry
      SUBDIR += p5-Carp-Assert
+     SUBDIR += p5-Carp-Assert-More
      SUBDIR += p5-Carp-Clan
      SUBDIR += p5-Carp-Datum
      SUBDIR += p5-Catalyst-Manual
