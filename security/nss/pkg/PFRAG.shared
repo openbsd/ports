@@ -1,0 +1,7 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/12/04 17:19:54 kurt Exp $
+@lib lib/libfreebl3.so.${LIBfreebl3_VERSION}
+@lib lib/libnss3.so.${LIBnss3_VERSION}
+@lib lib/libnssckbi.so.${LIBnssckbi_VERSION}
+@lib lib/libsmime3.so.${LIBsmime3_VERSION}
+@lib lib/libsoftokn3.so.${LIBsoftokn3_VERSION}
+@lib lib/libssl3.so.${LIBssl3_VERSION}

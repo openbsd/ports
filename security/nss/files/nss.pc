@@ -1,0 +1,13 @@
+# $OpenBSD: nss.pc,v 1.1.1.1 2006/12/04 17:19:54 kurt Exp $
+
+prefix=!!PREFIX!!
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: NSS
+Description: Mozilla Network Security Services
+Version: !!VERSION!!
+Requires: nspr >= 4.6.4
+Libs: -L${libdir} -lnss3 -lsmime3 -lsoftokn3 -lssl3
+Cflags: -I${includedir}/nss
