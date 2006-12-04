@@ -1,13 +1,30 @@
-$OpenBSD: patch-lib_cgi_rb,v 1.1 2006/11/02 12:46:13 bernd Exp $
+$OpenBSD: patch-lib_cgi_rb,v 1.2 2006/12/04 13:26:51 bernd Exp $
 
 Security fix for CVE-2006-5467 from ruby CVS. Should be fixed in >1.8.5.
 
 http://rubyforge.org/pipermail/mongrel-users/2006-October/001946.html
 http://www.securityfocus.com/bid/20777/info
 
---- lib/cgi.rb.orig	Tue Oct 31 11:56:58 2006
-+++ lib/cgi.rb	Tue Oct 31 11:59:48 2006
-@@ -1018,7 +1018,7 @@ class CGI
+--- lib/cgi.rb.orig	Tue Aug 22 11:38:19 2006
++++ lib/cgi.rb	Mon Dec  4 12:25:09 2006
+@@ -967,6 +967,7 @@ class CGI
+     def read_multipart(boundary, content_length)
+       params = Hash.new([])
+       boundary = "--" + boundary
++      quoted_boundary = Regexp.quote(boundary, "n")
+       buf = ""
+       bufsize = 10 * 1024
+       boundary_end=""
+@@ -998,7 +999,7 @@ class CGI
+         end
+         body.binmode if defined? body.binmode
+ 
+-        until head and /#{boundary}(?:#{EOL}|--)/n.match(buf)
++        until head and /#{quoted_boundary}(?:#{EOL}|--)/n.match(buf)
+ 
+           if (not head) and /#{EOL}#{EOL}/n.match(buf)
+             buf = buf.sub(/\A((?:.|\n)*?#{EOL})#{EOL}/n) do
+@@ -1018,14 +1019,14 @@ class CGI
                else
                  stdinput.read(content_length)
                end
@@ -16,3 +33,11 @@ http://www.securityfocus.com/bid/20777/info
              raise EOFError, "bad content body"
            end
            buf.concat(c)
+           content_length -= c.size
+         end
+ 
+-        buf = buf.sub(/\A((?:.|\n)*?)(?:[\r\n]{1,2})?#{boundary}([\r\n]{1,2}|--)/n) do
++        buf = buf.sub(/\A((?:.|\n)*?)(?:[\r\n]{1,2})?#{quoted_boundary}([\r\n]{1,2}|--)/n) do
+           body.print $1
+           if "--" == $2
+             content_length = -1
