@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/29 08:23:31 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/04 14:24:33 msf Exp $
 
 COMMENT=	"object oriented time interface"
 
 MODULES=	cpan
-DISTNAME=	Time-modules-2003.1126
+DISTNAME=	Time-modules-2006.0814
 CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@kisoku.net>
 
-# Artistic License
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
