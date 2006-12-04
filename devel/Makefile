@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.453 2006/12/03 13:10:24 steven Exp $
+# $OpenBSD: Makefile,v 1.454 2006/12/04 10:25:47 msf Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -173,6 +173,7 @@
      SUBDIR += opencm
      SUBDIR += p5-Algorithm-Annotate
      SUBDIR += p5-Algorithm-C3
+     SUBDIR += p5-Algorithm-Dependency
      SUBDIR += p5-Algorithm-Diff
      SUBDIR += p5-Algorithm-MDiff
      SUBDIR += p5-Algorithm-MarkovChain
@@ -280,10 +281,13 @@
      SUBDIR += p5-File-Copy-Recursive
      SUBDIR += p5-File-Find-Rule
      SUBDIR += p5-File-Find-Rule-Filesys-Virtual
+     SUBDIR += p5-File-Flat
      SUBDIR += p5-File-HomeDir
      SUBDIR += p5-File-Modified
+     SUBDIR += p5-File-NCopy
      SUBDIR += p5-File-Path-Expand
      SUBDIR += p5-File-ReadBackwards
+     SUBDIR += p5-File-Remove
      SUBDIR += p5-File-ShareDir
      SUBDIR += p5-File-Slurp
      SUBDIR += p5-File-Sync
@@ -392,6 +396,7 @@
      SUBDIR += p5-Test-Base
      SUBDIR += p5-Test-Builder-Tester
      SUBDIR += p5-Test-Class
+     SUBDIR += p5-Test-ClassAPI
      SUBDIR += p5-Test-Deep
      SUBDIR += p5-Test-Differences
      SUBDIR += p5-Test-Exception
