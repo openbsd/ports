@@ -1,23 +1,20 @@
-# $OpenBSD: Makefile,v 1.4 2005/04/27 12:38:23 robert Exp $
+# $OpenBSD: Makefile,v 1.5 2006/12/04 21:49:38 steven Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"interface to the uulib library"
 
 DISTNAME=	Convert-UUlib-1.051
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	converters perl5
+PKGNAME=	p5-${DISTNAME}p0
+CATEGORIES=	converters
+MODULES=	cpan
 
 MAINTAINER=	Ibrahim Khalifa <ibo@toontown.org>
 
-# Artistic & GPL
+# Perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Convert/}
-
-CONFIGURE_STYLE= perl
 
 .include <bsd.port.mk>

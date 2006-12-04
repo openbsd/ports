@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/07/13 11:59:28 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/04 21:49:38 steven Exp $
 
 COMMENT= 	"parse and convert to JSON (JavaScript Object Notation)"
 
 DISTNAME=	JSON-1.07
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	converters perl5
-
-HOMEPAGE=	http://search.cpan.org/dist/JSON/
+PKGNAME=	p5-${DISTNAME}p0
+CATEGORIES=	converters
+MODULES=	cpan
 
 MAINTAINER=	Genadijus Paleckis <rwx@openbsd.lt>
 
-# same as perl
+# Perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -18,11 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Apache/}
 
-BUILD_DEPENDS=	:p5-libwww-*:www/p5-libwww
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
-CONFIGURE_STYLE=perl
-
-PKG_ARCH=	*
+RUN_DEPENDS=	::www/p5-libwww
 
 .include <bsd.port.mk>
