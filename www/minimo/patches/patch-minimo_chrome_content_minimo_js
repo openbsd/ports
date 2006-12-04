@@ -1,0 +1,12 @@
+$OpenBSD: patch-minimo_chrome_content_minimo_js,v 1.1 2006/12/04 09:47:54 jolan Exp $
+--- minimo/chrome/content/minimo.js.orig	Fri Nov 10 22:09:59 2006
++++ minimo/chrome/content/minimo.js	Fri Nov 24 13:20:41 2006
+@@ -2115,7 +2115,7 @@ function BrowserFileOpen() {
+   fp.init(window, null, nsIFilePicker.modeOpenMultiple);
+ 
+   var fileCustomDirFile= refLocalFile.QueryInterface(nsILocalFile);
+-  fileCustomDirFile.initWithPath("\\");
++  fileCustomDirFile.initWithPath("/");
+   fp.displayDirectory = fileCustomDirFile;
+ 
+   fp.appendFilters(nsIFilePicker.filterAll);

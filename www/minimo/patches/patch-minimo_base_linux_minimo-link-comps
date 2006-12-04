@@ -1,0 +1,11 @@
+$OpenBSD: patch-minimo_base_linux_minimo-link-comps,v 1.1 2006/12/04 09:47:54 jolan Exp $
+--- minimo/base/linux/minimo-link-comps.orig	Mon Mar 20 20:06:00 2006
++++ minimo/base/linux/minimo-link-comps	Thu Nov 23 19:04:35 2006
+@@ -26,6 +26,7 @@ xmlextras
+ softkey
+ pipboot
+ pipnss
++pippki
+ snav
+ phone
+ softkey

@@ -1,45 +1,7 @@
-$OpenBSD: patch-config_rules_mk,v 1.4 2006/01/11 00:58:56 pvalchev Exp $
---- config/rules.mk.orig	Tue Aug  2 13:26:31 2005
-+++ config/rules.mk	Sat Oct  8 18:35:46 2005
-@@ -665,7 +665,7 @@ ifdef SHARED_LIBRARY
- ifdef IS_COMPONENT
- ifdef GRE_MODULE
- ifndef DISABLE_DIST_GRE
--	$(INSTALL) $(IFLAGS2) $(SHARED_LIBRARY) $(GRE_DIST)/components
-+	$(INSTALL) $(IFLAGS1) $(SHARED_LIBRARY) $(GRE_DIST)/components
- 	$(ELF_DYNSTR_GC) $(GRE_DIST)/components/$(SHARED_LIBRARY)
- ifdef BEOS_ADDON_WORKAROUND
- 	( cd $(GRE_DIST)/components && $(CC) -nostart -o $(SHARED_LIBRARY).stub $(SHARED_LIBRARY) )
-@@ -692,7 +692,7 @@ endif # GRE_MODULE
- ifneq (,$(filter OS2 WINNT WINCE,$(OS_ARCH)))
- 	$(INSTALL) $(IFLAGS2) $(IMPORT_LIBRARY) $(DIST)/lib
- else
--	$(INSTALL) $(IFLAGS2) $(SHARED_LIBRARY) $(DIST)/lib
-+	$(INSTALL) $(IFLAGS1) $(SHARED_LIBRARY) $(DIST)/lib
- endif
- ifndef _SKIP_OLD_GRE_INSTALL
- 	$(INSTALL) $(IFLAGS2) $(SHARED_LIBRARY) $(FINAL_TARGET)
-@@ -763,15 +763,15 @@ ifndef NO_INSTALL
- ifdef SHARED_LIBRARY
- ifdef IS_COMPONENT
- ifdef MRE_DIST
--	$(SYSINSTALL) $(IFLAGS2) $(SHARED_LIBRARY) $(IMPORT_LIBRARY) $(DESTDIR)$(mredir)/components
-+	$(SYSINSTALL) $(IFLAGS1) $(SHARED_LIBRARY) $(IMPORT_LIBRARY) $(DESTDIR)$(mredir)/components
- else
--	$(SYSINSTALL) $(IFLAGS2) $(SHARED_LIBRARY) $(IMPORT_LIBRARY) $(DESTDIR)$(mozappdir)/components
-+	$(SYSINSTALL) $(IFLAGS1) $(SHARED_LIBRARY) $(IMPORT_LIBRARY) $(DESTDIR)$(mozappdir)/components
- endif
- else
- ifdef MRE_DIST
--	$(SYSINSTALL) $(IFLAGS2) $(SHARED_LIBRARY) $(IMPORT_LIBRARY) $(DESTDIR)$(mredir)
-+	$(SYSINSTALL) $(IFLAGS1) $(SHARED_LIBRARY) $(IMPORT_LIBRARY) $(DESTDIR)$(mredir)
- else
--	$(SYSINSTALL) $(IFLAGS2) $(SHARED_LIBRARY) $(IMPORT_LIBRARY) $(DESTDIR)$(mozappdir)
-+	$(SYSINSTALL) $(IFLAGS1) $(SHARED_LIBRARY) $(IMPORT_LIBRARY) $(DESTDIR)$(mozappdir)
- endif
- endif
- endif # SHARED_LIBRARY
-@@ -1041,7 +1041,6 @@ endif # NO_LD_ARCHIVE_FLAGS
+$OpenBSD: patch-config_rules_mk,v 1.5 2006/12/04 09:47:54 jolan Exp $
+--- config/rules.mk.orig	Thu Sep 14 21:07:03 2006
++++ config/rules.mk	Thu Nov 23 19:03:59 2006
+@@ -1014,7 +1014,6 @@ endif # NO_LD_ARCHIVE_FLAGS
  else # os2 vacpp
  	$(MKSHLIB) -O:$@ -DLL -INC:_dllentry $(LDFLAGS) $(OBJS) $(LOBJS) $(EXTRA_DSO_LDOPTS) $(OS_LIBS) $(EXTRA_LIBS) $(DEF_FILE)
  endif # !os2 vacpp
@@ -47,18 +9,3 @@ $OpenBSD: patch-config_rules_mk,v 1.4 2006/01/11 00:58:56 pvalchev Exp $
  ifndef NO_COMPONENT_LINK_MAP
  ifndef MOZ_COMPONENTS_VERSION_SCRIPT_LDFLAGS
  ifndef MOZ_DEBUG
-@@ -1131,6 +1130,14 @@ endif
- 	$(REPORT_BUILD)
- 	@$(MAKE_DEPS_AUTO)
- 	$(ELOG) $(CCC) $(OUTOPTION)$@ -c $(COMPILE_CXXFLAGS) $(_VPATH_SRCS)
-+
-+#
-+# Temp fix for propolice bug
-+#
-+nsPresShell.$(OBJ_SUFFIX): nsPresShell.cpp Makefile Makefile.in
-+	$(REPORT_BUILD)
-+	@$(MAKE_DEPS_AUTO)
-+	$(ELOG) $(CCC) $(OUTOPTION)$@ -c $(COMPILE_CXXFLAGS) -fno-stack-protector  $(_VPATH_SRCS)
- 
- %.$(OBJ_SUFFIX): %.cpp Makefile Makefile.in
- 	$(REPORT_BUILD)

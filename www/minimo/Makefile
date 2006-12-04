@@ -1,21 +1,14 @@
-# $OpenBSD: Makefile,v 1.24 2006/11/30 21:07:40 kurt Exp $
+# $OpenBSD: Makefile,v 1.25 2006/12/04 09:47:54 jolan Exp $
 
-ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc64 arm
+ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
 SHARED_ONLY=	Yes
 
-COMMENT=	"mini mozilla"
-DISTNAME=	minimo-20050802
-PKGNAME=	${DISTNAME}p11
-SO_VERSION=	3.0
+COMMENT=	"small, simple, and powerful web browser for mobile devices"
+DISTNAME=	minimo-20061120
+SO_VERSION=	4.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
-.for _lib in DebugRobot MyService caps chrmlite docshell editor \
-	embedcomponents gfx_gtk gkgfx gklayout gtkembedmoz gtkxtbin htmlpars \
-	i18n imglib2 jar50 jsj mork mozjs necko nsappshell nss3 nssckbi \
-	oji pipboot pipnss popuplite pref remoteservice \
-	searchservice smime3 softkey softokn3 ssl3 testdynamic txmgr uconv \
-	webbrwsr widget_gtk2 xpcom xpcom_compat xpcom_compat_c xpcom_core \
-	xpcomsample xpconnect xpctest
+.for _lib in freebl3 nssckbi softokn3 nss3 smime3 ssl3
 SHARED_LIBS+=	${_lib} ${SO_VERSION}
 .endfor
 
@@ -40,7 +33,7 @@ LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
 		png.>=3::graphics/png \
 		gdk-x11-2.0.>=600.0,gdk_pixbuf-2.0.>=600.0,gtk-x11-2.0.>=600.0::x11/gtk+2 \
 		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr
-WANTLIB=	ICE SM X11 Xext Xft Xrender Xt \
+WANTLIB=	X11 Xext Xft Xrender Xt \
 		c fontconfig freetype m pthread z \
 		atk-1.0.>=1011.0 glib-2.0.>=600.0 gmodule-2.0.>=600.0 \
 		gobject-2.0.>=600.0 pango-1.0.>=800.0 pangocairo-1.0 \
@@ -51,115 +44,101 @@ NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 USE_X11=	Yes
 VMEM_WARNING=	Yes
-SUBST_VARS=	LOCALBASE SO_VERSION
 
 WRKDIST=	${WRKDIR}/mozilla
 
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build/autoconf \
-				${WRKSRC}/directory/c-sdk/config/autoconf
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build/autoconf
 
-AUTOCONF_VERSION= 2.13
-CONFIGURE_STYLE= autoconf no-autoheader
-CONFIGURE_ARGS+=						\
-		--with-system-jpeg=${LOCALBASE}			\
-		--with-system-png=${LOCALBASE}			\
-		--with-system-zlib=/usr/lib			\
-		--with-system-nspr				\
-		--with-pthreads					\
-		--enable-optimize=-Os				\
-		--disable-pedantic				\
-		--disable-debug					\
-		--disable-v1-string-abi				\
-		--enable-default-toolkit=gtk2			\
-		--enable-xft					\
-		--disable-freetype2				\
-		--disable-xul					\
-		--disable-profilesharing			\
-		--disable-profilelocking			\
-		--enable-single-profile				\
-		--disable-extensions				\
-		--disable-accessibility				\
-		--disable-composer				\
-		--enable-plaintext-editor-only			\
-		--disable-mailnews				\
-		--disable-ldap					\
-		--disable-postscript				\
-		--disable-mathml				\
-		--disable-jsd					\
-		--disable-jsloader				\
-		--disable-installer				\
-		--disable-xpinstall				\
-		--disable-xpfe-components			\
-		--disable-xprint				\
-		--disable-necko-disk-cache			\
-		--disable-plugins				\
-		--enable-necko-small-buffers			\
-		--disable-dtd-debug				\
-		--disable-logging				\
-		--disable-tests					\
-		--enable-crypto					\
-		--enable-necko-protocols=http,file,res,jar	\
-		--enable-image-decoders=png,gif,jpeg 		\
-		--enable-application=suite
+AUTOCONF_VERSION=2.13
+CONFIGURE_STYLE=autoconf no-autoheader
+# use system libs
+CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
+		--with-system-png=${LOCALBASE}	\
+		--with-system-zlib=/usr/lib	\
+		--with-system-nspr		\
+		--with-pthreads			\
+		--disable-native-uconv
 
-FLAVORS=	debug
-FLAVOR?=
+# minimo mozconfig
+CONFIGURE_ARGS+=--enable-application=minimo	\
+		--enable-default-toolkit=gtk2	\
+		--enable-xft			\
+		--disable-freetype2		\
+		--enable-optimize=-Os		\
+		--enable-strip			\
+		--disable-debug			\
+		--disable-shared		\
+		--enable-static			\
+		--disable-plugins
+# things we dont want
+CONFIGURE_ARGS+=--disable-installer		\
+		--disable-updater		\
+		--disable-gnomeui		\
+		--disable-gnomevfs		\
+		--disable-tests			\
+		--disable-reorder
+CONFIGURE_ARGS+=--enable-crypto
 
-.if ${FLAVOR:L:Mdebug}
-CONFIGURE_ARGS+=--enable-debug --enable-optimize=-O0 --enable-tests
-INSTALL_STRIP=
-.endif
+MAKE_ENV=	MOZ_CO_PROJECT=minimo \
+		LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
+		BUILD_OFFICIAL=1 \
+		MOZILLA_OFFICIAL=1 \
+		SO_VERSION=${SO_VERSION} \
+		NSS_ENABLE_ECC=1
+CONFIGURE_ENV=	${MAKE_ENV} \
+		PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig"
 
-CONFIGURE_ENV=	PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig" \
-		MINIMO=1 \
-		SO_VERSION=${SO_VERSION}
-
-MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
-		MINIMO=1 \
-		SO_VERSION=${SO_VERSION}
-
-MOB=		${WRKSRC}/dist
+MOB=		${WRKSRC}/dist/bin
 MOZ=		${PREFIX}/minimo
 
 post-extract:
 	@cp ${FILESDIR}/xptc* ${WRKSRC}/xpcom/reflect/xptcall/src/md/unix/
 
-pre-configure:
-	@cd ${WRKSRC}/directory/c-sdk && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
-	@perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g; s|_X11BASE_|${X11BASE}|g' \
-		${WRKSRC}/xpfe/bootstrap/mozilla.in
-	@perl -pi -e 's|_SO_VERSION_|${SO_VERSION}|g' \
-		${WRKSRC}/xpcom/components/nsNativeComponentLoader.cpp
-	touch ${WRKSRC}/embedding/minimo/chrome/skin/m.jpg
-
-post-build:
-	cd ${WRKSRC}/embedding/config && ${MAKE_PROGRAM}
-	cd ${WRKSRC}/embedding/config && ${MAKE_PROGRAM} merge_xpt
-
 do-install:
-	mkdir -p ${WRKDIR}/chrome
-	${UNZIP} -jod ${WRKDIR}/chrome \
-		${WRKSRC}/dist/Embed/chrome/embed.jar
+	${INSTALL_DATA_DIR} ${MOZ}
+	@cd ${MOB} && ${TAR} -chf - *.so.${SO_VERSION} | \
+		${TAR} -xf - -C ${MOZ}
+	@chmod 444 ${MOZ}/*.so.${SO_VERSION}
+	${INSTALL_PROGRAM} ${MOB}/minimo ${MOZ}/
 	${INSTALL_DATA_DIR} ${MOZ}/chrome
-	${INSTALL_DATA} ${WRKDIR}/chrome/* ${MOZ}/chrome
-.for dir in components greprefs res
-	${INSTALL_DATA_DIR} ${MOZ}/${dir}
-	@cd ${MOB}/bin && ${TAR} -chf - ${dir} | \
-		${TAR} -xf - -C ${MOZ}
-.endfor
+	${INSTALL_DATA} ${MOB}/chrome/classic.{jar,manifest} \
+		${MOB}/chrome/en-US.{jar,manifest} \
+		${MOB}/chrome/minimo.{jar,manifest} \
+		${MOB}/chrome/minimo-skin.{jar,manifest} \
+		${MOB}/chrome/minimo-skin-vga.{jar,manifest} \
+		${MOB}/chrome/toolkit.{jar,manifest} \
+		${MOB}/chrome/pippki.{jar,manifest} ${MOZ}/chrome/
+	${INSTALL_DATA_DIR} ${MOZ}/components
+	${INSTALL_DATA} ${MOB}/components/nsHelperAppDlg.js \
+		${MOB}/components/nsProgressDialog.js \
+		${MOB}/extensions/spatial-navigation@extensions.mozilla.org/components/* \
+		${MOZ}/components/
 	${INSTALL_DATA_DIR} ${MOZ}/greprefs
-	${INSTALL_DATA} ${MOB}/bin/greprefs/* ${MOZ}/greprefs
-	${INSTALL_DATA} ${WRKSRC}/embedding/minimo/all.js \
-		${MOZ}/greprefs
-	@cd ${MOB}/bin && ${TAR} -chf - *.so.?.? | \
-		${TAR} -xf - -C ${MOZ}
-	@chmod 444 ${MOZ}/*.so.?.? ${MOZ}/components/*.so.?.? ${MOZ}/components/*.js
-	${INSTALL_PROGRAM} ${MOB}/bin/regxpcom ${MOZ}
-	${INSTALL_PROGRAM} ${MOB}/bin/Minimo ${MOZ}/minimo-bin
-	sed s,mozilla-bin,minimo-bin,g ${MOB}/bin/run-mozilla.sh > \
-		${MOB}/bin/run-minimo.sh
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${FILESDIR}/TODO ${MOZ}
-	${INSTALL_SCRIPT} ${MOB}/bin/run-minimo.sh ${MOZ}
-	${INSTALL_SCRIPT} ${FILESDIR}/minimo ${PREFIX}/bin
+	${INSTALL_DATA} ${MOB}/greprefs/* ${MOZ}/greprefs/
+	${INSTALL_DATA_DIR} ${MOZ}/res
+	@cp -fr ${MOB}/res/* ${MOZ}/res/
+	@rm -fr ${MOZ}/res/{samples,throbber,viewer.properties,viewsource.css,hiddenWindow.html,bloatcycle.html}
+	${INSTALL_DATA_DIR} ${MOZ}/plugins
+	${MOB}/xpt_link ${MOZ}/components/all.xpt ${MOB}/components/*.xpt
+	@cd ${MOZ}/chrome && \
+		${UNZIP} classic.jar && \
+		rm -rf classic.jar && \
+		rm -rf skin/classic/communicator && \
+		rm -rf skin/classic/editor && \
+		rm -rf skin/classic/messenger && \
+		rm -rf skin/classic/navigator && \
+		zip -r classic.jar skin && \
+		rm -rf skin && \
+		${UNZIP} en-US.jar && \
+		rm -rf en-US.jar && \
+		rm -rf locale/en-US/communicator && \
+		rm -rf locale/en-US/navigator && \
+		zip -r en-US.jar locale && \
+		rm -rf locale
+	@cp -f ${WRKSRC}/minimo/customization/all.js ${MOZ}/greprefs/
+	@cat ${WRKSRC}/minimo/customization/ua.css.additions >> ${MOZ}/res/ua.css
+	${INSTALL_SCRIPT} ${FILESDIR}/minimo ${PREFIX}/bin/ && \
+		perl -pi -e 's|!!LOCALBASE!!|${LOCALBASE}|g' \
+			${PREFIX}/bin/minimo
 
 .include <bsd.port.mk>

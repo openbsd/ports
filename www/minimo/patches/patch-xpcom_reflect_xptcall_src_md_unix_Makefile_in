@@ -1,7 +1,20 @@
-$OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.2 2005/07/13 04:49:56 jolan Exp $
---- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	Thu Jun 16 22:15:13 2005
-+++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	Tue Jul 12 22:06:58 2005
-@@ -128,6 +128,12 @@ CPPSRCS		:= xptcinvoke_osf1_alpha.cpp xp
+$OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.3 2006/12/04 09:47:54 jolan Exp $
+--- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	Tue Nov 14 23:09:15 2006
++++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	Sat Nov 18 21:49:17 2006
+@@ -68,6 +68,12 @@ CPPSRCS		:= xptcinvoke_unixish_x86.cpp x
+ endif
+ endif
+ #
++# OpenBSD/amd64
++#
++ifeq ($(OS_ARCH)$(OS_TEST),OpenBSDamd64)
++CPPSRCS		:= xptcinvoke_openbsd_amd64.cpp xptcstubs_openbsd_amd64.cpp
++endif
++#
+ # New code for Linux, et. al., with gcc
+ # Migrate other platforms here after testing
+ #
+@@ -129,6 +135,12 @@ CPPSRCS		:= xptcinvoke_osf1_alpha.cpp xp
  ASFILES		:= xptcinvoke_asm_osf1_alpha.s xptcstubs_asm_osf1_alpha.s
  endif
  #
@@ -14,14 +27,13 @@ $OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.2 2005/07/13 0
  # Linux/Alpha
  #
  ifneq (,$(filter Linuxalpha FreeBSDalpha NetBSDalpha,$(OS_ARCH)$(OS_TEST)))                           
-@@ -277,6 +283,15 @@ ASFILES		:= xptcinvoke_asm_ppc_netbsd.s 
+@@ -278,6 +290,14 @@ ASFILES		:= xptcinvoke_asm_ppc_netbsd.s 
  endif
  
  #
 +# OpenBSD/PPC
 +#
-+ifneq (,$(filter OpenBSDmacppc,$(OS_ARCH)$(OS_TEST)))                          
-+ 
++ifneq (,$(filter OpenBSDmacppc,$(OS_ARCH)$(OS_TEST)))                           
 +CPPSRCS		:= xptcinvoke_ppc_openbsd.cpp xptcstubs_ppc_openbsd.cpp
 +ASFILES		:= xptcinvoke_asm_ppc_openbsd.s xptcstubs_asm_ppc_openbsd.s
 +endif
@@ -30,31 +42,24 @@ $OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.2 2005/07/13 0
  # Darwin/PPC
  #
  ifeq ($(OS_ARCH),Darwin)
-@@ -348,6 +363,27 @@ endif
+@@ -349,6 +369,20 @@ endif
  endif
  
  endif
 +endif
-+
 +#
 +# OpenBSD/SPARC
 +#
 +ifeq ($(OS_ARCH)$(OS_TEST),OpenBSDsparc)
-+CPPSRCS                := xptcinvoke_sparc_netbsd.cpp xptcstubs_sparc_netbsd.cpp
-+ASFILES                := xptcinvoke_asm_sparc_netbsd.s xptcstubs_asm_sparc_netbsd.s
++CPPSRCS		:= xptcinvoke_sparc_netbsd.cpp xptcstubs_sparc_netbsd.cpp
++ASFILES		:= xptcinvoke_asm_sparc_netbsd.s xptcstubs_asm_sparc_netbsd.s
 +endif
 +#   
 +# OpenBSD/SPARC64
 +#   
 +ifeq ($(OS_ARCH)$(OS_TEST),OpenBSDsparc64)
-+CPPSRCS                := xptcinvoke_sparc64_openbsd.cpp xptcstubs_sparc64_openbsd.cpp
-+ASFILES                := xptcinvoke_asm_sparc64_openbsd.s xptcstubs_asm_sparcv9_solaris.s
-+endif
-+#
-+# OpenBSD/amd64
-+#
-+ifeq ($(OS_ARCH)$(OS_TEST),OpenBSDamd64)
-+CPPSRCS                := xptcinvoke_openbsd_amd64.cpp xptcstubs_openbsd_amd64.cpp
++CPPSRCS		:= xptcinvoke_sparc64_openbsd.cpp xptcstubs_sparc64_openbsd.cpp
++ASFILES		:= xptcinvoke_asm_sparc64_openbsd.s xptcstubs_asm_sparcv9_solaris.s
  endif
  
  ######################################################################

@@ -1,7 +1,7 @@
-$OpenBSD: patch-gfx_src_ps_nsFontMetricsPS_cpp,v 1.1.1.1 2005/05/25 06:59:10 jolan Exp $
---- gfx/src/ps/nsFontMetricsPS.cpp.orig	Thu Apr 28 03:04:00 2005
-+++ gfx/src/ps/nsFontMetricsPS.cpp	Wed May 18 03:14:27 2005
-@@ -1859,10 +1859,10 @@ nsFontPSFreeType::Init(nsITrueTypeFontCa
+$OpenBSD: patch-gfx_src_ps_nsFontMetricsPS_cpp,v 1.2 2006/12/04 09:47:54 jolan Exp $
+--- gfx/src/ps/nsFontMetricsPS.cpp.orig	Wed Nov  8 22:05:03 2006
++++ gfx/src/ps/nsFontMetricsPS.cpp	Thu Nov 23 19:03:59 2006
+@@ -1865,10 +1865,10 @@ nsFontPSFreeType::Init(nsITrueTypeFontCa
    
    mPixelSize = NSToIntRound(app2dev * mFont->size);
  
@@ -16,7 +16,7 @@ $OpenBSD: patch-gfx_src_ps_nsFontMetricsPS_cpp,v 1.1.1.1 2005/05/25 06:59:10 jol
  
    nsresult rv;
    mFt2 = do_GetService(NS_FREETYPE2_CONTRACTID, &rv);
-@@ -1896,7 +1896,7 @@ nsFontPSFreeType::GetWidth(const PRUnich
+@@ -1902,7 +1902,7 @@ nsFontPSFreeType::GetWidth(const PRUnich
    if (!face)
      return 0;
  
@@ -25,7 +25,7 @@ $OpenBSD: patch-gfx_src_ps_nsFontMetricsPS_cpp,v 1.1.1.1 2005/05/25 06:59:10 jol
    nsresult rv = mFt2->GetImageCache(&iCache);
    if (NS_FAILED(rv)) {
      NS_ERROR("Failed to get Image Cache");
-@@ -1934,8 +1934,8 @@ nsFontPSFreeType::getFTFace()
+@@ -1940,8 +1940,8 @@ nsFontPSFreeType::getFTFace()
    
    FTC_Manager cManager;
    mFt2->GetFTCacheManager(&cManager);
@@ -36,7 +36,7 @@ $OpenBSD: patch-gfx_src_ps_nsFontMetricsPS_cpp,v 1.1.1.1 2005/05/25 06:59:10 jol
    NS_ASSERTION(rv==0, "failed to get face/size");
    if (rv)
      return nsnull;
-@@ -2379,16 +2379,16 @@ void nsFT2Type1Generator::GeneratePSFont
+@@ -2387,16 +2387,16 @@ void nsFT2Type1Generator::GeneratePSFont
    mEntry->GetFamilyName(fontName);
    mEntry->GetStyleName(styleName);
    

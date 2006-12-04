@@ -1,0 +1,10 @@
+$OpenBSD: patch-minimo_base_linux_minimo-link-names,v 1.1 2006/12/04 09:47:54 jolan Exp $
+--- minimo/base/linux/minimo-link-names.orig	Mon Mar 20 20:06:00 2006
++++ minimo/base/linux/minimo-link-names	Thu Nov 23 19:04:59 2006
+@@ -32,3 +32,6 @@ SSRModule
+ nsCookieModule
+ nsPermissionsModule
+ DeviceSupportModule
++BOOT
++NSS
++PKI

@@ -1,378 +1,40 @@
-@comment $OpenBSD: PLIST,v 1.7 2006/11/17 19:03:14 kurt Exp $
+@comment $OpenBSD: PLIST,v 1.8 2006/12/04 09:47:54 jolan Exp $
 bin/minimo
 minimo/
-minimo/LICENSE
-minimo/TODO
 minimo/chrome/
-minimo/chrome/HtmlForm.properties
-minimo/chrome/MPL-1.1.html
-minimo/chrome/MediaDocument.properties
-minimo/chrome/NPL-1.1.html
-minimo/chrome/XMLMonoPrint.css
-minimo/chrome/XMLPrettyPrint.css
-minimo/chrome/XMLPrettyPrint.xml
-minimo/chrome/XMLPrettyPrint.xsl
-minimo/chrome/XPCNativeWrapper.js
-minimo/chrome/about.dtd
-minimo/chrome/about.xhtml
-minimo/chrome/about.xul
-minimo/chrome/aboutAbout.html
-minimo/chrome/accept2locale.properties
-minimo/chrome/accessible.properties
-minimo/chrome/alert-error.gif
-minimo/chrome/alert-exclam.gif
-minimo/chrome/alert-message.gif
-minimo/chrome/alert-question.gif
-minimo/chrome/appstrings.properties
-minimo/chrome/arrow-dn-dis.gif
-minimo/chrome/arrow-dn-hov.gif
-minimo/chrome/arrow-dn-sharp.gif
-minimo/chrome/arrow-dn.gif
-minimo/chrome/arrow-lft-dis.gif
-minimo/chrome/arrow-lft-hov.gif
-minimo/chrome/arrow-lft-sharp-end.gif
-minimo/chrome/arrow-lft-sharp.gif
-minimo/chrome/arrow-lft.gif
-minimo/chrome/arrow-rit-dis.gif
-minimo/chrome/arrow-rit-hov.gif
-minimo/chrome/arrow-rit-sharp-end.gif
-minimo/chrome/arrow-rit-sharp.gif
-minimo/chrome/arrow-rit.gif
-minimo/chrome/arrow-up-dis.gif
-minimo/chrome/arrow-up-hov.gif
-minimo/chrome/arrow-up-sharp.gif
-minimo/chrome/arrow-up.gif
-minimo/chrome/autocomplete.css
-minimo/chrome/brand.dtd
-minimo/chrome/browser.css
-minimo/chrome/browser.xml
-minimo/chrome/build.dtd
-minimo/chrome/buildconfig.html
-minimo/chrome/builtinURLs.rdf
-minimo/chrome/button.css
-minimo/chrome/button.xml
-minimo/chrome/caps.properties
-minimo/chrome/charsetOverlay.dtd
-minimo/chrome/charsetOverlay.js
-minimo/chrome/charsetOverlay.xul
-minimo/chrome/charsetTitles.properties
-minimo/chrome/checkbox.css
-minimo/chrome/checkbox.xml
-minimo/chrome/close-button.gif
-minimo/chrome/colorpicker.css
-minimo/chrome/colorpicker.xml
-minimo/chrome/commonDialog.dtd
-minimo/chrome/commonDialog.js
-minimo/chrome/commonDialog.xul
-minimo/chrome/commonDialogs.properties
-minimo/chrome/config.css
-minimo/chrome/config.dtd
-minimo/chrome/config.js
-minimo/chrome/config.properties
-minimo/chrome/config.xul
-minimo/chrome/console.css
-minimo/chrome/contents.rdf
-minimo/chrome/css.properties
-minimo/chrome/dialog.css
-minimo/chrome/dialog.properties
-minimo/chrome/dialog.xml
-minimo/chrome/dialogOverlay.dtd
-minimo/chrome/dialogOverlay.js
-minimo/chrome/dialogOverlay.xul
-minimo/chrome/dom.properties
-minimo/chrome/editor.xml
-minimo/chrome/filepicker.css
-minimo/chrome/fontpackage.dtd
-minimo/chrome/fontpackage.js
-minimo/chrome/fontpackage.properties
-minimo/chrome/fontpackage.xul
-minimo/chrome/formatting.css
-minimo/chrome/fullScreen.js
-minimo/chrome/general.xml
-minimo/chrome/global-strres.properties
-minimo/chrome/global.css
-minimo/chrome/global.dtd
-minimo/chrome/globalBindings.xml
-minimo/chrome/globalOverlay.js
-minimo/chrome/globalOverlay.xul
-minimo/chrome/groupbox.css
-minimo/chrome/groupbox.xml
-minimo/chrome/hiddenWindow.xul
-minimo/chrome/intl.css
-minimo/chrome/keys.properties
-minimo/chrome/languageNames.properties
-minimo/chrome/layout_errors.properties
-minimo/chrome/linkToolbar.dtd
-minimo/chrome/linkTree.css
-minimo/chrome/listbox.css
-minimo/chrome/listbox.xml
-minimo/chrome/logo.gif
-minimo/chrome/mailNavigatorOverlay.dtd
-minimo/chrome/menu.css
-minimo/chrome/menu.xml
-minimo/chrome/menulist.css
-minimo/chrome/menulist.xml
-minimo/chrome/metadata.dtd
-minimo/chrome/metadata.properties
-minimo/chrome/mozilla.xhtml
-minimo/chrome/nativescrollbar.xml
-minimo/chrome/navigator.dtd
-minimo/chrome/navigator.properties
-minimo/chrome/necko.properties
-minimo/chrome/netError.css
-minimo/chrome/netError.dtd
-minimo/chrome/netError.xhtml
-minimo/chrome/nsClipboard.js
-minimo/chrome/nsDragAndDrop.js
-minimo/chrome/nsHelperAppDlg.dtd
-minimo/chrome/nsHelperAppDlg.properties
-minimo/chrome/nsHelperAppDlg.xul
-minimo/chrome/nsProgressDialog.dtd
-minimo/chrome/nsProgressDialog.properties
-minimo/chrome/nsProgressDialog.xul
-minimo/chrome/nsTransferable.js
-minimo/chrome/nsTreeController.js
-minimo/chrome/nsTreeSorting.js
-minimo/chrome/nsTreeSorting.properties
-minimo/chrome/nsUserSettings.js
-minimo/chrome/nsWebBrowserPersist.properties
-minimo/chrome/nsWidgetStateManager.js
-minimo/chrome/pageInfo.dtd
-minimo/chrome/pageInfo.properties
-minimo/chrome/pg-landscape-small.gif
-minimo/chrome/pg-landscape.gif
-minimo/chrome/pg-portrait-small.gif
-minimo/chrome/pg-portrait.gif
-minimo/chrome/pipnss.properties
-minimo/chrome/platformDialogOverlay.dtd
-minimo/chrome/platformDialogOverlay.xul
-minimo/chrome/platformHTMLBindings.xml
-minimo/chrome/platformKeys.properties
-minimo/chrome/platformNavigationBindings.dtd
-minimo/chrome/platformXUL.css
-minimo/chrome/plugins.css
-minimo/chrome/plugins.html
-minimo/chrome/plugins.properties
-minimo/chrome/popup.css
-minimo/chrome/popup.xml
-minimo/chrome/prettyprint.dtd
-minimo/chrome/preview.gif
-minimo/chrome/printPageSetup.dtd
-minimo/chrome/printPageSetup.js
-minimo/chrome/printPageSetup.properties
-minimo/chrome/printPageSetup.xul
-minimo/chrome/printPreviewProgress.dtd
-minimo/chrome/printPreviewProgress.js
-minimo/chrome/printPreviewProgress.xul
-minimo/chrome/printProgress.dtd
-minimo/chrome/printProgress.js
-minimo/chrome/printProgress.xul
-minimo/chrome/printdialog.dtd
-minimo/chrome/printdialog.js
-minimo/chrome/printdialog.properties
-minimo/chrome/printdialog.xul
-minimo/chrome/printing.css
-minimo/chrome/printing.properties
-minimo/chrome/printjoboptions.dtd
-minimo/chrome/printjoboptions.js
-minimo/chrome/printjoboptions.xul
-minimo/chrome/progressmeter.css
-minimo/chrome/progressmeter.xml
-minimo/chrome/radio.css
-minimo/chrome/radio.xml
-minimo/chrome/region.dtd
-minimo/chrome/region.properties
-minimo/chrome/regionNames.properties
-minimo/chrome/scrollbar.xml
-minimo/chrome/scrollbars.css
-minimo/chrome/scrollbox.css
-minimo/chrome/scrollbox.xml
-minimo/chrome/security.properties
-minimo/chrome/selectDialog.js
-minimo/chrome/selectDialog.xul
-minimo/chrome/slider.gif
-minimo/chrome/spinbuttons.css
-minimo/chrome/spinbuttons.xml
-minimo/chrome/splitter.css
-minimo/chrome/splitter.xml
-minimo/chrome/stringbundle.xml
-minimo/chrome/strres.js
-minimo/chrome/svg.properties
-minimo/chrome/tab-new.gif
-minimo/chrome/tabbox.css
-minimo/chrome/tabbox.xml
-minimo/chrome/tabbrowser.dtd
-minimo/chrome/tabbrowser.properties
-minimo/chrome/tabbrowser.xml
-minimo/chrome/text.xml
-minimo/chrome/textbox.css
-minimo/chrome/textbox.xml
-minimo/chrome/textcontext.dtd
-minimo/chrome/toolbar.css
-minimo/chrome/toolbar.xml
-minimo/chrome/toolbarbutton.css
-minimo/chrome/toolbarbutton.xml
-minimo/chrome/tree.css
-minimo/chrome/tree.dtd
-minimo/chrome/tree.xml
-minimo/chrome/turboDialog.dtd
-minimo/chrome/turboMenu.properties
-minimo/chrome/viewSource.dtd
-minimo/chrome/viewSource.properties
-minimo/chrome/wizard.css
-minimo/chrome/wizard.properties
-minimo/chrome/wizard.xml
-minimo/chrome/xbl-marquee.css
-minimo/chrome/xbl-marquee.xml
-minimo/chrome/xbl.properties
-minimo/chrome/xmlparser.properties
-minimo/chrome/xslt.properties
-minimo/chrome/xul.css
-minimo/chrome/xul.properties
+minimo/chrome/classic.jar
+minimo/chrome/classic.manifest
+minimo/chrome/en-US.jar
+minimo/chrome/en-US.manifest
+minimo/chrome/minimo-skin-vga.jar
+minimo/chrome/minimo-skin-vga.manifest
+minimo/chrome/minimo-skin.jar
+minimo/chrome/minimo-skin.manifest
+minimo/chrome/minimo.jar
+minimo/chrome/minimo.manifest
+minimo/chrome/pippki.jar
+minimo/chrome/pippki.manifest
+minimo/chrome/toolkit.jar
+minimo/chrome/toolkit.manifest
 minimo/components/
-minimo/components/appshell.xpt
-minimo/components/caps.xpt
-minimo/components/chardet.xpt
-minimo/components/commandhandler.xpt
-minimo/components/composer.xpt
-minimo/components/content_base.xpt
-minimo/components/content_html.xpt
-minimo/components/content_htmldoc.xpt
-minimo/components/content_xmldoc.xpt
-minimo/components/content_xslt.xpt
-minimo/components/content_xtf.xpt
-minimo/components/docshell.xpt
-minimo/components/dom.xpt
-minimo/components/dom_base.xpt
-minimo/components/dom_canvas.xpt
-minimo/components/dom_core.xpt
-minimo/components/dom_css.xpt
-minimo/components/dom_events.xpt
-minimo/components/dom_html.xpt
-minimo/components/dom_loadsave.xpt
-minimo/components/dom_range.xpt
-minimo/components/dom_stylesheets.xpt
-minimo/components/dom_traversal.xpt
-minimo/components/dom_views.xpt
-minimo/components/dom_xbl.xpt
-minimo/components/dom_xpath.xpt
-minimo/components/dom_xul.xpt
-minimo/components/editor.xpt
-minimo/components/embed_base.xpt
-minimo/components/exthandler.xpt
-minimo/components/find.xpt
-minimo/components/gfx.xpt
-minimo/components/htmlparser.xpt
-minimo/components/imglib2.xpt
-minimo/components/intl.xpt
-minimo/components/jar.xpt
-minimo/components/jsconsole.xpt
-minimo/components/layout_base.xpt
-minimo/components/layout_printing.xpt
-minimo/components/layout_xul.xpt
-@lib minimo/components/libcaps.so.${LIBcaps_VERSION}
-@lib minimo/components/libchrmlite.so.${LIBchrmlite_VERSION}
-@lib minimo/components/libdocshell.so.${LIBdocshell_VERSION}
-@lib minimo/components/libeditor.so.${LIBeditor_VERSION}
-@lib minimo/components/libembedcomponents.so.${LIBembedcomponents_VERSION}
-@lib minimo/components/libgfx_gtk.so.${LIBgfx_gtk_VERSION}
-@lib minimo/components/libgklayout.so.${LIBgklayout_VERSION}
-@lib minimo/components/libhtmlpars.so.${LIBhtmlpars_VERSION}
-@lib minimo/components/libi18n.so.${LIBi18n_VERSION}
-@lib minimo/components/libimglib2.so.${LIBimglib2_VERSION}
-@lib minimo/components/libjar50.so.${LIBjar50_VERSION}
-@lib minimo/components/libmork.so.${LIBmork_VERSION}
-@lib minimo/components/libnecko.so.${LIBnecko_VERSION}
-@lib minimo/components/libnsappshell.so.${LIBnsappshell_VERSION}
-@lib minimo/components/liboji.so.${LIBoji_VERSION}
-@lib minimo/components/libpipboot.so.${LIBpipboot_VERSION}
-@lib minimo/components/libpipnss.so.${LIBpipnss_VERSION}
-@lib minimo/components/libpopuplite.so.${LIBpopuplite_VERSION}
-@lib minimo/components/libpref.so.${LIBpref_VERSION}
-@lib minimo/components/libremoteservice.so.${LIBremoteservice_VERSION}
-@lib minimo/components/libsearchservice.so.${LIBsearchservice_VERSION}
-@lib minimo/components/libsoftkey.so.${LIBsoftkey_VERSION}
-@lib minimo/components/libtxmgr.so.${LIBtxmgr_VERSION}
-@lib minimo/components/libuconv.so.${LIBuconv_VERSION}
-@lib minimo/components/libwebbrwsr.so.${LIBwebbrwsr_VERSION}
-@lib minimo/components/libwidget_gtk2.so.${LIBwidget_gtk2_VERSION}
-@lib minimo/components/libxpcom_compat_c.so.${LIBxpcom_compat_c_VERSION}
-@lib minimo/components/libxpconnect.so.${LIBxpconnect_VERSION}
-minimo/components/locale.xpt
-minimo/components/lwbrk.xpt
-minimo/components/mimetype.xpt
-minimo/components/mozbrwsr.xpt
-minimo/components/necko.xpt
-minimo/components/necko_about.xpt
-minimo/components/necko_cache.xpt
-minimo/components/necko_cookie.xpt
-minimo/components/necko_data.xpt
-minimo/components/necko_dns.xpt
-minimo/components/necko_file.xpt
-minimo/components/necko_ftp.xpt
-minimo/components/necko_http.xpt
-minimo/components/necko_res.xpt
-minimo/components/necko_socket.xpt
-minimo/components/necko_strconv.xpt
-minimo/components/necko_viewsource.xpt
+minimo/components/all.xpt
 minimo/components/nsHelperAppDlg.js
 minimo/components/nsProgressDialog.js
-minimo/components/nsProxyAutoConfig.js
-minimo/components/oji.xpt
-minimo/components/pipboot.xpt
-minimo/components/pipnss.xpt
-minimo/components/pref.xpt
-minimo/components/prefetch.xpt
-minimo/components/profile.xpt
-minimo/components/progressDlg.xpt
-minimo/components/proxyObjInst.xpt
-minimo/components/rdf.xpt
-minimo/components/search.xpt
-minimo/components/shistory.xpt
-minimo/components/toolkitremote.xpt
-minimo/components/txmgr.xpt
-minimo/components/txtsvc.xpt
-minimo/components/uconv.xpt
-minimo/components/unicharutil.xpt
-minimo/components/uriloader.xpt
-minimo/components/webBrowser_core.xpt
-minimo/components/webbrowserpersist.xpt
-minimo/components/webshell_idls.xpt
-minimo/components/widget.xpt
-minimo/components/windowwatcher.xpt
-minimo/components/xpcom_base.xpt
-minimo/components/xpcom_components.xpt
-minimo/components/xpcom_ds.xpt
-minimo/components/xpcom_io.xpt
-minimo/components/xpcom_obsolete.xpt
-minimo/components/xpcom_threads.xpt
-minimo/components/xpcom_xpti.xpt
-minimo/components/xpconnect.xpt
-minimo/components/xulappinfo.js
-minimo/components/xulappinfo.xpt
-minimo/components/xuldoc.xpt
+minimo/components/snav.xpt
 minimo/greprefs/
 minimo/greprefs/all.js
 minimo/greprefs/security-prefs.js
-@lib minimo/libgkgfx.so.${LIBgkgfx_VERSION}
-@lib minimo/libgtkembedmoz.so.${LIBgtkembedmoz_VERSION}
-@lib minimo/libgtkxtbin.so.${LIBgtkxtbin_VERSION}
-@lib minimo/libjsj.so.${LIBjsj_VERSION}
-@lib minimo/libmozjs.so.${LIBmozjs_VERSION}
+@lib minimo/libfreebl3.so.${LIBfreebl3_VERSION}
 @lib minimo/libnss3.so.${LIBnss3_VERSION}
 @lib minimo/libnssckbi.so.${LIBnssckbi_VERSION}
 @lib minimo/libsmime3.so.${LIBsmime3_VERSION}
 @lib minimo/libsoftokn3.so.${LIBsoftokn3_VERSION}
 @lib minimo/libssl3.so.${LIBssl3_VERSION}
-@lib minimo/libxpcom.so.${LIBxpcom_VERSION}
-@lib minimo/libxpcom_compat.so.${LIBxpcom_compat_VERSION}
-@lib minimo/libxpcom_core.so.${LIBxpcom_core_VERSION}
-minimo/minimo-bin
-minimo/regxpcom
+minimo/minimo
+minimo/plugins/
 minimo/res/
 minimo/res/arrow.gif
 minimo/res/arrowd.gif
-minimo/res/bloatcycle.html
 minimo/res/broken-image.gif
 minimo/res/charsetData.properties
 minimo/res/charsetalias.properties
@@ -388,7 +50,6 @@ minimo/res/fonts/
 minimo/res/fonts/fontEncoding.properties
 minimo/res/fonts/pangoFontEncoding.properties
 minimo/res/forms.css
-minimo/res/hiddenWindow.html
 minimo/res/html/
 minimo/res/html.css
 minimo/res/html/gopher-audio.gif
@@ -405,116 +66,7 @@ minimo/res/langGroups.properties
 minimo/res/language.properties
 minimo/res/loading-image.gif
 minimo/res/quirk.css
-minimo/res/samples/
-minimo/res/samples/Anieyes.gif
-minimo/res/samples/aform.css
-minimo/res/samples/beeptest.html
-minimo/res/samples/bform.css
-minimo/res/samples/bg.jpg
-minimo/res/samples/cform.css
-minimo/res/samples/checkboxTest.xul
-minimo/res/samples/colorpicker.xul
-minimo/res/samples/demoform.css
-minimo/res/samples/dexopenchrome.xul
-minimo/res/samples/dexparamdialog.html
-minimo/res/samples/dexparamdialog.xul
-minimo/res/samples/find.html
-minimo/res/samples/gear1.gif
-minimo/res/samples/hidetoolicon.css
-minimo/res/samples/hidetoolicon.xul
-minimo/res/samples/image_props.html
-minimo/res/samples/mozform.css
-minimo/res/samples/printsetup.html
-minimo/res/samples/raptor.jpg
-minimo/res/samples/rock_gra.gif
-minimo/res/samples/sampleimages/
-minimo/res/samples/sampleimages/bongo.gif
-minimo/res/samples/sampleimages/down.gif
-minimo/res/samples/sampleimages/left.gif
-minimo/res/samples/sampleimages/right.gif
-minimo/res/samples/sampleimages/up.gif
-minimo/res/samples/scrollbarTest1.xul
-minimo/res/samples/scrollbarTest2.xul
-minimo/res/samples/sliderTest1.xul
-minimo/res/samples/soundtest.html
-minimo/res/samples/tab.xul
-minimo/res/samples/test.wav
-minimo/res/samples/test0.html
-minimo/res/samples/test1.html
-minimo/res/samples/test10.html
-minimo/res/samples/test11.html
-minimo/res/samples/test12.html
-minimo/res/samples/test13.html
-minimo/res/samples/test14.html
-minimo/res/samples/test15.html
-minimo/res/samples/test16.html
-minimo/res/samples/test2.html
-minimo/res/samples/test3.html
-minimo/res/samples/test4.html
-minimo/res/samples/test5.html
-minimo/res/samples/test6.html
-minimo/res/samples/test7.html
-minimo/res/samples/test8-1.html
-minimo/res/samples/test8.html
-minimo/res/samples/test8dom.html
-minimo/res/samples/test8sca.html
-minimo/res/samples/test8siz.html
-minimo/res/samples/test8tab.html
-minimo/res/samples/test9.html
-minimo/res/samples/test9a.html
-minimo/res/samples/test9b.html
-minimo/res/samples/test_ed.html
-minimo/res/samples/test_form.html
-minimo/res/samples/test_gfx.html
-minimo/res/samples/test_lbox.html
-minimo/res/samples/test_pr.html
-minimo/res/samples/test_weight.html
-minimo/res/samples/toolbarTest1.xul
-minimo/res/samples/treeTest1.css
-minimo/res/samples/treeTest1.xul
-minimo/res/samples/widgets.xul
-minimo/res/samples/xpmenu.xul
-minimo/res/samples/xulTest.css
-minimo/res/throbber/
-minimo/res/throbber/anim.gif
-minimo/res/throbber/anims00.gif
-minimo/res/throbber/anims01.gif
-minimo/res/throbber/anims02.gif
-minimo/res/throbber/anims03.gif
-minimo/res/throbber/anims04.gif
-minimo/res/throbber/anims05.gif
-minimo/res/throbber/anims06.gif
-minimo/res/throbber/anims07.gif
-minimo/res/throbber/anims08.gif
-minimo/res/throbber/anims09.gif
-minimo/res/throbber/anims10.gif
-minimo/res/throbber/anims11.gif
-minimo/res/throbber/anims12.gif
-minimo/res/throbber/anims13.gif
-minimo/res/throbber/anims14.gif
-minimo/res/throbber/anims15.gif
-minimo/res/throbber/anims16.gif
-minimo/res/throbber/anims17.gif
-minimo/res/throbber/anims18.gif
-minimo/res/throbber/anims19.gif
-minimo/res/throbber/anims20.gif
-minimo/res/throbber/anims21.gif
-minimo/res/throbber/anims22.gif
-minimo/res/throbber/anims23.gif
-minimo/res/throbber/anims24.gif
-minimo/res/throbber/anims25.gif
-minimo/res/throbber/anims26.gif
-minimo/res/throbber/anims27.gif
-minimo/res/throbber/anims28.gif
-minimo/res/throbber/anims29.gif
+minimo/res/sites.css
+minimo/res/smallScreen.css
 minimo/res/ua.css
 minimo/res/unixcharset.properties
-minimo/res/viewer.properties
-minimo/res/viewsource.css
-minimo/run-minimo.sh
-%%debug%%
-@cwd ${LOCALBASE}/minimo
-@exec cd %D && env HOME=/tmp LD_LIBRARY_PATH=%D ./regxpcom
-@exec rm -rf /tmp/.mozilla
-@unexec rm -f %D/components/compreg.dat
-@unexec rm -f %D/components/xpti.dat
