@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/04/13 00:19:20 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/12/04 14:18:13 msf Exp $
+${P5SITE}/Test/
 ${P5SITE}/Test/LongString.pm
 @man man/man3p/Test::LongString.3p
