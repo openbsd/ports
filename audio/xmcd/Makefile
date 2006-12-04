@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2006/11/13 10:08:12 steven Exp $
+# $OpenBSD: Makefile,v 1.27 2006/12/04 17:08:42 steven Exp $
 
 COMMENT=	"Motif CD player"
 
-PKGNAME=	${DISTNAME}p1
 DISTNAME=	xmcd-2.6
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	audio
 HOMEPAGE=	http://metalab.unc.edu/tkan/xmcd/
 
