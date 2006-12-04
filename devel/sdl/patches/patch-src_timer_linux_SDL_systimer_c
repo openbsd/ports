@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_timer_linux_SDL_systimer_c,v 1.3 2006/12/04 03:52:08 jolan Exp $
+--- src/timer/linux/SDL_systimer.c.orig	Sun Jan  4 10:49:19 2004
++++ src/timer/linux/SDL_systimer.c	Mon Nov 27 10:42:12 2006
+@@ -55,7 +55,7 @@ static char rcsid =
+ /* Linux select() changes its timeout parameter upon return to contain
+    the remaining time. Most other unixen leave it unchanged or undefined. */
+ #define SELECT_SETS_REMAINING
+-#elif defined(__bsdi__) || defined(__FreeBSD__) || defined(__sun)
++#elif defined(__bsdi__) || defined(__FreeBSD__) || defined(__sun) || defined(__OpenBSD__)
+ #define USE_NANOSLEEP
+ #endif
+ 
