@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/04 17:27:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/04 18:22:00 jasper Exp $
 
 COMMENT=	"graphical front-end to the diff program"
 
@@ -23,6 +23,7 @@ RUN_DEPENDS=	:tk-8.4.*:x11/tk/8.4
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+USE_X11=	Yes
 
 do-configure:
 	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},' ${WRKSRC}/tkdiff
