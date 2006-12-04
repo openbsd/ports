@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2006/12/04 17:08:42 steven Exp $
+# $OpenBSD: Makefile,v 1.28 2006/12/04 21:37:21 steven Exp $
 
 COMMENT=	"Motif CD player"
 
 DISTNAME=	xmcd-2.6
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	audio
 HOMEPAGE=	http://metalab.unc.edu/tkan/xmcd/
 
@@ -31,6 +31,7 @@ do-install:
 	    sh install.sh -n -b
 
 post-install:
+	chmod u-s ${PREFIX}/libexec/xmcd/*
 	mv ${XMCDLIB}/docs ${PREFIX}/share/doc/xmcd
 	cd ${XMCDLIB}; ln -s ../doc/xmcd docs
 	mv ${XMCDLIB}/config/.tbl ${XMCDLIB}/tbl
