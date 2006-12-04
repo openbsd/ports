@@ -1,0 +1,4 @@
+TkDiff is a graphical front end to the diff program. It provides a
+side-by-side view of the differences between two files, along with
+several innovative features such as diff bookmarks and a graphical map
+of differences for quick navigation.
