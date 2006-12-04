@@ -1,0 +1,16 @@
+$OpenBSD: patch-kfile-plugins_jpeg_exif_h,v 1.1 2006/12/04 13:44:04 bernd Exp $
+
+http://www.kde.org/info/security/advisory-20061129-1.txt
+
+--- kfile-plugins/jpeg/exif.h.orig	Sat Sep 10 10:19:24 2005
++++ kfile-plugins/jpeg/exif.h	Mon Dec  4 12:58:54 2006
+@@ -72,7 +72,8 @@ class ExifData {
+     int Get32s(void * Long);
+     unsigned Get32u(void * Long);
+     double ConvertAnyFormat(void * ValuePtr, int Format);
+-    void ProcessExifDir(unsigned char * DirStart, unsigned char * OffsetBase, unsigned ExifLength);
++    void ProcessExifDir(unsigned char * DirStart, unsigned char * OffsetBase, unsigned ExifLength,
++            unsigned NestingLevel);
+     void process_COM (const uchar * Data, int length);
+     void process_SOFn (const uchar * Data, int marker);
+     int Get16m(const void * Short);
