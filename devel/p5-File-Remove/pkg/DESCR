@@ -1,0 +1,2 @@
+File::Remove::remove removes files and directories. It acts like
+/bin/rm, for the most part.
