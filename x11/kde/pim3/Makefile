@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2006/11/20 08:07:41 steven Exp $
+# $OpenBSD: Makefile,v 1.40 2006/12/04 20:53:05 espie Exp $
 
 COMMENT= 		"KDE personal information applications"
 COMMENT-kpilot=		"KDE interface to sync with Palm Pilot"
@@ -77,7 +77,6 @@ LIB_DEPENDS+=	gpgme:gpgme->=0.4.5:security/gpgme \
 
 #MULTI_PACKAGES=-kpilot
 FULLPKGNAME-kpilot = kpilot-${VERSION}p0
-SUBPACKAGE?=
 
 #.if !defined(PACKAGING) || ${SUBPACKAGE} == "-kpilot"
 #LIB_DEPENDS+=	pisock::comms/pilot-link
