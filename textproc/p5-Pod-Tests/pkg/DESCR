@@ -1,0 +1,3 @@
+This is a specialized POD viewer to extract embedded tests and code
+examples from POD. It doesn't do much more than that. pod2test does the
+useful work.
