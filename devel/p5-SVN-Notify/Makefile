@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/11/29 08:23:30 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/12/05 06:37:55 msf Exp $
 
 COMMENT=	"subversion activity notification"
 
@@ -9,7 +9,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
-# Artistic
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
