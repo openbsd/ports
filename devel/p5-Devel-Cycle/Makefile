@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2006/11/25 16:32:34 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/12/05 06:14:17 msf Exp $
 
 COMMENT= 	"find memory cycles in objects"
 
 MODULES=	cpan
-DISTNAME=	Devel-Cycle-1.04
+
+DISTNAME=	Devel-Cycle-1.07
 CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
