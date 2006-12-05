@@ -1,4 +1,4 @@
-The multibyte character encoding support is disable by default.
-To enable this features, please edit the file:
+The multibyte character encoding support is disabled by default.
+To enable this feature, please edit the file:
 
 ${PREFIX}/lib/X11/app-defaults/Rxvt

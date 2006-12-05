@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2006/11/21 21:04:56 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2006/12/05 21:23:23 dim Exp $
 
 COMMENT-main=	"color, low memory usage, xterm replacement"
 COMMENT-clock=	"analog clock for X11 w/appoint. reminder and mail notif"
 
 VER=		2.7.10
 DISTNAME=	rxvt-${VER}
-PKGNAME-main=	rxvt-${VER}p1
+PKGNAME-main=	rxvt-${VER}p2
 PKGNAME-clock=	rclock-${VER}p0 
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=rxvt/} \
