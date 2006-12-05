@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2006/11/29 08:23:30 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/12/05 06:17:21 msf Exp $
 
 COMMENT= 	"test functions for exception based code"
 
 MODULES=	cpan
-DISTNAME=	Test-Exception-0.21
+DISTNAME=	Test-Exception-0.24
 CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
