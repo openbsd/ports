@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2006/11/29 08:23:30 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/12/05 03:41:43 msf Exp $
 
 COMMENT=	"easily create test classes in an xUnit style"
 
 MODULES=	cpan
-DISTNAME=	Test-Class-0.11
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Test-Class-0.22
 CATEGORIES=	devel
 
 MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>

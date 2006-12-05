@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/01/27 13:01:57 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/12/05 03:41:43 msf Exp $
 ${P5SITE}/Test/Class/
 ${P5SITE}/Test/Class.pm
-${P5SITE}/Test/Class.pod
+${P5SITE}/Test/Class/Load.pm
 ${P5SITE}/Test/Class/MethodInfo.pm
 @man man/man3p/Test::Class.3p
+@man man/man3p/Test::Class::Load.3p
+@man man/man3p/Test::Class::MethodInfo.3p
