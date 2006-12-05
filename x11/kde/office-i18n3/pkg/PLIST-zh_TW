@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-zh_TW,v 1.1 2006/10/29 22:58:47 espie Exp $
+@comment $OpenBSD: PLIST-zh_TW,v 1.2 2006/12/05 19:07:07 espie Exp $
 ${LOC}desktop_koffice.mo
 ${LOC}example.mo
 ${LOC}karbon.mo
 ${LOC}kchart.mo
+${LOC}kdgantt.mo
 ${LOC}kexi.mo
 ${LOC}kfile_abiword.mo
 ${LOC}kfile_gnumeric.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pt_BR,v 1.4 2006/10/29 22:58:47 espie Exp $
+@comment $OpenBSD: PLIST-pt_BR,v 1.5 2006/12/05 19:07:07 espie Exp $
 share/doc/HTML/pt_BR/
 ${DOC}karbon/
 ${DOC}karbon/common
@@ -505,6 +505,7 @@ ${LOC}desktop_koffice.mo
 ${LOC}example.mo
 ${LOC}karbon.mo
 ${LOC}kchart.mo
+${LOC}kdgantt.mo
 ${LOC}kexi.mo
 ${LOC}kfile_abiword.mo
 ${LOC}kfile_gnumeric.mo
