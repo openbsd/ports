@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2006/07/14 18:59:51 msf Exp $
+# $OpenBSD: Makefile,v 1.4 2006/12/05 02:27:28 msf Exp $
 
 COMMENT=	"GUI to manage a certification authority"
 
-DISTNAME=	tinyca2-0.7.4
+DISTNAME=	tinyca2-0.7.5
 CATEGORIES=	security
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
@@ -27,7 +27,7 @@ NO_REGRESS=	Yes
 
 PKG_ARCH= *
 
-LANGS=		cs de es
+LANGS=		cs de es fr sv
 
 do-configure:
 	@perl -i -pe 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/tinyca2
