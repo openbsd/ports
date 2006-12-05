@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2006/10/18 23:18:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2006/12/05 21:59:57 naddy Exp $
 
-COMMENT=	"eXtensible Open Router Platform"
+COMMENT-main=	"eXtensible Open Router Platform"
 
 VERSION=	1.3
 DISTNAME=	xorp-${VERSION}
+PKGNAME-main=	${DISTNAME}p0
 CATEGORIES=	net
 HOMEPAGE=	http://www.xorp.org/
 
@@ -17,6 +18,10 @@ MASTER_SITES=	http://www.xorp.org/releases/${VERSION}/ \
 		http://www2.xorp.org/releases/${VERSION}/ \
 		http://www3.xorp.org/releases/${VERSION}/
 
+MULTI_PACKAGES=	-main
+PREFIX=		${LOCALBASE}/xorp
+PREFIX-main=	${LOCALBASE}
+
 WANTLIB=	c crypto curses m stdc++
 
 # No BUILD_DEPENDS:
@@ -26,10 +31,6 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
-.if !defined(PACKAGING)
-PREFIX=${LOCALBASE}/xorp
-.endif
-
 CONFIGURE_ARGS=	--enable-optimize
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config ${WRKSRC}/cli/libtecla
 
