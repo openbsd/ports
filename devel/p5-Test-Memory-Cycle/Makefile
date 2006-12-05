@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/29 08:23:30 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/12/05 06:15:57 msf Exp $
 
-COMMENT= 	"Perl extension for emulating troublesome interfaces"
+COMMENT= 	"perl extension for emulating troublesome interfaces"
 
 MODULES=	cpan
-DISTNAME=	Test-Memory-Cycle-1.02
-PKGNAME=	p5-${DISTNAME}p1
+
+DISTNAME=	Test-Memory-Cycle-1.04
 CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
