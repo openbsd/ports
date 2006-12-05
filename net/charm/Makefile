@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/06/03 09:43:03 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2006/12/05 06:20:08 pvalchev Exp $
 
 COMMENT=	"LiveJournal client for Python"
 
@@ -7,8 +7,6 @@ PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net news
 
 HOMEPAGE=	http://ljcharm.sourceforge.net/
-
-MAINTAINER=	Mike Pechkin <mpech@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes
