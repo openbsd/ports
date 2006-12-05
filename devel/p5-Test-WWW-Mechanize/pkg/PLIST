@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/04/13 00:21:57 msf Exp $
-${P5SITE}/Test/
+@comment $OpenBSD: PLIST,v 1.2 2006/12/05 06:29:50 msf Exp $
 ${P5SITE}/Test/WWW/
 ${P5SITE}/Test/WWW/Mechanize.pm
 @man man/man3p/Test::WWW::Mechanize.3p
