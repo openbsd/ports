@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.866 2006/12/02 11:27:46 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.867 2006/12/05 19:23:42 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -359,7 +359,9 @@ ERRORS += "Fatal: Unknown USE_MOTIF=${USE_MOTIF} settings."
 MOTIFLIB = -L${DEPBASE}/lib -lXm
 .endif
 
-.if !empty(SUBPACKAGE)
+.if empty(SUBPACKAGE)
+ERRORS += "Fatal: empty SUBPACKAGE is invalid."
+.else
 .  for _i in ${SUBPACKAGE}
 .    if empty(MULTI_PACKAGES:M${_i})
 ERRORS += "Fatal: Subpackage ${SUBPACKAGE} does not exist."
