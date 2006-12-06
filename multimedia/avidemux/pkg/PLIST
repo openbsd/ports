@@ -1,2 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/19 16:22:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/12/06 16:20:30 ajacoutot Exp $
 bin/avidemux2
+share/locale/cs/LC_MESSAGES/avidemux.mo
+share/locale/es/LC_MESSAGES/avidemux.mo
+share/locale/fr/LC_MESSAGES/avidemux.mo
+@comment share/locale/klingon/
+@comment share/locale/klingon/LC_MESSAGES/
+@comment share/locale/klingon/LC_MESSAGES/avidemux.mo
+share/locale/ru/LC_MESSAGES/avidemux.mo

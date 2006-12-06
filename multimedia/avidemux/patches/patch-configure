@@ -1,7 +1,39 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2006/10/19 16:22:06 ajacoutot Exp $
---- configure.orig	Wed Mar  1 22:33:47 2006
-+++ configure	Thu Oct  5 12:32:50 2006
-@@ -19142,7 +19142,7 @@ cat confdefs.h >>conftest.$ac_ext
+$OpenBSD: patch-configure,v 1.2 2006/12/06 16:20:30 ajacoutot Exp $
+--- configure.orig	Sat Dec  2 20:09:09 2006
++++ configure	Sat Dec  2 20:14:38 2006
+@@ -3277,13 +3277,13 @@ if test "$ac_test_CXXFLAGS" = set; then
+   CXXFLAGS=$ac_save_CXXFLAGS
+ elif test $ac_cv_prog_cxx_g = yes; then
+   if test "$GXX" = yes; then
+-    CXXFLAGS="-g -O2"
++    CXXFLAGS="-g"
+   else
+     CXXFLAGS="-g"
+   fi
+ else
+   if test "$GXX" = yes; then
+-    CXXFLAGS="-O2"
++    CXXFLAGS=""
+   else
+     CXXFLAGS=
+   fi
+@@ -4152,13 +4152,13 @@ if test "$ac_test_CFLAGS" = set; then
+   CFLAGS=$ac_save_CFLAGS
+ elif test $ac_cv_prog_cc_g = yes; then
+   if test "$GCC" = yes; then
+-    CFLAGS="-g -O2"
++    CFLAGS="-g"
+   else
+     CFLAGS="-g"
+   fi
+ else
+   if test "$GCC" = yes; then
+-    CFLAGS="-O2"
++    CFLAGS=""
+   else
+     CFLAGS=
+   fi
+@@ -21469,7 +21469,7 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  
@@ -10,18 +42,23 @@ $OpenBSD: patch-configure,v 1.1.1.1 2006/10/19 16:22:06 ajacoutot Exp $
  		#include <sys/ioccom.h>
  		#include <soundcard.h>
  		#else
-@@ -19199,6 +19199,8 @@ cat >>confdefs.h <<\_ACEOF
+@@ -21540,6 +21540,8 @@ cat >>confdefs.h <<\_ACEOF
  #define OSS_SUPPORT 1
  _ACEOF
  
-+  LIBS="-lossaudio $LIBS"
++LIBS="-lossaudio $LIBS"
 +
  	fi
  fi
  
-@@ -22849,8 +22851,8 @@ else
- 		CXXFLAGS="$CXXFLAGS -O3"
- 		CFLAGS="$CFLAGS -O3"
+@@ -25794,11 +25796,11 @@ _ACEOF
+ 
+ else
+ 	if test "x$use_builtin" = "x1"; then
+-		CXXFLAGS="$CXXFLAGS -O3"
+-		CFLAGS="$CFLAGS -O3"
++		CXXFLAGS="$CXXFLAGS"
++		CFLAGS="$CFLAGS"
  	else
 -		CXXFLAGS="$CXXFLAGS -O2"
 -		CFLAGS="$CFLAGS -O2"
@@ -29,4 +66,4 @@ $OpenBSD: patch-configure,v 1.1.1.1 2006/10/19 16:22:06 ajacoutot Exp $
 +		CFLAGS="$CFLAGS"
  	fi
  fi
- CFLAGS="$CFLAGS -falign-loops=16"
+ if test "x$use_gpt" = "x1"; then

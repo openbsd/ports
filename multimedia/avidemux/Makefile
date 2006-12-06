@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2006/10/20 23:35:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/06 16:20:30 ajacoutot Exp $
 
 COMMENT=	"free video editor"
 
-DISTNAME=	avidemux-2.1.2
-PKGNAME=	${DISTNAME}p0
+V=		2.3.0
+DISTNAME=	avidemux_${V}
+PKGNAME=	avidemux-${V}
 CATEGORIES=     multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=avidemux/}
 
@@ -18,9 +19,9 @@ PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
 WANTLIB=	freetype c stdc++ Xv ossaudio m X11 Xrender pthread \
-		usbhid Xext fontconfig z pango-1.0 pangocairo-1.0 \
-		cairo.>=4 atk-1.0 gmodule-2.0 gthread-2.0 glib-2.0 \
-		pangoft2-1.0 gobject-2.0
+		Xext fontconfig z pango-1.0 pangocairo-1.0 cairo.>=4 \
+		atk-1.0 gmodule-2.0 gthread-2.0 glib-2.0 pangoft2-1.0 \
+		gobject-2.0
 
 MODULES=	devel/gettext
 
@@ -29,9 +30,6 @@ LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		vorbis.>=5,vorbisenc.>=2::audio/libvorbis \
 		mp3lame::audio/lame \
 		js.>=1::lang/spidermonkey \
-		a52::audio/liba52 \
-		mad.>=2::audio/libmad \
-		SDL.>=6::devel/sdl \
 		xml2.>=9::textproc/libxml \
 		xvidcore.>=4::multimedia/xvidcore \
 		faad::audio/faad \
@@ -47,20 +45,21 @@ USE_GCC3=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 		-I${LOCALBASE}/include/libpng" \
-		LDFLAGS="-L${LOCALBASE}/lib -logg"
+		LDFLAGS="-L${LOCALBASE}/lib -logg" \
+		PKG_CONFIG=${LOCALBASE}/bin/pkg-config
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--with-jsapi-include=${LOCALBASE}/include/js \
 		--enable-xv \
-		--enable-mad \
-		--with-libsdl \
 		--with-freetype2 \
 		--with-lame \
-		--with-a52dec \
+		--with-fontconfig \
 		--with-oss \
 		--with-faac \
 		--with-faad2 \
 		--without-arts \
 		--without-esd \
+		--without-libdca \
+		--without-libsdl \
 		--without-newfaad
 
 .include <bsd.port.mk>
