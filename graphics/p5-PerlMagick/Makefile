@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/10/28 16:20:52 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2006/12/06 18:18:18 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -28,7 +28,8 @@ BUILD_DEPENDS=		${RUN_DEPENDS} \
 			::print/ghostscript/gnu:patch
 LIB_DEPENDS=		Magick.>=10::graphics/ImageMagick
 USE_X11=		Yes
-CONFIGURE_STYLE=	perl
+
+MODULES=		cpan
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S/-${DASHVER}$//}
 WRKSRC=			${WRKDIST}/PerlMagick
