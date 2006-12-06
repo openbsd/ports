@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2005/02/07 19:01:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2006/12/06 12:54:28 jasper Exp $
 
 COMMENT=		"filesystem information display"
 
 DISTNAME=		Filesys-DiskSpace-0.05
-PKGNAME=		p5-${DISTNAME}p0
-CATEGORIES=		sysutils perl5
+PKGNAME=		p5-${DISTNAME}p1
+CATEGORIES=		sysutils
 
 # Artistic
 PERMIT_PACKAGE_CDROM=   Yes
@@ -12,8 +12,6 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Filesys/}
-
-CONFIGURE_STYLE=	perl
+MODULES=		cpan
 
 .include <bsd.port.mk>	
