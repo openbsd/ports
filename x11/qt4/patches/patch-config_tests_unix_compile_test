@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_tests_unix_compile_test,v 1.1 2006/11/07 08:55:18 alek Exp $
---- config.tests/unix/compile.test.orig	Mon Nov  6 23:22:25 2006
-+++ config.tests/unix/compile.test	Mon Nov  6 23:25:14 2006
-@@ -34,6 +35,9 @@ while [ "$#" -gt 0 ]; do
+$OpenBSD: patch-config_tests_unix_compile_test,v 1.2 2006/12/06 08:32:44 espie Exp $
+--- config.tests/unix/compile.test.orig	Mon Nov 27 18:26:20 2006
++++ config.tests/unix/compile.test	Wed Dec  6 01:16:12 2006
+@@ -34,6 +34,9 @@ while [ "$#" -gt 0 ]; do
      -f*)
          CXXFLAGS="$CXXFLAGS $PARAM"
          ;;

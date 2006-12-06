@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2006/11/25 18:35:45 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2006/12/06 08:32:44 espie Exp $
 
 COMMENT-main=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples for qt4"
@@ -11,28 +11,28 @@ COMMENT-sqlite=		"sqlite plugin for qt4"
 PKGNAME=		qt4-${VERSION}
 PKGNAME-mysql=		qt4-mysql-${VERSION}
 PKGNAME-postgresql=	qt4-postgresql-${VERSION}
-PKGNAME-examples=	qt4-examples-${VERSION}p1
+PKGNAME-examples=	qt4-examples-${VERSION}
 PKGNAME-sqlite2=	qt4-sqlite2-${VERSION}
 PKGNAME-sqlite=		qt4-sqlite-${VERSION}
-FULLPKGNAME-main=	qt4-${VERSION}p1
+FULLPKGNAME-main=	qt4-${VERSION}
 FULLPKGNAME-html=	qt4-html-${VERSION}
-SHARED_LIBS=	Qt3Support 6.0 \
-		QtCore 6.0 \
-		QtDesigner 6.0 \
-		QtDesignerComponents 6.0 \
-		QtGui 6.1 \
-		QtNetwork 6.0 \
-		QtOpenGL 6.0 \
-		QtSql 6.0 \
-		QtXml 6.0 \
-		QtSvg 6.0 \
-		QtTest 6.0 \
-		QtAssistantClient 2.0 \
-		QtDBus 0.0 
+SHARED_LIBS=	Qt3Support 6.1 \
+		QtCore 6.1 \
+		QtDesigner 6.1 \
+		QtDesignerComponents 6.1 \
+		QtGui 6.2 \
+		QtNetwork 6.1 \
+		QtOpenGL 6.1 \
+		QtSql 6.1 \
+		QtXml 6.1 \
+		QtSvg 6.1 \
+		QtTest 6.1 \
+		QtAssistantClient 2.1 \
+		QtDBus 0.1 
 
 
-VERSION=	4.2.1
-DISTNAME=	qt-x11-opensource-src-4.2.1
+VERSION=	4.2.2
+DISTNAME=	qt-x11-opensource-src-${VERSION}
 
 
 CATEGORIES=	x11

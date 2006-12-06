@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.7 2006/10/08 21:43:50 espie Exp $
+@comment $OpenBSD: PLIST-html,v 1.8 2006/12/06 08:32:44 espie Exp $
 share/doc/qt4/
 share/doc/qt4/html/
 share/doc/qt4/html/3rdparty.html
@@ -43,7 +43,6 @@ share/doc/qt4/html/activeqt-webbrowser.html
 share/doc/qt4/html/activeqt-wrapper-main-cpp.html
 share/doc/qt4/html/activeqt-wrapper.html
 share/doc/qt4/html/activeqt.html
-share/doc/qt4/html/adaptorexample.html
 share/doc/qt4/html/advanced.html
 share/doc/qt4/html/annotated.html
 share/doc/qt4/html/appearance.html
@@ -81,7 +80,6 @@ share/doc/qt4/html/coordsys.html
 share/doc/qt4/html/credits.html
 share/doc/qt4/html/database.html
 share/doc/qt4/html/datastreamformat.html
-share/doc/qt4/html/dbusxml2cpp.html
 share/doc/qt4/html/debug.html
 share/doc/qt4/html/demos-affine-affine-qrc.html
 share/doc/qt4/html/demos-affine-main-cpp.html
@@ -978,17 +976,29 @@ share/doc/qt4/html/images/qtextblock-sequence.png
 share/doc/qt4/html/images/qtextfragment-split.png
 share/doc/qt4/html/images/qtextframe-style.png
 share/doc/qt4/html/images/qtexttableformat-cell.png
+share/doc/qt4/html/images/qtopiacore-accelerateddriver.png
 share/doc/qt4/html/images/qtopiacore-architecture.png
+share/doc/qt4/html/images/qtopiacore-architecture2.png
+share/doc/qt4/html/images/qtopiacore-characterinputlayer.png
 share/doc/qt4/html/images/qtopiacore-clamshellphone-closed.png
 share/doc/qt4/html/images/qtopiacore-clamshellphone-pressed.png
 share/doc/qt4/html/images/qtopiacore-clamshellphone.png
+share/doc/qt4/html/images/qtopiacore-client.png
+share/doc/qt4/html/images/qtopiacore-clientrendering.png
+share/doc/qt4/html/images/qtopiacore-clientservercommunication.png
+share/doc/qt4/html/images/qtopiacore-drawingonscreen.png
 share/doc/qt4/html/images/qtopiacore-fontfeatures.png
+share/doc/qt4/html/images/qtopiacore-opengl.png
 share/doc/qt4/html/images/qtopiacore-pda.png
 share/doc/qt4/html/images/qtopiacore-phone.png
+share/doc/qt4/html/images/qtopiacore-pointerhandlinglayer.png
 share/doc/qt4/html/images/qtopiacore-qconfigtool.png
 share/doc/qt4/html/images/qtopiacore-qvfbfilemenu.png
 share/doc/qt4/html/images/qtopiacore-qvfbviewmenu.png
+share/doc/qt4/html/images/qtopiacore-reserveregion.png
 share/doc/qt4/html/images/qtopiacore-runningapplication.png
+share/doc/qt4/html/images/qtopiacore-setwindowattribute.png
+share/doc/qt4/html/images/qtopiacore-vanilla.png
 share/doc/qt4/html/images/qtopiacore-virtualframebuffer.png
 share/doc/qt4/html/images/querymodel-example.png
 share/doc/qt4/html/images/qundoview.png
@@ -1004,6 +1014,7 @@ share/doc/qt4/html/images/qvboxlayout-with-5-children.png
 share/doc/qt4/html/images/qwindowsstyle.png
 share/doc/qt4/html/images/qwindowsxpstyle.png
 share/doc/qt4/html/images/qworkspace-arrange.png
+share/doc/qt4/html/images/qwsserver_keyboardfilter.png
 share/doc/qt4/html/images/radialGradient.png
 share/doc/qt4/html/images/recentfiles-example.png
 share/doc/qt4/html/images/regexp-example.png
@@ -1514,6 +1525,7 @@ share/doc/qt4/html/painting-transformations-window-cpp.html
 share/doc/qt4/html/painting-transformations-window-h.html
 share/doc/qt4/html/painting-transformations.html
 share/doc/qt4/html/paintsystem.html
+share/doc/qt4/html/pdf-licensing.html
 share/doc/qt4/html/platform-notes.html
 share/doc/qt4/html/plugins-howto.html
 share/doc/qt4/html/plugins.html
@@ -1521,6 +1533,7 @@ share/doc/qt4/html/porting.html
 share/doc/qt4/html/porting4-designer.html
 share/doc/qt4/html/porting4-dnd.html
 share/doc/qt4/html/porting4.html
+share/doc/qt4/html/printing.html
 share/doc/qt4/html/properties.html
 share/doc/qt4/html/q3accel-members.html
 share/doc/qt4/html/q3accel-obsolete.html
@@ -2043,6 +2056,7 @@ share/doc/qt4/html/qdbusabstractadaptor-members.html
 share/doc/qt4/html/qdbusabstractadaptor.html
 share/doc/qt4/html/qdbusabstractinterface-members.html
 share/doc/qt4/html/qdbusabstractinterface.html
+share/doc/qt4/html/qdbusadaptorexample.html
 share/doc/qt4/html/qdbusargument-members.html
 share/doc/qt4/html/qdbusargument.html
 share/doc/qt4/html/qdbusconnection-members.html
@@ -2068,6 +2082,7 @@ share/doc/qt4/html/qdbussignature.html
 share/doc/qt4/html/qdbustypesystem.html
 share/doc/qt4/html/qdbusvariant-members.html
 share/doc/qt4/html/qdbusvariant.html
+share/doc/qt4/html/qdbusxml2cpp.html
 share/doc/qt4/html/qdecoration-members.html
 share/doc/qt4/html/qdecoration.html
 share/doc/qt4/html/qdecorationfactory-members.html
@@ -2250,6 +2265,7 @@ share/doc/qt4/html/qgl.html
 share/doc/qt4/html/qglcolormap-members.html
 share/doc/qt4/html/qglcolormap.html
 share/doc/qt4/html/qglcontext-members.html
+share/doc/qt4/html/qglcontext-obsolete.html
 share/doc/qt4/html/qglcontext.html
 share/doc/qt4/html/qglformat-members.html
 share/doc/qt4/html/qglformat.html
@@ -2446,8 +2462,6 @@ share/doc/qt4/html/qlinkedlist-qt3.html
 share/doc/qt4/html/qlinkedlist.html
 share/doc/qt4/html/qlinkedlistiterator-members.html
 share/doc/qt4/html/qlinkedlistiterator.html
-share/doc/qt4/html/qlinuxfbscreen-members.html
-share/doc/qt4/html/qlinuxfbscreen.html
 share/doc/qt4/html/qlist-const-iterator-members.html
 share/doc/qt4/html/qlist-const-iterator.html
 share/doc/qt4/html/qlist-iterator-members.html
@@ -2484,7 +2498,6 @@ share/doc/qt4/html/qmake-precompiledheaders.html
 share/doc/qt4/html/qmake-project-files.html
 share/doc/qt4/html/qmake-reference.html
 share/doc/qt4/html/qmake-running.html
-share/doc/qt4/html/qmake-third-party-code.html
 share/doc/qt4/html/qmake-tutorial.html
 share/doc/qt4/html/qmake-using.html
 share/doc/qt4/html/qmake-variable-reference.html
@@ -2614,6 +2627,7 @@ share/doc/qt4/html/qpen.html
 share/doc/qt4/html/qpersistentmodelindex-members.html
 share/doc/qt4/html/qpersistentmodelindex.html
 share/doc/qt4/html/qpicture-members.html
+share/doc/qt4/html/qpicture-obsolete.html
 share/doc/qt4/html/qpicture-qt3.html
 share/doc/qt4/html/qpicture.html
 share/doc/qt4/html/qpictureformatplugin-members.html
@@ -3110,10 +3124,12 @@ share/doc/qt4/html/qtooltip-qt3.html
 share/doc/qt4/html/qtooltip.html
 share/doc/qt4/html/qtopengl.html
 share/doc/qt4/html/qtopiacore-accel.html
+share/doc/qt4/html/qtopiacore-architecture.html
 share/doc/qt4/html/qtopiacore-charinput.html
 share/doc/qt4/html/qtopiacore-crosscompiling.html
 share/doc/qt4/html/qtopiacore-deployment.html
 share/doc/qt4/html/qtopiacore-differences.html
+share/doc/qt4/html/qtopiacore-displaymanagement.html
 share/doc/qt4/html/qtopiacore-envvars.html
 share/doc/qt4/html/qtopiacore-features.html
 share/doc/qt4/html/qtopiacore-fonts.html
@@ -3125,9 +3141,11 @@ share/doc/qt4/html/qtopiacore-mousecalibration-main-cpp.html
 share/doc/qt4/html/qtopiacore-mousecalibration-scribblewidget-cpp.html
 share/doc/qt4/html/qtopiacore-mousecalibration-scribblewidget-h.html
 share/doc/qt4/html/qtopiacore-mousecalibration.html
+share/doc/qt4/html/qtopiacore-opengl.html
 share/doc/qt4/html/qtopiacore-performance.html
 share/doc/qt4/html/qtopiacore-pointer.html
-share/doc/qt4/html/qtopiacore-porting.html
+share/doc/qt4/html/qtopiacore-porting-device.html
+share/doc/qt4/html/qtopiacore-porting-operatingsystem.html
 share/doc/qt4/html/qtopiacore-qvfb.html
 share/doc/qt4/html/qtopiacore-running.html
 share/doc/qt4/html/qtopiacore-svgalib-svgalibpaintdevice-cpp.html
@@ -3144,8 +3162,6 @@ share/doc/qt4/html/qtopiacore-testingframebuffer.html
 share/doc/qt4/html/qtopiacore-vnc.html
 share/doc/qt4/html/qtopiacore.html
 share/doc/qt4/html/qtplugin.html
-share/doc/qt4/html/qtransformedscreen-members.html
-share/doc/qt4/html/qtransformedscreen.html
 share/doc/qt4/html/qtranslator-members.html
 share/doc/qt4/html/qtranslator-qt3.html
 share/doc/qt4/html/qtranslator.html
@@ -3202,10 +3218,6 @@ share/doc/qt4/html/qvector-members.html
 share/doc/qt4/html/qvector.html
 share/doc/qt4/html/qvectoriterator-members.html
 share/doc/qt4/html/qvectoriterator.html
-share/doc/qt4/html/qvfbscreen-members.html
-share/doc/qt4/html/qvfbscreen.html
-share/doc/qt4/html/qvncscreen-members.html
-share/doc/qt4/html/qvncscreen.html
 share/doc/qt4/html/qwaitcondition-members.html
 share/doc/qt4/html/qwaitcondition.html
 share/doc/qt4/html/qwhatsthis-members.html
@@ -3263,8 +3275,6 @@ share/doc/qt4/html/qwsserver-members.html
 share/doc/qt4/html/qwsserver-obsolete.html
 share/doc/qt4/html/qwsserver-qt3.html
 share/doc/qt4/html/qwsserver.html
-share/doc/qt4/html/qwstslibmousehandler-members.html
-share/doc/qt4/html/qwstslibmousehandler.html
 share/doc/qt4/html/qwswindow-members.html
 share/doc/qt4/html/qwswindow.html
 share/doc/qt4/html/qwswindowsurface-members.html
