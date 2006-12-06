@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/26 13:39:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/06 17:43:31 ajacoutot Exp $
 
 COMMENT=	"ORBit2 Python bindings"
 
-DISTNAME=	pyorbit-2.14.1
-PKGNAME=	${DISTNAME:S/py/py-/}p0
+V=		2.14.1
+DISTNAME=	pyorbit-${V}
+PKGNAME=	py-orbit-${V}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.pygtk.org/

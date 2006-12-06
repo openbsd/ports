@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/20 18:31:53 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/06 17:43:31 ajacoutot Exp $
 
 COMMENT=	"additional games modules for childsplay"
 
-DISTNAME=	childsplay_plugins-0.84
-PKGNAME=	${DISTNAME:S/_/-/}p0
+V=		0.84
+DISTNAME=	childsplay_plugins-${V}
+PKGNAME=	childsplay-plugins-${V}p0
 EXTRACT_SUFX=	.tgz
 
 CATEGORIES=	games education

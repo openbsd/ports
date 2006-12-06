@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2006/10/27 12:53:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2006/12/06 17:43:31 ajacoutot Exp $
 
 COMMENT=	"total conversion of the Space Hulk board game"
 
 DISTNAME=	spacehulk-1.5-beta1
-PKGNAME=	${DISTNAME:S/-beta1/beta1/}p1
+PKGNAME=	spacehulk-1.5beta1p1
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://r.vinot.free.fr/spacehulk/

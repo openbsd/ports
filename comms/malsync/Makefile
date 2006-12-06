@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2006/11/18 17:32:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2006/12/06 17:43:31 ajacoutot Exp $
 
 COMMENT=	"command line tool to synchronize Palm pilot to AvantGo"
 
-DISTNAME=	malsync_2.2.0.src
-PKGNAME=	${DISTNAME:S/_/-/:S/.src//}
+V=		2.2.0
+DISTNAME=	malsync_${V}.src
+PKGNAME=	malsync-${V}
 CATEGORIES=	comms palm
 
 MASTER_SITES=	http://www.obsd.fr/OpenBSD/distfiles/ \
