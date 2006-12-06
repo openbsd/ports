@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/12/06 17:21:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2006/12/06 21:46:26 steven Exp $
 
 COMMENT=	"read and write meta information in image/audio/video files"
 
@@ -15,7 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES+=	${HOMEPAGE}
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Image/} \
+		${HOMEPAGE}
 
 MODULES=	cpan
 
