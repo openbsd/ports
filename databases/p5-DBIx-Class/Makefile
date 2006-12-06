@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/23 18:46:27 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/06 15:09:08 espie Exp $
 
 COMMENT= 	"object-oriented database access"
 
 MODULES=	cpan
 DISTNAME=	DBIx-Class-0.07003
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	databases devel
 
 # Artistic
