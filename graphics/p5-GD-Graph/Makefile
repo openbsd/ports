@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2004/12/15 01:54:33 kevlo Exp $
+# $OpenBSD: Makefile,v 1.16 2006/12/06 17:55:52 jasper Exp $
 
 COMMENT=	"module for graph plotting"
 
 VERSION=        1.43 
 DISTNAME=       GDGraph-${VERSION}
-PKGNAME=        p5-GD-Graph-${VERSION}
-CATEGORIES=     graphics perl5
+PKGNAME=        p5-GD-Graph-${VERSION}p0
+CATEGORIES=     graphics
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -20,6 +20,6 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-CONFIGURE_STYLE= perl
+MODULES=	cpan
 
 .include <bsd.port.mk>
