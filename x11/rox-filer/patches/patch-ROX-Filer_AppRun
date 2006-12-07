@@ -1,0 +1,11 @@
+--- ROX-Filer/AppRun.orig	Tue Jul 26 22:20:48 2005
++++ ROX-Filer/AppRun	Wed Dec  6 16:10:12 2006
+@@ -35,7 +35,7 @@
+ 		rm -f "$BUILDDIR/config.cache"
+ 		rm -f "$APP_DIR/src/config.h"	# (for upgrading)
+ 		cd "$BUILDDIR" && "$APP_DIR/src/configure" "$@" \
+-			&& make clean && make && echo Done >&2 && exit 0
++			&& $MAKE clean && $MAKE && echo Done >&2 && exit 0
+ 		echo Compile failed >&2
+ 		echo Press Return... >&2
+ 		read WAIT

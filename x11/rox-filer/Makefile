@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2006/09/18 12:19:41 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2006/12/07 19:46:53 jasper Exp $
 
-COMMENT=		"gtk file manager with desktop features"
+COMMENT=		"GTK+-2 file manager with desktop features"
 
-VERSION=		2.4.1
-DISTNAME=		rox-${VERSION}
-PKGNAME=		rox-filer-${VERSION}
+DISTNAME=		rox-filer-2.5
 CATEGORIES=		x11
 
 HOMEPAGE=		http://rox.sourceforge.net/
@@ -20,7 +18,7 @@ WANTLIB=		ICE SM X11 c fontconfig freetype z \
 			pangoft2-1.0 cairo
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=rox/}
-EXTRACT_SUFX=	.tgz
+EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
@@ -29,21 +27,20 @@ LIB_DEPENDS=	gtk-x11-2.0.>=0.9,gdk_pixbuf-2.0.>=0.9,gdk-x11-2.0.>=0.9::x11/gtk+2
 		xml2::textproc/libxml
 RUN_DEPENDS=	::misc/shared-mime-info
 
-FILE_TO_PATCH=  ${WRKSRC}/ROX-Filer/src/choices.c
-
 USE_X11=	Yes
+USE_GMAKE=	Yes
+
 NO_REGRESS=	Yes
 
 INSTDATA=	AppRun Help Messages Options.xml ROX images style.css \
 		subclasses .DirIcon
 
 pre-configure:
-	@sed -e s:/usr/local/share/Choices:${PREFIX}/share/rox/Choices: \
-		${FILE_TO_PATCH} > ${FILE_TO_PATCH}.tmp && \
-		mv ${FILE_TO_PATCH}.tmp ${FILE_TO_PATCH}
+	@perl -pi -e 's,/usr/local/share/Choices,${PREFIX}/share/rox/Choices,g' \
+		${WRKSRC}/ROX-Filer/src/choices.c
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" \
+	@cd ${WRKSRC} && ${SETENV} MAKE="${MAKE_PROGRAM}" CC="${CC}" CFLAGS="${CFLAGS}" \
 		CPPFLAGS="-I${X11BASE}/include" with_platform="OpenBSD" \
 		ROX-Filer/AppRun --compile
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2006/07/07 16:43:10 steven Exp $
+@comment $OpenBSD: PLIST,v 1.17 2006/12/07 19:46:54 jasper Exp $
 bin/rox
 @man man/man1/ROX-Filer.1
 @man man/man1/rox.1
@@ -36,6 +36,8 @@ rox/ROX-Filer/Messages/pt_PT.gmo
 rox/ROX-Filer/Messages/ro.gmo
 rox/ROX-Filer/Messages/ru.gmo
 rox/ROX-Filer/Messages/sv.gmo
+rox/ROX-Filer/Messages/uk.gmo
+rox/ROX-Filer/Messages/vi_VN.gmo
 rox/ROX-Filer/Messages/zh_CN.gmo
 rox/ROX-Filer/Messages/zh_TW.gmo
 rox/ROX-Filer/Options.xml
@@ -44,6 +46,7 @@ rox/ROX-Filer/ROX-Filer
 rox/ROX-Filer/ROX-Filer.dbg
 rox/ROX-Filer/ROX/MIME/
 rox/ROX-Filer/ROX/MIME/mime-application.png
+rox/ROX-Filer/ROX/MIME/mime-application:msword.png
 rox/ROX-Filer/ROX/MIME/mime-application:pdf.png
 rox/ROX-Filer/ROX/MIME/mime-application:pgp.png
 rox/ROX-Filer/ROX/MIME/mime-application:postscript.png
@@ -51,7 +54,6 @@ rox/ROX-Filer/ROX/MIME/mime-application:vnd.ms-access.png
 rox/ROX-Filer/ROX/MIME/mime-application:vnd.ms-excel.png
 rox/ROX-Filer/ROX/MIME/mime-application:vnd.ms-office.png
 rox/ROX-Filer/ROX/MIME/mime-application:vnd.ms-powerpoint.png
-rox/ROX-Filer/ROX/MIME/mime-application:vnd.ms-word.png
 rox/ROX-Filer/ROX/MIME/mime-application:vnd.rn-realmedia.png
 rox/ROX-Filer/ROX/MIME/mime-application:vnd.stardivision.writer.png
 rox/ROX-Filer/ROX/MIME/mime-application:vnd.sun.xml.calc.png
@@ -97,6 +99,7 @@ rox/ROX-Filer/ROX/MIME/mime-application:x-troff-man-compressed.png
 rox/ROX-Filer/ROX/MIME/mime-application:x-troff-man.png
 rox/ROX-Filer/ROX/MIME/mime-application:x-troff.png
 rox/ROX-Filer/ROX/MIME/mime-application:xhtml+xml.png
+rox/ROX-Filer/ROX/MIME/mime-application:xml.png
 rox/ROX-Filer/ROX/MIME/mime-application:zip.png
 rox/ROX-Filer/ROX/MIME/mime-audio.png
 rox/ROX-Filer/ROX/MIME/mime-audio:midi.png
