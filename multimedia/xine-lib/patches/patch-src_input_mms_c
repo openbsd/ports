@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_input_mms_c,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
---- src/input/mms.c.orig	Sat Dec 24 23:39:48 2005
-+++ src/input/mms.c	Sat Dec 24 23:40:23 2005
+$OpenBSD: patch-src_input_mms_c,v 1.2 2006/12/07 09:21:01 steven Exp $
+--- src/input/mms.c.orig	Sun Jul  9 10:37:35 2006
++++ src/input/mms.c	Mon Dec  4 14:44:00 2006
 @@ -50,6 +50,7 @@
  #include <iconv.h>
  #include <locale.h>
@@ -9,6 +9,15 @@ $OpenBSD: patch-src_input_mms_c,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
  #endif
  
  /********** logging **********/
+@@ -138,7 +139,7 @@ struct mms_s {
+   int           num_stream_ids;
+   int           stream_ids[ASF_MAX_NUM_STREAMS];
+   int           stream_types[ASF_MAX_NUM_STREAMS];
+-  int           asf_packet_len;
++  uint32_t      asf_packet_len;
+   uint64_t      file_len;
+   char          guid[37];
+   uint32_t      bitrates[ASF_MAX_NUM_STREAMS];
 @@ -299,7 +300,7 @@ static int send_command (mms_t *this, in
  
  #ifdef USE_ICONV
@@ -18,3 +27,47 @@ $OpenBSD: patch-src_input_mms_c,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
  }
  
  static void string_utf16_close(iconv_t url_conv) {
+@@ -371,13 +372,17 @@ static int get_packet_header (mms_t *thi
+       goto error;
+     
+     header->packet_len = LE_32(this->buf + 8) + 4;
++    if (header->packet_len > BUF_SIZE - 12) {
++      header->packet_len = 0;
++      goto error;
++    }
+     lprintf("mms command\n");
+     packet_type = MMS_PACKET_COMMAND;
+   } else {
+     header->packet_seq     = LE_32(this->buf);
+     header->packet_id_type = this->buf[4];
+     header->flags          = this->buf[5];
+-    header->packet_len     = LE_16(this->buf + 6) - 8;
++    header->packet_len     = (LE_16(this->buf + 6) - 8) & 0xffff;
+     if (header->packet_id_type == ASF_HEADER_PACKET_ID_TYPE) {
+       lprintf("asf header\n");
+       packet_type = MMS_PACKET_ASF_HEADER;
+@@ -497,6 +502,11 @@ static int get_asf_header (mms_t *this) 
+         break;
+       case MMS_PACKET_ASF_HEADER:
+       case MMS_PACKET_ASF_PACKET:
++        if (header.packet_len + this->asf_header_len > ASF_HEADER_LEN) {
++            xprintf (this->stream->xine, XINE_VERBOSITY_LOG,
++                     "libmms: asf packet too large\n");
++            return 0;
++        }
+         len = _x_io_tcp_read (this->stream, this->s,
+                               (char*)(this->asf_header + this->asf_header_len), header.packet_len);
+         if (len != header.packet_len) {
+@@ -542,6 +552,12 @@ static void interp_asf_header (mms_t *th
+       case GUID_ASF_FILE_PROPERTIES:
+ 
+         this->asf_packet_len = LE_32(this->asf_header + i + 92 - 24);
++        if (this->asf_packet_len > BUF_SIZE) {
++          this->asf_packet_len = 0;
++          xprintf (this->stream->xine, XINE_VERBOSITY_LOG,
++                   "libmms: asf packet len too large\n");
++          break;
++        }
+         this->file_len       = LE_64(this->asf_header + i + 40 - 24);
+         lprintf ("file object, file_length = %lld, packet length = %d",
+ 		 this->file_len, this->asf_packet_len);

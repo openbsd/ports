@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2006/12/02 20:24:17 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2006/12/07 09:21:01 steven Exp $
 
 COMMENT=		"multimedia decoding library"
 
 V=			1.1.2
 DISTNAME=		xine-lib-${V}
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		multimedia
 SHARED_LIBS=		xine	14.1
