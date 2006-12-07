@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2006/09/18 12:23:06 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/12/07 20:57:15 steven Exp $
 
 COMMENT=	"virtual sticky pad system"
 
-DISTNAME=	xpad-2.11
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	xpad-2.12
 CATEGORIES=	x11
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xpad/}
@@ -26,6 +25,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=	Yes
+USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
