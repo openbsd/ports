@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2006/12/02 10:34:30 jakob Exp $
+# $OpenBSD: Makefile,v 1.68 2006/12/07 21:49:01 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,8 +8,9 @@ COMMENT-sieve=	"sieve mail filtering for Dovecot"
 V_DOVECOT=	1.0.rc15
 V_SIEVE=	1.0
 
-PKGNAME-server=	dovecot-${V_DOVECOT}
-PKGNAME-sieve=	dovecot-sieve-${V_SIEVE}
+PKGNAME=	dovecot-${V_DOVECOT}p0
+PKGNAME-server=	dovecot-${V_DOVECOT}p0
+PKGNAME-sieve=	dovecot-sieve-${V_SIEVE}p0
 
 DISTNAME=	dovecot-${V_DOVECOT}
 CATEGORIES=	mail
@@ -58,24 +59,25 @@ CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 MULTI_PACKAGES+=	-sieve
 SIEVE_DIR=		${WRKDIR}/dovecot-sieve-${V_SIEVE}
 AUTOCONF_DIR+=		${SIEVE_DIR}
-RUN_DEPENDS-sieve+=	::mail/dovecot
+RUN_DEPENDS-sieve=	::${BUILD_PKGPATH}
+LIB_DEPENDS-sieve=	${MODLIBICONV_LIB_DEPENDS}
 .endif
 
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+=	--with-ldap
-LIB_DEPENDS-server+=	lber,ldap::databases/openldap
+LIB_DEPENDS+=		lber,ldap::databases/openldap
 WANTLIB-server+=	sasl2 asn1 com_err gssapi krb5
 .endif
 
 .if ${FLAVOR:L:Mmysql}
 CONFIGURE_ARGS+=	--with-mysql
-LIB_DEPENDS-server+=	lib/mysql/mysqlclient.>=10::databases/mysql
+LIB_DEPENDS+=		lib/mysql/mysqlclient.>=10::databases/mysql
 WANTLIB-server+=	m
 .endif
 
 .if ${FLAVOR:L:Mpostgresql}
 CONFIGURE_ARGS+=	--with-pgsql
-LIB_DEPENDS-server+=	pq.>=4::databases/postgresql
+LIB_DEPENDS+=		pq.>=4::databases/postgresql
 .endif
 
 .if !${FLAVOR:L:Mno_sieve}
