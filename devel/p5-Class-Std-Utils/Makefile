@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/24 19:25:13 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/08 22:45:01 sturm Exp $
 
 COMMENT=		"utilities functions to build inside-out objects"
 
@@ -13,5 +13,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	modbuild
+
+BUILD_DEPENDS=		::devel/p5-version
 
 .include <bsd.port.mk>
