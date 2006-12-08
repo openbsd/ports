@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/12 18:43:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/12/08 06:53:40 ajacoutot Exp $
 @mode g+s
 @group games
 bin/childsplay
@@ -14,7 +14,7 @@ share/assetml/childsplay/childsplay-images/OK_but.png
 share/assetml/childsplay/childsplay-images/arrow.png
 share/assetml/childsplay/childsplay-images/balloonsl.png
 share/assetml/childsplay/childsplay-images/balloonsr.png
-share/assetml/childsplay/childsplay-images/blue.jpg
+share/assetml/childsplay/childsplay-images/blue.png
 share/assetml/childsplay/childsplay-images/childsplay-images.assetml
 share/assetml/childsplay/childsplay-images/chpl-icon-48-flat.png
 share/assetml/childsplay/childsplay-images/chpl-icon-48.png
@@ -76,6 +76,7 @@ share/childsplay/Data/Domestic_Manners.ttf
 share/childsplay/Data/Galaga1.ogg
 share/childsplay/Data/License_ae.ttf.txt
 share/childsplay/Data/License_he.ttf.txt
+share/childsplay/Data/SpaceComputer.ogg
 share/childsplay/Data/VeraSeBd.ttf
 share/childsplay/Data/ae_AlMohanad.ttf
 share/childsplay/Data/ae_Sindibad.ttf
@@ -133,6 +134,7 @@ share/childsplay/utils.py
 share/childsplay/version.py
 share/doc/childsplay/
 share/doc/childsplay/Changelog
+share/doc/childsplay/FOSS.txt
 share/doc/childsplay/GPL-2
 share/doc/childsplay/README-MEMORY
 share/doc/childsplay/README.develop
@@ -144,6 +146,7 @@ share/doc/childsplay/po/ar/
 share/doc/childsplay/po/ar/childsplay.po
 share/doc/childsplay/po/ca/
 share/doc/childsplay/po/ca/childsplay.po
+share/doc/childsplay/po/cards.pot
 share/doc/childsplay/po/childsplay-latest.pot
 share/doc/childsplay/po/da/
 share/doc/childsplay/po/da/childsplay.po
