@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.867 2006/12/05 19:23:42 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.868 2006/12/08 10:19:08 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2532,9 +2532,14 @@ _print-package-args:
 	@echo '${_i}' |{ \
 		IFS=:; read dep pkg subdir target; \
 		${_flavor_fragment}; \
-		default=`eval $$toset ${MAKE} _print-packagename`; \
-		case "X$$pkg" in X) pkg=`echo $$default|${_version2default}`;; esac; \
-		echo "-P $$subdir:$$pkg:$$default"; \
+		if default=`eval $$toset ${MAKE} _print-packagename`; then \
+			case "X$$pkg" in X) pkg=`echo $$default|${_version2default}`;; \
+			esac; \
+			echo "-P $$subdir:$$pkg:$$default"; \
+		else \
+			echo 1>&2 "Problem with dependency ${_i}"; \
+			exit 1; \
+		fi; \
 	}
 .endfor
 .if ${NO_SHARED_LIBS:L} != "yes"
@@ -2543,28 +2548,33 @@ _print-package-args:
 		IFS=:; read dep pkg subdir target; \
 		${_flavor_fragment}; \
 		libspecs='';comma=''; \
-		default=`eval $$toset ${MAKE} _print-packagename`; \
-		case "X$$pkg" in X) pkg=`echo $$default|${_version2default}`;; esac; \
-		if pkg_info -q -e $$pkg; then \
-			listlibs='echo ${DEPDIR}$$shdir/lib*'; \
-			case $$dir in ${PKGPATH}) \
-				listlibs="$$toset ${MAKE} print-plist-contents|${_grab_libs_from_plist}; $$listlibs";; \
+		if default=`eval $$toset ${MAKE} _print-packagename`; then \
+			case "X$$pkg" in X) pkg=`echo $$default|${_version2default}`;; \
 			esac; \
+			if pkg_info -q -e $$pkg; then \
+				listlibs='echo ${DEPDIR}$$shdir/lib*'; \
+				case $$dir in ${PKGPATH}) \
+					listlibs="$$toset ${MAKE} print-plist-contents|${_grab_libs_from_plist}; $$listlibs";; \
+				esac; \
+			else \
+				listlibs="$$toset ${MAKE} print-plist-contents|${_grab_libs_from_plist}"; \
+			fi; \
+			IFS=,; for d in $$dep; do \
+				${_libresolve_fragment}; \
+				case "$$check" in \
+				*.a) continue;; \
+				Failed) \
+					echo 1>&2 "Can't resolve libspec $$d"; \
+					exit 1;; \
+				*) \
+					echo "-W $$check";; \
+				esac; \
+			done; \
+			echo "-P $$subdir:$$pkg:$$default"; \
 		else \
-		    listlibs="$$toset ${MAKE} print-plist-contents|${_grab_libs_from_plist}"; \
+			echo 1>&2 "Problem with dependency ${_i}"; \
+			exit 1; \
 		fi; \
-		IFS=,; for d in $$dep; do \
-			${_libresolve_fragment}; \
-			case "$$check" in \
-			*.a) continue;; \
-			Failed) \
-				echo 1>&2 "Can't resolve libspec $$d"; \
-				exit 1;; \
-			*) \
-				echo "-W $$check";; \
-			esac; \
-		done; \
-		echo "-P $$subdir:$$pkg:$$default"; \
 	}
 .  endfor
 .  for _i in ${WANTLIB${SUBPACKAGE}}
