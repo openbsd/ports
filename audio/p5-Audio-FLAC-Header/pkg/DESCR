@@ -1,0 +1,3 @@
+This module returns a hash containing basic information about a FLAC file,
+a representation of the embedded cue sheet if one exists, as well as tag
+information contained in the FLAC file's Vorbis tags.

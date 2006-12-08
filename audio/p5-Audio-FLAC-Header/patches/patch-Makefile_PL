@@ -1,0 +1,12 @@
+--- Makefile.PL.orig	Sun Feb 20 00:36:32 2005
++++ Makefile.PL	Fri Dec  8 07:53:52 2006
+@@ -16,7 +16,8 @@ if ($^O =~ /win32/i) {
+ WriteMakefile(
+ 	'NAME'		=> 'Audio::FLAC::Header',
+ 	'VERSION_FROM'	=> 'Header.pm',
+-	'LIBS'		=> [$LIBS],
++	'INC'		=> "$ENV{CPPFLAGS}",
++	'LIBS'		=> [ "$ENV{LDFLAGS} $LIBS" ],
+ 	'DEFINE'	=> '-O',
+ 	'CCFLAGS'	=> $CCFLAGS,
+ 	'LDDLFLAGS'	=> "$Config{'lddlflags'} $LDDLFLAGS",
