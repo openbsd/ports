@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.157 2006/12/08 07:10:43 steven Exp $
+# $OpenBSD: Makefile,v 1.158 2006/12/08 23:09:39 steven Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -92,6 +92,7 @@
      SUBDIR += p5-MP3-Info
      SUBDIR += p5-MP3-Tag
      SUBDIR += p5-MP4-Info
+     SUBDIR += p5-Ogg-Vorbis-Header
      SUBDIR += p5-cddb
      SUBDIR += p5-libvorbis
      SUBDIR += py-ao
