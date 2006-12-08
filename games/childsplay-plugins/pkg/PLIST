@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/13 06:20:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/12/08 06:54:33 ajacoutot Exp $
 bin/MT_users2csv.py
 share/assetml/childsplay/sounds-misc/
 share/assetml/childsplay/sounds-misc/catmeow.ogg
@@ -77,6 +77,7 @@ share/childsplay/Data/icons/multiTables.icon.png
 share/childsplay/Data/icons/numbers.icon.png
 share/childsplay/Data/icons/packid.icon.png
 share/childsplay/Data/icons/pong.icon.png
+share/childsplay/Data/icons/puzzle.icon.png
 share/childsplay/Data/icons/soundNpic.icon.png
 share/childsplay/Data/icons/soundmemory.icon.png
 share/childsplay/lib/BilliardData/
@@ -243,6 +244,21 @@ share/childsplay/lib/multiTables.py
 share/childsplay/lib/numbers.py
 share/childsplay/lib/packid.py
 share/childsplay/lib/pong.py
+share/childsplay/lib/puzzle.py
+share/childsplay/lib/puzzleData/
+share/childsplay/lib/puzzleData/birthday_cake.png
+share/childsplay/lib/puzzleData/boat.png
+share/childsplay/lib/puzzleData/bus.png
+share/childsplay/lib/puzzleData/car01.png
+share/childsplay/lib/puzzleData/chick-hatched.png
+share/childsplay/lib/puzzleData/frog.png
+share/childsplay/lib/puzzleData/grapes.png
+share/childsplay/lib/puzzleData/miner.png
+share/childsplay/lib/puzzleData/paint.png
+share/childsplay/lib/puzzleData/pineapple.png
+share/childsplay/lib/puzzleData/slate.png
+share/childsplay/lib/puzzleData/tux.png
+share/childsplay/lib/puzzleData/wooden_cottage.png
 share/childsplay/lib/soundNpic.py
 share/childsplay/lib/soundmemory.py
 share/doc/childsplay-plugins/
