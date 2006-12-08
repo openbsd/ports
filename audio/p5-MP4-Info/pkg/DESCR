@@ -1,0 +1,3 @@
+The MP4::Info module can be used to extract tag and meta information from
+MPEG-4 audio (AAC) and video files (.mp4, .m4a, .m4p, .3gp). It is designed
+as a drop-in replacement for MP3::Info.
