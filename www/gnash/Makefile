@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2006/11/20 20:37:51 bernd Exp $
+# $OpenBSD: Makefile,v 1.6 2006/12/08 15:40:26 deanna Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	"flash player with firefox browser plugin"
 DISTNAME=	gnash-0.7.2
+PKGNAME=	${DISTNAME}p0
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	www
@@ -10,7 +11,7 @@ MASTER_SITES=	ftp://ftp.gnu.org/pub/gnu/gnash/0.7.2/
 
 HOMEPAGE=	http://www.gnu.org/software/gnash/
 
-MAINTAINER=	Deanna Phillips <deanna@sdf.lonestar.org>
+MAINTAINER=	Deanna Phillips <deanna@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -51,7 +52,9 @@ WANTLIB=	freetype fontconfig Xrender ossaudio usbhid \
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		ac_cv_lib_gsm_gsm_encode=no
+
 CONFIGURE_ARGS+=--enable-plugin \
 		--enable-sound=SDL \
 		--with-plugindir=${LOCALBASE}/lib/mozilla-plugins \
