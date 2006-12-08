@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_auto_configure,v 1.1 2006/05/21 20:57:06 robert Exp $
---- src/auto/configure.orig	Thu May  4 04:46:19 2006
-+++ src/auto/configure	Mon May  8 15:28:01 2006
+$OpenBSD: patch-src_auto_configure,v 1.2 2006/12/08 22:58:55 sturm Exp $
+--- src/auto/configure.orig	Fri Dec  8 22:06:05 2006
++++ src/auto/configure	Fri Dec  8 22:12:57 2006
 @@ -10278,6 +10278,7 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -17,3 +17,12 @@ $OpenBSD: patch-src_auto_configure,v 1.1 2006/05/21 20:57:06 robert Exp $
  #include <sys/sysctl.h>
  int
  main ()
+@@ -14255,7 +14257,7 @@ else
+ sed 's/^/| /' conftest.$ac_ext >&5
+ 
+ olibs=$LIBS
+-	  LIBS="$LIBS -lintl"
++	  LIBS="$LIBS -lintl -liconv"
+ 	  cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
