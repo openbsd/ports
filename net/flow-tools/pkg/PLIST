@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2005/04/12 19:29:22 msf Exp $
+@comment $OpenBSD: PLIST,v 1.9 2006/12/08 08:23:42 jakob Exp $
+@newgroup _netflow:575
+@newuser _netflow:575:575:daemon:flow-tools user:/var/empty:/sbin/nologin
 bin/flow-capture
 bin/flow-cat
 bin/flow-dscan
@@ -9,12 +11,15 @@ bin/flow-filter
 bin/flow-gen
 bin/flow-header
 bin/flow-import
+@comment bin/flow-log2rrd
 bin/flow-mask
 bin/flow-merge
 bin/flow-nfilter
 bin/flow-print
 bin/flow-receive
 bin/flow-report
+@comment bin/flow-rpt2rrd
+bin/flow-rptfmt
 bin/flow-send
 bin/flow-split
 bin/flow-stat
@@ -36,12 +41,15 @@ lib/libft.a
 @man man/man1/flow-gen.1
 @man man/man1/flow-header.1
 @man man/man1/flow-import.1
+@comment @man man/man1/flow-log2rrd.1
 @man man/man1/flow-mask.1
 @man man/man1/flow-merge.1
 @man man/man1/flow-nfilter.1
 @man man/man1/flow-print.1
 @man man/man1/flow-receive.1
 @man man/man1/flow-report.1
+@comment @man man/man1/flow-rpt2rrd.1
+@man man/man1/flow-rptfmt.1
 @man man/man1/flow-send.1
 @man man/man1/flow-split.1
 @man man/man1/flow-stat.1

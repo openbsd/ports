@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2005/04/12 19:29:22 msf Exp $
+# $OpenBSD: Makefile,v 1.13 2006/12/08 08:23:42 jakob Exp $
 
 COMMENT=	"cisco NetFlow utilities"
 
-DISTNAME=	flow-tools-0.67
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	flow-tools-0.68
+PKGNAME=	${DISTNAME}
 CATEGORIES=	net
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
@@ -18,13 +18,33 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c z
 
+MODULES=		lang/python
+
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--localstatedir=/var/flow-tools
+
+BUILD_DEPENDS+=		::textproc/docbook-to-man
+
+PYTHON_SCRIPTS=		bin/flow-log2rrd \
+			bin/flow-rpt2rrd \
+			bin/flow-rptfmt
 
 post-patch:
-	@cp ${WRKSRC}/lib/radix.h ${WRKSRC}/lib/ftradix.h
+	cp ${WRKSRC}/lib/radix.h ${WRKSRC}/lib/ftradix.h
+.for file in ${PYTHON_SCRIPTS}
+	mv ${WRKSRC}/${file} ${WRKSRC}/${file}.dist
+	sed "s!/usr/local/bin/python!${LOCALBASE}/bin/python${MODPY_VERSION}!" \
+		< ${WRKSRC}/${file}.dist > ${WRKSRC}/${file}
+.endfor
+
+post-configure:
+	rm -f ${WRKSRC}/docs/*.[0-9]
+	rm -f ${WRKSRC}/docs/*.[0-9].in
+	(cd ${WRKSRC}/docs; ${MAKE_PROGRAM})
 
 do-install:
 	(cd ${WRKSRC}/src; env ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} install)
+	(cd ${WRKSRC}/bin; env ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} install)
 	${INSTALL_MAN} ${WRKSRC}/docs/*.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/flow-tools/cfg
 	${INSTALL_DATA} ${WRKSRC}/configs/*.cfg \
