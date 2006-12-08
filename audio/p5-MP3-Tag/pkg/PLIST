@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/08 07:04:59 steven Exp $
+bin/audio_rename
+bin/mp3info2
+bin/typeset_audio_dir
+${P5SITE}/MP3/
+${P5SITE}/MP3/ID3v2-Data.pod
+${P5SITE}/MP3/Tag/
+${P5SITE}/MP3/Tag.pm
+${P5SITE}/MP3/Tag/CDDB_File.pm
+${P5SITE}/MP3/Tag/File.pm
+${P5SITE}/MP3/Tag/ID3v1.pm
+${P5SITE}/MP3/Tag/ID3v2.pm
+${P5SITE}/MP3/Tag/Inf.pm
+${P5SITE}/MP3/Tag/LastResort.pm
+${P5SITE}/MP3/Tag/ParseData.pm
+@man man/man1/audio_rename.1
+@man man/man1/mp3info2.1
+@man man/man1/typeset_audio_dir.1
+@man man/man3p/MP3::Tag.3p
+@man man/man3p/MP3::Tag::CDDB_File.3p
+@man man/man3p/MP3::Tag::File.3p
+@man man/man3p/MP3::Tag::ID3v1.3p
+@man man/man3p/MP3::Tag::ID3v2-Data.3p
+@man man/man3p/MP3::Tag::ID3v2.3p
+@man man/man3p/MP3::Tag::Inf.3p
+@man man/man3p/MP3::Tag::LastResort.3p
+@man man/man3p/MP3::Tag::ParseData.3p
