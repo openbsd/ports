@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.35 2006/11/21 07:24:46 jakob Exp $
+# $OpenBSD: Makefile,v 1.36 2006/12/08 08:33:36 jakob Exp $
 
 COMMENT=	"authoritative-only name server daemon"
 
-VERSION=	3.0.2
+VERSION=	3.0.3
 DISTNAME=	nsd-${VERSION}
 PKGNAME=	nsd-${VERSION}
 CATEGORIES=	net
