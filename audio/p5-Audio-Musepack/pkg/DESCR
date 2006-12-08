@@ -1,0 +1,2 @@
+This module returns a hash containing basic information about a Musepack
+file, as well as tag information contained in the Musepack file's APE tags.
