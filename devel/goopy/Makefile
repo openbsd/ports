@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/05 06:20:08 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2006/12/08 22:29:56 sturm Exp $
 
 COMMENT=	"Google utilities written in Python"
 
 DISTNAME=	goopy-0.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	devel
 HOMEPAGE=	http://goog-goopy.sourceforge.net/
 
