@@ -1,0 +1,2 @@
+This module presents an object-oriented interface to Ogg Vorbis files which
+allows user to view Vorbis info and comments and to modify or add comments.
