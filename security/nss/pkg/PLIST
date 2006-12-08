@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/04 17:19:54 kurt Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/12/08 19:21:30 kili Exp $
 %%SHARED%%
 bin/addbuiltin
 @comment bin/atob
@@ -131,28 +131,8 @@ include/nss/sslerr.h
 include/nss/sslproto.h
 include/nss/sslt.h
 include/nss/watcomfx.h
-lib/libasn1.a
-lib/libcertdb.a
-lib/libcerthi.a
 lib/libcrmf.a
-lib/libcryptohi.a
-lib/libdbm.a
-lib/libfreebl.a
 lib/libfreebl3.chk
-lib/libjar.a
-lib/libnss.a
-lib/libnssb.a
-lib/libnssckfw.a
-lib/libnssdev.a
-lib/libnsspki.a
-lib/libpk11wrap.a
-lib/libpkcs12.a
-lib/libpkcs7.a
-lib/libsectool.a
-lib/libsecutil.a
-lib/libsmime.a
-lib/libsoftokn.a
 lib/libsoftokn3.chk
-lib/libssl.a
 lib/pkgconfig/
 lib/pkgconfig/nss.pc

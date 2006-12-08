@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/04 17:19:54 kurt Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/08 19:21:30 kili Exp $
+
+SHARED_ONLY=		Yes
 
 COMMENT=		"libraries to support development of security-enabled apps"
 
 VERSION=		3.11.4
 DISTNAME=		nss-${VERSION}
+PKGNAME=		${DISTNAME}p0
 SO_VERSION=		18.0
 .for _lib in freebl3 nss3 nssckbi smime3 softokn3 ssl3
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
@@ -49,15 +52,12 @@ do-install:
 	@cd ${NSSOBJ}/lib && ${TAR} -chf - *.so.${SO_VERSION} | \
 		${TAR} -xf - -C ${PREFIX}/lib
 	@chmod 444 ${PREFIX}/lib/*.so.${SO_VERSION}
-	${INSTALL_DATA} ${NSSOBJ}/lib/*.{chk,a} ${PREFIX}/lib/
+	${INSTALL_DATA} ${NSSOBJ}/lib/{libcrmf.a,*.chk} ${PREFIX}/lib/
 	${INSTALL_PROGRAM} ${NSSOBJ}/bin/* ${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${FILESDIR}/nss-config ${PREFIX}/bin/
 	${INSTALL_DATA} ${FILESDIR}/nss.pc ${PREFIX}/lib/pkgconfig/
 	@perl -pi -e 's|!!PREFIX!!|${TRUEPREFIX}|g; s|!!VERSION!!|${VERSION}|g' \
 		${PREFIX}/bin/nss-config ${PREFIX}/lib/pkgconfig/nss.pc
-#	unknown manpage type
-#	${INSTALL_MAN} ${WRKSRC}/cmd/symkeyutil/symkey.man \
-#		${PREFIX}/man/man1/symkeyutil.1
 
 do-regress:
 	cd ${WRKSRC}/tests && ${SETENV} PATH="${NSSOBJ}/bin:${PATH}" \
