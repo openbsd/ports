@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2006/11/20 13:07:19 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/12/09 19:49:50 steven Exp $
 
 COMMENT=	"integrated LaTeX environment for KDE"
-DISTNAME=	kile-1.9.2
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	kile-1.9.3
 CATEGORIES=	editors x11/kde
 
 HOMEPAGE=	http://kile.sourceforge.net/
