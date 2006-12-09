@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2005/03/01 03:52:45 kevlo Exp $
+# $OpenBSD: Makefile,v 1.26 2006/12/09 08:52:11 steven Exp $
 
 COMMENT=	"highly configurable webmail client"
 
 DISTNAME=	openwebmail-2.51
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	mail www
 
 HOMEPAGE=	http://www.openwebmail.org/
@@ -63,6 +64,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${CONFDIR}/openwebmail
 	${TAR} -C ${WRKSRC} -cf- cgi-bin conf htdocs | \
 		${TAR} -C ${PREFIX} -xpf-
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/*
 
 post-install:
 	@echo "/var/www/cgi-bin/openwebmail/" \
