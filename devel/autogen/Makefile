@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2006/12/09 18:28:53 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2006/12/09 19:00:49 kili Exp $
 
 COMMENT='automatic text creation from templates'
 CATEGORIES=devel
 
 DISTNAME=	autogen-5.8.7
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS +=	opts                 27.5     # .27.5
 SHARED_LIBS +=	guileopts            1.0      # .0.1
 HOMEPAGE=http://autogen.sourceforge.net/
@@ -18,7 +19,7 @@ PERMIT_DISTFILES_CDROM=Yes
 MODULES=	converters/libiconv
 
 WANTLIB=	c m z
-LIB_DEPENDS=	guile::lang/guile \
+LIB_DEPENDS=	guile,guile-ltdl::lang/guile \
 		xml2::textproc/libxml
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--without-libregex \
