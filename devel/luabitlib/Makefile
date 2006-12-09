@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/19 00:07:27 pedro Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/09 15:25:35 pedro Exp $
 
 COMMENT=	"library for bitwise operations in lua"
 SHARED_ONLY=	Yes
 
 DISTNAME=	bitlib
-V=		19
+V=		20
 PKGNAME=	luabitlib-${V}
 DIST_SUBDIR=	${DISTNAME}-${V}
 CATEGORIES=	devel
 
-MASTER_SITES=	http://luaforge.net/frs/download.php/1801/
+MASTER_SITES=	http://luaforge.net/frs/download.php/2075/
 HOMEPAGE=	http://bitlib.luaforge.net/
 EXTRACT_SUFX=	.zip
 
