@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.868 2006/12/08 10:19:08 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.869 2006/12/09 14:56:41 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1154,7 +1154,12 @@ DEPDIR =
 .if ${FORCE_UPDATE:L} == "yes" || ${FORCE_UPDATE:L} == "hard"
 _force_update_fragment = { \
 		${ECHO_MSG} "===>  Verifying update for $$what in $$dir"; \
-		eval $$toset ${MAKE} subupdate; \
+		if ( eval $$toset exec ${MAKE} subupdate ); then \
+			${ECHO_MSG} "===> Returning to build of ${FULLPKGNAME${SUBPACKAGE}}${_MASTER}"; \
+		else \
+			${REPORT_PROBLEM}; \
+			exit 1; \
+		fi; \
 	}
 _PKG_ADD_FORCE = -F update -F updatedepends -r
 .  if ${FORCE_UPDATE:L} == "hard"
@@ -1537,9 +1542,11 @@ ${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g}: ${_WRKDIR_COOKIE}
 			checkinstall=false;; \
 		Xextract) \
 			${ECHO_MSG} "===> Error: bad dependency ${_i}"; \
+			${REPORT_PROBLEM}; \
 			exit 1;; \
 		*) \
 			${ECHO_MSG} "===> Error: don't know how to depend on $$target"; \
+			${REPORT_PROBLEM}; \
 			exit 1;; \
 		esac; \
 		toset="$$toset _SOLVING_DEP=Yes"; \
@@ -1550,11 +1557,13 @@ ${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g}: ${_WRKDIR_COOKIE}
 				pkg=`echo $$pkg|${_version2default}`; \
 			else \
 				${ECHO_MSG} "===> Error in evaluating dependency ${_i}"; \
+				${REPORT_PROBLEM}; \
 				exit 1; \
 			fi;; esac; \
 		for abort in false false true; do \
 			if $$abort; then \
 				${ECHO_MSG} "Dependency check failed"; \
+				${REPORT_PROBLEM}; \
 				exit 1; \
 			fi; \
 			found=false; \
@@ -1570,9 +1579,10 @@ ${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g}: ${_WRKDIR_COOKIE}
 				fi; \
 			fi; \
 			${ECHO_MSG} "===>  Verifying $$target for $$what in $$dir"; \
-			if eval $$toset ${MAKE} $$target; then \
+			if (eval $$toset exec ${MAKE} $$target); then \
 				${ECHO_MSG} "===> Returning to build of ${FULLPKGNAME${SUBPACKAGE}}${_MASTER}"; \
 			else \
+				${REPORT_PROBLEM}; \
 				exit 1; \
 			fi; \
 			if $$early_exit; then \
