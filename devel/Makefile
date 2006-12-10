@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.457 2006/12/08 23:02:18 steven Exp $
+# $OpenBSD: Makefile,v 1.458 2006/12/10 11:09:23 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -259,6 +259,7 @@
      SUBDIR += p5-DateTime-Format-ISO8601
      SUBDIR += p5-DateTime-Format-Mail
      SUBDIR += p5-DateTime-Format-MySQL
+     SUBDIR += p5-DateTime-Format-Pg
      SUBDIR += p5-DateTime-Format-Strptime
      SUBDIR += p5-DateTime-Format-W3CDTF
      SUBDIR += p5-DateTime-Locale
