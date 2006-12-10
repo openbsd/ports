@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2006/12/10 12:59:19 espie Exp $
+# $OpenBSD: Makefile,v 1.105 2006/12/10 22:15:00 espie Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += db
@@ -62,6 +62,10 @@
      SUBDIR += p5-GDBM_File
      SUBDIR += p5-Ima-DBI
      SUBDIR += p5-Jifty-DBI
+     SUBDIR += p5-Rose-DateTime
+     SUBDIR += p5-Rose-DB
+     SUBDIR += p5-Rose-DB-Object
+     SUBDIR += p5-Rose-Object
      SUBDIR += p5-SQL-Abstract
      SUBDIR += p5-SQL-Abstract-Limit
      SUBDIR += p5-SQL-ReservedWords
