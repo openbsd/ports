@@ -1,0 +1,12 @@
+$OpenBSD: patch-t_test-lib_pl,v 1.1.1.1 2006/12/10 22:13:22 espie Exp $
+--- t/test-lib.pl.orig	Sun Dec 10 23:11:36 2006
++++ t/test-lib.pl	Sun Dec 10 23:11:50 2006
+@@ -131,7 +131,7 @@ BEGIN
+ 
+   my $version = $DBD::SQLite::VERSION || 0;
+ 
+-  unless($ENV{'RDBO_NO_SQLITE'} || $version < 1.11 || $version == 1.13)
++  unless($ENV{'RDBO_NO_SQLITE'} || $version < 1.11)
+   {
+     #unlink("$Bin/sqlite.db");
+ 

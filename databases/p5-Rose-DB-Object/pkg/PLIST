@@ -1,0 +1,152 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/10 22:13:22 espie Exp $
+${P5SITE}/Rose/DB/Object/
+${P5SITE}/Rose/DB/Object.pm
+${P5SITE}/Rose/DB/Object/Cached.pm
+${P5SITE}/Rose/DB/Object/Constants.pm
+${P5SITE}/Rose/DB/Object/ConventionManager/
+${P5SITE}/Rose/DB/Object/ConventionManager.pm
+${P5SITE}/Rose/DB/Object/ConventionManager/Null.pm
+${P5SITE}/Rose/DB/Object/Helpers.pm
+${P5SITE}/Rose/DB/Object/Iterator.pm
+${P5SITE}/Rose/DB/Object/Loader.pm
+${P5SITE}/Rose/DB/Object/MakeMethods/
+${P5SITE}/Rose/DB/Object/MakeMethods/BigNum.pm
+${P5SITE}/Rose/DB/Object/MakeMethods/Date.pm
+${P5SITE}/Rose/DB/Object/MakeMethods/Generic.pm
+${P5SITE}/Rose/DB/Object/MakeMethods/Pg.pm
+${P5SITE}/Rose/DB/Object/MakeMethods/Std.pm
+${P5SITE}/Rose/DB/Object/MakeMethods/Time.pm
+${P5SITE}/Rose/DB/Object/Manager.pm
+${P5SITE}/Rose/DB/Object/Metadata/
+${P5SITE}/Rose/DB/Object/Metadata.pm
+${P5SITE}/Rose/DB/Object/Metadata/Auto/
+${P5SITE}/Rose/DB/Object/Metadata/Auto.pm
+${P5SITE}/Rose/DB/Object/Metadata/Auto/Generic.pm
+${P5SITE}/Rose/DB/Object/Metadata/Auto/Informix.pm
+${P5SITE}/Rose/DB/Object/Metadata/Auto/MySQL.pm
+${P5SITE}/Rose/DB/Object/Metadata/Auto/Pg.pm
+${P5SITE}/Rose/DB/Object/Metadata/Auto/SQLite.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/
+${P5SITE}/Rose/DB/Object/Metadata/Column.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/Array.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/BigInt.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/BigSerial.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/Bitfield.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/Blob.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/Boolean.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/Character.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/Date.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/Datetime.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/DatetimeYearToFraction.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/DatetimeYearToFraction1.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/DatetimeYearToFraction2.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/DatetimeYearToFraction3.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/DatetimeYearToFraction4.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/DatetimeYearToFraction5.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/DatetimeYearToMinute.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/DatetimeYearToSecond.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/Decimal.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/Enum.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/Epoch/
+${P5SITE}/Rose/DB/Object/Metadata/Column/Epoch.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/Epoch/HiRes.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/Float.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/Integer.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/Interval.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/Numeric.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/Pg/
+${P5SITE}/Rose/DB/Object/Metadata/Column/Pg/Bytea.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/Pg/Chkpass.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/Scalar.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/Serial.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/Set.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/Text.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/Time.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/Timestamp.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/Varchar.pm
+${P5SITE}/Rose/DB/Object/Metadata/ColumnList.pm
+${P5SITE}/Rose/DB/Object/Metadata/ForeignKey.pm
+${P5SITE}/Rose/DB/Object/Metadata/MethodMaker.pm
+${P5SITE}/Rose/DB/Object/Metadata/Object.pm
+${P5SITE}/Rose/DB/Object/Metadata/PrimaryKey.pm
+${P5SITE}/Rose/DB/Object/Metadata/Relationship/
+${P5SITE}/Rose/DB/Object/Metadata/Relationship.pm
+${P5SITE}/Rose/DB/Object/Metadata/Relationship/ManyToMany.pm
+${P5SITE}/Rose/DB/Object/Metadata/Relationship/ManyToOne.pm
+${P5SITE}/Rose/DB/Object/Metadata/Relationship/OneToMany.pm
+${P5SITE}/Rose/DB/Object/Metadata/Relationship/OneToOne.pm
+${P5SITE}/Rose/DB/Object/Metadata/UniqueKey.pm
+${P5SITE}/Rose/DB/Object/Metadata/Util.pm
+${P5SITE}/Rose/DB/Object/MixIn.pm
+${P5SITE}/Rose/DB/Object/QueryBuilder.pm
+${P5SITE}/Rose/DB/Object/Std/
+${P5SITE}/Rose/DB/Object/Std.pm
+${P5SITE}/Rose/DB/Object/Std/Cached.pm
+${P5SITE}/Rose/DB/Object/Std/Metadata.pm
+${P5SITE}/Rose/DB/Object/Tutorial.pod
+${P5SITE}/Rose/DB/Object/Util.pm
+@man man/man3p/Rose::DB::Object.3p
+@man man/man3p/Rose::DB::Object::Cached.3p
+@man man/man3p/Rose::DB::Object::ConventionManager.3p
+@man man/man3p/Rose::DB::Object::ConventionManager::Null.3p
+@man man/man3p/Rose::DB::Object::Helpers.3p
+@man man/man3p/Rose::DB::Object::Iterator.3p
+@man man/man3p/Rose::DB::Object::Loader.3p
+@man man/man3p/Rose::DB::Object::MakeMethods::BigNum.3p
+@man man/man3p/Rose::DB::Object::MakeMethods::Date.3p
+@man man/man3p/Rose::DB::Object::MakeMethods::Generic.3p
+@man man/man3p/Rose::DB::Object::MakeMethods::Pg.3p
+@man man/man3p/Rose::DB::Object::MakeMethods::Std.3p
+@man man/man3p/Rose::DB::Object::MakeMethods::Time.3p
+@man man/man3p/Rose::DB::Object::Manager.3p
+@man man/man3p/Rose::DB::Object::Metadata.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::Array.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::BigInt.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::BigSerial.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::Bitfield.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::Blob.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::Boolean.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::Character.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::Date.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::Datetime.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::DatetimeYearToFraction.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::DatetimeYearToFraction1.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::DatetimeYearToFraction2.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::DatetimeYearToFraction3.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::DatetimeYearToFraction4.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::DatetimeYearToFraction5.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::DatetimeYearToMinute.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::DatetimeYearToSecond.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::Decimal.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::Enum.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::Epoch.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::Epoch::HiRes.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::Float.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::Integer.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::Interval.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::Numeric.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::Pg::Bytea.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::Pg::Chkpass.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::Scalar.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::Serial.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::Set.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::Text.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::Time.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::Timestamp.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::Varchar.3p
+@man man/man3p/Rose::DB::Object::Metadata::ForeignKey.3p
+@man man/man3p/Rose::DB::Object::Metadata::PrimaryKey.3p
+@man man/man3p/Rose::DB::Object::Metadata::Relationship.3p
+@man man/man3p/Rose::DB::Object::Metadata::Relationship::ManyToMany.3p
+@man man/man3p/Rose::DB::Object::Metadata::Relationship::ManyToOne.3p
+@man man/man3p/Rose::DB::Object::Metadata::Relationship::OneToMany.3p
+@man man/man3p/Rose::DB::Object::Metadata::Relationship::OneToOne.3p
+@man man/man3p/Rose::DB::Object::Metadata::UniqueKey.3p
+@man man/man3p/Rose::DB::Object::MixIn.3p
+@man man/man3p/Rose::DB::Object::QueryBuilder.3p
+@man man/man3p/Rose::DB::Object::Std.3p
+@man man/man3p/Rose::DB::Object::Std::Cached.3p
+@man man/man3p/Rose::DB::Object::Std::Metadata.3p
+@man man/man3p/Rose::DB::Object::Tutorial.3p
+@man man/man3p/Rose::DB::Object::Util.3p

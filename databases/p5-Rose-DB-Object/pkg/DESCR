@@ -1,0 +1,11 @@
+Rose::DB::Object - Extensible, high performance RDBMS-OO mapper.
+
+Rose::DB::Object is a base class for objects that encapsulate a
+single row in a database table.
+
+Rose::DB::Object objects can represent rows in almost any database
+table, subject to the following constraints.
+* The database server must be supported by L<Rose::DB>.
+* The database table must have a primary key.
+* The primary key must not allow null values in any of its columns.
+
