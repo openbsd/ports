@@ -1,0 +1,2 @@
+This module provides a simple routine for installing code into packages without
+looking at typeglobs or thinking about warnings or strictures.
