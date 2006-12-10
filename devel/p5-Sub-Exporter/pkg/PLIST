@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/10 12:26:46 espie Exp $
+${P5SITE}/Sub/Exporter/
+${P5SITE}/Sub/Exporter.pm
+${P5SITE}/Sub/Exporter/Tutorial.pod
+${P5SITE}/Sub/Exporter/Util.pm
+@man man/man3p/Sub::Exporter.3p
+@man man/man3p/Sub::Exporter::Tutorial.3p
+@man man/man3p/Sub::Exporter::Util.3p
