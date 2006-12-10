@@ -1,0 +1,7 @@
+Allows you to test whether some word is reserved in SQL, or in some
+database backend.
+
+Covers all SQL standards, along with most databases:
+DB2, ODBC, PostgreSQL, SQLite, MySQL, Oracle, SQLServer and Sybase.
+
+Can be used to effect selective quoting...

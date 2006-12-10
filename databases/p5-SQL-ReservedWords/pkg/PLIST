@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/10 12:58:10 espie Exp $
+bin/sqlrw
+${P5SITE}/SQL/
+${P5SITE}/SQL/ReservedWords/
+${P5SITE}/SQL/ReservedWords.pm
+${P5SITE}/SQL/ReservedWords/DB2.pm
+${P5SITE}/SQL/ReservedWords/MySQL.pm
+${P5SITE}/SQL/ReservedWords/ODBC.pm
+${P5SITE}/SQL/ReservedWords/Oracle.pm
+${P5SITE}/SQL/ReservedWords/PostgreSQL.pm
+${P5SITE}/SQL/ReservedWords/SQLServer.pm
+${P5SITE}/SQL/ReservedWords/SQLite.pm
+${P5SITE}/SQL/ReservedWords/Sybase.pm
+@man man/man1/sqlrw.1
+@man man/man3p/SQL::ReservedWords.3p
+@man man/man3p/SQL::ReservedWords::DB2.3p
+@man man/man3p/SQL::ReservedWords::MySQL.3p
+@man man/man3p/SQL::ReservedWords::ODBC.3p
+@man man/man3p/SQL::ReservedWords::Oracle.3p
+@man man/man3p/SQL::ReservedWords::PostgreSQL.3p
+@man man/man3p/SQL::ReservedWords::SQLServer.3p
+@man man/man3p/SQL::ReservedWords::SQLite.3p
+@man man/man3p/SQL::ReservedWords::Sybase.3p
