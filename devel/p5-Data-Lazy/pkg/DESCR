@@ -1,0 +1,5 @@
+A very little module for generic on-demand computation of values in a
+scalar, array or hash.
+
+It provides scalars that are "lazy", that is their value is computed
+only when accessed, and at most once.
