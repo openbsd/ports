@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.459 2006/12/10 12:35:09 espie Exp $
+# $OpenBSD: Makefile,v 1.460 2006/12/10 12:46:01 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -416,6 +416,7 @@
      SUBDIR += p5-Test-NoWarnings
      SUBDIR += p5-Test-Object
      SUBDIR += p5-Test-Output
+     SUBDIR += p5-Test-Perl-Critic
      SUBDIR += p5-Test-Pod
      SUBDIR += p5-Test-Pod-Coverage
      SUBDIR += p5-Test-Reporter

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/10 12:26:46 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/10 12:46:01 espie Exp $
 
 COMMENT=	"exporter on steroids"
 
@@ -15,8 +15,11 @@ PERMIT_DISTFILES_FTP=	Yes
 RUN_DEPENDS=	::devel/p5-Data-OptList \
 		::devel/p5-Sub-Install
 
-MAKE_ENV=	TEST_POD=Yes
+MAKE_ENV=	TEST_POD=Yes \
+		PERL_TEST_CRITIC=Yes
 
-# Misses test-perl-critic and Package::Generator to run all tests
+REGRESS_DEPENDS=::devel/p5-Test-Perl-Critic
+
+# Misses Package::Generator to run all tests
 
 .include <bsd.port.mk>
