@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/12/10 21:40:53 jasper Exp $
+@lib lib/libconfuse.so.${LIBconfuse_VERSION}
