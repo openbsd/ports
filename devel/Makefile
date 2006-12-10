@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.458 2006/12/10 11:09:23 espie Exp $
+# $OpenBSD: Makefile,v 1.459 2006/12/10 12:35:09 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -244,6 +244,7 @@
      SUBDIR += p5-Data-Flow
      SUBDIR += p5-Data-FormValidator
      SUBDIR += p5-Data-Hierarchy
+     SUBDIR += p5-Data-OptList
      SUBDIR += p5-Data-ShowTable
      SUBDIR += p5-Data-UUID
      SUBDIR += p5-Data-Visitor
@@ -384,7 +385,9 @@
      SUBDIR += p5-String-CRC32
      SUBDIR += p5-String-Format
      SUBDIR += p5-String-Scanf
+     SUBDIR += p5-Sub-Exporter
      SUBDIR += p5-Sub-Name
+     SUBDIR += p5-Sub-Install
      SUBDIR += p5-Sub-Override
      SUBDIR += p5-Sub-Uplevel
      SUBDIR += p5-Taint-Runtime
@@ -412,6 +415,7 @@
      SUBDIR += p5-Test-MockObject
      SUBDIR += p5-Test-NoWarnings
      SUBDIR += p5-Test-Object
+     SUBDIR += p5-Test-Output
      SUBDIR += p5-Test-Pod
      SUBDIR += p5-Test-Pod-Coverage
      SUBDIR += p5-Test-Reporter
