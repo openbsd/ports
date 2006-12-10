@@ -1,0 +1,8 @@
+The Rose::DateTime::* modules provide a few convenience functions
+and objects for use with DateTime dates.
+
+Rose::DateTime::Util contains a simple date parser and a slightly
+customized date formatter.
+
+Rose::DateTime::Parser encapsulates a date parser with an associated
+default time zone.

@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/10 18:00:20 espie Exp $
+${P5SITE}/Rose/
+${P5SITE}/Rose/DateTime/
+${P5SITE}/Rose/DateTime.pm
+${P5SITE}/Rose/DateTime/Parser.pm
+${P5SITE}/Rose/DateTime/Util.pm
+@man man/man3p/Rose::DateTime.3p
+@man man/man3p/Rose::DateTime::Parser.3p
+@man man/man3p/Rose::DateTime::Util.3p
