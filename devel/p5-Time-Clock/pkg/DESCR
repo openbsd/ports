@@ -1,0 +1,7 @@
+A Time::Cloc> object is a twenty-four hour clock with nanosecond
+precision (dependent on the base OS support, see Time::HiRes) 
+and wrap-around.  It is a clock only; it has absolutely
+no concept of dates.  Vagaries of date/time such as leap seconds
+and daylight savings time are unsupported.
+
+Time::Clock objects automatically stringify to a user-definable format.
