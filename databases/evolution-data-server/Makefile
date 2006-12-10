@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/11/08 21:48:20 sturm Exp $
+# $OpenBSD: Makefile,v 1.15 2006/12/10 11:55:07 espie Exp $
 
 COMMENT=		"data backends for the Evolution mail/PIM suite"
 
@@ -51,6 +51,10 @@ CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	--disable-gtk-doc
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/evolution-data-server
 CONFIGURE_ARGS+= 	--with-openldap=${LOCALBASE}
+CONFIGURE_ARGS+=	--disable-nss
+CONFIGURE_ARGS+=	--disable-smime
+CONFIGURE_ARGS+=	--disable-dependency-tracking
+
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
