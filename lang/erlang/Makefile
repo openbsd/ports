@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2006/11/21 08:59:44 steven Exp $
+# $OpenBSD: Makefile,v 1.23 2006/12/10 19:07:50 steven Exp $
 
 COMMENT=	"real-time, concurrent and distributed functional language"
 
 V=		R11B-2
 DISTNAME=	otp_src_${V}
-PKGNAME=	erlang-11b.2
+PKGNAME=	erlang-11b.2p0
 CATEGORIES=	lang
 
 MAINTAINER=	Jon Olsson <jon@abc.se>

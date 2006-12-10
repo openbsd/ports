@@ -1,0 +1,30 @@
+$OpenBSD: patch-erts_emulator_sys_unix_erl_poll_c,v 1.1 2006/12/10 19:07:50 steven Exp $
+OTP-6344  A bug in the kernel poll implementation could cause the
+          emulator to omit polling for events on file descriptors.
+          The bug was only present when using the kernel poll
+          implementation based on epoll or kqueue. This bug was
+          introduced in erts-5.5.2.
+--- erts/emulator/sys/unix/erl_poll.c.orig	Mon Nov  6 14:57:46 2006
++++ erts/emulator/sys/unix/erl_poll.c	Sat Dec  9 21:07:48 2006
+@@ -1015,8 +1015,9 @@ update_pollset(ErtsPollSet ps, int fd)
+ 		return 0;
+ 	    }
+ #endif
+-	    res = update_fallback_pollset(ps, fd);
+ 	    ASSERT(!(ps->fds_status[fd].flags & ERTS_POLL_FD_FLG_INFLBCK));
++	    res = update_fallback_pollset(ps, fd);
++	    ASSERT(ps->fds_status[fd].flags & ERTS_POLL_FD_FLG_INFLBCK);
+ 	    break;
+ 	}
+ 	case EPOLL_CTL_DEL: {
+@@ -1077,6 +1078,10 @@ static int update_pollset(ErtsPollSet ps
+ 
+     if (!need_update(ps, fd))
+ 	return 0;
++
++#if ERTS_POLL_USE_FALLBACK
++    ps->fds_status[fd].flags &= ~ERTS_POLL_FD_FLG_RST;
++#endif
+ 
+ #if ERTS_POLL_USE_POLL	/* --- poll -------------------------------- */
+     if (!ps->fds_status[fd].events) {
