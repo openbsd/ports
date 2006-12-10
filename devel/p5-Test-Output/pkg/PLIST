@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/10 12:29:56 espie Exp $
+${P5SITE}/Test/
+${P5SITE}/Test/Output/
+${P5SITE}/Test/Output.pm
+${P5SITE}/Test/Output/Tie.pm
+@man man/man3p/Test::Output.3p
+@man man/man3p/Test::Output::Tie.3p
