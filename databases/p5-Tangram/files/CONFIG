@@ -1,0 +1,5 @@
+dbi:SQLite:tryout
+
+
+tx_do = 1
+subselects = 0

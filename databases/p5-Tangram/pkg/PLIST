@@ -1,0 +1,186 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/10 23:48:59 espie Exp $
+${P5SITE}/Tangram/
+${P5SITE}/Tangram.pm
+${P5SITE}/Tangram.pod
+${P5SITE}/Tangram/Compat/
+${P5SITE}/Tangram/Compat.pm
+${P5SITE}/Tangram/Compat/Stub.pm
+${P5SITE}/Tangram/Complicity.pm
+${P5SITE}/Tangram/Core.pm
+${P5SITE}/Tangram/Core.pod
+${P5SITE}/Tangram/Cursor/
+${P5SITE}/Tangram/Cursor.pm
+${P5SITE}/Tangram/Cursor.pod
+${P5SITE}/Tangram/Cursor/Coll.pm
+${P5SITE}/Tangram/Cursor/Data.pm
+${P5SITE}/Tangram/Deploy.pm
+${P5SITE}/Tangram/Deploy.pod
+${P5SITE}/Tangram/Driver/
+${P5SITE}/Tangram/Driver/Oracle/
+${P5SITE}/Tangram/Driver/Oracle.pm
+${P5SITE}/Tangram/Driver/Oracle.pod
+${P5SITE}/Tangram/Driver/Oracle/Storage.pm
+${P5SITE}/Tangram/Driver/Pg/
+${P5SITE}/Tangram/Driver/Pg.pm
+${P5SITE}/Tangram/Driver/Pg.pod
+${P5SITE}/Tangram/Driver/Pg/Storage.pm
+${P5SITE}/Tangram/Driver/SQLite/
+${P5SITE}/Tangram/Driver/SQLite.pm
+${P5SITE}/Tangram/Driver/SQLite.pod
+${P5SITE}/Tangram/Driver/SQLite/Storage.pm
+${P5SITE}/Tangram/Driver/SQLite2.pm
+${P5SITE}/Tangram/Driver/Sybase/
+${P5SITE}/Tangram/Driver/Sybase.pm
+${P5SITE}/Tangram/Driver/Sybase.pod
+${P5SITE}/Tangram/Driver/Sybase/Expr/
+${P5SITE}/Tangram/Driver/Sybase/Expr/Date.pm
+${P5SITE}/Tangram/Driver/Sybase/Statement.pm
+${P5SITE}/Tangram/Driver/Sybase/Storage.pm
+${P5SITE}/Tangram/Driver/mysql/
+${P5SITE}/Tangram/Driver/mysql.pm
+${P5SITE}/Tangram/Driver/mysql.pod
+${P5SITE}/Tangram/Driver/mysql/Expr/
+${P5SITE}/Tangram/Driver/mysql/Expr/Date.pm
+${P5SITE}/Tangram/Driver/mysql/Expr/Integer.pm
+${P5SITE}/Tangram/Driver/mysql/Storage.pm
+${P5SITE}/Tangram/Expr/
+${P5SITE}/Tangram/Expr.pm
+${P5SITE}/Tangram/Expr.pod
+${P5SITE}/Tangram/Expr/Coll/
+${P5SITE}/Tangram/Expr/Coll.pm
+${P5SITE}/Tangram/Expr/Coll/FromMany.pm
+${P5SITE}/Tangram/Expr/Coll/FromOne.pm
+${P5SITE}/Tangram/Expr/CursorObject.pm
+${P5SITE}/Tangram/Expr/Filter.pm
+${P5SITE}/Tangram/Expr/FlatArray.pm
+${P5SITE}/Tangram/Expr/FlatHash.pm
+${P5SITE}/Tangram/Expr/LinkTable.pm
+${P5SITE}/Tangram/Expr/QueryObject.pm
+${P5SITE}/Tangram/Expr/RDBObject.pm
+${P5SITE}/Tangram/Expr/Select.pm
+${P5SITE}/Tangram/Expr/Table.pm
+${P5SITE}/Tangram/Expr/TableAlias.pm
+${P5SITE}/Tangram/Intro.pod
+${P5SITE}/Tangram/Lazy/
+${P5SITE}/Tangram/Lazy/BackRef.pm
+${P5SITE}/Tangram/Lazy/Coll.pm
+${P5SITE}/Tangram/Lazy/Ref.pm
+${P5SITE}/Tangram/Relational/
+${P5SITE}/Tangram/Relational.pm
+${P5SITE}/Tangram/Relational.pod
+${P5SITE}/Tangram/Relational/Engine/
+${P5SITE}/Tangram/Relational/Engine.pm
+${P5SITE}/Tangram/Relational/Engine/Class.pm
+${P5SITE}/Tangram/Relational/Mappings.pod
+${P5SITE}/Tangram/Relational/PolySelectTemplate.pm
+${P5SITE}/Tangram/Relational/Schema.pm
+${P5SITE}/Tangram/Relational/TableSet.pm
+${P5SITE}/Tangram/Remote.pod
+${P5SITE}/Tangram/Schema/
+${P5SITE}/Tangram/Schema.pm
+${P5SITE}/Tangram/Schema.pod
+${P5SITE}/Tangram/Schema/Class.pm
+${P5SITE}/Tangram/Schema/ClassHash.pm
+${P5SITE}/Tangram/Schema/Node.pm
+${P5SITE}/Tangram/Springfield.pm
+${P5SITE}/Tangram/Springfield.pod
+${P5SITE}/Tangram/Storage/
+${P5SITE}/Tangram/Storage.pm
+${P5SITE}/Tangram/Storage.pod
+${P5SITE}/Tangram/Storage/Statement.pm
+${P5SITE}/Tangram/Sucks.pm
+${P5SITE}/Tangram/Tour.pod
+${P5SITE}/Tangram/Type/
+${P5SITE}/Tangram/Type.pm
+${P5SITE}/Tangram/Type.pod
+${P5SITE}/Tangram/Type/Abstract/
+${P5SITE}/Tangram/Type/Abstract/Array.pm
+${P5SITE}/Tangram/Type/Abstract/Coll.pm
+${P5SITE}/Tangram/Type/Abstract/Hash.pm
+${P5SITE}/Tangram/Type/Abstract/Set.pm
+${P5SITE}/Tangram/Type/Array/
+${P5SITE}/Tangram/Type/Array/FromMany.pm
+${P5SITE}/Tangram/Type/Array/FromMany.pod
+${P5SITE}/Tangram/Type/Array/FromOne.pm
+${P5SITE}/Tangram/Type/Array/FromOne.pod
+${P5SITE}/Tangram/Type/Array/Scalar.pm
+${P5SITE}/Tangram/Type/Array/Scalar.pod
+${P5SITE}/Tangram/Type/BackRef.pm
+${P5SITE}/Tangram/Type/Date/
+${P5SITE}/Tangram/Type/Date.pm
+${P5SITE}/Tangram/Type/Date/Cooked.pm
+${P5SITE}/Tangram/Type/Date/DateTime.pm
+${P5SITE}/Tangram/Type/Date/Manip.pm
+${P5SITE}/Tangram/Type/Date/Raw.pm
+${P5SITE}/Tangram/Type/Date/TimePiece.pm
+${P5SITE}/Tangram/Type/Dump/
+${P5SITE}/Tangram/Type/Dump.pm
+${P5SITE}/Tangram/Type/Dump/Any.pm
+${P5SITE}/Tangram/Type/Dump/Perl.pm
+${P5SITE}/Tangram/Type/Dump/Perl.pod
+${P5SITE}/Tangram/Type/Dump/Storable.pm
+${P5SITE}/Tangram/Type/Dump/Storable.pod
+${P5SITE}/Tangram/Type/Dump/YAML.pm
+${P5SITE}/Tangram/Type/Extending.pod
+${P5SITE}/Tangram/Type/Hash/
+${P5SITE}/Tangram/Type/Hash/FromMany.pm
+${P5SITE}/Tangram/Type/Hash/FromOne.pm
+${P5SITE}/Tangram/Type/Hash/Scalar.pm
+${P5SITE}/Tangram/Type/Hash/Scalar.pod
+${P5SITE}/Tangram/Type/Integer.pm
+${P5SITE}/Tangram/Type/Number.pm
+${P5SITE}/Tangram/Type/Real.pm
+${P5SITE}/Tangram/Type/Ref/
+${P5SITE}/Tangram/Type/Ref/FromMany.pm
+${P5SITE}/Tangram/Type/Ref/FromMany.pod
+${P5SITE}/Tangram/Type/Ref/FromOne.pm
+${P5SITE}/Tangram/Type/Scalar.pm
+${P5SITE}/Tangram/Type/Scalar.pod
+${P5SITE}/Tangram/Type/Set/
+${P5SITE}/Tangram/Type/Set/FromMany.pm
+${P5SITE}/Tangram/Type/Set/FromMany.pod
+${P5SITE}/Tangram/Type/Set/FromOne.pm
+${P5SITE}/Tangram/Type/Set/FromOne.pod
+${P5SITE}/Tangram/Type/String.pm
+${P5SITE}/Tangram/Type/Time.pm
+${P5SITE}/Tangram/Type/TimeAndDate.pm
+${P5SITE}/Tangram/Type/TimeAndDate.pod
+${P5SITE}/auto/
+${P5SITE}/auto/Tangram/
+${P5SITE}/auto/Tangram/autosplit.ix
+@man man/man3p/Tangram.3p
+@man man/man3p/Tangram::Complicity.3p
+@man man/man3p/Tangram::Core.3p
+@man man/man3p/Tangram::Cursor.3p
+@man man/man3p/Tangram::Deploy.3p
+@man man/man3p/Tangram::Driver::Oracle.3p
+@man man/man3p/Tangram::Driver::Pg.3p
+@man man/man3p/Tangram::Driver::SQLite.3p
+@man man/man3p/Tangram::Driver::Sybase.3p
+@man man/man3p/Tangram::Driver::mysql.3p
+@man man/man3p/Tangram::Expr.3p
+@man man/man3p/Tangram::Intro.3p
+@man man/man3p/Tangram::Relational.3p
+@man man/man3p/Tangram::Relational::Mappings.3p
+@man man/man3p/Tangram::Remote.3p
+@man man/man3p/Tangram::Schema.3p
+@man man/man3p/Tangram::Springfield.3p
+@man man/man3p/Tangram::Storage.3p
+@man man/man3p/Tangram::Sucks.3p
+@man man/man3p/Tangram::Tour.3p
+@man man/man3p/Tangram::Type.3p
+@man man/man3p/Tangram::Type::Array::FromMany.3p
+@man man/man3p/Tangram::Type::Array::FromOne.3p
+@man man/man3p/Tangram::Type::Array::Scalar.3p
+@man man/man3p/Tangram::Type::Dump.3p
+@man man/man3p/Tangram::Type::Dump::Any.3p
+@man man/man3p/Tangram::Type::Dump::Perl.3p
+@man man/man3p/Tangram::Type::Dump::Storable.3p
+@man man/man3p/Tangram::Type::Dump::YAML.3p
+@man man/man3p/Tangram::Type::Extending.3p
+@man man/man3p/Tangram::Type::Hash::Scalar.3p
+@man man/man3p/Tangram::Type::Ref::FromMany.3p
+@man man/man3p/Tangram::Type::Scalar.3p
+@man man/man3p/Tangram::Type::Set::FromMany.3p
+@man man/man3p/Tangram::Type::Set::FromOne.3p
+@man man/man3p/Tangram::Type::TimeAndDate.3p
