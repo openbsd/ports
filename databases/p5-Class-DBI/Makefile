@@ -1,23 +1,20 @@
-# $OpenBSD: Makefile,v 1.2 2006/04/06 18:21:38 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/10 11:56:25 espie Exp $
 
 COMMENT=	"simple database abstraction"
 
+MODULES=	cpan
 V=		3.0.14
 DISTNAME=	Class-DBI-v${V}
 PKGNAME=	p5-Class-DBI-${V}
-CATEGORIES=	databases perl5
+CATEGORIES=	databases
 
 MAINTAINER=	Sam Smith <S@msmith.net>
 
-# Same as Perl
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Class/}
-
-CONFIGURE_STYLE= perl
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::devel/p5-Class-Accessor \
@@ -28,7 +25,5 @@ RUN_DEPENDS=	::devel/p5-Class-Accessor \
 		::devel/p5-version \
 		::databases/p5-Ima-DBI
 REGRESS_DEPENDS=::databases/p5-DBD-SQLite
-
-PKG_ARCH=	*
 
 .include <bsd.port.mk>
