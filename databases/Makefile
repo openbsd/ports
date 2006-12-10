@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2006/12/10 22:15:00 espie Exp $
+# $OpenBSD: Makefile,v 1.106 2006/12/10 23:50:13 espie Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += db
@@ -75,6 +75,7 @@
      SUBDIR += p5-ldap
      SUBDIR += p5-pgsql
      SUBDIR += p5-sybperl
+     SUBDIR += p5-Tangram
      SUBDIR += pear-DB
      SUBDIR += pgadmin3
      SUBDIR += postgresql
