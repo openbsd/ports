@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile,v 1.18 2006/12/10 17:37:35 mbalmer Exp $
 
 COMMENT=	"X11/Motif schedule planner with calendar"
 
 DISTNAME=	plan-1.9
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	misc
 
 HOMEPAGE=	http://www.bitrot.de/plan.html
-
-MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

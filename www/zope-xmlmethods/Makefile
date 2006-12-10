@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/01/17 16:19:59 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/10 17:40:50 mbalmer Exp $
 
 COMMENT=	"methods to apply to Zope objects for XML/XSLT processing"
 
 VERSION=	1.0.0
 DISTNAME=	zopexmlmethods-${VERSION:S/./-/g}
-PKGNAME=	zope-xmlmethods-${VERSION}
+PKGNAME=	zope-xmlmethods-${VERSION}p0
 CATEGORIES=	www
 HOMEPAGE=	http://zopexmlmethods.sourceforge.net/
-
-MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
