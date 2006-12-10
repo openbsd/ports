@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Dec  2 21:59:18 2006
++++ Makefile.in	Fri Dec  8 16:40:45 2006
+@@ -17,7 +17,7 @@ LIBS := @LIBS@ @libcurl_LIBS@ @confuse_L
+ LIBOBJS := @LIBOBJS@
+ 
+ # This is probably broken if gcc isn't being used...
+-BUILD_CFLAGS := -Wall -Wextra -pedantic -Wno-unused-parameter -std=c99 $(CFLAGS)
++BUILD_CFLAGS := -Wall -pedantic -Wno-unused-parameter $(CFLAGS)
+ 
+ INSTALL := @INSTALL@
+ 

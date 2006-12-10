@@ -1,0 +1,11 @@
+--- man/scmpc.man.orig	Sat Dec  2 21:59:18 2006
++++ man/scmpc.man	Fri Dec  8 16:40:45 2006
+@@ -152,7 +152,7 @@ Your plaintext Audioscrobbler password.
+ Configuration files
+ .RE
+ .PP
+-.I /var/lib/scmpc/scmpc.cache
++.I /var/scmpc/scmpc.cache
+ .RS
+ The default location of the cache file.
+ .RE

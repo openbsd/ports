@@ -1,0 +1,11 @@
+--- examples/scmpc.conf.in.orig	Fri Dec  8 16:38:28 2006
++++ examples/scmpc.conf.in	Fri Dec  8 16:38:40 2006
+@@ -31,7 +31,7 @@
+ # cache_file
+ #
+ # The file in which scmpc will store the unsubmitted songs cache.
+-#cache_file = "/var/lib/scmpc/scmpc.cache"
++#cache_file = "/var/scmpc/scmpc.cache"
+ 
+ # queue_length
+ #

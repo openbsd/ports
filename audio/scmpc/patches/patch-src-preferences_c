@@ -1,0 +1,11 @@
+--- src/preferences.c.orig	Fri Dec  8 16:40:02 2006
++++ src/preferences.c	Fri Dec  8 16:40:10 2006
+@@ -42,7 +42,7 @@
+ #define DEFAULT_CONFIG_FILE SYSCONFDIR "/scmpc.conf"
+ #define DEFAULT_PID_FILE "/var/run/scmpc.pid"
+ #define DEFAULT_LOG_FILE "/var/log/scmpc.log"
+-#define DEFAULT_CACHE_FILE "/var/lib/scmpc/scmpc.cache"
++#define DEFAULT_CACHE_FILE "/var/scmpc/scmpc.cache"
+ 
+ extern struct preferences prefs;
+ 
