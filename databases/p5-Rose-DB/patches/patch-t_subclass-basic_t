@@ -1,0 +1,12 @@
+$OpenBSD: patch-t_subclass-basic_t,v 1.1.1.1 2006/12/10 21:35:34 espie Exp $
+--- t/subclass-basic.t.orig	Sun Dec 10 20:24:28 2006
++++ t/subclass-basic.t	Sun Dec 10 20:24:38 2006
+@@ -71,7 +71,7 @@ BEGIN
+ 
+ eval { require DBD::SQLite };
+ my $version = $DBD::SQLite::VERSION || 0;
+-my $sqlite_ok = ($ENV{'RDBO_NO_SQLITE'} || $version < 1.08 || $version == 1.13) ? 0 : 1;
++my $sqlite_ok = ($ENV{'RDBO_NO_SQLITE'} || $version < 1.08) ? 0 : 1;
+ 
+ is_deeply(scalar My::DB2->registry->registered_domains, 
+           [ qw(atest catalog_test default test) ], 'registered_domains()');

@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/10 21:35:34 espie Exp $
+${P5SITE}/Rose/DB/
+${P5SITE}/Rose/DB.pm
+${P5SITE}/Rose/DB/Constants.pm
+${P5SITE}/Rose/DB/Generic.pm
+${P5SITE}/Rose/DB/Informix.pm
+${P5SITE}/Rose/DB/MySQL.pm
+${P5SITE}/Rose/DB/Oracle.pm
+${P5SITE}/Rose/DB/Pg.pm
+${P5SITE}/Rose/DB/Registry/
+${P5SITE}/Rose/DB/Registry.pm
+${P5SITE}/Rose/DB/Registry/Entry.pm
+${P5SITE}/Rose/DB/SQLite.pm
+${P5SITE}/Rose/DB/Tutorial.pod
+@man man/man3p/Rose::DB.3p
+@man man/man3p/Rose::DB::Constants.3p
+@man man/man3p/Rose::DB::Generic.3p
+@man man/man3p/Rose::DB::Informix.3p
+@man man/man3p/Rose::DB::MySQL.3p
+@man man/man3p/Rose::DB::Oracle.3p
+@man man/man3p/Rose::DB::Pg.3p
+@man man/man3p/Rose::DB::Registry.3p
+@man man/man3p/Rose::DB::Registry::Entry.3p
+@man man/man3p/Rose::DB::SQLite.3p
+@man man/man3p/Rose::DB::Tutorial.3p

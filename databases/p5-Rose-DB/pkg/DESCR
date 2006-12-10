@@ -1,0 +1,11 @@
+Rose::DB is a wrapper and abstraction layer for DBI-related
+functionality.  A Rose::DB object "has a" DBI object; it is not a
+subclass of DBI.
+
+Please see Rose::DB::Tutorial for an example usage scenario that
+reflects "best practices" for this module.
+
+Are you looking for an object-relational mapper (ORM)?  If so,
+please see the Rose::DB::Object module.  Rose::DB::Object is an ORM
+that uses this module to manage its database connections.  Rose::DB
+alone is simply a data source abstraction layer; it is not an ORM.
