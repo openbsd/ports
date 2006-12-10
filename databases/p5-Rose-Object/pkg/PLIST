@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/10 18:01:33 espie Exp $
+${P5SITE}/Rose/
+${P5SITE}/Rose/Class/
+${P5SITE}/Rose/Class.pm
+${P5SITE}/Rose/Class/MakeMethods/
+${P5SITE}/Rose/Class/MakeMethods/Generic.pm
+${P5SITE}/Rose/Class/MakeMethods/Set.pm
+${P5SITE}/Rose/Object/
+${P5SITE}/Rose/Object.pm
+${P5SITE}/Rose/Object/MakeMethods/
+${P5SITE}/Rose/Object/MakeMethods.pm
+${P5SITE}/Rose/Object/MakeMethods/DateTime.pm
+${P5SITE}/Rose/Object/MakeMethods/Generic.pm
+@man man/man3p/Rose::Class.3p
+@man man/man3p/Rose::Class::MakeMethods::Generic.3p
+@man man/man3p/Rose::Class::MakeMethods::Set.3p
+@man man/man3p/Rose::Object.3p
+@man man/man3p/Rose::Object::MakeMethods.3p
+@man man/man3p/Rose::Object::MakeMethods::DateTime.3p
+@man man/man3p/Rose::Object::MakeMethods::Generic.3p

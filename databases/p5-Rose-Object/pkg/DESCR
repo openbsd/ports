@@ -1,0 +1,4 @@
+Rose::Object is the OO-scaffolding on which Rose is built.
+
+It's mostly a smalltalk-like OO model, where classes are object in a
+meta-class.
