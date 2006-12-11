@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.464 2006/12/10 23:50:13 espie Exp $
+# $OpenBSD: Makefile,v 1.465 2006/12/11 21:03:03 sturm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -249,6 +249,7 @@
      SUBDIR += p5-Data-Hierarchy
      SUBDIR += p5-Data-Lazy
      SUBDIR += p5-Data-OptList
+     SUBDIR += p5-Data-Random
      SUBDIR += p5-Data-ShowTable
      SUBDIR += p5-Data-UUID
      SUBDIR += p5-Data-Visitor
