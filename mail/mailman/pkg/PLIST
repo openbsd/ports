@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2006/06/05 12:37:30 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2006/12/11 20:42:50 jakob Exp $
 @newgroup _mailman:504
 @newuser _mailman:504:_mailman:daemon:Mailing List Manager:${PREFIX}/lib/mailman:/sbin/nologin
 @mode 775
@@ -408,6 +408,12 @@ lib/mailman/mail/
 lib/mailman/mail/mailman
 @mode 775
 lib/mailman/messages/
+lib/mailman/messages/ar/
+lib/mailman/messages/ar/LC_MESSAGES/
+@mode
+lib/mailman/messages/ar/LC_MESSAGES/mailman.mo
+lib/mailman/messages/ar/LC_MESSAGES/mailman.po
+@mode 775
 lib/mailman/messages/ca/
 lib/mailman/messages/ca/LC_MESSAGES/
 @mode
@@ -479,15 +485,13 @@ lib/mailman/messages/hu/LC_MESSAGES/
 lib/mailman/messages/hu/LC_MESSAGES/mailman.mo
 lib/mailman/messages/hu/LC_MESSAGES/mailman.po
 lib/mailman/messages/hu/README.hu
-@owner
-@group
+@mode 775
 lib/mailman/messages/ia/
 lib/mailman/messages/ia/LC_MESSAGES/
+@mode
 lib/mailman/messages/ia/LC_MESSAGES/mailman.mo
 lib/mailman/messages/ia/LC_MESSAGES/mailman.po
 @mode 775
-@owner _mailman
-@group _mailman
 lib/mailman/messages/it/
 lib/mailman/messages/it/LC_MESSAGES/
 @mode
@@ -589,12 +593,22 @@ lib/mailman/messages/uk/LC_MESSAGES/
 @mode
 lib/mailman/messages/uk/LC_MESSAGES/mailman.mo
 lib/mailman/messages/uk/LC_MESSAGES/mailman.po
+@mode 775
+lib/mailman/messages/vi/
+lib/mailman/messages/vi/LC_MESSAGES/
+@mode
+lib/mailman/messages/vi/LC_MESSAGES/mailman.mo
+lib/mailman/messages/vi/LC_MESSAGES/mailman.po
+@mode 775
 lib/mailman/messages/zh_CN/
 lib/mailman/messages/zh_CN/LC_MESSAGES/
+@mode
 lib/mailman/messages/zh_CN/LC_MESSAGES/mailman.mo
 lib/mailman/messages/zh_CN/LC_MESSAGES/mailman.po
+@mode 775
 lib/mailman/messages/zh_TW/
 lib/mailman/messages/zh_TW/LC_MESSAGES/
+@mode
 lib/mailman/messages/zh_TW/LC_MESSAGES/mailman.mo
 lib/mailman/messages/zh_TW/LC_MESSAGES/mailman.po
 @mode 775
@@ -816,6 +830,53 @@ lib/mailman/scripts/subscribe
 lib/mailman/scripts/unsubscribe
 @mode 775
 lib/mailman/templates/
+lib/mailman/templates/ar/
+@mode
+lib/mailman/templates/ar/admindbdetails.html
+lib/mailman/templates/ar/admindbpreamble.html
+lib/mailman/templates/ar/admindbsummary.html
+lib/mailman/templates/ar/adminsubscribeack.txt
+lib/mailman/templates/ar/adminunsubscribeack.txt
+lib/mailman/templates/ar/admlogin.html
+lib/mailman/templates/ar/approve.txt
+lib/mailman/templates/ar/archidxentry.html
+lib/mailman/templates/ar/archidxfoot.html
+lib/mailman/templates/ar/archidxhead.html
+lib/mailman/templates/ar/archlistend.html
+lib/mailman/templates/ar/archliststart.html
+lib/mailman/templates/ar/archtoc.html
+lib/mailman/templates/ar/archtocentry.html
+lib/mailman/templates/ar/archtocnombox.html
+lib/mailman/templates/ar/article.html
+lib/mailman/templates/ar/bounce.txt
+lib/mailman/templates/ar/checkdbs.txt
+lib/mailman/templates/ar/convert.txt
+lib/mailman/templates/ar/cronpass.txt
+lib/mailman/templates/ar/disabled.txt
+lib/mailman/templates/ar/emptyarchive.html
+lib/mailman/templates/ar/headfoot.html
+lib/mailman/templates/ar/help.txt
+lib/mailman/templates/ar/invite.txt
+lib/mailman/templates/ar/listinfo.html
+lib/mailman/templates/ar/masthead.txt
+lib/mailman/templates/ar/newlist.txt
+lib/mailman/templates/ar/nomoretoday.txt
+lib/mailman/templates/ar/options.html
+lib/mailman/templates/ar/postack.txt
+lib/mailman/templates/ar/postauth.txt
+lib/mailman/templates/ar/postheld.txt
+lib/mailman/templates/ar/private.html
+lib/mailman/templates/ar/probe.txt
+lib/mailman/templates/ar/refuse.txt
+lib/mailman/templates/ar/roster.html
+lib/mailman/templates/ar/subauth.txt
+lib/mailman/templates/ar/subscribe.html
+lib/mailman/templates/ar/subscribeack.txt
+lib/mailman/templates/ar/unsub.txt
+lib/mailman/templates/ar/unsubauth.txt
+lib/mailman/templates/ar/userpass.txt
+lib/mailman/templates/ar/verify.txt
+@mode 775
 lib/mailman/templates/ca/
 @mode
 lib/mailman/templates/ca/admindbdetails.html
@@ -1204,6 +1265,7 @@ lib/mailman/templates/fr/archlistend.html
 lib/mailman/templates/fr/archliststart.html
 lib/mailman/templates/fr/archtoc.html
 lib/mailman/templates/fr/archtocentry.html
+lib/mailman/templates/fr/archtocnombox.html
 lib/mailman/templates/fr/article.html
 lib/mailman/templates/fr/bounce.txt
 lib/mailman/templates/fr/checkdbs.txt
@@ -1325,9 +1387,9 @@ lib/mailman/templates/hu/unsub.txt
 lib/mailman/templates/hu/unsubauth.txt
 lib/mailman/templates/hu/userpass.txt
 lib/mailman/templates/hu/verify.txt
-@owner
-@group
+@mode 775
 lib/mailman/templates/ia/
+@mode
 lib/mailman/templates/ia/admindbdetails.html
 lib/mailman/templates/ia/admindbpreamble.html
 lib/mailman/templates/ia/admindbsummary.html
@@ -1373,8 +1435,6 @@ lib/mailman/templates/ia/unsubauth.txt
 lib/mailman/templates/ia/userpass.txt
 lib/mailman/templates/ia/verify.txt
 @mode 775
-@owner _mailman
-@group _mailman
 lib/mailman/templates/it/
 @mode
 lib/mailman/templates/it/admindbdetails.html
@@ -1560,6 +1620,14 @@ lib/mailman/templates/nl/adminsubscribeack.txt
 lib/mailman/templates/nl/adminunsubscribeack.txt
 lib/mailman/templates/nl/admlogin.html
 lib/mailman/templates/nl/approve.txt
+lib/mailman/templates/nl/archidxentry.html
+lib/mailman/templates/nl/archidxfoot.html
+lib/mailman/templates/nl/archidxhead.html
+lib/mailman/templates/nl/archlistend.html
+lib/mailman/templates/nl/archliststart.html
+lib/mailman/templates/nl/archtoc.html
+lib/mailman/templates/nl/archtocentry.html
+lib/mailman/templates/nl/archtocnombox.html
 lib/mailman/templates/nl/article.html
 lib/mailman/templates/nl/bounce.txt
 lib/mailman/templates/nl/checkdbs.txt
@@ -1573,11 +1641,13 @@ lib/mailman/templates/nl/invite.txt
 lib/mailman/templates/nl/listinfo.html
 lib/mailman/templates/nl/masthead.txt
 lib/mailman/templates/nl/newlist.txt
+lib/mailman/templates/nl/nomoretoday.txt
 lib/mailman/templates/nl/options.html
 lib/mailman/templates/nl/postack.txt
 lib/mailman/templates/nl/postauth.txt
 lib/mailman/templates/nl/postheld.txt
 lib/mailman/templates/nl/private.html
+lib/mailman/templates/nl/probe.txt
 lib/mailman/templates/nl/refuse.txt
 lib/mailman/templates/nl/roster.html
 lib/mailman/templates/nl/subauth.txt
@@ -2082,7 +2152,56 @@ lib/mailman/templates/uk/unsub.txt
 lib/mailman/templates/uk/unsubauth.txt
 lib/mailman/templates/uk/userpass.txt
 lib/mailman/templates/uk/verify.txt
+@mode 775
+lib/mailman/templates/vi/
+@mode
+lib/mailman/templates/vi/admindbdetails.html
+lib/mailman/templates/vi/admindbpreamble.html
+lib/mailman/templates/vi/admindbsummary.html
+lib/mailman/templates/vi/adminsubscribeack.txt
+lib/mailman/templates/vi/adminunsubscribeack.txt
+lib/mailman/templates/vi/admlogin.html
+lib/mailman/templates/vi/approve.txt
+lib/mailman/templates/vi/archidxentry.html
+lib/mailman/templates/vi/archidxfoot.html
+lib/mailman/templates/vi/archidxhead.html
+lib/mailman/templates/vi/archlistend.html
+lib/mailman/templates/vi/archliststart.html
+lib/mailman/templates/vi/archtoc.html
+lib/mailman/templates/vi/archtocentry.html
+lib/mailman/templates/vi/archtocnombox.html
+lib/mailman/templates/vi/article.html
+lib/mailman/templates/vi/bounce.txt
+lib/mailman/templates/vi/checkdbs.txt
+lib/mailman/templates/vi/convert.txt
+lib/mailman/templates/vi/cronpass.txt
+lib/mailman/templates/vi/disabled.txt
+lib/mailman/templates/vi/emptyarchive.html
+lib/mailman/templates/vi/headfoot.html
+lib/mailman/templates/vi/help.txt
+lib/mailman/templates/vi/invite.txt
+lib/mailman/templates/vi/listinfo.html
+lib/mailman/templates/vi/masthead.txt
+lib/mailman/templates/vi/newlist.txt
+lib/mailman/templates/vi/nomoretoday.txt
+lib/mailman/templates/vi/options.html
+lib/mailman/templates/vi/postack.txt
+lib/mailman/templates/vi/postauth.txt
+lib/mailman/templates/vi/postheld.txt
+lib/mailman/templates/vi/private.html
+lib/mailman/templates/vi/probe.txt
+lib/mailman/templates/vi/refuse.txt
+lib/mailman/templates/vi/roster.html
+lib/mailman/templates/vi/subauth.txt
+lib/mailman/templates/vi/subscribe.html
+lib/mailman/templates/vi/subscribeack.txt
+lib/mailman/templates/vi/unsub.txt
+lib/mailman/templates/vi/unsubauth.txt
+lib/mailman/templates/vi/userpass.txt
+lib/mailman/templates/vi/verify.txt
+@mode 775
 lib/mailman/templates/zh_CN/
+@mode
 lib/mailman/templates/zh_CN/admindbdetails.html
 lib/mailman/templates/zh_CN/admindbpreamble.html
 lib/mailman/templates/zh_CN/admindbsummary.html
