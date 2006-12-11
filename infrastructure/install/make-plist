@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.83 2006/11/20 13:56:37 espie Exp $
+# $OpenBSD: make-plist,v 1.84 2006/12/11 13:36:06 espie Exp $
 # Copyright (c) 2004-2006 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -45,6 +45,105 @@ my %known_libs;
 my $lib_warnings = {};
 
 die "No $destdir" unless -d $destdir;
+
+
+my %prefix;
+my %plistname;
+my %mtree;
+my @subs;
+my $baseprefix=$ENV{PREFIX};
+my $shared_only;
+my $make = $ENV{MAKE};
+my $portsdir = $ENV{PORTSDIR};
+
+
+sub build_mtree
+{
+	my ($sub, $deps) = @_;
+	my $mtree = {};
+	# add directories from dependencies
+	my $stripped = {};
+	for my $pkgpath (split /\s+/, $deps) {
+		next if defined $stripped->{$pkgpath};
+		$stripped->{$pkgpath} = 1;
+		print STDERR "Subpackage $sub: Stripping dirs from $pkgpath\n";
+		open my $fh, "cd $portsdir && env -i SUBDIR=$pkgpath ECHO_MSG=: $make print-plist |" or die "blech\n";
+		augment_mtree($mtree, $fh);
+		close($fh);
+	}
+	return $mtree;
+}
+
+sub parse_arg
+{
+	local $_ = shift;
+	if (m/^PREFIX(\-\w*)\=/) {
+		$prefix{$1} = $';
+	} elsif (m/^PLIST(\-\w*)\=/) {
+		$plistname{$1} = $';
+	} elsif (m/^DEPPATHS(-\w*)\=/) {
+		$mtree{$1} = build_mtree($1, $');
+	} elsif (m/\=/) {
+		my $back = $`;
+		my $v = $';
+		if ($back =~ m/^LIB(.*)_VERSION$/) {
+			$known_libs{$1}=$v;
+			push(@libbacksubst, ["\${$back}", $v]) if $v ne '';
+		} else {
+			push(@backsubst, ["\${$back}", $v]) if $v ne '';
+		}
+	} else {
+		die "Incorrect argument to $0: $_";
+	}
+}
+
+sub parse_env
+{
+}
+
+sub parse_args
+{
+	for my $i (@ARGV) {
+		parse_arg($i);
+	}
+	my $multi = $ENV{'MULTI_PACKAGES'};
+	# Normalize
+	$multi =~ s/^\s+//;
+	$multi =~ s/\s+$//;
+	@subs = split /\s+/, $multi;
+	for my $sub (@subs) {
+		if (!defined $prefix{$sub} || !defined $plistname{$sub} ||
+		    !defined $mtree{$sub}) {
+		    	die "Incomplete information for $sub";
+		}
+	}
+	if (defined $ENV{'SHARED_ONLY'}) {
+		if ($ENV{'SHARED_ONLY'} =~ m/^Yes$/i) {
+			$shared_only = 1;
+		}
+	}
+}
+
+sub deduce_name
+{
+	my ($o, $frag, $not) = @_;
+
+	my $noto = $o;
+	my $nofrag = "no-$frag";
+
+	$o =~ s/PFRAG\./PFRAG.$frag-/ or
+	    $o =~ s/PLIST/PFRAG.$frag/;
+
+	$noto =~ s/PFRAG\./PFRAG.no-$frag-/ or
+	    $noto =~ s/PLIST/PFRAG.no-$frag/;
+	if ($not) {
+		return $noto;
+    	} else {
+		return $o;
+	}
+}
+
+parse_args;
 
 sub lib_backsubst
 {
@@ -120,16 +219,6 @@ sub register
 
 sub copy_extra
 {
-}
-
-sub zap_comment
-{
-	my ($self, $foundcomments, $p) = @_;
-
-	my $s = $self->fullstring();
-	if (defined $foundcomments->{$s} and $foundcomments->{$s}->{plist} == $p) {
-		delete $foundcomments->{$s};
-	}
 }
 
 sub tag_along
@@ -614,7 +703,6 @@ sub scan_destdir
 sub get_files
 {
 	my $files = scan_destdir();
-
 	my $mtree = {};
 	OpenBSD::Mtree::parse($mtree, '/usr/local', '/etc/mtree/BSD.local.dist');
 	OpenBSD::Mtree::parse($mtree, '/', '/etc/mtree/4.4BSD.dist');
@@ -622,17 +710,8 @@ sub get_files
 	$mtree->{'/usr/local/lib/X11'} = 1;
 	$mtree->{'/usr/local/include/X11'} = 1;
 	$mtree->{'/usr/local/lib/X11/app-defaults'} = 1;
-	# add directories from dependencies
-	my $stripped = {};
-	for my $pkgpath (split(/\s+/, $ENV{'DEPPATHS'})) {
-		next if defined $stripped->{$pkgpath};
-		$stripped->{$pkgpath} = 1;
-		print STDERR "Stripping dirs from $pkgpath\n";
-		open my $fh, "cd ".$ENV{PORTSDIR}." && env -i SUBDIR=$pkgpath ECHO_MSG=: ".$ENV{MAKE}." print-plist |" or die "blech\n";
-		augment_mtree($mtree, $fh);
-		close($fh);
-	}
-	# make sure mtree is removed 
+
+	# make sure main mtree is removed 
 	for my $d (keys %$mtree) {
 		delete $files->{$d}
 	}
@@ -656,10 +735,12 @@ my ($foundfiles, $foundcomments) = ({}, {});
 # Basic packing-list with a known prefix
 sub create_packinglist
 {
-	my ($filename, $prefix) = @_;
+	my ($filename, $sub) = @_;
 
+	my $prefix = $prefix{$sub};
 	my $plist = new OpenBSD::PackingList;
 	$plist->{filename} = $filename;
+	$plist->{mtree} = $mtree{$sub};
 	$plist->{state}->set_cwd($prefix);
 	$prefix.='/' unless $prefix =~ m|/$|;
 	$plist->{stripprefix} = $prefix;
@@ -669,8 +750,8 @@ sub create_packinglist
 # grab original packing list, killing some stuff that is no longer needed.
 sub parse_original_plist
 {
-    my ($name, $prefix, $files, $all_plists, $parent) = @_;
-    my $plist = create_packinglist($name, $prefix);
+    my ($name, $sub, $files, $all_plists, $parent) = @_;
+    my $plist = create_packinglist($name, $sub);
     # place holder for extra stuff that comes before any file
     $plist->{tag_marker} = new OpenBSD::PackingElement('');
     # special reader for fragments
@@ -703,10 +784,10 @@ sub parse_original_plist
     for my $item (@{$plist->{items}}) {
 	    my $fragname = $item->deduce_fragment($name);
 	    next unless defined $fragname;
-	    my $pfrag = create_packinglist($fragname, $prefix);
+	    my $pfrag = create_packinglist($fragname, $sub);
 	    $pfrag->{isfrag} = 1;
 	    push(@$all_plists, $pfrag);
-	    my $origpfrag = parse_original_plist($fragname, $prefix, $files, $all_plists, $item->{end_faked});
+	    my $origpfrag = parse_original_plist($fragname, $sub, $files, $all_plists, $item->{end_faked});
 	    replaces($origpfrag, $pfrag);
     }
     return $plist;
@@ -727,61 +808,23 @@ sub replaces
 	}
 }
 
-# old packing-lists used to hold comments to avoid fragments...
-sub no_comments
-{
-	my ($f, $orig) = @_;
-	return unless defined $f and defined $orig;
-	for my $item (@{$f->{items}}) {
-		$item->zap_comment($foundcomments, $orig);
-	}
-}
-
-
 sub grab_all_lists
 {
-	my ($prefixes, $files) = @_;
-	my $prefix = $prefixes->{''};
+	my ($files) = @_;
 
 	my $l = [];
-	my $plistname=$ENV{'PLIST'};
-	$plistname =~ s/\-main$//;
-	my $pfragname=$ENV{'PFRAG'};
-	my $psharedname=$pfragname.".shared";
-	# Subpackage rules... better way would be to ask bsd.port.mk directly
-	my $altplistname = $plistname;
-	$altplistname =~ s/PLIST.*$/PLIST/;
-
-	my $plist = create_packinglist($plistname, $prefix);
-	push(@$l, $plist);
-	my $origplist = parse_original_plist($plistname, $prefix, $files, $l);
-	replaces($origplist, $plist);
-
-	my $pshared = create_packinglist($psharedname, $prefix);
-	push(@$l, $pshared);
-	$plist->{shared} = $pshared;
-	my $origshared = parse_original_plist($psharedname, $prefix, $files);
-	replaces($origshared, $pshared);
-
-	my $multi = $ENV{'MULTI_PACKAGES'};
-	# Normalize
-	$multi =~ s/^\s+//;
-	$multi =~ s/\s+$//;
-	unless ($multi eq '') {
-		for my $sub (split(/\s+/, $multi)) {
-			my $o;
-			my $n = create_packinglist("$plistname$sub", $prefixes->{$sub});
-			push(@$l, $n);
-			$o = parse_original_plist("$plistname$sub", $prefixes->{$sub}, $l) or
-			    $o = parse_original_plist("$altplistname$sub", $prefixes->{$sub}, $files, $l);
-			replaces($o, $n);
-			no_comments($o, $origplist);
-			my $ns = create_packinglist("$psharedname$sub", $prefixes->{$sub});
-			$n->{shared} = $ns;
-			$o = parse_original_plist("$psharedname$sub", $prefixes->{$sub}, $files, $l);
-			replaces($o, $ns);
-			push(@$l, $ns);
-		}
+	for my $sub (@subs) {
+		my $o;
+		my $n = create_packinglist($plistname{$sub}, $sub);
+		push(@$l, $n);
+		$o = parse_original_plist($plistname{$sub}, $sub, $l);
+		replaces($o, $n);
+		my $frag = deduce_name($plistname{$sub}, "shared", 0);
+		my $ns = create_packinglist($frag, $sub);
+		$n->{shared} = $ns;
+		$o = parse_original_plist($frag, $sub, $files, $l);
+		replaces($o, $ns);
+		push(@$l, $ns);
 	}
 	return @$l;
 }
@@ -874,24 +917,34 @@ sub handle_file
 	my $short;
 	my $p;
 	my $item;
+	my $warn_bogus = 1;
 
 	# find out accurate prefix: if file is part of an existing plist,
 	# don't look further
 	if (defined $foundfiles->{$k}) {
 		$item = $foundfiles->{$k};
 		$p = $item->{plist}->{replacement};
-		$short = strip_base($i, $p);
-		if ($pass == 0 and $item->{end_faked} == 1) {
-			return;
+		if ($type eq 'directory' && $p->{mtree}->{$i}) {
+			undef $p;
+		} else {
+			$short = strip_base($i, $p);
+			if ($pass == 0 and $item->{end_faked} == 1) {
+				return;
+			}
+			if ($pass == 1 and $item->{end_faked} == 0) {
+				return;
+			}
 		}
-		if ($pass == 1 and $item->{end_faked} == 0) {
-			return;
-		}
-	} else {
+	}
+	if (!defined $p) {
 	# otherwise, look for the first matching prefix in plist to produce
 	# an entry
 		for my $try (@$allplists) {
 			my $s2 = strip_base($i, $try);
+			if ($type eq 'directory' and $try->{mtree}->{$i}) {
+				$warn_bogus = 0;
+				next;
+			}
 			unless ($s2 =~ m|^/|) {
 				$p = $try;
 				$short = $s2;
@@ -904,7 +957,7 @@ sub handle_file
 	}
 				
 	if (!defined $p) {
-		print "Bogus element outside of base: $i\n";
+		print "Bogus element outside of base: $i\n" if $warn_bogus;
 		return;
 	}
 	if ($type eq 'library') {
@@ -960,32 +1013,11 @@ sub handle_file
 	}
 }
 
-my %prefix;
-
-while ($ARGV[0] =~ m/^PREFIX(-.*?)\=/) {
-	my ($sub, $v) = ($1, $');
-	$prefix{$sub} = $v;
-	shift @ARGV;
-}
-$prefix{''}=$ENV{'TRUEPREFIX'};
-	
-for (@ARGV) {
-	if (m/\=/) {
-		my $back = $`;
-		my $v = $';
-		if ($back =~ m/^LIB(.*)_VERSION$/) {
-			$known_libs{$1}=$v;
-			push(@libbacksubst, ["\${$back}", $v]) if $v ne '';
-		} else {
-			push(@backsubst, ["\${$back}", $v]) if $v ne '';
-		}
-	}
-}
-
+parse_args();
 
 my $files = get_files();
 
-my @l = grab_all_lists(\%prefix, $files);
+my @l = grab_all_lists($files);
 
 for my $plist (@l) {
 	my $orig = $plist->{original};
@@ -1013,13 +1045,6 @@ for my $plist (@l) {
 				}
 			}
 		}
-	}
-}
-
-my $shared_only;
-if (defined $ENV{'SHARED_ONLY'}) {
-	if ($ENV{'SHARED_ONLY'} =~ m/^Yes$/i) {
-		$shared_only = 1;
 	}
 }
 

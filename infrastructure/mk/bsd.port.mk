@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.870 2006/12/11 11:05:43 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.871 2006/12/11 13:36:06 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1796,29 +1796,28 @@ _do_libs_too =
 _do_libs_too = NO_SHARED_LIBS=Yes
 .endif
 
-_extra_prefixes =
+_extra_info =
 .for _s in ${MULTI_PACKAGES}
-_extra_prefixes += PREFIX${_s}=`cd ${.CURDIR} && SUBPACKAGE=${_s} ${MAKE} show=PREFIX${_s}`
+_extra_info += PREFIX${_s}='${PREFIX${_s}}'
+_extra_info += PLIST${_s}='${PLIST${_s}}'
+_extra_info += DEPPATHS${_s}="`${MAKE} run-dir-depends ${_do_libs_too}|${_sort_dependencies}`"
 .endfor
 
 _internal-plist _internal-update-plist: _internal-fake
 	@${ECHO_MSG} "===>  Updating plist for ${FULLPKGNAME}${_MASTER}"
 	@mkdir -p ${PKGDIR}
-	@DESTDIR=${WRKINST} PREFIX=${WRKINST}${PREFIX} \
-	TRUEPREFIX=${TRUEPREFIX} \
+	@DESTDIR=${WRKINST} \
+	PREFIX=${TRUEPREFIX} \
 	INSTALL_PRE_COOKIE=${_INSTALL_PRE_COOKIE} \
-	DEPPATHS="`${MAKE} run-dir-depends ${_do_libs_too}|${_sort_dependencies}`" \
 	MAKE="${MAKE}" \
 	PORTSDIR=${PORTSDIR} \
-	PLIST=${PLIST${SUBPACKAGE}} \
-	PFRAG=${PKGDIR}/PFRAG \
 	FLAVORS='${FLAVORS}' MULTI_PACKAGES='${MULTI_PACKAGES}' \
 	OKAY_FILES='${_FAKE_COOKIE} ${_INSTALL_PRE_COOKIE}' \
 	SHARED_ONLY="${SHARED_ONLY}" \
 	OWNER=`id -u` \
 	GROUP=`id -g` \
 	${SUDO} perl ${PORTSDIR}/infrastructure/install/make-plist \
-	${_extra_prefixes} ${_tmpvars}
+	${_extra_info} ${_tmpvars}
 
 update-patches:
 	@toedit=`WRKDIST=${WRKDIST} PATCHDIR=${PATCHDIR} \
