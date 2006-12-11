@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.84 2006/12/11 13:36:06 espie Exp $
+# $OpenBSD: make-plist,v 1.85 2006/12/11 13:51:14 espie Exp $
 # Copyright (c) 2004-2006 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -142,8 +142,6 @@ sub deduce_name
 		return $o;
 	}
 }
-
-parse_args;
 
 sub lib_backsubst
 {
