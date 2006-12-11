@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.869 2006/12/09 14:56:41 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.870 2006/12/11 11:05:43 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1611,6 +1611,7 @@ ${_DEPLIBSPECS_COOKIES}: ${_WRKDIR_COOKIE}
 .  if !empty(_DEP${_m}WANTLIB_COOKIE)
 ${_DEP${_m}WANTLIB_COOKIE}: ${_DEP${_m}LIBSPECS_COOKIES} \
 	${_DEP${_m}LIB_COOKIES} ${_DEPBUILD_COOKIES} ${_WRKDIR_COOKIE}
+.    if !empty(_DEP${_m}LIBS)
 	@${ECHO_MSG} "===>  Verifying specs: ${_DEP${_m}LIBS}"
 	@listlibs="echo ${LOCALBASE}/lib/lib* /usr/lib/lib* ${X11BASE}/lib/lib*"; \
 	for d in ${_DEP${_m}LIBS:S/>/\>/g}; do \
@@ -1629,6 +1630,7 @@ ${_DEP${_m}WANTLIB_COOKIE}: ${_DEP${_m}LIBSPECS_COOKIES} \
 		echo 1>&2 "Fatal error"; \
 		exit 1; \
 	fi
+.    endif
 	@${_MAKE_COOKIE} $@
 .  endif
 
@@ -1789,14 +1791,14 @@ _internal-regress: ${_BUILD_COOKIE} ${_DEPREGRESS_COOKIES} ${_REGRESS_COOKIE}
 # when port is installed or package created.
 #
 .if ${SHARED_ONLY:L} == "yes"
-_do_libs_too=
+_do_libs_too =
 .else
-_do_libs_too=NO_SHARED_LIBS=Yes
+_do_libs_too = NO_SHARED_LIBS=Yes
 .endif
 
-_extra_prefixes=
+_extra_prefixes =
 .for _s in ${MULTI_PACKAGES}
-_extra_prefixes+=PREFIX${_s}=`cd ${.CURDIR} && SUBPACKAGE=${_s} ${MAKE} show=PREFIX${_s}`
+_extra_prefixes += PREFIX${_s}=`cd ${.CURDIR} && SUBPACKAGE=${_s} ${MAKE} show=PREFIX${_s}`
 .endfor
 
 _internal-plist _internal-update-plist: _internal-fake
@@ -2152,9 +2154,9 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	@${SUDO} ${_MAKE_COOKIE} $@
 
 .if empty(PLIST_DB)
-_register_plist=:
+_register_plist =:
 .else
-_register_plist=perl ${PORTSDIR}/infrastructure/package/register-plist ${PLIST_DB}
+_register_plist = perl ${PORTSDIR}/infrastructure/package/register-plist ${PLIST_DB}
 .endif
 
 print-plist:
