@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2006/03/23 18:05:55 bernd Exp $
---- configure.orig	Fri Feb  3 07:22:48 2006
-+++ configure	Thu Feb 23 15:43:57 2006
-@@ -24115,7 +24115,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_c
+$OpenBSD: patch-configure,v 1.2 2006/12/11 21:08:35 deanna Exp $
+--- configure.orig	Sun Nov  5 01:48:52 2006
++++ configure	Sun Dec 10 21:54:13 2006
+@@ -26212,7 +26212,7 @@ eval "echo \"\$as_me:$LINENO: $ac_try_ec
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.1 2006/03/23 18:05:55 bernd Exp $
  else
    echo "$as_me: failed program was:" >&5
  sed 's/^/| /' conftest.$ac_ext >&5
-@@ -24178,7 +24178,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_c
+@@ -26289,7 +26289,7 @@ eval "echo \"\$as_me:$LINENO: $ac_try_ec
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.1 2006/03/23 18:05:55 bernd Exp $
  else
    echo "$as_me: failed program was:" >&5
  sed 's/^/| /' conftest.$ac_ext >&5
-@@ -24241,7 +24241,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_c
+@@ -26366,7 +26366,7 @@ eval "echo \"\$as_me:$LINENO: $ac_try_ec
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then
@@ -28,7 +28,7 @@ $OpenBSD: patch-configure,v 1.1 2006/03/23 18:05:55 bernd Exp $
  else
    echo "$as_me: failed program was:" >&5
  sed 's/^/| /' conftest.$ac_ext >&5
-@@ -24304,7 +24304,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_c
+@@ -26443,7 +26443,7 @@ eval "echo \"\$as_me:$LINENO: $ac_try_ec
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then
@@ -37,7 +37,7 @@ $OpenBSD: patch-configure,v 1.1 2006/03/23 18:05:55 bernd Exp $
  else
    echo "$as_me: failed program was:" >&5
  sed 's/^/| /' conftest.$ac_ext >&5
-@@ -24367,7 +24367,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_c
+@@ -26520,7 +26520,7 @@ eval "echo \"\$as_me:$LINENO: $ac_try_ec
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then
@@ -46,12 +46,21 @@ $OpenBSD: patch-configure,v 1.1 2006/03/23 18:05:55 bernd Exp $
  else
    echo "$as_me: failed program was:" >&5
  sed 's/^/| /' conftest.$ac_ext >&5
-@@ -24430,7 +24430,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_c
+@@ -26597,7 +26597,7 @@ eval "echo \"\$as_me:$LINENO: $ac_try_ec
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then
 -  flag_ok=yes
 +  flag_ok=no
+ else
+   echo "$as_me: failed program was:" >&5
+ sed 's/^/| /' conftest.$ac_ext >&5
+@@ -26675,6 +26675,8 @@ eval "echo \"\$as_me:$LINENO: $ac_try_ec
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; }; then
+   flag_ok=yes
++  save_CFLAGS="$save_CFLAGS -maltivec"
++  CCASFLAGS="$CCASSFLAGS -maltivec"
  else
    echo "$as_me: failed program was:" >&5
  sed 's/^/| /' conftest.$ac_ext >&5
