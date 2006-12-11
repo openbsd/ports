@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.85 2006/12/11 13:51:14 espie Exp $
+# $OpenBSD: make-plist,v 1.86 2006/12/11 17:17:25 espie Exp $
 # Copyright (c) 2004-2006 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -77,8 +77,8 @@ sub build_mtree
 sub parse_arg
 {
 	local $_ = shift;
-	if (m/^PREFIX(\-\w*)\=/) {
-		$prefix{$1} = $';
+	if (m/^PREFIX(\-\w*)\=(.*)\/?$/) {
+		$prefix{$1} = $2;
 	} elsif (m/^PLIST(\-\w*)\=/) {
 		$plistname{$1} = $';
 	} elsif (m/^DEPPATHS(-\w*)\=/) {
@@ -185,6 +185,19 @@ sub var_subst
 		s/\Q$v\E/$r/g;
 	}
 	return $_;
+}
+
+sub possible_subpackages
+{
+	my $filename= shift;
+
+	my $l = [];
+	for my $sub (@subs) {
+		if ($filename =~ m/^\Q$prefix{$sub}\E\//) {
+			push @$l, $sub;
+		}
+	}
+	return $l;
 }
 
 # Fragments are new PackingElement unique to make-plist and pkg_create, 
@@ -915,8 +928,12 @@ sub handle_file
 	my $short;
 	my $p;
 	my $item;
-	my $warn_bogus = 1;
 
+	my $possible = possible_subpackages($i);
+	if (@$possible == 0) {
+		print "Bogus element outside of every prefix: $i\n";
+		return;
+	}
 	# find out accurate prefix: if file is part of an existing plist,
 	# don't look further
 	if (defined $foundfiles->{$k}) {
@@ -940,7 +957,6 @@ sub handle_file
 		for my $try (@$allplists) {
 			my $s2 = strip_base($i, $try);
 			if ($type eq 'directory' and $try->{mtree}->{$i}) {
-				$warn_bogus = 0;
 				next;
 			}
 			unless ($s2 =~ m|^/|) {
@@ -955,7 +971,6 @@ sub handle_file
 	}
 				
 	if (!defined $p) {
-		print "Bogus element outside of base: $i\n" if $warn_bogus;
 		return;
 	}
 	if ($type eq 'library') {
