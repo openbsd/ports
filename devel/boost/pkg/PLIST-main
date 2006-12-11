@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/24 18:46:58 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2006/12/11 21:42:30 deanna Exp $
 @pkgpath devel/boost
 @conflict boost-*
 include/boost/
@@ -2802,54 +2802,6 @@ include/boost/regex/v4/w32_regex_traits.hpp
 include/boost/regex_fwd.hpp
 include/boost/scoped_array.hpp
 include/boost/scoped_ptr.hpp
-include/boost/serialization/
-include/boost/serialization/access.hpp
-include/boost/serialization/base_object.hpp
-include/boost/serialization/binary_object.hpp
-include/boost/serialization/collection_traits.hpp
-include/boost/serialization/collections_load_imp.hpp
-include/boost/serialization/collections_save_imp.hpp
-include/boost/serialization/config.hpp
-include/boost/serialization/deque.hpp
-include/boost/serialization/detail/
-include/boost/serialization/detail/shared_count_132.hpp
-include/boost/serialization/detail/shared_ptr_132.hpp
-include/boost/serialization/detail/shared_ptr_nmt_132.hpp
-include/boost/serialization/detail/stack_constructor.hpp
-include/boost/serialization/export.hpp
-include/boost/serialization/extended_type_info.hpp
-include/boost/serialization/extended_type_info_no_rtti.hpp
-include/boost/serialization/extended_type_info_typeid.hpp
-include/boost/serialization/force_include.hpp
-include/boost/serialization/hash_map.hpp
-include/boost/serialization/hash_set.hpp
-include/boost/serialization/is_abstract.hpp
-include/boost/serialization/level.hpp
-include/boost/serialization/level_enum.hpp
-include/boost/serialization/list.hpp
-include/boost/serialization/map.hpp
-include/boost/serialization/nvp.hpp
-include/boost/serialization/optional.hpp
-include/boost/serialization/scoped_ptr.hpp
-include/boost/serialization/serialization.hpp
-include/boost/serialization/set.hpp
-include/boost/serialization/shared_ptr.hpp
-include/boost/serialization/shared_ptr_132.hpp
-include/boost/serialization/slist.hpp
-include/boost/serialization/split_free.hpp
-include/boost/serialization/split_member.hpp
-include/boost/serialization/string.hpp
-include/boost/serialization/tracking.hpp
-include/boost/serialization/tracking_enum.hpp
-include/boost/serialization/traits.hpp
-include/boost/serialization/type_info_implementation.hpp
-include/boost/serialization/utility.hpp
-include/boost/serialization/variant.hpp
-include/boost/serialization/vector.hpp
-include/boost/serialization/version.hpp
-include/boost/serialization/void_cast.hpp
-include/boost/serialization/void_cast_fwd.hpp
-include/boost/serialization/weak_ptr.hpp
 include/boost/shared_array.hpp
 include/boost/shared_container_iterator.hpp
 include/boost/shared_ptr.hpp
@@ -3596,3 +3548,4 @@ include/boost/wave/util/unput_queue_iterator.hpp
 include/boost/wave/wave_config.hpp
 include/boost/wave/wave_version.hpp
 include/boost/weak_ptr.hpp
+%%serialization%%

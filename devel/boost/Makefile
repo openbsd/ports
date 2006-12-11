@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2006/11/24 18:46:58 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2006/12/11 21:42:30 deanna Exp $
 
 COMMENT-main=	"free peer-reviewed portable C++ source libraries (headers)"
 COMMENT-libs=	"free peer-reviewed portable C++ source libraries (libraries)"
 
-PKGNAME-main=	boost-headers-${VERSION}p0
-PKGNAME-libs=	boost-libs-${VERSION}
+PKGNAME-main=	boost-headers-${VERSION}p1
+PKGNAME-libs=	boost-libs-${VERSION}p0
 
 VERSION=	1.33.1
 DISTNAME=	boost_${VERSION:S/./_/g}
@@ -35,7 +35,7 @@ CATEGORIES=	devel
 
 HOMEPAGE=	http://www.boost.org/
 
-MAINTAINER=	Deanna Phillips <deanna@sdf.lonestar.org>
+MAINTAINER=	Deanna Phillips <deanna@openbsd.org>
 
 # MIT-like
 PERMIT_PACKAGE_CDROM=	Yes
@@ -45,13 +45,22 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=boost/}
 
+# this lib does not support BOOST_NO_EXCEPTIONS
+.if ${MACHINE_ARCH} == "alpha"
+PKG_ARGS+=-Dserialization=0
+CONFIGURE_ARGS=--without-libraries=serialization
+.else
+PKG_ARGS+=-Dserialization=1
+.endif
+
+CONFIGURE_ARGS+=--without-libraries=python
+
 MAKE_ENV=	GCC="${CC}" GXX="${CXX}"
 
 REGRESS_TARGET=	check
 
 MULTI_PACKAGES=	-main -libs
 
-PKG_ARCH-main=	*
 WANTLIB-libs=	z c
 
 do-configure:
@@ -61,7 +70,7 @@ do-configure:
 
 post-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} /bin/sh ./configure \
-		--without-libraries=python
+		${CONFIGURE_ARGS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/build/jam_src/bin.*/bjam \
