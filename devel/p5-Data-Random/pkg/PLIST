@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/11 20:50:12 sturm Exp $
+${P5SITE}/Data/
+${P5SITE}/Data/Random/
+${P5SITE}/Data/Random.pm
+${P5SITE}/Data/Random/WordList.pm
+${P5SITE}/Data/Random/dict
+@man man/man3p/Data::Random.3p
+@man man/man3p/Data::Random::WordList.3p
