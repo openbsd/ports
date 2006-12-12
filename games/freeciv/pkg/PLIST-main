@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/26 10:40:05 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2006/12/12 21:07:48 steven Exp $
+@pkgpath games/freeciv
 bin/civserver
 @man man/man6/civserver.6
