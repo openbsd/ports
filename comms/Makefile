@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2006/06/29 11:09:15 alek Exp $
+# $OpenBSD: Makefile,v 1.33 2006/12/12 08:50:55 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.27 1997/11/22 14:56:56 peter Exp $
 
      SUBDIR += birda
@@ -12,6 +12,7 @@
      SUBDIR += hylafax,a4
      SUBDIR += jpilot
      SUBDIR += kermit
+     SUBDIR += libmal
      SUBDIR += lrzsz
      SUBDIR += malsync
      SUBDIR += mgetty+sendfax
