@@ -1,0 +1,7 @@
+@comment $OpenBSD: PFRAG.shared-swt,v 1.1 2006/12/13 20:57:16 kurt Exp $
+@lib lib/libswt-atk-gtk-3235.so.${LIBswt-atk-gtk-3235_VERSION}
+@lib lib/libswt-awt-gtk-3235.so.${LIBswt-awt-gtk-3235_VERSION}
+@lib lib/libswt-cairo-gtk-3235.so.${LIBswt-cairo-gtk-3235_VERSION}
+@lib lib/libswt-glx-gtk-3235.so.${LIBswt-glx-gtk-3235_VERSION}
+@lib lib/libswt-gtk-3235.so.${LIBswt-gtk-3235_VERSION}
+@lib lib/libswt-pi-gtk-3235.so.${LIBswt-pi-gtk-3235_VERSION}

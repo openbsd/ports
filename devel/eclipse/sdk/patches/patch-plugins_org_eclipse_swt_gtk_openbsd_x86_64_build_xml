@@ -1,7 +1,15 @@
-$OpenBSD: patch-plugins_org_eclipse_swt_gtk_openbsd_x86_64_build_xml,v 1.1 2006/07/07 01:48:55 kurt Exp $
---- plugins/org.eclipse.swt.gtk.openbsd.x86_64/build.xml.orig	Wed Jun  7 12:07:06 2006
-+++ plugins/org.eclipse.swt.gtk.openbsd.x86_64/build.xml	Wed Jun  7 15:36:31 2006
-@@ -92,7 +92,7 @@
+$OpenBSD: patch-plugins_org_eclipse_swt_gtk_openbsd_x86_64_build_xml,v 1.2 2006/12/13 20:57:16 kurt Exp $
+--- plugins/org.eclipse.swt.gtk.openbsd.x86_64/build.xml.orig	Sat Dec  9 09:26:57 2006
++++ plugins/org.eclipse.swt.gtk.openbsd.x86_64/build.xml	Sat Dec  9 09:28:16 2006
+@@ -39,7 +39,6 @@
+ 
+ 	<target name="properties" if="eclipse.running">
+ 		<property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+-		<!--compile the jar in org.eclipse.swt.tools-->
+ 	</target>
+ 
+ 	<target name="build.update.jar" depends="init">
+@@ -92,7 +91,7 @@
  			<compilerarg line="-log '${temp.folder}'/@dot.bin${logExtension}" compiler="org.eclipse.jdt.core.JDTCompilerAdapter"/> 
  		</javac>
          <property name="includes" value=""/>
@@ -10,7 +18,7 @@ $OpenBSD: patch-plugins_org_eclipse_swt_gtk_openbsd_x86_64_build_xml,v 1.1 2006/
  		<copy todir="${temp.folder}/@dot.bin">
  			<fileset dir="${basedir}/src/Eclipse SWT/cairo/" includes="${includes}" excludes="${excludes}"/>
  			<fileset dir="${basedir}/src/Eclipse SWT/common/" includes="${includes}" excludes="${excludes}"/>
-@@ -150,7 +150,7 @@
+@@ -150,7 +149,7 @@
  		
  			<!-- Copy the existing 32 bit SWT source folders to the 64 bit source folder -->
  			<copy todir="${basedir}/src">
@@ -19,7 +27,7 @@ $OpenBSD: patch-plugins_org_eclipse_swt_gtk_openbsd_x86_64_build_xml,v 1.1 2006/
  			</copy>
  			<!-- Convert SWT 32 bit java source to 64 bit  -->
  			<replace dir="${basedir}/src" includes="**/*.java" token="int /*long*/" value="long /*int*/"/>
-@@ -200,7 +200,7 @@
+@@ -200,7 +199,7 @@
  			<fileset dir="${basedir}/src/Eclipse SWT PI/common/" includes="**/*.java" excludes=""/>
  			<fileset dir="${basedir}/src/Eclipse SWT PI/common_j2se/" includes="**/*.java" excludes=""/>
  			<fileset dir="${basedir}/src/Eclipse SWT PI/gtk/" includes="**/*.java" excludes=""/>
@@ -28,7 +36,20 @@ $OpenBSD: patch-plugins_org_eclipse_swt_gtk_openbsd_x86_64_build_xml,v 1.1 2006/
  			<fileset dir="${basedir}/src/Eclipse SWT Printing/common/" includes="**/*.java" excludes=""/>
  			<fileset dir="${basedir}/src/Eclipse SWT Printing/gtk/" includes="**/*.java" excludes=""/>
  			<fileset dir="${basedir}/src/Eclipse SWT Program/cde/" includes="**/*.java" excludes=""/>
-@@ -263,7 +263,7 @@
+@@ -222,8 +221,11 @@
+ 	</target>
+ 
+ 	<target name="build.cfiles" depends="build.jars">
++		<!--compile the jar in org.eclipse.swt.tools-->
++		<ant antfile="build.xml" dir="${toolsplugindir}" inheritAll="false" target="build.jars" />
++
+ 		<!-- generate the C code from the (64 bit) SWT PI java classes -->
+-		<!-- assumes the swt.jar has already been built  -->
++		<!-- assumes the swttools.jar has already been built  -->
+ 		<java classname="org.eclipse.swt.tools.internal.JNIGeneratorApp" classpath="${toolsplugindir}/bin:${toolsplugindir}/swttools.jar:${basedir}/swt.jar"><arg value="org.eclipse.swt.internal.gtk.OS"/><arg value="${basedir}/src/Eclipse SWT PI/gtk/library/"/><arg value="${build.result.folder}/swt.jar"/></java>
+ 		<java classname="org.eclipse.swt.tools.internal.JNIGeneratorApp" classpath="${toolsplugindir}/bin:${toolsplugindir}/swttools.jar:${basedir}/swt.jar"><arg value="org.eclipse.swt.internal.accessibility.gtk.ATK"/><arg value="${basedir}/src/Eclipse SWT PI/gtk/library/"/><arg value="${build.result.folder}/swt.jar"/></java>
+ 		<java classname="org.eclipse.swt.tools.internal.JNIGeneratorApp" classpath="${toolsplugindir}/bin:${toolsplugindir}/swttools.jar:${basedir}/swt.jar"><arg value="org.eclipse.swt.internal.cairo.Cairo"/><arg value="${basedir}/src/Eclipse SWT PI/cairo/library/"/><arg value="${build.result.folder}/swt.jar"/></java>
+@@ -264,7 +266,7 @@
  			<arg line="all"/>
  		</exec>
  		<copy todir="${lib_destdir}">
@@ -37,7 +58,7 @@ $OpenBSD: patch-plugins_org_eclipse_swt_gtk_openbsd_x86_64_build_xml,v 1.1 2006/
  		</copy>
  	</target>
  
-@@ -290,11 +290,11 @@
+@@ -291,11 +293,11 @@
  			<fileset dir="${build.result.folder}/@dot" includes="**"/>
  		</copy>
  		<copy todir="${destination.temp.folder}/${full.name}">
@@ -51,7 +72,7 @@ $OpenBSD: patch-plugins_org_eclipse_swt_gtk_openbsd_x86_64_build_xml,v 1.1 2006/
  		<eclipse.versionReplacer path="${destination.temp.folder}/${full.name}" version="${version.suffix}"/>
  	</target>
  	
-@@ -308,7 +308,7 @@
+@@ -309,7 +311,7 @@
  		<copy file="${plugindir}/build/.project" todir="${temp.folder}/swtdownload"/>
  		<copy file="${plugindir}/build/.classpath" todir="${temp.folder}/swtdownload"/>
  		<copy todir="${temp.folder}/swtdownload">
@@ -60,3 +81,12 @@ $OpenBSD: patch-plugins_org_eclipse_swt_gtk_openbsd_x86_64_build_xml,v 1.1 2006/
  			<fileset dir="${basedir}" includes="about.html,about_files/"/>
  		</copy>
  		<chmod dir="${temp.folder}/swtdownload" perm="755" includes="**/lib*"/>
+@@ -325,6 +327,8 @@
+ 		<delete file="${plugin.destination}/${full.name}.jar"/>
+ 		<delete file="${plugin.destination}/${full.name}.zip"/>
+ 		<delete dir="${temp.folder}"/>
++		<!-- delete swttools.jar so that it will be compiled in the build.jars target -->
++		<ant antfile="build.xml" dir="${toolsplugindir}" inheritAll="false"	target="clean"/>
+ 	</target>
+ 
+ 	<target name="refresh" depends="init" if="eclipse.running">

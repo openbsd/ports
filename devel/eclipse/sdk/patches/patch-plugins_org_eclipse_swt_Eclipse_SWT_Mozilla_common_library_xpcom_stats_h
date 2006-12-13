@@ -1,0 +1,14 @@
+$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_Mozilla_common_library_xpcom_stats_h,v 1.1 2006/12/13 20:57:16 kurt Exp $
+--- plugins/org.eclipse.swt/Eclipse SWT Mozilla/common/library/xpcom_stats.h.orig	Thu Sep 21 10:57:34 2006
++++ plugins/org.eclipse.swt/Eclipse SWT Mozilla/common/library/xpcom_stats.h	Tue Dec  5 12:29:10 2006
+@@ -41,9 +41,8 @@ typedef enum {
+ 	Call_FUNC,
+ 	NS_1GetComponentManager_FUNC,
+ 	NS_1GetServiceManager_FUNC,
+-	NS_1InitEmbedding_FUNC,
++	NS_1InitXPCOM2_FUNC,
+ 	NS_1NewLocalFile_FUNC,
+-	NS_1TermEmbedding_FUNC,
+ 	PR_1Free_FUNC,
+ 	PR_1Malloc_FUNC,
+ 	VtblCall__II_FUNC,

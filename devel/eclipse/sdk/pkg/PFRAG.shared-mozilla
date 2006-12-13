@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-mozilla,v 1.5 2006/07/07 01:48:55 kurt Exp $
-@lib lib/libswt-mozilla-gtk-3232.so.${LIBswt-mozilla-gtk-3232_VERSION}

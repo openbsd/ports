@@ -1,6 +1,15 @@
-$OpenBSD: patch-plugins_org_eclipse_pde_doc_user_pdeOptions,v 1.1 2006/07/07 01:48:55 kurt Exp $
---- plugins/org.eclipse.pde.doc.user/pdeOptions.orig	Fri Jun  2 13:29:59 2006
-+++ plugins/org.eclipse.pde.doc.user/pdeOptions	Thu Jun 22 15:16:26 2006
+$OpenBSD: patch-plugins_org_eclipse_pde_doc_user_pdeOptions,v 1.2 2006/12/13 20:57:16 kurt Exp $
+--- plugins/org.eclipse.pde.doc.user/pdeOptions.orig	Thu Sep 21 10:55:44 2006
++++ plugins/org.eclipse.pde.doc.user/pdeOptions	Tue Dec  5 13:28:52 2006
+@@ -2,7 +2,7 @@
+ -charset "iso-8859-1"
+ -sourcepath "../org.eclipse.pde.core/src:../org.eclipse.pde.ui/src:../org.eclipse.pde.build/src"
+ -d reference/api
+--classpath  @rt@:../org.eclipse.core.boot/@dot:../org.eclipse.debug.core/@dot:../org.eclipse.compare/@dot:../org.eclipse.help/@dot:../org.eclipse.help.ui/@dot:../org.eclipse.core.resources/@dot:../org.eclipse.core.runtime/@dot:../org.eclipse.swt.motif.linux.x86/@dot:../org.eclipse.ui/@dot:../org.eclipse.jdt.core/@dot:../org.eclipse.jdt.ui/@dot:../org.eclipse.jdt.launching/@dot:../org.eclipse.jdt.debug/jdi.jar:../org.eclipse.debug.ui/@dot:../org.eclipse.search/@dot:../org.eclipse.jface/@dot:../org.eclipse.jface.text/@dot:../org.eclipse.text/@dot:../org.eclipse.ui.editors/@dot:../org.eclipse.ui.views/@dot:../org.eclipse.ui.workbench/@dot:../org.eclipse.ui.workbench.texteditor/@dot:../org.eclipse.core.variables/@dot:../org.eclipse.ui.ide/@dot:../org.eclipse.jdt.junit/@dot:../org.eclipse.pde.core/@dot:../org.eclipse.pde.ui/@dot:../org.eclipse.osgi/@dot:../org.eclipse.osgi.services/@dot:../org.eclipse.osgi.util/@dot:../org.eclipse.core.jobs/@dot:../org.eclipse.equinox.registry/@dot:../org.eclipse.equinox.common/@dot:../org.eclipse.equinox.preferences/@dot:../org.eclipse.equinox.supplement/@dot:../org.eclipse.core.runtime.content/@dot:../org.eclipse.core.runtime.jobs/@dot:../org.eclipse.core.runtime.preferences/@dot:../org.eclipse.core.contenttype/@dot
++-classpath  ${bootclasspath}:../org.eclipse.core.boot/@dot:../org.eclipse.debug.core/@dot:../org.eclipse.compare/@dot:../org.eclipse.help/@dot:../org.eclipse.help.ui/@dot:../org.eclipse.core.resources/@dot:../org.eclipse.core.runtime/@dot:../org.eclipse.swt.motif.linux.x86/@dot:../org.eclipse.ui/@dot:../org.eclipse.jdt.core/@dot:../org.eclipse.jdt.ui/@dot:../org.eclipse.jdt.launching/@dot:../org.eclipse.jdt.debug/jdi.jar:../org.eclipse.debug.ui/@dot:../org.eclipse.search/@dot:../org.eclipse.jface/@dot:../org.eclipse.jface.text/@dot:../org.eclipse.text/@dot:../org.eclipse.ui.editors/@dot:../org.eclipse.ui.views/@dot:../org.eclipse.ui.workbench/@dot:../org.eclipse.ui.workbench.texteditor/@dot:../org.eclipse.core.variables/@dot:../org.eclipse.ui.ide/@dot:../org.eclipse.jdt.junit/@dot:../org.eclipse.pde.core/@dot:../org.eclipse.pde.ui/@dot:../org.eclipse.osgi/@dot:../org.eclipse.osgi.services/@dot:../org.eclipse.osgi.util/@dot:../org.eclipse.core.jobs/@dot:../org.eclipse.equinox.registry/@dot:../org.eclipse.equinox.common/@dot:../org.eclipse.equinox.preferences/@dot:../org.eclipse.equinox.supplement/@dot:../org.eclipse.core.runtime.content/@dot:../org.eclipse.core.runtime.jobs/@dot:../org.eclipse.core.runtime.preferences/@dot:../org.eclipse.core.contenttype/@dot
+ -breakiterator
+ -use
+ -splitIndex
 @@ -10,10 +10,10 @@
  -doctitle "Eclipse PDE API Specification"
  -header "<b>Eclipse PDE</b><br>Release 3.2"

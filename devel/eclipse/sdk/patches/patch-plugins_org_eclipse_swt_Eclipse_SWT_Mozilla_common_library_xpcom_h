@@ -1,0 +1,11 @@
+$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_Mozilla_common_library_xpcom_h,v 1.1 2006/12/13 20:57:16 kurt Exp $
+--- plugins/org.eclipse.swt/Eclipse SWT Mozilla/common/library/xpcom.h.orig	Tue Dec  5 11:24:24 2006
++++ plugins/org.eclipse.swt/Eclipse SWT Mozilla/common/library/xpcom.h	Tue Dec  5 11:24:34 2006
+@@ -32,7 +32,6 @@
+ #define NDEBUG
+ 
+ #include "nsXPCOM.h"
+-#include "nsEmbedAPI.h"	
+ #include "nsEmbedString.h"
+ #include "nsIInputStream.h"
+ #include "nsISupportsUtils.h"

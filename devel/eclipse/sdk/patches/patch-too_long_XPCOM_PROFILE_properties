@@ -1,0 +1,24 @@
+$OpenBSD: patch-too_long_XPCOM_PROFILE_properties,v 1.1 2006/12/13 20:57:16 kurt Exp $
+--- plugins/org.eclipse.swt.tools/JNI Generation/org/eclipse/swt/tools/internal/org.eclipse.swt.internal.mozilla.XPCOM_PROFILE.properties.orig	Tue Dec  5 11:50:20 2006
++++ plugins/org.eclipse.swt.tools/JNI Generation/org/eclipse/swt/tools/internal/org.eclipse.swt.internal.mozilla.XPCOM_PROFILE.properties	Tue Dec  5 12:32:27 2006
+@@ -24,16 +24,15 @@ XPCOM_NS_GetComponentManager_0=
+ XPCOM_NS_GetServiceManager=
+ XPCOM_NS_GetServiceManager_0=
+ 
+-XPCOM_NS_InitEmbedding=
+-XPCOM_NS_InitEmbedding_0=
+-XPCOM_NS_InitEmbedding_1=
++XPCOM_NS_InitXPCOM2=
++XPCOM_NS_InitXPCOM2_0=
++XPCOM_NS_InitXPCOM2_1=
++XPCOM_NS_InitXPCOM2_2=
+ 
+ XPCOM_NS_NewLocalFile=
+ XPCOM_NS_NewLocalFile_0=
+ XPCOM_NS_NewLocalFile_1=
+ XPCOM_NS_NewLocalFile_2=
+-
+-XPCOM_NS_TermEmbedding=
+ 
+ XPCOM_PR_Free=
+ XPCOM_PR_Free_0=

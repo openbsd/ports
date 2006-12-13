@@ -1,8 +1,8 @@
-$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_PI_gtk_library_make_openbsd_mak,v 1.4 2006/07/07 01:48:55 kurt Exp $
---- plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_openbsd.mak.orig	Wed Jun  7 15:47:39 2006
-+++ plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_openbsd.mak	Wed Jun  7 16:38:14 2006
-@@ -27,15 +27,15 @@ GNOME_PREFIX = swt-gnome
- MOZILLA_PREFIX = swt-mozilla$(GCC_VERSION)
+$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_PI_gtk_library_make_openbsd_mak,v 1.5 2006/12/13 20:57:16 kurt Exp $
+--- plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_openbsd.mak.orig	Mon Dec  4 22:29:12 2006
++++ plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_openbsd.mak	Tue Dec  5 11:22:03 2006
+@@ -30,18 +30,18 @@ PROFILE17_PREFIX = swt-mozilla17-profile
+ PROFILE18_PREFIX = swt-mozilla18-profile$(GCC_VERSION)
  GLX_PREFIX = swt-glx
  
 -SWT_LIB = lib$(SWT_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
@@ -13,29 +13,23 @@ $OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_PI_gtk_library_make_openbsd_
 -ATK_LIB = lib$(ATK_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
 -GNOME_LIB = lib$(GNOME_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
 -MOZILLA_LIB = lib$(MOZILLA_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
--GLX_LIB = lib$(GLX_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
 +SWT_LIB = lib$(SWT_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so.$(LIBswt_gtk_VERSION)
 +CDE_LIB = lib$(CDE_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so.$(LIBswt_cde_gtk_VERSION)
 +AWT_LIB = lib$(AWT_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so.$(LIBswt_awt_gtk_VERSION)
 +SWTPI_LIB = lib$(SWTPI_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so.$(LIBswt_pi_gtk_VERSION)
-+CAIRO_LIB = lib$(CAIRO_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so.$(LIBswt_cairo_gtk_VERSION)
++CAIRO_LIB = lib$(CAIRO_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so.$(LIBswt_cairo_gtk_VERSION)	
 +ATK_LIB = lib$(ATK_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so.$(LIBswt_atk_gtk_VERSION)
 +GNOME_LIB = lib$(GNOME_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so.$(LIBswt_gnome_gtk_VERSION)
 +MOZILLA_LIB = lib$(MOZILLA_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so.$(LIBswt_mozilla_gtk_VERSION)
+ PROFILE14_LIB = lib$(PROFILE14_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
+ PROFILE17_LIB = lib$(PROFILE17_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
+ PROFILE18_LIB = lib$(PROFILE18_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
+-GLX_LIB = lib$(GLX_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
 +GLX_LIB = lib$(GLX_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so.$(LIBswt_glx_gtk_VERSION)
  
  CAIROCFLAGS = `pkg-config --cflags cairo`
  CAIROLIBS = `pkg-config --libs-only-L cairo` -lcairo
-@@ -75,7 +75,7 @@ MOZILLACFLAGS = -O \
- 	-I$(JAVA_HOME)/include/openbsd \
- 	${GECKO_INCLUDES} \
- 	${SWT_PTR_CFLAGS}
--MOZILLALIBS = -shared -s -Wl,--version-script=mozilla_exports -Bsymbolic \
-+MOZILLALIBS = -shared -s -Bsymbolic \
- 	${GECKO_LIBS}
- 	
- SWT_OBJECTS = swt.o callback.o
-@@ -94,12 +94,13 @@ CFLAGS = -O -Wall \
+@@ -101,12 +101,13 @@ CFLAGS = -O -Wall \
  		-DLINUX -DGTK \
  		-I$(JAVA_HOME)/include \
  		-I$(JAVA_HOME)/include/openbsd \
@@ -50,7 +44,45 @@ $OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_PI_gtk_library_make_openbsd_
  
  #
  # SWT libs
-@@ -233,10 +234,10 @@ glx_stats.o: glx_stats.c glx_stats.h
+@@ -202,7 +203,7 @@ gnome_stats.o: gnome_stats.c gnome_stats
+ #
+ # Mozilla lib
+ #
+-make_mozilla:$(MOZILLA_LIB) $(PROFILE14_LIB) $(PROFILE17_LIB) $(PROFILE18_LIB)
++make_mozilla:$(MOZILLA_LIB)
+ 
+ $(MOZILLA_LIB): $(MOZILLA_OBJECTS)
+ 	$(CXX) -o $(MOZILLA_LIB) $(MOZILLA_OBJECTS) $(MOZILLALIBS) ${GECKO_LIBS}
+@@ -220,22 +221,22 @@ xpcom_stats.o: xpcom_stats.cpp
+ 	$(CXX) $(MOZILLACFLAGS) ${GECKO_INCLUDES} -c xpcom_stats.cpp	
+ 
+ $(PROFILE14_OBJECTS): xpcom_profile.cpp
+-	$(CXX) -o $(PROFILE14_OBJECTS) $(MOZILLACFLAGS) ${PROFILE14_INCLUDES} -c xpcom_profile.cpp	
++	$(CXX) -o $(PROFILE14_OBJECTS) $(MOZILLACFLAGS) ${PROFILE14_INCLUDES} ${GECKO_INCLUDES} -c xpcom_profile.cpp	
+ 
+ $(PROFILE17_OBJECTS): xpcom_profile.cpp
+-	$(CXX) -o $(PROFILE17_OBJECTS) $(MOZILLACFLAGS) ${PROFILE17_INCLUDES} -c xpcom_profile.cpp	
++	$(CXX) -o $(PROFILE17_OBJECTS) $(MOZILLACFLAGS) ${PROFILE17_INCLUDES} ${GECKO_INCLUDES} -c xpcom_profile.cpp	
+ 
+ $(PROFILE18_OBJECTS): xpcom_profile.cpp
+-	$(CXX) -o $(PROFILE18_OBJECTS) $(MOZILLACFLAGS) ${PROFILE18_INCLUDES} -c xpcom_profile.cpp	
++	$(CXX) -o $(PROFILE18_OBJECTS) $(MOZILLACFLAGS) ${PROFILE18_INCLUDES} ${GECKO_INCLUDES} -c xpcom_profile.cpp	
+ 
+ $(PROFILE14_LIB): $(PROFILE14_OBJECTS)
+-	$(CXX) -o $(PROFILE14_LIB) $(PROFILE14_OBJECTS) $(MOZILLALIBS) ${PROFILE14_LIBS}
++	$(CXX) -o $(PROFILE14_LIB) $(PROFILE14_OBJECTS) $(MOZILLALIBS) ${PROFILE14_LIBS} ${GECKO_LIBS}
+ 
+ $(PROFILE17_LIB): $(PROFILE17_OBJECTS)
+-	$(CXX) -o $(PROFILE17_LIB) $(PROFILE17_OBJECTS) $(MOZILLALIBS) ${PROFILE17_LIBS}
++	$(CXX) -o $(PROFILE17_LIB) $(PROFILE17_OBJECTS) $(MOZILLALIBS) ${PROFILE17_LIBS} ${GECKO_LIBS}
+ 
+ $(PROFILE18_LIB): $(PROFILE18_OBJECTS)
+-	$(CXX) -o $(PROFILE18_LIB) $(PROFILE18_OBJECTS) $(MOZILLALIBS) ${PROFILE18_LIBS}
++	$(CXX) -o $(PROFILE18_LIB) $(PROFILE18_OBJECTS) $(MOZILLALIBS) ${PROFILE18_LIBS} ${GECKO_LIBS}
+ 
+ #
+ # GLX lib
+@@ -258,10 +259,10 @@ glx_stats.o: glx_stats.c glx_stats.h
  # Install
  #
  install: all

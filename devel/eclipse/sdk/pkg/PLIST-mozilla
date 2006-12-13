@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-mozilla,v 1.2 2005/08/16 09:49:52 espie Exp $
-@conflict eclipse-sdk-gtk2-mozilla-<=3.0.1
-%%SHARED%%

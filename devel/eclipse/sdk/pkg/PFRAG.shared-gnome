@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared-gnome,v 1.5 2006/07/07 01:48:55 kurt Exp $
-@lib lib/libswt-gnome-gtk-3232.so.${LIBswt-gnome-gtk-3232_VERSION}
+@comment $OpenBSD: PFRAG.shared-gnome,v 1.6 2006/12/13 20:57:16 kurt Exp $
+@lib lib/libswt-gnome-gtk-3235.so.${LIBswt-gnome-gtk-3235_VERSION}
