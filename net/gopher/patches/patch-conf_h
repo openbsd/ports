@@ -1,0 +1,12 @@
+$OpenBSD: patch-conf_h,v 1.1 2006/12/13 23:14:28 deanna Exp $
+--- conf.h.orig	Wed Jul 20 11:28:52 2005
++++ conf.h	Wed Dec 13 12:42:51 2006
+@@ -144,7 +144,7 @@
+  * Set CLIENT2_PORT to 0 if you only want one root machine
+  */
+ 
+-#define CLIENT1_HOST "gopherproject.org"
++#define CLIENT1_HOST "quux.org"
+ #define CLIENT1_PATH "/Software/Gopher"
+ #define CLIENT1_PORT 70
+ 

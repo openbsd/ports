@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/07/31 12:52:20 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/13 23:14:28 deanna Exp $
 
 COMMENT=	"distributed document delivery client"
 
-DISTNAME=	gopher_3.0.11
-PKGNAME=	${DISTNAME:S/_/-/}
+V=		3.0.11
+DISTNAME=	gopher_${V}
+PKGNAME=	gopher-${V}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://quux.org/devel/gopher/Downloads/
 
-MAINTAINER=	Deanna Phillips <deanna@sdf.lonestar.org>
+MAINTAINER=	Deanna Phillips <deanna@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -26,8 +27,8 @@ MAKE_FLAGS=	CLIENTLIB=${SYSCONFDIR}/gopher
 WRKDIST=	${WRKDIR}/gopher
 NO_REGRESS=	Yes
 
-pre-install:
-	@perl -pi -e "s,!!LOCALBASE!!,${LOCALBASE},g;" \
+pre-configure:
+	@perl -pi -e "s,!!PREFIX!!,${PREFIX},g;" \
 		-e "s,!!SYSCONFDIR!!,${SYSCONFDIR},g" ${WRKSRC}/doc/gopher.1
 
 do-install:
