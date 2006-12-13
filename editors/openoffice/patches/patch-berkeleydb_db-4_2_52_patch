@@ -1,6 +1,6 @@
-$OpenBSD: patch-berkeleydb_db-4_2_52_patch,v 1.2 2006/08/20 03:36:52 kurt Exp $
---- berkeleydb/db-4.2.52.patch.orig.port	Tue Jul 25 06:23:22 2006
-+++ berkeleydb/db-4.2.52.patch	Fri Aug 18 15:47:42 2006
+$OpenBSD: patch-berkeleydb_db-4_2_52_patch,v 1.3 2006/12/13 10:25:14 robert Exp $
+--- berkeleydb/db-4.2.52.patch.orig.port	Fri Dec  1 18:51:42 2006
++++ berkeleydb/db-4.2.52.patch	Mon Dec 11 22:27:36 2006
 @@ -521,6 +521,19 @@
  *** misc/db-4.2.52.NC/dist/configure	Wed Dec  3 22:10:02 2003
  --- misc/build/db-4.2.52.NC/dist/configure	Tue Jul 25 09:05:20 2006
@@ -30,9 +30,9 @@ $OpenBSD: patch-berkeleydb_db-4_2_52_patch,v 1.2 2006/08/20 03:36:52 kurt Exp $
          # Check to see if the program is GNU ld.  I'd rather use --version,
          # but apparently some GNU ld's only accept -v.
          # Break only if it was the GNU/non-GNU ld that we prefer.
-@@ -538,6 +551,41 @@
-   	test "$with_gnu_ld" != no && break
-   	;;
+@@ -555,6 +568,41 @@
+       # Don't fix this by using the ld -exported_symbols_list flag, it doesn't exist in older darwin ld's
+   		  archive_expsym_cmds='sed -e "s,#.*,," -e "s,^[    ]*,," -e "s,^\(..*\),_&," < $export_symbols > $output_objdir/${libname}-symbols.expsym~$CC -dynamiclib $allow_undefined_flag  -o $lib $libobjs $deplibs$compiler_flags -install_name $rpath/$soname $verstring~nmedit -s $output_objdir/${libname}-symbols.expsym ${lib}'
  ***************
 +*** 5889,5900 ****
 +    ;;
@@ -72,7 +72,7 @@ $OpenBSD: patch-berkeleydb_db-4_2_52_patch,v 1.2 2006/08/20 03:36:52 kurt Exp $
  *** 11180,11186 ****
        # linker, instead of GNU ld.  If possible, this setting should
        # overridden to take advantage of the native linker features on
-@@ -546,7 +594,7 @@
+@@ -563,7 +611,7 @@
      fi
    
      # Commands to make compiler produce verbose output that lists
@@ -81,7 +81,7 @@ $OpenBSD: patch-berkeleydb_db-4_2_52_patch,v 1.2 2006/08/20 03:36:52 kurt Exp $
        # linker, instead of GNU ld.  If possible, this setting should
        # overridden to take advantage of the native linker features on
        # the platform it is being used on.
-@@ -1010,3 +1058,1256 @@
+@@ -1027,3 +1075,1256 @@
  ! 			$(SLO)$/xa_map.obj
  ! 
  ! .INCLUDE :  target.mk

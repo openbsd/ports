@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-java,v 1.1 2006/11/03 05:11:09 kurt Exp $
+@comment $OpenBSD: PLIST-java,v 1.2 2006/12/13 10:25:14 robert Exp $
 %%SHARED%%
 openoffice/program/JREProperties.class
 openoffice/program/classes/
@@ -33,6 +33,7 @@ openoffice/program/classes/report.jar
 openoffice/program/classes/ridl.jar
 openoffice/program/classes/sandbox.jar
 openoffice/program/classes/sdbc_hsqldb.jar
+openoffice/program/classes/serializer.jar
 openoffice/program/classes/table.jar
 openoffice/program/classes/unoil.jar
 openoffice/program/classes/unoloader.jar

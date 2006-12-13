@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_source_fsys_unx_cxx,v 1.2 2006/08/20 03:36:53 kurt Exp $
---- tools/source/fsys/unx.cxx.orig.port	Mon Jun 19 09:42:57 2006
-+++ tools/source/fsys/unx.cxx	Fri Aug 18 15:47:45 2006
-@@ -49,7 +49,7 @@
+$OpenBSD: patch-tools_source_fsys_unx_cxx,v 1.3 2006/12/13 10:25:14 robert Exp $
+--- tools/source/fsys/unx.cxx.orig.port	Fri Dec  1 18:57:51 2006
++++ tools/source/fsys/unx.cxx	Mon Dec 11 22:27:44 2006
+@@ -52,7 +52,7 @@
  extern "C" int mntctl( int cmd, size_t size, char* buf );
  #elif defined(NETBSD) 
  #include <sys/mount.h>
@@ -10,7 +10,7 @@ $OpenBSD: patch-tools_source_fsys_unx_cxx,v 1.2 2006/08/20 03:36:53 kurt Exp $
  #elif defined DECUNIX
  struct mnttab
  {
-@@ -102,7 +102,7 @@ struct mymnttab
+@@ -105,7 +105,7 @@ struct mymnttab
  };
  
  

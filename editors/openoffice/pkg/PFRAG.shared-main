@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/25 10:30:58 espie Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.2 2006/12/13 10:25:14 robert Exp $
 openoffice/program/acceptor.uno.so
 openoffice/program/basprov680.uno.so
 openoffice/program/behelper.uno.so
@@ -68,6 +68,7 @@ openoffice/program/libdbu680.so
 openoffice/program/libdict_ja.so
 openoffice/program/libdict_zh.so
 openoffice/program/libdtransX11680.so
+openoffice/program/libeggtray680.so
 openoffice/program/libegi680.so
 openoffice/program/libembobj.so
 openoffice/program/libemboleobj.so
@@ -146,6 +147,7 @@ openoffice/program/libpreload680.so
 openoffice/program/libprotocolhandler680.so
 openoffice/program/libpsp680.so
 openoffice/program/libpyuno.so
+openoffice/program/libqstart_gtk680.so
 openoffice/program/librecentfile.so
 openoffice/program/libreg.so
 openoffice/program/libres680.so

@@ -1,7 +1,7 @@
-$OpenBSD: patch-shell_source_backends_localebe_localebackend_cxx,v 1.2 2006/08/20 03:36:53 kurt Exp $
---- shell/source/backends/localebe/localebackend.cxx.orig.port	Mon Jun 19 10:16:34 2006
-+++ shell/source/backends/localebe/localebackend.cxx	Fri Aug 18 15:47:45 2006
-@@ -50,7 +50,7 @@
+$OpenBSD: patch-shell_source_backends_localebe_localebackend_cxx,v 1.3 2006/12/13 10:25:14 robert Exp $
+--- shell/source/backends/localebe/localebackend.cxx.orig.port	Fri Dec  1 18:57:03 2006
++++ shell/source/backends/localebe/localebackend.cxx	Mon Dec 11 22:27:41 2006
+@@ -53,7 +53,7 @@
  
  #include <stdio.h>
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-shell_source_backends_localebe_localebackend_cxx,v 1.2 2006/08/2
  
  #include <rtl/ustrbuf.hxx>
  #include <locale.h>
-@@ -267,7 +267,7 @@ LocaleBackend* LocaleBackend::createInst
+@@ -270,7 +270,7 @@ LocaleBackend* LocaleBackend::createInst
  
  rtl::OUString LocaleBackend::getLocale(void)
  {
@@ -19,7 +19,7 @@ $OpenBSD: patch-shell_source_backends_localebe_localebackend_cxx,v 1.2 2006/08/2
      return ImplGetLocale(LC_CTYPE);
  #elif defined (MACOSX)
  	return ImplGetLocale("AppleLocale");
-@@ -280,7 +280,7 @@ rtl::OUString LocaleBackend::getLocale(v
+@@ -283,7 +283,7 @@ rtl::OUString LocaleBackend::getLocale(v
  
  rtl::OUString LocaleBackend::getUILocale(void)
  {

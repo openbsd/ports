@@ -1,4 +1,4 @@
-$OpenBSD: patch-solenv_inc_unxobsd_mk,v 1.1 2006/11/08 09:34:03 robert Exp $
+$OpenBSD: patch-solenv_inc_unxobsd_mk,v 1.2 2006/12/13 10:25:14 robert Exp $
 --- solenv/inc/unxobsd.mk.orig.port	Thu Nov  2 21:12:56 2006
 +++ solenv/inc/unxobsd.mk	Thu Nov  2 21:12:49 2006
 @@ -0,0 +1,235 @@
@@ -8,9 +8,9 @@ $OpenBSD: patch-solenv_inc_unxobsd_mk,v 1.1 2006/11/08 09:34:03 robert Exp $
 +#
 +#   $RCSfile: patch-solenv_inc_unxobsd_mk,v $
 +#
-+#   $Revision: 1.1 $
++#   $Revision: 1.2 $
 +#
-+#   last change: $Author: robert $ $Date: 2006/11/08 09:34:03 $
++#   last change: $Author: robert $ $Date: 2006/12/13 10:25:14 $
 +#
 +#   The Contents of this file are made available subject to
 +#   the terms of GNU Lesser General Public License Version 2.1.
@@ -163,7 +163,7 @@ $OpenBSD: patch-solenv_inc_unxobsd_mk,v 1.1 2006/11/08 09:34:03 robert Exp $
 +#LINKFLAGSDEFS*=#-Wl,-z,defs
 +#LINKFLAGSRUNPATH*=-Wl,-rpath,\''$$ORIGIN'\'
 +#LINKFLAGS=-Wl,-z,combreloc $(LINKFLAGSDEFS) $(LINKFLAGSRUNPATH)
-+LINKFLAGS=-Wl,-z,combreloc
++LINKFLAGS=-Wl,-z,combreloc $(PTHREAD_LIBS)
 +SOLARLIB+=-L$(LOCALBASE)/lib
 +
 +# linker flags for linking applications

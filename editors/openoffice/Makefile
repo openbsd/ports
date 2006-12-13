@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2006/11/28 09:35:27 robert Exp $
+# $OpenBSD: Makefile,v 1.38 2006/12/13 10:25:14 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -6,13 +6,13 @@ COMMENT-main=	"a multi-platform productivity suite"
 COMMENT-kde=	"optional integration of OpenOffice to the KDE environment"
 COMMENT-java=	"optional integration of OpenOffice java features"
 
-VERSION=	2.0.4
-DISTNAME=	OOo_${VERSION}_src
-WRKDIST=	${WRKDIR}/OOD680_m5
-PKGNAME=	openoffice-${VERSION}p20
-PKGNAME-main=	openoffice-${VERSION}p20
-PKGNAME-kde=	openoffice-kde-${VERSION}p16
-PKGNAME-java=	openoffice-java-${VERSION}p16
+VERSION=	2.1.0
+DISTNAME=	OOo_${VERSION}
+WRKDIST=	${WRKDIR}/OOE680_m6
+PKGNAME=	openoffice-${VERSION}
+PKGNAME-main=	openoffice-${VERSION}
+PKGNAME-kde=	openoffice-kde-${VERSION}
+PKGNAME-java=	openoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 
 SHARED_LIBS=	icudata		26.0 \
@@ -33,12 +33,16 @@ MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/mirror/OpenOffice/stab
 MASTER_SITES0=	http://www.bsd.hu/~robert/ooo/ \
 		http://humppa.hu/ooo/
 
-DISTFILES=	${DISTNAME}.tar.gz ooo-desktop.tar.gz:0
+DISTFILES=	${DISTNAME}_src.tar.bz2 ooo-desktop.tar.gz:0
+.for dfile in binfilter l10n sdk system
+DISTFILES+=	${DISTNAME}_src_${dfile}.tar.bz2
+.endfor
+
 DIST_SUBDIR=	openoffice
 
 # See http://www.openoffice.org/about.html#licenses
 # and http://www.openoffice.org/license.html
-# and http://www.openoffice.org/FAQs/faq-questions.html#licensing
+# and http://www.openoffice.org/FAQs/faq-licensing.html 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -46,6 +50,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MULTI_PACKAGES=		-main -kde -java
 
+PSEUDO_FLAVORS=	cleanobj no_lang
+FLAVORS=	debug
+FLAVOR?=
+
+.if !${FLAVOR:L:Mno_lang}
 LANGS=			bg br-pt de es fi fr hu it ja ko \
 			lt lv nl pl ru sl sv
 
@@ -57,6 +66,7 @@ RUN_DEPENDS-i18n-$l=	::editors/openoffice
 WANTLIB-i18n-$l=
 LIB_DEPENDS-i18n-$l=
 .endfor
+.endif
 
 BUILD_DEPENDS=	:zip-*:archivers/zip \
 		:unzip-*:archivers/unzip \
@@ -107,7 +117,7 @@ NO_REGRESS=	Yes
 VMEM_WARNING=	Yes
 
 PATCHFILES=	go_oo_src680_20061105.diff:0 \
-		build-java-target.diff:0
+		build-java-target-${VERSION}.diff:0
 
 PATCHORIG=	.orig.port
 WRKCONF=	${WRKSRC}/config_office
@@ -149,10 +159,6 @@ CONFIGURE_ARGS=	--disable-gnome-vfs \
 		--with-db-jar=${LOCALBASE}/lib/db4/db.jar \
 		--with-lang="en-US ${LANGS}"
 
-PSEUDO_FLAVORS=	cleanobj
-FLAVORS=	debug
-FLAVOR?=
-
 .if ${FLAVOR:L:Mdebug}
 CONFIGURE_ARGS+=	--enable-symbols
 .endif
@@ -178,7 +184,7 @@ pre-patch:
 do-build:
 	@cd ${WRKBUILD} && \
 		./bootstrap && \
-		${SETENV} ${MAKE_ENV} ${TCSH} -c 'source OpenBSDEnv.Set && ${BUILD_CMD}' 
+		${SETENV} ${MAKE_ENV} ${TCSH} -c 'limit descriptors 256 && source OpenBSDEnv.Set && ${BUILD_CMD}' 
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/openoffice
