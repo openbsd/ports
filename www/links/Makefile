@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2005/11/03 18:28:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2006/12/13 08:52:07 kili Exp $
 
 COMMENT=	"text browser, displays while downloading"
 
-VERSION=	0.99
+VERSION=	1.00pre19
 DISTNAME=	links-${VERSION}
 CATEGORIES=	www
 
