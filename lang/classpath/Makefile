@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2006/12/14 06:17:44 sturm Exp $
 
 # max data size too small to build. needs at least 256M
 NOT_FOR_ARCHS=	m68k sparc vax
@@ -25,6 +25,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	:zip->=2.3p0:archivers/zip \
+		::devel/pkgconfig \
 		:jikes->=1.22p0:lang/jikes
 
 MODULES=	converters/libiconv
