@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/12/10 09:27:09 jakob Exp $
-${P5ARCH}/auto/BerkeleyDB/BerkeleyDB.so
