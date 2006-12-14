@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2006/11/13 16:25:10 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.21 2006/12/14 20:29:00 naddy Exp $
 bin/gtar
 libexec/grmt
 @endfake
@@ -15,6 +15,7 @@ share/locale/fr/LC_MESSAGES/tar.mo
 share/locale/ga/LC_MESSAGES/tar.mo
 share/locale/gl/LC_MESSAGES/tar.mo
 share/locale/hr/LC_MESSAGES/tar.mo
+share/locale/hu/LC_MESSAGES/tar.mo
 share/locale/id/LC_MESSAGES/tar.mo
 share/locale/it/LC_MESSAGES/tar.mo
 share/locale/ja/LC_MESSAGES/tar.mo

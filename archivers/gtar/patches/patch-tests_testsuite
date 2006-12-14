@@ -1,0 +1,58 @@
+$OpenBSD: patch-tests_testsuite,v 1.1 2006/12/14 20:29:00 naddy Exp $
+--- tests/testsuite.orig	Thu Dec 14 14:27:42 2006
++++ tests/testsuite	Thu Dec 14 14:31:23 2006
+@@ -2253,8 +2253,9 @@ fi
+ at_failed=false
+ echo >>"$at_stderr"; echo "tar: file-list: file name read contains nul character
+ " | $at_diff - "$at_stderr" || at_failed=:
+-echo >>"$at_stdout"; echo "jeden\\ndwa
++echo >>"$at_stdout"; printf "jeden\\\\ndwa
+ trzy
++
+ " | $at_diff - "$at_stdout" || at_failed=:
+ case $at_status in
+    77) echo 77 > "$at_status_file"; exit 77;;
+@@ -2366,8 +2367,9 @@ fi
+ at_failed=false
+ echo >>"$at_stderr"; echo "tar: file-list: file name read contains nul character
+ " | $at_diff - "$at_stderr" || at_failed=:
+-echo >>"$at_stdout"; echo "jeden\\ndwa
++echo >>"$at_stdout"; printf "jeden\\\\ndwa
+ trzy
++
+ " | $at_diff - "$at_stdout" || at_failed=:
+ case $at_status in
+    77) echo 77 > "$at_status_file"; exit 77;;
+@@ -2479,8 +2481,9 @@ fi
+ at_failed=false
+ echo >>"$at_stderr"; echo "tar: file-list: file name read contains nul character
+ " | $at_diff - "$at_stderr" || at_failed=:
+-echo >>"$at_stdout"; echo "jeden\\ndwa
++echo >>"$at_stdout"; printf "jeden\\\\ndwa
+ trzy
++
+ " | $at_diff - "$at_stdout" || at_failed=:
+ case $at_status in
+    77) echo 77 > "$at_status_file"; exit 77;;
+@@ -2592,8 +2595,9 @@ fi
+ at_failed=false
+ echo >>"$at_stderr"; echo "tar: file-list: file name read contains nul character
+ " | $at_diff - "$at_stderr" || at_failed=:
+-echo >>"$at_stdout"; echo "jeden\\ndwa
++echo >>"$at_stdout"; printf "jeden\\\\ndwa
+ trzy
++
+ " | $at_diff - "$at_stdout" || at_failed=:
+ case $at_status in
+    77) echo 77 > "$at_status_file"; exit 77;;
+@@ -2705,8 +2709,9 @@ fi
+ at_failed=false
+ echo >>"$at_stderr"; echo "tar: file-list: file name read contains nul character
+ " | $at_diff - "$at_stderr" || at_failed=:
+-echo >>"$at_stdout"; echo "jeden\\ndwa
++echo >>"$at_stdout"; printf "jeden\\\\ndwa
+ trzy
++
+ " | $at_diff - "$at_stdout" || at_failed=:
+ case $at_status in
+    77) echo 77 > "$at_status_file"; exit 77;;
