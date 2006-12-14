@@ -1,28 +1,27 @@
-# $OpenBSD: Makefile,v 1.14 2006/11/05 14:34:51 bernd Exp $
+# $OpenBSD: Makefile,v 1.15 2006/12/14 18:48:35 dassow Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=		'MySQL drivers for the Perl DBI'
 
 DISTNAME=		DBD-mysql-3.0008
 PKGNAME=		p5-${DISTNAME}
-CATEGORIES=		databases perl5
+CATEGORIES=		databases
+MODULES=		cpan
 
-# artistic
+# Perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		crypto m ssl z
 
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=DBD/}
-
 BUILD_DEPENDS=		:p5-DBI->=1.08:databases/p5-DBI
 RUN_DEPENDS=		:p5-DBI->=1.08:databases/p5-DBI
 LIB_DEPENDS=		lib/mysql/mysqlclient.>=10::databases/mysql
 REGRESS_DEPENDS=	:mysql-server-*:databases/mysql,-server
 
-CONFIGURE_STYLE=	perl
+REGRESS_IS_INTERACTIVE=	Yes
 
 pre-regress:
 	@mysqladmin ping >/dev/null 2>&1 || (echo 'mysql needs to be running'; exit 1)
