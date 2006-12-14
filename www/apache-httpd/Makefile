@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/14 10:22:03 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2006/12/14 11:20:22 steven Exp $
 
 COMMENT=	"apache HTTP server"
 
@@ -26,10 +26,7 @@ MODULES=		converters/libiconv
 
 USE_LIBTOOL=		Yes
 
-MASTER_SITES=		http://www.mirrorservice.org/sites/ftp.apache.org/httpd/ \
-			http://gulus.usherbrooke.ca/pub/appl/apache/httpd/ \
-			http://apache.mirror.pacific.net.au/httpd/ \
-			http://www.apache.org/dist/httpd/
+MASTER_SITES=		${MASTER_SITE_APACHE:=httpd/}
 
 HTTPD_DIR=		/var/apache2
 SYSCONFDIR=		${HTTPD_DIR}/conf
