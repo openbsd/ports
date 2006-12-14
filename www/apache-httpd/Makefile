@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/14 09:31:56 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/14 09:50:25 steven Exp $
 
 COMMENT=	"apache HTTP server"
 
@@ -25,7 +25,10 @@ LIB_DEPENDS=		aprutil-1.>=2::devel/apr-util \
 
 USE_LIBTOOL=		Yes
 
-MASTER_SITES=		http://apache.mirror.pacific.net.au/httpd/
+MASTER_SITES=		http://www.mirrorservice.org/sites/ftp.apache.org/httpd/ \
+			http://gulus.usherbrooke.ca/pub/appl/apache/httpd/ \
+			http://apache.mirror.pacific.net.au/httpd/ \
+			http://www.apache.org/dist/httpd/
 
 HTTPD_DIR=		/var/apache2
 SYSCONFDIR=		${HTTPD_DIR}/conf
