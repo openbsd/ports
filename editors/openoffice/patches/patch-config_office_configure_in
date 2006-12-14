@@ -1,6 +1,6 @@
---- config_office/configure.in.orig.port	Fri Dec  1 18:52:35 2006
-+++ config_office/configure.in	Mon Dec 11 22:27:36 2006
-@@ -779,6 +779,16 @@ case "$build_os" in
+--- config_office/configure.in.orig.port	Wed Dec 13 21:21:20 2006
++++ config_office/configure.in	Wed Dec 13 21:21:23 2006
+@@ -790,6 +790,16 @@ case "$build_os" in
  		AC_MSG_RESULT([$PTHREAD_LIBS])
  		_os=FreeBSD
  		;;
@@ -17,7 +17,7 @@
  	osf)
  		test_x=dontknow
  		test_cups=no
-@@ -2360,11 +2370,11 @@ dnl ====================================
+@@ -2421,11 +2431,11 @@ dnl ====================================
  dnl Checks for programs.
  dnl ===================================================================
  dnl Check whether there's a C pre-processor.
@@ -31,7 +31,7 @@
     AC_PROG_CXXCPP
  fi
  
-@@ -2494,6 +2504,9 @@ if test "$_os" != "WINNT" -a \( "z$enabl
+@@ -2555,6 +2565,9 @@ if test "$_os" != "WINNT" -a \( "z$enabl
  	AIX)
  		PKGFORMAT=aix
  		;;
@@ -41,7 +41,7 @@
  	*BSD)
  		PKGFORMAT=bsd
  		;;
-@@ -2823,7 +2836,7 @@ if test -n "$with_system_libwpd" -o -n "
+@@ -2884,7 +2897,7 @@ if test -n "$with_system_libwpd" -o -n "
          test "$with_system_libwpd" != "no"; then
      AC_MSG_RESULT([external])
      SYSTEM_LIBWPD=YES
@@ -50,7 +50,7 @@
  else
      AC_MSG_RESULT([internal])
      SYSTEM_LIBWPD=NO
-@@ -2887,12 +2900,13 @@ if test -n "$with_system_python" && test
+@@ -2948,12 +2961,13 @@ if test -n "$with_system_python" && test
  
     python_include=`$PYTHON -c "import distutils.sysconfig; print distutils.sysconfig.get_config_var('INCLUDEPY');"`
     python_version=`$PYTHON -c "import distutils.sysconfig; print distutils.sysconfig.get_config_var('VERSION');"`
@@ -65,7 +65,7 @@
     fi
     
     dnl check if the headers really work:
-@@ -2917,16 +2931,13 @@ if test -n "$with_system_db" -o -n "$wit
+@@ -2978,16 +2992,13 @@ if test -n "$with_system_db" -o -n "$wit
  	test "$with_system_db" != "no"; then
      SYSTEM_DB=YES
      AC_MSG_RESULT([external])
@@ -86,7 +86,7 @@
      for v in 1 2; do
         AC_TRY_RUN([
  #include <db.h>
-@@ -2937,6 +2948,7 @@ int main(int argc, char **argv) {
+@@ -2998,6 +3009,7 @@ int main(int argc, char **argv) {
  }
         ], [DB_VERSION_MINOR=$v], [])
      done
@@ -94,7 +94,7 @@
      if test "$DB_VERSION_MINOR" -gt "1"; then
         AC_MSG_RESULT([OK])
         DB_VERSION=4.$DB_VERSION_MINOR
-@@ -3597,7 +3609,7 @@ elif test "$_os" != "WINNT" ; then
+@@ -3658,7 +3670,7 @@ elif test "$_os" != "WINNT" ; then
        AC_MSG_ERROR([No X includes found]) # Exit
     fi
     CFLAGS=$X_CFLAGS
@@ -103,7 +103,7 @@
     AC_CHECK_LIB(X11, XOpenDisplay, x_libs="-lX11 $X_EXTRA_LIBS", [AC_MSG_ERROR([X Development libraries not found])])
  else
     x_includes="no_x_includes"
-@@ -3778,7 +3790,6 @@ if test -n "$with_system_neon" -o -n "$w
+@@ -3839,7 +3851,6 @@ if test -n "$with_system_neon" -o -n "$w
  	test "$with_system_neon" != "no"; then
          AC_MSG_RESULT([external])
          PKG_CHECK_MODULES(NEON, neon >= 0.24.0)
@@ -111,7 +111,7 @@
          NEON_VERSION="`$PKG_CONFIG --modversion neon | $SED 's/\.//g'`"
          NEON_CFLAGS="$NEON_CFLAGS -DSYSTEM_NEON -DUSE_DAV_LOCKS=1"
          SYSTEM_NEON=YES
-@@ -4562,7 +4573,7 @@ if test "$test_kde" = "yes" -a "$ENABLE_
+@@ -4623,7 +4634,7 @@ if test "$test_kde" = "yes" -a "$ENABLE_
  
      dnl What to test
      qt_test_include="qstyle.h"
@@ -120,7 +120,7 @@
      kde_test_include="ksharedptr.h"
      kde_test_library="libkdeui.la"
  
-@@ -4585,7 +4596,7 @@ your Qt installation by exporting QTDIR 
+@@ -4646,7 +4657,7 @@ your Qt installation by exporting QTDIR 
      AC_MSG_CHECKING([for Qt libraries])
      qt_libdir="no"
      for qt_check in $qt_libdirs ; do
