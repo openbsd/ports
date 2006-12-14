@@ -1,0 +1,1408 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/14 07:14:21 deanna Exp $
+@newgroup _apache2:576
+@newuser _apache2:576:576:daemon:Apache HTTP Server:/var/empty:/sbin/nologin
+include/apache2/
+include/apache2/ap_compat.h
+include/apache2/ap_config.h
+include/apache2/ap_config_auto.h
+include/apache2/ap_config_layout.h
+include/apache2/ap_listen.h
+include/apache2/ap_mmn.h
+include/apache2/ap_mpm.h
+include/apache2/ap_provider.h
+include/apache2/ap_regex.h
+include/apache2/ap_regkey.h
+include/apache2/ap_release.h
+include/apache2/http_config.h
+include/apache2/http_connection.h
+include/apache2/http_core.h
+include/apache2/http_log.h
+include/apache2/http_main.h
+include/apache2/http_protocol.h
+include/apache2/http_request.h
+include/apache2/http_vhost.h
+include/apache2/httpd.h
+include/apache2/mod_auth.h
+include/apache2/mod_cgi.h
+include/apache2/mod_core.h
+include/apache2/mod_dav.h
+include/apache2/mod_dbd.h
+include/apache2/mod_include.h
+include/apache2/mod_log_config.h
+include/apache2/mod_proxy.h
+include/apache2/mod_ssl.h
+include/apache2/mod_status.h
+include/apache2/mpm.h
+include/apache2/mpm_common.h
+include/apache2/mpm_default.h
+include/apache2/os.h
+include/apache2/scoreboard.h
+include/apache2/unixd.h
+include/apache2/util_cfgtree.h
+include/apache2/util_charset.h
+include/apache2/util_ebcdic.h
+include/apache2/util_filter.h
+include/apache2/util_ldap.h
+include/apache2/util_md5.h
+include/apache2/util_script.h
+include/apache2/util_time.h
+include/apache2/util_xml.h
+lib/httpd.exp
+@man man/man1/dbmmanage.1
+@man man/man1/htdbm.1
+@man man/man1/htdigest.1
+@man man/man1/htpasswd.1
+@man man/man8/ab.8
+@man man/man8/apachectl.8
+@man man/man8/apxs.8
+@man man/man8/htcacheclean.8
+@man man/man8/httpd.8
+@man man/man8/logresolve.8
+@man man/man8/rotatelogs.8
+@man man/man8/suexec.8
+sbin/ab
+sbin/apachectl
+sbin/apxs
+sbin/checkgid
+sbin/dbmmanage
+sbin/envvars
+sbin/envvars-std
+sbin/htcacheclean
+sbin/htdbm
+sbin/htdigest
+sbin/htpasswd
+sbin/httpd
+sbin/httxt2dbm
+sbin/logresolve
+sbin/rotatelogs
+share/doc/httpd/
+share/doc/apache2/LICENSE
+share/doc/apache2/bind.html
+share/doc/apache2/bind.html.de
+share/doc/apache2/bind.html.en
+share/doc/apache2/bind.html.fr
+share/doc/apache2/bind.html.ja.euc-jp
+share/doc/apache2/bind.html.ko.euc-kr
+share/doc/apache2/caching.html
+share/doc/apache2/caching.html.en
+share/doc/apache2/configuring.html
+share/doc/apache2/configuring.html.de
+share/doc/apache2/configuring.html.en
+share/doc/apache2/configuring.html.ja.euc-jp
+share/doc/apache2/configuring.html.ko.euc-kr
+share/doc/apache2/content-negotiation.html
+share/doc/apache2/content-negotiation.html.en
+share/doc/apache2/content-negotiation.html.ja.euc-jp
+share/doc/apache2/content-negotiation.html.ko.euc-kr
+share/doc/apache2/convenience.map
+share/doc/apache2/custom-error.html
+share/doc/apache2/custom-error.html.en
+share/doc/apache2/custom-error.html.es
+share/doc/apache2/custom-error.html.ja.euc-jp
+share/doc/apache2/custom-error.html.ko.euc-kr
+share/doc/apache2/developer/
+share/doc/apache2/developer/API.html
+share/doc/apache2/developer/API.html.en
+share/doc/apache2/developer/debugging.html
+share/doc/apache2/developer/debugging.html.en
+share/doc/apache2/developer/documenting.html
+share/doc/apache2/developer/documenting.html.en
+share/doc/apache2/developer/filters.html
+share/doc/apache2/developer/filters.html.en
+share/doc/apache2/developer/hooks.html
+share/doc/apache2/developer/hooks.html.en
+share/doc/apache2/developer/index.html
+share/doc/apache2/developer/index.html.en
+share/doc/apache2/developer/modules.html
+share/doc/apache2/developer/modules.html.en
+share/doc/apache2/developer/modules.html.ja.euc-jp
+share/doc/apache2/developer/request.html
+share/doc/apache2/developer/request.html.en
+share/doc/apache2/developer/thread_safety.html
+share/doc/apache2/developer/thread_safety.html.en
+share/doc/apache2/dns-caveats.html
+share/doc/apache2/dns-caveats.html.en
+share/doc/apache2/dns-caveats.html.ja.euc-jp
+share/doc/apache2/dns-caveats.html.ko.euc-kr
+share/doc/apache2/dso.html
+share/doc/apache2/dso.html.en
+share/doc/apache2/dso.html.ja.euc-jp
+share/doc/apache2/dso.html.ko.euc-kr
+share/doc/apache2/env.html
+share/doc/apache2/env.html.en
+share/doc/apache2/env.html.ja.euc-jp
+share/doc/apache2/env.html.ko.euc-kr
+share/doc/apache2/faq/
+share/doc/apache2/faq/all_in_one.html
+share/doc/apache2/faq/all_in_one.html.en
+share/doc/apache2/faq/all_in_one.html.ja.euc-jp
+share/doc/apache2/faq/all_in_one.html.ko.euc-kr
+share/doc/apache2/faq/background.html
+share/doc/apache2/faq/background.html.en
+share/doc/apache2/faq/error.html
+share/doc/apache2/faq/error.html.en
+share/doc/apache2/faq/error.html.ja.euc-jp
+share/doc/apache2/faq/error.html.ko.euc-kr
+share/doc/apache2/faq/index.html
+share/doc/apache2/faq/index.html.en
+share/doc/apache2/faq/index.html.ja.euc-jp
+share/doc/apache2/faq/index.html.ko.euc-kr
+share/doc/apache2/faq/support.html
+share/doc/apache2/faq/support.html.en
+share/doc/apache2/faq/support.html.ja.euc-jp
+share/doc/apache2/faq/support.html.ko.euc-kr
+share/doc/apache2/filter.html
+share/doc/apache2/filter.html.en
+share/doc/apache2/filter.html.es
+share/doc/apache2/filter.html.fr
+share/doc/apache2/filter.html.ja.euc-jp
+share/doc/apache2/filter.html.ko.euc-kr
+share/doc/apache2/glossary.html
+share/doc/apache2/glossary.html.de
+share/doc/apache2/glossary.html.en
+share/doc/apache2/glossary.html.es
+share/doc/apache2/glossary.html.ko.euc-kr
+share/doc/apache2/handler.html
+share/doc/apache2/handler.html.en
+share/doc/apache2/handler.html.es
+share/doc/apache2/handler.html.ja.euc-jp
+share/doc/apache2/handler.html.ko.euc-kr
+share/doc/apache2/handler.html.ru.koi8-r
+share/doc/apache2/howto/
+share/doc/apache2/howto/access.html
+share/doc/apache2/howto/access.html.en
+share/doc/apache2/howto/auth.html
+share/doc/apache2/howto/auth.html.en
+share/doc/apache2/howto/auth.html.ja.euc-jp
+share/doc/apache2/howto/auth.html.ko.euc-kr
+share/doc/apache2/howto/cgi.html
+share/doc/apache2/howto/cgi.html.en
+share/doc/apache2/howto/cgi.html.ja.euc-jp
+share/doc/apache2/howto/cgi.html.ko.euc-kr
+share/doc/apache2/howto/htaccess.html
+share/doc/apache2/howto/htaccess.html.en
+share/doc/apache2/howto/htaccess.html.ja.euc-jp
+share/doc/apache2/howto/htaccess.html.ko.euc-kr
+share/doc/apache2/howto/htaccess.html.pt-br
+share/doc/apache2/howto/index.html
+share/doc/apache2/howto/index.html.en
+share/doc/apache2/howto/index.html.ja.euc-jp
+share/doc/apache2/howto/index.html.ko.euc-kr
+share/doc/apache2/howto/public_html.html
+share/doc/apache2/howto/public_html.html.en
+share/doc/apache2/howto/public_html.html.ja.euc-jp
+share/doc/apache2/howto/public_html.html.ko.euc-kr
+share/doc/apache2/howto/ssi.html
+share/doc/apache2/howto/ssi.html.en
+share/doc/apache2/howto/ssi.html.ja.euc-jp
+share/doc/apache2/howto/ssi.html.ko.euc-kr
+share/doc/apache2/images/
+share/doc/apache2/images/apache_header.gif
+share/doc/apache2/images/caching_fig1.gif
+share/doc/apache2/images/caching_fig1.png
+share/doc/apache2/images/custom_errordocs.png
+share/doc/apache2/images/down.gif
+share/doc/apache2/images/favicon.ico
+share/doc/apache2/images/feather.gif
+share/doc/apache2/images/feather.png
+share/doc/apache2/images/filter_arch.png
+share/doc/apache2/images/home.gif
+share/doc/apache2/images/index.gif
+share/doc/apache2/images/left.gif
+share/doc/apache2/images/mod_filter_new.gif
+share/doc/apache2/images/mod_filter_new.png
+share/doc/apache2/images/mod_filter_old.gif
+share/doc/apache2/images/mod_rewrite_fig1.gif
+share/doc/apache2/images/mod_rewrite_fig1.png
+share/doc/apache2/images/mod_rewrite_fig2.gif
+share/doc/apache2/images/mod_rewrite_fig2.png
+share/doc/apache2/images/pixel.gif
+share/doc/apache2/images/right.gif
+share/doc/apache2/images/ssl_intro_fig1.gif
+share/doc/apache2/images/ssl_intro_fig1.png
+share/doc/apache2/images/ssl_intro_fig2.gif
+share/doc/apache2/images/ssl_intro_fig2.png
+share/doc/apache2/images/ssl_intro_fig3.gif
+share/doc/apache2/images/ssl_intro_fig3.png
+share/doc/apache2/images/sub.gif
+share/doc/apache2/images/up.gif
+share/doc/apache2/index.html
+share/doc/apache2/index.html.de
+share/doc/apache2/index.html.en
+share/doc/apache2/index.html.es
+share/doc/apache2/index.html.fr
+share/doc/apache2/index.html.ja.euc-jp
+share/doc/apache2/index.html.ko.euc-kr
+share/doc/apache2/index.html.pt-br
+share/doc/apache2/install.html
+share/doc/apache2/install.html.de
+share/doc/apache2/install.html.en
+share/doc/apache2/install.html.es
+share/doc/apache2/install.html.fr
+share/doc/apache2/install.html.ja.euc-jp
+share/doc/apache2/install.html.ko.euc-kr
+share/doc/apache2/invoking.html
+share/doc/apache2/invoking.html.de
+share/doc/apache2/invoking.html.en
+share/doc/apache2/invoking.html.es
+share/doc/apache2/invoking.html.ja.euc-jp
+share/doc/apache2/invoking.html.ko.euc-kr
+share/doc/apache2/invoking.html.ru.koi8-r
+share/doc/apache2/license.html
+share/doc/apache2/license.html.en
+share/doc/apache2/logs.html
+share/doc/apache2/logs.html.en
+share/doc/apache2/logs.html.ja.euc-jp
+share/doc/apache2/logs.html.ko.euc-kr
+share/doc/apache2/misc/
+share/doc/apache2/misc/index.html
+share/doc/apache2/misc/index.html.en
+share/doc/apache2/misc/index.html.ko.euc-kr
+share/doc/apache2/misc/perf-tuning.html
+share/doc/apache2/misc/perf-tuning.html.en
+share/doc/apache2/misc/perf-tuning.html.ko.euc-kr
+share/doc/apache2/misc/relevant_standards.html
+share/doc/apache2/misc/relevant_standards.html.en
+share/doc/apache2/misc/relevant_standards.html.ko.euc-kr
+share/doc/apache2/misc/rewriteguide.html
+share/doc/apache2/misc/rewriteguide.html.en
+share/doc/apache2/misc/rewriteguide.html.ko.euc-kr
+share/doc/apache2/misc/security_tips.html
+share/doc/apache2/misc/security_tips.html.en
+share/doc/apache2/misc/security_tips.html.ko.euc-kr
+share/doc/apache2/mod/
+share/doc/apache2/mod/beos.html
+share/doc/apache2/mod/beos.html.de
+share/doc/apache2/mod/beos.html.en
+share/doc/apache2/mod/beos.html.es
+share/doc/apache2/mod/beos.html.ko.euc-kr
+share/doc/apache2/mod/core.html
+share/doc/apache2/mod/core.html.de
+share/doc/apache2/mod/core.html.en
+share/doc/apache2/mod/core.html.ja.euc-jp
+share/doc/apache2/mod/directive-dict.html
+share/doc/apache2/mod/directive-dict.html.en
+share/doc/apache2/mod/directive-dict.html.ja.euc-jp
+share/doc/apache2/mod/directive-dict.html.ko.euc-kr
+share/doc/apache2/mod/directives.html
+share/doc/apache2/mod/directives.html.de
+share/doc/apache2/mod/directives.html.en
+share/doc/apache2/mod/directives.html.es
+share/doc/apache2/mod/directives.html.ja.euc-jp
+share/doc/apache2/mod/directives.html.ko.euc-kr
+share/doc/apache2/mod/directives.html.ru.koi8-r
+share/doc/apache2/mod/event.html
+share/doc/apache2/mod/event.html.en
+share/doc/apache2/mod/index.html
+share/doc/apache2/mod/index.html.de
+share/doc/apache2/mod/index.html.en
+share/doc/apache2/mod/index.html.es
+share/doc/apache2/mod/index.html.ja.euc-jp
+share/doc/apache2/mod/index.html.ko.euc-kr
+share/doc/apache2/mod/mod_actions.html
+share/doc/apache2/mod/mod_actions.html.de
+share/doc/apache2/mod/mod_actions.html.en
+share/doc/apache2/mod/mod_actions.html.ja.euc-jp
+share/doc/apache2/mod/mod_actions.html.ko.euc-kr
+share/doc/apache2/mod/mod_alias.html
+share/doc/apache2/mod/mod_alias.html.en
+share/doc/apache2/mod/mod_alias.html.ja.euc-jp
+share/doc/apache2/mod/mod_alias.html.ko.euc-kr
+share/doc/apache2/mod/mod_asis.html
+share/doc/apache2/mod/mod_asis.html.en
+share/doc/apache2/mod/mod_asis.html.ja.euc-jp
+share/doc/apache2/mod/mod_asis.html.ko.euc-kr
+share/doc/apache2/mod/mod_auth_basic.html
+share/doc/apache2/mod/mod_auth_basic.html.en
+share/doc/apache2/mod/mod_auth_basic.html.ja.euc-jp
+share/doc/apache2/mod/mod_auth_basic.html.ko.euc-kr
+share/doc/apache2/mod/mod_auth_digest.html
+share/doc/apache2/mod/mod_auth_digest.html.en
+share/doc/apache2/mod/mod_auth_digest.html.ko.euc-kr
+share/doc/apache2/mod/mod_authn_alias.html
+share/doc/apache2/mod/mod_authn_alias.html.en
+share/doc/apache2/mod/mod_authn_anon.html
+share/doc/apache2/mod/mod_authn_anon.html.en
+share/doc/apache2/mod/mod_authn_anon.html.ja.euc-jp
+share/doc/apache2/mod/mod_authn_anon.html.ko.euc-kr
+share/doc/apache2/mod/mod_authn_dbd.html
+share/doc/apache2/mod/mod_authn_dbd.html.en
+share/doc/apache2/mod/mod_authn_dbm.html
+share/doc/apache2/mod/mod_authn_dbm.html.en
+share/doc/apache2/mod/mod_authn_dbm.html.ja.euc-jp
+share/doc/apache2/mod/mod_authn_dbm.html.ko.euc-kr
+share/doc/apache2/mod/mod_authn_default.html
+share/doc/apache2/mod/mod_authn_default.html.en
+share/doc/apache2/mod/mod_authn_default.html.ja.euc-jp
+share/doc/apache2/mod/mod_authn_default.html.ko.euc-kr
+share/doc/apache2/mod/mod_authn_file.html
+share/doc/apache2/mod/mod_authn_file.html.en
+share/doc/apache2/mod/mod_authn_file.html.ja.euc-jp
+share/doc/apache2/mod/mod_authn_file.html.ko.euc-kr
+share/doc/apache2/mod/mod_authnz_ldap.html
+share/doc/apache2/mod/mod_authnz_ldap.html.en
+share/doc/apache2/mod/mod_authz_dbm.html
+share/doc/apache2/mod/mod_authz_dbm.html.en
+share/doc/apache2/mod/mod_authz_dbm.html.ko.euc-kr
+share/doc/apache2/mod/mod_authz_default.html
+share/doc/apache2/mod/mod_authz_default.html.en
+share/doc/apache2/mod/mod_authz_default.html.ja.euc-jp
+share/doc/apache2/mod/mod_authz_default.html.ko.euc-kr
+share/doc/apache2/mod/mod_authz_groupfile.html
+share/doc/apache2/mod/mod_authz_groupfile.html.en
+share/doc/apache2/mod/mod_authz_groupfile.html.ja.euc-jp
+share/doc/apache2/mod/mod_authz_groupfile.html.ko.euc-kr
+share/doc/apache2/mod/mod_authz_host.html
+share/doc/apache2/mod/mod_authz_host.html.en
+share/doc/apache2/mod/mod_authz_host.html.ja.euc-jp
+share/doc/apache2/mod/mod_authz_host.html.ko.euc-kr
+share/doc/apache2/mod/mod_authz_owner.html
+share/doc/apache2/mod/mod_authz_owner.html.en
+share/doc/apache2/mod/mod_authz_owner.html.ja.euc-jp
+share/doc/apache2/mod/mod_authz_owner.html.ko.euc-kr
+share/doc/apache2/mod/mod_authz_user.html
+share/doc/apache2/mod/mod_authz_user.html.en
+share/doc/apache2/mod/mod_authz_user.html.ja.euc-jp
+share/doc/apache2/mod/mod_authz_user.html.ko.euc-kr
+share/doc/apache2/mod/mod_autoindex.html
+share/doc/apache2/mod/mod_autoindex.html.en
+share/doc/apache2/mod/mod_autoindex.html.ja.euc-jp
+share/doc/apache2/mod/mod_autoindex.html.ko.euc-kr
+share/doc/apache2/mod/mod_cache.html
+share/doc/apache2/mod/mod_cache.html.en
+share/doc/apache2/mod/mod_cache.html.ja.euc-jp
+share/doc/apache2/mod/mod_cache.html.ko.euc-kr
+share/doc/apache2/mod/mod_cern_meta.html
+share/doc/apache2/mod/mod_cern_meta.html.en
+share/doc/apache2/mod/mod_cern_meta.html.ko.euc-kr
+share/doc/apache2/mod/mod_cgi.html
+share/doc/apache2/mod/mod_cgi.html.en
+share/doc/apache2/mod/mod_cgi.html.ja.euc-jp
+share/doc/apache2/mod/mod_cgi.html.ko.euc-kr
+share/doc/apache2/mod/mod_cgid.html
+share/doc/apache2/mod/mod_cgid.html.en
+share/doc/apache2/mod/mod_cgid.html.ja.euc-jp
+share/doc/apache2/mod/mod_cgid.html.ko.euc-kr
+share/doc/apache2/mod/mod_charset_lite.html
+share/doc/apache2/mod/mod_charset_lite.html.en
+share/doc/apache2/mod/mod_charset_lite.html.ko.euc-kr
+share/doc/apache2/mod/mod_dav.html
+share/doc/apache2/mod/mod_dav.html.en
+share/doc/apache2/mod/mod_dav.html.ja.euc-jp
+share/doc/apache2/mod/mod_dav.html.ko.euc-kr
+share/doc/apache2/mod/mod_dav_fs.html
+share/doc/apache2/mod/mod_dav_fs.html.en
+share/doc/apache2/mod/mod_dav_fs.html.ja.euc-jp
+share/doc/apache2/mod/mod_dav_fs.html.ko.euc-kr
+share/doc/apache2/mod/mod_dav_lock.html
+share/doc/apache2/mod/mod_dav_lock.html.en
+share/doc/apache2/mod/mod_dav_lock.html.ja.euc-jp
+share/doc/apache2/mod/mod_dbd.html
+share/doc/apache2/mod/mod_dbd.html.en
+share/doc/apache2/mod/mod_deflate.html
+share/doc/apache2/mod/mod_deflate.html.en
+share/doc/apache2/mod/mod_deflate.html.ja.euc-jp
+share/doc/apache2/mod/mod_deflate.html.ko.euc-kr
+share/doc/apache2/mod/mod_dir.html
+share/doc/apache2/mod/mod_dir.html.en
+share/doc/apache2/mod/mod_dir.html.ja.euc-jp
+share/doc/apache2/mod/mod_dir.html.ko.euc-kr
+share/doc/apache2/mod/mod_disk_cache.html
+share/doc/apache2/mod/mod_disk_cache.html.en
+share/doc/apache2/mod/mod_disk_cache.html.ja.euc-jp
+share/doc/apache2/mod/mod_disk_cache.html.ko.euc-kr
+share/doc/apache2/mod/mod_dumpio.html
+share/doc/apache2/mod/mod_dumpio.html.en
+share/doc/apache2/mod/mod_dumpio.html.ja.euc-jp
+share/doc/apache2/mod/mod_echo.html
+share/doc/apache2/mod/mod_echo.html.en
+share/doc/apache2/mod/mod_echo.html.ja.euc-jp
+share/doc/apache2/mod/mod_echo.html.ko.euc-kr
+share/doc/apache2/mod/mod_env.html
+share/doc/apache2/mod/mod_env.html.en
+share/doc/apache2/mod/mod_env.html.ja.euc-jp
+share/doc/apache2/mod/mod_env.html.ko.euc-kr
+share/doc/apache2/mod/mod_example.html
+share/doc/apache2/mod/mod_example.html.en
+share/doc/apache2/mod/mod_example.html.ko.euc-kr
+share/doc/apache2/mod/mod_expires.html
+share/doc/apache2/mod/mod_expires.html.en
+share/doc/apache2/mod/mod_expires.html.ja.euc-jp
+share/doc/apache2/mod/mod_expires.html.ko.euc-kr
+share/doc/apache2/mod/mod_ext_filter.html
+share/doc/apache2/mod/mod_ext_filter.html.en
+share/doc/apache2/mod/mod_ext_filter.html.ja.euc-jp
+share/doc/apache2/mod/mod_ext_filter.html.ko.euc-kr
+share/doc/apache2/mod/mod_file_cache.html
+share/doc/apache2/mod/mod_file_cache.html.en
+share/doc/apache2/mod/mod_file_cache.html.ko.euc-kr
+share/doc/apache2/mod/mod_filter.html
+share/doc/apache2/mod/mod_filter.html.en
+share/doc/apache2/mod/mod_headers.html
+share/doc/apache2/mod/mod_headers.html.en
+share/doc/apache2/mod/mod_headers.html.ja.euc-jp
+share/doc/apache2/mod/mod_headers.html.ko.euc-kr
+share/doc/apache2/mod/mod_ident.html
+share/doc/apache2/mod/mod_ident.html.en
+share/doc/apache2/mod/mod_ident.html.ko.euc-kr
+share/doc/apache2/mod/mod_imagemap.html
+share/doc/apache2/mod/mod_imagemap.html.en
+share/doc/apache2/mod/mod_imagemap.html.ko.euc-kr
+share/doc/apache2/mod/mod_include.html
+share/doc/apache2/mod/mod_include.html.en
+share/doc/apache2/mod/mod_include.html.ja.euc-jp
+share/doc/apache2/mod/mod_info.html
+share/doc/apache2/mod/mod_info.html.en
+share/doc/apache2/mod/mod_info.html.ja.euc-jp
+share/doc/apache2/mod/mod_info.html.ko.euc-kr
+share/doc/apache2/mod/mod_isapi.html
+share/doc/apache2/mod/mod_isapi.html.en
+share/doc/apache2/mod/mod_isapi.html.ko.euc-kr
+share/doc/apache2/mod/mod_ldap.html
+share/doc/apache2/mod/mod_ldap.html.en
+share/doc/apache2/mod/mod_log_config.html
+share/doc/apache2/mod/mod_log_config.html.en
+share/doc/apache2/mod/mod_log_config.html.ja.euc-jp
+share/doc/apache2/mod/mod_log_config.html.ko.euc-kr
+share/doc/apache2/mod/mod_log_forensic.html
+share/doc/apache2/mod/mod_log_forensic.html.en
+share/doc/apache2/mod/mod_log_forensic.html.ja.euc-jp
+share/doc/apache2/mod/mod_logio.html
+share/doc/apache2/mod/mod_logio.html.en
+share/doc/apache2/mod/mod_logio.html.ja.euc-jp
+share/doc/apache2/mod/mod_logio.html.ko.euc-kr
+share/doc/apache2/mod/mod_mem_cache.html
+share/doc/apache2/mod/mod_mem_cache.html.en
+share/doc/apache2/mod/mod_mem_cache.html.ja.euc-jp
+share/doc/apache2/mod/mod_mem_cache.html.ko.euc-kr
+share/doc/apache2/mod/mod_mime.html
+share/doc/apache2/mod/mod_mime.html.en
+share/doc/apache2/mod/mod_mime.html.ja.euc-jp
+share/doc/apache2/mod/mod_mime_magic.html
+share/doc/apache2/mod/mod_mime_magic.html.en
+share/doc/apache2/mod/mod_negotiation.html
+share/doc/apache2/mod/mod_negotiation.html.en
+share/doc/apache2/mod/mod_negotiation.html.ja.euc-jp
+share/doc/apache2/mod/mod_nw_ssl.html
+share/doc/apache2/mod/mod_nw_ssl.html.en
+share/doc/apache2/mod/mod_proxy.html
+share/doc/apache2/mod/mod_proxy.html.en
+share/doc/apache2/mod/mod_proxy.html.ja.euc-jp
+share/doc/apache2/mod/mod_proxy_ajp.html
+share/doc/apache2/mod/mod_proxy_ajp.html.en
+share/doc/apache2/mod/mod_proxy_ajp.html.ja.euc-jp
+share/doc/apache2/mod/mod_proxy_balancer.html
+share/doc/apache2/mod/mod_proxy_balancer.html.en
+share/doc/apache2/mod/mod_proxy_balancer.html.ja.euc-jp
+share/doc/apache2/mod/mod_proxy_connect.html
+share/doc/apache2/mod/mod_proxy_connect.html.en
+share/doc/apache2/mod/mod_proxy_ftp.html
+share/doc/apache2/mod/mod_proxy_ftp.html.en
+share/doc/apache2/mod/mod_proxy_http.html
+share/doc/apache2/mod/mod_proxy_http.html.en
+share/doc/apache2/mod/mod_rewrite.html
+share/doc/apache2/mod/mod_rewrite.html.en
+share/doc/apache2/mod/mod_setenvif.html
+share/doc/apache2/mod/mod_setenvif.html.en
+share/doc/apache2/mod/mod_setenvif.html.ja.euc-jp
+share/doc/apache2/mod/mod_setenvif.html.ko.euc-kr
+share/doc/apache2/mod/mod_so.html
+share/doc/apache2/mod/mod_so.html.en
+share/doc/apache2/mod/mod_so.html.ja.euc-jp
+share/doc/apache2/mod/mod_so.html.ko.euc-kr
+share/doc/apache2/mod/mod_speling.html
+share/doc/apache2/mod/mod_speling.html.en
+share/doc/apache2/mod/mod_speling.html.ja.euc-jp
+share/doc/apache2/mod/mod_speling.html.ko.euc-kr
+share/doc/apache2/mod/mod_ssl.html
+share/doc/apache2/mod/mod_ssl.html.en
+share/doc/apache2/mod/mod_status.html
+share/doc/apache2/mod/mod_status.html.en
+share/doc/apache2/mod/mod_status.html.ja.euc-jp
+share/doc/apache2/mod/mod_status.html.ko.euc-kr
+share/doc/apache2/mod/mod_suexec.html
+share/doc/apache2/mod/mod_suexec.html.en
+share/doc/apache2/mod/mod_suexec.html.ja.euc-jp
+share/doc/apache2/mod/mod_suexec.html.ko.euc-kr
+share/doc/apache2/mod/mod_unique_id.html
+share/doc/apache2/mod/mod_unique_id.html.en
+share/doc/apache2/mod/mod_unique_id.html.ja.euc-jp
+share/doc/apache2/mod/mod_unique_id.html.ko.euc-kr
+share/doc/apache2/mod/mod_userdir.html
+share/doc/apache2/mod/mod_userdir.html.en
+share/doc/apache2/mod/mod_userdir.html.ja.euc-jp
+share/doc/apache2/mod/mod_userdir.html.ko.euc-kr
+share/doc/apache2/mod/mod_usertrack.html
+share/doc/apache2/mod/mod_usertrack.html.en
+share/doc/apache2/mod/mod_version.html
+share/doc/apache2/mod/mod_version.html.en
+share/doc/apache2/mod/mod_version.html.ja.euc-jp
+share/doc/apache2/mod/mod_version.html.ko.euc-kr
+share/doc/apache2/mod/mod_vhost_alias.html
+share/doc/apache2/mod/mod_vhost_alias.html.en
+share/doc/apache2/mod/module-dict.html
+share/doc/apache2/mod/module-dict.html.en
+share/doc/apache2/mod/module-dict.html.ja.euc-jp
+share/doc/apache2/mod/module-dict.html.ko.euc-kr
+share/doc/apache2/mod/mpm_common.html
+share/doc/apache2/mod/mpm_common.html.de
+share/doc/apache2/mod/mpm_common.html.en
+share/doc/apache2/mod/mpm_common.html.ja.euc-jp
+share/doc/apache2/mod/mpm_netware.html
+share/doc/apache2/mod/mpm_netware.html.en
+share/doc/apache2/mod/mpm_winnt.html
+share/doc/apache2/mod/mpm_winnt.html.de
+share/doc/apache2/mod/mpm_winnt.html.en
+share/doc/apache2/mod/mpm_winnt.html.ja.euc-jp
+share/doc/apache2/mod/mpmt_os2.html
+share/doc/apache2/mod/mpmt_os2.html.en
+share/doc/apache2/mod/prefork.html
+share/doc/apache2/mod/prefork.html.de
+share/doc/apache2/mod/prefork.html.en
+share/doc/apache2/mod/prefork.html.ja.euc-jp
+share/doc/apache2/mod/quickreference.html
+share/doc/apache2/mod/quickreference.html.de
+share/doc/apache2/mod/quickreference.html.en
+share/doc/apache2/mod/quickreference.html.es
+share/doc/apache2/mod/quickreference.html.ja.euc-jp
+share/doc/apache2/mod/quickreference.html.ko.euc-kr
+share/doc/apache2/mod/quickreference.html.ru.koi8-r
+share/doc/apache2/mod/worker.html
+share/doc/apache2/mod/worker.html.de
+share/doc/apache2/mod/worker.html.en
+share/doc/apache2/mod/worker.html.ja.euc-jp
+share/doc/apache2/mpm.html
+share/doc/apache2/mpm.html.de
+share/doc/apache2/mpm.html.en
+share/doc/apache2/mpm.html.es
+share/doc/apache2/mpm.html.ja.euc-jp
+share/doc/apache2/mpm.html.ko.euc-kr
+share/doc/apache2/new_features_2_0.html
+share/doc/apache2/new_features_2_0.html.de
+share/doc/apache2/new_features_2_0.html.en
+share/doc/apache2/new_features_2_0.html.fr
+share/doc/apache2/new_features_2_0.html.ja.euc-jp
+share/doc/apache2/new_features_2_0.html.ko.euc-kr
+share/doc/apache2/new_features_2_0.html.pt-br
+share/doc/apache2/new_features_2_0.html.ru.koi8-r
+share/doc/apache2/new_features_2_2.html
+share/doc/apache2/new_features_2_2.html.en
+share/doc/apache2/new_features_2_2.html.ko.euc-kr
+share/doc/apache2/new_features_2_2.html.pt-br
+share/doc/apache2/platform/
+share/doc/apache2/platform/ebcdic.html
+share/doc/apache2/platform/ebcdic.html.en
+share/doc/apache2/platform/ebcdic.html.ko.euc-kr
+share/doc/apache2/platform/index.html
+share/doc/apache2/platform/index.html.en
+share/doc/apache2/platform/index.html.ko.euc-kr
+share/doc/apache2/platform/netware.html
+share/doc/apache2/platform/netware.html.en
+share/doc/apache2/platform/netware.html.ko.euc-kr
+share/doc/apache2/platform/perf-hp.html
+share/doc/apache2/platform/perf-hp.html.en
+share/doc/apache2/platform/perf-hp.html.ko.euc-kr
+share/doc/apache2/platform/win_compiling.html
+share/doc/apache2/platform/win_compiling.html.en
+share/doc/apache2/platform/win_compiling.html.ko.euc-kr
+share/doc/apache2/platform/windows.html
+share/doc/apache2/platform/windows.html.en
+share/doc/apache2/platform/windows.html.ko.euc-kr
+share/doc/apache2/programs/
+share/doc/apache2/programs/ab.html
+share/doc/apache2/programs/ab.html.en
+share/doc/apache2/programs/ab.html.ko.euc-kr
+share/doc/apache2/programs/apachectl.html
+share/doc/apache2/programs/apachectl.html.en
+share/doc/apache2/programs/apachectl.html.ko.euc-kr
+share/doc/apache2/programs/apxs.html
+share/doc/apache2/programs/apxs.html.en
+share/doc/apache2/programs/apxs.html.ko.euc-kr
+share/doc/apache2/programs/configure.html
+share/doc/apache2/programs/configure.html.en
+share/doc/apache2/programs/configure.html.ko.euc-kr
+share/doc/apache2/programs/dbmmanage.html
+share/doc/apache2/programs/dbmmanage.html.en
+share/doc/apache2/programs/dbmmanage.html.ko.euc-kr
+share/doc/apache2/programs/htcacheclean.html
+share/doc/apache2/programs/htcacheclean.html.en
+share/doc/apache2/programs/htcacheclean.html.ko.euc-kr
+share/doc/apache2/programs/htdbm.html
+share/doc/apache2/programs/htdbm.html.en
+share/doc/apache2/programs/htdigest.html
+share/doc/apache2/programs/htdigest.html.en
+share/doc/apache2/programs/htdigest.html.ko.euc-kr
+share/doc/apache2/programs/htpasswd.html
+share/doc/apache2/programs/htpasswd.html.en
+share/doc/apache2/programs/htpasswd.html.ko.euc-kr
+share/doc/apache2/programs/httpd.html
+share/doc/apache2/programs/httpd.html.en
+share/doc/apache2/programs/httpd.html.ko.euc-kr
+share/doc/apache2/programs/httxt2dbm.html
+share/doc/apache2/programs/httxt2dbm.html.en
+share/doc/apache2/programs/index.html
+share/doc/apache2/programs/index.html.en
+share/doc/apache2/programs/index.html.es
+share/doc/apache2/programs/index.html.ko.euc-kr
+share/doc/apache2/programs/index.html.ru.koi8-r
+share/doc/apache2/programs/logresolve.html
+share/doc/apache2/programs/logresolve.html.en
+share/doc/apache2/programs/logresolve.html.ko.euc-kr
+share/doc/apache2/programs/other.html
+share/doc/apache2/programs/other.html.en
+share/doc/apache2/programs/other.html.ko.euc-kr
+share/doc/apache2/programs/rotatelogs.html
+share/doc/apache2/programs/rotatelogs.html.en
+share/doc/apache2/programs/rotatelogs.html.ko.euc-kr
+share/doc/apache2/programs/suexec.html
+share/doc/apache2/programs/suexec.html.en
+share/doc/apache2/programs/suexec.html.ko.euc-kr
+share/doc/apache2/rewrite/
+share/doc/apache2/rewrite/index.html
+share/doc/apache2/rewrite/index.html.en
+share/doc/apache2/rewrite/rewrite_guide.html
+share/doc/apache2/rewrite/rewrite_guide.html.en
+share/doc/apache2/rewrite/rewrite_guide_advanced.html
+share/doc/apache2/rewrite/rewrite_guide_advanced.html.en
+share/doc/apache2/rewrite/rewrite_intro.html
+share/doc/apache2/rewrite/rewrite_intro.html.en
+share/doc/apache2/rewrite/rewrite_tech.html
+share/doc/apache2/rewrite/rewrite_tech.html.en
+share/doc/apache2/sections.html
+share/doc/apache2/sections.html.en
+share/doc/apache2/sections.html.ja.euc-jp
+share/doc/apache2/sections.html.ko.euc-kr
+share/doc/apache2/server-wide.html
+share/doc/apache2/server-wide.html.en
+share/doc/apache2/server-wide.html.ja.euc-jp
+share/doc/apache2/server-wide.html.ko.euc-kr
+share/doc/apache2/sitemap.html
+share/doc/apache2/sitemap.html.de
+share/doc/apache2/sitemap.html.en
+share/doc/apache2/sitemap.html.es
+share/doc/apache2/sitemap.html.ja.euc-jp
+share/doc/apache2/sitemap.html.ko.euc-kr
+share/doc/apache2/ssl/
+share/doc/apache2/ssl/index.html
+share/doc/apache2/ssl/index.html.en
+share/doc/apache2/ssl/index.html.ja.euc-jp
+share/doc/apache2/ssl/ssl_compat.html
+share/doc/apache2/ssl/ssl_compat.html.en
+share/doc/apache2/ssl/ssl_faq.html
+share/doc/apache2/ssl/ssl_faq.html.en
+share/doc/apache2/ssl/ssl_howto.html
+share/doc/apache2/ssl/ssl_howto.html.en
+share/doc/apache2/ssl/ssl_intro.html
+share/doc/apache2/ssl/ssl_intro.html.en
+share/doc/apache2/ssl/ssl_intro.html.ja.euc-jp
+share/doc/apache2/stopping.html
+share/doc/apache2/stopping.html.de
+share/doc/apache2/stopping.html.en
+share/doc/apache2/stopping.html.es
+share/doc/apache2/stopping.html.ja.euc-jp
+share/doc/apache2/stopping.html.ko.euc-kr
+share/doc/apache2/style/
+share/doc/apache2/style/build.properties
+share/doc/apache2/style/common.dtd
+share/doc/apache2/style/css/
+share/doc/apache2/style/css/manual-chm.css
+share/doc/apache2/style/css/manual-loose-100pc.css
+share/doc/apache2/style/css/manual-print.css
+share/doc/apache2/style/css/manual-zip-100pc.css
+share/doc/apache2/style/css/manual-zip.css
+share/doc/apache2/style/css/manual.css
+share/doc/apache2/style/faq.dtd
+share/doc/apache2/style/lang/
+share/doc/apache2/style/lang.dtd
+share/doc/apache2/style/latex/
+share/doc/apache2/style/latex/atbeginend.sty
+share/doc/apache2/style/latex/common.xsl
+share/doc/apache2/style/latex/directiveindex.xsl
+share/doc/apache2/style/latex/faq.xsl
+share/doc/apache2/style/latex/html.xsl
+share/doc/apache2/style/latex/latex.xsl
+share/doc/apache2/style/latex/manualpage.xsl
+share/doc/apache2/style/latex/moduleindex.xsl
+share/doc/apache2/style/latex/quickreference.xsl
+share/doc/apache2/style/latex/synopsis.xsl
+share/doc/apache2/style/manual.de.xsl
+share/doc/apache2/style/manual.en.xsl
+share/doc/apache2/style/manual.es.xsl
+share/doc/apache2/style/manual.fr.xsl
+share/doc/apache2/style/manual.ja.xsl
+share/doc/apache2/style/manual.ko.xsl
+share/doc/apache2/style/manual.pt-br.xsl
+share/doc/apache2/style/manual.ru.xsl
+share/doc/apache2/style/manualpage.dtd
+share/doc/apache2/style/modulesynopsis.dtd
+share/doc/apache2/style/sitemap.dtd
+share/doc/apache2/style/version.ent
+share/doc/apache2/style/xsl/
+share/doc/apache2/style/xsl/common.xsl
+share/doc/apache2/style/xsl/convmap.xsl
+share/doc/apache2/style/xsl/directiveindex.xsl
+share/doc/apache2/style/xsl/faq.xsl
+share/doc/apache2/style/xsl/hhc.xsl
+share/doc/apache2/style/xsl/hhp.xsl
+share/doc/apache2/style/xsl/indexpage.xsl
+share/doc/apache2/style/xsl/language.xsl
+share/doc/apache2/style/xsl/maf.xsl
+share/doc/apache2/style/xsl/manualpage.xsl
+share/doc/apache2/style/xsl/moduleindex.xsl
+share/doc/apache2/style/xsl/nroff.xsl
+share/doc/apache2/style/xsl/quickreference.xsl
+share/doc/apache2/style/xsl/sitemap.xsl
+share/doc/apache2/style/xsl/synopsis.xsl
+share/doc/apache2/style/xsl/typemap.xsl
+share/doc/apache2/style/xsl/util/
+share/doc/apache2/style/xsl/util/modtrans.xsl
+share/doc/apache2/suexec.html
+share/doc/apache2/suexec.html.en
+share/doc/apache2/suexec.html.ja.euc-jp
+share/doc/apache2/suexec.html.ko.euc-kr
+share/doc/apache2/upgrading.html
+share/doc/apache2/upgrading.html.de
+share/doc/apache2/upgrading.html.en
+share/doc/apache2/upgrading.html.ja.euc-jp
+share/doc/apache2/upgrading.html.ko.euc-kr
+share/doc/apache2/upgrading.html.pt-br
+share/doc/apache2/upgrading.html.ru.koi8-r
+share/doc/apache2/urlmapping.html
+share/doc/apache2/urlmapping.html.en
+share/doc/apache2/urlmapping.html.ja.euc-jp
+share/doc/apache2/urlmapping.html.ko.euc-kr
+share/doc/apache2/vhosts/
+share/doc/apache2/vhosts/details.html
+share/doc/apache2/vhosts/details.html.en
+share/doc/apache2/vhosts/details.html.fr
+share/doc/apache2/vhosts/details.html.ko.euc-kr
+share/doc/apache2/vhosts/examples.html
+share/doc/apache2/vhosts/examples.html.en
+share/doc/apache2/vhosts/examples.html.fr
+share/doc/apache2/vhosts/examples.html.ja.euc-jp
+share/doc/apache2/vhosts/examples.html.ko.euc-kr
+share/doc/apache2/vhosts/fd-limits.html
+share/doc/apache2/vhosts/fd-limits.html.en
+share/doc/apache2/vhosts/fd-limits.html.fr
+share/doc/apache2/vhosts/fd-limits.html.ja.euc-jp
+share/doc/apache2/vhosts/fd-limits.html.ko.euc-kr
+share/doc/apache2/vhosts/index.html
+share/doc/apache2/vhosts/index.html.de
+share/doc/apache2/vhosts/index.html.en
+share/doc/apache2/vhosts/index.html.fr
+share/doc/apache2/vhosts/index.html.ja.euc-jp
+share/doc/apache2/vhosts/index.html.ko.euc-kr
+share/doc/apache2/vhosts/index.html.ru.koi8-r
+share/doc/apache2/vhosts/ip-based.html
+share/doc/apache2/vhosts/ip-based.html.en
+share/doc/apache2/vhosts/ip-based.html.fr
+share/doc/apache2/vhosts/ip-based.html.ja.euc-jp
+share/doc/apache2/vhosts/ip-based.html.ko.euc-kr
+share/doc/apache2/vhosts/mass.html
+share/doc/apache2/vhosts/mass.html.en
+share/doc/apache2/vhosts/mass.html.ko.euc-kr
+share/doc/apache2/vhosts/name-based.html
+share/doc/apache2/vhosts/name-based.html.de
+share/doc/apache2/vhosts/name-based.html.en
+share/doc/apache2/vhosts/name-based.html.fr
+share/doc/apache2/vhosts/name-based.html.ja.euc-jp
+share/doc/apache2/vhosts/name-based.html.ko.euc-kr
+share/examples/apache2/
+@sample /var/apache2/
+share/examples/apache2/build/
+@sample /var/apache2/build/
+share/examples/apache2/build/config.nice
+@sample /var/apache2/build/config.nice
+share/examples/apache2/build/config_vars.mk
+@sample /var/apache2/build/config_vars.mk
+share/examples/apache2/build/instdso.sh
+@sample /var/apache2/build/instdso.sh
+share/examples/apache2/build/library.mk
+@sample /var/apache2/build/library.mk
+share/examples/apache2/build/ltlib.mk
+@sample /var/apache2/build/ltlib.mk
+share/examples/apache2/build/mkdir.sh
+@sample /var/apache2/build/mkdir.sh
+share/examples/apache2/build/program.mk
+@sample /var/apache2/build/program.mk
+share/examples/apache2/build/rules.mk
+@sample /var/apache2/build/rules.mk
+share/examples/apache2/build/special.mk
+@sample /var/apache2/build/special.mk
+share/examples/apache2/cgi-bin/
+@sample /var/apache2/cgi-bin/
+share/examples/apache2/cgi-bin/printenv
+@sample /var/apache2/cgi-bin/printenv
+share/examples/apache2/cgi-bin/test-cgi
+@sample /var/apache2/cgi-bin/test-cgi
+share/examples/apache2/conf/
+@sample /var/apache2/conf/
+share/examples/apache2/conf/extra/
+@sample /var/apache2/conf/extra/
+share/examples/apache2/conf/extra/httpd-autoindex.conf
+@sample /var/apache2/conf/extra/httpd-autoindex.conf
+share/examples/apache2/conf/extra/httpd-dav.conf
+@sample /var/apache2/conf/extra/httpd-dav.conf
+share/examples/apache2/conf/extra/httpd-default.conf
+@sample /var/apache2/conf/extra/httpd-default.conf
+share/examples/apache2/conf/extra/httpd-info.conf
+@sample /var/apache2/conf/extra/httpd-info.conf
+share/examples/apache2/conf/extra/httpd-languages.conf
+@sample /var/apache2/conf/extra/httpd-languages.conf
+share/examples/apache2/conf/extra/httpd-manual.conf
+@sample /var/apache2/conf/extra/httpd-manual.conf
+share/examples/apache2/conf/extra/httpd-mpm.conf
+@sample /var/apache2/conf/extra/httpd-mpm.conf
+share/examples/apache2/conf/extra/httpd-multilang-errordoc.conf
+@sample /var/apache2/conf/extra/httpd-multilang-errordoc.conf
+share/examples/apache2/conf/extra/httpd-ssl.conf
+@sample /var/apache2/conf/extra/httpd-ssl.conf
+share/examples/apache2/conf/extra/httpd-userdir.conf
+@sample /var/apache2/conf/extra/httpd-userdir.conf
+share/examples/apache2/conf/extra/httpd-vhosts.conf
+@sample /var/apache2/conf/extra/httpd-vhosts.conf
+share/examples/apache2/conf/httpd.conf
+@sample /var/apache2/conf/httpd.conf
+share/examples/apache2/conf/magic
+@sample /var/apache2/conf/magic
+share/examples/apache2/conf/mime.types
+@sample /var/apache2/conf/mime.types
+share/examples/apache2/conf/original/
+@sample /var/apache2/conf/original/
+share/examples/apache2/conf/original/extra/
+@sample /var/apache2/conf/original/extra/
+share/examples/apache2/conf/original/extra/httpd-autoindex.conf
+@sample /var/apache2/conf/original/extra/httpd-autoindex.conf
+share/examples/apache2/conf/original/extra/httpd-dav.conf
+@sample /var/apache2/conf/original/extra/httpd-dav.conf
+share/examples/apache2/conf/original/extra/httpd-default.conf
+@sample /var/apache2/conf/original/extra/httpd-default.conf
+share/examples/apache2/conf/original/extra/httpd-info.conf
+@sample /var/apache2/conf/original/extra/httpd-info.conf
+share/examples/apache2/conf/original/extra/httpd-languages.conf
+@sample /var/apache2/conf/original/extra/httpd-languages.conf
+share/examples/apache2/conf/original/extra/httpd-manual.conf
+@sample /var/apache2/conf/original/extra/httpd-manual.conf
+share/examples/apache2/conf/original/extra/httpd-mpm.conf
+@sample /var/apache2/conf/original/extra/httpd-mpm.conf
+share/examples/apache2/conf/original/extra/httpd-multilang-errordoc.conf
+@sample /var/apache2/conf/original/extra/httpd-multilang-errordoc.conf
+share/examples/apache2/conf/original/extra/httpd-ssl.conf
+@sample /var/apache2/conf/original/extra/httpd-ssl.conf
+share/examples/apache2/conf/original/extra/httpd-userdir.conf
+@sample /var/apache2/conf/original/extra/httpd-userdir.conf
+share/examples/apache2/conf/original/extra/httpd-vhosts.conf
+@sample /var/apache2/conf/original/extra/httpd-vhosts.conf
+share/examples/apache2/conf/original/httpd.conf
+@sample /var/apache2/conf/original/httpd.conf
+share/examples/apache2/error/
+@sample /var/apache2/error/
+share/examples/apache2/error/HTTP_BAD_GATEWAY.html.var
+@sample /var/apache2/error/HTTP_BAD_GATEWAY.html.var
+share/examples/apache2/error/HTTP_BAD_REQUEST.html.var
+@sample /var/apache2/error/HTTP_BAD_REQUEST.html.var
+share/examples/apache2/error/HTTP_FORBIDDEN.html.var
+@sample /var/apache2/error/HTTP_FORBIDDEN.html.var
+share/examples/apache2/error/HTTP_GONE.html.var
+@sample /var/apache2/error/HTTP_GONE.html.var
+share/examples/apache2/error/HTTP_INTERNAL_SERVER_ERROR.html.var
+@sample /var/apache2/error/HTTP_INTERNAL_SERVER_ERROR.html.var
+share/examples/apache2/error/HTTP_LENGTH_REQUIRED.html.var
+@sample /var/apache2/error/HTTP_LENGTH_REQUIRED.html.var
+share/examples/apache2/error/HTTP_METHOD_NOT_ALLOWED.html.var
+@sample /var/apache2/error/HTTP_METHOD_NOT_ALLOWED.html.var
+share/examples/apache2/error/HTTP_NOT_FOUND.html.var
+@sample /var/apache2/error/HTTP_NOT_FOUND.html.var
+share/examples/apache2/error/HTTP_NOT_IMPLEMENTED.html.var
+@sample /var/apache2/error/HTTP_NOT_IMPLEMENTED.html.var
+share/examples/apache2/error/HTTP_PRECONDITION_FAILED.html.var
+@sample /var/apache2/error/HTTP_PRECONDITION_FAILED.html.var
+share/examples/apache2/error/HTTP_REQUEST_ENTITY_TOO_LARGE.html.var
+@sample /var/apache2/error/HTTP_REQUEST_ENTITY_TOO_LARGE.html.var
+share/examples/apache2/error/HTTP_REQUEST_TIME_OUT.html.var
+@sample /var/apache2/error/HTTP_REQUEST_TIME_OUT.html.var
+share/examples/apache2/error/HTTP_REQUEST_URI_TOO_LARGE.html.var
+@sample /var/apache2/error/HTTP_REQUEST_URI_TOO_LARGE.html.var
+share/examples/apache2/error/HTTP_SERVICE_UNAVAILABLE.html.var
+@sample /var/apache2/error/HTTP_SERVICE_UNAVAILABLE.html.var
+share/examples/apache2/error/HTTP_UNAUTHORIZED.html.var
+@sample /var/apache2/error/HTTP_UNAUTHORIZED.html.var
+share/examples/apache2/error/HTTP_UNSUPPORTED_MEDIA_TYPE.html.var
+@sample /var/apache2/error/HTTP_UNSUPPORTED_MEDIA_TYPE.html.var
+share/examples/apache2/error/HTTP_VARIANT_ALSO_VARIES.html.var
+@sample /var/apache2/error/HTTP_VARIANT_ALSO_VARIES.html.var
+share/examples/apache2/error/README
+@sample /var/apache2/error/README
+share/examples/apache2/error/contact.html.var
+@sample /var/apache2/error/contact.html.var
+share/examples/apache2/error/include/
+@sample /var/apache2/error/include/
+share/examples/apache2/error/include/bottom.html
+@sample /var/apache2/error/include/bottom.html
+share/examples/apache2/error/include/spacer.html
+@sample /var/apache2/error/include/spacer.html
+share/examples/apache2/error/include/top.html
+@sample /var/apache2/error/include/top.html
+share/examples/apache2/htdocs/
+@sample /var/apache2/htdocs/
+share/examples/apache2/htdocs/apache_pb.gif
+@sample /var/apache2/htdocs/apache_pb.gif
+share/examples/apache2/htdocs/apache_pb.png
+@sample /var/apache2/htdocs/apache_pb.png
+share/examples/apache2/htdocs/apache_pb22.gif
+@sample /var/apache2/htdocs/apache_pb22.gif
+share/examples/apache2/htdocs/apache_pb22.png
+@sample /var/apache2/htdocs/apache_pb22.png
+share/examples/apache2/htdocs/apache_pb22_ani.gif
+@sample /var/apache2/htdocs/apache_pb22_ani.gif
+share/examples/apache2/htdocs/index.html
+@sample /var/apache2/htdocs/index.html
+share/examples/apache2/icons/
+@sample /var/apache2/icons/
+share/examples/apache2/icons/README
+@sample /var/apache2/icons/README
+share/examples/apache2/icons/a.gif
+@sample /var/apache2/icons/a.gif
+share/examples/apache2/icons/a.png
+@sample /var/apache2/icons/a.png
+share/examples/apache2/icons/alert.black.gif
+@sample /var/apache2/icons/alert.black.gif
+share/examples/apache2/icons/alert.black.png
+@sample /var/apache2/icons/alert.black.png
+share/examples/apache2/icons/alert.red.gif
+@sample /var/apache2/icons/alert.red.gif
+share/examples/apache2/icons/alert.red.png
+@sample /var/apache2/icons/alert.red.png
+share/examples/apache2/icons/apache_pb.gif
+@sample /var/apache2/icons/apache_pb.gif
+share/examples/apache2/icons/apache_pb.png
+@sample /var/apache2/icons/apache_pb.png
+share/examples/apache2/icons/apache_pb2.gif
+@sample /var/apache2/icons/apache_pb2.gif
+share/examples/apache2/icons/apache_pb2.png
+@sample /var/apache2/icons/apache_pb2.png
+share/examples/apache2/icons/apache_pb2_ani.gif
+@sample /var/apache2/icons/apache_pb2_ani.gif
+share/examples/apache2/icons/back.gif
+@sample /var/apache2/icons/back.gif
+share/examples/apache2/icons/back.png
+@sample /var/apache2/icons/back.png
+share/examples/apache2/icons/ball.gray.gif
+@sample /var/apache2/icons/ball.gray.gif
+share/examples/apache2/icons/ball.gray.png
+@sample /var/apache2/icons/ball.gray.png
+share/examples/apache2/icons/ball.red.gif
+@sample /var/apache2/icons/ball.red.gif
+share/examples/apache2/icons/ball.red.png
+@sample /var/apache2/icons/ball.red.png
+share/examples/apache2/icons/binary.gif
+@sample /var/apache2/icons/binary.gif
+share/examples/apache2/icons/binary.png
+@sample /var/apache2/icons/binary.png
+share/examples/apache2/icons/binhex.gif
+@sample /var/apache2/icons/binhex.gif
+share/examples/apache2/icons/binhex.png
+@sample /var/apache2/icons/binhex.png
+share/examples/apache2/icons/blank.gif
+@sample /var/apache2/icons/blank.gif
+share/examples/apache2/icons/blank.png
+@sample /var/apache2/icons/blank.png
+share/examples/apache2/icons/bomb.gif
+@sample /var/apache2/icons/bomb.gif
+share/examples/apache2/icons/bomb.png
+@sample /var/apache2/icons/bomb.png
+share/examples/apache2/icons/box1.gif
+@sample /var/apache2/icons/box1.gif
+share/examples/apache2/icons/box1.png
+@sample /var/apache2/icons/box1.png
+share/examples/apache2/icons/box2.gif
+@sample /var/apache2/icons/box2.gif
+share/examples/apache2/icons/box2.png
+@sample /var/apache2/icons/box2.png
+share/examples/apache2/icons/broken.gif
+@sample /var/apache2/icons/broken.gif
+share/examples/apache2/icons/broken.png
+@sample /var/apache2/icons/broken.png
+share/examples/apache2/icons/burst.gif
+@sample /var/apache2/icons/burst.gif
+share/examples/apache2/icons/burst.png
+@sample /var/apache2/icons/burst.png
+share/examples/apache2/icons/c.gif
+@sample /var/apache2/icons/c.gif
+share/examples/apache2/icons/c.png
+@sample /var/apache2/icons/c.png
+share/examples/apache2/icons/comp.blue.gif
+@sample /var/apache2/icons/comp.blue.gif
+share/examples/apache2/icons/comp.blue.png
+@sample /var/apache2/icons/comp.blue.png
+share/examples/apache2/icons/comp.gray.gif
+@sample /var/apache2/icons/comp.gray.gif
+share/examples/apache2/icons/comp.gray.png
+@sample /var/apache2/icons/comp.gray.png
+share/examples/apache2/icons/compressed.gif
+@sample /var/apache2/icons/compressed.gif
+share/examples/apache2/icons/compressed.png
+@sample /var/apache2/icons/compressed.png
+share/examples/apache2/icons/continued.gif
+@sample /var/apache2/icons/continued.gif
+share/examples/apache2/icons/continued.png
+@sample /var/apache2/icons/continued.png
+share/examples/apache2/icons/dir.gif
+@sample /var/apache2/icons/dir.gif
+share/examples/apache2/icons/dir.png
+@sample /var/apache2/icons/dir.png
+share/examples/apache2/icons/diskimg.gif
+@sample /var/apache2/icons/diskimg.gif
+share/examples/apache2/icons/diskimg.png
+@sample /var/apache2/icons/diskimg.png
+share/examples/apache2/icons/down.gif
+@sample /var/apache2/icons/down.gif
+share/examples/apache2/icons/down.png
+@sample /var/apache2/icons/down.png
+share/examples/apache2/icons/dvi.gif
+@sample /var/apache2/icons/dvi.gif
+share/examples/apache2/icons/dvi.png
+@sample /var/apache2/icons/dvi.png
+share/examples/apache2/icons/f.gif
+@sample /var/apache2/icons/f.gif
+share/examples/apache2/icons/f.png
+@sample /var/apache2/icons/f.png
+share/examples/apache2/icons/folder.gif
+@sample /var/apache2/icons/folder.gif
+share/examples/apache2/icons/folder.open.gif
+@sample /var/apache2/icons/folder.open.gif
+share/examples/apache2/icons/folder.open.png
+@sample /var/apache2/icons/folder.open.png
+share/examples/apache2/icons/folder.png
+@sample /var/apache2/icons/folder.png
+share/examples/apache2/icons/folder.sec.gif
+@sample /var/apache2/icons/folder.sec.gif
+share/examples/apache2/icons/folder.sec.png
+@sample /var/apache2/icons/folder.sec.png
+share/examples/apache2/icons/forward.gif
+@sample /var/apache2/icons/forward.gif
+share/examples/apache2/icons/forward.png
+@sample /var/apache2/icons/forward.png
+share/examples/apache2/icons/generic.gif
+@sample /var/apache2/icons/generic.gif
+share/examples/apache2/icons/generic.png
+@sample /var/apache2/icons/generic.png
+share/examples/apache2/icons/generic.red.gif
+@sample /var/apache2/icons/generic.red.gif
+share/examples/apache2/icons/generic.red.png
+@sample /var/apache2/icons/generic.red.png
+share/examples/apache2/icons/generic.sec.gif
+@sample /var/apache2/icons/generic.sec.gif
+share/examples/apache2/icons/generic.sec.png
+@sample /var/apache2/icons/generic.sec.png
+share/examples/apache2/icons/hand.right.gif
+@sample /var/apache2/icons/hand.right.gif
+share/examples/apache2/icons/hand.right.png
+@sample /var/apache2/icons/hand.right.png
+share/examples/apache2/icons/hand.up.gif
+@sample /var/apache2/icons/hand.up.gif
+share/examples/apache2/icons/hand.up.png
+@sample /var/apache2/icons/hand.up.png
+share/examples/apache2/icons/icon.sheet.gif
+@sample /var/apache2/icons/icon.sheet.gif
+share/examples/apache2/icons/icon.sheet.png
+@sample /var/apache2/icons/icon.sheet.png
+share/examples/apache2/icons/image1.gif
+@sample /var/apache2/icons/image1.gif
+share/examples/apache2/icons/image1.png
+@sample /var/apache2/icons/image1.png
+share/examples/apache2/icons/image2.gif
+@sample /var/apache2/icons/image2.gif
+share/examples/apache2/icons/image2.png
+@sample /var/apache2/icons/image2.png
+share/examples/apache2/icons/image3.gif
+@sample /var/apache2/icons/image3.gif
+share/examples/apache2/icons/image3.png
+@sample /var/apache2/icons/image3.png
+share/examples/apache2/icons/index.gif
+@sample /var/apache2/icons/index.gif
+share/examples/apache2/icons/index.png
+@sample /var/apache2/icons/index.png
+share/examples/apache2/icons/layout.gif
+@sample /var/apache2/icons/layout.gif
+share/examples/apache2/icons/layout.png
+@sample /var/apache2/icons/layout.png
+share/examples/apache2/icons/left.gif
+@sample /var/apache2/icons/left.gif
+share/examples/apache2/icons/left.png
+@sample /var/apache2/icons/left.png
+share/examples/apache2/icons/link.gif
+@sample /var/apache2/icons/link.gif
+share/examples/apache2/icons/link.png
+@sample /var/apache2/icons/link.png
+share/examples/apache2/icons/movie.gif
+@sample /var/apache2/icons/movie.gif
+share/examples/apache2/icons/movie.png
+@sample /var/apache2/icons/movie.png
+share/examples/apache2/icons/p.gif
+@sample /var/apache2/icons/p.gif
+share/examples/apache2/icons/p.png
+@sample /var/apache2/icons/p.png
+share/examples/apache2/icons/patch.gif
+@sample /var/apache2/icons/patch.gif
+share/examples/apache2/icons/patch.png
+@sample /var/apache2/icons/patch.png
+share/examples/apache2/icons/pdf.gif
+@sample /var/apache2/icons/pdf.gif
+share/examples/apache2/icons/pdf.png
+@sample /var/apache2/icons/pdf.png
+share/examples/apache2/icons/pie0.gif
+@sample /var/apache2/icons/pie0.gif
+share/examples/apache2/icons/pie0.png
+@sample /var/apache2/icons/pie0.png
+share/examples/apache2/icons/pie1.gif
+@sample /var/apache2/icons/pie1.gif
+share/examples/apache2/icons/pie1.png
+@sample /var/apache2/icons/pie1.png
+share/examples/apache2/icons/pie2.gif
+@sample /var/apache2/icons/pie2.gif
+share/examples/apache2/icons/pie2.png
+@sample /var/apache2/icons/pie2.png
+share/examples/apache2/icons/pie3.gif
+@sample /var/apache2/icons/pie3.gif
+share/examples/apache2/icons/pie3.png
+@sample /var/apache2/icons/pie3.png
+share/examples/apache2/icons/pie4.gif
+@sample /var/apache2/icons/pie4.gif
+share/examples/apache2/icons/pie4.png
+@sample /var/apache2/icons/pie4.png
+share/examples/apache2/icons/pie5.gif
+@sample /var/apache2/icons/pie5.gif
+share/examples/apache2/icons/pie5.png
+@sample /var/apache2/icons/pie5.png
+share/examples/apache2/icons/pie6.gif
+@sample /var/apache2/icons/pie6.gif
+share/examples/apache2/icons/pie6.png
+@sample /var/apache2/icons/pie6.png
+share/examples/apache2/icons/pie7.gif
+@sample /var/apache2/icons/pie7.gif
+share/examples/apache2/icons/pie7.png
+@sample /var/apache2/icons/pie7.png
+share/examples/apache2/icons/pie8.gif
+@sample /var/apache2/icons/pie8.gif
+share/examples/apache2/icons/pie8.png
+@sample /var/apache2/icons/pie8.png
+share/examples/apache2/icons/portal.gif
+@sample /var/apache2/icons/portal.gif
+share/examples/apache2/icons/portal.png
+@sample /var/apache2/icons/portal.png
+share/examples/apache2/icons/ps.gif
+@sample /var/apache2/icons/ps.gif
+share/examples/apache2/icons/ps.png
+@sample /var/apache2/icons/ps.png
+share/examples/apache2/icons/quill.gif
+@sample /var/apache2/icons/quill.gif
+share/examples/apache2/icons/quill.png
+@sample /var/apache2/icons/quill.png
+share/examples/apache2/icons/right.gif
+@sample /var/apache2/icons/right.gif
+share/examples/apache2/icons/right.png
+@sample /var/apache2/icons/right.png
+share/examples/apache2/icons/screw1.gif
+@sample /var/apache2/icons/screw1.gif
+share/examples/apache2/icons/screw1.png
+@sample /var/apache2/icons/screw1.png
+share/examples/apache2/icons/screw2.gif
+@sample /var/apache2/icons/screw2.gif
+share/examples/apache2/icons/screw2.png
+@sample /var/apache2/icons/screw2.png
+share/examples/apache2/icons/script.gif
+@sample /var/apache2/icons/script.gif
+share/examples/apache2/icons/script.png
+@sample /var/apache2/icons/script.png
+share/examples/apache2/icons/small/
+@sample /var/apache2/icons/small/
+share/examples/apache2/icons/small/README.txt
+@sample /var/apache2/icons/small/README.txt
+share/examples/apache2/icons/small/back.gif
+@sample /var/apache2/icons/small/back.gif
+share/examples/apache2/icons/small/back.png
+@sample /var/apache2/icons/small/back.png
+share/examples/apache2/icons/small/binary.gif
+@sample /var/apache2/icons/small/binary.gif
+share/examples/apache2/icons/small/binary.png
+@sample /var/apache2/icons/small/binary.png
+share/examples/apache2/icons/small/binhex.gif
+@sample /var/apache2/icons/small/binhex.gif
+share/examples/apache2/icons/small/binhex.png
+@sample /var/apache2/icons/small/binhex.png
+share/examples/apache2/icons/small/blank.gif
+@sample /var/apache2/icons/small/blank.gif
+share/examples/apache2/icons/small/blank.png
+@sample /var/apache2/icons/small/blank.png
+share/examples/apache2/icons/small/broken.gif
+@sample /var/apache2/icons/small/broken.gif
+share/examples/apache2/icons/small/broken.png
+@sample /var/apache2/icons/small/broken.png
+share/examples/apache2/icons/small/burst.gif
+@sample /var/apache2/icons/small/burst.gif
+share/examples/apache2/icons/small/burst.png
+@sample /var/apache2/icons/small/burst.png
+share/examples/apache2/icons/small/comp1.gif
+@sample /var/apache2/icons/small/comp1.gif
+share/examples/apache2/icons/small/comp1.png
+@sample /var/apache2/icons/small/comp1.png
+share/examples/apache2/icons/small/comp2.gif
+@sample /var/apache2/icons/small/comp2.gif
+share/examples/apache2/icons/small/comp2.png
+@sample /var/apache2/icons/small/comp2.png
+share/examples/apache2/icons/small/compressed.gif
+@sample /var/apache2/icons/small/compressed.gif
+share/examples/apache2/icons/small/compressed.png
+@sample /var/apache2/icons/small/compressed.png
+share/examples/apache2/icons/small/continued.gif
+@sample /var/apache2/icons/small/continued.gif
+share/examples/apache2/icons/small/continued.png
+@sample /var/apache2/icons/small/continued.png
+share/examples/apache2/icons/small/dir.gif
+@sample /var/apache2/icons/small/dir.gif
+share/examples/apache2/icons/small/dir.png
+@sample /var/apache2/icons/small/dir.png
+share/examples/apache2/icons/small/dir2.gif
+@sample /var/apache2/icons/small/dir2.gif
+share/examples/apache2/icons/small/dir2.png
+@sample /var/apache2/icons/small/dir2.png
+share/examples/apache2/icons/small/doc.gif
+@sample /var/apache2/icons/small/doc.gif
+share/examples/apache2/icons/small/doc.png
+@sample /var/apache2/icons/small/doc.png
+share/examples/apache2/icons/small/forward.gif
+@sample /var/apache2/icons/small/forward.gif
+share/examples/apache2/icons/small/forward.png
+@sample /var/apache2/icons/small/forward.png
+share/examples/apache2/icons/small/generic.gif
+@sample /var/apache2/icons/small/generic.gif
+share/examples/apache2/icons/small/generic.png
+@sample /var/apache2/icons/small/generic.png
+share/examples/apache2/icons/small/generic2.gif
+@sample /var/apache2/icons/small/generic2.gif
+share/examples/apache2/icons/small/generic2.png
+@sample /var/apache2/icons/small/generic2.png
+share/examples/apache2/icons/small/generic3.gif
+@sample /var/apache2/icons/small/generic3.gif
+share/examples/apache2/icons/small/generic3.png
+@sample /var/apache2/icons/small/generic3.png
+share/examples/apache2/icons/small/image.gif
+@sample /var/apache2/icons/small/image.gif
+share/examples/apache2/icons/small/image.png
+@sample /var/apache2/icons/small/image.png
+share/examples/apache2/icons/small/image2.gif
+@sample /var/apache2/icons/small/image2.gif
+share/examples/apache2/icons/small/image2.png
+@sample /var/apache2/icons/small/image2.png
+share/examples/apache2/icons/small/index.gif
+@sample /var/apache2/icons/small/index.gif
+share/examples/apache2/icons/small/index.png
+@sample /var/apache2/icons/small/index.png
+share/examples/apache2/icons/small/key.gif
+@sample /var/apache2/icons/small/key.gif
+share/examples/apache2/icons/small/key.png
+@sample /var/apache2/icons/small/key.png
+share/examples/apache2/icons/small/movie.gif
+@sample /var/apache2/icons/small/movie.gif
+share/examples/apache2/icons/small/movie.png
+@sample /var/apache2/icons/small/movie.png
+share/examples/apache2/icons/small/patch.gif
+@sample /var/apache2/icons/small/patch.gif
+share/examples/apache2/icons/small/patch.png
+@sample /var/apache2/icons/small/patch.png
+share/examples/apache2/icons/small/ps.gif
+@sample /var/apache2/icons/small/ps.gif
+share/examples/apache2/icons/small/ps.png
+@sample /var/apache2/icons/small/ps.png
+share/examples/apache2/icons/small/rainbow.gif
+@sample /var/apache2/icons/small/rainbow.gif
+share/examples/apache2/icons/small/rainbow.png
+@sample /var/apache2/icons/small/rainbow.png
+share/examples/apache2/icons/small/sound.gif
+@sample /var/apache2/icons/small/sound.gif
+share/examples/apache2/icons/small/sound.png
+@sample /var/apache2/icons/small/sound.png
+share/examples/apache2/icons/small/sound2.gif
+@sample /var/apache2/icons/small/sound2.gif
+share/examples/apache2/icons/small/sound2.png
+@sample /var/apache2/icons/small/sound2.png
+share/examples/apache2/icons/small/tar.gif
+@sample /var/apache2/icons/small/tar.gif
+share/examples/apache2/icons/small/tar.png
+@sample /var/apache2/icons/small/tar.png
+share/examples/apache2/icons/small/text.gif
+@sample /var/apache2/icons/small/text.gif
+share/examples/apache2/icons/small/text.png
+@sample /var/apache2/icons/small/text.png
+share/examples/apache2/icons/small/transfer.gif
+@sample /var/apache2/icons/small/transfer.gif
+share/examples/apache2/icons/small/transfer.png
+@sample /var/apache2/icons/small/transfer.png
+share/examples/apache2/icons/small/unknown.gif
+@sample /var/apache2/icons/small/unknown.gif
+share/examples/apache2/icons/small/unknown.png
+@sample /var/apache2/icons/small/unknown.png
+share/examples/apache2/icons/small/uu.gif
+@sample /var/apache2/icons/small/uu.gif
+share/examples/apache2/icons/small/uu.png
+@sample /var/apache2/icons/small/uu.png
+share/examples/apache2/icons/sound1.gif
+@sample /var/apache2/icons/sound1.gif
+share/examples/apache2/icons/sound1.png
+@sample /var/apache2/icons/sound1.png
+share/examples/apache2/icons/sound2.gif
+@sample /var/apache2/icons/sound2.gif
+share/examples/apache2/icons/sound2.png
+@sample /var/apache2/icons/sound2.png
+share/examples/apache2/icons/sphere1.gif
+@sample /var/apache2/icons/sphere1.gif
+share/examples/apache2/icons/sphere1.png
+@sample /var/apache2/icons/sphere1.png
+share/examples/apache2/icons/sphere2.gif
+@sample /var/apache2/icons/sphere2.gif
+share/examples/apache2/icons/sphere2.png
+@sample /var/apache2/icons/sphere2.png
+share/examples/apache2/icons/tar.gif
+@sample /var/apache2/icons/tar.gif
+share/examples/apache2/icons/tar.png
+@sample /var/apache2/icons/tar.png
+share/examples/apache2/icons/tex.gif
+@sample /var/apache2/icons/tex.gif
+share/examples/apache2/icons/tex.png
+@sample /var/apache2/icons/tex.png
+share/examples/apache2/icons/text.gif
+@sample /var/apache2/icons/text.gif
+share/examples/apache2/icons/text.png
+@sample /var/apache2/icons/text.png
+share/examples/apache2/icons/transfer.gif
+@sample /var/apache2/icons/transfer.gif
+share/examples/apache2/icons/transfer.png
+@sample /var/apache2/icons/transfer.png
+share/examples/apache2/icons/unknown.gif
+@sample /var/apache2/icons/unknown.gif
+share/examples/apache2/icons/unknown.png
+@sample /var/apache2/icons/unknown.png
+share/examples/apache2/icons/up.gif
+@sample /var/apache2/icons/up.gif
+share/examples/apache2/icons/up.png
+@sample /var/apache2/icons/up.png
+share/examples/apache2/icons/uu.gif
+@sample /var/apache2/icons/uu.gif
+share/examples/apache2/icons/uu.png
+@sample /var/apache2/icons/uu.png
+share/examples/apache2/icons/uuencoded.gif
+@sample /var/apache2/icons/uuencoded.gif
+share/examples/apache2/icons/uuencoded.png
+@sample /var/apache2/icons/uuencoded.png
+share/examples/apache2/icons/world1.gif
+@sample /var/apache2/icons/world1.gif
+share/examples/apache2/icons/world1.png
+@sample /var/apache2/icons/world1.png
+share/examples/apache2/icons/world2.gif
+@sample /var/apache2/icons/world2.gif
+share/examples/apache2/icons/world2.png
+@sample /var/apache2/icons/world2.png
+share/examples/apache2/logs/
+@sample /var/apache2/logs/
+@exec chown -R root:_apache2 /var/apache2

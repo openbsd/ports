@@ -1,0 +1,47 @@
+$OpenBSD: patch-config_layout,v 1.1.1.1 2006/12/14 07:14:21 deanna Exp $
+--- config.layout.orig	Sun Nov 21 13:50:36 2004
++++ config.layout	Sun Dec 10 20:33:02 2006
+@@ -252,26 +252,26 @@
+ 
+ #   OpenBSD Layout
+ <Layout OpenBSD>
+-    prefix:        /var/www
+-    exec_prefix:   /usr
++    prefix:        %%PREFIX%%
++    exec_prefix:   ${prefix}
+     bindir:        ${exec_prefix}/bin
+     sbindir:       ${exec_prefix}/sbin
+     libdir:        ${exec_prefix}/lib
+-    libexecdir:    ${exec_prefix}/lib/apache/modules
+-    mandir:        ${exec_prefix}/share/man
+-    sysconfdir:    ${prefix}/conf
+-    datadir:       ${prefix}
+-    installbuilddir: ${prefix}/build
+-    errordir:      ${prefix}/error
+-    iconsdir:      ${prefix}/icons
+-    htdocsdir:     ${prefix}/htdocs
+-    manualdir:     ${datadir}/manual
+-    cgidir:        ${prefix}/cgi-bin
+-    includedir:    ${exec_prefix}/lib/apache/include
+-    localstatedir: ${prefix}
+-    runtimedir:    ${prefix}/logs
+-    logfiledir:    ${prefix}/logs
+-    proxycachedir: ${prefix}/proxy
++    libexecdir:    ${exec_prefix}/lib
++    mandir:        ${exec_prefix}/man
++    datadir:       /var/apache2
++    sysconfdir:    ${datadir}/conf
++    installbuilddir: ${datadir}/build
++    errordir:      ${datadir}/error
++    iconsdir:      ${datadir}/icons
++    htdocsdir:     ${datadir}/htdocs
++    manualdir:     ${exec_prefix}/share/doc/apache2
++    cgidir:        ${datadir}/cgi-bin
++    includedir:    ${exec_prefix}/include/apache2
++    localstatedir: ${datadir}
++    runtimedir:    ${datadir}/logs
++    logfiledir:    ${datadir}/logs
++    proxycachedir: ${datadir}/proxy
+ </Layout>
+ 
+ # FreeBSD Layout
