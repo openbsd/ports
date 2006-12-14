@@ -1,0 +1,23 @@
+$OpenBSD: patch-t_01_t,v 1.1 2006/12/14 18:08:10 dassow Exp $
+--- t/01.t.orig	Wed Dec 13 17:13:57 2006
++++ t/01.t	Wed Dec 13 17:16:29 2006
+@@ -40,15 +40,15 @@ like(Foo->to_field("baz"), qr/<input .*n
+     "Ordinary text field OK");
+ 
+ Foo->has_a(bar => Bar);
+-is(Foo->to_field("bar"), "<select name=\"bar\"><option value=1>Hi</option></select>\n",
++is(Foo->to_field("bar"), "<select name=\"bar\"><option value=\"1\">Hi</option></select>\n",
+     "Select OK");
+ 
+ my $x = bless({id => 1, bar => Bar->retrieve_all(), baz => "Hello there"}, "Foo");
+-my %cgi = ( id => '<input name="id" type="text" value=1>
++my %cgi = ( id => '<input name="id" type="text" value="1" />
+ ',
+-    bar => '<select name="bar"><option selected value=1>Hi</option></select>
++    bar => '<select name="bar"><option selected value="1">Hi</option></select>
+ ',
+-            baz => '<input name="baz" type="text" value="Hello there">
++            baz => '<input name="baz" type="text" value="Hello there" />
+ '
+           );
+ is_deeply({$x->to_cgi}, \%cgi, "All correct as an object method");
