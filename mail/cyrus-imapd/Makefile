@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/11/25 19:51:14 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2006/12/14 09:07:56 steven Exp $
 
 COMMENT-main=	"Cyrus IMAP server"
 COMMENT-perl=	"perl utils for the Cyrus IMAP server"
@@ -79,9 +79,6 @@ CONFIGURE_ARGS+=--with-auth=unix \
 .endif
 
 WANTLIB-main=	${WANTLIB} wrap c pthread
-
-MAINPATH=	mail/cyrus-imapd${FLAVOR_EXT:S/-/,/g}
-SUBST_VARS=	MAINPATH
 
 NO_REGRESS=	Yes
 

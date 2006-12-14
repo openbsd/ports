@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2006/11/24 22:14:42 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2006/12/14 09:07:56 steven Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
 BROKEN=			"hangs indefinitely until machine panics/hangs"
@@ -50,23 +50,21 @@ CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -fno-stack-protector"
 
 MAKE_ENV=		INSTALL_EMACS="${INSTALL_SCRIPT}"
 
-SUBST_VARS=		GCCARCH VERSION MAINPATH
+SUBST_VARS=		GCCARCH VERSION
 
 WANTLIB-main=		c m ncurses ossaudio
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--with-x=no
-MAINPATH=		editors/emacs21,no_x11
 .else
 USE_X11=Yes
 LIB_DEPENDS-main=		ungif.>=5::graphics/libungif \
 			jpeg.>=62::graphics/jpeg \
 			png.>=2::graphics/png \
 			tiff.>=35::graphics/tiff
-MAINPATH=		editors/emacs21
 WANTLIB-main+=		ICE SM X11 Xaw Xext Xmu Xpm Xt z
 .endif
 
-RUN_DEPENDS=		:emacs-${VERSION}*:${MAINPATH}
+RUN_DEPENDS=		:emacs-${VERSION}*:${BUILD_PKGPATH}
 RUN_DEPENDS-main=
 
 PKG_ARCH-el=		*

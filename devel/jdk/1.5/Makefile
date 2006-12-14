@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2006/11/24 21:30:13 steven Exp $
+# $OpenBSD: Makefile,v 1.30 2006/12/14 09:07:56 steven Exp $
 
 ONLY_FOR_ARCHS= 	amd64 i386
 
@@ -115,9 +115,7 @@ MAKE_ENV+=		DONT_BUILD_DEPLOY="YES"
 JDKHOME=		jdk-${V}
 JREHOME=		jre-${V}
 
-MAINPATH=		devel/jdk/1.5${FLAVOR_EXT:S/-/,/g}
-
-SUBST_VARS=		JDKHOME JREHOME MAINPATH
+SUBST_VARS=		JDKHOME JREHOME
 
 .if ${MACHINE_ARCH} == "i386"
 PKG_ARGS+=              -Dclient_vm=1

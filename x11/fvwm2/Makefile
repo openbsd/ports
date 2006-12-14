@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2006/11/25 07:55:25 steven Exp $
+# $OpenBSD: Makefile,v 1.40 2006/12/14 09:07:56 steven Exp $
 
 COMMENT-main=	"multiple virtual desktop window manager, with icons"
 COMMENT-fvicons="multiple virtual desktop window manager icons"
@@ -59,9 +59,7 @@ PKG_ARCH-fvicons=	*
 LIB_DEPENDS-fvicons=
 WANTLIB-fvicons=
 
-MAINPATH=	x11/fvwm2${FLAVOR_EXT:S/-/,/g}
-
-SUBST_VARS=	VERSION MAINPATH
+SUBST_VARS=	VERSION
 
 USE_X11=	Yes
 

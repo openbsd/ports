@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2006/11/21 11:25:03 espie Exp $
+# $OpenBSD: Makefile,v 1.76 2006/12/14 09:07:56 steven Exp $
 
 COMMENT-main=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
@@ -114,9 +114,7 @@ WANTLIB+=	ICE SM X11 Xext Xrender Xt fontconfig freetype m z\
 ERRORS=		"Fatal: You must select one GUI interface: no_x11, gtk2, athena or motif"
 .endif
 
-MAINPATH=	editors/vim${FLAVOR_EXT:S/-/,/g}
-
-RUN_DEPENDS-lang=	::${MAINPATH}
+RUN_DEPENDS-lang=	::${BUILD_PKGPATH}
 PKG_ARCH-lang=		*
 LIB_DEPENDS-lang=
 WANTLIB-lang=
@@ -125,7 +123,7 @@ MODULES=		devel/gettext
 WRKDIST=	${WRKDIR}/${P}
 WRKSRC=		${WRKDIST}/src
 
-SUBST_VARS=	P MAINPATH
+SUBST_VARS=	P
 
 # don't try to regenerate the configure script. Works around the fact that
 # auto/configure.in is newer than auto/configure.

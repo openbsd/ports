@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/21 11:25:03 espie Exp $
-@pkgpath ${MAINPATH}
+@comment $OpenBSD: PLIST-main,v 1.2 2006/12/14 09:07:56 steven Exp $
+@pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
 bin/rview
