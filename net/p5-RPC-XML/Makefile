@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/14 06:16:59 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/14 06:32:22 sturm Exp $
 
 COMMENT= 	"perl implementation of XML-RPC"
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=RPC/}
 
 USE_GMAKE=		Yes
-BUILD_DEPENDS=		::www/p5-libwww
 RUN_DEPENDS=		::www/p5-libwww \
 			::textproc/p5-XML-Parser
 REGRESS_DEPENDS=	${RUN_DEPENDS} \

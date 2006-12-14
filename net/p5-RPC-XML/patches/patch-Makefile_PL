@@ -1,0 +1,26 @@
+$OpenBSD: patch-Makefile_PL,v 1.1 2006/12/14 06:32:22 sturm Exp $
+--- Makefile.PL.orig	Wed Dec 13 23:25:26 2006
++++ Makefile.PL	Wed Dec 13 23:25:45 2006
+@@ -12,22 +12,6 @@ use ExtUtils::MakeMaker;
+ use File::Spec;
+ use File::Find;
+ use Cwd 'cwd';
+-use LWP;
+-
+-if ($LWP::VERSION < 5.801)
+-{
+-    print STDERR <<END;
+-@@@@@
+-	Please note!
+-
+-	Due to a bug fixed in version 5.801 of LWP, using the spool-to-file
+-	feature of RPC::XML::Client is broken. The relevant tests will be
+-	skipped in the test suite, but unless you upgrade your LWP you
+-	should not attempt to use this feature.
+-@@@@@
+-
+-END
+-}
+ 
+ eval "use XML::LibXML;";
+ if ($@ or $XML::LibXML::VERSION < 1.58)
