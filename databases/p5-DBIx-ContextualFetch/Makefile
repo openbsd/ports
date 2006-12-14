@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2006/01/07 10:22:10 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/14 19:04:45 dassow Exp $
 
 COMMENT=	"add contextual fetches to DBI"
 
 DISTNAME=	DBIx-ContextualFetch-1.03
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	databases perl5
+CATEGORIES=	databases
+MODULES=	cpan
 
 MAINTAINER=	Sam Smith <S@msmith.net>
 
@@ -14,14 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=DBIx/}
-
-CONFIGURE_STYLE=perl
-
 RUN_DEPENDS=	:p5-DBI->=1.35:databases/p5-DBI
-BUILD_DEPENDS=	${RUN_DEPENDS}
 REGRESS_DEPENDS=::databases/p5-DBD-SQLite
-
-PKG_ARCH=	*
 
 .include <bsd.port.mk>

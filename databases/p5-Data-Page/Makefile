@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2006/06/24 12:16:35 msf Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/14 19:04:45 dassow Exp $
 
 COMMENT=	"pager utility"
 
 DISTNAME=	Data-Page-2.00
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	databases perl5
+CATEGORIES=	databases
+MODULES=	cpan
 
 MAINTAINER=		Sean Comeau <scomeau@obscurity.org>
 
@@ -16,12 +16,5 @@ PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	::devel/p5-Class-Accessor-Chained \
 		::devel/p5-Test-Exception
-BUILD_DEPENDS=	${RUN_DEPENDS}
-
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Data/}
-
-CONFIGURE_STYLE=perl
-
-PKG_ARCH=	*
 
 .include <bsd.port.mk>
