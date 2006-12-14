@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2006/12/14 13:12:24 robert Exp $
+# $OpenBSD: Makefile,v 1.41 2006/12/14 20:40:28 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -10,7 +10,7 @@ VERSION=	2.1.0
 DISTNAME=	OOo_${VERSION}
 WRKDIST=	${WRKDIR}/OOE680_m6
 PKGNAME=	openoffice-${VERSION}p1
-PKGNAME-main=	openoffice-${VERSION}p0
+PKGNAME-main=	openoffice-${VERSION}p1
 PKGNAME-kde=	openoffice-kde-${VERSION}
 PKGNAME-java=	openoffice-java-${VERSION}
 CATEGORIES=	editors productivity
@@ -188,7 +188,7 @@ do-build:
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/openoffice
-	${INSTALL_DATA_DIR} ${PREFIX}/share/icons
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/openoffice
 
 	cd ${WRKDIR}/ooo-desktop && \
 		for DFILE in `ls -1 *.desktop`; do \
@@ -196,7 +196,7 @@ do-install:
 				${PREFIX}/share/applications/openoffice; \
 		done && \
 		for ICONS in `ls -1 *.png`; do \
-			${INSTALL_DATA} $$ICONS ${PREFIX}/share/icons; \
+			${INSTALL_DATA} $$ICONS ${PREFIX}/share/icons/openoffice; \
 		done
 
 .for l in en-US ${LANGS}
