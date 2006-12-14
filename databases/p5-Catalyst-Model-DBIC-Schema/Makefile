@@ -1,30 +1,24 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/05 11:53:23 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/14 17:55:39 dassow Exp $
 
 COMMENT= 	"model class for catalyst"
 
 DISTNAME=	Catalyst-Model-DBIC-Schema-0.18
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	databases perl5
+CATEGORIES=	databases
+MODULES=	cpan
 
 MAINTAINER=	Simon Dassow <janus@errornet.de>
 
-# Artistic + GPL
+# Perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Catalyst/}
-
 RUN_DEPENDS=	::databases/p5-DBIx-Class-Schema-Loader \
 		::www/p5-Catalyst-Devel
-REGRESS_DEPENDS=${RUN_DEPENDS} \
-		::devel/p5-Test-Pod \
-		::devel/p5-Test-Pod-Coverage
 
 MAKE_ENV=	TEST_POD=Yes
 
-CONFIGURE_STYLE=perl modbuild
-PKG_ARCH=	*
+CONFIGURE_STYLE= modbuild
 
 .include <bsd.port.mk>
