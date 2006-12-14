@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/14 09:50:25 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2006/12/14 10:22:03 steven Exp $
 
 COMMENT=	"apache HTTP server"
 
 V=		2.2.3
-PKGNAME=	apache-httpd-${V}p0
+PKGNAME=	apache-httpd-${V}p1
 DISTNAME=	httpd-${V}
 
 CATEGORIES=	www net
@@ -18,10 +18,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_REGRESS=		Yes
 
-WANTLIB=		c crypto m ssl expat db.>=4 iconv expat
+WANTLIB=		c crypto m ssl expat apr-1 db.>=4
 
-LIB_DEPENDS=		aprutil-1.>=2::devel/apr-util \
-			apr-1.>=2::devel/apr
+LIB_DEPENDS=		aprutil-1.>=2::devel/apr-util
+
+MODULES=		converters/libiconv
 
 USE_LIBTOOL=		Yes
 
