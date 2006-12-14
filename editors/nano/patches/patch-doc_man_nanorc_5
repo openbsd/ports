@@ -1,0 +1,13 @@
+$OpenBSD: patch-doc_man_nanorc_5,v 1.1 2006/12/14 21:26:53 naddy Exp $
+--- doc/man/nanorc.5.orig	Sat Oct 28 21:21:12 2006
++++ doc/man/nanorc.5	Thu Dec  7 19:54:23 2006
+@@ -250,8 +250,7 @@ Per-user configuration file
+ .TP
+ \fBnano\fP(1)
+ .PP
+-\fI/usr/share/doc/nano/examples/nanorc.sample\fP (or equivalent on your
+-system)
++\fIPREFIX/share/examples/nano/nanorc.sample\fP
+ .SH AUTHOR
+ Chris Allegretta <chrisa@asty.org>, et al (see \fIAUTHORS\fP and
+ \fITHANKS\fP for details).  This manual page was originally written by

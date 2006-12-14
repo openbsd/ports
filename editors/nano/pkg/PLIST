@@ -1,10 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.17 2006/11/07 15:31:37 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.18 2006/12/14 21:26:53 naddy Exp $
+@pkgpath editors/nano,slang
 bin/nano
+bin/rnano
 @info info/nano.info
+@comment man/fr/
+@comment man/fr/man1/
+@comment @man man/fr/man1/nano.1
+@comment @man man/fr/man1/rnano.1
+@comment man/fr/man5/
+@comment @man man/fr/man5/nanorc.5
 @man man/man1/nano.1
+@man man/man1/rnano.1
 @man man/man5/nanorc.5
 share/examples/nano/
 share/examples/nano/nanorc.sample
+share/locale/bg/LC_MESSAGES/nano.mo
 share/locale/ca/LC_MESSAGES/nano.mo
 share/locale/cs/LC_MESSAGES/nano.mo
 share/locale/da/LC_MESSAGES/nano.mo
@@ -15,6 +25,7 @@ share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/nano.mo
 share/locale/fi/LC_MESSAGES/nano.mo
 share/locale/fr/LC_MESSAGES/nano.mo
+share/locale/ga/LC_MESSAGES/nano.mo
 share/locale/gl/LC_MESSAGES/nano.mo
 share/locale/hu/LC_MESSAGES/nano.mo
 share/locale/id/LC_MESSAGES/nano.mo
@@ -29,7 +40,28 @@ share/locale/pl/LC_MESSAGES/nano.mo
 share/locale/pt_BR/LC_MESSAGES/nano.mo
 share/locale/ro/LC_MESSAGES/nano.mo
 share/locale/ru/LC_MESSAGES/nano.mo
+share/locale/rw/
+share/locale/rw/LC_MESSAGES/
+share/locale/rw/LC_MESSAGES/nano.mo
 share/locale/sr/LC_MESSAGES/nano.mo
 share/locale/sv/LC_MESSAGES/nano.mo
 share/locale/tr/LC_MESSAGES/nano.mo
 share/locale/uk/LC_MESSAGES/nano.mo
+share/locale/vi/LC_MESSAGES/nano.mo
+share/locale/zh_TW/LC_MESSAGES/nano.mo
+share/nano/
+share/nano/asm.nanorc
+share/nano/c.nanorc
+share/nano/groff.nanorc
+share/nano/html.nanorc
+share/nano/java.nanorc
+share/nano/man.nanorc
+share/nano/mutt.nanorc
+share/nano/nanorc.nanorc
+share/nano/patch.nanorc
+share/nano/perl.nanorc
+share/nano/pov.nanorc
+share/nano/python.nanorc
+share/nano/ruby.nanorc
+share/nano/sh.nanorc
+share/nano/tex.nanorc

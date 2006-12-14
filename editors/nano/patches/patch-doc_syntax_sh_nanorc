@@ -1,0 +1,19 @@
+$OpenBSD: patch-doc_syntax_sh_nanorc,v 1.1 2006/12/14 21:26:53 naddy Exp $
+--- doc/syntax/sh.nanorc.orig	Thu Jun  8 14:49:57 2006
++++ doc/syntax/sh.nanorc	Thu Dec  7 17:32:53 2006
+@@ -2,11 +2,11 @@
+ ##
+ syntax "sh" "\.sh$"
+ icolor brightgreen "^[0-9A-Z_]+\(\)"
+-color green "\<(case|do|done|elif|else|esac|exit|fi|for|function|if|in|local|read|return|select|shift|then|time|until|while)\>"
++color green "[[:<:]](case|do|done|elif|else|esac|exit|fi|for|function|if|in|local|read|return|select|shift|then|time|until|while)[[:>:]]"
+ color green "(\{|\}|\(|\)|\;|\]|\[|`|\\|\$|<|>|!|=|&|\|)"
+-color green "-[Ldefgruwx]\>"
+-color green "-(eq|ne|gt|lt|ge|le|s|n|z)\>"
+-color brightblue "\<(cat|cd|chmod|chown|cp|echo|env|export|grep|install|let|ln|make|mkdir|mv|rm|sed|set|tar|touch|umask|unset)\>"
++color green "-[Ldefgruwx][[:>:]]"
++color green "-(eq|ne|gt|lt|ge|le|s|n|z)[[:>:]]"
++color brightblue "[[:<:]](cat|cd|chmod|chown|cp|echo|env|export|grep|install|let|ln|make|mkdir|mv|rm|sed|set|tar|touch|umask|unset)[[:>:]]"
+ icolor brightred "\$\{?[0-9A-Z_!@#$*?-]+\}?"
+ color cyan "(^|[[:space:]])#.*$"
+ color brightyellow ""(\\.|[^"])*"" "'(\\.|[^'])*'"

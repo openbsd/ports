@@ -1,0 +1,21 @@
+$OpenBSD: patch-doc_syntax_ruby_nanorc,v 1.1 2006/12/14 21:26:53 naddy Exp $
+--- doc/syntax/ruby.nanorc.orig	Fri Jul  7 15:54:38 2006
++++ doc/syntax/ruby.nanorc	Thu Dec  7 17:32:53 2006
+@@ -2,13 +2,13 @@
+ ##
+ syntax "ruby" "\.rb$"
+ ## Asciibetical list of reserved words
+-color yellow "\<(BEGIN|END|alias|and|begin|break|case|class|def|defined\?|do|else|elsif|end|ensure|false|for|if|in|module|next|nil|not|or|redo|rescue|retry|return|self|super|then|true|undef|unless|until|when|while|yield)\>"
++color yellow "[[:<:]](BEGIN|END|alias|and|begin|break|case|class|def|defined\?|do|else|elsif|end|ensure|false|for|if|in|module|next|nil|not|or|redo|rescue|retry|return|self|super|then|true|undef|unless|until|when|while|yield)[[:>:]]"
+ ## Constants
+-color brightblue "(\$|@|@@)?\<[A-Z]+[0-9A-Z_a-z]*"
++color brightblue "(\$|@|@@)?[[:<:]][A-Z]+[0-9A-Z_a-z]*"
+ ## Ruby "symbols"
+-icolor magenta "([ 	]|^):[0-9A-Z_]+\>"
++icolor magenta "([ 	]|^):[0-9A-Z_]+[[:>:]]"
+ ## Some unique things we want to stand out
+-color brightyellow "\<(__FILE__|__LINE__)\>"
++color brightyellow "[[:<:]](__FILE__|__LINE__)[[:>:]]"
+ ## Regular expressions
+ color brightmagenta "/([^/]|(\\/))*/[iomx]*" "%r\{([^}]|(\\}))*\}[iomx]*"
+ ## Shell command expansion is in `backticks` or like %x{this}.  These are
