@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/11/13 12:51:15 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2006/12/15 15:11:41 espie Exp $
 
 COMMENT=	"project management tool"
 
@@ -36,7 +36,8 @@ CONFIGURE_ARGS+=${MODKDE_CONFIGURE_ARGS} \
 		--enable-dependency-tracking \
 		--disable-final \
 		--with-docdir=${PREFIX}/share/examples/taskjuggler/
-CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV}
+CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV} \
+		ac_cv_prog_DOCBOOK_TO_MAN=no
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::x11/kde/pim3
