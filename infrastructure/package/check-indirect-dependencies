@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-indirect-dependencies,v 1.1 2006/12/10 17:34:41 sturm Exp $
+# $OpenBSD: check-indirect-dependencies,v 1.2 2006/12/15 09:58:55 sturm Exp $
 # Copyright (c) 2006 Nikolay Sturm <sturm@openbsd.org>.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -79,7 +79,7 @@ sub check_deps($)
 	close $dirdepends;
 }
 
-for my $kind ("build", "run") {
+for my $kind ("run") {
 	check_deps($kind);
 }
 
