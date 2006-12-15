@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/12/04 17:19:51 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/12/15 09:56:14 robert Exp $
+@newgroup _openvpn:577
+@newuser _openvpn:577:_openvpn:daemon:OpenVPN Daemon:/nonexistent:/sbin/nologin
 @man man/man8/openvpn.8
 sbin/openvpn
 share/examples/openvpn/

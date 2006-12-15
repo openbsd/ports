@@ -1,0 +1,10 @@
+$OpenBSD: patch-sample-config-files_xinetd-server-config,v 1.1 2006/12/15 09:56:14 robert Exp $
+--- sample-config-files/xinetd-server-config.orig	Tue Nov  1 12:06:10 2005
++++ sample-config-files/xinetd-server-config	Fri Dec 15 09:22:42 2006
+@@ -21,5 +21,5 @@ service openvpn_1
+         wait            = yes
+         user            = root
+         server          = /root/openvpn/openvpn
+-        server_args     = --inetd --dev tun --ifconfig 10.4.0.2 10.4.0.1 --secret /root/openvpn/key --inactive 600 --user nobody
++        server_args     = --inetd --dev tun --ifconfig 10.4.0.2 10.4.0.1 --secret /root/openvpn/key --inactive 600 --user _openvpn
+ }

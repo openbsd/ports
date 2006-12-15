@@ -1,0 +1,14 @@
+$OpenBSD: patch-sample-config-files_server_conf,v 1.1 2006/12/15 09:56:14 robert Exp $
+--- sample-config-files/server.conf.orig	Fri Jan  6 22:49:27 2006
++++ sample-config-files/server.conf	Fri Dec 15 09:22:42 2006
+@@ -251,8 +251,8 @@ comp-lzo
+ #
+ # You can uncomment this out on
+ # non-Windows systems.
+-;user nobody
+-;group nobody
++;user _openvpn
++;group _openvpn
+ 
+ # The persist options will try to avoid
+ # accessing certain resources on restart

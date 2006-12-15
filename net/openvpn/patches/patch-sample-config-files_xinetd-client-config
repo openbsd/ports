@@ -1,0 +1,11 @@
+$OpenBSD: patch-sample-config-files_xinetd-client-config,v 1.1 2006/12/15 09:56:14 robert Exp $
+--- sample-config-files/xinetd-client-config.orig	Tue Nov  1 12:06:10 2005
++++ sample-config-files/xinetd-client-config	Fri Dec 15 09:22:42 2006
+@@ -6,6 +6,6 @@ dev tun
+ ifconfig 10.4.0.1 10.4.0.2
+ remote my-server
+ port 1194
+-user nobody
++user _openvpn
+ secret /root/openvpn/key
+ inactive 600

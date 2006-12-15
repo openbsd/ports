@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2006/04/05 11:49:36 bernd Exp $
+# $OpenBSD: Makefile,v 1.13 2006/12/15 09:56:14 robert Exp $
 # Original from: Jorge A. Cortes Montiel <jcortes@bsdcoders.org>
 
 COMMENT=	"easy-to-use, robust, and highly configurable VPN"
 
 VERSION=	2.0.6
 DISTNAME=	openvpn-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net security
 
 HOMEPAGE=	http://openvpn.net/
@@ -23,7 +24,6 @@ MASTER_SITES=	${HOMEPAGE}/release/
 LIB_DEPENDS=	lzo::archivers/lzo
 
 SEPARATE_BUILD=	concurrent
-USE_GMAKE=	Yes
 
 FAKE=		lib
 CONFIGURE_STYLE=gnu
@@ -41,7 +41,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${SAMPLES_DIR}/sample-scripts
 	${INSTALL_DATA_DIR} ${SAMPLES_DIR}/easy-rsa
 	@rm -rf ${WRKSRC}/easy-rsa/Windows
-	${INSTALL_DATA} ${WRKSRC}/sample-config-files/* ${SAMPLES_DIR}/sample-config-files/
+	@find ${WRKSRC}/sample-config-files/ -type f \! -name "*.orig" -exec \
+		${INSTALL_DATA} {} ${SAMPLES_DIR}/sample-config-files/ \;
 	${INSTALL_DATA} ${WRKSRC}/sample-keys/* ${SAMPLES_DIR}/sample-keys/
 	${INSTALL_DATA} ${WRKSRC}/sample-scripts/* ${SAMPLES_DIR}/sample-scripts/
 	@find ${WRKSRC}/easy-rsa -type f -exec perl -pi -e 's,#!/bin/bash,#!/bin/sh,g' {} \;

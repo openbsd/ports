@@ -1,0 +1,14 @@
+$OpenBSD: patch-sample-config-files_client_conf,v 1.1 2006/12/15 09:56:14 robert Exp $
+--- sample-config-files/client.conf.orig	Tue Nov  1 12:06:10 2005
++++ sample-config-files/client.conf	Fri Dec 15 09:22:42 2006
+@@ -58,8 +58,8 @@ resolv-retry infinite
+ nobind
+ 
+ # Downgrade privileges after initialization (non-Windows only)
+-;user nobody
+-;group nobody
++;user _openvpn
++;group _openvpn
+ 
+ # Try to preserve some state across restarts.
+ persist-key
