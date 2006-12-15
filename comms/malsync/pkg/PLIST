@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/12/29 04:57:15 pvalchev Exp $
-bin/malsync
-share/doc/malsync/
-share/doc/malsync/README_AvantGo
-share/doc/malsync/README_malsync
