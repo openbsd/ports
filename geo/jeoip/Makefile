@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/17 19:20:34 ian Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/16 21:16:21 ian Exp $
 COMMENT=		"Java interface to GeoIP database"
 DISTNAME=		jeoip-0.5
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		geo net
 PKG_ARCH=		*
 
@@ -21,12 +22,11 @@ MODJAVA_VER=		1.5+
 MODJAVA_JRERUN=		Yes
 BUILD_DEPENDS=		:apache-ant->=1.6.1:devel/apache-ant:\
 			:junit->=3.8.1:java/junit
-RUN_DEPENDS=		:GeoIP-*:net/GeoIP\
-			:javaPathHelper-*:java/javaPathHelper
+REGRESS_DEPENDS=	::net/GeoIP
+RUN_DEPENDS=		::net/GeoIP\
+ 			:javaPathHelper-*:java/javaPathHelper
 MAKE_ENV=		JAVA_HOME=${JAVA_HOME} \
 			CLASSPATH=${LOCALBASE}/share/java/classes/junit-3.8.1/junit.jar
-
-NO_REGRESS=		Yes
 
 WRKDIST=		${WRKDIR}/jeoip
 
@@ -39,5 +39,8 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/java/${INSTALLDIR}
 	${INSTALL_DATA} ${WRKDIST}/jeoip.jar ${PREFIX}/share/java/${INSTALLDIR}
 	${INSTALL_SCRIPT} ${WRKDIST}/unix/jeoip ${PREFIX}/bin
+
+do-regress:
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ant regress
 
 .include <bsd.port.mk>
