@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/09/20 17:30:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/16 12:22:37 espie Exp $
 
 COMMENT=	"volume mixer module for xfce4-panel"
 V=		4.2.3
@@ -15,8 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
-		:xfce-mcs-manager-*:x11/xfce4/xfce-mcs-manager \
+BUILD_DEPENDS=	:xfce-mcs-manager-*:x11/xfce4/xfce-mcs-manager \
 		:xfce4-panel-*:x11/xfce4/xfce4-panel
 LIB_DEPENDS=	xfcegui4.>=3.4::x11/xfce4/libxfcegui4 \
 		xfce4mcs-client.>=2.3::x11/xfce4/libxfce4mcs \

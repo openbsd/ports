@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2006/11/11 14:26:03 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.37 2006/12/16 12:22:35 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,8 +11,6 @@ CATEGORIES=	www net
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 HOMEPAGE=	http://www.lighttpd.net/
-
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
 LIB_DEPENDS+=	pcre::devel/pcre \
 		lua.>=5.1::lang/lua

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2006/09/18 11:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2006/12/16 12:22:34 espie Exp $
 
 COMMENT=		"spreadsheet application for GNOME"
 
@@ -32,8 +32,7 @@ MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnumeric/1.4/}
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
-			:scrollkeeper-*:textproc/scrollkeeper \
+BUILD_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \

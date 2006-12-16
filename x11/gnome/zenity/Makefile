@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/11/20 08:07:40 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2006/12/16 12:22:36 espie Exp $
 
 COMMENT=		"dialogs for Gnome"
 
@@ -22,8 +22,7 @@ WANTLIB=	ICE SM X11 art_lgpl_2 \
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/zenity/2.8/}
 EXTRACT_SUFX=		.tar.bz2
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
-			:p5-XML-Parser-*:textproc/p5-XML-Parser \
+BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser \
 			:scrollkeeper-*:textproc/scrollkeeper
 
 LIB_DEPENDS=		gnomecanvas-2::x11/gnome/libgnomecanvas \

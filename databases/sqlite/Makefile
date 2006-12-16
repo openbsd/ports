@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/11/20 18:32:38 bernd Exp $
+# $OpenBSD: Makefile,v 1.16 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=	"Embedded SQL implementation"
 DISTNAME=	sqlite-2.8.17
@@ -20,7 +20,6 @@ AUTOCONF_VERSION=2.59
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 WANTLIB=	c ncurses readline
 
 FLAVORS=no_tcl

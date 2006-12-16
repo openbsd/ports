@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/11/20 09:21:09 bernd Exp $
+# $OpenBSD: Makefile,v 1.15 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=	"image manipulation library"
 
@@ -17,7 +17,6 @@ WANTLIB=		X11 Xext c freetype m z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=enlightenment/}
 
-BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS+=	jpeg.>=62::graphics/jpeg \
 		gif.>=5::graphics/libungif \
 		png.>=2::graphics/png \

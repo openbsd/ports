@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/08/01 22:55:53 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=	"basic utility library for xfce4"
 V=		4.2.3.2
@@ -21,7 +21,6 @@ USE_LIBTOOL=	Yes
 
 WANTLIB=	c
 MODULES=	devel/gettext
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	glib-2.0.>=400.8,gobject-2.0.>=400.8::devel/glib2
 
 CONFIGURE_STYLE=gnu

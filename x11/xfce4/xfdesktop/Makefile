@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/09/18 12:23:06 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2006/12/16 12:22:37 espie Exp $
 
 COMMENT=	"xfce4 desktop background manager"
 V=		4.2.3
@@ -15,8 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
-		:xfce-mcs-manager-*:x11/xfce4/xfce-mcs-manager \
+BUILD_DEPENDS=	:xfce-mcs-manager-*:x11/xfce4/xfce-mcs-manager \
 		:xfce4-panel-*:x11/xfce4/xfce4-panel
 LIB_DEPENDS=	xfcegui4.>=3.3::x11/xfce4/libxfcegui4 \
 		xfce4mcs-client.>=2.3::x11/xfce4/libxfce4mcs \

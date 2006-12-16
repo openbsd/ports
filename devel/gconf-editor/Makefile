@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2006/10/15 20:30:55 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.17 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=		"editor for the GConf configuration system"
 
@@ -25,8 +25,7 @@ WANTLIB=	ORBit-2 X11 Xext Xrender atk-1.0 c m SM \
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gconf-editor/2.10/}
 EXTRACT_SUFX=		.tar.bz2
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
-			:p5-XML-Parser-*:textproc/p5-XML-Parser \
+BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser \
 			:scrollkeeper-*:textproc/scrollkeeper
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
 LIB_DEPENDS=		gconf-2::devel/gconf2 \

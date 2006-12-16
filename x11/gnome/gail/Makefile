@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2006/09/18 12:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2006/12/16 12:22:35 espie Exp $
 
 COMMENT=		"GNOME Accessibility Implementation Library"
 
@@ -24,7 +24,6 @@ WANTLIB=	X11 Xext Xrender fontconfig freetype m z cairo glitz png \
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS= 		atk-1.0.>=800.0::devel/atk \
 			gnomecanvas-2::x11/gnome/libgnomecanvas
 

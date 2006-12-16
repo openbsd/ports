@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2006/09/18 12:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2006/12/16 12:22:35 espie Exp $
 
 COMMENT=		"Boring window manager for the adult in you."
 
@@ -26,8 +26,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
-			:p5-XML-Parser-*:textproc/p5-XML-Parser
+BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=		gconf-2::devel/gconf2 \
 			startup-notification-1::devel/startup-notification
 

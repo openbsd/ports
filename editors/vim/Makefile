@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2006/12/14 09:07:56 steven Exp $
+# $OpenBSD: Makefile,v 1.77 2006/12/16 12:22:33 espie Exp $
 
 COMMENT-main=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
@@ -104,7 +104,6 @@ WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xpm Xt
 LD+=		-pthread
 CC+=		-pthread
 LIB_DEPENDS+=	gdk-x11-2.0.>=0.11,gdk_pixbuf-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2
-BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 CONFIGURE_ARGS+=--enable-gui="gtk2" --with-x --enable-fontset --enable-xim --disable-gtk-check --enable-gtk2-check
 USE_X11=	Yes
 WANTLIB+=	ICE SM X11 Xext Xrender Xt fontconfig freetype m z\

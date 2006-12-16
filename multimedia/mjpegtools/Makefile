@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/12/02 20:24:17 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2006/12/16 12:22:34 espie Exp $
 
 COMMENT=		"tools to edit/modify/encode video streams"
 
@@ -32,8 +32,6 @@ WANTLIB=		X11 Xext Xrender c cairo fontconfig \
 			freetype glitz m pthread stdc++ usbhid z
 
 MODULES+=		devel/gettext
-
-BUILD_DEPENDS=		::devel/pkgconfig
 
 LIB_DEPENDS=		SDL.>=2:sdl-*-!no_x11:devel/sdl \
 			dv.>=4::multimedia/libdv \

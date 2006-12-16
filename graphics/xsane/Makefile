@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/20 17:54:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/16 12:22:34 espie Exp $
 
 COMMENT=	"scanner frontend for SANE"
 
@@ -28,7 +28,6 @@ WANTLIB=	freetype c pthread m fontconfig X11 z gphoto2.>=2 \
 		usb.>=8 jpeg.>=62 atk-1.0 png.>=5 gobject-2.0
 
 MODULES=	gettext
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		sane.>=1::graphics/sane-backends
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/20 08:07:41 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2006/12/16 12:22:35 espie Exp $
 
 COMMENT=	"small utility which displays system activity."
 
@@ -23,7 +23,6 @@ MASTER_SITES=	${HOMEPAGE}/downloads/
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
 USE_X11=	Yes
 NO_REGRESS=	Yes

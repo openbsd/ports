@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/09/18 12:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/12/16 12:22:36 espie Exp $
 # XXX hardcoded apm list
 
 COMMENT=	"window bar for holding application launchers"
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_FTP=	Yes
 
 USE_X11=	Yes
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	mb.>=1::x11/matchbox/libmatchbox
 RUN_DEPENDS=	:matchbox-common-*:x11/matchbox/matchbox-common
 MODULES=	devel/gettext

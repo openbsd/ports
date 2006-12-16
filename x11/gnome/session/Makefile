@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/09/18 12:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2006/12/16 12:22:35 espie Exp $
 
 COMMENT=		"GNOME session"
 
@@ -27,8 +27,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xext \
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig \
-			:p5-XML-Parser-*:textproc/p5-XML-Parser \
+BUILD_DEPENDS= 		:p5-XML-Parser-*:textproc/p5-XML-Parser \
 			:scrollkeeper-*:textproc/scrollkeeper
 LIB_DEPENDS= 		gnomeui-2::x11/gnome/libgnomeui
 

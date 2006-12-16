@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2006/11/24 17:52:52 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2006/12/16 12:22:33 espie Exp $
 
 COMMENT-main=		"C++ interface for glib2"
 COMMENT-docs=		"C++ interface for glib2 documentation"
@@ -26,8 +26,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/glibmm/2.10/}
 
 MULTI_PACKAGES=		-main -docs
-
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 
 MODULES=		devel/gettext
 LIB_DEPENDS=		sigc-2.0:libsigc++-2.*:devel/libsigc++-2 \

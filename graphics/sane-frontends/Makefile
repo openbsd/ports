@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2006/12/16 12:22:34 espie Exp $
 
 COMMENT=	"API for accessing scanners, frontends"
 
@@ -27,7 +27,6 @@ WANTLIB=	c X11 m freetype fontconfig pthread tiff \
 		atk-1.0 usb gphoto2.>=2 gphoto2_port.>=5 cairo
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		sane.>=1::graphics/sane-backends
 

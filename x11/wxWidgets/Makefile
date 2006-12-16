@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/10/12 14:09:32 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2006/12/16 12:22:36 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -46,8 +46,7 @@ USE_LIBTOOL=	Yes
 USE_X11=	Yes
 VMEM_WARNING=	Yes
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
-		::devel/cppunit
+BUILD_DEPENDS=	::devel/cppunit
 LIB_DEPENDS=	mspack::archivers/libmspack \
 		SDL::devel/sdl \
 		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/09/18 11:40:06 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/12/16 12:22:32 espie Exp $
 
 COMMENT=		"Music Management Application"
 
@@ -29,8 +29,7 @@ WANTLIB=		ICE SM X11 Xext Xrender \
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=  	:pkgconfig-*:devel/pkgconfig \
-			:scrollkeeper-*:textproc/scrollkeeper \
+BUILD_DEPENDS=  	:scrollkeeper-*:textproc/scrollkeeper \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser \
 			:gstreamer-gnome-*:devel/gstreamer-plugins,-gnome
 LIB_DEPENDS= 		gstgconf-0.8::devel/gstreamer-plugins \

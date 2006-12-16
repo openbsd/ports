@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/10/28 11:19:21 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=		"GStreamer streaming media framework runtime"
 
@@ -23,8 +23,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		gettext
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
-			:bison-*:devel/bison
+BUILD_DEPENDS=		:bison-*:devel/bison
 LIB_DEPENDS=		glib-2.0.>=200.0,gmodule-2.0.>=200.0,gobject-2.0.>=200.0,gthread-2.0.>=200.0::devel/glib2 \
 			popt.>=0.3::devel/popt \
 			xml2.>=6::textproc/libxml

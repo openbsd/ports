@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2006/11/12 17:31:17 alek Exp $
+# $OpenBSD: Makefile,v 1.23 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=		"high-performance CORBA Object Request Broker"
 
@@ -22,7 +22,6 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		:pkgconfig->=0.14.0:devel/pkgconfig
 LIB_DEPENDS=		IDL-2::devel/libIDL \
 			glib-2.0,gmodule-2.0,gobject-2.0,gthread-2.0::devel/glib2 \
 			popt::devel/popt

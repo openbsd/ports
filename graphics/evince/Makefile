@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/09/18 11:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=	"document viewer for multiple document formats"
 
@@ -17,7 +17,6 @@ MASTER_SITES=	${MASTER_SITE_GNOME:=sources/evince/0.5/}
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser \
-		:pkgconfig-*:devel/pkgconfig \
 		:gnome-doc-utils-*:x11/gnome/doc-utils \
 		:ghostscript-*:print/ghostscript/gnu \
 		:teTeX_base-*:print/teTeX/base

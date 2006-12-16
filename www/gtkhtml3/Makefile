@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/09/18 12:00:00 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/12/16 12:22:35 espie Exp $
 
 COMMENT=		"lightweight HTML rendering/printing/editing engine"
 
@@ -35,8 +35,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
-			:p5-XML-Parser-*:textproc/p5-XML-Parser
+BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=		gailutil::x11/gnome/gail \
 			gnomeprintui-2-2::x11/gnome/libgnomeprintui \
 			gnomeui-2::x11/gnome/libgnomeui

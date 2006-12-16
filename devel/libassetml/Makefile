@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/12 14:00:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=	"library to share image and audio files between projects"
 
@@ -21,8 +21,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ofset/}
 WANTLIB=	c m z
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
-		::textproc/texi2html
+BUILD_DEPENDS=	::textproc/texi2html
 LIB_DEPENDS=	glib-2.0.>=0.8,gobject-2.0.>=0.8::devel/glib2 \
 		xml2.>=9::textproc/libxml \
 		popt::devel/popt

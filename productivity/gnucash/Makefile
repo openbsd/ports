@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/11/20 20:21:22 bernd Exp $
+# $OpenBSD: Makefile,v 1.14 2006/12/16 12:22:34 espie Exp $
 
 NOT_FOR_ARCHS=	${LP64_ARCHS}
 
@@ -69,14 +69,12 @@ BUILD_DEPENDS=	::devel/swig \
 		::databases/db/v4 \
 		::devel/slib-guile \
 		::devel/libtool \
-		::lang/guile \
-		::devel/pkgconfig
+		::lang/guile
 
 RUN_DEPENDS+=	::devel/slib \
 		::devel/slib-guile \
 		::devel/libtool \
-		::lang/guile \
-		::devel/pkgconfig
+		::lang/guile
 
 CFLAGS=-I${LOCALBASE}/include -I${X11BASE}/include -I${LOCALBASE}/share/libtool/libltdl -I${LOCALBASE}/include/libgtkhtml-1.1
 LDFLAGS=-pthread -L${LOCALBASE}/lib -L${X11BASE}/lib -lintl -liconv

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2006/03/09 03:02:44 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.41 2006/12/16 12:22:35 espie Exp $
 
 COMMENT=	"small & pretty window manager for 8 and more bits displays"
 
@@ -18,8 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xft Xrender c m fontconfig freetype stdc++
 
 MODULES=		converters/libiconv
-
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu

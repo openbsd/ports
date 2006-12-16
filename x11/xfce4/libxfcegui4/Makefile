@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/09/18 12:19:41 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/12/16 12:22:36 espie Exp $
 
 COMMENT=	"widget library for xfce4"
 V=		4.2.3
@@ -18,8 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
-		::databases/dbh \
+BUILD_DEPENDS=	::databases/dbh \
 		::textproc/libxml
 LIB_DEPENDS=	xfce4util.>=1.6::devel/libxfce4util \
 		atk-1.0.>=800.0::devel/atk \

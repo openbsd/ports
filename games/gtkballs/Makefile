@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2006/09/18 11:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=	"gtk+ clone of the lines ball logic game"
 
@@ -23,7 +23,6 @@ WANTLIB=		c fontconfig freetype m X11 \
 
 MODULES=	devel/gettext
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 
 NO_REGRESS=	Yes

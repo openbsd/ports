@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/09/18 12:19:41 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/12/16 12:22:36 espie Exp $
 
 COMMENT=	"configuration utility for openbox"
 
@@ -18,8 +18,6 @@ LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		glade-2.0.>=0.1::devel/libglade2 \
 		startup-notification-1::devel/startup-notification \
 		obparser,obrender::x11/openbox
-BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
-
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

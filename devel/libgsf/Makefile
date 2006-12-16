@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/11/26 00:22:16 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2006/12/16 12:22:33 espie Exp $
 
 COMMENT-main=		"GNOME Structured File library"
 COMMENT-gnome=		"GNOME specific extensions to libgsf"
@@ -27,8 +27,6 @@ MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgsf/1.11/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
-
-BUILD_DEPENDS=		:pkgconfig->=0.14.0:devel/pkgconfig
 
 LIB_DEPENDS=		bz2.>=10.2::archivers/bzip2 \
 			xml2.>=8.4::textproc/libxml \

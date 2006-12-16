@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2006/11/11 21:04:27 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2006/12/16 12:22:32 espie Exp $
 
 COMMENT=	"front-end to external cd audio rippers and mp3 encoders"
 
@@ -30,7 +30,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=grip/}
 
 MODULES=	devel/gettext
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gnomeui-2::x11/gnome/libgnomeui \
 		id3.>=3.8::audio/id3lib \
 		curl.>=3::net/curl \

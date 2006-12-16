@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2006/09/18 12:00:00 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2006/12/16 12:22:35 espie Exp $
 
 COMMENT=	"HTML editor for experienced web designers"
 
@@ -30,8 +30,7 @@ WANTLIB=		X11 atk-1.0 c m \
 
 MODULES=	devel/gettext
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
-		::misc/shared-mime-info
+BUILD_DEPENDS=	::misc/shared-mime-info
 LIB_DEPENDS=	gtk-x11-2.0.>=0.14,gdk-x11-2.0.>=0.14,gdk_pixbuf-2.0.>=0.14::x11/gtk+2 \
 		pcre::devel/pcre \
 		gnomeui-2::x11/gnome/libgnomeui

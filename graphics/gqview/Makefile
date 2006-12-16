@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2006/11/13 11:20:24 steven Exp $
+# $OpenBSD: Makefile,v 1.45 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=	"Gtk-based graphic file viewer"
 
@@ -24,7 +24,6 @@ WANTLIB=	X11 atk-1.0 c fontconfig cairo \
 MODULES=	devel/gettext
 
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu

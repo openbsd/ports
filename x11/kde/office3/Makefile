@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2006/12/03 11:00:34 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2006/12/16 12:22:36 espie Exp $
 
 COMMENT=		"office suite for KDE"
 
@@ -68,7 +68,6 @@ FLAVORS=debug
 FAKE_FLAGS=	${MAKE_FLAGS} TAR=tar DESTDIR=${WRKINST}
 
 SEPARATE_BUILD=	flavored
-BUILD_DEPENDS+=	::devel/pkgconfig
 
 MODKDE_VERSION=	3.5.3
 AUTOCONF?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure

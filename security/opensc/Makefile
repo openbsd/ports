@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/08/03 23:28:12 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/12/16 12:22:34 espie Exp $
 
 COMMENT=	"set of libraries and utilities to access smart cards"
 
@@ -30,7 +30,6 @@ MASTER_SITES=	${HOMEPAGE}/files/opensc/
 
 WANTLIB=	readline crypto termcap c pthread
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	openct.>=1::security/openct
 
 USE_GMAKE=	Yes

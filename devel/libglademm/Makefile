@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/26 00:49:22 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/16 12:22:33 espie Exp $
 
 COMMENT-main=	"C++ bindings for libglade"
 COMMENT-docs=	"C++ bindings for libglade documentation"
@@ -23,8 +23,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/libglademm/2.6/}
 
 MULTI_PACKAGES=	-main -docs
-
-BUILD_DEPENDS=	:pkgconfig->=0.9.0:devel/pkgconfig
 
 PKG_ARCH-docs=	*
 LIB_DEPENDS-docs=

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2006/12/16 12:22:34 espie Exp $
 
 COMMENT=		"mail notification for freedesktop.org-compliant system trays"
 DISTNAME=		mail-notification-1.0
@@ -18,8 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://savannah.nongnu.org/download/mailnotify/
 
 MODULES=		devel/gettext 
-BUILD_DEPENDS+=         :pkgconfig-*:devel/pkgconfig \
-			:scrollkeeper-*:textproc/scrollkeeper \
+BUILD_DEPENDS+=         :scrollkeeper-*:textproc/scrollkeeper \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS+=		:scrollkeeper-*:textproc/scrollkeeper \
 			:gnome-icon-theme-*:x11/gnome/icon-theme

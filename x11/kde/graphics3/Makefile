@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2006/12/04 13:44:04 bernd Exp $
+# $OpenBSD: Makefile,v 1.68 2006/12/16 12:22:36 espie Exp $
 
 COMMENT-main=		"K Desktop Environment, graphic applications"
 COMMENT-kamera=		"KDE interface to digital cameras"
@@ -27,8 +27,7 @@ SHARED_LIBS +=	kimageviewer         1.0      # .0.0
 SHARED_LIBS +=	kmultipage           1.0      # .0.0
 SHARED_LIBS +=	kscan                2.0      # .1.0
 
-BUILD_DEPENDS=		::print/teTeX/base \
-			:pkgconfig-*:devel/pkgconfig
+BUILD_DEPENDS=		::print/teTeX/base
 LIB_DEPENDS=		kdecore.>=6,DCOP,kio,kwalletclient,kdefx,kdeui,kdesu::x11/kde/libs3
 WANTLIB=		X11 art_lgpl_2 pthread ICE png util jpeg z SM Xext \
 			m idn iconv

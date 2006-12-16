@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2006/11/24 22:53:03 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2006/12/16 12:22:33 espie Exp $
 
 COMMENT-main=	"Embedded SQL implementation"
 COMMENT-tcl=	"TCL bindings for Sqlite3"
@@ -19,8 +19,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
 WANTLIB=	c ncurses readline
 

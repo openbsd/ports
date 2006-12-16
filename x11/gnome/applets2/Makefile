@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2006/11/26 11:35:12 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2006/12/16 12:22:35 espie Exp $
 
 COMMENT-main=		"applets for use with the GNOME panel"
 COMMENT-battstat=	"GNOME applet for monitoring battery level"
@@ -32,8 +32,7 @@ WANTLIB=		ICE ORBit-2 ORBitCosNaming-2 SM X11 Xext \
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig \
-			:scrollkeeper-*:textproc/scrollkeeper \
+BUILD_DEPENDS= 		:scrollkeeper-*:textproc/scrollkeeper \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
 			:hicolor-icon-theme-*:x11/hicolor-icon-theme

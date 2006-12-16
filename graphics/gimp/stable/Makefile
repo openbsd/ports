@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2006/10/12 11:08:28 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=	"GNU Image Manipulation Program"
 
@@ -21,8 +21,7 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/${DIR}/ \
 
 HOMEPAGE=	http://www.gimp.org/
 
-BUILD_DEPENDS=	:pkgconfig->=0.12.0p1:devel/pkgconfig \
-		:p5-XML-Parser-*:textproc/p5-XML-Parser
+BUILD_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS=    :wget-*:net/wget
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		aa.>=1.3::graphics/aalib \

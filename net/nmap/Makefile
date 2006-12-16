@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2006/09/18 11:59:59 espie Exp $
+# $OpenBSD: Makefile,v 1.67 2006/12/16 12:22:34 espie Exp $
 
 COMMENT=	"scan ports and fingerprint stack of network hosts"
 
@@ -39,7 +39,6 @@ LIB_DEPENDS+=	pcre::devel/pcre \
 ALL_TARGET=	nmap
 CONFIGURE_ARGS+=--without-nmapfe
 .else
-BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS+=	gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 
 USE_X11=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/11/22 19:02:03 bernd Exp $
+# $OpenBSD: Makefile,v 1.8 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=		"kde image plugins"
 CATEGORIES=		graphics x11 x11/kde
@@ -19,7 +19,6 @@ LIB_DEPENDS+=	lib/qt3/qt-mt.>=3.33::x11/qt3,mt \
 
 MODULES=	x11/kde
 
-BUILD_DEPENDS=	::devel/pkgconfig
 WANTLIB=	X11 Xext freetype util m c ICE Xrender SM pthread z GL stdc++ \
 		jpeg png pcre pcreposix iconv intl art_lgpl_2 tiff exif \
 		idn bz2 exslt lcms jbig xslt xml2 Xt gpg-error gcrypt jasper

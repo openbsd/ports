@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2006/12/16 12:22:34 espie Exp $
 
 COMMENT=	"beginner's drill tool to learn Japanese kana characters" 
 
@@ -21,7 +21,6 @@ MASTER_SITES=	http://clay.ll.pl/download/
 
 MODULES=	devel/gettext
 
-BUILD_DEPENDS=	::devel/pkgconfig
 LIB_DEPENDS=	gdk-x11-2.0.>=600.0,gdk_pixbuf-2.0.>=600.0,gtk-x11-2.0.>=600.0::x11/gtk+2 
 
 CONFIGURE_STYLE= gnu

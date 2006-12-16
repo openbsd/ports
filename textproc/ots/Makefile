@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/08/03 23:55:11 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/12/16 12:22:35 espie Exp $
 
 COMMENT=	"open source tool for summarizing texts"
 DISTNAME=	ots-0.4.2
@@ -17,8 +17,6 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	converters/libiconv \
 		devel/gettext
-
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
 LIB_DEPENDS=	glib-2.0.>=400.8::devel/glib2 \
 		popt.>=0.3::devel/popt \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/07/21 08:54:58 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/16 12:22:36 espie Exp $
 
 COMMENT=	"library for converting characters to X key-presses"
 DISTNAME=	libfakekey-0.1
@@ -18,7 +18,6 @@ PERMIT_PACKAGE_FTP=	Yes
 USE_LIBTOOL=	Yes
 USE_X11=	Yes
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 WANTLIB=	X11 Xtst
 
 CONFIGURE_STYLE=gnu

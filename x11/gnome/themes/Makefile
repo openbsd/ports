@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2005/05/27 07:08:41 marcm Exp $
+# $OpenBSD: Makefile,v 1.14 2006/12/16 12:22:35 espie Exp $
 
 COMMENT=		"themes collection for GNOME"
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
-			:pkgconfig-*:devel/pkgconfig \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS=		:gtk-engines2->=2.6.0:x11/gtk-engines2
 

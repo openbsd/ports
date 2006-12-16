@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/10/27 12:53:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=	"simple GTK+ text editor"
 
@@ -23,7 +23,6 @@ WANTLIB=	c freetype z fontconfig m X11 cairo \
 		gnomecanvas-2 art_lgpl_2 xml2
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		glib-2.0,gmodule-2.0,gobject-2.0::devel/glib2 \
 		gnomeprintui-2-2::x11/gnome/libgnomeprintui

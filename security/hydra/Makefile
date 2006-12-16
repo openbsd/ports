@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2006/11/25 08:55:18 steven Exp $
+# $OpenBSD: Makefile,v 1.29 2006/12/16 12:22:34 espie Exp $
 
 COMMENT-main=	"parallelized login hacker"
 COMMENT-gui=	"GTK frontend for hydra"
@@ -35,8 +35,6 @@ ALL_TARGET=	hydra pw-inspector
 INSTALL_TARGET=	install
 .else
 USE_X11=	Yes
-
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
 MULTI_PACKAGES+=-gui
 

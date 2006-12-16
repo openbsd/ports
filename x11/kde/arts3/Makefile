@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2006/11/20 08:07:40 steven Exp $
+# $OpenBSD: Makefile,v 1.57 2006/12/16 12:22:36 espie Exp $
 
 COMMENT=		"K Desktop Environment, aRTs"
 CATEGORIES=		x11 x11/kde
@@ -33,8 +33,6 @@ LIB_DEPENDS= 	audiofile::devel/libaudiofile \
 		esd::audio/esound
 
 SEPARATE_BUILD=flavored
-
-BUILD_DEPENDS=	::devel/pkgconfig
 
 CONFIGURE_ENV=LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	${ENABLE_SHARED} --enable-static

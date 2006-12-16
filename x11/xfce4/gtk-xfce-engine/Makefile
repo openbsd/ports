@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2006/09/18 12:19:41 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2006/12/16 12:22:36 espie Exp $
 
 COMMENT=	"theme engine for GTK2"
 V=		4.2.3.1
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk-x11-2.0.>=600.0,gdk_pixbuf-2.0.>=600.0,gtk-x11-2.0.>=600.0::x11/gtk+2
 RUN_DEPENDS=	:xfwm4-*:x11/xfce4/xfwm4
 WANTLIB=	X11 Xext Xrender atk-1.0 fontconfig freetype \

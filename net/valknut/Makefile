@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/08/01 18:38:23 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/16 12:22:34 espie Exp $
 
 COMMENT=	"Graphical Direct-Connect client"
 
@@ -20,7 +20,6 @@ MASTER_SITES=	${MASTER_SITE_BERLIOS:=dcgui/}
 
 MODULES=	converters/libiconv x11/qt3
 MODQT_MT=	Yes
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	dc::net/dclib \
 		jpeg::graphics/jpeg \
 		bz2::archivers/bzip2

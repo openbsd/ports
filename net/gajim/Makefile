@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/09/18 11:59:59 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/12/16 12:22:34 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,8 +23,7 @@ USE_GMAKE=	Yes
 
 MODULES=	devel/gettext
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
-		::textproc/intltool \
+BUILD_DEPENDS=	::textproc/intltool \
 		${RUN_DEPENDS}
 LIB_DEPENDS=	gtkspell::textproc/gtkspell \
 		python${PYTHON_VER}::lang/python/${PYTHON_VER}

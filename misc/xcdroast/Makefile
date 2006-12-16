@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2006/09/18 11:59:59 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2006/12/16 12:22:34 espie Exp $
 
 COMMENT=		"gtk-based frontend to cdrtools"
 DISTNAME=		xcdroast-0.98alpha15
@@ -23,7 +23,6 @@ USE_X11=	Yes
 
 MODULES=	devel/gettext
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 RUN_DEPENDS=	:cdrtools->=2.0:sysutils/cdrtools
 LIB_DEPENDS=	gdk_pixbuf-2.0.>=0.14,gdk-x11-2.0.>=0.14,gtk-x11-2.0.>=0.14::x11/gtk+2
 

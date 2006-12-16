@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/09/24 18:23:25 grange Exp $
+# $OpenBSD: Makefile,v 1.11 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=		"Free Unix Spectrum Emulator"
 DISTNAME=		fuse-0.7.0
@@ -18,7 +18,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fuse-emulator/}
 USE_X11=		Yes
 
 MODULES=		devel/gettext
-BUILD_DEPENDS=		::devel/pkgconfig
 LIB_DEPENDS=		glib-2.0.>=0.8::devel/glib2 \
 			spectrum.>=3::devel/libspectrum \
 			765.>=3::devel/lib765 \

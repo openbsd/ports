@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/09/18 12:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2006/12/16 12:22:36 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -24,7 +24,6 @@ WANTLIB=	X11 Xext Xrender atk-1.0 fontconfig m z png \
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gtk-engines/2.6/}
 EXTRACT_SUFX=		.tar.bz2
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		gdk-x11-2.0.>=600.0,gdk_pixbuf-2.0.>=600.0,gtk-x11-2.0.>=600.0::x11/gtk+2
 RUN_DEPENDS=		:hicolor-icon-theme-*:x11/hicolor-icon-theme
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2006/11/13 10:08:12 steven Exp $
+# $OpenBSD: Makefile,v 1.37 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=	"game where you deal drugs on the streets of NY"
 
@@ -19,7 +19,6 @@ WANTLIB=		c ncurses
 MODULES+=	gettext
 
 LIB_DEPENDS+=   glib-2.0::devel/glib2
-BUILD_DEPENDS+= :pkgconfig-*:devel/pkgconfig
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

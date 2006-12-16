@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2006/11/09 08:27:51 dim Exp $
+# $OpenBSD: Makefile,v 1.39 2006/12/16 12:22:37 espie Exp $
 
 COMMENT=		"screen saver and locker for the X Window System"
 
@@ -24,7 +24,6 @@ MASTER_SITES=		${HOMEPAGE}
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		gdk-x11-2.0,gdk_pixbuf-2.0,gdk_pixbuf_xlib-2.0,gtk-x11-2.0::x11/gtk+2 \
 			glade-2.0::devel/libglade2 \
 			xml2.>=6::textproc/libxml

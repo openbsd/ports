@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/08/03 23:15:58 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/16 12:22:34 espie Exp $
 
 COMMENT=	"implementation of the Lotus Sametime Community Client protocol"
 
@@ -22,7 +22,6 @@ CONFIGURE_ARGS=	--enable-mailme=no \
 		--enable-doxygen=no
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	glib-2.0.>=800.0::devel/glib2
 
 USE_LIBTOOL=	Yes

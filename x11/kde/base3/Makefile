@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2006/11/21 08:27:42 espie Exp $
+# $OpenBSD: Makefile,v 1.70 2006/12/16 12:22:36 espie Exp $
 
 COMMENT-main= 		"K Desktop Environment, basic applications"
 COMMENT-plugins=	"Konqueror nsplugins, essentially native JDK"
@@ -29,8 +29,6 @@ SHARED_LIBS +=	kasbar               2.0      # .1.0
 
 MULTI_PACKAGES=		-main -samba
 FLAVORS=		debug
-
-BUILD_DEPENDS=	::devel/pkgconfig
 
 LIB_DEPENDS=	kdecore.>=6,DCOP,kio,kdeui,kdefx,kdesu,kwalletclient::x11/kde/libs3
 WANTLIB=	ICE Xrender SM pthread util X11 m z png jpeg art_lgpl_2 Xext idn iconv

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/10/28 11:19:20 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=	"library providing routines to access Microsoft Word/Excel files"
 
@@ -19,7 +19,6 @@ WANTLIB=		gobject-2.0 m z
 
 MODULES=	devel/gettext
 
-BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS+=	glib-2.0::devel/glib2 \
 		xml2::textproc/libxml \
 		gsf-1::devel/libgsf,no_gnome \

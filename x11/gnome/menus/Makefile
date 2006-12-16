@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/09/18 12:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/12/16 12:22:35 espie Exp $
 
 COMMENT=		"Implementation of the FreeDesktop Desktop Menu Spec"
 
@@ -27,8 +27,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		:pkgconfig->=0.12.0p1:devel/pkgconfig \
-			:p5-XML-Parser-*:textproc/p5-XML-Parser
+BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=		gnomevfs-2::x11/gnome/vfs2
 
 USE_GMAKE=		Yes

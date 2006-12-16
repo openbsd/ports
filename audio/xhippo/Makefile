@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2006/09/18 11:40:07 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2006/12/16 12:22:32 espie Exp $
 
 COMMENT=	"generic playlist manager for UNIX"
 
@@ -20,7 +20,6 @@ WANTLIB=	X11 fontconfig freetype c m z \
 
 MASTER_SITES=	${MASTER_SITE_GNU:=xhippo/}
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
 		id3tag.>=2::audio/libid3tag
 

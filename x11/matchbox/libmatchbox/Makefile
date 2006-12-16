@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/09/18 10:21:48 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/12/16 12:22:36 espie Exp $
 
 COMMENT=	"matchbox base library"
 DISTNAME=	libmatchbox-1.8
@@ -18,7 +18,6 @@ PERMIT_PACKAGE_FTP=	Yes
 USE_LIBTOOL=	Yes
 USE_X11=	Yes
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	pango-1.0.>=800.1,pangoft2-1.0.>=800.1,pangoxft-1.0.>=800.1::devel/pango \
 		jpeg.>=62::graphics/jpeg \
 		png.>=3::graphics/png

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2006/09/18 12:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2006/12/16 12:22:36 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -22,7 +22,6 @@ WANTLIB=	X11 atk-1.0 fontconfig m \
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=thinice/}
 
-BUILD_DEPENDS=		:pkgconfig->=0.9.0:devel/pkgconfig
 LIB_DEPENDS=		gdk-x11-2.0.>=400.0,gdk_pixbuf-2.0.>=400.0,gtk-x11-2.0.>=400.0::x11/gtk+2
 
 MODULES=		devel/gettext

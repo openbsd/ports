@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/25 08:22:27 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=	"anti-grain geometry graphics library"
 
@@ -28,8 +28,7 @@ AUTOMAKE_VERSION=	1.9
 
 LIB_DEPENDS=	SDL.>=6::devel/sdl
 BUILD_DEPENDS=	:autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION} \
-		::devel/metaauto \
-		::devel/pkgconfig
+		::devel/metaauto
 
 SEPARATE_BUILD=	simple
 USE_X11=	Yes

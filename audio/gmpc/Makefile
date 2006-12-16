@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/11 21:04:27 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2006/12/16 12:22:32 espie Exp $
 
 COMMENT=		"gnome music player client"
 
@@ -31,8 +31,7 @@ USE_X11=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 
-BUILD_DEPENDS=		::devel/pkgconfig \
-			::textproc/p5-XML-Parser
+BUILD_DEPENDS=		::textproc/p5-XML-Parser
 
 CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ENV+= 	CPPFLAGS="-I${LOCALBASE}/include"

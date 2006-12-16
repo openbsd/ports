@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/11/13 13:01:37 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2006/12/16 12:22:35 espie Exp $
 
 COMMENT=		"message system"
 
@@ -17,7 +17,6 @@ WANTLIB=		ICE X11 SM c pthread
 
 MASTER_SITES=		${HOMEPAGE}releases/dbus/
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		expat.>=6::textproc/expat
 
 SEPARATE_BUILD=		simple

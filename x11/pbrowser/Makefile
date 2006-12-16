@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/11/13 13:01:37 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2006/12/16 12:22:36 espie Exp $
 
 COMMENT=		"graphical ports system frontend"
 
@@ -23,7 +23,6 @@ MASTER_SITES=		http://www.bytelabs.org/
 EXTRACT_SUFX=		.tgz
 
 MODULES=		devel/gettext
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig	
 LIB_DEPENDS=	        gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 	
 
 CFLAGS+=		-DIMAGEDIR=\"${PREFIX}/share/icons/pbrowser/\"

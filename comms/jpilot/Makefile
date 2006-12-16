@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2006/10/20 11:49:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=	"desktop organizer software for the palm pilot"
 
@@ -23,7 +23,6 @@ WANTLIB=	c crypto m X11 Xext Xrender fontconfig freetype png.>=5 \
 		gobject-2.0.>=400.8 pango-1.0.>=600.0 \
 		pangoft2-1.0.>=600.0
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	pisock.>=9::comms/pilot-link \
 		gtk-x11-2.0.>=400.13,gdk-x11-2.0.>=400.13,gdk_pixbuf-2.0.>=400.13::x11/gtk+2
 

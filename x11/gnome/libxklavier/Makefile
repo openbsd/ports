@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/18 22:05:20 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2006/12/16 12:22:35 espie Exp $
 
 COMMENT=		"utility library for XKB"
 
@@ -19,7 +19,6 @@ MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libxklavier/2.2/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		converters/libiconv
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		xml2::textproc/libxml
 
 USE_GMAKE=		Yes

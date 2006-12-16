@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/09/18 11:50:39 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=		"a SOAP implementation in C"
 
@@ -23,8 +23,6 @@ EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		glib-2.0,gobject-2.0,gthread-2.0::devel/glib2 \
 			xml2.>=7::textproc/libxml
-
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

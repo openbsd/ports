@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/11/17 23:31:45 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2006/12/16 12:22:34 espie Exp $
 
 COMMENT=	"environment for rapid engineering and scientific processing"
 
@@ -24,7 +24,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freemat/}
 
 MODULES=	x11/qt4 devel/gettext
 
-BUILD_DEPENDS=	::devel/pkgconfig
 LIB_DEPENDS=	avcall::devel/ffcall \
 		arpack.>=1::math/arpack \
 		blas.>=1::math/blas \

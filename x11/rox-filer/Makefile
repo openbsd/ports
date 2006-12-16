@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2006/12/07 19:46:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2006/12/16 12:22:36 espie Exp $
 
 COMMENT=		"GTK+-2 file manager with desktop features"
 
@@ -21,8 +21,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=rox/}
 EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
-		${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	gtk-x11-2.0.>=0.9,gdk_pixbuf-2.0.>=0.9,gdk-x11-2.0.>=0.9::x11/gtk+2 \
 		xml2::textproc/libxml
 RUN_DEPENDS=	::misc/shared-mime-info

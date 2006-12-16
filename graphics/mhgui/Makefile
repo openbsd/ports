@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/23 08:52:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/16 12:22:34 espie Exp $
 
 COMMENT=	"GUI widget library used in MakeHuman"
 
@@ -21,7 +21,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=makehuman/}
 
 WANTLIB=	GL GLU ICE SM X11 Xi Xmu m z
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	animorph::graphics/animorph \
 		glut.>=3::graphics/glut \
 		png.>=5::graphics/png

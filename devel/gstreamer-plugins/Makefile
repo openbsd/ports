@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2006/11/20 17:13:12 bernd Exp $
+# $OpenBSD: Makefile,v 1.23 2006/12/16 12:22:33 espie Exp $
 
 COMMENT-main=		"GStreamer Streaming-media framework plug-ins."
 
@@ -30,8 +30,6 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
 SHARED_ONLY=		Yes
-
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
@@ -77,6 +75,7 @@ PLUGINS=		arts audiofile cdda dvdnav dvdread esd faad flac \
 .if ${MACHINE_ARCH} != "sparc64"
 PLUGINS+=		a52
 .endif
+
 
 # setup pseudo-flavors and multi-packages
 .for PLUGIN in ${PLUGINS}

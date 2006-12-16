@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/12/16 09:35:11 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2006/12/16 12:22:34 espie Exp $
 
 COMMENT-main=	"PDF rendering library"
 COMMENT-qt=	"qt interface to PDF rendering library"
@@ -40,8 +40,6 @@ MAKE_FLAGS=	POPPLER_QT_CXXFLAGS='-pthread -I${MODQT_INCDIR}' \
 
 MODULES+=	x11/qt3
 .endif
-
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
 WANTLIB=	freetype fontconfig jpeg z 
 

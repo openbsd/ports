@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/01/08 00:29:37 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=	"free MPEG-2 video stream decoder"
 DISTNAME=	mpeg2dec-0.4.0b
@@ -21,8 +21,6 @@ WANTLIB=		X11 Xext Xv
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
-
-BUILD_DEPENDS=	:pkgconfig->=0.12.0p1:devel/pkgconfig
 
 WRKDIST=${WRKDIR}/mpeg2dec-0.4.0
 

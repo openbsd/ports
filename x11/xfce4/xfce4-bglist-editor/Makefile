@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/10/20 08:31:20 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/16 12:22:37 espie Exp $
 
 COMMENT=		"editor for XFCE's backdrop list"
 DISTNAME=		xfce4-bglist-editor-4.2.0
@@ -20,8 +20,7 @@ WANTLIB=		ICE SM X11 Xext Xrender fontconfig c freetype m \
 MASTER_SITES=		${MASTER_SITE_BERLIOS:=xfce-goodies/}
 
 MODULES=		devel/gettext
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
-			:xfce4-panel-*:x11/xfce4/xfce4-panel
+BUILD_DEPENDS=		:xfce4-panel-*:x11/xfce4/xfce4-panel
 LIB_DEPENDS=		xfcegui4.>=3.4::x11/xfce4/libxfcegui4 \
 			startup-notification-1::devel/startup-notification
 

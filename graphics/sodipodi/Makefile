@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/11/03 22:18:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2006/12/16 12:22:34 espie Exp $
 
 COMMENT=		"SVG vector drawing application"
 
@@ -23,7 +23,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sodipodi/}
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 			art_lgpl_2.>=5::graphics/libart \
 			popt.>=0.3::devel/popt \

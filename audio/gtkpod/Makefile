@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2006/10/18 18:02:13 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.17 2006/12/16 12:22:32 espie Exp $
 
 COMMENT=	"GTK+2 program to synchronize an Apple iPod"
 DISTNAME=	gtkpod-0.99.8
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=	Yes
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	atk-1.0.>=800.0::devel/atk \
 		id3tag.>=2::audio/libid3tag \
 		gpod.>=400.0::audio/libgpod \

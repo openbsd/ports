@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/11/12 19:38:15 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2006/12/16 12:22:34 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,8 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-BUILD_DEPENDS=	:gaim-2.0.0beta5:net/gaim \
-		:pkgconfig-*:devel/pkgconfig
+BUILD_DEPENDS=	:gaim-2.0.0beta5:net/gaim
 RUN_DEPENDS=	:gaim-2.0.0beta5:net/gaim
 
 NO_REGRESS=	Yes

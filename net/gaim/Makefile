@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2006/11/11 07:49:45 brad Exp $
+# $OpenBSD: Makefile,v 1.95 2006/12/16 12:22:34 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -35,8 +35,7 @@ LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		gadu::net/libgadu \
 		xml2::textproc/libxml
 
-BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig \
-		:p5-XML-Parser-*:textproc/p5-XML-Parser
+BUILD_DEPENDS+=	:p5-XML-Parser-*:textproc/p5-XML-Parser
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes

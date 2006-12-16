@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2006/12/02 20:24:17 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.12 2006/12/16 12:22:34 espie Exp $
 
 COMMENT=		"video stream processing tools"
 
@@ -21,8 +21,6 @@ MASTER_SITES=		http://www.jakemsr.com/transcode/ \
 
 FLAVORS=		lzo mjpegtools quicktime
 FLAVOR?=
-
-BUILD_DEPENDS+=		::devel/pkgconfig
 
 .if ${MACHINE_ARCH} == "i386"
 PKG_ARGS+=		-Di386=1

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/09/18 12:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/16 12:22:36 espie Exp $
 
 COMMENT=	"OpenGL extension to GTK+ 2.0 and later"
 
@@ -25,7 +25,6 @@ WANTLIB=	GL GLU ICE SM X11 Xext Xmu Xrender Xt m z \
 		gdk_pixbuf-2.0 gdk-x11-2.0 freetype fontconfig \
 		pangoft2-1.0 pangox-1.0 atk-1.0 glitz
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gtk-x11-2.0::x11/gtk+2
 
 USE_X11=	Yes

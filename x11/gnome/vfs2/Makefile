@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/09/18 12:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2006/12/16 12:22:36 espie Exp $
 
 COMMENT=		"GNOME Virtual File System"
 
@@ -18,8 +18,7 @@ LIB_DEPENDS=		bonobo-2,bonobo-activation::x11/gnome/libbonobo \
 			cdda_paranoia,cdda_interface::audio/cdparanoia \
 			gconf-2::devel/gconf2
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
-			:p5-XML-Parser-*:textproc/p5-XML-Parser \
+BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser \
 			:gnome-mime-data->=2.0.0:x11/gnome/mime-data
 RUN_DEPENDS=		:gnome-mime-data->=2.0.0:x11/gnome/mime-data \
 			:shared-mime-info-*:misc/shared-mime-info

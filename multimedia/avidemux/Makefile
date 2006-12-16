@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/06 16:20:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2006/12/16 12:22:34 espie Exp $
 
 COMMENT=	"free video editor"
 
@@ -25,7 +25,6 @@ WANTLIB=	freetype c stdc++ Xv ossaudio m X11 Xrender pthread \
 
 MODULES=	devel/gettext
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		vorbis.>=5,vorbisenc.>=2::audio/libvorbis \
 		mp3lame::audio/lame \

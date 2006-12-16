@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/11/13 13:01:37 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2006/12/16 12:22:36 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -30,8 +30,7 @@ WANTLIB=	X11 Xext Xrender atk-1.0 fontconfig freetype \
 
 MODULES=	devel/gettext lang/python
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
-		${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	glade-2.0::devel/libglade2
 RUN_DEPENDS=	:py-cairo->=1.0.2p1:graphics/py-cairo
 

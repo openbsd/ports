@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/08/03 23:15:57 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/12/16 12:22:34 espie Exp $
 
 COMMENT=	"icecast source for streaming Ogg Vorbis"
 
@@ -24,7 +24,6 @@ CONFIGURE_ARGS=	--program-suffix=2
 	
 USE_LIBTOOL=	Yes
 MODULES=	converters/libiconv
-BUILD_DEPENDS=	::devel/pkgconfig
 LIB_DEPENDS=	shout.>=3::net/libshout \
 		speex.>=4::audio/speex \
 		xml2.>=9::textproc/libxml

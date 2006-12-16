@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2006/09/18 12:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2006/12/16 12:22:36 espie Exp $
 
 COMMENT=		"GNOME help browser"
 
@@ -30,8 +30,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
-			:p5-XML-Parser-*:textproc/p5-XML-Parser
+BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS=		:scrollkeeper->=0.3.6:textproc/scrollkeeper \
 			:docbook-dsssl-*:textproc/docbook-dsssl
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \

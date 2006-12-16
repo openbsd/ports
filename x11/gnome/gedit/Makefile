@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/09/18 12:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2006/12/16 12:22:35 espie Exp $
 
 COMMENT=		"Lightweight GNOME text editor"
 DISTNAME=		gedit-2.8.3
@@ -30,8 +30,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
-			:p5-XML-Parser-*:textproc/p5-XML-Parser \
+BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser \
 			:scrollkeeper-*:textproc/scrollkeeper
 LIB_DEPENDS=		aspell.>=15.2::textproc/aspell/core \
 			eel-2::x11/gnome/eel \

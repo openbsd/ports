@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/09/18 12:19:39 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/12/16 12:22:35 espie Exp $
 
 COMMENT=	"window manipulation tool"
 
@@ -24,8 +24,7 @@ MASTER_SITES=	http://www.burtonini.com/computing/
 
 MODULES=	devel/gettext
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
-		:intltool-*:textproc/intltool \
+BUILD_DEPENDS=	:intltool-*:textproc/intltool \
 		:p5-XML-Parser-*:textproc/p5-XML-Parser
 
 LIB_DEPENDS=	wnck-1.>=16::devel/libwnck

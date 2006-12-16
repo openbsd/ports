@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/11/14 23:24:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2006/12/16 12:22:34 espie Exp $
 
 COMMENT=		"BitTorrent Library written in C++"
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}downloads/
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		sigc-2.0:libsigc++-2.*:devel/libsigc++-2
 
 USE_LIBTOOL=		Yes

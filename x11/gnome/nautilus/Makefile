@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2006/09/18 12:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2006/12/16 12:22:35 espie Exp $
 
 COMMENT=		"GNOME shell and file manager"
 
@@ -32,8 +32,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xext \
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig \
-			:p5-XML-Parser-*:textproc/p5-XML-Parser
+BUILD_DEPENDS= 		:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS=		::devel/desktop-file-utils
 LIB_DEPENDS=		eel-2.>=12.1::x11/gnome/eel \
 			gnome-desktop-2::x11/gnome/desktop \

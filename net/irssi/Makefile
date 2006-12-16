@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2006/09/18 11:59:59 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2006/12/16 12:22:34 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -26,7 +26,6 @@ WANTLIB=	c crypto m ncurses perl ssl util
 MODULES=	devel/gettext
 
 LIB_DEPENDS=	glib-2.0,gmodule-2.0::devel/glib2
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static

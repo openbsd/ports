@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2006/11/03 15:15:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.40 2006/12/16 12:22:36 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,8 +20,6 @@ USE_LIBTOOL=	Yes
 USE_X11=	Yes
 
 MODULES=	devel/gettext
-
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig	
 
 LIB_DEPENDS=	SDL_image.>=1.3::devel/sdl-image \
 		png.>=4.1::graphics/png \

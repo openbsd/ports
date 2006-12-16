@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/09/18 12:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2006/12/16 12:22:35 espie Exp $
 
 COMMENT=		"GNOME utility programs"
 
@@ -25,8 +25,7 @@ WANTLIB=	ICE ORBit-2 SM X11 Xext \
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-utils/2.10/}
 EXTRACT_SUFX=		.tar.bz2
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
-			:p5-XML-Parser-*:textproc/p5-XML-Parser
+BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=		gnomeui-2.>=200::x11/gnome/libgnomeui \
 			panel-applet-2::x11/gnome/panel \
 			gnomeprintui-2-2::x11/gnome/libgnomeprintui

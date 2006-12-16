@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2006/10/28 11:19:21 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=		"library for loading GLADE interface files at runtime"
 V=			2.5.1
@@ -25,7 +25,6 @@ WANTLIB=		X11 Xext Xrender m z \
 			pangocairo-1.0 cairo glitz png
 
 MODULES=		devel/gettext
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 			xml2.>=7:libxml->=2.6.16p6:textproc/libxml
 

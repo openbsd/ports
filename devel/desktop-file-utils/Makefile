@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/09/18 11:40:07 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=	"utilities for 'desktop' entries"
 
@@ -22,8 +22,6 @@ MODULES=	devel/gettext
 
 LIB_DEPENDS=	glib-2.0::devel/glib2 \
 		popt.>=0.3::devel/popt
-
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}

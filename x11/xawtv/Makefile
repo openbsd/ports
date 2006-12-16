@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/11/13 13:01:38 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2006/12/16 12:22:36 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 macppc amd64
 
@@ -23,7 +23,6 @@ WANTLIB=		ICE SM X11 Xaw Xext Xft Xinerama Xmu Xpm Xrandr \
 			Xrender Xt Xv Xxf86dga Xxf86vm c fontconfig freetype m \
 			ncurses ossaudio pthread
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	jpeg.>=62::graphics/jpeg
 
 .if ${MACHINE_ARCH} == "i386"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile,v 1.33 2006/12/16 12:22:34 espie Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc
 
@@ -29,8 +29,7 @@ USE_GMAKE=	Yes
 USE_X11=	Yes
 
 BUILD_DEPENDS=	::archivers/zip \
-		:jikes->=1.22p0:lang/jikes \
-		:pkgconfig->=0.19p0:devel/pkgconfig
+		:jikes->=1.22p0:lang/jikes
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		gmp.>=4.::devel/gmp \
 		audiofile::devel/libaudiofile \

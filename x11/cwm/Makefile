@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/11/20 13:07:20 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/12/16 12:22:35 espie Exp $
 
 COMMENT=	"calm window manager"
 DISTNAME=	cwm-3
@@ -6,8 +6,6 @@ CATEGORIES=	x11
 MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://monkey.org/~marius/cwm/
-
-BUILD_DEPENDS=	::devel/pkgconfig
 
 # BSD
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2006/11/29 19:49:33 robert Exp $
+# $OpenBSD: Makefile,v 1.106 2006/12/16 12:22:36 espie Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -130,7 +130,6 @@ CONFIGURE_ARGS+=--enable-gui \
 USE_X11=	Yes
 LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		mp3lame:lame-*:audio/lame
-BUILD_DEPENDS+=	:pkgconfig->=0.15.0p0:devel/pkgconfig
 WANTLIB+=	GL X11 Xext Xinerama Xv Xxf86dga Xxf86vm atk-1.0 \
 		cairo freetype fontconfig glib-2.0 gmodule-2.0 \
 		gobject-2.0 intl pango-1.0 pangocairo-1.0 \

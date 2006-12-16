@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/08/01 10:50:19 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/12/16 12:22:34 espie Exp $
 
 COMMENT=	"icecast source for streaming MP3"
 
@@ -27,7 +27,6 @@ CONFIGURE_ARGS=	--with-docdir=${LOCALBASE}/share/doc/ices \
 		--with-flac=${LOCALBASE}
 
 MODULES=	converters/libiconv
-BUILD_DEPENDS=	::devel/pkgconfig
 LIB_DEPENDS=	mp3lame:lame-*:audio/lame,no_x11 \
 		shout.>=3::net/libshout \
 		speex.>=4::audio/speex \

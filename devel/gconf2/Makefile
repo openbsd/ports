@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/10/28 11:19:20 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=		"configuration database system for GNOME"
 
@@ -16,7 +16,6 @@ EXTRACT_SUFX=           .tar.bz2
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		ORBit-2::devel/ORBit2 \
 			gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 			xml2.>=6::textproc/libxml

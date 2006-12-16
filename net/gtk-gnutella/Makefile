@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2006/11/13 12:51:14 steven Exp $
+# $OpenBSD: Makefile,v 1.33 2006/12/16 12:22:34 espie Exp $
 
 COMMENT=		"Gtk-based GUI client for the Gnutella Network"
 
@@ -22,7 +22,6 @@ WANTLIB=	X11 atk-1.0 c fontconfig.>=2 freetype.>=13 cairo \
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtk-gnutella/}
 EXTRACT_SUFX=	.tar.bz2
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		xml2::textproc/libxml
 

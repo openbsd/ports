@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2006/12/13 20:57:16 kurt Exp $
+# $OpenBSD: Makefile,v 1.27 2006/12/16 12:22:33 espie Exp $
 
 ONLY_FOR_ARCHS=		amd64 i386
 
@@ -57,8 +57,7 @@ MODULES=		java devel/gettext
 MODJAVA_VER=		1.5+
 
 BUILD_DEPENDS=		:mozilla-devel->=1.7.13p2:www/mozilla,-devel \
-			:apache-ant->=1.6.1:devel/apache-ant \
-			:pkgconfig-*:devel/pkgconfig
+			:apache-ant->=1.6.1:devel/apache-ant
 
 USE_GMAKE=		Yes
 USE_X11=		Yes

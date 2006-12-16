@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/07/08 21:03:54 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.11 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=	'digital camera library'
 CATEGORIES=	graphics devel
@@ -36,6 +36,5 @@ MODULES=		devel/gettext
 LIB_DEPENDS=		exif::graphics/libexif \
 			jpeg::graphics/jpeg \
 			usb::devel/libusb
-BUILD_DEPENDS=		::devel/pkgconfig
 
 .include <bsd.port.mk>

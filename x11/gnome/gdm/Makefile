@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2006/09/18 12:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2006/12/16 12:22:35 espie Exp $
 
 
 COMMENT=		"GNOME display manager"
@@ -27,8 +27,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xi Xdmcp Xext \
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gdm/2.6/}
 EXTRACT_SUFX=		.tar.bz2
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
-			:scrollkeeper-*:textproc/scrollkeeper \
+BUILD_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
 			:hicolor-icon-theme-*:x11/hicolor-icon-theme

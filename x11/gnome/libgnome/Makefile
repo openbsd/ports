@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/09/18 12:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2006/12/16 12:22:35 espie Exp $
 
 COMMENT=		"libraries for the GNOME project"
 
@@ -24,8 +24,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
-			:p5-XML-Parser-*:textproc/p5-XML-Parser
+BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=		esd.>=2.26::audio/esound \
 			gnomevfs-2::x11/gnome/vfs2 \
 			audiofile::devel/libaudiofile

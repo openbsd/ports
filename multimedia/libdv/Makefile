@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/12/02 20:24:17 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2006/12/16 12:22:34 espie Exp $
 
 COMMENT=		"Quasar DV codec"
 
@@ -15,8 +15,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libdv/}
-
-BUILD_DEPENDS=		::devel/pkgconfig
 
 USE_LIBTOOL=		Yes
 

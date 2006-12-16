@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/09/18 12:19:39 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2006/12/16 12:22:35 espie Exp $
 
 COMMENT=		"GNOME control center"
 
@@ -18,8 +18,7 @@ LIB_DEPENDS=		xklavier::x11/gnome/libxklavier \
 			metacity-private::x11/gnome/metacity \
 			nautilus-extension.>=1::x11/gnome/nautilus \
 			gstinterfaces-0.8.>=1.0::devel/gstreamer-plugins,minimal
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
-			:p5-XML-Parser-*:textproc/p5-XML-Parser
+BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS=		::devel/desktop-file-utils
 
 # GPL

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2006/12/16 12:22:34 espie Exp $
 
 COMMENT=	"flash rendering library"
 DISTNAME=	swfdec-0.2.2
@@ -21,7 +21,6 @@ WANTLIB=	X11 Xext Xrender atk-1.0 c fontconfig \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pthread usbhid z m cairo glitz png
 
-BUILD_DEPENDS+=	:pkgconfig->=0.12.0p1:devel/pkgconfig
 MODULES=	devel/gettext
 LIB_DEPENDS=	SDL::devel/sdl \
 		mad.>=2::audio/libmad \

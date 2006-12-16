@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/16 22:47:27 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/16 12:22:35 espie Exp $
 
 COMMENT=		"generic CSS parsing library for GNOME project"
 
@@ -19,7 +19,6 @@ MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libcroco/0.6/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		glib-2.0::devel/glib2 \
 			xml2::textproc/libxml
 

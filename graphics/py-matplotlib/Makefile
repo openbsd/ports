@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2006/12/16 12:22:34 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -32,8 +32,7 @@ RUN_DEPENDS=	::math/py-Numeric \
 		::x11/py-gtk2 \
 		::devel/py-tz \
 		::devel/py-dateutil
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		::devel/pkgconfig
+BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	png.>=3::graphics/png
 
 USE_X11=	Yes

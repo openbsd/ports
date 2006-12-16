@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/13 13:01:37 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/16 12:22:36 espie Exp $
 
 COMMENT=	"small EWMH compliant pager"
 
@@ -18,8 +18,6 @@ WANTLIB=		X11 Xext Xft Xrender c m fontconfig freetype
 
 MASTER_SITES=	http://onion.dynserv.net/~timo/files/
 EXTRACT_SUFX=	.tar.bz2
-
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
 CONFIGURE_STYLE=simple
 

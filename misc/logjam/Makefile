@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/09/18 11:59:59 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2006/12/16 12:22:34 espie Exp $
 
 COMMENT=	"gtk livejournal client"
 
@@ -22,7 +22,6 @@ MASTER_SITES=	http://logjam.danga.com/download/
 
 MODULES=	devel/gettext
 
-BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	glib-2.0,gobject-2.0,gmodule-2.0::devel/glib2 \
 		gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
 		curl.>=2::net/curl \

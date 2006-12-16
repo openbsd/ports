@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.3 2006/02/16 05:44:10 david Exp $
+#	$OpenBSD: Makefile,v 1.4 2006/12/16 12:22:36 espie Exp $
 
 COMMENT=	"Sample X Compositing Manager"
 
@@ -25,7 +25,5 @@ AUTOCONF_VERSION=	2.59
 USE_X11=		Yes
 
 SEPARATE_BUILD=		simple
-
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 
 .include <bsd.port.mk>

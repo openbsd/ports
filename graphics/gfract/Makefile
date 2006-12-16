@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/09/18 11:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=		"fractal program with GTK interface"
 DISTNAME=		gfract-0.33
@@ -23,7 +23,6 @@ WANTLIB=		X11 c fontconfig freetype m stdc++ z \
 			atk-1.0 pango-1.0 pangoft2-1.0 \
 			pangocairo-1.0 png cairo
 
-BUILD_DEPENDS=		::devel/pkgconfig
 LIB_DEPENDS=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 
 MODULES=		devel/gettext

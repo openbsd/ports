@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/09/18 11:59:59 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/12/16 12:22:34 espie Exp $
 
 COMMENT=		"Gnome2 MUD/Moo Client"
 
@@ -21,7 +21,6 @@ WANTLIB=		X11 atk-1.0 c m cairo \
 
 USE_X11=		Yes
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		glib-2.0,gthread-2.0::devel/glib2 \
 			gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 

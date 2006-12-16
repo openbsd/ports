@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/12/10 11:55:07 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=		"data backends for the Evolution mail/PIM suite"
 
@@ -37,7 +37,6 @@ WANTLIB=		ORBit-2 ORBitCosNaming-2 \
 MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:bison-*:devel/bison \
-			:pkgconfig-*:devel/pkgconfig \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser \
 			:openldap-client-*:databases/openldap \
 			:libgnomeui-*:x11/gnome/libgnomeui

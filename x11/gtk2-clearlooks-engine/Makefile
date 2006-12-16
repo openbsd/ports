@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/11/13 13:01:37 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2006/12/16 12:22:36 espie Exp $
 
 COMMENT=	"GTK+ 2.x engine based on Bluecurve"
 
@@ -26,7 +26,6 @@ WANTLIB=	Xext Xrender freetype m X11 fontconfig z png \
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	gdk-x11-2.0.>=600.10,gdk_pixbuf-2.0.>=600.10,gtk-x11-2.0.>=600.10::x11/gtk+2
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
 SHARED_ONLY=	Yes
 USE_LIBTOOL=	Yes

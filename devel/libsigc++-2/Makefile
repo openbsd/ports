@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/11/25 08:30:21 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2006/12/16 12:22:33 espie Exp $
 
 COMMENT-main=		"callback framework for C++"
 COMMENT-docs=		"callback framework for C++ documentation"
@@ -29,8 +29,6 @@ MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libsigc++/2.0/}
 MULTI_PACKAGES=		-main -docs
 
 PKG_ARCH-docs=		*
-
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 
 SEPARATE_BUILD=		concurrent
 USE_GMAKE=		Yes

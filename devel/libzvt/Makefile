@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2006/11/11 21:04:27 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=		"library for handling pseudo terminals"
 
@@ -23,7 +23,6 @@ WANTLIB=		X11 Xext Xrender c fontconfig freetype m \
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libzvt/2.0/}
 EXTRACT_SUFX=		.tar.bz2
 
-BUILD_DEPENDS=		:pkgconfig->=0.12.0p1:devel/pkgconfig
 LIB_DEPENDS=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 			art_lgpl_2.>=5::graphics/libart
 

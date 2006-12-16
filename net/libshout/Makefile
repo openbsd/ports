@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/11/20 20:00:04 bernd Exp $
+# $OpenBSD: Makefile,v 1.11 2006/12/16 12:22:34 espie Exp $
 
 COMMENT=	"library for communicating with an icecast server"
 
@@ -19,8 +19,7 @@ WANTLIB=	m ogg
 
 MASTER_SITES=	http://downloads.xiph.org/releases/libshout/
 
-BUILD_DEPENDS=	::devel/pkgconfig \
-		::audio/speex
+BUILD_DEPENDS=	::audio/speex
 LIB_DEPENDS=	vorbis.>=4::audio/libvorbis \
 		theora.>=1::multimedia/libtheora
 

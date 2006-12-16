@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2006/11/22 22:29:25 steven Exp $
+# $OpenBSD: Makefile,v 1.40 2006/12/16 12:22:35 espie Exp $
 
 COMMENT=		"window manager based on the original Blackbox code"
 
@@ -31,7 +31,6 @@ NO_REGRESS=		Yes
 
 SEPARATE_BUILD=		simple
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		Imlib2.>=2::graphics/imlib2
 
 CONFIGURE_ENV=		PKG_CONFIG_PATH="${X11BASE}/lib/pkgconfig"

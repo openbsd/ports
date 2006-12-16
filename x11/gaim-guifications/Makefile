@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/18 16:38:17 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/16 12:22:35 espie Exp $
 
 COMMENT=	"MSN style 'toaster' popups plugin for Gaim"
 
@@ -23,8 +23,7 @@ WANTLIB=	glib-2.0 X11 Xext Xrender glitz atk-1.0 fontconfig \
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=guifications/}
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=	:gaim-*:net/gaim \
-		:pkgconfig-*:devel/pkgconfig
+BUILD_DEPENDS=	:gaim-*:net/gaim
 RUN_DEPENDS=	:gaim-*:net/gaim
 
 CONFIGURE_STYLE=gnu

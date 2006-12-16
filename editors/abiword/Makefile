@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2006/12/02 11:14:20 steven Exp $
+# $OpenBSD: Makefile,v 1.61 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=	"free cross-platform WYSIWYG word processor"
 
@@ -10,8 +10,6 @@ CATEGORIES=	editors
 HOMEPAGE=	http://www.abisource.com/
 
 MODULES=	devel/gettext
-
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
 LIB_DEPENDS=	fribidi::devel/fribidi \
 		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/23 08:54:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=	"parametrical modeling of three-dimensional humanoid characters"
 
@@ -20,7 +20,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=makehuman/}
 
 WANTLIB=	GL GLU ICE SM X11 Xi Xmu c m stdc++ z
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 RUN_DEPENDS=	::graphics/aqsis
 LIB_DEPENDS=	animorph::graphics/animorph \
 		glut.>=3::graphics/glut \

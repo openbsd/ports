@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/09/18 10:21:49 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/12/16 12:22:36 espie Exp $
 
 COMMENT=	"pda style application launcher or item browser"
 DISTNAME=	matchbox-desktop-0.9.1
@@ -17,7 +17,6 @@ PERMIT_PACKAGE_FTP=	Yes
 USE_LIBTOOL=	Yes
 USE_X11=	Yes
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	mb.>=1::x11/matchbox/libmatchbox
 RUN_DEPENDS=	:matchbox-common-*:x11/matchbox/matchbox-common
 MODULES=	devel/gettext

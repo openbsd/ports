@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/14 10:03:05 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2006/12/16 12:22:32 espie Exp $
 
 # mips64 architecture does not support trampoline code yet
 NOT_FOR_ARCHS=		mips64
@@ -19,7 +19,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c ncurses
-BUILD_DEPENDS=		::devel/pkgconfig
 LIB_DEPENDS=		glib-2.0::devel/glib2
 
 MODULES=		devel/gettext

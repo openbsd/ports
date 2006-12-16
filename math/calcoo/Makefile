@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2006/11/13 12:53:08 steven Exp $
+# $OpenBSD: Makefile,v 1.26 2006/12/16 12:22:34 espie Exp $
 
 COMMENT=	"RPN and algebraic scientific calculator"
 
@@ -24,7 +24,6 @@ WANTLIB=	X11 c fontconfig freetype m atk-1.0.>=800.0 cairo \
 
 MODULES=	devel/gettext
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk_pixbuf-2.0.>=400.0,gdk-x11-2.0.>=400.0,gtk-x11-2.0.>=400.0::x11/gtk+2
 
 USE_X11=	Yes

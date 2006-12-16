@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/06/18 08:33:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=		"low-level event loop management library"
 
@@ -17,8 +17,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://humppa.nl/distfiles/
-
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu

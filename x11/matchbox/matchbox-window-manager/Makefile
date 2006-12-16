@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/09/18 12:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/12/16 12:22:36 espie Exp $
 
 COMMENT=	"window manager with a classic pda management policy"
 DISTNAME=	matchbox-window-manager-1.0
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_FTP=	Yes
 
 USE_X11=	Yes
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	mb.>=1::x11/matchbox/libmatchbox
 RUN_DEPENDS=	:matchbox-common-*:x11/matchbox/matchbox-common
 MODULES=	devel/gettext

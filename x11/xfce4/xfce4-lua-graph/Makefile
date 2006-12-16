@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.5 2006/09/25 03:01:46 pedro Exp $
+#	$OpenBSD: Makefile,v 1.6 2006/12/16 12:22:37 espie Exp $
 
 COMMENT=	"lua driven plugin for the xfce4 panel"
 DISTNAME=	xfce4-lua-graph-plugin-0.1
@@ -17,8 +17,7 @@ CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
-		:xfce4-panel-*:x11/xfce4/xfce4-panel
+BUILD_DEPENDS=	:xfce4-panel-*:x11/xfce4/xfce4-panel
 LIB_DEPENDS=	xfcegui4.>=3.4::x11/xfce4/libxfcegui4 \
 		xml2.>=9.0::textproc/libxml \
 		lua.>=5.1::lang/lua

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2006/10/26 21:40:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2006/12/16 12:22:36 espie Exp $
 
 COMMENT=	"small, fast & usable window manager"
 
@@ -13,7 +13,6 @@ HOMEPAGE=	http://icculus.org/openbox/
 MODULES=	devel/gettext
 LIB_DEPENDS+=	pango-1.0,pangoxft-1.0,pangoft2-1.0::devel/pango \
 		xml2.>=6::textproc/libxml
-BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

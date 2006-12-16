@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2006/11/25 20:12:10 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2006/12/16 12:22:35 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -34,8 +34,6 @@ USE_X11=	Yes
 .else
 WRKBUILD=	${WRKDIST}/server
 .endif
-
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 
 LIB_DEPENDS=		glib-2.0,gmodule-2.0,gthread-2.0::devel/glib2
 

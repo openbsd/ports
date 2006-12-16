@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2006/11/30 21:06:35 kurt Exp $
+# $OpenBSD: Makefile,v 1.112 2006/12/16 12:22:35 espie Exp $
 
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64 amd64 powerpc
 
@@ -49,8 +49,7 @@ MULTI_PACKAGES=	-main -devel
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
-		:zip->=2.3:archivers/zip \
-		:pkgconfig-*:devel/pkgconfig
+		:zip->=2.3:archivers/zip
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr
 WANTLIB=	X11 Xt atk-1.0 c cairo fontconfig freetype \

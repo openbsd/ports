@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2006/11/20 08:07:40 steven Exp $
+# $OpenBSD: Makefile,v 1.26 2006/12/16 12:22:36 espie Exp $
 
 COMMENT=		"GNOME Virtual File System"
 
@@ -17,8 +17,7 @@ LIB_DEPENDS=		gnome.>=36::x11/gnome/libs \
 			bz2::archivers/bzip2 \
 			gthread::devel/glib
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
-			:gnome-mime-data-*:x11/gnome/mime-data
+BUILD_DEPENDS=		:gnome-mime-data-*:x11/gnome/mime-data
 RUN_DEPENDS=		:gnome-mime-data-*:x11/gnome/mime-data
 
 # GPL

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2006/12/04 09:47:54 jolan Exp $
+# $OpenBSD: Makefile,v 1.26 2006/12/16 12:22:35 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
 SHARED_ONLY=	Yes
@@ -27,8 +27,7 @@ MODULES=	devel/gettext
 
 BUILD_DEPENDS=	:zip->=2.3:archivers/zip \
 		:unzip-*:archivers/unzip \
-		:libIDL-*:devel/libIDL \
-		:pkgconfig-*:devel/pkgconfig
+		:libIDL-*:devel/libIDL
 LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
 		png.>=3::graphics/png \
 		gdk-x11-2.0.>=600.0,gdk_pixbuf-2.0.>=600.0,gtk-x11-2.0.>=600.0::x11/gtk+2 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/13 16:31:07 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2006/12/16 12:22:34 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,8 +25,7 @@ WANTLIB=	freetype
 MODULES=	lang/python
 LIB_DEPENDS=	cairo.>=4::graphics/cairo
 RUN_DEPENDS=	:py-Numeric-*:math/py-Numeric
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		:pkgconfig-*:devel/pkgconfig
+BUILD_DEPENDS=	${RUN_DEPENDS}
 #USE_LIBTOOL=	Yes
 USE_X11=	Yes
 

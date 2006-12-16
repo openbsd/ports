@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/11/17 19:35:07 kurt Exp $
+# $OpenBSD: Makefile,v 1.11 2006/12/16 12:22:35 espie Exp $
 
 COMMENT=	"extremely lightweight and simple web browser for gnome"
 
@@ -24,7 +24,6 @@ EXTRACT_SUFX=	.tar.bz2
 MOZDIR=		mozilla
 
 BUILD_DEPENDS=	:mozilla-devel->=1.7.13p2:www/mozilla,-devel \
-		:pkgconfig-*:devel/pkgconfig \
 		:p5-XML-Parser-*:textproc/p5-XML-Parser \
 		:scrollkeeper-*:textproc/scrollkeeper
 RUN_DEPENDS=	:gnome-desktop-*:x11/gnome/desktop \

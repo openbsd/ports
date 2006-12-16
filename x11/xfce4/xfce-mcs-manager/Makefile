@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/09/18 12:19:41 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/12/16 12:22:36 espie Exp $
 
 COMMENT=	"settings manager for xfce4"
 V=		4.2.3
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	xfcegui4.>=3.4::x11/xfce4/libxfcegui4 \
 		xfce4mcs-client.>=2.3,xfce4mcs-manager.>=2.3::x11/xfce4/libxfce4mcs 
 WANTLIB=	ICE SM X11 Xext Xrender c fontconfig freetype m \

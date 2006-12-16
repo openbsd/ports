@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/09/18 12:19:41 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/12/16 12:22:37 espie Exp $
 
 COMMENT=	"monitors a chosen mountpoint for free disk space"
 DISTNAME=	xfce4-fsguard-plugin-0.2.1
@@ -14,8 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
-		:xfce4-panel-*:x11/xfce4/xfce4-panel
+BUILD_DEPENDS=	:xfce4-panel-*:x11/xfce4/xfce4-panel
 LIB_DEPENDS=	xfcegui4.>=3.4::x11/xfce4/libxfcegui4 \
 		xml2.>=9.0::textproc/libxml
 RUN_DEPENDS=	:xfce4-panel-*:x11/xfce4/xfce4-panel

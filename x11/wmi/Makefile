@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/16 21:09:46 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2006/12/16 12:22:36 espie Exp $
 
 COMMENT=	"window manager improved - key driven window manager"
 
@@ -19,9 +19,6 @@ WANTLIB=		ICE SM X11 Xext Xft Xrender c fontconfig freetype m \
 			stdc++
 
 MASTER_SITES=	${HOMEPAGE}/download/
-
-# not necessary, but to ensure consistent behaviour
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE=gnu

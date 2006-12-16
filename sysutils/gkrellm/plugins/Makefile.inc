@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.12 2006/11/13 12:51:15 steven Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2006/12/16 12:22:37 espie Exp $
 
 MAINTAINER?=		Peter Hessler <spambox@theapt.org>
 
@@ -17,8 +17,7 @@ WANTLIB?=		X11 atk-1.0 fontconfig \
 WANTLIB+=	${EXTRA_WANTLIB}
 .endif
 
-BUILD_DEPENDS+=	:gkrellm->=2.2.0:sysutils/gkrellm/gkrellm,-client \
-		:pkgconfig-*:devel/pkgconfig
+BUILD_DEPENDS+=	:gkrellm->=2.2.0:sysutils/gkrellm/gkrellm,-client
 RUN_DEPENDS+=	:gkrellm->=2.2.0:sysutils/gkrellm/gkrellm,-client
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}

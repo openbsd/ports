@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/10/28 10:30:41 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/12/16 12:22:32 espie Exp $
 
 COMMENT=	"audio sample rate conversion library"
 
@@ -21,7 +21,6 @@ MASTER_SITES=	${HOMEPAGE}
 
 WANTLIB=	c m
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	sndfile.>=1::audio/libsndfile
 
 CONFIGURE_STYLE=gnu

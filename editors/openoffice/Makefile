@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2006/12/14 20:40:28 robert Exp $
+# $OpenBSD: Makefile,v 1.42 2006/12/16 12:22:33 espie Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -71,7 +71,6 @@ LIB_DEPENDS-i18n-$l=
 BUILD_DEPENDS=	:zip-*:archivers/zip \
 		:unzip-*:archivers/unzip \
 		:bison-*:devel/bison \
-		:pkgconfig-*:devel/pkgconfig \
 		:tcsh-*:shells/tcsh \
 		:p5-Archive-Zip-*:archivers/p5-Archive-Zip \
 		::textproc/libxslt \

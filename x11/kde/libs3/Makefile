@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2006/11/20 23:48:04 espie Exp $
+# $OpenBSD: Makefile,v 1.75 2006/12/16 12:22:36 espie Exp $
 
 COMMENT-main=		"K Desktop Environment, libraries"
 COMMENT-cups=		"K Desktop Environment, cups support"
@@ -58,8 +58,6 @@ VMEM_WARNING=	Yes
 
 MULTI_PACKAGES=	-main -cups
 CONFIGURE_ARGS+= --enable-cups
-
-BUILD_DEPENDS= ::devel/pkgconfig
 
 LIB_DEPENDS=	art_lgpl_2::graphics/libart \
 		idn::devel/libidn

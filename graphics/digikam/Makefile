@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2006/11/20 09:22:24 bernd Exp $
+# $OpenBSD: Makefile,v 1.12 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=		"digital image kde application"
 CATEGORIES=		graphics x11 x11/kde
@@ -26,7 +26,6 @@ WANTLIB=	util m c ICE Xrender SM pthread z stdc++ \
 
 MODULES=	x11/kde
 
-BUILD_DEPENDS=		::devel/pkgconfig
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS+=		--tag=disable-static

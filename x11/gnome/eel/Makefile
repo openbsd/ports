@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2006/09/18 12:19:39 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2006/12/16 12:22:35 espie Exp $
 
 COMMENT=		"Eazel Extensions Library"
 
@@ -29,7 +29,6 @@ WANTLIB=	ICE ORBit-2 SM X11 Xext Xrender \
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 			gailutil.>=17::x11/gnome/gail \
 			gnome-desktop-2.>=4::x11/gnome/desktop \

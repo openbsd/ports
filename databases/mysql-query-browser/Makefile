@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/10/18 14:25:11 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=	"visual query tool for MySQL"
 
@@ -32,8 +32,7 @@ WANTLIB=	ICE SM X11 c crypto fontconfig freetype m \
 		pangomm-1.4 popt sigc-2.0 cairo
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
-		::textproc/p5-XML-Parser \
+BUILD_DEPENDS=	::textproc/p5-XML-Parser \
 		:mysql-gui-common->=5:devel/mysql-gui-common
 RUN_DEPENDS=	:mysql-gui-common->=5:devel/mysql-gui-common
 LIB_DEPENDS=	pcre::devel/pcre \

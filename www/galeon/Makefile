@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2006/11/17 19:41:58 kurt Exp $
+# $OpenBSD: Makefile,v 1.32 2006/12/16 12:22:35 espie Exp $
 
 COMMENT=	"GNOME web browser based on gecko"
 
@@ -30,7 +30,6 @@ MODULES=	devel/gettext
 
 BUILD_DEPENDS=	:mozilla->=1.7.13p2:www/mozilla \
 		:mozilla-devel->=1.7.13p2:www/mozilla,-devel \
- 		:pkgconfig-*:devel/pkgconfig \
 		:p5-XML-Parser-*:textproc/p5-XML-Parser \
 		:scrollkeeper->=0.3.12:textproc/scrollkeeper
 LIB_DEPENDS= 	gnome-desktop-2::x11/gnome/desktop \

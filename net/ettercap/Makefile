@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2006/09/18 11:59:59 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2006/12/16 12:22:34 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -26,8 +26,6 @@ FLAVOR?=
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-https
-
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--enable-gtk=no

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/11/24 18:42:20 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2006/12/16 12:22:36 espie Exp $
 
 COMMENT-main=		"C++ interface for gtk2+"
 COMMENT-docs=		"C++ interface for gtk2+ documentation"
@@ -27,8 +27,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gtkmm/2.8/}
 
 MULTI_PACKAGES=		-main -docs
-
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 
 WANTLIB-main=		X11 Xext Xrender atk-1.0 fontconfig freetype \
 			glib-2.0 gmodule-2.0 gobject-2.0 m z \

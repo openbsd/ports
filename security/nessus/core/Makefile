@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2006/09/18 11:59:59 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2006/12/16 12:22:34 espie Exp $
 
 COMMENT=	"network security scanner"
 DISTNAME=	nessus-core-${V}
@@ -17,7 +17,6 @@ MODULES=	devel/gettext
 WANTLIB+=	X11 atk-1.0 fontconfig freetype glib-2.0 \
 		cairo.>=4 gmodule-2.0 gobject-2.0 pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0
-BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 CONFIGURE_ARGS+=--enable-gtk
 .else

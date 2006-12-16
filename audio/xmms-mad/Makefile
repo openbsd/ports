@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/11/11 21:04:27 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2006/12/16 12:22:33 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xmms-mad/}
 
-BUILD_DEPENDS=	::devel/pkgconfig
 LIB_DEPENDS=	xmms.>=4::audio/xmms mad.>=2::audio/libmad \
 		id3tag.>=3::audio/libid3tag
 

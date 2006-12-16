@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2006/11/24 16:50:10 steven Exp $
+# $OpenBSD: Makefile,v 1.29 2006/12/16 12:22:33 espie Exp $
 
 COMMENT-main=		"general-purpose utility library"
 COMMENT-docs=		"glib2 documentation"
@@ -33,8 +33,6 @@ WANTLIB-main=		c
 PKG_ARCH-docs=		*
 LIB_DEPENDS-docs=
 RUN_DEPENDS-docs=
-
-BUILD_DEPENDS=          :pkgconfig-*:devel/pkgconfig
 
 # hppa's threads are broken (configure test gives Bus error)...
 .if (${MACHINE_ARCH} == "hppa")

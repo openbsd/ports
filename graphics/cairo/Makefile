@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/06/10 12:26:19 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=		"vector graphics library"
 
@@ -23,8 +23,6 @@ MASTER_SITES=		http://cairographics.org/releases/
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
-
-BUILD_DEPENDS+=		:pkgconfig-*:devel/pkgconfig
 
 LIB_DEPENDS=		png::graphics/png \
 			glitz::graphics/glitz

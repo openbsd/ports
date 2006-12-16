@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.3 2006/05/23 22:25:53 alek Exp $
+#	$OpenBSD: Makefile,v 1.4 2006/12/16 12:22:36 espie Exp $
 
 COMMENT=	"X11 Cursors themes"
 VERSION=	1.0.1
@@ -10,8 +10,7 @@ HOMEPAGE=	http://wiki.X.Org/
 
 MAINTAINER=	Matthieu Herrb <matthieu@openbsd.org>
 
-BUILD_DEPENDS=	:xcursorgen->=7:x11/xcursorgen \
-		:pkgconfig-*:devel/pkgconfig
+BUILD_DEPENDS=	:xcursorgen->=7:x11/xcursorgen
 
 # X11
 PERMIT_PACKAGE_CDROM=	Yes

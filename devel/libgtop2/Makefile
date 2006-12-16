@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2006/10/28 11:19:21 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=		"portable library for obtaining system information"
 
@@ -22,7 +22,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c kvm Xau
 
 MODULES=		devel/gettext
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		glib-2.0::devel/glib2 \
 			popt::devel/popt
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2006/12/16 08:57:16 matthieu Exp $
+# $OpenBSD: Makefile,v 1.45 2006/12/16 12:22:36 espie Exp $
 
 NOT_FOR_ARCHS=			${NO_SHARED_ARCHS}
 
@@ -39,7 +39,6 @@ LIB_DEPENDS=			glib-2.0.>=1000.0,gmodule-2.0.>=1000.0,gobject-2.0.>=1000.0::deve
 				tiff.>=35::graphics/tiff \
 				png.>=3::graphics/png \
 				jpeg.>=62::graphics/jpeg
-BUILD_DEPENDS=          	:pkgconfig-*:devel/pkgconfig
 RUN_DEPENDS=			::x11/hicolor-icon-theme
 
 LIB_DEPENDS-docs=

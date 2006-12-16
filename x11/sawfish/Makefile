@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2006/09/18 12:19:41 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2006/12/16 12:22:36 espie Exp $
 
 COMMENT=	"extensible window manager"
 
@@ -22,8 +22,7 @@ WANTLIB=	ICE SM X11 Xext Xft.>=5 Xinerama Xrender.>=3 atk-1.0 c m \
 		gobject-2.0 gtk-x11-2.0 pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 rep.>=12 cairo
 
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		::devel/pkgconfig
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	:rep-gtk-*:x11/rep-gtk
 
 MODULES=	devel/gettext

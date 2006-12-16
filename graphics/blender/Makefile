@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/09/18 11:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2006/12/16 12:22:33 espie Exp $
 
 COMMENT=	"3D creation software"
 
@@ -23,7 +23,6 @@ PYTHON_VER=	2.4
 
 RUN_DEPENDS=	::graphics/tiff
 BUILD_DEPENDS=	:scons-*:devel/scons \
-		:pkgconfig-*:devel/pkgconfig \
 		::graphics/tiff
 LIB_DEPENDS=	png::graphics/png \
 		jpeg::graphics/jpeg \

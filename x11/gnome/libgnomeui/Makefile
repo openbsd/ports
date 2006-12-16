@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/11/20 08:07:40 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2006/12/16 12:22:35 espie Exp $
 
 COMMENT=		"user interface components for GNOME"
 
@@ -28,7 +28,6 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		bonoboui-2::x11/gnome/libbonoboui \
 			gnome-keyring::x11/gnome/keyring
 
