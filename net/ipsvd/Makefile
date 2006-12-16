@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/16 11:00:23 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2006/12/16 11:24:12 steven Exp $
 
 COMMENT=		"set of internet protocol service daemons for Unix"
 
@@ -9,6 +9,7 @@ HOMEPAGE=		http://www.smarden.org/ipsvd/
 
 MAINTAINER=		Lars Hansson <lars@unet.net.ph>
 
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
