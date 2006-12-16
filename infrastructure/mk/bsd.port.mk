@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.873 2006/12/11 15:52:14 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.874 2006/12/16 11:53:46 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1877,7 +1877,7 @@ ${_BULK_COOKIE}:
 ${_WRKDIR_COOKIE}:
 	@rm -rf ${WRKDIR}
 	@mkdir -p ${WRKDIR} ${WRKDIR}/bin ${DEPDIR}
-	@ln -s ${LOCALBASE}/bin/pkg-config ${WRKDIR}/bin
+#	@ln -s ${LOCALBASE}/bin/pkg-config ${WRKDIR}/bin
 	@${_MAKE_COOKIE} $@
 
 ${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE} ${_SYSTRACE_COOKIE}
