@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/08/01 23:39:08 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2006/12/16 12:47:40 espie Exp $
 
 COMMENT=		"library for layout and rendering of text"
 
@@ -26,7 +26,6 @@ EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		glib-2.0.>=1000.0,gmodule-2.0.>=1000.0,gobject-2.0.>=1000.0::devel/glib2 \
 			cairo.>=3::graphics/cairo
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 
 USE_X11=		Yes
 USE_GMAKE=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/06 17:43:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2006/12/16 12:47:40 espie Exp $
 
 COMMENT=	"ORBit2 Python bindings"
 
@@ -23,7 +23,6 @@ WANTLIB=	m util IDL-2 glib-2.0 gmodule-2.0 gobject-2.0 \
 		gthread-2.0 popt
 
 MODULES=	devel/gettext lang/python
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	python${MODPY_VERSION}:python-${MODPY_VERSION}*:lang/python/${MODPY_VERSION} \
 		ORBit-2,ORBit-imodule-2::devel/ORBit2
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/15 17:22:07 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/16 12:47:40 espie Exp $
 
 COMMENT=		"configuration file parser library"
 DISTNAME=		confuse-2.5
@@ -23,8 +23,6 @@ CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ENV+= 	CPPFLAGS="-I${LOCALBASE}/include"
 
 USE_LIBTOOL=		Yes
-
-BUILD_DEPENDS=		::devel/pkgconfig
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/libconfuse/tutorial/

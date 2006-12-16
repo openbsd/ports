@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/11/11 21:04:27 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2006/12/16 12:47:40 espie Exp $
 
 COMMENT=		"terminal emulatation library"
 
@@ -23,7 +23,6 @@ WANTLIB=		ICE SM X11 Xext Xft Xrender c fontconfig freetype \
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/vte/0.11/}
 EXTRACT_SUFX=		.tar.bz2
 
-BUILD_DEPENDS=		:pkgconfig->=0.14.0p1:devel/pkgconfig
 LIB_DEPENDS=		gdk-x11-2.0.>=0.8,gdk_pixbuf-2.0.>=0.8,gtk-x11-2.0.>=0.8::x11/gtk+2
 
 MODULES=		devel/gettext

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/10 22:03:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/16 12:47:40 espie Exp $
 
 COMMENT=	"small and lightweight IDE"
 
@@ -22,8 +22,6 @@ WANTLIB=	X11 stdc++ c m iconv intl \
 		glib-2.0 gmodule-2.0 gobject-2.0 \
 		fontconfig freetype atk-1.0 cairo \
 		pango-1.0 pangoft2-1.0 pangocairo-1.0
-
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 
