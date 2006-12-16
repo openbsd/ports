@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2006/12/14 10:22:03 steven Exp $
+@comment $OpenBSD: PLIST,v 1.4 2006/12/16 00:41:56 deanna Exp $
 @newgroup _apache2:576
 @newuser _apache2:576:576:daemon:Apache HTTP Server:/var/empty:/sbin/nologin
 include/apache2/
@@ -48,33 +48,33 @@ include/apache2/util_script.h
 include/apache2/util_time.h
 include/apache2/util_xml.h
 lib/httpd.exp
-@man man/man1/dbmmanage.1
+@man man/man1/dbmmanage2.1
 @man man/man1/htdbm.1
-@man man/man1/htdigest.1
-@man man/man1/htpasswd.1
+@man man/man1/htdigest2.1
+@man man/man1/htpasswd2.1
 @man man/man8/ab.8
-@man man/man8/apachectl.8
-@man man/man8/apxs.8
+@man man/man8/apachectl2.8
+@man man/man8/apxs2.8
 @man man/man8/htcacheclean.8
-@man man/man8/httpd.8
-@man man/man8/logresolve.8
-@man man/man8/rotatelogs.8
-@man man/man8/suexec.8
+@man man/man8/httpd2.8
+@man man/man8/logresolve2.8
+@man man/man8/rotatelogs2.8
+@man man/man8/suexec2.8
 sbin/ab
-sbin/apachectl
-sbin/apxs
+sbin/apachectl2
+sbin/apxs2
 sbin/checkgid
-sbin/dbmmanage
+sbin/dbmmanage2
 sbin/envvars
 sbin/envvars-std
 sbin/htcacheclean
 sbin/htdbm
-sbin/htdigest
-sbin/htpasswd
-sbin/httpd
+sbin/htdigest2
+sbin/htpasswd2
+sbin/httpd2
 sbin/httxt2dbm
-sbin/logresolve
-sbin/rotatelogs
+sbin/logresolve2
+sbin/rotatelogs2
 share/doc/apache2/
 share/doc/apache2/LICENSE
 share/doc/apache2/bind.html
@@ -861,8 +861,8 @@ share/examples/apache2/conf/extra/httpd-userdir.conf
 @sample /var/apache2/conf/extra/httpd-userdir.conf
 share/examples/apache2/conf/extra/httpd-vhosts.conf
 @sample /var/apache2/conf/extra/httpd-vhosts.conf
-share/examples/apache2/conf/httpd.conf
-@sample /var/apache2/conf/httpd.conf
+share/examples/apache2/conf/httpd2.conf
+@sample /var/apache2/conf/httpd2.conf
 share/examples/apache2/conf/magic
 @sample /var/apache2/conf/magic
 share/examples/apache2/conf/mime.types
