@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2005/02/23 22:00:33 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2006/12/16 11:00:23 steven Exp $
 
 COMMENT=		"set of internet protocol service daemons for Unix"
 
-DISTNAME=		ipsvd-0.10.1
+DISTNAME=		ipsvd-0.12.1
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.smarden.org/ipsvd/
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MASTER_SITES=		${HOMEPAGE}
-WRKDIST=		${WRKDIR}/net/ipsvd-0.10.1
+WRKDIST=		${WRKDIR}/net/${DISTNAME}
 WRKSRC=			${WRKDIST}/src
 SBINPROGRAMS=		ipsvd-cdb tcpsvd udpsvd
 MAN8PAGES=		ipsvd-cdb.8 tcpsvd.8 udpsvd.8
