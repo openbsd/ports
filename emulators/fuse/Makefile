@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2006/12/16 12:22:33 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2006/12/17 09:14:36 steven Exp $
 
 COMMENT=		"Free Unix Spectrum Emulator"
 DISTNAME=		fuse-0.7.0
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		emulators
 HOMEPAGE=		http://fuse-emulator.sourceforge.net/
 
@@ -33,11 +34,11 @@ FLAVORS=gtk
 FLAVOR?=
 
 .if ${FLAVOR:L:Mgtk}
-LIB_DEPENDS+=		gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
+LIB_DEPENDS+=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 CONFIGURE_ARGS=		--with-gtk2
-WANTLIB+=		Xft Xinerama Xrender atk-1.0.0.0 fontconfig freetype \
-			gmodule-2.0.0.0 gobject-2.0.0.0 pango-1.0.0.0 \
-			pangox-1.0.0.0 pangoxft-1.0.0.0
+WANTLIB+=		Xrender atk-1.0 fontconfig freetype gmodule-2.0 \
+			gobject-2.0 pango-1.0 pangoft2-1.0 pangocairo-1.0 \
+			cairo glitz png z
 .else
 CONFIGURE_ARGS=		--without-gtk
 WANTLIB+=		ICE SM
