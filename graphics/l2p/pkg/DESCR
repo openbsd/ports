@@ -1,0 +1,3 @@
+L2P creates PNG images of mathematical expressions formatted in LaTeX.
+While it can convert a whole LaTeX document, it is designed to easily
+generate images from just a fragment of LaTeX code.
