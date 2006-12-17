@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/03/02 21:38:18 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/17 11:49:12 kili Exp $
 
 COMMENT=	"Extensible formatted print C library"
 
@@ -19,7 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
 REGRESS_TARGET=	test
-REGRESS_DEPENDS=${BUILD_DEPENDS}
 
 pre-build:
 	@cp ${FILESDIR}/Make.OpenBSD ${WRKSRC}
