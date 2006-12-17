@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2006/01/30 10:13:11 jsg Exp $
+# $OpenBSD: Makefile,v 1.30 2006/12/17 09:01:47 steven Exp $
 
 COMMENT=	"MIDI to WAV renderer and player"
 DISTNAME=	TiMidity++-2.13.2
-PKGNAME=	${DISTNAME:L:S/++//}
+PKGNAME=	${DISTNAME:L:S/++//}p0
 CATEGORIES=	audio
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=timidity/}
@@ -35,11 +35,10 @@ FLAVOR?=
 CONFIGURE_ARGS+=--enable-gtk
 MODULES=	devel/gettext
 USE_X11=	Yes
-LIB_DEPENDS+=	gdk-x11-2.0.0.11,gdk_pixbuf-2.0.0.11,gtk-x11-2.0.0.11::x11/gtk+2
-BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
-WANTLIB+=	X11 Xext Xft Xrender atk-1.0.0.0 fontconfig freetype \
-		glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 pango-1.0.0.0 \
-		pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 
+LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
+WANTLIB+=	X11 Xext Xrender atk-1.0 fontconfig freetype \
+		glib-2.0 gmodule-2.0 gobject-2.0 pango-1.0 \
+		pangoft2-1.0 pangocairo-1.0 glitz cairo png z
 .else
 CONFIGURE_ARGS+=--without-x
 .endif
