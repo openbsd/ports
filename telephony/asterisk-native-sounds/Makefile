@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/16 19:45:14 ian Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/17 01:54:08 ian Exp $
 
 PKG_ARCH=	*
 
@@ -16,6 +16,8 @@ MASTER_SITES=	http://mirror.astlinux.org/sounds/
 WRKDIST=	${WRKDIR}/sounds
 
 HOMEPAGE=	http://www.astlinux.org/index.php?option=com_content&task=view&id=38&Itemid=43
+
+MAINTAINER=		Ian Darwin <ian@openbsd.org>
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes
