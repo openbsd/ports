@@ -1,0 +1,5 @@
+FCGI::ProcManager is used to serve as a FastCGI process manager. By
+re-implementing it in perl, developers can more finely tune performance
+in their web applications, and can take advantage of copy-on-write
+semantics prevalent in UNIX kernel process management.
+

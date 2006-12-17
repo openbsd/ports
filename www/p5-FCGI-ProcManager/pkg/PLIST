@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1 2006/12/17 09:25:11 dassow Exp $
+${P5SITE}/FCGI/
+${P5SITE}/FCGI/ProcManager.pm
+@man man/man3p/FCGI::ProcManager.3p
