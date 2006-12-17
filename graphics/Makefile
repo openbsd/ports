@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.173 2006/11/24 08:29:12 steven Exp $
+# $OpenBSD: Makefile,v 1.174 2006/12/17 15:03:15 jasper Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -72,6 +72,7 @@
      SUBDIR += jpeg2ps
      SUBDIR += kimdaba
      SUBDIR += kipi-plugins
+     SUBDIR += l2p
      SUBDIR += lcms
      SUBDIR += libart
      SUBDIR += libcaca
