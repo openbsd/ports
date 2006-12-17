@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/22 02:58:44 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/17 20:13:33 kili Exp $
 
 COMMENT=		"extract the structure of a quoted mail message"
 
@@ -16,8 +16,8 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Text/}
 
-BUILD_DEPENDS=		::textproc/p5-Text-Autoformat
-RUN_DEPENDS=		${BUILD_DEPENDS}
+RUN_DEPENDS=		::textproc/p5-Text-Autoformat
+BUILD_DEPENDS=		${RUN_DEPENDS}
 
 CONFIGURE_STYLE=        perl
 

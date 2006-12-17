@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/09 07:22:17 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/17 20:13:33 kili Exp $
 
 COMMENT=	"organize data in tables"
 
@@ -15,8 +15,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Text/}
 
-BUILD_DEPENDS=	:p5-Text-Aligner->=0.03:textproc/p5-Text-Aligner
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	:p5-Text-Aligner->=0.03:textproc/p5-Text-Aligner
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE= perl
 

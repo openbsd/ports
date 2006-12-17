@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/12/06 17:21:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2006/12/17 20:13:33 kili Exp $
 
 COMMENT=	"defines RGB values for common color names"
 
@@ -14,8 +14,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-BUILD_DEPENDS=	::devel/p5-Module-Load
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	::devel/p5-Module-Load
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MODULES=	cpan
 CPAN_AUTHOR=	RRWO

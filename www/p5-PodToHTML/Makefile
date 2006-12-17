@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/04/15 17:58:57 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2006/12/17 20:13:33 kili Exp $
 
 COMMENT=	"generate HTML from files containing POD documentation"
 
@@ -14,8 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	:p5-HTML-Format->=1.23:www/p5-HTML-Format
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	:p5-HTML-Format->=1.23:www/p5-HTML-Format
+BUILD_DEPENDS=	${RUN_DEPENDS}
 REGRESS_DEPENDS=::www/p5-URI
 
 CONFIGURE_STYLE= perl

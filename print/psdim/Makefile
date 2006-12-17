@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/16 09:15:01 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/17 20:13:33 kili Exp $
 
 COMMENT=		"intelligent n-up printing"
 
@@ -18,8 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/download/
 
-BUILD_DEPENDS=		:ghostscript-*:print/ghostscript/gnu
-RUN_DEPENDS=		${BUILD_DEPENDS}
+RUN_DEPENDS=		:ghostscript-*:print/ghostscript/gnu
+BUILD_DEPENDS=		${RUN_DEPENDS}
 
 WANTLIB=		c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/09/23 18:05:31 pedro Exp $
+# $OpenBSD: Makefile,v 1.11 2006/12/17 20:13:33 kili Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,8 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_REGRESS=	Yes
 
-BUILD_DEPENDS=	:lua->=5.1:lang/lua
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	:lua->=5.1:lang/lua
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAKE_FILE=	makefile
 SHAREDIR=	${PREFIX}/share/lua/5.1

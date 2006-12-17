@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/06/30 08:29:04 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/17 20:13:33 kili Exp $
 
 COMMENT=	"module to parse the content of tables in HTML text"
 
@@ -16,8 +16,8 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=HTML/}
 
-BUILD_DEPENDS=	::www/p5-HTML-Parser
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	::www/p5-HTML-Parser
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE= perl
 
