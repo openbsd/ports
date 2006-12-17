@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib-src_portaudio_pa_unix_oss_pa_unix_oss_c,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
---- lib-src/portaudio/pa_unix_oss/pa_unix_oss.c.orig	Thu Nov 18 07:17:34 2004
-+++ lib-src/portaudio/pa_unix_oss/pa_unix_oss.c	Tue Jan 11 08:56:46 2005
-@@ -43,7 +43,8 @@
- #ifdef __linux__
- #include <linux/soundcard.h>
+$OpenBSD: patch-lib-src_portaudio_pa_unix_oss_pa_unix_oss_c,v 1.2 2006/12/17 12:12:59 ajacoutot Exp $
+--- lib-src/portaudio/pa_unix_oss/pa_unix_oss.c.orig	Sun Oct 29 01:05:50 2006
++++ lib-src/portaudio/pa_unix_oss/pa_unix_oss.c	Sat Dec  2 11:05:46 2006
+@@ -45,7 +45,8 @@
+ #elif defined(__FreeBSD__)
+ #include <sys/soundcard.h>
  #else
 -#include <machine/soundcard.h> /* JH20010905 */
 +#include <soundcard.h> /* JH20010905 */
@@ -11,7 +11,7 @@ $OpenBSD: patch-lib-src_portaudio_pa_unix_oss_pa_unix_oss_c,v 1.1.1.1 2006/01/12
  #endif
  
  
-@@ -217,11 +218,15 @@ error:
+@@ -219,11 +220,15 @@ error:
  }
  
  /*******************************************************************************************/
@@ -28,7 +28,7 @@ $OpenBSD: patch-lib-src_portaudio_pa_unix_oss_pa_unix_oss_c,v 1.1.1.1 2006/01/12
      /* Set format, channels, and rate in this order to keep OSS happy. */
      /* Set data format. FIXME - handle more native formats. */
      tmp = AFMT_S16_NE;
-@@ -271,18 +276,52 @@ PaError Pa_SetupDeviceFormat( int devHan
+@@ -273,18 +278,52 @@ PaError Pa_SetupDeviceFormat( int devHan
             return paHostError;
          }
      }

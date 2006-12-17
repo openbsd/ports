@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_Sequence_cpp,v 1.1 2006/12/17 12:12:59 ajacoutot Exp $
+--- src/Sequence.cpp.orig	Sun Dec 10 13:12:31 2006
++++ src/Sequence.cpp	Sun Dec 10 13:13:10 2006
+@@ -826,7 +826,8 @@ bool Sequence::Get(samplePtr buffer, sam
+                    sampleCount start, sampleCount len) const
+ {
+    if (start < 0 || start > mNumSamples ||
+-       start+len > mNumSamples)
++       start+len > mNumSamples ||
++       (format != mSampleFormat) || !buffer)
+       return false;
+    int b = FindBlock(start);
+ 
+@@ -860,6 +861,7 @@ bool Sequence::Set(samplePtr buffer, sam
+    if (format != mSampleFormat) {
+       temp = NewSamples(mMaxSamples, mSampleFormat);
+       wxASSERT(temp);
++      return false;
+    }
+ 
+    samplePtr silence = NULL;
+@@ -867,6 +869,7 @@ bool Sequence::Set(samplePtr buffer, sam
+       silence = NewSamples(mMaxSamples, format);
+       wxASSERT(silence);
+       ClearSamples(silence, format, 0, mMaxSamples);
++      return false;
+    }
+ 
+    int b = FindBlock(start);

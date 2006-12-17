@@ -1,13 +1,12 @@
-$OpenBSD: patch-lib-src_soundtouch_source_SoundTouch_Makefile_in,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
---- lib-src/soundtouch/source/SoundTouch/Makefile.in.orig	Sat Nov 26 18:33:39 2005
-+++ lib-src/soundtouch/source/SoundTouch/Makefile.in	Mon Dec 26 18:07:33 2005
-@@ -151,7 +151,8 @@ libSoundTouch_la_SOURCES = AAFilter.cpp 
+$OpenBSD: patch-lib-src_soundtouch_source_SoundTouch_Makefile_in,v 1.2 2006/12/17 12:12:59 ajacoutot Exp $
+--- lib-src/soundtouch/source/SoundTouch/Makefile.in.orig	Sat Dec  2 11:15:33 2006
++++ lib-src/soundtouch/source/SoundTouch/Makefile.in	Sat Dec  2 11:16:42 2006
+@@ -197,7 +197,7 @@ libSoundTouch_la_SOURCES = AAFilter.cpp 
  
  # ??? test for -fcheck-new in configure.ac
  # other compiler flags to add
--AM_CXXFLAGS = -O3 -fcheck-new -I../../include
-+# AM_CXXFLAGS = -O3
+-AM_CXXFLAGS = -O3 -msse -fcheck-new -I../../include
 +AM_CXXFLAGS = -I../../include -fcheck-new
- subdir = source/SoundTouch
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs
+ all: all-am
+ 
+ .SUFFIXES:

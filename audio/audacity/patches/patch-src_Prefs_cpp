@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_Prefs_cpp,v 1.1 2006/12/17 12:12:59 ajacoutot Exp $
+--- src/Prefs.cpp.orig	Sun Oct 29 02:05:29 2006
++++ src/Prefs.cpp	Sat Dec  9 20:20:04 2006
+@@ -58,9 +58,11 @@
+ #include <wx/config.h>
+ #include <wx/intl.h>
+ #include <wx/fileconf.h>
++#ifndef NO_PROJECT_LEVEL
+ #include <wx/filename.h>
+ 
+ #include "FileNames.h"
++#endif
+ 
+ #include "sndfile.h"
+ 
+@@ -159,11 +161,15 @@ void InitPreferences()
+    wxTheApp->SetVendorName(vendorName);
+    wxTheApp->SetAppName(appName);
+ 
++#ifdef NO_PROJECT_LEVEL
++   gPrefs = new wxConfig(appName);
++#else
+    wxFileName configFileName(FileNames::DataDir(), wxT("audacity.cfg"));
+ 
+    gPrefs = new wxFileConfig(appName, wxEmptyString,
+                              configFileName.GetFullPath(),
+                              wxEmptyString, wxCONFIG_USE_LOCAL_FILE);
++#endif
+       
+    wxConfigBase::Set(gPrefs);
+ 
