@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/17 01:54:08 ian Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/17 08:23:29 steven Exp $
 
 PKG_ARCH=	*
 
@@ -10,7 +10,7 @@ COMMENT=	"'native' (better) sound files for Asterisk open source PBX"
 # XXX Might someday do flavors other than ulaw
 
 DISTNAME=	asterisk-native-sounds-20060209-01-ulaw
-PKGNAME=	asterisk-native-sounds-1.2
+PKGNAME=	asterisk-native-sounds-1.2p0
 EXTRACT_SUFX=	.tar.bz2
 MASTER_SITES=	http://mirror.astlinux.org/sounds/
 WRKDIST=	${WRKDIR}/sounds
