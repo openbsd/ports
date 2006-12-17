@@ -1,0 +1,6 @@
+The Crypt::Blowfish_PP module provides for users to use the Blowfish
+encryption algorithm in perl. The implementation is entirely Object
+Oriented, as there is quite a lot of context inherent in making blowfish
+as fast as it is. The key is anywhere between 64 and 448 bits (8 and 56
+bytes), and should be passed as a packed string. The transformation
+itself is a 16-round Feistel Network, and operates on a 64 bit block.
