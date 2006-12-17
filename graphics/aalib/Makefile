@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2006/01/08 01:01:17 steven Exp $
+# $OpenBSD: Makefile,v 1.25 2006/12/17 11:07:08 steven Exp $
 
 COMMENT=	"ascii art library"
 
@@ -6,7 +6,7 @@ DISTNAME=	aalib-1.2
 PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	aa	1.3
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_OPENBSD}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=aa-project/}
 
 HOMEPAGE=	http://aa-project.sourceforge.net/aalib/
 
