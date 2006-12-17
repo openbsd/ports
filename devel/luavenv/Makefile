@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/07/27 21:13:56 pedro Exp $
+# $OpenBSD: Makefile,v 1.4 2006/12/17 11:50:51 kili Exp $
 
 BROKEN=		"Pending update for Lua 5.1"
 COMMENT=	"library to execute lua chunks in separate environments"
@@ -20,8 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
-BUILD_DEPENDS=	::lang/lua
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	::lang/lua
 
 post-extract:
 	@sed -e "s:@luavenvpath@:${PREFIX}/lua/luavenv/?.lua:g" \
