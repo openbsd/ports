@@ -1,0 +1,12 @@
+This module implements a configurable web traversal engine, for a robot
+or other web agent. Given an initial web page (URL), the Robot will get
+the contents of that page, and extract all links on the page, adding
+them to a list of URLs to visit.
+
+Features of the Robot module include:
+
+    * Follows the Robot Exclusion Protocol.
+    * Supports the META element proposed extensions to the Protocol.
+    * Implements many of the Guidelines for Robot Writers.
+    * Configurable.
+    * Builds on standard Perl 5 modules for WWW, HTTP, HTML, etc.
