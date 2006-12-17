@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/07/27 21:13:56 pedro Exp $
+# $OpenBSD: Makefile,v 1.10 2006/12/17 20:11:22 kili Exp $
 
 BROKEN=		"Pending update for Lua 5.1"
 COMMENT=	"lua web server with cgi support"
@@ -19,9 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
-BUILD_DEPENDS=	::lang/lua ::devel/luafs ::net/luasocket \
+RUN_DEPENDS=	::lang/lua ::devel/luafs ::net/luasocket \
 		::devel/luacopas ::devel/luavenv ::devel/luaposix ::www/cgilua
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 post-extract:
 	@sed -e "s:@xavantepath@:${PREFIX}/lua/xavante/?.lua:g" \
