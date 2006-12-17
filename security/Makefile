@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.178 2006/12/04 17:22:03 kurt Exp $
+# $OpenBSD: Makefile,v 1.179 2006/12/17 18:03:37 jasper Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -88,6 +88,7 @@
      SUBDIR += p5-Catalyst-Plugin-Authorization-ACL
      SUBDIR += p5-Catalyst-Plugin-Authorization-Roles
      SUBDIR += p5-Crypt-Blowfish
+     SUBDIR += p5-Crypt-Blowfish_PP
      SUBDIR += p5-Crypt-CBC
      SUBDIR += p5-Crypt-DES
      SUBDIR += p5-Crypt-DES-EDE3
