@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2006/07/30 16:18:08 martin Exp $
+# $OpenBSD: Makefile,v 1.8 2006/12/17 11:47:12 kili Exp $
 
 COMMENT=	"Atmel AVR 8-bit RISC microcontrollers' libc"
 
 DISTNAME=	avr-libc-1.4.4
+PKGNAME=	${DISTNAME}p0
 
 HOMEPAGE=	http://www.nongnu.org/avr-libc/
 
@@ -16,10 +17,10 @@ MASTER_SITES=		http://savannah.nongnu.org/download/avr-libc/
 
 EXTRACT_SUFX=		.tar.bz2
 
-BUILD_DEPENDS+=		::devel/avr/binutils \
+RUN_DEPENDS=		::devel/avr/binutils \
 			::devel/avr/gcc
 
-RUN_DEPENDS+=		${BUILD_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS}
 
 CONFIGURE_ENV=		CC=avr-gcc PREFIX="${PREFIX}"
 CONFIGURE_ARGS=		--host=avr --disable-versioned-doc
