@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/09/24 16:56:08 pedro Exp $
+# $OpenBSD: Makefile,v 1.6 2006/12/17 11:56:56 kili Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	"file system library for the lua language"
@@ -17,8 +17,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=  ::lang/lua
-RUN_DEPENDS=    ${BUILD_DEPENDS}
+RUN_DEPENDS=  ::lang/lua
+BUILD_DEPENDS=    ${RUN_DEPENDS}
 
 post-extract:
 	@perl -pi -e 's/\r\n/\n/' ${WRKSRC}/Makefile ${WRKSRC}/config

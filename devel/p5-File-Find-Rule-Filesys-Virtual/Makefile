@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/25 16:32:35 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/17 11:56:56 kili Exp $
 
 COMMENT=	"File::Find::Rule adapted to Filesys::Virtual"
 
@@ -12,8 +12,8 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-BUILD_DEPENDS=	:p5-File-Find-Rule-*:devel/p5-File-Find-Rule \
+RUN_DEPENDS=	:p5-File-Find-Rule-*:devel/p5-File-Find-Rule \
 		:p5-Filesys-Virtual-Plain-*:sysutils/p5-Filesys-Virtual-Plain
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

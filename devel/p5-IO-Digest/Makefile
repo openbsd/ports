@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/25 16:32:36 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/12/17 11:56:56 kili Exp $
 
 COMMENT=	"module for computing digests while reading or writing"
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	:p5-PerlIO-via-dynamic->=0.11:devel/p5-PerlIO-via-dynamic
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	:p5-PerlIO-via-dynamic->=0.11:devel/p5-PerlIO-via-dynamic
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

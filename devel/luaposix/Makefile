@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/10/11 21:03:24 pedro Exp $
+# $OpenBSD: Makefile,v 1.7 2006/12/17 11:56:56 kili Exp $
 
 COMMENT=	"posix library for the lua language"
 
@@ -18,8 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_REGRESS=	Yes
 SHARED_ONLY=	Yes
-BUILD_DEPENDS=	::lang/lua
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	::lang/lua
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 do-build:
 	${CC} ${CFLAGS} -fPIC -I${LOCALBASE}/include -shared\

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/25 16:32:34 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/17 11:56:56 kili Exp $
 
 COMMENT=		"make chained accessors"
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=		::devel/p5-Class-Accessor
-RUN_DEPENDS=		${BUILD_DEPENDS}
+RUN_DEPENDS=		::devel/p5-Class-Accessor
+BUILD_DEPENDS=		${RUN_DEPENDS}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/25 16:32:33 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/12/17 11:56:56 kili Exp $
 
 COMMENT=	"represent a series of changes in annotate form"
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-BUILD_DEPENDS=	:p5-Algorithm-Diff->=1.1901:devel/p5-Algorithm-Diff
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	:p5-Algorithm-Diff->=1.1901:devel/p5-Algorithm-Diff
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

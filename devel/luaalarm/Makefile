@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/09/24 17:18:16 pedro Exp $
+# $OpenBSD: Makefile,v 1.5 2006/12/17 11:56:56 kili Exp $
 
 COMMENT=	"alarm library for the lua language"
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
@@ -21,8 +21,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	::lang/lua
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	::lang/lua
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/lua/5.1

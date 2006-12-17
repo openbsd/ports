@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/09/30 14:34:28 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2006/12/17 11:56:56 kili Exp $
 
 COMMENT=	"decentralized version control system"
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/C/CL/CLKAO/}
 
-BUILD_DEPENDS=	:p5-Compress-Zlib->=1.34:archivers/p5-Compress-Zlib \
+RUN_DEPENDS=	:p5-Compress-Zlib->=1.34:archivers/p5-Compress-Zlib \
 		:p5-Algorithm-Annotate->=0.10:devel/p5-Algorithm-Annotate \
 		:p5-Class-Autouse->=1.16:devel/p5-Class-Autouse \
 		:p5-Data-Hierarchy->=0.21:devel/p5-Data-Hierarchy \
@@ -34,7 +34,7 @@ BUILD_DEPENDS=	:p5-Compress-Zlib->=1.34:archivers/p5-Compress-Zlib \
 		:p5-SVN-Mirror->=0.70:devel/p5-SVN-Mirror \
 		:p5-YAML->=0.36:devel/p5-YAML \
 		:p5-Pod-Simple->=3.02:textproc/p5-Pod-Simple
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE= perl
 
