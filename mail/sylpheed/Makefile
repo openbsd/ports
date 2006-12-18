@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2006/12/15 17:34:45 sturm Exp $
+# $OpenBSD: Makefile,v 1.69 2006/12/18 22:27:56 kili Exp $
 
 COMMENT=	"mail/news client in gtk+"
 
@@ -16,7 +16,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=	::devel/pkgconfig
 LIB_DEPENDS=	gtk-x11-2.0.>=0.9,gdk_pixbuf-2.0.>=0.9,gdk-x11-2.0.>=0.9::x11/gtk+2
 WANTLIB=	X11 Xrender Xext atk-1.0 c cairo crypto \
 		fontconfig freetype glib-2.0 glitz gdk-x11-2.0 \

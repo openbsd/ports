@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/10 21:48:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/18 22:27:56 kili Exp $
 
 COMMENT=		"client for MPD to submit tracks to Audioscrobbler"
 CATEGORIES=		audio
@@ -27,7 +27,6 @@ CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ENV+= 	CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ENV+= 	CFLAGS="-I${LOCALBASE}/include"
 
-BUILD_DEPENDS=		::devel/pkgconfig
 LIB_DEPENDS=		argtable2.>=1::devel/argtable \
 			confuse.>=0::devel/libconfuse \
 			daemon.>=2::devel/libdaemon \
