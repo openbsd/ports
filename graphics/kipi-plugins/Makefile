@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2006/12/16 12:22:33 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2006/12/18 17:26:58 espie Exp $
 
 COMMENT=		"kde image plugins"
 CATEGORIES=		graphics x11 x11/kde
 DISTNAME=		kipi-plugins-0.1.2
 EXTRACT_SUFX=		.tar.bz2
-PKGNAME=		kipi-plugins-0.1.2p0
+PKGNAME=		${DISTNAME}p0
 HOMEPAGE=		http://extragear.kde.org/apps/kipi/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=kipi/}
 
