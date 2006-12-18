@@ -1,6 +1,6 @@
-$OpenBSD: patch-Source_cmCommandArgumentParserHelper_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
---- Source/cmCommandArgumentParserHelper.cxx.orig	Wed May 17 15:48:52 2006
-+++ Source/cmCommandArgumentParserHelper.cxx	Mon Jul  3 12:42:54 2006
+$OpenBSD: patch-Source_cmCommandArgumentParserHelper_cxx,v 1.2 2006/12/18 16:04:31 espie Exp $
+--- Source/cmCommandArgumentParserHelper.cxx.orig	Mon Dec  4 17:03:54 2006
++++ Source/cmCommandArgumentParserHelper.cxx	Sun Dec 17 11:07:03 2006
 @@ -29,12 +29,12 @@ cmCommandArgumentParserHelper::cmCommand
    this->FileName = 0;
  
@@ -19,8 +19,8 @@ $OpenBSD: patch-Source_cmCommandArgumentParserHelper_cxx,v 1.1.1.1 2006/07/20 09
 +  strlcpy(this->BSLASHVariable, "\\", sizeof(this->BSLASHVariable));
  
    this->NoEscapeMode = false;
- }
-@@ -57,8 +57,7 @@ char* cmCommandArgumentParserHelper::Add
+   this->ReplaceAtSyntax = false;
+@@ -58,8 +58,7 @@ char* cmCommandArgumentParserHelper::Add
      {
      return this->EmptyVariable;
      }
@@ -30,7 +30,7 @@ $OpenBSD: patch-Source_cmCommandArgumentParserHelper_cxx,v 1.1.1.1 2006/07/20 09
    this->Variables.push_back(stVal);
    return stVal;
  }
-@@ -127,8 +126,8 @@ char* cmCommandArgumentParserHelper::Com
+@@ -143,8 +142,8 @@ char* cmCommandArgumentParserHelper::Com
      }
    size_t len = strlen(in1) + strlen(in2) + 1;
    char* out = new char [ len ];

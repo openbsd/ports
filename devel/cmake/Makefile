@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2006/07/31 23:55:51 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/18 16:04:31 espie Exp $
 
 HOMEPAGE=		http://www.cmake.org/
 CATEGORIES=		devel
 COMMENT=		portable build system
-DISTNAME=		cmake-2.4.3
+DISTNAME=		cmake-2.4.5
 MASTER_SITES=		${HOMEPAGE}files/v2.4/
 MAINTAINER=		Marc Espie <espie@openbsd.org>
 
@@ -18,14 +18,16 @@ CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT=	${WRKSRC}/bootstrap
 SEPARATE_BUILD=		simple
 CONFIGURE_ENV=		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} MAKE=make
-CONFIGURE_ARGS=		--prefix=${LOCALBASE} --docdir=/share/doc/CMake
+CONFIGURE_ARGS=		--prefix=${LOCALBASE} --docdir=/share/doc/CMake \
+			--datadir=/share/CMake --system-libs
 
 
 
 LIB_DEPENDS=		curl::net/curl \
-			expat::textproc/expat
+			expat::textproc/expat \
+			xmlrpc,xmlrpc_client,xmlrpc_util,xmlrpc_xmlparse,xmlrpc_xmltok::net/xmlrpc-c 
 
-WANTLIB=	m curses c stdc++ z
+WANTLIB=	m curses c stdc++ z crypto pthread ssl
 
 # Add these if you need to figure out what's going on.
 #CONFIGURE_ARGS+=	--verbose

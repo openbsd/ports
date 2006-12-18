@@ -1,7 +1,7 @@
-$OpenBSD: patch-Source_cmCPluginAPI_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
---- Source/cmCPluginAPI.cxx.orig	Tue Jul 18 11:07:26 2006
-+++ Source/cmCPluginAPI.cxx	Tue Jul 18 11:08:55 2006
-@@ -409,10 +409,11 @@ char CCONV *cmExpandVariablesInString(vo
+$OpenBSD: patch-Source_cmCPluginAPI_cxx,v 1.2 2006/12/18 16:04:31 espie Exp $
+--- Source/cmCPluginAPI.cxx.orig	Mon Dec  4 17:03:55 2006
++++ Source/cmCPluginAPI.cxx	Sun Dec 17 11:07:03 2006
+@@ -405,10 +405,11 @@ char CCONV *cmExpandVariablesInString(vo
      mf->ExpandVariablesInString(barf,
                                  (escapeQuotes ? true : false),
                                  (atOnly ? true : false));
@@ -15,7 +15,7 @@ $OpenBSD: patch-Source_cmCPluginAPI_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp 
      }
    res[result.size()] = '\0';
    return res;
-@@ -585,24 +586,27 @@ void CCONV cmSourceFileSetName2(void *ar
+@@ -581,24 +582,27 @@ void CCONV cmSourceFileSetName2(void *ar
  char * CCONV cmGetFilenameWithoutExtension(const char *name)
  {
    std::string sres = cmSystemTools::GetFilenameWithoutExtension(name);

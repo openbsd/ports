@@ -1,7 +1,7 @@
-$OpenBSD: patch-Source_kwsys_Registry_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
---- Source/kwsys/Registry.cxx.orig	Tue Jul 18 10:50:35 2006
-+++ Source/kwsys/Registry.cxx	Tue Jul 18 10:50:55 2006
-@@ -754,7 +754,7 @@ kwsys_stl::string RegistryHelper::Encode
+$OpenBSD: patch-Source_kwsys_Registry_cxx,v 1.2 2006/12/18 16:04:32 espie Exp $
+--- Source/kwsys/Registry.cxx.orig	Mon Dec  4 17:04:05 2006
++++ Source/kwsys/Registry.cxx	Sun Dec 17 11:07:03 2006
+@@ -756,7 +756,7 @@ kwsys_stl::string RegistryHelper::Encode
        {
      case '%': case '=': case '\n': case '\r': case '\t':
        char buffer[4];
@@ -10,7 +10,7 @@ $OpenBSD: patch-Source_kwsys_Registry_cxx,v 1.1.1.1 2006/07/20 09:23:13 espie Ex
        ostr << buffer;
        break;
      default:
-@@ -775,7 +775,7 @@ kwsys_stl::string RegistryHelper::Encode
+@@ -777,7 +777,7 @@ kwsys_stl::string RegistryHelper::Encode
        {
      case '%': case '=': case '\n': case '\r': case '\t':
        char buffer[4];

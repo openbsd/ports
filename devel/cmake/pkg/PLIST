@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/07/31 23:55:52 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/12/18 16:04:32 espie Exp $
 bin/ccmake
 bin/cmake
 bin/cpack
@@ -20,6 +20,7 @@ share/CMake/Modules/CMakeCXXCompiler.cmake.in
 share/CMake/Modules/CMakeCXXInformation.cmake
 share/CMake/Modules/CMakeCommonLanguageInclude.cmake
 share/CMake/Modules/CMakeConfigurableFile.in
+share/CMake/Modules/CMakeDependentOption.cmake
 share/CMake/Modules/CMakeDetermineCCompiler.cmake
 share/CMake/Modules/CMakeDetermineCXXCompiler.cmake
 share/CMake/Modules/CMakeDetermineFortranCompiler.cmake
@@ -53,6 +54,8 @@ share/CMake/Modules/CMakeTestJavaCompiler.cmake
 share/CMake/Modules/CMakeTestNMakeCLVersion.c
 share/CMake/Modules/CMakeTestRCCompiler.cmake
 share/CMake/Modules/CMakeUnixFindMake.cmake
+share/CMake/Modules/CMakeVCManifest.cmake
+share/CMake/Modules/CMakeVCManifestExe.cmake
 share/CMake/Modules/CMakeVS6BackwardCompatibility.cmake
 share/CMake/Modules/CMakeVS6FindMake.cmake
 share/CMake/Modules/CMakeVS71FindMake.cmake
@@ -65,8 +68,12 @@ share/CMake/Modules/CPack.STGZ_Header.sh.in
 share/CMake/Modules/CPack.cmake
 share/CMake/Modules/CTest.cmake
 share/CMake/Modules/CTestTargets.cmake
+share/CMake/Modules/CheckCCompilerFlag.cmake
 share/CMake/Modules/CheckCSourceCompiles.cmake
+share/CMake/Modules/CheckCSourceRuns.cmake
+share/CMake/Modules/CheckCXXCompilerFlag.cmake
 share/CMake/Modules/CheckCXXSourceCompiles.cmake
+share/CMake/Modules/CheckCXXSourceRuns.cmake
 share/CMake/Modules/CheckForPthreads.c
 share/CMake/Modules/CheckFunctionExists.c
 share/CMake/Modules/CheckFunctionExists.cmake
@@ -87,30 +94,38 @@ share/CMake/Modules/Dart.cmake
 share/CMake/Modules/DartConfiguration.tcl.in
 share/CMake/Modules/Documentation.cmake
 share/CMake/Modules/DummyCXXFile.cxx
+share/CMake/Modules/FindASPELL.cmake
 share/CMake/Modules/FindAVIFile.cmake
+share/CMake/Modules/FindBZip2.cmake
 share/CMake/Modules/FindBoost.cmake
 share/CMake/Modules/FindCABLE.cmake
+share/CMake/Modules/FindCURL.cmake
 share/CMake/Modules/FindCurses.cmake
 share/CMake/Modules/FindCygwin.cmake
 share/CMake/Modules/FindDCMTK.cmake
 share/CMake/Modules/FindDart.cmake
 share/CMake/Modules/FindDoxygen.cmake
+share/CMake/Modules/FindEXPAT.cmake
 share/CMake/Modules/FindFLTK.cmake
 share/CMake/Modules/FindGCCXML.cmake
 share/CMake/Modules/FindGLU.cmake
 share/CMake/Modules/FindGLUT.cmake
 share/CMake/Modules/FindGTK.cmake
 share/CMake/Modules/FindGnuplot.cmake
+share/CMake/Modules/FindHSPELL.cmake
 share/CMake/Modules/FindHTMLHelp.cmake
 share/CMake/Modules/FindITK.cmake
 share/CMake/Modules/FindImageMagick.cmake
 share/CMake/Modules/FindJNI.cmake
 share/CMake/Modules/FindJPEG.cmake
+share/CMake/Modules/FindJasper.cmake
 share/CMake/Modules/FindJava.cmake
 share/CMake/Modules/FindKDE.cmake
 share/CMake/Modules/FindKDE3.cmake
 share/CMake/Modules/FindKDE4.cmake
 share/CMake/Modules/FindLATEX.cmake
+share/CMake/Modules/FindLibXml2.cmake
+share/CMake/Modules/FindLibXslt.cmake
 share/CMake/Modules/FindMFC.cmake
 share/CMake/Modules/FindMPEG.cmake
 share/CMake/Modules/FindMPEG2.cmake
@@ -119,6 +134,7 @@ share/CMake/Modules/FindMatlab.cmake
 share/CMake/Modules/FindMotif.cmake
 share/CMake/Modules/FindOpenAL.cmake
 share/CMake/Modules/FindOpenGL.cmake
+share/CMake/Modules/FindOpenSSL.cmake
 share/CMake/Modules/FindPHP4.cmake
 share/CMake/Modules/FindPNG.cmake
 share/CMake/Modules/FindPerl.cmake
@@ -139,6 +155,7 @@ share/CMake/Modules/FindSDL_sound.cmake
 share/CMake/Modules/FindSDL_ttf.cmake
 share/CMake/Modules/FindSWIG.cmake
 share/CMake/Modules/FindSelfPackers.cmake
+share/CMake/Modules/FindSubversion.cmake
 share/CMake/Modules/FindTCL.cmake
 share/CMake/Modules/FindTIFF.cmake
 share/CMake/Modules/FindTclsh.cmake
@@ -148,6 +165,7 @@ share/CMake/Modules/FindVTK.cmake
 share/CMake/Modules/FindWget.cmake
 share/CMake/Modules/FindWish.cmake
 share/CMake/Modules/FindX11.cmake
+share/CMake/Modules/FindXMLRPC.cmake
 share/CMake/Modules/FindZLIB.cmake
 share/CMake/Modules/FindwxWidgets.cmake
 share/CMake/Modules/FindwxWindows.cmake
