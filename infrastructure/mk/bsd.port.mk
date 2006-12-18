@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.874 2006/12/16 11:53:46 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.875 2006/12/18 12:52:34 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2161,10 +2161,19 @@ _register_plist = perl ${PORTSDIR}/infrastructure/package/register-plist ${PLIST
 print-plist:
 	@${PKG_CMD} -n -q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}
 
+print-plist-with-depends:
+	@${PKG_CMD} -n -q `SUBPACKAGE=${SUBPACKAGE} ${MAKE} _print-package-args|sort -u` ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}
+
 print-plist-all:
 .for _S in ${MULTI_PACKAGES}
 	@${ECHO_MSG} "===> ${FULLPKGNAME${_S}}"
 	@${PKG_CMD} -n -q ${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}}
+.endfor
+
+print-plist-all-with-depends:
+.for _S in ${MULTI_PACKAGES}
+	@${ECHO_MSG} "===> ${FULLPKGNAME${_S}}"
+	@${PKG_CMD} -n -q `SUBPACKAGE=${_S} ${MAKE} _print-package-args|sort -u `${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}}
 .endfor
 
 print-plist-contents:
@@ -2923,4 +2932,5 @@ dump-vars:
 	_internal-install-all install-all \
 	subpackage _internal-subupdate _internal-update \
 	regress-dir-depends _recurse-regress-dir-depends \
-	full-regress-depends print-plist-all
+	full-regress-depends print-plist-all \
+	print-plist-with-depends print-plist-all-with-depends

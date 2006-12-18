@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.80 2006/12/02 11:27:46 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.81 2006/12/18 12:52:34 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -92,11 +92,10 @@ _subdir_fragment = \
 	for subdir in ${_FULLSUBDIR}; do \
 		${_flavor_fragment}; \
 		eval $${echo_msg} "===\> $$subdir"; \
-		set +e; \
-		if ! eval  $$toset ${MAKE} $$target; then \
+		if ! (eval $$toset exec ${MAKE} $$target); then \
 			${REPORT_PROBLEM}; \
 		fi; \
-	done; set -e
+	done
 
 .for __target in all fetch package fake extract patch configure \
 	build distclean deinstall install update \
@@ -111,7 +110,7 @@ ${__target}:
 
 .for __target in describe show verbose-show dump-vars \
 	homepage-links print-plist print-plist-contents \
-	print-plist-all
+	print-plist-all print-plist-with-depends print-plist-all-with-depends
 ${__target}:
 	@DESCRIBE_TARGET=Yes; export DESCRIBE_TARGET; ${_subdir_fragment}
 .endfor
