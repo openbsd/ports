@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2006/12/16 12:22:32 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2006/12/18 09:51:29 robert Exp $
 
 CATEGORIES=	audio x11 x11/kde
 COMMENT=	'music player for kde'
 
 HOMEPAGE=	http://amarok.kde.org/
-V=		1.4.4
+V=		1.4.3
 MASTER_SITES=	${MASTER_SITE_KDE:=stable/amarok/$V/src/}
 DISTNAME=	amarok-$V
 PKGNAME=	${DISTNAME}
@@ -16,14 +16,12 @@ LIB_DEPENDS+=	lib/qt3/qt-mt.>=3.33::x11/qt3,mt \
 		kdecore.>=6,DCOP,khtml,kwalletclient,kdefx,kdeprint,kutils,kdeui,kparts,kio,kdesu,kjs,knewstuff,kdnssd::x11/kde/libs3 \
 		tag.>=5.0:taglib->=1.4:audio/taglib \
 		xine::multimedia/xine-lib \
-		sqlite3::databases/sqlite3 \
-		gpod::audio/libgpod
+		sqlite3::databases/sqlite3
 
 WANTLIB=	stdc++ Xext Xrender z X11 util m SM c \
 		pthread ICE idn freetype \
 		iconv pcre pcreposix \
-		jpeg png art_lgpl_2 intl \
-		gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+		jpeg png art_lgpl_2 intl
 		
 LIB_DEPENDS+=	konqsidebarplugin::x11/kde/base3
 
