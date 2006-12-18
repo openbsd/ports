@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/17 15:01:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/18 21:26:26 steven Exp $
 
-COMMENT=		"create PNG images of LaTex math expressions"
+COMMENT=		"create PNG images from LaTeX expressions"
 
 DISTNAME=		l2p-1.0
-CATEGORIES=		graphics
+PKGNAME=		${DISTNAME}p0
+CATEGORIES=		graphics print
 
 HOMEPAGE=		http://redsymbol.net/software/l2p/
 
@@ -16,8 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${HOMEPAGE}dist/
 EXTRACT_SUFX=		.tgz
 
-WRKDIST=		${WRKDIR}/${PKGNAME}
-
 RUN_DEPENDS=		::graphics/ImageMagick \
 			::print/teTeX/base
 
@@ -26,8 +25,8 @@ NO_REGRESS=		Yes
 PKG_ARCH=		*
 
 do-install:
+	pod2man ${WRKSRC}/l2p ${WRKSRC}/l2p.1
 	${INSTALL_SCRIPT} ${WRKSRC}/l2p ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/l2p
-	${INSTALL_DATA} ${WRKSRC}/l2p.txt ${PREFIX}/share/doc/l2p/README
+	${INSTALL_MAN} ${WRKSRC}/l2p.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
