@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2006/09/21 13:03:12 bernd Exp $
+# $OpenBSD: Makefile,v 1.27 2006/12/18 11:50:15 bernd Exp $
 
 COMMENT=	"write audio/data CD-Rs in disk-at-once mode"
 
@@ -29,8 +29,7 @@ FLAVOR?=
 .if ${FLAVOR:L:Maudio}
 CONFIGURE_ARGS+=	--with-lame-lib=${LOCALBASE}/lib \
 			--with-lame-include=${LOCALBASE}/include
-BUILD_DEPENDS+=		:libmad->=0.15.1bp0:audio/libmad \
-			::devel/pkgconfig
+BUILD_DEPENDS+=		:libmad->=0.15.1bp0:audio/libmad
 LIB_DEPENDS+=		ao.>=3::audio/libao \
 			mp3lame::audio/lame \
 			mad.>=2::audio/libmad \
