@@ -1,0 +1,84 @@
+$OpenBSD: patch-src_xmlrpc_parse_c,v 1.1.1.1 2006/12/18 14:39:56 espie Exp $
+--- src/xmlrpc_parse.c.orig	Thu Mar 23 00:48:31 2006
++++ src/xmlrpc_parse.c	Mon Dec 18 13:41:28 2006
+@@ -57,9 +57,9 @@
+     do \
+         if (xml_element_children_size(elem) != (count)) \
+             XMLRPC_FAIL3(env, XMLRPC_PARSE_ERROR, \
+-             "Expected <%s> to have %d children, found %d", \
+-                         xml_element_name(elem), (count), \
+-                         xml_element_children_size(elem)); \
++             "Expected <%s> to have %lu children, found %lu", \
++                         xml_element_name(elem), (unsigned long)(count), \
++                         (unsigned long)xml_element_children_size(elem)); \
+     while (0)
+ 
+ static xml_element *
+@@ -595,7 +595,8 @@ parseMethodNameElement(xmlrpc_env *  con
+         xmlrpc_env_set_fault_formatted(
+             envP, XMLRPC_PARSE_ERROR,
+             "A <methodName> element should not have children.  "
+-            "This one has %u of them.", xml_element_children_size(nameElemP));
++            "This one has %lu of them.", 
++	    (unsigned long)xml_element_children_size(nameElemP));
+     else {
+         const char * const cdata = xml_element_cdata(nameElemP);
+ 
+@@ -654,8 +655,8 @@ parseCallChildren(xmlrpc_env *    const 
+                     xmlrpc_env_set_fault_formatted(
+                         envP, XMLRPC_PARSE_ERROR,
+                         "<methodCall> has extraneous children, other than "
+-                        "<methodName> and <params>.  Total child count = %u",
+-                        callChildCount);
++                        "<methodName> and <params>.  Total child count = %lu",
++                        (unsigned long)callChildCount);
+                     
+                 if (envP->fault_occurred)
+                     xmlrpc_DECREF(*paramArrayPP);
+@@ -697,8 +698,8 @@ xmlrpc_parse_call(xmlrpc_env *    const 
+     if (xmlLen > xmlrpc_limit_get(XMLRPC_XML_SIZE_LIMIT_ID))
+         xmlrpc_env_set_fault_formatted(
+             envP, XMLRPC_LIMIT_EXCEEDED_ERROR,
+-            "XML-RPC request too large.  Max allowed is %u bytes",
+-            xmlrpc_limit_get(XMLRPC_XML_SIZE_LIMIT_ID));
++            "XML-RPC request too large.  Max allowed is %lu bytes",
++            (unsigned long)xmlrpc_limit_get(XMLRPC_XML_SIZE_LIMIT_ID));
+     else {
+         xml_element * callElemP;
+         parseCallXml(envP, xmlData, xmlLen, &callElemP);
+@@ -773,8 +774,8 @@ parseFaultElement(xmlrpc_env *        co
+     if (xml_element_children_size(faultElement) != 1)
+         xmlrpc_env_set_fault_formatted(
+             envP, XMLRPC_PARSE_ERROR,
+-            "<fault> element should have 1 child, but it has %u.",
+-            xml_element_children_size(faultElement));
++            "<fault> element should have 1 child, but it has %lu.",
++            (unsigned long)xml_element_children_size(faultElement));
+     else {
+         xml_element * const faultValueP =
+             xml_element_children(faultElement)[0];
+@@ -869,8 +870,8 @@ parseMethodResponseElt(xmlrpc_env *     
+     } else
+         xmlrpc_env_set_fault_formatted(
+             envP, XMLRPC_PARSE_ERROR,
+-            "<methodResponse> has %u children, should have 1.",
+-            xml_element_children_size(methodResponseEltP));
++            "<methodResponse> has %lu children, should have 1.",
++            (unsigned long)xml_element_children_size(methodResponseEltP));
+ }
+ 
+ 
+@@ -908,9 +909,10 @@ xmlrpc_parse_response2(xmlrpc_env *    c
+     if (xmlDataLen > xmlrpc_limit_get(XMLRPC_XML_SIZE_LIMIT_ID))
+         xmlrpc_env_set_fault_formatted(
+             envP, XMLRPC_LIMIT_EXCEEDED_ERROR,
+-            "XML-RPC response too large.  Our limit is %u characters.  "
+-            "We got %u characters",
+-            xmlrpc_limit_get(XMLRPC_XML_SIZE_LIMIT_ID), xmlDataLen);
++            "XML-RPC response too large.  Our limit is %lu characters.  "
++            "We got %lu characters",
++            (unsigned long)xmlrpc_limit_get(XMLRPC_XML_SIZE_LIMIT_ID), 
++	    (unsigned long)xmlDataLen);
+     else {
+         xml_parse(envP, xmlData, xmlDataLen, &response);
+         if (!envP->fault_occurred) {

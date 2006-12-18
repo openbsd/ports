@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_registry_c,v 1.1.1.1 2006/12/18 14:39:56 espie Exp $
+--- src/registry.c.orig	Mon Dec 18 11:53:48 2006
++++ src/registry.c	Mon Dec 18 12:56:41 2006
+@@ -359,10 +359,13 @@ xmlrpc_dispatchCall(xmlrpc_env *      co
+         if (!envP->fault_occurred)
+             callNamedMethod(envP, methodInfoP, paramArrayP, resultPP);
+         else if (envP->fault_code == XMLRPC_INDEX_ERROR) {
+-            if (registryP->_default_method)
++            if (registryP->_default_method) {
++	    	xmlrpc_env_clean(envP);
++	    	xmlrpc_env_init(envP);
+                 callDefaultMethod(envP, registryP->_default_method, 
+                                   methodName, paramArrayP,
+                                   resultPP);
++	    }
+             else {
+                 /* No matching method, and no default. */
+                 xmlrpc_env_set_fault_formatted(

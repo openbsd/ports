@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_abyss_src_server_c,v 1.1.1.1 2006/12/18 14:39:56 espie Exp $
+--- lib/abyss/src/server.c.orig	Sun Dec 17 20:41:07 2006
++++ lib/abyss/src/server.c	Sun Dec 17 20:41:12 2006
+@@ -5,6 +5,7 @@
+ #include <string.h>
+ #include <time.h>
+ #include <sys/errno.h>
++#include <errno.h>
+ #ifdef WIN32
+   #include <io.h>
+ #else

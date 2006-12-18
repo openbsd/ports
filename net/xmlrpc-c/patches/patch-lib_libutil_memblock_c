@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_libutil_memblock_c,v 1.1.1.1 2006/12/18 14:39:56 espie Exp $
+--- lib/libutil/memblock.c.orig	Mon Dec 18 13:29:37 2006
++++ lib/libutil/memblock.c	Mon Dec 18 13:30:00 2006
+@@ -73,8 +73,8 @@ xmlrpc_mem_block_init(xmlrpc_env *      
+ 
+     blockP->_block = (void*) malloc(blockP->_allocated);
+     if (!blockP->_block)
+-        xmlrpc_faultf(envP, "Can't allocate %u-byte memory block",
+-                      blockP->_allocated);
++        xmlrpc_faultf(envP, "Can't allocate %lu-byte memory block",
++                      (unsigned long)blockP->_allocated);
+ }
+ 
+ 

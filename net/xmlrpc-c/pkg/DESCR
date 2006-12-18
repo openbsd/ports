@@ -1,0 +1,17 @@
+XML-RPC is a quick-and-easy way to make procedure calls over the
+Internet. It converts the procedure call into XML document, sends
+it to a remote server using HTTP, and gets back the response as
+XML.   Due to the complexity of XML, this invariably leads to buggy
+code. XML-RPC should never be used without total trust on both sides
+of the connection. XML-RPC should never be used on non-authentified
+channels.
+
+This library provides a modular implementation of XML-RPC for
+C and C++.  XML-RPC For C and C++ is designed for Unix and is most
+tested on unix. The authors of the software thinks it works on any
+standard unix, but the code is rather sloppy and needs quite a few
+patches to run correctly on OpenBSD. Do not trust it for anything
+important.
+
+This package mostly exist to facilitate running code that 
+occasionally wants xmlrpc, such as cmake.

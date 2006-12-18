@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_xmlrpc_server_abyss_c,v 1.1.1.1 2006/12/18 14:39:56 espie Exp $
+--- src/xmlrpc_server_abyss.c.orig	Mon Dec 18 13:41:53 2006
++++ src/xmlrpc_server_abyss.c	Mon Dec 18 13:42:15 2006
+@@ -371,7 +371,8 @@ processCall(TSession *        const abys
+     if (contentSize > xmlrpc_limit_get(XMLRPC_XML_SIZE_LIMIT_ID))
+         xmlrpc_env_set_fault_formatted(
+             &env, XMLRPC_LIMIT_EXCEEDED_ERROR,
+-            "XML-RPC request too large (%d bytes)", contentSize);
++            "XML-RPC request too large (%lu bytes)", 
++	    (unsigned long)contentSize);
+     else {
+         xmlrpc_mem_block *body;
+         /* Read XML data off the wire. */

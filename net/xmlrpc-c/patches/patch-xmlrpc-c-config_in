@@ -1,0 +1,12 @@
+$OpenBSD: patch-xmlrpc-c-config_in,v 1.1.1.1 2006/12/18 14:39:56 espie Exp $
+--- xmlrpc-c-config.in.orig	Sun Dec 17 22:43:07 2006
++++ xmlrpc-c-config.in	Sun Dec 17 22:44:14 2006
+@@ -58,7 +58,7 @@ the_libdirs=
+ # path on this system, you should remove the following line:
+ the_libdirs="-L$libdir $the_libdirs"
+ 
+-the_libs="-lxmlrpc -lxmlrpc_util ${LIBXML}"
++the_libs="-lxmlrpc -lxmlrpc_util ${LIBXML} -lpthread"
+ the_rpath=
+ the_wl_rpath=
+ cpp_libs=

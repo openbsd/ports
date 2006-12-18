@@ -1,0 +1,45 @@
+$OpenBSD: patch-src_xmlrpc_data_c,v 1.1.1.1 2006/12/18 14:39:56 espie Exp $
+--- src/xmlrpc_data.c.orig	Mon Dec 18 13:32:57 2006
++++ src/xmlrpc_data.c	Mon Dec 18 13:34:07 2006
+@@ -288,7 +288,7 @@ xmlrpc_read_string(xmlrpc_env *         
+         if (stringValue == NULL)
+             xmlrpc_env_set_fault_formatted(
+                 envP, XMLRPC_INTERNAL_ERROR, "Unable to allocate space "
+-                "for %u-character string", length);
++                "for %lu-character string", (unsigned long)length);
+         else {
+             memcpy(stringValue, contents, length);
+             stringValue[length] = '\0';
+@@ -419,8 +419,8 @@ xmlrpc_read_string_w(xmlrpc_env *     co
+         if (stringValue == NULL)
+             xmlrpc_env_set_fault_formatted(
+                 envP, XMLRPC_INTERNAL_ERROR, 
+-                "Unable to allocate space for %u-byte string", 
+-                length);
++                "Unable to allocate space for %lu-byte string", 
++                (unsigned long)length);
+         else {
+             memcpy(stringValue, wcontents, length * sizeof(wchar_t));
+             stringValue[length] = '\0';
+@@ -466,8 +466,8 @@ xmlrpc_read_string_w_lp(xmlrpc_env *    
+             if (stringValue == NULL)
+                 xmlrpc_env_set_fault_formatted(
+                     envP, XMLRPC_INTERNAL_ERROR, 
+-                    "Unable to allocate space for %u-byte string", 
+-                    size);
++                    "Unable to allocate space for %lu-byte string", 
++                    (unsigned long)size);
+             else {
+                 memcpy(stringValue, wcontents, size * sizeof(wchar_t));
+                 
+@@ -523,8 +523,8 @@ xmlrpc_read_base64(xmlrpc_env *         
+         byteStringValue = malloc(size);
+         if (byteStringValue == NULL)
+             xmlrpc_env_set_fault_formatted(
+-                envP, XMLRPC_INTERNAL_ERROR, "Unable to allocate %u bytes "
+-                "for byte string.", size);
++                envP, XMLRPC_INTERNAL_ERROR, "Unable to allocate %lu bytes "
++                "for byte string.", (unsigned long)size);
+         else {
+             memcpy(byteStringValue, contents, size);
+             *byteStringValueP = (const unsigned char *)byteStringValue;
