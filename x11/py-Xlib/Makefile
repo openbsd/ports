@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/18 18:15:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/18 21:52:18 steven Exp $
 
 COMMENT=		"fully functional X client library for Python programs"
 
@@ -23,12 +23,16 @@ BUILD_DEPENDS=		::textproc/texi2html
 
 USE_X11=		Yes
 
-# Have to find a nice way to run the test scripts
-NO_REGRESS=		Yes
+TESTS=			events_be events_le rdb requests_be requests_le
 
+do-regress:
+.for t in ${TESTS}
+	cd ${WRKSRC}/test && ${MODPY_BIN} test_${t}.py
+.endfor
+	
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-Xlib
-	@cd ${WRKSRC}/doc/html && ${GMAKE}
+	@cd ${WRKSRC}/doc/html && ${MAKE_PROGRAM}
 	${INSTALL_DATA} ${WRKSRC}/doc/html/*.html ${PREFIX}/share/doc/py-Xlib
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-Xlib
 	${INSTALL_DATA} ${WRKSRC}/examples/*.py \
