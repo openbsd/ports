@@ -1,4 +1,4 @@
-$OpenBSD: patch-admin_cvs_sh,v 1.1 2006/04/01 10:49:21 espie Exp $
+$OpenBSD: patch-admin_cvs_sh,v 1.2 2006/12/18 19:52:44 espie Exp $
 --- admin/cvs.sh.orig	Fri Mar 17 22:43:31 2006
 +++ admin/cvs.sh	Wed Mar 22 17:53:27 2006
 @@ -634,6 +634,10 @@ fi
@@ -7,7 +7,7 @@ $OpenBSD: patch-admin_cvs_sh,v 1.1 2006/04/01 10:49:21 espie Exp $
  eval `$admindir/detect-autoconf.pl`
 +AUTOCONF=autoconf
 +AUTOHEADER=autoheader
-+AUTOM4TE=autom4te-2.59
++AUTOM4TE=autom4te-${AUTOCONF_VERSION:-2.59}
 +ACLOCAL=aclocal
  
  ###
