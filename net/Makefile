@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.436 2006/11/11 04:37:51 alek Exp $
+# $OpenBSD: Makefile,v 1.437 2006/12/18 14:43:30 espie Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -360,6 +360,7 @@
      SUBDIR += wol
      SUBDIR += xarchie
      SUBDIR += xchat
+     SUBDIR += xmlrpc-c
      SUBDIR += xorp
      SUBDIR += xprobe
      SUBDIR += yafc
