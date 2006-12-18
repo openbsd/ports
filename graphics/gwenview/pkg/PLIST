@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2006/09/19 01:54:54 brad Exp $
+@comment $OpenBSD: PLIST,v 1.19 2006/12/18 17:05:49 espie Exp $
 bin/gwenview
 ${KDE}/gwenview.la
 ${KDE}/gwenview.so
@@ -16,6 +16,7 @@ share/apps/gvdirpart/
 share/apps/gvdirpart/gvdirpart.rc
 share/apps/gvimagepart/
 share/apps/gvimagepart/gvimagepart.rc
+share/apps/gvimagepart/gvimagepartpopup.rc
 share/apps/gwenview/
 share/apps/gwenview/cursors/
 share/apps/gwenview/cursors/zoom.png

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/09/23 12:25:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/12/18 17:05:49 espie Exp $
 @conflict gwenview-<1.4.0
 share/doc/HTML/da/
 share/doc/HTML/da/gwenview/
@@ -167,6 +167,7 @@ share/locale/sr/LC_MESSAGES/gwenview.mo
 share/locale/sr@Latn/LC_MESSAGES/gwenview.mo
 share/locale/sv/LC_MESSAGES/gwenview.mo
 share/locale/ta/LC_MESSAGES/gwenview.mo
+share/locale/th/LC_MESSAGES/gwenview.mo
 share/locale/tr/LC_MESSAGES/gwenview.mo
 share/locale/uk/LC_MESSAGES/gwenview.mo
 share/locale/ven/
