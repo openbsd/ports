@@ -1,8 +1,6 @@
-$OpenBSD: patch-master.cf,v 1.15 2005/11/23 01:02:39 brad Exp $
-
---- conf/master.cf.orig	Wed Nov  9 15:42:38 2005
-+++ conf/master.cf	Tue Nov 22 19:24:39 2005
-@@ -6,41 +6,41 @@
+--- conf/master.cf.orig	Wed Nov  1 21:03:41 2006
++++ conf/master.cf	Tue Dec 12 15:17:49 2006
+@@ -6,42 +6,42 @@
  # service type  private unpriv  chroot  wakeup  maxproc command + args
  #               (yes)   (yes)   (yes)   (never) (100)
  # ==========================================================================
@@ -52,9 +50,11 @@ $OpenBSD: patch-master.cf,v 1.15 2005/11/23 01:02:39 brad Exp $
  #       -o smtp_helo_timeout=5 -o smtp_connect_timeout=5
 -showq     unix  n       -       n       -       -       showq
 -error     unix  -       -       n       -       -       error
+-retry     unix  -       -       n       -       -       error
 -discard   unix  -       -       n       -       -       discard
 +showq     unix  n       -       -       -       -       showq
 +error     unix  -       -       -       -       -       error
++retry     unix  -       -       -       -       -       error
 +discard   unix  -       -       -       -       -       discard
  local     unix  -       n       n       -       -       local
  virtual   unix  -       n       n       -       -       virtual
