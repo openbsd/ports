@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2006/12/16 12:22:34 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2006/12/18 10:34:23 jasper Exp $
 
 COMMENT=	"library for communicating with an icecast server"
 
-DISTNAME=	libshout-2.2
+DISTNAME=	libshout-2.2.2
 SHARED_LIBS=	shout	5.0
 CATEGORIES=	net audio
 
