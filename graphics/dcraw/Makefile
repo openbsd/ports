@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2006/11/04 19:19:15 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2006/12/19 10:49:19 espie Exp $
 
 COMMENT=	"digital camera RAW format conversion tool"
 
 DISTNAME=	dcraw-8.19
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.cybercom.net/~dcoffin/dcraw/
@@ -13,8 +14,6 @@ DISTFILES=	dcraw.c dcraw.1
 DIST_SUBDIR=	${DISTNAME}
 
 LIB_DEPENDS=	jpeg.>=6::graphics/jpeg
-
-MAINTAINER=	Bruno Rohee <rohee@openbsd.org>
 
 # Some code is completely free, some is under the GPL
 PERMIT_PACKAGE_CDROM=	Yes
