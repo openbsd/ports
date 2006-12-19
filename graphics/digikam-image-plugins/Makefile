@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2006/11/22 18:43:49 bernd Exp $
+# $OpenBSD: Makefile,v 1.10 2006/12/19 00:00:03 espie Exp $
 
 COMMENT=		"plugins for digikam"
 CATEGORIES=		graphics x11 x11/kde
-DISTNAME=		digikamimageplugins-0.8.2
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		digikamimageplugins-0.9.0
 EXTRACT_SUFX=		.tar.bz2
 HOMEPAGE=		http://extragear.kde.org/apps/digikamimageplugins/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=digikam/}
@@ -15,11 +14,12 @@ LIB_DEPENDS+=	lib/qt3/qt-mt.>=3.33::x11/qt3,mt \
 
 MODULES=	x11/kde
 
-WANTLIB=		freetype Xext X11 util m ICE Xrender SM pthread z \
-			jpeg png iconv intl kipi gphoto2 kexif Imlib2 \
-			art_lgpl_2 tiff sqlite3 gphoto2_port exif idn
+WANTLIB=		Xext X11 util m ICE Xrender SM pthread z \
+			jpeg png iconv intl kipi gphoto2 \
+			art_lgpl_2 tiff sqlite3 gphoto2_port exif idn \
+			exiv2 lcms
 
-MODKDE_VERSION=		3.5
+MODKDE_VERSION=		3.5.3
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS} --disable-libsuffix
