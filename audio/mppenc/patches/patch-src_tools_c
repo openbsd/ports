@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_tools_c,v 1.1.1.1 2006/12/19 19:15:25 steven Exp $
+--- src/tools.c.orig	Fri Nov  3 22:48:56 2006
++++ src/tools.c	Tue Dec 19 09:26:37 2006
+@@ -82,7 +82,7 @@ isdir ( const char* Name )
+  *  is poison for old 16-bit compilers!
+  */
+ 
+-#if ENDIAN == HAVE_BIG_ENDIAN
++#ifdef WORDS_BIGENDIAN 
+ 
+ static void
+ Change_Endian32 ( Uint32_t* dst, size_t words32bit )
+@@ -109,7 +109,7 @@ Change_Endian32 ( Uint32_t* dst, size_t 
+     return;
+ }
+ 
+-#endif /* ENDIAN == HAVE_BIG_ENDIAN */
++#endif /* WORDS_BIGENDIAN */
+ 
+ 
+ /*
+@@ -127,7 +127,7 @@ Read_LittleEndians ( FILE_T fp, Uint32_t
+     ENTER(161);
+     wordsread = READ ( fp, dst, words32bit * sizeof(*dst) ) / sizeof(*dst);
+ 
+-#if ENDIAN == HAVE_BIG_ENDIAN
++#ifdef WORDS_BIGENDIAN
+     Change_Endian32 ( dst, wordsread );
+ #endif
+ 

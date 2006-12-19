@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_bitstream_c,v 1.1.1.1 2006/12/19 19:15:25 steven Exp $
+--- src/bitstream.c.orig	Fri Nov  3 22:48:56 2006
++++ src/bitstream.c	Tue Dec 19 09:26:37 2006
+@@ -35,7 +35,7 @@ UintMax_t     BufferedBits  =  0;      /
+  *  is poison for old 16-bit compilers!
+  */
+ 
+-#if ENDIAN == HAVE_BIG_ENDIAN
++#ifdef WORDS_BIGENDIAN
+ 
+ static void
+ Change_Endian32 ( unsigned int* dst, size_t words32bit )
+@@ -62,7 +62,7 @@ Change_Endian32 ( unsigned int* dst, siz
+     return;
+ }
+ 
+-#endif /* ENDIAN == HAVE_BIG_ENDIAN */
++#endif /* WORDS_BIGENDIAN */
+ 
+ 
+ void
+@@ -71,7 +71,7 @@ FlushBitstream ( FILE* fp, const Uint32_
+     size_t           WrittenDwords = 0;
+     const Uint32_t*  p             = buffer;
+ 
+-#if ENDIAN == HAVE_BIG_ENDIAN
++#ifdef WORDS_BIGENDIAN
+     size_t           CC            = words32bit;
+     Change_Endian32 ( (Uint32_t*)buffer, CC );
+ #endif
+@@ -89,7 +89,7 @@ FlushBitstream ( FILE* fp, const Uint32_
+         }
+     } while ( words32bit != 0 );
+ 
+-#if ENDIAN == HAVE_BIG_ENDIAN
++#ifdef WORDS_BIGENDIAN
+     Change_Endian32 ( (Uint32_t*)buffer, CC );
+ #endif
+ }

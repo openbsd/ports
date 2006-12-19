@@ -1,0 +1,37 @@
+$OpenBSD: patch-src_mppdec_h,v 1.1.1.1 2006/12/19 19:15:25 steven Exp $
+--- src/mppdec.h.orig	Fri Nov  3 22:48:56 2006
++++ src/mppdec.h	Tue Dec 19 09:26:37 2006
+@@ -130,8 +130,6 @@
+ # undef USE_ASM
+ # undef USE_ESD_AUDIO
+ # define NO_DEV_AUDIO
+-# undef ENDIAN
+-# define ENDIAN HAVE_BIG_ENDIAN
+ #endif
+ 
+ #if defined __TURBOC__
+@@ -999,15 +997,6 @@ extern Bool_t             MS_Band       
+ extern Bool_t             MS_used;                 // global flag for M/S-signal guidance
+ extern Bool_t             IS_used;
+ 
+-#define LITTLE                  0
+-#define BIG                     1
+-extern Bool_t                   output_endianess;
+-#if   ENDIAN == HAVE_LITTLE_ENDIAN
+-# define machine_endianess      LITTLE
+-#elif ENDIAN == HAVE_BIG_ENDIAN
+-# define machine_endianess      BIG
+-#endif
+-
+ // requant.c
+ extern Float              __SCF    [6 + 128];       // tabulated Scalefactors from -6 to +127
+ #define SCF             ( __SCF + 6 )
+@@ -1132,7 +1121,7 @@ int Cdecl  stderr_printf              ( 
+ long       treewalk                   ( const char* start, const char** mask, int (*fn)(const char* filename, void* aux), void* aux );
+ void       mysetargv                  ( int* argc, char*** argv, const char** extentions );
+ 
+-#if ENDIAN == HAVE_BIG_ENDIAN
++#ifdef WORDS_BIGENDIAN
+ 
+ # define ReadLE32(dst,psrc)       dst = *(Uint32_t*)(psrc)
+ # define ReadBE32(dst,psrc)                           \

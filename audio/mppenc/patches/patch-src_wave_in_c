@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_wave_in_c,v 1.1.1.1 2006/12/19 19:15:25 steven Exp $
+--- src/wave_in.c.orig	Fri Nov  3 22:48:56 2006
++++ src/wave_in.c	Tue Dec 19 09:26:37 2006
+@@ -299,7 +299,7 @@ Read_WAV_Samples ( wave_t*          t,
+ 		memset ( c + ReadSamples * t->Channels * t->BytesPerSample, t->BytesPerSample == 1 ? 0x80 : 0, (RequestedSamples - ReadSamples) * (t->BytesPerSample * t->Channels) );
+ 
+     // Convert to float and calculate M=(L+R)/2 and S=(L-R)/2 signals
+-#if ENDIAN == HAVE_LITTLE_ENDIAN
++#ifndef WORDS_BIGENDIAN
+     if ( t->BytesPerSample == 2 ) {
+         switch ( t->Channels ) {
+         case 1:
