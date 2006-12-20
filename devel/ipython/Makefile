@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2006/06/08 14:38:01 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2006/12/20 12:26:29 steven Exp $
 
 COMMENT=	"enhanced interactive Python shell"
 
-DISTNAME=	ipython-0.7.2
+DISTNAME=	ipython-0.7.3
 CATEGORIES=	devel
 
 HOMEPAGE=	http://ipython.scipy.org/
