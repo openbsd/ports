@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2006/11/25 13:11:02 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2006/12/21 13:09:37 ajacoutot Exp $
 
 PKG_ARCH=	*
 
 COMMENT-main=	"${MAINLANG} language pack for Firefox"
-V=		1.5.0.8
+V=		1.5.0.9
 NAME=		firefox-i18n
-PKGNAME=	${NAME}-${MAINLANG}-$Vp1
-PKGNAME-main=	${NAME}-${MAINLANG}-$Vp1
+PKGNAME=	${NAME}-${MAINLANG}-$V
+PKGNAME-main=	${NAME}-${MAINLANG}-$V
 
 CATEGORIES=	www
 
@@ -44,7 +44,7 @@ MULTI_PACKAGES=	-main
 .for i in ${OTHERLANGS}
 MULTI_PACKAGES+=-$i
 DISTFILES+=	$i.xpi
-PKGNAME-$i=	${NAME}-$i-${V}p1
+PKGNAME-$i=	${NAME}-$i-${V}
 COMMENT-$i=	$i language pack for Firefox
 LPACKDIR-$i=	${PREFIX}/mozilla-firefox/extensions/langpack-$i@firefox.mozilla.org
 .endfor
