@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/21 17:27:05 jasper Exp $
+bin/cmatrix
+lib/X11/fonts/
+@fontdir lib/X11/fonts/misc/
+lib/X11/fonts/misc/mtx.pcf
+@man man/man6/cmatrix.6
