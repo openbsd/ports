@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.48 2006/12/14 21:26:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.49 2006/12/21 22:22:27 naddy Exp $
 
 COMMENT=	"Pico editor clone with enhancements"
 
-DISTNAME=	nano-2.0.1
+DISTNAME=	nano-2.0.2
 CATEGORIES=	editors
 HOMEPAGE=	http://www.nano-editor.org/
 
