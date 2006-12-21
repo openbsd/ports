@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/25 13:11:02 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2006/12/21 08:39:53 steven Exp $
 
 COMMENT-main=	"${MAINLANG} language pack for Thunderbird"
-V=		1.5.0.8
+V=		1.5.0.9
 NAME=		thunderbird-i18n
-PKGNAME=	${NAME}-${MAINLANG}-$Vp1
-PKGNAME-main=	${NAME}-${MAINLANG}-$Vp1
+PKGNAME=	${NAME}-${MAINLANG}-$V
+PKGNAME-main=	${NAME}-${MAINLANG}-$V
 
 CATEGORIES=	mail
 
@@ -42,7 +42,7 @@ MULTI_PACKAGES=	-main
 .for i in ${OTHERLANGS}
 MULTI_PACKAGES+=-$i
 DISTFILES+=	$i.xpi
-PKGNAME-$i=	${NAME}-$i-${V}p1
+PKGNAME-$i=	${NAME}-$i-${V}
 COMMENT-$i=	$i language pack for Thunderbird
 LPACKDIR-$i=	${PREFIX}/mozilla-thunderbird/extensions/langpack-$i@thunderbird.mozilla.org
 .endfor
