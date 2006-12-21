@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.130 2006/11/13 06:21:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.131 2006/12/21 17:28:41 jasper Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -21,6 +21,7 @@
      SUBDIR += childsplay-plugins
      SUBDIR += circuit
      SUBDIR += clines
+     SUBDIR += cmatrix
      SUBDIR += connect4
      SUBDIR += corewars
      SUBDIR += cosmosmash
