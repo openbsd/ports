@@ -1,0 +1,11 @@
+PPI::HTML is the successor to the now-redundant PPI::Format::HTML.
+
+While early on it was thought that the same formatting code might be
+able to be used for a variety of different types of things (ANSI and
+HTML for example) later developments with the here-doc code and the need
+for independantly written serializers meant that this idea had to be
+discarded.
+
+The new module is much cleaner. Simply create an object with the options
+you want, pass PPI::Document objects to the "html" method, and you get
+strings of HTML that you can do whatever you want with.
