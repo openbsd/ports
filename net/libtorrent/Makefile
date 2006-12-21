@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2006/12/16 12:22:34 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2006/12/21 19:13:07 naddy Exp $
 
-COMMENT=		"BitTorrent Library written in C++"
+COMMENT=		"BitTorrent library written in C++"
 
-DISTNAME=		libtorrent-0.10.4
-SHARED_LIBS +=  	torrent              10.0     # .9.0
+DISTNAME=		libtorrent-0.11.0
+SHARED_LIBS +=  	torrent              11.0     # .10.0
 CATEGORIES=		net devel
 
 HOMEPAGE=		http://libtorrent.rakshasa.no/
-MAINTAINER=		Henrik Enberg <enberg@printf.se>
+MAINTAINER=		Christian Weisgerber <naddy@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,7 +22,7 @@ LIB_DEPENDS=		sigc-2.0:libsigc++-2.*:devel/libsigc++-2
 USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-openssl=/usr \
 			--with-kqueue \
 			--disable-debug
