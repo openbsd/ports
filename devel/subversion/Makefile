@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.27 2006/12/01 14:10:05 steven Exp $
+# $OpenBSD: Makefile,v 1.28 2006/12/21 08:58:04 steven Exp $
 
 COMMENT-main=	"subversion revision control system"
 COMMENT-perl=	"perl interface to subversion"
 COMMENT-python=	"python interface to subversion"
 COMMENT-ruby=	"ruby interface to subversion"
 
-VERSION=	1.4.0
+VERSION=	1.4.2
 DISTNAME=	subversion-${VERSION}
-PKGNAME=	${DISTNAME}p1
-PKGNAME-main=	${DISTNAME}p1
-PKGNAME-perl=	p5-SVN-${VERSION}p1
-PKGNAME-python=	py-subversion-${VERSION}p0
+PKGNAME=	${DISTNAME}
+PKGNAME-main=	${DISTNAME}
+PKGNAME-perl=	p5-SVN-${VERSION}
+PKGNAME-python=	py-subversion-${VERSION}
 PKGNAME-ruby=	ruby-subversion-${VERSION}
 
 SO_VERSION=	1.0
@@ -85,7 +85,7 @@ LIB_DEPENDS-ruby+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversio
 .  endfor
 
 MODULES+=	lang/ruby
-BUILD_DEPENDS=	::lang/python/${PYTHON_VER} \
+BUILD_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
 		::devel/swig 
 .endif
 
@@ -120,8 +120,8 @@ pre-build:
 
 .if !${FLAVOR:L:Mno_bindings}
 REGRESS_DEPENDS+=	::devel/p5-IO-String \
-			::devel/subversion,-python \
-			::devel/subversion,-ruby
+			:${PKGNAME-python}:devel/subversion,-python \
+			:${PKGNAME-ruby}:devel/subversion,-ruby
 
 post-build: 
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \

@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.6 2006/09/30 06:23:58 steven Exp $
---- configure.orig	Sat Jul 15 20:55:11 2006
-+++ configure	Sat Jul 15 21:00:22 2006
+$OpenBSD: patch-configure,v 1.7 2006/12/21 08:58:04 steven Exp $
+--- configure.orig	Thu Nov  2 23:48:21 2006
++++ configure	Thu Dec 14 18:33:09 2006
 @@ -3012,7 +3012,7 @@ if test "$INSTALL" = "build/install-sh -
    INSTALL="$abs_srcdir/$INSTALL"
  fi
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.6 2006/09/30 06:23:58 steven Exp $
  
  
  
-@@ -20609,7 +20609,7 @@ rm -f conftest.err conftest.$ac_objext \
+@@ -20630,7 +20630,7 @@ rm -f conftest.err conftest.$ac_objext \
        conftest$ac_exeext conftest.$ac_ext
  if test "$ac_cv_search_bindtextdomain" = no; then
    for ac_lib in intl; do
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.6 2006/09/30 06:23:58 steven Exp $
      cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -20654,7 +20654,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_l
+@@ -20675,7 +20675,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_l
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then
@@ -28,7 +28,7 @@ $OpenBSD: patch-configure,v 1.6 2006/09/30 06:23:58 steven Exp $
  break
  else
    echo "$as_me: failed program was:" >&5
-@@ -21943,7 +21943,7 @@ fi;
+@@ -21964,7 +21964,7 @@ fi;
  # Python: Used for testsuite, and bindings
  
  
