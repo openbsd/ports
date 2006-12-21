@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/21 01:08:12 espie Exp $
+bin/timed-process
+${P5SITE}/Proc/
+${P5SITE}/Proc/Background/
+${P5SITE}/Proc/Background.pm
+${P5SITE}/Proc/Background/Unix.pm
+${P5SITE}/Proc/Background/Win32.pm
+@man man/man1/timed-process.1
+@man man/man3p/Proc::Background.3p
+@man man/man3p/Proc::Background::Unix.3p
+@man man/man3p/Proc::Background::Win32.3p

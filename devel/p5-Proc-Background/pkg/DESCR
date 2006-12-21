@@ -1,0 +1,15 @@
+This is the Proc::Background package.  It provides a generic interface
+to running background processes.  Through this interface, users can
+run background processes on different operating systems without
+concerning themselves about the specifics of doing this.  Users of
+this package create new Proc::Background objects that provide an
+object oriented interface to process management.  The following
+methods are provided to users of the Proc::Background package:
+
+    new:        start a new background process.
+    alive:      test to see if the process is still alive.
+    die:        reliably try to kill the process.
+    wait:       wait for the process to exit and return the exit status.
+    start_time: return the time that the process started.
+    end_time:   return the time when the exit status was retrieved.
+
