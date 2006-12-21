@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/03 21:10:16 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/21 21:41:44 kurt Exp $
 
 .if ${MACHINE_ARCH} == "sparc64"
 BROKEN=		"Thunderbird hangs when accessing items from the OpenPGP menu"
@@ -8,7 +8,10 @@ COMMENT=	"GnuPG extension for Thunderbird"
 
 VER=		0.94.1
 DISTNAME=	enigmail-${VER}
+PKGNAME=	enigmail-${VER}p0
 CATEGORIES=	mail security
+
+SHARED_LIBS=	enigmime	12.0
 
 HOMEPAGE=	http://enigmail.mozdev.org/
 
@@ -21,14 +24,16 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://www.mozilla-enigmail.org/downloads/src/
 
 THUNDERBIRD_DIR=mail/mozilla-thunderbird
-BUILD_DEPENDS=	::${THUNDERBIRD_DIR}:configure
-RUN_DEPENDS=	:mozilla-thunderbird->=1.5:${THUNDERBIRD_DIR} \
-		::security/gnupg
+BUILD_DEPENDS=	::${THUNDERBIRD_DIR}:configure \
+		::archivers/unzip
+RUN_DEPENDS=	::security/gnupg
+
+LIB_DEPENDS=	mozilla-thunderbird/xpcom,mozilla-thunderbird/xpcom_compat,mozilla-thunderbird/xpcom_core:mozilla-thunderbird-1.5.0.9:${THUNDERBIRD_DIR}
+WANTLIB=	c m nspr4 plc4 plds4
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes
-SUBST_VARS=	VER ENIGMAIL_XPI GNU_ARCH
 
 MOZBASE=	${WRKDIR}/${THUNDERBIRD_DIR}/mozilla
 MOZBIN=		${MOZBASE}/dist/bin
@@ -37,6 +42,12 @@ WRKSRC=		${MOZBASE}/mailnews/extensions/enigmail
 
 GNU_ARCH=	${MACHINE_ARCH:S/amd64/x86_64/}
 ENIGMAIL_XPI=	${DISTNAME}-${OPSYS:L}-${GNU_ARCH}.xpi
+
+# unzip ${ENIGMAIL_XPI} and inspect install.rdf for GUID
+GUID=		{847b3a00-7ab1-11d4-8f02-006008948af5}
+GLOBALDIR=	${PREFIX}/mozilla-thunderbird/extensions/${GUID}
+
+SUBST_VARS=	GUID
 
 post-extract:
 	@mv ${WRKDIST} ${MOZBASE}/mailnews/extensions
@@ -52,7 +63,8 @@ do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} xpi
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/enigmail
-	${INSTALL_DATA} ${MOZBIN}/${ENIGMAIL_XPI} ${PREFIX}/share/enigmail
+	${INSTALL_DATA_DIR} ${GLOBALDIR}
+	unzip -q ${MOZBIN}/${ENIGMAIL_XPI} -d ${GLOBALDIR}
 
 .include <bsd.port.mk>
+

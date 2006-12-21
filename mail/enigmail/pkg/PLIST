@@ -1,3 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/03 21:10:16 steven Exp $
-share/enigmail/
-share/enigmail/enigmail-${VER}-openbsd-${GNU_ARCH}.xpi
+@comment $OpenBSD: PLIST,v 1.2 2006/12/21 21:41:44 kurt Exp $
+%%SHARED%%
+mozilla-thunderbird/extensions/${GUID}/
+mozilla-thunderbird/extensions/${GUID}/chrome/
+mozilla-thunderbird/extensions/${GUID}/chrome.manifest
+mozilla-thunderbird/extensions/${GUID}/chrome/enigmail-skin-tbird.jar
+mozilla-thunderbird/extensions/${GUID}/chrome/enigmail-skin.jar
+mozilla-thunderbird/extensions/${GUID}/chrome/enigmail.jar
+mozilla-thunderbird/extensions/${GUID}/components/
+mozilla-thunderbird/extensions/${GUID}/components/enigmail.js
+mozilla-thunderbird/extensions/${GUID}/components/enigmail.xpt
+mozilla-thunderbird/extensions/${GUID}/components/enigmime.xpt
+mozilla-thunderbird/extensions/${GUID}/components/enigprefs-service.js
+mozilla-thunderbird/extensions/${GUID}/components/ipc.xpt
+mozilla-thunderbird/extensions/${GUID}/defaults/
+mozilla-thunderbird/extensions/${GUID}/defaults/pref/
+mozilla-thunderbird/extensions/${GUID}/defaults/pref/enigmail.js
+mozilla-thunderbird/extensions/${GUID}/defaults/preferences/
+mozilla-thunderbird/extensions/${GUID}/defaults/preferences/enigmail.js
+mozilla-thunderbird/extensions/${GUID}/enigmail.spec
+mozilla-thunderbird/extensions/${GUID}/install.js
+mozilla-thunderbird/extensions/${GUID}/install.rdf
