@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.61 2006/12/16 12:22:35 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2006/12/21 09:53:43 bernd Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
 COMMENT=	"redesign of Mozilla's browser component"
 
-VER=		1.5.0.8
+VER=		1.5.0.9
 DISTNAME=	mozilla
-PKGNAME=	mozilla-firefox-${VER}p1
-SO_VERSION=	17.0
+PKGNAME=	mozilla-firefox-${VER}
+SO_VERSION=	18.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 .for _lib in accessibility appcomps auth autoconfig browsercomps \
@@ -34,7 +34,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xext Xft Xrender Xinerama Xt c fontconfig freetype m \
 		pthread z \
-		atk-1.0 cairo glib-2.0 gmodule-2.0 gobject-2.0 \
+		atk-1.0 cairo glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		jpeg pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 png stdc++
 
