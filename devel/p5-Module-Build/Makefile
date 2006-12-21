@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/29 08:23:29 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2006/12/21 08:11:50 espie Exp $
 
 COMMENT=	"build and install Perl modules"
 
 MODULES=	cpan
-DISTNAME=	Module-Build-0.28
+DISTNAME=	Module-Build-0.2806
 CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/05/11 12:01:34 msf Exp $
+@comment $OpenBSD: PLIST,v 1.6 2006/12/21 08:11:50 espie Exp $
 bin/config_data
 ${P5SITE}/Module/
 ${P5SITE}/Module/Build/
@@ -7,6 +7,7 @@ ${P5SITE}/Module/Build/API.pod
 ${P5SITE}/Module/Build/Authoring.pod
 ${P5SITE}/Module/Build/Base.pm
 ${P5SITE}/Module/Build/Compat.pm
+${P5SITE}/Module/Build/Config.pm
 ${P5SITE}/Module/Build/ConfigData.pm
 ${P5SITE}/Module/Build/Cookbook.pm
 ${P5SITE}/Module/Build/ModuleInfo.pm
@@ -28,6 +29,7 @@ ${P5SITE}/Module/Build/Platform/cygwin.pm
 ${P5SITE}/Module/Build/Platform/darwin.pm
 ${P5SITE}/Module/Build/Platform/os2.pm
 ${P5SITE}/Module/Build/PodParser.pm
+${P5SITE}/Module/Build/Version.pm
 ${P5SITE}/Module/Build/YAML.pm
 @man man/man1/config_data.1
 @man man/man3p/Module::Build.3p
