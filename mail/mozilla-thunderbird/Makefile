@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2006/12/21 08:39:01 steven Exp $
+# $OpenBSD: Makefile,v 1.50 2006/12/21 21:52:12 kurt Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -9,7 +9,10 @@ DISTNAME=	mozilla
 PKGNAME=	mozilla-thunderbird-${VER}
 SO_VERSION=	12.0
 # NOTE: Must bump minor version if any shlib's are removed from the
-# components dir to avoid pkg_add -r issues.
+# components dir to avoid pkg_add -r issues. Whenever PKGNAME gets
+# bumped and/or SO_VERSION changes, remember to update enigmail's
+# SO_VERSION and LIB_DEPENDS to match.
+
 .for _lib in accessibility appcomps auth autoconfig caps chrome commandlines \
 	composer docshell editor embedcomponents fileview gfx_gtk gfxps \
 	gfxpsshar gkgfx gklayout gtkembedmoz gtkxtbin htmlpars i18n imglib2 \
@@ -90,7 +93,7 @@ MAKE_ENV=	MOZ_CO_PROJECT=mail \
 		MOZILLA_OFFICIAL=1 \
 		SO_VERSION="${SO_VERSION}"
 CONFIGURE_ENV=	${MAKE_ENV} \
-		PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig" \
+		PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig"
 
 MOB=		${WRKSRC}/dist/bin
 MOZ=		${PREFIX}/mozilla-thunderbird
