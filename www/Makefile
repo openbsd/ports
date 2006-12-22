@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.257 2006/12/21 22:04:13 espie Exp $
+# $OpenBSD: Makefile,v 1.258 2006/12/22 23:34:05 kurt Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -211,6 +211,7 @@
      SUBDIR += ruby-mongrel
      SUBDIR += ruby-rails
      SUBDIR += sarg
+     SUBDIR += seamonkey
      SUBDIR += snownews
      SUBDIR += squid
      SUBDIR += squid,snmp
