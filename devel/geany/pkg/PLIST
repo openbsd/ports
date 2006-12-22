@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/10 22:03:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/12/22 07:04:49 jasper Exp $
 bin/geany
 @man man/man1/geany.1
 share/applications/
@@ -39,15 +39,18 @@ share/doc/geany/html/ch04s02.html
 share/doc/geany/html/ch04s03.html
 share/doc/geany/html/geany.css
 share/doc/geany/html/images/
-share/doc/geany/html/images/find_dialog.jpg
-share/doc/geany/html/images/pref_dialog_edit.jpg
-share/doc/geany/html/images/pref_dialog_gen.jpg
-share/doc/geany/html/images/pref_dialog_interface.jpg
-share/doc/geany/html/images/pref_dialog_keys.jpg
-share/doc/geany/html/images/pref_dialog_templ.jpg
-share/doc/geany/html/images/pref_dialog_toolbar.jpg
-share/doc/geany/html/images/pref_dialog_tools.jpg
-share/doc/geany/html/images/pref_dialog_vte.jpg
+share/doc/geany/html/images/find_dialog.png
+share/doc/geany/html/images/find_in_files_dialog.png
+share/doc/geany/html/images/pref_dialog_edit.png
+share/doc/geany/html/images/pref_dialog_files.png
+share/doc/geany/html/images/pref_dialog_gen.png
+share/doc/geany/html/images/pref_dialog_interface.png
+share/doc/geany/html/images/pref_dialog_keys.png
+share/doc/geany/html/images/pref_dialog_templ.png
+share/doc/geany/html/images/pref_dialog_toolbar.png
+share/doc/geany/html/images/pref_dialog_tools.png
+share/doc/geany/html/images/pref_dialog_vte.png
+share/doc/geany/html/images/replace_dialog.png
 share/doc/geany/html/index.html
 share/doc/geany/manual.txt
 share/geany/
@@ -78,6 +81,7 @@ share/geany/filetypes.ruby
 share/geany/filetypes.sh
 share/geany/filetypes.sql
 share/geany/filetypes.tcl
+share/geany/filetypes.vhdl
 share/geany/filetypes.xml
 share/geany/global.tags
 share/geany/html_entities.tags
