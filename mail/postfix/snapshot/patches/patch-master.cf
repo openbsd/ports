@@ -1,3 +1,4 @@
+$OpenBSD: patch-master.cf,v 1.17 2006/12/22 20:03:02 todd Exp $
 --- conf/master.cf.orig	Wed Nov  1 21:03:41 2006
 +++ conf/master.cf	Tue Dec 12 15:17:49 2006
 @@ -6,42 +6,42 @@
