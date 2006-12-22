@@ -1,0 +1,10 @@
+$OpenBSD: patch-xpfe_communicator_resources_locale_en-US_brand_properties,v 1.1.1.1 2006/12/22 23:32:28 kurt Exp $
+--- xpfe/communicator/resources/locale/en-US/brand.properties.orig	Wed Dec 13 17:04:49 2006
++++ xpfe/communicator/resources/locale/en-US/brand.properties	Wed Dec 13 17:06:36 2006
+@@ -1,4 +1,4 @@
+-brandFullName=SeaMonkey
+-brandShortName=SeaMonkey
++brandFullName=SeaMonkey Community Edition
++brandShortName=SeaMonkey Community Edition
+ vendorShortName=SeaMonkey
+ sidebarName=Sidebar

@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_libpref_src_init_all_js,v 1.1.1.1 2006/12/22 23:32:28 kurt Exp $
+--- modules/libpref/src/init/all.js.orig	Sat Aug 19 00:12:03 2006
++++ modules/libpref/src/init/all.js	Fri Sep 15 07:41:32 2006
+@@ -2051,7 +2051,7 @@ pref("font.scale.outline.min",      6);
+ 
+ // TrueType
+ pref("font.FreeType2.enable", false);
+-pref("font.freetype2.shared-library", "libfreetype.so.6");
++pref("font.freetype2.shared-library", "libfreetype.so");
+ // if libfreetype was built without hinting compiled in
+ // it is best to leave hinting off
+ pref("font.FreeType2.autohinted", false);

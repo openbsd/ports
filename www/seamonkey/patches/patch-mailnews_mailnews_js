@@ -1,0 +1,12 @@
+$OpenBSD: patch-mailnews_mailnews_js,v 1.1.1.1 2006/12/22 23:32:28 kurt Exp $
+--- mailnews/mailnews.js.orig	Tue Dec 19 13:48:12 2006
++++ mailnews/mailnews.js	Tue Dec 19 13:48:22 2006
+@@ -626,7 +626,7 @@ pref("mailnews.fakeaccount.show", false)
+ pref("mailnews.fakeaccount.server", "");
+ 
+ // message display properties
+-pref("mailnews.message_display.disable_remote_image", false);
++pref("mailnews.message_display.disable_remote_image", true);
+ pref("mailnews.message_display.allow.plugins", false);
+ 
+ // default msg compose font prefs

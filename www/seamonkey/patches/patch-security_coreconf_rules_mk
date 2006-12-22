@@ -1,0 +1,11 @@
+$OpenBSD: patch-security_coreconf_rules_mk,v 1.1.1.1 2006/12/22 23:32:28 kurt Exp $
+--- security/coreconf/rules.mk.orig	Fri Apr 15 02:36:28 2005
++++ security/coreconf/rules.mk	Sat Sep 10 09:47:32 2005
+@@ -352,7 +352,6 @@ ifdef XP_OS2_VACPP
+ else
+ 	$(MKSHLIB) -o $@ $(OBJS) $(SUB_SHLOBJS) $(LD_LIBS) $(EXTRA_LIBS) $(EXTRA_SHARED_LIBS)
+ endif
+-	chmod +x $@
+ ifeq ($(OS_TARGET),Darwin)
+ ifdef MAPFILE
+ 	nmedit -s $(MAPFILE) $@

@@ -1,0 +1,65 @@
+$OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.1.1.1 2006/12/22 23:32:28 kurt Exp $
+--- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	Sun Dec  3 22:24:17 2006
++++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	Thu Dec 21 23:21:55 2006
+@@ -68,6 +68,12 @@ CPPSRCS		:= xptcinvoke_unixish_x86.cpp x
+ endif
+ endif
+ #
++# OpenBSD/amd64
++#
++ifeq ($(OS_ARCH)$(OS_TEST),OpenBSDamd64)
++CPPSRCS		:= xptcinvoke_openbsd_amd64.cpp xptcstubs_openbsd_amd64.cpp
++endif
++#
+ # New code for Linux, et. al., with gcc
+ # Migrate other platforms here after testing
+ #
+@@ -129,6 +135,12 @@ CPPSRCS		:= xptcinvoke_osf1_alpha.cpp xp
+ ASFILES		:= xptcinvoke_asm_osf1_alpha.s xptcstubs_asm_osf1_alpha.s
+ endif
+ #
++# OpenBSD/Alpha
++#
++ifeq ($(OS_ARCH)$(OS_TEST),OpenBSDalpha)
++CPPSRCS		:= xptcinvoke_openbsd_alpha.cpp xptcstubs_openbsd_alpha.cpp
++endif
++#
+ # Linux/Alpha
+ #
+ ifneq (,$(filter Linuxalpha FreeBSDalpha NetBSDalpha,$(OS_ARCH)$(OS_TEST)))                           
+@@ -278,6 +290,14 @@ ASFILES		:= xptcinvoke_asm_ppc_netbsd.s 
+ endif
+ 
+ #
++# OpenBSD/PPC
++#
++ifneq (,$(filter OpenBSDmacppc,$(OS_ARCH)$(OS_TEST)))                           
++CPPSRCS		:= xptcinvoke_ppc_openbsd.cpp xptcstubs_ppc_openbsd.cpp
++ASFILES		:= xptcinvoke_asm_ppc_openbsd.s xptcstubs_asm_ppc_openbsd.s
++endif
++
++#
+ # Darwin/PPC
+ #
+ ifeq ($(OS_ARCH),Darwin)
+@@ -349,6 +369,20 @@ endif
+ endif
+ 
+ endif
++endif
++#
++# OpenBSD/SPARC
++#
++ifeq ($(OS_ARCH)$(OS_TEST),OpenBSDsparc)
++CPPSRCS		:= xptcinvoke_sparc_netbsd.cpp xptcstubs_sparc_netbsd.cpp
++ASFILES		:= xptcinvoke_asm_sparc_netbsd.s xptcstubs_asm_sparc_netbsd.s
++endif
++#   
++# OpenBSD/SPARC64
++#   
++ifeq ($(OS_ARCH)$(OS_TEST),OpenBSDsparc64)
++CPPSRCS		:= xptcinvoke_sparc64_openbsd.cpp xptcstubs_sparc64_openbsd.cpp
++ASFILES		:= xptcinvoke_asm_sparc64_openbsd.s xptcstubs_asm_sparcv9_solaris.s
+ endif
+ 
+ ######################################################################

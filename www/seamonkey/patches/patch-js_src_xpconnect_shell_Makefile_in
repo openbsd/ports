@@ -1,0 +1,11 @@
+--- js/src/xpconnect/shell/Makefile.in.orig	Tue Apr  5 08:35:51 2005
++++ js/src/xpconnect/shell/Makefile.in	Wed Dec 13 17:56:25 2006
+@@ -56,6 +56,8 @@ REQUIRES	= xpconnect \
+ CPPSRCS		= xpcshell.cpp
+ 
+ LIBS		= \
++		-Wl,-rpath-link,/usr/local/lib/ \
++		-Wl,-rpath-link,$(X11BASE)/lib/ \
+ 		$(MOZ_JS_LIBS) \
+ 		$(XPCOM_LIBS) \
+ 		$(NSPR_LIBS) \

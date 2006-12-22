@@ -1,0 +1,21 @@
+@comment $OpenBSD: PFRAG.shared-devel,v 1.1.1.1 2006/12/22 23:32:28 kurt Exp $
+@lib seamonkey/lib/libfort.so.${LIBfort_VERSION}
+@lib seamonkey/lib/libgfxpsshar.so.${LIBgfxpsshar_VERSION}
+@lib seamonkey/lib/libgkgfx.so.${LIBgkgfx_VERSION}
+@lib seamonkey/lib/libgtkembedmoz.so.${LIBgtkembedmoz_VERSION}
+@lib seamonkey/lib/libgtkxtbin.so.${LIBgtkxtbin_VERSION}
+@lib seamonkey/lib/libjsj.so.${LIBjsj_VERSION}
+@lib seamonkey/lib/libldap50.so.${LIBldap50_VERSION}
+@lib seamonkey/lib/libmozjs.so.${LIBmozjs_VERSION}
+@lib seamonkey/lib/libmsgbaseutil.so.${LIBmsgbaseutil_VERSION}
+@lib seamonkey/lib/libnss3.so.${LIBnss3_VERSION}
+@lib seamonkey/lib/libnssckbi.so.${LIBnssckbi_VERSION}
+@lib seamonkey/lib/libprldap50.so.${LIBprldap50_VERSION}
+@lib seamonkey/lib/libsmime3.so.${LIBsmime3_VERSION}
+@lib seamonkey/lib/libsoftokn3.so.${LIBsoftokn3_VERSION}
+@lib seamonkey/lib/libssl3.so.${LIBssl3_VERSION}
+@lib seamonkey/lib/libswft.so.${LIBswft_VERSION}
+@lib seamonkey/lib/libxpcom.so.${LIBxpcom_VERSION}
+@lib seamonkey/lib/libxpcom_compat.so.${LIBxpcom_compat_VERSION}
+@lib seamonkey/lib/libxpcom_core.so.${LIBxpcom_core_VERSION}
+@lib seamonkey/lib/libxpistub.so.${LIBxpistub_VERSION}

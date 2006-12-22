@@ -1,0 +1,40 @@
+$OpenBSD: patch-security_coreconf_OpenBSD_mk,v 1.1.1.1 2006/12/22 23:32:28 kurt Exp $
+--- security/coreconf/OpenBSD.mk.orig	Sun Apr 25 11:02:17 2004
++++ security/coreconf/OpenBSD.mk	Mon Nov  6 16:39:58 2006
+@@ -37,12 +37,12 @@
+ 
+ include $(CORE_DEPTH)/coreconf/UNIX.mk
+ 
+-DEFAULT_COMPILER	= gcc
+-CC			= gcc
+-CCC			= g++
++DEFAULT_COMPILER	= ${CC}
++#CC			= ${CC}
++CCC			= ${CXX}
+ RANLIB			= ranlib
+ 
+-CPU_ARCH		:= $(shell uname -p)
++CPU_ARCH		:= $(shell arch -s)
+ ifeq ($(CPU_ARCH),i386)
+ OS_REL_CFLAGS		= -Di386
+ CPU_ARCH		= x86
+@@ -55,7 +55,7 @@ OS_LIBS			+= -pthread
+ DSO_LDOPTS		+= -pthread
+ endif
+ 
+-DLL_SUFFIX		= so.1.0
++DLL_SUFFIX		= so.${SO_VERSION}
+ 
+ OS_CFLAGS		= $(DSO_CFLAGS) $(OS_REL_CFLAGS) -ansi -Wall -pipe -DOPENBSD
+ 
+@@ -64,8 +64,9 @@ OS_LIBS			= 
+ ARCH			= openbsd
+ 
+ DSO_CFLAGS		= -fPIC -DPIC
+-DSO_LDOPTS		= -shared -Wl,-soname,lib$(LIBRARY_NAME)$(LIBRARY_VERSION).$(DLL_SUFFIX)
++DSO_LDOPTS		= -shared -fPIC -Wl,-soname,lib$(LIBRARY_NAME)$(LIBRARY_VERSION).$(DLL_SUFFIX)
+ DSO_LDFLAGS		=
+ 
+ MKSHLIB			= $(CC) $(DSO_LDOPTS)
+ 
++NSPR_LIBS		= $(shell pkg-config --libs nspr)

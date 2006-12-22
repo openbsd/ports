@@ -1,0 +1,30 @@
+$OpenBSD: README.OpenBSD,v 1.1.1.1 2006/12/22 23:32:28 kurt Exp $
+
+Loading of external images has been turned off by default on
+OpenBSD. To turn it back on goto Edit -> Preferences -> Mail &
+Newsgroups -> Message Display and enable "Allow messsages to
+load and display remote images and other content". However,
+it is recommended that you leave it off to avoid unwanted
+internet connections and possible future exploits against
+Mail & News. 
+
+To disable anti-aliasing (xft) set GDK_USE_XFT=0 in the environment.
+
+Plugins
+
+Seamonkey looks for plugins in ~/.mozilla/plugins,
+!!PREFIX!!/lib/mozilla-plugins, and !!PREFIX!!/seamonkey/plugins.
+The user environment variable MOZ_PLUGIN_PATH is not used on OpenBSD.
+
+Using Java Applets
+
+To make Applets work, you must symlink (not copy) the file
+libjavaplugin_oji.so into one of the directories listed above.
+This might be done like the following:
+
+$ cd ~/.mozilla/plugins
+$ ln -s !!PREFIX!!/jdk-1.5.0/jre/plugin/i386/ns7/libjavaplugin_oji.so .
+$   
+
+Information on building Java (on some platforms) can be found in
+http://www.openbsd.org/faq/faq13.html#javaflash
