@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2006/10/18 00:18:36 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.8 2006/12/22 22:16:10 jolan Exp $
 @newgroup _asterisk:545
 @newuser _asterisk:545:_asterisk:daemon:asterisk user:/nonexistent:/sbin/nologin
 include/asterisk/
@@ -345,6 +345,17 @@ share/asterisk/sounds/queue-thereare.gsm
 share/asterisk/sounds/queue-youarenext.gsm
 share/asterisk/sounds/screen-callee-options.gsm
 share/asterisk/sounds/seconds.gsm
+share/asterisk/sounds/silence/
+share/asterisk/sounds/silence/1.gsm
+share/asterisk/sounds/silence/10.gsm
+share/asterisk/sounds/silence/2.gsm
+share/asterisk/sounds/silence/3.gsm
+share/asterisk/sounds/silence/4.gsm
+share/asterisk/sounds/silence/5.gsm
+share/asterisk/sounds/silence/6.gsm
+share/asterisk/sounds/silence/7.gsm
+share/asterisk/sounds/silence/8.gsm
+share/asterisk/sounds/silence/9.gsm
 share/asterisk/sounds/spy-agent.gsm
 share/asterisk/sounds/spy-h323.gsm
 share/asterisk/sounds/spy-iax.gsm
