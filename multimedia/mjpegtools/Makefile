@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/12/16 12:22:34 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2006/12/22 16:30:17 steven Exp $
 
 COMMENT=		"tools to edit/modify/encode video streams"
 
@@ -54,7 +54,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
-			PKG_CONFIG="${LOCALBASE}/bin/pkg-config"
+			PKG_CONFIG="/usr/bin/pkg-config"
 
 FLAVORS=		quicktime optimized
 FLAVOR?=

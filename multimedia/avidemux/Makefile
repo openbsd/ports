@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/16 12:22:34 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/12/22 16:30:17 steven Exp $
 
 COMMENT=	"free video editor"
 
@@ -44,8 +44,7 @@ USE_GCC3=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 		-I${LOCALBASE}/include/libpng" \
-		LDFLAGS="-L${LOCALBASE}/lib -logg" \
-		PKG_CONFIG=${LOCALBASE}/bin/pkg-config
+		LDFLAGS="-L${LOCALBASE}/lib -logg"
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--with-jsapi-include=${LOCALBASE}/include/js \
 		--enable-xv \
