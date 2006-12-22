@@ -1,5 +1,5 @@
---- vl.c.orig	Wed May  3 15:32:58 2006
-+++ vl.c	Fri May  5 22:24:31 2006
+--- vl.c.orig	Mon Dec 18 16:55:53 2006
++++ vl.c	Mon Dec 18 17:06:04 2006
 @@ -43,7 +43,8 @@
  #include <netdb.h>
  #ifdef _BSD
@@ -10,15 +10,7 @@
  #include <libutil.h>
  #endif
  #else
-@@ -130,6 +131,7 @@ QEMUTimer *gui_timer;
- int vm_running;
- int rtc_utc = 1;
- int cirrus_vga_enabled = 1;
-+int nic_pcnet = 0;
- #ifdef TARGET_SPARC
- int graphic_width = 1024;
- int graphic_height = 768;
-@@ -292,7 +294,7 @@ void isa_unassign_ioport(int start, int 
+@@ -291,7 +292,7 @@ void isa_unassign_ioport(int start, int 
  
  /***********************************************************/
  
@@ -27,7 +19,7 @@
  {
      int c;
      char *q = buf;
-@@ -310,7 +312,7 @@ void pstrcpy(char *buf, int buf_size, co
+@@ -309,7 +310,7 @@ void pstrcpy(char *buf, int buf_size, co
  }
  
  /* strcat and truncate. */
@@ -36,32 +28,7 @@
  {
      int len;
      len = strlen(buf);
-@@ -561,7 +563,23 @@ int64_t cpu_get_real_ticks(void)
- }
- 
- #else
--#error unsupported CPU
-+# warning non-optimized CPU
-+#include <sys/time.h>
-+#include <time.h>
-+
-+int64_t cpu_get_real_ticks(void)
-+{
-+    struct timeval tv;
-+    static int64_t i = 0;
-+    int64_t j;
-+
-+    gettimeofday(&tv, NULL);
-+    do {
-+	j = (tv.tv_sec * (uint64_t) 1000000) + tv.tv_usec;
-+    } while (i == j);
-+    i = j;
-+    return j;
-+}
- #endif
- 
- static int64_t cpu_ticks_prev;
-@@ -2201,7 +2219,7 @@ static int parse_macaddr(uint8_t *macadd
+@@ -2631,7 +2632,7 @@ static int parse_macaddr(uint8_t *macadd
      return 0;
  }
  
@@ -70,17 +37,17 @@
  {
      const char *p, *p1;
      int len;
-@@ -2560,11 +2578,85 @@ static int tap_open(char *ifname, int if
+@@ -3029,11 +3030,85 @@ static int tap_open(char *ifname, int if
      char *dev;
      struct stat s;
  
 +    /* If the device was specified on the command line, use it */
 +    if (ifname[0]) {
-+	fd = open(ifname, O_RDWR);
-+	if (fd < 0) {
-+	   fprintf(stderr, "warning: could not open %s: no virtual network emulation\n", ifname);
-+	     return -1;
-+	}
++       fd = open(ifname, O_RDWR);
++       if (fd < 0) {
++          fprintf(stderr, "warning: could not open %s: no virtual network emulation\n", ifname);
++            return -1;
++       }
 +    } else {
 +#ifdef __OpenBSD__
 +    struct ifreq ifr;
@@ -94,13 +61,13 @@
 +        fd = open(dname, O_RDWR);
 +    } else {
 +        for (; i != -1; i++) {
-+    	    snprintf(dname, sizeof dname, "/dev/tun%d", i);
++           snprintf(dname, sizeof dname, "/dev/tun%d", i);
 +            bzero(&ifr.ifr_name, sizeof(ifr.ifr_name));
-+	    snprintf(ifr.ifr_name, sizeof(ifr.ifr_name), "tun%d", i);
-+	    fd = open(dname, O_RDWR);
-+	    if (fd >= 0)
-+	        break;
-+	    else if (errno != ENOENT || ++enoentcount > 3) {
++           snprintf(ifr.ifr_name, sizeof(ifr.ifr_name), "tun%d", i);
++           fd = open(dname, O_RDWR);
++           if (fd >= 0)
++               break;
++           else if (errno != ENOENT || ++enoentcount > 3) {
 +                if (errno != EBUSY) {
 +                    err = errno;
 +                    break;
@@ -110,9 +77,9 @@
 +        }
 +    }
 +    if (fd < 0) {
-+	fprintf(stderr, "warning: could not open %s (%s): no virtual "
-+	    "network emulation\n", dname, strerror(err));
-+	return -1;
++       fprintf(stderr, "warning: could not open %s (%s): no virtual "
++           "network emulation\n", dname, strerror(err));
++       return -1;
 +    }
 +
 +    /* Set the tunnel device operation mode */
@@ -156,7 +123,7 @@
  
      fstat(fd, &s);
      dev = devname(s.st_rdev, S_IFCHR);
-@@ -3065,7 +3157,8 @@ static int net_socket_mcast_init(VLANSta
+@@ -3535,7 +3610,8 @@ static int net_socket_mcast_init(VLANSta
  
  }
  
@@ -166,12 +133,12 @@
                             const char *tag, const char *str)
  {
      const char *p;
-@@ -3190,17 +3283,21 @@ int net_client_init(const char *str)
+@@ -3660,17 +3736,21 @@ int net_client_init(const char *str)
          char ifname[64];
          char setup_script[1024];
          int fd;
-+	bzero(&ifname,sizeof(ifname));
-+	bzero(&setup_script,sizeof(setup_script));
++        bzero(&ifname,sizeof(ifname));
++        bzero(&setup_script,sizeof(setup_script));
          if (get_param_value(buf, sizeof(buf), "fd", p) > 0) {
              fd = strtol(buf, NULL, 0);
              ret = -1;
@@ -184,37 +151,38 @@
              }
 -            ret = net_tap_init(vlan, ifname, setup_script);
 +            if (get_param_value(ifname, sizeof(ifname), "ifname", p) == 0)
-+		ret = net_tap_init(vlan, NULL, setup_script);
-+	    else
-+            	ret = net_tap_init(vlan, ifname, setup_script);
++               ret = net_tap_init(vlan, NULL, setup_script);
++            else
++               ret = net_tap_init(vlan, ifname, setup_script);
          }
      } else
  #endif
-@@ -4623,6 +4720,7 @@ void help(void)
- #if defined(TARGET_PPC) || defined(TARGET_SPARC)
-            "-g WxH[xDEPTH]  Set the initial graphical resolution and depth\n"
+@@ -5453,7 +5533,23 @@ void register_machines(void)
+ #elif defined(TARGET_SH4)
+     qemu_register_machine(&shix_machine);
+ #else
+-#error unsupported CPU
++# warning non-optimized CPU
++#include <sys/time.h>
++#include <time.h>
++
++int64_t cpu_get_real_ticks(void)
++{
++    struct timeval tv;
++    static int64_t i = 0;
++    int64_t j;
++
++    gettimeofday(&tv, NULL);
++    do {
++       j = (tv.tv_sec * (uint64_t) 1000000) + tv.tv_usec;
++    } while (i == j);
++    i = j;
++    return j;
++}
  #endif
-+           "-nic-pcnet     simulate an AMD PC-Net PCI ethernet adaptor\n"
-            "\n"
-            "Network options:\n"
-            "-net nic[,vlan=n][,macaddr=addr][,model=type]\n"
-@@ -4735,6 +4833,7 @@ enum {
-     QEMU_OPTION_audio_help,
-     QEMU_OPTION_soundhw,
- #endif
-+    QEMU_OPTION_nic_pcnet,
+ }
  
-     QEMU_OPTION_net,
-     QEMU_OPTION_tftp,
-@@ -4841,6 +4940,7 @@ const QEMUOption qemu_options[] = {
-     
-     /* temporary options */
-     { "usb", 0, QEMU_OPTION_usb },
-+    { "nic-pcnet", 0, QEMU_OPTION_nic_pcnet },
-     { "cirrusvga", 0, QEMU_OPTION_cirrusvga },
-     { NULL },
- };
-@@ -5101,7 +5201,7 @@ int main(int argc, char **argv)
+@@ -5671,7 +5767,7 @@ int main(int argc, char **argv)
          serial_devices[i][0] = '\0';
      serial_device_index = 0;
      
@@ -223,13 +191,3 @@
      for(i = 1; i < MAX_PARALLEL_PORTS; i++)
          parallel_devices[i][0] = '\0';
      parallel_device_index = 0;
-@@ -5261,6 +5361,9 @@ int main(int argc, char **argv)
-                         optarg);
-                 nb_net_clients++;
-                 break;
-+            case QEMU_OPTION_nic_pcnet:
-+		nic_pcnet = 1;
-+		break;
- #ifdef CONFIG_SLIRP
-             case QEMU_OPTION_tftp:
- 		tftp_prefix = optarg;

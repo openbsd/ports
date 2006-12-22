@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2006/06/08 14:33:38 todd Exp $
+@comment $OpenBSD: PLIST,v 1.7 2006/12/22 17:31:45 todd Exp $
 bin/qemu
 bin/qemu-img
 bin/qemu-system-arm
@@ -56,8 +56,8 @@ share/qemu/keymaps/sv
 share/qemu/keymaps/th
 share/qemu/keymaps/tr
 share/qemu/linux_boot.bin
+share/qemu/openbios-sparc32
 share/qemu/ppc_rom.bin
-share/qemu/proll.elf
 share/qemu/vgabios-cirrus.bin
 share/qemu/vgabios.bin
 share/qemu/video.x

@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.5 2006/06/08 14:33:38 todd Exp $
---- configure.orig	Wed May  3 15:32:58 2006
-+++ configure	Fri May  5 22:07:38 2006
+$OpenBSD: patch-configure,v 1.6 2006/12/22 17:31:45 todd Exp $
+--- configure.orig	Sat Jul 22 13:23:34 2006
++++ configure	Sun Nov 12 17:10:10 2006
 @@ -21,8 +21,8 @@ prefix=""
  interp_prefix="/usr/gnemul/qemu-%M"
  static="no"
@@ -31,7 +31,7 @@ $OpenBSD: patch-configure,v 1.5 2006/06/08 14:33:38 todd Exp $
    *)
      cpu="unknown"
    ;;
-@@ -119,6 +122,7 @@ oss="yes"
+@@ -121,6 +124,7 @@ oss="yes"
  ;;
  OpenBSD)
  bsd="yes"
@@ -39,7 +39,7 @@ $OpenBSD: patch-configure,v 1.5 2006/06/08 14:33:38 todd Exp $
  oss="yes"
  ;;
  Darwin)
-@@ -495,7 +499,7 @@ else
+@@ -509,7 +513,7 @@ else
  if test -z "$prefix" ; then
      prefix="/usr/local"
  fi
@@ -48,7 +48,7 @@ $OpenBSD: patch-configure,v 1.5 2006/06/08 14:33:38 todd Exp $
  datadir="$prefix/share/qemu"
  docdir="$prefix/share/doc/qemu"
  bindir="$prefix/bin"
-@@ -523,9 +527,7 @@ if test "$darwin" = "yes" ; then
+@@ -537,9 +541,7 @@ if test "$darwin" = "yes" ; then
      echo "Cocoa support     $cocoa"
  fi
  echo "SDL support       $sdl"
@@ -59,7 +59,7 @@ $OpenBSD: patch-configure,v 1.5 2006/06/08 14:33:38 todd Exp $
  echo "mingw32 support   $mingw32"
  echo "Adlib support     $adlib"
  echo "CoreAudio support $coreaudio"
-@@ -586,6 +588,9 @@ if test "$cpu" = "i386" ; then
+@@ -602,6 +604,9 @@ if test "$cpu" = "i386" ; then
  elif test "$cpu" = "x86_64" ; then
    echo "ARCH=x86_64" >> $config_mak
    echo "#define HOST_X86_64 1" >> $config_h
@@ -69,7 +69,7 @@ $OpenBSD: patch-configure,v 1.5 2006/06/08 14:33:38 todd Exp $
  elif test "$cpu" = "armv4b" ; then
    echo "ARCH=arm" >> $config_mak
    echo "#define HOST_ARM 1" >> $config_h
-@@ -665,6 +670,9 @@ fi
+@@ -681,6 +686,9 @@ fi
  if test "$oss" = "yes" ; then
    echo "CONFIG_OSS=yes" >> $config_mak
    echo "#define CONFIG_OSS 1" >> $config_h
@@ -79,9 +79,9 @@ $OpenBSD: patch-configure,v 1.5 2006/06/08 14:33:38 todd Exp $
  fi
  if test "$coreaudio" = "yes" ; then
    echo "CONFIG_COREAUDIO=yes" >> $config_mak
-@@ -703,6 +711,13 @@ if [ "$bsd" = "yes" ] ; then
-   echo "#define MAP_ANONYMOUS MAP_ANON" >> $config_h
-   echo "#define _BSD 1" >> $config_h
+@@ -715,6 +723,13 @@ fi
+ if [ "$build_acpi_tables" = "yes" ] ; then
+   echo "BUILD_ACPI_TABLES=yes" >> $config_mak
  fi
 +
 +if [ "$openbsd" = "yes" ] ; then
@@ -91,5 +91,5 @@ $OpenBSD: patch-configure,v 1.5 2006/06/08 14:33:38 todd Exp $
 +  echo "#define qemu_siginfo struct siginfo" >> $config_h
 +fi     
  
- for target in $target_list; do
- target_dir="$target"
+ # XXX: suppress that
+ if [ "$bsd" = "yes" ] ; then
