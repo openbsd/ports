@@ -1,8 +1,4 @@
-A small utility to read and write TAG info, as well as retrieve
-the MP3 header info and print it all out in a nice format.
-
-Features:
- - Get, Set and Wipe MP3 TAG Info.
- - Get MPEG Audio Version 1, 2 and 2.5 Header info.
- - User-definable output formatting (rather advanced).
- - Can rename files according to user-defined scheme.
+MP3Info is a little utility used to read and modify the ID3 tags of MP3
+files. MP3Info can also display various technical aspects of an MP3 file
+including playing time, bit-rate, sampling frequency and other attributes
+in a pre-defined or user-specifiable output format.
