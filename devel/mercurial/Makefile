@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2006/10/09 14:29:54 aanriot Exp $
+# $OpenBSD: Makefile,v 1.5 2006/12/23 04:17:20 jolan Exp $
 
 COMMENT=		"fast, lightweight source control management"
 
-VERSION=		0.9.1
-DISTNAME=		mercurial-${VERSION}
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		mercurial-0.9.3
 CATEGORIES=     	devel
 HOMEPAGE=		http://www.selenic.com/mercurial/
 
@@ -20,7 +18,9 @@ MASTER_SITES=		http://www.selenic.com/mercurial/release/
 
 USE_GMAKE=		Yes
 MODULES=		lang/python
-# REGRESS_TARGET= tests  # Currently incompatible with BSD merge
+
+# Many regress tests broken on OpenBSD.
+NO_REGRESS=		Yes
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/hg.1 ${PREFIX}/man/man1
