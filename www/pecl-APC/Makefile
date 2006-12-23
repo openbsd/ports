@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/13 14:58:42 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/23 21:31:05 sturm Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,8 +25,8 @@ AUTOCONF_VER=	2.59
 AUTOMAKE_VER=	1.4
 
 BUILD_DEPENDS=	:php5-pear-*:www/php5/core,-pear \
-		::devel/autoconf/${AUTOCONF_VER} \
-		::devel/automake/${AUTOMAKE_VER} \
+		:autoconf-${AUTOCONF_VER}:devel/autoconf/${AUTOCONF_VER} \
+		:automake-${AUTOMAKE_VER}.*:devel/automake/${AUTOMAKE_VER} \
 		::devel/libtool
 RUN_DEPENDS=	:php5-core-*:www/php5/core
 
