@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2006/10/04 22:20:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2006/12/23 08:17:54 jolan Exp $
 
-COMMENT=	"tactical war game like Battle Isle"
-DISTNAME=	crimson-0.4.9
+COMMENT=	"tactical war game like Battle Isle; multiplayer"
+DISTNAME=	crimson-0.5.0
 CATEGORIES=	games x11
 MASTER_SITES=	${HOMEPAGE}files/
 
@@ -18,6 +18,7 @@ USE_X11=	Yes
 USE_GMAKE=	Yes
 
 LIB_DEPENDS=	SDL_mixer::devel/sdl-mixer \
+		SDL_net::devel/sdl-net \
 		SDL_ttf::devel/sdl-ttf
 
 CONFIGURE_STYLE=gnu
