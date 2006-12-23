@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2006/12/16 12:22:36 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2006/12/23 13:31:30 jolan Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"videolan client; multimedia player"
-V=		0.8.5
+V=		0.8.6
 DISTNAME=	vlc-${V}
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
@@ -191,7 +191,7 @@ CFLAGS+=-mhard-quad-float
 # win32 codecs support uses i386_set_ldt
 post-configure:
 .if ${MACHINE_ARCH} == "i386"
-	@perl -pi -e s,'VLC_ENTRY = vlc_entry__0_8_5','VLC_ENTRY = vlc_entry__0_8_5 -li386',g \
+	@perl -pi -e s,'VLC_ENTRY = vlc_entry__0_8_6','VLC_ENTRY = vlc_entry__0_8_6 -li386',g \
 	${WRKSRC}/modules/codec/Makefile ${WRKSRC}/modules/codec/dmo/Makefile
 .endif
 

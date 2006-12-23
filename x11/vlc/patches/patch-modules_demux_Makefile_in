@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_demux_Makefile_in,v 1.1 2006/12/23 13:31:31 jolan Exp $
+--- modules/demux/Makefile.in.orig	Fri Dec  8 19:34:22 2006
++++ modules/demux/Makefile.in	Sat Dec 23 07:17:18 2006
+@@ -1769,7 +1769,7 @@ LTCXXCOMPILE = $(LIBTOOL) --mode=compile
+ 	$(AM_CXXFLAGS) $(CXXFLAGS)
+ CXXLD = $(CXX)
+ CXXLINK = $(LIBTOOL) --mode=link $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) \
+-	$(AM_LDFLAGS) $(LDFLAGS) -o $@
++	$(AM_LDFLAGS) $(LDFLAGS) -lstdc++ -o $@
+ DIST_SOURCES = $(liba52sys_a_SOURCES) $(liba52sys_plugin_a_SOURCES) \
+ 	$(libaiff_a_SOURCES) $(libaiff_plugin_a_SOURCES) \
+ 	$(libau_a_SOURCES) $(libau_plugin_a_SOURCES) \

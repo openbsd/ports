@@ -1,0 +1,21 @@
+$OpenBSD: patch-modules_codec_faad_c,v 1.1 2006/12/23 13:31:31 jolan Exp $
+--- modules/codec/faad.c.orig	Fri Dec  8 19:12:20 2006
++++ modules/codec/faad.c	Sat Dec 23 03:55:01 2006
+@@ -315,6 +315,9 @@ static aout_buffer_t *DecodeBlock( decod
+         p_dec->fmt_out.audio.i_rate = frame.samplerate;
+         p_dec->fmt_out.audio.i_channels = frame.channels;
+ 
++#if 0
++XXX: faad needs to be updated to 2.5?
++
+         /* Adjust stream info when dealing with SBR/PS */
+         if( (p_sys->b_sbr != frame.sbr || p_sys->b_ps != frame.ps) &&
+             p_dec->p_parent->i_object_type == VLC_OBJECT_INPUT )
+@@ -336,6 +339,7 @@ static aout_buffer_t *DecodeBlock( decod
+           free( psz_cat );
+           p_sys->b_sbr = frame.sbr; p_sys->b_ps = frame.ps;
+         }
++#endif
+ 
+         /* Convert frame.channel_position to our own channel values */
+         for( i = 0; i < frame.channels; i++ )

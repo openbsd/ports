@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2006/11/03 15:15:07 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.22 2006/12/23 13:31:31 jolan Exp $
 %%altivec%%
 %%win32%%
 %%x86opt%%
@@ -17,8 +17,6 @@ include/vlc/sout.h
 include/vlc/vlc.h
 include/vlc/vout.h
 lib/libvlc.a
-lib/mozilla/
-lib/mozilla/components/
 lib/vlc/
 lib/vlc/access/
 lib/vlc/access/libaccess_directory_plugin.so
@@ -33,6 +31,7 @@ lib/vlc/access/libdvdnav_plugin.so
 lib/vlc/access/libdvdread_plugin.so
 lib/vlc/access/libscreen_plugin.so
 lib/vlc/access_filter/
+lib/vlc/access_filter/libaccess_filter_dump_plugin.so
 lib/vlc/access_filter/libaccess_filter_record_plugin.so
 lib/vlc/access_filter/libaccess_filter_timeshift_plugin.so
 lib/vlc/access_output/
@@ -86,6 +85,7 @@ lib/vlc/codec/libdts_plugin.so
 lib/vlc/codec/libdvbsub_plugin.so
 lib/vlc/codec/libfaad_plugin.so
 lib/vlc/codec/libfake_plugin.so
+lib/vlc/codec/libffmpeg_plugin.so
 lib/vlc/codec/libflacdec_plugin.so
 lib/vlc/codec/liblibmpeg2_plugin.so
 lib/vlc/codec/liblpcm_plugin.so
@@ -120,6 +120,7 @@ lib/vlc/demux/libm3u_plugin.so
 lib/vlc/demux/libm4a_plugin.so
 lib/vlc/demux/libm4v_plugin.so
 lib/vlc/demux/libmjpeg_plugin.so
+lib/vlc/demux/libmkv_plugin.so
 lib/vlc/demux/libmp4_plugin.so
 lib/vlc/demux/libmpc_plugin.so
 lib/vlc/demux/libmpga_plugin.so
@@ -135,6 +136,7 @@ lib/vlc/demux/librawdv_plugin.so
 lib/vlc/demux/libreal_plugin.so
 lib/vlc/demux/libsgimb_plugin.so
 lib/vlc/demux/libsubtitle_plugin.so
+lib/vlc/demux/libtta_plugin.so
 lib/vlc/demux/libty_plugin.so
 lib/vlc/demux/libvobsub_plugin.so
 lib/vlc/demux/libvoc_plugin.so
@@ -143,9 +145,6 @@ lib/vlc/demux/libxa_plugin.so
 lib/vlc/gui/
 lib/vlc/gui/libncurses_plugin.so
 lib/vlc/gui/libwxwidgets_plugin.so
-lib/vlc/libffmpeg.a
-lib/vlc/libmkv.a
-lib/vlc/libstream_out_switcher.a
 lib/vlc/libtheora.a
 lib/vlc/libxvideo.a
 lib/vlc/misc/
@@ -191,6 +190,7 @@ lib/vlc/stream_out/libstream_out_gather_plugin.so
 lib/vlc/stream_out/libstream_out_mosaic_bridge_plugin.so
 lib/vlc/stream_out/libstream_out_rtp_plugin.so
 lib/vlc/stream_out/libstream_out_standard_plugin.so
+lib/vlc/stream_out/libstream_out_switcher_plugin.so
 lib/vlc/stream_out/libstream_out_transcode_plugin.so
 lib/vlc/video_chroma/
 lib/vlc/video_chroma/libi420_rgb_plugin.so
@@ -223,17 +223,29 @@ lib/vlc/video_output/libimage_plugin.so
 lib/vlc/video_output/libvout_sdl_plugin.so
 lib/vlc/video_output/libx11_plugin.so
 lib/vlc/visualization/
+share/applications/
+share/applications/vlc.desktop
 share/doc/vlc/
 share/doc/vlc/bugreport-howto.txt
 share/doc/vlc/fortunes.txt
 share/doc/vlc/intf-cdda.txt
 share/doc/vlc/intf-vcd.txt
+share/locale/af/LC_MESSAGES/vlc.mo
+share/locale/ar/LC_MESSAGES/vlc.mo
 share/locale/ca/LC_MESSAGES/vlc.mo
+share/locale/co/
+share/locale/co/LC_MESSAGES/
+share/locale/co/LC_MESSAGES/vlc.mo
+share/locale/cs/LC_MESSAGES/vlc.mo
 share/locale/da/LC_MESSAGES/vlc.mo
 share/locale/de/LC_MESSAGES/vlc.mo
 share/locale/en_GB/LC_MESSAGES/vlc.mo
 share/locale/es/LC_MESSAGES/vlc.mo
+share/locale/eu/LC_MESSAGES/vlc.mo
 share/locale/fr/LC_MESSAGES/vlc.mo
+share/locale/fur/
+share/locale/fur/LC_MESSAGES/
+share/locale/fur/LC_MESSAGES/vlc.mo
 share/locale/gl/LC_MESSAGES/vlc.mo
 share/locale/he/LC_MESSAGES/vlc.mo
 share/locale/hi/LC_MESSAGES/vlc.mo
@@ -242,14 +254,25 @@ share/locale/it/LC_MESSAGES/vlc.mo
 share/locale/ja/LC_MESSAGES/vlc.mo
 share/locale/ka/LC_MESSAGES/vlc.mo
 share/locale/ko/LC_MESSAGES/vlc.mo
+share/locale/lt/LC_MESSAGES/vlc.mo
+share/locale/lv/LC_MESSAGES/vlc.mo
+share/locale/ms/LC_MESSAGES/vlc.mo
+share/locale/nb/LC_MESSAGES/vlc.mo
+share/locale/ne/LC_MESSAGES/vlc.mo
 share/locale/nl/LC_MESSAGES/vlc.mo
+share/locale/nn/LC_MESSAGES/vlc.mo
 share/locale/oc/
 share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/vlc.mo
+share/locale/pa/LC_MESSAGES/vlc.mo
 share/locale/pt_BR/LC_MESSAGES/vlc.mo
 share/locale/ro/LC_MESSAGES/vlc.mo
 share/locale/ru/LC_MESSAGES/vlc.mo
+share/locale/sk/LC_MESSAGES/vlc.mo
+share/locale/sl/LC_MESSAGES/vlc.mo
+share/locale/sq/LC_MESSAGES/vlc.mo
 share/locale/sv/LC_MESSAGES/vlc.mo
+share/locale/th/LC_MESSAGES/vlc.mo
 share/locale/tr/LC_MESSAGES/vlc.mo
 share/locale/zh_CN/LC_MESSAGES/vlc.mo
 share/locale/zh_TW/LC_MESSAGES/vlc.mo

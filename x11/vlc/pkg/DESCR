@@ -15,7 +15,3 @@ e.g. by running:
 
 This value can be made permanent by editing /etc/sysctl.conf, see
 sysctl.conf(5) for more details.
-
-FLAVORs:
-
-	no_dvd - disable dvd playing code

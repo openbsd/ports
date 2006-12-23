@@ -1,0 +1,45 @@
+$OpenBSD: patch-aclocal_m4,v 1.5 2006/12/23 13:31:31 jolan Exp $
+--- aclocal.m4.orig	Fri Dec  8 19:33:37 2006
++++ aclocal.m4	Sat Dec 23 06:31:31 2006
+@@ -1041,7 +1041,7 @@ AC_DEFUN([VLC_LIBRARY_SUFFIX], [
+     darwin*)
+       LIBEXT=".dylib"
+       ;;
+-    *mingw32* | *cygwin* | *wince* | *mingwce* | *pe*)
++    *mingw32* | *cygwin* | *wince* | *mingwce*)
+       LIBEXT=".dll"
+       ;;
+     hpux*)
+@@ -1059,7 +1059,7 @@ AC_DEFUN([VLC_SYMBOL_PREFIX], [
+   AC_MSG_CHECKING(for prefix to exported symbols)
+   SYMPREF=""
+   case "${target_os}" in
+-    darwin* | *mingw32* | *cygwin* | *wince* | *mingwce* | *pe*)
++    darwin* | *mingw32* | *cygwin* | *wince* | *mingwce*)
+       SYMPREF="_"
+       ;;
+   esac
+@@ -8754,9 +8754,9 @@ AC_DEFUN([AC_LIB_LINKFLAGS_BODY],
+           found_so=
+           found_a=
+           if test $use_additional = yes; then
+-            if test -n "$shlibext" && test -f "$additional_libdir/lib$name.$shlibext"; then
++	    if test -n "$shlibext" && test "`echo $additional_libdir/lib$name.$shlibext*`" != "$additional_libdir/lib$name.$shlibext*"; then
+               found_dir="$additional_libdir"
+-              found_so="$additional_libdir/lib$name.$shlibext"
++              found_so="-l$name"
+               if test -f "$additional_libdir/lib$name.la"; then
+                 found_la="$additional_libdir/lib$name.la"
+               fi
+@@ -8776,9 +8776,9 @@ AC_DEFUN([AC_LIB_LINKFLAGS_BODY],
+               case "$x" in
+                 -L*)
+                   dir=`echo "X$x" | sed -e 's/^X-L//'`
+-                  if test -n "$shlibext" && test -f "$dir/lib$name.$shlibext"; then
++		  if test -n "$shlibext" && test "`echo $dir/lib$name.$shlibext*`" != "$dir/lib$name.$shlibext*"; then
+                     found_dir="$dir"
+-                    found_so="$dir/lib$name.$shlibext"
++                    found_so="-l$name"
+                     if test -f "$dir/lib$name.la"; then
+                       found_la="$dir/lib$name.la"
+                     fi
