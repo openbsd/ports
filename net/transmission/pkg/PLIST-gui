@@ -1,2 +1,4 @@
-@comment $OpenBSD: PLIST-gui,v 1.1.1.1 2006/04/26 20:05:06 naddy Exp $
+@comment $OpenBSD: PLIST-gui,v 1.2 2006/12/23 17:04:16 naddy Exp $
 bin/transmission-gtk
+share/locale/fr/LC_MESSAGES/transmission-gtk.mo
+share/locale/it/LC_MESSAGES/transmission-gtk.mo

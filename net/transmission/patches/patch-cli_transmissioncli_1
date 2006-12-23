@@ -1,0 +1,63 @@
+$OpenBSD: patch-cli_transmissioncli_1,v 1.1 2006/12/23 17:04:16 naddy Exp $
+--- cli/transmissioncli.1.orig	Wed Jun 28 17:49:22 2006
++++ cli/transmissioncli.1	Wed Jun 28 17:52:18 2006
+@@ -23,13 +23,19 @@
+ .Nm transmissioncli
+ .Bk -words
+ .Op Fl h
+-.Op Fl i Ar torrent-file
+-.Op Fl s Ar torrent-file
++.Nm
+ .Op Fl v Ar level
++.Oo
++.Fl i | s
++.Oc
++.Ar torrent-file
++.Nm
++.Op Fl v Ar level
+ .Op Fl p Ar port
+ .Op Fl u Ar upload-rate
+-.Op Fl u Ar download-rate
++.Op Fl d Ar download-rate
+ .Op Fl f Ar script
++.Ar torrent-file
+ .Ek
+ .Sh DESCRIPTION
+ The
+@@ -40,13 +46,12 @@ scripting capabilities.  The options are
+ .Bl -tag -width Ds
+ .It Fl h, Fl -help
+ Prints a short usage summary.
+-.It Fl i, Fl -info Ar torrent-file
++.It Fl i, Fl -info
+ Shows information from the specified torrent file, such as the
+ cryptographic hash, the tracker, announcement, file size and file
+ name.
+-.It Fl s, -scrape Ar torrent-file
+-Prints the number of seeders and leechers for the specified torrent
+-file, and exits.
++.It Fl s, -scrape
++Prints the number of seeders and leechers from the tracker and exits.
+ .It Fl v, -verbose Ar level
+ Sets debugging options.  The current range is 0-2, with the highest
+ level producing the most output.  The default is 0.
+@@ -73,9 +78,9 @@ The
+ .Nm
+ program was written by 
+ .An -nosplit
+-.An Eric Petit Aq titer@m0k.org
+-.An Josh Elsasser Aq josh@elsasser.org
+-.An Bryan Varner Aq bryan@varnernet.com
++.An Eric Petit Aq titer@m0k.org ,
++.An Josh Elsasser Aq josh@elsasser.org ,
++.An Bryan Varner Aq bryan@varnernet.com ,
+ and
+ .An Michael Demars Aq keul@m0k.org .
+ .Sh SEE ALSO
+@@ -83,5 +88,5 @@ http://transmission.m0k.org
+ .Sh CAVEATS 
+ .Nm
+ currently saves its downloads into the directory from which it was
+-called.  If this directory is not writeable by the user, the program
++called.  If this directory is not writable by the user, the program
+ will terminate unexpectedly.

@@ -1,0 +1,50 @@
+$OpenBSD: patch-mk_common_mk,v 1.1 2006/12/23 17:04:16 naddy Exp $
+--- mk/common.mk.orig	Sun Jun 25 23:34:31 2006
++++ mk/common.mk	Wed Jun 28 18:02:31 2006
+@@ -1,8 +1,6 @@
+ # $Id: patch-mk_common_mk,v 1.1 2006/12/23 17:04:16 naddy Exp $
+ 
+-TMPCFLAGS   = -g -Wall -W -O3 -funroll-loops -D_FILE_OFFSET_BITS=64 \
+-              -D_LARGEFILE_SOURCE -D_GNU_SOURCE \
+-              -DSYS_$(shell echo $(SYSTEM) | tr a-z A-Z)
++TMPCFLAGS   = -DSYS_$(shell echo $(SYSTEM) | tr a-z A-Z)
+ TMPCXXFLAGS = $(TMPCFLAGS)
+ TMPLDFLAGS  =
+ 
+@@ -17,7 +15,8 @@ endif
+ endif
+ 
+ ifeq ($(PTHREAD),yes)
+-ifeq ($(SYSTEM),FreeBSD)
++ifneq ($(filter FreeBSD OpenBSD,$(SYSTEM)),)
++TMPCFLAGS  += -pthread
+ TMPLDFLAGS += -pthread
+ else
+ TMPLDFLAGS += -lpthread
+@@ -62,20 +61,20 @@ endef
+ 
+ define INSTALL_BIN_RULE
+        @echo "Install $<"
+-       @$(MKDIR) $(PREFIX)/bin
+-       @$(CP) $< $(PREFIX)/bin/
++       @$(BSD_INSTALL_PROGRAM_DIR) $(PREFIX)/bin
++       @$(BSD_INSTALL_PROGRAM) $< $(PREFIX)/bin/
+ endef
+ 
+ define INSTALL_LOCALE_RULE
+        @echo "Install $<"
+-       @$(MKDIR) $(LOCALEDIR)/$*/LC_MESSAGES
+-       @$(CP) $< $(LOCALEDIR)/$*/LC_MESSAGES/transmission-gtk.mo
++       @$(BSD_INSTALL_DATA_DIR) $(LOCALEDIR)/$*/LC_MESSAGES
++       @$(BSD_INSTALL_DATA) $< $(LOCALEDIR)/$*/LC_MESSAGES/transmission-gtk.mo
+ endef
+ 
+ define INSTALL_MAN_RULE
+ 	@echo "Install $<"
+-	@$(MKDIR) $(PREFIX)/man/man1
+-	@$(CP) $< $(PREFIX)/man/man1/
++	@$(BSD_INSTALL_MAN_DIR) $(PREFIX)/man/man1
++	@$(BSD_INSTALL_MAN) $< $(PREFIX)/man/man1/
+ endef
+ 
+ RM    = rm -Rf

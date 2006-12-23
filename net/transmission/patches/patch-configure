@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2006/12/23 17:04:16 naddy Exp $
+--- configure.orig	Wed Jun 28 13:55:10 2006
++++ configure	Wed Jun 28 13:55:27 2006
+@@ -159,7 +159,7 @@ EOF
+   do
+     if runcmd $CC $CFLAGS_GTK -I$intl_testdir $LDFLAGS_GTK -o testconf testconf.c
+     then
+-      CFLAGS_GTK="CFLAGS_GTK -I$intl_testdir"
++      CFLAGS_GTK="$CFLAGS_GTK -I$intl_testdir"
+       rm -f testconf.c testconf
+       return 0
+     fi
