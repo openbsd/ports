@@ -1,0 +1,4 @@
+Bruce the Presentation Tool is for Python programmers who are tired of
+fighting with presentation tools. In its basic form it allows text, code
+or image pages and even interactive Python sessions. It uses PyGame and
+is easily extensible to add new page types.
