@@ -1,0 +1,20 @@
+$OpenBSD: patch-src-other_procedures_tcl,v 1.1.1.1 2006/12/23 10:26:57 jasper Exp $
+--- src/other_procedures.tcl.orig	Sat Aug  5 20:54:23 2006
++++ src/other_procedures.tcl	Mon Dec  4 17:27:40 2006
+@@ -180,13 +180,13 @@ proc launch {burn_type burn_opt} {
+ 		}
+ 	} elseif { $burn_type == "create_iso" } {
+ 		# burn_opt contains destination file for ISO image
+-		if {[catch {open "|dd if=$burning_device of=$burn_opt |& cat"} input]} {
++		if {[catch {open "|dd bs=2048 if=$burning_device of=$burn_opt |& cat"} input]} {
+ 			#one blank line to increase readability
+-			.output_window.f_main.log insert end "dd if=$burning_device of=$burn_opt\n\n"
++			.output_window.f_main.log insert end "dd bs=2048 if=$burning_device of=$burn_opt\n\n"
+ 		} else {
+ 			fileevent $input readable log_proc
+ 			#one blank line to increase readability
+-			.output_window.f_main.log insert end "dd if=$burning_device of=$burn_opt\n\n"
++			.output_window.f_main.log insert end "dd bs=2048 if=$burning_device of=$burn_opt\n\n"
+ 		}
+ 	} elseif { $burn_type == "erase_dvd" } {
+ 		# $burn_opt= "" or "force" or "blank"

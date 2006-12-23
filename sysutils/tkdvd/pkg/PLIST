@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/23 10:26:57 jasper Exp $
+bin/tkdvd
+share/icons/
+share/icons/tkdvd/
+share/icons/tkdvd/tkdvd-2-32.png
+share/icons/tkdvd/tkdvd-2-48.png
+share/icons/tkdvd/tkdvd-32.png
+share/icons/tkdvd/tkdvd-48.png
+share/tkdvd/
+share/tkdvd/FAQ

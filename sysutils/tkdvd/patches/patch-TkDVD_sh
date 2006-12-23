@@ -1,0 +1,20 @@
+$OpenBSD: patch-TkDVD_sh,v 1.1.1.1 2006/12/23 10:26:57 jasper Exp $
+--- TkDVD.sh.orig	Sun Nov 12 13:25:23 2006
++++ TkDVD.sh	Mon Dec 18 19:54:04 2006
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ # the next line restarts using wish \
+-exec wish "$0" "$@"
++exec !!LOCALBASE!!/bin/wish8.4 "$0" "$@"
+ 
+ #    Copyright 2003 Regis Damongeot
+ 
+@@ -25,7 +25,7 @@ wm geometry . 700x550
+ wm protocol . WM_DELETE_WINDOW { save_options; destroy . }
+ set burn_type "burn_dvd"
+ set v_create_iso "no"
+-set burning_device "/dev/sr0"
++set burning_device "/dev/rc0c"
+ #used when creating ISO to save CD/DVD device
+ set temp_burning_device ""
+ set burn_command "growisofs"
