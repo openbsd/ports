@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.20 2006/11/24 00:15:11 jolan Exp $
+# $OpenBSD: Makefile,v 1.21 2006/12/23 09:32:03 jolan Exp $
 # XXX hardcoded endian list
 
-COMMENT-main=		"ur-quan masters: sdl port of star control 2"
+COMMENT-main=		"ur-quan masters: sdl port of star control 2; multiplayer"
 COMMENT-content=	"ur-quan masters: game content"
 COMMENT-remix1=		"ur-quan masters: remix pack number one"
 COMMENT-remix2=		"ur-quan masters: remix pack number two"
@@ -9,23 +9,21 @@ COMMENT-remix3=		"ur-quan masters: remix pack number three"
 COMMENT-threedomusic=	"ur-quan masters: 3DO music content"
 COMMENT-voice=		"ur-quan masters: speech content"
 
-DATE=			20060507
-VER=			0.5.0
-DISTNAME=		uqm-${DATE}
+VER=			0.6.0
+DISTNAME=		uqm-${VER}
 CATEGORIES=		games x11
-PDIST=			${DISTNAME}.tar.gz
+PDIST=			${DISTNAME}-source.tgz
 CDIST=			uqm-${VER}-content.uqm
-CDIST2=			uqm-${DATE}-content.zip
 MDIST=			uqm-${VER}-3domusic.uqm
 VDIST=			uqm-${VER}-voice.uqm
 RM1DIST=		uqm-remix-pack1.zip
 RM2DIST=		uqm-remix-pack2.zip
 RM3DIST=		uqm-remix-pack3.zip
-DISTFILES=		${PDIST}:0 ${CDIST} ${CDIST2}:0
+DISTFILES=		${PDIST} ${CDIST}
 SUPDISTFILES=		${MDIST} ${VDIST} ${RM1DIST} ${RM2DIST} ${RM3DIST}
 DIST_SUBDIR=		uqm
 CATEGORIES=		games x11
-PKGNAME-main=		uqm-${DATE}p0
+PKGNAME-main=		uqm-${VER}
 PKGNAME-content=	uqm-content-${VER}
 PKGNAME-remix1=		uqm-remix1-${VER}
 PKGNAME-remix2=		uqm-remix2-${VER}
@@ -34,17 +32,17 @@ PKGNAME-threedomusic=	uqm-threedomusic-${VER}
 PKGNAME-voice=		uqm-voice-${VER}
 EXTRACT_ONLY=		${PDIST}
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sc2/}
-MASTER_SITES0=		http://mirrors.protection.cx/~jolan/
 
 HOMEPAGE=		http://sc2.sourceforge.net/
 
-# GPL + Conditional licensing on content
-PERMIT_PACKAGE_CDROM=	"content must accompany distribution of ur-quan masters"
-PERMIT_PACKAGE_FTP=	"content must accompany distribution of ur-quan masters"
-PERMIT_DISTFILES_CDROM=	"content must accompany distribution of ur-quan masters"
-PERMIT_DISTFILES_FTP=	"content must accompany distribution of ur-quan masters"
+# GPL + Creative Commons Attribution-NonCommercial-ShareAlike 2.5
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS-main=	vorbisidec.>=1::audio/tremor \
+LIB_DEPENDS-main=	mikmod.>=2.4::audio/libmikmod \
+			vorbisidec.>=1::audio/tremor \
 			SDL_image::devel/sdl-image
 PKG_ARCH-content=	*
 PKG_ARCH-remix1=	*
@@ -61,6 +59,8 @@ WANTLIB-main=		X11 Xext c m pthread usbhid z \
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 USE_X11=	Yes
+
+WRKSRC=	${WRKDIST}/sc2
 
 PSEUDO_FLAVORS=	remix1 remix2 remix3 threedomusic voice
 FLAVOR?=
@@ -98,9 +98,7 @@ do-configure:
 		${FILESDIR}/config_unix.h > ${WRKSRC}/src/config_unix.h
 .endif
 	@sed -e "s|@CC@|${CC}|g ; s|@CFLAGS@|${CFLAGS}|g ; \
-		s|@CFLAGS_TREMOR@|-DOVCODEC_TREMOR|g ; \
 		s|@LOCALBASE@|${LOCALBASE}|g ; s|@PREFIX@|${PREFIX}|g ; \
-		s|@SOUNDLIB@|-lvorbisidec|g ; \
 		s|@X11BASE@|${X11BASE}|g" ${FILESDIR}/build.vars \
 		> ${WRKSRC}/build.vars
 
@@ -115,8 +113,6 @@ do-install:
 	${INSTALL_DATA} ${WRKBUILD}/content/version \
 		${PREFIX}/share/uqm/content
 	${INSTALL_DATA} ${FULLDISTDIR}/${CDIST} \
-		${PREFIX}/share/uqm/content/packages
-	${INSTALL_DATA} ${FULLDISTDIR}/${CDIST2} \
 		${PREFIX}/share/uqm/content/packages
 .if ${FLAVOR:L:Mremix1}
 	${INSTALL_DATA} ${FULLDISTDIR}/${RM1DIST} \

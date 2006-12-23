@@ -1,2 +1,4 @@
-@comment $OpenBSD: PLIST-remix2,v 1.1 2003/11/12 23:18:27 jolan Exp $
+@comment $OpenBSD: PLIST-remix2,v 1.2 2006/12/23 09:32:03 jolan Exp $
+share/uqm/content/packages/addons/
+share/uqm/content/packages/addons/uqmremix/
 share/uqm/content/packages/addons/uqmremix/uqm-remix-pack2.zip

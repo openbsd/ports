@@ -1,4 +1,4 @@
-/* 	$OpenBSD: config_unix.h,v 1.1 2005/06/23 00:50:17 jolan Exp $ */
+/* 	$OpenBSD: config_unix.h,v 1.2 2006/12/23 09:32:03 jolan Exp $ */
 
 /* This file contains some compile-time configuration options for *nix
  * systems.
@@ -40,8 +40,8 @@
 /* Defined if your system has stricmp of its own */
 #undef HAVE_STRICMP
 
-/* Defined if your system has getopt.h */
-#define HAVE_GETOPT_H
+/* Defined if your system has getopt_long */
+#define HAVE_GETOPT_LONG
 
 /* Defined if your system has iswgraph of its own*/
 #define HAVE_ISWGRAPH
@@ -53,5 +53,3 @@
 #define HAVE_WINT_T
 
 #endif  /* _CONFIG_UNIX_H */
-
-
