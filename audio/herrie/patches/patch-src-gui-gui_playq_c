@@ -1,3 +1,4 @@
+$OpenBSD: patch-src-gui-gui_playq_c,v 1.2 2006/12/23 10:04:03 jasper Exp $
 --- src/gui/gui_playq.c.orig	Sat Dec 23 10:55:55 2006
 +++ src/gui/gui_playq.c	Sat Dec 23 10:57:55 2006
 @@ -34,6 +34,11 @@
