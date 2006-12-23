@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2006/12/14 20:29:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2006/12/23 20:24:42 sturm Exp $
 
 COMMENT=	"GNU version of the traditional tar archiver"
 
@@ -36,6 +36,7 @@ FLAVOR?=
 .if ${FLAVOR:L:Mstatic}
 LDSTATIC=	-static
 MODULES=
+BUILD_DEPENDS=	:gettext->=0.14.6:devel/gettext
 .else
 LDSTATIC=
 WANTLIB=	c
