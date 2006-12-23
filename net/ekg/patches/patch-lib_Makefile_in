@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.1.1.1 2006/06/28 18:21:44 alek Exp $
---- lib/Makefile.in.orig	Mon Jun 26 02:16:27 2006
-+++ lib/Makefile.in	Mon Jun 26 02:16:28 2006
+$OpenBSD: patch-lib_Makefile_in,v 1.2 2006/12/23 21:17:33 sturm Exp $
+--- lib/Makefile.in.orig	Sat Jun 25 00:41:07 2005
++++ lib/Makefile.in	Sat Dec 23 14:10:33 2006
 @@ -11,7 +11,7 @@ VERSION_MAJOR=3
  VERSION_MINOR=3
  
@@ -10,3 +10,14 @@ $OpenBSD: patch-lib_Makefile_in,v 1.1.1.1 2006/06/28 18:21:44 alek Exp $
  LIBS = @LIBS_LIBGADU@
  
  MAKE = @MAKE@
+@@ -90,10 +90,4 @@ install-static:	install-common
+ 
+ strip-libgadu-so:
+ 	$(STRIP) $(SHARED)
+-
+-#
+-
+-ifneq ($(wildcard .depend),)
+-include .depend
+-endif
+ 
