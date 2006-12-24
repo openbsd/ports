@@ -1,11 +1,11 @@
-$OpenBSD: patch-install_tcl,v 1.1.1.1 2006/12/23 10:26:57 jasper Exp $
+$OpenBSD: patch-install_tcl,v 1.2 2006/12/24 06:46:04 steven Exp $
 --- install.tcl.orig	Thu Nov  3 20:09:57 2005
 +++ install.tcl	Mon Dec 18 19:40:31 2006
 @@ -1,6 +1,6 @@
  #!/bin/sh
  # the next line restarts using wish \
 -exec tclsh "$0" "$@"
-+exec /usr/local/bin/tclsh8.4 "$0" "$@"
++exec !!LOCALBASE!!/bin/tclsh8.4 "$0" "$@"
  
  #    Copyright 2003 Regis Damongeot
  
