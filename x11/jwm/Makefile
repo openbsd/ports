@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/27 19:22:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/24 22:48:03 jasper Exp $
 
 COMMENT=		"Joe's Window Manager"
 
-DISTNAME=		jwm-1.8rc4
+DISTNAME=		jwm-1.8
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.joewing.net/programs/jwm/
