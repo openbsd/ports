@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2006/04/02 11:00:10 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2006/12/24 20:12:45 jasper Exp $
 
 COMMENT=		"minimalist window manager for the X Window System"
 
-DISTNAME=		evilwm-0.99.24
+DISTNAME=		evilwm-0.99.25
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.6809.org.uk/evilwm/
