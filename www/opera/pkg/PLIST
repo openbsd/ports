@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2006/06/23 08:34:17 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.24 2006/12/24 11:24:09 bernd Exp $
 bin/opera
 lib/opera/
 lib/opera/plugins/
@@ -71,6 +71,9 @@ share/opera/styles/images/
 share/opera/styles/images/bar.png
 share/opera/styles/images/center.png
 share/opera/styles/images/opera.png
+share/opera/styles/images/red_center.png
+share/opera/styles/images/red_left.png
+share/opera/styles/images/red_right.png
 share/opera/styles/images/root.png
 share/opera/styles/images/top.png
 share/opera/styles/info.css
@@ -87,6 +90,7 @@ share/opera/styles/user/imageandlinkonly.css
 share/opera/styles/user/nostalgia.css
 share/opera/styles/user/showstructure.css
 share/opera/styles/user/textonly.css
+share/opera/styles/warning.css
 share/opera/styles/wml.css
 share/opera/svg-mo.dat
 share/opera/svg-mobd.dat
