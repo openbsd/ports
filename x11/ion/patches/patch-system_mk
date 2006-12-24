@@ -1,6 +1,6 @@
-$OpenBSD: patch-system_mk,v 1.6 2005/12/04 16:26:20 pedro Exp $
---- system.mk.orig	Sat Oct 29 10:33:25 2005
-+++ system.mk	Fri Dec  2 21:06:08 2005
+$OpenBSD: patch-system_mk,v 1.7 2006/12/24 11:01:55 pedro Exp $
+--- system.mk.orig	Sat Dec 23 13:00:13 2006
++++ system.mk	Sun Dec 24 08:45:16 2006
 @@ -7,7 +7,7 @@
  ## Installation paths
  ##
@@ -48,7 +48,7 @@ $OpenBSD: patch-system_mk,v 1.6 2005/12/04 16:26:20 pedro Exp $
  # SunOS/Solaris
  #X11_PREFIX=/usr/openwin
  
-@@ -88,7 +89,7 @@ XINERAMA_LIBS=-lXinerama
+@@ -91,7 +92,7 @@ DEFINES += -DCF_XINERAMA
  # XFree86 libraries up to 4.3.0 have a bug that will cause Ion to segfault
  # if Opera is used when i18n support is enabled. The following setting
  # should work around that situation.
@@ -56,8 +56,8 @@ $OpenBSD: patch-system_mk,v 1.6 2005/12/04 16:26:20 pedro Exp $
 +#DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WORKAROUND
  
  # Use the Xutf8 routines (XFree86 extension) instead of Xmb routines in
- # an UTF8 locale given the -i18n command line option?
-@@ -107,7 +108,7 @@ DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WOR
+ # an UTF8 locale.
+@@ -110,7 +111,7 @@ DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WOR
  # asprintf and vasprintf in the c library. (gnu libc has.)
  # If HAS_SYSTEM_ASPRINTF is not defined, an implementation
  # in sprintf_2.2/ is used.
@@ -66,7 +66,7 @@ $OpenBSD: patch-system_mk,v 1.6 2005/12/04 16:26:20 pedro Exp $
  
  
  # If you're on an archaic system (such as relatively recent *BSD releases)
-@@ -116,24 +117,24 @@ DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WOR
+@@ -119,24 +120,24 @@ DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WOR
  #DEFINES += -DCF_NO_LOCALE
  
  # On some other systems you may something like this:
