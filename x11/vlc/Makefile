@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.41 2006/12/23 13:31:30 jolan Exp $
+# $OpenBSD: Makefile,v 1.42 2006/12/24 01:57:16 jolan Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"videolan client; multimedia player"
 V=		0.8.6
 DISTNAME=	vlc-${V}
+PKGNAME=	vlc-${V}p0
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -49,7 +50,8 @@ WANTLIB=	ICE SM X11 Xext Xinerama Xv Xxf86vm c freetype m ncurses \
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.59
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		CPPFLAGS="-I${WRKSRC}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng"
+		CPPFLAGS="-I${WRKSRC}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+		XPIDL="${LOCALBASE}/seamonkey/xpidl"
 
 CONFIGURE_ARGS+=--disable-pth \
 		--disable-st \
@@ -87,7 +89,6 @@ CONFIGURE_ARGS+=--disable-pth \
 		--disable-slp \
 		--disable-lirc \
 		--disable-corba \
-		--disable-mozilla \
 		--disable-testsuite \
 		--disable-hal \
 		--disable-optimizations \
@@ -161,6 +162,18 @@ CONFIGURE_ARGS+=--enable-ncurses \
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 
+FLAVORS=no_web
+FLAVOR?=
+
+.if !${FLAVOR:L:Mno_web}
+BUILD_DEPENDS+=	:seamonkey-devel-*:www/seamonkey,-devel
+CONFIGURE_ARGS+=--enable-mozilla
+PORTPATH=	${WRKDIR}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${DEPBASE}/bin:${LOCALBASE}/bin:${X11BASE}/bin:${LOCALBASE}/seamonkey
+WANTLIB+=	Xt
+.else
+CONFIGURE_ARGS+=--disable-mozilla
+.endif
+
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 PKG_ARGS+=-Dx86opt=1
 .else
@@ -203,5 +216,12 @@ post-configure:
 # XXX install fails due to this file not being generated properly
 pre-install:
 	@touch ${WRKSRC}/share/skins2/default.vlt
+
+post-install:
+.if !${FLAVOR:L:Mno_web}
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/mozilla-plugins
+	${INSTALL_DATA} ${WRKBUILD}/mozilla/libvlcplugin.so \
+		${PREFIX}/lib/mozilla-plugins
+.endif
 
 .include <bsd.port.mk>

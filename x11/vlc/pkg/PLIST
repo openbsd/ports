@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.22 2006/12/23 13:31:31 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.23 2006/12/24 01:57:16 jolan Exp $
 %%altivec%%
 %%win32%%
 %%x86opt%%
+!%%no_web%%
 bin/vlc
 bin/vlc-config
 bin/wxvlc
