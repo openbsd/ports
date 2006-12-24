@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_mpcdec_config_types_h_in,v 1.1 2006/12/24 22:45:35 steven Exp $
+--- include/mpcdec/config_types.h.in.orig	Mon Dec 11 11:50:54 2006
++++ include/mpcdec/config_types.h.in	Mon Dec 11 11:51:37 2006
+@@ -35,6 +35,8 @@
+ #ifndef __MUSEPACK_CONFIG_TYPES_H__
+ #define __MUSEPACK_CONFIG_TYPES_H__
+ 
++#include <stdint.h>
++
+ typedef unsigned char mpc_bool_t;
+ #define TRUE  1
+ #define FALSE 0

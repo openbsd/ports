@@ -1,0 +1,43 @@
+$OpenBSD: patch-configure_ac,v 1.1 2006/12/24 22:45:35 steven Exp $
+--- configure.ac.orig	Mon Dec 11 11:48:33 2006
++++ configure.ac	Mon Dec 11 11:50:22 2006
+@@ -26,6 +26,7 @@ AC_CHECK_FUNCS([memmove memset sqrt])
+ AC_MSG_CHECKING(for int16_t)
+ AC_CACHE_VAL(has_int16_t,
+ [AC_TRY_RUN([
++#include <stdint.h>
+ int16_t foo;
+ int main() {return 0;}
+ ],
+@@ -38,6 +39,7 @@ AC_MSG_RESULT($has_int16_t)
+ AC_MSG_CHECKING(for int32_t)
+ AC_CACHE_VAL(has_int32_t,
+ [AC_TRY_RUN([
++#include <stdint.h>
+ int32_t foo;
+ int main() {return 0;}
+ ],
+@@ -50,6 +52,7 @@ AC_MSG_RESULT($has_int32_t)
+ AC_MSG_CHECKING(for uint32_t)
+ AC_CACHE_VAL(has_uint32_t,
+ [AC_TRY_RUN([
++#include <stdint.h>
+ uint32_t foo;
+ int main() {return 0;}
+ ],
+@@ -62,6 +65,7 @@ AC_MSG_RESULT($has_uint32_t)
+ AC_MSG_CHECKING(for uint16_t)
+ AC_CACHE_VAL(has_uint16_t,
+ [AC_TRY_RUN([
++#include <stdint.h>
+ uint16_t foo;
+ int main() {return 0;}
+ ],
+@@ -98,6 +102,7 @@ AC_MSG_RESULT($has_u_int16_t)
+ AC_MSG_CHECKING(for int64_t)
+ AC_CACHE_VAL(has_int64_t,
+ [AC_TRY_RUN([
++#include <stdint.h>
+ int64_t foo;
+ int main() {return 0;}
+ ],

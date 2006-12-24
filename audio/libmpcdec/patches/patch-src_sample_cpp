@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sample_cpp,v 1.1 2006/12/24 22:45:35 steven Exp $
+--- src/sample.cpp.orig	Mon Dec 11 10:21:39 2006
++++ src/sample.cpp	Mon Dec 11 10:22:05 2006
+@@ -270,7 +270,7 @@ main(int argc, char **argv)
+     /* instantiate a decoder with our file reader */
+     mpc_decoder_setup(&decoder, &reader);
+     if (!mpc_decoder_initialize(&decoder, &info)) {
+-        printf("Error initializing decoder.\n", argv[1]);
++        printf("Error initializing decoder.\n");
+         return 1;
+     }
+ 
