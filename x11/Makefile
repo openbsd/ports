@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.256 2006/12/21 09:11:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.257 2006/12/24 11:03:04 jasper Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -62,6 +62,7 @@
      SUBDIR += gtk+
      SUBDIR += gtk+2
      SUBDIR += gtk+extra
+     SUBDIR += gtk-chtheme
      SUBDIR += gtk-engines
      SUBDIR += gtk-engines2
      SUBDIR += gtk-theme-switch
