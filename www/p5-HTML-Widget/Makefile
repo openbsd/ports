@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/03 10:39:01 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2006/12/25 13:40:28 simon Exp $
 
 COMMENT=	"HTML widget and validation framework"
 
 DISTNAME=	HTML-Widget-1.10
-PKGNAME=	p5-${DISTNAME}p1
+PKGNAME=	p5-${DISTNAME}p2
 CATEGORIES=	www
 
-MAINTAINER=	Simon Dassow <janus@errornet.de>
+MAINTAINER=	Simon Dassow <simon@openbsd.org>
 
 # Same as Perl
 PERMIT_PACKAGE_CDROM=	Yes

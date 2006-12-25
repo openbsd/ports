@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/28 11:09:52 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/25 13:40:28 simon Exp $
 
 COMMENT=	"converts simple text to web constructs"
 
 DISTNAME=	Text-Textile-2.03
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	textproc
 
-MAINTAINER=	Simon Dassow <janus@errornet.de>
+MAINTAINER=	Simon Dassow <simon@openbsd.org>
 
 HOMEPAGE=	http://www.textism.com/tools/textile/
 

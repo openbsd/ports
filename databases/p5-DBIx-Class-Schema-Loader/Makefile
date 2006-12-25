@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/11 21:29:08 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/12/25 13:40:28 simon Exp $
 
 COMMENT= 	"dynamic definition of a DBIx::Class::Schema"
 
 MODULES=	cpan
 DISTNAME=	DBIx-Class-Schema-Loader-0.03009
-PKGNAME=	p5-${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}p1
 CATEGORIES=	databases
 
-MAINTAINER=	Simon Dassow <janus@errornet.de>
+MAINTAINER=	Simon Dassow <simon@openbsd.org>
 
 # Artistic + GPL
 PERMIT_PACKAGE_CDROM=	Yes

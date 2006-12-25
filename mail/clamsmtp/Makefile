@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 2006/10/06 19:47:52 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2006/12/25 13:40:28 simon Exp $
 
 COMMENT=	"SMTP virus filter"
 
 DISTNAME=	clamsmtp-1.8
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=    	mail
 
 HOMEPAGE=	http://memberwebs.com/nielsen/software/clamsmtp/
 
 MASTER_SITES=	${HOMEPAGE}
 
-MAINTAINER=	Simon Dassow <janus@errornet.de>
+MAINTAINER=	Simon Dassow <simon@openbsd.org>
 
 RUN_DEPENDS=	::security/clamav
 

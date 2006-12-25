@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/29 08:23:31 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/25 13:40:28 simon Exp $
 
 COMMENT=        "run tests built with Test::Builder"
 
@@ -6,7 +6,7 @@ MODULES=	cpan
 DISTNAME=	Test-Tester-0.103
 CATEGORIES=     devel
 
-MAINTAINER=	Simon Dassow <janus@errornet.de>
+MAINTAINER=	Simon Dassow <simon@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

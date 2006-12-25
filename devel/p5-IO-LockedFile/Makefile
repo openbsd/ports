@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/25 16:32:36 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/25 13:40:28 simon Exp $
 
 COMMENT=	"object methods for locking files"
 
 MODULES=	cpan
 DISTNAME=	IO-LockedFile-0.23
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel
 
-MAINTAINER=	Simon Dassow <janus@errornet.de>
+MAINTAINER=	Simon Dassow <simon@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

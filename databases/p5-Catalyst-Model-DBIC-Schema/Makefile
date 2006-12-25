@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/14 17:55:39 dassow Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/25 13:40:28 simon Exp $
 
 COMMENT= 	"model class for catalyst"
 
 DISTNAME=	Catalyst-Model-DBIC-Schema-0.18
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	databases
 MODULES=	cpan
 
-MAINTAINER=	Simon Dassow <janus@errornet.de>
+MAINTAINER=	Simon Dassow <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
