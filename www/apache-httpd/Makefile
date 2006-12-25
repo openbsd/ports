@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2006/12/16 00:41:56 deanna Exp $
+# $OpenBSD: Makefile,v 1.7 2006/12/25 20:40:02 deanna Exp $
 
 COMMENT=	"apache HTTP server"
 
 V=		2.2.3
-PKGNAME=	apache-httpd-${V}p2
+PKGNAME=	apache-httpd-${V}p3
 DISTNAME=	httpd-${V}
 
 CATEGORIES=	www net
@@ -29,12 +29,14 @@ USE_LIBTOOL=		Yes
 MASTER_SITES=		${MASTER_SITE_APACHE:=httpd/}
 
 HTTPD_DIR=		/var/apache2
-SYSCONFDIR=		${HTTPD_DIR}/conf
+CONFDIR=		${SYSCONFDIR}/apache2
+SUBST_VARS=		CONFDIR
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-layout=OpenBSD \
 			--datadir=${HTTPD_DIR} \
-			--with-apr=${LOCALBASE} --with-apr-util=${LOCALBASE} \
+			--with-apr=${LOCALBASE}  \
+			--with-apr-util=${LOCALBASE} \
 			--enable-ssl --with-ssl=/usr \
 			--with-mpm=prefork \
 			--libexecdir=${LOCALBASE}/lib \
@@ -48,15 +50,15 @@ FAKE_FLAGS+=		rel_user=_apache2 rel_group=_apache2 \
 			datadir=${PREFIX}/share/examples/apache2 \
 			sysconfdir=${PREFIX}/share/examples/apache2/conf
 
-
-_a2sbin=apachectl apxs dbmmanage htdigest htpasswd logresolve rotatelogs
-
-_a2man1= dbmmanage htdigest htpasswd
-
-_a2man8= apachectl apxs httpd logresolve rotatelogs suexec
+A2SBIN=			apachectl apxs dbmmanage htdigest htpasswd \
+			logresolve rotatelogs
+A2MAN1=			dbmmanage htdigest htpasswd
+A2MAN8= 		apachectl apxs httpd logresolve rotatelogs suexec
 
 pre-configure:
 	@perl -pi -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/config.layout
+	@perl -pi -e 's,%%CONFDIR%%,${CONFDIR},' ${WRKSRC}/config.layout \
+	${WRKSRC}/configure
 
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share
@@ -64,15 +66,15 @@ post-install:
 	chown -R ${BINOWN}:${BINGRP} ${PREFIX}/sbin
 	chown -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib
 
-.for i in ${_a2man1}
+.for i in ${A2MAN1}
 	mv ${PREFIX}/man/man1/${i}.1 ${PREFIX}/man/man1/${i}2.1
 .endfor
 	
-.for i in ${_a2man8}
+.for i in ${A2MAN8}
 	mv ${PREFIX}/man/man8/${i}.8 ${PREFIX}/man/man8/${i}2.8
 .endfor
 
-.for i in ${_a2sbin}
+.for i in ${A2SBIN}
 	mv ${PREFIX}/sbin/${i} ${PREFIX}/sbin/${i}2
 .endfor
 

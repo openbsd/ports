@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/12/16 00:41:56 deanna Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/12/25 20:40:02 deanna Exp $
 @newgroup _apache2:576
 @newuser _apache2:576:576:daemon:Apache HTTP Server:/var/empty:/sbin/nologin
 include/apache2/
@@ -809,26 +809,6 @@ share/doc/apache2/vhosts/name-based.html.ja.euc-jp
 share/doc/apache2/vhosts/name-based.html.ko.euc-kr
 share/examples/apache2/
 @sample /var/apache2/
-share/examples/apache2/build/
-@sample /var/apache2/build/
-share/examples/apache2/build/config.nice
-@sample /var/apache2/build/config.nice
-share/examples/apache2/build/config_vars.mk
-@sample /var/apache2/build/config_vars.mk
-share/examples/apache2/build/instdso.sh
-@sample /var/apache2/build/instdso.sh
-share/examples/apache2/build/library.mk
-@sample /var/apache2/build/library.mk
-share/examples/apache2/build/ltlib.mk
-@sample /var/apache2/build/ltlib.mk
-share/examples/apache2/build/mkdir.sh
-@sample /var/apache2/build/mkdir.sh
-share/examples/apache2/build/program.mk
-@sample /var/apache2/build/program.mk
-share/examples/apache2/build/rules.mk
-@sample /var/apache2/build/rules.mk
-share/examples/apache2/build/special.mk
-@sample /var/apache2/build/special.mk
 share/examples/apache2/cgi-bin/
 @sample /var/apache2/cgi-bin/
 share/examples/apache2/cgi-bin/printenv
@@ -836,65 +816,51 @@ share/examples/apache2/cgi-bin/printenv
 share/examples/apache2/cgi-bin/test-cgi
 @sample /var/apache2/cgi-bin/test-cgi
 share/examples/apache2/conf/
-@sample /var/apache2/conf/
+@sample ${CONFDIR}/
 share/examples/apache2/conf/extra/
-@sample /var/apache2/conf/extra/
+@sample ${CONFDIR}/extra/
 share/examples/apache2/conf/extra/httpd-autoindex.conf
-@sample /var/apache2/conf/extra/httpd-autoindex.conf
+@sample ${CONFDIR}/extra/httpd-autoindex.conf
 share/examples/apache2/conf/extra/httpd-dav.conf
-@sample /var/apache2/conf/extra/httpd-dav.conf
+@sample ${CONFDIR}/extra/httpd-dav.conf
 share/examples/apache2/conf/extra/httpd-default.conf
-@sample /var/apache2/conf/extra/httpd-default.conf
+@sample ${CONFDIR}/extra/httpd-default.conf
 share/examples/apache2/conf/extra/httpd-info.conf
-@sample /var/apache2/conf/extra/httpd-info.conf
+@sample ${CONFDIR}/extra/httpd-info.conf
 share/examples/apache2/conf/extra/httpd-languages.conf
-@sample /var/apache2/conf/extra/httpd-languages.conf
+@sample ${CONFDIR}/extra/httpd-languages.conf
 share/examples/apache2/conf/extra/httpd-manual.conf
-@sample /var/apache2/conf/extra/httpd-manual.conf
+@sample ${CONFDIR}/extra/httpd-manual.conf
 share/examples/apache2/conf/extra/httpd-mpm.conf
-@sample /var/apache2/conf/extra/httpd-mpm.conf
+@sample ${CONFDIR}/extra/httpd-mpm.conf
 share/examples/apache2/conf/extra/httpd-multilang-errordoc.conf
-@sample /var/apache2/conf/extra/httpd-multilang-errordoc.conf
+@sample ${CONFDIR}/extra/httpd-multilang-errordoc.conf
 share/examples/apache2/conf/extra/httpd-ssl.conf
-@sample /var/apache2/conf/extra/httpd-ssl.conf
+@sample ${CONFDIR}/extra/httpd-ssl.conf
 share/examples/apache2/conf/extra/httpd-userdir.conf
-@sample /var/apache2/conf/extra/httpd-userdir.conf
+@sample ${CONFDIR}/extra/httpd-userdir.conf
 share/examples/apache2/conf/extra/httpd-vhosts.conf
-@sample /var/apache2/conf/extra/httpd-vhosts.conf
+@sample ${CONFDIR}/extra/httpd-vhosts.conf
 share/examples/apache2/conf/httpd2.conf
-@sample /var/apache2/conf/httpd2.conf
+@sample ${CONFDIR}/httpd2.conf
 share/examples/apache2/conf/magic
-@sample /var/apache2/conf/magic
+@sample ${CONFDIR}/magic
 share/examples/apache2/conf/mime.types
-@sample /var/apache2/conf/mime.types
+@sample ${CONFDIR}/mime.types
 share/examples/apache2/conf/original/
-@sample /var/apache2/conf/original/
 share/examples/apache2/conf/original/extra/
-@sample /var/apache2/conf/original/extra/
 share/examples/apache2/conf/original/extra/httpd-autoindex.conf
-@sample /var/apache2/conf/original/extra/httpd-autoindex.conf
 share/examples/apache2/conf/original/extra/httpd-dav.conf
-@sample /var/apache2/conf/original/extra/httpd-dav.conf
 share/examples/apache2/conf/original/extra/httpd-default.conf
-@sample /var/apache2/conf/original/extra/httpd-default.conf
 share/examples/apache2/conf/original/extra/httpd-info.conf
-@sample /var/apache2/conf/original/extra/httpd-info.conf
 share/examples/apache2/conf/original/extra/httpd-languages.conf
-@sample /var/apache2/conf/original/extra/httpd-languages.conf
 share/examples/apache2/conf/original/extra/httpd-manual.conf
-@sample /var/apache2/conf/original/extra/httpd-manual.conf
 share/examples/apache2/conf/original/extra/httpd-mpm.conf
-@sample /var/apache2/conf/original/extra/httpd-mpm.conf
 share/examples/apache2/conf/original/extra/httpd-multilang-errordoc.conf
-@sample /var/apache2/conf/original/extra/httpd-multilang-errordoc.conf
 share/examples/apache2/conf/original/extra/httpd-ssl.conf
-@sample /var/apache2/conf/original/extra/httpd-ssl.conf
 share/examples/apache2/conf/original/extra/httpd-userdir.conf
-@sample /var/apache2/conf/original/extra/httpd-userdir.conf
 share/examples/apache2/conf/original/extra/httpd-vhosts.conf
-@sample /var/apache2/conf/original/extra/httpd-vhosts.conf
 share/examples/apache2/conf/original/httpd.conf
-@sample /var/apache2/conf/original/httpd.conf
 share/examples/apache2/error/
 @sample /var/apache2/error/
 share/examples/apache2/error/HTTP_BAD_GATEWAY.html.var

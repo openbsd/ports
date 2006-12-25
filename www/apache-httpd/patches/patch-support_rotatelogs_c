@@ -1,0 +1,12 @@
+$OpenBSD: patch-support_rotatelogs_c,v 1.1 2006/12/25 20:40:02 deanna Exp $
+--- support/rotatelogs.c.orig	Sun Dec 17 11:13:52 2006
++++ support/rotatelogs.c	Sun Dec 17 11:14:36 2006
+@@ -107,7 +107,7 @@ int main (int argc, const char * const a
+                 "or \n\nTransferLog \"|%s /some/where 5M\"\n\n", argv[0]);
+ #endif
+         fprintf(stderr,
+-                "to httpd.conf. The generated name will be /some/where.nnnn "
++                "to httpd2.conf. The generated name will be /some/where.nnnn "
+                 "where nnnn is the\nsystem time at which the log nominally "
+                 "starts (N.B. if using a rotation time,\nthe time will always "
+                 "be a multiple of the rotation time, so you can synchronize\n"

@@ -1,0 +1,14 @@
+$OpenBSD: patch-support_apachectl_in,v 1.1 2006/12/25 20:40:02 deanna Exp $
+--- support/apachectl.in.orig	Sun Dec 17 11:13:02 2006
++++ support/apachectl.in	Sun Dec 17 11:13:38 2006
+@@ -82,8 +82,8 @@ start|stop|restart|graceful|graceful-sto
+     ;;
+ startssl|sslstart|start-SSL)
+     echo The startssl option is no longer supported.
+-    echo Please edit httpd.conf to include the SSL configuration settings
+-    echo and then use "apachectl start".
++    echo Please edit httpd2.conf to include the SSL configuration settings
++    echo and then use "apachectl2 start".
+     ERROR=2
+     ;;
+ configtest)
