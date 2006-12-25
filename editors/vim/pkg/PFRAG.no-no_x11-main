@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_x11-main,v 1.1 2006/11/21 11:25:03 espie Exp $
+@comment $OpenBSD: PFRAG.no-no_x11-main,v 1.2 2006/12/25 19:08:08 ckuethe Exp $
 bin/eview
 bin/evim
 bin/gview
@@ -90,6 +90,3 @@ bin/rgvim
 @man man/ru.UTF-8/man1/gvimdiff.1
 @man man/ru.UTF-8/man1/rgview.1
 @man man/ru.UTF-8/man1/rgvim.1
-share/vim/${P}/evim.vim
-share/vim/${P}/gvimrc_example.vim
-share/vim/${P}/syntax/eviews.vim
