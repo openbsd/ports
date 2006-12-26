@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2006/12/18 09:06:15 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.31 2006/12/26 20:42:38 steven Exp $
 
 COMMENT=	"extract, list, and test RAR archives"
 
 DISTNAME=	unrarsrc-3.6.8
-PKGNAME=	unrar-3.68
+PKGNAME=	unrar-3.68p0
 CATEGORIES=	archivers
 
 HOMEPAGE=	http://www.rarlab.com/
@@ -23,12 +23,6 @@ WRKDIST=	${WRKDIR}/unrar
 
 MAKE_FILE=	makefile.unix
 MAKE_FLAGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
-
-.if ${MACHINE_ARCH} != "alpha" && ${MACHINE_ARCH} != "amd64" && \
-    ${MACHINE_ARCH} != "arm" && ${MACHINE_ARCH} != "i386" && \
-    ${MACHINE_ARCH} != "vax"
-CFLAGS+= -DBIG_ENDIAN
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/unrar ${PREFIX}/bin
