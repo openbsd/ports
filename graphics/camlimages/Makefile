@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2006/08/02 10:10:35 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/12/26 22:39:31 avsm Exp $
 
 COMMENT=	"image manipulation functions for Objective Caml"
 CATEGORIES=	graphics
 
 DISTNAME=	camlimages-2.2.0
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 EXTRACT_SUFX=	.tgz
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/caml-light/bazar-ocaml/
 

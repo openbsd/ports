@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/12/07 00:23:21 alek Exp $
+# $OpenBSD: Makefile,v 1.12 2006/12/26 22:39:31 avsm Exp $
 
 COMMENT=	"LaTeX to html translator"
 
@@ -15,6 +15,7 @@ WANTLIB=		c m
 BUILD_DEPENDS=	:ocaml-*:lang/ocaml
 
 DISTNAME=	hevea-$V
+PKGNAME=	${DISTNAME}p0
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/moscova/hevea/
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-manual${EXTRACT_SUFX}

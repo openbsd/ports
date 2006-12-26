@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/08/01 22:19:46 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2006/12/26 22:39:31 avsm Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
 BROKEN=		"ocamldoc hangs build"
@@ -9,7 +9,7 @@ CATEGORIES=	databases
 
 V=		1.4.6
 DISTNAME=	postgresql-ocaml-${V}
-PKGNAME=	ocaml-postgresql-${V}
+PKGNAME=	ocaml-postgresql-${V}p0
 MASTER_SITES=	http://ocaml.info/ocaml_sources/
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>

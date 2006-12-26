@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile.inc,v 1.4 2006/08/03 23:55:10 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2006/12/26 22:39:31 avsm Exp $
 
 DISTNAME=	unison-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.cis.upenn.edu/~bcpierce/unison/

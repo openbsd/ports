@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2006/06/10 11:13:09 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2006/12/26 22:39:31 avsm Exp $
 
 COMMENT=	"build system designed for scalability and portability"
 CATEGORIES=	devel
 
 V=		0.9.6.9-1
 DISTNAME=	omake-0.9.6.9-1
-PKGNAME=	omake-0.9.6.9pl1p0
+PKGNAME=	omake-0.9.6.9pl1p1
 WRKDIST=	${WRKDIR}/omake-0.9.6.9
 MASTER_SITES=	http://omake.metaprl.org/downloads/
 

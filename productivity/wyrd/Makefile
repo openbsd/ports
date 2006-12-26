@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2006/05/28 15:41:33 avsm Exp $
+# $OpenBSD: Makefile,v 1.4 2006/12/26 22:39:31 avsm Exp $
 
 COMMENT=		"curses calendar front-end to remind"
 
 VERSION=		1.3.0
 DISTNAME=		wyrd-${VERSION}
-PKGNAME=		${DISTNAME}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		productivity
 
 HOMEPAGE=		http://www.eecs.umich.edu/~pelzlpj/wyrd/
