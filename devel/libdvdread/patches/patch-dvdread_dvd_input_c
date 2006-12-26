@@ -1,6 +1,6 @@
-$OpenBSD: patch-dvdread_dvd_input_c,v 1.5 2006/02/16 11:08:26 espie Exp $
+$OpenBSD: patch-dvdread_dvd_input_c,v 1.6 2006/12/26 13:48:36 espie Exp $
 --- dvdread/dvd_input.c.orig	Mon Sep 19 15:43:08 2005
-+++ dvdread/dvd_input.c	Thu Feb 16 12:01:14 2006
++++ dvdread/dvd_input.c	Tue Dec 26 14:44:27 2006
 @@ -45,30 +45,30 @@ int         (*dvdinput_read)  (dvd_input
  char *      (*dvdinput_error) (dvd_input_t);
  
@@ -138,7 +138,7 @@ $OpenBSD: patch-dvdread_dvd_input_c,v 1.5 2006/02/16 11:08:26 espie Exp $
  
  /**
   * Free any objects allocated by dvdinput_setup.
-@@ -294,28 +294,28 @@ void dvdinput_free(void)
+@@ -294,28 +294,30 @@ void dvdinput_free(void)
    /* linked statically, nothing to free */
    return;
  #else
@@ -156,6 +156,8 @@ $OpenBSD: patch-dvdread_dvd_input_c,v 1.5 2006/02/16 11:08:26 espie Exp $
  }
  
  
++#define LIBDVDNAME	"libdvd.so.0"
++#define LIBDVD_		"libdvd_"
  /**
 - * Setup read functions with either libdvdcss or minimal DVD access.
 + * Setup read functions with either libdvd or minimal DVD access.
@@ -175,7 +177,7 @@ $OpenBSD: patch-dvdread_dvd_input_c,v 1.5 2006/02/16 11:08:26 espie Exp $
        return 1; /* css available */
      } else {
        return 0; /* css not available */
-@@ -326,59 +326,57 @@ int dvdinput_setup(void)
+@@ -326,59 +328,57 @@ int dvdinput_setup(void)
    
  #ifdef HAVE_DVDCSS_DVDCSS_H
    /* linking to libdvdcss */
@@ -188,7 +190,7 @@ $OpenBSD: patch-dvdread_dvd_input_c,v 1.5 2006/02/16 11:08:26 espie Exp $
  #else
  
 -  dvdcss_library = dlopen("libdvdcss.so.2", RTLD_LAZY);
-+  libdvd_library = dlopen("libdvd.so.0", RTLD_LAZY);
++  libdvd_library = dlopen(LIBDVDNAME, RTLD_LAZY);
  
 -  if(dvdcss_library != NULL) {
 +  if(libdvd_library != NULL) {
@@ -210,20 +212,20 @@ $OpenBSD: patch-dvdread_dvd_input_c,v 1.5 2006/02/16 11:08:26 espie Exp $
 -    DVDcss_error = (char* (*)(dvdcss_handle))
 -      dlsym(dvdcss_library, U_S "dvdcss_error");
 +    DVD_open = (libdvd_handle (*)(const char*))
-+      dlsym(libdvd_library, U_S "libdvd_open");
++      dlsym(libdvd_library, U_S LIBDVD_"open");
 +    DVD_close = (int (*)(libdvd_handle))
-+      dlsym(libdvd_library, U_S "libdvd_close");
++      dlsym(libdvd_library, U_S LIBDVD_"close");
 +    DVD_title = (int (*)(libdvd_handle, int))
-+      dlsym(libdvd_library, U_S "libdvd_title");
++      dlsym(libdvd_library, U_S LIBDVD_"title");
 +    DVD_seek = (int (*)(libdvd_handle, int, int))
-+      dlsym(libdvd_library, U_S "libdvd_seek");
++      dlsym(libdvd_library, U_S LIBDVD_"seek");
 +    DVD_read = (int (*)(libdvd_handle, void*, int, int))
-+      dlsym(libdvd_library, U_S "libdvd_read");
++      dlsym(libdvd_library, U_S LIBDVD_"read");
 +    DVD_error = (char* (*)(libdvd_handle))
-+      dlsym(libdvd_library, U_S "libdvd_error");
++      dlsym(libdvd_library, U_S LIBDVD_"error");
      
 -    dvdcss_version = (char **)dlsym(dvdcss_library, U_S "dvdcss_interface_2");
-+    libdvd_version = (char **)dlsym(libdvd_library, U_S "libdvd_interface_2");
++    libdvd_version = (char **)dlsym(libdvd_library, U_S LIBDVD_"interface_2");
  
 -    if(dlsym(dvdcss_library, U_S "dvdcss_crack")) {
 +    if(dlsym(libdvd_library, U_S "dvdcss_crack")) {
@@ -232,7 +234,7 @@ $OpenBSD: patch-dvdread_dvd_input_c,v 1.5 2006/02/16 11:08:26 espie Exp $
 -                "libdvdread: Old (pre-0.0.2) version of libdvdcss found.\n"
 -                "libdvdread: You should get the latest version from "
 -                "http://www.videolan.org/\n" );
-+                "libdvdread: Old (pre-0.0.2) version of libdvd found.\n");
++                "libdvdread: Old (pre-0.0.2) version of libdvdcss found.\n");
        }
 -      dlclose(dvdcss_library);
 -      dvdcss_library = NULL;
@@ -244,8 +246,9 @@ $OpenBSD: patch-dvdread_dvd_input_c,v 1.5 2006/02/16 11:08:26 espie Exp $
 +              || !DVD_read || !DVD_error || !libdvd_version) {
        if(verbose >= 0) {
 -        fprintf(stderr,  "libdvdread: Missing symbols in libdvdcss.so.2, "
-+        fprintf(stderr,  "libdvdread: Missing symbols in libdvd.so.0, "
-                 "this shouldn't happen !\n");
+-                "this shouldn't happen !\n");
++        fprintf(stderr,  "libdvdread: Missing symbols in %s, "
++                "this shouldn't happen !\n", LIBDVDNAME);
        }
 -      dlclose(dvdcss_library);
 -      dvdcss_library = NULL;
@@ -263,14 +266,14 @@ $OpenBSD: patch-dvdread_dvd_input_c,v 1.5 2006/02/16 11:08:26 espie Exp $
      /*
        char *psz_method = getenv( "DVDCSS_METHOD" );
        char *psz_verbose = getenv( "DVDCSS_VERBOSE" );
-@@ -386,16 +384,16 @@ int dvdinput_setup(void)
+@@ -386,16 +386,16 @@ int dvdinput_setup(void)
        fprintf(stderr, "DVDCSS_VERBOSE %s\n", psz_verbose);
      */
      if(verbose >= 1) {
 -      fprintf(stderr, "libdvdread: Using libdvdcss version %s for DVD access\n",
 -              *dvdcss_version);
-+      fprintf(stderr, "libdvdread: Using libdvd version %s for DVD access\n",
-+              *libdvd_version);
++      fprintf(stderr, "libdvdread: Using %s version %s for DVD access\n",
++              LIBDVDNAME, *libdvd_version);
      }
      /* libdvdcss wrapper functions */
 -    dvdinput_open  = css_open;
