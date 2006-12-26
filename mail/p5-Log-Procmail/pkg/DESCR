@@ -1,0 +1,5 @@
+The Log::Procmail module processes procmail(1) logfiles and returns
+the abstracts. You can get all the useful information by using the
+methods from(), date(), subject(), folder() and size() on the
+returned Log::Procmail::Abstract object.
+

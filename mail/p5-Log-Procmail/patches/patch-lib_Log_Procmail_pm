@@ -1,0 +1,21 @@
+$OpenBSD: patch-lib_Log_Procmail_pm,v 1.1.1.1 2006/12/26 23:56:04 avsm Exp $
+--- lib/Log/Procmail.pm.orig	Tue Dec 26 23:00:16 2006
++++ lib/Log/Procmail.pm	Tue Dec 26 23:00:49 2006
+@@ -57,7 +57,7 @@ sub next {
+             };
+ 
+             # assert: $read == 2;
+-            /^ Subject: (.*)/i && do {
++            /^ Subject:\s*(.*)/i && do {
+                 push @{$log->{buffer}}, Log::Procmail::Abstract->new()
+                     unless @{$log->{buffer}};
+                 $log->{buffer}[0]->subject($1);
+@@ -67,7 +67,7 @@ sub next {
+             # procmail tabulates with tabs and spaces... :-(
+             # assert: $read == 3;
+             # Folder means the end of this record
+-            /^  Folder: (.*?)\s+(\d+)$/ && do {
++            /^  Folder:\s*(.*?)\s+(\d+)$/ && do {
+                 push @{$log->{buffer}}, Log::Procmail::Abstract->new()
+                   unless @{$log->{buffer}};
+ 
