@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.467 2006/12/21 01:09:10 espie Exp $
+# $OpenBSD: Makefile,v 1.468 2006/12/26 18:18:53 deanna Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -502,6 +502,7 @@
      SUBDIR += pyrex
      SUBDIR += pyusb
      SUBDIR += rats
+     SUBDIR += remake
      SUBDIR += ruby-actionpack
      SUBDIR += ruby-activesupport
      SUBDIR += ruby-daemons
