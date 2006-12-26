@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2006/11/22 01:17:45 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2006/12/26 14:02:15 steven Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
@@ -11,7 +11,7 @@ PKGNAME-c++ =	g++-${FULL_PKGVERSION}p2
 PKGNAME-estdc=	libstdc++-${FULL_PKGVERSION}p0
 PKGNAME-g77=	g77-${FULL_PKGVERSION}p2
 PKGNAME-java=	gcj-${FULL_PKGVERSION}p0
-PKGNAME-objc=	gobjc-${FULL_PKGVERSION}p2
+PKGNAME-objc=	gobjc-${FULL_PKGVERSION}p3
 PKGNAME-ada=	gnat-${FULL_PKGVERSION}p1
 SHARED_LIBS=	estdc++		6.0 \
 		g2c		1.0 \
@@ -113,7 +113,7 @@ post-install:
 .if ${FLAVOR:L:Mada}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc-lib/*/$V/adainclude
 .endif
-	chown ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc-lib/*/$V/include/*
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc-lib/*/$V/include
 
 CONFIGURE_ENV+=am_cv_func_iconv=no
 
