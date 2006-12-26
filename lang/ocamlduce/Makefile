@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2006/05/29 21:39:10 avsm Exp $
+# $OpenBSD: Makefile,v 1.4 2006/12/26 23:10:28 avsm Exp $
 
 COMMENT=	"XML extension types for Objective Caml"
 CATEGORIES=	lang textproc
 
 V=		3.09.2pl1
 DISTNAME=	ocamlduce-${V}
+PKGNAME=	${DISTNAME}p0
 MASTER_SITES=	http://pauillac.inria.fr/~frisch/ocamlcduce/download/
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
