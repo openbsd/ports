@@ -1,24 +1,24 @@
-# $OpenBSD: pkgpath.mk,v 1.11 2006/12/02 11:27:46 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.12 2006/12/26 15:00:24 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
 
 # definitions common to bsd.port.mk and bsd.port.subdir.mk
 
+PORTSDIR_PATH ?= ${PORTSDIR}:${PORTSDIR}/mystuff
+TMPDIR ?= /tmp
+READMES_TOP ?= ${PORTSDIR}
+
+
 .if !defined(PKGPATH)
-_PORTSDIR != cd ${PORTSDIR} && pwd -P
-_CURDIR != cd ${.CURDIR} && pwd -P
-PKGPATH = ${_CURDIR:S,${_PORTSDIR}/,,}
+PKGPATH != PORTSDIR_PATH=${PORTSDIR_PATH} \
+	perl ${PORTSDIR}/infrastructure/mk/getpkgpath ${.CURDIR}
 .endif
 .if empty(PKGPATH)
 PKGDEPTH =
 .else
 PKGDEPTH = ${PKGPATH:C|[^./][^/]*|..|g}/
 .endif
-
-PORTSDIR_PATH ?= ${PORTSDIR}:${PORTSDIR}/mystuff
-TMPDIR ?= /tmp
-READMES_TOP ?= ${PORTSDIR}
 
 # Code to invoke to split dir,-multi,flavor
 
