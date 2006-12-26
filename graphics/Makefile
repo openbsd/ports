@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.174 2006/12/17 15:03:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.175 2006/12/26 10:38:50 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -70,6 +70,7 @@
      SUBDIR += jhead
      SUBDIR += jpeg
      SUBDIR += jpeg2ps
+     SUBDIR += k3dsurf
      SUBDIR += kimdaba
      SUBDIR += kipi-plugins
      SUBDIR += l2p
