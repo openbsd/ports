@@ -1,7 +1,12 @@
-You will need to add 
+You will need to add
 
   csh -cf '${PREFIX}/sbin/runsvdir-start &'
 
-to /etc/rc.local in order to have runit start at boot.  The port expects
-services to be in /service.  If you're using another location you will
-have to modify runsvdir-start.
+to /etc/rc.local in order to have runit start at boot.
+
+The service directory has moved from /service to /var/service.
+
+With this version the runsvctrl, runsvstat, svwaitdown, and svwaitup
+programs no longer are being installed. The functionality of these
+programs has been incorporated into the sv program.
+Read ${PREFIX}/share/doc/runit/upgrade.html on update.

@@ -1,12 +1,6 @@
 # Stop runit services
 
 echo -n 'Waiting for services to stop...'
-/usr/local/sbin/svwaitdown -k -t350 /service/*
-if [ $? -eq 0 ]; then
-	echo 'ok.'
-elif [ $? -eq 111 ]; then
-	echo 'timeout.'
-else
-	echo 'ok. $? services had errors.'
-fi
+/usr/local/sbin/sv -w196 force-stop /var/service/*
+/usr/local/sbin/sv exit /var/service/*
 

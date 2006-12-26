@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2006/02/15 05:14:30 david Exp $
+# $OpenBSD: Makefile,v 1.7 2006/12/26 15:04:54 simon Exp $
 
 COMMENT=		"daemontools alike replacement for init"
 
-DISTNAME=		runit-1.2.1
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		runit-1.7.2
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://www.smarden.org/runit/
@@ -19,19 +18,15 @@ WANTLIB=		c
 MASTER_SITES=		${HOMEPAGE}
 WRKDIST=		${WRKDIR}/admin/${DISTNAME}
 WRKSRC=			${WRKDIST}/src
-SBINPROGRAMS=		runit runit-init runsvdir runsvchdir runsv \
-			runsvctrl runsvstat svlogd utmpset svwaitdown \
-			svwaitup chpst
-MANPAGES=		chpst.8 runit.8 runsvchdir.8 runsvdir.8 svlogd.8 \
-			svwaitup.8 runit-init.8 runsv.8 runsvctrl.8 \
-			runsvstat.8 svwaitdown.8 utmpset.8
-DOCS1=			benefits.html replaceinit.html runsvchdir.8.html \
-			svwaitup.8.html chpst.8.html runit-init.8.html \
-			runsvctrl.8.html upgrade.html runit.8.html \
-			runsvdir.8.html dependencies.html runlevels.html \
-			runsvstat.8.html useinit.html index.html \
-			runscripts.html svlogd.8.html utmpset.8.html \
-			install.html runsv.8.html svwaitdown.8.html
+SBINPROGRAMS=		chpst runit runit-init runsv runsvchdir runsvdir \
+			sv svlogd utmpset
+MANPAGES=		chpst.8 runit.8 runit-init.8 runsv.8 runsvchdir.8 runsvdir.8 \
+			sv.8 svlogd.8 utmpset.8
+DOCS1=			benefits.html chpst.8.html dependencies.html faq.html \
+			index.html install.html replaceinit.html runit-init.8.html \
+			runit.8.html runlevels.html runscripts.html runsv.8.html \
+			runsvchdir.8.html runsvdir.8.html sv.8.html svlogd.8.html \
+			upgrade.html useinit.html index.html utmpset.8.html
 DOCS2=			CHANGES README COPYING THANKS
 EXAMPLES=		etc/2 etc/openbsd/1 etc/openbsd/3 etc/openbsd/ctrlaltdel
 
@@ -49,7 +44,7 @@ do-install:
 .for pgm in ${SBINPROGRAMS}
 	${INSTALL_PROGRAM} ${WRKDIST}/command/${pgm} ${PREFIX}/sbin/
 .endfor
-	${INSTALL_SCRIPT} files/runsvdir-start ${PREFIX}/sbin/
+	${INSTALL_SCRIPT} ${WRKDIST}/etc/2 ${PREFIX}/sbin/runsvdir-start
 .for page in ${MANPAGES}
 	${INSTALL_MAN} ${WRKDIST}/man/${page} ${PREFIX}/man/man8
 .endfor

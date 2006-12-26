@@ -1,28 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/09/30 22:35:15 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/12/26 15:04:55 simon Exp $
 @man man/man8/chpst.8
 @man man/man8/runit-init.8
 @man man/man8/runit.8
 @man man/man8/runsv.8
 @man man/man8/runsvchdir.8
-@man man/man8/runsvctrl.8
 @man man/man8/runsvdir.8
-@man man/man8/runsvstat.8
+@man man/man8/sv.8
 @man man/man8/svlogd.8
-@man man/man8/svwaitdown.8
-@man man/man8/svwaitup.8
 @man man/man8/utmpset.8
 sbin/chpst
 sbin/runit
 sbin/runit-init
 sbin/runsv
 sbin/runsvchdir
-sbin/runsvctrl
 sbin/runsvdir
 sbin/runsvdir-start
-sbin/runsvstat
+sbin/sv
 sbin/svlogd
-sbin/svwaitdown
-sbin/svwaitup
 sbin/utmpset
 share/doc/runit/
 share/doc/runit/CHANGES
@@ -32,6 +26,7 @@ share/doc/runit/THANKS
 share/doc/runit/benefits.html
 share/doc/runit/chpst.8.html
 share/doc/runit/dependencies.html
+share/doc/runit/faq.html
 share/doc/runit/index.html
 share/doc/runit/install.html
 share/doc/runit/replaceinit.html
@@ -41,12 +36,9 @@ share/doc/runit/runlevels.html
 share/doc/runit/runscripts.html
 share/doc/runit/runsv.8.html
 share/doc/runit/runsvchdir.8.html
-share/doc/runit/runsvctrl.8.html
 share/doc/runit/runsvdir.8.html
-share/doc/runit/runsvstat.8.html
+share/doc/runit/sv.8.html
 share/doc/runit/svlogd.8.html
-share/doc/runit/svwaitdown.8.html
-share/doc/runit/svwaitup.8.html
 share/doc/runit/upgrade.html
 share/doc/runit/useinit.html
 share/doc/runit/utmpset.8.html
