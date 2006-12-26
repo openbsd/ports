@@ -1,0 +1,14 @@
+remake is a patched and modernized version of GNU make utility that
+adds improved error reporting, the ability to trace execution in a
+comprehensible way, and a debugger. Some of the features of the
+debugger are:
+
+    * see the target call stack.
+    * set breakpoints on targets,
+    * show and set variables,
+    * execute arbitrary "make" code
+    * issue shell commands while stopped in the middle of execution,
+    * inspect target descriptions
+    * write a file with the commands of the target expanded.
+
+

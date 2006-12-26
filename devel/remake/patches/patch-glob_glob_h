@@ -1,0 +1,37 @@
+$OpenBSD: patch-glob_glob_h,v 1.1.1.1 2006/12/26 18:16:09 deanna Exp $
+--- glob/glob.h.orig	Sat Dec 16 22:41:12 2006
++++ glob/glob.h	Sat Dec 16 22:41:27 2006
+@@ -33,33 +33,6 @@
+ # define __ptr_t	char *
+ #endif /* C++ or ANSI C.  */
+ 
+-/* We need `size_t' for the following definitions.  */
+-#ifndef __size_t
+-# if defined __FreeBSD__
+-#  define __size_t size_t
+-# else
+-#  if defined __GNUC__ && __GNUC__ >= 2
+-typedef __SIZE_TYPE__ __size_t;
+-#  else
+-/* This is a guess.  */
+-/*hb
+- *	Conflicts with DECCs aready defined type __size_t.
+- *	Defining an own type with a name beginning with '__' is no good.
+- *	Anyway if DECC is used and __SIZE_T is defined then __size_t is
+- *	already defined (and I hope it's exactly the one we need here).
+- */
+-#   if !(defined __DECC && defined __SIZE_T)
+-typedef unsigned long int __size_t;
+-#   endif
+-#  endif
+-# endif
+-#else
+-/* The GNU CC stddef.h version defines __size_t as empty.  We need a real
+-   definition.  */
+-# undef __size_t
+-# define __size_t size_t
+-#endif
+-
+ /* Bits set in the FLAGS argument to `glob'.  */
+ #define	GLOB_ERR	(1 << 0)/* Return on read errors.  */
+ #define	GLOB_MARK	(1 << 1)/* Append a slash to each name.  */

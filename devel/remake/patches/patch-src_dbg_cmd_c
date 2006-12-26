@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_dbg_cmd_c,v 1.1.1.1 2006/12/26 18:16:09 deanna Exp $
+--- src/dbg_cmd.c.orig	Mon Dec 25 17:27:33 2006
++++ src/dbg_cmd.c	Mon Dec 25 17:30:09 2006
+@@ -868,14 +868,19 @@ dbg_cmd_quit (char *psz_arg)
+ static debug_return_t 
+ dbg_cmd_run (char *psz_arg)
+ {
++  char **ppsz_argv = global_argv;
++  char *psz_full_args;
++  const char *psz_make_cmd = global_argv[0];
++
++  unsigned int len;
++
+   printf("Changing directory to %s and restarting...\n", 
+ 	 directory_before_chdir);
+   chdir (directory_before_chdir);
+-  char **ppsz_argv = global_argv;
+-  const char *psz_make_cmd = global_argv[0];
++
+   if (psz_arg && strlen(psz_arg)) {
+-    unsigned int len = strlen(global_argv[0]) + strlen(psz_arg) + 2;
+-    char *psz_full_args = CALLOC(char, len);
++    len = strlen(global_argv[0]) + strlen(psz_arg) + 2;
++    psz_full_args = CALLOC(char, len);
+     snprintf(psz_full_args, len, "%s %s", global_argv[0], psz_arg);
+     ppsz_argv = buildargv(psz_full_args);
+   }
