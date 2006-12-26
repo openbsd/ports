@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/05/29 03:46:29 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/12/26 23:09:32 avsm Exp $
 bin/ocamlfind
 bin/safe_camlp4
-lib/ocaml/
 lib/ocaml/site-lib/
 lib/ocaml/site-lib/bigarray/
 lib/ocaml/site-lib/bigarray/META
