@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2006/05/28 15:28:54 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.17 2006/12/26 22:07:18 avsm Exp $
 bin/camlp4
 bin/camlp4o
 bin/camlp4r
@@ -66,24 +66,27 @@ lib/ocaml/camlinternalOO.cmi
 lib/ocaml/camlinternalOO.ml
 lib/ocaml/camlinternalOO.mli
 lib/ocaml/camlp4/
-lib/ocaml/camlp4/argl.cmi
-lib/ocaml/camlp4/argl.cmo
 lib/ocaml/camlp4/ast2pt.cmi
+lib/ocaml/camlp4/ast2pt.cmo
 lib/ocaml/camlp4/ast2pt.mli
-lib/ocaml/camlp4/camlp4.cma
 lib/ocaml/camlp4/camlp4_top.cma
 lib/ocaml/camlp4/camlp4o.cma
 lib/ocaml/camlp4/camlp4r.cma
 lib/ocaml/camlp4/extfold.cmi
+lib/ocaml/camlp4/extfold.cmo
 lib/ocaml/camlp4/extfold.mli
 lib/ocaml/camlp4/extfun.cmi
+lib/ocaml/camlp4/extfun.cmo
 lib/ocaml/camlp4/extfun.mli
 lib/ocaml/camlp4/fstream.cmi
+lib/ocaml/camlp4/fstream.cmo
 lib/ocaml/camlp4/fstream.mli
 lib/ocaml/camlp4/gramext.cmi
+lib/ocaml/camlp4/gramext.cmo
 lib/ocaml/camlp4/gramext.mli
 lib/ocaml/camlp4/gramlib.cma
 lib/ocaml/camlp4/grammar.cmi
+lib/ocaml/camlp4/grammar.cmo
 lib/ocaml/camlp4/grammar.mli
 lib/ocaml/camlp4/mLast.cmi
 lib/ocaml/camlp4/mLast.mli
@@ -108,8 +111,10 @@ lib/ocaml/camlp4/pa_r.cmo
 lib/ocaml/camlp4/pa_rp.cmo
 lib/ocaml/camlp4/pa_ru.cmo
 lib/ocaml/camlp4/pcaml.cmi
+lib/ocaml/camlp4/pcaml.cmo
 lib/ocaml/camlp4/pcaml.mli
 lib/ocaml/camlp4/plexer.cmi
+lib/ocaml/camlp4/plexer.cmo
 lib/ocaml/camlp4/plexer.mli
 lib/ocaml/camlp4/pr_depend.cmo
 lib/ocaml/camlp4/pr_dump.cmo
@@ -123,12 +128,19 @@ lib/ocaml/camlp4/pr_rp.cmo
 lib/ocaml/camlp4/q_MLast.cmo
 lib/ocaml/camlp4/q_phony.cmo
 lib/ocaml/camlp4/quotation.cmi
+lib/ocaml/camlp4/quotation.cmo
 lib/ocaml/camlp4/quotation.mli
+lib/ocaml/camlp4/reloc.cmi
+lib/ocaml/camlp4/reloc.cmo
+lib/ocaml/camlp4/reloc.mli
 lib/ocaml/camlp4/spretty.cmi
+lib/ocaml/camlp4/spretty.cmo
 lib/ocaml/camlp4/spretty.mli
 lib/ocaml/camlp4/stdpp.cmi
+lib/ocaml/camlp4/stdpp.cmo
 lib/ocaml/camlp4/stdpp.mli
 lib/ocaml/camlp4/token.cmi
+lib/ocaml/camlp4/token.cmo
 lib/ocaml/camlp4/token.mli
 lib/ocaml/char.cmi
 lib/ocaml/char.ml

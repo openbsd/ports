@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.native,v 1.6 2006/05/28 15:28:54 avsm Exp $
+@comment $OpenBSD: PFRAG.native,v 1.7 2006/12/26 22:07:18 avsm Exp $
 bin/camlp4o.opt
 bin/camlp4r.opt
 bin/ocamlc.opt
@@ -27,6 +27,28 @@ lib/ocaml/camlinternalMod.cmx
 lib/ocaml/camlinternalMod.p.cmx
 lib/ocaml/camlinternalOO.cmx
 lib/ocaml/camlinternalOO.p.cmx
+lib/ocaml/camlp4/argl.cmi
+lib/ocaml/camlp4/argl.cmo
+lib/ocaml/camlp4/ast2pt.cmx
+lib/ocaml/camlp4/ast2pt.o
+lib/ocaml/camlp4/camlp4.cma
+lib/ocaml/camlp4/extfold.o
+lib/ocaml/camlp4/extfun.o
+lib/ocaml/camlp4/fstream.o
+lib/ocaml/camlp4/gramext.o
+lib/ocaml/camlp4/grammar.o
+lib/ocaml/camlp4/pa_o_fast.o
+lib/ocaml/camlp4/pcaml.cmx
+lib/ocaml/camlp4/pcaml.o
+lib/ocaml/camlp4/plexer.o
+lib/ocaml/camlp4/quotation.cmx
+lib/ocaml/camlp4/quotation.o
+lib/ocaml/camlp4/reloc.cmx
+lib/ocaml/camlp4/reloc.o
+lib/ocaml/camlp4/spretty.cmx
+lib/ocaml/camlp4/spretty.o
+lib/ocaml/camlp4/stdpp.o
+lib/ocaml/camlp4/token.o
 lib/ocaml/camlp4/argl.cmx
 lib/ocaml/camlp4/argl.o
 lib/ocaml/camlp4/camlp4.a
