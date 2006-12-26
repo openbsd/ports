@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/26 10:37:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/26 14:07:10 ajacoutot Exp $
 
 COMMENT=	"visualize and manipulate mathematical models"
 
@@ -24,7 +24,7 @@ USE_GCC3=	yes
 USE_X11=	Yes
 NO_REGRESS=	Yes
 
-PORTHOME=	${WRKDIST}
+PORTHOME=	${WRKDIR}
 
 do-configure:
 	perl -pi -e "s/!!CXXFLAGS!!/${CXXFLAGS}/" ${WRKSRC}/src/src.pro

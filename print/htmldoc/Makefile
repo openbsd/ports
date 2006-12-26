@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2006/10/27 12:53:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2006/12/26 14:07:10 ajacoutot Exp $
 
 COMMENT=	"convert HTML pages to PDF/PS format"
 
@@ -32,7 +32,7 @@ CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ENV= 		LDFLAGS="-L${LOCALBASE}/lib" \
 			CXXFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			CPPFLAGS="-I${LOCALBASE}/include"
-PORTHOME=		${WRKDIST}
+PORTHOME=		${WRKDIR}
 
 post-extract:
 	@rm -rf ${WRKSRC}/jpeg ${WRKSRC}/png ${WRKSRC}/zlib
