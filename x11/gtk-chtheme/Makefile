@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/24 10:59:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/26 14:51:04 jasper Exp $
 
 COMMENT=		"gtk+-2 theme switcher"
 
 DISTNAME=		gtk-chtheme-0.3.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11 graphics
 
 HOMEPAGE=		http://plasmasturm.org/programs/gtk-chtheme/
+
+MAINTAINER=		Vlad Glagolev <stelzy@gmail.com>
 
 MASTER_SITES=		${HOMEPAGE}
 
