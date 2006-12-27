@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2006/11/15 06:21:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2006/12/27 16:18:24 ajacoutot Exp $
 
 COMMENT=		"small, fast window manager"
 
-DISTNAME=		icewm-1.2.28
-PKGNAME=		${DISTNAME}p0
-CATEGORIES=     	x11	
+DISTNAME=		icewm-1.2.30
+CATEGORIES=		x11	
 
 HOMEPAGE=		http://www.icewm.org/
 
@@ -19,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE Imlib SM X11 Xext Xft Xinerama Xrandr Xrender \
 			c fontconfig freetype jpeg m png stdc++ tiff ungif z
 
-MASTER_SITES=           ${MASTER_SITE_SOURCEFORGE:=icewm/}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=icewm/}
 
 MODULES=		devel/gettext
 
@@ -27,7 +26,7 @@ LIB_DEPENDS=		Imlib.>=19::graphics/imlib
 
 USE_X11=		Yes
 NO_REGRESS=		Yes
-CONFIGURE_STYLE= 	gnu		
+CONFIGURE_STYLE=	gnu		
 CONFIGURE_ARGS=		--with-imlib=${PREFIX}/bin \
 			--with-docdir=${PREFIX}/share/doc \
 			--with-libdir=${PREFIX}/share/icewm \
@@ -40,7 +39,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 .if ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "i386" \
  || ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sparc"
-PATCH_LIST=	patch-* apm-patch-src_aapm_cc apm-patch-src_aapm_h
+PATCH_LIST=	patch-* apm-*
 .endif
 
 post-install:
