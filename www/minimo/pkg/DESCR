@@ -1,3 +1,6 @@
 The Minimo (Mini Mozilla) project is focused on code-size and runtime
 footprint reduction, and porting to small consumer devices.  The primary
 focus of Minimo to date has been systems with around 32-64 MB of RAM.
+
+FLAVORs:
+	debug - build with options suitable for debugging

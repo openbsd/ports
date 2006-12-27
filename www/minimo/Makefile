@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2006/12/23 08:12:45 jolan Exp $
+# $OpenBSD: Makefile,v 1.28 2006/12/27 02:55:24 jolan Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
 SHARED_ONLY=	Yes
 
 COMMENT=	"small, simple, and powerful web browser for mobile devices"
 DISTNAME=	minimo-20061120
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SO_VERSION=	4.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -78,6 +78,14 @@ CONFIGURE_ARGS+=--disable-installer		\
 		--disable-tests			\
 		--disable-reorder
 CONFIGURE_ARGS+=--enable-crypto
+
+FLAVORS=debug
+FLAVOR?=
+
+.if ${FLAVOR:L:Mdebug}
+CONFIGURE_ARGS+=--disable-strip --enable-debug --enable-optimize=-O0
+INSTALL_STRIP=
+.endif
 
 MAKE_ENV=	MOZ_CO_PROJECT=minimo \
 		LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
