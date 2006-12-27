@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2006/12/27 16:49:25 steven Exp $
+--- configure.orig	Tue Dec 26 12:17:53 2006
++++ configure	Tue Dec 26 12:18:01 2006
+@@ -4242,7 +4242,7 @@ _ACEOF
+ fi;
+ 
+ 
+-INPUT_PLUGINS="tonegen console sexypsf wav cue alac"
++INPUT_PLUGINS="tonegen console sexypsf wav alac"
+ OUTPUT_PLUGINS="disk_writer"
+ EFFECT_PLUGINS="audiocompress ladspa voice_removal stereo_plugin echo_plugin"
+ GENERAL_PLUGINS="song_change alarm"

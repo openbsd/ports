@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_aac_src_Makefile,v 1.1.1.1 2006/12/27 16:49:25 steven Exp $
+--- src/aac/src/Makefile.orig	Mon Dec 25 10:11:34 2006
++++ src/aac/src/Makefile	Mon Dec 25 10:11:51 2006
+@@ -8,7 +8,7 @@ CFLAGS += $(PICFLAGS)
+ # override objective make's LIBDIR
+ LIBDIR = $(plugindir)/$(INPUT_PLUGIN_DIR)
+ 
+-LDFLAGS += ../libfaad2/libfaad.a ../mp4ff/libmp4ff.a -lstdc++
++LDFLAGS += -L!!LOCALBASE!!/lib -lfaad -lmp4ff -lstdc++
+ 
+ SOURCES = libmp4.c mp4_utils.c aac_utils.c tagging_mp4.c
+ 
