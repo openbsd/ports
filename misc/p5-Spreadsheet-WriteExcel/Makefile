@@ -1,27 +1,20 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/07/15 20:20:23 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/27 12:35:13 simon Exp $
 
 COMMENT=	"write a cross-platform Excel binary file"
 
+MODULES=	cpan
 DISTNAME=	Spreadsheet-WriteExcel-2.17
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	misc perl5
+CATEGORIES=	misc
 
 MAINTAINER=	Alexey E. Suslikov <alexey.suslikov@gmail.com>
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Spreadsheet/}
-
-# GPL/Artistic
+# Perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	:p5-Parse-RecDescent-*:devel/p5-Parse-RecDescent
-BUILD_DEPENDS=	${RUN_DEPENDS}
-
-CONFIGURE_STYLE=perl
-
-PKG_ARCH=	*
 
 EXAMPLE_DIR=	${PREFIX}/share/examples/p5-Spreadsheet-WriteExcel
 

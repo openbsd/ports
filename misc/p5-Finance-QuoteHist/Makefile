@@ -1,17 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2004/01/04 08:34:26 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2006/12/27 12:35:13 simon Exp $
 
 COMMENT=	"module to obtain historical financial quotes from exchanges"
 
+MODULES=	cpan
 DISTNAME=	Finance-QuoteHist-0.32
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	misc perl5
-
-HOMEPAGE=	http://www.mojotoad.com/sisk/projects/Finance-QuoteHist/
+PKGNAME=	p5-${DISTNAME}p0
+CATEGORIES=	misc
 
 MAINTAINER=	Andrew Dalgleish <openbsd@ajd.net.au>
-
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Finance/} \
-		${HOMEPAGE}
 
 # GPL/Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,11 +15,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE= perl
-
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::converters/p5-DateManip \
 		::www/p5-HTML-TableExtract \
 		::www/p5-libwww
-		
+
+pre-install:
+	@rm ${WRKSRC}/lib/Finance/QuoteHist/Generic.pm.orig
+	@rm ${WRKSRC}/lib/Finance/QuoteHist/Yahoo.pm.orig
+
 .include <bsd.port.mk>
