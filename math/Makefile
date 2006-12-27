@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2006/10/28 19:53:28 steven Exp $
+# $OpenBSD: Makefile,v 1.66 2006/12/27 17:30:54 steven Exp $
 #
 
      SUBDIR += R
@@ -50,6 +50,7 @@
      SUBDIR += p5-Math-FFT
      SUBDIR += p5-Math-GMP
      SUBDIR += p5-Math-Pari
+     SUBDIR += p5-Math-Round
      SUBDIR += p5-Set-IntSpan
      SUBDIR += pari
      SUBDIR += plplot
