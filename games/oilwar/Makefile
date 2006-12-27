@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2004/11/28 22:41:19 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/12/27 11:47:18 jasper Exp $
 
 COMMENT=	"sdl shoot 'em up; stop evil army from getting your oil"
 
 DISTNAME=	OilWar-1.2.1
-PKGNAME=	${DISTNAME:L}p0
+PKGNAME=	${DISTNAME:L}p1
 CATEGORIES=	games x11
-MASTER_SITES=	http://www.2ndpoint.fi/projektit/filut/
-
-HOMEPAGE=	http://www.2ndpoint.fi/projektit/oilwar.html
 
 MAINTAINER=	George W. Bush <president@whitehouse.gov>
 
