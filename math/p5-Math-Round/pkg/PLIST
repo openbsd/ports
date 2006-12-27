@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/27 17:29:39 steven Exp $
+${P5SITE}/Math/
+${P5SITE}/Math/Round.pm
+${P5SITE}/auto/
+${P5SITE}/auto/Math/
+${P5SITE}/auto/Math/Round/
+${P5SITE}/auto/Math/Round/autosplit.ix
+@man man/man3p/Math::Round.3p
