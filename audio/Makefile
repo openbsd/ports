@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.162 2006/12/19 19:15:33 steven Exp $
+# $OpenBSD: Makefile,v 1.163 2006/12/27 16:50:32 steven Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -6,6 +6,8 @@
      SUBDIR += akode
      SUBDIR += amarok
      SUBDIR += ascd
+     SUBDIR += audacious
+     SUBDIR += audacious-plugins
      SUBDIR += audacity
      SUBDIR += aumix
      SUBDIR += bladeenc
