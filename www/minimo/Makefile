@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2006/12/27 02:55:24 jolan Exp $
+# $OpenBSD: Makefile,v 1.29 2006/12/27 16:21:59 jolan Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
 SHARED_ONLY=	Yes
 
 COMMENT=	"small, simple, and powerful web browser for mobile devices"
 DISTNAME=	minimo-20061120
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SO_VERSION=	4.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
