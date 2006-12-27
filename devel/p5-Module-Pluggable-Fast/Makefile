@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/29 08:23:30 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/12/27 12:56:07 simon Exp $
 
 COMMENT=	"instantiate plugins as they're found"
 
 MODULES=	cpan
 DISTNAME=	Module-Pluggable-Fast-0.18
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel
 
-MAINTAINER=	Simon Dassow <janus@errornet.de>
+MAINTAINER=	Simon Dassow <simon@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
