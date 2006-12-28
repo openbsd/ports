@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2006/12/16 12:22:36 espie Exp $
+# $OpenBSD: Makefile,v 1.107 2006/12/28 02:23:17 pvalchev Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -28,7 +28,7 @@ MASTER_SITES=		http://www1.mplayerhq.hu/MPlayer/releases/ \
 # The skins tarball changes on a daily basis so it is mirrored
 # locally, do NOT change this.
 #MASTER_SITES0=		http://www2.mplayerhq.hu/MPlayer/Skin/
-MASTER_SITES0=		http://www.sightly.net/mplayer/
+MASTER_SITES0=		${MASTER_SITE_BACKUP}
 
 MAINTAINER=     Bjorn Sandell <biorn@dce.chalmers.se>
 
