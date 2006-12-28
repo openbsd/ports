@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2004/12/16 00:31:20 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2006/12/28 22:11:44 jasper Exp $
 
 COMMENT=	"optimise a list of route prefixes"
 
 DISTNAME=	aggregate-1.5
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 MASTER_SITES=	http://buffoon.automagic.org/dist/ \
