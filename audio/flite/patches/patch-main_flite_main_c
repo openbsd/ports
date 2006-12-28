@@ -1,0 +1,12 @@
+$OpenBSD: patch-main_flite_main_c,v 1.1 2006/12/28 11:47:23 espie Exp $
+--- main/flite_main.c.orig	Thu Dec 28 12:45:59 2006
++++ main/flite_main.c	Thu Dec 28 12:46:57 2006
+@@ -58,6 +58,8 @@ static void flite_version()
+ 	   FLITE_PROJECT_STATE,
+ 	   FLITE_PROJECT_DATE);
+     printf("  CMU Copyright 1999-2003, all rights reserved\n");
++    printf("  Modified from the original for the OpenBSD project\n");
++    printf("  See http://www.openbsd.org/cgi-bin/cvsweb/ports/audio/flite/patches/\n");
+ }
+ 
+ static void flite_usage()

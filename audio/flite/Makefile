@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2005/12/24 16:01:55 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2006/12/28 11:47:23 espie Exp $
 
 COMMENT=	"text to speech utility"
 
@@ -8,7 +8,7 @@ BROKEN=		"gcc hang compiling cmu_us_kal_diphone.c"
 
 VERSION=	1.2
 DISTNAME=	flite-${VERSION}-release
-PKGNAME=	flite-${VERSION}p0
+PKGNAME=	flite-${VERSION}p1
 SHARED_LIBS=	flite			1.2 \
 		flite_cmu_time_awb	1.2 \
 		flite_cmu_us_kal	1.2 \
@@ -30,8 +30,8 @@ HOMEPAGE=	http://www.cmuflite.org/
 
 MAINTAINER=	Jason L. Wright <jason@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=   No, mods have to be clearly marked
-PERMIT_PACKAGE_FTP=     No, mods have to be clearly marked
+PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		c m
