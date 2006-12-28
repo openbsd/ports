@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/26 11:24:29 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2006/12/28 23:26:23 kili Exp $
 #
 # Credits to Matt Jibson. He did the initial work on this port and many
 # tools it depends on.
@@ -19,8 +19,6 @@ DISTFILES=	${DISTNAME}.tar.gz ${DISTNAME-docs}.tar.bz2:0
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MULTI_PACKAGES=	-main -docs
-
-DOCDIR=		${PREFIX}/share/doc/lilypond/${VERSION}
 
 HOMEPAGE=	http://lilypond.org/web/
 
