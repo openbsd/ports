@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2006/12/21 09:09:26 jasper Exp $
---- setup.py.orig	Mon Dec 18 08:02:19 2006
-+++ setup.py	Mon Dec 18 08:05:38 2006
-@@ -3,10 +3,10 @@ from distutils.core import Extension, se
+$OpenBSD: patch-setup_py,v 1.2 2006/12/28 22:36:16 jasper Exp $
+--- setup.py.orig	Thu Jun 23 03:48:49 2005
++++ setup.py	Thu Dec 28 20:38:37 2006
+@@ -3,10 +3,10 @@
  from distutils import sysconfig
  
  # Full paths to imlib2-config and freetype-config, adjust as needed -
@@ -14,7 +14,7 @@ $OpenBSD: patch-setup_py,v 1.1.1.1 2006/12/21 09:09:26 jasper Exp $
  
  # Add any additional library directories here -
  ldirs   = []
-@@ -15,7 +15,7 @@ ldirs   = []
+@@ -15,7 +15,7 @@
  cargs   = ["-Wall"]
  
  # Full path to libImlib2 shared library
@@ -23,3 +23,12 @@ $OpenBSD: patch-setup_py,v 1.1.1.1 2006/12/21 09:09:26 jasper Exp $
  
  #------------------------------------------------------------------------------
  # The rest of this script should not need to be modified! 
+@@ -117,7 +117,7 @@
+       description      = "Lightweight panel/taskbar for X11 Window Managers",
+       long_description = "See README for more information",
+       url              = "http://pypanel.sourceforge.net",
+-      data_files       = [(install_dir, files)],
++#      data_files       = [(install_dir, files)],
+       scripts          = ["pypanel"],
+       ext_modules      = [module]
+      )
