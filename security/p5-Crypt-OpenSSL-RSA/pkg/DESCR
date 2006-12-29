@@ -1,14 +1,17 @@
-This module is an XS perl module designed to provide basic RSA
-functionality. It does this by providing a glue to the RSA functions
-in the OpenSSL library. In particular, it provides the following
-functions:
+Crypt::OpenSSL::RSA is an XS perl module designed to provide basic RSA
+functionality.  It does this by providing a glue to the RSA functions
+in the OpenSSL library.  In particular, it provides the following functions:
 
-loadPublicKey, loadPrivateKey - load a key from a string
-getPublicKeyString, getPrivateKeyString - save a key to a string
-generateKey - make a new key
-encrypt, decrypt, sign, verify,
-use_pkcs1_oaep_padding, use_pkcs1_padding,
-use_sslv23_padding, use_no_padding,
-use_md5_hash, use_sha1_hash, use_ripemd60_hash
-size - returns the size, in bytes, of the key
-checkKey - checks the validity of the key
+       new_public_key, new_private_key - create a key from a string
+       generate_key - make a new key
+       get_private_key_string - save key to a string
+       get_public_key_string - save public portion of key to a string
+       get_public_key_x509_string - save public portion of key to a string,
+                                    using format compatibe with OpenSSL's
+                                    command-line rsa tool
+       encrypt, decrypt, private_encrypt, public_decrypt, sign, verify,
+       use_pkcs1_oaep_padding, use_pkcs1_padding,
+       use_sslv23_padding, use_no_padding
+       use_md5_hash, use_sha1_hash, use_ripemd160_hash
+       size - Returns the size, in bytes, of the key.
+       check_key - checks the validity of a key.
