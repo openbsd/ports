@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2006/12/16 12:22:35 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/12/29 11:04:58 jasper Exp $
 
 COMMENT=	"window manipulation tool"
 
-DISTNAME=	devilspie-0.17.1
+DISTNAME=	devilspie-0.19
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.burtonini.com/blog/computers/devilspie
 
 MAINTAINER=	Olle Nilsson <olle@vexed.se>
 
-# GNU
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -31,6 +31,7 @@ LIB_DEPENDS=	wnck-1.>=16::devel/libwnck
 
 SEPARATE_BUILD=	concurrent
 USE_X11=	Yes
+USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/" \
