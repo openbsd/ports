@@ -1,0 +1,2 @@
+Gotmail is a perl script to download mail from hotmail.com without user
+interaction. It is probably best run from a cron job.

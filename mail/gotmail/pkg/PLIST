@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/29 12:21:03 jasper Exp $
+bin/gotmail
+bin/gotmail4evolution
+@man man/man1/gotmail.1
+share/examples/gotmail/
+share/examples/gotmail/sample.gotmailrc
