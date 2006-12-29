@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/25 13:40:28 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2006/12/29 00:56:17 steven Exp $
 
 COMMENT=        "run tests built with Test::Builder"
 
 MODULES=	cpan
 DISTNAME=	Test-Tester-0.103
-CATEGORIES=     devel
+PKGNAME=	p5-${DISTNAME}p0
+CATEGORIES=	devel
 
 MAINTAINER=	Simon Dassow <simon@openbsd.org>
 
