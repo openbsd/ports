@@ -1,2 +1,3 @@
-Gotmail is a perl script to download mail from hotmail.com without user
-interaction. It is probably best run from a cron job.
+Gotmail is a perl script to fetch mail out of a Hotmail account and
+either place it into the current directory in unix mbox format or
+forward it to another email address.
