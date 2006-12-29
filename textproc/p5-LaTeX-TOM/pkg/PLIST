@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/29 18:09:28 jasper Exp $
+${P5SITE}/LaTeX/
+${P5SITE}/LaTeX/TOM/
+${P5SITE}/LaTeX/TOM.pm
+${P5SITE}/LaTeX/TOM/Node.pm
+${P5SITE}/LaTeX/TOM/Parser.pm
+${P5SITE}/LaTeX/TOM/Tree.pm
+@man man/man3p/LaTeX::TOM.3p
