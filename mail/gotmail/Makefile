@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/29 12:21:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/29 12:23:38 jasper Exp $
 
 COMMENT=	"automaticly fetch hotmail.com email"
 
 DISTNAME=	gotmail-0.8.9
 CATEGORIES=	mail perl5
-
-HOMEPAGE=	http://gotmail.sourceforge.net/
 
 MAINTAINER=	Michael Erdely <mike@erdelynet.com>
 
