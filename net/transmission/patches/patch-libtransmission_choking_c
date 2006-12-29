@@ -1,0 +1,27 @@
+$OpenBSD: patch-libtransmission_choking_c,v 1.1 2006/12/29 21:19:13 naddy Exp $
+--- libtransmission/choking.c.orig	Fri Dec 29 21:47:39 2006
++++ libtransmission/choking.c	Fri Dec 29 21:52:27 2006
+@@ -31,19 +31,19 @@
+ 
+ /* We may try to allocate and free tables of size 0. Quick and dirty
+    way to handle it... */
+-void * __malloc( int size )
++void * tr_malloc( size_t size )
+ {
+     if( !size )
+         return NULL;
+     return malloc( size );
+ }
+-void __free( void * p )
++void tr_free( void * p )
+ {
+     if( p )
+         free( p );
+ }
+-#define malloc __malloc
+-#define free   __free
++#define malloc tr_malloc
++#define free   tr_free
+ 
+ struct tr_choking_s
+ {
