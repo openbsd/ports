@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/27 12:35:13 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2006/12/29 21:51:45 steven Exp $
 
 COMMENT=	"module to obtain historical financial quotes from exchanges"
 
@@ -20,8 +20,7 @@ RUN_DEPENDS=	::converters/p5-DateManip \
 		::www/p5-HTML-TableExtract \
 		::www/p5-libwww
 
-pre-install:
-	@rm ${WRKSRC}/lib/Finance/QuoteHist/Generic.pm.orig
-	@rm ${WRKSRC}/lib/Finance/QuoteHist/Yahoo.pm.orig
+pre-configure:
+	@rm -f ${WRKSRC}/lib/Finance/QuoteHist/*.orig
 
 .include <bsd.port.mk>
