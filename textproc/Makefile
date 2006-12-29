@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.181 2006/12/23 14:12:11 espie Exp $
+# $OpenBSD: Makefile,v 1.182 2006/12/29 18:12:23 jasper Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -61,6 +61,7 @@
      SUBDIR += p5-Email-Find
      SUBDIR += p5-Font-AFM
      SUBDIR += p5-Font-TTF
+     SUBDIR += p5-LaTeX-TOM
      SUBDIR += p5-LibXML-Common
      SUBDIR += p5-Libxml
      SUBDIR += p5-Lingua-EN-Inflect
