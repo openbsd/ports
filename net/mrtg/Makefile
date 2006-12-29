@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.50 2006/08/03 23:15:58 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2006/12/29 13:08:14 jakob Exp $
 
 COMMENT=	"multi-router traffic grapher"
 
 DISTNAME=	mrtg-2.12.2
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	net
 
 MASTER_SITES=	${HOMEPAGE}pub/
