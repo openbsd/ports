@@ -1,16 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/11/29 19:12:04 kili Exp $
+@comment $OpenBSD: PLIST,v 1.3 2006/12/29 13:38:03 kili Exp $
 bin/t2tconv
 bin/txt2tags
 @man man/man1/txt2tags.1
 share/doc/txt2tags/
+share/doc/txt2tags/README
+@comment share/doc/txt2tags/manpage-ca.man
+@comment share/doc/txt2tags/manpage-es.man
+@comment share/doc/txt2tags/manpage-fr.man
+@comment share/doc/txt2tags/manpage-it.man
+@comment share/doc/txt2tags/manpage-pt.man
 @comment share/doc/txt2tags/manpage.man
 @comment share/doc/txt2tags/manpage.t2t
-share/doc/txt2tags/markup.html
-share/doc/txt2tags/rules.html
-share/doc/txt2tags/rules.t2t
-share/doc/txt2tags/txt2tagsrc
+share/doc/txt2tags/txt2tags-quickref.pdf
 share/doc/txt2tags/userguide.pdf
-share/doc/txt2tags/writing-book.html
 share/examples/txt2tags/
 share/examples/txt2tags/css/
 share/examples/txt2tags/css/color.css
@@ -25,10 +27,16 @@ share/examples/txt2tags/img/old-poweredby-1.png
 share/examples/txt2tags/img/old-poweredby-2.png
 share/examples/txt2tags/img/photo.jpg
 share/examples/txt2tags/img/t2tbutton.png
+share/examples/txt2tags/img/t2tpowered-black.png
+share/examples/txt2tags/img/t2tpowered-white.png
 share/examples/txt2tags/img/t2tpowered.png
 share/examples/txt2tags/img/valid-css.png
 share/examples/txt2tags/img/valid-html.png
 share/examples/txt2tags/img/valid-xhtml.png
+share/examples/txt2tags/module/
+share/examples/txt2tags/module/README
+share/examples/txt2tags/module/module-body.py
+share/examples/txt2tags/module/module-full.py
 share/examples/txt2tags/sample.html
 share/examples/txt2tags/sample.lout
 share/examples/txt2tags/sample.man
@@ -40,3 +48,11 @@ share/examples/txt2tags/sample.t2t
 share/examples/txt2tags/sample.tex
 share/examples/txt2tags/sample.txt
 share/examples/txt2tags/sample.xhtml
+share/examples/txt2tags/txt2tagsrc
+share/locale/de/LC_MESSAGES/txt2tags.mo
+share/locale/es/LC_MESSAGES/txt2tags.mo
+share/locale/fr/LC_MESSAGES/txt2tags.mo
+share/locale/hu/LC_MESSAGES/txt2tags.mo
+share/locale/it/LC_MESSAGES/txt2tags.mo
+share/locale/pt_BR/LC_MESSAGES/txt2tags.mo
+share/locale/zh_CN/LC_MESSAGES/txt2tags.mo
