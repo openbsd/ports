@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/10/06 08:04:23 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2006/12/30 16:36:09 aanriot Exp $
 bin/prewikka-httpd
 lib/python${MODPY_VERSION}/site-packages/prewikka/
 lib/python${MODPY_VERSION}/site-packages/prewikka/Auth.py
@@ -49,14 +49,6 @@ lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/loginpassword/__i
 lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/loginpassword/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/loginpassword/loginpassword.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/loginpassword/loginpassword.pyc
-lib/python${MODPY_VERSION}/site-packages/prewikka/modules/log/
-lib/python${MODPY_VERSION}/site-packages/prewikka/modules/log/__init__.py
-lib/python${MODPY_VERSION}/site-packages/prewikka/modules/log/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/prewikka/modules/log/stderr/
-lib/python${MODPY_VERSION}/site-packages/prewikka/modules/log/stderr/__init__.py
-lib/python${MODPY_VERSION}/site-packages/prewikka/modules/log/stderr/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/prewikka/modules/log/stderr/stderr.py
-lib/python${MODPY_VERSION}/site-packages/prewikka/modules/log/stderr/stderr.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/siteconfig.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/siteconfig.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/templates/
@@ -72,8 +64,6 @@ lib/python${MODPY_VERSION}/site-packages/prewikka/templates/ErrorTemplate.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/templates/ErrorTemplate.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/templates/FilterEdition.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/templates/FilterEdition.pyc
-lib/python${MODPY_VERSION}/site-packages/prewikka/templates/FilterListing.py
-lib/python${MODPY_VERSION}/site-packages/prewikka/templates/FilterListing.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/templates/HTMLDocument.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/templates/HTMLDocument.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/templates/HeartbeatAnalyze.py
@@ -162,6 +152,3 @@ share/prewikka/htdocs/images/table_order_down.gif
 share/prewikka/htdocs/images/table_order_up.gif
 share/prewikka/htdocs/js/
 share/prewikka/htdocs/js/functions.js
-@sample /var/prelude/prewikka/
-@extraunexec rm -rf /var/prelude/prewikka/*
-@extraunexec rm -rf %D/lib/python${MODPY_VERSION}/site-packages/prewikka/*

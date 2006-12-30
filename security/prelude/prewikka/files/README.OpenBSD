@@ -26,8 +26,9 @@ Instructions for MySQL:
 
 Instructions for SQLite:
 
-  # cd /var/prelude/prewikka/
+  # cd /var/prelude/
   # sqlite3 prewikka.db < ${PREFIX}/share/prewikka/database/sqlite.sql
+  # chmod 700 prewikka.db
 
   Then, fill-in prewikka.conf, sections [idmef_database] and [database]
   to use this/these database file(s), thanks to the "file" keyword
@@ -42,3 +43,4 @@ fi
 
 The default user is "admin", with "admin" as password and should be
 changed.
+
