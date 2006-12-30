@@ -23,7 +23,7 @@ Instructions for MySQL:
 
 Instructions for SQLite:
 
-  # cd /var/prelude/manager/
+  # cd /var/prelude/
   # sqlite3 prelude.db < $PREFIX/share/libpreludedb/classic/sqlite.sql
   # chown _prelude:_prelude prelude.db
 
