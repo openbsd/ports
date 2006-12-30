@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/25 16:32:35 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2006/12/30 16:24:05 aanriot Exp $
 
 COMMENT=	"perl debugger built with a PerlTk GUI"
 
 MODULES=	cpan
 DISTNAME=	Devel-ptkdb-1.1091
-PKGNAME=	p5-${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}p1
 CATEGORIES=  	devel
 
 HOMEPAGE=	http://world.std.com/~aep/ptkdb/
-
-MAINTAINER=	Alexandre Anriot <aanriot@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

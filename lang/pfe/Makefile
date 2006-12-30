@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2006/07/17 16:59:59 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2006/12/30 16:24:05 aanriot Exp $
 
 COMMENT=	"Portable Forth Environment"
 
 DISTNAME=	pfe-0.32.94
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SHARED_LIBS=		pfe 32.94 \
 			pfe-0 32.94
 CATEGORIES=    	lang
 
 HOMEPAGE=	http://pfe.sourceforge.net/
-
-MAINTAINER=	Alexandre Anriot <aanriot@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
