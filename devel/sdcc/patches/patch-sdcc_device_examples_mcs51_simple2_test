@@ -1,0 +1,9 @@
+$OpenBSD: patch-sdcc_device_examples_mcs51_simple2_test,v 1.1.1.1 2006/12/30 18:45:32 jasper Exp $
+--- device/examples/mcs51/simple2/test.orig	Mon Nov 27 15:31:01 2006
++++ device/examples/mcs51/simple2/test	Mon Nov 27 15:31:06 2006
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/ksh
+ 
+ s51 -k 5678 hi.ihx
+ 

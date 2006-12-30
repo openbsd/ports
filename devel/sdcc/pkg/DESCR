@@ -1,0 +1,3 @@
+SDCC is an open source retargettable, optimizing ANSI - C compiler. The
+current version targets the Intel 8051, Zilog Z80, Dallas 80C390,
+Motorola HC08 and Microchip PIC MCUs.

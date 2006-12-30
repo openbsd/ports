@@ -1,0 +1,9 @@
+$OpenBSD: patch-sdcc_device_examples_mcs51_simple_test,v 1.1.1.1 2006/12/30 18:45:32 jasper Exp $
+--- device/examples/mcs51/simple/test.orig	Mon Nov 27 15:30:37 2006
++++ device/examples/mcs51/simple/test	Mon Nov 27 15:30:49 2006
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/ksh
+ 
+ # Try out the simulator.  Route serial port output to a text file.
+ # After simulator is started, you need to type:

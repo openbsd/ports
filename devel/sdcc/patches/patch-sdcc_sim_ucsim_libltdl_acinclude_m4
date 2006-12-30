@@ -1,0 +1,17 @@
+$OpenBSD: patch-sdcc_sim_ucsim_libltdl_acinclude_m4,v 1.1.1.1 2006/12/30 18:45:32 jasper Exp $
+--- sim/ucsim/libltdl/acinclude.m4.orig	Fri Jan  3 09:51:59 2003
++++ sim/ucsim/libltdl/acinclude.m4	Mon Dec 25 11:58:00 2006
+@@ -2023,11 +2023,11 @@ cygwin* | mingw* | pw32*)
+   yes,cygwin*)
+     library_names_spec='$libname.dll.a'
+     soname_spec='`echo ${libname} | sed -e 's/^lib/cyg/'``echo ${release} | sed -e 's/[[.]]/-/g'`${versuffix}.dll'
+-    postinstall_cmds='dlpath=`bash 2>&1 -c '\''. $dir/${file}i;echo \$dlname'\''`~
++    postinstall_cmds='dlpath=`ksh 2>&1 -c '\''. $dir/${file}i;echo \$dlname'\''`~
+       dldir=$destdir/`dirname \$dlpath`~
+       test -d \$dldir || mkdir -p \$dldir~
+       $install_prog .libs/$dlname \$dldir/$dlname'
+-    postuninstall_cmds='dldll=`bash 2>&1 -c '\''. $file; echo \$dlname'\''`~
++    postuninstall_cmds='dldll=`ksh 2>&1 -c '\''. $file; echo \$dlname'\''`~
+       dlpath=$dir/\$dldll~
+        $rm \$dlpath'
+     ;;

@@ -1,0 +1,12 @@
+$OpenBSD: patch-sdcc_device_lib_pic_Makefile_common_in,v 1.1.1.1 2006/12/30 18:45:32 jasper Exp $
+--- device/lib/pic/Makefile.common.in.orig	Mon May  1 22:47:12 2006
++++ device/lib/pic/Makefile.common.in	Mon Dec 25 11:58:00 2006
+@@ -12,7 +12,7 @@
+ ### $Id: patch-sdcc_device_lib_pic_Makefile_common_in,v 1.1.1.1 2006/12/30 18:45:32 jasper Exp $
+ ###
+ 
+-SHELL = bash
++SHELL = ksh
+ 
+ #################################################
+ ### verboseness
