@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/10/06 07:51:51 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2006/12/30 16:32:47 aanriot Exp $
 %%SHARED%%
 bin/prelude-lml
 include/prelude-lml/
@@ -24,12 +24,16 @@ share/examples/prelude-lml/ruleset/arbor.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/arbor.rules
 share/examples/prelude-lml/ruleset/arpwatch.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/arpwatch.rules
+share/examples/prelude-lml/ruleset/cacti-thold.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/cacti-thold.rules
 share/examples/prelude-lml/ruleset/checkpoint.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/checkpoint.rules
 share/examples/prelude-lml/ruleset/cisco-asa.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/cisco-asa.rules
 share/examples/prelude-lml/ruleset/cisco-css.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/cisco-css.rules
+share/examples/prelude-lml/ruleset/cisco-ips.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/cisco-ips.rules
 share/examples/prelude-lml/ruleset/cisco-router.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/cisco-router.rules
 share/examples/prelude-lml/ruleset/cisco-vpn.rules
@@ -54,6 +58,8 @@ share/examples/prelude-lml/ruleset/linksys-wap11.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/linksys-wap11.rules
 share/examples/prelude-lml/ruleset/modsecurity.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/modsecurity.rules
+share/examples/prelude-lml/ruleset/ms-cluster.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/ms-cluster.rules
 share/examples/prelude-lml/ruleset/ms-sql.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/ms-sql.rules
 share/examples/prelude-lml/ruleset/nagios.rules
