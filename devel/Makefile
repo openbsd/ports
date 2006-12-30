@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.468 2006/12/26 18:18:53 deanna Exp $
+# $OpenBSD: Makefile,v 1.469 2006/12/30 18:47:50 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -512,6 +512,7 @@
      SUBDIR += ruby-ncurses
      SUBDIR += ruby-rake
      SUBDIR += scons
+     SUBDIR += sdcc
      SUBDIR += sdl
      SUBDIR += sdl,esd
      SUBDIR += sdl-gfx
