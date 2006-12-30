@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/03/25 21:53:35 matthieu Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/12/30 14:55:25 matthieu Exp $
 @man man/man8/lspci.8
 @man man/man8/setpci.8
 @man man/man8/update-pciids.8
@@ -6,4 +6,4 @@ sbin/lspci
 sbin/setpci
 sbin/update-pciids
 @comment no checksum
-share/pci.ids
+share/pci.ids.gz

@@ -1,13 +1,13 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2006/03/25 21:53:35 matthieu Exp $
---- Makefile.orig	Sat Nov 26 14:00:57 2005
-+++ Makefile	Fri Mar 24 22:57:18 2006
+$OpenBSD: patch-Makefile,v 1.2 2006/12/30 14:55:25 matthieu Exp $
+--- Makefile.orig	Sat Sep  9 14:57:03 2006
++++ Makefile	Wed Nov 22 22:43:48 2006
 @@ -1,8 +1,7 @@
  # Makefile for The PCI Utilities
- # (c) 1998--2005 Martin Mares <mj@ucw.cz>
+ # (c) 1998--2006 Martin Mares <mj@ucw.cz>
  
 -OPT=-O2
--CFLAGS=$(OPT) -Wall -W -Wno-parentheses -Wstrict-prototypes -Wmissing-prototypes -Winline
-+CFLAGS+= -Wall -W -Wno-parentheses -Wstrict-prototypes -Wmissing-prototypes -Winline
+-CFLAGS=$(OPT) -Wall -W -Wno-parentheses -Wstrict-prototypes -Wmissing-prototypes
++CFLAGS+= -Wall -W -Wno-parentheses -Wstrict-prototypes -Wmissing-prototypes
  
- VERSION=2.2.1
- DATE=2005-11-26
+ VERSION=2.2.4
+ DATE=2006-09-09
