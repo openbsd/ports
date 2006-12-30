@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2006/11/23 18:06:34 bernd Exp $
+# $OpenBSD: Makefile,v 1.51 2006/12/30 19:43:02 matthieu Exp $
 
 COMMENT=	"mirroring/synchronization over low bandwidth links"
 
@@ -18,7 +18,7 @@ WANTLIB=		c
 MASTER_SITES=	ftp://ftp.samba.org/pub/rsync/ \
 		ftp://ftp.samba.org/pub/rsync/old-versions/ \
 		http://ftp.samba.org/ftp/rsync/ \
-		ftp://ftp.funet.fi/pub/mirrors/rsync.samba.org/pub/rsync/
+		ftp://ftp.funet.fi/pub/mirrors/samba.org/pub/rsync/
 
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=gnu
