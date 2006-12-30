@@ -1,0 +1,11 @@
+$OpenBSD: patch-star_names_c,v 1.1 2006/12/30 20:25:59 naddy Exp $
+--- star/names.c.orig	Sat Dec 30 21:14:51 2006
++++ star/names.c	Sat Dec 30 21:15:21 2006
+@@ -31,6 +31,7 @@ static	char sccsid[] =
+ #include <pwd.h>
+ #include <grp.h>
+ #include <strdefs.h>
++#include <schily.h>
+ #include "starsubs.h"
+ 
+ #define	C_SIZE	16
