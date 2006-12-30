@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2006/12/06 14:51:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2006/12/30 19:00:36 jasper Exp $
 
 COMMENT=	"perl module to manage XML RSS files"
 
-DISTNAME=	XML-RSS-1.21
+DISTNAME=	XML-RSS-1.22
 CATEGORIES=	textproc
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -18,6 +18,7 @@ MODULES=	cpan
 RUN_DEPENDS=	::devel/p5-DateTime \
 		::devel/p5-DateTime-Format-Mail \
 		::devel/p5-DateTime-Format-W3CDTF \
+		::devel/p5-Test-Manifest \
 		:p5-XML-Parser->=2.23:textproc/p5-XML-Parser  \
 		::www/p5-HTML-Parser
 BUILD_DEPENDS=	${RUN_DEPENDS}
