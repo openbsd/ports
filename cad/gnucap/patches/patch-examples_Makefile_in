@@ -1,0 +1,12 @@
+$OpenBSD: patch-examples_Makefile_in,v 1.1.1.1 2006/12/30 15:42:53 steven Exp $
+--- examples/Makefile.in.orig	Wed Sep 20 08:22:11 2006
++++ examples/Makefile.in	Sat Dec 30 12:58:58 2006
+@@ -148,7 +148,7 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-pkgexamplesdir = ${pkgdatadir}/examples
++pkgexamplesdir = ${prefix}/share/examples/gnucap
+ dist_pkgexamples_DATA = ${EXFILES}
+ EXFILES = \
+  eq2-145.ckt eq2-289.ckt eq2-577.ckt eq3-1153.ckt eq4-2305.ckt \
