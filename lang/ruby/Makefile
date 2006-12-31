@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2006/12/04 13:26:51 bernd Exp $
+# $OpenBSD: Makefile,v 1.52 2006/12/31 01:04:09 msf Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,7 +10,7 @@ COMMENT-tk=		"tk interface for ruby"
 VERSION=		1.8.5
 DISTNAME=		ruby-${VERSION}
 SHARED_LIBS=		ruby 1.85
-PKGNAME-main=		${DISTNAME}p3
+PKGNAME-main=		${DISTNAME}p4
 PKGNAME-iconv=		ruby-iconv-${VERSION}p2
 PKGNAME-gdbm=		ruby-gdbm-${VERSION}p2
 PKGNAME-tk=		ruby-tk-${VERSION}p2
