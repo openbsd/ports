@@ -1,0 +1,2 @@
+"Test::Spelling" lets you check the spelling of a POD file, and
+report its results in standard "Test::Simple" fashion.
