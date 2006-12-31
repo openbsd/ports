@@ -1,0 +1,76 @@
+$OpenBSD: patch-doc_hiawatha_1,v 1.1.1.1 2006/12/31 10:32:42 ajacoutot Exp $
+--- doc/hiawatha.1.orig	Thu Dec 28 13:27:50 2006
++++ doc/hiawatha.1	Fri Dec 29 07:25:00 2006
+@@ -21,7 +21,7 @@ hiawatha \- Advanced and secure webserve
+ Hiawatha is a secure webserver for Unix. It has been written with 'being secure' as its main goal. Hiawatha has lots of features that no other webserver has. This and the fact that Hiawatha's source code is free of security-bugs, makes Hiawatha the most secure webserver available.
+ .br
+ 
+-Hiawatha has been tested and runs perfectly on Linux, FreeBSD, MacOS X and Cygwin.
++Hiawatha has been tested and runs perfectly on Linux, {Open,Free}BSD, MacOS X and Cygwin.
+ 
+ .\" ==========[ Configuration files ]==========================================
+ .SH CONFIGURATION FILES
+@@ -151,7 +151,7 @@ Example: CGIhandler = /usr/bin/php4-cgi:
+ .B CGIwrapper = <CGI wrapper>
+ Specify the wrapper for CGI processes. A secure CGI wrapper is included in the Hiawatha package. See cgi_wrapper(1) for more information.
+ .br
+-Example: CGIwrapper = /usr/sbin/cgi_wrapper
++Example: CGIwrapper = !!LOCALBASE!!/sbin/cgi_wrapper
+ .TP
+ .B CommandChannel = <portnumber>,<password>
+ The port and the password for the CommandChannel. You can use telnet to connect to the CommandChannel. The password must be encrypted with the crypt(3) function. You can only connect to the CommandChannel from localhost. Type 'help' in the CommandChannel for more information. This feature must be switched on during compilation of Hiawatha.
+@@ -179,7 +179,7 @@ Example: GarbageLogfile = /var/log/hiawa
+ .B Include <filename>
+ Include another configurationfile.
+ .br
+-Example: Include /etc/hiawatha/hosts.conf
++Example: Include !!SYSCONFDIR!!/hiawatha/hosts.conf
+ .TP
+ .B KickOnBan = yes|no
+ Close all other connections that originate from the same IP in case of a ban.
+@@ -214,7 +214,7 @@ Default = /var/run/hiawatha.pid, example
+ .B ServerId = <userid>|<userid>:<groupid>[,<groupid>, ...]
+ The userid and groupid(s) the server will change to. If only a userid is specified, the groupid(s) will be looked up in /etc/passwd and /etc/group.
+ .br
+-Default = 65534:65534, example: ServerId = www-data
++Default = 579:579, example: ServerId = www-data
+ .TP
+ .B ServerKey = <SSL certificate file>
+ The file containing the SSL private key and certificate. These will be used for all SSL bindings that don't have their own certificate file. See ServerKey and UseSSL in the BINDING section.
+@@ -566,13 +566,13 @@ and
+ .B StartFile
+ 
+ .SH MIMETYPES
+-Specify the mimetypes of files in /etc/hiawatha/mimetypes.conf.
++Specify the mimetypes of files in !!SYSCONFDIR!!/hiawatha/mimetypes.conf.
+ .TP
+ .B <mimetype> <extension> [<extension> ...]
+ Example: image/jpeg jpg jpeg
+ 
+ .SH CONTROL UPLOADSPEED
+-The uploadspeed of some files can be controled via /etc/hiawatha/throttle.conf.
++The uploadspeed of some files can be controled via !!SYSCONFDIR!!/hiawatha/throttle.conf.
+ .TP
+ .B <main-mimetype>/[<sub-mimetype>]:<uploadspeed in kB/s>
+ Example: audio/mpeg:30  or  video/:30
+@@ -599,15 +599,15 @@ Will unban all clients.
+ Will disconnect all clients.
+ 
+ .SH FILES
+-.B /usr/sbin/hiawatha
++.B !!LOCALBASE!!/sbin/hiawatha
+ .br
+-.B /etc/hiawatha/httpd.conf
++.B !!SYSCONFDIR!!/hiawatha/httpd.conf
+ .br
+-.B /etc/hiawatha/mime.types
++.B !!SYSCONFDIR!!/hiawatha/mime.types
+ .br
+-.B /etc/hiawatha/throttle.conf
++.B !!SYSCONFDIR!!/hiawatha/throttle.conf
+ .br
+-.B /etc/hiawatha/cgi_wrapper.conf
++.B !!SYSCONFDIR!!/hiawatha/cgi_wrapper.conf
+ 
+ .SH SEE ALSO
+ cgi_wrapper(1)

@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/31 10:32:42 ajacoutot Exp $
+@newgroup _hiawatha:579
+@newuser _hiawatha:579:579:daemon:Hiawatha HTTP Server:/nonexistent:/sbin/nologin
+@man man/man1/cgi_wrapper.1
+@man man/man1/hiawatha.1
+sbin/cgi_wrapper
+sbin/hiawatha
+sbin/wigwam
+share/examples/hiawatha/
+@sample ${SYSCONFDIR}/hiawatha/
+share/examples/hiawatha/cgi_wrapper.conf
+@sample ${SYSCONFDIR}/hiawatha/cgi_wrapper.conf
+share/examples/hiawatha/httpd.conf
+@sample ${SYSCONFDIR}/hiawatha/httpd.conf
+@sample /var/hiawatha/
+share/examples/hiawatha/index.html
+@sample /var/hiawatha/index.html
+share/examples/hiawatha/mimetype.conf
+@sample ${SYSCONFDIR}/hiawatha/mimetype.conf
+share/examples/hiawatha/throttle.conf
+@sample ${SYSCONFDIR}/hiawatha/throttle.conf
+@sample /var/log/hiawatha/

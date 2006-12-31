@@ -1,0 +1,23 @@
+$OpenBSD: patch-serverconfig_c,v 1.1.1.1 2006/12/31 10:32:42 ajacoutot Exp $
+--- serverconfig.c.orig	Sun Dec 24 13:08:08 2006
++++ serverconfig.c	Thu Dec 28 07:39:33 2006
+@@ -19,7 +19,7 @@
+ #define mc_NO_BINDING    -5
+ #define mc_REQUIRE       -6
+ 
+-#define id_NOBODY 65534
++#define id_HIAWATHA 579
+ 
+ enum t_section { syntax_error = -1, none, binding, virtualhost, directory, fcgi_server };
+ enum t_section_type { tag, bracket, end };
+@@ -171,8 +171,8 @@ t_config *default_config(void) {
+ #endif
+ 
+ 		config->server_root        = NULL;
+-		config->server_uid         = (uid_t)id_NOBODY;
+-		config->server_gid         = (gid_t)id_NOBODY;
++		config->server_uid         = (uid_t)id_HIAWATHA;
++		config->server_gid         = (gid_t)id_HIAWATHA;
+ 		config->server_string      = "Hiawatha v"VERSION;
+ 		config->groups.number      = 0;
+ 		config->groups.array       = NULL;
