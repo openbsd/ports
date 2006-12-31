@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.259 2006/12/25 20:45:11 deanna Exp $
+# $OpenBSD: Makefile,v 1.260 2006/12/31 10:35:04 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -28,6 +28,7 @@
      SUBDIR += gnash
      SUBDIR += gtkhtml
      SUBDIR += gtkhtml3
+     SUBDIR += hiawatha
      SUBDIR += http_load
      SUBDIR += http_ping
      SUBDIR += igal
