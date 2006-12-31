@@ -1,9 +1,10 @@
-Hiawatha is a secure webserver for Unix. It has been written with 'being
-secure' as its main goal.  Hiawatha has many security features that no
-other webserver has.
-Hiawatha does not have all the fancy features, but it is very secure and
-fast and is really easy to configure.  Rootjail, run CGIs under any
-uid/gid you want, prevention of SQL injection and cross-site scripting,
-banning of clients who try such exploits and many other features make
-Hiawatha an interesting webserver for those who need more security than
-what the other available webservers are offering.
+Hiawatha is a webserver that has been written with 'being secure' as its
+main goal.  Hiawatha has many security features that no other webserver
+has.
+Hiawatha does not have all the fancy features, but it is fast and really
+easy to configure.  Rootjail, run CGIs under any uid/gid you want,
+prevention of SQL injection and cross-site scripting, banning of clients
+who try such exploits and many other features make it an interesting
+webserver for those who need more security than what others are
+offering (please note that while the author claims it's secure, this
+software has not been audited by the OpenBSD team).
