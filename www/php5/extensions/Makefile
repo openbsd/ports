@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2006/11/30 18:33:04 sturm Exp $
+# $OpenBSD: Makefile,v 1.31 2006/12/31 13:15:38 espie Exp $
 
 FULLPKGNAME-main=		php5-extensions-${V}p0
 COMMENT-main=		"informational package about PHP5 extensions"
@@ -48,7 +48,7 @@ COMMENT-curl=		"curl URL library extensions for php5"
 CONFIGURE_ARGS+=	--with-curl=shared,${LOCALBASE}
 LIB_DEPENDS-curl=	curl.>=2::net/curl
 WANTLIB-curl=		${WANTLIB} crypto ssl z
-FULLPKGNAME-curl=	php5-curl-${V}p1
+FULLPKGNAME-curl=	php5-curl-${V}p2
 .endif
 
 # dba
@@ -101,11 +101,11 @@ CONFIGURE_ARGS+=	--with-gd=shared ${GRAPHIC_CONFIG} \
 
 . if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--without-xpm-dir --without-freetype-dir
-FULLPKGNAME-gd=		php5-gd-${V}-no_x11p1
+FULLPKGNAME-gd=		php5-gd-${V}-no_x11p2
 . else
 USE_X11=		yes
 CONFIGURE_ARGS+=	--with-xpm-dir=${X11BASE}
-FULLPKGNAME-gd=		php5-gd-${V}p0
+FULLPKGNAME-gd=		php5-gd-${V}p1
 WANTLIB-gd+=		X11 Xpm freetype
 . endif
 .endif
@@ -132,7 +132,6 @@ CONFIGURE_ARGS+=	--with-imap=shared,${LOCALBASE} \
 			--with-kerberos=/usr --with-imap-ssl
 LIB_DEPENDS-imap=	c-client.>=3::mail/c-client
 WANTLIB-imap=		${WANTLIB} gssapi crypto krb5 ssl
-FULLPKGNAME-imap=	php5-imap-${V}p0
 .endif
 
 # ldap
@@ -257,7 +256,6 @@ COMMENT-soap=		"SOAP functions for php5"
 CONFIGURE_ARGS+=	--enable-soap=shared
 LIB_DEPENDS-soap=
 WANTLIB-soap=		${WANTLIB} xml2 z iconv
-FULLPKGNAME-soap=	php5-soap-${V}p0
 .endif
 
 # snmp
@@ -316,15 +314,14 @@ COMMENT-xsl=		"XSL functions for php5"
 CONFIGURE_ARGS+=	--with-xsl=shared --enable-dom
 LIB_DEPENDS-xsl=	xslt.>=3,exslt::textproc/libxslt
 WANTLIB-xsl=		${WANTLIB} iconv xml2 z
-FULLPKGNAME-xsl=	php5-xsl-${V}p0
 .endif
 
 .for i in ${MULTI_PACKAGES}
-FULLPKGNAME${i} ?=	php5${i}-${V}p0
+FULLPKGNAME${i} ?=	php5${i}-${V}p1
 RUN_DEPENDS${i}=	:php5-core-${V}:www/php5/core
+MODULE_NAME${i}=	${i:S/-//g}
 .endfor
 
-MODULE_NAME=		${SUBPACKAGE:S/-//g}
 MESSAGE=		${PKGDIR}/MESSAGE
 SUBST_VARS=		MODULE_NAME PHP_CONFIG_FILE LOCALBASE V
 
