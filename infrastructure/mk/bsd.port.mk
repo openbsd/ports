@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.875 2006/12/18 12:52:34 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.876 2006/12/31 13:12:35 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -718,11 +718,6 @@ _PKG_ADD_AUTO ?=
 _PKG_ADD_AUTO += -a
 .endif
 
-.for _v in ${SUBST_VARS}
-_SED_SUBST += -e 's|$${${_v}}|${${_v}}|g'
-_PKG_ARGS += -D${_v}='${${_v}}'
-_tmpvars += ${_v}='${${_v}}'
-.endfor
 _PKG_ARGS += -DFLAVORS='${FLAVOR_EXT}'
 _tmpvars += FLAVORS='${FLAVOR_EXT}'
 _SED_SUBST += -e 's,$${FLAVORS},${FLAVOR_EXT},g' -e 's,$$\\,$$,g'
@@ -732,8 +727,20 @@ _PKG_ARGS += -L${LOCALBASE}
 .endif
 
 .for _S in ${MULTI_PACKAGES}
+_SED_SUBST${_S} = ${_SED_SUBST}
 PKG_ARGS${_S} ?= ${PKG_ARGS}
 PKG_ARGS${_S} += ${_PKG_ARGS}
+.  for _v in ${SUBST_VARS}
+.    if defined(${_v}${_S})
+PKG_ARGS${_S} += -D${_v}='${${_v}${_S}}'
+_SED_SUBST${_S} += -e 's|$${${_v}}|${${_v}${_S}}|g'
+_tmpvars += ${_v}${_S}='${${_v}${_S}}'
+.    else
+_SED_SUBST${_S} += -e 's|$${${_v}}|${${_v}}|g'
+PKG_ARGS${_S} += -D${_v}='${${_v}}'
+_tmpvars += ${_v}='${${_v}}'
+.    endif
+.  endfor
 PKG_ARGS${_S} += -DFULLPKGPATH=${FULLPKGPATH${_S}}
 PKG_ARGS${_S} += -DPERMIT_PACKAGE_CDROM=${PERMIT_PACKAGE_CDROM${_S}:Q}
 PKG_ARGS${_S} += -DPERMIT_PACKAGE_FTP=${PERMIT_PACKAGE_FTP${_S}:Q}
@@ -1432,7 +1439,7 @@ ${WRKPKG}/COMMENT${_S}:
 	@echo ${_COMMENT${_S}} >$@
 
 ${WRKPKG}/DESCR${_S}: ${DESCR${_S}}
-	@${_SED_SUBST} <$? >$@.tmp && mv -f $@.tmp $@
+	@${_SED_SUBST${_S}} <$? >$@.tmp && mv -f $@.tmp $@
 	@echo "\nMaintainer: ${MAINTAINER}" >>$@
 .  if defined(HOMEPAGE)
 	@fgrep -q '$${HOMEPAGE}' $? || echo "\nWWW: ${HOMEPAGE}" >>$@
@@ -1798,7 +1805,6 @@ _do_libs_too = NO_SHARED_LIBS=Yes
 
 _extra_info =
 .for _s in ${MULTI_PACKAGES}
-_extra_info += PREFIX${_s}='${PREFIX${_s}}'
 _extra_info += PLIST${_s}='${PLIST${_s}}'
 _extra_info += DEPPATHS${_s}="`${SETENV} SUBPACKAGE=${_s} ${MAKE} run-dir-depends ${_do_libs_too}|${_sort_dependencies}`"
 .endfor
