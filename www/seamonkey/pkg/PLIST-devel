@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-devel,v 1.1.1.1 2006/12/22 23:32:29 kurt Exp $
+@comment $OpenBSD: PLIST-devel,v 1.2 2006/12/31 01:13:24 kurt Exp $
 @pkgpath www/mozilla,-devel,gtk2
 %%SHARED%%
 lib/pkgconfig/seamonkey-gtkmozembed.pc
@@ -3765,5 +3765,3 @@ seamonkey/lib/libxptinfo.a
 seamonkey/lib/libxpwidgets_s.a
 seamonkey/lib/libxremote_client_s.a
 seamonkey/xpidl
-@comment share/applications/
-@comment share/pixmaps/

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2006/12/22 23:32:28 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2006/12/31 01:13:24 kurt Exp $
 %%SHARED%%
 bin/seamonkey
 bin/seamonkey-config
@@ -488,3 +488,9 @@ seamonkey/xpcshell
 seamonkey/xpicleanup
 seamonkey/xpt_dump
 seamonkey/xpt_link
+@cwd ${LOCALBASE}/seamonkey
+@exec rm -rf /tmp/.mozilla
+@exec cd %D && env HOME=/tmp LD_LIBRARY_PATH=%D ./regxpcom
+@exec rm -rf /tmp/.mozilla
+@unexec rm -f %D/components/compreg.dat
+@unexec rm -f %D/components/xpti.dat

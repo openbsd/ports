@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/22 23:32:27 kurt Exp $
+# $OpenBSD: Makefile,v 1.2 2006/12/31 01:13:24 kurt Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -7,9 +7,9 @@ COMMENT-devel=  "devel files for Gecko"
 
 VER=		1.0.7
 DISTNAME=	seamonkey-${VER}.source
-PKGNAME=	seamonkey-${VER}
-PKGNAME-main=	seamonkey-${VER}
-PKGNAME-devel=  seamonkey-devel-${VER}
+PKGNAME=	seamonkey-${VER}p0
+PKGNAME-main=	seamonkey-${VER}p0
+PKGNAME-devel=  seamonkey-devel-${VER}p0
 
 SO_VERSION=	9.3
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -73,6 +73,7 @@ VMEM_WARNING=	Yes
 USE_X11=	Yes
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes
+SUBST_VARS=	LOCALBASE
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build/autoconf \
 				${WRKSRC}/directory/c-sdk/config/autoconf
@@ -150,8 +151,6 @@ do-install:
 	${INSTALL_PROGRAM} ${MOB}/bin/regxpcom ${MOB}/bin/seamonkey-bin ${MOB}/bin/mozilla-xremote-client ${MOB}/bin/TestGtkEmbed \
 	${MOB}/bin/mangle ${MOB}/bin/nsinstall ${MOB}/bin/shlibsign ${MOB}/bin/xpcshell ${MOB}/bin/xpicleanup ${MOB}/bin/xpidl \
 	${MOB}/bin/xpt_dump ${MOB}/bin/xpt_link ${MOZ}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
 	${INSTALL_DATA} ${WRKBUILD}/build/unix/*.pc ${PREFIX}/lib/pkgconfig
 	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' \
