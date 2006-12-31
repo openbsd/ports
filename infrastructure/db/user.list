@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.64 2006/12/29 13:37:24 jakob Exp $
+$OpenBSD: user.list,v 1.65 2006/12/31 10:34:26 ajacoutot Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -87,3 +87,4 @@ id  user		group		port options
 576 _apache2		_apache2	www/apache-httpd
 577 _openvpn		_openvpn	net/openvpn
 578 _mrtg		_mrtg		net/mrtg
+579 _hiawatha		_hiawatha	www/hiawatha
