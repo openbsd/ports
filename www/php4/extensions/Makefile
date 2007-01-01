@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2007/01/01 23:02:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.53 2007/01/01 23:10:24 naddy Exp $
 
 FULLPKGNAME-main=	php4-extensions-${V}p1
 COMMENT-main=	"informational package about PHP4 extensions"
@@ -44,7 +44,6 @@ CONFIGURE_ARGS+=	--without-curl
 .else
 MULTI_PACKAGES+=	-curl
 COMMENT-curl=		"curl URL library extensions for php4"
-FULLPKGNAME-curl=	php4-curl-${V}p0
 CONFIGURE_ARGS+=	--with-curl=shared,${LOCALBASE}
 LIB_DEPENDS-curl=	curl.>=2::net/curl
 WANTLIB-curl=		${WANTLIB} crypto ssl z
@@ -124,10 +123,10 @@ CONFIGURE_ARGS+=	--with-gd=shared ${GRAPHIC_CONFIG} \
 USE_X11=               yes
 CONFIGURE_ARGS+=       --with-xpm-dir=${X11BASE}
 WANTLIB-gd+=		X11 Xpm
-FULLPKGNAME-gd=		php4-gd-${V}p4
+FULLPKGNAME-gd=		php4-gd-${V}p5
 .else
 CONFIGURE_ARGS+=       --without-xpm-dir
-FULLPKGNAME-gd=		php4-gd-${V}p4-no_x11
+FULLPKGNAME-gd=		php4-gd-${V}p5-no_x11
 .endif
 .endif
 
@@ -307,7 +306,7 @@ WANTLIB-xslt=		${WANTLIB} iconv
 .endif
 
 .for i in ${MULTI_PACKAGES}
-FULLPKGNAME${i}?=	php4${i}-${V}p0
+FULLPKGNAME${i}?=	php4${i}-${V}p1
 RUN_DEPENDS${i}=	:php4-core-${V}:www/php4/core
 MODULE_NAME${i}=	${i:S/-//g}
 .endfor
