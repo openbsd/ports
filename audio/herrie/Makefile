@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/23 10:03:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2007/01/01 21:50:24 jasper Exp $
 
 COMMENT=		"minimalistic console-based audio player"
 
-DISTNAME=		herrie-1.1
+DISTNAME=		herrie-1.2
 CATEGORIES=		audio
 
 HOMEPAGE=		http://g-rave.nl/projects/herrie/
@@ -32,14 +32,13 @@ USE_GMAKE=		Yes
 NO_REGRESS=		Yes
 
 MAKE_FILE=		GNUmakefile
-WRKSRC=			${WRKDIST}/src
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/herrie ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/herrie.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/locale/nl/LC_MESSAGES
-	${INSTALL_DATA} ${WRKSRC}/lang/nl.mo \
+	${INSTALL_DATA} ${WRKSRC}/nl.mo \
 		${PREFIX}/share/locale/nl/LC_MESSAGES/herrie.mo
 
 .include <bsd.port.mk>
