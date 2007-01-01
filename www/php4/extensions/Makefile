@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2006/11/24 08:39:03 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2007/01/01 23:02:57 naddy Exp $
 
 FULLPKGNAME-main=	php4-extensions-${V}p1
 COMMENT-main=	"informational package about PHP4 extensions"
@@ -309,9 +309,9 @@ WANTLIB-xslt=		${WANTLIB} iconv
 .for i in ${MULTI_PACKAGES}
 FULLPKGNAME${i}?=	php4${i}-${V}p0
 RUN_DEPENDS${i}=	:php4-core-${V}:www/php4/core
+MODULE_NAME${i}=	${i:S/-//g}
 .endfor
 
-MODULE_NAME=		${SUBPACKAGE:S/-//g}
 MESSAGE=		${PKGDIR}/MESSAGE
 SUBST_VARS=		MODULE_NAME PHP_CONFIG_FILE LOCALBASE V
 
