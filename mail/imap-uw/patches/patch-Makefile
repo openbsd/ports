@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.7 2006/12/01 14:40:00 jakob Exp $
+$OpenBSD: patch-Makefile,v 1.8 2007/01/01 21:25:20 jakob Exp $
 --- Makefile.orig	Fri Sep 15 20:10:32 2006
 +++ Makefile	Wed Nov 22 11:56:03 2006
 @@ -320,8 +320,7 @@ aos art asv aux bsd cvx dpx dyn isc pyr 
@@ -11,12 +11,3 @@ $OpenBSD: patch-Makefile,v 1.7 2006/12/01 14:40:00 jakob Exp $
  
  cyg:	an
  	$(BUILD) BUILDTYPE=cyg \
-@@ -486,8 +485,6 @@ sslunix sslsco:
- 	@echo ++ SSLTYPE=$(SSLTYPE).nopwd
- 	@echo +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- 	@echo
--	@echo Do you want to continue this build anyway?  Type y or n please:
--	@$(SH) -c 'read x; case "$$x" in y) exit 0;; *) exit 1;; esac'
- 
- sslnone:
- 	@echo +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

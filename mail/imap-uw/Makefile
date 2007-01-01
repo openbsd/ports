@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2006/12/02 10:35:56 jakob Exp $
+# $OpenBSD: Makefile,v 1.51 2007/01/01 21:25:20 jakob Exp $
 
 COMMENT-server=		"University of Washington IMAP4rev1/POP2/POP3 mail servers"
 COMMENT-mailutil=	"University of Washington IMAP4rev1/POP2/POP3 mail utility"
 
-VERSION=		2006c1
-DISTNAME=		imap-2006c1
+VERSION=		2006d
+DISTNAME=		imap-2006d
 
 PKGNAME-server=		imap-uw-${VERSION}
 PKGNAME-mailutil=	mailutil-uw-${VERSION}
@@ -17,7 +17,9 @@ HOMEPAGE=	http://www.washington.edu/imap/
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/ \
-		ftp://ftp.sunet.se/pub/unix/mail/imap/
+		ftp://ftp.cac.washington.edu/imap/old/ \
+		ftp://ftp.sunet.se/pub/unix/mail/imap/ \
+		ftp://ftp.sunet.se/pub/unix/mail/imap/old/
 
 PERMIT_PACKAGE_CDROM=	no
 PERMIT_PACKAGE_FTP=	yes
