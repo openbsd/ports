@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2006/10/20 16:45:58 steven Exp $
+# $OpenBSD: Makefile,v 1.48 2007/01/01 22:54:46 kili Exp $
 
 COMMENT=	"GNU PostScript interpreter"
 
@@ -158,7 +158,7 @@ FAKE_FLAGS=${BASE_FLAGS} prefix=${WRKINST}${PREFIX} \
 
 # Avoid surprises in update-patches.
 post-extract:
-	find ${WRKDIST} -name '*.orig' -type f | xargs rm
+	find ${WRKDIST} -name '*.orig' -type f | xargs -r rm
 
 pre-configure:
 	rm -rf ${WRKDIST}/{jasper,jpeg,libpng,zlib}
