@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/30 23:38:43 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2007/01/01 10:43:23 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,6 +24,7 @@ WANTLIB=		X11 Xext Xrender atk-1.0 cairo crypto fontconfig \
 
 MODULES=		devel/gettext
 RUN_DEPENDS=		::audio/gmpc
+BUILD_DEPENDS=		${RUN_DEPENDS}
 LIB_DEPENDS=		xml2.>=9::textproc/libxml \
 			mpd.>=0::audio/libmpd \
 			curl.>=3::net/curl \
