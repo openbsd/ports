@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.56 2006/10/29 19:28:55 kili Exp $
+#	$OpenBSD: Makefile,v 1.57 2007/01/01 12:35:20 kili Exp $
 
     SUBDIR += a2ps,a4
     SUBDIR += a2ps,letter
@@ -14,6 +14,7 @@
     SUBDIR += dvi2tty
     SUBDIR += enscript
     SUBDIR += enscript,a4
+    SUBDIR += epdfview
     SUBDIR += foiltex
     SUBDIR += fontforge
     SUBDIR += freetype
