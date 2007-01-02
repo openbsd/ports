@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2006/12/23 10:29:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.116 2007/01/02 19:13:08 robert Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -60,6 +60,7 @@
      SUBDIR += radiusreport
      SUBDIR += radmind
      SUBDIR += rtty
+     SUBDIR += ruby-facter
      SUBDIR += runit
      SUBDIR += safecat
      SUBDIR += sdd
