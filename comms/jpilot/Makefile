@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2006/12/31 10:47:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2007/01/02 18:27:18 ajacoutot Exp $
 
 COMMENT=	"desktop organizer software for the palm pilot"
 
 DISTNAME=	jpilot-0.99.9
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	comms palm
 
 MASTER_SITES=	${HOMEPAGE}
@@ -22,7 +22,7 @@ WANTLIB=	c crypto m X11 Xext Xrender fontconfig freetype png.>=5 \
 		atk-1.0.>=800.0 gdk_pixbuf-2.0.>=400.14 cairo glitz z \
 		glib-2.0.>=400.8 gmodule-2.0.>=400.8 pangocairo-1.0 \
 		gobject-2.0.>=400.8 pango-1.0.>=600.0 \
-		pangoft2-1.0.>=600.0
+		pangoft2-1.0.>=600.0 pthread
 
 LIB_DEPENDS=	pisock.>=9::comms/pilot-link \
 		gtk-x11-2.0.>=400.13,gdk-x11-2.0.>=400.13,gdk_pixbuf-2.0.>=400.13::x11/gtk+2
@@ -34,7 +34,7 @@ USE_X11=		yes
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -pthread"
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-pilot-prefix=${LOCALBASE} \
 			--with-gtk-prefix=${LOCALBASE}
