@@ -1,0 +1,28 @@
+2006-12-16 NPEREZ <nperez@cpan.org>
+	
+	* Version bumpted to 0.32 (I know, I skipped one)
+	* rt.cpan.org #23668: Add a check for defined-ness for encode/decode
+	* Thanks to David Davis <xantus@xantus.org> for bug submit
+
+2006-10-26 NPEREZ <nperez@cpan.org>
+	
+	* Version bumped to 0.30
+	* rt.cpan.org #22290: attribute values are properly encoded/decoded
+	* rt.cpan.org #22291: attribute values are properly encoded/decoded
+	* rt.cpan.org #22288: behavior made consistent on reset() and reset()
+		has been moved to an internal method automagically called
+	* rt.cpan.org #22427: now we subclass POE::Filter to make
+		Filter::Stackable happy.
+	* encode/decode moved out to Utils
+	* Thanks to Eric Waters <ewaters@uarc.com> for bug submits
+
+2006-04-30 NPEREZ <nperez@cpan.org>
+	
+	* Version bumped to 0.29
+	* Clean up some more POE::Preprocessor leftovers
+
+2006-04-30 NPEREZ <nperez@cpan.org>
+
+	* Version bumped to 0.28
+	* '0' in CDATA logic error corrected
+	* Transition from MakeMaker to Module::Build

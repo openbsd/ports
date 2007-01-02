@@ -1,0 +1,13 @@
+Build.PL
+lib/POE/Filter/XML.pm
+lib/POE/Filter/XML/Handler.pm
+lib/POE/Filter/XML/Node.pm
+lib/POE/Filter/XML/NS.pm
+lib/POE/Filter/XML/Utils.pm
+LICENSE
+ChangeLog
+Makefile.PL
+MANIFEST			This list of files
+META.yml
+README
+test.pl

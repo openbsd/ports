@@ -1,0 +1,13 @@
+{
+          'build_requires' => {},
+          'conflicts' => {},
+          'requires' => {
+                          'XML::SAX::Expat::Incremental' => '0.04',
+                          'XML::SAX' => '0.14',
+                          'Scalar::Util' => '1.18',
+                          'perl' => '5.8.1',
+                          'Filter::Template' => '1.01',
+                          'POE' => '0.34_01'
+                        },
+          'recommends' => {}
+        }

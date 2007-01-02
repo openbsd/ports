@@ -1,0 +1,10 @@
+{
+          'install_path' => {
+                              'script' => '/usr/local/bin',
+                              'libdoc' => '/usr/local/man/man3p',
+                              'bin' => '/usr/local/bin',
+                              'bindoc' => '/usr/local/man/man1',
+                              'arch' => '/usr/local/libdata/perl5/site_perl/amd64-openbsd',
+                              'lib' => '/usr/local/libdata/perl5/site_perl'
+                            }
+        }

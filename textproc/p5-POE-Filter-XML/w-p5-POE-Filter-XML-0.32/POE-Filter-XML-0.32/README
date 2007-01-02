@@ -1,0 +1,85 @@
+NAME
+    POE::Filter::XML - A POE Filter for parsing XML
+
+SYSNOPSIS
+     use POE::Filter::XML;
+     my $filter = POE::Filter::XML->new();
+
+     my $wheel = POE::Wheel:ReadWrite->new(
+            Filter          => $filter,
+            InputEvent      => 'input_event',
+     );
+
+DESCRIPTION
+    POE::Filter::XML provides POE with a completely encapsulated XML parsing
+    strategy for POE::Wheels that will be dealing with XML streams.
+
+    POE::Filter::XML relies upon XML::SAX and XML::SAX::ParserFactory to
+    acquire a parser for parsing XML.
+
+    The assumed parser is XML::SAX::Expat::Incremental (Need a real push
+    parser)
+
+    Default, the Filter will spit out POE::Filter::XML::Nodes because that
+    is what the default XML::SAX compliant Handler produces from the stream
+    it is given. You are of course encouraged to override the default
+    Handler for your own purposes if you feel POE::Filter::XML::Node to be
+    inadequate.
+
+    Also, Filter requires POE::Filter::XML::Nodes for put(). If you are
+    wanting to send raw XML, it is recommened that you subclass the Filter
+    and override put()
+
+PUBLIC METHODS
+    Since POE::Filter::XML follows the POE::Filter API look to POE::Filter
+    for documentation. Deviations from Filter API will be covered here.
+
+    new()
+        new() accepts a total of three(3) arguments that are all optional:
+        (1) a string that is XML waiting to be parsed (i.e. xml received
+        from the wheel before the Filter was instantiated), (2) a coderef to
+        be executed upon a parsing error, (3) and a XML::SAX compliant
+        Handler.
+
+        If no options are specified, then a default coderef containing a
+        simple Carp::confess is generated, and a new instance of
+        POE::Filter::XML::Handler is used.
+
+    reset()
+        reset() is an internal method that gets called when either a
+        stream_start(1) POE::Filter::XML::Node gets placed into the filter
+        via put(), or when a stream_end(1) POE::Filter::XML::Node is pulled
+        out of the queue of finished Nodes via get_one(). This facilitates
+        automagical behavior when using the Filter within the XMPP protocol
+        that requires a many new stream initiations. This method really
+        should never be called outside of the Filter, but it is documented
+        here in case the Filter is used outside of the POE context.
+
+        Internally reset() gets another parser, calls reset() on the stored
+        handler and then deletes any data in the buffer.
+
+BUGS AND NOTES
+    The current XML::SAX::Expat::Incremental version introduces some ugly
+    circular references due to the way XML::SAX::Expat constructs itself (it
+    stores a references to itself inside the XML::Parser object it
+    constructs to get an OO-like interface within the callbacks passed to
+    it). Upon destroy, I clean these up with Scalar::Util::weaken and by
+    manually calling release() on the ExpatNB object created within
+    XML::SAX::Expat::Incremental. This is an ugly hack. If anyone finds some
+    subtle behavior I missed, let me know and I will drop XML::SAX support
+    all together going back to just plain-old XML::Parser.
+
+    Meta filtering was removed. No one was using it and the increased level
+    of indirection was a posible source of performance issues.
+
+    put() now requires POE::Filter::XML::Nodes. Raw XML text can no longer
+    be put() into the stream without subclassing the Filter and overriding
+    put().
+
+    reset() semantics were properly worked out to now be automagical and
+    consistent. Thanks Eric Waters (ewaters@uarc.com).
+
+AUTHOR
+    Copyright (c) 2003 - 2006 Nicholas Perez. Released and distributed under
+    the GPL.
+
