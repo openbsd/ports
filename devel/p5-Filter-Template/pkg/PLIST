@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/02 21:42:05 jasper Exp $
+${P5SITE}/Filter/
+${P5SITE}/Filter/Template/
+${P5SITE}/Filter/Template.pm
+${P5SITE}/Filter/Template/UseBytes.pm
+@man man/man3p/Filter::Template.3p
+@man man/man3p/Filter::Template::UseBytes.3p
