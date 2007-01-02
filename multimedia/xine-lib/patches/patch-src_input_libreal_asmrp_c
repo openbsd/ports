@@ -1,7 +1,15 @@
-$OpenBSD: patch-src_input_libreal_asmrp_c,v 1.1 2006/12/07 09:21:01 steven Exp $
---- src/input/libreal/asmrp.c.orig	Mon Dec  4 14:27:53 2006
-+++ src/input/libreal/asmrp.c	Mon Dec  4 14:30:49 2006
-@@ -604,7 +604,7 @@ static int asmrp_rule (asmrp_t *p) {
+$OpenBSD: patch-src_input_libreal_asmrp_c,v 1.2 2007/01/02 19:42:59 robert Exp $
+--- src/input/libreal/asmrp.c.orig	Fri Aug 27 14:34:16 2004
++++ src/input/libreal/asmrp.c	Mon Jan  1 15:27:04 2007
+@@ -37,6 +37,7 @@
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <string.h>
++#include "asmrp.h"
+ 
+ #define LOG_MODULE "asmrp"
+ #define LOG_VERBOSE
+@@ -604,7 +605,7 @@ static int asmrp_rule (asmrp_t *p) {
    return ret;
  }
  
@@ -10,7 +18,7 @@ $OpenBSD: patch-src_input_libreal_asmrp_c,v 1.1 2006/12/07 09:21:01 steven Exp $
  
    int rule_num, num_matches;
  
-@@ -613,7 +613,7 @@ static int asmrp_eval (asmrp_t *p, int *
+@@ -613,13 +614,15 @@ static int asmrp_eval (asmrp_t *p, int *
    asmrp_get_sym (p);
  
    rule_num = 0; num_matches = 0;
@@ -19,7 +27,17 @@ $OpenBSD: patch-src_input_libreal_asmrp_c,v 1.1 2006/12/07 09:21:01 steven Exp $
  
      if (asmrp_rule (p)) {
        lprintf ("rule #%d is true\n", rule_num);
-@@ -629,7 +629,7 @@ static int asmrp_eval (asmrp_t *p, int *
+ 
+-      matches[num_matches] = rule_num;
+-      num_matches++;
++      if(num_matches < MAX_RULEMATCHES - 1)
++        matches[num_matches++] = rule_num;
++      else
++        printf("Ignoring matched asm rule %d, too many matched rules.\n", rule_num);
+     }
+ 
+     rule_num++;
+@@ -629,7 +632,7 @@ static int asmrp_eval (asmrp_t *p, int *
    return num_matches;
  }
  
@@ -28,7 +46,7 @@ $OpenBSD: patch-src_input_libreal_asmrp_c,v 1.1 2006/12/07 09:21:01 steven Exp $
  
    asmrp_t *p;
    int      num_matches;
-@@ -641,7 +641,7 @@ int asmrp_match (const char *rules, int 
+@@ -641,7 +644,7 @@ int asmrp_match (const char *rules, int 
    asmrp_set_id (p, "Bandwidth", bandwidth);
    asmrp_set_id (p, "OldPNMPlayer", 0);
  

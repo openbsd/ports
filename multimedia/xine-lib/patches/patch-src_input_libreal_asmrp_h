@@ -1,11 +1,13 @@
-$OpenBSD: patch-src_input_libreal_asmrp_h,v 1.1 2006/12/07 09:21:01 steven Exp $
---- src/input/libreal/asmrp.h.orig	Mon Dec  4 14:28:04 2006
-+++ src/input/libreal/asmrp.h	Mon Dec  4 14:31:10 2006
-@@ -37,6 +37,6 @@
+$OpenBSD: patch-src_input_libreal_asmrp_h,v 1.2 2007/01/02 19:42:59 robert Exp $
+--- src/input/libreal/asmrp.h.orig	Mon Dec  8 19:02:30 2003
++++ src/input/libreal/asmrp.h	Mon Jan  1 15:27:47 2007
+@@ -37,6 +37,8 @@
  #ifndef HAVE_ASMRP_H
  #define HAVE_ASMRP_H
  
 -int asmrp_match (const char *rules, int bandwidth, int *matches) ;
++#define MAX_RULEMATCHES 16
++
 +int asmrp_match (const char *rules, int bandwidth, int *matches, int matchsize) ;
  
  #endif
