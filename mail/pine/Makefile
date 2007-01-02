@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2006/11/25 17:33:08 espie Exp $
+# $OpenBSD: Makefile,v 1.67 2007/01/02 10:23:37 ajacoutot Exp $
 
 COMMENT-main=	"program for Internet E-mail and News"
 COMMENT-pico=	"small text editor"
@@ -13,16 +13,16 @@ PICO_VERSION=	4.10
 PILOT_VERSION=	2.0
 
 DISTNAME=	pine${VERSION}
-PKGNAME-main=	pine-${VERSION}p2
-PKGNAME-pico=	pico-${PICO_VERSION}
-PKGNAME-pilot=	pilot-${PILOT_VERSION}
+PKGNAME-main=	pine-${VERSION}p3
+PKGNAME-pico=	pico-${PICO_VERSION}p0
+PKGNAME-pilot=	pilot-${PILOT_VERSION}p0
 
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		ftp://ftp.sunet.se/pub/unix/mail/pine/
 
 HOMEPAGE=	http://www.washington.edu/pine/
 
-MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
@@ -33,7 +33,7 @@ WANTLIB=		c
 NO_REGRESS=	Yes
 VMEM_WARNING=	Yes
 
-FLAVORS=	kerberos ldap
+FLAVORS=	ldap
 FLAVOR?=
 
 BASE_PKGPATH=	${PGKPATH}${FLAVOR_EXT:S/-/,/g}
@@ -42,17 +42,13 @@ SUBST_VARS=	BASE_PKGPATH
 
 MULTI_PACKAGES=	-main -pico -pilot
 
-WANTLIB-main=	${WANTLIB} crypto ssl termlib
+WANTLIB-main=	${WANTLIB} crypto ssl termlib asn1 com_err des gssapi krb5
 WANTLIB-pico=	${WANTLIB} termcap
 WANTLIB-pilot=	${WANTLIB} termcap
 
 PINE_BUILD_FLAGS=	CC="${CC}" EXTRACFLAGS="${CFLAGS}" \
-			SSLTYPE="unix" LOCALBASE="${LOCALBASE}"
-
-.if ${FLAVOR:L:Mkerberos}
-PINE_BUILD_FLAGS+=	EXTRAAUTHENTICATORS="gss"
-WANTLIB+=		asn1 com_err des gssapi krb5
-.endif
+			SSLTYPE="unix" LOCALBASE="${LOCALBASE}" \
+			EXTRAAUTHENTICATORS="gss"
 
 .if ${FLAVOR:L:Mldap}
 PINE_BUILD_FLAGS+=	LDAPLIBS="-L${LOCALBASE}/lib -lldap -llber" \
