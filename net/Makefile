@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.438 2007/01/02 15:07:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.439 2007/01/02 16:07:30 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -228,7 +228,7 @@
      SUBDIR += p5-Nmap-Scanner
      SUBDIR += p5-POE-Component-Client-DNS
      SUBDIR += p5-POE-Component-IRC
-     SUBDIR += p5-POE-Component-Jabber
+#     SUBDIR += p5-POE-Component-Jabber
      SUBDIR += p5-POE-Component-Pcap
      SUBDIR += p5-POE-Component-Server-FTP
      SUBDIR += p5-POE-Filter-IRCD
