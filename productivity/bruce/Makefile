@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/23 11:20:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/01/02 21:40:52 robert Exp $
 
 COMMENT=		"Python-based presentation tool"
 
-DISTNAME=		bruce-1.1.1
+DISTNAME=		bruce-1.2
 
 CATEGORIES=		productivity python
 
@@ -25,6 +25,10 @@ NO_REGRESS=		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bruce
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${PREFIX}/share/doc/bruce/README
+	${INSTALL_DATA} ${WRKSRC}/doc/socrates.txt \
+			${PREFIX}/share/doc/bruce/socrates.txt
+	@sed -e "s|doc/socrates.txt|${LOCALBASE}/share/doc/socrates.txt|" \
+			${WRKSRC}/README.txt > ${PREFIX}/share/doc/bruce/README 
+	@mv ${PREFIX}/bin/socrates.py ${PREFIX}/bin/socrates
 
 .include <bsd.port.mk>

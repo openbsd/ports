@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/23 11:20:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/01/02 21:40:52 robert Exp $
+bin/socrates
 lib/python${MODPY_VERSION}/site-packages/bruce/
 lib/python${MODPY_VERSION}/site-packages/bruce/__init__.py
 lib/python${MODPY_VERSION}/site-packages/bruce/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/bruce/baseinterp.py
+lib/python${MODPY_VERSION}/site-packages/bruce/baseinterp.pyc
 lib/python${MODPY_VERSION}/site-packages/bruce/codefile.py
 lib/python${MODPY_VERSION}/site-packages/bruce/codefile.pyc
 lib/python${MODPY_VERSION}/site-packages/bruce/config.py
@@ -14,13 +17,22 @@ lib/python${MODPY_VERSION}/site-packages/bruce/interp.py
 lib/python${MODPY_VERSION}/site-packages/bruce/interp.pyc
 lib/python${MODPY_VERSION}/site-packages/bruce/main.py
 lib/python${MODPY_VERSION}/site-packages/bruce/main.pyc
+lib/python${MODPY_VERSION}/site-packages/bruce/mixins.py
+lib/python${MODPY_VERSION}/site-packages/bruce/mixins.pyc
 lib/python${MODPY_VERSION}/site-packages/bruce/page.py
 lib/python${MODPY_VERSION}/site-packages/bruce/page.pyc
 lib/python${MODPY_VERSION}/site-packages/bruce/pages.py
 lib/python${MODPY_VERSION}/site-packages/bruce/pages.pyc
 lib/python${MODPY_VERSION}/site-packages/bruce/scratch_interp.py
 lib/python${MODPY_VERSION}/site-packages/bruce/scratch_interp.pyc
+lib/python${MODPY_VERSION}/site-packages/bruce/shell.py
+lib/python${MODPY_VERSION}/site-packages/bruce/shell.pyc
+lib/python${MODPY_VERSION}/site-packages/bruce/shellinterp.py
+lib/python${MODPY_VERSION}/site-packages/bruce/shellinterp.pyc
+lib/python${MODPY_VERSION}/site-packages/bruce/spawnpage.py
+lib/python${MODPY_VERSION}/site-packages/bruce/spawnpage.pyc
 lib/python${MODPY_VERSION}/site-packages/bruce/text.py
 lib/python${MODPY_VERSION}/site-packages/bruce/text.pyc
 share/doc/bruce/
 share/doc/bruce/README
+share/doc/bruce/socrates.txt
