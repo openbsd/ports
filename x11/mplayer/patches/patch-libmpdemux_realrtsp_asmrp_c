@@ -1,0 +1,24 @@
+$OpenBSD: patch-libmpdemux_realrtsp_asmrp_c,v 1.1 2007/01/02 09:01:58 robert Exp $
+--- libmpdemux/realrtsp/asmrp.c.orig	Mon Jan  1 14:46:36 2007
++++ libmpdemux/realrtsp/asmrp.c	Mon Jan  1 14:47:35 2007
+@@ -40,6 +40,7 @@
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <string.h>
++#include "asmrp.h"
+ 
+ /*
+ #define LOG
+@@ -645,8 +646,10 @@ static int asmrp_eval (asmrp_t *p, int *
+ #ifdef LOG
+       printf ("rule #%d is true\n", rule_num);
+ #endif
+-      matches[num_matches] = rule_num;
+-      num_matches++;
++      if(num_matches < MAX_RULEMATCHES - 1)
++        matches[num_matches++] = rule_num;
++      else
++        printf("Ignoring matched asm rule %d, too many matched rules.\n", rule_num);
+     }
+ 
+     rule_num++;

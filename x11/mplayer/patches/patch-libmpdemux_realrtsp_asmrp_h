@@ -1,0 +1,12 @@
+$OpenBSD: patch-libmpdemux_realrtsp_asmrp_h,v 1.1 2007/01/02 09:01:58 robert Exp $
+--- libmpdemux/realrtsp/asmrp.h.orig	Mon Jan  1 14:49:49 2007
++++ libmpdemux/realrtsp/asmrp.h	Mon Jan  1 14:50:23 2007
+@@ -40,6 +40,8 @@
+ #ifndef HAVE_ASMRP_H
+ #define HAVE_ASMRP_H
+ 
++#define MAX_RULEMATCHES 16
++
+ int asmrp_match (const char *rules, int bandwidth, int *matches) ;
+ 
+ #endif
