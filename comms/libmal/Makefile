@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/15 11:10:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2007/01/02 18:39:10 ajacoutot Exp $
 
 COMMENT=	"MAL convenience library"
 
 DISTNAME=	libmal-0.43
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS +=	mal 1.0				# .1.0
 CATEGORIES=	comms palm
 
@@ -18,13 +19,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-WANTLIB=	c
+WANTLIB=	c pthread
 
 LIB_DEPENDS=	pisock.>=9::comms/pilot-link
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 
+MAKE_FLAGS+=	CFLAGS="${CFLAGS} -pthread"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>
