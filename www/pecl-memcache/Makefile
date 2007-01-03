@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/23 21:30:31 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2007/01/03 20:08:07 sturm Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,25 +21,26 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://pecl.php.net/get/
 EXTRACT_SUFX=	.tgz
 
-AUTOCONF_VER=	2.59
-AUTOMAKE_VER=	1.4
+AUTOCONF_VERSION=	2.59
+AUTOMAKE_VERSION=	1.4
 
 BUILD_DEPENDS=	:php5-pear-*:www/php5/core,-pear \
-		:autoconf-${AUTOCONF_VER}:devel/autoconf/${AUTOCONF_VER} \
-		:automake-${AUTOMAKE_VER}.*:devel/automake/${AUTOMAKE_VER} \
-		::devel/libtool
+		${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS}
 RUN_DEPENDS=	:php5-core-*:www/php5/core
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-zlib-dir=/usr
-CONFIGURE_ENV=	AUTOMAKE_VERSION=${AUTOMAKE_VER} \
-		AUTOCONF_VERSION=${AUTOCONF_VER}
+CONFIGURE_ENV=	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION}
 
 PREFIX=		/var/www
 FAKE_FLAGS=	INSTALL_ROOT=${WRKINST}
 SUBST_VARS=	LOCALBASE
 
 NO_REGRESS=	Yes
+
+USE_LIBTOOL=	Yes
 
 pre-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/phpize
