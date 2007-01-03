@@ -1,0 +1,23 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2007/01/03 19:29:00 robert Exp $
+--- Makefile.in.orig	Tue Jun  1 18:20:57 2004
++++ Makefile.in	Wed Jan  3 20:28:44 2007
+@@ -141,19 +141,16 @@ all: all-redirect
+ .SUFFIXES:
+ .SUFFIXES: .S .c .lo .o .s
+ $(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
+-	cd $(top_srcdir) && $(AUTOMAKE) --foreign Makefile
+ 
+ Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status $(BUILT_SOURCES)
+ 	cd $(top_builddir) \
+ 	  && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
+ 
+ $(ACLOCAL_M4):  configure.in  acinclude.m4
+-	cd $(srcdir) && $(ACLOCAL)
+ 
+ config.status: $(srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
+ 	$(SHELL) ./config.status --recheck
+ $(srcdir)/configure: $(srcdir)/configure.in $(ACLOCAL_M4) $(CONFIGURE_DEPENDENCIES)
+-	cd $(srcdir) && $(AUTOCONF)
+ 
+ mostlyclean-libLTLIBRARIES:
+ 
