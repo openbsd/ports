@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2006/06/01 01:20:25 avsm Exp $
---- Makefile.in.orig	Mon Oct 17 03:25:28 2005
-+++ Makefile.in	Mon May 29 22:19:44 2006
+$OpenBSD: patch-Makefile_in,v 1.2 2007/01/03 11:38:19 robert Exp $
+--- Makefile.in.orig	Mon Oct 17 04:25:28 2005
++++ Makefile.in	Wed Jan  3 12:28:23 2007
 @@ -5,7 +5,7 @@ exec_prefix=@exec_prefix@
  bindir=@bindir@
  
@@ -10,13 +10,24 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2006/06/01 01:20:25 avsm Exp $
  LIBS=@LIBS@
  LDFLAGS=@LDFLAGS@
  
-@@ -34,9 +34,8 @@ distclean: clean
+@@ -15,7 +15,7 @@ MKLIBFLAGS=-linkall
+ 
+ INSTALL=@INSTALL@
+ 
+-all: bytecode opt docs
++all: bytecode docs
+ 
+ docs:
+ 	if [ ! -d doc ]; then mkdir doc; fi
+@@ -33,10 +33,9 @@ distclean: clean
+ 
  # install rebuilds sqlite3top to point to the findlib-managed dll and not the
  # one in . 
- install: sqlite3.cma sqlite3.cmxa sqlite3top
+-install: sqlite3.cma sqlite3.cmxa sqlite3top
 -	ocamlfind install sqlite3 META sqlite3.cmi sqlite3.mli sqlite3.cma *.cmxa *.a *.cmx *.so
 -	ocamlfind ocamlmktop -o sqlite3top -package "sqlite3" sqlite3.cma
 -	$(INSTALL) sqlite3top $(bindir)/sqlite3top
++install: sqlite3.cma sqlite3top
 +	ocamlfind install sqlite3 META sqlite3.cmi sqlite3.mli sqlite3.cma -optional *.cmxa *.a *.cmx *.so
 +	$(INSTALL) sqlite3top $(DESTDIR)$(bindir)/sqlite3top
  
