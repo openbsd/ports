@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2006/07/30 08:47:21 steven Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/01/03 05:58:32 steven Exp $
 bin/exiftool
 ${P5SITE}/File/
 ${P5SITE}/File/RandomAccess.pm
@@ -9,6 +9,7 @@ ${P5SITE}/Image/ExifTool.pm
 ${P5SITE}/Image/ExifTool.pod
 ${P5SITE}/Image/ExifTool/AFCP.pm
 ${P5SITE}/Image/ExifTool/AIFF.pm
+${P5SITE}/Image/ExifTool/APE.pm
 ${P5SITE}/Image/ExifTool/APP12.pm
 ${P5SITE}/Image/ExifTool/ASF.pm
 ${P5SITE}/Image/ExifTool/BMP.pm
@@ -16,13 +17,16 @@ ${P5SITE}/Image/ExifTool/BuildTagLookup.pm
 ${P5SITE}/Image/ExifTool/Canon.pm
 ${P5SITE}/Image/ExifTool/CanonCustom.pm
 ${P5SITE}/Image/ExifTool/CanonRaw.pm
+${P5SITE}/Image/ExifTool/CanonVRD.pm
 ${P5SITE}/Image/ExifTool/Casio.pm
 ${P5SITE}/Image/ExifTool/DICOM.pm
 ${P5SITE}/Image/ExifTool/DNG.pm
 ${P5SITE}/Image/ExifTool/Exif.pm
+${P5SITE}/Image/ExifTool/FLAC.pm
 ${P5SITE}/Image/ExifTool/Fixup.pm
 ${P5SITE}/Image/ExifTool/Flash.pm
 ${P5SITE}/Image/ExifTool/FlashPix.pm
+${P5SITE}/Image/ExifTool/FotoStation.pm
 ${P5SITE}/Image/ExifTool/FujiFilm.pm
 ${P5SITE}/Image/ExifTool/GIF.pm
 ${P5SITE}/Image/ExifTool/GPS.pm
@@ -31,14 +35,17 @@ ${P5SITE}/Image/ExifTool/HtmlDump.pm
 ${P5SITE}/Image/ExifTool/ICC_Profile.pm
 ${P5SITE}/Image/ExifTool/ID3.pm
 ${P5SITE}/Image/ExifTool/IPTC.pm
+${P5SITE}/Image/ExifTool/JPEG.pm
 ${P5SITE}/Image/ExifTool/JVC.pm
 ${P5SITE}/Image/ExifTool/Jpeg2000.pm
 ${P5SITE}/Image/ExifTool/Kodak.pm
 ${P5SITE}/Image/ExifTool/KyoceraRaw.pm
 ${P5SITE}/Image/ExifTool/Leaf.pm
 ${P5SITE}/Image/ExifTool/MIE.pm
+${P5SITE}/Image/ExifTool/MIEUnits.pod
 ${P5SITE}/Image/ExifTool/MIFF.pm
 ${P5SITE}/Image/ExifTool/MNG.pm
+${P5SITE}/Image/ExifTool/MPC.pm
 ${P5SITE}/Image/ExifTool/MPEG.pm
 ${P5SITE}/Image/ExifTool/MakerNotes.pm
 ${P5SITE}/Image/ExifTool/Minolta.pm
@@ -52,6 +59,7 @@ ${P5SITE}/Image/ExifTool/PNG.pm
 ${P5SITE}/Image/ExifTool/PPM.pm
 ${P5SITE}/Image/ExifTool/Panasonic.pm
 ${P5SITE}/Image/ExifTool/Pentax.pm
+${P5SITE}/Image/ExifTool/PhotoMechanic.pm
 ${P5SITE}/Image/ExifTool/Photoshop.pm
 ${P5SITE}/Image/ExifTool/PostScript.pm
 ${P5SITE}/Image/ExifTool/PrintIM.pm
@@ -69,6 +77,7 @@ ${P5SITE}/Image/ExifTool/Sony.pm
 ${P5SITE}/Image/ExifTool/TagLookup.pm
 ${P5SITE}/Image/ExifTool/TagNames.pod
 ${P5SITE}/Image/ExifTool/Unknown.pm
+${P5SITE}/Image/ExifTool/Vorbis.pm
 ${P5SITE}/Image/ExifTool/WriteCanonRaw.pl
 ${P5SITE}/Image/ExifTool/WriteExif.pl
 ${P5SITE}/Image/ExifTool/WriteIPTC.pl
@@ -83,6 +92,7 @@ ${P5SITE}/Image/ExifTool/XMP.pm
 @man man/man3p/Image::ExifTool.3p
 @man man/man3p/Image::ExifTool::AFCP.3p
 @man man/man3p/Image::ExifTool::AIFF.3p
+@man man/man3p/Image::ExifTool::APE.3p
 @man man/man3p/Image::ExifTool::APP12.3p
 @man man/man3p/Image::ExifTool::ASF.3p
 @man man/man3p/Image::ExifTool::BMP.3p
@@ -90,13 +100,16 @@ ${P5SITE}/Image/ExifTool/XMP.pm
 @man man/man3p/Image::ExifTool::Canon.3p
 @man man/man3p/Image::ExifTool::CanonCustom.3p
 @man man/man3p/Image::ExifTool::CanonRaw.3p
+@man man/man3p/Image::ExifTool::CanonVRD.3p
 @man man/man3p/Image::ExifTool::Casio.3p
 @man man/man3p/Image::ExifTool::DICOM.3p
 @man man/man3p/Image::ExifTool::DNG.3p
 @man man/man3p/Image::ExifTool::Exif.3p
+@man man/man3p/Image::ExifTool::FLAC.3p
 @man man/man3p/Image::ExifTool::Fixup.3p
 @man man/man3p/Image::ExifTool::Flash.3p
 @man man/man3p/Image::ExifTool::FlashPix.3p
+@man man/man3p/Image::ExifTool::FotoStation.3p
 @man man/man3p/Image::ExifTool::FujiFilm.3p
 @man man/man3p/Image::ExifTool::GIF.3p
 @man man/man3p/Image::ExifTool::GPS.3p
@@ -105,14 +118,17 @@ ${P5SITE}/Image/ExifTool/XMP.pm
 @man man/man3p/Image::ExifTool::ICC_Profile.3p
 @man man/man3p/Image::ExifTool::ID3.3p
 @man man/man3p/Image::ExifTool::IPTC.3p
+@man man/man3p/Image::ExifTool::JPEG.3p
 @man man/man3p/Image::ExifTool::JVC.3p
 @man man/man3p/Image::ExifTool::Jpeg2000.3p
 @man man/man3p/Image::ExifTool::Kodak.3p
 @man man/man3p/Image::ExifTool::KyoceraRaw.3p
 @man man/man3p/Image::ExifTool::Leaf.3p
 @man man/man3p/Image::ExifTool::MIE.3p
+@man man/man3p/Image::ExifTool::MIEUnits.3p
 @man man/man3p/Image::ExifTool::MIFF.3p
 @man man/man3p/Image::ExifTool::MNG.3p
+@man man/man3p/Image::ExifTool::MPC.3p
 @man man/man3p/Image::ExifTool::MPEG.3p
 @man man/man3p/Image::ExifTool::MakerNotes.3p
 @man man/man3p/Image::ExifTool::Minolta.3p
@@ -126,6 +142,7 @@ ${P5SITE}/Image/ExifTool/XMP.pm
 @man man/man3p/Image::ExifTool::PPM.3p
 @man man/man3p/Image::ExifTool::Panasonic.3p
 @man man/man3p/Image::ExifTool::Pentax.3p
+@man man/man3p/Image::ExifTool::PhotoMechanic.3p
 @man man/man3p/Image::ExifTool::Photoshop.3p
 @man man/man3p/Image::ExifTool::PostScript.3p
 @man man/man3p/Image::ExifTool::PrintIM.3p
@@ -142,6 +159,7 @@ ${P5SITE}/Image/ExifTool/XMP.pm
 @man man/man3p/Image::ExifTool::TagLookup.3p
 @man man/man3p/Image::ExifTool::TagNames.3p
 @man man/man3p/Image::ExifTool::Unknown.3p
+@man man/man3p/Image::ExifTool::Vorbis.3p
 @man man/man3p/Image::ExifTool::WriteCanonRaw.3p
 @man man/man3p/Image::ExifTool::WriteExif.3p
 @man man/man3p/Image::ExifTool::WriteIPTC.3p
