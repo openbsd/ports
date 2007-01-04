@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/04 15:52:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/01/04 20:56:43 steven Exp $
 
 COMMENT=	"Extensible Binary Meta Language library"
 DISTNAME=	libebml-0.7.7
@@ -21,6 +21,7 @@ USE_GMAKE=	Yes
 WRKSRC=	${WRKDIST}/make/linux
 
 FAKE_FLAGS+=	LIBebml_VERSION=${LIBebml_VERSION}
-MAKE_FLAGS+=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+MAKE_FLAGS+=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+		LIBebml_VERSION=${LIBebml_VERSION}
 
 .include <bsd.port.mk>
