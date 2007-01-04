@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.27 2006/10/15 21:45:02 sturm Exp $
+# $OpenBSD: Makefile,v 1.28 2007/01/04 23:05:07 kili Exp $
 
 COMMENT=	"archive files using LZW compression (.lzh files)"
 
-DISTNAME=	lha-1.14i-ac20050924
-PKGNAME=	lha-1.14i.ac20050924
+DISTNAME=	lha-1.14i-ac20050924p1
+PKGNAME=	lha-1.14i.ac20050924.1
 CATEGORIES=	archivers
 
-HOMEPAGE=       http://www.sourceforge.jp/projects/lha/
+HOMEPAGE=       http://lha.sourceforge.jp/
 
 MAINTAINER=	Yozo Toda <yozo@v007.vaio.ne.jp>
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	"requires advance notification"
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=lha/16650/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=lha/22231/}
 
 CONFIGURE_STYLE=gnu
 
