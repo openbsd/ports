@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2007/01/04 09:12:33 robert Exp $
+# $OpenBSD: Makefile,v 1.44 2007/01/04 13:50:34 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -60,7 +60,7 @@ LANGS=			bg br-pt de es fi fr hu it ja ko \
 
 .for l in ${LANGS}
 MULTI_PACKAGES+=	-i18n-$l
-PKGNAME-i18n-$l=	openoffice-i18n-$l-${VERSION}
+PKGNAME-i18n-$l=	openoffice-i18n-$l-${VERSION}p0
 COMMENT-i18n-$l=	$l language pack for OpenOffice.Org
 RUN_DEPENDS-i18n-$l=	::editors/openoffice
 WANTLIB-i18n-$l=
