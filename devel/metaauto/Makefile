@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/12/01 16:30:42 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2007/01/04 19:10:43 steven Exp $
 
 COMMENT=	"wrapper for gnu auto*"
 
@@ -22,6 +22,8 @@ AUTOCONF_SCRIPTS=autoconf autoupdate autoheader autoreconf autom4te
 AUTOMAKE_SCRIPTS=automake aclocal
 
 WRKDIST=${WRKDIR}
+
+NO_REGRESS=Yes
 
 do-build:
 .for i in ${AUTOCONF_SCRIPTS}
