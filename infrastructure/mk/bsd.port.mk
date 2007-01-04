@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.876 2006/12/31 13:12:35 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.877 2007/01/04 11:34:14 bernd Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1457,7 +1457,7 @@ ${_UPDATE_COOKIE${_S}}:
 	case $$a in \
 		'') ${ECHO_MSG} "Not installed, no update";; \
 		*) ${ECHO_MSG} "Upgrading from $$a"; \
-		   ${SUDO} ${SETENV} PKG_PATH=${_PKG_REPO} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKG_ADD_AUTO} -r ${_PKG_ADD_FORCE} ${PKGFILE${S_}};; \
+		   ${SUDO} ${SETENV} PKG_PATH=${_PKG_REPO} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKG_ADD_AUTO} -r ${_PKG_ADD_FORCE} ${PKGFILE${_S}};; \
 	esac
 	@${_MAKE_COOKIE} $@
 .endfor
