@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2006/12/27 16:21:59 jolan Exp $
+# $OpenBSD: Makefile,v 1.30 2007/01/04 20:19:54 steven Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
 SHARED_ONLY=	Yes
 
 COMMENT=	"small, simple, and powerful web browser for mobile devices"
 DISTNAME=	minimo-20061120
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 SO_VERSION=	4.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -37,7 +37,7 @@ WANTLIB=	X11 Xext Xft Xrender Xt \
 		c fontconfig freetype m pthread z \
 		atk-1.0.>=1011.0 glib-2.0.>=600.0 gmodule-2.0.>=600.0 \
 		gobject-2.0.>=600.0 pango-1.0.>=800.0 pangocairo-1.0 \
-		pangoft2-1.0 cairo
+		pangoft2-1.0 cairo glitz
 WANTLIB+=	stdc++
 
 NO_REGRESS=	Yes

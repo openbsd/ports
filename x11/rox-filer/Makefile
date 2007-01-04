@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2006/12/16 12:22:36 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2007/01/04 20:19:55 steven Exp $
 
 COMMENT=		"GTK+-2 file manager with desktop features"
 
 DISTNAME=		rox-filer-2.5
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://rox.sourceforge.net/
@@ -12,8 +13,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 c fontconfig freetype z \
-			glib-2.0 gmodule-2.0 gobject-2.0 m \
+WANTLIB=		ICE SM X11 Xext Xrender c fontconfig freetype z \
+			glib-2.0 gmodule-2.0 gobject-2.0 m glitz png \
 			atk-1.0 pango-1.0 pangocairo-1.0 \
 			pangoft2-1.0 cairo
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2007/01/02 09:01:58 robert Exp $
+# $OpenBSD: Makefile,v 1.109 2007/01/04 20:19:54 steven Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -7,7 +7,7 @@ COMMENT=		"Movie player supporting MPEG, DivX, AVI, ASF, MOV & more"
 
 DISTNAME=		MPlayer-1.0pre8
 DIST_SUBDIR=		mplayer
-PKGNAME=		${DISTNAME:L}p3
+PKGNAME=		${DISTNAME:L}p4
 CATEGORIES=		x11
 EXTRACT_SUFX=		.tar.bz2
 
@@ -130,9 +130,9 @@ CONFIGURE_ARGS+=--enable-gui \
 USE_X11=	Yes
 LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		mp3lame:lame-*:audio/lame
-WANTLIB+=	GL X11 Xext Xinerama Xv Xxf86dga Xxf86vm atk-1.0 \
+WANTLIB+=	GL X11 Xext Xrender Xinerama Xv Xxf86dga Xxf86vm atk-1.0 \
 		cairo freetype fontconfig glib-2.0 gmodule-2.0 \
-		gobject-2.0 intl pango-1.0 pangocairo-1.0 \
+		gobject-2.0 glitz intl pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0
 .endif
 

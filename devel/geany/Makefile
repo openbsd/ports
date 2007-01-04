@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/22 07:04:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2007/01/04 20:19:53 steven Exp $
 
 COMMENT=	"small and lightweight IDE"
 
 DISTNAME=	geany-0.10
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 HOMEPAGE=	http://geany.uvena.de/
 
@@ -18,8 +19,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 stdc++ c m iconv intl \
-		glib-2.0 gmodule-2.0 gobject-2.0 \
+WANTLIB=	X11 Xext Xrender stdc++ c m z iconv intl \
+		glib-2.0 gmodule-2.0 gobject-2.0 glitz png \
 		fontconfig freetype atk-1.0 cairo \
 		pango-1.0 pangoft2-1.0 pangocairo-1.0
 

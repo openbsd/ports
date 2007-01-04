@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2006/12/16 12:22:34 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2007/01/04 20:19:54 steven Exp $
 
 COMMENT=		"gtk-based frontend to cdrtools"
 DISTNAME=		xcdroast-0.98alpha15
-PKGNAME=		${DISTNAME:L:S/alpha/a/}p4
+PKGNAME=		${DISTNAME:L:S/alpha/a/}p5
 CATEGORIES=		misc x11
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xcdroast/}
 
@@ -15,9 +15,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	X11 atk-1.0 c fontconfig \
+WANTLIB=	X11 Xext Xrender atk-1.0 c fontconfig z \
 		freetype glib-2.0 gmodule-2.0 gobject-2.0 m \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 cairo
+		pango-1.0 pangocairo-1.0 pangoft2-1.0 cairo glitz png
 
 USE_X11=	Yes
 

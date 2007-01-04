@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2006/08/03 23:55:11 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/01/04 20:19:54 steven Exp $
 
 COMMENT=	"XMMS plugin for Gkrellm2"
 
 DISTNAME=	gkrellmms-2.1.21
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	audio sysutils/gkrellm
 
 HOMEPAGE=	http://gkrellm.luon.net/gkrellmms.phtml
@@ -16,6 +16,6 @@ WRKDIST=	${WRKDIR}/gkrellmms
 ALL_TARGET=	gkrellmms.so
 PLUGIN=		${WRKSRC}/gkrellmms.so
 
-EXTRA_WANTLIB=	Xext Xi gdk gmodule gtk glib
+EXTRA_WANTLIB=	Xi gdk gmodule gtk glib
 
 .include <bsd.port.mk>

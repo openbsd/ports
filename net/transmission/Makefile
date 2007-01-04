@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/12/23 17:04:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2007/01/04 20:19:54 steven Exp $
 
 COMMENT-main=	"lightweight BitTorrent client"
 COMMENT-gui=	"lightweight BitTorrent client with graphical interface"
@@ -6,7 +6,7 @@ COMMENT-gui=	"lightweight BitTorrent client with graphical interface"
 VER=		0.6.1
 DISTNAME=	Transmission-${VER}
 PKGNAME-main=	transmission-${VER}
-PKGNAME-gui=	transmission-gui-${VER}
+PKGNAME-gui=	transmission-gui-${VER}p0
 CATEGORIES=	net
 HOMEPAGE=	http://transmission.m0k.org/
 
@@ -36,10 +36,10 @@ CONFIGURE_ARGS+=--disable-gtk
 .else
 MULTI_PACKAGES+=-gui
 MODULES=	devel/gettext
-WANTLIB-gui=	${WANTLIB} X11 fontconfig freetype \
+WANTLIB-gui=	${WANTLIB} X11 Xext Xrender fontconfig freetype z \
 		atk-1.0.>=1011.0 glib-2.0.>=1000.0 gmodule-2.0.>=1000.0 \
 		gobject-2.0.>=1000.0 pango-1.0.>=1200.0 pangoft2-1.0.>=1200.0 \
-		pangocairo-1.0.>=1200.0 cairo
+		pangocairo-1.0.>=1200.0 cairo glitz png
 LIB_DEPENDS=	gdk_pixbuf-2.0.>=802.0,gdk-x11-2.0.>=802.0,gtk-x11-2.0.>=802.0::x11/gtk+2
 LIB_DEPENDS-main=
 RUN_DEPENDS-main=

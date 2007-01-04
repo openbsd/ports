@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2006/12/16 12:22:35 espie Exp $
+# $OpenBSD: Makefile,v 1.113 2007/01/04 20:19:54 steven Exp $
 
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64 amd64 powerpc
 
@@ -7,9 +7,9 @@ COMMENT-devel=	"devel files for Gecko"
 
 VER=		1.7.13
 DISTNAME=	mozilla
-PKGNAME=	mozilla-${VER}p4
-PKGNAME-main=	mozilla-${VER}p4
-PKGNAME-devel=	mozilla-devel-${VER}p4
+PKGNAME=	mozilla-${VER}p5
+PKGNAME-main=	mozilla-${VER}p5
+PKGNAME-devel=	mozilla-devel-${VER}p5
 DISTFILES=	mozilla-${VER}-source.tar.bz2
 SO_VERSION=	8.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -52,14 +52,14 @@ BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
 		:zip->=2.3:archivers/zip
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr
-WANTLIB=	X11 Xt atk-1.0 c cairo fontconfig freetype \
-		glib-2.0 gmodule-2.0 gobject-2.0 m \
+WANTLIB=	X11 Xext Xrender Xt atk-1.0 c cairo fontconfig freetype \
+		glib-2.0 gmodule-2.0 gobject-2.0 glitz png m z \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0
 
 RUN_DEPENDS-devel=	:${PKGNAME-main}:www/mozilla,-main
 RUN_DEPENDS-main=	:esound-0.2.*:audio/esound
 WANTLIB-main=		${WANTLIB} \
-			Xext Xft Xp Xrender jpeg png pthread stdc++ z
+			Xft Xp jpeg pthread stdc++
 
 USE_X11=	Yes
 USE_GMAKE=	Yes

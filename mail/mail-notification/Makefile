@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2006/12/16 12:22:34 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2007/01/04 20:19:54 steven Exp $
 
 COMMENT=		"mail notification for freedesktop.org-compliant system trays"
 DISTNAME=		mail-notification-1.0
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		mail	
 
 HOMEPAGE=		http://www.nongnu.org/mailnotify/
@@ -37,7 +37,7 @@ CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFDIR=		${SYSCONFDIR}/gnome
 SUBST_VARS=		CONFDIR
 
-WANTLIB=		pthread ICE c z xml2 X11 cairo \
+WANTLIB=		pthread ICE c z xml2 X11 Xext Xrender cairo glitz png \
 			SM popt fontconfig crypto freetype ssl m art_lgpl_2 \
 			atk-1.0 bonobo-2 bonobo-activation bonoboui-2 \
 			gconf-2 gdk-x11-2.0 ORBit-2 gailutil gnomeui-2 \

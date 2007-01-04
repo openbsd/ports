@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2006/12/16 12:22:34 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/01/04 20:19:54 steven Exp $
 
 COMMENT=	"multithreaded gtk2 file transfer client"
 
 DISTNAME=	gftp-2.0.18
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	net
 
 HOMEPAGE=	http://gftp.seul.org/
@@ -41,8 +41,8 @@ CONFIGURE_ARGS+=--disable-gtkport --disable-gtk20
 .else
 USE_X11=	Yes
 LIB_DEPENDS=	gtk-x11-2.0.>=600.10,gdk_pixbuf-2.0.>=600.0,gdk-x11-2.0.>=600.0::x11/gtk+2
-WANTLIB+=	freetype pthread X11 fontconfig \
-		gthread-2.0 glib-2.0 gmodule-2.0 \
+WANTLIB+=	freetype pthread X11 Xext Xrender fontconfig z \
+		gthread-2.0 glib-2.0 gmodule-2.0 glitz png \
 		gobject-2.0 atk-1.0 pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 cairo
 .endif

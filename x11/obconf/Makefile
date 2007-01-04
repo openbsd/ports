@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/16 12:22:36 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/01/04 20:19:54 steven Exp $
 
 COMMENT=	"configuration utility for openbox"
 
 DISTNAME=	obconf-1.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 MASTER_SITES=	http://tr.openmonkey.com/files/obconf/
 
@@ -10,7 +11,7 @@ HOMEPAGE=	http://tr.openmonkey.com/pages/obconf/
 
 WANTLIB=	glib-2.0 ICE SM X11 Xext Xft Xrender \
 		atk-1.0 c fontconfig iconv intl xml2 \
-		gmodule-2.0 gobject-2.0 m pango-1.0 \
+		gmodule-2.0 gobject-2.0 m pango-1.0 glitz png \
 		pangocairo-1.0 pangoft2-1.0 freetype \
 		cairo z
 

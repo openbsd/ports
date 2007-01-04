@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/12/16 12:22:36 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2007/01/04 20:19:54 steven Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		"simple, clean theme engine for GTK+2"
 
 VERSION=		2.0.2
 DISTNAME=		gtk-thinice-engine-${VERSION}
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		x11
 
 HOMEPAGE=		http://thinice.sourceforge.net/
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	X11 atk-1.0 fontconfig m \
-		freetype glib-2.0 gmodule-2.0 gobject-2.0 \
+WANTLIB=	X11 Xext Xrender atk-1.0 fontconfig m z \
+		freetype glib-2.0 gmodule-2.0 gobject-2.0 glitz png \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 cairo
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=thinice/}

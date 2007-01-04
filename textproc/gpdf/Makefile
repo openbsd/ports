@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2006/12/16 12:22:35 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2007/01/04 20:19:54 steven Exp $
 
 COMMENT=		"PDF viewer for GNOME"
 
 DISTNAME=		gpdf-2.8.1
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
 CATEGORIES=		textproc x11/gnome
 
 HOMEPAGE=		http://www.inf.tu-dresden.de/~mk793652/gpdf/
@@ -17,9 +17,9 @@ WANTLIB=gmodule-2.0 gtk-x11-2.0 gobject-2.0 cairo \
 	art_lgpl_2 fontconfig gconf-2 gnomecanvas-2 pthread ICE \
 	glib-2.0 pango-1.0 pangocairo-1.0 c popt SM \
 	pangoft2-1.0 gnomevfs-2 ORBit-2 z gnome-2 glade-2.0 \
-	gthread-2.0 xml2 gnomeprint-2-2 X11 atk-1.0 stdc++ \
+	gthread-2.0 xml2 gnomeprint-2-2 X11 Xext Xrender atk-1.0 stdc++ \
 	freetype gdk-x11-2.0 bonobo-activation bonobo-2 m bonoboui-2 \
-	gdk_pixbuf-2.0
+	gdk_pixbuf-2.0 glitz png
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gpdf/2.8/}
 EXTRACT_SUFX=		.tar.bz2

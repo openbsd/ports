@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2006/12/16 12:22:32 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2007/01/04 20:19:53 steven Exp $
 
 COMMENT=	"GTK+2 program to synchronize an Apple iPod"
 DISTNAME=	gtkpod-0.99.8
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	audio x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtkpod/}
 
@@ -18,18 +18,17 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=	Yes
 
-LIB_DEPENDS=	atk-1.0.>=800.0::devel/atk \
-		id3tag.>=2::audio/libid3tag \
+LIB_DEPENDS=	id3tag.>=2::audio/libid3tag \
 		gpod.>=400.0::audio/libgpod \
 		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		glade-2.0.>=0.4::devel/libglade2 \
-		glib-2.0,gmodule-2.0,gobject-2.0,gthread-2.0::devel/glib2 \
-		pango-1.0,pangoft2-1.0,pangocairo-1.0::devel/pango \
 		mp4v2::audio/faad
 
-WANTLIB=	X11 c cairo fontconfig freetype m pthread z xml2
+WANTLIB=	X11 Xext Xrender c cairo fontconfig freetype m pthread z \
+		xml2 glitz png glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
+		pango-1.0 pangoft2-1.0 pangocairo-1.0 atk-1.0
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 CONFIGURE_STYLE=gnu
 # trampolines needed for display_playlists.c

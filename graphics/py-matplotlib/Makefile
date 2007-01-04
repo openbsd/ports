@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2006/12/16 12:22:34 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2007/01/04 20:19:54 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"Python charting and plotting API"
 
 DISTNAME=	matplotlib-0.83.2
-PKGNAME=	py-${DISTNAME}p4
+PKGNAME=	py-${DISTNAME}p5
 CATEGORIES=	graphics devel
 
 HOMEPAGE=	http://matplotlib.sourceforge.net/
@@ -20,8 +20,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 fontconfig freetype m z stdc++ \
-			atk-1.0 gdk-x11-2.0 cairo \
+WANTLIB=		X11 Xext Xrender fontconfig freetype m z stdc++ \
+			atk-1.0 gdk-x11-2.0 cairo glitz \
 			gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 \
 			gobject-2.0 gtk-x11-2.0 \
 			pango-1.0 pangocairo-1.0 pangoft2-1.0

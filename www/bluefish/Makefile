@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.46 2006/12/16 12:22:35 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2007/01/04 20:19:54 steven Exp $
 
 COMMENT=	"HTML editor for experienced web designers"
 
 VERSION=	1.0
 DISTNAME=	bluefish-${VERSION}
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 CATEGORIES=	www 
 HOMEPAGE=	http://bluefish.openoffice.nl/
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		X11 atk-1.0 c m \
+WANTLIB=		X11 Xext Xrender glitz png atk-1.0 c m \
 			fontconfig freetype glib-2.0 gmodule-2.0 \
 			gobject-2.0 pango-1.0 \
 			pangocairo-1.0 cairo \

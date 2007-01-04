@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.19 2006/12/16 12:22:35 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2007/01/04 20:19:54 steven Exp $
 
 DISTNAME=	aewm-1.3.0
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	x11
 
 # X11/9wm
@@ -9,7 +9,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xaw Xext Xt c \
+WANTLIB=		X11 Xaw Xext Xt Xrender c z glitz png \
 			atk-1.0 fontconfig freetype m glib-2.0 \
 			gmodule-2.0 gobject-2.0 pango-1.0 \
 			pangocairo-1.0 pangoft2-1.0 cairo
