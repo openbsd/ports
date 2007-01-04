@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2006/12/16 12:22:33 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2007/01/04 09:12:33 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -9,8 +9,8 @@ COMMENT-java=	"optional integration of OpenOffice java features"
 VERSION=	2.1.0
 DISTNAME=	OOo_${VERSION}
 WRKDIST=	${WRKDIR}/OOE680_m6
-PKGNAME=	openoffice-${VERSION}p1
-PKGNAME-main=	openoffice-${VERSION}p1
+PKGNAME=	openoffice-${VERSION}p2
+PKGNAME-main=	openoffice-${VERSION}p2
 PKGNAME-kde=	openoffice-kde-${VERSION}
 PKGNAME-java=	openoffice-java-${VERSION}
 CATEGORIES=	editors productivity
@@ -86,8 +86,7 @@ LIB_DEPENDS-main=gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.
 		curl.>=2::net/curl \
 		neon.>=24::net/neon \
 		sndfile.>=1::audio/libsndfile \
-		wpd.>=8::textproc/libwpd \
-		sablot.>=101::textproc/sablotron
+		wpd.>=8::textproc/libwpd
 WANTLIB-main=	ICE SM X11 Xext Xrender atk-1.0 c cairo expat fontconfig \
 		freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		gthread-2.0 iconv intl ossaudio jpeg m pango-1.0 \
@@ -148,7 +147,6 @@ CONFIGURE_ARGS=	--disable-gnome-vfs \
 		--with-system-sndfile \
 		--with-system-boost \
 		--with-system-libwpd \
-		--with-system-sablot \
 		--with-epm=internal \
 		--with-alloc=system \
 		--with-java \
