@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2006/11/28 19:15:47 espie Exp $
+# $OpenBSD: Makefile,v 1.70 2007/01/04 18:34:46 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT-main=		"C++ X11 GUI toolkit"
@@ -8,12 +8,12 @@ COMMENT-postgresql=	"PostgresSQL plugin for qt3"
 COMMENT-mysql=		"MySQL plugin for qt3"
 
 PKGNAME=		qt3-${VERSION}
-PKGNAME-mysql=		qt3-mysql-${VERSION}p2
-PKGNAME-postgresql=	qt3-postgresql-${VERSION}p2
-PKGNAME-examples=	qt3-examples-${VERSION}p0
-FULLPKGNAME-main=	qt3-mt-${VERSION}p9${PKGDEBUG}
+PKGNAME-mysql=		qt3-mysql-${VERSION}
+PKGNAME-postgresql=	qt3-postgresql-${VERSION}
+PKGNAME-examples=	qt3-examples-${VERSION}
+FULLPKGNAME-main=	qt3-mt-${VERSION}${PKGDEBUG}
 FULLPKGNAME-html=	qt3-html-${VERSION}
-SHARED_LIBS=		qt-mt	30.2 \
+SHARED_LIBS=		qt-mt	30.3 \
 			qui	2.0 \
 			qui-mt	2.0
 
@@ -23,14 +23,14 @@ SHARED_LIBS=		qt-mt	30.2 \
 QT_PLUGINS=		plugins-${LIBqt-mt_VERSION:R}
 
 
-VERSION=	3.5
+VERSION=	3.7
 DISTNAME=	qt-x11-free-3.${VERSION}
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
 MASTER_SITES0=	http://freedesktop.org/~daisuke/
 
-PATCHFILES=	qt-x11-immodule-unified-qt3.3.5-20051018.diff.bz2:0
+PATCHFILES=	qt-x11-immodule-unified-qt3.3.7-20061229.diff.bz2:0
 PATCH_DIST_STRIP=	-p1
 
 pre-configure:

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_kernel_qwidget_x11_cpp,v 1.6 2006/03/04 10:07:10 espie Exp $
---- src/kernel/qwidget_x11.cpp.orig	Mon Feb 27 13:00:21 2006
-+++ src/kernel/qwidget_x11.cpp	Mon Feb 27 13:02:18 2006
-@@ -2698,11 +2698,10 @@ QInputContext *QWidget::getInputContext(
+$OpenBSD: patch-src_kernel_qwidget_x11_cpp,v 1.7 2007/01/04 18:34:46 espie Exp $
+--- src/kernel/qwidget_x11.cpp.orig	Tue Jan  2 15:36:10 2007
++++ src/kernel/qwidget_x11.cpp	Tue Jan  2 15:36:11 2007
+@@ -2699,11 +2699,10 @@ QInputContext *QWidget::getInputContext(
  {
      QInputContext *qic = 0;
  
@@ -14,15 +14,3 @@ $OpenBSD: patch-src_kernel_qwidget_x11_cpp,v 1.6 2006/03/04 10:07:10 espie Exp $
  	// icHolderWidget is always topLevelWidget
  	QTLWExtra *topdata = icHolderWidget()->topData();
  	qic = (QInputContext *)topdata->xic;
-@@ -2753,10 +2752,8 @@ void QWidget::changeInputContext( const 
- */
- void QWidget::createInputContext()
- {
--#if !defined(QT_NO_IM_EXTENSIONS)
--    if( !isInputMethodEnabled() )
-+    if( !isInputMethodEnabled()  || QApplication::closingDown() )
- 	return;
--#endif
- 
-     QWidget *icWidget = icHolderWidget();
- #ifndef QT_NO_IM

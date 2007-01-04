@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/20 20:41:01 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/01/04 18:34:46 espie Exp $
 @conflict qt3-*
 @conflict qt3-base-*
 @pkgpath x11/qt3,mt
@@ -1377,6 +1377,9 @@ lib/qt3/mkspecs/linux-ecc-64/
 lib/qt3/mkspecs/linux-ecc-64/qmake.conf
 lib/qt3/mkspecs/linux-ecc-64/qplatformdefs.h
 lib/qt3/mkspecs/linux-g++/
+lib/qt3/mkspecs/linux-g++-32/
+lib/qt3/mkspecs/linux-g++-32/qmake.conf
+lib/qt3/mkspecs/linux-g++-32/qplatformdefs.h
 lib/qt3/mkspecs/linux-g++-64/
 lib/qt3/mkspecs/linux-g++-64/qmake.conf
 lib/qt3/mkspecs/linux-g++-64/qplatformdefs.h
@@ -1402,6 +1405,7 @@ lib/qt3/mkspecs/macx-g++/Info.plist.app
 lib/qt3/mkspecs/macx-g++/qmake.conf
 lib/qt3/mkspecs/macx-g++/qplatformdefs.h
 lib/qt3/mkspecs/macx-mwerks/
+lib/qt3/mkspecs/macx-mwerks/README
 lib/qt3/mkspecs/macx-mwerks/mwerkstmpl.xml
 lib/qt3/mkspecs/macx-mwerks/qmake.conf
 lib/qt3/mkspecs/macx-mwerks/qplatformdefs.h
@@ -1490,11 +1494,10 @@ lib/qt3/${QT_PLUGINS}/designer/
 lib/qt3/${QT_PLUGINS}/inputmethods/
 lib/qt3/${QT_PLUGINS}/sqldrivers/
 lib/qt3/${QT_PLUGINS}/styles/
-share/doc/qt3/
 share/doc/qt3/FAQ
 share/doc/qt3/LICENSE.GPL
 share/doc/qt3/README
 share/doc/qt3/README-QT.TXT
 share/doc/qt3/README.immodule
-share/doc/qt3/changes-3.3.5
+share/doc/qt3/changes-3.3.7
 share/doc/qt3/changes.immodule

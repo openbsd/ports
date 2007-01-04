@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_kernel_qdragobject_cpp,v 1.1 2004/07/22 23:03:09 brad Exp $
---- src/kernel/qdragobject.cpp.orig	2004-04-19 03:36:04.000000000 -0600
-+++ src/kernel/qdragobject.cpp	2004-06-24 00:02:04.000000000 -0600
-@@ -890,6 +890,16 @@ bool QTextDrag::decode( const QMimeSourc
+$OpenBSD: patch-src_kernel_qdragobject_cpp,v 1.2 2007/01/04 18:34:46 espie Exp $
+--- src/kernel/qdragobject.cpp.orig	Thu Oct 19 16:25:12 2006
++++ src/kernel/qdragobject.cpp	Tue Jan  2 15:36:11 2007
+@@ -893,6 +893,16 @@ bool QTextDrag::decode( const QMimeSourc
  {
      if(!e)
  	return FALSE;

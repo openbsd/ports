@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_tools_qfile_cpp,v 1.1 2006/10/18 18:05:31 espie Exp $
---- src/tools/qfile.cpp.orig	Wed Oct 18 13:21:33 2006
-+++ src/tools/qfile.cpp	Wed Oct 18 13:35:35 2006
+$OpenBSD: patch-src_tools_qfile_cpp,v 1.2 2007/01/04 18:34:46 espie Exp $
+--- src/tools/qfile.cpp.orig	Thu Oct 19 16:25:01 2006
++++ src/tools/qfile.cpp	Tue Jan  2 15:36:11 2007
 @@ -70,8 +70,13 @@ class QFilePrivate
  {
  public:
@@ -31,7 +31,7 @@ $OpenBSD: patch-src_tools_qfile_cpp,v 1.1 2006/10/18 18:05:31 espie Exp $
  /*!
      \fn QString QFile::name() const
  
-@@ -375,6 +380,10 @@ Q_LONG QFile::readLine( char *p, Q_ULONG
+@@ -382,6 +387,10 @@ Q_LONG QFile::readLine( char *p, Q_ULONG
      if ( isRaw() ) {				// raw file
  	nread = QIODevice::readLine( p, maxlen );
      } else {					// buffered file
@@ -42,7 +42,7 @@ $OpenBSD: patch-src_tools_qfile_cpp,v 1.1 2006/10/18 18:05:31 espie Exp $
  	p = fgets( p, maxlen, fh );
  	if ( p ) {
  	    nread = qstrlen( p );
-@@ -456,6 +465,10 @@ int QFile::getch()
+@@ -463,6 +472,10 @@ int QFile::getch()
  	char buf[1];
  	ch = readBlock( buf, 1 ) == 1 ? buf[0] : EOF;
      } else {					// buffered file
@@ -53,7 +53,7 @@ $OpenBSD: patch-src_tools_qfile_cpp,v 1.1 2006/10/18 18:05:31 espie Exp $
  	if ( (ch = getc( fh )) != EOF ) {
  	    if ( !isSequentialAccess() )
  		ioIndex++;
-@@ -492,6 +505,10 @@ int QFile::putch( int ch )
+@@ -499,6 +512,10 @@ int QFile::putch( int ch )
  	buf[0] = ch;
  	ch = writeBlock( buf, 1 ) == 1 ? ch : EOF;
      } else {					// buffered file
@@ -64,7 +64,7 @@ $OpenBSD: patch-src_tools_qfile_cpp,v 1.1 2006/10/18 18:05:31 espie Exp $
  	if ( (ch = putc( ch, fh )) != EOF ) {
  	    if ( !isSequentialAccess() )
  		ioIndex++;
-@@ -546,6 +563,10 @@ int QFile::ungetch( int ch )
+@@ -553,6 +570,10 @@ int QFile::ungetch( int ch )
  	else
  	    ch = EOF;
      } else {					// buffered file
