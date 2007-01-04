@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2006/11/25 17:14:51 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2007/01/04 19:21:45 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
 SHARED_ONLY=	Yes
@@ -31,6 +31,8 @@ PERMIT_DISTFILES_FTP=	"Adobe are control freaks"
 MULTI_PACKAGES=	-main -plugins
 
 MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/reader/unix/7x/${V}/enu/
+# some server fucks it up in passive mode
+FETCH_CMD=	/usr/bin/ftp -V -m -E
 
 RUN_DEPENDS=	::emulators/fedora/base
 
