@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2006/12/21 08:58:04 steven Exp $
+# $OpenBSD: Makefile,v 1.29 2007/01/05 10:57:06 robert Exp $
 
 COMMENT-main=	"subversion revision control system"
 COMMENT-perl=	"perl interface to subversion"
@@ -11,14 +11,14 @@ PKGNAME=	${DISTNAME}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-perl=	p5-SVN-${VERSION}
 PKGNAME-python=	py-subversion-${VERSION}
-PKGNAME-ruby=	ruby-subversion-${VERSION}
+PKGNAME-ruby=	ruby-subversion-${VERSION}p0
 
 SO_VERSION=	1.0
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
 		svn_fs_base-1 svn_fs_fs-1 svn_ra-1 svn_ra_dav-1 \
 		svn_ra_local-1 svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1
 .for _lib in ${SVN_LIBS} svn_swig_perl-1 svn_swig_py-1 svn_swig_ruby-1
-SHARED_LIBS+=	${_lib} ${SO_VERSION} 
+SHARED_LIBS+=	${_lib} ${SO_VERSION}
 .endfor
 
 CATEGORIES=	devel
@@ -40,7 +40,7 @@ FLAVOR?=
 
 PYTHON_VER=	2.4
 
-SUBST_VARS=	PYTHON_VER 
+SUBST_VARS=	PYTHON_VER
 
 MODULES=	devel/gettext
 
@@ -78,7 +78,7 @@ LIB_DEPENDS-python+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subvers
 .  endfor
 
 WANTLIB-ruby=	${WANTLIB} crypto expat m ssl neon xml2 aprutil-1
-RUB_DEPENDS-ruby=	${MODRUBY_RUN_DEPENDS}
+RUN_DEPENDS-ruby=	${MODRUBY_RUN_DEPENDS}
 LIB_DEPENDS-ruby=	${MODGETTEXT_LIB_DEPENDS}
 .  for _lib in ${SVN_LIBS}
 LIB_DEPENDS-ruby+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversion,-main
@@ -86,7 +86,7 @@ LIB_DEPENDS-ruby+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversio
 
 MODULES+=	lang/ruby
 BUILD_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
-		::devel/swig 
+		::devel/swig
 .endif
 
 USE_LIBTOOL=	Yes
@@ -115,7 +115,7 @@ pre-configure:
 	@perl -pi -e "s,!!LOCALBASE!!,${LOCALBASE}," ${WRKSRC}/configure
 	@perl -pi -e "s,!!PYTHON_VER!!,${PYTHON_VER}," ${WRKSRC}/configure
 
-pre-build: 
+pre-build:
 	@perl -pi -e "s,!!PYTHON_VER!!,${PYTHON_VER}," ${WRKBUILD}/Makefile
 
 .if !${FLAVOR:L:Mno_bindings}
@@ -123,7 +123,7 @@ REGRESS_DEPENDS+=	::devel/p5-IO-String \
 			:${PKGNAME-python}:devel/subversion,-python \
 			:${PKGNAME-ruby}:devel/subversion,-ruby
 
-post-build: 
+post-build:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${MAKE_FLAGS} swig-py
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
