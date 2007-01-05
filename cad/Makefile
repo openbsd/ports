@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2006/12/30 15:43:22 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2007/01/05 16:53:41 steven Exp $
 
      SUBDIR += chipmunk
      SUBDIR += gnucap
      SUBDIR += klogic
+     SUBDIR += pcb
      SUBDIR += qcad
      SUBDIR += spice
      SUBDIR += xcircuit
