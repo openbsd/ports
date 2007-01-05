@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/01/05 22:22:04 dlg Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/01/05 22:57:11 dlg Exp $
 @newgroup _apache2:576
 @newuser _apache2:576:576:daemon:Apache HTTP Server:/var/empty:/sbin/nologin
 include/apache2/
@@ -75,6 +75,17 @@ sbin/httpd2
 sbin/httxt2dbm
 sbin/logresolve2
 sbin/rotatelogs2
+share/apache2/
+share/apache2/build/
+share/apache2/build/config.nice
+share/apache2/build/config_vars.mk
+share/apache2/build/instdso.sh
+share/apache2/build/library.mk
+share/apache2/build/ltlib.mk
+share/apache2/build/mkdir.sh
+share/apache2/build/program.mk
+share/apache2/build/rules.mk
+share/apache2/build/special.mk
 share/doc/apache2/
 share/doc/apache2/LICENSE
 share/doc/apache2/bind.html
@@ -809,26 +820,6 @@ share/doc/apache2/vhosts/name-based.html.ja.euc-jp
 share/doc/apache2/vhosts/name-based.html.ko.euc-kr
 share/examples/apache2/
 @sample /var/apache2/
-share/examples/apache2/build/
-@sample /var/apache2/build/
-share/examples/apache2/build/config.nice
-@sample /var/apache2/build/config.nice
-share/examples/apache2/build/config_vars.mk
-@sample /var/apache2/build/config_vars.mk
-share/examples/apache2/build/instdso.sh
-@sample /var/apache2/build/instdso.sh
-share/examples/apache2/build/library.mk
-@sample /var/apache2/build/library.mk
-share/examples/apache2/build/ltlib.mk
-@sample /var/apache2/build/ltlib.mk
-share/examples/apache2/build/mkdir.sh
-@sample /var/apache2/build/mkdir.sh
-share/examples/apache2/build/program.mk
-@sample /var/apache2/build/program.mk
-share/examples/apache2/build/rules.mk
-@sample /var/apache2/build/rules.mk
-share/examples/apache2/build/special.mk
-@sample /var/apache2/build/special.mk
 share/examples/apache2/cgi-bin/
 @sample /var/apache2/cgi-bin/
 share/examples/apache2/cgi-bin/printenv
