@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/25 17:33:08 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/01/05 18:34:49 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
+@pkgpath ${BASE_PKGPATH},kerberos
 bin/pine
 bin/rpdump
 bin/rpload

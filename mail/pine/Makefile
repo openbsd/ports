@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2007/01/02 10:23:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2007/01/05 18:34:49 ajacoutot Exp $
 
 COMMENT-main=	"program for Internet E-mail and News"
 COMMENT-pico=	"small text editor"
@@ -13,7 +13,7 @@ PICO_VERSION=	4.10
 PILOT_VERSION=	2.0
 
 DISTNAME=	pine${VERSION}
-PKGNAME-main=	pine-${VERSION}p3
+PKGNAME-main=	pine-${VERSION}p4
 PKGNAME-pico=	pico-${PICO_VERSION}p0
 PKGNAME-pilot=	pilot-${PILOT_VERSION}p0
 
@@ -36,10 +36,6 @@ VMEM_WARNING=	Yes
 FLAVORS=	ldap
 FLAVOR?=
 
-BASE_PKGPATH=	${PGKPATH}${FLAVOR_EXT:S/-/,/g}
-
-SUBST_VARS=	BASE_PKGPATH
-
 MULTI_PACKAGES=	-main -pico -pilot
 
 WANTLIB-main=	${WANTLIB} crypto ssl termlib asn1 com_err des gssapi krb5
@@ -53,7 +49,7 @@ PINE_BUILD_FLAGS=	CC="${CC}" EXTRACFLAGS="${CFLAGS}" \
 .if ${FLAVOR:L:Mldap}
 PINE_BUILD_FLAGS+=	LDAPLIBS="-L${LOCALBASE}/lib -lldap -llber" \
 			LDAPCFLAGS="-DENABLE_LDAP -I${LOCALBASE}/include"
-LIB_DEPENDS-main=	lber.2,ldap.2:openldap-client-2.*:databases/openldap
+LIB_DEPENDS-main=	lber.>=2,ldap.>=2:openldap-client-2.*:databases/openldap
 .endif
 
 do-build:
