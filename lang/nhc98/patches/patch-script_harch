@@ -1,10 +1,10 @@
-$OpenBSD: patch-script_harch,v 1.1.1.1 2004/05/10 04:39:03 dons Exp $
+$OpenBSD: patch-script_harch,v 1.2 2007/01/05 09:32:50 robert Exp $
 
 Let PLIST work nicely with MACHINE_ARCH
 
---- script/harch.orig	2003-02-14 05:08:43.000000000 +1100
-+++ script/harch	2004-05-07 12:08:49.000000000 +1000
-@@ -48,11 +48,12 @@ REL=`echo $REL | tr '/ 	' '-'`
+--- script/harch.orig	Thu Feb 13 11:08:43 2003
++++ script/harch	Thu Jan  4 19:38:14 2007
+@@ -48,11 +48,14 @@ REL=`echo $REL | tr '/ 	' '-'`
  
  # Canonicalise equivalent processor families to one representative member.
  case $PROCESSOR in
@@ -16,6 +16,8 @@ Let PLIST work nicely with MACHINE_ARCH
    sun4*)	PROCESSOR=sun4;;
    sparc*)	PROCESSOR=sparc;;
 +  macppc*)	PROCESSOR=powerpc;;
++  armish*)	PROCESSOR=arm;;
++  landisk*)	PROCESSOR=sh;;
  esac
  
  # Keep OS release number only if it might be relevant.
