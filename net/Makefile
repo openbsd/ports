@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.440 2007/01/03 08:43:41 robert Exp $
+# $OpenBSD: Makefile,v 1.441 2007/01/05 20:10:31 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -296,6 +296,7 @@
      SUBDIR += ruby-pcap
      SUBDIR += samba
      SUBDIR += samba,cups
+     SUBDIR += samba,cups,ldap
      SUBDIR += samba,ldap
      SUBDIR += scapy
      SUBDIR += scli
