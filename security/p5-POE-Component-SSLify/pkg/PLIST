@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/05 14:56:15 jasper Exp $
+${P5SITE}/POE/
+${P5SITE}/POE/Component/
+${P5SITE}/POE/Component/SSLify/
+${P5SITE}/POE/Component/SSLify.pm
+${P5SITE}/POE/Component/SSLify/ClientHandle.pm
+${P5SITE}/POE/Component/SSLify/ServerHandle.pm
+@man man/man3p/POE::Component::SSLify.3p
+@man man/man3p/POE::Component::SSLify::ClientHandle.3p
+@man man/man3p/POE::Component::SSLify::ServerHandle.3p
