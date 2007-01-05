@@ -1,0 +1,12 @@
+$OpenBSD: patch-security_nss_Makefile,v 1.1.1.1 2007/01/05 14:44:48 kurt Exp $
+--- security/nss/Makefile.orig	Thu Apr 14 20:28:40 2005
++++ security/nss/Makefile	Tue Dec 26 08:06:23 2006
+@@ -78,7 +78,7 @@ include $(CORE_DEPTH)/coreconf/rules.mk
+ # (7) Execute "local" rules. (OPTIONAL).                              #
+ #######################################################################
+ 
+-nss_build_all: build_coreconf build_nspr build_dbm all
++nss_build_all: build_coreconf build_dbm all
+ 
+ build_coreconf:
+ 	cd $(CORE_DEPTH)/coreconf ;  $(MAKE)

@@ -1,0 +1,12 @@
+$OpenBSD: patch-xpcom_components_nsNativeComponentLoader_cpp,v 1.1.1.1 2007/01/05 14:44:48 kurt Exp $
+--- xpcom/components/nsNativeComponentLoader.cpp.orig	Thu Jul 14 20:42:57 2005
++++ xpcom/components/nsNativeComponentLoader.cpp	Sat Sep 10 19:45:17 2005
+@@ -668,7 +668,7 @@ nsNativeComponentLoader::AutoRegisterCom
+         ".shlb",    /* Mac ? */
+         ".dso",     /* Unix ? */
+         ".dylib",   /* Unix: Mach */
+-        ".so.1.0",  /* Unix: BSD */
++        ".so._SO_VERSION_",  /* Unix: BSD */
+         ".sl",      /* Unix: HP-UX */
+ #if defined(VMS)
+         ".exe",     /* Open VMS */

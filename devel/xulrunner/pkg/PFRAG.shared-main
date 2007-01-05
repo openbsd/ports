@@ -1,0 +1,22 @@
+@comment $OpenBSD: PFRAG.shared-main,v 1.1.1.1 2007/01/05 14:44:48 kurt Exp $
+@lib xulrunner/components/libauth.so.${LIBauth_VERSION}
+@lib xulrunner/components/libautoconfig.so.${LIBautoconfig_VERSION}
+@lib xulrunner/components/libfileview.so.${LIBfileview_VERSION}
+@lib xulrunner/components/libpipboot.so.${LIBpipboot_VERSION}
+@lib xulrunner/components/libpipnss.so.${LIBpipnss_VERSION}
+@lib xulrunner/components/libpippki.so.${LIBpippki_VERSION}
+@lib xulrunner/components/libsystem-pref.so.${LIBsystem-pref_VERSION}
+@lib xulrunner/components/libtransformiix.so.${LIBtransformiix_VERSION}
+@lib xulrunner/components/libuniversalchardet.so.${LIBuniversalchardet_VERSION}
+@lib xulrunner/components/libwebsrvcs.so.${LIBwebsrvcs_VERSION}
+@lib xulrunner/components/libxmlextras.so.${LIBxmlextras_VERSION}
+@lib xulrunner/components/libxulutil.so.${LIBxulutil_VERSION}
+@lib xulrunner/libgtkembedmoz.so.${LIBgtkembedmoz_VERSION}
+@lib xulrunner/libmozjs.so.${LIBmozjs_VERSION}
+@lib xulrunner/libnss3.so.${LIBnss3_VERSION}
+@lib xulrunner/libnssckbi.so.${LIBnssckbi_VERSION}
+@lib xulrunner/libsmime3.so.${LIBsmime3_VERSION}
+@lib xulrunner/libsoftokn3.so.${LIBsoftokn3_VERSION}
+@lib xulrunner/libssl3.so.${LIBssl3_VERSION}
+@lib xulrunner/libxpcom.so.${LIBxpcom_VERSION}
+@lib xulrunner/libxul.so.${LIBxul_VERSION}

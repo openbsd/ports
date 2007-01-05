@@ -1,0 +1,12 @@
+$OpenBSD: patch-security_manager_Makefile_in,v 1.1.1.1 2007/01/05 14:44:48 kurt Exp $
+--- security/manager/Makefile.in.orig	Sat Dec 23 00:00:52 2006
++++ security/manager/Makefile.in	Tue Dec 26 08:05:11 2006
+@@ -79,7 +79,7 @@ endif
+ # NSS makefiles are not safe for parallel execution.
+ DEFAULT_GMAKE_FLAGS = MAKE="$(MAKE) -j1" -j1
+ DEFAULT_GMAKE_FLAGS += CC="$(CC)"
+-DEFAULT_GMAKE_FLAGS += MOZILLA_INCLUDES="-I$(MOZ_BUILD_ROOT)/dist/include/nspr -I$(MOZ_BUILD_ROOT)/dist/include/dbm"
++DEFAULT_GMAKE_FLAGS += MOZILLA_INCLUDES="$(NSPR_CFLAGS) -I$(MOZ_BUILD_ROOT)/dist/include/dbm"
+ DEFAULT_GMAKE_FLAGS += SOURCE_MD_DIR=$(MOZ_BUILD_ROOT)/dist
+ DEFAULT_GMAKE_FLAGS += DIST=$(MOZ_BUILD_ROOT)/dist
+ DEFAULT_GMAKE_FLAGS += MOZILLA_CLIENT=1

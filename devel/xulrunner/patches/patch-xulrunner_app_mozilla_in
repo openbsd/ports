@@ -1,0 +1,32 @@
+$OpenBSD: patch-xulrunner_app_mozilla_in,v 1.1.1.1 2007/01/05 14:44:48 kurt Exp $
+--- xulrunner/app/mozilla.in.orig	Tue Sep 20 17:13:06 2005
++++ xulrunner/app/mozilla.in	Fri Dec 22 23:42:24 2006
+@@ -93,6 +93,7 @@ moz_pis_startstop_scripts()
+ #set -x
+ 
+ moz_libdir=%MOZAPPDIR%
++MOZ_PLUGIN_PATH=_LOCALBASE_/lib/mozilla-plugins
+ MRE_HOME=%MREDIR%
+ 
+ # Use run-mozilla.sh in the current dir if it exists
+@@ -130,6 +131,7 @@ if [ $found = 0 ]; then
+   # Check default compile-time libdir
+   if [ -x "$moz_libdir/run-mozilla.sh" ]; then
+     dist_bin="$moz_libdir"
++    run_moz="$dist_bin/run-mozilla.sh"
+   else 
+     echo "Cannot find mozilla runtime directory. Exiting."
+     exit 1
+@@ -269,7 +271,11 @@ do
+   esac
+ done
+ 
+-export MRE_HOME
++if [ `_X11BASE_/bin/fc-list | wc -l` -eq 0 ]
++then export GDK_USE_XFT=0
++fi
++
++export MOZ_PLUGIN_PATH MRE_HOME
+ 
+ ## Start addon scripts
+ moz_pis_startstop_scripts "start"
