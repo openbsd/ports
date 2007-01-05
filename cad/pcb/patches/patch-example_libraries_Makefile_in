@@ -1,0 +1,12 @@
+$OpenBSD: patch-example_libraries_Makefile_in,v 1.1.1.1 2007/01/05 16:52:21 steven Exp $
+--- example/libraries/Makefile.in.orig	Thu Jan  4 11:23:54 2007
++++ example/libraries/Makefile.in	Thu Jan  4 11:23:57 2007
+@@ -195,7 +195,7 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-examplesdir = $(pkgdatadir)/examples/libraries
++examplesdir = $(datadir)/examples/pcb/libraries
+ examples_DATA = ${EXAMPLES}
+ EXTRA_DIST = ${EXAMPLES}
+ EXAMPLES = \

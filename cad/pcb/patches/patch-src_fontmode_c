@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_fontmode_c,v 1.1.1.1 2007/01/05 16:52:21 steven Exp $
+--- src/fontmode.c.orig	Thu Jan  4 11:35:05 2007
++++ src/fontmode.c	Thu Jan  4 11:35:09 2007
+@@ -232,6 +232,8 @@ FontSave (int argc, char **argv, int Ux,
+     }
+ 
+   SetFontInfo (font);
++  
++  return 0;
+ }
+ 
+ HID_Action fontmode_action_list[] = {

@@ -1,0 +1,25 @@
+$OpenBSD: patch-doc_pcb_1,v 1.1.1.1 2007/01/05 16:52:21 steven Exp $
+--- doc/pcb.1.orig	Tue Aug 24 23:44:24 2004
++++ doc/pcb.1	Fri Jan  5 09:11:57 2007
+@@ -30,17 +30,14 @@ The
+ program is a tool for the layout of printed circuit boards.
+ The complete manual for
+ .B pcb
+-is provided in a GNU texinfo format as well as HTML and PDF.
++is provided in a GNU texinfo format as well as HTML.
+ The texinfo version of the manual is typically viewed with the
+ .B info
+ program or alternatively with 
+ .B emacs
+ or a graphical info viewer such as
+-.B tkinfo
+-.  The PDF and HTML documentation is typically installed as
+-/usr/local/share/pcb/pcb.html and /usr/local/share/pcb/pcb.pdf.
+-The prefix "/usr/local" may vary at your site.
+-
+-
++.B tkinfo.
++The HTML documentation is installed as
++!!DOCDIR!!/pcb.html.
+ 
+ 
