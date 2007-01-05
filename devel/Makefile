@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.471 2007/01/02 22:16:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.472 2007/01/05 15:04:37 kurt Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -555,5 +555,6 @@
      SUBDIR += vtcl
      SUBDIR += vte
      SUBDIR += xmake
+     SUBDIR += xulrunner
 
 .include <bsd.port.subdir.mk>
