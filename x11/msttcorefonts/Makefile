@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/11/20 12:28:48 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2007/01/05 17:54:01 steven Exp $
 
 COMMENT=		"Microsoft TrueType core fonts"
 
@@ -39,8 +39,8 @@ DISTFILES=		andale32.exe \
 
 INST_DIR=		${PREFIX}/lib/X11/fonts/mscorefonts
 
-EXTRACT_CASES=		*.exe) cabextract ${FULLDISTDIR}/$$archive \
-			--lowercase --quiet --directory=${WRKDIST} ;;
+EXTRACT_CASES=		*.exe) cabextract --lowercase --quiet \
+			--directory=${WRKDIST} ${FULLDISTDIR}/$$archive ;;
 
 do-install:
 	${INSTALL_DATA_DIR} ${INST_DIR}
