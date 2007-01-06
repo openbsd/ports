@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.16 2006/01/21 23:43:38 steven Exp $
+@comment $OpenBSD: PLIST,v 1.17 2007/01/06 16:31:36 mbalmer Exp $
 bin/bluefish
+@man man/man1/bluefish.1
 share/application-registry/
 share/application-registry/bluefish.applications
 share/applications/
+share/applications/bluefish-project.desktop
 share/applications/bluefish.desktop
 share/bluefish/
 share/bluefish/bluefish_splash.png
@@ -28,20 +30,33 @@ share/bluefish/icon_python.png
 share/bluefish/icon_r.png
 share/bluefish/icon_unknown.png
 share/bluefish/icon_xml.png
+share/locale/bg/LC_MESSAGES/bluefish.mo
+share/locale/cs/LC_MESSAGES/bluefish.mo
 share/locale/da/LC_MESSAGES/bluefish.mo
 share/locale/de/LC_MESSAGES/bluefish.mo
 share/locale/es/LC_MESSAGES/bluefish.mo
+share/locale/eu/
+share/locale/eu/LC_MESSAGES/
+share/locale/eu/LC_MESSAGES/bluefish.mo
 share/locale/fi/LC_MESSAGES/bluefish.mo
 share/locale/fr/LC_MESSAGES/bluefish.mo
+share/locale/hu/LC_MESSAGES/bluefish.mo
 share/locale/it/LC_MESSAGES/bluefish.mo
+share/locale/ja/LC_MESSAGES/bluefish.mo
 share/locale/no/LC_MESSAGES/bluefish.mo
 share/locale/pl/LC_MESSAGES/bluefish.mo
 share/locale/pt/LC_MESSAGES/bluefish.mo
 share/locale/pt_BR/LC_MESSAGES/bluefish.mo
 share/locale/ru/LC_MESSAGES/bluefish.mo
+share/locale/sk/LC_MESSAGES/bluefish.mo
 share/locale/sr/LC_MESSAGES/bluefish.mo
 share/locale/sv/LC_MESSAGES/bluefish.mo
+share/locale/ta/
+share/locale/ta/LC_MESSAGES/
+share/locale/ta/LC_MESSAGES/bluefish.mo
+share/locale/tr/LC_MESSAGES/bluefish.mo
 share/locale/zh_CN/LC_MESSAGES/bluefish.mo
+share/locale/zh_TW/LC_MESSAGES/bluefish.mo
 share/mime/
 share/mime-info/
 share/mime-info/bluefish.keys
@@ -50,4 +65,4 @@ share/mime/packages/
 share/mime/packages/bluefish.xml
 share/pixmaps/
 share/pixmaps/bluefish-icon.png
-share/pixmaps/gnome-application-bluefish-project.png
+share/pixmaps/gnome-mime-application-bluefish-project.png

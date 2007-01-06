@@ -1,18 +1,14 @@
-# $OpenBSD: Makefile,v 1.47 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile,v 1.48 2007/01/06 16:31:36 mbalmer Exp $
 
 COMMENT=	"HTML editor for experienced web designers"
 
-VERSION=	1.0
-DISTNAME=	bluefish-${VERSION}
-PKGNAME=	${DISTNAME}p6
+DISTNAME=	bluefish-1.0.7
 CATEGORIES=	www 
 HOMEPAGE=	http://bluefish.openoffice.nl/
 
-MAINTAINER=	Damien Couderc <couderc@openbsd.org>
+MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
-MASTER_SITES=	http://pkedu.fbt.eitn.wau.nl/~olivier/downloads/ \
-		http://bluefish.mrball.net/downloads/ \
-		ftp://ftp.ratisbona.com/pub/bluefish/downloads/
+MASTER_SITES=	http://www.bennewitz.com/bluefish/stable/source/
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes
