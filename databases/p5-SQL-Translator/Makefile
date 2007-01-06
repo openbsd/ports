@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/14 19:09:40 dassow Exp $
+# $OpenBSD: Makefile,v 1.4 2007/01/06 12:05:09 espie Exp $
 
 COMMENT= 	"database schema manipulation"
 
-DISTNAME=	SQL-Translator-0.07
+DISTNAME=	SQL-Translator-0.08
 CATEGORIES=	databases devel
 MODULES=	cpan
 
