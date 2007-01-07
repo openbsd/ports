@@ -1,16 +1,16 @@
-$OpenBSD: patch-Configure,v 1.9 2006/03/05 10:06:46 sturm Exp $
---- Configure.orig	Wed Feb 22 17:50:18 2006
-+++ Configure	Sun Mar  5 10:40:00 2006
-@@ -323,7 +323,7 @@ d_memcpy=''
- d_msghdr_msg_flags=''
+$OpenBSD: patch-Configure,v 1.10 2007/01/07 18:25:43 sturm Exp $
+--- Configure.orig	Fri Nov 10 00:01:15 2006
++++ Configure	Sun Jan  7 17:36:58 2007
+@@ -331,7 +331,7 @@ d_msghdr_msg_flags=''
  d_nls=''
  d_open3=''
+ d_poll=''
 -d_portable=''
 +d_portable='define'
- d_random=''
- d_rusage=''
- d_sa_interrupt=''
-@@ -1083,7 +1083,7 @@ for file in $*; do
+ d_posix_memalign=''
+ d_pread=''
+ d_preadv=''
+@@ -1126,7 +1126,7 @@ for file in $*; do
  			dir=`expr X$file : 'X\(.*\)/'`
  			file=`expr X$file : 'X.*/\(.*\)'`
  			./mkdirp $dir
@@ -19,16 +19,26 @@ $OpenBSD: patch-Configure,v 1.9 2006/03/05 10:06:46 sturm Exp $
  			;;
  		*)
  			sh <"$SRC/$file"
-@@ -5295,7 +5295,7 @@ main(void) {
-   static struct kevent changes[1], events[1];
-   static struct timespec ts;
-   static unsigned long filters[] = { EVFILT_READ, EVFILT_WRITE,
--    EVFILT_TIMER, EVFILT_SIGNAL, EVFILT_PROC, EVFILT_VNODE };
-+    EVFILT_SIGNAL, EVFILT_PROC, EVFILT_VNODE };
-   int kq = kqueue();
-   int fd = 0;
-   unsigned long flags;
-@@ -7839,15 +7839,6 @@ If you'd like to make any changes to the
+@@ -5933,8 +5933,7 @@ eval $setvar
+ echo " "
+ case "$d_sqlite" in
+ "$undef") sqlite="$undef";;
+-*) sqlite="$define";;
+-esac
++*) sqlite="$define"
+ echo "Checking how we can gather information about SQLite..." >&4
+ if pkg-config sqlite3 --cflags >/dev/null 2>&1; then
+ 	sqliteconfig="pkg-config sqlite3"
+@@ -5948,6 +5947,8 @@ else
+ 	modver=''
+ fi
+ echo "(I'll use '$sqliteconfig' to gather that information.)"
++;;
++esac
+ 
+ sqlitecflags=""
+ sqliteldflags=""
+@@ -8664,15 +8665,6 @@ If you'd like to make any changes to the
  to configure things, do it as a shell escape now (e.g. !vi config.sh).
  
  EOM
