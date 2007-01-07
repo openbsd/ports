@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST-uuid,v 1.1 2007/01/07 19:13:49 espie Exp $
+bin/uuidgen
+include/uuid/
+include/uuid/uuid.h
+include/uuid/uuidP.h
+lib/uuid/
+lib/uuid/libuuid.a
+@man man/man1/uuidgen.1
+%%SHARED%%

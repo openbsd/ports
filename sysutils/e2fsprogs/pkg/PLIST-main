@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/12/30 00:16:05 espie Exp $
-@conflict uuid-*
+@comment $OpenBSD: PLIST-main,v 1.1 2007/01/07 19:13:49 espie Exp $
 bin/chattr
 bin/lsattr
-bin/uuidgen
 include/ext2fs/
 include/ext2fs/bitops.h
 include/ext2fs/brel.h
@@ -19,18 +17,13 @@ include/ext2fs/jfs_dat.h
 include/ext2fs/jfs_user.h
 include/ext2fs/kernel-jbd.h
 include/ext2fs/kernel-list.h
-include/uuid/
-include/uuid/uuid.h
-include/uuid/uuidP.h
 @info info/libext2fs.info
 lib/libe2p.a
 lib/libext2fs.a
 lib/libext2fs_com_err.a
 lib/libss.a
-lib/libuuid.a
 @man man/man1/chattr.1
 @man man/man1/lsattr.1
-@man man/man1/uuidgen.1
 @man man/man8/badblocks.8
 @man man/man8/debugfs.8
 @man man/man8/dumpe2fs.8

@@ -1,0 +1,5 @@
+unique id library, normally part of e2fsprogs, moved into its separate
+package and its separate directory so that it does not conflict with
+another libuuid.
+
+Be sure to link with -L${PREFIX}/lib/uuid to get the right one.
