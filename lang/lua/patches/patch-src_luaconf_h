@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_luaconf_h,v 1.1 2006/07/30 04:25:41 pedro Exp $
+$OpenBSD: patch-src_luaconf_h,v 1.2 2007/01/07 17:31:53 pedro Exp $
 --- src/luaconf.h.orig	Thu Jul 27 13:40:32 2006
 +++ src/luaconf.h	Thu Jul 27 13:42:54 2006
 @@ -33,7 +33,7 @@
@@ -19,15 +19,6 @@ $OpenBSD: patch-src_luaconf_h,v 1.1 2006/07/30 04:25:41 pedro Exp $
  #define LUA_LDIR	LUA_ROOT "share/lua/5.1/"
  #define LUA_CDIR	LUA_ROOT "lib/lua/5.1/"
  #define LUA_PATH_DEFAULT  \
-@@ -171,7 +171,7 @@
- #define LUAI_DATA	/* empty */
- 
- #elif defined(__GNUC__) && ((__GNUC__*100 + __GNUC_MINOR__) >= 302) && \
--      defined(__ELF__)
-+      defined(__ELF__) && !defined(LUA_USE_BSD)
- #define LUAI_FUNC	__attribute__((visibility("hidden"))) extern
- #define LUAI_DATA	LUAI_FUNC
- 
 @@ -507,7 +507,7 @@
  */
  #define LUA_NUMBER_SCAN		"%lf"
