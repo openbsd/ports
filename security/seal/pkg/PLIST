@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/07 12:13:02 mbalmer Exp $
+bin/seal
+@man man/cat1/seal.0
+@man man/cat5/seal.conf.0
+share/examples/seal/
+share/examples/seal/attach
+@sample /etc/hotplug/attach
+share/examples/seal/seal.conf
+@sample /etc/seal.conf
