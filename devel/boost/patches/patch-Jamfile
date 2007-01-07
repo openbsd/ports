@@ -1,6 +1,15 @@
-$OpenBSD: patch-Jamfile,v 1.1.1.1 2006/11/05 19:20:43 wilfried Exp $
+$OpenBSD: patch-Jamfile,v 1.2 2007/01/07 22:20:21 deanna Exp $
 --- Jamfile.orig	Tue Nov  8 05:39:45 2005
-+++ Jamfile	Thu Oct 26 08:17:42 2006
++++ Jamfile	Fri Jan  5 14:35:53 2007
+@@ -103,7 +103,7 @@ if stage in $(ARGV)
+ 
+ # what kind of layout are we doing?
+ local layout = [ MATCH "^--layout=(.*)" : $(ARGV) ] ;
+-layout ?= versioned ;
++layout = system ;
+ layout-$(layout) = true ;
+ 
+ # possible stage only location
 @@ -204,7 +204,7 @@ if $(lib-sources)
      local gUNVERSIONED_VARIANT_TAG = [ cond $(layout-system) : TRUE ] ;
      

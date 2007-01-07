@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2006/12/28 10:46:20 deanna Exp $
+# $OpenBSD: Makefile,v 1.7 2007/01/07 22:20:20 deanna Exp $
 
 COMMENT-main=	"free peer-reviewed portable C++ source libraries (headers)"
 COMMENT-libs=	"free peer-reviewed portable C++ source libraries (libraries)"
 
 PKGNAME-main=	boost-headers-${VERSION}p2
-PKGNAME-libs=	boost-libs-${VERSION}p1
+PKGNAME-libs=	boost-libs-${VERSION}p2
 
 VERSION=	1.33.1
 DISTNAME=	boost_${VERSION:S/./_/g}
@@ -67,14 +67,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/build/jam_src/bin.*/bjam \
 		${PREFIX}/bin
 
-	find ${WRKSRC}/bin/boost/libs -name "libboost*" -type f \
-		-exec ${INSTALL_DATA} \{\} ${PREFIX}/lib \;
-
-	cd ${PREFIX}/lib && \
-		for LIBS in libboost*; do \
-			mv $$LIBS \
-			`echo $$LIBS | perl -pi -e "s,-gcc(-mt)?(-d)?-${VERSION:S/./_/g},\1\2,"`; \
-		done
+	${INSTALL_DATA} ${WRKSRC}/stage/lib/lib!(*.so) ${PREFIX}/lib
 
 	@cd ${WRKSRC} && \
 		find boost -type d -exec ${INSTALL_DATA_DIR} ${PREFIX}/include/{} \;
