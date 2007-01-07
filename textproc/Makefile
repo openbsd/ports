@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.185 2007/01/02 16:07:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.186 2007/01/07 14:59:26 steven Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -77,7 +77,7 @@
      SUBDIR += p5-Number-Format
      SUBDIR += p5-Object-MultiType
      SUBDIR += p5-PDF-Reuse
-#     SUBDIR += p5-POE-Filter-XML
+     SUBDIR += p5-POE-Filter-XML
      SUBDIR += p5-PPI
      SUBDIR += p5-PPI-HTML
      SUBDIR += p5-PatchReader
