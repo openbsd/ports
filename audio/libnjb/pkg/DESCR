@@ -1,0 +1,3 @@
+Provide a user-level API (C library) for communicating with the Creative
+Nomad JukeBox MP3 player under Linux, *BSD and Windows, as well as
+simple command-line utilities to demonstrate the API functions.
