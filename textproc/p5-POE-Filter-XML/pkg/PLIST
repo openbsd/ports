@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/02 14:50:20 jasper Exp $
-${P5SITE}/POE/
-${P5SITE}/POE/Filter/
+@comment $OpenBSD: PLIST,v 1.2 2007/01/07 14:52:55 steven Exp $
 ${P5SITE}/POE/Filter/XML/
 ${P5SITE}/POE/Filter/XML.pm
 ${P5SITE}/POE/Filter/XML/Handler.pm
