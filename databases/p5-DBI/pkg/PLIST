@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2006/09/19 08:05:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.27 2007/01/07 00:43:09 espie Exp $
 bin/dbiprof
 bin/dbiproxy
 ${P5ARCH}/
@@ -36,7 +36,8 @@ ${P5ARCH}/DBI/Roadmap.pm
 ${P5ARCH}/DBI/SQL/
 ${P5ARCH}/DBI/SQL/Nano.pm
 ${P5ARCH}/DBI/W32ODBC.pm
-${P5ARCH}/Roadmap.pod
+@comment ${P5ARCH}/Roadmap.pod
+@comment ${P5ARCH}/TASKS.pod
 ${P5ARCH}/Win32/
 ${P5ARCH}/Win32/DBIODBC.pm
 ${P5ARCH}/auto/
@@ -74,5 +75,6 @@ ${P5ARCH}/auto/DBI/dbivport.h
 @man man/man3p/DBI::PurePerl.3p
 @man man/man3p/DBI::SQL::Nano.3p
 @man man/man3p/DBI::W32ODBC.3p
-@man man/man3p/Roadmap.3p
+@comment @man man/man3p/Roadmap.3p
+@comment @man man/man3p/TASKS.3p
 @man man/man3p/Win32::DBIODBC.3p
