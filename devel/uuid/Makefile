@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2006/12/15 11:11:54 robert Exp $
+# $OpenBSD: Makefile,v 1.23 2007/01/07 19:14:09 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT-perl=	"UUID modules for Perl"
 
 VERSION=		1.5.1
 DISTNAME=		uuid-${VERSION}
-FULLPKGNAME-main=	uuid-${VERSION}
+FULLPKGNAME-main=	uuid-${VERSION}p0
 FULLPKGNAME-perl= 	p5-UUID-${VERSION}
 CATEGORIES=		devel
 SHARED_LIBS=		uuid	13.22 \
