@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/08 23:08:29 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/01/07 09:57:46 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	"object-oriented interface to Ogg Vorbis information"
 
 MODULES=	cpan
 DISTNAME=	Ogg-Vorbis-Header-0.03
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	audio
 
 MAINTAINER=	Andreas Bihlmaier <andreas.bihlmaier@gmx.de>
@@ -19,7 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	ogg
 
 LIB_DEPENDS=	vorbis.>=5,vorbisfile.>=4::audio/libvorbis
-BUILD_DEPENDS=	::devel/p5-Inline
+RUN_DEPENDS=	::devel/p5-Inline
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 pre-configure:
 	@perl -pi -e 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/Header.pm
