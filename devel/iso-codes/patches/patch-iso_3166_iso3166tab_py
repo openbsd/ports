@@ -1,0 +1,9 @@
+$OpenBSD: patch-iso_3166_iso3166tab_py,v 1.1.1.1 2007/01/08 15:20:12 robert Exp $
+--- iso_3166/iso3166tab.py.orig	Mon Jan  8 15:42:00 2007
++++ iso_3166/iso3166tab.py	Mon Jan  8 15:42:03 2007
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2.4
+ #
+ # Read iso-codes data file and output a .tab file
+ # 
