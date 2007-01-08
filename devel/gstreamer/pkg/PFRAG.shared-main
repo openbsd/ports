@@ -1,0 +1,17 @@
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2007/01/08 14:34:08 espie Exp $
+lib/gstreamer-${VERSION}/libgstbasicgthreadscheduler.so
+lib/gstreamer-${VERSION}/libgstbasicomegascheduler.so
+lib/gstreamer-${VERSION}/libgstbytestream.so
+lib/gstreamer-${VERSION}/libgstdataprotocol.so
+lib/gstreamer-${VERSION}/libgstelements.so
+lib/gstreamer-${VERSION}/libgstentrygthreadscheduler.so
+lib/gstreamer-${VERSION}/libgstentryomegascheduler.so
+lib/gstreamer-${VERSION}/libgstfairgthreadscheduler.so
+lib/gstreamer-${VERSION}/libgstgetbits.so
+lib/gstreamer-${VERSION}/libgstindexers.so
+lib/gstreamer-${VERSION}/libgstoptgthreadscheduler.so
+lib/gstreamer-${VERSION}/libgstoptomegascheduler.so
+lib/gstreamer-${VERSION}/libgstoptscheduler.so
+lib/gstreamer-${VERSION}/libgstspider.so
+@lib lib/libgstcontrol-${VERSION}.so.${LIBgstcontrol-0.8_VERSION}
+@lib lib/libgstreamer-${VERSION}.so.${LIBgstreamer-0.8_VERSION}
