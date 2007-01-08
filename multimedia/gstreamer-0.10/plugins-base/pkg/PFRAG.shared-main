@@ -1,0 +1,33 @@
+@comment $OpenBSD: PFRAG.shared-main,v 1.1.1.1 2007/01/08 17:37:27 espie Exp $
+lib/gstreamer-${VERSION}/libgstadder.so
+lib/gstreamer-${VERSION}/libgstaudioconvert.so
+lib/gstreamer-${VERSION}/libgstaudiorate.so
+lib/gstreamer-${VERSION}/libgstaudioresample.so
+lib/gstreamer-${VERSION}/libgstaudiotestsrc.so
+lib/gstreamer-${VERSION}/libgstdecodebin.so
+lib/gstreamer-${VERSION}/libgstdecodebin2.so
+lib/gstreamer-${VERSION}/libgstffmpegcolorspace.so
+lib/gstreamer-${VERSION}/libgstgdp.so
+lib/gstreamer-${VERSION}/libgstgnomevfs.so
+lib/gstreamer-${VERSION}/libgstogg.so
+lib/gstreamer-${VERSION}/libgstpango.so
+lib/gstreamer-${VERSION}/libgstplaybin.so
+lib/gstreamer-${VERSION}/libgstsubparse.so
+lib/gstreamer-${VERSION}/libgsttcp.so
+lib/gstreamer-${VERSION}/libgsttheora.so
+lib/gstreamer-${VERSION}/libgsttypefindfunctions.so
+lib/gstreamer-${VERSION}/libgstvideorate.so
+lib/gstreamer-${VERSION}/libgstvideoscale.so
+lib/gstreamer-${VERSION}/libgstvideotestsrc.so
+lib/gstreamer-${VERSION}/libgstvolume.so
+lib/gstreamer-${VERSION}/libgstvorbis.so
+lib/gstreamer-${VERSION}/libgstximagesink.so
+lib/gstreamer-${VERSION}/libgstxvimagesink.so
+@lib lib/libgstaudio-${VERSION}.so.${LIBgstaudio-0.10_VERSION}
+@lib lib/libgstcdda-${VERSION}.so.${LIBgstcdda-0.10_VERSION}
+@lib lib/libgstinterfaces-${VERSION}.so.${LIBgstinterfaces-0.10_VERSION}
+@lib lib/libgstnetbuffer-${VERSION}.so.${LIBgstnetbuffer-0.10_VERSION}
+@lib lib/libgstriff-${VERSION}.so.${LIBgstriff-0.10_VERSION}
+@lib lib/libgstrtp-${VERSION}.so.${LIBgstrtp-0.10_VERSION}
+@lib lib/libgsttag-${VERSION}.so.${LIBgsttag-0.10_VERSION}
+@lib lib/libgstvideo-${VERSION}.so.${LIBgstvideo-0.10_VERSION}

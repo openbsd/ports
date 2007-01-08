@@ -1,0 +1,21 @@
+$OpenBSD: patch-sys_oss_gstosssrc_c,v 1.1.1.1 2007/01/08 17:37:27 espie Exp $
+--- sys/oss/gstosssrc.c.orig	Mon Jan  8 17:44:13 2007
++++ sys/oss/gstosssrc.c	Mon Jan  8 17:44:23 2007
+@@ -76,7 +76,7 @@ GST_ELEMENT_DETAILS ("Audio Source (OSS)
+     "Capture from a sound card via OSS",
+     "Erik Walthinsen <omega@cse.ogi.edu>, " "Wim Taymans <wim@fluendo.com>");
+ 
+-#define DEFAULT_DEVICE          "/dev/dsp"
++#define DEFAULT_DEVICE          "/dev/audio"
+ #define DEFAULT_DEVICE_NAME     ""
+ 
+ enum
+@@ -175,7 +175,7 @@ gst_oss_src_class_init (GstOssSrcClass *
+ 
+   g_object_class_install_property (gobject_class, PROP_DEVICE,
+       g_param_spec_string ("device", "Device",
+-          "OSS device (usually /dev/dspN)", DEFAULT_DEVICE, G_PARAM_READWRITE));
++          "OSS device (usually /dev/audioN)", DEFAULT_DEVICE, G_PARAM_READWRITE));
+ 
+   g_object_class_install_property (gobject_class, PROP_DEVICE_NAME,
+       g_param_spec_string ("device-name", "Device name",

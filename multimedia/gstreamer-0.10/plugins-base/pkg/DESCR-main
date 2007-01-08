@@ -1,0 +1,2 @@
+This package contains base plugins for gstreamer-${VERSION}, usually
+with few or no dependencies.

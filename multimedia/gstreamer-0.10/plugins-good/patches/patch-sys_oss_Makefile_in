@@ -1,0 +1,13 @@
+$OpenBSD: patch-sys_oss_Makefile_in,v 1.1.1.1 2007/01/08 17:37:27 espie Exp $
+--- sys/oss/Makefile.in.orig	Mon Jan  8 17:00:35 2007
++++ sys/oss/Makefile.in	Mon Jan  8 17:02:15 2007
+@@ -492,7 +492,8 @@ libgstossaudio_la_LIBADD = \
+ 	$(GST_PLUGINS_BASE_LIBS) \
+         -lgstinterfaces-$(GST_MAJORMINOR) \
+ 	-lgstaudio-$(GST_MAJORMINOR) \
+-	$(GST_LIBS)
++	$(GST_LIBS) \
++	-lossaudio
+ 
+ libgstossaudio_la_LDFLAGS = $(GST_PLUGIN_LDFLAGS) 
+ noinst_HEADERS = common.h            \
