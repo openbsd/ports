@@ -1,0 +1,14 @@
+$OpenBSD: patch-common_m4_as-libtool_m4,v 1.1 2007/01/08 17:39:53 espie Exp $
+--- common/m4/as-libtool.m4.orig	Mon Jan  8 13:57:26 2007
++++ common/m4/as-libtool.m4	Mon Jan  8 13:57:31 2007
+@@ -35,10 +35,6 @@ AC_DEFUN([AS_LIBTOOL],
+   AC_SUBST([$1]_LIBVERSION)
+ 
+   [$1]_LT_LDFLAGS="$[$1]_LT_LDFLAGS -version-info $[$1]_LIBVERSION"
+-  if test ! -z "[$5]"
+-  then
+-    [$1]_LT_LDFLAGS="$[$1]_LT_LDFLAGS -release [$5]"
+-  fi
+   AC_SUBST([$1]_LT_LDFLAGS)
+ 
+   AC_LIBTOOL_DLOPEN

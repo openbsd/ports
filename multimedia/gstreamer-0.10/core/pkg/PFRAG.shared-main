@@ -1,0 +1,8 @@
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2007/01/08 17:39:53 espie Exp $
+lib/gstreamer-${VERSION}/libgstcoreelements.so
+lib/gstreamer-${VERSION}/libgstcoreindexers.so
+@lib lib/libgstbase-${VERSION}.so.${LIBgstbase-0.10_VERSION}
+@lib lib/libgstcontroller-${VERSION}.so.${LIBgstcontroller-0.10_VERSION}
+@lib lib/libgstdataprotocol-${VERSION}.so.${LIBgstdataprotocol-0.10_VERSION}
+@lib lib/libgstnet-${VERSION}.so.${LIBgstnet-0.10_VERSION}
+@lib lib/libgstreamer-${VERSION}.so.${LIBgstreamer-0.10_VERSION}
