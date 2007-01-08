@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_input_c,v 1.1.1.1 2007/01/08 11:00:40 ajacoutot Exp $
+--- src/input.c.orig	Sun Jan  7 12:44:44 2007
++++ src/input.c	Sun Jan  7 12:44:57 2007
+@@ -303,7 +303,7 @@ int open_datasource(DataSource source)
+ 	gtk_window_set_title(GTK_WINDOW(errbox),"ERROR!!!");
+ 	label = gtk_label_new(
+ 		"Error, Cannot connect to input source!!\n"
+-		"PLease check settings in the options panel.\n");
++		"Please check settings in the options panel.\n");
+ 	gtk_container_add(GTK_CONTAINER(errbox), label);
+ 	gtk_widget_show_all(errbox);
+ 

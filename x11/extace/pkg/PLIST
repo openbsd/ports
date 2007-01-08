@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/08 11:00:40 ajacoutot Exp $
+bin/extace
+share/gnome/
+share/gnome/apps/
+share/gnome/apps/Multimedia/
+share/gnome/apps/Multimedia/extace.desktop
