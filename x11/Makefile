@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.257 2006/12/24 11:03:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.258 2007/01/08 11:02:35 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -40,6 +40,7 @@
      SUBDIR += eterm,kanji
      SUBDIR += evilwm
      SUBDIR += explorer
+     SUBDIR += extace
      SUBDIR += fleditor
      SUBDIR += fltk
      SUBDIR += fluxbox
