@@ -1,0 +1,2 @@
+This package contains the pango text renderer and subtitle overlay
+plugin for gstreamer-${VERSION}.

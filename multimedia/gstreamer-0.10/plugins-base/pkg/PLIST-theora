@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-theora,v 1.1 2007/01/08 23:13:55 espie Exp $
+@option no-default-conflict
+@conflict gstreamer-theora->=0.10
+lib/gstreamer-${VERSION}/libgsttheora.a
+lib/gstreamer-${VERSION}/libgsttheora.la
+lib/gstreamer-${VERSION}/libgsttheora.so

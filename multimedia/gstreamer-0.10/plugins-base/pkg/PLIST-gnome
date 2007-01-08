@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-gnome,v 1.1 2007/01/08 23:13:55 espie Exp $
+@option no-default-conflict
+@conflict gstreamer-gnome->=0.10
+lib/gstreamer-${VERSION}/libgstgnomevfs.a
+lib/gstreamer-${VERSION}/libgstgnomevfs.la
+lib/gstreamer-${VERSION}/libgstgnomevfs.so

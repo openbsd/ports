@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST-cdda,v 1.1 2007/01/08 23:13:55 espie Exp $
+@option no-default-conflict
+@conflict gstreamer-cdda->=0.10
+include/gstreamer-${VERSION}/gst/cdda/
+include/gstreamer-${VERSION}/gst/cdda/gstcddabasesrc.h
+lib/gstreamer-${VERSION}/libgstcdparanoia.a
+lib/gstreamer-${VERSION}/libgstcdparanoia.la
+lib/gstreamer-${VERSION}/libgstcdparanoia.so
+lib/libgstcdda-${VERSION}.a
+lib/libgstcdda-${VERSION}.la
+@lib lib/libgstcdda-${VERSION}.so.${LIBgstcdda-0.10_VERSION}
