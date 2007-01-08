@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2006/12/16 12:22:33 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2007/01/08 19:52:25 espie Exp $
 
 COMMENT-main=		"GStreamer Streaming-media framework plug-ins."
 
@@ -82,9 +82,11 @@ PLUGINS+=		a52
 PSEUDO_FLAVORS+=	no_${PLUGIN}
 .  if !${FLAVOR:L:Mno_${PLUGIN}} && !${FLAVOR:L:Mminimal}
 MULTI_PACKAGES+=	-${PLUGIN}
-PKGNAME-${PLUGIN}=	gstreamer-${PLUGIN}-${VERSION}${PATCHLEVEL}p9
+PKGNAME-${PLUGIN}=	gstreamer-${PLUGIN}-${VERSION}${PATCHLEVEL}p10
+BASENAME-${PLUGIN}=	gstreamer-${PLUGIN}
 .  endif
 .endfor
+SUBST_VARS+=	BASENAME
 
 # a52dec
 COMMENT-a52=		"GStreamer plugin for decoding A/52 audio streams"
