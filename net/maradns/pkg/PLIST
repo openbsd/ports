@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2006/08/10 09:55:04 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/01/08 19:18:05 sturm Exp $
 @pkgpath net/maradns/stable
 @newgroup _maradns:537
 @newuser _maradns:537:_maradns::MaraDNS Account:${SYSCONFDIR}/maradns:/sbin/nologin
@@ -29,7 +29,6 @@ share/doc/maradns/download.html
 share/doc/maradns/faq.html
 share/doc/maradns/faq.txt
 share/doc/maradns/files.txt
-share/doc/maradns/logfile
 share/doc/maradns/man/
 share/doc/maradns/man/Makefile
 share/doc/maradns/man/askmara.1
@@ -42,6 +41,7 @@ share/doc/maradns/man/getzone.1
 share/doc/maradns/man/make.pdf
 share/doc/maradns/man/maradns.8
 share/doc/maradns/man/mararc.5
+share/doc/maradns/man/mqhash.1
 share/doc/maradns/man/patch/
 share/doc/maradns/man/read.manpage
 share/doc/maradns/man/zoneserver.8
@@ -49,6 +49,12 @@ share/doc/maradns/maradns.gpg.key
 share/doc/maradns/misc/
 share/doc/maradns/misc/0README
 share/doc/maradns/misc/RFC1035.compliance
+share/doc/maradns/misc/advocacy/
+share/doc/maradns/misc/advocacy/active.other
+share/doc/maradns/misc/advocacy/bind9
+share/doc/maradns/misc/advocacy/djbdns
+share/doc/maradns/misc/advocacy/inactive
+share/doc/maradns/misc/bind2csv2.design
 share/doc/maradns/misc/cache.poison.protection
 share/doc/maradns/misc/compression/
 share/doc/maradns/misc/compression/decompress_api.abw
@@ -119,8 +125,6 @@ share/doc/maradns/misc/propagation.txt
 share/doc/maradns/misc/recursive-case-insensitive
 share/doc/maradns/misc/recursive.algorithm
 share/doc/maradns/misc/resolution.algorithm
-share/doc/maradns/misc/rfc/
-share/doc/maradns/misc/rfc/rfc1035.txt
 share/doc/maradns/misc/rfc1034.notes.abw
 share/doc/maradns/misc/setup.bind.djbdns.axfr.test
 share/doc/maradns/misc/vim.cheatsheet
@@ -169,8 +173,10 @@ share/doc/maradns/source/fetchzone.ej
 share/doc/maradns/source/files.ej
 share/doc/maradns/source/getzone.ej
 share/doc/maradns/source/glossary.ej
+share/doc/maradns/source/maraconf.ej
 share/doc/maradns/source/maradns.ej
 share/doc/maradns/source/mararc.ej
+share/doc/maradns/source/mqhash.ej
 share/doc/maradns/source/old.changelog
 share/doc/maradns/source/quick_start.ej
 share/doc/maradns/source/recordtypes.ej
@@ -178,6 +184,7 @@ share/doc/maradns/source/recursive.ej
 share/doc/maradns/source/security_design.embed
 share/doc/maradns/source/tutorial.ej
 share/doc/maradns/source/update.ej
+share/doc/maradns/source/win_service.ej
 share/doc/maradns/source/zoneserver.ej
 share/doc/maradns/text/
 share/doc/maradns/text/Makefile
@@ -204,6 +211,7 @@ share/doc/maradns/text/recordtypes.txt
 share/doc/maradns/text/recursive.txt
 share/doc/maradns/text/tutorial.txt
 share/doc/maradns/text/update.txt
+share/doc/maradns/text/win_service.txt
 share/doc/maradns/tutorial/
 share/doc/maradns/tutorial/Makefile
 share/doc/maradns/tutorial/authoritative.html
@@ -230,8 +238,11 @@ share/doc/maradns/tutorial/recordtypes.html
 share/doc/maradns/tutorial/recursive.html
 share/doc/maradns/tutorial/tutorial.html
 share/doc/maradns/tutorial/update.html
+share/doc/maradns/tutorial/win_service.html
 share/doc/maradns/webpage/
 share/doc/maradns/webpage/Makefile
+share/doc/maradns/webpage/advocacy.embed
+share/doc/maradns/webpage/advocacy.html
 share/doc/maradns/webpage/changelog.embed
 share/doc/maradns/webpage/changelog.html
 share/doc/maradns/webpage/contact.embed
@@ -258,22 +269,8 @@ share/doc/maradns/webpage/maradns-1.2-s.css
 share/doc/maradns/webpage/maradns-1.2-top.html
 share/doc/maradns/webpage/notes.embed
 share/doc/maradns/webpage/notes.html
-share/doc/maradns/webpage/old/
-share/doc/maradns/webpage/old/DESIGN.NOTES
-share/doc/maradns/webpage/old/README
-share/doc/maradns/webpage/old/head.html
-share/doc/maradns/webpage/old/head_commented.html
-share/doc/maradns/webpage/old/maradns.css
-share/doc/maradns/webpage/old/maradns_p.css
-share/doc/maradns/webpage/old/mixed_css_try2.html
-share/doc/maradns/webpage/old/mixed_css_try3.html
-share/doc/maradns/webpage/old/page.htm
-share/doc/maradns/webpage/old/pure_css-2.html
-share/doc/maradns/webpage/old/pure_css.html
-share/doc/maradns/webpage/old/tail.html
 share/doc/maradns/webpage/roadmap.embed
 share/doc/maradns/webpage/roadmap.html
-share/doc/maradns/webpage/roadmap.rm.html
 share/doc/maradns/webpage/security.embed
 share/doc/maradns/webpage/security.html
 share/examples/maradns/
