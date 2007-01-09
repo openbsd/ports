@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/09 21:33:25 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/01/09 22:01:27 espie Exp $
 
 COMMENT-main=		"multimedia framework - good plugins"
 COMMENT-aalib=		"multimedia framework - aalib plugin"
 COMMENT-cairo=		"multimedia framework - cairo plugin"
 COMMENT-gconf=		"multimedia framework - conf elements"
 COMMENT-esd=		"multimedia framework - esound plugin"
+COMMENT-flac=		"multimedia framework - flac plugin"
+COMMENT-speex=		"multimedia framework - speex plugin"
 
 V=			0.10.5
 DISTNAME=		gst-plugins-good-$V
@@ -13,9 +15,11 @@ PKGNAME-aalib=		gstreamer-aalib-$V
 PKGNAME-cairo=		gstreamer-cairo-$V
 PKGNAME-gconf=		gstreamer-confelements-$V
 PKGNAME-esd=		gstreamer-esd-$V
+PKGNAME-flac=		gstreamer-flac-$V
+PKGNAME-speex=		gstreamer-speex-$V
 
 
-MULTI_PACKAGES=		-main -aalib -cairo -gconf -esd
+MULTI_PACKAGES=		-main -aalib -cairo -gconf -esd -flac -speex
 SHARED_LIBS=
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-good/}
@@ -59,10 +63,23 @@ LIB_DEPENDS-esd=	${LIB_DEPENDS} \
 			esd::audio/esound \
 			gstaudio-0.10,gstinterfaces-0.10::multimedia/gstreamer-0.10/plugins-base
 
+WANTLIB-flac=		${WANTLIB} \
+			gstbase-0.10
+
+LIB_DEPENDS-flac=	${LIB_DEPENDS} \
+			FLAC::audio/flac \
+			gsttag-0.10::multimedia/gstreamer-0.10/plugins-base
+
+WANTLIB-speex=		${WANTLIB} \
+			gstbase-0.10
+
+LIB_DEPENDS-speex=	${LIB_DEPENDS} \
+			speex::audio/speex \
+			gsttag-0.10::multimedia/gstreamer-0.10/plugins-base
+
 CONFIGURE_ARGS+=	--with-aalib-prefix=${LOCALBASE} \
 			--disable-cdio \
 			--disable-dv1394 \
-			--disable-flac \
 			--disable-gdk_pixbuf \
 			--disable-jpeg \
 			--disable-ladspa \
@@ -70,17 +87,13 @@ CONFIGURE_ARGS+=	--with-aalib-prefix=${LOCALBASE} \
 			--disable-libdv \
 			--disable-libpng \
 			--disable-shout2 \
-			--disable-speex \
 			--disable-sunaudio \
 			--disable-taglib
 
 post-install:
 		${INSTALL_DATA} ${WRKINST}${SYSCONFDIR}/gconf/schemas/gstreamer-${VERSION}.schemas ${PREFIX}/lib/gstreamer-${VERSION}/schemas.sample
 
-#			FLAC::audio/flac \
-#			speex::audio/speex \
 #			dv::multimedia/libdv \
-#			xml2::textproc/libxml \
 #			jpeg::graphics/jpeg \
 #			png::graphics/png \
 
