@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/08 23:13:55 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/01/09 20:00:23 espie Exp $
 
 COMMENT-main=		"multimedia framework - plugins base"
 COMMENT-gnome=		"multimedia framework - gnome vfs plugin"
@@ -8,7 +8,6 @@ COMMENT-vorbis=		"multimedia framework - vorbis plugin"
 COMMENT-theora=		"multimedia framework - theora plugin"
 COMMENT-pango=		"multimedia framework - pango renderer"
 
-SHARED_ONLY=		Yes
 V=			0.10.11
 DISTNAME=		gst-plugins-base-$V
 PKGNAME-main=		gstreamer-plugins-base-$V

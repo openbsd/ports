@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2007/01/08 17:39:53 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/01/09 20:00:23 espie Exp $
 @option no-default-conflict
 @conflict gstreamer->=0.10
-%%SHARED%%
 bin/gst-feedback-${VERSION}
 bin/gst-inspect-${VERSION}
 bin/gst-launch-${VERSION}
@@ -79,21 +78,20 @@ include/gstreamer-${VERSION}/gst/net/gstnetclientclock.h
 include/gstreamer-${VERSION}/gst/net/gstnettimepacket.h
 include/gstreamer-${VERSION}/gst/net/gstnettimeprovider.h
 lib/gstreamer-${VERSION}/
-lib/gstreamer-${VERSION}/libgstcoreelements.a
 lib/gstreamer-${VERSION}/libgstcoreelements.la
-lib/gstreamer-${VERSION}/libgstcoreindexers.a
+lib/gstreamer-${VERSION}/libgstcoreelements.so
 lib/gstreamer-${VERSION}/libgstcoreindexers.la
-lib/libgstbase-${VERSION}.a
+lib/gstreamer-${VERSION}/libgstcoreindexers.so
 lib/libgstbase-${VERSION}.la
-lib/libgstcontroller-${VERSION}.a
+@lib lib/libgstbase-${VERSION}.so.${LIBgstbase-0.10_VERSION}
 lib/libgstcontroller-${VERSION}.la
-lib/libgstdataprotocol-${VERSION}.a
+@lib lib/libgstcontroller-${VERSION}.so.${LIBgstcontroller-0.10_VERSION}
 lib/libgstdataprotocol-${VERSION}.la
-lib/libgstnet-${VERSION}.a
+@lib lib/libgstdataprotocol-${VERSION}.so.${LIBgstdataprotocol-0.10_VERSION}
 lib/libgstnet-${VERSION}.la
-lib/libgstreamer-${VERSION}.a
+@lib lib/libgstnet-${VERSION}.so.${LIBgstnet-0.10_VERSION}
 lib/libgstreamer-${VERSION}.la
-lib/pkgconfig/
+@lib lib/libgstreamer-${VERSION}.so.${LIBgstreamer-0.10_VERSION}
 lib/pkgconfig/gstreamer-${VERSION}.pc
 lib/pkgconfig/gstreamer-base-${VERSION}.pc
 lib/pkgconfig/gstreamer-controller-${VERSION}.pc
@@ -109,23 +107,17 @@ share/aclocal/gst-element-check-${VERSION}.m4
 share/locale/af/
 share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/gstreamer-${VERSION}.mo
-share/locale/az/
-share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/gstreamer-${VERSION}.mo
 share/locale/bg/LC_MESSAGES/gstreamer-${VERSION}.mo
 share/locale/ca/LC_MESSAGES/gstreamer-${VERSION}.mo
 share/locale/cs/LC_MESSAGES/gstreamer-${VERSION}.mo
 share/locale/de/LC_MESSAGES/gstreamer-${VERSION}.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gstreamer-${VERSION}.mo
 share/locale/fr/LC_MESSAGES/gstreamer-${VERSION}.mo
 share/locale/it/LC_MESSAGES/gstreamer-${VERSION}.mo
 share/locale/nb/LC_MESSAGES/gstreamer-${VERSION}.mo
 share/locale/nl/LC_MESSAGES/gstreamer-${VERSION}.mo
 share/locale/ru/LC_MESSAGES/gstreamer-${VERSION}.mo
-share/locale/sq/
-share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/gstreamer-${VERSION}.mo
 share/locale/sr/LC_MESSAGES/gstreamer-${VERSION}.mo
 share/locale/sv/LC_MESSAGES/gstreamer-${VERSION}.mo

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2007/01/08 17:37:27 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2007/01/09 20:00:23 espie Exp $
 
 CATEGORIES?=	multimedia devel
 
@@ -14,9 +14,11 @@ MASTER_SITE_GST=	http://gstreamer.freedesktop.org/src/
 EXTRACT_SUFX?=		.tar.bz2
 VERSION=		0.10
 SUBST_VARS+=		VERSION
+SHARED_ONLY=		Yes
 
 USE_GMAKE?=		Yes
 USE_LIBTOOL?=		Yes
+LIBTOOL_FLAGS?=		--tag=disable-static
 
 MODULES+=		lang/python
 
@@ -30,6 +32,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-cachedir=/var/db/gstreamer-${VERSION} \
 			--disable-debug \
 			--disable-valgrind \
+			--disable-static \
 #			--enable-gtk-doc
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include \
