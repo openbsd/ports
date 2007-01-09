@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-esd,v 1.1 2007/01/09 21:33:25 espie Exp $
+@option no-default-conflict
+@conflict gstreamer-esd->=0.10
+lib/gstreamer-${VERSION}/libgstesd.la
+lib/gstreamer-${VERSION}/libgstesd.so

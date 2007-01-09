@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST-aalib,v 1.1 2007/01/09 21:33:25 espie Exp $
+lib/gstreamer-${VERSION}/libgstaasink.la
+lib/gstreamer-${VERSION}/libgstaasink.so

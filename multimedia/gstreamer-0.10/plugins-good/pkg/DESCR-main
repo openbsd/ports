@@ -1,2 +1,8 @@
-This package contains good plugins for gstreamer-${VERSION} with
-a non-controversial licence.
+This package contains some plugins for gstreamer-${VERSION}.
+The gstreamer people split plugins into:
+- base plugins (plugins-base)
+- plugins with good code and a good licence (plugins-good)
+- plugins with licence issues.
+
+This package contains most good plugins without too many external
+dependencies.

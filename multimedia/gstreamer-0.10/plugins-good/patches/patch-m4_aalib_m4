@@ -1,0 +1,38 @@
+$OpenBSD: patch-m4_aalib_m4,v 1.1 2007/01/09 21:33:25 espie Exp $
+--- m4/aalib.m4.orig	Wed Feb 11 17:44:05 2004
++++ m4/aalib.m4	Tue Jan  9 12:04:34 2007
+@@ -29,6 +29,8 @@ AC_ARG_ENABLE(aalibtest, 
+                  [do not try to compile and run a test AALIB program]),
+   , enable_aalibtest=yes)
+ 
++  enable_aalibtest=no
++
+   if test x$aalib_exec_prefix != x ; then
+      aalib_args="$aalib_args --exec-prefix=$aalib_exec_prefix"
+      if test x${AALIB_CONFIG+set} != xset ; then
+@@ -42,22 +44,12 @@ AC_ARG_ENABLE(aalibtest, 
+      fi
+   fi
+ 
+-  AC_PATH_PROG(AALIB_CONFIG, aalib-config, no)
+-  min_aalib_version=ifelse([$1], ,0.11.0,$1)
+-  AC_MSG_CHECKING(for AALIB - version >= $min_aalib_version)
+-  no_aalib=""
+-  if test "$AALIB_CONFIG" = "no" ; then
++  if test x$aalib_prefix == x ; then
+     no_aalib=yes
+   else
+-    AALIB_CFLAGS=`$AALIB_CONFIG $aalibconf_args --cflags`
+-    AALIB_LIBS=`$AALIB_CONFIG $aalibconf_args --libs`
++    AALIB_CFLAGS="-I$aalib_prefix/include"
++    AALIB_LIBS="-L$aalib_prefix/lib -laa"
+ 
+-    aalib_major_version=`$AALIB_CONFIG $aalib_args --version | \
+-           sed 's/\([[0-9]]*\).\([[0-9]]*\).\([[0-9]]*\)/\1/'`
+-    aalib_minor_version=`$AALIB_CONFIG $aalib_args --version | \
+-           sed 's/\([[0-9]]*\).\([[0-9]]*\).\([[0-9]]*\)/\2/'`
+-    aalib_micro_version=`$AALIB_CONFIG $aalib_config_args --version | \
+-           sed 's/\([[0-9]]*\).\([[0-9]]*\).\([[0-9]]*\)/\3/'`
+     if test "x$enable_aalibtest" = "xyes" ; then
+       ac_save_CFLAGS="$CFLAGS"
+       ac_save_LIBS="$LIBS"
