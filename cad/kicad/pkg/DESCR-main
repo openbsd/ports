@@ -1,0 +1,10 @@
+Kicad is an open source software for the creation of electronic schematic
+diagrams and printed circuit board artwork.
+
+Kicad is a set of four pieces of software and a project manager:
+
+    * Eeschema: Schematic entry.
+    * Pcbnew: Board editor.
+    * Gerbview: GERBER viewer (photoplotter documents).
+    * Cvpcb: footprint selector for components used in the circuit design.
+    * Kicad: project manager.

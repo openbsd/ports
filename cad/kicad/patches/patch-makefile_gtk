@@ -1,0 +1,24 @@
+$OpenBSD: patch-makefile_gtk,v 1.1.1.1 2007/01/09 16:12:55 steven Exp $
+--- makefile.gtk.orig	Thu Jan  4 15:04:46 2007
++++ makefile.gtk	Thu Jan  4 15:04:50 2007
+@@ -1,15 +1,14 @@
+ KICAD_SUBDIRS =  common 3d-viewer eeschema eeschema/plugins pcbnew cvpcb kicad gerbview
+ KICAD_SUBDIRS_BIN =  eeschema eeschema/plugins pcbnew cvpcb kicad gerbview
+ # How to invoke make:
+-MAKE = make -k -f makefile.gtk
+-MAKE_INSTALL = make -f makefile.gtk install
+-MAKE_CLEAN = make -f makefile.gtk clean
++MAKEFILE = makefile.gtk
++INSTALL_TARGET = install
+ 
+ all:
+-	@for d in $(KICAD_SUBDIRS); do (cd $$d && $(MAKE)); done
++	@for d in $(KICAD_SUBDIRS); do (cd $$d && $(MAKE) -f $(MAKEFILE) ); done
+ 
+ install:
+-	@for d in $(KICAD_SUBDIRS_BIN); do (cd $$d && $(MAKE_INSTALL)); done
++	@for d in $(KICAD_SUBDIRS_BIN); do (cd $$d && $(MAKE) -f $(MAKEFILE) $(INSTALL_TARGET); done
+ 	
+ clean:
+-	@for d in $(KICAD_SUBDIRS); do (cd $$d && $(MAKE_CLEAN)); done
++	@for d in $(KICAD_SUBDIRS); do (cd $$d && $(MAKE) -f $(MAKEFILE) clean; done

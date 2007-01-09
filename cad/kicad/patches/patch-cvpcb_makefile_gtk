@@ -1,0 +1,21 @@
+$OpenBSD: patch-cvpcb_makefile_gtk,v 1.1.1.1 2007/01/09 16:12:55 steven Exp $
+--- cvpcb/makefile.gtk.orig	Thu Jan  4 18:59:05 2007
++++ cvpcb/makefile.gtk	Thu Jan  4 19:29:38 2007
+@@ -8,7 +8,7 @@ FINAL = 1
+ 
+ # Compiler flags.
+ 
+-CPPFLAGS = -Wall -O2 `wx-config --cxxflags`
++CPPFLAGS = -Wall `wx-config --cxxflags` -I${X11BASE}/include
+ 
+ LDFLAGS =  -s
+ 
+@@ -24,7 +24,7 @@ all: $(TARGET)
+ include makefile.include
+ 
+ CPPFLAGS += $(EXTRACPPFLAGS)
+-EDACPPFLAGS = $(CPPFLAGS)
++EDACPPFLAGS = $(CPPFLAGS) $(CXXFLAGS)
+ 
+ 
+ $(TARGET):	$(OBJECTS) makefile.gtk makefile.include $(EXTRALIBS) ../libs.linux $(LIBVIEWER3D)

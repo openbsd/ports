@@ -1,0 +1,12 @@
+$OpenBSD: patch-kicad_makefile_gtk,v 1.1.1.1 2007/01/09 16:12:55 steven Exp $
+--- kicad/makefile.gtk.orig	Thu Jan  4 14:32:49 2007
++++ kicad/makefile.gtk	Thu Jan  4 14:32:54 2007
+@@ -7,7 +7,7 @@ LD = gcc
+ FINAL = 1
+ 
+ # Compiler flags.
+-CPPFLAGS =  -Wall -O2 `wx-config --cxxflags`
++CPPFLAGS =  -Wall `wx-config --cxxflags`
+ LDFLAGS =  -s
+ 
+ include ../libs.linux

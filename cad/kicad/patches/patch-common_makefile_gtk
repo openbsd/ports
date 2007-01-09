@@ -1,0 +1,21 @@
+$OpenBSD: patch-common_makefile_gtk,v 1.1.1.1 2007/01/09 16:12:55 steven Exp $
+--- common/makefile.gtk.orig	Thu Jan  4 18:32:19 2007
++++ common/makefile.gtk	Thu Jan  4 18:53:14 2007
+@@ -2,7 +2,7 @@
+ CC = gcc
+ 
+ # Compiler flags.
+-CPPFLAGS =  -Wall -O2 -I./ -I../include `wx-config --cflags`
++CPPFLAGS =  -Wall -I./ -I../include `wx-config --cflags`
+ 
+ EDACPPFLAGS = $(CPPFLAGS)
+ 
+@@ -11,7 +11,7 @@ all: common.a
+ include makefile.include
+ 
+ CPPFLAGS += $(EXTRACPPFLAGS)
+-EDACPPFLAGS = $(CPPFLAGS)
++EDACPPFLAGS = $(CPPFLAGS) $(CXXFLAGS)
+ 
+ 
+ common.a: $(OBJECTS) makefile.gtk makefile.include

@@ -1,0 +1,12 @@
+$OpenBSD: patch-eeschema_plugins_makefile_gtk,v 1.1.1.1 2007/01/09 16:12:55 steven Exp $
+--- eeschema/plugins/makefile.gtk.orig	Thu Jan  4 16:52:48 2007
++++ eeschema/plugins/makefile.gtk	Thu Jan  4 16:53:25 2007
+@@ -16,7 +16,7 @@ endif
+ all: netlist_form_pads-pcb
+ 
+ netlist_form_pads-pcb: netlist_form_pads-pcb.cpp makefile.gtk
+-	gcc -D__UNIX__  -Wall netlist_form_pads-pcb.cpp -o netlist_form_pads-pcb $(LIBSTDC)
++	$(CXX) -D__UNIX__ $(CXXFLAGS) -Wall netlist_form_pads-pcb.cpp -o netlist_form_pads-pcb $(LIBSTDC) -lm
+ 
+ install:
+ 	cp -v netlist_form_pads-pcb $(KICAD_BIN)/plugins/
