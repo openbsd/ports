@@ -1,12 +1,18 @@
-# $OpenBSD: Makefile,v 1.11 2006/10/28 11:19:20 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/01/09 18:49:28 kurt Exp $
 
-COMMENT=	"ODBC 3.x driver manager"
+COMMENT-main=	"ODBC 3.x driver manager"
+COMMENT-admin=	"ODBC 3.x driver manager admin application"
 
-DISTNAME=	libiodbc-3.52.4
-PKGNAME=	${DISTNAME:S/lib//}
+V=		3.52.4
+DISTNAME=	libiodbc-${V}
+PKGNAME=	iodbc-${V}p0
+PKGNAME-main=	iodbc-${V}p0
+PKGNAME-admin=	iodbc-admin-${V}
 CATEGORIES=	databases
 SHARED_LIBS +=	iodbcinst            3.15     # .3.15
 SHARED_LIBS +=	iodbc                3.15     # .3.15
+SHARED_LIBS +=  iodbcadm             3.15     # .3.15
+SHARED_LIBS +=  drvproxy             3.15     # .3.15
 
 HOMEPAGE=	http://www.iodbc.org/
 
@@ -17,7 +23,6 @@ PERMIT_PACKAGE_CDROM=	yes
 PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
-WANTLIB=		c pthread
 
 MASTER_SITES=	${HOMEPAGE}downloads/iODBC/
 
@@ -25,8 +30,15 @@ USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS= --with-iodbc-inidir="${SYSCONFDIR}/iodbc" \
-		--disable-gui \
 		--disable-libodbc
+
+MULTI_PACKAGES=		-main -admin
+
+WANTLIB-main=		c pthread
+
+LIB_DEPENDS-admin=	gtk,gdk::x11/gtk+ \
+			iodbc,iodbcinst::databases/iodbc,-main
+WANTLIB-admin=		X11 Xext Xi c glib gmodule iconv intl m pthread
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/iodbc

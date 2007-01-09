@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/07/18 19:44:27 alek Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2007/01/09 18:49:28 kurt Exp $
+@pkgpath databases/iodbc
 %%SHARED%%
 bin/iodbc-config
 bin/iodbctest
