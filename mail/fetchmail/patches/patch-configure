@@ -1,7 +1,16 @@
-$OpenBSD: patch-configure,v 1.10 2006/04/21 09:21:59 bernd Exp $
---- configure.orig	Fri Apr 14 17:42:57 2006
-+++ configure	Mon Apr 17 15:42:25 2006
-@@ -11434,7 +11434,7 @@ cat >>confdefs.h <<\_ACEOF
+$OpenBSD: patch-configure,v 1.11 2007/01/09 10:35:42 bernd Exp $
+--- configure.orig	Sun Jan  7 11:34:15 2007
++++ configure	Sun Jan  7 11:37:38 2007
+@@ -8530,7 +8530,7 @@ _ACEOF
+ 
+ 
+ 
+-    INTLLIBS="$LIBINTL"
++    INTLLIBS="$LTLIBINTL"
+ 
+ 
+ 
+@@ -13245,7 +13245,7 @@ cat >>confdefs.h <<\_ACEOF
  _ACEOF
  
    CEFLAGS="$CEFLAGS -I/usr/include/kerberosV"
@@ -9,28 +18,28 @@ $OpenBSD: patch-configure,v 1.10 2006/04/21 09:21:59 bernd Exp $
 +  LIBS="$LIBS -lkrb5"
  elif krb5-config 2> /dev/null >/dev/null ; then
    krb5_prefix=`krb5-config --prefix krb5`
-   echo "$as_me:$LINENO: result: krb5-config points to kerberosV under $krb5_prefix" >&5
-@@ -14843,8 +14843,8 @@ s,@pythondir@,$pythondir,;t t
- s,@pkgpythondir@,$pkgpythondir,;t t
- s,@pyexecdir@,$pyexecdir,;t t
- s,@pkgpyexecdir@,$pkgpyexecdir,;t t
--s,@HAVE_PYTHON_TRUE@,$HAVE_PYTHON_TRUE,;t t
--s,@HAVE_PYTHON_FALSE@,$HAVE_PYTHON_FALSE,;t t
-+s,@HAVE_PYTHON_TRUE@,#,;t t
-+s,@HAVE_PYTHON_FALSE@,#,;t t
- s,@CC@,$CC,;t t
- s,@CFLAGS@,$CFLAGS,;t t
- s,@LDFLAGS@,$LDFLAGS,;t t
-@@ -14876,10 +14876,10 @@ s,@GMSGFMT@,$GMSGFMT,;t t
- s,@XGETTEXT@,$XGETTEXT,;t t
- s,@MSGMERGE@,$MSGMERGE,;t t
- s,@INTL_MACOSX_LIBS@,$INTL_MACOSX_LIBS,;t t
--s,@LIBICONV@,$LIBICONV,;t t
-+s,@LIBICONV@,$LTLIBICONV,;t t
- s,@LTLIBICONV@,$LTLIBICONV,;t t
- s,@INTLLIBS@,$INTLLIBS,;t t
--s,@LIBINTL@,$LIBINTL,;t t
-+s,@LIBINTL@,$LTLIBINTL,;t t
- s,@LTLIBINTL@,$LTLIBINTL,;t t
- s,@POSUB@,$POSUB,;t t
- s,@LIBOBJS@,$LIBOBJS,;t t
+   { echo "$as_me:$LINENO: result: krb5-config points to kerberosV under $krb5_prefix" >&5
+@@ -16956,8 +16956,8 @@ pythondir!$pythondir$ac_delim
+ pkgpythondir!$pkgpythondir$ac_delim
+ pyexecdir!$pyexecdir$ac_delim
+ pkgpyexecdir!$pkgpyexecdir$ac_delim
+-HAVE_PYTHON_TRUE!$HAVE_PYTHON_TRUE$ac_delim
+-HAVE_PYTHON_FALSE!$HAVE_PYTHON_FALSE$ac_delim
++HAVE_PYTHON_TRUE!#$ac_delim
++HAVE_PYTHON_FALSE!#$ac_delim
+ CC!$CC$ac_delim
+ CFLAGS!$CFLAGS$ac_delim
+ LDFLAGS!$LDFLAGS$ac_delim
+@@ -17031,10 +17031,10 @@ GMSGFMT!$GMSGFMT$ac_delim
+ XGETTEXT!$XGETTEXT$ac_delim
+ MSGMERGE!$MSGMERGE$ac_delim
+ INTL_MACOSX_LIBS!$INTL_MACOSX_LIBS$ac_delim
+-LIBICONV!$LIBICONV$ac_delim
++LIBICONV!$LTLIBICONV$ac_delim
+ LTLIBICONV!$LTLIBICONV$ac_delim
+ INTLLIBS!$INTLLIBS$ac_delim
+-LIBINTL!$LIBINTL$ac_delim
++LIBINTL!$LTLIBINTL$ac_delim
+ LTLIBINTL!$LTLIBINTL$ac_delim
+ POSUB!$POSUB$ac_delim
+ LIBOBJS!$LIBOBJS$ac_delim

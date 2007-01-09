@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2006/04/21 09:22:00 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.16 2007/01/09 10:35:42 bernd Exp $
 bin/fetchmail
 bin/fetchmailconf
 libexec/fetchmailconf.bin
@@ -17,6 +17,9 @@ share/doc/fetchmail/todo.html
 share/locale/ca/LC_MESSAGES/fetchmail.mo
 share/locale/cs/LC_MESSAGES/fetchmail.mo
 share/locale/de/LC_MESSAGES/fetchmail.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
+share/locale/en_GB/LC_MESSAGES/fetchmail.mo
 share/locale/es/LC_MESSAGES/fetchmail.mo
 share/locale/fr/LC_MESSAGES/fetchmail.mo
 share/locale/ja/LC_MESSAGES/fetchmail.mo
