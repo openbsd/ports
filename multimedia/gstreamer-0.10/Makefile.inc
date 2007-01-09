@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2007/01/09 20:00:23 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2007/01/09 23:22:56 espie Exp $
 
 CATEGORIES?=	multimedia devel
 
@@ -15,6 +15,7 @@ EXTRACT_SUFX?=		.tar.bz2
 VERSION=		0.10
 SUBST_VARS+=		VERSION
 SHARED_ONLY=		Yes
+SEPARATE_BUILD?=	simple
 
 USE_GMAKE?=		Yes
 USE_LIBTOOL?=		Yes

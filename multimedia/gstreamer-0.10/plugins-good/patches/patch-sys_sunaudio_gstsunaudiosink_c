@@ -1,0 +1,29 @@
+$OpenBSD: patch-sys_sunaudio_gstsunaudiosink_c,v 1.1 2007/01/09 23:22:56 espie Exp $
+--- sys/sunaudio/gstsunaudiosink.c.orig	Tue Jan  9 23:19:43 2007
++++ sys/sunaudio/gstsunaudiosink.c	Tue Jan  9 23:22:54 2007
+@@ -42,7 +42,6 @@
+ 
+ #include <fcntl.h>
+ #include <string.h>
+-#include <stropts.h>
+ #include <unistd.h>
+ #include <sys/mman.h>
+ 
+@@ -623,7 +622,7 @@ gst_sunaudiosink_reset (GstAudioSink * a
+   }
+ 
+   /* Flush the audio */
+-  ret = ioctl (sunaudiosink->fd, I_FLUSH, FLUSHW);
++  ret = ioctl (sunaudiosink->fd, AUDIO_FLUSH);
+   if (ret == -1) {
+     GST_ELEMENT_ERROR (sunaudiosink, RESOURCE, SETTINGS, (NULL), ("%s",
+             strerror (errno)));
+@@ -638,7 +637,7 @@ gst_sunaudiosink_reset (GstAudioSink * a
+ 
+   g_cond_signal (sunaudiosink->sleep_cond);
+ 
+-  ret = ioctl (sunaudiosink->fd, I_FLUSH, FLUSHW);
++  ret = ioctl (sunaudiosink->fd, AUDIO_FLUSH);
+   if (ret == -1) {
+     GST_ELEMENT_ERROR (sunaudiosink, RESOURCE, SETTINGS, (NULL), ("%s",
+             strerror (errno)));

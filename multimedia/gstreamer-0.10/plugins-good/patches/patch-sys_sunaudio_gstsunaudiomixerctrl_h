@@ -1,0 +1,12 @@
+$OpenBSD: patch-sys_sunaudio_gstsunaudiomixerctrl_h,v 1.1 2007/01/09 23:22:56 espie Exp $
+--- sys/sunaudio/gstsunaudiomixerctrl.h.orig	Tue Jan  9 23:18:47 2007
++++ sys/sunaudio/gstsunaudiomixerctrl.h	Tue Jan  9 23:19:06 2007
+@@ -19,6 +19,8 @@
+ #ifndef __GST_SUNAUDIO_MIXER_CTRL_H
+ #define __GST_SUNAUDIO_MIXER_CTRL_H
+ 
++#include <sys/types.h>
++#include <sys/ioctl.h>
+ #include <sys/audioio.h>
+ 
+ #include <gst/gst.h>

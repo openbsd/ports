@@ -1,0 +1,12 @@
+$OpenBSD: patch-sys_sunaudio_gstsunaudiosink_h,v 1.1 2007/01/09 23:22:56 espie Exp $
+--- sys/sunaudio/gstsunaudiosink.h.orig	Tue Jan  9 23:20:19 2007
++++ sys/sunaudio/gstsunaudiosink.h	Tue Jan  9 23:20:32 2007
+@@ -23,6 +23,8 @@
+ #ifndef __GST_SUNAUDIO_SINK_H__
+ #define __GST_SUNAUDIO_SINK_H__
+ 
++#include <sys/types.h>
++#include <sys/ioctl.h>
+ #include <sys/audioio.h>
+ #include <gst/gst.h>
+ #include <gst/audio/gstaudiosink.h>

@@ -1,0 +1,37 @@
+$OpenBSD: patch-sys_sunaudio_gstsunaudiomixerctrl_c,v 1.1 2007/01/09 23:22:56 espie Exp $
+--- sys/sunaudio/gstsunaudiomixerctrl.c.orig	Tue Jan  9 23:23:14 2007
++++ sys/sunaudio/gstsunaudiomixerctrl.c	Tue Jan  9 23:24:28 2007
+@@ -235,20 +235,10 @@ gst_sunaudiomixer_ctrl_get_volume (GstSu
+     }
+   }
+ 
+-  /* Likewise reset MUTE */
+-  if ((sunaudiotrack->track_num == GST_SUNAUDIO_TRACK_OUTPUT &&
+-          audioinfo.output_muted == 1) ||
+-      (sunaudiotrack->track_num != GST_SUNAUDIO_TRACK_OUTPUT && gain == 0)) {
+-    track->flags |= GST_MIXER_TRACK_MUTE;
+-  } else {
+-    /*
+-     * If MUTE is set, then gain is always 0, so don't bother
+-     * resetting our internal value.
+-     */
++
+     sunaudiotrack->gain = gain;
+     sunaudiotrack->balance = balance;
+     track->flags &= ~GST_MIXER_TRACK_MUTE;
+-  }
+ }
+ 
+ void
+@@ -337,11 +327,6 @@ gst_sunaudiomixer_ctrl_set_mute (GstSunA
+ 
+   switch (sunaudiotrack->track_num) {
+     case GST_SUNAUDIO_TRACK_OUTPUT:
+-
+-      if (mute)
+-        audioinfo.output_muted = 1;
+-      else
+-        audioinfo.output_muted = 0;
+ 
+       audioinfo.play.gain = volume;
+       audioinfo.play.balance = balance;

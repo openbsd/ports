@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/01/09 22:01:27 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/01/09 23:22:56 espie Exp $
 
 COMMENT-main=		"multimedia framework - good plugins"
 COMMENT-aalib=		"multimedia framework - aalib plugin"
@@ -87,7 +87,6 @@ CONFIGURE_ARGS+=	--with-aalib-prefix=${LOCALBASE} \
 			--disable-libdv \
 			--disable-libpng \
 			--disable-shout2 \
-			--disable-sunaudio \
 			--disable-taglib
 
 post-install:
