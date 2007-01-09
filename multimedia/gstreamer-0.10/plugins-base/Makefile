@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/01/09 20:00:23 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/01/09 20:43:46 espie Exp $
 
 COMMENT-main=		"multimedia framework - plugins base"
 COMMENT-gnome=		"multimedia framework - gnome vfs plugin"
@@ -49,9 +49,10 @@ LIB_DEPENDS-gnome= 	${LIB_DEPENDS} \
 			gnomevfs-2::x11/gnome/vfs2
 
 WANTLIB-cdda=		${WANTLIB} \
-			cdda_interface cdda_paranoia gstbase-0.10
+			gstbase-0.10
 LIB_DEPENDS-cdda= 	${LIB_DEPENDS} \
-			gsttag-0.10::${BUILD_PKGPATH}
+			gsttag-0.10::${BUILD_PKGPATH} \
+			cdda_interface,cdda_paranoia::audio/cdparanoia
 
 WANTLIB-ogg=		${WANTLIB} \
 			gstbase-0.10
