@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2007/01/05 22:57:11 dlg Exp $
+# $OpenBSD: Makefile,v 1.10 2007/01/09 09:56:57 dlg Exp $
 
 COMMENT=	"apache HTTP server"
 
 V=		2.2.3
-PKGNAME=	apache-httpd-${V}p5
+PKGNAME=	apache-httpd-${V}p6
 DISTNAME=	httpd-${V}
 
 CATEGORIES=	www net
@@ -32,14 +32,15 @@ HTTPD_DIR=		/var/apache2
 CONFDIR=		${SYSCONFDIR}/apache2
 SUBST_VARS=		CONFDIR
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	--enable-layout=OpenBSD \
-			--datadir=${HTTPD_DIR} \
+			--prefix=${HTTPD_DIR} \
+			--exec-prefix=${LOCALBASE} \
+			--sysconfdir=${CONFDIR} \
 			--with-apr=${LOCALBASE}  \
 			--with-apr-util=${LOCALBASE} \
 			--enable-ssl --with-ssl=/usr \
 			--with-mpm=prefork \
-			--libexecdir=${LOCALBASE}/lib \
 			--with-program-name=httpd2
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
