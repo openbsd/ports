@@ -1,0 +1,11 @@
+$OpenBSD: patch-qcadlib_src_engine_rs_arc_cpp,v 1.1 2007/01/09 16:30:37 steven Exp $
+--- qcadlib/src/engine/rs_arc.cpp.orig	Tue Nov 22 12:52:35 2005
++++ qcadlib/src/engine/rs_arc.cpp	Thu Jan  4 00:40:05 2007
+@@ -647,6 +647,7 @@ void RS_Arc::draw(RS_Painter* painter, R
+         // Pattern:
+         RS_LineTypePattern* pat;
+         if (isSelected()) {
++            static RS_LineTypePattern patternSelected(2, 1.0, -3.0);
+             pat = &patternSelected;
+         } else {
+             pat = view->getPattern(getPen().getLineType());

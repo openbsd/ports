@@ -1,0 +1,13 @@
+$OpenBSD: patch-mkspecs_defs_pro,v 1.1 2007/01/09 16:30:37 steven Exp $
+--- mkspecs/defs.pro.orig	Tue Nov 22 12:47:28 2005
++++ mkspecs/defs.pro	Tue Jan  9 16:38:47 2007
+@@ -1,6 +1,7 @@
+ # $Id: patch-mkspecs_defs_pro,v 1.1 2007/01/09 16:30:37 steven Exp $
+-QMAKE_CXXFLAGS_DEBUG += -pedantic
+-QMAKE_CXXFLAGS += -pedantic
++QMAKE_CXXFLAGS_DEBUG += !!CXXFLAGS!!
++QMAKE_CXXFLAGS += !!CXXFLAGS!!
++QMAKE_CXXFLAGS_RELEASE =
+ 
+ win32 {
+   QMAKE_CFLAGS_THREAD -= -mthreads

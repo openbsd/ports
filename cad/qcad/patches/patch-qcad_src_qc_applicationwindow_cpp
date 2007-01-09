@@ -1,0 +1,12 @@
+$OpenBSD: patch-qcad_src_qc_applicationwindow_cpp,v 1.1 2007/01/09 16:30:37 steven Exp $
+--- qcad/src/qc_applicationwindow.cpp.orig	Sat Jan  6 16:31:24 2007
++++ qcad/src/qc_applicationwindow.cpp	Sat Jan  6 16:54:10 2007
+@@ -2943,7 +2943,7 @@ void QC_ApplicationWindow::slotHelpManua
+                         RS_SYSTEM->getAppDir().latin1());
+         RS_DEBUG->print("QC_ApplicationWindow::slotHelpManual(): appdir: %s",
+                         RS_SYSTEM->getAppDir().latin1());
+-        assistant = new QAssistantClient(RS_SYSTEM->getAppDir()+"/bin", this);
++        assistant = new QAssistantClient("!!QTDIR!!/bin", this);
+ 		connect(assistant, SIGNAL(error(const QString&)), 
+ 			this, SLOT(slotError(const QString&)));
+         QStringList args;

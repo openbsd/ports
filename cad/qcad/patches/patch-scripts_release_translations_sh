@@ -1,0 +1,28 @@
+$OpenBSD: patch-scripts_release_translations_sh,v 1.1 2007/01/09 16:30:38 steven Exp $
+--- scripts/release_translations.sh.orig	Sat Jan  6 21:40:01 2007
++++ scripts/release_translations.sh	Sat Jan  6 21:40:08 2007
+@@ -0,0 +1,24 @@
++#!/bin/sh
++
++cd ..
++cwd=`pwd`
++
++for dir in qcad qcadactions qcadguiqt qcadcmd qcadlib
++do
++	cd $dir/src
++	echo "running lrelease in $dir/src..."
++	find . -type f -name '*.ts' -exec $QTDIR/bin/lrelease '{}' \;
++	find . -type f -name '*.pro' -exec $QTDIR/bin/lrelease '{}' \;
++	cd $cwd
++	
++	cd $dir/src/ts
++		echo "copying from $dir/src/ts..."
++		for tf in *.qm
++		do
++			if [ ! -e $cwd/qcad/qm/$tf ]
++			then
++				cp $cwd/$dir/src/ts/$tf $cwd/qcad/qm/$tf
++			fi
++		done
++	cd $cwd
++done

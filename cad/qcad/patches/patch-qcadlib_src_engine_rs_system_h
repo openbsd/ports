@@ -1,0 +1,13 @@
+$OpenBSD: patch-qcadlib_src_engine_rs_system_h,v 1.1 2007/01/09 16:30:38 steven Exp $
+--- qcadlib/src/engine/rs_system.h.orig	Tue Nov 22 12:52:38 2005
++++ qcadlib/src/engine/rs_system.h	Sat Jan  6 19:49:01 2007
+@@ -125,8 +125,7 @@ public:
+      * @return Absolute path to the documentation.
+      */
+     RS_String getDocPath() {
+-        RS_StringList lst = getDirectoryList("doc");
+-		return lst.first();
++		return "!!DOCDIR!!";
+     }
+ 
+ 	/**

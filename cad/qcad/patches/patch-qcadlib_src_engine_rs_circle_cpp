@@ -1,0 +1,11 @@
+$OpenBSD: patch-qcadlib_src_engine_rs_circle_cpp,v 1.1 2007/01/09 16:30:37 steven Exp $
+--- qcadlib/src/engine/rs_circle.cpp.orig	Tue Nov 22 12:52:38 2005
++++ qcadlib/src/engine/rs_circle.cpp	Thu Jan  4 00:39:42 2007
+@@ -317,6 +317,7 @@ void RS_Circle::draw(RS_Painter* painter
+         // Pattern:
+         RS_LineTypePattern* pat;
+         if (isSelected()) {
++            static RS_LineTypePattern patternSelected(2, 1.0, -3.0);
+             pat = &patternSelected;
+         } else {
+             pat = view->getPattern(getPen().getLineType());

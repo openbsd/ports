@@ -1,51 +1,59 @@
-# $OpenBSD: Makefile,v 1.14 2006/12/02 20:24:17 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2007/01/09 16:30:37 steven Exp $
 
-COMMENT=		"Qt-based 2D CAD system"
+COMMENT=	"Qt-based 2D CAD system"
 
-DISTNAME=		qcad-1.5.4
-PKGNAME=		${DISTNAME}p0
-DISTFILES=		${DISTNAME}-src.tar.gz
-CATEGORIES=     	cad x11
+V=		2.0.5.0
+DISTNAME=	qcad-${V}-1-community.src
+PKGNAME=	qcad-${V}
+CATEGORIES=	cad graphics
 
-HOMEPAGE=		http://www.qcad.org/
+HOMEPAGE=	http://www.ribbonsoft.com/qcad.html
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes 
-PERMIT_PACKAGE_FTP=	Yes 
-PERMIT_DISTFILES_CDROM=	Yes 
-PERMIT_DISTFILES_FTP=	Yes 
-WANTLIB=		X11 c m pthread stdc++
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext c m pthread stdc++
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=qcad/}
+MASTER_SITES=	http://www.ribbonsoft.com/archives/qcad/
 
 MODULES=	x11/qt3
 MODQT_MT=	Yes
+
+USE_GMAKE=	Yes
 USE_X11=	Yes
+NO_REGRESS=	Yes
 
-MAKE_FLAGS= \
-	CXX='${CXX}' \
-	CXXFLAGS='${CXXFLAGS} -pthread -Wall -DQT_NO_DEBUG -DDATADIR=\"${PREFIX}/share\"' \
-	INCPATH='-I${MODQT_INCDIR}' \
-	LINK='${CXX}' \
-	LFLAGS='' \
-	LIBS='-pthread -L${MODQT_LIBDIR} -L${LOCALBASE}/lib -lqt-mt -L${X11BASE}/lib -lX11' \
-	AR='ar cq'
+PORTHOME=	${WRKDIR}
 
-ALL_TARGET=		qcad
-NO_REGRESS=		Yes
+MAKE_ENV+=	QTDIR=${MODQT_LIBDIR} \
+		MAKE=${MAKE_PROGRAM}
+
+pre-configure:
+	@perl -pi -e 's,!!CXXFLAGS!!,${CXXFLAGS},' ${WRKSRC}/mkspecs/defs.pro
+	@perl -pi -e 's,!!DOCDIR!!,${PREFIX}/share/doc/qcad,' \
+		${WRKSRC}/qcadlib/src/engine/rs_system.h
+	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},' \
+		${WRKSRC}/qcadlib/src/engine/rs_system.cpp
+	@perl -pi -e 's,!!QTDIR!!,${MODQT_LIBDIR},' \
+		${WRKSRC}/qcad/src/qc_applicationwindow.cpp
+
+do-build:
+	cd ${WRKBUILD}/scripts && \
+		${SETENV} ${MAKE_ENV} /bin/sh ./build_qcad.sh
 
 do-install:
-	chmod ${DIRMODE} ${WRKSRC}/libraries/mechanical/screws/chc
-	${INSTALL_PROGRAM} ${WRKBUILD}/qcad ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/qcad
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/examples/qcad
-.for dir in cur fonts hatches messages xpm
+	${INSTALL_PROGRAM} ${WRKBUILD}/qcad/qcad ${PREFIX}/bin
+.for dir in fonts patterns qm
 	${INSTALL_DATA_DIR} ${PREFIX}/share/qcad/${dir}
-	${INSTALL_DATA} ${WRKSRC}/${dir}/* ${PREFIX}/share/qcad/${dir}
+	${INSTALL_DATA} ${WRKSRC}/qcad/${dir}/* ${PREFIX}/share/qcad/${dir}
 .endfor
-	${INSTALL_DATA_DIR} ${PREFIX}/share/qcad/libraries
-	cd ${WRKSRC}/libraries; cp -R * ${PREFIX}/share/qcad/libraries 
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/qcad
+	${INSTALL_DATA} ${WRKSRC}/qcad/data/* ${PREFIX}/share/examples/qcad
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/qcad
-	cd ${WRKSRC}/doc; cp -R * ${PREFIX}/share/doc/qcad 
+	cd ${WRKSRC}/qcad/doc && tar cf - . | \
+		tar -C ${PREFIX}/share/doc/qcad -xf -
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/qcad/*
 
 .include <bsd.port.mk>
