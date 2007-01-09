@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_mDNSUNP_c,v 1.1 2007/01/09 10:15:15 millert Exp $
+--- src/mDNSUNP.c.orig	Sun Jan  7 18:10:01 2007
++++ src/mDNSUNP.c	Sun Jan  7 18:12:28 2007
+@@ -159,22 +159,8 @@
+ /* include get_ifi_info2 */
+     for (ptr = buf; ptr < buf + ifc.ifc_len; ) {
+         ifr = (struct ifreq *) ptr;
+-
+-		len = GET_SA_LEN(ifr->ifr_addr);
+-
+-		/* This is completely whacked, and I really need to
+-		 * find out why this is the case, but I need to
+-		 * release a 0.2.2, and as the next stable won't
+-		 * have the apple mDNS included, I guess it's a
+-		 * small price to pay.
+-		 */
+-#ifdef FREEBSD
+-		    ptr += sizeof(ifr->ifr_name) + len; /* for next one in buffer */
+-		//		ptr += sizeof(*ifr);
+-#else
+-
+-		    ptr += sizeof(struct ifreq); /* for next one in buffer */
+-#endif
++	len = GET_SA_LEN(ifr->ifr_addr);
++	ptr += sizeof(ifr->ifr_name) + len; /* for next one in buffer */
+     
+ //        fprintf(stderr, "intf %d name=%s AF=%d\n", index, ifr->ifr_name, ifr->ifr_addr.sa_family);
+         
