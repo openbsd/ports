@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2007/01/09 10:47:37 dlg Exp $
+@comment $OpenBSD: PLIST,v 1.9 2007/01/09 11:18:13 dlg Exp $
 @newgroup _apache2:576
 @newuser _apache2:576:576:daemon:Apache HTTP Server:/var/empty:/sbin/nologin
 include/apache2/
@@ -66,6 +66,7 @@ lib/apache2/mod_authz_host.so
 lib/apache2/mod_authz_owner.so
 lib/apache2/mod_authz_user.so
 lib/apache2/mod_autoindex.so
+lib/apache2/mod_cache.so
 lib/apache2/mod_cern_meta.so
 lib/apache2/mod_cgi.so
 lib/apache2/mod_dav.so
@@ -73,6 +74,7 @@ lib/apache2/mod_dav_fs.so
 lib/apache2/mod_dbd.so
 lib/apache2/mod_deflate.so
 lib/apache2/mod_dir.so
+lib/apache2/mod_disk_cache.so
 lib/apache2/mod_dumpio.so
 lib/apache2/mod_env.so
 lib/apache2/mod_expires.so
@@ -89,6 +91,12 @@ lib/apache2/mod_logio.so
 lib/apache2/mod_mime.so
 lib/apache2/mod_mime_magic.so
 lib/apache2/mod_negotiation.so
+lib/apache2/mod_proxy.so
+lib/apache2/mod_proxy_ajp.so
+lib/apache2/mod_proxy_balancer.so
+lib/apache2/mod_proxy_connect.so
+lib/apache2/mod_proxy_ftp.so
+lib/apache2/mod_proxy_http.so
 lib/apache2/mod_rewrite.so
 lib/apache2/mod_setenvif.so
 lib/apache2/mod_speling.so

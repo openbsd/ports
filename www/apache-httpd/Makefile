@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2007/01/09 10:47:37 dlg Exp $
+# $OpenBSD: Makefile,v 1.12 2007/01/09 11:18:13 dlg Exp $
 
 COMMENT=	"apache HTTP server"
 
 V=		2.2.3
-PKGNAME=	apache-httpd-${V}p7
+PKGNAME=	apache-httpd-${V}p8
 DISTNAME=	httpd-${V}
 
 CATEGORIES=	www net
@@ -44,6 +44,9 @@ CONFIGURE_ARGS+=	--enable-layout=OpenBSD \
 			--with-mpm=prefork \
 			--with-program-name=httpd2 \
 			--enable-modules=all \
+			--enable-cache \
+			--enable-disk-cache \
+			--enable-proxy \
 			--enable-mods-shared=all
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
