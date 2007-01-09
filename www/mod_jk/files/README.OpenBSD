@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.4 2006/01/02 18:24:57 kurt Exp $
+$OpenBSD: README.OpenBSD,v 1.5 2007/01/09 18:42:05 kurt Exp $
 
                           OpenBSD mod_jk Package
                        Apache-Tomcat AJP Connector
@@ -41,7 +41,7 @@ Tomcat 4 or http://your.apache.host/jsp-examples/ for Tomcat 5.
 
 On-line documentation is here:
 
-http://jakarta.apache.org/tomcat/connectors-doc/index.html
+http://tomcat.apache.org/connectors-doc/index.html
 
 The mailing list archives for tomcat-user can be found at:
 

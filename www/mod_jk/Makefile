@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/01/02 18:24:57 kurt Exp $
+# $OpenBSD: Makefile,v 1.9 2007/01/09 18:42:04 kurt Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -6,8 +6,8 @@ SHARED_ONLY=		Yes
 
 COMMENT=		"Apache-Tomcat AJP Connector"
 
-V=			1.2.15
-DISTNAME=		jakarta-tomcat-connectors-${V}-src
+V=			1.2.20
+DISTNAME=		tomcat-connectors-${V}-src
 PKGNAME=		mod_jk-${V}
 CATEGORIES=		www
 
@@ -32,7 +32,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-apxs=/usr/sbin/apxs
 CONFIGURE_ENV+=		CFLAGS='${CFLAGS} -DCHROOTED_APACHE'
 
-WRKSRC=			${WRKDIR}/${DISTNAME}/jk/native
+WRKSRC=			${WRKDIST}/native
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/scripts/build/unix
 
 EXAMPLES=		workers.properties workers.properties.minimal
@@ -41,9 +41,9 @@ SUBST_VARS=		DOCDIR
 
 do-install:
 	sed 's,/usr/local,${TRUEPREFIX},' \
-		< ${FILESDIR}/mod_jk-enable >${WRKSRC}/mod_jk-enable
-	${INSTALL_SCRIPT} ${WRKSRC}/mod_jk-enable ${PREFIX}/sbin/mod_jk-enable
-	${INSTALL_DATA} ${WRKBUILD}/apache-1.3/mod_jk.so.0.0 ${PREFIX}/lib/mod_jk.so
+		< ${FILESDIR}/mod_jk-enable >${WRKBUILD}/mod_jk-enable
+	${INSTALL_SCRIPT} ${WRKBUILD}/mod_jk-enable ${PREFIX}/sbin/mod_jk-enable
+	${INSTALL_DATA} ${WRKBUILD}/apache-1.3/mod_jk.so ${PREFIX}/lib/mod_jk.so
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mod_jk
 	${INSTALL_DATA} ${FILESDIR}/mod_jk.conf ${PREFIX}/share/examples/mod_jk
 .for file in ${EXAMPLES}
@@ -51,9 +51,9 @@ do-install:
 .endfor
 	${INSTALL_DATA_DIR} ${DOCDIR}
 	sed 's,/usr/local,${TRUEPREFIX},' \
-		< ${FILESDIR}/README.OpenBSD >${WRKSRC}/README.OpenBSD
-	${INSTALL_DATA} ${WRKSRC}/README.OpenBSD ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/LICENSE ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/NOTICE ${DOCDIR}
+		< ${FILESDIR}/README.OpenBSD >${WRKBUILD}/README.OpenBSD
+	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD ${DOCDIR}
+	${INSTALL_DATA} ${WRKDIST}/LICENSE ${DOCDIR}
+	${INSTALL_DATA} ${WRKDIST}/NOTICE ${DOCDIR}
 
 .include "bsd.port.mk"

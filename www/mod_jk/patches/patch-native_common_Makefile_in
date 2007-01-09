@@ -1,0 +1,12 @@
+$OpenBSD: patch-native_common_Makefile_in,v 1.1 2007/01/09 18:42:05 kurt Exp $
+--- native/common/Makefile.in.orig	Mon Jan  8 08:38:41 2007
++++ native/common/Makefile.in	Mon Jan  8 08:38:25 2007
+@@ -17,7 +17,7 @@ OEXT=.lo
+ include list.mk
+ 
+ JAVA_INCL=-I @JAVA_HOME@/include -I @JAVA_HOME@/include/@OS@
+-CFLAGS=@apache_include@ @CFLAGS@ ${APXSCFLAGS} ${APXSCPPFLAGS} ${JAVA_INCL}
++CFLAGS=@apache_include@ -I ${top_builddir}/common @CFLAGS@ ${APXSCFLAGS} ${APXSCPPFLAGS} ${JAVA_INCL}
+ 
+ include @top_srcdir@/scripts/build/rules.mk
+ 

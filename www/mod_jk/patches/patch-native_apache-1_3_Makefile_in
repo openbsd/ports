@@ -1,0 +1,28 @@
+$OpenBSD: patch-native_apache-1_3_Makefile_in,v 1.1 2007/01/09 18:42:05 kurt Exp $
+--- native/apache-1.3/Makefile.in.orig	Tue Oct  3 09:18:44 2006
++++ native/apache-1.3/Makefile.in	Mon Jan  8 09:04:09 2007
+@@ -25,7 +25,7 @@ BUILD_DIR = ${JK_DIR}/../build/jk/apache
+ APACHE_FILES = Makefile.tmpl Makefile.libdir libjk.module
+ 
+ JK=../common/
+-JK_INCL=-DUSE_APACHE_MD5 -I ${top_srcdir}/common
++JK_INCL=-DUSE_APACHE_MD5 -I ${top_srcdir}/common -I ${top_builddir}/common
+ JAVA_INCL=-I ${JAVA_HOME}/include -I ${JAVA_HOME}/include/${OS}
+ JAVA_LIB=-L ${JAVA_HOME}/jre/lib/${ARCH} -L ${JAVA_HOME}/lib/${ARCH}/native_threads
+ APACHE_CFLAGS=@apache_include@ @APXSCFLAGS@ @APXSCPPFLAGS@ -I${top_srcdir}/common
+@@ -85,13 +85,13 @@ mod_jk.a: mod_jk.lo $(APACHE_OBJECTS)
+ 	 ${MOD_LINK} -o $@ $^
+ 
+ mod_jk.so: mod_jk.la
+-	../scripts/build/instdso.sh SH_LIBTOOL='$(LIBTOOL)' mod_jk.la `pwd`
++	${top_srcdir}/scripts/build/instdso.sh SH_LIBTOOL='$(LIBTOOL)' mod_jk.la `pwd`
+ 
+ #
+ # Common part.
+ #
+ mod_jk.lo: mod_jk.c
+-	${SH_COMPILE} -c mod_jk.c -o $@
++	${SH_COMPILE} -c ${srcdir}/mod_jk.c -o $@
+ 
+ .c.lo:
+ 	${SH_COMPILE} -c $< -o $@
