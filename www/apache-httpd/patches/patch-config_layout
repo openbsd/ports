@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_layout,v 1.4 2007/01/09 09:56:57 dlg Exp $
+$OpenBSD: patch-config_layout,v 1.5 2007/01/09 10:47:37 dlg Exp $
 --- config.layout.orig	Tue Jan  9 06:59:42 2007
 +++ config.layout	Tue Jan  9 07:00:28 2007
 @@ -252,26 +252,26 @@
@@ -15,7 +15,7 @@ $OpenBSD: patch-config_layout,v 1.4 2007/01/09 09:56:57 dlg Exp $
 -    libexecdir:    ${exec_prefix}/lib/apache/modules
 -    mandir:        ${exec_prefix}/share/man
 -    sysconfdir:    ${prefix}/conf
-+    libexecdir:    ${exec_prefix}/lib
++    libexecdir:    ${exec_prefix}/lib/apache2
 +    mandir:        ${exec_prefix}/man
      datadir:       ${prefix}
 -    installbuilddir: ${prefix}/build

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/01/05 22:57:11 dlg Exp $
+@comment $OpenBSD: PLIST,v 1.8 2007/01/09 10:47:37 dlg Exp $
 @newgroup _apache2:576
 @newuser _apache2:576:576:daemon:Apache HTTP Server:/var/empty:/sbin/nologin
 include/apache2/
@@ -47,7 +47,58 @@ include/apache2/util_md5.h
 include/apache2/util_script.h
 include/apache2/util_time.h
 include/apache2/util_xml.h
-lib/httpd.exp
+lib/apache2/
+lib/apache2/httpd.exp
+lib/apache2/mod_actions.so
+lib/apache2/mod_alias.so
+lib/apache2/mod_asis.so
+lib/apache2/mod_auth_basic.so
+lib/apache2/mod_auth_digest.so
+lib/apache2/mod_authn_anon.so
+lib/apache2/mod_authn_dbd.so
+lib/apache2/mod_authn_dbm.so
+lib/apache2/mod_authn_default.so
+lib/apache2/mod_authn_file.so
+lib/apache2/mod_authz_dbm.so
+lib/apache2/mod_authz_default.so
+lib/apache2/mod_authz_groupfile.so
+lib/apache2/mod_authz_host.so
+lib/apache2/mod_authz_owner.so
+lib/apache2/mod_authz_user.so
+lib/apache2/mod_autoindex.so
+lib/apache2/mod_cern_meta.so
+lib/apache2/mod_cgi.so
+lib/apache2/mod_dav.so
+lib/apache2/mod_dav_fs.so
+lib/apache2/mod_dbd.so
+lib/apache2/mod_deflate.so
+lib/apache2/mod_dir.so
+lib/apache2/mod_dumpio.so
+lib/apache2/mod_env.so
+lib/apache2/mod_expires.so
+lib/apache2/mod_ext_filter.so
+lib/apache2/mod_filter.so
+lib/apache2/mod_headers.so
+lib/apache2/mod_ident.so
+lib/apache2/mod_imagemap.so
+lib/apache2/mod_include.so
+lib/apache2/mod_info.so
+lib/apache2/mod_log_config.so
+lib/apache2/mod_log_forensic.so
+lib/apache2/mod_logio.so
+lib/apache2/mod_mime.so
+lib/apache2/mod_mime_magic.so
+lib/apache2/mod_negotiation.so
+lib/apache2/mod_rewrite.so
+lib/apache2/mod_setenvif.so
+lib/apache2/mod_speling.so
+lib/apache2/mod_ssl.so
+lib/apache2/mod_status.so
+lib/apache2/mod_unique_id.so
+lib/apache2/mod_userdir.so
+lib/apache2/mod_usertrack.so
+lib/apache2/mod_version.so
+lib/apache2/mod_vhost_alias.so
 @man man/man1/dbmmanage2.1
 @man man/man1/htdbm.1
 @man man/man1/htdigest2.1

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2007/01/09 09:56:57 dlg Exp $
+# $OpenBSD: Makefile,v 1.11 2007/01/09 10:47:37 dlg Exp $
 
 COMMENT=	"apache HTTP server"
 
 V=		2.2.3
-PKGNAME=	apache-httpd-${V}p6
+PKGNAME=	apache-httpd-${V}p7
 DISTNAME=	httpd-${V}
 
 CATEGORIES=	www net
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+SHARED_ONLY=		Yes
 NO_REGRESS=		Yes
 
 WANTLIB=		c crypto m ssl expat apr-1 db.>=4
@@ -41,7 +42,9 @@ CONFIGURE_ARGS+=	--enable-layout=OpenBSD \
 			--with-apr-util=${LOCALBASE} \
 			--enable-ssl --with-ssl=/usr \
 			--with-mpm=prefork \
-			--with-program-name=httpd2
+			--with-program-name=httpd2 \
+			--enable-modules=all \
+			--enable-mods-shared=all
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
