@@ -1,5 +1,5 @@
---- vl.c.orig	Mon Dec 18 16:55:53 2006
-+++ vl.c	Mon Dec 18 17:06:04 2006
+--- vl.c.orig	Sat Jul 22 19:23:34 2006
++++ vl.c	Wed Jan  3 15:14:21 2007
 @@ -43,7 +43,8 @@
  #include <netdb.h>
  #ifdef _BSD
@@ -123,6 +123,15 @@
  
      fstat(fd, &s);
      dev = devname(s.st_rdev, S_IFCHR);
+@@ -3279,7 +3354,7 @@ static int net_socket_mcast_create(struc
+     /* Force mcast msgs to loopback (eg. several QEMUs in same host */
+     val = 1;
+     ret=setsockopt(fd, IPPROTO_IP, IP_MULTICAST_LOOP, 
+-                   (const char *)&val, sizeof(val));
++                   (const char *)&val, sizeof(char));
+     if (ret < 0) {
+ 	perror("setsockopt(SOL_IP, IP_MULTICAST_LOOP)");
+ 	goto fail;
 @@ -3535,7 +3610,8 @@ static int net_socket_mcast_init(VLANSta
  
  }
