@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/01/10 13:51:50 dlg Exp $
+# $OpenBSD: Makefile,v 1.2 2007/01/10 14:22:00 dlg Exp $
 
 NOT_FOR_ARCHS=  ${NO_SHARED_ARCHS}
 
 COMMENT=        "module that embeds a Perl interpreter into Apache2"
 
-DISTNAME=	mod_perl-2.0.3
+DISTNAME=	mod_perl-2.0.3p0
 PKGNAME=	ap2-${DISTNAME}
 CATEGORIES=	www net
 
