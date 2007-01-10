@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.103 2006/11/28 23:43:54 espie Exp $
+# $OpenBSD: network.conf.template,v 1.104 2007/01/10 23:06:41 steven Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -184,23 +184,6 @@ MASTER_SITE_AFTERSTEP+=	\
 
 MASTER_SITE_WINDOWMAKER+=	\
 	ftp://ftp.windowmaker.info/pub/
-
-MASTER_SITE_SOURCEWARE+=	\
-	ftp://mirrors.rcn.net/mirrors/sources.redhat.com/ \
-	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/sources.redhat.com/ \
-	ftp://ftp.chg.ru/pub/sourceware/ \
-	ftp://ftp.fic.uni.lodz.pl/pub/sources.redhat.com/pub/ \
-	ftp://ftp.funet.fi/pub/mirrors/sourceware.cygnus.com/pub/ \
-	ftp://ftp.pvv.ntnu.no/pub/cygnus/sourceware.cygnus.com/ \
-	ftp://ftp.sdn.co.za/mirrors/sourceware.cygnus.com/pub/ \
-	ftp://ftp.sun.ac.za/sites/sourceware.cygnus.com/pub/ \
-	ftp://ftp.unina.it/pub/Unix/cygnus/ \
-	ftp://ftp1.sinica.edu.tw/pub3/CYGNUS/ \
-	ftp://gd.tuwien.ac.at/gnu/sourceware/ \
-	ftp://sunsite.org.uk/Mirrors/sourceware.cygnus.com/pub/ \
-	ftp://sysg.kek.jp/cygnus/ \
-	ftp://unix.hensa.ac.uk/mirrors/sourceware.cygnus.com/pub/ \
-	ftp://www.carfield.com.hk/mirror/sources.redhat.com/	
 
 MASTER_SITE_FREEBSD_LOCAL+=	\
 	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/ \
