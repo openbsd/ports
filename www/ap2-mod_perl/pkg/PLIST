@@ -1,0 +1,421 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/10 13:51:50 dlg Exp $
+bin/mp2bug
+include/apache2/mod_perl.h
+include/apache2/modperl_apache_compat.h
+include/apache2/modperl_apache_includes.h
+include/apache2/modperl_apr_compat.h
+include/apache2/modperl_apr_includes.h
+include/apache2/modperl_apr_perlio.h
+include/apache2/modperl_bucket.h
+include/apache2/modperl_callback.h
+include/apache2/modperl_cgi.h
+include/apache2/modperl_cmd.h
+include/apache2/modperl_common_includes.h
+include/apache2/modperl_common_log.h
+include/apache2/modperl_common_types.h
+include/apache2/modperl_common_util.h
+include/apache2/modperl_config.h
+include/apache2/modperl_const.h
+include/apache2/modperl_constants.h
+include/apache2/modperl_debug.h
+include/apache2/modperl_directives.h
+include/apache2/modperl_env.h
+include/apache2/modperl_error.h
+include/apache2/modperl_filter.h
+include/apache2/modperl_flags.h
+include/apache2/modperl_global.h
+include/apache2/modperl_gtop.h
+include/apache2/modperl_handler.h
+include/apache2/modperl_hooks.h
+include/apache2/modperl_interp.h
+include/apache2/modperl_io.h
+include/apache2/modperl_io_apache.h
+include/apache2/modperl_largefiles.h
+include/apache2/modperl_log.h
+include/apache2/modperl_mgv.h
+include/apache2/modperl_module.h
+include/apache2/modperl_options.h
+include/apache2/modperl_pcw.h
+include/apache2/modperl_perl.h
+include/apache2/modperl_perl_global.h
+include/apache2/modperl_perl_includes.h
+include/apache2/modperl_perl_pp.h
+include/apache2/modperl_perl_unembed.h
+include/apache2/modperl_svptr_table.h
+include/apache2/modperl_sys.h
+include/apache2/modperl_time.h
+include/apache2/modperl_tipool.h
+include/apache2/modperl_trace.h
+include/apache2/modperl_types.h
+include/apache2/modperl_util.h
+include/apache2/modperl_xs_sv_convert.h
+include/apache2/modperl_xs_typedefs.h
+include/apache2/modperl_xs_util.h
+lib/apache2/mod_perl.so
+${P5ARCH}/
+${P5ARCH}/APR/
+${P5ARCH}/APR.pm
+${P5ARCH}/APR/Base64.pm
+${P5ARCH}/APR/Brigade.pm
+${P5ARCH}/APR/Bucket.pm
+${P5ARCH}/APR/BucketAlloc.pm
+${P5ARCH}/APR/BucketType.pm
+${P5ARCH}/APR/Const.pm
+${P5ARCH}/APR/Date.pm
+${P5ARCH}/APR/Error.pm
+${P5ARCH}/APR/Finfo.pm
+${P5ARCH}/APR/IpSubnet.pm
+${P5ARCH}/APR/OS.pm
+${P5ARCH}/APR/PerlIO.pm
+${P5ARCH}/APR/Pool.pm
+${P5ARCH}/APR/SockAddr.pm
+${P5ARCH}/APR/Socket.pm
+${P5ARCH}/APR/Status.pm
+${P5ARCH}/APR/String.pm
+${P5ARCH}/APR/Table.pm
+${P5ARCH}/APR/URI.pm
+${P5ARCH}/APR/UUID.pm
+${P5ARCH}/APR/Util.pm
+${P5ARCH}/APR/XSLoader.pm
+${P5ARCH}/Apache/
+${P5ARCH}/Apache/Test.pm
+${P5ARCH}/Apache/Test5005compat.pm
+${P5ARCH}/Apache/TestBuild.pm
+${P5ARCH}/Apache/TestClient.pm
+${P5ARCH}/Apache/TestCommon.pm
+${P5ARCH}/Apache/TestCommonPost.pm
+${P5ARCH}/Apache/TestConfig.pm
+${P5ARCH}/Apache/TestConfigC.pm
+${P5ARCH}/Apache/TestConfigPHP.pm
+${P5ARCH}/Apache/TestConfigParrot.pm
+${P5ARCH}/Apache/TestConfigParse.pm
+${P5ARCH}/Apache/TestConfigPerl.pm
+${P5ARCH}/Apache/TestHandler.pm
+${P5ARCH}/Apache/TestHarness.pm
+${P5ARCH}/Apache/TestHarnessPHP.pm
+${P5ARCH}/Apache/TestMB.pm
+${P5ARCH}/Apache/TestMM.pm
+${P5ARCH}/Apache/TestPerlDB.pm
+${P5ARCH}/Apache/TestReport.pm
+${P5ARCH}/Apache/TestReportPerl.pm
+${P5ARCH}/Apache/TestRequest.pm
+${P5ARCH}/Apache/TestRun.pm
+${P5ARCH}/Apache/TestRunPHP.pm
+${P5ARCH}/Apache/TestRunParrot.pm
+${P5ARCH}/Apache/TestRunPerl.pm
+${P5ARCH}/Apache/TestSSLCA.pm
+${P5ARCH}/Apache/TestServer.pm
+${P5ARCH}/Apache/TestSmoke.pm
+${P5ARCH}/Apache/TestSmokePerl.pm
+${P5ARCH}/Apache/TestSort.pm
+${P5ARCH}/Apache/TestTrace.pm
+${P5ARCH}/Apache/TestUtil.pm
+${P5ARCH}/Apache2/
+${P5ARCH}/Apache2/Access.pm
+${P5ARCH}/Apache2/Build.pm
+${P5ARCH}/Apache2/BuildConfig.pm
+${P5ARCH}/Apache2/CmdParms.pm
+${P5ARCH}/Apache2/Command.pm
+${P5ARCH}/Apache2/Connection.pm
+${P5ARCH}/Apache2/ConnectionUtil.pm
+${P5ARCH}/Apache2/Const.pm
+${P5ARCH}/Apache2/Directive.pm
+${P5ARCH}/Apache2/Filter.pm
+${P5ARCH}/Apache2/FilterRec.pm
+${P5ARCH}/Apache2/HookRun.pm
+${P5ARCH}/Apache2/Log.pm
+${P5ARCH}/Apache2/MPM.pm
+${P5ARCH}/Apache2/Module.pm
+${P5ARCH}/Apache2/ParseSource.pm
+${P5ARCH}/Apache2/PerlSections/
+${P5ARCH}/Apache2/PerlSections.pm
+${P5ARCH}/Apache2/PerlSections/Dump.pm
+${P5ARCH}/Apache2/Process.pm
+${P5ARCH}/Apache2/Reload.pm
+${P5ARCH}/Apache2/RequestIO.pm
+${P5ARCH}/Apache2/RequestRec.pm
+${P5ARCH}/Apache2/RequestUtil.pm
+${P5ARCH}/Apache2/Resource.pm
+${P5ARCH}/Apache2/Response.pm
+${P5ARCH}/Apache2/ServerRec.pm
+${P5ARCH}/Apache2/ServerUtil.pm
+${P5ARCH}/Apache2/SizeLimit.pm
+${P5ARCH}/Apache2/SourceTables.pm
+${P5ARCH}/Apache2/Status.pm
+${P5ARCH}/Apache2/SubProcess.pm
+${P5ARCH}/Apache2/SubRequest.pm
+${P5ARCH}/Apache2/URI.pm
+${P5ARCH}/Apache2/Util.pm
+${P5ARCH}/Apache2/XSLoader.pm
+${P5ARCH}/Apache2/compat.pm
+${P5ARCH}/Apache2/porting.pm
+${P5ARCH}/Bundle/
+${P5ARCH}/Bundle/Apache2.pm
+${P5ARCH}/Bundle/ApacheTest.pm
+${P5ARCH}/ModPerl/
+${P5ARCH}/ModPerl/BuildMM.pm
+${P5ARCH}/ModPerl/BuildOptions.pm
+${P5ARCH}/ModPerl/CScan.pm
+${P5ARCH}/ModPerl/Code.pm
+${P5ARCH}/ModPerl/Config.pm
+${P5ARCH}/ModPerl/Const.pm
+${P5ARCH}/ModPerl/FunctionMap.pm
+${P5ARCH}/ModPerl/Global.pm
+${P5ARCH}/ModPerl/MM.pm
+${P5ARCH}/ModPerl/Manifest.pm
+${P5ARCH}/ModPerl/MapUtil.pm
+${P5ARCH}/ModPerl/MethodLookup.pm
+${P5ARCH}/ModPerl/ParseSource.pm
+${P5ARCH}/ModPerl/PerlRun.pm
+${P5ARCH}/ModPerl/PerlRunPrefork.pm
+${P5ARCH}/ModPerl/Registry.pm
+${P5ARCH}/ModPerl/RegistryBB.pm
+${P5ARCH}/ModPerl/RegistryCooker.pm
+${P5ARCH}/ModPerl/RegistryLoader.pm
+${P5ARCH}/ModPerl/RegistryPrefork.pm
+${P5ARCH}/ModPerl/StructureMap.pm
+${P5ARCH}/ModPerl/TestReport.pm
+${P5ARCH}/ModPerl/TestRun.pm
+${P5ARCH}/ModPerl/TypeMap.pm
+${P5ARCH}/ModPerl/Util.pm
+${P5ARCH}/ModPerl/WrapXS.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/APR/
+${P5ARCH}/auto/APR/APR.bs
+${P5ARCH}/auto/APR/APR.so
+${P5ARCH}/auto/APR/Base64/
+${P5ARCH}/auto/APR/Base64/Base64.bs
+${P5ARCH}/auto/APR/Base64/Base64.so
+${P5ARCH}/auto/APR/Brigade/
+${P5ARCH}/auto/APR/Brigade/Brigade.bs
+${P5ARCH}/auto/APR/Brigade/Brigade.so
+${P5ARCH}/auto/APR/Bucket/
+${P5ARCH}/auto/APR/Bucket/Bucket.bs
+${P5ARCH}/auto/APR/Bucket/Bucket.so
+${P5ARCH}/auto/APR/BucketAlloc/
+${P5ARCH}/auto/APR/BucketAlloc/BucketAlloc.bs
+${P5ARCH}/auto/APR/BucketAlloc/BucketAlloc.so
+${P5ARCH}/auto/APR/BucketType/
+${P5ARCH}/auto/APR/BucketType/BucketType.bs
+${P5ARCH}/auto/APR/BucketType/BucketType.so
+${P5ARCH}/auto/APR/Const/
+${P5ARCH}/auto/APR/Const/Const.bs
+${P5ARCH}/auto/APR/Const/Const.so
+${P5ARCH}/auto/APR/Date/
+${P5ARCH}/auto/APR/Date/Date.bs
+${P5ARCH}/auto/APR/Date/Date.so
+${P5ARCH}/auto/APR/Error/
+${P5ARCH}/auto/APR/Error/Error.bs
+${P5ARCH}/auto/APR/Error/Error.so
+${P5ARCH}/auto/APR/Finfo/
+${P5ARCH}/auto/APR/Finfo/Finfo.bs
+${P5ARCH}/auto/APR/Finfo/Finfo.so
+${P5ARCH}/auto/APR/IpSubnet/
+${P5ARCH}/auto/APR/IpSubnet/IpSubnet.bs
+${P5ARCH}/auto/APR/IpSubnet/IpSubnet.so
+${P5ARCH}/auto/APR/OS/
+${P5ARCH}/auto/APR/OS/OS.bs
+${P5ARCH}/auto/APR/OS/OS.so
+${P5ARCH}/auto/APR/PerlIO/
+${P5ARCH}/auto/APR/PerlIO/PerlIO.bs
+${P5ARCH}/auto/APR/PerlIO/PerlIO.so
+${P5ARCH}/auto/APR/Pool/
+${P5ARCH}/auto/APR/Pool/Pool.bs
+${P5ARCH}/auto/APR/Pool/Pool.so
+${P5ARCH}/auto/APR/SockAddr/
+${P5ARCH}/auto/APR/SockAddr/SockAddr.bs
+${P5ARCH}/auto/APR/SockAddr/SockAddr.so
+${P5ARCH}/auto/APR/Socket/
+${P5ARCH}/auto/APR/Socket/Socket.bs
+${P5ARCH}/auto/APR/Socket/Socket.so
+${P5ARCH}/auto/APR/Status/
+${P5ARCH}/auto/APR/Status/Status.bs
+${P5ARCH}/auto/APR/Status/Status.so
+${P5ARCH}/auto/APR/String/
+${P5ARCH}/auto/APR/String/String.bs
+${P5ARCH}/auto/APR/String/String.so
+${P5ARCH}/auto/APR/Table/
+${P5ARCH}/auto/APR/Table/Table.bs
+${P5ARCH}/auto/APR/Table/Table.so
+${P5ARCH}/auto/APR/URI/
+${P5ARCH}/auto/APR/URI/URI.bs
+${P5ARCH}/auto/APR/URI/URI.so
+${P5ARCH}/auto/APR/UUID/
+${P5ARCH}/auto/APR/UUID/UUID.bs
+${P5ARCH}/auto/APR/UUID/UUID.so
+${P5ARCH}/auto/APR/Util/
+${P5ARCH}/auto/APR/Util/Util.bs
+${P5ARCH}/auto/APR/Util/Util.so
+${P5ARCH}/auto/Apache2/
+${P5ARCH}/auto/Apache2/Access/
+${P5ARCH}/auto/Apache2/Access/Access.bs
+${P5ARCH}/auto/Apache2/Access/Access.so
+${P5ARCH}/auto/Apache2/Build/
+${P5ARCH}/auto/Apache2/Build/autosplit.ix
+${P5ARCH}/auto/Apache2/CmdParms/
+${P5ARCH}/auto/Apache2/CmdParms/CmdParms.bs
+${P5ARCH}/auto/Apache2/CmdParms/CmdParms.so
+${P5ARCH}/auto/Apache2/Command/
+${P5ARCH}/auto/Apache2/Command/Command.bs
+${P5ARCH}/auto/Apache2/Command/Command.so
+${P5ARCH}/auto/Apache2/Connection/
+${P5ARCH}/auto/Apache2/Connection/Connection.bs
+${P5ARCH}/auto/Apache2/Connection/Connection.so
+${P5ARCH}/auto/Apache2/ConnectionUtil/
+${P5ARCH}/auto/Apache2/ConnectionUtil/ConnectionUtil.bs
+${P5ARCH}/auto/Apache2/ConnectionUtil/ConnectionUtil.so
+${P5ARCH}/auto/Apache2/Const/
+${P5ARCH}/auto/Apache2/Const/Const.bs
+${P5ARCH}/auto/Apache2/Const/Const.so
+${P5ARCH}/auto/Apache2/Directive/
+${P5ARCH}/auto/Apache2/Directive/Directive.bs
+${P5ARCH}/auto/Apache2/Directive/Directive.so
+${P5ARCH}/auto/Apache2/Filter/
+${P5ARCH}/auto/Apache2/Filter/Filter.bs
+${P5ARCH}/auto/Apache2/Filter/Filter.so
+${P5ARCH}/auto/Apache2/FilterRec/
+${P5ARCH}/auto/Apache2/FilterRec/FilterRec.bs
+${P5ARCH}/auto/Apache2/FilterRec/FilterRec.so
+${P5ARCH}/auto/Apache2/HookRun/
+${P5ARCH}/auto/Apache2/HookRun/HookRun.bs
+${P5ARCH}/auto/Apache2/HookRun/HookRun.so
+${P5ARCH}/auto/Apache2/Log/
+${P5ARCH}/auto/Apache2/Log/Log.bs
+${P5ARCH}/auto/Apache2/Log/Log.so
+${P5ARCH}/auto/Apache2/MPM/
+${P5ARCH}/auto/Apache2/MPM/MPM.bs
+${P5ARCH}/auto/Apache2/MPM/MPM.so
+${P5ARCH}/auto/Apache2/Module/
+${P5ARCH}/auto/Apache2/Module/Module.bs
+${P5ARCH}/auto/Apache2/Module/Module.so
+${P5ARCH}/auto/Apache2/Process/
+${P5ARCH}/auto/Apache2/Process/Process.bs
+${P5ARCH}/auto/Apache2/Process/Process.so
+${P5ARCH}/auto/Apache2/RequestIO/
+${P5ARCH}/auto/Apache2/RequestIO/RequestIO.bs
+${P5ARCH}/auto/Apache2/RequestIO/RequestIO.so
+${P5ARCH}/auto/Apache2/RequestRec/
+${P5ARCH}/auto/Apache2/RequestRec/RequestRec.bs
+${P5ARCH}/auto/Apache2/RequestRec/RequestRec.so
+${P5ARCH}/auto/Apache2/RequestUtil/
+${P5ARCH}/auto/Apache2/RequestUtil/RequestUtil.bs
+${P5ARCH}/auto/Apache2/RequestUtil/RequestUtil.so
+${P5ARCH}/auto/Apache2/Response/
+${P5ARCH}/auto/Apache2/Response/Response.bs
+${P5ARCH}/auto/Apache2/Response/Response.so
+${P5ARCH}/auto/Apache2/ServerRec/
+${P5ARCH}/auto/Apache2/ServerRec/ServerRec.bs
+${P5ARCH}/auto/Apache2/ServerRec/ServerRec.so
+${P5ARCH}/auto/Apache2/ServerUtil/
+${P5ARCH}/auto/Apache2/ServerUtil/ServerUtil.bs
+${P5ARCH}/auto/Apache2/ServerUtil/ServerUtil.so
+${P5ARCH}/auto/Apache2/SubProcess/
+${P5ARCH}/auto/Apache2/SubProcess/SubProcess.bs
+${P5ARCH}/auto/Apache2/SubProcess/SubProcess.so
+${P5ARCH}/auto/Apache2/SubRequest/
+${P5ARCH}/auto/Apache2/SubRequest/SubRequest.bs
+${P5ARCH}/auto/Apache2/SubRequest/SubRequest.so
+${P5ARCH}/auto/Apache2/URI/
+${P5ARCH}/auto/Apache2/URI/URI.bs
+${P5ARCH}/auto/Apache2/URI/URI.so
+${P5ARCH}/auto/Apache2/Util/
+${P5ARCH}/auto/Apache2/Util/Util.bs
+${P5ARCH}/auto/Apache2/Util/Util.so
+${P5ARCH}/auto/Apache2/typemap
+${P5ARCH}/auto/ModPerl/
+${P5ARCH}/auto/ModPerl/Const/
+${P5ARCH}/auto/ModPerl/Const/Const.bs
+${P5ARCH}/auto/ModPerl/Const/Const.so
+${P5ARCH}/auto/ModPerl/Global/
+${P5ARCH}/auto/ModPerl/Global/Global.bs
+${P5ARCH}/auto/ModPerl/Global/Global.so
+${P5ARCH}/auto/ModPerl/Util/
+${P5ARCH}/auto/ModPerl/Util/Util.bs
+${P5ARCH}/auto/ModPerl/Util/Util.so
+${P5ARCH}/mod_perl2.pm
+@man man/man3p/APR.3p
+@man man/man3p/APR::Base64.3p
+@man man/man3p/APR::Brigade.3p
+@man man/man3p/APR::Bucket.3p
+@man man/man3p/APR::BucketAlloc.3p
+@man man/man3p/APR::BucketType.3p
+@man man/man3p/APR::Const.3p
+@man man/man3p/APR::Date.3p
+@man man/man3p/APR::Error.3p
+@man man/man3p/APR::Finfo.3p
+@man man/man3p/APR::IpSubnet.3p
+@man man/man3p/APR::OS.3p
+@man man/man3p/APR::PerlIO.3p
+@man man/man3p/APR::Pool.3p
+@man man/man3p/APR::SockAddr.3p
+@man man/man3p/APR::Socket.3p
+@man man/man3p/APR::Status.3p
+@man man/man3p/APR::String.3p
+@man man/man3p/APR::Table.3p
+@man man/man3p/APR::ThreadMutex.3p
+@man man/man3p/APR::URI.3p
+@man man/man3p/APR::UUID.3p
+@man man/man3p/APR::Util.3p
+@man man/man3p/Apache2::Access.3p
+@man man/man3p/Apache2::Build.3p
+@man man/man3p/Apache2::CmdParms.3p
+@man man/man3p/Apache2::Command.3p
+@man man/man3p/Apache2::Connection.3p
+@man man/man3p/Apache2::ConnectionUtil.3p
+@man man/man3p/Apache2::Const.3p
+@man man/man3p/Apache2::Directive.3p
+@man man/man3p/Apache2::Filter.3p
+@man man/man3p/Apache2::FilterRec.3p
+@man man/man3p/Apache2::HookRun.3p
+@man man/man3p/Apache2::Log.3p
+@man man/man3p/Apache2::MPM.3p
+@man man/man3p/Apache2::Module.3p
+@man man/man3p/Apache2::PerlSections.3p
+@man man/man3p/Apache2::Process.3p
+@man man/man3p/Apache2::Reload.3p
+@man man/man3p/Apache2::RequestIO.3p
+@man man/man3p/Apache2::RequestRec.3p
+@man man/man3p/Apache2::RequestUtil.3p
+@man man/man3p/Apache2::Resource.3p
+@man man/man3p/Apache2::Response.3p
+@man man/man3p/Apache2::ServerRec.3p
+@man man/man3p/Apache2::ServerUtil.3p
+@man man/man3p/Apache2::SizeLimit.3p
+@man man/man3p/Apache2::Status.3p
+@man man/man3p/Apache2::SubProcess.3p
+@man man/man3p/Apache2::SubRequest.3p
+@man man/man3p/Apache2::URI.3p
+@man man/man3p/Apache2::Util.3p
+@man man/man3p/Apache2::compat.3p
+@man man/man3p/Apache2::porting.3p
+@man man/man3p/Apache::Test.3p
+@man man/man3p/Apache::TestConfig.3p
+@man man/man3p/Apache::TestMB.3p
+@man man/man3p/Apache::TestMM.3p
+@man man/man3p/Apache::TestReport.3p
+@man man/man3p/Apache::TestRequest.3p
+@man man/man3p/Apache::TestRun.3p
+@man man/man3p/Apache::TestRunPHP.3p
+@man man/man3p/Apache::TestRunPerl.3p
+@man man/man3p/Apache::TestSmoke.3p
+@man man/man3p/Apache::TestTrace.3p
+@man man/man3p/Apache::TestUtil.3p
+@man man/man3p/Bundle::Apache2.3p
+@man man/man3p/Bundle::ApacheTest.3p
+@man man/man3p/ModPerl::BuildMM.3p
+@man man/man3p/ModPerl::CScan.3p
+@man man/man3p/ModPerl::Code.3p
+@man man/man3p/ModPerl::Config.3p
+@man man/man3p/ModPerl::Const.3p
+@man man/man3p/ModPerl::Global.3p
+@man man/man3p/ModPerl::MM.3p
+@man man/man3p/ModPerl::MethodLookup.3p
+@man man/man3p/ModPerl::PerlRun.3p
+@man man/man3p/ModPerl::PerlRunPrefork.3p
+@man man/man3p/ModPerl::Registry.3p
+@man man/man3p/ModPerl::RegistryBB.3p
+@man man/man3p/ModPerl::RegistryCooker.3p
+@man man/man3p/ModPerl::RegistryLoader.3p
+@man man/man3p/ModPerl::RegistryPrefork.3p
+@man man/man3p/ModPerl::Util.3p
+@man man/man3p/mod_perl2.3p

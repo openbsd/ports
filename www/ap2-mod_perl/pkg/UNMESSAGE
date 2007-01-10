@@ -1,0 +1,8 @@
+To completely deinstall this package you need to perform these steps as
+root:
+
+        edit /etc/apache2/httpd2.conf
+        remove the line LoadModule perl_module
+
+Do not do this if you plan on re-installing this package at some future
+time.

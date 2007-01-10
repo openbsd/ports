@@ -1,0 +1,10 @@
+The Apache/Perl integration project brings together the full power of the
+Perl programming language and the Apache HTTP server. This is achieved by
+linking the Perl runtime library into the server and providing an object
+oriented Perl interface to the server's C language API.
+
+These pieces are seamlessly glued together by the `mod_perl' server
+plugin, making it is possible to write Apache modules entirely in Perl.
+In addition, the persistent interpreter embedded in the server avoids the
+overhead of starting an external interpreter program and the additional
+Perl start-up (compile) time.
