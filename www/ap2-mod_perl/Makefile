@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/01/10 14:24:35 dlg Exp $
-
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+# $OpenBSD: Makefile,v 1.4 2007/01/10 14:27:11 dlg Exp $
 
 COMMENT=	"module that embeds a Perl interpreter into Apache2"
 
-DISTNAME=	mod_perl-2.0.3p0
-PKGNAME=	ap2-${DISTNAME}
+DISTNAME=	mod_perl-2.0.3
+PKGNAME=	ap2-${DISTNAME}p1
 CATEGORIES=	www net
 
 WANTLIB=	c m perl util
@@ -22,10 +20,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_REGRESS=		Yes
+SHARED_ONLY=		Yes
 
 CONFIGURE_STYLE=	perl
-CONFIGURE_ARGS+=	MP_APXS=/usr/local/sbin/apxs2
-BUILD_DEPENDS=		::www/apache-httpd
-RUN_DEPENDS=		${BUILD_DEPENDS}
+CONFIGURE_ARGS+=	MP_APXS=${LOCALBASE}/sbin/apxs2
+RUN_DEPENDS=		::www/apache-httpd
+BUILD_DEPENDS=		${RUN_DEPENDS}
 
 .include <bsd.port.mk>
