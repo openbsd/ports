@@ -1,0 +1,18 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2007/01/10 10:37:07 grunk Exp $
+--- configure.orig	Fri Feb  9 07:07:26 2001
++++ configure	Wed Jan 10 10:56:04 2007
+@@ -135,6 +135,14 @@ case "$UNAME_S" in
+     ARFLAGS="-rc"
+     SYSLIBS="-lnsl -lsocket"
+     ;;
++  OpenBSD)
++    AR=ar
++    ARFLAGS="-rc"
++    CFLAGS="${CFLAGS} -DNDEBUG -D_UNIX"
++    CXXFLAGS="${CXXFLAGS} -DNDEBUG -D_UNIX"
++    LD=ld
++    SYSLIBS="-pthread"
++    ;;
+   *)
+     CC=cc
+     CFLAGS="-DNDEBUG -D_UNIX -I/usr/local/include"
