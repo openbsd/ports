@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/01/10 00:34:49 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2007/01/10 01:41:02 espie Exp $
 
 COMMENT-main=		"multimedia framework - good plugins"
 COMMENT-aalib=		"multimedia framework - aalib plugin"
@@ -12,6 +12,8 @@ COMMENT-dv=		"multimedia framework - dv plugin"
 COMMENT-jpeg=		"multimedia framework - jpeg plugin"
 COMMENT-png=		"multimedia framework - png plugin"
 COMMENT-gdk=		"multimedia framework - gdk pixbuf plugin"
+COMMENT-caca=		"multimedia framework - libcaca plugin"
+COMMENT-shout=		"multimedia framework - shoutcast plugin"
 
 V=			0.10.5
 DISTNAME=		gst-plugins-good-$V
@@ -27,10 +29,12 @@ PKGNAME-dv=		gstreamer-dv-$V
 PKGNAME-jpeg=		gstreamer-jpeg-$V
 PKGNAME-png=		gstreamer-png-$V
 PKGNAME-gdk=		gstreamer-gdk-pixbuf-$V
+PKGNAME-caca=		gstreamer-libcaca-$V
+PKGNAME-shout=		gstreamer-shoutcast-$V
 
 
 MULTI_PACKAGES=		-main -aalib -cairo -gconf -esd -flac -speex \
-			-taglib -dv -jpeg -png -gdk
+			-taglib -dv -jpeg -png -gdk -caca -shout
 SHARED_LIBS=
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-good/}
@@ -120,12 +124,22 @@ WANTLIB-gdk=		${WANTLIB} \
 LIB_DEPENDS-gdk=	${LIB_DEPENDS} \
 			gdk_pixbuf-2.0,gtk-x11-2.0,gdk-x11-2.0::x11/gtk+2
 
+BUILD_DEPENDS+=		::graphics/libcaca
+
+WANTLIB-caca=		${WANTLIB} \
+			X11 gstbase-0.10 ncurses
+
+LIB_DEPENDS-caca=	${LIB_DEPENDS}
+			
+WANTLIB-shout=		${WANTLIB} \
+			gstbase-0.10 ogg speex vorbis theora
+			
+LIB_DEPENDS-shout=	${LIB_DEPENDS} \
+			shout::net/libshout
+
 CONFIGURE_ARGS+=	--with-aalib-prefix=${LOCALBASE} \
 			--disable-cdio \
 			--disable-dv1394 \
-			--disable-ladspa \
-			--disable-libcaca \
-			--disable-shout2
 
 post-install:
 		${INSTALL_DATA} ${WRKINST}${SYSCONFDIR}/gconf/schemas/gstreamer-${VERSION}.schemas ${PREFIX}/lib/gstreamer-${VERSION}/schemas.sample
