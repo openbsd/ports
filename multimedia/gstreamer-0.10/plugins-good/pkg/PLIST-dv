@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST-dv,v 1.1 2007/01/10 00:34:49 espie Exp $
+lib/gstreamer-${VERSION}/libgstdv.la
+lib/gstreamer-${VERSION}/libgstdv.so

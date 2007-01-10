@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/01/09 23:22:56 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/01/10 00:34:49 espie Exp $
 
 COMMENT-main=		"multimedia framework - good plugins"
 COMMENT-aalib=		"multimedia framework - aalib plugin"
@@ -7,6 +7,11 @@ COMMENT-gconf=		"multimedia framework - conf elements"
 COMMENT-esd=		"multimedia framework - esound plugin"
 COMMENT-flac=		"multimedia framework - flac plugin"
 COMMENT-speex=		"multimedia framework - speex plugin"
+COMMENT-taglib=		"multimedia framework - taglib plugin"
+COMMENT-dv=		"multimedia framework - dv plugin"
+COMMENT-jpeg=		"multimedia framework - jpeg plugin"
+COMMENT-png=		"multimedia framework - png plugin"
+COMMENT-gdk=		"multimedia framework - gdk pixbuf plugin"
 
 V=			0.10.5
 DISTNAME=		gst-plugins-good-$V
@@ -17,9 +22,15 @@ PKGNAME-gconf=		gstreamer-confelements-$V
 PKGNAME-esd=		gstreamer-esd-$V
 PKGNAME-flac=		gstreamer-flac-$V
 PKGNAME-speex=		gstreamer-speex-$V
+PKGNAME-taglib=		gstreamer-taglib-$V
+PKGNAME-dv=		gstreamer-dv-$V
+PKGNAME-jpeg=		gstreamer-jpeg-$V
+PKGNAME-png=		gstreamer-png-$V
+PKGNAME-gdk=		gstreamer-gdk-pixbuf-$V
 
 
-MULTI_PACKAGES=		-main -aalib -cairo -gconf -esd -flac -speex
+MULTI_PACKAGES=		-main -aalib -cairo -gconf -esd -flac -speex \
+			-taglib -dv -jpeg -png -gdk
 SHARED_LIBS=
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-good/}
@@ -77,24 +88,46 @@ LIB_DEPENDS-speex=	${LIB_DEPENDS} \
 			speex::audio/speex \
 			gsttag-0.10::multimedia/gstreamer-0.10/plugins-base
 
+WANTLIB-taglib=		${WANTLIB} \
+			stdc++
+
+LIB_DEPENDS-taglib=	${LIB_DEPENDS} \
+			gsttag-0.10::multimedia/gstreamer-0.10/plugins-base \
+			tag::audio/taglib
+
+WANTLIB-dv=		${WANTLIB} \
+			gstbase-0.10
+
+LIB_DEPENDS-dv=		${LIB_DEPENDS} \
+			dv::multimedia/libdv \
+			gstaudio-0.10,gstinterfaces-0.10::multimedia/gstreamer-0.10/plugins-base
+
+WANTLIB-jpeg=		${WANTLIB} \
+
+LIB_DEPENDS-jpeg=	${LIB_DEPENDS} \
+			jpeg::graphics/jpeg
+
+WANTLIB-png=		${WANTLIB} \
+
+LIB_DEPENDS-png=	${LIB_DEPENDS} \
+			png::graphics/png
+
+WANTLIB-gdk=		${WANTLIB} \
+			X11 Xext Xrender atk-1.0 cairo fontconfig freetype \
+			glitz pango-1.0 pangocairo-1.0 pangoft2-1.0 png \
+			gstbase-0.10
+
+LIB_DEPENDS-gdk=	${LIB_DEPENDS} \
+			gdk_pixbuf-2.0,gtk-x11-2.0,gdk-x11-2.0::x11/gtk+2
+
 CONFIGURE_ARGS+=	--with-aalib-prefix=${LOCALBASE} \
 			--disable-cdio \
 			--disable-dv1394 \
-			--disable-gdk_pixbuf \
-			--disable-jpeg \
 			--disable-ladspa \
 			--disable-libcaca \
-			--disable-libdv \
-			--disable-libpng \
-			--disable-shout2 \
-			--disable-taglib
+			--disable-shout2
 
 post-install:
 		${INSTALL_DATA} ${WRKINST}${SYSCONFDIR}/gconf/schemas/gstreamer-${VERSION}.schemas ${PREFIX}/lib/gstreamer-${VERSION}/schemas.sample
-
-#			dv::multimedia/libdv \
-#			jpeg::graphics/jpeg \
-#			png::graphics/png \
-
 
 .include <bsd.port.mk>
