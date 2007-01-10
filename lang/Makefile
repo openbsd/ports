@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2006/10/20 17:40:24 espie Exp $
+# $OpenBSD: Makefile,v 1.78 2007/01/10 19:26:53 bernd Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -26,7 +26,6 @@
      SUBDIR += intel2gas
      SUBDIR += jamvm
      SUBDIR += jikes
-     SUBDIR += js
      SUBDIR += kaffe
      SUBDIR += klone
      SUBDIR += librep
