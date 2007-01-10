@@ -1,3 +1,5 @@
-@comment $OpenBSD: PLIST-jpeg,v 1.1 2007/01/10 00:34:49 espie Exp $
+@comment $OpenBSD: PLIST-jpeg,v 1.2 2007/01/10 12:58:31 espie Exp $
+@option no-default-conflict
+@conflict gstreamer-jpeg->=0.10
 lib/gstreamer-${VERSION}/libgstjpeg.la
 lib/gstreamer-${VERSION}/libgstjpeg.so

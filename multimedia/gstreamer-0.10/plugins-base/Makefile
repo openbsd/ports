@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/01/09 20:43:46 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/01/10 12:58:31 espie Exp $
 
 COMMENT-main=		"multimedia framework - plugins base"
 COMMENT-gnome=		"multimedia framework - gnome vfs plugin"
@@ -31,6 +31,7 @@ SHARED_LIBS +=	gstvideo-0.10         0.0     # .8.0
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-base/}
 MODULES=		devel/gettext
 
+RUN_DEPENDS=		::${BUILD_PKGPATH}
 WANTLIB=		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 xml2 \
 			z m
 LIB_DEPENDS=		gstreamer-0.10:gstreamer->=0.10:multimedia/gstreamer-0.10/core \
@@ -39,7 +40,8 @@ WANTLIB-main=		${WANTLIB} \
 			Xv X11 ICE SM Xext \
 			gstdataprotocol-0.10 gstcontroller-0.10 gstbase-0.10
 LIB_DEPENDS-main= 	${LIB_DEPENDS} \
-			oil-0.3::devel/liboil \
+			oil-0.3::devel/liboil
+RUN_DEPENDS-main=	
 			
 WANTLIB-gnome=		${WANTLIB} \
 			ORBit-2 ORBitCosNaming-2 bonobo-2 \

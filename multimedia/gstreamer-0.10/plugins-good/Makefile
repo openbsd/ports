@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/01/10 01:41:02 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2007/01/10 12:58:31 espie Exp $
 
 COMMENT-main=		"multimedia framework - good plugins"
 COMMENT-aalib=		"multimedia framework - aalib plugin"
@@ -39,13 +39,11 @@ SHARED_LIBS=
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-good/}
 
-WANTLIB=		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
-			xml2 m z
-#			m z popt ICE SM X11 Xdamage Xext Xfixes \
-#			ORBit-2 gconf-2
-
 MODULES=		devel/gettext
 
+RUN_DEPENDS=		::${BUILD_PKGPATH}
+WANTLIB=		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
+			xml2 m z
 LIB_DEPENDS=		gstreamer-0.10:gstreamer->=0.10:multimedia/gstreamer-0.10/core
 
 WANTLIB-main=		${WANTLIB} \
@@ -54,6 +52,7 @@ WANTLIB-main=		${WANTLIB} \
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			oil-0.3::devel/liboil \
 			gstaudio-0.10,gstinterfaces-0.10,gstnetbuffer-0.10,gstriff-0.10,gstrtp-0.10,gsttag-0.10,gstvideo-0.10::multimedia/gstreamer-0.10/plugins-base
+RUN_DEPENDS-main=	
 
 WANTLIB-aalib=		${WANTLIB} \
 			X11 ncurses gstbase-0.10
@@ -135,6 +134,7 @@ WANTLIB-shout=		${WANTLIB} \
 			gstbase-0.10 ogg speex vorbis theora
 			
 LIB_DEPENDS-shout=	${LIB_DEPENDS} \
+			speex::audio/speex \
 			shout::net/libshout
 
 CONFIGURE_ARGS+=	--with-aalib-prefix=${LOCALBASE} \
