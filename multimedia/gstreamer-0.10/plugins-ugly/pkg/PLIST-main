@@ -1,22 +1,12 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/01/09 20:00:23 espie Exp $
-lib/gstreamer-${VERSION}/libgsta52dec.la
-lib/gstreamer-${VERSION}/libgsta52dec.so
+@comment $OpenBSD: PLIST-main,v 1.3 2007/01/10 02:14:04 espie Exp $
 lib/gstreamer-${VERSION}/libgstasf.la
 lib/gstreamer-${VERSION}/libgstasf.so
 lib/gstreamer-${VERSION}/libgstdvdlpcmdec.la
 lib/gstreamer-${VERSION}/libgstdvdlpcmdec.so
-lib/gstreamer-${VERSION}/libgstdvdread.la
-lib/gstreamer-${VERSION}/libgstdvdread.so
 lib/gstreamer-${VERSION}/libgstdvdsub.la
 lib/gstreamer-${VERSION}/libgstdvdsub.so
 lib/gstreamer-${VERSION}/libgstiec958.la
 lib/gstreamer-${VERSION}/libgstiec958.so
-lib/gstreamer-${VERSION}/libgstlame.la
-lib/gstreamer-${VERSION}/libgstlame.so
-lib/gstreamer-${VERSION}/libgstmad.la
-lib/gstreamer-${VERSION}/libgstmad.so
-lib/gstreamer-${VERSION}/libgstmpeg2dec.la
-lib/gstreamer-${VERSION}/libgstmpeg2dec.so
 lib/gstreamer-${VERSION}/libgstmpegaudioparse.la
 lib/gstreamer-${VERSION}/libgstmpegaudioparse.so
 lib/gstreamer-${VERSION}/libgstmpegstream.la
