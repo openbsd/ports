@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:17:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/01/10 12:06:57 ajacoutot Exp $
 include/gnet-2.0/
 include/gnet-2.0/base64.h
+include/gnet-2.0/conn-http.h
 include/gnet-2.0/conn.h
 include/gnet-2.0/gnet.h
 include/gnet-2.0/inetaddr.h
