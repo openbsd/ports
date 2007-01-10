@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/11/10 17:17:30 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/01/10 23:33:36 mbalmer Exp $
 bin/scribus
 include/scribus/
 include/scribus/about.h
@@ -216,6 +216,7 @@ lib/scribus/dicts/hyph_fr.dic
 lib/scribus/dicts/hyph_ga.dic
 lib/scribus/dicts/hyph_hr.dic
 lib/scribus/dicts/hyph_hu.dic
+lib/scribus/dicts/hyph_id.dic
 lib/scribus/dicts/hyph_is.dic
 lib/scribus/dicts/hyph_it.dic
 lib/scribus/dicts/hyph_lt.dic
@@ -492,6 +493,7 @@ share/doc/scribus/en/cms2.html
 share/doc/scribus/en/cms3.html
 share/doc/scribus/en/cms4.html
 share/doc/scribus/en/codingstandards.html
+share/doc/scribus/en/color1.html
 share/doc/scribus/en/contributions.html
 share/doc/scribus/en/cross-platform.html
 share/doc/scribus/en/cups.html
@@ -528,6 +530,7 @@ share/doc/scribus/en/images/batik1.png
 share/doc/scribus/en/images/before_short_words.png
 share/doc/scribus/en/images/cmsmodify1.png
 share/doc/scribus/en/images/cmspanel.png
+share/doc/scribus/en/images/colormanager1.png
 share/doc/scribus/en/images/colormanager2.png
 share/doc/scribus/en/images/colormgmtscreen.png
 share/doc/scribus/en/images/cups1.png
@@ -568,6 +571,8 @@ share/doc/scribus/en/images/imageeffects.png
 share/doc/scribus/en/images/inkscape.png
 share/doc/scribus/en/images/kfontinstaller.png
 share/doc/scribus/en/images/ksnapshot.png
+share/doc/scribus/en/images/layers1.png
+share/doc/scribus/en/images/layers2.png
 share/doc/scribus/en/images/monprof1.png
 share/doc/scribus/en/images/monprof2.png
 share/doc/scribus/en/images/monprof3.png
@@ -626,10 +631,12 @@ share/doc/scribus/en/install.html
 share/doc/scribus/en/install1.html
 share/doc/scribus/en/install2.html
 share/doc/scribus/en/install3.html
+share/doc/scribus/en/install4.html
 share/doc/scribus/en/intro.html
 share/doc/scribus/en/irc.html
 share/doc/scribus/en/javascriptpdf.html
 share/doc/scribus/en/keys.html
+share/doc/scribus/en/layers.html
 share/doc/scribus/en/lipsum.html
 share/doc/scribus/en/machints1.html
 share/doc/scribus/en/machints2.html
@@ -637,6 +644,7 @@ share/doc/scribus/en/menu.xml
 share/doc/scribus/en/moncal.html
 share/doc/scribus/en/mouse.html
 share/doc/scribus/en/otherinfo.html
+share/doc/scribus/en/pagenumber.html
 share/doc/scribus/en/pagetemplate1.html
 share/doc/scribus/en/parallel-install.html
 share/doc/scribus/en/pdf_form.html
@@ -652,6 +660,7 @@ share/doc/scribus/en/print1.html
 share/doc/scribus/en/print2.html
 share/doc/scribus/en/print3.html
 share/doc/scribus/en/psd.html
+share/doc/scribus/en/readme-os2.html
 share/doc/scribus/en/readme-win32.html
 share/doc/scribus/en/readme.html
 share/doc/scribus/en/resources.html
@@ -675,7 +684,6 @@ share/doc/scribus/en/scripterapi-layer.html
 share/doc/scribus/en/scripterapi-manobj.html
 share/doc/scribus/en/scripterapi-object.html
 share/doc/scribus/en/scripterapi-page.html
-share/doc/scribus/en/scripterapi-pydoc.html
 share/doc/scribus/en/scripterapi-select.html
 share/doc/scribus/en/scripterapi-setobjprop.html
 share/doc/scribus/en/scripterapi-textframes.html
@@ -724,9 +732,28 @@ share/doc/scribus/fr/moncal.html
 share/doc/scribus/fr/plugin_howto.html
 share/doc/scribus/fr/readme-win32.html
 share/doc/scribus/fr/scribusfileformat.html
+share/doc/scribus/fr/scripter-extensions.html
+share/doc/scribus/fr/scripter-faq.html
 share/doc/scribus/fr/scripter1.html
+share/doc/scribus/fr/scripterapi-ImageExport.html
+share/doc/scribus/fr/scripterapi-PDFfile.html
+share/doc/scribus/fr/scripterapi-Printer.html
+share/doc/scribus/fr/scripterapi-color.html
+share/doc/scribus/fr/scripterapi-constants.html
+share/doc/scribus/fr/scripterapi-dialogs.html
+share/doc/scribus/fr/scripterapi-doc.html
+share/doc/scribus/fr/scripterapi-font.html
+share/doc/scribus/fr/scripterapi-getobjprop.html
+share/doc/scribus/fr/scripterapi-layer.html
+share/doc/scribus/fr/scripterapi-manobj.html
+share/doc/scribus/fr/scripterapi-object.html
 share/doc/scribus/fr/scripterapi-page.html
 share/doc/scribus/fr/scripterapi-pydoc.html
+share/doc/scribus/fr/scripterapi-select.html
+share/doc/scribus/fr/scripterapi-setobjprop.html
+share/doc/scribus/fr/scripterapi-textframes.html
+share/doc/scribus/fr/scripterapi.html
+share/doc/scribus/fr/short-words-manual.html
 share/doc/scribus/fr/tutorials/
 share/doc/scribus/fr/tutorials/scribus-short-words/
 share/doc/scribus/fr/tutorials/scribus-short-words/after_short_words.png
@@ -966,7 +993,7 @@ share/scribus/icons/rotate_ccw.png
 share/scribus/icons/rotate_cw.png
 share/scribus/icons/scrap.png
 share/scribus/icons/screen.png
-share/scribus/icons/scribus_logo.jpg
+share/scribus/icons/scribus_logo.png
 share/scribus/icons/scribusdoc.png
 share/scribus/icons/scribusdoc16.png
 share/scribus/icons/scribusicon.png
