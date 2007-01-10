@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.44 2006/11/24 20:48:23 steven Exp $
+# $OpenBSD: Makefile.inc,v 1.45 2007/01/10 16:57:56 steven Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -50,7 +50,7 @@ RUN_DEPENDS=	:python-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}:lang/python/${VERS
 LIB_DEPENDS=
 
 RUN_DEPENDS-main=
-WANTLIB-main=	ssl panel m crypto c util z readline pthread ncurses
+WANTLIB-main=	ssl panel m crypto c util z readline pthread ncurses stdc++
 
 LIB_DEPENDS-bsddb=	lib/db4/db.=4:db-4.*:databases/db/v4
 LIB_DEPENDS-gdbm=	gdbm.>=3::databases/gdbm
