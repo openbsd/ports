@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/01/09 10:15:15 millert Exp $
+# $OpenBSD: Makefile,v 1.6 2007/01/10 08:00:03 steven Exp $
 
 COMMENT=	"multi-threaded DAAP server"
 
 DISTNAME=	mt-daapd-0.2.4
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	audio net
 
 HOMEPAGE=	http://www.mt-daapd.org/
@@ -34,6 +34,11 @@ CONFIGURE_ARGS=	--with-gdbm-includes=${LOCALBASE}/include \
 LIB_DEPENDS+=	howl::net/howl
 CONFIGURE_ARGS+=--enable-howl --with-howl-includes=${LOCALBASE}/include/howl
 .endif
+
+pre-configure:
+	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},;' \
+		-e 's,!!SYSCONFDIR!!,${SYSCONFDIR},' \
+		${WRKSRC}/contrib/mt-daapd.conf
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mt-daapd

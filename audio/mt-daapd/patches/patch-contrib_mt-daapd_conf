@@ -1,0 +1,21 @@
+$OpenBSD: patch-contrib_mt-daapd_conf,v 1.1 2007/01/10 08:00:03 steven Exp $
+--- contrib/mt-daapd.conf.orig	Wed Jan 10 08:52:43 2007
++++ contrib/mt-daapd.conf	Wed Jan 10 08:53:54 2007
+@@ -23,7 +23,7 @@
+ # path is probably /usr/local/share/mt-daapd/admin-root.
+ #
+ 
+-web_root	/usr/share/mt-daapd/admin-root
++web_root	!!LOCALBASE!!/share/mt-daapd/admin-root
+ 
+ #
+ # port (required)
+@@ -98,7 +98,7 @@ runas	nobody
+ # below.
+ #
+ 
+-playlist	/etc/mt-daapd.playlist
++playlist	!!SYSCONFDIR!!/mt-daapd.playlist
+ 
+ #
+ # password (optional)
