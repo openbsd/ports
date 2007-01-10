@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/25 16:32:35 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/01/10 21:47:21 jasper Exp $
 
 COMMENT=		"retrieve home directory location"
 
 MODULES=		cpan
-DISTNAME=		File-HomeDir-0.58
+DISTNAME=		File-HomeDir-0.63
 CATEGORIES=		devel
 
 CPAN_AUTHOR=		ADAMK
@@ -14,6 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-PORTHOME=		${WRKDIR}
+.ifmake regress
+PORTHOME=		${HOME}
+.endif
 
 .include <bsd.port.mk>
