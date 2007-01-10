@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.18 2003/09/22 22:53:37 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.19 2007/01/10 23:12:52 steven Exp $
 
 COMMENT=	"mirror packages on remote sites"
 
 DISTNAME=	mirror-2.9
 CATEGORIES=	net
 
-MASTER_SITES=	ftp://sunsite.org.uk/packages/mirror/ \
-		ftp://ftp.cs.columbia.edu/archives/perl/mirror/ \
-		ftp://giswitch.sggw.waw.pl/pub/unix/mirror/  \
-		ftp://SunSITE.sut.ac.jp/pub/archives/packages/mirror/
+MASTER_SITES=	ftp://sunsite.cnlab-switch.ch/mirror/mirror/ \
+		http://personainternet.linux.tucows.com/files/ \
+		http://epix.linux.tucows.com/files/ \
+		ftp://sunsite.org.uk/packages/mirror/
 
 HOMEPAGE=	http://sunsite.org.uk/packages/mirror/
 
