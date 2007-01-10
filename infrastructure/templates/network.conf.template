@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.104 2007/01/10 23:06:41 steven Exp $
+# $OpenBSD: network.conf.template,v 1.105 2007/01/10 23:19:19 steven Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -198,13 +198,13 @@ MASTER_SITE_PACKETSTORM+=	\
 	http://packetstorm.orion-hosting.co.uk/ \
 	http://packetstormsecurity.nl/ \
 	http://packetstorm.linuxexposed.com/ \
-	http://packetstormsecurity.org.pk/ \
-	http://packetstormsecurity.org.uk/ \
-	http://packetstorm.security-guide.de/ \
+	http://packetstorm.setnine.com/ \
+	http://packetstorm.neville-neil.com/ \
+	http://packetstorm.wowhacker.com/ \
+	http://packetstorm.offensive-security.com/ \
 	http://packetstorm.icx.fr/ \
 	http://packetstorm.digital-network.net/ \
 	http://packetstorm.troop218.org/ \
-	http://packetstorm.dyn.org/ \
 	http://packetstorm.blackroute.net/ \
 	http://packetstorm.ussrback.com/ \
 	http://packetstorm.rlz.cl/
