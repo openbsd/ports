@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/03/18 07:40:47 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/01/10 19:21:47 bernd Exp $
+@conflict ap2-mod_perl-*
 ${P5SITE}/Apache/
 ${P5SITE}/Apache/Test.pm
 ${P5SITE}/Apache/Test5005compat.pm

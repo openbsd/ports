@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/10 13:51:50 dlg Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/01/10 19:21:47 bernd Exp $
+@conflict p5-Apache-Test-*
 bin/mp2bug
 include/apache2/mod_perl.h
 include/apache2/modperl_apache_compat.h
