@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2007/01/08 19:52:25 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2007/01/10 11:30:03 espie Exp $
 
 COMMENT-main=		"GStreamer Streaming-media framework plug-ins."
 
 VERSION=		0.8.11
 PATCHLEVEL=		
 DISTNAME=		gst-plugins-${VERSION}
-PKGNAME-main=		gstreamer-plugins-${VERSION}p10
+PKGNAME-main=		gstreamer-plugins-${VERSION}p11
 SHARED_LIBS=		gstgconf-0.8		1.0 \
 			gstinterfaces-0.8	1.0 \
 			gstmedia-info-0.8	1.0 \
@@ -54,7 +54,7 @@ MULTI_PACKAGES=		-main
 
 myWANTLIB=		m z xml2 glib-2.0 \
 			gthread-2.0 gmodule-2.0 gobject-2.0 popt
-myLIB_DEPENDS=		gstreamer-0.8.>=5.0::devel/gstreamer \
+myLIB_DEPENDS=		gstreamer-0.8.>=5.0:gstreamer-0.8.*:devel/gstreamer \
 			${MODGETTEXT_LIB_DEPENDS}
 
 WANTLIB-main=		ICE SM X11 Xdamage Xext Xfixes Xrender Xv \
@@ -64,7 +64,7 @@ WANTLIB-main=		ICE SM X11 Xdamage Xext Xfixes Xrender Xv \
 			gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 \
 			cairo glitz png ${myWANTLIB}
 LIB_DEPENDS-main=	gconf-2::devel/gconf2 \
-			gstcontrol-0.8.>=5.0::devel/gstreamer \
+			gstcontrol-0.8.>=5.0:gstreamer-0.8.*:devel/gstreamer \
 			${myLIB_DEPENDS}
 
 PLUGINS=		arts audiofile cdda dvdnav dvdread esd faad flac \
@@ -82,7 +82,7 @@ PLUGINS+=		a52
 PSEUDO_FLAVORS+=	no_${PLUGIN}
 .  if !${FLAVOR:L:Mno_${PLUGIN}} && !${FLAVOR:L:Mminimal}
 MULTI_PACKAGES+=	-${PLUGIN}
-PKGNAME-${PLUGIN}=	gstreamer-${PLUGIN}-${VERSION}${PATCHLEVEL}p10
+PKGNAME-${PLUGIN}=	gstreamer-${PLUGIN}-${VERSION}${PATCHLEVEL}p11
 BASENAME-${PLUGIN}=	gstreamer-${PLUGIN}
 .  endif
 .endfor
