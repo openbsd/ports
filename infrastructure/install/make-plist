@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.89 2007/01/09 19:40:49 espie Exp $
+# $OpenBSD: make-plist,v 1.90 2007/01/10 01:41:29 espie Exp $
 # Copyright (c) 2004-2006 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -57,6 +57,7 @@ my $make = $ENV{MAKE};
 my $portsdir = $ENV{PORTSDIR};
 
 
+my $cached_tree = {};
 sub build_mtree
 {
 	my ($sub, $deps) = @_;
@@ -66,10 +67,16 @@ sub build_mtree
 	for my $pkgpath (split /\s+/, $deps) {
 		next if defined $stripped->{$pkgpath};
 		$stripped->{$pkgpath} = 1;
+		if (!defined $cached_tree->{$pkgpath}) {
+			$cached_tree->{$pkgpath} = {};
+			open my $fh, "cd $portsdir && env -i SUBDIR=$pkgpath ECHO_MSG=: $make print-plist |" or die "blech\n";
+			augment_mtree($cached_tree->{$pkgpath}, $fh);
+			close($fh);
+		}
 		print STDERR "Subpackage $sub: Stripping dirs from $pkgpath\n";
-		open my $fh, "cd $portsdir && env -i SUBDIR=$pkgpath ECHO_MSG=: $make print-plist |" or die "blech\n";
-		augment_mtree($mtree, $fh);
-		close($fh);
+		for my $e (keys %{$cached_tree->{$pkgpath}}) {
+			$mtree->{$e} = 1;
+		}
 	}
 	return $mtree;
 }
