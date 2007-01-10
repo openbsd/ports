@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.442 2007/01/07 14:59:26 steven Exp $
+# $OpenBSD: Makefile,v 1.443 2007/01/10 10:40:29 grunk Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -179,6 +179,7 @@
      SUBDIR += openafs
      SUBDIR += openh323
      SUBDIR += openvpn
+     SUBDIR += osrtspproxy
      SUBDIR += p5-Chatbot-Eliza
      SUBDIR += p5-Filesys-Virtual-DAAP
      SUBDIR += p5-Geo-IP
