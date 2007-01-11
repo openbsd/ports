@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/01/11 07:53:24 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2007/01/11 07:56:06 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -46,7 +46,6 @@ TCLLIB=		tcl${TCL_VERSION:S/.//}
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
 BUILD_DEPENDS=	:tcl-${TCL_VERSION}.*:lang/tcl/${TCL_VERSION} \
-		::math/octave \
 		::graphics/gd \
 		::print/ghostscript/gnu-fonts
 myRUN_DEPENDS=	::print/ghostscript/gnu-fonts
