@@ -1,0 +1,12 @@
+$OpenBSD: patch-ext_sidplay_Makefile_in,v 1.1 2007/01/11 00:23:26 espie Exp $
+--- ext/sidplay/Makefile.in.orig	Wed Dec 13 21:45:46 2006
++++ ext/sidplay/Makefile.in	Thu Jan 11 01:16:35 2007
+@@ -280,7 +280,7 @@ RANLIB = @RANLIB@
+ SET_MAKE = @SET_MAKE@
+ SHELL = @SHELL@
+ SIDPLAY_CFLAGS = @SIDPLAY_CFLAGS@
+-SIDPLAY_LIBS = @SIDPLAY_LIBS@
++SIDPLAY_LIBS = @SIDPLAY_LIBS@ -lstdc++
+ STRIP = @STRIP@
+ USE_A52DEC_FALSE = @USE_A52DEC_FALSE@
+ USE_A52DEC_TRUE = @USE_A52DEC_TRUE@
