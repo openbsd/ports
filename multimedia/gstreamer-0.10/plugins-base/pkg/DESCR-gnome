@@ -1,1 +1,2 @@
-This package contains the gnome vfs plugins for gstreamer-${VERSION}.
+This package is part of the base plugins for gstreamer-${VERSION}.
+* gnomevfs         elements to read from and write to Gnome-VFS uri's

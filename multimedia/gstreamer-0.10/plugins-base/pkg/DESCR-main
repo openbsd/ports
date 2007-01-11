@@ -1,2 +1,34 @@
 This package contains base plugins for gstreamer-${VERSION}, usually
 with few or no dependencies.
+
+* adder             Add multiple streams together
+* audioconvert      Convert audio to different formats       
+* audiorate         Drop/duplicate/adjust audio frames    
+* audioresample     Resample audio         
+* audiotestsrc      Create audio test signals
+* decodebin         Autoplug and decode to raw media               
+* ffmpegcolorspace  Colorspace conversion (from FFMpeg 0.4.9-pre1)
+* gdp               Payload/depayload Gstreamer Data Protocol packets
+* playbin           player bin (Autoplug and play media from an uri)
+* subparse          Text subtitle parsing (SSA, .sub)
+* tcp               Network data transfer over tcp: sources, sinks, muxer
+* typefindfunctions default typefind functions               
+* videorate         Drop/duplicate/adjust video frames    
+* videoscale        reize video           
+* videotestsrc      Create a test video stream
+* volume            plugin for controlling audio volume            
+* ximagesink        X11 video output element based on standard Xlib calls
+* xvimagesink       X11 video output element using Xv extension
+
+The following plugins are in specific packages because of dependencies:
+* cdparanoia
+* gnomevfs
+* ogg
+* pango
+* theora
+* vorbis
+
+The following plugins are not built:
+* alsa (linux specific)
+* libvisual (lib not ported yet)
+* video4linux (not ported/linux specific)

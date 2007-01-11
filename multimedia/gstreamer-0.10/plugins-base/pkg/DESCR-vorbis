@@ -1,1 +1,2 @@
-This package contains the vorbis plugin for gstreamer-${VERSION}.
+This package is part of the base plugins for gstreamer-${VERSION}.
+* vorbis       vorbis plugin library (encoder, decoder, parser)
