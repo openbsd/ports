@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2006/12/31 01:04:09 msf Exp $
+# $OpenBSD: Makefile,v 1.53 2007/01/11 09:34:40 bernd Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,7 +10,7 @@ COMMENT-tk=		"tk interface for ruby"
 VERSION=		1.8.5
 DISTNAME=		ruby-${VERSION}
 SHARED_LIBS=		ruby 1.85
-PKGNAME-main=		${DISTNAME}p4
+PKGNAME-main=		${DISTNAME}p5
 PKGNAME-iconv=		ruby-iconv-${VERSION}p2
 PKGNAME-gdbm=		ruby-gdbm-${VERSION}p2
 PKGNAME-tk=		ruby-tk-${VERSION}p2
@@ -37,7 +37,8 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-dbm-type=bogus \
 			--with-opt-dir="${LOCALBASE}"
 CONFIGURE_ENV=		PREFIX="${PREFIX}" \
-			LIBruby_VERSION=${LIBruby_VERSION}
+			LIBruby_VERSION=${LIBruby_VERSION} \
+			CPPFLAGS="-DOPENSSL_NO_STATIC_ENGINE"
 
 MODULES=		converters/libiconv
 
