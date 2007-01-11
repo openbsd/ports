@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/01/11 21:56:16 jasper Exp $
+@lib lib/libmtp.so.${LIBmtp_VERSION}
