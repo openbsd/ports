@@ -1,0 +1,12 @@
+$OpenBSD: patch-cherrypy_test_test_conn_py,v 1.1 2007/01/11 22:45:46 steven Exp $
+--- cherrypy/test/test_conn.py.orig	Mon Jan  8 09:04:08 2007
++++ cherrypy/test/test_conn.py	Mon Jan  8 09:04:37 2007
+@@ -5,7 +5,7 @@ import httplib
+ import socket
+ import sys
+ import time
+-timeout = 0.1
++timeout = 2.0
+ 
+ 
+ import cherrypy
