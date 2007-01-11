@@ -1,0 +1,21 @@
+$OpenBSD: patch-ext_dvdread_dvdreadsrc_c,v 1.1 2007/01/11 23:06:14 espie Exp $
+--- ext/dvdread/dvdreadsrc.c.orig	Fri Jan 12 00:04:31 2007
++++ ext/dvdread/dvdreadsrc.c	Fri Jan 12 00:05:13 2007
+@@ -128,7 +128,7 @@ gst_dvd_read_src_init (GstDvdReadSrc * s
+   src->vmg_file = NULL;
+   src->dvd_title = NULL;
+ 
+-  src->location = g_strdup ("/dev/dvd");
++  src->location = g_strdup ("/dev/rcd0c");
+   src->last_uri = NULL;
+   src->new_seek = TRUE;
+   src->new_cell = TRUE;
+@@ -944,7 +944,7 @@ gst_dvd_read_src_set_property (GObject *
+       g_free (src->location);
+       /* clear the filename if we get a NULL (is that possible?) */
+       if (g_value_get_string (value) == NULL) {
+-        src->location = g_strdup ("/dev/dvd");
++        src->location = g_strdup ("/dev/rcd0c");
+       } else {
+         src->location = g_strdup (g_value_get_string (value));
+       }
