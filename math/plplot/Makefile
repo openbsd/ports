@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/12/16 12:22:34 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2007/01/11 07:53:24 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -96,7 +96,16 @@ SUBST_VARS+=	GNU_ARCH
 
 DOCSRC=		${WRKSRC}/doc/docbook/src
 
-MULTI_PACKAGES=	-main -c++ -f77 -octave -tcl
+PSEUDO_FLAVORS=	no_octave
+FLAVOR?=
+
+MULTI_PACKAGES=	-main -c++ -f77 -tcl
+
+.if ${FLAVOR:Mno_octave}
+CONFIGURE_ARGS+=--disable-octave
+.else
+MULTI_PACKAGES+=-octave
+.endif
 
 MODULES=		converters/libiconv
 
