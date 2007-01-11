@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/24 20:48:23 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/01/11 13:46:19 steven Exp $
 @option no-default-conflict
 @conflict python->=2.3,<2.4
 @pkgpath lang/python/2.3
 bin/pydoc2.3
 bin/python2.3
 include/python2.3/
+include/python2.3/Python-ast.h
 include/python2.3/Python.h
 include/python2.3/abstract.h
 include/python2.3/bitset.h
@@ -624,6 +625,7 @@ lib/python2.3/email/test/data/msg_33.txt
 lib/python2.3/email/test/data/msg_34.txt
 lib/python2.3/email/test/data/msg_35.txt
 lib/python2.3/email/test/data/msg_40.txt
+lib/python2.3/email/test/data/msg_41.txt
 lib/python2.3/email/test/test_email.py
 lib/python2.3/email/test/test_email.pyc
 lib/python2.3/email/test/test_email.pyo
