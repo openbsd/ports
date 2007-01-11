@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_support_c,v 1.1 2007/01/11 17:36:40 jasper Exp $
+--- src/support.c.orig	Sun Jan 23 18:37:41 2005
++++ src/support.c	Tue Jan  2 16:16:16 2007
+@@ -149,6 +149,7 @@
+   gchar *str;
+   gsize rb, wb;
+   GError *error;
++  const char *charset;
+ 
+   if( noconvert )
+     return g_strdup(utf8str);
+@@ -156,15 +157,11 @@
+   rb = 0; /* bytes read */
+   wb = 0; /* bytes written */
+   error = NULL;
+-  str=g_locale_from_utf8(utf8str, 
+-			 strlen(utf8str),
+-			 &wb, &rb,
+-			 &error);
++  g_get_charset(&charset);
++  str = g_convert_with_fallback(
++      utf8str, -1, charset, "UTF-8", "?", &rb, &wb, &error);
+   if( error )
+     {
+-      const char *charset;
+-
+-      g_get_charset(&charset);
+       screen_status_printf(_("Error: Unable to convert characters to %s"),
+ 			   charset);
+       D("utf8_to_locale(): %s\n", error->message);

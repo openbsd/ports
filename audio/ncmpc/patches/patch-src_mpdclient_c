@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_mpdclient_c,v 1.1 2007/01/11 17:36:40 jasper Exp $
+--- src/mpdclient.c.orig	Sun Jan 23 18:37:42 2005
++++ src/mpdclient.c	Tue Jan  2 16:21:06 2007
+@@ -846,10 +846,9 @@
+ {
+   mpdclient_filelist_t *filelist;
+   mpd_InfoEntity *entity;
+-  gchar *path_utf8 = locale_to_utf8(path);
+ 
+-  D("mpdclient_filelist_get(%s)\n", path);
+-  mpd_sendLsInfoCommand(c->connection, path_utf8);
++  D("mpdclient_filelist_get(%s)\n", utf8_to_locale(path));
++  mpd_sendLsInfoCommand(c->connection, path);
+   filelist = g_malloc0(sizeof(mpdclient_filelist_t));
+   if( path && path[0] && strcmp(path, "/") )
+     {
+@@ -871,11 +870,9 @@
+   
+   if( mpdclient_finish_command(c) )
+     {
+-      g_free(path_utf8);
+       return mpdclient_filelist_free(filelist);
+     }
+   
+-  g_free(path_utf8);
+   filelist->path = g_strdup(path);
+   filelist->updated = TRUE;
+ 

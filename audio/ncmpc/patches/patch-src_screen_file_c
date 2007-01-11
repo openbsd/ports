@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_screen_file_c,v 1.1 2007/01/11 17:36:40 jasper Exp $
+--- src/screen_file.c.orig	Sun Jan 23 18:37:42 2005
++++ src/screen_file.c	Tue Jan  2 16:19:47 2007
+@@ -255,7 +255,7 @@
+       {
+ 	/* enter sub */
+ 	mpd_Directory *dir = entity->info.directory;
+-	path = utf8_to_locale(dir->path);      
++      	path = g_strdup(dir->path);
+ 	/* save current list window state */
+ 	push_lw_state(); 
+ 	list_window_reset(lw);
+@@ -566,7 +566,7 @@
+ static char *
+ browse_title(char *str, size_t size)
+ {
+-  g_snprintf(str, size, _("Browse: %s"), basename(filelist->path));
++  g_snprintf(str, size, _("Browse: %s"), utf8_to_locale(basename(filelist->path)));
+   return str;
+ }
+ 
