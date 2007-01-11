@@ -1,12 +1,12 @@
-XML::Twig provides a way to process XML documents.  It is built on
-top of XML::Parser.
+XML::Twig provides a way to process XML documents.  It is built on top
+of XML::Parser.
 
-The module offers a tree interface to the document, while allowing
-you to output the parts of it that have been completely processed.
+The module offers a tree interface to the document, while allowing you
+to output the parts of it that have been completely processed.
 
-It allows minimal resource (CPU and memory) usage by building the
-tree only for the parts of the documents that need actual processing.
+It allows minimal resource (CPU and memory) usage by building the tree
+only for the parts of the documents that need actual processing.
 
-XML::Twig tries to make simple things easy so it tries its best to
-takes care of a lot of the (usually) annoying (but sometimes
-necessary) features that come with XML and XML::Parser.
+XML::Twig tries to make simple things easy so it tries its best to takes
+care of a lot of the (usually) annoying (but sometimes necessary)
+features that come with XML and XML::Parser.

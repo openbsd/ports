@@ -1,24 +1,20 @@
-# $OpenBSD: Makefile,v 1.6 2006/07/03 16:58:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2007/01/11 15:40:54 jasper Exp $
 
 COMMENT=	"perl module for parsing huge XML documents"
 
-DISTNAME=	XML-Twig-3.26
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	textproc perl5
+DISTNAME=	XML-Twig-3.28
+MODULES=	cpan
+CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.xmltwig.com/xmltwig/
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
-
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
-# GPL/Artistic
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-CONFIGURE_STYLE= perl
 
 RUN_DEPENDS=	::textproc/p5-XML-Parser \
 		::www/p5-HTML-Tree	
@@ -34,7 +30,5 @@ REGRESS_DEPENDS=::converters/p5-Text-Iconv \
 		::textproc/p5-XML-Simple \
 		::textproc/p5-XML-XPath \
 		::www/p5-libwww
-		
-PKG_ARCH=	*		
 
 .include <bsd.port.mk>

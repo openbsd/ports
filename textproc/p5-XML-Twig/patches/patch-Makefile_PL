@@ -1,15 +1,13 @@
-$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2004/05/29 21:14:40 avsm Exp $
---- Makefile.PL.orig	2004-05-29 22:43:07.000000000 +0100
-+++ Makefile.PL	2004-05-29 22:43:43.000000000 +0100
-@@ -11,10 +11,7 @@ xml_grep|y|XML grep - grep XML files usi
- xml_spellcheck|y|spellcheck XML files skipping tags
- QUERIES
-     my ($program, $default, $description) = split /\|/, $_;
--    if (prompt("Do you want to install '$program' ($description)?", 
--               $default) =~ /^y/) {
--	push(@programs, $program);
--    }
-+    push(@programs, $program);
- }
+$OpenBSD: patch-Makefile_PL,v 1.2 2007/01/11 15:40:54 jasper Exp $
+--- Makefile.PL.orig	Thu Jan 11 16:34:40 2007
++++ Makefile.PL	Thu Jan 11 16:35:32 2007
+@@ -22,8 +22,7 @@ elsif( $ARGV[0] eq "-d")
+ else
+   { foreach my $prompt (@prompts)
+       { my ($program, $default, $description) = @$prompt;
+-        if( prompt("Do you want to install '$program' ($description)?", $default) =~ /^y/)
+-          { push(@programs, $program); }
++	push(@programs, $program);
+       }
+   }
  
- WriteMakefile(
