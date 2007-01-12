@@ -1,0 +1,12 @@
+$OpenBSD: patch-browser_locales_en-US_chrome_browser_preferences_preferences_dtd,v 1.1 2007/01/12 21:46:17 kurt Exp $
+--- browser/locales/en-US/chrome/browser/preferences/preferences.dtd.orig	Mon Jul 31 12:20:47 2006
++++ browser/locales/en-US/chrome/browser/preferences/preferences.dtd	Mon Oct 30 18:18:43 2006
+@@ -3,7 +3,7 @@
+ <!ENTITY  prefWindow.titleGNOME   "&brandShortName; Preferences">
+ <!ENTITY  prefWindow.styleWin     "width: 42em; height: 40em;">
+ <!ENTITY  prefWindow.styleMac     "width: 47em;">
+-<!ENTITY  prefWindow.styleGNOME   "width: 42em; height: 38.5em;">
++<!ENTITY  prefWindow.styleGNOME   "width: 48em; height: 38.5em;">
+ 
+ <!ENTITY  paneMain.title          "Main">
+ <!ENTITY  paneTabs.title          "Tabs">

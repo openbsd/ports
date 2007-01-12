@@ -1,17 +1,23 @@
-$OpenBSD: README.OpenBSD,v 1.2 2006/05/23 14:03:22 bernd Exp $
+$OpenBSD: README.OpenBSD,v 1.3 2007/01/12 21:46:17 kurt Exp $
 
 If you encounter strange problems relating to bookmarks, downloads,
 window placement, toolbars, history, or other settings, it is
 recommended that you create a new profile and attempt to
 reproduce the problem before filing bugs.  To create a new profile,
-start Firefox with the --profilemanager switch, e.g.
-firefox --profilemanager, and click "Create Profile".
+start Firefox with the -ProfileManager switch, e.g.
+firefox -ProfileManager, and click "Create Profile".
 
-If Firefox doesn't start at all, first try to remove compreg.dat,
-xpti.dat and extensions/Extensions.rdf from your profile-dir, or you
-could just remove the old profile-dir,
-    rm -r ~/.mozilla/firefox/<profile-dir> ~/.firefox/<profile-dir>
-(this will delete your saved bookmarks.html).
+If Firefox doesn't start at all, first try starting it with
+-safe-mode switch, which disables extensions and themes for your
+session.
+
+If you still can't start Firefox, recompile it with --enable-debug.
+If you can't fix the problem yourself, remember to provide output
+when sending bug report.
+
+Firefox will silently fail to print when it runs out of file
+descriptors. If Firefox doesn't print a page increase your file
+descriptors limit and try again.
 
 To disable anti-aliasing (xft) set GDK_USE_XFT=0 in the environment.
 
@@ -47,3 +53,12 @@ $
 
 Information on building Java (on some platforms) can be found in
 http://www.openbsd.org/faq/faq13.html#javaflash
+
+Enabling ECC cipher suites
+
+Open the URL about:config and type security.ssl3 in the search
+filter. This will bring up a list of all available cipher suites.
+Double-click on any cipher to toggle its state. For example, to
+enable TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, double-click on
+security.ssl3.ecdhe_ecdsa_aes128_sha until its boolean entry in the
+Value column changes to true.

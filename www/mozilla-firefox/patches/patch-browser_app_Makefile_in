@@ -1,0 +1,12 @@
+$OpenBSD: patch-browser_app_Makefile_in,v 1.1 2007/01/12 21:46:17 kurt Exp $
+--- browser/app/Makefile.in.orig	Tue Aug 29 05:03:07 2006
++++ browser/app/Makefile.in	Fri Nov  3 22:36:08 2006
+@@ -178,7 +178,7 @@ endif
+ 
+ APP_VERSION = $(shell cat $(srcdir)/../config/version.txt)
+ DEFINES += -DAPP_VERSION="$(APP_VERSION)"
+-APP_UA_NAME = $(shell echo $(MOZ_APP_DISPLAYNAME) | sed -e's/[^A-Za-z]//g')
++APP_UA_NAME = Firefox
+ DEFINES += -DAPP_UA_NAME="$(APP_UA_NAME)"
+ 
+ ifneq (,$(filter mac cocoa,$(MOZ_WIDGET_TOOLKIT)))

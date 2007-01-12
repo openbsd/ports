@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.15 2005/12/26 02:17:53 ian Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2007/01/12 21:46:17 kurt Exp $
 @conflict mozilla-firebird-*
+@pkgpath www/mozilla-firefox
 %%SHARED%%
 bin/firefox
-bin/firefox-config
 bin/mozilla-firefox
 mozilla-firefox/
 mozilla-firefox/LICENSE
 mozilla-firefox/README.OpenBSD
+mozilla-firefox/bloaturls.txt
+mozilla-firefox/browserconfig.properties
 mozilla-firefox/chrome/
 mozilla-firefox/chrome/browser.jar
 mozilla-firefox/chrome/browser.manifest
@@ -27,6 +29,10 @@ mozilla-firefox/chrome/reporter.manifest
 mozilla-firefox/chrome/toolkit.jar
 mozilla-firefox/chrome/toolkit.manifest
 mozilla-firefox/components/
+mozilla-firefox/components/FeedConverter.js
+mozilla-firefox/components/FeedProcessor.js
+mozilla-firefox/components/FeedWriter.js
+mozilla-firefox/components/WebContentConverter.js
 mozilla-firefox/components/accessibility-atk.xpt
 mozilla-firefox/components/accessibility.xpt
 mozilla-firefox/components/alerts.xpt
@@ -35,7 +41,9 @@ mozilla-firefox/components/appstartup.xpt
 mozilla-firefox/components/autocomplete.xpt
 mozilla-firefox/components/autoconfig.xpt
 mozilla-firefox/components/bookmarks.xpt
+mozilla-firefox/components/browser-feeds.xpt
 mozilla-firefox/components/browsercompsbase.xpt
+mozilla-firefox/components/browsersearch.xpt
 mozilla-firefox/components/caps.xpt
 mozilla-firefox/components/chardet.xpt
 mozilla-firefox/components/chrome.xpt
@@ -60,6 +68,8 @@ mozilla-firefox/components/dom_events.xpt
 mozilla-firefox/components/dom_html.xpt
 mozilla-firefox/components/dom_loadsave.xpt
 mozilla-firefox/components/dom_range.xpt
+mozilla-firefox/components/dom_sidebar.xpt
+mozilla-firefox/components/dom_storage.xpt
 mozilla-firefox/components/dom_stylesheets.xpt
 mozilla-firefox/components/dom_svg.xpt
 mozilla-firefox/components/dom_traversal.xpt
@@ -73,13 +83,16 @@ mozilla-firefox/components/embed_base.xpt
 mozilla-firefox/components/extensions.xpt
 mozilla-firefox/components/exthandler.xpt
 mozilla-firefox/components/fastfind.xpt
+mozilla-firefox/components/feeds.xpt
 mozilla-firefox/components/filepicker.xpt
 mozilla-firefox/components/find.xpt
 mozilla-firefox/components/gfx.xpt
 mozilla-firefox/components/gksvgrenderer.xpt
+mozilla-firefox/components/globalstore.js
 mozilla-firefox/components/history.xpt
 mozilla-firefox/components/htmlparser.xpt
 mozilla-firefox/components/imglib2.xpt
+mozilla-firefox/components/inspector.xpt
 mozilla-firefox/components/intl.xpt
 mozilla-firefox/components/jar.xpt
 mozilla-firefox/components/jsconsole-clhandler.js
@@ -91,6 +104,7 @@ mozilla-firefox/components/layout_xul.xpt
 mozilla-firefox/components/layout_xul_tree.xpt
 mozilla-firefox/components/locale.xpt
 mozilla-firefox/components/lwbrk.xpt
+mozilla-firefox/components/microsummaries.xpt
 mozilla-firefox/components/migration.xpt
 mozilla-firefox/components/mimetype.xpt
 mozilla-firefox/components/mozbrwsr.xpt
@@ -109,6 +123,7 @@ mozilla-firefox/components/necko_res.xpt
 mozilla-firefox/components/necko_socket.xpt
 mozilla-firefox/components/necko_strconv.xpt
 mozilla-firefox/components/necko_viewsource.xpt
+mozilla-firefox/components/nsBookmarkTransactionManager.js
 mozilla-firefox/components/nsBrowserContentHandler.js
 mozilla-firefox/components/nsBrowserGlue.js
 mozilla-firefox/components/nsCloseAllWindows.js
@@ -119,12 +134,22 @@ mozilla-firefox/components/nsFilePicker.js
 mozilla-firefox/components/nsHelperAppDlg.js
 mozilla-firefox/components/nsInterfaceInfoToIDL.js
 mozilla-firefox/components/nsKillAll.js
+mozilla-firefox/components/nsMicrosummaryService.js
 mozilla-firefox/components/nsProgressDialog.js
 mozilla-firefox/components/nsProxyAutoConfig.js
 mozilla-firefox/components/nsResetPref.js
+mozilla-firefox/components/nsSafebrowsingApplication.js
+mozilla-firefox/components/nsSearchService.js
+mozilla-firefox/components/nsSearchSuggestions.js
+mozilla-firefox/components/nsSessionStartup.js
+mozilla-firefox/components/nsSessionStore.js
 mozilla-firefox/components/nsSetDefaultBrowser.js
 mozilla-firefox/components/nsSidebar.js
+mozilla-firefox/components/nsURLFormatter.js
 mozilla-firefox/components/nsUpdateService.js
+mozilla-firefox/components/nsUrlClassifierLib.js
+mozilla-firefox/components/nsUrlClassifierListManager.js
+mozilla-firefox/components/nsUrlClassifierTable.js
 mozilla-firefox/components/nsXmlRpcClient.js
 mozilla-firefox/components/oji.xpt
 mozilla-firefox/components/passwordmgr.xpt
@@ -138,11 +163,15 @@ mozilla-firefox/components/profile.xpt
 mozilla-firefox/components/progressDlg.xpt
 mozilla-firefox/components/proxyObjInst.xpt
 mozilla-firefox/components/rdf.xpt
+mozilla-firefox/components/safebrowsing.xpt
 mozilla-firefox/components/satchel.xpt
+mozilla-firefox/components/saxparser.xpt
 mozilla-firefox/components/search.xpt
+mozilla-firefox/components/sessionstore.xpt
 mozilla-firefox/components/shellservice.xpt
 mozilla-firefox/components/shistory.xpt
-mozilla-firefox/components/sidebar.xpt
+mozilla-firefox/components/spellchecker.xpt
+mozilla-firefox/components/storage.xpt
 mozilla-firefox/components/toolkitprofile.xpt
 mozilla-firefox/components/toolkitremote.xpt
 mozilla-firefox/components/txmgr.xpt
@@ -151,6 +180,8 @@ mozilla-firefox/components/uconv.xpt
 mozilla-firefox/components/unicharutil.xpt
 mozilla-firefox/components/update.xpt
 mozilla-firefox/components/uriloader.xpt
+mozilla-firefox/components/url-classifier.xpt
+mozilla-firefox/components/urlformatter.xpt
 mozilla-firefox/components/webBrowser_core.xpt
 mozilla-firefox/components/webbrowserpersist.xpt
 mozilla-firefox/components/webshell_idls.xpt
@@ -159,7 +190,6 @@ mozilla-firefox/components/widget.xpt
 mozilla-firefox/components/windowds.xpt
 mozilla-firefox/components/windowwatcher.xpt
 mozilla-firefox/components/xml-rpc.xpt
-mozilla-firefox/components/xmlextras.xpt
 mozilla-firefox/components/xpcom_base.xpt
 mozilla-firefox/components/xpcom_components.xpt
 mozilla-firefox/components/xpcom_ds.xpt
@@ -178,6 +208,7 @@ mozilla-firefox/defaults/autoconfig/platform.js
 mozilla-firefox/defaults/autoconfig/prefcalls.js
 mozilla-firefox/defaults/pref/
 mozilla-firefox/defaults/pref/channel-prefs.js
+mozilla-firefox/defaults/pref/firefox-branding.js
 mozilla-firefox/defaults/pref/firefox-l10n.js
 mozilla-firefox/defaults/pref/firefox.js
 mozilla-firefox/defaults/pref/reporter.js
@@ -190,6 +221,9 @@ mozilla-firefox/defaults/profile/localstore.rdf
 mozilla-firefox/defaults/profile/mimeTypes.rdf
 mozilla-firefox/defaults/profile/prefs.js
 mozilla-firefox/defaults/profile/search.rdf
+mozilla-firefox/dictionaries/
+mozilla-firefox/dictionaries/en-US.aff
+mozilla-firefox/dictionaries/en-US.dic
 mozilla-firefox/extensions/
 mozilla-firefox/extensions/inspector@mozilla.org/
 mozilla-firefox/extensions/inspector@mozilla.org/chrome/
@@ -198,7 +232,6 @@ mozilla-firefox/extensions/inspector@mozilla.org/chrome/chromelist.txt
 mozilla-firefox/extensions/inspector@mozilla.org/chrome/inspector.jar
 mozilla-firefox/extensions/inspector@mozilla.org/components/
 mozilla-firefox/extensions/inspector@mozilla.org/components/inspector-cmdline.js
-mozilla-firefox/extensions/inspector@mozilla.org/components/inspector.xpt
 mozilla-firefox/extensions/inspector@mozilla.org/defaults/
 mozilla-firefox/extensions/inspector@mozilla.org/defaults/preferences/
 mozilla-firefox/extensions/inspector@mozilla.org/defaults/preferences/inspector.js
@@ -210,10 +243,16 @@ mozilla-firefox/greprefs/
 mozilla-firefox/greprefs/all.js
 mozilla-firefox/greprefs/security-prefs.js
 mozilla-firefox/greprefs/xpinstall.js
-mozilla-firefox/mozicon16.xpm
-mozilla-firefox/mozicon50.xpm
+mozilla-firefox/icons/
+mozilla-firefox/icons/document.png
+mozilla-firefox/icons/mozicon128.png
+mozilla-firefox/icons/mozicon16.xpm
+mozilla-firefox/icons/mozicon50.xpm
+mozilla-firefox/init.d/
+mozilla-firefox/init.d/README
 mozilla-firefox/mozilla-firefox-bin
 mozilla-firefox/mozilla-xremote-client
+mozilla-firefox/plugins/
 mozilla-firefox/regxpcom
 mozilla-firefox/res/
 mozilla-firefox/res/EditorOverride.css
@@ -379,23 +418,15 @@ mozilla-firefox/res/viewer.properties
 mozilla-firefox/res/viewsource.css
 mozilla-firefox/run-mozilla.sh
 mozilla-firefox/searchplugins/
-mozilla-firefox/searchplugins/amazondotcom.png
-mozilla-firefox/searchplugins/amazondotcom.src
-mozilla-firefox/searchplugins/answers.png
-mozilla-firefox/searchplugins/answers.src
-mozilla-firefox/searchplugins/creativecommons.png
-mozilla-firefox/searchplugins/creativecommons.src
-mozilla-firefox/searchplugins/eBay.gif
-mozilla-firefox/searchplugins/eBay.src
-mozilla-firefox/searchplugins/google.gif
-mozilla-firefox/searchplugins/google.src
-mozilla-firefox/searchplugins/yahoo.gif
-mozilla-firefox/searchplugins/yahoo.src
+mozilla-firefox/searchplugins/amazondotcom.xml
+mozilla-firefox/searchplugins/answers.xml
+mozilla-firefox/searchplugins/creativecommons.xml
+mozilla-firefox/searchplugins/eBay.xml
+mozilla-firefox/searchplugins/google.xml
+mozilla-firefox/searchplugins/yahoo.xml
 @cwd ${LOCALBASE}/mozilla-firefox
 @exec rm -rf /tmp/.mozilla
 @exec cd %D && env HOME=/tmp LD_LIBRARY_PATH=%D ./regxpcom
 @exec rm -rf /tmp/.mozilla
 @unexec rm -f %D/components/compreg.dat
 @unexec rm -f %D/components/xpti.dat
-@unexec rm -f %D/chrome/chrome.rdf
-@unexec rm -rf %D/chrome/overlayinfo

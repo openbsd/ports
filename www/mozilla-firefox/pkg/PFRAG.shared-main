@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.10 2006/11/17 19:14:51 kurt Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2007/01/12 21:46:17 kurt Exp $
 @lib mozilla-firefox/components/libaccessibility.so.${LIBaccessibility_VERSION}
 @lib mozilla-firefox/components/libappcomps.so.${LIBappcomps_VERSION}
 @lib mozilla-firefox/components/libauth.so.${LIBauth_VERSION}
@@ -25,6 +25,7 @@
 @lib mozilla-firefox/components/libjsd.so.${LIBjsd_VERSION}
 @lib mozilla-firefox/components/libmork.so.${LIBmork_VERSION}
 @lib mozilla-firefox/components/libmozfind.so.${LIBmozfind_VERSION}
+@lib mozilla-firefox/components/libmyspell.so.${LIBmyspell_VERSION}
 @lib mozilla-firefox/components/libnecko.so.${LIBnecko_VERSION}
 @lib mozilla-firefox/components/libnecko2.so.${LIBnecko2_VERSION}
 @lib mozilla-firefox/components/libnsappshell.so.${LIBnsappshell_VERSION}
@@ -37,6 +38,8 @@
 @lib mozilla-firefox/components/librdf.so.${LIBrdf_VERSION}
 @lib mozilla-firefox/components/libremoteservice.so.${LIBremoteservice_VERSION}
 @lib mozilla-firefox/components/libsearchservice.so.${LIBsearchservice_VERSION}
+@lib mozilla-firefox/components/libspellchecker.so.${LIBspellchecker_VERSION}
+@lib mozilla-firefox/components/libstoragecomps.so.${LIBstoragecomps_VERSION}
 @lib mozilla-firefox/components/libsystem-pref.so.${LIBsystem-pref_VERSION}
 @lib mozilla-firefox/components/libtoolkitcomps.so.${LIBtoolkitcomps_VERSION}
 @lib mozilla-firefox/components/libtransformiix.so.${LIBtransformiix_VERSION}
@@ -51,19 +54,15 @@
 @lib mozilla-firefox/components/libxpcom_compat_c.so.${LIBxpcom_compat_c_VERSION}
 @lib mozilla-firefox/components/libxpconnect.so.${LIBxpconnect_VERSION}
 @lib mozilla-firefox/components/libxpinstall.so.${LIBxpinstall_VERSION}
-@lib mozilla-firefox/extensions/inspector@mozilla.org/components/libinspector.so.${LIBinspector_VERSION}
 @lib mozilla-firefox/libgfxpsshar.so.${LIBgfxpsshar_VERSION}
 @lib mozilla-firefox/libgkgfx.so.${LIBgkgfx_VERSION}
 @lib mozilla-firefox/libgtkembedmoz.so.${LIBgtkembedmoz_VERSION}
 @lib mozilla-firefox/libgtkxtbin.so.${LIBgtkxtbin_VERSION}
 @lib mozilla-firefox/libjsj.so.${LIBjsj_VERSION}
 @lib mozilla-firefox/libmozjs.so.${LIBmozjs_VERSION}
-@lib mozilla-firefox/libnss3.so.${LIBnss3_VERSION}
-@lib mozilla-firefox/libnssckbi.so.${LIBnssckbi_VERSION}
-@lib mozilla-firefox/libsmime3.so.${LIBsmime3_VERSION}
-@lib mozilla-firefox/libsoftokn3.so.${LIBsoftokn3_VERSION}
-@lib mozilla-firefox/libssl3.so.${LIBssl3_VERSION}
 @lib mozilla-firefox/libxpcom.so.${LIBxpcom_VERSION}
 @lib mozilla-firefox/libxpcom_compat.so.${LIBxpcom_compat_VERSION}
 @lib mozilla-firefox/libxpcom_core.so.${LIBxpcom_core_VERSION}
 @lib mozilla-firefox/libxpistub.so.${LIBxpistub_VERSION}
+@lib mozilla-firefox/plugins/libnullplugin.so.${LIBnullplugin_VERSION}
+@lib mozilla-firefox/plugins/libunixprintplugin.so.${LIBunixprintplugin_VERSION}
