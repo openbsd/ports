@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2007/01/03 10:02:41 robert Exp $
+# $OpenBSD: Makefile,v 1.118 2007/01/12 12:51:28 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -78,6 +78,7 @@
      SUBDIR += symon
      SUBDIR += sysgen
      SUBDIR += syslog-ng
+     SUBDIR += tabled
      SUBDIR += tcplist
      SUBDIR += tentakel
      SUBDIR += tkdvd
