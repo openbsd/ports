@@ -1,1 +1,2 @@
-esound plugin for gstreamer-${VERSION}
+good plugin for gstreamer-${VERSION}
+* esdsink                           ESD Element Plugins

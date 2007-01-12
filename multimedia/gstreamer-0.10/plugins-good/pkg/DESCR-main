@@ -2,7 +2,68 @@ This package contains some plugins for gstreamer-${VERSION}.
 The gstreamer people split plugins into:
 - base plugins (plugins-base)
 - plugins with good code and a good licence (plugins-good)
-- plugins with licence issues.
+- plugins with licence issues (plugins-ugly)
+- plugins with relatively bad code (plugins-bad)
 
-This package contains most good plugins without too many external
+This package contains good plugins without too many external
 dependencies.
+
+* alaw            ALaw audio conversion routines
+* alpha           adds an alpha channel to video
+* alphacolor      RGB->YUV colorspace conversion preserving alpha channels
+* annodex         annodex stream manipulation/CMML (http://www.annodex.net)
+* apetag          APEv1/2 tag reader
+* audiofx         Audio effects plugin (stereo positioning)
+* auparse         parses au streams
+* avi             AVI stream handling (mux/demux)
+* cutter          audio cutter, split along silences
+* debug           elements for testing and debugging
+   breakmydata       randomly change data in the stream
+   navseek           Seek based on navigation keys left-right
+   progressreport    Periodically query and report on processing progress
+   testsink          perform a number of tests
+* efence          efence-like memory allocation of gstream buffers
+* effectv         effect plugins from the effectv project
+* flxdec          FLC/FLI/FLX video decoder
+* goom            GOOM visualization filter
+* icydemux        Demux ICY tags from a stream
+* id3demux        Demux ID3v1 and ID3v2 tags from a file
+* level           RMS/Peak/Decaying Peak Level messager for audio/raw
+* matroska        Matroska containers stream handling (muxer/demuxer)
+* mulaw           MuLaw audio encoder/decoder
+* multipart       multipart stream manipulation (mux/demux)
+* navigationtest  Template for a navigation video filter
+* ossaudio        default audio sink on OpenBSD.
+* rtp             Real-time protocol plugins: asterisk, rtp, gsm, h263...
+* rtsp            transfer data via RTSP
+* smpte           Apply the standard SMPTE transitions on video images
+* udp             transfer data via UDP
+* videobalance    Hue/saturation/brightness/contrast of video stream
+* videobox        resize a video: borders/cropping
+* videoflip       Flips and rotates video
+* videomixer      Mix multiple video streams
+* wavenc          Encode raw audio into WAV
+* wavparse        Parse a .wav file into raw audio
+* ximagesrc       X11 video input plugin using standard Xlib calls
+
+
+The following plugins are in specific packages because of dependencies:
+* aasink
+* cacasink
+* cairo
+* dv
+* esdsink
+* flac
+* autodetect & gconfelements
+* gdkpixbuf
+* jpeg
+* png
+* shout2send
+* speex
+* taglib
+
+The following plugins are not built:
+* 1394 (no firewire support yet)
+* cdio (not ported, cdparanoia is enough)
+* halelements (hal library not ported)
+* ladspa (moved to bad plugins)

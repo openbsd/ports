@@ -1,1 +1,2 @@
-shoutcast plugin for gstreamer-${VERSION}
+good plugin for gstreamer-${VERSION}
+* shout2send         ends data to an icecast server using libshout2

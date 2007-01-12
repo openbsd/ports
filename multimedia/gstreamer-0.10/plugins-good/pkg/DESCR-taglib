@@ -1,1 +1,2 @@
-taglib plugin for gstreamer-${VERSION}
+good plugin for gstreamer-${VERSION}
+* taglib        write AP2/ID3v2 tags

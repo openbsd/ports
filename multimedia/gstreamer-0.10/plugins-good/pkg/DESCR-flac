@@ -1,1 +1,2 @@
-flac plugin for gstreamer-${VERSION}
+good plugin for gstreamer-${VERSION}
+* flac   FLAC Lossless compressor encoder/decoder

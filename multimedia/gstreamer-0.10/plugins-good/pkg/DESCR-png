@@ -1,1 +1,2 @@
-png plugin for gstreamer-${VERSION}
+good plugin for gstreamer-${VERSION}
+* png                               PNG plugin library

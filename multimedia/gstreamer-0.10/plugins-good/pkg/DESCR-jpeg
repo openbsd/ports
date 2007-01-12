@@ -1,1 +1,2 @@
-jpeg plugin for gstreamer-${VERSION}
+good plugin for gstreamer-${VERSION}
+* jpeg           JPeg plugin library (decoder/encoder). smoke format too.

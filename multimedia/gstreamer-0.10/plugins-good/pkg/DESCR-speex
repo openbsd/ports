@@ -1,1 +1,2 @@
-speex plugin for gstreamer-${VERSION}
+good plugin for gstreamer-${VERSION}
+* speex               Speex decoder/encoder

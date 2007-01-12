@@ -1,1 +1,2 @@
-This is the gstreamer-${VERSION} plugin for aalib output
+good plugin for gstreamer-${VERSION}
+* aasink                            ASCII Art video sink
