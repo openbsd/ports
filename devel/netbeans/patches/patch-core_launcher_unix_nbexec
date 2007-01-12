@@ -1,0 +1,26 @@
+$OpenBSD: patch-core_launcher_unix_nbexec,v 1.1.1.1 2007/01/12 16:30:04 ian Exp $
+--- core/launcher/unix/nbexec.orig	Mon Jan  8 19:32:04 2007
++++ core/launcher/unix/nbexec	Mon Jan  8 19:33:05 2007
+@@ -277,18 +277,18 @@ detect_gnome_proxy () {
+ detect_kde_proxy () {
+     kioslaverc="${HOME}/.kde/share/config/kioslaverc"
+     if [ -f $kioslaverc ] ; then
+-        if /bin/grep -q 'ProxyType=1' "$kioslaverc" ; then
+-            http_proxy=`/bin/grep 'httpProxy=http://' "$kioslaverc"`
++        if /usr/bin/grep -q 'ProxyType=1' "$kioslaverc" ; then
++            http_proxy=`/usr/bin/grep 'httpProxy=http://' "$kioslaverc"`
+             if [ $? ] ; then
+                 http_proxy=`echo $http_proxy | /bin/sed 's/httpProxy=http:\/\///'`
+                 return 0
+             fi
+-            http_non_proxy_hosts=`/bin/grep 'NoProxyFor=' "$kioslaverc"`
++            http_non_proxy_hosts=`/usr/bin/grep 'NoProxyFor=' "$kioslaverc"`
+             if [ $? ] ; then
+                 http_non_proxy_hosts=`echo $http_non_proxy_hosts | /bin/sed 's/NoProxyFor=//'`
+             fi
+         else
+-            if /bin/grep -q 'ProxyType=0' "$kioslaverc" ; then
++            if /usr/bin/grep -q 'ProxyType=0' "$kioslaverc" ; then
+                 http_proxy="DIRECT"
+                 return 0
+             fi

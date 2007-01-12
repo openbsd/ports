@@ -1,0 +1,14 @@
+Netbeans is Sun's official Java IDE.
+
+"NetBeans IDE includes comprehensive support for developing IDE
+plug-in modules and rich client applications based on the NetBeans
+platform. It also includes the intuitive GUI builder Matisse,
+redesigned CVS support, support for Sun Application Server 8.2,
+Weblogic9 and JBoss 4, and many editor enhancements including new
+refactorings. NetBeans IDE is a robust, open source Java IDE
+that has everything software developers need to develop cross-platform
+desktop, web and mobile applications straight out of the box. ..."
+
+NetBeans is modular, and many add-ons can be downloaded from
+netbeans.org.  NetBeans is also used as the platform for many of
+Sun's commercial development environments.

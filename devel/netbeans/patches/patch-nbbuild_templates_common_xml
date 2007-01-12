@@ -1,0 +1,12 @@
+$OpenBSD: patch-nbbuild_templates_common_xml,v 1.1.1.1 2007/01/12 16:30:04 ian Exp $
+--- nbbuild/templates/common.xml.orig	Mon Jan  8 20:35:51 2007
++++ nbbuild/templates/common.xml	Mon Jan  8 20:36:08 2007
+@@ -85,7 +85,7 @@ Microsystems, Inc. All Rights Reserved.
+ 
+     <target name="compile" depends="init">
+         <mkdir dir="${build.classes.dir}"/>
+-        <javac srcdir="${src.dir}" destdir="${build.classes.dir}" debug="${build.compiler.debug}" debuglevel="${build.compiler.debuglevel}" deprecation="${build.compiler.deprecation}" optimize="${build.compiler.optimize}" source="${javac.source}" target="${javac.target}" includeantruntime="false">
++        <javac srcdir="${src.dir}" destdir="${build.classes.dir}" debug="${build.compiler.debug}" debuglevel="${build.compiler.debuglevel}" deprecation="${build.compiler.deprecation}" optimize="${build.compiler.optimize}" source="${javac.source}" target="${javac.target}" includeantruntime="false" fork="true">
+             <classpath refid="cp"/>
+             <compilerarg line="${javac.compilerargs}"/>
+         </javac>
