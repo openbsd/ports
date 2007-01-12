@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2006/11/01 20:47:41 kurt Exp $
+# $OpenBSD: Makefile,v 1.12 2007/01/12 14:34:30 kurt Exp $
 
 COMMENT=        "java replacement for make"
 
-DISTNAME=	apache-ant-1.6.5
-PKGNAME=	${DISTNAME}p5
+DISTNAME=	apache-ant-1.7.0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://ant.apache.org/
@@ -20,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_APACHE:=ant/binaries/} \
 		http://archive.apache.org/dist/ant/binaries/
 
-EXTRACT_SUFX=	-bin.tar.gz
+EXTRACT_SUFX=	-bin.tar.bz2
 
 MODULES=	java
 MODJAVA_VER=	1.3+
