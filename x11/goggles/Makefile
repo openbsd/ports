@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/13 13:01:37 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2007/01/12 08:48:57 steven Exp $
 
 COMMENT='gui for ogle'
 CATEGORIES=x11
 
 DISTNAME=goggles-0.8.0
+PKGNAME=${DISTNAME}p0
 EXTRACT_SUFX=.tar.bz2
 MASTER_SITES=http://www.fifthplanet.net/files/
 HOMEPAGE=http://www.fifthplanet.net/goggles.html
@@ -43,6 +44,6 @@ PERMIT_DISTFILES_FTP=Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_PACKAGE_FTP=Yes
 PERMIT_PACKAGE_CDROM=Yes
-WANTLIB=GL GLU X11 Xext bz2 c jpeg m png pthread stdc++ tiff z
+WANTLIB=GL GLU X11 Xext Xcursor Xrandr bz2 c jpeg m png pthread stdc++ tiff z
 
 .include <bsd.port.mk>
