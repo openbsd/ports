@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2006/11/11 21:04:27 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2007/01/12 14:44:05 robert Exp $
 
 COMMENT=	"tools to talk to GSM cellular phones"	
 
 VERSION=	0.6.14
 DISTNAME=	gnokii-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	comms x11
 SHARED_LIBS +=	gnokii               2.7      # .3.0
 
@@ -44,9 +45,10 @@ WANTLIB+=		X11 Xext Xpm Xrender fontconfig freetype z \
 			gmodule-2.0.>=400.8 gobject-2.0.>=400.8 \
 			pango-1.0.>=600.0 pangoft2-1.0.>=600.0 \
 			pangocairo-1.0 cairo glitz png
-LIB_DEPENDS=		gtk-x11-2.0.>=400.13,gdk-x11-2.0.>=400.13,gdk_pixbuf-2.0.>=400.13::x11/gtk+2 \
-			usb.>=8::devel/libusb
+LIB_DEPENDS=		gtk-x11-2.0.>=400.13,gdk-x11-2.0.>=400.13,gdk_pixbuf-2.0.>=400.13::x11/gtk+2
 .endif
+
+LIB_DEPENDS+=		usb.>=8::devel/libusb
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnokii
