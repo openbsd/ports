@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.474 2007/01/11 22:03:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.475 2007/01/12 18:16:29 ian Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -172,6 +172,7 @@
      SUBDIR += mysql++
      SUBDIR += mysql-gui-common
      SUBDIR += nasm
+     SUBDIR += netbeans
      SUBDIR += nspr
      SUBDIR += ocaml-calendar
      SUBDIR += omake
