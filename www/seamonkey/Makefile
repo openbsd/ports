@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/31 01:13:24 kurt Exp $
+# $OpenBSD: Makefile,v 1.3 2007/01/12 23:11:12 kurt Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -7,9 +7,9 @@ COMMENT-devel=  "devel files for Gecko"
 
 VER=		1.0.7
 DISTNAME=	seamonkey-${VER}.source
-PKGNAME=	seamonkey-${VER}p0
-PKGNAME-main=	seamonkey-${VER}p0
-PKGNAME-devel=  seamonkey-devel-${VER}p0
+PKGNAME=	seamonkey-${VER}p1
+PKGNAME-main=	seamonkey-${VER}p1
+PKGNAME-devel=  seamonkey-devel-${VER}p1
 
 SO_VERSION=	9.3
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -49,24 +49,18 @@ MASTER_SITES=	http://ftp.mozilla.org/pub/mozilla.org/seamonkey/releases/${VER}/
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=  :zip->=2.3:archivers/zip
+LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
+                nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr
+WANTLIB=	c glib-2.0 m pthread stdc++
 
 RUN_DEPENDS-main= :esound-*:audio/esound
-LIB_DEPENDS-main= \
-		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
-                nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr
-WANTLIB-main=	X11 Xext Xft Xinerama Xrender Xt atk-1.0 c cairo fontconfig \
-		freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 iconv \
-		intl jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 png \
-		pthread stdc++ z
+WANTLIB-main=	${WANTLIB} X11 Xext Xft Xinerama Xrender Xt atk-1.0 \
+		cairo fontconfig freetype glitz gmodule-2.0 gobject-2.0 \
+		jpeg pango-1.0 pangocairo-1.0 pangoft2-1.0 png z
 
-RUN_DEPENDS-devel= :${PKGNAME-main}:www/seamonkey,-main
-LIB_DEPENDS-devel= \
-		IDL-2::devel/libIDL \
-		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
-                nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr
-WANTLIB-devel=	X11 Xext Xrender Xt atk-1.0 c cairo fontconfig freetype \
-		glib-2.0 glitz gmodule-2.0 gobject-2.0 iconv intl m \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread z
+LIB_DEPENDS-devel= ${MODGETTEXT_LIB_DEPENDS} IDL-2::devel/libIDL \
+		seamonkey/mozjs,seamonkey/nss3,seamonkey/smime3,seamonkey/ssl3,seamonkey/xpcom,seamonkey/xpcom_core:${PKGNAME-main}:www/seamonkey,-main
+WANTLIB-devel=	${WANTLIB} nspr4 plc4 plds4
 
 VMEM_WARNING=	Yes
 
@@ -115,7 +109,7 @@ CONFIGURE_ENV=	${MAKE_ENV} \
 
 WRKDIST=	${WRKDIR}/mozilla
 
-MOB=		${WRKSRC}/dist
+MOB=		${WRKSRC}/dist/bin
 MOZ=		${PREFIX}/seamonkey
 
 post-extract:
@@ -130,27 +124,27 @@ pre-configure:
 	@echo "`date "+%Y%d%m%H%M%S"`" > ${WRKSRC}/config/build_number
 
 do-install:
-.for dir in include idl lib
+.for dir in include idl
+	${INSTALL_DATA_DIR} ${MOZ}/${dir}
+	@cd ${WRKSRC}/dist && ${TAR} -chf - ${dir} | \
+		${TAR} -xf - -C ${MOZ}
+.endfor
+	@cd ${WRKSRC}/dist/public && ${TAR} -chf - nss | \
+		${TAR} -xf - -C ${MOZ}/include   
+.for dir in chrome components defaults greprefs searchplugins res 
 	${INSTALL_DATA_DIR} ${MOZ}/${dir}
 	@cd ${MOB} && ${TAR} -chf - ${dir} | \
 		${TAR} -xf - -C ${MOZ}
 .endfor
-	@cd ${MOB}/public && ${TAR} -chf - nss | \
-		${TAR} -xf - -C ${MOZ}/include   
-.for dir in chrome components defaults greprefs searchplugins res 
-	${INSTALL_DATA_DIR} ${MOZ}/${dir}
-	@cd ${MOB}/bin && ${TAR} -chf - ${dir} | \
-		${TAR} -xf - -C ${MOZ}
-.endfor
-	@cd ${MOB}/bin && ${TAR} -chf - *.so.?.? | \
+	@cd ${MOB} && ${TAR} -chf - *.so.?.? | \
 		${TAR} -xf - -C ${MOZ}
 	@chmod 444 ${MOZ}/*.so.?.? ${MOZ}/components/*.so.?.? ${MOZ}/components/*.js
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${MOZ}
-	${INSTALL_SCRIPT} ${MOB}/bin/seamonkey ${MOB}/bin/seamonkey-config ${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${MOB}/bin/run-mozilla.sh ${MOZ}
-	${INSTALL_PROGRAM} ${MOB}/bin/regxpcom ${MOB}/bin/seamonkey-bin ${MOB}/bin/mozilla-xremote-client ${MOB}/bin/TestGtkEmbed \
-	${MOB}/bin/mangle ${MOB}/bin/nsinstall ${MOB}/bin/shlibsign ${MOB}/bin/xpcshell ${MOB}/bin/xpicleanup ${MOB}/bin/xpidl \
-	${MOB}/bin/xpt_dump ${MOB}/bin/xpt_link ${MOZ}
+	${INSTALL_SCRIPT} ${MOB}/seamonkey ${MOB}/seamonkey-config ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOZ}
+	${INSTALL_PROGRAM} ${MOB}/regxpcom ${MOB}/seamonkey-bin ${MOB}/mozilla-xremote-client ${MOB}/TestGtkEmbed \
+	${MOB}/mangle ${MOB}/nsinstall ${MOB}/shlibsign ${MOB}/xpcshell ${MOB}/xpicleanup ${MOB}/xpidl \
+	${MOB}/xpt_dump ${MOB}/xpt_link ${MOZ}
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
 	${INSTALL_DATA} ${WRKBUILD}/build/unix/*.pc ${PREFIX}/lib/pkgconfig
 	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' \
