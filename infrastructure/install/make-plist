@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.90 2007/01/10 01:41:29 espie Exp $
+# $OpenBSD: make-plist,v 1.91 2007/01/12 21:53:31 espie Exp $
 # Copyright (c) 2004-2006 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -163,7 +163,7 @@ sub lib_backsubst
 				    $known_libs{$name}];
 			}
 		}
-		s/^(.*)\d+\.\d+$/var_backsubst($1)/e;
+		s/^(.*?)\d+\.\d+$/var_backsubst($1)/e;
 		$_ .= "\$\{LIB$name\_VERSION\}";
 		return $_;
 	} elsif (m/\.so\.\$\{LIB.*_VERSION\}$/) {
