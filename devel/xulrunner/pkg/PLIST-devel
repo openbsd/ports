@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-devel,v 1.1.1.1 2007/01/05 14:44:50 kurt Exp $
+@comment $OpenBSD: PLIST-devel,v 1.2 2007/01/12 20:35:15 kurt Exp $
+@conflict xulrunner-<1.8.0.4p0
 bin/xulrunner-config
 lib/pkgconfig/
 lib/pkgconfig/xulrunner-gtkmozembed.pc
@@ -2941,4 +2942,10 @@ xulrunner/include/xultmpl/
 xulrunner/include/xultmpl/nsIXULBuilderListener.h
 xulrunner/include/xultmpl/nsIXULSortService.h
 xulrunner/include/xultmpl/nsIXULTemplateBuilder.h
+xulrunner/mangle
+xulrunner/shlibsign
+xulrunner/xpcshell
+xulrunner/xpicleanup
 xulrunner/xpidl
+xulrunner/xpt_dump
+xulrunner/xpt_link

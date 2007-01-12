@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2007/01/05 14:44:48 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/01/12 20:35:15 kurt Exp $
 %%SHARED%%
 bin/xulrunner
 xulrunner/
@@ -184,7 +184,6 @@ xulrunner/icons/
 xulrunner/icons/document.png
 xulrunner/icons/mozicon16.xpm
 xulrunner/icons/mozicon50.xpm
-xulrunner/mangle
 xulrunner/mozicon16.xpm
 xulrunner/mozicon50.xpm
 xulrunner/mozilla-xremote-client
@@ -353,11 +352,6 @@ xulrunner/res/unixcharset.properties
 xulrunner/res/viewer.properties
 xulrunner/res/viewsource.css
 xulrunner/run-mozilla.sh
-xulrunner/shlibsign
-xulrunner/xpcshell
-xulrunner/xpicleanup
-xulrunner/xpt_dump
-xulrunner/xpt_link
 xulrunner/xulrunner-bin
 xulrunner/xulrunner-stub
 @exec xulrunner --register-global
