@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2007/01/04 20:19:53 steven Exp $
+# $OpenBSD: Makefile,v 1.29 2007/01/12 18:46:37 kurt Exp $
 
 ONLY_FOR_ARCHS=		amd64 i386
 
@@ -10,10 +10,10 @@ COMMENT-browser=	"HTML Browser Widget library for swt/eclipse"
 ECLIPSE_VER=		3.2.1
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
 PKGNAME=		eclipse-sdk-${ECLIPSE_VER}
-PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}p0
+PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}p1
 PKGNAME-swt=		swt-${ECLIPSE_VER}
 PKGNAME-gnome=		swt-gnome-${ECLIPSE_VER}
-PKGNAME-browser=	swt-browser-${ECLIPSE_VER}
+PKGNAME-browser=	swt-browser-${ECLIPSE_VER}p0
 SHARED_LIBS=		swt-atk-gtk-3235	4.0 \
 			swt-awt-gtk-3235	4.0 \
 			swt-gtk-3235		4.0 \
@@ -56,7 +56,7 @@ VMEM_WARNING=		Yes
 MODULES=		java devel/gettext
 MODJAVA_VER=		1.5+
 
-BUILD_DEPENDS=		:mozilla-devel->=1.7.13p2:www/mozilla,-devel \
+BUILD_DEPENDS=		::devel/xulrunner,-devel \
 			:apache-ant->=1.6.1:devel/apache-ant
 
 USE_GMAKE=		Yes
@@ -66,7 +66,7 @@ MULTI_PACKAGES=		-main -swt -gnome -browser
 
 RUN_DEPENDS-main=	::java/javaPathHelper \
 			${MODJAVA_RUN_DEPENDS} \
-			:${PKGNAME-swt}:devel/eclipse/sdk,-swt
+			:${PKGNAME-swt}:devel/eclipse/sdk,-browser
 LIB_DEPENDS-main=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 WANTLIB-main=		X11 Xext Xrender c m z fontconfig \
 			freetype atk-1.0 glib-2.0 gmodule-2.0 \
@@ -81,10 +81,10 @@ LIB_DEPENDS-gnome=	gnomeui-2::x11/gnome/libgnomeui
 WANTLIB-gnome=		gnome-2 gnomevfs-2
 
 RUN_DEPENDS-browser=	:${PKGNAME-swt}:devel/eclipse/sdk,-swt
-LIB_DEPENDS-browser=	mozilla/gtkembedmoz,mozilla/xpcom:mozilla->=1.7.13p2:www/mozilla
+LIB_DEPENDS-browser=	xulrunner/gtkembedmoz,xulrunner/xpcom::devel/xulrunner
 WANTLIB-browser=	c nspr4 plc4 plds4
 
-MOZILLA_HOME=		${LOCALBASE}/mozilla
+MOZILLA_HOME=		${LOCALBASE}/xulrunner
 ECLIPSE_WS=		gtk
 ECLIPSE_BUILD=		3235
 ECLIPSE_OS=		openbsd
@@ -131,7 +131,7 @@ do-install:
 	@tar xzf ${WRKBUILD}/result/openbsd-gtk-${ECLIPSE_ARCH}-sdk.tar.gz \
 		-C ${PREFIX}
 	@sed -e "s+%%ECLIPSE_HOME%%+${TRUEPREFIX}/eclipse+g" \
-		-e "s+%%MOZILLA_FIVE_HOME%%+${TRUEPREFIX}/mozilla+g" \
+		-e "s+%%MOZILLA_FIVE_HOME%%+${TRUEPREFIX}/xulrunner+g" \
 		${WRKBUILD}/eclipse.in > ${WRKBUILD}/eclipse.tmp
 	${INSTALL_SCRIPT} ${WRKBUILD}/eclipse.tmp ${PREFIX}/bin/eclipse
 	${INSTALL_PROGRAM} ${WRKBUILD}/launchertmp/eclipse ${PREFIX}/eclipse/eclipse

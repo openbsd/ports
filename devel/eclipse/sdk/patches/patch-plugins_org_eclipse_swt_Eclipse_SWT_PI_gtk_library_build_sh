@@ -1,6 +1,6 @@
-$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_PI_gtk_library_build_sh,v 1.4 2006/07/07 01:48:55 kurt Exp $
---- plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh.orig	Fri Jun  2 13:32:28 2006
-+++ plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh	Tue Jun 13 08:07:00 2006
+$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_PI_gtk_library_build_sh,v 1.5 2007/01/12 18:46:37 kurt Exp $
+--- plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh.orig	Thu Sep 21 10:57:18 2006
++++ plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh	Wed Dec 13 22:33:39 2006
 @@ -27,6 +27,10 @@ if [ "${OS}" = "" ]; then
  	OS=`uname -s`
  fi
@@ -40,14 +40,16 @@ $OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_PI_gtk_library_build_sh,v 1.
  	SWT_PTR_CFLAGS=-DSWT_PTR_SIZE_64
  	export SWT_PTR_CFLAGS
  	if [ -d /lib64 ]; then
-@@ -88,8 +92,8 @@ fi
+@@ -87,9 +91,9 @@ else
+ fi
  
  if [ -z "${GECKO_INCLUDES}" -a -z "${GECKO_LIBS}" ]; then
- 	if [ x`pkg-config --exists mozilla-xpcom && echo YES` = "xYES" ]; then
+-	if [ x`pkg-config --exists mozilla-xpcom && echo YES` = "xYES" ]; then
 -		GECKO_INCLUDES=`pkg-config --cflags mozilla-xpcom`
 -		GECKO_LIBS=`pkg-config --libs mozilla-xpcom`
-+		GECKO_INCLUDES="`pkg-config --cflags mozilla-xpcom` -I`pkg-config --variable=includedir mozilla-xpcom`/embed_base"
-+		GECKO_LIBS="`pkg-config --libs mozilla-xpcom` `pkg-config --libs mozilla-gtkmozembed`"
++	if [ x`pkg-config --exists xulrunner-xpcom && echo YES` = "xYES" ]; then
++		GECKO_INCLUDES="`pkg-config --cflags xulrunner-xpcom` -I`pkg-config --variable=includedir xulrunner-xpcom`/embed_base"
++		GECKO_LIBS="`pkg-config --libs xulrunner-xpcom` `pkg-config --libs xulrunner-gtkmozembed`"
  		export GECKO_INCLUDES
  		export GECKO_LIBS
  		MAKE_MOZILLA=make_mozilla
