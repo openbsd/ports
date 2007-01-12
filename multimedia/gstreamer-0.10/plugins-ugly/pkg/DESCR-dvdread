@@ -1,1 +1,2 @@
-dvdread plugin for gstreamer-${VERSION}.
+plugin for gstreamer-${VERSION} with controversial licence
+* dvdread        Access a DVD title/chapter/angle using libdvdread         

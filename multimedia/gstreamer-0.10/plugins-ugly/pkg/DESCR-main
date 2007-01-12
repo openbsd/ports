@@ -1,2 +1,22 @@
 This package contains plugins for gstreamer-${VERSION} with a controversial
 licence or distribution issues.
+
+* asf            demuxes and muxes audio and video in Microsoft's ASF format
+* dvdlpcmdec     Decode DVD LPCM frames into standard PCM
+* dvdsub         Decode DVD subtitles to AYUV video frames
+* iec958         Convert raw AC3 into IEC958 (S/PDIF) frames
+* mpegaudioparse MPEG-1 layer 1/2/3 audio parser
+* mpegstream     MPEG system stream parser: mpeg1, mpeg2, dvd/vob
+* rmdemux        Realmedia stream demuxer
+
+The following plugins are in specific packages because of dependencies:
+* a52dec
+* dvdread
+* lame
+* mad
+* mpeg2dec
+* siddec
+
+The following plugins are not built:
+
+* amrnb (support library not ported/not existing)

@@ -1,1 +1,2 @@
-sidplay plugin for gstreamer-${VERSION}.
+plugin for gstreamer-${VERSION} with controversial licence
+* siddec          Uses libsidplay to decode .sid audio tunes        

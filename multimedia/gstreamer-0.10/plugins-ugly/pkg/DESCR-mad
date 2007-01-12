@@ -1,1 +1,2 @@
-mad plugin for gstreamer-${VERSION}.
+plugin for gstreamer-${VERSION} with controversial licence
+* mad       id3 tag manipulation and mp3 decoding based on the mad library          
