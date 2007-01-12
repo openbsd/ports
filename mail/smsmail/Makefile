@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/29 14:37:30 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2007/01/12 14:30:31 mbalmer Exp $
 
 COMMENT=	"LDAP enabled MDA to deliver mails as SMS"
 
 DISTNAME=	smsmail-1.0.2
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=    	mail
 
@@ -29,7 +30,7 @@ RUN_DEPENDS=	::comms/hylafax
 NO_REGRESS=	Yes
 
 post-install:
-	cp ${WRKSRC}/etc/openldap/schema/sms.schema \
+	${INSTALL_DATA} ${WRKSRC}/etc/openldap/schema/sms.schema \
 		${PREFIX}/share/examples/smsmail
 
 .include <bsd.port.mk>
