@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/01/12 14:43:43 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.5 2007/01/12 15:12:34 mbalmer Exp $
 
 COMMENT=	"daemon to modify pf tables from userland"
 
-DISTNAME=	tabled-1.0.2
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	tabled-1.0.3
 
 CATEGORIES=    	sysutils
 
