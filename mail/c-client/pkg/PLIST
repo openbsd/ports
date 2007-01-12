@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 09:09:41 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2007/01/12 10:51:22 mbalmer Exp $
+@pkgpath mail/c-client,kerberos
 include/c-client/
 include/c-client/c-client.h
 include/c-client/env.h
