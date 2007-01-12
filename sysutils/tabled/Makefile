@@ -1,0 +1,33 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2007/01/12 12:50:37 mbalmer Exp $
+
+COMMENT=	"daemon to modify pf tables from userland"
+
+DISTNAME=	tabled-1.0.0
+
+CATEGORIES=    	sysutils
+
+HOMEPAGE=	http://www.etc.msys.ch/software/tabled/
+
+MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
+
+SHARED_ONLY=	Yes
+
+# BSD
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
+
+MASTER_SITES=  	ftp://ftp.etc.msys.ch/pub/sources/tabled/
+EXTRACT_SUFX=	.tgz
+
+FAKE_FLAGS=	${MAKE_FLAGS}
+
+NO_REGRESS=	Yes
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
+	cp -r ${WRKSRC}/tabled.conf ${PREFIX}/share/examples/
+
+.include <bsd.port.mk>
