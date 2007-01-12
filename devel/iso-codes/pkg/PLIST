@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/08 15:20:12 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/01/12 10:05:13 espie Exp $
+lib/pkgconfig/
+lib/pkgconfig/iso-codes.pc
 share/iso-codes/
 share/iso-codes/iso_3166.tab
 share/iso-codes/iso_639.tab
@@ -546,8 +548,6 @@ share/locale/zu/LC_MESSAGES/iso_3166.mo
 share/locale/zu/LC_MESSAGES/iso_3166_2.mo
 share/locale/zu/LC_MESSAGES/iso_639.mo
 share/locale/zu/LC_MESSAGES/iso_639_3.mo
-share/pkgconfig/
-share/pkgconfig/iso-codes.pc
 share/xml/
 share/xml/iso-codes/
 share/xml/iso-codes/iso_3166.xml

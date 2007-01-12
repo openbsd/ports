@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/01/08 15:20:12 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2007/01/12 10:05:13 espie Exp $
 
 COMMENT=	"lists of the country, language and currency iso names"
 
 V=		0.58
 DISTNAME=	iso-codes-${V}
 DISTFILES=	iso-codes_${V}-1.tar.gz
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	devel
 
@@ -24,5 +25,7 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 
 BUILD_DEPENDS=	python-expat-2.4*:lang/python/2.4,-expat
+
+FAKE_FLAGS=	DESTDIR=${WRKINST}  pkgconfigdir=${PREFIX}/lib/pkgconfig
 
 .include <bsd.port.mk>
