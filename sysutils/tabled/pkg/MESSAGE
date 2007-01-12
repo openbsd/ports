@@ -1,0 +1,6 @@
+Tabled uses a fifo to accept commands.  That fifo must be manually created
+in this version of tabled before the daemon is started:
+
+	# mkfifo /var/run/tabled.sock
+
+Make sure to set the permsission of the fifo right.
