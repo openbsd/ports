@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.13 2006/02/28 16:27:53 bernd Exp $
+@comment $OpenBSD: PLIST-server,v 1.14 2007/01/13 13:37:33 mbalmer Exp $
 @conflict openldap-client->=2.3.11,<=2.3.11p3
 @newgroup _openldap:544
 @newuser _openldap:544:_openldap:daemon:OpenLDAP Account:/nonexistent:/sbin/nologin
@@ -23,7 +23,9 @@ libexec/slurpd
 @man man/man5/slapd.conf.5
 @man man/man5/slapd.plugin.5
 @man man/man5/slapd.replog.5
+@man man/man8/slapacl.8
 @man man/man8/slapadd.8
+@man man/man8/slapauth.8
 @man man/man8/slapcat.8
 @man man/man8/slapd.8
 @man man/man8/slapdn.8
@@ -31,7 +33,9 @@ libexec/slurpd
 @man man/man8/slappasswd.8
 @man man/man8/slaptest.8
 @man man/man8/slurpd.8
+sbin/slapacl
 sbin/slapadd
+sbin/slapauth
 sbin/slapcat
 sbin/slapdn
 sbin/slapindex

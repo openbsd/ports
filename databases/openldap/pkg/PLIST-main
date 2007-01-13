@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/25 16:50:24 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/01/13 13:37:33 mbalmer Exp $
 @pkgpath ${BASE_PKGPATH}
 bin/ldapadd
 bin/ldapcompare
@@ -192,10 +192,6 @@ lib/libldap_r.la
 @man man/man5/slapo-translucent.5
 @man man/man5/slapo-unique.5
 @man man/man5/slapo-valsort.5
-@man man/man8/slapacl.8
-@man man/man8/slapauth.8
-sbin/slapacl
-sbin/slapauth
 share/examples/openldap/
 @sample ${SYSCONFDIR}/openldap/
 share/examples/openldap/ldap.conf
