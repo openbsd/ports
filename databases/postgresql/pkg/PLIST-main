@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/23 21:21:54 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/01/13 16:39:45 mbalmer Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-*
@@ -282,11 +282,13 @@ share/postgresql/timezone/America/Argentina/Tucuman
 share/postgresql/timezone/America/Argentina/Ushuaia
 share/postgresql/timezone/America/Aruba
 share/postgresql/timezone/America/Asuncion
+share/postgresql/timezone/America/Atikokan
 share/postgresql/timezone/America/Atka
 share/postgresql/timezone/America/Bahia
 share/postgresql/timezone/America/Barbados
 share/postgresql/timezone/America/Belem
 share/postgresql/timezone/America/Belize
+share/postgresql/timezone/America/Blanc-Sablon
 share/postgresql/timezone/America/Boa_Vista
 share/postgresql/timezone/America/Bogota
 share/postgresql/timezone/America/Boise
@@ -333,7 +335,9 @@ share/postgresql/timezone/America/Indiana/
 share/postgresql/timezone/America/Indiana/Indianapolis
 share/postgresql/timezone/America/Indiana/Knox
 share/postgresql/timezone/America/Indiana/Marengo
+share/postgresql/timezone/America/Indiana/Petersburg
 share/postgresql/timezone/America/Indiana/Vevay
+share/postgresql/timezone/America/Indiana/Vincennes
 share/postgresql/timezone/America/Indianapolis
 share/postgresql/timezone/America/Inuvik
 share/postgresql/timezone/America/Iqaluit
@@ -358,6 +362,7 @@ share/postgresql/timezone/America/Menominee
 share/postgresql/timezone/America/Merida
 share/postgresql/timezone/America/Mexico_City
 share/postgresql/timezone/America/Miquelon
+share/postgresql/timezone/America/Moncton
 share/postgresql/timezone/America/Monterrey
 share/postgresql/timezone/America/Montevideo
 share/postgresql/timezone/America/Montreal
@@ -369,6 +374,7 @@ share/postgresql/timezone/America/Nome
 share/postgresql/timezone/America/Noronha
 share/postgresql/timezone/America/North_Dakota/
 share/postgresql/timezone/America/North_Dakota/Center
+share/postgresql/timezone/America/North_Dakota/New_Salem
 share/postgresql/timezone/America/Panama
 share/postgresql/timezone/America/Pangnirtung
 share/postgresql/timezone/America/Paramaribo
@@ -620,8 +626,11 @@ share/postgresql/timezone/Europe/Chisinau
 share/postgresql/timezone/Europe/Copenhagen
 share/postgresql/timezone/Europe/Dublin
 share/postgresql/timezone/Europe/Gibraltar
+share/postgresql/timezone/Europe/Guernsey
 share/postgresql/timezone/Europe/Helsinki
+share/postgresql/timezone/Europe/Isle_of_Man
 share/postgresql/timezone/Europe/Istanbul
+share/postgresql/timezone/Europe/Jersey
 share/postgresql/timezone/Europe/Kaliningrad
 share/postgresql/timezone/Europe/Kiev
 share/postgresql/timezone/Europe/Lisbon
@@ -637,6 +646,7 @@ share/postgresql/timezone/Europe/Moscow
 share/postgresql/timezone/Europe/Nicosia
 share/postgresql/timezone/Europe/Oslo
 share/postgresql/timezone/Europe/Paris
+share/postgresql/timezone/Europe/Podgorica
 share/postgresql/timezone/Europe/Prague
 share/postgresql/timezone/Europe/Riga
 share/postgresql/timezone/Europe/Rome
@@ -655,6 +665,7 @@ share/postgresql/timezone/Europe/Vaduz
 share/postgresql/timezone/Europe/Vatican
 share/postgresql/timezone/Europe/Vienna
 share/postgresql/timezone/Europe/Vilnius
+share/postgresql/timezone/Europe/Volgograd
 share/postgresql/timezone/Europe/Warsaw
 share/postgresql/timezone/Europe/Zagreb
 share/postgresql/timezone/Europe/Zaporozhye
@@ -750,20 +761,6 @@ share/postgresql/timezone/Portugal
 share/postgresql/timezone/ROC
 share/postgresql/timezone/ROK
 share/postgresql/timezone/Singapore
-share/postgresql/timezone/SystemV/
-share/postgresql/timezone/SystemV/AST4
-share/postgresql/timezone/SystemV/AST4ADT
-share/postgresql/timezone/SystemV/CST6
-share/postgresql/timezone/SystemV/CST6CDT
-share/postgresql/timezone/SystemV/EST5
-share/postgresql/timezone/SystemV/EST5EDT
-share/postgresql/timezone/SystemV/HST10
-share/postgresql/timezone/SystemV/MST7
-share/postgresql/timezone/SystemV/MST7MDT
-share/postgresql/timezone/SystemV/PST8
-share/postgresql/timezone/SystemV/PST8PDT
-share/postgresql/timezone/SystemV/YST9
-share/postgresql/timezone/SystemV/YST9YDT
 share/postgresql/timezone/Turkey
 share/postgresql/timezone/UCT
 share/postgresql/timezone/US/
