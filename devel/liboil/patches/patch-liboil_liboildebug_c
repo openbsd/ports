@@ -1,0 +1,12 @@
+$OpenBSD: patch-liboil_liboildebug_c,v 1.1 2007/01/13 22:49:09 deanna Exp $
+--- liboil/liboildebug.c.orig	Tue Jan  9 19:50:30 2007
++++ liboil/liboildebug.c	Tue Jan  9 19:50:54 2007
+@@ -45,7 +45,7 @@
+ static void oil_debug_print_valist (int level, const char *file,
+     const char *func, int line, const char *format, va_list args);
+ 
+-static int _oil_debug_level = OIL_DEBUG_ERROR;
++static int _oil_debug_level = OIL_DEBUG_NONE;
+ 
+ static OilDebugPrintFunc _oil_debug_print_func = oil_debug_print_valist;
+ 

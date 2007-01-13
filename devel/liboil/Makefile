@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2006/12/16 12:22:33 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2007/01/13 22:49:09 deanna Exp $
 
 COMMENT=	"library of optimized inner loops"
 
 DISTNAME=	liboil-0.3.10
+PKGNAME=	${DISTNAME}p0
 
 SHARED_LIBS +=  oil-0.3              2.0      # .1.0
 
