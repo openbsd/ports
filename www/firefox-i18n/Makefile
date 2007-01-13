@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2006/12/30 22:53:03 bernd Exp $
+# $OpenBSD: Makefile,v 1.10 2007/01/13 12:53:54 ajacoutot Exp $
 
 PKG_ARCH=	*
 
 COMMENT-main=	"${MAINLANG} language pack for Firefox"
-V=		1.5.0.9
+V=		2.0.0.1
 NAME=		firefox-i18n
 PKGNAME=	${NAME}-${MAINLANG}-${V}
-PKGNAME-main=	${NAME}-${MAINLANG}-${V}p0
+PKGNAME-main=	${NAME}-${MAINLANG}-${V}
 
 CATEGORIES=	www
 
@@ -26,8 +26,8 @@ MASTER_SITES=	http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/${V}/li
 # define one language for the main package
 MAINLANG=	en-GB
 OTHERLANGS=	ar bg ca cs da de el es-AR es-ES eu fi fr ga-IE gu-IN \
-		he hu it ja nb-NO nl pl pt-BR ro ru sk sl sv-SE tr zh-CN zh-TW
-#		broken: ko mk pa-IN
+		he hu it ja nb-NO nl pl pt-BR ru sk sl sv-SE tr zh-CN zh-TW
+#		broken/inexistent: ko mk pa-IN ro
 
 BUILD_DEPENDS=	:unzip-*:archivers/unzip
 RUN_DEPENDS=	:mozilla-firefox-${V}:www/mozilla-firefox
@@ -44,7 +44,7 @@ MULTI_PACKAGES=	-main
 .for i in ${OTHERLANGS}
 MULTI_PACKAGES+=-$i
 DISTFILES+=	$i.xpi
-PKGNAME-$i=	${NAME}-$i-${V}p0
+PKGNAME-$i=	${NAME}-$i-${V}
 COMMENT-$i=	$i language pack for Firefox
 LPACKDIR-$i=	${PREFIX}/mozilla-firefox/extensions/langpack-$i@firefox.mozilla.org
 .endfor
