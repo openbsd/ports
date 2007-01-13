@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_client_side_c,v 1.9 2006/11/13 02:11:39 brad Exp $
---- src/client_side.c.orig	Sat Sep 30 17:10:48 2006
-+++ src/client_side.c	Sat Nov  4 15:50:21 2006
-@@ -4456,7 +4456,7 @@ clientNatLookup(ConnStateData * conn)
+$OpenBSD: patch-src_client_side_c,v 1.10 2007/01/13 16:13:29 todd Exp $
+--- src/client_side.c.orig	Sun Dec 10 18:53:44 2006
++++ src/client_side.c	Fri Dec 22 23:55:29 2006
+@@ -4440,7 +4440,7 @@ clientNatLookup(ConnStateData * conn)
      static int pffd = -1;
      static time_t last_reported = 0;
      if (pffd < 0) {
