@@ -1,0 +1,9 @@
+To get started with the Architect, configure one or more Database
+Connections (right-click in the Navigator panel and choose New
+Connection...).  You may need to add one or more JDBC drivers; this
+is done under File->User Preferences->JDBC Drivers.
+
+Then, add your Connection to the Project and expand the database
+in the navigator; drag the parts you want to work on into the main
+panel. You can now begin visually inspecting/editing your database.
+Save your Project if you want to resume it later.

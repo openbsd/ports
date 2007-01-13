@@ -1,0 +1,19 @@
+The SQL*Power Group "Architect" is a powerful tool for understanding
+and generating databases and offers some data mining facilities.
+It has many "features geared specifically for data warehousing
+including:
+
+* Connect to any JDBC/ODBC-accessible source and target databases
+* Compare the database structure of any two databases highlighting
+the differences and generating a synchronize script
+* Save a snapshot of all source systems data structures into the
+project file allowing designers to work on the data model while
+off-line
+* Forward engineer many DBMS's including Oracle, SQL Server, DB2,
+Postgres
+* Forward engineer ETL templates containing source-to-target data
+mappings
+* Invoke ETL engine to load initial set of data into the target
+database
+* Enable easy, centralized installation and updates..."
+
