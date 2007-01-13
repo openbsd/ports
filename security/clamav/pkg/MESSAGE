@@ -2,3 +2,6 @@ Edit ${SYSCONFDIR}/clamd.conf and ${SYSCONFDIR}/freshclam.conf
 to use ClamAV.
 
 Use freshclam to install an up-to-date virus signature database.
+
+If you want to scan RAR(2.0) and/or ARJ archives, you have to manually
+build and install the archivers/unarj and archivers/unrar ports.
