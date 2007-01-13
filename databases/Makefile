@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.106 2006/12/10 23:50:13 espie Exp $
+# $OpenBSD: Makefile,v 1.107 2007/01/13 01:03:14 ian Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
+     SUBDIR += architect
      SUBDIR += db
      SUBDIR += dbh
      SUBDIR += directoryassistant
