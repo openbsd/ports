@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-sdl,v 1.1 2007/01/13 11:23:38 espie Exp $
+@option no-default-conflict
+@conflict gstreamer-sdl->=0.10
+lib/gstreamer-${VERSION}/libgstsdlvideosink.la
+lib/gstreamer-${VERSION}/libgstsdlvideosink.so

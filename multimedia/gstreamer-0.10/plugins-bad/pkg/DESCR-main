@@ -1,0 +1,46 @@
+Those plugins for gstreamer-${VERSION} are deemed low quality for now.
+
+* cdxaparse                Parse a .dat file (VCD) into raw mpeg1
+* filter                   IIR, lpwsinc and bpwsinc audio filter elements
+* freeze                   Makes a stream from buffers of data
+* h264parse                Parse raw h264 streams
+* modplug                  various .mod audio decoding
+* nsfdec                   decode .nsf files
+* qtdemux                  Quicktime stream demuxer
+* replaygain               ReplayGain analysis
+* rfbsrc                   connect to vnc
+* multifile                save to sequentially named files
+* spectrum                 run an FFT on signal and output spectrum data
+* speed                    set speed/pitch on audio/raw streams (resampler)
+* tta                      TTA lossless audio format handling
+* videocrop                Crops video into a user-defined region
+* xingheader               Add a xing header to mp3 encoded data
+* y4menc                   yuv4mpeg video encoder
+
+The following plugins are in specific packages because of dependencies:
+
+* bz2
+* faac
+* faad
+* gsm
+* ladspa
+* musepack 
+* neon
+* sdl
+* xvid
+
+
+The following plugins are not built:
+
+* alsaspdif (no alsa on OpenBSD)
+* dfbvideosink (no directFB on OpenBSD)
+* dtsdec (no dts library)
+* glimagesink (no accelerated GL support)
+* mms (no libmms library)
+* mpeg2enc (depends on internals of mjpegtools)
+* musicbrainz (not ported yet)
+* neon (library needs an update)
+* soundtouch (no libsoundtouch)
+* spcdec (no library)
+* swfdec (library is out-of-date)
+* wavpack (no wavpack library)
