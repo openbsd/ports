@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2006/12/16 12:22:32 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2007/01/13 11:27:56 espie Exp $
 
 COMMENT=		"Music Management Application"
 
 DISTNAME=		rhythmbox-0.8.8
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		audio
 
 HOMEPAGE=		http://www.rhythmbox.org
@@ -31,15 +31,15 @@ MODULES=		devel/gettext
 
 BUILD_DEPENDS=  	:scrollkeeper-*:textproc/scrollkeeper \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser \
-			:gstreamer-gnome-*:devel/gstreamer-plugins,-gnome
+			:gstreamer-gnome-0.8.*:devel/gstreamer-plugins,-gnome
 LIB_DEPENDS= 		gstgconf-0.8::devel/gstreamer-plugins \
 			gnomeui-2::x11/gnome/libgnomeui
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
-			:gstreamer-flac-*:devel/gstreamer-plugins,-flac \
-			:gstreamer-gnome-*:devel/gstreamer-plugins,-gnome \
-			:gstreamer-mad-*:devel/gstreamer-plugins,-mad \
-			:gstreamer-ogg-*:devel/gstreamer-plugins,-ogg \
-			:gstreamer-vorbis-*:devel/gstreamer-plugins,-vorbis
+			:gstreamer-flac-0.8.*:devel/gstreamer-plugins,-flac \
+			:gstreamer-gnome-0.8.*:devel/gstreamer-plugins,-gnome \
+			:gstreamer-mad-0.8.*:devel/gstreamer-plugins,-mad \
+			:gstreamer-ogg-0.8.*:devel/gstreamer-plugins,-ogg \
+			:gstreamer-vorbis-0.8.*:devel/gstreamer-plugins,-vorbis
 
 USE_X11=		Yes
 USE_GMAKE=		Yes

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.46 2006/11/20 08:07:41 steven Exp $
+# $OpenBSD: Makefile,v 1.47 2007/01/13 11:27:56 espie Exp $
 
 COMMENT= 		"K Desktop Environment, multimedia applications"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.5
 DISTNAME=		kdemultimedia-${VERSION}
-PKGNAME=		${DISTNAME}
+PKGNAME=		${DISTNAME}p0
 MODKDE_VERSION=		3.5.3
 SHARED_LIBS +=	artsbuilder          1.0      # .0.0
 SHARED_LIBS +=	artsmidi_idl         1.0      # .0.0
@@ -43,7 +43,7 @@ LIB_DEPENDS= DCOP,kdecore.>=6,kdefakes,kdefx,kdesu,kdeui,kio,khtml,kmid,kparts,k
 	cdda_paranoia,cdda_interface::audio/cdparanoia \
 	tag::audio/taglib \
 	popt::devel/popt \
-	gstreamer-0.8::devel/gstreamer \
+	gstreamer-0.8:gstreamer-0.8.*:devel/gstreamer \
 	ltdl::devel/libtool,-ltdl \
 	theora::multimedia/libtheora \
 	::devel/gstreamer-plugins \
