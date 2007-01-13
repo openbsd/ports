@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/13 22:15:39 deanna Exp $
+bin/rlwrap
+@man man/man1/rlwrap.1
+share/rlwrap/
+share/rlwrap/coqtop
+share/rlwrap/ftp

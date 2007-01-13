@@ -1,0 +1,5 @@
+rlwrap is a 'readline wrapper', a small utility that uses the GNU
+readline library to allow the editing of keyboard input for any
+command.  rlwrap should be especially useful when you need
+user-defined completion (by way of completion word lists) and
+persistent history. 
