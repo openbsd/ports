@@ -1,1 +1,3 @@
-daemon to modify pf tables from userland
+daemon to modify pf tables from an unprivileged process in userland,
+useful e.g. when you want to add hostnames to a pf table from a chrooted
+process, e.g. from a webserver.
