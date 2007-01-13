@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.12 2005/09/23 19:41:44 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2007/01/13 12:15:21 simon Exp $
 
 COMMENT=	"perl module to gateway between news and mail"
 
+MODULES=	cpan
 DISTNAME=	Gateway-0.42
-PKGNAME=	p5-${DISTNAME}p0
-CATEGORIES=	news perl5
+PKGNAME=	p5-${DISTNAME}p1
+CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=News/}
 
 RUN_DEPENDS=	:p5-PGP-Sign-*:security/p5-PGP-Sign \
 		:p5-News-Article->=1.07:news/p5-News-Article
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+# Perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-CONFIGURE_STYLE= perl
 
 # install example files
 post-install:
