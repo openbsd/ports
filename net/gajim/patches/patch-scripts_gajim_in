@@ -1,0 +1,15 @@
+$OpenBSD: patch-scripts_gajim_in,v 1.1 2007/01/13 19:40:47 jolan Exp $
+--- scripts/gajim.in.orig	Wed Oct 11 21:40:56 2006
++++ scripts/gajim.in	Mon Jan  8 18:55:30 2007
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ ##      gajim
+ ##
+ ## Contributors for this file:
+@@ -32,4 +32,4 @@ PYTHON_EXEC=@PYTHON@
+ 
+ cd ${datadir}/gajim/src
+ export PYTHONPATH="$PYTHONPATH:@LIBDIR@/gajim"
+-exec -a gajim ${PYTHON_EXEC} -OO gajim.py $@
++exec ${PYTHON_EXEC} -OO gajim.py $@
