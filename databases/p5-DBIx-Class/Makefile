@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/06 15:09:08 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/01/14 11:09:26 espie Exp $
 
 COMMENT= 	"object-oriented database access"
 
 MODULES=	cpan
-DISTNAME=	DBIx-Class-0.07003
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	DBIx-Class-0.07005
+PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	databases devel
 
 # Artistic
@@ -32,10 +32,18 @@ REGRESS_DEPENDS=::databases/p5-DBD-SQLite \
 		::devel/p5-Test-Memory-Cycle \
 		::textproc/p5-Text-CSV_XS \
 		::devel/p5-DateTime-Format-MySQL \
-		::databases/p5-SQL-Translator
+		::databases/p5-SQL-Translator \
+		::converters/p5-JSON
 
 MAKE_ENV=	DATA_DUMPER_TEST=Yes \
 		DBICTEST_FORK_STRESS=Yes \
-		TEST_POD=Yes
+		TEST_POD=Yes \
+		DBICTEST_PG_DSN='dbi:Pg:dbname=test;host=localhost' \
+		DBICTEST_PG_USER=postgres \
+		DBICTEST_PG_PASS= \
+		DBICTEST_MYSQL_DSN='dbi:mysql:database=test;host=localhost' \
+		DBICTEST_MYSQL_USER=root \
+		DBICTEST_MYSQL_PASS=
+
 
 .include <bsd.port.mk>
