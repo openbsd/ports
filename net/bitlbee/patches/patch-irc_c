@@ -1,6 +1,6 @@
-$OpenBSD: patch-irc_c,v 1.3 2006/04/11 15:11:33 naddy Exp $
---- irc.c.orig	Sun Apr  2 04:53:39 2006
-+++ irc.c	Thu Apr  6 23:42:45 2006
+$OpenBSD: patch-irc_c,v 1.4 2007/01/14 21:53:01 simon Exp $
+--- irc.c.orig	Sat Jun 24 17:00:43 2006
++++ irc.c	Fri Dec 15 21:21:27 2006
 @@ -59,7 +59,7 @@ irc_t *irc_new( int fd )
  	irc->userhash = g_hash_table_new( g_str_hash, g_str_equal );
  	irc->watches = g_hash_table_new( g_str_hash, g_str_equal );
@@ -31,18 +31,18 @@ $OpenBSD: patch-irc_c,v 1.3 2006/04/11 15:11:33 naddy Exp $
  					cmd[1] = irc->mynick;
  				
  				for( i = 0; i < strlen( cmd[2] ); i ++ )
-@@ -709,8 +709,8 @@ int irc_exec( irc_t *irc, char **cmd )
- 				 * cares?
- 				 */
+@@ -708,8 +708,8 @@ int irc_exec( irc_t *irc, char **cmd )
+ 					if( lenleft < 0 )
+ 						break;
+ 					
+-					strcat( buff, u->nick );
+-					strcat( buff, " " );
++					strlcat( buff, u->nick, sizeof(buff) );
++					strlcat( buff, " ", sizeof(buff) );
+ 				}
  				
--				strcat( buff, u->nick );
--				strcat( buff, " " );
-+				strlcat( buff, u->nick, sizeof(buff) );
-+				strlcat( buff, " ", sizeof(buff) );
- 			}
- 		}
- 		
-@@ -861,7 +861,7 @@ void irc_reply( irc_t *irc, int code, ch
+ 				if( next )
+@@ -869,7 +869,7 @@ void irc_reply( irc_t *irc, int code, ch
  	va_list params;
  	
  	va_start( params, format );
@@ -51,7 +51,7 @@ $OpenBSD: patch-irc_c,v 1.3 2006/04/11 15:11:33 naddy Exp $
  	va_end( params );
  	irc_write( irc, ":%s %03d %s %s", irc->myhost, code, irc->nick?irc->nick:"*", text );
  	
-@@ -915,14 +915,14 @@ void irc_vawrite( irc_t *irc, char *form
+@@ -923,14 +923,14 @@ void irc_vawrite( irc_t *irc, char *form
  		
  		conv[IRC_MAX_LINE] = 0;
  		if( do_iconv( "UTF-8", cs, line, conv, 0, IRC_MAX_LINE - 2 ) != -1 )
@@ -71,7 +71,7 @@ $OpenBSD: patch-irc_c,v 1.3 2006/04/11 15:11:33 naddy Exp $
  	}
  	else 
  		irc->sendbuffer = g_strdup(line);	
-@@ -992,7 +992,7 @@ void irc_names( irc_t *irc, char *channe
+@@ -1000,7 +1000,7 @@ void irc_names( irc_t *irc, char *channe
  			}
  			else if( !u->gc )
  			{
@@ -80,7 +80,7 @@ $OpenBSD: patch-irc_c,v 1.3 2006/04/11 15:11:33 naddy Exp $
  					s = "@";
  				else if( strcmp( u->nick, irc->nick ) == 0 && ( strcmp( set_getstr( irc, "ops" ), "user" ) == 0 || strcmp( set_getstr( irc, "ops" ), "both" ) == 0 ) )
  					s = "@";
-@@ -1112,15 +1112,19 @@ void irc_motd( irc_t *irc )
+@@ -1120,15 +1120,19 @@ void irc_motd( irc_t *irc )
  		irc_reply( irc, 375, ":- %s Message Of The Day - ", irc->myhost );
  		while( read( fd, linebuf + len, 1 ) == 1 )
  		{
@@ -103,7 +103,7 @@ $OpenBSD: patch-irc_c,v 1.3 2006/04/11 15:11:33 naddy Exp $
  				if( linebuf[len] == 'h' )
  					add = irc->myhost;
  				else if( linebuf[len] == 'v' )
-@@ -1129,14 +1133,30 @@ void irc_motd( irc_t *irc )
+@@ -1137,14 +1141,30 @@ void irc_motd( irc_t *irc )
  					add = irc->nick;
  				else
  					add = "%";
@@ -137,7 +137,7 @@ $OpenBSD: patch-irc_c,v 1.3 2006/04/11 15:11:33 naddy Exp $
  		}
  		irc_reply( irc, 376, ":End of MOTD" );
  		close( fd );
-@@ -1467,8 +1487,8 @@ int buddy_send_handler( irc_t *irc, user
+@@ -1475,8 +1495,8 @@ int buddy_send_handler( irc_t *irc, user
  			u->sendbuf = g_renew ( char, u->sendbuf, u->sendbuf_len );
  		}
  		

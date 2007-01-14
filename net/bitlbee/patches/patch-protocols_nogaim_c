@@ -1,6 +1,6 @@
-$OpenBSD: patch-protocols_nogaim_c,v 1.3 2006/04/11 15:11:33 naddy Exp $
---- protocols/nogaim.c.orig	Sun Apr  2 04:53:40 2006
-+++ protocols/nogaim.c	Thu Apr  6 23:39:32 2006
+$OpenBSD: patch-protocols_nogaim_c,v 1.4 2007/01/14 21:53:01 simon Exp $
+--- protocols/nogaim.c.orig	Sat Jun 24 17:00:44 2006
++++ protocols/nogaim.c	Fri Dec 15 21:20:07 2006
 @@ -423,8 +423,8 @@ void add_buddy( struct gaim_connection *
  		/* Buddy seems to exist already. Let's ignore this request then... */
  	}
@@ -12,7 +12,7 @@ $OpenBSD: patch-protocols_nogaim_c,v 1.3 2006/04/11 15:11:33 naddy Exp $
  	
  	u = user_add( gc->irc, nick );
  	
-@@ -469,8 +469,8 @@ struct buddy *find_buddy( struct gaim_co
+@@ -476,8 +476,8 @@ struct buddy *find_buddy( struct gaim_co
  		return( NULL );
  
  	memset( b, 0, sizeof( b ) );
@@ -23,7 +23,7 @@ $OpenBSD: patch-protocols_nogaim_c,v 1.3 2006/04/11 15:11:33 naddy Exp $
  	b->present = u->online;
  	b->gc = u->gc;
  	
-@@ -778,8 +778,11 @@ struct conversation *serv_got_joined_cha
+@@ -817,8 +817,11 @@ struct conversation *serv_got_joined_cha
  	c->gc = gc;
  	c->title = g_strdup( handle );
  	
@@ -37,7 +37,7 @@ $OpenBSD: patch-protocols_nogaim_c,v 1.3 2006/04/11 15:11:33 naddy Exp $
  	c->channel = g_strdup( s );
  	g_free( s );
  	
-@@ -955,7 +958,7 @@ char *set_eval_away_devoice( irc_t *irc,
+@@ -994,7 +997,7 @@ char *set_eval_away_devoice( irc_t *irc,
  					count = 0;
  				}
  				

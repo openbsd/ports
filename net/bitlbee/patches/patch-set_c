@@ -1,6 +1,6 @@
-$OpenBSD: patch-set_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
---- set.c.orig	Fri Nov 18 11:17:04 2005
-+++ set.c	Sun Jan 29 12:30:04 2006
+$OpenBSD: patch-set_c,v 1.2 2007/01/14 21:53:01 simon Exp $
+--- set.c.orig	Sat Jun 24 17:00:43 2006
++++ set.c	Fri Dec 15 21:20:08 2006
 @@ -35,14 +35,20 @@ set_t *set_add( irc_t *irc, char *key, c
  		{
  			while( s->next ) s = s->next;
@@ -31,7 +31,7 @@ $OpenBSD: patch-set_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
  	return( set_setstr( irc, key, s ) );
  }
  
-@@ -179,12 +185,16 @@ char *set_eval_bool( irc_t *irc, set_t *
+@@ -183,12 +189,16 @@ char *set_eval_bool( irc_t *irc, set_t *
  
  char *set_eval_to_char( irc_t *irc, set_t *set, char *value )
  {
@@ -51,7 +51,7 @@ $OpenBSD: patch-set_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
  	
  	return( s );
  }
-@@ -197,7 +207,7 @@ char *set_eval_ops( irc_t *irc, set_t *s
+@@ -201,7 +211,7 @@ char *set_eval_ops( irc_t *irc, set_t *s
  		                                              irc->channel, "+o-o", irc->nick, irc->mynick );
  		return( value );
  	}

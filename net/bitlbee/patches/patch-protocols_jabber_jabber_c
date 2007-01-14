@@ -1,6 +1,6 @@
-$OpenBSD: patch-protocols_jabber_jabber_c,v 1.3 2006/04/11 15:11:33 naddy Exp $
---- protocols/jabber/jabber.c.orig	Sun Apr  2 04:53:39 2006
-+++ protocols/jabber/jabber.c	Thu Apr  6 23:39:32 2006
+$OpenBSD: patch-protocols_jabber_jabber_c,v 1.4 2007/01/14 21:53:01 simon Exp $
+--- protocols/jabber/jabber.c.orig	Sat Jun 24 17:00:44 2006
++++ protocols/jabber/jabber.c	Fri Dec 15 21:20:07 2006
 @@ -285,7 +285,7 @@ static char *gjab_getsid(gjconn gjc)
  
  static char *gjab_getid(gjconn gjc)
@@ -44,7 +44,7 @@ $OpenBSD: patch-protocols_jabber_jabber_c,v 1.3 2006/04/11 15:11:33 naddy Exp $
  	xmlnode_put_attrib(querytag, "seconds", idle_time);
  
  	gjab_send(gjc, x);
-@@ -2132,7 +2132,7 @@ static xmlnode insert_tag_to_parent_tag(
+@@ -2134,7 +2134,7 @@ static xmlnode insert_tag_to_parent_tag(
  			/*
  			 * Descend?
  			 */

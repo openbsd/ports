@@ -1,6 +1,6 @@
-$OpenBSD: patch-util_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
---- util.c.orig	Sun Apr  2 04:53:41 2006
-+++ util.c	Thu Apr  6 23:39:32 2006
+$OpenBSD: patch-util_c,v 1.2 2007/01/14 21:53:01 simon Exp $
+--- util.c.orig	Sat Jun 24 17:01:00 2006
++++ util.c	Sat Dec 16 15:19:38 2006
 @@ -43,14 +43,15 @@
  void strip_linefeed(gchar *text)
  {
@@ -97,3 +97,12 @@ $OpenBSD: patch-util_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
  			j += 2;
  		}
  		else
+@@ -420,7 +421,7 @@ signed int do_iconv( char *from_cs, char
+ 	iconv_t cd;
+ 	size_t res;
+ 	size_t inbytesleft, outbytesleft;
+-	char *inbuf = src;
++	const char *inbuf = src;
+ 	char *outbuf = dst;
+ 	
+ 	cd = iconv_open( to_cs, from_cs );
