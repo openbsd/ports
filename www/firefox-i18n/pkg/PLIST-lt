@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-lt,v 1.1 2007/01/14 09:17:41 ajacoutot Exp $
+mozilla-firefox/extensions/langpack-lt@firefox.mozilla.org/
+mozilla-firefox/extensions/langpack-lt@firefox.mozilla.org/chrome/
+mozilla-firefox/extensions/langpack-lt@firefox.mozilla.org/chrome.manifest
+mozilla-firefox/extensions/langpack-lt@firefox.mozilla.org/chrome/chromelist.txt
+mozilla-firefox/extensions/langpack-lt@firefox.mozilla.org/chrome/lt.jar
+mozilla-firefox/extensions/langpack-lt@firefox.mozilla.org/install.rdf

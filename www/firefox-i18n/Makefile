@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/01/13 12:53:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2007/01/14 09:17:41 ajacoutot Exp $
 
 PKG_ARCH=	*
 
@@ -26,8 +26,9 @@ MASTER_SITES=	http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/${V}/li
 # define one language for the main package
 MAINLANG=	en-GB
 OTHERLANGS=	ar bg ca cs da de el es-AR es-ES eu fi fr ga-IE gu-IN \
-		he hu it ja nb-NO nl pl pt-BR ru sk sl sv-SE tr zh-CN zh-TW
-#		broken/inexistent: ko mk pa-IN ro
+		he hu it ja ko lt mn nb-NO nl nn-NO pl pt-BR ru sk sl \
+		sv-SE tr zh-CN zh-TW
+#		broken/inexistent: fy-NL mk pa-IN pt-PT ro
 
 BUILD_DEPENDS=	:unzip-*:archivers/unzip
 RUN_DEPENDS=	:mozilla-firefox-${V}:www/mozilla-firefox
