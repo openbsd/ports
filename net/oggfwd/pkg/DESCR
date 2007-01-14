@@ -1,0 +1,2 @@
+Oggfwd is a small tool that reads an Ogg stream from stdin and sends
+it to an Icecast server using libshout.
