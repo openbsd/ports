@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.173 2006/12/29 12:24:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.174 2007/01/14 10:12:52 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -149,6 +149,7 @@
      SUBDIR += sma
      SUBDIR += smsmail
      SUBDIR += smtp-vilter
+     SUBDIR += smtp-vilter,ldap
      SUBDIR += smtpclient
      SUBDIR += solid-pop3d
      SUBDIR += solid-pop3d,apop
