@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.39 2006/08/01 22:19:46 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2007/01/14 10:53:46 espie Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"access to PostgreSQL databases through the DBI"
 
+MODULES=	cpan
 VERSION=	1.47
 DISTNAME=	DBD-Pg-${VERSION}
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	databases perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=DBD/}
+CATEGORIES=	databases
 
 LIB_DEPENDS=	pq.>=2:postgresql-client-*:databases/postgresql
 RUN_DEPENDS=	::databases/p5-DBI
@@ -28,7 +27,5 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_ENV+=	POSTGRES_HOME="${LOCALBASE}" \
 		POSTGRES_LIB="${LOCALBASE}/lib" \
 		POSTGRES_INCLUDE="${LOCALBASE}/include/postgresql"
-
-CONFIGURE_STYLE= perl
 
 .include <bsd.port.mk>
