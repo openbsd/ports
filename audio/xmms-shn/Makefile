@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2006/11/11 21:04:27 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2007/01/14 18:48:32 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xi gdk glib gmodule gtk iconv intl m pthread
 
-MASTER_SITES=	${HOMEPAGE}source/
+MASTER_SITES=	${HOMEPAGE}dist/src/
 
 LIB_DEPENDS=	gthread.>=1.2::devel/glib
 RUN_DEPENDS=	::audio/xmms
