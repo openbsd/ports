@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2006/06/17 15:31:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2007/01/14 20:49:05 simon Exp $
 
 COMMENT=	"Perl Interface to the DICT protocol"
 
+MODULES=	cpan
 DISTNAME=	Net-Dict-2.07
-PKGNAME=	p5-${DISTNAME}p0
-CATEGORIES=	net perl5
+PKGNAME=	p5-${DISTNAME}p1
+CATEGORIES=	net
 
 MAINTAINER=	Sam Smith <s@msmith.net>
 
@@ -14,10 +15,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Net/}
-
 RUN_DEPENDS=	::devel/p5-AppConfig-Std
-
-CONFIGURE_STYLE=perl
 
 .include <bsd.port.mk>

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2005/12/12 08:52:29 djm Exp $
+# $OpenBSD: Makefile,v 1.4 2007/01/14 20:49:06 simon Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"Perl defines relating to AF_INET6 sockets"
 
+MODULES=	cpan
 DISTNAME=	Socket6-0.19
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	net devel perl5
+CATEGORIES=	net devel
 
 HOMEPAGE=	http://search.cpan.org/~umemoto/${DISTNAME}/
 
@@ -16,9 +16,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Socket6/}
-
-CONFIGURE_STYLE=perl
 CONFIGURE_ARGS+=CC="${CC}" CCFLAGS="${CFLAGS}" OPTIMIZE=" "
 
 .include <bsd.port.mk>

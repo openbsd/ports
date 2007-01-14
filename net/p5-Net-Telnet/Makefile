@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2003/01/04 19:09:52 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2007/01/14 20:49:05 simon Exp $
 
 COMMENT=		"perl5 module for interactive network functions"
 
+MODULES=		cpan
 DISTNAME=		Net-Telnet-3.03
-PKGNAME=		p5-${DISTNAME}
+PKGNAME=		p5-${DISTNAME}p0
 CATEGORIES=		net
 
 # Artistic License
@@ -13,9 +14,5 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MAINTAINER=		Nick Nauwelaerts <nick@nauwelaerts.net>
-
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Net/}
-
-CONFIGURE_STYLE=	perl
 
 .include <bsd.port.mk>

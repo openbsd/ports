@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2006/01/08 22:52:06 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/01/14 20:49:05 simon Exp $
 
 COMMENT=	"secure, extensible and configurable Perl FTPd"
 
+MODULES=	cpan
 DISTNAME=	Net-FTPServer-1.122
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	net perl5
-
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Net/}
+CATEGORIES=	net
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
@@ -23,11 +21,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE= perl
 FAKE_FLAGS=	NOCONF=1 ${DESTDIRNAME}=${WRKINST}
 CONFIG_DIR=	${PREFIX}/share/examples/p5-Net-FTPServer
-
-PKG_ARCH=	*
 
 post-install:
 	${INSTALL_DATA_DIR} ${CONFIG_DIR}
