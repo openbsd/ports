@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/01/14 17:47:57 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/01/15 14:13:30 steven Exp $
 
 COMMENT=	"pipe an Ogg stream to an Icecast server"
 
@@ -22,8 +22,5 @@ LIB_DEPENDS=	shout.>=5::net/libshout \
 		speex.>=4::audio/speex
 
 NO_REGRESS=	Yes
-
-pre-build:
-	@perl -pi -e 's,/usr/local,${LOCALBASE},' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
