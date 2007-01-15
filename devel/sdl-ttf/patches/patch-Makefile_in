@@ -1,12 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2003/04/05 22:24:36 margarida Exp $
---- Makefile.in.orig	Fri Mar  7 00:48:17 2003
-+++ Makefile.in	Mon Mar 10 05:16:30 2003
-@@ -100,7 +100,7 @@ libSDL_ttf_la_SOURCES =  	SDL_ttf.c
- EXTRA_DIST =  	CHANGES				VisualC.zip			PBProjects.tar.gz		MPWmake.sea.bin			SDL_ttf.spec			SDL_ttf.spec.in			autogen.sh
+$OpenBSD: patch-Makefile_in,v 1.5 2007/01/15 16:31:46 ajacoutot Exp $
+--- Makefile.in.orig	Sun Jan 14 11:02:41 2007
++++ Makefile.in	Sun Jan 14 11:03:30 2007
+@@ -249,7 +249,6 @@ EXTRA_DIST = \
  
- 
--libSDL_ttf_la_LDFLAGS =  	-release $(LT_RELEASE)		-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
-+libSDL_ttf_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ libSDL_ttf_la_LDFLAGS = \
+ 	-no-undefined		\
+-	-release $(LT_RELEASE)	\
+ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
  
  libSDL_ttf_la_LIBADD = 
- 
