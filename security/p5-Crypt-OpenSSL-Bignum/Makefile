@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2004/12/27 13:28:34 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2007/01/15 17:40:10 simon Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"OpenSSL's multiprecision integer arithmetic"
 
+MODULES=	cpan
 DISTNAME=	Crypt-OpenSSL-Bignum-0.03
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	security perl5
+CATEGORIES=	security
 
 HOMEPAGE=	http://perl-openssl.sourceforge.net/
 
 MAINTAINER=	Peter Stromberg <wilfried@openbsd.org>
-
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Crypt/}
 
 # Artistic licence
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,7 +18,5 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		crypto
-
-CONFIGURE_STYLE=	perl
 
 .include <bsd.port.mk>

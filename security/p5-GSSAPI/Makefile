@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2006/09/25 17:18:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2007/01/15 17:40:10 simon Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"perl interface to the GSSAPIv2 library"
 
+MODULES=	cpan
 DISTNAME=	GSSAPI-0.23
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	security perl5
+CATEGORIES=	security
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -17,12 +17,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../../authors/id/A/AG/AGROLMS/}
-
 WANTLIB=	asn1 crypto gssapi krb5
 
-CONFIGURE_STYLE=perl
+CPAN_AUTHOR=	AGROLMS
+
 CONFIGURE_ARGS=	--gssapi_libs="-lgssapi -lkrb5 -lasn1 -lcrypto" \
 		--gssapi_inc="-I/usr/include/kerberosV" \
 		CCFLAGS="-DHEIMDAL"

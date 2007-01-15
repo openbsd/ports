@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/09/08 02:45:31 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2007/01/15 17:40:10 simon Exp $
 
 COMMENT=	"Perl module implementing lanman and nt md4 hash functions"
 
+MODULES=	cpan
 DISTNAME=	Crypt-SmbHash-0.12
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	security perl5
+PKGNAME=	p5-${DISTNAME}p0
+CATEGORIES=	security
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -13,9 +14,5 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Crypt/}
-
-CONFIGURE_STYLE= perl
 
 .include <bsd.port.mk>
