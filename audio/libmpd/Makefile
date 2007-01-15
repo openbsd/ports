@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/27 14:08:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/01/15 21:25:09 jasper Exp $
 
 COMMENT=		"mpd client library"
 
 DISTNAME=		libmpd-0.12.0
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS=		mpd	0.0
 CATEGORIES=		audio
-
-HOMEPAGE=		http://cms.qballcow.nl/index.php?page=libmpd
 
 MAINTAINER=		Pierre-Yves Ritschard <pyr@spootnik.org>
 
