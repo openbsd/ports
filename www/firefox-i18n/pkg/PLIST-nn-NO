@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-nn,v 1.1 2007/01/14 09:17:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST-nn-NO,v 1.1 2007/01/15 13:21:21 ajacoutot Exp $
 mozilla-firefox/extensions/langpack-nn-NO@firefox.mozilla.org/
 mozilla-firefox/extensions/langpack-nn-NO@firefox.mozilla.org/chrome/
 mozilla-firefox/extensions/langpack-nn-NO@firefox.mozilla.org/chrome.manifest
