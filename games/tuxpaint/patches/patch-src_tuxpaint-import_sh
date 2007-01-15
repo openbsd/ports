@@ -1,0 +1,80 @@
+$OpenBSD: patch-src_tuxpaint-import_sh,v 1.1.1.1 2007/01/15 16:39:40 ajacoutot Exp $
+--- src/tuxpaint-import.sh.orig	Sun Aug 13 12:04:46 2006
++++ src/tuxpaint-import.sh	Fri Jan 12 16:23:34 2007
+@@ -52,21 +52,17 @@ fi
+ 
+ # Determine preferred savedir
+ 
+-# First, check /usr/local/etc/
+-x=`grep -m 1 "^savedir=" /usr/local/etc/tuxpaint/tuxpaint.conf`
+-if test $? = 0 ; then
+-  SAVEDIR=`echo $x | cut -d = -f 2-99`
+-fi
+-
+ # First, check /etc/
+-x=`grep -m 1 "^savedir=" /etc/tuxpaint/tuxpaint.conf`
++x=`grep -s "^savedir=" /etc/tuxpaint/tuxpaint.conf`
+ if test $? = 0 ; then
++  x=`grep -s "^savedir=" /etc/tuxpaint/tuxpaint.conf | head -n 1`
+   SAVEDIR=`echo $x | cut -d = -f 2-99`
+ fi
+ 
+ # First, check $HOME
+-x=`grep -m 1 "^savedir=" $HOME/.tuxpaintrc`
++x=`grep -s "^savedir=" $HOME/.tuxpaintrc`
+ if test $? = 0 ; then
++  x=`grep -s "^savedir=" $HOME/.tuxpaintrc | head -n 1`
+   SAVEDIR=`echo $x | cut -d = -f 2-99`
+ fi
+ 
+@@ -77,19 +73,19 @@ echo "Using save directory: $SAVEDIR/sav
+ # Make sure savedir exists!
+ if [ ! -d $SAVEDIR ]; then
+   echo "Creating $SAVEDIR"
+-  mkdir -p $SAVEDIR
++  eval "mkdir -p $SAVEDIR"
+ fi
+ 
+ # Make sure savedir/saved exists!
+ if [ ! -d $SAVEDIR/saved ]; then
+   echo "Creating $SAVEDIR/saved"
+-  mkdir -p $SAVEDIR/saved
++  eval "mkdir -p $SAVEDIR/saved"
+ fi
+ 
+ # Make sure savedir thumbs directory exists!
+ if [ ! -d $SAVEDIR/saved/.thumbs ]; then
+   echo "Creating $SAVEDIR/saved/.thumbs"
+-  mkdir -p $SAVEDIR/saved/.thumbs
++  eval "mkdir -p $SAVEDIR/saved/.thumbs"
+ fi
+ 
+ 
+@@ -100,23 +96,18 @@ fi
+ window_width=800
+ window_height=600
+ 
+-# First, check /usr/local/etc/
+-x=`grep -m 1 "^windowsize=" /usr/local/etc/tuxpaint/tuxpaint.conf`
+-if test $? = 0 ; then
+-  window_width=`echo $x | cut -d = -f 2 | cut -d x -f 1`
+-  window_height=`echo $x | cut -d = -f 2 | cut -d x -f 2`
+-fi
+-
+ # First, check /etc/
+-x=`grep -m 1 "^windowsize=" /etc/tuxpaint/tuxpaint.conf`
++x=`grep -s "^windowsize=" /etc/tuxpaint/tuxpaint.conf`
+ if test $? = 0 ; then
++  x=`grep -s "^windowsize=" /etc/tuxpaint/tuxpaint.conf | head -n 1`
+   window_width=`echo $x | cut -d = -f 2 | cut -d x -f 1`
+   window_height=`echo $x | cut -d = -f 2 | cut -d x -f 2`
+ fi
+ 
+ # First, check $HOME
+-x=`grep -m 1 "^windowsize=" $HOME/.tuxpaintrc`
++x=`grep -s "^windowsize=" $HOME/.tuxpaintrc`
+ if test $? = 0 ; then
++  x=`grep -s "^windowsize=" $HOME/.tuxpaintrc | head -n 1`
+   window_width=`echo $x | cut -d = -f 2 | cut -d x -f 1`
+   window_height=`echo $x | cut -d = -f 2 | cut -d x -f 2`
+ fi
