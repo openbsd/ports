@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.877 2007/01/04 11:34:14 bernd Exp $
+#	$OpenBSD: bsd.port.mk,v 1.878 2007/01/15 13:43:52 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2164,26 +2164,35 @@ _register_plist =:
 _register_plist = perl ${PORTSDIR}/infrastructure/package/register-plist ${PLIST_DB}
 .endif
 
+CLEAN_PLIST_OUTPUT?=No
+.if ${CLEAN_PLIST_OUTPUT:L} == "yes"
+_plist_header=echo "@+++ new plist"
+_plist_footer=echo "@--- end plist"
+.else
+_plist_header=:
+_plist_footer=:
+.endif
+
 print-plist:
-	@${PKG_CMD} -n -q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}
+	@${_plist_header}; ${PKG_CMD} -n -q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}; ${_plist_footer}
 
 print-plist-with-depends:
-	@${PKG_CMD} -n -q `SUBPACKAGE=${SUBPACKAGE} ${MAKE} _print-package-args|sort -u` ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}
+	@${_plist_header}; ${PKG_CMD} -n -q `SUBPACKAGE=${SUBPACKAGE} ${MAKE} _print-package-args|sort -u` ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}};${_plist_footer}
 
 print-plist-all:
 .for _S in ${MULTI_PACKAGES}
 	@${ECHO_MSG} "===> ${FULLPKGNAME${_S}}"
-	@${PKG_CMD} -n -q ${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}}
+	@${_plist_header}; ${PKG_CMD} -n -q ${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}};${_plist_footer}
 .endfor
 
 print-plist-all-with-depends:
 .for _S in ${MULTI_PACKAGES}
 	@${ECHO_MSG} "===> ${FULLPKGNAME${_S}}"
-	@${PKG_CMD} -n -q `SUBPACKAGE=${_S} ${MAKE} _print-package-args|sort -u `${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}}
+	@${_plist_header}; ${PKG_CMD} -n -q `SUBPACKAGE=${_S} ${MAKE} _print-package-args|sort -u `${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}};${_plist_footer}
 .endfor
 
 print-plist-contents:
-	@${PKG_CMD} -n -Q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}
+	@${_plist_header}; ${PKG_CMD} -n -Q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}};${_plist_footer}
 
 _internal-package-only: ${_PACKAGE_COOKIES}
 
