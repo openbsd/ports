@@ -1,6 +1,6 @@
-$OpenBSD: patch-dovecot-example_conf,v 1.29 2006/11/11 06:25:40 brad Exp $
---- dovecot-example.conf.orig	Sun Nov  5 12:14:37 2006
-+++ dovecot-example.conf	Sat Nov 11 01:18:25 2006
+$OpenBSD: patch-dovecot-example_conf,v 1.30 2007/01/15 08:12:40 jakob Exp $
+--- dovecot-example.conf.orig	Wed Jan  3 18:19:41 2007
++++ dovecot-example.conf	Thu Jan  4 18:57:18 2007
 @@ -7,13 +7,12 @@
  # value inside quotes, eg.: key = "# char and trailing whitespace  "
  
@@ -62,9 +62,9 @@ $OpenBSD: patch-dovecot-example_conf,v 1.29 2006/11/11 06:25:40 brad Exp $
 -#mmap_no_write = no
 +mmap_no_write = yes
  
- # Locking method for index files. Alternatives are fcntl, flock and dotlock.
- # Dotlocking uses some tricks which may create more disk I/O than other locking
-@@ -425,7 +424,7 @@
+ # Rely on O_EXCL to work when creating dotlock files. The default is to use
+ # hard linking. O_EXCL makes the dotlocking faster, but it doesn't always
+@@ -434,7 +433,7 @@
  # locking methods as well. Some operating systems don't allow using some of
  # them simultaneously.
  #mbox_read_locks = fcntl
@@ -73,7 +73,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.29 2006/11/11 06:25:40 brad Exp $
  
  # Maximum time in seconds to wait for lock (all of them) before aborting.
  #mbox_lock_timeout = 300
-@@ -480,19 +479,19 @@
+@@ -489,19 +488,19 @@
  
  protocol imap {
    # Login executable location.
@@ -97,7 +97,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.29 2006/11/11 06:25:40 brad Exp $
  
    # Maximum IMAP command line length in bytes. Some clients generate very long
    # command lines with huge mailboxes, so you may need to raise this if you get
-@@ -536,7 +535,7 @@ protocol imap {
+@@ -545,7 +544,7 @@ protocol imap {
    #     but not both. Thunderbird separates these two by forcing server to
    #     accept '/' suffix in mailbox names in subscriptions list.
    # The list is space-separated.
@@ -106,7 +106,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.29 2006/11/11 06:25:40 brad Exp $
  }
    
  ##
-@@ -545,11 +544,11 @@ protocol imap {
+@@ -554,11 +553,11 @@ protocol imap {
  
  protocol pop3 {
    # Login executable location.
@@ -120,7 +120,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.29 2006/11/11 06:25:40 brad Exp $
  
    # Don't try to set mails non-recent or seen with POP3 sessions. This is
    # mostly intended to reduce disk I/O. With maildir it doesn't move files
-@@ -593,7 +592,7 @@ protocol pop3 {
+@@ -603,7 +602,7 @@ protocol pop3 {
    # installations. %08Xu%08Xv will be the new default, so use it for new
    # installations.
    #
@@ -129,7 +129,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.29 2006/11/11 06:25:40 brad Exp $
  
    # POP3 logout format string:
    #  %t - number of TOP commands
-@@ -618,7 +617,7 @@ protocol pop3 {
+@@ -628,7 +627,7 @@ protocol pop3 {
    #     Outlook Express and Netscape Mail breaks if end of headers-line is
    #     missing. This option simply sends it if it's missing.
    # The list is space-separated.
@@ -138,7 +138,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.29 2006/11/11 06:25:40 brad Exp $
  }
  
  ##
-@@ -650,7 +649,7 @@ protocol lda {
+@@ -660,7 +659,7 @@ protocol lda {
  ##
  
  # Executable location
@@ -147,7 +147,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.29 2006/11/11 06:25:40 brad Exp $
  
  # Set max. process size in megabytes.
  #auth_process_size = 256
-@@ -765,7 +764,7 @@ auth default {
+@@ -774,7 +773,7 @@ auth default {
    # REMEMBER: You'll need /etc/pam.d/dovecot file created for PAM
    # authentication to actually work.
    # http://wiki.dovecot.org/PasswordDatabase/PAM
@@ -156,7 +156,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.29 2006/11/11 06:25:40 brad Exp $
      #  [session=yes] [setcred=yes] [cache_key=<key>] [<service name>]
      #
      # session=yes makes Dovecot open and immediately close PAM session. Some
-@@ -793,14 +792,14 @@ auth default {
+@@ -802,14 +801,14 @@ auth default {
      #   args = session=yes *
      #   args = cache_key=%u dovecot
      #args = dovecot

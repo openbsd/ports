@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-sieve,v 1.1 2006/12/01 23:30:49 jakob Exp $
-lib/dovecot/lda/lib90_cmusieve_plugin.so
-lib/dovecot/lib90_cmusieve_plugin.so

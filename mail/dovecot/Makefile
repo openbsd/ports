@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.68 2006/12/07 21:49:01 steven Exp $
+# $OpenBSD: Makefile,v 1.69 2007/01/15 08:12:40 jakob Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-server= "compact IMAP/POP3 server"
 COMMENT-sieve=	"sieve mail filtering for Dovecot"
 
-V_DOVECOT=	1.0.rc15
+V_DOVECOT=	1.0.rc17
 V_SIEVE=	1.0
 
-PKGNAME=	dovecot-${V_DOVECOT}p0
-PKGNAME-server=	dovecot-${V_DOVECOT}p0
-PKGNAME-sieve=	dovecot-sieve-${V_SIEVE}p0
+PKGNAME=	dovecot-${V_DOVECOT}
+PKGNAME-server=	dovecot-${V_DOVECOT}
+PKGNAME-sieve=	dovecot-sieve-${V_SIEVE}p1
 
 DISTNAME=	dovecot-${V_DOVECOT}
 CATEGORIES=	mail
@@ -42,9 +42,7 @@ FLAVORS=	ldap mysql postgresql
 FLAVOR?=
 
 USE_LIBTOOL=		Yes
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.59
-AUTOCONF_DIR=	 	${WRKSRC} 
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--localstatedir=/var \
 			--with-ioloop=kqueue \
 			--with-ssl=openssl \
@@ -107,8 +105,7 @@ post-install:
 .if !${FLAVOR:L:Mno_sieve}
 	${INSTALL_DATA} \
 		${SIEVE_DIR}/src/.libs/lib90_cmusieve_plugin.so \
-		${PREFIX}/lib/dovecot
-	ln -s ../lib90_cmusieve_plugin.so ${PREFIX}/lib/dovecot/lda
+		${PREFIX}/lib/dovecot/lda
 .endif
 
 .include <bsd.port.mk>
