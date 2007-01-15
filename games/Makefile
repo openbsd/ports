@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2006/12/21 17:28:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.132 2007/01/15 16:40:54 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -103,6 +103,7 @@
      SUBDIR += toppler
      SUBDIR += tornado
      SUBDIR += tutris
+     SUBDIR += tuxpaint
      SUBDIR += uqm
      SUBDIR += vectoroids
      SUBDIR += wanderer
