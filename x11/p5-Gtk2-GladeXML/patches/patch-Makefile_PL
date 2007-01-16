@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2007/01/16 18:28:44 ajacoutot Exp $
+--- Makefile.PL.orig	Tue Jan 16 09:15:21 2007
++++ Makefile.PL	Tue Jan 16 09:15:41 2007
+@@ -63,6 +63,7 @@ WriteMakefile(
+     ABSTRACT_FROM => 'GladeXML.pm',
+     PREREQ_PM     => \%pre_reqs,
+     XSPROTOARG    => '-noprototypes',
++    OPTIMIZE      => '!!CFLAGS!!',
+     $gladexml->get_makefile_vars,
+ );
+ 
