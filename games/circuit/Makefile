@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/11/13 10:08:12 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2007/01/16 10:11:53 bernd Exp $
 
 COMMENT=	"finish-the-cycle logic puzzle"
 CATEGORIES=	games
@@ -6,6 +6,7 @@ CATEGORIES=	games
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 DISTNAME=	circuit-0.1.4
+PKGNAME=	${DISTNAME}p0
 MASTER_SITES=	ftp://quatramaran.ens.fr/pub/cigaes/circuit/
 
 
