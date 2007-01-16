@@ -1,9 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2006/09/19 10:00:09 espie Exp $
---- Makefile.in.orig	Tue Sep 19 11:59:04 2006
-+++ Makefile.in	Tue Sep 19 11:59:16 2006
-@@ -676,3 +676,5 @@ sqlite3.lib: sqlite3.dll
- 
+$OpenBSD: patch-Makefile_in,v 1.5 2007/01/16 23:24:32 espie Exp $
+--- Makefile.in.orig	Mon Jan  8 14:39:27 2007
++++ Makefile.in	Tue Jan 16 23:06:05 2007
+@@ -688,6 +688,8 @@ clean:	
  distclean:	clean
  	rm -f config.log config.status libtool Makefile config.h
-+
+ 
 +.PHONY: test
++
+ #
+ # Windows section
+ #
