@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.259 2007/01/08 15:47:23 robert Exp $
+# $OpenBSD: Makefile,v 1.260 2007/01/16 18:31:40 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -121,6 +121,7 @@
      SUBDIR += p5-Gtk,gnome
      SUBDIR += p5-Gtk,gtkglarea
      SUBDIR += p5-Gtk2
+     SUBDIR += p5-Gtk2-GladeXML
      SUBDIR += p5-Tk
      SUBDIR += p5-Tk-ProgressBar-Mac
      SUBDIR += p5-Tk-Stderr
