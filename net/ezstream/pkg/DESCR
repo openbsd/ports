@@ -1,0 +1,7 @@
+Ezstream is a command line utility which allows streaming media files to
+an Icecast server. By default, ezstream does not do any reencoding by
+itself and thus requires very little CPU. Through the use of external
+en- and decoders, virtually any format can be streamed.
+
+Ezstream can also read from stdin. ID3v1 tags are supported in MP3 files
+and all Ogg Vorbis tags are propagated as metadata as well.

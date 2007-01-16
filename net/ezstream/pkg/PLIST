@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/16 13:32:58 steven Exp $
+bin/ezstream
+share/doc/ezstream/
+share/doc/ezstream/README
+share/examples/ezstream/
+share/examples/ezstream/ezstream_mp3.xml
+share/examples/ezstream/ezstream_reencoding_example_mp3.xml
+share/examples/ezstream/ezstream_reencoding_example_theora.xml
+share/examples/ezstream/ezstream_reencoding_example_vorbis.xml
+share/examples/ezstream/ezstream_vorbis.xml
