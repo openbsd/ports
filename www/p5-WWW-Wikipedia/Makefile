@@ -1,22 +1,17 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/09/23 15:39:13 jasper Exp $
-
-PKG_ARCH=		*
+# $OpenBSD: Makefile,v 1.2 2007/01/16 14:52:52 jasper Exp $
 
 COMMENT=		"automated interface to the Wikipedia encyclopedia"
 
-DISTNAME=		WWW-Wikipedia-1.9
-PKGNAME=		p5-${DISTNAME}
-CATEGORIES=		www perl5
+DISTNAME=		WWW-Wikipedia-1.92
+CATEGORIES=		www
 
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=../../authors/id/E/ES/ESUMMERS/}
+MODULES=		cpan
 
-# Artistic/GPL
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-CONFIGURE_STYLE=	perl
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::textproc/p5-Text-Autoformat \
