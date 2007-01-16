@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/17 18:09:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/01/16 14:47:09 jasper Exp $
 
 COMMENT=		"configurable web traversal engine"
 
-DISTNAME=		WWW-Robot-0.024
+DISTNAME=		WWW-Robot-0.025
 CATEGORIES=		www
 
-# Artistic + GPL
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
