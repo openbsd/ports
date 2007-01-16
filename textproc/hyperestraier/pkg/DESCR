@@ -1,0 +1,17 @@
+Hyper Estraier is a full-text search system. You can search lots of documents
+for some documents including specified words. If you run a web site, it is
+useful as your own search engine for pages in your site. Also, it is useful as
+search utility of mail boxes and file servers.
+
+The characteristic of Hyper Estraier is the following.
+
+ - High performance of search
+ - High scalability of target documents
+ - Perfect recall ratio by N-gram method
+ - High precision by hybrid mechanism of N-gram and morphological analyzer
+ - Phrase search, regular expressions, attribute search, and similarity search
+ - Multilingualism with Unicode
+ - Independent of file format and repository
+ - Intelligent web crawler
+ - Simple and powerful API
+ - Supporting P2P architecture

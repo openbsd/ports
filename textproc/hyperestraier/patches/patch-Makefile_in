@@ -1,0 +1,109 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/01/16 10:38:40 bernd Exp $
+--- Makefile.in.orig	Wed Nov  1 03:45:38 2006
++++ Makefile.in	Sat Nov 18 19:08:22 2006
+@@ -22,14 +22,13 @@ PROTVER = @PROTVER@
+ # Targets
+ MYHEADS = estraier.h estmtdb.h estnode.h
+ MYLIBOBJS = estraier.o estmtdb.o estnode.o md5.o
+-MYLIBS = libestraier.a libestraier.so.$(LIBVER).$(LIBREV).0 \
+-  libestraier.so.$(LIBVER) libestraier.so
++MYLIBS = libestraier.a libestraier.so.$(LIBVER).$(LIBREV)
+ MYBINS = estcmd estmttest estmaster estbutler estcall estwaver estload
+ MYCGIS = estseek.cgi estfraud.cgi estproxy.cgi
+ MYSCRIPTS = estconfig estwolefind
+ MYCONFS = estseek.conf estseek.tmpl estseek.top estseek.help estfraud.conf estproxy.conf \
+-  estresult.dtd estraier.idl locale filter increm
+-MYDOCS = COPYING ChangeLog THANKS doc
++  estresult.dtd estraier.idl
++MYDOCS = doc/*.html doc/*.css doc/*.png
+ MYMAN1S = estconfig.1 estcmd.1 estmaster.1 estwaver.1 estcall.1
+ MYMAN3S = estraier.3 estnode.3
+ MYPCS = hyperestraier.pc
+@@ -47,25 +46,25 @@ MYHEADDIR = @includedir@
+ MYLIBDIR = @libdir@
+ MYBINDIR = @bindir@
+ MYLIBEXECDIR = @libexecdir@
+-MYDATADIR = @datadir@/$(PACKAGE)
++MYDATADIR = @datadir@/doc/$(PACKAGE)
+ MYMAN1DIR = @mandir@/man1
+ MYMAN3DIR = @mandir@/man3
+ MYPCDIR = @libdir@/pkgconfig
+ DESTDIR =
+ 
+ # Building binaries
+-CC = @CC@
+-CPPFLAGS = -I. -I$(HOME)/include -I/usr/local/include -I/usr/include/qdbm @MYCPPOPTS@ \
++#CC = @CC@
++CPPFLAGS = -I. -I/usr/local/include -I/usr/include/qdbm @MYCPPOPTS@ \
+   -D_XOPEN_SOURCE_EXTENDED=1 -D_GNU_SOURCE=1 -D__EXTENSIONS__=1 -D_HPUX_SOURCE=1 \
+   -DPIC=1 -D_THREAD_SAFE=1 -D_REENTRANT=1 @MYDEFS@
+-CFLAGS = @MYCFLAGS@
+-LDFLAGS = -L. -L$(HOME)/lib -L/usr/local/lib @MYLDOPTS@
++CFLAGS += @MYCFLAGS@
++LDFLAGS = -L. -L/usr/local/lib @MYLDOPTS@
+ LIBS = @LIBS@
+ MTLIBS = @MYMTLIBS@
+ SKLIBS = @MYSKLIBS@
+ APPLIBS = @MYAPPLIBS@
+-LDENV = LD_RUN_PATH=/lib:/usr/lib:$(HOME)/lib:/usr/local/lib:@MYRUNPATH@:.
+-RUNENV = LD_LIBRARY_PATH=.:/lib:/usr/lib:$(HOME)/lib:/usr/local/lib:@MYRUNPATH@
++LDENV = LD_RUN_PATH=/lib:/usr/lib:/usr/local/lib:@MYRUNPATH@:.
++RUNENV = LD_LIBRARY_PATH=.:/lib:/usr/lib:/usr/local/lib:@MYRUNPATH@
+ MYPOSTCMD = @MYPOSTCMD@
+ 
+ 
+@@ -111,22 +110,22 @@ version :
+ 
+ 
+ install :
+-	mkdir -p $(DESTDIR)$(MYHEADDIR)
+-	cp -Rf $(MYHEADS) $(DESTDIR)$(MYHEADDIR)
+-	mkdir -p $(DESTDIR)$(MYLIBDIR)
+-	cp -Rf $(MYLIBS) $(DESTDIR)$(MYLIBDIR)
+-	mkdir -p $(DESTDIR)$(MYBINDIR)
+-	cp -Rf $(MYBINS) $(MYSCRIPTS) $(DESTDIR)$(MYBINDIR)
+-	mkdir -p $(DESTDIR)$(MYLIBEXECDIR)
+-	cp -Rf $(MYCGIS) $(DESTDIR)$(MYLIBEXECDIR)
+-	mkdir -p $(DESTDIR)$(MYDATADIR)
+-	cp -Rf $(MYCONFS) $(MYDOCS) $(DESTDIR)$(MYDATADIR)
+-	mkdir -p $(DESTDIR)$(MYMAN1DIR)
+-	cd man && cp -Rf $(MYMAN1S) $(DESTDIR)$(MYMAN1DIR)
+-	mkdir -p $(DESTDIR)$(MYMAN3DIR)
+-	cd man && cp -Rf $(MYMAN3S) $(DESTDIR)$(MYMAN3DIR)
+-	mkdir -p $(DESTDIR)$(MYPCDIR)
+-	cp -Rf $(MYPCS) $(DESTDIR)$(MYPCDIR)
++	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(MYHEADDIR)
++	$(BSD_INSTALL_DATA) $(MYHEADS) $(DESTDIR)$(MYHEADDIR)
++	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(MYLIBDIR)
++	$(BSD_INSTALL_DATA) $(MYLIBS) $(DESTDIR)$(MYLIBDIR)
++	$(BSD_INSTALL_PROGRAM_DIR) $(DESTDIR)$(MYBINDIR)
++	$(BSD_INSTALL_PROGRAM) $(MYBINS) $(MYSCRIPTS) $(DESTDIR)$(MYBINDIR)
++#	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(MYLIBEXECDIR)
++#	$(BSD_INSTALL_DATA) $(MYCGIS) $(DESTDIR)$(MYLIBEXECDIR)
++	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(MYDATADIR)
++	$(BSD_INSTALL_DATA) $(MYCONFS) $(MYDOCS) $(DESTDIR)$(MYDATADIR)
++	$(BSD_INSTALL_MAN_DIR) $(DESTDIR)$(MYMAN1DIR)
++	cd man && $(BSD_INSTALL_MAN) $(MYMAN1S) $(DESTDIR)$(MYMAN1DIR)
++	$(BSD_INSTALL_MAN_DIR) $(DESTDIR)$(MYMAN3DIR)
++	cd man && $(BSD_INSTALL_MAN) $(MYMAN3S) $(DESTDIR)$(MYMAN3DIR)
++	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(MYPCDIR)
++	$(BSD_INSTALL_DATA) $(MYPCS) $(DESTDIR)$(MYPCDIR)
+ 	@printf '\n'
+ 	@printf '#================================================================\n'
+ 	@printf '# Thanks for using Hyper Estraier.\n'
+@@ -594,13 +593,13 @@ libestraier.a : $(MYLIBOBJS)
+ 	$(AR) $(ARFLAGS) $@ $(MYLIBOBJS)
+ 
+ 
+-libestraier.so.$(LIBVER).$(LIBREV).0 : $(MYLIBOBJS)
++libestraier.so.$(LIBVER).$(LIBREV) : $(MYLIBOBJS)
+ 	if $(CC) --print-prog-name=ld | egrep -i '(solaris|/ccs/|/ucb/)' > /dev/null ; \
+ 	  then \
+ 	    $(CC) -shared -Wl,-G,-h,libestraier.so.$(LIBVER) -o $@ $(MYLIBOBJS) \
+ 	       $(LDFLAGS) $(SKLIBS) $(MTLIBS) $(LIBS) ; \
+ 	  else \
+-	    $(CC) -shared -Wl,-soname,libestraier.so.$(LIBVER) -o $@ $(MYLIBOBJS) \
++	    $(CC) -shared -Wl,-soname,libestraier.so.$(LIBVER).$(LIBREV) -o $@ $(MYLIBOBJS) \
+ 	       $(LDFLAGS) $(SKLIBS) $(MTLIBS) $(LIBS) ; \
+ 	  fi
+ 

@@ -1,0 +1,51 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/16 10:38:40 bernd Exp $
+%%SHARED%%
+bin/estbutler
+bin/estcall
+bin/estcmd
+bin/estconfig
+bin/estload
+bin/estmaster
+bin/estmttest
+bin/estwaver
+bin/estwolefind
+include/estmtdb.h
+include/estnode.h
+include/estraier.h
+lib/libestraier.a
+lib/pkgconfig/
+lib/pkgconfig/hyperestraier.pc
+@man man/man1/estcall.1
+@man man/man1/estcmd.1
+@man man/man1/estconfig.1
+@man man/man1/estmaster.1
+@man man/man1/estwaver.1
+@man man/man3/estnode.3
+@man man/man3/estraier.3
+share/doc/hyperestraier/
+share/doc/hyperestraier/cguide-en.html
+share/doc/hyperestraier/cguide-ja.html
+share/doc/hyperestraier/common.css
+share/doc/hyperestraier/coreframe.png
+share/doc/hyperestraier/estfraud.conf
+share/doc/hyperestraier/estproxy.conf
+share/doc/hyperestraier/estraier.idl
+share/doc/hyperestraier/estresult.dtd
+share/doc/hyperestraier/estseek.conf
+share/doc/hyperestraier/estseek.help
+share/doc/hyperestraier/estseek.tmpl
+share/doc/hyperestraier/estseek.top
+share/doc/hyperestraier/icon16.png
+share/doc/hyperestraier/index.html
+share/doc/hyperestraier/index.ja.html
+share/doc/hyperestraier/intro-en.html
+share/doc/hyperestraier/intro-ja.html
+share/doc/hyperestraier/logo.png
+share/doc/hyperestraier/metatree.png
+share/doc/hyperestraier/nguide-en.html
+share/doc/hyperestraier/nguide-ja.html
+share/doc/hyperestraier/nodeframe.png
+share/doc/hyperestraier/pguide-en.html
+share/doc/hyperestraier/pguide-ja.html
+share/doc/hyperestraier/uguide-en.html
+share/doc/hyperestraier/uguide-ja.html

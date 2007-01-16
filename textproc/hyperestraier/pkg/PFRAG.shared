@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/01/16 10:38:40 bernd Exp $
+@lib lib/libestraier.so.${LIBestraier_VERSION}
