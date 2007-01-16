@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/21 18:14:44 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2007/01/16 17:52:07 simon Exp $
 
 COMMENT=	"client and server-side SOAP implementation"
 
+MODULES=	cpan
 DISTNAME=	SOAP-Lite-0.55
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	www perl5
+PKGNAME=	p5-${DISTNAME}p0
+CATEGORIES=	www
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
@@ -13,8 +14,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=SOAP/}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::mail/p5-MIME-tools \
@@ -26,7 +25,6 @@ RUN_DEPENDS=	::mail/p5-MIME-tools \
 		::textproc/p5-XML-Parser \
 		::www/mod_perl
 
-CONFIGURE_STYLE=	perl
 CONFIGURE_ARGS+=	--noprompt \
 			--HTTP-Client --HTTPS-Client \
 			--MAILTO-Client --FTP-Client \

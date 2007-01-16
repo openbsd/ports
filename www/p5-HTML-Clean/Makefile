@@ -1,20 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/06/16 01:31:41 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2007/01/16 17:52:06 simon Exp $
 
 COMMENT=	"cleans up HTML code for web browsers, not humans"
 
+MODULES=	cpan
 DISTNAME=	HTML-Clean-0.8
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	www perl5
+CATEGORIES=	www
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=HTML/}
-
-CONFIGURE_STYLE=	perl
-PKG_ARCH=		*
 
 .include <bsd.port.mk>

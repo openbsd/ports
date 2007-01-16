@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2004/06/26 07:35:10 xsa Exp $
+# $OpenBSD: Makefile,v 1.13 2007/01/16 17:52:06 simon Exp $
 
 COMMENT=	"Blatte functions to generate (X)HTML"
 
+MODULES=	cpan
 DISTNAME=	Blatte-HTML-0.9
-PKGNAME=	p5-${DISTNAME}
+PKGNAME=	p5-${DISTNAME}p0
 HOMEPAGE=	http://www.blatte.org/
 
-CATEGORIES=	www perl5
+CATEGORIES=	www
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/B/BO/BOBG/}
+CPAN_AUTHOR=	BOBG
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,7 +20,5 @@ PERMIT_DISTFILES_FTP=	Yes
 RUN_DEPENDS=	:p5-Blatte-*:textproc/p5-Blatte \
 		:p5-HTML-Parser-*:www/p5-HTML-Parser
 BUILD_DEPENDS=	${RUN_DEPENDS}
-
-CONFIGURE_STYLE=perl
 
 .include <bsd.port.mk>

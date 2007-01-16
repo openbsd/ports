@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2006/08/04 00:10:42 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/01/16 17:52:07 simon Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"perl interface to the Gnome GHTTP library"
 
+MODULES=	cpan
 DISTNAME=	HTTP-GHTTP-1.07
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=HTTP/}
+CATEGORIES=	www
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,7 +15,5 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	ghttp.>=1::www/libghttp
-
-CONFIGURE_STYLE= perl
 
 .include <bsd.port.mk>

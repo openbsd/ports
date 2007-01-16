@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2006/07/14 05:06:21 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2007/01/16 17:52:06 simon Exp $
 
 COMMENT=	"generate HTML tables for cgi scripts"
 
+MODULES=	cpan
 DISTNAME=	HTML-Table-2.04a
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	devel perl5 
-
-HOMEPAGE=	http://www.chime.ucl.ac.uk/~rmhiajp/htmltable/index.htm
+PKGNAME=	p5-${DISTNAME}p0
+CATEGORIES=	devel
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -15,12 +14,5 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-
-MASTER_SITES=	http://www.chime.ucl.ac.uk/~rmhiajp/htmltable/ \
-		${MASTER_SITE_PERL_CPAN:=HTML/}
-
-CONFIGURE_STYLE= perl
-
-PKG_ARCH=	*
 
 .include <bsd.port.mk>

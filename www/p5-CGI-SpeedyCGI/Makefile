@@ -1,15 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2004/12/11 13:29:22 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2007/01/16 17:52:06 simon Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"speed up perl scripts by running them persistently"
 
-VERSION=	2.22
-DISTNAME=	CGI-SpeedyCGI-${VERSION}
-PKGNAME=	p5-CGI-SpeedyCGI-${VERSION}
-CATEGORIES=	www perl5
-
-MASTER_SITES=   ${MASTER_SITE_PERL_CPAN:=CGI/}
+MODULES=	cpan
+DISTNAME=	CGI-SpeedyCGI-2.22
+CATEGORIES=	www
 
 HOMEPAGE=	http://daemoninc.com/SpeedyCGI/
 
@@ -23,7 +20,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m perl util 
 
 NO_REGRESS=		Yes
-CONFIGURE_STYLE=	perl
 
 post-build:
 	@sed 's,!!PREFIX!!,${PREFIX},' \

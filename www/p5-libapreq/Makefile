@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2004/07/04 23:42:59 mjc Exp $
+# $OpenBSD: Makefile,v 1.5 2007/01/16 17:52:07 simon Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"Generic Apache Request Library"
 
+MODULES=	cpan
 DISTNAME=	libapreq-1.3
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	www perl5
+CATEGORIES=	www
 
 HOMEPAGE=	http://httpd.apache.org/apreq/
 MAINTAINER=	Michael Coulter <mjc@openbsd.org>
@@ -23,8 +23,6 @@ BUILD_DEPENDS=	:mod_perl-*:www/mod_perl \
 		:p5-Apache-Test-*:www/p5-Apache-Test
 
 RUN_DEPENDS=	:mod_perl-*:www/mod_perl
-
-CONFIGURE_STYLE=perl
 
 # XXX broken, see p5-Apache-Test
 NO_REGRESS=	Yes

@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2005/10/11 17:02:25 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.4 2007/01/16 17:52:06 simon Exp $
 
 
 COMMENT=		"mod_perl Apache gallery handler"
 
+MODULES=		cpan
 DISTNAME=		Apache-Gallery-0.9.1
-PKGNAME=		p5-${DISTNAME}
-CATEGORIES=		www perl5
+PKGNAME=		p5-${DISTNAME}p0
+CATEGORIES=		www
 
 MAINTAINER=		Michael Knudsen <mk@molioner.dk>
 HOMEPAGE=		http://www.apachegallery.dk/
@@ -16,8 +17,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://apachegallery.dk/download/
-
 RUN_DEPENDS=		::www/p5-URI \
 			::graphics/p5-Image-Info \
 			::graphics/p5-Image-Size \
@@ -26,11 +25,9 @@ RUN_DEPENDS=		::www/p5-URI \
 			:mod_perl-*:www/mod_perl \
 			:p5-libapreq->=1.0:www/p5-libapreq
 
-BUILD_DEPENDS= ${RUN_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS}
 REGRESS_DEPENDS=	::devel/p5-Test-Pod \
 			::devel/p5-Test-MockObject
-
-CONFIGURE_STYLE=	perl
 
 TEMPLATESDIR=   ${PREFIX}/share/Apache-Gallery/templates
 ICONSDIR=       ${PREFIX}/share/Apache-Gallery/icons

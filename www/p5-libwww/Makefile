@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2006/11/04 12:00:03 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2007/01/16 17:52:07 simon Exp $
 
 COMMENT=	"library for WWW access in Perl"
 
+MODULES=	cpan
 DISTNAME=	libwww-perl-5.805
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	www perl5
+PKGNAME=	p5-${DISTNAME:S/-perl-/-/}p0
+CATEGORIES=	www
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org> 
 
@@ -22,7 +23,5 @@ RUN_DEPENDS=	:p5-Compress-Zlib->=1.10:archivers/p5-Compress-Zlib \
 		:p5-Crypt-SSLeay-*:security/p5-Crypt-SSLeay \
 		:p5-HTTP-GHTTP-*:www/p5-HTTP-GHTTP
 BUILD_DEPENDS=	${RUN_DEPENDS}
-
-CONFIGURE_STYLE= perl
 
 .include <bsd.port.mk>

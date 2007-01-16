@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2004/06/26 07:35:10 xsa Exp $
+# $OpenBSD: Makefile,v 1.5 2007/01/16 17:52:07 simon Exp $
 
 COMMENT=	"httpd log filter library"
 
+MODULES=	cpan
 DISTNAME=	HTTPD-Log-Filter-1.08
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=HTTPD/}
+PKGNAME=	p5-${DISTNAME}p0
+CATEGORIES=	www
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -15,7 +15,5 @@ PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	:p5-IO-Zlib->1.00:archivers/p5-IO-Zlib
 BUILD_DEPENDS=	${RUN_DEPENDS}
-
-CONFIGURE_STYLE=	perl
 
 .include <bsd.port.mk>
