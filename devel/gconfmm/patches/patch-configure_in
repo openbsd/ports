@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2007/01/16 14:05:55 jasper Exp $
+--- configure.in.orig	Mon Jan 15 18:57:38 2007
++++ configure.in	Mon Jan 15 18:57:52 2007
+@@ -83,8 +83,9 @@
+ # Make these available to both PKG_CHECK_MODULES and the .pc.in file:
+ GLIBMM_VERSION_NEEDED=2.6.4
+ AC_SUBST(GLIBMM_VERSION_NEEDED)
+-GTKMM_VERSION_NEEDED=2.4.0
+-AC_SUBST(GTKMM_VERSION_NEEDED)
++# Only needed for non-installed examples
++#GTKMM_VERSION_NEEDED=2.4.0
++#AC_SUBST(GTKMM_VERSION_NEEDED)
+ GCONF_VERSION_NEEDED=2.4.0
+ AC_SUBST(GCONF_VERSION_NEEDED)
+ 

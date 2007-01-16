@@ -1,0 +1,60 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2007/01/16 14:05:55 jasper Exp $
+--- configure.orig	Mon Jan 15 19:07:46 2007
++++ configure	Mon Jan 15 19:07:50 2007
+@@ -18725,7 +18725,7 @@
+ # Make these available to both PKG_CHECK_MODULES and the .pc.in file:
+ GLIBMM_VERSION_NEEDED=2.6.4
+ 
+-GTKMM_VERSION_NEEDED=2.4.0
++#GTKMM_VERSION_NEEDED=2.4.0
+ 
+ GCONF_VERSION_NEEDED=2.4.0
+ 
+@@ -18951,47 +18951,6 @@
+ 
+ 
+ pkg_failed=no
+-echo "$as_me:$LINENO: checking for GCONFMM_EXAMPLES" >&5
+-echo $ECHO_N "checking for GCONFMM_EXAMPLES... $ECHO_C" >&6
+-
+-if test -n "$PKG_CONFIG"; then
+-    if test -n "$GCONFMM_EXAMPLES_CFLAGS"; then
+-        pkg_cv_GCONFMM_EXAMPLES_CFLAGS="$GCONFMM_EXAMPLES_CFLAGS"
+-    else
+-        if test -n "$PKG_CONFIG" && \
+-    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"gtkmm-2.4 >= \$GTKMM_VERSION_NEEDED gconf-2.0 >= \$GCONF_VERSION_NEEDED\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "gtkmm-2.4 >= $GTKMM_VERSION_NEEDED gconf-2.0 >= $GCONF_VERSION_NEEDED") 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_GCONFMM_EXAMPLES_CFLAGS=`$PKG_CONFIG --cflags "gtkmm-2.4 >= $GTKMM_VERSION_NEEDED gconf-2.0 >= $GCONF_VERSION_NEEDED" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+-    fi
+-else
+-	pkg_failed=untried
+-fi
+-if test -n "$PKG_CONFIG"; then
+-    if test -n "$GCONFMM_EXAMPLES_LIBS"; then
+-        pkg_cv_GCONFMM_EXAMPLES_LIBS="$GCONFMM_EXAMPLES_LIBS"
+-    else
+-        if test -n "$PKG_CONFIG" && \
+-    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"gtkmm-2.4 >= \$GTKMM_VERSION_NEEDED gconf-2.0 >= \$GCONF_VERSION_NEEDED\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "gtkmm-2.4 >= $GTKMM_VERSION_NEEDED gconf-2.0 >= $GCONF_VERSION_NEEDED") 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_GCONFMM_EXAMPLES_LIBS=`$PKG_CONFIG --libs "gtkmm-2.4 >= $GTKMM_VERSION_NEEDED gconf-2.0 >= $GCONF_VERSION_NEEDED" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+-    fi
+-else
+-	pkg_failed=untried
+-fi
+-
+-
+ 
+ if test $pkg_failed = yes; then
+ 

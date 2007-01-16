@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/01/16 14:05:55 jasper Exp $
+--- Makefile.in.orig	Mon Jan 15 19:10:17 2007
++++ Makefile.in	Mon Jan 15 19:10:29 2007
+@@ -188,7 +188,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = tools gconf examples docs
++SUBDIRS = tools gconf docs
+ DIST_SUBDIRS = $(SUBDIRS) scripts 
+ EXTRA_DIST = build_shared/Makefile_build.am_fragment \
+ 		  build_shared/Makefile_build_gensrc.am_fragment \

@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/01/16 14:05:55 jasper Exp $
+@lib lib/libgconfmm-2.6.so.${LIBgconfmm-2.6_VERSION}
