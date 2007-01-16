@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-indirect-dependencies,v 1.3 2006/12/15 11:19:46 bernd Exp $
+# $OpenBSD: check-indirect-dependencies,v 1.4 2007/01/16 18:15:53 sturm Exp $
 # Copyright (c) 2006 Nikolay Sturm <sturm@openbsd.org>.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -29,57 +29,113 @@
 
 use strict;
 use warnings;
+use Cwd;
 
+my $cwd = getcwd;
 my $mainport;
 my $make = $ENV{MAKE} || "make";
+my $portsdir = $ENV{PORTSDIR} || "/usr/ports";
 
-sub check_deps($)
+sub check_build_deps()
 {
-	my $kind = shift;
+	my %directdeps;
+	my %indirectdeps;
+
+	print "===> Checking build dependencies\n";
+	open(my $builddirdepends, "-|", "$make build-dir-depends") or
+	    die "Cannot execute '$make build-dir-depends': $!\n";
+	while (<$builddirdepends>) {
+		chomp;
+		my ($port, $builddep) = split;
+		my @dirstack;
+		$mainport = $port if not defined $mainport;
+		next if $port ne $mainport;
+
+		chdir("$portsdir/$builddep") or
+		    die "Cannot chdir to $portsdir/$builddep\n";
+		open(my $rundirdepends, "-|", "$make run-dir-depends") or
+		    die "Cannot execute '$make run-dir-depends': $!\n";
+		while (<$rundirdepends>) {
+			chomp;
+			my ($innerport, $rundep) = split;
+			next if $innerport eq $rundep;
+
+			if (not @dirstack) {
+				push @dirstack, $mainport, $innerport, $rundep;
+			} elsif ($dirstack[-1] eq $innerport) {
+				push @dirstack, $rundep;
+			} else {
+				while ($dirstack[-1] ne $innerport) {
+					pop @dirstack;
+				}
+				push @dirstack, $rundep;
+			}
+
+			if (exists $directdeps{$rundep}) {
+				print "probably unneeded dependency: $rundep\n";
+				print join(' -> ', @dirstack) . "\n\n";
+			}
+			$indirectdeps{$rundep} = [ @dirstack ];
+		}
+		close $rundirdepends;
+
+		if (exists $indirectdeps{$builddep}) {
+			print "probably unneeded dependency: $builddep\n";
+			print join(' -> ', @{$indirectdeps{$builddep}});
+			print "\n\n";
+			next;
+		}
+		$directdeps{$builddep} = 1;
+	}
+	close $builddirdepends;
+
+	chdir($cwd) or die "Cannot chdir to $cwd\n";
+}
+
+sub check_run_deps()
+{
 	my %directdeps;
 	my %indirectdeps;
 	my @dirstack;
 
-	print "===> Checking $kind dependencies\n";
-
-	open(my $dirdepends, "-|", "$make $kind-dir-depends") or
-	    die "Cannot execute '$make $kind-dir-depends': $!\n";
-	while (<$dirdepends>) {
+	print "===> Checking run dependencies\n";
+	open(my $rundirdepends, "-|", "$make run-dir-depends") or
+	    die "Cannot execute '$make run-dir-depends': $!\n";
+	while (<$rundirdepends>) {
 		chomp;
-		my ($port, $dep) = split;
+		my ($port, $rundep) = split;
 		$mainport = $port if not defined $mainport;
+		next if $port eq $rundep;
 
 		if (not @dirstack) {
-			push @dirstack, $port;
-			push @dirstack, $dep;
+			push @dirstack, $port, $rundep;
 		} elsif ($dirstack[-1] eq $port) {
-			push @dirstack, $dep;
+			push @dirstack, $rundep;
 		} else {
 			while ($dirstack[-1] ne $port) {
 				pop @dirstack;
 			}
-			push @dirstack, $dep;
+			push @dirstack, $rundep;
 		}
 
 		if ($port eq $mainport) {
-			if (exists $indirectdeps{$dep}) {
-				print "\nprobably unneeded dependency: $dep\n";
-				print join(' -> ', @{$indirectdeps{$dep}})."\n";
+			if (exists $indirectdeps{$rundep}) {
+				print "probably unneeded dependency: $rundep\n";
+				print join(' -> ', @{$indirectdeps{$rundep}});
+				print "\n\n";
 				next;
 			}
-			$directdeps{$dep} = 1;
+			$directdeps{$rundep} = 1;
 		} else {
-			if (exists $directdeps{$dep}) {
-				print "\nprobably unneeded dependency: $dep\n";
-				print join(' -> ', @dirstack)."\n";
+			if (exists $directdeps{$rundep}) {
+				print "probably unneeded dependency: $rundep\n";
+				print join(' -> ', @dirstack) . "\n\n";
 			}
-			$indirectdeps{$dep} = [ @dirstack ];
+			$indirectdeps{$rundep} = [ @dirstack ];
 		}
 	}
-	close $dirdepends;
+	close $rundirdepends;
 }
 
-for my $kind ("run") {
-	check_deps($kind);
-}
-
+check_build_deps();
+check_run_deps();
