@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/01/15 16:39:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/01/16 07:14:39 ajacoutot Exp $
 
 COMMENT=	"drawing program for children"
 
 DISTNAME=	tuxpaint-0.9.16
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games graphics
 
 HOMEPAGE=	http://www.tuxpaint.org/
@@ -23,7 +24,7 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	SDL.>=6::devel/sdl \
 		SDL_image.>=2::devel/sdl-image \
 		SDL_mixer.>=3::devel/sdl-mixer \
-		SDL_ttf.>=7::devel/sdl-ttf
+		SDL_ttf.>=7:sdl-ttf->=2.0.8:devel/sdl-ttf
 RUN_DEPENDS=	::graphics/netpbm
 
 USE_X11=	Yes
