@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/16 11:15:36 espie Exp $
+bin/dvdxchap
+bin/ogmcat
+bin/ogmdemux
+bin/ogminfo
+bin/ogmmerge
+bin/ogmsplit
+@man man/man1/dvdxchap.1
+@man man/man1/ogmcat.1
+@man man/man1/ogmdemux.1
+@man man/man1/ogminfo.1
+@man man/man1/ogmmerge.1
+@man man/man1/ogmsplit.1

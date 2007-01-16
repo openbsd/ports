@@ -1,0 +1,11 @@
+ogmtools is a set of simple tools to create and manipulate ogg media files.
+
+dvdxchap	extract chapter info from dvd
+
+ogminfo		print stream info for ogm files
+
+ogmsplit	split ogm files into smaller files
+ogmcat		concatenate individual ogm files
+
+ogmdemux	extract streams from ogm files
+ogmmerge	merge streams into ogm file
