@@ -1,12 +1,12 @@
-$OpenBSD: patch-util_Makefile_in,v 1.4 2006/08/07 19:59:20 bernd Exp $
---- util/Makefile.in.orig	Tue Aug  1 12:41:50 2006
-+++ util/Makefile.in	Wed Aug  2 12:46:04 2006
-@@ -320,7 +320,7 @@ sbindir = @sbindir@
+$OpenBSD: patch-util_Makefile_in,v 1.5 2007/01/16 09:50:36 bernd Exp $
+--- util/Makefile.in.orig	Wed Dec  6 10:15:29 2006
++++ util/Makefile.in	Thu Jan 11 12:03:37 2007
+@@ -332,7 +332,7 @@ sbindir = @sbindir@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
 -INCLUDES = -I.. -I$(top_srcdir)/include -I$(top_srcdir)/intl
 +INCLUDES = -I.. -I$(top_srcdir)/include
- noinst_LIBRARIES = libutil.a
+ noinst_LIBRARIES = libutil.a libcompat.a
  libutil_a_SOURCES = logger.c fileutil.c miscutil.c strgutil.c ttyio.c \
  	argparse.c memory.c secmem.c errors.c iobuf.c dotlock.c http.c \
