@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/01 20:47:41 kurt Exp $
+# $OpenBSD: Makefile,v 1.4 2007/01/16 02:48:02 kurt Exp $
 
 COMMENT=	"software project management and comprehension tool"
 
 DISTNAME=	maven-2.0
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	devel
 
 HOMEPAGE=	http://maven.apache.org/
