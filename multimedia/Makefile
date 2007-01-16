@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/01/13 12:56:48 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2007/01/16 11:16:18 espie Exp $
 
      SUBDIR += avidemux
      SUBDIR += dvdauthor
@@ -13,6 +13,7 @@
      SUBDIR += lsdvd
      SUBDIR += mjpegtools
      SUBDIR += mjpegtools,quicktime
+     SUBDIR += ogmtools
      SUBDIR += streamdvd
      SUBDIR += transcode
      SUBDIR += xine-lib
