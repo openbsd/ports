@@ -1,0 +1,33 @@
+$OpenBSD: patch-docs_man_htdigest_1,v 1.1 2007/01/16 01:12:26 deanna Exp $
+--- docs/man/htdigest.1.orig	Sun Jan 14 19:01:44 2007
++++ docs/man/htdigest.1	Sun Jan 14 19:14:21 2007
+@@ -19,24 +19,24 @@
+ .el .ne 3
+ .IP "\\$1" \\$2
+ ..
+-.TH "HTDIGEST" 1 "2003-11-25" "Apache HTTP Server" "htdigest"
++.TH "HTDIGEST2" 1 "2003-11-25" "Apache HTTP Server" "htdigest2"
+ 
+ .SH NAME
+-htdigest \- manage user files for digest authentication
++htdigest2 \- manage user files for digest authentication
+ 
+ .SH "SYNOPSIS"
+  
+ .PP
+-\fBhtdigest\fR [ -\fBc\fR ] \fIpasswdfile\fR \fIrealm\fR \fIusername\fR
++\fBhtdigest2\fR [ -\fBc\fR ] \fIpasswdfile\fR \fIrealm\fR \fIusername\fR
+  
+ 
+ .SH "SUMMARY"
+  
+ .PP
+-htdigest is used to create and update the flat-files used to store usernames, realm and password for digest authentication of HTTP users\&. Resources available from the Apache HTTP server can be restricted to just the users listed in the files created by htdigest\&.
++htdigest2 is used to create and update the flat-files used to store usernames, realm and password for digest authentication of HTTP users\&. Resources available from the Apache HTTP server can be restricted to just the users listed in the files created by htdigest2\&.
+  
+ .PP
+-This manual page only lists the command line arguments\&. For details of the directives necessary to configure digest authentication in httpd see the Apache manual, which is part of the Apache distribution or can be found at http://httpd\&.apache\&.org/\&.
++This manual page only lists the command line arguments\&. For details of the directives necessary to configure digest authentication in httpd2 see the Apache manual, which is part of the Apache distribution or can be found at http://httpd\&.apache\&.org/\&.
+  
+ 
+ .SH "OPTIONS"

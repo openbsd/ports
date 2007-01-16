@@ -1,0 +1,28 @@
+$OpenBSD: patch-docs_man_htdbm_1,v 1.1 2007/01/16 01:12:26 deanna Exp $
+--- docs/man/htdbm.1.orig	Sun Jan 14 19:01:44 2007
++++ docs/man/htdbm.1	Sun Jan 14 19:08:27 2007
+@@ -54,7 +54,7 @@ htdbm \- Manipulate DBM password databas
+ .SH "SUMMARY"
+  
+ .PP
+-htdbm is used to manipulate the DBM format files used to store usernames and password for basic authentication of HTTP users via mod_auth_dbm\&. See the dbmmanage documentation for more information about these DBM files\&.
++htdbm is used to manipulate the DBM format files used to store usernames and password for basic authentication of HTTP users via mod_auth_dbm\&. See the dbmmanage2 documentation for more information about these DBM files\&.
+  
+ 
+ .SH "OPTIONS"
+@@ -74,13 +74,13 @@ Display the results on standard output r
+ Use MD5 encryption for passwords\&. On Windows, Netware and TPF, this is the default\&.  
+ .TP
+ -d
+-Use crypt() encryption for passwords\&. The default on all platforms but Windows, Netware and TPF\&. Though possibly supported by htdbm on all platforms, it is not supported by the httpd server on Windows, Netware and TPF\&.  
++Use crypt() encryption for passwords\&. The default on all platforms but Windows, Netware and TPF\&. Though possibly supported by htdbm on all platforms, it is not supported by the httpd2 server on Windows, Netware and TPF\&.  
+ .TP
+ -s
+ Use SHA encryption for passwords\&. Facilitates migration from/to Netscape servers using the LDAP Directory Interchange Format (ldif)\&.  
+ .TP
+ -p
+-Use plaintext passwords\&. Though htdbm will support creation on all platforms, the httpd daemon will only accept plain text passwords on Windows, Netware and TPF\&.  
++Use plaintext passwords\&. Though htdbm will support creation on all platforms, the httpd2 daemon will only accept plain text passwords on Windows, Netware and TPF\&.  
+ .TP
+ -l
+ Print each of the usernames and comments from the database on stdout\&.  

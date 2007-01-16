@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2007/01/09 11:18:13 dlg Exp $
+# $OpenBSD: Makefile,v 1.13 2007/01/16 01:12:26 deanna Exp $
 
 COMMENT=	"apache HTTP server"
 
 V=		2.2.3
-PKGNAME=	apache-httpd-${V}p8
+PKGNAME=	apache-httpd-${V}p9
 DISTNAME=	httpd-${V}
 
 CATEGORIES=	www net
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 SHARED_ONLY=		Yes
 NO_REGRESS=		Yes
 
-WANTLIB=		c crypto m ssl expat apr-1 db.>=4
+WANTLIB=		c crypto m ssl expat apr-1 db.>=4 z
 
 LIB_DEPENDS=		aprutil-1.>=2::devel/apr-util
 
@@ -66,6 +66,7 @@ pre-configure:
 	@perl -pi -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/config.layout
 	@perl -pi -e 's,%%CONFDIR%%,${CONFDIR},' ${WRKSRC}/config.layout \
 	${WRKSRC}/configure
+	@perl -pi -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/support/apxs.in
 
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share

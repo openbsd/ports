@@ -1,0 +1,209 @@
+$OpenBSD: patch-docs_man_apxs_8,v 1.1 2007/01/16 01:12:26 deanna Exp $
+--- docs/man/apxs.8.orig	Sun Jan 14 19:01:44 2007
++++ docs/man/apxs.8	Sun Jan 14 19:08:27 2007
+@@ -19,64 +19,64 @@
+ .el .ne 3
+ .IP "\\$1" \\$2
+ ..
+-.TH "APXS" 8 "2004-10-01" "Apache HTTP Server" "apxs"
++.TH "APXS2" 8 "2004-10-01" "Apache HTTP Server" "apxs2"
+ 
+ .SH NAME
+-apxs \- APache eXtenSion tool
++apxs2 \- APache eXtenSion tool
+ 
+ .SH "SYNOPSIS"
+  
+ .PP
+-\fBapxs\fR -\fBg\fR [ -\fBS\fR \fIname\fR=\fIvalue\fR ] -\fBn\fR \fImodname\fR
++\fBapxs2\fR -\fBg\fR [ -\fBS\fR \fIname\fR=\fIvalue\fR ] -\fBn\fR \fImodname\fR
+  
+ .PP
+-\fBapxs\fR -\fBq\fR [ -\fBS\fR \fIname\fR=\fIvalue\fR ] \fIquery\fR \&.\&.\&.
++\fBapxs2\fR -\fBq\fR [ -\fBS\fR \fIname\fR=\fIvalue\fR ] \fIquery\fR \&.\&.\&.
+  
+ .PP
+-\fBapxs\fR -\fBc\fR [ -\fBS\fR \fIname\fR=\fIvalue\fR ] [ -\fBo\fR \fIdsofile\fR ] [ -\fBI\fR \fIincdir\fR ] [ -\fBD\fR \fIname\fR=\fIvalue\fR ] [ -\fBL\fR \fIlibdir\fR ] [ -\fBl\fR \fIlibname\fR ] [ -\fBWc,\fR\fIcompiler-flags\fR ] [ -\fBWl,\fR\fIlinker-flags\fR ] \fIfiles\fR \&.\&.\&.
++\fBapxs2\fR -\fBc\fR [ -\fBS\fR \fIname\fR=\fIvalue\fR ] [ -\fBo\fR \fIdsofile\fR ] [ -\fBI\fR \fIincdir\fR ] [ -\fBD\fR \fIname\fR=\fIvalue\fR ] [ -\fBL\fR \fIlibdir\fR ] [ -\fBl\fR \fIlibname\fR ] [ -\fBWc,\fR\fIcompiler-flags\fR ] [ -\fBWl,\fR\fIlinker-flags\fR ] \fIfiles\fR \&.\&.\&.
+  
+ .PP
+-\fBapxs\fR -\fBi\fR [ -\fBS\fR \fIname\fR=\fIvalue\fR ] [ -\fBn\fR \fImodname\fR ] [ -\fBa\fR ] [ -\fBA\fR ] \fIdso-file\fR \&.\&.\&.
++\fBapxs2\fR -\fBi\fR [ -\fBS\fR \fIname\fR=\fIvalue\fR ] [ -\fBn\fR \fImodname\fR ] [ -\fBa\fR ] [ -\fBA\fR ] \fIdso-file\fR \&.\&.\&.
+  
+ .PP
+-\fBapxs\fR -\fBe\fR [ -\fBS\fR \fIname\fR=\fIvalue\fR ] [ -\fBn\fR \fImodname\fR ] [ -\fBa\fR ] [ -\fBA\fR ] \fIdso-file\fR \&.\&.\&.
++\fBapxs2\fR -\fBe\fR [ -\fBS\fR \fIname\fR=\fIvalue\fR ] [ -\fBn\fR \fImodname\fR ] [ -\fBa\fR ] [ -\fBA\fR ] \fIdso-file\fR \&.\&.\&.
+  
+ 
+ .SH "SUMMARY"
+  
+ .PP
+-apxs is a tool for building and installing extension modules for the Apache HyperText Transfer Protocol (HTTP) server\&. This is achieved by building a dynamic shared object (DSO) from one or more source or object \fIfiles\fR which then can be loaded into the Apache server under runtime via the LoadModule directive from mod_so\&.
++apxs2 is a tool for building and installing extension modules for the Apache HyperText Transfer Protocol (HTTP) server\&. This is achieved by building a dynamic shared object (DSO) from one or more source or object \fIfiles\fR which then can be loaded into the Apache server under runtime via the LoadModule directive from mod_so\&.
+  
+ .PP
+-So to use this extension mechanism your platform has to support the DSO feature and your Apache httpd binary has to be built with the mod_so module\&. The apxs tool automatically complains if this is not the case\&. You can check this yourself by manually running the command
++So to use this extension mechanism your platform has to support the DSO feature and your Apache httpd2 binary has to be built with the mod_so module\&. The apxs2 tool automatically complains if this is not the case\&. You can check this yourself by manually running the command
+  
+ .nf
+ 
+-      $ httpd -l
++      $ httpd2 -l
+     
+ .fi
+  
+ .PP
+-The module mod_so should be part of the displayed list\&. If these requirements are fulfilled you can easily extend your Apache server's functionality by installing your own modules with the DSO mechanism by the help of this apxs tool:
++The module mod_so should be part of the displayed list\&. If these requirements are fulfilled you can easily extend your Apache server's functionality by installing your own modules with the DSO mechanism by the help of this apxs2 tool:
+  
+ .nf
+ 
+-      $ apxs -i -a -c mod_foo\&.c
++      $ apxs2 -i -a -c mod_foo\&.c
+       gcc -fpic -DSHARED_MODULE -I/path/to/apache/include -c mod_foo\&.c
+       ld -Bshareable -o mod_foo\&.so mod_foo\&.o
+       cp mod_foo\&.so /path/to/apache/modules/mod_foo\&.so
+       chmod 755 /path/to/apache/modules/mod_foo\&.so
+-      [activating module `foo' in /path/to/apache/etc/httpd\&.conf]
+-      $ apachectl restart
+-      /path/to/apache/sbin/apachectl restart: httpd not running, trying to start
++      [activating module `foo' in /path/to/apache/etc/httpd2\&.conf]
++      $ apachectl2 restart
++      /path/to/apache/sbin/apachectl2 restart: httpd2 not running, trying to start
+       [Tue Mar 31 11:27:55 1998] [debug] mod_so\&.c(303): loaded module foo_module
+-      /path/to/apache/sbin/apachectl restart: httpd started
++      /path/to/apache/sbin/apachectl2 restart: httpd2 started
+       $ _
+     
+ .fi
+  
+ .PP
+-The arguments \fIfiles\fR can be any C source file (\&.c), a object file (\&.o) or even a library archive (\&.a)\&. The apxs tool automatically recognizes these extensions and automatically used the C source files for compilation while just using the object and archive files for the linking phase\&. But when using such pre-compiled objects make sure they are compiled for position independent code (PIC) to be able to use them for a dynamically loaded shared object\&. For instance with GCC you always just have to use -fpic\&. For other C compilers consult its manual page or at watch for the flags apxs uses to compile the object files\&.
++The arguments \fIfiles\fR can be any C source file (\&.c), a object file (\&.o) or even a library archive (\&.a)\&. The apxs2 tool automatically recognizes these extensions and automatically used the C source files for compilation while just using the object and archive files for the linking phase\&. But when using such pre-compiled objects make sure they are compiled for position independent code (PIC) to be able to use them for a dynamically loaded shared object\&. For instance with GCC you always just have to use -fpic\&. For other C compilers consult its manual page or at watch for the flags apxs2 uses to compile the object files\&.
+  
+ .PP
+ For more details about DSO support in Apache read the documentation of mod_so or perhaps even read the src/modules/standard/mod_so\&.c source file\&.
+@@ -89,28 +89,28 @@ For more details about DSO support in Ap
+  
+ .TP
+ -n \fImodname\fR
+-This explicitly sets the module name for the -i (install) and -g (template generation) option\&. Use this to explicitly specify the module name\&. For option -g this is required, for option -i the apxs tool tries to determine the name from the source or (as a fallback) at least by guessing it from the filename\&.  
++This explicitly sets the module name for the -i (install) and -g (template generation) option\&. Use this to explicitly specify the module name\&. For option -g this is required, for option -i the apxs2 tool tries to determine the name from the source or (as a fallback) at least by guessing it from the filename\&.  
+   
+ .SS "Query Options"
+  
+  
+ .TP
+ -q
+-Performs a query for apxs's knowledge about certain settings\&. The \fIquery\fR parameters can be one or more of the following strings: CC, CFLAGS, CFLAGS_SHLIB, INCLUDEDIR, LD_SHLIB, LDFLAGS_SHLIB, LIBEXECDIR, LIBS_SHLIB, SBINDIR, SYSCONFDIR, TARGET\&. .PP Use this for manually determining settings\&. For instance use INC=-I`apxs -q INCLUDEDIR` .PP inside your own Makefiles if you need manual access to Apache's C header files\&.  
++Performs a query for apxs2's knowledge about certain settings\&. The \fIquery\fR parameters can be one or more of the following strings: CC, CFLAGS, CFLAGS_SHLIB, INCLUDEDIR, LD_SHLIB, LDFLAGS_SHLIB, LIBEXECDIR, LIBS_SHLIB, SBINDIR, SYSCONFDIR, TARGET\&. .PP Use this for manually determining settings\&. For instance use INC=-I`apxs2 -q INCLUDEDIR` .PP inside your own Makefiles if you need manual access to Apache's C header files\&.  
+   
+ .SS "Configuration Options"
+  
+  
+ .TP
+ -S \fIname\fR=\fIvalue\fR
+-This option changes the apxs settings described above\&.  
++This option changes the apxs2 settings described above\&.  
+   
+ .SS "Template Generation Options"
+  
+  
+ .TP
+ -g
+-This generates a subdirectory \fIname\fR (see option -n) and there two files: A sample module source file named mod_\fIname\fR\&.c which can be used as a template for creating your own modules or as a quick start for playing with the apxs mechanism\&. And a corresponding Makefile for even easier build and installing of this module\&.  
++This generates a subdirectory \fIname\fR (see option -n) and there two files: A sample module source file named mod_\fIname\fR\&.c which can be used as a template for creating your own modules or as a quick start for playing with the apxs2 mechanism\&. And a corresponding Makefile for even easier build and installing of this module\&.  
+   
+ .SS "DSO Compilation Options"
+  
+@@ -148,13 +148,13 @@ This option passes \fIlinker-flags\fR as
+ This indicates the installation operation and installs one or more dynamically shared objects into the server's \fImodules\fR directory\&.  
+ .TP
+ -a
+-This activates the module by automatically adding a corresponding LoadModule line to Apache's httpd\&.conf configuration file, or by enabling it if it already exists\&.  
++This activates the module by automatically adding a corresponding LoadModule line to Apache's httpd2\&.conf configuration file, or by enabling it if it already exists\&.  
+ .TP
+ -A
+ Same as option -a but the created LoadModule directive is prefixed with a hash sign (#), \fIi\&.e\&.\fR, the module is just prepared for later activation but initially disabled\&.  
+ .TP
+ -e
+-This indicates the editing operation, which can be used with the -a and -A options similarly to the -i operation to edit Apache's httpd\&.conf configuration file without attempting to install the module\&.  
++This indicates the editing operation, which can be used with the -a and -A options similarly to the -i operation to edit Apache's httpd2\&.conf configuration file without attempting to install the module\&.  
+   
+ .SH "EXAMPLES"
+  
+@@ -163,7 +163,7 @@ Assume you have an Apache module named m
+  
+ .nf
+ 
+-      $ apxs -c mod_foo\&.c
++      $ apxs2 -c mod_foo\&.c
+       /path/to/libtool --mode=compile gcc \&.\&.\&. -c mod_foo\&.c
+       /path/to/libtool --mode=link gcc \&.\&.\&. -o mod_foo\&.la mod_foo\&.slo
+       $ _
+@@ -171,16 +171,16 @@ Assume you have an Apache module named m
+ .fi
+  
+ .PP
+-Then you have to update the Apache configuration by making sure a LoadModule directive is present to load this shared object\&. To simplify this step apxs provides an automatic way to install the shared object in its "modules" directory and updating the httpd\&.conf file accordingly\&. This can be achieved by running:
++Then you have to update the Apache configuration by making sure a LoadModule directive is present to load this shared object\&. To simplify this step apxs2 provides an automatic way to install the shared object in its "modules" directory and updating the httpd2\&.conf file accordingly\&. This can be achieved by running:
+  
+ .nf
+ 
+-      $ apxs -i -a mod_foo\&.la
++      $ apxs2 -i -a mod_foo\&.la
+       /path/to/instdso\&.sh mod_foo\&.la /path/to/apache/modules
+       /path/to/libtool --mode=install cp mod_foo\&.la /path/to/apache/modules
+       \&.\&.\&.
+       chmod 755 /path/to/apache/modules/mod_foo\&.so
+-      [activating module `foo' in /path/to/apache/conf/httpd\&.conf]
++      [activating module `foo' in /path/to/apache/conf/httpd2\&.conf]
+       $ _
+     
+ .fi
+@@ -199,16 +199,16 @@ is added to the configuration file if st
+  
+ .nf
+ 
+-      $ apxs -i -A mod_foo\&.c
++      $ apxs2 -i -A mod_foo\&.c
+     
+ .fi
+  
+ .PP
+-For a quick test of the apxs mechanism you can create a sample Apache module template plus a corresponding Makefile via:
++For a quick test of the apxs2 mechanism you can create a sample Apache module template plus a corresponding Makefile via:
+  
+ .nf
+ 
+-      $ apxs -g -n foo
++      $ apxs2 -g -n foo
+       Creating [DIR]  foo
+       Creating [FILE] foo/Makefile
+       Creating [FILE] foo/modules\&.mk
+@@ -225,19 +225,19 @@ Then you can immediately compile this sa
+ 
+       $ cd foo
+       $ make all reload
+-      apxs -c mod_foo\&.c
++      apxs2 -c mod_foo\&.c
+       /path/to/libtool --mode=compile gcc \&.\&.\&. -c mod_foo\&.c
+       /path/to/libtool --mode=link gcc \&.\&.\&. -o mod_foo\&.la mod_foo\&.slo
+-      apxs -i -a -n "foo" mod_foo\&.la
++      apxs2 -i -a -n "foo" mod_foo\&.la
+       /path/to/instdso\&.sh mod_foo\&.la /path/to/apache/modules
+       /path/to/libtool --mode=install cp mod_foo\&.la /path/to/apache/modules
+       \&.\&.\&.
+       chmod 755 /path/to/apache/modules/mod_foo\&.so
+-      [activating module `foo' in /path/to/apache/conf/httpd\&.conf]
+-      apachectl restart
+-      /path/to/apache/sbin/apachectl restart: httpd not running, trying to start
++      [activating module `foo' in /path/to/apache/conf/httpd2\&.conf]
++      apachectl2 restart
++      /path/to/apache/sbin/apachectl2 restart: httpd2 not running, trying to start
+       [Tue Mar 31 11:27:55 1998] [debug] mod_so\&.c(303): loaded module foo_module
+-      /path/to/apache/sbin/apachectl restart: httpd started
++      /path/to/apache/sbin/apachectl2 restart: httpd2 started
+       $ _
+     
+ .fi
