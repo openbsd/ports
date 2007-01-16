@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/01/16 20:12:50 jasper Exp $
+@lib lib/libgnomecanvasmm-2.6.so.${LIBgnomecanvasmm-2.6_VERSION}
