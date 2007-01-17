@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2007/01/16 20:40:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2007/01/17 07:23:41 jasper Exp $
 
      SUBDIR += applets2
      SUBDIR += bonobo
@@ -40,6 +40,7 @@
      SUBDIR += utils
      SUBDIR += vfs
      SUBDIR += vfs2
+     SUBDIR += vfsmm
      SUBDIR += yelp
      SUBDIR += zenity
 
