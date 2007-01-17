@@ -1,0 +1,2 @@
+This module creates global pseudovariables which format dates and
+times, according to formatting codes you pass to them in strings.
