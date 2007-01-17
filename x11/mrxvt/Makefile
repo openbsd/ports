@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/15 22:11:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/01/17 14:37:40 ajacoutot Exp $
 
 COMMENT=	"multi-tabbed terminal emulator"
 
 DISTNAME=	mrxvt-0.5.2 
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		mrxvt.1${EXTRACT_SUFX}:0
@@ -41,10 +42,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/freetype2 \
 BZDOCS=		README.greek README.menu README.xvt behind_mrxvt.txt \
 		hack-mrxvt.txt mrxvt_seq.txt rxvtRef.txt \
 		xterm-ctlseqs.txt
-
-pre-configure:
-	perl -pi -e 's,undef HAVE_STDLIB_H,define HAVE_STDLIB_H,g' \
-		${WRKSRC}/config.h.in
 
 post-install:
 	${INSTALL_MAN} ${WRKDIR}/mrxvt.1 \
