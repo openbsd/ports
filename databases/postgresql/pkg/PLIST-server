@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.11 2006/10/18 13:54:22 mbalmer Exp $
+@comment $OpenBSD: PLIST-server,v 1.12 2007/01/17 16:47:25 mbalmer Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-clients-*
@@ -19,6 +19,7 @@ include/postgresql/server/access/
 include/postgresql/server/access/attnum.h
 include/postgresql/server/access/clog.h
 include/postgresql/server/access/genam.h
+include/postgresql/server/access/gin.h
 include/postgresql/server/access/gist.h
 include/postgresql/server/access/gist_private.h
 include/postgresql/server/access/gistscan.h
@@ -26,15 +27,13 @@ include/postgresql/server/access/hash.h
 include/postgresql/server/access/heapam.h
 include/postgresql/server/access/hio.h
 include/postgresql/server/access/htup.h
-include/postgresql/server/access/iqual.h
 include/postgresql/server/access/itup.h
 include/postgresql/server/access/multixact.h
 include/postgresql/server/access/nbtree.h
 include/postgresql/server/access/printtup.h
+include/postgresql/server/access/reloptions.h
 include/postgresql/server/access/relscan.h
 include/postgresql/server/access/rmgr.h
-include/postgresql/server/access/rtree.h
-include/postgresql/server/access/rtscan.h
 include/postgresql/server/access/sdir.h
 include/postgresql/server/access/skey.h
 include/postgresql/server/access/slru.h
@@ -91,10 +90,12 @@ include/postgresql/server/catalog/pg_pltemplate.h
 include/postgresql/server/catalog/pg_proc.h
 include/postgresql/server/catalog/pg_rewrite.h
 include/postgresql/server/catalog/pg_shdepend.h
+include/postgresql/server/catalog/pg_shdescription.h
 include/postgresql/server/catalog/pg_statistic.h
 include/postgresql/server/catalog/pg_tablespace.h
 include/postgresql/server/catalog/pg_trigger.h
 include/postgresql/server/catalog/pg_type.h
+include/postgresql/server/catalog/toasting.h
 include/postgresql/server/commands/
 include/postgresql/server/commands/alter.h
 include/postgresql/server/commands/async.h
@@ -152,6 +153,7 @@ include/postgresql/server/executor/nodeSubplan.h
 include/postgresql/server/executor/nodeSubqueryscan.h
 include/postgresql/server/executor/nodeTidscan.h
 include/postgresql/server/executor/nodeUnique.h
+include/postgresql/server/executor/nodeValuesscan.h
 include/postgresql/server/executor/spi.h
 include/postgresql/server/executor/spi_priv.h
 include/postgresql/server/executor/tstoreReceiver.h
@@ -172,6 +174,7 @@ include/postgresql/server/libpq/ip.h
 include/postgresql/server/libpq/libpq-be.h
 include/postgresql/server/libpq/libpq-fs.h
 include/postgresql/server/libpq/libpq.h
+include/postgresql/server/libpq/md5.h
 include/postgresql/server/libpq/pqcomm.h
 include/postgresql/server/libpq/pqformat.h
 include/postgresql/server/libpq/pqsignal.h
@@ -240,12 +243,12 @@ include/postgresql/server/parser/scansup.h
 include/postgresql/server/pg_config.h
 include/postgresql/server/pg_config_manual.h
 include/postgresql/server/pg_config_os.h
+include/postgresql/server/pg_trace.h
 include/postgresql/server/pgstat.h
 include/postgresql/server/pgtime.h
 include/postgresql/server/port/
 include/postgresql/server/port.h
 include/postgresql/server/port/aix.h
-include/postgresql/server/port/beos.h
 include/postgresql/server/port/bsdi.h
 include/postgresql/server/port/cygwin.h
 include/postgresql/server/port/darwin.h
@@ -258,7 +261,6 @@ include/postgresql/server/port/netbsd.h
 include/postgresql/server/port/nextstep.h
 include/postgresql/server/port/openbsd.h
 include/postgresql/server/port/osf.h
-include/postgresql/server/port/qnx4.h
 include/postgresql/server/port/sco.h
 include/postgresql/server/port/solaris.h
 include/postgresql/server/port/sunos4.h
@@ -328,7 +330,6 @@ include/postgresql/server/storage/sinval.h
 include/postgresql/server/storage/sinvaladt.h
 include/postgresql/server/storage/smgr.h
 include/postgresql/server/storage/spin.h
-include/postgresql/server/strdup.h
 include/postgresql/server/tcop/
 include/postgresql/server/tcop/dest.h
 include/postgresql/server/tcop/fastpath.h
@@ -384,6 +385,7 @@ include/postgresql/server/utils/tqual.h
 include/postgresql/server/utils/tuplesort.h
 include/postgresql/server/utils/tuplestore.h
 include/postgresql/server/utils/typcache.h
+include/postgresql/server/utils/tzparser.h
 include/postgresql/server/utils/varbit.h
 @man man/man1/initdb.1
 @man man/man1/ipcclean.1
@@ -398,6 +400,7 @@ share/postgresql/pg_hba.conf.sample
 share/postgresql/pg_ident.conf.sample
 share/postgresql/pg_service.conf.sample
 share/postgresql/postgres.bki
+share/postgresql/postgres.shdescription
 share/postgresql/postgresql.conf.sample
 @mode 755
 @owner _postgresql

@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.98 2007/01/13 16:39:45 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.99 2007/01/17 16:47:25 mbalmer Exp $
 
 COMMENT-main=	"PostgreSQL RDBMS (client)"
 COMMENT-server=	"PostgreSQL RDBMS (server)"
 COMMENT-docs=	"PostgreSQL RDBMS documentation"
 
-VERSION=	8.1.6
+VERSION=	8.2.1
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
 PKGNAME-server=	postgresql-server-${VERSION}
 PKGNAME-docs=	postgresql-docs-${VERSION}
 
 CATEGORIES=	databases
-SHARED_LIBS=	ecpg		5.2 \
-		ecpg_compat	2.2 \
-		pgtypes		2.2 \
-		pq		4.2
+SHARED_LIBS=	ecpg		6.0 \
+		ecpg_compat	3.0 \
+		pgtypes		3.0 \
+		pq		5.0
 
 HOMEPAGE=	http://www.postgresql.org/
 
@@ -25,7 +25,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c com_err crypto m readline ssl termcap util z
+WANTLIB=		c com_err crypto m readline ssl termcap z
 
 MASTER_SITES= ftp://ftp2.uk.postgresql.org/sites/ftp.postgresql.org/source/v${VERSION}/ \
 	ftp://ftp5.us.postgresql.org/pub/PostgreSQL/source/v${VERSION}/ \
@@ -78,6 +78,8 @@ WANTLIB-server=	${WANTLIB} perl
 LIB_DEPENDS-server= pq.>=4:postgresql-client-${VERSION}:databases/postgresql
 WANTLIB-docs=
 PKG_ARCH-docs=	*
+
+WANTLIB-server+=	util
 
 MAKE_ENV=	LIBpq_MAJOR=${LIBpq_VERSION:R} \
 		LIBpq_MINOR=${LIBpq_VERSION:E} \
