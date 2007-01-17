@@ -1,5 +1,5 @@
 --- vl.c.orig	Sat Jul 22 19:23:34 2006
-+++ vl.c	Wed Jan  3 15:14:21 2007
++++ vl.c	Tue Jan 16 19:51:19 2007
 @@ -43,7 +43,8 @@
  #include <netdb.h>
  #ifdef _BSD
@@ -28,7 +28,19 @@
  {
      int len;
      len = strlen(buf);
-@@ -2631,7 +2632,7 @@ static int parse_macaddr(uint8_t *macadd
+@@ -1408,6 +1409,11 @@ static void stdio_read(void *opaque)
+     uint8_t buf[1];
+     
+     size = read(0, buf, 1);
++    if (size == 0) {
++        /* stdin has been closed. Remove it from the active list.  */
++        qemu_set_fd_handler2(0, NULL, NULL, NULL, NULL);
++        return;
++    }
+     if (size > 0)
+         stdio_received_byte(buf[0]);
+ }
+@@ -2631,7 +2637,7 @@ static int parse_macaddr(uint8_t *macadd
      return 0;
  }
  
@@ -37,7 +49,7 @@
  {
      const char *p, *p1;
      int len;
-@@ -3029,11 +3030,85 @@ static int tap_open(char *ifname, int if
+@@ -3029,11 +3035,85 @@ static int tap_open(char *ifname, int if
      char *dev;
      struct stat s;
  
@@ -123,7 +135,7 @@
  
      fstat(fd, &s);
      dev = devname(s.st_rdev, S_IFCHR);
-@@ -3279,7 +3354,7 @@ static int net_socket_mcast_create(struc
+@@ -3279,7 +3359,7 @@ static int net_socket_mcast_create(struc
      /* Force mcast msgs to loopback (eg. several QEMUs in same host */
      val = 1;
      ret=setsockopt(fd, IPPROTO_IP, IP_MULTICAST_LOOP, 
@@ -132,7 +144,7 @@
      if (ret < 0) {
  	perror("setsockopt(SOL_IP, IP_MULTICAST_LOOP)");
  	goto fail;
-@@ -3535,7 +3610,8 @@ static int net_socket_mcast_init(VLANSta
+@@ -3535,7 +3615,8 @@ static int net_socket_mcast_init(VLANSta
  
  }
  
@@ -142,7 +154,7 @@
                             const char *tag, const char *str)
  {
      const char *p;
-@@ -3660,17 +3736,21 @@ int net_client_init(const char *str)
+@@ -3660,17 +3741,21 @@ int net_client_init(const char *str)
          char ifname[64];
          char setup_script[1024];
          int fd;
@@ -166,7 +178,7 @@
          }
      } else
  #endif
-@@ -5453,7 +5533,23 @@ void register_machines(void)
+@@ -5453,7 +5538,23 @@ void register_machines(void)
  #elif defined(TARGET_SH4)
      qemu_register_machine(&shix_machine);
  #else
@@ -191,7 +203,7 @@
  #endif
  }
  
-@@ -5671,7 +5767,7 @@ int main(int argc, char **argv)
+@@ -5671,7 +5772,7 @@ int main(int argc, char **argv)
          serial_devices[i][0] = '\0';
      serial_device_index = 0;
      
