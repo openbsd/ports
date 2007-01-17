@@ -1,0 +1,47 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/17 13:41:11 ajacoutot Exp $
+${P5ARCH}/Gnome2/
+${P5ARCH}/Gnome2/Canvas/
+${P5ARCH}/Gnome2/Canvas.pm
+${P5ARCH}/Gnome2/Canvas.pod
+${P5ARCH}/Gnome2/Canvas/Bpath.pod
+${P5ARCH}/Gnome2/Canvas/Ellipse.pod
+${P5ARCH}/Gnome2/Canvas/Group.pod
+${P5ARCH}/Gnome2/Canvas/Install/
+${P5ARCH}/Gnome2/Canvas/Install/Files.pm
+${P5ARCH}/Gnome2/Canvas/Install/canvas.typemap
+${P5ARCH}/Gnome2/Canvas/Install/gnomecanvasperl-autogen.h
+${P5ARCH}/Gnome2/Canvas/Install/gnomecanvasperl-version.h
+${P5ARCH}/Gnome2/Canvas/Install/gnomecanvasperl.h
+${P5ARCH}/Gnome2/Canvas/Install/gnomecanvasperl.typemap
+${P5ARCH}/Gnome2/Canvas/Item.pod
+${P5ARCH}/Gnome2/Canvas/Line.pod
+${P5ARCH}/Gnome2/Canvas/PathDef.pod
+${P5ARCH}/Gnome2/Canvas/Pixbuf.pod
+${P5ARCH}/Gnome2/Canvas/RE.pod
+${P5ARCH}/Gnome2/Canvas/Rect.pod
+${P5ARCH}/Gnome2/Canvas/RichText.pod
+${P5ARCH}/Gnome2/Canvas/Shape.pod
+${P5ARCH}/Gnome2/Canvas/Text.pod
+${P5ARCH}/Gnome2/Canvas/Widget.pod
+${P5ARCH}/Gnome2/Canvas/index.pod
+${P5ARCH}/Gnome2/Canvas/version.pod
+${P5ARCH}/auto/Gnome2/
+${P5ARCH}/auto/Gnome2/Canvas/
+${P5ARCH}/auto/Gnome2/Canvas/Canvas.bs
+${P5ARCH}/auto/Gnome2/Canvas/Canvas.so
+@man man/man3p/Gnome2::Canvas.3p
+@man man/man3p/Gnome2::Canvas::Bpath.3p
+@man man/man3p/Gnome2::Canvas::Ellipse.3p
+@man man/man3p/Gnome2::Canvas::Group.3p
+@man man/man3p/Gnome2::Canvas::Item.3p
+@man man/man3p/Gnome2::Canvas::Line.3p
+@man man/man3p/Gnome2::Canvas::PathDef.3p
+@man man/man3p/Gnome2::Canvas::Pixbuf.3p
+@man man/man3p/Gnome2::Canvas::RE.3p
+@man man/man3p/Gnome2::Canvas::Rect.3p
+@man man/man3p/Gnome2::Canvas::RichText.3p
+@man man/man3p/Gnome2::Canvas::Shape.3p
+@man man/man3p/Gnome2::Canvas::Text.3p
+@man man/man3p/Gnome2::Canvas::Widget.3p
+@man man/man3p/Gnome2::Canvas::index.3p
+@man man/man3p/Gnome2::Canvas::version.3p

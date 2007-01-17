@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2007/01/17 13:41:11 ajacoutot Exp $
+--- Makefile.PL.orig	Mon Jan 15 23:39:36 2007
++++ Makefile.PL	Mon Jan 15 23:40:01 2007
+@@ -85,6 +85,7 @@ WriteMakefile(
+     ABSTRACT        => 'Perl bindings for the 2.x series of the Gnome Canvas widget',
+     XSPROTOARG      => '-noprototypes',
+     MAN3PODS        => \%pod_files,
++    OPTIMIZE        => '!!CFLAGS!!',
+     $gnomecanvas->get_makefile_vars,
+ );
+ 
