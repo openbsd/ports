@@ -1,0 +1,19 @@
+$OpenBSD: patch-rubynative_src_extconf_rb,v 1.1.1.1 2007/01/18 10:38:47 bernd Exp $
+--- rubynative/src/extconf.rb.orig	Fri Jan  5 19:08:25 2007
++++ rubynative/src/extconf.rb	Fri Jan  5 19:08:47 2007
+@@ -3,12 +3,9 @@ require "mkmf"
+ dir_config('estraier')
+ 
+ ENV["PATH"] = ENV["PATH"] + ":/usr/local/bin:.:..:../.."
+-estcflags = `estconfig --cflags`.chomp
+-estldflags = `estconfig --ldflags`.chomp
+-estlibs = `estconfig --libs`.chomp
+-$CFLAGS = "-I. -I.. -I../.. #{estcflags} -Wall #{$CFLAGS} -O3 -fomit-frame-pointer -fforce-addr"
+-$LDFLAGS = "#{$LDFLAGS} -L. -L.. -L../.. #{estldflags}"
+-$libs = "#{$libs} #{estlibs}"
++$CFLAGS = "#{$CFLAGS} -fomit-frame-pointer -fforce-addr"
++$LDFLAGS = "#{$LDFLAGS}"
++$libs = "#{$libs}"
+ 
+ if have_header('estraier.h') and have_library('estraier')
+   create_makefile('estraier')

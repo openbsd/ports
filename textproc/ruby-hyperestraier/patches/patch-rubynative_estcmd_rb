@@ -1,0 +1,34 @@
+$OpenBSD: patch-rubynative_estcmd_rb,v 1.1.1.1 2007/01/18 10:38:47 bernd Exp $
+--- rubynative/estcmd.rb.orig	Sun Oct 29 13:43:23 2006
++++ rubynative/estcmd.rb	Fri Jan  5 22:23:14 2007
+@@ -1,4 +1,4 @@
+-#! /usr/bin/ruby -w
++#! /usr/bin/env ruby
+ #--
+ # Ruby binding of Hyper Estraier
+ #                                                       Copyright (C) 2004-2006 Mikio Hirabayashi
+@@ -373,6 +373,12 @@ end
+ 
+ # perform the put command
+ def procput(dbname, file, opts)
++  db = Database::new
++  unless db.open(dbname, Database::DBWRITER | Database::DBCREAT)
++    printerror(dbname + ": " + db.err_msg(db.error))
++    return 1
++  end
++
+   if file
+     begin
+       ifp = open(file, "rb")
+@@ -388,11 +394,6 @@ def procput(dbname, file, opts)
+     draft = STDIN.read
+   end
+   doc = Document::new(draft)
+-  db = Database::new
+-  unless db.open(dbname, Database::DBWRITER | Database::DBCREAT)
+-    printerror(dbname + ": " + db.err_msg(db.error))
+-    return 1
+-  end
+   db.set_informer(Informer::new)
+   unless db.put_doc(doc, opts)
+     printerror(dbname + ": " + db.err_msg(db.error))

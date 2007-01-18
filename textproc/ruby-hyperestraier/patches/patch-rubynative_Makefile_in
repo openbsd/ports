@@ -1,0 +1,27 @@
+$OpenBSD: patch-rubynative_Makefile_in,v 1.1.1.1 2007/01/18 10:38:47 bernd Exp $
+--- rubynative/Makefile.in.orig	Thu Nov 24 18:36:57 2005
++++ rubynative/Makefile.in	Fri Jan  5 22:21:01 2007
+@@ -28,7 +28,7 @@ DESTDIR =
+ # Building binaries
+ RUBY = @RUBY@
+ RDOC = @RDOC@
+-RUNENV = LD_LIBRARY_PATH=.:..:/lib:/usr/lib:$(HOME)/lib:/usr/local/lib:@MYRUNPATH@
++RUNENV = LD_LIBRARY_PATH=/usr/lib:/usr/local/lib:@MYRUNPATH@
+ 
+ 
+ 
+@@ -52,10 +52,10 @@ clean :
+ 
+ 
+ install :
+-	mkdir -p $(DESTDIR)$(MYRBLIBDIR)
+-	( cd src && cp -Rf $(MYRBLIBS) $(DESTDIR)$(MYRBLIBDIR) )
+-	mkdir -p $(DESTDIR)$(MYRBBINDIR)
+-	cp -Rf $(MYRBBINS) $(DESTDIR)$(MYRBBINDIR)
++	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(MYRBLIBDIR)
++	cd src && $(BSD_INSTALL_DATA) $(MYRBLIBS) $(DESTDIR)$(MYRBLIBDIR)
++	$(BSD_INSTALL_PROGRAM_DIR) $(DESTDIR)$(MYRBBINDIR)
++	$(BSD_INSTALL_SCRIPT) $(MYRBBINS) $(DESTDIR)$(MYRBBINDIR)
+ 	@printf '\n'
+ 	@printf '#================================================================\n'
+ 	@printf '# Thanks for using Hyper Estraier for Ruby.\n'
