@@ -1,3 +1,5 @@
+# $OpenBSD: Makefile,v 1.2 2007/01/18 06:33:01 steven Exp $
+
 COMMENT=	"MS-Explorer like file manager for X"
 
 DISTNAME= 	xfe-0.88
