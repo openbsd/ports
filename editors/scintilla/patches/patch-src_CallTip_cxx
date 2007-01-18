@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_CallTip_cxx,v 1.1.1.1 2003/08/14 18:24:30 sturm Exp $
---- src/CallTip.cxx.orig	2003-08-13 17:04:03.000000000 +1000
-+++ src/CallTip.cxx	2003-08-13 17:06:32.000000000 +1000
-@@ -214,10 +214,11 @@ PRectangle CallTip::CallTipStart(int pos
+$OpenBSD: patch-src_CallTip_cxx,v 1.2 2007/01/18 10:56:27 steven Exp $
+--- src/CallTip.cxx.orig	Tue Mar 28 17:31:51 2006
++++ src/CallTip.cxx	Tue Mar 28 17:31:51 2006
+@@ -241,10 +241,11 @@ PRectangle CallTip::CallTipStart(int pos
  	clickPlace = 0;
  	if (val)
  		delete []val;

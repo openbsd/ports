@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_ExternalLexer_cxx,v 1.1.1.1 2003/08/14 18:24:30 sturm Exp $
---- src/ExternalLexer.cxx.orig	2003-08-13 17:04:03.000000000 +1000
-+++ src/ExternalLexer.cxx	2003-08-13 17:07:47.000000000 +1000
-@@ -40,8 +40,9 @@ char **WordListsToStrings(WordList *val[
+$OpenBSD: patch-src_ExternalLexer_cxx,v 1.2 2007/01/18 10:56:27 steven Exp $
+--- src/ExternalLexer.cxx.orig	Tue Mar 28 17:31:51 2006
++++ src/ExternalLexer.cxx	Tue Mar 28 17:31:51 2006
+@@ -42,8 +42,9 @@ char **WordListsToStrings(WordList *val[
  			if (n != val[i]->len - 1)
  				words += " ";
  		}
@@ -13,7 +13,7 @@ $OpenBSD: patch-src_ExternalLexer_cxx,v 1.1.1.1 2003/08/14 18:24:30 sturm Exp $
  	}
  	wls[dim] = 0;
  	return wls;
-@@ -129,7 +130,7 @@ LexerLibrary::LexerLibrary(const char* M
+@@ -131,7 +132,7 @@ LexerLibrary::LexerLibrary(const char* M
  
  			// Assign a buffer for the lexer name.
  			char lexname[100];

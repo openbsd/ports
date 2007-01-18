@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_LexScriptol_cxx,v 1.1.1.1 2003/08/14 18:24:31 sturm Exp $
---- src/LexScriptol.cxx.orig	2003-08-14 01:23:46.000000000 +1000
-+++ src/LexScriptol.cxx	2003-08-14 01:25:06.000000000 +1000
+$OpenBSD: patch-src_LexScriptol_cxx,v 1.2 2007/01/18 10:56:27 steven Exp $
+--- src/LexScriptol.cxx.orig	Tue Mar 28 17:31:51 2006
++++ src/LexScriptol.cxx	Tue Mar 28 17:31:51 2006
 @@ -17,7 +17,7 @@
  #include "Scintilla.h"
  #include "SciLexer.h"
@@ -8,32 +8,32 @@ $OpenBSD: patch-src_LexScriptol_cxx,v 1.1.1.1 2003/08/14 18:24:31 sturm Exp $
 -static void ClassifyWordSol(unsigned int start, unsigned int end, WordList &keywords, Accessor &styler, char *prevWord)
 +static void ClassifyWordSol(unsigned int start, unsigned int end, WordList &keywords, Accessor &styler, char *prevWord, size_t prevWord_size)
  {
- 	char s[100];
- 	bool wordIsNumber = isdigit(styler[start]) != 0;
+     char s[100];
+     bool wordIsNumber = isdigit(styler[start]) != 0;
 @@ -39,7 +39,7 @@ static void ClassifyWordSol(unsigned int
- 		}
- 	}
- 	styler.ColourTo(end, chAttr);
--	strcpy(prevWord, s);
-+	strlcpy(prevWord, s, prevWord_size);
+         }
+     }
+     styler.ColourTo(end, chAttr);
+-    strcpy(prevWord, s);
++    strlcpy(prevWord, s, prevWord_size);
  }
  
  static bool IsSolComment(Accessor &styler, int pos, int len)
-@@ -246,7 +246,7 @@ static void ColouriseSolDoc(unsigned int
+@@ -244,7 +244,7 @@ static void ColouriseSolDoc(unsigned int
            {
                if (!iswordchar(ch))
                {
 -                 ClassifyWordSol(styler.GetStartSegment(), i - 1, keywords, styler, prevWord);
 +                 ClassifyWordSol(styler.GetStartSegment(), i - 1, keywords, styler, prevWord, sizeof(prevWord));
-                  state = SCE_P_DEFAULT;
+                  state = SCE_SCRIPTOL_DEFAULT;
                   if (ch == '`')
                   {
-@@ -356,7 +356,7 @@ static void ColouriseSolDoc(unsigned int
+@@ -332,7 +332,7 @@ static void ColouriseSolDoc(unsigned int
+         if (state == SCE_SCRIPTOL_KEYWORD)
+         {
+             ClassifyWordSol(styler.GetStartSegment(),
+-                 lengthDoc-1, keywords, styler, prevWord);
++                 lengthDoc-1, keywords, styler, prevWord, sizeof(prevWord));
  	}
- 	if (state == SCE_P_WORD)
-     {
--       ClassifyWordSol(styler.GetStartSegment(), lengthDoc-1, keywords, styler, prevWord);
-+       ClassifyWordSol(styler.GetStartSegment(), lengthDoc-1, keywords, styler, prevWord, sizeof(prevWord));
- 	}
-     else
-     {
+         else
+         {

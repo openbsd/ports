@@ -1,184 +1,147 @@
-$OpenBSD: patch-src_Exporters_cxx,v 1.1.1.1 2003/08/14 18:27:26 sturm Exp $
---- src/Exporters.cxx.orig	2003-08-14 18:11:28.000000000 +0200
-+++ src/Exporters.cxx	2003-08-14 18:12:29.000000000 +0200
-@@ -128,8 +128,8 @@ int GetRTFHighlight(const char *rgb) { /
- 	return index + 1;
+$OpenBSD: patch-src_Exporters_cxx,v 1.2 2007/01/18 10:56:27 steven Exp $
+--- src/Exporters.cxx.orig	Mon Jan 15 12:02:13 2007
++++ src/Exporters.cxx	Mon Jan 15 12:07:25 2007
+@@ -107,7 +107,8 @@ void GetRTFNextControl(char **style, cha
  }
  
--void GetRTFStyleChange(char *delta, char *last, const char *current) { // \f0\fs20\cf0\highlight0\b0\i0
--	int lastLen = strlen(last), offset = 2, lastOffset, currentOffset, len;
-+void GetRTFStyleChange(char *delta, size_t delta_size, char *last, const char *current) { // \f0\fs20\cf0\highlight0\b0\i0
-+	size_t lastLen = strlen(last), offset = 2, lastOffset, currentOffset, len;
- 	*delta = '\0';
- 	// font face
- 	lastOffset = offset + 1;
-@@ -146,10 +146,11 @@ void GetRTFStyleChange(char *delta, char
- 		}
- 		len = currentOffset - offset;
- 		memcpy(last + offset, current + offset, len);
--		strcat (delta, RTF_SETFONTFACE);
-+		strlcat (delta, RTF_SETFONTFACE, delta_size);
- 		lastOffset = strlen(delta);
--		memcpy(delta + lastOffset, last + offset, len);
--		delta[lastOffset + len] = '\0';
-+		strlcat(delta, last + offset, delta_size);
-+		if (lastOffset + len < delta_size)
-+			delta[lastOffset + len] = '\0';
- 	}
- 	offset = currentOffset + 3;
- 	// size
-@@ -167,10 +168,11 @@ void GetRTFStyleChange(char *delta, char
- 		}
- 		len = currentOffset - offset;
- 		memcpy(last + offset, current + offset, len);
--		strcat (delta, RTF_SETFONTSIZE);
-+		strlcat (delta, RTF_SETFONTSIZE, delta_size);
- 		lastOffset = strlen(delta);
--		memcpy(delta + lastOffset, last + offset, len);
--		delta[lastOffset + len] = '\0';
-+		strlcat(delta, last + offset, delta_size);
-+		if (lastOffset + len < delta_size)
-+			delta[lastOffset + len] = 0;
- 	}
- 	offset = currentOffset + 3;
- 	// color
-@@ -188,10 +190,11 @@ void GetRTFStyleChange(char *delta, char
- 		}
- 		len = currentOffset - offset;
- 		memcpy(last + offset, current + offset, len);
--		strcat (delta, RTF_SETCOLOR);
-+		strlcat (delta, RTF_SETCOLOR, delta_size);
- 		lastOffset = strlen(delta);
--		memcpy(delta + lastOffset, last + offset, len);
--		delta[lastOffset + len] = '\0';
-+		strlcat(delta, last + offset, delta_size);
-+		if (lastOffset + len < delta_size)
-+			delta[lastOffset + len] = 0;
- 	}
- 	offset = currentOffset + 10;
- 	// background
-@@ -209,22 +212,23 @@ void GetRTFStyleChange(char *delta, char
- 		}
- 		len = currentOffset - offset;
- 		memcpy(last + offset, current + offset, len);
--		strcat (delta, RTF_SETBACKGROUND);
-+		strlcat (delta, RTF_SETBACKGROUND, delta_size);
- 		lastOffset = strlen(delta);
--		memcpy(delta + lastOffset, last + offset, len);
--		delta[lastOffset + len] = '\0';
-+		strlcat(delta, last + offset, delta_size);
-+		if (lastOffset + len < delta_size)
-+			delta[lastOffset + len] = 0;
- 	}
- 	offset = currentOffset + 2;
- 	// bold
- 	if (last[offset] != current[offset]) {
- 		if (current[offset] == '\\') { // turn on
- 			memmove (last + offset, last + offset + 1, lastLen-- - offset);
--			strcat (delta, RTF_BOLD_ON);
-+			strlcat (delta, RTF_BOLD_ON, delta_size);
- 			offset += 2;
- 		} else { // turn off
- 			memmove (last + offset + 1, last + offset, ++lastLen - offset);
- 			last[offset] = '0';
--			strcat (delta, RTF_BOLD_OFF);
-+			strlcat(delta, RTF_BOLD_OFF, delta_size);
- 			offset += 3;
- 		}
- 	} else
-@@ -233,17 +237,15 @@ void GetRTFStyleChange(char *delta, char
- 	if (last[offset] != current[offset]) {
- 		if (current[offset] == '\\') { // turn on
- 			memmove (last + offset, last + offset + 1, lastLen-- - offset);
--			strcat (delta, RTF_ITALIC_ON);
-+			strlcat (delta, RTF_ITALIC_ON, delta_size);
- 		} else { // turn off
- 			memmove (last + offset + 1, last + offset, ++lastLen - offset);
- 			last[offset] = '0';
--			strcat (delta, RTF_ITALIC_OFF);
-+			strlcat (delta, RTF_ITALIC_OFF, delta_size);
+ // extracts control words that are different between two styles
+-void GetRTFStyleChange(char *delta, char *last, char *current) { // \f0\fs20\cf0\highlight0\b0\i0
++void GetRTFStyleChange(char *delta, size_t delta_size, char *last, char *current) { // \f0\fs20\cf0\highlight0\b0\i0
++	size_t lastLen = strlen(last);
+ 	char lastControl[MAX_STYLEDEF], currentControl[MAX_STYLEDEF];
+ 	char *lastPos = last;
+ 	char *currentPos = current;
+@@ -117,11 +118,11 @@ void GetRTFStyleChange(char *delta, char
+ 		GetRTFNextControl(&lastPos, lastControl);
+ 		GetRTFNextControl(&currentPos, currentControl);
+ 		if (strcmp(lastControl, currentControl)) {	// changed
+-			strcat(delta, currentControl);
++			strlcat(delta, currentControl, delta_size);
  		}
  	}
- 	if (*delta) {
--		lastOffset = strlen(delta);
--		delta[lastOffset] = ' ';
--		delta[lastOffset + 1] = '\0';
-+		strlcat(delta, " ", delta_size);
- 	}
+-	if ('\0' != *delta) { strcat(delta, " "); }
+-	strcpy(last, current);
++	if ('\0' != *delta) { strlcat(delta, " ", delta_size); }
++	strlcpy(last, current, lastLen);
  }
  
-@@ -270,14 +272,14 @@ void SciTEBase::SaveToRTF(const char *sa
+ void SciTEBase::SaveToRTF(FilePath saveName, int start, int end) {
+@@ -133,9 +134,9 @@ void SciTEBase::SaveToRTF(FilePath saveN
+ 
+ 	// Read the default settings
+ 	char key[200];
+-	sprintf(key, "style.*.%0d", STYLE_DEFAULT);
++	snprintf(key, sizeof(key), "style.*.%0d", STYLE_DEFAULT);
+ 	char *valdef = StringDup(props.GetExpanded(key).c_str());
+-	sprintf(key, "style.%s.%0d", language.c_str(), STYLE_DEFAULT);
++	snprintf(key, sizeof(key), "style.%s.%0d", language.c_str(), STYLE_DEFAULT);
+ 	char *val = StringDup(props.GetExpanded(key).c_str());
+ 
+ 	StyleDefinition defaultStyle(valdef);
+@@ -173,15 +174,15 @@ void SciTEBase::SaveToRTF(FilePath saveN
  		char lastStyle[MAX_STYLEDEF], deltaStyle[MAX_STYLEDEF];
- 		int fontCount = 1, colorCount = 1, i;
+ 		int fontCount = 1, colorCount = 2, i;
  		fputs(RTF_HEADEROPEN RTF_FONTDEFOPEN, fp);
--		strncpy(*fonts, fontFace.c_str(), MAX_FONTDEF);
-+		strlcpy(fonts[0], fontFace.c_str(), sizeof(fonts[0]));
- 		fprintf(fp, RTF_FONTDEF, 0, characterset, fontFace.c_str());
--		strncpy(*colors, "#000000", MAX_COLORDEF);
-+		strlcpy(colors[0], "#000000", sizeof(colors[0]));
- 		for (int istyle = 0; istyle <= STYLE_DEFAULT; istyle++) {
- 			char key[200];
+-		strncpy(fonts[0], defaultStyle.font.c_str(), MAX_FONTDEF);
++		strlcpy(fonts[0], defaultStyle.font.c_str(), sizeof(fonts[0]));
+ 		fprintf(fp, RTF_FONTDEF, 0, characterset, defaultStyle.font.c_str());
+-		strncpy(colors[0], defaultStyle.fore.c_str(), MAX_COLORDEF);
+-		strncpy(colors[1], defaultStyle.back.c_str(), MAX_COLORDEF);
++		strlcpy(colors[0], defaultStyle.fore.c_str(), sizeof(colors[0]));
++		strlcpy(colors[1], defaultStyle.back.c_str(), sizeof(colors[1]));
+ 
+ 		for (int istyle = 0; istyle < STYLE_DEFAULT; istyle++) {
 -			sprintf(key, "style.*.%0d", istyle);
 +			snprintf(key, sizeof(key), "style.*.%0d", istyle);
  			char *valdef = StringDup(props.GetExpanded(key).c_str());
 -			sprintf(key, "style.%s.%0d", language.c_str(), istyle);
 +			snprintf(key, sizeof(key), "style.%s.%0d", language.c_str(), istyle);
  			char *val = StringDup(props.GetExpanded(key).c_str());
- 			SString family;
- 			SString fore;
-@@ -353,30 +355,30 @@ void SciTEBase::SaveToRTF(const char *sa
- 						if (EqualCaseInsensitive(family.c_str(), fonts[i]))
+ 
+ 			StyleDefinition sd(valdef);
+@@ -193,15 +194,15 @@ void SciTEBase::SaveToRTF(FilePath saveN
+ 						if (EqualCaseInsensitive(sd.font.c_str(), fonts[i]))
  							break;
  					if (i >= fontCount) {
--						strncpy(fonts[fontCount++], family.c_str(), MAX_FONTDEF);
-+						strlcpy(fonts[fontCount++], family.c_str(), sizeof(fonts[0]));
- 						fprintf(fp, RTF_FONTDEF, i, characterset, family.c_str());
+-						strncpy(fonts[fontCount++], sd.font.c_str(), MAX_FONTDEF);
++						strlcpy(fonts[fontCount++], sd.font.c_str(), sizeof(fonts[0]));
+ 						fprintf(fp, RTF_FONTDEF, i, characterset, sd.font.c_str());
  					}
 -					sprintf(lastStyle, RTF_SETFONTFACE "%d", i);
 +					snprintf(lastStyle, sizeof(lastStyle), RTF_SETFONTFACE "%d", i);
- 				} else
+ 				} else {
 -					strcpy(lastStyle, RTF_SETFONTFACE "0");
--				sprintf(lastStyle + strlen(lastStyle), RTF_SETFONTSIZE "%d",
 +					strlcpy(lastStyle, RTF_SETFONTFACE "0", sizeof(lastStyle));
+ 				}
+ 
+-				sprintf(lastStyle + strlen(lastStyle), RTF_SETFONTSIZE "%d",
 +				snprintf(lastStyle + strlen(lastStyle), sizeof(lastStyle) - strlen(lastStyle), RTF_SETFONTSIZE "%d",
- 				        wysiwyg && size ? size << 1 : fontSize);
- 				if (fore.length()) {
- 					for (i = 0; i < colorCount; i++)
- 						if (EqualCaseInsensitive(fore.c_str(), colors[i]))
+ 				        wysiwyg && sd.size ? sd.size << 1 : defaultStyle.size);
+ 
+ 				if (sd.specified & StyleDefinition::sdFore) {
+@@ -209,39 +210,39 @@ void SciTEBase::SaveToRTF(FilePath saveN
+ 						if (EqualCaseInsensitive(sd.fore.c_str(), colors[i]))
  							break;
  					if (i >= colorCount)
--						strncpy(colors[colorCount++], fore.c_str(), MAX_COLORDEF);
+-						strncpy(colors[colorCount++], sd.fore.c_str(), MAX_COLORDEF);
 -					sprintf(lastStyle + strlen(lastStyle), RTF_SETCOLOR "%d", i);
-+						strlcpy(colors[colorCount++], fore.c_str(), sizeof(colors[0]));
++						strlcpy(colors[colorCount++], sd.fore.c_str(), sizeof(colors[0]));
 +					snprintf(lastStyle + strlen(lastStyle), sizeof(lastStyle) - strlen(lastStyle), RTF_SETCOLOR "%d", i);
- 				} else
--					strcat(lastStyle, RTF_SETCOLOR "0");
--				sprintf(lastStyle + strlen(lastStyle), RTF_SETBACKGROUND "%d",
-+					strlcat(lastStyle, RTF_SETCOLOR "0", sizeof(lastStyle));
-+				snprintf(lastStyle + strlen(lastStyle), sizeof(lastStyle) - strlen(lastStyle), RTF_SETBACKGROUND "%d",
- 				        back.length() ? GetRTFHighlight(back.c_str()) : 0);
--				strcat(lastStyle, bold ? RTF_BOLD_ON : RTF_BOLD_OFF);
--				strcat(lastStyle, italics ? RTF_ITALIC_ON : RTF_ITALIC_OFF);
+ 				} else {
+-					strcat(lastStyle, RTF_SETCOLOR "0");	// Default fore
++					strlcat(lastStyle, RTF_SETCOLOR "0", sizeof(lastStyle));	// Default fore
+ 				}
+ 
+ 				// PL: highlights doesn't seems to follow a distinct table, at least with WordPad and Word 97
+ 				// Perhaps it is different for Word 6?
+-//				sprintf(lastStyle + strlen(lastStyle), RTF_SETBACKGROUND "%d",
++//				snprintf(lastStyle + strlen(lastStyle), sizeof(lastStyle) - strlen(lastStyle), RTF_SETBACKGROUND "%d",
+ //				        sd.back.length() ? GetRTFHighlight(sd.back.c_str()) : 0);
+ 				if (sd.specified & StyleDefinition::sdBack) {
+ 					for (i = 0; i < colorCount; i++)
+ 						if (EqualCaseInsensitive(sd.back.c_str(), colors[i]))
+ 							break;
+ 					if (i >= colorCount)
+-						strncpy(colors[colorCount++], sd.back.c_str(), MAX_COLORDEF);
+-					sprintf(lastStyle + strlen(lastStyle), RTF_SETBACKGROUND "%d", i);
++						strlcpy(colors[colorCount++], sd.back.c_str(), sizeof(colors[0]));
++					snprintf(lastStyle + strlen(lastStyle), sizeof(lastStyle) - strlen(lastStyle), RTF_SETBACKGROUND "%d", i);
+ 				} else {
+-					strcat(lastStyle, RTF_SETBACKGROUND "1");	// Default back
++					strlcat(lastStyle, RTF_SETBACKGROUND "1", sizeof(lastStyle));	// Default back
+ 				}
+ 				if (sd.specified & StyleDefinition::sdBold) {
+-					strcat(lastStyle, sd.bold ? RTF_BOLD_ON : RTF_BOLD_OFF);
++					strlcat(lastStyle, sd.bold ? RTF_BOLD_ON : RTF_BOLD_OFF, sizeof(lastStyle));
+ 				} else {
+-					strcat(lastStyle, defaultStyle.bold ? RTF_BOLD_ON : RTF_BOLD_OFF);
++					strlcat(lastStyle, defaultStyle.bold ? RTF_BOLD_ON : RTF_BOLD_OFF, sizeof(lastStyle));
+ 				}
+ 				if (sd.specified & StyleDefinition::sdItalics) {
+-					strcat(lastStyle, sd.italics ? RTF_ITALIC_ON : RTF_ITALIC_OFF);
++					strlcat(lastStyle, sd.italics ? RTF_ITALIC_ON : RTF_ITALIC_OFF, sizeof(lastStyle));
+ 				} else {
+-					strcat(lastStyle, defaultStyle.italics ? RTF_ITALIC_ON : RTF_ITALIC_OFF);
++					strlcat(lastStyle, defaultStyle.italics ? RTF_ITALIC_ON : RTF_ITALIC_OFF, sizeof(lastStyle));
+ 				}
 -				strncpy(styles[istyle], lastStyle, MAX_STYLEDEF);
-+				strlcat(lastStyle, bold ? RTF_BOLD_ON : RTF_BOLD_OFF, sizeof(lastStyle));
-+				strlcat(lastStyle, italics ? RTF_ITALIC_ON : RTF_ITALIC_OFF, sizeof(lastStyle));
 +				strlcpy(styles[istyle], lastStyle, sizeof(styles[0]));
- 			} else
+ 			} else {
 -				sprintf(styles[istyle], RTF_SETFONTFACE "0" RTF_SETFONTSIZE "%d"
 +				snprintf(styles[istyle], sizeof(styles[0]), RTF_SETFONTFACE "0" RTF_SETFONTSIZE "%d"
- 				        RTF_SETCOLOR "0" RTF_SETBACKGROUND "0"
- 				        RTF_BOLD_OFF RTF_ITALIC_OFF, fontSize);
- 			if (val)
-@@ -391,7 +393,7 @@ void SciTEBase::SaveToRTF(const char *sa
+ 				        RTF_SETCOLOR "0" RTF_SETBACKGROUND "1"
+ 				        RTF_BOLD_OFF RTF_ITALIC_OFF, defaultStyle.size);
+ 			}
+@@ -257,7 +258,7 @@ void SciTEBase::SaveToRTF(FilePath saveN
  		}
  		fprintf(fp, RTF_COLORDEFCLOSE RTF_HEADERCLOSE RTF_BODYOPEN RTF_SETFONTFACE "0"
- 		        RTF_SETFONTSIZE "%d" RTF_SETCOLOR "0 ", fontSize);
+ 		        RTF_SETFONTSIZE "%d" RTF_SETCOLOR "0 ", defaultStyle.size);
 -		sprintf(lastStyle, RTF_SETFONTFACE "0" RTF_SETFONTSIZE "%d"
 +		snprintf(lastStyle, sizeof(lastStyle), RTF_SETFONTFACE "0" RTF_SETFONTSIZE "%d"
- 		        RTF_SETCOLOR "0" RTF_SETBACKGROUND "0"
- 		        RTF_BOLD_OFF RTF_ITALIC_OFF, fontSize);
+ 		        RTF_SETCOLOR "0" RTF_SETBACKGROUND "1"
+ 		        RTF_BOLD_OFF RTF_ITALIC_OFF, defaultStyle.size);
  		bool prevCR = false;
-@@ -403,7 +405,7 @@ void SciTEBase::SaveToRTF(const char *sa
+@@ -270,7 +271,7 @@ void SciTEBase::SaveToRTF(FilePath saveN
  			if (style > STYLE_DEFAULT)
  				style = 0;
  			if (style != styleCurrent) {
@@ -187,181 +150,287 @@ $OpenBSD: patch-src_Exporters_cxx,v 1.1.1.1 2003/08/14 18:27:26 sturm Exp $
  				if (*deltaStyle)
  					fputs(deltaStyle, fp);
  				styleCurrent = style;
-@@ -506,9 +508,9 @@ void SciTEBase::SaveToHTML(const char *s
+@@ -396,9 +397,9 @@ void SciTEBase::SaveToHTML(FilePath save
+ 
+ 		SString bgColour;
+ 		char key[200];
+-		sprintf(key, "style.*.%0d", STYLE_DEFAULT);
++		snprintf(key, sizeof(key), "style.*.%0d", STYLE_DEFAULT);
+ 		char *valdef = StringDup(props.GetExpanded(key).c_str());
+-		sprintf(key, "style.%s.%0d", language.c_str(), STYLE_DEFAULT);
++		snprintf(key, sizeof(key), "style.%s.%0d", language.c_str(), STYLE_DEFAULT);
+ 		char *val = StringDup(props.GetExpanded(key).c_str());
+ 
+ 		StyleDefinition sddef(valdef);
+@@ -417,9 +418,9 @@ void SciTEBase::SaveToHTML(FilePath save
+ 			if ((istyle > STYLE_DEFAULT) && (istyle <= STYLE_LASTPREDEFINED))
  				continue;
  			if (styleIsUsed[istyle]) {
- 				char key[200];
 -				sprintf(key, "style.*.%0d", istyle);
 +				snprintf(key, sizeof(key), "style.*.%0d", istyle);
- 				char *valdef = StringDup(props.GetExpanded(key).c_str());
+ 				valdef = StringDup(props.GetExpanded(key).c_str());
 -				sprintf(key, "style.%s.%0d", language.c_str(), istyle);
 +				snprintf(key, sizeof(key), "style.%s.%0d", language.c_str(), istyle);
- 				char *val = StringDup(props.GetExpanded(key).c_str());
- 				SString family;
- 				SString fore;
-@@ -768,7 +770,7 @@ void SciTEBase::SaveToPDF(const char *sa
- 	if (!LengthDocument()) {
- 		// no content to export, issue an error message
- 		char msg[200];
--		strcpy(msg, "Nothing to export as PDF");
-+		strlcpy(msg, "Nothing to export as PDF", sizeof(msg));
- 		dialogsOnScreen++;
- 		WindowMessageBox(wSciTE, msg, MB_OK);
- 		dialogsOnScreen--;
-@@ -778,9 +780,9 @@ void SciTEBase::SaveToPDF(const char *sa
- 	if (!fp) {
- 		// couldnt open the file for saving, issue an error message
- 		char msg[200];
--		strcpy(msg, "Could not save file \"");
--		strcat(msg, fullPath);
--		strcat(msg, "\".");
-+		strlcpy(msg, "Could not save file \"", sizeof(msg));
-+		strlcat(msg, fullPath, sizeof(msg));
-+		strlcat(msg, "\".", sizeof(msg));
- 		dialogsOnScreen++;
- 		WindowMessageBox(wSciTE, msg, MB_OK);
- 		dialogsOnScreen--;
-@@ -797,9 +799,9 @@ void SciTEBase::SaveToPDF(const char *sa
- 	// or the default style if no language is available...
- 	for (int istyle = 0; istyle <= STYLE_DEFAULT; istyle++) {
- 		char key[200];
--		sprintf(key, "style.*.%0d", istyle);
-+		snprintf(key, sizeof(key), "style.*.%0d", istyle);
- 		char *valdef = StringDup(props.GetExpanded(key).c_str());
--		sprintf(key, "style.%s.%0d", language.c_str(), istyle);
-+		snprintf(key, sizeof(key), "style.%s.%0d", language.c_str(), istyle);
- 		char *val = StringDup(props.GetExpanded(key).c_str());
- 		SString family;
- 		SString fore;
-@@ -866,7 +868,7 @@ void SciTEBase::SaveToPDF(const char *sa
- 				sscanf(buffer, "%x", &blue);
+ 				val = StringDup(props.GetExpanded(key).c_str());
  
- 				// at last, we got the PDF colour!!!
--				sprintf(buffer, "%3.2f %3.2f %3.2f", (red / 256.0f), (green / 256.0f), (blue / 256.0f) );
-+				snprintf(buffer, sizeof(buffer), "%3.2f %3.2f %3.2f", (red / 256.0f), (green / 256.0f), (blue / 256.0f) );
- 				PDFColours[istyle] = StringDup(buffer);
- 			}
- 		}
-@@ -918,8 +920,9 @@ void SciTEBase::SaveToPDF(const char *sa
- 				stream += "ET\n";
+ 				StyleDefinition sd(valdef);
+@@ -701,18 +702,18 @@ static short PDFfontAscenders[] =  { 629
+ static short PDFfontDescenders[] = { 157, 207, 217 };
+ static short PDFfontWidths[] =     { 600,   0,   0 };
  
- 				// patch in the stream size (minus 1 since the newline is not counted... go figure)
--				char *buffer = new char[textObj.size() + 1 + 200]; // Copied Neil's [2/22/2003 21:04]
--				sprintf(buffer, textObj.c_str(), stream.length() - 1); // Length instead of size [2/22/2003 21:08]
-+				size_t buffer_size = textObj.size() + 1 + 200;
-+				char *buffer = new char[buffer_size]; // Copied Neil's [2/22/2003 21:04]
-+				snprintf(buffer, buffer_size, textObj.c_str(), stream.length() - 1); // Length instead of size [2/22/2003 21:08]
- 				textObj = buffer;
- 				delete [] buffer;
- 
-@@ -938,7 +941,7 @@ void SciTEBase::SaveToPDF(const char *sa
- 
- 			// open a text object
- 			char buffer[20];
--			sprintf( buffer, "%d 0 obj\n", textObjNumber);
-+			snprintf( buffer, sizeof(buffer), "%d 0 obj\n", textObjNumber);
- 			textObj = buffer;
- 			textObj += "<< /Length %d >>\n"; // we should patch the length here correctly...
- 			textObj += "stream\n";
-@@ -1012,7 +1015,7 @@ void SciTEBase::SaveToPDF(const char *sa
- 		} else if ( (ch == ')') || (ch == '(') || (ch == '\\') ) {
- 			// you should escape those characters for PDF 1.2+
- 			char buffer[10];
--			sprintf(buffer, "\\%c", ch);
-+			snprintf(buffer, sizeof(buffer), "\\%c", ch);
- 			stream += buffer;
+-inline void getPDFRGB(char* pdfcolour, const char* stylecolour) {
++inline void getPDFRGB(char* pdfcolour, size_t pdfcolour_size, const char* stylecolour) {
+ 	// grab colour components (max string length produced = 18)
+ 	for (int i = 1; i < 6; i += 2) {
+ 		char val[20];
+ 		// 3 decimal places for enough dynamic range
+ 		int c = (IntFromHexByte(stylecolour + i) * 1000 + 127) / 255;
+ 		if (c == 0 || c == 1000) {	// optimise
+-			sprintf(val, "%d ", c / 1000);
++			snprintf(val, sizeof(val), "%d ", c / 1000);
  		} else {
- 			// write the character normally...
-@@ -1032,8 +1035,9 @@ void SciTEBase::SaveToPDF(const char *sa
- 		stream += "ET\n";
- 
- 		// patch in the stream size (minus 1 since the newline is not counted... go figure)
--		char *buffer = new char[textObj.size() + 1 + 200];  // 200 by Neil as this is quite indeterminate
--		sprintf(buffer, textObj.c_str(), stream.length() - 1);  // Length instead of size [2/22/2003 21:08]
-+		size_t buffer_size = textObj.size() + 1 + 200;
-+		char *buffer = new char[buffer_size];  // 200 by Neil as this is quite indeterminate
-+		snprintf(buffer, buffer_size, textObj.c_str(), stream.length() - 1);  // Length instead of size [2/22/2003 21:08]
- 		textObj = buffer;
- 		delete [] buffer;
- 
-@@ -1055,10 +1059,10 @@ void SciTEBase::SaveToPDF(const char *sa
- 	for (int k = 100; k < pageObjNumber; k += 2 ) {
- 		//
- 		char buffer[20];
--		sprintf( buffer, "%% page number %d\n", (k - 99));
-+		snprintf( buffer, sizeof(buffer), "%% page number %d\n", (k - 99));
- 		fputs(buffer, fp);
- 
--		sprintf( buffer, "%d 0 obj\n", k );
-+		snprintf( buffer, sizeof(buffer), "%d 0 obj\n", k );
- 		fputs(buffer, fp);
- 		fputs("<< /Type /Page\n", fp);
- 		fputs("/Parent 3 0 R\n", fp);
-@@ -1066,7 +1070,7 @@ void SciTEBase::SaveToPDF(const char *sa
- 
- 		// we need to patch in the corresponding page text object!
- 		int textObjNumber = (k + 1);
--		sprintf( buffer, "/Contents %d 0 R\n", textObjNumber);
-+		snprintf( buffer, sizeof(buffer), "/Contents %d 0 R\n", textObjNumber);
- 		fputs(buffer, fp);
- 
- 		fputs("/Resources << /ProcSet 6 0 R\n", fp);
-@@ -1076,7 +1080,7 @@ void SciTEBase::SaveToPDF(const char *sa
- 		fputs("endobj\n", fp);
- 
- 		// add this to the list of page number references...
--		sprintf( buffer, "%d 0 R ", k);
-+		snprintf( buffer, sizeof(buffer), "%d 0 R ", k);
- 		pageRefs += buffer;
- 
- 		// increment the page count...
-@@ -1098,7 +1102,7 @@ void SciTEBase::SaveToPDF(const char *sa
- 
- 	{
- 		char buffer[20];
--		sprintf(buffer, "/Count %d\n", pageCount);
-+		snprintf(buffer, sizeof(buffer), "/Count %d\n", pageCount);
- 		fputs(buffer, fp);		// we need to patch also the number of page objects created
- 	}
- 
-@@ -1202,12 +1206,12 @@ static void fillTexStyle(TexStyle* style
+-			sprintf(val, "0.%03d ", c);
++			snprintf(val, sizeof(val), "0.%03d ", c);
+ 		}
+-		strcat(pdfcolour, val);
++		strlcat(pdfcolour, val, pdfcolour_size);
  	}
  }
+ 
+@@ -742,7 +743,7 @@ void SciTEBase::SaveToPDF(FilePath saveN
+ 		}
+ 		void write(int objectData) {
+ 			char val[20];
+-			sprintf(val, "%d", objectData);
++			snprintf(val, sizeof(val), "%d", objectData);
+ 			write(val);
+ 		}
+ 		// returns object number assigned to the supplied data
+@@ -777,7 +778,7 @@ void SciTEBase::SaveToPDF(FilePath saveN
+ 			// so extra space added; also the first entry is special
+ 			write("\n0000000000 65535 f \n");
+ 			for (int i = 0; i < index - 1; i++) {
+-				sprintf(val, "%010d 00000 n \n", offsetList[i]);
++				snprintf(val, sizeof(val), "%010d 00000 n \n", offsetList[i]);
+ 				write(val);
+ 			}
+ 			return xrefStart;
+@@ -801,6 +802,8 @@ void SciTEBase::SaveToPDF(FilePath saveN
+ 		int styleCurrent, stylePrev;
+ 		double leading;
+ 		char *buffer;
++		size_t buffer_size;
++		size_t segStyle_size;
+ 	public:
+ 		PDFObjectTracker *oT;
+ 		PDFStyle *style;
+@@ -813,8 +816,10 @@ void SciTEBase::SaveToPDF(FilePath saveN
+ 			pageStarted = false;
+ 			pageCount = 0;
+ 			style = NULL;
+-			buffer = new char[250];
+-			segStyle = new char[100];
++			buffer_size = 250;
++			buffer = new char[buffer_size];
++			segStyle_size = 100;
++			segStyle = new char[segStyle_size];
+ 		}
+ 		~PDFRender() {
+ 			if (style) { delete []style; }
+@@ -825,20 +830,20 @@ void SciTEBase::SaveToPDF(FilePath saveN
+ 		double fontToPoints(int thousandths) {
+ 			return (double)fontSize * thousandths / 1000.0;
+ 		}
+-		void setStyle(char *buff, int style_) {
++		void setStyle(char *buff, size_t buff_size, int style_) {
+ 			int styleNext = style_;
+ 			if (style_ == -1) { styleNext = styleCurrent; }
+ 			*buff = '\0';
+ 			if (styleNext != styleCurrent || style_ == -1) {
+ 				if (style[styleCurrent].font != style[styleNext].font
+ 				    || style_ == -1) {
+-					sprintf(buff, "/F%d %d Tf ",
++					snprintf(buff, buff_size, "/F%d %d Tf ",
+ 						style[styleNext].font + 1, fontSize);
+ 				}
+ 				if (strcmp(style[styleCurrent].fore, style[styleNext].fore) != 0
+ 				    || style_ == -1) {
+-					strcat(buff, style[styleNext].fore);
+-					strcat(buff, "rg ");
++					strlcat(buff, style[styleNext].fore, buff_size);
++					strlcat(buff, "rg ", buff_size);
+ 				}
+ 			}
+ 		}
+@@ -867,7 +872,7 @@ void SciTEBase::SaveToPDF(FilePath saveN
+ 			// *expected* to start from index 1 since they are the first objects
+ 			// to be inserted (PDF1.4Ref(p317))
+ 			for (int i = 0; i < 4; i++) {
+-				sprintf(buffer, "<</Type/Font/Subtype/Type1"
++				snprintf(buffer, buffer_size, "<</Type/Font/Subtype/Type1"
+ 						"/Name/F%d/BaseFont/%s/Encoding/"
+ 						PDF_ENCODING
+ 						">>\n", i + 1,
+@@ -890,7 +895,7 @@ void SciTEBase::SaveToPDF(FilePath saveN
+ 			int pageObjectStart = oT->index;
+ 			int pagesRef = pageObjectStart + pageCount;
+ 			for (int i = 0; i < pageCount; i++) {
+-				sprintf(buffer, "<</Type/Page/Parent %d 0 R\n"
++				snprintf(buffer, buffer_size, "<</Type/Page/Parent %d 0 R\n"
+ 						"/MediaBox[ 0 0 %d %d"
+ 						"]\n/Contents %d 0 R\n"
+ 						"/Resources %d 0 R\n>>\n",
+@@ -901,19 +906,19 @@ void SciTEBase::SaveToPDF(FilePath saveN
+ 			// create page tree object (PDF1.4Ref(p86))
+ 			pageData = "<</Type/Pages/Kids[\n";
+ 			for (int j = 0; j < pageCount; j++) {
+-				sprintf(buffer, "%d 0 R\n", pageObjectStart + j);
++				snprintf(buffer, buffer_size, "%d 0 R\n", pageObjectStart + j);
+ 				pageData += buffer;
+ 			}
+-			sprintf(buffer, "]/Count %d\n>>\n", pageCount);
++			snprintf(buffer, buffer_size, "]/Count %d\n>>\n", pageCount);
+ 			pageData += buffer;
+ 			oT->add(pageData.c_str());
+ 			// create catalog object (PDF1.4Ref(p83))
+-			sprintf(buffer, "<</Type/Catalog/Pages %d 0 R >>\n", pagesRef);
++			snprintf(buffer, buffer_size, "<</Type/Catalog/Pages %d 0 R >>\n", pagesRef);
+ 			int catalogRef = oT->add(buffer);
+ 			// append the cross reference table (PDF1.4Ref(p64))
+ 			int xref = oT->xref();
+ 			// end the file with the trailer (PDF1.4Ref(p67))
+-			sprintf(buffer, "trailer\n<< /Size %d /Root %d 0 R\n>>"
++			snprintf(buffer, buffer_size, "trailer\n<< /Size %d /Root %d 0 R\n>>"
+ 					"\nstartxref\n%d\n%%%%EOF\n",
+ 					oT->index, catalogRef, xref);
+ 			oT->write(buffer);
+@@ -934,7 +939,7 @@ void SciTEBase::SaveToPDF(FilePath saveN
+ 			if (style_ != styleCurrent) {
+ 				flushSegment();
+ 				// output code (if needed) for new style
+-				setStyle(segStyle, style_);
++				setStyle(segStyle, segStyle_size, style_);
+ 				stylePrev = styleCurrent;
+ 				styleCurrent = style_;
+ 			}
+@@ -967,11 +972,11 @@ void SciTEBase::SaveToPDF(FilePath saveN
+ 			double fontAscender = fontToPoints(PDFfontAscenders[fontSet]);
+ 			yPos = pageHeight - pageMargin.top - fontAscender;
+ 			// start a new page
+-			sprintf(buffer, "BT 1 0 0 1 %d %d Tm\n",
++			snprintf(buffer, buffer_size, "BT 1 0 0 1 %d %d Tm\n",
+ 				pageMargin.left, (int)yPos);
+ 			// force setting of initial font, colour
+-			setStyle(segStyle, -1);
+-			strcat(buffer, segStyle);
++			setStyle(segStyle, segStyle_size, -1);
++			strlcat(buffer, segStyle, buffer_size);
+ 			pageData = buffer;
+ 			xPos = pageMargin.left;
+ 			segment.clear();
+@@ -984,7 +989,7 @@ void SciTEBase::SaveToPDF(FilePath saveN
+ 			// PDF1.4Ref(p38) EOL marker preceding endstream not counted
+ 			char *textObj = new char[pageData.length() + 100];
+ 			// concatenate stream within the text object
+-			sprintf(textObj, "<</Length %d>>\nstream\n%s"
++			snprintf(textObj, pageData.length() + 100, "<</Length %d>>\nstream\n%s"
+ 					 "ET\nendstream\n",
+ 					 static_cast<int>(pageData.length() - 1 + 3),
+ 					 pageData.c_str());
+@@ -1006,10 +1011,10 @@ void SciTEBase::SaveToPDF(FilePath saveN
+ 				return;
+ 			}
+ 			if (firstLine) {
+-				sprintf(buffer, "0 -%.1f TD\n", leading);
++				snprintf(buffer, buffer_size, "0 -%.1f TD\n", leading);
+ 				firstLine = false;
+ 			} else {
+-				sprintf(buffer, "T*\n");
++				snprintf(buffer, buffer_size, "T*\n");
+ 			}
+ 			pageData += buffer;
+ 		}
+@@ -1038,7 +1043,8 @@ void SciTEBase::SaveToPDF(FilePath saveN
+ 	}
+ 	// page size: width, height
+ 	propItem = props.GetExpanded("export.pdf.pagesize");
+-	char *buffer = new char[200];
++	size_t buffer_size = 200;
++	char *buffer = new char[buffer_size];
+ 	char *ps = StringDup(propItem.c_str());
+ 	const char *next = GetNextPropItem(ps, buffer, 32);
+ 	if (0 >= (pr.pageWidth = atol(buffer))) {
+@@ -1077,9 +1083,9 @@ void SciTEBase::SaveToPDF(FilePath saveN
+ 		pr.style[i].font = 0;
+ 		pr.style[i].fore[0] = '\0';
+ 
+-		sprintf(buffer, "style.*.%0d", i);
++		snprintf(buffer, buffer_size, "style.*.%0d", i);
+ 		char *valdef = StringDup(props.GetExpanded(buffer).c_str());
+-		sprintf(buffer, "style.%s.%0d", language.c_str(), i);
++		snprintf(buffer, buffer_size, "style.%s.%0d", language.c_str(), i);
+ 		char *val = StringDup(props.GetExpanded(buffer).c_str());
+ 
+ 		StyleDefinition sd(valdef);
+@@ -1089,9 +1095,9 @@ void SciTEBase::SaveToPDF(FilePath saveN
+ 			if (sd.italics) { pr.style[i].font |= 2; }
+ 			if (sd.bold) { pr.style[i].font |= 1; }
+ 			if (sd.fore.length()) {
+-				getPDFRGB(pr.style[i].fore, sd.fore.c_str());
++				getPDFRGB(pr.style[i].fore, sizeof(pr.style[0].fore), sd.fore.c_str());
+ 			} else if (i == STYLE_DEFAULT) {
+-				strcpy(pr.style[i].fore, "0 0 0 ");
++				strlcpy(pr.style[i].fore, "0 0 0 ", sizeof(pr.style[i].fore));
+ 			}
+ 			// grab font size from default style
+ 			if (i == STYLE_DEFAULT) {
+@@ -1107,7 +1113,7 @@ void SciTEBase::SaveToPDF(FilePath saveN
+ 	// patch in default foregrounds
+ 	for (int j = 0; j <= STYLE_MAX; j++) {
+ 		if (pr.style[j].fore[0] == '\0') {
+-			strcpy(pr.style[j].fore, pr.style[STYLE_DEFAULT].fore);
++			strlcpy(pr.style[j].fore, pr.style[STYLE_DEFAULT].fore, sizeof(pr.style[j].fore));
+ 		}
+ 	}
+ 	delete []buffer;
+@@ -1165,12 +1171,12 @@ void SciTEBase::SaveToPDF(FilePath saveN
+ 
+ //---------- Save to TeX ----------
  
 -static char* getTexRGB(char* texcolor, const char* stylecolor) {
 +static char* getTexRGB(char* texcolor, size_t texcolor_size, const char* stylecolor) {
  	//texcolor[rgb]{0,0.5,0}{....}
- 	float r = GetHexByte(stylecolor + 1) / 256.0;
- 	float g = GetHexByte(stylecolor + 3) / 256.0;
- 	float b = GetHexByte(stylecolor + 5) / 256.0;
+ 	float r = IntFromHexByte(stylecolor + 1) / 256.0;
+ 	float g = IntFromHexByte(stylecolor + 3) / 256.0;
+ 	float b = IntFromHexByte(stylecolor + 5) / 256.0;
 -	sprintf(texcolor, "%.1f, %.1f, %.1f", r, g, b);
 +	snprintf(texcolor, texcolor_size, "%.1f, %.1f, %.1f", r, g, b);
  	return texcolor;
  }
  
-@@ -1236,11 +1240,11 @@ static void defineTexStyle(TexStyle* sty
+@@ -1199,11 +1205,11 @@ static void defineTexStyle(StyleDefiniti
  		closing_brackets++;
  	}
- 	if (style->fore.length()) {
--		fprintf(fp, "\\textcolor[rgb]{%s}{", getTexRGB(rgb, style->fore.c_str()) );
-+		fprintf(fp, "\\textcolor[rgb]{%s}{", getTexRGB(rgb, sizeof(rgb), style->fore.c_str()) );
+ 	if (style.fore.length()) {
+-		fprintf(fp, "\\textcolor[rgb]{%s}{", getTexRGB(rgb, style.fore.c_str()) );
++		fprintf(fp, "\\textcolor[rgb]{%s}{", getTexRGB(rgb, sizeof(rgb), style.fore.c_str()) );
  		closing_brackets++;
  	}
- 	if (style->back.length()) {
--		fprintf(fp, "\\colorbox[rgb]{%s}{", getTexRGB( rgb, style->back.c_str()) );
-+		fprintf(fp, "\\colorbox[rgb]{%s}{", getTexRGB( rgb, sizeof(rgb), style->back.c_str()) );
+ 	if (style.back.length()) {
+-		fprintf(fp, "\\colorbox[rgb]{%s}{", getTexRGB( rgb, style.back.c_str()) );
++		fprintf(fp, "\\colorbox[rgb]{%s}{", getTexRGB( rgb, sizeof(rgb), style.back.c_str()) );
  		closing_brackets++;
  	}
  	fputs("#1", fp);
-@@ -1287,9 +1291,9 @@ void SciTEBase::SaveToTEX(const char *sa
- 			style.italics = false;
- 			style.bold = false;
- 			style.size = 0;
--			sprintf(key, "style.*.%0d", i);
-+			snprintf(key, sizeof(key), "style.*.%0d", i);
- 			char *valdef = StringDup(props.GetExpanded(key).c_str());
--			sprintf(key, "style.%s.%0d", language.c_str(), i);
-+			snprintf(key, sizeof(key), "style.%s.%0d", language.c_str(), i);
- 			char *val = StringDup(props.GetExpanded(key).c_str());
- 			fillTexStyle(&style, valdef); //check default properties
- 			fillTexStyle(&style, val); //check language properties
+@@ -1247,9 +1253,9 @@ void SciTEBase::SaveToTEX(FilePath saveN
+ 
+ 		for (i = 0; i < STYLE_MAX; i++) {      // get keys
+ 			if (styleIsUsed[i]) {
+-				sprintf(key, "style.*.%0d", i);
++				snprintf(key, sizeof(key), "style.*.%0d", i);
+ 				char *valdef = StringDup(props.GetExpanded(key).c_str());
+-				sprintf(key, "style.%s.%0d", language.c_str(), i);
++				snprintf(key, sizeof(key), "style.%s.%0d", language.c_str(), i);
+ 				char *val = StringDup(props.GetExpanded(key).c_str());
+ 
+ 				StyleDefinition sd(valdef); //check default properties

@@ -1,8 +1,8 @@
-$OpenBSD: patch-gtk_SciTEGTK_cxx,v 1.1.1.1 2003/08/14 18:27:25 sturm Exp $
---- gtk/SciTEGTK.cxx.orig	2003-08-14 01:31:52.000000000 +1000
-+++ gtk/SciTEGTK.cxx	2003-08-14 01:33:28.000000000 +1000
-@@ -340,7 +340,7 @@ SciTEGTK::SciTEGTK(Extension *ext) : Sci
- 	pidShell = 0;
+$OpenBSD: patch-gtk_SciTEGTK_cxx,v 1.2 2007/01/18 10:56:27 steven Exp $
+--- gtk/SciTEGTK.cxx.orig	Thu Jan 18 09:11:18 2007
++++ gtk/SciTEGTK.cxx	Thu Jan 18 09:11:18 2007
+@@ -495,7 +495,7 @@ SciTEGTK::SciTEGTK(Extension *ext) : Sci
+ 	triedKill = false;
  	exitStatus = 0;
  	pollID = 0;
 -	sprintf(resultsFile, "/tmp/SciTE%x.results",
@@ -10,136 +10,44 @@ $OpenBSD: patch-gtk_SciTEGTK_cxx,v 1.1.1.1 2003/08/14 18:27:25 sturm Exp $
  	        static_cast<int>(getpid()));
  	inputHandle = 0;
  
-@@ -462,13 +462,12 @@ void SciTEGTK::GetDefaultDirectory(char 
- 	if (where)
- #ifdef __vms
+@@ -614,9 +614,9 @@ GtkWidget *SciTEGTK::AddMBButton(GtkWidg
+ // This is an internally used function to create pixmaps.
+ GdkPixbuf *SciTEGTK::CreatePixbuf(const char *filename) {
+ 	char path[MAX_PATH + 20];
+-	strncpy(path, PIXMAP_PATH, sizeof(path));
+-	strcat(path, pathSepString);
+-	strcat(path, filename);
++	strlcpy(path, PIXMAP_PATH, sizeof(path));
++	strlcat(path, pathSepString, sizeof(path));
++	strlcat(path, filename, sizeof(path));
  
--		strncpy(directory, VMSToUnixStyle(where), size);
-+		strlcpy(directory, VMSToUnixStyle(where), size);
- #else
- 
--		strncpy(directory, where, size);
-+		strlcpy(directory, where, size);
- #endif
- 
--	directory[size - 1] = '\0';
- }
- 
- bool SciTEGTK::GetSciteDefaultHome(char *path, unsigned int lenPath) {
-@@ -490,10 +489,10 @@ bool SciTEGTK::GetSciteDefaultHome(char 
- #endif
- 	if (where) {
- #ifdef __vms
--		strncpy(path, VMSToUnixStyle(where), lenPath);
-+		strlcpy(path, VMSToUnixStyle(where), lenPath);
- #else
- 
--		strncpy(path, where, lenPath);
-+		strlcpy(path, where, lenPath);
- #endif
- 
- 		return true;
-@@ -507,7 +506,7 @@ bool SciTEGTK::GetSciteUserHome(char *pa
- 		where = getenv("HOME");
- 	}
- 	if (where) {
--		strncpy(path, where, lenPath);
-+		strlcpy(path, where, lenPath);
- 		return true;
- 	}
- 	return false;
-@@ -515,11 +514,11 @@ bool SciTEGTK::GetSciteUserHome(char *pa
+ 	GError *error = NULL;
+ 	GdkPixbuf *pixbuf = gdk_pixbuf_new_from_file(path, &error);
+@@ -688,11 +688,11 @@ FilePath SciTEGTK::GetSciteUserHome() {
  
  void SciTEGTK::ShowFileInStatus() {
  	char sbText[1000];
 -	sprintf(sbText, " File: ");
 +	snprintf(sbText, sizeof(sbText), " File: ");
- 	if (fileName[0] == '\0')
+ 	if (filePath.IsUntitled())
 -		strcat(sbText, "Untitled");
 +		strlcat(sbText, "Untitled", sizeof(sbText));
  	else
--		strcat(sbText, fullPath);
-+		strlcat(sbText, fullPath, sizeof(sbText));
+-		strcat(sbText, filePath.AsInternal());
++		strlcat(sbText, filePath.AsInternal(), sizeof(sbText));
  	SetStatusBarText(sbText);
  }
  
-@@ -749,7 +748,7 @@ void SciTEGTK::CheckMenus() {
- 	}
- }
- 
--char *split(char*& s, char c) {
-+static char *split(char*& s, char c) {
- 	char *t = s;
- 	if (s && (s = strchr(s, c)))
- 		* s++ = '\0';
-@@ -808,13 +807,13 @@ void SciTEGTK::OpenUriList(const char *l
- }
- 
- // on Linux return the shortest path equivalent to pathname (remove . and ..)
--void SciTEGTK::AbsolutePath(char *absPath, const char *relativePath, int /*size*/) {
-+void SciTEGTK::AbsolutePath(char *absPath, const char *relativePath, int absPath_len) {
- 	char path[MAX_PATH + 1], *cur, *last, *part, *tmp;
- 	if (!absPath)
- 		return ;
- 	if (!relativePath)
- 		return ;
--	strcpy(path, relativePath);
-+	strlcpy(path, relativePath, sizeof(path));
- 	cur = absPath;
- 	*cur = '\0';
- 	tmp = path;
-@@ -831,13 +830,14 @@ void SciTEGTK::AbsolutePath(char *absPat
- 			if (last > absPath)
- 				cur = last;
- 			else
--				cur = last + 1;
-+				cur = last + 1;	// skip leading '/' for absolute paths
- 			*cur = '\0';
+@@ -2854,7 +2854,7 @@ void SciTEGTK::CreateTranslatedMenu(int 
+ 				accelKey.clear();	// Allow user to clear accelerator key
+ 			}
+ 			userDefinedAccels[i] = new char[accLength + 1];
+-			strncpy(userDefinedAccels[i], accelKey.c_str(), accLength + 1);
++			strlcpy(userDefinedAccels[i], accelKey.c_str(), accLength + 1);
+ 			items[i].accelerator = userDefinedAccels[i];
  		} else {
--			if (cur > absPath && *(cur - 1) != pathSepChar)
--				*cur++ = pathSepChar;
--			strcpy(cur, part);
--			cur += strlen(part);
-+			if (cur > absPath && *(cur - 1) != pathSepChar) {
-+				strlcat(absPath, pathSepString, absPath_len);
-+			}
-+			strlcat(absPath, part, absPath_len);
-+			cur = absPath + strlen(absPath);
- 		}
- 	}
- 
-@@ -2748,7 +2748,7 @@ bool SciTEGTK::CreatePipe(bool forceNew)
- 
- 	// Check we have been given a specific pipe name
- 	if (pipeFilename.size() > 0) {
--		snprintf(pipeName, CHAR_MAX - 1, "%s", pipeFilename.c_str());
-+		snprintf(pipeName, sizeof(pipeName), "%s", pipeFilename.c_str());
- 
- 		fdPipe = open(pipeName, O_RDWR | O_NONBLOCK);
- 		if (fdPipe == -1 && errno == EACCES) {
-@@ -2778,7 +2778,7 @@ bool SciTEGTK::CreatePipe(bool forceNew)
- 
- 			//create the pipe name - we use a number as well just incase multiple people have pipes open
- 			//or we are forceing a new instance of scite (even if there is already one)
--			sprintf(pipeName, "/tmp/.SciTE.%d.ipc", i);
-+			snprintf(pipeName, sizeof(pipeName), "/tmp/.SciTE.%d.ipc", i);
- 
- 			//printf("Trying pipe %s\n", pipeName);
- 			//check to see if there is already one
-@@ -2889,10 +2889,10 @@ void SciTEGTK::CheckAlreadyOpen(const ch
- 
- 		//check to see if path is already absolute
- 		if (cmdLine[0] == '/')
--			sprintf(pipeCommand, "open:%s", cmdLine);
-+			snprintf(pipeCommand, sizeof(pipeCommand), "open:%s", cmdLine);
- 		//if it isn't then add the absolute path to the from of the command to send.
- 		else
--			sprintf(pipeCommand, "open:%s/%s", currentPath, cmdLine);
-+			snprintf(pipeCommand, sizeof(pipeCommand), "open:%s/%s", currentPath, cmdLine);
- 
- 		//printf("Sending %s through pipe\n", pipeCommand);
- 		//send it
-@@ -2980,10 +2980,10 @@ int main(int argc, char *argv[]) {
+ 			userDefinedAccels[i] = NULL;
+@@ -3600,10 +3600,10 @@ int main(int argc, char *argv[]) {
  
  #ifdef __vms
  	// Store the path part of the module name
@@ -152,7 +60,7 @@ $OpenBSD: patch-gtk_SciTEGTK_cxx,v 1.1.1.1 2003/08/14 18:27:25 sturm Exp $
  	}
  	p = strchr(g_modulePath, ']');
  	if (p == NULL) {
-@@ -2995,8 +2995,11 @@ int main(int argc, char *argv[]) {
+@@ -3615,8 +3615,11 @@ int main(int argc, char *argv[]) {
  	if (p != NULL) {
  		*(p + 1) = '\0';
  	}

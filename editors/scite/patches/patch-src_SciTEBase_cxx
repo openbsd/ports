@@ -1,7 +1,16 @@
-$OpenBSD: patch-src_SciTEBase_cxx,v 1.1.1.1 2003/08/14 18:27:26 sturm Exp $
---- src/SciTEBase.cxx.orig	2003-08-14 01:31:52.000000000 +1000
-+++ src/SciTEBase.cxx	2003-08-14 01:31:52.000000000 +1000
-@@ -1874,7 +1874,7 @@ bool SciTEBase::StartInsertAbbreviation(
+$OpenBSD: patch-src_SciTEBase_cxx,v 1.2 2007/01/18 10:56:27 steven Exp $
+--- src/SciTEBase.cxx.orig	Mon Jan 15 12:02:13 2007
++++ src/SciTEBase.cxx	Mon Jan 15 12:02:56 2007
+@@ -2048,7 +2048,7 @@ void SciTEBase::EliminateDuplicateWords(
+ 
+ 		if (firstLen == secondLen &&
+ 		        !strncmp(firstWord, secondWord, firstLen)) {
+-			strcpy(firstWord, secondWord);
++			strlcpy(firstWord, secondWord, firstLen);
+ 			firstSpace = strchr(firstWord, ' ');
+ 		} else {
+ 			firstWord = secondWord;
+@@ -2176,7 +2176,7 @@ bool SciTEBase::StartInsertAbbreviation(
  	}
  
  	char *expbuf = new char[dataLength + 1];
@@ -9,8 +18,8 @@ $OpenBSD: patch-src_SciTEBase_cxx,v 1.1.1.1 2003/08/14 18:27:26 sturm Exp $
 +	strlcpy(expbuf, data.c_str(), dataLength + 1);
  	UnSlash(expbuf);
  	size_t expbuflen = strlen(expbuf);
- 	int caret_pos = SendEditor(SCI_GETSELECTIONEND);
-@@ -1966,7 +1966,7 @@ bool SciTEBase::StartExpandAbbreviation(
+ 	int caret_pos = SendEditor(SCI_GETSELECTIONSTART);
+@@ -2322,7 +2322,7 @@ bool SciTEBase::StartExpandAbbreviation(
  	}
  
  	char *expbuf = new char[dataLength + 1];
@@ -19,7 +28,7 @@ $OpenBSD: patch-src_SciTEBase_cxx,v 1.1.1.1 2003/08/14 18:27:26 sturm Exp $
  	UnSlash(expbuf);
  	size_t expbuflen = strlen(expbuf);
  	int caret_pos = -1; // caret position
-@@ -2361,17 +2361,17 @@ void SciTEBase::SetTextProperties(
+@@ -2721,7 +2721,7 @@ void SciTEBase::SetTextProperties(
  	int eolMode = SendEditor(SCI_GETEOLMODE);
  	ps.Set("EOLMode", eolMode == SC_EOL_CRLF ? "CR+LF" : (eolMode == SC_EOL_LF ? "LF" : "CR"));
  
@@ -28,19 +37,36 @@ $OpenBSD: patch-src_SciTEBase_cxx,v 1.1.1.1 2003/08/14 18:27:26 sturm Exp $
  	ps.Set("BufferLength", temp);
  
  	ps.SetInteger("NbOfLines", SendEditor(SCI_GETLINECOUNT));
- 
- 	CharacterRange crange = GetSelection();
--	sprintf(temp, "%ld", crange.cpMax - crange.cpMin);
-+	snprintf(temp, sizeof(temp), "%ld", crange.cpMax - crange.cpMin);
+@@ -2736,22 +2736,22 @@ void SciTEBase::SetTextProperties(
+ 		       int endPos = SendEditor(SCI_GETLINESELENDPOSITION, line);
+ 		       charCount += endPos - startPos;
+ 	       }
+-	       sprintf(temp, "%ld", charCount);
++	       snprintf(temp, sizeof(temp), "%ld", charCount);
+ 	} else {
+-		sprintf(temp, "%ld", crange.cpMax - crange.cpMin);
++		snprintf(temp, sizeof(temp), "%ld", crange.cpMax - crange.cpMin);
+ 	}
  	ps.Set("SelLength", temp);
- 	int selFirstLine = SendEditor(SCI_LINEFROMPOSITION, crange.cpMin);
- 	int selLastLine = SendEditor(SCI_LINEFROMPOSITION, crange.cpMax);
--	sprintf(temp, "%d", selLastLine - selFirstLine + 1);
-+	snprintf(temp, sizeof(temp), "%d", selLastLine - selFirstLine + 1);
+ 	int caretPos = SendEditor(SCI_GETCURRENTPOS);
+ 	int selAnchor = SendEditor(SCI_GETANCHOR);
+ 	if (0 == (crange.cpMax - crange.cpMin)) {
+-		sprintf(temp, "%d", 0);
++		snprintf(temp, sizeof(temp), "%d", 0);
+ 	} else if (selLastLine == selFirstLine) {
+-		sprintf(temp, "%d", 1);
++		snprintf(temp, sizeof(temp), "%d", 1);
+ 	} else if ((SendEditor(SCI_GETCOLUMN, caretPos) == 0 && (selAnchor <= caretPos)) ||
+  		((SendEditor( SCI_GETCOLUMN, selAnchor) == 0) && (selAnchor > caretPos ))) {
+-		sprintf(temp, "%d", selLastLine - selFirstLine);
++		snprintf(temp, sizeof(temp), "%d", selLastLine - selFirstLine);
+ 	} else {
+-		sprintf(temp, "%d", selLastLine - selFirstLine + 1);
++		snprintf(temp, sizeof(temp), "%d", selLastLine - selFirstLine + 1);
+ 	}
  	ps.Set("SelHeight", temp);
  }
- 
-@@ -2389,7 +2389,7 @@ void SciTEBase::UpdateStatusBar(bool bUp
+@@ -2770,7 +2770,7 @@ void SciTEBase::UpdateStatusBar(bool bUp
  		propsStatus.Set("OverType", SendEditor(SCI_GETOVERTYPE) ? "OVR" : "INS");
  
  		char sbKey[32];
@@ -49,16 +75,16 @@ $OpenBSD: patch-src_SciTEBase_cxx,v 1.1.1.1 2003/08/14 18:27:26 sturm Exp $
  		SString msg = propsStatus.GetExpanded(sbKey);
  		if (msg.size() && sbValue != msg) {	// To avoid flickering, update only if needed
  			SetStatusBarText(msg.c_str());
-@@ -3754,7 +3754,7 @@ void SciTEBase::Notify(SCNotification *n
+@@ -4334,7 +4334,7 @@ void SciTEBase::Notify(SCNotification *n
  	case SCN_DWELLSTART: {
- 			char message[200];
  			if (INVALID_POSITION == notification->position) {
+ 				char message[200];
 -				sprintf(message, "%0d (%0d,%0d)", notification->position, notification->x, notification->y);
 +				snprintf(message, sizeof(message), "%0d (%0d,%0d)", notification->position, notification->x, notification->y);
  			} else {
- 				int lengthDoc = SendEditor(SCI_GETLENGTH);
- 				RangeExtendAndGrab(wEditor, message, sizeof(message),
-@@ -4040,11 +4040,11 @@ void SciTEBase::SendOneProperty(const ch
+ 				int endWord = notification->position;
+ 				SString message =
+@@ -4657,11 +4657,11 @@ void SciTEBase::SendOneProperty(const ch
  	size_t keysize = strlen(kind) + 1 + strlen(key) + 1 + strlen(val) + 1;
  	char *m = new char[keysize];
  	if (m) {
@@ -75,7 +101,7 @@ $OpenBSD: patch-src_SciTEBase_cxx,v 1.1.1.1 2003/08/14 18:27:26 sturm Exp $
  		extender->SendProperty(m);
  		delete []m;
  	}
-@@ -4082,12 +4082,14 @@ bool SciTEBase::RecordMacroCommand(SCNot
+@@ -4699,12 +4699,14 @@ bool SciTEBase::RecordMacroCommand(SCNot
  		t = (char*)(notification->lParam);
  		if (t != NULL) {
  			//format : "<message>;<wParam>;1;<text>"
@@ -94,7 +120,7 @@ $OpenBSD: patch-src_SciTEBase_cxx,v 1.1.1.1 2003/08/14 18:27:26 sturm Exp $
  		}
  		handled = extender->OnMacro("macro:record", szMessage);
  		delete []szMessage;
-@@ -4177,7 +4179,7 @@ void SciTEBase::ExecuteMacroCommand(cons
+@@ -4794,7 +4796,7 @@ void SciTEBase::ExecuteMacroCommand(cons
  	//extract message,wParam ,lParam
  
  	uptr_t message = ReadNum(nextarg);
@@ -103,7 +129,7 @@ $OpenBSD: patch-src_SciTEBase_cxx,v 1.1.1.1 2003/08/14 18:27:26 sturm Exp $
  	nextarg += 4;
  	if (*(params + 1) == 'R') {
  		// in one function wParam is a string  : void SetProperty(string key,string name)
-@@ -4187,7 +4189,7 @@ void SciTEBase::ExecuteMacroCommand(cons
+@@ -4804,7 +4806,7 @@ void SciTEBase::ExecuteMacroCommand(cons
  		int lstring1 = nextarg - s1;
  		string1 = new char[lstring1 + 1];
  		if (lstring1 > 0)
@@ -112,7 +138,7 @@ $OpenBSD: patch-src_SciTEBase_cxx,v 1.1.1.1 2003/08/14 18:27:26 sturm Exp $
  		*(string1 + lstring1) = '\0';
  		wParam = reinterpret_cast<uptr_t>(string1);
  		nextarg++;
-@@ -4234,15 +4236,16 @@ void SciTEBase::ExecuteMacroCommand(cons
+@@ -4851,15 +4853,16 @@ void SciTEBase::ExecuteMacroCommand(cons
  	}
  
  	size_t alen = strlen(answercmd);
@@ -132,7 +158,16 @@ $OpenBSD: patch-src_SciTEBase_cxx,v 1.1.1.1 2003/08/14 18:27:26 sturm Exp $
  	extender->OnMacro("macro", tbuff);
  	delete []tbuff;
  }
-@@ -4361,9 +4364,10 @@ void SciTEBase::Trace(const char *s) {
+@@ -4916,7 +4919,7 @@ bool SciTEBase::ProcessCommandLine(SStri
+ 				if (wlArgs[i+1][3] == 'b')
+ 					gf = static_cast<GrepFlags>(gf | grepBinary);
+ 				char unquoted[1000];
+-				strcpy(unquoted, wlArgs[i+3]);
++				strlcpy(unquoted, wlArgs[i+3], sizeof(unquoted));
+ 				UnSlash(unquoted);
+ 				InternalGrep(gf, FilePath::GetWorkingDirectory().AsInternal(), wlArgs[i+2], unquoted);
+ 				exit(0);
+@@ -5005,9 +5008,10 @@ void SciTEBase::Trace(const char *s) {
  
  char *SciTEBase::Property(const char *key) {
  	SString value = props.GetExpanded(key);

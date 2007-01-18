@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_Embedded_properties,v 1.1 2007/01/18 10:56:27 steven Exp $
+--- src/Embedded.properties.orig	Mon Jan 15 07:21:24 2007
++++ src/Embedded.properties	Thu Jan 18 09:11:22 2007
+@@ -78,7 +78,7 @@ if PLAT_WIN
+ 	command.scite.help.subsystem=2
+ if PLAT_GTK
+ 	command.print.*=a2ps "$(FileNameExt)"
+-	command.scite.help=netscape "file://$(SciteDefaultHome)/SciTEDoc.html"
++	command.scite.help=firefox "file://__DOCDIR__/SciTEDoc.html"
+ 
+ code.page=0
+ 
+@@ -2952,7 +2952,7 @@ if PLAT_WIN
+ 	command.go.$(file.patterns.web)="file://$(FilePath)"
+ 	command.go.subsystem.$(file.patterns.web)=2
+ if PLAT_GTK
+-	command.go.$(file.patterns.web)=netscape "file://$(FilePath)"
++	command.go.$(file.patterns.web)=firefox "file://$(FilePath)"
+ 
+ command.go.$(file.patterns.php)=php -f "$(FileNameExt)"
+ command.compile.$(file.patterns.php)=php -l "$(FileNameExt)"

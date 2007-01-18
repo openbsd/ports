@@ -1,7 +1,7 @@
-$OpenBSD: patch-gtk_ScintillaGTK_cxx,v 1.1.1.1 2003/08/14 18:24:30 sturm Exp $
---- gtk/ScintillaGTK.cxx.orig	2003-08-14 01:19:02.000000000 +1000
-+++ gtk/ScintillaGTK.cxx	2003-08-14 01:19:03.000000000 +1000
-@@ -1020,8 +1020,8 @@ void ScintillaGTK::CreateCallTipWindow(P
+$OpenBSD: patch-gtk_ScintillaGTK_cxx,v 1.2 2007/01/18 10:56:27 steven Exp $
+--- gtk/ScintillaGTK.cxx.orig	Thu Jan 18 08:42:00 2007
++++ gtk/ScintillaGTK.cxx	Thu Jan 18 08:42:00 2007
+@@ -1335,8 +1335,8 @@ void ScintillaGTK::CreateCallTipWindow(P
  
  void ScintillaGTK::AddToPopUp(const char *label, int cmd, bool enabled) {
  	char fulllabel[200];
@@ -12,12 +12,3 @@ $OpenBSD: patch-gtk_ScintillaGTK_cxx,v 1.1.1.1 2003/08/14 18:24:30 sturm Exp $
  	GtkItemFactoryCallback menuSig = GtkItemFactoryCallback(PopUpCB);
  	GtkItemFactoryEntry itemEntry = {
  	    fulllabel, NULL,
-@@ -1076,7 +1076,7 @@ char *ScintillaGTK::GetGtkSelectionText(
- 	// Return empty string if selection is not a string
- 	if (selectionData->type != GDK_TARGET_STRING) {
- 		dest = new char[1];
--		strcpy(dest, "");
-+		dest[0] = 0;
- 		*isRectangular = false;
- 		*len = 0;
- 		return dest;

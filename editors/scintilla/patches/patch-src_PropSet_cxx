@@ -1,22 +1,25 @@
-$OpenBSD: patch-src_PropSet_cxx,v 1.1.1.1 2003/08/14 18:24:31 sturm Exp $
---- src/PropSet.cxx.orig	2003-08-14 01:19:03.000000000 +1000
-+++ src/PropSet.cxx	2003-08-14 01:19:03.000000000 +1000
-@@ -185,9 +185,10 @@ SString PropSet::Expand(const char *with
- 			break;
- 		size_t newlenbase = strlen(base) + val.length() - lenvar;
- 		char *newbase = new char[newlenbase];
--		strncpy(newbase, base, cpvar - base);
--		strcpy(newbase + (cpvar - base), val.c_str());
--		strcpy(newbase + (cpvar - base) + val.length(), cpendvar + 1);
-+		*cpvar = 0;
-+		strlcpy(newbase, base, newlenbase);
-+		strlcat(newbase, val.c_str(), newlenbase);
-+		strlcat(newbase, cpendvar + 1, newlenbase);
- 		delete []var;
- 		delete []base;
- 		base = newbase;
-@@ -305,9 +306,10 @@ SString PropSet::GetNewExpand(const char
- 			SString val = GetWild(var, filename);
+$OpenBSD: patch-src_PropSet_cxx,v 1.2 2007/01/18 10:56:27 steven Exp $
+--- src/PropSet.cxx.orig	Tue Mar 28 17:31:51 2006
++++ src/PropSet.cxx	Tue Mar 28 17:57:29 2006
+@@ -78,14 +78,14 @@ bool EqualCaseInsensitive(const char *a,
+ 
+ SString::SString(int i) : sizeGrowth(sizeGrowthDefault) {
+ 	char number[32];
+-	sprintf(number, "%0d", i);
++	snprintf(number, sizeof(number), "%0d", i);
+ 	s = StringAllocate(number);
+ 	sSize = sLen = (s) ? strlen(s) : 0;
+ }
+ 
+ SString::SString(double d, int precision) : sizeGrowth(sizeGrowthDefault) {
+ 	char number[32];
+-	sprintf(number, "%.*f", precision, d);
++	snprintf(number, sizeof(number), "%.*f", precision, d);
+ 	s = StringAllocate(number);
+ 	sSize = sLen = (s) ? strlen(s) : 0;
+ }
+@@ -635,9 +635,10 @@ SString PropSet::GetNewExpand(const char
+ 				val.clear(); // Self-references evaluate to empty string
  			size_t newlenbase = strlen(base) + val.length() - lenvar;
  			char *newbase = new char[newlenbase];
 -			strncpy(newbase, base, cpvar - base);
@@ -29,7 +32,7 @@ $OpenBSD: patch-src_PropSet_cxx,v 1.1.1.1 2003/08/14 18:24:31 sturm Exp $
  			delete []var;
  			delete []base;
  			base = newbase;
-@@ -349,18 +351,15 @@ char *PropSet::ToString() {
+@@ -679,18 +680,15 @@ char *PropSet::ToString() {
  		len = 1;	// Return as empty string
  	char *ret = new char [len];
  	if (ret) {

@@ -1,20 +1,7 @@
-$OpenBSD: patch-src_SciTEProps_cxx,v 1.1.1.1 2003/08/14 18:27:28 sturm Exp $
---- src/SciTEProps.cxx.orig	2003-08-14 01:31:52.000000000 +1000
-+++ src/SciTEProps.cxx	2003-08-14 01:31:53.000000000 +1000
-@@ -116,9 +116,9 @@ bool PropSetFile::ReadLine(const char *l
- 		ifIsTrue = GetInt(expr);
- 	} else if (isprefix(lineBuffer, "import ") && directoryForImports) {
- 		char importPath[1024];
--		strcpy(importPath, directoryForImports);
--		strcat(importPath, lineBuffer + strlen("import") + 1);
--		strcat(importPath, ".properties");
-+		strlcpy(importPath, directoryForImports, sizeof(importPath));
-+		strlcat(importPath, lineBuffer + strlen("import") + 1, sizeof(importPath));
-+		strlcat(importPath, ".properties", sizeof(importPath));
- 		if (Read(importPath, directoryForImports, imports, sizeImports)) {
- 			if (imports) {
- 				for (int i = 0; i < sizeImports; i++) {
-@@ -170,7 +170,7 @@ bool PropSetFile::Read(const char *filen
+$OpenBSD: patch-src_SciTEProps_cxx,v 1.2 2007/01/18 10:56:27 steven Exp $
+--- src/SciTEProps.cxx.orig	Mon Jan 15 12:02:13 2007
++++ src/SciTEProps.cxx	Mon Jan 15 12:02:56 2007
+@@ -175,7 +175,7 @@ bool PropSetFile::Read(FilePath filename
  
  void PropSetFile::SetInteger(const char *key, sptr_t i) {
  	char tmp[32];
@@ -23,60 +10,7 @@ $OpenBSD: patch-src_SciTEProps_cxx,v 1.1.1.1 2003/08/14 18:27:28 sturm Exp $
  	Set(key, tmp);
  }
  
-@@ -251,12 +251,12 @@ void SciTEBase::ReadGlobalPropFile() {
- 	char propdir[MAX_PATH + 20];
- 	propsBase.Clear();
- 	if (GetDefaultPropertiesFileName(propfile, propdir, sizeof(propfile))) {
--		strcat(propdir, pathSepString);
-+		strlcat(propdir, pathSepString, sizeof(propdir));
- 		propsBase.Read(propfile, propdir, importFiles, importMax);
- 	}
- 	propsUser.Clear();
- 	if (GetUserPropertiesFileName(propfile, propdir, sizeof(propfile))) {
--		strcat(propdir, pathSepString);
-+		strlcat(propdir, pathSepString, sizeof(propdir));
- 		propsUser.Read(propfile, propdir, importFiles, importMax);
- 	}
- 	if (!localisationRead) {
-@@ -269,7 +269,7 @@ void SciTEBase::ReadAbbrevPropFile() {
- 	char propdir[MAX_PATH + 20];
- 	propsAbbrev.Clear();
- 	if (GetAbbrevPropertiesFileName(propfile, propdir, sizeof(propfile))) {
--		strcat(propdir, pathSepString);
-+		strlcat(propdir, pathSepString, sizeof(propdir));
- 		propsAbbrev.Read(propfile, propdir, importFiles, importMax);
- 	}
- }
-@@ -283,8 +283,7 @@ void ChopTerminalSlash(char *path) {
- 
- void SciTEBase::GetDocumentDirectory(char *docDir, int len) {
- 	if (dirName[0]) {
--		strncpy(docDir, dirName, len);
--		docDir[len - 1] = '\0';
-+		strlcpy(docDir, dirName, len);
- 	} else {
- 		getcwd(docDir, len);
- 		docDir[len - 1] = '\0';
-@@ -298,14 +297,14 @@ void SciTEBase::ReadLocalPropFile() {
- 	char propdir[MAX_PATH + 20];
- 	GetDocumentDirectory(propdir, sizeof(propdir));
- 	char propfile[MAX_PATH + 20];
--	strcpy(propfile, propdir);
-+	strlcpy(propfile, propdir, sizeof(propfile));
- #ifndef __vms
- 
--	strcat(propdir, pathSepString);
--	strcat(propfile, pathSepString);
-+	strlcat(propdir, pathSepString, sizeof(propdir));
-+	strlcat(propfile, pathSepString, sizeof(propfile));
- #endif
- 
--	strcat(propfile, propFileName);
-+	strlcat(propfile, propFileName, sizeof(propfile));
- 	propsLocal.Clear();
- 	propsLocal.Read(propfile, propdir);
- 	//Platform::DebugPrintf("Reading local properties from %s\n", propfile);
-@@ -370,8 +369,7 @@ const char *SciTEBase::GetNextPropItem(
+@@ -342,8 +342,7 @@ const char *SciTEBase::GetNextPropItem(
  		}
  		pNext++;
  	}
@@ -86,7 +20,7 @@ $OpenBSD: patch-src_SciTEProps_cxx,v 1.1.1.1 2003/08/14 18:27:28 sturm Exp $
  	return pNext;
  }
  
-@@ -502,7 +500,7 @@ void SciTEBase::SetStyleFor(Window &win,
+@@ -499,7 +498,7 @@ void SciTEBase::SetStyleFor(Window &win,
  	for (int style = 0; style <= STYLE_MAX; style++) {
  		if (style != STYLE_DEFAULT) {
  			char key[200];
@@ -95,16 +29,16 @@ $OpenBSD: patch-src_SciTEProps_cxx,v 1.1.1.1 2003/08/14 18:27:28 sturm Exp $
  			SString sval = props.GetExpanded(key);
  			SetOneStyle(win, style, sval.c_str());
  		}
-@@ -522,7 +520,7 @@ SString SciTEBase::ExtensionFileName() {
- 	else if (fileName[0]) {
- 		// Force extension to lower case
- 		char fileNameWithLowerCaseExtension[MAX_PATH];
--		strcpy(fileNameWithLowerCaseExtension, fileName);
-+		strlcpy(fileNameWithLowerCaseExtension, fileName, sizeof(fileNameWithLowerCaseExtension));
- 		char *extension = strrchr(fileNameWithLowerCaseExtension, '.');
- 		if (extension) {
- 			LowerCaseString(extension);
-@@ -786,7 +784,7 @@ void SciTEBase::ReadProperties() {
+@@ -523,7 +522,7 @@ SString SciTEBase::ExtensionFileName() {
+ 		if (name.IsSet()) {
+ 			// Force extension to lower case
+ 			char fileNameWithLowerCaseExtension[MAX_PATH];
+-				strcpy(fileNameWithLowerCaseExtension, name.AsInternal());
++				strlcpy(fileNameWithLowerCaseExtension, name.AsInternal(), sizeof(fileNameWithLowerCaseExtension));
+ 			char *extension = strrchr(fileNameWithLowerCaseExtension, '.');
+ 			if (extension) {
+ 				LowerCaseString(extension);
+@@ -927,7 +926,7 @@ void SciTEBase::ReadProperties() {
  	}
  
  	char bracesStyleKey[200];
@@ -113,7 +47,7 @@ $OpenBSD: patch-src_SciTEProps_cxx,v 1.1.1.1 2003/08/14 18:27:28 sturm Exp $
  	bracesStyle = props.GetInt(bracesStyleKey, 0);
  
  	char key[200];
-@@ -800,13 +798,13 @@ void SciTEBase::ReadProperties() {
+@@ -945,13 +944,13 @@ void SciTEBase::ReadProperties() {
  
  	calltipEndDefinition = FindLanguageProperty("calltip.*.end.definition");
  
@@ -129,7 +63,7 @@ $OpenBSD: patch-src_SciTEProps_cxx,v 1.1.1.1 2003/08/14 18:27:28 sturm Exp $
  	autoCompleteFillUpCharacters = props.GetExpanded(key);
  	if (autoCompleteFillUpCharacters == "")
  		autoCompleteFillUpCharacters =
-@@ -814,10 +812,10 @@ void SciTEBase::ReadProperties() {
+@@ -959,10 +958,10 @@ void SciTEBase::ReadProperties() {
  	SendEditorString(SCI_AUTOCSETFILLUPS, 0,
  		autoCompleteFillUpCharacters.c_str());
  
@@ -142,7 +76,7 @@ $OpenBSD: patch-src_SciTEProps_cxx,v 1.1.1.1 2003/08/14 18:27:28 sturm Exp $
  	sval = props.GetNewExpand(key);
  	if (sval != "")
  		autoCompleteIgnoreCase = sval == "1";
-@@ -835,12 +833,12 @@ void SciTEBase::ReadProperties() {
+@@ -1236,12 +1235,12 @@ void SciTEBase::ReadFontProperties() {
  	SendEditor(SCI_STYLERESETDEFAULT, 0, 0);
  	SendOutput(SCI_STYLERESETDEFAULT, 0, 0);
  
@@ -157,7 +91,7 @@ $OpenBSD: patch-src_SciTEProps_cxx,v 1.1.1.1 2003/08/14 18:27:28 sturm Exp $
  	sval = props.GetNewExpand(key);
  	SetOneStyle(wEditor, STYLE_DEFAULT, sval.c_str());
  
-@@ -851,7 +849,7 @@ void SciTEBase::ReadProperties() {
+@@ -1252,7 +1251,7 @@ void SciTEBase::ReadFontProperties() {
  
  	SendOutput(SCI_STYLECLEARALL, 0, 0);
  
@@ -166,27 +100,3 @@ $OpenBSD: patch-src_SciTEProps_cxx,v 1.1.1.1 2003/08/14 18:27:28 sturm Exp $
  	sval = props.GetNewExpand(key);
  	SetOneStyle(wOutput, STYLE_DEFAULT, sval.c_str());
  
-@@ -1171,7 +1169,7 @@ void SciTEBase::ReadLocalisation() {
- 	}
- 	if (GetSciteDefaultHome(propdir, sizeof propdir)
- 	    && BuildPath(propfile, propdir, title, sizeof propfile)) {
--		strcat(propdir, pathSepString);
-+		strlcat(propdir, pathSepString, sizeof(propdir));
- 		propsUI.Read(propfile, propdir, importFiles, importMax);
- 	}
- 	localisationRead = true;
-@@ -1288,11 +1286,11 @@ void SciTEBase::OpenProperties(int props
- 		GetDocumentDirectory(propfile, sizeof(propfile));
- #ifdef __vms
- 
--		strcpy(propfile, VMSToUnixStyle(propfile));
-+		strlcpy(propfile, VMSToUnixStyle(propfile), sizeof(propfile));
- #endif
- 
--		strcat(propfile, pathSepString);
--		strcat(propfile, propFileName);
-+		strlcat(propfile, pathSepString, sizeof(propfile));
-+		strlcat(propfile, propFileName, sizeof(propfile));
- 		Open(propfile, ofQuiet);
- 	} else if (propsFile == IDM_OPENUSERPROPERTIES) {
- 		if (GetUserPropertiesFileName(propfile, propdir, sizeof(propfile))) {

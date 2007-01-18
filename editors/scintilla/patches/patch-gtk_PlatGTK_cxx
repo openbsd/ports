@@ -1,7 +1,7 @@
-$OpenBSD: patch-gtk_PlatGTK_cxx,v 1.1.1.1 2003/08/14 18:24:30 sturm Exp $
---- gtk/PlatGTK.cxx.orig	2003-08-13 16:46:23.000000000 +1000
-+++ gtk/PlatGTK.cxx	2003-08-13 17:01:38.000000000 +1000
-@@ -332,7 +332,7 @@ static void GenerateFontSpecStrings(cons
+$OpenBSD: patch-gtk_PlatGTK_cxx,v 1.2 2007/01/18 10:56:27 steven Exp $
+--- gtk/PlatGTK.cxx.orig	Tue Mar 28 17:31:51 2006
++++ gtk/PlatGTK.cxx	Tue Mar 28 17:31:51 2006
+@@ -351,7 +351,7 @@ static void GenerateFontSpecStrings(cons
  	if (strchr(fontName, '-')) {
  		char tmp[300];
  		char *d1 = NULL, *d2 = NULL, *d3 = NULL;
@@ -10,7 +10,7 @@ $OpenBSD: patch-gtk_PlatGTK_cxx,v 1.1.1.1 2003/08/14 18:24:30 sturm Exp $
  		d1 = strchr(tmp, '-');
  		// we know the first dash exists
  		d2 = strchr(d1 + 1, '-');
-@@ -343,25 +343,25 @@ static void GenerateFontSpecStrings(cons
+@@ -362,25 +362,25 @@ static void GenerateFontSpecStrings(cons
  			*d2 = '\0';
  			foundary[0] = '-';
  			foundary[1] = '\0';
@@ -46,7 +46,7 @@ $OpenBSD: patch-gtk_PlatGTK_cxx,v 1.1.1.1 2003/08/14 18:24:30 sturm Exp $
  	}
  }
  
-@@ -371,7 +371,7 @@ static void SetLogFont(LOGFONT &lf, cons
+@@ -390,7 +390,7 @@ static void SetLogFont(LOGFONT &lf, cons
  	lf.bold = bold;
  	lf.italic = italic;
  	lf.characterSet = characterSet;
@@ -55,7 +55,7 @@ $OpenBSD: patch-gtk_PlatGTK_cxx,v 1.1.1.1 2003/08/14 18:24:30 sturm Exp $
  }
  
  /**
-@@ -533,9 +533,8 @@ FontID FontCached::CreateNewFont(const c
+@@ -552,9 +552,8 @@ FontID FontCached::CreateNewFont(const c
  	// eg. adobe-courier-iso10646-1,*-courier-iso10646-1,*-*-*-*
  	if (strchr(fontName, ',')) {
  		// build a fontspec and use gdk_fontset_load
@@ -66,7 +66,7 @@ $OpenBSD: patch-gtk_PlatGTK_cxx,v 1.1.1.1 2003/08/14 18:24:30 sturm Exp $
  		char *fn = fontNameCopy;
  		char *fp = strchr(fn, ',');
  		for (;;) {
-@@ -566,8 +565,7 @@ FontID FontCached::CreateNewFont(const c
+@@ -585,8 +584,7 @@ FontID FontCached::CreateNewFont(const c
  			// we are doing italic, add an oblique font
  			// to the list
  			if (italic && fontset[0] == '\0') {
@@ -76,7 +76,7 @@ $OpenBSD: patch-gtk_PlatGTK_cxx,v 1.1.1.1 2003/08/14 18:24:30 sturm Exp $
  
  				snprintf(fontspec,
  				         sizeof(fontspec) - 1,
-@@ -578,8 +576,7 @@ FontID FontCached::CreateNewFont(const c
+@@ -597,8 +595,7 @@ FontID FontCached::CreateNewFont(const c
  				         charset);
  			}
  
@@ -86,9 +86,9 @@ $OpenBSD: patch-gtk_PlatGTK_cxx,v 1.1.1.1 2003/08/14 18:24:30 sturm Exp $
  
  			if (!fp)
  				break;
-@@ -1967,8 +1964,7 @@ void ListBoxX::GetValue(int n, char *val
- 		break;
+@@ -2394,8 +2391,7 @@ void ListBoxX::GetValue(int n, char *val
  	}
+ #endif
  	if (text && len > 0) {
 -		strncpy(value, text, len);
 -		value[len - 1] = '\0';
@@ -96,7 +96,7 @@ $OpenBSD: patch-gtk_PlatGTK_cxx,v 1.1.1.1 2003/08/14 18:24:30 sturm Exp $
  	} else {
  		value[0] = '\0';
  	}
-@@ -2197,7 +2193,7 @@ void Platform::DebugPrintf(const char *f
+@@ -2668,7 +2664,7 @@ void Platform::DebugPrintf(const char *f
  	char buffer[2000];
  	va_list pArguments;
  	va_start(pArguments, format);
@@ -105,7 +105,7 @@ $OpenBSD: patch-gtk_PlatGTK_cxx,v 1.1.1.1 2003/08/14 18:24:30 sturm Exp $
  	va_end(pArguments);
  	Platform::DebugDisplay(buffer);
  }
-@@ -2217,8 +2213,7 @@ bool Platform::ShowAssertionPopUps(bool 
+@@ -2688,8 +2684,7 @@ bool Platform::ShowAssertionPopUps(bool 
  
  void Platform::Assert(const char *c, const char *file, int line) {
  	char buffer[2000];

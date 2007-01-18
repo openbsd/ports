@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Editor_cxx,v 1.1.1.1 2003/08/14 18:24:30 sturm Exp $
---- src/Editor.cxx.orig	2003-08-14 01:19:02.000000000 +1000
-+++ src/Editor.cxx	2003-08-14 01:19:03.000000000 +1000
-@@ -1583,10 +1583,10 @@ void Editor::PaintSelMargin(Surface *sur
+$OpenBSD: patch-src_Editor_cxx,v 1.2 2007/01/18 10:56:27 steven Exp $
+--- src/Editor.cxx.orig	Thu Jan 18 08:42:00 2007
++++ src/Editor.cxx	Thu Jan 18 08:42:00 2007
+@@ -1848,10 +1848,10 @@ void Editor::PaintSelMargin(Surface *sur
  					char number[100];
  					number[0] = '\0';
  					if (firstSubLine)
@@ -14,7 +14,7 @@ $OpenBSD: patch-src_Editor_cxx,v 1.1.1.1 2003/08/14 18:24:30 sturm Exp $
  							(lev & SC_FOLDLEVELHEADERFLAG) ? 'H' : '_',
  							(lev & SC_FOLDLEVELWHITEFLAG) ? 'W' : '_',
  							lev & SC_FOLDLEVELNUMBERMASK,
-@@ -2764,7 +2764,7 @@ long Editor::FormatRange(bool draw, Rang
+@@ -3255,7 +3255,7 @@ long Editor::FormatRange(bool draw, Rang
  		        (ypos + vsPrint.lineHeight <= pfr->rc.bottom) &&
  		        (visibleLine >= 0)) {
  			char number[100];

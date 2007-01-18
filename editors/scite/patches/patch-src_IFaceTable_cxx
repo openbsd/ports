@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_IFaceTable_cxx,v 1.1 2007/01/18 10:56:27 steven Exp $
+--- src/IFaceTable.cxx.orig	Fri Mar 31 21:45:37 2006
++++ src/IFaceTable.cxx	Fri Mar 31 21:45:37 2006
+@@ -96,8 +96,8 @@ int IFaceTable::GetConstantName(int valu
+ 		if (functions[funcIdx].value == value) {
+ 			size_t len = strlen(functions[funcIdx].name) + 4;
+ 			if (nameOut && (nameBufferLen > len)) {
+-				strcpy(nameOut, "SCI_");
+-				strcat(nameOut, functions[funcIdx].name);
++				strlcpy(nameOut, "SCI_", nameBufferLen);
++				strlcat(nameOut, functions[funcIdx].name, nameBufferLen);
+ 				// fix case
+ 				for (char *nm = nameOut + 4; *nm; ++nm) {
+ 					if (*nm >= 'a' && *nm <= 'z') {
+@@ -115,7 +115,7 @@ int IFaceTable::GetConstantName(int valu
+ 		if (constants[constIdx].value == value) {
+ 			size_t len = strlen(constants[constIdx].name);
+ 			if (nameOut && (nameBufferLen > len)) {
+-				strcpy(nameOut, constants[constIdx].name);
++				strlcpy(nameOut, constants[constIdx].name, nameBufferLen);
+ 				return len;
+ 			} else {
+ 				return -1 - len;

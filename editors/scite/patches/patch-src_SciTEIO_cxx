@@ -1,147 +1,17 @@
-$OpenBSD: patch-src_SciTEIO_cxx,v 1.1.1.1 2003/08/14 18:27:28 sturm Exp $
---- src/SciTEIO.cxx.orig	2003-08-14 18:12:50.000000000 +0200
-+++ src/SciTEIO.cxx	2003-08-14 18:14:14.000000000 +0200
-@@ -146,10 +146,10 @@ const char *VMSToUnixStyle(const char *f
- 		if (strstr (fileName, "//") == NULL) {
- 			return fileName;
- 		}
--		strcpy(unixStyleFileName, fileName);
-+		strlcpy(unixStyleFileName, fileName, sizeof(unixStyleFileName));
- 		char *p;
- 		while ((p = strstr (unixStyleFileName, "//")) != NULL) {
--			strcpy (p, p + 1);
-+			memmove(p, p + 1, strlen(p + 1)+1);
- 		}
- 		return unixStyleFileName;
- 	}
-@@ -159,10 +159,10 @@ const char *VMSToUnixStyle(const char *f
- 	// o [dir.dir]file.type
- 
- 	if (fileName [0] == '/') {
--		strcpy(unixStyleFileName, fileName);
-+		strlcpy(unixStyleFileName, fileName, sizeof(unixStyleFileName));
- 	} else {
- 		unixStyleFileName [0] = '/';
--		strcpy(unixStyleFileName + 1, fileName);
-+		strlcpy(unixStyleFileName + 1, fileName, sizeof(unixStyleFileName));
- 		char *p = strstr(unixStyleFileName, ":[");
- 		if (p == NULL) {
- 			// o logical:file.type
-@@ -170,7 +170,7 @@ const char *VMSToUnixStyle(const char *f
- 			*p = '/';
- 		} else {
- 			*p = '/';
--			strcpy(p + 1, p + 2);
-+			memmove(p + 1, p + 2, strlen(p + 2)+1);
- 			char *end = strchr(unixStyleFileName, ']');
- 			if (*end != NULL) {
- 				*end = '/';
-@@ -189,7 +189,7 @@ void SciTEBase::SetFileName(const char *
+$OpenBSD: patch-src_SciTEIO_cxx,v 1.2 2007/01/18 10:56:27 steven Exp $
+--- src/SciTEIO.cxx.orig	Mon Jan 15 12:02:13 2007
++++ src/SciTEIO.cxx	Mon Jan 15 12:02:56 2007
+@@ -78,8 +78,7 @@ void SciTEBase::SetFileName(FilePath ope
+ 	if (openName.AsInternal()[0] == '\"') {
  		// openName is surrounded by double quotes
  		char pathCopy[MAX_PATH + 1];
- 		pathCopy[0] = '\0';
--		strncpy(pathCopy, openName + 1, MAX_PATH);
-+		strlcpy(pathCopy, openName + 1, sizeof(pathCopy));
- 		pathCopy[MAX_PATH] = '\0';
+-		strncpy(pathCopy, openName.AsInternal() + 1, MAX_PATH);
+-		pathCopy[MAX_PATH] = '\0';
++		strlcpy(pathCopy, openName.AsInternal() + 1, sizeof(pathCopy));
  		if (pathCopy[strlen(pathCopy) - 1] == '\"') {
  			pathCopy[strlen(pathCopy) - 1] = '\0';
-@@ -206,9 +206,10 @@ void SciTEBase::SetFileName(const char *
- 	char *cpDirEnd = strrchr(fullPath, pathSepChar);
- 	if (IsAbsolutePath(fullPath)) {
- 		// Absolute path
--		strcpy(fileName, cpDirEnd + 1);
--		strcpy(dirName, fullPath);
--		dirName[cpDirEnd - fullPath] = '\0';
-+		strlcpy(fileName, cpDirEnd + 1, sizeof(fileName));
-+		strlcpy(dirName, fullPath, sizeof(dirName));
-+		if ((size_t)(cpDirEnd - fullPath) < sizeof(dirName))
-+			dirName[cpDirEnd - fullPath] = 0;
- 		//Platform::DebugPrintf("SetFileName: <%s> <%s>\n", fileName, dirName);
- 	} else {
- 		// Relative path. Since we ran AbsolutePath, we probably are here because fullPath is empty.
-@@ -216,20 +217,20 @@ void SciTEBase::SetFileName(const char *
- 		//Platform::DebugPrintf("Working directory: <%s>\n", dirName);
- 		if (cpDirEnd) {
- 			// directories and file name
--			strcpy(fileName, cpDirEnd + 1);
-+			strlcpy(fileName, cpDirEnd + 1, sizeof(fileName));
- 			*cpDirEnd = '\0';
--			strncat(dirName, pathSepString, sizeof(dirName));
--			strncat(dirName, fullPath, sizeof(dirName));
-+			strlcat(dirName, pathSepString, sizeof(dirName));
-+			strlcat(dirName, fullPath, sizeof(dirName));
- 		} else {
- 			// Just a file name
--			strcpy(fileName, fullPath);
-+			strlcpy(fileName, fullPath, sizeof(fileName));
  		}
- 	}
- 
- 	// Rebuild fullPath from directory and name
--	strcpy(fullPath, dirName);
--	strcat(fullPath, pathSepString);
--	strcat(fullPath, fileName);
-+	strlcpy(fullPath, dirName, sizeof(fullPath));
-+	strlcat(fullPath, pathSepString, sizeof(fullPath));
-+	strlcat(fullPath, fileName, sizeof(fullPath));
- 	//Platform::DebugPrintf("Path: <%s>\n", fullPath);
- 
- 	if (fixCase) {
-@@ -237,11 +238,11 @@ void SciTEBase::SetFileName(const char *
- 	}
- 
- 	char fileBase[MAX_PATH];
--	strcpy(fileBase, fileName);
-+	strlcpy(fileBase, fileName, sizeof(fileBase));
- 	char *extension = strrchr(fileBase, '.');
- 	if (extension) {
- 		*extension = '\0';
--		strcpy(fileExt, extension + 1);
-+		strlcpy(fileExt, extension + 1, sizeof(fileExt));
- 	} else { // No extension
- 		fileExt[0] = '\0';
- 	}
-@@ -265,13 +266,13 @@ void SciTEBase::SetFileName(const char *
- bool SciTEBase::Exists(const char *dir, const char *path, char *testPath) {
- 	char copyPath[MAX_PATH];
- 	if (IsAbsolutePath(path) || !dir) {
--		strcpy(copyPath, path);
-+		strlcpy(copyPath, path, sizeof(copyPath));
- 	} else if (dir) {
- 		if ((strlen(dir) + strlen(pathSepString) + strlen(path) + 1) > MAX_PATH)
- 			return false;
--		strcpy(copyPath, dir);
--		strcat(copyPath, pathSepString);
--		strcat(copyPath, path);
-+		strlcpy(copyPath, dir, sizeof(copyPath));
-+		strlcat(copyPath, pathSepString, sizeof(copyPath));
-+		strlcat(copyPath, path, sizeof(copyPath));
- 	}
- 	FILE *fp = fopen(copyPath, fileRead);
- 	if (!fp)
-@@ -286,9 +287,9 @@ bool BuildPath(char *path, const char *d
-                unsigned int lenPath) {
- 	*path = '\0';
- 	if ((strlen(dir) + strlen(pathSepString) + strlen(fileName)) < lenPath) {
--		strcpy(path, dir);
--		strcat(path, pathSepString);
--		strcat(path, fileName);
-+		strlcpy(path, dir, lenPath);
-+		strlcat(path, pathSepString, lenPath);
-+		strlcat(path, fileName, lenPath);
- 		return true;
- 	}
- 	return false;
-@@ -455,7 +456,7 @@ bool SciTEBase::Open(const char *file, O
- 	}
- #ifdef __vms
- 	static char fixedFileName [MAX_PATH];
--	strcpy(fixedFileName, VMSToUnixStyle(file));
-+	strlcpy(fixedFileName, VMSToUnixStyle(file), sizeof(fixedFileName));
- 	file = fixedFileName;
- #endif
- 
-@@ -527,7 +528,7 @@ bool SciTEBase::OpenSelected() {
+@@ -490,7 +489,7 @@ bool SciTEBase::OpenSelected() {
  	unsigned long lineNumber = 0;
  
  	SString selName = SelectionFilename();
@@ -150,21 +20,30 @@ $OpenBSD: patch-src_SciTEIO_cxx,v 1.1.1.1 2003/08/14 18:27:28 sturm Exp $
  	selectedFilename[MAX_PATH - 1] = '\0';
  	if (selectedFilename[0] == '\0') {
  		WarnUser(warnWrongFile);
-@@ -544,7 +545,7 @@ bool SciTEBase::OpenSelected() {
- 	        strlen(fileName) + strlen(PROPERTIES_EXTENSION) < MAX_PATH) {
- 		// We are in a properties file, we append the correct extension
- 		// to open the include
+@@ -498,7 +497,7 @@ bool SciTEBase::OpenSelected() {
+ 	}
+ 	SString fileNameForExtension = ExtensionFileName();
+ 	SString openSuffix = props.GetNewExpand("open.suffix.", fileNameForExtension.c_str());
+-	strcat(selectedFilename, openSuffix.c_str());
++	strlcat(selectedFilename, openSuffix.c_str(), sizeof(selectedFilename));
+ 
+ 	if (EqualCaseInsensitive(selectedFilename, FileNameExt().AsInternal()) || EqualCaseInsensitive(selectedFilename, filePath.AsInternal())) {
+ 		WarnUser(warnWrongFile);
+@@ -513,7 +512,7 @@ bool SciTEBase::OpenSelected() {
+ 		// we suppose we want to open an imported .properties file
+ 		// So we append the correct extension to open the included file.
+ 		// Maybe we should check if the filename is preceded by "import"...
 -		strcat(selectedFilename, PROPERTIES_EXTENSION);
 +		strlcat(selectedFilename, PROPERTIES_EXTENSION, sizeof(selectedFilename));
  	} else {
  		// Check if we have a line number (error message or grep result)
  		// A bit of duplicate work with DecodeMessage, but we don't know
-@@ -636,7 +637,7 @@ void SciTEBase::CheckReload() {
- 	if (props.GetInt("load.on.activate")) {
- 		// Make a copy of fullPath as otherwise it gets aliased in Open
- 		char fullPathToCheck[MAX_PATH];
--		strcpy(fullPathToCheck, fullPath);
-+		strlcpy(fullPathToCheck, fullPath, sizeof(fullPathToCheck));
- 		time_t newModTime = GetModTime(fullPathToCheck);
- 		//Platform::DebugPrintf("Times are %d %d\n", fileModTime, newModTime);
- 		if (newModTime > fileModTime) {
+@@ -1057,7 +1056,7 @@ public:
+ 		}
+ 		lineToShow[i] = '\0';
+ 		lineNum++;
+-		strcpy(lineToCompare, lineToShow);
++		strlcpy(lineToCompare, lineToShow, sizeof(lineToCompare));
+ 		if (!caseSensitive) {
+ 			for (int j=0; j<i; j++) {
+ 				if (lineToCompare[j] >= 'A' && lineToCompare[j] <= 'Z') {

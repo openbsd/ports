@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_ExternalLexer_h,v 1.1 2007/01/18 10:56:27 steven Exp $
+--- src/ExternalLexer.h.orig	Tue Mar 28 17:54:36 2006
++++ src/ExternalLexer.h	Tue Mar 28 17:54:52 2006
+@@ -35,7 +35,7 @@ protected:
+ public:
+ 	ExternalLexerModule(int language_, LexerFunction fnLexer_, 
+ 		const char *languageName_=0, LexerFunction fnFolder_=0) : LexerModule(language_, fnLexer_, 0, fnFolder_){
+-		strncpy(name, languageName_, sizeof(name));
++		strlcpy(name, languageName_, sizeof(name));
+ 		languageName = name;
+ 	};
+ 	virtual void Lex(unsigned int startPos, int lengthDoc, int initStyle,

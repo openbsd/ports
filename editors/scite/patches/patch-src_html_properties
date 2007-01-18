@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_html_properties,v 1.1 2007/01/18 10:56:27 steven Exp $
+--- src/html.properties.orig	Thu Jan 18 08:09:15 2007
++++ src/html.properties	Thu Jan 18 08:10:37 2007
+@@ -516,7 +516,7 @@ if PLAT_WIN
+ 	command.go.$(file.patterns.web)="file://$(FilePath)"
+ 	command.go.subsystem.$(file.patterns.web)=2
+ if PLAT_GTK
+-	command.go.$(file.patterns.web)=netscape "file://$(FilePath)"
++	command.go.$(file.patterns.web)=firefox "file://$(FilePath)"
+ 
+ command.go.$(file.patterns.php)=php -f "$(FileNameExt)"
+ command.compile.$(file.patterns.php)=php -l "$(FileNameExt)"

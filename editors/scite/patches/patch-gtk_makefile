@@ -1,87 +1,130 @@
-$OpenBSD: patch-gtk_makefile,v 1.1.1.1 2003/08/14 18:27:25 sturm Exp $
---- gtk/makefile.orig	2003-07-26 14:06:38.000000000 +0200
-+++ gtk/makefile	2003-08-14 20:12:49.000000000 +0200
-@@ -17,17 +17,17 @@ gnomeprefix:=$(shell pkg-config --variab
+$OpenBSD: patch-gtk_makefile,v 1.2 2007/01/18 10:56:27 steven Exp $
+--- gtk/makefile.orig	Mon Feb 13 08:27:08 2006
++++ gtk/makefile	Thu Jan 18 09:11:07 2007
+@@ -26,26 +26,26 @@ ifdef GTK2
+ CONFIGFLAGS=pkg-config --cflags gtk+-2.0
+ CONFIGLIB=pkg-config --libs gtk+-2.0 gthread-2.0
+ CONFIGTHREADS=
+-gnomeprefix:=$(shell pkg-config --variable=prefix gtk+-2.0 2>/dev/null)
++#gnomeprefix:=$(shell pkg-config --variable=prefix gtk+-2.0 2>/dev/null)
  else
  CONFIGFLAGS=gtk-config --cflags
  CONFIGLIB=gtk-config --libs
+ CONFIGTHREADS=glib-config --libs gthread
 -gnomeprefix:=$(shell gnome-config --prefix 2>/dev/null)
  endif
+ ifndef prefix
  ifdef gnomeprefix
    prefix=$(gnomeprefix)
-   datadir=$(gnomeprefix)/share
-   pixmapdir=$(datadir)/pixmaps
  else
 -  prefix=/usr
 +  prefix=$(PREFIX)
  endif
+ endif
+ datadir=$(prefix)/share
+ pixmapdir=$(datadir)/pixmaps
  bindir=$(prefix)/bin
  SYSCONF_PATH=$(prefix)/share/scite
 +DOC_PATH=$(prefix)/share/doc/scite
  
+-INSTALL=install -o root -g root
++INSTALL=install -o root -g bin
+ 
  PROG	= ../bin/SciTE
  
-@@ -35,15 +35,17 @@ vpath %.h ../src ../../scintilla/include
+@@ -55,16 +55,18 @@ vpath %.h ../src ../../scintilla/include
  vpath %.cxx ../src
  
  #CXXFLAGS= -g -DGTK -DSCI_LEXER -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" -Wwrite-strings
 -INCLUDEDIRS=-I ../../scintilla/include -I ../src
--CXXBASEFLAGS=-W -Wall -DGTK -DSCI_LEXER -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" $(INCLUDEDIRS)
-+INCLUDEDIRS=-I $(prefix)/include/scintilla -I ../src
-+CXXBASEFLAGS=-W -Wall -Dunix -DGTK -DSCI_LEXER -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" $(INCLUDEDIRS)
+-CXXBASEFLAGS=-W -Wall -pedantic -Os -DGTK -DSCI_LEXER -DPIXMAP_PATH=\"$(pixmapdir)\" -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" $(INCLUDEDIRS)
++INCLUDEDIRS=-I $(prefix)/include/scintilla -I ../src -I $(prefix)/include
++CXXBASEFLAGS=-W -Wall -pedantic -Dunix -DGTK -DSCI_LEXER -DPIXMAP_PATH=\"$(pixmapdir)\" -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" $(INCLUDEDIRS)
  
  ifdef DEBUG
--CXXFLAGS=-DDEBUG -g $(CXXBASEFLAGS)
-+CXXFLAGS+=-DDEBUG -g $(CXXBASEFLAGS)
+-CXXTFLAGS=-DDEBUG -g $(CXXBASEFLAGS)
++CXXTFLAGS+=-DDEBUG -g $(CXXBASEFLAGS)
  else
--CXXFLAGS=-DNDEBUG -Os $(CXXBASEFLAGS)
-+CXXFLAGS+=-DNDEBUG $(CXXBASEFLAGS)
+-CXXTFLAGS=-DNDEBUG -Os $(CXXBASEFLAGS)
++CXXTFLAGS+=-DNDEBUG $(CXXBASEFLAGS)
  endif
  
-+LIBS= -L $(prefix)/lib -lscintilla -lscintilla_lexers -lscintilla
+-ifndef NO_LUA
++LIBS= -L $(prefix)/lib -lscintilla -lscintilla_lexers
 +
- .cxx.o:
- 	$(CC) `$(CONFIGFLAGS)` $(CXXFLAGS) -c $< -o $@
++ifdef LUA
+ LUA_CORE_OBJS = lapi.o lcode.o ldebug.o ldo.o ldump.o lfunc.o lgc.o llex.o \
+ 		lmem.o lobject.o lopcodes.o lparser.o lstate.o lstring.o \
+ 		ltable.o ltests.o ltm.o lundump.o lvm.o lzio.o
+@@ -74,14 +76,14 @@ LUA_LIB_OBJS =	lauxlib.o lbaselib.o ldbl
  
-@@ -55,12 +57,9 @@ clean:
+ LUA_OBJS = LuaExtension.o IFaceTable.o $(LUA_CORE_OBJS) $(LUA_LIB_OBJS)
+ 
+-INCLUDEDIRS=-I ../../scintilla/include -I ../src -I../lua/include
++INCLUDEDIRS+=-I../lua/include
+ $(LUA_CORE_OBJS): ../lua/src/*.c
+ 	gcc $(INCLUDEDIRS) $(CXXTFLAGS) -c ../lua/src/*.c
+ $(LUA_LIB_OBJS): ../lua/src/lib/*.c
+ 	gcc $(INCLUDEDIRS) $(CXXTFLAGS) -c ../lua/src/lib/*.c
+-CXXFLAGS=$(CXXTFLAGS)
++CXXFLAGS+=$(CXXTFLAGS)
+ else
+-CXXFLAGS=$(CXXTFLAGS) -DNO_LUA
++CXXFLAGS+=$(CXXTFLAGS) -DNO_LUA
+ endif
+ 
+ ifeq ($(shell uname), Darwin)
+@@ -89,21 +91,18 @@ CXXFLAGS:=$(CXXFLAGS) -Dunix
+ endif
+ 
+ .cxx.o:
+-	$(CC) `$(CONFIGFLAGS)` $(CXXFLAGS) -c $< -o $@
++	$(CXX) `$(CONFIGFLAGS)` $(CXXFLAGS) -c $< -o $@
+ 
+ clean:
+ 	rm -f *.o $(PROG)
+ 
  deps:
- 	$(CC) -MM `$(CONFIGFLAGS)` $(CXXFLAGS) *.cxx ../src/*.cxx >deps.mak
+-	$(CC) -MM `$(CONFIGFLAGS)` $(CXXFLAGS) *.cxx ../src/*.cxx >deps.mak
++	$(CXX) -MM `$(CONFIGFLAGS)` $(CXXFLAGS) *.cxx ../src/*.cxx >deps.mak
  
 -# make should be run in ../../scintilla/gtk to compile all the lexers.
--LEXEROBJS=$(wildcard ../../scintilla/gtk/Lex*.o)
+-COMPLIB=../../scintilla/bin/scintilla.a
 -
- $(PROG): SciTEGTK.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o DirectorExtension.o \
--SciTEProps.o Utf8_16.o $(LEXEROBJS) ../../scintilla/bin/scintilla.a
--	$(CC) `$(CONFIGLIB)` `glib-config --libs gthread` -DGTK $^ -o $@
-+SciTEProps.o Utf8_16.o
-+	$(CC) $^ $(LIBS) `$(CONFIGLIB)` `glib-config --libs gthread` -o $@
+ $(PROG): SciTEGTK.o FilePath.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o \
+ MultiplexExtension.o DirectorExtension.o SciTEProps.o Utf8_16.o \
+ 	$(COMPLIB) $(LUA_OBJS)
+-	$(CC) `$(CONFIGTHREADS)` -DGTK $^ -o $@ `$(CONFIGLIB)`
++	$(CXX) $^ $(LIBS) `$(CONFIGTHREADS)` -DGTK -o $@ `$(CONFIGLIB)`
  
- # SciTE-static no longer builds. Kept here in case of later need.
- SciTE-static: SciTEGTK.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o SciTEProps.o \
-@@ -74,17 +73,18 @@ include deps.mak
+ # Automatically generate header dependencies with "make deps"
+ include deps.mak
+@@ -112,22 +111,20 @@ include deps.mak
  # This is OK - just means no SciTE in the Gnome Applications menu
  # Dead:	install -D SciTEGTK.properties $(SYSCONF_PATH)/SciTEGlobal.properties
  install:
--	install -s $(PROG) $(bindir)
--	install -d $(SYSCONF_PATH)
--	install ../src/*.properties $(SYSCONF_PATH)
--	install ../doc/*.html $(SYSCONF_PATH)
--	install ../doc/SciTEIco.png $(SYSCONF_PATH)
--	install ../doc/PrintHi.png $(SYSCONF_PATH)
-+	install -m 755 -s $(PROG) $(bindir)
-+	install -d $(SYSCONF_PATH) $(DOC_PATH)
-+	install -m 444 ../src/*.properties $(SYSCONF_PATH)
-+	install -m 444 ../doc/*.html $(DOC_PATH)
-+	install -m 444 ../doc/SciTEIco.png $(DOC_PATH)
-+	install -m 444 ../doc/PrintHi.png $(DOC_PATH)
+-	$(INSTALL) -m 755 -d $(DESTDIR)$(bindir) $(DESTDIR)$(SYSCONF_PATH)
++	$(INSTALL) -m 755 -d $(bindir) $(SYSCONF_PATH)
+ 
+-	$(INSTALL) -m 755 $(PROG) $(DESTDIR)$(bindir)
++	$(INSTALL) -m 755 $(PROG) $(bindir)
++	$(INSTALL) -m 755 -d $(SYSCONF_PATH) $(DOC_PATH) 
++	$(INSTALL) -m 444 ../src/*.properties $(SYSCONF_PATH)
++	$(INSTALL) -m 444 ../doc/*.html ../doc/SciTEIco.png ../doc/PrintHi.png $(DOC_PATH)
+ 
+-	for files in ../src/*.properties ../doc/*.html ../doc/SciTEIco.png ../doc/PrintHi.png; \
+-	do \
+-		$(INSTALL) -m 644 $$files $(DESTDIR)$(SYSCONF_PATH); \
+-	done
+-
  ifdef gnomeprefix
- ifndef GTK2
--	install SciTE.desktop $(datadir)/gnome/apps/Applications
-+	install -d $(datadir)/gnome/apps/Applications
-+	install -m 444 SciTE.desktop $(datadir)/gnome/apps/Applications
+ ifdef GTK2
+ 	$(INSTALL) -m 755 -D SciTE.desktop $(DESTDIR)$(datadir)/applications/SciTE.desktop
+ else
+ 	$(INSTALL) -m 755 -D SciTE.desktop $(DESTDIR)$(datadir)/gnome/apps/Applications/SciTE.desktop
  endif
--	install Sci48M.png $(pixmapdir)
-+	install -m 444 Sci48M.png $(pixmapdir)
+-	$(INSTALL) -m 644 -D Sci48M.png $(DESTDIR)$(pixmapdir)/Sci48M.png
++	$(INSTALL) -m 444 -D Sci48M.png $(DESTDIR)$(pixmapdir)/Sci48M.png
  endif
  
  uninstall:

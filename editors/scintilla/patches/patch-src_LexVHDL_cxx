@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_LexVHDL_cxx,v 1.1 2007/01/18 10:56:27 steven Exp $
+--- src/LexVHDL.cxx.orig	Tue Mar 28 17:36:16 2006
++++ src/LexVHDL.cxx	Tue Mar 28 17:38:32 2006
+@@ -222,7 +222,7 @@ static void FoldNoBoxVHDLDoc(
+         s[k] = '\0';
+ 
+         if(keywords.InList(s)) {
+-          strcpy(prevWord, s);
++          strlcpy(prevWord, s, sizeof(prevWord));
+           break;
+         }
+       }
+@@ -236,7 +236,7 @@ static void FoldNoBoxVHDLDoc(
+     {
+       if((ch == ';') && (strcmp(prevWord, "end") == 0))
+       {
+-        strcpy(prevWord, ";");
++        strlcpy(prevWord, ";", sizeof(prevWord));
+       }
+     }
+   }
+@@ -290,7 +290,7 @@ static void FoldNoBoxVHDLDoc(
+     {
+       if((ch == ';') && (strcmp(prevWord, "end") == 0))
+       {
+-        strcpy(prevWord, ";");
++        strlcpy(prevWord, ";", sizeof(prevWord));
+       }
+ 
+       if(!IsAWordChar(chPrev) && IsAWordStart(ch))
+@@ -379,7 +379,7 @@ static void FoldNoBoxVHDLDoc(
+             levelMinCurrentBegin = levelNext - 1;  
+           }
+           //Platform::DebugPrintf("Line[%04d] Prev[%20s] Cur[%20s] Level[%x]\n", lineCurrent+1, prevWord, s, levelCurrent);
+-          strcpy(prevWord, s);
++          strlcpy(prevWord, s, sizeof(prevWord));
+         }
+       }
+     }

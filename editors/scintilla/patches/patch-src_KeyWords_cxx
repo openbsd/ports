@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_KeyWords_cxx,v 1.1 2007/01/18 10:56:27 steven Exp $
+--- src/KeyWords.cxx.orig	Wed Sep 13 19:53:23 2006
++++ src/KeyWords.cxx	Wed Sep 13 19:54:46 2006
+@@ -73,7 +73,8 @@ int LexerModule::GetStyleBitsNeeded() co
+ 
+ const LexerModule *LexerModule::Find(int language) {
+ 	const LexerModule *lm = base;
+-	while (lm) {
++	int i;
++	for(i=0; lm && i < 79; i++) {
+ 		if (lm->language == language) {
+ 			return lm;
+ 		}
+@@ -85,7 +86,8 @@ const LexerModule *LexerModule::Find(int
+ const LexerModule *LexerModule::Find(const char *languageName) {
+ 	if (languageName) {
+ 		const LexerModule *lm = base;
+-		while (lm) {
++		int i;
++		for(i=0; lm && i < 79; i++) {
+ 			if (lm->languageName && 0 == strcmp(lm->languageName, languageName)) {
+ 				return lm;
+ 			}

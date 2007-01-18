@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_LexAU3_cxx,v 1.1 2007/01/18 10:56:27 steven Exp $
+--- src/LexAU3.cxx.orig	Tue Mar 28 17:34:16 2006
++++ src/LexAU3.cxx	Tue Mar 28 17:35:58 2006
+@@ -230,12 +230,7 @@ static void ColouriseAU3Doc(unsigned int
+ 		// save the total current word for eof processing 
+ 		if (IsAWordChar(sc.ch) || sc.ch == '}') 
+ 		{
+-			strcpy(s_save,s);
+-			int tp = strlen(s_save);
+-			if (tp < 99) {
+-				s_save[tp] = static_cast<char>(tolower(sc.ch));
+-				s_save[tp+1] = '\0';
+-			}
++			strlcpy(s_save,s, sizeof(s_save));
+ 		}
+ 		// **********************************************
+ 		//

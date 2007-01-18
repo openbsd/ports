@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_AutoComplete_cxx,v 1.1.1.1 2003/08/14 18:24:30 sturm Exp $
---- src/AutoComplete.cxx.orig	2003-08-13 17:04:03.000000000 +1000
-+++ src/AutoComplete.cxx	2003-08-13 17:28:29.000000000 +1000
-@@ -56,8 +56,7 @@ void AutoComplete::Start(Window &parent,
+$OpenBSD: patch-src_AutoComplete_cxx,v 1.2 2007/01/18 10:56:27 steven Exp $
+--- src/AutoComplete.cxx.orig	Tue Mar 28 17:31:51 2006
++++ src/AutoComplete.cxx	Tue Mar 28 17:31:51 2006
+@@ -57,8 +57,7 @@ void AutoComplete::Start(Window &parent,
  }
  
  void AutoComplete::SetStopChars(const char *stopChars_) {
@@ -11,7 +11,7 @@ $OpenBSD: patch-src_AutoComplete_cxx,v 1.1.1.1 2003/08/14 18:24:30 sturm Exp $
  }
  
  bool AutoComplete::IsStopChar(char ch) {
-@@ -65,8 +64,7 @@ bool AutoComplete::IsStopChar(char ch) {
+@@ -66,8 +65,7 @@ bool AutoComplete::IsStopChar(char ch) {
  }
  
  void AutoComplete::SetFillUpChars(const char *fillUpChars_) {
@@ -21,16 +21,3 @@ $OpenBSD: patch-src_AutoComplete_cxx,v 1.1.1.1 2003/08/14 18:24:30 sturm Exp $
  }
  
  bool AutoComplete::IsFillUpChar(char ch) {
-@@ -91,9 +89,10 @@ char AutoComplete::GetTypesep() {
- 
- void AutoComplete::SetList(const char *list) {
- 	lb->Clear();
--	char *words = new char[strlen(list) + 1];
-+	size_t words_len = strlen(list) + 1;
-+	char *words = new char[words_len];
- 	if (words) {
--		strcpy(words, list);
-+		strlcpy(words, list, words_len);
- 		char *startword = words;
- 		char *numword = NULL;
- 		int i = 0;
