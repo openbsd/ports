@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.188 2007/01/16 10:39:47 bernd Exp $
+# $OpenBSD: Makefile,v 1.189 2007/01/18 10:40:34 bernd Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -178,6 +178,7 @@
      SUBDIR += py-rtf
      SUBDIR += py-xml
      SUBDIR += rman
+     SUBDIR += ruby-hyperestraier
      SUBDIR += rxp
      SUBDIR += sablotron
      SUBDIR += scrollkeeper
