@@ -1,0 +1,11 @@
+$OpenBSD: patch-test_misc1_rb,v 1.1.1.1 2007/01/18 12:30:37 bernd Exp $
+--- test/misc1.rb.orig	Wed Dec 20 13:37:51 2006
++++ test/misc1.rb	Wed Dec 20 13:38:19 2006
+@@ -35,6 +35,7 @@ def delete_ou(agency)
+ end
+ 
+ @ldap_conn = LDAP::Conn.new($HOST, $PORT)
++@ldap_conn.set_option(LDAP::LDAP_OPT_PROTOCOL_VERSION, 3)
+ 
+ p LDAP::VERSION
+ begin

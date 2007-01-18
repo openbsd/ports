@@ -1,0 +1,14 @@
+$OpenBSD: patch-test_search2_rb,v 1.1.1.1 2007/01/18 12:30:37 bernd Exp $
+--- test/search2.rb.orig	Wed Dec 20 13:34:05 2006
++++ test/search2.rb	Wed Dec 20 13:34:35 2006
+@@ -10,7 +10,9 @@ sorter = proc{|s1,s2|
+   s1<=>s2
+ }
+ 
+-LDAP::Conn.new($HOST, $PORT).bind{|conn|
++conn = LDAP::Conn.new($HOST, $PORT)
++conn.set_option(LDAP::LDAP_OPT_PROTOCOL_VERSION, 3)
++conn.bind{|conn|
+   conn.perror("bind")
+   sub = nil
+   conn.search("dc=localhost, dc=localdomain", LDAP::LDAP_SCOPE_SUBTREE,

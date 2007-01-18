@@ -1,0 +1,12 @@
+$OpenBSD: patch-test_bind_rb,v 1.1.1.1 2007/01/18 12:30:37 bernd Exp $
+--- test/bind.rb.orig	Wed Dec 20 13:16:25 2006
++++ test/bind.rb	Wed Dec 20 13:17:27 2006
+@@ -28,6 +28,8 @@ begin
+   conn.bind
+ rescue LDAP::InvalidDataError
+   $ok = true
++rescue LDAP::ResultError
++  $ok = true
+ end
+ if( ! $ok )
+   raise(RuntimeError, "multiple bind calls")

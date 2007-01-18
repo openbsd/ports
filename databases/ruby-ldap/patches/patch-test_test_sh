@@ -1,0 +1,40 @@
+$OpenBSD: patch-test_test_sh,v 1.1.1.1 2007/01/18 12:30:37 bernd Exp $
+--- test/test.sh.orig	Sat Nov 29 13:13:21 2003
++++ test/test.sh	Wed Dec 20 14:46:44 2006
+@@ -139,13 +139,16 @@ if [ -f "$LOGFILE" ]; then
+   rm $LOGFILE
+ fi
+ 
+-echo -n "Do you want to run scripts?[y/n]"
+-read ans
++ans=y
+ case "$ans" in
+ y*|Y*)
+   RESULT=ok
+   for f in $SCRIPTS
+   do
++    if ! $(pgrep -x slapd >/dev/null 2>&1); then
++      echo "ERROR: slapd is gone, abort"
++      exit 1
++    fi
+     printf "running $f .... "
+     if runruby $f; then
+       echo "succeed"
+@@ -153,7 +156,7 @@ y*|Y*)
+       echo "fail"
+       RESULT=error
+       runruby $f
+-      rundebug $f
++#      rundebug $f
+     fi
+   done
+   ;;
+@@ -166,5 +169,7 @@ esac
+ # $LDAPSEARCH -b "o=JAIST, c=JP" -h localhost -p $SSLPORT -Z "(objectclass=*)"
+ 
+ # stop slapd
+-kill -TERM `cat $PIDFILE`
++if $(pgrep -x slapd >/dev/null 2>&1); then
++  kill -TERM `cat $PIDFILE`
++fi
+ rm -rf $DBDIR

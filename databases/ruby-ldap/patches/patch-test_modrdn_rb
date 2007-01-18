@@ -1,0 +1,11 @@
+$OpenBSD: patch-test_modrdn_rb,v 1.1.1.1 2007/01/18 12:30:37 bernd Exp $
+--- test/modrdn.rb.orig	Wed Dec 20 13:35:43 2006
++++ test/modrdn.rb	Wed Dec 20 13:35:51 2006
+@@ -6,6 +6,7 @@ require "#{$test}/conf"
+ require "./ldap"
+ 
+ conn = LDAP::Conn.new($HOST, $PORT)
++conn.set_option(LDAP::LDAP_OPT_PROTOCOL_VERSION, 3)
+ 
+ begin
+   conn.bind('cn=root, dc=localhost, dc=localdomain','seret')

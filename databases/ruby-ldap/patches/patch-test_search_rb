@@ -1,0 +1,15 @@
+$OpenBSD: patch-test_search_rb,v 1.1.1.1 2007/01/18 12:30:37 bernd Exp $
+--- test/search.rb.orig	Wed Dec 20 13:32:50 2006
++++ test/search.rb	Wed Dec 20 13:33:24 2006
+@@ -5,7 +5,10 @@ $test = File.dirname($0)
+ require "#{$test}/conf"
+ require "./ldap"
+ 
+-LDAP::Conn.new($HOST, $PORT).bind{|conn|
++conn = LDAP::Conn.new($HOST, $PORT)
++conn.set_option(LDAP::LDAP_OPT_PROTOCOL_VERSION, 3)
++conn.bind{|conn|
++
+   conn.perror("bind")
+   begin
+     conn.search("dc=localhost, dc=localdomain",

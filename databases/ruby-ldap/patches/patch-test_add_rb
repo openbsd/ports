@@ -1,0 +1,11 @@
+$OpenBSD: patch-test_add_rb,v 1.1.1.1 2007/01/18 12:30:37 bernd Exp $
+--- test/add.rb.orig	Wed Dec 20 13:18:24 2006
++++ test/add.rb	Wed Dec 20 13:29:39 2006
+@@ -6,6 +6,7 @@ require "#{$test}/conf"
+ require "./ldap"
+ 
+ conn = LDAP::Conn.new($HOST, $PORT)
++conn.set_option( LDAP::LDAP_OPT_PROTOCOL_VERSION, 3 )
+ conn.bind('cn=root, dc=localhost, dc=localdomain','secret'){
+   conn.perror("bind")
+   entry1 = [

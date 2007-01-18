@@ -1,0 +1,11 @@
+$OpenBSD: patch-test_add3_rb,v 1.1.1.1 2007/01/18 12:30:37 bernd Exp $
+--- test/add3.rb.orig	Wed Dec 20 13:31:43 2006
++++ test/add3.rb	Wed Dec 20 13:32:00 2006
+@@ -8,6 +8,7 @@ require "./ldap"
+ $KCODE = "UTF8"
+ 
+ conn = LDAP::Conn.new($HOST, $PORT)
++conn.set_option(LDAP::LDAP_OPT_PROTOCOL_VERSION, 3)
+ conn.bind('cn=root, dc=localhost, dc=localdomain','secret'){
+   conn.perror("bind")
+   entry1 = {

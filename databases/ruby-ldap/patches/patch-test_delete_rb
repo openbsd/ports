@@ -1,0 +1,11 @@
+$OpenBSD: patch-test_delete_rb,v 1.1.1.1 2007/01/18 12:30:37 bernd Exp $
+--- test/delete.rb.orig	Wed Dec 20 13:36:50 2006
++++ test/delete.rb	Wed Dec 20 13:37:00 2006
+@@ -6,6 +6,7 @@ require "#{$test}/conf"
+ require "./ldap"
+ 
+ conn = LDAP::Conn.new($HOST, $PORT)
++conn.set_option(LDAP::LDAP_OPT_PROTOCOL_VERSION, 3)
+ conn.bind('cn=root, dc=localhost, dc=localdomain','secret'){
+   conn.perror("bind")
+   conn.delete("cn=Takaaki-Tateishi, dc=localhost, dc=localdomain")

@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/18 12:30:37 bernd Exp $
+lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/ldap.so
+lib/ruby/site_ruby/${MODRUBY_REV}/ldap/
+lib/ruby/site_ruby/${MODRUBY_REV}/ldap/control.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/ldap/ldif.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/ldap/schema.rb

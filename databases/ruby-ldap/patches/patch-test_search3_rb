@@ -1,0 +1,14 @@
+$OpenBSD: patch-test_search3_rb,v 1.1.1.1 2007/01/18 12:30:37 bernd Exp $
+--- test/search3.rb.orig	Wed Dec 20 13:34:41 2006
++++ test/search3.rb	Wed Dec 20 13:34:59 2006
+@@ -8,8 +8,9 @@ require "./ldap"
+ $KCODE = "UTF8"
+ 
+ conn = LDAP::Conn.new($HOST, $PORT)
+-conn.perror("bind")
++conn.set_option(LDAP::LDAP_OPT_PROTOCOL_VERSION, 3)
+ conn.bind{
++  conn.perror("bind")
+   # search2 returns an array of hash
+   print("search2 without a block:\n")
+   conn.search2("dc=localhost, dc=localdomain", LDAP::LDAP_SCOPE_SUBTREE,
