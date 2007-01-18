@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2005/11/13 16:57:14 marcm Exp $
+# $OpenBSD: Makefile,v 1.4 2007/01/18 22:05:11 jasper Exp $
 
 COMMENT=		"high-color icon theme shell for GNOME and KDE"
 
-DISTNAME=		hicolor-icon-theme-0.5
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		hicolor-icon-theme-0.9
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.freedesktop.org/Standards/icon-theme-spec
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		http://www.freedesktop.org/software/icon-theme/releases/
+MASTER_SITES=		http://icon-theme.freedesktop.org/releases/
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,5 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE= 	gnu
 
 NO_REGRESS=		Yes
+
+PKG_ARCH=		*
 
 .include <bsd.port.mk>
