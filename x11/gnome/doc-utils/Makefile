@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/16 12:22:35 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/01/18 19:09:03 jasper Exp $
 
 COMMENT=	"collection of documentation utilities for the GNOME project"
 
-DISTNAME=	gnome-doc-utils-0.6.0
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	gnome-doc-utils-0.6.1
 CATEGORIES=	x11/gnome textproc
 
 HOMEPAGE=	http://www.gnome.org

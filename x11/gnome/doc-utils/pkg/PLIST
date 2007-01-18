@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/17 16:49:40 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/01/18 19:09:03 jasper Exp $
 bin/gnome-doc-prepare
 bin/xml2po
 lib/pkgconfig/gnome-doc-utils.pc
@@ -61,3 +61,5 @@ share/xml2po/empty.py
 share/xml2po/empty.pyc
 share/xml2po/gs.py
 share/xml2po/gs.pyc
+share/xml2po/ubuntu.py
+share/xml2po/ubuntu.pyc
