@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/18 21:47:01 steven Exp $
+bin/fdm
+@man man/man1/fdm.1
+@man man/man5/fdm.conf.5
+share/doc/fdm/
+share/doc/fdm/MANUAL
+share/doc/fdm/README
+share/examples/fdm/
+share/examples/fdm/n-marriott.conf
+share/examples/fdm/w-maier.conf
