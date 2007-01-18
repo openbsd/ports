@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.106 2007/01/16 20:00:42 jasper Exp $
+# $OpenBSD: network.conf.template,v 1.107 2007/01/18 11:21:15 steven Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -106,11 +106,14 @@ MASTER_SITE_SOURCEFORGE+=	\
 	http://optusnet.dl.sourceforge.net/sourceforge/ \
 	http://heanet.dl.sourceforge.net/sourceforge/ \
 	http://jaist.dl.sourceforge.net/sourceforge/ \
-	http://citkit.dl.sourceforge.net/sourceforge/ \
 	http://nchc.dl.sourceforge.net/sourceforge/ \
 	http://switch.dl.sourceforge.net/sourceforge/ \
 	http://kent.dl.sourceforge.net/sourceforge/ \
-	http://voxel.dl.sourceforge.net/sourceforge/
+	http://internap.dl.sourceforge.net/sourceforge/ \
+	http://mesh.dl.sourceforge.net/sourceforge/ \
+	http://ovh.dl.sourceforge.net/sourceforge/ \
+	http://surfnet.dl.sourceforge.net/sourceforge/ \
+	http://ufpr.dl.sourceforge.net/sourceforge/
 
 MASTER_SITE_SOURCEFORGE_JP+=	\
 	http://osdn.dl.sourceforge.jp/ \
