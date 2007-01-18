@@ -1,89 +1,85 @@
---- sysdeps/freebsd/procmem.c.orig	Tue Mar  1 15:03:57 2005
-+++ sysdeps/freebsd/procmem.c	Mon Apr 11 20:50:12 2005
-@@ -31,7 +31,7 @@
- #include <sys/param.h>
- #include <sys/proc.h>
+$OpenBSD: patch-sysdeps_freebsd_procmem_c,v 1.5 2007/01/18 19:31:34 jasper Exp $
+--- sysdeps/freebsd/procmem.c.orig	Wed Jan 17 09:01:28 2007
++++ sysdeps/freebsd/procmem.c	Wed Jan 17 09:05:01 2007
+@@ -34,7 +34,7 @@
  #include <sys/resource.h>
--#if defined(__NetBSD__) && (__NetBSD_Version__ >= 105020000)
-+#if defined(__NetBSD__) && (__NetBSD_Version__ >= 105020000) || defined(__OpenBSD__)
+ #if defined(__NetBSD__) && (__NetBSD_Version__ >= 105020000)
  #include <uvm/uvm_extern.h>
- #else
+-#else
++#elif !defined(__OpenBSD__)
  #include <vm/vm_object.h>
-@@ -47,7 +47,7 @@
- #include <sys/user.h>
+ #include <vm/vm_map.h>
  #endif
+@@ -50,12 +50,13 @@
  #include <sys/sysctl.h>
--#if defined(__NetBSD__) && (__NetBSD_Version__ >= 105020000)
-+#if defined(__NetBSD__) && (__NetBSD_Version__ >= 105020000) || defined(__OpenBSD__)
+ #if defined(__NetBSD__) && (__NetBSD_Version__ >= 105020000)
  #include <uvm/uvm.h>
- #else
+-#else
++#elif !defined(__OpenBSD__)
  #include <vm/vm.h>
-@@ -70,7 +70,7 @@ static const unsigned long _glibtop_sysd
+ #endif
+ 
+ #if defined(__NetBSD__) && \
+-	(__NetBSD_Version__ >= 104000000) && (__NetBSD_Version__ < 105020000)
++	(__NetBSD_Version__ >= 104000000) && (__NetBSD_Version__ < 105020000) || \
++	defined(OpenBSD)
+ /* Fixme ... */
+ #undef _KERNEL
+ #define _UVM_UVM_AMAP_I_H_ 1
+@@ -71,10 +72,8 @@ static const unsigned long _glibtop_sysd
  (1L << GLIBTOP_PROC_MEM_RSS_RLIM);
  
  static const unsigned long _glibtop_sysdeps_proc_mem_share =
 -#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000)
-+#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000) || defined(__OpenBSD__)
++#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000) || defined(OpenBSD) || defined(__FreeBSD__)
  (1L << GLIBTOP_PROC_MEM_SHARE);
- #elif defined(__FreeBSD__)
- (1L << GLIBTOP_PROC_MEM_SHARE);
-@@ -120,8 +120,9 @@ glibtop_get_proc_mem_p (glibtop *server,
+-#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
+-(1L << GLIBTOP_PROC_MEM_SHARE);
+ #else
+ 0;
+ #endif
+@@ -121,7 +120,7 @@ glibtop_get_proc_mem_p (glibtop *server,
  	struct kinfo_proc *pinfo;
  	struct vm_map_entry entry, *first;
  	struct vmspace *vms, vmspace;
 -#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000)
-+#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000) || defined(__OpenBSD__)
++#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000) || defined(OpenBSD)
  	struct vnode vnode;
-+	struct rlimit rlimit;
  #else
  	struct vm_object object;
- #endif
-@@ -161,16 +162,12 @@ glibtop_get_proc_mem_p (glibtop *server,
- #else
- 
- #define        PROC_VMSPACE   kp_proc.p_vmspace
--
--	if (kvm_read (server->machine.kd,
--		      (unsigned long) pinfo [0].PROC_VMSPACE,
--		      (char *) &plimit, sizeof (plimit)) != sizeof (plimit)) {
--		glibtop_warn_io_r (server, "kvm_read (plimit)");
--		return;
-+       if (getrlimit (RLIMIT_RSS, &rlimit) < 0) {
-+	   glibtop_warn_io_r (server, "getrlimit");
-+	   return;
- 	}
- 
--	buf->rss_rlim = (guint64)
--		(plimit.pl_rlimit [RLIMIT_RSS].rlim_cur);
-+       buf->rss_rlim = (u_int64_t) (rlimit.rlim_cur);
- 
- 	vms = &pinfo [0].kp_eproc.e_vm;
- 
-@@ -222,7 +219,7 @@ glibtop_get_proc_mem_p (glibtop *server,
+@@ -223,7 +222,7 @@ glibtop_get_proc_mem_p (glibtop *server,
   			continue;
  #endif
  #else
 -#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000)
-+#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000) || defined(__OpenBSD__)
++#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000) || defined(OpenBSD)
   		if (UVM_ET_ISSUBMAP (&entry))
  			continue;
  #else
-@@ -230,8 +227,7 @@ glibtop_get_proc_mem_p (glibtop *server,
- 			continue;
+@@ -232,7 +231,7 @@ glibtop_get_proc_mem_p (glibtop *server,
  #endif
  #endif
--
+ 
 -#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000)
-+#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000) || defined(__OpenBSD__)
++#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000) || defined(OpenBSD)
  		if (!entry.object.uvm_obj)
  			continue;
  
-@@ -258,7 +254,7 @@ glibtop_get_proc_mem_p (glibtop *server,
+@@ -259,7 +258,7 @@ glibtop_get_proc_mem_p (glibtop *server,
  #endif
  		/* If the object is of type vnode, add its size */
  
 -#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000)
-+#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000) || defined(__OpenBSD__)
++#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000) || defined(OpenBSD)
  #if defined(UVM_VNODE_VALID)
  		if (!vnode.v_uvm.u_flags & UVM_VNODE_VALID)
  			continue;
+@@ -275,7 +274,7 @@ glibtop_get_proc_mem_p (glibtop *server,
+ #else
+ 
+ 		/* Reference count must be at least two. */
+-		if (vnode.v_uvm.u_obj.uo_refs <= 1)
++		if (vnode.v_usecount <= 1)
+ 			continue;
+ 
+ 		buf->share += pagetok (vnode.v_uvm.u_obj.uo_npages) << LOG1024;

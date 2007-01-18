@@ -1,0 +1,16 @@
+$OpenBSD: patch-doc_ligtop2_texi,v 1.1 2007/01/18 19:31:34 jasper Exp $
+--- doc/libgtop2.texi	2006-09-22 15:39:45.000000000 +0200
++++ doc/libgtop2.texi	2006-09-22 15:40:06.000000000 +0200
+@@ -7,6 +7,12 @@
+ 
+ @include version.texi
+ 
++@ifnottex
++@dircategory Programming & development tools
++@direntry
++* libgtop2 (libgtop2).		libgtop2 programming manual
++@end direntry
++@end ifnottex
+ @ifinfo
+ This is the LibGTop Reference Manual version @value{VERSION}
+ (last modified @value{UPDATED}).

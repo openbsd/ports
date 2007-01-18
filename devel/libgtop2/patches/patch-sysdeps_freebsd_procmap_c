@@ -1,6 +1,7 @@
---- sysdeps/freebsd/procmap.c.orig	Wed Feb 23 00:20:45 2005
-+++ sysdeps/freebsd/procmap.c	Mon Apr 11 19:56:33 2005
-@@ -35,7 +35,7 @@
+$OpenBSD: patch-sysdeps_freebsd_procmap_c,v 1.5 2007/01/18 19:31:34 jasper Exp $
+--- sysdeps/freebsd/procmap.c	Mon Dec 12 11:09:39 2005
++++ sysdeps/freebsd/procmap.c	Fri Sep 22 16:53:54 2006
+@@ -36,7 +36,7 @@
  #include <vm/vm_object.h>
  #include <vm/vm_prot.h>
  #include <vm/vm_map.h>
@@ -9,31 +10,39 @@
  #include <uvm/uvm_extern.h>
  #else
  #include <vm/vm_object.h>
-@@ -64,10 +64,12 @@
+@@ -64,11 +64,11 @@
+ #include <sys/user.h>
  #endif
  #include <sys/sysctl.h>
- #if !defined(__NetBSD__) || (__NetBSD_Version__ < 105020000)
--#include <vm/vm.h>
-+#include <uvm/uvm.h>
-+#else
+-#if !defined(__NetBSD__) || (__NetBSD_Version__ < 105020000)
++#if (!defined(__NetBSD__) || (__NetBSD_Version__ < 105020000)) && ! defined(__OpenBSD__)
+ #include <vm/vm.h>
  #endif
  
 -#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000)
-+#if defined(__NetBSD__) && \
-+    (__NetBSD_Version__ >= 104000000) && (__NetBSD_Version__ < 105020000)
++#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000) || defined(__OpenBSD__)
  /* Fixme ... */
  #undef _KERNEL
  #define _UVM_UVM_AMAP_I_H_ 1
-@@ -101,7 +103,7 @@ glibtop_get_proc_map_p (glibtop *server,
+@@ -102,7 +102,7 @@
  	struct kinfo_proc *pinfo;
  	struct vm_map_entry entry, *first;
  	struct vmspace vmspace;
 -#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000)
-+#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000) || defined(__OpenBSD__)
++#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000) || defined(OpenBSD)
  	struct vnode vnode;
  	struct inode inode;
  #else
-@@ -187,7 +189,7 @@ glibtop_get_proc_map_p (glibtop *server,
+@@ -167,7 +167,7 @@
+ 
+ 	/* I tested this a few times with `mmap'; as soon as you write
+ 	 * to the mmap'ed area, the object type changes from OBJT_VNODE
+-	 * to OBJT_DEFAULT so if seems this really works. */
++	 * to OBJT_DEFAULT so it seems this really works. */
+ 
+ 	do {
+ 		if (update) {
+@@ -188,7 +188,7 @@
   			continue;
  #endif
  #else
@@ -42,21 +51,21 @@
   		if (UVM_ET_ISSUBMAP (&entry))
  			continue;
  #else
-@@ -213,7 +215,7 @@ glibtop_get_proc_map_p (glibtop *server,
+@@ -214,7 +214,7 @@
  
  		i++;
  
 -#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000)
-+#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000) || defined(__OpenBSD__)
++#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000) || defined(OpenBSD)
  		if (!entry.object.uvm_obj)
  			continue;
  
-@@ -237,7 +239,7 @@ glibtop_get_proc_map_p (glibtop *server,
+@@ -238,7 +238,7 @@
  			glibtop_error_io_r (server, "kvm_read (object)");
  #endif
  
 -#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000)
-+#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000) || defined(__OpenBSD__)
++#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000) || defined(OpenBSD)
  #if defined(UVM_VNODE_VALID)
  		if (!vnode.v_uvm.u_flags & UVM_VNODE_VALID)
  			continue;

@@ -1,0 +1,30 @@
+$OpenBSD: patch-sysdeps_freebsd_sysinfo_c,v 1.1 2007/01/18 19:31:34 jasper Exp $
+--- sysdeps/freebsd/sysinfo.c	Fri Sep 22 17:51:40 2006
++++ sysdeps/freebsd/sysinfo.c	Fri Sep 22 20:30:24 2006
+@@ -45,14 +45,22 @@
+ 
+ 	glibtop_init_s (&server, GLIBTOP_SYSDEPS_CPU, 0);
+ 
++	int mib[2];
++	mib[0] = CTL_HW;
++
+ 	len = sizeof (ncpus);
+-	sysctlbyname ("hw.ncpu", &ncpus, &len, NULL, 0);
++	mib[1] = HW_NCPU;
++	sysctl(mib, 2, &ncpus, &len, NULL, 0);
++
+ 	len = 0;
+-	sysctlbyname ("hw.model", NULL, &len, NULL, 0);
++	mib[1] = HW_MODEL;
++	sysctl(mib, 2,   NULL, &len, NULL, 0);
+ 	model = g_malloc (len);
+-	sysctlbyname ("hw.model", model, &len, NULL, 0);
++	sysctl(mib, 2, &model, &len, NULL, 0);
++
+ 	len = sizeof (mhz);
+-	sysctlbyname ("hw.clockrate", &mhz, &len, NULL, 0);
++	mib[1] = HW_CPUSPEED;
++	sysctl(mib, 2, &mhz, &len, NULL, 0);
+ 
+ 	for (sysinfo.ncpu = 0;
+ 	     sysinfo.ncpu < GLIBTOP_NCPU && sysinfo.ncpu < ncpus;

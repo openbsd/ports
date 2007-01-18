@@ -1,11 +1,11 @@
-$OpenBSD: patch-sysdeps_freebsd_fsusage_c,v 1.1 2005/05/25 23:28:16 marcm Exp $
---- sysdeps/freebsd/fsusage.c.orig	Mon Apr 11 21:06:33 2005
-+++ sysdeps/freebsd/fsusage.c	Mon Apr 11 21:06:46 2005
-@@ -34,7 +34,6 @@ _glibtop_freebsd_get_fsusage_read_write(
+$OpenBSD: patch-sysdeps_freebsd_fsusage_c,v 1.2 2007/01/18 19:31:34 jasper Exp $
+--- sysdeps/freebsd/fsusage.c.orig	Wed Jan 17 08:55:52 2007
++++ sysdeps/freebsd/fsusage.c	Wed Jan 17 08:56:21 2007
+@@ -47,7 +47,6 @@ _glibtop_freebsd_get_fsusage_read_write(
  		return;
  	}
- 
+ #if !defined(__FreeBSD_kernel__)
 -	buf->read = sfs.f_syncreads + sfs.f_asyncreads;
  	buf->write = sfs.f_syncwrites + sfs.f_asyncwrites;
- 
+ #endif
  	buf->flags |= (1 << GLIBTOP_FSUSAGE_READ) | (1 << GLIBTOP_FSUSAGE_WRITE);

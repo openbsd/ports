@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_open_c,v 1.2 2005/05/25 23:28:16 marcm Exp $
---- lib/open.c.orig	Tue Feb 15 04:48:33 2005
-+++ lib/open.c	Mon Apr 11 19:56:33 2005
-@@ -111,7 +111,7 @@ glibtop_open_l (glibtop *server, const c
+$OpenBSD: patch-lib_open_c,v 1.3 2007/01/18 19:31:34 jasper Exp $
+--- lib/open.c	2006-09-22 15:39:45.000000000 +0200
++++ lib/open.c	2006-09-22 15:56:00.000000000 +0200
+@@ -112,7 +112,7 @@
  			close (server->input [0]); close (server->output [1]);
  			dup2 (server->input [1], 1);
  			dup2 (server->output [0], 0);

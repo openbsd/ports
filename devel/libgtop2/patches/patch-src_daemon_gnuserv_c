@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_daemon_gnuserv_c,v 1.1 2007/01/18 19:31:34 jasper Exp $
+--- src/daemon/gnuserv.c	2006-09-22 15:39:45.000000000 +0200
++++ src/daemon/gnuserv.c	2006-09-22 16:08:41.000000000 +0200
+@@ -207,6 +207,12 @@
+ 	    return FALSE;
+ 	}
+ 
++	if (auth_data_len < 1 || auth_data_len > sizeof(buf)) {
++		syslog_message(LOG_WARNING,
++			       "Invalid data length supplied by client");
++		return FALSE;
++	}
++
+ 	if (timed_read (fd, buf, auth_data_len, AUTH_TIMEOUT, 0) != auth_data_len)
+ 	    return FALSE;
+ 
