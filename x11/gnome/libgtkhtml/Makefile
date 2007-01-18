@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2006/12/16 12:22:35 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2007/01/18 19:33:28 jasper Exp $
 
 COMMENT=		"lightweight HTML rendering/printing/editing engine"
 
-DISTNAME=		libgtkhtml-2.6.3
-PKGNAME=		${DISTNAME}p2
-SHARED_LIBS=		gtkhtml-2	0.0
+DISTNAME=		libgtkhtml-2.11.0
+SHARED_LIBS=		gtkhtml-2	1.0
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
@@ -20,7 +19,7 @@ WANTLIB=	X11 Xext Xrender art_lgpl_2 atk-1.0 fontconfig \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		xml2 z cairo glitz png
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgtkhtml/2.6/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgtkhtml/2.11/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
