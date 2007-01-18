@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2006/12/16 12:22:33 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2007/01/18 22:15:55 jasper Exp $
 
 COMMENT=		"a SOAP implementation in C"
 
-DISTNAME=		libsoup-2.2.5
-PACKAGENAME=		${DISTNAME}p0
-SHARED_LIBS=		soup-2.2 8.0
+DISTNAME=		libsoup-2.2.99
+SHARED_LIBS=		soup-2.2	13.0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/
@@ -16,13 +15,15 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		iconv intl m z
+WANTLIB=		m z
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libsoup/2.2/}
 EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		glib-2.0,gobject-2.0,gthread-2.0::devel/glib2 \
 			xml2.>=7::textproc/libxml
+
+MODULES=		devel/gettext
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

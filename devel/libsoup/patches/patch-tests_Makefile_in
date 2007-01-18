@@ -1,9 +1,9 @@
-$OpenBSD: patch-tests_Makefile_in,v 1.4 2005/11/13 06:44:55 marcm Exp $
---- tests/Makefile.in.orig	Mon Aug  1 07:55:58 2005
-+++ tests/Makefile.in	Fri Aug 19 14:29:50 2005
-@@ -160,7 +160,7 @@ LIBGNUTLS_CONFIG = @LIBGNUTLS_CONFIG@
+$OpenBSD: patch-tests_Makefile_in,v 1.5 2007/01/18 22:15:55 jasper Exp $
+--- tests/Makefile.in.orig	Mon Jan  8 22:15:06 2007
++++ tests/Makefile.in	Wed Jan 17 14:22:57 2007
+@@ -173,7 +173,7 @@ LDFLAGS = @LDFLAGS@
+ LIBGNUTLS_CFLAGS = @LIBGNUTLS_CFLAGS@
  LIBGNUTLS_LIBS = @LIBGNUTLS_LIBS@
- LIBGNUTLS_LIBS_STATIC = @LIBGNUTLS_LIBS_STATIC@
  LIBOBJS = @LIBOBJS@
 -LIBS = $(top_builddir)/libsoup/libsoup-$(SOUP_API_VERSION).la
 +LIBS = $(top_builddir)/libsoup/libsoup-$(SOUP_API_VERSION).la $(GLIB_LIBS)

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/11/13 06:44:55 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.8 2007/01/18 22:15:55 jasper Exp $
 %%SHARED%%
 include/libsoup-${API_VERSION}/
 include/libsoup-${API_VERSION}/libsoup/
@@ -45,17 +45,28 @@ share/gtk-doc/html/libsoup/SoupSession.html
 share/gtk-doc/html/libsoup/SoupSessionAsync.html
 share/gtk-doc/html/libsoup/SoupSessionSync.html
 share/gtk-doc/html/libsoup/SoupSoapMessage.html
+share/gtk-doc/html/libsoup/SoupSoapResponse.html
 share/gtk-doc/html/libsoup/SoupSocket.html
+share/gtk-doc/html/libsoup/SoupXmlrpcMessage.html
+share/gtk-doc/html/libsoup/SoupXmlrpcResponse.html
 share/gtk-doc/html/libsoup/ch01.html
+share/gtk-doc/html/libsoup/ch02.html
+share/gtk-doc/html/libsoup/ch03.html
 share/gtk-doc/html/libsoup/home.png
 share/gtk-doc/html/libsoup/index.html
 share/gtk-doc/html/libsoup/index.sgml
+share/gtk-doc/html/libsoup/ix01.html
 share/gtk-doc/html/libsoup/left.png
+share/gtk-doc/html/libsoup/libsoup-Soup-Miscellaneous-Utilities.html
+share/gtk-doc/html/libsoup/libsoup-SoupMessageFilter.html
+share/gtk-doc/html/libsoup/libsoup-SoupUri.html
+share/gtk-doc/html/libsoup/libsoup-client-howto.html
+share/gtk-doc/html/libsoup/libsoup-server-howto.html
 share/gtk-doc/html/libsoup/libsoup-soup-dns.html
 share/gtk-doc/html/libsoup/libsoup-soup-ssl.html
 share/gtk-doc/html/libsoup/libsoup-soup-status.html
-share/gtk-doc/html/libsoup/libsoup-soup-uri.html
 share/gtk-doc/html/libsoup/libsoup.devhelp
+share/gtk-doc/html/libsoup/libsoup.devhelp2
 share/gtk-doc/html/libsoup/right.png
 share/gtk-doc/html/libsoup/style.css
 share/gtk-doc/html/libsoup/up.png

@@ -1,0 +1,21 @@
+$OpenBSD: patch-tests_header-parsing_c,v 1.1 2007/01/18 22:15:55 jasper Exp $
+--- tests/header-parsing.c.orig	Thu Jan 18 21:59:17 2007
++++ tests/header-parsing.c	Thu Jan 18 21:59:41 2007
+@@ -450,7 +450,7 @@ free_headers (gpointer value)
+ static int
+ do_request_tests (void)
+ {
+-	int i, len, h, errors;
++	int i, len, h, errors = 0;
+ 	char *method, *path;
+ 	GSList *values;
+ 	SoupHttpVersion version;
+@@ -530,7 +530,7 @@ do_request_tests (void)
+ static int
+ do_response_tests (void)
+ {
+-	int i, len, h, errors;
++	int i, len, h, errors = 0;
+ 	guint status_code;
+ 	char *reason_phrase;
+ 	GSList *values;
