@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.57 2007/01/01 12:35:20 kili Exp $
+#	$OpenBSD: Makefile,v 1.58 2007/01/19 07:06:49 steven Exp $
 
     SUBDIR += a2ps,a4
     SUBDIR += a2ps,letter
@@ -38,6 +38,7 @@
     SUBDIR += poppler
     SUBDIR += ppower4
     SUBDIR += prosper
+    SUBDIR += ps2eps
     SUBDIR += pscal
     SUBDIR += psdim
     SUBDIR += psutils
