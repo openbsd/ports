@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/14 20:49:05 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2007/01/19 05:18:34 steven Exp $
 
 COMMENT=	"object interface for AF_INET and AF_INET6 domain sockets"
 
 MODULES=	cpan
 DISTNAME=	INET6-2.01
+PKGNAME=	p5-IO-${DISTNAME}p0
 CATEGORIES=	net devel
 
 MAINTAINER=	Damien Miller <djm@openbsd.org>
 
-# "the same terms as Perl itself"
+# Perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
