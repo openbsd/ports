@@ -1,0 +1,29 @@
+$OpenBSD: patch-config_mk,v 1.1.1.1 2007/01/19 05:24:08 steven Exp $
+--- config.mk.orig	Sat Jan 13 08:12:11 2007
++++ config.mk	Sat Jan 13 08:16:20 2007
+@@ -4,18 +4,18 @@ VERSION = 0.4
+ # Customize below to fit your system
+ 
+ # paths
+-PREFIX = /usr/local
+-MANPREFIX = ${PREFIX}/share/man
++#PREFIX = /usr/local
++MANPREFIX = ${PREFIX}/man
+ 
+-X11INC = /usr/X11R6/include
+-X11LIB = /usr/X11R6/lib
++X11INC = ${X11BASE}/include
++X11LIB = ${X11BASE}/lib
+ 
+ # includes and libs
+-INCS = -I. -I/usr/include -I${X11INC}
+-LIBS = -L/usr/lib -lc -lcrypt -L${X11LIB} -lX11
++INCS = -I${X11INC}
++LIBS = -L${X11LIB} -lX11
+ 
+ # flags
+-CFLAGS = -Os ${INCS} -DVERSION=\"${VERSION}\" -DHAVE_SHADOW_H
++CFLAGS += ${INCS} -DVERSION=\"${VERSION}\"
+ LDFLAGS = ${LIBS}
+ #CFLAGS = -g -Wall -O2 ${INCS} -DVERSION=\"${VERSION}\" -DHAVE_SHADOW_H
+ #LDFLAGS = -g ${LIBS}
