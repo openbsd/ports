@@ -1,0 +1,2 @@
+This library wraps the CUPS API in a GLib fashion, so CUPS code can be
+cleanly integrated with GLib code.
