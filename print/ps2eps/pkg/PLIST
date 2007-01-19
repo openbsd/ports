@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/19 07:05:54 steven Exp $
+bin/bbox
+bin/ps2eps
+@man man/man1/bbox.1
+@man man/man1/ps2eps.1
