@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.262 2007/01/19 05:25:40 steven Exp $
+# $OpenBSD: Makefile,v 1.263 2007/01/19 21:39:30 steven Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -33,6 +33,7 @@
      SUBDIR += dbus-glib
      SUBDIR += dclock
      SUBDIR += devilspie
+     SUBDIR += dmenu
      SUBDIR += e16keyedit
      SUBDIR += emiclock
      SUBDIR += enlightenment
