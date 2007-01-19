@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.261 2007/01/17 13:41:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.262 2007/01/19 05:25:40 steven Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -162,6 +162,7 @@
      SUBDIR += sawfish
      SUBDIR += skippy
      SUBDIR += sliderule
+     SUBDIR += slock
      SUBDIR += swisswatch
      SUBDIR += tango-icon-theme
      SUBDIR += terminus-font
