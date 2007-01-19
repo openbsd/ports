@@ -1,0 +1,2 @@
+Dynamic menu for X11. Displays items read from stdin and returns the
+selected item on stdout.

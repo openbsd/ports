@@ -1,0 +1,37 @@
+--- config.mk.orig	Tue Dec 19 11:49:03 2006
++++ config.mk	Wed Dec 27 21:09:16 2006
+@@ -4,19 +4,19 @@
+ # Customize below to fit your system
+ 
+ # paths
+-PREFIX = /usr/local
+-MANPREFIX = ${PREFIX}/share/man
++#PREFIX = /usr/local
++MANPREFIX = ${PREFIX}/man
+ 
+-X11INC = /usr/X11R6/include
+-X11LIB = /usr/X11R6/lib
++X11INC = ${X11BASE}/include
++X11LIB = ${X11BASE}/lib
+ 
+ # includes and libs
+-INCS = -I. -I/usr/include -I${X11INC}
+-LIBS = -L/usr/lib -lc -L${X11LIB} -lX11
++INCS = -I${X11INC}
++LIBS = -L${X11LIB} -lX11
+ 
+ # flags
+-CFLAGS = -Os ${INCS} -DVERSION=\"${VERSION}\"
+-LDFLAGS = ${LIBS}
++CFLAGS += ${INCS} -DVERSION=\"${VERSION}\"
++LDFLAGS += ${LIBS}
+ #CFLAGS = -g -Wall -O2 ${INCS} -DVERSION=\"${VERSION}\"
+ #LDFLAGS = -g ${LIBS}
+ 
+@@ -26,5 +26,5 @@
+ #CFLAGS += -xtarget=ultra
+ 
+ # compiler and linker
+-CC = cc
++# CC = cc
+ LD = ${CC}
