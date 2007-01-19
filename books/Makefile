@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2005/01/06 18:04:48 ian Exp $
+# $OpenBSD: Makefile,v 1.10 2007/01/19 13:13:04 ian Exp $
 
+     SUBDIR += AsteriskTFOT
      SUBDIR += JLS
      SUBDIR += autobook
      SUBDIR += cvs-guide
