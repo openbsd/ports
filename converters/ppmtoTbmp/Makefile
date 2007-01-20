@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2006/06/11 18:28:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2007/01/20 09:31:53 sturm Exp $
 
 COMMENT=	"PPM to Pilot bitmap converter"
 
 DISTNAME=	ppmtoTbmp-1.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	converters graphics
 HOMEPAGE=	http://www.isaac.cs.berkeley.edu/pilot/
 
