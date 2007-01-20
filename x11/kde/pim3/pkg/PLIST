@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2006/10/12 23:12:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.24 2007/01/20 14:15:53 ajacoutot Exp $
 @conflict kdelibs-<3.4
 @conflict kdebase-<3.4
 @conflict kpilot-*
@@ -313,6 +313,8 @@ ${KDE}/conduit_doc.la
 ${KDE}/conduit_doc.so
 ${KDE}/conduit_knotes.la
 ${KDE}/conduit_knotes.so
+${KDE}/conduit_mal.la
+${KDE}/conduit_mal.so
 ${KDE}/conduit_memofile.la
 ${KDE}/conduit_memofile.so
 ${KDE}/conduit_notepad.la
@@ -1723,6 +1725,7 @@ share/config.kcfg/korganizer.kcfg
 share/config.kcfg/kpalmdoc.kcfg
 share/config.kcfg/kpilot.kcfg
 share/config.kcfg/kpilotlib.kcfg
+share/config.kcfg/malconduit.kcfg
 share/config.kcfg/memofileconduit.kcfg
 share/config.kcfg/mk4config.kcfg
 share/config.kcfg/pimemoticons.kcfg
@@ -2362,6 +2365,7 @@ share/services/kresources/konnector/qtopia.desktop
 share/services/kresources/konnector/remotekonnector.desktop
 share/services/kresources/konnector_manager.desktop
 share/services/ldifvcardthumbnail.desktop
+share/services/mal_conduit.desktop
 share/services/mbox.protocol
 share/services/memofile-conduit.desktop
 share/services/notepad-conduit.desktop

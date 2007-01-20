@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure_in,v 1.1 2007/01/20 14:15:53 ajacoutot Exp $
+--- configure.in.orig	Tue Jan  2 21:57:41 2007
++++ configure.in	Tue Jan  2 22:02:46 2007
+@@ -671,7 +671,8 @@ if test "$HAVE_PISOCK" = "1" ; then
+ 			],
+ 			[-lsocket]
+ 			)
+-		]
++		],
++		-pthread
+ 		)
+ fi
+ fi

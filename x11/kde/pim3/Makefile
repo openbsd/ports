@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2006/12/04 20:53:05 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2007/01/20 14:15:52 ajacoutot Exp $
 
 COMMENT= 		"KDE personal information applications"
 COMMENT-kpilot=		"KDE interface to sync with Palm Pilot"
 CATEGORIES=		x11 x11/kde productivity
 VERSION=		3.5.5
 DISTNAME=		kdepim-${VERSION}
-PKGNAME=		${DISTNAME}
+PKGNAME=		${DISTNAME}p0
 MODKDE_VERSION=		3.5.3
 SHARED_LIBS +=	index                1.0      # .0.0
 SHARED_LIBS +=	kgantt               1.0      # .0.2
@@ -64,16 +64,17 @@ LIB_DEPENDS+= 		kdecore.>=6,artskde,kmedia2_idl,knewstuff,DCOP,kabc,kabc_file,ki
 WANTLIB=	Xss audiofile stdc++ ossaudio X11 jpeg util m \
 		vorbisfile gmodule-2.0 gthread-2.0 \
 		pcreposix intl vorbisenc qui SM pthread \
-		c artsflow ogg ncurses mcop png iconv Xext \
+		c artsflow ogg mcop png iconv Xext \
 		artsflow_idl art_lgpl_2 mad qtmcop glib-2.0 \
-		glib-2.0 ICE readline soundserver_idl Xrender \
+		glib-2.0 ICE soundserver_idl Xrender \
 		gpg-error vorbis pcre esd z sasl2 idn
 
 FLAVORS=	debug
 LIB_DEPENDS+=	pisock::comms/pilot-link
 RUN_DEPENDS+=	::x11/kde/base3
 LIB_DEPENDS+=	gpgme:gpgme->=0.4.5:security/gpgme \
-		sasl2::security/cyrus-sasl2
+		sasl2::security/cyrus-sasl2 \
+		mal.>=1::comms/libmal
 
 #MULTI_PACKAGES=-kpilot
 FULLPKGNAME-kpilot = kpilot-${VERSION}p0
