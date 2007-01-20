@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/01/02 18:39:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2007/01/20 22:50:00 ajacoutot Exp $
 
 COMMENT=	"MAL convenience library"
 
-DISTNAME=	libmal-0.43
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	libmal-0.44
 SHARED_LIBS +=	mal 1.0				# .1.0
 CATEGORIES=	comms palm
 
