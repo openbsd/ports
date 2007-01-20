@@ -1,0 +1,5 @@
+Tux Paint Config is a graphical configuration tool for Tux Paint.
+It provides a point-and-click interface that allows parents and teachers
+to alter Tux Paint's behavior (disable sound effects, run in full-screen
+mode, etc) without needing to manipulate a text-based configuration
+file.

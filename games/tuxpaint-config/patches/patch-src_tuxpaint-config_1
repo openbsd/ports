@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_tuxpaint-config_1,v 1.1.1.1 2007/01/20 14:18:10 ajacoutot Exp $
+--- src/tuxpaint-config.1.orig	Sun Sep 10 01:17:52 2006
++++ src/tuxpaint-config.1	Fri Jan 19 20:30:29 2007
+@@ -87,7 +87,7 @@ to determine langauge to use, if \fIsetl
+ 
+ .SH FILES
+ .TP 8
+-.B /etc/tuxpaint/tuxpaint.conf
++.B !!SYSCONFDIR!!/tuxpaint/tuxpaint.conf
+ System-wide configuration file.
+ .RS
+ .PP
+@@ -118,5 +118,5 @@ Bill Kendrick.  <bill@newbreedsoftware.c
+ .SH "SEE ALSO"
+ .BR tuxpaint (1)
+ .PP
+-And documentation within /usr/[local/]share/doc/tuxpaint-config/.
++And documentation within !!LOCALBASE!!/share/doc/tuxpaint-config/.
+ 
