@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2006/12/04 03:52:08 jolan Exp $
+# $OpenBSD: Makefile,v 1.49 2007/01/21 14:47:58 ajacoutot Exp $
 # Uses pthreads
 
 COMMENT=	"cross-platform multimedia library"
@@ -19,8 +19,8 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		m usbhid
 
-MASTER_SITES=	${HOMEPAGE}release/ \
-		http://www.devolution.com/~slouken/SDL/release/
+MASTER_SITES=	ftp://ftp.fr.freebsd.org/pub/FreeBSD/distfiles/ \
+		${HOMEPAGE}release/
 MASTER_SITES0=	http://dev.beastie.hu/ \
 		http://www.beastie.hu/
 

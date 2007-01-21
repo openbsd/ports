@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2007/01/15 17:53:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2007/01/21 14:47:58 ajacoutot Exp $
 
 COMMENT=	"SDL TrueType fonts library"
 
@@ -7,7 +7,8 @@ DISTNAME=	SDL_ttf-${V}
 PKGNAME=	sdl-ttf-${V}p1
 SHARED_LIBS=	SDL_ttf 7.0
 CATEGORIES=	devel graphics
-MASTER_SITES=	http://www.libsdl.org/projects/SDL_ttf/release/
+MASTER_SITES=	ftp://ftp.fr.freebsd.org/pub/FreeBSD/distfiles/ \
+		http://www.libsdl.org/projects/SDL_ttf/release/
 
 HOMEPAGE=	http://www.libsdl.org/projects/SDL_ttf/
 

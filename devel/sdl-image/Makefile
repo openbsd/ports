@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.22 2006/10/19 00:35:03 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.23 2007/01/21 14:47:58 ajacoutot Exp $
 
 COMMENT=	"SDL image library"
 DISTNAME=	SDL_image-1.2.4
 PKGNAME=	${DISTNAME:L:S/_/-/}p1
 SHARED_LIBS=	SDL_image 2.0
 CATEGORIES=	devel graphics
-MASTER_SITES=	http://www.libsdl.org/projects/SDL_image/release/
+MASTER_SITES=	ftp://ftp.fr.freebsd.org/pub/FreeBSD/distfiles/ \
+		http://www.libsdl.org/projects/SDL_image/release/
 
 HOMEPAGE=	http://www.libsdl.org/projects/SDL_image/
 
