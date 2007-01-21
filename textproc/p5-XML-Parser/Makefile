@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2006/08/03 23:55:11 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/01/21 21:46:21 simon Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"perl module for parsing XML documents"
 
+MODULES=	cpan
 DISTNAME=	XML-Parser-2.34
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	textproc perl5
-
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
+CATEGORIES=	textproc
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
@@ -20,7 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	expat.>=2::textproc/expat
 
-CONFIGURE_STYLE= perl
 CONFIGURE_ARGS=	EXPATLIBPATH=${LOCALBASE}/lib EXPATINCPATH=${LOCALBASE}/include
 
 .include <bsd.port.mk>

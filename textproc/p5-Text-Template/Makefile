@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2004/12/08 18:00:37 msf Exp $
+# $OpenBSD: Makefile,v 1.8 2007/01/21 21:46:21 simon Exp $
 
 COMMENT=	"expand template text with embedded perl"
 
+MODULES=	cpan
 DISTNAME=	Text-Template-1.44
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	textproc perl5
-
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Text/}
+CATEGORIES=	textproc
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
@@ -15,9 +13,5 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-CONFIGURE_STYLE= perl
-
-PKG_ARCH= *
 
 .include <bsd.port.mk>

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/04/18 16:03:21 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/01/21 21:46:21 simon Exp $
 
 COMMENT=		"perl, XHTML format for Text::Diff::Unified"
 
-PKG_ARCH=		*
+MODULES=		cpan
 DISTNAME=		Text-Diff-HTML-0.04
-PKGNAME=		p5-${DISTNAME}
-CATEGORIES=		textproc perl5 www
+CATEGORIES=		textproc www
 
 # Artistic
 PERMIT_PACKAGE_CDROM=   Yes
@@ -13,17 +12,13 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Text/}
+CONFIGURE_STYLE=	modbuild
 
-CONFIGURE_STYLE=	perl modbuild
-
-DEP=			::www/p5-HTML-Parser \
+RUN_DEPENDS=		::www/p5-HTML-Parser \
 			::textproc/p5-Text-Diff
 
-BUILD_DEPENDS=		$(DEP)
-RUN_DEPENDS=		$(DEP)
+BUILD_DEPENDS=		${RUN_DEPENDS}
 
-REGRESS_DEPENDS=	::devel/p5-Test-Pod \
-			$(DEP)
+REGRESS_DEPENDS=	::devel/p5-Test-Pod
 
 .include <bsd.port.mk>	

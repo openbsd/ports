@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2006/11/07 18:16:02 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/01/21 21:46:22 simon Exp $
 
 COMMENT=	"perl interface to the SAX2 XML Parser"
 
-VERSION=	0.14
-DISTNAME=	XML-SAX-${VERSION}
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	textproc perl5
-
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
+MODULES=	cpan
+DISTNAME=	XML-SAX-0.14
+PKGNAME=	p5-${DISTNAME}p0
+CATEGORIES=	textproc
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,9 +14,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	:p5-XML-NamespaceSupport->=0.03:textproc/p5-XML-NamespaceSupport
-BUILD_DEPENDS=	${RUN_DEPENDS}
-
-CONFIGURE_STYLE= perl
 
 # Install parser template
 post-install:

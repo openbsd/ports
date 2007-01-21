@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2006/08/04 04:31:52 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/01/21 21:46:21 simon Exp $
 
 COMMENT=	"syntax highlight for HTML"
 
+MODULES=	cpan
 DISTNAME=	Syntax-Highlight-HTML-0.04
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	textproc perl5 www
-PKG_ARCH=	*
+CATEGORIES=	textproc www
 
 # Perl licence
 PERMIT_PACKAGE_CDROM=   Yes
@@ -13,13 +12,10 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Syntax/}
+CONFIGURE_STYLE= modbuild
+RUN_DEPENDS= ::www/p5-HTML-Parser
 
-CONFIGURE_STYLE= perl modbuild
-RUN_DEPENDS=	::www/p5-HTML-Parser
-
-REGRESS_DEPENDS=	::www/p5-HTML-Parser
-
+MAKE_ENV+=	TEST_POD=Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-Syntax-Highlight-HTML

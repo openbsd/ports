@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.22 2006/11/07 18:16:02 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2007/01/21 21:46:21 simon Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"perl interface to the libxml2 library"
 
+MODULES=	cpan
 VERSION=	1.61003
 DISTNAME=	XML-LibXML-${VERSION}
 WRKDIST=	${WRKDIR}/XML-LibXML-1.61
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	textproc perl5
-
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
+CATEGORIES=	textproc
 
 LIB_DEPENDS=	xml2.>=6::textproc/libxml
 RUN_DEPENDS=	::textproc/p5-LibXML-Common \
@@ -23,7 +21,5 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		iconv m z 
-
-CONFIGURE_STYLE= perl
 
 .include <bsd.port.mk>

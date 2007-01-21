@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2005/09/23 19:41:45 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.12 2007/01/21 21:46:21 simon Exp $
 
 COMMENT=	'perl module to create WML cards'
 
+MODULES=	cpan
 DISTNAME=	WML-Card-0.02
-PKGNAME=	p5-${DISTNAME}
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	textproc www
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=WML/}
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes
@@ -14,8 +14,5 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	::www/p5-HTML-Parser
-BUILD_DEPENDS=	${RUN_DEPENDS}
-
-CONFIGURE_STYLE= perl
 
 .include <bsd.port.mk>

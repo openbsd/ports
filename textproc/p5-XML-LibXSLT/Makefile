@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.25 2006/11/07 18:16:02 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2007/01/21 21:46:21 simon Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"fast XSLT module for perl"
 
+MODULES=	cpan
 VERSION=	1.61
 DISTNAME=	XML-LibXSLT-${VERSION}
-PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	textproc perl5
+CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.axkit.org/
-
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 
 RUN_DEPENDS=	:p5-XML-LibXML->=1.60:textproc/p5-XML-LibXML
 BUILD_DEPENDS=	${RUN_DEPENDS}
@@ -24,7 +22,5 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		iconv m z 
-
-CONFIGURE_STYLE= perl
 
 .include <bsd.port.mk>
