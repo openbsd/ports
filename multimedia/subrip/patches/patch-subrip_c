@@ -1,0 +1,34 @@
+$OpenBSD: patch-subrip_c,v 1.1.1.1 2007/01/22 13:55:42 espie Exp $
+--- subrip.c.orig	Thu Jan 18 12:30:28 2007
++++ subrip.c	Thu Jan 18 12:31:41 2007
+@@ -16,6 +16,7 @@ static spudec_handle_t *spudec;
+ static unsigned int sub_idx;
+ static FILE *fsrtx;
+ 
++int debug_messages=0;
+ int sub_pos;
+ int vobsub_id;
+ 
+@@ -23,6 +24,7 @@ static void
+ usage (void)
+ {
+   fprintf (stderr, "subp2pgm [options] <vobsub basename>\n");
++  fprintf (stderr, "  -d            - debug messages\n");
+   fprintf (stderr, "  -o <filename> - the output base filename\n");
+   fprintf (stderr, "  -t <sid>      - the subtitle id, default 0\n");
+ }
+@@ -115,10 +117,13 @@ main (int argc, char **argv)
+     return EXIT_FAILURE;
+   }
+ 
+-  while ((ch = getopt (argc, argv, "t:o:h")) != -1)
++  while ((ch = getopt (argc, argv, "dt:o:h")) != -1)
+   {
+     switch (ch)
+     {
++      case 'd':
++        debug_messages = 1;
++	break;
+       case 't':
+         if (sscanf (optarg, "%d", &vobsub_id) != 1)
+         {

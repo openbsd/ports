@@ -1,0 +1,81 @@
+.\"	$OpenBSD: srttool.1,v 1.1.1.1 2007/01/22 13:55:42 espie Exp $
+.\"	Public domain
+.Dd January 20, 2007
+.Dt SRTTOOL 1
+.Os
+.Sh NAME
+.Nm srttool
+.Nd manipulates .srt subtitle files
+.Sh SYNOPSIS
+.Nm
+.Op Fl hrsvw
+.Op Fl a Ar hh:mm:ss,ms
+.Op Fl c Ar first[,last]
+.Op Fl d Ar seconds
+.Op Fl e Ar seconds
+.Op Fl i Ar file
+.Op Fl o Ar file
+.Op Fl x Ar basename
+.Sh DESCRIPTION
+The
+.Nm
+command performs various manipulations on srt files, acting as a filter
+from standard input to standard output unless
+.Fl i
+or
+.Fl o
+options are used.
+.Pp
+.Nm
+can be used to handle so-called template .srt files,
+where each subtitle entry is actually a filename to be substituted
+for the entry, or to adjust timestamps on each subtitle entry.
+.Pp
+The options are as follows
+.Bl -tag -width Flooutput
+.It Fl a Ar hh:mm:ss,ms
+Adjust all time stamps so that the first tag begins at
+.Ar hh:mm:ss,ms .
+.It Fl c Ar first[,last]
+Write only entries numbered from
+.Ar first
+to
+.Ar last ,
+where
+.Ar last
+defaults to the last entry of the file.
+.It Fl d Ar seconds
+Shift all time stamps by
+.Ar seconds
+seconds.
+.It Fl e Ar seconds
+Expand the subtitle hour by
+.Ar seconds 
+seconds.
+.It Fl h
+Display usage and quit.
+.It Fl i Ar filename
+Use file
+.Ar filename
+for input, defaults to stdin.
+.It Fl o Ar filename
+Use file
+.Ar filename
+for output, defaults to stdout.
+.It Fl r
+Renumber all entries.
+.It Fl s
+Convert template srt file into real srt files, substitute filename in each
+subtitle entry by the file contents.
+.It Fl v
+Verbose mode.
+.It Fl w
+Remove leading white space
+.It Fl x Ar basename
+Converse of
+.Fl s
+operation, create <basename>.srtx template and <basename>XXX.txt individual
+files.
+.El
+.Sh SEE ALSO
+.Xr subrip 1 .

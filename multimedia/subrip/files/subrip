@@ -1,0 +1,122 @@
+#! /bin/sh
+# $OpenBSD: subrip,v 1.1.1.1 2007/01/22 13:55:42 espie Exp $
+#
+# Copyright (c) 2007 Marc Espie <espie@openbsd.org>
+# 
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+
+: ${TMPDIR:=/tmp}
+
+device=/dev/rcd0c
+sidlist=
+verbose=true
+keep=false
+mextra=
+gextra=
+
+args=`getopt qkd:g:m:s:t:q $*`
+if [ $? -ne 0 ]
+then
+       echo 'Usage: subrip [-qk] [-d dev] [-m mopt] [-g gopt] -s sid... -t title output'
+       exit 2
+fi
+
+# exit on error
+set -e
+
+set -- $args
+for i
+do
+	case "$i" in
+	-s) 
+		sidlist="$sidlist $2"; shift; shift;;
+	-d) 
+		device=$2; shift; shift;;
+	-t) 
+		title=$2; shift; shift;;
+	-q)
+		verbose=false; shift;;
+	-k)
+		keep=true; shift;;
+	-m)
+		mextra="$mextra $2";shift; shift;;
+	-g)
+		gextra="$gextra $2";shift; shift;;
+	--)
+		shift; break;;
+	esac
+done
+	
+if [ $# -gt 0 ]; then
+    output=$1
+else
+    output=subtitle
+fi
+
+if $verbose; then
+	mextra="-v $mextra"
+fi
+
+case "X$sidlist" in
+X) 
+	echo "Error: must specify some subtitles to copy"
+	exit 2;;
+esac
+
+case "X$title" in
+X) 
+	echo "Error: must specify some title to copy"
+	exit 2;;
+esac
+
+mytmp=`mktemp -d ${TMPDIR}/subrip.XXXXXXX`
+if $verbose; then
+	echo "Putting files into $mytmp"
+fi
+
+for sid in $sidlist
+do
+# grab the raw subtitles
+set -x
+	mencoder \
+		-dvd-device ${device} \
+		-nocache -nosound \
+		-of rawaudio -ovc copy -o /dev/null \
+		-vobsubout $mytmp/vobsub-$sid \
+		-quiet \
+		$mextra \
+		-sid $sid \
+		dvd://$title
+set +x
+# convert to pgm images
+	sub2pgm -o $mytmp/z$sid $mytmp/vobsub-$sid
+	$keep || rm -f $mytmp/vobsub-$sid*
+done
+
+mkdir -p db
+# ask gocr what it can do with them
+for i in $mytmp/*.pgm
+do 
+	if $verbose; then
+		echo "Converting $i into text"
+	fi
+	gocr $gextra -m 130 $i >$i.txt
+done
+$keep || rm -f $mytmp/*.pgm
+
+for sid in $sidlist
+do
+    srttool -s <$mytmp/z$sid.srtx >$output.$sid
+done
+$keep || rm -rf $mytmp

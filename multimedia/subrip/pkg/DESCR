@@ -1,0 +1,11 @@
+ogmrip is originally a graphics package to convert dvd into ogm files.
+This package only takes the subtitle extraction part.
+Namely:
+- sub2pgm: converts vobsub files into an srt template and a set of pgm images.
+- srttool: manipulates srt templates and srt files.
+
+Together with mplayer, which can extract vobsub, and gocr, to handle character
+recognition, this allows for simple subtitle extraction.
+
+The package contains a shell-script, subrip, that puts all the pieces 
+together and can be tailored for further use.

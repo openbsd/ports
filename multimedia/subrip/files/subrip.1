@@ -1,0 +1,90 @@
+.\"	$OpenBSD: subrip.1,v 1.1.1.1 2007/01/22 13:55:42 espie Exp $
+.\"	Public domain
+.Dd January 20, 2007
+.Dt SUBRIP 1
+.Os
+.Sh NAME
+.Nm subrip
+.Nd extract subtitles from dvd
+.Sh SYNOPSIS
+.Nm
+.Op Fl qk
+.Op Fl d Ar device
+.Op Fl m Ar mencoder-cmd
+.Op Fl g Ar gocr-cmd
+.Fl s Ar sid
+.Op Fl s Ar sid
+.Fl t Ar title
+.Ar output
+.Sh DESCRIPTION
+The
+.Nm
+command
+extracts subtitles from a dvd using
+.Xr mplayer 1
+and passes them to
+.Xr gocr 1
+for conversion into srt files.
+The resulting files are named
+.Pa output.<sid> .
+.Pp
+.Nm 
+is a simple shell-script that acts as a front-end and can be
+customized as needed.
+.Pp
+The extraction is interactive, as
+.Xr gocr 1
+often will need some help recognizing some character shapes.
+.Pp
+The options are as follows:
+.Bl -tag -width Flooutput
+.It Fl d Ar device
+Select dvd device.
+Defaults to 
+.Pa /dev/rcd0c .
+.It Fl g Ar gocr-cmd
+Add extra arguments to the invocation of
+.Xr gocr 1 .
+Thanks to bugs in
+.Xr getopt 1 ,
+one should use several
+.Fl g
+options to specify an option with arguments.
+.It Fl k
+Keep temporary files.
+.It Fl m Ar mencoder-cmd
+Add extra arguments to the invocation of
+.Xr mencoder 1 .
+Thanks to bugs in
+.Xr getopt 1 ,
+one should use several
+.Fl m
+options to specify an option with arguments.
+.It Fl q
+Quiet mode, do not display 
+.Xr mencoder 1
+progress.
+.It Fl s Ar sid
+Select subtitle id to copy.
+At least one subtitle stream should be selected.
+.It Fl t Ar title
+Select title to copy.
+Mandatory.
+.Sh FILES
+The directory
+.Pa db
+is used by
+.Xr gocr 1
+to store user-supplied information to help in character recognition.
+.Pp
+.Nm
+stores temporary files into a temporary subdirectory of
+.Va TMPDIR ,
+or
+.Pa /tmp
+if not set.
+.Sh SEE ALSO
+.Xr gocr 1 ,
+.Xr mencoder 1 ,
+.Xr srttool 1 ,
+.Xr sub2pgm 1

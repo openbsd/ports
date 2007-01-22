@@ -1,0 +1,51 @@
+.\"	$OpenBSD: sub2pgm.1,v 1.1.1.1 2007/01/22 13:55:42 espie Exp $
+.\"	Public domain
+.Dd January 20, 2007
+.Dt SUB2PGM 1
+.Os
+.Sh NAME
+.Nm sub2pgm
+.Nd "convert vobsub dvd subtitles into pgm files and srt template"
+.Sh SYNOPSIS
+.Nm
+.Op Fl hd
+.Op Fl o Ar srtbase
+.Op Fl t Ar sid
+.Ar vobsub
+.Sh DESCRIPTION
+The
+.Nm
+converts dvd subtitles from the vobsub format into an intermediate form
+suitable for OCR extraction.
+.Pp
+.Nm
+takes two files as input, which should be named <vobsub>.idx and <vobsub>.sub,
+where
+.Ar vobsub
+is the basename of the files.
+.Pp
+.Nm
+outputs one .pgm graphics file for each subtitle image,
+and a .srt template file with correct timing annotation, where
+each subtitle entry is replaced with the corresponding graphics file entry
+with .txt appended.
+.Pp
+After OCR conversion, such a file can be transformed into a proper srt file
+by
+.Xr srttool 1 .
+The options are as follows:
+.Bl -tag -width Flooutput
+.It Fl d
+Displays debugging information as subtitle info is extracted.
+.It Fl h
+Displays usage and quits.
+.It Fl o srtbase
+Basename for all .pgm output files and the .srt template.
+.It Fl t sid
+Selects subtitle id from a vobsub file with several subtitle streams.
+Defaults to 0.
+.El
+.Sh SEE ALSO
+.Xr gocr 1 ,
+.Xr mencoder 1 ,
+.Xr srttool 1 .
