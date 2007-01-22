@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.39 2006/08/16 15:17:15 biorn Exp $
+$OpenBSD: patch-configure,v 1.40 2007/01/22 15:04:04 espie Exp $
 --- configure.orig	Sun Jun 11 20:35:47 2006
-+++ configure	Sat Aug 12 12:01:53 2006
++++ configure	Mon Jan 15 14:07:33 2007
 @@ -839,6 +839,8 @@ if x86 || x86_64 ; then
    pparam=`echo $exts | sed -e s/k6_mtrr/mtrr/ -e s/cyrix_arr/mtrr/ -e s/centaur_mcr/mtrr/ \
                             -e s/xmm/sse/ -e s/kni/sse/`
@@ -64,3 +64,12 @@ $OpenBSD: patch-configure,v 1.39 2006/08/16 15:17:15 biorn Exp $
  #endif
  
  /* Define this if your system has the "alloca.h" header file */
+@@ -8042,7 +8046,7 @@ $_def_vcd
+ #define DEFAULT_DVD_DEVICE	"/dev/rdiskN"
+ #elif defined(__OpenBSD__)
+ #define DEFAULT_CDROM_DEVICE	"/dev/rcd0a"
+-#define DEFAULT_DVD_DEVICE	DEFAULT_CDROM_DEVICE
++#define DEFAULT_DVD_DEVICE	"/dev/rcd0c"
+ #elif defined(__FreeBSD__)
+ #define DEFAULT_CDROM_DEVICE	"/dev/acd0"
+ #define DEFAULT_DVD_DEVICE	DEFAULT_CDROM_DEVICE

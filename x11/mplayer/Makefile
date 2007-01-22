@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile,v 1.110 2007/01/22 15:04:04 espie Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -7,7 +7,7 @@ COMMENT=		"Movie player supporting MPEG, DivX, AVI, ASF, MOV & more"
 
 DISTNAME=		MPlayer-1.0pre8
 DIST_SUBDIR=		mplayer
-PKGNAME=		${DISTNAME:L}p4
+PKGNAME=		${DISTNAME:L}p5
 CATEGORIES=		x11
 EXTRACT_SUFX=		.tar.bz2
 
@@ -47,7 +47,8 @@ LIB_DEPENDS=	png::graphics/png \
 		theora::multimedia/libtheora \
 		speex::audio/speex \
 		mpcdec::audio/libmpcdec \
-		vorbis::audio/libvorbis
+		vorbis::audio/libvorbis \
+		xvidcore::multimedia/xvidcore
 
 CONFDIR=	${SYSCONFDIR}/mplayer
 SUBST_VARS=	CONFDIR
@@ -61,7 +62,6 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--disable-caca \
 		--disable-internal-vidix \
 		--disable-external-vidix \
-		--disable-xvid \
 		--disable-libdv \
 		--disable-smb \
 		--disable-external-tremor \
