@@ -1,0 +1,12 @@
+$OpenBSD: patch-test_cml_sh,v 1.1.1.1 2007/01/22 16:32:41 ajacoutot Exp $
+--- test/cml.sh.orig	Fri Jan 19 11:09:42 2007
++++ test/cml.sh	Fri Jan 19 11:09:51 2007
+@@ -15,7 +15,7 @@ fi
+ echo
+ echo "# Testing CML support..."
+ if [ -f $cmltestdir/test.sh ]; then
+-    (cd $cmltestdir; source test.sh 2>/dev/null)
++    (cd $cmltestdir; ./test.sh 2>/dev/null)
+ else
+     echo "1..0 # skipping - CML test set not found"
+ fi
