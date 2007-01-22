@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/22 13:57:53 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/01/22 17:39:28 espie Exp $
 
 COMMENT=	"copy selected info from dvd"
 DISTNAME=	ogmrip-0.10.0
-PKGNAME=	dvdcpy-0.10.0
+PKGNAME=	dvdcpy-0.10.0p0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ogmrip/}
 
