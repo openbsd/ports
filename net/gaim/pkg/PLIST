@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.47 2006/11/11 07:49:45 brad Exp $
+@comment $OpenBSD: PLIST,v 1.48 2007/01/22 20:24:06 todd Exp $
 bin/gaim
 bin/gaim-text
 include/gaim/
@@ -69,6 +69,7 @@ include/gaim/gtkprivacy.h
 include/gaim/gtkrequest.h
 include/gaim/gtkroomlist.h
 include/gaim/gtksavedstatuses.h
+include/gaim/gtkscrollbook.h
 include/gaim/gtksession.h
 include/gaim/gtksound.h
 include/gaim/gtksourceiter.h
@@ -130,6 +131,14 @@ include/gnt/gntwidget.h
 include/gnt/gntwindow.h
 include/gnt/gntwm.h
 lib/gaim/
+@comment lib/gaim/autoaccept.la
+lib/gaim/autoaccept.so
+@comment lib/gaim/autoreply.la
+lib/gaim/autoreply.so
+@comment lib/gaim/buddynote.la
+lib/gaim/buddynote.so
+@comment lib/gaim/convcolors.la
+lib/gaim/convcolors.so
 @comment lib/gaim/extplacement.la
 lib/gaim/extplacement.so
 @comment lib/gaim/gaimrc.la
@@ -148,8 +157,12 @@ lib/gaim/history.so
 lib/gaim/iconaway.so
 @comment lib/gaim/idle.la
 lib/gaim/idle.so
+@comment lib/gaim/libaim.la
+lib/gaim/libaim.so
 @comment lib/gaim/libgg.la
 lib/gaim/libgg.so
+@comment lib/gaim/libicq.la
+lib/gaim/libicq.so
 @comment lib/gaim/libirc.la
 lib/gaim/libirc.so
 @comment lib/gaim/libjabber.la
@@ -158,8 +171,8 @@ lib/gaim/libjabber.so
 lib/gaim/libmsn.so
 @comment lib/gaim/libnovell.la
 lib/gaim/libnovell.so
-@comment lib/gaim/liboscar.la
-lib/gaim/liboscar.so
+lib/gaim/liboscar.la
+@lib lib/gaim/liboscar.so.${LIBoscar_VERSION}
 @comment lib/gaim/libqq.la
 lib/gaim/libqq.so
 @comment lib/gaim/libsametime.la
@@ -174,8 +187,14 @@ lib/gaim/libyahoo.so
 lib/gaim/libzephyr.so
 @comment lib/gaim/log_reader.la
 lib/gaim/log_reader.so
+@comment lib/gaim/markerline.la
+lib/gaim/markerline.so
+@comment lib/gaim/newline.la
+lib/gaim/newline.so
 @comment lib/gaim/notify.la
 lib/gaim/notify.so
+@comment lib/gaim/offlinemsg.la
+lib/gaim/offlinemsg.so
 @comment lib/gaim/psychic.la
 lib/gaim/psychic.so
 @comment lib/gaim/relnot.la
@@ -198,6 +217,8 @@ lib/gaim/ticker.so
 lib/gaim/timestamp.so
 @comment lib/gaim/timestamp_format.la
 lib/gaim/timestamp_format.so
+@comment lib/gaim/xmppconsole.la
+lib/gaim/xmppconsole.so
 lib/libgaim.la
 @lib lib/libgaim.so.${LIBgaim_VERSION}
 lib/libgnt.la
@@ -222,6 +243,7 @@ share/locale/ca@valencia/LC_MESSAGES/gaim.mo
 share/locale/cs/LC_MESSAGES/gaim.mo
 share/locale/da/LC_MESSAGES/gaim.mo
 share/locale/de/LC_MESSAGES/gaim.mo
+share/locale/dz/LC_MESSAGES/gaim.mo
 share/locale/el/LC_MESSAGES/gaim.mo
 share/locale/en_AU/
 share/locale/en_AU/LC_MESSAGES/
@@ -279,6 +301,108 @@ share/pixmaps/
 share/pixmaps/gaim/
 share/pixmaps/gaim.png
 share/pixmaps/gaim.svg
+share/pixmaps/gaim/buddy_icons/
+share/pixmaps/gaim/buddy_icons/qq/
+share/pixmaps/gaim/buddy_icons/qq/qq_1.png
+share/pixmaps/gaim/buddy_icons/qq/qq_10.png
+share/pixmaps/gaim/buddy_icons/qq/qq_100.png
+share/pixmaps/gaim/buddy_icons/qq/qq_11.png
+share/pixmaps/gaim/buddy_icons/qq/qq_12.png
+share/pixmaps/gaim/buddy_icons/qq/qq_13.png
+share/pixmaps/gaim/buddy_icons/qq/qq_14.png
+share/pixmaps/gaim/buddy_icons/qq/qq_15.png
+share/pixmaps/gaim/buddy_icons/qq/qq_16.png
+share/pixmaps/gaim/buddy_icons/qq/qq_17.png
+share/pixmaps/gaim/buddy_icons/qq/qq_18.png
+share/pixmaps/gaim/buddy_icons/qq/qq_19.png
+share/pixmaps/gaim/buddy_icons/qq/qq_2.png
+share/pixmaps/gaim/buddy_icons/qq/qq_20.png
+share/pixmaps/gaim/buddy_icons/qq/qq_21.png
+share/pixmaps/gaim/buddy_icons/qq/qq_22.png
+share/pixmaps/gaim/buddy_icons/qq/qq_23.png
+share/pixmaps/gaim/buddy_icons/qq/qq_24.png
+share/pixmaps/gaim/buddy_icons/qq/qq_25.png
+share/pixmaps/gaim/buddy_icons/qq/qq_26.png
+share/pixmaps/gaim/buddy_icons/qq/qq_27.png
+share/pixmaps/gaim/buddy_icons/qq/qq_28.png
+share/pixmaps/gaim/buddy_icons/qq/qq_29.png
+share/pixmaps/gaim/buddy_icons/qq/qq_3.png
+share/pixmaps/gaim/buddy_icons/qq/qq_30.png
+share/pixmaps/gaim/buddy_icons/qq/qq_31.png
+share/pixmaps/gaim/buddy_icons/qq/qq_32.png
+share/pixmaps/gaim/buddy_icons/qq/qq_33.png
+share/pixmaps/gaim/buddy_icons/qq/qq_34.png
+share/pixmaps/gaim/buddy_icons/qq/qq_35.png
+share/pixmaps/gaim/buddy_icons/qq/qq_36.png
+share/pixmaps/gaim/buddy_icons/qq/qq_37.png
+share/pixmaps/gaim/buddy_icons/qq/qq_38.png
+share/pixmaps/gaim/buddy_icons/qq/qq_39.png
+share/pixmaps/gaim/buddy_icons/qq/qq_4.png
+share/pixmaps/gaim/buddy_icons/qq/qq_40.png
+share/pixmaps/gaim/buddy_icons/qq/qq_41.png
+share/pixmaps/gaim/buddy_icons/qq/qq_42.png
+share/pixmaps/gaim/buddy_icons/qq/qq_43.png
+share/pixmaps/gaim/buddy_icons/qq/qq_44.png
+share/pixmaps/gaim/buddy_icons/qq/qq_45.png
+share/pixmaps/gaim/buddy_icons/qq/qq_46.png
+share/pixmaps/gaim/buddy_icons/qq/qq_47.png
+share/pixmaps/gaim/buddy_icons/qq/qq_48.png
+share/pixmaps/gaim/buddy_icons/qq/qq_49.png
+share/pixmaps/gaim/buddy_icons/qq/qq_5.png
+share/pixmaps/gaim/buddy_icons/qq/qq_50.png
+share/pixmaps/gaim/buddy_icons/qq/qq_51.png
+share/pixmaps/gaim/buddy_icons/qq/qq_52.png
+share/pixmaps/gaim/buddy_icons/qq/qq_53.png
+share/pixmaps/gaim/buddy_icons/qq/qq_54.png
+share/pixmaps/gaim/buddy_icons/qq/qq_55.png
+share/pixmaps/gaim/buddy_icons/qq/qq_56.png
+share/pixmaps/gaim/buddy_icons/qq/qq_57.png
+share/pixmaps/gaim/buddy_icons/qq/qq_58.png
+share/pixmaps/gaim/buddy_icons/qq/qq_59.png
+share/pixmaps/gaim/buddy_icons/qq/qq_6.png
+share/pixmaps/gaim/buddy_icons/qq/qq_60.png
+share/pixmaps/gaim/buddy_icons/qq/qq_61.png
+share/pixmaps/gaim/buddy_icons/qq/qq_62.png
+share/pixmaps/gaim/buddy_icons/qq/qq_63.png
+share/pixmaps/gaim/buddy_icons/qq/qq_64.png
+share/pixmaps/gaim/buddy_icons/qq/qq_65.png
+share/pixmaps/gaim/buddy_icons/qq/qq_66.png
+share/pixmaps/gaim/buddy_icons/qq/qq_67.png
+share/pixmaps/gaim/buddy_icons/qq/qq_68.png
+share/pixmaps/gaim/buddy_icons/qq/qq_69.png
+share/pixmaps/gaim/buddy_icons/qq/qq_7.png
+share/pixmaps/gaim/buddy_icons/qq/qq_70.png
+share/pixmaps/gaim/buddy_icons/qq/qq_71.png
+share/pixmaps/gaim/buddy_icons/qq/qq_72.png
+share/pixmaps/gaim/buddy_icons/qq/qq_73.png
+share/pixmaps/gaim/buddy_icons/qq/qq_74.png
+share/pixmaps/gaim/buddy_icons/qq/qq_75.png
+share/pixmaps/gaim/buddy_icons/qq/qq_76.png
+share/pixmaps/gaim/buddy_icons/qq/qq_77.png
+share/pixmaps/gaim/buddy_icons/qq/qq_78.png
+share/pixmaps/gaim/buddy_icons/qq/qq_79.png
+share/pixmaps/gaim/buddy_icons/qq/qq_8.png
+share/pixmaps/gaim/buddy_icons/qq/qq_80.png
+share/pixmaps/gaim/buddy_icons/qq/qq_81.png
+share/pixmaps/gaim/buddy_icons/qq/qq_82.png
+share/pixmaps/gaim/buddy_icons/qq/qq_83.png
+share/pixmaps/gaim/buddy_icons/qq/qq_84.png
+share/pixmaps/gaim/buddy_icons/qq/qq_85.png
+share/pixmaps/gaim/buddy_icons/qq/qq_86.png
+share/pixmaps/gaim/buddy_icons/qq/qq_87.png
+share/pixmaps/gaim/buddy_icons/qq/qq_88.png
+share/pixmaps/gaim/buddy_icons/qq/qq_89.png
+share/pixmaps/gaim/buddy_icons/qq/qq_9.png
+share/pixmaps/gaim/buddy_icons/qq/qq_90.png
+share/pixmaps/gaim/buddy_icons/qq/qq_91.png
+share/pixmaps/gaim/buddy_icons/qq/qq_92.png
+share/pixmaps/gaim/buddy_icons/qq/qq_93.png
+share/pixmaps/gaim/buddy_icons/qq/qq_94.png
+share/pixmaps/gaim/buddy_icons/qq/qq_95.png
+share/pixmaps/gaim/buddy_icons/qq/qq_96.png
+share/pixmaps/gaim/buddy_icons/qq/qq_97.png
+share/pixmaps/gaim/buddy_icons/qq/qq_98.png
+share/pixmaps/gaim/buddy_icons/qq/qq_99.png
 share/pixmaps/gaim/buttons/
 share/pixmaps/gaim/buttons/about_menu.png
 share/pixmaps/gaim/buttons/accounts.png
@@ -646,106 +770,6 @@ share/pixmaps/gaim/status/default/offline.png
 share/pixmaps/gaim/status/default/op.png
 share/pixmaps/gaim/status/default/pending.png
 share/pixmaps/gaim/status/default/qq.png
-share/pixmaps/gaim/status/default/qq_1.png
-share/pixmaps/gaim/status/default/qq_10.png
-share/pixmaps/gaim/status/default/qq_100.png
-share/pixmaps/gaim/status/default/qq_11.png
-share/pixmaps/gaim/status/default/qq_12.png
-share/pixmaps/gaim/status/default/qq_13.png
-share/pixmaps/gaim/status/default/qq_14.png
-share/pixmaps/gaim/status/default/qq_15.png
-share/pixmaps/gaim/status/default/qq_16.png
-share/pixmaps/gaim/status/default/qq_17.png
-share/pixmaps/gaim/status/default/qq_18.png
-share/pixmaps/gaim/status/default/qq_19.png
-share/pixmaps/gaim/status/default/qq_2.png
-share/pixmaps/gaim/status/default/qq_20.png
-share/pixmaps/gaim/status/default/qq_21.png
-share/pixmaps/gaim/status/default/qq_22.png
-share/pixmaps/gaim/status/default/qq_23.png
-share/pixmaps/gaim/status/default/qq_24.png
-share/pixmaps/gaim/status/default/qq_25.png
-share/pixmaps/gaim/status/default/qq_26.png
-share/pixmaps/gaim/status/default/qq_27.png
-share/pixmaps/gaim/status/default/qq_28.png
-share/pixmaps/gaim/status/default/qq_29.png
-share/pixmaps/gaim/status/default/qq_3.png
-share/pixmaps/gaim/status/default/qq_30.png
-share/pixmaps/gaim/status/default/qq_31.png
-share/pixmaps/gaim/status/default/qq_32.png
-share/pixmaps/gaim/status/default/qq_33.png
-share/pixmaps/gaim/status/default/qq_34.png
-share/pixmaps/gaim/status/default/qq_35.png
-share/pixmaps/gaim/status/default/qq_36.png
-share/pixmaps/gaim/status/default/qq_37.png
-share/pixmaps/gaim/status/default/qq_38.png
-share/pixmaps/gaim/status/default/qq_39.png
-share/pixmaps/gaim/status/default/qq_4.png
-share/pixmaps/gaim/status/default/qq_40.png
-share/pixmaps/gaim/status/default/qq_41.png
-share/pixmaps/gaim/status/default/qq_42.png
-share/pixmaps/gaim/status/default/qq_43.png
-share/pixmaps/gaim/status/default/qq_44.png
-share/pixmaps/gaim/status/default/qq_45.png
-share/pixmaps/gaim/status/default/qq_46.png
-share/pixmaps/gaim/status/default/qq_47.png
-share/pixmaps/gaim/status/default/qq_48.png
-share/pixmaps/gaim/status/default/qq_49.png
-share/pixmaps/gaim/status/default/qq_5.png
-share/pixmaps/gaim/status/default/qq_50.png
-share/pixmaps/gaim/status/default/qq_51.png
-share/pixmaps/gaim/status/default/qq_52.png
-share/pixmaps/gaim/status/default/qq_53.png
-share/pixmaps/gaim/status/default/qq_54.png
-share/pixmaps/gaim/status/default/qq_55.png
-share/pixmaps/gaim/status/default/qq_56.png
-share/pixmaps/gaim/status/default/qq_57.png
-share/pixmaps/gaim/status/default/qq_58.png
-share/pixmaps/gaim/status/default/qq_59.png
-share/pixmaps/gaim/status/default/qq_6.png
-share/pixmaps/gaim/status/default/qq_60.png
-share/pixmaps/gaim/status/default/qq_61.png
-share/pixmaps/gaim/status/default/qq_62.png
-share/pixmaps/gaim/status/default/qq_63.png
-share/pixmaps/gaim/status/default/qq_64.png
-share/pixmaps/gaim/status/default/qq_65.png
-share/pixmaps/gaim/status/default/qq_66.png
-share/pixmaps/gaim/status/default/qq_67.png
-share/pixmaps/gaim/status/default/qq_68.png
-share/pixmaps/gaim/status/default/qq_69.png
-share/pixmaps/gaim/status/default/qq_7.png
-share/pixmaps/gaim/status/default/qq_70.png
-share/pixmaps/gaim/status/default/qq_71.png
-share/pixmaps/gaim/status/default/qq_72.png
-share/pixmaps/gaim/status/default/qq_73.png
-share/pixmaps/gaim/status/default/qq_74.png
-share/pixmaps/gaim/status/default/qq_75.png
-share/pixmaps/gaim/status/default/qq_76.png
-share/pixmaps/gaim/status/default/qq_77.png
-share/pixmaps/gaim/status/default/qq_78.png
-share/pixmaps/gaim/status/default/qq_79.png
-share/pixmaps/gaim/status/default/qq_8.png
-share/pixmaps/gaim/status/default/qq_80.png
-share/pixmaps/gaim/status/default/qq_81.png
-share/pixmaps/gaim/status/default/qq_82.png
-share/pixmaps/gaim/status/default/qq_83.png
-share/pixmaps/gaim/status/default/qq_84.png
-share/pixmaps/gaim/status/default/qq_85.png
-share/pixmaps/gaim/status/default/qq_86.png
-share/pixmaps/gaim/status/default/qq_87.png
-share/pixmaps/gaim/status/default/qq_88.png
-share/pixmaps/gaim/status/default/qq_89.png
-share/pixmaps/gaim/status/default/qq_9.png
-share/pixmaps/gaim/status/default/qq_90.png
-share/pixmaps/gaim/status/default/qq_91.png
-share/pixmaps/gaim/status/default/qq_92.png
-share/pixmaps/gaim/status/default/qq_93.png
-share/pixmaps/gaim/status/default/qq_94.png
-share/pixmaps/gaim/status/default/qq_95.png
-share/pixmaps/gaim/status/default/qq_96.png
-share/pixmaps/gaim/status/default/qq_97.png
-share/pixmaps/gaim/status/default/qq_98.png
-share/pixmaps/gaim/status/default/qq_99.png
 share/pixmaps/gaim/status/default/secure.png
 share/pixmaps/gaim/status/default/silc.png
 share/pixmaps/gaim/status/default/simple.png

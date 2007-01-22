@@ -1,0 +1,15 @@
+$OpenBSD: patch-libgaim_protocols_oscar_Makefile_in,v 1.1 2007/01/22 20:24:06 todd Exp $
+--- libgaim/protocols/oscar/Makefile.in.orig	Thu Jan 18 23:28:58 2007
++++ libgaim/protocols/oscar/Makefile.in	Fri Jan 19 22:02:23 2007
+@@ -547,9 +547,9 @@ libicq_la_LDFLAGS = -module -avoid-versi
+ @STATIC_OSCAR_FALSE@liboscar_la_SOURCES = $(OSCARSOURCES)
+ @STATIC_OSCAR_FALSE@liboscar_la_LIBADD = $(GLIB_LIBS)
+ @STATIC_OSCAR_FALSE@libaim_la_SOURCES = libaim.c
+-@STATIC_OSCAR_FALSE@libaim_la_LIBADD = liboscar.la
++@STATIC_OSCAR_FALSE@libaim_la_LIBADD = liboscar.la -Wl,-rpath,$(pkgdir)
+ @STATIC_OSCAR_FALSE@libicq_la_SOURCES = libicq.c
+-@STATIC_OSCAR_FALSE@libicq_la_LIBADD = liboscar.la
++@STATIC_OSCAR_FALSE@libicq_la_LIBADD = liboscar.la -Wl,-rpath,$(pkgdir)
+ AM_CPPFLAGS = \
+ 	-I$(top_srcdir)/libgaim \
+ 	$(GLIB_CFLAGS) \

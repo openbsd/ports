@@ -1,7 +1,9 @@
-$OpenBSD: patch-console_libgnt_Makefile_am,v 1.1 2006/10/31 19:32:51 brad Exp $
---- console/libgnt/Makefile.am.orig	Sun Oct 29 14:25:09 2006
-+++ console/libgnt/Makefile.am	Sun Oct 29 14:25:29 2006
-@@ -1,4 +1,4 @@
+$OpenBSD: patch-console_libgnt_Makefile_am,v 1.2 2007/01/22 20:24:06 todd Exp $
+--- console/libgnt/Makefile.am.orig	Thu Jan 18 23:28:14 2007
++++ console/libgnt/Makefile.am	Fri Jan 19 19:05:08 2007
+@@ -1,6 +1,6 @@
+ EXTRA_DIST=genmarshal
+ 
 -SUBDIRS = . wms
 +SUBDIRS = .
  pkgconfigdir = $(libdir)/pkgconfig

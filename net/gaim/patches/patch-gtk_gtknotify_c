@@ -1,7 +1,7 @@
-$OpenBSD: patch-gtk_gtknotify_c,v 1.1 2006/10/31 19:32:51 brad Exp $
---- gtk/gtknotify.c.orig	Sat Oct 28 13:08:03 2006
-+++ gtk/gtknotify.c	Sat Oct 28 13:09:43 2006
-@@ -906,7 +906,16 @@ uri_command(const char *command, gboolea
+$OpenBSD: patch-gtk_gtknotify_c,v 1.2 2007/01/22 20:24:06 todd Exp $
+--- gtk/gtknotify.c.orig	Thu Jan 18 23:28:04 2007
++++ gtk/gtknotify.c	Fri Jan 19 19:05:08 2007
+@@ -915,7 +915,16 @@ uri_command(const char *command, gboolea
  			g_error_free(error);
  		}
  		else
