@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/01/22 13:55:42 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/01/22 13:57:53 espie Exp $
 
 COMMENT=	"extract subtitles from dvds"
 DISTNAME=	ogmrip-0.10.0
@@ -25,6 +25,7 @@ RUN_DEPENDS=		::graphics/gocr \
 			::x11/mplayer
 
 WANTLIB=		c m
+NO_REGRESS=		Yes
 
 FAKE_FLAGS=		BINDIR=${TRUEPREFIX}/bin \
 			INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
