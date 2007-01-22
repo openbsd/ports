@@ -1,4 +1,4 @@
-.\"	$OpenBSD: subrip.1,v 1.1.1.1 2007/01/22 13:55:42 espie Exp $
+.\"	$OpenBSD: subrip.1,v 1.2 2007/01/22 17:43:10 espie Exp $
 .\"	Public domain
 .Dd January 20, 2007
 .Dt SUBRIP 1
@@ -26,7 +26,11 @@ and passes them to
 .Xr gocr 1
 for conversion into srt files.
 The resulting files are named
-.Pa output.<sid> .
+.Pa output.srt ,
+where a
+.Sq %d
+in output is replaced with the subtitle stream number
+.Ar sid .
 .Pp
 .Nm 
 is a simple shell-script that acts as a front-end and can be
@@ -80,9 +84,11 @@ to store user-supplied information to help in character recognition.
 .Nm
 stores temporary files into a temporary subdirectory of
 .Va TMPDIR ,
-or
+or of
 .Pa /tmp
-if not set.
+if 
+.Va TMPDIR
+is not set.
 .Sh SEE ALSO
 .Xr gocr 1 ,
 .Xr mencoder 1 ,

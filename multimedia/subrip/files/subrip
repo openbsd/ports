@@ -1,5 +1,5 @@
 #! /bin/sh
-# $OpenBSD: subrip,v 1.1.1.1 2007/01/22 13:55:42 espie Exp $
+# $OpenBSD: subrip,v 1.2 2007/01/22 17:43:10 espie Exp $
 #
 # Copyright (c) 2007 Marc Espie <espie@openbsd.org>
 # 
@@ -36,9 +36,9 @@ fi
 set -e
 
 set -- $args
-for i
+while [ $# -ge 1 ]
 do
-	case "$i" in
+	case "$1" in
 	-s) 
 		sidlist="$sidlist $2"; shift; shift;;
 	-d) 
@@ -55,10 +55,12 @@ do
 		gextra="$gextra $2";shift; shift;;
 	--)
 		shift; break;;
+    	*)
+		break;;
 	esac
 done
 	
-if [ $# -gt 0 ]; then
+if [ $# -ge 1 ]; then
     output=$1
 else
     output=subtitle
@@ -117,6 +119,7 @@ $keep || rm -f $mytmp/*.pgm
 
 for sid in $sidlist
 do
-    srttool -s <$mytmp/z$sid.srtx >$output.$sid
+    real=`echo $output|sed -e "s/%d/$sid/"`
+    srttool -s <$mytmp/z$sid.srtx >$real.srt
 done
 $keep || rm -rf $mytmp
