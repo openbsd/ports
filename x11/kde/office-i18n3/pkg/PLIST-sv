@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-sv,v 1.4 2006/12/05 19:07:07 espie Exp $
+@comment $OpenBSD: PLIST-sv,v 1.5 2007/01/22 17:52:03 bernd Exp $
 share/doc/HTML/sv/
 ${DOC}karbon/
 ${DOC}karbon/common
@@ -648,7 +648,6 @@ ${LOC}desktop_koffice.mo
 ${LOC}example.mo
 ${LOC}karbon.mo
 ${LOC}kchart.mo
-${LOC}kdgantt.mo
 ${LOC}kexi.mo
 ${LOC}kfile_abiword.mo
 ${LOC}kfile_gnumeric.mo
