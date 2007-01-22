@@ -1,0 +1,54 @@
+$OpenBSD: patch-auth_ldap_c,v 1.1 2007/01/22 15:04:32 bernd Exp $
+
+Fixes a security bug that could allow attacker to execute arbitrary
+commands as the apache user.
+
+This is fixed in auth_ldap-1.6.1 but that release is broken. So we just
+took the security fix.
+
+--- auth_ldap.c.orig	Thu Jan 18 14:25:28 2007
++++ auth_ldap.c	Thu Jan 18 14:31:45 2007
+@@ -87,7 +87,7 @@ void auth_ldap_log_reason(request_rec *r
+ #if APACHE_RELEASE < 1030000
+   log_reason(buf, r->uri, r);
+ #else
+-  ap_log_rerror(APLOG_MARK, APLOG_ERR|APLOG_NOERRNO, r, buf);
++  ap_log_rerror(APLOG_MARK, APLOG_ERR|APLOG_NOERRNO, r, "%s", buf);
+ #endif
+ }
+ 
+@@ -610,6 +610,7 @@ ldap_authenticate_basic_user(request_rec
+ 			 "%d entries for search %s: URI %s", 
+ 			 count, filtbuf, r->uri);
+     ldap_msgfree(res);
++    ap_note_basic_auth_failure(r);
+     RELMUTEX(conf->mtx);
+     RELMUTEX(sec->ldc->mtx);
+     return sec->auth_authoritative? AUTH_REQUIRED: DECLINED;
+@@ -632,7 +633,7 @@ ldap_authenticate_basic_user(request_rec
+      able to authenticate with this module. I don't see this as a big
+      problem.
+   */
+-  if (strlen(sent_pw) <= 0) {
++  if ((sec->dn == NULL) || (strlen(sent_pw) <= 0)) {
+     auth_ldap_log_reason(r, "AuthLDAP: user %s provided an empty password: %s", 
+ 			 r->connection->user, r->uri);
+     ap_note_basic_auth_failure(r);
+@@ -653,7 +654,6 @@ ldap_authenticate_basic_user(request_rec
+    */
+   ap_log_rerror(APLOG_MARK, APLOG_DEBUG|APLOG_NOERRNO, r,
+ 		"{%d} LDAP OP: simple bind", (int)getpid());
+-  sec->ldc->boundas = bind_user;
+   if ((result = 
+        ldap_simple_bind_s(sec->ldc->ldap, sec->dn, const_cast(sent_pw))) == 
+       LDAP_SERVER_DOWN) {
+@@ -671,6 +671,9 @@ ldap_authenticate_basic_user(request_rec
+     RELMUTEX(sec->ldc->mtx);
+     return AUTH_REQUIRED;
+   }
++
++  sec->ldc->bounddn = strdup(sec->dn);
++  sec->ldc->boundas = bind_user;
+ 
+   ap_log_rerror(APLOG_MARK, APLOG_DEBUG|APLOG_NOERRNO, r, 
+ 		"{%d} authenticate: accepting", (int)getpid());
