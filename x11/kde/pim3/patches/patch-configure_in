@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.1 2007/01/20 14:15:53 ajacoutot Exp $
---- configure.in.orig	Tue Jan  2 21:57:41 2007
-+++ configure.in	Tue Jan  2 22:02:46 2007
+$OpenBSD: patch-configure_in,v 1.2 2007/01/22 12:02:27 ajacoutot Exp $
+--- configure.in.orig	Mon Oct  2 20:50:32 2006
++++ configure.in	Mon Jan 22 09:38:08 2007
 @@ -671,7 +671,8 @@ if test "$HAVE_PISOCK" = "1" ; then
  			],
  			[-lsocket]
@@ -11,3 +11,12 @@ $OpenBSD: patch-configure_in,v 1.1 2007/01/20 14:15:53 ajacoutot Exp $
  		)
  fi
  fi
+@@ -809,7 +810,7 @@ if test "x$with_mal" = "xCHECK" ; then
+         mal_libdir)
+       if test -r $mal_libdir/libmal.$ext ; then
+         if test "x$mal_libdir" != "x/usr/lib$kdelibsuff" ; then
+-          MAL_LIB="-L$mal_libdir "
++          MAL_LIB="-pthread -L$mal_libdir "
+           test "$USE_RPATH" = yes && MAL_RPATH="-R $mal_libdir"
+         fi
+         MAL_LIB="${MAL_LIB}-lmal"
