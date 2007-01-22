@@ -1,0 +1,3 @@
+database plugin (sqlite2) for qt3.
+There is no sqlite3 plugin for qt3.
+The sqlite2 plugin can be used by kphotoalbum.

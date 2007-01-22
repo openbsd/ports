@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-sqlite2,v 1.1 2007/01/22 18:18:28 espie Exp $
+lib/qt3/${QT_PLUGINS}/sqldrivers/libqsqlite.so

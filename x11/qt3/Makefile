@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2007/01/04 18:34:46 espie Exp $
+# $OpenBSD: Makefile,v 1.71 2007/01/22 18:18:28 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT-main=		"C++ X11 GUI toolkit"
@@ -6,6 +6,7 @@ COMMENT-examples=	"examples and tutorial for qt3"
 COMMENT-html=		"off-line html documentation for qt3"
 COMMENT-postgresql=	"PostgresSQL plugin for qt3"
 COMMENT-mysql=		"MySQL plugin for qt3"
+COMMENT-sqlite2=	"sqlite2 plugin for qt3"
 
 PKGNAME=		qt3-${VERSION}
 PKGNAME-mysql=		qt3-mysql-${VERSION}
@@ -13,6 +14,7 @@ PKGNAME-postgresql=	qt3-postgresql-${VERSION}
 PKGNAME-examples=	qt3-examples-${VERSION}
 FULLPKGNAME-main=	qt3-mt-${VERSION}${PKGDEBUG}
 FULLPKGNAME-html=	qt3-html-${VERSION}
+FULLPKGNAME-sqlite2=	qt3-sqlite2-${VERSION}
 SHARED_LIBS=		qt-mt	30.3 \
 			qui	2.0 \
 			qui-mt	2.0
@@ -42,7 +44,7 @@ MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 FLAVORS=debug
 
-PSEUDO_FLAVORS=	no_mysql no_postgresql no_examples mt
+PSEUDO_FLAVORS=	no_mysql no_postgresql no_sqlite2 no_examples mt
 FLAVOR?=
 
 # GPL/QPL
@@ -126,6 +128,12 @@ CONFIGURE_ARGS+= -I${LOCALBASE}/include/postgresql \
 	    -L${LOCALBASE}/lib \
 	    -I${LOCALBASE}/include -plugin-sql-psql
 .endif
+.if !empty(FLAVOR:L:Mno_sqlite2)
+CONFIGURE_ARGS+=-no-sql-sqlite
+.else
+MULTI_PACKAGES+=	-sqlite2
+CONFIGURE_ARGS+= -plugin-sql-sqlite
+.endif
 
 
 LIB_DEPENDS=		png.>=2::graphics/png \
@@ -146,6 +154,9 @@ LIB_DEPENDS-postgresql=	${LIB_DEPENDS} \
 			qt-mt.>=3::${BUILD_PKGPATH} \
 			pq.>=2:postgresql-client-*:databases/postgresql
 
+LIB_DEPENDS-sqlite2=	${LIB_DEPENDS} \
+			qt-mt.>=3::${BUILD_PKGPATH} \
+			sqlite::databases/sqlite
 
 LIB_DEPENDS-examples=	${LIB_DEPENDS} \
 			qt-mt.>=3::${BUILD_PKGPATH}
@@ -277,6 +288,10 @@ do-install:
 .endif
 .if empty(FLAVOR:L:Mno_mysql)
 	${INSTALL_DATA} ${WRKBUILD}/plugins/sqldrivers/libqsqlmysql.so \
+	    ${QT_PLUGINSDIR}/sqldrivers
+.endif
+.if empty(FLAVOR:L:Mno_sqlite2)
+	${INSTALL_DATA} ${WRKBUILD}/plugins/sqldrivers/libqsqlite.so \
 	    ${QT_PLUGINSDIR}/sqldrivers
 .endif
 	${INSTALL_DATA} ${WRKBUILD}/plugins/designer/libwizards.so \
