@@ -1,0 +1,37 @@
+.\"	$OpenBSD: dvdcpy.1,v 1.1.1.1 2007/01/22 12:05:01 espie Exp $
+.\"	Public domain
+.Dd January 20, 2007
+.Dt DVDCPY 1
+.Os
+.Sh NAME
+.Nm dvdcpy
+.Nd copy selected data from dvd
+.Sh SYNOPSIS
+.Nm
+.Op Fl hm
+.Op Fl o Ar file
+.Op Fl t Ar title ...
+.Ar device
+.Sh DESCRIPTION
+The
+.Nm
+copies selected titles and/or menu structure of a dvd inserted into
+.Ar device .
+The dvd does not have to be mounted.
+The options are as follows:
+.Bl -tag -width Flooutput
+.It Fl h
+Displays usage and quits.
+.It Fl m
+Selects menu structure for copy.
+.It Fl o Ar output
+Saves result into directory
+.Ar output .
+If not specified, default name is
+.Pa backup .
+The directory is created as needed.
+.It Fl t Ar title
+Selects title number
+.Ar title
+for copy.
+.El
