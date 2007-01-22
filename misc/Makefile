@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2007/01/13 22:17:46 deanna Exp $
+# $OpenBSD: Makefile,v 1.97 2007/01/22 16:33:31 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -45,6 +45,7 @@
      SUBDIR += mmv
      SUBDIR += most
      SUBDIR += mshell
+     SUBDIR += openbabel
      SUBDIR += p5-CreditCard
      SUBDIR += p5-File-MMagic
      SUBDIR += p5-File-Rotate-Backup
