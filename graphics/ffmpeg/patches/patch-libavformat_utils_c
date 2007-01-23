@@ -1,0 +1,31 @@
+$OpenBSD: patch-libavformat_utils_c,v 1.1 2007/01/23 09:34:45 robert Exp $
+--- libavformat/utils.c.orig	Mon Jan  8 16:44:13 2007
++++ libavformat/utils.c	Wed Jan 10 14:38:27 2007
+@@ -1781,7 +1781,7 @@ int av_find_stream_info(AVFormatContext 
+     AVPacketList *pktl=NULL, **ppktl;
+     int64_t last_dts[MAX_STREAMS];
+     int duration_count[MAX_STREAMS]={0};
+-    double duration_error[MAX_STREAMS][MAX_STD_TIMEBASES]={{0}}; //FIXME malloc()?
++    double (*duration_error)[MAX_STD_TIMEBASES] = av_mallocz(MAX_STREAMS * sizeof(*duration_error));
+ 
+     for(i=0;i<ic->nb_streams;i++) {
+         st = ic->streams[i];
+@@ -1893,7 +1893,7 @@ int av_find_stream_info(AVFormatContext 
+ //                if(st->codec->codec_type == CODEC_TYPE_VIDEO)
+ //                    av_log(NULL, AV_LOG_ERROR, "%f\n", dur);
+                 if(duration_count[index] < 2)
+-                    memset(duration_error, 0, sizeof(duration_error));
++                    memset(duration_error, 0, MAX_STREAMS * sizeof(*duration_error));
+                 for(i=1; i<MAX_STD_TIMEBASES; i++){
+                     int framerate= get_std_framerate(i);
+                     int ticks= lrintf(dur*framerate/(1001*12));
+@@ -2013,6 +2013,9 @@ int av_find_stream_info(AVFormatContext 
+         }
+     }
+ #endif
++
++    av_freep(&duration_error);
++
+     return ret;
+ }
+ 

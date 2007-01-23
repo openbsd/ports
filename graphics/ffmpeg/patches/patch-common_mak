@@ -1,21 +1,18 @@
-$OpenBSD: patch-common_mak,v 1.2 2006/03/22 08:08:42 jakemsr Exp $
---- common.mak.orig	Sun Feb 26 18:47:05 2006
-+++ common.mak	Wed Mar 22 00:04:04 2006
-@@ -75,12 +75,11 @@ install-lib-shared: $(SLIBNAME)
- ifeq ($(CONFIG_WIN32),yes)
- 	install $(INSTALLSTRIP) -m 755 $(SLIBNAME) "$(prefix)"
- else
+$OpenBSD: patch-common_mak,v 1.3 2007/01/23 09:34:45 robert Exp $
+--- common.mak.orig	Tue Jan  2 18:27:55 2007
++++ common.mak	Tue Jan  2 18:28:19 2007
+@@ -63,13 +63,7 @@ install-libs: $(INSTLIBTARGETS)
+ 
+ install-lib-shared: $(SLIBNAME)
+ 	install -d "$(shlibdir)"
 -	install $(INSTALLSTRIP) -m 755 $(SLIBNAME) \
--		$(libdir)/$(SLIBNAME_WITH_VERSION)
--	ln -sf $(SLIBNAME_WITH_VERSION) \
--		$(libdir)/$(SLIBNAME_WITH_MAJOR)
--	ln -sf $(SLIBNAME_WITH_VERSION) \
--		$(libdir)/$(SLIBNAME)
+-		"$(shlibdir)/$(SLIBNAME_WITH_VERSION)"
+-	cd "$(shlibdir)" && \
+-		ln -sf $(SLIBNAME_WITH_VERSION) $(SLIBNAME_WITH_MAJOR)
+-	cd "$(shlibdir)" && \
+-		ln -sf $(SLIBNAME_WITH_VERSION) $(SLIBNAME)
+-	$(SLIB_INSTALL_EXTRA_CMD)
 +	install -m 755 $(SLIBNAME) $(libdir)
-+	#ln -sf $(SLIBNAME_WITH_VERSION) \
-+	#	$(libdir)/$(SLIBNAME_WITH_MAJOR)
-+	#ln -sf $(SLIBNAME_WITH_VERSION) \
-+	#	$(libdir)/$(SLIBNAME)
- endif
  
  install-lib-static: $(LIB)
+ 	install -d "$(libdir)"

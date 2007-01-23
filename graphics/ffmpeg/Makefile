@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.23 2006/12/02 20:24:17 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.24 2007/01/23 09:34:45 robert Exp $
 
 COMMENT=	"audio/video converter and streamer with bktr(4) support"
 
-DISTNAME=		ffmpeg-cvs-20060312
-PKGNAME=		${DISTNAME:S/-cvs//}p2
-SHARED_LIBS=		avutil		1.0 \
-			avcodec		7.0 \
-			avformat	7.0 \
-			postproc	7.0
+DISTNAME=		ffmpeg-cvs-20070110
+PKGNAME=		${DISTNAME:S/-cvs//}
+SHARED_LIBS=		avutil		2.0 \
+			avcodec		8.0 \
+			avformat	8.0 \
+			postproc	8.0 \
+			swscale		0.0
 CATEGORIES=		graphics multimedia
 
 HOMEPAGE=		http://www.ffmpeg.org/
+MAINTAINER=		Nikns Siankin <nikns@secure.lv>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	"patents"
@@ -19,10 +21,15 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 # only available through CVS
-MASTER_SITES=		http://www.jakemsr.com/
+MASTER_SITES=		ftp://ftp.secure.lv/pub/distfiles/
 
 BUILD_DEPENDS=		::textproc/texi2html
-LIB_DEPENDS=		SDL.>=4::devel/sdl
+LIB_DEPENDS=		SDL.>=4::devel/sdl \
+			faac::audio/faac \
+			faad::audio/faad \
+			mp3lame.>=0.1::audio/lame \
+			vorbis.>=4.0,vorbisenc.>=2.0::audio/libvorbis
+
 WANTLIB=		X11 Xext c freetype m pthread ossaudio usbhid z
 
 USE_X11=		Yes
@@ -41,21 +48,32 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-pp \
 			--enable-gpl \
 			--enable-pthreads \
-			--disable-debug
+			--disable-debug \
+			--enable-swscaler \
+			--enable-faac \
+			--enable-faad \
+			--enable-mp3lame \
+			--enable-libogg \
+			--enable-vorbis \
+			--extra-ldflags="-lm -L${LOCALBASE}/lib" \
+			--extra-cflags=-I${LOCALBASE}/include
+
 
 MAKE_FLAGS=		LIBavutil_VERSION=$(LIBavutil_VERSION) \
 			LIBavcodec_VERSION=$(LIBavcodec_VERSION) \
 			LIBavformat_VERSION=$(LIBavformat_VERSION) \
-			LIBpostproc_VERSION=$(LIBpostproc_VERSION)
+			LIBpostproc_VERSION=$(LIBpostproc_VERSION) \
+			LIBswscale_VERSION=$(LIBswscale_VERSION)
 
 FAKE_FLAGS=		DESTDIR=${WRKINST} \
 			LDCONFIG=true \
 			LIBavutil_VERSION=$(LIBavutil_VERSION) \
 			LIBavcodec_VERSION=$(LIBavcodec_VERSION) \
 			LIBavformat_VERSION=$(LIBavformat_VERSION) \
-			LIBpostproc_VERSION=$(LIBpostproc_VERSION)
+			LIBpostproc_VERSION=$(LIBpostproc_VERSION) \
+			LIBswscale_VERSION=$(LIBswscale_VERSION)
 
-WRKDIST=		${WRKDIR}/ffmpeg
+REGRESS_TARGET=		codectest
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ffmpeg

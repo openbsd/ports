@@ -1,24 +1,16 @@
-$OpenBSD: patch-libavcodec_Makefile,v 1.12 2006/03/20 05:50:49 jakemsr Exp $
---- libavcodec/Makefile.orig	Tue Feb 28 00:11:44 2006
-+++ libavcodec/Makefile	Tue Feb 28 00:21:33 2006
-@@ -282,7 +282,7 @@ OBJS+= liba52/bit_allocate.o liba52/bits
- endif
- endif
+$OpenBSD: patch-libavcodec_Makefile,v 1.13 2007/01/23 09:34:45 robert Exp $
+--- libavcodec/Makefile.orig	Mon Jan  8 01:24:14 2007
++++ libavcodec/Makefile	Mon Jan  8 13:43:41 2007
+@@ -402,11 +402,9 @@ CFLAGS += $(CFLAGS-yes)
+ OBJS += $(OBJS-yes)
+ ASM_OBJS += $(ASM_OBJS-yes)
  
--EXTRALIBS += -L../libavutil -lavutil$(BUILDSUF)
-+# EXTRALIBS += -L../libavutil -lavutil$(BUILDSUF)
- 
- # currently using libdts for dts decoding
- ifeq ($(CONFIG_DTS),yes)
-@@ -396,9 +396,9 @@ endif
- 
+-EXTRALIBS := -L$(BUILD_ROOT)/libavutil -lavutil$(BUILDSUF) $(EXTRALIBS)
+-
  NAME=avcodec
- SUBDIR=libavcodec
--LIBAVUTIL= $(SRC_PATH)/libavutil/$(LIBPREF)avutil$(LIBSUF)
-+LIBAVUTIL= $(SRC_PATH)/libavutil/$(LIBPREF)avutil$(LIBSUF).$(LIBavutil_VERSION)
  ifeq ($(BUILD_SHARED),yes)
 -LIBVERSION=$(LAVCVERSION)
-+LIBVERSION='$(LIBavcodec_VERSION)'
++LIBVERSION=$(LIBavcodec_VERSION)
  LIBMAJOR=$(LAVCMAJOR)
  endif
- TESTS= imgresample-test dct-test motion-test fft-test
+ 

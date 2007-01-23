@@ -1,33 +1,41 @@
-@comment $OpenBSD: PLIST,v 1.9 2006/03/20 05:50:49 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.10 2007/01/23 09:34:45 robert Exp $
 %%SHARED%%
 bin/ffmpeg
 bin/ffplay
 bin/ffserver
 include/ffmpeg/
+include/ffmpeg/adler32.h
 include/ffmpeg/avcodec.h
 include/ffmpeg/avformat.h
 include/ffmpeg/avio.h
 include/ffmpeg/avutil.h
 include/ffmpeg/common.h
-include/ffmpeg/dsputil.h
+include/ffmpeg/fifo.h
 include/ffmpeg/integer.h
 include/ffmpeg/intfloat_readwrite.h
+include/ffmpeg/log.h
 include/ffmpeg/mathematics.h
+include/ffmpeg/md5.h
+include/ffmpeg/opt.h
 include/ffmpeg/rational.h
+include/ffmpeg/rgb2rgb.h
 include/ffmpeg/rtp.h
 include/ffmpeg/rtsp.h
 include/ffmpeg/rtspcodes.h
+include/ffmpeg/swscale.h
 include/postproc/
 include/postproc/postprocess.h
 lib/libavcodec.a
 lib/libavformat.a
 lib/libavutil.a
 lib/libpostproc.a
+lib/libswscale.a
 lib/pkgconfig/
 lib/pkgconfig/libavcodec.pc
 lib/pkgconfig/libavformat.pc
 lib/pkgconfig/libavutil.pc
 lib/pkgconfig/libpostproc.pc
+lib/pkgconfig/libswscale.pc
 lib/vhook/
 @man man/man1/ffmpeg.1
 @man man/man1/ffplay.1

@@ -1,0 +1,21 @@
+$OpenBSD: patch-tests_regression_sh,v 1.1 2007/01/23 09:34:45 robert Exp $
+--- tests/regression.sh.orig	Sat Dec  2 17:03:28 2006
++++ tests/regression.sh	Sat Dec  9 20:16:17 2006
+@@ -89,7 +89,7 @@ fi
+ 
+ 
+ # various files
+-ffmpeg="../ffmpeg_g"
++ffmpeg="env LD_LIBRARY_PATH=../libavcodec:../libavutil:../libavformat:../libswscale  ../ffmpeg_g"
+ tiny_psnr="./tiny_psnr"
+ reffile="$2"
+ benchfile="$datadir/ffmpeg.bench"
+@@ -103,6 +103,8 @@ if [ X"`echo | md5sum 2> /dev/null`" != 
+     do_md5sum() { md5sum -b $1; }
+ elif [ -x /sbin/md5 ]; then
+     do_md5sum() { /sbin/md5 -r $1 | sed 's# \**\./# *./#'; }
++elif [ -x /bin/md5 ]; then
++    do_md5sum() { /bin/md5 $1 | sed 's/[)(]//g' | awk '{print $NF " *"$2}'; }
+ else
+     do_md5sum() { echo No md5sum program found; }
+ fi
