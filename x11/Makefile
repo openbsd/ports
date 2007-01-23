@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.263 2007/01/19 21:39:30 steven Exp $
+# $OpenBSD: Makefile,v 1.264 2007/01/23 15:43:52 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -220,6 +220,7 @@
      SUBDIR += xcursorgen
      SUBDIR += xdaliclock
      SUBDIR += xdmchoose
+     SUBDIR += xdrawchem
      SUBDIR += xdtm
      SUBDIR += xdu
      SUBDIR += xfce4
