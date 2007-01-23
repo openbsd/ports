@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2006/08/01 22:19:46 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/01/23 22:30:51 espie Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"Sybase database driver for the DBI module"
 
 DISTNAME=	DBD-Sybase-1.04
-PKGNAME=	p5-${DISTNAME}p1
-CATEGORIES=	databases perl5
+PKGNAME=	p5-${DISTNAME}p2
+CATEGORIES=	databases
 
 # GPL/Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
@@ -15,15 +15,12 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		intl m
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=DBD/}
-
-MODULES=	devel/gettext
+MODULES=	devel/gettext	cpan
 
 LIB_DEPENDS=	ct.>=3::databases/freetds
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	:p5-DBI-*:databases/p5-DBI \
 
-CONFIGURE_STYLE=perl
 CONFIGURE_ENV+=	SYBASE=${LOCALBASE}
 
 NO_REGRESS=	Yes

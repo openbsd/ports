@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/09/05 13:12:47 espie Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.7 2007/01/23 22:30:51 espie Exp $
+${P5ARCH}/auto/DBD/Sybase/Sybase.so
 ${P5ARCH}/DBD/Sybase.pm
 ${P5ARCH}/DBD/dbd-sybase.pod
 ${P5ARCH}/auto/DBD/
