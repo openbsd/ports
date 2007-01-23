@@ -1,0 +1,17 @@
+$OpenBSD: gcc-src_Makefile_in,v 1.1 2007/01/23 11:42:50 aanriot Exp $
+--- src/Makefile.in.orig	Sun Jan 21 20:41:17 2007
++++ src/Makefile.in	Sun Jan 21 20:42:02 2007
+@@ -560,6 +560,13 @@ distclean-compile:
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(LTCOMPILE) -c -o $@ $<
+ 
++idmef-message-read.lo: idmef-message-read.c
++@am__fastdepCC_TRUE@	if $(LTCOMPILE) -O0 -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \
++@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/$*.Tpo" "$(DEPDIR)/$*.Plo"; else rm -f "$(DEPDIR)/$*.Tpo"; exit 1; fi
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(LTCOMPILE) -c -o $@ $<
++
+ .l.c:
+ 	$(LEXCOMPILE) $<
+ 	sed '/^#/ s|$(LEX_OUTPUT_ROOT)\.c|$@|' $(LEX_OUTPUT_ROOT).c >$@
