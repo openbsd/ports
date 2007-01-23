@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/24 07:19:35 mcbride Exp $
+# $OpenBSD: Makefile,v 1.2 2007/01/23 15:17:02 ajacoutot Exp $
 
 COMMENT=	"A stylus character recognition tool for X11"
 
 DISTNAME=	xscribble
-PKGNAME=	xscribble-20000616
+PKGNAME=	xscribble-20000616p0
 CATEGORIES=	x11
+
+HOMEPAGE=	http://www.handhelds.org/projects/xscribble.html
 
 EXTRACT_SUFX=	.tgz
 
