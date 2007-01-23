@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.75 2007/01/23 11:04:09 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.76 2007/01/23 12:57:32 mbalmer Exp $
 
 COMMENT-main=	"Open source LDAP software (client)"
 COMMENT-server=	"Open source LDAP software (server)"
 
 DISTNAME=		openldap-2.3.33
 FULLPKGNAME-main=	${DISTNAME:S/-/-client-/}
-PKGNAME-server=		${DISTNAME:S/-/-server-/}
+PKGNAME-server=		${DISTNAME:S/-/-server-/}p0
 
 SHARED_LIBS +=	lber                 9.1      # .2.15
 SHARED_LIBS +=	ldap                 9.1      # .2.15
@@ -112,6 +112,9 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openldap/schema
 	${INSTALL_DATA} ${DESTDIR}${SYSCONFDIR}/openldap/schema/*.schema \
 		 ${PREFIX}/share/examples/openldap/schema
+	${INSTALL_DATA} ${WRKSRC}/servers/slapd/DB_CONFIG \
+		${PREFIX}/share/examples/openldap
 	@rm -r ${DESTDIR}${SYSCONFDIR}/openldap
+	@rm -r ${DESTDIR}/var/openldap-data ${DESTDIR}/var/openldap-slurp
 
 .include <bsd.port.mk>

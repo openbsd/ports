@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.14 2007/01/13 13:37:33 mbalmer Exp $
+@comment $OpenBSD: PLIST-server,v 1.15 2007/01/23 12:57:32 mbalmer Exp $
 @conflict openldap-client->=2.3.11,<=2.3.11p3
 @newgroup _openldap:544
 @newuser _openldap:544:_openldap:daemon:OpenLDAP Account:/nonexistent:/sbin/nologin
@@ -41,6 +41,10 @@ sbin/slapdn
 sbin/slapindex
 sbin/slappasswd
 sbin/slaptest
+@sample /var/openldap-data/
+@sample /var/openldap-slurp/
+share/examples/openldap/DB_CONFIG
+@sample /var/openldap-data/DB_CONFIG
 share/examples/openldap/schema/
 @sample ${SYSCONFDIR}/openldap/schema/
 share/examples/openldap/schema/corba.schema
