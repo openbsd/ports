@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2006/12/15 13:34:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2007/01/23 13:37:13 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.27 1997/11/22 14:56:56 peter Exp $
 
      SUBDIR += birda
@@ -11,6 +11,7 @@
      SUBDIR += hylafax
      SUBDIR += hylafax,a4
      SUBDIR += jpilot
+     SUBDIR += jpilot-syncmal
      SUBDIR += kermit
      SUBDIR += libmal
      SUBDIR += lrzsz
