@@ -1,0 +1,11 @@
+$OpenBSD: patch-xdrawchem_application_cpp,v 1.1.1.1 2007/01/23 15:43:05 ajacoutot Exp $
+--- xdrawchem/application.cpp.orig	Tue Jan 16 16:05:03 2007
++++ xdrawchem/application.cpp	Tue Jan 16 16:05:40 2007
+@@ -58,6 +58,7 @@ using std::endl;
+ #ifdef UNIX
+ #include <stdlib.h>
+ #include <time.h>
++#include <unistd.h>
+ #endif
+ 
+ #include "defs.h"

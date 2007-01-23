@@ -1,0 +1,39 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2007/01/23 15:43:05 ajacoutot Exp $
+
+COMMENT=	"two-dimensional molecule drawing program"
+
+DISTNAME=	xdrawchem-1.9.9
+CATEGORIES=	x11 biology
+
+HOMEPAGE=	http://xdrawchem.sourceforge.net/
+
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+
+# GPLv2
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM= Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xdrawchem/}
+
+WANTLIB=	c m pthread stdc++ z
+
+MODULES=	x11/qt3
+
+LIB_DEPENDS=	openbabel.>=3::misc/openbabel
+
+VMEM_WARNING=	Yes
+
+USE_X11=	Yes
+USE_LIBTOOL=	Yes
+USE_GMAKE=	Yes
+CONFIGURE_STYLE=gnu
+
+MAKE_FLAGS+=	LDFLAGS+="-lqt-mt -pthread -L${X11BASE}/lib"
+
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--with-qtincdir=${MODQT_INCDIR} \
+		--with-qtlibdir=${MODQT_LIBDIR}
+
+.include <bsd.port.mk>

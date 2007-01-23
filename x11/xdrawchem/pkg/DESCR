@@ -1,0 +1,6 @@
+XDrawChem is a two-dimensional molecule drawing program for Unix
+operating systems.  It is similar in functionality to other molecule
+drawing programs such as ChemDraw (TM, CambridgeSoft).  It can read and
+write MDL Molfiles, and read ChemDraw text and binary files, to allow
+sharing between XDrawChem and other chemistry applications, and it can
+create images in popular formats like PNG and EPS.
