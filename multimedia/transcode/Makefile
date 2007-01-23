@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2006/12/16 12:22:34 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2007/01/23 10:39:01 robert Exp $
 
 COMMENT=		"video stream processing tools"
 
-DISTNAME=		transcode-1.0.2
-PKGNAME=		${DISTNAME}p2
+DISTNAME=		transcode-1.0.3rc2
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://www.transcoding.org/
@@ -16,8 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xaw Xext Xi Xpm Xt Xv c freetype \
 			m pthread usbhid z glib gmodule intl
 
-MASTER_SITES=		http://www.jakemsr.com/transcode/ \
-			http://kraymer.de/mirroring/
+MASTER_SITES=		http://fromani.exit1.org/
 
 FLAVORS=		lzo mjpegtools quicktime
 FLAVOR?=
