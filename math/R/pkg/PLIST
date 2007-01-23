@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2006/11/11 18:52:12 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.11 2007/01/23 12:06:02 mbalmer Exp $
 bin/R
 lib/R/
 lib/R/COPYING
@@ -38,9 +38,11 @@ lib/R/doc/COPYING
 lib/R/doc/COPYING.LIB
 lib/R/doc/COPYRIGHTS
 lib/R/doc/CRAN_mirrors.csv
+lib/R/doc/FAQ
 lib/R/doc/KEYWORDS
 lib/R/doc/KEYWORDS.db
 lib/R/doc/NEWS
+lib/R/doc/RESOURCES
 lib/R/doc/THANKS
 lib/R/doc/html/
 lib/R/doc/html/R.css
@@ -3727,6 +3729,9 @@ lib/R/library/grDevices/po/fr/
 lib/R/library/grDevices/po/fr/LC_MESSAGES/
 lib/R/library/grDevices/po/fr/LC_MESSAGES/R-grDevices.mo
 lib/R/library/grDevices/po/fr/LC_MESSAGES/grDevices.mo
+lib/R/library/grDevices/po/grDevices-zh_CN/
+lib/R/library/grDevices/po/grDevices-zh_CN/LC_MESSAGES/
+lib/R/library/grDevices/po/grDevices-zh_CN/LC_MESSAGES/grDevices.mo
 lib/R/library/grDevices/po/it/
 lib/R/library/grDevices/po/it/LC_MESSAGES/
 lib/R/library/grDevices/po/it/LC_MESSAGES/R-grDevices.mo
@@ -4428,6 +4433,7 @@ lib/R/library/lattice/data/Rdata.rdx
 lib/R/library/lattice/demo/
 lib/R/library/lattice/demo/intervals.R
 lib/R/library/lattice/demo/lattice.R
+lib/R/library/lattice/demo/panel.R
 lib/R/library/lattice/help/
 lib/R/library/lattice/help/AnIndex
 lib/R/library/lattice/help/Lattice
@@ -8884,6 +8890,9 @@ lib/R/library/utils/po/fr/LC_MESSAGES/R-utils.mo
 lib/R/library/utils/po/ko/
 lib/R/library/utils/po/ko/LC_MESSAGES/
 lib/R/library/utils/po/ko/LC_MESSAGES/R-utils.mo
+lib/R/library/utils/po/ru/
+lib/R/library/utils/po/ru/LC_MESSAGES/
+lib/R/library/utils/po/ru/LC_MESSAGES/R-utils.mo
 lib/R/library/utils/po/zh_CN/
 lib/R/library/utils/po/zh_CN/LC_MESSAGES/
 lib/R/library/utils/po/zh_CN/LC_MESSAGES/R-utils.mo
