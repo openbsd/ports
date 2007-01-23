@@ -1,0 +1,3 @@
+jpilot-syncmal is a MAL (Mobile Application Link) plugin for J-Pilot.
+It was built upon libmal, and can be used to synchronize PDAs with MAL
+servers such as AvantGo.
