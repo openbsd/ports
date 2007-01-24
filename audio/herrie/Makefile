@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2007/01/01 21:50:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2007/01/24 13:03:08 jasper Exp $
 
 COMMENT=		"minimalistic console-based audio player"
 
-DISTNAME=		herrie-1.2
+DISTNAME=		herrie-1.3
 CATEGORIES=		audio
 
 HOMEPAGE=		http://g-rave.nl/projects/herrie/
