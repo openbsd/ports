@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/18 10:38:47 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/01/24 17:10:16 naddy Exp $
 bin/estcmd.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/estraier.so
 share/doc/ruby-hyperestraier/
@@ -77,13 +77,7 @@ share/doc/ruby-hyperestraier/classes/Estraier/Result.src/M000035.html
 share/doc/ruby-hyperestraier/classes/Estraier/Result.src/M000036.html
 share/doc/ruby-hyperestraier/created.rid
 share/doc/ruby-hyperestraier/files/
-share/doc/ruby-hyperestraier/files/usr/
-share/doc/ruby-hyperestraier/files/usr/obj/
-share/doc/ruby-hyperestraier/files/usr/obj/ports/
-share/doc/ruby-hyperestraier/files/usr/obj/ports/ruby-hyperestraier-1_0_0/
-share/doc/ruby-hyperestraier/files/usr/obj/ports/ruby-hyperestraier-1_0_0/hyperestraier-1_4_9/
-share/doc/ruby-hyperestraier/files/usr/obj/ports/ruby-hyperestraier-1_0_0/hyperestraier-1_4_9/rubynative/
-share/doc/ruby-hyperestraier/files/usr/obj/ports/ruby-hyperestraier-1_0_0/hyperestraier-1_4_9/rubynative/estraier-doc_rb.html
+share/doc/ruby-hyperestraier/files/estraier-doc_rb.html
 share/doc/ruby-hyperestraier/fr_class_index.html
 share/doc/ruby-hyperestraier/fr_file_index.html
 share/doc/ruby-hyperestraier/fr_method_index.html

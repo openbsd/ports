@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/01/18 10:38:47 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2007/01/24 17:10:16 naddy Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		"Ruby interface to hyperestraier"
 
 DISTNAME=		hyperestraier-1.4.9
-PKGNAME=		ruby-hyperestraier-1.0.0
+PKGNAME=		ruby-hyperestraier-1.0.0p0
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://hyperestraier.sourceforge.net/
@@ -35,7 +35,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ruby-hyperestraier
 	${INSTALL_DATA} ${WRKSRC}/example/*.rb \
 		${PREFIX}/share/examples/ruby-hyperestraier
-	${LOCALBASE}/bin/rdoc -o ${PREFIX}/share/doc/ruby-hyperestraier \
-		${WRKSRC}/estraier-doc.rb
+	cd ${WRKSRC} && ${LOCALBASE}/bin/rdoc -o ${PREFIX}/share/doc/ruby-hyperestraier \
+		estraier-doc.rb
 
 .include <bsd.port.mk>
