@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/27 16:49:25 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/01/24 13:16:33 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,11 +7,9 @@ COMMENT-arts=	"arts helper and plugin for audacious"
 
 V=		1.2.5
 DISTNAME=	audacious-plugins-$V
-PKGNAME-main=	${DISTNAME}
-PKGNAME-arts=	audacious-arts-$V
+PKGNAME-main=	${DISTNAME}p0
+PKGNAME-arts=	audacious-arts-$Vp0
 CATEGORIES=	audio multimedia
-
-MAINTAINER=	Vlad Glagolev <stelzy@gmail.com>
 
 HOMEPAGE=	http://audacious-media-player.org/
 

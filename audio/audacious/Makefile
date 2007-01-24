@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/27 16:46:09 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/01/24 13:16:33 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"GTK+-2 media player based on BMP and XMMS"
 
 DISTNAME=	audacious-1.2.2
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	audacious	4.0
 CATEGORIES=	audio
 
 HOMEPAGE=	http://audacious-media-player.org/
-
-MAINTAINER=	Vlad Glagolev <stelzy@gmail.com>
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes
