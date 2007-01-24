@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2006/12/23 08:17:54 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.10 2007/01/24 06:48:36 jolan Exp $
 bin/bi2cf
 bin/cfed
 bin/comet
@@ -17,6 +17,7 @@ share/crimson/default.units
 share/crimson/levels/
 share/crimson/levels/Anthill.lev
 share/crimson/levels/ArmsRace.lev
+share/crimson/levels/Baptism.lev
 share/crimson/levels/BeachRaid.lev
 share/crimson/levels/ClippedWings.lev
 share/crimson/levels/Foxhole.lev
@@ -24,6 +25,7 @@ share/crimson/levels/General.lev
 share/crimson/levels/GreatBattle.lev
 share/crimson/levels/HeavyMetal.lev
 share/crimson/levels/IslandHoppers.lev
+share/crimson/levels/LakeYukarwa.lev
 share/crimson/levels/LankhValley.lev
 share/crimson/levels/LostFactories.lev
 share/crimson/levels/MountainDefense.lev
@@ -40,8 +42,10 @@ share/crimson/locale/de.dat
 share/crimson/locale/en.dat
 share/crimson/locale/fr.dat
 share/crimson/locale/hu.dat
+share/crimson/locale/it.dat
 share/crimson/locale/pl.dat
 share/crimson/locale/sk.dat
+share/crimson/locale/sr.dat
 share/crimson/music/
 share/crimson/music/default.mid
 share/crimson/sound/
