@@ -1,12 +1,9 @@
-$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.4 2006/10/14 05:04:54 brad Exp $
---- scripts/mysql_install_db.sh.orig	Wed Oct  4 07:24:11 2006
-+++ scripts/mysql_install_db.sh	Thu Oct 12 05:18:57 2006
-@@ -7,10 +7,9 @@
- #
- # All unrecognized arguments to this script are passed to mysqld.
- 
--in_rpm=0
--windows=0
+$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.5 2007/01/25 07:41:48 jakob Exp $
+--- scripts/mysql_install_db.sh.orig	Tue Jan  9 07:51:08 2007
++++ scripts/mysql_install_db.sh	Sun Jan 14 22:07:48 2007
+@@ -10,7 +10,8 @@
+ in_rpm=0
+ windows=0
  defaults=""
 -user=""
 +user=_mysql
@@ -14,97 +11,15 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.4 2006/10/14 05:04:54 brad Exp $
  
  case "$1" in
      --no-defaults|--defaults-file=*|--defaults-extra-file=*)
-@@ -31,7 +30,6 @@ parse_arguments() {
- 
-   for arg do
-     case "$arg" in
--      --force) force=1 ;;
-       --basedir=*) basedir=`echo "$arg" | sed -e 's/^[^=]*=//'` ;;
-       --ldata=*|--datadir=*) ldata=`echo "$arg" | sed -e 's/^[^=]*=//'` ;;
-       --user=*)
-@@ -39,10 +37,9 @@ parse_arguments() {
+@@ -40,6 +41,7 @@ parse_arguments() {
          # as 'user' (crucial e.g. if log-bin=/some_other_path/
          # where a chown of datadir won't help)
  	 user=`echo "$arg" | sed -e 's/^[^=]*=//'` ;;
 +      --group=*) group=`echo "$arg" | sed -e 's/^[^=]*=//'` ;;
        --skip-name-resolve) ip_only=1 ;;
        --verbose) verbose=1 ;;
--      --rpm) in_rpm=1 ;;
--      --windows) windows=1 ;;
-       *)
-         if test -n "$pick_args"
-         then
-@@ -78,7 +75,6 @@ ldata=
- execdir=
- bindir=
- basedir=
--force=0
- verbose=0
- fill_help_tables=""
- 
-@@ -127,44 +123,28 @@ mysqld=$execdir/mysqld
- mysqld_opt=""
- scriptdir=$bindir
- 
--if test "$windows" = 1
--then
--  mysqld="./sql/mysqld"
--  mysqld_opt="--language=./sql/share/english"
--  scriptdir="./scripts"
--fi
--
- if test ! -x $mysqld
- then
--  if test "$in_rpm" = 1
--  then
-     echo "FATAL ERROR $mysqld not found!"
-     exit 1
--  else
--    echo "Didn't find $mysqld"
--    echo "You should do a 'make install' before executing this script"
--    exit 1
--  fi
- fi
- 
- # Try to determine the hostname
- hostname=`@HOSTNAME@`
- 
- # Check if hostname is valid
--if test "$windows" = 0 -a "$in_rpm" = 0 -a $force = 0
-+resolved=`$bindir/resolveip $hostname 2>&1`
-+if [ $? -ne 0 ]
- then
--  resolved=`$bindir/resolveip $hostname 2>&1`
--  if [ $? -ne 0 ]
--  then
-     resolved=`$bindir/resolveip localhost 2>&1`
-     if [ $? -ne 0 ]
--    then
--      echo "Neither host '$hostname' nor 'localhost' could be looked up with"
--      echo "$bindir/resolveip"
--      echo "Please configure the 'hostname' command to return a correct hostname."
--      echo "If you want to solve this at a later stage, restart this script with"
--      echo "the --force option"
--      exit 1
-+	then
-+	echo "Neither host '$hostname' nor 'localhost' could be looked up with"
-+	echo "$bindir/resolveip"
-+	echo "Please configure the 'hostname' command to return a correct hostname."
-+	echo "If you want to solve this at a later stage, restart this script with"
-+	echo "the --force option"
-+	exit 1
-     fi
-     echo "WARNING: The host '$hostname' could not be looked up with resolveip."
-     echo "This probably means that your libc libraries are not 100 % compatible"
-@@ -172,7 +152,6 @@ then
-     echo "normally with the exception that host name resolving will not work."
-     echo "This means that you should use IP addresses instead of hostnames"
-     echo "when specifying MySQL privileges !"
--  fi
- fi
- 
- if test "$ip_only" = "1"
-@@ -183,12 +162,10 @@ fi
+       --rpm) in_rpm=1 ;;
+@@ -197,12 +199,10 @@ fi
  
  # Create database directories mysql & test
  
@@ -114,38 +29,14 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.4 2006/10/14 05:04:54 brad Exp $
 -  if test -w / -a ! -z "$user"; then
 -    chown $user $ldata $ldata/mysql $ldata/test;
 -  fi
-+if test ! -d $ldata; then mkdir -p $ldata; chmod 700 $ldata ; fi
-+if test ! -d $ldata/mysql; then mkdir -p $ldata/mysql;  chmod 700 $ldata/mysql ; fi
-+if test ! -d $ldata/test; then mkdir -p $ldata/test;  chmod 700 $ldata/test ; fi
-+chown -f $user:$group $ldata $ldata/mysql $ldata/test;
++  if test ! -d $ldata; then mkdir -p $ldata; chmod 700 $ldata ; fi
++  if test ! -d $ldata/mysql; then mkdir -p $ldata/mysql;  chmod 700 $ldata/mysql ; fi
++  if test ! -d $ldata/test; then mkdir -p $ldata/test;  chmod 700 $ldata/test ; fi
++  chown -f $user:$group $ldata $ldata/mysql $ldata/test;
  
  if test ! -f $mdata/db.frm
  then
-@@ -206,10 +183,7 @@ if test -n "$user"; then
-   args="$args --user=$user"
- fi
- 
--if test "$in_rpm" -eq 0 -a "$windows" -eq 0
--then
--  echo "Installing all prepared tables"
--fi
-+echo "Installing all prepared tables"
- mysqld_install_cmd_line="$mysqld $defaults $mysqld_opt --bootstrap \
- --skip-grant-tables --basedir=$basedir --datadir=$ldata --skip-innodb \
- --skip-bdb --skip-ndbcluster $args --max_allowed_packet=8M --net_buffer_length=16K"
-@@ -218,10 +192,7 @@ if $scriptdir/mysql_create_system_tables
- then
-   if test -n "$fill_help_tables"
-   then
--    if test "$in_rpm" -eq 0 -a "$windows" -eq 0
--    then
--      echo "Fill help tables"
--    fi
-+    echo "Fill help tables"
-     (echo "use mysql;"; cat $fill_help_tables) | eval "$mysqld_install_cmd_line"
-     res=$?
-     if test $res != 0
-@@ -232,15 +203,6 @@ then
+@@ -246,13 +246,6 @@ then
        echo ""
      fi
    fi
@@ -156,12 +47,10 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.4 2006/10/14 05:04:54 brad Exp $
 -    echo "to the right place for your system"
 -    echo
 -  fi
--  if test "$windows" -eq 0
--  then
+   if test "$windows" -eq 0
+   then
    echo "PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER !"
-   echo "To do so, start the server, then issue the following commands:"
-   echo "$bindir/mysqladmin -u root password 'new-password'"
-@@ -256,21 +218,11 @@ then
+@@ -270,15 +263,6 @@ then
      echo "able to use the new GRANT command!"
    fi
    echo
@@ -177,9 +66,3 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.4 2006/10/14 05:04:54 brad Exp $
    echo "Please report any problems with the @scriptdir@/mysqlbug script!"
    echo
    echo "The latest information about MySQL is available on the web at"
-   echo "http://www.mysql.com"
-   echo "Support MySQL by buying support/licenses at http://shop.mysql.com"
--  fi
-   exit 0
- else
-   echo "Installation of system tables failed!"
