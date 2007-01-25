@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2006/11/20 01:14:11 niallo Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/01/25 07:25:33 jsg Exp $
 bin/stella
 share/doc/stella/
 share/doc/stella/debugger.html
@@ -9,10 +9,12 @@ share/doc/stella/graphics/circuit.png
 share/doc/stella/graphics/console.png
 share/doc/stella/graphics/eventmapping.png
 share/doc/stella/graphics/eventmapping_remap.png
+share/doc/stella/graphics/eventmapping_virtualdevs.png
 share/doc/stella/graphics/jr_pacman.png
 share/doc/stella/graphics/launcher.png
 share/doc/stella/graphics/launcher_options_rom.png
 share/doc/stella/graphics/launcher_options_snap.png
+share/doc/stella/graphics/options.png
 share/doc/stella/graphics/options_about.png
 share/doc/stella/graphics/options_audio.png
 share/doc/stella/graphics/options_gameinfo.png
