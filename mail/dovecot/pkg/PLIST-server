@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.3 2007/01/15 08:12:40 jakob Exp $
+@comment $OpenBSD: PLIST-server,v 1.4 2007/01/25 07:48:39 jakob Exp $
 @pkgpath ${BASE_PKGPATH}
 @newgroup _dovecot:518
 @newuser _dovecot:518:_dovecot:daemon:Dovecot Account:/nonexistent:/sbin/nologin
@@ -12,6 +12,7 @@ lib/dovecot/imap/lib10_quota_plugin.so
 lib/dovecot/imap/lib11_imap_quota_plugin.so
 lib/dovecot/imap/lib11_trash_plugin.so
 lib/dovecot/imap/lib20_convert_plugin.so
+lib/dovecot/imap/lib20_mail_log_plugin.so
 @comment lib/dovecot/imap/lib20_zlib_plugin.a
 @comment lib/dovecot/imap/lib20_zlib_plugin.la
 lib/dovecot/imap/lib20_zlib_plugin.so
@@ -20,6 +21,7 @@ lib/dovecot/lda/lib01_acl_plugin.so
 lib/dovecot/lda/lib10_quota_plugin.so
 lib/dovecot/lda/lib11_trash_plugin.so
 lib/dovecot/lda/lib20_convert_plugin.so
+lib/dovecot/lda/lib20_mail_log_plugin.so
 @comment lib/dovecot/lib01_acl_plugin.a
 @comment lib/dovecot/lib01_acl_plugin.la
 lib/dovecot/lib01_acl_plugin.so
@@ -35,10 +37,14 @@ lib/dovecot/lib11_trash_plugin.so
 @comment lib/dovecot/lib20_convert_plugin.a
 @comment lib/dovecot/lib20_convert_plugin.la
 lib/dovecot/lib20_convert_plugin.so
+@comment lib/dovecot/lib20_mail_log_plugin.a
+@comment lib/dovecot/lib20_mail_log_plugin.la
+lib/dovecot/lib20_mail_log_plugin.so
 lib/dovecot/pop3/
 lib/dovecot/pop3/lib02_lazy_expunge_plugin.so
 lib/dovecot/pop3/lib10_quota_plugin.so
 lib/dovecot/pop3/lib20_convert_plugin.so
+lib/dovecot/pop3/lib20_mail_log_plugin.so
 libexec/dovecot/
 libexec/dovecot/checkpassword-reply
 libexec/dovecot/deliver
