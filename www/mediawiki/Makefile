@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2006/11/17 20:46:32 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.12 2007/01/25 10:43:05 mbalmer Exp $
 
 COMMENT=	"web-based collaborative editing environment"
 
-DISTNAME=	mediawiki-1.8.2
+DISTNAME=	mediawiki-1.9.1
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.mediawiki.org/
@@ -25,8 +25,7 @@ PREFIX=		/var/www
 INSTDIR=	${PREFIX}/mediawiki
 SUBST_VARS=	INSTDIR
 
-RUN_DEPENDS=	:php5-mysql-*:www/php5/extensions,-mysql \
-		:php5-gd-*:www/php5/extensions,-gd
+RUN_DEPENDS=	:php5-gd-*:www/php5/extensions,-gd
 
 do-install:
 	@cd ${PREFIX} && tar zxf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}

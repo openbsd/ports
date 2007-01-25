@@ -1,2 +1,5 @@
 MediaWiki is the software used for Wikipedia and the other Wikimedia
 Foundation websites.
+
+To use MediaWiki you must install either the php5-mysql or php5-pgsql
+extension, depending on which database you want to run MediaWiki with.
