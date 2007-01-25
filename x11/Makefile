@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.264 2007/01/23 15:43:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.265 2007/01/25 16:20:02 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -77,6 +77,7 @@
      SUBDIR += gtkmm
      SUBDIR += gtksourceview
      SUBDIR += gtop
+     SUBDIR += gxmessage
      SUBDIR += hicolor-icon-theme
      SUBDIR += icewm
      SUBDIR += icon-naming-utils
