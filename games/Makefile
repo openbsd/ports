@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2007/01/21 10:27:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.135 2007/01/25 10:35:15 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -99,6 +99,7 @@
      SUBDIR += spider
      SUBDIR += starlanes
      SUBDIR += sudoku
+     SUBDIR += sudoku-solver
      SUBDIR += taxipilot
      SUBDIR += toppler
      SUBDIR += tornado
