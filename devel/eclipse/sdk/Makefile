@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2007/01/12 18:46:37 kurt Exp $
+# $OpenBSD: Makefile,v 1.30 2007/01/26 14:15:37 kurt Exp $
 
 ONLY_FOR_ARCHS=		amd64 i386
 
@@ -61,6 +61,7 @@ BUILD_DEPENDS=		::devel/xulrunner,-devel \
 
 USE_GMAKE=		Yes
 USE_X11=		Yes
+USE_ZIP=		Yes
 
 MULTI_PACKAGES=		-main -swt -gnome -browser
 
