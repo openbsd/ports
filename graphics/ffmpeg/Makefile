@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2007/01/23 09:34:45 robert Exp $
+# $OpenBSD: Makefile,v 1.25 2007/01/26 16:03:20 robert Exp $
 
 COMMENT=	"audio/video converter and streamer with bktr(4) support"
 
 DISTNAME=		ffmpeg-cvs-20070110
-PKGNAME=		${DISTNAME:S/-cvs//}
+PKGNAME=		${DISTNAME:S/-cvs//}p0
 SHARED_LIBS=		avutil		2.0 \
 			avcodec		8.0 \
 			avformat	8.0 \
@@ -30,7 +30,7 @@ LIB_DEPENDS=		SDL.>=4::devel/sdl \
 			mp3lame.>=0.1::audio/lame \
 			vorbis.>=4.0,vorbisenc.>=2.0::audio/libvorbis
 
-WANTLIB=		X11 Xext c freetype m pthread ossaudio usbhid z
+WANTLIB=		X11 Xext c freetype m pthread ogg ossaudio usbhid z
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
@@ -55,7 +55,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-mp3lame \
 			--enable-libogg \
 			--enable-vorbis \
-			--extra-ldflags="-lm -L${LOCALBASE}/lib" \
+			--extra-libs="-L${LOCALBASE}/lib" \
 			--extra-cflags=-I${LOCALBASE}/include
 
 
