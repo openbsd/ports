@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2006/02/12 14:58:15 david Exp $
+# $OpenBSD: Makefile,v 1.18 2007/01/26 23:12:34 steven Exp $
 # $FreeBSD: Makefile,v 1.32 1997/11/16 04:58:09 fenner Exp $
 #
 
@@ -13,7 +13,6 @@
      SUBDIR += plor
      SUBDIR += slrn
      SUBDIR += tin
-     SUBDIR += tin,nntp_only
      SUBDIR += trn
      SUBDIR += ubh
      SUBDIR += yencode
