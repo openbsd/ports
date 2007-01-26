@@ -1,0 +1,13 @@
+$OpenBSD: patch-po_Makefile_in_in,v 1.1.1.1 2007/01/26 17:40:57 ajacoutot Exp $
+--- po/Makefile.in.in.orig	Fri Jul  7 14:01:54 2006
++++ po/Makefile.in.in	Fri Jan 12 11:02:26 2007
+@@ -212,9 +212,6 @@ Makefile POTFILES: stamp-it
+ 	fi
+ 
+ stamp-it: Makefile.in.in ../config.status POTFILES.in
+-	cd .. \
+-	  && CONFIG_FILES=$(subdir)/Makefile.in CONFIG_HEADERS= CONFIG_LINKS= \
+-	       $(SHELL) ./config.status
+ 
+ # Tell versions [3.59,3.63) of GNU make not to export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
