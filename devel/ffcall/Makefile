@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2006/02/04 00:05:21 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2007/01/26 22:32:23 steven Exp $
 # $FreeBSD: ports/devel/ffcall/Makefile,v 1.2 2001/08/31 14:20:18 sobomax Exp $
 # Original From:                jagapen@home.com
 
@@ -8,12 +8,9 @@ BROKEN=		"mmap configure test causes system hang"
 
 COMMENT=	"foreign function call libraries"
 
-DISTNAME=	ffcall-1.9
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=		avcall		0.0 \
-			callback	0.0
-MODGNU_SHARED_LIBS=	avcall		'' \
-			callback	''
+DISTNAME=	ffcall-1.10
+SHARED_LIBS=	avcall		1.0 \
+		callback	1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.haible.de/bruno/gnu/ \
 		ftp://ftp.ilog.fr/pub/Users/haible/gnu/
@@ -26,6 +23,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autoconf

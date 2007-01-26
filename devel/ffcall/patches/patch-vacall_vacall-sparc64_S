@@ -1,12 +1,12 @@
-$OpenBSD: patch-vacall_vacall-sparc64_S,v 1.1 2004/01/16 22:01:46 naddy Exp $
---- vacall/vacall-sparc64.S.orig	2004-01-16 22:48:29.000000000 +0100
-+++ vacall/vacall-sparc64.S	2004-01-16 22:48:43.000000000 +0100
+$OpenBSD: patch-vacall_vacall-sparc64_S,v 1.2 2007/01/26 22:32:23 steven Exp $
+--- vacall/vacall-sparc64.S.orig	Wed Jun  2 21:00:42 2004
++++ vacall/vacall-sparc64.S	Fri Jan 26 23:11:52 2007
 @@ -4,6 +4,8 @@
  .section	".text"
  	.align 4
- 	.global vacall
+ 	.global __vacall
 +	.register %g2, #scratch
 +	.register %g3, #scratch
- 	DECLARE_FUNCTION(vacall)
- 	.type	 vacall,$function
+ 	DECLARE_FUNCTION(__vacall)
+ 	.type	 __vacall,$function
  	.proc	020
