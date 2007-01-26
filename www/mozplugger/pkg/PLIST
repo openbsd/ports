@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/26 15:33:11 jasper Exp $
+bin/mozplugger-controller
+bin/mozplugger-helper
+lib/mozilla-plugins/
+lib/mozilla-plugins/mozplugger.so
+@man man/man7/mozplugger.7
+share/examples/mozplugger/
+share/examples/mozplugger/mozpluggerrc
+@sample ${SYSCONFDIR}/mozpluggerrc

@@ -1,0 +1,467 @@
+$OpenBSD: patch-mozpluggerrc,v 1.1.1.1 2007/01/26 15:33:13 jasper Exp $
+--- mozpluggerrc.orig	Wed Jan 17 18:16:13 2007
++++ mozpluggerrc	Fri Jan 26 13:49:23 2007
+@@ -36,7 +36,7 @@ ifdef([ENABLE_HELPERS],[
+ 
+ ### MPlayer
+ 
+-define(MP_CMD,[mplayer -really-quiet -nojoystick -nofs -zoom -vo xv,x11 -ao esd,alsa,oss,arts,null -osdlevel 0 $1 </dev/null])
++define(MP_CMD,[mplayer -cache 512 -really-quiet -nojoystick -nofs -zoom -osdlevel 0 $1 </dev/null])
+ 
+ define(MP_EMBED,[embed noisy ignore_errors: MP_CMD(-xy $width -wid $window $1)])
+ 
+@@ -83,7 +83,7 @@ ifelse(esyscmd([acroread -helpall | grep
+ ### GV
+ define(GV_OPTS,[--safer --quiet --antialias -geometry +9000+9000])
+ define(GV_FLAGS,[repeat noisy swallow(gv) fill])
+-define(GV,[GV_FLAGS(): gv GV_OPTS() "$file"])
++define(GV,[GV_FLAGS(): gv "$file" GV_OPTS() ])
+ 
+ ###################
+ ### Video       ###
+@@ -93,40 +93,45 @@ video/mpeg:mpeg,mpg,mpe:MPEG animation
+ video/x-mpeg:mpeg,mpg,mpe:MPEG animation
+ video/x-mpeg2:mpv2,mp2ve:MPEG2 animation
+ 	MP_VIDEO_STREAM()
+-	TM_VIDEO_STREAM()
+-        HELPER(xine -pq "$file")
+-	loop: mtvp -l -W$window "$file"
+-	: mtvp -W$window "$file"
+-	loop: xanim +Av100 -Zr +W$window +q +f "$file"
+-	: xanim +Av100 -Zr +W$window +q +Ze +f "$file"
+ 
++#	TM_VIDEO_STREAM()
++#        HELPER(xine -pq "$file")
++#	loop: mtvp -l -W$window "$file"
++#	: mtvp -W$window "$file"
++#	loop: xanim +Av100 -Zr +W$window +q +f "$file"
++#	: xanim +Av100 -Zr +W$window +q +Ze +f "$file"
++
+ video/mp4:mp4:MPEG4 animation
+ 	MP_VIDEO_STREAM()
+-	TM_VIDEO_STREAM()
+-	HELPER(xine -pq "$file")
+ 
++#	TM_VIDEO_STREAM()
++#	HELPER(xine -pq "$file")
++
+ video/msvideo:avi:AVI animation
+ video/x-msvideo:avi:AVI animation
+ video/fli:fli,flc:FLI animation
+ video/x-fli:fli,flc:FLI animation
+ 	MP_VIDEO_STREAM()
+-	TM_VIDEO_STREAM()
+-	HELPER(xine -pq "$file")
+ 
++#	TM_VIDEO_STREAM()
++#	HELPER(xine -pq "$file")
++
+ application/x-mplayer2:wmv,asf,mov:Windows Media
+ video/x-ms-asf:asf,asx,wma,wax,wmv,wvx:Windows Media
+ video/x-ms-wmv:wmv:Windows Media
+ 	MP_VIDEO_STREAM()
+-	TM_VIDEO_STREAM()
+ 
++#	TM_VIDEO_STREAM()
++
+ application/x-quicktimeplayer:mov:Quicktime animation
+ image/x-macpaint:pntg,mov:Quicktime animation
+ video/quicktime:mov,qt:Quicktime animation
+ video/x-quicktime:mov,qt:Quicktime animation
+ 	MP_VIDEO_STREAM()
+-	TM_VIDEO_STREAM()
+-	HELPER(xine -pq "$file")
+ 
++#	TM_VIDEO_STREAM()
++#	HELPER(xine -pq "$file")
++
+ video/x-theora:ogg:OGG stream with video
+ video/theora:ogg:OGG stream with video
+ video/ogg:ogg:OGG stream with video
+@@ -148,138 +153,137 @@ video/x-anim:iff,anim5,anim3,anim7:IFF a
+ ### Audio      ###
+ ##################
+ 
+-audio/mid:midi,mid:MIDI audio file
+-audio/x-mid:midi,mid:MIDI audio file
+-audio/midi:midi,mid:MIDI audio file
+-audio/x-midi:midi,mid:MIDI audio file
+-	controls noisy stream: timidity -Od "$file"
+-	controls: playmidi "$file"
++#audio/mid:midi,mid:MIDI audio file
++#audio/x-mid:midi,mid:MIDI audio file
++#audio/midi:midi,mid:MIDI audio file
++#audio/x-midi:midi,mid:MIDI audio file
++#	controls noisy stream: timidity -Od "$file"
++#	controls: playmidi "$file"
+ 
+-audio/mod:mod:Soundracker audio Module
+-audio/x-mod:mod:Soundracker audio Module
+-	controls loop noisy: mikmod -q --interpolate "$file"
+-	controls noisy: mikmod -q --interpolate "$file"
+-	controls loop noisy: xmp -l --nocmd "$file"
+-	controls noisy: xmp --nocmd "$file"
++#audio/mod:mod:Soundracker audio Module
++#audio/x-mod:mod:Soundracker audio Module
++#	controls loop noisy: mikmod -q --interpolate "$file"
++#	controls noisy: mikmod -q --interpolate "$file"
++#	controls loop noisy: xmp -l --nocmd "$file"
++#	controls noisy: xmp --nocmd "$file"
+ 
+-audio/mp3:mp3:MPEG audio
+-audio/x-mp3:mp3:MPEG audio
+-audio/mpeg2:mp2:MPEG audio
+-audio/x-mpeg2:mp2:MPEG audio
+-audio/mpeg3:mp3:MPEG audio
+-audio/x-mpeg3:mp3:MPEG audio
+-audio/mpeg:mpa,abs,mpega:MPEG audio
+-audio/x-mpeg:mpa,abs,mpega:MPEG audio
+-	MP_AUDIO_STREAM()
+-	TM_AUDIO_STREAM()
+-	controls: mpg321 -q "$file"
+-	controls: mpg123 -q "$file"
+-	controls: splay -t 200 "$file"
+-	controls: amp -b 200 -q "$file"
+-	controls: maplay "$file"
+-	controls: mpeg3play "$file"
+-	HELPER(xmms -e -p "$file")
+-	repeat noisy swallow(alsaplayer): alsaplayer -q "$file"
++#audio/mp3:mp3:MPEG audio
++#audio/x-mp3:mp3:MPEG audio
++#audio/mpeg2:mp2:MPEG audio
++#audio/x-mpeg2:mp2:MPEG audio
++#audio/mpeg3:mp3:MPEG audio
++#audio/x-mpeg3:mp3:MPEG audio
++#audio/mpeg:mpa,abs,mpega:MPEG audio
++#audio/x-mpeg:mpa,abs,mpega:MPEG audio
++#	MP_AUDIO_STREAM()
++#	TM_AUDIO_STREAM()
++#	controls: mpg321 -q "$file"
++#	controls: mpg123 -q "$file"
++#	controls: splay -t 200 "$file"
++#	controls: amp -b 200 -q "$file"
++#	controls: maplay "$file"
++#	controls: mpeg3play "$file"
++#	HELPER(xmms -e -p "$file")
++#	repeat noisy swallow(alsaplayer): alsaplayer -q "$file"
+ 
+-audio/mpeg-url:m3u:MPEG music resource locator
+-audio/x-mpeg-url:m3u:MPEG music resource locator
+-audio/mpegurl:m3u:MPEG music resource locator
+-audio/x-mpegurl:m3u:MPEG music resource locator
+-audio/mpeg-url:m3u:MPEG music resource locator
+-audio/x-mpeg-url:m3u:MPEG music resource locator
+-audio/x-scpls:pls:Shoutcast Playlists
++#audio/mpeg-url:m3u:MPEG music resource locator
++#audio/x-mpeg-url:m3u:MPEG music resource locator
++#audio/mpegurl:m3u:MPEG music resource locator
++#audio/x-mpegurl:m3u:MPEG music resource locator
++#audio/mpeg-url:m3u:MPEG music resource locator
++#audio/x-mpeg-url:m3u:MPEG music resource locator
++#audio/x-scpls:pls:Shoutcast Playlists
+ #	controls: mpg321 -q -@ "$file"
+-	HELPER(xmms -e -p "$file")
++#	HELPER(xmms -e -p "$file")
+ 
+-audio/x-ogg:ogg:OGG audio
+-application/x-ogg:ogg:OGG audio
+-application/ogg:ogg:OGG audio
+-ifdef([MP_VORBIS],[	MP_AUDIO_STREAM()
+-])	TM_AUDIO_STREAM()
+-	controls stream noisy: ogg123 -q -b 128 "$file"
+-	HELPER(xmms -e -p "$file")
++#audio/x-ogg:ogg:OGG audio
++#application/x-ogg:ogg:OGG audio
++#application/ogg:ogg:OGG audio
++#ifdef([MP_VORBIS],[	MP_AUDIO_STREAM()
++#])	TM_AUDIO_STREAM()
++#	controls stream noisy: ogg123 -q -b 128 "$file"
++#	HELPER(xmms -e -p "$file")
+ 
+-audio/x-flac:flac:FLAC audio
+-application/x-flac:flac:FLAC audio
+-	MP_AUDIO_STREAM()
+-	HELPER(xmms -e -p "$file")
++#audio/x-flac:flac:FLAC audio
++#application/x-flac:flac:FLAC audio
++#	MP_AUDIO_STREAM()
++#	HELPER(xmms -e -p "$file")
+ 
+-audio/x-sidtune:sid,psid:Commodore 64 Audio
+-audio/sidtune:sid,psid:Commodore 64 Audio
+-audio/psid:psid,sid:Commodore 64 Audio
+-audio/x-psid:psid,sid:Commodore 64 Audio
+-	controls noisy: sidplay -16 -f44100 -a "$file"
++#audio/x-sidtune:sid,psid:Commodore 64 Audio
++#audio/sidtune:sid,psid:Commodore 64 Audio
++#audio/psid:psid,sid:Commodore 64 Audio
++#audio/x-psid:psid,sid:Commodore 64 Audio
++#	controls noisy: sidplay -16 -f44100 -a "$file"
+ 
+-audio/basic:au,snd:Basic audio file
+-audio/x-basic:au,snd:Basic audio file
+-	controls: play "$file"
+-	controls: sox "$file" -t .au - > /dev/audio
++#audio/basic:au,snd:Basic audio file
++#audio/x-basic:au,snd:Basic audio file
++#	controls: play "$file"
++#	controls: sox "$file" -t .au - > /dev/audio
+ 
+-audio/wav:wav:Microsoft wave file
+-audio/x-wav:wav:Microsoft wave file
+-audio/x-pn-wav:wav:Microsoft wave file
+-audio/x-pn-windows-acm:wav:Microsoft wave file
+-        controls: play "$file"
+-	controls: wavplay -q "$file"
+-	controls noisy: bplay "$file"
+-	controls: splay "$file"
+-	HELPER(xmms -e -p "$file")
+- 	repeat noisy swallow(alsaplayer): alsaplayer -q "$file"
++#audio/wav:wav:Microsoft wave file
++#audio/x-wav:wav:Microsoft wave file
++#audio/x-pn-wav:wav:Microsoft wave file
++#audio/x-pn-windows-acm:wav:Microsoft wave file
++#        controls: play "$file"
++#	controls: wavplay -q "$file"
++#	controls noisy: bplay "$file"
++#	controls: splay "$file"
++#	HELPER(xmms -e -p "$file")
++# 	repeat noisy swallow(alsaplayer): alsaplayer -q "$file"
+ 
+-audio/x-pn-realaudio-plugin:rpm:RealPlayer Plugin Metafile
+-audio/x-pn-realaudio:ra,rm,ram:Realaudio-plugin resource locator
+-audio/x-realaudio:ra,rm,ram:RealAudio file
+-application/vnd.rn-realmedia:rm:RealMedia file
+-application/smil:smi:RealPlayer
+-audio/vnd.rn-realaudio:ra,ram:RealAudio file
+-audio/vnd.rn-realvideo:rv:RealVideo file
+-	nokill stream: hxplay "$file"
+-        nokill stream: realplay "$file"
++#audio/x-pn-realaudio-plugin:rpm:RealPlayer Plugin Metafile
++#audio/x-pn-realaudio:ra,rm,ram:Realaudio-plugin resource locator
++#audio/x-realaudio:ra,rm,ram:RealAudio file
++#application/vnd.rn-realmedia:rm:RealMedia file
++#application/smil:smi:RealPlayer
++#audio/vnd.rn-realaudio:ra,ram:RealAudio file
++#audio/vnd.rn-realvideo:rv:RealVideo file
++#	nokill stream: hxplay "$file"
++#        nokill stream: realplay "$file"
+ 
+-audio/x-ms-wax:wax,wma:Windows Media
+-	MP_AUDIO_STREAM()
+-	TM_AUDIO_STREAM()
++#audio/x-ms-wax:wax,wma:Windows Media
++#	MP_AUDIO_STREAM()
++#	TM_AUDIO_STREAM()
+ 
+ #######################
+ ### Documents       ###
+ #######################
+ 
+-image/sun-raster:rs:SUN raster image
+-image/x-sun-raster:rs:SUN raster image
+-image/x-rgb:rgb:RGB Image
+-image/x-portable-pixmap:ppm:PPM Image
+-image/x-portable-graymap:pgm:PGM Image
+-image/x-portable-bitmap:pbm:PBM Image
+-image/x-portable-anymap:pnm:PBM Image
+-image/tiff:tiff,tif:TIFF image
+-image/x-tiff:tiff,tif:TIFF image
+-	exits: display -window $window -backdrop "$file"
+-	repeat noisy swallow(gqview) fill: gqview -t "$file"
+-	swallow(:) maxaspect: xv -ima -igeom +9000+9000 -geometry +9000+9000 "$file"
+-	repeat swallow(display): display "$file"
+-	repeat swallow(Sdtimage) fill: sdtimage "$file"
+-	swallow(*qiv:) fill maxaspect: qiv -n "$file"
++#image/sun-raster:rs:SUN raster image
++#image/x-sun-raster:rs:SUN raster image
++#image/x-rgb:rgb:RGB Image
++#image/x-portable-pixmap:ppm:PPM Image
++#image/x-portable-graymap:pgm:PGM Image
++#image/x-portable-bitmap:pbm:PBM Image
++#image/x-portable-anymap:pnm:PBM Image
++#image/tiff:tiff,tif:TIFF image
++#image/x-tiff:tiff,tif:TIFF image
++#	exits: display -window $window -backdrop "$file"
++#	repeat noisy swallow(gqview) fill: gqview -t "$file"
++#	swallow(:) maxaspect: xv -ima -igeom +9000+9000 -geometry +9000+9000 "$file"
++#	repeat swallow(display): display "$file"
++#	repeat swallow(Sdtimage) fill: sdtimage "$file"
++#	swallow(*qiv:) fill maxaspect: qiv -n "$file"
+ 
+-image/x-xcf:xcf:Gimp Image
+-image/xcf:xcf:Gimp Image
+-application/x-gimp:xcf:Gimp Image
+-application/gimp:xcf:Gimp Image
+-	exits: display -window $window -backdrop "$file"
+-	repeat swallow(display) fill: display "$file"
++#image/x-xcf:xcf:Gimp Image
++#image/xcf:xcf:Gimp Image
++#application/x-gimp:xcf:Gimp Image
++#application/gimp:xcf:Gimp Image
++#	exits: display -window $window -backdrop "$file"
++#	repeat swallow(display) fill: display "$file"
+ 
+-application/photoshop:psd:PhotoShop Image
+-application/x-photoshop:psd:PhotoShop Image
+-	exits: display -window $window -backdrop "$file"
+-	repeat swallow(display) fill: display "$file"
++#application/photoshop:psd:PhotoShop Image
++#application/x-photoshop:psd:PhotoShop Image
++#	exits: display -window $window -backdrop "$file"
++#	repeat swallow(display) fill: display "$file"
+ 
+ application/pdf:pdf:PDF file
+ application/x-pdf:pdf:PDF file
+ text/pdf:pdf:PDF file
+ text/x-pdf:pdf:PDF file
+-	repeat swallow(acroread) fill: acroread7 -openInNewWindow "$file"
+-	repeat swallow(documentShell) fill: acroread5 -geometry +9000+9000 +useFrontEndProgram "$file"
+-	repeat noisy swallow(evince) fill: evince "$file"
+ 	repeat noisy swallow(kpdf) fill: kpdf "$file"
++	repeat noisy swallow(evince) fill: evince "$file"
++	repeat swallow(acroread) fill: acroread -openInNewWindow "$file"
+ 	repeat noisy swallow(Xpdf) fill: xpdf -g +9000+9000 "$file"
+ 	GV()
+ 
+@@ -289,78 +293,79 @@ application/x-dvi:dvi:DVI file
+ 
+ application/x-postscript:ps:PostScript file
+ application/postscript:ps:PostScript file
+-	GV()
++	repeat noisy swallow(kpdf) fill: kpdf "$file"
+ 	repeat noisy swallow(evince) fill: evince "$file"
++	GV()
+ 
+-application/x-rtf:rtf:Rich Text Format
+-application/rtf:rtf:Rich Text Format
+-text/rtf:rtf:Rich Text Format
+-	OO()
+-	repeat noisy swallow(AbiWord) fill: abiword --nosplash --geometry +9000+9000 "$file"
+-	repeat noisy swallow(kword): kword "$file"
+-	repeat noisy swallow(Ted) fill: Ted "$file"
++#application/x-rtf:rtf:Rich Text Format
++#application/rtf:rtf:Rich Text Format
++#text/rtf:rtf:Rich Text Format
++#	OO()
++#	repeat noisy swallow(AbiWord) fill: abiword --nosplash --geometry +9000+9000 "$file"
++#	repeat noisy swallow(kword): kword "$file"
++#	repeat noisy swallow(Ted) fill: Ted "$file"
+ 
+-application/x-msword:doc,dot:Microsoft Word Document
+-application/msword:doc,dot:Microsoft Word Document
+-	OO()
+-	repeat noisy swallow(kword): kword "$file"
+-	repeat noisy swallow(AbiWord) fill: abiword --nosplash --geometry +9000+9000 "$file"
++#application/x-msword:doc,dot:Microsoft Word Document
++#application/msword:doc,dot:Microsoft Word Document
++#	OO()
++#	repeat noisy swallow(kword): kword "$file"
++#	repeat noisy swallow(AbiWord) fill: abiword --nosplash --geometry +9000+9000 "$file"
+ 
+-application/vnd.ms-excel:xls,xlb:Microsoft Excel Document
+-	OO()
+-	repeat swallow(Gnumeric) fill: gnumeric "$file"
++#application/vnd.ms-excel:xls,xlb:Microsoft Excel Document
++#	OO()
++#	repeat swallow(Gnumeric) fill: gnumeric "$file"
+ 
+ # OpenOffice MimeTypes (http://framework.openoffice.org/documentation/mimetypes/mimetypes.html)
+-application/vnd.sun.xml.writer:sxw:OpenOffice Writer 6.0 documents
+-application/so7_vnd.sun.xml.writer:sxw:OpenOffice Writer 7.0 documents
+-application/vnd.sun.xml.writer.template:stw:OpenOffice Writer 6.0 templates
+-application/vnd.sun.xml.writer.global:sxg:OpenOffice Writer 6.0 global documents
+-application/vnd.stardivision.writer:sdw:StarWriter 5.x documents
+-application/vnd.stardivision.writer-global:sgl:StarWriter 5.x global documents
+-application/x-starwriter:sdw:StarWriter 4.x documents
+-	OO()
++#application/vnd.sun.xml.writer:sxw:OpenOffice Writer 6.0 documents
++#application/so7_vnd.sun.xml.writer:sxw:OpenOffice Writer 7.0 documents
++#application/vnd.sun.xml.writer.template:stw:OpenOffice Writer 6.0 templates
++#application/vnd.sun.xml.writer.global:sxg:OpenOffice Writer 6.0 global documents
++#application/vnd.stardivision.writer:sdw:StarWriter 5.x documents
++#application/vnd.stardivision.writer-global:sgl:StarWriter 5.x global documents
++#application/x-starwriter:sdw:StarWriter 4.x documents
++#	OO()
+ 
+-application/vnd.sun.xml.calc:sxc:OpenOffice Calc 6.0 spreadsheets
+-application/so7_vnd.sun.xml.calc:sxc:OpenOffice Calc 7.0 spreadsheets
+-application/vnd.sun.xml.calc.template:stc:OpenOffice Calc 6.0 templates
+-application/vnd.stardivision.calc:sdc:StarCalc 5.x spreadsheets
+-application/x-starcalc:sdc:StarCalc 4.x spreadsheets
+-application/vnd.lotus-1-2-3: 123, wk1: Lotus 1-2-3 Document
+-	OO()
++#application/vnd.sun.xml.calc:sxc:OpenOffice Calc 6.0 spreadsheets
++#application/so7_vnd.sun.xml.calc:sxc:OpenOffice Calc 7.0 spreadsheets
++#application/vnd.sun.xml.calc.template:stc:OpenOffice Calc 6.0 templates
++#application/vnd.stardivision.calc:sdc:StarCalc 5.x spreadsheets
++#application/x-starcalc:sdc:StarCalc 4.x spreadsheets
++#application/vnd.lotus-1-2-3: 123, wk1: Lotus 1-2-3 Document
++#	OO()
+ 
+-application/vnd.sun.xml.draw:sxd:OpenOffice Draw 6.0 documents
+-application/so7_vnd.sun.xml.draw:sxc:StarOffice Draw 7.0 documents
+-application/vnd.sun.xml.draw.template:std:OpenOffice Draw 6.0 templates
+-application/vnd.stardivision.draw:sda:StarDraw 5.x documents
+-application/x-stardraw:sda:StarDraw 4.x documents
+-	OO()
++#application/vnd.sun.xml.draw:sxd:OpenOffice Draw 6.0 documents
++#application/so7_vnd.sun.xml.draw:sxc:StarOffice Draw 7.0 documents
++#application/vnd.sun.xml.draw.template:std:OpenOffice Draw 6.0 templates
++#application/vnd.stardivision.draw:sda:StarDraw 5.x documents
++#application/x-stardraw:sda:StarDraw 4.x documents
++#	OO()
+ 
+-application/vnd.sun.xml.impress:sxi:OpenOffice Impress 6.0 presentations
+-application/so7_vnd.sun.xml.impress:sxi:StarOffice 7.0 Impress presentations
+-application/vnd.sun.xml.impress.template:sti:OpenOffice Impress 6.0 templates
+-application/vnd.stardivision.impress:sdd:StarImpress 5.x presentations
+-application/vnd.stardivision.impress-packed:sdp:StarImpress Packed 5.x files
+-application/x-starimpress:sdd:StarImpress 4.x presentations
+-application/vnd.ms-powerpoint:ppt:PowerPoint Slideshow
+-application/mspowerpoint:ppt,ppz,pps,pot:PowerPoint Slideshow
+-	OO()
++#application/vnd.sun.xml.impress:sxi:OpenOffice Impress 6.0 presentations
++#application/so7_vnd.sun.xml.impress:sxi:StarOffice 7.0 Impress presentations
++#application/vnd.sun.xml.impress.template:sti:OpenOffice Impress 6.0 templates
++#application/vnd.stardivision.impress:sdd:StarImpress 5.x presentations
++#application/vnd.stardivision.impress-packed:sdp:StarImpress Packed 5.x files
++#application/x-starimpress:sdd:StarImpress 4.x presentations
++#application/vnd.ms-powerpoint:ppt:PowerPoint Slideshow
++#application/mspowerpoint:ppt,ppz,pps,pot:PowerPoint Slideshow
++#	OO()
+ 
+-application/vnd.sun.xml.math:sxm:OpenOffice Math 6.0 documents
+-application/so7_vnd.sun.xml.math:sxm:StarOffice 7.0 Math documents
+-application/vnd.stardivision.math:smf:StarMath 5.x documents
+-application/x-starmath:smf:StarMath 4.x documents
+-	OO()
++#application/vnd.sun.xml.math:sxm:OpenOffice Math 6.0 documents
++#application/so7_vnd.sun.xml.math:sxm:StarOffice 7.0 Math documents
++#application/vnd.stardivision.math:smf:StarMath 5.x documents
++#application/x-starmath:smf:StarMath 4.x documents
++#	OO()
+ 
+-application/vnd.oasis.opendocument.text:odt,ODT:OASIS OpenDocument Text
+-	OO()
++#application/vnd.oasis.opendocument.text:odt,ODT:OASIS OpenDocument Text
++#	OO()
+ 
+-application/vnd.oasis.opendocument.spreadsheet:ods,ODS:OASIS OpenDocument SpreadSheet
+-	OO()
++#application/vnd.oasis.opendocument.spreadsheet:ods,ODS:OASIS OpenDocument SpreadSheet
++#	OO()
+ 
+-application/vnd.oasis.opendocument.presentation:odp,ODP:OASIS OpenDocument Presentation
+-	OO()
++#application/vnd.oasis.opendocument.presentation:odp,ODP:OASIS OpenDocument Presentation
++#	OO()
+ 
+-chemical/x-pdb:pdb: Protein Data Bank file
+-model/x-pdb:pdb: Protein Data Bank file
+-	swallow(rasmol) fill: rasmol "$file"
+-        swallow(molecule) fill: /usr/X11R6/lib/xscreensaver/molecule -delay 20000 -geometry +9000+9000 -no-spin -molecule "$file"
++#chemical/x-pdb:pdb: Protein Data Bank file
++#model/x-pdb:pdb: Protein Data Bank file
++#	swallow(rasmol) fill: rasmol "$file"
++#        swallow(molecule) fill: /usr/X11R6/lib/xscreensaver/molecule -delay 20000 -geometry +9000+9000 -no-spin -molecule "$file"

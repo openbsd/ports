@@ -1,0 +1,53 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2007/01/26 15:33:11 jasper Exp $
+--- Makefile.orig	Wed Jan 17 18:17:35 2007
++++ Makefile	Fri Jan 26 13:49:23 2007
+@@ -1,5 +1,5 @@
+ # Where is your Xwindows located?
+-X11=/usr/X11R6
++#X11=/usr/X11R6
+ 
+ #
+ # For building rpms
+@@ -14,8 +14,8 @@ prefix=/usr
+ RPMDIR=/usr/src/RPM
+ 
+ # Choose compiler
+-CC=gcc
+-LD=gcc
++#CC=gcc
++#LD=gcc
+ BINFORMAT=bin
+ 
+ any:
+@@ -63,7 +63,7 @@ freebsd:
+ 	${MAKE} all CC=gcc XCFLAGS=-fPIC LD=gcc XLDFLAGS=-shared X11=/usr/X11R6/
+ 
+ openbsd:
+-	${MAKE} all CC=gcc XCFLAGS=-fPIC LD=gcc XLDFLAGS=-shared X11=/usr/X11R6/
++	${MAKE} all XCFLAGS=-fPIC LD=${CC} XLDFLAGS=-shared X11=${X11BASE}
+ 
+ auto:
+ 	@case "x`uname`" in \
+@@ -93,7 +93,8 @@ BIN_FILES=mozplugger.so mozplugger-helpe
+ 
+ DEFINES=$(STREAM) -DVERSION=\"$(VERSION)\" #-Wall -DDEBUG #-D__amd64__
+ RPM_OPT_FLAGS=-O2
+-COMMON_CFLAGS=$(RPM_OPT_FLAGS) -Inpapi/include -I$(X11)/include -DXP_UNIX $(DEFINES)
++#COMMON_CFLAGS=$(RPM_OPT_FLAGS) -Inpapi/include -I$(X11)/include -DXP_UNIX $(DEFINES)
++COMMON_CFLAGS=-Inpapi/include -I$(X11)/include -DXP_UNIX $(DEFINES)
+ COMMON_LDFLAGS=
+ NORM_CFLAGS=
+ NORM_LDFLAGS=
+@@ -103,9 +104,9 @@ XLIBDIR = $(X11)/lib
+ XLIBS=-lX11 -L$(XLIBDIR)
+ 
+ LDSHARED=$(LD) $(XLDFLAGS)
+-CFLAGS = $(COMMON_CFLAGS) $(NORM_CFLAGS)
+-LDFLAGS=$(COMMON_LDFLAGS) $(NORM_LDFLAGS)
+-SHARED_CFLAGS=$(COMMON_CFLAGS) $(XCFLAGS)
++SHARED_CFLAGS=${CFLAGS} $(COMMON_CFLAGS) $(XCFLAGS)
++CFLAGS += $(COMMON_CFLAGS) $(NORM_CFLAGS)
++LDFLAGS += $(COMMON_LDFLAGS) $(NORM_LDFLAGS)
+ 
+ all: mozplugger.so mozplugger-helper mozplugger-controller
+ 
