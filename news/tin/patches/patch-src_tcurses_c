@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_tcurses_c,v 1.1 2007/01/26 23:19:32 steven Exp $
+--- src/tcurses.c.orig	Thu Jan 25 17:02:09 2007
++++ src/tcurses.c	Thu Jan 25 17:04:32 2007
+@@ -582,6 +582,7 @@ again:
+ 			/* read in the multibyte sequence */
+ 			char *mbs = my_malloc(MB_CUR_MAX + 1);
+ 			int i, ch;
++			wchar_t wc;
+ 
+ 			mbs[0] = (char) wch;
+ 			nodelay(stdscr, TRUE);
+@@ -594,12 +595,14 @@ again:
+ 			nodelay(stdscr, FALSE);
+ 
+ 			mbs[i] = '\0';
+-			res = mbtowc((wchar_t *) (&wch), mbs, MB_CUR_MAX);
++			res = mbtowc(&wc, mbs, MB_CUR_MAX);
+ 			free(mbs);
+ 			if (res == -1)
+ 				return WEOF; /* error */
+-			else
++			else {
+ 				res = OK;
++				wch = wc;
++			}
+ 		} else {
+ 			res = KEY_CODE_YES;
+ #			if defined(KEY_RESIZE) && defined(USE_CURSES)

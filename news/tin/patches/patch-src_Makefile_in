@@ -1,15 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2003/08/19 16:48:00 fgsch Exp $
---- src/Makefile.in.orig	2003-07-24 11:18:45.000000000 -0300
-+++ src/Makefile.in	2003-08-19 13:47:24.000000000 -0300
-@@ -36,6 +36,7 @@ VERSION = @VERSION@
- 
- SHELL		= /bin/sh
- prefix		= @prefix@
-+datadir		= @datadir@
- exec_prefix	= @exec_prefix@
- top_srcdir	= @top_srcdir@
- top_builddir	= ..
-@@ -69,6 +70,7 @@ LIBS		= $(PCRE_LIBS) $(CANLIB) @LIBS@ @I
+$OpenBSD: patch-src_Makefile_in,v 1.3 2007/01/26 23:19:32 steven Exp $
+--- src/Makefile.in.orig	Sat Jul 16 21:49:36 2005
++++ src/Makefile.in	Sat Jan 27 00:06:24 2007
+@@ -78,6 +78,7 @@ LINK_LIBS	= $(PCRE_LIBS) $(CANLIB) @LIBS
  # Where do you want the binary & manual page installed?
  DESTDIR	= @DESTDIR@
  INS_BINARY_DIR	= @bindir@
@@ -17,7 +9,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.2 2003/08/19 16:48:00 fgsch Exp $
  INS_MANUAL_DIR	= @mandir@/man
  INS_SYSDEF_DIR	= @TIN_DEFAULTS_DIR@
  INS_MANUAL_EXT	= 1
-@@ -318,16 +320,15 @@ help:
+@@ -328,6 +329,7 @@ help :
  $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT) \
  $(DESTDIR)$(INS_MANUAL_DIR)5 \
  $(DESTDIR)$(INS_BINARY_DIR) \
@@ -25,36 +17,41 @@ $OpenBSD: patch-src_Makefile_in,v 1.2 2003/08/19 16:48:00 fgsch Exp $
  $(DESTDIR)$(INS_SYSDEF_DIR) :
  	$(top_srcdir)/mkdirs.sh $@
  
--install_manpage: $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT) $(DESTDIR)$(INS_MANUAL_DIR)5
-+install_manpage: $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT) $(DESTDIR)$(INS_MANUAL_DIR)5 $(DESTDIR)$(INS_DATA_DIR)
- 	@$(ECHO) "Installing $(PROJECT) manual pages to $(DESTDIR)$(INS_MANUAL_DIR) ..."
+@@ -336,8 +338,6 @@ install_manpage : $(DESTDIR)$(INS_MANUAL
  	@$(INSTALL) -m 444 $(DOCDIR)/tin.1 $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT)/$(PROJECT).$(INS_MANUAL_EXT)
  	@( $(CD) $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT) && $(RM) -f r$(PROJECT).$(INS_MANUAL_EXT) && $(LN) $(PROJECT).$(INS_MANUAL_EXT) r$(PROJECT).$(INS_MANUAL_EXT) )
  	@$(INSTALL) -m 444 $(DOCDIR)/tin.5 $(DESTDIR)$(INS_MANUAL_DIR)5/$(PROJECT).5
 -	@-if test ! -f $(DESTDIR)$(INS_MANUAL_DIR)5/mbox.5 ; then $(INSTALL) -m 444 $(DOCDIR)/mbox.5 $(DESTDIR)$(INS_MANUAL_DIR)5/mbox.5 ; else $(ECHO) "  ... skipping $(DESTDIR)$(INS_MANUAL_DIR)5/mbox.5 - file already exists" ; fi
 -	@-if test ! -f $(DESTDIR)$(INS_MANUAL_DIR)5/mmdf.5 ; then $(INSTALL) -m 444 $(DOCDIR)/mmdf.5 $(DESTDIR)$(INS_MANUAL_DIR)5/mmdf.5 ; else $(ECHO) "  ... skipping $(DESTDIR)$(INS_MANUAL_DIR)5/mmdf.5 - file already exists" ; fi
  
- uninstall_manpage:
+ uninstall_manpage :
  	@$(ECHO) "Uninstalling $(PROJECT) manual page in $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT) ..."
-@@ -349,14 +350,14 @@ uninstall_sysdefs:
+@@ -359,13 +359,13 @@ uninstall_sysdefs :
  	@-$(RM) -f $(DESTDIR)$(INS_SYSDEF_DIR)/tin.defaults
  	@-$(RM) -f $(DESTDIR)$(INS_SYSDEF_DIR)/mime.types
  
--install_helpers: $(DESTDIR)$(INS_BINARY_DIR) $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT)
-+install_helpers: $(DESTDIR)$(INS_DATA_DIR)
+-install_helpers : $(DESTDIR)$(INS_BINARY_DIR) $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT)
++install_helpers : $(DESTDIR)$(INS_BINARY_DIR) $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT) $(DESTDIR)$(INS_DATA_DIR)
  	@$(ECHO) "Installing helper applications ..."
 -	@-if test ! -f $(DESTDIR)$(INS_BINARY_DIR)/url_handler.sh ; then $(INSTALL) -m 755 $(TOLDIR)/url_handler.sh $(DESTDIR)$(INS_BINARY_DIR)/url_handler.sh ; fi
 -	@-if test ! -f $(DESTDIR)$(INS_BINARY_DIR)/metamutt ; then $(INSTALL) -m 755 $(TOLDIR)/metamutt $(DESTDIR)$(INS_BINARY_DIR)/metamutt ; fi
 -	@$(INSTALL) -m 755 $(TOLDIR)/w2r.pl $(DESTDIR)$(INS_BINARY_DIR)/w2r.pl
 -	@$(INSTALL) -m 755 $(TOLDIR)/opt-case.pl $(DESTDIR)$(INS_BINARY_DIR)/opt-case.pl
--	@$(INSTALL) -m 444 $(DOCDIR)/w2r.1 $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT)/w2r.pl.$(INS_MANUAL_EXT)
--	@$(INSTALL) -m 444 $(DOCDIR)/opt-case.1 $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT)/opt-case.pl.$(INS_MANUAL_EXT)
-+	@-if test ! -f $(DESTDIR)$(INS_DATA_DIR)/url_handler.sh ; then $(INSTALL) -m 755 $(TOLDIR)/url_handler.sh $(DESTDIR)$(INS_DATA_DIR)/url_handler.sh ; fi
-+	@-if test ! -f $(DESTDIR)$(INS_DATA_DIR)/metamutt ; then $(INSTALL) -m 755 $(TOLDIR)/metamutt $(DESTDIR)$(INS_DATA_DIR)/metamutt ; fi
+-	@$(INSTALL) -m 755 $(TOLDIR)/tinews.pl $(DESTDIR)$(INS_BINARY_DIR)/tinews.pl
++	@$(INSTALL) -m 755 $(TOLDIR)/url_handler.sh $(DESTDIR)$(INS_DATA_DIR)/url_handler.sh
++	@$(INSTALL) -m 755 $(TOLDIR)/metamutt $(DESTDIR)$(INS_DATA_DIR)/metamutt
 +	@$(INSTALL) -m 755 $(TOLDIR)/w2r.pl $(DESTDIR)$(INS_DATA_DIR)/w2r.pl
 +	@$(INSTALL) -m 755 $(TOLDIR)/opt-case.pl $(DESTDIR)$(INS_DATA_DIR)/opt-case.pl
-+	@$(INSTALL) -m 444 $(DOCDIR)/w2r.1 $(DESTDIR)$(INS_DATA_DIR)/w2r.pl.$(INS_MANUAL_EXT)
-+	@$(INSTALL) -m 444 $(DOCDIR)/opt-case.1 $(DESTDIR)$(INS_DATA_DIR)/opt-case.pl.$(INS_MANUAL_EXT)
++	@$(INSTALL) -m 755 $(TOLDIR)/tinews.pl $(DESTDIR)$(INS_DATA_DIR)/tinews.pl
+ 	@$(INSTALL) -m 444 $(DOCDIR)/w2r.1 $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT)/w2r.pl.$(INS_MANUAL_EXT)
+ 	@$(INSTALL) -m 444 $(DOCDIR)/opt-case.1 $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT)/opt-case.pl.$(INS_MANUAL_EXT)
+ 	@$(INSTALL) -m 444 $(DOCDIR)/tinews.1 $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT)/tinews.pl.$(INS_MANUAL_EXT)
+@@ -474,7 +474,7 @@ makecfg$X :			$(SRCDIR)/makecfg.c \
+ 				$(INCDIR)/tin.h \
+ 				../include/autoconf.h
+ @SHOW_CC@
+-	@ECHO_CC@$(BUILD_CC) $(BUILD_CFLAGS) $(BUILD_CPPFLAGS) $(BUILD_LDFLAGS) -o $@ makecfg.c #$(BUILD_LIBS)
++	@ECHO_CC@$(BUILD_CC) $(BUILD_CFLAGS) $(BUILD_CPPFLAGS) $(BUILD_LDFLAGS) -o $@ makecfg.c $(BUILD_LIBS)
  
- uninstall_helpers:
- 	@$(ECHO) "Removing helper applications ..."
+ TIN_DEP	= \
+ 	Makefile \

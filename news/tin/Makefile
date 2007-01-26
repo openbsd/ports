@@ -1,22 +1,27 @@
-# $OpenBSD: Makefile,v 1.28 2004/12/02 19:19:59 alek Exp $
+# $OpenBSD: Makefile,v 1.29 2007/01/26 23:19:32 steven Exp $
 
 COMMENT=	'threaded NNTP and spool based UseNet newsreader'
 
-DISTNAME=	tin-1.6.2
+DISTNAME=	tin-${VERSION}.${PATCHLEVEL}
+VERSION=	1.8
+PATCHLEVEL=	2
 CATEGORIES=	news
 
-MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
-		ftp://ftp.funet.fi/pub/unix/news/tin-unoff/stable/ \
-		ftp://ftp.akk.uni-karlsruhe.de/pub/news/clients/tin/stable/ \
-		ftp://ftp.cuhk.edu.hk/pub/packages/news/tin/stable/ \
-		ftp://ftp.sunet.se/pub/news/readers/tin/stable/
+MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v${VERSION}/ \
+		ftp://ftp.akk.uni-karlsruhe.de/pub/news/clients/tin/v${VERSION}/ \
+		ftp://ftp.cuhk.edu.hk/pub/packages/news/tin/v${VERSION}/ \
+		ftp://ftp.sunet.se/pub/news/readers/tin/v${VERSION}/ \
+		ftp://ftp.funet.fi/pub/unix/news/tin-unoff/
 
 HOMEPAGE=	http://www.tin.org/
 
-MAINTAINER=     Federico G. Schwindt <fgsch@openbsd.org>
+MAINTAINER=	Joachim Schipper <j.schipper@math.uu.nl>
 
 MODULES=	devel/gettext
 
+# This software cannot be redistributed freely due to a few files having
+# licenses that prohibit making money from redistribution - see src/nntplib.c,
+# vms/vms.c
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
@@ -24,6 +29,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c ncurses
 
 CONFIGURE_STYLE=	gnu
+# --with-x does not affect the build, but let's be safe.
 CONFIGURE_ARGS+=	--with-ispell=${LOCALBASE}/bin/ispell \
 			--without-metamail \
 			--without-pgp \
@@ -31,23 +37,16 @@ CONFIGURE_ARGS+=	--with-ispell=${LOCALBASE}/bin/ispell \
 			--with-gpg=${LOCALBASE}/bin/gpg \
 			--with-screen=ncurses \
 			--with-pcre=${LOCALBASE} \
+			--with-libdir=${PREFIX}/lib/news \
+			--with-spooldir=/var/news \
 			--enable-break-long-lines \
-			--enable-ipv6
+			--enable-ipv6 \
+			--without-x
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 LIB_DEPENDS+=	pcre::devel/pcre \
 		utf8::misc/libutf8
-
-FLAVORS=	nntp_only
-FLAVOR?=
-
-.if ${FLAVOR:L:Mnntp_only}
-CONFIGURE_ARGS+=	--enable-nntp-only
-.else
-CONFIGURE_ARGS+=	--with-libdir=${PREFIX}/lib/news \
-			--with-spooldir=/var/news
-.endif
 
 ALL_TARGET=	build
 

@@ -1,8 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/15 18:21:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2007/01/26 23:19:32 steven Exp $
+@pkgpath news/tin,nntp_only
 bin/rtin
 bin/tin
+@man man/man1/opt-case.pl.1
 @man man/man1/rtin.1
 @man man/man1/tin.1
+@man man/man1/tinews.pl.1
+@man man/man1/w2r.pl.1
 @man man/man5/tin.5
 share/locale/de/LC_MESSAGES/tin.mo
 share/locale/en_GB/
@@ -10,12 +14,17 @@ share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/tin.mo
 share/locale/et/LC_MESSAGES/tin.mo
 share/locale/fr/LC_MESSAGES/tin.mo
+share/locale/ru/LC_MESSAGES/tin.mo
+share/locale/rw/
+share/locale/rw/LC_MESSAGES/
+share/locale/rw/LC_MESSAGES/tin.mo
+share/locale/sv/LC_MESSAGES/tin.mo
+share/locale/tr/LC_MESSAGES/tin.mo
 share/tin/
 share/tin/metamutt
 share/tin/mime.types
 share/tin/opt-case.pl
-share/tin/opt-case.pl.1
 share/tin/tin.defaults
+share/tin/tinews.pl
 share/tin/url_handler.sh
 share/tin/w2r.pl
-share/tin/w2r.pl.1

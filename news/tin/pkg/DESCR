@@ -2,6 +2,3 @@ tin is a full-screen easy to use Usenet newsreader. It can read
 news locally or remotely via a NNTP (Network News Transport Protocol)
 server. It will automatically utilize NOV newsoverview style index
 files if available locally or via the NNTP [X]OVER command (RFC2980).
-
-Flavors:
-	nntp_only - only read news remotely via a NNTP server.
