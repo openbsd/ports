@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/08 06:54:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2007/01/26 11:11:26 ajacoutot Exp $
 
 COMMENT=	"additional games modules for childsplay"
 
-V=		0.85
+V=		0.85.2
 DISTNAME=	childsplay_plugins-${V}
 PKGNAME=	childsplay-plugins-${V}
 EXTRACT_SUFX=	.tgz
