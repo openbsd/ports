@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2007/01/25 10:35:15 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.136 2007/01/26 17:41:52 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -42,6 +42,7 @@
      SUBDIR += freeciv
      SUBDIR += freedroid
      SUBDIR += frotz
+     SUBDIR += gcompris
      SUBDIR += gemdropx
      SUBDIR += glutton
      SUBDIR += gnocatan
