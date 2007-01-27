@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/04/01 16:25:11 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/01/27 07:17:55 steven Exp $
 %%SHARED%%
 lib/liblapack.a
 lib/liblapack_p.a
@@ -118,8 +118,10 @@ lib/liblapack_pic.a
 @man man/man3/chptrs.3
 @man man/man3/chsein.3
 @man man/man3/chseqr.3
+@man man/man3/cisnan.3
 @man man/man3/clabrd.3
 @man man/man3/clacgv.3
+@man man/man3/clacn2.3
 @man man/man3/clacon.3
 @man man/man3/clacp2.3
 @man man/man3/clacpy.3
@@ -132,10 +134,12 @@ lib/liblapack_pic.a
 @man man/man3/claein.3
 @man man/man3/claesy.3
 @man man/man3/claev2.3
+@man man/man3/clag2z.3
 @man man/man3/clags2.3
 @man man/man3/clagtm.3
 @man man/man3/clahef.3
 @man man/man3/clahqr.3
+@man man/man3/clahr2.3
 @man man/man3/clahrd.3
 @man man/man3/claic1.3
 @man man/man3/clals0.3
@@ -164,6 +168,12 @@ lib/liblapack_pic.a
 @man man/man3/claqhp.3
 @man man/man3/claqp2.3
 @man man/man3/claqps.3
+@man man/man3/claqr0.3
+@man man/man3/claqr1.3
+@man man/man3/claqr2.3
+@man man/man3/claqr3.3
+@man man/man3/claqr4.3
+@man man/man3/claqr5.3
 @man man/man3/claqsb.3
 @man man/man3/claqsp.3
 @man man/man3/claqsy.3
@@ -247,6 +257,7 @@ lib/liblapack_pic.a
 @man man/man3/cstedc.3
 @man man/man3/cstegr.3
 @man man/man3/cstein.3
+@man man/man3/cstemr.3
 @man man/man3/csteqr.3
 @man man/man3/csycon.3
 @man man/man3/csymv.3
@@ -386,8 +397,10 @@ lib/liblapack_pic.a
 @man man/man3/dhgeqz.3
 @man man/man3/dhsein.3
 @man man/man3/dhseqr.3
+@man man/man3/disnan.3
 @man man/man3/dlabad.3
 @man man/man3/dlabrd.3
+@man man/man3/dlacn2.3
 @man man/man3/dlacon.3
 @man man/man3/dlacpy.3
 @man man/man3/dladiv.3
@@ -408,20 +421,24 @@ lib/liblapack_pic.a
 @man man/man3/dlaev2.3
 @man man/man3/dlaexc.3
 @man man/man3/dlag2.3
+@man man/man3/dlag2s.3
 @man man/man3/dlags2.3
 @man man/man3/dlagtf.3
 @man man/man3/dlagtm.3
 @man man/man3/dlagts.3
 @man man/man3/dlagv2.3
 @man man/man3/dlahqr.3
+@man man/man3/dlahr2.3
 @man man/man3/dlahrd.3
 @man man/man3/dlaic1.3
+@man man/man3/dlaisnan.3
 @man man/man3/dlaln2.3
 @man man/man3/dlals0.3
 @man man/man3/dlalsa.3
 @man man/man3/dlalsd.3
 @man man/man3/dlamch.3
 @man man/man3/dlamrg.3
+@man man/man3/dlaneg.3
 @man man/man3/dlangb.3
 @man man/man3/dlange.3
 @man man/man3/dlangt.3
@@ -442,6 +459,12 @@ lib/liblapack_pic.a
 @man man/man3/dlaqge.3
 @man man/man3/dlaqp2.3
 @man man/man3/dlaqps.3
+@man man/man3/dlaqr0.3
+@man man/man3/dlaqr1.3
+@man man/man3/dlaqr2.3
+@man man/man3/dlaqr3.3
+@man man/man3/dlaqr4.3
+@man man/man3/dlaqr5.3
 @man man/man3/dlaqsb.3
 @man man/man3/dlaqsp.3
 @man man/man3/dlaqsy.3
@@ -455,9 +478,15 @@ lib/liblapack_pic.a
 @man man/man3/dlarfx.3
 @man man/man3/dlargv.3
 @man man/man3/dlarnv.3
+@man man/man3/dlarra.3
 @man man/man3/dlarrb.3
+@man man/man3/dlarrc.3
+@man man/man3/dlarrd.3
 @man man/man3/dlarre.3
 @man man/man3/dlarrf.3
+@man man/man3/dlarrj.3
+@man man/man3/dlarrk.3
+@man man/man3/dlarrr.3
 @man man/man3/dlarrv.3
 @man man/man3/dlartg.3
 @man man/man3/dlartv.3
@@ -476,7 +505,6 @@ lib/liblapack_pic.a
 @man man/man3/dlasd6.3
 @man man/man3/dlasd7.3
 @man man/man3/dlasd8.3
-@man man/man3/dlasd9.3
 @man man/man3/dlasda.3
 @man man/man3/dlasdq.3
 @man man/man3/dlasdt.3
@@ -503,6 +531,8 @@ lib/liblapack_pic.a
 @man man/man3/dlatzm.3
 @man man/man3/dlauu2.3
 @man man/man3/dlauum.3
+@man man/man3/dlazq3.3
+@man man/man3/dlazq4.3
 @man man/man3/dopgtr.3
 @man man/man3/dopmtr.3
 @man man/man3/dorg2l.3
@@ -573,6 +603,7 @@ lib/liblapack_pic.a
 @man man/man3/dsbgvx.3
 @man man/man3/dsbtrd.3
 @man man/man3/dsecnd.3
+@man man/man3/dsgesv.3
 @man man/man3/dspcon.3
 @man man/man3/dspev.3
 @man man/man3/dspevd.3
@@ -592,6 +623,7 @@ lib/liblapack_pic.a
 @man man/man3/dstedc.3
 @man man/man3/dstegr.3
 @man man/man3/dstein.3
+@man man/man3/dstemr.3
 @man man/man3/dsteqr.3
 @man man/man3/dsterf.3
 @man man/man3/dstev.3
@@ -646,11 +678,14 @@ lib/liblapack_pic.a
 @man man/man3/dtzrzf.3
 @man man/man3/dzsum1.3
 @man man/man3/icmax1.3
+@man man/man3/ieeeck.3
 @man man/man3/ilaenv.3
+@man man/man3/ilaver.3
+@man man/man3/iparmq.3
 @man man/man3/izmax1.3
-@man man/man3/lapack.3
 @man man/man3/lsame.3
 @man man/man3/lsamen.3
+@man man/man3/lsametst.3
 @man man/man3/sbdsdc.3
 @man man/man3/sbdsqr.3
 @man man/man3/scsum1.3
@@ -728,8 +763,10 @@ lib/liblapack_pic.a
 @man man/man3/shgeqz.3
 @man man/man3/shsein.3
 @man man/man3/shseqr.3
+@man man/man3/sisnan.3
 @man man/man3/slabad.3
 @man man/man3/slabrd.3
+@man man/man3/slacn2.3
 @man man/man3/slacon.3
 @man man/man3/slacpy.3
 @man man/man3/sladiv.3
@@ -750,20 +787,24 @@ lib/liblapack_pic.a
 @man man/man3/slaev2.3
 @man man/man3/slaexc.3
 @man man/man3/slag2.3
+@man man/man3/slag2d.3
 @man man/man3/slags2.3
 @man man/man3/slagtf.3
 @man man/man3/slagtm.3
 @man man/man3/slagts.3
 @man man/man3/slagv2.3
 @man man/man3/slahqr.3
+@man man/man3/slahr2.3
 @man man/man3/slahrd.3
 @man man/man3/slaic1.3
+@man man/man3/slaisnan.3
 @man man/man3/slaln2.3
 @man man/man3/slals0.3
 @man man/man3/slalsa.3
 @man man/man3/slalsd.3
 @man man/man3/slamch.3
 @man man/man3/slamrg.3
+@man man/man3/slaneg.3
 @man man/man3/slangb.3
 @man man/man3/slange.3
 @man man/man3/slangt.3
@@ -784,6 +825,12 @@ lib/liblapack_pic.a
 @man man/man3/slaqge.3
 @man man/man3/slaqp2.3
 @man man/man3/slaqps.3
+@man man/man3/slaqr0.3
+@man man/man3/slaqr1.3
+@man man/man3/slaqr2.3
+@man man/man3/slaqr3.3
+@man man/man3/slaqr4.3
+@man man/man3/slaqr5.3
 @man man/man3/slaqsb.3
 @man man/man3/slaqsp.3
 @man man/man3/slaqsy.3
@@ -797,9 +844,15 @@ lib/liblapack_pic.a
 @man man/man3/slarfx.3
 @man man/man3/slargv.3
 @man man/man3/slarnv.3
+@man man/man3/slarra.3
 @man man/man3/slarrb.3
+@man man/man3/slarrc.3
+@man man/man3/slarrd.3
 @man man/man3/slarre.3
 @man man/man3/slarrf.3
+@man man/man3/slarrj.3
+@man man/man3/slarrk.3
+@man man/man3/slarrr.3
 @man man/man3/slarrv.3
 @man man/man3/slartg.3
 @man man/man3/slartv.3
@@ -818,7 +871,6 @@ lib/liblapack_pic.a
 @man man/man3/slasd6.3
 @man man/man3/slasd7.3
 @man man/man3/slasd8.3
-@man man/man3/slasd9.3
 @man man/man3/slasda.3
 @man man/man3/slasdq.3
 @man man/man3/slasdt.3
@@ -845,6 +897,8 @@ lib/liblapack_pic.a
 @man man/man3/slatzm.3
 @man man/man3/slauu2.3
 @man man/man3/slauum.3
+@man man/man3/slazq3.3
+@man man/man3/slazq4.3
 @man man/man3/sopgtr.3
 @man man/man3/sopmtr.3
 @man man/man3/sorg2l.3
@@ -933,6 +987,7 @@ lib/liblapack_pic.a
 @man man/man3/sstedc.3
 @man man/man3/sstegr.3
 @man man/man3/sstein.3
+@man man/man3/sstemr.3
 @man man/man3/ssteqr.3
 @man man/man3/ssterf.3
 @man man/man3/sstev.3
@@ -985,8 +1040,10 @@ lib/liblapack_pic.a
 @man man/man3/strtrs.3
 @man man/man3/stzrqf.3
 @man man/man3/stzrzf.3
+@man man/man3/tstiee.3
 @man man/man3/xerbla.3
 @man man/man3/zbdsqr.3
+@man man/man3/zcgesv.3
 @man man/man3/zdrot.3
 @man man/man3/zdrscl.3
 @man man/man3/zgbbrd.3
@@ -1103,8 +1160,10 @@ lib/liblapack_pic.a
 @man man/man3/zhptrs.3
 @man man/man3/zhsein.3
 @man man/man3/zhseqr.3
+@man man/man3/zisnan.3
 @man man/man3/zlabrd.3
 @man man/man3/zlacgv.3
+@man man/man3/zlacn2.3
 @man man/man3/zlacon.3
 @man man/man3/zlacp2.3
 @man man/man3/zlacpy.3
@@ -1117,10 +1176,12 @@ lib/liblapack_pic.a
 @man man/man3/zlaein.3
 @man man/man3/zlaesy.3
 @man man/man3/zlaev2.3
+@man man/man3/zlag2c.3
 @man man/man3/zlags2.3
 @man man/man3/zlagtm.3
 @man man/man3/zlahef.3
 @man man/man3/zlahqr.3
+@man man/man3/zlahr2.3
 @man man/man3/zlahrd.3
 @man man/man3/zlaic1.3
 @man man/man3/zlals0.3
@@ -1149,6 +1210,12 @@ lib/liblapack_pic.a
 @man man/man3/zlaqhp.3
 @man man/man3/zlaqp2.3
 @man man/man3/zlaqps.3
+@man man/man3/zlaqr0.3
+@man man/man3/zlaqr1.3
+@man man/man3/zlaqr2.3
+@man man/man3/zlaqr3.3
+@man man/man3/zlaqr4.3
+@man man/man3/zlaqr5.3
 @man man/man3/zlaqsb.3
 @man man/man3/zlaqsp.3
 @man man/man3/zlaqsy.3
@@ -1230,6 +1297,7 @@ lib/liblapack_pic.a
 @man man/man3/zstedc.3
 @man man/man3/zstegr.3
 @man man/man3/zstein.3
+@man man/man3/zstemr.3
 @man man/man3/zsteqr.3
 @man man/man3/zsycon.3
 @man man/man3/zsymv.3

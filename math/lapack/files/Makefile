@@ -1,38 +1,43 @@
-# $OpenBSD: Makefile,v 1.3 2006/05/10 07:35:40 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/01/27 07:17:55 steven Exp $
 
 LIB=	lapack
 
-ALLAUX = ilaenv.f ieeeck.f lsame.f lsamen.f xerbla.f
+ALLAUX = ilaenv.f ieeeck.f lsamen.f xerbla.f iparmq.f	\
+    ../INSTALL/ilaver.f ../INSTALL/lsame.f
 
 SCLAUX = \
    sbdsdc.f \
    sbdsqr.f sdisna.f slabad.f slacpy.f sladiv.f slae2.f  slaebz.f \
    slaed0.f slaed1.f slaed2.f slaed3.f slaed4.f slaed5.f slaed6.f \
    slaed7.f slaed8.f slaed9.f slaeda.f slaev2.f slagtf.f \
-   slagts.f slamch.f slamrg.f slanst.f \
+   slagts.f slamrg.f slanst.f \
    slapy2.f slapy3.f slarnv.f \
-   slarrb.f slarre.f slarrf.f \
+   slarra.f slarrb.f slarrc.f slarrd.f slarre.f slarrf.f slarrj.f \
+   slarrk.f slarrr.f slaneg.f \
    slartg.f slaruv.f slas2.f  slascl.f \
    slasd0.f slasd1.f slasd2.f slasd3.f slasd4.f slasd5.f slasd6.f \
-   slasd7.f slasd8.f slasd9.f slasda.f slasdq.f slasdt.f \
-   slaset.f slasq1.f slasq2.f slasq3.f slasq4.f slasq5.f slasq6.f \
+   slasd7.f slasd8.f slasda.f slasdq.f slasdt.f \
+   slaset.f slasq1.f slasq2.f slasq3.f slazq3.f slasq4.f slazq4.f slasq5.f slasq6.f \
    slasr.f  slasrt.f slassq.f slasv2.f spttrf.f sstebz.f sstedc.f \
-   ssteqr.f ssterf.f second.f
+   ssteqr.f ssterf.f slaisnan.f sisnan.f \
+   ../INSTALL/slamch.f ../INSTALL/second.f
 
 DZLAUX = \
    dbdsdc.f \
    dbdsqr.f ddisna.f dlabad.f dlacpy.f dladiv.f dlae2.f  dlaebz.f \
    dlaed0.f dlaed1.f dlaed2.f dlaed3.f dlaed4.f dlaed5.f dlaed6.f \
    dlaed7.f dlaed8.f dlaed9.f dlaeda.f dlaev2.f dlagtf.f \
-   dlagts.f dlamch.f dlamrg.f dlanst.f \
+   dlagts.f dlamrg.f dlanst.f \
    dlapy2.f dlapy3.f dlarnv.f \
-   dlarrb.f dlarre.f dlarrf.f \
+   dlarra.f dlarrb.f dlarrc.f dlarrd.f dlarre.f dlarrf.f dlarrj.f \
+   dlarrk.f dlarrr.f dlaneg.f \
    dlartg.f dlaruv.f dlas2.f  dlascl.f \
    dlasd0.f dlasd1.f dlasd2.f dlasd3.f dlasd4.f dlasd5.f dlasd6.f \
-   dlasd7.f dlasd8.f dlasd9.f dlasda.f dlasdq.f dlasdt.f \
-   dlaset.f dlasq1.f dlasq2.f dlasq3.f dlasq4.f dlasq5.f dlasq6.f \
+   dlasd7.f dlasd8.f dlasda.f dlasdq.f dlasdt.f \
+   dlaset.f dlasq1.f dlasq2.f dlasq3.f dlazq3.f dlasq4.f dlazq4.f dlasq5.f dlasq6.f \
    dlasr.f  dlasrt.f dlassq.f dlasv2.f dpttrf.f dstebz.f dstedc.f \
-   dsteqr.f dsterf.f dsecnd.f
+   dsteqr.f dsterf.f dlaisnan.f disnan.f \
+   ../INSTALL/dlamch.f ../INSTALL/dsecnd.f
 
 SLASRC = \
    sgbbrd.f sgbcon.f sgbequ.f sgbrfs.f sgbsv.f  \
@@ -47,13 +52,14 @@ SLASRC = \
    sggglm.f sgghrd.f sgglse.f sggqrf.f \
    sggrqf.f sggsvd.f sggsvp.f sgtcon.f sgtrfs.f sgtsv.f  \
    sgtsvx.f sgttrf.f sgttrs.f sgtts2.f shgeqz.f \
-   shsein.f shseqr.f slabrd.f slacon.f \
+   shsein.f shseqr.f slabrd.f slacon.f slacn2.f \
    slaein.f slaexc.f slag2.f  slags2.f slagtm.f slagv2.f slahqr.f \
-   slahrd.f slaic1.f slaln2.f slals0.f slalsa.f slalsd.f \
+   slahrd.f slahr2.f slaic1.f slaln2.f slals0.f slalsa.f slalsd.f \
    slangb.f slange.f slangt.f slanhs.f slansb.f slansp.f \
    slansy.f slantb.f slantp.f slantr.f slanv2.f \
    slapll.f slapmt.f \
    slaqgb.f slaqge.f slaqp2.f slaqps.f slaqsb.f slaqsp.f slaqsy.f \
+   slaqr0.f slaqr1.f slaqr2.f slaqr3.f slaqr4.f slaqr5.f \
    slaqtr.f slar1v.f slar2v.f \
    slarf.f  slarfb.f slarfg.f slarft.f slarfx.f slargv.f \
    slarrv.f slartv.f \
@@ -80,7 +86,7 @@ SLASRC = \
    stgsja.f stgsna.f stgsy2.f stgsyl.f stpcon.f stprfs.f stptri.f \
    stptrs.f \
    strcon.f strevc.f strexc.f strrfs.f strsen.f strsna.f strsyl.f \
-   strti2.f strtri.f strtrs.f stzrqf.f stzrzf.f
+   strti2.f strtri.f strtrs.f stzrqf.f stzrzf.f sstemr.f
 
 CLASRC = \
    cbdsqr.f cgbbrd.f cgbcon.f cgbequ.f cgbrfs.f cgbsv.f  cgbsvx.f \
@@ -103,15 +109,16 @@ CLASRC = \
    chpevx.f chpgst.f chpgv.f  chpgvd.f chpgvx.f chprfs.f chpsv.f  \
    chpsvx.f \
    chptrd.f chptrf.f chptri.f chptrs.f chsein.f chseqr.f clabrd.f \
-   clacgv.f clacon.f clacp2.f clacpy.f clacrm.f clacrt.f cladiv.f \
+   clacgv.f clacon.f clacn2.f clacp2.f clacpy.f clacrm.f clacrt.f cladiv.f \
    claed0.f claed7.f claed8.f \
    claein.f claesy.f claev2.f clags2.f clagtm.f \
    clahef.f clahqr.f \
-   clahrd.f claic1.f clals0.f clalsa.f clalsd.f clangb.f clange.f clangt.f \
+   clahrd.f clahr2.f claic1.f clals0.f clalsa.f clalsd.f clangb.f clange.f clangt.f \
    clanhb.f clanhe.f \
    clanhp.f clanhs.f clanht.f clansb.f clansp.f clansy.f clantb.f \
    clantp.f clantr.f clapll.f clapmt.f clarcm.f claqgb.f claqge.f \
    claqhb.f claqhe.f claqhp.f claqp2.f claqps.f claqsb.f \
+   claqr0.f claqr1.f claqr2.f claqr3.f claqr4.f claqr5.f \
    claqsp.f claqsy.f clar1v.f clar2v.f clarf.f  clarfb.f clarfg.f clarft.f \
    clarfx.f clargv.f clarnv.f clarrv.f clartg.f clartv.f \
    clarz.f  clarzb.f clarzt.f clascl.f claset.f clasr.f  classq.f \
@@ -133,7 +140,7 @@ CLASRC = \
    cungbr.f cunghr.f cungl2.f cunglq.f cungql.f cungqr.f cungr2.f \
    cungrq.f cungtr.f cunm2l.f cunm2r.f cunmbr.f cunmhr.f cunml2.f \
    cunmlq.f cunmql.f cunmqr.f cunmr2.f cunmr3.f cunmrq.f cunmrz.f \
-   cunmtr.f cupgtr.f cupmtr.f icmax1.f scsum1.f
+   cunmtr.f cupgtr.f cupmtr.f icmax1.f scsum1.f cstemr.f
 
 DLASRC = \
    dgbbrd.f dgbcon.f dgbequ.f dgbrfs.f dgbsv.f  \
@@ -148,13 +155,14 @@ DLASRC = \
    dggglm.f dgghrd.f dgglse.f dggqrf.f \
    dggrqf.f dggsvd.f dggsvp.f dgtcon.f dgtrfs.f dgtsv.f  \
    dgtsvx.f dgttrf.f dgttrs.f dgtts2.f dhgeqz.f \
-   dhsein.f dhseqr.f dlabrd.f dlacon.f \
+   dhsein.f dhseqr.f dlabrd.f dlacon.f dlacn2.f \
    dlaein.f dlaexc.f dlag2.f  dlags2.f dlagtm.f dlagv2.f dlahqr.f \
-   dlahrd.f dlaic1.f dlaln2.f dlals0.f dlalsa.f dlalsd.f \
+   dlahrd.f dlahr2.f dlaic1.f dlaln2.f dlals0.f dlalsa.f dlalsd.f \
    dlangb.f dlange.f dlangt.f dlanhs.f dlansb.f dlansp.f \
    dlansy.f dlantb.f dlantp.f dlantr.f dlanv2.f \
    dlapll.f dlapmt.f \
    dlaqgb.f dlaqge.f dlaqp2.f dlaqps.f dlaqsb.f dlaqsp.f dlaqsy.f \
+   dlaqr0.f dlaqr1.f dlaqr2.f dlaqr3.f dlaqr4.f dlaqr5.f \
    dlaqtr.f dlar1v.f dlar2v.f \
    dlarf.f  dlarfb.f dlarfg.f dlarft.f dlarfx.f dlargv.f \
    dlarrv.f dlartv.f \
@@ -182,7 +190,8 @@ DLASRC = \
    dtgsja.f dtgsna.f dtgsy2.f dtgsyl.f dtpcon.f dtprfs.f dtptri.f \
    dtptrs.f \
    dtrcon.f dtrevc.f dtrexc.f dtrrfs.f dtrsen.f dtrsna.f dtrsyl.f \
-   dtrti2.f dtrtri.f dtrtrs.f dtzrqf.f dtzrzf.f
+   dtrti2.f dtrtri.f dtrtrs.f dtzrqf.f dtzrzf.f dstemr.f \
+   dsgesv.f dlag2s.f slag2d.f
 
 ZLASRC = \
    zbdsqr.f zgbbrd.f zgbcon.f zgbequ.f zgbrfs.f zgbsv.f  zgbsvx.f \
@@ -205,16 +214,17 @@ ZLASRC = \
    zhpevx.f zhpgst.f zhpgv.f  zhpgvd.f zhpgvx.f zhprfs.f zhpsv.f  \
    zhpsvx.f \
    zhptrd.f zhptrf.f zhptri.f zhptrs.f zhsein.f zhseqr.f zlabrd.f \
-   zlacgv.f zlacon.f zlacp2.f zlacpy.f zlacrm.f zlacrt.f zladiv.f \
+   zlacgv.f zlacon.f zlacn2.f zlacp2.f zlacpy.f zlacrm.f zlacrt.f zladiv.f \
    zlaed0.f zlaed7.f zlaed8.f \
    zlaein.f zlaesy.f zlaev2.f zlags2.f zlagtm.f \
    zlahef.f zlahqr.f \
-   zlahrd.f zlaic1.f zlals0.f zlalsa.f zlalsd.f zlangb.f zlange.f \
+   zlahrd.f zlahr2.f zlaic1.f zlals0.f zlalsa.f zlalsd.f zlangb.f zlange.f \
    zlangt.f zlanhb.f \
    zlanhe.f \
    zlanhp.f zlanhs.f zlanht.f zlansb.f zlansp.f zlansy.f zlantb.f \
    zlantp.f zlantr.f zlapll.f zlapmt.f zlaqgb.f zlaqge.f \
    zlaqhb.f zlaqhe.f zlaqhp.f zlaqp2.f zlaqps.f zlaqsb.f \
+   zlaqr0.f zlaqr1.f zlaqr2.f zlaqr3.f zlaqr4.f zlaqr5.f \
    zlaqsp.f zlaqsy.f zlar1v.f zlar2v.f zlarcm.f zlarf.f  zlarfb.f \
    zlarfg.f zlarft.f \
    zlarfx.f zlargv.f zlarnv.f zlarrv.f zlartg.f zlartv.f \
@@ -239,7 +249,8 @@ ZLASRC = \
    zungrq.f zungtr.f zunm2l.f zunm2r.f zunmbr.f zunmhr.f zunml2.f \
    zunmlq.f zunmql.f zunmqr.f zunmr2.f zunmr3.f zunmrq.f zunmrz.f \
    zunmtr.f zupgtr.f \
-   zupmtr.f izmax1.f dzsum1.f
+   zupmtr.f izmax1.f dzsum1.f zstemr.f \
+   zcgesv.f zlag2c.f clag2z.f
 
 SRCS=${ALLAUX} ${SLASRC} ${SCLAUX} ${CLASRC} ${DLASRC} ${DZLAUX} ${ZLASRC}
 
