@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/01/27 17:35:46 espie Exp $
 
 CATEGORIES=		lang
-V=			5.6.18
-SUBST_VARS=		V
+V=			5.6.27
+XV=			6.6.27
+FULLARCH=		${MACHINE_ARCH}-openbsd${OSREV}
+SUBST_VARS=		V XV FULLARCH
 DISTNAME=		pl-$V
 PKGNAME=		swi-prolog-$V
 MASTER_SITES=		http://gollem.science.uva.nl/cgi-bin/nph-download/SWI-Prolog/
@@ -25,19 +27,19 @@ CONFIGURE_ARGS=		--enable-mt \
 			--with-world \
 			--disable-gmp \
 			--with-jpeg=${LOCALBASE} \
+			--without-sgml \
 			${CONFIGURE_SHARED}
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
 
 MAKE_FLAGS=		SONAMEOPT= \
-			SHAREDV=libpl.so.${LIBpl_VERSION} \
-			CONFIGURE_ARGS='$(CONFIGURE_ARGS)'
+			SHAREDV=libpl.so.${LIBpl_VERSION}
 FAKE_FLAGS=		${MAKE_FLAGS} \
 			DESTDIR=${WRKINST}
 
 WANTLIB=		ICE Xrender readline SM freetype Xt pthread \
-			c Xinerama Xft Xpm m fontconfig X11 ncurses
+			c Xinerama Xft Xpm m fontconfig X11 ncurses z
 
 LIB_DEPENDS=		jpeg::graphics/jpeg
 SUBST_VARS+=		BOOT
