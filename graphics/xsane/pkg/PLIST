@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/20 17:54:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/01/27 17:57:22 ajacoutot Exp $
 bin/xsane
 @man man/man1/xsane.1
 share/doc/xsane/
@@ -135,6 +135,7 @@ share/doc/xsane/xsane-zoom-not.jpg
 share/doc/xsane/xsane-zoom-out.jpg
 share/doc/xsane/xsane-zoom-undo.jpg
 share/doc/xsane/xsane-zoom.jpg
+share/locale/ca/LC_MESSAGES/xsane.mo
 share/locale/cs/LC_MESSAGES/xsane.mo
 share/locale/da/LC_MESSAGES/xsane.mo
 share/locale/de/LC_MESSAGES/xsane.mo
@@ -158,6 +159,7 @@ share/locale/vi/LC_MESSAGES/xsane.mo
 share/locale/zh/
 share/locale/zh/LC_MESSAGES/
 share/locale/zh/LC_MESSAGES/xsane.mo
+share/locale/zh_CN/LC_MESSAGES/xsane.mo
 share/xsane/
 share/xsane/Mustek-logo.xpm
 share/xsane/Plustek-logo.xpm
