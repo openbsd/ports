@@ -1,14 +1,14 @@
-$OpenBSD: patch-makefile,v 1.4 2006/10/13 19:24:41 steven Exp $
---- makefile.orig	Sun Sep 10 23:52:41 2006
-+++ makefile	Fri Oct 13 21:11:21 2006
+$OpenBSD: patch-makefile,v 1.5 2007/01/27 00:02:57 steven Exp $
+--- makefile.orig	Wed Dec 27 18:53:38 2006
++++ makefile	Sat Jan 27 01:00:39 2007
 @@ -3,8 +3,8 @@
  
  VERSION		= `cat VERSION`
  CFLAGS		+= -Wuninitialized -Wunused -Wshadow -Wformat -Wparentheses -Wcast-align
 -CFLAGS		+= -O -DUNIX -DVERSION=\"$(VERSION)\"
--LDFLAGS		+= -s
+-LDFLAGS		+= -s # The default linker flags.
 +CFLAGS		+= -DUNIX -DVERSION=\"$(VERSION)\"
-+LDFLAGS		+=
- LIBS		+= -lm
++LDFLAGS		+= # The default linker flags.
+ LIBS		+= -lm # The default libraries to link.
  
- CFLAGS		+= $(READLINE:1=-DREADLINE)
+ # "make READLINE=1" to include readline support:
