@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/27 17:56:14 steven Exp $
+bin/ffmpeg2theora
+@man man/man1/ffmpeg2theora.1
