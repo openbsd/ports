@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2007/01/22 13:56:35 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2007/01/27 17:56:45 steven Exp $
 
      SUBDIR += avidemux
      SUBDIR += dvdauthor
      SUBDIR += dvdbackup
      SUBDIR += dvdcpy
+     SUBDIR += ffmpeg2theora
      SUBDIR += gstreamer-0.10
      SUBDIR += kaffeine
      SUBDIR += libdv
