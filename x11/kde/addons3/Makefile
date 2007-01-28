@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.44 2006/11/20 08:07:40 steven Exp $
+# $OpenBSD: Makefile,v 1.45 2007/01/28 13:18:50 espie Exp $
 
 COMMENT=		"K Desktop Environment, addons"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.5
+VERSION=		3.5.6
 DISTNAME=		kdeaddons-${VERSION}
 MODKDE_VERSION=		3.5.3
 
@@ -14,7 +14,7 @@ LIB_DEPENDS= kdecore.>=6,kdnssd,knewstuff,DCOP,artskde,kabc,katepartinterfaces,k
 	kabinterfaces::x11/kde/pim3 \
 	gdk,gtk::x11/gtk+ \
 	xmms::audio/xmms \
-	lib/db4/db_cxx::databases/db/v4
+	lib/db4/db_cxx:db-4.*:databases/db/v4
 
 # XXX no version number on noatunarts
 

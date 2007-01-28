@@ -1,0 +1,31 @@
+$OpenBSD: patch-kioslave_media_kfile-plugin_kfilemediaplugin_cpp,v 1.1 2007/01/28 13:18:50 espie Exp $
+--- kioslave/media/kfile-plugin/kfilemediaplugin.cpp.orig	Wed Jan 17 00:17:09 2007
++++ kioslave/media/kfile-plugin/kfilemediaplugin.cpp	Wed Jan 17 00:22:49 2007
+@@ -29,7 +29,8 @@
+ #include <qapplication.h>
+ #include <qfile.h>
+ 
+-#include <sys/statvfs.h>
++#include <sys/param.h>
++#include <sys/mount.h>
+ 
+ typedef KGenericFactory<KFileMediaPlugin> KFileMediaPluginFactory;
+ K_EXPORT_COMPONENT_FACTORY(kfile_media, KFileMediaPluginFactory("kio_media"))
+@@ -99,13 +100,13 @@ bool KFileMediaPlugin::readInfo(KFileMet
+ 		m_used = 0;
+ 		m_free = 0;
+ 
+-		struct statvfs vfs;
++		struct statfs vfs;
+ 		memset(&vfs, 0, sizeof(vfs));
+ 
+-		if ( ::statvfs(QFile::encodeName(mount_point), &vfs) != -1 )
++		if ( ::statfs(QFile::encodeName(mount_point), &vfs) != -1 )
+ 		{
+-			m_total = static_cast<KIO::filesize_t>(vfs.f_blocks) * static_cast<KIO::filesize_t>(vfs.f_frsize);
+-			m_free = static_cast<KIO::filesize_t>(vfs.f_bavail) * static_cast<KIO::filesize_t>(vfs.f_frsize);
++			m_total = static_cast<KIO::filesize_t>(vfs.f_blocks) * static_cast<KIO::filesize_t>(vfs.f_bsize);
++			m_free = static_cast<KIO::filesize_t>(vfs.f_bavail) * static_cast<KIO::filesize_t>(vfs.f_bsize);
+ 			m_used = m_total - m_free;
+ 
+ 			int percent = 0;

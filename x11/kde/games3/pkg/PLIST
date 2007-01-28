@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2006/04/01 10:49:20 espie Exp $
+@comment $OpenBSD: PLIST,v 1.20 2007/01/28 13:18:51 espie Exp $
 bin/atlantik
 bin/kasteroids
 bin/katomic
@@ -134,6 +134,7 @@ share/applications/kde/klickety.desktop
 share/applications/kde/klines.desktop
 share/applications/kde/kmahjongg.desktop
 share/applications/kde/kmines.desktop
+share/applications/kde/knetwalk.desktop
 share/applications/kde/kolf.desktop
 share/applications/kde/konquest.desktop
 share/applications/kde/kpat.desktop
@@ -1155,7 +1156,7 @@ share/apps/katomic/levels/level_8
 share/apps/katomic/levels/level_80
 share/apps/katomic/levels/level_81
 share/apps/katomic/levels/level_82
-share/apps/katomic/levels/level_84
+share/apps/katomic/levels/level_83
 share/apps/katomic/levels/level_9
 share/apps/katomic/pics/
 share/apps/katomic/pics/abilder.png

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2006/04/01 10:49:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.22 2007/01/28 13:18:51 espie Exp $
 bin/ark
 bin/irkick
 bin/kcalc
@@ -116,7 +116,6 @@ share/applications/kde/kdf.desktop
 share/applications/kde/kgpg.desktop
 share/applications/kde/khexedit.desktop
 share/applications/kde/kregexpeditor.desktop
-share/applications/kde/ksim.desktop
 share/applications/kde/ktimer.desktop
 share/applications/kde/kwalletconfig.desktop
 share/applications/kde/kwalletmanager-kwalletd.desktop

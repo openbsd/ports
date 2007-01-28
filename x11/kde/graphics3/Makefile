@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.68 2006/12/16 12:22:36 espie Exp $
+# $OpenBSD: Makefile,v 1.69 2007/01/28 13:18:51 espie Exp $
 
 COMMENT-main=		"K Desktop Environment, graphic applications"
 COMMENT-kamera=		"KDE interface to digital cameras"
 COMMENT-kpov=		"KDE modeller for povray"
 COMMENT-sane=		"KDE interface to scanners"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.5
+VERSION=		3.5.6
 DISTNAME=		kdegraphics-${VERSION}
 MODKDE_VERSION=		3.5.3
 
@@ -14,10 +14,10 @@ SEPARATE_BUILD=flavored
 MULTI_PACKAGES=-main -kpov -kamera -sane
 PKGNAME=${DISTNAME}
 
-PKGNAME-main=	${DISTNAME}p1
+PKGNAME-main=	${DISTNAME}
 PKGNAME-kamera=	kamera-${VERSION}
 PKGNAME-kpov=	kpovmodeller-${VERSION}
-PKGNAME-sane=	ksane-${VERSION}p0
+PKGNAME-sane=	ksane-${VERSION}
 
 SHARED_LIBS +=	kghostviewlib        1.0      # .0.0
 SHARED_LIBS +=	kpovmodeler          1.0      # .0.0
@@ -39,7 +39,9 @@ LIB_DEPENDS-main= 	${LIB_DEPENDS} \
 			Imlib::graphics/imlib \
 			ungif::graphics/libungif \
 			Iex,Half,Imath,IlmImf::graphics/openexr \
-			fribidi::devel/fribidi
+			fribidi::devel/fribidi \
+			poppler::print/poppler \
+			poppler-qt::print/poppler,-qt
 WANTLIB-main=		${WANTLIB} \
 			tiff fontconfig lcms Xrender ICE c \
 			freetype stdc++ pcreposix pcre Xxf86vm SM Xext Xft

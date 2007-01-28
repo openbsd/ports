@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2006/11/20 08:07:41 steven Exp $
+# $OpenBSD: Makefile,v 1.36 2007/01/28 13:18:51 espie Exp $
 
 COMMENT= 		"some useless KDE applications"
 CATEGORIES=		x11 x11/kde games
-VERSION=		3.5.5
+VERSION=		3.5.6
 DISTNAME=		kdetoys-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}
 MODKDE_VERSION?=	3.5.3
 LIB_DEPENDS= 		kdecore.>=6,DCOP,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kparts,kscreensaver,kutils,kwalletclient::x11/kde/libs3
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2006/11/20 08:07:41 steven Exp $
+# $OpenBSD: Makefile,v 1.32 2007/01/28 13:18:51 espie Exp $
 
 COMMENT= 		"K Desktop Environment, developer extensions"
 CATEGORIES=		x11 x11/kde devel
-VERSION=		3.5.5
+VERSION=		3.5.6
 DISTNAME=		kdesdk-${VERSION}
 PKGNAME=		${DISTNAME}
 MODKDE_VERSION=		3.5.3

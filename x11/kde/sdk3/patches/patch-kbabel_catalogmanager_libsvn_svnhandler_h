@@ -1,0 +1,12 @@
+$OpenBSD: patch-kbabel_catalogmanager_libsvn_svnhandler_h,v 1.1 2007/01/28 13:18:51 espie Exp $
+--- kbabel/catalogmanager/libsvn/svnhandler.h.orig	Fri Jan 19 23:59:24 2007
++++ kbabel/catalogmanager/libsvn/svnhandler.h	Fri Jan 19 23:59:35 2007
+@@ -121,6 +121,8 @@ class SVNOutputCollector: public QObject
+   void setProcess( KProcess* );
+ 
+   const QString& output() const { return m_gatheredOutput; }
++#undef stderr
++#undef stdout
+   const QString& stderr() const { return m_stderrOutput; }
+   const QString& stdout() const { return m_stdoutOutput; }
+ 

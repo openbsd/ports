@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.70 2006/12/16 12:22:36 espie Exp $
+# $OpenBSD: Makefile,v 1.71 2007/01/28 13:18:50 espie Exp $
 
 COMMENT-main= 		"K Desktop Environment, basic applications"
 COMMENT-plugins=	"Konqueror nsplugins, essentially native JDK"
 COMMENT-samba=		"K Desktop Environment, samba support"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.5
+VERSION=		3.5.6
 DISTNAME=		kdebase-${VERSION}
-PKGNAME-main=		${DISTNAME}p1
+PKGNAME-main=		${DISTNAME}
 PKGNAME-samba=		kdesamba-${VERSION}
 MODKDE_VERSION?=	3.5.3
 SHARED_LIBS +=	konq                 7.0      # .6.0
@@ -22,10 +22,6 @@ SHARED_LIBS +=	taskmanager          2.0      # .1.0
 SHARED_LIBS +=	taskbar              4.0      # .3.0
 SHARED_LIBS +=	kasbar               2.0      # .1.0
 SHARED_LIBS +=	kfontinst            1.0      # .0.0
-SHARED_LIBS +=	kateinterfaces       1.0      # .0.0
-SHARED_LIBS +=	taskmanager          2.0      # .1.0
-SHARED_LIBS +=	taskbar              4.0      # .3.0
-SHARED_LIBS +=	kasbar               2.0      # .1.0
 
 MULTI_PACKAGES=		-main -samba
 FLAVORS=		debug

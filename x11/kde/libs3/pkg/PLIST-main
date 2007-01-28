@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/20 23:48:04 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/01/28 13:18:51 espie Exp $
 @conflict kdebase-<3.5
 @conflict kdeartwork-<3.4
 @conflict kdeaddons-<3.4
@@ -19,7 +19,7 @@ bin/dcopserver
 bin/dcopserver_shutdown
 bin/dcopstart
 bin/filesharelist
-bin/fileshareset
+@comment bin/fileshareset
 bin/imagetops
 bin/kab2kabc
 bin/kaddprinterwizard
@@ -49,7 +49,7 @@ bin/kioexec
 bin/kioslave
 bin/klauncher
 bin/kmailservice
-bin/kpac_dhcp_helper
+@comment bin/kpac_dhcp_helper
 bin/ksendbugmail
 bin/kshell
 bin/kstartupconfig
@@ -1068,6 +1068,7 @@ share/apps/katepart/scripts/script-indent-c-newline.js
 share/apps/katepart/scripts/sort.js
 share/apps/katepart/syntax/
 share/apps/katepart/syntax/abc.xml
+share/apps/katepart/syntax/actionscript.xml
 share/apps/katepart/syntax/ada.xml
 share/apps/katepart/syntax/ahdl.xml
 share/apps/katepart/syntax/alert.xml

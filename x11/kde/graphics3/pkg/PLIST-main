@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/20 16:23:22 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/01/28 13:18:51 espie Exp $
 @pkgpath x11/kde/graphics3
 bin/kcolorchooser
 bin/kcoloredit
@@ -242,6 +242,8 @@ ${KDE}/kfile_jpeg.la
 ${KDE}/kfile_jpeg.so
 ${KDE}/kfile_pcx.la
 ${KDE}/kfile_pcx.so
+${KDE}/kfile_pdf.la
+${KDE}/kfile_pdf.so
 ${KDE}/kfile_png.la
 ${KDE}/kfile_png.so
 ${KDE}/kfile_pnm.la
@@ -887,6 +889,7 @@ share/services/kfile_gif.desktop
 share/services/kfile_ico.desktop
 share/services/kfile_jpeg.desktop
 share/services/kfile_pcx.desktop
+share/services/kfile_pdf.desktop
 share/services/kfile_png.desktop
 share/services/kfile_pnm.desktop
 share/services/kfile_ps.desktop

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2006/10/12 23:12:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.33 2007/01/28 13:18:51 espie Exp $
 @conflict sirc-*
 bin/dsirc
 bin/feedbrowser
@@ -100,6 +100,8 @@ ${KDE}/fileshare_propsdlgplugin.la
 ${KDE}/fileshare_propsdlgplugin.so
 ${KDE}/kcm_fileshare.la
 ${KDE}/kcm_fileshare.so
+${KDE}/kcm_kcmsambaconf.la
+${KDE}/kcm_kcmsambaconf.so
 ${KDE}/kcm_kopete_accountconfig.la
 ${KDE}/kcm_kopete_accountconfig.so
 ${KDE}/kcm_kopete_addbookmarks.la
@@ -196,6 +198,8 @@ ${KDE}/kopete_jabber.la
 ${KDE}/kopete_jabber.so
 ${KDE}/kopete_latex.la
 ${KDE}/kopete_latex.so
+${KDE}/kopete_meanwhile.la
+${KDE}/kopete_meanwhile.so
 ${KDE}/kopete_msn.la
 ${KDE}/kopete_msn.so
 ${KDE}/kopete_netmeeting.la
@@ -222,8 +226,6 @@ ${KDE}/kpfpropertiesdialog.la
 ${KDE}/kpfpropertiesdialog.so
 ${KDE}/ksirc.la
 ${KDE}/ksirc.so
-${KDE}/libkcm_kcmsambaconf.la
-${KDE}/libkcm_kcmsambaconf.so
 ${KDE}/libkntsrcfilepropsdlg.la
 ${KDE}/libkntsrcfilepropsdlg.so
 ${KDE}/libkrichtexteditpart.la
@@ -377,6 +379,7 @@ share/apps/kopete/icons/crystalsvg/128x128/apps/
 share/apps/kopete/icons/crystalsvg/128x128/apps/aim_protocol.png
 share/apps/kopete/icons/crystalsvg/128x128/apps/icq_protocol.png
 share/apps/kopete/icons/crystalsvg/128x128/apps/kopete_avdevice.png
+share/apps/kopete/icons/crystalsvg/128x128/apps/meanwhile_protocol.png
 share/apps/kopete/icons/crystalsvg/128x128/apps/msn_protocol.png
 share/apps/kopete/icons/crystalsvg/128x128/apps/testbed_protocol.png
 share/apps/kopete/icons/crystalsvg/128x128/apps/wp_protocol.png
@@ -426,6 +429,10 @@ share/apps/kopete/icons/crystalsvg/16x16/actions/kgpg_key1.png
 share/apps/kopete/icons/crystalsvg/16x16/actions/kgpg_key2.png
 share/apps/kopete/icons/crystalsvg/16x16/actions/kgpg_key3.png
 share/apps/kopete/icons/crystalsvg/16x16/actions/logging.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/meanwhile_away.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/meanwhile_dnd.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/meanwhile_idle.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/meanwhile_unknown.png
 share/apps/kopete/icons/crystalsvg/16x16/actions/msn_away.png
 share/apps/kopete/icons/crystalsvg/16x16/actions/msn_blocked.png
 share/apps/kopete/icons/crystalsvg/16x16/actions/msn_brb.png
@@ -453,6 +460,7 @@ share/apps/kopete/icons/crystalsvg/16x16/apps/gadu_protocol.png
 share/apps/kopete/icons/crystalsvg/16x16/apps/groupwise_protocol.png
 share/apps/kopete/icons/crystalsvg/16x16/apps/icq_protocol.png
 share/apps/kopete/icons/crystalsvg/16x16/apps/irc_protocol.png
+share/apps/kopete/icons/crystalsvg/16x16/apps/meanwhile_protocol.png
 share/apps/kopete/icons/crystalsvg/16x16/apps/msn_protocol.png
 share/apps/kopete/icons/crystalsvg/16x16/apps/testbed_protocol.png
 share/apps/kopete/icons/crystalsvg/16x16/apps/wp_protocol.png
@@ -464,6 +472,7 @@ share/apps/kopete/icons/crystalsvg/22x22/actions/yahoo_stealthed.png
 share/apps/kopete/icons/crystalsvg/22x22/apps/
 share/apps/kopete/icons/crystalsvg/22x22/apps/groupwise_protocol.png
 share/apps/kopete/icons/crystalsvg/22x22/apps/kopete_avdevice.png
+share/apps/kopete/icons/crystalsvg/22x22/apps/meanwhile_protocol.png
 share/apps/kopete/icons/crystalsvg/32x32/
 share/apps/kopete/icons/crystalsvg/32x32/actions/
 share/apps/kopete/icons/crystalsvg/32x32/actions/logging.png
@@ -478,6 +487,7 @@ share/apps/kopete/icons/crystalsvg/32x32/apps/icq_protocol.png
 share/apps/kopete/icons/crystalsvg/32x32/apps/irc_protocol.png
 share/apps/kopete/icons/crystalsvg/32x32/apps/kopete_avdevice.png
 share/apps/kopete/icons/crystalsvg/32x32/apps/latex.png
+share/apps/kopete/icons/crystalsvg/32x32/apps/meanwhile_protocol.png
 share/apps/kopete/icons/crystalsvg/32x32/apps/msn_protocol.png
 share/apps/kopete/icons/crystalsvg/32x32/apps/testbed_protocol.png
 share/apps/kopete/icons/crystalsvg/32x32/apps/texteffect.png
@@ -490,6 +500,7 @@ share/apps/kopete/icons/crystalsvg/48x48/apps/
 share/apps/kopete/icons/crystalsvg/48x48/apps/aim_protocol.png
 share/apps/kopete/icons/crystalsvg/48x48/apps/groupwise_protocol.png
 share/apps/kopete/icons/crystalsvg/48x48/apps/icq_protocol.png
+share/apps/kopete/icons/crystalsvg/48x48/apps/meanwhile_protocol.png
 share/apps/kopete/icons/crystalsvg/48x48/apps/msn_protocol.png
 share/apps/kopete/icons/crystalsvg/48x48/apps/testbed_protocol.png
 share/apps/kopete/icons/crystalsvg/48x48/apps/wp_protocol.png
@@ -502,10 +513,14 @@ share/apps/kopete/icons/crystalsvg/64x64/apps/aim_protocol.png
 share/apps/kopete/icons/crystalsvg/64x64/apps/groupwise_protocol.png
 share/apps/kopete/icons/crystalsvg/64x64/apps/icq_protocol.png
 share/apps/kopete/icons/crystalsvg/64x64/apps/kopete_avdevice.png
+share/apps/kopete/icons/crystalsvg/64x64/apps/meanwhile_protocol.png
 share/apps/kopete/icons/crystalsvg/64x64/apps/msn_protocol.png
 share/apps/kopete/icons/crystalsvg/64x64/apps/testbed_protocol.png
 share/apps/kopete/icons/crystalsvg/64x64/apps/wp_protocol.png
 share/apps/kopete/icons/crystalsvg/64x64/apps/yahoo_protocol.png
+share/apps/kopete/icons/crystalsvg/scalable/
+share/apps/kopete/icons/crystalsvg/scalable/apps/
+share/apps/kopete/icons/crystalsvg/scalable/apps/meanwhile_protocol.svgz
 share/apps/kopete/icons/hicolor/
 share/apps/kopete/icons/hicolor/16x16/
 share/apps/kopete/icons/hicolor/16x16/actions/
@@ -1862,6 +1877,7 @@ share/services/kopete_identityconfig.desktop
 share/services/kopete_irc.desktop
 share/services/kopete_jabber.desktop
 share/services/kopete_latex.desktop
+share/services/kopete_meanwhile.desktop
 share/services/kopete_msn.desktop
 share/services/kopete_netmeeting.desktop
 share/services/kopete_nowlistening.desktop
