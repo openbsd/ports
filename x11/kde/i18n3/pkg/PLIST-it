@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-it,v 1.10 2006/10/12 23:12:18 espie Exp $
+@comment $OpenBSD: PLIST-it,v 1.11 2007/01/28 17:23:20 espie Exp $
 @conflict kde-i18n-ca-<3.4
 share/apps/kanagram/
 share/apps/kanagram/data/
@@ -227,6 +227,10 @@ ${DOC}docs/common/gpl-translated.html
 ${DOC}docs/common/kde-localised.css
 ${DOC}docs/common/lgpl-translated.html
 ${DOC}docs/common/logotp3.png
+${DOC}irkick/
+${DOC}irkick/common
+${DOC}irkick/${C}
+${DOC}irkick/${I}
 ${DOC}juk/
 ${DOC}juk/common
 ${DOC}juk/${C}
@@ -309,10 +313,18 @@ ${DOC}kate-plugins/textfilter.docbook
 ${DOC}kate-plugins/xmlcheck.docbook
 ${DOC}kate-plugins/xmltools.docbook
 ${DOC}kate/advanced.docbook
+${DOC}kate/common
 ${DOC}kate/configuring.docbook
 ${DOC}kate/fundamentals.docbook
+${DOC}kate/highlighting.docbook
+${DOC}kate/${C}
+${DOC}kate/${I}
+${DOC}kate/man-kate.1.docbook
 ${DOC}kate/mdi.docbook
+${DOC}kate/menus.docbook
+${DOC}kate/part.docbook
 ${DOC}kate/plugins.docbook
+${DOC}kate/regular-expressions.docbook
 ${DOC}katomic/
 ${DOC}katomic/common
 ${DOC}katomic/${C}
@@ -368,6 +380,10 @@ ${DOC}kcharselect/
 ${DOC}kcharselect/common
 ${DOC}kcharselect/${C}
 ${DOC}kcharselect/${I}
+${DOC}kcmlirc/
+${DOC}kcmlirc/common
+${DOC}kcmlirc/${C}
+${DOC}kcmlirc/${I}
 ${DOC}kcoloredit/
 ${DOC}kcoloredit/common
 ${DOC}kcoloredit/${C}
@@ -595,6 +611,10 @@ ${DOC}kdat/
 ${DOC}kdat/common
 ${DOC}kdat/${C}
 ${DOC}kdat/${I}
+${DOC}kdcop/
+${DOC}kdcop/common
+${DOC}kdcop/${C}
+${DOC}kdcop/${I}
 ${DOC}kde_app_devel/
 ${DOC}kde_app_devel/common
 ${DOC}kde_app_devel/${C}
@@ -614,15 +634,6 @@ ${DOC}kdelibs/man-dcop.1.docbook
 ${DOC}kdelibs/man-kbuildsycoca.8.docbook
 ${DOC}kdelibs/man-kdeoptions.7.docbook
 ${DOC}kdelibs/man-qtoptions.7.docbook
-${DOC}kdelirc/
-${DOC}kdelirc/irkick/
-${DOC}kdelirc/irkick/common
-${DOC}kdelirc/irkick/${C}
-${DOC}kdelirc/irkick/${I}
-${DOC}kdelirc/kcmlirc/
-${DOC}kdelirc/kcmlirc/common
-${DOC}kdelirc/kcmlirc/${C}
-${DOC}kdelirc/kcmlirc/${I}
 ${DOC}kdeprint/
 ${DOC}kdeprint/add-printer-wiz.docbook
 ${DOC}kdeprint/cups-config.docbook
@@ -729,6 +740,11 @@ ${DOC}kdf/
 ${DOC}kdf/common
 ${DOC}kdf/${C}
 ${DOC}kdf/${I}
+${DOC}kdm/
+${DOC}kdm/common
+${DOC}kdm/${C}
+${DOC}kdm/${I}
+${DOC}kdm/kdmrc-ref.docbook
 ${DOC}kdvi/
 ${DOC}kdvi/common
 ${DOC}kdvi/${C}
@@ -850,6 +866,7 @@ ${DOC}khelpcenter/userguide/burning-cds.docbook
 ${DOC}khelpcenter/userguide/control-center.docbook
 ${DOC}khelpcenter/userguide/creating-graphics.docbook
 ${DOC}khelpcenter/userguide/credits-and-license.docbook
+${DOC}khelpcenter/userguide/email.docbook
 ${DOC}khelpcenter/userguide/file-sharing.docbook
 ${DOC}khelpcenter/userguide/first-impressions.docbook
 ${DOC}khelpcenter/userguide/font-installation.docbook
@@ -905,6 +922,10 @@ ${DOC}khelpcenter/visualdict/${C}
 ${DOC}khelpcenter/visualdict/${I}
 ${DOC}khelpcenter/welcome.docbook
 ${DOC}khelpcenter/whatiskde.docbook
+${DOC}khexedit/
+${DOC}khexedit/common
+${DOC}khexedit/${C}
+${DOC}khexedit/${I}
 ${DOC}kicker/
 ${DOC}kicker-applets/
 ${DOC}kicker-applets/common
@@ -1167,19 +1188,32 @@ ${DOC}kmplot/man-kmplot.1.docbook
 ${DOC}kmplot/menu.docbook
 ${DOC}kmplot/reference.docbook
 ${DOC}kmplot/using.docbook
+${DOC}knetattach/
+${DOC}knetattach/common
+${DOC}knetattach/${C}
+${DOC}knetattach/${I}
 ${DOC}knetworkconf/
 ${DOC}knetworkconf/common
 ${DOC}knetworkconf/${C}
 ${DOC}knetworkconf/${I}
+${DOC}knewsticker/
+${DOC}knewsticker/common
+${DOC}knewsticker/${C}
+${DOC}knewsticker/${I}
 ${DOC}knode/
 ${DOC}knode/commands.docbook
+${DOC}knode/common
 ${DOC}knode/credits.docbook
 ${DOC}knode/faq.docbook
 ${DOC}knode/gloss.docbook
+${DOC}knode/${C}
+${DOC}knode/${I}
 ${DOC}knode/install.docbook
 ${DOC}knode/introduction.docbook
 ${DOC}knode/journey.docbook
 ${DOC}knode/more.docbook
+${DOC}knode/using-firststart.docbook
+${DOC}knode/using-morefeatures.docbook
 ${DOC}knode/using-subscribing.docbook
 ${DOC}knotes/
 ${DOC}knotes/common
@@ -1218,6 +1252,10 @@ ${DOC}kompare/
 ${DOC}kompare/common
 ${DOC}kompare/${C}
 ${DOC}kompare/${I}
+${DOC}kompmgr/
+${DOC}kompmgr/common
+${DOC}kompmgr/${C}
+${DOC}kompmgr/${I}
 ${DOC}konq-plugins/
 ${DOC}konq-plugins/babel/
 ${DOC}konq-plugins/babel/common
@@ -1323,6 +1361,7 @@ ${DOC}kooka/toolbar.png
 ${DOC}kooka/toolbar1.png
 ${DOC}kooka/toolbar2.png
 ${DOC}kopete/
+${DOC}kopete/chatstyle.docbook
 ${DOC}kopete/common
 ${DOC}kopete/${C}
 ${DOC}kopete/${I}
@@ -1395,7 +1434,7 @@ ${DOC}kpilot/setup-conduit.png
 ${DOC}kpilot/setup-dbspecial.png
 ${DOC}kpilot/setup-general.png
 ${DOC}kpilot/setup-hotsync.png
-${DOC}kpilot/setup${FLAVOR_EXT}ems.png
+${DOC}kpilot/setup${FLAVORS}ems.png
 ${DOC}kpilot/setup-startup-exit.png
 ${DOC}kpilot/setup-tabs.png
 ${DOC}kpilot/setup-viewer.png
@@ -1416,9 +1455,15 @@ ${DOC}kppp/
 ${DOC}kppp/accounting.docbook
 ${DOC}kppp/callback.docbook
 ${DOC}kppp/chap.docbook
+${DOC}kppp/common
+${DOC}kppp/dialog-setup.docbook
 ${DOC}kppp/getting-online.docbook
 ${DOC}kppp/global-settings.docbook
+${DOC}kppp/hayes.docbook
+${DOC}kppp/${C}
+${DOC}kppp/${I}
 ${DOC}kppp/kppp-dialler-tab.png
+${DOC}kppp/kppp-faq.docbook
 ${DOC}kppp/kppp-wizard.png
 ${DOC}kppp/security.docbook
 ${DOC}kppp/tricks.docbook
@@ -1480,6 +1525,10 @@ ${DOC}ksim/
 ${DOC}ksim/common
 ${DOC}ksim/${C}
 ${DOC}ksim/${I}
+${DOC}ksirc/
+${DOC}ksirc/common
+${DOC}ksirc/${C}
+${DOC}ksirc/${I}
 ${DOC}ksirtet/
 ${DOC}ksirtet/common
 ${DOC}ksirtet/${C}
@@ -1844,6 +1893,7 @@ ${DOC}umbrello/uml_basics.docbook
 ${DOC}umbrello/working_with_umbrello.docbook
 ${DOC}xsldbg/
 ${DOC}xsldbg/credits.docbook
+${DOC}xsldbg/introduction.docbook
 ${DOC}xsldbg/usage.docbook
 ${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
@@ -2119,6 +2169,7 @@ ${LOC}khotkeys.mo
 ${LOC}khtmlkttsd.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
+${LOC}kickermenu_kate.mo
 ${LOC}kiconedit.mo
 ${LOC}kig.mo
 ${LOC}kimagemapeditor.mo
@@ -2156,6 +2207,7 @@ ${LOC}kio_thumbnail.mo
 ${LOC}kio_trash.mo
 ${LOC}kio_zeroconf.mo
 ${LOC}kioexec.mo
+${LOC}kitchensync.mo
 ${LOC}kiten.mo
 ${LOC}kjobviewer.mo
 ${LOC}kjots.mo
@@ -2359,6 +2411,7 @@ ${LOC}libkickermenu_recentdocs.mo
 ${LOC}libkickermenu_remotemenu.mo
 ${LOC}libkickermenu_systemmenu.mo
 ${LOC}libkickermenu_tom.mo
+${LOC}libkitchensync.mo
 ${LOC}libkleopatra.mo
 ${LOC}libkmime.mo
 ${LOC}libkonq.mo

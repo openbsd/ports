@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-el,v 1.4 2006/02/04 14:49:52 espie Exp $
+@comment $OpenBSD: PLIST-el,v 1.5 2007/01/28 17:23:20 espie Exp $
 ${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo
@@ -273,6 +273,7 @@ ${LOC}khotkeys.mo
 ${LOC}khtmlkttsd.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
+${LOC}kickermenu_kate.mo
 ${LOC}kiconedit.mo
 ${LOC}kig.mo
 ${LOC}kimagemapeditor.mo
@@ -310,6 +311,7 @@ ${LOC}kio_thumbnail.mo
 ${LOC}kio_trash.mo
 ${LOC}kio_zeroconf.mo
 ${LOC}kioexec.mo
+${LOC}kitchensync.mo
 ${LOC}kiten.mo
 ${LOC}kjobviewer.mo
 ${LOC}kjots.mo
@@ -513,6 +515,7 @@ ${LOC}libkickermenu_recentdocs.mo
 ${LOC}libkickermenu_remotemenu.mo
 ${LOC}libkickermenu_systemmenu.mo
 ${LOC}libkickermenu_tom.mo
+${LOC}libkitchensync.mo
 ${LOC}libkleopatra.mo
 ${LOC}libkmime.mo
 ${LOC}libkonq.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ja,v 1.6 2006/06/03 12:47:30 espie Exp $
+@comment $OpenBSD: PLIST-ja,v 1.7 2007/01/28 17:23:20 espie Exp $
 share/doc/HTML/ja/
 ${DOC}docs/
 ${DOC}docs/common/
@@ -505,6 +505,7 @@ ${LOC}khotkeys.mo
 ${LOC}khtmlkttsd.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
+${LOC}kickermenu_kate.mo
 ${LOC}kiconedit.mo
 ${LOC}kig.mo
 ${LOC}kimagemapeditor.mo
@@ -745,6 +746,7 @@ ${LOC}libkickermenu_recentdocs.mo
 ${LOC}libkickermenu_remotemenu.mo
 ${LOC}libkickermenu_systemmenu.mo
 ${LOC}libkickermenu_tom.mo
+${LOC}libkitchensync.mo
 ${LOC}libkleopatra.mo
 ${LOC}libkmime.mo
 ${LOC}libkonq.mo

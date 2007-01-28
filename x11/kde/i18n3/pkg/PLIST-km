@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-km,v 1.4 2006/10/12 23:12:19 espie Exp $
+@comment $OpenBSD: PLIST-km,v 1.5 2007/01/28 17:23:20 espie Exp $
 share/locale/km/
 share/locale/km/LC_MESSAGES/
 ${LOC}akregator.mo
@@ -40,6 +40,7 @@ ${LOC}imgalleryplugin.mo
 ${LOC}irkick.mo
 ${LOC}jefferson.mo
 ${LOC}joystick.mo
+${LOC}juk.mo
 ${LOC}kabc2mutt.mo
 ${LOC}kabc_dir.mo
 ${LOC}kabc_file.mo
@@ -343,6 +344,7 @@ ${LOC}kmplot.mo
 ${LOC}kmrml.mo
 ${LOC}knetattach.mo
 ${LOC}knetwalk.mo
+${LOC}knewsticker.mo
 ${LOC}knode.mo
 ${LOC}knotes.mo
 ${LOC}knotify.mo
@@ -380,6 +382,7 @@ ${LOC}kpf.mo
 ${LOC}kpilot.mo
 ${LOC}kpoker.mo
 ${LOC}kpovmodeler.mo
+${LOC}kppp.mo
 ${LOC}kppplogview.mo
 ${LOC}kprinter.mo
 ${LOC}krandr.mo
@@ -409,6 +412,7 @@ ${LOC}kscreensaver.mo
 ${LOC}kshisen.mo
 ${LOC}ksig.mo
 ${LOC}ksim.mo
+${LOC}ksirc.mo
 ${LOC}ksirtet.mo
 ${LOC}ksmiletris.mo
 ${LOC}ksmserver.mo
@@ -444,6 +448,7 @@ ${LOC}ktip.mo
 ${LOC}ktnef.mo
 ${LOC}ktouch.mo
 ${LOC}ktron.mo
+${LOC}kttsd.mo
 ${LOC}kttsd_commandplugin.mo
 ${LOC}kttsd_eposplugin.mo
 ${LOC}kttsd_fliteplugin.mo
@@ -530,6 +535,7 @@ ${LOC}nexscope.mo
 ${LOC}noatun.mo
 ${LOC}nsplugin.mo
 ${LOC}pitchablespeed.mo
+${LOC}ppdtranslations.mo
 ${LOC}privacy.mo
 ${LOC}quanta.mo
 ${LOC}quicklauncher.mo

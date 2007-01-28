@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-sv,v 1.10 2006/10/12 23:12:19 espie Exp $
+@comment $OpenBSD: PLIST-sv,v 1.11 2007/01/28 17:23:20 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.sv.xml
 share/apps/khangman/
@@ -63,9 +63,25 @@ ${DOC}KRegExpEditor/repeattool.png
 ${DOC}KRegExpEditor/texttool.png
 ${DOC}KRegExpEditor/theEditor.png
 ${DOC}akregator/
+${DOC}akregator/add-feed.png
+${DOC}akregator/add-feed2.png
+${DOC}akregator/add-folder.png
+${DOC}akregator/add-folder2.png
+${DOC}akregator/advanced-tab.png
+${DOC}akregator/appearance-tab.png
+${DOC}akregator/archive-tab.png
+${DOC}akregator/browser-tab.png
 ${DOC}akregator/common
+${DOC}akregator/general-tab.png
 ${DOC}akregator/${C}
 ${DOC}akregator/${I}
+${DOC}akregator/konq.png
+${DOC}akregator/konq2.png
+${DOC}akregator/main-window.png
+${DOC}akregator/main-window2.png
+${DOC}akregator/main-window3.png
+${DOC}akregator/main-window4.png
+${DOC}akregator/quick-filter.png
 ${DOC}amor/
 ${DOC}amor/common
 ${DOC}amor/${C}
@@ -151,6 +167,10 @@ ${DOC}docs/common/gpl-translated.html
 ${DOC}docs/common/kde-localised.css
 ${DOC}docs/common/lgpl-translated.html
 ${DOC}docs/common/logotp3.png
+${DOC}irkick/
+${DOC}irkick/common
+${DOC}irkick/${C}
+${DOC}irkick/${I}
 ${DOC}juk/
 ${DOC}juk/common
 ${DOC}juk/history-playlist.png
@@ -386,6 +406,10 @@ ${DOC}kcharselect/
 ${DOC}kcharselect/common
 ${DOC}kcharselect/${C}
 ${DOC}kcharselect/${I}
+${DOC}kcmlirc/
+${DOC}kcmlirc/common
+${DOC}kcmlirc/${C}
+${DOC}kcmlirc/${I}
 ${DOC}kcoloredit/
 ${DOC}kcoloredit/common
 ${DOC}kcoloredit/${C}
@@ -655,15 +679,6 @@ ${DOC}kdelibs/man-dcop.1.docbook
 ${DOC}kdelibs/man-kbuildsycoca.8.docbook
 ${DOC}kdelibs/man-kdeoptions.7.docbook
 ${DOC}kdelibs/man-qtoptions.7.docbook
-${DOC}kdelirc/
-${DOC}kdelirc/irkick/
-${DOC}kdelirc/irkick/common
-${DOC}kdelirc/irkick/${C}
-${DOC}kdelirc/irkick/${I}
-${DOC}kdelirc/kcmlirc/
-${DOC}kdelirc/kcmlirc/common
-${DOC}kdelirc/kcmlirc/${C}
-${DOC}kdelirc/kcmlirc/${I}
 ${DOC}kdeprint/
 ${DOC}kdeprint/add-printer-wiz.docbook
 ${DOC}kdeprint/common
@@ -972,6 +987,7 @@ ${DOC}khelpcenter/userguide/common
 ${DOC}khelpcenter/userguide/control-center.docbook
 ${DOC}khelpcenter/userguide/creating-graphics.docbook
 ${DOC}khelpcenter/userguide/credits-and-license.docbook
+${DOC}khelpcenter/userguide/customizing-desktop.docbook
 ${DOC}khelpcenter/userguide/desktop.png
 ${DOC}khelpcenter/userguide/email.docbook
 ${DOC}khelpcenter/userguide/extragear-applications.docbook
@@ -1036,6 +1052,7 @@ ${DOC}khelpcenter/userguide/screen-captures.docbook
 ${DOC}khelpcenter/userguide/services.png
 ${DOC}khelpcenter/userguide/shared-sessions.docbook
 ${DOC}khelpcenter/userguide/shortcuts.docbook
+${DOC}khelpcenter/userguide/splash-screen.png
 ${DOC}khelpcenter/userguide/staff.docbook
 ${DOC}khelpcenter/userguide/standard-menu-entries.docbook
 ${DOC}khelpcenter/userguide/switching-sessions.docbook
@@ -1051,7 +1068,6 @@ ${DOC}khelpcenter/userguide/windows-how-to.docbook
 ${DOC}khelpcenter/userguide/your-kde-account.docbook
 ${DOC}khelpcenter/visualdict/
 ${DOC}khelpcenter/visualdict/common
-${DOC}khelpcenter/visualdict/contextmenu.png
 ${DOC}khelpcenter/visualdict/${C}
 ${DOC}khelpcenter/visualdict/${I}
 ${DOC}khelpcenter/visualdict/pict1.png
@@ -1067,11 +1083,15 @@ ${DOC}khelpcenter/visualdict/pict18.png
 ${DOC}khelpcenter/visualdict/pict19.png
 ${DOC}khelpcenter/visualdict/pict2.png
 ${DOC}khelpcenter/visualdict/pict20.png
+${DOC}khelpcenter/visualdict/pict21.png
+${DOC}khelpcenter/visualdict/pict22.png
+${DOC}khelpcenter/visualdict/pict23.png
 ${DOC}khelpcenter/visualdict/pict3.png
 ${DOC}khelpcenter/visualdict/pict4.png
 ${DOC}khelpcenter/visualdict/pict5.png
 ${DOC}khelpcenter/visualdict/pict6.png
 ${DOC}khelpcenter/visualdict/pict7.png
+${DOC}khelpcenter/visualdict/pict8.png
 ${DOC}khelpcenter/welcome.docbook
 ${DOC}khelpcenter/whatiskde.docbook
 ${DOC}khexedit/
@@ -2755,6 +2775,7 @@ ${LOC}khotkeys.mo
 ${LOC}khtmlkttsd.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
+${LOC}kickermenu_kate.mo
 ${LOC}kiconedit.mo
 ${LOC}kig.mo
 ${LOC}kimagemapeditor.mo
@@ -2792,6 +2813,7 @@ ${LOC}kio_thumbnail.mo
 ${LOC}kio_trash.mo
 ${LOC}kio_zeroconf.mo
 ${LOC}kioexec.mo
+${LOC}kitchensync.mo
 ${LOC}kiten.mo
 ${LOC}kjobviewer.mo
 ${LOC}kjots.mo
@@ -2995,6 +3017,7 @@ ${LOC}libkickermenu_recentdocs.mo
 ${LOC}libkickermenu_remotemenu.mo
 ${LOC}libkickermenu_systemmenu.mo
 ${LOC}libkickermenu_tom.mo
+${LOC}libkitchensync.mo
 ${LOC}libkleopatra.mo
 ${LOC}libkmime.mo
 ${LOC}libkonq.mo

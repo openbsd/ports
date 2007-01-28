@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hr,v 1.5 2006/10/12 23:12:18 espie Exp $
+@comment $OpenBSD: PLIST-hr,v 1.6 2007/01/28 17:23:20 espie Exp $
 share/doc/HTML/hr/
 ${DOC}docs/
 ${DOC}docs/common/
@@ -17,6 +17,7 @@ ${LOC}atlantikdesigner.mo
 ${LOC}audiorename_plugin.mo
 ${LOC}autorefresh.mo
 ${LOC}babelfish.mo
+${LOC}blinken.mo
 ${LOC}cervisia.mo
 ${LOC}charlatanui.mo
 ${LOC}clockapplet.mo
@@ -80,6 +81,7 @@ ${LOC}kay.mo
 ${LOC}kbabel.mo
 ${LOC}kbackgammon.mo
 ${LOC}kbattleship.mo
+${LOC}kbinaryclock.mo
 ${LOC}kblackbox.mo
 ${LOC}kbounce.mo
 ${LOC}kbruch.mo
@@ -179,13 +181,19 @@ ${LOC}kfifteenapplet.mo
 ${LOC}kfile_au.mo
 ${LOC}kfile_avi.mo
 ${LOC}kfile_bmp.mo
+${LOC}kfile_cert.mo
 ${LOC}kfile_cpp.mo
 ${LOC}kfile_deb.mo
+${LOC}kfile_desktop.mo
 ${LOC}kfile_diff.mo
+${LOC}kfile_drgeo.mo
 ${LOC}kfile_dvi.mo
+${LOC}kfile_folder.mo
 ${LOC}kfile_gif.mo
+${LOC}kfile_html.mo
 ${LOC}kfile_ico.mo
 ${LOC}kfile_jpeg.mo
+${LOC}kfile_kig.mo
 ${LOC}kfile_m3u.mo
 ${LOC}kfile_mp3.mo
 ${LOC}kfile_ogg.mo
@@ -210,6 +218,7 @@ ${LOC}kfontinst.mo
 ${LOC}kfouleggs.mo
 ${LOC}kgamma.mo
 ${LOC}kgantt.mo
+${LOC}kgeography.mo
 ${LOC}kget.mo
 ${LOC}kghostview.mo
 ${LOC}kgoldrunner.mo
@@ -372,6 +381,7 @@ ${LOC}kxkb.mo
 ${LOC}kxsconfig.mo
 ${LOC}libdmctl.mo
 ${LOC}libkcal.mo
+${LOC}libkdeedu.mo
 ${LOC}libkdegames.mo
 ${LOC}libkdepim.mo
 ${LOC}libkicker.mo

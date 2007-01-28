@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-af,v 1.5 2006/08/04 10:41:01 espie Exp $
+@comment $OpenBSD: PLIST-af,v 1.6 2007/01/28 17:23:20 espie Exp $
 share/locale/af/
 share/locale/af/LC_MESSAGES/
 ${LOC}alsaplayerui.mo
@@ -261,6 +261,7 @@ ${LOC}konqsidebar_mediaplayer.mo
 ${LOC}konqueror.mo
 ${LOC}konquest.mo
 ${LOC}konsole.mo
+${LOC}kontact.mo
 ${LOC}kooka.mo
 ${LOC}korganizer.mo
 ${LOC}korn.mo

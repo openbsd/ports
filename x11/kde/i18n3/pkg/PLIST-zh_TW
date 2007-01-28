@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-zh_TW,v 1.5 2006/10/12 23:12:19 espie Exp $
+@comment $OpenBSD: PLIST-zh_TW,v 1.6 2007/01/28 17:23:20 espie Exp $
 share/doc/HTML/zh_TW/
 ${DOC}docs/
 ${DOC}docs/common/
@@ -91,6 +91,7 @@ ${LOC}kaboodle.mo
 ${LOC}kaccess.mo
 ${LOC}kaddressbook.mo
 ${LOC}kalarm.mo
+${LOC}kalzium.mo
 ${LOC}kanagram.mo
 ${LOC}kandy.mo
 ${LOC}kappfinder.mo
@@ -128,6 +129,7 @@ ${LOC}kbounce.mo
 ${LOC}kbruch.mo
 ${LOC}kbstateapplet.mo
 ${LOC}kbugbuster.mo
+${LOC}kcachegrind.mo
 ${LOC}kcalc.mo
 ${LOC}kcharselect.mo
 ${LOC}kcharselectapplet.mo
@@ -310,7 +312,9 @@ ${LOC}khotkeys.mo
 ${LOC}khtmlkttsd.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
+${LOC}kickermenu_kate.mo
 ${LOC}kiconedit.mo
+${LOC}kig.mo
 ${LOC}kimagemapeditor.mo
 ${LOC}kinetd.mo
 ${LOC}kio.mo
@@ -346,6 +350,7 @@ ${LOC}kio_thumbnail.mo
 ${LOC}kio_trash.mo
 ${LOC}kio_zeroconf.mo
 ${LOC}kioexec.mo
+${LOC}kitchensync.mo
 ${LOC}kiten.mo
 ${LOC}kjobviewer.mo
 ${LOC}kjots.mo
@@ -383,6 +388,7 @@ ${LOC}kmobile.mo
 ${LOC}kmoon.mo
 ${LOC}kmousetool.mo
 ${LOC}kmouth.mo
+${LOC}kmplot.mo
 ${LOC}kmrml.mo
 ${LOC}knetattach.mo
 ${LOC}knetwalk.mo
@@ -502,6 +508,7 @@ ${LOC}kuick_plugin.mo
 ${LOC}kuickshow.mo
 ${LOC}kuiviewer.mo
 ${LOC}kuser.mo
+${LOC}kverbos.mo
 ${LOC}kview.mo
 ${LOC}kview_scale.mo
 ${LOC}kviewbrowserplugin.mo
@@ -511,6 +518,7 @@ ${LOC}kviewpresenterplugin.mo
 ${LOC}kviewscannerplugin.mo
 ${LOC}kviewshell.mo
 ${LOC}kviewviewer.mo
+${LOC}kvoctrain.mo
 ${LOC}kwalletmanager.mo
 ${LOC}kwatchgnupg.mo
 ${LOC}kweather.mo
@@ -521,6 +529,7 @@ ${LOC}kwin_art_clients.mo
 ${LOC}kwin_clients.mo
 ${LOC}kwin_lib.mo
 ${LOC}kwireless.mo
+${LOC}kwordquiz.mo
 ${LOC}kworldclock.mo
 ${LOC}kwriteconfig.mo
 ${LOC}kxkb.mo
@@ -545,6 +554,7 @@ ${LOC}libkickermenu_recentdocs.mo
 ${LOC}libkickermenu_remotemenu.mo
 ${LOC}libkickermenu_systemmenu.mo
 ${LOC}libkickermenu_tom.mo
+${LOC}libkitchensync.mo
 ${LOC}libkleopatra.mo
 ${LOC}libkmime.mo
 ${LOC}libkonq.mo

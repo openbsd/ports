@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-fy,v 1.4 2006/06/03 12:47:30 espie Exp $
+@comment $OpenBSD: PLIST-fy,v 1.5 2007/01/28 17:23:20 espie Exp $
 share/locale/fy/
 share/locale/fy/LC_MESSAGES/
 ${LOC}appletproxy.mo
@@ -97,6 +97,7 @@ ${LOC}khelpcenter.mo
 ${LOC}khotkeys.mo
 ${LOC}khtmlkttsd.mo
 ${LOC}kicker.mo
+${LOC}kickermenu_kate.mo
 ${LOC}kio.mo
 ${LOC}kio_finger.mo
 ${LOC}kio_fish.mo

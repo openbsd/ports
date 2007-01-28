@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ca,v 1.10 2006/10/12 23:12:18 espie Exp $
+@comment $OpenBSD: PLIST-ca,v 1.11 2007/01/28 17:23:20 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.ca.xml
 share/apps/khangman/
@@ -99,7 +99,7 @@ ${DOC}katomic/common
 ${DOC}katomic/${C}
 ${DOC}katomic/${I}
 ${DOC}kbabel/
-${DOC}kbabel/man${FLAVOR_EXT}talogmanager.1.docbook
+${DOC}kbabel/man${FLAVORS}talogmanager.1.docbook
 ${DOC}kbruch/
 ${DOC}kbruch/common
 ${DOC}kbruch/${C}
@@ -400,6 +400,10 @@ ${DOC}kgeography/
 ${DOC}kgeography/common
 ${DOC}kgeography/${C}
 ${DOC}kgeography/${I}
+${DOC}kget/
+${DOC}kget/common
+${DOC}kget/${C}
+${DOC}kget/${I}
 ${DOC}kgpg/
 ${DOC}kgpg/common
 ${DOC}kgpg/${C}
@@ -460,6 +464,7 @@ ${DOC}khelpcenter/userguide/common
 ${DOC}khelpcenter/userguide/control-center.docbook
 ${DOC}khelpcenter/userguide/creating-graphics.docbook
 ${DOC}khelpcenter/userguide/credits-and-license.docbook
+${DOC}khelpcenter/userguide/customizing-desktop.docbook
 ${DOC}khelpcenter/userguide/email.docbook
 ${DOC}khelpcenter/userguide/extragear-applications.docbook
 ${DOC}khelpcenter/userguide/file-sharing.docbook
@@ -501,7 +506,7 @@ ${DOC}khelpcenter/userguide/printing-from-apps.docbook
 ${DOC}khelpcenter/userguide/programs-and-documents.docbook
 ${DOC}khelpcenter/userguide/programs-controlling.docbook
 ${DOC}khelpcenter/userguide/removable-disks.docbook
-${DOC}khelpcenter/userguide/screen${FLAVOR_EXT}ptures.docbook
+${DOC}khelpcenter/userguide/screen${FLAVORS}ptures.docbook
 ${DOC}khelpcenter/userguide/services.png
 ${DOC}khelpcenter/userguide/shared-sessions.docbook
 ${DOC}khelpcenter/userguide/standard-menu-entries.docbook
@@ -533,6 +538,10 @@ ${DOC}kicker/${C}
 ${DOC}kicker/${I}
 ${DOC}kicker/man-appletproxy.1.docbook
 ${DOC}kicker/man-kicker.1.docbook
+${DOC}kig/
+${DOC}kig/common
+${DOC}kig/${C}
+${DOC}kig/${I}
 ${DOC}kinfocenter/
 ${DOC}kinfocenter/blockdevices/
 ${DOC}kinfocenter/blockdevices/common
@@ -960,9 +969,14 @@ ${DOC}ktnef/common
 ${DOC}ktnef/${C}
 ${DOC}ktnef/${I}
 ${DOC}ktouch/
+${DOC}ktouch/color_options.png
 ${DOC}ktouch/common
+${DOC}ktouch/general_options.png
 ${DOC}ktouch/${C}
 ${DOC}ktouch/${I}
+${DOC}ktouch/keyboard_options.png
+${DOC}ktouch/man-ktouch.1.docbook
+${DOC}ktouch/training_options.png
 ${DOC}kttsd/
 ${DOC}kttsd/common
 ${DOC}kttsd/${C}
@@ -1327,6 +1341,7 @@ ${LOC}khotkeys.mo
 ${LOC}khtmlkttsd.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
+${LOC}kickermenu_kate.mo
 ${LOC}kiconedit.mo
 ${LOC}kig.mo
 ${LOC}kimagemapeditor.mo
@@ -1364,6 +1379,7 @@ ${LOC}kio_thumbnail.mo
 ${LOC}kio_trash.mo
 ${LOC}kio_zeroconf.mo
 ${LOC}kioexec.mo
+${LOC}kitchensync.mo
 ${LOC}kiten.mo
 ${LOC}kjobviewer.mo
 ${LOC}kjots.mo
@@ -1567,6 +1583,7 @@ ${LOC}libkickermenu_recentdocs.mo
 ${LOC}libkickermenu_remotemenu.mo
 ${LOC}libkickermenu_systemmenu.mo
 ${LOC}libkickermenu_tom.mo
+${LOC}libkitchensync.mo
 ${LOC}libkleopatra.mo
 ${LOC}libkmime.mo
 ${LOC}libkonq.mo

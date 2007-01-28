@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-he,v 1.9 2006/10/12 23:12:18 espie Exp $
+@comment $OpenBSD: PLIST-he,v 1.10 2007/01/28 17:23:20 espie Exp $
 share/apps/klettres/
 share/apps/klettres/he/
 share/apps/klettres/he/alpha/
@@ -295,6 +295,7 @@ ${LOC}kfile_sid.mo
 ${LOC}kfile_tga.mo
 ${LOC}kfile_theora.mo
 ${LOC}kfile_tiff.mo
+${LOC}kfile_torrent.mo
 ${LOC}kfile_ts.mo
 ${LOC}kfile_txt.mo
 ${LOC}kfile_vcf.mo
@@ -352,6 +353,7 @@ ${LOC}kio_smtp.mo
 ${LOC}kio_svn.mo
 ${LOC}kio_system.mo
 ${LOC}kio_tar.mo
+${LOC}kio_thumbnail.mo
 ${LOC}kio_trash.mo
 ${LOC}kioexec.mo
 ${LOC}kjobviewer.mo

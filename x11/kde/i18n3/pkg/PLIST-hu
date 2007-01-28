@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hu,v 1.7 2006/06/03 12:47:30 espie Exp $
+@comment $OpenBSD: PLIST-hu,v 1.8 2007/01/28 17:23:20 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/khangman/
 share/apps/khangman/data/
@@ -760,6 +760,7 @@ ${LOC}khotkeys.mo
 ${LOC}khtmlkttsd.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
+${LOC}kickermenu_kate.mo
 ${LOC}kiconedit.mo
 ${LOC}kig.mo
 ${LOC}kimagemapeditor.mo

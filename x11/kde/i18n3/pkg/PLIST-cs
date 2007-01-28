@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-cs,v 1.9 2006/08/04 10:41:01 espie Exp $
+@comment $OpenBSD: PLIST-cs,v 1.10 2007/01/28 17:23:20 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/khangman/
 share/apps/khangman/cs.txt
@@ -275,7 +275,6 @@ ${LOC}kasbarextension.mo
 ${LOC}kasteroids.mo
 ${LOC}kate.mo
 ${LOC}katecppsymbolviewer.mo
-${LOC}katedefaultproject.mo
 ${LOC}katefiletemplates.mo
 ${LOC}katefll_initplugin.mo
 ${LOC}katefll_plugin.mo
@@ -283,12 +282,10 @@ ${LOC}katehelloworld.mo
 ${LOC}katehtmltools.mo
 ${LOC}kateinsertcommand.mo
 ${LOC}katekjswrapper.mo
-${LOC}katekttsd.mo
 ${LOC}katemake.mo
 ${LOC}katemodeline.mo
 ${LOC}kateopenheader.mo
 ${LOC}katepart.mo
-${LOC}katepartkttsd.mo
 ${LOC}katepybrowse.mo
 ${LOC}katesnippets.mo
 ${LOC}katetabbarextension.mo
@@ -348,7 +345,6 @@ ${LOC}kcmkonqhtml.mo
 ${LOC}kcmkonsole.mo
 ${LOC}kcmkontactnt.mo
 ${LOC}kcmktalkd.mo
-${LOC}kcmkttsd.mo
 ${LOC}kcmkuick.mo
 ${LOC}kcmkurifilt.mo
 ${LOC}kcmkvaio.mo
@@ -373,7 +369,6 @@ ${LOC}kcmscreensaver.mo
 ${LOC}kcmshell.mo
 ${LOC}kcmsmartcard.mo
 ${LOC}kcmsmserver.mo
-${LOC}kcmsocks.mo
 ${LOC}kcmspellchecking.mo
 ${LOC}kcmstyle.mo
 ${LOC}kcmtaskbar.mo
@@ -409,7 +404,6 @@ ${LOC}kdialog.mo
 ${LOC}kdict.mo
 ${LOC}kdictapplet.mo
 ${LOC}kdjview.mo
-${LOC}kdmchooser.mo
 ${LOC}kdmconfig.mo
 ${LOC}kdmgreet.mo
 ${LOC}kdvi.mo
@@ -536,7 +530,6 @@ ${LOC}kjots.mo
 ${LOC}kjumpingcube.mo
 ${LOC}klaptopdaemon.mo
 ${LOC}klatin.mo
-${LOC}klegacyimport.mo
 ${LOC}kleopatra.mo
 ${LOC}klettres.mo
 ${LOC}klickety.mo
@@ -551,7 +544,6 @@ ${LOC}kmail_text_calendar_plugin.mo
 ${LOC}kmail_text_vcard_plugin.mo
 ${LOC}kmailcvt.mo
 ${LOC}kmathapplet.mo
-${LOC}kmathtool.mo
 ${LOC}kmcop.mo
 ${LOC}kmenuapplet.mo
 ${LOC}kmenuedit.mo
@@ -604,7 +596,6 @@ ${LOC}korganizer.mo
 ${LOC}korn.mo
 ${LOC}kpackage.mo
 ${LOC}kpager.mo
-${LOC}kpartapp.mo
 ${LOC}kpartsaver.mo
 ${LOC}kpat.mo
 ${LOC}kpdf.mo
@@ -668,14 +659,12 @@ ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
 ${LOC}ksystraycmd.mo
 ${LOC}ksysv.mo
-${LOC}ktaskbarapplet.mo
 ${LOC}kteatime.mo
 ${LOC}ktexteditor_autobookmarker.mo
 ${LOC}ktexteditor_docwordcompletion.mo
 ${LOC}ktexteditor_insertfile.mo
 ${LOC}ktexteditor_isearch.mo
 ${LOC}ktexteditor_kdatatool.mo
-${LOC}ktexteditor_kttsd.mo
 ${LOC}kthememanager.mo
 ${LOC}ktimemon.mo
 ${LOC}ktimer.mo
@@ -684,18 +673,6 @@ ${LOC}ktnef.mo
 ${LOC}ktouch.mo
 ${LOC}ktron.mo
 ${LOC}kttsd.mo
-${LOC}kttsd_commandplugin.mo
-${LOC}kttsd_eposplugin.mo
-${LOC}kttsd_festivalintplugin.mo
-${LOC}kttsd_fliteplugin.mo
-${LOC}kttsd_freettsplugin.mo
-${LOC}kttsd_hadifixplugin.mo
-${LOC}kttsd_sbdplugin.mo
-${LOC}kttsd_stringreplacerplugin.mo
-${LOC}kttsd_talkerchooserplugin.mo
-${LOC}kttsd_xmltransformerplugin.mo
-${LOC}kttsjobmgr.mo
-${LOC}kttsmgr.mo
 ${LOC}ktuberling.mo
 ${LOC}kturtle.mo
 ${LOC}ktux.mo
@@ -785,7 +762,6 @@ ${LOC}secpolicy.mo
 ${LOC}spy.mo
 ${LOC}superkaramba.mo
 ${LOC}synaescope.mo
-${LOC}taskbarextension.mo
 ${LOC}timezones.mo
 ${LOC}tippecanoe.mo
 ${LOC}trashapplet.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-lv,v 1.3 2006/10/12 23:12:19 espie Exp $
+@comment $OpenBSD: PLIST-lv,v 1.4 2007/01/28 17:23:20 espie Exp $
 ${LOC}appletproxy.mo
 ${LOC}ark.mo
 ${LOC}artsbuilder.mo
@@ -100,6 +100,7 @@ ${LOC}kdelibs.mo
 ${LOC}kdelibs_colors.mo
 ${LOC}kdepasswd.mo
 ${LOC}kdeprint.mo
+${LOC}kdeprint_part.mo
 ${LOC}kdeprintfax.mo
 ${LOC}kdesktop.mo
 ${LOC}kdessh.mo
@@ -156,6 +157,8 @@ ${LOC}kio_sftp.mo
 ${LOC}kio_smb.mo
 ${LOC}kio_smtp.mo
 ${LOC}kio_system.mo
+${LOC}kio_tar.mo
+${LOC}kio_trash.mo
 ${LOC}kioexec.mo
 ${LOC}kiten.mo
 ${LOC}kjobviewer.mo
@@ -226,6 +229,7 @@ ${LOC}ksplash.mo
 ${LOC}kstars.mo
 ${LOC}kstart.mo
 ${LOC}kstartperf.mo
+${LOC}kstyle_keramik_config.mo
 ${LOC}ksync.mo
 ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
@@ -266,6 +270,7 @@ ${LOC}libtaskbar.mo
 ${LOC}libtaskmanager.mo
 ${LOC}lockout.mo
 ${LOC}lskat.mo
+${LOC}mediaapplet.mo
 ${LOC}naughtyapplet.mo
 ${LOC}noatun.mo
 ${LOC}nsplugin.mo

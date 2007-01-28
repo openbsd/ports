@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pt_BR,v 1.9 2006/10/12 23:12:19 espie Exp $
+@comment $OpenBSD: PLIST-pt_BR,v 1.10 2007/01/28 17:23:20 espie Exp $
 share/apps/katepart/syntax/logohighlightstyle.pt_BR.xml
 share/apps/khangman/
 share/apps/khangman/data/
@@ -79,6 +79,10 @@ ${DOC}docs/common/gpl-translated.html
 ${DOC}docs/common/kde-localised.css
 ${DOC}docs/common/lgpl-translated.html
 ${DOC}docs/common/logotp3.png
+${DOC}irkick/
+${DOC}irkick/common
+${DOC}irkick/${C}
+${DOC}irkick/${I}
 ${DOC}juk/
 ${DOC}juk/common
 ${DOC}juk/${C}
@@ -199,6 +203,10 @@ ${DOC}kcharselect/
 ${DOC}kcharselect/common
 ${DOC}kcharselect/${C}
 ${DOC}kcharselect/${I}
+${DOC}kcmlirc/
+${DOC}kcmlirc/common
+${DOC}kcmlirc/${C}
+${DOC}kcmlirc/${I}
 ${DOC}kcoloredit/
 ${DOC}kcoloredit/common
 ${DOC}kcoloredit/${C}
@@ -441,15 +449,6 @@ ${DOC}kdelibs/man-checkXML.1.docbook
 ${DOC}kdelibs/man-dcop.1.docbook
 ${DOC}kdelibs/man-kdeoptions.7.docbook
 ${DOC}kdelibs/man-qtoptions.7.docbook
-${DOC}kdelirc/
-${DOC}kdelirc/irkick/
-${DOC}kdelirc/irkick/common
-${DOC}kdelirc/irkick/${C}
-${DOC}kdelirc/irkick/${I}
-${DOC}kdelirc/kcmlirc/
-${DOC}kdelirc/kcmlirc/common
-${DOC}kdelirc/kcmlirc/${C}
-${DOC}kdelirc/kcmlirc/${I}
 ${DOC}kdeprint/
 ${DOC}kdeprint/add-printer-wiz.docbook
 ${DOC}kdeprint/common
@@ -1645,6 +1644,7 @@ ${LOC}audiocd_encoder_vorbis.mo
 ${LOC}audiorename_plugin.mo
 ${LOC}autorefresh.mo
 ${LOC}babelfish.mo
+${LOC}blinken.mo
 ${LOC}cervisia.mo
 ${LOC}charlatanui.mo
 ${LOC}clockapplet.mo
@@ -1681,6 +1681,7 @@ ${LOC}kaccess.mo
 ${LOC}kaddressbook.mo
 ${LOC}kalarm.mo
 ${LOC}kalzium.mo
+${LOC}kanagram.mo
 ${LOC}kandy.mo
 ${LOC}kappfinder.mo
 ${LOC}karm.mo
@@ -1956,7 +1957,6 @@ ${LOC}kmathapplet.mo
 ${LOC}kmcop.mo
 ${LOC}kmenuapplet.mo
 ${LOC}kmenuedit.mo
-${LOC}kmessedwords.mo
 ${LOC}kmid.mo
 ${LOC}kmilo_delli8k.mo
 ${LOC}kmilo_generic.mo
@@ -2122,6 +2122,7 @@ ${LOC}libkaddrbk_geo_xxport.mo
 ${LOC}libkaddrbk_gmx_xxport.mo
 ${LOC}libkcal.mo
 ${LOC}libkcddb.mo
+${LOC}libkdeedu.mo
 ${LOC}libkdegames.mo
 ${LOC}libkdepim.mo
 ${LOC}libkholidays.mo

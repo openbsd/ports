@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-es,v 1.11 2006/10/12 23:12:18 espie Exp $
+@comment $OpenBSD: PLIST-es,v 1.12 2007/01/28 17:23:20 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.es.xml
 share/apps/khangman/
@@ -221,9 +221,27 @@ ${DOC}KRegExpEditor/texttool.png
 ${DOC}KRegExpEditor/theEditor.png
 ${DOC}KRegExpEditor/wordboundary.png
 ${DOC}akregator/
+${DOC}akregator/add-feed.png
+${DOC}akregator/add-feed2.png
+${DOC}akregator/add-folder.png
+${DOC}akregator/add-folder2.png
+${DOC}akregator/advanced-tab.png
+${DOC}akregator/appearance-tab.png
+${DOC}akregator/archive-tab.png
+${DOC}akregator/browser-tab.png
 ${DOC}akregator/common
+${DOC}akregator/general-tab.png
 ${DOC}akregator/${C}
 ${DOC}akregator/${I}
+${DOC}akregator/konq.png
+${DOC}akregator/konq2.png
+${DOC}akregator/main-window.png
+${DOC}akregator/main-window2.png
+${DOC}akregator/main-window3.png
+${DOC}akregator/main-window4.png
+${DOC}akregator/quick-filter.png
+${DOC}akregator/rss.png
+${DOC}akregator/rss3.png
 ${DOC}amor/
 ${DOC}amor/billy.png
 ${DOC}amor/bonhomme.png
@@ -363,9 +381,12 @@ ${DOC}cervisia/
 ${DOC}cervisia/annotate.png
 ${DOC}cervisia/checkout.png
 ${DOC}cervisia/commit.png
+${DOC}cervisia/common
 ${DOC}cervisia/diff.png
 ${DOC}cervisia/history.png
 ${DOC}cervisia/import.png
+${DOC}cervisia/${C}
+${DOC}cervisia/${I}
 ${DOC}cervisia/logtree.png
 ${DOC}cervisia/mainview.png
 ${DOC}cervisia/patch.png
@@ -381,6 +402,10 @@ ${DOC}docs/common/kde-localised.css
 ${DOC}docs/common/kde_logo.png
 ${DOC}docs/common/lgpl-translated.html
 ${DOC}docs/common/logotp3.png
+${DOC}irkick/
+${DOC}irkick/common
+${DOC}irkick/${C}
+${DOC}irkick/${I}
 ${DOC}juk/
 ${DOC}juk/common
 ${DOC}juk/history-playlist.png
@@ -657,6 +682,10 @@ ${DOC}kcharselect/
 ${DOC}kcharselect/common
 ${DOC}kcharselect/${C}
 ${DOC}kcharselect/${I}
+${DOC}kcmlirc/
+${DOC}kcmlirc/common
+${DOC}kcmlirc/${C}
+${DOC}kcmlirc/${I}
 ${DOC}kcoloredit/
 ${DOC}kcoloredit/common
 ${DOC}kcoloredit/${C}
@@ -932,15 +961,6 @@ ${DOC}kdelibs/man-dcop.1.docbook
 ${DOC}kdelibs/man-kbuildsycoca.8.docbook
 ${DOC}kdelibs/man-kdeoptions.7.docbook
 ${DOC}kdelibs/man-qtoptions.7.docbook
-${DOC}kdelirc/
-${DOC}kdelirc/irkick/
-${DOC}kdelirc/irkick/common
-${DOC}kdelirc/irkick/${C}
-${DOC}kdelirc/irkick/${I}
-${DOC}kdelirc/kcmlirc/
-${DOC}kdelirc/kcmlirc/common
-${DOC}kdelirc/kcmlirc/${C}
-${DOC}kdelirc/kcmlirc/${I}
 ${DOC}kdeprint/
 ${DOC}kdeprint/add-printer-wiz.docbook
 ${DOC}kdeprint/common
@@ -3316,6 +3336,7 @@ ${LOC}kio_thumbnail.mo
 ${LOC}kio_trash.mo
 ${LOC}kio_zeroconf.mo
 ${LOC}kioexec.mo
+${LOC}kitchensync.mo
 ${LOC}kiten.mo
 ${LOC}kjobviewer.mo
 ${LOC}kjots.mo
@@ -3519,6 +3540,7 @@ ${LOC}libkickermenu_recentdocs.mo
 ${LOC}libkickermenu_remotemenu.mo
 ${LOC}libkickermenu_systemmenu.mo
 ${LOC}libkickermenu_tom.mo
+${LOC}libkitchensync.mo
 ${LOC}libkleopatra.mo
 ${LOC}libkmime.mo
 ${LOC}libkonq.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-nl,v 1.7 2006/06/03 12:47:30 espie Exp $
+@comment $OpenBSD: PLIST-nl,v 1.8 2007/01/28 17:23:20 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.nl.xml
 share/apps/khangman/
@@ -128,6 +128,10 @@ ${DOC}docs/common/gpl-translated.html
 ${DOC}docs/common/kde-localised.css
 ${DOC}docs/common/lgpl-translated.html
 ${DOC}docs/common/logotp3.png
+${DOC}irkick/
+${DOC}irkick/common
+${DOC}irkick/${C}
+${DOC}irkick/${I}
 ${DOC}juk/
 ${DOC}juk/common
 ${DOC}juk/${C}
@@ -238,6 +242,10 @@ ${DOC}kcharselect/
 ${DOC}kcharselect/common
 ${DOC}kcharselect/${C}
 ${DOC}kcharselect/${I}
+${DOC}kcmlirc/
+${DOC}kcmlirc/common
+${DOC}kcmlirc/${C}
+${DOC}kcmlirc/${I}
 ${DOC}kcoloredit/
 ${DOC}kcoloredit/common
 ${DOC}kcoloredit/${C}
@@ -487,15 +495,6 @@ ${DOC}kdebugdialog/
 ${DOC}kdebugdialog/common
 ${DOC}kdebugdialog/${C}
 ${DOC}kdebugdialog/${I}
-${DOC}kdelirc/
-${DOC}kdelirc/irkick/
-${DOC}kdelirc/irkick/common
-${DOC}kdelirc/irkick/${C}
-${DOC}kdelirc/irkick/${I}
-${DOC}kdelirc/kcmlirc/
-${DOC}kdelirc/kcmlirc/common
-${DOC}kdelirc/kcmlirc/${C}
-${DOC}kdelirc/kcmlirc/${I}
 ${DOC}kdeprint/
 ${DOC}kdeprint/add-printer-wiz.docbook
 ${DOC}kdeprint/common
@@ -524,6 +523,11 @@ ${DOC}kdf/${C}
 ${DOC}kdf/${I}
 ${DOC}kdf/kdf.png
 ${DOC}kdf/kdf_config.png
+${DOC}kdm/
+${DOC}kdm/common
+${DOC}kdm/${C}
+${DOC}kdm/${I}
+${DOC}kdm/kdmrc-ref.docbook
 ${DOC}kdvi/
 ${DOC}kdvi/common
 ${DOC}kdvi/${C}
@@ -537,9 +541,35 @@ ${DOC}kenolaba/common
 ${DOC}kenolaba/${C}
 ${DOC}kenolaba/${I}
 ${DOC}kfilereplace/
+${DOC}kfilereplace/addstringsdialog_window.png
+${DOC}kfilereplace/backup_option.png
+${DOC}kfilereplace/casesensitive_option.png
+${DOC}kfilereplace/command_option.png
 ${DOC}kfilereplace/common
+${DOC}kfilereplace/edit.png
+${DOC}kfilereplace/edit_add.png
+${DOC}kfilereplace/edit_remove.png
+${DOC}kfilereplace/eraser.png
+${DOC}kfilereplace/filereplace.png
+${DOC}kfilereplace/filesearch.png
+${DOC}kfilereplace/filesimulate.png
 ${DOC}kfilereplace/${C}
 ${DOC}kfilereplace/${I}
+${DOC}kfilereplace/invert.png
+${DOC}kfilereplace/kfr_standalone_main_window_1.png
+${DOC}kfilereplace/optionsdialog_main_window_1.png
+${DOC}kfilereplace/optionsdialog_main_window_2.png
+${DOC}kfilereplace/project.png
+${DOC}kfilereplace/projectdialog_main_window_1.png
+${DOC}kfilereplace/projectdialog_main_window_2.png
+${DOC}kfilereplace/recursive_option.png
+${DOC}kfilereplace/regularexpression_option.png
+${DOC}kfilereplace/report_example.png
+${DOC}kfilereplace/results_view.png
+${DOC}kfilereplace/stop.png
+${DOC}kfilereplace/strings_view.png
+${DOC}kfilereplace/toolbar.png
+${DOC}kfilereplace/unsortedList.png
 ${DOC}kfind/
 ${DOC}kfind/common
 ${DOC}kfind/${C}
@@ -629,7 +659,6 @@ ${DOC}khelpcenter/userguide/accessibility.docbook
 ${DOC}khelpcenter/userguide/base-kde-applications.docbook
 ${DOC}khelpcenter/userguide/browser-fine-tuning.docbook
 ${DOC}khelpcenter/userguide/burning-cds.docbook
-${DOC}khelpcenter/userguide/common
 ${DOC}khelpcenter/userguide/control-center.docbook
 ${DOC}khelpcenter/userguide/creating-graphics.docbook
 ${DOC}khelpcenter/userguide/credits-and-license.docbook
@@ -643,8 +672,6 @@ ${DOC}khelpcenter/userguide/getting-started.docbook
 ${DOC}khelpcenter/userguide/glossary.docbook
 ${DOC}khelpcenter/userguide/groupware-kontact.docbook
 ${DOC}khelpcenter/userguide/history.docbook
-${DOC}khelpcenter/userguide/${C}
-${DOC}khelpcenter/userguide/${I}
 ${DOC}khelpcenter/userguide/installation.docbook
 ${DOC}khelpcenter/userguide/internet-shortcuts.docbook
 ${DOC}khelpcenter/userguide/intro.docbook
@@ -960,6 +987,10 @@ ${DOC}kmplot/man-kmplot.1.docbook
 ${DOC}kmplot/menu.docbook
 ${DOC}kmplot/reference.docbook
 ${DOC}kmplot/using.docbook
+${DOC}knetattach/
+${DOC}knetattach/common
+${DOC}knetattach/${C}
+${DOC}knetattach/${I}
 ${DOC}knode/
 ${DOC}knode/commands.docbook
 ${DOC}knode/common
@@ -1008,6 +1039,10 @@ ${DOC}kompare/
 ${DOC}kompare/common
 ${DOC}kompare/${C}
 ${DOC}kompare/${I}
+${DOC}kompmgr/
+${DOC}kompmgr/common
+${DOC}kompmgr/${C}
+${DOC}kompmgr/${I}
 ${DOC}konq-plugins/
 ${DOC}konq-plugins/babel/
 ${DOC}konq-plugins/babel/common
@@ -1796,6 +1831,7 @@ ${LOC}khotkeys.mo
 ${LOC}khtmlkttsd.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
+${LOC}kickermenu_kate.mo
 ${LOC}kiconedit.mo
 ${LOC}kig.mo
 ${LOC}kimagemapeditor.mo
@@ -1833,6 +1869,7 @@ ${LOC}kio_thumbnail.mo
 ${LOC}kio_trash.mo
 ${LOC}kio_zeroconf.mo
 ${LOC}kioexec.mo
+${LOC}kitchensync.mo
 ${LOC}kiten.mo
 ${LOC}kjobviewer.mo
 ${LOC}kjots.mo
@@ -2036,6 +2073,7 @@ ${LOC}libkickermenu_recentdocs.mo
 ${LOC}libkickermenu_remotemenu.mo
 ${LOC}libkickermenu_systemmenu.mo
 ${LOC}libkickermenu_tom.mo
+${LOC}libkitchensync.mo
 ${LOC}libkleopatra.mo
 ${LOC}libkmime.mo
 ${LOC}libkonq.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pa,v 1.5 2006/08/04 10:41:01 espie Exp $
+@comment $OpenBSD: PLIST-pa,v 1.6 2007/01/28 17:23:20 espie Exp $
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo
 ${LOC}amor.mo
@@ -176,7 +176,6 @@ ${LOC}kdialog.mo
 ${LOC}kdict.mo
 ${LOC}kdictapplet.mo
 ${LOC}kdjview.mo
-${LOC}kdmchooser.mo
 ${LOC}kdmconfig.mo
 ${LOC}kdmgreet.mo
 ${LOC}kedit.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-zh_CN,v 1.6 2006/06/03 12:47:30 espie Exp $
+@comment $OpenBSD: PLIST-zh_CN,v 1.7 2007/01/28 17:23:20 espie Exp $
 share/doc/HTML/zh_CN/
 ${DOC}docs/
 ${DOC}docs/common/
@@ -273,6 +273,7 @@ ${LOC}khotkeys.mo
 ${LOC}khtmlkttsd.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
+${LOC}kickermenu_kate.mo
 ${LOC}kiconedit.mo
 ${LOC}kig.mo
 ${LOC}kimagemapeditor.mo

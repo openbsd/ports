@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tr,v 1.6 2006/08/04 10:41:01 espie Exp $
+@comment $OpenBSD: PLIST-tr,v 1.7 2007/01/28 17:23:20 espie Exp $
 share/apps/khangman/
 share/apps/khangman/data/
 share/apps/khangman/data/tr/
@@ -10,7 +10,7 @@ share/apps/khangman/tr.txt
 share/doc/HTML/tr/
 ${DOC}docs/
 ${DOC}docs/common/
-${DOC}docs/common/gpl${FLAVOR_EXT}anslated.html
+${DOC}docs/common/gpl${FLAVORS}anslated.html
 ${DOC}docs/common/kde-localised.css
 ${DOC}khelpcenter/
 ${DOC}khelpcenter/common

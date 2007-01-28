@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-da,v 1.8 2006/10/12 23:12:18 espie Exp $
+@comment $OpenBSD: PLIST-da,v 1.9 2007/01/28 17:23:20 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/khangman/
 share/apps/khangman/da.txt
@@ -162,6 +162,10 @@ ${DOC}docs/common/gpl-translated.html
 ${DOC}docs/common/kde-localised.css
 ${DOC}docs/common/lgpl-translated.html
 ${DOC}docs/common/logotp3.png
+${DOC}irkick/
+${DOC}irkick/common
+${DOC}irkick/${C}
+${DOC}irkick/${I}
 ${DOC}juk/
 ${DOC}juk/common
 ${DOC}juk/${C}
@@ -304,6 +308,10 @@ ${DOC}kcharselect/
 ${DOC}kcharselect/common
 ${DOC}kcharselect/${C}
 ${DOC}kcharselect/${I}
+${DOC}kcmlirc/
+${DOC}kcmlirc/common
+${DOC}kcmlirc/${C}
+${DOC}kcmlirc/${I}
 ${DOC}kcoloredit/
 ${DOC}kcoloredit/common
 ${DOC}kcoloredit/${C}
@@ -558,15 +566,6 @@ ${DOC}kdelibs/man-dcop.1.docbook
 ${DOC}kdelibs/man-kbuildsycoca.8.docbook
 ${DOC}kdelibs/man-kdeoptions.7.docbook
 ${DOC}kdelibs/man-qtoptions.7.docbook
-${DOC}kdelirc/
-${DOC}kdelirc/irkick/
-${DOC}kdelirc/irkick/common
-${DOC}kdelirc/irkick/${C}
-${DOC}kdelirc/irkick/${I}
-${DOC}kdelirc/kcmlirc/
-${DOC}kdelirc/kcmlirc/common
-${DOC}kdelirc/kcmlirc/${C}
-${DOC}kdelirc/kcmlirc/${I}
 ${DOC}kdeprint/
 ${DOC}kdeprint/add-printer-wiz.docbook
 ${DOC}kdeprint/common
@@ -756,6 +755,7 @@ ${DOC}khelpcenter/userguide/common
 ${DOC}khelpcenter/userguide/control-center.docbook
 ${DOC}khelpcenter/userguide/creating-graphics.docbook
 ${DOC}khelpcenter/userguide/credits-and-license.docbook
+${DOC}khelpcenter/userguide/customizing-desktop.docbook
 ${DOC}khelpcenter/userguide/email.docbook
 ${DOC}khelpcenter/userguide/extragear-applications.docbook
 ${DOC}khelpcenter/userguide/file-sharing.docbook
@@ -1287,6 +1287,7 @@ ${DOC}kooka/common
 ${DOC}kooka/${C}
 ${DOC}kooka/${I}
 ${DOC}kopete/
+${DOC}kopete/chatstyle.docbook
 ${DOC}kopete/common
 ${DOC}kopete/${C}
 ${DOC}kopete/${I}
@@ -1470,8 +1471,8 @@ ${DOC}kstars/blackbody.docbook
 ${DOC}kstars/calc-angdist.docbook
 ${DOC}kstars/calc-apcoords.docbook
 ${DOC}kstars/calc-apcoords.png
-${DOC}kstars/calc${FLAVOR_EXT}yduration.docbook
-${DOC}kstars/calc${FLAVOR_EXT}ylength.png
+${DOC}kstars/calc${FLAVORS}yduration.docbook
+${DOC}kstars/calc${FLAVORS}ylength.png
 ${DOC}kstars/calc-ecliptic.docbook
 ${DOC}kstars/calc-eqgal.docbook
 ${DOC}kstars/calc-eqgal.png
@@ -2046,6 +2047,7 @@ ${LOC}khotkeys.mo
 ${LOC}khtmlkttsd.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
+${LOC}kickermenu_kate.mo
 ${LOC}kiconedit.mo
 ${LOC}kig.mo
 ${LOC}kimagemapeditor.mo
@@ -2083,6 +2085,7 @@ ${LOC}kio_thumbnail.mo
 ${LOC}kio_trash.mo
 ${LOC}kio_zeroconf.mo
 ${LOC}kioexec.mo
+${LOC}kitchensync.mo
 ${LOC}kiten.mo
 ${LOC}kjobviewer.mo
 ${LOC}kjots.mo
@@ -2286,6 +2289,7 @@ ${LOC}libkickermenu_recentdocs.mo
 ${LOC}libkickermenu_remotemenu.mo
 ${LOC}libkickermenu_systemmenu.mo
 ${LOC}libkickermenu_tom.mo
+${LOC}libkitchensync.mo
 ${LOC}libkleopatra.mo
 ${LOC}libkmime.mo
 ${LOC}libkonq.mo

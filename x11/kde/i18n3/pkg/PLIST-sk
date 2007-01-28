@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-sk,v 1.9 2006/08/04 10:41:01 espie Exp $
+@comment $OpenBSD: PLIST-sk,v 1.10 2007/01/28 17:23:20 espie Exp $
 @conflict kdeedu-<3.3
+share/apps/katepart/syntax/logohighlightstyle.sk.xml
 share/apps/klettres/
 share/apps/klettres/sk/
 share/apps/klettres/sk/alpha/
@@ -141,6 +142,24 @@ share/apps/ktuberling/sounds/sk/okuliare.wav
 share/apps/ktuberling/sounds/sk/slnecneokuliare.wav
 share/apps/ktuberling/sounds/sk/ucho.wav
 share/apps/ktuberling/sounds/sk/usta.wav
+share/apps/kturtle/
+share/apps/kturtle/data/
+share/apps/kturtle/data/logokeywords.sk.xml
+share/apps/kturtle/examples/
+share/apps/kturtle/examples/sk/
+share/apps/kturtle/examples/sk/farbenieplatna.logo
+share/apps/kturtle/examples/sk/kde.logo
+share/apps/kturtle/examples/sk/kvet.logo
+share/apps/kturtle/examples/sk/nahodnemeno.logo
+share/apps/kturtle/examples/sk/nasobilka.logo
+share/apps/kturtle/examples/sk/reklama.logo
+share/apps/kturtle/examples/sk/sipka.logo
+share/apps/kturtle/examples/sk/spirala.logo
+share/apps/kturtle/examples/sk/spiraly.logo
+share/apps/kturtle/examples/sk/stvorce.logo
+share/apps/kturtle/examples/sk/stvorec.logo
+share/apps/kturtle/examples/sk/trojuholnik.logo
+share/apps/kturtle/examples/sk/trojuholniky.logo
 share/doc/HTML/sk/
 ${DOC}amor/
 ${DOC}amor/common
@@ -1219,6 +1238,7 @@ ${LOC}khotkeys.mo
 ${LOC}khtmlkttsd.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
+${LOC}kickermenu_kate.mo
 ${LOC}kiconedit.mo
 ${LOC}kig.mo
 ${LOC}kimagemapeditor.mo
@@ -1256,6 +1276,7 @@ ${LOC}kio_thumbnail.mo
 ${LOC}kio_trash.mo
 ${LOC}kio_zeroconf.mo
 ${LOC}kioexec.mo
+${LOC}kitchensync.mo
 ${LOC}kiten.mo
 ${LOC}kjobviewer.mo
 ${LOC}kjots.mo
@@ -1459,6 +1480,7 @@ ${LOC}libkickermenu_recentdocs.mo
 ${LOC}libkickermenu_remotemenu.mo
 ${LOC}libkickermenu_systemmenu.mo
 ${LOC}libkickermenu_tom.mo
+${LOC}libkitchensync.mo
 ${LOC}libkleopatra.mo
 ${LOC}libkmime.mo
 ${LOC}libkonq.mo

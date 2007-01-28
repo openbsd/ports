@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-uk,v 1.8 2006/08/04 10:41:01 espie Exp $
+@comment $OpenBSD: PLIST-uk,v 1.9 2007/01/28 17:23:20 espie Exp $
 share/doc/HTML/uk/
 ${DOC}docs/
 ${DOC}docs/common/
@@ -118,6 +118,7 @@ ${LOC}katomic.mo
 ${LOC}kaudiocreator.mo
 ${LOC}kay.mo
 ${LOC}kbabel.mo
+${LOC}kbackgammon.mo
 ${LOC}kbattleship.mo
 ${LOC}kbinaryclock.mo
 ${LOC}kblackbox.mo
@@ -292,6 +293,7 @@ ${LOC}kgamma.mo
 ${LOC}kgantt.mo
 ${LOC}kget.mo
 ${LOC}kghostview.mo
+${LOC}kgoldrunner.mo
 ${LOC}kgpg.mo
 ${LOC}kgreet_classic.mo
 ${LOC}kgreet_winbind.mo
@@ -302,6 +304,7 @@ ${LOC}khotkeys.mo
 ${LOC}khtmlkttsd.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
+${LOC}kickermenu_kate.mo
 ${LOC}kiconedit.mo
 ${LOC}kimagemapeditor.mo
 ${LOC}kinetd.mo
@@ -338,6 +341,7 @@ ${LOC}kio_thumbnail.mo
 ${LOC}kio_trash.mo
 ${LOC}kio_zeroconf.mo
 ${LOC}kioexec.mo
+${LOC}kitchensync.mo
 ${LOC}kjobviewer.mo
 ${LOC}kjots.mo
 ${LOC}kjumpingcube.mo
@@ -351,6 +355,7 @@ ${LOC}klinkstatus.mo
 ${LOC}klipper.mo
 ${LOC}klock.mo
 ${LOC}kmag.mo
+${LOC}kmahjongg.mo
 ${LOC}kmail.mo
 ${LOC}kmail_text_calendar_plugin.mo
 ${LOC}kmail_text_vcard_plugin.mo
@@ -415,6 +420,7 @@ ${LOC}kpercentage.mo
 ${LOC}kpersonalizer.mo
 ${LOC}kpf.mo
 ${LOC}kpilot.mo
+${LOC}kpoker.mo
 ${LOC}kpovmodeler.mo
 ${LOC}kppp.mo
 ${LOC}kppplogview.mo
@@ -534,6 +540,7 @@ ${LOC}libkickermenu_recentdocs.mo
 ${LOC}libkickermenu_remotemenu.mo
 ${LOC}libkickermenu_systemmenu.mo
 ${LOC}libkickermenu_tom.mo
+${LOC}libkitchensync.mo
 ${LOC}libkleopatra.mo
 ${LOC}libkmime.mo
 ${LOC}libkonq.mo

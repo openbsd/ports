@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ru,v 1.8 2006/10/12 23:12:19 espie Exp $
+@comment $OpenBSD: PLIST-ru,v 1.9 2007/01/28 17:23:20 espie Exp $
 share/apps/katepart/syntax/logohighlightstyle.ru.xml
 share/apps/khangman/
 share/apps/khangman/data/
@@ -66,6 +66,10 @@ ${DOC}docs/common/fdl-translated.html
 ${DOC}docs/common/gpl-translated.html
 ${DOC}docs/common/kde-localised.css
 ${DOC}docs/common/logotp3.png
+${DOC}irkick/
+${DOC}irkick/common
+${DOC}irkick/${C}
+${DOC}irkick/${I}
 ${DOC}juk/
 ${DOC}juk/common
 ${DOC}juk/${C}
@@ -183,6 +187,10 @@ ${DOC}kcharselect/
 ${DOC}kcharselect/common
 ${DOC}kcharselect/${C}
 ${DOC}kcharselect/${I}
+${DOC}kcmlirc/
+${DOC}kcmlirc/common
+${DOC}kcmlirc/${C}
+${DOC}kcmlirc/${I}
 ${DOC}kcoloredit/
 ${DOC}kcoloredit/common
 ${DOC}kcoloredit/${C}
@@ -435,15 +443,6 @@ ${DOC}kdelibs/man-artsmessage.1.docbook
 ${DOC}kdelibs/man-checkXML.1.docbook
 ${DOC}kdelibs/man-kdeoptions.7.docbook
 ${DOC}kdelibs/man-qtoptions.7.docbook
-${DOC}kdelirc/
-${DOC}kdelirc/irkick/
-${DOC}kdelirc/irkick/common
-${DOC}kdelirc/irkick/${C}
-${DOC}kdelirc/irkick/${I}
-${DOC}kdelirc/kcmlirc/
-${DOC}kdelirc/kcmlirc/common
-${DOC}kdelirc/kcmlirc/${C}
-${DOC}kdelirc/kcmlirc/${I}
 ${DOC}kdeprint/
 ${DOC}kdeprint/add-printer-wiz.docbook
 ${DOC}kdeprint/common
@@ -1494,6 +1493,14 @@ ${DOC}umbrello/introduction.docbook
 ${DOC}umbrello/other_features.docbook
 ${DOC}umbrello/uml_basics.docbook
 ${DOC}umbrello/working_with_umbrello.docbook
+${DOC}xsldbg/
+${DOC}xsldbg/commands.docbook
+${DOC}xsldbg/common
+${DOC}xsldbg/credits.docbook
+${DOC}xsldbg/${C}
+${DOC}xsldbg/${I}
+${DOC}xsldbg/introduction.docbook
+${DOC}xsldbg/usage.docbook
 ${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo
@@ -1768,6 +1775,7 @@ ${LOC}khotkeys.mo
 ${LOC}khtmlkttsd.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
+${LOC}kickermenu_kate.mo
 ${LOC}kiconedit.mo
 ${LOC}kig.mo
 ${LOC}kimagemapeditor.mo
@@ -1805,6 +1813,7 @@ ${LOC}kio_thumbnail.mo
 ${LOC}kio_trash.mo
 ${LOC}kio_zeroconf.mo
 ${LOC}kioexec.mo
+${LOC}kitchensync.mo
 ${LOC}kiten.mo
 ${LOC}kjobviewer.mo
 ${LOC}kjots.mo
@@ -2008,6 +2017,7 @@ ${LOC}libkickermenu_recentdocs.mo
 ${LOC}libkickermenu_remotemenu.mo
 ${LOC}libkickermenu_systemmenu.mo
 ${LOC}libkickermenu_tom.mo
+${LOC}libkitchensync.mo
 ${LOC}libkleopatra.mo
 ${LOC}libkmime.mo
 ${LOC}libkonq.mo
