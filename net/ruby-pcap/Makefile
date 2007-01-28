@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2006/11/27 09:43:14 msf Exp $
+# $OpenBSD: Makefile,v 1.18 2007/01/28 16:20:51 couderc Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,8 +10,6 @@ PKGNAME=		${DISTNAME}p2
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.goto.info.waseda.ac.jp/~fukusima/ruby/pcap-e.html
-
-MAINTAINER=		Damien Couderc <couderc@openbsd.org>
 
 # GPL license
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/12/11 13:29:21 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2007/01/28 16:20:51 couderc Exp $
 
 COMMENT=	"squid redirector"
 
@@ -7,8 +7,6 @@ PKGNAME=	jesred-1.2.1
 CATEGORIES=     www
 
 HOMEPAGE=	http://www.linofee.org/~elkner/webtools/jesred/
-
-MAINTAINER=	Damien Couderc <couderc@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
