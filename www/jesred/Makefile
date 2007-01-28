@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2007/01/28 16:20:51 couderc Exp $
+# $OpenBSD: Makefile,v 1.11 2007/01/28 16:44:16 couderc Exp $
 
 COMMENT=	"squid redirector"
 
 DISTNAME=	jesred-1.2pl1
-PKGNAME=	jesred-1.2.1
+PKGNAME=	jesred-1.2.1p0
 CATEGORIES=     www
 
 HOMEPAGE=	http://www.linofee.org/~elkner/webtools/jesred/
