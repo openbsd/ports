@@ -1,0 +1,15 @@
+$OpenBSD: patch-dcoppython_shell_marshaller_cpp,v 1.1 2007/01/28 15:16:17 espie Exp $
+--- dcoppython/shell/marshaller.cpp.orig	Sun Jan 28 14:31:33 2007
++++ dcoppython/shell/marshaller.cpp	Sun Jan 28 14:31:57 2007
+@@ -124,7 +124,11 @@ namespace PythonDCOP {
+     if (!PyDict_Check(obj)) return false;
+ 
+ 
++#if PY_MAJOR_VERSION == 2 && PY_MINOR_VERSION == 4
++    int c =0;
++#else
+     ssize_t c=0;
++#endif
+     PyObject *key, *val;
+     while (PyDict_Next(obj, &c, &key, &val)==1)
+       if (!key_type.isMarshallable(key) ||
