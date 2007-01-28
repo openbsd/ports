@@ -1,0 +1,5 @@
+With this driver you can access the files created by sqlite3 through
+the standard Qt sql module. The driver name is QSQLITE3.
+
+The driver is a merge between the QSQLITE driver in Qt 3 and in Qt 4.2.2
+with a few small tweaks.
