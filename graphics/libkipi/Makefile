@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2006/12/18 17:26:57 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2007/01/28 20:14:45 espie Exp $
 
 COMMENT=		"kde image plugins api"
 CATEGORIES=		graphics devel x11 x11/kde
-V=			0.1.4
+V=			0.1.5
 DISTNAME=		libkipi-$V
 PKGNAME=		${DISTNAME}
-SHARED_LIBS +=	kipi                 1.2      # .1.0
+SHARED_LIBS +=	kipi                 1.3      # .1.1
 EXTRACT_SUFX=		.tar.bz2
 HOMEPAGE=		http://extragear.kde.org/apps/kipi/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=kipi/}
@@ -25,6 +25,7 @@ USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS+=		--tag=disable-static
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
+MODKDE_VERSION=		3.5.3
 AUTOCONF=		/bin/sh ${WRKDIST}/admin/cvs.sh configure
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS}
 USE_GMAKE?=		Yes

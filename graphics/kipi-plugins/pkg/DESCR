@@ -16,3 +16,5 @@ image manipulation plugins accessible through libkipi:
 - findimages: find duplicate images
 - galleryexport
 - kameraklient
+- metadata editor
+- gps data

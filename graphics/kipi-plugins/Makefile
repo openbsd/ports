@@ -1,38 +1,41 @@
-# $OpenBSD: Makefile,v 1.9 2006/12/18 17:26:58 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2007/01/28 20:14:45 espie Exp $
 
 COMMENT=		"kde image plugins"
 CATEGORIES=		graphics x11 x11/kde
-DISTNAME=		kipi-plugins-0.1.2
+DISTNAME=		kipi-plugins-0.1.3
 EXTRACT_SUFX=		.tar.bz2
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}
 HOMEPAGE=		http://extragear.kde.org/apps/kipi/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=kipi/}
+SHARED_LIBS +=	kipiplugins          0.0      # .0.1
 
 SHARED_ONLY=Yes
 LIB_DEPENDS+=	lib/qt3/qt-mt.>=3.33::x11/qt3,mt \
 		kdecore.>=6,DCOP,kwalletclient,khtml,kjs,kutils,kparts,kdeui,kdesu,kio,kdefx,kdeprint::x11/kde/libs3 \
 		kipi::graphics/libkipi \
-		kexif::graphics/libkexif \
+		exiv2::graphics/exiv2 \
 		gphoto2,gphoto2_port::graphics/libgphoto2 \
-		Imlib2::graphics/imlib2 \
-		Magick++,Magick,Wand::graphics/ImageMagick
+		Imlib2::graphics/imlib2
+
+RUN_DEPENDS=	::graphics/ImageMagick
 
 MODULES=	x11/kde
 
-WANTLIB=	X11 Xext freetype util m c ICE Xrender SM pthread z GL stdc++ \
+WANTLIB=	X11 Xext freetype util m c ICE Xrender SM pthread z GL \
 		jpeg png pcre pcreposix iconv intl art_lgpl_2 tiff exif \
-		idn bz2 exslt lcms jbig xslt xml2 Xt gpg-error gcrypt jasper
+		idn exslt xslt xml2 gpg-error gcrypt
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
-MODKDE_VERSION=		3.5
+MODKDE_VERSION=		3.5.3
 AUTOCONF=		/bin/sh ${WRKDIST}/admin/cvs.sh configure
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS}
 USE_GMAKE?=		Yes
-CONFIGURE_ENV+=		${MODKDE_CONFIGURE_ENV}
+CONFIGURE_ENV+=		${MODKDE_CONFIGURE_ENV} \
+			build_libgpod=no
 MAKE_ENV=		${CONFIGURE_ENV}
 
 MAKE_FLAGS+=		${MODKDE_MAKE_FLAGS} LIB_TIFF='-ltiff -lz'

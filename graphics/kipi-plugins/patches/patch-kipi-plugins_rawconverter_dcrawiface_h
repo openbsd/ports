@@ -1,0 +1,11 @@
+$OpenBSD: patch-kipi-plugins_rawconverter_dcrawiface_h,v 1.1 2007/01/28 20:14:45 espie Exp $
+--- kipi-plugins/rawconverter/dcrawiface.h.orig	Sun Jan 28 20:32:46 2007
++++ kipi-plugins/rawconverter/dcrawiface.h	Sun Jan 28 20:32:57 2007
+@@ -27,6 +27,7 @@
+ extern "C"
+ {
+ #include <png.h>
++#include <stdarg.h>
+ }
+ 
+ // Qt Includes.

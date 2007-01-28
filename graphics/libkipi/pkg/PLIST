@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/08/02 10:00:49 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/01/28 20:14:45 espie Exp $
 include/libkipi/
 include/libkipi/batchprogressdialog.h
 include/libkipi/imagecollection.h
@@ -19,6 +19,7 @@ lib/pkgconfig/libkipi.pc
 share/apps/kipi/
 share/apps/kipi/data/
 share/apps/kipi/data/banner_left.png
+share/apps/kipi/data/kipi-plugins_logo.png
 @comment share/doc/HTML/en/libkipi-${V}-apidocs/
 @comment share/doc/HTML/en/libkipi-${V}-apidocs/libkipi/
 @comment share/doc/HTML/en/libkipi-${V}-apidocs/libkipi/html/
@@ -26,6 +27,7 @@ share/icons/hicolor/16x16/apps/kipi.png
 share/icons/hicolor/22x22/apps/kipi.png
 share/icons/hicolor/32x32/apps/kipi.png
 share/icons/hicolor/48x48/apps/kipi.png
+share/locale/ar/LC_MESSAGES/libkipi.mo
 share/locale/br/
 share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/libkipi.mo
@@ -55,12 +57,14 @@ share/locale/pa/LC_MESSAGES/libkipi.mo
 share/locale/pl/LC_MESSAGES/libkipi.mo
 share/locale/pt/LC_MESSAGES/libkipi.mo
 share/locale/pt_BR/LC_MESSAGES/libkipi.mo
+share/locale/ru/LC_MESSAGES/libkipi.mo
 share/locale/rw/LC_MESSAGES/libkipi.mo
+share/locale/sk/LC_MESSAGES/libkipi.mo
 share/locale/sl/LC_MESSAGES/libkipi.mo
 share/locale/sr/LC_MESSAGES/libkipi.mo
 share/locale/sr@Latn/LC_MESSAGES/libkipi.mo
-share/locale/sv/LC_MESSAGES/libkipi.mo
 share/locale/ta/LC_MESSAGES/libkipi.mo
 share/locale/tr/LC_MESSAGES/libkipi.mo
+share/locale/uk/LC_MESSAGES/libkipi.mo
 share/locale/zh_CN/LC_MESSAGES/libkipi.mo
 share/servicetypes/kipiplugin.desktop
