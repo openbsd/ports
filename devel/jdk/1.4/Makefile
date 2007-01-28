@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2006/12/14 09:07:55 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2007/01/28 04:45:04 kurt Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/java/jdk14/Makefile,v 1.79 2004/08/18 07:06:03 glewis Exp $
 
 ONLY_FOR_ARCHS= 	i386
@@ -7,8 +7,9 @@ COMMENT-main=		"Java2(TM) Standard Edition Dev Kit v${V}"
 COMMENT-jre=		"Java2(TM) Standard Edition Runtime Environment v${V}"
 V=			1.4.2
 DISTNAME=		j2sdk-1_4_2
-PKGNAME-main=		jdk-${V}p11
-PKGNAME-jre=		jre-${V}p11
+PKGNAME=		jdk-${V}p12
+PKGNAME-main=		jdk-${V}p12
+PKGNAME-jre=		jre-${V}p12
 
 CATEGORIES=		devel/jdk java
 

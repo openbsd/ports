@@ -1,0 +1,18 @@
+$OpenBSD: patch-j2sdk1_3_1_src_share_classes_sun_awt_image_GifImageDecoder_java,v 1.1 2007/01/28 04:46:48 kurt Exp $
+--- j2sdk1.3.1/src/share/classes/sun/awt/image/GifImageDecoder.java.orig	Sat Jan 27 17:18:05 2007
++++ j2sdk1.3.1/src/share/classes/sun/awt/image/GifImageDecoder.java	Sat Jan 27 17:18:55 2007
+@@ -499,6 +499,14 @@ public class GifImageDecoder extends Ima
+ 	int y = ExtractWord(block, 2);
+ 	int width = ExtractWord(block, 4);
+ 	int height = ExtractWord(block, 6);
++
++	if (width == 0 && global_width != 0) {
++	    width = global_width - x;
++	}
++	if (height == 0 && global_height != 0) {
++	    height = global_height - y;
++	}
++
+ 	boolean interlace = (block[8] & INTERLACEMASK) != 0;
+ 
+ 	IndexColorModel model = global_model;
