@@ -1,0 +1,37 @@
+$OpenBSD: patch-Makefile_PL,v 1.1 2007/01/29 16:31:58 simon Exp $
+--- Makefile.PL.orig	Mon Nov 20 00:31:43 2006
++++ Makefile.PL	Sun Jan 14 18:33:46 2007
+@@ -23,7 +23,7 @@ BEGIN {
+     };
+ }
+ 
+-use lib qw(lib Apache-Test/lib);
++use lib qw(lib);
+ 
+ use Config;
+ use File::Spec::Functions;
+@@ -116,15 +116,6 @@ sub get_DEFINE {
+ 
+ sub configure {
+ 
+-    # mod_perl test suite relies on having Apache-Test bundled with
+-    # the mod_perl source, since any pre-installed version may not do
+-    # the right thing
+-    unless (-d "Apache-Test") {
+-        error "Can't find a sub-directory Apache-Test. " .
+-            "Make sure that you are using a complete source distribution";
+-        exit 1;
+-    }
+-
+     set_modperl_version();
+ 
+     if ($old_modperl_version) {
+@@ -798,7 +789,7 @@ sub MY::postamble {
+     my $string = $self->ModPerl::BuildMM::MY::postamble;
+ 
+     $string .= <<'EOF';
+-mydist : Apache-Test/META.yml mod_perl.spec manifest tardist
++mydist : mod_perl.spec manifest tardist
+ 
+ rpm: dist
+ 	@[ -d $(PWD)/rpm ] || mkdir $(PWD)/rpm

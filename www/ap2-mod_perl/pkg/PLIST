@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/01/10 19:21:47 bernd Exp $
-@conflict p5-Apache-Test-*
+@comment $OpenBSD: PLIST,v 1.3 2007/01/29 16:31:58 simon Exp $
 bin/mp2bug
 include/apache2/mod_perl.h
 include/apache2/modperl_apache_compat.h
@@ -78,39 +77,6 @@ ${P5ARCH}/APR/URI.pm
 ${P5ARCH}/APR/UUID.pm
 ${P5ARCH}/APR/Util.pm
 ${P5ARCH}/APR/XSLoader.pm
-${P5ARCH}/Apache/
-${P5ARCH}/Apache/Test.pm
-${P5ARCH}/Apache/Test5005compat.pm
-${P5ARCH}/Apache/TestBuild.pm
-${P5ARCH}/Apache/TestClient.pm
-${P5ARCH}/Apache/TestCommon.pm
-${P5ARCH}/Apache/TestCommonPost.pm
-${P5ARCH}/Apache/TestConfig.pm
-${P5ARCH}/Apache/TestConfigC.pm
-${P5ARCH}/Apache/TestConfigPHP.pm
-${P5ARCH}/Apache/TestConfigParrot.pm
-${P5ARCH}/Apache/TestConfigParse.pm
-${P5ARCH}/Apache/TestConfigPerl.pm
-${P5ARCH}/Apache/TestHandler.pm
-${P5ARCH}/Apache/TestHarness.pm
-${P5ARCH}/Apache/TestHarnessPHP.pm
-${P5ARCH}/Apache/TestMB.pm
-${P5ARCH}/Apache/TestMM.pm
-${P5ARCH}/Apache/TestPerlDB.pm
-${P5ARCH}/Apache/TestReport.pm
-${P5ARCH}/Apache/TestReportPerl.pm
-${P5ARCH}/Apache/TestRequest.pm
-${P5ARCH}/Apache/TestRun.pm
-${P5ARCH}/Apache/TestRunPHP.pm
-${P5ARCH}/Apache/TestRunParrot.pm
-${P5ARCH}/Apache/TestRunPerl.pm
-${P5ARCH}/Apache/TestSSLCA.pm
-${P5ARCH}/Apache/TestServer.pm
-${P5ARCH}/Apache/TestSmoke.pm
-${P5ARCH}/Apache/TestSmokePerl.pm
-${P5ARCH}/Apache/TestSort.pm
-${P5ARCH}/Apache/TestTrace.pm
-${P5ARCH}/Apache/TestUtil.pm
 ${P5ARCH}/Apache2/
 ${P5ARCH}/Apache2/Access.pm
 ${P5ARCH}/Apache2/Build.pm
@@ -152,7 +118,6 @@ ${P5ARCH}/Apache2/compat.pm
 ${P5ARCH}/Apache2/porting.pm
 ${P5ARCH}/Bundle/
 ${P5ARCH}/Bundle/Apache2.pm
-${P5ARCH}/Bundle/ApacheTest.pm
 ${P5ARCH}/ModPerl/
 ${P5ARCH}/ModPerl/BuildMM.pm
 ${P5ARCH}/ModPerl/BuildOptions.pm
@@ -389,20 +354,7 @@ ${P5ARCH}/mod_perl2.pm
 @man man/man3p/Apache2::Util.3p
 @man man/man3p/Apache2::compat.3p
 @man man/man3p/Apache2::porting.3p
-@man man/man3p/Apache::Test.3p
-@man man/man3p/Apache::TestConfig.3p
-@man man/man3p/Apache::TestMB.3p
-@man man/man3p/Apache::TestMM.3p
-@man man/man3p/Apache::TestReport.3p
-@man man/man3p/Apache::TestRequest.3p
-@man man/man3p/Apache::TestRun.3p
-@man man/man3p/Apache::TestRunPHP.3p
-@man man/man3p/Apache::TestRunPerl.3p
-@man man/man3p/Apache::TestSmoke.3p
-@man man/man3p/Apache::TestTrace.3p
-@man man/man3p/Apache::TestUtil.3p
 @man man/man3p/Bundle::Apache2.3p
-@man man/man3p/Bundle::ApacheTest.3p
 @man man/man3p/ModPerl::BuildMM.3p
 @man man/man3p/ModPerl::CScan.3p
 @man man/man3p/ModPerl::Code.3p

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/01/10 19:21:47 bernd Exp $
-@conflict ap2-mod_perl-*
+@comment $OpenBSD: PLIST,v 1.7 2007/01/29 16:31:58 simon Exp $
 ${P5SITE}/Apache/
 ${P5SITE}/Apache/Test.pm
 ${P5SITE}/Apache/Test5005compat.pm
@@ -9,7 +8,6 @@ ${P5SITE}/Apache/TestCommon.pm
 ${P5SITE}/Apache/TestCommonPost.pm
 ${P5SITE}/Apache/TestConfig.pm
 ${P5SITE}/Apache/TestConfigC.pm
-${P5SITE}/Apache/TestConfigData.pm
 ${P5SITE}/Apache/TestConfigPHP.pm
 ${P5SITE}/Apache/TestConfigParrot.pm
 ${P5SITE}/Apache/TestConfigParse.pm
@@ -38,7 +36,6 @@ ${P5SITE}/Bundle/
 ${P5SITE}/Bundle/ApacheTest.pm
 @man man/man3p/Apache::Test.3p
 @man man/man3p/Apache::TestConfig.3p
-@man man/man3p/Apache::TestConfigData.3p
 @man man/man3p/Apache::TestMB.3p
 @man man/man3p/Apache::TestMM.3p
 @man man/man3p/Apache::TestReport.3p

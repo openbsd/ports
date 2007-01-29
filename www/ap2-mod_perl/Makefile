@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2007/01/10 19:21:47 bernd Exp $
+# $OpenBSD: Makefile,v 1.7 2007/01/29 16:31:58 simon Exp $
 
 COMMENT=	"module that embeds a Perl interpreter into Apache2"
 
 DISTNAME=	mod_perl-2.0.3
-PKGNAME=	ap2-${DISTNAME}p3
+PKGNAME=	ap2-${DISTNAME}p4
 CATEGORIES=	www net
 
 WANTLIB=	c m perl util apr-1 aprutil-1 db expat
-MODULES=	converters/libiconv
-
+MODULES=	cpan converters/libiconv
 MASTER_SITES=	http://perl.apache.org/dist/ \
 		${MASTER_SITE_PERL_CPAN:=Apache/}
 
@@ -23,9 +22,13 @@ PERMIT_DISTFILES_FTP=	Yes
 NO_REGRESS=		Yes
 SHARED_ONLY=		Yes
 
-CONFIGURE_STYLE=	perl
 CONFIGURE_ARGS+=	MP_APXS=${LOCALBASE}/sbin/apxs2
 RUN_DEPENDS=		::www/apache-httpd
-BUILD_DEPENDS=		${RUN_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS} \
+			:p5-Apache-Test->=1.29:www/p5-Apache-Test
+
+# avoid conflicts
+post-extract:
+	@rm -rf ${WRKSRC}/Apache-Test
 
 .include <bsd.port.mk>
