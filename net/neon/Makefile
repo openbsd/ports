@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2006/08/03 23:15:58 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2007/01/29 16:31:59 steven Exp $
 
 COMMENT=		"HTTP and WebDAV client library, with C interface"
 
-VERSION=		0.24.7
-DISTNAME=		neon-${VERSION}
-PKGNAME=		${DISTNAME}p0
-SHARED_LIBS=		neon	24.7
+DISTNAME=		neon-0.26.2
+SHARED_LIBS=		neon	26.2
 CATEGORIES=     	net www devel
 
 HOMEPAGE=		http://www.webdav.org/neon/
@@ -22,9 +20,11 @@ WANTLIB=		crypto m ssl z
 
 MASTER_SITES=		${HOMEPAGE}
 
+MODULES=		devel/gettext
+
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} --with-ssl --with-xml2
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} --with-ssl --with-xml2 --enable-nls
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/neon/macros
