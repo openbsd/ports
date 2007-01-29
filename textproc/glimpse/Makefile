@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2004/12/07 00:23:21 alek Exp $
+# $OpenBSD: Makefile,v 1.17 2007/01/29 20:19:57 kili Exp $
 
 COMMENT=	"text search engine"
 
 DISTNAME=	glimpse-4.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	textproc databases
 
 MAINTAINER=	The OpenBSD ports mailing-list <ports@openbsd.org>
