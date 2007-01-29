@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/01/29 20:14:29 kili Exp $
+@lib lib/libtre.so.${LIBtre_VERSION}

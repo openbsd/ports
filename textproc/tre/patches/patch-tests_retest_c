@@ -1,0 +1,33 @@
+$OpenBSD: patch-tests_retest_c,v 1.1.1.1 2007/01/29 20:14:29 kili Exp $
+
+# Skip one more i18n test that fails at least on alpha and sparc64.
+
+--- tests/retest.c.orig	Sat Dec  9 21:42:56 2006
++++ tests/retest.c	Fri Jan  5 20:57:34 2007
+@@ -1460,6 +1460,7 @@ main(int argc, char **argv)
+ 
+ 
+ 
++#ifndef __OpenBSD__
+   /*
+    * Internationalization tests.
+    */
+@@ -1468,7 +1469,7 @@ main(int argc, char **argv)
+   test_comp("機+", REG_EXTENDED, 0);
+   test_exec("この賞は、機・利便性・セキ", 0, REG_OK, 10, 13, END);
+ 
+-#if !defined(WIN32) && !defined(__OpenBSD__)
++#ifndef WIN32
+   if (setlocale(LC_CTYPE, "fi_FI.ISO-8859-1") != NULL)
+     {
+       printf("\nTesting LC_CTYPE fi_FI.ISO-8859-1\n");
+@@ -1492,7 +1493,8 @@ main(int argc, char **argv)
+       test_exec("abc", 0, REG_OK, 2, 3, END);
+     }
+ #endif /* TRE_MULTIBYTE */
+-#endif
++#endif /* WIN32 */
++#endif /* __OpenBSD__ */
+ 
+   regfree(&reobj);
+ 

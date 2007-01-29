@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/29 20:14:29 kili Exp $
+@conflict agrep-*
+@conflict glimpse-*
+bin/agrep
+include/tre/
+include/tre/regex.h
+include/tre/tre-config.h
+lib/libtre.a
+lib/libtre.la
+lib/pkgconfig/
+lib/pkgconfig/tre.pc
+@man man/man1/agrep.1
+share/locale/fi/LC_MESSAGES/tre.mo
+share/locale/sv/LC_MESSAGES/tre.mo
+%%SHARED%%

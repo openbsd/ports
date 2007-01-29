@@ -1,0 +1,93 @@
+$OpenBSD: patch-tests_agrep_exitstatus_ok,v 1.1.1.1 2007/01/29 20:14:29 kili Exp $
+
+# Those tests are supposed to bail out with exit code 2 (confirmed by
+# upstream).
+
+--- tests/agrep/exitstatus.ok.orig	Fri Dec  8 20:07:03 2006
++++ tests/agrep/exitstatus.ok	Thu Jan  4 15:12:26 2007
+@@ -524,65 +524,64 @@ Exit status 1.
+ Exit status 1.
+ #### TEST: agrep  -d .* dummy exitstatus.in
+ 
+-Exit status 1.
++Exit status 2.
+ #### TEST: agrep  -d .* dummy < exitstatus.in
+ 
+-Exit status 1.
++Exit status 2.
+ #### TEST: agrep -c -d .* dummy exitstatus.in
+-exitstatus.in:0
+ 
+-Exit status 1.
++Exit status 2.
+ #### TEST: agrep -c -d .* dummy < exitstatus.in
+ 
+-Exit status 1.
++Exit status 2.
+ #### TEST: agrep -H -d .* dummy exitstatus.in
+ 
+-Exit status 1.
++Exit status 2.
+ #### TEST: agrep -H -d .* dummy < exitstatus.in
+ 
+-Exit status 1.
++Exit status 2.
+ #### TEST: agrep -l -d .* dummy exitstatus.in
+ 
+-Exit status 1.
++Exit status 2.
+ #### TEST: agrep -l -d .* dummy < exitstatus.in
+ 
+-Exit status 1.
++Exit status 2.
+ #### TEST: agrep -n -d .* dummy exitstatus.in
+ 
+-Exit status 1.
++Exit status 2.
+ #### TEST: agrep -n -d .* dummy < exitstatus.in
+ 
+-Exit status 1.
++Exit status 2.
+ #### TEST: agrep -s -d .* dummy exitstatus.in
+ 
+-Exit status 1.
++Exit status 2.
+ #### TEST: agrep -s -d .* dummy < exitstatus.in
+ 
+-Exit status 1.
++Exit status 2.
+ #### TEST: agrep -M -d .* dummy exitstatus.in
+ 
+-Exit status 1.
++Exit status 2.
+ #### TEST: agrep -M -d .* dummy < exitstatus.in
+ 
+-Exit status 1.
++Exit status 2.
+ #### TEST: agrep --show-position -d .* dummy exitstatus.in
+ 
+-Exit status 1.
++Exit status 2.
+ #### TEST: agrep --show-position -d .* dummy < exitstatus.in
+ 
+-Exit status 1.
++Exit status 2.
+ #### TEST: agrep --color -d .* dummy exitstatus.in
+ 
+-Exit status 1.
++Exit status 2.
+ #### TEST: agrep --color -d .* dummy < exitstatus.in
+ 
+-Exit status 1.
++Exit status 2.
+ #### TEST: agrep -H -n -s --color --show-position -d .* dummy exitstatus.in
+ 
+-Exit status 1.
++Exit status 2.
+ #### TEST: agrep -H -n -s --color --show-position -d .* dummy < exitstatus.in
+ 
+-Exit status 1.
++Exit status 2.
+ #### TEST: agrep  -d {1 dummy exitstatus.in
+ 
+ Exit status 2.

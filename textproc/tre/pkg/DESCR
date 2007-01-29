@@ -1,0 +1,5 @@
+TRE is a lightweight, robust, and efficient POSIX compliant regexp
+matching library with some exciting features such as approximate
+(fuzzy) matching. It includes a version of the agrep (approximate
+grep) command line tool for approximate regexp matching in the style
+of grep.
