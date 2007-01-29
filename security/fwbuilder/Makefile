@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/13 12:51:15 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2007/01/29 11:56:13 espie Exp $
 
 COMMENT='firewall gui'
 CATEGORIES=net security
@@ -8,17 +8,20 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
-HOMEPAGE=http://www.fwbuilder.org/
+HOMEPAGE=	http://www.fwbuilder.org/
 
-MASTER_SITES=${MASTER_SITE_SOURCEFORGE:=fwbuilder/}
-DISTNAME=	fwbuilder-2.0.12
-PKGNAME=	${DISTNAME}p0
+SHARE=		share/fwbuilder21
+SUBST_VARS=	SHARE
+
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fwbuilder/}
+DISTNAME=	fwbuilder-2.1.8
+PKGNAME=	${DISTNAME}
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-docdir=${TRUEPREFIX}/share/doc/fwbuilder
 
 MODULES=	x11/qt3
 FAKE_FLAGS=	INSTALL_ROOT=${WRKINST} ${MAKE_FLAGS}
-LIB_DEPENDS=	fwcompiler.>=8,fwbuilder.>=8::security/libfwbuilder
+LIB_DEPENDS=	fwcompiler.>=9,fwbuilder.>=9::security/libfwbuilder
 NO_REGRESS=	Yes
 USE_X11=	Yes
 

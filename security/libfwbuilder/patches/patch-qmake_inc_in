@@ -1,6 +1,6 @@
-$OpenBSD: patch-qmake_inc_in,v 1.1.1.1 2005/05/21 09:35:19 espie Exp $
---- qmake.inc.in.orig	Wed May 18 16:10:42 2005
-+++ qmake.inc.in	Wed May 18 16:10:51 2005
+$OpenBSD: patch-qmake_inc_in,v 1.2 2007/01/29 11:56:13 espie Exp $
+--- qmake.inc.in.orig	Thu Jun 22 06:50:45 2006
++++ qmake.inc.in	Mon Jan 29 11:05:38 2007
 @@ -27,7 +27,7 @@ unix {
  	migration.path          =$(DDIR)@TEMPLATE_DIR@/migration
  	doc.path                =$(DDIR)@DOCDIR@
@@ -9,4 +9,4 @@ $OpenBSD: patch-qmake_inc_in,v 1.1.1.1 2005/05/21 09:35:19 espie Exp $
 +	CONFIG                 += warn_on release
  	QMAKE_CFLAGS_DEBUG     += -Wno-unused-parameter
  	QMAKE_CFLAGS_RELEASE   += -Wno-unused-parameter
- 	QMAKE_CXXFLAGS_DEBUG   += -Wno-unused-parameter
+ 	QMAKE_CXXFLAGS_DEBUG   += -Wno-unused-parameter @CXXFLAGS@
