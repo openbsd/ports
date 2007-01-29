@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2006/12/29 23:22:51 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2007/01/29 09:51:28 espie Exp $
 
 COMMENT-main=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples for qt4"
@@ -14,7 +14,7 @@ PKGNAME-postgresql=	qt4-postgresql-${VERSION}
 PKGNAME-examples=	qt4-examples-${VERSION}
 PKGNAME-sqlite2=	qt4-sqlite2-${VERSION}
 PKGNAME-sqlite=		qt4-sqlite-${VERSION}
-FULLPKGNAME-main=	qt4-${VERSION}p0
+FULLPKGNAME-main=	qt4-${VERSION}p1
 FULLPKGNAME-html=	qt4-html-${VERSION}
 SHARED_LIBS=	Qt3Support 6.1 \
 		QtCore 6.1 \
@@ -115,7 +115,7 @@ INSTALL_TARGET=sub-src-install_subtargets-ordered \
 	install_translations install_qmake install_mkspecs
 .else
 MULTI_PACKAGES+=-examples
-PROGRAMS+=	qtdemo
+PROGRAMS+=	qtdemo pixeltool
 .endif
 
 
@@ -182,7 +182,7 @@ DOCS=	OPENSOURCE-NOTICE.TXT README
 VMEM_WARNING=	Yes
 NO_REGRESS=	Yes
 
-PROGRAMS4=assistant designer findtr linguist lrelease lupdate moc qm2ts qmake \
+PROGRAMS4=assistant designer findtr linguist lrelease lupdate moc qmake \
 	qtconfig uic uic3
 PROGRAMS+= rcc qt3to4 syncqt qdbus
 
@@ -202,6 +202,7 @@ post-install:
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${QT_DOC}
 	# programs
 	${INSTALL_PROGRAM_DIR} ${QT_BINDIR} 
+	${INSTALL_PROGRAM} ${WRKBUILD}/bin/{findtr,syncqt} ${QT_BINDIR}
 .for p in ${PROGRAMS4} 
 	@ln -sf ${TRUEPREFIX}/lib/qt4/bin/$p ${PREFIX}/bin/$p4
 .endfor
