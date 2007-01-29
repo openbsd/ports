@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_MainWindow_FeatureDialog_cpp,v 1.1 2007/01/29 10:41:52 espie Exp $
+--- src/MainWindow/FeatureDialog.cpp.orig	Mon Jan 29 10:49:02 2007
++++ src/MainWindow/FeatureDialog.cpp	Mon Jan 29 10:49:53 2007
+@@ -78,9 +78,9 @@ FeatureDialog::FeatureDialog( QWidget* p
+ 
+     text += i18n( "<h1><a name=\"database\">SQL Database Support</a></h1>"
+                   "<p>KPhotoAlbum allows you to search using a certain number of EXIF tags. For this KPhotoAlbum "
+-                  "needs a Sqlite database. Unfortunately, for this to work, you need to run Sqlite version 2.8.16, "
++                  "needs a Sqlite database. Unfortunately, for this to work, you need to run Sqlite version 3, "
+                   "so please make sure the right version is installed on your system."
+-                  "In addition the qt package for sqlite (e.g.qt-sql-sqlite) must be installed.</p>");
++                  "In addition the qt3 package for sqlite3 (e.g.qt3-sqlite3-plugin) must be installed.</p>");
+ 
+     text += i18n("<h1><a name=\"video\">Video Support</a></h1>"
+                  "<p>KPhotoAlbum relies on the KDE plug-in subsystem for support for displaying videos. If this feature is not enabled for you, "

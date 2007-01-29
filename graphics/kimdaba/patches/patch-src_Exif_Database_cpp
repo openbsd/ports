@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_Exif_Database_cpp,v 1.1 2007/01/29 10:41:52 espie Exp $
+--- src/Exif/Database.cpp.orig	Mon Jan 29 10:45:04 2007
++++ src/Exif/Database.cpp	Mon Jan 29 10:46:29 2007
+@@ -76,7 +76,7 @@ Exif::Database::Database()
+ 
+ void Exif::Database::openDatabase()
+ {
+-    _db = QSqlDatabase::addDatabase( QString::fromLatin1( "QSQLITE" ), QString::fromLatin1( "exif" ) );
++    _db = QSqlDatabase::addDatabase( QString::fromLatin1( "QSQLITE3" ), QString::fromLatin1( "exif" ) );
+     Q_ASSERT( _db );
+ 
+     _db->setDatabaseName( exifDBFile() );
+@@ -173,7 +173,7 @@ bool Exif::Database::isAvailable()
+     return false;
+ #endif
+ 
+-    return QSqlDatabase::isDriverAvailable( QString::fromLatin1( "QSQLITE" ) );
++    return QSqlDatabase::isDriverAvailable( QString::fromLatin1( "QSQLITE3" ) );
+ }
+ 
+ bool Exif::Database::isUsable() const
