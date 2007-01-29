@@ -1,0 +1,27 @@
+$OpenBSD: patch-smbldap_tools_pm,v 1.1.1.1 2007/01/29 08:32:50 msf Exp $
+--- smbldap_tools.pm.orig	Mon Jan 29 14:35:45 2007
++++ smbldap_tools.pm	Mon Jan 29 14:38:50 2007
+@@ -35,20 +35,20 @@ my $smbldap_conf;
+ if (-e "/etc/smbldap-tools/smbldap.conf") {
+ 	$smbldap_conf="/etc/smbldap-tools/smbldap.conf";
+ } else {
+-	$smbldap_conf="/etc/opt/IDEALX/smbldap-tools/smbldap.conf";
++	$smbldap_conf="%%SYSCONFDIR%%/smbldap-tools/smbldap.conf";
+ }
+ 
+ my $smbldap_bind_conf;
+ if (-e "/etc/smbldap-tools/smbldap_bind.conf") {
+ 	$smbldap_bind_conf="/etc/smbldap-tools/smbldap_bind.conf";
+ } else {
+-	$smbldap_bind_conf="/etc/opt/IDEALX/smbldap-tools/smbldap_bind.conf";
++	$smbldap_bind_conf="%%SYSCONFDIR%%/smbldap-tools/smbldap_bind.conf";
+ }
+ my $samba_conf;
+ if (-e "/etc/samba/smb.conf") {
+ 	$samba_conf="/etc/samba/smb.conf";
+ } else {
+-	$samba_conf="/usr/local/samba/lib/smb.conf";
++	$samba_conf="%%SYSCONFDIR%%/samba/smb.conf";
+ }
+ 
+ use vars       qw($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);

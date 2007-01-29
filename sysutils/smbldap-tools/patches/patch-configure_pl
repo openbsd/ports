@@ -1,0 +1,53 @@
+$OpenBSD: patch-configure_pl,v 1.1.1.1 2007/01/29 08:32:50 msf Exp $
+--- configure.pl.orig	Mon Jan 29 15:00:14 2007
++++ configure.pl	Mon Jan 29 15:02:36 2007
+@@ -49,7 +49,7 @@ Before starting, check
+ print "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n";
+ 
+ # we first check if Samba is up and running
+-my $test_smb=`pidof smbd`;
++my $test_smb=`pgrep -x smbd`;
+ chomp($test_smb);
+ die "\nSamba need to be started first !\n" if ($test_smb eq "" || not defined $test_smb);
+ 
+@@ -57,8 +57,8 @@ print "Looking for configuration files..
+ my $smb_conf="";
+ if (-e "/etc/samba/smb.conf") {
+   $smb_conf="/etc/samba/smb.conf";
+-} elsif (-e "/usr/local/samba/lib/smb.conf") {
+-  $smb_conf="/usr/local/samba/lib/smb.conf";
++} elsif (-e "%%SYSCONFDIR%%/samba/smb.conf") {
++  $smb_conf="%%SYSCONFDIR%%/samba/smb.conf";
+ }
+ print "Samba Configuration File Path [$smb_conf] > ";
+ chomp(my $config_smb=<STDIN>);
+@@ -67,12 +67,12 @@ if ($config_smb ne "") {
+ }
+ 
+ my $conf_dir;
+-if (-d "/etc/opt/IDEALX/smbldap-tools") {
++if (-d "%%SYSCONFDIR%%/smbldap-tools") {
+ 	$conf_dir="/etc/opt/IDEALX/smbldap-tools/";
+ } elsif (-d "/etc/smbldap-tools") {
+ 	$conf_dir="/etc/smbldap-tools/";
+ } else {
+-	$conf_dir="/etc/opt/IDEALX/smbldap-tools/";
++	$conf_dir="%%SYSCONFDIR%%/smbldap-tools/";
+ }
+ 
+ print "\nThe default directory in which the smbldap configuration files are stored is shown.\n";
+@@ -528,12 +528,12 @@ mailDomain=\"$mailDomain\"
+ # Allows not to use smbpasswd (if with_smbpasswd == 0 in smbldap_conf.pm) but
+ # prefer Crypt::SmbHash library
+ with_smbpasswd=\"0\"
+-smbpasswd=\"/usr/bin/smbpasswd\"
++smbpasswd=\"%%LOCALBASE%%/bin/smbpasswd\"
+ 
+ # Allows not to use slappasswd (if with_slappasswd == 0 in smbldap_conf.pm)
+ # but prefer Crypt:: libraries
+ with_slappasswd=\"0\"
+-slappasswd=\"/usr/sbin/slappasswd\"
++slappasswd=\"%%LOCALBASE%%/sbin/slappasswd\"
+ 
+ # comment out the following line to get rid of the default banner
+ # no_banner=\"1\"

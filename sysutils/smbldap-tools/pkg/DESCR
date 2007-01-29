@@ -1,0 +1,5 @@
+A collection of system tools to manipulate users and groups stored in an
+LDAP directory, specifically to be used with SAMBA-LDAP.
+
+Additionally, some scripts are designed to ease your migration from a
+Windows NT 4.0 PDC Server to a Samba-LDAP PDC Server.

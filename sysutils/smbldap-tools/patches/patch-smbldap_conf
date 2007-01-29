@@ -1,0 +1,80 @@
+$OpenBSD: patch-smbldap_conf,v 1.1.1.1 2007/01/29 08:32:50 msf Exp $
+--- smbldap.conf.orig	Mon Jan 29 14:39:29 2007
++++ smbldap.conf	Mon Jan 29 14:59:05 2007
+@@ -34,12 +34,12 @@
+ 
+ # Put your own SID. To obtain this number do: "net getlocalsid".
+ # If not defined, parameter is taking from "net getlocalsid" return
+-SID="S-1-5-21-4205727931-4131263253-1851132061"
++# SID="S-1-5-21-4205727931-4131263253-1851132061"
+ 
+ # Domain name the Samba server is in charged.
+ # If not defined, parameter is taking from smb.conf configuration file
+ # Ex: sambaDomain="IDEALX-NT"
+-sambaDomain="IDEALX-NT"
++# sambaDomain="IDEALX-NT"
+ 
+ ##############################################################################
+ #
+@@ -85,15 +85,15 @@ verify="require"
+ 
+ # CA certificate
+ # see "man Net::LDAP" in start_tls section for more details
+-cafile="/etc/opt/IDEALX/smbldap-tools/ca.pem"
++cafile="%%SYSCONFDIR%%/smbldap-tools/ca.pem"
+ 
+ # certificate to use to connect to the ldap server
+ # see "man Net::LDAP" in start_tls section for more details
+-clientcert="/etc/opt/IDEALX/smbldap-tools/smbldap-tools.pem"
++clientcert="%%SYSCONFDIR/smbldap-tools/smbldap-tools.pem"
+ 
+ # key certificate to use to connect to the ldap server
+ # see "man Net::LDAP" in start_tls section for more details
+-clientkey="/etc/opt/IDEALX/smbldap-tools/smbldap-tools.key"
++clientkey="%%SYSCONFDIR/smbldap-tools/smbldap-tools.key"
+ 
+ # LDAP Suffix
+ # Ex: suffix=dc=IDEALX,dc=ORG
+@@ -123,7 +123,7 @@ idmapdn="ou=Idmap,${suffix}"
+ # If not defined, entries are stored in sambaDomainName object.
+ # Ex: sambaUnixIdPooldn="sambaDomainName=${sambaDomain},${suffix}"
+ # Ex: sambaUnixIdPooldn="cn=NextFreeUnixId,${suffix}"
+-sambaUnixIdPooldn="sambaDomainName=IDEALX-NT,${suffix}"
++# sambaUnixIdPooldn="sambaDomainName=IDEALX-NT,${suffix}"
+ 
+ # Default scope Used
+ scope="sub"
+@@ -144,15 +144,15 @@ crypt_salt_format="%s"
+ 
+ # Login defs
+ # Default Login Shell
+-# Ex: userLoginShell="/bin/bash"
+-userLoginShell="/bin/bash"
++# Ex: userLoginShell="/bin/ksh"
++userLoginShell="/bin/ksh"
+ 
+ # Home directory
+ # Ex: userHome="/home/%U"
+ userHome="/home/%U"
+ 
+ # Default mode used for user homeDirectory
+-userHomeDirectoryMode="700"
++userHomeDirectoryMode="755"
+ 
+ # Gecos
+ userGecos="System User"
+@@ -214,12 +214,12 @@ mailDomain="idealx.com"
+ # Allows not to use smbpasswd (if with_smbpasswd == 0 in smbldap_conf.pm) but
+ # prefer Crypt::SmbHash library
+ with_smbpasswd="0"
+-smbpasswd="/usr/bin/smbpasswd"
++smbpasswd="%%LOCALBASE%%/bin/smbpasswd"
+ 
+ # Allows not to use slappasswd (if with_slappasswd == 0 in smbldap_conf.pm)
+ # but prefer Crypt:: libraries
+ with_slappasswd="0"
+-slappasswd="/usr/sbin/slappasswd"
++slappasswd="%%LOCALBASE%%/sbin/slappasswd"
+ 
+ # comment out the following line to get rid of the default banner
+ # no_banner="1"
