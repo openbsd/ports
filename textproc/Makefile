@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.190 2007/01/19 03:20:32 msf Exp $
+# $OpenBSD: Makefile,v 1.191 2007/01/29 20:22:49 kili Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -189,6 +189,7 @@
      SUBDIR += spiff
      SUBDIR += texi2html
      SUBDIR += textutils
+     SUBDIR += tre
      SUBDIR += txt2tags
      SUBDIR += unrtf
      SUBDIR += urlview
