@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/01/04 18:34:46 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2007/01/29 09:24:13 espie Exp $
 @conflict qt3-*
 @conflict qt3-base-*
 @pkgpath x11/qt3,mt
@@ -463,6 +463,7 @@ lib/qt3/man/man1/
 @man lib/qt3/man/man1/lupdate.1
 @man lib/qt3/man/man1/moc3.1
 @man lib/qt3/man/man1/uic3.1
+@man lib/qt3/man/man1/qm2ts.1
 lib/qt3/man/man3/
 @man lib/qt3/man/man3/QAccel.3
 @man lib/qt3/man/man3/QAccessible.3

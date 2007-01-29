@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2007/01/22 18:18:28 espie Exp $
+# $OpenBSD: Makefile,v 1.72 2007/01/29 09:24:13 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT-main=		"C++ X11 GUI toolkit"
@@ -12,7 +12,7 @@ PKGNAME=		qt3-${VERSION}
 PKGNAME-mysql=		qt3-mysql-${VERSION}
 PKGNAME-postgresql=	qt3-postgresql-${VERSION}
 PKGNAME-examples=	qt3-examples-${VERSION}
-FULLPKGNAME-main=	qt3-mt-${VERSION}${PKGDEBUG}
+FULLPKGNAME-main=	qt3-mt-${VERSION}${PKGDEBUG}p0
 FULLPKGNAME-html=	qt3-html-${VERSION}
 FULLPKGNAME-sqlite2=	qt3-sqlite2-${VERSION}
 SHARED_LIBS=		qt-mt	30.3 \
@@ -243,6 +243,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/lupdate.1 ${QT_MANDIR}/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/moc.1 ${QT_MANDIR}/man1/moc3.1
 	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/uic.1 ${QT_MANDIR}/man1/uic3.1
+	${INSTALL_MAN} ${WRKSRC}/tools/linguist/qm2ts/qm2ts.1 ${QT_MANDIR}/man1
 	@for i in ${WRKSRC}/doc/man/man3/*; do \
 	  j=$${i%qt}; \
 	  sed -e 's,\.3qt,\.3,g' <$$i >$$j && \
