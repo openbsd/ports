@@ -1,0 +1,10 @@
+$OpenBSD: patch-libmtp_pc_in,v 1.1 2007/01/30 14:15:27 espie Exp $
+--- libmtp.pc.in.orig	Tue Jan 30 15:17:04 2007
++++ libmtp.pc.in	Tue Jan 30 15:17:08 2007
+@@ -11,5 +11,5 @@ Version: @VERSION@
+ Requires: libusb
+ Conflicts:
+ Libs: -L${libdir} -lmtp
+-Libs.private @LIBS@
++Libs.private: @LIBS@
+ Cflags: -I${includedir} @OSFLAGS@
