@@ -1,7 +1,7 @@
-$OpenBSD: patch-source_linux_Makefile_in,v 1.2 2006/10/18 14:25:11 wilfried Exp $
---- source/linux/Makefile.in.orig	Tue Sep 26 20:13:58 2006
-+++ source/linux/Makefile.in	Wed Oct 18 10:27:58 2006
-@@ -69,10 +69,10 @@ mysql_query_browser_bin_OBJECTS =  \
+$OpenBSD: patch-source_linux_Makefile_in,v 1.3 2007/01/30 07:59:58 wilfried Exp $
+--- source/linux/Makefile.in.orig	Thu Jan 18 18:00:15 2007
++++ source/linux/Makefile.in	Thu Jan 25 22:18:42 2007
+@@ -68,10 +68,10 @@ mysql_query_browser_bin_OBJECTS =  \
  	$(am_mysql_query_browser_bin_OBJECTS)
  mysql_query_browser_bin_DEPENDENCIES =  \
  	$(top_builddir)/library/source/libqb.a \
@@ -16,7 +16,7 @@ $OpenBSD: patch-source_linux_Makefile_in,v 1.2 2006/10/18 14:25:11 wilfried Exp 
  	$(top_builddir)/source/linux/gtksourceview/gtksourceview/.libs/libgtksourceview-1.0.a
  binSCRIPT_INSTALL = $(INSTALL_SCRIPT)
  SCRIPTS = $(bin_SCRIPTS)
-@@ -238,10 +238,10 @@ mysql_query_browser_bin_SOURCES = \
+@@ -237,10 +237,10 @@ mysql_query_browser_bin_SOURCES = \
  	MGCompletionList.cc
  
  INCLUDES = @GNOME_CFLAGS@ @MYSQL_CFLAGS@ @PCRE_CFLAGS@\
@@ -32,7 +32,7 @@ $OpenBSD: patch-source_linux_Makefile_in,v 1.2 2006/10/18 14:25:11 wilfried Exp 
  	-I$(top_srcdir)/source/linux/gtksourceview\
  	-DPREFIX=\""$(PREFIX)"\"\
 @@ -249,10 +249,10 @@ INCLUDES = @GNOME_CFLAGS@ @MYSQL_CFLAGS@
-         -DCOMMONDIRNAME=\""$(MG_COMMONDIR)"\"
+ 	-DDOCDIR=\""$(DOCDIR)"\"
  
  mysql_query_browser_bin_LDADD = $(top_builddir)/library/source/libqb.a\
 -	$(top_builddir)/../mysql-gui-common/source/linux/libqbcommongui.a\
