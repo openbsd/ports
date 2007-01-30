@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/09 18:23:21 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/01/30 16:12:36 simon Exp $
 bin/gentoo
 @man man/man1/gentoo.1
 share/doc/gentoo/
@@ -85,10 +85,12 @@ share/doc/gentoo/template.html
 share/doc/gentoo/template_toc.html
 share/doc/gentoo/types.html
 share/doc/gentoo/usage.html
-share/gentoo/
-share/gentoo/gentoogtkrc
-share/gentoo/gentoorc
+share/examples/gentoo/
+share/examples/gentoo/gentoogtkrc
+@sample ${SYSCONFDIR}/gentoogtkrc
+share/examples/gentoo/gentoorc
 @sample ${SYSCONFDIR}/gentoorc
+share/gentoo/
 share/gentoo/icons/
 share/gentoo/icons/AbiWord.xpm
 share/gentoo/icons/Amiga.xpm
@@ -213,13 +215,29 @@ share/gentoo/icons/xbm2.xpm
 share/gentoo/icons/xcf.xpm
 share/gentoo/icons/xpm.xpm
 share/gentoo/icons/xpm2.xpm
-share/locale/
-share/locale/fr/
-share/locale/fr/LC_MESSAGES/
+share/locale/de/LC_MESSAGES/gentoo.mo
 share/locale/fr/LC_MESSAGES/gentoo.mo
-share/locale/pl/
-share/locale/pl/LC_MESSAGES/
+share/locale/it/LC_MESSAGES/gentoo.mo
+share/locale/ja_JP.UTF-8/
+share/locale/ja_JP.UTF-8/LC_MESSAGES/
+share/locale/ja_JP.UTF-8/LC_MESSAGES/gentoo.mo
 share/locale/pl/LC_MESSAGES/gentoo.mo
-share/locale/sv/
-share/locale/sv/LC_MESSAGES/
+share/locale/ru_RU.CP1251/
+share/locale/ru_RU.CP1251/LC_MESSAGES/
+share/locale/ru_RU.CP1251/LC_MESSAGES/gentoo.mo
+share/locale/ru_RU.KOI8-R/
+share/locale/ru_RU.KOI8-R/LC_MESSAGES/
+share/locale/ru_RU.KOI8-R/LC_MESSAGES/gentoo.mo
+share/locale/ru_RU.UTF-8/
+share/locale/ru_RU.UTF-8/LC_MESSAGES/
+share/locale/ru_RU.UTF-8/LC_MESSAGES/gentoo.mo
+share/locale/ru_RU.cp1251/
+share/locale/ru_RU.cp1251/LC_MESSAGES/
+share/locale/ru_RU.cp1251/LC_MESSAGES/gentoo.mo
+share/locale/ru_RU.koi8r/
+share/locale/ru_RU.koi8r/LC_MESSAGES/
+share/locale/ru_RU.koi8r/LC_MESSAGES/gentoo.mo
+share/locale/ru_RU.utf8/
+share/locale/ru_RU.utf8/LC_MESSAGES/
+share/locale/ru_RU.utf8/LC_MESSAGES/gentoo.mo
 share/locale/sv/LC_MESSAGES/gentoo.mo

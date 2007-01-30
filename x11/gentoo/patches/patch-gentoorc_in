@@ -1,7 +1,7 @@
-$OpenBSD: patch-gentoorc_in,v 1.1 2002/09/04 04:35:19 pvalchev Exp $
---- gentoorc.in.orig	Sun Sep  1 22:41:40 2002
-+++ gentoorc.in	Sun Sep  1 22:43:30 2002
-@@ -888,7 +888,7 @@
+$OpenBSD: patch-gentoorc_in,v 1.2 2007/01/30 16:12:36 simon Exp $
+--- gentoorc.in.orig	Wed Aug 23 22:54:02 2006
++++ gentoorc.in	Sun Nov 26 20:46:27 2006
+@@ -1046,7 +1046,7 @@
     <unselect>FALSE</unselect>
    </GetSize>
    <Information>
@@ -10,7 +10,7 @@ $OpenBSD: patch-gentoorc_in,v 1.1 2002/09/04 04:35:19 pvalchev Exp $
     <recurse_dirs>TRUE</recurse_dirs>
     <df_access>"%Y-%m-%d %H:%M.%S"</df_access>
     <df_modify>"%Y-%m-%d %H:%M.%S"</df_modify>
-@@ -2468,9 +2468,9 @@
+@@ -2739,9 +2739,9 @@
    </HideInfo>
   </Paths>
   <Mounting>

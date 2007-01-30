@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2007/01/30 16:12:36 simon Exp $
+--- Makefile.in.orig	Sun Jan 21 17:23:29 2007
++++ Makefile.in	Sun Jan 21 17:24:29 2007
+@@ -595,7 +595,7 @@ info-am:
+ 
+ install-data-am:
+ 
+-install-exec-am: install-sysconfDATA
++install-exec-am:
+ 
+ install-info: install-info-recursive
+ 

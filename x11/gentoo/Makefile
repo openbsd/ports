@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2006/11/13 13:01:37 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2007/01/30 16:12:36 simon Exp $
 
 COMMENT=		"GTK+ Graphical filemanager"
 
-VERSION=		0.11.34
-DISTNAME=		gentoo-${VERSION}
+DISTNAME=		gentoo-0.11.56
 CATEGORIES=		x11	
 
 HOMEPAGE=		http://www.obsession.se/gentoo/
@@ -16,7 +15,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xi c gmodule iconv intl m
+WANTLIB=		X11 Xext Xi c gmodule m
+
+MODULES=		devel/gettext
 
 LIB_DEPENDS= 		gtk.>=1.2,gdk.>=1.2::x11/gtk+ \
 			glib.>=1::devel/glib 
@@ -25,10 +26,14 @@ CONFIGURE_STYLE=	gnu
 NO_REGRESS=		Yes
 USE_X11=		Yes
 
+post-extract:
+	@rm -f ${WRKSRC}/docs/gentoo.1x.bak
+
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/gentoo.1x ${PREFIX}/man/man1/gentoo.1
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gentoo
 .for i in gentoorc gentoogtkrc
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/gentoo
+	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/examples/gentoo
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gentoo
 	@cd ${WRKSRC}/docs && \
