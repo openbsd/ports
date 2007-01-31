@@ -1,0 +1,11 @@
+$OpenBSD: patch-conf_postfix-files,v 1.3 2007/01/31 22:49:20 jakob Exp $
+--- conf/postfix-files.orig	Wed Jan 17 15:18:02 2007
++++ conf/postfix-files	Sun Jan 28 01:20:21 2007
+@@ -311,6 +311,7 @@ $html_directory/SMTPD_ACCESS_README.html
+ $html_directory/SMTPD_POLICY_README.html:f:root:-:644
+ $html_directory/SMTPD_PROXY_README.html:f:root:-:644
+ $html_directory/STANDARD_CONFIGURATION_README.html:f:root:-:644
++$html_directory/TLS_LEGACY_README.html:f:root:-:644
+ $html_directory/TLS_README.html:f:root:-:644
+ $html_directory/TUNING_README.html:f:root:-:644
+ $html_directory/ULTRIX_README.html:f:root:-:644
