@@ -1,0 +1,11 @@
+$OpenBSD: patch-kpilot_conduits_Makefile_in,v 1.1 2007/01/31 18:39:28 ajacoutot Exp $
+--- kpilot/conduits/Makefile.in.orig	Wed Jan 31 19:33:12 2007
++++ kpilot/conduits/Makefile.in	Wed Jan 31 19:33:36 2007
+@@ -471,6 +471,7 @@ SUBDIRS = \
+ 	  abbrowserconduit \
+ 	  docconduit \
+ 	  knotes \
++	  malconduit \
+ 	  memofileconduit \
+ 	  notepadconduit \
+ 	  popmail \
