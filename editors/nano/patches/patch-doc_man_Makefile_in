@@ -1,18 +1,18 @@
-$OpenBSD: patch-doc_man_Makefile_in,v 1.1 2006/12/14 21:26:53 naddy Exp $
---- doc/man/Makefile.in.orig	Thu Dec  7 16:56:35 2006
-+++ doc/man/Makefile.in	Thu Dec  7 16:56:55 2006
-@@ -586,11 +586,11 @@ uninstall-man: uninstall-man1 uninstall-
+$OpenBSD: patch-doc_man_Makefile_in,v 1.2 2007/01/31 20:30:04 naddy Exp $
+--- doc/man/Makefile.in.orig	Wed Jan 31 21:26:17 2007
++++ doc/man/Makefile.in	Wed Jan 31 21:26:46 2007
+@@ -592,11 +592,11 @@ uninstall-man: uninstall-man1 uninstall-
  
  
  nano.1.html: nano.1
--	cat $< | groff -t -mandoc -Thtml > $@
-+	cat $? | groff -t -mandoc -Thtml > $@
+-	groff -t -mandoc -Thtml < $< > $@
++	groff -t -mandoc -Thtml < $? > $@
  nanorc.5.html: nanorc.5
--	cat $< | groff -t -mandoc -Thtml > $@
-+	cat $? | groff -t -mandoc -Thtml > $@
+-	groff -t -mandoc -Thtml < $< > $@
++	groff -t -mandoc -Thtml < $? > $@
  rnano.1.html: rnano.1
--	cat $< | groff -t -mandoc -Thtml > $@
-+	cat $? | groff -t -mandoc -Thtml > $@
+-	groff -t -mandoc -Thtml < $< > $@
++	groff -t -mandoc -Thtml < $? > $@
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
  .NOEXPORT:
