@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2006/11/26 13:47:31 matthieu Exp $
+# $OpenBSD: Makefile,v 1.18 2007/01/31 15:12:08 espie Exp $
 # Uses pthreads (can but does not at the moment)
 
 COMMENT=	"Tool Command Language"
@@ -6,7 +6,7 @@ COMMENT=	"Tool Command Language"
 VERSION=	8.4.7
 
 DISTNAME=	tcl${VERSION}-src
-PKGNAME=	tcl-${VERSION}p4
+PKGNAME=	tcl-${VERSION}p5
 SHARED_LIBS=	tcl84 1.0
 CATEGORIES=	lang lang/tcl
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tcl/}
@@ -50,5 +50,6 @@ post-install:
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/share/aclocal
 	${INSTALL_DATA} ${WRKSRC}/tcl.m4 ${PREFIX}/share/aclocal
 	ranlib ${PREFIX}/lib/libtcl84.a
+	ln -s libtclstub84.a ${PREFIX}/lib/libtclstub84_pic.a
 
 .include <bsd.port.mk>
