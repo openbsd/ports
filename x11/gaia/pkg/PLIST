@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/31 07:33:52 ajacoutot Exp $
+bin/gaia
+share/doc/gaia/
+share/doc/gaia/README
+share/gaia/
+share/gaia/font.png

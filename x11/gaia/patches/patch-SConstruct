@@ -1,0 +1,22 @@
+$OpenBSD: patch-SConstruct,v 1.1.1.1 2007/01/31 07:33:52 ajacoutot Exp $
+--- SConstruct.orig	Tue Dec  5 13:31:42 2006
++++ SConstruct	Tue Jan  9 10:46:45 2007
+@@ -39,11 +39,15 @@ if not env.GetOption('clean'):
+ 		print "Compiling for FreeBSD"
+ 		env.Append(CPPPATH = [ '/usr/local/include', '/usr/X11R6/include' ])
+ 		env.Append(LIBPATH = [ '/usr/local/lib', '/usr/X11R6/lib' ])
+-	elif sys.platform == 'openbsd':
++	elif sys.platform.startswith('openbsd'):
+ 		# TODO: confirm that sys.platform == 'openbsd' for OpenBSD (feedback welcome)
+ 		print "Compiling for OpenBSD"
+-		env.Append(CPPPATH = [ '/usr/local/include', '/usr/X11R6/include' ])
+-		env.Append(LIBPATH = [ '/usr/local/lib', '/usr/X11R6/lib' ])
++		env.Append(CPPPATH = [ '!!LOCALBASE!!/include', '!!X11BASE!!/include' ])
++		env.Append(LIBPATH = [ '!!LOCALBASE!!', '!!X11BASE!!/lib' ])
++		env.Append(CCFLAGS = [ Split("!!CFLAGS!!") ])
++		env.Append(CXXFLAGS = [ Split("!!CXXFLAGS!!") ])
++		env['CC'] = "!!CC!!"
++		env['CXX'] = "!!CXX!!"
+ 	elif sys.platform == 'darwin':
+ 		print "Compiling for MacOSX"
+ 		env.Append(CPPPATH = [ '/usr/local/include', '/usr/X11R6/include', '/opt/local/include', '/sw/include' ])

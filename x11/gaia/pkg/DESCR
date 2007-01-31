@@ -1,0 +1,6 @@
+Gaia is an open 3D earth viewer (formerly an attempt to reverse engineer
+famous Google Earth).
+It features a GPS layer which is capable of displaying route and current
+location for any NMEA-speaking device.  Also works as gpsd client,
+allowing you to work with almost any GPS device either locally or via
+network.
