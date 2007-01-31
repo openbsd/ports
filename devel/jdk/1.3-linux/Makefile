@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.32 2006/11/16 15:06:18 kurt Exp $
+# $OpenBSD: Makefile,v 1.33 2007/01/31 18:14:36 kurt Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"Java Development Kit for Java 2 Standard Edition 1.3"
-VERSION=	1.3.1_16
+VERSION=	1.3.1_19
 
 DISTNAME=	jdk${VERSION}
-PKGNAME=	jdk-linux-${VERSION}p1
+PKGNAME=	jdk-linux-${VERSION}
 CATEGORIES=	devel java
 
 HOMEPAGE=	http://java.sun.com/j2se/
@@ -16,7 +16,7 @@ RUN_DEPENDS=	:fedora_base->=4.0p2:emulators/fedora/base
 BUILD_DEPENDS=	${RUN_DEPENDS}
 DISTFILES=	j2sdk-${VERSION:S/./_/g}-linux-i586.bin
 EXTRACT_CASES+=	*.bin) \
-		    tail `sed -n -e '/^tail/p' -e '/^tail/q' ${FULLDISTDIR}/$$archive|awk '{print $$2}'` ${FULLDISTDIR}/$$archive > ${WRKDIR}/$$archive && \
+		    perl -p0777 -e "s/.*?exit 0\n//s" ${FULLDISTDIR}/$$archive > ${WRKDIR}/$$archive && \
 		    chmod u+x ${WRKDIR}/$$archive && \
 		    ${WRKDIR}/$$archive -q ;; \
 
