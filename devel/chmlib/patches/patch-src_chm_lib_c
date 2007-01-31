@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_chm_lib_c,v 1.4 2006/06/19 18:14:59 bernd Exp $
---- src/chm_lib.c.orig	Mon Jun 19 16:29:18 2006
-+++ src/chm_lib.c	Mon Jun 19 16:31:50 2006
-@@ -160,7 +160,8 @@ typedef unsigned __int64        UInt64;
+$OpenBSD: patch-src_chm_lib_c,v 1.5 2007/01/31 21:42:03 jasper Exp $
+--- src/chm_lib.c.orig	Thu Jan 25 04:12:58 2007
++++ src/chm_lib.c	Mon Jan 29 18:29:00 2007
+@@ -153,7 +153,8 @@ typedef unsigned __int64        UInt64;
  /* Sparc        */
  /* MIPS         */
  /* PPC          */
@@ -11,7 +11,7 @@ $OpenBSD: patch-src_chm_lib_c,v 1.4 2006/06/19 18:14:59 bernd Exp $
  typedef unsigned char           UChar;
  typedef short                   Int16;
  typedef unsigned short          UInt16;
-@@ -170,8 +171,8 @@ typedef long long               Int64;
+@@ -163,8 +164,8 @@ typedef long long               Int64;
  typedef unsigned long long      UInt64;
  
  /* x86-64 */
@@ -22,7 +22,7 @@ $OpenBSD: patch-src_chm_lib_c,v 1.4 2006/06/19 18:14:59 bernd Exp $
  typedef unsigned char           UChar;
  typedef short                   Int16;
  typedef unsigned short          UInt16;
-@@ -179,11 +180,6 @@ typedef int                     Int32;
+@@ -172,11 +173,6 @@ typedef int                     Int32;
  typedef unsigned int            UInt32;
  typedef long                    Int64;
  typedef unsigned long           UInt64;
@@ -34,7 +34,7 @@ $OpenBSD: patch-src_chm_lib_c,v 1.4 2006/06/19 18:14:59 bernd Exp $
  #endif
  
  /* GCC */
-@@ -733,7 +729,7 @@ static Int64 _chm_fetch_bytes(struct chm
+@@ -726,7 +722,7 @@ static Int64 _chm_fetch_bytes(struct chm
  #ifdef CHM_USE_IO64
      readLen = pread64(h->fd, buf, (long)len, os);
  #else
@@ -43,7 +43,7 @@ $OpenBSD: patch-src_chm_lib_c,v 1.4 2006/06/19 18:14:59 bernd Exp $
  #endif
  #else
  #ifdef CHM_USE_IO64
-@@ -743,9 +739,9 @@ static Int64 _chm_fetch_bytes(struct chm
+@@ -736,9 +732,9 @@ static Int64 _chm_fetch_bytes(struct chm
      lseek64(h->fd, oldOs, SEEK_SET);
  #else
      oldOs = lseek(h->fd, 0, SEEK_CUR);
