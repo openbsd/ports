@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.265 2007/01/25 16:20:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.266 2007/01/31 07:35:18 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -53,6 +53,7 @@
      SUBDIR += fvwm2
      SUBDIR += fvwm2,i18n
      SUBDIR += fvwm95
+     SUBDIR += gaia
      SUBDIR += gaim-guifications
      SUBDIR += gatos-bin
      SUBDIR += gentoo
