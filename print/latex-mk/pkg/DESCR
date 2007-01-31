@@ -1,0 +1,5 @@
+latex-mk is a set of Makefile fragments designed to assist in the
+management of LaTeX documents. The user creates a simple Makefile which
+sets up a few simple variables and then includes the latex.mk fragment
+at the end. Large documents, which require many many steps to typeset can
+be managed easily.

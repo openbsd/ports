@@ -1,0 +1,21 @@
+$OpenBSD: patch-example_tgif_Makefile_in,v 1.1.1.1 2007/01/31 22:38:03 steven Exp $
+--- example/tgif/Makefile.in.orig	Wed Jan 31 16:32:09 2007
++++ example/tgif/Makefile.in	Wed Jan 31 16:32:35 2007
+@@ -17,7 +17,7 @@
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
+ VPATH = @srcdir@
+-pkgdatadir = $(datadir)/@PACKAGE@
++pkgdatadir = $(datadir)/examples/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+ pkgincludedir = $(includedir)/@PACKAGE@
+ top_builddir = ../..
+@@ -159,7 +159,7 @@ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ TGIFSRCS = myfig.obj
+-pkgexampletgifdir = ${pkgdatadir}/example/tgif
++pkgexampletgifdir = ${pkgdatadir}/tgif
+ pkgexampletgif_DATA = ${TGIFSRCS}
+ EXTRA_DIST = ${TGIFSRCS}
+ all: all-am

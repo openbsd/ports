@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/31 22:38:03 steven Exp $
+@comment bin/ieee-copyout
+bin/latex-mk
+@info info/latex-mk.info
+share/doc/latex-mk/
+share/doc/latex-mk/latex-mk.html
+share/examples/latex-mk/
+share/examples/latex-mk/README-example.txt
+share/examples/latex-mk/biblio.tex
+share/examples/latex-mk/ex2.tex
+share/examples/latex-mk/ex3.tex
+share/examples/latex-mk/ex4.bib
+share/examples/latex-mk/ex4.tex
+share/examples/latex-mk/ex5.tex
+share/examples/latex-mk/example.tex
+share/examples/latex-mk/mkfile.gmk
+share/examples/latex-mk/mkfile.mk
+share/examples/latex-mk/refs.bib
+share/examples/latex-mk/tgif/
+share/examples/latex-mk/tgif/myfig.obj
+share/latex-mk/
+share/latex-mk/dated_draft.ps
+share/latex-mk/latex.gmk
+share/latex-mk/latex.mk
+share/latex-mk/latex.subdir.gmk
+share/latex-mk/latex.subdir.mk
+share/latex-mk/lgrind.gmk
+share/latex-mk/lgrind.mk
+share/latex-mk/tgif.gmk
+share/latex-mk/tgif.mk
+share/latex-mk/xfig.gmk
+share/latex-mk/xfig.mk

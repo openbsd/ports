@@ -1,0 +1,21 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2007/01/31 22:38:03 steven Exp $
+--- doc/Makefile.in.orig	Fri Jun 23 05:35:18 2006
++++ doc/Makefile.in	Wed Jan 31 16:18:59 2007
+@@ -17,7 +17,7 @@
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
+ VPATH = @srcdir@
+-pkgdatadir = $(datadir)/@PACKAGE@
++pkgdatadir = $(datadir)/doc/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+ pkgincludedir = $(includedir)/@PACKAGE@
+ top_builddir = ..
+@@ -171,7 +171,7 @@ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ info_TEXINFOS = latex-mk.texi
+-pkgdata_DATA = ${html_docs} ${ps_docs} ${pdf_docs} ${dvi_docs}
++pkgdata_DATA = ${html_docs}
+ html_docs = ${info_TEXINFOS:.texi=.html}
+ ps_docs = ${info_TEXINFOS:.texi=.ps}
+ pdf_docs = ${info_TEXINFOS:.texi=.pdf}
