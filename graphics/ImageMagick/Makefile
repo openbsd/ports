@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.93 2006/10/30 09:45:41 steven Exp $
+# $OpenBSD: Makefile,v 1.94 2007/01/31 14:34:58 bernd Exp $
 
 COMMENT=		"image processing tools"
 
-VER=			6.3.0
-DASHVER=		0
+VER=			6.3.2
+DASHVER=		1
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
-PKGNAME=		ImageMagick-${VER}.${DASHVER}p0
-SHARED_LIBS=		Magick++	11.0	\
-			Magick		11.0	\
-			Wand		11.0
+PKGNAME=		ImageMagick-${VER}.${DASHVER}
+SHARED_LIBS=		Magick++	12.0	\
+			Magick		12.0	\
+			Wand		12.0
 
 CATEGORIES=		graphics
-MAINTAINER=		Bernd Ahlers <bernd@openbsd.org>
 
 HOMEPAGE=		http://www.imagemagick.org
 
@@ -40,7 +39,7 @@ REGRESS_DEPENDS= 	:p5-PerlMagick-${VER}.${DASHVER}:graphics/p5-PerlMagick
 USE_LIBTOOL=		Yes
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.59
+AUTOCONF_VERSION=	2.61
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-quantum-depth=16 \
 			--without-dot \

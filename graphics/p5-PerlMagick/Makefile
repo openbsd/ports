@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.15 2006/12/06 18:18:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2007/01/31 14:34:58 bernd Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		"object-oriented Perl interface to ImageMagick"
 
-VER=			6.3.0
-DASHVER=		0
+VER=			6.3.2
+DASHVER=		1
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		p5-PerlMagick-${VER}.${DASHVER}
 CATEGORIES=		graphics devel
 
 HOMEPAGE=		http://www.imagemagick.org
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=imagemagick/}
-
-MAINTAINER=		Bernd Ahlers <bernd@openbsd.org>
 
 # http://www.imagemagick.org/script/license.php
 PERMIT_PACKAGE_CDROM=	Yes
