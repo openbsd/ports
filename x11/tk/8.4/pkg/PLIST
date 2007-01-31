@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/18 13:19:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/01/31 17:06:39 espie Exp $
 @option no-default-conflict
 @conflict tk->=8.4,<8.5
 bin/wish8.4
@@ -38,6 +38,7 @@ include/tk8.4/unix/tkUnixInt.h
 include/tk8.4/unix/tkUnixPort.h
 lib/libtk84.a
 lib/libtkstub84.a
+lib/libtkstub84_pic.a
 lib/tk8.4/
 lib/tk8.4/bgerror.tcl
 lib/tk8.4/button.tcl
