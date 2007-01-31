@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/01/29 08:32:50 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2007/01/31 07:59:33 msf Exp $
 
 COMMENT=	"tools for managing samba ldap" 
 
 DISTNAME=	smbldap-tools-0.9.2a
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	sysutils
 EXTRACT_SUFX=	.tgz
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/29 08:32:50 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/01/31 07:59:33 msf Exp $
 libdata/perl5/site_perl/smbldap_tools.pm
 sbin/smbldap-configure
 sbin/smbldap-groupadd
@@ -34,6 +34,9 @@ share/doc/smbldap-tools/html/smbldap-tools009.html
 share/doc/smbldap-tools/html/smbldap-tools010.html
 share/doc/smbldap-tools/smbldap-tools.pdf
 share/examples/smbldap-tools/
+@sample ${SYSCONFDIR}/smbldap-tools/
 share/examples/smbldap-tools/smb.conf
 share/examples/smbldap-tools/smbldap.conf
+@sample ${SYSCONFDIR}/smbldap-tools/smbldap.conf
 share/examples/smbldap-tools/smbldap_bind.conf
+@sample ${SYSCONFDIR}/smbldap-tools/smbldap_bind.conf

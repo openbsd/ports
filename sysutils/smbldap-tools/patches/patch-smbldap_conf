@@ -1,4 +1,4 @@
-$OpenBSD: patch-smbldap_conf,v 1.1.1.1 2007/01/29 08:32:50 msf Exp $
+$OpenBSD: patch-smbldap_conf,v 1.2 2007/01/31 07:59:33 msf Exp $
 --- smbldap.conf.orig	Mon Jan 29 14:39:29 2007
 +++ smbldap.conf	Mon Jan 29 14:59:05 2007
 @@ -34,12 +34,12 @@
@@ -26,12 +26,12 @@ $OpenBSD: patch-smbldap_conf,v 1.1.1.1 2007/01/29 08:32:50 msf Exp $
  # certificate to use to connect to the ldap server
  # see "man Net::LDAP" in start_tls section for more details
 -clientcert="/etc/opt/IDEALX/smbldap-tools/smbldap-tools.pem"
-+clientcert="%%SYSCONFDIR/smbldap-tools/smbldap-tools.pem"
++clientcert="%%SYSCONFDIR%%/smbldap-tools/smbldap-tools.pem"
  
  # key certificate to use to connect to the ldap server
  # see "man Net::LDAP" in start_tls section for more details
 -clientkey="/etc/opt/IDEALX/smbldap-tools/smbldap-tools.key"
-+clientkey="%%SYSCONFDIR/smbldap-tools/smbldap-tools.key"
++clientkey="%%SYSCONFDIR%%/smbldap-tools/smbldap-tools.key"
  
  # LDAP Suffix
  # Ex: suffix=dc=IDEALX,dc=ORG
