@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2006/12/15 15:11:41 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2007/02/01 21:20:11 sturm Exp $
 
 COMMENT=	"project management tool"
 
-DISTNAME=	taskjuggler-2.3.0
+DISTNAME=	taskjuggler-2.3.1
 CATEGORIES=	productivity
 SHARED_LIBS=	taskjuggler	3.4
 
