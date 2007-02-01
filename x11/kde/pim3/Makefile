@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2007/01/28 13:18:51 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2007/02/01 07:25:35 espie Exp $
 
 COMMENT= 		"KDE personal information applications"
 COMMENT-kpilot=		"KDE interface to sync with Palm Pilot"
 CATEGORIES=		x11 x11/kde productivity
 VERSION=		3.5.6
 DISTNAME=		kdepim-${VERSION}
-PKGNAME=		${DISTNAME}
+PKGNAME=		${DISTNAME}p0
 MODKDE_VERSION=		3.5.3
 SHARED_LIBS +=	index                1.0      # .0.0
 SHARED_LIBS +=	kgantt               1.0      # .0.2
@@ -94,5 +94,5 @@ FULLPKGNAME-kpilot = kpilot-${VERSION}p0
 USE_X11=	Yes
 USE_LIBTOOL=Yes
 LIBTOOL_FLAGS+=--tag disable-static
-#SEPARATE_BUILD=	flavored
+SEPARATE_BUILD=	flavored
 .include <bsd.port.mk>

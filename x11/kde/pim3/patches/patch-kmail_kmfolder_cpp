@@ -1,0 +1,21 @@
+$OpenBSD: patch-kmail_kmfolder_cpp,v 1.1 2007/02/01 07:25:35 espie Exp $
+--- kmail/kmfolder.cpp.orig	Thu Feb  1 01:15:12 2007
++++ kmail/kmfolder.cpp	Thu Feb  1 01:15:19 2007
+@@ -631,11 +631,13 @@ void KMFolder::setUserWhoField( const QS
+         mWhoField = "From";
+       if ( this == kmkernel->outboxFolder() ||
+            this == kmkernel->sentFolder() ||
+-           this == kmkernel->draftsFolder() )
++           this == kmkernel->draftsFolder() ||
++           this == kmkernel->templatesFolder() )
+         mWhoField = "To";
+-    } else if ( identity.drafts() == idString()
+-                || identity.fcc() == idString() )
+-      // drafts or sent of the identity
++    } else if ( identity.drafts() == idString() ||
++                identity.templates() == idString() ||
++                identity.fcc() == idString() )
++      // drafts, templates or sent of the identity
+       mWhoField = "To";
+     else
+       mWhoField = "From";

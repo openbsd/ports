@@ -1,11 +1,21 @@
-$OpenBSD: patch-kpilot_conduits_Makefile_in,v 1.1 2007/01/31 18:39:28 ajacoutot Exp $
---- kpilot/conduits/Makefile.in.orig	Wed Jan 31 19:33:12 2007
-+++ kpilot/conduits/Makefile.in	Wed Jan 31 19:33:36 2007
-@@ -471,6 +471,7 @@ SUBDIRS = \
+$OpenBSD: patch-kpilot_conduits_Makefile_in,v 1.2 2007/02/01 07:25:35 espie Exp $
+--- kpilot/conduits/Makefile.in.orig	Thu Feb  1 01:10:33 2007
++++ kpilot/conduits/Makefile.in	Thu Feb  1 01:10:59 2007
+@@ -467,6 +467,7 @@ xdg_appsdir = @xdg_appsdir@
+ xdg_directorydir = @xdg_directorydir@
+ xdg_menudir = @xdg_menudir@
+ @include_malconduit_TRUE@MAL_SUBDIR = malconduit
++@include_malconduit_FALSE@MAL_SUBDIR = 
+ SUBDIRS = \
  	  abbrowserconduit \
  	  docconduit \
- 	  knotes \
-+	  malconduit \
- 	  memofileconduit \
- 	  notepadconduit \
+@@ -476,7 +477,8 @@ SUBDIRS = \
  	  popmail \
+ 	  sysinfoconduit \
+ 	  timeconduit \
+-	  vcalconduit
++	  vcalconduit \
++	  ${MAL_SUBDIR}
+ 
+ #>- all: all-recursive
+ #>+ 1
