@@ -1,0 +1,13 @@
+$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.9 2007/02/01 21:00:52 kurt Exp $
+--- hotspot/src/os/bsd/vm/os_bsd.cpp.orig	Thu Feb  1 09:42:39 2007
++++ hotspot/src/os/bsd/vm/os_bsd.cpp	Thu Feb  1 09:42:44 2007
+@@ -451,7 +451,9 @@ void os::init_system_properties_values()
+ #define malloc(n) (char*)NEW_C_HEAP_ARRAY(char, (n))
+ #define getenv(n) ::getenv(n)
+ 
++#ifndef DEFAULT_LD_LIBRARY_PATH
+ #define DEFAULT_LD_LIBRARY_PATH "/usr/lib" /* See ld.so.1(1) */
++#endif
+ #define EXTENSIONS_DIR "/lib/ext"
+ #define ENDORSED_DIR "/lib/endorsed"
+ 

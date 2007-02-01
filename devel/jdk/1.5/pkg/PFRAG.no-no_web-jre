@@ -66,6 +66,7 @@ ${JREHOME}/lib/locale/zh_TW/LC_MESSAGES/
 ${JREHOME}/lib/locale/zh_TW/LC_MESSAGES/sunw_java_plugin.mo
 ${JREHOME}/lib/plugin.jar
 ${JREHOME}/lib/security/javaws.policy
+@man ${JREHOME}/man/man1/javaws.1
 ${JREHOME}/plugin/
 ${JREHOME}/plugin/desktop/
 ${JREHOME}/plugin/desktop/sun_java.desktop

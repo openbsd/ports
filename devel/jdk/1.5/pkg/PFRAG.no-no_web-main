@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_web-main,v 1.1 2006/11/22 19:42:54 kurt Exp $
+@comment $OpenBSD: PFRAG.no-no_web-main,v 1.2 2007/02/01 21:00:52 kurt Exp $
 ${JDKHOME}/bin/ControlPanel
 ${JDKHOME}/bin/HtmlConverter
 ${JDKHOME}/bin/javaws
@@ -605,6 +605,7 @@ ${JDKHOME}/jre/plugin/desktop/sun_java.desktop
 ${JDKHOME}/jre/plugin/desktop/sun_java.png
 ${JDKHOME}/lib/htmlconverter.jar
 ${JDKHOME}/lib/htmlconverter_g.jar
+@man ${JDKHOME}/man/man1/javaws.1
 ${JDKHOME}/sample/jnlp/
 ${JDKHOME}/sample/jnlp/corba/
 ${JDKHOME}/sample/jnlp/corba/GNUmakefile
