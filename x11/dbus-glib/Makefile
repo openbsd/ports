@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/10 18:46:10 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2007/02/01 07:56:24 todd Exp $
 
 COMMENT=	"glib bindings for dbus message system"
 
-DISTNAME=	dbus-glib-0.71
+DISTNAME=	dbus-glib-0.72
 SHARED_LIBS +=	dbus-glib-1          2.0      # .2.0
 CATEGORIES=	x11
 
