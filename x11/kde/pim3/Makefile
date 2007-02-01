@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2007/02/01 07:25:35 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2007/02/01 16:27:17 espie Exp $
 
 COMMENT= 		"KDE personal information applications"
 COMMENT-kpilot=		"KDE interface to sync with Palm Pilot"
 CATEGORIES=		x11 x11/kde productivity
 VERSION=		3.5.6
 DISTNAME=		kdepim-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 MODKDE_VERSION=		3.5.3
 SHARED_LIBS +=	index                1.0      # .0.0
 SHARED_LIBS +=	kgantt               1.0      # .0.2
@@ -58,7 +58,6 @@ SHARED_LIBS +=	kabc_newexchange     2.0      # .1.0
 SHARED_LIBS +=	kpinterfaces         2.0      # .1.0
 SHARED_LIBS +=	kontact              2.0      # .1.0
 
-
 LIB_DEPENDS+= 		kdecore.>=6,artskde,kmedia2_idl,knewstuff,DCOP,kabc,kabc_file,kimproxy,kdefakes,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kparts,kresources,kspell,kutils,kwalletclient,vcard::x11/kde/libs3
 
 WANTLIB=	Xss audiofile stdc++ ossaudio X11 jpeg util m \
@@ -90,6 +89,9 @@ FULLPKGNAME-kpilot = kpilot-${VERSION}p0
 #.if !defined(PACKAGING) || ${SUBPACKAGE} == ""
 #LIB_DEPENDS+=	gpgme:gpgme->=0.4.5:security/gpgme
 #.endif
+
+# make sure we do not grab boost on the way
+CONFIGURE_ENV+= ac_cv_header_boost_format_hpp=no
 
 USE_X11=	Yes
 USE_LIBTOOL=Yes
