@@ -1,6 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.48 2007/01/22 20:24:06 todd Exp $
+@comment $OpenBSD: PLIST,v 1.49 2007/02/01 07:58:29 todd Exp $
 bin/gaim
+bin/gaim-client-example
+bin/gaim-remote
+bin/gaim-send
+bin/gaim-send-async
 bin/gaim-text
+bin/gaim-url-handler
 include/gaim/
 include/gaim/account.h
 include/gaim/accountopt.h
@@ -12,7 +17,12 @@ include/gaim/cmds.h
 include/gaim/connection.h
 include/gaim/conversation.h
 include/gaim/core.h
+include/gaim/dbus-bindings.h
+include/gaim/dbus-define-api.h
+include/gaim/dbus-gaim.h
 include/gaim/dbus-maybe.h
+include/gaim/dbus-server.h
+include/gaim/dbus-useful.h
 include/gaim/debug.h
 include/gaim/desktopitem.h
 include/gaim/dnsquery.h
@@ -139,6 +149,8 @@ lib/gaim/autoreply.so
 lib/gaim/buddynote.so
 @comment lib/gaim/convcolors.la
 lib/gaim/convcolors.so
+@comment lib/gaim/dbus-example.la
+lib/gaim/dbus-example.so
 @comment lib/gaim/extplacement.la
 lib/gaim/extplacement.so
 @comment lib/gaim/gaimrc.la
@@ -189,6 +201,8 @@ lib/gaim/libzephyr.so
 lib/gaim/log_reader.so
 @comment lib/gaim/markerline.la
 lib/gaim/markerline.so
+@comment lib/gaim/musicmessaging.la
+lib/gaim/musicmessaging.so
 @comment lib/gaim/newline.la
 lib/gaim/newline.so
 @comment lib/gaim/notify.la
@@ -219,6 +233,8 @@ lib/gaim/timestamp.so
 lib/gaim/timestamp_format.so
 @comment lib/gaim/xmppconsole.la
 lib/gaim/xmppconsole.so
+lib/libgaim-client.la
+@lib lib/libgaim-client.so.${LIBgaim-client_VERSION}
 lib/libgaim.la
 @lib lib/libgaim.so.${LIBgaim_VERSION}
 lib/libgnt.la
@@ -230,6 +246,7 @@ lib/pkgconfig/gnt.pc
 share/aclocal/gaim.m4
 share/applications/
 share/applications/gaim.desktop
+share/dbus-1/services/gaim.service
 share/locale/am/LC_MESSAGES/gaim.mo
 share/locale/ar/LC_MESSAGES/gaim.mo
 share/locale/az/LC_MESSAGES/gaim.mo
@@ -413,6 +430,7 @@ share/pixmaps/gaim/buttons/info.png
 share/pixmaps/gaim/buttons/insert-image-small.png
 share/pixmaps/gaim/buttons/insert-link-small.png
 share/pixmaps/gaim/buttons/insert-smiley-small.png
+share/pixmaps/gaim/buttons/music.png
 share/pixmaps/gaim/buttons/pause.png
 share/pixmaps/gaim/buttons/send-im.png
 share/pixmaps/gaim/buttons/text_bigger.png

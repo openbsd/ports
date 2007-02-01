@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.98 2007/01/25 12:48:42 steven Exp $
+# $OpenBSD: Makefile,v 1.99 2007/02/01 07:58:29 todd Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"Gtk AIM, ICQ, IRC, Jabber, MSN, Yahoo, SILC and Zephyr client"
 
 DISTNAME=	gaim-2.0.0beta6
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS=	gaim 0.0 \
+		gaim-client 0.0 \
 		gnt 0.0 \
 		oscar 0.0
 CATEGORIES=	net
@@ -21,7 +22,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		glib-2.0 ICE SM X11 Xext Xrender Xss \
-			atk-1.0 c crypto fontconfig freetype \
+			atk-1.0 c crypto dbus-1 expat fontconfig freetype \
 			gmodule-2.0 gobject-2.0 gthread-2.0 pango-1.0 \
 			ssl pangocairo-1.0 cairo glitz png \
 			pangoft2-1.0 z pthread m ncurses panel stdc++
@@ -30,12 +31,16 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gaim/}
 
 MODULES=	devel/gettext
 
+PYTHON_VER=	2.4
+
+BUILD_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		startup-notification-1::devel/startup-notification \
 		silc,silcclient::devel/silc-toolkit \
 		meanwhile::net/meanwhile \
 		gadu::net/libgadu \
-		xml2::textproc/libxml
+		xml2::textproc/libxml \
+		dbus-glib-1::x11/dbus-glib
 
 BUILD_DEPENDS+=	:p5-XML-Parser-*:textproc/p5-XML-Parser
 
@@ -54,12 +59,12 @@ CONFIGURE_ARGS+= --disable-gevolution \
 		 --disable-perl \
 		 --disable-tcl \
 		 --disable-tk \
-		 --disable-dbus \
 		 --disable-cap \
 		 --disable-schemas-install \
 		 --disable-audio \
 		 --enable-openssl \
-		 --enable-consoleui
+		 --enable-consoleui \
+		 --with-python=${LOCALBASE}/bin/python${PYTHON_VER}
 # --disable-gstreamer is not sufficient
 MAKE_FLAGS+=	GSTREAMER_CFLAGS= GSTREAMER_LIBS=
 
