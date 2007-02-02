@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2006/11/29 14:44:19 kurt Exp $
+# $OpenBSD: Makefile,v 1.6 2007/02/02 16:52:28 ian Exp $
 
 SUBDIR+= emf
 SUBDIR+= epic
+SUBDIR+= findbugs
 SUBDIR+= gef
 SUBDIR+= ivyde
 SUBDIR+= jem
