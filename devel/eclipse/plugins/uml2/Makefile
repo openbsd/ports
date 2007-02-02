@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/07/11 18:30:53 kurt Exp $
+# $OpenBSD: Makefile,v 1.3 2007/02/02 16:24:28 kurt Exp $
 
 COMMENT=		"UML diagram framework for Eclipse"
 
@@ -25,6 +25,7 @@ RUN_DEPENDS=		:eclipse-plugin-emf-sdk->=2.2:devel/eclipse/plugins/emf
 
 USE_ZIP=		Yes
 NO_BUILD=		Yes
+NO_REGRESS=		Yes
 
 WRKDIST=		${WRKDIR}
 

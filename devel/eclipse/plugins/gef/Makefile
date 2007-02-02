@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/07/11 18:26:43 kurt Exp $
+# $OpenBSD: Makefile,v 1.5 2007/02/02 16:24:28 kurt Exp $
 
 COMMENT=		"graphical editing environment for eclipse"
 
@@ -25,6 +25,7 @@ RUN_DEPENDS=		:eclipse-sdk->=3.2:devel/eclipse/sdk
 
 USE_ZIP=		Yes
 NO_BUILD=		Yes
+NO_REGRESS=		Yes
 
 WRKDIST=		${WRKDIR}
 
