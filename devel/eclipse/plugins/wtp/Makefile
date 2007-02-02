@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.2 2006/10/09 11:21:03 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2007/02/02 17:35:39 ian Exp $
 
 COMMENT=		"Web Tools Platform for Eclipse"
 
 V=			1.5.0
 DISTNAME=		wtp-sdk-R-${V}-200606281455
-PKGNAME=		eclipse-plugin-wtp-sdk-${V}p0
+PKGNAME=		eclipse-plugin-wtp-sdk-${V}p1
 CATEGORIES=		devel/eclipse/plugins java
+EXTRACT_SUFX=           .zip
+PKG_ARCH=		*
 
 HOMEPAGE=		http://www.eclipse.org/webtools/
 
-MAINTAINER=		Ian Darwin <ian@darwinsys.com>
-
-EXTRACT_SUFX=           .zip
+MAINTAINER=		Ian Darwin <ian@openbsd.org>
 
 # Eclipse Public License Version 1.0 (http://www.eclipse.org/legal/epl-v10.html)
 PERMIT_PACKAGE_CDROM=	"commercial distribution defend and indemnify clauses"

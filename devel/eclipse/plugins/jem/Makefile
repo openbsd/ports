@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/07/19 01:29:11 ian Exp $
+# $OpenBSD: Makefile,v 1.2 2007/02/02 17:39:17 ian Exp $
 
 COMMENT=		"java EMF model runtime for Eclipse"
 
 V=			1.2
 DISTNAME=		JEM-SDK-${V}
-PKGNAME=		eclipse-plugin-jem-sdk-${V}
+PKGNAME=		eclipse-plugin-jem-sdk-${V}p0
 CATEGORIES=		devel/eclipse/plugins java
 
 HOMEPAGE=		http://www.eclipse.org/vep/WebContent/docs/components/javamodel/javaModel.html
 
-MAINTAINER=		Ian Darwin <ian@darwinsys.com>
+MAINTAINER=		Ian Darwin <ian@openbsd.org>
 
 EXTRACT_SUFX=           .zip
 
@@ -26,6 +26,7 @@ RUN_DEPENDS=		:eclipse-sdk->=3.2:devel/eclipse/sdk
 USE_ZIP=		Yes
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
+PKG_ARCH=		*
 
 WRKDIST=		${WRKDIR}
 
