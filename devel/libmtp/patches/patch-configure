@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2007/01/11 21:56:16 jasper Exp $
---- configure.orig	Wed Jan 10 13:38:08 2007
-+++ configure	Wed Jan 10 13:38:33 2007
-@@ -19089,7 +19089,7 @@ if test $ac_cv_lib_usb_usb_control_msg =
+$OpenBSD: patch-configure,v 1.2 2007/02/02 14:25:28 jasper Exp $
+--- configure.orig	Tue Jan 16 21:44:10 2007
++++ configure	Fri Feb  2 15:16:44 2007
+@@ -19106,7 +19106,7 @@ if test $ac_cv_lib_usb_usb_control_msg =
  #define HAVE_LIBUSB 1
  _ACEOF
  
