@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/02/02 16:23:10 steven Exp $
+--- Makefile.in.orig	Fri Feb  2 16:52:03 2007
++++ Makefile.in	Fri Feb  2 16:52:25 2007
+@@ -170,7 +170,7 @@ CONFIG_CLEAN_FILES =
+ CPPFLAGS = @CPPFLAGS@
+ LIBS = @LIBS@
+ AR = ar
+-CFLAGS = @CFLAGS@
++CFLAGS = @CFLAGS@ ${MYCFLAGS}
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+ LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@

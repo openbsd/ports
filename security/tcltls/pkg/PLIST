@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/02/02 16:23:10 steven Exp $
+%%SHARED%%
+lib/${TCLTLS}/
+lib/${TCLTLS}/pkgIndex.tcl
+lib/${TCLTLS}/tls.tcl
+share/doc/tcltls/
+share/doc/tcltls/tls.htm
