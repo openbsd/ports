@@ -1,0 +1,6 @@
+FindBugs is an extensive lint-like program for Java, but it analyzes
+the compiled class files rather than the source. This package is the
+FindBugs Projects's Eclipse plug-in.
+
+The name FindBugs and the FindBugs logo are trademarked by The
+University of Maryland.
