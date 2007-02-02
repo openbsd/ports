@@ -1,0 +1,36 @@
+$OpenBSD: patch-smb_conf,v 1.1 2007/02/02 03:13:19 msf Exp $
+--- smb.conf.orig	Fri Feb  2 11:52:15 2007
++++ smb.conf	Fri Feb  2 11:55:36 2007
+@@ -14,7 +14,7 @@
+ 	#obey pam restrictions = No
+ 	#ldap passwd sync = Yes
+ 	unix password sync = Yes
+-	passwd program = /opt/IDEALX/sbin/smbldap-passwd -u %u
++	passwd program = %%LOCALBASE%%/sbin/smbldap-passwd -u %u
+ 	passwd chat = "Changing password for*\nNew password*" %n\n "*Retype new password*" %n\n"
+ 	#passwd chat debug = Yes
+ 	log level = 0
+@@ -45,15 +45,15 @@
+         ldap user suffix = ou=Users
+         ldap machine suffix = ou=Computers
+ 	#ldap idmap suffix = ou=Idmap
+-        add user script = /opt/IDEALX/sbin/smbldap-useradd -m "%u"
++        add user script = %%LOCALBASE%%/sbin/smbldap-useradd -m "%u"
+         #ldap delete dn = Yes
+-        delete user script = /opt/IDEALX/sbin/smbldap-userdel "%u"
+-        add machine script = /opt/IDEALX/sbin/smbldap-useradd -t 0 -w "%u"
+-        add group script = /opt/IDEALX/sbin/smbldap-groupadd -p "%g" 
+-        #delete group script = /opt/IDEALX/sbin/smbldap-groupdel "%g"
+-        add user to group script = /opt/IDEALX/sbin/smbldap-groupmod -m "%u" "%g"
+-        delete user from group script = /opt/IDEALX/sbin/smbldap-groupmod -x "%u" "%g"
+-	set primary group script = /opt/IDEALX/sbin/smbldap-usermod -g '%g' '%u'
++        delete user script = %%LOCALBASE%%/sbin/smbldap-userdel "%u"
++        add machine script = %%LOCALBASE%%/sbin/smbldap-useradd -t 0 -w "%u"
++        add group script = %%LOCALBASE%%/sbin/smbldap-groupadd -p "%g" 
++        #delete group script = %%LOCALBASE%%/sbin/smbldap-groupdel "%g"
++        add user to group script = %%LOCALBASE%%/sbin/smbldap-groupmod -m "%u" "%g"
++        delete user from group script = %%LOCALBASE%%/sbin/smbldap-groupmod -x "%u" "%g"
++	set primary group script = %%LOCALBASE%%/sbin/smbldap-usermod -g '%g' '%u'
+ 
+ 	# printers configuration
+ 	printer admin = @"Print Operators"

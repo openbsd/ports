@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/31 07:59:33 msf Exp $
+# $OpenBSD: Makefile,v 1.3 2007/02/02 03:13:19 msf Exp $
 
 COMMENT=	"tools for managing samba ldap" 
 
 DISTNAME=	smbldap-tools-0.9.2a
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	sysutils
 EXTRACT_SUFX=	.tgz
 
@@ -42,7 +42,7 @@ TOOLS=		groupadd groupdel groupmod groupshow useradd userdel usermod \
 MIGRATION=	pwdump-accounts pwdump-groups unix-accounts unix-groups
 
 pre-configure:
-	@for f in configure.pl smbldap.conf smbldap_tools.pm; do \
+	@for f in configure.pl smb.conf smbldap.conf smbldap_tools.pm; do \
 		perl -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/$$f; \
 		perl -pi -e 's|%%SYSCONFDIR%%|${SYSCONFDIR}|g' ${WRKSRC}/$$f; \
 	done
