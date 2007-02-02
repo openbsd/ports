@@ -1,0 +1,80 @@
+$OpenBSD: patch-gdk-pixbuf_gdk-pixbuf-loader_c,v 1.1 2007/02/02 09:21:29 bernd Exp $
+
+* Fix error handling in pixbuf loaders. (CVE-2007-0010)
+  Patch from Debian. More info:
+  RedHat bug reports #218755 and #218932.
+  http://secunia.com/advisories/23884/
+
+--- gdk-pixbuf/gdk-pixbuf-loader.c.orig	Wed Mar 22 21:35:26 2006
++++ gdk-pixbuf/gdk-pixbuf-loader.c	Thu Feb  1 10:36:23 2007
+@@ -491,7 +491,7 @@ gdk_pixbuf_loader_write (GdkPixbufLoader
+       
+                         eaten = gdk_pixbuf_loader_eat_header_write (loader, buf, count, error);
+                         if (eaten <= 0)
+-                                return FALSE;
++                                goto fail;
+       
+                         count -= eaten;
+                         buf += eaten;
+@@ -499,27 +499,32 @@ gdk_pixbuf_loader_write (GdkPixbufLoader
+   
+         if (count > 0 && priv->image_module->load_increment)
+                 {
+-                        gboolean retval;
+-                        retval = priv->image_module->load_increment (priv->context, buf, count,
+-                                                                     error);
+-                        if (!retval && error && *error == NULL)
+-                                {
+-                                        /* Fix up busted image loader */
+-                                        g_warning ("Bug! loader '%s' didn't set an error on failure",
+-                                                   priv->image_module->module_name);
+-                                        g_set_error (error,
+-                                                     GDK_PIXBUF_ERROR,
+-                                                     GDK_PIXBUF_ERROR_FAILED,
+-                                                     _("Internal error: Image loader module '%s'"
+-                                                       " failed to begin loading an image, but didn't"
+-                                                       " give a reason for the failure"),
+-                                                     priv->image_module->module_name);
+-                                }
+-
+-                        return retval;
++                        if (!priv->image_module->load_increment (priv->context, buf, count,
++                                                                 error))
++                                goto fail;
++                        
+                 }
+       
+         return TRUE;
++
++ fail:
++        if (error && *error == NULL)
++                {
++                        /* Fix up busted image loader */
++                        g_warning ("Bug! loader '%s' didn't set an error on failure",
++                                   priv->image_module->module_name);
++                        g_set_error (error,
++                                     GDK_PIXBUF_ERROR,
++                                     GDK_PIXBUF_ERROR_FAILED,
++                                     _("Internal error: Image loader module '%s'"
++                                       " failed to begin loading an image, but didn't"
++                                       " give a reason for the failure"),
++                                     priv->image_module->module_name);
++                }
++
++        gdk_pixbuf_loader_close (loader, NULL);
++        
++        return FALSE;
+ }
+ 
+ /**
+@@ -737,8 +742,8 @@ gdk_pixbuf_loader_close (GdkPixbufLoader
+   
+         priv = loader->priv;
+   
+-        /* we expect it's not closed */
+-        g_return_val_if_fail (priv->closed == FALSE, TRUE);
++        if (priv->closed)
++                return TRUE;
+   
+         /* We have less the LOADER_HEADER_SIZE bytes in the image.  
+          * Flush it, and keep going. 
