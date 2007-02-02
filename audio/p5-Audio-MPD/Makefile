@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2006/12/25 12:35:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2007/02/02 14:39:29 jasper Exp $
 
 COMMENT=		"module for communicating with MPD servers"
-DISTNAME=		Audio-MPD-0.12.3
-PKGNAME=		p5-${DISTNAME}p1
+DISTNAME=		Audio-MPD-0.12.4
 CATEGORIES=		audio
 
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -14,7 +13,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
-CPAN_AUTHOR=		NJH
+CPAN_AUTHOR=		JQUELIN
 
 CONFIGURE_STYLE=	modbuild
 
