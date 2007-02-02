@@ -1,7 +1,16 @@
-$OpenBSD: patch-kresources_groupwise_soap_stdsoap2_h,v 1.4 2006/08/03 10:53:36 espie Exp $
---- kresources/groupwise/soap/stdsoap2.h.orig	Sun Jul 23 16:21:19 2006
-+++ kresources/groupwise/soap/stdsoap2.h	Tue Aug  1 03:44:22 2006
-@@ -545,7 +545,7 @@ extern "C" {
+$OpenBSD: patch-kresources_groupwise_soap_stdsoap2_h,v 1.5 2007/02/02 12:19:52 espie Exp $
+--- kresources/groupwise/soap/stdsoap2.h.orig	Mon Jan 15 12:28:37 2007
++++ kresources/groupwise/soap/stdsoap2.h	Fri Feb  2 13:22:57 2007
+@@ -507,8 +507,6 @@ A commercial use license is available fr
+ # endif
+ #endif
+ 
+-#define DEBUG  /* Uncomment to debug sending (in file SENT.log) receiving (in file RECV.log) and messages (in file TEST.log) */
+-
+ #ifdef __cplusplus
+ extern "C" {
+ #endif
+@@ -545,7 +543,7 @@ extern "C" {
  /* Portability: define SOAP_SOCKLEN_T */
  #if defined(SOCKLEN_T)
  # define SOAP_SOCKLEN_T SOCKLEN_T
