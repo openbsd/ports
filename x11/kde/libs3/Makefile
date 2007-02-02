@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2007/01/28 13:18:51 espie Exp $
+# $OpenBSD: Makefile,v 1.77 2007/02/02 13:18:30 espie Exp $
 
 COMMENT-main=		"K Desktop Environment, libraries"
 COMMENT-cups=		"K Desktop Environment, cups support"
@@ -8,7 +8,7 @@ DISTNAME=		kdelibs-${VERSION}
 MASTER_SITES0=  ftp://ftp.kde.org/pub/kde/security_patches/
 #PATCHFILES=	post-3.4.3-kdelibs-kjs.diff:0
 
-PKGNAME-main=		${DISTNAME}
+PKGNAME-main=		${DISTNAME}p0
 PKGNAME-cups=		kdecups-${VERSION}
 MODKDE_VERSION?=	3.5.3
 SHARED_LIBS +=	DCOP                 7.0      # .6.0

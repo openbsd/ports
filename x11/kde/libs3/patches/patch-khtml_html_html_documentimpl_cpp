@@ -1,0 +1,12 @@
+$OpenBSD: patch-khtml_html_html_documentimpl_cpp,v 1.2 2007/02/02 13:18:30 espie Exp $
+--- khtml/html/html_documentimpl.cpp.orig	Fri Feb  2 14:20:10 2007
++++ khtml/html/html_documentimpl.cpp	Fri Feb  2 14:20:20 2007
+@@ -222,7 +222,7 @@ ElementImpl *HTMLDocumentImpl::createEle
+ 
+ void HTMLDocumentImpl::slotHistoryChanged()
+ {
+-    if ( !m_render )
++    if ( true || !m_render )
+         return;
+ 
+     recalcStyle( Force );
