@@ -1,0 +1,86 @@
+$OpenBSD: patch-ark_tar_cpp,v 1.1 2007/02/02 12:09:36 espie Exp $
+--- ark/tar.cpp.orig	Mon May 22 20:08:38 2006
++++ ark/tar.cpp	Fri Feb  2 02:12:52 2007
+@@ -50,6 +50,7 @@
+ 
+ // Qt includes
+ #include <qdir.h>
++#include <qfile.h>
+ #include <qregexp.h>
+ #include <qeventloop.h>
+ 
+@@ -247,13 +248,17 @@ TarArch::open()
+     // tar archive are plain or start with "./"
+     KProcess *kp = m_currentProcess = new KProcess;
+ 
+-    *kp << m_archiver_program;
+-
+     if ( compressed )
+     {
+-        *kp << "--use-compress-program=" + getUnCompressor();
++      kp->setUseShell(true);
++      *kp << getUnCompressor() << "-d" << "-c" << KProcess::quote(m_filename) << "|";
++    } else 
++    {
++      kp->setUseShell(false);
+     }
+ 
++    *kp << m_archiver_program;
++ 
+     *kp << "-tvf" << m_filename;
+ 
+     m_buffer = "";
+@@ -600,29 +605,46 @@ void TarArch::unarchFileInternal()
+ 
+   KProcess *kp = m_currentProcess = new KProcess;
+   kp->clearArguments();
+-
+-  *kp << m_archiver_program;
+   if (compressed)
+-    *kp << "--use-compress-program="+getUnCompressor();
++  {
++    kp->setUseShell(true);
++    *kp << getUnCompressor() << "-d" << "-c" << KProcess::quote(m_filename) << "|";
++  } else 
++  {
++    kp->setUseShell(false);
++  }
++  *kp << m_archiver_program;
+ 
+   QString options = "-x";
+-  if (!ArkSettings::extractOverwrite())
+-    options += "k";
+   if (ArkSettings::preservePerms())
+     options += "p";
+   options += "f";
+ 
+   kdDebug(1601) << "Options were: " << options << endl;
+-  *kp << options << m_filename << "-C" << dest;
++  if (compressed) {
++      *kp << options << "-" << "-C" << KProcess::quote(dest);
++  } else {
++      *kp << options << m_filename << "-C" << dest;
++  }
+ 
+   // if the list is empty, no filenames go on the command line,
+   // and we then extract everything in the archive.
++  // XXX and we don't handle extractOverwrite.
+   if (m_fileList)
+     {
+       for ( QStringList::Iterator it = m_fileList->begin();
+             it != m_fileList->end(); ++it )
+         {
+-            *kp << QString(m_dotslash ? "./" : "")+(*it);
++	    QString v = m_dotslash ? "./" : "" + (*it);
++	    if (!ArkSettings::extractOverwrite()) {
++	    	if (QFile::exists(dest + "/" + v)) {
++			continue;
++		}
++	    }
++			
++	    if (compressed)
++	    	v = KProcess::quote(v);
++            *kp << v;
+         }
+     }
+ 
