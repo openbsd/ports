@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.181 2007/01/07 12:13:41 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.182 2007/02/02 16:29:06 steven Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -168,6 +168,7 @@
      SUBDIR += strobe
      SUBDIR += stunnel
      SUBDIR += swatch
+     SUBDIR += tcltls
      SUBDIR += tempwatch
      SUBDIR += tinyca
      SUBDIR += towitoko
