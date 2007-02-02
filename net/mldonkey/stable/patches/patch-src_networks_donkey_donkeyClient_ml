@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_networks_donkey_donkeyClient_ml,v 1.1 2007/01/24 01:32:51 espie Exp $
---- src/networks/donkey/donkeyClient.ml.orig	Tue Sep  5 16:18:24 2006
-+++ src/networks/donkey/donkeyClient.ml	Wed Jan 24 02:25:44 2007
-@@ -438,15 +438,17 @@ let client_wants_file c md4 =
+$OpenBSD: patch-src_networks_donkey_donkeyClient_ml,v 1.2 2007/02/02 19:28:52 espie Exp $
+--- src/networks/donkey/donkeyClient.ml.orig	Sun Nov 26 17:36:29 2006
++++ src/networks/donkey/donkeyClient.ml	Fri Feb  2 13:51:15 2007
+@@ -442,15 +442,17 @@ let client_wants_file c md4 =
    
  let new_chunk up begin_pos end_pos =
    if begin_pos <> end_pos then
@@ -26,7 +26,7 @@ $OpenBSD: patch-src_networks_donkey_donkeyClient_ml,v 1.1 2007/01/24 01:32:51 es
    
  let identify_client_brand c =
    if c.client_brand = Brand_unknown then
-@@ -1989,13 +1991,21 @@ end else *)
+@@ -2039,13 +2041,21 @@ end else *)
          set_rtimeout sock !!upload_timeout;
          
          let up, waiting = match c.client_upload with
@@ -49,7 +49,7 @@ $OpenBSD: patch-src_networks_donkey_donkeyClient_ml,v 1.1 2007/01/24 01:32:51 es
                  up_waiting = old_up.up_waiting;
                }, old_up.up_waiting
            | _ ->
-@@ -2004,6 +2014,7 @@ end else *)
+@@ -2054,6 +2064,7 @@ end else *)
                  up_pos = Int64.zero;
                  up_end_chunk = Int64.zero;
                  up_chunks = [];
@@ -57,7 +57,7 @@ $OpenBSD: patch-src_networks_donkey_donkeyClient_ml,v 1.1 2007/01/24 01:32:51 es
                  up_waiting = false;
                }, false
          in
-@@ -2091,12 +2102,12 @@ make 1500 connections/10 minutes.  *)
+@@ -2141,12 +2152,12 @@ make 1500 connections/10 minutes.  *)
  let init_client sock c =
    set_handler sock WRITE_DONE (fun s ->
        match c.client_upload with

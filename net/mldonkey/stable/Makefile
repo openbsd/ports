@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2007/01/24 01:32:51 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2007/02/02 19:28:52 espie Exp $
 
-COMMENT='e-donkey client'
-CATEGORIES=net
+COMMENT=	'e-donkey client'
+CATEGORIES=	net
 
-MAINTAINER=Marc Espie <espie@openbsd.org>
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_FTP=	Yes
@@ -18,28 +18,28 @@ AUTOCONF_VERSION=	2.59
 #CONFIGURE_ARGS+=	--enable-ocamlver=3.07
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
-HOMEPAGE=http://mldonkey.sourceforge.net/Main_Page
+HOMEPAGE=	http://mldonkey.sourceforge.net/Main_Page
 
-MASTER_SITES=${MASTER_SITE_SOURCEFORGE:=mldonkey/}
-DISTNAME=mldonkey-2.8.1
-PKGNAME=${DISTNAME}p1
-EXTRACT_SUFX=.tar.bz2
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mldonkey/}
+DISTNAME=	mldonkey-2.8.2
+PKGNAME=	${DISTNAME}
+EXTRACT_SUFX=	.tar.bz2
 
 CONFIGURE_ARGS+=--enable-gui=newgui1
-CONFIGURE_ENV+=CPPFLAGS='-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include -I${X11BASE}/include'
-CONFIGURE_ENV+=LDFLAGS='-L${LOCALBASE}/lib -L${X11BASE}/lib'
+CONFIGURE_ENV+=	CPPFLAGS='-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include -I${X11BASE}/include'
+CONFIGURE_ENV+=	LDFLAGS='-L${LOCALBASE}/lib -L${X11BASE}/lib'
 
-USE_X11=Yes
-USE_GMAKE=Yes
-MODULES=lang/ocaml
-BUILD_DEPENDS=::x11/lablgtk
+USE_X11=	Yes
+USE_GMAKE=	Yes
+MODULES=	lang/ocaml
+BUILD_DEPENDS=	::x11/lablgtk
 LIB_DEPENDS=	gdk.>=1,gtk.>=1::x11/gtk+ \
 		bz2::archivers/bzip2 \
 		gd::graphics/gd \
 		magic::devel/libmagic
 
-FAKE_FLAGS=MODOCAML_NATIVE=${MODOCAML_NATIVE}
-NO_REGRESS=Yes
+FAKE_FLAGS=	MODOCAML_NATIVE=${MODOCAML_NATIVE}
+NO_REGRESS=	Yes
 
 post-install:
 	mkdir -p ${PREFIX}/share/mldonkey
