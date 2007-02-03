@@ -1,4 +1,4 @@
-# $OpenBSD: modules.port.mk,v 1.4 2006/11/27 15:38:01 espie Exp $
+# $OpenBSD: modules.port.mk,v 1.5 2007/02/03 17:09:39 espie Exp $
 #
 #  Copyright (c) 2001 Marc Espie
 # 
@@ -26,11 +26,9 @@
 # Recursive module support
 #
 
-# XXX need this because make is buggy
-_empty =
 .undef _MODULES_DONE_ON_THIS_ROUND
 .for _m in ${MODULES:L}
-.  if ${_empty} != "${_m:M*/*}"
+.  if "${_m:M*/*}" != ""
 .    for _d in ${PORTSDIR_PATH:S/:/ /}
 .      if empty(_MODULES_DONE:M${_m}) && exists(${_d}/${_m}/${_m:T}.port.mk)
 .        include "${_d}/${_m}/${_m:T}.port.mk"
