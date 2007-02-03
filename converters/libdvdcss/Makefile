@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2006/10/28 11:19:20 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2007/02/03 17:02:52 espie Exp $
 
 COMMENT=	"descramble scrambled DVDs"
 
-VER=		1.2.8
+VER=		1.2.9
 DISTNAME=	libdvdcss-${VER}
 SHARED_LIBS +=	dvdcss               2.7      # .2.7
 CATEGORIES=	converters
