@@ -1,6 +1,6 @@
-$OpenBSD: patch-dvdread_dvd_input_c,v 1.6 2006/12/26 13:48:36 espie Exp $
+$OpenBSD: patch-dvdread_dvd_input_c,v 1.7 2007/02/03 17:07:07 espie Exp $
 --- dvdread/dvd_input.c.orig	Mon Sep 19 15:43:08 2005
-+++ dvdread/dvd_input.c	Tue Dec 26 14:44:27 2006
++++ dvdread/dvd_input.c	Tue Dec 26 14:54:04 2006
 @@ -45,30 +45,30 @@ int         (*dvdinput_read)  (dvd_input
  char *      (*dvdinput_error) (dvd_input_t);
  
@@ -138,7 +138,7 @@ $OpenBSD: patch-dvdread_dvd_input_c,v 1.6 2006/12/26 13:48:36 espie Exp $
  
  /**
   * Free any objects allocated by dvdinput_setup.
-@@ -294,28 +294,30 @@ void dvdinput_free(void)
+@@ -294,28 +294,36 @@ void dvdinput_free(void)
    /* linked statically, nothing to free */
    return;
  #else
@@ -156,8 +156,14 @@ $OpenBSD: patch-dvdread_dvd_input_c,v 1.6 2006/12/26 13:48:36 espie Exp $
  }
  
  
++#if defined(DEBUG_CSS)
++#define LIBDVDNAME	"libdvdcss.so.2"
++#define LIBDVD_		"dvdcss_"
++#else
 +#define LIBDVDNAME	"libdvd.so.0"
 +#define LIBDVD_		"libdvd_"
++#endif
++
  /**
 - * Setup read functions with either libdvdcss or minimal DVD access.
 + * Setup read functions with either libdvd or minimal DVD access.
@@ -177,7 +183,7 @@ $OpenBSD: patch-dvdread_dvd_input_c,v 1.6 2006/12/26 13:48:36 espie Exp $
        return 1; /* css available */
      } else {
        return 0; /* css not available */
-@@ -326,59 +328,57 @@ int dvdinput_setup(void)
+@@ -326,59 +334,57 @@ int dvdinput_setup(void)
    
  #ifdef HAVE_DVDCSS_DVDCSS_H
    /* linking to libdvdcss */
@@ -266,7 +272,7 @@ $OpenBSD: patch-dvdread_dvd_input_c,v 1.6 2006/12/26 13:48:36 espie Exp $
      /*
        char *psz_method = getenv( "DVDCSS_METHOD" );
        char *psz_verbose = getenv( "DVDCSS_VERBOSE" );
-@@ -386,16 +386,16 @@ int dvdinput_setup(void)
+@@ -386,16 +392,16 @@ int dvdinput_setup(void)
        fprintf(stderr, "DVDCSS_VERBOSE %s\n", psz_verbose);
      */
      if(verbose >= 1) {
