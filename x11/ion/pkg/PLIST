@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2006/10/20 17:36:13 pedro Exp $
+@comment $OpenBSD: PLIST,v 1.19 2007/02/03 20:38:05 pedro Exp $
 %%SHARED%%
 bin/ion3
 bin/pwm3
@@ -54,6 +54,7 @@ share/examples/ion3/cfg_dock.lua
 share/examples/ion3/cfg_ion.lua
 share/examples/ion3/cfg_ioncore.lua
 share/examples/ion3/cfg_kludges.lua
+share/examples/ion3/cfg_layouts.lua
 share/examples/ion3/cfg_menu.lua
 share/examples/ion3/cfg_modules.lua
 share/examples/ion3/cfg_pwm.lua
