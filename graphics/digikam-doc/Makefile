@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/08/02 10:00:49 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2007/02/03 17:06:10 espie Exp $
 
 COMMENT=		"documentation for digikam"
 CATEGORIES=		graphics x11 x11/kde
@@ -12,7 +12,7 @@ DISTFILES=		${DISTNAME}.tar.bz2
 SHARED_ONLY=Yes
 
 MODULES=	x11/kde
-MODKDE_VERSION=		3.5
+MODKDE_VERSION=		3.5.3
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS}
