@@ -1,7 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/14 23:16:55 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2007/02/03 07:02:00 steven Exp $
 ${P5SITE}/MP3/
 ${P5SITE}/MP3/Info.pm
-${P5SITE}/MPEG/
-${P5SITE}/MPEG/MP3Info.pm
 @man man/man3p/MP3::Info.3p
-@man man/man3p/MPEG::MP3Info.3p
