@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/25 13:40:28 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2007/02/03 19:10:39 simon Exp $
 
 COMMENT=        "set of objects and strings"
 SHARED_ONLY=	Yes
 
 MODULES=	cpan
-DISTNAME=	Set-Object-1.18
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Set-Object-1.19
 CATEGORIES=     devel
 
 MAINTAINER=	Simon Dassow <simon@openbsd.org>

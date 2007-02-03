@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/25 13:40:28 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/02/03 19:10:39 simon Exp $
 
 COMMENT= 	"read and modify Apache .htpasswd files"
 
-DISTNAME=	Authen-Htpasswd-0.14
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Authen-Htpasswd-0.15
 CATEGORIES=	security
 
 MAINTAINER=	Simon Dassow <simon@openbsd.org>
