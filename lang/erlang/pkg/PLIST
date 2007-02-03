@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2006/11/21 08:59:44 steven Exp $
+@comment $OpenBSD: PLIST,v 1.9 2007/02/03 11:48:39 steven Exp $
 %%SHARED%%
 bin/dialyzer
 bin/epmd
@@ -273,6 +273,7 @@ lib/erlang/${ERTS}/bin/start
 lib/erlang/${ERTS}/bin/start.src
 lib/erlang/${ERTS}/bin/start_erl.src
 lib/erlang/${ERTS}/bin/to_erl
+lib/erlang/${ERTS}/bin/typer
 lib/erlang/${ERTS}/doc/
 lib/erlang/${ERTS}/doc/html/
 lib/erlang/${ERTS}/doc/html/absform.html
@@ -1867,6 +1868,7 @@ lib/erlang/lib/${DEBUGGER}/src/i.erl
 lib/erlang/lib/${DEBUGGER}/src/int.erl
 lib/erlang/lib/${DIALYZER}/
 lib/erlang/lib/${DIALYZER}/doc/
+lib/erlang/lib/${DIALYZER}/doc/about.txt
 lib/erlang/lib/${DIALYZER}/doc/html/
 lib/erlang/lib/${DIALYZER}/doc/html/application.html
 lib/erlang/lib/${DIALYZER}/doc/html/application.kwc
@@ -1892,6 +1894,9 @@ lib/erlang/lib/${DIALYZER}/doc/html/part_notes_frame.html
 lib/erlang/lib/${DIALYZER}/doc/html/part_notes_term.html
 lib/erlang/lib/${DIALYZER}/doc/html/part_term.html
 lib/erlang/lib/${DIALYZER}/doc/html/warning.gif
+lib/erlang/lib/${DIALYZER}/doc/manual.txt
+lib/erlang/lib/${DIALYZER}/doc/overview.txt
+lib/erlang/lib/${DIALYZER}/doc/warnings.txt
 lib/erlang/lib/${DIALYZER}/ebin/
 lib/erlang/lib/${DIALYZER}/ebin/dialyzer.app
 lib/erlang/lib/${DIALYZER}/ebin/dialyzer.appup
@@ -1909,6 +1914,7 @@ lib/erlang/lib/${DIALYZER}/ebin/dialyzer_options.beam
 lib/erlang/lib/${DIALYZER}/ebin/dialyzer_plt.beam
 lib/erlang/lib/${DIALYZER}/ebin/dialyzer_succ_typings.beam
 lib/erlang/lib/${DIALYZER}/ebin/dialyzer_typesig.beam
+lib/erlang/lib/${DIALYZER}/ebin/dialyzer_utils.beam
 lib/erlang/lib/${DIALYZER}/info
 lib/erlang/lib/${DIALYZER}/plt/
 lib/erlang/lib/${DIALYZER}/src/
@@ -1927,28 +1933,37 @@ lib/erlang/lib/${DIALYZER}/src/dialyzer_options.erl
 lib/erlang/lib/${DIALYZER}/src/dialyzer_plt.erl
 lib/erlang/lib/${DIALYZER}/src/dialyzer_succ_typings.erl
 lib/erlang/lib/${DIALYZER}/src/dialyzer_typesig.erl
+lib/erlang/lib/${DIALYZER}/src/dialyzer_utils.erl
 lib/erlang/lib/${EDOC}/
 lib/erlang/lib/${EDOC}/doc/
 lib/erlang/lib/${EDOC}/doc/html/
+lib/erlang/lib/${EDOC}/doc/html/application.html
+lib/erlang/lib/${EDOC}/doc/html/application.kwc
+lib/erlang/lib/${EDOC}/doc/html/application_cite.html
+lib/erlang/lib/${EDOC}/doc/html/application_first.html
+lib/erlang/lib/${EDOC}/doc/html/application_frame.html
+lib/erlang/lib/${EDOC}/doc/html/application_index.html
+lib/erlang/lib/${EDOC}/doc/html/application_term.html
+lib/erlang/lib/${EDOC}/doc/html/chapter.html
 lib/erlang/lib/${EDOC}/doc/html/edoc.html
-lib/erlang/lib/${EDOC}/doc/html/edoc_data.html
 lib/erlang/lib/${EDOC}/doc/html/edoc_doclet.html
 lib/erlang/lib/${EDOC}/doc/html/edoc_extract.html
 lib/erlang/lib/${EDOC}/doc/html/edoc_layout.html
 lib/erlang/lib/${EDOC}/doc/html/edoc_lib.html
-lib/erlang/lib/${EDOC}/doc/html/edoc_macros.html
-lib/erlang/lib/${EDOC}/doc/html/edoc_refs.html
-lib/erlang/lib/${EDOC}/doc/html/edoc_report.html
 lib/erlang/lib/${EDOC}/doc/html/edoc_run.html
-lib/erlang/lib/${EDOC}/doc/html/edoc_scanner.html
-lib/erlang/lib/${EDOC}/doc/html/edoc_tags.html
-lib/erlang/lib/${EDOC}/doc/html/edoc_types.html
-lib/erlang/lib/${EDOC}/doc/html/edoc_wiki.html
 lib/erlang/lib/${EDOC}/doc/html/index.html
-lib/erlang/lib/${EDOC}/doc/html/modules-frame.html
-lib/erlang/lib/${EDOC}/doc/html/otpsgml_layout.html
-lib/erlang/lib/${EDOC}/doc/html/overview-summary.html
-lib/erlang/lib/${EDOC}/doc/html/packages-frame.html
+lib/erlang/lib/${EDOC}/doc/html/min_head.gif
+lib/erlang/lib/${EDOC}/doc/html/notes.html
+lib/erlang/lib/${EDOC}/doc/html/part.html
+lib/erlang/lib/${EDOC}/doc/html/part_cite.html
+lib/erlang/lib/${EDOC}/doc/html/part_first.html
+lib/erlang/lib/${EDOC}/doc/html/part_frame.html
+lib/erlang/lib/${EDOC}/doc/html/part_notes.html
+lib/erlang/lib/${EDOC}/doc/html/part_notes_cite.html
+lib/erlang/lib/${EDOC}/doc/html/part_notes_first.html
+lib/erlang/lib/${EDOC}/doc/html/part_notes_frame.html
+lib/erlang/lib/${EDOC}/doc/html/part_notes_term.html
+lib/erlang/lib/${EDOC}/doc/html/part_term.html
 lib/erlang/lib/${EDOC}/ebin/
 lib/erlang/lib/${EDOC}/ebin/edoc.app
 lib/erlang/lib/${EDOC}/ebin/edoc.appup
@@ -1977,6 +1992,7 @@ lib/erlang/lib/${EDOC}/src/edoc.erl
 lib/erlang/lib/${EDOC}/src/edoc.hrl
 lib/erlang/lib/${EDOC}/src/edoc_data.erl
 lib/erlang/lib/${EDOC}/src/edoc_doclet.erl
+lib/erlang/lib/${EDOC}/src/edoc_doclet.hrl
 lib/erlang/lib/${EDOC}/src/edoc_extract.erl
 lib/erlang/lib/${EDOC}/src/edoc_layout.erl
 lib/erlang/lib/${EDOC}/src/edoc_lib.erl
@@ -1988,6 +2004,7 @@ lib/erlang/lib/${EDOC}/src/edoc_run.erl
 lib/erlang/lib/${EDOC}/src/edoc_scanner.erl
 lib/erlang/lib/${EDOC}/src/edoc_tags.erl
 lib/erlang/lib/${EDOC}/src/edoc_types.erl
+lib/erlang/lib/${EDOC}/src/edoc_types.hrl
 lib/erlang/lib/${EDOC}/src/edoc_wiki.erl
 lib/erlang/lib/${EDOC}/src/otpsgml_layout.erl
 lib/erlang/lib/${EI}/
@@ -2642,6 +2659,7 @@ lib/erlang/lib/${HIPE}/icode/hipe_icode_liveness.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_mulret.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_pp.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_primops.erl
+lib/erlang/lib/${HIPE}/icode/hipe_icode_primops.hrl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_range_an.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_split_arith.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_ssa.erl
@@ -2975,6 +2993,7 @@ lib/erlang/lib/${INETS}/ebin/httpd_cgi.beam
 lib/erlang/lib/${INETS}/ebin/httpd_conf.beam
 lib/erlang/lib/${INETS}/ebin/httpd_esi.beam
 lib/erlang/lib/${INETS}/ebin/httpd_example.beam
+lib/erlang/lib/${INETS}/ebin/httpd_file.beam
 lib/erlang/lib/${INETS}/ebin/httpd_instance_sup.beam
 lib/erlang/lib/${INETS}/ebin/httpd_manager.beam
 lib/erlang/lib/${INETS}/ebin/httpd_misc_sup.beam
@@ -3183,6 +3202,7 @@ lib/erlang/lib/${INETS}/src/httpd_cgi.erl
 lib/erlang/lib/${INETS}/src/httpd_conf.erl
 lib/erlang/lib/${INETS}/src/httpd_esi.erl
 lib/erlang/lib/${INETS}/src/httpd_example.erl
+lib/erlang/lib/${INETS}/src/httpd_file.erl
 lib/erlang/lib/${INETS}/src/httpd_instance_sup.erl
 lib/erlang/lib/${INETS}/src/httpd_manager.erl
 lib/erlang/lib/${INETS}/src/httpd_misc_sup.erl
@@ -5323,6 +5343,7 @@ lib/erlang/lib/${SSH}/ebin/ssh_no_io.beam
 lib/erlang/lib/${SSH}/ebin/ssh_rsa.beam
 lib/erlang/lib/${SSH}/ebin/ssh_sftp.beam
 lib/erlang/lib/${SSH}/ebin/ssh_sftpd.beam
+lib/erlang/lib/${SSH}/ebin/ssh_sftpd_file.beam
 lib/erlang/lib/${SSH}/ebin/ssh_ssh.beam
 lib/erlang/lib/${SSH}/ebin/ssh_sshd.beam
 lib/erlang/lib/${SSH}/ebin/ssh_tcp.beam
@@ -5351,6 +5372,7 @@ lib/erlang/lib/${SSH}/src/ssh_no_io.erl
 lib/erlang/lib/${SSH}/src/ssh_rsa.erl
 lib/erlang/lib/${SSH}/src/ssh_sftp.erl
 lib/erlang/lib/${SSH}/src/ssh_sftpd.erl
+lib/erlang/lib/${SSH}/src/ssh_sftpd_file.erl
 lib/erlang/lib/${SSH}/src/ssh_ssh.erl
 lib/erlang/lib/${SSH}/src/ssh_sshd.erl
 lib/erlang/lib/${SSH}/src/ssh_tcp.erl
@@ -5771,6 +5793,14 @@ lib/erlang/lib/${STDLIB}/src/zip.erl
 lib/erlang/lib/${SYNTAX_TOOLS}/
 lib/erlang/lib/${SYNTAX_TOOLS}/doc/
 lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/
+lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/application.html
+lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/application.kwc
+lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/application_cite.html
+lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/application_first.html
+lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/application_frame.html
+lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/application_index.html
+lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/application_term.html
+lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/chapter.html
 lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/epp_dodger.html
 lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/erl_comment_scan.html
 lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/erl_prettypr.html
@@ -5780,9 +5810,18 @@ lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/erl_syntax_lib.html
 lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/erl_tidy.html
 lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/igor.html
 lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/index.html
-lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/modules-frame.html
-lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/overview-summary.html
-lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/packages-frame.html
+lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/min_head.gif
+lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/notes.html
+lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/part.html
+lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/part_cite.html
+lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/part_first.html
+lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/part_frame.html
+lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/part_notes.html
+lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/part_notes_cite.html
+lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/part_notes_first.html
+lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/part_notes_frame.html
+lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/part_notes_term.html
+lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/part_term.html
 lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/prettypr.html
 lib/erlang/lib/${SYNTAX_TOOLS}/ebin/
 lib/erlang/lib/${SYNTAX_TOOLS}/ebin/epp_dodger.beam
@@ -6088,6 +6127,27 @@ lib/erlang/lib/${TV}/src/tv_pw_window.erl
 lib/erlang/lib/${TV}/src/tv_rec_edit.erl
 lib/erlang/lib/${TV}/src/tv_table_owner.erl
 lib/erlang/lib/${TV}/src/tv_utils.erl
+lib/erlang/lib/${TYPER}/
+lib/erlang/lib/${TYPER}/ebin/
+lib/erlang/lib/${TYPER}/ebin/typer.app
+lib/erlang/lib/${TYPER}/ebin/typer.appup
+lib/erlang/lib/${TYPER}/ebin/typer.beam
+lib/erlang/lib/${TYPER}/ebin/typer_generator.beam
+lib/erlang/lib/${TYPER}/ebin/typer_info.beam
+lib/erlang/lib/${TYPER}/ebin/typer_map.beam
+lib/erlang/lib/${TYPER}/ebin/typer_options.beam
+lib/erlang/lib/${TYPER}/ebin/typer_parse.beam
+lib/erlang/lib/${TYPER}/ebin/typer_preprocess.beam
+lib/erlang/lib/${TYPER}/src/
+lib/erlang/lib/${TYPER}/src/typer.erl
+lib/erlang/lib/${TYPER}/src/typer.hrl
+lib/erlang/lib/${TYPER}/src/typer_generator.erl
+lib/erlang/lib/${TYPER}/src/typer_info.erl
+lib/erlang/lib/${TYPER}/src/typer_map.erl
+lib/erlang/lib/${TYPER}/src/typer_options.erl
+lib/erlang/lib/${TYPER}/src/typer_parse.erl
+lib/erlang/lib/${TYPER}/src/typer_parse.yrl
+lib/erlang/lib/${TYPER}/src/typer_preprocess.erl
 lib/erlang/lib/${WEBTOOL}/
 lib/erlang/lib/${WEBTOOL}/doc/
 lib/erlang/lib/${WEBTOOL}/doc/html/
@@ -6183,14 +6243,18 @@ lib/erlang/lib/${XMERL}/doc/html/xmerl_ug.html
 lib/erlang/lib/${XMERL}/doc/html/xmerl_xpath.html
 lib/erlang/lib/${XMERL}/doc/html/xmerl_xs.html
 lib/erlang/lib/${XMERL}/doc/html/xmerl_xs_examples.html
+lib/erlang/lib/${XMERL}/doc/html/xmerl_xsd.html
 lib/erlang/lib/${XMERL}/ebin/
 lib/erlang/lib/${XMERL}/ebin/xmerl.app
 lib/erlang/lib/${XMERL}/ebin/xmerl.appup
 lib/erlang/lib/${XMERL}/ebin/xmerl.beam
+lib/erlang/lib/${XMERL}/ebin/xmerl_b64Bin.beam
+lib/erlang/lib/${XMERL}/ebin/xmerl_b64Bin_scan.beam
 lib/erlang/lib/${XMERL}/ebin/xmerl_eventp.beam
 lib/erlang/lib/${XMERL}/ebin/xmerl_html.beam
 lib/erlang/lib/${XMERL}/ebin/xmerl_lib.beam
 lib/erlang/lib/${XMERL}/ebin/xmerl_otpsgml.beam
+lib/erlang/lib/${XMERL}/ebin/xmerl_regexp.beam
 lib/erlang/lib/${XMERL}/ebin/xmerl_scan.beam
 lib/erlang/lib/${XMERL}/ebin/xmerl_sgml.beam
 lib/erlang/lib/${XMERL}/ebin/xmerl_simple.beam
@@ -6205,19 +6269,25 @@ lib/erlang/lib/${XMERL}/ebin/xmerl_xpath_parse.beam
 lib/erlang/lib/${XMERL}/ebin/xmerl_xpath_pred.beam
 lib/erlang/lib/${XMERL}/ebin/xmerl_xpath_scan.beam
 lib/erlang/lib/${XMERL}/ebin/xmerl_xs.beam
+lib/erlang/lib/${XMERL}/ebin/xmerl_xsd.beam
+lib/erlang/lib/${XMERL}/ebin/xmerl_xsd_type.beam
 lib/erlang/lib/${XMERL}/include/
 lib/erlang/lib/${XMERL}/include/xmerl.hrl
 lib/erlang/lib/${XMERL}/include/xmerl_xlink.hrl
 lib/erlang/lib/${XMERL}/include/xmerl_xpath.hrl
+lib/erlang/lib/${XMERL}/include/xmerl_xsd.hrl
 lib/erlang/lib/${XMERL}/info
 lib/erlang/lib/${XMERL}/src/
 lib/erlang/lib/${XMERL}/src/xmerl.app.src
 lib/erlang/lib/${XMERL}/src/xmerl.appup.src
 lib/erlang/lib/${XMERL}/src/xmerl.erl
+lib/erlang/lib/${XMERL}/src/xmerl_b64Bin.erl
+lib/erlang/lib/${XMERL}/src/xmerl_b64Bin_scan.erl
 lib/erlang/lib/${XMERL}/src/xmerl_eventp.erl
 lib/erlang/lib/${XMERL}/src/xmerl_html.erl
 lib/erlang/lib/${XMERL}/src/xmerl_lib.erl
 lib/erlang/lib/${XMERL}/src/xmerl_otpsgml.erl
+lib/erlang/lib/${XMERL}/src/xmerl_regexp.erl
 lib/erlang/lib/${XMERL}/src/xmerl_scan.erl
 lib/erlang/lib/${XMERL}/src/xmerl_sgml.erl
 lib/erlang/lib/${XMERL}/src/xmerl_simple.erl
@@ -6232,13 +6302,13 @@ lib/erlang/lib/${XMERL}/src/xmerl_xpath_parse.erl
 lib/erlang/lib/${XMERL}/src/xmerl_xpath_pred.erl
 lib/erlang/lib/${XMERL}/src/xmerl_xpath_scan.erl
 lib/erlang/lib/${XMERL}/src/xmerl_xs.erl
+lib/erlang/lib/${XMERL}/src/xmerl_xsd.erl
+lib/erlang/lib/${XMERL}/src/xmerl_xsd_type.erl
 @mandir lib/erlang/man/
 lib/erlang/man/man1/
-@man lib/erlang/man/man1/driver_entry.1
 @man lib/erlang/man/man1/epmd.1
 @man lib/erlang/man/man1/erl.1
 @man lib/erlang/man/man1/erl_call.1
-@man lib/erlang/man/man1/erl_driver.1
 @man lib/erlang/man/man1/erlc.1
 @man lib/erlang/man/man1/erlsrv.1
 @man lib/erlang/man/man1/run_erl.1
@@ -6348,13 +6418,23 @@ lib/erlang/man/man3/
 @man lib/erlang/man/man3/digraph_utils.3
 @man lib/erlang/man/man3/disk_log.3
 @man lib/erlang/man/man3/disksup.3
+@man lib/erlang/man/man3/driver_entry.3
+@man lib/erlang/man/man3/edoc.3
+@man lib/erlang/man/man3/edoc_doclet.3
+@man lib/erlang/man/man3/edoc_extract.3
+@man lib/erlang/man/man3/edoc_layout.3
+@man lib/erlang/man/man3/edoc_lib.3
+@man lib/erlang/man/man3/edoc_run.3
 @man lib/erlang/man/man3/ei.3
 @man lib/erlang/man/man3/ei_connect.3
 @man lib/erlang/man/man3/epp.3
+@man lib/erlang/man/man3/epp_dodger.3
 @man lib/erlang/man/man3/eprof.3
 @man lib/erlang/man/man3/erl_boot_server.3
+@man lib/erlang/man/man3/erl_comment_scan.3
 @man lib/erlang/man/man3/erl_connect.3
 @man lib/erlang/man/man3/erl_ddll.3
+@man lib/erlang/man/man3/erl_driver.3
 @man lib/erlang/man/man3/erl_error.3
 @man lib/erlang/man/man3/erl_eterm.3
 @man lib/erlang/man/man3/erl_eval.3
@@ -6368,10 +6448,15 @@ lib/erlang/man/man3/
 @man lib/erlang/man/man3/erl_marshal.3
 @man lib/erlang/man/man3/erl_parse.3
 @man lib/erlang/man/man3/erl_pp.3
+@man lib/erlang/man/man3/erl_prettypr.3
 @man lib/erlang/man/man3/erl_prim_loader.3
+@man lib/erlang/man/man3/erl_recomment.3
 @man lib/erlang/man/man3/erl_scan.3
 @man lib/erlang/man/man3/erl_set_memory_block.3
+@man lib/erlang/man/man3/erl_syntax.3
+@man lib/erlang/man/man3/erl_syntax_lib.3
 @man lib/erlang/man/man3/erl_tar.3
+@man lib/erlang/man/man3/erl_tidy.3
 @man lib/erlang/man/man3/erlang.3
 @man lib/erlang/man/man3/erlang_mode.3
 @man lib/erlang/man/man3/error_handler.3
@@ -6411,6 +6496,7 @@ lib/erlang/man/man3/
 @man lib/erlang/man/man3/ic.3
 @man lib/erlang/man/man3/ic_c_protocol.3
 @man lib/erlang/man/man3/ic_clib.3
+@man lib/erlang/man/man3/igor.3
 @man lib/erlang/man/man3/inet.3
 @man lib/erlang/man/man3/init.3
 @man lib/erlang/man/man3/instrument.3
@@ -6472,6 +6558,7 @@ lib/erlang/man/man3/
 @man lib/erlang/man/man3/pg2.3
 @man lib/erlang/man/man3/pman.3
 @man lib/erlang/man/man3/pool.3
+@man lib/erlang/man/man3/prettypr.3
 @man lib/erlang/man/man3/proc_lib.3
 @man lib/erlang/man/man3/proplists.3
 @man lib/erlang/man/man3/qlc.3
@@ -6544,6 +6631,7 @@ lib/erlang/man/man3/
 @man lib/erlang/man/man3/xmerl_scan.3
 @man lib/erlang/man/man3/xmerl_xpath.3
 @man lib/erlang/man/man3/xmerl_xs.3
+@man lib/erlang/man/man3/xmerl_xsd.3
 @man lib/erlang/man/man3/xref.3
 @man lib/erlang/man/man3/yecc.3
 @man lib/erlang/man/man3/zip.3
