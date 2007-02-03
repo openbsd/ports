@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/01/19 14:56:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/02/03 20:39:01 jasper Exp $
+
+BROKEN= 		"need fixes to work on *BSD"
 
 COMMENT=		"GNOME library for CUPS interaction"
 
