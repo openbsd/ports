@@ -1,0 +1,12 @@
+$OpenBSD: patch-mp3cddb,v 1.3 2007/02/03 07:01:10 steven Exp $
+--- mp3cddb.orig	Sat Feb  3 07:57:24 2007
++++ mp3cddb	Sat Feb  3 07:57:41 2007
+@@ -9,7 +9,7 @@
+ 
+ use strict;
+ use vars qw($dir);
+-use MPEG::MP3Info;
++use MP3::Info;
+ use CDDB;
+ use File::Basename;
+ 
