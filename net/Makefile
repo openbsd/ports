@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.445 2007/01/16 13:33:39 steven Exp $
+# $OpenBSD: Makefile,v 1.446 2007/02/04 13:25:19 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -371,6 +371,7 @@
      SUBDIR += xprobe
      SUBDIR += yafc
      SUBDIR += ysmv7
+     SUBDIR += yt
      SUBDIR += ytalk
      SUBDIR += ytalk,no_x11
      SUBDIR += zebra
