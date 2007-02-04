@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/01/22 20:26:23 todd Exp $
+# $OpenBSD: Makefile,v 1.5 2007/02/04 22:19:10 alek Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"Tlen.pl protocol plugin for GAIM"
 
-DISTNAME=	gaim-tlen-20061112
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	gaim-tlen-20070203
 CATEGORIES=	net
 
 HOMEPAGE=	http://nic.com.pl/~alek/gaim-tlen/
@@ -20,8 +19,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-BUILD_DEPENDS=	:gaim->=2.0.0beta5:net/gaim
-RUN_DEPENDS=	:gaim->=2.0.0beta5:net/gaim
+BUILD_DEPENDS=	:gaim-2.0.0beta6:net/gaim
+RUN_DEPENDS=	:gaim-2.0.0beta6:net/gaim
 
 NO_REGRESS=	Yes
 
