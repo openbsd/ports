@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2007/02/04 10:37:58 wilfried Exp $
+# $OpenBSD: Makefile,v 1.16 2007/02/04 12:27:34 wilfried Exp $
 
 COMMENT=		'wm-dockapp; weather monitor'
 
 DISTNAME=		wmweather-2.4.3
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11 x11/windowmaker
 
 HOMEPAGE=		http://www.godisch.de/debian/wmweather/
@@ -32,7 +33,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 WRKSRC=			${WRKDIST}/src
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/shared/examples/wmweather
-	mv ${WRKINST}/${SYSCONFDIR}/wmweather.conf ${PREFIX}/shared/examples/wmweather/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/wmweather
+	mv ${WRKINST}/${SYSCONFDIR}/wmweather.conf ${PREFIX}/share/examples/wmweather/
 
 .include <bsd.port.mk>
