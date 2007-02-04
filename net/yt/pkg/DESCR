@@ -1,0 +1,3 @@
+yt is an extensible Lua script to fetch videos from YouTube.com. You can
+(and probaly should) customize it to use your preferred tools. By
+default it uses net/curl and graphics/ffmpeg.
