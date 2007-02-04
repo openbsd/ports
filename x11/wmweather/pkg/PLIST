@@ -1,5 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/18 13:19:26 espie Exp $
-@conflict gkrellweather-*
-bin/GrabWeather
+@comment $OpenBSD: PLIST,v 1.5 2007/02/04 10:37:58 wilfried Exp $
 bin/wmWeather
+bin/wmweather
 @man man/man1/wmWeather.1
+@man man/man1/wmweather.1
+shared/
+shared/examples/
+shared/examples/wmweather/
+shared/examples/wmweather/wmweather.conf
+@sample ${SYSCONFDIR}/wmweather.conf

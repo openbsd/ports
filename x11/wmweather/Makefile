@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2004/12/19 17:27:05 alek Exp $
+# $OpenBSD: Makefile,v 1.15 2007/02/04 10:37:58 wilfried Exp $
 
 COMMENT=		'wm-dockapp; weather monitor'
 
-DISTNAME=		wmWeather-1.31
-PKGNAME=		${DISTNAME:L}
+DISTNAME=		wmweather-2.4.3
 CATEGORIES=		x11 x11/windowmaker
 
-HOMEPAGE=		http://nis-www.lanl.gov/~mgh/WindowMaker/DockApps.shtml
+HOMEPAGE=		http://www.godisch.de/debian/wmweather/
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
@@ -17,13 +16,23 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xpm c
 
-MASTER_SITES=		http://nis-www.lanl.gov/~mgh/WindowMaker/
+MASTER_SITES=		${HOMEPAGE}
 
-RUN_DEPENDS=		:wget-*:net/wget
+LIB_DEPENDS=		curl.::net/curl
 
+USE_GMAKE=		Yes
 USE_X11=		Yes
 NO_REGRESS=		Yes
 
-WRKSRC=			${WRKDIST}/Src
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		--with-xmessage
+CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
+
+WRKSRC=			${WRKDIST}/src
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/shared/examples/wmweather
+	mv ${WRKINST}/${SYSCONFDIR}/wmweather.conf ${PREFIX}/shared/examples/wmweather/
 
 .include <bsd.port.mk>
