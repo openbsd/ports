@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/02/04 18:56:38 ajacoutot Exp $
+--- Makefile.in.orig	Tue Dec 26 15:47:50 2006
++++ Makefile.in	Tue Dec 26 15:48:47 2006
+@@ -277,7 +277,7 @@ installcheck: installcheck-recursive
+ install-exec-am:
+ install-exec: install-exec-recursive
+ 
+-install-data-am: install-data-local
++install-data-am:
+ install-data: install-data-recursive
+ 
+ install-am: all-am

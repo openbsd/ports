@@ -1,0 +1,35 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/02/04 18:56:38 ajacoutot Exp $
+@mode g+s
+@group games
+bin/ivan
+@mode
+@group
+share/ivan/
+share/ivan/Graphics/
+share/ivan/Graphics/Char.pcx
+share/ivan/Graphics/Cursor.pcx
+share/ivan/Graphics/Effect.pcx
+share/ivan/Graphics/FOW.pcx
+share/ivan/Graphics/Font.pcx
+share/ivan/Graphics/GLTerra.pcx
+share/ivan/Graphics/Humanoid.pcx
+share/ivan/Graphics/Icon.bmp
+share/ivan/Graphics/Item.pcx
+share/ivan/Graphics/Menu.pcx
+share/ivan/Graphics/OLTerra.pcx
+share/ivan/Graphics/Symbol.pcx
+share/ivan/Graphics/WTerra.pcx
+share/ivan/Script/
+share/ivan/Script/char.dat
+share/ivan/Script/define.dat
+share/ivan/Script/dungeon.dat
+share/ivan/Script/glterra.dat
+share/ivan/Script/item.dat
+share/ivan/Script/material.dat
+share/ivan/Script/olterra.dat
+@mode g+w
+@group games
+@sample /var/games/ivan/
+share/ivan/ivan-highscore.scores
+@sample /var/games/ivan/ivan-highscore.scores
+@sample /var/games/ivan/Bones/

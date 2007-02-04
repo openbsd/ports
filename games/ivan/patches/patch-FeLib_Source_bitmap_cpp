@@ -1,0 +1,18 @@
+$OpenBSD: patch-FeLib_Source_bitmap_cpp,v 1.1.1.1 2007/02/04 18:56:38 ajacoutot Exp $
+--- FeLib/Source/bitmap.cpp.orig	Tue Oct 26 21:35:47 2004
++++ FeLib/Source/bitmap.cpp	Mon Jan 15 16:41:50 2007
+@@ -2047,10 +2047,10 @@ void cachedfont::PrintCharacter(const bl
+ 
+   for(; SrcLine != EndLine; ++SrcLine, ++SrcMaskLine, ++DestLine)
+   {
+-    const ulong* FontPtr = reinterpret_cast<const ulong*>(*SrcLine + B.Src.X);
+-    const ulong* EndPtr = FontPtr + 5;
+-    const ulong* MaskPtr = reinterpret_cast<const ulong*>(*SrcMaskLine + B.Src.X);
+-    ulong* DestPtr = reinterpret_cast<ulong*>(*DestLine + B.Dest.X);
++    const uint32_t* FontPtr = reinterpret_cast<const uint32_t*>(*SrcLine + B.Src.X);
++    const uint32_t* EndPtr = FontPtr + 5;
++    const uint32_t* MaskPtr = reinterpret_cast<const uint32_t*>(*SrcMaskLine + B.Src.X);
++    uint32_t* DestPtr = reinterpret_cast<uint32_t*>(*DestLine + B.Dest.X);
+ 
+     for(; FontPtr != EndPtr; ++DestPtr, ++MaskPtr, ++FontPtr)
+       *DestPtr = *DestPtr & *MaskPtr | *FontPtr;
