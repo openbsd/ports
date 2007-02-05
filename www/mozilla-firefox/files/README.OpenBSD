@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.3 2007/01/12 21:46:17 kurt Exp $
+$OpenBSD: README.OpenBSD,v 1.4 2007/02/05 00:11:55 espie Exp $
 
 If you encounter strange problems relating to bookmarks, downloads,
 window placement, toolbars, history, or other settings, it is
@@ -11,7 +11,7 @@ If Firefox doesn't start at all, first try starting it with
 -safe-mode switch, which disables extensions and themes for your
 session.
 
-If you still can't start Firefox, recompile it with --enable-debug.
+If you still can't start Firefox, use the -debug flavor package instead.
 If you can't fix the problem yourself, remember to provide output
 when sending bug report.
 

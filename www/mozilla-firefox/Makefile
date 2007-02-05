@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2007/01/12 21:46:17 kurt Exp $
+# $OpenBSD: Makefile,v 1.64 2007/02/05 00:11:55 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -8,8 +8,8 @@ COMMENT-devel=	"devel files for Gecko"
 VER=		2.0.0.1
 DISTNAME=	mozilla
 PKGNAME=	mozilla-firefox-${VER}
-PKGNAME-main=	mozilla-firefox-${VER}
-PKGNAME-devel=	mozilla-firefox-devel-${VER}
+PKGNAME-main=	mozilla-firefox-${VER}p0
+PKGNAME-devel=	mozilla-firefox-devel-${VER}p0
 SO_VERSION=	19.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -27,6 +27,9 @@ SHARED_LIBS+=	${_lib}	${SO_VERSION}
 .endfor
 
 CATEGORIES=	www
+
+FLAVORS=	debug
+FLAVOR?=
 
 HOMEPAGE=	http://www.mozilla.org/projects/firefox/
 
@@ -49,6 +52,7 @@ LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss
 WANTLIB=	X11 Xext Xrender atk-1.0 c cairo fontconfig freetype \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 m pango-1.0 \
+		pangox-1.0 \
 		pangocairo-1.0 pangoft2-1.0 png pthread stdc++ z
 
 WANTLIB-main=	${WANTLIB} Xft Xinerama Xt jpeg
@@ -95,6 +99,10 @@ CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 # from browser/config/mozconfig
 CONFIGURE_ARGS+=--enable-application=browser
 
+.if ${FLAVOR:L:Mdebug}
+CONFIGURE_ARGS+=--enable-debug
+.endif
+
 MAKE_ENV=	MOZ_CO_PROJECT=browser \
 		LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
 		BUILD_OFFICIAL=1 \
@@ -102,7 +110,8 @@ MAKE_ENV=	MOZ_CO_PROJECT=browser \
 		SO_VERSION="${SO_VERSION}" \
 		NSS_ENABLE_ECC=1
 CONFIGURE_ENV=	${MAKE_ENV} \
-		PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig"
+		PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig" \
+		MOZ_ENABLE_COREXFONTS=1
 
 MOB=		${WRKSRC}/dist/bin
 MOZ=		${PREFIX}/mozilla-firefox
