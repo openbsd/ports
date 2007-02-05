@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.175 2006/12/26 10:38:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.176 2007/02/05 07:26:58 msf Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -16,6 +16,7 @@
      SUBDIR += cadubi
      SUBDIR += cairo
      SUBDIR += camlimages
+     SUBDIR += comix
      SUBDIR += compface
      SUBDIR += cqcam
      SUBDIR += dcraw
