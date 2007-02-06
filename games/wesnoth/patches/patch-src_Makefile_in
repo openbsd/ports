@@ -1,21 +1,21 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2005/10/03 13:40:14 robert Exp $
---- src/Makefile.in.orig	Thu Jul 21 22:44:46 2005
-+++ src/Makefile.in	Mon Aug  8 23:03:00 2005
-@@ -817,7 +817,7 @@
- 	serialization/string_utils.hpp \
- 	zipios++/xcoll.hpp
+$OpenBSD: patch-src_Makefile_in,v 1.2 2007/02/06 07:59:08 jasper Exp $
+--- src/Makefile.in.orig	Fri Jan 12 23:13:56 2007
++++ src/Makefile.in	Thu Jan 25 01:21:52 2007
+@@ -590,7 +590,7 @@
+ 	loadscreen_empty.cpp \
+ 	serialization/parser.cpp
  
--wesnothd_LDADD = @SDL_NET_LIBS@ @SDL_LIBS@ $(LIBZIPIOS) $(LIBINTL)
-+wesnothd_LDADD = @SDL_NET_LIBS@ @SDL_LIBS@ $(LIBZIPIOS) $(LIBINTL) $(LTLIBINTL)
- 
- #############################################################################
- #    Campaign Server                                                        #
-@@ -856,7 +856,7 @@
- 	tstring.hpp \
- 	zipios++/xcoll.hpp
- 
--campaignd_LDADD = @SDL_NET_LIBS@ @SDL_LIBS@ $(LIBZIPIOS) $(LIBINTL)
-+campaignd_LDADD = @SDL_NET_LIBS@ @SDL_LIBS@ $(LIBZIPIOS) $(LIBINTL) $(LTLIBINTL)
+-wesnothd_LDADD = -L. -lwesnoth-core @SDL_NET_LIBS@ @SDL_LIBS@ $(LIBZIPIOS) $(LIBINTL)
++wesnothd_LDADD = -L. -lwesnoth-core @SDL_NET_LIBS@ @SDL_LIBS@ $(LIBZIPIOS) $(LIBINTL) $(LTLIBINTL)
+ wesnothd_DEPENDENCIES = libwesnoth-core.a
  
  #############################################################################
- #    Castle building helpers                                                #
+@@ -604,7 +604,7 @@
+ 	loadscreen_empty.cpp \
+ 	serialization/parser.cpp
+ 
+-campaignd_LDADD = -L. -lwesnoth-core @SDL_NET_LIBS@ @SDL_LIBS@ $(LIBZIPIOS) $(LIBINTL)
++campaignd_LDADD = -L. -lwesnoth-core @SDL_NET_LIBS@ @SDL_LIBS@ $(LIBZIPIOS) $(LIBINTL) $(LTLIBINTL)
+ campaignd_DEPENDENCIES = libwesnoth-core.a
+ 
+ #############################################################################

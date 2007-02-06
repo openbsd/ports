@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_language_cpp,v 1.1 2007/02/06 07:59:08 jasper Exp $
+--- src/language.cpp.orig	Wed Jul 12 00:57:03 2006
++++ src/language.cpp	Thu Jan 25 22:50:06 2007
+@@ -132,12 +132,10 @@
+ #endif
+ #endif
+ 
+-#ifdef __BEOS__
+ 	if(setenv ("LANG", locale, 1) == -1)
+ 		std::cerr << "setenv LANG failed: " << strerror(errno);
+ 	if(setenv ("LC_ALL", locale, 1) == -1)
+ 		std::cerr << "setenv LC_ALL failed: " << strerror(errno);
+-#endif
+ #ifdef __APPLE__
+ 	if(setenv ("LANGUAGE", locale, 1) == -1)
+ 		std::cerr << "setenv LANGUAGE failed: " << strerror(errno);
