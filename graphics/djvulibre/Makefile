@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/07/16 16:48:07 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/02/06 07:17:42 steven Exp $
 
 COMMENT=	"view, decode and encode DjVu files"
 
-DISTNAME=	djvulibre-3.5.17
-SHARED_LIBS=	djvulibre 17.0
+DISTNAME=	djvulibre-3.5.18
+SHARED_LIBS=	djvulibre 18.0
 CATEGORIES=	graphics print
 
 HOMEPAGE=	http://djvulibre.djvuzone.org/
@@ -32,7 +32,8 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-jpeg=${LOCALBASE} \
 		--with-tiff=${LOCALBASE} \
-		--with-extra-libraries=${LOCALBASE}/lib
+		--with-extra-libraries=${LOCALBASE}/lib \
+		--disable-i18n
 CONFIGURE_ENV=	TIFF_LIBS="-L${LOCALBASE}/lib -ltiff -lz -ljpeg"
 
 .if ${FLAVOR:Mno_x11}
