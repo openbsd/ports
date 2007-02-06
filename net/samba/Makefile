@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.78 2007/01/12 10:58:11 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.79 2007/02/06 07:01:13 mbalmer Exp $
 
 COMMENT-main=	"SMB and CIFS client and server for UNIX"
 COMMENT-docs=	"documentation and examples for samba"
 
-DISTNAME=		samba-3.0.23d
-PKGNAME-main=		${DISTNAME}p2
+DISTNAME=		samba-3.0.24
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 SHARED_LIBS=		smbclient	0.3 \
 			msrpc		0.2
@@ -23,7 +22,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c ncurses readline
 
-MASTER_SITES=	http://us2.samba.org/samba/ftp/ \
+MASTER_SITES=	http://download.samba.org/samba/ftp/ \
+		http://us2.samba.org/samba/ftp/ \
 		http://us2.samba.org/samba/ftp/old-versions/
 
 MODULES= 	converters/libiconv
