@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2007/02/06 14:46:25 henning Exp $
+# $OpenBSD: Makefile,v 1.23 2007/02/06 15:07:35 henning Exp $
 
 COMMENT-main=		"active monitoring tool"
 V=			2.73
 DISTNAME=		symon-${V}
-PKGNAME-main=		${DISTNAME}
+PKGNAME-main=		${DISTNAME}p0
 CATEGORIES=		sysutils net
 
 HOMEPAGE=		http://www.xs4all.nl/~wpd/symon
@@ -25,7 +25,7 @@ FULLPKGNAME-mon=	symon-mon-${V}
 COMMENT-mon=		"active host monitor"
 LIB_DEPENDS-mon=
 # gatherer only package
-FULLPKGNAME-mux=        symon-mux-${V}
+FULLPKGNAME-mux=        symon-mux-${V}p0
 COMMENT-mux=		"symon data gatherer"
 LIB_DEPENDS-mux=	rrd:rrdtool-*:net/rrdtool
 
