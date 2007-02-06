@@ -1,4 +1,4 @@
-/* $OpenBSD: iogen.c,v 1.3 2005/12/06 19:03:42 marco Exp $ */
+/* $OpenBSD: iogen.c,v 1.4 2007/02/06 19:25:05 marco Exp $ */
 /*
  * Copyright (c) 2005 Marco Peereboom <marco@peereboom.us>
  *
@@ -54,6 +54,27 @@ int			randomize;
 char			target_dir[MAXPATHLEN];
 char			result_dir[MAXPATHLEN];
 
+enum iog_pattern {
+	IOGEN_PAT_BLINK4,
+	IOGEN_PAT_BLINK8,
+	IOGEN_PAT_BLINK16,
+	IOGEN_PAT_BLINK32,
+	IOGEN_PAT_0,
+	IOGEN_PAT_5,
+	IOGEN_PAT_A,
+	IOGEN_PAT_F,
+	IOGEN_PAT_A5,
+	IOGEN_PAT_A5_BLINK,
+	IOGEN_PAT_AA55,
+	IOGEN_PAT_AA55_BLINK,
+	IOGEN_PAT_AAAA5555,
+	IOGEN_PAT_AAAA5555_BLINK,
+	IOGEN_PAT_AAAAAAA55555555,
+	IOGEN_PAT_WALK,
+	IOGEN_PAT_TEXT, /* must be last entry */
+};
+enum iog_pattern	pattern = IOGEN_PAT_TEXT;
+
 char			*io_pattern[] = {
 			    "The quick brown fox jumps over the lazy dog. ",
 			    "tHE QUICK BROWN FOX JUMPS OVER THE LAZY DOG. ",
@@ -88,6 +109,78 @@ killall(void)
 	}
 }
 
+u_int64_t
+get_pattern(int pat)
+{
+	u_int64_t		pa = IOGEN_PAT_TEXT;
+
+	switch (pat) {
+	case IOGEN_PAT_BLINK32:
+		pa = 0xffffffff00000000llu;
+		break;
+	case IOGEN_PAT_BLINK16:
+		pa = 0xffff0000ffff0000llu;
+		break;
+	case IOGEN_PAT_BLINK8:
+		pa = 0xff00ff00ff00ff00llu;
+		break;
+	case IOGEN_PAT_BLINK4:
+		pa = 0xf0f0f0f0f0f0f0f0llu;
+		break;
+	case IOGEN_PAT_0:
+		pa = 0x0000000000000000llu;
+		break;
+	case IOGEN_PAT_5:
+		pa = 0x5555555555555555llu;
+		break;
+	case IOGEN_PAT_A:
+		pa = 0xaaaaaaaaaaaaaaaallu;
+		break;
+	case IOGEN_PAT_F:
+		pa = 0xffffffffffffffffllu;
+		break;
+	case IOGEN_PAT_A5:
+		pa = 0xa5a5a5a5a5a5a5a5llu;
+		break;
+	case IOGEN_PAT_A5_BLINK:
+		pa = 0xa55aa55aa55aa55allu;
+		break;
+	case IOGEN_PAT_AA55:
+		pa = 0xaa55aa55aa55aa55llu;
+		break;
+	case IOGEN_PAT_AA55_BLINK:
+		pa = 0xaa55aa5555aa55aallu;
+		break;
+	case IOGEN_PAT_AAAA5555:
+		pa = 0xaaaa5555aaaa5555llu;
+		break;
+	case IOGEN_PAT_AAAA5555_BLINK:
+		pa = 0xaaaa55555555aaaallu;
+		break;
+	case IOGEN_PAT_AAAAAAA55555555:
+		pa = 0xaaaaaaaa55555555llu;
+		break;
+	case IOGEN_PAT_WALK:
+		pa = 0x8421842184218421llu;
+		break;
+	}
+
+	return (pa);
+}
+
+void
+show_patterns(void)
+{
+	int			i;
+
+	printf("pattern number\tpattern\n");
+	for (i = 0; i < IOGEN_PAT_TEXT; i++)
+		if (get_pattern(i) == 0)
+		printf("%d\t\t0x0000000000000000\n", i);
+		else
+		printf("%d\t\t%#llx\n", i, get_pattern(i));
+}
+
 void
 usage(void)
 {
@@ -102,6 +195,7 @@ usage(void)
 	fprintf(stderr, "-f <result directory>; Default = iogen.res\n");
 	fprintf(stderr, "-n <number of io processes>; Default = 1\n");
 	fprintf(stderr, "-t <seconds between update>; Default = 60 seconds\n");
+	fprintf(stderr, "-P <payload pattern>; ? displays patterns, Default = readable text\n");
 	fprintf(stderr, "-k kill all running io processes\n\n");
 	fprintf(stderr, "If parameters are omited defaults will be used.\n");
 	exit(0);
@@ -175,26 +269,38 @@ err_log(int flags, const char *fmt, ...)
 }
 
 void
-fill_buffer(char *buffer, size_t size)
+fill_buffer(char *buffer, size_t size, int pat)
 {
 	long long	i = 0, more = 1;
 	char		*p = buffer;
 	size_t		copy_len;
+	u_int64_t	pa;
+	char		*pap;
 
-	while (more) {
-		if (io_pattern[i] == NULL)
-			i = 0;
+	pa = get_pattern(pat);
+	if (pa == IOGEN_PAT_TEXT) {
+		while (more) {
+			if (io_pattern[i] == NULL)
+				i = 0;
 
-		copy_len = strlen(io_pattern[i]);
-		if ((p + copy_len) > (buffer + size))
-			copy_len = (buffer + size) - p;
-		memcpy(p, io_pattern[i], copy_len);
-		p += copy_len;
-		i++;
-		if (p == buffer + size)
-			more = 0;
-		else if (p > buffer + size)
-			err(1, "buffer overflow in fill pattern");
+			copy_len = strlen(io_pattern[i]);
+			if ((p + copy_len) > (buffer + size))
+				copy_len = (buffer + size) - p;
+			memcpy(p, io_pattern[i], copy_len);
+			p += copy_len;
+			i++;
+			if (p == buffer + size)
+				more = 0;
+			else if (p > buffer + size)
+				err(1, "buffer overflow in fill pattern");
+		}
+		return;
+	}
+
+	/* fill buffer for non text pattern */
+	for (i = 0; i < size; i++) {
+		pap = ((char *)(&pa)) + (i % sizeof(pa));
+		buffer[i] = *pap;
 	}
 }
 
@@ -256,12 +362,12 @@ run_io(void)
 	src = malloc(io_size);
 	if (!src)
 		err(1, "malloc failed in process %i", getpid());
-	fill_buffer(src, io_size);
+	fill_buffer(src, io_size, pattern);
 
 	dst = malloc(io_size);
 	if (!dst)
 		err(1, "malloc failed in process %i", getpid());
-	fill_buffer(dst, io_size);
+	fill_buffer(dst, io_size, pattern);
 
 	if (memcmp(src, dst, io_size) != 0)
 		errx(1, "source and destination buffer not the same");
@@ -413,7 +519,7 @@ main(int argc, char *argv[])
 	strlcpy(target_dir, "./", sizeof target_dir);
 	strlcpy(result_dir, "./", sizeof result_dir);
 
-	while ((ch = getopt(argc, argv, "b:d:f:kn:p:rs:t:")) != -1) {
+	while ((ch = getopt(argc, argv, "b:d:f:kn:p:rs:t:P:")) != -1) {
 		switch (ch) {
 		case 'b':
 			io_size = atoll(optarg) *
@@ -481,6 +587,16 @@ main(int argc, char *argv[])
 				errx(1, "time slice too small");
 			if (interval > 3600)
 				errx(1, "time slice too large");
+			break;
+		case 'P':
+			if (optarg[0] == '?') {
+				show_patterns();
+				exit(0);
+			}
+
+			pattern = atoi(optarg);
+			if (pattern >= IOGEN_PAT_TEXT)
+				errx(1, "illegal pattern");
 			break;
 		case 'h':
 		default:
