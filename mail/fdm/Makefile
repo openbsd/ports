@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/01/18 21:47:01 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/02/06 07:27:24 steven Exp $
 
 COMMENT=	"fetch, filter and deliver mail"
 
-DISTNAME=	fdm-0.8a
+DISTNAME=	fdm-0.9a
 CATEGORIES=	mail
 
 HOMEPAGE=       http://fdm.sourceforge.net/
@@ -14,11 +14,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB= c crypto ssl
+WANTLIB= c crypto ssl z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fdm/}
 
 post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/fdm
+	${INSTALL_DATA} ${WRKSRC}/fdm-sanitize ${PREFIX}/share/fdm
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/fdm
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/fdm
 	${INSTALL_DATA} ${WRKSRC}/MANUAL ${PREFIX}/share/doc/fdm
