@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 2006/12/16 12:22:33 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2007/02/06 21:29:06 espie Exp $
 
 COMMENT=		"vector graphics library"
 
-PKGNAME=		${DISTNAME}p0
-DISTNAME=		cairo-1.0.4
-SHARED_LIBS=		cairo	4.4
+DISTNAME=		cairo-1.2.6
+SHARED_LIBS +=	cairo                5.0      # .11.3
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://cairographics.org/introduction
 
 MAINTAINER=		Eric Faurot <eric.faurot@gmail.com>
 
-WANTLIB=		X11 Xext Xrender freetype fontconfig m z
+WANTLIB=		ICE SM X11 Xext Xrender freetype fontconfig m z
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,12 +24,13 @@ USE_X11=		Yes
 USE_LIBTOOL=		Yes
 
 LIB_DEPENDS=		png::graphics/png \
-			glitz::graphics/glitz
+			glitz.>=2:glitz->=0.5.6:graphics/glitz
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=  	PKG_CONFIG_PATH="${X11BASE}/lib/pkgconfig"
-CONFIGURE_ARGS+=	--enable-ps
-CONFIGURE_ARGS+=	--enable-pdf
-CONFIGURE_ARGS+=	--enable-glitz
+CONFIGURE_ARGS=		--enable-glitz
+
+
+REGRESS_DEPENDS=	:ghostscript-*:print/ghostscript/gnu
+SEPARATE_BUILD=		simple
 
 .include <bsd.port.mk>
