@@ -1,0 +1,35 @@
+.TH CHECKBASHISMS 1 "Debian Utilities" "DEBIAN" \" -*- nroff -*-
+.SH NAME
+checkbashisms \- check for bashisms in /bin/sh scripts
+.SH SYNOPSIS
+\fBcheckbashisms\fR \fIscript\fR ...
+.br
+\fBcheckbashisms \-\-help|\-\-version\fR
+.SH DESCRIPTION
+\fBcheckbashisms\fR, based on one of the checks from the \fBlintian\fR
+system, performs basic checks on \fI/bin/sh\fR shell scripts for the
+possible presence of bashisms.  It takes the names of the shell
+scripts on the command line, and outputs warnings if possible bashisms
+are detected.
+.SH OPTIONS
+.TP
+.BR \-\-help ", " \-h
+Show a summary of options.
+.TP
+.BR \-\-version ", " \-v
+Show version and copyright information.
+.SH "EXIT VALUES"
+The exit value will be 0 if no possible bashisms or other problems
+were detected.  Otherwise it will be the sum of the following error
+values:
+.TP
+1
+A possible bashism was detected.
+.TP
+2
+A file was skipped for some reason, for example, because it was
+unreadable or not found.  The warning message will give details.
+.SH AUTHOR
+\fBcheckbashisms\fR was originally written as a shell script by Yann Dirson
+<dirson@debian.org> and rewritten in Perl with many more features by
+Julian Gilbey <jdg@debian.org>.

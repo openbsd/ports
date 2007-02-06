@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/02/06 22:22:16 jasper Exp $
+bin/checkbashisms
+@man man/man1/checkbashisms.1
