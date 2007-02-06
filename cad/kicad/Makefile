@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/01/09 16:12:55 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/02/06 07:16:34 steven Exp $
 
 COMMENT-main=	"circuit drawing and schematic capture"
 COMMENT-docs=	"documentation for the kicad library of components"
 
-V=		2006-08-28
+V=		2007-01-15
 DISTNAME=	kicad-sources-${V}
-PKGNAME=	kicad-20060828
-PKGNAME-main=	kicad-20060828
-PKGNAME-docs=	kicad-docs-20060828
+PKGNAME=	kicad-20070115
+PKGNAME-main=	kicad-20070115
+PKGNAME-docs=	kicad-docs-20070115
 
 CATEGORIES=	cad
 

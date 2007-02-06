@@ -1,0 +1,12 @@
+$OpenBSD: patch-libs_linux,v 1.1 2007/02/06 07:16:34 steven Exp $
+--- libs.linux.orig	Sat Feb  3 13:03:16 2007
++++ libs.linux	Sat Feb  3 13:03:24 2007
+@@ -11,7 +11,7 @@ FINAL = 1
+ # You must comment or uncomment this line for dynamic or static link
+ # dynamic link is less difficult than static link
+ # choose it if you have problems (libs not found, or unresolved references) ), or if kicad is running only on YOUR system.
+-KICAD_STATIC_LINK = 1
++#KICAD_STATIC_LINK = 1
+ 
+ # path and version definition for wxWidgets and mesa libs
+ MESALIBSPATH = /usr/local/lib
