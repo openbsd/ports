@@ -1,0 +1,69 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/02/06 07:02:25 simon Exp $
+${P5SITE}/CGI/
+${P5SITE}/CGI/FormBuilder/
+${P5SITE}/CGI/FormBuilder.pm
+${P5SITE}/CGI/FormBuilder.pod
+${P5SITE}/CGI/FormBuilder/Field/
+${P5SITE}/CGI/FormBuilder/Field.pm
+${P5SITE}/CGI/FormBuilder/Field/button.pm
+${P5SITE}/CGI/FormBuilder/Field/checkbox.pm
+${P5SITE}/CGI/FormBuilder/Field/file.pm
+${P5SITE}/CGI/FormBuilder/Field/hidden.pm
+${P5SITE}/CGI/FormBuilder/Field/image.pm
+${P5SITE}/CGI/FormBuilder/Field/password.pm
+${P5SITE}/CGI/FormBuilder/Field/radio.pm
+${P5SITE}/CGI/FormBuilder/Field/select.pm
+${P5SITE}/CGI/FormBuilder/Field/static.pm
+${P5SITE}/CGI/FormBuilder/Field/submit.pm
+${P5SITE}/CGI/FormBuilder/Field/text.pm
+${P5SITE}/CGI/FormBuilder/Field/textarea.pm
+${P5SITE}/CGI/FormBuilder/Messages/
+${P5SITE}/CGI/FormBuilder/Messages.pm
+${P5SITE}/CGI/FormBuilder/Messages/C.pm
+${P5SITE}/CGI/FormBuilder/Messages/_example.pm
+${P5SITE}/CGI/FormBuilder/Messages/da.pm
+${P5SITE}/CGI/FormBuilder/Messages/da_DK.pm
+${P5SITE}/CGI/FormBuilder/Messages/de.pm
+${P5SITE}/CGI/FormBuilder/Messages/de_DE.pm
+${P5SITE}/CGI/FormBuilder/Messages/default.pm
+${P5SITE}/CGI/FormBuilder/Messages/en.pm
+${P5SITE}/CGI/FormBuilder/Messages/en_US.pm
+${P5SITE}/CGI/FormBuilder/Messages/es.pm
+${P5SITE}/CGI/FormBuilder/Messages/es_ES.pm
+${P5SITE}/CGI/FormBuilder/Messages/fr.pm
+${P5SITE}/CGI/FormBuilder/Messages/fr_FR.pm
+${P5SITE}/CGI/FormBuilder/Messages/ja.pm
+${P5SITE}/CGI/FormBuilder/Messages/ja_JP.pm
+${P5SITE}/CGI/FormBuilder/Messages/no.pm
+${P5SITE}/CGI/FormBuilder/Messages/no_NO.pm
+${P5SITE}/CGI/FormBuilder/Messages/tr.pm
+${P5SITE}/CGI/FormBuilder/Messages/tr_TR.pm
+${P5SITE}/CGI/FormBuilder/Multi.pm
+${P5SITE}/CGI/FormBuilder/Source/
+${P5SITE}/CGI/FormBuilder/Source.pm
+${P5SITE}/CGI/FormBuilder/Source/File.pm
+${P5SITE}/CGI/FormBuilder/Template/
+${P5SITE}/CGI/FormBuilder/Template.pm
+${P5SITE}/CGI/FormBuilder/Template/Builtin.pm
+${P5SITE}/CGI/FormBuilder/Template/Div.pm
+${P5SITE}/CGI/FormBuilder/Template/Fast.pm
+${P5SITE}/CGI/FormBuilder/Template/HTML.pm
+${P5SITE}/CGI/FormBuilder/Template/TT2.pm
+${P5SITE}/CGI/FormBuilder/Template/Text.pm
+${P5SITE}/CGI/FormBuilder/Test.pm
+${P5SITE}/CGI/FormBuilder/Util.pm
+@man man/man3p/CGI::FormBuilder.3p
+@man man/man3p/CGI::FormBuilder::Field.3p
+@man man/man3p/CGI::FormBuilder::Messages.3p
+@man man/man3p/CGI::FormBuilder::Multi.3p
+@man man/man3p/CGI::FormBuilder::Source.3p
+@man man/man3p/CGI::FormBuilder::Source::File.3p
+@man man/man3p/CGI::FormBuilder::Template.3p
+@man man/man3p/CGI::FormBuilder::Template::Builtin.3p
+@man man/man3p/CGI::FormBuilder::Template::Div.3p
+@man man/man3p/CGI::FormBuilder::Template::Fast.3p
+@man man/man3p/CGI::FormBuilder::Template::HTML.3p
+@man man/man3p/CGI::FormBuilder::Template::TT2.3p
+@man man/man3p/CGI::FormBuilder::Template::Text.3p
+@man man/man3p/CGI::FormBuilder::Test.3p
+@man man/man3p/CGI::FormBuilder::Util.3p
