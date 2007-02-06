@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.56 2006/12/16 12:22:34 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2007/02/06 07:15:03 steven Exp $
 
 COMMENT=	"GTK+2 IRC client"
 
 MAJOR=		2.6
 VERSION=	${MAJOR}.2
 DISTNAME=	xchat-${VERSION}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net x11
 
 HOMEPAGE=	http://www.xchat.org/
@@ -34,7 +34,7 @@ MODULES=	devel/gettext
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --disable-python --disable-textfe \
-		 --disable-perl --disable-mmx \
+		 --disable-perl --disable-mmx --disable-dbus \
 		 --enable-ipv6 --enable-openssl="/usr"
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
