@@ -1,0 +1,66 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/02/07 00:59:02 todd Exp $
+include/dbus-1.0/
+include/dbus-1.0/dbus/
+include/dbus-1.0/dbus/dbus-python.h
+lib/pkgconfig/
+lib/pkgconfig/dbus-python.pc
+@comment lib/python${MODPY_VERSION}/site-packages/_dbus_bindings.a
+@comment lib/python${MODPY_VERSION}/site-packages/_dbus_bindings.la
+lib/python${MODPY_VERSION}/site-packages/_dbus_bindings.so
+@comment lib/python${MODPY_VERSION}/site-packages/_dbus_glib_bindings.a
+@comment lib/python${MODPY_VERSION}/site-packages/_dbus_glib_bindings.la
+lib/python${MODPY_VERSION}/site-packages/_dbus_glib_bindings.so
+lib/python${MODPY_VERSION}/site-packages/dbus/
+lib/python${MODPY_VERSION}/site-packages/dbus/__init__.py
+lib/python${MODPY_VERSION}/site-packages/dbus/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/dbus/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/dbus/_dbus.py
+lib/python${MODPY_VERSION}/site-packages/dbus/_dbus.pyc
+lib/python${MODPY_VERSION}/site-packages/dbus/_dbus.pyo
+lib/python${MODPY_VERSION}/site-packages/dbus/_expat_introspect_parser.py
+lib/python${MODPY_VERSION}/site-packages/dbus/_expat_introspect_parser.pyc
+lib/python${MODPY_VERSION}/site-packages/dbus/_expat_introspect_parser.pyo
+lib/python${MODPY_VERSION}/site-packages/dbus/_version.py
+lib/python${MODPY_VERSION}/site-packages/dbus/_version.pyc
+lib/python${MODPY_VERSION}/site-packages/dbus/_version.pyo
+lib/python${MODPY_VERSION}/site-packages/dbus/dbus_bindings.py
+lib/python${MODPY_VERSION}/site-packages/dbus/dbus_bindings.pyc
+lib/python${MODPY_VERSION}/site-packages/dbus/dbus_bindings.pyo
+lib/python${MODPY_VERSION}/site-packages/dbus/decorators.py
+lib/python${MODPY_VERSION}/site-packages/dbus/decorators.pyc
+lib/python${MODPY_VERSION}/site-packages/dbus/decorators.pyo
+lib/python${MODPY_VERSION}/site-packages/dbus/exceptions.py
+lib/python${MODPY_VERSION}/site-packages/dbus/exceptions.pyc
+lib/python${MODPY_VERSION}/site-packages/dbus/exceptions.pyo
+lib/python${MODPY_VERSION}/site-packages/dbus/glib.py
+lib/python${MODPY_VERSION}/site-packages/dbus/glib.pyc
+lib/python${MODPY_VERSION}/site-packages/dbus/glib.pyo
+lib/python${MODPY_VERSION}/site-packages/dbus/lowlevel.py
+lib/python${MODPY_VERSION}/site-packages/dbus/lowlevel.pyc
+lib/python${MODPY_VERSION}/site-packages/dbus/lowlevel.pyo
+lib/python${MODPY_VERSION}/site-packages/dbus/mainloop/
+lib/python${MODPY_VERSION}/site-packages/dbus/mainloop/__init__.py
+lib/python${MODPY_VERSION}/site-packages/dbus/mainloop/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/dbus/mainloop/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/dbus/mainloop/glib.py
+lib/python${MODPY_VERSION}/site-packages/dbus/mainloop/glib.pyc
+lib/python${MODPY_VERSION}/site-packages/dbus/mainloop/glib.pyo
+lib/python${MODPY_VERSION}/site-packages/dbus/proxies.py
+lib/python${MODPY_VERSION}/site-packages/dbus/proxies.pyc
+lib/python${MODPY_VERSION}/site-packages/dbus/proxies.pyo
+lib/python${MODPY_VERSION}/site-packages/dbus/service.py
+lib/python${MODPY_VERSION}/site-packages/dbus/service.pyc
+lib/python${MODPY_VERSION}/site-packages/dbus/service.pyo
+lib/python${MODPY_VERSION}/site-packages/dbus/types.py
+lib/python${MODPY_VERSION}/site-packages/dbus/types.pyc
+lib/python${MODPY_VERSION}/site-packages/dbus/types.pyo
+lib/python${MODPY_VERSION}/site-packages/dbus_bindings.py
+lib/python${MODPY_VERSION}/site-packages/dbus_bindings.pyc
+lib/python${MODPY_VERSION}/site-packages/dbus_bindings.pyo
+share/doc/dbus-python/
+share/doc/dbus-python/API_CHANGES.txt
+share/doc/dbus-python/HACKING.txt
+share/doc/dbus-python/NEWS
+share/doc/dbus-python/README
+share/doc/dbus-python/TODO
+share/doc/dbus-python/tutorial.txt
