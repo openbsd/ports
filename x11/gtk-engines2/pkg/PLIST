@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.15 2007/01/19 14:53:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2007/02/07 20:05:02 jasper Exp $
+@conflict gtk-thinice-engine-*
+@conflict gtk2-clearlooks-engine-*
+@conflict gnome-themes-<2.10
 lib/gtk-2.0/2.4.0/engines/libclearlooks.a
 lib/gtk-2.0/2.4.0/engines/libclearlooks.la
 lib/gtk-2.0/2.4.0/engines/libclearlooks.so
