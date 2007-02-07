@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.191 2007/01/29 20:22:49 kili Exp $
+# $OpenBSD: Makefile,v 1.192 2007/02/07 09:27:01 msf Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -90,6 +90,7 @@
      SUBDIR += p5-Pod-Spell
      SUBDIR += p5-Pod-Tests
      SUBDIR += p5-Regexp-Common
+     SUBDIR += p5-Regexp-DefaultFlags
      SUBDIR += p5-Sort-Versions
      SUBDIR += p5-String-Approx
      SUBDIR += p5-String-Koremutake
