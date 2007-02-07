@@ -1,4 +1,4 @@
-/* $OpenBSD: iogen.c,v 1.4 2007/02/06 19:25:05 marco Exp $ */
+/* $OpenBSD: iogen.c,v 1.5 2007/02/07 14:43:03 marco Exp $ */
 /*
  * Copyright (c) 2005 Marco Peereboom <marco@peereboom.us>
  *
@@ -54,11 +54,12 @@ int			randomize;
 char			target_dir[MAXPATHLEN];
 char			result_dir[MAXPATHLEN];
 
-enum iog_pattern {
+enum iog_pat_id {
 	IOGEN_PAT_BLINK4,
 	IOGEN_PAT_BLINK8,
 	IOGEN_PAT_BLINK16,
 	IOGEN_PAT_BLINK32,
+	IOGEN_PAT_BLINK64,
 	IOGEN_PAT_0,
 	IOGEN_PAT_5,
 	IOGEN_PAT_A,
@@ -70,10 +71,24 @@ enum iog_pattern {
 	IOGEN_PAT_AAAA5555,
 	IOGEN_PAT_AAAA5555_BLINK,
 	IOGEN_PAT_AAAAAAA55555555,
-	IOGEN_PAT_WALK,
+	IOGEN_PAT_A5_BLINK64,
+	IOGEN_PAT_BLINK1_64,
+	IOGEN_PAT_BLINK2_64,
+	IOGEN_PAT_BLINK4_64,
+	IOGEN_PAT_BLINK8_64,
+	IOGEN_PAT_WALK64,
+	IOGEN_PAT_WALK128,
+	IOGEN_PAT_COUNT,
 	IOGEN_PAT_TEXT, /* must be last entry */
 };
-enum iog_pattern	pattern = IOGEN_PAT_TEXT;
+enum iog_pat_id		pattern = IOGEN_PAT_TEXT;
+
+#define MAX_PAT_SIZE	512
+struct iog_pattern {
+	size_t		size;
+	enum iog_pat_id	pattern;
+	u_int8_t	buf[MAX_PAT_SIZE];
+};
 
 char			*io_pattern[] = {
 			    "The quick brown fox jumps over the lazy dog. ",
@@ -109,76 +124,167 @@ killall(void)
 	}
 }
 
-u_int64_t
-get_pattern(int pat)
+int
+get_pattern(int pat, struct iog_pattern *ip)
 {
 	u_int64_t		pa = IOGEN_PAT_TEXT;
+	u_int64_t		scratch[MAX_PAT_SIZE / sizeof(u_int64_t)];
+	u_int32_t		s = 0;
+	u_int8_t		*p;
+	int			x;
 
+	if (!ip)
+		return (1);
+
+	memset(scratch, 0, MAX_PAT_SIZE / sizeof(u_int64_t));
 	switch (pat) {
+	case IOGEN_PAT_BLINK64:
+		scratch[s++] = 0x0000000000000000llu;
+		scratch[s++] = 0xffffffffffffffffllu;
+		ip->size = sizeof(scratch[0]) * s;
+		break;
 	case IOGEN_PAT_BLINK32:
-		pa = 0xffffffff00000000llu;
+		scratch[s++] = 0xffffffff00000000llu;
+		ip->size = sizeof(scratch[0]);
 		break;
 	case IOGEN_PAT_BLINK16:
-		pa = 0xffff0000ffff0000llu;
+		scratch[s++] = 0xffff0000ffff0000llu;
+		ip->size = sizeof(scratch[0]);
 		break;
 	case IOGEN_PAT_BLINK8:
-		pa = 0xff00ff00ff00ff00llu;
+		scratch[s++] = 0xff00ff00ff00ff00llu;
+		ip->size = sizeof(scratch[0]);
 		break;
 	case IOGEN_PAT_BLINK4:
-		pa = 0xf0f0f0f0f0f0f0f0llu;
+		scratch[s++] = 0xf0f0f0f0f0f0f0f0llu;
+		ip->size = sizeof(scratch[0]);
 		break;
 	case IOGEN_PAT_0:
-		pa = 0x0000000000000000llu;
+		scratch[s++] = 0x0000000000000000llu;
+		ip->size = sizeof(scratch[0]);
 		break;
 	case IOGEN_PAT_5:
-		pa = 0x5555555555555555llu;
+		scratch[s++] = 0x5555555555555555llu;
+		ip->size = sizeof(scratch[0]);
 		break;
 	case IOGEN_PAT_A:
-		pa = 0xaaaaaaaaaaaaaaaallu;
+		scratch[s++] = 0xaaaaaaaaaaaaaaaallu;
+		ip->size = sizeof(scratch[0]);
 		break;
 	case IOGEN_PAT_F:
-		pa = 0xffffffffffffffffllu;
+		scratch[s++] = 0xffffffffffffffffllu;
+		ip->size = sizeof(scratch[0]);
 		break;
 	case IOGEN_PAT_A5:
-		pa = 0xa5a5a5a5a5a5a5a5llu;
+		scratch[s++] = 0xa5a5a5a5a5a5a5a5llu;
+		ip->size = sizeof(scratch[0]);
 		break;
 	case IOGEN_PAT_A5_BLINK:
-		pa = 0xa55aa55aa55aa55allu;
+		scratch[s++] = 0xa55aa55aa55aa55allu;
+		ip->size = sizeof(scratch[0]);
 		break;
 	case IOGEN_PAT_AA55:
-		pa = 0xaa55aa55aa55aa55llu;
+		scratch[s++] = 0xaa55aa55aa55aa55llu;
+		ip->size = sizeof(scratch[0]);
 		break;
 	case IOGEN_PAT_AA55_BLINK:
-		pa = 0xaa55aa5555aa55aallu;
+		scratch[s++] = 0xaa55aa5555aa55aallu;
+		ip->size = sizeof(scratch[0]);
 		break;
 	case IOGEN_PAT_AAAA5555:
-		pa = 0xaaaa5555aaaa5555llu;
+		scratch[s++] = 0xaaaa5555aaaa5555llu;
+		ip->size = sizeof(scratch[0]);
 		break;
 	case IOGEN_PAT_AAAA5555_BLINK:
-		pa = 0xaaaa55555555aaaallu;
+		scratch[s++] = 0xaaaa55555555aaaallu;
+		ip->size = sizeof(scratch[0]);
 		break;
 	case IOGEN_PAT_AAAAAAA55555555:
-		pa = 0xaaaaaaaa55555555llu;
+		scratch[s++] = 0xaaaaaaaa55555555llu;
+		ip->size = sizeof(scratch[0]);
 		break;
-	case IOGEN_PAT_WALK:
-		pa = 0x8421842184218421llu;
+	case IOGEN_PAT_BLINK1_64:
+		scratch[s++] = 0x0000000000000000llu;
+		scratch[s++] = 0x1111111111111111llu;
+		ip->size = sizeof(scratch[0]) * s;
 		break;
+	case IOGEN_PAT_BLINK2_64:
+		scratch[s++] = 0x0000000000000000llu;
+		scratch[s++] = 0x2222222222222222llu;
+		ip->size = sizeof(scratch[0]) * s;
+		break;
+	case IOGEN_PAT_BLINK4_64:
+		scratch[s++] = 0x0000000000000000llu;
+		scratch[s++] = 0x4444444444444444llu;
+		ip->size = sizeof(scratch[0]) * s;
+		break;
+	case IOGEN_PAT_BLINK8_64:
+		scratch[s++] = 0x0000000000000000llu;
+		scratch[s++] = 0x8888888888888888llu;
+		ip->size = sizeof(scratch[0]) * s;
+		break;
+	case IOGEN_PAT_A5_BLINK64:
+		scratch[s++] = 0xaaaaaaaaaaaaaaaallu;
+		scratch[s++] = 0x5555555555555555llu;
+		ip->size = sizeof(scratch[0]) * s;
+		break;
+	case IOGEN_PAT_WALK64:
+		scratch[s++] = 0x0000000000000000llu;
+		scratch[s++] = 0x0101010101010101llu;
+		scratch[s++] = 0x0202020202020202llu;
+		scratch[s++] = 0x0404040404040404llu;
+		scratch[s++] = 0x0808080808080808llu;
+		ip->size = sizeof(scratch[0]) * s;
+		break;
+	case IOGEN_PAT_WALK128:
+		scratch[s++] = 0x0000000000000000llu;
+		scratch[s++] = 0x0000000000000000llu;
+		scratch[s++] = 0x0101010101010101llu;
+		scratch[s++] = 0x0101010101010101llu;
+		scratch[s++] = 0x0202020202020202llu;
+		scratch[s++] = 0x0202020202020202llu;
+		scratch[s++] = 0x0404040404040404llu;
+		scratch[s++] = 0x0404040404040404llu;
+		scratch[s++] = 0x0808080808080808llu;
+		scratch[s++] = 0x0808080808080808llu;
+		ip->size = sizeof(scratch[0]) * s;
+		break;
+	case IOGEN_PAT_COUNT:
+		p = (u_int8_t *)&scratch;
+		for (x = 0; x < 256; x++)
+			*p++ = x;
+		ip->size = x;
+		break;
+	default:
+		return (1);
 	}
 
-	return (pa);
+	ip->pattern = pat;
+	memcpy(ip->buf, scratch, ip->size);
+
+	return (0);
 }
 
 void
 show_patterns(void)
 {
-	int			i;
+	int			i, x;
+	struct iog_pattern	p;
 
-	printf("pattern number\tpattern\n");
-	for (i = 0; i < IOGEN_PAT_TEXT; i++)
-		if (get_pattern(i) == 0)
-		printf("%d\t\t0x0000000000000000\n", i);
-		else
-		printf("%d\t\t%#llx\n", i, get_pattern(i));
+	printf("id\tpattern\n");
+	for (i = 0; i < IOGEN_PAT_TEXT; i++) {
+		memset(&p, 0, sizeof(p));
+		if (get_pattern(i, &p))
+			return;
+
+		printf("%d:\t", i);
+		for (x = 0; x < p.size; x++) {
+			if ((x != 0) && (x % (sizeof(u_int64_t) * 4)) == 0)
+				printf("\n\t");
+			printf("%02x", p.buf[x]);
+		}
+		printf("\n");
+	}
 }
 
 void
@@ -251,9 +357,9 @@ sigalarm(int sig)
 void
 err_log(int flags, const char *fmt, ...)
 {
-	va_list		ap;
-	char		buf[256];
-	int		errno_save = errno;
+	va_list			ap;
+	char			buf[256];
+	int			errno_save = errno;
 
 	va_start(ap, fmt);
 	vsnprintf(buf, sizeof buf, fmt, ap);
@@ -271,14 +377,17 @@ err_log(int flags, const char *fmt, ...)
 void
 fill_buffer(char *buffer, size_t size, int pat)
 {
-	long long	i = 0, more = 1;
-	char		*p = buffer;
-	size_t		copy_len;
-	u_int64_t	pa;
-	char		*pap;
+	long long		i = 0, more = 1;
+	char			*p = buffer;
+	size_t			copy_len;
+	struct iog_pattern	ip;
 
-	pa = get_pattern(pat);
-	if (pa == IOGEN_PAT_TEXT) {
+	memset(&ip, 0, sizeof(ip));
+	if (get_pattern(pat, &ip))
+		err(1, "can't find pattern %d", pat);
+
+	/* this really should become a regular pattern */
+	if (ip.pattern == IOGEN_PAT_TEXT) {
 		while (more) {
 			if (io_pattern[i] == NULL)
 				i = 0;
@@ -298,16 +407,14 @@ fill_buffer(char *buffer, size_t size, int pat)
 	}
 
 	/* fill buffer for non text pattern */
-	for (i = 0; i < size; i++) {
-		pap = ((char *)(&pa)) + (i % sizeof(pa));
-		buffer[i] = *pap;
-	}
+	for (i = 0; i < size; i++)
+		buffer[i] = ip.buf[i % ip.size];
 }
 
 off_t
 get_file_size(char *filename)
 {
-	struct stat sb;
+	struct stat		sb;
 
 	if (stat(filename, &sb) == -1)
 		err_log(LOGFATAL | LOGERR,
