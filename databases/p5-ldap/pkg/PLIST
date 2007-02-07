@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/12/08 05:55:13 msf Exp $
+@comment $OpenBSD: PLIST,v 1.10 2007/02/07 10:23:18 msf Exp $
 ${P5SITE}/Bundle/
 ${P5SITE}/Bundle/Net/
 ${P5SITE}/Bundle/Net/LDAP.pm
@@ -30,6 +30,7 @@ ${P5SITE}/Net/LDAP/Examples.pod
 ${P5SITE}/Net/LDAP/Extension/
 ${P5SITE}/Net/LDAP/Extension.pm
 ${P5SITE}/Net/LDAP/Extension/SetPassword.pm
+${P5SITE}/Net/LDAP/Extension/WhoAmI.pm
 ${P5SITE}/Net/LDAP/Extra.pm
 ${P5SITE}/Net/LDAP/FAQ.pod
 ${P5SITE}/Net/LDAP/Filter.pm
@@ -66,6 +67,7 @@ ${P5SITE}/Net/LDAPS.pm
 @man man/man3p/Net::LDAP::Entry.3p
 @man man/man3p/Net::LDAP::Examples.3p
 @man man/man3p/Net::LDAP::Extension::SetPassword.3p
+@man man/man3p/Net::LDAP::Extension::WhoAmI.3p
 @man man/man3p/Net::LDAP::Extra.3p
 @man man/man3p/Net::LDAP::FAQ.3p
 @man man/man3p/Net::LDAP::Filter.3p
