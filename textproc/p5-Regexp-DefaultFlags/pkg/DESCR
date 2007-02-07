@@ -1,0 +1,2 @@
+This module allows you to set a default set of flags to all regexes
+in a particular namespace.
