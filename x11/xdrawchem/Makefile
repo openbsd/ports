@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/01/23 15:43:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/02/07 14:01:51 sturm Exp $
 
 COMMENT=	"two-dimensional molecule drawing program"
 
@@ -35,5 +35,9 @@ MAKE_FLAGS+=	LDFLAGS+="-lqt-mt -pthread -L${X11BASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-qtincdir=${MODQT_INCDIR} \
 		--with-qtlibdir=${MODQT_LIBDIR}
+
+.if ${MACHINE_ARCH} == "sparc64"
+PATCH_LIST=	patch-* gcc-*
+.endif
 
 .include <bsd.port.mk>
