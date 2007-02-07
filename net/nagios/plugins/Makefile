@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2006/12/01 06:14:10 sturm Exp $
+# $OpenBSD: Makefile,v 1.17 2007/02/07 18:16:40 sturm Exp $
 
 COMMENT-main=	"nagios base plugins"
 COMMENT-fping=	"fping plugin"
@@ -10,17 +10,17 @@ COMMENT-pgsql=	"postgresql plugin"
 COMMENT-samba=	"samba plugin"
 COMMENT-snmp=	"plugins using snmp"
 
-V=		1.4.5
+V=		1.4.6
 DISTNAME=	nagios-plugins-${V}
-PKGNAME-main=	nagios-plugins-${V}p0
-PKGNAME-fping=	nagios-plugins-fping-${V}p0
-PKGNAME-game=	nagios-plugins-game-${V}p0
-PKGNAME-ldap=	nagios-plugins-ldap-${V}p0
-PKGNAME-mysql=	nagios-plugins-mysql-${V}p0
-PKGNAME-ntp=	nagios-plugins-ntp-${V}p0
-PKGNAME-pgsql=	nagios-plugins-pgsql-${V}p0
-PKGNAME-samba=	nagios-plugins-samba-${V}p0
-PKGNAME-snmp=	nagios-plugins-snmp-${V}p0
+PKGNAME-main=	nagios-plugins-${V}
+PKGNAME-fping=	nagios-plugins-fping-${V}
+PKGNAME-game=	nagios-plugins-game-${V}
+PKGNAME-ldap=	nagios-plugins-ldap-${V}
+PKGNAME-mysql=	nagios-plugins-mysql-${V}
+PKGNAME-ntp=	nagios-plugins-ntp-${V}
+PKGNAME-pgsql=	nagios-plugins-pgsql-${V}
+PKGNAME-samba=	nagios-plugins-samba-${V}
+PKGNAME-snmp=	nagios-plugins-snmp-${V}
 CATEGORIES=	net
 
 HOMEPAGE=	http://nagiosplug.sourceforge.net/
@@ -84,37 +84,35 @@ BUILD_DEPENDS+=	::net/p5-Net-SNMP \
 		::net/net-snmp
 .endif
 
-WANTLIB=		c crypto ssl
+WANTLIB=		c
 
-LIB_DEPENDS-fping=
 RUN_DEPENDS-fping=	::net/fping
 
-LIB_DEPENDS-game=
 RUN_DEPENDS-game=	::games/qstat
 
-WANTLIB-ldap=		${WANTLIB} sasl2 asn1 com_err gssapi krb5
-LIB_DEPENDS-ldap=	lber,ldap:openldap-client-*:databases/openldap
+WANTLIB-ldap=		${WANTLIB} asn1 com_err crypto gssapi krb5 sasl2 ssl
+LIB_DEPENDS-ldap=	lber,ldap:openldap-client-*:databases/openldap \
+			${LIB_DEPENDS}
 
-WANTLIB-mysql=		${WANTLIB} m z
-LIB_DEPENDS-mysql=	mysqlclient:mysql-client-*:databases/mysql
+WANTLIB-mysql=		${WANTLIB} crypto m ssl z
+LIB_DEPENDS-mysql=	mysqlclient:mysql-client-*:databases/mysql \
+			${LIB_DEPENDS}
 
-LIB_DEPENDS-ntp=
 WANTLIB-ntp=		${WANTLIB} m
 RUN_DEPENDS-ntp=	::net/ntp
 
 WANTLIB-pgsql=		${WANTLIB} crypto
-LIB_DEPENDS-pgsql=	pq:postgresql-client-*:databases/postgresql
+LIB_DEPENDS-pgsql=	pq:postgresql-client-*:databases/postgresql \
+			${LIB_DEPENDS}
 
 LIB_DEPENDS-samba=
 WANTLIB-samba=
 RUN_DEPENDS-samba=	::net/samba
 
-LIB_DEPENDS-snmp=
 RUN_DEPENDS-snmp=	::net/net-snmp \
 			::net/p5-Net-SNMP
 
-WANTLIB-main=		${WANTLIB} m
-LIB_DEPENDS-main=
+WANTLIB-main=		${WANTLIB} crypto m ssl
 
 MODULES=	gettext
 

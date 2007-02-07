@@ -1,0 +1,21 @@
+$OpenBSD: patch-plugins_check_swap_c,v 1.1 2007/02/07 18:16:40 sturm Exp $
+--- plugins/check_swap.c.orig	Wed Feb  7 10:05:35 2007
++++ plugins/check_swap.c	Wed Feb  7 10:06:28 2007
+@@ -42,14 +42,14 @@ const char *email = "nagiosplug-devel@li
+ #include "utils.h"
+ 
+ #ifdef HAVE_DECL_SWAPCTL
++# ifdef HAVE_SYS_PARAM_H
++#  include <sys/param.h>
++# endif
+ # ifdef HAVE_SYS_SWAP_H
+ #  include <sys/swap.h>
+ # endif
+ # ifdef HAVE_SYS_STAT_H
+ #  include <sys/stat.h>
+-# endif
+-# ifdef HAVE_SYS_PARAM_H
+-#  include <sys/param.h>
+ # endif
+ #endif
+ 
