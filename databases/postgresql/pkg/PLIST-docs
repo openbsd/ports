@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.28 2007/02/06 06:57:27 mbalmer Exp $
+@comment $OpenBSD: PLIST-docs,v 1.29 2007/02/07 15:29:25 mbalmer Exp $
 @comment lib/libpq.so.5
 @man man/man7/drop_owned.7
 @man man/man7/reassign_owned.7
@@ -490,6 +490,7 @@ share/doc/postgresql/html/release-7-4.html
 share/doc/postgresql/html/release-8-0-1.html
 share/doc/postgresql/html/release-8-0-10.html
 share/doc/postgresql/html/release-8-0-11.html
+share/doc/postgresql/html/release-8-0-12.html
 share/doc/postgresql/html/release-8-0-2.html
 share/doc/postgresql/html/release-8-0-3.html
 share/doc/postgresql/html/release-8-0-4.html
@@ -506,9 +507,11 @@ share/doc/postgresql/html/release-8-1-4.html
 share/doc/postgresql/html/release-8-1-5.html
 share/doc/postgresql/html/release-8-1-6.html
 share/doc/postgresql/html/release-8-1-7.html
+share/doc/postgresql/html/release-8-1-8.html
 share/doc/postgresql/html/release-8-1.html
 share/doc/postgresql/html/release-8-2-1.html
 share/doc/postgresql/html/release-8-2-2.html
+share/doc/postgresql/html/release-8-2-3.html
 share/doc/postgresql/html/release-8-2.html
 share/doc/postgresql/html/release.html
 share/doc/postgresql/html/resources.html
@@ -775,7 +778,7 @@ share/doc/postgresql/html/wal-intro.html
 share/doc/postgresql/html/wal-reliability.html
 share/doc/postgresql/html/wal.html
 share/doc/postgresql/html/warm-standby.html
-share/doc/postgresql/html/x71114.html
+share/doc/postgresql/html/x71115.html
 share/doc/postgresql/html/xaggr.html
 share/doc/postgresql/html/xfunc-c.html
 share/doc/postgresql/html/xfunc-internal.html
