@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/01/18 12:30:37 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2007/02/07 10:35:17 bernd Exp $
 
 SHARED_ONLY=	Yes
 
@@ -30,7 +30,6 @@ CONFIGURE_STYLE=	ruby extconf
 
 REGRESS_TARGET=		test
 REGRESS_DEPENDS=	:openldap-server-*:databases/openldap,-server
-DIFF_ARGS=		-a
 
 do-regress:
 	cd ${WRKSRC} &&	/bin/sh ./test/test.sh ruby openldap2 \
