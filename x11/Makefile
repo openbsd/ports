@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.266 2007/01/31 07:35:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.267 2007/02/07 00:59:54 todd Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -31,6 +31,7 @@
      SUBDIR += cwm
      SUBDIR += dbus
      SUBDIR += dbus-glib
+     SUBDIR += dbus-python
      SUBDIR += dclock
      SUBDIR += devilspie
      SUBDIR += dmenu
