@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.51 2007/01/28 13:18:51 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2007/02/07 16:25:37 todd Exp $
 
 COMMENT= 		"K Desktop Environment, network applications"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.6
 DISTNAME=		kdenetwork-${VERSION}
-PKGNAME=		${DISTNAME}
+PKGNAME=		${DISTNAME}p0
 MODKDE_VERSION=		3.5.3
 FLAVORS=debug
 SHARED_LIBS +=	kopete               2.0      # .1.0
@@ -17,6 +17,7 @@ LIB_DEPENDS= kdecore.>=6,DCOP,kabc,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kpar
 	xmms::audio/xmms \
 	idn::devel/libidn \
 	meanwhile::net/meanwhile
+RUN_DEPENDS+=	::security/qca-tls
 
 SEPARATE_BUILD=	flavored
 
