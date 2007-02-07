@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.91 2007/01/12 21:53:31 espie Exp $
+# $OpenBSD: make-plist,v 1.92 2007/02/07 11:24:23 bernd Exp $
 # Copyright (c) 2004-2006 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -840,7 +840,7 @@ sub grab_all_lists
 		my $o;
 		my $n = create_packinglist($plistname{$sub}, $sub);
 		push(@$l, $n);
-		$o = parse_original_plist($plistname{$sub}, $sub, $l);
+		$o = parse_original_plist($plistname{$sub}, $sub, $files, $l);
 		replaces($o, $n);
 		my $frag = deduce_name($plistname{$sub}, "shared", 0);
 		my $ns = create_packinglist($frag, $sub);
