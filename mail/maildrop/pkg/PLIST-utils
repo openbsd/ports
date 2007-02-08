@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-utils,v 1.7 2006/11/03 15:15:02 mbalmer Exp $
+@comment $OpenBSD: PLIST-utils,v 1.8 2007/02/08 11:28:46 bernd Exp $
+@conflict courier-imap-*
 @newgroup _courier:571
 @newuser _courier:571:571:daemon:Courier Mail Server:/var/empty:/sbin/nologin
 bin/deliverquota
