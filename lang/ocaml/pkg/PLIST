@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.17 2006/12/26 22:07:18 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.18 2007/02/08 14:32:57 avsm Exp $
+%%SHARED%%
 bin/camlp4
 bin/camlp4o
 bin/camlp4r

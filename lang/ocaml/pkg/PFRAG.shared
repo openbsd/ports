@@ -1,0 +1,11 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2007/02/08 14:32:57 avsm Exp $
+lib/ocaml/stublibs/dllbigarray.so
+lib/ocaml/stublibs/dllgraphics.so
+lib/ocaml/stublibs/dlllabltk.so
+lib/ocaml/stublibs/dllmldbm.so
+lib/ocaml/stublibs/dllnums.so
+lib/ocaml/stublibs/dllstr.so
+lib/ocaml/stublibs/dllthreads.so
+lib/ocaml/stublibs/dlltkanim.so
+lib/ocaml/stublibs/dllunix.so
+lib/ocaml/stublibs/dllvmthreads.so

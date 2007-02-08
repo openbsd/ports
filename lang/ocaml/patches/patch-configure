@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure,v 1.9 2006/05/28 15:28:54 avsm Exp $
---- configure.orig	Thu Mar 30 11:00:19 2006
-+++ configure	Tue May  2 12:02:42 2006
+$OpenBSD: patch-configure,v 1.10 2007/02/08 14:32:57 avsm Exp $
+--- configure.orig	Tue Dec 26 23:30:01 2006
++++ configure	Tue Dec 26 23:29:28 2006
+@@ -483,7 +483,7 @@ mksharedlibrpath=''
+ 
+ if test $withsharedlibs = "yes"; then
+   case "$host" in
+-    *-*-linux-gnu|*-*-linux|*-*-freebsd[3-9]*|*-*-gnu*)
++    *-*-linux-gnu|*-*-linux|*-*-freebsd[3-9]*|*-*-openbsd*|*-*-gnu*)
+       sharedcccompopts="-fPIC"
+       mksharedlib="$bytecc -shared -o"
+       bytecclinkopts="$bytecclinkopts -Wl,-E"
 @@ -566,6 +566,7 @@ case "$host" in
    alpha*-*-freebsd*)            arch=alpha; system=freebsd;;
    alpha*-*-netbsd*)             arch=alpha; system=netbsd;;
