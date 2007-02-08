@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2007/01/22 15:04:04 espie Exp $
+# $OpenBSD: Makefile,v 1.111 2007/02/08 18:58:22 mglocker Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -7,7 +7,7 @@ COMMENT=		"Movie player supporting MPEG, DivX, AVI, ASF, MOV & more"
 
 DISTNAME=		MPlayer-1.0pre8
 DIST_SUBDIR=		mplayer
-PKGNAME=		${DISTNAME:L}p5
+PKGNAME=		${DISTNAME:L}p6
 CATEGORIES=		x11
 EXTRACT_SUFX=		.tar.bz2
 
@@ -29,8 +29,9 @@ MASTER_SITES=		http://www1.mplayerhq.hu/MPlayer/releases/ \
 # locally, do NOT change this.
 #MASTER_SITES0=		http://www2.mplayerhq.hu/MPlayer/Skin/
 MASTER_SITES0=		${MASTER_SITE_BACKUP}
+MASTER_SITES1=		http://www.nazgul.ch/dev/
 
-MAINTAINER=     Bjorn Sandell <biorn@dce.chalmers.se>
+MAINTAINER=     Bjorn Sandell <biorn@chalmers.se>
 
 SKIN=		default
 SKINVER=	1.7
@@ -48,7 +49,10 @@ LIB_DEPENDS=	png::graphics/png \
 		speex::audio/speex \
 		mpcdec::audio/libmpcdec \
 		vorbis::audio/libvorbis \
-		xvidcore::multimedia/xvidcore
+		xvidcore::multimedia/xvidcore \
+		rtunes.>=0.6::audio/rtunes
+
+PATCHFILES=     rtunes_ao.diff:1
 
 CONFDIR=	${SYSCONFDIR}/mplayer
 SUBST_VARS=	CONFDIR
