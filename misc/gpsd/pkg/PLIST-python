@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST-python,v 1.1 2007/02/08 23:03:38 ckuethe Exp $
+bin/gpscat
+bin/gpsctl
+bin/gpsfake
+bin/gpsprof
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
+lib/python${MODPY_VERSION}/site-packages/gps.py
+lib/python${MODPY_VERSION}/site-packages/gps.pyc
+lib/python${MODPY_VERSION}/site-packages/gps.pyo
+lib/python${MODPY_VERSION}/site-packages/gpsfake.py
+lib/python${MODPY_VERSION}/site-packages/gpsfake.pyc
+lib/python${MODPY_VERSION}/site-packages/gpsfake.pyo
+@man man/man1/gpscat.1
+@man man/man1/gpsctl.1
+@man man/man1/gpsfake.1
+@man man/man1/gpsprof.1

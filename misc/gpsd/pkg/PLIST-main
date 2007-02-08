@@ -1,14 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/23 07:52:15 ckuethe Exp $
-@pkgpath misc/gpsd,no_motif
-@pkgpath misc/gpsd
+@comment $OpenBSD: PLIST-main,v 1.2 2007/02/08 23:03:38 ckuethe Exp $
 @newuser _gpsd:551:dialer::GPS server:/nonexistent:/sbin/nologin
 %%SHARED%%
 bin/cgps
 bin/cgpxlogger
-bin/gpsfake
 bin/gpsflash
 bin/gpspipe
-bin/gpsprof
 bin/rtcmdecode
 bin/sirfmon
 include/gps.h
@@ -19,10 +15,8 @@ lib/libgps.la
 @man man/man1/cgps.1
 @man man/man1/cgpxlogger.1
 @man man/man1/gps.1
-@man man/man1/gpsfake.1
 @man man/man1/gpsflash.1
 @man man/man1/gpspipe.1
-@man man/man1/gpsprof.1
 @man man/man1/rtcmdecode.1
 @man man/man1/sirfmon.1
 @man man/man1/xgps.1

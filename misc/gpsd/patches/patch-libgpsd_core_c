@@ -1,0 +1,11 @@
+$OpenBSD: patch-libgpsd_core_c,v 1.1 2007/02/08 23:03:38 ckuethe Exp $
+--- libgpsd_core.c.orig	Thu Feb  8 14:07:31 2007
++++ libgpsd_core.c	Thu Feb  8 14:08:52 2007
+@@ -107,6 +107,7 @@ void gpsd_deactivate(struct gps_device_t
+ # endif /* PPS_ENABLE */
+ #ifdef ALLOW_RECONFIGURE
+     if (session->enable_reconfigure 
++	&& session->device_type != NULL
+ 	&& session->device_type->revert != NULL) {
+ 	session->device_type->revert(session);
+ 	session->enable_reconfigure = false;

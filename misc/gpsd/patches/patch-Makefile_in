@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2006/10/27 23:47:23 ckuethe Exp $
---- Makefile.in.orig	Wed Jun  7 09:08:35 2006
-+++ Makefile.in	Wed Jun 14 19:24:28 2006
-@@ -334,7 +334,7 @@ target_alias = @target_alias@
- # Build stuff depending on Motif
- #
- @HAVE_MOTIF_TRUE@MOTIF_PROGS = xgps xgpsspeed
--XMLTO = xmlto
-+XMLTO = true
- @HAVE_DBUS_TRUE@INCLUDES = $(DBUS_CFLAGS) $(DBUS_GLIB_CFLAGS) -DDBUS_API_SUBJECT_TO_CHANGE=1
- @HAVE_DBUS_TRUE@DBUSPROGS = gpxlogger
- @HAVE_DBUS_TRUE@gpxlogger_LDADD = $(DBUS_GLIB_LIBS) -lm
+$OpenBSD: patch-Makefile_in,v 1.2 2007/02/08 23:03:38 ckuethe Exp $
+--- Makefile.in.orig	Wed Jan 10 19:13:52 2007
++++ Makefile.in	Wed Jan 10 19:14:53 2007
+@@ -1429,7 +1429,7 @@ packet_names.h: packet_states.h
+ 	sed -e '/^ *\([A-Z][A-Z0-9_]*\),/s//   "\1",/' -e '/_states/s//_names/' <packet_states.h >packet_names.h
+ 
+ gpspacket.so: gpspacket.c libgps.la
+-	python setup.py build_ext --inplace
++	$(PYTHON) setup.py build_ext --inplace
+ 
+ @HAVE_XSLT_PROCESSOR_TRUE@.xml.1:
+ @HAVE_XSLT_PROCESSOR_TRUE@	$(MANGENERATOR) $(MANFLAGS) $(MANTARGET) $<
