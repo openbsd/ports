@@ -1,0 +1,15 @@
+$OpenBSD: patch-libopenjpeg_openjpeg_h,v 1.1.1.1 2007/02/08 00:29:22 todd Exp $
+--- libopenjpeg/openjpeg.h.orig	Fri Jan 19 18:20:04 2007
++++ libopenjpeg/openjpeg.h	Fri Jan 19 18:21:57 2007
+@@ -89,8 +89,10 @@ braindamage below.
+ ==========================================================
+ */
+ 
++#include <sys/types.h>
++#include <sys/param.h>
+ #ifndef MAX_PATH
+-#define MAX_PATH 260	/**< Maximum allowed size for filenames */
++#define MAX_PATH PATH_MAX
+ #endif /* MAX_PATH */
+ 
+ #define J2K_MAXRLVLS 33					/**< Number of maximum resolution level authorized */

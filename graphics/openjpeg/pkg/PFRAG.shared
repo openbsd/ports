@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/02/08 00:29:22 todd Exp $
+@lib lib/libopenjpeg.so.${LIBopenjpeg_VERSION}

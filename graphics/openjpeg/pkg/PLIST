@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/02/08 00:29:22 todd Exp $
+%%SHARED%%
+include/openjpeg.h
+lib/libopenjpeg.a
