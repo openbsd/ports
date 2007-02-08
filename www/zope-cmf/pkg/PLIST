@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2006/04/05 09:42:17 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.8 2007/02/08 11:33:49 bernd Exp $
+@conflict plone-*
 lib/zope/lib/python/Products/CMFActionIcons/
 lib/zope/lib/python/Products/CMFActionIcons/ActionIconsTool.py
 lib/zope/lib/python/Products/CMFActionIcons/ActionIconsTool.pyc
