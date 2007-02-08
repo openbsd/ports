@@ -1,7 +1,40 @@
-$OpenBSD: patch-sample_Makefile_in,v 1.1.1.1 2007/02/08 03:23:35 todd Exp $
---- sample/Makefile.in.orig	Thu Feb  1 23:27:51 2007
-+++ sample/Makefile.in	Thu Feb  1 23:28:04 2007
-@@ -111,7 +111,7 @@ PROGRAMS =  $(bin_PROGRAMS)
+$OpenBSD: patch-sample_Makefile_in,v 1.2 2007/02/08 19:00:17 todd Exp $
+--- sample/Makefile.in.orig	Sun Jun 23 18:48:29 2002
++++ sample/Makefile.in	Thu Feb  8 11:22:32 2007
+@@ -82,25 +82,25 @@ INCLUDES = -I../src -I../expat/xmltok -I
+ bin_PROGRAMS = sample client server server_compliance_test memtest hello_client hello_server
+ 
+ sample_SOURCES = sample.c
+-sample_LDADD = -L@prefix@/lib ../src/libxmlrpc.la
++sample_LDADD = -L@prefix@/lib ../src/libxmlrpc-epi.la
+ 
+ client_SOURCES = client.c
+-client_LDADD = -L@prefix@/lib ../src/libxmlrpc.la
++client_LDADD = -L@prefix@/lib ../src/libxmlrpc-epi.la
+ 
+ server_SOURCES = server.c
+-server_LDADD = -L@prefix@/lib ../src/libxmlrpc.la
++server_LDADD = -L@prefix@/lib ../src/libxmlrpc-epi.la
+ 
+ hello_client_SOURCES = hello_client.c
+-hello_client_LDADD = -L@prefix@/lib ../src/libxmlrpc.la
++hello_client_LDADD = -L@prefix@/lib ../src/libxmlrpc-epi.la
+ 
+ hello_server_SOURCES = hello_server.c
+-hello_server_LDADD = -L@prefix@/lib ../src/libxmlrpc.la
++hello_server_LDADD = -L@prefix@/lib ../src/libxmlrpc-epi.la
+ 
+ server_compliance_test_SOURCES = server_compliance_test.c
+-server_compliance_test_LDADD = -L@prefix@/lib ../src/libxmlrpc.la
++server_compliance_test_LDADD = -L@prefix@/lib ../src/libxmlrpc-epi.la
+ 
+ memtest_SOURCES = memtest.c
+-memtest_LDADD = -L@prefix@/lib ../src/libxmlrpc.la
++memtest_LDADD = -L@prefix@/lib ../src/libxmlrpc-epi.la
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_CLEAN_FILES = 
+ bin_PROGRAMS =  sample$(EXEEXT) client$(EXEEXT) server$(EXEEXT) \
+@@ -111,28 +111,28 @@ PROGRAMS =  $(bin_PROGRAMS)
  
  DEFS = @DEFS@ -I. -I$(srcdir) 
  CPPFLAGS = @CPPFLAGS@
@@ -9,4 +42,32 @@ $OpenBSD: patch-sample_Makefile_in,v 1.1.1.1 2007/02/08 03:23:35 todd Exp $
 +LDFLAGS = @LDFLAGS@ -liconv
  LIBS = @LIBS@
  sample_OBJECTS =  sample.$(OBJEXT)
- sample_DEPENDENCIES =  ../src/libxmlrpc.la
+-sample_DEPENDENCIES =  ../src/libxmlrpc.la
++sample_DEPENDENCIES =  ../src/libxmlrpc-epi.la
+ sample_LDFLAGS = 
+ client_OBJECTS =  client.$(OBJEXT)
+-client_DEPENDENCIES =  ../src/libxmlrpc.la
++client_DEPENDENCIES =  ../src/libxmlrpc-epi.la
+ client_LDFLAGS = 
+ server_OBJECTS =  server.$(OBJEXT)
+-server_DEPENDENCIES =  ../src/libxmlrpc.la
++server_DEPENDENCIES =  ../src/libxmlrpc-epi.la
+ server_LDFLAGS = 
+ server_compliance_test_OBJECTS =  server_compliance_test.$(OBJEXT)
+-server_compliance_test_DEPENDENCIES =  ../src/libxmlrpc.la
++server_compliance_test_DEPENDENCIES =  ../src/libxmlrpc-epi.la
+ server_compliance_test_LDFLAGS = 
+ memtest_OBJECTS =  memtest.$(OBJEXT)
+-memtest_DEPENDENCIES =  ../src/libxmlrpc.la
++memtest_DEPENDENCIES =  ../src/libxmlrpc-epi.la
+ memtest_LDFLAGS = 
+ hello_client_OBJECTS =  hello_client.$(OBJEXT)
+-hello_client_DEPENDENCIES =  ../src/libxmlrpc.la
++hello_client_DEPENDENCIES =  ../src/libxmlrpc-epi.la
+ hello_client_LDFLAGS = 
+ hello_server_OBJECTS =  hello_server.$(OBJEXT)
+-hello_server_DEPENDENCIES =  ../src/libxmlrpc.la
++hello_server_DEPENDENCIES =  ../src/libxmlrpc-epi.la
+ hello_server_LDFLAGS = 
+ CFLAGS = @CFLAGS@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)

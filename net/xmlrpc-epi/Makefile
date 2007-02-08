@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/02/08 03:23:35 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2007/02/08 19:00:17 todd Exp $
 
 COMMENT=	"XML-RPC C/C++ client-server implementation"
 CATEGORIES=	net devel textproc
 
 DISTNAME=	xmlrpc-epi-0.51
-SHARED_LIBS +=	xmlrpc              0.3
+PKGNAME=	${DISTNAME}p0
+SHARED_LIBS +=	xmlrpc-epi	0.3
 
 HOMEPAGE=	http://xmlrpc-epi.sourceforge.net/
 
@@ -28,6 +29,8 @@ CONFIGURE_ENV+= 	CPPFLAGS="-I${PREFIX}/include" CFLAGS="${CFLAGS}" LDFLAGS="${LD
 CFLAGS+=		-I${PREFIX}/include
 
 LDFLAGS=		-L${PREFIX}/lib -liconv
+
+CONFIGURE_ARGS+=	--includedir=${LOCALBASE}/include/xmlrpc-epi
 
 post-extract:
 	rm -rf ${WRKSRC}/expat

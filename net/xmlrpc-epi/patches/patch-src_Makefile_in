@@ -1,20 +1,37 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2007/02/08 03:23:35 todd Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.2 2007/02/08 19:00:17 todd Exp $
 --- src/Makefile.in.orig	Sun Jun 23 18:48:29 2002
-+++ src/Makefile.in	Wed Feb  7 18:47:17 2007
-@@ -75,11 +75,10 @@ RANLIB = @RANLIB@
++++ src/Makefile.in	Thu Feb  8 11:17:59 2007
+@@ -75,16 +75,15 @@ RANLIB = @RANLIB@
  STRIP = @STRIP@
  VERSION = @VERSION@
  
 -INCLUDES = -I../liblm -I../expat/xmltok -I../expat/xmlparse -I/usr/local/ssl/include 
 +INCLUDES = -I../liblm 
  
- lib_LTLIBRARIES = libxmlrpc.la
+-lib_LTLIBRARIES = libxmlrpc.la
++lib_LTLIBRARIES = libxmlrpc-epi.la
  
 -libxmlrpc_la_LIBADD = ../expat/xmltok/libexpat_tok.la ../expat/xmlparse/libexpat_parse.la
  
- libxmlrpc_la_SOURCES =  	base64.c 	encodings.c 	queue.c 	simplestring.c 	xml_element.c 	xml_to_dandarpc.c 	xml_to_xmlrpc.c         xml_to_soap.c 	xmlrpc.c 	xmlrpc_introspection.c         system_methods.c
+-libxmlrpc_la_SOURCES =  	base64.c 	encodings.c 	queue.c 	simplestring.c 	xml_element.c 	xml_to_dandarpc.c 	xml_to_xmlrpc.c         xml_to_soap.c 	xmlrpc.c 	xmlrpc_introspection.c         system_methods.c
++libxmlrpc-epi_la_SOURCES =  	base64.c 	encodings.c 	queue.c 	simplestring.c 	xml_element.c 	xml_to_dandarpc.c 	xml_to_xmlrpc.c         xml_to_soap.c 	xmlrpc.c 	xmlrpc_introspection.c         system_methods.c
  
-@@ -128,10 +127,8 @@ LTLIBRARIES =  $(lib_LTLIBRARIES)
+ 
+-libxmlrpc_la_LDFLAGS = -version-info 0:3:0 
++libxmlrpc-epi_la_LDFLAGS = -version-info 0:3:0 
+ include_HEADERS =  	base64.h 	encodings.h 	queue.h 	simplestring.h 	xml_element.h 	xml_to_xmlrpc.h 	xmlrpc.h 	xmlrpc_introspection.h
+ 
+ 
+@@ -95,7 +94,7 @@ ROBOOPTS = C SORT 
+ 
+ # Your source files.
+ #
+-DOCSOURCES =  	$(include_HEADERS) 	$(libxmlrpc_la_SOURCES)
++DOCSOURCES =  	$(include_HEADERS) 	$(libxmlrpc-epi_la_SOURCES)
+ 
+ 
+ # The name of your Project
+@@ -128,18 +127,16 @@ LTLIBRARIES =  $(lib_LTLIBRARIES)
  
  DEFS = @DEFS@ -I. -I$(srcdir) 
  CPPFLAGS = @CPPFLAGS@
@@ -23,10 +40,11 @@ $OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2007/02/08 03:23:35 todd Exp $
  LIBS = @LIBS@
 -libxmlrpc_la_DEPENDENCIES =  ../expat/xmltok/libexpat_tok.la \
 -../expat/xmlparse/libexpat_parse.la
- libxmlrpc_la_OBJECTS =  base64.lo encodings.lo queue.lo simplestring.lo \
+-libxmlrpc_la_OBJECTS =  base64.lo encodings.lo queue.lo simplestring.lo \
++libxmlrpc-epi_la_OBJECTS =  base64.lo encodings.lo queue.lo simplestring.lo \
  xml_element.lo xml_to_dandarpc.lo xml_to_xmlrpc.lo xml_to_soap.lo \
  xmlrpc.lo xmlrpc_introspection.lo system_methods.lo
-@@ -139,7 +136,7 @@ CFLAGS = @CFLAGS@
+ CFLAGS = @CFLAGS@
  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)
@@ -35,3 +53,25 @@ $OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2007/02/08 03:23:35 todd Exp $
  HEADERS =  $(include_HEADERS)
  
  DIST_COMMON =  README Makefile.am Makefile.in
+@@ -153,8 +150,8 @@ DEP_FILES =  .deps/base64.P .deps/encodi
+ .deps/simplestring.P .deps/system_methods.P .deps/xml_element.P \
+ .deps/xml_to_dandarpc.P .deps/xml_to_soap.P .deps/xml_to_xmlrpc.P \
+ .deps/xmlrpc.P .deps/xmlrpc_introspection.P
+-SOURCES = $(libxmlrpc_la_SOURCES)
+-OBJECTS = $(libxmlrpc_la_OBJECTS)
++SOURCES = $(libxmlrpc-epi_la_SOURCES)
++OBJECTS = $(libxmlrpc-epi_la_OBJECTS)
+ 
+ all: all-redirect
+ .SUFFIXES:
+@@ -230,8 +227,8 @@ distclean-libtool:
+ 
+ maintainer-clean-libtool:
+ 
+-libxmlrpc.la: $(libxmlrpc_la_OBJECTS) $(libxmlrpc_la_DEPENDENCIES)
+-	$(LINK) -rpath $(libdir) $(libxmlrpc_la_LDFLAGS) $(libxmlrpc_la_OBJECTS) $(libxmlrpc_la_LIBADD) $(LIBS)
++libxmlrpc-epi.la: $(libxmlrpc-epi_la_OBJECTS) $(libxmlrpc-epi_la_DEPENDENCIES)
++	$(LINK) -rpath $(libdir) $(libxmlrpc-epi_la_LDFLAGS) $(libxmlrpc-epi_la_OBJECTS) $(libxmlrpc-epi_la_LIBADD) $(LIBS)
+ 
+ install-includeHEADERS: $(include_HEADERS)
+ 	@$(NORMAL_INSTALL)

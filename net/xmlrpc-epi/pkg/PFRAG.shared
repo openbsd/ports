@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/02/08 03:23:35 todd Exp $
-@lib lib/libxmlrpc.so.${LIBxmlrpc_VERSION}
+@comment $OpenBSD: PFRAG.shared,v 1.2 2007/02/08 19:00:17 todd Exp $
+@lib lib/libxmlrpc-epi.so.${LIBxmlrpc-epi_VERSION}
