@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2007/02/07 14:43:03 marco Exp $
+# $OpenBSD: Makefile,v 1.14 2007/02/08 22:35:12 marco Exp $
 
 COMMENT=	"i/o generator"
-PKGNAME=	iogen-2.1
+PKGNAME=	iogen-2.2
 CATEGORIES=	sysutils
 DISTFILES=
 

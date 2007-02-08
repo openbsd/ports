@@ -1,4 +1,4 @@
-/* $OpenBSD: iogen.c,v 1.5 2007/02/07 14:43:03 marco Exp $ */
+/* $OpenBSD: iogen.c,v 1.6 2007/02/08 22:35:12 marco Exp $ */
 /*
  * Copyright (c) 2005 Marco Peereboom <marco@peereboom.us>
  *
@@ -127,7 +127,6 @@ killall(void)
 int
 get_pattern(int pat, struct iog_pattern *ip)
 {
-	u_int64_t		pa = IOGEN_PAT_TEXT;
 	u_int64_t		scratch[MAX_PAT_SIZE / sizeof(u_int64_t)];
 	u_int32_t		s = 0;
 	u_int8_t		*p;
@@ -255,6 +254,9 @@ get_pattern(int pat, struct iog_pattern *ip)
 			*p++ = x;
 		ip->size = x;
 		break;
+	case IOGEN_PAT_TEXT:
+		ip->pattern = pat;
+		return (0);
 	default:
 		return (1);
 	}
@@ -702,7 +704,7 @@ main(int argc, char *argv[])
 			}
 
 			pattern = atoi(optarg);
-			if (pattern >= IOGEN_PAT_TEXT)
+			if (pattern > IOGEN_PAT_TEXT)
 				errx(1, "illegal pattern");
 			break;
 		case 'h':
