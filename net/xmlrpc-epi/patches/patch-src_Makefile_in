@@ -1,0 +1,37 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2007/02/08 03:23:35 todd Exp $
+--- src/Makefile.in.orig	Sun Jun 23 18:48:29 2002
++++ src/Makefile.in	Wed Feb  7 18:47:17 2007
+@@ -75,11 +75,10 @@ RANLIB = @RANLIB@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
+ 
+-INCLUDES = -I../liblm -I../expat/xmltok -I../expat/xmlparse -I/usr/local/ssl/include 
++INCLUDES = -I../liblm 
+ 
+ lib_LTLIBRARIES = libxmlrpc.la
+ 
+-libxmlrpc_la_LIBADD = ../expat/xmltok/libexpat_tok.la ../expat/xmlparse/libexpat_parse.la
+ 
+ libxmlrpc_la_SOURCES =  	base64.c 	encodings.c 	queue.c 	simplestring.c 	xml_element.c 	xml_to_dandarpc.c 	xml_to_xmlrpc.c         xml_to_soap.c 	xmlrpc.c 	xmlrpc_introspection.c         system_methods.c
+ 
+@@ -128,10 +127,8 @@ LTLIBRARIES =  $(lib_LTLIBRARIES)
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) 
+ CPPFLAGS = @CPPFLAGS@
+-LDFLAGS = @LDFLAGS@
++LDFLAGS = @LDFLAGS@ -liconv -lexpat
+ LIBS = @LIBS@
+-libxmlrpc_la_DEPENDENCIES =  ../expat/xmltok/libexpat_tok.la \
+-../expat/xmlparse/libexpat_parse.la
+ libxmlrpc_la_OBJECTS =  base64.lo encodings.lo queue.lo simplestring.lo \
+ xml_element.lo xml_to_dandarpc.lo xml_to_xmlrpc.lo xml_to_soap.lo \
+ xmlrpc.lo xmlrpc_introspection.lo system_methods.lo
+@@ -139,7 +136,7 @@ CFLAGS = @CFLAGS@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+-LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
++LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -liconv -o $@
+ HEADERS =  $(include_HEADERS)
+ 
+ DIST_COMMON =  README Makefile.am Makefile.in

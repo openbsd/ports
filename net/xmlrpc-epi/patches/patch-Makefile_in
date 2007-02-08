@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/02/08 03:23:35 todd Exp $
+--- Makefile.in.orig	Thu Feb  1 23:16:01 2007
++++ Makefile.in	Thu Feb  1 23:16:08 2007
+@@ -77,7 +77,7 @@ RANLIB = @RANLIB@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
+ 
+-SUBDIRS = expat src sample
++SUBDIRS = src sample
+ 
+ CHANGE_LOG_GEN_BIN = scripts/cvs2cl.pl
+ CHANGE_LOG_GEN_FLAGS = -t -r -b --accum -I ChangeLog --gmt --prune

@@ -1,0 +1,8 @@
+xmlrpc-epi is an implementation of the xmlrpc protocol
+in C. It provides an easy to use API for developers to
+serialize RPC requests to and from XML. It does *not*
+include a transport layer, such as HTTP. The API is
+primarily based upon proprietary code written for
+internal usage at Epinions.com, and was later modified
+to incorporate concepts from the xmlrpc protocol. It
+passed the xmlrpc validation test suite in December 2000.

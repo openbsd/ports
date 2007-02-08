@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/02/08 03:23:35 todd Exp $
+%%SHARED%%
+bin/client
+bin/hello_client
+bin/hello_server
+bin/memtest
+bin/sample
+bin/server
+bin/server_compliance_test
+include/base64.h
+include/encodings.h
+include/queue.h
+include/simplestring.h
+include/xml_element.h
+include/xml_to_xmlrpc.h
+include/xmlrpc.h
+include/xmlrpc_introspection.h
+lib/libxmlrpc.a
+lib/libxmlrpc.la

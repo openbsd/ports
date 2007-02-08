@@ -1,0 +1,12 @@
+$OpenBSD: patch-sample_Makefile_in,v 1.1.1.1 2007/02/08 03:23:35 todd Exp $
+--- sample/Makefile.in.orig	Thu Feb  1 23:27:51 2007
++++ sample/Makefile.in	Thu Feb  1 23:28:04 2007
+@@ -111,7 +111,7 @@ PROGRAMS =  $(bin_PROGRAMS)
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) 
+ CPPFLAGS = @CPPFLAGS@
+-LDFLAGS = @LDFLAGS@
++LDFLAGS = @LDFLAGS@ -liconv
+ LIBS = @LIBS@
+ sample_OBJECTS =  sample.$(OBJEXT)
+ sample_DEPENDENCIES =  ../src/libxmlrpc.la
