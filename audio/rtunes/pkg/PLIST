@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/04/12 07:10:25 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/02/08 09:49:35 mglocker Exp $
 bin/rtunes
+lib/librtunes.a
 @man man/man1/rtunes.1
 @man man/man5/rtunes.conf.5
 share/examples/rtunes/
+share/examples/rtunes/README
+share/examples/rtunes/mplayer.diff
 share/examples/rtunes/rtunes.conf
 @sample ${SYSCONFDIR}/rtunes.conf
