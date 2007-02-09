@@ -1,7 +1,15 @@
 #!/bin/sh
 #
-# $OpenBSD: soffice.sh,v 1.5 2006/11/21 16:47:00 ian Exp $
+# $OpenBSD: soffice.sh,v 1.6 2007/02/09 00:50:17 kurt Exp $
 #
+
+# Since the openoffice-java package may not exist
+# suppress any javaPathHelper errors.
+JAVA_HOME=$(javaPathHelper -h openoffice-java 2> /dev/null)
+
+if [ -n "${JAVA_HOME}" ]; then
+	export JAVA_HOME
+fi
 
 case "$0"
 in

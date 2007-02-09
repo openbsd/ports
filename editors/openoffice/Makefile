@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2007/01/17 07:29:01 robert Exp $
+# $OpenBSD: Makefile,v 1.47 2007/02/09 00:50:17 kurt Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -9,8 +9,8 @@ COMMENT-java=	"optional integration of OpenOffice java features"
 VERSION=	2.1.0
 DISTNAME=	OOo_${VERSION}
 WRKDIST=	${WRKDIR}/OOE680_m6
-PKGNAME=	openoffice-${VERSION}p3
-PKGNAME-main=	openoffice-${VERSION}p3
+PKGNAME=	openoffice-${VERSION}
+PKGNAME-main=	openoffice-${VERSION}p4
 PKGNAME-kde=	openoffice-kde-${VERSION}
 PKGNAME-java=	openoffice-java-${VERSION}p0
 CATEGORIES=	editors productivity
@@ -91,7 +91,7 @@ WANTLIB-main=	ICE SM X11 Xext Xrender atk-1.0 c cairo expat fontconfig \
 		freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		gthread-2.0 iconv intl ossaudio jpeg m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 png pthread stdc++ util xml2 z
-RUN_DEPENDS-main=
+RUN_DEPENDS-main=::java/javaPathHelper
 
 MODULES+=		x11/qt3
 RUN_DEPENDS-kde=	::editors/openoffice
