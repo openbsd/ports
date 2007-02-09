@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2006/12/31 13:15:38 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2007/02/09 13:48:20 bernd Exp $
 
 FULLPKGNAME-main=		php5-extensions-${V}p0
 COMMENT-main=		"informational package about PHP5 extensions"
@@ -290,6 +290,7 @@ MULTI_PACKAGES+=	-sybase_ct
 COMMENT-sybase_ct=	"sybase database access extensions for php5"
 CONFIGURE_ARGS+=        --with-sybase-ct=shared,${LOCALBASE}
 LIB_DEPENDS-sybase_ct=	ct::databases/freetds
+FULLPKGNAME-sybase_ct=	php5-sybase_ct-${V}p2
 .endif
 
 # xml-rpc
