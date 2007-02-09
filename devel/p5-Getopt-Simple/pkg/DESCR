@@ -1,0 +1,5 @@
+The Getopt::Simple module provides a simple way of specifying:
+    * Command line switches
+    * Type information for switch values
+    * Default values for the switches
+    * Help text per switch
