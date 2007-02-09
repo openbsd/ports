@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.478 2007/02/07 10:22:43 msf Exp $
+# $OpenBSD: Makefile,v 1.479 2007/02/09 13:10:31 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -311,6 +311,7 @@
      SUBDIR += p5-Fortran-Format
      SUBDIR += p5-FreezeThaw
      SUBDIR += p5-Getargs-Long
+     SUBDIR += p5-Getopt-Simple
      SUBDIR += p5-Glib2
      SUBDIR += p5-Graph
      SUBDIR += p5-Hash-Merge
