@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/02/08 09:49:35 mglocker Exp $
+# $OpenBSD: Makefile,v 1.5 2007/02/10 13:37:02 biorn Exp $
 
 COMMENT=		"Streams audio to Apple AirPort Express device"
 
 DISTNAME=		rtunes-0.6
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		audio net
 MASTER_SITES=		http://www.nazgul.ch/dev/
 
@@ -26,8 +27,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/librtunes/librtunes.a ${PREFIX}/lib
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/rtunes
 	${INSTALL_DATA} ${WRKSRC}/rtunes/rtunes.conf \
-	    ${PREFIX}/share/examples/rtunes
-	${INSTALL_DATA} ${WRKSRC}/librtunes/mplayer.diff \
 	    ${PREFIX}/share/examples/rtunes
 	${INSTALL_DATA} ${WRKSRC}/librtunes/README \
 	    ${PREFIX}/share/examples/rtunes
