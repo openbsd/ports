@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.879 2007/02/06 20:04:01 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.880 2007/02/11 11:44:17 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -491,7 +491,7 @@ GMAKE ?= gmake
 CHECKSUM_FILE ?= ${.CURDIR}/distinfo
 
 # Don't touch !!! Used for generating checksums.
-_CIPHERS = sha1 rmd160 md5
+_CIPHERS = sha1 rmd160 md5 sha256
 
 # This is the one you can override
 PREFERRED_CIPHERS ?= ${_CIPHERS}
@@ -1483,10 +1483,7 @@ ${_SYSTRACE_COOKIE}: ${_WRKDIR_COOKIE}
 makesum: fetch-all
 .if !defined(NO_CHECKSUM)
 	@rm -f ${CHECKSUM_FILE}
-	@cd ${DISTDIR} && \
-		for cipher in ${_CIPHERS}; do \
-			$$cipher ${_CKSUMFILES} >> ${CHECKSUM_FILE}; \
-	    done
+	@cd ${DISTDIR} && cksum -a "${_CIPHERS}" ${_CKSUMFILES} >> ${CHECKSUM_FILE}
 	@cd ${DISTDIR} && \
 		for file in ${_CKSUMFILES}; do \
 			${_size_fragment} >> ${CHECKSUM_FILE}; \
@@ -1500,7 +1497,7 @@ addsum: fetch-all
 	@touch ${CHECKSUM_FILE}
 	@cd ${DISTDIR} && \
 	 	for cipher in ${_CIPHERS}; do \
-			$$cipher ${_CKSUMFILES} >> ${CHECKSUM_FILE}; \
+			cksum -a $$cipher ${_CKSUMFILES} >> ${CHECKSUM_FILE}; \
 	    done
 	@cd ${DISTDIR} && \
 		for file in ${_CKSUMFILES}; do \
@@ -1732,7 +1729,7 @@ _internal-checksum: _internal-fetch
 			  echo ">> Error: checksum for $$file is set to IGNORE in distinfo"; \
 			  OK=false;; \
 			*) \
-			  CKSUM=`$$cipher < $$file`; \
+			  CKSUM=`cksum -a $$cipher < $$file`; \
 			  case "$$CKSUM" in \
 			  	"$$4") \
 				  ${ECHO_MSG} ">> Checksum OK for $$file. ($$cipher)";; \
