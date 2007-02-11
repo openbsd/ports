@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2006/11/25 13:23:29 bernd Exp $
+# $OpenBSD: Makefile,v 1.12 2007/02/11 10:58:38 bernd Exp $
 
 COMMENT=		"high performance embedded database library"
 
 DISTNAME=		qdbm-1.8.74
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		databases
 SHARED_LIBS=		qdbm	14.10
 
@@ -18,14 +19,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=qdbm/}
 
-WANTLIB=		c pthread z
+WANTLIB=		c z
 MODULES=		converters/libiconv
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-zlib \
-			--enable-iconv \
-			--enable-pthread
+			--enable-iconv
 
 MAKE_FLAGS=	LIBVER=${LIBqdbm_VERSION:R} LIBREV=${LIBqdbm_VERSION:E}
 FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
