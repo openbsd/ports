@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2006/06/03 12:48:56 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2007/02/11 11:25:51 fkr Exp $
 
 COMMENT=	"powerful IMAP/Maildir synchronization and reader support"
 
-DISTNAME=	offlineimap_4.0.11
+V=             4.0.16                                                                                                
+DISTNAME=      offlineimap_${V} 
 CATEGORIES=	mail
-PKGNAME=        ${DISTNAME:S/_/-/}p0
+PKGNAME=        ${DISTNAME:S/_/-/}
 
-HOMEPAGE=	http://www.quux.org/devel/offlineimap/
+HOMEPAGE=	http://software.complete.org/offlineimap/
 
 MAINTAINER=	Laurence Tratt <laurie@tratt.net>
 
@@ -16,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	${HOMEPAGE}static/download_area/${V}/
 
 NO_REGRESS=	Yes
 
