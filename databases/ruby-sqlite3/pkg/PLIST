@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/20 15:34:34 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/02/11 10:55:37 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -7,11 +7,11 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/DL/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/DL.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/DL/PtrData.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/DL/PtrData.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/DL/PtrData.src/M000141.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/DL/PtrData.src/M000142.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/DL/PtrData.src/M000143.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/DL/PtrData.src/M000144.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Kernel.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Kernel.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Kernel.src/M000140.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Kernel.src/M000142.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/AbortException.html
@@ -29,8 +29,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/CorruptExcepti
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Database/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Database.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Database.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Database.src/M000092.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Database.src/M000093.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Database.src/M000094.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Database.src/M000095.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Database.src/M000096.html
@@ -59,15 +57,17 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Database.src/M
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Database.src/M000119.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Database.src/M000120.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Database.src/M000121.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Database.src/M000122.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Database.src/M000123.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Database/FunctionProxy.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Database/FunctionProxy.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Database/FunctionProxy.src/M000122.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Database/FunctionProxy.src/M000123.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Database/FunctionProxy.src/M000124.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Database/FunctionProxy.src/M000125.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Database/FunctionProxy.src/M000126.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Database/FunctionProxy.src/M000127.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Database/FunctionProxy.src/M000128.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Database/FunctionProxy.src/M000129.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Database/FunctionProxy.src/M000130.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Driver/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Driver.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Driver/DL/
@@ -123,8 +123,8 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Error.src/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Error.src/M000070.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Exception.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Exception.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Exception.src/M000129.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Exception.src/M000130.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Exception.src/M000131.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Exception.src/M000132.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/FormatException.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/FullException.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/IOException.html
@@ -175,8 +175,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/ReadOnlyExcept
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/ResultSet/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/ResultSet.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/ResultSet.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/ResultSet.src/M000083.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/ResultSet.src/M000084.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/ResultSet.src/M000085.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/ResultSet.src/M000086.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/ResultSet.src/M000087.html
@@ -184,6 +182,8 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/ResultSet.src/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/ResultSet.src/M000089.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/ResultSet.src/M000090.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/ResultSet.src/M000091.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/ResultSet.src/M000092.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/ResultSet.src/M000093.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/ResultSet/FieldsContainer.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/ResultSet/TypesContainer.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/SQLException.html
@@ -199,6 +199,8 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Statement.src/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Statement.src/M000080.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Statement.src/M000081.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Statement.src/M000082.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Statement.src/M000083.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Statement.src/M000084.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/TooBigException.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Translator.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Translator.src/
@@ -208,8 +210,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Translator.src
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/UnsupportedException.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Value.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Value.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Value.src/M000131.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Value.src/M000132.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Value.src/M000133.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Value.src/M000134.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Value.src/M000135.html
@@ -217,6 +217,8 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Value.src/M000
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Value.src/M000137.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Value.src/M000138.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Value.src/M000139.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Value.src/M000140.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Value.src/M000141.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Version.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/String.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/String.src/
@@ -464,6 +466,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/SQLException/cdesc-SQLEx
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/SchemaChangedException/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/SchemaChangedException/cdesc-SchemaChangedException.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/Statement/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/Statement/active%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/Statement/bind_param-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/Statement/bind_params-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/Statement/cdesc-Statement.yaml
@@ -473,6 +476,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/Statement/columns-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/Statement/execute%21-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/Statement/execute-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/Statement/new-c.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/Statement/reset%21-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/Statement/types-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/TooBigException/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/TooBigException/cdesc-TooBigException.yaml
@@ -515,12 +519,12 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/sqlite3_api/Makefile
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/sqlite3_api/extconf.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/sqlite3_api/gem_make.out
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/sqlite3_api/mkmf.log
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/sqlite3_api/post-clean.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/sqlite3_api/post-distclean.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/sqlite3_api/sqlite3_api.i
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/sqlite3_api/sqlite3_api.so
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/sqlite3_api/sqlite3_api_wrap.c
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/sqlite3_api/sqlite3_api_wrap.o
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/sqlite3_api/win32/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/sqlite3_api/win32/build.bat
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sqlite3/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sqlite3.rb

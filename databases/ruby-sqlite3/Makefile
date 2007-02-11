@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/20 15:34:34 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2007/02/11 10:55:37 bernd Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"access a SQLite3 database from ruby"
 
-VERSION=	1.1.0
+VERSION=	1.2.1
 DISTNAME=	sqlite3-ruby-${VERSION}
 PKGNAME=	ruby-sqlite3-${VERSION}
 CATEGORIES=	databases
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://rubyforge.org/frs/download.php/3088/
+MASTER_SITES=		http://rubyforge.org/frs/download.php/17095/
 
 MODULES=		lang/ruby
 
