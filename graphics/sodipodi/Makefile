@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2006/12/16 12:22:34 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/02/11 00:56:57 steven Exp $
 
 COMMENT=		"SVG vector drawing application"
 
 DISTNAME=		sodipodi-0.34
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://sodipodi.sourceforge.net/
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 Xext Xrender atk-1.0 c fontconfig freetype \
-			glib-2.0 gmodule-2.0 gobject-2.0 \
+			ICE SM glib-2.0 gmodule-2.0 gobject-2.0 \
 			png z m pango-1.0 pangoft2-1.0 \
 			pangocairo-1.0 cairo glitz
 

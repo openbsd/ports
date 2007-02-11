@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/12/16 12:22:34 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2007/02/11 00:56:57 steven Exp $
 
 COMMENT-main=	"PDF rendering library"
 COMMENT-qt=	"qt interface to PDF rendering library"
@@ -6,7 +6,7 @@ COMMENT-qt=	"qt interface to PDF rendering library"
 V=		0.5.3
 DISTNAME=	poppler-$V
 CATEGORIES=	print
-PKGNAME-main=	poppler-$Vp0
+PKGNAME-main=	poppler-$Vp1
 FULLPKGNAME-qt=	poppler-qt-$Vp1
 
 SHARED_LIBS +=	poppler              1.0      # .1.0
@@ -49,7 +49,7 @@ MODULES+=	devel/gettext
 
 LIB_DEPENDS-main=${MODGETTEXT_LIB_DEPENDS} \
 		gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 
-WANTLIB-main=	${WANTLIB} Xrender png X11 m Xext glitz \
+WANTLIB-main=	${WANTLIB} ICE SM Xrender png X11 m Xext glitz \
 		gmodule-2.0 cairo \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		gobject-2.0 glib-2.0

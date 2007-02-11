@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/01/10 12:58:31 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2007/02/11 00:56:57 steven Exp $
 
 COMMENT-main=		"multimedia framework - good plugins"
 COMMENT-aalib=		"multimedia framework - aalib plugin"
@@ -19,7 +19,7 @@ V=			0.10.5
 DISTNAME=		gst-plugins-good-$V
 PKGNAME-main=		gstreamer-plugins-good-$V
 PKGNAME-aalib=		gstreamer-aalib-$V
-PKGNAME-cairo=		gstreamer-cairo-$V
+PKGNAME-cairo=		gstreamer-cairo-$Vp0
 PKGNAME-gconf=		gstreamer-confelements-$V
 PKGNAME-esd=		gstreamer-esd-$V
 PKGNAME-flac=		gstreamer-flac-$V
@@ -28,7 +28,7 @@ PKGNAME-taglib=		gstreamer-taglib-$V
 PKGNAME-dv=		gstreamer-dv-$V
 PKGNAME-jpeg=		gstreamer-jpeg-$V
 PKGNAME-png=		gstreamer-png-$V
-PKGNAME-gdk=		gstreamer-gdk-pixbuf-$V
+PKGNAME-gdk=		gstreamer-gdk-pixbuf-$Vp0
 PKGNAME-caca=		gstreamer-libcaca-$V
 PKGNAME-shout=		gstreamer-shoutcast-$V
 
@@ -60,7 +60,7 @@ LIB_DEPENDS-aalib=	${LIB_DEPENDS} \
 			aa::graphics/aalib
 
 WANTLIB-cairo=		${WANTLIB} \
-			X11 Xext Xrender fontconfig freetype \
+			ICE SM X11 Xext Xrender fontconfig freetype \
 			glitz png gstbase-0.10
 LIB_DEPENDS-cairo=	${LIB_DEPENDS} \
 			cairo::graphics/cairo
@@ -115,7 +115,7 @@ WANTLIB-png=		${WANTLIB} \
 LIB_DEPENDS-png=	${LIB_DEPENDS} \
 			png::graphics/png
 
-WANTLIB-gdk=		${WANTLIB} \
+WANTLIB-gdk=		${WANTLIB} ICE SM \
 			X11 Xext Xrender atk-1.0 cairo fontconfig freetype \
 			glitz pango-1.0 pangocairo-1.0 pangoft2-1.0 png \
 			gstbase-0.10

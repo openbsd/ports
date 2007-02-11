@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2006/12/16 12:22:36 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2007/02/11 00:56:58 steven Exp $
 
 COMMENT-main=		"C++ interface for gtk2+"
 COMMENT-docs=		"C++ interface for gtk2+ documentation"
 
 VERSION=		2.8.9
 DISTNAME=		gtkmm-${VERSION}
-PKGNAME-main=		gtk2mm-${VERSION}p0
+PKGNAME-main=		gtk2mm-${VERSION}p1
 PKGNAME-docs=		gtk2mm-docs-${VERSION}
 CATEGORIES=		devel x11
 
@@ -28,7 +28,7 @@ MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gtkmm/2.8/}
 
 MULTI_PACKAGES=		-main -docs
 
-WANTLIB-main=		X11 Xext Xrender atk-1.0 fontconfig freetype \
+WANTLIB-main=		ICE SM X11 Xext Xrender atk-1.0 fontconfig freetype \
 			glib-2.0 gmodule-2.0 gobject-2.0 m z \
 			pango-1.0 pangocairo-1.0 \
 			pangoft2-1.0 sigc-2.0 cairo glitz png

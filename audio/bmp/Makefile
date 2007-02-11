@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2006/12/16 12:22:32 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2007/02/11 00:56:57 steven Exp $
 
 COMMENT-main=	"gtk+2 media player based on XMMS"
 COMMENT-mp3=	"MP3 input plugin for bmp"
@@ -6,8 +6,8 @@ COMMENT-vorbis=	"Ogg Vorbis input plugin for bmp"
 V=		0.9.7
 DISTNAME=	bmp-$V
 PKGNAME-main=	bmp-$Vp9
-PKGNAME-mp3=	bmp-mp3-$Vp8
-PKGNAME-vorbis=	bmp-vorbis-$Vp8
+PKGNAME-mp3=	bmp-mp3-$Vp9
+PKGNAME-vorbis=	bmp-vorbis-$Vp9
 SHARED_LIBS +=	beep                 2.0      # .2.0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=beepmp/}
@@ -29,7 +29,7 @@ USE_X11=	Yes
 
 MODULES=	devel/gettext
 
-WANTLIB=	X11 Xext Xrender fontconfig freetype m z \
+WANTLIB=	ICE SM X11 Xext Xrender fontconfig freetype m z \
 		gmodule-2.0 atk-1.0 gobject-2.0 glitz png \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 cairo
 
@@ -67,10 +67,10 @@ PERMIT_DISTFILES_FTP-mp3=	"patent issues"
 LIB_DEPENDS-mp3=${LIB_DEPENDS} \
 		beep::${BUILD_PKGPATH}
 
-WANTLIB-vorbis=	${WANTLIB} ogg 
+WANTLIB-vorbis=	${WANTLIB} ogg
 
 RUN_DEPENDS-vorbis=	::${BUILD_PKGPATH}
-WANTLIB-main=	${WANTLIB} pthread ICE audiofile c SM
+WANTLIB-main=	${WANTLIB} pthread audiofile c
 
 WRKDIST=	${WRKDIR}/bmp-0.9.7
 

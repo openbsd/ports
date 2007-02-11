@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2006/11/26 11:10:00 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2007/02/11 00:56:57 steven Exp $
 
 COMMENT-main=		"lightweight GTK+ based mail/news client"
 COMMENT-dillo=		"dillo plugin for sylpheed-claws"
@@ -63,7 +63,7 @@ FULLPKGNAME-docs=	sylpheed-claws-docs-${VERSION}p2
 FULLPKGNAME-imageviewer=sylpheed-claws-imageviewer-${VERSION}p2
 FULLPKGNAME-spamassassin=sylpheed-claws-spamassassin-${VERSION}p2
 FULLPKGNAME-themes=	sylpheed-claws-themes-${VERSION}p2
-FULLPKGNAME-trayicon=	sylpheed-claws-trayicon-${VERSION}p2
+FULLPKGNAME-trayicon=	sylpheed-claws-trayicon-${VERSION}p3
 
 RUN_DEPENDS-dillo=	::${BUILD_PKGPATH} \
 			:dillo-*:www/dillo
@@ -83,6 +83,7 @@ PKG_ARCH-themes=	*
 PKG_ARCH-docs=		*
 
 WANTLIB-main=		${WANTLIB} ICE SM c pthread gthread-2.0
+WANTLIB-trayicon=	${WANTLIB} ICE SM
 WANTLIB-themes=
 WANTLIB-docs=
 

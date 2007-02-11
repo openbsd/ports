@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2007/02/08 11:31:16 bernd Exp $
+# $OpenBSD: Makefile,v 1.13 2007/02/11 00:56:57 steven Exp $
 
 COMMENT=		"tools to edit/modify/encode video streams"
 
 DISTNAME=		mjpegtools-1.8.0
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		multimedia
 SHARED_LIBS=		lavfile		3.0 \
 			lavfile-1.8	3.0 \
@@ -28,7 +28,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mjpeg/}
 
-WANTLIB=		X11 Xext Xrender c cairo fontconfig \
+WANTLIB=		ICE SM X11 Xext Xrender c cairo fontconfig \
 			freetype glitz m pthread stdc++ usbhid z
 
 MODULES+=		devel/gettext

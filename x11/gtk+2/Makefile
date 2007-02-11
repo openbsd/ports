@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2007/02/02 09:21:29 bernd Exp $
+# $OpenBSD: Makefile,v 1.47 2007/02/11 00:56:58 steven Exp $
 
 NOT_FOR_ARCHS=			${NO_SHARED_ARCHS}
 
@@ -7,7 +7,7 @@ COMMENT-docs=           	"gtk+-2 documentation"
 
 VERSION=			2.8.20
 DISTNAME=			gtk+-${VERSION}
-PKGNAME-main=			gtk+2-${VERSION}p3
+PKGNAME-main=			gtk+2-${VERSION}p4
 PKGNAME-docs=			gtk+2-docs-${VERSION}
 CATEGORIES=			x11 devel
 
@@ -29,8 +29,8 @@ EXTRACT_SUFX=			.tar.bz2
 
 MULTI_PACKAGES=         	-main -docs
 
-WANTLIB-main=			X11 Xcursor Xext Xfixes Xi Xinerama Xrender \
-				Xrandr c cairo fontconfig freetype glitz m pthread z
+WANTLIB-main=		ICE SM X11 Xcursor Xext Xfixes Xi Xinerama Xrender \
+			Xrandr c cairo fontconfig freetype glitz m pthread z
 MODULES=			devel/gettext
 
 LIB_DEPENDS=			glib-2.0.>=1000.0,gmodule-2.0.>=1000.0,gobject-2.0.>=1000.0::devel/glib2 \

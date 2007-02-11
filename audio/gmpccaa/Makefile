@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/01 10:43:23 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/02/11 00:56:57 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"Amazon cover art provider for gmpc"
 
 DISTNAME=	gmpccaa-0.1.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
 
 HOMEPAGE=	http://cms.qballcow.nl/index.php?page=Plugins
@@ -17,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://download.qballcow.nl/programs/gmpc-0.13/Plugins/
 
-WANTLIB=		X11 Xext Xrender atk-1.0 cairo crypto fontconfig \
+WANTLIB=		ICE SM X11 Xext Xrender atk-1.0 cairo crypto fontconfig \
 			freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 			gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 			png ssl z

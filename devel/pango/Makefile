@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2006/12/16 12:47:40 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2007/02/11 00:56:57 steven Exp $
 
 COMMENT=		"library for layout and rendering of text"
 
 DISTNAME=		pango-1.12.3
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS=		pango-1.0	1200.3 \
 			pangocairo-1.0	1200.3 \
 			pangoft2-1.0	1200.3 \
@@ -18,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xft Xrender c fontconfig freetype \
+WANTLIB=		ICE SM X11 Xext Xft Xrender c fontconfig freetype \
 			glitz iconv intl m png z
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/pango/1.12/}
