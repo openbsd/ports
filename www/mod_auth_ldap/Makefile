@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/01/22 15:04:31 bernd Exp $
+# $OpenBSD: Makefile,v 1.7 2007/02/11 10:31:20 bernd Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -8,7 +8,7 @@ COMMENT=	"Apache LDAP authentication module"
 
 VERSION=	1.6.0
 DISTNAME=	auth_ldap-${VERSION}
-PKGNAME=	mod_auth_ldap-${VERSION}p2
+PKGNAME=	mod_auth_ldap-${VERSION}p3
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.rudedog.org/auth_ldap/
