@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2006/12/08 15:40:26 deanna Exp $
+# $OpenBSD: Makefile,v 1.7 2007/02/11 20:36:06 deanna Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	"flash player with firefox browser plugin"
 DISTNAME=	gnash-0.7.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	www

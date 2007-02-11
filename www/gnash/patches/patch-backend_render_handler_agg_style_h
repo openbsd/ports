@@ -1,0 +1,16 @@
+$OpenBSD: patch-backend_render_handler_agg_style_h,v 1.1 2007/02/11 20:36:06 deanna Exp $
+--- backend/render_handler_agg_style.h.orig	Mon Nov  6 14:24:24 2006
++++ backend/render_handler_agg_style.h	Mon Jan 15 17:59:42 2007
+@@ -44,6 +44,12 @@ public:
+   
+   // for non-solid styles:
+   virtual void generate_span(agg::rgba8* span, int x, int y, unsigned len)=0;
++
++  // Everytime a class has a virtual method it should
++  // also have a virtual destructor. This will ensure
++  // that the destructor for the *derived* class is invoked
++  // when deleting a pointer to base class !!
++  virtual ~agg_style_base() {}
+ };
+ 
+ 
