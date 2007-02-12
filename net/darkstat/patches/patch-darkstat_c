@@ -1,0 +1,46 @@
+$OpenBSD: patch-darkstat_c,v 1.1 2007/02/12 17:38:03 ckuethe Exp $
+--- darkstat.c.orig	Mon Jun 26 07:19:31 2006
++++ darkstat.c	Mon Feb 12 10:29:53 2007
+@@ -54,7 +54,7 @@ parse_port(const char *str)
+ static void
+ usage(const char *arg0)
+ {
+-   printf("usage: %s [-d] -i interface [-p port] [-b bindaddr] [-f filter]\n",
++   printf("usage: %s [-d] [-n] -i interface [-p port] [-b bindaddr] [-f filter]\n",
+       arg0);
+    exit(EXIT_FAILURE);
+ }
+@@ -68,7 +68,7 @@ main(int argc, char **argv)
+    int maxconn = -1;
+    const char *interface = NULL;
+    const char *filter = NULL;
+-   int ch, want_daemonize = 0;
++   int ch, want_daemonize = 0, want_promisc = 1;
+ 
+    printf(PACKAGE_STRING " using libpcap %d.%d\n",
+       PCAP_VERSION_MAJOR, PCAP_VERSION_MINOR);
+@@ -76,11 +76,14 @@ main(int argc, char **argv)
+    if (close(STDIN_FILENO) == -1)
+       warn("close(stdin)");
+ 
+-   while ((ch = getopt(argc, argv, "di:p:b:f:")) != -1) {
++   while ((ch = getopt(argc, argv, "dni:p:b:f:")) != -1) {
+    switch (ch) {
+    case 'd':
+       want_daemonize = 1;
+       break;
++   case 'n':
++      want_promisc = 0;
++      break;
+    case 'i':
+       interface = optarg;
+       break;
+@@ -113,7 +116,7 @@ main(int argc, char **argv)
+    dns_init(); /* do this first as it forks - minimize memory use */
+ 
+    /* Need root privs for these: */
+-   cap_init(interface, filter);
++   cap_init(interface, filter, want_promisc);
+    http_init(bindaddr, bindport, maxconn);
+    ncache_init(); /* don't need priv, but must do before chroot */
+ 

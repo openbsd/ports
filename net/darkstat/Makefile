@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/11 18:11:09 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.4 2007/02/12 17:38:03 ckuethe Exp $
 
 COMMENT=		"network statistics gatherer with graphs"
 
 DISTNAME=		darkstat-3.0.540
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		net www
 
 HOMEPAGE=		http://dmr.ath.cx/net/darkstat/
