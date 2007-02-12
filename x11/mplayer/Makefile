@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2007/02/08 18:58:22 mglocker Exp $
+# $OpenBSD: Makefile,v 1.112 2007/02/12 14:47:11 biorn Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -7,7 +7,7 @@ COMMENT=		"Movie player supporting MPEG, DivX, AVI, ASF, MOV & more"
 
 DISTNAME=		MPlayer-1.0pre8
 DIST_SUBDIR=		mplayer
-PKGNAME=		${DISTNAME:L}p6
+PKGNAME=		${DISTNAME:L}p7
 CATEGORIES=		x11
 EXTRACT_SUFX=		.tar.bz2
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	"patents"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m ncurses ogg pthread stdc++ util z 
+WANTLIB=		c m ncurses ogg pthread stdc++ util z crypto
 
 MASTER_SITES=		http://www1.mplayerhq.hu/MPlayer/releases/ \
 			http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -49,8 +49,9 @@ LIB_DEPENDS=	png::graphics/png \
 		speex::audio/speex \
 		mpcdec::audio/libmpcdec \
 		vorbis::audio/libvorbis \
-		xvidcore::multimedia/xvidcore \
-		rtunes.>=0.6::audio/rtunes
+		xvidcore::multimedia/xvidcore
+
+BUILD_DEPENDS=	:rtunes->=0.6:audio/rtunes
 
 PATCHFILES=     rtunes_ao.diff:1
 
