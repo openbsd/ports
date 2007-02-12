@@ -1,6 +1,6 @@
-$OpenBSD: patch-cap_c,v 1.3 2007/02/12 17:38:03 ckuethe Exp $
---- cap.c.orig	Mon Feb 12 10:29:27 2007
-+++ cap.c	Mon Feb 12 10:29:53 2007
+$OpenBSD: patch-cap_c,v 1.4 2007/02/12 18:07:12 ckuethe Exp $
+--- cap.c.orig	Mon Feb 12 10:50:08 2007
++++ cap.c	Mon Feb 12 10:50:23 2007
 @@ -43,7 +43,7 @@ static const linkhdr_t *linkhdr = NULL;
   * Init pcap.  Exits on failure.
   */
@@ -19,15 +19,94 @@ $OpenBSD: patch-cap_c,v 1.3 2007/02/12 17:38:03 ckuethe Exp $
        CAP_TIMEOUT,
        errbuf);
  
-@@ -90,6 +90,11 @@ cap_init(const char *device, const char 
-       warnx("pcap_open_live() warning: %s", errbuf);
+@@ -91,6 +91,11 @@ cap_init(const char *device, const char 
  
     free(tmp_device);
-+
+ 
 +   if (promisc)
 +      verbosef("capturing in promiscuous mode");
 +   else
 +      verbosef("capturing in non-promiscuous mode");
- 
++
     /* Set filter expression, if any. */
     if (filter != NULL)
+    {
+@@ -112,28 +117,13 @@ cap_init(const char *device, const char 
+       free(tmp_filter);
+    }
+ 
+-#ifdef HAVE_PCAP_GET_SELECTABLE_FD
+-   if (pcap_setnonblock(pcap, 1, errbuf) == -1)
+-      errx(1, "pcap_setnonblock(): %s", errbuf);
+-
+-   pcap_fd = pcap_get_selectable_fd(pcap);
+-   if (pcap_fd == -1)
+-      errx(1, "pcap_get_selectable_fd(): there isn't one!");
+-
+-   verbosef("pcap_got_selectable_fd");
+-#else
+-   /* hax */
+    pcap_fd = pcap_fileno(pcap);
+ 
++   /* set non-blocking */
+ { int one = 1;
+    if (ioctl(pcap_fd, FIONBIO, &one) == -1)
+       err(1, "ioctl(pcap_fd, FIONBIO)"); }
+ 
+-{ struct timeval t = { 0, CAP_TIMEOUT * 1000 }; /* msec -> usec */
+-   if (ioctl(pcap_fd, BIOCSRTIMEOUT, &t) == -1)
+-      err(1, "ioctl(pcap_fd, BIOCSRTIMEOUT)"); }
+-#endif
+-
+ #ifdef BIOCSETWF
+ {
+    /* Deny all writes to the socket */
+@@ -151,6 +141,7 @@ cap_init(const char *device, const char 
+ #endif
+ 
+ #ifdef BIOCLOCK
++   /* set "locked" flag (no reset) */
+    if (ioctl(pcap_fd, BIOCLOCK) == -1)
+       err(1, "ioctl(pcap_fd, BIOCLOCK)");
+    verbosef("locked down BPF for security");
+@@ -190,7 +181,7 @@ cap_poll(fd_set *read_set)
+ 
+ #ifndef linux /* We don't use select() on Linux. */
+    if (!FD_ISSET(pcap_fd, read_set)) {
+-      dverbosef("cap_poll premature");
++      verbosef("cap_poll premature");
+       return;
+    }
+ #endif
+@@ -202,19 +193,29 @@ cap_poll(fd_set *read_set)
+    localip_update(); /* FIXME: this might even be too often */
+ 
+    total = 0;
+-   do {
++   for (;;) {
+       ret = pcap_dispatch(
+             pcap,
+             -1,               /* count, -1 = entire buffer */
+             linkhdr->handler, /* callback func from decode.c */
+             NULL);            /* user */
+ 
++      verbosef("ret = %d", ret); /* FIXME: debugging the FIONBIO change */
++
+       if (ret < 0)
+          errx(1, "pcap_dispatch(): %s", pcap_geterr(pcap));
+ 
+       /* Despite count = -1, Linux will only dispatch one packet at a time. */
+       total += ret;
+-   } while (ret != 0);
++
++#ifdef linux
++      /* keep looping until we've dispatched all the outstanding packets */
++      if (ret == 0) break;
++#else
++      /* we get them all on the first shot */
++      break;
++#endif
++   }
+    /*FIXME*/fprintf(stderr, "%-20d\r", total);
+ }
+ 

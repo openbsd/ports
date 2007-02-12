@@ -1,8 +1,11 @@
-$OpenBSD: patch-cap_h,v 1.2 2007/02/12 17:38:03 ckuethe Exp $
---- cap.h.orig	Mon Feb 12 10:29:27 2007
-+++ cap.h	Mon Feb 12 10:29:53 2007
-@@ -8,7 +8,7 @@
- #include <sys/time.h> /* FreeBSD 4 needs this for struct timeval */
+$OpenBSD: patch-cap_h,v 1.3 2007/02/12 18:07:12 ckuethe Exp $
+--- cap.h.orig	Mon Feb 12 10:50:08 2007
++++ cap.h	Mon Feb 12 10:50:21 2007
+@@ -5,9 +5,10 @@
+  */
+ 
+ #include <sys/types.h> /* OpenBSD needs this before select */
++#include <sys/time.h> /* FreeBSD 4 needs this for struct timeval */
  #include <sys/select.h>
  
 -void cap_init(const char *device, const char *filter);
