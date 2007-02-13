@@ -1,6 +1,6 @@
---- setup.c.orig	Thu Mar 28 04:32:12 2002
-+++ setup.c	Mon May  5 17:32:12 2003
-@@ -228,7 +228,7 @@ char	drawPath[MAXPATHLENGTH]; /* last ch
+--- setup.c.orig	Wed Jun 14 01:29:59 2006
++++ setup.c	Sun Jan 21 12:08:33 2007
+@@ -233,7 +233,7 @@ char	drawPath[MAXPATHLENGTH]; /* last ch
  char	bootDir[MAXPATHLENGTH+2];
  char	homeDir[MAXPATHLENGTH];
  char	tgifDir[MAXPATHLENGTH];
