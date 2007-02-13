@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_aiccu_conf,v 1.1.1.1 2007/02/13 20:30:48 naddy Exp $
+--- doc/aiccu.conf.orig	Sun Jan  7 18:42:29 2007
++++ doc/aiccu.conf	Mon Jan  8 00:32:14 2007
+@@ -12,7 +12,7 @@
+ # ipv6_interface is the name of the interface that will be used as a tunnel interface.
+ # On *BSD the ipv6_interface should be set to gifX (eg gif0) for proto-41 tunnels
+ # or tunX (eg tun0) for AYIYA tunnels.
+-ipv6_interface sixxs
++ipv6_interface gif0
+ 
+ # The tunnel_id to use (default: none)
+ # (only required when there are multiple tunnels in the list)

@@ -1,0 +1,13 @@
+$OpenBSD: patch-common_aiccu_h,v 1.1.1.1 2007/02/13 20:30:48 naddy Exp $
+--- common/aiccu.h.orig	Mon Jan  8 00:59:41 2007
++++ common/aiccu.h	Mon Jan  8 01:00:01 2007
+@@ -65,7 +65,9 @@
+  * the data. Could be useful in the event
+  * where we can't make contact to the main server
+  */
++#ifndef AICCU_CACHE
+ #define AICCU_CACHE	"/var/cache/aiccu.cache"
++#endif
+ 
+ /* The PID we are running as when daemonized */
+ #define AICCU_PID	"/var/run/aiccu.pid"

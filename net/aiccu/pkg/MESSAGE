@@ -1,0 +1,12 @@
+Go to www.sixxs.net and get a free account.
+Edit ${SYSCONFDIR}/aiccu.conf and insert your account data.
+
+You can start the daemon like this:
+${PREFIX}/sbin/aiccu start
+
+Add the following to the /etc/rc.local script to start the daemon on boot:
+
+if [ -x ${PREFIX}/sbin/aiccu -a -f ${SYSCONFDIR}/aiccu.conf ]; then
+        echo -n ' aiccu'
+        ${PREFIX}/sbin/aiccu start
+fi

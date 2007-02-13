@@ -1,0 +1,36 @@
+$OpenBSD: patch-doc_aiccu_1,v 1.1.1.1 2007/02/13 20:30:48 naddy Exp $
+--- doc/aiccu.1.orig	Sat May 21 19:48:53 2005
++++ doc/aiccu.1	Tue Dec 19 22:50:12 2006
+@@ -3,7 +3,7 @@
+ .\" <http://shell.ipoline.com/~elmert/comp/docbook2X/> 
+ .\" Please send any bug reports, improvements, comments, patches, 
+ .\" etc. to Steve Cheng <steve@ggi-project.org>.
+-.TH "AICCU" "1" "18 April 2005" "" ""
++.TH "AICCU" "8" "18 April 2005" "" ""
+ 
+ .SH NAME
+ AICCU \- Automatic IPv6 Connectivity Configuration Utility
+@@ -18,10 +18,19 @@ everywhere they want. It uses the TIC (T
+ protocol to request the information needed to setup a tunnel through
+ which the connectivity is created.
+ AICCU supports the following tunneling protocols:
+-- 6in4 static    (RFC 2893)
+-- 6in4 heartbeat (RFC 2893 + draft-massar-v6ops-heartbeat)
+-- tinc           (http://www.tinc-vpn.org)
+-- AYIYA          (draft-massar-v6ops-ayiya)
++.IP \(bu 2
++6in4 static
++(RFC 2893)
++.IP \(bu
++6in4 heartbeat
++(RFC 2893 + draft-massar-v6ops-heartbeat)
++.IP \(bu
++tinc
++(http://www.tinc-vpn.org)
++.IP \(bu
++AYIYA
++(draft-massar-v6ops-ayiya)
++.PP
+ As AYIYA even works from behind NAT's, thus unless there is a very
+ restrictive firewall in place, anybody should be able to get IPv6
+ connectivity without problems and everywhere they want.
