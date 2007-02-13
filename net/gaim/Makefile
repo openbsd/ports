@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2007/02/07 01:07:18 todd Exp $
+# $OpenBSD: Makefile,v 1.101 2007/02/13 00:14:42 todd Exp $
 
 SHARED_ONLY=	Yes
 
@@ -55,7 +55,6 @@ CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.59
 CONFIGURE_ARGS+= --disable-gevolution \
 		 --disable-gnutls \
-		 --disable-nas \
 		 --disable-nss \
 		 --disable-perl \
 		 --disable-tcl \
@@ -72,12 +71,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 FLAVORS=	audio debug gtkspell
 FLAVOR?=	
 
-
 .if ${FLAVOR:L:Maudio}
 LIB_DEPENDS+=		gstreamer-0.10:gstreamer-0.10.*:multimedia/gstreamer-0.10/core
 .else
-CONFIGURE_ARGS+=	--disable-audio \
-			--disable-gstreamer
+CONFIGURE_ARGS+=	--disable-gstreamer
 # --disable-gstreamer is not sufficient
 MAKE_FLAGS+=    GSTREAMER_CFLAGS= GSTREAMER_LIBS=
 .endif
