@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/08/10 16:11:30 naddy Exp $
-sbin/sixxs-heartbeatd
-share/doc/sixxs-heartbeatd/
-share/doc/sixxs-heartbeatd/README
-share/doc/sixxs-heartbeatd/draft-massar-v6ops-heartbeat-00.txt
-share/examples/sixxs-heartbeatd/
-share/examples/sixxs-heartbeatd/heartbeat.conf
