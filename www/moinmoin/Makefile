@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2006/08/04 10:20:29 djm Exp $
+# $OpenBSD: Makefile,v 1.5 2007/02/13 09:13:43 bernd Exp $
 
 COMMENT=	"Python clone of WikiWiki"
 
-DISTNAME=	moin-1.5.4
+DISTNAME=	moin-1.5.7
 PKGNAME=	moin${DISTNAME}
 CATEGORIES=	www
 PKG_ARCH=	*
@@ -18,6 +18,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/python
+
+RUN_DEPENDS=	${MODPY_EXPAT_DEPENDS}
 
 NO_REGRESS=	Yes
 

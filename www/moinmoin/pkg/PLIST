@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2006/08/04 10:20:29 djm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/02/13 09:13:43 bernd Exp $
 bin/moin
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/Page.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/Page.pyc
@@ -24,10 +22,10 @@ lib/python${MODPY_VERSION}/site-packages/MoinMoin/_tests/test_PageEditor.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/_tests/test_PageEditor.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/_tests/test_error.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/_tests/test_error.pyc
-lib/python${MODPY_VERSION}/site-packages/MoinMoin/_tests/test_formatter.py
-lib/python${MODPY_VERSION}/site-packages/MoinMoin/_tests/test_formatter.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/_tests/test_i18n.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/_tests/test_i18n.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/_tests/test_newlocking.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/_tests/test_newlocking.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/_tests/test_packages.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/_tests/test_packages.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/_tests/test_pysupport.py
@@ -209,6 +207,8 @@ lib/python${MODPY_VERSION}/site-packages/MoinMoin/i18n/hr.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/i18n/hr.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/i18n/hu.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/i18n/hu.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/i18n/id.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/i18n/id.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/i18n/it.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/i18n/it.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/i18n/ja.py
@@ -425,6 +425,12 @@ lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1050301.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1050301.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1050400.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1050400.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1050500.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1050500.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1050600.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1050600.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1050700.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1050700.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/__init__.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/data.py
@@ -1546,6 +1552,7 @@ share/moin/htdocs/applets/moinfckstyles.xml
 share/moin/htdocs/classic/
 share/moin/htdocs/classic/css/
 share/moin/htdocs/classic/css/common.css
+share/moin/htdocs/classic/css/msie.css
 share/moin/htdocs/classic/css/print.css
 share/moin/htdocs/classic/css/projection.css
 share/moin/htdocs/classic/css/screen.css
@@ -1647,6 +1654,7 @@ share/moin/htdocs/index.html
 share/moin/htdocs/modern/
 share/moin/htdocs/modern/css/
 share/moin/htdocs/modern/css/common.css
+share/moin/htdocs/modern/css/msie.css
 share/moin/htdocs/modern/css/print.css
 share/moin/htdocs/modern/css/projection.css
 share/moin/htdocs/modern/css/screen.css
@@ -1710,6 +1718,7 @@ share/moin/htdocs/modern/img/tongue.png
 share/moin/htdocs/rightsidebar/
 share/moin/htdocs/rightsidebar/css/
 share/moin/htdocs/rightsidebar/css/common.css
+share/moin/htdocs/rightsidebar/css/msie.css
 share/moin/htdocs/rightsidebar/css/print.css
 share/moin/htdocs/rightsidebar/css/projection.css
 share/moin/htdocs/rightsidebar/css/screen.css
@@ -1784,7 +1793,6 @@ share/moin/server/mointwisted.cmd
 share/moin/server/mointwisted.py
 share/moin/server/moinwsgi.py
 share/moin/underlay/
-share/moin/underlay/meta
 share/moin/underlay/pages/
 share/moin/underlay/pages/AbandonedPages/
 share/moin/underlay/pages/AbandonedPages/current
@@ -2338,6 +2346,7 @@ share/moin/underlay/pages/SystemPagesSetup/attachments/Swedish.zip
 share/moin/underlay/pages/SystemPagesSetup/attachments/TraditionalChinese.zip
 share/moin/underlay/pages/SystemPagesSetup/attachments/Turkish.zip
 share/moin/underlay/pages/SystemPagesSetup/attachments/all_languages.zip
+share/moin/underlay/pages/SystemPagesSetup/attachments/extra.zip
 share/moin/underlay/pages/SystemPagesSetup/current
 share/moin/underlay/pages/SystemPagesSetup/revisions/
 share/moin/underlay/pages/SystemPagesSetup/revisions/00000001
