@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2006/11/26 01:01:32 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2007/02/13 21:59:13 sturm Exp $
 
 COMMENT-main=	"host and service monitor"
 COMMENT-web=	"cgis and webpages for nagios"
 
-V=		2.5
+V=		2.7
 DISTNAME=	nagios-${V}
-PKGNAME-main=	nagios-${V}p0
+PKGNAME-main=	nagios-${V}
 PKGNAME-web=	nagios-web-${V}
 CATEGORIES=	net
 
@@ -72,7 +72,7 @@ WANTLIB-main=	${WANTLIB} pthread
 NO_REGRESS=	Yes
 
 CONFIG_FILES0=	cgi.cfg httpd.conf nagios.cfg resource.cfg
-CONFIG_FILES1=	bigger.cfg checkcommands.cfg minimal.cfg misccommands.cfg
+CONFIG_FILES1=	commands.cfg localhost.cfg
 EXDIR=		${PREFIX}/share/examples/nagios
 
 SUBST_VARS=	CHROOT

@@ -1,6 +1,6 @@
-$OpenBSD: patch-sample-config_nagios_cfg_in,v 1.1.1.1 2005/07/25 16:32:06 sturm Exp $
---- sample-config/nagios.cfg.in.orig	Tue Apr  5 21:46:18 2005
-+++ sample-config/nagios.cfg.in	Tue Apr  5 21:54:15 2005
+$OpenBSD: patch-sample-config_nagios_cfg_in,v 1.2 2007/02/13 21:59:13 sturm Exp $
+--- sample-config/nagios.cfg.in.orig	Fri Dec 22 02:43:20 2006
++++ sample-config/nagios.cfg.in	Fri Feb  2 09:43:50 2007
 @@ -16,7 +16,7 @@
  # for historical purposes.  This should be the first option specified 
  # in the config file!!!
@@ -10,20 +10,16 @@ $OpenBSD: patch-sample-config_nagios_cfg_in,v 1.1.1.1 2005/07/25 16:32:06 sturm 
  
  
  
-@@ -34,10 +34,10 @@ log_file=@localstatedir@/nagios.log
- # Arguments are likely to change between different releases of the
- # plugins, so you should use the same config file provided with the
- # plugin release rather than the one provided with Nagios.
--cfg_file=@sysconfdir@/checkcommands.cfg
-+#cfg_file=@sysconfdir@/checkcommands.cfg
+@@ -31,7 +31,7 @@ log_file=@localstatedir@/nagios.log
+ # separate from host and contact definitions...
  
- # Misc commands (notification and event handler commands, etc)
--cfg_file=@sysconfdir@/misccommands.cfg
-+#cfg_file=@sysconfdir@/misccommands.cfg
+ # Command definitions
+-cfg_file=@sysconfdir@/commands.cfg
++#cfg_file=@sysconfdir@/commands.cfg
  
- # You can split other types of object definitions across several
- # config files if you wish (as done here), or keep them all in a
-@@ -240,7 +240,7 @@ log_rotation_method=d
+ # Host and service definitions for monitoring this machine
+ cfg_file=@sysconfdir@/localhost.cfg
+@@ -245,7 +245,7 @@ log_rotation_method=d
  # This is the directory where archived (rotated) log files should be 
  # placed (assuming you've chosen to do log rotation).
  

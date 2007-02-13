@@ -1,19 +1,17 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/26 01:01:32 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/02/13 21:59:13 sturm Exp $
+@pkgpath ${BASE_PKGPATH}
 @newgroup _nagios:550
 @newuser _nagios:550:_nagios:daemon:Nagios user:/var/www/nagios:/sbin/nologin
-@pkgpath ${BASE_PKGPATH}
 bin/nagiostats
 sbin/nagios
 share/examples/nagios/
-share/examples/nagios/bigger.cfg
 share/examples/nagios/cgi.cfg
 @sample ${CHROOT}${SYSCONFDIR}/nagios/
 @sample ${CHROOT}${SYSCONFDIR}/nagios/cgi.cfg
-share/examples/nagios/checkcommands.cfg
+share/examples/nagios/commands.cfg
 share/examples/nagios/httpd.conf
-share/examples/nagios/minimal.cfg
-@sample ${CHROOT}${SYSCONFDIR}/nagios/minimal.cfg
-share/examples/nagios/misccommands.cfg
+share/examples/nagios/localhost.cfg
+@sample ${CHROOT}${SYSCONFDIR}/nagios/localhost.cfg
 share/examples/nagios/nagios.cfg
 @sample ${CHROOT}${SYSCONFDIR}/nagios/nagios.cfg
 share/examples/nagios/resource.cfg
