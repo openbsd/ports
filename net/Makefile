@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.447 2007/02/08 03:25:13 todd Exp $
+# $OpenBSD: Makefile,v 1.448 2007/02/13 20:32:28 naddy Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -7,6 +7,7 @@
      SUBDIR += adns
      SUBDIR += aggregate
      SUBDIR += aguri
+     SUBDIR += aiccu
      SUBDIR += aimsniff
      SUBDIR += amule
      SUBDIR += angst
@@ -310,7 +311,6 @@
      SUBDIR += sing
      SUBDIR += sipsak
      SUBDIR += sirc
-     SUBDIR += sixxs-heartbeatd
      SUBDIR += slirp
      SUBDIR += smokeping
      SUBDIR += sniffit
