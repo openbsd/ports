@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/01/10 19:26:28 kurt Exp $
+# $OpenBSD: Makefile,v 1.4 2007/02/13 17:11:05 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		"libraries to support development of security-enabled apps"
 
 VERSION=		3.11.4
 DISTNAME=		nss-${VERSION}
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 SO_VERSION=		19.0
 .for _lib in freebl3 nss3 nssckbi smime3 softokn3 ssl3
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
@@ -32,7 +32,8 @@ LIB_DEPENDS=		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr
 MAKE_ENV=		BUILD_OPT=1 \
 			LOCALBASE="${LOCALBASE}" \
 			NSS_ENABLE_ECC=1 \
-			SO_VERSION="${SO_VERSION}"
+			SO_VERSION="${SO_VERSION}" \
+			XCFLAGS="${CFLAGS}"
 
 CFLAGS+=		-I${LOCALBASE}/include/nspr
 
@@ -44,6 +45,10 @@ NSSOBJ=			${NSSDIST}/OpenBSD`uname -r`_OPT.OBJ
 
 ALL_TARGET=		nss_build_all
 
+# Don't forget to sync these with http://wiki.mozilla.org/NSS:ToolsToShip
+MAIN_TOOLS=		certutil modutil pk12util signtool ssltap crlutil \
+			cmsutil signver
+
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/nss
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
@@ -53,7 +58,7 @@ do-install:
 		${TAR} -xf - -C ${PREFIX}/lib
 	@chmod 444 ${PREFIX}/lib/*.so.${SO_VERSION}
 	${INSTALL_DATA} ${NSSOBJ}/lib/{libcrmf.a,*.chk} ${PREFIX}/lib/
-	${INSTALL_PROGRAM} ${NSSOBJ}/bin/* ${PREFIX}/bin/
+	@cd ${NSSOBJ}/bin && ${INSTALL_PROGRAM} ${MAIN_TOOLS} ${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${FILESDIR}/nss-config ${PREFIX}/bin/
 	${INSTALL_DATA} ${FILESDIR}/nss.pc ${PREFIX}/lib/pkgconfig/
 	@perl -pi -e 's|!!PREFIX!!|${TRUEPREFIX}|g; s|!!VERSION!!|${VERSION}|g' \
