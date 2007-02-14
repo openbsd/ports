@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/11/27 09:43:14 msf Exp $
+# $OpenBSD: Makefile,v 1.11 2007/02/14 11:51:07 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	"Ruby binding to Gdk-pixbuf"
 
 VERSION=	0.34
 DISTNAME=	ruby-gnome-all-${VERSION}
-PKGNAME=	ruby-gdk-pixbuf-${VERSION}p3
+PKGNAME=	ruby-gdk-pixbuf-${VERSION}p4
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://ruby-gnome.sourceforge.net/
