@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2007/01/28 15:16:17 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2007/02/14 17:24:18 steven Exp $
 
 .if ${MACHINE_ARCH} == "powerpc"
 BROKEN=			"gcc spins on x_20.cpp"
@@ -8,7 +8,7 @@ COMMENT= 		"K Desktop Environment, extra language support"
 CATEGORIES=		x11 x11/kde devel
 VERSION=		3.5.6
 DISTNAME=		kdebindings-${VERSION}
-PKGNAME=		${DISTNAME}
+PKGNAME=		${DISTNAME}p0
 MODKDE_VERSION=		3.5.3
 SHARED_LIBS +=	kjsembed             2.0      # .1.0
 SHARED_LIBS +=	smokeqt              4.0      # .3.2
