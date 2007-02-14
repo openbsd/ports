@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.76 2007/01/23 12:57:32 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.77 2007/02/14 10:17:26 msf Exp $
 
 COMMENT-main=	"Open source LDAP software (client)"
 COMMENT-server=	"Open source LDAP software (server)"
 
 DISTNAME=		openldap-2.3.33
 FULLPKGNAME-main=	${DISTNAME:S/-/-client-/}
-PKGNAME-server=		${DISTNAME:S/-/-server-/}p0
+PKGNAME-server=		${DISTNAME:S/-/-server-/}p1
 
 SHARED_LIBS +=	lber                 9.1      # .2.15
 SHARED_LIBS +=	ldap                 9.1      # .2.15
@@ -104,6 +104,10 @@ pre-build:
 pre-configure:
 	perl -pi -e 's,KRB5_LIBS=,KRB5_LIBS="-lgssapi -lkrb5 -lasn1 \
 		-lcom_err",g' ${WRKSRC}/configure
+.if ${FLAVOR} != "bdb"
+	perl -pi -e 's,database	bdb,database	ldbm,' \
+		${WRKSRC}/servers/slapd/slapd.conf
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openldap
