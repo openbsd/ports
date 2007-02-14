@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/31 14:38:17 dhill Exp $
+# $OpenBSD: Makefile,v 1.2 2007/02/14 16:55:28 steven Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		"interprets Ruby code embedded in a text file"
 
-DISTNAME=		eruby-1.0.5	
+DISTNAME=		eruby-1.0.5
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		textproc	
 
 SHARED_LIBS=		eruby 1.05
