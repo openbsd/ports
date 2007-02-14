@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2007/01/12 21:46:17 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/02/14 22:44:32 naddy Exp $
 @conflict mozilla-firebird-*
 @pkgpath www/mozilla-firefox
 %%SHARED%%
 bin/firefox
 bin/mozilla-firefox
+@man man/man1/firefox.1
+@man man/man1/mozilla-firefox.1
 mozilla-firefox/
 mozilla-firefox/LICENSE
 mozilla-firefox/README.OpenBSD

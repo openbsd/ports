@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2007/02/05 00:11:55 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2007/02/14 22:44:32 naddy Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -8,8 +8,8 @@ COMMENT-devel=	"devel files for Gecko"
 VER=		2.0.0.1
 DISTNAME=	mozilla
 PKGNAME=	mozilla-firefox-${VER}
-PKGNAME-main=	mozilla-firefox-${VER}p0
-PKGNAME-devel=	mozilla-firefox-devel-${VER}p0
+PKGNAME-main=	mozilla-firefox-${VER}p1
+PKGNAME-devel=	mozilla-firefox-devel-${VER}p1
 SO_VERSION=	19.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -126,6 +126,9 @@ pre-configure:
 	@perl -pi -e 's|_SO_VERSION_|${SO_VERSION}|g' \
 		${WRKSRC}/xpcom/components/nsNativeComponentLoader.cpp
 
+post-build:
+	@cd ${WRKSRC}/xpfe/bootstrap && ${MAKE_PROGRAM} firefox.1
+
 do-install:
 .for dir in include idl
 	${INSTALL_DATA_DIR} ${MOZ}/${dir}
@@ -161,5 +164,7 @@ do-install:
 		< ${FILESDIR}/README.OpenBSD > ${MOZ}/README.OpenBSD
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
 	${INSTALL_DATA} ${WRKBUILD}/build/unix/*.pc ${PREFIX}/lib/pkgconfig
+	${INSTALL_MAN} ${WRKSRC}/xpfe/bootstrap/firefox.1 ${PREFIX}/man/man1/
+	@ln -f ${PREFIX}/man/man1/firefox.1 ${PREFIX}/man/man1/mozilla-firefox.1
 
 .include <bsd.port.mk>

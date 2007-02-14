@@ -1,0 +1,75 @@
+$OpenBSD: patch-xpfe_bootstrap_mozilla_man_in,v 1.1 2007/02/14 22:44:32 naddy Exp $
+--- xpfe/bootstrap/mozilla.man.in.orig	Sun Apr  3 03:07:04 2005
++++ xpfe/bootstrap/mozilla.man.in	Tue Feb 13 21:38:05 2007
+@@ -1,6 +1,6 @@
+ .TH @MOZ_APP_NAME@ 1 "March 28, 2005" @MOZ_APP_NAME@ "Linux User's Manual"
+ .SH NAME
+-@MOZ_APP_NAME@ \- an internet application suite (browser, mail, etc.)
++@MOZ_APP_NAME@ \- redesign of Mozilla's browser component.
+ 
+ .SH SYNOPSIS
+ .B @MOZ_APP_NAME@
+@@ -62,9 +62,6 @@ Set height of startup window to \fIvalue
+ .B \-h, \-help
+ Show summary of options.
+ .TP
+-.B \-installer
+-Start with 4.x migration window.
+-.TP
+ \fB\-width\fR \fIvalue\fR
+ Set width of startup window to \fIvalue\fR.
+ .TP
+@@ -77,45 +74,26 @@ Create \fIprofile\fR.
+ \fB\-P\fR \fIprofile\fR
+ Start with \fIprofile\fR.
+ .TP
+-.B \-ProfileWizard
+-Start with profile wizard.
+-.TP
+ .B \-ProfileManager
+ Start with profile manager.
+ .TP
+-.B \-SelectProfile
+-Start with profile selection dialog.
++\fB\-UILocale\fR \fIlocale\fR
++Start with \fIlocale\fR resources as UI Locale.
+ .TP
+-\fB\-lang\fR \fIlang-region\fR
+-Start with \fIlang-region\fR resources.
++\fB\-contentLocale\fR \fIlocale\fR
++Start with \fIlocale\fR resources as content Locale.
+ .TP
+-\fB\-remote\fR \fIcommand\fR
+-Execute \fIcommand\fR in an already running @MOZ_APP_DISPLAYNAME@ process.  For more info,
+-see: \fIhttp://www.mozilla.org/unix/remote.html\fR
++.B \-safe-mode
++Disables extensions and themes for the session.
+ .TP
+-.B \-splash
+-Enable splash screen.
+-.TP
+-.B \-addressbook
+-Start with the addressbook.
+-.TP
+-.B \-news
+-Start with news.
+-.TP
+ .B \-jsconsole
+ Start with Javascript Console
+ .TP
+-\fB\-edit\fR \fIurl\fR
+-Start with editor.
+-.TP
+ \fB\-chrome\fR \fIurl\fR
+ Load the specified chrome.
+ .TP
+-.B \-mail
+-Start with mail.
+-.TP
+-\fB\-compose\fR \fIurl\fR
+-Start with mail compose.
++.B \-browser
++Open a browser window.
+ 
+ .SH FILES
+ \fI@bindir@/@MOZ_APP_NAME@\fR - shell script wrapping \fB@MOZ_APP_NAME@\fR
