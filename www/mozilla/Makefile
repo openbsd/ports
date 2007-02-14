@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2007/01/12 20:47:53 kurt Exp $
+# $OpenBSD: Makefile,v 1.115 2007/02/14 17:13:42 naddy Exp $
 
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64 amd64 powerpc
 
@@ -7,8 +7,8 @@ COMMENT-devel=	"devel files for Gecko"
 
 VER=		1.7.13
 DISTNAME=	mozilla
-PKGNAME=	mozilla-${VER}p6
-PKGNAME-main=	mozilla-${VER}p6
+PKGNAME=	mozilla-${VER}
+PKGNAME-main=	mozilla-${VER}p7
 PKGNAME-devel=	mozilla-devel-${VER}p6
 DISTFILES=	mozilla-${VER}-source.tar.bz2
 SO_VERSION=	8.0
@@ -136,5 +136,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
 	${INSTALL_DATA} ${WRKBUILD}/build/unix/*.pc ${PREFIX}/lib/pkgconfig
+	${INSTALL_MAN} ${WRKSRC}/xpfe/bootstrap/mozilla.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
