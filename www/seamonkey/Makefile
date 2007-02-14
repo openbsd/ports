@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/01/12 23:11:12 kurt Exp $
+# $OpenBSD: Makefile,v 1.4 2007/02/14 17:13:38 kurt Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -7,9 +7,9 @@ COMMENT-devel=  "devel files for Gecko"
 
 VER=		1.0.7
 DISTNAME=	seamonkey-${VER}.source
-PKGNAME=	seamonkey-${VER}p1
-PKGNAME-main=	seamonkey-${VER}p1
-PKGNAME-devel=  seamonkey-devel-${VER}p1
+PKGNAME=	seamonkey-${VER}
+PKGNAME-main=	seamonkey-${VER}p2
+PKGNAME-devel=  seamonkey-devel-${VER}p2
 
 SO_VERSION=	9.3
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -149,5 +149,6 @@ do-install:
 	${INSTALL_DATA} ${WRKBUILD}/build/unix/*.pc ${PREFIX}/lib/pkgconfig
 	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' \
 		< ${FILESDIR}/README.OpenBSD > ${MOZ}/README.OpenBSD
+	${INSTALL_MAN} ${WRKSRC}/xpfe/bootstrap/seamonkey.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
