@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2006/12/06 17:21:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2007/02/14 10:26:28 bernd Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"Perl interface to the Imlib2 image library"
 
 DISTNAME=	Image-Imlib2-1.10
-PKGNAME=	p5-${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}p1
 CATEGORIES=	graphics
 
 MAINTAINER=	Michael Knudsen <mk@openbsd.org>
