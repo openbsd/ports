@@ -1,16 +1,16 @@
-$OpenBSD: patch-sa-update_raw,v 1.2 2006/10/27 10:12:44 ajacoutot Exp $
---- sa-update.raw.orig	Mon Oct  9 19:34:35 2006
-+++ sa-update.raw	Sun Oct 22 20:36:01 2006
-@@ -1225,7 +1225,7 @@ Options:
+$OpenBSD: patch-sa-update_raw,v 1.3 2007/02/15 19:57:48 mbalmer Exp $
+--- sa-update.raw.orig	Tue Feb 13 19:17:14 2007
++++ sa-update.raw	Thu Feb 15 08:29:08 2007
+@@ -1262,7 +1262,7 @@ Options:
  
-   --updatedir path		Directory to place updates, defaults to the
- 				SpamAssassin site rules directory (def:
--				/var/lib/spamassassin/<version>)
-+				@@LOCAL_STATE_DIR@@/<version>)
- 
-   --channel channel		Retrieve updates from this channel
-   				Use multiple times for multiple channels
-@@ -1263,7 +1263,7 @@ Update archives are verified by default 
+   --updatedir path        Directory to place updates, defaults to the
+                           SpamAssassin site rules directory
+-                          (default: /var/lib/spamassassin/<version>)
++                          (default: @@LOCAL_STATE_DIR@@/<version>)
+   --channel channel       Retrieve updates from this channel
+                           Use multiple times for multiple channels
+   --channelfile file      Retrieve updates from the channels in the file
+@@ -1298,7 +1298,7 @@ Update archives are verified by default 
  
  By default, C<sa-update> will use the system-wide rules update directory:
  
