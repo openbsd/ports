@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/18 20:35:46 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/02/15 00:32:27 steven Exp $
 
 COMMENT=	"automatically configure source code on many Un*x platforms"
 
 DISTNAME=	autoconf-2.61
-PKGNAME=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=autoconf/}
 
