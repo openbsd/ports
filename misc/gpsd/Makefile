@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2007/02/08 23:03:38 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.14 2007/02/15 18:37:07 steven Exp $
 
 COMMENT-main=		"service daemon that monitors one or more GPSes"
 COMMENT-motif=		"motif-based test apps using gpsd"
@@ -10,7 +10,7 @@ DISTNAME=		gpsd-${VERSION}
 PKGNAME-main=		gpsd-${VERSION}
 PKGNAME-motif=		gpsd-motif-${VERSION}
 PKGNAME-php=		gpsd-php-${VERSION}
-PKGNAME-python=		gpsd-python-${VERSION}
+PKGNAME-python=		gpsd-python-${VERSION}p0
 SHARED_LIBS=		gps	16.0
 CATEGORIES=		misc geo
 
@@ -56,6 +56,7 @@ CONFIGURE_ARGS+=	--without-python
 MULTI_PACKAGES+=	-python
 MODULES=		lang/python
 LIB_DEPENDS-python=	gps::misc/gpsd
+WANTLIB-python=		c m pthread
 RUN_DEPENDS-main=
 RUN_DEPENDS-motif=
 CONFIGURE_ENV+=		PYTHON="${MODPY_BIN}"
