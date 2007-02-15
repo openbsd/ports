@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/01/10 12:58:31 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/02/15 08:07:39 steven Exp $
 
 COMMENT-main=		"multimedia framework - plugins ugly"
 COMMENT-sidplay=	"multimedia framework - sidplay plugin"
@@ -11,7 +11,7 @@ COMMENT-dvdread=	"multimedia framework - dvdread plugin"
 V=			0.10.5
 DISTNAME=		gst-plugins-ugly-$V
 PKGNAME-main=		gstreamer-plugins-ugly-$V
-PKGNAME-sidplay=	gstreamer-sidplay-$V
+PKGNAME-sidplay=	gstreamer-sidplay-$Vp0
 PKGNAME-a52=		gstreamer-a52-$V
 PKGNAME-mad=		gstreamer-mad-$V
 PKGNAME-lame=		gstreamer-lame-$V
@@ -39,7 +39,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 RUN_DEPENDS-main=	
 
 			
-WANTLIB-sidplay=	${WANTLIB}
+WANTLIB-sidplay=	${WANTLIB} stdc++
 LIB_DEPENDS-sidplay=	${LIB_DEPENDS} \
 			sidplay::audio/libsidplay
 
