@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2007/02/14 11:51:07 steven Exp $
+# $OpenBSD: Makefile,v 1.32 2007/02/15 10:25:17 dlg Exp $
 
 COMMENT-main=	"subversion revision control system"
 COMMENT-perl=	"perl interface to subversion"
@@ -7,8 +7,8 @@ COMMENT-ruby=	"ruby interface to subversion"
 
 VERSION=	1.4.3
 DISTNAME=	subversion-${VERSION}
-PKGNAME=	${DISTNAME}
-PKGNAME-main=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
+PKGNAME-main=	${DISTNAME}p0
 PKGNAME-perl=	p5-SVN-${VERSION}
 PKGNAME-python=	py-subversion-${VERSION}
 PKGNAME-ruby=	ruby-subversion-${VERSION}p0
@@ -159,6 +159,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/hook-scripts/mailer
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/hook-scripts/mailer/tests
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/hook-scripts/enforcer
+	${INSTALL_DATA} ${FILESDIR}/config \
+			${PREFIX}/share/examples/subversion/config
 	${INSTALL_DATA} ${WRKBUILD}/tools/backup/hot-backup.py \
 			${PREFIX}/share/examples/subversion/backup
 	${INSTALL_DATA} ${WRKSRC}/tools/server-side/svn-backup-dumps.py \

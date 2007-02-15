@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/24 19:52:53 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/02/15 10:25:17 dlg Exp $
 @pkgpath devel/subversion,no_bindings
 @pkgpath devel/subversion
 %%SHARED%%
@@ -82,10 +82,13 @@ lib/libsvn_wc-1.la
 @man man/man5/svnserve.conf.5
 @man man/man8/svnserve.8
 share/examples/subversion/
+@sample ${SYSCONFDIR}/subversion/
 share/examples/subversion/backup/
 share/examples/subversion/backup/hot-backup.py
 share/examples/subversion/backup/svn-backup-dumps.py
 share/examples/subversion/backup/svn-fast-backup
+share/examples/subversion/config
+@sample ${SYSCONFDIR}/subversion/config
 share/examples/subversion/hook-scripts/
 share/examples/subversion/hook-scripts/README
 share/examples/subversion/hook-scripts/check-case-insensitive.pl
