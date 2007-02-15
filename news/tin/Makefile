@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2007/01/26 23:19:32 steven Exp $
+# $OpenBSD: Makefile,v 1.30 2007/02/15 07:11:17 steven Exp $
 
 COMMENT=	'threaded NNTP and spool based UseNet newsreader'
 
 DISTNAME=	tin-${VERSION}.${PATCHLEVEL}
+PKGNAME=	${DISTNAME}p0
 VERSION=	1.8
 PATCHLEVEL=	2
 CATEGORIES=	news
@@ -46,7 +47,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 LIB_DEPENDS+=	pcre::devel/pcre \
-		utf8::misc/libutf8
+		utf8::misc/libutf8 \
+		idn::devel/libidn
 
 ALL_TARGET=	build
 
