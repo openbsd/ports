@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/12/27 11:16:10 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2007/02/15 08:04:49 steven Exp $
 
 CATEGORIES=	databases
 DISTNAME=	sqlports-0.5
@@ -23,5 +23,6 @@ do-install:
 
 BUILD_DEPENDS=	::databases/p5-DBD-SQLite
 NO_REGRESS=	Yes
+NO_CHECKSUM=	Yes
 
 .include <bsd.port.mk>
