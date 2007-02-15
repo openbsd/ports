@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2007/01/04 11:29:59 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.44 2007/02/15 17:15:42 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"videolan client; multimedia player"
 V=		0.8.6
 DISTNAME=	vlc-${V}
-PKGNAME=	vlc-${V}p1
+PKGNAME=	vlc-${V}p2
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -26,12 +26,9 @@ LIB_DEPENDS=	SDL_image.>=1.3::devel/sdl-image \
 		png.>=4.1::graphics/png \
 		id3tag.>=3.0::audio/libid3tag \
 		mad.>=2.1::audio/libmad \
-		ogg.>=5.2::audio/libogg \
-		vorbis.>=3.0,vorbisenc.>=2.0::audio/libvorbis \
 		mpeg2::graphics/libmpeg2 \
 		avcodec.>=7.0,avformat.>=7.0,postproc.>=7.0,avutil.>=1.0::graphics/ffmpeg \
 		fribidi::devel/fribidi \
-		faad::audio/faad \
 		a52::audio/liba52 \
 		theora.>=1::multimedia/libtheora \
 		xml2.>=9::textproc/libxml \
@@ -45,7 +42,7 @@ LIB_DEPENDS=	SDL_image.>=1.3::devel/sdl-image \
 
 WANTLIB=	ICE SM X11 Xext Xinerama Xv Xxf86vm c freetype m ncurses \
 		ossaudio pthread stdc++ usbhid z \
-		SDL jpeg tiff
+		SDL jpeg tiff faac faad mp3lame ogg vorbis vorbisenc
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.59
