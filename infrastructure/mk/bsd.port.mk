@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.880 2007/02/11 11:44:17 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.881 2007/02/16 19:08:54 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2277,12 +2277,16 @@ _internal-clean:
 .  endif
 .endif
 .if ${_clean:L:Mdist}
+.  if defined(SUPDISTFILES) && !empty(SUPDISTFILES) && !defined(__FETCH_ALL)
+	@exec ${MAKE} clean=dist __FETCH_ALL=Yes ECHO_MSG=:
+.  else
 	@${ECHO_MSG} "===>  Dist cleaning for ${FULLPKGNAME${SUBPACKAGE}}"
-	@if cd ${FULLDISTDIR} 2>/dev/null; then \
-		rm -f ${_DISTFILES} ${_PATCHFILES}; \
+	@if cd ${DISTDIR} 2>/dev/null; then \
+		rm -f ${_CKSUMFILES}; \
 	fi
-.  if !empty(DIST_SUBDIR)
+.    if !empty(DIST_SUBDIR)
 	-@rmdir ${FULLDISTDIR}
+.    endif
 .  endif
 .endif
 .if ${_clean:L:Minstall}
