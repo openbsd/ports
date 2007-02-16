@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure_in,v 1.1 2006/11/01 20:59:18 alek Exp $
---- configure.in.orig	Tue Sep  5 12:54:42 2006
-+++ configure.in	Mon Sep 18 06:31:10 2006
+$OpenBSD: patch-configure_in,v 1.2 2007/02/16 22:56:48 steven Exp $
+--- configure.in.orig	Tue Sep  5 04:54:42 2006
++++ configure.in	Fri Feb 16 20:57:34 2007
+@@ -201,7 +201,7 @@ case $ac_sys_system/$ac_sys_release in
+   # On OpenBSD, select(2) is not available if _XOPEN_SOURCE is defined,
+   # even though select is a POSIX function. Reported by J. Ribbens.
+   # Reconfirmed for OpenBSD 3.3 by Zachary Hamm, for 3.4 by Jason Ish.
+-  OpenBSD/2.* | OpenBSD/3.@<:@0123456789@:>@ | OpenBSD/4.@<:@0@:>@) 
++  OpenBSD*) 
+     define_xopen_source=no;;
+   # On Solaris 2.6, sys/wait.h is inconsistent in the usage
+   # of union __?sigval. Reported by Stuart Bishop.
 @@ -1508,19 +1508,7 @@ then
  			LDSHARED="ld -Bshareable ${LDFLAGS}"
  		fi;;
