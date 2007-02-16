@@ -1,4 +1,4 @@
-# $OpenBSD
+# $OpenBSD: Makefile,v 1.2 2007/02/16 07:30:56 steven Exp $
 
 COMMENT=	"DNS protocol implementation"
 
