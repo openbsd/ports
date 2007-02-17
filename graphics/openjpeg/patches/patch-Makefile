@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2007/02/08 00:29:22 todd Exp $
---- Makefile.orig	Wed Feb  1 15:25:11 2006
-+++ Makefile	Mon Jan  8 18:26:27 2007
+$OpenBSD: patch-Makefile,v 1.2 2007/02/17 15:55:08 steven Exp $
+--- Makefile.orig	Wed Feb  1 22:25:11 2006
++++ Makefile	Fri Feb 16 23:51:16 2007
 @@ -1,7 +1,7 @@
  # Linux makefile for OpenJPEG
  
@@ -11,7 +11,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2007/02/08 00:29:22 todd Exp $
  
  SRCS = ./libopenjpeg/bio.c ./libopenjpeg/cio.c ./libopenjpeg/dwt.c ./libopenjpeg/event.c ./libopenjpeg/image.c ./libopenjpeg/j2k.c ./libopenjpeg/j2k_lib.c ./libopenjpeg/jp2.c ./libopenjpeg/jpt.c ./libopenjpeg/mct.c ./libopenjpeg/mqc.c ./libopenjpeg/openjpeg.c ./libopenjpeg/pi.c ./libopenjpeg/raw.c ./libopenjpeg/t1.c ./libopenjpeg/t2.c ./libopenjpeg/tcd.c ./libopenjpeg/tgt.c
  INCLS = ./libopenjpeg/bio.h ./libopenjpeg/cio.h ./libopenjpeg/dwt.h ./libopenjpeg/event.h ./libopenjpeg/fix.h ./libopenjpeg/image.h ./libopenjpeg/int.h ./libopenjpeg/j2k.h ./libopenjpeg/j2k_lib.h ./libopenjpeg/jp2.h ./libopenjpeg/jpt.h ./libopenjpeg/mct.h ./libopenjpeg/mqc.h ./libopenjpeg/openjpeg.h ./libopenjpeg/pi.h ./libopenjpeg/raw.h ./libopenjpeg/t1.h ./libopenjpeg/t2.h ./libopenjpeg/tcd.h ./libopenjpeg/tgt.h ./libopenjpeg/opj_includes.h
-@@ -11,7 +11,7 @@ INCLUDE = -Ilibopenjpeg
+@@ -11,20 +11,21 @@ INCLUDE = -Ilibopenjpeg
  CC = gcc
  AR = ar
  
@@ -20,7 +20,14 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2007/02/08 00:29:22 todd Exp $
  
  # Converts cr/lf to just lf
  DOS2UNIX = dos2unix
-@@ -24,7 +24,7 @@ CFLAGS = $(COMPILERFLAGS) $(INCLUDE)
+ 
+ COMPILERFLAGS = -O3
+-LIBRARIES = -lstdc++
++LIBRARIES = 
+ 
+ MODULES = $(SRCS:.c=.o)
++SOMODULES = $(SRCS:.c=.so)
+ CFLAGS = $(COMPILERFLAGS) $(INCLUDE)
  
  TARGET  = openjpeg
  STATICLIB = lib$(TARGET).a
@@ -29,7 +36,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2007/02/08 00:29:22 todd Exp $
  LIBNAME = lib$(TARGET).so.$(VER_MAJOR)
  
  
-@@ -34,9 +34,9 @@ default: all
+@@ -34,9 +35,9 @@ default: all
  all: dist
  
  dist: OpenJPEG
@@ -41,12 +48,25 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2007/02/08 00:29:22 todd Exp $
  	cp libopenjpeg/openjpeg.h dist/
  
  dos2unix:
-@@ -51,13 +51,12 @@ $(STATICLIB): $(MODULES)
+@@ -44,20 +45,24 @@ dos2unix:
+ 
+ OpenJPEG: $(STATICLIB) $(SHAREDLIB)
+ 
++.SUFFIXES: .c .o .so
++
+ .c.o:
+ 	$(CC) $(CFLAGS) -c $< -o $@
+ 
++.c.so:
++	$(CC) $(CFLAGS) -fPIC -c $< -o $@
++
+ $(STATICLIB): $(MODULES)
  	$(AR) r $@ $(MODULES)
  
- $(SHAREDLIB): $(MODULES)
+-$(SHAREDLIB): $(MODULES)
 -	$(CC) -s -shared -Wl,-soname,$(LIBNAME) -o $@ $(MODULES) $(LIBRARIES)
-+	$(CC) -s -shared -o $@ $(MODULES) $(LIBRARIES)
++$(SHAREDLIB): $(SOMODULES)
++	$(CC) -s -shared -fPIC -o $@ $(SOMODULES) $(LIBRARIES)
  
  install:
 -	install -m 644 -o root -g root $(STATICLIB) $(INSTALLDIR)

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/02/08 00:29:22 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2007/02/17 15:55:08 steven Exp $
 
 COMMENT=		"open-source JPEG 2000 codec library"
 
 DISTNAME=		openjpeg_v1_1
-PKGNAME=		openjpeg-1.1p0
+PKGNAME=		openjpeg-1.1p1
 
-SHARED_LIBS=		openjpeg	1.0
+SHARED_LIBS=		openjpeg	2.0
 
 CATEGORIES=		graphics
 
@@ -22,6 +22,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${HOMEPAGE}
 
 MAKE_ENV=		LIBopenjpeg_VERSION=${LIBopenjpeg_VERSION}
+MAKE_FLAGS=		CC="${CC}" COMPILERFLAGS="${CFLAGS}"
 WRKDIST=		${WRKDIR}/OpenJPEG
+
+NO_REGRESS=		Yes
 
 .include <bsd.port.mk>
