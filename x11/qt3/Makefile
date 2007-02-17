@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2007/01/29 09:24:13 espie Exp $
+# $OpenBSD: Makefile,v 1.73 2007/02/17 18:59:04 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT-main=		"C++ X11 GUI toolkit"
@@ -12,9 +12,9 @@ PKGNAME=		qt3-${VERSION}
 PKGNAME-mysql=		qt3-mysql-${VERSION}
 PKGNAME-postgresql=	qt3-postgresql-${VERSION}
 PKGNAME-examples=	qt3-examples-${VERSION}
-FULLPKGNAME-main=	qt3-mt-${VERSION}${PKGDEBUG}p0
+PKGNAME-main=	qt3-mt-${VERSION}p1
 FULLPKGNAME-html=	qt3-html-${VERSION}
-FULLPKGNAME-sqlite2=	qt3-sqlite2-${VERSION}
+PKGNAME-sqlite2=	qt3-sqlite2-${VERSION}
 SHARED_LIBS=		qt-mt	30.3 \
 			qui	2.0 \
 			qui-mt	2.0
@@ -191,8 +191,9 @@ NO_REGRESS=	Yes
 PROGRAMS3=designer findtr moc qt20fix qtrename140 uic
 PROGRAMS=assistant linguist lrelease lupdate qm2ts qmake qtconfig 
 
-.if !${FLAVOR:L:Mdebug}
 post-configure:
+	perl -pi.bak -e 's,-L(\Q${WRKDIST}\E|\Q$$(LOCALBASE)\E)/lib,,' ${WRKDIST}/lib/qt-mt.pc
+.if !${FLAVOR:L:Mdebug}
 	@cd ${WRKSRC} && cp -R examples examples-src
 	@find ${WRKSRC}/examples-src -name '*.orig' |xargs rm -f
 	@find ${WRKSRC}/examples-src -name '.moc' |xargs rm -rf
@@ -229,6 +230,8 @@ post-patch:
 .endif
 
 do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
+	${INSTALL_DATA} ${WRKDIST}/lib/qt-mt.pc ${PREFIX}/lib/pkgconfig
 	${INSTALL_DATA_DIR} ${QT_INCDIR}
 	${INSTALL_MAN_DIR} ${QT_MANDIR}/man1
 	${INSTALL_MAN_DIR} ${QT_MANDIR}/man3

@@ -1,6 +1,6 @@
-$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.15 2006/03/07 19:29:20 espie Exp $
---- qmake/generators/unix/unixmake2.cpp.orig	Fri Sep  2 14:43:19 2005
-+++ qmake/generators/unix/unixmake2.cpp	Tue Mar  7 10:42:35 2006
+$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.16 2007/02/17 18:59:04 espie Exp $
+--- qmake/generators/unix/unixmake2.cpp.orig	Thu Oct 19 16:25:42 2006
++++ qmake/generators/unix/unixmake2.cpp	Sat Feb 17 17:15:33 2007
 @@ -129,6 +129,8 @@ UnixMakefileGenerator::writeMakeParts(QT
  	 src_incremental=FALSE, moc_incremental=FALSE;
  
@@ -67,3 +67,11 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.15 2006/03/07 19:29:20 e
  	}
  	if(project->isEmpty("QMAKE_LN_SHLIB"))
  	    project->variables()["QMAKE_LN_SHLIB"].append("ln -s");
+@@ -1586,5 +1606,6 @@ UnixMakefileGenerator::writePkgConfigFil
+       << varGlue("PRL_EXPORT_DEFINES","-D"," -D"," ")
+       << project->variables()["PRL_EXPORT_CXXFLAGS"].join(" ")
+ 	//      << varGlue("DEFINES","-D"," -D"," ")
+-      << " -I${includedir}";
++      << " -I${includedir}"
++      << endl;
+ }
