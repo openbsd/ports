@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_autoconf_texi,v 1.2 2007/02/15 00:32:27 steven Exp $
---- doc/autoconf.texi.orig	Fri Jul 21 14:14:32 2006
-+++ doc/autoconf.texi	Fri Jul 21 14:16:53 2006
+$OpenBSD: patch-doc_autoconf_texi,v 1.3 2007/02/17 18:40:37 steven Exp $
+--- doc/autoconf.texi.orig	Fri Nov 17 01:16:27 2006
++++ doc/autoconf.texi	Thu Feb 15 13:23:19 2007
 @@ -205,27 +205,27 @@ published by the Free Software Foundatio
  
  @dircategory Software development
@@ -30,13 +30,13 @@ $OpenBSD: patch-doc_autoconf_texi,v 1.2 2007/02/15 00:32:27 steven Exp $
                                  The Autoconf executables backbone
 -* configure: (autoconf)configure Invocation.    Configuring a package.
 -* autoupdate: (autoconf)autoupdate Invocation.
-+* configure: (autoconf-2.61)configure Invocation.    Configuring a package.
++* configure-2.61: (autoconf-2.61)configure Invocation.    Configuring a package.
 +* autoupdate-2.61: (autoconf-2.61)autoupdate Invocation.
                                  Automatic update of @file{configure.ac}
 -* config.status: (autoconf)config.status Invocation. Recreating configurations.
 -* testsuite: (autoconf)testsuite Invocation.    Running an Autotest test suite.
-+* config.status: (autoconf-2.61)config.status Invocation. Recreating configurations.
-+* testsuite: (autoconf-2.61)testsuite Invocation.    Running an Autotest test suite.
++* config.status-2.61: (autoconf-2.61)config.status Invocation. Recreating configurations.
++* testsuite-2.61: (autoconf-2.61)testsuite Invocation.    Running an Autotest test suite.
  @end direntry
  
  @titlepage
