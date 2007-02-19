@@ -1,5 +1,5 @@
 /*
- * $OpenBSD: param.i386_obsd40.h,v 1.1 2006/08/04 16:34:43 naddy Exp $
+ * $OpenBSD: param.i386_obsd40.h,v 1.2 2007/02/19 21:09:10 bernd Exp $
  * Jim Rees, University of Michigan CITI
  */
 
@@ -10,8 +10,8 @@
 #include <sys/param.h>
 #endif
 
-#define SYS_NAME		"i386_obsd40"
-#define SYS_NAME_ID		SYS_NAME_ID_i386_obsd40
+#define SYS_NAME		"i386_obsd41"
+#define SYS_NAME_ID		SYS_NAME_ID_i386_obsd41
 
 #define AFS_XBSD_ENV		1	/* {Free,Open,Net}BSD */
 #define AFS_X86_XBSD_ENV	1

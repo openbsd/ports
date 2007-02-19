@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.10 2006/08/04 16:34:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2007/02/19 21:09:10 bernd Exp $
 
 ONLY_FOR_ARCHS= 	i386
 
 COMMENT=		"Distributed filesystem OpenAFS"
 
 DISTNAME=		openafs-1.4.0-src
-PKGNAME=		openafs-1.4.0p4
+PKGNAME=		openafs-1.4.0p5
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.openafs.org
 
-MAINTAINER=		Jaime Fournier <ober@linbsd.org>
+MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 
 # IPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -34,7 +34,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 WRKDIST=		${WRKDIR}/${DISTNAME:S/-src$//}
 
 post-patch:
-	@cp ${FILESDIR}/param.i386_obsd40.h ${WRKSRC}/src/config/
+	@cp ${FILESDIR}/param.i386_obsd40.h \
+		${WRKSRC}/src/config/param.${ARCH}_obsd${OSrev}.h
 
 pre-configure:
 	@if [ ! -d /usr/src/sys ]; then \

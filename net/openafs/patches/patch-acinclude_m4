@@ -1,7 +1,7 @@
-$OpenBSD: patch-acinclude_m4,v 1.2 2006/08/04 16:34:43 naddy Exp $
+$OpenBSD: patch-acinclude_m4,v 1.3 2007/02/19 21:09:10 bernd Exp $
 --- acinclude.m4.orig	Mon Oct  3 04:46:29 2005
-+++ acinclude.m4	Fri Aug  4 18:06:56 2006
-@@ -257,6 +257,15 @@ else
++++ acinclude.m4	Mon Feb 19 11:36:45 2007
+@@ -257,6 +257,18 @@ else
  		i?86-*-openbsd3.7)
  			AFS_SYSNAME="i386_obsd37"
  			;;
@@ -14,10 +14,13 @@ $OpenBSD: patch-acinclude_m4,v 1.2 2006/08/04 16:34:43 naddy Exp $
 +		i?86-*-openbsd4.0)
 +			AFS_SYSNAME="i386_obsd40"
 +			;;
++		i?86-*-openbsd4.1)
++			AFS_SYSNAME="i386_obsd41"
++			;;
  		i?86-*-freebsd4.2*)
  			AFS_SYSNAME="i386_fbsd_42"
  			;;
-@@ -893,10 +902,10 @@ fi
+@@ -893,10 +905,10 @@ fi
  
  PTHREAD_LIBS=error
  AC_CHECK_LIB(pthread, pthread_attr_init,
