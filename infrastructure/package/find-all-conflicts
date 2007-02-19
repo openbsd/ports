@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: find-all-conflicts,v 1.11 2005/12/12 13:37:21 espie Exp $
+# $OpenBSD: find-all-conflicts,v 1.12 2007/02/19 19:50:50 bernd Exp $
 # Copyright (c) 2000-2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -144,12 +144,11 @@ my $filehash={};
 my %dirhash=();
 my $conflicts={};
 my $dephash={};
-our ($opt_d, $opt_v);
+our ($opt_d, $opt_p, $opt_v);
 
-sub handle_file
+sub handle_plist
 {
-	my $filename = shift;
-	my $plist = OpenBSD::PackingList->fromfile($filename);
+	my ($filename, $plist) = @_;
 	if (!defined $plist) {
 		print STDERR "Error reading $filename\n";
 		return;
@@ -161,15 +160,48 @@ sub handle_file
 	$plist->visit('register', $filehash, $dephash, $plist->pkgname());
 }
 
-set_usage('find-all-conflicts [-v] [-d plist_dir] [pkgname ...]');
+sub handle_file
+{
+	my $filename = shift;
+	my $plist = OpenBSD::PackingList->fromfile($filename);
+	handle_plist($filename, $plist);
+}
+
+sub handle_portsdir
+{
+	my $dir  = shift;
+	my $make = $ENV{MAKE} || 'make';
+
+	print STDERR "$dir\n";
+
+	open(my $input, "cd $dir && $make print-plist-all |");
+	my $done = 0;
+	while (!$done) {
+		my $plist = OpenBSD::PackingList->read($input, sub {
+			my ($fh, $cont) = @_;
+			local $_;
+			while (<$fh>) {
+				return if m/^\=\=\=\> /o;
+				next unless m/^\@(?:cwd|name|info|man|file|lib|shell|conflict|comment\s+subdir\=)\b/o || !m/^\@/o;
+				&$cont($_);
+			}
+			$done = 1;
+		});
+		if (defined $plist && $plist->pkgname()) {
+			handle_plist($dir, $plist);
+		}
+	}
+}
+
+set_usage('find-all-conflicts [-v] [-d plist_dir] [-p ports_dir] [pkgname ...]');
 try {
-    getopts('d:v');
+    getopts('d:p:v');
 } catchall {
 	Usage($_);
 };
 
-print "Scanning packages\n" if $opt_v;
-print "-----------------\n" if $opt_v;
+print "Scanning\n" if $opt_v;
+print "--------\n" if $opt_v;
 if ($opt_d) {
 	opendir(my $dir, $opt_d);
 	while (my $pkgname = readdir($dir)) {
@@ -177,6 +209,8 @@ if ($opt_d) {
 	    handle_file("$opt_d/$pkgname");
     	}
 	closedir($dir);
+} elsif ($opt_p) {
+	handle_portsdir($opt_p);
 } elsif (@ARGV==0) {
 	@ARGV=(<*.tgz>);
 }
