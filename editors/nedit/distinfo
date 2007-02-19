@@ -4,5 +4,7 @@ RMD160 (nedit-5.5-src.tar.gz) = 9f49f1c936440fd2a62faa8cc6ec624c4acf5a43
 RMD160 (wrapmark.diff) = 48adbeacd9e33312cd83aa5d47bb4b31b938b515
 SHA1 (nedit-5.5-src.tar.gz) = bde400490f5d2a841b146b7806aacff1058a531d
 SHA1 (wrapmark.diff) = 6d63fcaefb3a16d8dba4f4d2a653d498cdacde5e
+SHA256 (nedit-5.5-src.tar.gz) = 7cd6bbc9df15421ccce998f4c6acd966e0a6453c55e897a030de132e08243f52
+SHA256 (wrapmark.diff) = cd58ba96636c919c10e337c879d78a143fff91b1027cefc7abcba8728846a8ed
 SIZE (nedit-5.5-src.tar.gz) = 1503942
 SIZE (wrapmark.diff) = 50327

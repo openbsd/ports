@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2007/01/05 19:39:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2007/02/19 14:42:15 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 COMMENT=		"X11/Motif GUI text editor"
@@ -35,6 +35,10 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mwrapmark}
 PATCH_LIST=		patch-* ${DISTDIR}/wrapmark.diff
+.endif
+
+.if ${FLAVOR:L:Mlesstif}
+CFLAGS+=	-DBUILD_UNTESTED_NEDIT
 .endif
 
 do-install:

@@ -1,0 +1,34 @@
+$OpenBSD: patch-util_check_lin_tif_c,v 1.1 2007/02/19 14:42:15 ajacoutot Exp $
+--- util/check_lin_tif.c.orig	Mon Feb 19 12:20:03 2007
++++ util/check_lin_tif.c	Mon Feb 19 12:20:44 2007
+@@ -158,7 +158,6 @@ void finish(int exitcode, char *tif) {
+     good_versions();
+     if (exitcode == 1) {
+ #ifdef BUILD_BROKEN_NEDIT
+-        char buf[2];
+         fprintf(stderr,
+             "\n========================== WARNING ===========================\n"
+             "You have chosen to build NEdit with a known-bad version of %s,\n"
+@@ -167,7 +166,6 @@ void finish(int exitcode, char *tif) {
+             "reproduce them with a known-good NEdit binary downloaded from:\n"
+             "\thttp://www.nedit.org\n"
+             "\nHIT ENTER TO CONTINUE\n", tif);
+-        fgets(buf, 2, stdin);
+         exit(0);
+ #else
+         fprintf(stderr,
+@@ -179,14 +177,12 @@ void finish(int exitcode, char *tif) {
+ #endif
+     } else if (exitcode == 2) {
+ #ifdef BUILD_UNTESTED_NEDIT
+-        char buf[2];
+         fprintf(stderr,
+             "\n========================== WARNING ===========================\n"
+             "You have chosen to build NEdit with an untested version of %s.\n"
+             "Please report your success or failure with this version to:\n"
+             "\tdevelop@nedit.org\n"
+             "\nHIT ENTER TO CONTINUE\n", tif);
+-        fgets(buf, 2, stdin);
+         exit(0);
+ #else
+         fprintf(stderr,
