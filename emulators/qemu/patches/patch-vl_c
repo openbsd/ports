@@ -1,5 +1,5 @@
 --- vl.c.orig	Sat Jul 22 19:23:34 2006
-+++ vl.c	Tue Jan 16 19:51:19 2007
++++ vl.c	Mon Feb 19 11:30:23 2007
 @@ -43,7 +43,8 @@
  #include <netdb.h>
  #ifdef _BSD
@@ -178,32 +178,7 @@
          }
      } else
  #endif
-@@ -5453,7 +5538,23 @@ void register_machines(void)
- #elif defined(TARGET_SH4)
-     qemu_register_machine(&shix_machine);
- #else
--#error unsupported CPU
-+# warning non-optimized CPU
-+#include <sys/time.h>
-+#include <time.h>
-+
-+int64_t cpu_get_real_ticks(void)
-+{
-+    struct timeval tv;
-+    static int64_t i = 0;
-+    int64_t j;
-+
-+    gettimeofday(&tv, NULL);
-+    do {
-+       j = (tv.tv_sec * (uint64_t) 1000000) + tv.tv_usec;
-+    } while (i == j);
-+    i = j;
-+    return j;
-+}
- #endif
- }
- 
-@@ -5671,7 +5772,7 @@ int main(int argc, char **argv)
+@@ -5671,7 +5756,7 @@ int main(int argc, char **argv)
          serial_devices[i][0] = '\0';
      serial_device_index = 0;
      

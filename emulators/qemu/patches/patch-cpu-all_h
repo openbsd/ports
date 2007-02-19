@@ -1,0 +1,28 @@
+$OpenBSD: patch-cpu-all_h,v 1.1 2007/02/19 12:43:38 robert Exp $
+--- cpu-all.h.orig	Mon Feb 19 10:54:26 2007
++++ cpu-all.h	Mon Feb 19 10:56:42 2007
+@@ -992,6 +992,24 @@ static inline int64_t cpu_get_real_ticks
+         return rval.i64;
+ #endif
+ }
++#else
++# warning non-optimized CPU
++#include <sys/time.h>
++#include <time.h>
++
++static inline int64_t cpu_get_real_ticks (void)
++{
++	struct timeval tv;
++	static int64_t i = 0;
++	int64_t j;
++        
++	gettimeofday(&tv, NULL);
++	do {
++	   j = (tv.tv_sec * (uint64_t) 1000000) + tv.tv_usec;
++	} while (i == j);
++	i = j;
++	return j;
++}
+ #endif
+ 
+ /* profiling */

@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.6 2006/12/22 17:31:45 todd Exp $
---- configure.orig	Sat Jul 22 13:23:34 2006
-+++ configure	Sun Nov 12 17:10:10 2006
+$OpenBSD: patch-configure,v 1.7 2007/02/19 12:43:38 robert Exp $
+--- configure.orig	Sat Jul 22 19:23:34 2006
++++ configure	Tue Feb 13 09:22:48 2007
 @@ -21,8 +21,8 @@ prefix=""
  interp_prefix="/usr/gnemul/qemu-%M"
  static="no"
@@ -25,7 +25,7 @@ $OpenBSD: patch-configure,v 1.6 2006/12/22 17:31:45 todd Exp $
    x86_64|amd64)
      cpu="x86_64"
    ;;
-+  zaurus)
++  armish|zaurus)
 +    cpu="arm"
 +  ;;
    *)
