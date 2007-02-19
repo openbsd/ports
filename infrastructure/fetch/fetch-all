@@ -2,7 +2,7 @@
 
 # Sample script to use with fetch-makefile: fetch all distfiles
 
-# $OpenBSD: fetch-all,v 1.4 2003/08/28 16:19:00 sturm Exp $
+# $OpenBSD: fetch-all,v 1.5 2007/02/19 20:14:50 naddy Exp $
 #
 # Copyright (c) 2000 Marc Espie.
 # 
@@ -41,7 +41,7 @@ for site in ${SITES}
 do
 	if ftp ${site}$file
 	then
-		case `${CIPHER} <$check` in
+		case `cksum -a ${CIPHER} <$check` in
 			${CKSUM}) 
 				echo "Fetch, ok: $@"
 				exit 0;;
