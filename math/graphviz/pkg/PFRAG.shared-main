@@ -1,0 +1,22 @@
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2007/02/20 11:47:07 espie Exp $
+@lib lib/graphviz/guile/libgv_guile.so.${LIBgv_guile_VERSION}
+@lib lib/graphviz/libgvplugin_core.so.${LIBgvplugin_core_VERSION}
+@lib lib/graphviz/libgvplugin_dot_layout.so.${LIBgvplugin_dot_layout_VERSION}
+@lib lib/graphviz/libgvplugin_gd.so.${LIBgvplugin_gd_VERSION}
+@lib lib/graphviz/libgvplugin_gtk.so.${LIBgvplugin_gtk_VERSION}
+@lib lib/graphviz/libgvplugin_neato_layout.so.${LIBgvplugin_neato_layout_VERSION}
+@lib lib/graphviz/libgvplugin_pango.so.${LIBgvplugin_pango_VERSION}
+@lib lib/graphviz/libgvplugin_xlib.so.${LIBgvplugin_xlib_VERSION}
+@lib lib/graphviz/tcl/libgdtclft.so.${LIBgdtclft_VERSION}
+@lib lib/graphviz/tcl/libgv_tcl.so.${LIBgv_tcl_VERSION}
+@lib lib/graphviz/tcl/libtcldot.so.${LIBtcldot_VERSION}
+@lib lib/graphviz/tcl/libtcldot_builtin.so.${LIBtcldot_builtin_VERSION}
+@lib lib/graphviz/tcl/libtclplan.so.${LIBtclplan_VERSION}
+@lib lib/graphviz/tcl/libtkspline.so.${LIBtkspline_VERSION}
+@lib lib/libagraph.so.${LIBagraph_VERSION}
+@lib lib/libcdt.so.${LIBcdt_VERSION}
+@lib lib/libexpr.so.${LIBexpr_VERSION}
+@lib lib/libgraph.so.${LIBgraph_VERSION}
+@lib lib/libgvc.so.${LIBgvc_VERSION}
+@lib lib/libgvc_builtins.so.${LIBgvc_builtins_VERSION}
+@lib lib/libpathplan.so.${LIBpathplan_VERSION}

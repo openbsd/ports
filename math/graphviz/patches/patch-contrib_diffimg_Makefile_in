@@ -1,0 +1,27 @@
+$OpenBSD: patch-contrib_diffimg_Makefile_in,v 1.1 2007/02/20 11:47:07 espie Exp $
+--- contrib/diffimg/Makefile.in.orig2	Sun Feb 18 23:49:11 2007
++++ contrib/diffimg/Makefile.in	Sun Feb 18 23:49:42 2007
+@@ -54,8 +54,8 @@ CONFIG_CLEAN_FILES =
+ PROGRAMS = $(noinst_PROGRAMS)
+ am_diffimg_OBJECTS = diffimg.$(OBJEXT)
+ diffimg_OBJECTS = $(am_diffimg_OBJECTS)
+-@WITH_LIBGD_TRUE@diffimg_DEPENDENCIES =  \
+-@WITH_LIBGD_TRUE@	$(top_builddir)/lib/gd/libgvgd_C.la
++@WITH_MYLIBGD_TRUE@diffimg_DEPENDENCIES =  \
++@WITH_MYLIBGD_TRUE@	$(top_builddir)/lib/gd/libgvgd_C.la
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/config/depcomp
+ am__depfiles_maybe = depfiles
+@@ -367,9 +367,9 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ AM_CPPFLAGS = @GD_INCLUDES@
+ diffimg_SOURCES = diffimg.c
+-@WITH_LIBGD_FALSE@diffimg_LDADD = @GD_LIBS@
+-@WITH_LIBGD_TRUE@diffimg_LDADD = $(top_builddir)/lib/gd/libgvgd_C.la \
+-@WITH_LIBGD_TRUE@	@FC_LIBS@ @FT_LIBS@ @JPEG_LIBS@ @PNG_LIBS@ @Z_LIBS@ @MATH_LIBS@
++@WITH_MYLIBGD_FALSE@diffimg_LDADD = @GD_LIBS@
++@WITH_MYLIBGD_TRUE@diffimg_LDADD = $(top_builddir)/lib/gd/libgvgd_C.la \
++@WITH_MYLIBGD_TRUE@	@FC_LIBS@ @FT_LIBS@ @JPEG_LIBS@ @PNG_LIBS@ @Z_LIBS@ @MATH_LIBS@
+ 
+ GRAPH = "digraph G { hello -> world }"
+ CLEANFILES = *.png

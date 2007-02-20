@@ -16,14 +16,3 @@ The goal of graphviz has been twofold:
     to create convenient graph drawing systems and web
     services. This means defining useful interfaces and
     features to support applications.
-
-The package includes 
-
-     dot - makes hierarchical layouts of directed graphs 
-     neato - makes "spring" model layouts of undirected graphs 
-     dotty - a customizable interface written in LEFTY 
-     tcldot - a customizable graphical interface written in tcl7.6 
-     libgraph - the base library for graph tools 
-
-More information on ${HOMEPAGE}
-Refer to ${HOMEPAGE}/Documentation.php for documentation.

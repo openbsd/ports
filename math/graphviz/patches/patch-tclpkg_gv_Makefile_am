@@ -1,0 +1,12 @@
+$OpenBSD: patch-tclpkg_gv_Makefile_am,v 1.1 2007/02/20 11:47:07 espie Exp $
+--- tclpkg/gv/Makefile.am.orig2	Tue Jan 30 17:18:04 2007
++++ tclpkg/gv/Makefile.am	Tue Jan 30 17:18:14 2007
+@@ -184,7 +184,7 @@ endif
+ gv_sharp.man gv_guile.man gv_io.man gv_java.man gv_lua.man \
+ gv_ocaml.man gv_perl.man gv_php.man gv_python.man gv_ruby.man \
+ gv_tcl.man: gv.i gv_doc_writer.tcl gv_doc_template.tcl gv_doc_langs.tcl
+-	tclsh $(srcdir)/gv_doc_writer.tcl "$(srcdir)"
++	$(TCLSH) $(srcdir)/gv_doc_writer.tcl "$(srcdir)"
+ 
+ install-data-hook:
+ 	(cd $(DESTDIR)$(pkgluadir);    rm -f gv.so;  $(LN_S) libgv_lua.so gv.so;)

@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_gvc_gvconfig_c,v 1.1 2007/02/20 11:47:07 espie Exp $
+--- lib/gvc/gvconfig.c.orig2	Mon Feb 19 22:35:11 2007
++++ lib/gvc/gvconfig.c	Mon Feb 19 22:39:22 2007
+@@ -312,10 +312,14 @@ static void config_rescan(GVC_t *gvc, ch
+     libdir = gvconfig_libdir();
+ 
+     config_re = gmalloc(strlen(plugin_re_beg) + 20 + strlen(plugin_re_end) + 1);
++#ifdef __OpenBSD__
++    sprintf(config_re, "%s", "\\.so\\.0\\.0$");
++#else
+ #ifdef GVPLUGIN_VERSION
+     sprintf(config_re,"%s%d%s", plugin_re_beg, GVPLUGIN_VERSION, plugin_re_end);
+ #else
+     sprintf(config_re,"%s[0-9]+%s", plugin_re_beg, plugin_re_end);
++#endif
+ #endif
+ 
+     if (regcomp(&re, config_re, REG_EXTENDED|REG_NOSUB) != 0) {

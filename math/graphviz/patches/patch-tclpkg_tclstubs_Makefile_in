@@ -1,0 +1,12 @@
+$OpenBSD: patch-tclpkg_tclstubs_Makefile_in,v 1.1 2007/02/20 11:47:07 espie Exp $
+--- tclpkg/tclstubs/Makefile.in.orig2	Wed Jan 31 18:07:44 2007
++++ tclpkg/tclstubs/Makefile.in	Wed Jan 31 18:08:04 2007
+@@ -172,7 +172,7 @@ LIBICONV = @LIBICONV@
+ LIBLTDL = @LIBLTDL@
+ LIBOBJS = @LIBOBJS@
+ LIBPNG_CONFIG = @LIBPNG_CONFIG@
+-LIBS = @TCL_STUB_LIB_SPEC@
++LIBS = $(TCL_STUB_LIB_SPEC)
+ LIBTOOL = @LIBTOOL@
+ LN_S = @LN_S@
+ LTLIBICONV = @LTLIBICONV@

@@ -1,62 +1,116 @@
-# $OpenBSD: Makefile,v 1.19 2006/11/13 12:53:08 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2007/02/20 11:47:07 espie Exp $
 
-COMMENT=	"graph drawing software"
+COMMENT-main=	"graph drawing software"
 
-DISTNAME=	graphviz-1.16
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	graphviz-2.12
+PKGNAME-main=	${DISTNAME}
 CATEGORIES=	math devel graphics
+MULTI_PACKAGES=	-main
 
-SHARED_LIBS=	agraph		0.0 \
-		cdt		0.0 \
-		circogen	0.0 \
-		common		0.0 \
-		dotgen		0.0 \
-		dotneato	0.0 \
-		expr		0.0 \
-		fdpgen		0.0 \
-		gdtclft		0.0 \
-		graph		0.0 \
-		gvgd		0.0 \
-		gvrender	0.0 \
-		neatogen	0.0 \
-		pack		0.0 \
-		pathplan	0.0 \
-		tcldot		0.0 \
-		tclplan		0.0 \
-		tkspline	0.0 \
-		twopigen	0.0
+# to let update-patches work in a simpler way
+PATCHORIG=	.orig2
+
+MASTER_SITES=	${HOMEPAGE}pub/graphviz/ARCHIVE/
+
+SHARED_LIBS +=	gvplugin_core        0.0      # .3.0
+SHARED_LIBS +=	gvplugin_gd          0.0      # .3.0
+SHARED_LIBS +=	gvplugin_pango       0.0      # .3.0
+SHARED_LIBS +=	gvplugin_dot_layout  0.0      # .3.0
+SHARED_LIBS +=	gvplugin_neato_layout 0.0      # .3.0
+SHARED_LIBS +=	gvplugin_xlib        0.0      # .3.0
+SHARED_LIBS +=	gvplugin_gtk         0.0      # .3.0
+SHARED_LIBS +=	gvplugin_dot_layout  0.0      # .3.0
+SHARED_LIBS +=	gvplugin_neato_layout 0.0      # .3.0
+
+SHARED_LIBS +=	cdt                  0.0      # .3.0
+SHARED_LIBS +=	graph                1.0      # .3.0
+SHARED_LIBS +=	agraph               0.1      # .3.0
+SHARED_LIBS +=	pathplan             1.0      # .3.0
+SHARED_LIBS +=	gvc                  0.0      # .3.0
+SHARED_LIBS +=	gvc_builtins         0.0      # .3.0
+SHARED_LIBS +=	expr                 0.0      # .3.0
+SHARED_LIBS +=	gdtclft              1.0      # .0.0
+SHARED_LIBS +=	tcldot               1.0      # .0.0
+SHARED_LIBS +=	tcldot_builtin       1.0      # .0.0
+SHARED_LIBS +=	tclplan              1.0      # .0.0
+SHARED_LIBS +=	tkspline             1.0      # .0.0
+SHARED_LIBS +=	gv_guile             0.0      # .0.0
+SHARED_LIBS +=	gv_perl              0.0      # .0.0
+SHARED_LIBS +=	gv_tcl               0.0      # .0.0
+SHARED_LIBS +=	graph                1.0      # .3.0
+SHARED_LIBS +=	agraph               0.1      # .3.0
+SHARED_LIBS +=	gvc                  0.0      # .3.0
+SHARED_LIBS +=	gvc_builtins         0.0      # .3.0
+SHARED_LIBS +=	tcldot               1.0      # .0.0
+SHARED_LIBS +=	tclplan              1.0      # .0.0
+SHARED_LIBS +=	gv_guile             0.0      # .0.0
+SHARED_LIBS +=	gv_perl              0.0      # .0.0
+SHARED_LIBS +=	gv_tcl               0.0      # .0.0
 
 HOMEPAGE=	http://www.graphviz.org/
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-PERMIT_DISTFILES_FTP=	No
-PERMIT_DISTFILES_CDROM=	No
-# As long as the licence is shown, everything is fine
+# Common public licence
+PERMIT_DISTFILES_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		ICE SM X11 Xaw Xext Xmu Xpm Xt c fontconfig freetype m z
+WANTLIB=		ICE SM X11 Xaw Xext Xmu Xpm Xt c fontconfig freetype \
+			m z Xrender
 
-MASTER_SITES=	${HOMEPAGE}pub/graphviz/ARCHIVE/
-
-MODULES=	converters/libiconv
-LIB_DEPENDS=	expat.>=4::textproc/expat \
+MODULES=	converters/libiconv devel/gettext
+LIB_DEPENDS=	expat::textproc/expat \
 		jpeg.>=62::graphics/jpeg \
-		png.>=2::graphics/png
-BUILD_DEPENDS=	:tk-8.4.*:x11/tk/8.4
+		png.>=2::graphics/png \
+		ltdl::devel/libtool,-ltdl \
+		tk84::x11/tk/8.4 \
+		gd.>=20.34:gd->=2.0.34:graphics/gd
+
+# cairo stuff
+LIB_DEPENDS+= 	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
+
+WANTLIB+=	cairo.>=5 glitz pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+		gmodule-2.0 glib-2.0 gobject-2.0
+
+# gnome stuff
+LIB_DEPENDS+=	gnomeui-2::x11/gnome/libgnomeui
+
+WANTLIB+=	atk-1.0 crypto gthread-2.0 ssl \
+		ORBit-2 ORBitCosNaming-2 art_lgpl_2 audiofile bonobo-2 \
+		bonobo-activation bonoboui-2 esd gconf-2 gnome-2 \
+		gnome-keyring gnomecanvas-2 gnomevfs-2 popt xml2
+
+BUILD_DEPENDS=	:tk-8.4.*:x11/tk/8.4 \
+		:tcl->=8.4.7p5:lang/tcl/8.4 \
+		::devel/swig
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
+AUTOCONF_VERSION=2.59
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-static \
-		--with-mylibgd
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+		--disable-lua \
+		--disable-io \
+		--disable-java \
+		--disable-ocaml \
+		--disable-php \
+		--disable-perl \
+		--disable-python \
+		--disable-ruby \
+		--disable-rpath \
+		--with-gd
+
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
+		PKG_CONFIG=/usr/bin/pkg-config
 
 DOCBASE=	${PREFIX}/share/doc/graphviz
 EXBASE=		${PREFIX}/share/examples/graphviz
+
+MAKE_FLAGS=	TCL_STUB_LIB_SPEC='-L${LOCALBASE}/lib -ltclstub84_pic' \
+		TK_STUB_LIB_SPEC='-L${LOCALBASE}/lib -ltkstub84_pic'
 
 FAKE_FLAGS=	htmldir="${DOCBASE}/html" \
 		pdfdir="${DOCBASE}/pdf" \
@@ -65,24 +119,21 @@ FAKE_FLAGS=	htmldir="${DOCBASE}/html" \
 		directeddir="${EXBASE}/graphs/directed" \
 		leftydir="${EXBASE}/lefty" \
 		pathplanexampledir="${EXBASE}/demo/pathplan_data" \
-		undirecteddir="${EXBASE}/graphs/undirected"
+		undirecteddir="${EXBASE}/graphs/undirected" \
+		${MAKE_FLAGS}
 
-SUBST_VARS=	PKGNAME
-
-.include <bsd.own.mk>
-
-ACCEPT_GRAPHVIZ_LICENSE?=No
-post-extract:
-.if ${ACCEPT_GRAPHVIZ_LICENSE:L} == "no"
-	@echo "You must read ${WRKDIST}/COPYING first"
-	@echo "To accept the license, restart the build with"
-	@echo "ACCEPT_GRAPHVIZ_LICENSE=Yes"
-	@exit 1
-.endif
+post-build:
+.for CMD in dotty lneato
+	echo "#! /bin/ksh" >${WRKBUILD}/cmd/${CMD}/${CMD}
+	echo ': $${LEFTYPATH:=$(LOCALBASE)/share/examples/graphviz/lefty}' >>${WRKBUILD}/cmd/${CMD}/${CMD}
+	echo 'export LEFTYPATH' >>${WRKBUILD}/cmd/${CMD}/${CMD}
+	cat ${WRKBUILD}/cmd/${CMD}/${CMD}.ksh >>${WRKBUILD}/cmd/${CMD}/${CMD}
+.endfor
 
 post-install:
-.for _n _e in ${SHARED_LIBS}
-	@cd ${PREFIX}/lib && ln -s graphviz/lib${_n}.so.${_e} .
-.endfor
+	cd ${PREFIX}/share/examples/graphviz/demo && \
+	    perl -pi -e 's/^exec tclsh/exec tclsh8.4/' entities gcat
+	cd ${PREFIX}/share/examples/graphviz/demo && \
+	    perl -pi -e 's/^exec wish/exec wish8.4/' doted pathplan spline
 
 .include <bsd.port.mk>
