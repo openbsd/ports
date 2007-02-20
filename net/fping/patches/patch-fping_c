@@ -1,4 +1,4 @@
-$OpenBSD: patch-fping_c,v 1.5 2006/10/12 08:22:37 jakob Exp $
+$OpenBSD: patch-fping_c,v 1.6 2007/02/20 20:33:23 naddy Exp $
 --- fping.c.orig	Mon Jan 21 02:06:30 2002
 +++ fping.c	Mon Jun 19 22:22:42 2006
 @@ -42,7 +42,6 @@
@@ -119,15 +119,6 @@ $OpenBSD: patch-fping_c,v 1.5 2006/10/12 08:22:37 jakob Exp $
  			if( sscanf( line, "%s", host ) != 1 )
  				continue;
  			
-@@ -864,7 +882,7 @@ int main( int argc, char **argv )
- 			if( pCopy )
- 			{
- 				/* make a copy of the arg, so we don't damage the original */
--				strcpy( pCopy, pStart );
-+				strncpy( pCopy, pStart, sizeof(pCopy) );
- 
- 				/* look for token '/' */
- 				if( strtok( pCopy, "/" ) != NULL )
 @@ -1503,7 +1521,6 @@ void send_ping( int s, HOST_ENTRY *h )
  	memset( buffer, 0, ping_pkt_size * sizeof( char ) );
  	icp = ( FPING_ICMPHDR* )buffer;
@@ -190,30 +181,6 @@ $OpenBSD: patch-fping_c,v 1.5 2006/10/12 08:22:37 jakob Exp $
  	h->waiting = 0;
  	h->timeout = timeout;
  	h->num_recv++;
-@@ -2214,10 +2237,10 @@ char *na_cat( char *name, struct in_addr
- 	if( !nm )
- 		crash_and_burn( "can't allocate some space for a string" );
- 	
--	strcpy( nm, name );
--	strcat( nm, " (" );
--	strcat( nm, as );
--	strcat( nm, ")" );
-+	strlcpy( nm, name, sizeof(nm) );
-+	strlcat( nm, " (", sizeof(nm) );
-+	strlcat( nm, as, sizeof(nm) );
-+	strlcat( nm, ")", sizeof(nm) );
- 
- 	return( nm );
- 
-@@ -2444,7 +2467,7 @@ char *cpystr( char *string )
- 		if( !dst )
- 			crash_and_burn( "can't allocate some space for a string" );
- 		
--		strcpy( dst, string );
-+		strlcpy( dst, string, sizeof(dst) );
- 		return dst;
- 	
- 	}/* IF */
 @@ -2570,7 +2593,7 @@ char * sprint_tm( int t )
  	/* <= 0.99 ms */
  	if( t < 100 )
