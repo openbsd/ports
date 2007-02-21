@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2007/02/20 11:47:07 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2007/02/21 16:37:34 espie Exp $
 
 COMMENT-main=	"graph drawing software"
 
@@ -83,7 +83,8 @@ WANTLIB+=	atk-1.0 crypto gthread-2.0 ssl \
 
 BUILD_DEPENDS=	:tk-8.4.*:x11/tk/8.4 \
 		:tcl->=8.4.7p5:lang/tcl/8.4 \
-		::devel/swig
+		::devel/swig \
+		::lang/guile
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_X11=	Yes
