@@ -1,6 +1,6 @@
-$OpenBSD: patch-sysdeps_freebsd_procmap_c,v 1.5 2007/01/18 19:31:34 jasper Exp $
---- sysdeps/freebsd/procmap.c	Mon Dec 12 11:09:39 2005
-+++ sysdeps/freebsd/procmap.c	Fri Sep 22 16:53:54 2006
+$OpenBSD: patch-sysdeps_freebsd_procmap_c,v 1.6 2007/02/21 17:27:54 steven Exp $
+--- sysdeps/freebsd/procmap.c.orig	Tue Jan  2 23:50:28 2007
++++ sysdeps/freebsd/procmap.c	Sun Feb 18 20:23:18 2007
 @@ -36,7 +36,7 @@
  #include <vm/vm_object.h>
  #include <vm/vm_prot.h>
@@ -24,7 +24,7 @@ $OpenBSD: patch-sysdeps_freebsd_procmap_c,v 1.5 2007/01/18 19:31:34 jasper Exp $
  /* Fixme ... */
  #undef _KERNEL
  #define _UVM_UVM_AMAP_I_H_ 1
-@@ -102,7 +102,7 @@
+@@ -102,7 +102,7 @@ glibtop_get_proc_map_p (glibtop *server,
  	struct kinfo_proc *pinfo;
  	struct vm_map_entry entry, *first;
  	struct vmspace vmspace;
@@ -33,7 +33,7 @@ $OpenBSD: patch-sysdeps_freebsd_procmap_c,v 1.5 2007/01/18 19:31:34 jasper Exp $
  	struct vnode vnode;
  	struct inode inode;
  #else
-@@ -167,7 +167,7 @@
+@@ -167,7 +167,7 @@ glibtop_get_proc_map_p (glibtop *server,
  
  	/* I tested this a few times with `mmap'; as soon as you write
  	 * to the mmap'ed area, the object type changes from OBJT_VNODE
@@ -42,7 +42,7 @@ $OpenBSD: patch-sysdeps_freebsd_procmap_c,v 1.5 2007/01/18 19:31:34 jasper Exp $
  
  	do {
  		if (update) {
-@@ -188,7 +188,7 @@
+@@ -188,7 +188,7 @@ glibtop_get_proc_map_p (glibtop *server,
   			continue;
  #endif
  #else
@@ -51,7 +51,7 @@ $OpenBSD: patch-sysdeps_freebsd_procmap_c,v 1.5 2007/01/18 19:31:34 jasper Exp $
   		if (UVM_ET_ISSUBMAP (&entry))
  			continue;
  #else
-@@ -214,7 +214,7 @@
+@@ -214,7 +214,7 @@ glibtop_get_proc_map_p (glibtop *server,
  
  		i++;
  
@@ -60,7 +60,7 @@ $OpenBSD: patch-sysdeps_freebsd_procmap_c,v 1.5 2007/01/18 19:31:34 jasper Exp $
  		if (!entry.object.uvm_obj)
  			continue;
  
-@@ -238,7 +238,7 @@
+@@ -238,7 +238,7 @@ glibtop_get_proc_map_p (glibtop *server,
  			glibtop_error_io_r (server, "kvm_read (object)");
  #endif
  
