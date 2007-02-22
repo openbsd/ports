@@ -1,0 +1,15 @@
+$OpenBSD: patch-content_xul_templates_src_nsTemplateMatchSet_h,v 1.1 2007/02/22 00:40:59 naddy Exp $
+--- content/xul/templates/src/nsTemplateMatchSet.h.orig	Tue Sep 25 03:32:17 2001
++++ content/xul/templates/src/nsTemplateMatchSet.h	Wed Feb 21 01:11:17 2007
+@@ -208,7 +208,11 @@ protected:
+      * If the set is currently
+      */
+     struct InlineMatches {
++#ifdef __LP64__
++        PRUint64         mCount;
++#else
+         PRUint32         mCount;
++#endif
+         nsTemplateMatch* mEntries[kMaxInlineMatches];
+     };
+ 

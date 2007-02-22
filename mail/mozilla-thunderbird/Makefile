@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile,v 1.52 2007/02/22 00:40:59 naddy Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -6,7 +6,7 @@ COMMENT=	"redesign of the integrated Mozilla App-Suite mail component"
 
 VER=		1.5.0.9
 DISTNAME=	mozilla
-PKGNAME=	mozilla-thunderbird-${VER}p0
+PKGNAME=	mozilla-thunderbird-${VER}p1
 SO_VERSION=	12.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues. Whenever PKGNAME gets

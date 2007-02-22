@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/12 20:35:15 kurt Exp $
+# $OpenBSD: Makefile,v 1.3 2007/02/22 00:40:59 naddy Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -7,9 +7,9 @@ COMMENT-devel=	"devel files for Gecko"
 
 VER=		1.8.0.4
 DISTNAME=	mozilla
-PKGNAME=	xulrunner-${VER}p0
-PKGNAME-main=	xulrunner-${VER}p0
-PKGNAME-devel=  xulrunner-devel-${VER}p0
+PKGNAME=	xulrunner-${VER}
+PKGNAME-main=	xulrunner-${VER}p1
+PKGNAME-devel=	xulrunner-devel-${VER}p1
 SO_VERSION=	1.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
