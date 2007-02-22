@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_gnupg1_texi,v 1.1 2007/02/22 00:17:09 steven Exp $
+--- doc/gnupg1.texi.orig	Thu Feb 22 00:27:47 2007
++++ doc/gnupg1.texi	Thu Feb 22 00:28:04 2007
+@@ -48,7 +48,7 @@ section entitled ``Copying''.
+ 
+ @dircategory GNU Utilities
+ @direntry
+-* gpg: (gpg).            OpenPGP encryption and signing tool (v1).
++* gpg: (gnupg1).            OpenPGP encryption and signing tool (v1).
+ @end direntry
+ 
+ 
