@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/01 08:06:45 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/02/22 22:02:13 jasper Exp $
 bin/openttd
 share/doc/openttd/
 share/doc/openttd/Howto_compile_lng_files_from_CLI.txt
@@ -70,7 +70,6 @@ share/openttd/media/openttd.48.png
 share/openttd/media/openttd.64.png
 share/openttd/media/openttd.64.xpm
 share/openttd/media/palette.act
-share/openttd/scenario/
 share/pixmaps/
 share/pixmaps/openttd.32.xpm
 share/pixmaps/openttd.64.png
