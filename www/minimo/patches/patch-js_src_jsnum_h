@@ -1,0 +1,12 @@
+$OpenBSD: patch-js_src_jsnum_h,v 1.1 2007/02/23 18:17:17 robert Exp $
+--- js/src/jsnum.h.orig	Thu Dec  9 02:32:19 2004
++++ js/src/jsnum.h	Fri Feb 23 17:12:12 2007
+@@ -60,7 +60,7 @@ JS_BEGIN_EXTERN_C
+  * are stored in big endian`s way.
+  */
+ 
+-#if defined(__arm) || defined(__arm32__) || defined(__arm26__) || defined(__arm__)
++#if (defined(__arm) || defined(__arm32__) || defined(__arm26__) || defined(__arm__)) && !defined(__OpenBSD__) /* Armel ABI */
+ #define CPU_IS_ARM
+ #endif
+ 
