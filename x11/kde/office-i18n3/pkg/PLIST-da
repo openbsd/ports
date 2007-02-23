@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-da,v 1.4 2007/01/22 17:52:03 bernd Exp $
+@comment $OpenBSD: PLIST-da,v 1.5 2007/02/23 22:24:18 espie Exp $
 share/doc/HTML/da/
 ${DOC}karbon/
 ${DOC}karbon/common
@@ -81,7 +81,6 @@ ${DOC}krita/${C}
 ${DOC}krita/${I}
 ${DOC}krita/installation.docbook
 ${DOC}krita/introduction.docbook
-${DOC}krita/scripting.docbook
 ${DOC}krita/settings.docbook
 ${DOC}krita/tutorial-quick-starts.docbook
 ${DOC}krita/tutorial-select-layer.docbook

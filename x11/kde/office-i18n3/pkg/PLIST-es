@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-es,v 1.7 2007/01/22 17:52:03 bernd Exp $
+@comment $OpenBSD: PLIST-es,v 1.8 2007/02/23 22:24:18 espie Exp $
 share/apps/koffice/
 share/apps/koffice/autocorrect/
 share/apps/koffice/autocorrect/es.xml
@@ -254,7 +254,6 @@ ${DOC}krita/commands-menus.docbook
 ${DOC}krita/commands-palettes.docbook
 ${DOC}krita/commands-toolbars.docbook
 ${DOC}krita/commands.docbook
-${DOC}krita/common
 ${DOC}krita/createdocument.png
 ${DOC}krita/credits.docbook
 ${DOC}krita/crocusses-bumpmap.png
@@ -303,8 +302,6 @@ ${DOC}krita/dialogs-shearimage.png
 ${DOC}krita/dialogs-shearlayer.png
 ${DOC}krita/faq.docbook
 ${DOC}krita/filters-customconvolution.png
-${DOC}krita/${C}
-${DOC}krita/${I}
 ${DOC}krita/installation.docbook
 ${DOC}krita/introduction.docbook
 ${DOC}krita/mainscreen.png
@@ -585,6 +582,7 @@ ${DOC}kword/formframe2.png
 ${DOC}kword/formframe3.png
 ${DOC}kword/formframe4.png
 ${DOC}kword/formframe5.png
+${DOC}kword/formframe6.png
 ${DOC}kword/forminteg.png
 ${DOC}kword/formllind.png
 ${DOC}kword/formlrind.png

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ru,v 1.4 2007/01/22 17:52:03 bernd Exp $
+@comment $OpenBSD: PLIST-ru,v 1.5 2007/02/23 22:24:18 espie Exp $
 share/doc/HTML/ru/
 ${DOC}kchart/
 ${DOC}kchart/common
@@ -109,6 +109,8 @@ ${LOC}example.mo
 ${LOC}karbon.mo
 ${LOC}kchart.mo
 ${LOC}kexi.mo
+${LOC}kfile_abiword.mo
+${LOC}kfile_gnumeric.mo
 ${LOC}kfile_koffice.mo
 ${LOC}kfile_ooo.mo
 ${LOC}kformdesigner.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-fi,v 1.5 2007/01/22 17:52:03 bernd Exp $
+@comment $OpenBSD: PLIST-fi,v 1.6 2007/02/23 22:24:18 espie Exp $
 ${LOC}desktop_koffice.mo
 ${LOC}example.mo
 ${LOC}karbon.mo
@@ -16,6 +16,7 @@ ${LOC}koffice.mo
 ${LOC}kofficefilters.mo
 ${LOC}koshell.mo
 ${LOC}kounavail.mo
+${LOC}kplato.mo
 ${LOC}kpresenter.mo
 ${LOC}krita.mo
 ${LOC}kscan_plugin.mo
