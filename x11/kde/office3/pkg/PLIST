@@ -1,7 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.23 2006/12/03 11:00:34 espie Exp $
+@comment $OpenBSD: PLIST,v 1.24 2007/02/23 21:46:30 espie Exp $
 bin/karbon
 bin/kchart
 bin/kexi
+bin/kexi_add_column
+bin/kexi_add_column_gui
+bin/kexi_delete_column
+bin/kexi_delete_column_gui
 bin/kformula
 bin/kivio
 bin/koconverter
@@ -115,30 +119,40 @@ include/Koversiondialog.h
 include/kcoloractions.h
 include/kdchart_export.h
 include/kexidb/
+include/kexidb/admin.h
+include/kexidb/alter.h
 include/kexidb/connection.h
 include/kexidb/connectiondata.h
 include/kexidb/cursor.h
+include/kexidb/dbobjectnamevalidator.h
+include/kexidb/dbproperties.h
 include/kexidb/driver.h
+include/kexidb/driver_p.h
 include/kexidb/drivermanager.h
 include/kexidb/error.h
 include/kexidb/expression.h
 include/kexidb/field.h
 include/kexidb/fieldlist.h
+include/kexidb/fieldvalidator.h
 include/kexidb/global.h
 include/kexidb/indexschema.h
 include/kexidb/kexidb_export.h
 include/kexidb/keximigrate.h
 include/kexidb/keximigratedata.h
+include/kexidb/lookupfieldschema.h
 include/kexidb/migratemanager.h
+include/kexidb/msghandler.h
 include/kexidb/object.h
-include/kexidb/parser.h
 include/kexidb/preparedstatement.h
 include/kexidb/queryschema.h
 include/kexidb/queryschemaparameter.h
 include/kexidb/relationship.h
+include/kexidb/roweditbuffer.h
 include/kexidb/schemadata.h
+include/kexidb/simplecommandlineapp.h
 include/kexidb/tableschema.h
 include/kexidb/transaction.h
+include/kexidb/utils.h
 include/kexiutils/
 include/kexiutils/identifier.h
 include/kexiutils/kexiutils_export.h
@@ -413,6 +427,8 @@ ${KDE}/kritacimg.la
 ${KDE}/kritacimg.so
 ${KDE}/kritacmykplugin.la
 ${KDE}/kritacmykplugin.so
+${KDE}/kritacolorify.la
+${KDE}/kritacolorify.so
 ${KDE}/kritacolorrange.la
 ${KDE}/kritacolorrange.so
 ${KDE}/kritacolorsfilters.la
@@ -905,8 +921,19 @@ lib/libkwordexportfilters.la
 @lib lib/libkwordexportfilters.so.${LIBkwordexportfilters_VERSION}
 lib/libkwordprivate.la
 @lib lib/libkwordprivate.so.${LIBkwordprivate_VERSION}
+share/applications/kde/karbon.desktop
+share/applications/kde/kchart.desktop
+share/applications/kde/kexi.desktop
+share/applications/kde/kformula.desktop
 share/applications/kde/kivio.desktop
+share/applications/kde/koshell.desktop
+share/applications/kde/kplato.desktop
+share/applications/kde/kpresenter.desktop
 share/applications/kde/krita.desktop
+share/applications/kde/kspread.desktop
+share/applications/kde/kudesigner.desktop
+share/applications/kde/kugar.desktop
+share/applications/kde/kword.desktop
 share/applnk/
 share/applnk/.hidden/
 share/applnk/.hidden/krita_jpeg.desktop
@@ -918,17 +945,6 @@ share/applnk/.hidden/krita_raw.desktop
 share/applnk/.hidden/krita_tiff.desktop
 share/applnk/Office/
 share/applnk/Office/KThesaurus.desktop
-share/applnk/Office/karbon.desktop
-share/applnk/Office/kchart.desktop
-share/applnk/Office/kexi.desktop
-share/applnk/Office/kformula.desktop
-share/applnk/Office/koshell.desktop
-share/applnk/Office/kplato.desktop
-share/applnk/Office/kpresenter.desktop
-share/applnk/Office/kspread.desktop
-share/applnk/Office/kudesigner.desktop
-share/applnk/Office/kugar.desktop
-share/applnk/Office/kword.desktop
 share/apps/karbon/
 share/apps/karbon/gradients/
 share/apps/karbon/gradients/allcolors.kgr
@@ -1177,6 +1193,8 @@ share/apps/kchart/templates/chart/.source/Empty.chrt
 share/apps/kchart/templates/chart/BarChart.desktop
 share/apps/kchart/templates/chart/Empty.desktop
 share/apps/kexi/
+share/apps/kexi/examples/
+share/apps/kexi/examples/Simple_Database.kexi
 share/apps/kexi/icons/
 share/apps/kexi/icons/crystalsvg/
 share/apps/kexi/icons/crystalsvg/128x128/
@@ -1188,6 +1206,7 @@ share/apps/kexi/icons/crystalsvg/16x16/actions/add_field.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/aofit.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/aogrid.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/aopos2grid.png
+share/apps/kexi/icons/crystalsvg/16x16/actions/autofield.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/autonumber.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/business_user.png
 share/apps/kexi/icons/crystalsvg/16x16/actions/button.png
@@ -1255,6 +1274,7 @@ share/apps/kexi/icons/crystalsvg/22x22/actions/aoshortest.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/aotallest.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/aotop.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/aowidest.png
+share/apps/kexi/icons/crystalsvg/22x22/actions/autofield.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/business_user.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/button.png
 share/apps/kexi/icons/crystalsvg/22x22/actions/check.png
@@ -5241,6 +5261,8 @@ share/icons/locolor/16x16/apps/kudesigner.png
 share/icons/locolor/32x32/
 share/icons/locolor/32x32/apps/
 share/icons/locolor/32x32/apps/kudesigner.png
+share/locale/pl/LC_MESSAGES/kexi_add_column_gui_transl_pl.sh
+share/locale/pl/LC_MESSAGES/kexi_delete_column_gui_transl_pl.sh
 share/mimelnk/application/x-kexi-connectiondata.desktop
 share/mimelnk/application/x-kexiproject-shortcut.desktop
 share/mimelnk/application/x-kexiproject-sqlite.desktop
@@ -5347,6 +5369,7 @@ share/services/kritablurfilter.desktop
 share/services/kritabumpmapfilter.desktop
 share/services/kritacimg.desktop
 share/services/kritacmykplugin.desktop
+share/services/kritacolorifyfilter.desktop
 share/services/kritacolorrange.desktop
 share/services/kritacolorsfilter.desktop
 share/services/kritacolorspaceconversion.desktop
