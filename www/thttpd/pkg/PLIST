@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/02/18 22:14:34 aanriot Exp $
-@man man/man8/${BASE_PKGPATH}.8
-sbin/${BASE_PKGPATH}
+@comment $OpenBSD: PLIST,v 1.4 2007/02/24 21:10:52 aanriot Exp $
+@man man/man8/thttpd.8
+sbin/thttpd
