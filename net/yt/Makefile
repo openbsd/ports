@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2007/02/22 22:47:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2007/02/24 09:52:01 sturm Exp $
 
 COMMENT=	"customizable script to fetch youtube videos"
 
-PKGNAME=	yt-2
+PKGNAME=	yt-3
 CATEGORIES=	net
 DISTFILES=
 
@@ -22,5 +22,6 @@ RUN_DEPENDS=		::graphics/ffmpeg \
 
 do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/yt.lua ${PREFIX}/bin/yt
+	@perl -pi -e "s,%%LOCALBASE%%,${LOCALBASE}," ${PREFIX}/bin/yt 
 
 .include <bsd.port.mk>

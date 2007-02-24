@@ -1,4 +1,5 @@
--- $OpenBSD: yt.lua,v 1.1 2007/02/21 13:50:18 pedro Exp $
+#!%%LOCALBASE%%/bin/lua
+-- $OpenBSD: yt.lua,v 1.2 2007/02/24 09:52:01 sturm Exp $
 -- Fetch videos from YouTube.com and convert them to MPEG.
 -- Written by Pedro Martelletto in August 2006. Public domain.
 -- Example: lua yt.lua http://www.youtube.com/watch?v=c5uoo1Kl_uA
