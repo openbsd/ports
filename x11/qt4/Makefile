@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2007/02/24 11:23:49 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2007/02/25 17:31:04 espie Exp $
 
 COMMENT-main=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples for qt4"
@@ -14,7 +14,7 @@ PKGNAME-postgresql=	qt4-postgresql-${VERSION}
 PKGNAME-examples=	qt4-examples-${VERSION}
 PKGNAME-sqlite2=	qt4-sqlite2-${VERSION}
 PKGNAME-sqlite=		qt4-sqlite-${VERSION}
-FULLPKGNAME-main=	qt4-${VERSION}p2
+PKGNAME-main=		qt4-${VERSION}p3
 FULLPKGNAME-html=	qt4-html-${VERSION}
 SHARED_LIBS=	Qt3Support 6.1 \
 		QtCore 6.1 \
@@ -47,6 +47,7 @@ HOMEPAGE=	http://www.trolltech.com/qt/
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
  
+FLAVORS=	debug
 PSEUDO_FLAVORS=	no_examples
 FLAVOR?=
 
@@ -73,14 +74,17 @@ CONFIGURE_ARGS=	-qt-gif -system-libpng -system-libjpeg -system-zlib \
 		-xinerama \
 		-cups \
 		-confirm-license \
-		-release \
 		-I${LOCALBASE}/include/libpng \
 		-I${X11BASE}/include/freetype2 \
 		-I${LOCALBASE}/include \
 		-L${WRKSRC}/lib \
 		-L${LOCALBASE}/lib
 
-
+.if ${FLAVOR:L:Mdebug}
+CONFIGURE_ARGS+=-debug
+.else
+CONFIGURE_ARGS+=-release
+.endif
 
 CONFIGURE_ARGS+=	-prefix ${QT_BASEDIR}
 CONFIGURE_ARGS+=	-libdir ${QT_BASEDIR}
