@@ -1,6 +1,6 @@
-$OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.6 2006/12/21 09:53:43 bernd Exp $
---- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	Tue Nov 14 22:10:24 2006
-+++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	Wed Dec 20 12:31:06 2006
+$OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.7 2007/02/26 14:21:26 robert Exp $
+--- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	Mon Nov 27 22:29:22 2006
++++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	Sat Feb 24 15:04:59 2007
 @@ -68,6 +68,12 @@ CPPSRCS		:= xptcinvoke_unixish_x86.cpp x
  endif
  endif
@@ -27,7 +27,24 @@ $OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.6 2006/12/21 0
  # Linux/Alpha
  #
  ifneq (,$(filter Linuxalpha FreeBSDalpha NetBSDalpha,$(OS_ARCH)$(OS_TEST)))                           
-@@ -278,6 +290,14 @@ ASFILES		:= xptcinvoke_asm_ppc_netbsd.s 
+@@ -162,6 +174,16 @@ ifneq (,$(filter arm% sa110,$(OS_TEST)))
+ CPPSRCS		:= xptcinvoke_arm_netbsd.cpp xptcstubs_arm_netbsd.cpp
+ endif
+ endif
++#
++# OpenBSD/ARM
++#
++# NOTE: won't work w/o optimizations (-O1, -O2)
++ifeq ($(OS_ARCH),OpenBSD)
++ifneq (,$(filter armish zaurus,$(OS_TEST)))
++CPPSRCS		:= xptcinvoke_arm_openbsd.cpp xptcstubs_arm_openbsd.cpp
++CXXFLAGS	+= -O2
++endif
++endif
+ 
+ ######################################################################
+ # HPPA
+@@ -278,6 +300,14 @@ ASFILES		:= xptcinvoke_asm_ppc_netbsd.s 
  endif
  
  #
@@ -42,7 +59,7 @@ $OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.6 2006/12/21 0
  # Darwin/PPC
  #
  ifeq ($(OS_ARCH),Darwin)
-@@ -349,6 +369,20 @@ endif
+@@ -349,6 +379,20 @@ endif
  endif
  
  endif

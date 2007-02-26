@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.66 2007/02/20 20:06:56 sturm Exp $
+# $OpenBSD: Makefile,v 1.67 2007/02/26 14:21:26 robert Exp $
 
-ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
+ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 
 COMMENT-main=	"redesign of Mozilla's browser component"
 COMMENT-devel=	"devel files for Gecko"
@@ -8,7 +8,7 @@ COMMENT-devel=	"devel files for Gecko"
 VER=		2.0.0.1
 DISTNAME=	mozilla
 PKGNAME=	mozilla-firefox-${VER}
-PKGNAME-main=	mozilla-firefox-${VER}p2
+PKGNAME-main=	mozilla-firefox-${VER}p3
 PKGNAME-devel=	mozilla-firefox-devel-${VER}p2
 SO_VERSION=	19.0
 # NOTE: Must bump minor version if any shlib's are removed from the
