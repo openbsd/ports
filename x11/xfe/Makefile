@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/18 06:33:01 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/02/27 17:06:46 ajacoutot Exp $
 
 COMMENT=	"MS-Explorer like file manager for X"
 
-DISTNAME= 	xfe-0.88
+DISTNAME= 	xfe-0.98.2
 CATEGORIES= 	x11	
 
 HOMEPAGE=	http://roland65.free.fr/xfe/
@@ -20,21 +20,15 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xfe/}
 WANTLIB=	c m stdc++ png
 
 MODULE=		devel/gettext
-LIB_DEPENDS=	FOX-1.4.>=1::devel/fox
+LIB_DEPENDS=	FOX-1.6:fox->=1.6:devel/fox
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/fox-1.4 -I${X11BASE}/include \
+		-I${LOCALBASE}/include/fox-1.6 -I${X11BASE}/include \
 		-I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-
-pre-configure:
-	perl -pi -e 's,lib/foxrc,share/foxrc,g' ${WRKSRC}/Makefile.in
-	perl -pi -e 's,lib/foxicons,share/foxicons,g' \
-		${WRKSRC}/icons/Makefile.in \
-		${WRKSRC}/Desktop.in
 
 .include <bsd.port.mk>

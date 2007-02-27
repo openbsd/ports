@@ -1,0 +1,18 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2007/02/27 17:06:47 ajacoutot Exp $
+--- Makefile.in.orig	Tue Feb 20 18:06:30 2007
++++ Makefile.in	Tue Feb 27 17:55:12 2007
+@@ -314,12 +314,11 @@ uninstall-iconDATA:
+ rcDATA_INSTALL = $(INSTALL_DATA)
+ install-rcDATA: $(rc_DATA)
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(rcdir)
+ 	@list='$(rc_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+-	  echo " $(rcDATA_INSTALL) $$d$$p $(DESTDIR)$(rcdir)/$$f"; \
+-	  $(rcDATA_INSTALL) $$d$$p $(DESTDIR)$(rcdir)/$$f; \
++	  echo " $(rcDATA_INSTALL) $$d$$p $(DESTDIR)$(prefix)/share/xfe/$$f"; \
++	  $(rcDATA_INSTALL) $$d$$p $(DESTDIR)$(prefix)/share/xfe/$$f; \
+ 	done
+ 
+ uninstall-rcDATA:
