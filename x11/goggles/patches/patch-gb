@@ -1,22 +1,29 @@
-$OpenBSD: patch-gb,v 1.1 2005/05/07 11:53:04 espie Exp $
---- gb.orig	Fri Mar 18 06:43:25 2005
-+++ gb	Sat May  7 13:13:30 2005
-@@ -30,7 +30,7 @@ INSTALL=${INSTALL:-install}
+$OpenBSD: patch-gb,v 1.2 2007/02/27 11:15:25 espie Exp $
+--- gb.orig	Sun Nov 26 23:19:18 2006
++++ gb	Wed Feb  7 03:30:24 2007
+@@ -12,6 +12,7 @@
+ #
+ #-----------------------------------------------------------
+ 
++PATH=.:$PATH
+ #Setup Package Name and Version
+ . gb.version
+ 
+@@ -65,7 +66,7 @@ INSTALL=${INSTALL:-install}
  #Get the settings
  . "$CONFIG_FILE"
  
 -function print_help() {
 +function print_help {
+ 	SHOWHELP=1
  	echo "Options:"
  	echo " "
- 	echo -e "  \033[32m$0\033[0m       	   \033[1mBuild Goggles\033[0m"
-@@ -143,6 +143,9 @@ echo -e "              \033[32mDefines\0
- echo -e "            \033[32mLibraries\033[0m: \033[1m$LIBS\033[0m"
- echo " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "
+@@ -179,6 +180,8 @@ done
+ #fi
  
-+
+ 
 +printenv >conf.mk
 +exit 0
- #Do Make
- 
- #Remove Target
+ # Did we already build?
+ ${MAKE} -q -f gb.make
+ if [ "$?" -eq "0" ] ; then

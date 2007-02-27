@@ -1,39 +1,11 @@
-
-# Search and Installation Directories
-#-------------------------------------------------------------------------------
-MENU_FILE_DIR="${LOCALBASE}/share/applications"
-MENU_ICON_DIR="${LOCALBASE}/share/icons"
-MENU_LINK_DIR="${LOCALBASE}/share/applnk-mdk/Multimedia/Video"
-
-# Device
-#-------------------------------------------------------------------------------
-CONFIG_DVD_DEVICE="/dev/dvd"
-
-# Possible defaults for other platforms.
-#CONFIG_DVD_DEVICE="/cdrom/cdrom0"                      # Solaris
-#CONFIG_DVD_DEVICE="/dev/acd0c"                         # FreeBSD
-#CONFIG_DVD_DEVICE="/dev/rcd0d"                         # NetBSD (Intel x86)
-#CONFIG_DVD_DEVICE="/dev/rcd0c"                         # NetBSD
-#CONFIG_DVD_DEVICE="/dev/rcd0c"                         # OpenBSD
-#CONFIG_DVD_DEVICE="/dev/sr0c"                          # BSDi
-
-# 64 bit Programming Model
-#----------------------------------------------------------------------------------------------------------------
-CONFIG_LP64=0
-for i in ${LP64_ARCHS}
-do
-	test $i = $OSMACHINE && CONFIG_LP64=1
-done
-CONFIG_LLP64=0
-CONFIG_ILP64=0
-
 #----------------------------------------------------------------------------------------------------------------
 # Basic File extensions
 export BINEXT=""                     # Executable Extension
 export LIBEXT=".a"                   # Static Library Extension
-export DLLEXT=".so.0.0"              # Dynamic Library Extension
+export DLLEXT=".so"                  # Dynamic Library Extension
 export OBJEXT=".o"                   # Object Extension
 export LIBPREFIX="lib"               # Standard Library Prefix
+export LIBDIR="lib"                  # Name of the library directory
 
 # Compiler and Linker
 export CC="gcc"                       # C Compiler
@@ -48,12 +20,46 @@ export OUTPUTOBJ="-o"                 # Compiler flag to specify output object f
 export OUTPUTBIN="-o "                   # Compiler flag to specify output executable filename
 export PICFLAG=""                     # Compiler flag to generate position independent code
 
-# General Linker Flags (probably need to distinguish between Libs and Executables.
-export LDFLAGS=""
+if [ $DEFS == "-DDEBUG" ] ; then
+  export CFLAGS="${CFLAGS:--Wall -g -pipe }"
+	export CXXFLAGS="${CXXFLAGS:--Wall -g -pipe}"
+	export LDFLAGS=""
+elif [ $DEFS == "-DNDEBUG" ] ; then
+	export CFLAGS="${CFLAGS:--Wall -O3 -pipe}"
+	export CXXFLAGS="${CXXFLAGS:--Wall -O3 -pipe}"
+	export LDFLAGS="-s"
+else
+	export CFLAGS="${CFLAGS:--Wall -pipe}"
+	export CXXFLAGS="${CXXFLAGS:--Wall -pipe}"
+	export LDFLAGS=""
+fi
 
-export CFLAGS="${CFLAGS:--Wall -O2}"
-export CXXFLAGS="${CXXFLAGS:--Wall -O2}"
-export CPPFLAGS="-I../include -I${X11BASE}/include ${CPPFLAGS}"
+export CPPFLAGS="-I./include -I${LOCALBASE}/include -I${X11BASE}/include ${CPPFLAGS}"
 export LIBS=""
-export DEFS="-DLINUX"
+export DEFS="${DEFS}"
 #----------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
