@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2007/02/04 23:00:19 steven Exp $
+# $OpenBSD: Makefile,v 1.111 2007/02/27 20:52:19 david Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += architect
@@ -63,20 +63,20 @@
      SUBDIR += p5-GDBM_File
      SUBDIR += p5-Ima-DBI
      SUBDIR += p5-Jifty-DBI
-     SUBDIR += p5-Rose-DateTime
      SUBDIR += p5-Rose-DB
      SUBDIR += p5-Rose-DB-Object
+     SUBDIR += p5-Rose-DateTime
      SUBDIR += p5-Rose-Object
      SUBDIR += p5-SQL-Abstract
      SUBDIR += p5-SQL-Abstract-Limit
      SUBDIR += p5-SQL-ReservedWords
      SUBDIR += p5-SQL-Statement
      SUBDIR += p5-SQL-Translator
+     SUBDIR += p5-Tangram
      SUBDIR += p5-Tie-DBI
      SUBDIR += p5-ldap
      SUBDIR += p5-pgsql
      SUBDIR += p5-sybperl
-     SUBDIR += p5-Tangram
      SUBDIR += pear-DB
      SUBDIR += pgadmin3
      SUBDIR += postgresql

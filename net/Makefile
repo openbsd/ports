@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.448 2007/02/13 20:32:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.449 2007/02/27 20:52:19 david Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -238,9 +238,9 @@
      SUBDIR += p5-POE-Component-Server-FTP
      SUBDIR += p5-POE-Filter-IRCD
      SUBDIR += p5-PlRPC
+     SUBDIR += p5-RPC-XML
      SUBDIR += p5-SNMP-BridgeQuery
      SUBDIR += p5-SNMP_Session
-     SUBDIR += p5-RPC-XML
      SUBDIR += p5-Socket6
      SUBDIR += p5-Sys-Hostname-Long
      SUBDIR += p5-flowd
