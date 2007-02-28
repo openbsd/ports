@@ -1,9 +1,9 @@
-$OpenBSD: patch-libclamav_Makefile_am,v 1.2 2006/08/15 18:48:22 mbalmer Exp $
---- libclamav/Makefile.am.orig	Sun Mar 26 13:04:57 2006
-+++ libclamav/Makefile.am	Mon Jul 31 00:09:11 2006
-@@ -20,7 +20,7 @@ INCLUDES = -I$(top_srcdir) -I@srcdir@/zz
+$OpenBSD: patch-libclamav_Makefile_am,v 1.3 2007/02/28 20:31:08 mbalmer Exp $
+--- libclamav/Makefile.am.orig	Tue Feb 13 02:05:52 2007
++++ libclamav/Makefile.am	Wed Feb 14 08:26:32 2007
+@@ -21,7 +21,7 @@ INCLUDES = -I$(top_srcdir) -I@srcdir@/un
  
- libclamav_la_LIBADD = @LIBCLAMAV_LIBS@
+ libclamav_la_LIBADD = @LIBCLAMAV_LIBS@ @THREAD_LIBS@
  
 -libclamav_la_LDFLAGS = @TH_SAFE@ -version-info @LIBCLAMAV_VERSION@ -no-undefined
 +libclamav_la_LDFLAGS = @TH_SAFE@ $(LIBclamav_LTVERSION) -no-undefined

@@ -1,25 +1,28 @@
-$OpenBSD: patch-clamd_session_c,v 1.1 2007/01/17 08:27:20 mbalmer Exp $
---- clamd/session.c.orig	Sun Oct 30 17:00:52 2005
-+++ clamd/session.c	Tue Jan 16 16:19:41 2007
-@@ -51,6 +51,9 @@ int command(int desc, const struct cl_no
+$OpenBSD: patch-clamd_session_c,v 1.2 2007/02/28 20:31:08 mbalmer Exp $
+--- clamd/session.c.orig	Sun Feb 11 01:19:59 2007
++++ clamd/session.c	Wed Feb 14 08:53:39 2007
+@@ -232,8 +232,10 @@ int command(int desc, const struct cl_en
+ {
  	char buff[1025];
- 	int bread, opt, retval;
- 	struct cfgstruct *cpt;
+ 	int bread, opt;
 +	struct msghdr msg;
 +	struct cmsghdr *cmsg;
 +	unsigned char buf[CMSG_SPACE(sizeof(int))];
  
- 
-     retval = poll_fd(desc, timeout);
-@@ -155,7 +158,29 @@ int command(int desc, const struct cl_no
- 
- 	scanfd(fd, NULL, root, limits, options, copt, desc, 0);
- 	close(fd); /* FIXME: should we close it here? */
-+    } else if(!strncmp(buff, CMD13, strlen(CMD13))) { /* FILDES */
+-
+     bread = readsock(desc, buff, sizeof(buff)-1, '\n', timeout, 0, 1);
+     if(bread == -2) /* timeout */
+ 	return -2;
+@@ -367,7 +369,29 @@ int command(int desc, const struct cl_en
+ 		    logg("%s: OK\n", path);
+ 	    }
+ 	}
+-
++    } else if(!strncmp(buff, CMD14, strlen(CMD14))) { /* FILDES */
 +	memset(&msg, 0, sizeof(msg));
 +	msg.msg_control = buf;
 +	msg.msg_controllen = sizeof(buf);
- 
++ 
 +	if (recvmsg(desc, &msg, 0) == -1) {
 +	    logg("recvmsg failed!");
 +	    return -1;
@@ -34,7 +37,7 @@ $OpenBSD: patch-clamd_session_c,v 1.1 2007/01/17 08:27:20 mbalmer Exp $
 +		    cmsg->cmsg_level == SOL_SOCKET &&
 +		    cmsg->cmsg_type == SCM_RIGHTS) {
 +			int fd = *(int *)CMSG_DATA(cmsg);
-+	    		scanfd(fd, NULL, root, limits, options, copt, desc, 0);
++	    		scanfd(fd, NULL, engine, limits, options, copt, desc);
 +			close(fd);
 +		}
 +	}

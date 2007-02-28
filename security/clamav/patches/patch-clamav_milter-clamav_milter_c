@@ -1,6 +1,6 @@
---- clamav-milter/clamav-milter.c.orig	Thu Jun 23 22:03:06 2005
-+++ clamav-milter/clamav-milter.c	Wed Jun 29 11:00:23 2005
-@@ -886,7 +886,7 @@ main(int argc, char **argv)
+--- clamav-milter/clamav-milter.c.orig	Mon Feb 12 23:36:49 2007
++++ clamav-milter/clamav-milter.c	Wed Feb 14 08:26:32 2007
+@@ -1064,7 +1064,7 @@ main(int argc, char **argv)
  		 * uid == 0 for that
  		 */
  		on = 1;
@@ -9,7 +9,7 @@
  			perror("setsockopt");
  			return EX_UNAVAILABLE;
  		}
-@@ -908,7 +908,7 @@ main(int argc, char **argv)
+@@ -1086,7 +1086,7 @@ main(int argc, char **argv)
  
  			memset(&ifr, '\0', sizeof(struct ifreq));
  			strncpy(ifr.ifr_name, iface, sizeof(ifr.ifr_name) - 1);

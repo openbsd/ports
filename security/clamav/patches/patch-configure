@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2006/08/15 18:48:22 mbalmer Exp $
---- configure.orig	Sat Jul  1 13:12:52 2006
-+++ configure	Mon Jul 31 20:02:42 2006
-@@ -11828,11 +11828,11 @@ cat >>conftest.$ac_ext <<_ACEOF
+$OpenBSD: patch-configure,v 1.6 2007/02/28 20:31:08 mbalmer Exp $
+--- configure.orig	Wed Feb 14 08:34:54 2007
++++ configure	Wed Feb 14 08:39:18 2007
+@@ -21659,11 +21659,11 @@ cat >>conftest.$ac_ext <<_ACEOF
  #ifdef __cplusplus
  extern "C"
  #endif
@@ -15,25 +15,22 @@ $OpenBSD: patch-configure,v 1.5 2006/08/15 18:48:22 mbalmer Exp $
    ;
    return 0;
  }
-@@ -12248,6 +12248,8 @@ cat confdefs.h >>conftest.$ac_ext
+@@ -22220,6 +22220,7 @@ _ACEOF
+ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
- $ac_includes_default
 +#include <sys/types.h>
-+#include <netinet/in.h>
+ #include <netinet/in.h>
+ 
  #include <resolv.h>
- _ACEOF
- rm -f conftest.$ac_objext
-@@ -13293,13 +13295,9 @@ _ACEOF
+@@ -23140,11 +23141,9 @@ _ACEOF
+     ;;
  openbsd*)
      if test "$have_pthreads" = "yes"; then
- 	LIBCLAMAV_LIBS="$LIBCLAMAV_LIBS -pthread"
 -	if test "$use_cr" = "no"; then
--	    CLAMD_LIBS="$CLAMD_LIBS -pthread"
--	    CLAMAV_MILTER_LIBS="$CLAMAV_MILTER_LIBS -pthread"
+-	    THREAD_LIBS="-pthread"
 -	else
--	    CLAMD_LIBS="$CLAMD_LIBS -pthread -lc_r"
--	    CLAMAV_MILTER_LIBS="$CLAMAV_MILTER_LIBS -pthread -lc_r"
+-	    THREAD_LIBS="-pthread -lc_r"
 -	fi
 +	ADDITIONAL_LIBS="-pthread"
 +	CLAMD_LIBS="$CLAMD_LIBS -pthread"
@@ -41,7 +38,7 @@ $OpenBSD: patch-configure,v 1.5 2006/08/15 18:48:22 mbalmer Exp $
  	TH_SAFE="-thread-safe"
  
  cat >>confdefs.h <<\_ACEOF
-@@ -14497,6 +14495,7 @@ cat confdefs.h >>conftest.$ac_ext
+@@ -24218,6 +24217,7 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  
@@ -49,7 +46,7 @@ $OpenBSD: patch-configure,v 1.5 2006/08/15 18:48:22 mbalmer Exp $
  #include <tcpd.h>
  int allow_severity = 0;
  int deny_severity  = 0;
-@@ -14565,6 +14564,7 @@ cat confdefs.h >>conftest.$ac_ext
+@@ -24270,6 +24270,7 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  

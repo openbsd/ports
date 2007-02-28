@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/05/12 14:55:21 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/02/28 20:31:08 mbalmer Exp $
 @newgroup _clamav:539
 @newuser _clamav:539:539:daemon:Clam AntiVirus:/nonexistent:/sbin/nologin
 bin/clamav-config
+bin/clamconf
 bin/clamdscan
 bin/clamscan
 bin/freshclam
@@ -11,6 +12,7 @@ lib/libclamav.a
 lib/libclamav.la
 lib/pkgconfig/
 lib/pkgconfig/libclamav.pc
+@man man/man1/clamconf.1
 @man man/man1/clamdscan.1
 @man man/man1/clamscan.1
 @man man/man1/freshclam.1

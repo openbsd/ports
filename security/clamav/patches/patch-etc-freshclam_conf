@@ -1,6 +1,6 @@
---- etc/freshclam.conf.orig	Thu Apr  7 19:55:34 2005
-+++ etc/freshclam.conf	Sun Apr 10 10:00:25 2005
-@@ -11,7 +11,7 @@ Example
+--- etc/freshclam.conf.orig	Sun Feb 11 10:54:46 2007
++++ etc/freshclam.conf	Wed Feb 14 08:26:32 2007
+@@ -10,7 +10,7 @@ Example
  # Path to the database directory.
  # WARNING: It must match clamd.conf's directive!
  # Default: hardcoded (depends on installation options)
@@ -9,7 +9,7 @@
  
  # Path to the log file (make sure it has proper permissions)
  # Default: disabled
-@@ -37,7 +37,7 @@ Example
+@@ -36,7 +36,7 @@ Example
  # By default when started freshclam drops privileges and switches to the
  # "clamav" user. This directive allows you to change the database owner.
  # Default: clamav (may depend on installation options)
@@ -17,4 +17,4 @@
 +#DatabaseOwner _clamav
  
  # Initialize supplementary group access (freshclam must be started by root).
- # Default: disabled
+ # Default: no

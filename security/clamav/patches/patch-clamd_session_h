@@ -1,11 +1,11 @@
-$OpenBSD: patch-clamd_session_h,v 1.1 2007/01/17 08:27:20 mbalmer Exp $
---- clamd/session.h.orig	Sun Oct 30 17:00:43 2005
-+++ clamd/session.h	Tue Jan 16 15:50:43 2007
-@@ -36,6 +36,7 @@
- #define CMD10 "END"
+$OpenBSD: patch-clamd_session_h,v 1.2 2007/02/28 20:31:08 mbalmer Exp $
+--- clamd/session.h.orig	Tue Jan 30 22:19:10 2007
++++ clamd/session.h	Wed Feb 14 08:27:25 2007
+@@ -38,6 +38,7 @@
  #define CMD11 "SHUTDOWN"
  #define CMD12 "FD"
-+#define CMD13 "FILDES"
+ #define CMD13 "MULTISCAN"
++#define CMD14 "FILDES"
  
- #include <clamav.h>
- #include "cfgparser.h"
+ #include "libclamav/clamav.h"
+ #include "shared/cfgparser.h"
