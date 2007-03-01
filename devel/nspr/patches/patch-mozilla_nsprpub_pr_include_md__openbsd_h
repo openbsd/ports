@@ -1,6 +1,6 @@
-$OpenBSD: patch-mozilla_nsprpub_pr_include_md__openbsd_h,v 1.4 2006/11/30 16:53:53 kurt Exp $
+$OpenBSD: patch-mozilla_nsprpub_pr_include_md__openbsd_h,v 1.5 2007/03/01 22:37:48 robert Exp $
 --- mozilla/nsprpub/pr/include/md/_openbsd.h.orig	Sun Apr 25 17:00:47 2004
-+++ mozilla/nsprpub/pr/include/md/_openbsd.h	Fri Nov 10 20:13:55 2006
++++ mozilla/nsprpub/pr/include/md/_openbsd.h	Thu Mar  1 23:09:56 2007
 @@ -54,9 +54,11 @@
  #define _PR_SI_ARCHITECTURE "powerpc"
  #elif defined(__sparc__)

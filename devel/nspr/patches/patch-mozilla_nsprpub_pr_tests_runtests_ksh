@@ -1,4 +1,4 @@
-$OpenBSD: patch-mozilla_nsprpub_pr_tests_runtests_ksh,v 1.3 2006/11/15 09:05:36 ajacoutot Exp $
+$OpenBSD: patch-mozilla_nsprpub_pr_tests_runtests_ksh,v 1.4 2007/03/01 22:37:48 robert Exp $
 --- mozilla/nsprpub/pr/tests/runtests.ksh.orig	Sun Apr 25 17:01:02 2004
 +++ mozilla/nsprpub/pr/tests/runtests.ksh	Mon Nov 13 12:44:03 2006
 @@ -84,11 +84,10 @@ fi
@@ -41,12 +41,3 @@ $OpenBSD: patch-mozilla_nsprpub_pr_tests_runtests_ksh,v 1.3 2006/11/15 09:05:36 
  sendzlf
  server_test
  servr_kk
-@@ -250,7 +248,7 @@ else
- 		echo "$prog\c"
- 		echo "\nBEGIN TEST: $prog\n" >> ${LOGFILE} 2>&1
- 		export test_rval
--		./$prog >> ${LOGFILE} 2>&1 &
-+		LD_LIBRARY_PATH=../../dist/lib/ ./$prog >> ${LOGFILE} 2>&1 &
- 		test_pid=$!
- 		sleep_pid=0
- 		if [ "$TEST_TIMEOUT" -gt 0 ]

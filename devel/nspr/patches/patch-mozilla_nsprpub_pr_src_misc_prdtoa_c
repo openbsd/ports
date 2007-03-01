@@ -1,6 +1,6 @@
-$OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/11/06 14:35:45 ajacoutot Exp $
---- mozilla/nsprpub/pr/src/misc/prdtoa.c.orig	Fri Jul  1 03:19:30 2005
-+++ mozilla/nsprpub/pr/src/misc/prdtoa.c	Mon Nov  6 10:06:35 2006
+$OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prdtoa_c,v 1.2 2007/03/01 22:37:48 robert Exp $
+--- mozilla/nsprpub/pr/src/misc/prdtoa.c.orig	Fri Dec 22 00:45:54 2006
++++ mozilla/nsprpub/pr/src/misc/prdtoa.c	Wed Feb  7 15:06:43 2007
 @@ -37,41 +37,14 @@
  
  #include "primpl.h"
@@ -3057,7 +3057,7 @@ $OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prdtoa_c,v 1.1 2006/11/06 14:35:45 a
 -				goto no_digits;
 -			goto one_digit;
 -			}
--		for(i = 1;; i++, dval(d) *= 10.) {
+-		for(i = 1; i <= k+1; i++, dval(d) *= 10.) {
 -			L = (Long)(dval(d) / ds);
 -			dval(d) -= L*ds;
 -#ifdef Check_FLT_ROUNDS
