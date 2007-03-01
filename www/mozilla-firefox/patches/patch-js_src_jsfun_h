@@ -1,0 +1,12 @@
+$OpenBSD: patch-js_src_jsfun_h,v 1.1 2007/03/01 22:46:06 robert Exp $
+--- js/src/jsfun.h.orig	Tue Nov 21 23:07:45 2006
++++ js/src/jsfun.h	Wed Feb 28 17:55:24 2007
+@@ -68,8 +68,6 @@ struct JSFunction {
+ };
+ 
+ #define JSFUN_INTERPRETED    0x8000 /* use u.i if set, u.n if unset */
+-#define JSFUN_BLOCKLOCALFUN  0x4000 /* has body block containing both let vars
+-                                       and local function declarations */
+ 
+ #define FUN_INTERPRETED(fun) ((fun)->flags & JSFUN_INTERPRETED)
+ #define FUN_NATIVE(fun)      (FUN_INTERPRETED(fun) ? NULL : (fun)->u.n.native)

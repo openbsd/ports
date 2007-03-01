@@ -1,0 +1,25 @@
+$OpenBSD: patch-js_src_jsemit_c,v 1.1 2007/03/01 22:46:06 robert Exp $
+--- js/src/jsemit.c.orig	Wed Jan 17 01:07:07 2007
++++ js/src/jsemit.c	Wed Feb 28 17:56:46 2007
+@@ -1324,7 +1324,9 @@ EmitNonLocalJumpFixup(JSContext *cx, JSC
+         JS_ASSERT(*returnop == JSOP_RETURN);
+         for (stmt = cg->treeContext.topStmt; stmt != toStmt;
+              stmt = stmt->down) {
+-            if (stmt->type == STMT_FINALLY) {
++            if (stmt->type == STMT_FINALLY ||
++                ((cg->treeContext.flags & TCF_FUN_HEAVYWEIGHT) &&
++                 STMT_MAYBE_SCOPE(stmt))) {
+                 if (js_Emit1(cx, cg, JSOP_SETRVAL) < 0)
+                     return JS_FALSE;
+                 *returnop = JSOP_RETRVAL;
+@@ -4000,7 +4002,9 @@ js_EmitTree(JSContext *cx, JSCodeGenerat
+             if (stmt && stmt->type == STMT_BLOCK &&
+                 stmt->down && stmt->down->type == STMT_BLOCK &&
+                 (stmt->down->flags & SIF_SCOPE)) {
+-                cg->treeContext.flags |= TCF_HAS_BLOCKLOCALFUN;
++                obj = ATOM_TO_OBJECT(stmt->down->atom);
++                JS_ASSERT(LOCKED_OBJ_GET_CLASS(obj) == &js_BlockClass);
++                OBJ_SET_PARENT(cx, fun->object, obj);
+             }
+ 
+             if (atomIndex >= JS_BIT(16)) {

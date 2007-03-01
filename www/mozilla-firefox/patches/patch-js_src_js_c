@@ -1,0 +1,11 @@
+$OpenBSD: patch-js_src_js_c,v 1.1 2007/03/01 22:46:06 robert Exp $
+--- js/src/js.c.orig	Thu Dec 21 04:24:08 2006
++++ js/src/js.c	Wed Feb 28 17:55:24 2007
+@@ -1116,7 +1116,6 @@ Disassemble(JSContext *cx, JSObject *obj
+                 SHOW_FLAG(THISP_STRING);
+                 SHOW_FLAG(THISP_NUMBER);
+                 SHOW_FLAG(THISP_BOOLEAN);
+-                SHOW_FLAG(BLOCKLOCALFUN);
+                 SHOW_FLAG(INTERPRETED);
+ 
+ #undef SHOW_FLAG

@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.67 2007/02/26 14:21:26 robert Exp $
+# $OpenBSD: Makefile,v 1.68 2007/03/01 22:46:06 robert Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 
 COMMENT-main=	"redesign of Mozilla's browser component"
 COMMENT-devel=	"devel files for Gecko"
 
-VER=		2.0.0.1
+VER=		2.0.0.2
 DISTNAME=	mozilla
 PKGNAME=	mozilla-firefox-${VER}
-PKGNAME-main=	mozilla-firefox-${VER}p3
-PKGNAME-devel=	mozilla-firefox-devel-${VER}p2
+PKGNAME-main=	mozilla-firefox-${VER}p0
+PKGNAME-devel=	mozilla-firefox-devel-${VER}p0
 SO_VERSION=	19.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -52,10 +52,9 @@ LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss
 WANTLIB=	X11 Xext Xrender atk-1.0 c cairo fontconfig freetype \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 m pango-1.0 \
-		pangox-1.0 \
 		pangocairo-1.0 pangoft2-1.0 png pthread stdc++ z
 
-WANTLIB-main=	${WANTLIB} Xft Xinerama Xt jpeg
+WANTLIB-main=	${WANTLIB} Xft Xinerama Xt jpeg pangox-1.0
 
 LIB_DEPENDS-devel= ${MODGETTEXT_LIB_DEPENDS} IDL-2::devel/libIDL \
 		mozilla-firefox/gtkembedmoz,mozilla-firefox/mozjs,mozilla-firefox/xpcom,mozilla-firefox/xpcom_core:${PKGNAME-main}:www/mozilla-firefox,-main
@@ -94,7 +93,8 @@ CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 		--enable-svg			\
 		--enable-svg-renderer=cairo	\
 		--enable-system-cairo		\
-		--enable-canvas
+		--enable-canvas			\
+		--enable-official-branding
 
 # from browser/config/mozconfig
 CONFIGURE_ARGS+=--enable-application=browser
@@ -107,11 +107,11 @@ MAKE_ENV=	MOZ_CO_PROJECT=browser \
 		LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
 		BUILD_OFFICIAL=1 \
 		MOZILLA_OFFICIAL=1 \
-		SO_VERSION="${SO_VERSION}" \
-		NSS_ENABLE_ECC=1
+		SO_VERSION="${SO_VERSION}"
 CONFIGURE_ENV=	${MAKE_ENV} \
 		PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig" \
-		MOZ_ENABLE_COREXFONTS=1
+		MOZ_ENABLE_COREXFONTS=1 \
+		topsrcdir=${WRKSRC}
 
 MOB=		${WRKSRC}/dist/bin
 MOZ=		${PREFIX}/mozilla-firefox
@@ -120,7 +120,6 @@ post-extract:
 	@cp ${FILESDIR}/xptc* ${WRKSRC}/xpcom/reflect/xptcall/src/md/unix/
 
 pre-configure:
-	@cd ${WRKSRC}/browser/base/branding && cp aboutCredits.png about.png
 	@perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g; s|_X11BASE_|${X11BASE}|g' \
 		${WRKSRC}/browser/app/mozilla.in
 	@perl -pi -e 's|_SO_VERSION_|${SO_VERSION}|g' \
@@ -140,17 +139,11 @@ do-install:
 	${INSTALL_DATA_DIR} ${MOZ}/${dir}
 	@cd ${MOB} && ${TAR} -chf - ${dir}/ | \
 		${TAR} -xf - -C ${MOZ}
+	@find ${MOZ} -type f -exec chmod 444 {} \;
 .endfor
-	@cd ${MOB} && ${TAR} -chf - *.so.${SO_VERSION} | \
-		${TAR} -xf - -C ${MOZ}
-	@chmod 444 ${MOZ}/*.so.${SO_VERSION} \
-		${MOZ}/components/*.so.${SO_VERSION} \
-		${MOZ}/components/*.js \
-		${MOZ}/plugins/*.so.${SO_VERSION}
+	${INSTALL_DATA} ${MOB}/*.so.${SO_VERSION} ${MOZ}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${MOZ}
-	${INSTALL_DATA} ${WRKSRC}/LICENSE \
-		${MOB}/bloaturls.txt \
-		${MOB}/browserconfig.properties ${MOZ}
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${MOZ}
 	${INSTALL_SCRIPT} ${MOB}/firefox \
 		${MOB}/firefox-config ${PREFIX}/bin
 	ln -f ${PREFIX}/bin/firefox ${PREFIX}/bin/mozilla-firefox

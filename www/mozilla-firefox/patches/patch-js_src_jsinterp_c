@@ -1,0 +1,82 @@
+$OpenBSD: patch-js_src_jsinterp_c,v 1.1 2007/03/01 22:46:06 robert Exp $
+--- js/src/jsinterp.c.orig	Sat Jan 20 04:46:50 2007
++++ js/src/jsinterp.c	Wed Feb 28 18:20:01 2007
+@@ -4889,33 +4889,28 @@ interrupt:
+              * here captures the let variables.
+              */
+             JS_ASSERT(!fp->blockChain);
+-            if (fp->fun && (fp->fun->flags & JSFUN_BLOCKLOCALFUN)) {
+-                jsatomid aid;
+-
+-                obj2 = NULL;
+-                for (aid = 0; aid < script->atomMap.length; aid++) {
+-                    if (ATOM_IS_OBJECT(script->atomMap.vector[aid])) {
+-                        obj2 = ATOM_TO_OBJECT(script->atomMap.vector[aid]);
+-                        if (OBJ_GET_CLASS(cx, obj2) == &js_BlockClass)
+-                            break;
+-                    }
+-                }
+-                fp->blockChain = obj2;
++            if (!(fp->flags & JSFRAME_POP_BLOCKS)) {
++                parent = OBJ_GET_PARENT(cx, obj);
++                if (OBJ_GET_CLASS(cx, parent) == &js_BlockClass)
++                    fp->blockChain = parent;
++                parent = js_GetScopeChain(cx, fp);
++            } else {
++                parent = fp->scopeChain;
++                JS_ASSERT(OBJ_GET_CLASS(cx, parent) == &js_BlockClass);
++                JS_ASSERT(OBJ_GET_PROTO(cx, parent) == OBJ_GET_PARENT(cx, obj));
++                JS_ASSERT(OBJ_GET_CLASS(cx, OBJ_GET_PARENT(cx, parent))
++                          == &js_CallClass);
+             }
+ 
+             /* If re-parenting, store a clone of the function object. */
+-            obj2 = fp->scopeChain;
+-            parent = js_GetScopeChain(cx, fp);
+             if (OBJ_GET_PARENT(cx, obj) != parent) {
+                 SAVE_SP_AND_PC(fp);
+                 obj = js_CloneFunctionObject(cx, obj, parent);
+-                if (!obj)
++                if (!obj) {
+                     ok = JS_FALSE;
++                    goto out;
++                }
+             }
+-            fp->blockChain = NULL;
+-            fp->scopeChain = obj2;
+-            if (!ok)
+-                goto out;
+             fp->vars[slot] = OBJECT_TO_JSVAL(obj);
+           END_LITOPX_CASE(JSOP_DEFLOCALFUN)
+ 
+@@ -5814,6 +5809,7 @@ interrupt:
+           END_LITOPX_CASE(JSOP_SETMETHOD)
+ 
+           BEGIN_CASE(JSOP_GETFUNNS)
++            SAVE_SP_AND_PC(fp);
+             ok = js_GetFunctionNamespace(cx, &rval);
+             if (!ok)
+                 goto out;
+@@ -5842,12 +5838,17 @@ interrupt:
+              */
+             if (fp->flags & JSFRAME_POP_BLOCKS) {
+                 JS_ASSERT(!fp->blockChain);
+-                obj = js_CloneBlockObject(cx, obj, fp->scopeChain, fp);
+-                if (!obj) {
+-                    ok = JS_FALSE;
+-                    goto out;
++                parent = fp->scopeChain;
++                if (OBJ_GET_PROTO(cx, parent) == obj) {
++                    JS_ASSERT(OBJ_GET_CLASS(cx, parent) == &js_BlockClass);
++                } else {
++                    obj = js_CloneBlockObject(cx, obj, parent, fp);
++                    if (!obj) {
++                        ok = JS_FALSE;
++                        goto out;
++                    }
++                    fp->scopeChain = obj;
+                 }
+-                fp->scopeChain = obj;
+             } else {
+                 JS_ASSERT(!fp->blockChain ||
+                           OBJ_GET_PARENT(cx, obj) == fp->blockChain);

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/02/14 22:44:32 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2007/03/01 22:46:06 robert Exp $
 @conflict mozilla-firebird-*
 @pkgpath www/mozilla-firefox
 %%SHARED%%
@@ -9,8 +9,6 @@ bin/mozilla-firefox
 mozilla-firefox/
 mozilla-firefox/LICENSE
 mozilla-firefox/README.OpenBSD
-mozilla-firefox/bloaturls.txt
-mozilla-firefox/browserconfig.properties
 mozilla-firefox/chrome/
 mozilla-firefox/chrome/browser.jar
 mozilla-firefox/chrome/browser.manifest
@@ -90,7 +88,6 @@ mozilla-firefox/components/filepicker.xpt
 mozilla-firefox/components/find.xpt
 mozilla-firefox/components/gfx.xpt
 mozilla-firefox/components/gksvgrenderer.xpt
-mozilla-firefox/components/globalstore.js
 mozilla-firefox/components/history.xpt
 mozilla-firefox/components/htmlparser.xpt
 mozilla-firefox/components/imglib2.xpt

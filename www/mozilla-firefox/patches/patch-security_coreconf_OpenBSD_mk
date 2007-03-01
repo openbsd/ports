@@ -1,16 +1,8 @@
-$OpenBSD: patch-security_coreconf_OpenBSD_mk,v 1.6 2007/01/12 21:46:17 kurt Exp $
+$OpenBSD: patch-security_coreconf_OpenBSD_mk,v 1.7 2007/03/01 22:46:06 robert Exp $
 --- security/coreconf/OpenBSD.mk.orig	Sun Apr 25 18:02:17 2004
-+++ security/coreconf/OpenBSD.mk	Fri Nov  3 22:38:43 2006
-@@ -37,12 +37,12 @@
- 
- include $(CORE_DEPTH)/coreconf/UNIX.mk
- 
--DEFAULT_COMPILER	= gcc
--CC			= gcc
--CCC			= g++
-+DEFAULT_COMPILER	= ${CC}
-+#CC			= ${CC}
-+CCC			= ${CXX}
++++ security/coreconf/OpenBSD.mk	Fri Feb 23 21:56:45 2007
+@@ -42,7 +42,7 @@ CC			= gcc
+ CCC			= g++
  RANLIB			= ranlib
  
 -CPU_ARCH		:= $(shell uname -p)

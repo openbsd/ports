@@ -1,21 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.8 2007/01/12 21:46:17 kurt Exp $
+$OpenBSD: patch-configure_in,v 1.9 2007/03/01 22:46:06 robert Exp $
 --- configure.in.orig	Fri Sep 15 16:13:01 2006
 +++ configure.in	Fri Nov  3 22:36:05 2006
-@@ -1317,10 +1317,10 @@ dnl Get mozilla version from central mil
- MOZILLA_VERSION=`$PERL $srcdir/config/milestone.pl -topsrcdir $srcdir`
- 
- dnl Get version of various core apps from the version files.
--FIREFOX_VERSION=`cat $topsrcdir/browser/config/version.txt`
--THUNDERBIRD_VERSION=`cat $topsrcdir/mail/config/version.txt`
--SUNBIRD_VERSION=`cat $topsrcdir/calendar/sunbird/config/version.txt`
--SEAMONKEY_VERSION=`cat $topsrcdir/xpfe/bootstrap/version.txt`
-+FIREFOX_VERSION=`cat ./browser/config/version.txt`
-+THUNDERBIRD_VERSION=`cat ./mail/config/version.txt`
-+SUNBIRD_VERSION=`cat ./calendar/sunbird/config/version.txt`
-+SEAMONKEY_VERSION=`cat ./xpfe/bootstrap/version.txt`
- 
- AC_DEFINE_UNQUOTED(MOZILLA_VERSION,"$MOZILLA_VERSION")
- AC_DEFINE_UNQUOTED(MOZILLA_VERSION_U,$MOZILLA_VERSION)
 @@ -1931,7 +1931,7 @@ case "$target" in
  	;;
  
@@ -43,12 +28,3 @@ $OpenBSD: patch-configure_in,v 1.8 2007/01/12 21:46:17 kurt Exp $
      PNG_LIBS="-L${PNG_DIR}/lib ${PNG_LIBS}"
  fi
  
-@@ -4243,7 +4243,7 @@ suite)
- 
- browser)
-   MOZ_APP_NAME=firefox
--  MOZ_APP_DISPLAYNAME=BonEcho
-+  MOZ_APP_DISPLAYNAME=FirefoxCommunityEdition
-   MOZ_XUL_APP=1
-   MOZ_PHOENIX=1
-   MOZ_SAFE_BROWSING=1

@@ -1,0 +1,18 @@
+$OpenBSD: patch-security_manager_boot_src_nsSecureBrowserUIImpl_cpp,v 1.1 2007/03/01 22:46:06 robert Exp $
+--- security/manager/boot/src/nsSecureBrowserUIImpl.cpp.orig	Tue Jun 13 22:13:18 2006
++++ security/manager/boot/src/nsSecureBrowserUIImpl.cpp	Tue Feb 27 15:05:04 2007
+@@ -861,6 +861,14 @@ nsSecureBrowserUIImpl::OnStateChange(nsI
+     }
+   }
+ 
++  if (loadFlags & nsIChannel::LOAD_RETARGETED_DOCUMENT_URI)
++  {
++    // The original consumer (this) is no longer the target of the load.
++    // Ignore any events with this flag, do not allow them to update
++    // our secure UI state.
++    return NS_OK;
++  }
++
+   if (aProgressStateFlags & STATE_START
+       &&
+       aProgressStateFlags & STATE_IS_REQUEST
