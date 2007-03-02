@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2007/01/23 09:34:45 robert Exp $
+@comment $OpenBSD: PLIST,v 1.11 2007/03/02 23:38:28 kurt Exp $
 %%SHARED%%
 bin/ffmpeg
 bin/ffplay
@@ -29,7 +29,6 @@ lib/libavcodec.a
 lib/libavformat.a
 lib/libavutil.a
 lib/libpostproc.a
-lib/libswscale.a
 lib/pkgconfig/
 lib/pkgconfig/libavcodec.pc
 lib/pkgconfig/libavformat.pc

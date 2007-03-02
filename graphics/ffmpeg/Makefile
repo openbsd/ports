@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.25 2007/01/26 16:03:20 robert Exp $
+# $OpenBSD: Makefile,v 1.26 2007/03/02 23:38:28 kurt Exp $
 
 COMMENT=	"audio/video converter and streamer with bktr(4) support"
 
 DISTNAME=		ffmpeg-cvs-20070110
-PKGNAME=		${DISTNAME:S/-cvs//}p0
+PKGNAME=		${DISTNAME:S/-cvs//}p1
 SHARED_LIBS=		avutil		2.0 \
 			avcodec		8.0 \
 			avformat	8.0 \
-			postproc	8.0 \
-			swscale		0.0
+			postproc	8.0
 CATEGORIES=		graphics multimedia
 
 HOMEPAGE=		http://www.ffmpeg.org/
@@ -49,7 +48,6 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-gpl \
 			--enable-pthreads \
 			--disable-debug \
-			--enable-swscaler \
 			--enable-faac \
 			--enable-faad \
 			--enable-mp3lame \
@@ -62,16 +60,14 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 MAKE_FLAGS=		LIBavutil_VERSION=$(LIBavutil_VERSION) \
 			LIBavcodec_VERSION=$(LIBavcodec_VERSION) \
 			LIBavformat_VERSION=$(LIBavformat_VERSION) \
-			LIBpostproc_VERSION=$(LIBpostproc_VERSION) \
-			LIBswscale_VERSION=$(LIBswscale_VERSION)
+			LIBpostproc_VERSION=$(LIBpostproc_VERSION)
 
 FAKE_FLAGS=		DESTDIR=${WRKINST} \
 			LDCONFIG=true \
 			LIBavutil_VERSION=$(LIBavutil_VERSION) \
 			LIBavcodec_VERSION=$(LIBavcodec_VERSION) \
 			LIBavformat_VERSION=$(LIBavformat_VERSION) \
-			LIBpostproc_VERSION=$(LIBpostproc_VERSION) \
-			LIBswscale_VERSION=$(LIBswscale_VERSION)
+			LIBpostproc_VERSION=$(LIBpostproc_VERSION)
 
 REGRESS_TARGET=		codectest
 
