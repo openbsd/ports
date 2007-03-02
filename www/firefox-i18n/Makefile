@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2007/01/14 09:17:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2007/03/02 15:59:15 pvalchev Exp $
 
 PKG_ARCH=	*
 
 COMMENT-main=	"${MAINLANG} language pack for Firefox"
-V=		2.0.0.1
+V=		2.0.0.2
 NAME=		firefox-i18n
 PKGNAME=	${NAME}-${MAINLANG}-${V}
 PKGNAME-main=	${NAME}-${MAINLANG}-${V}
@@ -20,13 +20,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/${V}/linux-i686/xpi/ \
-		http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${V}/linux-i686/xpi/
+MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${V}/linux-i686/xpi/
 
 # define one language for the main package
 MAINLANG=	en-GB
-OTHERLANGS=	ar bg ca cs da de el es-AR es-ES eu fi fr ga-IE gu-IN \
-		he hu it ja ko lt mn nb-NO nl nn-NO pl pt-BR ru sk sl \
+OTHERLANGS=	af ar be bg ca cs da de el es-AR es-ES eu fi fr ga-IE gu-IN \
+		he hu it ja ka ko ku lt mn nb-NO nl nn-NO pl pt-BR ru sk sl \
 		sv-SE tr zh-CN zh-TW
 #		broken/inexistent: fy-NL mk pa-IN pt-PT ro
 
