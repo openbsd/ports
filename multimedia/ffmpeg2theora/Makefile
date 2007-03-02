@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/01/27 17:56:14 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/03/02 23:42:41 kurt Exp $
 
 COMMENT=	"reencode many media file formats to Ogg Theora"
 
 DISTNAME=	ffmpeg2theora-0.17
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	multimedia
 EXTRACT_SUFX=	.tar.bz2
 
@@ -19,7 +20,7 @@ WANTLIB=		c faac faad m mp3lame ogg ossaudio pthread z
 
 MASTER_SITES=	${HOMEPAGE}
 
-LIB_DEPENDS=	avcodec.>=8,avformat.>=8,avutil.>=2,swscale::graphics/ffmpeg \
+LIB_DEPENDS=	avcodec.>=8,avformat.>=8,avutil.>=2::graphics/ffmpeg \
 		vorbis.>=5,vorbisenc.>=2::audio/libvorbis \
 		theora.>=2::multimedia/libtheora
 
