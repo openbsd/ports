@@ -1,4 +1,4 @@
-# $OpenBSD: i386,v 1.29 2007/03/04 18:00:56 pvalchev Exp $
+# $OpenBSD: i386,v 1.30 2007/03/08 22:55:17 pvalchev Exp $
 # This is the master list of subdirs used to choose i386 packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -121,6 +121,6 @@ graphics/gphoto2
 x11/blackbox
 x11/icewm
 x11/rdesktop
-textproc/ispell
-textproc/ispell,-french
-textproc/ispell,-spanish
+#textproc/ispell
+#textproc/ispell,-french
+#textproc/ispell,-spanish

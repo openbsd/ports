@@ -1,4 +1,4 @@
-# $OpenBSD: amd64,v 1.26 2006/08/22 22:04:00 pvalchev Exp $
+# $OpenBSD: amd64,v 1.27 2007/03/08 22:55:17 pvalchev Exp $
 # This is the master list of subdirs used to choose amd64 packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -9,7 +9,7 @@ editors/vim,no_x11
 editors/emacs21
 archivers/unzip
 archivers/bzip2
-print/teTeX/base
+#print/teTeX/base
 net/nmap,no_x11
 sysutils/cdrtools
 mail/procmail
@@ -31,8 +31,8 @@ print/ghostscript/gnu
 #print/gv
 x11/openmotif
 www/mozilla-firefox
-x11/windowmaker
-x11/windowmaker-extra
+#x11/windowmaker
+#x11/windowmaker-extra
 #x11/rxvt
 #x11/xpostit
 #x11/xdaliclock
@@ -41,20 +41,21 @@ textproc/antiword
 textproc/xpdf
 lang/python/2.4
 lang/python/2.4,-tools
-#graphics/gqview
-#sysutils/pftop
+graphics/gqview
+sysutils/pftop
 #net/snort
 #security/stunnel
 #net/gaim
-#devel/gmake
-#www/squid
-#www/transproxy
-#security/aide
-#security/dsniff
+#security/gaim-otr
+devel/gmake
+www/squid
+www/transproxy
+security/aide
+security/dsniff
 #net/ntop
 #news/slrn
-#security/gnupg
+security/gnupg
 #net/libdnet
 #net/nsd
 #audio/abcde
-#graphics/ImageMagick
+graphics/ImageMagick
