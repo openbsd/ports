@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 2006/12/19 00:00:03 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/03/15 08:07:39 espie Exp $
 
 COMMENT=		"plugins for digikam"
 CATEGORIES=		graphics x11 x11/kde
-DISTNAME=		digikamimageplugins-0.9.0
+DISTNAME=		digikamimageplugins-0.9.1
 EXTRACT_SUFX=		.tar.bz2
 HOMEPAGE=		http://extragear.kde.org/apps/digikamimageplugins/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=digikam/}
 
 SHARED_ONLY=Yes
 LIB_DEPENDS+=	lib/qt3/qt-mt.>=3.33::x11/qt3,mt \
-		kdecore.>=6,kwalletclient,DCOP,kio,kdefx,kdeprint,kdesu,kdeui,kparts,kutils,kabc,vcard,kresources::x11/kde/libs3 \
+		kdecore.>=6,kwalletclient,DCOP,kio,kdefx,kdeprint,kdesu,kdeui,kparts,kutils,kabc,vcard,kresources,khtml,kjs::x11/kde/libs3 \
 		digikam::graphics/digikam
 
 MODULES=	x11/kde
@@ -17,7 +17,7 @@ MODULES=	x11/kde
 WANTLIB=		Xext X11 util m ICE Xrender SM pthread z \
 			jpeg png iconv intl kipi gphoto2 \
 			art_lgpl_2 tiff sqlite3 gphoto2_port exif idn \
-			exiv2 lcms
+			exiv2 lcms jasper kexiv2 pcre pcreposix
 
 MODKDE_VERSION=		3.5.3
 CONFIGURE_STYLE=	autoconf

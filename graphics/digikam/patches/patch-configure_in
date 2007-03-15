@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.1 2006/12/19 00:00:03 espie Exp $
---- configure.in.orig	Mon Dec 18 20:02:49 2006
-+++ configure.in	Mon Dec 18 20:03:24 2006
-@@ -180,7 +180,7 @@ have_lcms='no'
+$OpenBSD: patch-configure_in,v 1.2 2007/03/15 08:07:39 espie Exp $
+--- configure.in.orig	Sun Mar  4 21:33:34 2007
++++ configure.in	Wed Mar  7 09:22:57 2007
+@@ -194,7 +194,7 @@ have_lcms='no'
  if test "$have_lcms_header" = 'yes'
  then
      saved_libs=$LIBS
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_in,v 1.1 2006/12/19 00:00:03 espie Exp $
      AC_TRY_LINK([
  #define inline __inline /* gcc is in ansi mode */
  #include LCMS_HEADER
-@@ -190,7 +190,7 @@ choke!
+@@ -204,7 +204,7 @@ choke!
  ], [
  cmsOpenProfileFromFile("foo", "r");
  ],

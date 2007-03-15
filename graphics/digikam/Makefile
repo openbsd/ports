@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2006/12/19 00:00:03 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2007/03/15 08:07:39 espie Exp $
 
 COMMENT=		"digital image kde application"
 CATEGORIES=		graphics x11 x11/kde
-V=			0.9.0
+V=			0.9.1
 DISTNAME=		digikam-$V
 SHARED_LIBS +=	digikam              2.0      # .0.0
 HOMEPAGE=		http://www.digikam.org/
@@ -11,16 +11,17 @@ DISTFILES=		${DISTNAME}.tar.bz2
 
 SHARED_ONLY=Yes
 LIB_DEPENDS+=	lib/qt3/qt-mt.>=3.33::x11/qt3,mt \
-		kdecore.>=6,kwalletclient,DCOP,kparts,kdeui,kdesu,kio,kdefx,kdeprint,kutils,kabc,vcard,kresources::x11/kde/libs3 \
+		kdecore.>=6,kwalletclient,DCOP,kparts,kdeui,kdesu,kio,kdefx,kdeprint,kutils,kabc,vcard,kresources,khtml,kjs::x11/kde/libs3 \
 		gphoto2,gphoto2_port::graphics/libgphoto2 \
 		kipi::graphics/libkipi \
 		sqlite3::databases/sqlite3 \
 		tiff::graphics/tiff \
-		exiv2::graphics/exiv2 \
+		kexiv2::graphics/libkexiv2 \
 		lcms::graphics/lcms
 
 WANTLIB=	util m c ICE Xrender SM pthread z stdc++ \
-		Xext X11 jpeg png art_lgpl_2 exif intl iconv idn
+		Xext X11 jpeg png art_lgpl_2 exif intl iconv idn \
+		exiv2 jasper pcre pcreposix
 
 MODULES=	x11/kde
 
