@@ -1,0 +1,13 @@
+$OpenBSD: patch-memtester_c,v 1.1.1.1 2007/03/15 15:49:06 ckuethe Exp $
+--- memtester.c.orig	Mon Mar 14 07:02:30 2005
++++ memtester.c	Fri Oct 14 17:08:38 2005
+@@ -153,7 +153,8 @@ int main(int argc, char **argv) {
+                         wantbytes = wantbytes_orig;
+                         break;
+                     default:
+-                        printf("failed for unknown reason.\n");
++			perror("mlock()");
++                        printf("failed for unknown reason. (%d)\n", errno);
+                         do_mlock = 0;
+                         done_mem = 1;
+                 }

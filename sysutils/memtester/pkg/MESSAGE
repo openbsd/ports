@@ -1,0 +1,12 @@
+Memtester output messages like:
+
+"Allocated 61569920 bytes...trying mlock...failed:  insufficient resources."
+
+are *NORMAL*.
+According to the documentation, malloc errors mean that memtester is
+encountering difficulty allocating the given amount of memory for
+testing (presumably because it's in use). It keeps trying, reducing the
+memory size (or trying a different block) until it is able to allocate
+that memory block size to testing and proceed with its tests.
+Multiple instances of memtester can be run in parallel to provide full
+coverage of memory.
