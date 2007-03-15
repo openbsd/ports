@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2006/11/24 16:22:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2007/03/15 19:12:35 naddy Exp $
 
 COMMENT-main=	"portable audio output library"
 COMMENT-arts=	"aRts module for portable audio output library"
@@ -6,7 +6,7 @@ COMMENT-esd=	"ESounD module for portable audio output library"
 
 VERSION=	0.8.5
 DISTNAME=	libao-${VERSION}
-PKGNAME-main=	libao-${VERSION}p3
+PKGNAME-main=	libao-${VERSION}p4
 PKGNAME-arts=	libao-arts-${VERSION}p2
 PKGNAME-esd=	libao-esd-${VERSION}p3
 CATEGORIES=    	audio
@@ -63,5 +63,11 @@ WANTLIB-arts=		glib-2.0 gmodule-2.0 gthread-2.0 pthread
 LIB_DEPENDS-esd=	esd.>=2::audio/esound
 RUN_DEPENDS-esd=	:libao-${VERSION}:audio/libao
 WANTLIB-esd=		audiofile m pthread
+
+pre-build:
+	@perl -i -pe 's:/etc/libao.conf:${SYSCONFDIR}/libao.conf:g' \
+		${WRKDIST}/src/ao_private.h \
+		${WRKDIST}/libao.conf.5 \
+		${WRKDIST}/doc/config.html
 
 .include <bsd.port.mk>
