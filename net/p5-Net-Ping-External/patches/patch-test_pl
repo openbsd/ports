@@ -1,0 +1,61 @@
+$OpenBSD: patch-test_pl,v 1.1 2007/03/15 07:56:33 jasper Exp $
+--- test.pl.orig	Wed Feb 14 14:36:12 2007
++++ test.pl	Wed Feb 14 14:36:50 2007
+@@ -6,7 +6,7 @@
+ # Change 1..1 below to 1..last_test_to_print .
+ # (It may become useful if the test is moved to ./t subdirectory.)
+ 
+-BEGIN { $| = 1; $num_tests = 6; print "1..$num_tests\n"; }
++BEGIN { $| = 1; $num_tests = 5; print "1..$num_tests\n"; }
+ END {print "not ok 1\n" unless $loaded;}
+ use Net::Ping::External qw(ping);
+ $loaded = 1;
+@@ -21,9 +21,8 @@ print "ok 1\n";
+ %test_names = (1 => "use Net::Ping::External qw(ping)",
+ 	       2 => "ping(host => '127.0.0.1')",
+ 	       3 => "ping(host => '127.0.0.1', timeout => 5)",
+-	       4 => "ping(host => 'some.non.existent.host')",
+-	       5 => "ping(host => '127.0.0.1', count => 10)",
+-	       6 => "ping(host => '127.0.0.1', size => 32)"
++	       4 => "ping(host => '127.0.0.1', count => 10)",
++	       5 => "ping(host => '127.0.0.1', size => 32)"
+ 	      );
+ 
+ @passed = ();
+@@ -51,8 +50,8 @@ else {
+   push @failed, 3;
+ }
+ 
+-eval { $ret = ping(host => 'some.non.existent.host') };
+-if (!$@ && !$ret) {
++eval { $ret = ping(host => '127.0.0.1', count => 2) };
++if (!$@ && $ret) {
+   print "ok 4\n";
+   push @passed, 4;
+ }
+@@ -61,7 +60,7 @@ else {
+   push @failed, 4;
+ }
+ 
+-eval { $ret = ping(host => '127.0.0.1', count => 2) };
++eval { $ret = ping(host => '127.0.0.1', size => 32) };
+ if (!$@ && $ret) {
+   print "ok 5\n";
+   push @passed, 5;
+@@ -69,16 +68,6 @@ if (!$@ && $ret) {
+ else {
+   print "not ok 5\n";
+   push @failed, 5;
+-}
+-
+-eval { $ret = ping(host => '127.0.0.1', size => 32) };
+-if (!$@ && $ret) {
+-  print "ok 6\n";
+-  push @passed, 6;
+-}
+-else {
+-  print "not ok 6\n";
+-  push @failed, 6;
+ }
+ 
+ print "\nRunning a more verbose test suite.";
