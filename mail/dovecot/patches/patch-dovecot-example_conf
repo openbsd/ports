@@ -1,6 +1,6 @@
-$OpenBSD: patch-dovecot-example_conf,v 1.32 2007/02/03 08:19:18 jakob Exp $
---- dovecot-example.conf.orig	Fri Feb  2 12:17:48 2007
-+++ dovecot-example.conf	Tue Jan 30 13:15:48 2007
+$OpenBSD: patch-dovecot-example_conf,v 1.33 2007/03/15 23:20:54 jakob Exp $
+--- dovecot-example.conf.orig	Sat Mar 10 21:45:40 2007
++++ dovecot-example.conf	Tue Mar 13 17:21:52 2007
 @@ -7,13 +7,12 @@
  # value inside quotes, eg.: key = "# char and trailing whitespace  "
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.32 2007/02/03 08:19:18 jakob Exp $
  
  # Should all IMAP and POP3 processes be killed when Dovecot master process
  # shuts down. Setting this to "no" means that Dovecot can be upgraded without
-@@ -87,7 +86,7 @@
+@@ -88,7 +87,7 @@
  # dropping root privileges, so keep the key file unreadable by anyone but
  # root. Included doc/mkcert.sh can be used to easily generate self-signed
  # certificate, just make sure to update the domains in dovecot-openssl.cnf
@@ -37,7 +37,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.32 2007/02/03 08:19:18 jakob Exp $
  #ssl_key_file = /etc/ssl/private/dovecot.pem
  
  # If key file is password protected, give the password here. Alternatively
-@@ -121,7 +120,7 @@
+@@ -125,7 +124,7 @@
  # which login needs to be able to connect to. The sockets are created when
  # running as root, so you don't have to worry about permissions. Note that
  # everything in this directory is deleted when Dovecot is started.
@@ -46,7 +46,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.32 2007/02/03 08:19:18 jakob Exp $
  
  # chroot login process to the login_dir. Only reason not to do this is if you
  # wish to run the whole Dovecot without roots.
-@@ -133,7 +132,7 @@
+@@ -137,7 +136,7 @@
  # only it has access, it's used to control access for authentication process.
  # Note that this user is NOT used to access mails.
  # http://wiki.dovecot.org/UserIds
@@ -55,7 +55,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.32 2007/02/03 08:19:18 jakob Exp $
  
  # Set max. process size in megabytes. If you don't use
  # login_process_per_connection you might need to grow this.
-@@ -278,7 +277,7 @@
+@@ -282,7 +281,7 @@
  
  # Don't write() to mmaped files. This is required for some operating systems
  # which use separate caches for them, such as OpenBSD.
@@ -64,7 +64,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.32 2007/02/03 08:19:18 jakob Exp $
  
  # Rely on O_EXCL to work when creating dotlock files. The default is to use
  # hard linking. O_EXCL makes the dotlocking faster, but it doesn't always
-@@ -431,7 +430,7 @@
+@@ -442,7 +441,7 @@
  # locking methods as well. Some operating systems don't allow using some of
  # them simultaneously.
  #mbox_read_locks = fcntl
@@ -73,7 +73,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.32 2007/02/03 08:19:18 jakob Exp $
  
  # Maximum time in seconds to wait for lock (all of them) before aborting.
  #mbox_lock_timeout = 300
-@@ -486,19 +485,19 @@
+@@ -497,19 +496,19 @@
  
  protocol imap {
    # Login executable location.
@@ -97,7 +97,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.32 2007/02/03 08:19:18 jakob Exp $
  
    # Maximum IMAP command line length in bytes. Some clients generate very long
    # command lines with huge mailboxes, so you may need to raise this if you get
-@@ -542,7 +541,7 @@ protocol imap {
+@@ -553,7 +552,7 @@ protocol imap {
    #     but not both. Thunderbird separates these two by forcing server to
    #     accept '/' suffix in mailbox names in subscriptions list.
    # The list is space-separated.
@@ -106,7 +106,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.32 2007/02/03 08:19:18 jakob Exp $
  }
    
  ##
-@@ -551,11 +550,11 @@ protocol imap {
+@@ -562,11 +561,11 @@ protocol imap {
  
  protocol pop3 {
    # Login executable location.
@@ -120,7 +120,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.32 2007/02/03 08:19:18 jakob Exp $
  
    # Don't try to set mails non-recent or seen with POP3 sessions. This is
    # mostly intended to reduce disk I/O. With maildir it doesn't move files
-@@ -600,7 +599,7 @@ protocol pop3 {
+@@ -611,7 +610,7 @@ protocol pop3 {
    # installations. %08Xu%08Xv will be the new default, so use it for new
    # installations.
    #
@@ -129,7 +129,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.32 2007/02/03 08:19:18 jakob Exp $
  
    # POP3 logout format string:
    #  %t - number of TOP commands
-@@ -625,7 +624,7 @@ protocol pop3 {
+@@ -636,7 +635,7 @@ protocol pop3 {
    #     Outlook Express and Netscape Mail breaks if end of headers-line is
    #     missing. This option simply sends it if it's missing.
    # The list is space-separated.
@@ -138,7 +138,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.32 2007/02/03 08:19:18 jakob Exp $
  }
  
  ##
-@@ -657,7 +656,7 @@ protocol lda {
+@@ -668,7 +667,7 @@ protocol lda {
  ##
  
  # Executable location
@@ -147,16 +147,16 @@ $OpenBSD: patch-dovecot-example_conf,v 1.32 2007/02/03 08:19:18 jakob Exp $
  
  # Set max. process size in megabytes.
  #auth_process_size = 256
-@@ -771,7 +770,7 @@ auth default {
+@@ -782,7 +781,7 @@ auth default {
    # REMEMBER: You'll need /etc/pam.d/dovecot file created for PAM
    # authentication to actually work.
    # http://wiki.dovecot.org/PasswordDatabase/PAM
 -  passdb pam {
 +  #passdb pam {
-     #  [session=yes] [setcred=yes] [cache_key=<key>] [<service name>]
+     # [blocking=yes] [session=yes] [setcred=yes]
+     # [cache_key=<key>] [<service name>]
      #
-     # session=yes makes Dovecot open and immediately close PAM session. Some
-@@ -799,14 +798,14 @@ auth default {
+@@ -815,18 +814,18 @@ auth default {
      #   args = session=yes *
      #   args = cache_key=%u dovecot
      #args = dovecot
@@ -168,8 +168,12 @@ $OpenBSD: patch-dovecot-example_conf,v 1.32 2007/02/03 08:19:18 jakob Exp $
    # configured in /etc/nsswitch.conf.
    # http://wiki.dovecot.org/AuthDatabase/Passwd
 -  #passdb passwd {
--  #}
 +  passdb passwd {
+     # [blocking=yes] - By default the lookups are done in the main dovecot-auth
+     # process. This setting causes the lookups to be done in auth worker
+     # proceses. Useful with remote NSS lookups that may block.
+     #args = 
+-  #}
 +  }
  
    # /etc/shadow or similiar, using getspnam(). Deprecated by PAM nowadays.

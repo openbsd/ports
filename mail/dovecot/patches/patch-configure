@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2007/01/15 08:12:40 jakob Exp $
---- configure.orig	Sun Jan  7 20:08:56 2007
-+++ configure	Sun Jan  7 20:09:19 2007
-@@ -20156,6 +20156,7 @@ LIBTOOL='$(SHELL) $(top_builddir)/libtoo
+$OpenBSD: patch-configure,v 1.2 2007/03/15 23:20:54 jakob Exp $
+--- configure.orig	Tue Mar  6 22:48:07 2007
++++ configure	Mon Mar  5 07:30:24 2007
+@@ -20159,6 +20159,7 @@ LIBTOOL='$(SHELL) $(top_builddir)/libtoo
  
  
  

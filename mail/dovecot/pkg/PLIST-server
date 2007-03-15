@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.4 2007/01/25 07:48:39 jakob Exp $
+@comment $OpenBSD: PLIST-server,v 1.5 2007/03/15 23:20:54 jakob Exp $
 @pkgpath ${BASE_PKGPATH}
 @newgroup _dovecot:518
 @newuser _dovecot:518:_dovecot:daemon:Dovecot Account:/nonexistent:/sbin/nologin
@@ -60,18 +60,6 @@ libexec/dovecot/ssl-build-param
 sbin/dovecot
 sbin/dovecot-mkcert.sh
 sbin/dovecotpw
-share/doc/dovecot/
-share/doc/dovecot/USE-WIKI-INSTEAD
-share/doc/dovecot/auth-protocol.txt
-share/doc/dovecot/auth.txt
-share/doc/dovecot/configuration.txt
-share/doc/dovecot/design.txt
-share/doc/dovecot/index.txt
-share/doc/dovecot/mail-storages.txt
-share/doc/dovecot/multiaccess.txt
-share/doc/dovecot/nfs.txt
-share/doc/dovecot/securecoding.txt
-share/doc/dovecot/variables.txt
 share/examples/dovecot/
 share/examples/dovecot/dovecot-example.conf
 @sample ${SYSCONFDIR}/dovecot.conf
