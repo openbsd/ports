@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2007/01/31 22:48:56 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.41 2007/03/15 21:48:27 jakob Exp $
 @conflict postfix-*
 @newgroup _postfix:507
 @newgroup _postdrop:508
@@ -134,7 +134,6 @@ share/doc/postfix/html/INSTALL.html
 share/doc/postfix/html/IPV6_README.html
 share/doc/postfix/html/LDAP_README.html
 share/doc/postfix/html/LINUX_README.html
-share/doc/postfix/html/LMTP_README.html
 share/doc/postfix/html/LOCAL_RECIPIENT_README.html
 share/doc/postfix/html/MAILDROP_README.html
 share/doc/postfix/html/MILTER_README.html
@@ -153,8 +152,8 @@ share/doc/postfix/html/SMTPD_ACCESS_README.html
 share/doc/postfix/html/SMTPD_POLICY_README.html
 share/doc/postfix/html/SMTPD_PROXY_README.html
 share/doc/postfix/html/STANDARD_CONFIGURATION_README.html
-share/doc/postfix/html/TLS_README.html
 share/doc/postfix/html/TLS_LEGACY_README.html
+share/doc/postfix/html/TLS_README.html
 share/doc/postfix/html/TUNING_README.html
 share/doc/postfix/html/ULTRIX_README.html
 share/doc/postfix/html/UUCP_README.html
@@ -247,7 +246,6 @@ share/doc/postfix/readme/INSTALL
 share/doc/postfix/readme/IPV6_README
 share/doc/postfix/readme/LDAP_README
 share/doc/postfix/readme/LINUX_README
-share/doc/postfix/readme/LMTP_README
 share/doc/postfix/readme/LOCAL_RECIPIENT_README
 share/doc/postfix/readme/MAILDROP_README
 share/doc/postfix/readme/MILTER_README
@@ -267,8 +265,8 @@ share/doc/postfix/readme/SMTPD_ACCESS_README
 share/doc/postfix/readme/SMTPD_POLICY_README
 share/doc/postfix/readme/SMTPD_PROXY_README
 share/doc/postfix/readme/STANDARD_CONFIGURATION_README
-share/doc/postfix/readme/TLS_README
 share/doc/postfix/readme/TLS_LEGACY_README
+share/doc/postfix/readme/TLS_README
 share/doc/postfix/readme/TUNING_README
 share/doc/postfix/readme/ULTRIX_README
 share/doc/postfix/readme/UUCP_README
