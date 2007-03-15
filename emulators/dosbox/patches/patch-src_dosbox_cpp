@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_dosbox_cpp,v 1.1 2006/03/31 13:56:51 jsg Exp $
---- src/dosbox.cpp.orig	Fri Mar 31 22:16:06 2006
-+++ src/dosbox.cpp	Fri Mar 31 22:16:35 2006
-@@ -303,7 +303,7 @@ void DOSBOX_Init(void) {
+$OpenBSD: patch-src_dosbox_cpp,v 1.2 2007/03/15 09:05:21 jsg Exp $
+--- src/dosbox.cpp.orig	Thu Feb 22 19:44:06 2007
++++ src/dosbox.cpp	Mon Mar 12 15:09:52 2007
+@@ -335,7 +335,7 @@ void DOSBOX_Init(void) {
  	secprop->Add_bool("nosound",false);
  	secprop->Add_int("rate",22050);
  	secprop->Add_int("blocksize",2048);

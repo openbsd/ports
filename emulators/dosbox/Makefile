@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2006/08/02 09:36:20 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2007/03/15 09:05:20 jsg Exp $
 
 COMMENT=	"x86 with DOS emulator targeted at playing games"
-DISTNAME=	dosbox-0.65
+DISTNAME=	dosbox-0.70
 PKGNAME=	${DISTNAME}
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dosbox/}
