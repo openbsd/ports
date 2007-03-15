@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_makefile_openbsd,v 1.18 2006/11/30 11:25:32 bernd Exp $
---- scripts/makefile.openbsd.orig	Wed Nov 15 13:51:31 2006
-+++ scripts/makefile.openbsd	Fri Nov 17 10:37:08 2006
-@@ -3,11 +3,12 @@
+$OpenBSD: patch-scripts_makefile_openbsd,v 1.19 2007/03/15 19:19:23 naddy Exp $
+--- scripts/makefile.openbsd.orig	Wed Jan 31 14:22:38 2007
++++ scripts/makefile.openbsd	Sat Feb 10 20:26:09 2007
+@@ -4,11 +4,12 @@
  # For conditions of distribution and use, see copyright notice in png.h
  
  PREFIX?= /usr/local
@@ -12,16 +12,11 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.18 2006/11/30 11:25:32 bernd Exp $
 +DOCDIR= ${PREFIX}/share/doc/png
  
 -SHLIB_MAJOR=	0
--SHLIB_MINOR=	1.2.14
+-SHLIB_MINOR=	1.2.16
  
  LIB=	png
  SRCS=	png.c pngerror.c pnggccrd.c pngget.c pngmem.c pngpread.c \
-@@ -17,28 +18,46 @@ SRCS=	png.c pngerror.c pnggccrd.c pngget
- HDRS=	png.h pngconf.h
- 
- CFLAGS+= -Wall
--CPPFLAGS+= -I${.CURDIR} -DPNG_NO_ASSEMBLER_CODE -DPNG_USE_PNGGCCRD
-+CPPFLAGS+= -I${.CURDIR}
+@@ -22,24 +23,42 @@ CPPFLAGS+= -I${.CURDIR} -DPNG_NO_MMX_COD
  
  NOPROFILE= Yes
  
@@ -30,7 +25,7 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.18 2006/11/30 11:25:32 bernd Exp $
  
  MAN=	libpng.3 libpngpf.3 png.5
 -DOCS = ANNOUNCE CHANGES INSTALL KNOWNBUG LICENSE README TODO Y2KINFO libpng.txt
-+DOCS = README libpng.txt
++DOCS = libpng-1.2.16.txt
  
 +all: ${_LIBS} libpng-config libpng.pc
 +
@@ -69,7 +64,7 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.18 2006/11/30 11:25:32 bernd Exp $
  	fi
  	if [ ! -d ${DESTDIR}${LIBDIR} ]; then \
  	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${LIBDIR}; \
-@@ -52,21 +71,24 @@ beforeinstall:
+@@ -53,21 +72,24 @@ beforeinstall:
  	if [ ! -d ${DESTDIR}${MANDIR}5 ]; then \
  	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${MANDIR}5; \
  	fi
