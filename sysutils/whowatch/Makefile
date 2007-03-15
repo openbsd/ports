@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2005/02/07 19:01:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2007/03/15 18:15:12 naddy Exp $
 
 COMMENT=	"interactive utility that displays info about online users"
 
 DISTNAME=	whowatch-1.4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://wizard.ae.krakow.pl/~mike/
