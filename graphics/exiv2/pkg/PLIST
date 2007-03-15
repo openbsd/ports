@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/04 12:11:53 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/03/15 08:04:22 espie Exp $
 %%SHARED%%
 bin/exiv2
 bin/exiv2-config
@@ -30,6 +30,7 @@ include/exiv2/olympusmn.hpp
 include/exiv2/panasonicmn.hpp
 include/exiv2/pngchunk.hpp
 include/exiv2/pngimage.hpp
+include/exiv2/rafimage.hpp
 include/exiv2/rcsid.hpp
 include/exiv2/sigmamn.hpp
 include/exiv2/sonymn.hpp
@@ -46,3 +47,9 @@ lib/libexiv2.la
 lib/pkgconfig/
 lib/pkgconfig/exiv2.pc
 @man man/man1/exiv2.1
+share/locale/de/LC_MESSAGES/Exiv2.mo
+share/locale/es/LC_MESSAGES/Exiv2.mo
+share/locale/fi/LC_MESSAGES/Exiv2.mo
+share/locale/fr/LC_MESSAGES/Exiv2.mo
+share/locale/pl/LC_MESSAGES/Exiv2.mo
+share/locale/ru/LC_MESSAGES/Exiv2.mo
