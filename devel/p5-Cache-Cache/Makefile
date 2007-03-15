@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2006/11/25 16:32:33 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2007/03/15 11:30:07 jolan Exp $
 
 COMMENT=	"perl cache interface"
 
 MODULES=	cpan
 DISTNAME=	Cache-Cache-1.04
-PKGNAME=	p5-${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}p1
 CATEGORIES=	devel
-
-MAINTAINER=	Jim Geovedi <jim@corebsd.or.id>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

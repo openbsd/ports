@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2007/02/11 00:56:57 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2007/03/15 11:30:07 jolan Exp $
 
 COMMENT-main=		"lightweight GTK+ based mail/news client"
 COMMENT-dillo=		"dillo plugin for sylpheed-claws"
@@ -10,13 +10,12 @@ COMMENT-trayicon=	"system tray icon plugin for sylpheed-claws"
 
 VERSION=		1.9.6
 DISTNAME=		sylpheed-claws-${VERSION}
-PKGNAME=		${DISTNAME}p3
-PKGNAME-main=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
+PKGNAME-main=		${DISTNAME}p4
 THEMEFILE=		sylpheed-iconset-20040929
 CATEGORIES=		mail news x11
 
 HOMEPAGE=		http://sylpheed-claws.sourceforge.net/
-MAINTAINER=		Jim Geovedi <jim@corebsd.or.id>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	yes

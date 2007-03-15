@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2006/12/06 21:52:32 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2007/03/15 11:30:07 jolan Exp $
 
 COMMENT=	"module for 3D graph plotting"
 
 VERSION=	0.61
 DISTNAME=	GD-Graph3d-${VERSION}
-PKGNAME=	p5-${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}p1
 CATEGORIES=	graphics
-
-MAINTAINER=	Jim Geovedi <jim@corebsd.or.id>
 
 # GPL/Artistic licence
 PERMIT_PACKAGE_CDROM=   Yes

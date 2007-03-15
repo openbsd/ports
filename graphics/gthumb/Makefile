@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2006/08/03 12:43:20 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2007/03/15 11:30:07 jolan Exp $
 
 COMMENT=		"Image viewer and browser for GNOME"
 
 VERSION=		0.13
 DISTNAME=		gthumb-${VERSION}
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		graphics x11
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gthumb/}
 HOMEPAGE=		http://gthumb.sourceforge.net/
-
-MAINTAINER=		Jim Geovedi <jim@corebsd.or.id>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.17 2006/12/16 12:22:36 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2007/03/15 11:30:07 jolan Exp $
 
 COMMENT=		"GNOME help browser"
 
 VERSION=		2.6.5
 DISTNAME=		yelp-${VERSION}
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
-MAINTAINER=		Jim Geovedi <jim@corebsd.or.id>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

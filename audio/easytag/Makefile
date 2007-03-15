@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2006/08/01 10:50:19 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2007/03/15 11:30:07 jolan Exp $
 
 COMMENT=		"MP3 ID3 tags editor"
 
 DISTNAME=		easytag-0.30
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		audio x11
 HOMEPAGE=		http://easytag.sourceforge.net/
-MAINTAINER=		Jim Geovedi <jim@corebsd.or.id>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2005/01/25 06:57:44 matthieu Exp $
+# $OpenBSD: Makefile,v 1.4 2007/03/15 11:30:07 jolan Exp $
 
 COMMENT=	"Sendmail Log Analysis Report"
 
 VERSION=	1.4
 DISTNAME=	sma-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.klake.org/sma/
-MAINTAINER=	Jim Geovedi <jim@corebsd.or.id>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

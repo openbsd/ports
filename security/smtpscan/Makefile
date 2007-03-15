@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2004/06/26 07:35:09 xsa Exp $
+# $OpenBSD: Makefile,v 1.5 2007/03/15 11:30:07 jolan Exp $
 
 COMMENT=	"Remote SMTP Server Detection"
 
 VERSION=	0.5
 DISTNAME=	smtpscan-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	security net mail
 
 HOMEPAGE=	http://www.greyhats.org/outils/smtpscan/	
-MAINTAINER=	Jim Geovedi <jim@corebsd.or.id>
 
 # GPL2
 PERMIT_PACKAGE_CDROM=	Yes

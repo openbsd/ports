@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2006/02/05 10:56:21 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/03/15 11:30:07 jolan Exp $
 
 COMMENT=		"Abstract Syntax Notation One structure parser library"
 
 VERSION=		0.1.2
 DISTNAME=		libtasn1-${VERSION}
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		security
 SHARED_LIBS=		tasn1	0.2
 MODGNU_SHARED_LIBS=	tasn1	''
 
 HOMEPAGE=		http://www.gnutls.org/
-MAINTAINER=		Jim Geovedi <jim@corebsd.or.id>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

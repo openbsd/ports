@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2006/09/18 10:21:48 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2007/03/15 11:30:07 jolan Exp $
 
 COMMENT=		"GNOME version of top"
 
 DISTNAME=		gtop-1.0.13
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		x11
 
-MAINTAINER=		Jim Geovedi <jim@corebsd.or.id>
 HOMEPAGE=		http://www.gnome.org
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gtop/1.0/}

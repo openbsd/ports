@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2006/08/03 23:28:12 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/03/15 11:30:07 jolan Exp $
 
 COMMENT=		"GNU Transport Layer Security library"
 
 DISTNAME=		gnutls-1.0.25
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		security
 SHARED_LIBS=		gnutls-extra	12.25 \
 			gnutls-openssl	12.25 \
@@ -16,7 +16,6 @@ LIBgnutls-openssl_ALIAS=gnutls_openssl
 LIBgnutls_ALIAS=	realgnutls
 
 HOMEPAGE=		http://www.gnutls.org/
-MAINTAINER=		Jim Geovedi <jim@corebsd.or.id>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

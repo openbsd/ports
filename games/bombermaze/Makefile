@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2006/08/02 09:36:20 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/03/15 11:30:07 jolan Exp $
 
 COMMENT=		"Bomberman clone for GNOME"
 
 VERSION=		0.6.6
 DISTNAME=		bombermaze-${VERSION}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		games x11
-
-MAINTAINER=		Jim Geovedi <jim@corebsd.or.id>
 
 HOMEPAGE=		http://www.nongnu.org/bombermaze/
 

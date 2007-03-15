@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2006/08/03 23:28:12 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2007/03/15 11:30:07 jolan Exp $
 
 COMMENT=		"Open Crypto Development Kit"
 
 VERSION=		0.5.5
 DISTNAME=		opencdk-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		security
 SHARED_LIBS=		opencdk	8.1
 MODGNU_SHARED_LIBS=	opencdk	''
 LIBopencdk_ALIAS=	realopencdk
 
 HOMEPAGE=		http://www.gnutls.org/
-MAINTAINER=		Jim Geovedi <jim@corebsd.or.id>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

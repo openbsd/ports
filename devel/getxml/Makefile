@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2006/08/01 22:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/03/15 11:30:07 jolan Exp $
 
 COMMENT=	"XML internationalization tool"
 
 DISTNAME=	getxml-1.0.4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.gnu.org/software/toutdoux/en/index.html
-MAINTAINER=	Jim Geovedi <jim@corebsd.or.id>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
