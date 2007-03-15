@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2007/01/23 23:32:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2007/03/15 19:20:49 naddy Exp $
 
 COMMENT=		"zile is lossy emacs"
-DISTNAME=		zile-2.2.27
+DISTNAME=		zile-2.2.29
 CATEGORIES=		editors
 HOMEPAGE=		http://zile.sourceforge.net/
 
