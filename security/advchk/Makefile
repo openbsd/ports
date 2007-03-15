@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2007/01/28 23:20:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2007/03/15 08:41:07 ajacoutot Exp $
 
 COMMENT=	"tool for monitoring the security of installed softwares"
 
-DISTNAME=	advchk-1.03
+DISTNAME=	advchk-1.20
 CATEGORIES=	security
 
 HOMEPAGE=	http://advchk.unixgu.ru/
@@ -25,7 +25,7 @@ PKG_ARCH=	*
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/advchk ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/addfeeds.sh ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/advchk-addfeeds.sh ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/advchk.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
