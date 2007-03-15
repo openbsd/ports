@@ -1,0 +1,11 @@
+$OpenBSD: patch-platform_OpenBSD_platform_h,v 1.1 2007/03/15 13:10:03 henning Exp $
+--- platform/OpenBSD/platform.h.orig	Sat Mar 10 20:30:53 2007
++++ platform/OpenBSD/platform.h	Sat Mar 10 20:51:01 2007
+@@ -26,6 +26,7 @@ union stream_parg {
+         int64_t diff[CPUSTATES];
+         int64_t states[CPUSTATES];
+         int mib[3];
++        int miblen;
+     } cp;
+ #else
+     struct {

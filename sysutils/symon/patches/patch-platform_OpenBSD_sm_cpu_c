@@ -1,0 +1,36 @@
+$OpenBSD: patch-platform_OpenBSD_sm_cpu_c,v 1.1 2007/03/15 13:10:03 henning Exp $
+--- platform/OpenBSD/sm_cpu.c.orig	Sat Mar 10 20:30:46 2007
++++ platform/OpenBSD/sm_cpu.c	Sat Mar 10 20:37:43 2007
+@@ -144,11 +144,18 @@ init_cpu(struct stream *st)
+         fatal("cpu(%.200s) is invalid: %.200s", st->arg, errstr);
+     }
+ 
+-    st->parg.cp.mib[0] = CTL_KERN;
+-    st->parg.cp.mib[1] = KERN_CPTIME2;
+-    st->parg.cp.mib[2] = num;
+-    if (st->parg.cp.mib[2] >= ncpu) {
+-        fatal("cpu(%d) is not present", st->parg.cp.mib[2]);
++    if (ncpu > 1) {
++        st->parg.cp.mib[0] = CTL_KERN;
++        st->parg.cp.mib[1] = KERN_CPTIME2;
++        st->parg.cp.mib[2] = num;
++        st->parg.cp.miblen = 3;
++        if (st->parg.cp.mib[2] >= ncpu) {
++            fatal("cpu(%d) is not present", st->parg.cp.mib[2]);
++        }
++    } else {
++        st->parg.cp.mib[0] = CTL_KERN;
++        st->parg.cp.mib[1] = KERN_CPTIME;
++        st->parg.cp.miblen = 2;
+     }
+ #endif
+ 
+@@ -170,7 +177,7 @@ get_cpu(char *symon_buf, int maxlen, str
+     int total;
+ 
+ #ifdef HAS_KERN_CPTIME2
+-    if (sysctl(st->parg.cp.mib, 3, &st->parg.cp.time, &cp_size, NULL, 0) < 0) {
++    if (sysctl(st->parg.cp.mib, st->parg.cp.miblen, &st->parg.cp.time, &cp_size, NULL, 0) < 0) {
+         warning("%s:%d: sysctl kern.cp_time2 for cpu%d failed", __FILE__, __LINE__, st->parg.cp.mib[2]);
+         return 0;
+     }
