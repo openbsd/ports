@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/05/23 14:26:41 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2007/03/16 18:25:05 jasper Exp $
 
 COMMENT=		"command line client for mpd"
 
-DISTNAME=		mpc-0.11.2
+DISTNAME=		mpc-0.12.0
 CATEGORIES=		audio
 
 HOMEPAGE=		http://www.musicpd.org/mpc.shtml
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
-MASTER_SITES=		http://mercury.chem.pitt.edu/~shank/
+MASTER_SITES=		http://www.musicpd.org/uploads/files/
 
 MODULES=		converters/libiconv
 
