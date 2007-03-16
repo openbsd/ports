@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.1.1.1 2006/12/01 16:46:23 espie Exp $
+# $OpenBSD: OpenBSD,v 1.2 2007/03/16 22:50:40 martynas Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -31,9 +31,9 @@
 43.70		-79.42		"krw"		# Kenneth R. Westerback
 44.01		-79.93		"ian"		# Ian Darwin
 45.4745		-73.6556	"msf"		# Mathieu Sauve-Frankel
+47.29		19.3		"robert"	# Robert Nagy
 47.3154		7.3526		"mglocker"	# Marcus Glocker
 47.50		7.60		"dhartmei"	# Daniel Hartmeier
-47.29		19.3		"robert"	# Robert Nagy
 47.581		7.589		"mbalmer"	# Marc Balmer
 48.0718		11.9582		"grunk"		# Alexander von Gernler
 48.08		11.31		"sturm"		# Nikolay Sturm
@@ -61,21 +61,22 @@
 52.35		4.62		"otto"		# Otto Moerbeek
 52.3667		9.71667		"reyk"		# Reyk Floeter
 52.5		21		"alek"		# Aleksander Piotrowski
+52.992283		8.257298	"fkr"	# Felix Kronlage
 53.13		9		"jufi"		# Jan-Uwe Finck
-53.562888	9.961555	"henning"	# Henning Brauer
 53.30		-6.24		"niallo"	# Niall O'Higgins
 53.317		9.817		"bernd"		# Bernd Ahlers
 53.36		10.02		"moritz"	# Moritz Jodeit
-53.56		-113.51		"beck"		# Bob Beck
 53.5021		-113.484	"weingart"	# Tobias Weingartner
+53.538		-113.500	"ckuethe"	# Chris Kuethe
+53.56		-113.51		"beck"		# Bob Beck
+53.562888	9.961555	"henning"	# Henning Brauer
+55.16		23.88		"martynas"	# Martynas Venckus
 55.593		12.987		"wilfried"	# Peter Stromberg
 55.599		-2.4324		"jmc"		# Jason McIntyre
 57.42		11.58		"jakob"		# Jakob Schlyter
 57.717		11.967		"niklas"	# Niklas Hallqvist
 59.33		18.08		"art"		# Artur Grabowski
 59.43		17.81		"maja"		# Mats O Jansson
-53.538		-113.500	"ckuethe"	# Chris Kuethe
-52.992283		8.257298	"fkr"	# Felix Kronlage
 
 #-27.48         153.20          "d"             # David Leonard
 #-33.536466     151.093514      "dons"          # Don Stewart
