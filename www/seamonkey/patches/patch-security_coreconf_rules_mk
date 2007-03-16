@@ -1,9 +1,9 @@
-$OpenBSD: patch-security_coreconf_rules_mk,v 1.1.1.1 2006/12/22 23:32:28 kurt Exp $
---- security/coreconf/rules.mk.orig	Fri Apr 15 02:36:28 2005
-+++ security/coreconf/rules.mk	Sat Sep 10 09:47:32 2005
-@@ -352,7 +352,6 @@ ifdef XP_OS2_VACPP
+$OpenBSD: patch-security_coreconf_rules_mk,v 1.2 2007/03/16 17:20:55 naddy Exp $
+--- security/coreconf/rules.mk.orig	Tue Feb 13 21:41:48 2007
++++ security/coreconf/rules.mk	Thu Mar  1 21:32:47 2007
+@@ -358,7 +358,6 @@ ifdef XP_OS2_VACPP
  else
- 	$(MKSHLIB) -o $@ $(OBJS) $(SUB_SHLOBJS) $(LD_LIBS) $(EXTRA_LIBS) $(EXTRA_SHARED_LIBS)
+ 	$(MKSHLIB) -o $@ $(OBJS) $(SUB_SHLOBJS) $(LD_LIBS) $(EXTRA_LIBS) $(EXTRA_SHARED_LIBS) $(OS_LIBS)
  endif
 -	chmod +x $@
  ifeq ($(OS_TARGET),Darwin)

@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-devel,v 1.3 2007/01/12 23:11:12 kurt Exp $
+@comment $OpenBSD: PLIST-devel,v 1.4 2007/03/16 17:20:55 naddy Exp $
 @conflict seamonkey-<1.0.7p1
 bin/seamonkey-config
+lib/pkgconfig/
 lib/pkgconfig/seamonkey-gtkmozembed.pc
 lib/pkgconfig/seamonkey-js.pc
 @comment lib/pkgconfig/seamonkey-nspr.pc
@@ -2858,8 +2859,6 @@ seamonkey/include/nss/ssl.h
 seamonkey/include/nss/sslerr.h
 seamonkey/include/nss/sslproto.h
 seamonkey/include/nss/sslt.h
-seamonkey/include/nss/swfort.h
-seamonkey/include/nss/swfortt.h
 seamonkey/include/nss/watcomfx.h
 seamonkey/include/oji/
 seamonkey/include/oji/ProxyJNI.h

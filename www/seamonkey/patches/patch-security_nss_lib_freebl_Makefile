@@ -1,0 +1,12 @@
+$OpenBSD: patch-security_nss_lib_freebl_Makefile,v 1.1 2007/03/16 17:20:55 naddy Exp $
+--- security/nss/lib/freebl/Makefile.orig	Thu Mar  1 23:51:15 2007
++++ security/nss/lib/freebl/Makefile	Thu Mar  1 23:51:34 2007
+@@ -192,7 +192,7 @@ endif
+ # to bind the blapi function references in FREEBLVector vector
+ # (ldvector.c) to the blapi functions defined in the freebl
+ # shared libraries.
+-ifeq (,$(filter-out BSD_OS FreeBSD Linux NetBSD, $(OS_TARGET)))
++ifeq (,$(filter-out BSD_OS FreeBSD Linux NetBSD OpenBSD, $(OS_TARGET)))
+     MKSHLIB += -Wl,-Bsymbolic
+ endif
+ 

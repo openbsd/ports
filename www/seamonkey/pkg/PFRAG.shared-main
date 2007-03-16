@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.1.1.1 2006/12/22 23:32:29 kurt Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.2 2007/03/16 17:20:55 naddy Exp $
 @lib seamonkey/components/libaccessibility.so.${LIBaccessibility_VERSION}
 @lib seamonkey/components/libaddrbook.so.${LIBaddrbook_VERSION}
 @lib seamonkey/components/libappcomps.so.${LIBappcomps_VERSION}
@@ -76,6 +76,7 @@
 @lib seamonkey/components/libxpconnect.so.${LIBxpconnect_VERSION}
 @lib seamonkey/components/libxpinstall.so.${LIBxpinstall_VERSION}
 @lib seamonkey/components/libxremoteservice.so.${LIBxremoteservice_VERSION}
+@lib seamonkey/libfreebl3.so.${LIBfreebl3_VERSION}
 @lib seamonkey/libgfxpsshar.so.${LIBgfxpsshar_VERSION}
 @lib seamonkey/libgkgfx.so.${LIBgkgfx_VERSION}
 @lib seamonkey/libgtkembedmoz.so.${LIBgtkembedmoz_VERSION}

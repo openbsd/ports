@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.5 2007/02/22 00:40:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2007/03/16 17:20:55 naddy Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
 COMMENT-main=	"integrated mozilla application suite"
 COMMENT-devel=  "devel files for Gecko"
 
-VER=		1.0.7
+VER=		1.0.8
 DISTNAME=	seamonkey-${VER}.source
 PKGNAME=	seamonkey-${VER}
-PKGNAME-main=	seamonkey-${VER}p3
-PKGNAME-devel=	seamonkey-devel-${VER}p3
+PKGNAME-main=	seamonkey-${VER}
+PKGNAME-devel=	seamonkey-devel-${VER}
 
-SO_VERSION=	9.3
+SO_VERSION=	9.4
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 .for _lib in accessibility appcomps auth autoconfig browsercomps \
 	browserdirprovider caps chrome commandlines composer cookie docshell \
-	editor embedcomponents fileview gfx_gtk gfxps gfxpsshar gkgfx \
+	editor embedcomponents fileview freebl3 gfx_gtk gfxps gfxpsshar gkgfx \
 	gklayout gkplugin gtkembedmoz gtkxtbin htmlpars i18n imglib2 inspector \
 	jar50 jsd jsj mork mozfind mozjs necko necko2 nsappshell nss3 \
 	nssckbi oji permissions pipboot pipnss pippki pref rdf \
@@ -103,7 +103,8 @@ MAKE_ENV=	MOZ_CO_PROJECT=suite \
 		LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
 		BUILD_OFFICIAL=1 \
 		MOZILLA_OFFICIAL=1 \
-		SO_VERSION="${SO_VERSION}"
+		SO_VERSION="${SO_VERSION}" \
+		NSPR_LIB_DIR="${LOCALBASE}/lib"
 CONFIGURE_ENV=	${MAKE_ENV} \
 		PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig"
 
