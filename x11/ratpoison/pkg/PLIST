@@ -1,14 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2006/09/27 20:12:14 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/03/16 22:27:45 martynas Exp $
 bin/ratpoison
 bin/rpws
 @info info/ratpoison.info
 @man man/man1/ratpoison.1
-share/doc/ratpoison/
-@comment share/doc/ratpoison/AUTHORS
-@comment share/doc/ratpoison/COPYING
-@comment share/doc/ratpoison/ChangeLog
-share/doc/ratpoison/NEWS
-@comment share/doc/ratpoison/README
 share/ratpoison/
 share/ratpoison/allwindows.sh
 share/ratpoison/clickframe.pl
