@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2006/08/01 10:50:19 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2007/03/16 16:40:11 naddy Exp $
 
 COMMENT=	"play, encode, and manage Ogg Vorbis files"
 
@@ -16,6 +16,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://downloads.xiph.org/releases/vorbis/
+MASTER_SITES0=	http://sites.inka.de/~mips/unix/distfiles/
+PATCHFILES=	vorbis-tools-1.1.1-flac-1.1.3.patch:0
+PATCH_DIST_STRIP=-p1
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	ao.>=3::audio/libao \
@@ -26,12 +29,22 @@ LIB_DEPENDS=	ao.>=3::audio/libao \
 WANTLIB=	c crypto m ogg pthread ssl z
 
 USE_LIBTOOL=	Yes
-CONFIGURE_STYLE=gnu
+AUTOCONF_VERSION=2.59
+AUTOMAKE_VERSION=1.9
+CONFIGURE_STYLE=autoconf automake
 CONFIGURE_ARGS=	--enable-vcut
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PTHREAD_CFLAGS="-pthread" PTHREAD_LIBS="-pthread"
 SEPARATE_BUILD=	simple
+
+AUTOMAKE_ENV=	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} 
+post-patch:
+	@echo "Running aclocal-${AUTOMAKE_VERSION} in ${AUTOCONF_DIR}
+	@cd ${AUTOCONF_DIR} && ${SETENV} ${AUTOMAKE_ENV} aclocal
+	@echo "Running automake-${AUTOMAKE_VERSION} in ${AUTOCONF_DIR}
+	@cd ${AUTOCONF_DIR} && ${SETENV} ${AUTOMAKE_ENV} automake -i
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/vorbis-tools

@@ -1,0 +1,24 @@
+$OpenBSD: patch-ogg123_Makefile_am,v 1.4 2007/03/16 16:40:11 naddy Exp $
+--- ogg123/Makefile.am.orig	Fri Mar 16 16:50:58 2007
++++ ogg123/Makefile.am	Fri Mar 16 16:52:04 2007
+@@ -16,7 +16,7 @@ endif
+ 
+ datadir = @datadir@
+ localedir = $(datadir)/locale
+-DEFS = -DLOCALEDIR=\"$(localedir)\" @DEFS@
++DEFS = -DSYSCONFDIR=\"$(sysconfdir)\" -DLOCALEDIR=\"$(localedir)\" @DEFS@
+ 
+ docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
+ mandir = @MANDIR@
+@@ -44,10 +44,9 @@ ogg123_SOURCES = audio.c buffer.c callba
+                 $(flac_sources) $(speex_sources)
+ 
+ man_MANS = ogg123.1
+-doc_DATA = ogg123rc-example
+ 
+ EXTRA_ogg123_SOURCES = \
+-                $(man_MANS) $(doc_DATA)
++                $(man_MANS)
+ 
+ debug:
+ 	$(MAKE) all CFLAGS="@DEBUG@"
