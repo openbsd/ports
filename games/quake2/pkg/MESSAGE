@@ -1,0 +1,3 @@
+Quake2 requires the original version of Quake2 data files in order
+to function. Data files and music files should be placed in
+${PREFIX}/share/quake2/base2q/

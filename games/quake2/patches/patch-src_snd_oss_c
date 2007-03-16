@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_snd_oss_c,v 1.1.1.1 2007/03/16 18:26:01 claudio Exp $
+--- src/snd_oss.c.orig	Sun Jan 22 00:12:42 2006
++++ src/snd_oss.c	Sun Jan 22 00:14:14 2006
+@@ -358,7 +358,7 @@ qboolean SNDDMA_Init(struct sndinfo * s)
+ 
+ 	if (!si->dma->buffer) {
+ 	    si->dma->buffer = (unsigned char *) mmap(NULL, info.fragstotal * info.fragsize,
+-#if defined(__FreeBSD__) && (__FreeBSD_version < 500000)
++#if defined(__FreeBSD__) && (__FreeBSD_version < 500000) || defined (__OpenBSD__)
+ 						PROT_READ|PROT_WRITE,
+ #else
+ 						PROT_WRITE,

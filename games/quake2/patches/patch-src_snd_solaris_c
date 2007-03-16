@@ -1,0 +1,173 @@
+$OpenBSD: patch-src_snd_solaris_c,v 1.1.1.1 2007/03/16 18:26:01 claudio Exp $
+--- src/snd_solaris.c.orig	Mon Mar 15 13:50:17 2004
++++ src/snd_solaris.c	Sun Jan 22 00:04:45 2006
+@@ -27,12 +27,12 @@ Foundation, Inc., 59 Temple Place - Suit
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <errno.h>
+-#include <stropts.h>
+ #include <sys/types.h>
++# include <sys/ioctl.h>
+ #include <sys/audioio.h>
+ 
+-#include "../client/client.h"
+-#include "../client/snd_loc.h"
++#include "client.h"
++#include "snd_loc.h"
+ 
+ #define	SND_DEBUG	0
+ 
+@@ -77,7 +77,7 @@ qboolean SNDDMA_Init(struct sndinfo * s)
+ 
+     if (audio_fd < 0) {
+ 
+-	audio_fd = open(si->device->string, O_WRONLY);
++	audio_fd = open(si->device->string, O_RDWR);
+ 
+ 	if (audio_fd < 0) {
+ 	    Com_Printf("Could not open %s: %s\n", si->device->string, strerror(errno));
+@@ -96,7 +96,7 @@ qboolean SNDDMA_Init(struct sndinfo * s)
+ 	      ? AUDIO_ENCODING_LINEAR8
+ 	      : AUDIO_ENCODING_LINEAR ); 
+ 	au_info.play.sample_rate = (int)si->speed->value;
+-	au_info.play.channels = (int)sndchannels->value;
++	au_info.play.channels = (int)si->channels->value;
+ 
+ 	if (ioctl(audio_fd, AUDIO_SETINFO, &au_info) == -1) {
+ 	    Com_Printf("AUDIO_SETINFO failed: %s\n", strerror(errno));
+@@ -112,7 +112,7 @@ qboolean SNDDMA_Init(struct sndinfo * s)
+ 		  ? AUDIO_ENCODING_LINEAR8
+ 		  : AUDIO_ENCODING_LINEAR ); 
+ 	    au_info.play.sample_rate = tryrates[i];
+-	    au_info.play.channels = (int)sndchannels->value;
++	    au_info.play.channels = (int)si->channels->value;
+ 
+ 	    if (ioctl(audio_fd, AUDIO_SETINFO, &au_info) == 0)
+ 		break;
+@@ -122,25 +122,25 @@ qboolean SNDDMA_Init(struct sndinfo * s)
+ 	if (i >= sizeof(tryrates)/sizeof(tryrates[0]))
+ 		return 0;
+ 	}
+-    dma.samplebits = au_info.play.precision;
+-    dma.channels = au_info.play.channels;
+-    dma.speed = au_info.play.sample_rate;
++    si->dma->samplebits = au_info.play.precision;
++    si->dma->channels = au_info.play.channels;
++    si->dma->speed = au_info.play.sample_rate;
+ 	
+     /*
+      * submit some sound data every ~ 0.1 seconds, and try to buffer 2*0.1 
+      * seconds in sound driver
+      */
+-    samples = dma.channels * dma.speed / 10;
++    samples = si->dma->channels * si->dma->speed / 10;
+     for (i = 0; (1 << i) < samples; i++)
+ 	;
+-    dma.submission_chunk = 1 << (i-1);
++    si->dma->submission_chunk = 1 << (i-1);
+     DPRINTF("channels %d, speed %d, log2(samples) %d, submission chunk %d\n",
+-	    dma.channels, dma.speed, i-1,
+-	    dma.submission_chunk);
++	    si->dma->channels, si->dma->speed, i-1,
++	    si->dma->submission_chunk);
+ 
+-    dma.samples = QSND_NUM_CHUNKS * dma.submission_chunk;
+-    dma.buffer = calloc(dma.samples, dma.samplebits/8);
+-    if (dma.buffer == NULL) {
++    si->dma->samples = QSND_NUM_CHUNKS * si->dma->submission_chunk;
++    si->dma->buffer = calloc(si->dma->samples, si->dma->samplebits/8);
++    if (si->dma->buffer == NULL) {
+ 	Com_Printf("Could not alloc sound buffer\n");
+ 	return 0;
+     }
+@@ -150,7 +150,7 @@ qboolean SNDDMA_Init(struct sndinfo * s)
+     au_info.play.samples = 0;
+     ioctl(audio_fd, AUDIO_SETINFO, &au_info);
+ 
+-    dma.samplepos = 0;
++    si->dma->samplepos = 0;
+ 
+ 	snd_inited = 1;
+ 	
+@@ -179,8 +179,8 @@ int SNDDMA_GetDMAPos(void)
+ 	return 0;
+  	}
+ 
+-    s_pos = au_info.play.samples * dma.channels;
+-    return s_pos & (dma.samples - 1);
++    s_pos = au_info.play.samples * si->dma->channels;
++    return s_pos & (si->dma->samples - 1);
+ }
+ 
+ /*
+@@ -194,7 +194,6 @@ void SNDDMA_Shutdown(void)
+ {
+     if (snd_inited) {
+ 	if (audio_fd >= 0) {
+-	    ioctl(audio_fd, I_FLUSH, FLUSHW);
+ 	    close(audio_fd);
+ 	    audio_fd = -1;
+ 		}
+@@ -211,7 +210,7 @@ Send sound to device if buffer isn't rea
+ */
+ void SNDDMA_Submit(void)
+ {
+-    int samplebytes = dma.samplebits/8;
++    int samplebytes = si->dma->samplebits/8;
+     audio_info_t au_info;
+     int s_pos;
+     int chunk_idx;
+@@ -221,10 +220,10 @@ void SNDDMA_Submit(void)
+ 	return;
+     
+     if (last_chunk_idx == -1) {
+-	if (write(audio_fd, dma.buffer, dma.samples * samplebytes) != dma.samples * samplebytes)
++	if (write(audio_fd, si->dma->buffer, si->dma->samples * samplebytes) != si->dma->samples * samplebytes)
+ 	    Com_Printf("initial write on audio device failed\n");
+ 	last_chunk_idx = 0;
+-	dma.samplepos = 0;
++	si->dma->samplepos = 0;
+ 	return;
+     }
+ 
+@@ -247,30 +246,30 @@ void SNDDMA_Submit(void)
+ 	au_info.play.samples = 0;
+ 	ioctl(audio_fd, AUDIO_SETINFO, &au_info);
+ 
+-	if (write(audio_fd, dma.buffer, dma.samples * samplebytes) != dma.samples * samplebytes)
++	if (write(audio_fd, si->dma->buffer, si->dma->samples * samplebytes) != si->dma->samples * samplebytes)
+ 	    Com_Printf("refill sound driver after underflow failed\n");
+ 	last_chunk_idx = 0;
+-	dma.samplepos = 0;
++	si->dma->samplepos = 0;
+ 	return;
+     }
+ 
+-    s_pos = au_info.play.samples * dma.channels;
+-    chunk_idx = (s_pos % dma.samples) / dma.submission_chunk;
++    s_pos = au_info.play.samples * si->dma->channels;
++    chunk_idx = (s_pos % si->dma->samples) / si->dma->submission_chunk;
+  
+-    DPRINTF("HW DMA Pos=%u (%u), dma.samplepos=%u, play in=%d, last=%d\n",
+-	    au_info.play.samples, s_pos, dma.samplepos,
++    DPRINTF("HW DMA Pos=%u (%u), si->dma->samplepos=%u, play in=%d, last=%d\n",
++	    au_info.play.samples, s_pos, si->dma->samplepos,
+ 	    chunk_idx, last_chunk_idx);
+ 
+     while (chunk_idx != last_chunk_idx) {
+ 	
+ 	if (write(audio_fd,
+-		  dma.buffer + dma.samplepos * samplebytes,
+-		  dma.submission_chunk * samplebytes) != dma.submission_chunk * samplebytes) {
++		  si->dma->buffer + si->dma->samplepos * samplebytes,
++		  si->dma->submission_chunk * samplebytes) != si->dma->submission_chunk * samplebytes) {
+ 	    Com_Printf("write error on audio device\n");
+ 	}
+ 
+-	if ((dma.samplepos += dma.submission_chunk) >= dma.samples)
+-	    dma.samplepos = 0;
++	if ((si->dma->samplepos += si->dma->submission_chunk) >= si->dma->samples)
++	    si->dma->samplepos = 0;
+ 
+ 	if (++last_chunk_idx >= QSND_NUM_CHUNKS)
+ 	    last_chunk_idx = 0;

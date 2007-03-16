@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/03/16 18:26:01 claudio Exp $
+%%SHARED%%
+bin/quake2
+lib/quake2/
+lib/quake2/baseq2/
+lib/quake2/baseq2/game.a
+lib/quake2/baseq2/game.la
+lib/quake2/ctf/
+lib/quake2/ctf/game.a
+lib/quake2/ctf/game.la
+lib/quake2/ref_softsdl.a
+lib/quake2/ref_softsdl.la
+lib/quake2/ref_softx.a
+lib/quake2/ref_softx.la
+lib/quake2/snd_oss.a
+lib/quake2/snd_oss.la
+lib/quake2/snd_sdl.a
+lib/quake2/snd_sdl.la
+lib/quake2/snd_solaris.a
+lib/quake2/snd_solaris.la
+share/quake2/
+share/quake2/baseq2/
+share/quake2/baseq2/config.cfg

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_q_sh_c,v 1.1.1.1 2007/03/16 18:26:01 claudio Exp $
+--- src/q_sh.c.orig	Sat Jan 21 23:29:07 2006
++++ src/q_sh.c	Sat Jan 21 23:29:17 2006
+@@ -54,7 +54,7 @@ void *Hunk_Begin (int maxsize)
+ /* FIXME: clean all this up into configure tests for mmap, MAP_ANONYMOUS and malloc */
+ #if defined(__linux__)
+ 	membase = mmap(0, maxhunksize, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0);
+-#elif defined(__FreeBSD__) || defined(__bsd__) || defined(__NetBSD__)
++#elif defined(__FreeBSD__) || defined(__bsd__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ 	membase = mmap(0, maxhunksize, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANON, -1, 0);
+ #elif defined(__sun__) || defined(__sgi)
+ 	membase = malloc(maxhunksize);
