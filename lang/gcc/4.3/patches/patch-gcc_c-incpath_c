@@ -1,0 +1,41 @@
+$OpenBSD: patch-gcc_c-incpath_c,v 1.1.1.1 2007/03/17 22:35:25 espie Exp $
+--- gcc/c-incpath.c.orig	Wed Dec 20 23:34:14 2006
++++ gcc/c-incpath.c	Mon Feb 19 14:09:48 2007
+@@ -146,9 +146,9 @@ add_standard_paths (const char *sysroot,
+ 		continue;
+ 	      if (!strncmp (p->fname, cpp_GCC_INCLUDE_DIR, len))
+ 		{
+-		  char *str = concat (iprefix, p->fname + len, NULL);
++		  char *str = concat (iprefix, p->fname + len, (void *)0);
+ 		  if (p->multilib && imultilib)
+-		    str = concat (str, dir_separator_str, imultilib, NULL);
++		    str = concat (str, dir_separator_str, imultilib, (void *)0);
+ 		  add_path (str, SYSTEM, p->cxx_aware, false);
+ 		}
+ 	    }
+@@ -163,7 +163,7 @@ add_standard_paths (const char *sysroot,
+ 
+ 	  /* Should this directory start with the sysroot?  */
+ 	  if (sysroot && p->add_sysroot)
+-	    str = concat (sysroot, p->fname, NULL);
++	    str = concat (sysroot, p->fname, (void *)0);
+ 	  else if (!p->add_sysroot && relocated
+ 		   && strncmp (p->fname, cpp_PREFIX, cpp_PREFIX_len) == 0)
+ 	    {
+@@ -171,14 +171,14 @@ add_standard_paths (const char *sysroot,
+ 		 prefix relative path, then we use gcc_exec_prefix instead 
+ 		 of the configured prefix.  */
+ 	      str = concat (gcc_exec_prefix, p->fname
+-			      + cpp_PREFIX_len, NULL);
++			      + cpp_PREFIX_len, (void *)0);
+ 	      str = update_path (str, p->component);
+ 	    }
+ 	  else
+ 	    str = update_path (p->fname, p->component);
+ 
+ 	  if (p->multilib && imultilib)
+-	    str = concat (str, dir_separator_str, imultilib, NULL);
++	    str = concat (str, dir_separator_str, imultilib, (void *)0);
+ 
+ 	  add_path (str, SYSTEM, p->cxx_aware, false);
+ 	}

@@ -1,0 +1,52 @@
+$OpenBSD: patch-gcc_builtins_c,v 1.1.1.1 2007/03/17 22:35:25 espie Exp $
+--- gcc/builtins.c.orig	Wed Feb 28 20:21:20 2007
++++ gcc/builtins.c	Mon Mar 12 11:37:52 2007
+@@ -12218,13 +12218,13 @@ do_mpfr_arg2 (tree arg1, tree arg2, tree
+ 	  int inexact;
+ 	  mpfr_t m1, m2;
+ 
+-	  mpfr_inits2 (prec, m1, m2, NULL);
++	  mpfr_inits2 (prec, m1, m2, (void *)0);
+ 	  mpfr_from_real (m1, ra1);
+ 	  mpfr_from_real (m2, ra2);
+ 	  mpfr_clear_flags ();
+ 	  inexact = func (m1, m1, m2, GMP_RNDN);
+ 	  result = do_mpfr_ckconv (m1, type, inexact);
+-	  mpfr_clears (m1, m2, NULL);
++	  mpfr_clears (m1, m2, (void *)0);
+ 	}
+     }
+   
+@@ -12266,14 +12266,14 @@ do_mpfr_arg3 (tree arg1, tree arg2, tree
+ 	  int inexact;
+ 	  mpfr_t m1, m2, m3;
+ 
+-	  mpfr_inits2 (prec, m1, m2, m3, NULL);
++	  mpfr_inits2 (prec, m1, m2, m3, (void *)0);
+ 	  mpfr_from_real (m1, ra1);
+ 	  mpfr_from_real (m2, ra2);
+ 	  mpfr_from_real (m3, ra3);
+ 	  mpfr_clear_flags ();
+ 	  inexact = func (m1, m1, m2, m3, GMP_RNDN);
+ 	  result = do_mpfr_ckconv (m1, type, inexact);
+-	  mpfr_clears (m1, m2, m3, NULL);
++	  mpfr_clears (m1, m2, m3, (void *)0);
+ 	}
+     }
+   
+@@ -12310,13 +12310,13 @@ do_mpfr_sincos (tree arg, tree arg_sinp,
+ 	  int inexact;
+ 	  mpfr_t m, ms, mc;
+ 
+-	  mpfr_inits2 (prec, m, ms, mc, NULL);
++	  mpfr_inits2 (prec, m, ms, mc, (void *)0);
+ 	  mpfr_from_real (m, ra);
+ 	  mpfr_clear_flags ();
+ 	  inexact = mpfr_sin_cos (ms, mc, m, GMP_RNDN);
+ 	  result_s = do_mpfr_ckconv (ms, type, inexact);
+ 	  result_c = do_mpfr_ckconv (mc, type, inexact);
+-	  mpfr_clears (m, ms, mc, NULL);
++	  mpfr_clears (m, ms, mc, (void *)0);
+ 	  if (result_s && result_c)
+ 	    {
+ 	      /* If we are to return in a complex value do so.  */

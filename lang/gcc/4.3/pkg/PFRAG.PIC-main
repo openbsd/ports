@@ -1,0 +1,9 @@
+@comment $OpenBSD: PFRAG.PIC-main,v 1.1.1.1 2007/03/17 22:35:26 espie Exp $
+lib/gcc/${CONFIG}/${V}/fpic/
+lib/gcc/${CONFIG}/${V}/fpic/libgcc.a
+lib/gcc/${CONFIG}/${V}/fpic/libgcov.a
+lib/fpic/libiberty.a
+lib/fpic/libssp.a
+lib/fpic/libssp.la
+lib/fpic/libssp_nonshared.a
+lib/fpic/libssp_nonshared.la

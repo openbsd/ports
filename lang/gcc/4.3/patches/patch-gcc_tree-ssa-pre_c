@@ -1,0 +1,15 @@
+$OpenBSD: patch-gcc_tree-ssa-pre_c,v 1.1.1.1 2007/03/17 22:35:26 espie Exp $
+--- gcc/tree-ssa-pre.c.orig	Mon Feb 19 18:40:03 2007
++++ gcc/tree-ssa-pre.c	Mon Feb 19 18:40:44 2007
+@@ -3221,8 +3221,10 @@ create_value_expr_from (tree expr, basic
+     pool = binary_node_pool;
+   else if (TREE_CODE_CLASS (code) == tcc_comparison)
+     pool = comparison_node_pool;
+-  else
++  else {
+     gcc_assert (code == CALL_EXPR);
++    pool = 0;
++  }
+ 
+   if (code == CALL_EXPR)
+     vexpr = temp_copy_call_expr (expr);

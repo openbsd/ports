@@ -1,0 +1,25 @@
+$OpenBSD: patch-gcc_config_m68k_openbsd_h,v 1.1.1.1 2007/03/17 22:35:26 espie Exp $
+--- gcc/config/m68k/openbsd.h.orig	Thu Jan 18 20:12:34 2007
++++ gcc/config/m68k/openbsd.h	Mon Feb 19 14:08:47 2007
+@@ -43,16 +43,19 @@ Boston, MA 02110-1301, USA.  */
+ 
+ /* This must agree with <machine/ansi.h> */
+ #undef SIZE_TYPE
+-#define SIZE_TYPE "unsigned int"
++#define SIZE_TYPE "long unsigned int"
+ 
+ #undef PTRDIFF_TYPE
+-#define PTRDIFF_TYPE "int"
++#define PTRDIFF_TYPE "long int"
+ 
+ #undef WCHAR_TYPE
+ #define WCHAR_TYPE "int"
+ 
+ #undef WCHAR_TYPE_SIZE
+ #define WCHAR_TYPE_SIZE 32
++
++#undef WINT_TYPE
++#define WINT_TYPE "int"
+ 
+ /* Storage layout.  */
+ 

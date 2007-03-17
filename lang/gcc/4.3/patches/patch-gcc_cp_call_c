@@ -1,0 +1,21 @@
+$OpenBSD: patch-gcc_cp_call_c,v 1.1.1.1 2007/03/17 22:35:26 espie Exp $
+--- gcc/cp/call.c.orig	Fri Mar  9 17:16:35 2007
++++ gcc/cp/call.c	Mon Mar 12 11:37:53 2007
+@@ -5326,7 +5326,7 @@ name_as_c_string (tree name, tree type, 
+ 	  || name == base_dtor_identifier
+ 	  || name == deleting_dtor_identifier)
+ 	{
+-	  pretty_name = concat ("~", pretty_name, NULL);
++	  pretty_name = concat ("~", pretty_name, (void *)0);
+ 	  /* Remember that we need to free the memory allocated.  */
+ 	  *free_p = true;
+ 	}
+@@ -5336,7 +5336,7 @@ name_as_c_string (tree name, tree type, 
+       pretty_name = concat ("operator ",
+ 			    type_as_string (TREE_TYPE (name),
+ 					    TFF_PLAIN_IDENTIFIER),
+-			    NULL);
++			    (void *)0);
+       /* Remember that we need to free the memory allocated.  */
+       *free_p = true;
+     }

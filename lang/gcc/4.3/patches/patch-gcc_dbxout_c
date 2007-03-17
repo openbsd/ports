@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_dbxout_c,v 1.1.1.1 2007/03/17 22:35:26 espie Exp $
+--- gcc/dbxout.c.orig	Wed Jul 26 19:38:37 2006
++++ gcc/dbxout.c	Wed Oct 18 00:37:31 2006
+@@ -1008,7 +1008,7 @@ dbxout_init (const char *input_file_name
+ 	  if (cwd[0] == '\0')
+ 	    cwd = "/";
+ 	  else if (!IS_DIR_SEPARATOR (cwd[strlen (cwd) - 1]))
+-	    cwd = concat (cwd, "/", NULL);
++	    cwd = concat (cwd, "/", (void *)0);
+ 	}
+ #ifdef DBX_OUTPUT_MAIN_SOURCE_DIRECTORY
+       DBX_OUTPUT_MAIN_SOURCE_DIRECTORY (asm_out_file, cwd);

@@ -1,0 +1,18 @@
+$OpenBSD: patch-gcc_ada_Makefile_in,v 1.1.1.1 2007/03/17 22:35:25 espie Exp $
+--- gcc/ada/Makefile.in.orig	Tue Jan 23 17:37:09 2007
++++ gcc/ada/Makefile.in	Mon Feb 19 14:08:46 2007
+@@ -116,12 +116,12 @@ MAKEINFO = makeinfo
+ TEXI2DVI = texi2dvi
+ TEXI2PDF = texi2pdf
+ GNATBIND_FLAGS = -static -x
+-ADA_CFLAGS =
++ADA_CFLAGS = -O1
+ ADAFLAGS = -W -Wall -gnatpg -gnata
+ SOME_ADAFLAGS =-gnata
+ FORCE_DEBUG_ADAFLAGS = -g
+ GNATLIBFLAGS = -gnatpg -nostdinc
+-GNATLIBCFLAGS = -g -O2
++GNATLIBCFLAGS = -g -O1
+ GNATLIBCFLAGS_FOR_C = $(GNATLIBCFLAGS) $(TARGET_LIBGCC2_CFLAGS) -fexceptions \
+ 	-DIN_RTS
+ ALL_ADA_CFLAGS = $(X_ADA_CFLAGS) $(T_ADA_CFLAGS) $(ADA_CFLAGS)

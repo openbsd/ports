@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared-estdc,v 1.1.1.1 2007/03/17 22:35:26 espie Exp $
+@lib lib/libestdc++.so.${LIBestdc++_VERSION}
