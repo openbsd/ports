@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/09 20:43:46 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/03/17 21:35:31 espie Exp $
 
 COMMENT-main=		"streaming media framework - core"
 COMMENT-frontend=	"streaming media framework - frontend commands"
 
-V=			0.10.11
+V=			0.10.12
 
 PKGNAME-main=		gstreamer-$V
 PKGNAME-frontend=	gstreamer-frontend-$V
 
-DISTNAME=		gstreamer-0.10.11
+DISTNAME=		gstreamer-$V
 
-SHARED_LIBS +=	gstreamer-0.10        0.0     # .10.0
-SHARED_LIBS +=	gstbase-0.10          0.0     # .10.0
-SHARED_LIBS +=	gstcontroller-0.10    0.0     # .10.0
-SHARED_LIBS +=	gstdataprotocol-0.10  0.0     # .10.0
-SHARED_LIBS +=	gstnet-0.10           0.0     # .10.0
+SHARED_LIBS +=	gstreamer-0.10        0.1     # .11.0
+SHARED_LIBS +=	gstbase-0.10          0.1     # .11.0
+SHARED_LIBS +=	gstcontroller-0.10    0.0     # .11.0
+SHARED_LIBS +=	gstdataprotocol-0.10  0.0     # .11.0
+SHARED_LIBS +=	gstnet-0.10           0.0     # .11.0
 
 MASTER_SITES=		${MASTER_SITE_GST:=gstreamer/}
 

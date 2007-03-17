@@ -1,7 +1,7 @@
-$OpenBSD: patch-m4_gettext_m4,v 1.1.1.1 2007/01/08 17:37:27 espie Exp $
+$OpenBSD: patch-m4_gettext_m4,v 1.2 2007/03/17 21:35:31 espie Exp $
 --- m4/gettext.m4.orig	Thu Nov 30 23:29:00 2006
-+++ m4/gettext.m4	Mon Jan  8 16:13:49 2007
-@@ -315,8 +315,12 @@ return (int) gettext ("")]ifelse([$2], [
++++ m4/gettext.m4	Sat Mar 17 12:34:15 2007
+@@ -315,8 +315,12 @@ return (int) gettext ("")]ifelse([$2], [need-ngettext]
    ])
  
    dnl For backward compatibility. Some Makefiles may be using this.

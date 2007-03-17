@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/01/10 12:58:31 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2007/03/17 21:35:31 espie Exp $
 
 COMMENT-main=		"multimedia framework - plugins base"
 COMMENT-gnome=		"multimedia framework - gnome vfs plugin"
@@ -8,7 +8,7 @@ COMMENT-vorbis=		"multimedia framework - vorbis plugin"
 COMMENT-theora=		"multimedia framework - theora plugin"
 COMMENT-pango=		"multimedia framework - pango renderer"
 
-V=			0.10.11
+V=			0.10.12
 DISTNAME=		gst-plugins-base-$V
 PKGNAME-main=		gstreamer-plugins-base-$V
 PKGNAME-gnome=		gstreamer-gnome-$V
@@ -19,14 +19,15 @@ PKGNAME-vorbis=		gstreamer-vorbis-$V
 PKGNAME-pango=		gstreamer-pango-$V
 MULTI_PACKAGES=		-main -gnome -cdda -ogg -theora -vorbis -pango
 
-SHARED_LIBS +=	gstinterfaces-0.10    0.0     # .8.0
-SHARED_LIBS +=	gsttag-0.10           0.0     # .8.0
-SHARED_LIBS +=	gstaudio-0.10         0.0     # .8.0
-SHARED_LIBS +=	gstcdda-0.10          0.0     # .8.0
-SHARED_LIBS +=	gstnetbuffer-0.10     0.0     # .8.0
-SHARED_LIBS +=	gstriff-0.10          0.0     # .8.0
-SHARED_LIBS +=	gstrtp-0.10           0.0     # .8.0
-SHARED_LIBS +=	gstvideo-0.10         0.0     # .8.0
+SHARED_LIBS +=	gstinterfaces-0.10   0.1      # .8.0
+SHARED_LIBS +=	gsttag-0.10          0.1      # .8.0
+SHARED_LIBS +=	gstaudio-0.10        0.1      # .8.0
+SHARED_LIBS +=	gstcdda-0.10         0.1      # .8.0
+SHARED_LIBS +=	gstnetbuffer-0.10    0.1      # .8.0
+SHARED_LIBS +=	gstpbutils-0.10      0.0      # .8.0
+SHARED_LIBS +=	gstriff-0.10         0.1      # .8.0
+SHARED_LIBS +=	gstrtp-0.10          0.1      # .8.0
+SHARED_LIBS +=	gstvideo-0.10        0.1      # .8.0
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-base/}
 MODULES=		devel/gettext
