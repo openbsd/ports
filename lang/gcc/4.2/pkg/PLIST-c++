@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-c++,v 1.2 2006/10/20 13:43:18 espie Exp $
+@comment $OpenBSD: PLIST-c++,v 1.3 2007/03/17 21:58:46 espie Exp $
 bin/ec++
 bin/eg++
 bin/${CONFIG}-ec++
@@ -6,6 +6,7 @@ bin/${CONFIG}-eg++
 include/c++/
 include/c++/${V}/
 include/c++/${V}/algorithm
+include/c++/${V}/array
 include/c++/${V}/backward/
 include/c++/${V}/backward/algo.h
 include/c++/${V}/backward/algobase.h
@@ -108,22 +109,30 @@ include/c++/${V}/bits/valarray_array.tcc
 include/c++/${V}/bits/valarray_before.h
 include/c++/${V}/bits/vector.tcc
 include/c++/${V}/bitset
+include/c++/${V}/c++0x_warning.h
 include/c++/${V}/cassert
+include/c++/${V}/ccomplex
 include/c++/${V}/cctype
 include/c++/${V}/cerrno
+include/c++/${V}/cfenv
 include/c++/${V}/cfloat
+include/c++/${V}/cinttypes
 include/c++/${V}/ciso646
 include/c++/${V}/climits
 include/c++/${V}/clocale
 include/c++/${V}/cmath
 include/c++/${V}/complex
+include/c++/${V}/complex.h
 include/c++/${V}/csetjmp
 include/c++/${V}/csignal
 include/c++/${V}/cstdarg
+include/c++/${V}/cstdbool
 include/c++/${V}/cstddef
+include/c++/${V}/cstdint
 include/c++/${V}/cstdio
 include/c++/${V}/cstdlib
 include/c++/${V}/cstring
+include/c++/${V}/ctgmath
 include/c++/${V}/ctime
 include/c++/${V}/cwchar
 include/c++/${V}/cwctype
@@ -165,6 +174,7 @@ include/c++/${V}/ext/bitmap_allocator.h
 include/c++/${V}/ext/codecvt_specializations.h
 include/c++/${V}/ext/concurrence.h
 include/c++/${V}/ext/debug_allocator.h
+include/c++/${V}/ext/enc_filebuf.h
 include/c++/${V}/ext/functional
 include/c++/${V}/ext/hash_fun.h
 include/c++/${V}/ext/hash_map
@@ -521,17 +531,21 @@ include/c++/${V}/new
 include/c++/${V}/numeric
 include/c++/${V}/ostream
 include/c++/${V}/queue
+include/c++/${V}/random
+include/c++/${V}/regex
 include/c++/${V}/set
 include/c++/${V}/sstream
 include/c++/${V}/stack
 include/c++/${V}/stdexcept
 include/c++/${V}/streambuf
 include/c++/${V}/string
+include/c++/${V}/tgmath.h
 include/c++/${V}/tr1/
 include/c++/${V}/tr1/array
 include/c++/${V}/tr1/bind_iterate.h
 include/c++/${V}/tr1/bind_repeat.h
 include/c++/${V}/tr1/boost_shared_ptr.h
+include/c++/${V}/tr1/ccomplex
 include/c++/${V}/tr1/cctype
 include/c++/${V}/tr1/cfenv
 include/c++/${V}/tr1/cfloat
@@ -540,6 +554,7 @@ include/c++/${V}/tr1/climits
 include/c++/${V}/tr1/cmath
 include/c++/${V}/tr1/common.h
 include/c++/${V}/tr1/complex
+include/c++/${V}/tr1/complex.h
 include/c++/${V}/tr1/cstdarg
 include/c++/${V}/tr1/cstdbool
 include/c++/${V}/tr1/cstdint
@@ -553,6 +568,7 @@ include/c++/${V}/tr1/cwctype
 include/c++/${V}/tr1/fenv.h
 include/c++/${V}/tr1/float.h
 include/c++/${V}/tr1/functional
+include/c++/${V}/tr1/functional_hash.h
 include/c++/${V}/tr1/functional_iterate.h
 include/c++/${V}/tr1/hashtable
 include/c++/${V}/tr1/hashtable_policy.h
@@ -565,6 +581,7 @@ include/c++/${V}/tr1/random
 include/c++/${V}/tr1/random.tcc
 include/c++/${V}/tr1/ref_fwd.h
 include/c++/${V}/tr1/ref_wrap_iterate.h
+include/c++/${V}/tr1/regex
 include/c++/${V}/tr1/repeat.h
 include/c++/${V}/tr1/stdarg.h
 include/c++/${V}/tr1/stdbool.h
@@ -573,6 +590,7 @@ include/c++/${V}/tr1/stdio.h
 include/c++/${V}/tr1/stdlib.h
 include/c++/${V}/tr1/tgmath.h
 include/c++/${V}/tr1/tuple
+include/c++/${V}/tr1/tuple_defs.h
 include/c++/${V}/tr1/tuple_iterate.h
 include/c++/${V}/tr1/type_traits
 include/c++/${V}/tr1/type_traits_fwd.h
@@ -581,7 +599,11 @@ include/c++/${V}/tr1/unordered_set
 include/c++/${V}/tr1/utility
 include/c++/${V}/tr1/wchar.h
 include/c++/${V}/tr1/wctype.h
+include/c++/${V}/tuple
+include/c++/${V}/type_traits
 include/c++/${V}/typeinfo
+include/c++/${V}/unordered_map
+include/c++/${V}/unordered_set
 include/c++/${V}/utility
 include/c++/${V}/valarray
 include/c++/${V}/vector

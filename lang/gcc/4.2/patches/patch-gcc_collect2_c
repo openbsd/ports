@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_collect2_c,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
---- gcc/collect2.c.orig	Fri Aug 19 03:20:32 2005
-+++ gcc/collect2.c	Mon Sep 12 00:01:23 2005
+$OpenBSD: patch-gcc_collect2_c,v 1.2 2007/03/17 21:58:46 espie Exp $
+--- gcc/collect2.c.orig	Wed Dec 13 10:28:16 2006
++++ gcc/collect2.c	Mon Feb 19 14:10:17 2007
 @@ -753,19 +753,19 @@ main (int argc, char **argv)
       qualify the program name with the target machine.  */
  
@@ -30,9 +30,9 @@ $OpenBSD: patch-gcc_collect2_c,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
 @@ -958,7 +958,7 @@ main (int argc, char **argv)
    if (c_file_name == 0)
      {
- #ifdef CROSS_COMPILE
+ #ifdef CROSS_DIRECTORY_STRUCTURE
 -      c_file_name = concat (target_machine, "-gcc", NULL);
-+      c_file_name = concat (target_machine, "-gcc", (char *)0);
++      c_file_name = concat (target_machine, "-gcc", (void *)0);
  #else
        c_file_name = "gcc";
  #endif
