@@ -1,7 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/23 15:27:34 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/03/17 22:51:26 jasper Exp $
 ${P5SITE}/Audio/
+${P5SITE}/Audio/MPD/
 ${P5SITE}/Audio/MPD.pm
+${P5SITE}/Audio/MPD/Collection.pm
+${P5SITE}/Audio/MPD/Item/
+${P5SITE}/Audio/MPD/Item.pm
+${P5SITE}/Audio/MPD/Item/Directory.pm
+${P5SITE}/Audio/MPD/Item/Song.pm
+${P5SITE}/Audio/MPD/Status.pm
+${P5SITE}/Audio/MPD/Test.pm
 @man man/man3p/Audio::MPD.3p
+@man man/man3p/Audio::MPD::Collection.3p
+@man man/man3p/Audio::MPD::Item.3p
+@man man/man3p/Audio::MPD::Item::Directory.3p
+@man man/man3p/Audio::MPD::Item::Song.3p
+@man man/man3p/Audio::MPD::Status.3p
+@man man/man3p/Audio::MPD::Test.3p
 share/examples/p5-Audio-MPD/
 share/examples/p5-Audio-MPD/example.pl
 share/examples/p5-Audio-MPD/mpc.pl
