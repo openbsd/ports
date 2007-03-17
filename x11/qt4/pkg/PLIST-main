@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2007/01/29 09:51:28 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2007/03/17 11:51:58 steven Exp $
 @pkgpath x11/qt4
 %%SHARED%%
 bin/assistant4
@@ -8,7 +8,6 @@ bin/linguist4
 bin/lrelease4
 bin/lupdate4
 bin/moc4
-bin/pixeltool
 bin/qdbus
 bin/qmake4
 bin/qt3to4

@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-examples,v 1.8 2006/10/30 18:17:32 espie Exp $
+@comment $OpenBSD: PLIST-examples,v 1.9 2007/03/17 11:51:58 steven Exp $
 @conflict qt4-<4.2.1
 %%SHARED%%
+bin/pixeltool
 bin/qtdemo
 lib/qt4/bin/qtdemo
 lib/qt4/demos/
