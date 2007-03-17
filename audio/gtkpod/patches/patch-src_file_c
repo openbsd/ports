@@ -1,0 +1,70 @@
+$OpenBSD: patch-src_file_c,v 1.1 2007/03/17 21:55:40 ckuethe Exp $
+--- src/file.c.orig	Thu Mar 15 08:43:16 2007
++++ src/file.c	Thu Mar 15 08:48:50 2007
+@@ -851,7 +851,7 @@ static void copy_new_info (Track *from, 
+     to->time_modified = from->time_modified;
+     to->year = from->year;
+     to->compilation = from->compilation;
+-    to->unk208 = from->unk208;
++    to->mediatype = from->mediatype;
+     to->lyrics_flag = from->lyrics_flag;
+     to->movie_flag = from->movie_flag;
+ }
+@@ -1069,25 +1069,25 @@ static Track *get_track_info_from_file (
+     {
+     case FILE_TYPE_MP3:
+ 	nti = mp3_get_file_info (name);
+-	/* Set unk208 to audio */
+-	if (nti) nti->unk208 = 0x00000001;
++	/* Set mediatype to audio */
++	if (nti) nti->mediatype = 0x00000001;
+ 	break;
+     case FILE_TYPE_M4A:
+     case FILE_TYPE_M4P:
+     case FILE_TYPE_M4B:
+ 	nti = mp4_get_file_info (name);
+-	/* Set unk208 to audio */
++	/* Set mediatype to audio */
+ 	if (nti)
+ 	{
+-	    nti->unk208 = 0x00000001;
++	    nti->mediatype = 0x00000001;
+ 	}
+ 	break;
+     case FILE_TYPE_WAV:
+ 	nti = wav_get_file_info (name);
+-	/* Set unk208 to audio */
++	/* Set mediatype to audio */
+ 	if (nti)
+ 	{
+-	    nti->unk208 = 0x00000001;
++	    nti->mediatype = 0x00000001;
+ 	}
+ 	break;
+     case FILE_TYPE_M4V:
+@@ -1096,10 +1096,10 @@ static Track *get_track_info_from_file (
+ 	   this. Let's see if someone complains. */
+ 	nti = mp4_get_file_info (name);
+ 	if (!nti) video_get_file_info (name);
+-	/* Set unk208 to video */
++	/* Set mediatype to video */
+ 	if (nti)
+ 	{
+-	    nti->unk208 = 0x00000002;
++	    nti->mediatype = 0x00000002;
+ 	    nti->movie_flag = 0x01;
+ 	}	
+ 	break;
+@@ -1107,10 +1107,10 @@ static Track *get_track_info_from_file (
+     case FILE_TYPE_MPG:
+ 	/* for now treat all the same */
+ 	nti = video_get_file_info (name);
+-	/* Set unk208 to video */
++	/* Set mediatype to video */
+ 	if (nti)
+ 	{
+-	    nti->unk208 = 0x00000002;
++	    nti->mediatype = 0x00000002;
+ 	    nti->movie_flag = 0x01;
+ 	}
+ 	break;

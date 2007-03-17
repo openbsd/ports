@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_file_itunesdb_c,v 1.1 2006/10/15 22:44:35 ckuethe Exp $
---- src/file_itunesdb.c.orig	Tue Oct  3 11:45:05 2006
-+++ src/file_itunesdb.c	Tue Oct  3 11:48:46 2006
+$OpenBSD: patch-src_file_itunesdb_c,v 1.2 2007/03/17 21:55:40 ckuethe Exp $
+--- src/file_itunesdb.c.orig	Sun Jun 25 10:08:22 2006
++++ src/file_itunesdb.c	Thu Mar 15 08:49:17 2007
 @@ -547,7 +547,7 @@ iTunesDB *gp_import_itdb (iTunesDB *old_
      gp_itdb_add_extra_full (itdb);
  
@@ -22,6 +22,19 @@ $OpenBSD: patch-src_file_itunesdb_c,v 1.1 2006/10/15 22:44:35 ckuethe Exp $
  	fill_in_extended_info (track, total, num);
  	gp_track_validate_entries (track);
  	/* properly set value for has_artwork */
+@@ -589,9 +589,9 @@ iTunesDB *gp_import_itdb (iTunesDB *old_
+ 		track->has_artwork = 0x02;
+ 	}
+ 
+-	/* set unk208 to audio if unset (important only for iPod Video) */
+-	if (track->unk208 == 0)
+-	    track->unk208 = 0x00000001;
++	/* set mediatype to audio if unset (important only for iPod Video) */
++	if (track->mediatype == 0)
++	    track->mediatype = 0x00000001;
+ 	/* restore deleted thumbnails */
+ 	if ((track->artwork->thumbnails == NULL) &&
+ 	    (strlen (etr->thumb_path_locale) != 0))
 @@ -609,7 +609,7 @@ iTunesDB *gp_import_itdb (iTunesDB *old_
      while (extendeddeletion)
      {

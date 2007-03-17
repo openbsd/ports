@@ -1,9 +1,10 @@
-$OpenBSD: patch-src_mp4file_h,v 1.2 2006/01/20 06:27:28 jolan Exp $
---- src/mp4file.h.orig	Fri Jun 17 07:30:05 2005
-+++ src/mp4file.h	Fri Jan  6 15:45:20 2006
-@@ -35,3 +35,5 @@
+$OpenBSD: patch-src_mp4file_h,v 1.3 2007/03/17 21:55:40 ckuethe Exp $
+--- src/mp4file.h.orig	Thu Jun 22 08:24:35 2006
++++ src/mp4file.h	Thu Mar 15 08:42:22 2007
+@@ -35,4 +35,6 @@
  gboolean mp4_write_file_info (gchar *filename, Track *track);
  Track *mp4_get_file_info (gchar *name);
- #endif
+ gboolean mp4_read_soundcheck (gchar *filename, Track *track);
 +
 +#define HAVE_GLIB_H 1
+ #endif
