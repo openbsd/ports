@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2007/03/17 16:59:31 jasper Exp $
+--- configure.orig	Sat Mar 17 15:45:58 2007
++++ configure	Sat Mar 17 15:46:22 2007
+@@ -5685,7 +5685,7 @@
+ then
+ 	CXXFLAGS="$CXXFLAGS -O0 -DDEBUG -ggdb3 -W -Wall -ansi"
+ else
+-	CXXFLAGS="-O2 -W -Wall -ansi $CXXFLAGS"
++	CXXFLAGS="-W -Wall -ansi $CXXFLAGS"
+ fi
+ 
+ # Check whether --enable-static was given.

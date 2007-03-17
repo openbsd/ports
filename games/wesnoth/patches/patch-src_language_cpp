@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_language_cpp,v 1.1 2007/02/06 07:59:08 jasper Exp $
+$OpenBSD: patch-src_language_cpp,v 1.2 2007/03/17 16:59:31 jasper Exp $
 --- src/language.cpp.orig	Wed Jul 12 00:57:03 2006
 +++ src/language.cpp	Thu Jan 25 22:50:06 2007
 @@ -132,12 +132,10 @@
