@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.64 2007/01/04 20:19:53 steven Exp $
+# $OpenBSD: Makefile,v 1.65 2007/03/17 22:07:28 jolan Exp $
 
 COMMENT-main=	"Civilization clone for X11; multiplayer; game server"
 COMMENT-client=	"Freeciv client"
 COMMENT-share=	"shared data files for Freeciv"
 
-VERSION=	2.0.8
+VERSION=	2.0.9
 DISTNAME=	freeciv-${VERSION}
-PKGNAME-main=	freeciv-server-${VERSION}p1
-PKGNAME-client=	freeciv-client-${VERSION}p1
+PKGNAME-main=	freeciv-server-${VERSION}
+PKGNAME-client=	freeciv-client-${VERSION}
 PKGNAME-share=	freeciv-share-${VERSION}
 CATEGORIES=	games
 HOMEPAGE=	http://www.freeciv.org/
@@ -63,6 +63,7 @@ USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib -lintl -liconv"
 
 .include <bsd.port.mk>
