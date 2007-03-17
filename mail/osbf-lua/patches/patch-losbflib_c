@@ -1,0 +1,24 @@
+$OpenBSD: patch-losbflib_c,v 1.1.1.1 2007/03/17 21:37:08 jolan Exp $
+--- losbflib.c.orig	Sun Jan 14 19:57:19 2007
++++ losbflib.c	Tue Mar  6 21:44:40 2007
+@@ -13,6 +13,8 @@
+  *
+  */
+ 
++#include <sys/param.h>
++
+ #include <ctype.h>
+ #include <stddef.h>
+ #include <stdio.h>
+@@ -673,9 +675,9 @@ lua_osbf_changedir (lua_State * L)
+ static int
+ lua_osbf_getdir (lua_State * L)
+ {
+-  char cur_dir[MAX_DIR_SIZE + 1];
++  char cur_dir[MAXPATHLEN];
+ 
+-  if (getcwd (cur_dir, MAX_DIR_SIZE) != NULL)
++  if (getcwd (cur_dir, MAXPATHLEN) != NULL)
+     {
+       lua_pushstring (L, cur_dir);
+       return 1;

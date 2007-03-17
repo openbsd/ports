@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/03/17 21:37:08 jolan Exp $
+lib/lua/5.1/osbf.so
+share/osbf-lua/
+share/osbf-lua/cache_report.lua
+share/osbf-lua/classify.sample
+share/osbf-lua/create_databases.lua
+share/osbf-lua/database_status.lua
+share/osbf-lua/getopt.lua
+share/osbf-lua/promailrc.sample
+share/osbf-lua/random.lua
+share/osbf-lua/roc.lua
+share/osbf-lua/spamfilter.help
+share/osbf-lua/spamfilter.lua
+share/osbf-lua/spamfilter_commands.lua
+share/osbf-lua/spamfilter_config.lua
+share/osbf-lua/toer.lua
+share/osbf-lua/train.sample
