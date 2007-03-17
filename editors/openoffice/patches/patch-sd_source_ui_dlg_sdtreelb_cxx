@@ -1,0 +1,65 @@
+$OpenBSD: patch-sd_source_ui_dlg_sdtreelb_cxx,v 1.1 2007/03/17 15:27:45 robert Exp $
+--- sd/source/ui/dlg/sdtreelb.cxx.orig.port	Wed Feb 14 09:23:21 2007
++++ sd/source/ui/dlg/sdtreelb.cxx	Wed Feb 14 09:27:43 2007
+@@ -350,17 +350,17 @@ void SdPageObjsTLB::Fill( const SdDrawDo
+ 	SdPage* 	 pPage = NULL;
+ 	SvLBoxEntry* pEntry = NULL;
+ 
+-	Image aImgPage( BitmapEx( SdResId( BMP_PAGE ) ) );
+-	Image aImgPageExcl( BitmapEx( SdResId( BMP_PAGE_EXCLUDED ) ) );
+-	Image aImgPageObjsExcl( BitmapEx( SdResId( BMP_PAGEOBJS_EXCLUDED ) ) );
+-	Image aImgPageObjs( BitmapEx( SdResId( BMP_PAGEOBJS ) ) );
+-	Image aImgObjects( BitmapEx( SdResId( BMP_OBJECTS ) ) );
++	Image aImgPage = BitmapEx( SdResId( BMP_PAGE ) );
++	Image aImgPageExcl = BitmapEx( SdResId( BMP_PAGE_EXCLUDED ) );
++	Image aImgPageObjsExcl = BitmapEx( SdResId( BMP_PAGEOBJS_EXCLUDED ) );
++	Image aImgPageObjs = BitmapEx( SdResId( BMP_PAGEOBJS ) );
++	Image aImgObjects = BitmapEx( SdResId( BMP_OBJECTS ) );
+ 
+-	Image aImgPageH( BitmapEx( SdResId( BMP_PAGE_H ) ) );
+-	Image aImgPageExclH( BitmapEx( SdResId( BMP_PAGE_EXCLUDED_H ) ) );
+-	Image aImgPageObjsExclH( BitmapEx( SdResId( BMP_PAGEOBJS_EXCLUDED_H ) ) );
+-	Image aImgPageObjsH( BitmapEx( SdResId( BMP_PAGEOBJS_H ) ) );
+-	Image aImgObjectsH( BitmapEx( SdResId( BMP_OBJECTS_H ) ) );
++	Image aImgPageH = BitmapEx( SdResId( BMP_PAGE_H ) );
++	Image aImgPageExclH = BitmapEx( SdResId( BMP_PAGE_EXCLUDED_H ) );
++	Image aImgPageObjsExclH = BitmapEx( SdResId( BMP_PAGEOBJS_EXCLUDED_H ) );
++	Image aImgPageObjsH = BitmapEx( SdResId( BMP_PAGEOBJS_H ) );
++	Image aImgObjectsH = BitmapEx( SdResId( BMP_OBJECTS_H ) );
+ 
+ 	// first insert all pages including objects
+ 	USHORT nPage = 0;
+@@ -510,10 +510,10 @@ void SdPageObjsTLB::Fill( const SdDrawDo
+ 	mpMedium = pInMedium;
+ 	maDocName = rDocName;
+ 
+-	Image aImgDocOpen( BitmapEx( SdResId( BMP_DOC_OPEN ) ) );
+-	Image aImgDocClosed( BitmapEx( SdResId( BMP_DOC_CLOSED ) ) );
+-	Image aImgDocOpenH( BitmapEx( SdResId( BMP_DOC_OPEN_H ) ) );
+-	Image aImgDocClosedH( BitmapEx( SdResId( BMP_DOC_CLOSED_H ) ) );
++	Image aImgDocOpen = BitmapEx( SdResId( BMP_DOC_OPEN ) );
++	Image aImgDocClosed = BitmapEx( SdResId( BMP_DOC_CLOSED ) );
++	Image aImgDocOpenH = BitmapEx( SdResId( BMP_DOC_OPEN_H ) );
++	Image aImgDocClosedH = BitmapEx( SdResId( BMP_DOC_CLOSED_H ) );
+ 
+ 	// Dokumentnamen einfuegen
+ 	SvLBoxEntry* pFileEntry = InsertEntry( maDocName,
+@@ -709,12 +709,12 @@ void SdPageObjsTLB::RequestingChilds( Sv
+ 			SdPage* 	 pPage = NULL;
+ 			SvLBoxEntry* pPageEntry = NULL;
+ 
+-			Image aImgPage( BitmapEx( SdResId( BMP_PAGE ) ) );
+-			Image aImgPageObjs( BitmapEx( SdResId( BMP_PAGEOBJS ) ) );
+-			Image aImgObjects( BitmapEx( SdResId( BMP_OBJECTS ) ) );
+-			Image aImgPageH( BitmapEx( SdResId( BMP_PAGE_H ) ) );
+-			Image aImgPageObjsH( BitmapEx( SdResId( BMP_PAGEOBJS_H ) ) );
+-			Image aImgObjectsH( BitmapEx( SdResId( BMP_OBJECTS_H ) ) );
++			Image aImgPage = BitmapEx( SdResId( BMP_PAGE ) );
++			Image aImgPageObjs = BitmapEx( SdResId( BMP_PAGEOBJS ) );
++			Image aImgObjects = BitmapEx( SdResId( BMP_OBJECTS ) );
++			Image aImgPageH = BitmapEx( SdResId( BMP_PAGE_H ) );
++			Image aImgPageObjsH = BitmapEx( SdResId( BMP_PAGEOBJS_H ) );
++			Image aImgObjectsH = BitmapEx( SdResId( BMP_OBJECTS_H ) );
+ 
+ 			// document name already inserted
+ 

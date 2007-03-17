@@ -1,12 +1,11 @@
-$OpenBSD: patch-extensions_source_plugin_unx_makefile_mk,v 1.2 2006/08/20 03:36:52 kurt Exp $
---- extensions/source/plugin/unx/makefile.mk.orig.port	Mon Jun 19 06:45:51 2006
-+++ extensions/source/plugin/unx/makefile.mk	Fri Aug 18 15:47:42 2006
-@@ -73,7 +73,7 @@ APP1STDLIBS=\
- .IF "$(OS)"=="SOLARIS" || "$(OS)"=="SCO" || "$(OS)"=="HPUX"
- APP1STDLIBS+=-lXm -lXt -lXext -lX11 -ldl
- .ELSE
+--- extensions/source/plugin/unx/makefile.mk.orig.port	Sat Jan 13 00:23:55 2007
++++ extensions/source/plugin/unx/makefile.mk	Sat Jan 13 00:24:00 2007
+@@ -80,7 +80,7 @@ APP1STDLIBS+=-lXm -lXt -lXext -lX11 -ldl
+ .IF "$(DISABLE_XAW)" != "TRUE"
+ APP1STDLIBS+=-lXaw 
+ .ENDIF
 -.IF "$(OS)"=="FREEBSD" || "$(OS)"=="NETBSD"
 +.IF "$(OS)"=="FREEBSD" || "$(OS)"=="NETBSD" || "$(OS)"=="OPENBSD"
- APP1STDLIBS+=-lXaw -lXt -lXext -lX11
+ APP1STDLIBS+= -lXt -lXext -lX11
  .ELSE
- APP1STDLIBS+=-lXaw -lXt -lXext -lX11 -ldl
+ APP1STDLIBS+= -lXt -lXext -lX11 -ldl

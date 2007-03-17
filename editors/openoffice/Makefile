@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2007/02/09 00:50:17 kurt Exp $
+# $OpenBSD: Makefile,v 1.48 2007/03/17 15:27:44 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -6,25 +6,26 @@ COMMENT-main=	"a multi-platform productivity suite"
 COMMENT-kde=	"optional integration of OpenOffice to the KDE environment"
 COMMENT-java=	"optional integration of OpenOffice java features"
 
-VERSION=	2.1.0
+VERSION=	2.2.0m12
 DISTNAME=	OOo_${VERSION}
-WRKDIST=	${WRKDIR}/OOE680_m6
+WRKDIST=	${WRKDIR}/ooo_OOF680_m12_src
 PKGNAME=	openoffice-${VERSION}
-PKGNAME-main=	openoffice-${VERSION}p4
+PKGNAME-main=	openoffice-${VERSION}
 PKGNAME-kde=	openoffice-kde-${VERSION}
-PKGNAME-java=	openoffice-java-${VERSION}p0
+PKGNAME-java=	openoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 
-SHARED_LIBS=	icudata		26.0 \
-		icui18n		26.0 \
-		icule		26.0 \
-		icuuc		26.0 \
+SHARED_LIBS=	icudata		36.0 \
+		icui18n		36.0 \
+		icule		36.0 \
+		icuuc		36.0 \
 		stlport_gcc	4.5
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 HOMEPAGE=	http://www.openoffice.org/
-MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/mirror/OpenOffice/stable/${VERSION}/ \
+MASTER_SITES=	http://ftp.linux.cz/pub/localization/OpenOffice.org/devel/build/Sources/ \
+		ftp://sunsite.informatik.rwth-aachen.de/pub/mirror/OpenOffice/stable/${VERSION}/ \
 		ftp://ftp.tu-chemnitz.de/pub/openoffice/stable/${VERSION}/ \
 		ftp://ftp.nluug.nl/pub/office/openoffice/stable/${VERSION}/ \
 		http://vlaai.snt.utwente.nl/pub/software/openoffice/stable/${VERSION}/ \
@@ -33,10 +34,12 @@ MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/mirror/OpenOffice/stab
 MASTER_SITES0=	http://www.bsd.hu/~robert/ooo/ \
 		http://humppa.hu/ooo/
 
-DISTFILES=	${DISTNAME}_src.tar.bz2 ooo-desktop.tar.gz:0
-.for dfile in binfilter l10n sdk system
-DISTFILES+=	${DISTNAME}_src_${dfile}.tar.bz2
-.endfor
+#DISTFILES=	${DISTNAME}_src.tar.bz2 ooo-desktop.tar.gz:0
+#.for dfile in binfilter l10n sdk system
+#DISTFILES+=	${DISTNAME}_src_${dfile}.tar.bz2
+#.endfor
+
+DISTFILES=	OOo_OOF680_m12_source.tar.gz ooo-desktop.tar.gz:0
 
 DIST_SUBDIR=	openoffice
 
@@ -60,7 +63,7 @@ LANGS=			bg br-pt de es fi fr hu it ja ko \
 
 .for l in ${LANGS}
 MULTI_PACKAGES+=	-i18n-$l
-PKGNAME-i18n-$l=	openoffice-i18n-$l-${VERSION}p0
+PKGNAME-i18n-$l=	openoffice-i18n-$l-${VERSION}
 COMMENT-i18n-$l=	$l language pack for OpenOffice.Org
 RUN_DEPENDS-i18n-$l=	::editors/openoffice
 WANTLIB-i18n-$l=
@@ -87,7 +90,7 @@ LIB_DEPENDS-main=gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.
 		neon.>=24::net/neon \
 		sndfile.>=1::audio/libsndfile \
 		wpd.>=8::textproc/libwpd
-WANTLIB-main=	ICE SM X11 Xext Xrender atk-1.0 c cairo expat fontconfig \
+WANTLIB-main=	ICE SM X11 Xau Xext Xrender atk-1.0 c cairo expat fontconfig \
 		freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		gthread-2.0 iconv intl ossaudio jpeg m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 png pthread stdc++ util xml2 z
@@ -97,7 +100,7 @@ MODULES+=		x11/qt3
 RUN_DEPENDS-kde=	::editors/openoffice
 LIB_DEPENDS-kde=	${MODQT_LIB_DEPENDS} \
 			kabc,kdecore,kdeui,kio::x11/kde/libs3
-WANTLIB-kde=		X11 m
+WANTLIB-kde=		X11 Xext m
 
 MODULES+=		java
 MODJAVA_VER=		1.4+
@@ -115,7 +118,7 @@ NO_REGRESS=	Yes
 VMEM_WARNING=	Yes
 
 PATCHFILES=	go_oo_src680_20061105.diff:0 \
-		build-java-target-${VERSION}.diff:0
+		build-java-target-2.2.0.diff:0
 
 PATCHORIG=	.orig.port
 WRKCONF=	${WRKSRC}/config_office

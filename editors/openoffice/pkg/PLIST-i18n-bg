@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-bg,v 1.1 2006/11/20 09:33:02 robert Exp $
+@comment $OpenBSD: PLIST-i18n-bg,v 1.2 2007/03/17 15:27:45 robert Exp $
 openoffice/help/bg/
 openoffice/help/bg/default.css
 openoffice/help/bg/err.html
@@ -126,6 +126,14 @@ openoffice/help/bg/swriter.idx/SCHEMA
 openoffice/help/bg/swriter.jar
 openoffice/help/bg/swriter.key
 openoffice/help/bg/swriter.tree
+openoffice/licenses/LICENSE_bg
+openoffice/licenses/LICENSE_bg.html
+openoffice/presets/config/arrowhd_bg.soe
+openoffice/presets/config/classic_bg.sog
+openoffice/presets/config/hatching_bg.soh
+openoffice/presets/config/modern_bg.sog
+openoffice/presets/config/palette_bg.soc
+openoffice/presets/config/styles_bg.sod
 openoffice/program/resource/abp680bg.res
 openoffice/program/resource/analysis680bg.res
 openoffice/program/resource/avmedia680bg.res
@@ -191,6 +199,16 @@ openoffice/program/resource/uui680bg.res
 openoffice/program/resource/vcl680bg.res
 openoffice/program/resource/wzi680bg.res
 openoffice/program/resource/xsltdlg680bg.res
+openoffice/readmes/README_bg
+openoffice/readmes/README_bg.html
+openoffice/share/autotext/bg/
+openoffice/share/autotext/bg/crdbus50.bau
+openoffice/share/autotext/bg/standard.bau
+openoffice/share/readme/LICENSE_bg
+openoffice/share/readme/LICENSE_bg.html
+openoffice/share/readme/README_bg
+openoffice/share/readme/README_bg.html
+openoffice/share/registry/modules/org/openoffice/Setup/Langpack-bg.xcu
 openoffice/share/registry/res/bg/
 openoffice/share/registry/res/bg/org/
 openoffice/share/registry/res/bg/org/openoffice/
@@ -386,3 +404,6 @@ openoffice/share/template/bg/wizard/styles/pool.ots
 openoffice/share/template/bg/wizard/styles/pumpkin.ots
 openoffice/share/template/bg/wizard/styles/sunstyle.ots
 openoffice/share/template/bg/wizard/styles/xos.ots
+openoffice/share/wordbook/bg/
+openoffice/share/wordbook/bg/soffice.dic
+openoffice/share/wordbook/bg/sun.dic

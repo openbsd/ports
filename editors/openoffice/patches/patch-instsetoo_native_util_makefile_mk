@@ -1,7 +1,7 @@
-$OpenBSD: patch-instsetoo_native_util_makefile_mk,v 1.5 2006/12/14 13:12:24 robert Exp $
---- instsetoo_native/util/makefile.mk.orig.port	Fri Dec  1 18:55:09 2006
-+++ instsetoo_native/util/makefile.mk	Thu Dec 14 11:41:55 2006
-@@ -53,12 +53,14 @@ PYTHONPATH:=$(PWD)$/$(BIN):$(SOLARLIBDIR
+$OpenBSD: patch-instsetoo_native_util_makefile_mk,v 1.6 2007/03/17 15:27:45 robert Exp $
+--- instsetoo_native/util/makefile.mk.orig.port	Fri Mar 16 14:02:11 2007
++++ instsetoo_native/util/makefile.mk	Fri Mar 16 14:04:37 2007
+@@ -54,12 +54,14 @@
  .ENDIF			# "$(GUI)"=="WNT"
  .EXPORT: PYTHONPATH
  
@@ -16,16 +16,16 @@ $OpenBSD: patch-instsetoo_native_util_makefile_mk,v 1.5 2006/12/14 13:12:24 robe
  
  .EXPORT: ENABLE_DOWNLOADSETS
  .EXPORT: LAST_MINOR
-@@ -195,7 +197,7 @@ openoffice_%{$(PKGFORMAT:^".")} :
+@@ -199,7 +201,7 @@
  openoffice_% :
  .ENDIF			# "$(PKGFORMAT)"!=""
  .IF "$(OS)"!="MACOSX" || "$(PKGFORMAT)"!="portable"
 -	+$(PERL) -w $(SOLARENV)$/bin$/make_installer.pl -f $(PRJ)$/util$/openoffice.lst -l $(subst,$(@:s/_/ /:1)_, $(@:b)) -p OpenOffice -packagelist $(PRJ)$/inc_openoffice$/unix$/packagelist.txt -u $(OUT) -buildid $(BUILD) -msitemplate $(MSIOFFICETEMPLATEDIR) -msilanguage $(COMMONMISC)$/win_ulffiles -addsystemintegration $(subst,xxx,$(@:e:s/.//) $(PKGFORMATSWITCH))
 +	+$(PERL) -w $(SOLARENV)$/bin$/make_installer.pl -f $(PRJ)$/util$/openoffice.lst -l $(subst,$(@:s/_/ /:1)_, $(@:b)) -p OpenOffice -packagelist $(PRJ)$/inc_openoffice$/unix$/packagelist.txt -u $(OUT) -buildid $(BUILD) -msitemplate $(MSIOFFICETEMPLATEDIR) -msilanguage $(COMMONMISC)$/win_ulffiles -addsystemintegration $(subst,xxx,$(@:e:s/.//) -dontstrip $(PKGFORMATSWITCH))
+ 	$(PERL) -w $(SOLARENV)$/bin$/gen_update_info.pl --buildid $(BUILD) --arch "$(RTL_ARCH)" --os "$(RTL_OS)" --lstfile $(PRJ)$/util$/openoffice.lst --product OpenOffice --languages $(subst,$(@:s/_/ /:1)_, $(@:b)) $(PRJ)$/util$/update.xml > $(MISC)/$(@:b)_$(RTL_OS)_$(RTL_ARCH).update.xml
  .ELSE                   # "$(OS)"!="MACOSX" || "$(PKGFORMAT)"!=""
  	+$(PERL) -w $(SOLARENV)$/bin$/make_installer.pl -f $(PRJ)$/util$/openoffice.lst -l $(subst,$(@:s/_/ /:1)_, $(@:b)) -p OpenOffice -packagelist $(PRJ)$/inc_openoffice$/unix$/packagelist.txt -u $(OUT) -buildid $(BUILD) -destdir $(subst,$(@:s/_/ /:1)_,$(OUT)$/OpenOffice$/install$/ $(@:b))_inprogress$/ -simple staging
- 	+$(RM) $(subst,$(@:s/_/ /:1)_,$(OUT)$/OpenOffice$/install$/ $(@:b))$/gid_*
-@@ -403,11 +405,11 @@ hack_msitemplates .PHONY:
+@@ -410,11 +412,11 @@
  	+-$(MKDIRHIER) $(MSIURETEMPLATEDIR)
  	+-$(MKDIRHIER) $(MSISDKOOTEMPLATEDIR)
  	+-$(MKDIRHIER) $(MSIURETEMPLATEDIR)

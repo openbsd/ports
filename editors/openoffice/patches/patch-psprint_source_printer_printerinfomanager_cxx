@@ -1,12 +1,20 @@
-$OpenBSD: patch-psprint_source_printer_printerinfomanager_cxx,v 1.3 2006/12/13 10:25:14 robert Exp $
---- psprint/source/printer/printerinfomanager.cxx.orig.port	Fri Dec  1 18:55:41 2006
-+++ psprint/source/printer/printerinfomanager.cxx	Mon Dec 11 22:27:39 2006
-@@ -1180,7 +1180,7 @@ struct SystemCommandParameters
+--- psprint/source/printer/printerinfomanager.cxx.orig.port	Fri Feb  9 19:50:15 2007
++++ psprint/source/printer/printerinfomanager.cxx	Wed Feb 14 12:08:00 2007
+@@ -1176,7 +1176,7 @@ struct SystemCommandParameters
+     tokenHandler    pHandler;
+ };
+ 
+-#if ! (defined(LINUX) || defined(NETBSD) || defined(FREEBSD) || defined(MACOSX)) 
++#if ! (defined(LINUX) || defined(NETBSD) || defined(FREEBSD) || defined(MACOSX) || defined(OPENBSD)) 
+ static void lpgetSysQueueTokenHandler(
+     const std::list< rtl::OString >& i_rLines,
+     std::list< PrinterInfoManager::SystemPrintQueue >& o_rQueues,
+@@ -1321,7 +1321,7 @@ static void standardSysQueueTokenHandler
  
  static const struct SystemCommandParameters aParms[] =
  {
--#if defined(LINUX) || defined(NETBSD) || defined(FREEBSD) || defined(MACOSX) 
-+#if defined(LINUX) || defined(NETBSD) || defined(FREEBSD) || defined(MACOSX) || defined (OPENBSD)
-     { "/usr/sbin/lpc status", "lpr -P \"(PRINTER)\"", "", ":", 0 },
-     { "lpc status", "lpr -P \"(PRINTER)\"", "", ":", 0 },
-     { "LANG=C;LC_ALL=C;export LANG LC_ALL;lpstat -s", "lp -d \"(PRINTER)\"", "system for ", ": ", 1 }
+-    #if defined(LINUX) || defined(NETBSD) || defined(FREEBSD) || defined(MACOSX) 
++    #if defined(LINUX) || defined(NETBSD) || defined(FREEBSD) || defined(MACOSX) || defined(OPENBSD)
+     { "/usr/sbin/lpc status", "lpr -P \"(PRINTER)\"", "", ":", 0, standardSysQueueTokenHandler },
+     { "lpc status", "lpr -P \"(PRINTER)\"", "", ":", 0, standardSysQueueTokenHandler },
+     { "LANG=C;LC_ALL=C;export LANG LC_ALL;lpstat -s", "lp -d \"(PRINTER)\"", "system for ", ": ", 1, standardSysQueueTokenHandler }

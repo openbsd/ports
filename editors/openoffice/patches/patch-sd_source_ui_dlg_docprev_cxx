@@ -1,0 +1,12 @@
+$OpenBSD: patch-sd_source_ui_dlg_docprev_cxx,v 1.1 2007/03/17 15:27:45 robert Exp $
+--- sd/source/ui/dlg/docprev.cxx.orig.port	Wed Jan 17 07:49:24 2007
++++ sd/source/ui/dlg/docprev.cxx	Fri Feb 16 09:07:27 2007
+@@ -336,7 +336,7 @@ void SdDocPreviewWin::updateViewSettings
+ 
+ 		// Use new StandardCheckVisisbilityRedirector
+ 		StandardCheckVisisbilityRedirector aRedirector;
+-		const Rectangle aRedrawRectangle( Point(), aNewSize );
++		const Rectangle aRedrawRectangle = Rectangle( Point(), aNewSize );
+ 		Region aRedrawRegion(aRedrawRectangle);
+ 		pView->SdrPaintView::CompleteRedraw(&aVDev,aRedrawRegion,0,&aRedirector);
+ 

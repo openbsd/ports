@@ -1,25 +1,6 @@
-$OpenBSD: patch-vcl_util_makefile_mk,v 1.4 2006/12/13 10:25:14 robert Exp $
---- vcl/util/makefile.mk.orig.port	Fri Dec  1 18:58:04 2006
-+++ vcl/util/makefile.mk	Mon Dec 11 22:27:45 2006
-@@ -187,7 +187,7 @@ SHL1USE_EXPORTS=ordinal
- SHL1LIBS=   $(LIB1TARGET)
- .IF "$(GUI)"!="UNX"
- SHL1OBJS=   $(SLO)$/salshl.obj
--.ELIF "$(OS)"!="FREEBSD"
-+.ELIF "$(OS)"!="FREEBSD" && "$(OS)"!="OPENBSD"
- SHL1STDLIBS+=-ldl
- .ENDIF
- 
-@@ -227,7 +227,7 @@ LINKFLAGSSHL += /ENTRY:LibMain@12
- 
- .IF "$(GUI)"=="UNX"
- 
--.IF "$(OS)"!="MACOSX" && "$(OS)"!="FREEBSD"
-+.IF "$(OS)"!="MACOSX" && "$(OS)"!="FREEBSD" && "$(OS)"!="OPENBSD"
- SHL1STDLIBS+= -ldl
- .ENDIF
- 
-@@ -316,7 +316,7 @@ SHL2STDLIBS+=$(LIBSN_LIBS)
+--- vcl/util/makefile.mk.orig.port	Mon Jan 22 11:26:44 2007
++++ vcl/util/makefile.mk	Tue Feb  6 23:13:34 2007
+@@ -301,7 +301,7 @@ SHL2STDLIBS+=$(LIBSN_LIBS)
  .ENDIF
  
  SHL2STDLIBS += -lXext -lSM -lICE -lX11
@@ -28,21 +9,3 @@ $OpenBSD: patch-vcl_util_makefile_mk,v 1.4 2006/12/13 10:25:14 robert Exp $
  # needed by salprnpsp.cxx
  SHL2STDLIBS+= -ldl
  .ENDIF
-@@ -372,7 +372,7 @@ SHL4NOCHECK=TRUE
- 
- 
- SHL4STDLIBS+=-l$(SHL2TARGET)
--.IF "$(OS)"=="FREEBSD" || "$(OS)"=="MACOSX"
-+.IF "$(OS)"=="FREEBSD" || "$(OS)"=="MACOSX" || "$(OS)"=="OPENBSD"
- SHL4STDLIBS+=$(SHL3STDLIBS) -lX11
- .ELSE
- SHL4STDLIBS+=$(SHL3STDLIBS) -lX11 -ldl
-@@ -390,7 +390,7 @@ SHL5DEPN=$(SHL2TARGETN)
- # libs for KDE plugin
- SHL5STDLIBS=$(KDE_LIBS)
- SHL5STDLIBS+=-l$(SHL2TARGET)
--.IF "$(OS)"=="FREEBSD" || "$(OS)"=="MACOSX"
-+.IF "$(OS)"=="FREEBSD" || "$(OS)"=="MACOSX" || "$(OS)"=="OPENBSD"
- SHL5STDLIBS+=$(SHL3STDLIBS) -lX11
- .ELSE
- SHL5STDLIBS+=$(SHL3STDLIBS) -lX11 -ldl

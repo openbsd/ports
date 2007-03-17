@@ -1,0 +1,12 @@
+$OpenBSD: patch-sw_source_core_view_viewimp_cxx,v 1.1 2007/03/17 15:27:45 robert Exp $
+--- sw/source/core/view/viewimp.cxx.orig.port	Mon Feb 12 00:49:31 2007
++++ sw/source/core/view/viewimp.cxx	Mon Feb 12 00:51:51 2007
+@@ -394,7 +394,7 @@ void SwViewImp::MakeDrawView()
+ 			if(pWindow)
+ 			{
+ 				// #i72754# use correct region calculation now
+-				const Rectangle aRectPixel(Point(), pWindow->GetOutputSizePixel());
++				const Rectangle aRectPixel = Rectangle(Point(), pWindow->GetOutputSizePixel());
+ 				const Rectangle aRectLogic(pWindow->PixelToLogic(aRectPixel));
+ 				const Region aRegionLogic(aRectLogic);
+ 				ViewShell &rSh = *GetShell();

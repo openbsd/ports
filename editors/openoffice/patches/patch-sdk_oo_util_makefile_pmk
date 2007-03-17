@@ -1,7 +1,7 @@
-$OpenBSD: patch-sdk_oo_util_makefile_pmk,v 1.4 2006/10/19 15:16:50 kurt Exp $
---- sdk_oo/util/makefile.pmk.orig.port	Fri Nov 11 05:53:22 2005
-+++ sdk_oo/util/makefile.pmk	Thu Oct 19 10:47:54 2006
-@@ -57,8 +57,8 @@ ODKZIPPATH=$(SOLARBINDIR)
+$OpenBSD: patch-sdk_oo_util_makefile_pmk,v 1.5 2007/03/17 15:27:45 robert Exp $
+--- sdk_oo/util/makefile.pmk.orig.port	Wed Jan 17 07:49:34 2007
++++ sdk_oo/util/makefile.pmk	Tue Feb  6 23:13:34 2007
+@@ -56,8 +56,8 @@ ODKZIPPATH=$(SOLARBINDIR)
  BINOUT=$(SOLARBINDIR)
  IDLOUT=$(SOLARIDLDIR)
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-sdk_oo_util_makefile_pmk,v 1.4 2006/10/19 15:16:50 kurt Exp $
  
  CONVERTTAGSCRIPT=$(SOLARENV)$/bin$/converttags.pl
  
-@@ -132,6 +132,11 @@ DESTPLATFROM=irix
+@@ -131,6 +131,11 @@ DESTPLATFROM=irix
  # MACOSX
  ###########
  DESTPLATFROM=macosx

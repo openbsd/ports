@@ -1,6 +1,5 @@
-$OpenBSD: patch-sal_osl_unx_file_cxx,v 1.3 2006/12/13 10:25:14 robert Exp $
---- sal/osl/unx/file.cxx.orig.port	Fri Dec  1 18:56:15 2006
-+++ sal/osl/unx/file.cxx	Mon Dec 11 22:27:40 2006
+--- sal/osl/unx/file.cxx.orig.port	Mon Jan 22 11:19:27 2007
++++ sal/osl/unx/file.cxx	Tue Feb  6 23:13:34 2007
 @@ -118,7 +118,7 @@ static const sal_Char* MOUNTTAB="/etc/mn
  #include <ctype.h>
  static const sal_Char* MOUNTTAB="/etc/mtab";
@@ -32,15 +31,7 @@ $OpenBSD: patch-sal_osl_unx_file_cxx,v 1.3 2006/12/13 10:25:14 robert Exp $
  #	define __OSL_STATFS_IS_CASE_SENSITIVE_FS(a)  ((__OSL_MSDOS_SUPER_MAGIC != (a).f_type) && (__OSL_NTFS_SUPER_MAGIC != (a).f_type))
  #	define __OSL_STATFS_IS_CASE_PRESERVING_FS(a) ((__OSL_MSDOS_SUPER_MAGIC != (a).f_type))
  #endif /* LINUX */
-@@ -1458,7 +1456,6 @@ oslFileError SAL_CALL osl_syncFile(oslFi
- #   define __OSL_STATFS(dir, sfs)	    		 statvfs((dir), (sfs))
- #   define __OSL_STATFS_BLKSIZ(a)       		 ((sal_uInt64)((a).f_frsize))
- #   define __OSL_STATFS_TYPENAME(a)     		 ((a).f_basetype)
--#   define __OSL_STATFS_ISREMOTE(a)     		 (rtl_str_compare((a).f_basetype, "nfs") == 0)
- 
- /* always return true if queried for the properties of
-    the file system. If you think this is wrong under any
-@@ -1474,7 +1471,6 @@ oslFileError SAL_CALL osl_syncFile(oslFi
+@@ -1474,7 +1472,6 @@ oslFileError SAL_CALL osl_syncFile(oslFi
  #   define __OSL_STATFS_STRUCT        			 struct dummy {int i;}
  #   define __OSL_STATFS_INIT(a)       			 ((void)0)
  #   define __OSL_STATFS(dir, sfs)     		     (1)
@@ -48,7 +39,7 @@ $OpenBSD: patch-sal_osl_unx_file_cxx,v 1.3 2006/12/13 10:25:14 robert Exp $
  #	define __OSL_STATFS_IS_CASE_SENSITIVE_FS(a)	 (1)
  #	define __OSL_STATFS_IS_CASE_PRESERVING_FS(a) (1)
  #endif /* HAVE_STATFS_H */
-@@ -1502,10 +1498,6 @@ static oslFileError osl_psz_getVolumeInf
+@@ -1502,10 +1499,6 @@ static oslFileError osl_psz_getVolumeInf
      /* FIXME: how to detect the kind of storage (fixed, cdrom, ...) */
  	if (uFieldMask & osl_VolumeInfo_Mask_Attributes)
  	{	
@@ -59,7 +50,7 @@ $OpenBSD: patch-sal_osl_unx_file_cxx,v 1.3 2006/12/13 10:25:14 robert Exp $
  	}
  
  	if (uFieldMask & osl_VolumeInfo_Mask_FileSystemCaseHandling)
-@@ -2224,7 +2216,7 @@ int UnicodeToText( char * buffer, size_t
+@@ -2224,7 +2217,7 @@ int UnicodeToText( char * buffer, size_t
  
      if( nInfo & RTL_UNICODETOTEXT_INFO_DESTBUFFERTOSMALL )
      {
@@ -68,7 +59,7 @@ $OpenBSD: patch-sal_osl_unx_file_cxx,v 1.3 2006/12/13 10:25:14 robert Exp $
          return 0;
      }
  
-@@ -2276,7 +2268,7 @@ int TextToUnicode(
+@@ -2276,7 +2269,7 @@ int TextToUnicode(
  
      if (nInfo & RTL_TEXTTOUNICODE_INFO_DESTBUFFERTOSMALL)
      {
@@ -77,7 +68,7 @@ $OpenBSD: patch-sal_osl_unx_file_cxx,v 1.3 2006/12/13 10:25:14 robert Exp $
          return 0;
      }
  
-@@ -3401,35 +3393,35 @@ static sal_Bool osl_isFloppyMounted(oslV
+@@ -3404,35 +3397,35 @@ static sal_Bool osl_isFloppyMounted(oslV
   *
   *****************************************************************************/
  
@@ -105,16 +96,16 @@ $OpenBSD: patch-sal_osl_unx_file_cxx,v 1.3 2006/12/13 10:25:14 robert Exp $
  }
  #endif /* MACOSX */
  
--#if ( defined(MACOSX) || defined(NETBSD) || defined(FREEBSD))
-+#if ( defined(MACOSX) || defined(NETBSD) || defined(FREEBSD) || defined(OPENBSD))
+-#if ( defined(NETBSD) || defined(FREEBSD) )
++#if ( defined(NETBSD) || defined(FREEBSD) || defined(OPENBSD) )
  static sal_Bool osl_getFloppyMountEntry(const sal_Char* pszPath, oslVolumeDeviceHandleImpl* pItem)
  {
      return sal_False;
  }
- #endif /* MACOSX */
+ #endif /* NETBSD || FREEBSD */
  
--#if ( defined(MACOSX) || defined(NETBSD) || defined(FREEBSD))
-+#if ( defined(MACOSX) || defined(NETBSD) || defined(FREEBSD) || defined(OPENBSD))
+-#if ( defined(NETBSD) || defined(FREEBSD) )
++#if ( defined(NETBSD) || defined(FREEBSD) || defined(OPENBSD) )
  static sal_Bool osl_isFloppyMounted(oslVolumeDeviceHandleImpl* pDevice)
  {
      return sal_False;

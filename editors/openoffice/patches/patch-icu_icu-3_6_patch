@@ -1,0 +1,343 @@
+$OpenBSD: patch-icu_icu-3_6_patch,v 1.1 2007/03/17 15:27:45 robert Exp $
+--- icu/icu-3.6.patch.orig.port	Tue Jan 30 09:37:09 2007
++++ icu/icu-3.6.patch	Tue Feb 20 09:51:58 2007
+@@ -1,5 +1,5 @@
+ *** misc/icu/source/common/putil.c	Mon Jul 31 20:14:28 2006
+---- misc/build/icu/source/common/putil.c	Wed Jan  3 09:40:21 2007
++--- misc/build/icu/source/common/putil.c	Tue Feb 20 09:50:08 2007
+ ***************
+ *** 48,54 ****
+   #endif
+@@ -19,7 +19,7 @@
+   #endif
+   
+ *** misc/icu/source/config/mh-darwin	Wed Feb  1 08:52:42 2006
+---- misc/build/icu/source/config/mh-darwin	Wed Jan  3 09:41:43 2007
++--- misc/build/icu/source/config/mh-darwin	Tue Feb 20 09:50:08 2007
+ ***************
+ *** 25,31 ****
+   SHLIB.cc=	$(CXX) -dynamiclib -dynamic $(CXXFLAGS) $(LDFLAGS)
+@@ -38,7 +38,7 @@
+   ## Compiler switch to embed a runtime search path
+   LD_RPATH=
+ *** misc/icu/source/config/mh-irix	Thu Mar 23 19:51:52 2006
+---- misc/build/icu/source/config/mh-irix	Wed Jan  3 09:40:21 2007
++--- misc/build/icu/source/config/mh-irix	Tue Feb 20 09:50:08 2007
+ ***************
+ *** 23,28 ****
+ --- 23,31 ----
+@@ -52,7 +52,7 @@
+   THREADSCPPFLAGS = -D_REENTRANT -D_PTHREADS
+   LIBCPPFLAGS =
+ *** misc/icu/source/config/mh-linux	Thu Mar 23 19:51:52 2006
+---- misc/build/icu/source/config/mh-linux	Wed Jan  3 09:40:21 2007
++--- misc/build/icu/source/config/mh-linux	Tue Feb 20 09:50:08 2007
+ ***************
+ *** 20,25 ****
+ --- 20,32 ----
+@@ -70,9 +70,9 @@
+   LDFLAGSICUDT=-nodefaultlibs -nostdlib
+   
+ *** misc/icu/source/config/mh-solaris	Fri Feb 24 20:31:14 2006
+---- misc/build/icu/source/config/mh-solaris	Wed Jan  3 09:40:21 2007
++--- misc/build/icu/source/config/mh-solaris	Tue Feb 20 09:50:08 2007
+ ***************
+-*** 18,34 ****
++*** 18,33 ****
+   
+   ## Commands to link
+   ## For Sun Workshop, use CC to link to bring in C++ runtime
+@@ -89,8 +89,7 @@
+   
+   #LIBRARY_PATH_PREFIX=/usr/lib/lwp:
+   
+-  ## Compiler switch to embed a library name
+---- 18,42 ----
++--- 18,41 ----
+   
+   ## Commands to link
+   ## For Sun Workshop, use CC to link to bring in C++ runtime
+@@ -105,19 +104,37 @@
+   ## Compiler switch to embed a runtime search path
+   LD_RPATH=	-R
+   LD_RPATH_PRE=	
+-  
+++ 
+ + ## Force RPATH=$ORIGIN to locate own dependencies w/o need for LD_LIBRARY_PATH
+ + ENABLE_RPATH=YES
+ + RPATHLDFLAGS=${LD_RPATH}'$$ORIGIN'
+ + 
+ + #SH#  ENABLE_RPATH=YES
+ + #SH#  RPATHLDFLAGS="${LD_RPATH}'$$ORIGIN'"
+-+ 
++  
+   #LIBRARY_PATH_PREFIX=/usr/lib/lwp:
+   
+-  ## Compiler switch to embed a library name
++*** misc/icu/source/configure	Tue Aug 15 10:24:14 2006
++--- misc/build/icu/source/configure	Tue Feb 20 09:51:08 2007
++***************
++*** 4400,4406 ****
++  
++  GENCCODE_ASSEMBLY=
++  case "${host}" in
++! i*86-*-linux*|x86_64-*-linux*|powerpc*-*-linux*|i*86-*-*bsd*|i*86-*-solaris*)
++      if test "$GCC" = yes; then
++                  GENCCODE_ASSEMBLY="-a gcc"
++      fi ;;
++--- 4400,4406 ----
++  
++  GENCCODE_ASSEMBLY=
++  case "${host}" in
++! i*86-*-linux*|x86_64-*-linux*|powerpc*-*-linux*|i*86-*-solaris*)
++      if test "$GCC" = yes; then
++                  GENCCODE_ASSEMBLY="-a gcc"
++      fi ;;
+ *** misc/icu/source/data/Makefile.in	Sat Aug 12 00:22:24 2006
+---- misc/build/icu/source/data/Makefile.in	Wed Jan  3 09:40:21 2007
++--- misc/build/icu/source/data/Makefile.in	Tue Feb 20 09:50:08 2007
+ ***************
+ *** 344,350 ****
+   ifneq ($(ICUDATA_SOURCE_IS_NATIVE_TARGET),YES)
+@@ -136,7 +153,7 @@
+   	@echo "$@" > $@
+   endif
+ *** misc/icu/source/layout/CoverageTables.cpp	Sat May  8 01:28:42 2004
+---- misc/build/icu/source/layout/CoverageTables.cpp	Fri Jan 19 16:03:21 2007
++--- misc/build/icu/source/layout/CoverageTables.cpp	Tue Feb 20 09:50:08 2007
+ ***************
+ *** 44,49 ****
+ --- 44,53 ----
+@@ -151,7 +168,7 @@
+       le_uint16 probe = power;
+       le_uint16 index = 0;
+ *** misc/icu/source/layout/DeviceTables.cpp	Fri Jan 14 18:25:12 2005
+---- misc/build/icu/source/layout/DeviceTables.cpp	Fri Jan 19 16:03:20 2007
++--- misc/build/icu/source/layout/DeviceTables.cpp	Tue Feb 20 09:50:08 2007
+ ***************
+ *** 22,28 ****
+       le_uint16 format = SWAPW(deltaFormat) - 1;
+@@ -171,7 +188,7 @@
+           le_uint16 bits = fieldBits[format];
+           le_uint16 count = 16 / bits;
+ *** misc/icu/source/layout/GXLayoutEngine.cpp	Fri Sep  2 20:22:10 2005
+---- misc/build/icu/source/layout/GXLayoutEngine.cpp	Wed Jan  3 09:40:21 2007
++--- misc/build/icu/source/layout/GXLayoutEngine.cpp	Tue Feb 20 09:50:08 2007
+ ***************
+ *** 39,45 ****
+           return 0;
+@@ -190,7 +207,7 @@
+       if (LE_FAILURE(success)) {
+           return 0;
+ *** misc/icu/source/layout/IndicClassTables.cpp	Wed Aug 23 02:12:40 2006
+---- misc/build/icu/source/layout/IndicClassTables.cpp	Fri Jan 19 16:03:21 2007
++--- misc/build/icu/source/layout/IndicClassTables.cpp	Tue Feb 20 09:50:08 2007
+ ***************
+ *** 94,100 ****
+       _dr, _db, _db, _db, _db, _xx, _xx, _l1, _dl, _xx, _xx, _s1, _s2, _vr, _xx, _xx, // 09C0 - 09CF
+@@ -209,14 +226,14 @@
+   
+   static const IndicClassTable::CharClass punjCharClasses[] =
+ ***************
+-*** 120,125 ****
+---- 120,138 ----
++*** 120,127 ****
++--- 120,140 ----
+       _iv, _xx, _xx, _xx, _xx, _xx, _xx, _xx, _xx, _xx, _xx, _xx, _xx, _xx, _xx, _xx  // 0AE0 - 0AEF
+   };
+   
+ + #if 1
+-+ static const IndicClassTable::CharClass oryaCharClasses[] =
+-+ {
++  static const IndicClassTable::CharClass oryaCharClasses[] =
++  {
+ +     _xx, _ma, _mp, _mp, _xx, _iv, _iv, _iv, _iv, _iv, _iv, _iv, _iv, _xx, _xx, _iv, /* 0B00 - 0B0F */
+ +     _iv, _xx, _xx, _iv, _iv, _bb, _bb, _bb, _bb, _bb, _bb, _bb, _bb, _bb, _ct, _bb, /* 0B10 - 0B1F */
+ +     _bb, _bb, _bb, _bb, _bb, _bb, _bb, _bb, _bb, _xx, _bb, _bb, _bb, _bb, _bb, _pb, /* 0B20 - 0B2F */
+@@ -227,9 +244,11 @@
+ +     _xx, _bb                                                                        /* 0B70 - 0B71 */
+ + };
+ + #else
+-  static const IndicClassTable::CharClass oryaCharClasses[] =
+-  {
+++ static const IndicClassTable::CharClass oryaCharClasses[] =
+++ {
+       _xx, _ma, _mp, _mp, _xx, _iv, _iv, _iv, _iv, _iv, _iv, _iv, _iv, _xx, _xx, _iv, // 0B00 - 0B0F
++      _iv, _xx, _xx, _iv, _iv, _ct, _ct, _ct, _ct, _ct, _ct, _ct, _ct, _ct, _ct, _ct, // 0B10 - 0B1F
++      _ct, _ct, _ct, _ct, _bb, _ct, _ct, _ct, _bb, _xx, _ct, _ct, _bb, _bb, _bb, _pb, // 0B20 - 0B2F
+ ***************
+ *** 131,136 ****
+ --- 144,150 ----
+@@ -324,7 +343,7 @@
+   //
+   // IndicClassTable addresses
+ *** misc/icu/source/layout/IndicReordering.cpp	Tue Apr 25 21:08:12 2006
+---- misc/build/icu/source/layout/IndicReordering.cpp	Fri Jan 19 16:03:20 2007
++--- misc/build/icu/source/layout/IndicReordering.cpp	Tue Feb 20 09:50:08 2007
+ ***************
+ *** 50,55 ****
+ --- 50,63 ----
+@@ -406,11 +425,13 @@
+       {-1, -1, -1, -1, -1, -1,  3,  2, -1, -1, -1, -1, -1, -1, -1}, //  7 - consonant virama ZWJ, consonant ZWJ virama
+       {-1,  6,  1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,  4, -1}, //  8 - independent vowels that can take a virama
+ ***************
+-*** 629,634 ****
+---- 651,670 ----
++*** 627,632 ****
++--- 649,668 ----
++              // write base consonant
++              for (i = baseConsonant; i < bcSpan; i += 1) {
+                   output.writeChar(chars[i], i, tagArray4);
+-              }
+-  
+++             }
+++ 
+ +             /* for the special conjuction of Cons+0x0d4d+0x0d31 or Cons+0x0d4d+0x0d30 of Malayalam */
+ +             if ((baseConsonant - 2 >= 0) &&
+ +                 (chars[baseConsonant - 1] == 0x0d4d) &&
+@@ -423,13 +444,11 @@
+ + 
+ + 		if (mpreFixups)
+ + 			mpreFixups->reduce();
+-+             }
+-+ 
++              }
++  
+               if ((classTable->scriptFlags & SF_MATRAS_AFTER_BASE) != 0) {
+-                  output.writeMbelow();
+-                  output.writeSMbelow(); // FIXME: there are no SMs in these scripts...
+ *** misc/icu/source/layout/LESwaps.h	Thu Jun 23 00:39:36 2005
+---- misc/build/icu/source/layout/LESwaps.h	Wed Jan  3 09:40:21 2007
++--- misc/build/icu/source/layout/LESwaps.h	Tue Feb 20 09:50:08 2007
+ ***************
+ *** 2,7 ****
+ --- 2,8 ----
+@@ -477,11 +496,12 @@
+       #if U_IS_BIG_ENDIAN
+           #define SWAPW(value) (value)
+ ***************
+-*** 49,54 ****
+---- 59,83 ----
++*** 48,53 ****
++--- 58,82 ----
++  #else
+       #define SWAPL(value) (LESwaps::isBigEndian() ? (value) : LESwaps::swapLong(value))
+   #endif
+-  
+++ 
+ + #else // ALLOW_UNALIGNED_HACK
+ + 
+ + #define SWAPW(rValue) loadBigEndianWord(reinterpret_cast<const le_uint16&>(rValue))
+@@ -500,12 +520,11 @@
+ + }
+ + 
+ + #endif // ALLOW_UNALIGNED_HACK
+-+ 
++  
+   /**
+    * This class is used to access data which stored in big endian order
+-   * regardless of the conventions of the platform. It has been designed
+ *** misc/icu/source/layout/MPreFixups.cpp	Sat May  8 01:28:44 2004
+---- misc/build/icu/source/layout/MPreFixups.cpp	Fri Jan 19 16:03:20 2007
++--- misc/build/icu/source/layout/MPreFixups.cpp	Tue Feb 20 09:50:08 2007
+ ***************
+ *** 40,45 ****
+ --- 40,51 ----
+@@ -522,7 +541,7 @@
+   {
+       for (le_int32 fixup = 0; fixup < fFixupCount; fixup += 1) {
+ *** misc/icu/source/layout/MPreFixups.h	Mon Apr 12 20:51:32 2004
+---- misc/build/icu/source/layout/MPreFixups.h	Fri Jan 19 16:03:20 2007
++--- misc/build/icu/source/layout/MPreFixups.h	Tue Feb 20 09:50:08 2007
+ ***************
+ *** 31,36 ****
+ --- 31,38 ----
+@@ -534,8 +553,60 @@
+   private:
+       FixupData *fFixupData;
+       le_int32   fFixupCount;
++*** misc/icu/source/stubdata/stubdata.c	Wed Nov 21 03:28:14 2001
++--- misc/build/icu/source/stubdata/stubdata.c	Tue Feb 20 09:50:08 2007
++***************
++*** 28,41 ****
++      UDataInfo info;
++      char padding[8];
++      uint32_t count, reserved;
++-     /*
++      const struct {
++      const char *const name; 
++      const void *const data;
++!     } toc[1];
++!     */
++!    int   fakeNameAndData[4];       /* TODO:  Change this header type from */
++!                                    /*        pointerTOC to OffsetTOC.     */
++  } ICU_Data_Header;
++  
++  U_EXPORT const ICU_Data_Header U_ICUDATA_ENTRY_POINT = {
++--- 28,37 ----
++      UDataInfo info;
++      char padding[8];
++      uint32_t count, reserved;
++      const struct {
++      const char *const name; 
++      const void *const data;
++!     } toc[537]; /* set to real toc size to avoid symbol size mismatch runtime link errors */
++  } ICU_Data_Header;
++  
++  U_EXPORT const ICU_Data_Header U_ICUDATA_ENTRY_POINT = {
++***************
++*** 64,73 ****
++      0,                  /* count        */
++      0,                  /* Reserved     */
++      {                   /*  TOC structure */
++! /*        {    */
++!           0 , 0 , 0, 0  /* name and data entries.  Count says there are none,  */
++                          /*  but put one in just in case.                       */
++! /*        }  */
++      }
++  };
++  
++--- 60,69 ----
++      0,                  /* count        */
++      0,                  /* Reserved     */
++      {                   /*  TOC structure */
++!           {
++!                {0 , 0}  /* name and data entries.  Count says there are none,  */
++                          /*  but put one in just in case.                       */
++!           }
++      }
++  };
++  
+ *** misc/icu/source/test/intltest/loctest.cpp	Thu Jul  6 03:50:04 2006
+---- misc/build/icu/source/test/intltest/loctest.cpp	Wed Jan  3 09:40:21 2007
++--- misc/build/icu/source/test/intltest/loctest.cpp	Tue Feb 20 09:50:08 2007
+ ***************
+ *** 4,9 ****
+ --- 4,10 ----
+@@ -547,7 +618,7 @@
+   #include "unicode/decimfmt.h"
+   #include "unicode/ucurr.h"
+ *** misc/icu/source/test/intltest/tsputil.cpp	Wed Jul 19 00:18:10 2006
+---- misc/build/icu/source/test/intltest/tsputil.cpp	Wed Jan  3 09:40:21 2007
++--- misc/build/icu/source/test/intltest/tsputil.cpp	Tue Feb 20 09:50:08 2007
+ ***************
+ *** 4,9 ****
+ --- 4,10 ----
+@@ -559,7 +630,7 @@
+   
+   #include <float.h> // DBL_MAX, DBL_MIN
+ *** misc/icu/source/test/intltest/uobjtest.cpp	Thu Mar 23 01:54:12 2006
+---- misc/build/icu/source/test/intltest/uobjtest.cpp	Wed Jan  3 09:40:21 2007
++--- misc/build/icu/source/test/intltest/uobjtest.cpp	Tue Feb 20 09:50:08 2007
+ ***************
+ *** 4,9 ****
+ --- 4,10 ----
+@@ -571,7 +642,7 @@
+   #include "cmemory.h" // UAlignedMemory
+   #include <string.h>
+ *** misc/icu/source/test/intltest/ustrtest.cpp	Tue Dec 28 22:13:54 2004
+---- misc/build/icu/source/test/intltest/ustrtest.cpp	Wed Jan  3 09:40:21 2007
++--- misc/build/icu/source/test/intltest/ustrtest.cpp	Tue Feb 20 09:50:08 2007
+ ***************
+ *** 4,9 ****
+ --- 4,10 ----

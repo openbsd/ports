@@ -1,6 +1,6 @@
-$OpenBSD: patch-sal_osl_unx_nlsupport_c,v 1.2 2006/08/20 03:36:52 kurt Exp $
---- sal/osl/unx/nlsupport.c.orig.port	Tue Jul 25 05:40:46 2006
-+++ sal/osl/unx/nlsupport.c	Fri Aug 18 15:47:43 2006
+$OpenBSD: patch-sal_osl_unx_nlsupport_c,v 1.3 2007/03/17 15:27:45 robert Exp $
+--- sal/osl/unx/nlsupport.c.orig.port	Mon Jan 22 11:19:27 2007
++++ sal/osl/unx/nlsupport.c	Tue Feb  6 23:13:34 2007
 @@ -38,7 +38,7 @@
  #include <osl/process.h>
  #include <rtl/memory.h>
@@ -19,7 +19,7 @@ $OpenBSD: patch-sal_osl_unx_nlsupport_c,v 1.2 2006/08/20 03:36:52 kurt Exp $
  
  /*
   * This implementation of osl_getTextEncodingFromLocale maps
-@@ -551,6 +551,35 @@ const _pair _nl_language_list[] = {
+@@ -557,6 +557,35 @@ const _pair _nl_language_list[] = {
      { "UTF-8",         RTL_TEXTENCODING_UTF8           }  /* ISO-10646/UTF-8 */
  };
  
@@ -55,7 +55,7 @@ $OpenBSD: patch-sal_osl_unx_nlsupport_c,v 1.2 2006/08/20 03:36:52 kurt Exp $
  #endif /* ifdef SOLARIS IRIX LINUX FREEBSD NETBSD */
  
  static pthread_mutex_t aLocalMutex = PTHREAD_MUTEX_INITIALIZER;
-@@ -973,7 +1002,7 @@ int _imp_setProcessLocale( rtl_Locale * 
+@@ -984,7 +1013,7 @@ int _imp_setProcessLocale( rtl_Locale * 
              snprintf(env_buf, sizeof(env_buf), "LC_ALL=%s", locale_buf);
              env_buf[sizeof(env_buf)] = '\0';
              putenv(env_buf);
@@ -64,7 +64,7 @@ $OpenBSD: patch-sal_osl_unx_nlsupport_c,v 1.2 2006/08/20 03:36:52 kurt Exp $
              setenv( "LC_ALL", locale_buf, 1);
  #else
              setenv( "LC_ALL", locale_buf );
-@@ -985,7 +1014,7 @@ int _imp_setProcessLocale( rtl_Locale * 
+@@ -996,7 +1025,7 @@ int _imp_setProcessLocale( rtl_Locale * 
              snprintf(env_buf, sizeof(env_buf), "LC_CTYPE=%s", locale_buf);
              env_buf[sizeof(env_buf)] = '\0';
              putenv(env_buf);
@@ -73,7 +73,7 @@ $OpenBSD: patch-sal_osl_unx_nlsupport_c,v 1.2 2006/08/20 03:36:52 kurt Exp $
              setenv("LC_CTYPE", locale_buf, 1 );
  #else
              setenv( "LC_CTYPE", locale_buf );
-@@ -997,7 +1026,7 @@ int _imp_setProcessLocale( rtl_Locale * 
+@@ -1008,7 +1037,7 @@ int _imp_setProcessLocale( rtl_Locale * 
              snprintf(env_buf, sizeof(env_buf), "LANG=%s", locale_buf);
              env_buf[sizeof(env_buf)] = '\0';
              putenv(env_buf);

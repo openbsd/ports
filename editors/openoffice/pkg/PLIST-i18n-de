@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-de,v 1.1 2006/11/20 09:33:02 robert Exp $
+@comment $OpenBSD: PLIST-i18n-de,v 1.2 2007/03/17 15:27:45 robert Exp $
 openoffice/help/de/
 openoffice/help/de/default.css
 openoffice/help/de/err.html
@@ -126,6 +126,14 @@ openoffice/help/de/swriter.idx/SCHEMA
 openoffice/help/de/swriter.jar
 openoffice/help/de/swriter.key
 openoffice/help/de/swriter.tree
+openoffice/licenses/LICENSE_de
+openoffice/licenses/LICENSE_de.html
+openoffice/presets/config/arrowhd_de.soe
+openoffice/presets/config/classic_de.sog
+openoffice/presets/config/hatching_de.soh
+openoffice/presets/config/modern_de.sog
+openoffice/presets/config/palette_de.soc
+openoffice/presets/config/styles_de.sod
 openoffice/program/resource/abp680de.res
 openoffice/program/resource/analysis680de.res
 openoffice/program/resource/avmedia680de.res
@@ -191,6 +199,16 @@ openoffice/program/resource/uui680de.res
 openoffice/program/resource/vcl680de.res
 openoffice/program/resource/wzi680de.res
 openoffice/program/resource/xsltdlg680de.res
+openoffice/readmes/README_de
+openoffice/readmes/README_de.html
+openoffice/share/autotext/de/
+openoffice/share/autotext/de/crdbus50.bau
+openoffice/share/autotext/de/standard.bau
+openoffice/share/readme/LICENSE_de
+openoffice/share/readme/LICENSE_de.html
+openoffice/share/readme/README_de
+openoffice/share/readme/README_de.html
+openoffice/share/registry/modules/org/openoffice/Setup/Langpack-de.xcu
 openoffice/share/registry/res/de/
 openoffice/share/registry/res/de/org/
 openoffice/share/registry/res/de/org/openoffice/
@@ -386,3 +404,6 @@ openoffice/share/template/de/wizard/styles/pool.ots
 openoffice/share/template/de/wizard/styles/pumpkin.ots
 openoffice/share/template/de/wizard/styles/sunstyle.ots
 openoffice/share/template/de/wizard/styles/xos.ots
+openoffice/share/wordbook/de/
+openoffice/share/wordbook/de/soffice.dic
+openoffice/share/wordbook/de/sun.dic

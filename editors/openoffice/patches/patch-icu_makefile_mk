@@ -1,12 +1,11 @@
-$OpenBSD: patch-icu_makefile_mk,v 1.2 2006/11/09 15:18:01 kurt Exp $
---- icu/makefile.mk.orig.port	Tue Mar  7 12:08:03 2006
-+++ icu/makefile.mk	Wed Nov  8 11:47:18 2006
-@@ -77,7 +77,7 @@ icu_CXXFLAGS+=-O $(ARCH_FLAGS)
+--- icu/makefile.mk.orig.port	Mon Jan 22 11:13:24 2007
++++ icu/makefile.mk	Tue Feb  6 23:13:33 2007
+@@ -82,7 +82,7 @@ DISABLE_64BIT=--enable-64bit-libs=no
  
  CONFIGURE_DIR=source
  
--CONFIGURE_ACTION=sh -c 'CFLAGS="$(icu_CFLAGS)" CXXFLAGS="$(icu_CXXFLAGS)" LDFLAGS="$(icu_LDFLAGS)" ./configure --enable-layout --enable-static --enable-shared=yes --enable-64bit-libs=no'
-+CONFIGURE_ACTION=sh -c 'CFLAGS="$(icu_CFLAGS) -fPIC" CXXFLAGS="$(icu_CXXFLAGS) -fPIC" LDFLAGS="$(icu_LDFLAGS) -fPIC" ./configure --enable-layout --enable-static --enable-shared=yes --enable-64bit-libs=no'
+-CONFIGURE_ACTION=sh -c 'CFLAGS="$(icu_CFLAGS)" CXXFLAGS="$(icu_CXXFLAGS)" LDFLAGS="$(icu_LDFLAGS)" ./configure --enable-layout --enable-static --enable-shared=yes $(DISABLE_64BIT)'
++CONFIGURE_ACTION=sh -c 'CFLAGS="$(icu_CFLAGS) -fPIC" CXXFLAGS="$(icu_CXXFLAGS) -fPIC" LDFLAGS="$(icu_LDFLAGS) -fPIC" ./configure --enable-layout --enable-static --enable-shared=yes $(DISABLE_64BIT)'
  
  #CONFIGURE_FLAGS=--enable-layout --enable-static --enable-shared=yes --enable-64bit-libs=no
  CONFIGURE_FLAGS=

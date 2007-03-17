@@ -1,7 +1,7 @@
-$OpenBSD: patch-odk_settings_settings_mk,v 1.2 2006/08/20 03:36:52 kurt Exp $
---- odk/settings/settings.mk.orig.port	Thu Jul 13 08:03:58 2006
-+++ odk/settings/settings.mk	Fri Aug 18 15:47:43 2006
-@@ -502,3 +502,97 @@ URE_MISC=$(OO_SDK_URE_HOME)/share/misc
+$OpenBSD: patch-odk_settings_settings_mk,v 1.3 2007/03/17 15:27:45 robert Exp $
+--- odk/settings/settings.mk.orig.port	Wed Jan 17 07:47:27 2007
++++ odk/settings/settings.mk	Tue Feb  6 23:13:34 2007
+@@ -515,3 +515,97 @@ URE_MISC=$(OO_SDK_URE_HOME)/share/misc
  endif
  
  endif

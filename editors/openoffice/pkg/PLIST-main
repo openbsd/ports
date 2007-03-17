@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2006/12/14 20:40:28 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2007/03/17 15:27:45 robert Exp $
 @pkgpath editors/openoffice
 %%SHARED%%
 bin/sbase
@@ -148,6 +148,8 @@ openoffice/help/main_transform.xsl
 openoffice/licenses/
 openoffice/licenses/LICENSE_en-US
 openoffice/licenses/LICENSE_en-US.html
+openoffice/licenses/LICENSE_fi
+openoffice/licenses/LICENSE_fi.html
 openoffice/presets/
 openoffice/presets/autotext/
 openoffice/presets/autotext/mytexts.bau
@@ -204,10 +206,10 @@ openoffice/program/kde-open-url
 openoffice/program/legacy_binfilters.rdb
 openoffice/program/libcppu.so.3
 openoffice/program/libcppuhelpergcc3.so.3
-openoffice/program/libicudata.so.26
-openoffice/program/libicui18n.so.26
-openoffice/program/libicule.so.26
-openoffice/program/libicuuc.so.26
+openoffice/program/libicudata.so.36
+openoffice/program/libicui18n.so.36
+openoffice/program/libicule.so.36
+openoffice/program/libicuuc.so.36
 openoffice/program/libjvmaccessgcc3.so.3
 openoffice/program/libjvmfwk.so.3
 openoffice/program/libportaudio.so.0
@@ -525,6 +527,7 @@ openoffice/share/config/psetupl.xpm
 openoffice/share/config/soffice.cfg/
 openoffice/share/config/soffice.cfg/global/
 openoffice/share/config/soffice.cfg/global/accelerator/
+openoffice/share/config/soffice.cfg/global/accelerator/default.xml
 openoffice/share/config/soffice.cfg/global/accelerator/en-US/
 openoffice/share/config/soffice.cfg/global/accelerator/en-US/default.xml
 openoffice/share/config/soffice.cfg/global/accelerator/es/
@@ -543,6 +546,7 @@ openoffice/share/config/soffice.cfg/modules/BasicIDE/toolbar/fullscreenbar.xml
 openoffice/share/config/soffice.cfg/modules/BasicIDE/toolbar/insertcontrolsbar.xml
 openoffice/share/config/soffice.cfg/modules/BasicIDE/toolbar/macrobar.xml
 openoffice/share/config/soffice.cfg/modules/BasicIDE/toolbar/standardbar.xml
+openoffice/share/config/soffice.cfg/modules/BasicIDE/toolbar/translationbar.xml
 openoffice/share/config/soffice.cfg/modules/StartModule/
 openoffice/share/config/soffice.cfg/modules/StartModule/accelerator/
 openoffice/share/config/soffice.cfg/modules/StartModule/accelerator/en-US/
@@ -1148,6 +1152,7 @@ openoffice/share/dict/ooo/README_sw_TZ.txt
 openoffice/share/dict/ooo/README_th_TH.txt
 openoffice/share/dict/ooo/README_th_de_CH_v2.txt
 openoffice/share/dict/ooo/README_th_de_DE_v2.txt
+openoffice/share/dict/ooo/README_th_pl_PL_v2.txt
 openoffice/share/dict/ooo/WordNet_license.txt
 openoffice/share/dict/ooo/de_AT.aff
 openoffice/share/dict/ooo/de_AT.dic
@@ -1190,6 +1195,8 @@ openoffice/share/dict/ooo/th_de_DE_v2.dat
 openoffice/share/dict/ooo/th_de_DE_v2.idx
 openoffice/share/dict/ooo/th_en_US_v2.dat
 openoffice/share/dict/ooo/th_en_US_v2.idx
+openoffice/share/dict/ooo/th_pl_PL_v2.dat
+openoffice/share/dict/ooo/th_pl_PL_v2.idx
 openoffice/share/dict/ooo/th_sk_SK_license.txt
 openoffice/share/dict/ooo/th_sk_SK_v2.dat
 openoffice/share/dict/ooo/th_sk_SK_v2.idx
@@ -1889,6 +1896,7 @@ openoffice/share/registry/data/org/openoffice/Office/Writer.xcu
 openoffice/share/registry/data/org/openoffice/Setup.xcu
 openoffice/share/registry/data/org/openoffice/TypeDetection/
 openoffice/share/registry/data/org/openoffice/TypeDetection/UISort.xcu
+openoffice/share/registry/data/org/openoffice/UserProfile.xcu
 openoffice/share/registry/data/org/openoffice/VCL.xcu
 openoffice/share/registry/data/org/openoffice/ucb/
 openoffice/share/registry/data/org/openoffice/ucb/Configuration.xcu
@@ -2531,6 +2539,7 @@ openoffice/share/xdg/
 openoffice/share/xdg/base.desktop
 openoffice/share/xdg/calc.desktop
 openoffice/share/xdg/draw.desktop
+openoffice/share/xdg/extension.desktop
 openoffice/share/xdg/impress.desktop
 openoffice/share/xdg/math.desktop
 openoffice/share/xdg/printeradmin.desktop
