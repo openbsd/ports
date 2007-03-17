@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2005/05/24 20:27:49 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.13 2007/03/17 22:13:08 martynas Exp $
 bin/jmacs
 bin/joe
 bin/jpico
@@ -6,6 +6,9 @@ bin/jstar
 bin/rjoe
 bin/termidx
 @man man/man1/joe.1
+man/ru/
+man/ru/man1/
+@man man/ru/man1/joe.1
 share/doc/joe/
 share/doc/joe/ChangeLog
 share/doc/joe/HACKING
@@ -19,6 +22,10 @@ share/examples/joe/charmaps/
 @sample ${SYSCONFDIR}/joe/charmaps/
 share/examples/joe/charmaps/klingon
 @sample ${SYSCONFDIR}/joe/charmaps/klingon
+share/examples/joe/ftyperc
+@sample ${SYSCONFDIR}/joe/ftyperc
+share/examples/joe/jicerc.ru
+@sample ${SYSCONFDIR}/joe/jicerc.ru
 share/examples/joe/jmacsrc
 @sample ${SYSCONFDIR}/joe/jmacsrc
 share/examples/joe/joerc
@@ -27,6 +34,14 @@ share/examples/joe/jpicorc
 @sample ${SYSCONFDIR}/joe/jpicorc
 share/examples/joe/jstarrc
 @sample ${SYSCONFDIR}/joe/jstarrc
+share/examples/joe/lang/
+@sample ${SYSCONFDIR}/joe/lang/
+share/examples/joe/lang/de.po
+@sample ${SYSCONFDIR}/joe/lang/de.po
+share/examples/joe/lang/fr.po
+@sample ${SYSCONFDIR}/joe/lang/fr.po
+share/examples/joe/lang/ru.po
+@sample ${SYSCONFDIR}/joe/lang/ru.po
 share/examples/joe/rjoerc
 @sample ${SYSCONFDIR}/joe/rjoerc
 share/examples/joe/syntax/
@@ -53,12 +68,20 @@ share/examples/joe/syntax/diff.jsf
 @sample ${SYSCONFDIR}/joe/syntax/diff.jsf
 share/examples/joe/syntax/fortran.jsf
 @sample ${SYSCONFDIR}/joe/syntax/fortran.jsf
+share/examples/joe/syntax/haskell.jsf
+@sample ${SYSCONFDIR}/joe/syntax/haskell.jsf
 share/examples/joe/syntax/html.jsf
 @sample ${SYSCONFDIR}/joe/syntax/html.jsf
 share/examples/joe/syntax/java.jsf
 @sample ${SYSCONFDIR}/joe/syntax/java.jsf
+share/examples/joe/syntax/joerc.jsf
+@sample ${SYSCONFDIR}/joe/syntax/joerc.jsf
 share/examples/joe/syntax/lisp.jsf
 @sample ${SYSCONFDIR}/joe/syntax/lisp.jsf
+share/examples/joe/syntax/lua.jsf
+@sample ${SYSCONFDIR}/joe/syntax/lua.jsf
+share/examples/joe/syntax/m4.jsf
+@sample ${SYSCONFDIR}/joe/syntax/m4.jsf
 share/examples/joe/syntax/mail.jsf
 @sample ${SYSCONFDIR}/joe/syntax/mail.jsf
 share/examples/joe/syntax/mason.jsf
@@ -75,10 +98,16 @@ share/examples/joe/syntax/ps.jsf
 @sample ${SYSCONFDIR}/joe/syntax/ps.jsf
 share/examples/joe/syntax/python.jsf
 @sample ${SYSCONFDIR}/joe/syntax/python.jsf
+share/examples/joe/syntax/rexx.jsf
+@sample ${SYSCONFDIR}/joe/syntax/rexx.jsf
+share/examples/joe/syntax/ruby.jsf
+@sample ${SYSCONFDIR}/joe/syntax/ruby.jsf
 share/examples/joe/syntax/sed.jsf
 @sample ${SYSCONFDIR}/joe/syntax/sed.jsf
 share/examples/joe/syntax/sh.jsf
 @sample ${SYSCONFDIR}/joe/syntax/sh.jsf
+share/examples/joe/syntax/skill.jsf
+@sample ${SYSCONFDIR}/joe/syntax/skill.jsf
 share/examples/joe/syntax/sml.jsf
 @sample ${SYSCONFDIR}/joe/syntax/sml.jsf
 share/examples/joe/syntax/sql.jsf
@@ -87,6 +116,8 @@ share/examples/joe/syntax/tcl.jsf
 @sample ${SYSCONFDIR}/joe/syntax/tcl.jsf
 share/examples/joe/syntax/tex.jsf
 @sample ${SYSCONFDIR}/joe/syntax/tex.jsf
+share/examples/joe/syntax/troff.jsf
+@sample ${SYSCONFDIR}/joe/syntax/troff.jsf
 share/examples/joe/syntax/verilog.jsf
 @sample ${SYSCONFDIR}/joe/syntax/verilog.jsf
 share/examples/joe/syntax/vhdl.jsf
