@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.9 2007/03/17 21:58:45 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2007/03/17 22:34:13 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN='adjust for types changes'
 
-V=4.3.0
-DATE=20070309
-FULL_VERSION=4.3-${DATE}
-FULL_PKGVERSION=4.3.${DATE}
+V=4.2.0
+DATE=20061024
+FULL_VERSION=4.2-${DATE}
+FULL_PKGVERSION=4.2.${DATE}
 
-PKGNAME-main=  gcc-${FULL_PKGVERSION}
-PKGNAME-c++ =  g++-${FULL_PKGVERSION}
+PKGNAME-main=  gcc-${FULL_PKGVERSION}p0
+PKGNAME-c++ =  g++-${FULL_PKGVERSION}p0
 PKGNAME-estdc= libstdc++-${FULL_PKGVERSION}
 PKGNAME-g77=   g77-${FULL_PKGVERSION}
-PKGNAME-f95=   g95-${FULL_PKGVERSION}
+PKGNAME-f95=   g95-${FULL_PKGVERSION}p0
 PKGNAME-java=  gcj-${FULL_PKGVERSION}
-PKGNAME-objc=  gobjc-${FULL_PKGVERSION}
-PKGNAME-ada=   gnat-${FULL_PKGVERSION}
+PKGNAME-objc=  gobjc-${FULL_PKGVERSION}p0
+PKGNAME-ada=   gnat-${FULL_PKGVERSION}p0
 SHARED_LIBS=	estdc++		7.0 \
 		gfortran	2.0 \
 		-org-w3c-dom	1.0 \
@@ -65,7 +65,6 @@ MASTER_SITES0=	ftp://quatramaran.ens.fr/pub/espie/
 
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/gcc
-CONFIGURE_ARGS+=--with-gmp=${LOCALBASE}
 
 LANGS=c
 .if ${FLAVOR:L:Mc++}
@@ -75,6 +74,7 @@ MULTI_PACKAGES+=-c++ -estdc
 .if ${FLAVOR:L:Mfortran}
 LANGS:=${LANGS},fortran
 MULTI_PACKAGES+=-f95
+CONFIGURE_ARGS+=--with-gmp=${LOCALBASE}
 .endif
 .if ${FLAVOR:L:Mobjc}
 LANGS:=${LANGS},objc
@@ -161,13 +161,7 @@ USE_GMAKE= yes
 # use bootstrap-lean if you're pressed for space
 ALL_TARGET=bootstrap
 
-BASIC_MAKE_FLAGS=libstdc___la_LDFLAGS='-version-info 31:0:0 -lm'
-MAKE_FLAGS=${BASIC_MAKE_FLAGS} \
-	INSTALL='/usr/bin/install -c' \
-	INSTALL_PROGRAM='/usr/bin/install -c -m 555' \
-	INSTALL_DATA='/usr/bin/install -c -m 444' \
-
-FAKE_FLAGS=DESTDIR=${WRKINST} ${BASIC_MAKE_FLAGS}
+MAKE_FLAGS=libstdc___la_LDFLAGS='-version-info 31:0:0 -lm'
 
 
 .if ${MACHINE_ARCH} == "m68k" || ${MACHINE_ARCH} == "sparc"  || ${MACHINE_ARCH} == "amd64"
@@ -193,14 +187,12 @@ WANTLIB=		c
 RUN_DEPENDS-main=
 
 RUN_DEPENDS-c++ =	${RUN_DEPENDS} ::${PKGPATH},-estdc
-LIB_DEPENDS-estdc=
 WANTLIB-estdc=		c m
 
-LIB_DEPENDS+=		gmp:gmp->=4.2:devel/gmp \
+LIB_DEPENDS-f95=	gmp:gmp->=4.2:devel/gmp \
 			mpfr::devel/mpfr
 
-LIB_DEPENDS-java=	${LIB_DEPENDS} \
-			gc::devel/boehm-gc
+LIB_DEPENDS-java=	gc::devel/boehm-gc
 
 .include <bsd.port.mk>
 

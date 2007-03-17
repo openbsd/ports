@@ -1,29 +1,19 @@
-$OpenBSD: patch-gcc_config_i386_driver-i386_c,v 1.3 2007/03/17 21:58:46 espie Exp $
---- gcc/config/i386/driver-i386.c.orig	Thu Mar  1 23:14:23 2007
-+++ gcc/config/i386/driver-i386.c	Mon Mar 12 11:46:35 2007
-@@ -65,7 +65,7 @@ describe_cache (unsigned l1_sizekb, unsi
-   sprintf (size, "--param l1-cache-size=%u", size_in_lines);
-   sprintf (line, "--param l1-cache-line-size=%u", l1_line);
- 
--  return concat (size, " ", line, " ", NULL);
-+  return concat (size, " ", line, " ", (void *)0);
- }
- 
- /* Returns the description of caches for an AMD processor.  */
-@@ -417,7 +417,7 @@ const char *host_detect_local_cpu (int a
+$OpenBSD: patch-gcc_config_i386_driver-i386_c,v 1.4 2007/03/17 22:34:13 espie Exp $
+--- gcc/config/i386/driver-i386.c.orig	Sat Sep 23 12:33:27 2006
++++ gcc/config/i386/driver-i386.c	Wed Oct 18 00:37:31 2006
+@@ -158,13 +158,13 @@ const char *host_detect_local_cpu (int a
      }
  
  done:
--  return concat (cache, "-m", argv[0], "=", cpu, NULL);
-+  return concat (cache, "-m", argv[0], "=", cpu, (void *)0);
+-  return concat ("-m", argv[0], "=", cpu, NULL);
++  return concat ("-m", argv[0], "=", cpu, (void *)0);
  }
  #else
  /* If we aren't compiling with GCC we just provide a minimal
-@@ -443,6 +443,6 @@ const char *host_detect_local_cpu (int a
-   else
-     cpu = "generic";
- 
--  return concat ("-m", argv[0], "=", cpu, NULL);
-+  return concat ("-m", argv[0], "=", cpu, (void *)0);
+    default value.  */
+ const char *host_detect_local_cpu (int argc, const char **argv)
+ {
+-  return concat ("-m", argv[0], "=i386", NULL);
++  return concat ("-m", argv[0], "=i386", (void *)0);
  }
  #endif /* GCC_VERSION */

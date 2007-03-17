@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ada,v 1.2 2007/03/17 21:58:46 espie Exp $
+@comment $OpenBSD: PLIST-ada,v 1.3 2007/03/17 22:34:13 espie Exp $
 bin/gnat
 bin/gnatbind
 bin/gnatbl
@@ -19,16 +19,10 @@ bin/gprmake
 lib/gcc/${CONFIG}/${V}/adainclude/
 lib/gcc/${CONFIG}/${V}/adainclude/a-astaco.adb
 lib/gcc/${CONFIG}/${V}/adainclude/a-astaco.ads
-lib/gcc/${CONFIG}/${V}/adainclude/a-calari.adb
-lib/gcc/${CONFIG}/${V}/adainclude/a-calari.ads
 lib/gcc/${CONFIG}/${V}/adainclude/a-caldel.adb
 lib/gcc/${CONFIG}/${V}/adainclude/a-caldel.ads
 lib/gcc/${CONFIG}/${V}/adainclude/a-calend.adb
 lib/gcc/${CONFIG}/${V}/adainclude/a-calend.ads
-lib/gcc/${CONFIG}/${V}/adainclude/a-calfor.adb
-lib/gcc/${CONFIG}/${V}/adainclude/a-calfor.ads
-lib/gcc/${CONFIG}/${V}/adainclude/a-catizo.adb
-lib/gcc/${CONFIG}/${V}/adainclude/a-catizo.ads
 lib/gcc/${CONFIG}/${V}/adainclude/a-cdlili.adb
 lib/gcc/${CONFIG}/${V}/adainclude/a-cdlili.ads
 lib/gcc/${CONFIG}/${V}/adainclude/a-cgaaso.adb
@@ -92,8 +86,6 @@ lib/gcc/${CONFIG}/${V}/adainclude/a-crbtgk.adb
 lib/gcc/${CONFIG}/${V}/adainclude/a-crbtgk.ads
 lib/gcc/${CONFIG}/${V}/adainclude/a-crbtgo.adb
 lib/gcc/${CONFIG}/${V}/adainclude/a-crbtgo.ads
-lib/gcc/${CONFIG}/${V}/adainclude/a-crdlli.adb
-lib/gcc/${CONFIG}/${V}/adainclude/a-crdlli.ads
 lib/gcc/${CONFIG}/${V}/adainclude/a-cwila1.ads
 lib/gcc/${CONFIG}/${V}/adainclude/a-cwila9.ads
 lib/gcc/${CONFIG}/${V}/adainclude/a-decima.adb
@@ -104,11 +96,8 @@ lib/gcc/${CONFIG}/${V}/adainclude/a-direct.adb
 lib/gcc/${CONFIG}/${V}/adainclude/a-direct.ads
 lib/gcc/${CONFIG}/${V}/adainclude/a-direio.adb
 lib/gcc/${CONFIG}/${V}/adainclude/a-direio.ads
-lib/gcc/${CONFIG}/${V}/adainclude/a-diroro.adb
-lib/gcc/${CONFIG}/${V}/adainclude/a-diroro.ads
 lib/gcc/${CONFIG}/${V}/adainclude/a-dirval.adb
 lib/gcc/${CONFIG}/${V}/adainclude/a-dirval.ads
-lib/gcc/${CONFIG}/${V}/adainclude/a-dispat.ads
 lib/gcc/${CONFIG}/${V}/adainclude/a-dynpri.adb
 lib/gcc/${CONFIG}/${V}/adainclude/a-dynpri.ads
 lib/gcc/${CONFIG}/${V}/adainclude/a-einuoc.adb
@@ -624,7 +613,6 @@ lib/gcc/${CONFIG}/${V}/adainclude/s-crc32.ads
 lib/gcc/${CONFIG}/${V}/adainclude/s-crtl.ads
 lib/gcc/${CONFIG}/${V}/adainclude/s-direio.adb
 lib/gcc/${CONFIG}/${V}/adainclude/s-direio.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-dsaser.ads
 lib/gcc/${CONFIG}/${V}/adainclude/s-errrep.adb
 lib/gcc/${CONFIG}/${V}/adainclude/s-errrep.ads
 lib/gcc/${CONFIG}/${V}/adainclude/s-exctab.adb
@@ -1011,11 +999,8 @@ lib/gcc/${CONFIG}/${V}/adainclude/text_io.ads
 lib/gcc/${CONFIG}/${V}/adainclude/unchconv.ads
 lib/gcc/${CONFIG}/${V}/adainclude/unchdeal.ads
 lib/gcc/${CONFIG}/${V}/adalib/
-lib/gcc/${CONFIG}/${V}/adalib/a-calari.ali
 lib/gcc/${CONFIG}/${V}/adalib/a-caldel.ali
 lib/gcc/${CONFIG}/${V}/adalib/a-calend.ali
-lib/gcc/${CONFIG}/${V}/adalib/a-calfor.ali
-lib/gcc/${CONFIG}/${V}/adalib/a-catizo.ali
 lib/gcc/${CONFIG}/${V}/adalib/a-cdlili.ali
 lib/gcc/${CONFIG}/${V}/adalib/a-cgaaso.ali
 lib/gcc/${CONFIG}/${V}/adalib/a-cgarso.ali
@@ -1052,16 +1037,13 @@ lib/gcc/${CONFIG}/${V}/adalib/a-coteio.ali
 lib/gcc/${CONFIG}/${V}/adalib/a-crbltr.ali
 lib/gcc/${CONFIG}/${V}/adalib/a-crbtgk.ali
 lib/gcc/${CONFIG}/${V}/adalib/a-crbtgo.ali
-lib/gcc/${CONFIG}/${V}/adalib/a-crdlli.ali
 lib/gcc/${CONFIG}/${V}/adalib/a-cwila1.ali
 lib/gcc/${CONFIG}/${V}/adalib/a-cwila9.ali
 lib/gcc/${CONFIG}/${V}/adalib/a-decima.ali
 lib/gcc/${CONFIG}/${V}/adalib/a-diocst.ali
 lib/gcc/${CONFIG}/${V}/adalib/a-direct.ali
 lib/gcc/${CONFIG}/${V}/adalib/a-direio.ali
-lib/gcc/${CONFIG}/${V}/adalib/a-diroro.ali
 lib/gcc/${CONFIG}/${V}/adalib/a-dirval.ali
-lib/gcc/${CONFIG}/${V}/adalib/a-dispat.ali
 lib/gcc/${CONFIG}/${V}/adalib/a-dynpri.ali
 lib/gcc/${CONFIG}/${V}/adalib/a-einuoc.ali
 lib/gcc/${CONFIG}/${V}/adalib/a-elchha.ali
@@ -1361,7 +1343,6 @@ lib/gcc/${CONFIG}/${V}/adalib/s-chepoo.ali
 lib/gcc/${CONFIG}/${V}/adalib/s-crc32.ali
 lib/gcc/${CONFIG}/${V}/adalib/s-crtl.ali
 lib/gcc/${CONFIG}/${V}/adalib/s-direio.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-dsaser.ali
 lib/gcc/${CONFIG}/${V}/adalib/s-errrep.ali
 lib/gcc/${CONFIG}/${V}/adalib/s-exctab.ali
 lib/gcc/${CONFIG}/${V}/adalib/s-exnint.ali
