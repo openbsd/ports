@@ -1,0 +1,18 @@
+$OpenBSD: patch-doc_socat_1,v 1.1 2007/03/17 22:00:15 jolan Exp $
+--- doc/socat.1.orig	Sat Mar 17 09:13:08 2007
++++ doc/socat.1	Sat Mar 17 09:14:01 2007
+@@ -2772,11 +2772,11 @@ error\&. 
+ .PP 
+ .SH "FILES" 
+ .PP 
+-/usr/bin/socat 
++!!LOCALBASE!!/bin/socat
+ .br 
+-/usr/bin/filan 
++!!LOCALBASE!!/bin/filan
+ .br 
+-/usr/bin/procan
++!!LOCALBASE!!/bin/procan
+ .PP 
+ .SH "ENVIRONMENT VARIABLES" 
+ .PP 

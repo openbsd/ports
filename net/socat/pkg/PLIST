@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/04/30 13:27:17 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/03/17 22:00:15 jolan Exp $
 bin/filan
 bin/procan
 bin/socat
@@ -7,6 +7,10 @@ share/doc/socat/
 share/doc/socat/FAQ
 share/doc/socat/README
 share/doc/socat/SECURITY
+share/doc/socat/dest-unreach.css
+share/doc/socat/socat-multicast.html
+share/doc/socat/socat-openssltunnel.html
+share/doc/socat/socat-tun.html
 share/doc/socat/socat.html
 share/doc/socat/xio.help
 share/examples/socat/

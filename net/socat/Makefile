@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2006/07/19 11:43:55 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2007/03/17 22:00:15 jolan Exp $
 
 COMMENT=	"socat is a relay for bidirectional data transfer" 
 
-DISTNAME=	socat-1.5.0.0
+DISTNAME=	socat-1.6.0.0
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.dest-unreach.org/socat/
@@ -24,11 +24,11 @@ NO_REGRESS=	Yes
 CONFIGURE_STYLE=gnu
 
 pre-build:
-	perl -pi -e "s,!!LOCALBASE!!,${LOCALBASE},g" ${WRKSRC}/socat.1
+	perl -pi -e "s,!!LOCALBASE!!,${LOCALBASE},g" ${WRKSRC}/doc/socat.1
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/socat
-.for file in FAQ README SECURITY xio.help socat.html
+.for file in FAQ README SECURITY doc/xio.help doc/*.html doc/dest-unreach.css
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/socat
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/socat
