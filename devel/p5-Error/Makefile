@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/03/15 11:30:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2007/03/17 15:22:42 steven Exp $
 
 COMMENT=	"error/exception handling in an OO-ish way"
 
 MODULES=	cpan
 DISTNAME=	Error-0.16
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel
 
 # Artistic License
