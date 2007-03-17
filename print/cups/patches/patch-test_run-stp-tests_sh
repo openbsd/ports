@@ -1,6 +1,6 @@
-$OpenBSD: patch-test_run-stp-tests_sh,v 1.2 2006/10/01 10:43:38 mbalmer Exp $
---- test/run-stp-tests.sh.orig	Wed Sep 20 11:35:02 2006
-+++ test/run-stp-tests.sh	Wed Sep 20 11:36:00 2006
+$OpenBSD: patch-test_run-stp-tests_sh,v 1.3 2007/03/17 18:28:02 deanna Exp $
+--- test/run-stp-tests.sh.orig	Wed Nov 15 15:37:45 2006
++++ test/run-stp-tests.sh	Fri Mar 16 16:50:33 2007
 @@ -30,7 +30,7 @@ argcount=$#
  # Make the IPP test program...
  #
@@ -10,3 +10,12 @@ $OpenBSD: patch-test_run-stp-tests_sh,v 1.2 2006/10/01 10:43:38 mbalmer Exp $
  
  #
  # Figure out the proper echo options...
+@@ -373,7 +373,7 @@ fi
+ 
+ export LD_LIBRARY_PATH
+ 
+-LD_PRELOAD="$root/cups/libcups.so.2:$root/filter/libcupsimage.so.2"
++LD_PRELOAD="$root/cups/libcups.so.$LIBcups_VERSION:$root/filter/libcupsimage.so.$LIBcupsimage_VERSION"
+ export LD_PRELOAD
+ 
+ if test "x$DYLD_LIBRARY_PATH" = x; then
