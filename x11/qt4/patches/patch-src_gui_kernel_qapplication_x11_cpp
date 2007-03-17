@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_gui_kernel_qapplication_x11_cpp,v 1.7 2006/12/06 08:32:44 espie Exp $
---- src/gui/kernel/qapplication_x11.cpp.orig	Mon Nov 27 18:26:13 2006
-+++ src/gui/kernel/qapplication_x11.cpp	Wed Dec  6 01:16:14 2006
-@@ -4712,7 +4712,7 @@ static void sm_performSaveYourself(QSess
+$OpenBSD: patch-src_gui_kernel_qapplication_x11_cpp,v 1.8 2007/03/17 17:58:17 espie Exp $
+--- src/gui/kernel/qapplication_x11.cpp.orig	Wed Feb 21 10:58:48 2007
++++ src/gui/kernel/qapplication_x11.cpp	Sat Mar 17 10:47:27 2007
+@@ -4715,7 +4715,7 @@ static void sm_performSaveYourself(QSessionManagerPriv
      sm_setProperty(QString::fromLatin1(SmProgram), argument0);
      // tell the session manager about our user as well.
      struct passwd *entryPtr = 0;

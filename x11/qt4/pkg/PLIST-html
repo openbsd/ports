@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.8 2006/12/06 08:32:44 espie Exp $
+@comment $OpenBSD: PLIST-html,v 1.9 2007/03/17 17:58:17 espie Exp $
 share/doc/qt4/
 share/doc/qt4/html/
 share/doc/qt4/html/3rdparty.html
@@ -57,6 +57,7 @@ share/doc/qt4/html/assistant-simpletextviewer-mainwindow-cpp.html
 share/doc/qt4/html/assistant-simpletextviewer-mainwindow-h.html
 share/doc/qt4/html/assistant-simpletextviewer.html
 share/doc/qt4/html/assistant.dcf
+share/doc/qt4/html/atomic-operations.html
 share/doc/qt4/html/basic.html
 share/doc/qt4/html/bughowto.html
 share/doc/qt4/html/buildsystem.html
@@ -366,6 +367,7 @@ share/doc/qt4/html/images/
 share/doc/qt4/html/images/2dpainting-example.png
 share/doc/qt4/html/images/abstract-connections.png
 share/doc/qt4/html/images/affine-demo.png
+share/doc/qt4/html/images/alphachannelimage.png
 share/doc/qt4/html/images/alphafill.png
 share/doc/qt4/html/images/analogclock-example.png
 share/doc/qt4/html/images/analogclock-viewport.png
@@ -453,6 +455,7 @@ share/doc/qt4/html/images/cleanlooks-lcdnumber.png
 share/doc/qt4/html/images/cleanlooks-lineedit.png
 share/doc/qt4/html/images/cleanlooks-listview.png
 share/doc/qt4/html/images/cleanlooks-progressbar.png
+share/doc/qt4/html/images/cleanlooks-pushbutton-menu.png
 share/doc/qt4/html/images/cleanlooks-pushbutton.png
 share/doc/qt4/html/images/cleanlooks-radiobutton.png
 share/doc/qt4/html/images/cleanlooks-slider.png
@@ -609,6 +612,7 @@ share/doc/qt4/html/images/graphicsview-rectitem.png
 share/doc/qt4/html/images/graphicsview-shapes.png
 share/doc/qt4/html/images/graphicsview-text.png
 share/doc/qt4/html/images/graphicsview-view.png
+share/doc/qt4/html/images/graphicsview-zorder.png
 share/doc/qt4/html/images/gridlayout.png
 share/doc/qt4/html/images/groupbox-example.png
 share/doc/qt4/html/images/hellogl-example.png
@@ -710,10 +714,10 @@ share/doc/qt4/html/images/macintosh-timeedit.png
 share/doc/qt4/html/images/macintosh-toolbox.png
 share/doc/qt4/html/images/macintosh-toolbutton.png
 share/doc/qt4/html/images/macintosh-treeview.png
-share/doc/qt4/html/images/mainwindow-contextmenu.png
 share/doc/qt4/html/images/mainwindow-demo.png
 share/doc/qt4/html/images/mainwindow-docks-example.png
 share/doc/qt4/html/images/mainwindow-docks.png
+share/doc/qt4/html/images/mainwindowlayout.png
 share/doc/qt4/html/images/mandelbrot.png
 share/doc/qt4/html/images/mandelbrot_scroll1.png
 share/doc/qt4/html/images/mandelbrot_scroll2.png
@@ -810,6 +814,7 @@ share/doc/qt4/html/images/plastique-printdialog-properties.png
 share/doc/qt4/html/images/plastique-printdialog.png
 share/doc/qt4/html/images/plastique-progressbar.png
 share/doc/qt4/html/images/plastique-progressdialog.png
+share/doc/qt4/html/images/plastique-pushbutton-menu.png
 share/doc/qt4/html/images/plastique-pushbutton.png
 share/doc/qt4/html/images/plastique-radiobutton.png
 share/doc/qt4/html/images/plastique-sizegrip.png
@@ -1073,6 +1078,7 @@ share/doc/qt4/html/images/svg-image.png
 share/doc/qt4/html/images/svgviewer-example.png
 share/doc/qt4/html/images/syntaxhighlighter-example.png
 share/doc/qt4/html/images/system-tray.png
+share/doc/qt4/html/images/systemtray-editor.png
 share/doc/qt4/html/images/systemtray-example.png
 share/doc/qt4/html/images/t1.png
 share/doc/qt4/html/images/t10.png
@@ -2301,8 +2307,12 @@ share/doc/qt4/html/qgraphicsscene-members.html
 share/doc/qt4/html/qgraphicsscene.html
 share/doc/qt4/html/qgraphicsscenecontextmenuevent-members.html
 share/doc/qt4/html/qgraphicsscenecontextmenuevent.html
+share/doc/qt4/html/qgraphicsscenedragdropevent-members.html
+share/doc/qt4/html/qgraphicsscenedragdropevent.html
 share/doc/qt4/html/qgraphicssceneevent-members.html
 share/doc/qt4/html/qgraphicssceneevent.html
+share/doc/qt4/html/qgraphicsscenehelpevent-members.html
+share/doc/qt4/html/qgraphicsscenehelpevent.html
 share/doc/qt4/html/qgraphicsscenehoverevent-members.html
 share/doc/qt4/html/qgraphicsscenehoverevent.html
 share/doc/qt4/html/qgraphicsscenemouseevent-members.html
@@ -3317,6 +3327,7 @@ share/doc/qt4/html/qxmlsimplereader-members.html
 share/doc/qt4/html/qxmlsimplereader.html
 share/doc/qt4/html/rcc.html
 share/doc/qt4/html/resources.html
+share/doc/qt4/html/richtext-advanced-processing.html
 share/doc/qt4/html/richtext-calendar-main-cpp.html
 share/doc/qt4/html/richtext-calendar-mainwindow-cpp.html
 share/doc/qt4/html/richtext-calendar-mainwindow-h.html

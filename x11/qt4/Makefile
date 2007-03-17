@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2007/03/17 11:51:58 steven Exp $
+# $OpenBSD: Makefile,v 1.33 2007/03/17 17:58:16 espie Exp $
 
 COMMENT-main=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples for qt4"
@@ -11,27 +11,27 @@ COMMENT-sqlite=		"sqlite plugin for qt4"
 PKGNAME=		qt4-${VERSION}
 PKGNAME-mysql=		qt4-mysql-${VERSION}
 PKGNAME-postgresql=	qt4-postgresql-${VERSION}
-PKGNAME-examples=	qt4-examples-${VERSION}p0
+PKGNAME-examples=	qt4-examples-${VERSION}
 PKGNAME-sqlite2=	qt4-sqlite2-${VERSION}
 PKGNAME-sqlite=		qt4-sqlite-${VERSION}
-PKGNAME-main=		qt4-${VERSION}p4
+PKGNAME-main=		qt4-${VERSION}
 FULLPKGNAME-html=	qt4-html-${VERSION}
-SHARED_LIBS=	Qt3Support 6.1 \
-		QtCore 6.1 \
+SHARED_LIBS=	Qt3Support 6.2 \
+		QtCore 6.2 \
 		QtDesigner 6.1 \
 		QtDesignerComponents 6.1 \
-		QtGui 6.2 \
-		QtNetwork 6.1 \
-		QtOpenGL 6.1 \
-		QtSql 6.1 \
+		QtGui 6.3 \
+		QtNetwork 6.2 \
+		QtOpenGL 6.2 \
+		QtSql 6.2 \
 		QtXml 6.1 \
-		QtSvg 6.1 \
+		QtSvg 6.2 \
 		QtTest 6.1 \
 		QtAssistantClient 2.1 \
 		QtDBus 0.1 
 
 
-VERSION=	4.2.2
+VERSION=	4.2.3
 DISTNAME=	qt-x11-opensource-src-${VERSION}
 
 
@@ -123,7 +123,7 @@ PROGRAMS+=	qtdemo pixeltool
 .endif
 
 
-LIB_DEPENDS=		glib-2.0::devel/glib2
+LIB_DEPENDS=		glib-2.0,gthread-2.0::devel/glib2
 WANTLIB=		iconv intl
 
 commonWANTLIB=		ICE Xrender c GLU SM freetype pthread Xrandr Xinerama \
