@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/01 12:32:38 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/03/17 14:04:16 kili Exp $
 bin/epdfview
 share/applications/
 share/applications/epdfview.desktop
@@ -17,6 +17,10 @@ share/epdfview/ui/epdfview-ui-print.xml
 share/epdfview/ui/epdfview-ui.xml
 share/locale/ca/LC_MESSAGES/epdfview.mo
 share/locale/de/LC_MESSAGES/epdfview.mo
+share/locale/el/LC_MESSAGES/epdfview.mo
 share/locale/es/LC_MESSAGES/epdfview.mo
 share/locale/fr/LC_MESSAGES/epdfview.mo
+share/locale/pl/LC_MESSAGES/epdfview.mo
+share/locale/ru/LC_MESSAGES/epdfview.mo
 share/locale/vi/LC_MESSAGES/epdfview.mo
+share/locale/zh_TW/LC_MESSAGES/epdfview.mo
