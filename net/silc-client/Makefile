@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2006/10/03 18:34:50 brad Exp $
+# $OpenBSD: Makefile,v 1.37 2007/03/17 03:13:41 deanna Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"Secure Internet Live Conferencing (SILC) client"
 
 DISTNAME=	silc-client-1.0.3
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.silcnet.org/
