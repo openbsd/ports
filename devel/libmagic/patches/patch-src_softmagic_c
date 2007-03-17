@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_softmagic_c,v 1.1 2007/03/17 21:43:20 jolan Exp $
+--- src/softmagic.c.orig	Sun Mar  4 21:19:20 2007
++++ src/softmagic.c	Sun Mar  4 21:21:18 2007
+@@ -314,21 +314,26 @@ check_fmt(struct magic_set *ms, struct m
+ 
+ #ifndef HAVE_STRNDUP
+ char * strndup(const char *, size_t);
++size_t strnlen (const char *, size_t);
+ 
++size_t
++strnlen (const char *string, size_t maxlen)
++{
++  const char *end = memchr (string, '\0', maxlen);
++  return end ? (size_t) (end - string) : maxlen;
++}
++
+ char *
+ strndup(const char *str, size_t n)
+ {
+-	size_t len;
+-	char *copy;
++	size_t len = strnlen (str, n);
++	char *copy = malloc (len + 1);
+ 
+-	len = strlen(str);
+-	if (len > n)
+-		len = n;
+-	if (!(copy = malloc(len + 1)))
+-		return (NULL);
+-	(void) memcpy(copy, str, len + 1);
++	if (copy == NULL)
++		return NULL;
++
+ 	copy[len] = '\0';
+-	return (copy);
++	return memcpy (copy, str, len); 
+ }
+ #endif /* HAVE_STRNDUP */
+ 
