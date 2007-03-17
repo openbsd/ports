@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/25 13:40:28 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2007/03/17 16:54:26 simon Exp $
 
 COMMENT= 	"session framework for catalyst"
 
 MODULES=	cpan
-DISTNAME=	Catalyst-Plugin-Session-0.13
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Catalyst-Plugin-Session-0.14
 CATEGORIES=	www
 
 MAINTAINER=	Simon Dassow <simon@openbsd.org>
