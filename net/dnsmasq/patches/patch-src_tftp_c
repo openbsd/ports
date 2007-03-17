@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_tftp_c,v 1.1 2007/03/17 21:55:54 jolan Exp $
+--- src/tftp.c.orig	Sun Mar  4 15:26:58 2007
++++ src/tftp.c	Sun Mar  4 15:27:38 2007
+@@ -432,7 +432,7 @@ static ssize_t tftp_err(int err, char *p
+ {
+   struct errmess {
+     unsigned short op, err;
+-    char message[];
++    char *message;
+   } *mess = (struct errmess *)packet;
+   ssize_t ret = 4;
+   char *errstr = strerror(errno);
+@@ -460,7 +460,7 @@ static ssize_t get_block(char *packet, s
+       char *p;
+       struct oackmess {
+ 	unsigned short op;
+-	char data[];
++	char *data;
+       } *mess = (struct oackmess *)packet;
+       
+       p = mess->data;
+@@ -483,7 +483,7 @@ static ssize_t get_block(char *packet, s
+       /* send data packet */
+       struct datamess {
+ 	unsigned short op, block;
+-	unsigned char data[];
++	unsigned char *data;
+       } *mess = (struct datamess *)packet;
+       
+       off_t offset = transfer->blocksize * (transfer->block - 1);
