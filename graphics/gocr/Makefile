@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/20 19:49:51 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/03/17 22:03:30 espie Exp $
 
 COMMENT-main=	"OCR software"
 COMMENT-gui=	"gocr tcl/tk frontend"
 
-V=		0.41
+V=		0.44
 DISTNAME=	gocr-$V
 
-PKGNAME-main=	gocr-$Vp0
+PKGNAME-main=	gocr-$V
 PKGNAME-gui=	gocr-gui-$V
 
 CATEGORIES=	graphics
@@ -23,7 +23,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_REGRESS=	Yes
-PATCHFILES+=	gocr-0.41-pgm.patch
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-netpbm=${PREFIX}
