@@ -1,8 +1,25 @@
-$OpenBSD: patch-tests_Makefile_in,v 1.1 2006/10/15 22:43:49 ckuethe Exp $
---- tests/Makefile.in.orig	Mon Oct  9 20:55:23 2006
-+++ tests/Makefile.in	Mon Oct  9 21:01:46 2006
-@@ -127,7 +127,7 @@ LIBGPOD_LIBS = @LIBGPOD_LIBS@
- LIBGPOD_REVISION = @LIBGPOD_REVISION@
+$OpenBSD: patch-tests_Makefile_in,v 1.2 2007/03/17 21:54:16 ckuethe Exp $
+--- tests/Makefile.in.orig	Mon Jan 15 08:46:06 2007
++++ tests/Makefile.in	Tue Mar 13 14:49:11 2007
+@@ -94,8 +94,7 @@ LTCOMPILE = $(LIBTOOL) --tag=CC --mode=c
+ 	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
+ 	$(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+-LINK = $(LIBTOOL) --tag=CC --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+-	$(AM_LDFLAGS) $(LDFLAGS) -o $@
++LINK = $(LIBTOOL) --tag=CC --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) -o $@
+ CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+ 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
+ LTCXXCOMPILE = $(LIBTOOL) --tag=CXX --mode=compile $(CXX) $(DEFS) \
+@@ -199,13 +198,13 @@ INTLTOOL_XAM_RULE = @INTLTOOL_XAM_RULE@
+ INTLTOOL_XGETTEXT = @INTLTOOL_XGETTEXT@
+ INTLTOOL_XML_NOMERGE_RULE = @INTLTOOL_XML_NOMERGE_RULE@
+ INTLTOOL_XML_RULE = @INTLTOOL_XML_RULE@
+-LDFLAGS = @LDFLAGS@
++LDFLAGS = -L$(top_builddir)/src @LDFLAGS@
+ LIBGPOD_CFLAGS = @LIBGPOD_CFLAGS@
+ LIBGPOD_LIBS = @LIBGPOD_LIBS@
+ LIBGPOD_SO_VERSION = @LIBGPOD_SO_VERSION@
  LIBGPOD_VERSION = @LIBGPOD_VERSION@
  LIBOBJS = @LIBOBJS@
 -LIBS = $(LIBGPOD_LIBS) $(top_builddir)/src/libgpod.la
@@ -10,13 +27,3 @@ $OpenBSD: patch-tests_Makefile_in,v 1.1 2006/10/15 22:43:49 ckuethe Exp $
  LIBTOOL = @LIBTOOL@
  LN_S = @LN_S@
  LTLIBOBJS = @LTLIBOBJS@
-@@ -338,8 +338,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUD
- LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) \
- 	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
- CCLD = $(CC)
--LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
--	$(AM_LDFLAGS) $(LDFLAGS) -o $@
-+LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) -o $@
- CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
- 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
- LTCXXCOMPILE = $(LIBTOOL) --mode=compile $(CXX) $(DEFS) \
