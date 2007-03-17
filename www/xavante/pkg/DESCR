@@ -1,2 +1,0 @@
-Xavante is a Lua Web server that handles HTTP 1.1 requests and uses
-CGILua 5.0 as the native template engine.
