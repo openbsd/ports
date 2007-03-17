@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_test_Makefile_in,v 1.1 2007/03/17 20:41:01 kili Exp $
+--- src/test/Makefile.in.orig	Fri Mar 16 10:04:31 2007
++++ src/test/Makefile.in	Sat Mar 17 18:48:05 2007
+@@ -204,10 +204,7 @@ target_alias = @target_alias@
+ target_test = test
+ AM_CXXFLAGS = $(LIBWPD_CXXFLAGS) $(DEBUG_CXXFLAGS) -I$(top_srcdir)/src/lib/
+ test_LDFLAGS = -L../lib/ `cppunit-config --libs`
+-test_LDADD = \
+-	-lwpd-@WPD_MAJOR_VERSION@.@WPD_MINOR_VERSION@ \
+-	-lwpd-stream-@WPD_MAJOR_VERSION@.@WPD_MINOR_VERSION@ \
+-	$(LIBWPD_LIBS) 
++test_LDADD = -lwpd -lwpd-stream $(LIBWPD_LIBS) 
+ 
+ test_SOURCES = \
+ 	test.cpp

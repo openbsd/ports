@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_lib_Makefile_in,v 1.1 2006/11/11 14:39:10 robert Exp $
---- src/lib/Makefile.in.orig	Mon Oct  9 06:00:16 2006
-+++ src/lib/Makefile.in	Fri Nov 10 15:40:29 2006
+$OpenBSD: patch-src_lib_Makefile_in,v 1.2 2007/03/17 20:41:01 kili Exp $
+--- src/lib/Makefile.in.orig	Fri Mar 16 10:04:31 2007
++++ src/lib/Makefile.in	Sat Mar 17 18:25:35 2007
 @@ -38,8 +38,8 @@ POST_UNINSTALL = :
  build_triplet = @build@
  host_triplet = @host@
@@ -28,9 +28,9 @@ $OpenBSD: patch-src_lib_Makefile_in,v 1.1 2006/11/11 14:39:10 robert Exp $
  	WP1ContentListener.lo WP1ExtendedCharacterGroup.lo \
  	WP1FileStructure.lo WP1FixedLengthGroup.lo \
 @@ -124,14 +124,14 @@ am_libwpd_0_8_la_OBJECTS = libwpd_intern
- 	WPXPart.lo WPXProperty.lo WPXPropertyList.lo \
- 	WPXPropertyListVector.lo WPXString.lo WPXStylesListener.lo \
- 	WPXSubDocument.lo WPXTable.lo
+ 	WPXProperty.lo WPXPropertyList.lo WPXPropertyListVector.lo \
+ 	WPXString.lo WPXStylesListener.lo WPXSubDocument.lo \
+ 	WPXTable.lo
 -libwpd_0_8_la_OBJECTS = $(am_libwpd_0_8_la_OBJECTS)
 +libwpd_la_OBJECTS = $(am_libwpd_la_OBJECTS)
  am__DEPENDENCIES_1 =
@@ -97,7 +97,7 @@ $OpenBSD: patch-src_lib_Makefile_in,v 1.1 2006/11/11 14:39:10 robert Exp $
  	libwpd_internal.cpp \
  	libwpd_math.cpp \
  	WP1BottomMarginGroup.cpp \
-@@ -620,12 +620,12 @@ libwpd_0_8_la_SOURCES = \
+@@ -618,12 +618,12 @@ libwpd_0_8_la_SOURCES = \
  
  libwpd_stream_headers = GSFStream.h
  libwpd_stream_sources = GSFStream.cpp
@@ -116,7 +116,7 @@ $OpenBSD: patch-src_lib_Makefile_in,v 1.1 2006/11/11 14:39:10 robert Exp $
  
  # Include the GSFStream.* in case we build a tarball without stream
  EXTRA_DIST = \
-@@ -705,10 +705,10 @@ clean-libLTLIBRARIES:
+@@ -703,10 +703,10 @@ clean-libLTLIBRARIES:
  	  echo "rm -f \"$${dir}/so_locations\""; \
  	  rm -f "$${dir}/so_locations"; \
  	done
@@ -131,7 +131,7 @@ $OpenBSD: patch-src_lib_Makefile_in,v 1.1 2006/11/11 14:39:10 robert Exp $
  
  mostlyclean-compile:
  	-rm -f *.$(OBJEXT)
-@@ -897,39 +897,39 @@ clean-libtool:
+@@ -894,39 +894,39 @@ clean-libtool:
  distclean-libtool:
  	-rm -f libtool
  uninstall-info-am:
@@ -189,7 +189,7 @@ $OpenBSD: patch-src_lib_Makefile_in,v 1.1 2006/11/11 14:39:10 robert Exp $
  	done
  
  ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
-@@ -1011,7 +1011,7 @@ check-am: all-am
+@@ -1008,7 +1008,7 @@ check-am: all-am
  check: check-am
  all-am: Makefile $(LTLIBRARIES) $(HEADERS)
  installdirs:
@@ -198,7 +198,7 @@ $OpenBSD: patch-src_lib_Makefile_in,v 1.1 2006/11/11 14:39:10 robert Exp $
  	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
  	done
  install: install-am
-@@ -1059,8 +1059,8 @@ info: info-am
+@@ -1056,8 +1056,8 @@ info: info-am
  
  info-am:
  
@@ -209,7 +209,7 @@ $OpenBSD: patch-src_lib_Makefile_in,v 1.1 2006/11/11 14:39:10 robert Exp $
  
  install-exec-am: install-libLTLIBRARIES
  
-@@ -1089,8 +1089,8 @@ ps: ps-am
+@@ -1086,8 +1086,8 @@ ps: ps-am
  ps-am:
  
  uninstall-am: uninstall-info-am uninstall-libLTLIBRARIES \
@@ -220,7 +220,7 @@ $OpenBSD: patch-src_lib_Makefile_in,v 1.1 2006/11/11 14:39:10 robert Exp $
  
  .PHONY: CTAGS GTAGS all all-am check check-am clean clean-generic \
  	clean-libLTLIBRARIES clean-libtool ctags distclean \
-@@ -1099,15 +1099,15 @@ uninstall-am: uninstall-info-am uninstal
+@@ -1096,15 +1096,15 @@ uninstall-am: uninstall-info-am uninstal
  	install install-am install-data install-data-am \
  	install-data-local install-exec install-exec-am install-info \
  	install-info-am install-libLTLIBRARIES \
