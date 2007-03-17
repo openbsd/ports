@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.175 2007/01/18 21:48:00 steven Exp $
+# $OpenBSD: Makefile,v 1.176 2007/03/17 21:38:25 jolan Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -97,6 +97,7 @@
      SUBDIR += nmh
      SUBDIR += offlineimap
      SUBDIR += openwebmail
+     SUBDIR += osbf-lua
      SUBDIR += p5-Catalyst-Plugin-Email
      SUBDIR += p5-Email-Abstract
      SUBDIR += p5-Email-Address
