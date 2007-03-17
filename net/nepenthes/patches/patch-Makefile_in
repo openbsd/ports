@@ -1,22 +1,22 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2006/04/26 19:06:17 jolan Exp $
---- Makefile.in.orig	Wed Apr 26 18:47:56 2006
-+++ Makefile.in	Wed Apr 26 18:49:51 2006
-@@ -198,7 +198,7 @@ AUTOMAKE_OPTIONS = foreign
- SUBDIRS = nepenthes-core modules 
- #tools
- EXTRA_DIST = configure.ac CHANGES doc/README.VFS doc/logo-shaded.svg doc/nepenthes.8 conf/nepenthes.conf.dist
+$OpenBSD: patch-Makefile_in,v 1.3 2007/03/17 21:50:11 jolan Exp $
+--- Makefile.in.orig	Mon Nov 13 19:51:10 2006
++++ Makefile.in	Wed Nov 15 20:16:05 2006
+@@ -188,7 +188,7 @@ build_os = @build_os@
+ build_vendor = @build_vendor@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
 -docdir = $(prefix)/share/doc
 +docdir = $(prefix)/share/doc/nepenthes
- doc_DATA = doc/README.VFS doc/logo-shaded.svg
- 
- #sysconf_DATA = conf/nepenthes.conf.dist
-@@ -691,19 +691,9 @@ install-data-local:
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@
+@@ -711,21 +711,9 @@ install-data-local:
  	$(mkinstalldirs) $(DESTDIR)$(mandir)
  	$(mkinstalldirs) $(DESTDIR)$(mandir)/man8
  	$(INSTALL_DATA) $(srcdir)/doc/nepenthes.8 $(DESTDIR)$(mandir)/man8/nepenthes.8;
 -	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/cache
 -	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/cache/nepenthes
--	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/cache/nepenthes/geolocation
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/cache/nepenthes/pcap
 -	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/cache/nepenthes/signatures
  
 -	$(INSTALL_DATA) modules/shellcode-signatures/shellcode-signatures.sc $(DESTDIR)$(localstatedir)/cache/nepenthes/signatures
@@ -25,7 +25,9 @@ $OpenBSD: patch-Makefile_in,v 1.2 2006/04/26 19:06:17 jolan Exp $
 -	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/spool
 -	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/spool/nepenthes
 -	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/spool/nepenthes/gotek
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/spool/nepenthes/submitpostgres
 -	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/log
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/log/pcap
 -	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/binaries
 -	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/hexdumps
  # Tell versions [3.59,3.63) of GNU make to not export all variables.

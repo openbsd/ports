@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/04/26 19:06:17 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/03/17 21:50:11 jolan Exp $
 %%SHARED%%
 bin/nepenthes
 lib/nepenthes/
@@ -9,26 +9,24 @@ lib/nepenthes/downloadcurl.la
 lib/nepenthes/downloadftp.la
 lib/nepenthes/downloadhttp.la
 lib/nepenthes/downloadlink.la
-lib/nepenthes/downloadnepenthes.la
 lib/nepenthes/downloadrcp.la
 lib/nepenthes/downloadtftp.la
-lib/nepenthes/geolocationgeoip.la
-lib/nepenthes/geolocationhostip.la
-lib/nepenthes/geolocationip2location.la
 lib/nepenthes/logdownload.la
 lib/nepenthes/logirc.la
 lib/nepenthes/logprelude.la
 lib/nepenthes/logsurfnet.la
+lib/nepenthes/modulebridge.la
+lib/nepenthes/modulehoneytrap.la
+lib/nepenthes/modulepeiros.la
 lib/nepenthes/moduleportwatch.la
 lib/nepenthes/shellcodegeneric.la
 lib/nepenthes/shellcodesignatures.la
 lib/nepenthes/shellemuwinnt.la
+lib/nepenthes/sqlhandlerpostgres.la
 lib/nepenthes/submitfile.la
 lib/nepenthes/submitgotek.la
-lib/nepenthes/submitnepenthes.la
 lib/nepenthes/submitnorman.la
-lib/nepenthes/submitxmlrpc.la
-lib/nepenthes/uploadhttp.la
+lib/nepenthes/submitpostgres.la
 lib/nepenthes/vulnasn1.la
 lib/nepenthes/vulnbagle.la
 lib/nepenthes/vulndameware.la
@@ -45,6 +43,7 @@ lib/nepenthes/vulnnetbiosname.la
 lib/nepenthes/vulnnetdde.la
 lib/nepenthes/vulnoptix.la
 lib/nepenthes/vulnpnp.la
+lib/nepenthes/vulnrealvnc.la
 lib/nepenthes/vulnsasserftpd.la
 lib/nepenthes/vulnssh.la
 lib/nepenthes/vulnsub7.la
@@ -57,7 +56,7 @@ lib/nepenthes/x3.la
 lib/nepenthes/x4.la
 lib/nepenthes/x5.la
 lib/nepenthes/x6.la
-lib/nepenthes/x8.la
+lib/nepenthes/x9.la
 @man man/man8/nepenthes.8
 share/doc/nepenthes/
 share/doc/nepenthes/README.VFS
@@ -72,12 +71,8 @@ share/examples/nepenthes/download-ftp.conf
 @sample ${SYSCONFDIR}/nepenthes/download-ftp.conf
 share/examples/nepenthes/download-link.conf
 @sample ${SYSCONFDIR}/nepenthes/download-link.conf
-share/examples/nepenthes/download-nepenthes.conf
-@sample ${SYSCONFDIR}/nepenthes/download-nepenthes.conf
 share/examples/nepenthes/download-tftp.conf
 @sample ${SYSCONFDIR}/nepenthes/download-tftp.conf
-share/examples/nepenthes/geolocation-ip2location.conf
-@sample ${SYSCONFDIR}/nepenthes/geolocation-ip2location.conf
 share/examples/nepenthes/log-download.conf
 @sample ${SYSCONFDIR}/nepenthes/log-download.conf
 share/examples/nepenthes/log-irc.conf
@@ -86,6 +81,8 @@ share/examples/nepenthes/log-prelude.conf
 @sample ${SYSCONFDIR}/nepenthes/log-prelude.conf
 share/examples/nepenthes/log-surfnet.conf
 @sample ${SYSCONFDIR}/nepenthes/log-surfnet.conf
+share/examples/nepenthes/module-honeytrap.conf
+@sample ${SYSCONFDIR}/nepenthes/module-honeytrap.conf
 share/examples/nepenthes/module-portwatch.conf
 @sample ${SYSCONFDIR}/nepenthes/module-portwatch.conf
 share/examples/nepenthes/nepenthes.conf
@@ -97,12 +94,8 @@ share/examples/nepenthes/submit-file.conf
 @sample ${SYSCONFDIR}/nepenthes/submit-file.conf
 share/examples/nepenthes/submit-gotek.conf
 @sample ${SYSCONFDIR}/nepenthes/submit-gotek.conf
-share/examples/nepenthes/submit-nepenthes.conf
-@sample ${SYSCONFDIR}/nepenthes/submit-nepenthes.conf
 share/examples/nepenthes/submit-norman.conf
 @sample ${SYSCONFDIR}/nepenthes/submit-norman.conf
-share/examples/nepenthes/submit-xmlrpc.conf
-@sample ${SYSCONFDIR}/nepenthes/submit-xmlrpc.conf
 share/examples/nepenthes/vuln-asn1.conf
 @sample ${SYSCONFDIR}/nepenthes/vuln-asn1.conf
 share/examples/nepenthes/vuln-bagle.conf
@@ -149,7 +142,6 @@ share/examples/nepenthes/vuln-wins.conf
 @sample ${SYSCONFDIR}/nepenthes/vuln-wins.conf
 share/examples/nepenthes/x-2.conf
 @sample ${SYSCONFDIR}/nepenthes/x-2.conf
-@extraunexec rm -fr /var/nepenthes/
 @sample /var/nepenthes/
 @sample /var/nepenthes/binaries/
 @sample /var/nepenthes/cache/
@@ -163,3 +155,4 @@ share/examples/nepenthes/shellcode-signatures.sc
 @sample /var/nepenthes/spool/
 @sample /var/nepenthes/spool/nepenthes/
 @sample /var/nepenthes/spool/nepenthes/gotek/
+@extraunexec rm -fr /var/nepenthes/

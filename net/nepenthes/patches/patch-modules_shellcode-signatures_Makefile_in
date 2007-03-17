@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_shellcode-signatures_Makefile_in,v 1.1 2007/03/17 21:50:11 jolan Exp $
+--- modules/shellcode-signatures/Makefile.in.orig	Wed Nov 15 21:51:52 2006
++++ modules/shellcode-signatures/Makefile.in	Wed Nov 15 21:52:57 2006
+@@ -233,7 +233,7 @@ AUTOMAKE_OPTIONS = foreign
+ AM_CPPFLAGS = -I$(top_srcdir)/nepenthes-core/include -I$(top_srcdir)/nepenthes-core/src -pipe -D _GNU_SOURCE
+ AM_CXXFLAGS = -Wall -Werror
+ AM_CFLAGS = -Wall
+-AM_LDFLAGS = ${LIB_PCRE} @LEXLIB@ ${LIB_LIBY}
++AM_LDFLAGS = ${LIB_PCRE}
+ AM_YFLAGS = -d
+ pkglib_LTLIBRARIES = shellcodesignatures.la
+ shellcodesignatures_la_SOURCES = shellcode-signatures.sc \
