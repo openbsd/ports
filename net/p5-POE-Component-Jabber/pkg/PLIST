@@ -1,25 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/02 15:04:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/03/18 08:33:45 jasper Exp $
 ${P5SITE}/POE/Component/Jabber/
 ${P5SITE}/POE/Component/Jabber.pm
-${P5SITE}/POE/Component/Jabber/Client/
-${P5SITE}/POE/Component/Jabber/Client/Component.pm
-${P5SITE}/POE/Component/Jabber/Client/J2.pm
-${P5SITE}/POE/Component/Jabber/Client/Legacy.pm
-${P5SITE}/POE/Component/Jabber/Client/XMPP.pm
 ${P5SITE}/POE/Component/Jabber/Error.pm
-${P5SITE}/POE/Component/Jabber/Server/
-${P5SITE}/POE/Component/Jabber/Server.pm
-${P5SITE}/POE/Component/Jabber/Server/InputHandler.pm
-${P5SITE}/POE/Component/Jabber/Server/PresenceManager.pm
-${P5SITE}/POE/Component/Jabber/Server/RosterTable.pm
-${P5SITE}/POE/Component/Jabber/Server/RouteProcessor.pm
-${P5SITE}/POE/Component/Jabber/Server/RouteTable.pm
-${P5SITE}/POE/Component/Jabber/Server/SelfRouter.pm
-${P5SITE}/POE/Component/Jabber/Server/Socket.pm
-${P5SITE}/POE/Component/Jabber/Server/SocketServer.pm
+${P5SITE}/POE/Component/Jabber/J14.pm
+${P5SITE}/POE/Component/Jabber/J2.pm
+${P5SITE}/POE/Component/Jabber/Legacy.pm
+${P5SITE}/POE/Component/Jabber/Protocol.pm
+${P5SITE}/POE/Component/Jabber/ProtocolFactory.pm
+${P5SITE}/POE/Component/Jabber/Status.pm
+${P5SITE}/POE/Component/Jabber/XMPP.pm
 @man man/man3p/POE::Component::Jabber.3p
-@man man/man3p/POE::Component::Jabber::Client::Component.3p
-@man man/man3p/POE::Component::Jabber::Client::J2.3p
-@man man/man3p/POE::Component::Jabber::Client::Legacy.3p
-@man man/man3p/POE::Component::Jabber::Client::XMPP.3p
 @man man/man3p/POE::Component::Jabber::Error.3p
+@man man/man3p/POE::Component::Jabber::J14.3p
+@man man/man3p/POE::Component::Jabber::J2.3p
+@man man/man3p/POE::Component::Jabber::Legacy.3p
+@man man/man3p/POE::Component::Jabber::Protocol.3p
+@man man/man3p/POE::Component::Jabber::ProtocolFactory.3p
+@man man/man3p/POE::Component::Jabber::Status.3p
+@man man/man3p/POE::Component::Jabber::XMPP.3p

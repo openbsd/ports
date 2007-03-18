@@ -1,0 +1,21 @@
+$OpenBSD: patch-Build_PL,v 1.1 2007/03/18 08:33:45 jasper Exp $
+--- Build.PL.orig	Fri Jan 26 19:57:53 2007
++++ Build.PL	Sun Mar 18 00:35:09 2007
+@@ -23,16 +23,7 @@ my $prompt_hostname = 'Please enter the 
+ my $prompt_username = qq|Please enter the username the component will represent. \n| .
+ 	qq|(NOTE: only valid for JABBERD20)|;
+ my $prompt_secret = 'Please enter the secret that will be used to auth.';
+-my $ret;
+-
+-if (grep /^--default$/, @ARGV) {
+-	
+-	print $prompt, " [n] n\n\n";
+-
+-} else {
+-
+-	$ret = Module::Build->prompt($prompt, 'n');
+-}
++my $ret = 'n';
+ 
+ if($ret =~ /^y/i)
+ {	
