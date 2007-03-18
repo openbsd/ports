@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.483 2007/03/18 20:16:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.484 2007/03/18 20:21:59 simon Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -195,6 +195,7 @@
      SUBDIR += p5-BFD
      SUBDIR += p5-BSD-Resource
      SUBDIR += p5-BSD-stat
+     SUBDIR += p5-Benchmark-Timer
      SUBDIR += p5-Bit-Vector-Minimal
      SUBDIR += p5-C-Scan
      SUBDIR += p5-Cache-Cache
@@ -308,6 +309,7 @@
      SUBDIR += p5-File-Tail
      SUBDIR += p5-File-Type
      SUBDIR += p5-File-chdir
+     SUBDIR += p5-FileHandle-Unget
      SUBDIR += p5-Filter-Template
      SUBDIR += p5-FormValidator-Simple
      SUBDIR += p5-Fortran-Format
