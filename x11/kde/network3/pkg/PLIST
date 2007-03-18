@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2007/01/28 13:18:51 espie Exp $
+@comment $OpenBSD: PLIST,v 1.34 2007/03/18 23:33:00 espie Exp $
 @conflict sirc-*
 bin/dsirc
 bin/feedbrowser
@@ -7,7 +7,11 @@ bin/kget
 bin/knewstickerstub
 bin/kopete
 bin/kopete_latexconvert.sh
+@mode u+s
+@owner root
 bin/kppp
+@mode
+@owner
 bin/kppplogview
 bin/krdc
 bin/krfb
