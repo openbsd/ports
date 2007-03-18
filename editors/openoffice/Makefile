@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2007/03/17 15:27:44 robert Exp $
+# $OpenBSD: Makefile,v 1.49 2007/03/18 12:49:32 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -25,6 +25,7 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 HOMEPAGE=	http://www.openoffice.org/
 MASTER_SITES=	http://ftp.linux.cz/pub/localization/OpenOffice.org/devel/build/Sources/ \
+		http://humppa.hu/ooo/ \
 		ftp://sunsite.informatik.rwth-aachen.de/pub/mirror/OpenOffice/stable/${VERSION}/ \
 		ftp://ftp.tu-chemnitz.de/pub/openoffice/stable/${VERSION}/ \
 		ftp://ftp.nluug.nl/pub/office/openoffice/stable/${VERSION}/ \
