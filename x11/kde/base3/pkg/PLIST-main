@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/01/28 13:18:50 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2007/03/18 21:36:14 espie Exp $
 @conflict kdeartwork-<=3.4
 @conflict kdeedu-<3.4
 @pkgpath x11/kde/base3
+@newgroup _kdesud:583
 bin/appletproxy
 bin/drkonqi
 bin/extensionproxy
@@ -32,7 +33,11 @@ bin/kdeprintfax
 bin/kdesktop
 bin/kdesktop_lock
 bin/kdesu
+@mode g+s
+@group _kdesud
 bin/kdesud
+@mode
+@group
 bin/kdialog
 bin/kdm
 bin/kdm_config
