@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2006/08/02 10:10:35 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/03/18 17:31:52 espie Exp $
 
 DISTNAME=	cqcam-0.91
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	graphics
 
 PERMIT_PACKAGE_CDROM=	Yes

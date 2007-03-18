@@ -1,8 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/12/30 00:43:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/03/18 17:31:52 espie Exp $
 @conflict xawtv-*
+@mode u+s
+@owner root
 bin/cqcam
 bin/movify
 bin/webcam
+@mode
+@owner
 @man man/man1/cqcam.1
 @man man/man1/webcam.1
 share/doc/cqcam/
