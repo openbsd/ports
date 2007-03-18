@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/03/18 20:05:56 jasper Exp $
+bin/mimeopen
+bin/mimetype
+${P5SITE}/File/MimeInfo/
+${P5SITE}/File/MimeInfo.pm
+${P5SITE}/File/MimeInfo/Applications.pm
+${P5SITE}/File/MimeInfo/Cookbook.pod
+${P5SITE}/File/MimeInfo/Magic.pm
+${P5SITE}/File/MimeInfo/Rox.pm
+@man man/man1/mimeopen.1
+@man man/man1/mimetype.1
+@man man/man3p/File::MimeInfo.3p
+@man man/man3p/File::MimeInfo::Applications.3p
+@man man/man3p/File::MimeInfo::Cookbook.3p
+@man man/man3p/File::MimeInfo::Magic.3p
+@man man/man3p/File::MimeInfo::Rox.3p
