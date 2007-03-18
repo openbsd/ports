@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/03/18 20:17:10 simon Exp $
+${P5SITE}/Benchmark/
+${P5SITE}/Benchmark/Timer.pm
+@man man/man3p/Benchmark::Timer.3p
