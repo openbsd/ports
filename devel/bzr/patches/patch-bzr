@@ -1,0 +1,9 @@
+$OpenBSD: patch-bzr,v 1.1.1.1 2007/03/18 20:05:28 robert Exp $
+--- bzr.orig	Sun Mar 18 20:24:27 2007
++++ bzr	Sun Mar 18 20:24:42 2007
+@@ -1,4 +1,4 @@
+-#! /usr/bin/env python
++#! /usr/bin/env python2.4
+ 
+ # Copyright (C) 2005, 2006 Canonical Ltd
+ #

@@ -1,0 +1,12 @@
+$OpenBSD: patch-bzrlib_diff_py,v 1.1.1.1 2007/03/18 20:05:28 robert Exp $
+--- bzrlib/diff.py.orig	Sun Mar 18 20:30:35 2007
++++ bzrlib/diff.py	Sun Mar 18 20:31:07 2007
+@@ -165,7 +165,7 @@ def external_diff(old_filename, oldlines
+ 
+         if not diff_opts:
+             diff_opts = []
+-        diffcmd = ['diff',
++        diffcmd = ['gdiff',
+                    '--label', old_filename,
+                    old_abspath,
+                    '--label', new_filename,
