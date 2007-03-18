@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2005/11/03 00:52:45 cathcart Exp $
+@comment $OpenBSD: PLIST,v 1.9 2007/03/18 17:19:57 martynas Exp $
 @comment bin/opml2snow
 @comment bin/snow2opml
 bin/snownews
@@ -20,10 +20,6 @@ man/nl/man1/
 man/ru_RU.KOI8-R/
 man/ru_RU.KOI8-R/man1/
 @man man/ru_RU.KOI8-R/man1/snownews.1
-share/doc/snownews/
-share/doc/snownews/README
-share/doc/snownews/README.de
-share/doc/snownews/README.patching
 share/locale/de/LC_MESSAGES/snownews.mo
 share/locale/es/LC_MESSAGES/snownews.mo
 share/locale/fr/LC_MESSAGES/snownews.mo

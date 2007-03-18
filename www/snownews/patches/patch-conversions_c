@@ -1,6 +1,6 @@
-$OpenBSD: patch-conversions_c,v 1.5 2006/02/20 16:33:55 naddy Exp $
---- conversions.c.orig	Thu Feb 16 22:14:10 2006
-+++ conversions.c	Thu Feb 16 22:17:11 2006
+$OpenBSD: patch-conversions_c,v 1.6 2007/03/18 17:19:57 martynas Exp $
+--- conversions.c.orig	Sun Jun  5 12:50:22 2005
++++ conversions.c	Sun Mar 18 18:26:42 2007
 @@ -24,6 +24,7 @@
   *
   */
@@ -25,3 +25,28 @@ $OpenBSD: patch-conversions_c,v 1.5 2006/02/20 16:33:55 naddy Exp $
  #include "digcalc.h"
  
  extern struct entity *first_entity;
+@@ -64,17 +65,22 @@ char * iconvert (char * inbuf) {
+ 	iconv_t cd;							/* Iconvs conversion descriptor. */
+ 	char *outbuf, *outbuf_first;		/* We need two pointers so we do not lose
+ 	                                      the string starting position. */
++	char target_charset[64];
+ 	size_t inbytesleft, outbytesleft;
+ 
++	(void)strlcpy(target_charset, nl_langinfo(CODESET), sizeof(target_charset));
++
+ 	/* Take a shortcut. */
+-	if (strcasecmp (TARGET_CHARSET, "UTF-8") == 0)
++	if (strcasecmp (target_charset, "UTF-8") == 0)
+ 		return strdup(inbuf);
+ 	
+ 	inbytesleft = strlen(inbuf);
+ 	outbytesleft = strlen(inbuf);
+ 
++	(void)strlcat(target_charset, "//TRANSLIT", sizeof(target_charset));
++
+ 	/* cd = iconv_open(nl_langinfo(CODESET), "UTF-8"); */
+-	cd = iconv_open (TARGET_CHARSET, "UTF-8");
++	cd = iconv_open (target_charset, "UTF-8");
+ 	if (cd == (iconv_t) -1) {
+ 		return NULL;
+ 	}

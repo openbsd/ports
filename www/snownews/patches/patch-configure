@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2007/03/18 17:19:57 martynas Exp $
+--- configure.orig	Sun Jun  5 12:50:22 2005
++++ configure	Sun Mar 18 18:28:08 2007
+@@ -5,7 +5,7 @@ use strict;
+ 
+ # The defaults. Change here if you need.
+ my($prefix) = "/usr/local";
+-my($cflags) = '-Wall -Wno-format-y2k -O2 -DLOCALEPATH="\"$(LOCALEPATH)\"" -DOS=\"$(shell uname)\" `xml2-config --cflags` $(EXTRA_CFLAGS) ';
++my($cflags) = '-Wall -Wno-format-y2k -DLOCALEPATH="\"$(LOCALEPATH)\"" -DOS=\"$(shell uname)\" `xml2-config --cflags` $(EXTRA_CFLAGS) ';
+ my($ldflags) = '-lncurses `xml2-config --libs` $(EXTRA_LDFLAGS) ';
+ 
+ parse_cmdl_line();
