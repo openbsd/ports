@@ -1,0 +1,12 @@
+$OpenBSD: patch-m4_mkdirp_m4,v 1.1 2007/03/18 21:43:50 matthieu Exp $
+--- m4/mkdirp.m4.orig	Sun Mar 18 18:49:45 2007
++++ m4/mkdirp.m4	Sun Mar 18 19:56:06 2007
+@@ -57,7 +57,7 @@
+   if test -f "$ac_aux_dir/mkinstalldirs"; then
+     mkdir_p='$(mkinstalldirs)'
+   else
+-    mkdir_p='$(install_sh) -d'
++    mkdir_p='$(SHELL) $(install_sh) -d'
+   fi
+ fi
+ AC_SUBST([mkdir_p])])

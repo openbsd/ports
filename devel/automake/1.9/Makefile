@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/24 17:35:32 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2007/03/18 21:43:50 matthieu Exp $
 
 COMMENT=	"GNU standards-compliant Makefile generator"
 
 VERSION=	1.9
 DISTNAME=	automake-${VERSION}.6
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=automake/}
@@ -42,6 +42,10 @@ REGRESS_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 
 TESTS_ENVIRONMENT=	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			MAKE=${GMAKE}
+
+post-patch:
+	touch ${WRKSRC}/aclocal.m4
+	touch ${WRKSRC}/Makefile.in
 
 do-regress:
 	    @cd ${WRKBUILD} && \
