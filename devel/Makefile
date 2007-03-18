@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.481 2007/03/17 18:46:26 pedro Exp $
+# $OpenBSD: Makefile,v 1.482 2007/03/18 20:10:10 robert Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -24,6 +24,7 @@
      SUBDIR += bluetooth-libs
      SUBDIR += boehm-gc
      SUBDIR += boost
+     SUBDIR += bzr
      SUBDIR += c2hs
      SUBDIR += catalyst
      SUBDIR += catalyst-tutorial
