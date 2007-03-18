@@ -1,0 +1,8 @@
+$OpenBSD: patch-amarok_src_contextbrowser_cpp,v 1.1 2007/03/18 11:11:26 espie Exp $
+--- amarok/src/contextbrowser.cpp.orig	Sun Mar 18 11:46:26 2007
++++ amarok/src/contextbrowser.cpp	Sun Mar 18 11:46:34 2007
+@@ -4426,3 +4426,4 @@ ContextBrowser::expandURL( const KURL &url )
+ 
+ 
+ #include "contextbrowser.moc"
++#undef e

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2006/12/18 16:05:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/03/18 11:11:26 espie Exp $
 bin/amarok
 bin/amarok_daapserver.rb
 bin/amarok_proxy.rb
@@ -16,6 +16,8 @@ ${KDE}/libamarok_massstorage-device.la
 ${KDE}/libamarok_massstorage-device.so
 ${KDE}/libamarok_nfs-device.la
 ${KDE}/libamarok_nfs-device.so
+${KDE}/libamarok_njb-mediadevice.la
+${KDE}/libamarok_njb-mediadevice.so
 ${KDE}/libamarok_smb-device.la
 ${KDE}/libamarok_smb-device.so
 ${KDE}/libamarok_void-engine_plugin.la
@@ -40,7 +42,6 @@ share/apps/amarok/data/equalizer_presets.xml
 share/apps/amarok/data/firstrun.m3u
 share/apps/amarok/data/grid.png
 share/apps/amarok/data/magnatune_logo.png
-share/apps/amarok/data/magnatune_start_page.html
 share/apps/amarok/data/wirl1.png
 share/apps/amarok/data/wirl2.png
 share/apps/amarok/icons/
@@ -440,7 +441,6 @@ share/apps/amarok/images/currenttrack_repeat.png
 share/apps/amarok/images/currenttrack_repeat_small.png
 share/apps/amarok/images/currenttrack_stop.png
 share/apps/amarok/images/currenttrack_stop_small.png
-share/apps/amarok/images/description.png
 share/apps/amarok/images/eq_active2.png
 share/apps/amarok/images/eq_inactive2.png
 share/apps/amarok/images/lastfm.png
@@ -479,6 +479,7 @@ share/apps/amarok/ruby_lib/mongrel/configurator.rb
 share/apps/amarok/ruby_lib/mongrel/debug.rb
 share/apps/amarok/ruby_lib/mongrel/handlers.rb
 share/apps/amarok/ruby_lib/mongrel/init.rb
+share/apps/amarok/ruby_lib/mongrel/mime_types.yml
 share/apps/amarok/ruby_lib/mongrel/stats.rb
 share/apps/amarok/ruby_lib/mongrel/tcphack.rb
 share/apps/amarok/ruby_lib/rbconfig/
@@ -1024,14 +1025,10 @@ share/icons/hicolor/22x22/apps/amarok.png
 share/icons/hicolor/32x32/apps/amarok.png
 share/icons/hicolor/48x48/apps/amarok.png
 share/icons/hicolor/64x64/apps/amarok.png
-share/locale/af/
-share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/amarok.mo
 share/locale/ar/LC_MESSAGES/amarok.mo
 share/locale/az/LC_MESSAGES/amarok.mo
 share/locale/bg/LC_MESSAGES/amarok.mo
-share/locale/br/
-share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/amarok.mo
 share/locale/ca/LC_MESSAGES/amarok.mo
 share/locale/cs/LC_MESSAGES/amarok.mo
@@ -1042,6 +1039,7 @@ share/locale/el/LC_MESSAGES/amarok.mo
 share/locale/en_GB/LC_MESSAGES/amarok.mo
 share/locale/es/LC_MESSAGES/amarok.mo
 share/locale/et/LC_MESSAGES/amarok.mo
+share/locale/fa/LC_MESSAGES/amarok.mo
 share/locale/fi/LC_MESSAGES/amarok.mo
 share/locale/fr/LC_MESSAGES/amarok.mo
 share/locale/ga/LC_MESSAGES/amarok.mo
@@ -1069,6 +1067,9 @@ share/locale/pt_BR/LC_MESSAGES/amarok.mo
 share/locale/ro/LC_MESSAGES/amarok.mo
 share/locale/ru/LC_MESSAGES/amarok.mo
 share/locale/rw/LC_MESSAGES/amarok.mo
+share/locale/se/
+share/locale/se/LC_MESSAGES/
+share/locale/se/LC_MESSAGES/amarok.mo
 share/locale/sk/LC_MESSAGES/amarok.mo
 share/locale/sl/LC_MESSAGES/amarok.mo
 share/locale/sq/LC_MESSAGES/amarok.mo
@@ -1082,8 +1083,6 @@ share/locale/tg/LC_MESSAGES/amarok.mo
 share/locale/th/LC_MESSAGES/amarok.mo
 share/locale/tr/LC_MESSAGES/amarok.mo
 share/locale/uk/LC_MESSAGES/amarok.mo
-share/locale/uz/
-share/locale/uz/LC_MESSAGES/
 share/locale/uz/LC_MESSAGES/amarok.mo
 share/locale/zh_CN/LC_MESSAGES/amarok.mo
 share/locale/zh_TW/LC_MESSAGES/amarok.mo
@@ -1092,6 +1091,7 @@ share/services/amarok_generic-mediadevice.desktop
 share/services/amarok_ipod-mediadevice.desktop
 share/services/amarok_massstorage-device.desktop
 share/services/amarok_nfs-device.desktop
+share/services/amarok_njb-mediadevice.desktop
 share/services/amarok_smb-device.desktop
 share/services/amarok_void-engine_plugin.desktop
 share/services/amarok_xine-engine.desktop
