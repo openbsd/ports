@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.68 2007/01/12 14:01:08 mbalmer Exp $
+$OpenBSD: user.list,v 1.69 2007/03/18 17:12:16 espie Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -91,3 +91,4 @@ id  user		group		port options
 580 _puppet		_puppet		sysutils/ruby-puppet
 581 _gonzui		_gonzui		textproc/gonzui
 582 _tabled		_tabled		sysutils/tabled
+583			_kdesud		x11/kde/base3
