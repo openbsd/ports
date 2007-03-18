@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/25 15:17:52 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2007/03/18 10:43:57 simon Exp $
 
 COMMENT=	"turn search paths into subclasses/plugins"
 
 MODULES=	cpan
-DISTNAME=	Module-Pluggable-3.4
+DISTNAME=	Module-Pluggable-3.5
 CATEGORIES=	devel
 
 MAINTAINER=	Simon Dassow <simon@openbsd.org>
