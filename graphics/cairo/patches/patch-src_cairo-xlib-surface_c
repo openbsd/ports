@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_cairo-xlib-surface_c,v 1.3 2007/02/06 21:29:06 espie Exp $
+$OpenBSD: patch-src_cairo-xlib-surface_c,v 1.4 2007/03/18 14:48:45 kurt Exp $
 --- src/cairo-xlib-surface.c.orig	Thu Nov  2 23:53:40 2006
-+++ src/cairo-xlib-surface.c	Sun Feb  4 23:47:01 2007
++++ src/cairo-xlib-surface.c	Sat Mar 17 14:20:44 2007
 @@ -81,6 +81,8 @@ _cairo_xlib_surface_show_glyphs (void   
  
  #define CAIRO_ASSUME_PIXMAP	20
@@ -446,7 +446,7 @@ $OpenBSD: patch-src_cairo-xlib-surface_c,v 1.3 2007/02/06 21:29:06 espie Exp $
  
 +    case WORKAROUND_NONE:
 +	/* Default behaviour is supposed to work */
-+	stride = image->width * 4;
++	stride = image->stride;
 +	depth = image->depth;
 +	data = image->data;
 +	break;
