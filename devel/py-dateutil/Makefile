@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2006/06/03 09:37:09 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2007/03/19 02:06:38 djm Exp $
 
 COMMENT=	"Python API for advanced date calculations"
 
-VERSION=	1.0
-ZINFO=		2005k
+VERSION=	1.1
+ZINFO=		2005q
 DISTNAME=	python-dateutil-${VERSION}
-PKGNAME=	${DISTNAME:S/^python-/py-/}p0
+PKGNAME=	${DISTNAME:S/^python-/py-/}
 CATEGORIES=    	devel
 
-HOMEPAGE=	https://moin.conectiva.com.br/DateUtil
+HOMEPAGE=	http://labix.org/python-dateutil
 
 MAINTAINER=	Damien Miller <djm@openbsd.org>
 
@@ -20,11 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-# File is mirrored from original site (below) because it is hosted on an 
-# SSL server with a busted certificate
-# https://moin.conectiva.com.br/DateUtil?action=AttachFile&do=get&target=python-dateutil-${VERSION}
-
-MASTER_SITES=	http://www2.mindrot.org/files/
+MASTER_SITES=	http://labix.org/download/python-dateutil/
 EXTRACT_SUFX=	.tar.bz2
 
 post-install:
