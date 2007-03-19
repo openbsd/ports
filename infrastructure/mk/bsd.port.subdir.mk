@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.81 2006/12/18 12:52:34 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.82 2007/03/19 21:32:35 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -133,7 +133,7 @@ clean:
 	@${_subdir_fragment}
 .endif
 .if defined(clean) && ${clean:L:Mreadmes}
-	rm -f ${README_TOPS}/${PKGPATH}/README.html
+	rm -f ${READMES_TOP}/${PKGPATH}/README.html
 .endif
 
 readmes:
@@ -149,11 +149,11 @@ ${READMES_TOP}/${PKGPATH}/README.html:
 .for d in ${_FULLSUBDIR}
 	@subdir=$d; DESCRIBE_TARGET=yes; export DESCRIBE_TARGET; \
 	${_flavor_fragment}; \
-	name=`eval $$toset ${MAKE} _print-packagename`; \
-	case $$name in \
-		README) comment='';; \
-		*) comment=`eval $$toset ${MAKE} show=_COMMENT|sed -e 's,^",,' -e 's,"$$,,' |${HTMLIFY}`;; \
-	esac; \
+	if name=`eval $$toset ${MAKE} _print-packagename`; then \
+		comment=`eval $$toset ${MAKE} show=_COMMENT|sed -e 's,^",,' -e 's,"$$,,' |${HTMLIFY}`; \
+	else \
+		comment=''; \
+	fi; \
 	cd ${.CURDIR}; \
 	echo "<dt><a href=\"${PKGDEPTH}$$dir/$$name.html\">$d</a><dd>$$comment" >>${TMPDIR}/subdirs
 .endfor
@@ -163,9 +163,6 @@ ${READMES_TOP}/${PKGPATH}/README.html:
 		${README} > $@
 	@rm ${TMPDIR}/subdirs
 
-_print-packagename:
-	@echo "README"
-
 .PHONY: all fetch package fake extract configure \
 	build describe distclean deinstall install update \
 	reinstall checksum show verbose-show dump-vars fetch-makefile \
@@ -173,4 +170,4 @@ _print-packagename:
 	newlib-depends-check \
 	homepage-links manpages-check license-check \
 	all-dir-depends build-dir-depends run-dir-depends regress-dir-depends \
-	clean readmes _print-packagename print-package-signature
+	clean readmes print-package-signature
