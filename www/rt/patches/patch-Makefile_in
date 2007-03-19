@@ -1,0 +1,91 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/03/19 23:42:21 msf Exp $
+--- Makefile.in.orig	Tue Jun 20 07:44:04 2006
++++ Makefile.in	Mon Dec 11 00:23:31 2006
+@@ -51,7 +51,12 @@
+ 
+ PERL			= 	@PERL@
+ 
+-CONFIG_FILE_PATH	=	@CONFIG_FILE_PATH@
++INSTALL			=	@INSTALL@
++INSTALL_DATA		=	@INSTALL_DATA@
++INSTALL_DATA_DIR	= 	@INSTALL_DATA_DIR@
++INSTALL_SCRIPT		=	@INSTALL_SCRIPT@
++
++CONFIG_FILE_PATH	=	@prefix@/share/examples/rt3
+ CONFIG_FILE		= 	$(CONFIG_FILE_PATH)/RT_Config.pm
+ SITE_CONFIG_FILE		= 	$(CONFIG_FILE_PATH)/RT_SiteConfig.pm
+ 
+@@ -275,13 +280,13 @@ fixperms:
+ 	chmod $(RT_READABLE_DIR_MODE) $(DESTDIR)/$(RT_BIN_PATH)
+ 	chmod $(RT_READABLE_DIR_MODE) $(DESTDIR)/$(RT_BIN_PATH)	
+ 
+-	chmod 0755 $(DESTDIR)/$(RT_ETC_PATH)
+-	chmod 0500 $(DESTDIR)/$(RT_ETC_PATH)/*
++	chmod 0755 $(DESTDIR)/$(CONFIG_FILE_PATH)
++	chmod 0500 $(DESTDIR)/$(CONFIG_FILE_PATH)/*
+ 
+ 	#TODO: the config file should probably be able to have its
+ 	# owner set separately from the binaries.
+-	chown -R $(BIN_OWNER) $(DESTDIR)/$(RT_ETC_PATH)
+-	chgrp -R $(RTGROUP) $(DESTDIR)/$(RT_ETC_PATH)
++	chown -R $(BIN_OWNER) $(DESTDIR)/$(CONFIG_FILE_PATH)
++	chgrp -R $(RTGROUP) $(DESTDIR)/$(CONFIG_FILE_PATH)
+ 
+ 	chmod 0550 $(DESTDIR)/$(CONFIG_FILE)
+ 	chmod 0550 $(DESTDIR)/$(SITE_CONFIG_FILE)
+@@ -332,6 +337,7 @@ config-install:
+ 	mkdir -p $(DESTDIR)/$(CONFIG_FILE_PATH)	
+ 	-cp etc/RT_Config.pm $(DESTDIR)/$(CONFIG_FILE)
+ 	[ -f $(DESTDIR)/$(SITE_CONFIG_FILE) ] || cp etc/RT_SiteConfig.pm $(DESTDIR)/$(SITE_CONFIG_FILE) 
++	-cp -rp etc/upgrade $(DESTDIR)/$(CONFIG_FILE_PATH)
+ 
+ 	chgrp $(RTGROUP) $(DESTDIR)/$(CONFIG_FILE)
+ 	chown $(BIN_OWNER) $(DESTDIR)/$(CONFIG_FILE)
+@@ -383,7 +389,8 @@ insert-approval-data: 
+ # {{{ libs-install
+ libs-install: 
+ 	[ -d $(DESTDIR)/$(RT_LIB_PATH) ] || mkdir -p $(DESTDIR)/$(RT_LIB_PATH)
+-	-cp -rp lib/* $(DESTDIR)/$(RT_LIB_PATH)
++	-cp -rp lib/RT.pm $(DESTDIR)/$(RT_LIB_PATH)
++	-cp -rp lib/RT $(DESTDIR)/$(RT_LIB_PATH)
+ # }}}
+ 
+ # {{{ html-install
+@@ -397,18 +404,23 @@ doc-install:
+ 	# RT 3.0.0 - RT 3.0.2 would accidentally create a file instead of a dir
+ 	-[ -f $(DESTDIR)/$(RT_DOC_PATH) ] && rm $(DESTDIR)/$(RT_DOC_PATH) 
+ 	[ -d $(DESTDIR)/$(RT_DOC_PATH) ] || mkdir -p $(DESTDIR)/$(RT_DOC_PATH)
+-	-cp -rp ./README $(DESTDIR)/$(RT_DOC_PATH)
++	chown root:wheel ./README
++	-cp -rp ./README $(DESTDIR)/$(RT_DOC_PATH) 
+ # }}}
+ 
+ # {{{ etc-install
+ 
+ etc-install:
+-	mkdir -p $(DESTDIR)/$(RT_ETC_PATH)
++	mkdir -p $(DESTDIR)/$(CONFIG_FILE_PATH)
++	chown root:wheel \
++		 etc/acl.* \
++                 etc/initialdata \
++                 etc/schema.*
+ 	-cp -rp \
+ 		etc/acl.* \
+ 		etc/initialdata \
+ 		etc/schema.* \
+-		$(DESTDIR)/$(RT_ETC_PATH)
++		$(DESTDIR)/$(CONFIG_FILE_PATH)
+ # }}}
+ 
+ # {{{ sbin-install
+@@ -416,6 +428,10 @@ etc-install:
+ sbin-install:
+ 	mkdir -p $(DESTDIR)/$(RT_SBIN_PATH)
+ 	chmod +x \
++		sbin/rt-dump-database \
++		sbin/rt-setup-database \
++		sbin/rt-test-dependencies
++	chown root:bin \
+ 		sbin/rt-dump-database \
+ 		sbin/rt-setup-database \
+ 		sbin/rt-test-dependencies
