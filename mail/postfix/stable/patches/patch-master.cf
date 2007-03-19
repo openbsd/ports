@@ -1,7 +1,7 @@
-$OpenBSD: patch-master.cf,v 1.11 2006/07/17 08:52:13 jakob Exp $
+$OpenBSD: patch-master.cf,v 1.12 2007/03/19 23:55:59 ajacoutot Exp $
 
---- conf/master.cf.orig	Wed Nov  9 15:42:38 2005
-+++ conf/master.cf	Tue Nov 22 19:24:39 2005
+--- conf/master.cf.orig	Sat Mar 18 15:40:01 2006
++++ conf/master.cf	Tue Mar 20 00:49:39 2007
 @@ -6,41 +6,41 @@
  # service type  private unpriv  chroot  wakeup  maxproc command + args
  #               (yes)   (yes)   (yes)   (never) (100)
@@ -67,3 +67,17 @@ $OpenBSD: patch-master.cf,v 1.11 2006/07/17 08:52:13 jakob Exp $
  #
  # ====================================================================
  # Interfaces to non-Postfix software. Be sure to examine the manual
+@@ -60,11 +60,11 @@ maildrop  unix  -       n       n       
+ # The Cyrus deliver program has changed incompatibly, multiple times.
+ #
+ old-cyrus unix  -       n       n       -       -       pipe
+-  flags=R user=cyrus argv=/cyrus/bin/deliver -e -m ${extension} ${user}
++  flags=R user=_cyrus argv=/cyrus/bin/deliver -e -m ${extension} ${user}
+ # Cyrus 2.1.5 (Amos Gouaux)
+ # Also specify in main.cf: cyrus_destination_recipient_limit=1
+ cyrus     unix  -       n       n       -       -       pipe
+-  user=cyrus argv=/cyrus/bin/deliver -e -r ${sender} -m ${extension} ${user}
++  user=_cyrus argv=/cyrus/bin/deliver -e -r ${sender} -m ${extension} ${user}
+ #
+ # See the Postfix UUCP_README file for configuration details.
+ #
