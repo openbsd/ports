@@ -1,0 +1,42 @@
+@comment $OpenBSD: PLIST-utils,v 1.1.1.1 2007/03/19 23:13:23 robert Exp $
+@group daemon
+bin/pear
+bin/peardev
+bin/pecl
+share/doc/pear/
+share/doc/pear/Archive_Tar/
+share/doc/pear/Archive_Tar/docs/
+share/doc/pear/Archive_Tar/docs/Archive_Tar.txt
+share/doc/pear/PEAR/
+share/doc/pear/PEAR/INSTALL
+share/doc/pear/PEAR/README
+share/doc/pear/Structures_Graph/
+share/doc/pear/Structures_Graph/docs/
+share/doc/pear/Structures_Graph/docs/generate.sh
+share/doc/pear/Structures_Graph/docs/html/
+share/doc/pear/Structures_Graph/docs/html/Structures_Graph/
+share/doc/pear/Structures_Graph/docs/html/Structures_Graph/Structures_Graph.html
+share/doc/pear/Structures_Graph/docs/html/Structures_Graph/Structures_Graph_Manipulator_AcyclicTest.html
+share/doc/pear/Structures_Graph/docs/html/Structures_Graph/Structures_Graph_Manipulator_TopologicalSorter.html
+share/doc/pear/Structures_Graph/docs/html/Structures_Graph/Structures_Graph_Node.html
+share/doc/pear/Structures_Graph/docs/html/Structures_Graph/_Structures_Graph_Manipulator_AcyclicTest_php.html
+share/doc/pear/Structures_Graph/docs/html/Structures_Graph/_Structures_Graph_Manipulator_TopologicalSorter_php.html
+share/doc/pear/Structures_Graph/docs/html/Structures_Graph/_Structures_Graph_Node_php.html
+share/doc/pear/Structures_Graph/docs/html/Structures_Graph/_Structures_Graph_php.html
+share/doc/pear/Structures_Graph/docs/html/Structures_Graph/tutorial_Structures_Graph.pkg.html
+share/doc/pear/Structures_Graph/docs/html/classtrees_Structures_Graph.html
+share/doc/pear/Structures_Graph/docs/html/elementindex.html
+share/doc/pear/Structures_Graph/docs/html/elementindex_Structures_Graph.html
+share/doc/pear/Structures_Graph/docs/html/errors.html
+share/doc/pear/Structures_Graph/docs/html/index.html
+share/doc/pear/Structures_Graph/docs/html/li_Structures_Graph.html
+share/doc/pear/Structures_Graph/docs/html/media/
+share/doc/pear/Structures_Graph/docs/html/media/banner.css
+share/doc/pear/Structures_Graph/docs/html/media/stylesheet.css
+share/doc/pear/Structures_Graph/docs/html/packages.html
+share/doc/pear/Structures_Graph/docs/html/todolist.html
+share/doc/pear/Structures_Graph/docs/tutorials/
+share/doc/pear/Structures_Graph/docs/tutorials/Structures_Graph/
+share/doc/pear/Structures_Graph/docs/tutorials/Structures_Graph/Structures_Graph.pkg
+share/doc/pear/pear.conf
+@sample ${SYSCONFDIR}/pear.conf
