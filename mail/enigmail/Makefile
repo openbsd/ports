@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/21 21:41:44 kurt Exp $
+# $OpenBSD: Makefile,v 1.3 2007/03/19 22:15:16 martynas Exp $
+
+SHARED_ONLY=	Yes
 
 .if ${MACHINE_ARCH} == "sparc64"
 BROKEN=		"Thunderbird hangs when accessing items from the OpenPGP menu"
@@ -6,12 +8,11 @@ BROKEN=		"Thunderbird hangs when accessing items from the OpenPGP menu"
 
 COMMENT=	"GnuPG extension for Thunderbird"
 
-VER=		0.94.1
+VER=		0.94.3
 DISTNAME=	enigmail-${VER}
-PKGNAME=	enigmail-${VER}p0
 CATEGORIES=	mail security
 
-SHARED_LIBS=	enigmime	12.0
+SHARED_LIBS=	enigmime	12.1
 
 HOMEPAGE=	http://enigmail.mozdev.org/
 
@@ -28,7 +29,7 @@ BUILD_DEPENDS=	::${THUNDERBIRD_DIR}:configure \
 		::archivers/unzip
 RUN_DEPENDS=	::security/gnupg
 
-LIB_DEPENDS=	mozilla-thunderbird/xpcom,mozilla-thunderbird/xpcom_compat,mozilla-thunderbird/xpcom_core:mozilla-thunderbird-1.5.0.9:${THUNDERBIRD_DIR}
+LIB_DEPENDS=	mozilla-thunderbird/xpcom,mozilla-thunderbird/xpcom_compat,mozilla-thunderbird/xpcom_core:mozilla-thunderbird-1.5.0.10:${THUNDERBIRD_DIR}
 WANTLIB=	c m nspr4 plc4 plds4
 
 USE_X11=	Yes
