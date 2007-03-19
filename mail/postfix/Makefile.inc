@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.62 2006/11/20 19:57:34 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.63 2007/03/19 10:24:51 ajacoutot Exp $
 
 COMMENT=	"fast, secure sendmail replacement"
 
@@ -80,6 +80,10 @@ LIB_DEPENDS+=	lib/db4/db.=4:db-4.*:databases/db/v4
 MAKE_CCARGS+=	-I${LOCALBASE}/include/db4
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib/db4 -ldb
 .endif
+
+pre-configure:
+	@perl -pi -e 's,/cyrus/bin,${LOCALBASE}/libexec/cyrus-imapd,g' \
+		${WRKSRC}/conf/master.cf
 
 do-configure:
 	@cd ${WRKSRC}; ${MAKE_PROGRAM} makefiles \
