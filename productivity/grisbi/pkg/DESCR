@@ -1,0 +1,5 @@
+Grisbi is a personnal accounting application.  It can manage multiple
+accounts, currencies and users. It manages third party, expenditure and
+receipt categories, as well as budgetary lines, financial years, and
+other informations that makes it quite adapted for associations (except
+those that require double entry accounting).
