@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/03/19 10:50:16 ajacoutot Exp $
+@lib lib/libofx.so.${LIBofx_VERSION}
