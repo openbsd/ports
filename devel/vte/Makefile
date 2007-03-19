@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2006/12/16 12:47:40 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2007/03/19 09:48:44 espie Exp $
 
-COMMENT=		"terminal emulatation library"
+COMMENT=		"terminal emulation library"
 
 DISTNAME=		vte-0.11.12
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		devel
 SHARED_LIBS=		vte	8.0
 
