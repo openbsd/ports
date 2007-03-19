@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2007/03/19 12:23:42 ajacoutot Exp $
+--- configure.orig	Sat Jan 13 19:10:16 2007
++++ configure	Wed Jan 31 11:58:25 2007
+@@ -4626,7 +4626,7 @@ fi
+     OPTIMIZATION_CFLAGS=""
+   else
+     DEBUG_CFLAGS=""
+-    OPTIMIZATION_CFLAGS="-O3"
++    OPTIMIZATION_CFLAGS=""
+   fi
+ # Check whether --enable-profiling was given.
+ if test "${enable_profiling+set}" = set; then

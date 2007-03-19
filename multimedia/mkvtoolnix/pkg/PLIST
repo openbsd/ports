@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/03/19 12:23:42 ajacoutot Exp $
+bin/base64tool
+bin/mkvextract
+bin/mkvinfo
+bin/mkvmerge
+@man man/man1/base64tool.1
+@man man/man1/mkvextract.1
+@man man/man1/mkvinfo.1
+@man man/man1/mkvmerge.1
+share/mkvtoolnix/
+share/mkvtoolnix/images/
+share/mkvtoolnix/images/addingremovingattachments.gif
+share/mkvtoolnix/images/addremovefiles.gif
+share/mkvtoolnix/images/attachmentoptions.gif
+share/mkvtoolnix/images/audiotrackoptions.gif
+share/mkvtoolnix/images/chaptereditor.gif
+share/mkvtoolnix/images/generaltrackoptions.gif
+share/mkvtoolnix/images/jobmanager.gif
+share/mkvtoolnix/images/movietitle.gif
+share/mkvtoolnix/images/muxingwindow.gif
+share/mkvtoolnix/images/selectmkvmergeexecutable.gif
+share/mkvtoolnix/images/splitting.gif
+share/mkvtoolnix/images/textsubtitlestrackoptions.gif
+share/mkvtoolnix/images/trackselection.gif
+share/mkvtoolnix/images/videotrackoptions.gif
+share/mkvtoolnix/mkvmerge-gui.hhc
+share/mkvtoolnix/mkvmerge-gui.hhk
+share/mkvtoolnix/mkvmerge-gui.hhp
+share/mkvtoolnix/mkvmerge-gui.html
+!%%no_x11%%
