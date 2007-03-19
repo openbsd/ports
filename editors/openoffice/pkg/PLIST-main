@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2007/03/17 15:27:45 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2007/03/19 13:15:30 robert Exp $
 @pkgpath editors/openoffice
 %%SHARED%%
 bin/sbase
@@ -148,8 +148,6 @@ openoffice/help/main_transform.xsl
 openoffice/licenses/
 openoffice/licenses/LICENSE_en-US
 openoffice/licenses/LICENSE_en-US.html
-openoffice/licenses/LICENSE_fi
-openoffice/licenses/LICENSE_fi.html
 openoffice/presets/
 openoffice/presets/autotext/
 openoffice/presets/autotext/mytexts.bau

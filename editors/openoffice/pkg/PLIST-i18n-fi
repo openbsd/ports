@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-fi,v 1.2 2007/03/17 15:27:45 robert Exp $
+@comment $OpenBSD: PLIST-i18n-fi,v 1.3 2007/03/19 13:15:30 robert Exp $
 openoffice/help/fi/
 openoffice/help/fi/default.css
 openoffice/help/fi/err.html
@@ -126,6 +126,8 @@ openoffice/help/fi/swriter.idx/SCHEMA
 openoffice/help/fi/swriter.jar
 openoffice/help/fi/swriter.key
 openoffice/help/fi/swriter.tree
+openoffice/licenses/LICENSE_fi
+openoffice/licenses/LICENSE_fi.html
 openoffice/presets/config/arrowhd_en-US_fi.soe
 openoffice/presets/config/classic_en-US_fi.sog
 openoffice/presets/config/hatching_en-US_fi.soh

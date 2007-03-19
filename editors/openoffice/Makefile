@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2007/03/18 12:49:32 robert Exp $
+# $OpenBSD: Makefile,v 1.50 2007/03/19 13:15:30 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -6,9 +6,9 @@ COMMENT-main=	"a multi-platform productivity suite"
 COMMENT-kde=	"optional integration of OpenOffice to the KDE environment"
 COMMENT-java=	"optional integration of OpenOffice java features"
 
-VERSION=	2.2.0m12
+VERSION=	2.2.0m13
 DISTNAME=	OOo_${VERSION}
-WRKDIST=	${WRKDIR}/ooo_OOF680_m12_src
+WRKDIST=	${WRKDIR}/ooo_OOF680_m13_src
 PKGNAME=	openoffice-${VERSION}
 PKGNAME-main=	openoffice-${VERSION}
 PKGNAME-kde=	openoffice-kde-${VERSION}
@@ -40,7 +40,7 @@ MASTER_SITES0=	http://www.bsd.hu/~robert/ooo/ \
 #DISTFILES+=	${DISTNAME}_src_${dfile}.tar.bz2
 #.endfor
 
-DISTFILES=	OOo_OOF680_m12_source.tar.gz ooo-desktop.tar.gz:0
+DISTFILES=	OOo_OOF680_m13_source.tar.gz ooo-desktop.tar.gz:0
 
 DIST_SUBDIR=	openoffice
 
