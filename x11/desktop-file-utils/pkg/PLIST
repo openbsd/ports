@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/03/19 20:08:41 jasper Exp $
+bin/desktop-file-install
+bin/desktop-file-validate
+bin/update-desktop-database
