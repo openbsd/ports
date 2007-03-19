@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.8 2006/11/17 19:20:19 kurt Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.9 2007/03/19 22:02:38 martynas Exp $
 @lib mozilla-thunderbird/components/libaccessibility.so.${LIBaccessibility_VERSION}
 @lib mozilla-thunderbird/components/libappcomps.so.${LIBappcomps_VERSION}
 @lib mozilla-thunderbird/components/libauth.so.${LIBauth_VERSION}
@@ -51,6 +51,7 @@
 @lib mozilla-thunderbird/components/libxpcom_compat_c.so.${LIBxpcom_compat_c_VERSION}
 @lib mozilla-thunderbird/components/libxpconnect.so.${LIBxpconnect_VERSION}
 @lib mozilla-thunderbird/components/libxpinstall.so.${LIBxpinstall_VERSION}
+@lib mozilla-thunderbird/libfreebl3.so.${LIBfreebl3_VERSION}
 @lib mozilla-thunderbird/libgfxpsshar.so.${LIBgfxpsshar_VERSION}
 @lib mozilla-thunderbird/libgkgfx.so.${LIBgkgfx_VERSION}
 @lib mozilla-thunderbird/libgtkembedmoz.so.${LIBgtkembedmoz_VERSION}

@@ -1,23 +1,24 @@
-# $OpenBSD: Makefile,v 1.52 2007/02/22 00:40:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.53 2007/03/19 22:02:38 martynas Exp $
 
+SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
 COMMENT=	"redesign of the integrated Mozilla App-Suite mail component"
 
-VER=		1.5.0.9
+VER=		1.5.0.10
 DISTNAME=	mozilla
-PKGNAME=	mozilla-thunderbird-${VER}p1
-SO_VERSION=	12.0
+PKGNAME=	mozilla-thunderbird-${VER}
+SO_VERSION=	12.1
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues. Whenever PKGNAME gets
 # bumped and/or SO_VERSION changes, remember to update enigmail's
 # SO_VERSION and LIB_DEPENDS to match.
 
 .for _lib in accessibility appcomps auth autoconfig caps chrome commandlines \
-	composer docshell editor embedcomponents fileview gfx_gtk gfxps \
-	gfxpsshar gkgfx gklayout gtkembedmoz gtkxtbin htmlpars i18n imglib2 \
-	import jar50 jsd ldap50 mail mailcomps mork mozfind mozjs mozldap \
-	msgsmime myspell necko necko2 nsappshell nss3 nssckbi pipboot \
+	composer docshell editor embedcomponents fileview freebl3 gfx_gtk \
+	gfxps gfxpsshar gkgfx gklayout gtkembedmoz gtkxtbin htmlpars i18n \
+	imglib2 import jar50 jsd ldap50 mail mailcomps mork mozfind mozjs \
+	mozldap msgsmime myspell necko necko2 nsappshell nss3 nssckbi pipboot \
 	pipnss pippki pref prldap50 rdf remoteservice smime3 \
 	softokn3 spellchecker ssl3 system-pref toolkitcomps txmgr uconv \
 	universalchardet wallet walletviewers webbrwsr websrvcs widget_gtk2 \
@@ -91,7 +92,8 @@ MAKE_ENV=	MOZ_CO_PROJECT=mail \
 		LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
 		BUILD_OFFICIAL=1 \
 		MOZILLA_OFFICIAL=1 \
-		SO_VERSION="${SO_VERSION}"
+		SO_VERSION="${SO_VERSION}" \
+		NSPR_LIB_DIR="${LOCALBASE}/lib"
 CONFIGURE_ENV=	${MAKE_ENV} \
 		PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig"
 
