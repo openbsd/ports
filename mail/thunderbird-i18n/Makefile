@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2006/12/30 22:53:03 bernd Exp $
+# $OpenBSD: Makefile,v 1.9 2007/03/19 22:08:02 martynas Exp $
 
 COMMENT-main=	"${MAINLANG} language pack for Thunderbird"
-V=		1.5.0.9
+V=		1.5.0.10
 NAME=		thunderbird-i18n
 PKGNAME=	${NAME}-${MAINLANG}-${V}
-PKGNAME-main=	${NAME}-${MAINLANG}-${V}p0
+PKGNAME-main=	${NAME}-${MAINLANG}-${V}
 
 CATEGORIES=	mail
 
@@ -18,13 +18,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/${V}/linux-i686/xpi/ \
-		http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/${V}/linux-i686/xpi/
+MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${V}/linux-i686/xpi/
 
 # define one language for the main package
 MAINLANG=	en-GB
 OTHERLANGS=	bg ca cs da de el es-AR es-ES eu fi fr gu-IN \
-		he hu it ja nb-NO nl pl pt-BR ru sk sl sv-SE tr zh-CN
+		he hu it ja lt nb-NO nl pl pt-BR ru sk sl sv-SE tr zh-CN
 #		broken: ko mk pa-IN ro
 
 BUILD_DEPENDS=	:unzip-*:archivers/unzip
@@ -42,7 +41,7 @@ MULTI_PACKAGES=	-main
 .for i in ${OTHERLANGS}
 MULTI_PACKAGES+=-$i
 DISTFILES+=	$i.xpi
-PKGNAME-$i=	${NAME}-$i-${V}p0
+PKGNAME-$i=	${NAME}-$i-${V}
 COMMENT-$i=	$i language pack for Thunderbird
 LPACKDIR-$i=	${PREFIX}/mozilla-thunderbird/extensions/langpack-$i@thunderbird.mozilla.org
 .endfor
