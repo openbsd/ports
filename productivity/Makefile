@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2006/12/23 11:23:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2007/03/19 11:11:18 ajacoutot Exp $
 
      SUBDIR += bruce
      SUBDIR += devtodo
      SUBDIR += gnucash
+     SUBDIR += grisbi
      SUBDIR += gtimer
      SUBDIR += ledger
      SUBDIR += qhacc
