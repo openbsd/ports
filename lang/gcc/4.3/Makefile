@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/03/17 22:35:25 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/03/19 09:06:16 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN='adjust for types changes'
@@ -8,7 +8,7 @@ DATE=20070309
 FULL_VERSION=4.3-${DATE}
 FULL_PKGVERSION=4.3.${DATE}
 
-PKGNAME-main=  gcc-${FULL_PKGVERSION}
+PKGNAME-main=  gcc-${FULL_PKGVERSION}p0
 PKGNAME-c++ =  g++-${FULL_PKGVERSION}
 PKGNAME-estdc= libstdc++-${FULL_PKGVERSION}
 PKGNAME-g77=   g77-${FULL_PKGVERSION}
@@ -112,6 +112,7 @@ post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/adalib
 .endif
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/include
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/include-fixed
 CONFIGURE_ENV+=am_cv_func_iconv=no
 CONFIGURE_ENV+=ac_cv_prog_CONFIGURED_M4=/usr/bin/m4
 
