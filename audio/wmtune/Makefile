@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2004/11/21 17:51:47 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2007/03/19 09:55:51 espie Exp $
 
 COMMENT=	"premier dockable radio tuner"
 
 DISTNAME=	wmtune-1.1c
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	audio x11 x11/windowmaker
 
 HOMEPAGE=	http://www.soren.org/linux/wmtune/
