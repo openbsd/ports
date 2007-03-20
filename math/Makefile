@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2006/12/27 17:30:54 steven Exp $
+# $OpenBSD: Makefile,v 1.67 2007/03/20 11:36:29 espie Exp $
 #
 
      SUBDIR += R
@@ -13,6 +13,7 @@
      SUBDIR += cfitsio
      SUBDIR += coq
      SUBDIR += ecm
+     SUBDIR += eigen
      SUBDIR += fftw
      SUBDIR += fftw3
      SUBDIR += fftw3,float
