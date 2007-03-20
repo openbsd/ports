@@ -1,7 +1,7 @@
-$OpenBSD: patch-Source_cmTryRunCommand_cxx,v 1.2 2006/07/31 23:55:51 espie Exp $
---- Source/cmTryRunCommand.cxx.orig	Mon Jul 31 16:49:57 2006
-+++ Source/cmTryRunCommand.cxx	Tue Aug  1 00:32:19 2006
-@@ -140,11 +140,11 @@ bool cmTryRunCommand::InitialPass(std::v
+$OpenBSD: patch-Source_cmTryRunCommand_cxx,v 1.3 2007/03/20 11:23:10 espie Exp $
+--- Source/cmTryRunCommand.cxx.orig	Wed Jan 10 18:59:13 2007
++++ Source/cmTryRunCommand.cxx	Sun Mar 18 13:52:03 2007
+@@ -140,11 +140,11 @@ bool cmTryRunCommand::InitialPass(std::vector<std::str
        char retChar[1000];
        if(worked)
          {

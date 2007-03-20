@@ -1,6 +1,6 @@
-$OpenBSD: patch-Utilities_cmxmlrpc_xmlrpc_curl_transport_c,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
---- Utilities/cmxmlrpc/xmlrpc_curl_transport.c.orig	Wed May 17 15:48:56 2006
-+++ Utilities/cmxmlrpc/xmlrpc_curl_transport.c	Mon Jul  3 15:23:09 2006
+$OpenBSD: patch-Utilities_cmxmlrpc_xmlrpc_curl_transport_c,v 1.2 2007/03/20 11:23:10 espie Exp $
+--- Utilities/cmxmlrpc/xmlrpc_curl_transport.c.orig	Wed Jan 10 18:59:18 2007
++++ Utilities/cmxmlrpc/xmlrpc_curl_transport.c	Sun Mar 18 13:52:03 2007
 @@ -27,9 +27,9 @@
  #  include "xmlrpc_pthreads.h"
  #endif
@@ -14,7 +14,7 @@ $OpenBSD: patch-Utilities_cmxmlrpc_xmlrpc_curl_transport_c,v 1.1.1.1 2006/07/20 
  
  #ifndef WIN32
  #  include <unistd.h>
-@@ -290,11 +290,11 @@ setupCurlSession(xmlrpc_env *       cons
+@@ -290,11 +290,11 @@ setupCurlSession(xmlrpc_env *       const envP,
      proxy_type = 1;
      if (getenv("HTTP_PROXY_PORT") )
        {
@@ -28,7 +28,7 @@ $OpenBSD: patch-Utilities_cmxmlrpc_xmlrpc_curl_transport_c,v 1.1.1.1 2006/07/20 
        }
      if ( getenv("HTTP_PROXY_TYPE") )
        {
-@@ -314,12 +314,12 @@ setupCurlSession(xmlrpc_env *       cons
+@@ -314,12 +314,12 @@ setupCurlSession(xmlrpc_env *       const envP,
        }
      if ( getenv("HTTP_PROXY_USER") )
        {

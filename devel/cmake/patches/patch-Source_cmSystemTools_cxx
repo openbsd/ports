@@ -1,7 +1,7 @@
-$OpenBSD: patch-Source_cmSystemTools_cxx,v 1.3 2006/12/18 16:04:32 espie Exp $
---- Source/cmSystemTools.cxx.orig	Mon Dec  4 17:04:00 2006
-+++ Source/cmSystemTools.cxx	Sun Dec 17 11:07:03 2006
-@@ -1274,12 +1274,18 @@ public:
+$OpenBSD: patch-Source_cmSystemTools_cxx,v 1.4 2007/03/20 11:23:10 espie Exp $
+--- Source/cmSystemTools.cxx.orig	Wed Jan 10 18:59:13 2007
++++ Source/cmSystemTools.cxx	Sun Mar 18 13:52:03 2007
+@@ -1274,12 +1274,18 @@ class cmDeletingCharVector : public std::vector<char*>
      }
  };
  
@@ -22,7 +22,7 @@ $OpenBSD: patch-Source_cmSystemTools_cxx,v 1.3 2006/12/18 16:04:32 espie Exp $
    int ret = putenv(envVar);
    // save the pointer in the static vector so that it can
    // be deleted on exit
-@@ -1338,7 +1344,7 @@ std::string cmSystemTools::MakeXMLSafe(c
+@@ -1338,7 +1344,7 @@ std::string cmSystemTools::MakeXMLSafe(const char* str
           && ch != '\r' )
        {
        char buffer[33];
@@ -31,7 +31,7 @@ $OpenBSD: patch-Source_cmSystemTools_cxx,v 1.3 2006/12/18 16:04:32 espie Exp $
        //sprintf(buffer, "&#x%0x;", (unsigned int)ch);
        result.insert(result.end(), buffer, buffer+strlen(buffer));
        }
-@@ -1489,9 +1495,8 @@ bool cmSystemTools::CreateTar(const char
+@@ -1489,9 +1495,8 @@ bool cmSystemTools::CreateTar(const char* outFileName,
    };
  
    // Ok, this libtar is not const safe. for now use auto_ptr hack
@@ -42,7 +42,7 @@ $OpenBSD: patch-Source_cmSystemTools_cxx,v 1.3 2006/12/18 16:04:32 espie Exp $
    if (tar_open(&t, realName,
        (gzip? &gztype : NULL),
        O_WRONLY | O_CREAT, 0644,
-@@ -1561,9 +1566,8 @@ bool cmSystemTools::ExtractTar(const cha
+@@ -1561,9 +1566,8 @@ bool cmSystemTools::ExtractTar(const char* outFileName
    };
  
    // Ok, this libtar is not const safe. for now use auto_ptr hack
@@ -53,7 +53,7 @@ $OpenBSD: patch-Source_cmSystemTools_cxx,v 1.3 2006/12/18 16:04:32 espie Exp $
    if (tar_open(&t, realName,
        (gzip? &gztype : NULL),
        O_RDONLY
-@@ -1615,9 +1619,8 @@ bool cmSystemTools::ListTar(const char* 
+@@ -1615,9 +1619,8 @@ bool cmSystemTools::ListTar(const char* outFileName, 
    };
  
    // Ok, this libtar is not const safe. for now use auto_ptr hack

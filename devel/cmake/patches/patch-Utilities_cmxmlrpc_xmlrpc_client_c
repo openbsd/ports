@@ -1,7 +1,7 @@
-$OpenBSD: patch-Utilities_cmxmlrpc_xmlrpc_client_c,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
---- Utilities/cmxmlrpc/xmlrpc_client.c.orig	Mon Jul  3 15:18:04 2006
-+++ Utilities/cmxmlrpc/xmlrpc_client.c	Mon Jul  3 15:21:48 2006
-@@ -547,6 +547,7 @@ xmlrpc_server_info_new (xmlrpc_env * con
+$OpenBSD: patch-Utilities_cmxmlrpc_xmlrpc_client_c,v 1.2 2007/03/20 11:23:10 espie Exp $
+--- Utilities/cmxmlrpc/xmlrpc_client.c.orig	Wed Jan 10 18:59:18 2007
++++ Utilities/cmxmlrpc/xmlrpc_client.c	Sun Mar 18 13:52:03 2007
+@@ -547,6 +547,7 @@ xmlrpc_server_info_new (xmlrpc_env * const env,
  
      xmlrpc_server_info *server;
      char *url_copy;
@@ -9,7 +9,7 @@ $OpenBSD: patch-Utilities_cmxmlrpc_xmlrpc_client_c,v 1.1.1.1 2006/07/20 09:23:13
  
      /* Error-handling preconditions. */
      url_copy = NULL;
-@@ -559,12 +560,13 @@ xmlrpc_server_info_new (xmlrpc_env * con
+@@ -559,12 +560,13 @@ xmlrpc_server_info_new (xmlrpc_env * const env,
      XMLRPC_FAIL_IF_NULL(server, env, XMLRPC_INTERNAL_ERROR,
                          "Couldn't allocate memory for xmlrpc_server_info");
      memset(server, 0, sizeof(xmlrpc_server_info));
@@ -25,7 +25,7 @@ $OpenBSD: patch-Utilities_cmxmlrpc_xmlrpc_client_c,v 1.1.1.1 2006/07/20 09:23:13
      server->_server_url = url_copy;
      server->_http_basic_auth = NULL;
  
-@@ -584,6 +586,7 @@ xmlrpc_server_info * xmlrpc_server_info_
+@@ -584,6 +586,7 @@ xmlrpc_server_info * xmlrpc_server_info_copy(xmlrpc_en
  {
      xmlrpc_server_info *server;
      char *url_copy, *auth_copy;
@@ -33,7 +33,7 @@ $OpenBSD: patch-Utilities_cmxmlrpc_xmlrpc_client_c,v 1.1.1.1 2006/07/20 09:23:13
  
      XMLRPC_ASSERT_ENV_OK(env);
      XMLRPC_ASSERT_PTR_OK(aserver);
-@@ -596,17 +599,19 @@ xmlrpc_server_info * xmlrpc_server_info_
+@@ -596,17 +599,19 @@ xmlrpc_server_info * xmlrpc_server_info_copy(xmlrpc_en
      server = (xmlrpc_server_info*) malloc(sizeof(xmlrpc_server_info));
      XMLRPC_FAIL_IF_NULL(server, env, XMLRPC_INTERNAL_ERROR,
                          "Couldn't allocate memory for xmlrpc_server_info");
@@ -57,7 +57,7 @@ $OpenBSD: patch-Utilities_cmxmlrpc_xmlrpc_client_c,v 1.1.1.1 2006/07/20 09:23:13
      server->_http_basic_auth = auth_copy;
  
      cleanup:
-@@ -935,9 +940,7 @@ xmlrpc_server_info_set_basic_auth(xmlrpc
+@@ -935,9 +940,7 @@ xmlrpc_server_info_set_basic_auth(xmlrpc_env *        
      raw_token = (char*) malloc(raw_token_len + 1);
      XMLRPC_FAIL_IF_NULL(raw_token, envP, XMLRPC_INTERNAL_ERROR,
                          "Couldn't allocate memory for auth token");

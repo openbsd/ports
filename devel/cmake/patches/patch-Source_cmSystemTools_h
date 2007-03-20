@@ -1,7 +1,7 @@
-$OpenBSD: patch-Source_cmSystemTools_h,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
---- Source/cmSystemTools.h.orig	Mon Jul  3 12:38:46 2006
-+++ Source/cmSystemTools.h	Mon Jul  3 12:39:59 2006
-@@ -65,6 +65,10 @@ public:
+$OpenBSD: patch-Source_cmSystemTools_h,v 1.2 2007/03/20 11:23:10 espie Exp $
+--- Source/cmSystemTools.h.orig	Wed Jan 10 18:59:13 2007
++++ Source/cmSystemTools.h	Sun Mar 18 13:52:03 2007
+@@ -65,6 +65,10 @@ class cmSystemTools: public cmsys::SystemTools (public
     */
    static std::string RemoveEscapes(const char*);
    
