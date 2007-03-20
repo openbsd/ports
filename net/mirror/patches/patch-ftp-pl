@@ -1,9 +1,18 @@
 # $NetBSD: patch-ae,v 1.6 2000/04/20 03:22:50 kim Exp $
-# $OpenBSD: patch-ftp-pl,v 1.2 2007/03/20 00:35:52 pvalchev Exp $
+# $OpenBSD: patch-ftp-pl,v 1.3 2007/03/20 00:45:22 pvalchev Exp $
 
---- ftp.pl.orig	Fri Jun  5 03:10:27 1998
-+++ ftp.pl	Mon Mar 19 18:31:12 2007
-@@ -233,7 +233,7 @@ sub timed_open
+--- ftp.pl.orig	Mon Mar 19 18:42:57 2007
++++ ftp.pl	Mon Mar 19 18:43:02 2007
+@@ -162,6 +162,8 @@ $max_get_size = -1;
+ # Where I am connected to.
+ $connect_site = '';
+ 
++$try_epsv = 1;
++
+ # &ftp'debug( debugging_level )
+ # Turn on debugging ranging from 1 = some to 10 = everything
+ sub ftp'debug
+@@ -233,7 +235,7 @@ sub timed_open
  			}
  			else {
  				print $showfd "proxy connection failed " if $proxy;
@@ -12,7 +21,7 @@
  				return 0;
  			}
  		}
-@@ -270,6 +270,14 @@ sub ftp'set_signals
+@@ -270,6 +272,14 @@ sub ftp'set_signals
  	$SIG{ 'PIPE' } = "ftp'ftp__sighandler";
  }
  
@@ -27,16 +36,138 @@
  # &ftp'set_namemap( function to map outgoing name,  function to map incoming )
  sub ftp'set_namemap
  {
-@@ -486,7 +494,7 @@ sub pasv
- 		return 0;
+@@ -465,48 +475,96 @@ sub pasv
+ 		return undef;
  	}
- 	if( $ret == 1 ) {
+ 
+-	&send( "PASV" );
+-	$ret = &expect( $timeout,
+-		150, 0, # reading directory
+-		227, 1, # entering passive mode
+-		125, 1, # data connection already open? transfer starting
+-			   
+-		4, 0, # file unavailable
+-
+-		5, 0, # error
++	if ($try_epsv) {
++		&send( "EPSV" );
++		$ret = &expect( $timeout,
++			150, 98, # reading directory
++			229, 1, # entering passive mode
++			125, 98, # data connection already open? transfer starting
++				   
++			4, 98, # file unavailable
+ 	
+-	        421, 99 ); # service unavailable, closing connection
+-	if( $ret == 99 ){
+-		&service_closed();
+-		$ret = 0;
+-	}
+-
+-	if( ! $ret ){
+-		&close_data_socket;
+-		return 0;
+-	}
+-	if( $ret == 1 ) {
 -		if( $response =~ m/^227 Entering Passive Mode \((\d+),(\d+),(\d+),(\d+),(\d+),(\d+)\)/ ){
-+		if($response =~ m/^227 .*\((\d+),(\d+),(\d+),(\d+),(\d+),(\d+)\)/){
- 			$newhost = sprintf( "%d.%d.%d.%d", $1, $2, $3, $4 );
- 			$newport = $5 * 256 + $6;
+-			$newhost = sprintf( "%d.%d.%d.%d", $1, $2, $3, $4 );
+-			$newport = $5 * 256 + $6;
++			5, 98, # error
++	
++		        421, 99 ); # service unavailable, closing connection
++		if( $ret == 98 ){
++			$try_epsv = 0;
  		}
-@@ -581,6 +589,9 @@ sub ftp'dir_close
+-		else {
+-			print $showfd "Cannot parse passive response\n" if $ftp_show;
++		if( $ret == 99 ){
++			&service_closed();
++			$ret = 0;
++		}
++		if( ! $ret ){
++			&close_data_socket;
+ 			return 0;
+ 		}
+-	}
++		if( $ret == 1 ) {
++			if($response =~ m/^229 .*\(\|\|\|(\d+)\|\)/){
++				$newport = $1;
++			}
++			else {
++				print $showfd "Cannot parse epsv response\n" if $ftp_show;
++				return 0;
++			}
++		}
+ 
+-	# now need to connect() the new socket
+-	if( ! &chat'open_newport( $newhost, $newport, *S2 ) ){
+-		if( $retry_call ){
+-			print $showfd "Failed to connect newport\n" if $ftp_show;
+-			next;
++		# now need to connect() the new socket
++		if( ! &chat'open_newport( $connect_site, $newport, *S2 ) ){
++			if( $retry_call ){
++				print $showfd "Failed to connect to epsv newport $newport\n" if $ftp_show;
++				next;
++			}
++			else {
++				print $showfd "proxy connection failed " if $proxy;
++				print $showfd "Cannot open epsv ftp to $connect_site\n" if $ftp_show;
++				return 0;
++			}
+ 		}
+-		else {
+-			print $showfd "proxy connection failed " if $proxy;
+-			print $showfd "Cannot open pasv ftp to $connect_site\n" if $ftp_show;
++	}
++	if (!$try_epsv) {
++		&send( "PASV" );
++		$ret = &expect( $timeout,
++			150, 0, # reading directory
++			227, 1, # entering passive mode
++			125, 1, # data connection already open? transfer starting
++				   
++			4, 0, # file unavailable
++	
++			5, 0, # error
++	
++		        421, 99 ); # service unavailable, closing connection
++		if( $ret == 99 ){
++			&service_closed();
++			$ret = 0;
++		}
++
++		if( ! $ret ){
++			&close_data_socket;
+ 			return 0;
+ 		}
++		if( $ret == 1 ) {
++			if($response =~ m/^227 .*\((\d+),(\d+),(\d+),(\d+),(\d+),(\d+)\)/){
++				$newhost = sprintf( "%d.%d.%d.%d", $1, $2, $3, $4 );
++				$newport = $5 * 256 + $6;
++			}
++			else {
++				print $showfd "Cannot parse passive response\n" if $ftp_show;
++				return 0;
++			}
++		}
++
++		# now need to connect() the new socket
++		if( ! &chat'open_newport( $newhost, $newport, *S2 ) ){
++			if( $retry_call ){
++				print $showfd "Failed to connect newport\n" if $ftp_show;
++				next;
++			}
++			else {
++				print $showfd "proxy connection failed " if $proxy;
++				print $showfd "Cannot open pasv ftp to $connect_site\n" if $ftp_show;
++				return 0;
++			}
++		}
+ 	}
+ }
+ 
+@@ -581,6 +639,9 @@ sub ftp'dir_close
  		return 0;
  	}
  
@@ -46,7 +177,7 @@
  	# read the close
  	#
  	$ret = &expect($timeout,
-@@ -590,8 +601,6 @@ sub ftp'dir_close
+@@ -590,8 +651,6 @@ sub ftp'dir_close
  		$ret = 0;
  	}
  
@@ -55,7 +186,7 @@
  
  	if( ! $ret ){
  		return 0;
-@@ -708,6 +717,7 @@ sub ftp'get
+@@ -708,6 +767,7 @@ sub ftp'get
  	if( ! $service_open ){
  		return 0;
  	}

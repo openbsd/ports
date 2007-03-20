@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2007/01/10 23:12:52 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2007/03/20 00:45:22 pvalchev Exp $
 
 COMMENT=	"mirror packages on remote sites"
 
 DISTNAME=	mirror-2.9
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 MASTER_SITES=	ftp://sunsite.cnlab-switch.ch/mirror/mirror/ \
