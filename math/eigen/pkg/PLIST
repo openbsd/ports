@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/03/20 11:35:50 espie Exp $
+include/eigen/
+include/eigen/linearsolver.h
+include/eigen/linearsolverbase.h
+include/eigen/ludecomposition.h
+include/eigen/ludecompositionbase.h
+include/eigen/matrix.h
+include/eigen/matrixbase.h
+include/eigen/projective.h
+include/eigen/regression.h
+include/eigen/regressioninternal.h
+include/eigen/util.h
+include/eigen/vector.h
+include/eigen/vectorbase.h
