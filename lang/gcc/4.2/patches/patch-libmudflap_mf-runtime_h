@@ -1,7 +1,7 @@
-$OpenBSD: patch-libmudflap_mf-runtime_h,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
---- libmudflap/mf-runtime.h.orig	Sat Mar  4 17:22:03 2006
-+++ libmudflap/mf-runtime.h	Sat Mar  4 17:27:25 2006
-@@ -36,7 +36,7 @@ Software Foundation, 51 Franklin Street,
+$OpenBSD: patch-libmudflap_mf-runtime_h,v 1.2 2007/03/20 10:48:52 espie Exp $
+--- libmudflap/mf-runtime.h.orig	Wed Jun 21 18:35:27 2006
++++ libmudflap/mf-runtime.h	Sun Mar 18 23:58:46 2007
+@@ -36,7 +36,7 @@ Software Foundation, 51 Franklin Street, Fifth Floor, 
  #define MF_RUNTIME_H
  
  typedef void *__mf_ptr_t;

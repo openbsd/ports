@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_prefix_c,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
---- gcc/prefix.c.orig	Fri Mar 18 16:24:19 2005
-+++ gcc/prefix.c	Mon May 16 17:43:13 2005
+$OpenBSD: patch-gcc_prefix_c,v 1.2 2007/03/20 10:48:52 espie Exp $
+--- gcc/prefix.c.orig	Sat Dec 17 21:45:46 2005
++++ gcc/prefix.c	Sun Mar 18 23:58:45 2007
 @@ -99,7 +99,7 @@ get_key_value (char *key)
  #endif
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-gcc_prefix_c,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
        free (old_name);
      }
  
-@@ -261,11 +261,11 @@ update_path (const char *path, const cha
+@@ -261,11 +261,11 @@ update_path (const char *path, const char *key)
  
        if (key[0] != '$')
  	{

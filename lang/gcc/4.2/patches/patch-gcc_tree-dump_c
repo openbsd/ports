@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_tree-dump_c,v 1.3 2007/03/17 22:34:13 espie Exp $
+$OpenBSD: patch-gcc_tree-dump_c,v 1.4 2007/03/20 10:48:52 espie Exp $
 --- gcc/tree-dump.c.orig	Thu Mar 16 20:47:19 2006
-+++ gcc/tree-dump.c	Sun Jul 23 11:24:02 2006
-@@ -867,7 +867,7 @@ get_dump_file_name (enum tree_dump_index
++++ gcc/tree-dump.c	Sun Mar 18 23:58:45 2007
+@@ -867,7 +867,7 @@ get_dump_file_name (enum tree_dump_index phase)
  	dump_id[0] = '\0';
      }
  
