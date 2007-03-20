@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2006/12/16 12:22:33 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2007/03/20 06:43:49 jasper Exp $
 
 COMMENT=	"utilities for 'desktop' entries"
 
-VERSION=	0.10
-DISTNAME=	desktop-file-utils-${VERSION}
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	desktop-file-utils-0.12
 CATEGORIES=	devel
 
 HOMEPAGE=	http://freedesktop.org/wiki/Software_2fdesktop_2dfile_2dutils
@@ -20,16 +18,11 @@ MASTER_SITES=	http://freedesktop.org/software/desktop-file-utils/releases/
 
 MODULES=	devel/gettext	
 
-LIB_DEPENDS=	glib-2.0::devel/glib2 \
-		popt.>=0.3::devel/popt
+LIB_DEPENDS=	glib-2.0::devel/glib2
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-# This port has "/usr/local" hardcoded, we prefer ${LOCALBASE}
-pre-build:
-	perl -pi -e "s,/usr/local,${LOCALBASE},g" ${WRKSRC}/src/eggdirfuncs.c
 
 .include <bsd.port.mk>
