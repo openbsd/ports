@@ -1,9 +1,9 @@
 # $NetBSD: patch-ab,v 1.6 2000/03/26 22:33:18 kim Exp $
-# $OpenBSD: patch-mirror-defaults,v 1.1 2000/05/19 04:56:48 form Exp $
+# $OpenBSD: patch-mirror-defaults,v 1.2 2007/03/20 00:35:52 pvalchev Exp $
 
---- mirror.defaults.orig	Fri May 29 14:57:46 1998
-+++ mirror.defaults	Sat Mar 25 02:49:44 2000
-@@ -11,29 +11,29 @@
+--- mirror.defaults.orig	Fri May 29 12:57:46 1998
++++ mirror.defaults	Mon Mar 19 18:31:12 2007
+@@ -11,29 +11,29 @@ package=defaults
  	# The LOCAL hostname - if not the same as `hostname`
  	# (I advertise the name sunsite.org.uk but the machine is
  	#  really swallow.sunsite.org.uk.)
@@ -42,7 +42,7 @@
  	# Don't compress information files, files that don't benifit from
  	# being compressed, files that tell ftpd, gopher, wais... to do things,
  	# the sources for compression programs...
-@@ -47,9 +47,9 @@
+@@ -47,9 +47,9 @@ package=defaults
  	# rpm and deb are package formats used on RedHat and Debian Linux
  	compress_excl+|-z(\d+)?$|\.tgz|_tgz|\.tar\.Z|\.tar\.gz|\.taz$|\.arc$|\.zip$|\.lzh$|\.zoo$|\.exe$|\.lha$|\.zom$|\.gif$|\.jpeg$|\.jpg$|\.mpeg$|\.au$|\.shk$|rpm$|deb$|read.*me|index|info|faq|gzip|compress|(^|/)\.\.?$
  	# Don't delete own mirror log, .notar or .cache files (incl in subdirs)

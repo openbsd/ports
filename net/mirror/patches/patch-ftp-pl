@@ -1,9 +1,9 @@
 # $NetBSD: patch-ae,v 1.6 2000/04/20 03:22:50 kim Exp $
-# $OpenBSD: patch-ftp-pl,v 1.1 2000/05/19 04:56:48 form Exp $
+# $OpenBSD: patch-ftp-pl,v 1.2 2007/03/20 00:35:52 pvalchev Exp $
 
---- ftp.pl.orig	Fri Jun  5 05:10:27 1998
-+++ ftp.pl	Wed Apr 19 23:14:00 2000
-@@ -233,7 +233,7 @@
+--- ftp.pl.orig	Fri Jun  5 03:10:27 1998
++++ ftp.pl	Mon Mar 19 18:31:12 2007
+@@ -233,7 +233,7 @@ sub timed_open
  			}
  			else {
  				print $showfd "proxy connection failed " if $proxy;
@@ -12,7 +12,7 @@
  				return 0;
  			}
  		}
-@@ -270,6 +270,14 @@
+@@ -270,6 +270,14 @@ sub ftp'set_signals
  	$SIG{ 'PIPE' } = "ftp'ftp__sighandler";
  }
  
@@ -27,7 +27,7 @@
  # &ftp'set_namemap( function to map outgoing name,  function to map incoming )
  sub ftp'set_namemap
  {
-@@ -486,7 +494,7 @@
+@@ -486,7 +494,7 @@ sub pasv
  		return 0;
  	}
  	if( $ret == 1 ) {
@@ -36,7 +36,7 @@
  			$newhost = sprintf( "%d.%d.%d.%d", $1, $2, $3, $4 );
  			$newport = $5 * 256 + $6;
  		}
-@@ -581,6 +589,9 @@
+@@ -581,6 +589,9 @@ sub ftp'dir_close
  		return 0;
  	}
  
@@ -46,7 +46,7 @@
  	# read the close
  	#
  	$ret = &expect($timeout,
-@@ -590,8 +601,6 @@
+@@ -590,8 +601,6 @@ sub ftp'dir_close
  		$ret = 0;
  	}
  
@@ -55,7 +55,7 @@
  
  	if( ! $ret ){
  		return 0;
-@@ -708,6 +717,7 @@
+@@ -708,6 +717,7 @@ sub ftp'get
  	if( ! $service_open ){
  		return 0;
  	}

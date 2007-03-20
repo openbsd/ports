@@ -1,9 +1,9 @@
 # $NetBSD: patch-af,v 1.1 2000/03/26 22:33:18 kim Exp $
-# $OpenBSD: patch-mm-pl,v 1.1 2000/05/19 04:56:48 form Exp $
+# $OpenBSD: patch-mm-pl,v 1.2 2007/03/20 00:35:52 pvalchev Exp $
 
---- mm.pl.orig	Fri May 29 15:09:54 1998
-+++ mm.pl	Sat Mar 25 03:09:36 2000
-@@ -63,7 +63,7 @@
+--- mm.pl.orig	Fri May 29 13:09:54 1998
++++ mm.pl	Mon Mar 19 18:31:12 2007
+@@ -63,7 +63,7 @@ $max = 6;
  # $pkg is the package number fixed up to replace characters likely to give
  # grief under unix.
  # This expects the directory logs to already exist.

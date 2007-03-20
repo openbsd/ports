@@ -1,9 +1,9 @@
 # $NetBSD: patch-aa,v 1.5 2000/04/19 16:16:52 kim Exp $
-# $OpenBSD: patch-makefile,v 1.1 2000/05/19 04:56:48 form Exp $
+# $OpenBSD: patch-makefile,v 1.2 2007/03/20 00:35:52 pvalchev Exp $
 
---- makefile.orig	Mon Jun  1 21:28:47 1998
-+++ makefile	Wed Apr 19 19:06:30 2000
-@@ -41,7 +41,7 @@
+--- makefile.orig	Mon Jun  1 12:28:47 1998
++++ makefile	Mon Mar 19 18:31:12 2007
+@@ -41,7 +41,7 @@ FILES=	README.txt \
  	$(WEBFILES)
  
  all:
@@ -12,7 +12,7 @@
  
  mirror.tar: $(FILES)
  	rev=`./mirror.pl -v | perl -ane 'print "$$F[2]\n";'`; echo $rev; \
-@@ -65,25 +65,26 @@
+@@ -65,25 +65,26 @@ PLMODE = 644
  # mode to install executables
  EXMODE = 755
  # group to own all the files

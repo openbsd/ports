@@ -1,9 +1,9 @@
 # $NetBSD: patch-ac,v 1.4 2000/03/26 22:33:18 kim Exp $
-# $OpenBSD: patch-mirror-pl,v 1.1 2000/05/19 04:56:48 form Exp $
+# $OpenBSD: patch-mirror-pl,v 1.2 2007/03/20 00:35:52 pvalchev Exp $
 
---- mirror.pl.orig	Mon Jun  8 06:55:27 1998
-+++ mirror.pl	Sat Mar 25 02:55:39 2000
-@@ -104,7 +104,7 @@
+--- mirror.pl.orig	Mon Jun  8 04:55:27 1998
++++ mirror.pl	Mon Mar 19 18:31:12 2007
+@@ -104,7 +104,7 @@ $load_defaults = 1;
  # Try to find the default location of various programs via
  # the users PATH then using $extra_path
  if( ! $on_win ){
@@ -12,7 +12,7 @@
  }
  if( $extra_path ne '' ){
  	$ENV{ 'PATH' } .= $path_sep . $extra_path;
-@@ -159,19 +159,20 @@
+@@ -159,19 +159,20 @@ if( ! $mail_prog ){
  $rm_prog = &find_prog( 'rm' );
  
  # Generate checksums
@@ -37,7 +37,7 @@
  unshift( @INC, $dir );
  
  # Debian GNU/Linux stores mirror.defaults in /etc/mirror
-@@ -1807,7 +1808,7 @@
+@@ -1807,7 +1808,7 @@ sub get_remote_directory_details
    			local( $f );
    			$f = $dirtmp;
  			$f =~ s/($shell_metachars)/\\$1/g;
@@ -46,7 +46,7 @@
    		}
  		if( ! open( DIRTMP, $dirtmp ) ){
  			&msg( "Cannot open $dirtmp\n" );
-@@ -1845,7 +1846,7 @@
+@@ -1845,7 +1846,7 @@ sub get_remote_directory_details
    			$f = $dirtmp;
    			$dirtmp =~ s/\.($sys_compress_suffix|$gzip_suffix|$old_gzip_suffix)$//;
    			$udirtmp =~ s/\.($sys_compress_suffix|$gzip_suffix|$ol_gzip_suffix)$//;
@@ -55,7 +55,7 @@
  				&msg( "Cannot uncompress directory listing\n" );
  				return 0;
  			}
-@@ -2760,7 +2761,7 @@
+@@ -2760,7 +2761,7 @@ sub transfer_file
    			local( $f ) = $src_file;
  			$f =~ s/($shell_metachars)/\\$1/g;
    			$comptemp = "$big_temp/.out$$";
@@ -64,7 +64,7 @@
    			$src_file = $comptemp;
  		}
  		
-@@ -2840,10 +2841,10 @@
+@@ -2840,10 +2841,10 @@ sub transfer_file
    		# Am I doing compress to gzip conversion?
     		if( $compress_conv_patt && $src_path =~ /$compress_conv_patt/ &&
    		    $compress_suffix eq $gzip_suffix ){

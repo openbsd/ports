@@ -1,9 +1,9 @@
 # $NetBSD: patch-ad,v 1.5 1999/12/28 18:15:43 itojun Exp $
-# $OpenBSD: patch-lchat-pl,v 1.1 2000/05/19 04:56:48 form Exp $
+# $OpenBSD: patch-lchat-pl,v 1.2 2007/03/20 00:35:52 pvalchev Exp $
 
---- lchat.pl.orig	Wed Jun  7 22:19:22 1995
-+++ lchat.pl	Wed May 12 18:10:54 1999
-@@ -79,7 +79,7 @@
+--- lchat.pl.orig	Fri May 29 13:05:46 1998
++++ lchat.pl	Mon Mar 19 18:31:12 2007
+@@ -117,7 +117,7 @@ sub open_port { ## public
  
  	# We may be multi-homed, start with 0, fixup once connexion is made
  	$thisaddr = "\0\0\0\0" ;
@@ -12,7 +12,7 @@
  
  	if ($server =~ /^(\d+)+\.(\d+)\.(\d+)\.(\d+)$/) {
  		$serveraddr = pack('C4', $1, $2, $3, $4);
-@@ -90,7 +90,7 @@
+@@ -128,7 +128,7 @@ sub open_port { ## public
  		}
  		$serveraddr = $x[4];
  	}
@@ -21,7 +21,7 @@
  	unless (socket(S, $main'pf_inet, $main'sock_stream, $main'tcp_proto)) {
  		($!) = ($!, close(S)); # close S while saving $!
  		return undef;
-@@ -99,12 +99,12 @@
+@@ -137,12 +137,12 @@ sub open_port { ## public
  	# The SOCKS documentation claims that this bind before the connet
  	# is unnecessary.  Not just, that, but when used with SOCKS,
  	# a connect() must not follow a bind(). -Erez Zadok.
@@ -40,7 +40,7 @@
  	unless (connect(S, $serverproc)) {
  		($!) = ($!, close(S)); # close S while saving $!
  		return undef;
-@@ -114,7 +114,7 @@
+@@ -152,7 +152,7 @@ sub open_port { ## public
  # multi-homed, with IP forwarding off, so fix-up.
  	local($fam,$lport);
  	($fam,$lport,$thisaddr) = unpack($sockaddr, getsockname(S));
@@ -49,7 +49,7 @@
  # end of post-connect fixup
  	select((select(S), $| = 1)[0]);
  	return 1;
-@@ -129,7 +129,7 @@
+@@ -167,7 +167,7 @@ sub open_newport { ## public
  
  	# We may be multi-homed, start with 0, fixup once connexion is made
  	$thisaddr = "\0\0\0\0" ;
@@ -58,7 +58,7 @@
  
  	if ($server =~ /^(\d+)+\.(\d+)\.(\d+)\.(\d+)$/) {
  		$serveraddr = pack('C4', $1, $2, $3, $4);
-@@ -151,7 +151,7 @@
+@@ -189,7 +189,7 @@ sub open_newport { ## public
  # multi-homed, with IP forwarding off, so fix-up.
  	local($fam,$lport);
  	($fam,$lport,$thisaddr) = unpack($sockaddr, getsockname($newsock));
