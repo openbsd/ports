@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/03/19 23:13:23 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2007/03/20 11:12:22 robert Exp $
 
 COMMENT-main=	"base classes for common PHP tasks"
 COMMENT-utils=	"utilities for managing pear extensions"
@@ -41,7 +41,6 @@ do-install:
 
 	@mv ${WRKINST}${PREFIX-main}/bin ${WRKINST}${PREFIX-utils}/
 	@mv ${WRKINST}${PREFIX-main}/share/doc/pear ${WRKINST}${PREFIX-utils}/share/doc/
-	@mv ${WRKINST}${PREFIX-main}/etc/pear.conf ${WRKINST}${PREFIX-utils}/share/doc/pear
 	@rm -rf ${WRKINST}${PREFIX-main}/share ${WRKINST}${PREFIX-main}/etc
 
 	@find ${WRKINST}${PREFIX-main} -name "*.php" -exec perl -pi -e "s,${WRKINST},,g" {} \; 

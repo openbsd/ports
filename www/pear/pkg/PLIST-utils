@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-utils,v 1.1.1.1 2007/03/19 23:13:23 robert Exp $
+@comment $OpenBSD: PLIST-utils,v 1.2 2007/03/20 11:12:22 robert Exp $
 @group daemon
 bin/pear
 bin/peardev
@@ -38,5 +38,3 @@ share/doc/pear/Structures_Graph/docs/html/todolist.html
 share/doc/pear/Structures_Graph/docs/tutorials/
 share/doc/pear/Structures_Graph/docs/tutorials/Structures_Graph/
 share/doc/pear/Structures_Graph/docs/tutorials/Structures_Graph/Structures_Graph.pkg
-share/doc/pear/pear.conf
-@sample ${SYSCONFDIR}/pear.conf
