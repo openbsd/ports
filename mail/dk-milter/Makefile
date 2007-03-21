@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/22 13:47:07 jakob Exp $
+# $OpenBSD: Makefile,v 1.4 2007/03/21 08:33:20 jakob Exp $
 
 COMMENT=	"DomainKeys milter"
 
-DISTNAME=	dk-milter-0.4.1
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	dk-milter-0.4.2
+PKGNAME=	${DISTNAME}
 CATEGORIES=	mail
 HOMEPAGE=	http://sourceforge.net/projects/dk-milter/
 
