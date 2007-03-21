@@ -1,29 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.18 2006/10/03 18:34:50 brad Exp $
-@conflict irssi-silc-*
+@comment $OpenBSD: PLIST,v 1.19 2007/03/21 11:24:02 martynas Exp $
 bin/silc
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/Silc.pm
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/TextUI.pm
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/UI.pm
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irssi.bs
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irssi.so
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Silc/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Silc/Silc.bs
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/TextUI.bs
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/TextUI.so
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.bs
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.so
+@man man/man1/silc.1
 @comment modules/
 share/doc/silc/
 @comment share/doc/silc/CHANGES
 @comment share/doc/silc/COPYING
 @comment share/doc/silc/CREDITS
+share/doc/silc/FAQ
 @comment share/doc/silc/INSTALL
 share/doc/silc/README
 @comment share/doc/silc/TODO
@@ -141,6 +124,6 @@ share/silc/scripts/hello.pl
 share/silc/scripts/mail-maildir.pl
 share/silc/scripts/mail.pl
 share/silc/scripts/silc-mime.pl
+share/silc/scripts/silc.pl
 share/silc/themes/
 share/silc/themes/default.theme
-%%SHARED%%

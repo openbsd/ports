@@ -1,11 +1,8 @@
-# $OpenBSD: Makefile,v 1.37 2007/03/17 03:13:41 deanna Exp $
-
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+# $OpenBSD: Makefile,v 1.38 2007/03/21 11:24:02 martynas Exp $
 
 COMMENT=	"Secure Internet Live Conferencing (SILC) client"
 
-DISTNAME=	silc-client-1.0.3
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	silc-client-1.0.4.1
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.silcnet.org/
@@ -17,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m ncurses perl util 
+WANTLIB=		c ncurses
 
 MASTER_SITES=	http://ftp.silcnet.org/client/sources/ \
 		ftp://ftp.silcnet.org/silc/client/sources/ \
@@ -42,7 +39,7 @@ CONFIGURE_ARGS+= --enable-ipv6 \
 		 --with-docdir=${PREFIX}/share/doc/silc \
 		 --with-etcdir=${CONFDIR} \
 		 --with-iconv=${LOCALBASE} \
-		 --with-perl-lib=${PREFIX}/libdata/perl5/site_perl
+		 --with-perl=no
 
 .if ${MACHINE_ARCH} != "i386"
 CONFIGURE_ARGS+= --disable-asm
