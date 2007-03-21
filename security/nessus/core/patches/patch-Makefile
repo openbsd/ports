@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.2 2006/09/23 08:45:04 aanriot Exp $
+$OpenBSD: patch-Makefile,v 1.3 2007/03/21 21:29:32 aanriot Exp $
 --- Makefile.orig	Sun Jan 15 16:37:55 2006
-+++ Makefile	Fri Sep 22 18:24:32 2006
++++ Makefile	Wed Mar 21 08:16:51 2007
 @@ -10,35 +10,16 @@ nessus.tmpl: nessus.tmpl.in configure VE
  	touch $@
  
@@ -40,3 +40,12 @@ $OpenBSD: patch-Makefile,v 1.2 2006/09/23 08:45:04 aanriot Exp $
  	$(INSTALL) -c -m 0444 include/config.h $(DESTDIR)${includedir}/nessus
  	$(INSTALL) -c -m 0444 include/ntcompat.h $(DESTDIR)${includedir}/nessus
  	$(INSTALL) -c -m 0444 include/includes.h $(DESTDIR)${includedir}/nessus
+@@ -105,7 +86,7 @@ $(MAN_NESSUS_1) : $(MAN_NESSUS_1).in
+ 	@sed -e 's?@NESSUSD_CONFDIR@?${NESSUSD_CONFDIR}?g;s?@NESSUSD_DATADIR@?${NESSUSD_DATADIR}?g;s?@NESSUSD_PLUGINS@?${NESSUSD_PLUGINS}?g;' $(MAN_NESSUS_1).in  >$(MAN_NESSUS_1)
+ 
+ $(MAN_NESSUSD_8) : $(MAN_NESSUSD_8).in
+-	@sed -e 's?@NESSUSD_CONFDIR@?${NESSUSD_CONFDIR}?g;s?@NESSUSD_DATADIR@?${NESSUSD_DATADIR}?g;s?@NESSUSD_PLUGINS@?${NESSUSD_PLUGINS}?g;' $(MAN_NESSUSD_8).in  >$(MAN_NESSUSD_8)
++	@sed -e 's?@NESSUSD_CONFDIR@?${NESSUSD_CONFDIR}?g;s?@NESSUSD_DATADIR@?${NESSUSD_DATADIR}?g;s?@NESSUSD_PLUGINS@?${NESSUSD_PLUGINS}?g;s?@NESSUSD_STATEDIR@?${NESSUSD_STATEDIR}?g;' $(MAN_NESSUSD_8).in  >$(MAN_NESSUSD_8)
+ 
+ 
+ clean:
