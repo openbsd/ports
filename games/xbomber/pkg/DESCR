@@ -1,0 +1,6 @@
+X-Bomber is a multiplayer game for the X-Window system.  The concept is
+loosely based on the game "Super Bomberman" for the Super Nintendo
+game system.
+
+Up to four players can play simultaneously.  The game runs as one client
+which connects to multiple X displays (servers).

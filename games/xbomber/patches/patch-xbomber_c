@@ -1,0 +1,121 @@
+$OpenBSD: patch-xbomber_c,v 1.1.1.1 2007/03/21 10:28:50 jasper Exp $
+--- xbomber.c.orig	Sat Jun 20 04:09:35 1998
++++ xbomber.c	Tue Mar 20 21:07:51 2007
+@@ -1599,7 +1599,7 @@ void setup(int argc, char * argv[])
+   /* Get -color switch: */
+ 
+   use_color = 0;
+-  strcpy(graphicsset, "./pixmaps");
++  strcpy(graphicsset, PIXMAPS);
+   
+   if (argc >= 2)
+     {
+@@ -1683,7 +1683,7 @@ void setup(int argc, char * argv[])
+ 	      
+ 	      for (i = 0; i < NUM_SOUNDS; i++)
+ 		{
+-		  sprintf(file, "sounds/%s.au", sound_names[i]);
++		  sprintf(file, "%s/%s.au", SOUNDS, sound_names[i]);
+ 		  
+ 		  fi = fopen(file, "r");
+ 		  if (fi != NULL)
+@@ -1720,7 +1720,7 @@ void setup(int argc, char * argv[])
+ 	      
+ 	      for (i = 0; i < NUM_NSOUNDS; i++)
+ 		{
+-		  sprintf(file, "sounds/numbers/%s.au", nsound_names[i]);
++		  sprintf(file, "%s/numbers/%s.au", SOUNDS, nsound_names[i]);
+ 		  
+ 		  fi = fopen(file, "r");
+ 		  if (fi != NULL)
+@@ -2068,7 +2068,7 @@ void Xsetup_windows(int pln)
+ void Xsetup(int pln)
+ {
+   int i, tempint1, tempint2, tempint3, tempint4, ret;
+-  char file[128];
++  char temp[128];
+   int status, temp_depth;
+   FILE * fi;
+   XGCValues gcvalues;
+@@ -2095,24 +2095,27 @@ void Xsetup(int pln)
+   
+   
+   /* Make cursor: */
+-  
+-  ret = XReadBitmapFile(display[pln], window[pln], "bitmaps/cursor.xbm",
++
++  sprintf(temp,"%s/cursor.xbm",BITMAPS);
++  ret = XReadBitmapFile(display[pln], window[pln], temp,
+ 			&tempint1, &tempint2, &cursor_pixmap[pln],
+ 			&tempint3, &tempint4);
+   
+   if (ret != BitmapSuccess)
+     {
+-      perror("bitmaps/cursor.xbm");
++      perror(temp);
+       exit(1);
+     }
+   
+-  ret = XReadBitmapFile(display[pln], window[pln], "bitmaps/cursor-mask.xbm",
++  sprintf(temp,"%s/cursor-mask.xbm",BITMAPS);
++  printf("temp=%s\n", temp);
++  ret = XReadBitmapFile(display[pln], window[pln], temp,
+ 			&tempint1, &tempint2, &cursor_mask[pln],
+ 			&tempint3, &tempint4);
+   
+   if (ret != BitmapSuccess)
+     {
+-      perror("bitmaps/cursor-mask.xbm");
++      perror(temp);
+       exit(1);
+     }
+   
+@@ -2149,16 +2152,16 @@ void Xsetup(int pln)
+ 							    black[pln],
+ 							    has_color[pln]));
+ 	      
+-	      sprintf(file, "bitmaps/%s.xbm", object_names[i]);
++	      sprintf(temp, "%s/%s.xbm", BITMAPS, object_names[i]);
+ 	      
+-	      ret = XReadBitmapFile(display[pln], window[pln], file, 
++	      ret = XReadBitmapFile(display[pln], window[pln], temp, 
+ 				    &tempint1, &tempint2,
+ 				    &object_pixmaps[pln][i],
+ 				    &tempint3, &tempint4);
+ 	      
+ 	      if (ret != BitmapSuccess)
+ 		{
+-		  perror(file);
++		  perror(temp);
+ 		  exit(1);
+ 		}
+ 	    }
+@@ -2863,7 +2866,7 @@ void initlevel(void)
+   
+   /* Load level layout on top of this: */
+   
+-  sprintf(filename, "levels/level%.2d.dat", level);
++  sprintf(filename, "%s/level%.2d.dat", LEVELS, level);
+   
+   fi = fopen(filename, "r");
+   if (fi == NULL)
+@@ -3293,7 +3296,7 @@ void loadobject(int pln, int i)
+   
+   if (strlen(graphicsset) != 0)
+     {
+-      sprintf(file, "%s/%s.ppm", graphicsset, object_names[i]);
++      sprintf(file, "%s/%s/%s.ppm",PIXMAPS, graphicsset, object_names[i]);
+       fi = fopen(file, "r");
+       
+       c = graphicsset[0];
+@@ -3302,8 +3305,8 @@ void loadobject(int pln, int i)
+   if (fi == NULL)
+     {
+       c = '.';
+-      
+-      sprintf(file, "pixmaps/%s.ppm", object_names[i]);
++
++      sprintf(file, "%s/%s.ppm",PIXMAPS, object_names[i]);      
+       
+       fi = fopen(file, "r");
+       if (fi == NULL)

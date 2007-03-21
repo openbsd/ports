@@ -1,0 +1,46 @@
+$OpenBSD: patch-makefile,v 1.1.1.1 2007/03/21 10:28:50 jasper Exp $
+--- makefile.orig	Fri Jun 19 05:28:34 1998
++++ makefile	Tue Mar 20 21:07:11 2007
+@@ -11,15 +11,18 @@
+ 
+ # Makefile user-definable variables------------------------------------------
+ 
+-CC=gcc
++SOUNDS= $(PREFIX)/share/xbomber/sounds
++PIXMAPS= $(PREFIX)/share/xbomber/pixmap
++LEVELS= $(PREFIX)/share/xbomber/levels
++BITMAPS= $(PREFIX)/share/xbomber/bitmaps
+ MATHLIB=-lm
+-CFLAGS=-I/usr/X11/include
++CFLAGS= -O2 -pipe  -I$(X11BASE)/include -DSOUNDS=\"$(SOUNDS)\" -DPIXMAPS=\"$(PIXMAPS)\" -DLEVELS=\"$(LEVELS)\" -DBITMAPS=\"$(BITMAPS)\"
+ 
+ # Change this to "touch" if your system doesn't have the "strip" command:
+ POSTPROCESS=strip
+ 
+ # adjust according to target
+-XLIB=-L/usr/X11/lib -lX11
++XLIB=-L$(PREFIX)/lib -L$(X11BASE)/lib -lX11
+ 
+ # uncomment for sunos/solaris
+ #XLIB=-L/usr/openwin/lib -lX11
+@@ -39,10 +42,6 @@ OBJECTS=xbomber.o window.o connect.o hin
+ # Makefile commands: 
+ 
+ all:	xbomber
+-	chmod 755 sounds bitmaps pixmaps sounds/numbers levels
+-	chmod 644 *.c *.h makefile sounds/*.au *.txt \
+-		bitmaps/*.xbm pixmaps/*.ppm \
+-		sounds/numbers/*.au levels/*.dat
+ 
+ clean:
+ 	rm *.o
+@@ -52,9 +51,6 @@ clean:
+ 
+ xbomber:	$(OBJECTS)
+ 	$(CC)	$(OBJECTS) $(XLIB) $(MATHLIB) $(CFLAGS) -o xbomber
+-	chmod 755 xbomber
+-	$(POSTPROCESS) xbomber
+-
+ 
+ # Application objects:
+ 
