@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_common_dts_common_cpp,v 1.1 2007/03/21 12:02:45 ajacoutot Exp $
+--- src/common/dts_common.cpp.orig	Mon Mar 19 14:50:17 2007
++++ src/common/dts_common.cpp	Mon Mar 19 14:50:32 2007
+@@ -16,6 +16,7 @@
+ 
+ #include <string.h>
+ #include <stdio.h>
++#include <unistd.h>
+ 
+ #include "bit_cursor.h"
+ #include "common.h"

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/03/19 12:23:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/03/21 12:02:45 ajacoutot Exp $
 
 COMMENT=	"set of tools to create, alter and inspect Matroska files"
 
-DISTNAME=	mkvtoolnix-2.0.0
+DISTNAME=	mkvtoolnix-2.0.2
 CATEGORIES=	multimedia x11
 
 EXTRACT_SUFX=	.tar.bz2
@@ -26,7 +26,7 @@ LIB_DEPENDS=	FLAC.>=7::audio/flac \
 		pcre.>=1,pcrecpp.>=2::devel/pcre \
 		bz2.>=10::archivers/bzip2 \
 		lzo.>=1::archivers/lzo \
-		matroska::multimedia/libmatroska \
+		matroska:libmatroska->=0.8.1:multimedia/libmatroska \
 		vorbis.>=5::audio/libvorbis \
 		magic.>=1::devel/libmagic \
 		expat.>=6::textproc/expat
