@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2007/02/15 07:11:17 steven Exp $
+# $OpenBSD: Makefile,v 1.31 2007/03/21 17:28:50 naddy Exp $
 
 COMMENT=	'threaded NNTP and spool based UseNet newsreader'
 
 DISTNAME=	tin-${VERSION}.${PATCHLEVEL}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}
 VERSION=	1.8
-PATCHLEVEL=	2
+PATCHLEVEL=	3
 CATEGORIES=	news
 
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v${VERSION}/ \
