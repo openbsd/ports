@@ -1,0 +1,32 @@
+$OpenBSD: patch-tools_dbus-uuidgen_1,v 1.1 2007/03/21 00:21:58 espie Exp $
+--- tools/dbus-uuidgen.1.orig	Mon Dec 11 20:21:26 2006
++++ tools/dbus-uuidgen.1	Fri Dec 29 18:47:17 2006
+@@ -30,7 +30,7 @@ script of a D-Bus package like this:
+ .fi
+ 
+ .PP
+-This will ensure that /var/lib/dbus/machine-id exists and has the uuid in it.
++This will ensure that /var/run/dbus/machine-id exists and has the uuid in it.
+ It won't overwrite an existing uuid, since this id should remain fixed
+ for a single machine until the next reboot at least.
+ 
+@@ -64,15 +64,15 @@ because there are two different kernels.
+ The following options are supported:
+ .TP
+ .I "--get[=FILENAME]"
+-If a filename is not given, defaults to localstatedir/lib/dbus/machine-id
+-(localstatedir is usually /var). If this file exists and is valid, the
++If a filename is not given, defaults to /etc/dbus-1/machine-id.
++If this file exists and is valid, the
+ uuid in the file is printed on stdout. Otherwise, the command exits 
+ with a nonzero status.
+ 
+ .TP
+ .I "--ensure[=FILENAME]"
+-If a filename is not given, defaults to localstatedir/lib/dbus/machine-id
+-(localstatedir is usually /var). If this file exists then it will be
++If a filename is not given, defaults to /etc/dbus-1/machine-id.
++If this file exists then it will be
+ validated, and a failure code returned if it contains the wrong thing.
+ If the file does not exist, it will be created with a new uuid in it.
+ On success, prints no output.

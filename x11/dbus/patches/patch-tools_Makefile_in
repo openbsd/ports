@@ -1,0 +1,23 @@
+$OpenBSD: patch-tools_Makefile_in,v 1.1 2007/03/21 00:21:58 espie Exp $
+--- tools/Makefile.in.orig	Tue Dec 12 20:41:48 2006
++++ tools/Makefile.in	Fri Dec 29 18:46:33 2006
+@@ -289,7 +289,7 @@ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+ configdir = $(sysconfdir)/dbus-1
+-INCLUDES = -I$(top_srcdir) $(DBUS_CLIENT_CFLAGS) $(DBUS_X_CFLAGS) -DDBUS_LOCALEDIR=\"@EXPANDED_DATADIR@/locale\" -DDBUS_COMPILATION -DDBUS_DAEMONDIR=\"@DBUS_DAEMONDIR@\" -DDBUS_MACHINE_UUID_FILE=\""$(localstatedir)/lib/dbus/machine-id"\"
++INCLUDES = -I$(top_srcdir) $(DBUS_CLIENT_CFLAGS) $(DBUS_X_CFLAGS) -DDBUS_LOCALEDIR=\"@EXPANDED_DATADIR@/locale\" -DDBUS_COMPILATION -DDBUS_DAEMONDIR=\"@DBUS_DAEMONDIR@\" -DDBUS_MACHINE_UUID_FILE=\""$(configdir)/machine-id"\"
+ dbus_send_SOURCES = \
+ 	dbus-print-message.c			\
+ 	dbus-print-message.h			\
+@@ -325,8 +325,8 @@ CLEANFILES = \
+ 	run-with-tmp-session-bus.conf
+ 
+ 
+-#create the /var/lib/data directory for dbus-uuidgen
+-localstatelibdir = $(localstatedir)/lib/dbus
++#create the /var/run/data directory for dbus-uuidgen
++localstatelibdir = $(configdir)
+ localstatelib_DATA = 
+ all: all-am
+ 

@@ -1,8 +1,3 @@
-To finish installation of dbus package you should run the following
-command as a user root:
-
-# dbus-uuidgen --ensure
-
 To start systemwide message dbus daemon whenever the machine boots,
 add the following lines to /etc/rc.local:
 

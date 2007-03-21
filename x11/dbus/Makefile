@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2006/12/16 12:22:35 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2007/03/21 00:21:58 espie Exp $
 
 COMMENT=		"message system"
 
-DISTNAME=		dbus-0.94
-SHARED_LIBS +=  dbus-1               5.0      # .5.0
+DISTNAME=		dbus-1.0.2
+SHARED_LIBS +=  dbus-1               6.0      # .5.0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://dbus.freedesktop.org/
@@ -21,6 +21,7 @@ LIB_DEPENDS=		expat.>=6::textproc/expat
 
 SEPARATE_BUILD=		simple
 
+AUTOCONF_VERSION=	2.59
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LDFLAGS=-L${LOCALBASE}/lib \
 			CFLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread"
