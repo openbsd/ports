@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2007/03/16 18:35:16 claudio Exp $
+# $OpenBSD: Makefile,v 1.139 2007/03/21 10:31:14 jasper Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -127,6 +127,7 @@
      SUBDIR += xblast
      SUBDIR += xboard
      SUBDIR += xboing
+     SUBDIR += xbomber
      SUBDIR += xbreaky
      SUBDIR += xbubble
      SUBDIR += xchomp
