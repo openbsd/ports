@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/01/27 17:57:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2007/03/21 08:19:34 ajacoutot Exp $
 
 COMMENT=	"scanner frontend for SANE"
 
-DISTNAME=	xsane-0.992
+DISTNAME=	xsane-0.994
 CATEGORIES=	graphics
 
 MASTER_SITES=	ftp://ftp.sane-project.org/pub/sane/xsane/ \
