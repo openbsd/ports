@@ -1,4 +1,4 @@
-$OpenBSD: patch-dovecot-example_conf,v 1.33 2007/03/15 23:20:54 jakob Exp $
+$OpenBSD: patch-dovecot-example_conf,v 1.34 2007/03/21 22:43:49 msf Exp $
 --- dovecot-example.conf.orig	Sat Mar 10 21:45:40 2007
 +++ dovecot-example.conf	Tue Mar 13 17:21:52 2007
 @@ -7,13 +7,12 @@
@@ -78,22 +78,22 @@ $OpenBSD: patch-dovecot-example_conf,v 1.33 2007/03/15 23:20:54 jakob Exp $
  protocol imap {
    # Login executable location.
 -  #login_executable = /usr/libexec/dovecot/imap-login
-+  #login_executable = /usr/local/libexec/dovecot/imap-login
++  #login_executable = _PREFIX_/libexec/dovecot/imap-login
  
    # IMAP executable location. Changing this allows you to execute other
    # binaries before the imap process is executed.
    #
    # This would write rawlogs into ~/dovecot.rawlog/ directory:
 -  #   mail_executable = /usr/libexec/dovecot/rawlog /usr/libexec/dovecot/imap
-+  #   mail_executable = /usr/local/libexec/dovecot/rawlog /usr/local/libexec/dovecot/imap
++  #   mail_executable = _PREFIX_/libexec/dovecot/rawlog _PREFIX_/libexec/dovecot/imap
    #
    # This would attach gdb into the imap process and write backtraces into
    # /tmp/gdbhelper.* files:
 -  #   mail_executable = /usr/libexec/dovecot/gdbhelper /usr/libexec/dovecot/imap
-+  #   mail_executable = /usr/local/libexec/dovecot/gdbhelper /usr/local/libexec/dovecot/imap
++  #   mail_executable = _PREFIX_/libexec/dovecot/gdbhelper _PREFIX_/libexec/dovecot/imap
    #
 -  #mail_executable = /usr/libexec/dovecot/imap
-+  #mail_executable = /usr/local/libexec/dovecot/imap
++  #mail_executable = _PREFIX_/libexec/dovecot/imap
  
    # Maximum IMAP command line length in bytes. Some clients generate very long
    # command lines with huge mailboxes, so you may need to raise this if you get
@@ -111,12 +111,12 @@ $OpenBSD: patch-dovecot-example_conf,v 1.33 2007/03/15 23:20:54 jakob Exp $
  protocol pop3 {
    # Login executable location.
 -  #login_executable = /usr/libexec/dovecot/pop3-login
-+  #login_executable = /usr/local/libexec/dovecot/pop3-login
++  #login_executable = _PREFIX_/libexec/dovecot/pop3-login
  
    # POP3 executable location. See IMAP's mail_executable above for examples
    # how this could be changed.
 -  #mail_executable = /usr/libexec/dovecot/pop3
-+  #mail_executable = /usr/local/libexec/dovecot/pop3
++  #mail_executable = _PREFIX_/libexec/dovecot/pop3
  
    # Don't try to set mails non-recent or seen with POP3 sessions. This is
    # mostly intended to reduce disk I/O. With maildir it doesn't move files
@@ -143,7 +143,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.33 2007/03/15 23:20:54 jakob Exp $
  
  # Executable location
 -#auth_executable = /usr/libexec/dovecot/dovecot-auth
-+#auth_executable = /usr/local/libexec/dovecot/dovecot-auth
++#auth_executable = _PREFIX_/libexec/dovecot/dovecot-auth
  
  # Set max. process size in megabytes.
  #auth_process_size = 256
