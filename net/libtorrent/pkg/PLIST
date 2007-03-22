@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/01/14 23:37:52 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/03/22 20:42:05 naddy Exp $
 %%SHARED%%
 include/torrent/
 include/torrent/bitfield.h
@@ -12,6 +12,7 @@ include/torrent/data/block_transfer.h
 include/torrent/data/file.h
 include/torrent/data/file_list.h
 include/torrent/data/file_list_iterator.h
+include/torrent/data/file_manager.h
 include/torrent/data/file_utils.h
 include/torrent/data/piece.h
 include/torrent/data/transfer_list.h

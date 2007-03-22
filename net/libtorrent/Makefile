@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2007/01/14 23:37:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2007/03/22 20:42:05 naddy Exp $
 
 COMMENT=		"BitTorrent library written in C++"
 
-DISTNAME=		libtorrent-0.11.1
-SHARED_LIBS +=  	torrent              11.1     # .10.1
+DISTNAME=		libtorrent-0.11.2
+SHARED_LIBS +=  	torrent              11.2     # .10.3
 CATEGORIES=		net devel
 
 HOMEPAGE=		http://libtorrent.rakshasa.no/
@@ -24,8 +24,11 @@ USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--with-openssl=/usr \
+			--with-openssl \
 			--with-kqueue \
+			--with-statfs \
 			--disable-debug
+CONFIGURE_ENV=		OPENSSL_CFLAGS=-I/usr/include \
+			OPENSSL_LIBS=-lcrypto
 
 .include <bsd.port.mk>
