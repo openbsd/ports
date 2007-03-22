@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.192 2007/02/07 09:27:01 msf Exp $
+# $OpenBSD: Makefile,v 1.193 2007/03/22 08:12:39 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -43,6 +43,7 @@
      SUBDIR += libebml
      SUBDIR += libwpd
      SUBDIR += libxml
+     SUBDIR += libxml++
      SUBDIR += libxml1
      SUBDIR += libxslt
      SUBDIR += linuxdoc
