@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2007/03/22 20:20:28 simon Exp $
+--- configure.orig	Wed Jan 24 12:04:10 2007
++++ configure	Wed Jan 24 12:04:17 2007
+@@ -9974,7 +9974,7 @@ else
+   packageprefix=${prefix}
+ fi
+ 
+-packagedatadir=share/games/${PACKAGE}
++packagedatadir=share/${PACKAGE}
+ packagedocdir=share/doc/${PACKAGE}
+ 
+ packagepixmapsdir=${packagedatadir}/pixmaps
