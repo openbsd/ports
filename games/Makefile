@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.139 2007/03/21 10:31:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.140 2007/03/22 20:21:07 simon Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -12,6 +12,7 @@
      SUBDIR += angband,no_x11
      SUBDIR += angrydd
      SUBDIR += bass
+     SUBDIR += bomberclone
      SUBDIR += bombermaze
      SUBDIR += burgerspace
      SUBDIR += bzflag
