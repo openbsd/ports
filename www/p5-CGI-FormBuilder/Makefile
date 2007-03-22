@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/02/06 07:02:25 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2007/03/22 16:32:48 simon Exp $
 
 COMMENT=	"easily generate and process stateful forms"
 
 MODULES=	cpan
-DISTNAME=	CGI-FormBuilder-3.05
+DISTNAME=	CGI-FormBuilder-3.0501
 CATEGORIES=	www
 EXTRACT_SUFX=	.tgz
 
@@ -20,5 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 REGRESS_DEPENDS=::textproc/p5-Template \
 		::textproc/p5-Text-Template \
 		::www/p5-HTML-Template
+
+post-extract:
+	@rm -f ${WRKSRC}/lib/CGI/FormBuilder.pm.orig
 
 .include <bsd.port.mk>
