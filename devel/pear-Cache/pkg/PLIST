@@ -1,16 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/28 12:35:11 mbalmer Exp $
-lib/
-lib/php/
+@comment $OpenBSD: PLIST,v 1.2 2007/03/22 22:48:03 robert Exp $
+@group daemon
 pear/data/Cache/
 pear/data/Cache/Container/
 pear/data/Cache/Container/mdb_cache_schema.xml
-@comment pear/lib/.channels/.alias/pear.txt
-@comment pear/lib/.channels/.alias/pecl.txt
-@comment pear/lib/.channels/__uri.reg
-@comment pear/lib/.channels/pear.php.net.reg
-@comment pear/lib/.channels/pecl.php.net.reg
-@comment pear/lib/.depdb
-@comment pear/lib/.depdblock
 pear/lib/.registry/cache.reg
 pear/lib/Cache/
 pear/lib/Cache.php

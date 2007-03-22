@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2006/10/28 17:50:19 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.8 2007/03/22 22:48:03 robert Exp $
 
 COMMENT=	"date and timezone classes for PHP"
 
 DISTNAME=	Date-1.4.6
-PKGNAME=	pear-${DISTNAME}
+PKGNAME=	pear-${DISTNAME}p0
 CATEGORIES=	devel pear
 
 MASTER_SITES=	http://pear.php.net/get/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
-MODULES=	www/php5/pear
+MODULES=	www/pear
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,6 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/28 17:21:03 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/03/22 22:48:04 robert Exp $
+@group daemon
 lib/
 lib/php/
+@group
+pear/doc/
+@group daemon
 pear/doc/Net_LDAP/
 pear/doc/Net_LDAP/LICENSE
 pear/doc/Net_LDAP/doc/
@@ -11,13 +15,6 @@ pear/doc/Net_LDAP/doc/Schema.txt
 pear/doc/Net_LDAP/doc/utf8.txt
 pear/doc/Net_LDAP/tests/
 pear/doc/Net_LDAP/tests/tests.php
-@comment pear/lib/.channels/.alias/pear.txt
-@comment pear/lib/.channels/.alias/pecl.txt
-@comment pear/lib/.channels/__uri.reg
-@comment pear/lib/.channels/pear.php.net.reg
-@comment pear/lib/.channels/pecl.php.net.reg
-@comment pear/lib/.depdb
-@comment pear/lib/.depdblock
 pear/lib/.registry/net_ldap.reg
 pear/lib/Net/
 pear/lib/Net/LDAP/

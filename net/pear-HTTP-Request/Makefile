@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2006/10/28 22:19:00 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.8 2007/03/22 22:48:04 robert Exp $
 
 COMMENT=	"an easy way to perform HTTP requests for PHP"
 
 DISTNAME=	HTTP_Request-1.4.0
-PKGNAME=	pear-${DISTNAME:S/_/-/}
+PKGNAME=	pear-${DISTNAME:S/_/-/}p0
 CATEGORIES=	net pear
 
 MASTER_SITES=	http://pear.php.net/get/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
-MODULES=	www/php5/pear
+MODULES=	www/pear
 
 # PHP License
 PERMIT_PACKAGE_CDROM=	Yes

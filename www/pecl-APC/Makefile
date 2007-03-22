@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2007/01/03 20:06:51 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2007/03/22 22:48:04 robert Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"Alternative PHP Cache"
 
-DISTNAME=	APC-3.0.12p2
+DISTNAME=	APC-3.0.12p3
 PKGNAME=	pecl-${DISTNAME}
 CATEGORIES=	www
 
@@ -24,7 +24,7 @@ EXTRACT_SUFX=	.tgz
 AUTOCONF_VERSION=	2.59
 AUTOMAKE_VERSION=	1.4
 
-BUILD_DEPENDS=	:php5-pear-*:www/php5/core,-pear \
+BUILD_DEPENDS=	:pear-*:www/pear \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 RUN_DEPENDS=	:php5-core-*:www/php5/core

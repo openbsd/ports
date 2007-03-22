@@ -1,9 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.9 2006/10/28 17:49:11 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.10 2007/03/22 22:48:03 robert Exp $
+@group daemon
 lib/
 lib/php/
 pear/data/Log/
 pear/data/Log/misc/
 pear/data/Log/misc/log.sql
+@group
+pear/doc/
+@group daemon
 pear/doc/Log/
 pear/doc/Log/docs/
 pear/doc/Log/docs/examples/
@@ -22,13 +26,6 @@ pear/doc/Log/docs/examples/sqlite.php
 pear/doc/Log/docs/examples/syslog.php
 pear/doc/Log/docs/examples/win.php
 pear/doc/Log/docs/guide.txt
-@comment pear/lib/.channels/.alias/pear.txt
-@comment pear/lib/.channels/.alias/pecl.txt
-@comment pear/lib/.channels/__uri.reg
-@comment pear/lib/.channels/pear.php.net.reg
-@comment pear/lib/.channels/pecl.php.net.reg
-@comment pear/lib/.depdb
-@comment pear/lib/.depdblock
 pear/lib/.registry/log.reg
 pear/lib/Log/
 pear/lib/Log.php

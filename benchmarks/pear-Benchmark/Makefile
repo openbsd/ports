@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.9 2006/11/03 07:18:31 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2007/03/22 22:48:03 robert Exp $
 
 COMMENT=	"framework to benchmark PHP scripts or function calls"
 
 DISTNAME=	Benchmark-1.2.6
-PKGNAME=	pear-${DISTNAME}
+PKGNAME=	pear-${DISTNAME}p0
 CATEGORIES=	benchmarks pear
 
 MASTER_SITES=	http://pear.php.net/get/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
-MODULES=	www/php5/pear
+MODULES=	www/pear
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

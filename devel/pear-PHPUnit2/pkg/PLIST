@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/03/02 13:53:44 mbalmer Exp $
-lib/
-lib/php/
+@comment $OpenBSD: PLIST,v 1.2 2007/03/22 22:48:03 robert Exp $
+@group daemon
 pear/lib/.registry/phpunit2.reg
 pear/lib/PHPUnit2/
 pear/lib/PHPUnit2/Extensions/

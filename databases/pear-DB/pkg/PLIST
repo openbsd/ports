@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/10/22 13:36:54 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/03/22 22:48:03 robert Exp $
+@group daemon
 lib/
 lib/php/
-pear/
 pear/doc/
 pear/doc/DB/
 pear/doc/DB/doc/
@@ -9,19 +9,6 @@ pear/doc/DB/doc/IDEAS
 pear/doc/DB/doc/MAINTAINERS
 pear/doc/DB/doc/STATUS
 pear/doc/DB/doc/TESTERS
-pear/lib/
-@comment pear/lib/.channels/
-@comment pear/lib/.channels/.alias/
-@comment pear/lib/.channels/.alias/pear.txt
-@comment pear/lib/.channels/.alias/pecl.txt
-@comment pear/lib/.channels/__uri.reg
-@comment pear/lib/.channels/pear.php.net.reg
-@comment pear/lib/.channels/pecl.php.net.reg
-@comment pear/lib/.depdb
-@comment pear/lib/.depdblock
-pear/lib/.registry/
-@comment pear/lib/.registry/.channel.__uri/
-@comment pear/lib/.registry/.channel.pecl.php.net/
 pear/lib/.registry/db.reg
 pear/lib/DB/
 pear/lib/DB.php
@@ -40,7 +27,6 @@ pear/lib/DB/pgsql.php
 pear/lib/DB/sqlite.php
 pear/lib/DB/storage.php
 pear/lib/DB/sybase.php
-pear/tests/
 pear/tests/DB/
 pear/tests/DB/tests/
 pear/tests/DB/tests/db_error.phpt

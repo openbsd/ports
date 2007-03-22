@@ -1,11 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/28 17:11:29 mbalmer Exp $
-@comment pear/lib/.channels/.alias/pear.txt
-@comment pear/lib/.channels/.alias/pecl.txt
-@comment pear/lib/.channels/__uri.reg
-@comment pear/lib/.channels/pear.php.net.reg
-@comment pear/lib/.channels/pecl.php.net.reg
-@comment pear/lib/.depdb
-@comment pear/lib/.depdblock
+@comment $OpenBSD: PLIST,v 1.2 2007/03/22 22:48:04 robert Exp $
+@group daemon
 pear/lib/.registry/file.reg
 pear/lib/File/
 pear/lib/File.php

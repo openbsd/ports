@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/03/02 14:07:10 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/03/22 22:48:04 robert Exp $
+@group daemon
 lib/
 lib/php/
 pear/lib/.registry/html_common2.reg
 pear/lib/HTML/
 pear/lib/HTML/Common2.php
-pear/tests/
 pear/tests/HTML_Common2/
 pear/tests/HTML_Common2/tests/
 pear/tests/HTML_Common2/tests/HTML_Common2_Test.php

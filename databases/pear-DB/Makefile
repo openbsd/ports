@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.4 2006/10/22 13:36:54 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.5 2007/03/22 22:48:03 robert Exp $
 
 COMMENT=	"database abstraction layer for PHP"
 
 DISTNAME=	DB-1.7.6
-PKGNAME=	pear-${DISTNAME}
+PKGNAME=	pear-${DISTNAME}p0
 CATEGORIES=	net pear
 
 MASTER_SITES=	http://pear.php.net/get/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
-MODULES=	www/php5/pear
+MODULES=	www/pear
 
 # PHP License
 PERMIT_PACKAGE_CDROM=	Yes

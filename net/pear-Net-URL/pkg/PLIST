@@ -1,8 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/10/07 14:53:30 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/03/22 22:48:04 robert Exp $
+@group daemon
 lib/
 lib/php/
+@group
+pear/doc/
+@group daemon
 pear/doc/Net_URL/
 pear/doc/Net_URL/docs/
 pear/doc/Net_URL/docs/example.php
 pear/lib/.registry/net_url.reg
+@group
+pear/lib/Net/
+@group daemon
 pear/lib/Net/URL.php

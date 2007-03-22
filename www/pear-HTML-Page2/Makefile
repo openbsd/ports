@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/22 13:16:35 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2007/03/22 22:48:04 robert Exp $
 
 COMMENT=	"base package for HTML handling in PHP5"
 
 DISTNAME=	HTML_Page2-0.5.0beta
-PKGNAME=	pear-${DISTNAME:S/_/-/}
+PKGNAME=	pear-${DISTNAME:S/_/-/}p0
 CATEGORIES=	www devel pear
 
 MASTER_SITES=	http://pear.php.net/get/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
-MODULES=	www/php5/pear
+MODULES=	www/pear
 
 # PHP License
 PERMIT_PACKAGE_CDROM=	Yes

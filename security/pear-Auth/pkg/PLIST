@@ -1,6 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/21 12:27:32 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/03/22 22:48:04 robert Exp $
+@group daemon
 lib/
 lib/php/
+@group
+pear/doc/
+@group daemon
 pear/doc/Auth/
 pear/doc/Auth/README.Auth
 pear/lib/.registry/auth.reg

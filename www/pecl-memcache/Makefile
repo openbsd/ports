@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2007/01/03 20:08:07 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2007/03/22 22:48:04 robert Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"PHP interface to memcached"
 
 DISTNAME=	memcache-1.5
-PKGNAME=	pecl-${DISTNAME}
+PKGNAME=	pecl-${DISTNAME}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://pecl.php.net/package/memcache
@@ -24,7 +24,7 @@ EXTRACT_SUFX=	.tgz
 AUTOCONF_VERSION=	2.59
 AUTOMAKE_VERSION=	1.4
 
-BUILD_DEPENDS=	:php5-pear-*:www/php5/core,-pear \
+BUILD_DEPENDS=	:pear-*:www/pear \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 RUN_DEPENDS=	:php5-core-*:www/php5/core

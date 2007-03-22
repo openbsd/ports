@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2006/05/09 14:16:50 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2007/03/22 22:48:04 robert Exp $
 
 COMMENT=	"XML utility class for PHP"
 
 DISTNAME=	XML_Util-1.1.1
-PKGNAME=	pear-${DISTNAME:S/_/-/}p0
+PKGNAME=	pear-${DISTNAME:S/_/-/}p1
 CATEGORIES=	textproc pear
 
 MASTER_SITES=	http://pear.php.net/get/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
-MODULES=	www/php5/pear
+MODULES=	www/pear
 
 # PHP License
 PERMIT_PACKAGE_CDROM=	Yes

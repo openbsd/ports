@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/28 12:43:42 mbalmer Exp $
-lib/
-lib/php/
+@comment $OpenBSD: PLIST,v 1.2 2007/03/22 22:48:04 robert Exp $
+@group daemon
 pear/data/XML_Serializer/
 pear/data/XML_Serializer/doc/
 pear/data/XML_Serializer/doc/todo.txt
+@group
+pear/doc/
+@group daemon
 pear/doc/XML_Serializer/
 pear/doc/XML_Serializer/examples/
 pear/doc/XML_Serializer/examples/example.xml
@@ -35,13 +37,9 @@ pear/doc/XML_Serializer/examples/unserializeWhitespace.php
 pear/doc/XML_Serializer/examples/unserializeWithAttributes.php
 pear/doc/XML_Serializer/examples/unserializeWithTagMap.php
 pear/doc/XML_Serializer/examples/unserializeWithTypeGuessing.php
-@comment pear/lib/.channels/.alias/pear.txt
-@comment pear/lib/.channels/.alias/pecl.txt
-@comment pear/lib/.channels/__uri.reg
-@comment pear/lib/.channels/pear.php.net.reg
-@comment pear/lib/.channels/pecl.php.net.reg
-@comment pear/lib/.depdb
-@comment pear/lib/.depdblock
 pear/lib/.registry/xml_serializer.reg
+@group
+pear/lib/XML/
+@group daemon
 pear/lib/XML/Serializer.php
 pear/lib/XML/Unserializer.php

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2006/11/01 11:15:52 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/03/22 22:48:04 robert Exp $
+@group daemon
 lib/
 lib/php/
 pear/data/Services_Weather/
@@ -6,6 +7,9 @@ pear/data/Services_Weather/buildMetarDB.php
 pear/data/Services_Weather/images/
 pear/data/Services_Weather/images/sunrise.gif
 pear/data/Services_Weather/images/sunset.gif
+@group
+pear/doc/
+@group daemon
 pear/doc/Services_Weather/
 pear/doc/Services_Weather/examples/
 pear/doc/Services_Weather/examples/ejse-basic.php
@@ -14,13 +18,6 @@ pear/doc/Services_Weather/examples/metar-basic.php
 pear/doc/Services_Weather/examples/metar-extensive.php
 pear/doc/Services_Weather/examples/weather.com-basic.php
 pear/doc/Services_Weather/examples/weather.com-extensive.php
-@comment pear/lib/.channels/.alias/pear.txt
-@comment pear/lib/.channels/.alias/pecl.txt
-@comment pear/lib/.channels/__uri.reg
-@comment pear/lib/.channels/pear.php.net.reg
-@comment pear/lib/.channels/pecl.php.net.reg
-@comment pear/lib/.depdb
-@comment pear/lib/.depdblock
 pear/lib/.registry/services_weather.reg
 pear/lib/Services/
 pear/lib/Services/Weather/

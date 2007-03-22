@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2006/11/10 14:53:22 mbalmer Exp $ 
+# $OpenBSD: Makefile,v 1.24 2007/03/22 22:48:04 robert Exp $ 
 
 COMMENT=	"modular framework for web-based applications"
 
 DISTNAME=	horde-3.1.3
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	devel www
 HOMEPAGE=	http://www.horde.org/
 
@@ -28,7 +28,7 @@ SUBST_VARS=	INSTDIR
 
 RUN_DEPENDS+=	:php5-core-*:www/php5/core \
 		:php5-mcrypt-*:www/php5/extensions,-mcrypt \
-		:php5-pear-*:www/php5/core,-pear \
+		:pear-*:www/pear \
 		:php5-mbstring-*:www/php5/extensions,-mbstring \
 		:php5-gd-*:www/php5/extensions,-gd \
 		:pear-Log-*:devel/pear-Log \

@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2006/10/22 12:28:49 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.4 2007/03/22 22:48:04 robert Exp $
 
 COMMENT=	"an implementation of the IMAP protocol for PHP"
 
 DISTNAME=	Net_IMAP-1.0.3
-PKGNAME=	pear-${DISTNAME:S/_/-/}p0
+PKGNAME=	pear-${DISTNAME:S/_/-/}p1
 CATEGORIES=	net pear
 
 MASTER_SITES=	http://pear.php.net/get/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
-MODULES=	www/php5/pear
+MODULES=	www/pear
 
 # PHP License
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,9 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/28 12:32:47 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/03/22 22:48:04 robert Exp $
+@group daemon
 lib/
 lib/php/
+@group
+pear/doc/
+@group daemon
 pear/doc/XML_Util/
 pear/doc/XML_Util/examples/
 pear/doc/XML_Util/examples/example.php
 pear/doc/XML_Util/examples/example2.php
 pear/lib/.registry/xml_util.reg
+@group
+pear/lib/XML/
+@group daemon
 pear/lib/XML/Util.php
