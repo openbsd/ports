@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.30 2007/02/10 08:01:35 mbalmer Exp $
+@comment $OpenBSD: PLIST-docs,v 1.31 2007/03/22 19:29:17 simon Exp $
 @comment lib/libpq.so.5
 share/doc/postgresql/COPYRIGHT
 share/doc/postgresql/FAQ
@@ -9,6 +9,43 @@ share/doc/postgresql/README
 share/doc/postgresql/README.mb.big5
 share/doc/postgresql/README.mb.jp
 share/doc/postgresql/TODO
+share/doc/postgresql/contrib/
+share/doc/postgresql/contrib/README.adminpack
+share/doc/postgresql/contrib/README.btree_gist
+share/doc/postgresql/contrib/README.chkpass
+share/doc/postgresql/contrib/README.cube
+share/doc/postgresql/contrib/README.dblink
+share/doc/postgresql/contrib/README.earthdistance
+share/doc/postgresql/contrib/README.fuzzystrmatch
+share/doc/postgresql/contrib/README.hstore
+share/doc/postgresql/contrib/README.int_aggregate
+share/doc/postgresql/contrib/README.intarray
+share/doc/postgresql/contrib/README.isn
+share/doc/postgresql/contrib/README.lo
+share/doc/postgresql/contrib/README.ltree
+share/doc/postgresql/contrib/README.oid2name
+share/doc/postgresql/contrib/README.pg_buffercache
+share/doc/postgresql/contrib/README.pg_freespacemap
+share/doc/postgresql/contrib/README.pg_trgm
+share/doc/postgresql/contrib/README.pgbench
+share/doc/postgresql/contrib/README.pgbench_jis
+share/doc/postgresql/contrib/README.pgcrypto
+share/doc/postgresql/contrib/README.pgrowlocks
+share/doc/postgresql/contrib/README.pgrowlocks.euc_jp
+share/doc/postgresql/contrib/README.pgstattuple
+share/doc/postgresql/contrib/README.pgstattuple.euc_jp
+share/doc/postgresql/contrib/README.seg
+share/doc/postgresql/contrib/README.soundex
+share/doc/postgresql/contrib/README.spi
+share/doc/postgresql/contrib/README.sslinfo
+share/doc/postgresql/contrib/README.tablefunc
+share/doc/postgresql/contrib/README.tsearch2
+share/doc/postgresql/contrib/README.vacuumlo
+share/doc/postgresql/contrib/autoinc.example
+share/doc/postgresql/contrib/insert_username.example
+share/doc/postgresql/contrib/moddatetime.example
+share/doc/postgresql/contrib/refint.example
+share/doc/postgresql/contrib/timetravel.example
 share/doc/postgresql/html/
 share/doc/postgresql/html/LEGALNOTICE.html
 share/doc/postgresql/html/admin.html

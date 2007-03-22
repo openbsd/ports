@@ -1,0 +1,6 @@
+Contains porting tools, analysis utilities, and plug-in features
+that are not part of the core PostgreSQL system, mainly because
+they address a limited audience or are too experimental to be part
+of the main source tree.  This does not preclude their usefulness.
+
+Documentation is in postgresql-docs subpackage.

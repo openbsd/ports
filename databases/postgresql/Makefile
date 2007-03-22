@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.102 2007/02/10 08:01:35 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.103 2007/03/22 19:29:17 simon Exp $
 
 COMMENT-main=	"PostgreSQL RDBMS (client)"
 COMMENT-server=	"PostgreSQL RDBMS (server)"
 COMMENT-docs=	"PostgreSQL RDBMS documentation"
+COMMENT-contrib="PostgreSQL RDBMS contributions"
 
 VERSION=	8.2.3
 DISTNAME=	postgresql-${VERSION}
-PKGNAME-main=	postgresql-client-${VERSION}p0
+PKGNAME-main=	postgresql-client-${VERSION}p1
 PKGNAME-server=	postgresql-server-${VERSION}
-PKGNAME-docs=	postgresql-docs-${VERSION}p0
+PKGNAME-docs=	postgresql-docs-${VERSION}p1
+PKGNAME-contrib=postgresql-contrib-${VERSION}
 
 CATEGORIES=	databases
 SHARED_LIBS=	ecpg		6.0 \
@@ -32,7 +34,7 @@ MASTER_SITES= ftp://ftp2.uk.postgresql.org/sites/ftp.postgresql.org/source/v${VE
 	ftp://ftp5.es.postgresql.org/mirror/postgresql/source/v${VERSION}/ \
 	ftp://ftp.postgresql.org/pub/source/v${VERSION}/
 
-MULTI_PACKAGES=	-docs -main -server
+MULTI_PACKAGES=	-docs -main -server -contrib
 
 # The -client SUBPACKAGE should build and run fine on static arches,
 # but the server requires loadable library support. Until we figure
@@ -76,6 +78,7 @@ INSTALL_TARGET=	install
 WANTLIB-server=	${WANTLIB} perl
 
 LIB_DEPENDS-server= pq.>=4:postgresql-client-${VERSION}:databases/postgresql
+RUN_DEPENDS-contrib=:postgresql-server-${VERSION}:databases/postgresql,-server
 WANTLIB-docs=
 PKG_ARCH-docs=	*
 
@@ -107,6 +110,10 @@ DOCS=	${WRKSRC}/COPYRIGHT ${WRKSRC}/HISTORY \
 	${WRKSRC}/doc/README.mb.big5 ${WRKSRC}/doc/README.mb.jp \
 	${WRKSRC}/doc/FAQ ${WRKSRC}/doc/FAQ_DEV ${WRKSRC}/doc/TODO
 
+post-build:
+	cd ${WRKBUILD}/contrib && exec ${SETENV} ${MAKE_ENV} \
+	    ${MAKE_PROGRAM} ${MAKE_FLAGS} ${ALL_TARGET}
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/postgresql
 	${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/postgresql
@@ -114,5 +121,7 @@ post-install:
 		${WRKBUILD}/README.OpenBSD
 	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD \
 		${PREFIX}/share/doc/postgresql
+	cd ${WRKBUILD}/contrib && exec ${SETENV} ${MAKE_ENV} DESTDIR=${WRKINST} \
+	    ${MAKE_PROGRAM} ${MAKE_FLAGS} ${INSTALL_TARGET}
 
 .include <bsd.port.mk>

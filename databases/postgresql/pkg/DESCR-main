@@ -16,3 +16,6 @@ The OpenBSD PostgreSQL port build produces several packages:
   HTML format: Administrator's Guide, Programmer's Manual, PostgreSQL
   Tutorial and User's Guide and Integrated Documentation package
   contains all the above documentation.
+
+* postgresql-contrib-${VERSION} - contributions
+  Additional utilities and usefull libraries.
