@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/28 23:26:23 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2007/03/22 22:08:54 kili Exp $
 #
 # Credits to Matt Jibson. He did the initial work on this port and many
 # tools it depends on.
@@ -31,7 +31,7 @@ PERMIT_DISTFILES_FTP=Yes
 PERMIT_DISTFILES_CDROM=Yes
 
 MASTER_BASE=		http://download.linuxaudio.org/lilypond/
-MASTER_SITES=		${MASTER_BASE}v${VERSION:C,\.[0-9]*$,,}/
+MASTER_SITES=		${MASTER_BASE}sources/v${VERSION:C,\.[0-9]*$,,}/
 MASTER_SITES0=		${MASTER_BASE}binaries/documentation/
 
 # We don't use the standard autoconf mechanisms from the ports
