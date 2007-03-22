@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:39:33 espie Exp $
-bin/pgrep
-bin/pkill
-@man man/cat1/pgrep.0
-@man man/cat1/pkill.0
