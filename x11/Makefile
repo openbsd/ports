@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.270 2007/03/20 06:41:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.271 2007/03/22 07:47:19 jasper Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -60,6 +60,7 @@
      SUBDIR += gentoo
      SUBDIR += gnome
      SUBDIR += gnomemm
+     SUBDIR += gob2
      SUBDIR += goggles
      SUBDIR += golem
      SUBDIR += gromit
