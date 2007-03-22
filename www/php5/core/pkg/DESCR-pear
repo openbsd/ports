@@ -1,6 +1,0 @@
-PEAR (PHP Extensions and Add-on Repository) is a code repository
-for PHP extensions and PHP library code inspired by TeX's CTAN and
-Perl's CPAN.
-
-While it is currently distributed with PHP, it is being dissociated,
-and future versions will be upgradable independently of PHP5.

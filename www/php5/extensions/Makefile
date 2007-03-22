@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.32 2007/02/09 13:48:20 bernd Exp $
+# $OpenBSD: Makefile,v 1.33 2007/03/22 22:43:20 robert Exp $
 
-FULLPKGNAME-main=		php5-extensions-${V}p0
+FULLPKGNAME-main=	php5-extensions-${V}
 COMMENT-main=		"informational package about PHP5 extensions"
 
 MULTI_PACKAGES=	-main
@@ -48,7 +48,7 @@ COMMENT-curl=		"curl URL library extensions for php5"
 CONFIGURE_ARGS+=	--with-curl=shared,${LOCALBASE}
 LIB_DEPENDS-curl=	curl.>=2::net/curl
 WANTLIB-curl=		${WANTLIB} crypto ssl z
-FULLPKGNAME-curl=	php5-curl-${V}p2
+FULLPKGNAME-curl=	php5-curl-${V}
 .endif
 
 # dba
@@ -73,17 +73,6 @@ CONFIGURE_ARGS+=	--enable-dbase=shared
 LIB_DEPENDS-dbase=
 .endif
 
-# filepro
-PSEUDO_FLAVORS+=	no_filepro
-.if ${FLAVOR:L:Mno_filepro}
-CONFIGURE_ARGS+=	--disable-filepro
-.else
-MULTI_PACKAGES+=	-filepro
-COMMENT-filepro=	"filepro database access extensions for php5"
-CONFIGURE_ARGS+=	--enable-filepro=shared
-LIB_DEPENDS-filepro=
-.endif
-
 # gd
 PSEUDO_FLAVORS+=	no_gd
 .if ${FLAVOR:L:Mno_gd}
@@ -101,11 +90,11 @@ CONFIGURE_ARGS+=	--with-gd=shared ${GRAPHIC_CONFIG} \
 
 . if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--without-xpm-dir --without-freetype-dir
-FULLPKGNAME-gd=		php5-gd-${V}-no_x11p2
+FULLPKGNAME-gd=		php5-gd-${V}-no_x11
 . else
 USE_X11=		yes
 CONFIGURE_ARGS+=	--with-xpm-dir=${X11BASE}
-FULLPKGNAME-gd=		php5-gd-${V}p1
+FULLPKGNAME-gd=		php5-gd-${V}
 WANTLIB-gd+=		X11 Xpm freetype
 . endif
 .endif
@@ -290,7 +279,7 @@ MULTI_PACKAGES+=	-sybase_ct
 COMMENT-sybase_ct=	"sybase database access extensions for php5"
 CONFIGURE_ARGS+=        --with-sybase-ct=shared,${LOCALBASE}
 LIB_DEPENDS-sybase_ct=	ct::databases/freetds
-FULLPKGNAME-sybase_ct=	php5-sybase_ct-${V}p2
+FULLPKGNAME-sybase_ct=	php5-sybase_ct-${V}
 .endif
 
 # xml-rpc
@@ -318,7 +307,7 @@ WANTLIB-xsl=		${WANTLIB} iconv xml2 z
 .endif
 
 .for i in ${MULTI_PACKAGES}
-FULLPKGNAME${i} ?=	php5${i}-${V}p1
+FULLPKGNAME${i} ?=	php5${i}-${V}
 RUN_DEPENDS${i}=	:php5-core-${V}:www/php5/core
 MODULE_NAME${i}=	${i:S/-//g}
 .endfor

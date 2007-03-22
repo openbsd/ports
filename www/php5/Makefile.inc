@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.13 2006/10/24 09:30:25 wilfried Exp $
+# $OpenBSD: Makefile.inc,v 1.14 2007/03/22 22:43:20 robert Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
-V=			5.1.6
-PEAR_V= 		20060428
-SUHOSIN_V=		0.9.5
+V=			5.2.1
+SUHOSIN_V=		0.9.6.2
 DISTNAME?=		php-${V}
 CATEGORIES=		www lang
 
@@ -36,7 +35,6 @@ APACHE_MODULE_DIR=	${LOCALBASE}/${APACHE_MODULE_SUBDIR}
 
 # where the PEAR and extension modules are (inside the chroot)
 CHROOT_DIR?=		/var/www
-PEAR_DIR?=		${CHROOT_DIR}/pear
 MODULES_SUBDIR=		lib/php/modules
 MODULES_DIR=		${CHROOT_DIR}/${MODULES_SUBDIR}
 
@@ -47,7 +45,7 @@ PHP_LDFLAGS=		-lstdc++ -lm
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.52
 CONFIGURE_ENV=          CFLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread" \
-                        LDFLAGS="-L${LOCALBASE}/lib ${PHP_LDFLAGS}" \
+                        LDFLAGS="-L${LOCALBASE}/lib ${PHP_LDFLAGS} -pthread" \
 			EXTENSION_DIR=${MODULES_DIR}
 MAKE_ENV=               ${CONFIGURE_ENV}
 

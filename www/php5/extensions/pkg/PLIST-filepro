@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST-filepro,v 1.3 2006/10/21 11:44:10 robert Exp $
-@conflict php4-filepro-*
-@pkgpath www/php5/extensions,-filepro,hardened
-lib/php/modules/filepro.so

@@ -1,7 +1,7 @@
-$OpenBSD: patch-php_ini-dist,v 1.6 2006/05/09 14:15:40 robert Exp $
---- php.ini-dist.orig	Tue Nov 15 00:14:23 2005
-+++ php.ini-dist	Sat Nov 26 13:18:08 2005
-@@ -441,10 +441,7 @@
+$OpenBSD: patch-php_ini-dist,v 1.7 2007/03/22 22:43:20 robert Exp $
+--- php.ini-dist.orig	Thu Dec 21 14:05:27 2006
++++ php.ini-dist	Wed Feb 21 23:30:37 2007
+@@ -455,10 +455,7 @@
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
  ; UNIX: "/path1:/path2"
@@ -13,7 +13,7 @@ $OpenBSD: patch-php_ini-dist,v 1.6 2006/05/09 14:15:40 robert Exp $
  
  ; The root of the PHP pages, used only if nonempty.
  ; if PHP was not compiled with FORCE_REDIRECT, you SHOULD set doc_root
-@@ -458,7 +455,7 @@
+@@ -472,7 +469,7 @@
  user_dir =
  
  ; Directory in which the loadable extensions (modules) reside.
@@ -22,16 +22,16 @@ $OpenBSD: patch-php_ini-dist,v 1.6 2006/05/09 14:15:40 robert Exp $
  
  ; Whether or not to enable the dl() function.  The dl() function does NOT work
  ; properly in multithreaded servers, such as IIS or Zeus, and is automatically
-@@ -519,7 +516,7 @@
+@@ -533,7 +530,7 @@
  ;;;;;;;;;;;;;;;;;;
  
  ; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
 -allow_url_fopen = On
 +allow_url_fopen = Off
  
- ; Define the anonymous ftp password (your email address)
- ;from="john@doe.com"
-@@ -537,70 +534,6 @@
+ ; Whether to allow include/require to open URLs (like http:// or ftp://) as files.
+ allow_url_include = Off
+@@ -554,81 +551,6 @@
  ; fgets() and file() will work regardless of the source of the file.
  ; auto_detect_line_endings = Off
  
@@ -64,45 +64,56 @@ $OpenBSD: patch-php_ini-dist,v 1.6 2006/05/09 14:15:40 robert Exp $
 -; extension folders as well as the separate PECL DLL download (PHP 5).
 -; Be sure to appropriately set the extension_dir directive.
 -
--;extension=php_mbstring.dll
 -;extension=php_bz2.dll
 -;extension=php_curl.dll
 -;extension=php_dba.dll
 -;extension=php_dbase.dll
 -;extension=php_exif.dll
 -;extension=php_fdf.dll
--;extension=php_filepro.dll
 -;extension=php_gd2.dll
 -;extension=php_gettext.dll
+-;extension=php_gmp.dll
 -;extension=php_ifx.dll
 -;extension=php_imap.dll
 -;extension=php_interbase.dll
 -;extension=php_ldap.dll
+-;extension=php_mbstring.dll
 -;extension=php_mcrypt.dll
 -;extension=php_mhash.dll
 -;extension=php_mime_magic.dll
 -;extension=php_ming.dll
--;extension=php_mssql.dll
 -;extension=php_msql.dll
+-;extension=php_mssql.dll
 -;extension=php_mysql.dll
+-;extension=php_mysqli.dll
 -;extension=php_oci8.dll
 -;extension=php_openssl.dll
--;extension=php_oracle.dll
+-;extension=php_pdo.dll
+-;extension=php_pdo_firebird.dll
+-;extension=php_pdo_mssql.dll
+-;extension=php_pdo_mysql.dll
+-;extension=php_pdo_oci.dll
+-;extension=php_pdo_oci8.dll
+-;extension=php_pdo_odbc.dll
+-;extension=php_pdo_pgsql.dll
+-;extension=php_pdo_sqlite.dll
 -;extension=php_pgsql.dll
+-;extension=php_pspell.dll
 -;extension=php_shmop.dll
 -;extension=php_snmp.dll
+-;extension=php_soap.dll
 -;extension=php_sockets.dll
 -;extension=php_sqlite.dll
 -;extension=php_sybase_ct.dll
 -;extension=php_tidy.dll
 -;extension=php_xmlrpc.dll
 -;extension=php_xsl.dll
--
+-;extension=php_zip.dll
 -
  ;;;;;;;;;;;;;;;;;;;
  ; Module Settings ;
  ;;;;;;;;;;;;;;;;;;;
-@@ -616,13 +549,6 @@
+@@ -670,13 +592,6 @@
  define_syslog_variables  = Off
  
  [mail function]
@@ -116,7 +127,7 @@ $OpenBSD: patch-php_ini-dist,v 1.6 2006/05/09 14:15:40 robert Exp $
  ; For Unix only.  You may supply arguments as well (default: "sendmail -t -i").
  ;sendmail_path =
  
-@@ -1173,6 +1099,53 @@
+@@ -1252,6 +1167,53 @@
  ; instead of original one.
  soap.wsdl_cache_ttl=86400
  

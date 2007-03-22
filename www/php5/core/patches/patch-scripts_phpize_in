@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_phpize_in,v 1.5 2006/05/09 14:15:40 robert Exp $
+$OpenBSD: patch-scripts_phpize_in,v 1.6 2007/03/22 22:43:20 robert Exp $
 --- scripts/phpize.in.orig	Thu Sep  1 15:59:03 2005
 +++ scripts/phpize.in	Sat Nov 26 13:07:08 2005
 @@ -1,10 +1,10 @@
@@ -6,7 +6,7 @@ $OpenBSD: patch-scripts_phpize_in,v 1.5 2006/05/09 14:15:40 robert Exp $
  
  # Variable declaration
 -prefix='@prefix@'
-+prefix=OPENBSD_PEAR_ROOT
++prefix=@PEAR_INSTALLDIR@
  exec_prefix="`eval echo @exec_prefix@`"
 -phpdir="`eval echo @libdir@`/build"
 -includedir="`eval echo @includedir@`/php"

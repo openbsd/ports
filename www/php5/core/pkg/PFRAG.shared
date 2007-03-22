@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.3 2007/03/22 22:43:20 robert Exp $
+lib/php/libphp5.so

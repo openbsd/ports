@@ -1,13 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2006/11/25 11:09:04 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2007/03/22 22:43:20 robert Exp $
 
-MULTI_PACKAGES=	-main -pear
-
-COMMENT-main=	"server-side HTML-embedded scripting language"
-COMMENT-pear=	"base classes for common PHP tasks"
-PKGNAME-main=	php5-core-${V}p0
-FULLPKGNAME-pear= php5-pear-${V}p0
-DISTFILES=	php-${V}.tar.gz \
-		pear-${PEAR_V}.tar.gz:0
+COMMENT=	"server-side HTML-embedded scripting language"
+PKGNAME=	php5-core-${V}
+DISTFILES=	php-${V}.tar.gz
 
 CONFIGURE_ARGS+=--with-apxs=/usr/sbin/apxs \
 		--without-mysql \
@@ -17,7 +12,6 @@ CONFIGURE_ARGS+=--with-apxs=/usr/sbin/apxs \
 		--with-iconv=${LOCALBASE} \
 		--with-gettext=${LOCALBASE} \
 		--enable-dio \
-		--with-pear=${PEAR_DIR} \
 		--enable-bcmath \
 		--enable-session \
 		--enable-trans-sid \
@@ -31,7 +25,8 @@ CONFIGURE_ARGS+=--with-apxs=/usr/sbin/apxs \
 		--enable-sysvshm \
 		--enable-yp \
 		--enable-exif \
-		--without-sqlite
+		--without-sqlite \
+		--with-pear=${LOCALBASE}/share/php5
 		
 MODULES=	devel/gettext
 
@@ -46,44 +41,22 @@ PHPXS_SUBST+= -e 's,${i},${${i}},'
 WANTLIB=	c crypto m ssl stdc++ z pthread
 LIB_DEPENDS=	xml2.>=8::textproc/libxml
 
-PREFIX-pear=		${CHROOT_DIR}
-RUN_DEPENDS-pear=	:php5-core-${V}:www/php5/core
-WANTLIB-pear=
-LIB_DEPENDS-pear=
-
-
 pre-fake:
 	${INSTALL_DATA_DIR} ${PREFIX}/${APACHE_MODULE_SUBDIR}
 INSTALL_TARGET= install-headers install-build install-programs
 FAKE_FLAGS=	INSTALL_ROOT=${DESTDIR}
 
 pre-configure:
-	@cd ${WRKDIR}/pear && ${PATCH} -p0 --quiet < patch-OpenBSD 
 	@perl -pi -e "s,OPENBSD_PEAR_ROOT,'${CHROOT_DIR}/pear',g" \
-		${WRKDIR}/pear/PEAR/Config.php ${WRKSRC}/scripts/phpize.in \
+		${WRKSRC}/scripts/phpize.in \
 		${WRKSRC}/scripts/php-config.in
 
 post-install:
 	${INSTALL_DATA} ${WRKBUILD}/.libs/libphp5.so \
 		${PREFIX}/${APACHE_MODULE_SUBDIR}
-	${INSTALL_DATA_DIR} ${WRKINST}/${CHROOT_DIR}/pear/lib
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/php5
 	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/cli/php ${PREFIX}/bin
 	
-	@cd ${WRKDIR}/pear && ${PREFIX}/bin/php \
-		-n -dshort_open_tag=0 -dsafe_mode=0 -derror_reporting=E_ALL \
-		-ddetect_unicode=0 install-pear.php -b ${PREFIX}/bin \
-		-c ${WRKINST} -d ${WRKINST}${CHROOT_DIR}/pear *.tar 
-
-	@cp ${WRKDIR}/pear/PEAR/Config.php \
-		${WRKINST}${CHROOT_DIR}/pear/lib/PEAR/Config.php
-	@perl -pi -e "s,${WRKINST},,g" ${PREFIX}/bin/pear \
-				${PREFIX}/bin/peardev \
-				${PREFIX}/bin/pecl \
-				${WRKINST}${PEAR_DIR}/lib/pearcmd.php \
-				${WRKINST}${PEAR_DIR}/lib/peclcmd.php \
-				${WRKINST}${PEAR_DIR}/lib/PEAR/Command/Package.php
-
 .for i in dist recommended
 	@sed -e 's,MODULES_DIR,${MODULES_DIR},' \
 	     -e 's,OPENBSD_INCLUDE_PATH,/pear/lib:${CHROOT_DIR}/pear/lib,' \

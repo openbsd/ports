@@ -1,0 +1,21 @@
+$OpenBSD: patch-ext_posix_posix_c,v 1.1 2007/03/22 22:43:20 robert Exp $
+--- ext/posix/posix.c.orig	Tue Mar 20 00:38:18 2007
++++ ext/posix/posix.c	Tue Mar 20 00:39:48 2007
+@@ -884,7 +884,7 @@
+ 	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "l", &gid) == FAILURE) {
+ 		RETURN_FALSE;
+ 	}
+-#ifdef HAVE_GETGRGID_R
++#if defined(ZTS) && defined(HAVE_GETGRGID_R) && defined(_SC_GETGR_R_SIZE_MAX)
+ 	
+ 	grbuflen = sysconf(_SC_GETGR_R_SIZE_MAX);
+ 	grbuf = emalloc(grbuflen);
+@@ -909,7 +909,7 @@
+ 		php_error_docref(NULL TSRMLS_CC, E_WARNING, "unable to convert posix group struct to array");
+ 		RETVAL_FALSE;
+ 	}
+-#ifdef HAVE_GETGRGID_R
++#if defined(ZTS) && defined(HAVE_GETGRGID_R) && defined(_SC_GETGR_R_SIZE_MAX)
+ 	efree(grbuf);
+ #endif
+ }
