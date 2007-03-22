@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/12/05 21:59:57 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/03/22 17:19:09 naddy Exp $
 @pkgpath net/xorp
 xorp/
 xorp/bgp/
@@ -34,6 +34,8 @@ xorp/etc/templates/mld.cmds
 xorp/etc/templates/mld.tp
 xorp/etc/templates/ospfv2.cmds
 xorp/etc/templates/ospfv2.tp
+xorp/etc/templates/ospfv3.cmds
+xorp/etc/templates/ospfv3.tp
 xorp/etc/templates/pim.cmds
 xorp/etc/templates/pim6.cmds
 xorp/etc/templates/pimsm4.tp

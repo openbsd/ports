@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2006/12/05 21:59:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2007/03/22 17:19:09 naddy Exp $
 
 COMMENT-main=	"eXtensible Open Router Platform"
 
-VERSION=	1.3
+VERSION=	1.4
 DISTNAME=	xorp-${VERSION}
-PKGNAME-main=	${DISTNAME}p0
+PKGNAME-main=	${DISTNAME}
 CATEGORIES=	net
 HOMEPAGE=	http://www.xorp.org/
 
@@ -31,7 +31,7 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--enable-optimize
+CONFIGURE_ARGS=	--enable-optimize --disable-debug
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config ${WRKSRC}/cli/libtecla
 
 REGRESS_DEPENDS=	::shells/bash \
@@ -40,6 +40,7 @@ REGRESS_DEPENDS=	::shells/bash \
 # some regression tests must be run as root
 do-regress:
 	@ln -s ${LOCALBASE}/bin/python2.4 ${WRKDIR}/bin
-	@cd ${WRKBUILD}; ${SUDO} ${MAKE_PROGRAM} ${REGRESS_TARGET}
+	@cd ${WRKBUILD}; ${SUDO} ${SETENV} ${MAKE_ENV} \
+		${MAKE_PROGRAM} ${REGRESS_FLAGS} ${REGRESS_TARGET}
 
 .include <bsd.port.mk>
