@@ -1,0 +1,61 @@
+$OpenBSD: patch-kmplot_kmplot_parser_cpp,v 1.1.1.1 2007/03/22 22:24:33 espie Exp $
+--- kmplot/kmplot/parser.cpp.orig	Mon Feb 19 10:53:35 2007
++++ kmplot/kmplot/parser.cpp	Wed Mar 21 08:13:46 2007
+@@ -100,8 +100,10 @@ ScalarFunction Parser::scalarFunctions[ ScalarCount ]=
+ 	{"floor", 0, floor},				// round down to nearest integer
+ 	{"ceil", 0, ceil},					// round up to nearest integer
+ 	{"round", 0, round},				// round to nearest integer
++#ifndef __OpenBSD__
+ 	{"gamma", 0, tgamma},			// gamma function
+ 	{"factorial", 0, factorial},		// factorial
++#endif
+ 	
+ 	// legendre
+ 	{"P_0", 0, legendre0},				// lengedre polynomial (n=0)
+@@ -456,11 +458,13 @@ double Parser::fkt( Equation * eq, const Vector & x )
+ 				break;
+ 			}
+ 			
++#ifndef __OpenBSD__
+ 			case FACT:
+ 			{
+ 				*stkptr = factorial(*stkptr);
+ 				break;
+ 			}
++#endif
+ 				
+ 			case FKT_1:
+ 			{
+@@ -816,8 +820,10 @@ void Parser::heir4()
+ 				return;
+ 			addToken(POW);
+ 		}
++#ifndef __OpenBSD__
+ 		else if ( match("!") )
+ 			addToken(FACT);
++#endif
+ 		else
+ 			return;
+ 	}
+@@ -950,7 +956,9 @@ bool Parser::tryConstant()
+ 	CHECK_CONSTANT( "pi", M_PI );
+ 	CHECK_CONSTANT( PiSymbol, M_PI );
+ 	CHECK_CONSTANT( "e", M_E );
++#ifndef __OpenBSD__
+ 	CHECK_CONSTANT( InfinitySymbol, INFINITY );
++#endif
+ 	
+ 	return false;
+ }
+@@ -1262,9 +1270,11 @@ double larcsin(double x) {
+ double larctan(double x) {
+ 	return atan(x) / Parser::radiansPerAngleUnit();
+ }
++#ifndef __OpenBSD__
+ double factorial( double x ) {
+ 	return tgamma(x+1);
+ }
++#endif
+ double legendre0( double ) {
+ 	return 1.0;
+ }

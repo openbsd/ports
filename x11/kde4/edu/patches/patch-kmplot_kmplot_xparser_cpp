@@ -1,0 +1,12 @@
+$OpenBSD: patch-kmplot_kmplot_xparser_cpp,v 1.1.1.1 2007/03/22 22:24:33 espie Exp $
+--- kmplot/kmplot/xparser.cpp.orig	Wed Mar 21 08:14:51 2007
++++ kmplot/kmplot/xparser.cpp	Wed Mar 21 08:15:19 2007
+@@ -353,7 +353,7 @@ double XParser::differential( Equation * eq, Different
+ 		
+ 		m_y += (dx/6)*(m_k1 + 2*m_k2 + 2*m_k3 + m_k4);
+ 		
+-		if ( !std::isfinite(m_y[0]) )
++		if ( !::finite(m_y[0]) )
+ 		{
+ 			differentialFinite = false;
+ 			state->resetToInitial();

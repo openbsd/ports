@@ -1,0 +1,15 @@
+$OpenBSD: patch-kjs_math_object_cpp,v 1.1.1.1 2007/03/22 22:24:33 espie Exp $
+--- kjs/math_object.cpp.orig	Wed Aug 23 13:26:53 2006
++++ kjs/math_object.cpp	Wed Aug 23 13:28:00 2006
+@@ -47,6 +47,11 @@ static __inline int signbit(double x)
+ 
+ #endif
+ 
++static __inline int signbit(double x)
++{
++	return x < 0.0;
++}
++
+ #ifndef M_PI
+ #define M_PI 3.14159265358979323846
+ #endif  /*  M_PI  */

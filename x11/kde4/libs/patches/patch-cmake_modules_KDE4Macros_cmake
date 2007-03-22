@@ -1,0 +1,12 @@
+$OpenBSD: patch-cmake_modules_KDE4Macros_cmake,v 1.1.1.1 2007/03/22 22:24:33 espie Exp $
+--- cmake/modules/KDE4Macros.cmake.orig	Mon Feb 19 10:56:10 2007
++++ cmake/modules/KDE4Macros.cmake	Wed Feb 21 09:17:38 2007
+@@ -792,6 +792,8 @@ macro (KDE4_ADD_EXECUTABLE _target_NAME)
+       target_link_libraries(${_target_NAME} ${QT_QTMAIN_LIBRARY})
+    endif (WIN32)
+ 
++   set_target_properties(${_target_NAME} PROPERTIES LINKER_LANGUAGE CXX)
++
+ endmacro (KDE4_ADD_EXECUTABLE)
+ 
+ 

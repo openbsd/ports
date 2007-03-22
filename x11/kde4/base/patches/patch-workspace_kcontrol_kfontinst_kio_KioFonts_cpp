@@ -1,0 +1,11 @@
+$OpenBSD: patch-workspace_kcontrol_kfontinst_kio_KioFonts_cpp,v 1.1.1.1 2007/03/22 22:24:32 espie Exp $
+--- workspace/kcontrol/kfontinst/kio/KioFonts.cpp.orig	Sun Feb 25 00:38:54 2007
++++ workspace/kcontrol/kfontinst/kio/KioFonts.cpp	Sun Feb 25 00:39:13 2007
+@@ -22,6 +22,7 @@
+ 
+ #include "KioFonts.h"
+ #include <stdlib.h>
++#include <stdint.h>
+ #include <pwd.h>
+ #include <grp.h>
+ #include <sys/types.h>

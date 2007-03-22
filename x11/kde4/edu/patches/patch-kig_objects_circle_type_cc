@@ -1,0 +1,14 @@
+$OpenBSD: patch-kig_objects_circle_type_cc,v 1.1.1.1 2007/03/22 22:24:33 espie Exp $
+--- kig/objects/circle_type.cc.orig	Tue Mar 20 12:56:05 2007
++++ kig/objects/circle_type.cc	Tue Mar 20 12:56:57 2007
+@@ -26,6 +26,10 @@
+ #include "../misc/common.h"
+ 
+ #include <klocale.h>
++#ifdef __OpenBSD__
++double inline fmin(double a, double b) { return a < b ? a : b; }
++double inline fmax(double a, double b) { return a < b ? b : a; }
++#endif
+ 
+ static const char constructcirclethroughpointstat[] = I18N_NOOP( "Construct a circle through this point" );
+ 

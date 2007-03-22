@@ -1,0 +1,33 @@
+$OpenBSD: patch-kjs_collector_cpp,v 1.1.1.1 2007/03/22 22:24:33 espie Exp $
+--- kjs/collector.cpp.orig	Mon Feb 19 10:56:56 2007
++++ kjs/collector.cpp	Fri Mar  2 23:42:36 2007
+@@ -319,20 +319,25 @@ void Collector::markCurrentThreadConservatively()
+     static pthread_t stackThread;
+     pthread_t thread = pthread_self();
+     if (stackBase == 0 || thread != stackThread) {
+-        pthread_attr_t sattr;
+-#if HAVE(PTHREAD_NP_H) || defined(__NetBSD__)
++#if defined(__OpenBSD__)
++	stack_t sinfo;
++	pthread_stackseg_np(thread, &sinfo);
++	stackBase = (char *)sinfo.ss_sp - sinfo.ss_size;
++#else
++#  if HAVE(PTHREAD_NP_H) || defined(__NetBSD__)
+         // e.g. on FreeBSD 5.4, neundorf@kde.org
+         // also on NetBSD 3 and 4, raphael.langerhorst@kdemail.net
+         pthread_attr_get_np(thread, &sattr);
+-#else
++#  else
+         // FIXME: this function is non-portable; other POSIX systems may have different np alternatives
+         pthread_getattr_np(thread, &sattr);
+-#endif
++#  endif
+         // Should work but fails on Linux (?)
+         //  pthread_attr_getstack(&sattr, &stackBase, &stackSize);
+         pthread_attr_getstackaddr(&sattr, &stackBase);
+         assert(stackBase);
+         stackThread = thread;
++#endif
+     }
+ #else
+ #error Need a way to get the stack base on this platform

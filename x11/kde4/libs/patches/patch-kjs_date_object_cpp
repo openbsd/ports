@@ -1,0 +1,14 @@
+$OpenBSD: patch-kjs_date_object_cpp,v 1.1.1.1 2007/03/22 22:24:33 espie Exp $
+--- kjs/date_object.cpp.orig	Mon Feb 19 10:56:56 2007
++++ kjs/date_object.cpp	Sat Feb 24 17:08:21 2007
+@@ -1261,8 +1261,10 @@ static double parseDate(const UString &date)
+ 
+ double timeClip(double t)
+ {
++#if 0
+     if (!isfinite(t))
+         return NaN;
++#endif
+     double at = fabs(t);
+     if (at > 8.64E15)
+         return NaN;

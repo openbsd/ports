@@ -1,0 +1,13 @@
+$OpenBSD: patch-kuickshow_src_kuickshow_cpp,v 1.1.1.1 2007/03/22 22:24:33 espie Exp $
+--- kuickshow/src/kuickshow.cpp.orig	Wed Mar 21 17:57:45 2007
++++ kuickshow/src/kuickshow.cpp	Wed Mar 21 18:01:38 2007
+@@ -1216,7 +1216,8 @@ void KuickShow::toggleBrowser()
+ 
+ void KuickShow::slotOpenURL()
+ {
+-    KFileDialog dlg(KUrl(), kdata->fileFilter, this);
++    KUrl a;
++    KFileDialog dlg(a, kdata->fileFilter, this);
+     dlg.setMode( KFile::Files | KFile::Directory );
+     dlg.setCaption( i18n("Select Files or Folder to Open") );
+ 

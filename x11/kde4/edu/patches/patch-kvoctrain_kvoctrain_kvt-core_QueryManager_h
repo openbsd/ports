@@ -1,0 +1,12 @@
+$OpenBSD: patch-kvoctrain_kvoctrain_kvt-core_QueryManager_h,v 1.1.1.1 2007/03/22 22:24:33 espie Exp $
+--- kvoctrain/kvoctrain/kvt-core/QueryManager.h.orig	Wed Mar 21 00:46:02 2007
++++ kvoctrain/kvoctrain/kvt-core/QueryManager.h	Wed Mar 21 00:46:15 2007
+@@ -152,7 +152,7 @@ enum CompType { DontCare,
+ protected:
+   bool compareBlocking (int grade, QDateTime limit, bool use_it);
+   bool compareExpiring (int grade, QDateTime limit, bool use_it);
+-  bool compareDate (CompType, QDateTime, long int);
++  bool compareDate (CompType, QDateTime, time_t);
+   bool compareQuery (CompType, int, int);
+   bool compareBad (CompType, int, int);
+   bool compareGrade (CompType, grade_t, grade_t);

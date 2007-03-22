@@ -1,0 +1,14 @@
+$OpenBSD: patch-kmplot_kmplot_parameteranimator_cpp,v 1.1.1.1 2007/03/22 22:24:33 espie Exp $
+--- kmplot/kmplot/parameteranimator.cpp.orig	Wed Mar 21 08:17:49 2007
++++ kmplot/kmplot/parameteranimator.cpp	Wed Mar 21 08:18:50 2007
+@@ -216,6 +216,10 @@ void ParameterAnimator::updateSpeed()
+ 		startStepping();
+ }
+ 
++double log(int n)
++{
++	return log(double(n));
++}
+ 
+ void ParameterAnimator::startStepping() const
+ {

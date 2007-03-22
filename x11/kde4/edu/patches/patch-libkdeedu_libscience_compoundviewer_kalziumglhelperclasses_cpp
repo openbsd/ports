@@ -1,0 +1,12 @@
+$OpenBSD: patch-libkdeedu_libscience_compoundviewer_kalziumglhelperclasses_cpp,v 1.1.1.1 2007/03/22 22:24:33 espie Exp $
+--- libkdeedu/libscience/compoundviewer/kalziumglhelperclasses.cpp.orig	Tue Mar 20 12:38:06 2007
++++ libkdeedu/libscience/compoundviewer/kalziumglhelperclasses.cpp	Tue Mar 20 12:38:27 2007
+@@ -219,7 +219,7 @@ void Sphere::computeVertex( int strip, int column, int
+ 	Vector3f & vertex = m_vertexBuffer[ index ];
+ 
+ 	// the "golden ratio", useful to construct an icosahedron
+-	const float phi = ( 1 + sqrt(5) ) / 2;
++	const float phi = ( 1 + sqrt(5.0) ) / 2;
+ 
+ 	// the 12 vertices of the icosahedron
+ 	const Vector3f northPole( 0, 1, phi );

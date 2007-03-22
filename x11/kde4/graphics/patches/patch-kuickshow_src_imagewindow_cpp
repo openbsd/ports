@@ -1,0 +1,13 @@
+$OpenBSD: patch-kuickshow_src_imagewindow_cpp,v 1.1.1.1 2007/03/22 22:24:33 espie Exp $
+--- kuickshow/src/imagewindow.cpp.orig	Thu Mar 22 00:36:47 2007
++++ kuickshow/src/imagewindow.cpp	Thu Mar 22 00:37:21 2007
+@@ -1158,7 +1158,8 @@ void ImageWindow::maximize()
+ 
+ void ImageWindow::slotProperties()
+ {
+-    KPropertiesDialog dlg( KUrl(filename()), this );
++    KUrl a(filename());
++    KPropertiesDialog dlg( a, this );
+     dlg.exec();
+ }
+ 
