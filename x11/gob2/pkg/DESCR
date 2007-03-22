@@ -1,0 +1,2 @@
+GOB is a preprocessor which simplifies the writing of GObjects in C.
+The syntax is somewhat similar to that for Java, yacc and lex.
