@@ -1,0 +1,14 @@
+$OpenBSD: patch-silc-plugin-1_0_4_1_patches_irssi_src_fe-common_silc_fe-common-silc_c_patch,v 1.1.1.1 2007/03/22 19:55:38 martynas Exp $
+--- silc-plugin-1.0.4.1/patches/irssi.src.fe-common.silc.fe-common-silc.c.patch.orig	Sun Nov  5 12:46:12 2006
++++ silc-plugin-1.0.4.1/patches/irssi.src.fe-common.silc.fe-common-silc.c.patch	Sun Nov  5 12:51:22 2006
+@@ -0,0 +1,10 @@
++--- irssi-0.8.10/src/fe-common/silc/fe-common-silc.c.orig	Sat Jan  3 13:17:49 2004
+++++ irssi-0.8.10/src/fe-common/silc/fe-common-silc.c	Sun Nov  5 12:13:10 2006
++@@ -42,6 +42,7 @@
++   fe_silc_messages_init();
++   fe_silc_queries_init();
++   fe_silcnet_init();
+++  irssi_redraw();
++ 
++   module_register("silc", "fe");
++ }

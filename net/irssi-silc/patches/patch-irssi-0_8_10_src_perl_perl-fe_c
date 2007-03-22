@@ -1,0 +1,11 @@
+$OpenBSD: patch-irssi-0_8_10_src_perl_perl-fe_c,v 1.1.1.1 2007/03/22 19:55:38 martynas Exp $
+--- irssi-0.8.10/src/perl/perl-fe.c.orig	Wed Oct 19 04:13:21 2005
++++ irssi-0.8.10/src/perl/perl-fe.c	Fri Apr  7 13:43:29 2006
+@@ -199,6 +199,7 @@ static void sig_complete_load(GList **li
+ 	/* completing filename parameter for /SCRIPT LOAD */
+ 	user_dir = g_strdup_printf("%s/scripts", get_irssi_dir());
+ 	*list = filename_complete(word, user_dir);
++	*list = g_list_concat(*list, filename_complete(word, SYSCONFDIR"/irssi/scripts"));
+ 	*list = g_list_concat(*list, filename_complete(word, SCRIPTDIR));
+         g_free(user_dir);
+ 

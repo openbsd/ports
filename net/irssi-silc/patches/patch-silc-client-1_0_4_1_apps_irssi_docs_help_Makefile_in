@@ -1,0 +1,19 @@
+$OpenBSD: patch-silc-client-1_0_4_1_apps_irssi_docs_help_Makefile_in,v 1.1.1.1 2007/03/22 19:55:38 martynas Exp $
+--- silc-client-1.0.4.1/apps/irssi/docs/help/Makefile.in.orig	Fri Jan  6 08:46:28 2006
++++ silc-client-1.0.4.1/apps/irssi/docs/help/Makefile.in	Tue Oct  3 14:20:37 2006
+@@ -403,12 +403,12 @@ distclean-libtool:
+ uninstall-info-am:
+ install-helpDATA: $(help_DATA)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(helpdir)" || $(mkdir_p) "$(DESTDIR)$(helpdir)"
++	test -z "$(helpdir)" || $(mkdir_p) "$(helpdir)"
+ 	@list='$(help_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f=$(am__strip_dir) \
+-	  echo " $(helpDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(helpdir)/$$f'"; \
+-	  $(helpDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(helpdir)/$$f"; \
++	  echo " $(helpDATA_INSTALL) '$$d$$p' '$(helpdir)/$$f'"; \
++	  $(helpDATA_INSTALL) "$$d$$p" "$(helpdir)/$$f"; \
+ 	done
+ 
+ uninstall-helpDATA:

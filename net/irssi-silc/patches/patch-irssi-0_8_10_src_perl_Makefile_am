@@ -1,0 +1,13 @@
+$OpenBSD: patch-irssi-0_8_10_src_perl_Makefile_am,v 1.1.1.1 2007/03/22 19:55:38 martynas Exp $
+--- irssi-0.8.10/src/perl/Makefile.am.orig	Wed Oct 19 05:13:21 2005
++++ irssi-0.8.10/src/perl/Makefile.am	Sun Nov  5 13:14:34 2006
+@@ -23,7 +23,8 @@ INCLUDES = \
+ 	-DSCRIPTDIR=\""$(datadir)/irssi/scripts"\" \
+ 	-DPERL_USE_LIB=\""$(PERL_USE_LIB)"\" \
+ 	-DPERL_STATIC_LIBS=$(PERL_STATIC_LIBS) \
+-	$(PERL_CFLAGS)
++	$(PERL_CFLAGS) \
++	-DSYSCONFDIR=\""$(sysconfdir)"\"
+ 
+ perl_sources = \
+ 	perl-core.c \

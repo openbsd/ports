@@ -1,0 +1,7 @@
+You need to change theme, otherwise you might experience problems related to
+SILC-specific features (e.g. signed messages): /SET theme silc
+You may want to run silc and silc-mime scripts when working with SILC:
+	/SCRIPT LOAD silc
+	/SCRIPT LOAD silc-mime
+
+See ${PREFIX}/share/doc/irssi/silc/USAGE for more details
