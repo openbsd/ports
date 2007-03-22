@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.166 2007/01/11 22:01:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.167 2007/03/22 17:50:38 jasper Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -92,6 +92,7 @@
      SUBDIR += p5-Audio-FLAC-Header
      SUBDIR += p5-Audio-MPD
      SUBDIR += p5-Audio-Musepack
+     SUBDIR += p5-Audio-Scrobbler
      SUBDIR += p5-Audio-WMA
      SUBDIR += p5-CDDB_get
      SUBDIR += p5-MP3-ID3v1Tag
