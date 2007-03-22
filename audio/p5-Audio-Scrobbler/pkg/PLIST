@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/03/22 17:45:03 jasper Exp $
+bin/scrobbler-helper
+${P5SITE}/Audio/
+${P5SITE}/Audio/Scrobbler.pm
+@man man/man1/scrobbler-helper.1
+@man man/man3p/Audio::Scrobbler.3p
