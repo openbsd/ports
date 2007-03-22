@@ -1,0 +1,37 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2007/03/22 08:08:47 ajacoutot Exp $
+
+COMMENT=	"C++ wrapper for the libxml XML parser library"
+
+DISTNAME=	libxml++-2.17.1
+SHARED_LIBS+=	xml++-2.6	0.0 # .2.7
+CATEGORIES=	textproc
+
+HOMEPAGE=	http://libxmlplusplus.sourceforge.net/
+
+MAINTAINER=	Andreas Bihlmaier <andreas.bihlmaier@gmx.de>
+
+# LGPL >= 2
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+MASTER_SITES=	${MASTER_SITE_GNOME:=sources/libxml++/2.17/}
+
+WANTLIB=	m z glib-2.0 gmodule-2.0 gobject-2.0 sigc-2.0
+
+MODULES=	devel/gettext
+
+LIB_DEPENDS=	glibmm-2.4.>=4.0::devel/glib2mm \
+		xml2.>=9::textproc/libxml
+
+USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
+
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+
+FAKE_FLAGS=	${DESTDIRNAME}=${WRKINST} \
+		docdir="${PREFIX}/share/doc/libxml++-2.6"
+
+.include <bsd.port.mk>
