@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2007/03/15 23:20:54 jakob Exp $
+# $OpenBSD: Makefile,v 1.74 2007/03/22 06:59:13 jakob Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,8 +10,8 @@ V_DOVECOT=	1.0.rc27
 V_SIEVE=	1.0
 
 PKGNAME=	dovecot-${V_DOVECOT}
-PKGNAME-server=	dovecot-${V_DOVECOT}
-PKGNAME-sieve=	dovecot-sieve-${V_SIEVE}p4
+PKGNAME-server=	dovecot-${V_DOVECOT}p0
+PKGNAME-sieve=	dovecot-sieve-${V_SIEVE}p5
 
 DISTNAME=	dovecot-${V_DOVECOT}
 CATEGORIES=	mail
@@ -39,7 +39,7 @@ MULTI_PACKAGES=	-server
 SUBPACKAGE?=	-server
 
 PSEUDO_FLAVORS=	no_sieve
-FLAVORS=	ldap mysql postgresql
+FLAVORS=	ldap mysql postgresql sqlite
 FLAVOR?=
 
 USE_LIBTOOL=		Yes
@@ -77,6 +77,11 @@ WANTLIB-server+=	m
 .if ${FLAVOR:L:Mpostgresql}
 CONFIGURE_ARGS+=	--with-pgsql
 LIB_DEPENDS+=		pq.>=4::databases/postgresql
+.endif
+
+.if ${FLAVOR:L:Msqlite}
+CONFIGURE_ARGS+=	--with-sqlite
+LIB_DEPENDS+=		sqlite3::databases/sqlite3
 .endif
 
 .if !${FLAVOR:L:Mno_sieve}
