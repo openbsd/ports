@@ -1,13 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.12 2006/10/20 11:48:06 ajacoutot Exp $
-bin/ietf2datebook
-bin/install-datebook
-bin/install-expenses
-bin/install-hinote
-bin/install-memo
-bin/install-netsync
-bin/install-todo
-bin/install-todos
-bin/install-user
+@comment $OpenBSD: PLIST,v 1.13 2007/03/22 23:41:28 ajacoutot Exp $
+bin/pilot-650foto
 bin/pilot-addresses
 bin/pilot-clip
 bin/pilot-csd
@@ -20,25 +12,35 @@ bin/pilot-getram
 bin/pilot-getrom
 bin/pilot-getromtoken
 bin/pilot-hinotes
+bin/pilot-ietf2datebook
+bin/pilot-install-datebook
+bin/pilot-install-expenses
+bin/pilot-install-hinote
+bin/pilot-install-memo
+bin/pilot-install-netsync
+bin/pilot-install-todo
+bin/pilot-install-todos
+bin/pilot-install-user
 bin/pilot-memos
 bin/pilot-nredir
+bin/pilot-read-expenses
+bin/pilot-read-ical
+bin/pilot-read-notepad
+bin/pilot-read-palmpix
+bin/pilot-read-screenshot
+bin/pilot-read-todos
+bin/pilot-read-veo
 bin/pilot-reminders
 bin/pilot-schlep
+bin/pilot-sync-plan
 bin/pilot-treofoto
 bin/pilot-undelete
 bin/pilot-wav
 bin/pilot-xfer
-bin/read-expenses
-bin/read-ical
-bin/read-notepad
-bin/read-palmpix
-bin/read-screenshot
-bin/read-todos
-bin/read-veo
-bin/sync-plan
 include/pi-address.h
 include/pi-appinfo.h
 include/pi-args.h
+include/pi-bluetooth.h
 include/pi-buffer.h
 include/pi-cmp.h
 include/pi-contact.h
@@ -95,14 +97,6 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/PDA/Pilot/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/PDA/Pilot/Pilot.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/PDA/Pilot/autosplit.ix
 @man man/man1/ietf2datebook.1
-@man man/man1/install-datebook.1
-@man man/man1/install-expenses.1
-@man man/man1/install-hinote.1
-@man man/man1/install-memo.1
-@man man/man1/install-netsync.1
-@man man/man1/install-todo.1
-@man man/man1/install-todos.1
-@man man/man1/install-user.1
 @man man/man1/pilot-addresses.1
 @man man/man1/pilot-clip.1
 @man man/man1/pilot-csd.1
@@ -115,20 +109,28 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/PDA/Pilot/autosplit.ix
 @man man/man1/pilot-getrom.1
 @man man/man1/pilot-getromtoken.1
 @man man/man1/pilot-hinotes.1
+@man man/man1/pilot-install-datebook.1
+@man man/man1/pilot-install-expenses.1
+@man man/man1/pilot-install-hinote.1
+@man man/man1/pilot-install-memo.1
+@man man/man1/pilot-install-netsync.1
+@man man/man1/pilot-install-todo.1
+@man man/man1/pilot-install-todos.1
+@man man/man1/pilot-install-user.1
 @man man/man1/pilot-memos.1
 @man man/man1/pilot-nredir.1
+@man man/man1/pilot-read-expenses.1
+@man man/man1/pilot-read-ical.1
+@man man/man1/pilot-read-notepad.1
+@man man/man1/pilot-read-palmpix.1
+@man man/man1/pilot-read-screenshot.1
+@man man/man1/pilot-read-todos.1
+@man man/man1/pilot-read-veo.1
 @man man/man1/pilot-reminders.1
 @man man/man1/pilot-schlep.1
 @man man/man1/pilot-treofoto.1
 @man man/man1/pilot-wav.1
 @man man/man1/pilot-xfer.1
-@man man/man1/read-expenses.1
-@man man/man1/read-ical.1
-@man man/man1/read-notepad.1
-@man man/man1/read-palmpix.1
-@man man/man1/read-screenshot.1
-@man man/man1/read-todos.1
-@man man/man1/read-veo.1
 @man man/man7/pilot-link.7
 share/aclocal/
 share/aclocal/pilot-link.m4

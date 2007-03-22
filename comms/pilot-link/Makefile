@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.50 2007/01/02 19:39:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2007/03/22 23:41:28 ajacoutot Exp $
 # $NetBSD: Makefile,v 1.37 2004/10/03 00:13:16 tv Exp $
 
 COMMENT=	"tools to connect your PalmOS® compatible handheld"
 
-DISTNAME=	pilot-link-0.12.1
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	pilot-link-0.12.2
 SHARED_LIBS +=	pisock               9.0      # .9.1
 SHARED_LIBS +=	pisync               1.0      # .0.2
 
@@ -48,6 +47,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-readline \
 			--enable-conduits \
 			--enable-threads \
+			--without-bluez \
 			--without-efence \
 			--without-java \
 			--without-python \
@@ -64,6 +64,7 @@ pre-configure:
 		echo 1>&2 "+-------------------"; \
 		exit 1; \
 	fi
+	@rm -f ${WRKSRC}/bindings/Perl/pm_to_blib
 	perl -pi -e "s,!!CFLAGS!!,${CFLAGS},g" ${WRKSRC}/bindings/Perl/Makefile.PL.in
 	perl -pi -e "s,Libs: ,Libs: -pthread ,g" \
 		${WRKSRC}/pilot-link.pc.in ${WRKSRC}/pilot-link-pp.pc.in
