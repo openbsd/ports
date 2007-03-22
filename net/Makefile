@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.449 2007/02/27 20:52:19 david Exp $
+# $OpenBSD: Makefile,v 1.450 2007/03/22 19:59:02 martynas Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -116,6 +116,7 @@
      SUBDIR += irssi
      SUBDIR += irssi,socks
      SUBDIR += irssi-icb
+     SUBDIR += irssi-silc
      SUBDIR += isc-dhcp
      SUBDIR += jabberd,mysql
      SUBDIR += jabberd,mysql,ldap
