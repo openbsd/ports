@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/10/14 07:58:11 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/03/23 10:48:02 ajacoutot Exp $
 sbin/ddclient
 share/doc/ddclient/
 share/doc/ddclient/README
 share/doc/ddclient/README.cisco
+share/doc/ddclient/README.ssl
 share/examples/ddclient/
 @sample ${SYSCONFDIR}/ddclient/
 share/examples/ddclient/sample-etc_cron.d_ddclient
@@ -11,6 +12,4 @@ share/examples/ddclient/sample-etc_ddclient.conf
 share/examples/ddclient/sample-etc_dhclient-exit-hooks
 share/examples/ddclient/sample-etc_dhcpc_dhcpcd-eth0.exe
 share/examples/ddclient/sample-etc_ppp_ip-up.local
-share/examples/ddclient/sample-etc_rc.d_init.d_ddclient
-share/examples/ddclient/sample-etc_rc.d_init.d_ddclient.lsb
-share/examples/ddclient/sample-etc_rc.d_init.d_ddclient.redhat
+@sample /var/db/ddclient/
