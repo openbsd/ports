@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST-docs,v 1.1.1.1 2007/03/23 17:38:22 deanna Exp $
+share/doc/claws-mail/
+share/doc/claws-mail/RELEASE_NOTES
+share/doc/claws-mail/manual/
+share/doc/claws-mail/manual/en/
+share/doc/claws-mail/manual/en/claws-mail-manual.html
+share/doc/claws-mail/manual/en/claws-mail-manual.pdf
+share/doc/claws-mail/manual/en/claws-mail-manual.ps
+share/doc/claws-mail/manual/en/claws-mail-manual.txt
+share/doc/claws-mail/manual/es/
+share/doc/claws-mail/manual/es/claws-mail-manual.html
+share/doc/claws-mail/manual/es/claws-mail-manual.pdf
+share/doc/claws-mail/manual/es/claws-mail-manual.ps
+share/doc/claws-mail/manual/es/claws-mail-manual.txt
+share/doc/claws-mail/manual/fr/
+share/doc/claws-mail/manual/fr/claws-mail-manual.html
+share/doc/claws-mail/manual/fr/claws-mail-manual.pdf
+share/doc/claws-mail/manual/fr/claws-mail-manual.ps
+share/doc/claws-mail/manual/fr/claws-mail-manual.txt
+share/doc/claws-mail/manual/pl/
+share/doc/claws-mail/manual/pl/claws-mail-manual.html
+share/doc/claws-mail/manual/pl/claws-mail-manual.pdf
+share/doc/claws-mail/manual/pl/claws-mail-manual.ps
+share/doc/claws-mail/manual/pl/claws-mail-manual.txt

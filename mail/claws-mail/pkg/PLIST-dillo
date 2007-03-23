@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-dillo,v 1.1.1.1 2007/03/23 17:38:22 deanna Exp $
+lib/claws-mail/plugins/dillo_viewer.a
+lib/claws-mail/plugins/dillo_viewer.la
+lib/claws-mail/plugins/dillo_viewer.so

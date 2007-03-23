@@ -1,0 +1,22 @@
+Claws Mail is an email client (and news reader), based on GTK+, featuring
+
+    Quick response
+    Graceful, and sophisticated interface
+    Easy configuration, intuitive operation
+    Abundant features
+    Extensibility
+
+The appearance and interface are designed to be familiar to new users
+coming from other popular email clients, as well as experienced users. 
+Almost all commands are accessible with the keyboard.
+
+The messages are managed in the standard MH format, which features fast 
+access and data security. You'll be able to import your emails from almost 
+any other email client, and export them just as easily.
+
+Lots of extra functionality, like an RSS aggregator, calendar, or 
+laptop LED handling, are provided by extra plugins.
+
+Claws Mail is distributed under the GPL. 
+
+Plugin for spamassassin support.

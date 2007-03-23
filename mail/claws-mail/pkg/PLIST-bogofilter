@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-bogofilter,v 1.1.1.1 2007/03/23 17:38:22 deanna Exp $
+lib/claws-mail/plugins/bogofilter.a
+lib/claws-mail/plugins/bogofilter.la
+lib/claws-mail/plugins/bogofilter.so

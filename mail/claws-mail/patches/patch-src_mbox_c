@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_mbox_c,v 1.1.1.1 2007/03/23 17:38:22 deanna Exp $
+--- src/mbox.c.orig	Mon Mar  5 23:44:47 2007
++++ src/mbox.c	Thu Mar 22 01:31:28 2007
+@@ -48,7 +48,7 @@
+ #include "alertpanel.h"
+ #include "statusbar.h"
+ 
+-#define MSGBUFSIZE	8192
++#define MESSAGEBUFSIZE	8192
+ 
+ #ifdef HAVE_FGETS_UNLOCKED
+ #define SC_FGETS fgets_unlocked
+@@ -78,7 +78,7 @@ gint proc_mbox(FolderItem *dest, const gchar *mbox, gb
+ /* return values: -1 error, >=0 number of msgs added */
+ {
+ 	FILE *mbox_fp;
+-	gchar buf[MSGBUFSIZE];
++	gchar buf[MESSAGEBUFSIZE];
+ 	gchar *tmp_file;
+ 	gint msgs = 0;
+ 	gint lines;

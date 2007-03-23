@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST-pgp,v 1.1.1.1 2007/03/23 17:38:22 deanna Exp $
+include/claws-mail/plugins/pgpcore/
+include/claws-mail/plugins/pgpcore/passphrase.h
+include/claws-mail/plugins/pgpcore/pgp_viewer.h
+include/claws-mail/plugins/pgpcore/prefs_gpg.h
+include/claws-mail/plugins/pgpcore/select-keys.h
+include/claws-mail/plugins/pgpcore/sgpgme.h
+include/claws-mail/plugins/pgpinline/
+include/claws-mail/plugins/pgpinline/pgpinline.h
+include/claws-mail/plugins/pgpmime/
+include/claws-mail/plugins/pgpmime/pgpmime.h
+lib/claws-mail/plugins/pgpcore.a
+lib/claws-mail/plugins/pgpcore.la
+lib/claws-mail/plugins/pgpinline.a
+lib/claws-mail/plugins/pgpinline.deps
+lib/claws-mail/plugins/pgpinline.la
+lib/claws-mail/plugins/pgpmime.a
+lib/claws-mail/plugins/pgpmime.deps
+lib/claws-mail/plugins/pgpmime.la
+lib/claws-mail/plugins/pgpcore.so
+lib/claws-mail/plugins/pgpinline.so
+lib/claws-mail/plugins/pgpmime.so

@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-spamassassin,v 1.1.1.1 2007/03/23 17:38:22 deanna Exp $
+lib/claws-mail/plugins/spamassassin.a
+lib/claws-mail/plugins/spamassassin.la
+lib/claws-mail/plugins/spamassassin.so

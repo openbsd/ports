@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_procmime_c,v 1.1.1.1 2007/03/23 17:38:22 deanna Exp $
+--- src/procmime.c.orig	Mon Mar  5 23:44:47 2007
++++ src/procmime.c	Sun Mar 18 15:36:24 2007
+@@ -1130,7 +1130,7 @@ GList *procmime_get_mime_type_list(void)
+ #endif
+ 	{
+ 		fp_is_glob_file = FALSE;
+-		if ((fp = g_fopen("/etc/mime.types", "rb")) == NULL) {
++		if ((fp = g_fopen("/var/www/conf/mime.types", "rb")) == NULL) {
+ 			if ((fp = g_fopen(SYSCONFDIR "/mime.types", "rb")) 
+ 				== NULL) {
+ 				FILE_OP_ERROR(SYSCONFDIR "/mime.types", 
