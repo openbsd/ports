@@ -1,5 +1,5 @@
 If you're installing for the first time or want to change your
-configuration, run the following script as root:
+configuration, you may want to run the following script as root:
 ${PREFIX}/lib/mgetty+sendfax/setup
 
 It will help you to create the following configuration files in

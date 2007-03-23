@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2006/11/17 13:37:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2007/03/23 20:28:28 ajacoutot Exp $
 bin/autopvf
 bin/basictopvf
 bin/faxq
@@ -83,12 +83,25 @@ share/doc/mgetty+sendfax/voice/Readme.voice_shell
 share/doc/mgetty+sendfax/voice/compression_settings
 share/doc/mgetty+sendfax/voice/device_settings
 share/examples/mgetty+sendfax/
+@sample ${SYSCONFDIR}/mgetty+sendfax/
 share/examples/mgetty+sendfax/dialin.config
+@mode 600
+@sample ${SYSCONFDIR}/mgetty+sendfax/dialin.config
+@mode
 share/examples/mgetty+sendfax/faxheader
+@sample ${SYSCONFDIR}/mgetty+sendfax/faxheader
 share/examples/mgetty+sendfax/faxrunq.config
+@sample ${SYSCONFDIR}/mgetty+sendfax/faxrunq.config
 share/examples/mgetty+sendfax/faxspool.rules.sample
+@sample ${SYSCONFDIR}/mgetty+sendfax/faxspool.rules
 share/examples/mgetty+sendfax/login.config
+@mode 600
+@sample ${SYSCONFDIR}/mgetty+sendfax/login.config
+@mode
 share/examples/mgetty+sendfax/mgetty.config
+@mode 600
+@sample ${SYSCONFDIR}/mgetty+sendfax/mgetty.config
+@mode
 share/examples/mgetty+sendfax/samples/
 share/examples/mgetty+sendfax/samples/answer_fax.sh
 share/examples/mgetty+sendfax/samples/coverpg-pl.ps
@@ -124,8 +137,12 @@ share/examples/mgetty+sendfax/samples/new_fax.tiff
 share/examples/mgetty+sendfax/samples/printfax
 share/examples/mgetty+sendfax/samples/printfax.ps
 share/examples/mgetty+sendfax/sendfax.config
+@sample ${SYSCONFDIR}/mgetty+sendfax/sendfax.config
 share/examples/mgetty+sendfax/voice/
 share/examples/mgetty+sendfax/voice.conf
+@mode 600
+@sample ${SYSCONFDIR}/mgetty+sendfax/voice.conf
+@mode
 share/examples/mgetty+sendfax/voice/scripts/
 share/examples/mgetty+sendfax/voice/scripts/Vgetty.sh
 share/examples/mgetty+sendfax/voice/scripts/button.sh
@@ -142,8 +159,6 @@ share/examples/mgetty+sendfax/voice/scripts/speakdate.pl
 share/examples/mgetty+sendfax/voice/scripts/speakdate.sh
 share/examples/mgetty+sendfax/voice/scripts/vmtest.sh
 share/examples/mgetty+sendfax/voice/scripts/voice2email.sh
-@sample ${SYSCONFDIR}/mgetty+sendfax/
-@sample ${SYSCONFDIR}/mgetty+sendfax/voice.conf
 @mode 750
 @owner uucp
 @group dialer
