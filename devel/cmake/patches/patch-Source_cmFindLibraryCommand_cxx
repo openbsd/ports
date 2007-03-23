@@ -1,7 +1,7 @@
-$OpenBSD: patch-Source_cmFindLibraryCommand_cxx,v 1.3 2007/03/20 11:23:10 espie Exp $
+$OpenBSD: patch-Source_cmFindLibraryCommand_cxx,v 1.4 2007/03/23 16:30:35 espie Exp $
 --- Source/cmFindLibraryCommand.cxx.orig	Wed Jan 10 18:59:12 2007
-+++ Source/cmFindLibraryCommand.cxx	Sun Mar 18 13:52:02 2007
-@@ -139,11 +139,53 @@ void cmFindLibraryCommand::AddLib64Paths()
++++ Source/cmFindLibraryCommand.cxx	Fri Mar 23 17:07:55 2007
+@@ -139,11 +139,52 @@ void cmFindLibraryCommand::AddLib64Paths()
      }
  }
  
@@ -36,7 +36,6 @@ $OpenBSD: patch-Source_cmFindLibraryCommand_cxx,v 1.3 2007/03/20 11:23:10 espie 
 +			bestmajor = major;
 +			bestminor = minor;
 +			best = path + "/" + *it;
-+			break;
 +	}
 +	return best;
 +}
@@ -55,7 +54,7 @@ $OpenBSD: patch-Source_cmFindLibraryCommand_cxx,v 1.3 2007/03/20 11:23:10 espie 
    if(ff == "FIRST" || ff == "LAST")
      {
      supportFrameworks = true;
-@@ -194,6 +236,16 @@ std::string cmFindLibraryCommand::FindLibrary(const ch
+@@ -194,6 +235,16 @@ std::string cmFindLibraryCommand::FindLibrary(const ch
            tryPath += *prefix;
            tryPath += name;
            tryPath += *suffix;
