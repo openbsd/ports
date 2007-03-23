@@ -1,0 +1,15 @@
+The purpose of this mail library is to provide a portable, efficient
+middleware for different kinds of mail access. When using the drivers
+interface, the interface is the same for all kinds of mail access,
+remote and local mailboxes.
+
+It will be used for low-level mail handling: 
+- network protocols over TCP/IP and SSL / TCP/IP (including IPv6)
+	+ IMAP
+	+ NNTP
+	+ POP3
+	+ SMTP
+	+ Hotmail
+- local storage
+	 mbox, MH, maildir
+- message / MIME parser

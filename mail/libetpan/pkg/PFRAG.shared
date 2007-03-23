@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/03/23 17:32:58 deanna Exp $
+@lib lib/libetpan.so.${LIBetpan_VERSION}
