@@ -1,6 +1,6 @@
-$OpenBSD: patch-xbomber_c,v 1.1.1.1 2007/03/21 10:28:50 jasper Exp $
+$OpenBSD: patch-xbomber_c,v 1.2 2007/03/23 11:43:19 jasper Exp $
 --- xbomber.c.orig	Sat Jun 20 04:09:35 1998
-+++ xbomber.c	Tue Mar 20 21:07:51 2007
++++ xbomber.c	Fri Mar 23 12:42:35 2007
 @@ -1599,7 +1599,7 @@ void setup(int argc, char * argv[])
    /* Get -color switch: */
  
@@ -37,7 +37,7 @@ $OpenBSD: patch-xbomber_c,v 1.1.1.1 2007/03/21 10:28:50 jasper Exp $
    int status, temp_depth;
    FILE * fi;
    XGCValues gcvalues;
-@@ -2095,24 +2095,27 @@ void Xsetup(int pln)
+@@ -2095,24 +2095,26 @@ void Xsetup(int pln)
    
    
    /* Make cursor: */
@@ -58,7 +58,6 @@ $OpenBSD: patch-xbomber_c,v 1.1.1.1 2007/03/21 10:28:50 jasper Exp $
    
 -  ret = XReadBitmapFile(display[pln], window[pln], "bitmaps/cursor-mask.xbm",
 +  sprintf(temp,"%s/cursor-mask.xbm",BITMAPS);
-+  printf("temp=%s\n", temp);
 +  ret = XReadBitmapFile(display[pln], window[pln], temp,
  			&tempint1, &tempint2, &cursor_mask[pln],
  			&tempint3, &tempint4);
@@ -70,7 +69,7 @@ $OpenBSD: patch-xbomber_c,v 1.1.1.1 2007/03/21 10:28:50 jasper Exp $
        exit(1);
      }
    
-@@ -2149,16 +2152,16 @@ void Xsetup(int pln)
+@@ -2149,16 +2151,16 @@ void Xsetup(int pln)
  							    black[pln],
  							    has_color[pln]));
  	      
@@ -90,7 +89,7 @@ $OpenBSD: patch-xbomber_c,v 1.1.1.1 2007/03/21 10:28:50 jasper Exp $
  		  exit(1);
  		}
  	    }
-@@ -2863,7 +2866,7 @@ void initlevel(void)
+@@ -2863,7 +2865,7 @@ void initlevel(void)
    
    /* Load level layout on top of this: */
    
@@ -99,7 +98,7 @@ $OpenBSD: patch-xbomber_c,v 1.1.1.1 2007/03/21 10:28:50 jasper Exp $
    
    fi = fopen(filename, "r");
    if (fi == NULL)
-@@ -3293,7 +3296,7 @@ void loadobject(int pln, int i)
+@@ -3293,7 +3295,7 @@ void loadobject(int pln, int i)
    
    if (strlen(graphicsset) != 0)
      {
@@ -108,7 +107,7 @@ $OpenBSD: patch-xbomber_c,v 1.1.1.1 2007/03/21 10:28:50 jasper Exp $
        fi = fopen(file, "r");
        
        c = graphicsset[0];
-@@ -3302,8 +3305,8 @@ void loadobject(int pln, int i)
+@@ -3302,8 +3304,8 @@ void loadobject(int pln, int i)
    if (fi == NULL)
      {
        c = '.';
