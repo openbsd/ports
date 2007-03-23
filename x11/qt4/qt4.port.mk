@@ -1,30 +1,37 @@
-# $OpenBSD: qt4.port.mk,v 1.1.1.1 2005/07/04 11:10:13 espie Exp $
+# $OpenBSD: qt4.port.mk,v 1.2 2007/03/23 16:28:52 espie Exp $
 
 MODULES+=	gcc3
 MODGCC3_ARCHES+=sparc64
 MODGCC3_LANGS+=	c++
 
-# This fragment uses MODQT_* variables to make it easier to substitute
+# This fragment defines MODQT_* variables to make it easier to substitute
 # qt1/qt2/qt3 in a port.
-MODQT_LIBDIR=	${LOCALBASE}/lib/qt4
-MODQT_INCDIR=	${LOCALBASE}/include/X11/qt4
-MODQT_OVERRIDE_UIC?=Yes
-MODQT_MT?=Yes
-MODQT_CONFIGURE_ARGS=	--with-qt-includes=${MODQT_INCDIR} \
-			--with-qt-libraries=${MODQT_LIBDIR}
-_MODQT_SETUP=	MOC=${MODQT_MOC} \
-		MODQT_INCDIR=${MODQT_INCDIR} \
-		MODQT_LIBDIR=${MODQT_LIBDIR}
-.if ${MODQT_OVERRIDE_UIC:L} == "yes"
-_MODQT_SETUP+=	UIC=${MODQT_UIC}
+MODQT_OVERRIDE_UIC ?= Yes
+MODQT4_OVERRIDE_UIC ?= ${MODQT_OVERRIDE_UIC}
+
+MODQT4_LIBDIR =	${LOCALBASE}/lib/qt4
+MODQT_LIBDIR ?= ${MODQT4_LIBDIR}
+MODQT4_INCDIR =	${LOCALBASE}/include/X11/qt4
+MODQT_INCDIR ?= ${MODQT4_INCDIR}
+MODQT4_CONFIGURE_ARGS =	--with-qt-includes=${MODQT4_INCDIR} \
+			--with-qt-libraries=${MODQT4_LIBDIR}
+MODQT_CONFIGURE_ARGS ?= ${MODQT4_CONFIGURE_ARGS}
+_MODQT4_SETUP =	MOC=${MODQT4_MOC} \
+		MODQT_INCDIR=${MODQT4_INCDIR} \
+		MODQT_LIBDIR=${MODQT4_LIBDIR}
+.if ${MODQT4_OVERRIDE_UIC:L} == "yes"
+_MODQT4_SETUP +=UIC=${MODQT4_UIC}
 .endif
 
-LIB_DEPENDS+=lib/qt4/QtCore::x11/qt4
+LIB_DEPENDS += lib/qt4/QtCore::x11/qt4
 # may be needed to find plugins
-MODQT_MOC=	${LOCALBASE}/bin/moc4
-MODQT_UIC=	${LOCALBASE}/bin/uic4
-MODQT_QTDIR=	${LOCALBASE}/lib/qt4
+MODQT4_MOC =	${LOCALBASE}/bin/moc4
+MODQT_MOC ?=	${MODQT4_MOC}
+MODQT4_UIC =	${LOCALBASE}/bin/uic4
+MODQT_UIC ?=	${MODQT4_UIC}
+MODQT4_QTDIR =	${LOCALBASE}/lib/qt4
+MODQT_QTDIR ?=	${MODQT4_QTDIR}
 
-CONFIGURE_ENV+=	${_MODQT_SETUP}
-MAKE_ENV+=	${_MODQT_SETUP}
-MAKE_FLAGS+=	${_MODQT_SETUP}
+CONFIGURE_ENV +=${_MODQT4_SETUP}
+MAKE_ENV +=	${_MODQT4_SETUP}
+MAKE_FLAGS +=	${_MODQT4_SETUP}

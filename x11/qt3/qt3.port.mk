@@ -1,37 +1,44 @@
-# $OpenBSD: qt3.port.mk,v 1.7 2006/11/20 20:41:00 espie Exp $
+# $OpenBSD: qt3.port.mk,v 1.8 2007/03/23 16:28:52 espie Exp $
 
 MODULES+=	gcc3
 MODGCC3_ARCHES+=sparc64
 MODGCC3_LANGS+=	c++
 
-# This fragment uses MODQT_* variables to make it easier to substitute
+# This fragment defines MODQT_* variables to make it easier to substitute
 # qt1/qt2/qt3 in a port.
-MODQT_LIBDIR=	${LOCALBASE}/lib/qt3
-MODQT_INCDIR=	${LOCALBASE}/include/X11/qt3
-MODQT_OVERRIDE_UIC?=Yes
-MODQT_MT?=Yes
-MODQT_CONFIGURE_ARGS=	--with-qt-includes=${MODQT_INCDIR} \
-			--with-qt-libraries=${MODQT_LIBDIR}
-_MODQT_SETUP=	MOC=${MODQT_MOC} \
-		MODQT_INCDIR=${MODQT_INCDIR} \
-		MODQT_LIBDIR=${MODQT_LIBDIR}
-.if ${MODQT_OVERRIDE_UIC:L} == "yes"
-_MODQT_SETUP+=	UIC=${MODQT_UIC}
-.endif
 
-MODQT_LIB_DEPENDS=lib/qt3/qt-mt.>=3::x11/qt3
-LIB_DEPENDS+=	${MODQT_LIB_DEPENDS}
+MODQT_OVERRIDE_UIC ?= Yes
+MODQT3_OVERRIDE_UIC ?= ${MODQT_OVERRIDE_UIC}
+
+MODQT3_LIBDIR =	${LOCALBASE}/lib/qt3
+MODQT_LIBDIR ?= ${MODQT3_LIBDIR}
+MODQT3_INCDIR =	${LOCALBASE}/include/X11/qt3
+MODQT_INCDIR ?= ${MODQT3_INCDIR}
+MODQT3_CONFIGURE_ARGS =	--with-qt-includes=${MODQT3_INCDIR} \
+			--with-qt-libraries=${MODQT3_LIBDIR}
+MODQT_CONFIGURE_ARGS ?= ${MODQT3_CONFIGURE_ARGS}
+_MODQT3_SETUP =	MOC=${MODQT3_MOC} \
+		MODQT_INCDIR=${MODQT3_INCDIR} \
+		MODQT_LIBDIR=${MODQT3_LIBDIR}
+.if ${MODQT3_OVERRIDE_UIC:L} == "yes"
+_MODQT3_SETUP +=UIC=${MODQT3_UIC}
+.endif
+_MODQT_SETUP ?= ${MODQT3_SETUP}
+
+MODQT3_LIB_DEPENDS = lib/qt3/qt-mt.>=3::x11/qt3
+MODQT_LIB_DEPENDS ?= ${MODQT3_LIB_DEPENDS}
+LIB_DEPENDS +=	${MODQT3_LIB_DEPENDS}
 
 # may be needed to find plugins
-MODQT_MOC=	${LOCALBASE}/bin/moc3-mt
-MODQT_UIC=	${LOCALBASE}/bin/uic3-mt
-MODQT_QTDIR=	${LOCALBASE}/lib/qt3
-MODQT_PLUGINS=	lib/qt3/plugins-30
+MODQT3_MOC =	${LOCALBASE}/bin/moc3-mt
+MODQT_MOC ?=	${MODQT3_MOC}
+MODQT3_UIC =	${LOCALBASE}/bin/uic3-mt
+MODQT_UIC ?=	${MODQT3_UIC}
+MODQT3_QTDIR =	${LOCALBASE}/lib/qt3
+MODQT_QTDIR ?=	${MODQT3_QTDIR}
+MODQT3_PLUGINS =lib/qt3/plugins-30
+MODQT_PLUGINS ?=${MODQT3_PLUGINS}
 
-.if ${MODQT_MT:L} != "yes"
-ERRORS+="Fatal: support QTMT only"
-.endif
-
-CONFIGURE_ENV+=	${_MODQT_SETUP}
-MAKE_ENV+=	${_MODQT_SETUP}
-MAKE_FLAGS+=	${_MODQT_SETUP}
+CONFIGURE_ENV += ${_MODQT3_SETUP}
+MAKE_ENV +=   ${_MODQT3_SETUP}
+MAKE_FLAGS += ${_MODQT3_SETUP}
