@@ -1,0 +1,15 @@
+$OpenBSD: patch-test_Makefile_in,v 1.1 2007/03/23 17:49:03 kurt Exp $
+--- test/Makefile.in.orig	Thu Sep 21 20:54:27 2006
++++ test/Makefile.in	Thu Mar 22 16:09:15 2007
+@@ -278,9 +278,10 @@ gtk_splash_test_LDADD = \
+ gtk_cairo_test_SOURCES = \
+        gtk-cairo-test.cc
+ 
++# fix linking with installed poppler pkg
+ gtk_cairo_test_LDADD = \
+-	$(top_builddir)/poppler/libpoppler.la		\
+ 	$(top_builddir)/glib/libpoppler-glib.la		\
++	$(top_builddir)/poppler/libpoppler.la		\
+ 	$(CAIRO_LIBS)					\
+ 	$(GTK_TEST_LIBS)
+ 

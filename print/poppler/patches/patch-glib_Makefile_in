@@ -1,0 +1,15 @@
+$OpenBSD: patch-glib_Makefile_in,v 1.1 2007/03/23 17:49:03 kurt Exp $
+--- glib/Makefile.in.orig	Thu Sep 21 20:54:20 2006
++++ glib/Makefile.in	Thu Mar 22 16:10:24 2007
+@@ -322,9 +322,10 @@ libpoppler_glib_la_LDFLAGS = -version-in
+ test_poppler_glib_SOURCES = \
+        test-poppler-glib.c
+ 
++# fix linking with installed poppler pkg
+ test_poppler_glib_LDADD = \
+-	$(top_builddir)/poppler/libpoppler.la	\
+ 	libpoppler-glib.la			\
++	$(top_builddir)/poppler/libpoppler.la	\
+ 	$(POPPLER_GLIB_LIBS)			\
+ 	$(FREETYPE_LIBS)			\
+ 	$(cairo_libs)

@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.8 2007/02/11 00:56:57 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2007/03/23 17:49:03 kurt Exp $
 
 COMMENT-main=	"PDF rendering library"
 COMMENT-qt=	"qt interface to PDF rendering library"
 
-V=		0.5.3
+V=		0.5.4
 DISTNAME=	poppler-$V
 CATEGORIES=	print
-PKGNAME-main=	poppler-$Vp1
-FULLPKGNAME-qt=	poppler-qt-$Vp1
+PKGNAME-main=	poppler-$V
+FULLPKGNAME-qt=	poppler-qt-$V
 
-SHARED_LIBS +=	poppler              1.0      # .1.0
-SHARED_LIBS +=	poppler-glib         1.0      # .1.0
-SHARED_LIBS +=	poppler-qt           0.0      # .1.0
+SHARED_LIBS +=	poppler              2.0      # .1.0
+SHARED_LIBS +=	poppler-glib         2.0      # .1.0
+SHARED_LIBS +=	poppler-qt           2.0      # .1.0
 
 HOMEPAGE=	http://poppler.freedesktop.org/
 
@@ -41,7 +41,8 @@ MAKE_FLAGS=	POPPLER_QT_CXXFLAGS='-pthread -I${MODQT_INCDIR}' \
 MODULES+=	x11/qt3
 .endif
 
-WANTLIB=	freetype fontconfig jpeg z 
+WANTLIB=	ICE SM X11 Xext Xrender cairo freetype fontconfig \
+		glitz m png z
 
 LIB_DEPENDS-qt=	${MODQT_LIB_DEPENDS} poppler::print/poppler
 
@@ -49,10 +50,8 @@ MODULES+=	devel/gettext
 
 LIB_DEPENDS-main=${MODGETTEXT_LIB_DEPENDS} \
 		gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 
-WANTLIB-main=	${WANTLIB} ICE SM Xrender png X11 m Xext glitz \
-		gmodule-2.0 cairo \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		gobject-2.0 glib-2.0
+WANTLIB-main=	${WANTLIB} glib-2.0 gmodule-2.0 gobject-2.0 \
+		pango-1.0 pangocairo-1.0 pangoft2-1.0
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS= --enable-xpdf-headers \
@@ -61,8 +60,7 @@ CONFIGURE_ARGS= --enable-xpdf-headers \
 		--disable-utils \
 		--enable-zlib
 
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
+CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
 
 FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
 
