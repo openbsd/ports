@@ -1,0 +1,18 @@
+--- po/POTFILES.in.orig	Wed Mar 21 21:50:36 2007
++++ po/POTFILES.in	Wed Mar 21 21:50:57 2007
+@@ -6,7 +6,6 @@ glade/playlist3.glade
+ src/bacon-volume.c
+ src/config1.c
+ src/edit_markup.c
+-src/eggtrayicon.back.c
+ src/eggtrayicon.c
+ src/id3info.c
+ src/main.c
+@@ -27,7 +26,6 @@ src/tray-icon.c
+ src/TreeSearchWidget.c
+ src/eggcellrendererkeys.c
+ src/gmpc-metaimage.c
+-src/gmpc-metaimage.gob
+ src/playlist3-metadata-browser.c
+ src/playlist3-find2-browser.c
+ src/playlist3-find3-browser.c
