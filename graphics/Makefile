@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.178 2007/03/15 08:06:48 espie Exp $
+# $OpenBSD: Makefile,v 1.179 2007/03/23 04:29:38 msf Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -12,6 +12,7 @@
      SUBDIR += agg
      SUBDIR += animorph
      SUBDIR += aqsis
+     SUBDIR += barcode
      SUBDIR += blender
      SUBDIR += cadubi
      SUBDIR += cairo
