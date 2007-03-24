@@ -1,0 +1,20 @@
+$OpenBSD: patch-kpilot_lib_pilotAppInfo_h,v 1.1 2007/03/24 12:41:52 ajacoutot Exp $
+--- kpilot/lib/pilotAppInfo.h.orig	Sat Mar 24 11:09:11 2007
++++ kpilot/lib/pilotAppInfo.h	Sat Mar 24 11:13:08 2007
+@@ -136,8 +136,15 @@ protected:
+ * (again, from pilot-link).
+ */
+ template <typename appinfo,
++#if PILOT_LINK_IS(0,12,2)
++	/* There are additional consts introduced in 0.12.2 */
++	int(*unpack)(appinfo *, const unsigned char *, PI_SIZE_T),
++	int(*pack)(const appinfo *, unsigned char *, PI_SIZE_T)
++#else
+ 	int(*unpack)(appinfo *, unsigned char *, PI_SIZE_T),
+-	int(*pack)(appinfo *, unsigned char *, PI_SIZE_T)>
++	int(*pack)(appinfo *, unsigned char *, PI_SIZE_T)
++#endif
++	>
+ class PilotAppInfo : public PilotAppInfoBase
+ {
+ public:
