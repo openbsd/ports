@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/01/11 22:45:46 steven Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/03/24 12:51:27 alek Exp $
 lib/python${MODPY_VERSION}/site-packages/cherrypy/
 lib/python${MODPY_VERSION}/site-packages/cherrypy/__init__.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/__init__.pyc
@@ -156,5 +156,6 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/tutorial/tut09_files.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/tutorial/tut10_http_errors.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/tutorial/tut10_http_errors.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/tutorial/tutorial.conf
-lib/python${MODPY_VERSION}/site-packages/cherrypy/wsgiserver.py
-lib/python${MODPY_VERSION}/site-packages/cherrypy/wsgiserver.pyc
+lib/python${MODPY_VERSION}/site-packages/cherrypy/wsgiserver/
+lib/python${MODPY_VERSION}/site-packages/cherrypy/wsgiserver/__init__.py
+lib/python${MODPY_VERSION}/site-packages/cherrypy/wsgiserver/__init__.pyc
