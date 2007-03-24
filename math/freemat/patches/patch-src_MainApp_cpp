@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_MainApp_cpp,v 1.1 2007/03/24 14:14:50 martynas Exp $
+--- src/MainApp.cpp.orig	Thu Dec 28 16:02:20 2006
++++ src/MainApp.cpp	Sat Mar  3 15:19:53 2007
+@@ -263,12 +263,12 @@ int MainApp::Run() {
+     }
+   } else {
+     QSettings settings("FreeMat","FreeMat");
+-    QDir dir1(QString(settings.value("root").toString())+"/toolbox");   
++    QDir dir1(QString(settings.value("root", RESOURCEDIR).toString())+"/toolbox");   
+     if (dir1.exists()) {
+       QString path1(dir1.canonicalPath());
+       basePath += GetRecursiveDirList(path1);
+     }
+-    QDir dir2(QString(settings.value("root").toString())+"/help/text");
++    QDir dir2(QString(settings.value("root", RESOURCEDIR).toString())+"/help/text");
+     if (dir2.exists()) {
+       QString path2(dir2.canonicalPath());
+       basePath += GetRecursiveDirList(path2);
+@@ -295,6 +295,10 @@ int MainApp::Run() {
+   m_keys->SetCompletionContext(context);
+   m_eval->setTerminalWidth(m_keys->getTerminalWidth());
+   m_eval->setGreetingFlag(skipGreeting);
++#ifdef __OpenBSD__
++  /* 64 frames / calls deep */
++  m_eval->setStackSize(262144);
++#endif
+   m_eval->start();
+   emit Initialize();
+   return 0;

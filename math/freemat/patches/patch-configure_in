@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure_in,v 1.1 2007/03/24 14:14:50 martynas Exp $
+--- configure.in.orig	Tue Jan  9 06:32:57 2007
++++ configure.in	Sat Mar 24 15:46:51 2007
+@@ -62,9 +62,8 @@ if (test "$cross_compiling" = "no") && (test "$is_mac"
+    fi
+    is_win32="false"
+    platform="--linux"
+-   FOO=`echo $QT_LIBS | sed -e 's/-L/-Wl,-rpath,/' | sed -e 's/-L.*//'`
+-   AC_MSG_NOTICE([Extra lib flags added $FOO])
+-   LDFLAGS="$LDFLAGS $FOO"
++   AC_MSG_NOTICE([Extra lib flags added $QT_LIBS])
++   LDFLAGS="$LDFLAGS $QT_LIBS"
+ fi
+ 
+ if (test "$cross_compiling" = "yes"); then

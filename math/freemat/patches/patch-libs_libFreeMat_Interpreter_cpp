@@ -1,0 +1,11 @@
+$OpenBSD: patch-libs_libFreeMat_Interpreter_cpp,v 1.1 2007/03/24 14:14:50 martynas Exp $
+--- libs/libFreeMat/Interpreter.cpp.orig	Tue Jan  9 06:26:33 2007
++++ libs/libFreeMat/Interpreter.cpp	Sat Mar  3 13:46:47 2007
+@@ -21,6 +21,7 @@
+ #include <stack>
+ #include <math.h>
+ #include <stdio.h>
++#include <unistd.h>
+ #include "Exception.hpp"
+ #include "Math.hpp"
+ #include "Array.hpp"

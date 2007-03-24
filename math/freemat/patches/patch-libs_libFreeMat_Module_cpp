@@ -1,12 +1,12 @@
-$OpenBSD: patch-libs_libFreeMat_Module_cpp,v 1.1.1.1 2006/10/28 19:53:05 steven Exp $
---- libs/libFreeMat/Module.cpp.orig	Thu Oct 19 14:16:02 2006
-+++ libs/libFreeMat/Module.cpp	Thu Oct 19 14:16:16 2006
-@@ -366,7 +366,7 @@ namespace FreeMat {
- 		      "return type, argument list");
-     libfile = arg[0].getContentsAsCString();
-     libfullpath = psearch.ResolvePath(libfile);
--    char buffer[1000];
-+    char buffer[PATH_MAX];
-     // Prepend the current working directory... ugly, but necessary
+$OpenBSD: patch-libs_libFreeMat_Module_cpp,v 1.2 2007/03/24 14:14:50 martynas Exp $
+--- libs/libFreeMat/Module.cpp.orig	Thu Dec 28 16:02:26 2006
++++ libs/libFreeMat/Module.cpp	Sat Mar 24 15:46:48 2007
+@@ -379,7 +379,7 @@ ArrayVector ImportFunction(int nargout, const ArrayVec
+ 		    "return type, argument list");
+   libfile = arg[0].getContentsAsCString();
+   libfullpath = psearch.ResolvePath(libfile);
+-  char buffer[1000];
++  char buffer[PATH_MAX];
+   // Prepend the current working directory... ugly, but necessary
  #ifdef WIN32
-     _getcwd(buffer,sizeof(buffer));
+   _getcwd(buffer,sizeof(buffer));

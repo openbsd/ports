@@ -1,0 +1,47 @@
+$OpenBSD: patch-acinclude_m4,v 1.1 2007/03/24 14:14:50 martynas Exp $
+--- acinclude.m4.orig	Thu Dec 28 16:03:20 2006
++++ acinclude.m4	Sat Mar  3 14:26:35 2007
+@@ -302,6 +302,22 @@ if test x"$found_amd" == xyes; then
+   LIBS="-lamd $LIBS"
+ fi
+ 
++# umfpack depends on blas.
++if test x"$is_osx" == xyes; then
++   LIBS="$LIBS -framework vecLib"
++   found_blas="yes"
++   found_lapack="yes"
++else
++   ACX_BLAS(found_blas="yes",found_blas="no")
++   if test x"$found_blas" == xyes; then
++        LIBS="$BLAS_LIBS $LIBS"
++   fi
++   ACX_LAPACK(found_lapack="yes",found_lapack="no")
++   if test x"$found_lapack" == xyes; then
++      LIBS="$LAPACK_LIBS $LIBS"
++   fi
++fi
++
+ AC_CHECK_LIB(umfpack,umfpack_zl_solve,found_umfpack="yes",found_umfpack="no")
+ AC_CHECK_HEADER(umfpack.h,[],found_umfpack="no")
+ 
+@@ -328,20 +344,6 @@ if test x"$found_fftw3" == xyes; then
+   	AC_DEFINE(HAVE_FFTW, 1, [Set to 1 if you have the double precision version of FFTW installed])
+ fi
+ 
+-if test x"$is_osx" == xyes; then
+-   LIBS="$LIBS -framework vecLib"
+-   found_blas="yes"
+-   found_lapack="yes"
+-else
+-   ACX_BLAS(found_blas="yes",found_blas="no")
+-   if test x"$found_blas" == xyes; then
+-	LIBS="$BLAS_LIBS $LIBS"
+-   fi
+-   ACX_LAPACK(found_lapack="yes",found_lapack="no")
+-   if test x"$found_lapack" == xyes; then
+-      LIBS="$LAPACK_LIBS $LIBS"
+-   fi
+-fi
+ AC_F77_FUNC(znaupd)
+ if test x"$znaupd" == x"unknown"; then
+   znaupd="znaupd_"

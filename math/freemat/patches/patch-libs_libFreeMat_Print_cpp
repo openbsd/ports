@@ -1,0 +1,12 @@
+$OpenBSD: patch-libs_libFreeMat_Print_cpp,v 1.1 2007/03/24 14:14:50 martynas Exp $
+--- libs/libFreeMat/Print.cpp.orig	Tue Jan  2 00:31:44 2007
++++ libs/libFreeMat/Print.cpp	Sat Mar 24 15:46:48 2007
+@@ -417,7 +417,7 @@ void PrintSheet(ArrayFormat format, Interpreter*io, in
+   // the terminal width
+   int colsPerPage;
+   if (aclass != FM_STRING)
+-    colsPerPage = (int) floor((termWidth-1)/((float) format.width + 3));
++    colsPerPage = (int) floor((termWidth-1)/((double) format.width + 3));
+   else
+     colsPerPage = termWidth;
+   colsPerPage = (colsPerPage < 1) ? 1 : colsPerPage;

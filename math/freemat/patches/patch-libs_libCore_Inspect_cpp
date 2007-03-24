@@ -1,12 +1,12 @@
-$OpenBSD: patch-libs_libCore_Inspect_cpp,v 1.1.1.1 2006/10/28 19:53:05 steven Exp $
---- libs/libCore/Inspect.cpp.orig	Tue Jun  6 01:31:17 2006
-+++ libs/libCore/Inspect.cpp	Sat Oct 21 18:17:34 2006
-@@ -149,7 +149,7 @@ namespace FreeMat {
-     if (inBundleMode()) {
-       dir = QDir(QString(io->getAppPath().c_str()) + "/../Resources/help/html");
-     } else {
--      dir = QDir(QString(BASEPATH)+"/html");
-+      dir = QDir(QApplication::applicationDirPath()+"/"+QString(BASEPATH)+"/help/html");
-     }
-     HelpWindow *m_helpwin = new HelpWindow(dir.canonicalPath());
-     m_helpwin->show();
+$OpenBSD: patch-libs_libCore_Inspect_cpp,v 1.2 2007/03/24 14:14:50 martynas Exp $
+--- libs/libCore/Inspect.cpp.orig	Thu Dec 28 16:02:21 2006
++++ libs/libCore/Inspect.cpp	Sat Mar 24 15:46:48 2007
+@@ -149,7 +149,7 @@ ArrayVector HelpWinFunction(int nargout, const ArrayVe
+     dir = QDir(QString(qApp->applicationDirPath() + "/../Resources/help/html"));
+   } else {
+     QSettings settings("FreeMat","FreeMat");
+-    dir = QDir(QString(settings.value("root").toString())+"/help/html");
++    dir = QDir(QString(settings.value("root", RESOURCEDIR).toString())+"/help/html");
+   }
+   HelpWindow *m_helpwin = new HelpWindow(dir.canonicalPath());
+   m_helpwin->show();
