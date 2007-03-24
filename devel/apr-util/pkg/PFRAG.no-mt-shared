@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.no-mt-shared,v 1.1 2007/03/24 13:45:13 todd Exp $
+@lib lib/libaprutil-1.so.${LIBaprutil-1_VERSION}

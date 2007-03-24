@@ -1,7 +1,16 @@
-$OpenBSD: patch-test_Makefile_in,v 1.1 2006/09/30 19:08:22 alek Exp $
---- test/Makefile.in.orig	Sat Sep 30 21:51:12 2006
-+++ test/Makefile.in	Sat Sep 30 21:51:14 2006
-@@ -19,7 +19,11 @@ all: $(PROGRAMS)
+$OpenBSD: patch-test_Makefile_in,v 1.2 2007/03/24 13:45:13 todd Exp $
+--- test/Makefile.in.orig	Tue Jun 14 06:03:51 2005
++++ test/Makefile.in	Fri Feb  9 17:21:57 2007
+@@ -8,7 +8,7 @@ TARGETS = $(PROGRAMS)
+ 
+ APRUTIL_DOTTED_VERSION=@APRUTIL_DOTTED_VERSION@
+ APRUTIL_MAJOR_VERSION=@APRUTIL_MAJOR_VERSION@
+-TARGET_LIB_PATH = ../lib@APRUTIL_LIBNAME@.la
++TARGET_LIB_PATH = ../lib@APRUTIL_LIBNAME@${MT}.la
+ 
+ CLEAN_TARGETS = manyfile.bin testfile.txt data/sqlite*.db
+ 
+@@ -21,7 +21,11 @@ all: $(PROGRAMS)
  
  check: $(PROGRAMS)
  	for prog in $(PROGRAMS); do \
