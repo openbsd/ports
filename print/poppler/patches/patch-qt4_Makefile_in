@@ -1,0 +1,12 @@
+$OpenBSD: patch-qt4_Makefile_in,v 1.1 2007/03/24 13:21:26 espie Exp $
+--- qt4/Makefile.in.orig	Fri Mar 23 16:27:09 2007
++++ qt4/Makefile.in	Fri Mar 23 16:27:22 2007
+@@ -215,7 +215,7 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = src tests
++SUBDIRS = src
+ all: all-recursive
+ 
+ .SUFFIXES:

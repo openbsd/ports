@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-qt,v 1.3 2007/03/23 17:49:03 kurt Exp $
+@comment $OpenBSD: PLIST-qt,v 1.4 2007/03/24 13:21:26 espie Exp $
+@conflict poppler-<0.5.4p0
 %%SHARED%%
 include/poppler/poppler-link-qt3.h
-include/poppler/poppler-page-transition.h
 include/poppler/poppler-qt.h
 lib/libpoppler-qt.a
 lib/libpoppler-qt.la

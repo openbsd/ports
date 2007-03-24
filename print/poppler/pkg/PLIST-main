@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/21 10:10:01 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/03/24 13:21:26 espie Exp $
 @pkgpath print/poppler
+@conflict poppler-qt-<0.5.4p0
 %%SHARED%%
 include/poppler/
 include/poppler/Annot.h
@@ -76,6 +77,7 @@ include/poppler/goo/gfile.h
 include/poppler/goo/gmem.h
 include/poppler/goo/gtypes.h
 include/poppler/poppler-config.h
+include/poppler/poppler-page-transition.h
 include/poppler/splash/
 include/poppler/splash/Splash.h
 include/poppler/splash/SplashBitmap.h

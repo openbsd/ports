@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared-qt4,v 1.1 2007/03/24 13:21:26 espie Exp $
+@lib lib/libpoppler-qt4.so.${LIBpoppler-qt4_VERSION}
