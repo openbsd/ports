@@ -1,0 +1,23 @@
+$OpenBSD: patch-manpages_man_manl_ilaver_l,v 1.1 2007/03/24 14:06:54 steven Exp $
+--- manpages/man/manl/ilaver.l.orig	Sat Mar 24 15:33:05 2007
++++ manpages/man/manl/ilaver.l	Sat Mar 24 15:34:24 2007
+@@ -1,7 +1,18 @@
+ .TH  ILAVER 1 "February 2007" " LAPACK routine (version 3.1.1) " " LAPACK routine (version 3.1.1) " 
+ .SH NAME
+-ILAVER - return the Lapack version  Arguments ========= VERS_MAJOR (output) INTEGER  return the lapack major version VERS_MINOR (output) INTEGER  return the lapack minor version from the major version VERS_PATCH (output) INTEGER  return the lapack patch version from the minor version =====================================================================   =====================================================================    =====================================================================    
++ILAVER - return the Lapack version
+ .SH SYNOPSIS
++Arguments
++
++VERS_MAJOR (output) INTEGER
++   return the lapack major version
++
++VERS_MINOR (output) INTEGER
++   return the lapack minor version from the major version
++
++VERS_PATCH (output) INTEGER
++   return the lapack patch version from the minor version
++
+ .TP 19
+ SUBROUTINE ILAVER(
+ VERS_MAJOR, VERS_MINOR, VERS_PATCH )

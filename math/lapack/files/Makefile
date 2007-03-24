@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/01/27 07:17:55 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/03/24 14:06:54 steven Exp $
 
 LIB=	lapack
 
@@ -20,7 +20,7 @@ SCLAUX = \
    slaset.f slasq1.f slasq2.f slasq3.f slazq3.f slasq4.f slazq4.f slasq5.f slasq6.f \
    slasr.f  slasrt.f slassq.f slasv2.f spttrf.f sstebz.f sstedc.f \
    ssteqr.f ssterf.f slaisnan.f sisnan.f \
-   ../INSTALL/slamch.f ../INSTALL/second.f
+   ../INSTALL/slamch.f ../INSTALL/second_${TIMER}.f
 
 DZLAUX = \
    dbdsdc.f \
@@ -37,7 +37,7 @@ DZLAUX = \
    dlaset.f dlasq1.f dlasq2.f dlasq3.f dlazq3.f dlasq4.f dlazq4.f dlasq5.f dlasq6.f \
    dlasr.f  dlasrt.f dlassq.f dlasv2.f dpttrf.f dstebz.f dstedc.f \
    dsteqr.f dsterf.f dlaisnan.f disnan.f \
-   ../INSTALL/dlamch.f ../INSTALL/dsecnd.f
+   ../INSTALL/dlamch.f ../INSTALL/dsecnd_${TIMER}.f
 
 SLASRC = \
    sgbbrd.f sgbcon.f sgbequ.f sgbrfs.f sgbsv.f  \
@@ -129,7 +129,7 @@ CLASRC = \
    cppequ.f cpprfs.f cppsv.f  cppsvx.f cpptrf.f cpptri.f cpptrs.f \
    cptcon.f cpteqr.f cptrfs.f cptsv.f  cptsvx.f cpttrf.f cpttrs.f cptts2.f \
    crot.f   cspcon.f cspmv.f  cspr.f   csprfs.f cspsv.f  \
-   cspsvx.f csptrf.f csptri.f csptrs.f csrot.f  csrscl.f cstedc.f \
+   cspsvx.f csptrf.f csptri.f csptrs.f csrscl.f cstedc.f \
    cstegr.f cstein.f csteqr.f csycon.f csymv.f  \
    csyr.f   csyrfs.f csysv.f  csysvx.f csytf2.f csytrf.f csytri.f \
    csytrs.f ctbcon.f ctbrfs.f ctbtrs.f ctgevc.f ctgex2.f \
@@ -237,7 +237,7 @@ ZLASRC = \
    zppequ.f zpprfs.f zppsv.f  zppsvx.f zpptrf.f zpptri.f zpptrs.f \
    zptcon.f zpteqr.f zptrfs.f zptsv.f  zptsvx.f zpttrf.f zpttrs.f zptts2.f \
    zrot.f   zspcon.f zspmv.f  zspr.f   zsprfs.f zspsv.f  \
-   zspsvx.f zsptrf.f zsptri.f zsptrs.f zdrot.f  zdrscl.f zstedc.f \
+   zspsvx.f zsptrf.f zsptri.f zsptrs.f zdrscl.f zstedc.f \
    zstegr.f zstein.f zsteqr.f zsycon.f zsymv.f  \
    zsyr.f   zsyrfs.f zsysv.f  zsysvx.f zsytf2.f zsytrf.f zsytri.f \
    zsytrs.f ztbcon.f ztbrfs.f ztbtrs.f ztgevc.f ztgex2.f \

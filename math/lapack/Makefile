@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2007/01/27 07:17:55 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/03/24 14:06:54 steven Exp $
 
 COMMENT=	"library of Fortran 77 linear algebra subroutines"
 
-DISTNAME=	lapack-3.1.0
+DISTNAME=	lapack-3.1.1
 
-SHARED_LIBS=	lapack 4.0
+SHARED_LIBS=	lapack 5.0
 
 CATEGORIES=	math
 
@@ -26,7 +26,8 @@ EXTRACT_SUFX=	.tgz
 LIB_DEPENDS=	blas.>=1::math/blas
 
 MAKE_ENV=	SHLIB_MAJOR=${LIBlapack_VERSION:R} \
-		SHLIB_MINOR=${LIBlapack_VERSION:E}
+		SHLIB_MINOR=${LIBlapack_VERSION:E} \
+		TIMER=EXT_ETIME
 FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
 REGRESS_FLAGS=	PLAT= OPTS= FORTRAN=${FC} \
 		LAPACKLIB=SRC/liblapack.a \
