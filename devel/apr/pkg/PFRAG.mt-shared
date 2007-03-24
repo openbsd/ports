@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.mt-shared,v 1.1 2007/03/24 13:46:47 todd Exp $
+@lib lib/libapr-1-mt.so.${LIBapr-1-mt_VERSION}

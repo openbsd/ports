@@ -1,0 +1,19 @@
+$OpenBSD: patch-network_io_unix_sockets_c,v 1.1 2007/03/24 13:46:47 todd Exp $
+--- network_io/unix/sockets.c.orig	Thu Dec  8 12:24:36 2005
++++ network_io/unix/sockets.c	Wed Oct  4 20:17:38 2006
+@@ -256,6 +256,15 @@ apr_status_t apr_socket_accept(apr_socke
+ apr_status_t apr_socket_connect(apr_socket_t *sock, apr_sockaddr_t *sa)
+ {
+     int rc;        
++/*
++ * OpenBSD doesn't support connect() to INADDR_ANY so convert to
++ * INADDR_LOOPBACK to emulate what is expected.
++ */
++#ifdef __OpenBSD__
++    if (sa->family == APR_INET)
++        if (sa->sa.sin.sin_addr.s_addr == INADDR_ANY)
++            sa->sa.sin.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
++#endif
+ 
+     do {
+         rc = connect(sock->socketdes,

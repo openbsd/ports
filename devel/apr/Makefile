@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2006/11/03 10:56:44 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2007/03/24 13:46:47 todd Exp $
 
 COMMENT=	"Apache Portable Runtime"
 
 DISTNAME=	apr-1.2.7
-SHARED_LIBS +=	apr-1                2.7      # .2.7
+PKGNAME=	${DISTNAME}p0
+FULLPKGNAME=	apr${MT}-1.2.7p0
+SHARED_LIBS +=	apr-1${MT}             2.7     # .2.7
 
 CATEGORIES=	devel
 
@@ -22,8 +24,27 @@ MASTER_SITES=	${MASTER_SITE_APACHE:=apr/}
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-installbuilddir=${LOCALBASE}/lib/apr-1/ \
-		--enable-other-child \
-		--disable-threads
+		--includedir=${LOCALBASE}/include/apr-1${MT}/ \
+		--with-installbuilddir=${LOCALBASE}/lib/apr-1${MT}/ \
+		--enable-other-child
+
+FLAVORS=	mt
+FLAVOR?=
+
+SUBST_VARS+=	MT
+
+.if ${FLAVOR:L:Mmt}
+MT=-mt
+CONFIGURE_ARGS+=	--enable-threads
+
+post-install:
+	sed 's/{APR_LIBNAME}/{APR_LIBNAME}-mt/g' ${WRKSRC}/apr-config.out > ${PREFIX}/bin/apr-1-mt-config
+
+.else
+MT=
+CONFIGURE_ARGS+=	--disable-threads
+.endif
+MAKE_ENV+=	MT=${MT}
+FAKE_ENV+=	MT=${MT}
 
 .include <bsd.port.mk>

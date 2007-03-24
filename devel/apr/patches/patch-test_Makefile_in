@@ -1,0 +1,29 @@
+$OpenBSD: patch-test_Makefile_in,v 1.1 2007/03/24 13:46:47 todd Exp $
+--- test/Makefile.in.orig	Tue Mar 21 14:29:41 2006
++++ test/Makefile.in	Fri Feb  9 15:54:33 2007
+@@ -12,12 +12,13 @@ VPATH = @srcdir@
+ 
+ STDTEST_PORTABLE = \
+ 	testlockperf@EXEEXT@ \
+-	testshmproducer@EXEEXT@ \
+-	testshmconsumer@EXEEXT@ \
+ 	testmutexscope@EXEEXT@ \
+ 	testall@EXEEXT@
+ 
+-OTHER_PROGRAMS = sendfile@EXEEXT@ 
++OTHER_PROGRAMS = \
++	sendfile@EXEEXT@ \
++	testshmproducer@EXEEXT@ \
++	testshmconsumer@EXEEXT@
+ 
+ PROGRAMS = $(STDTEST_PORTABLE) $(STDTEST_NONPORTABLE) $(OTHER_PROGRAMS)
+ 
+@@ -26,7 +27,7 @@ TARGETS = $(PROGRAMS)
+ # bring in rules.mk for standard functionality
+ @INCLUDE_RULES@
+ 
+-LOCAL_LIBS=../lib@APR_LIBNAME@.la
++LOCAL_LIBS=../lib@APR_LIBNAME@${MT}.la
+ 
+ CLEAN_TARGETS = testfile.tmp mod_test.slo proc_child@EXEEXT@ occhild@EXEEXT@ \
+ 	readchild@EXEEXT@ tryread@EXEEXT@ sockchild@EXEEXT@ \

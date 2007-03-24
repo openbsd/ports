@@ -1,23 +1,51 @@
-$OpenBSD: patch-configure,v 1.3 2005/01/20 18:48:54 alek Exp $
---- configure.orig	Wed Nov 17 02:17:20 2004
-+++ configure	Tue Jan 18 16:29:35 2005
-@@ -4290,11 +4290,6 @@ if test "x$apr_preload_done" != "xyes" ;
+$OpenBSD: patch-configure,v 1.4 2007/03/24 13:46:47 todd Exp $
+--- configure.orig	Sun Apr  9 16:32:36 2006
++++ configure	Fri Feb  9 16:17:35 2007
+@@ -4317,6 +4317,11 @@ if test "x$apr_preload_done" != "xyes" ;
          ;;
      *-openbsd*)
  
--  if test "x$CPPFLAGS" = "x"; then
--    test "x$silent" != "xyes" && echo "  setting CPPFLAGS to \"-D_POSIX_THREADS\""
--    CPPFLAGS="-D_POSIX_THREADS"
--  else
--    apr_addto_bugger="-D_POSIX_THREADS"
-     for i in $apr_addto_bugger; do
-       apr_addto_duplicate="0"
-       for j in $CPPFLAGS; do
-@@ -4308,7 +4303,6 @@ if test "x$apr_preload_done" != "xyes" ;
-         CPPFLAGS="$CPPFLAGS $i"
-       fi
-     done
--  fi
++  if test -z "$apr_lock_method"; then
++    test "x$silent" != "xyes" && echo "  setting apr_lock_method to \"USE_FLOCK_SERIALIZE\""
++    apr_lock_method="USE_FLOCK_SERIALIZE"
++  fi
++
+   if test "x$CPPFLAGS" = "x"; then
+     test "x$silent" != "xyes" && echo "  setting CPPFLAGS to \"-D_POSIX_THREADS\""
+     CPPFLAGS="-D_POSIX_THREADS"
+@@ -26147,7 +26152,7 @@ if test "${apr_cv_pthreads_lib+set}" = s
+ else
  
-         # binding to an ephemeral port fails on OpenBSD so override
-         # the test for O_NONBLOCK inheritance across accept().
+   apr_ptc_libs=$LIBS
+-  for lib in -lpthread -lpthreads -lc_r; do
++  for lib in -pthread -lpthread -lpthreads -lc_r; do
+     LIBS="$apr_ptc_libs $lib"
+ 
+ if test "$cross_compiling" = yes; then
+@@ -26705,7 +26710,7 @@ if test "${apr_cv_pthreads_lib+set}" = s
+ else
+ 
+   apr_ptc_libs=$LIBS
+-  for lib in -lpthread -lpthreads -lc_r; do
++  for lib in -pthread -lpthread -lpthreads -lc_r; do
+     LIBS="$apr_ptc_libs $lib"
+ 
+ if test "$cross_compiling" = yes; then
+@@ -39523,7 +39528,7 @@ for ac_spec in func:semget func:semctl d
+ done
+ if test ".$ac_rc" = .yes; then
+     :
+-    hassysvser="1"
++    hassysvser="0"
+ else
+     :
+     hassysvser="0"
+@@ -43558,7 +43563,7 @@ esac
+ 
+ 
+ 
+-                                                            ac_config_files="$ac_config_files Makefile include/apr.h build/apr_rules.mk build/pkg/pkginfo apr-$APR_MAJOR_VERSION-config:apr-config.in apr.pc"
++                                                            ac_config_files="$ac_config_files Makefile include/apr.h build/apr_rules.mk build/pkg/pkginfo apr-$APR_MAJOR_VERSION-config:apr-config.in apr.pc apr-mt.pc"
+ 
+ 
+ if test -d $srcdir/test; then
