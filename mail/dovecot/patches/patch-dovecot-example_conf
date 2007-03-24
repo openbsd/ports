@@ -1,6 +1,6 @@
-$OpenBSD: patch-dovecot-example_conf,v 1.34 2007/03/21 22:43:49 msf Exp $
---- dovecot-example.conf.orig	Sat Mar 10 21:45:40 2007
-+++ dovecot-example.conf	Tue Mar 13 17:21:52 2007
+$OpenBSD: patch-dovecot-example_conf,v 1.35 2007/03/24 07:29:01 jakob Exp $
+--- dovecot-example.conf.orig	Fri Mar 23 01:00:54 2007
++++ dovecot-example.conf	Sat Mar 24 03:35:17 2007
 @@ -7,13 +7,12 @@
  # value inside quotes, eg.: key = "# char and trailing whitespace  "
  
@@ -156,7 +156,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.34 2007/03/21 22:43:49 msf Exp $
      # [blocking=yes] [session=yes] [setcred=yes]
      # [cache_key=<key>] [<service name>]
      #
-@@ -815,18 +814,18 @@ auth default {
+@@ -815,16 +814,16 @@ auth default {
      #   args = session=yes *
      #   args = cache_key=%u dovecot
      #args = dovecot
@@ -169,9 +169,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.34 2007/03/21 22:43:49 msf Exp $
    # http://wiki.dovecot.org/AuthDatabase/Passwd
 -  #passdb passwd {
 +  passdb passwd {
-     # [blocking=yes] - By default the lookups are done in the main dovecot-auth
-     # process. This setting causes the lookups to be done in auth worker
-     # proceses. Useful with remote NSS lookups that may block.
+     # [blocking=yes] - See userdb passwd for explanation
      #args = 
 -  #}
 +  }

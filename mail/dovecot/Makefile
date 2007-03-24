@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.74 2007/03/22 06:59:13 jakob Exp $
+# $OpenBSD: Makefile,v 1.75 2007/03/24 07:29:01 jakob Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-server= "compact IMAP/POP3 server"
 COMMENT-sieve=	"sieve mail filtering for Dovecot"
 
-V_DOVECOT=	1.0.rc27
+V_DOVECOT=	1.0.rc28
 
 V_SIEVE=	1.0
 
 PKGNAME=	dovecot-${V_DOVECOT}
-PKGNAME-server=	dovecot-${V_DOVECOT}p0
-PKGNAME-sieve=	dovecot-sieve-${V_SIEVE}p5
+PKGNAME-server=	dovecot-${V_DOVECOT}
+PKGNAME-sieve=	dovecot-sieve-${V_SIEVE}p6
 
 DISTNAME=	dovecot-${V_DOVECOT}
 CATEGORIES=	mail
@@ -102,8 +102,8 @@ post-build:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dovecot
 	${INSTALL_DATA} ${WRKSRC}/doc/dovecot-openssl.cnf \
-		${WRKSRC}/doc/dovecot-sql.conf \
-		${WRKSRC}/doc/dovecot-ldap.conf \
+		${WRKSRC}/doc/dovecot-sql-example.conf \
+		${WRKSRC}/doc/dovecot-ldap-example.conf \
 		${WRKSRC}/dovecot-example.conf \
 		${PREFIX}/share/examples/dovecot
 	${INSTALL_SCRIPT} ${WRKSRC}/doc/mkcert.sh \
