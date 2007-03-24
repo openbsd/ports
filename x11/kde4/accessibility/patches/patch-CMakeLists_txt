@@ -1,0 +1,21 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2007/03/24 13:46:58 espie Exp $
+--- CMakeLists.txt.orig	Mon Feb 19 10:49:16 2007
++++ CMakeLists.txt	Sat Mar 24 14:34:49 2007
+@@ -32,7 +32,7 @@ add_subdirectory(IconThemes)
+ add_subdirectory(doc)
+ 
+ if(Q_WS_X11)
+-    add_subdirectory(kttsd)
++#    add_subdirectory(kttsd)
+     if(X11_Xkb_FOUND)		
+ 	if(KICKER_INCLUDE_DIR)
+ 	   add_subdirectory(kbstateapplet)
+@@ -46,7 +46,7 @@ if(Q_WS_X11)
+     endif(X11_XTest_FOUND)
+ endif(Q_WS_X11)
+ 
+-add_subdirectory(kmouth)
++#add_subdirectory(kmouth)
+ 
+ MESSAGE(STATUS "Skipping ksayit. It does not currently compile.")
+ # add_subdirectory(ksayit)
