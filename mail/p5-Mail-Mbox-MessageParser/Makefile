@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/03/24 09:04:48 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/03/24 09:34:16 steven Exp $
 
 COMMENT=	"fast and simple mbox folder reader"
 
@@ -14,7 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	::devel/p5-Benchmark-Timer
+BUILD_DEPENDS=	::devel/p5-Benchmark-Timer \
+		::devel/p5-FileHandle-Unget
 RUN_DEPENDS=	::devel/p5-FileHandle-Unget \
 		::archivers/bzip2
 
