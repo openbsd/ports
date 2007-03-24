@@ -1,0 +1,14 @@
+$OpenBSD: patch-kscreensaver_kdesavers_pendulum_cpp,v 1.1.1.1 2007/03/24 14:20:20 espie Exp $
+--- kscreensaver/kdesavers/pendulum.cpp.orig	Sat Mar 24 14:54:48 2007
++++ kscreensaver/kdesavers/pendulum.cpp	Sat Mar 24 15:01:19 2007
+@@ -54,6 +54,10 @@
+ 
+ #define KPENDULUM_VERSION "1.1"
+ 
++const unsigned int KPendulumSaver::persChangeIntervalLimitLower;
++const unsigned int KPendulumSaver::persChangeIntervalLimitUpper;
++const unsigned int KPendulumSaver::persChangeIntervalDefault;
++
+ // libkscreensaver interface
+ class KPendulumSaverInterface : public KScreenSaverInterface
+ {
