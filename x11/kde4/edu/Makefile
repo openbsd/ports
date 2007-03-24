@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/03/22 22:24:33 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/03/24 13:23:59 espie Exp $
 
 COMMENT=		"K Desktop Environment, edu"
 DISTNAME=		kdeedu-${VERSION}
+PKGNAME=		${DISTNAME}p0
 
 BUILD_DEPENDS+=		::math/eigen
 LIB_DEPENDS+=	bz2::archivers/bzip2 \

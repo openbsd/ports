@@ -1,0 +1,11 @@
+$OpenBSD: patch-ligature_plugins_CMakeLists_txt,v 1.1 2007/03/24 13:23:59 espie Exp $
+--- ligature/plugins/CMakeLists.txt.orig	Mon Feb 19 10:55:45 2007
++++ ligature/plugins/CMakeLists.txt	Fri Mar 23 20:33:19 2007
+@@ -13,6 +13,7 @@ if(TIFF_FOUND)
+    # check that the tiff library has TIFFReadRGBAImageOriented
+    macro_push_required_vars()
+    set(CMAKE_REQUIRED_LIBRARIES ${CMAKE_REQUIRED_LIBRARIES} ${TIFF_LIBRARIES})
++   set(CMAKE_REQUIRED_INCLUDES ${CMAKE_REQUIRED_INCLUDES} ${TIFF_INCLUDE_DIR})
+    check_symbol_exists(TIFFReadRGBAImageOriented "tiffio.h" HAVE_TIFF_READ_RGBA_IMAGE_ORIENTED)
+    macro_pop_required_vars()
+    if (HAVE_TIFF_READ_RGBA_IMAGE_ORIENTED)

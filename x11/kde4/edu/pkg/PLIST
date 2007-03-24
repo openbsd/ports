@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/03/22 22:24:33 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/03/24 13:23:59 espie Exp $
 bin/blinken
 bin/celestrongps
 bin/indiserver
@@ -91,6 +91,9 @@ lib/libkiten.so.4.0.0
 lib/libkvoctraincore.so
 lib/libkvoctraincore.so.1
 lib/libkvoctraincore.so.1.0.0
+lib/libsbigudrv.so
+lib/libsbigudrv.so.1
+lib/libsbigudrv.so.1.0.0
 lib/libscience.so
 lib/libscience.so.4
 lib/libscience.so.4.0.0

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/03/22 22:24:33 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/03/24 13:23:59 espie Exp $
 @newgroup _kdesud:583
 bin/appletproxy
 bin/dolphin
@@ -31,11 +31,11 @@ bin/kdeprintfax
 bin/kdesktop
 bin/kdesktop_lock
 bin/kdesu
-@group _kdesud
 @mode g+s
+@group _kdesud
 bin/kdesud
-@group
 @mode
+@group
 bin/kdialog
 bin/kdm
 bin/kdm_config

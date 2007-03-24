@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/03/22 22:24:32 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/03/24 13:23:59 espie Exp $
 
 COMMENT=		"K Desktop Environment, base"
 DISTNAME=		kdebase-${VERSION}
+PKGNAME=		${DISTNAME}p0
 
 LIB_DEPENDS+=	Half,Iex,IlmImf,Imath::graphics/openexr \
 		gif::graphics/libungif \

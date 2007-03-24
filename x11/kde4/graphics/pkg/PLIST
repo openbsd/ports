@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/03/22 22:24:34 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/03/24 13:23:59 espie Exp $
 bin/kcolorchooser
 bin/kcoloredit
 bin/kfax
@@ -21,6 +21,7 @@ lib/kde4/kfile_gif.so
 lib/kde4/kfile_ico.so
 lib/kde4/kfile_jpeg.so
 lib/kde4/kfile_pcx.so
+lib/kde4/kfile_pdf.so
 lib/kde4/kfile_png.so
 lib/kde4/kfile_pnm.so
 lib/kde4/kfile_ps.so
@@ -35,6 +36,7 @@ lib/kde4/kio_kamera.so
 lib/kde4/libkghostviewpart.so
 lib/kde4/ligaturePlugin_DJVU.so
 lib/kde4/ligaturePlugin_PS.so
+lib/kde4/ligaturePlugin_TIFF.so
 lib/kde4/ligaturepart.so
 lib/libdjvu.so
 lib/libdjvu.so.0
@@ -512,6 +514,7 @@ share/services/camera.protocol
 share/services/djvumultipage.desktop
 share/services/gsthumbnail.desktop
 share/services/kamera.desktop
+share/services/kfaxmultipage.desktop
 share/services/kfile_bmp.desktop
 share/services/kfile_dds.desktop
 share/services/kfile_dvi.desktop
@@ -520,6 +523,7 @@ share/services/kfile_gif.desktop
 share/services/kfile_ico.desktop
 share/services/kfile_jpeg.desktop
 share/services/kfile_pcx.desktop
+share/services/kfile_pdf.desktop
 share/services/kfile_png.desktop
 share/services/kfile_pnm.desktop
 share/services/kfile_ps.desktop
@@ -532,6 +536,7 @@ share/services/kfile_xpm.desktop
 share/services/kfile_xps.desktop
 share/services/kghostview_part.desktop
 share/services/kvs_djvu_part.desktop
+share/services/kvs_fax_part.desktop
 share/services/kvs_ps_part.desktop
 share/services/psMultipage.desktop
 share/services/scanservice.desktop
