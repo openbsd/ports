@@ -1,13 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/03/24 20:51:56 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/03/25 19:38:39 aanriot Exp $
 bin/rdesktop
 @man man/man1/rdesktop.1
 share/rdesktop/
 share/rdesktop/keymaps/
 share/rdesktop/keymaps/ar
 share/rdesktop/keymaps/common
+share/rdesktop/keymaps/cs
 share/rdesktop/keymaps/da
 share/rdesktop/keymaps/de
 share/rdesktop/keymaps/de-ch
+share/rdesktop/keymaps/en-dv
 share/rdesktop/keymaps/en-gb
 share/rdesktop/keymaps/en-us
 share/rdesktop/keymaps/es
@@ -18,11 +20,13 @@ share/rdesktop/keymaps/fr
 share/rdesktop/keymaps/fr-be
 share/rdesktop/keymaps/fr-ca
 share/rdesktop/keymaps/fr-ch
+share/rdesktop/keymaps/he
 share/rdesktop/keymaps/hr
 share/rdesktop/keymaps/hu
 share/rdesktop/keymaps/is
 share/rdesktop/keymaps/it
 share/rdesktop/keymaps/ja
+share/rdesktop/keymaps/ko
 share/rdesktop/keymaps/lt
 share/rdesktop/keymaps/lv
 share/rdesktop/keymaps/mk
