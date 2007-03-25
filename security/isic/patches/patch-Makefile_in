@@ -1,9 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2005/07/03 18:02:12 aanriot Exp $
---- Makefile.in.orig	Sat Nov  6 21:39:55 2004
-+++ Makefile.in	Sat Jul  2 20:00:06 2005
-@@ -5,9 +5,9 @@
- PREFIX ?= /usr/local
+$OpenBSD: patch-Makefile_in,v 1.3 2007/03/25 12:47:25 mbalmer Exp $
+--- Makefile.in.orig	Fri Dec 22 08:33:32 2006
++++ Makefile.in	Fri Mar  2 15:23:07 2007
+@@ -2,11 +2,11 @@
+ # To build for Trinux, add '-static' to LDFLAGS
+ # and 'strip *sic' after they compile
  
+-PREFIX  = @prefix@
++PREFIX  ?= /usr/local
  CC	= @CC@
 -DEFS	= @DEFS@ `libnet-config --defines`
 -CFLAGS	= @CFLAGS@ `libnet-config --cflags`
@@ -14,35 +17,58 @@ $OpenBSD: patch-Makefile_in,v 1.2 2005/07/03 18:02:12 aanriot Exp $
  LDFLAGS	= @LDFLAGS@
  
  INSTALL	= @INSTALL@
-@@ -20,19 +20,19 @@ BINS	= isic tcpsic udpsic icmpsic esic
+@@ -20,34 +20,34 @@ MAN	= isic.1
  all: $(BINS)
  
  isic:	isic.c isic.h
--	gcc -o isic isic.c -Wall -W $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
+-	$(CC) -o isic isic.c -Wall -W $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
 +	$(CC) -o isic isic.c $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
  
  tcpsic:	tcpsic.c isic.h
--	gcc -o tcpsic tcpsic.c -Wall -W $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
+-	$(CC) -o tcpsic tcpsic.c -Wall -W $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
 +	$(CC) -o tcpsic tcpsic.c $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
  
  udpsic:	udpsic.c isic.h
--	gcc -o udpsic udpsic.c -Wall -W $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
+-	$(CC) -o udpsic udpsic.c -Wall -W $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
 +	$(CC) -o udpsic udpsic.c $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
  
  icmpsic: icmpsic.c isic.h
--	gcc -o icmpsic icmpsic.c -Wall -W $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
+-	$(CC) -o icmpsic icmpsic.c -Wall -W $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
 +	$(CC) -o icmpsic icmpsic.c $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
  
- esic: esic.c isic.h
--	gcc -o esic esic.c -Wall -W $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
+ esic:	esic.c isic.h
+-	$(CC) -o esic esic.c -Wall -W $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
 +	$(CC) -o esic esic.c $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
+ 
+ multisic:	multisic.c isic.h
+-	$(CC) -o multisic multisic.c -Wall -W $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
++	$(CC) -o multisic multisic.c $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
+ 
+ isic6:	isic6.c isic.h
+-	$(CC) -o isic6 isic6.c -Wall -W $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
++	$(CC) -o isic6 isic6.c $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
+ 
+ tcpsic6: tcpsic6.c isic.h
+-	$(CC) -o tcpsic6 tcpsic6.c -Wall -W $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
++	$(CC) -o tcpsic6 tcpsic6.c $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
+ 
+ udpsic6: udpsic6.c isic.h
+-	$(CC) -o udpsic6 udpsic6.c -Wall -W $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
++	$(CC) -o udpsic6 udpsic6.c $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
+ 
+ icmpsic6: icmpsic6.c isic.h
+-	$(CC) -o icmpsic6 icmpsic6.c -Wall -W $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
++	$(CC) -o icmpsic6 icmpsic6.c $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
  
  realclean: distclean
  distclean: clean
-@@ -48,5 +48,4 @@ package: distclean
- 	  tar -czvf isic-$(VERSION).tgz isic-$(VERSION)/* )
+@@ -63,7 +63,5 @@ package: distclean
+ 	  tar -czvf isic-$(VERSION).tgz ./isic-$(VERSION)/* )
  
- install: $(BINS)
--	$(INSTALL) -m 0755 -d ${PREFIX}/bin
--	$(INSTALL) -m 0755 -c $(BINS) ${PREFIX}/bin
+ install: $(BINS) $(MAN)
+-	$(INSTALL) -m 0755 -d $(PREFIX)/bin
+-	$(INSTALL) -m 0755 -c $(BINS) $(PREFIX)/bin
+-	$(INSTALL) -m 0755 -d $(PREFIX)/man/man1
+-	${INSTALL} -m 0755 -c $(MAN) $(PREFIX)/man/man1
 +	$(BSD_INSTALL_PROGRAM) $(BINS) ${PREFIX}/bin
++	$(BSD_INSTALL_MAN) $(MAN) ${PREFIX}/man/man1

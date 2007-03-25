@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2005/07/03 18:02:12 aanriot Exp $
+# $OpenBSD: Makefile,v 1.24 2007/03/25 12:47:25 mbalmer Exp $
 
 COMMENT=	"IP stack integrity checker"
 
-DISTNAME=	isic-0.06
+DISTNAME=	isic-0.07
 CATEGORIES=	security
 
-HOMEPAGE=	http://www.packetfactory.net/projects/ISIC/
+HOMEPAGE=	http://isic.sourceforge.net/
 
 # modified BSD license
 PERMIT_PACKAGE_CDROM=	Yes
@@ -14,13 +14,14 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=isic/}
 EXTRACT_SUFX=	.tgz
 
 LIB_DEPENDS=	lib/libnet-1.1/net.=11:libnet-1.1*:net/libnet/1.1
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include/libnet-1.1 `libnet-config-1.1 --defines`" \
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include/libnet-1.1 \
+		`libnet-config-1.1 --defines`" \
 		LIBS="-L${LOCALBASE}/lib/libnet-1.1 -lnet"
 
 NO_REGRESS=	Yes
