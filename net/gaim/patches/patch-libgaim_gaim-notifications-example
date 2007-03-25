@@ -1,9 +1,0 @@
-$OpenBSD: patch-libgaim_gaim-notifications-example,v 1.1 2007/02/07 01:07:18 todd Exp $
---- libgaim/gaim-notifications-example.orig	Fri Feb  2 17:19:53 2007
-+++ libgaim/gaim-notifications-example	Fri Feb  2 17:23:16 2007
-@@ -1,4 +1,4 @@
--#!/usr/bin/env python
-+#!%python%
- 
- # This is a simple gaim notification server.
- # It shows notifications when your buddy signs on or you get an IM message.

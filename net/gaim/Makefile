@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.101 2007/02/13 00:14:42 todd Exp $
+# $OpenBSD: Makefile,v 1.102 2007/03/25 10:04:17 alek Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"Gtk AIM, ICQ, IRC, Jabber, MSN, Yahoo, SILC and Zephyr client"
 
 DISTNAME=	gaim-2.0.0beta6
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 SHARED_LIBS=	gaim 0.0 \
 		gaim-client 0.0 \
 		gnt 0.0 \
@@ -29,14 +29,10 @@ WANTLIB=		glib-2.0 ICE SM X11 Xext Xrender Xss \
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gaim/}
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext lang/python
 
-PYTHON_VER=	2.4
-
-BUILD_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
-		:p5-XML-Parser-*:textproc/p5-XML-Parser
-RUN_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
-		:dbus-python-*:x11/dbus-python \
+BUILD_DEPENDS+=	:p5-XML-Parser-*:textproc/p5-XML-Parser
+RUN_DEPENDS+=	:dbus-python-*:x11/dbus-python \
 		:py-gtk2-*:x11/py-gtk2
 LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		startup-notification-1::devel/startup-notification \
@@ -63,7 +59,7 @@ CONFIGURE_ARGS+= --disable-gevolution \
 		 --disable-schemas-install \
 		 --enable-openssl \
 		 --enable-consoleui \
-		 --with-python=${LOCALBASE}/bin/python${PYTHON_VER}
+		 --with-python=${MODPY_BIN}
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -93,15 +89,15 @@ WANTLIB+=	aspell
 CONFIGURE_ARGS+=--disable-gtkspell
 .endif
 
-PYTHON_SCRIPTS=	gaim-notifications-example gaim-remote gaim-url-handler
+PYTHON_SCRIPTS=	gaim-remote gaim-url-handler
 
 post-extract:
 	@cp -f ${FILESDIR}/ssl-openssl.c ${WRKSRC}/libgaim/plugins/ssl
 
 post-install:
+	perl -pi -e 's,/bin/bash,/bin/sh,g' ${PREFIX}/bin/gaim-send*
 .for f in ${PYTHON_SCRIPTS}
-	@perl -pi -e 's#%python%#${LOCALBASE}/bin/python${PYTHON_VER}#g' \
-	    ${PREFIX}/bin/${f}
+	perl -pi -e 's#%python%#${MODPY_BIN}#g' ${PREFIX}/bin/${f}
 .endfor
 
 .include <bsd.port.mk>
