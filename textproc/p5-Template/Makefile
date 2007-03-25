@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.4 2007/02/13 23:47:26 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2007/03/25 10:56:53 djm Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		'template processing system'
 
 MODULES=		cpan
-VERSION=		2.14
+VERSION=		2.15
 DISTNAME=		Template-Toolkit-${VERSION}
-PKGNAME=		p5-Template-${VERSION}p1
+PKGNAME=		p5-Template-${VERSION}
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://www.template-toolkit.org/
-
-MAINTAINER=		Damien Miller <djm@openbsd.org>
 
 # Same as PERL: Artistic/GPL
 PERMIT_PACKAGE_CDROM=	Yes

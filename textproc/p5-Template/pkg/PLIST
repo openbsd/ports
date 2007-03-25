@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:44:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/03/25 10:56:53 djm Exp $
 bin/tpage
 bin/ttree
 ${P5ARCH}/
@@ -41,7 +41,6 @@ ${P5ARCH}/Template/Plugin/
 ${P5ARCH}/Template/Plugin.pm
 ${P5ARCH}/Template/Plugin/Autoformat.pm
 ${P5ARCH}/Template/Plugin/CGI.pm
-${P5ARCH}/Template/Plugin/DBI.pm
 ${P5ARCH}/Template/Plugin/Datafile.pm
 ${P5ARCH}/Template/Plugin/Date.pm
 ${P5ARCH}/Template/Plugin/Directory.pm
@@ -49,28 +48,10 @@ ${P5ARCH}/Template/Plugin/Dumper.pm
 ${P5ARCH}/Template/Plugin/File.pm
 ${P5ARCH}/Template/Plugin/Filter.pm
 ${P5ARCH}/Template/Plugin/Format.pm
-${P5ARCH}/Template/Plugin/GD/
-${P5ARCH}/Template/Plugin/GD/Constants.pm
-${P5ARCH}/Template/Plugin/GD/Graph/
-${P5ARCH}/Template/Plugin/GD/Graph/area.pm
-${P5ARCH}/Template/Plugin/GD/Graph/bars.pm
-${P5ARCH}/Template/Plugin/GD/Graph/bars3d.pm
-${P5ARCH}/Template/Plugin/GD/Graph/lines.pm
-${P5ARCH}/Template/Plugin/GD/Graph/lines3d.pm
-${P5ARCH}/Template/Plugin/GD/Graph/linespoints.pm
-${P5ARCH}/Template/Plugin/GD/Graph/mixed.pm
-${P5ARCH}/Template/Plugin/GD/Graph/pie.pm
-${P5ARCH}/Template/Plugin/GD/Graph/pie3d.pm
-${P5ARCH}/Template/Plugin/GD/Graph/points.pm
-${P5ARCH}/Template/Plugin/GD/Image.pm
-${P5ARCH}/Template/Plugin/GD/Polygon.pm
-${P5ARCH}/Template/Plugin/GD/Text/
-${P5ARCH}/Template/Plugin/GD/Text.pm
-${P5ARCH}/Template/Plugin/GD/Text/Align.pm
-${P5ARCH}/Template/Plugin/GD/Text/Wrap.pm
 ${P5ARCH}/Template/Plugin/HTML.pm
 ${P5ARCH}/Template/Plugin/Image.pm
 ${P5ARCH}/Template/Plugin/Iterator.pm
+${P5ARCH}/Template/Plugin/Math.pm
 ${P5ARCH}/Template/Plugin/Pod.pm
 ${P5ARCH}/Template/Plugin/Procedural.pm
 ${P5ARCH}/Template/Plugin/String.pm
@@ -78,12 +59,6 @@ ${P5ARCH}/Template/Plugin/Table.pm
 ${P5ARCH}/Template/Plugin/URL.pm
 ${P5ARCH}/Template/Plugin/View.pm
 ${P5ARCH}/Template/Plugin/Wrap.pm
-${P5ARCH}/Template/Plugin/XML/
-${P5ARCH}/Template/Plugin/XML/DOM.pm
-${P5ARCH}/Template/Plugin/XML/RSS.pm
-${P5ARCH}/Template/Plugin/XML/Simple.pm
-${P5ARCH}/Template/Plugin/XML/Style.pm
-${P5ARCH}/Template/Plugin/XML/XPath.pm
 ${P5ARCH}/Template/Plugins.pm
 ${P5ARCH}/Template/Provider.pm
 ${P5ARCH}/Template/Service.pm
@@ -92,6 +67,7 @@ ${P5ARCH}/Template/Stash.pm
 ${P5ARCH}/Template/Stash/Context.pm
 ${P5ARCH}/Template/Stash/XS.pm
 ${P5ARCH}/Template/Test.pm
+${P5ARCH}/Template/Toolkit.pod
 ${P5ARCH}/Template/Tools/
 ${P5ARCH}/Template/Tools/tpage.pod
 ${P5ARCH}/Template/Tools/ttree.pod
@@ -140,7 +116,6 @@ ${P5ARCH}/auto/Template/Stash/XS/XS.so
 @man man/man3p/Template::Plugin.3p
 @man man/man3p/Template::Plugin::Autoformat.3p
 @man man/man3p/Template::Plugin::CGI.3p
-@man man/man3p/Template::Plugin::DBI.3p
 @man man/man3p/Template::Plugin::Datafile.3p
 @man man/man3p/Template::Plugin::Date.3p
 @man man/man3p/Template::Plugin::Directory.3p
@@ -148,25 +123,10 @@ ${P5ARCH}/auto/Template/Stash/XS/XS.so
 @man man/man3p/Template::Plugin::File.3p
 @man man/man3p/Template::Plugin::Filter.3p
 @man man/man3p/Template::Plugin::Format.3p
-@man man/man3p/Template::Plugin::GD::Constants.3p
-@man man/man3p/Template::Plugin::GD::Graph::area.3p
-@man man/man3p/Template::Plugin::GD::Graph::bars.3p
-@man man/man3p/Template::Plugin::GD::Graph::bars3d.3p
-@man man/man3p/Template::Plugin::GD::Graph::lines.3p
-@man man/man3p/Template::Plugin::GD::Graph::lines3d.3p
-@man man/man3p/Template::Plugin::GD::Graph::linespoints.3p
-@man man/man3p/Template::Plugin::GD::Graph::mixed.3p
-@man man/man3p/Template::Plugin::GD::Graph::pie.3p
-@man man/man3p/Template::Plugin::GD::Graph::pie3d.3p
-@man man/man3p/Template::Plugin::GD::Graph::points.3p
-@man man/man3p/Template::Plugin::GD::Image.3p
-@man man/man3p/Template::Plugin::GD::Polygon.3p
-@man man/man3p/Template::Plugin::GD::Text.3p
-@man man/man3p/Template::Plugin::GD::Text::Align.3p
-@man man/man3p/Template::Plugin::GD::Text::Wrap.3p
 @man man/man3p/Template::Plugin::HTML.3p
 @man man/man3p/Template::Plugin::Image.3p
 @man man/man3p/Template::Plugin::Iterator.3p
+@man man/man3p/Template::Plugin::Math.3p
 @man man/man3p/Template::Plugin::Pod.3p
 @man man/man3p/Template::Plugin::Procedural.3p
 @man man/man3p/Template::Plugin::String.3p
@@ -174,11 +134,6 @@ ${P5ARCH}/auto/Template/Stash/XS/XS.so
 @man man/man3p/Template::Plugin::URL.3p
 @man man/man3p/Template::Plugin::View.3p
 @man man/man3p/Template::Plugin::Wrap.3p
-@man man/man3p/Template::Plugin::XML::DOM.3p
-@man man/man3p/Template::Plugin::XML::RSS.3p
-@man man/man3p/Template::Plugin::XML::Simple.3p
-@man man/man3p/Template::Plugin::XML::Style.3p
-@man man/man3p/Template::Plugin::XML::XPath.3p
 @man man/man3p/Template::Plugins.3p
 @man man/man3p/Template::Provider.3p
 @man man/man3p/Template::Service.3p
@@ -186,6 +141,7 @@ ${P5ARCH}/auto/Template/Stash/XS/XS.so
 @man man/man3p/Template::Stash::Context.3p
 @man man/man3p/Template::Stash::XS.3p
 @man man/man3p/Template::Test.3p
+@man man/man3p/Template::Toolkit.3p
 @man man/man3p/Template::Tools::tpage.3p
 @man man/man3p/Template::Tools::ttree.3p
 @man man/man3p/Template::Tutorial.3p
