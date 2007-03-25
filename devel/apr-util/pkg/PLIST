@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/03/24 13:45:13 todd Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/03/25 09:59:35 steven Exp $
 %%SHARED%%
-bin/apu${MT}
+bin/apu-1${MT}-config
 include/apr-1${MT}/
 include/apr-1${MT}/apr_anylock.h
 include/apr-1${MT}/apr_base64.h
