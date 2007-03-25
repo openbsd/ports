@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2006/05/05 11:30:46 aanriot Exp $
+# $OpenBSD: Makefile,v 1.22 2007/03/25 13:01:35 steven Exp $
 
 COMMENT=	"simple log monitoring program"
 
-DISTNAME=	swatch-3.1.1
+DISTNAME=	swatch-3.2.1
 CATEGORIES=	security sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=swatch/} \
 		ftp://ftp.cert.dfn.de/pub/tools/audit/swatch/

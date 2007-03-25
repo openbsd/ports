@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2006/05/05 11:30:46 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/03/25 13:01:35 steven Exp $
 bin/swatch
 ${P5SITE}/Swatch/
 ${P5SITE}/Swatch/Actions.pm
+${P5SITE}/Swatch/Threshold.pm
 ${P5SITE}/Swatch/Throttle.pm
 ${P5SITE}/auto/
 ${P5SITE}/auto/Swatch/
@@ -9,4 +10,5 @@ ${P5SITE}/auto/Swatch/Actions/
 ${P5SITE}/auto/Swatch/Actions/autosplit.ix
 @man man/man1/swatch.1
 @man man/man3p/Swatch::Actions.3p
+@man man/man3p/Swatch::Threshold.3p
 @man man/man3p/Swatch::Throttle.3p
