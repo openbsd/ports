@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/03/22 17:19:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2007/03/25 21:50:20 naddy Exp $
 
 COMMENT-main=	"eXtensible Open Router Platform"
 
@@ -29,6 +29,7 @@ WANTLIB=	c crypto curses m stdc++
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+LIBTOOL_FLAGS=	--tag=disable-shared
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-optimize --disable-debug

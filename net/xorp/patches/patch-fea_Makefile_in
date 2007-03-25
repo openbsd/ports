@@ -1,0 +1,12 @@
+$OpenBSD: patch-fea_Makefile_in,v 1.1 2007/03/25 21:50:20 naddy Exp $
+--- fea/Makefile.in.orig	Sun Mar 25 17:13:54 2007
++++ fea/Makefile.in	Sun Mar 25 17:14:58 2007
+@@ -760,6 +760,8 @@ distclean-depend:
+ @AMDEP_TRUE@	$(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ 	$(LTCXXCOMPILE) -c -o $@ `test -f $< || echo '$(srcdir)/'`$<
+ 
++mfea_proto_comm.lo rawsock.lo: CXXFLAGS := $(filter-out -Wcast-align,$(CXXFLAGS))
++
+ xorp_fea_dummy-fea.o: fea.cc
+ @AMDEP_TRUE@	source='fea.cc' object='xorp_fea_dummy-fea.o' libtool=no @AMDEPBACKSLASH@
+ @AMDEP_TRUE@	depfile='$(DEPDIR)/xorp_fea_dummy-fea.Po' tmpdepfile='$(DEPDIR)/xorp_fea_dummy-fea.TPo' @AMDEPBACKSLASH@
