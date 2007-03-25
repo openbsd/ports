@@ -1,7 +1,7 @@
-$OpenBSD: patch-clamd_session_c,v 1.2 2007/02/28 20:31:08 mbalmer Exp $
---- clamd/session.c.orig	Sun Feb 11 01:19:59 2007
-+++ clamd/session.c	Wed Feb 14 08:53:39 2007
-@@ -232,8 +232,10 @@ int command(int desc, const struct cl_en
+$OpenBSD: patch-clamd_session_c,v 1.3 2007/03/25 11:24:02 mbalmer Exp $
+--- clamd/session.c.orig	Wed Feb 28 00:37:13 2007
++++ clamd/session.c	Tue Mar 13 09:37:42 2007
+@@ -60,8 +60,10 @@ int command(int desc, const struct cl_en
  {
  	char buff[1025];
  	int bread, opt;
@@ -13,11 +13,10 @@ $OpenBSD: patch-clamd_session_c,v 1.2 2007/02/28 20:31:08 mbalmer Exp $
      bread = readsock(desc, buff, sizeof(buff)-1, '\n', timeout, 0, 1);
      if(bread == -2) /* timeout */
  	return -2;
-@@ -367,7 +369,29 @@ int command(int desc, const struct cl_en
- 		    logg("%s: OK\n", path);
- 	    }
- 	}
--
+@@ -156,6 +158,29 @@ int command(int desc, const struct cl_en
+ 	    if(cfgopt(copt, "ExitOnOOM")->enabled)
+ 		return COMMAND_SHUTDOWN;
+ 
 +    } else if(!strncmp(buff, CMD14, strlen(CMD14))) { /* FILDES */
 +	memset(&msg, 0, sizeof(msg));
 +	msg.msg_control = buf;

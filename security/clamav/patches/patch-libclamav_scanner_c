@@ -1,6 +1,6 @@
---- libclamav/scanners.c.orig	Tue Feb 13 02:06:28 2007
-+++ libclamav/scanners.c	Wed Feb 14 08:26:32 2007
-@@ -699,11 +699,6 @@ static int cli_scangzip(int desc, cli_ct
+--- libclamav/scanners.c.orig	Thu Mar  1 23:44:49 2007
++++ libclamav/scanners.c	Tue Mar 13 09:27:55 2007
+@@ -686,11 +686,6 @@ static int cli_scangzip(int desc, cli_ct
  
  #ifdef HAVE_BZLIB_H
  
@@ -12,7 +12,7 @@
  
  static int cli_scanbzip(int desc, cli_ctx *ctx)
  {
-@@ -725,7 +720,7 @@ static int cli_scanbzip(int desc, cli_ct
+@@ -712,7 +707,7 @@ static int cli_scanbzip(int desc, cli_ct
  	if(ctx->limits->archivememlim)
  	    memlim = 1;
  
