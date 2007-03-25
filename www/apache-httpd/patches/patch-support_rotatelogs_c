@@ -1,7 +1,7 @@
-$OpenBSD: patch-support_rotatelogs_c,v 1.1 2006/12/25 20:40:02 deanna Exp $
---- support/rotatelogs.c.orig	Sun Dec 17 11:13:52 2006
-+++ support/rotatelogs.c	Sun Dec 17 11:14:36 2006
-@@ -107,7 +107,7 @@ int main (int argc, const char * const a
+$OpenBSD: patch-support_rotatelogs_c,v 1.2 2007/03/25 17:40:55 deanna Exp $
+--- support/rotatelogs.c.orig	Wed Dec 13 07:11:56 2006
++++ support/rotatelogs.c	Sun Mar 25 13:21:04 2007
+@@ -107,7 +107,7 @@ int main (int argc, const char * const argv[])
                  "or \n\nTransferLog \"|%s /some/where 5M\"\n\n", argv[0]);
  #endif
          fprintf(stderr,

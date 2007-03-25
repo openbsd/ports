@@ -1,6 +1,6 @@
-$OpenBSD: patch-docs_man_suexec_8,v 1.1 2007/01/16 01:12:26 deanna Exp $
---- docs/man/suexec.8.orig	Sun Jan 14 19:01:44 2007
-+++ docs/man/suexec.8	Sun Jan 14 19:14:21 2007
+$OpenBSD: patch-docs_man_suexec_8,v 1.2 2007/03/25 17:40:55 deanna Exp $
+--- docs/man/suexec.8.orig	Sun Nov 13 11:04:55 2005
++++ docs/man/suexec.8	Sun Mar 25 13:21:04 2007
 @@ -19,24 +19,24 @@
  .el .ne 3
  .IP "\\$1" \\$2
@@ -31,7 +31,7 @@ $OpenBSD: patch-docs_man_suexec_8,v 1.1 2007/01/16 01:12:26 deanna Exp $
   
  
  .SH "OPTIONS"
-@@ -44,5 +44,5 @@ For further information about the concep
+@@ -44,5 +44,5 @@ For further information about the concepts and and the
   
  .TP
  -V

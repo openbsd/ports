@@ -1,6 +1,6 @@
-$OpenBSD: patch-docs_man_httpd_8,v 1.1 2007/01/16 01:12:26 deanna Exp $
---- docs/man/httpd.8.orig	Sun Jan 14 19:01:44 2007
-+++ docs/man/httpd.8	Sun Jan 14 19:08:27 2007
+$OpenBSD: patch-docs_man_httpd_8,v 1.2 2007/03/25 17:40:55 deanna Exp $
+--- docs/man/httpd.8.orig	Tue Sep 20 10:54:17 2005
++++ docs/man/httpd.8	Sun Mar 25 13:21:04 2007
 @@ -19,30 +19,30 @@
  .el .ne 3
  .IP "\\$1" \\$2
@@ -38,7 +38,7 @@ $OpenBSD: patch-docs_man_httpd_8,v 1.1 2007/01/16 01:12:26 deanna Exp $
   
  
  .SH "OPTIONS"
-@@ -53,10 +53,10 @@ In general, httpd should not be invoked 
+@@ -53,10 +53,10 @@ In general, httpd should not be invoked directly, but 
  Set the initial value for the ServerRoot directive to \fIserverroot\fR\&. This can be overridden by the ServerRoot directive in the configuration file\&. The default is /usr/local/apache2\&.  
  .TP
  -f \fIconfig\fR
@@ -51,7 +51,7 @@ $OpenBSD: patch-docs_man_httpd_8,v 1.1 2007/01/16 01:12:26 deanna Exp $
  .TP
  -C \fIdirective\fR
  Process the configuration \fIdirective\fR before reading config files\&.  
-@@ -95,13 +95,13 @@ Show the settings as parsed from the con
+@@ -95,13 +95,13 @@ Show the settings as parsed from the config file (curr
  Run syntax tests for configuration files only\&. The program immediately exits after these syntax parsing tests with either a return code of 0 (Syntax OK) or return code not equal to 0 (Syntax Error)\&. If -D \fIDUMP\fR_\fIVHOSTS \fRis also set, details of the virtual host configuration will be printed\&. If -D \fIDUMP\fR_\fIMODULES \fR is set, all loaded modules will be printed\&.  
  .TP
  -v

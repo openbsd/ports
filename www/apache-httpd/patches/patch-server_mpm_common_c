@@ -1,7 +1,7 @@
-$OpenBSD: patch-server_mpm_common_c,v 1.1 2007/01/16 01:12:26 deanna Exp $
---- server/mpm_common.c.orig	Sun Jan 14 17:15:18 2007
-+++ server/mpm_common.c	Sun Jan 14 17:16:25 2007
-@@ -915,19 +915,19 @@ int ap_signal_server(int *exit_status, a
+$OpenBSD: patch-server_mpm_common_c,v 1.2 2007/03/25 17:40:55 deanna Exp $
+--- server/mpm_common.c.orig	Fri Sep 15 09:19:25 2006
++++ server/mpm_common.c	Sun Mar 25 13:21:04 2007
+@@ -915,19 +915,19 @@ int ap_signal_server(int *exit_status, apr_pool_t *pco
              *exit_status = 1;
              return 1;
          }
@@ -24,7 +24,7 @@ $OpenBSD: patch-server_mpm_common_c,v 1.1 2007/01/16 01:12:26 deanna Exp $
                                    otherpid);
          }
      }
-@@ -951,7 +951,7 @@ int ap_signal_server(int *exit_status, a
+@@ -951,7 +951,7 @@ int ap_signal_server(int *exit_status, apr_pool_t *pco
  
      if (!strcmp(dash_k_arg, "restart")) {
          if (!running) {
@@ -33,7 +33,7 @@ $OpenBSD: patch-server_mpm_common_c,v 1.1 2007/01/16 01:12:26 deanna Exp $
          }
          else {
              *exit_status = send_signal(otherpid, SIGHUP);
-@@ -961,7 +961,7 @@ int ap_signal_server(int *exit_status, a
+@@ -961,7 +961,7 @@ int ap_signal_server(int *exit_status, apr_pool_t *pco
  
      if (!strcmp(dash_k_arg, "graceful")) {
          if (!running) {
@@ -42,7 +42,7 @@ $OpenBSD: patch-server_mpm_common_c,v 1.1 2007/01/16 01:12:26 deanna Exp $
          }
          else {
              *exit_status = send_signal(otherpid, AP_SIG_GRACEFUL);
-@@ -978,7 +978,7 @@ int ap_signal_server(int *exit_status, a
+@@ -978,7 +978,7 @@ int ap_signal_server(int *exit_status, apr_pool_t *pco
              *exit_status = send_signal(otherpid, AP_SIG_GRACEFUL_STOP);
          }
  #else

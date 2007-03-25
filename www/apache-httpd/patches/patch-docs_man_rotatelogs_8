@@ -1,6 +1,6 @@
-$OpenBSD: patch-docs_man_rotatelogs_8,v 1.1 2007/01/16 01:12:26 deanna Exp $
---- docs/man/rotatelogs.8.orig	Sun Jan 14 19:01:44 2007
-+++ docs/man/rotatelogs.8	Sun Jan 14 19:07:06 2007
+$OpenBSD: patch-docs_man_rotatelogs_8,v 1.2 2007/03/25 17:40:55 deanna Exp $
+--- docs/man/rotatelogs.8.orig	Sat Nov 20 15:16:24 2004
++++ docs/man/rotatelogs.8	Sun Mar 25 13:21:04 2007
 @@ -19,25 +19,25 @@
  .el .ne 3
  .IP "\\$1" \\$2
@@ -32,7 +32,7 @@ $OpenBSD: patch-docs_man_rotatelogs_8,v 1.1 2007/01/16 01:12:26 deanna Exp $
  
  .fi
   
-@@ -46,7 +46,7 @@ This creates the files /var/logs/logfile
+@@ -46,7 +46,7 @@ This creates the files /var/logs/logfile\&.nnnn where 
   
  .nf
  
@@ -41,7 +41,7 @@ $OpenBSD: patch-docs_man_rotatelogs_8,v 1.1 2007/01/16 01:12:26 deanna Exp $
  
  .fi
   
-@@ -55,7 +55,7 @@ This configuration will rotate the logfi
+@@ -55,7 +55,7 @@ This configuration will rotate the logfile whenever it
   
  .nf
  
