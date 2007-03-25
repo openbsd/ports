@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.487 2007/03/24 14:09:26 todd Exp $
+# $OpenBSD: Makefile,v 1.488 2007/03/25 13:07:14 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -486,6 +486,7 @@
      SUBDIR += physfs
      SUBDIR += pkgconfig
      SUBDIR += pmk
+     SUBDIR += poedit
      SUBDIR += popt
      SUBDIR += prc-tools
      SUBDIR += pscan
