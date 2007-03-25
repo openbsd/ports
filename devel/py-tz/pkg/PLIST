@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/03/25 10:21:40 djm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/03/25 21:50:31 djm Exp $
 lib/python${MODPY_VERSION}/site-packages/pytz/
-lib/python${MODPY_VERSION}/site-packages/pytz-2006p-py${MODPY_VERSION}.egg-info
+@comment lib/python${MODPY_VERSION}/site-packages/pytz-2006p-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pytz/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pytz/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/pytz/locales/
