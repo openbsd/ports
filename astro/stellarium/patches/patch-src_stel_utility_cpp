@@ -1,0 +1,99 @@
+$OpenBSD: patch-src_stel_utility_cpp,v 1.1.1.1 2007/03/25 12:29:22 ajacoutot Exp $
+--- src/stel_utility.cpp.orig	Thu Jun 15 22:27:10 2006
++++ src/stel_utility.cpp	Sun Mar 25 13:37:26 2007
+@@ -275,12 +275,12 @@ double get_dec_angle(const string& str)
+ //! @return The corresponding string
+ wstring StelUtility::printAngleDMS(double angle, bool decimals, bool useD)
+ {
+-    wchar_t buf[32];
+-    buf[31]=L'\0';
+-    wchar_t sign = L'+';
++    char buf[32];
++    buf[31]='\0';
++    char sign = '+';
+     // wchar_t degsign = L'Â°'; ???
+-    wchar_t degsign = L'\u00B0';
+-    if (useD) degsign = L'd';
++    char degsign = '\u00B0';
++    if (useD) degsign = 'd';
+ 
+     angle *= 180./M_PI;
+ 
+@@ -297,11 +297,11 @@ wstring StelUtility::printAngleDMS(double angle, bool 
+         d /= 60;
+         const int m = d % 60;
+         d /= 60;
+-        swprintf(buf,
++        snprintf(buf,
+ #ifndef MINGW32
+                  sizeof(buf),
+ #endif
+-                 L"%lc%.2d%lc%.2d'%.2d.%02d\"",
++                 "%c%.2d%c%.2d'%.2d.%02d\"",
+                  sign, d, degsign, m, s, centi);
+     } else {
+         int d = (int)(0.5+angle*(60*60));
+@@ -309,14 +309,16 @@ wstring StelUtility::printAngleDMS(double angle, bool 
+         d /= 60;
+         const int m = d % 60;
+         d /= 60;
+-        swprintf(buf,
++        snprintf(buf,
+ #ifndef MINGW32
+                  sizeof(buf),
+ #endif
+-                 L"%lc%.2d%lc%.2d'%.2d\"",
++                 "%c%.2d%c%.2d'%.2d\"",
+                  sign, d, degsign, m, s);
+     }
+-    return buf;
++    std::string s(buf);
++    std::wstring ws(s.begin(), s.end());
++    return ws;
+ }
+ 
+ //! @brief Print the passed angle with the format +hhhmmmss(.ss)"
+@@ -325,8 +327,8 @@ wstring StelUtility::printAngleDMS(double angle, bool 
+ //! @return The corresponding string
+ wstring StelUtility::printAngleHMS(double angle, bool decimals)
+ {
+-    wchar_t buf[16];
+-    buf[15] = L'\0';
++    char buf[16];
++    buf[15] = '\0';
+     angle = fmod(angle,2.0*M_PI);
+     if (angle < 0.0) angle += 2.0*M_PI; // range: [0..2.0*M_PI)
+     angle *= 12./M_PI; // range: [0..24)
+@@ -340,11 +342,11 @@ wstring StelUtility::printAngleHMS(double angle, bool 
+         h /= 60;
+         const int m = h % 60;
+         h /= 60;
+-        swprintf(buf,
++        snprintf(buf,
+ #ifndef MINGW32
+                  sizeof(buf),
+ #endif
+-                 L"%.2dh%.2dm%.2d.%02ds",h,m,s,centi);
++                 "%.2dh%.2dm%.2d.%02ds",h,m,s,centi);
+     } else {
+         angle = 0.5+angle*(60*60); // range:[0.5,24*60*60+0.5)
+         if (angle >= (24*60*60)) angle -= (24*60*60);
+@@ -353,13 +355,15 @@ wstring StelUtility::printAngleHMS(double angle, bool 
+         h /= 60;
+         const int m = h % 60;
+         h /= 60;
+-        swprintf(buf,
++        snprintf(buf,
+ #ifndef MINGW32
+                  sizeof(buf),
+ #endif
+-                 L"%.2dh%.2dm%.2ds",h,m,s);
++                 "%.2dh%.2dm%.2ds",h,m,s);
+     }
+-    return buf;
++    std::string s(buf);
++    std::wstring ws(s.begin(), s.end());
++    return ws;
+ }
+ 
+ 
