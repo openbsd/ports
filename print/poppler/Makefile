@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/03/24 13:21:26 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/03/26 07:36:46 kili Exp $
 
 COMMENT-main=	"PDF rendering library"
 COMMENT-qt=	"qt interface to PDF rendering library"
@@ -84,5 +84,13 @@ FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
 USE_LIBTOOL=	Yes
 USE_X11=	Yes
 USE_GMAKE=	Yes
+
+# Force installation to avoid PLIST headaches.
+.if ${FLAVOR:L:Mno_qt} && ${FLAVOR:L:Mno_qt4}
+post-install:
+	echo ${PREFIX}
+	${INSTALL_DATA} ${WRKSRC}/qt/poppler-page-transition.h \
+			${PREFIX}/include/poppler
+.endif
 
 .include <bsd.port.mk>
