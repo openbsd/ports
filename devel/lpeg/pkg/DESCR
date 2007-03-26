@@ -1,0 +1,2 @@
+LPeg is a new pattern-matching library for Lua, based on Parsing
+Expression Grammars (PEGs).

@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/03/26 13:03:57 jolan Exp $
+lib/lua/5.1/lpeg.so
+share/doc/lpeg/
+share/doc/lpeg/doc.html

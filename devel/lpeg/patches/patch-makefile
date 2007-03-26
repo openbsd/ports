@@ -1,0 +1,18 @@
+$OpenBSD: patch-makefile,v 1.1.1.1 2007/03/26 13:03:57 jolan Exp $
+--- makefile.orig	Wed Mar 21 16:48:17 2007
++++ makefile	Mon Mar 26 03:45:58 2007
+@@ -10,11 +10,11 @@ CWARNS = -Wall -Wextra -pedantic \
+ 
+ LUADIR = ..
+ COPT = -O2 -DNDEBUG
+-CFLAGS = $(CWARNS) -ansi -I$(LUADIR)/lua -shared -o lpeg.so
+-CC = gcc
++#CFLAGS = $(CWARNS) -ansi -I$(LUADIR)/lua -shared -o lpeg.so
++#CC = gcc
+ 
+ lpeg.so: lpeg.c
+-	$(CC) $(COPT) $(CFLAGS) lpeg.c
++	$(CC) $(CFLAGS) -DNDEBUG -I${LOCALBASE}/include -fPIC -shared -o lpeg.so lpeg.c
+ 
+ deb:	lpeg.c	
+ 	$(CC) -g $(CFLAGS) lpeg.c; touch deb; rm -f opt
