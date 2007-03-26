@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2006/10/03 09:16:16 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.20 2007/03/26 06:10:30 mbalmer Exp $
 @pkgpath www/zope-btreefolder2
 @newgroup _zope:534
 @newuser _zope:534:_zope:daemon:Zope Account:/nonexistent:/sbin/nologin
@@ -114,6 +114,9 @@ lib/zope/lib/python/AccessControl/interfaces.py
 lib/zope/lib/python/AccessControl/interfaces.pyc
 lib/zope/lib/python/AccessControl/logger_wrapper.py
 lib/zope/lib/python/AccessControl/logger_wrapper.pyc
+lib/zope/lib/python/AccessControl/requestmethod.py
+lib/zope/lib/python/AccessControl/requestmethod.pyc
+lib/zope/lib/python/AccessControl/requestmethod.txt
 lib/zope/lib/python/AccessControl/securitySuite/
 lib/zope/lib/python/AccessControl/securitySuite/README
 lib/zope/lib/python/AccessControl/securitySuite/ResultObject.py
@@ -181,6 +184,8 @@ lib/zope/lib/python/AccessControl/tests/testZopeGuards.py
 lib/zope/lib/python/AccessControl/tests/testZopeGuards.pyc
 lib/zope/lib/python/AccessControl/tests/testZopeSecurityPolicy.py
 lib/zope/lib/python/AccessControl/tests/testZopeSecurityPolicy.pyc
+lib/zope/lib/python/AccessControl/tests/test_requestmethod.py
+lib/zope/lib/python/AccessControl/tests/test_requestmethod.pyc
 lib/zope/lib/python/AccessControl/tests/test_safeiter.py
 lib/zope/lib/python/AccessControl/tests/test_safeiter.pyc
 lib/zope/lib/python/AccessControl/unauthorized.py
@@ -330,8 +335,8 @@ lib/zope/lib/python/App/www/transparent_bar.gif
 lib/zope/lib/python/App/www/undo_icon.gif
 lib/zope/lib/python/App/www/vManage.gif
 lib/zope/lib/python/App/www/z_button.jpg
-lib/zope/lib/python/App/www/zope_button.jpg
-lib/zope/lib/python/App/www/zopelogo.jpg
+lib/zope/lib/python/App/${BASE_PKGPATH}_button.jpg
+lib/zope/lib/python/App/${BASE_PKGPATH}logo.jpg
 lib/zope/lib/python/BTrees/
 lib/zope/lib/python/BTrees/Development.txt
 lib/zope/lib/python/BTrees/IFBTree.py
@@ -731,6 +736,7 @@ lib/zope/lib/python/OFS/subscribers.pyc
 lib/zope/lib/python/OFS/tests/
 lib/zope/lib/python/OFS/tests/__init__.py
 lib/zope/lib/python/OFS/tests/__init__.pyc
+lib/zope/lib/python/OFS/tests/events.zcml
 lib/zope/lib/python/OFS/tests/mime.types-1
 lib/zope/lib/python/OFS/tests/mime.types-2
 lib/zope/lib/python/OFS/tests/test.gif
@@ -740,6 +746,8 @@ lib/zope/lib/python/OFS/tests/testApplication.py
 lib/zope/lib/python/OFS/tests/testApplication.pyc
 lib/zope/lib/python/OFS/tests/testCopySupport.py
 lib/zope/lib/python/OFS/tests/testCopySupport.pyc
+lib/zope/lib/python/OFS/tests/testCopySupportEvents.py
+lib/zope/lib/python/OFS/tests/testCopySupportEvents.pyc
 lib/zope/lib/python/OFS/tests/testCopySupportHooks.py
 lib/zope/lib/python/OFS/tests/testCopySupportHooks.pyc
 lib/zope/lib/python/OFS/tests/testFTPInterface.py
@@ -886,6 +894,8 @@ lib/zope/lib/python/Products/Five/browser/tests/__init__.py
 lib/zope/lib/python/Products/Five/browser/tests/__init__.pyc
 lib/zope/lib/python/Products/Five/browser/tests/adding.txt
 lib/zope/lib/python/Products/Five/browser/tests/birdmacro.pt
+lib/zope/lib/python/Products/Five/browser/tests/classes.py
+lib/zope/lib/python/Products/Five/browser/tests/classes.pyc
 lib/zope/lib/python/Products/Five/browser/tests/cockatiel.pt
 lib/zope/lib/python/Products/Five/browser/tests/condor.pt
 lib/zope/lib/python/Products/Five/browser/tests/cps_test_localizer.pt
@@ -928,6 +938,8 @@ lib/zope/lib/python/Products/Five/browser/tests/pts_test_languages.txt
 lib/zope/lib/python/Products/Five/browser/tests/resource.txt
 lib/zope/lib/python/Products/Five/browser/tests/resource.zcml
 lib/zope/lib/python/Products/Five/browser/tests/resource_ftest.txt
+lib/zope/lib/python/Products/Five/browser/tests/resource_subdir/
+lib/zope/lib/python/Products/Five/browser/tests/resource_subdir/resource.txt
 lib/zope/lib/python/Products/Five/browser/tests/seagull.pt
 lib/zope/lib/python/Products/Five/browser/tests/security.pt
 lib/zope/lib/python/Products/Five/browser/tests/skin.py
@@ -941,6 +953,8 @@ lib/zope/lib/python/Products/Five/browser/tests/test_absoluteurl.py
 lib/zope/lib/python/Products/Five/browser/tests/test_absoluteurl.pyc
 lib/zope/lib/python/Products/Five/browser/tests/test_adding.py
 lib/zope/lib/python/Products/Five/browser/tests/test_adding.pyc
+lib/zope/lib/python/Products/Five/browser/tests/test_decode.py
+lib/zope/lib/python/Products/Five/browser/tests/test_decode.pyc
 lib/zope/lib/python/Products/Five/browser/tests/test_defaultview.py
 lib/zope/lib/python/Products/Five/browser/tests/test_defaultview.pyc
 lib/zope/lib/python/Products/Five/browser/tests/test_i18n.py
@@ -959,6 +973,10 @@ lib/zope/lib/python/Products/Five/browser/tests/test_skin.py
 lib/zope/lib/python/Products/Five/browser/tests/test_skin.pyc
 lib/zope/lib/python/Products/Five/browser/tests/test_traversable.py
 lib/zope/lib/python/Products/Five/browser/tests/test_traversable.pyc
+lib/zope/lib/python/Products/Five/browser/tests/test${ZOPEUSER}3security.py
+lib/zope/lib/python/Products/Five/browser/tests/test${ZOPEUSER}3security.pyc
+lib/zope/lib/python/Products/Five/browser/tests/zope3security.py
+lib/zope/lib/python/Products/Five/browser/tests/zope3security.pyc
 lib/zope/lib/python/Products/Five/component/
 lib/zope/lib/python/Products/Five/component/__init__.py
 lib/zope/lib/python/Products/Five/component/__init__.pyc
@@ -969,6 +987,7 @@ lib/zope/lib/python/Products/Five/component/components.pt
 lib/zope/lib/python/Products/Five/component/configure.zcml
 lib/zope/lib/python/Products/Five/component/interfaces.py
 lib/zope/lib/python/Products/Five/component/interfaces.pyc
+lib/zope/lib/python/Products/Five/component/makesite.txt
 lib/zope/lib/python/Products/Five/component/tests.py
 lib/zope/lib/python/Products/Five/component/tests.pyc
 lib/zope/lib/python/Products/Five/configure.zcml
@@ -1065,8 +1084,6 @@ lib/zope/lib/python/Products/Five/formlib/__init__.pyc
 lib/zope/lib/python/Products/Five/formlib/configure.zcml
 lib/zope/lib/python/Products/Five/formlib/formbase.py
 lib/zope/lib/python/Products/Five/formlib/formbase.pyc
-lib/zope/lib/python/Products/Five/formlib/pageform.pt
-lib/zope/lib/python/Products/Five/formlib/subpageform.pt
 lib/zope/lib/python/Products/Five/formlib/tests/
 lib/zope/lib/python/Products/Five/formlib/tests/__init__.py
 lib/zope/lib/python/Products/Five/formlib/tests/__init__.pyc
@@ -1502,6 +1519,7 @@ lib/zope/lib/python/Products/PageTemplates/ZopePageTemplate.py
 lib/zope/lib/python/Products/PageTemplates/ZopePageTemplate.pyc
 lib/zope/lib/python/Products/PageTemplates/__init__.py
 lib/zope/lib/python/Products/PageTemplates/__init__.pyc
+lib/zope/lib/python/Products/PageTemplates/configure.zcml
 lib/zope/lib/python/Products/PageTemplates/examples/
 lib/zope/lib/python/Products/PageTemplates/examples/index.xml
 lib/zope/lib/python/Products/PageTemplates/examples/zpt_examples.zexp
@@ -1530,12 +1548,15 @@ lib/zope/lib/python/Products/PageTemplates/help/tales-path.stx
 lib/zope/lib/python/Products/PageTemplates/help/tales-python.stx
 lib/zope/lib/python/Products/PageTemplates/help/tales-string.stx
 lib/zope/lib/python/Products/PageTemplates/help/tales.stx
+lib/zope/lib/python/Products/PageTemplates/interfaces.py
+lib/zope/lib/python/Products/PageTemplates/interfaces.pyc
 lib/zope/lib/python/Products/PageTemplates/tests/
 lib/zope/lib/python/Products/PageTemplates/tests/__init__.py
 lib/zope/lib/python/Products/PageTemplates/tests/__init__.pyc
 lib/zope/lib/python/Products/PageTemplates/tests/batch.py
 lib/zope/lib/python/Products/PageTemplates/tests/batch.pyc
 lib/zope/lib/python/Products/PageTemplates/tests/input/
+lib/zope/lib/python/Products/PageTemplates/tests/input/BooleanAttributesAndDefault.html
 lib/zope/lib/python/Products/PageTemplates/tests/input/CheckBatchIteration.html
 lib/zope/lib/python/Products/PageTemplates/tests/input/CheckI18nTranslate.html
 lib/zope/lib/python/Products/PageTemplates/tests/input/CheckI18nTranslateHooked.html
@@ -1557,6 +1578,7 @@ lib/zope/lib/python/Products/PageTemplates/tests/input/TeeShop1.html
 lib/zope/lib/python/Products/PageTemplates/tests/input/TeeShop2.html
 lib/zope/lib/python/Products/PageTemplates/tests/input/TeeShopLAF.html
 lib/zope/lib/python/Products/PageTemplates/tests/output/
+lib/zope/lib/python/Products/PageTemplates/tests/output/BooleanAttributesAndDefault.html
 lib/zope/lib/python/Products/PageTemplates/tests/output/CheckBatchIteration.html
 lib/zope/lib/python/Products/PageTemplates/tests/output/CheckI18nTranslate.html
 lib/zope/lib/python/Products/PageTemplates/tests/output/CheckI18nTranslateHooked.html
@@ -1596,6 +1618,10 @@ lib/zope/lib/python/Products/PageTemplates/tests/test_ptfile.py
 lib/zope/lib/python/Products/PageTemplates/tests/test_ptfile.pyc
 lib/zope/lib/python/Products/PageTemplates/tests/util.py
 lib/zope/lib/python/Products/PageTemplates/tests/util.pyc
+lib/zope/lib/python/Products/PageTemplates/unicodeconflictresolver.py
+lib/zope/lib/python/Products/PageTemplates/unicodeconflictresolver.pyc
+lib/zope/lib/python/Products/PageTemplates/utils.py
+lib/zope/lib/python/Products/PageTemplates/utils.pyc
 lib/zope/lib/python/Products/PageTemplates/version.txt
 lib/zope/lib/python/Products/PageTemplates/www/
 lib/zope/lib/python/Products/PageTemplates/www/default.html
@@ -1815,6 +1841,7 @@ lib/zope/lib/python/Products/PythonScripts/tests/tscripts/for_loop.ps
 lib/zope/lib/python/Products/PythonScripts/tests/tscripts/global_is_declaration.ps
 lib/zope/lib/python/Products/PythonScripts/tests/tscripts/mutate_literals.ps
 lib/zope/lib/python/Products/PythonScripts/tests/tscripts/ns_bind.ps
+lib/zope/lib/python/Products/PythonScripts/tests/tscripts/ns_bind_invalid.ps
 lib/zope/lib/python/Products/PythonScripts/tests/tscripts/simple_print.ps
 lib/zope/lib/python/Products/PythonScripts/tests/tscripts/subversive_except.ps
 lib/zope/lib/python/Products/PythonScripts/tests/tscripts/try_except.ps
@@ -2455,6 +2482,8 @@ lib/zope/lib/python/Shared/DC/ZRDB/tests/__init__.py
 lib/zope/lib/python/Shared/DC/ZRDB/tests/__init__.pyc
 lib/zope/lib/python/Shared/DC/ZRDB/tests/testResult.py
 lib/zope/lib/python/Shared/DC/ZRDB/tests/testResult.pyc
+lib/zope/lib/python/Shared/DC/ZRDB/tests/test_caching.py
+lib/zope/lib/python/Shared/DC/ZRDB/tests/test_caching.pyc
 lib/zope/lib/python/Shared/DC/ZRDB/tests/test_results.py
 lib/zope/lib/python/Shared/DC/ZRDB/tests/test_results.pyc
 lib/zope/lib/python/Shared/DC/ZRDB/tests/test_sqlgroup.py
@@ -3593,6 +3622,7 @@ lib/zope/lib/python/Zope2/Startup/zopectl.pyc
 lib/zope/lib/python/Zope2/Startup/zopeschema.xml
 lib/zope/lib/python/Zope2/__init__.py
 lib/zope/lib/python/Zope2/__init__.pyc
+lib/zope/lib/python/Zope2/version.txt
 lib/zope/lib/python/ZopeUndo/
 lib/zope/lib/python/ZopeUndo/Prefix.py
 lib/zope/lib/python/ZopeUndo/Prefix.pyc
@@ -5205,7 +5235,6 @@ lib/zope/lib/python/transaction/tests/test_savepoint.py
 lib/zope/lib/python/transaction/tests/test_savepoint.pyc
 lib/zope/lib/python/transaction/tests/test_transaction.py
 lib/zope/lib/python/transaction/tests/test_transaction.pyc
-lib/zope/lib/python/version.txt
 lib/zope/lib/python/webdav/
 lib/zope/lib/python/webdav/Collection.py
 lib/zope/lib/python/webdav/Collection.pyc
@@ -6202,6 +6231,7 @@ lib/zope/lib/python/zope/app/folder/browser/folder_icon.gif
 lib/zope/lib/python/zope/app/folder/configure.zcml
 lib/zope/lib/python/zope/app/folder/filerepresentation.py
 lib/zope/lib/python/zope/app/folder/filerepresentation.pyc
+lib/zope/lib/python/zope/app/folder/filerepresentation.txt
 lib/zope/lib/python/zope/app/folder/folder.py
 lib/zope/lib/python/zope/app/folder/folder.pyc
 lib/zope/lib/python/zope/app/folder/fssync/
@@ -6467,6 +6497,11 @@ lib/zope/lib/python/zope/app/http/exception/tests/test_unauthorized.py
 lib/zope/lib/python/zope/app/http/exception/tests/test_unauthorized.pyc
 lib/zope/lib/python/zope/app/http/exception/unauthorized.py
 lib/zope/lib/python/zope/app/http/exception/unauthorized.pyc
+lib/zope/lib/python/zope/app/http/ftests/
+lib/zope/lib/python/zope/app/http/ftests/__init__.py
+lib/zope/lib/python/zope/app/http/ftests/__init__.pyc
+lib/zope/lib/python/zope/app/http/ftests/test_put.py
+lib/zope/lib/python/zope/app/http/ftests/test_put.pyc
 lib/zope/lib/python/zope/app/http/httpdate.py
 lib/zope/lib/python/zope/app/http/httpdate.pyc
 lib/zope/lib/python/zope/app/http/interfaces.py
