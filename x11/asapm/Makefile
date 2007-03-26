@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2006/08/04 00:10:42 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2007/03/26 07:20:58 robert Exp $
 
-ONLY_FOR_ARCHS=	i386 macppc zaurus
+ONLY_FOR_ARCHS=	arm i386 macppc
 
 COMMENT=	"Advanced Power Management monitor utility for X"
 

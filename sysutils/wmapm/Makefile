@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2005/03/12 04:23:24 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2007/03/26 07:20:58 robert Exp $
 
-ONLY_FOR_ARCHS=		i386 macppc zaurus
+ONLY_FOR_ARCHS=		arm i386 macppc
 
 COMMENT=		'wm-dockapp; APM/battery monitor'
 
