@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2007/03/15 21:48:27 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.42 2007/03/26 06:42:18 jakob Exp $
 @conflict postfix-*
 @newgroup _postfix:507
 @newgroup _postdrop:508
@@ -123,7 +123,6 @@ share/doc/postfix/html/BUILTIN_FILTER_README.html
 share/doc/postfix/html/CDB_README.html
 share/doc/postfix/html/CONNECTION_CACHE_README.html
 share/doc/postfix/html/CONTENT_INSPECTION_README.html
-share/doc/postfix/html/CYRUS_README.html
 share/doc/postfix/html/DATABASE_README.html
 share/doc/postfix/html/DB_README.html
 share/doc/postfix/html/DEBUG_README.html
@@ -143,7 +142,6 @@ share/doc/postfix/html/OVERVIEW.html
 share/doc/postfix/html/PACKAGE_README.html
 share/doc/postfix/html/PCRE_README.html
 share/doc/postfix/html/PGSQL_README.html
-share/doc/postfix/html/QMQP_README.html
 share/doc/postfix/html/QSHAPE_README.html
 share/doc/postfix/html/RESTRICTION_CLASS_README.html
 share/doc/postfix/html/SASL_README.html
@@ -155,7 +153,6 @@ share/doc/postfix/html/STANDARD_CONFIGURATION_README.html
 share/doc/postfix/html/TLS_LEGACY_README.html
 share/doc/postfix/html/TLS_README.html
 share/doc/postfix/html/TUNING_README.html
-share/doc/postfix/html/ULTRIX_README.html
 share/doc/postfix/html/UUCP_README.html
 share/doc/postfix/html/VERP_README.html
 share/doc/postfix/html/VIRTUAL_README.html
@@ -255,7 +252,6 @@ share/doc/postfix/readme/OVERVIEW
 share/doc/postfix/readme/PACKAGE_README
 share/doc/postfix/readme/PCRE_README
 share/doc/postfix/readme/PGSQL_README
-share/doc/postfix/readme/QMQP_README
 share/doc/postfix/readme/QSHAPE_README
 share/doc/postfix/readme/RELEASE_NOTES
 share/doc/postfix/readme/RESTRICTION_CLASS_README
