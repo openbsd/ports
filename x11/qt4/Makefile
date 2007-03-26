@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2007/03/17 17:58:16 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2007/03/26 21:22:13 espie Exp $
 
 COMMENT-main=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples for qt4"
@@ -8,7 +8,7 @@ COMMENT-mysql=		"MySQL plugin for qt4"
 COMMENT-sqlite2=	"sqlite2 plugin for qt4"
 COMMENT-sqlite=		"sqlite plugin for qt4"
 
-PKGNAME=		qt4-${VERSION}
+PKGNAME=		qt4-${VERSION}p0
 PKGNAME-mysql=		qt4-mysql-${VERSION}
 PKGNAME-postgresql=	qt4-postgresql-${VERSION}
 PKGNAME-examples=	qt4-examples-${VERSION}
@@ -16,11 +16,11 @@ PKGNAME-sqlite2=	qt4-sqlite2-${VERSION}
 PKGNAME-sqlite=		qt4-sqlite-${VERSION}
 PKGNAME-main=		qt4-${VERSION}
 FULLPKGNAME-html=	qt4-html-${VERSION}
-SHARED_LIBS=	Qt3Support 6.2 \
+SHARED_LIBS=	Qt3Support 7.0 \
 		QtCore 6.2 \
 		QtDesigner 6.1 \
 		QtDesignerComponents 6.1 \
-		QtGui 6.3 \
+		QtGui 7.0 \
 		QtNetwork 6.2 \
 		QtOpenGL 6.2 \
 		QtSql 6.2 \
@@ -127,7 +127,8 @@ LIB_DEPENDS=		glib-2.0,gthread-2.0::devel/glib2
 WANTLIB=		iconv intl
 
 commonWANTLIB=		ICE Xrender c GLU SM freetype pthread Xrandr Xinerama \
-			stdc++ Xcursor Xext GL Xi m X11 z fontconfig Xfixes
+			stdc++ Xcursor Xext GL Xi m X11.>=10 z fontconfig \
+			Xfixes
 commonLIB_DEPENDS=	png.>=2::graphics/png \
 			dbus-1::x11/dbus
 

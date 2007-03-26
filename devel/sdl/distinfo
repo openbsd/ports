@@ -4,5 +4,7 @@ RMD160 (SDL-1.2.9.tar.gz) = 9faeeda9cf8f649a2b506e9db7c5cedb4512cfe7
 RMD160 (patch-libsd1.2.7-libcaca0.9.diff) = e74a1ece864577b6fdaf8516a9e4b400958e575b
 SHA1 (SDL-1.2.9.tar.gz) = 8140de00e73ccdbdee196fa8fd9952ddb3cc75f1
 SHA1 (patch-libsd1.2.7-libcaca0.9.diff) = 4e4d3f5f0286e6960e0e5cdad2f90c54997a6c04
+SHA256 (SDL-1.2.9.tar.gz) = d5a168968051536641ab5a3ba5fc234383511c77a8bc5ceb8bed619bdd42e5f9
+SHA256 (patch-libsd1.2.7-libcaca0.9.diff) = 7e77f529896a05f71c4874ed8d1f67a55b6df7bea2db316b0a5c4dfde8e8012f
 SIZE (SDL-1.2.9.tar.gz) = 2688179
 SIZE (patch-libsd1.2.7-libcaca0.9.diff) = 28259

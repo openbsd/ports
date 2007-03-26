@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2007/02/17 18:59:04 espie Exp $
+# $OpenBSD: Makefile,v 1.74 2007/03/26 21:22:13 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT-main=		"C++ X11 GUI toolkit"
@@ -12,10 +12,10 @@ PKGNAME=		qt3-${VERSION}
 PKGNAME-mysql=		qt3-mysql-${VERSION}
 PKGNAME-postgresql=	qt3-postgresql-${VERSION}
 PKGNAME-examples=	qt3-examples-${VERSION}
-PKGNAME-main=	qt3-mt-${VERSION}p1
+PKGNAME-main=	qt3-mt-${VERSION}p2
 FULLPKGNAME-html=	qt3-html-${VERSION}
 PKGNAME-sqlite2=	qt3-sqlite2-${VERSION}
-SHARED_LIBS=		qt-mt	30.3 \
+SHARED_LIBS=		qt-mt	31.0 \
 			qui	2.0 \
 			qui-mt	2.0
 
@@ -138,7 +138,8 @@ CONFIGURE_ARGS+= -plugin-sql-sqlite
 
 LIB_DEPENDS=		png.>=2::graphics/png \
 			mng.>=1::graphics/libmng
-WANTLIB=		GL GLU ICE SM X11 Xcursor Xext Xft Xi Xinerama Xmu \
+WANTLIB=		GL GLU ICE SM X11.>=10 Xcursor Xext Xft Xi Xinerama \
+			Xmu \
 			Xrandr Xrender fontconfig freetype jpeg lcms m z
 
 

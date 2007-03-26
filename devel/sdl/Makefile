@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.49 2007/01/21 14:47:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2007/03/26 21:22:13 espie Exp $
 # Uses pthreads
 
 COMMENT=	"cross-platform multimedia library"
 
 VERSION=	1.2.9
 DISTNAME=	SDL-${VERSION}
-PKGNAME=	${DISTNAME:L}p2
+PKGNAME=	${DISTNAME:L}p3
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.libsdl.org/
@@ -34,7 +34,7 @@ AUTOMAKE_VERSION=	1.9
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= autoconf
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/test
-SHARED_LIBS=	SDL	6.0
+SHARED_LIBS=	SDL	7.0
 CONFIGURE_ENV+=	X11BASE="${X11BASE}" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
@@ -100,7 +100,7 @@ CONFIGURE_ARGS+= --without-x \
 		 --disable-video-x11
 .else
 USE_X11=	Yes
-WANTLIB+=	X11 Xext
+WANTLIB+=	X11.>=10 Xext
 .endif
 
 NO_REGRESS=	Yes

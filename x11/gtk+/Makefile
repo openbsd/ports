@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.62 2006/09/18 10:21:48 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2007/03/26 21:22:13 espie Exp $
 
 COMMENT=	"General Toolkit for X11 GUI"
 
 DISTNAME=	gtk+-1.2.10
-PKGNAME=	${DISTNAME}p4
-SHARED_LIBS=	gdk 2.0 \
-		gtk 2.0
+PKGNAME=	${DISTNAME}p5
+SHARED_LIBS=	gdk 3.0 \
+		gtk 3.0
 CATEGORIES=	x11 devel
 MASTER_SITES=   ${MASTER_SITE_GNOME:=sources/gtk+/1.2/}
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xi m
+WANTLIB=		X11.>=10 Xext Xi m
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes

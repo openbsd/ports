@@ -4,5 +4,7 @@ RMD160 (qt-x11-free-3.3.7.tar.gz) = bc786cf808fe152d233c9ba47ae1f299788d32e8
 RMD160 (qt-x11-immodule-unified-qt3.3.7-20061229.diff.bz2) = ecfddee896e170294f6f48dd185568c332a3be14
 SHA1 (qt-x11-free-3.3.7.tar.gz) = f3276f316647dbbd67ea4e131d794bf5bff5af2b
 SHA1 (qt-x11-immodule-unified-qt3.3.7-20061229.diff.bz2) = ff750959322db0320990c03aa02fc57183b708db
+SHA256 (qt-x11-free-3.3.7.tar.gz) = ad30725e66daef45cea627a8a904ed899013438d1d91bdbe5f35805f98ef9583
+SHA256 (qt-x11-immodule-unified-qt3.3.7-20061229.diff.bz2) = dc57d5f131ab1331b89c17a3a303a018442770bc06e70b0207c983cb5cfaadef
 SIZE (qt-x11-free-3.3.7.tar.gz) = 17558991
 SIZE (qt-x11-immodule-unified-qt3.3.7-20061229.diff.bz2) = 99876
