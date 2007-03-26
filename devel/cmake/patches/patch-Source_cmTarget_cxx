@@ -1,0 +1,50 @@
+$OpenBSD: patch-Source_cmTarget_cxx,v 1.1 2007/03/26 21:27:44 espie Exp $
+--- Source/cmTarget.cxx.orig	Wed Jan 10 18:59:13 2007
++++ Source/cmTarget.cxx	Sun Mar 25 18:01:32 2007
+@@ -1459,6 +1459,46 @@ void cmTarget::GetLibraryNamesInternal(std::string& na
+   realName += suffix;
+ #endif
+ 
++#if defined(__OpenBSD__)
++  // need to tweak version for our shared libraries
++  if (type == cmTarget::SHARED_LIBRARY) {
++  	if (version) {
++	    // namely, transform version from 5.0.0 -> 5.0
++	    std::string myversion = version;
++
++	    int j = 0;
++
++	    for (int i = 0; i < myversion.size(); i++) {
++		    if (myversion[i] == '.') {
++			    j++;
++			    if (j == 2) {
++				    myversion.erase(i);
++				    break;
++			    }
++		    }
++	    }
++	    // if the env says so, produce a tweaked version number instead
++	    std::string v = "LIB" +base + "_VERSION";
++	    char *tweaked = ::getenv(v.c_str());
++#if 0
++	    char *logname = ::getenv("SHARED_LIBS_LOG");
++	    if (logname) {
++		    std::ofstream logfile(logname, std::ios_base::out | std::ios_base::app);
++		    if (logfile)
++			    logfile << "SHARED_LIBS += " << base << " "
++				    << tweaked << " # " << myversion << "\n";
++	    }
++#endif
++	    if (tweaked)
++		    myversion = tweaked;
++	    else 
++		    tweaked = "";
++	    // all our shared libs have major.number, no links
++	    realName = prefix+base+".so."+myversion;
++	    soName = realName;
++	}
++  }
++#endif
+   // The import library name.
+   if(type == cmTarget::SHARED_LIBRARY)
+     {

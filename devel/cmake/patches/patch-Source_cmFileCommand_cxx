@@ -1,0 +1,48 @@
+$OpenBSD: patch-Source_cmFileCommand_cxx,v 1.1 2007/03/26 21:27:44 espie Exp $
+--- Source/cmFileCommand.cxx.orig	Mon Mar 26 00:39:17 2007
++++ Source/cmFileCommand.cxx	Mon Mar 26 02:13:02 2007
+@@ -1207,10 +1207,44 @@ bool cmFileCommand::HandleInstallCommand(
+           std::string libname = toFile;
+           std::string soname = toFile;
+           std::string soname_nopath = fromName;
++#if defined(__OpenBSD__)
++	  // need to tweak version for our shared libraries
++	  std::string myversion = lib_version;
++	  if (itype == cmTarget::SHARED_LIBRARY) {
++	  	// namely, transform version from 5.0.0 -> 5.0
++
++	    	int j = 0;
++
++	    	for (int i = 0; i < myversion.size(); i++) {
++			if (myversion[i] == '.') {
++				j++;
++			    	if (j == 2) {
++					myversion.erase(i);
++				    	break;
++			    	}
++		    	}
++	    	}
++		int n = fromName.length();
++		if (fromName.compare(0, 3, "lib") == 0 &&
++			fromName.compare(n-3, n, ".so") == 0) {
++			std::string base = fromName.substr(3, n-6);
++			// if the env says so, produce a tweaked version number instead
++			std::string v = "LIB" +base + "_VERSION";
++			char *tweaked = ::getenv(v.c_str());
++			if (tweaked)
++				myversion = tweaked;
++		}
++	  }
++          this->ComputeVersionedName(soname, myversion.c_str());
++          this->ComputeVersionedName(soname_nopath, myversion.c_str());
++          this->ComputeVersionedName(fromName, myversion.c_str());
++          this->ComputeVersionedName(toFile, myversion.c_str());
++#else
+           this->ComputeVersionedName(soname, lib_soversion);
+           this->ComputeVersionedName(soname_nopath, lib_soversion);
+           this->ComputeVersionedName(fromName, lib_version);
+           this->ComputeVersionedName(toFile, lib_version);
++#endif
+ 
+           cmSystemTools::RemoveFile(soname.c_str());
+           cmSystemTools::RemoveFile(libname.c_str());
