@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.488 2007/03/25 13:07:14 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.489 2007/03/26 13:07:54 jolan Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -158,6 +158,7 @@
      SUBDIR += libxfce4util
      SUBDIR += libzvt
      SUBDIR += lincvs
+     SUBDIR += lpeg
      SUBDIR += luaalarm
      SUBDIR += luabitlib
      SUBDIR += luacopas
