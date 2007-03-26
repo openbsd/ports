@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2007/03/17 18:28:02 deanna Exp $
+# $OpenBSD: Makefile,v 1.23 2007/03/26 16:33:05 deanna Exp $
 
 COMMENT=		"Common Unix Printing System"
 
 VERSION=		1.2.7
 DISTNAME=		cups-${VERSION}-source
-PKGNAME=		${DISTNAME:S/-source//}p0
+PKGNAME=		${DISTNAME:S/-source//}p1
 CATEGORIES=		print sysutils
 SHARED_LIBS=		cups		3.0 \
 			cupsimage	2.3
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m z stdc++ pthread
+WANTLIB=		c m z stdc++ pthread crypto ssl
 
 MASTER_SITES=		http://ftp.easysw.com/pub/cups/${VERSION}/ \
 			http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${VERSION}/ \
@@ -50,7 +50,8 @@ CONFIGURE_ARGS+=	--with-cups-user=_cups \
 			--without-java \
 			--without-perl \
 			--without-php \
-			--without-python
+			--without-python \
+			--disable-gnutls
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 			  -I${LOCALBASE}/include/libpng" \
@@ -70,18 +71,8 @@ REGRESS_FLAGS=		LOCALBASE=${LOCALBASE}
 REGRESS_DEPENDS=	::print/htmldoc
 REGRESS_IS_INTERACTIVE=	Yes
 
-FLAVORS=	no_gnutls ldap
+FLAVORS=	ldap
 FLAVOR?=
-
-.if ${FLAVOR:L:Mno_gnutls}
-WANTLIB+=	crypto ssl
-.else
-MODULES=	devel/gettext
-
-CONFIGURE_ARGS+= --disable-openssl --enable-gnutls
-LIB_DEPENDS+=	gnutls.>=12::security/gnutls
-WANTLIB+=	gpg-error.>=1 gcrypt.>=12
-.endif
 
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+=	--enable-ldap
