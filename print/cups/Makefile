@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.23 2007/03/26 16:33:05 deanna Exp $
+# $OpenBSD: Makefile,v 1.24 2007/03/26 22:10:29 mbalmer Exp $
 
 COMMENT=		"Common Unix Printing System"
 
 VERSION=		1.2.7
 DISTNAME=		cups-${VERSION}-source
-PKGNAME=		${DISTNAME:S/-source//}p1
+PKGNAME=		${DISTNAME:S/-source//}p2
 CATEGORIES=		print sysutils
 SHARED_LIBS=		cups		3.0 \
 			cupsimage	2.3
 
 HOMEPAGE=		http://www.cups.org/
-
-MAINTAINER=		Marc Balmer <mbalmer@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
