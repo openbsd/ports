@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2006/06/27 19:12:13 naddy Exp $
-lib/python${MODPY_VERSION}/site-packages/cairo/_cairo.so
-@comment lib/python${MODPY_VERSION}/site-packages/cairo/_cairo.la

@@ -1,7 +1,7 @@
-$OpenBSD: patch-cairo_pycairo-font_c,v 1.1 2006/02/05 01:59:03 pvalchev Exp $
---- cairo/pycairo-font.c.orig	Sat Feb  4 17:10:21 2006
-+++ cairo/pycairo-font.c	Sat Feb  4 17:10:22 2006
-@@ -196,6 +196,7 @@ scaled_font_new (PyTypeObject *type, PyO
+$OpenBSD: patch-cairo_pycairo-font_c,v 1.2 2007/03/26 20:32:11 alek Exp $
+--- cairo/pycairo-font.c.orig	Sun Mar 25 21:17:08 2007
++++ cairo/pycairo-font.c	Sun Mar 25 21:18:57 2007
+@@ -197,6 +197,7 @@ scaled_font_new (PyTypeObject *type, PyO
      PycairoFontFace *ff;
      PycairoFontOptions *fo;
      PycairoMatrix *mx1, *mx2;
@@ -9,12 +9,12 @@ $OpenBSD: patch-cairo_pycairo-font_c,v 1.1 2006/02/05 01:59:03 pvalchev Exp $
  
      if (!PyArg_ParseTuple(args, "O!O!O!O!:ScaledFont.__new__",
  			  &PycairoFontFace_Type, &ff,
-@@ -204,7 +205,7 @@ scaled_font_new (PyTypeObject *type, PyO
+@@ -205,7 +206,7 @@ scaled_font_new (PyTypeObject *type, PyO
  			  &PycairoFontOptions_Type, &fo))
  	return NULL;
  
 -    PyObject *o = type->tp_alloc(type, 0);
 +    o = type->tp_alloc(type, 0);
-     if (o) {
+     if (o != NULL) {
  	cairo_scaled_font_t *scaled_font = cairo_scaled_font_create
  	    (ff->font_face, &mx1->matrix, &mx2->matrix, fo->font_options);

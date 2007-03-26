@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/06/27 19:12:13 naddy Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2007/03/26 20:32:11 alek Exp $
 include/pycairo/
 include/pycairo/pycairo.h
 lib/pkgconfig/pycairo.pc
@@ -7,3 +6,6 @@ lib/python${MODPY_VERSION}/site-packages/cairo/
 lib/python${MODPY_VERSION}/site-packages/cairo/__init__.py
 lib/python${MODPY_VERSION}/site-packages/cairo/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/cairo/__init__.pyo
+@comment lib/python${MODPY_VERSION}/site-packages/cairo/_cairo.a
+@comment lib/python${MODPY_VERSION}/site-packages/cairo/_cairo.la
+lib/python${MODPY_VERSION}/site-packages/cairo/_cairo.so
