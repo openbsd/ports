@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/04 19:19:15 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2007/03/26 22:13:03 mbalmer Exp $
 
 COMMENT=		"PDF backend for CUPS"
 
 DISTNAME=		cups-pdf-2.4.2
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		print
 
 HOMEPAGE=		http://cip.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/
 MASTER_SITES=		${HOMEPAGE}src/
 DISTFILES=		${DISTNAME:S/pdf-/pdf_/}.tar.gz
-
-MAINTAINER=		Marc Balmer <mbalmer@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
