@@ -1,12 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.1.1.1 2006/12/22 23:32:28 kurt Exp $
-
-Loading of external images has been turned off by default on
-OpenBSD. To turn it back on goto Edit -> Preferences -> Mail &
-Newsgroups -> Message Display and enable "Allow messsages to
-load and display remote images and other content". However,
-it is recommended that you leave it off to avoid unwanted
-internet connections and possible future exploits against
-Mail & News. 
+$OpenBSD: README.OpenBSD,v 1.2 2007/03/26 20:41:37 martynas Exp $
 
 To disable anti-aliasing (xft) set GDK_USE_XFT=0 in the environment.
 

@@ -1,39 +1,39 @@
-# $OpenBSD: Makefile,v 1.6 2007/03/16 17:20:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2007/03/26 20:41:37 martynas Exp $
 
+SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
 COMMENT-main=	"integrated mozilla application suite"
 COMMENT-devel=  "devel files for Gecko"
 
-VER=		1.0.8
+VER=		1.1.1
 DISTNAME=	seamonkey-${VER}.source
 PKGNAME=	seamonkey-${VER}
 PKGNAME-main=	seamonkey-${VER}
 PKGNAME-devel=	seamonkey-devel-${VER}
 
-SO_VERSION=	9.4
+SO_VERSION=	10.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
-.for _lib in accessibility appcomps auth autoconfig browsercomps \
-	browserdirprovider caps chrome commandlines composer cookie docshell \
-	editor embedcomponents fileview freebl3 gfx_gtk gfxps gfxpsshar gkgfx \
-	gklayout gkplugin gtkembedmoz gtkxtbin htmlpars i18n imglib2 inspector \
-	jar50 jsd jsj mork mozfind mozjs necko necko2 nsappshell nss3 \
-	nssckbi oji permissions pipboot pipnss pippki pref rdf \
-	remoteservice searchservice smime3 softokn3 ssl3 system-pref \
-	toolkitcomps transformiix txmgr uconv ucvmath universalchardet \
-	webbrwsr websrvcs widget_gtk2 xmlextras xpcom xpcom_compat \
-	xpcom_compat_c xpcom_core xpconnect xpinstall xpistub xul \
-	addrbook bayesflt impComm4xMail impText import localmail \
-	mailnews mailview mime mimeemitter mozldap msgbaseutil msgcompose \
-	msgdb msgimap msgmdn msgnews msgsmime myspell nsprefm p3p \
-	profile spellchecker sroaming typeaheadfind vcard wallet walletviewers \
-	xremoteservice xulutil ldap50 prldap50 \
-	fort swft
+.for _lib in accessibility addrbook appcomps auth autoconfig bayesflt \
+	caps chrome composer cookie docshell editor embedcomponents \
+	fileview gfx_gtk gfxps gklayout gkplugin htmlpars i18n imglib2 \
+	impComm4xMail impText import jar50 jsd localmail mailnews \
+	mailview mime mimeemitter mork mozfind mozldap msgcompose \
+	msgdb msgimap msgmdn msgnews msgsmime myspell necko necko2 \
+	nsappshell nsprefm oji p3p permissions pipboot pipnss pippki \
+	pref profile rdf remoteservice searchservice spellchecker \
+	sroaming storagecomps system-pref transformiix txmgr \
+	typeaheadfind uconv ucvmath universalchardet vcard wallet \
+	walletviewers webbrwsr websrvcs widget_gtk2 xmlextras \
+	xpcom_compat_c xpconnect xpinstall xremoteservice gfxpsshar \
+	gkgfx gtkembedmoz gtkxtbin jsj ldap50 mozjs msgbaseutil \
+	prldap50 xpcom xpcom_compat xpcom_core xpistub nullplugin \
+	unixprintplugin
 SHARED_LIBS+=	${_lib}	${SO_VERSION}
 .endfor
 
-CATEGORIES=	www mail net
+CATEGORIES=	www mail net news
 
 HOMEPAGE=	http://www.mozilla.org/projects/seamonkey/
 
@@ -45,21 +45,22 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://ftp.mozilla.org/pub/mozilla.org/seamonkey/releases/${VER}/
+MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${VER}/
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=  :zip->=2.3:archivers/zip
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
-                nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr
+		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr \
+		nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss
 WANTLIB=	c glib-2.0 m pthread stdc++
 
 RUN_DEPENDS-main= :esound-*:audio/esound
 WANTLIB-main=	${WANTLIB} X11 Xext Xft Xinerama Xrender Xt atk-1.0 \
 		cairo fontconfig freetype glitz gmodule-2.0 gobject-2.0 \
-		jpeg pango-1.0 pangocairo-1.0 pangoft2-1.0 png z
+		jpeg pango-1.0 pangocairo-1.0 pangoft2-1.0 pangox-1.0 png z
 
 LIB_DEPENDS-devel= ${MODGETTEXT_LIB_DEPENDS} IDL-2::devel/libIDL \
-		seamonkey/mozjs,seamonkey/nss3,seamonkey/smime3,seamonkey/ssl3,seamonkey/xpcom,seamonkey/xpcom_core:${PKGNAME-main}:www/seamonkey,-main
+		seamonkey/mozjs,seamonkey/xpcom,seamonkey/xpcom_core:${PKGNAME-main}:www/seamonkey,-main
 WANTLIB-devel=	${WANTLIB} nspr4 plc4 plds4
 
 VMEM_WARNING=	Yes
@@ -79,8 +80,9 @@ CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 		--with-system-zlib=/usr/lib	\
 		--with-pthreads			\
 		--with-system-nspr		\
+		--with-system-nss		\
 		--enable-xft			\
-		--enable-optimize=-Os		\
+		--disable-optimize		\
 		--enable-default-toolkit=gtk2	\
 		--disable-debug			\
 		--disable-tests			\
@@ -103,10 +105,11 @@ MAKE_ENV=	MOZ_CO_PROJECT=suite \
 		LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
 		BUILD_OFFICIAL=1 \
 		MOZILLA_OFFICIAL=1 \
-		SO_VERSION="${SO_VERSION}" \
-		NSPR_LIB_DIR="${LOCALBASE}/lib"
+		SO_VERSION="${SO_VERSION}"
 CONFIGURE_ENV=	${MAKE_ENV} \
-		PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig"
+		PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig" \
+		MOZ_ENABLE_COREXFONTS=1 \
+		topsrcdir=${WRKSRC}
 
 WRKDIST=	${WRKDIR}/mozilla
 
@@ -122,7 +125,6 @@ pre-configure:
 		${WRKSRC}/xpfe/bootstrap/mozilla.in
 	@perl -pi -e 's|_SO_VERSION_|${SO_VERSION}|g' \
 		${WRKSRC}/xpcom/components/nsNativeComponentLoader.cpp
-	@echo "`date "+%Y%d%m%H%M%S"`" > ${WRKSRC}/config/build_number
 
 do-install:
 .for dir in include idl
@@ -130,26 +132,27 @@ do-install:
 	@cd ${WRKSRC}/dist && ${TAR} -chf - ${dir} | \
 		${TAR} -xf - -C ${MOZ}
 .endfor
-	@cd ${WRKSRC}/dist/public && ${TAR} -chf - nss | \
-		${TAR} -xf - -C ${MOZ}/include   
-.for dir in chrome components defaults greprefs searchplugins res 
+.for dir in chrome components defaults dictionaries greprefs init.d plugins \
+	res searchplugins
 	${INSTALL_DATA_DIR} ${MOZ}/${dir}
 	@cd ${MOB} && ${TAR} -chf - ${dir} | \
 		${TAR} -xf - -C ${MOZ}
+	@find ${MOZ} -type f -exec chmod 644 {} \;
 .endfor
-	@cd ${MOB} && ${TAR} -chf - *.so.?.? | \
-		${TAR} -xf - -C ${MOZ}
-	@chmod 444 ${MOZ}/*.so.?.? ${MOZ}/components/*.so.?.? ${MOZ}/components/*.js
+	${INSTALL_DATA} ${MOB}/*.so.${SO_VERSION} ${MOZ}
+	chown -R ${SHAREOWN}:${SHAREGRP} ${MOZ}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${MOZ}
-	${INSTALL_SCRIPT} ${MOB}/seamonkey ${MOB}/seamonkey-config ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${MOB}/seamonkey{,-config} ${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOZ}
-	${INSTALL_PROGRAM} ${MOB}/regxpcom ${MOB}/seamonkey-bin ${MOB}/mozilla-xremote-client ${MOB}/TestGtkEmbed \
-	${MOB}/mangle ${MOB}/nsinstall ${MOB}/shlibsign ${MOB}/xpcshell ${MOB}/xpicleanup ${MOB}/xpidl \
-	${MOB}/xpt_dump ${MOB}/xpt_link ${MOZ}
+	${INSTALL_PROGRAM} ${MOB}/TestGtkEmbed \
+		${MOB}/mozilla-xremote-client ${MOB}/nsinstall \
+		${MOB}/regxpcom ${MOB}/seamonkey-bin ${MOB}/xpcshell \
+		${MOB}/xpicleanup ${MOB}/xpidl ${MOB}/xpt_dump \
+		${MOB}/xpt_link ${MOZ}
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
 	${INSTALL_DATA} ${WRKBUILD}/build/unix/*.pc ${PREFIX}/lib/pkgconfig
 	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' \
 		< ${FILESDIR}/README.OpenBSD > ${MOZ}/README.OpenBSD
-	${INSTALL_MAN} ${WRKSRC}/xpfe/bootstrap/seamonkey.1 ${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>

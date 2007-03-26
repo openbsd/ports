@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2007/02/14 17:13:38 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2007/03/26 20:41:38 martynas Exp $
 %%SHARED%%
 bin/seamonkey
 @man man/man1/seamonkey.1
@@ -29,8 +29,6 @@ seamonkey/chrome/icons/default/bmPropsWindow.xpm
 seamonkey/chrome/icons/default/bmPropsWindow16.xpm
 seamonkey/chrome/icons/default/bookmark-window.xpm
 seamonkey/chrome/icons/default/bookmark-window16.xpm
-seamonkey/chrome/icons/default/calendar-window.xpm
-seamonkey/chrome/icons/default/calendar-window16.xpm
 seamonkey/chrome/icons/default/chatzilla-window.xpm
 seamonkey/chrome/icons/default/chatzilla-window16.xpm
 seamonkey/chrome/icons/default/default.xpm
@@ -104,6 +102,8 @@ seamonkey/components/dom_events.xpt
 seamonkey/components/dom_html.xpt
 seamonkey/components/dom_loadsave.xpt
 seamonkey/components/dom_range.xpt
+seamonkey/components/dom_sidebar.xpt
+seamonkey/components/dom_storage.xpt
 seamonkey/components/dom_stylesheets.xpt
 seamonkey/components/dom_svg.xpt
 seamonkey/components/dom_traversal.xpt
@@ -154,9 +154,6 @@ seamonkey/components/msglocal.xpt
 seamonkey/components/msgnews.xpt
 seamonkey/components/msgsearch.xpt
 seamonkey/components/msgsmime.xpt
-seamonkey/components/myspell/
-seamonkey/components/myspell/en-US.aff
-seamonkey/components/myspell/en-US.dic
 seamonkey/components/necko.xpt
 seamonkey/components/necko_about.xpt
 seamonkey/components/necko_cache.xpt
@@ -184,6 +181,7 @@ seamonkey/components/nsProgressDialog.js
 seamonkey/components/nsProxyAutoConfig.js
 seamonkey/components/nsResetPref.js
 seamonkey/components/nsSidebar.js
+seamonkey/components/nsURLFormatter.js
 seamonkey/components/nsUpdateNotifier.js
 seamonkey/components/nsXmlRpcClient.js
 seamonkey/components/offlineStartup.js
@@ -201,12 +199,13 @@ seamonkey/components/progressDlg.xpt
 seamonkey/components/proxyObjInst.xpt
 seamonkey/components/rdf.xpt
 seamonkey/components/related.xpt
+seamonkey/components/saxparser.xpt
 seamonkey/components/search.xpt
 seamonkey/components/shistory.xpt
-seamonkey/components/sidebar.xpt
 seamonkey/components/signonviewer.xpt
 seamonkey/components/smime-service.js
 seamonkey/components/spellchecker.xpt
+seamonkey/components/storage.xpt
 seamonkey/components/toolkitremote.xpt
 seamonkey/components/txmgr.xpt
 seamonkey/components/txtsvc.xpt
@@ -214,6 +213,7 @@ seamonkey/components/typeaheadfind.xpt
 seamonkey/components/uconv.xpt
 seamonkey/components/unicharutil.xpt
 seamonkey/components/uriloader.xpt
+seamonkey/components/urlformatter.xpt
 seamonkey/components/venkman-service.js
 seamonkey/components/wallet.xpt
 seamonkey/components/walleteditor.xpt
@@ -226,7 +226,7 @@ seamonkey/components/widget.xpt
 seamonkey/components/windowds.xpt
 seamonkey/components/windowwatcher.xpt
 seamonkey/components/xml-rpc.xpt
-seamonkey/components/xmlextras.xpt
+seamonkey/components/xpautocomplete.xpt
 seamonkey/components/xpcom_base.xpt
 seamonkey/components/xpcom_components.xpt
 seamonkey/components/xpcom_ds.xpt
@@ -289,12 +289,18 @@ seamonkey/defaults/wallet/SchemaConcat.tbl
 seamonkey/defaults/wallet/SchemaStrings.tbl
 seamonkey/defaults/wallet/StateSchema.tbl
 seamonkey/defaults/wallet/VcardSchema.tbl
+seamonkey/dictionaries/
+seamonkey/dictionaries/en-US.aff
+seamonkey/dictionaries/en-US.dic
 seamonkey/greprefs/
 seamonkey/greprefs/all.js
 seamonkey/greprefs/security-prefs.js
 seamonkey/greprefs/xpinstall.js
+seamonkey/init.d/
+seamonkey/init.d/README
 seamonkey/mozilla-xremote-client
 seamonkey/nsinstall
+seamonkey/plugins/
 seamonkey/regxpcom
 seamonkey/res/
 seamonkey/res/EditorOverride.css

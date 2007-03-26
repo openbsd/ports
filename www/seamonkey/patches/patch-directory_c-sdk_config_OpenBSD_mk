@@ -1,18 +1,15 @@
-$OpenBSD: patch-directory_c-sdk_config_OpenBSD_mk,v 1.1.1.1 2006/12/22 23:32:28 kurt Exp $
---- directory/c-sdk/config/OpenBSD.mk.orig	Tue Mar 26 22:51:50 2002
-+++ directory/c-sdk/config/OpenBSD.mk	Thu Apr  7 22:33:31 2005
-@@ -37,8 +37,8 @@
+$OpenBSD: patch-directory_c-sdk_config_OpenBSD_mk,v 1.2 2007/03/26 20:41:37 martynas Exp $
+--- directory/c-sdk/config/OpenBSD.mk.orig	Fri Feb  3 16:41:18 2006
++++ directory/c-sdk/config/OpenBSD.mk	Tue Mar 13 17:54:50 2007
+@@ -43,6 +43,7 @@ include $(MOD_DEPTH)/config/UNIX.mk
  
- include $(MOD_DEPTH)/config/UNIX.mk
- 
--CC                     = gcc
--CCC                    = g++
-+CC                     = ${CC}
-+CCC                    = ${CXX}
+ CC                     = gcc
+ CCC                    = g++
++LD                     = ${CC}
  RANLIB                 = ranlib
  
  OS_REL_CFLAGS          =
-@@ -59,20 +59,9 @@ endif
+@@ -63,20 +64,9 @@ endif
  
  ARCH                   = openbsd
  
@@ -31,7 +28,6 @@ $OpenBSD: patch-directory_c-sdk_config_OpenBSD_mk,v 1.1.1.1 2006/12/22 23:32:28 
 -DSO_LDOPTS             = -shared
 -endif
  
--MKSHLIB                        = $(LD) $(DSO_LDOPTS)
+ MKSHLIB                        = $(LD) $(DSO_LDOPTS)
 -
 -G++INCLUDES            = -I/usr/include/g++
-+MKSHLIB                        = $(CC) $(DSO_LDOPTS)

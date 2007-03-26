@@ -1,20 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2006/12/22 23:32:28 kurt Exp $
---- configure.in.orig	Wed Dec 13 16:57:25 2006
-+++ configure.in	Wed Dec 13 17:30:17 2006
-@@ -1291,9 +1291,9 @@ dnl Get mozilla version from central mil
- MOZILLA_VERSION=`$PERL $srcdir/config/milestone.pl -topsrcdir $srcdir`
- 
- dnl Get version of various core apps from the version files.
--FIREFOX_VERSION=`cat $topsrcdir/browser/config/version.txt`
--THUNDERBIRD_VERSION=`cat $topsrcdir/mail/config/version.txt`
--SEAMONKEY_VERSION=`cat $topsrcdir/xpfe/bootstrap/version.txt`
-+FIREFOX_VERSION=`cat ./browser/config/version.txt`
-+THUNDERBIRD_VERSION=`cat ./mail/config/version.txt`
-+SEAMONKEY_VERSION=`cat ./xpfe/bootstrap/version.txt`
- 
- AC_DEFINE_UNQUOTED(MOZILLA_VERSION,"$MOZILLA_VERSION")
- AC_DEFINE_UNQUOTED(MOZILLA_VERSION_U,$MOZILLA_VERSION)
-@@ -1863,7 +1863,7 @@ case "$target" in
+$OpenBSD: patch-configure_in,v 1.2 2007/03/26 20:41:37 martynas Exp $
+--- configure.in.orig	Fri Sep 15 16:13:01 2006
++++ configure.in	Fri Nov  3 22:36:05 2006
+@@ -1931,7 +1931,7 @@ case "$target" in
  	;;
  
  *-openbsd*)
@@ -23,7 +10,7 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2006/12/22 23:32:28 kurt Exp $
      DSO_CFLAGS=''
      DSO_PIC_CFLAGS='-fPIC'
      DSO_LDOPTS='-shared -fPIC'
-@@ -3647,7 +3647,7 @@ _SAVE_LIBS=$LIBS
+@@ -3804,7 +3804,7 @@ _SAVE_LIBS=$LIBS
  CFLAGS="$ZLIB_CFLAGS $CFLAGS"
  LDFLAGS="$ZLIB_LIBS -lz $LDFLAGS"
  if test -n "${PNG_DIR}" -a "${PNG_DIR}" != "yes"; then
@@ -32,7 +19,7 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2006/12/22 23:32:28 kurt Exp $
      LDFLAGS="-L${PNG_DIR}/lib $LDFLAGS"
  fi
  if test -z "$PNG_DIR" -o "$PNG_DIR" = no; then
-@@ -3677,7 +3677,7 @@ LDFLAGS=$_SAVE_LDFLAGS
+@@ -3834,7 +3834,7 @@ LDFLAGS=$_SAVE_LDFLAGS
  LIBS=$_SAVE_LIBS
  
  if test "${PNG_DIR}" -a -d "${PNG_DIR}" -a "$SYSTEM_PNG" = 1; then

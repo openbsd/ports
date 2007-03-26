@@ -1,7 +1,11 @@
-$OpenBSD: patch-directory_c-sdk_configure_in,v 1.1.1.1 2006/12/22 23:32:28 kurt Exp $
---- directory/c-sdk/configure.in.orig	Wed Feb 22 18:58:25 2006
-+++ directory/c-sdk/configure.in	Wed Dec 13 16:57:25 2006
-@@ -1573,19 +1573,16 @@ mips-sony-newsos*)
+$OpenBSD: patch-directory_c-sdk_configure_in,v 1.2 2007/03/26 20:41:37 martynas Exp $
+--- directory/c-sdk/configure.in.orig	Thu Feb 23 01:58:24 2006
++++ directory/c-sdk/configure.in	Tue Mar 13 18:05:57 2007
+@@ -1574,22 +1574,19 @@ mips-sony-newsos*)
+ 	;;
+ 
+ *-openbsd*)
++    LD='$(CC)'
      AC_DEFINE(XP_UNIX)
      AC_DEFINE(OPENBSD)
      AC_DEFINE(HAVE_BSD_FLOCK)
@@ -21,7 +25,6 @@ $OpenBSD: patch-directory_c-sdk_configure_in,v 1.1.1.1 2006/12/22 23:32:28 kurt 
 -        DSO_LDOPTS=-Bshareable ;;
 -    esac
 +    DSO_LDOPTS='-shared -fPIC'
-+    MKSHLIB='$(CC) $(DSO_LDOPTS) -o $@'
      ;;
  
  *-openvms*)

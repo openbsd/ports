@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.2 2007/03/16 17:20:55 naddy Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.3 2007/03/26 20:41:38 martynas Exp $
 @lib seamonkey/components/libaccessibility.so.${LIBaccessibility_VERSION}
 @lib seamonkey/components/libaddrbook.so.${LIBaddrbook_VERSION}
 @lib seamonkey/components/libappcomps.so.${LIBappcomps_VERSION}
@@ -23,7 +23,6 @@
 @lib seamonkey/components/libimpComm4xMail.so.${LIBimpComm4xMail_VERSION}
 @lib seamonkey/components/libimpText.so.${LIBimpText_VERSION}
 @lib seamonkey/components/libimport.so.${LIBimport_VERSION}
-@lib seamonkey/components/libinspector.so.${LIBinspector_VERSION}
 @lib seamonkey/components/libjar50.so.${LIBjar50_VERSION}
 @lib seamonkey/components/libjsd.so.${LIBjsd_VERSION}
 @lib seamonkey/components/liblocalmail.so.${LIBlocalmail_VERSION}
@@ -58,6 +57,7 @@
 @lib seamonkey/components/libsearchservice.so.${LIBsearchservice_VERSION}
 @lib seamonkey/components/libspellchecker.so.${LIBspellchecker_VERSION}
 @lib seamonkey/components/libsroaming.so.${LIBsroaming_VERSION}
+@lib seamonkey/components/libstoragecomps.so.${LIBstoragecomps_VERSION}
 @lib seamonkey/components/libsystem-pref.so.${LIBsystem-pref_VERSION}
 @lib seamonkey/components/libtransformiix.so.${LIBtransformiix_VERSION}
 @lib seamonkey/components/libtxmgr.so.${LIBtxmgr_VERSION}
@@ -76,7 +76,6 @@
 @lib seamonkey/components/libxpconnect.so.${LIBxpconnect_VERSION}
 @lib seamonkey/components/libxpinstall.so.${LIBxpinstall_VERSION}
 @lib seamonkey/components/libxremoteservice.so.${LIBxremoteservice_VERSION}
-@lib seamonkey/libfreebl3.so.${LIBfreebl3_VERSION}
 @lib seamonkey/libgfxpsshar.so.${LIBgfxpsshar_VERSION}
 @lib seamonkey/libgkgfx.so.${LIBgkgfx_VERSION}
 @lib seamonkey/libgtkembedmoz.so.${LIBgtkembedmoz_VERSION}
@@ -85,13 +84,10 @@
 @lib seamonkey/libldap50.so.${LIBldap50_VERSION}
 @lib seamonkey/libmozjs.so.${LIBmozjs_VERSION}
 @lib seamonkey/libmsgbaseutil.so.${LIBmsgbaseutil_VERSION}
-@lib seamonkey/libnss3.so.${LIBnss3_VERSION}
-@lib seamonkey/libnssckbi.so.${LIBnssckbi_VERSION}
 @lib seamonkey/libprldap50.so.${LIBprldap50_VERSION}
-@lib seamonkey/libsmime3.so.${LIBsmime3_VERSION}
-@lib seamonkey/libsoftokn3.so.${LIBsoftokn3_VERSION}
-@lib seamonkey/libssl3.so.${LIBssl3_VERSION}
 @lib seamonkey/libxpcom.so.${LIBxpcom_VERSION}
 @lib seamonkey/libxpcom_compat.so.${LIBxpcom_compat_VERSION}
 @lib seamonkey/libxpcom_core.so.${LIBxpcom_core_VERSION}
 @lib seamonkey/libxpistub.so.${LIBxpistub_VERSION}
+@lib seamonkey/plugins/libnullplugin.so.${LIBnullplugin_VERSION}
+@lib seamonkey/plugins/libunixprintplugin.so.${LIBunixprintplugin_VERSION}

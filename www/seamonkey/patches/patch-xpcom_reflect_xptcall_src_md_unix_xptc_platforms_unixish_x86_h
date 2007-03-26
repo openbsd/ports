@@ -1,14 +1,15 @@
-$OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_xptc_platforms_unixish_x86_h,v 1.1.1.1 2006/12/22 23:32:28 kurt Exp $
---- xpcom/reflect/xptcall/src/md/unix/xptc_platforms_unixish_x86.h.orig	Thu Jan  8 19:17:07 2004
-+++ xpcom/reflect/xptcall/src/md/unix/xptc_platforms_unixish_x86.h	Fri Nov 12 21:09:52 2004
+$OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_xptc_platforms_unixish_x86_h,v 1.2 2007/03/26 20:41:37 martynas Exp $
+--- xpcom/reflect/xptcall/src/md/unix/xptc_platforms_unixish_x86.h.orig	Thu Feb 23 21:37:11 2006
++++ xpcom/reflect/xptcall/src/md/unix/xptc_platforms_unixish_x86.h	Sun Feb 18 11:28:45 2007
 @@ -107,12 +107,16 @@
  #define THUNK_BASED_THIS_ADJUST
  
  #elif defined(__OpenBSD__) 
+-/* OpenBSD instroduces GCC 2.95.x in late May 1999 */
 +#if __GNUC__ >= 3
 +#define THUNK_BASED_THIS_ADJUST
 +#else
- /* OpenBSD instroduces GCC 2.95.x in late May 1999 */
++/* OpenBSD introduces GCC 2.95.x in late May 1999 */
  #include <sys/param.h>
  #if OpenBSD <= 199905
  #define THUNK_BASED_THIS_ADJUST
