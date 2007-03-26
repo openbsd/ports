@@ -1,20 +1,24 @@
-$OpenBSD: patch-etc_hiawatha_httpd_conf_in,v 1.1.1.1 2006/12/31 10:32:42 ajacoutot Exp $
---- etc/hiawatha/httpd.conf.in.orig	Thu Dec  7 11:11:51 2006
-+++ etc/hiawatha/httpd.conf.in	Wed Dec 20 14:57:37 2006
-@@ -7,13 +7,13 @@ Binding {
- #	TimeForRequest = 3,20
- }
+$OpenBSD: patch-etc_hiawatha_httpd_conf_in,v 1.2 2007/03/26 06:57:56 ajacoutot Exp $
+--- etc/hiawatha/httpd.conf.in.orig	Sat Feb 17 19:25:56 2007
++++ etc/hiawatha/httpd.conf.in	Sat Feb 17 19:29:43 2007
+@@ -4,7 +4,7 @@
  
+ # GENERAL SETTINGS
+ #
 -ServerId = 33:33
 +ServerId = _hiawatha:_hiawatha
  ConnectionsTotal = 150
  ConnectionsPerIP = 10
  SystemLogfile = @logdir@/system.log
--#CGIhandler = /usr/bin/php4-cgi:php
+@@ -45,9 +45,9 @@ Binding {
+ # These settings can be used to run CGI applications. Use the 'php-fcgi'
+ # tool to start PHP as a FastCGI daemon.
+ #
+-#CGIhandler = /usr/bin/php-cgi:php
 +#CGIhandler = !!LOCALBASE!!/bin/php:php
  #CGIhandler = /usr/bin/perl:pl
 -#CGIhandler = /usr/bin/python:py
 +#CGIhandler = !!LOCALBASE!!/bin/python:py
+ #CGIextension = cgi
+ #
  #TimeForCGI = 5
- #BanOnMaxPerIP = 2
- 

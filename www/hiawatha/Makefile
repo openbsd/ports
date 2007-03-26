@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/31 19:15:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/03/26 06:57:56 ajacoutot Exp $
 
 COMMENT=	"secure webserver"
 
-DISTNAME=	hiawatha-5.4
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	hiawatha-5.7
 CATEGORIES=	www net
 
 HOMEPAGE=	http://hiawatha.leisink.org
@@ -30,8 +29,8 @@ pre-configure:
 	perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g;' \
 		-e 's,!!SYSCONFDIR!!,${SYSCONFDIR},g' \
 		${WRKSRC}/etc/hiawatha/httpd.conf.in \
-		${WRKSRC}/etc/hiawatha/cgi_wrapper.conf \
-		${WRKSRC}/doc/cgi_wrapper.1 \
+		${WRKSRC}/etc/hiawatha/cgi-wrapper.conf \
+		${WRKSRC}/doc/cgi-wrapper.1 \
 		${WRKSRC}/doc/hiawatha.1
 
 post-install:
