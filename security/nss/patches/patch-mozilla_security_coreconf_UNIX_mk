@@ -1,0 +1,12 @@
+$OpenBSD: patch-mozilla_security_coreconf_UNIX_mk,v 1.1 2007/03/26 20:45:44 martynas Exp $
+--- mozilla/security/coreconf/UNIX.mk.orig	Sat Feb  5 03:35:47 2005
++++ mozilla/security/coreconf/UNIX.mk	Wed Mar 21 23:41:27 2007
+@@ -42,7 +42,7 @@ AR          = ar cr $@
+ LDOPTS     += -L$(SOURCE_LIB_DIR)
+ 
+ ifdef BUILD_OPT
+-	OPTIMIZER  += -O
++	OPTIMIZER  +=
+ 	DEFINES    += -UDEBUG -DNDEBUG
+ else
+ 	OPTIMIZER  += -g

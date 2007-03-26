@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_security_coreconf_OpenBSD_mk,v 1.1.1.1 2006/12/04 17:19:54 kurt Exp $
+$OpenBSD: patch-mozilla_security_coreconf_OpenBSD_mk,v 1.2 2007/03/26 20:45:44 martynas Exp $
 --- mozilla/security/coreconf/OpenBSD.mk.orig	Sun Apr 25 18:02:17 2004
-+++ mozilla/security/coreconf/OpenBSD.mk	Tue Nov 14 17:01:49 2006
-@@ -37,12 +37,12 @@
++++ mozilla/security/coreconf/OpenBSD.mk	Thu Mar 22 00:11:10 2007
+@@ -37,12 +37,11 @@
  
  include $(CORE_DEPTH)/coreconf/UNIX.mk
  
@@ -9,7 +9,6 @@ $OpenBSD: patch-mozilla_security_coreconf_OpenBSD_mk,v 1.1.1.1 2006/12/04 17:19:
 -CC			= gcc
 -CCC			= g++
 +DEFAULT_COMPILER	= ${CC}
-+#CC			= ${CC}
 +CCC			= ${CXX}
  RANLIB			= ranlib
  
@@ -18,7 +17,7 @@ $OpenBSD: patch-mozilla_security_coreconf_OpenBSD_mk,v 1.1.1.1 2006/12/04 17:19:
  ifeq ($(CPU_ARCH),i386)
  OS_REL_CFLAGS		= -Di386
  CPU_ARCH		= x86
-@@ -55,17 +55,19 @@ OS_LIBS			+= -pthread
+@@ -55,17 +54,19 @@ OS_LIBS			+= -pthread
  DSO_LDOPTS		+= -pthread
  endif
  
@@ -37,8 +36,7 @@ $OpenBSD: patch-mozilla_security_coreconf_OpenBSD_mk,v 1.1.1.1 2006/12/04 17:19:
 +DSO_LDOPTS		= -shared -fPIC -Wl,-soname,lib$(LIBRARY_NAME)$(LIBRARY_VERSION).$(DLL_SUFFIX)
  DSO_LDFLAGS		=
  
--MKSHLIB			= $(CC) $(DSO_LDOPTS)
-+MKSHLIB			= $(CC) -Wl,-Bsymbolic $(DSO_LDOPTS)
+ MKSHLIB			= $(CC) $(DSO_LDOPTS)
  
 +USE_SYSTEM_ZLIB		= 1
 +ZLIB_LIBS		= -lz
