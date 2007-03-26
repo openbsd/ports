@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2007/01/10 23:33:36 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.13 2007/03/26 05:57:30 mbalmer Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"DTP program"
-DISTNAME=	scribus-1.3.3.7
+DISTNAME=	scribus-1.3.3.8
 CATEGORIES=	print
 
 HOMEPAGE=	http://www.scribus.net/
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM?=Yes
 PERMIT_DISTFILES_FTP?=	Yes
 
 WANTLIB=	ICE SM X11 Xext c freetype gcrypt gnutls gpg-error \
-		m pthread stdc++ z util fontconfig
+		m pthread stdc++ z util fontconfig Xau Xdmcp expat
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scribus/}
 
