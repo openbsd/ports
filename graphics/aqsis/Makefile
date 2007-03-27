@@ -1,33 +1,18 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/27 10:33:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2007/03/27 17:08:00 ajacoutot Exp $
+
+SHARED_ONLY=	Yes
 
 COMMENT=	"photorealistic 3D rendering solution"
 
-DISTNAME=	aqsis-1.0.1
-PKGNAME=	${DISTNAME}p0
+V=		1.2.0
+DISTNAME=	aqsis-${V}
 CATEGORIES=	graphics
 
-SHARED_LIBS += argparse		0.0	# 0.0
-SHARED_LIBS += aqsistypes	0.0	# 0.0
-SHARED_LIBS += codegenvm	0.0	# 0.0
-SHARED_LIBS += rib2		0.0	# 0.0
-SHARED_LIBS += rib2ri		0.0	# 0.0
-SHARED_LIBS += rib2stream	0.0	# 0.0
-SHARED_LIBS += slparse		0.0	# 0.0
-SHARED_LIBS += shadervm		0.0	# 0.0
-SHARED_LIBS += shaderexecenv	0.0	# 0.0
-SHARED_LIBS += raytrace		0.0	# 0.0
-SHARED_LIBS += slpp		0.0	# 0.0
-SHARED_LIBS += ri2rib		0.0	# 0.0
-SHARED_LIBS += slxargs		0.0	# 0.0
-SHARED_LIBS += display		0.0	# 0.0
-SHARED_LIBS += ddmanager	0.0	# 0.0
-SHARED_LIBS += aqsis		0.0	# 0.0
-SHARED_LIBS += gif2tif		0.0	# 0.0
-SHARED_LIBS += jpg2tif		0.0	# 0.0
-SHARED_LIBS += ppm2tif		0.0	# 0.0
-SHARED_LIBS += pcx2tif		0.0	# 0.0
-SHARED_LIBS += tga2tif		0.0	# 0.0
-SHARED_LIBS += bake2tif		0.0	# 0.0
+SHARED_LIBS+=	aqsis		1.0 \
+		aqsistypes	1.0 \
+		ri2rib		1.0 \
+		shadervm	1.0 \
+		slxargs		1.0
 
 HOMEPAGE=	http://www.aqsis.org/
 
@@ -41,39 +26,50 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=aqsis/}
 
-WANTLIB=	X11 Xext c m stdc++ z
+WANTLIB=	c m stdc++ z
 
 BUILD_DEPENDS=	::textproc/libxslt \
-		:boost-headers-1.33.*:devel/boost
+		:boost-headers-1.33.*:devel/boost \
+		::devel/scons \
+		::devel/bison
 LIB_DEPENDS=	fltk.>=1::x11/fltk \
 		jpeg.>=62::graphics/jpeg \
-		tiff.>=38::graphics/tiff
+		tiff.>=38::graphics/tiff \
+		Half.>=3,Iex.>=3,IlmImf.>=3,Imath.>=3::graphics/openexr
 
-USE_X11=	Yes
-USE_LIBTOOL=	Yes
-CONFIGURE_STYLE=gnu
+NO_REGRESS=	Yes
 
-# This regression test wants an X11 display
-# and manual closing of rendered images
-REGRESS_IS_INTERACTIVE=Yes
-
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -fPIC" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-static
+MAKE_ENV+=	CC=${CC} CXX=${CXX} LDFLAGS="-L${X11BASE}/lib" VERSION_STR=1.2.0
 
 pre-configure:
-	perl -pi -e 's,PLUGIN_FLAGS="-ldl",PLUGIN_FLAGS="",g' \
-		${WRKSRC}/configure
-	perl -pi -e 's,libdisplay.so,libdisplay.so.${LIBdisplay_VERSION},g' \
-		${WRKSRC}/display/displays.ini
-	perl -pi -e 's,!!LIBdisplay_VERSION!!,${LIBdisplay_VERSION},g' \
-		${WRKSRC}/display/Makefile.in
-	@find ${WRKSRC} -name Makefile.in | \
-		xargs perl -pi -e 's,-I\$$\(top_srcdir\)/boost,,g'
+	perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' \
+		${WRKSRC}/platform/default/SConscript
+	perl -pi -e 's,major.*$$,major = ${LIBaqsis_VERSION:R},g;' \
+		-e 's,minor.*$$,minor = ${LIBaqsis_VERSION:E},g;' \
+		${WRKSRC}/version.py
+	perl -pi -e 's,VERSION_STR.*$$,VERSION_STR "${V}",g' \
+		${WRKSRC}/version.h.in
 
-do-regress:
-	@cd ${WRKBUILD} && \
-		${MAKE_PROGRAM} ${REGRESS_FLAGS} -f ${MAKE_FILE} ${REGRESS_TARGET}
+do-build:
+	@cd ${WRKSRC} && env -i ${MAKE_ENV} scons \
+		tiff_include_path=${LOCALBASE}/include \
+		tiff_lib_path=${LOCALBASE}/lib \
+		jpeg_include_path=${LOCALBASE}/include \
+		jpeg_lib_path=${LOCALBASE}/lib \
+		fltk_include_path=${LOCALBASE}/include \
+		fltk_lib_path=${LOCALBASE}/lib \
+		exr_include_path=${LOCALBASE}/include/OpenEXR \
+		exr_lib_path=${LOCALBASE}/include \
+		bison=/usr/local/bin/bison \
+		sysconfdir=${SYSCONFDIR} \
+		destdir=${DESTDIR} \
+		install_prefix='${PREFIX}' build
+
+do-install:
+	@cd ${WRKSRC} && env -i ${MAKE_ENV} scons
+		install_prefix='${PREFIX}'
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/aqsis
+	${INSTALL_DATA} ${WRKSRC}/build/aqsisrc \
+		${PREFIX}/share/examples/aqsis/
 
 .include <bsd.port.mk>
