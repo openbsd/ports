@@ -1,0 +1,25 @@
+$OpenBSD: patch-libs_libGraphics_HandleWindow_cpp,v 1.1 2007/03/27 20:12:59 martynas Exp $
+--- libs/libGraphics/HandleWindow.cpp.orig	Thu Dec 28 16:02:22 2006
++++ libs/libGraphics/HandleWindow.cpp	Tue Mar 27 18:03:53 2007
+@@ -233,11 +233,19 @@ void HandleWindow::camRotate(bool active) {
+ 
+ void HandleWindow::save() {
+   QString fn = QFileDialog::getSaveFileName();
+-  HPrintFunction(0,singleArrayVector(Array::stringConstructor(fn.toStdString())));
++  try {
++    HPrintFunction(0,singleArrayVector(Array::stringConstructor(fn.toStdString())));
++  } catch(Exception &e) {
++    QMessageBox::critical(0,"Critical Error in Save",QString::fromStdString(e.getMessageCopy()));
++  }
+ }
+ 
+ void HandleWindow::copy() {
+-  HCopyFunction(0,ArrayVector());
++  try {
++    HCopyFunction(0,ArrayVector());
++  } catch(Exception &e) {
++    QMessageBox::critical(0,"Critical Error in Copy",QString::fromStdString(e.getMessageCopy()));
++  }
+ }
+ 
+ void HandleWindow::createActions() {
