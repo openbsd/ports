@@ -1,0 +1,65 @@
+Base kde applications. Selected highlights:
+
+* dolphin
+    The new kde4 file manager.
+
+* drkonqi
+    If ever an app crashes (heaven forbid!) then Dr.Konqi will be so kind
+    and make a stack trace. This is a great help for the developers to fix
+    the bug.
+
+* kappfinder
+    Searches for non-KDE applications, e.g. Acrobat Reader (tm) and installs
+    those apps under the K start button.
+
+* kate
+    A fast and advanced text editor, extensible with nice plugins.
+
+* kcontrol
+    The KDE Control Center allows you to tweak the KDE settings (non fonctional
+    in this snapshot).
+
+* kdebugdialog
+    Allows you to specify which debug messages you want to see.
+
+* kdialog
+    Allows to display menu boxes from shell scripts.
+
+* kdm
+    Replacement for XDM, for those people that like graphical logins.
+
+* kfind
+    File find utility (standalone and in Konqueror's file manager).
+
+* khelpcenter
+    Used to to read all great documentation about KDE, unix man pages,
+    info pages etc (lots of quirks still)
+
+* kicker
+    The panel at the botton with the K start button and the taskbar etc.
+
+* klipper
+    Taskbar applet that enhances and extenses the X clipboard.
+
+* konqueror
+    The file manager and web browser you get easily used to.
+
+* konsole
+    A shell program similar to xterm.
+
+* kreadconfig
+    A tool for shell scripts to get info from KDE's config files.
+
+* krichtexteditor
+    A embeddable rich text editor and a wrapper application for it.
+
+* kscreensaver
+    The KDE screensaver environment and some basic screensavers. More
+    of them are in the kdeartwork package.
+
+* ksysguard
+    Task manager and system monitor, can work with remote systems.
+
+* kwin
+    The KDE window manager (moves, resizes and decorates windows).
+
