@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/03/17 21:43:20 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2007/03/27 11:04:48 espie Exp $
 
 COMMENT=	"library to determine file type"
 V=		4.20
 DISTNAME= 	file-${V}
-PKGNAME=	libmagic-${V}
+PKGNAME=	libmagic-${V}p0
 SHARED_LIBS=	magic	1.0
 CATEGORIES=	sysutils
 
@@ -21,5 +21,6 @@ MASTER_SITES=	ftp://ftp.astron.com/pub/file/
 
 WANTLIB=	z 
 CONFIGURE_STYLE=gnu
+USE_LIBTOOL=	Yes
 
 .include <bsd.port.mk>
