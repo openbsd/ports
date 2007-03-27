@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1 2007/03/27 09:25:26 djm Exp $
+--- setup.py.orig	Tue Mar 27 19:22:33 2007
++++ setup.py	Tue Mar 27 19:23:10 2007
+@@ -30,7 +30,7 @@ setup(
+ 
+     py_modules = ['pkg_resources', 'easy_install', 'site'],
+ 
+-    zip_safe = (sys.version>="2.5"),   # <2.5 needs unzipped for -m to work
++    zip_safe = False,
+ 
+     entry_points = {
+ 
