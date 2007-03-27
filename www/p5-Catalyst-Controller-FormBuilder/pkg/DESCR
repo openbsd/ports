@@ -1,0 +1,5 @@
+This plugin merges the functionality of CGI::FormBuilder with Catalyst
+and the following templating systems: Template Toolkit, Mason and
+HTML::Template.  This gives you access to all of FormBuilder's
+niceties, such as controllable field stickiness, multilingual support
+and Javascript generation.
