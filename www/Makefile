@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.266 2007/03/22 22:38:36 robert Exp $
+# $OpenBSD: Makefile,v 1.267 2007/03/27 21:24:14 simon Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -109,6 +109,7 @@
      SUBDIR += p5-CSS-Squish
      SUBDIR += p5-CSS-Tiny
      SUBDIR += p5-Catalyst-Action-RenderView
+     SUBDIR += p5-Catalyst-Controller-FormBuilder
      SUBDIR += p5-Catalyst-Devel
      SUBDIR += p5-Catalyst-Engine-Apache
      SUBDIR += p5-Catalyst-Engine-HTTP-POE
