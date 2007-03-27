@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/10/28 10:30:41 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2007/03/27 12:18:36 sturm Exp $
 
 COMMENT=	"integer-only, fully Ogg Vorbis compliant decoder library"
 DISTNAME=	tremor-20050411
@@ -21,8 +21,8 @@ USE_LIBTOOL=	Yes
 AUTOCONF_VERSION=2.59
 AUTOMAKE_VERSION=1.4
 
-BUILD_DEPENDS=	::devel/autoconf/${AUTOCONF_VERSION} \
-		::devel/automake/${AUTOMAKE_VERSION} \
+BUILD_DEPENDS=	:autoconf-${AUTOCONF_VERSION}*:devel/autoconf/${AUTOCONF_VERSION} \
+		:automake-${AUTOMAKE_VERSION}*:devel/automake/${AUTOMAKE_VERSION} \
 		::devel/metaauto
 
 WRKDIST=	${WRKDIR}/Tremor
