@@ -1,6 +1,6 @@
-$OpenBSD: patch-security_coreconf_OpenBSD_mk,v 1.7 2007/03/01 22:46:06 robert Exp $
+$OpenBSD: patch-security_coreconf_OpenBSD_mk,v 1.8 2007/03/27 16:04:37 martynas Exp $
 --- security/coreconf/OpenBSD.mk.orig	Sun Apr 25 18:02:17 2004
-+++ security/coreconf/OpenBSD.mk	Fri Feb 23 21:56:45 2007
++++ security/coreconf/OpenBSD.mk	Thu Mar 22 20:29:45 2007
 @@ -42,7 +42,7 @@ CC			= gcc
  CCC			= g++
  RANLIB			= ranlib
@@ -19,7 +19,7 @@ $OpenBSD: patch-security_coreconf_OpenBSD_mk,v 1.7 2007/03/01 22:46:06 robert Ex
  
  OS_CFLAGS		= $(DSO_CFLAGS) $(OS_REL_CFLAGS) -ansi -Wall -pipe -DOPENBSD
  
-@@ -64,8 +64,8 @@ OS_LIBS			= 
+@@ -64,7 +64,7 @@ OS_LIBS			= 
  ARCH			= openbsd
  
  DSO_CFLAGS		= -fPIC -DPIC
@@ -27,6 +27,4 @@ $OpenBSD: patch-security_coreconf_OpenBSD_mk,v 1.7 2007/03/01 22:46:06 robert Ex
 +DSO_LDOPTS		= -shared -fPIC -Wl,-soname,lib$(LIBRARY_NAME)$(LIBRARY_VERSION).$(DLL_SUFFIX)
  DSO_LDFLAGS		=
  
--MKSHLIB			= $(CC) $(DSO_LDOPTS)
-+MKSHLIB			= $(CC) -Wl,-Bsymbolic $(DSO_LDOPTS)
- 
+ MKSHLIB			= $(CC) $(DSO_LDOPTS)

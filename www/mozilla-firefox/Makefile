@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.70 2007/03/06 17:43:36 espie Exp $
+# $OpenBSD: Makefile,v 1.71 2007/03/27 16:04:37 martynas Exp $
 
+SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 
 COMMENT-main=	"redesign of Mozilla's browser component"
 COMMENT-devel=	"devel files for Gecko"
 
-VER=		2.0.0.2
+VER=		2.0.0.3
 DISTNAME=	mozilla
 PKGNAME=	mozilla-firefox-${VER}
-PKGNAME-main=	mozilla-firefox-${VER}p2
-PKGNAME-devel=	mozilla-firefox-devel-${VER}p1
+PKGNAME-main=	mozilla-firefox-${VER}
+PKGNAME-devel=	mozilla-firefox-devel-${VER}
 SO_VERSION=	19.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -80,7 +81,7 @@ CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 		--with-system-nss		\
 		--with-pthreads			\
 		--enable-xft			\
-		--enable-optimize=-Os		\
+		--disable-optimize		\
 		--enable-default-toolkit=gtk2	\
 		--disable-debug			\
 		--disable-tests			\
