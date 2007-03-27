@@ -1,0 +1,11 @@
+$OpenBSD: patch-renderer_ddmanager_ddmanager_cpp,v 1.1 2007/03/27 17:09:15 ajacoutot Exp $
+--- renderer/ddmanager/ddmanager.cpp.orig	Mon Feb 19 17:50:22 2007
++++ renderer/ddmanager/ddmanager.cpp	Mon Feb 19 17:51:05 2007
+@@ -39,6 +39,7 @@
+ #include	"ndspy.h"
+ #include	"version.h"
+ #include	"debugdd.h"
++#include	<unistd.h>
+ 
+ START_NAMESPACE( Aqsis )
+ 

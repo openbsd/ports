@@ -1,0 +1,12 @@
+$OpenBSD: patch-SConstruct,v 1.1 2007/03/27 17:09:15 ajacoutot Exp $
+--- SConstruct.orig	Wed Feb 21 14:37:17 2007
++++ SConstruct	Wed Feb 21 14:37:28 2007
+@@ -351,7 +351,7 @@ def aqsis_rc_build(target, source, env):
+ 		aqsisrc_in.close()
+ 
+ aqsisrc = env.Command(prependBuildDir('aqsisrc'), 'aqsisrc.in', aqsis_rc_build)
+-env.Install('$SYSCONFDIR', aqsisrc)
++#env.Install('$SYSCONFDIR', aqsisrc)
+ env.Depends(aqsisrc, display)
+ 
+ #

@@ -1,0 +1,11 @@
+$OpenBSD: patch-renderer_render_blobby_cpp,v 1.1 2007/03/27 17:09:15 ajacoutot Exp $
+--- renderer/render/blobby.cpp.orig	Tue Feb 20 17:54:54 2007
++++ renderer/render/blobby.cpp	Tue Feb 20 17:55:12 2007
+@@ -33,6 +33,7 @@
+ #include <vector>
+ #include <list>
+ #include <limits>
++#include <unistd.h>
+ 
+ #include "aqsis.h"
+ #include "ri.h"

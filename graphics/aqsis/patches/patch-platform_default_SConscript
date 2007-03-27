@@ -1,0 +1,49 @@
+$OpenBSD: patch-platform_default_SConscript,v 1.1 2007/03/27 17:09:15 ajacoutot Exp $
+--- platform/default/SConscript.orig	Sun Feb  4 11:44:55 2007
++++ platform/default/SConscript	Thu Feb 22 11:05:05 2007
+@@ -24,7 +24,7 @@ if not env['debug']:
+ 
+ # Point at the boost headers.
+ # todo: need to find a way of determining this location automatically
+-env.Replace(boost_include_path = ['/usr/include/boost'])
++env.Replace(boost_include_path = ['!!LOCALBASE!!/include'])
+ 
+ # Find out where the TIFF headers are, look in common places.
+ tiffiofile = env.FindFile('tiffio.h', ['$tiff_include_path', '/usr/include'])
+@@ -131,7 +131,7 @@ if env.subst('$destdir') != '':
+ env.AppendUnique(CPPDEFINES=[('DEFAULT_RC_PATH', '\\"' + env.Dir('$SYSCONFDIR').abspath + '\\"')])
+ env.AppendUnique(CPPDEFINES=[('DEFAULT_SHADER_PATH', '\\"' + env.Dir('$SHADERDIR').abspath + '\\"')])
+ env.Replace(SHLIB_VERSION_SUFFIX = '.%d.%d' %(version.major, version.minor))
+-env.AppendUnique(SHLINKFLAGS=['-Wl,-soname=${TARGET.file}.%d' %version.major])
++env.AppendUnique(SHLINKFLAGS=['-Wl,-soname=${TARGET.file}'])
+ 
+ if not env['no_rpath']:
+ 	env.AppendUnique(RPATH=[env.Dir('$RENDERENGINEDIR').abspath])
+@@ -140,7 +140,7 @@ if not env['no_rpath']:
+ env.PrependENVPath('LD_LIBRARY_PATH', env.Dir('$build_prefix/aqsistypes').abspath)
+ 
+ env.Replace(slparse_ccflags = ['-O0'])
+-env.Replace(aqsistypes_libs = ['dl'])
++#env.Replace(aqsistypes_libs = ['dl'])
+ 
+ def Symlink(dest, src):
+ 	def _symlink_func(target, source, env, dest=dest, src=src):
+@@ -158,12 +158,12 @@ def Symlink(dest, src):
+ def PostInstallSharedLibrary(env, dir, source):
+ 	basename = os.path.join('%s', '%s') %(dir, source[0])
+ 	sourcename = os.path.join('%s', '%s${SHLIB_VERSION_SUFFIX}') %(dir, source[0])
+-	if env.subst('$destdir') != '':
+-		env.Command(os.path.join('$DESTDIR', '%s.%d' %(basename, version.major)), os.path.join('$DESTDIR', '%s' %(sourcename)), Symlink(os.path.join('$DESTDIR', '%s.%d' %(basename, version.major)), sourcename))
+-		env.Command(os.path.join('$DESTDIR', '%s' %(basename)), os.path.join('$DESTDIR', '%s' %(sourcename)), Symlink(os.path.join('$DESTDIR', '%s' %(basename)), sourcename))
+-	else:
+-		env.Command('%s.%d' %(basename, version.major), sourcename, Symlink('%s.%d' %(basename, version.major), sourcename))
+-		env.Command('%s' %(basename), sourcename, Symlink('%s' %(basename), sourcename))
++#	if env.subst('$destdir') != '':
++#		env.Command(os.path.join('$DESTDIR', '%s.%d' %(basename, version.major)), os.path.join('$DESTDIR', '%s' %(sourcename)), Symlink(os.path.join('$DESTDIR', '%s.%d' %(basename, version.major)), sourcename))
++#		env.Command(os.path.join('$DESTDIR', '%s' %(basename)), os.path.join('$DESTDIR', '%s' %(sourcename)), Symlink(os.path.join('$DESTDIR', '%s' %(basename)), sourcename))
++#	else:
++#		env.Command('%s.%d' %(basename, version.major), sourcename, Symlink('%s.%d' %(basename, version.major), sourcename))
++#		env.Command('%s' %(basename), sourcename, Symlink('%s' %(basename), sourcename))
+ 
+ env.PostInstallSharedLibrary = PostInstallSharedLibrary
+ 
