@@ -9,13 +9,14 @@ MODQT_OVERRIDE_UIC?=	No
 SHARED_ONLY?=		Yes
 
 MODULES+=		devel/cmake
+BUILD_DEPENDS+=		:cmake->=2.4.6p1:devel/cmake
 CONFIGURE_STYLE?=	cmake
 
 EXTRACT_SUFX=		.tar.bz2
 MASTER_SITES?=	${MASTER_SITE_KDE:=unstable/${VERSION}/src/}
 
 
-# GPL
+# GPL (LGPL for the central libraries)
 PERMIT_DISTFILES_CDROM?=	Yes
 PERMIT_DISTFILES_FTP?=		Yes
 PERMIT_PACKAGE_CDROM?=		Yes

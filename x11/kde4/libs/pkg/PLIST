@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/03/22 22:24:33 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/03/27 09:45:56 espie Exp $
 bin/checkXML
 bin/fileshareset
 bin/imagetops
@@ -1954,20 +1954,15 @@ lib/kde4/plugins/styles/plastik.so
 lib/kde4/solid_fakehw.so
 lib/kde4/solid_fakenet.so
 lib/libkaudiodevicelist.so
-lib/libkaudiodevicelist.so.4
-lib/libkaudiodevicelist.so.4.0.0
+@lib lib/libkaudiodevicelist.so.${LIBkaudiodevicelist_VERSION}
 lib/libkde3support.so
-lib/libkde3support.so.4
-lib/libkde3support.so.4.0.0
+@lib lib/libkde3support.so.${LIBkde3support_VERSION}
 lib/libkdecore.so
-lib/libkdecore.so.5
-lib/libkdecore.so.5.0.0
+@lib lib/libkdecore.so.${LIBkdecore_VERSION}
 lib/libkdefakes.so
-lib/libkdefakes.so.5
-lib/libkdefakes.so.5.0.0
+@lib lib/libkdefakes.so.${LIBkdefakes_VERSION}
 lib/libkdefx.so
-lib/libkdefx.so.5
-lib/libkdefx.so.5.0.0
+@lib lib/libkdefx.so.${LIBkdefx_VERSION}
 lib/libkdeinit_kaddprinterwizard.so
 lib/libkdeinit_kbuildsycoca.so
 lib/libkdeinit_kbuildsycoca.so.4
@@ -1978,92 +1973,63 @@ lib/libkdeinit_kio_http_cache_cleaner.so
 lib/libkdeinit_klauncher.so
 lib/libkdeinit_knotify.so
 lib/libkdeprint.so
-lib/libkdeprint.so.5
-lib/libkdeprint.so.5.0.0
+@lib lib/libkdeprint.so.${LIBkdeprint_VERSION}
 lib/libkdeprint_management.so
-lib/libkdeprint_management.so.5
-lib/libkdeprint_management.so.5.0.0
+@lib lib/libkdeprint_management.so.${LIBkdeprint_management_VERSION}
 lib/libkdesu.so
-lib/libkdesu.so.5
-lib/libkdesu.so.5.0.0
+@lib lib/libkdesu.so.${LIBkdesu_VERSION}
 lib/libkdeui.so
-lib/libkdeui.so.5
-lib/libkdeui.so.5.0.0
+@lib lib/libkdeui.so.${LIBkdeui_VERSION}
 lib/libkdnssd.so
-lib/libkdnssd.so.2
-lib/libkdnssd.so.2.0.0
+@lib lib/libkdnssd.so.${LIBkdnssd_VERSION}
 lib/libkhtml.so
-lib/libkhtml.so.5
-lib/libkhtml.so.5.0.0
+@lib lib/libkhtml.so.${LIBkhtml_VERSION}
 lib/libkimproxy.so
-lib/libkimproxy.so.4
-lib/libkimproxy.so.4.0.0
+@lib lib/libkimproxy.so.${LIBkimproxy_VERSION}
 lib/libkio.so
-lib/libkio.so.5
-lib/libkio.so.5.0.0
+@lib lib/libkio.so.${LIBkio_VERSION}
 lib/libkjs.so
-lib/libkjs.so.2
-lib/libkjs.so.2.0.0
+@lib lib/libkjs.so.${LIBkjs_VERSION}
 lib/libkjsembed.so
-lib/libkjsembed.so.4
-lib/libkjsembed.so.4.0.0
+@lib lib/libkjsembed.so.${LIBkjsembed_VERSION}
 lib/libkmediaplayer.so
-lib/libkmediaplayer.so.4
-lib/libkmediaplayer.so.4.0.0
+@lib lib/libkmediaplayer.so.${LIBkmediaplayer_VERSION}
 lib/libknewstuff.so
-lib/libknewstuff.so.4
-lib/libknewstuff.so.4.0.0
+@lib lib/libknewstuff.so.${LIBknewstuff_VERSION}
 lib/libknotifyconfig.so
-lib/libknotifyconfig.so.4
-lib/libknotifyconfig.so.4.0.0
+@lib lib/libknotifyconfig.so.${LIBknotifyconfig_VERSION}
 lib/libkntlm.so
-lib/libkntlm.so.1
-lib/libkntlm.so.1.0.0
+@lib lib/libkntlm.so.${LIBkntlm_VERSION}
 lib/libkparts.so
-lib/libkparts.so.4
-lib/libkparts.so.4.0.0
+@lib lib/libkparts.so.${LIBkparts_VERSION}
 lib/libkrosscore.so
-lib/libkrosscore.so.4
-lib/libkrosscore.so.4.0.0
+@lib lib/libkrosscore.so.${LIBkrosscore_VERSION}
 lib/libktexteditor.so
-lib/libktexteditor.so.4
-lib/libktexteditor.so.4.0.0
+@lib lib/libktexteditor.so.${LIBktexteditor_VERSION}
 lib/libkunittest.so
-lib/libkunittest.so.4
-lib/libkunittest.so.4.0.0
+@lib lib/libkunittest.so.${LIBkunittest_VERSION}
 lib/libkutils.so
-lib/libkutils.so.2
-lib/libkutils.so.2.0.0
+@lib lib/libkutils.so.${LIBkutils_VERSION}
 lib/libkwalletbackend.so
-lib/libkwalletbackend.so.4
-lib/libkwalletbackend.so.4.0.0
+@lib lib/libkwalletbackend.so.${LIBkwalletbackend_VERSION}
 lib/libkwalletclient.so
-lib/libkwalletclient.so.4
-lib/libkwalletclient.so.4.0.0
+@lib lib/libkwalletclient.so.${LIBkwalletclient_VERSION}
 lib/libkxmlcore.so
-lib/libkxmlcore.so.4
-lib/libkxmlcore.so.4.0.0
+@lib lib/libkxmlcore.so.${LIBkxmlcore_VERSION}
 lib/libphononcore.so
-lib/libphononcore.so.4
-lib/libphononcore.so.4.0.0
+@lib lib/libphononcore.so.${LIBphononcore_VERSION}
 lib/libphononui.so
-lib/libphononui.so.4
-lib/libphononui.so.4.0.0
+@lib lib/libphononui.so.${LIBphononui_VERSION}
 lib/libsolid.so
-lib/libsolid.so.4
-lib/libsolid.so.4.0.0
+@lib lib/libsolid.so.${LIBsolid_VERSION}
 lib/libsolidifaces.so
-lib/libsolidifaces.so.4
-lib/libsolidifaces.so.4.0.0
+@lib lib/libsolidifaces.so.${LIBsolidifaces_VERSION}
 lib/libsonnetcore.so
-lib/libsonnetcore.so.4
-lib/libsonnetcore.so.4.0.0
+@lib lib/libsonnetcore.so.${LIBsonnetcore_VERSION}
 lib/libsonnetui.so
-lib/libsonnetui.so.4
-lib/libsonnetui.so.4.0.0
+@lib lib/libsonnetui.so.${LIBsonnetui_VERSION}
 lib/libthreadweaver.so
-lib/libthreadweaver.so.4
-lib/libthreadweaver.so.4.0.0
+@lib lib/libthreadweaver.so.${LIBthreadweaver_VERSION}
 share/apps/
 share/apps/LICENSES/
 share/apps/LICENSES/ARTISTIC
