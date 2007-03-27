@@ -1,0 +1,28 @@
+This module includes libraries that are central to the development and
+execution of a KDE-PIM application.
+
+The KDE-PIM project aims to bring together those who wish to help design,
+implement, test, etc. anything that's to do with personal information
+management.
+
+The kdepimlibs module exists to:
+
+1. restrain the size of the kdepim module
+2. co-locate code in kdelibs which is closely associated to kdepim
+  (i.e.,kresources and kabc).  That this code is in kdelibs, but
+  other similar code like libkcal is not, can only be understood by
+  historical  reasons.
+3. provide access to the PIM libraries for code from other modules.
+
+In summary, kdepimlibs is a controlled extension and modularization of
+kdelibs to the PIM space.
+
+Currently, kdepimlibs includes:
+
+* kcal: C++ API for the iCalendar and vCalendar formats
+* kcal/libical: a basic iCalendar protocol implementation, see RFCs 2245,2246
+* kldap: C++ API for LDAP access
+* kmime: C++ API for MIME handling
+* ktnef: C++ API for the handling of TNEF data
+* kxmlrpclient: An XML-RPC client library
+* syndication: An RSS/Atom feed parser library

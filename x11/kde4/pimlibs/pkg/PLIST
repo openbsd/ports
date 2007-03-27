@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/03/22 22:24:32 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/03/27 11:11:40 espie Exp $
 bin/kab2kabc
 include/emailfunctions/
 include/emailfunctions/email.h
@@ -229,35 +229,25 @@ lib/kde4/kcal_local.so
 lib/kde4/kcal_localdir.so
 lib/kde4/kcm_kresources.so
 lib/libemailfunctions.so
-lib/libemailfunctions.so.4
-lib/libemailfunctions.so.4.0.0
+@lib lib/libemailfunctions.so.${LIBemailfunctions_VERSION}
 lib/libkabc.so
-lib/libkabc.so.4
-lib/libkabc.so.4.0.0
+@lib lib/libkabc.so.${LIBkabc_VERSION}
 lib/libkabc_file_core.so
-lib/libkabc_file_core.so.4
-lib/libkabc_file_core.so.4.0.0
+@lib lib/libkabc_file_core.so.${LIBkabc_file_core_VERSION}
 lib/libkcal.so
-lib/libkcal.so.4
-lib/libkcal.so.4.0.0
+@lib lib/libkcal.so.${LIBkcal_VERSION}
 lib/libkldap.so
-lib/libkldap.so.4
-lib/libkldap.so.4.0.0
+@lib lib/libkldap.so.${LIBkldap_VERSION}
 lib/libkmime.so
-lib/libkmime.so.4
-lib/libkmime.so.4.0.0
+@lib lib/libkmime.so.${LIBkmime_VERSION}
 lib/libkresources.so
-lib/libkresources.so.4
-lib/libkresources.so.4.0.0
+@lib lib/libkresources.so.${LIBkresources_VERSION}
 lib/libktnef.so
-lib/libktnef.so.4
-lib/libktnef.so.4.0.0
+@lib lib/libktnef.so.${LIBktnef_VERSION}
 lib/libkxmlrpcclient.so
-lib/libkxmlrpcclient.so.4
-lib/libkxmlrpcclient.so.4.0.0
+@lib lib/libkxmlrpcclient.so.${LIBkxmlrpcclient_VERSION}
 lib/libsyndication.so
-lib/libsyndication.so.1
-lib/libsyndication.so.1.0.0
+@lib lib/libsyndication.so.${LIBsyndication_VERSION}
 share/apps/
 share/apps/cmake/
 share/apps/cmake/modules/
