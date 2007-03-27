@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/03/22 22:24:32 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/03/27 18:06:03 espie Exp $
 bin/atlantik
 bin/kasteroids
 bin/katomic
@@ -107,29 +107,21 @@ include/kstandardgameaction.h
 include/kzoommainwindow.h
 include/libkdegames_export.h
 include/libkmahjongg_export.h
-lib/kde4/
 lib/kde4/kio_atlantik.so
 lib/libatlantic.so
-lib/libatlantic.so.4
-lib/libatlantic.so.4.0.0
+@lib lib/libatlantic.so.${LIBatlantic_VERSION}
 lib/libatlantikclient.so
-lib/libatlantikclient.so.4
-lib/libatlantikclient.so.4.0.0
+@lib lib/libatlantikclient.so.${LIBatlantikclient_VERSION}
 lib/libatlantikui.so
-lib/libatlantikui.so.4
-lib/libatlantikui.so.4.0.0
+@lib lib/libatlantikui.so.${LIBatlantikui_VERSION}
 lib/libkdegames.so
-lib/libkdegames.so.4
-lib/libkdegames.so.4.0.0
+@lib lib/libkdegames.so.${LIBkdegames_VERSION}
 lib/libkmahjongglib.so
-lib/libkmahjongglib.so.1
-lib/libkmahjongglib.so.1.0.0
+@lib lib/libkmahjongglib.so.${LIBkmahjongglib_VERSION}
 lib/libkolflib.so
-lib/libkolflib.so.1
-lib/libkolflib.so.1.2.0
+@lib lib/libkolflib.so.${LIBkolflib_VERSION}
 lib/libksirtetlib.so
-lib/libksirtetlib.so.1
-lib/libksirtetlib.so.1.2.0
+@lib lib/libksirtetlib.so.${LIBksirtetlib_VERSION}
 share/applications/
 share/applications/kde/
 share/applications/kde/KGoldrunner.desktop
@@ -163,7 +155,6 @@ share/applications/kde/ktron.desktop
 share/applications/kde/ktuberling.desktop
 share/applications/kde/kwin4.desktop
 share/applications/kde/lskat.desktop
-share/apps/
 share/apps/atlantik/
 share/apps/atlantik/atlantik.notifyrc
 share/apps/atlantik/atlantikui.rc
@@ -920,8 +911,6 @@ share/apps/carddecks/svg-nicu-white/AUTHORS
 share/apps/carddecks/svg-nicu-white/COPYING
 share/apps/carddecks/svg-nicu-white/index.desktop
 share/apps/carddecks/svg-nicu-white/white.svgz
-share/apps/cmake/
-share/apps/cmake/modules/
 share/apps/cmake/modules/FindLibKDEGames.cmake
 share/apps/kasteroids/
 share/apps/kasteroids/kasteroidsui.rc
@@ -1707,7 +1696,6 @@ share/apps/lskat/grafix/t4.png
 share/apps/lskat/lskatui.rc
 share/apps/zeroconf/
 share/apps/zeroconf/_kbattleship._tcp
-share/config/
 share/config.kcfg/
 share/config.kcfg/kasteroids.kcfg
 share/config.kcfg/kfouleggs.kcfg
@@ -1722,8 +1710,6 @@ share/config.kcfg/ktron.kcfg
 share/config.kcfg/kwin4.kcfg
 share/config/magic/
 share/config/magic/kolf.magic
-share/doc/HTML/
-share/doc/HTML/en/
 share/doc/HTML/en/atlantik/
 share/doc/HTML/en/atlantik/index.cache.bz2
 share/doc/HTML/en/atlantik/index.docbook
@@ -1872,36 +1858,23 @@ share/doc/HTML/en/ktuberling/toolbar.png
 share/doc/HTML/en/kwin4/
 share/doc/HTML/en/kwin4/index.cache.bz2
 share/doc/HTML/en/kwin4/index.docbook
-share/icons/
-share/icons/crystalsvg/
-share/icons/crystalsvg/16x16/
-share/icons/crystalsvg/16x16/actions/
 share/icons/crystalsvg/16x16/actions/endturn.png
 share/icons/crystalsvg/16x16/actions/highscore.png
 share/icons/crystalsvg/16x16/actions/lastmoves.png
 share/icons/crystalsvg/16x16/actions/legalmoves.png
 share/icons/crystalsvg/16x16/actions/roll.png
-share/icons/crystalsvg/22x22/
-share/icons/crystalsvg/22x22/actions/
 share/icons/crystalsvg/22x22/actions/lastmoves.png
 share/icons/crystalsvg/22x22/actions/legalmoves.png
 share/icons/crystalsvg/22x22/actions/roll.png
-share/icons/crystalsvg/32x32/
-share/icons/crystalsvg/32x32/actions/
 share/icons/crystalsvg/32x32/actions/endturn.png
 share/icons/crystalsvg/32x32/actions/highscore.png
 share/icons/crystalsvg/32x32/actions/lastmoves.png
 share/icons/crystalsvg/32x32/actions/legalmoves.png
 share/icons/crystalsvg/32x32/actions/roll.png
-share/icons/crystalsvg/48x48/
-share/icons/crystalsvg/48x48/actions/
 share/icons/crystalsvg/48x48/actions/lastmoves.png
 share/icons/crystalsvg/48x48/actions/legalmoves.png
-share/icons/crystalsvg/scalable/
-share/icons/crystalsvg/scalable/actions/
 share/icons/crystalsvg/scalable/actions/lastmoves.svgz
 share/icons/crystalsvg/scalable/actions/legalmoves.svgz
-share/icons/hicolor/
 share/icons/hicolor/128x128/
 share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/kasteroids.png
@@ -2095,10 +2068,7 @@ share/icons/hicolor/64x64/apps/ktron.png
 share/icons/hicolor/64x64/apps/ktuberling.png
 share/icons/hicolor/64x64/apps/kwin4.png
 share/icons/hicolor/64x64/apps/lskat.png
-share/mimelnk/
-share/mimelnk/application/
 share/mimelnk/application/x-kolf.desktop
 share/mimelnk/application/x-kourse.desktop
 share/mimelnk/application/x-tuberling.desktop
-share/services/
 share/services/atlantik.protocol
