@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/03/23 23:41:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2007/03/28 20:23:10 naddy Exp $
 
 COMMENT=		"gnome music player client"
 
@@ -33,9 +33,7 @@ CONFIGURE_STYLE=	gnu
 BUILD_DEPENDS=		::textproc/p5-XML-Parser
 
 CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \
-			CPPFLAGS="-I${LOCALBASE}/include" \
-			sm_CFLAGS="-I/usr/X11R6/include" \
-			sm_LIBS="-L/usr/X11R6/lib"
+			CPPFLAGS="-I${LOCALBASE}/include"
 
 LIB_DEPENDS=		mpd:libmpd->=0.13:audio/libmpd \
 			glade-2.0::devel/libglade2 \
