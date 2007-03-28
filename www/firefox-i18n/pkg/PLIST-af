@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-af,v 1.1 2007/03/02 15:59:15 pvalchev Exp $
+@comment $OpenBSD: PLIST-af,v 1.2 2007/03/28 07:27:07 martynas Exp $
 mozilla-firefox/extensions/langpack-af@firefox.mozilla.org/
 mozilla-firefox/extensions/langpack-af@firefox.mozilla.org/chrome/
 mozilla-firefox/extensions/langpack-af@firefox.mozilla.org/chrome.manifest
-mozilla-firefox/extensions/langpack-af@firefox.mozilla.org/chrome/chromelist.txt
 mozilla-firefox/extensions/langpack-af@firefox.mozilla.org/chrome/af.jar
+mozilla-firefox/extensions/langpack-af@firefox.mozilla.org/chrome/chromelist.txt
 mozilla-firefox/extensions/langpack-af@firefox.mozilla.org/install.rdf
