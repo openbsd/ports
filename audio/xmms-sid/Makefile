@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/11/11 21:04:27 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2007/03/28 19:05:43 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -28,5 +28,6 @@ USE_X11=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-sidplay-prefix=${LOCALBASE}
+LIBTOOL_FLAGS=	--tag=disable-static
 
 .include <bsd.port.mk>

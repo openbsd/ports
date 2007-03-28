@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/11 21:04:27 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/03/28 19:05:43 naddy Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	"Ogg Vorbis input plugin for XMMS using tremor"
 DISTNAME=	xmms-tremor-1.0
+PKGNAME=	${DISTNAME}p0
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	audio
 MASTER_SITES=	http://mirror1.pdaxrom.org/source/src/
@@ -23,5 +24,6 @@ USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+LIBTOOL_FLAGS=	--tag=disable-static
 
 .include <bsd.port.mk>

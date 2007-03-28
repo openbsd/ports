@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2007/01/14 18:48:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2007/03/28 19:05:43 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -27,5 +27,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
+LIBTOOL_FLAGS=	--tag=disable-static
 
 .include <bsd.port.mk>
