@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2007/02/02 13:18:30 espie Exp $
+# $OpenBSD: Makefile,v 1.78 2007/03/28 00:21:06 espie Exp $
 
 COMMENT-main=		"K Desktop Environment, libraries"
 COMMENT-cups=		"K Desktop Environment, cups support"
@@ -9,7 +9,7 @@ MASTER_SITES0=  ftp://ftp.kde.org/pub/kde/security_patches/
 #PATCHFILES=	post-3.4.3-kdelibs-kjs.diff:0
 
 PKGNAME-main=		${DISTNAME}p0
-PKGNAME-cups=		kdecups-${VERSION}
+PKGNAME-cups=		kdecups-${VERSION}p0
 MODKDE_VERSION?=	3.5.3
 SHARED_LIBS +=	DCOP                 7.0      # .6.0
 SHARED_LIBS +=	kdefx                7.0      # .6.0
@@ -88,7 +88,7 @@ LIB_DEPENDS-cups=${LIB_DEPENDS} \
 		cups::print/cups
 
 WANTLIB-cups=	${WANTLIB} \
-		gcrypt gnutls gpg-error
+		crypto ssl
 
 
 USE_X11=	Yes
