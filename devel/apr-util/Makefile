@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/03/25 09:59:35 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2007/03/28 06:47:57 steven Exp $
 
 COMMENT=	"companion library to APR"
 
@@ -53,6 +53,5 @@ LIB_DEPENDS+=	apr-1.=2:apr-1.2.7:devel/apr
 
 SUBST_VARS+=	MT
 MAKE_ENV+=	MT=${MT}
-FAKE_ENV+=	MT=${MT}
 
 .include <bsd.port.mk>

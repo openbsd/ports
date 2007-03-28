@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/03/24 13:46:47 todd Exp $
+# $OpenBSD: Makefile,v 1.9 2007/03/28 06:47:57 steven Exp $
 
 COMMENT=	"Apache Portable Runtime"
 
@@ -45,6 +45,5 @@ MT=
 CONFIGURE_ARGS+=	--disable-threads
 .endif
 MAKE_ENV+=	MT=${MT}
-FAKE_ENV+=	MT=${MT}
 
 .include <bsd.port.mk>
