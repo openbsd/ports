@@ -1,4 +1,5 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.2 2004/12/21 16:56:59 danh Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.3 2007/03/28 16:50:58 steven Exp $
+lib/X11/app-defaults/Gnuplot.app-defaults
 libexec/gnuplot/
-libexec/gnuplot/4.0/
-libexec/gnuplot/4.0/gnuplot_x11
+libexec/gnuplot/${V}/
+libexec/gnuplot/${V}/gnuplot_x11

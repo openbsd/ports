@@ -1,11 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.12 2006/08/25 10:08:33 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2007/03/28 16:50:58 steven Exp $
 bin/gnuplot
 bin/lasergnu
 @info info/gnuplot.info
 @man man/man1/gnuplot.1
 @man man/man1/lasergnu.1
 share/gnuplot/
-share/gnuplot/4.0/
-share/gnuplot/4.0/gnuplot.gih
-share/gnuplot/4.0/patches
+share/gnuplot/${V}/
+share/gnuplot/${V}/PostScript/
+share/gnuplot/${V}/PostScript/8859-1.ps
+share/gnuplot/${V}/PostScript/8859-15.ps
+share/gnuplot/${V}/PostScript/8859-2.ps
+share/gnuplot/${V}/PostScript/cp1250.ps
+share/gnuplot/${V}/PostScript/cp437.ps
+share/gnuplot/${V}/PostScript/cp850.ps
+share/gnuplot/${V}/PostScript/cp852.ps
+share/gnuplot/${V}/PostScript/koi8r.ps
+share/gnuplot/${V}/PostScript/koi8u.ps
+share/gnuplot/${V}/PostScript/prologue.ps
+share/gnuplot/${V}/gnuplot.gih
+share/gnuplot/${V}/patches
 !%%no_x11%%
