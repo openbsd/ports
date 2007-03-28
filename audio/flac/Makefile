@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2006/10/28 10:30:41 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2007/03/28 18:06:16 naddy Exp $
 
 COMMENT=	"free lossless audio codec"
 
@@ -37,10 +37,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-ogg="${LOCALBASE}"
 CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include" \
 		ac_cv_path_XMMS_CONFIG=no
-
-# "obj" is magic to our make(1)
-post-configure:
-	@rm -rf ${WRKSRC}/obj
+MAKE_ENV=	MAKEOBJDIR=/nonexistent		# ignore ${WRKSRC}/obj
 
 post-install:
 	@cd ${PREFIX}/share/doc && mv ${DISTNAME} flac
