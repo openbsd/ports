@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.882 2007/03/15 18:11:54 naddy Exp $
+#	$OpenBSD: bsd.port.mk,v 1.883 2007/03/28 13:21:43 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1729,15 +1729,12 @@ _internal-checksum: _internal-fetch
 			  echo ">> Error: checksum for $$file is set to IGNORE in distinfo"; \
 			  OK=false;; \
 			*) \
-			  CKSUM=`cksum -a $$cipher < $$file`; \
-			  case "$$CKSUM" in \
-			  	"$$4") \
-				  ${ECHO_MSG} ">> Checksum OK for $$file. ($$cipher)";; \
-				*) \
+			  echo -n '>> '; \
+			  if ! echo "$$@" | cksum -c; then \
 				  echo ">> Checksum mismatch for $$file. ($$cipher)"; \
 				  list="$$list $$file $$cipher $$4"; \
-				  OK=false;; \
-			  esac;; \
+				  OK=false; \
+			  fi;; \
 		  esac; \
 		done; \
 		set --; \
