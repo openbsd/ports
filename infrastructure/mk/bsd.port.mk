@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.883 2007/03/28 13:21:43 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.884 2007/03/28 15:45:03 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2371,7 +2371,7 @@ _fetch-onefile:
 		  echo >&2 'but file is not in $${IGNORE_FILES}'; \
 		  echo '\t ERROR="IGNORE inconsistent" \\';; \
 		*) \
-		  echo "\t CIPHER=\"$$c\" CKSUM=\"$$4\" \\";; \
+		  echo "\t CIPHER=\"$$c\" CKSUM=\"$$4\" CHECK=\""$$@"\" \\";; \
 	  esac; \
 	fi
 .  endif
