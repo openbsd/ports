@@ -1,6 +1,15 @@
-$OpenBSD: patch-platform_default_SConscript,v 1.1 2007/03/27 17:09:15 ajacoutot Exp $
+$OpenBSD: patch-platform_default_SConscript,v 1.2 2007/03/28 17:14:02 ajacoutot Exp $
 --- platform/default/SConscript.orig	Sun Feb  4 11:44:55 2007
-+++ platform/default/SConscript	Thu Feb 22 11:05:05 2007
++++ platform/default/SConscript	Wed Mar 28 13:47:31 2007
+@@ -15,7 +15,7 @@ if os.environ.has_key('CXXFLAGS'):
+ if os.environ.has_key('LDFLAGS'):
+ 	env.AppendUnique(LINKFLAGS = SCons.Util.CLVar(os.environ['LDFLAGS']))
+ 
+-env.AppendUnique(CCFLAGS=['-Wall','-g', '-O2'])
++env.AppendUnique(CCFLAGS=['-Wall','-g'])
+ env.AppendUnique(CPPPATH = [env.Dir('#/aqsistypes/posix')])
+ env.AppendUnique(CPPDEFINES=[('PLUGINS', '1')])
+ 
 @@ -24,7 +24,7 @@ if not env['debug']:
  
  # Point at the boost headers.

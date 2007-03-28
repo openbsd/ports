@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/03/27 17:08:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2007/03/28 17:14:02 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	"photorealistic 3D rendering solution"
 
 V=		1.2.0
 DISTNAME=	aqsis-${V}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	graphics
 
 SHARED_LIBS+=	aqsis		1.0 \
@@ -39,7 +40,7 @@ LIB_DEPENDS=	fltk.>=1::x11/fltk \
 
 NO_REGRESS=	Yes
 
-MAKE_ENV+=	CC=${CC} CXX=${CXX} LDFLAGS="-L${X11BASE}/lib" VERSION_STR=1.2.0
+MAKE_ENV+=	CC=${CC} CXX=${CXX} LDFLAGS="-fPIC -L${X11BASE}/lib" VERSION_STR=1.2.0
 
 pre-configure:
 	perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' \
@@ -60,7 +61,7 @@ do-build:
 		fltk_lib_path=${LOCALBASE}/lib \
 		exr_include_path=${LOCALBASE}/include/OpenEXR \
 		exr_lib_path=${LOCALBASE}/include \
-		bison=/usr/local/bin/bison \
+		bison=${LOCALBASE}/bin/bison \
 		sysconfdir=${SYSCONFDIR} \
 		destdir=${DESTDIR} \
 		install_prefix='${PREFIX}' build
