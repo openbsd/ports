@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2007/02/03 20:38:05 pedro Exp $
+@comment $OpenBSD: PLIST,v 1.20 2007/03/28 19:33:04 pedro Exp $
 %%SHARED%%
 bin/ion3
 bin/pwm3
@@ -8,7 +8,6 @@ lib/ion3/bin/ion-completefile
 lib/ion3/bin/ion-statusd
 lib/ion3/lc/
 lib/ion3/lc/de.lc
-lib/ion3/lc/ext_statusbar.lc
 lib/ion3/lc/ioncore_bindings.lc
 lib/ion3/lc/ioncore_efbb.lc
 lib/ion3/lc/ioncore_ext.lc
@@ -50,13 +49,13 @@ share/doc/ion3/LICENSE
 share/doc/ion3/README
 share/doc/ion3/RELNOTES
 share/examples/ion3/
+share/examples/ion3/cfg_defaults.lua
 share/examples/ion3/cfg_dock.lua
 share/examples/ion3/cfg_ion.lua
 share/examples/ion3/cfg_ioncore.lua
 share/examples/ion3/cfg_kludges.lua
 share/examples/ion3/cfg_layouts.lua
 share/examples/ion3/cfg_menu.lua
-share/examples/ion3/cfg_modules.lua
 share/examples/ion3/cfg_pwm.lua
 share/examples/ion3/cfg_query.lua
 share/examples/ion3/cfg_sp.lua
@@ -70,9 +69,16 @@ share/examples/ion3/look_cleanviolet.lua
 share/examples/ion3/look_dusky.lua
 share/examples/ion3/look_greyviolet.lua
 share/examples/ion3/look_ios.lua
+share/examples/ion3/look_newviolet.lua
 share/examples/ion3/look_simpleblue.lua
 share/examples/ion3/lookcommon_clean.lua
+share/examples/ion3/lookcommon_clean_frame.lua
+share/examples/ion3/lookcommon_clean_stdisp.lua
+share/examples/ion3/lookcommon_clean_tab.lua
 share/examples/ion3/lookcommon_emboss.lua
+share/examples/ion3/lookcommon_emboss_frame.lua
+share/examples/ion3/lookcommon_emboss_stdisp.lua
+share/examples/ion3/lookcommon_emboss_tab.lua
 share/ion3/
 share/ion3/ion-completeman
 share/ion3/ion-runinxterm
