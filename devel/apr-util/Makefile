@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/03/28 06:47:57 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/03/28 07:02:07 steven Exp $
 
 COMMENT=	"companion library to APR"
 
@@ -44,8 +44,7 @@ MT=-mt
 LIB_DEPENDS+=	apr-1-mt.=2:apr-mt-1.2.7:devel/apr,mt
 
 post-install:
-	sed 's/{APRUTIL_LIBNAME}/{APRUTIL_LIBNAME}-mt/g' ${WRKSRC}/apu-config.out > ${PREFIX}/bin/apu-mt
-	rm ${PREFIX}/bin/apu
+	sed 's/{APRUTIL_LIBNAME}/{APRUTIL_LIBNAME}-mt/g' ${WRKSRC}/apu-config.out > ${PREFIX}/bin/apu-1-mt-config
 
 .else
 LIB_DEPENDS+=	apr-1.=2:apr-1.2.7:devel/apr
