@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2007/03/19 13:15:30 robert Exp $
+# $OpenBSD: Makefile,v 1.51 2007/03/29 10:53:42 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -6,9 +6,9 @@ COMMENT-main=	"a multi-platform productivity suite"
 COMMENT-kde=	"optional integration of OpenOffice to the KDE environment"
 COMMENT-java=	"optional integration of OpenOffice java features"
 
-VERSION=	2.2.0m13
+VERSION=	2.2.0
 DISTNAME=	OOo_${VERSION}
-WRKDIST=	${WRKDIR}/ooo_OOF680_m13_src
+WRKDIST=	${WRKDIR}/OOF680_m14
 PKGNAME=	openoffice-${VERSION}
 PKGNAME-main=	openoffice-${VERSION}
 PKGNAME-kde=	openoffice-kde-${VERSION}
@@ -35,12 +35,10 @@ MASTER_SITES=	http://ftp.linux.cz/pub/localization/OpenOffice.org/devel/build/So
 MASTER_SITES0=	http://www.bsd.hu/~robert/ooo/ \
 		http://humppa.hu/ooo/
 
-#DISTFILES=	${DISTNAME}_src.tar.bz2 ooo-desktop.tar.gz:0
-#.for dfile in binfilter l10n sdk system
-#DISTFILES+=	${DISTNAME}_src_${dfile}.tar.bz2
-#.endfor
-
-DISTFILES=	OOo_OOF680_m13_source.tar.gz ooo-desktop.tar.gz:0
+DISTFILES=	ooo-desktop.tar.gz:0
+.for dfile in binfilter core l10n sdk system
+DISTFILES+=	${DISTNAME}_src_${dfile}.tar.bz2
+.endfor
 
 DIST_SUBDIR=	openoffice
 
@@ -91,8 +89,8 @@ LIB_DEPENDS-main=gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.
 		neon.>=24::net/neon \
 		sndfile.>=1::audio/libsndfile \
 		wpd.>=8::textproc/libwpd
-WANTLIB-main=	ICE SM X11 Xau Xext Xrender atk-1.0 c cairo expat fontconfig \
-		freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 \
+WANTLIB-main=	ICE SM X11 Xau Xdmcp Xext Xrender atk-1.0 c cairo expat \
+		fontconfig freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		gthread-2.0 iconv intl ossaudio jpeg m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 png pthread stdc++ util xml2 z
 RUN_DEPENDS-main=::java/javaPathHelper
