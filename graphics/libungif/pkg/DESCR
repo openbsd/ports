@@ -1,5 +1,5 @@
 GIF loading and saving library. (Saving uses an uncompressed GIF
 algorithm that does not use LZW compression.)
 
-See the ${PREFIX}/share/doc/libungif directory for more information
-on libungif's capabilities.
+See the ${PREFIX}/share/doc/libungif directory for more information on
+libungif's capabilities.
