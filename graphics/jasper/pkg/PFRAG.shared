@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2006/01/08 11:04:59 steven Exp $
-@lib lib/libjasper-1.701.so.${LIBjasper-1.701_VERSION}
+@comment $OpenBSD: PFRAG.shared,v 1.5 2007/03/29 13:43:53 jasper Exp $
 @lib lib/libjasper.so.${LIBjasper_VERSION}
