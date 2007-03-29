@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.79 2007/02/06 07:01:13 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.80 2007/03/29 22:12:06 deanna Exp $
 
 COMMENT-main=	"SMB and CIFS client and server for UNIX"
 COMMENT-docs=	"documentation and examples for samba"
 
 DISTNAME=		samba-3.0.24
+PKGNAME-main=		${DISTNAME}p0
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 SHARED_LIBS=		smbclient	0.3 \
 			msrpc		0.2
@@ -71,8 +72,7 @@ MULTI_PACKAGES= -main -docs
 .if ${FLAVOR:L:Mcups}
 CONFIGURE_ARGS+= --enable-cups
 LIB_DEPENDS+=	cups::print/cups
-WANTLIB+=	gcrypt gnutls gpg-error m pthread z
-MODULES=	devel/gettext
+WANTLIB+=	ssl crypto m pthread z
 .else
 CONFIGURE_ARGS+= --disable-cups
 .endif
