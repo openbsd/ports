@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.9 2007/02/03 11:48:39 steven Exp $
+@comment $OpenBSD: PLIST,v 1.10 2007/03/29 17:18:57 steven Exp $
 %%SHARED%%
 bin/dialyzer
 bin/epmd
 bin/erl
 bin/erlc
+bin/escript
 bin/run_erl
 bin/to_erl
+bin/typer
 lib/erlang/
 lib/erlang/COPYRIGHT
 lib/erlang/Install
@@ -16,6 +18,7 @@ lib/erlang/bin/dialyzer
 lib/erlang/bin/epmd
 lib/erlang/bin/erl
 lib/erlang/bin/erlc
+lib/erlang/bin/escript
 lib/erlang/bin/run_erl
 lib/erlang/bin/start
 lib/erlang/bin/start.boot
@@ -24,6 +27,7 @@ lib/erlang/bin/start_clean.boot
 lib/erlang/bin/start_erl
 lib/erlang/bin/start_sasl.boot
 lib/erlang/bin/to_erl
+lib/erlang/bin/typer
 lib/erlang/doc/
 lib/erlang/doc/applications.html
 lib/erlang/doc/design_principles/
@@ -266,6 +270,7 @@ lib/erlang/${ERTS}/bin/erl
 lib/erlang/${ERTS}/bin/erl.src
 lib/erlang/${ERTS}/bin/erlc
 lib/erlang/${ERTS}/bin/erlexec
+lib/erlang/${ERTS}/bin/escript
 lib/erlang/${ERTS}/bin/heart
 lib/erlang/${ERTS}/bin/inet_gethost
 lib/erlang/${ERTS}/bin/run_erl
@@ -295,6 +300,7 @@ lib/erlang/${ERTS}/doc/html/erl_set_memory_block.html
 lib/erlang/${ERTS}/doc/html/erlc.html
 lib/erlang/${ERTS}/doc/html/erlsrv.html
 lib/erlang/${ERTS}/doc/html/erts_alloc.html
+lib/erlang/${ERTS}/doc/html/escript.html
 lib/erlang/${ERTS}/doc/html/index.html
 lib/erlang/${ERTS}/doc/html/inet_cfg.html
 lib/erlang/${ERTS}/doc/html/match_spec.html
@@ -1983,9 +1989,13 @@ lib/erlang/lib/${EDOC}/ebin/edoc_tags.beam
 lib/erlang/lib/${EDOC}/ebin/edoc_types.beam
 lib/erlang/lib/${EDOC}/ebin/edoc_wiki.beam
 lib/erlang/lib/${EDOC}/ebin/otpsgml_layout.beam
+lib/erlang/lib/${EDOC}/include/
+lib/erlang/lib/${EDOC}/include/edoc_doclet.hrl
 lib/erlang/lib/${EDOC}/info
 lib/erlang/lib/${EDOC}/priv/
+lib/erlang/lib/${EDOC}/priv/edoc.dtd
 lib/erlang/lib/${EDOC}/priv/edoc_generate
+lib/erlang/lib/${EDOC}/priv/erlang.png
 lib/erlang/lib/${EDOC}/priv/stylesheet.css
 lib/erlang/lib/${EDOC}/src/
 lib/erlang/lib/${EDOC}/src/edoc.erl
@@ -2572,7 +2582,6 @@ lib/erlang/lib/${GS}/src/tool_genfd.erl
 lib/erlang/lib/${GS}/src/tool_utils.erl
 lib/erlang/lib/${HIPE}/
 lib/erlang/lib/${HIPE}/cerl/
-lib/erlang/lib/${HIPE}/cerl/cerl_binary_pattern_match.erl
 lib/erlang/lib/${HIPE}/cerl/cerl_cconv.erl
 lib/erlang/lib/${HIPE}/cerl/cerl_closurean.erl
 lib/erlang/lib/${HIPE}/cerl/cerl_hipe_primops.hrl
@@ -2587,7 +2596,6 @@ lib/erlang/lib/${HIPE}/cerl/cerl_typean.erl
 lib/erlang/lib/${HIPE}/cerl/erl_bif_types.erl
 lib/erlang/lib/${HIPE}/cerl/erl_types.erl
 lib/erlang/lib/${HIPE}/ebin/
-lib/erlang/lib/${HIPE}/ebin/cerl_binary_pattern_match.beam
 lib/erlang/lib/${HIPE}/ebin/cerl_cconv.beam
 lib/erlang/lib/${HIPE}/ebin/cerl_closurean.beam
 lib/erlang/lib/${HIPE}/ebin/cerl_hipeify.beam
@@ -2612,7 +2620,6 @@ lib/erlang/lib/${HIPE}/ebin/hipe_dot.beam
 lib/erlang/lib/${HIPE}/ebin/hipe_gen_cfg.beam
 lib/erlang/lib/${HIPE}/ebin/hipe_gensym.beam
 lib/erlang/lib/${HIPE}/ebin/hipe_icode.beam
-lib/erlang/lib/${HIPE}/ebin/hipe_icode_binary_pass.beam
 lib/erlang/lib/${HIPE}/ebin/hipe_icode_bincomp.beam
 lib/erlang/lib/${HIPE}/ebin/hipe_icode_callgraph.beam
 lib/erlang/lib/${HIPE}/ebin/hipe_icode_cfg.beam
@@ -2646,7 +2653,6 @@ lib/erlang/lib/${HIPE}/icode/
 lib/erlang/lib/${HIPE}/icode/hipe_beam_to_icode.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode.hrl
-lib/erlang/lib/${HIPE}/icode/hipe_icode_binary_pass.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_bincomp.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_callgraph.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_cfg.erl
@@ -3264,6 +3270,7 @@ lib/erlang/lib/${INVISO}/doc/html/inviso_chapter.html
 lib/erlang/lib/${INVISO}/doc/html/inviso_lfm.html
 lib/erlang/lib/${INVISO}/doc/html/inviso_lfm_tpfreader.html
 lib/erlang/lib/${INVISO}/doc/html/inviso_rt.html
+lib/erlang/lib/${INVISO}/doc/html/inviso_rt_meta.html
 lib/erlang/lib/${INVISO}/doc/html/inviso_users_guide_pic1.gif
 lib/erlang/lib/${INVISO}/doc/html/min_head.gif
 lib/erlang/lib/${INVISO}/doc/html/notes.html
@@ -3284,12 +3291,16 @@ lib/erlang/lib/${INVISO}/ebin/inviso.beam
 lib/erlang/lib/${INVISO}/ebin/inviso_c.beam
 lib/erlang/lib/${INVISO}/ebin/inviso_lfm.beam
 lib/erlang/lib/${INVISO}/ebin/inviso_lfm_tpfreader.beam
+lib/erlang/lib/${INVISO}/ebin/inviso_tool.beam
+lib/erlang/lib/${INVISO}/ebin/inviso_tool_lib.beam
 lib/erlang/lib/${INVISO}/info
 lib/erlang/lib/${INVISO}/src/
 lib/erlang/lib/${INVISO}/src/inviso.erl
 lib/erlang/lib/${INVISO}/src/inviso_c.erl
 lib/erlang/lib/${INVISO}/src/inviso_lfm.erl
 lib/erlang/lib/${INVISO}/src/inviso_lfm_tpfreader.erl
+lib/erlang/lib/${INVISO}/src/inviso_tool.erl
+lib/erlang/lib/${INVISO}/src/inviso_tool_lib.erl
 lib/erlang/lib/${KERNEL}/
 lib/erlang/lib/${KERNEL}/doc/
 lib/erlang/lib/${KERNEL}/doc/html/
@@ -3313,6 +3324,7 @@ lib/erlang/lib/${KERNEL}/doc/html/erlang.html
 lib/erlang/lib/${KERNEL}/doc/html/error_handler.html
 lib/erlang/lib/${KERNEL}/doc/html/error_logger.html
 lib/erlang/lib/${KERNEL}/doc/html/file.html
+lib/erlang/lib/${KERNEL}/doc/html/gen_sctp.html
 lib/erlang/lib/${KERNEL}/doc/html/gen_tcp.html
 lib/erlang/lib/${KERNEL}/doc/html/gen_udp.html
 lib/erlang/lib/${KERNEL}/doc/html/global.html
@@ -3375,6 +3387,7 @@ lib/erlang/lib/${KERNEL}/ebin/erts_debug.beam
 lib/erlang/lib/${KERNEL}/ebin/file.beam
 lib/erlang/lib/${KERNEL}/ebin/file_io_server.beam
 lib/erlang/lib/${KERNEL}/ebin/file_server.beam
+lib/erlang/lib/${KERNEL}/ebin/gen_sctp.beam
 lib/erlang/lib/${KERNEL}/ebin/gen_tcp.beam
 lib/erlang/lib/${KERNEL}/ebin/gen_udp.beam
 lib/erlang/lib/${KERNEL}/ebin/global.beam
@@ -3394,6 +3407,7 @@ lib/erlang/lib/${KERNEL}/ebin/inet_gethost_native.beam
 lib/erlang/lib/${KERNEL}/ebin/inet_hosts.beam
 lib/erlang/lib/${KERNEL}/ebin/inet_parse.beam
 lib/erlang/lib/${KERNEL}/ebin/inet_res.beam
+lib/erlang/lib/${KERNEL}/ebin/inet_sctp.beam
 lib/erlang/lib/${KERNEL}/ebin/inet_tcp.beam
 lib/erlang/lib/${KERNEL}/ebin/inet_tcp_dist.beam
 lib/erlang/lib/${KERNEL}/ebin/inet_udp.beam
@@ -3468,6 +3482,7 @@ lib/erlang/lib/${KERNEL}/src/erts_debug.erl
 lib/erlang/lib/${KERNEL}/src/file.erl
 lib/erlang/lib/${KERNEL}/src/file_io_server.erl
 lib/erlang/lib/${KERNEL}/src/file_server.erl
+lib/erlang/lib/${KERNEL}/src/gen_sctp.erl
 lib/erlang/lib/${KERNEL}/src/gen_tcp.erl
 lib/erlang/lib/${KERNEL}/src/gen_udp.erl
 lib/erlang/lib/${KERNEL}/src/global.erl
@@ -3492,6 +3507,7 @@ lib/erlang/lib/${KERNEL}/src/inet_int.hrl
 lib/erlang/lib/${KERNEL}/src/inet_parse.erl
 lib/erlang/lib/${KERNEL}/src/inet_res.erl
 lib/erlang/lib/${KERNEL}/src/inet_res.hrl
+lib/erlang/lib/${KERNEL}/src/inet_sctp.erl
 lib/erlang/lib/${KERNEL}/src/inet_tcp.erl
 lib/erlang/lib/${KERNEL}/src/inet_tcp_dist.erl
 lib/erlang/lib/${KERNEL}/src/inet_udp.erl
@@ -3713,6 +3729,9 @@ lib/erlang/lib/${MEGACO}/info
 lib/erlang/lib/${MEGACO}/priv/
 lib/erlang/lib/${MEGACO}/priv/lib/
 lib/erlang/lib/${MEGACO}/src/
+lib/erlang/lib/${MEGACO}/src/app/
+lib/erlang/lib/${MEGACO}/src/app/megaco.erl
+lib/erlang/lib/${MEGACO}/src/app/megaco_internal.hrl
 lib/erlang/lib/${MEGACO}/src/binary/
 lib/erlang/lib/${MEGACO}/src/binary/MEDIA-GATEWAY-CONTROL-prev3a.asn
 lib/erlang/lib/${MEGACO}/src/binary/MEDIA-GATEWAY-CONTROL-v1.asn
@@ -3796,13 +3815,11 @@ lib/erlang/lib/${MEGACO}/src/binary/megaco_per_media_gateway_control_v1.hrl
 lib/erlang/lib/${MEGACO}/src/binary/megaco_per_media_gateway_control_v2.erl
 lib/erlang/lib/${MEGACO}/src/binary/megaco_per_media_gateway_control_v2.hrl
 lib/erlang/lib/${MEGACO}/src/engine/
-lib/erlang/lib/${MEGACO}/src/engine/megaco.erl
 lib/erlang/lib/${MEGACO}/src/engine/megaco_config.erl
 lib/erlang/lib/${MEGACO}/src/engine/megaco_digit_map.erl
 lib/erlang/lib/${MEGACO}/src/engine/megaco_encoder.erl
 lib/erlang/lib/${MEGACO}/src/engine/megaco_erl_dist_encoder.erl
 lib/erlang/lib/${MEGACO}/src/engine/megaco_filter.erl
-lib/erlang/lib/${MEGACO}/src/engine/megaco_internal.hrl
 lib/erlang/lib/${MEGACO}/src/engine/megaco_message_internal.hrl
 lib/erlang/lib/${MEGACO}/src/engine/megaco_messenger.erl
 lib/erlang/lib/${MEGACO}/src/engine/megaco_messenger_misc.erl
@@ -5033,6 +5050,7 @@ lib/erlang/lib/${SNMP}/doc/html/snmp_target_mib.html
 lib/erlang/lib/${SNMP}/doc/html/snmp_user_based_sm_mib.html
 lib/erlang/lib/${SNMP}/doc/html/snmp_view_based_acm_mib.html
 lib/erlang/lib/${SNMP}/doc/html/snmpa.html
+lib/erlang/lib/${SNMP}/doc/html/snmpa_conf.html
 lib/erlang/lib/${SNMP}/doc/html/snmpa_error.html
 lib/erlang/lib/${SNMP}/doc/html/snmpa_error_io.html
 lib/erlang/lib/${SNMP}/doc/html/snmpa_error_logger.html
@@ -5044,6 +5062,7 @@ lib/erlang/lib/${SNMP}/doc/html/snmpa_notification_filter.html
 lib/erlang/lib/${SNMP}/doc/html/snmpa_supervisor.html
 lib/erlang/lib/${SNMP}/doc/html/snmpc.html
 lib/erlang/lib/${SNMP}/doc/html/snmpm.html
+lib/erlang/lib/${SNMP}/doc/html/snmpm_conf.html
 lib/erlang/lib/${SNMP}/doc/html/snmpm_mpd.html
 lib/erlang/lib/${SNMP}/doc/html/snmpm_network_interface.html
 lib/erlang/lib/${SNMP}/doc/html/snmpm_user.html
@@ -5083,6 +5102,7 @@ lib/erlang/lib/${SNMP}/ebin/snmpa_agent.beam
 lib/erlang/lib/${SNMP}/ebin/snmpa_agent_sup.beam
 lib/erlang/lib/${SNMP}/ebin/snmpa_app.beam
 lib/erlang/lib/${SNMP}/ebin/snmpa_authentication_service.beam
+lib/erlang/lib/${SNMP}/ebin/snmpa_conf.beam
 lib/erlang/lib/${SNMP}/ebin/snmpa_error.beam
 lib/erlang/lib/${SNMP}/ebin/snmpa_error_io.beam
 lib/erlang/lib/${SNMP}/ebin/snmpa_error_logger.beam
@@ -5103,6 +5123,7 @@ lib/erlang/lib/${SNMP}/ebin/snmpa_set_mechanism.beam
 lib/erlang/lib/${SNMP}/ebin/snmpa_supervisor.beam
 lib/erlang/lib/${SNMP}/ebin/snmpa_svbl.beam
 lib/erlang/lib/${SNMP}/ebin/snmpa_symbolic_store.beam
+lib/erlang/lib/${SNMP}/ebin/snmpa_target_cache.beam
 lib/erlang/lib/${SNMP}/ebin/snmpa_trap.beam
 lib/erlang/lib/${SNMP}/ebin/snmpa_usm.beam
 lib/erlang/lib/${SNMP}/ebin/snmpa_vacm.beam
@@ -5113,6 +5134,7 @@ lib/erlang/lib/${SNMP}/ebin/snmpc_mib_to_hrl.beam
 lib/erlang/lib/${SNMP}/ebin/snmpc_misc.beam
 lib/erlang/lib/${SNMP}/ebin/snmpc_tok.beam
 lib/erlang/lib/${SNMP}/ebin/snmpm.beam
+lib/erlang/lib/${SNMP}/ebin/snmpm_conf.beam
 lib/erlang/lib/${SNMP}/ebin/snmpm_config.beam
 lib/erlang/lib/${SNMP}/ebin/snmpm_misc_sup.beam
 lib/erlang/lib/${SNMP}/ebin/snmpm_mpd.beam
@@ -5137,6 +5159,7 @@ lib/erlang/lib/${SNMP}/examples/ex2/snmp_ex2_manager.erl
 lib/erlang/lib/${SNMP}/examples/ex2/snmp_ex2_simple_standard_test.beam
 lib/erlang/lib/${SNMP}/examples/ex2/snmp_ex2_simple_standard_test.erl
 lib/erlang/lib/${SNMP}/include/
+lib/erlang/lib/${SNMP}/include/INET-ADDRESS-MIB.hrl
 lib/erlang/lib/${SNMP}/include/OTP-SNMPEA-MIB.hrl
 lib/erlang/lib/${SNMP}/include/RFC1213-MIB.hrl
 lib/erlang/lib/${SNMP}/include/SNMP-COMMUNITY-MIB.hrl
@@ -5155,6 +5178,7 @@ lib/erlang/lib/${SNMP}/include/snmp_tables.hrl
 lib/erlang/lib/${SNMP}/include/snmp_types.hrl
 lib/erlang/lib/${SNMP}/info
 lib/erlang/lib/${SNMP}/mibs/
+lib/erlang/lib/${SNMP}/mibs/INET-ADDRESS-MIB.mib
 lib/erlang/lib/${SNMP}/mibs/OTP-SNMPEA-MIB.mib
 lib/erlang/lib/${SNMP}/mibs/RFC1213-MIB.mib
 lib/erlang/lib/${SNMP}/mibs/SNMP-COMMUNITY-MIB.mib
@@ -5197,6 +5221,7 @@ lib/erlang/lib/${SNMP}/priv/conf/manager/agents.conf
 lib/erlang/lib/${SNMP}/priv/conf/manager/manager.conf
 lib/erlang/lib/${SNMP}/priv/conf/manager/users.conf
 lib/erlang/lib/${SNMP}/priv/mibs/
+lib/erlang/lib/${SNMP}/priv/mibs/INET-ADDRESS-MIB.bin
 lib/erlang/lib/${SNMP}/priv/mibs/OTP-SNMPEA-MIB.bin
 lib/erlang/lib/${SNMP}/priv/mibs/RFC1213-MIB.bin
 lib/erlang/lib/${SNMP}/priv/mibs/SNMP-COMMUNITY-MIB.bin
@@ -5230,6 +5255,7 @@ lib/erlang/lib/${SNMP}/src/agent/snmpa_agent_sup.erl
 lib/erlang/lib/${SNMP}/src/agent/snmpa_app.erl
 lib/erlang/lib/${SNMP}/src/agent/snmpa_atl.hrl
 lib/erlang/lib/${SNMP}/src/agent/snmpa_authentication_service.erl
+lib/erlang/lib/${SNMP}/src/agent/snmpa_conf.erl
 lib/erlang/lib/${SNMP}/src/agent/snmpa_error.erl
 lib/erlang/lib/${SNMP}/src/agent/snmpa_error_io.erl
 lib/erlang/lib/${SNMP}/src/agent/snmpa_error_logger.erl
@@ -5251,6 +5277,7 @@ lib/erlang/lib/${SNMP}/src/agent/snmpa_set_mechanism.erl
 lib/erlang/lib/${SNMP}/src/agent/snmpa_supervisor.erl
 lib/erlang/lib/${SNMP}/src/agent/snmpa_svbl.erl
 lib/erlang/lib/${SNMP}/src/agent/snmpa_symbolic_store.erl
+lib/erlang/lib/${SNMP}/src/agent/snmpa_target_cache.erl
 lib/erlang/lib/${SNMP}/src/agent/snmpa_trap.erl
 lib/erlang/lib/${SNMP}/src/agent/snmpa_usm.erl
 lib/erlang/lib/${SNMP}/src/agent/snmpa_vacm.erl
@@ -5272,6 +5299,7 @@ lib/erlang/lib/${SNMP}/src/compiler/snmpc_tok.erl
 lib/erlang/lib/${SNMP}/src/manager/
 lib/erlang/lib/${SNMP}/src/manager/snmpm.erl
 lib/erlang/lib/${SNMP}/src/manager/snmpm_atl.hrl
+lib/erlang/lib/${SNMP}/src/manager/snmpm_conf.erl
 lib/erlang/lib/${SNMP}/src/manager/snmpm_config.erl
 lib/erlang/lib/${SNMP}/src/manager/snmpm_internal.hrl
 lib/erlang/lib/${SNMP}/src/manager/snmpm_misc_sup.erl
@@ -5557,6 +5585,7 @@ lib/erlang/lib/${STDLIB}/doc/html/application_first.html
 lib/erlang/lib/${STDLIB}/doc/html/application_frame.html
 lib/erlang/lib/${STDLIB}/doc/html/application_index.html
 lib/erlang/lib/${STDLIB}/doc/html/application_term.html
+lib/erlang/lib/${STDLIB}/doc/html/base64.html
 lib/erlang/lib/${STDLIB}/doc/html/beam_lib.html
 lib/erlang/lib/${STDLIB}/doc/html/c.html
 lib/erlang/lib/${STDLIB}/doc/html/calendar.html
@@ -5630,6 +5659,7 @@ lib/erlang/lib/${STDLIB}/doc/html/warning.gif
 lib/erlang/lib/${STDLIB}/doc/html/win32reg.html
 lib/erlang/lib/${STDLIB}/doc/html/zip.html
 lib/erlang/lib/${STDLIB}/ebin/
+lib/erlang/lib/${STDLIB}/ebin/base64.beam
 lib/erlang/lib/${STDLIB}/ebin/beam_lib.beam
 lib/erlang/lib/${STDLIB}/ebin/c.beam
 lib/erlang/lib/${STDLIB}/ebin/calendar.beam
@@ -5658,6 +5688,7 @@ lib/erlang/lib/${STDLIB}/ebin/erl_scan.beam
 lib/erlang/lib/${STDLIB}/ebin/erl_tar.beam
 lib/erlang/lib/${STDLIB}/ebin/error_logger_file_h.beam
 lib/erlang/lib/${STDLIB}/ebin/error_logger_tty_h.beam
+lib/erlang/lib/${STDLIB}/ebin/escript.beam
 lib/erlang/lib/${STDLIB}/ebin/ets.beam
 lib/erlang/lib/${STDLIB}/ebin/eval_bits.beam
 lib/erlang/lib/${STDLIB}/ebin/file_sorter.beam
@@ -5715,6 +5746,7 @@ lib/erlang/lib/${STDLIB}/include/qlc.hrl
 lib/erlang/lib/${STDLIB}/include/zip.hrl
 lib/erlang/lib/${STDLIB}/info
 lib/erlang/lib/${STDLIB}/src/
+lib/erlang/lib/${STDLIB}/src/base64.erl
 lib/erlang/lib/${STDLIB}/src/beam_lib.erl
 lib/erlang/lib/${STDLIB}/src/c.erl
 lib/erlang/lib/${STDLIB}/src/calendar.erl
@@ -5745,6 +5777,7 @@ lib/erlang/lib/${STDLIB}/src/erl_scan.erl
 lib/erlang/lib/${STDLIB}/src/erl_tar.erl
 lib/erlang/lib/${STDLIB}/src/error_logger_file_h.erl
 lib/erlang/lib/${STDLIB}/src/error_logger_tty_h.erl
+lib/erlang/lib/${STDLIB}/src/escript.erl
 lib/erlang/lib/${STDLIB}/src/ets.erl
 lib/erlang/lib/${STDLIB}/src/eval_bits.erl
 lib/erlang/lib/${STDLIB}/src/file_sorter.erl
@@ -5835,6 +5868,8 @@ lib/erlang/lib/${SYNTAX_TOOLS}/ebin/igor.beam
 lib/erlang/lib/${SYNTAX_TOOLS}/ebin/prettypr.beam
 lib/erlang/lib/${SYNTAX_TOOLS}/ebin/syntax_tools.app
 lib/erlang/lib/${SYNTAX_TOOLS}/ebin/syntax_tools.appup
+lib/erlang/lib/${SYNTAX_TOOLS}/examples/
+lib/erlang/lib/${SYNTAX_TOOLS}/examples/demo.erl
 lib/erlang/lib/${SYNTAX_TOOLS}/info
 lib/erlang/lib/${SYNTAX_TOOLS}/src/
 lib/erlang/lib/${SYNTAX_TOOLS}/src/epp_dodger.erl
@@ -6311,6 +6346,7 @@ lib/erlang/man/man1/
 @man lib/erlang/man/man1/erl_call.1
 @man lib/erlang/man/man1/erlc.1
 @man lib/erlang/man/man1/erlsrv.1
+@man lib/erlang/man/man1/escript.1
 @man lib/erlang/man/man1/run_erl.1
 @man lib/erlang/man/man1/start.1
 @man lib/erlang/man/man1/start_erl.1
@@ -6390,6 +6426,7 @@ lib/erlang/man/man3/
 @man lib/erlang/man/man3/asn1ct.3
 @man lib/erlang/man/man3/asn1rt.3
 @man lib/erlang/man/man3/auth.3
+@man lib/erlang/man/man3/base64.3
 @man lib/erlang/man/man3/beam_lib.3
 @man lib/erlang/man/man3/c.3
 @man lib/erlang/man/man3/calendar.3
@@ -6479,6 +6516,7 @@ lib/erlang/man/man3/
 @man lib/erlang/man/man3/gb_trees.3
 @man lib/erlang/man/man3/gen_event.3
 @man lib/erlang/man/man3/gen_fsm.3
+@man lib/erlang/man/man3/gen_sctp.3
 @man lib/erlang/man/man3/gen_server.3
 @man lib/erlang/man/man3/gen_tcp.3
 @man lib/erlang/man/man3/gen_udp.3
@@ -6507,6 +6545,7 @@ lib/erlang/man/man3/
 @man lib/erlang/man/man3/inviso_lfm.3
 @man lib/erlang/man/man3/inviso_lfm_tpfreader.3
 @man lib/erlang/man/man3/inviso_rt.3
+@man lib/erlang/man/man3/inviso_rt_meta.3
 @man lib/erlang/man/man3/io.3
 @man lib/erlang/man/man3/io_lib.3
 @man lib/erlang/man/man3/lib.3
@@ -6586,6 +6625,7 @@ lib/erlang/man/man3/
 @man lib/erlang/man/man3/snmp_user_based_sm_mib.3
 @man lib/erlang/man/man3/snmp_view_based_acm_mib.3
 @man lib/erlang/man/man3/snmpa.3
+@man lib/erlang/man/man3/snmpa_conf.3
 @man lib/erlang/man/man3/snmpa_error.3
 @man lib/erlang/man/man3/snmpa_error_io.3
 @man lib/erlang/man/man3/snmpa_error_logger.3
@@ -6597,6 +6637,7 @@ lib/erlang/man/man3/
 @man lib/erlang/man/man3/snmpa_supervisor.3
 @man lib/erlang/man/man3/snmpc.3
 @man lib/erlang/man/man3/snmpm.3
+@man lib/erlang/man/man3/snmpm_conf.3
 @man lib/erlang/man/man3/snmpm_mpd.3
 @man lib/erlang/man/man3/snmpm_network_interface.3
 @man lib/erlang/man/man3/snmpm_user.3

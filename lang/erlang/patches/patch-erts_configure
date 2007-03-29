@@ -1,7 +1,7 @@
-$OpenBSD: patch-erts_configure,v 1.5 2007/02/03 11:48:39 steven Exp $
---- erts/configure.orig	Tue Jan 30 09:12:17 2007
-+++ erts/configure	Wed Jan 31 17:28:13 2007
-@@ -7340,14 +7340,14 @@ static __inline__ int check_fpe(double f
+$OpenBSD: patch-erts_configure,v 1.6 2007/03/29 17:18:57 steven Exp $
+--- erts/configure.orig	Tue Mar 27 19:17:32 2007
++++ erts/configure	Thu Mar 29 17:56:01 2007
+@@ -18339,14 +18339,14 @@ static __inline__ int check_fpe(double f)
  
  #endif
  
