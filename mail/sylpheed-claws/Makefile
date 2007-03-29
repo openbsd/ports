@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2007/03/15 11:30:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.23 2007/03/29 06:10:32 steven Exp $
 
 COMMENT-main=		"lightweight GTK+ based mail/news client"
 COMMENT-dillo=		"dillo plugin for sylpheed-claws"
@@ -57,12 +57,12 @@ FLAVOR?=
 MULTI_PACKAGES=		-main -dillo -docs -imageviewer -spamassassin -themes \
 			-trayicon
 
-FULLPKGNAME-dillo=	sylpheed-claws-dillo-${VERSION}p2
-FULLPKGNAME-docs=	sylpheed-claws-docs-${VERSION}p2
-FULLPKGNAME-imageviewer=sylpheed-claws-imageviewer-${VERSION}p2
-FULLPKGNAME-spamassassin=sylpheed-claws-spamassassin-${VERSION}p2
-FULLPKGNAME-themes=	sylpheed-claws-themes-${VERSION}p2
-FULLPKGNAME-trayicon=	sylpheed-claws-trayicon-${VERSION}p3
+FULLPKGNAME-dillo=	sylpheed-claws-dillo-${VERSION}p3
+FULLPKGNAME-docs=	sylpheed-claws-docs-${VERSION}p3
+FULLPKGNAME-imageviewer=sylpheed-claws-imageviewer-${VERSION}p3
+FULLPKGNAME-spamassassin=sylpheed-claws-spamassassin-${VERSION}p3
+FULLPKGNAME-themes=	sylpheed-claws-themes-${VERSION}p3
+FULLPKGNAME-trayicon=	sylpheed-claws-trayicon-${VERSION}p4
 
 RUN_DEPENDS-dillo=	::${BUILD_PKGPATH} \
 			:dillo-*:www/dillo
