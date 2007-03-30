@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.884 2007/03/28 15:45:03 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.885 2007/03/30 13:41:44 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1708,17 +1708,16 @@ _internal-fetch:
 
 _internal-checksum: _internal-fetch
 .  if ! defined(NO_CHECKSUM)
-	@checksum_file=${CHECKSUM_FILE}; \
-	if [ -z "${DISTFILES}" ]; then \
+	@if [ -z "${DISTFILES}" ]; then \
 	  ${ECHO_MSG} ">> No distfiles."; \
-	elif [ ! -f $$checksum_file ]; then \
+	elif [ ! -f ${CHECKSUM_FILE} ]; then \
 	  ${ECHO_MSG} ">> No checksum file."; \
 	  exit 1; \
 	else \
 	  cd ${DISTDIR}; OK=true; list=''; \
 		for file in ${_CKSUMFILES}; do \
 		  for cipher in ${PREFERRED_CIPHERS}; do \
-			set -- `grep -i "^$$cipher ($$file)" $$checksum_file` && break || \
+			set -- `grep -i "^$$cipher ($$file)" ${CHECKSUM_FILE}` && break || \
 			  ${ECHO_MSG} ">> No $$cipher checksum recorded for $$file."; \
 		  done; \
 		  case "$$4" in \
@@ -1742,7 +1741,7 @@ _internal-checksum: _internal-fetch
 		  if ${REFETCH}; then \
 		  	cd ${.CURDIR} && ${MAKE} _refetch _PROBLEMS="$$list"; \
 		  else \
-			echo "Make sure the Makefile and checksum file ($$checksum_file)"; \
+			echo "Make sure the Makefile and checksum file (${CHECKSUM_FILE})"; \
 			echo "are up to date.  If you want to fetch a good copy of this"; \
 			echo "file from the OpenBSD main archive, type"; \
 			echo "\"make REFETCH=true [other args]\"."; \
@@ -2354,20 +2353,19 @@ _fetch-onefile:
 	@echo '\t FETCH_MANUALLY="Yes" \\'
 .  endif
 .  if !defined(NO_CHECKSUM) && !empty(_CKSUMFILES:M${_F})
-	@checksum_file=${CHECKSUM_FILE}; \
-	if [ ! -f $$checksum_file ]; then \
-	  echo >&2 "Missing checksum file: $$checksum_file"; \
+	@if [ ! -f ${CHECKSUM_FILE} ]; then \
+	  echo >&2 "Missing checksum file: ${CHECKSUM_FILE}"; \
 	  echo '\t ERROR="no checksum file" \\'; \
 	else \
 	  for c in ${PREFERRED_CIPHERS}; do \
-		if set -- `grep -i "^$$c (${_F})" $$checksum_file`; then break; fi; \
+		if set -- `grep -i "^$$c (${_F})" ${CHECKSUM_FILE}`; then break; fi; \
 	  done; \
 	  case "$$4" in \
 		"") \
 		  echo >&2 "No checksum recorded for ${_F}."; \
 		  echo '\t ERROR="no checksum" \\';; \
 		"IGNORE") \
-		  echo >&2 "Checksum for ${_F} is IGNORE in $$checksum_file"; \
+		  echo >&2 "Checksum for ${_F} is IGNORE in ${CHECKSUM_FILE}"; \
 		  echo >&2 'but file is not in $${IGNORE_FILES}'; \
 		  echo '\t ERROR="IGNORE inconsistent" \\';; \
 		*) \
