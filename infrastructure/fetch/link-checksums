@@ -10,7 +10,7 @@
 
 DISTDIR=${DISTDIR:-/usr/ports/distfiles}
 cd ${DISTDIR}
-CIPHERS=${CIPHERS:-sha1 md5 rmd160}
+CIPHERS=${CIPHERS:-sha1 md5 rmd160 sha256}
 
 # Build the find so that existing cipher dirs are avoided
 exclude=''
@@ -24,11 +24,14 @@ done
 echo "find . \( $exclude \) -o -type f -print"
 find . \( $exclude \) -o -type f -print | while read i
 do
+	file=`basename $i`
 	for ci in ${CIPHERS}
 	do
-		result=`$ci <$i`
-		file=`basename $i`
+		result=`cksum -a $ci <$i`
 		mkdir -p $ci/$result
 		ln -f $i $ci/$result/$file
+#		result=`cksum -a $ci -b <$i`
+#		mkdir -p $ci/$result
+#		ln -f $i $ci/$result/$file
 	done
 done
