@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.163 2007/03/26 06:42:18 jakob Exp $
+# $OpenBSD: Makefile,v 1.164 2007/03/30 07:44:59 jakob Exp $
 
-VERSION=	2.4.0-RC9
+VERSION=	2.5-20070328
 
-MASTER_SITES=	${MASTER_SITE_POSTFIX:=official/}
+MASTER_SITES=	${MASTER_SITE_POSTFIX:=experimental/}
 
 .include <bsd.port.mk>
