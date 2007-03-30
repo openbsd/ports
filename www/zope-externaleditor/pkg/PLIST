@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/10/03 13:46:28 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/03/30 12:54:29 mbalmer Exp $
 @conflict plone-*
 lib/zope/lib/python/Products/ExternalEditor/
 lib/zope/lib/python/Products/ExternalEditor/CHANGES.txt
@@ -6,6 +6,7 @@ lib/zope/lib/python/Products/ExternalEditor/ExternalEditor.py
 lib/zope/lib/python/Products/ExternalEditor/INSTALL-UNIX.txt
 lib/zope/lib/python/Products/ExternalEditor/INSTALL-WIN32.txt
 lib/zope/lib/python/Products/ExternalEditor/LICENSE.txt
+lib/zope/lib/python/Products/ExternalEditor/MANIFEST.in
 lib/zope/lib/python/Products/ExternalEditor/Plugins/
 lib/zope/lib/python/Products/ExternalEditor/Plugins/__init__.py
 lib/zope/lib/python/Products/ExternalEditor/Plugins/dreamweaver.py
@@ -28,11 +29,18 @@ lib/zope/lib/python/Products/ExternalEditor/man/zopeedit.1
 lib/zope/lib/python/Products/ExternalEditor/manage_main.dtml
 lib/zope/lib/python/Products/ExternalEditor/manage_tabs.dtml
 lib/zope/lib/python/Products/ExternalEditor/setup.py
+lib/zope/lib/python/Products/ExternalEditor/tests/
+lib/zope/lib/python/Products/ExternalEditor/tests/__init__.py
+lib/zope/lib/python/Products/ExternalEditor/tests/edit.txt
+lib/zope/lib/python/Products/ExternalEditor/tests/link.txt
+lib/zope/lib/python/Products/ExternalEditor/tests/test_functional.py
 lib/zope/lib/python/Products/ExternalEditor/version.txt
 lib/zope/lib/python/Products/ExternalEditor/win32/
 lib/zope/lib/python/Products/ExternalEditor/win32/Python-License.txt
 lib/zope/lib/python/Products/ExternalEditor/win32/Pythonwin-License.txt
 lib/zope/lib/python/Products/ExternalEditor/win32/ZopeEdit.ini
+lib/zope/lib/python/Products/ExternalEditor/win32/ZopeExtEditDummyOCX.ocx
 lib/zope/lib/python/Products/ExternalEditor/win32/buildexe.bat
+lib/zope/lib/python/Products/ExternalEditor/win32/ocx.txt
 lib/zope/lib/python/Products/ExternalEditor/win32/setup.iss
 lib/zope/lib/python/Products/ExternalEditor/zopeedit.py
