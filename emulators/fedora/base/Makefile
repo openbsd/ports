@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2006/10/18 16:04:07 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2007/03/30 14:27:24 espie Exp $
 
 COMMENT=	"Linux compatibility package based on Fedora Core 4"
 
-PKGNAME=	fedora_base-4.0p2
+PKGNAME=	fedora_base-4.0p3
 # clean up after make plist:
 #	- perl -pi -e "s,^\@lib ,," pkg/PLIST
 #	- change the 2nd LIBXaw_version to LIBXaw7_version in pkg/PLIST
@@ -101,7 +101,7 @@ RPMS=		atk-1.9.1-1.i386.rpm \
 		zlib-1.2.2.2-5.fc4.i386.rpm:0
 
 REMOVE_DIRS=	usr/X11R6/man /usr/doc /usr/info /usr/man /usr/share/doc \
-		/usr/share/man /usr/share/zoneinfo /etc/fonts
+		/usr/share/man /usr/share/zoneinfo
 REMOVE_FILES=	/etc/localtime
 
 PATCH_LIST=
@@ -147,7 +147,9 @@ do-install:
 	rm ${FEDORADIR}/lib/libpthread*
 	mv ${FEDORADIR}/lib/obsolete/linuxthreads/* ${FEDORADIR}/lib
 	rm -fr ${FEDORADIR}/lib/obsolete
-
+# fix fontconfig search path
+	cd ${FEDORADIR}/etc/fonts && ${PATCH} -p0 --forward --quiet -E < \
+		${PATCHDIR}/patch-etc_fonts_fonts_conf
 # better safe than sorry
 	find ${FEDORADIR} -perm -4000 | xargs -r chmod u-s
 	find ${FEDORADIR} \( -user 37 -o -user 5041 -o -group 37 \) -print | \

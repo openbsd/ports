@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/10/18 16:04:07 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/03/30 14:27:24 espie Exp $
 @conflict redhat_base-*
 emul/
 emul/fedora/
@@ -17,6 +17,10 @@ emul/fedora/dev/tty5
 emul/fedora/etc/
 emul/fedora/etc/default/
 emul/fedora/etc/default/nss
+emul/fedora/etc/fonts/
+emul/fedora/etc/fonts/fonts.conf
+emul/fedora/etc/fonts/fonts.dtd
+emul/fedora/etc/fonts/local.conf
 emul/fedora/etc/gtk/
 emul/fedora/etc/gtk-2.0/
 emul/fedora/etc/gtk-2.0/${MACHINE_ARCH}-redhat-linux-gnu/

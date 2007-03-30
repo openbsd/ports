@@ -1,0 +1,10 @@
+$OpenBSD: patch-etc_fonts_fonts_conf,v 1.1 2007/03/30 14:27:24 espie Exp $
+--- fonts.conf.orig	Thu Mar 29 21:39:47 2007
++++ fonts.conf	Thu Mar 29 21:39:47 2007
+@@ -24,6 +24,7 @@
+ 	<dir>/usr/share/fonts</dir>
+ 	<dir>/usr/X11R6/lib/X11/fonts/Type1</dir> <dir>/usr/X11R6/lib/X11/fonts/OTF</dir> 
++ 	<dir>/usr/X11R6/lib/X11/fonts/TTF</dir>
+ 	<dir>~/.fonts</dir>
+ 
+ <!--
