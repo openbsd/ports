@@ -4,11 +4,11 @@ routing protocols for IPv4 and IPv6 and a unified means to configure
 them.
 
 Currently, XORP implements the following protocols:
-* OSPF v2
+* OSPF v2 and v3
 * RIP and RIPng
 * BGP4
 * PIM-SM
-* IGMP v1 and v2
-* MLD v1
+* IGMP v1, v2, and v3
+* MLD v1 and v2
 
 For documentation, see the XORP home page.
