@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.885 2007/03/30 13:41:44 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.886 2007/03/30 13:44:50 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1300,6 +1300,7 @@ _LIB_DEP3${_S} =
 README_NAME ?= ${TEMPLATES}/README.port
 
 REORDER_DEPENDENCIES ?=
+ECHO_REORDER ?= :
 
 # Lock infrastructure:
 # nothing happens unless LOCKDIR is defined to a non-empty value
@@ -2014,11 +2015,11 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 		case $$f in \
 		/*) \
 			find . -name $${f#/} -print| while read i; \
-				do echo "Touching $$i"; touch $$i; done \
+				do ${ECHO_REORDER} "Touching $$i"; touch $$i; done \
 			;; \
 		*) \
 			if test -e $$f ; then \
-				echo "Touching $$f"; touch $$f; \
+				${ECHO_REORDER} "Touching $$f"; touch $$f; \
 			fi \
 			;; \
 		esac; done
