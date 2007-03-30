@@ -1,7 +1,7 @@
-$OpenBSD: patch-xpdf_XPDFViewer_cc,v 1.3 2005/09/09 17:34:53 brad Exp $
---- xpdf/XPDFViewer.cc.orig	Wed Aug 17 07:34:31 2005
-+++ xpdf/XPDFViewer.cc	Thu Aug 18 10:08:25 2005
-@@ -2391,11 +2391,6 @@ void XPDFViewer::printPrintCbk(Widget wi
+$OpenBSD: patch-xpdf_XPDFViewer_cc,v 1.4 2007/03/30 04:09:42 ckuethe Exp $
+--- xpdf/XPDFViewer.cc.orig	Tue Feb 27 22:05:52 2007
++++ xpdf/XPDFViewer.cc	Fri Mar 30 00:31:19 2007
+@@ -3406,11 +3406,6 @@ void XPDFViewer::printPrintCbk(Widget widget, XtPointe
    PSOutputDev *psOut;
  
    doc = viewer->core->getDoc();

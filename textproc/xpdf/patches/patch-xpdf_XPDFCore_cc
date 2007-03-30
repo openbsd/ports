@@ -1,7 +1,7 @@
-$OpenBSD: patch-xpdf_XPDFCore_cc,v 1.3 2005/09/09 17:34:53 brad Exp $
---- xpdf/XPDFCore.cc.orig	Wed Aug 17 07:34:31 2005
-+++ xpdf/XPDFCore.cc	Thu Aug 18 10:23:14 2005
-@@ -377,9 +377,6 @@ void XPDFCore::copySelection() {
+$OpenBSD: patch-xpdf_XPDFCore_cc,v 1.4 2007/03/30 04:09:42 ckuethe Exp $
+--- xpdf/XPDFCore.cc.orig	Tue Feb 27 22:05:52 2007
++++ xpdf/XPDFCore.cc	Fri Mar 30 00:31:19 2007
+@@ -407,9 +407,6 @@ void XPDFCore::copySelection() {
    int pg;
    double ulx, uly, lrx, lry;
  
@@ -11,15 +11,3 @@ $OpenBSD: patch-xpdf_XPDFCore_cc,v 1.3 2005/09/09 17:34:53 brad Exp $
    if (getSelection(&pg, &ulx, &uly, &lrx, &lry)) {
      //~ for multithreading: need a mutex here
      if (currentSelection) {
-@@ -1108,11 +1105,7 @@ void XPDFCore::inputCbk(Widget widget, X
- #ifndef NO_TEXT_SELECT
- 	  if (core->selectULX != core->selectLRX &&
- 	      core->selectULY != core->selectLRY) {
--	    if (core->doc->okToCopy()) {
- 	      core->copySelection();
--	    } else {
--	      error(-1, "Copying of text from this document is not allowed.");
--	    }
- 	  }
- #endif
- 	}

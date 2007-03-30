@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.53 2006/08/03 23:55:11 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2007/03/30 04:09:42 ckuethe Exp $
 
 COMMENT=	"PDF viewer for X"
 
-DISTNAME=	xpdf-3.01
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	xpdf-3.02
 CATEGORIES=	textproc x11
 
-MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
+MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
+		ftp://gd.tuwien.ac.at/publishing/xpdf/ \
+		ftp://tug.org/xpdf/
 
 HOMEPAGE=	http://www.foolabs.com/xpdf/
 
@@ -21,7 +22,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xp Xpm Xt c freetype m pthread \
-			stdc++ 
+			stdc++ z
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
@@ -32,7 +33,7 @@ CONFIGURE_ARGS+= --enable-multithreaded \
 		 --without-Sgm-library \
 		 --without-libpaper-library
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/freetype2 -I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lz"
 
 NO_REGRESS=	Yes
 
