@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.21 2007/01/11 18:45:18 bernd Exp $
+# $OpenBSD: check-newlib-depends,v 1.22 2007/03/31 15:26:45 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -30,7 +30,26 @@ use OpenBSD::SharedLibs;
 use File::Temp;
 use Getopt::Std;
 
-our ($opt_o, $opt_d, $opt_f);
+our ($opt_o, $opt_d, $opt_f, $opt_B);
+
+# fake archive handle, since the extraction does not happen...
+package FakeHandle;
+
+sub new
+{
+	return bless {}, "FakeHandle";
+}
+
+sub next
+{
+	return shift;
+}
+
+sub create
+{
+	return 0;
+}
+
 package OpenBSD::PackingList;
 
 package OpenBSD::PackingElement;
@@ -120,7 +139,9 @@ sub check_wantlibs
 	if ($fullname =~ m/^(.*\/)?lib(.*)\.so\.(\d+)\.\d+$/) {
 		$t->{haslib}->{"$2.$3"} = 2;
 	}
-	unlink($where.$fullname);
+	if (!defined $main::opt_B) {
+		unlink($where.$fullname);
+	}
 }
 
 package OpenBSD::PackingElement::Dependency;
@@ -133,7 +154,7 @@ sub depwalk
 
 package main;
 
-getopts('od:f');
+getopts('od:f:B:');
 
 my $dependencies = {};
 
@@ -281,9 +302,8 @@ sub print_list
 
 sub analyze 
 {
-	my ($plist, $db, @l) = @_;
+	my ($plist, $db, $where, @l) = @_;
 
-	my $where = File::Temp::mkdtemp("/tmp/zoinx.XXXXXXXXXX");
 	my $pkgname = $plist->pkgname();
 	my $t = { haslib => {}, needlib => {} };
 	$plist->visit('check_wantlibs', $t, $where, @l);
@@ -314,7 +334,6 @@ sub analyze
 		    }
 	    }
 	}
-	rmtree($where);
 }
 
 my $db = {};
@@ -329,16 +348,29 @@ sub do_pkg
 	# twice read
 	return 0 unless -d $dir;
 	my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
-	analyze($plist, $db, $true_package);
+	my $where = File::Temp::mkdtemp("/tmp/zoinx.XXXXXXXXXX");
+	analyze($plist, $db, $where, $true_package);
+	rmtree($where);
 	$true_package->close();
 	$true_package->wipe_info();
 	$plist->forget();
 	return 1;
 }
 
+sub do_plist
+{
+	my $plist = OpenBSD::PackingList->read(\*STDIN);
+	my $pkgname = $plist->pkgname();
+	print "\n$pkgname:\n";
+	analyze($plist, $db, $opt_B, FakeHandle->new());
+}
 
-for my $pkgname (@ARGV) {
-	do_pkg($pkgname);
+if (@ARGV == 0 && defined $opt_B) {
+	do_plist();
+} else {
+    for my $pkgname (@ARGV) {
+	    do_pkg($pkgname);
+    }
 }
 
 exit(0);
