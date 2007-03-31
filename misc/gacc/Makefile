@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/03/31 10:45:01 steven Exp $
 
 COMMENT=	"personal accounts manager"
 
 VERSION=	0.7.5
 DISTNAME=	gacc_${VERSION}.orig
-PKGNAME=	gacc-${VERSION}
+PKGNAME=	gacc-${VERSION}p0
 CATEGORIES=	misc productivity
 
 HOMEPAGE=	http://tnemeth.free.fr/projets/gAcc-en.html
@@ -22,6 +22,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gacc/}
 LIB_DEPENDS=	gtk.>=1.2,gdk.>=1.2::x11/gtk+
 
 USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/examples/gacc

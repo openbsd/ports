@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2007/01/12 08:44:31 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2007/03/31 10:48:48 steven Exp $
 
 COMMENT=		"Free Unix Spectrum Emulator utilities"
 
 DISTNAME=		fuse-utils-0.7.0
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		emulators
 HOMEPAGE=		http://fuse-emulator.sourceforge.net/
 
@@ -22,5 +22,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fuse-emulator/}
 LIB_DEPENDS=		spectrum.>=3::devel/libspectrum
 
 CONFIGURE_STYLE=	gnu
+USE_LIBTOOL=		Yes
 
 .include <bsd.port.mk>
