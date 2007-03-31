@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2004/11/27 10:39:13 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2007/03/31 12:58:13 steven Exp $
 # $NetBSD: Makefile,v 1.2 1998/09/22 06:11:36 garbled Exp $
 
 COMMENT=	"x86 machine simulator"
 
 DISTNAME=	bochs-2.1.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	emulators
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bochs/}
@@ -19,6 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 c m stdc++ termlib z
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-cdrom \
 		--enable-fpu \
