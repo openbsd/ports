@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2007/03/15 11:30:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.11 2007/03/31 10:21:09 steven Exp $
 
 COMMENT=		"MP3 ID3 tags editor"
 
 DISTNAME=		easytag-0.30
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		audio x11
 HOMEPAGE=		http://easytag.sourceforge.net/
 
@@ -32,6 +32,7 @@ BUILD_DEPENDS=		:help2man-*:devel/help2man
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
