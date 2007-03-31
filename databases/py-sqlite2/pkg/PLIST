@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2006/05/25 13:39:08 alek Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/03/31 21:52:02 martynas Exp $
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/__init__.pyc
@@ -25,17 +25,15 @@ lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/userfunctions.pyc
 share/doc/py-sqlite2/
 share/doc/py-sqlite2/default.css
 share/doc/py-sqlite2/docutils.css
-share/doc/py-sqlite2/install-source-win32.html
 share/doc/py-sqlite2/install-source-win32.txt
-share/doc/py-sqlite2/install-source.html
 share/doc/py-sqlite2/install-source.txt
 share/doc/py-sqlite2/silvercity.css
-share/doc/py-sqlite2/usage-guide.html
 share/doc/py-sqlite2/usage-guide.txt
 share/examples/py-sqlite2/
 share/examples/py-sqlite2/adapter_datetime.py
 share/examples/py-sqlite2/adapter_point_1.py
 share/examples/py-sqlite2/adapter_point_2.py
+share/examples/py-sqlite2/authorizer.py
 share/examples/py-sqlite2/collation_reverse.py
 share/examples/py-sqlite2/complete_statement.py
 share/examples/py-sqlite2/connect_db_1.py
