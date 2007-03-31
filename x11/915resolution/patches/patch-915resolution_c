@@ -1,14 +1,20 @@
-$OpenBSD: patch-915resolution_c,v 1.1.1.1 2006/05/20 16:32:05 sturm Exp $
---- 915resolution.c.orig	Sun May 14 11:09:58 2006
-+++ 915resolution.c	Sun May 14 11:12:58 2006
-@@ -22,7 +22,18 @@
+$OpenBSD: patch-915resolution_c,v 1.2 2007/03/31 15:32:20 sturm Exp $
+--- 915resolution.c.orig	Thu Feb  2 15:28:34 2006
++++ 915resolution.c	Sat Mar 31 17:23:15 2007
+@@ -22,7 +22,24 @@
  #include <string.h>
  #include <sys/mman.h>
  #include <fcntl.h>
 +#if defined(__OpenBSD__)
++#if defined(__i386__)
 +#include <i386/pio.h>
 +#include <i386/sysarch.h>
 +#define IOPL(x) i386_iopl(x)
++#elif defined(__amd64__)
++#include <amd64/pio.h>
++#include <amd64/sysarch.h>
++#define IOPL(x) amd64_iopl(x)
++#endif
 +#define OUTL(x,y) outl(y,x)
 +#define OUTB(x,y) outb(y,x)
 +#else
@@ -20,7 +26,7 @@ $OpenBSD: patch-915resolution_c,v 1.1.1.1 2006/05/20 16:32:05 sturm Exp $
  #include <unistd.h>
  #include <assert.h>
  
-@@ -161,7 +172,7 @@ typedef struct {
+@@ -161,7 +178,7 @@ typedef struct {
  void initialize_system(char * filename) {
  
      if (!filename) {
@@ -29,7 +35,7 @@ $OpenBSD: patch-915resolution_c,v 1.1.1.1 2006/05/20 16:32:05 sturm Exp $
              perror("Unable to obtain the proper IO permissions");
              exit(2);
          }
-@@ -169,7 +180,7 @@ void initialize_system(char * filename) 
+@@ -169,7 +186,7 @@ void initialize_system(char * filename) 
  }
  
  cardinal get_chipset_id(void) {
@@ -38,7 +44,7 @@ $OpenBSD: patch-915resolution_c,v 1.1.1.1 2006/05/20 16:32:05 sturm Exp $
      return inl(0xcfc);
  }
  
-@@ -330,6 +341,7 @@ vbios_map * open_vbios(char * filename, 
+@@ -330,6 +347,7 @@ vbios_map * open_vbios(char * filename, 
          }
      }
  
@@ -46,7 +52,7 @@ $OpenBSD: patch-915resolution_c,v 1.1.1.1 2006/05/20 16:32:05 sturm Exp $
      /*
       * check if we have ATI Radeon
       */
-@@ -378,6 +390,7 @@ vbios_map * open_vbios(char * filename, 
+@@ -378,6 +396,7 @@ vbios_map * open_vbios(char * filename, 
          close_vbios(map);
          exit(2);
      }
@@ -54,7 +60,7 @@ $OpenBSD: patch-915resolution_c,v 1.1.1.1 2006/05/20 16:32:05 sturm Exp $
  
      /*
       * Figure out where the mode table is 
-@@ -476,11 +489,11 @@ void unlock_vbios(vbios_map * map) {
+@@ -476,11 +495,11 @@ void unlock_vbios(vbios_map * map) {
          case CT_UNKWN:
              break;
          case CT_855GM:
@@ -69,7 +75,7 @@ $OpenBSD: patch-915resolution_c,v 1.1.1.1 2006/05/20 16:32:05 sturm Exp $
              break;
          case CT_845G:
          case CT_865G:
-@@ -488,13 +501,13 @@ void unlock_vbios(vbios_map * map) {
+@@ -488,13 +507,13 @@ void unlock_vbios(vbios_map * map) {
          case CT_915GM:
          case CT_945G:
          case CT_945GM:
@@ -87,7 +93,7 @@ $OpenBSD: patch-915resolution_c,v 1.1.1.1 2006/05/20 16:32:05 sturm Exp $
              break;
          }
      }
-@@ -526,8 +539,8 @@ void relock_vbios(vbios_map * map) {
+@@ -526,8 +545,8 @@ void relock_vbios(vbios_map * map) {
          case CT_UNKWN:
              break;
          case CT_855GM:
@@ -98,7 +104,7 @@ $OpenBSD: patch-915resolution_c,v 1.1.1.1 2006/05/20 16:32:05 sturm Exp $
              break;
          case CT_845G:
          case CT_865G:
-@@ -535,9 +548,9 @@ void relock_vbios(vbios_map * map) {
+@@ -535,9 +554,9 @@ void relock_vbios(vbios_map * map) {
          case CT_915GM:
          case CT_945G:
          case CT_945GM:

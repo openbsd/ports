@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/05/20 16:32:05 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2007/03/31 15:32:20 sturm Exp $
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT=	"change resolution on available vbios modes for i8x5/9x5"
 
 DISTNAME=	915resolution-0.5.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.geocities.com/stomljen/
