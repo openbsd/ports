@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2006/08/02 09:36:20 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2007/03/31 11:51:32 steven Exp $
 
 COMMENT=	"simple gtk+ pool simulation game"
 
 DISTNAME=	gtkpool-0.5.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games x11
 MASTER_SITES=	${HOMEPAGE}	
 
@@ -18,6 +19,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		glib gmodule iconv intl X11 Xext Xi c m ossaudio stdc++
 
+USE_LIBTOOL=	Yes
 USE_X11=	Yes
 NO_REGRESS=	Yes
 
