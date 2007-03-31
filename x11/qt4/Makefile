@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2007/03/26 21:22:13 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2007/03/31 23:10:18 espie Exp $
 
 COMMENT-main=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples for qt4"
@@ -8,13 +8,13 @@ COMMENT-mysql=		"MySQL plugin for qt4"
 COMMENT-sqlite2=	"sqlite2 plugin for qt4"
 COMMENT-sqlite=		"sqlite plugin for qt4"
 
-PKGNAME=		qt4-${VERSION}p0
+PKGNAME=		qt4-${VERSION}
 PKGNAME-mysql=		qt4-mysql-${VERSION}
 PKGNAME-postgresql=	qt4-postgresql-${VERSION}
 PKGNAME-examples=	qt4-examples-${VERSION}
 PKGNAME-sqlite2=	qt4-sqlite2-${VERSION}
 PKGNAME-sqlite=		qt4-sqlite-${VERSION}
-PKGNAME-main=		qt4-${VERSION}
+PKGNAME-main=		qt4-${VERSION}p0
 FULLPKGNAME-html=	qt4-html-${VERSION}
 SHARED_LIBS=	Qt3Support 7.0 \
 		QtCore 6.2 \
