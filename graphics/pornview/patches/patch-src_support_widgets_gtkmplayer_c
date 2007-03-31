@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_support_widgets_gtkmplayer_c,v 1.1 2004/07/07 14:48:23 robert Exp $
+$OpenBSD: patch-src_support_widgets_gtkmplayer_c,v 1.2 2007/03/31 12:32:35 steven Exp $
 --- src/support/widgets/gtkmplayer.c.orig	Fri Dec 13 12:15:21 2002
-+++ src/support/widgets/gtkmplayer.c	Tue Apr 13 12:50:51 2004
++++ src/support/widgets/gtkmplayer.c	Sat Mar 31 14:31:53 2007
 @@ -30,6 +30,7 @@
  #include <errno.h>
  #include <ctype.h>
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_support_widgets_gtkmplayer_c,v 1.1 2004/07/07 14:48:23 rober
  
  #include <gtk/gtk.h>
  #include <gdk/gdkx.h>
-@@ -72,9 +73,9 @@
+@@ -72,9 +73,9 @@ struct ChildContext_Tag
      int     stderr_fd;
      int     stdin_fd;
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-src_support_widgets_gtkmplayer_c,v 1.1 2004/07/07 14:48:23 rober
      gint    stderr_size;
  
      ProcessLineFunc process_line_fn;
-@@ -1049,13 +1050,13 @@
+@@ -1049,13 +1050,13 @@ start_command (GtkMPlayer * player, GList * arg_list,	
      context->stdout_fd = out_fd[0];
      fcntl (context->stdout_fd, F_SETFL, O_NONBLOCK);
      close (out_fd[1]);
@@ -37,7 +37,7 @@ $OpenBSD: patch-src_support_widgets_gtkmplayer_c,v 1.1 2004/07/07 14:48:23 rober
      context->stderr_size = 0;
  
      context->stdin_fd = in_fd[1];
-@@ -1193,7 +1194,7 @@
+@@ -1193,7 +1194,7 @@ process_output (ChildContext * context)
  
      if (size > 0 && size < GTK_MPLAYER_BUF_SIZE)
      {
@@ -46,7 +46,7 @@ $OpenBSD: patch-src_support_widgets_gtkmplayer_c,v 1.1 2004/07/07 14:48:23 rober
  	next = buf + size;
      }
      else
-@@ -1211,7 +1212,7 @@
+@@ -1211,7 +1212,7 @@ process_output (ChildContext * context)
  	size += MIN (GTK_MPLAYER_BUF_SIZE - 1, n);
  
  	process_lines (context, buf, size,
@@ -55,7 +55,7 @@ $OpenBSD: patch-src_support_widgets_gtkmplayer_c,v 1.1 2004/07/07 14:48:23 rober
      }
  
      /*
-@@ -1221,7 +1222,7 @@
+@@ -1221,7 +1222,7 @@ process_output (ChildContext * context)
  
      if (size > 0 && size < GTK_MPLAYER_BUF_SIZE)
      {
@@ -64,7 +64,7 @@ $OpenBSD: patch-src_support_widgets_gtkmplayer_c,v 1.1 2004/07/07 14:48:23 rober
  	next = buf + size;
      }
      else
-@@ -1240,7 +1241,7 @@
+@@ -1240,7 +1241,7 @@ process_output (ChildContext * context)
      pos = context->player->pos;
  
      process_lines (context, buf, size,

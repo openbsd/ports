@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2006/08/03 12:53:18 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2007/03/31 12:32:35 steven Exp $
 
 COMMENT=	"image viewer/manager"
 DISTNAME=	pornview-0.2.0pre1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://pornview.sourceforge.net/
@@ -31,6 +31,7 @@ RUN_DEPENDS=	:mplayer-*:x11/mplayer
 .endif
 
 USE_X11=	Yes
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 		  -I${LOCALBASE}/include/libpng" \

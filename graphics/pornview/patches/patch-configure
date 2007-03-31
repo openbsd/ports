@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.2 2005/03/27 17:50:54 alek Exp $
+$OpenBSD: patch-configure,v 1.3 2007/03/31 12:32:35 steven Exp $
 --- configure.orig	Sat Jan  4 13:53:14 2003
-+++ configure	Sat Mar  5 21:53:01 2005
++++ configure	Sat Mar 31 14:31:53 2007
 @@ -10396,7 +10396,7 @@ else
    gt_save_CPPFLAGS="$CPPFLAGS"
              CPPFLAGS="$CPPFLAGS $INCINTL"
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.2 2005/03/27 17:50:54 alek Exp $
  ; return 0; }
  EOF
  if { (eval echo configure:10417: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-@@ -10478,10 +10478,10 @@ echo "$ac_t""$gt_cv_func_gnugettext1_lib
+@@ -10478,10 +10478,10 @@ echo "$ac_t""$gt_cv_func_gnugettext1_libintl" 1>&6
  
        if test "$nls_cv_use_gnu_gettext" = "yes"; then
                  INTLOBJS="\$(GETTOBJS)"
@@ -52,7 +52,7 @@ $OpenBSD: patch-configure,v 1.2 2005/03/27 17:50:54 alek Exp $
    
  
      
-@@ -10633,7 +10633,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+@@ -10633,7 +10633,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
@@ -61,7 +61,7 @@ $OpenBSD: patch-configure,v 1.2 2005/03/27 17:50:54 alek Exp $
  cat > conftest.$ac_ext <<EOF
  #line 10639 "configure"
  #include "confdefs.h"
-@@ -10667,7 +10667,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
+@@ -10667,7 +10667,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = ye
  #define $ac_tr_lib 1
  EOF
  
