@@ -1,0 +1,12 @@
+$OpenBSD: patch-pixmap_c,v 1.1.1.1 2007/03/31 11:57:10 martynas Exp $
+--- pixmap.c.orig	Sat May  1 21:57:42 2004
++++ pixmap.c	Fri Mar 30 18:29:27 2007
+@@ -39,7 +39,7 @@ static char id[] = "$Header: /pack/anoncvs/xinvest/src
+ #ifdef SHAPE
+ #include <X11/extensions/shape.h>
+ #endif
+-#include <xpm.h>
++#include <X11/xpm.h> 
+ 
+ #include "color.h"
+ #include "pixmap.h"

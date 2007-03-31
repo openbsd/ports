@@ -1,0 +1,12 @@
+$OpenBSD: patch-color_c,v 1.1.1.1 2007/03/31 11:57:10 martynas Exp $
+--- color.c.orig	Sat May  1 21:57:42 2004
++++ color.c	Fri Mar 30 18:29:27 2007
+@@ -34,7 +34,7 @@ static char id[] = "$Header: /pack/anoncvs/xinvest/src
+ 
+ #include <stdio.h>
+ 
+-#if !defined(__NetBSD__)
++#if !defined(__OpenBSD__)
+ #include <values.h>
+ #endif
+ 
