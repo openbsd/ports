@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2007/03/31 13:27:11 steven Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		"simple, clean theme engine for GTK+2"
 
 VERSION=		2.0.2
 DISTNAME=		gtk-thinice-engine-${VERSION}
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		x11
 
 HOMEPAGE=		http://thinice.sourceforge.net/
@@ -27,6 +27,8 @@ LIB_DEPENDS=		gdk-x11-2.0.>=400.0,gdk_pixbuf-2.0.>=400.0,gtk-x11-2.0.>=400.0::x1
 MODULES=		devel/gettext
 
 USE_X11=		Yes
+USE_LIBTOOL=		Yes
+LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_STYLE= 	gnu
 
 .include <bsd.port.mk>
