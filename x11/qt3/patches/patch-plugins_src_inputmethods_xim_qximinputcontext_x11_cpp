@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugins_src_inputmethods_xim_qximinputcontext_x11_cpp,v 1.1 2006/03/04 10:07:10 espie Exp $
---- plugins/src/inputmethods/xim/qximinputcontext_x11.cpp.orig	Mon Feb 27 12:38:25 2006
-+++ plugins/src/inputmethods/xim/qximinputcontext_x11.cpp	Mon Feb 27 12:48:56 2006
-@@ -361,7 +361,7 @@ void QXIMInputContext::setHolderWidget( 
+$OpenBSD: patch-plugins_src_inputmethods_xim_qximinputcontext_x11_cpp,v 1.2 2007/03/31 22:49:46 espie Exp $
+--- plugins/src/inputmethods/xim/qximinputcontext_x11.cpp.orig	Sat Mar 31 14:51:22 2007
++++ plugins/src/inputmethods/xim/qximinputcontext_x11.cpp	Sat Mar 31 14:51:24 2007
+@@ -361,7 +361,7 @@ void QXIMInputContext::setHolderWidget( QWidget *widge
      }
  
      if (! widget->isTopLevel()) {

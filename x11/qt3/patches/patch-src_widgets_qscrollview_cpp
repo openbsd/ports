@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_widgets_qscrollview_cpp,v 1.3 2007/01/04 18:34:46 espie Exp $
+$OpenBSD: patch-src_widgets_qscrollview_cpp,v 1.4 2007/03/31 22:49:46 espie Exp $
 --- src/widgets/qscrollview.cpp.orig	Thu Oct 19 16:25:35 2006
-+++ src/widgets/qscrollview.cpp	Tue Jan  2 15:36:11 2007
-@@ -1550,6 +1550,9 @@ bool QScrollView::eventFilter( QObject *
++++ src/widgets/qscrollview.cpp	Sat Mar 31 14:51:25 2007
+@@ -1550,6 +1550,9 @@ bool QScrollView::eventFilter( QObject *obj, QEvent *e
          case QEvent::LayoutHint:
              d->autoResizeHint(this);
              break;

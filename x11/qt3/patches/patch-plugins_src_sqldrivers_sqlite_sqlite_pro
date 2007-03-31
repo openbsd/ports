@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugins_src_sqldrivers_sqlite_sqlite_pro,v 1.1 2007/01/22 18:18:28 espie Exp $
---- plugins/src/sqldrivers/sqlite/sqlite.pro.orig	Mon Jan 22 15:30:40 2007
-+++ plugins/src/sqldrivers/sqlite/sqlite.pro	Mon Jan 22 15:31:41 2007
-@@ -8,6 +8,7 @@ HEADERS		= ../../../../src/sql/drivers/s
+$OpenBSD: patch-plugins_src_sqldrivers_sqlite_sqlite_pro,v 1.2 2007/03/31 22:49:46 espie Exp $
+--- plugins/src/sqldrivers/sqlite/sqlite.pro.orig	Thu Dec 18 14:53:48 2003
++++ plugins/src/sqldrivers/sqlite/sqlite.pro	Sat Mar 31 14:51:24 2007
+@@ -8,6 +8,7 @@ HEADERS		= ../../../../src/sql/drivers/sqlite/qsql_sql
  SOURCES		= smain.cpp \
  		  ../../../../src/sql/drivers/sqlite/qsql_sqlite.cpp
  

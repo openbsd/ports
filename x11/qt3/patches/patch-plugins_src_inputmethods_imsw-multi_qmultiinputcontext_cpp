@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugins_src_inputmethods_imsw-multi_qmultiinputcontext_cpp,v 1.1 2006/03/04 10:07:10 espie Exp $
---- plugins/src/inputmethods/imsw-multi/qmultiinputcontext.cpp.orig	Mon Feb 27 12:38:25 2006
-+++ plugins/src/inputmethods/imsw-multi/qmultiinputcontext.cpp	Mon Feb 27 12:48:56 2006
-@@ -306,8 +306,8 @@ void QMultiInputContext::changeInputMeth
+$OpenBSD: patch-plugins_src_inputmethods_imsw-multi_qmultiinputcontext_cpp,v 1.2 2007/03/31 22:49:46 espie Exp $
+--- plugins/src/inputmethods/imsw-multi/qmultiinputcontext.cpp.orig	Sat Mar 31 14:51:22 2007
++++ plugins/src/inputmethods/imsw-multi/qmultiinputcontext.cpp	Sat Mar 31 14:51:24 2007
+@@ -306,8 +306,8 @@ void QMultiInputContext::changeInputMethod( QString ke
  
          currentIMKey = key;
  

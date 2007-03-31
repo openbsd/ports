@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_tools_qfile_cpp,v 1.2 2007/01/04 18:34:46 espie Exp $
+$OpenBSD: patch-src_tools_qfile_cpp,v 1.3 2007/03/31 22:49:46 espie Exp $
 --- src/tools/qfile.cpp.orig	Thu Oct 19 16:25:01 2006
-+++ src/tools/qfile.cpp	Tue Jan  2 15:36:11 2007
++++ src/tools/qfile.cpp	Sat Mar 31 14:51:25 2007
 @@ -70,8 +70,13 @@ class QFilePrivate
  {
  public:
@@ -31,7 +31,7 @@ $OpenBSD: patch-src_tools_qfile_cpp,v 1.2 2007/01/04 18:34:46 espie Exp $
  /*!
      \fn QString QFile::name() const
  
-@@ -382,6 +387,10 @@ Q_LONG QFile::readLine( char *p, Q_ULONG
+@@ -382,6 +387,10 @@ Q_LONG QFile::readLine( char *p, Q_ULONG maxlen )
      if ( isRaw() ) {				// raw file
  	nread = QIODevice::readLine( p, maxlen );
      } else {					// buffered file

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_tools_qgpluginmanager_cpp,v 1.4 2004/01/08 01:23:57 brad Exp $
---- src/tools/qgpluginmanager.cpp.orig	2003-10-19 00:21:14.000000000 -0400
-+++ src/tools/qgpluginmanager.cpp	2003-10-19 00:23:13.000000000 -0400
-@@ -320,6 +320,8 @@ void QGPluginManager::addLibraryPath( co
+$OpenBSD: patch-src_tools_qgpluginmanager_cpp,v 1.5 2007/03/31 22:49:46 espie Exp $
+--- src/tools/qgpluginmanager.cpp.orig	Thu Oct 19 16:25:01 2006
++++ src/tools/qgpluginmanager.cpp	Sat Mar 31 14:51:25 2007
+@@ -320,6 +320,8 @@ void QGPluginManager::addLibraryPath( const QString& p
      QString filter = "*.dylib; *.so; *.bundle";
  #elif defined(Q_OS_HPUX)
      QString filter = "*.sl";

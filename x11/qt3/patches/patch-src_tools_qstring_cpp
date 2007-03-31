@@ -1,0 +1,42 @@
+$OpenBSD: patch-src_tools_qstring_cpp,v 1.1 2007/03/31 22:49:46 espie Exp $
+--- src/tools/qstring.cpp.orig	Thu Oct 19 16:25:03 2006
++++ src/tools/qstring.cpp	Sat Mar 31 14:51:51 2007
+@@ -5799,6 +5799,7 @@ QString QString::fromUtf8( const char* utf8, int len )
+     result.setLength( len ); // worst case
+     QChar *qch = (QChar *)result.unicode();
+     uint uc = 0;
++    uint min_uc = 0;
+     int need = 0;
+     int error = -1;
+     uchar ch;
+@@ -5816,6 +5817,12 @@ QString QString::fromUtf8( const char* utf8, int len )
+ 			unsigned short low = uc%0x400 + 0xdc00;
+ 			*qch++ = QChar(high);
+ 			*qch++ = QChar(low);
++		    } else if (uc < min_uc || (uc >= 0xd800 && uc <= 0xdfff) || (uc >= 0xfffe)) {
++			// overlong seqence, UTF16 surrogate or BOM
++                        i = error;
++                        qch = addOne(qch, result);
++                        *qch++ = QChar(0xdbff);
++                        *qch++ = QChar(0xde00+((uchar)utf8[i]));
+ 		    } else {
+ 			*qch++ = uc;
+ 		    }
+@@ -5838,14 +5845,17 @@ QString QString::fromUtf8( const char* utf8, int len )
+ 		uc = ch & 0x1f;
+ 		need = 1;
+ 		error = i;
++		min_uc = 0x80;
+ 	    } else if ((ch & 0xf0) == 0xe0) {
+ 		uc = ch & 0x0f;
+ 		need = 2;
+ 		error = i;
++		min_uc = 0x800;
+ 	    } else if ((ch&0xf8) == 0xf0) {
+ 		uc = ch & 0x07;
+ 		need = 3;
+ 		error = i;
++		min_uc = 0x10000;
+ 	    } else {
+ 	        // Error
+                 qch = addOne(qch, result);

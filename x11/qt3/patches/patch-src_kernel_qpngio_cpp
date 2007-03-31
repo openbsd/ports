@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_kernel_qpngio_cpp,v 1.1 2004/09/26 17:23:34 brad Exp $
---- src/kernel/qpngio.cpp.orig	Sun Sep 26 00:31:42 2004
-+++ src/kernel/qpngio.cpp	Sun Sep 26 00:33:10 2004
-@@ -110,10 +110,18 @@ void CALLBACK_CALL_TYPE qpiw_flush_fn( p
+$OpenBSD: patch-src_kernel_qpngio_cpp,v 1.2 2007/03/31 22:49:46 espie Exp $
+--- src/kernel/qpngio.cpp.orig	Thu Oct 19 16:25:20 2006
++++ src/kernel/qpngio.cpp	Sat Mar 31 14:51:24 2007
+@@ -110,10 +110,18 @@ void CALLBACK_CALL_TYPE qpiw_flush_fn( png_structp png
  static
  void setup_qt( QImage& image, png_structp png_ptr, png_infop info_ptr, float screen_gamma=0.0 )
  {

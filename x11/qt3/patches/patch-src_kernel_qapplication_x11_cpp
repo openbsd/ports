@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_kernel_qapplication_x11_cpp,v 1.3 2006/03/04 10:07:10 espie Exp $
---- src/kernel/qapplication_x11.cpp.orig	Mon Feb 27 13:00:20 2006
-+++ src/kernel/qapplication_x11.cpp	Mon Feb 27 13:12:05 2006
-@@ -3294,11 +3294,7 @@ int QApplication::x11ProcessEvent( XEven
+$OpenBSD: patch-src_kernel_qapplication_x11_cpp,v 1.4 2007/03/31 22:49:46 espie Exp $
+--- src/kernel/qapplication_x11.cpp.orig	Sat Mar 31 14:51:22 2007
++++ src/kernel/qapplication_x11.cpp	Sat Mar 31 14:51:24 2007
+@@ -3294,11 +3294,7 @@ int QApplication::x11ProcessEvent( XEvent* event )
      // filtering opportunity first to ensure all input methods work
      // properly regardless of application design.
  
@@ -13,7 +13,7 @@ $OpenBSD: patch-src_kernel_qapplication_x11_cpp,v 1.3 2006/03/04 10:07:10 espie 
  	if( ( event->type==XKeyPress || event->type==XKeyRelease ) &&
  	    sm_blockUserInput ) // block user interaction during session management
  	    return TRUE;
-@@ -5220,11 +5216,12 @@ bool QETWidget::translateKeyEventInterna
+@@ -5220,11 +5216,12 @@ bool QETWidget::translateKeyEventInternal( const XEven
      } else {
  	key = (int)(long)keyDict->find( keycode );
  	if ( key )

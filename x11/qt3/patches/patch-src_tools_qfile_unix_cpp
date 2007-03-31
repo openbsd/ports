@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_tools_qfile_unix_cpp,v 1.1 2006/10/18 18:05:31 espie Exp $
---- src/tools/qfile_unix.cpp.orig	Wed Oct 18 13:23:15 2006
-+++ src/tools/qfile_unix.cpp	Wed Oct 18 13:36:59 2006
-@@ -53,6 +53,17 @@ static inline int qt_open(const char *pa
+$OpenBSD: patch-src_tools_qfile_unix_cpp,v 1.2 2007/03/31 22:49:46 espie Exp $
+--- src/tools/qfile_unix.cpp.orig	Thu Oct 19 16:25:03 2006
++++ src/tools/qfile_unix.cpp	Sat Mar 31 14:51:25 2007
+@@ -53,6 +53,17 @@ static inline int qt_open(const char *pathname, int fl
  #include <errno.h>
  #include <limits.h>
  
@@ -27,7 +27,7 @@ $OpenBSD: patch-src_tools_qfile_unix_cpp,v 1.1 2006/10/18 18:05:31 espie Exp $
      }
      if ( ok )
  #if defined(QT_LARGEFILE_SUPPORT) && !defined(QT_ABI_QT4)
-@@ -590,6 +602,10 @@ Q_LONG QFile::readBlock( char *p, Q_ULON
+@@ -590,6 +602,10 @@ Q_LONG QFile::readBlock( char *p, Q_ULONG len )
  		setErrorStringErrno( errno );
  	    }
  	} else {					// buffered file
@@ -38,7 +38,7 @@ $OpenBSD: patch-src_tools_qfile_unix_cpp,v 1.1 2006/10/18 18:05:31 espie Exp $
  	    nread += fread( p, 1, len-nread, fh );
  	    if ( (uint)nread != len ) {
  		if ( ferror( fh ) || nread==0 ) {
-@@ -641,8 +657,13 @@ Q_LONG QFile::writeBlock( const char *p,
+@@ -641,8 +657,13 @@ Q_LONG QFile::writeBlock( const char *p, Q_ULONG len )
      Q_ULONG nwritten;				// number of bytes written
      if ( isRaw() )				// raw file
  	nwritten = ::write( fd, (void *)p, len );

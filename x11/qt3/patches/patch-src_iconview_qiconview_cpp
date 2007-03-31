@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_iconview_qiconview_cpp,v 1.4 2007/01/04 18:34:46 espie Exp $
+$OpenBSD: patch-src_iconview_qiconview_cpp,v 1.5 2007/03/31 22:49:46 espie Exp $
 --- src/iconview/qiconview.cpp.orig	Thu Oct 19 16:25:06 2006
-+++ src/iconview/qiconview.cpp	Tue Jan  2 15:36:11 2007
-@@ -236,6 +236,7 @@ public:
++++ src/iconview/qiconview.cpp	Sat Mar 31 14:51:24 2007
+@@ -236,6 +236,7 @@ class QIconViewPrivate (public)
      QPoint dragStartPos;
      QFontMetrics *fm;
      int minLeftBearing, minRightBearing;
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_iconview_qiconview_cpp,v 1.4 2007/01/04 18:34:46 espie Exp $
  
      uint mousePressed		:1;
      uint cleared		:1;
-@@ -255,9 +256,11 @@ public:
+@@ -255,9 +256,11 @@ class QIconViewPrivate (public)
      uint firstSizeHint : 1;
      uint showTips		:1;
      uint pressedSelected	:1;
@@ -21,7 +21,7 @@ $OpenBSD: patch-src_iconview_qiconview_cpp,v 1.4 2007/01/04 18:34:46 espie Exp $
  
      QIconViewToolTip *toolTip;
      QPixmapCache maskCache;
-@@ -1060,7 +1063,7 @@ void QIconViewItem::setText( const QStri
+@@ -1060,7 +1063,7 @@ void QIconViewItem::setText( const QString &text )
  
      if ( view ) {
  	if ( QRect( view->contentsX(), view->contentsY(),
@@ -30,7 +30,7 @@ $OpenBSD: patch-src_iconview_qiconview_cpp,v 1.4 2007/01/04 18:34:46 espie Exp $
  	     intersects( oR ) )
  	    view->repaintContents( oR.x() - 1, oR.y() - 1,
  				   oR.width() + 2, oR.height() + 2, FALSE );
-@@ -1104,7 +1107,7 @@ void QIconViewItem::setPixmap( const QPi
+@@ -1104,7 +1107,7 @@ void QIconViewItem::setPixmap( const QPixmap &icon )
  
      if ( view ) {
  	if ( QRect( view->contentsX(), view->contentsY(),
@@ -39,7 +39,7 @@ $OpenBSD: patch-src_iconview_qiconview_cpp,v 1.4 2007/01/04 18:34:46 espie Exp $
  	     intersects( oR ) )
  	    view->repaintContents( oR.x() - 1, oR.y() - 1,
  				   oR.width() + 2, oR.height() + 2, FALSE );
-@@ -1140,7 +1143,7 @@ void QIconViewItem::setPicture( const QP
+@@ -1140,7 +1143,7 @@ void QIconViewItem::setPicture( const QPicture &icon )
  
      if ( view ) {
  	if ( QRect( view->contentsX(), view->contentsY(),
@@ -48,7 +48,7 @@ $OpenBSD: patch-src_iconview_qiconview_cpp,v 1.4 2007/01/04 18:34:46 espie Exp $
  	     intersects( oR ) )
  	    view->repaintContents( oR.x() - 1, oR.y() - 1,
  				   oR.width() + 2, oR.height() + 2, FALSE );
-@@ -1200,7 +1203,7 @@ void QIconViewItem::setPixmap( const QPi
+@@ -1200,7 +1203,7 @@ void QIconViewItem::setPixmap( const QPixmap &icon, bo
  
  	    if ( view ) {
  		if ( QRect( view->contentsX(), view->contentsY(),
@@ -57,7 +57,7 @@ $OpenBSD: patch-src_iconview_qiconview_cpp,v 1.4 2007/01/04 18:34:46 espie Exp $
  		     intersects( oR ) )
  		    view->repaintContents( oR.x() - 1, oR.y() - 1,
  					   oR.width() + 2, oR.height() + 2, FALSE );
-@@ -2730,10 +2733,12 @@ QIconView::QIconView( QWidget *parent, c
+@@ -2730,10 +2733,12 @@ QIconView::QIconView( QWidget *parent, const char *nam
      d->lastItem = 0;
      d->count = 0;
      d->mousePressed = FALSE;
@@ -92,7 +92,7 @@ $OpenBSD: patch-src_iconview_qiconview_cpp,v 1.4 2007/01/04 18:34:46 espie Exp $
  		    if ( item->isSelected() ) {
  			item->setSelected( FALSE );
  			changed = TRUE;
-@@ -4488,34 +4502,25 @@ void QIconView::contentsMousePressEventE
+@@ -4488,34 +4502,25 @@ void QIconView::contentsMousePressEventEx( QMouseEvent
  	    }
  	}
      } else if ( ( d->selectionMode != Single || e->button() == RightButton )
@@ -136,7 +136,7 @@ $OpenBSD: patch-src_iconview_qiconview_cpp,v 1.4 2007/01/04 18:34:46 espie Exp $
  	emit mouseButtonPressed( e->button(), item, e->globalPos() );
  	emit pressed( item );
  	emit pressed( item, e->globalPos() );
-@@ -4559,6 +4564,7 @@ void QIconView::contentsMouseReleaseEven
+@@ -4559,6 +4564,7 @@ void QIconView::contentsMouseReleaseEvent( QMouseEvent
      d->mousePressed = FALSE;
      d->startDragItem = 0;
  
@@ -144,7 +144,7 @@ $OpenBSD: patch-src_iconview_qiconview_cpp,v 1.4 2007/01/04 18:34:46 espie Exp $
      if ( d->rubber ) {
  	QPainter p;
  	p.begin( viewport() );
-@@ -4648,7 +4654,22 @@ void QIconView::contentsMouseMoveEvent( 
+@@ -4648,7 +4654,22 @@ void QIconView::contentsMouseMoveEvent( QMouseEvent *e
  	    if ( d->tmpCurrentItem )
  		repaintItem( d->tmpCurrentItem );
  	}
@@ -168,7 +168,7 @@ $OpenBSD: patch-src_iconview_qiconview_cpp,v 1.4 2007/01/04 18:34:46 espie Exp $
  	doAutoScroll();
      }
  }
-@@ -5225,11 +5246,11 @@ QIconViewItem* QIconView::findItem( Dire
+@@ -5225,11 +5246,11 @@ QIconViewItem* QIconView::findItem( Direction dir,
  	d->findContainers( dir, relativeTo, searchRect);
  
      cList->first();
@@ -182,7 +182,7 @@ $OpenBSD: patch-src_iconview_qiconview_cpp,v 1.4 2007/01/04 18:34:46 espie Exp $
  		 item != currentItem() ) {
   		int ml = (relativeTo - item->rect().center()).manhattanLength();
  		if ( centerMatch ) {
-@@ -5452,8 +5473,8 @@ void QIconView::insertInGrid( QIconViewI
+@@ -5452,8 +5473,8 @@ void QIconView::insertInGrid( QIconViewItem *item )
  	}
  	item->dirty = FALSE;
      } else {
@@ -193,7 +193,7 @@ $OpenBSD: patch-src_iconview_qiconview_cpp,v 1.4 2007/01/04 18:34:46 espie Exp $
  
  	QIconViewItem *i = d->firstItem;
  	int y = -1;
-@@ -5711,7 +5732,7 @@ QIconViewItem *QIconView::makeRowLayout(
+@@ -5711,7 +5732,7 @@ QIconViewItem *QIconView::makeRowLayout( QIconViewItem
  	    QIconViewItem *item = begin;
  	    for (;;) {
  		x += d->spacing + item->width();
@@ -202,7 +202,7 @@ $OpenBSD: patch-src_iconview_qiconview_cpp,v 1.4 2007/01/04 18:34:46 espie Exp $
  		    item = item->prev;
  		    break;
  		}
-@@ -5736,7 +5757,7 @@ QIconViewItem *QIconView::makeRowLayout(
+@@ -5736,7 +5757,7 @@ QIconViewItem *QIconView::makeRowLayout( QIconViewItem
  		int x;
  		if ( item == begin ) {
  		    if ( reverse )
@@ -211,7 +211,7 @@ $OpenBSD: patch-src_iconview_qiconview_cpp,v 1.4 2007/01/04 18:34:46 espie Exp $
  		    else
  			x = d->spacing;
  		} else {
-@@ -5772,7 +5793,7 @@ QIconViewItem *QIconView::makeRowLayout(
+@@ -5772,7 +5793,7 @@ QIconViewItem *QIconView::makeRowLayout( QIconViewItem
  		    i += r;
  		    x = i * d->rastX + sp * d->spacing;
  		}
@@ -220,7 +220,7 @@ $OpenBSD: patch-src_iconview_qiconview_cpp,v 1.4 2007/01/04 18:34:46 espie Exp $
  		    item = item->prev;
  		    break;
  		}
-@@ -5835,7 +5856,7 @@ QIconViewItem *QIconView::makeRowLayout(
+@@ -5835,7 +5856,7 @@ QIconViewItem *QIconView::makeRowLayout( QIconViewItem
  	    QIconViewItem *item = begin;
  	    for (;;) {
  		y += d->spacing + item->height();

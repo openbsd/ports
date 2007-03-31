@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.13 2007/01/04 18:34:46 espie Exp $
---- configure.orig	Tue Jan  2 15:36:09 2007
-+++ configure	Tue Jan  2 15:36:10 2007
+$OpenBSD: patch-configure,v 1.14 2007/03/31 22:49:46 espie Exp $
+--- configure.orig	Sat Mar 31 14:51:22 2007
++++ configure	Sat Mar 31 14:51:24 2007
 @@ -987,7 +987,7 @@ while [ "$#" -gt 0 ]; do
      v|verbose)
  	if [ "$VAL" = "yes" ]; then
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.13 2007/01/04 18:34:46 espie Exp $
              else
  		OPT_VERBOSE=yes
  	    fi
-@@ -1646,7 +1646,7 @@ if echo $MODULES | grep sql >/dev/null; 
+@@ -1646,7 +1646,7 @@ if echo $MODULES | grep sql >/dev/null; then
      MYSQL_REQ="-lmysqlclient mysql.h"
      OCI_REQ="-lclntsh -lwtc8 oci.h"
      PSQL_REQ="-lpq postgres.h libpq/libpq-fs.h catalog/pg_type.h libpq-fe.h"

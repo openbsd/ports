@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_widgets_qprogressbar_h,v 1.1 2004/07/22 23:03:09 brad Exp $
---- src/widgets/qprogressbar.h.orig	2004-04-19 03:36:18.000000000 -0600
-+++ src/widgets/qprogressbar.h	2004-06-24 00:00:06.000000000 -0600
-@@ -61,6 +61,7 @@ class Q_EXPORT QProgressBar : public QFr
+$OpenBSD: patch-src_widgets_qprogressbar_h,v 1.2 2007/03/31 22:49:46 espie Exp $
+--- src/widgets/qprogressbar.h.orig	Thu Oct 19 16:25:35 2006
++++ src/widgets/qprogressbar.h	Sat Mar 31 14:51:25 2007
+@@ -61,6 +61,7 @@ class Q_EXPORT QProgressBar : public QFrame
  public:
      QProgressBar( QWidget* parent=0, const char* name=0, WFlags f=0 );
      QProgressBar( int totalSteps, QWidget* parent=0, const char* name=0, WFlags f=0 );
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_widgets_qprogressbar_h,v 1.1 2004/07/22 23:03:09 brad Exp $
  
      int		totalSteps() const;
      int		progress()   const;
-@@ -91,6 +92,7 @@ protected:
+@@ -91,6 +92,7 @@ public slots: (protected)
      virtual bool setIndicator( QString & progress_str, int progress,
  			       int totalSteps );
      void styleChange( QStyle& );

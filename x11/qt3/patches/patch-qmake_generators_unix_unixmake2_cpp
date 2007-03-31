@@ -1,7 +1,7 @@
-$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.16 2007/02/17 18:59:04 espie Exp $
+$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.17 2007/03/31 22:49:46 espie Exp $
 --- qmake/generators/unix/unixmake2.cpp.orig	Thu Oct 19 16:25:42 2006
-+++ qmake/generators/unix/unixmake2.cpp	Sat Feb 17 17:15:33 2007
-@@ -129,6 +129,8 @@ UnixMakefileGenerator::writeMakeParts(QT
++++ qmake/generators/unix/unixmake2.cpp	Sat Mar 31 14:51:24 2007
+@@ -129,6 +129,8 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
  	 src_incremental=FALSE, moc_incremental=FALSE;
  
      t << "####### Compiler, tools and options" << endl << endl;
@@ -10,7 +10,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.16 2007/02/17 18:59:04 e
      t << "CC       = ";
      if (project->isActiveConfig("thread") &&
  	! project->variables()["QMAKE_CC_THREAD"].isEmpty())
-@@ -295,10 +297,15 @@ UnixMakefileGenerator::writeMakeParts(QT
+@@ -295,10 +297,15 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
      } else if (!project->isActiveConfig("staticlib") && project->variables()["QMAKE_APP_FLAG"].isEmpty()) {
  	t << "TARGETA	= " << var("TARGETA") << endl;
  	if (project->isEmpty("QMAKE_HPUX_SHLIB")) {
@@ -67,7 +67,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.16 2007/02/17 18:59:04 e
  	}
  	if(project->isEmpty("QMAKE_LN_SHLIB"))
  	    project->variables()["QMAKE_LN_SHLIB"].append("ln -s");
-@@ -1586,5 +1606,6 @@ UnixMakefileGenerator::writePkgConfigFil
+@@ -1586,5 +1606,6 @@ UnixMakefileGenerator::writePkgConfigFile()     // ###
        << varGlue("PRL_EXPORT_DEFINES","-D"," -D"," ")
        << project->variables()["PRL_EXPORT_CXXFLAGS"].join(" ")
  	//      << varGlue("DEFINES","-D"," -D"," ")
