@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.886 2007/03/30 13:44:50 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.887 2007/03/31 15:36:43 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1670,6 +1670,13 @@ lib-depends-check:
 	@perl ${PORTSDIR}/infrastructure/package/check-newlib-depends \
 		${_NEWLIB_DEPENDS_FLAGS} -d ${_PKG_REPO} ${_PACKAGE_COOKIE}
 
+port-lib-depends-check: ${_FAKE_COOKIE}
+.  for _S in ${MULTI_PACKAGES}
+	@SUBPACKAGE=${_S} ${MAKE} print-plist-with-depends | \
+	 perl ${PORTSDIR}/infrastructure/package/check-newlib-depends \
+		${_NEWLIB_DEPENDS_FLAGS} -d ${_PKG_REPO} -B ${WRKINST}
+.  endfor
+
 _internal-manpages-check: ${_FAKE_COOKIE}
 	@cd ${WRKINST}${TRUEPREFIX}/man && \
 		${SUDO} /usr/libexec/makewhatis -p . && \
@@ -2928,7 +2935,7 @@ dump-vars:
 	reinstall repackage run-depends \
 	run-depends-list run-dir-depends show verbose-show dump-vars \
 	uninstall unlink-categories update-patches \
-	update-plist \
+	update-plist port-lib-depends-check \
 	license-check _license-check \
 	_internal-extract _internal-distpatch _internal-configure \
 	_internal-build _internal-all _internal_install _internal-fake \
@@ -2939,8 +2946,7 @@ dump-vars:
 	_internal-buildlib-depends _internal_runlib-depends \
 	_internal-build-depends \
 	_internal-run-depends _internal-regress-depends \
-	_internal-regress _internal-clean _internal-lib-depends-check \
-	_internal-newlib-depends-check \
+	_internal-regress _internal-clean \
 	_internal-manpages-check _internal-plist _internal-update-plist \
 	_internal-update update print-plist print-plist-contents \
 	_list-port-libs _print-package-signature-lib _print-package-signature-run \
