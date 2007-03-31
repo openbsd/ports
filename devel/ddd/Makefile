@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2006/11/11 21:04:27 steven Exp $
+# $OpenBSD: Makefile,v 1.42 2007/03/31 12:21:38 steven Exp $
 
 COMMENT=	"Data Display Debugger, graphical front-end for GDB, etc"
 
 DISTNAME=	ddd-3.3.11
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=ddd/}
 
@@ -24,6 +25,7 @@ REGRESS_FLAGS+=	"DISPLAY=$${DISPLAY}" "HOME=$${HOME}"
 VMEM_WARNING=	Yes
 USE_MOTIF=	any
 USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
 USE_X11=	Yes
 CONFIGURE_STYLE=gnu autoconf no-autoheader
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
