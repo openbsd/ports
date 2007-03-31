@@ -1,7 +1,7 @@
-$OpenBSD: patch-khtml_html_html_documentimpl_cpp,v 1.2 2007/02/02 13:18:30 espie Exp $
---- khtml/html/html_documentimpl.cpp.orig	Fri Feb  2 14:20:10 2007
-+++ khtml/html/html_documentimpl.cpp	Fri Feb  2 14:20:20 2007
-@@ -222,7 +222,7 @@ ElementImpl *HTMLDocumentImpl::createEle
+$OpenBSD: patch-khtml_html_html_documentimpl_cpp,v 1.3 2007/03/31 23:33:34 espie Exp $
+--- khtml/html/html_documentimpl.cpp.orig	Mon Jan 15 12:34:00 2007
++++ khtml/html/html_documentimpl.cpp	Sat Mar 31 15:09:22 2007
+@@ -222,7 +222,7 @@ ElementImpl *HTMLDocumentImpl::createElement( const DO
  
  void HTMLDocumentImpl::slotHistoryChanged()
  {
