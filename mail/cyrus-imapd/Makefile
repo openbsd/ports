@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2006/12/14 09:07:56 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2007/03/31 09:33:21 ajacoutot Exp $
 
 COMMENT-main=	"Cyrus IMAP server"
 COMMENT-perl=	"perl utils for the Cyrus IMAP server"
 
-V=		2.2.13
+V=		2.3.8
 DISTNAME=	cyrus-imapd-${V}
-PKGNAME-main=	${DISTNAME}p3
-FULLPKGNAME-perl=cyrus-imapd-perl-${V}p0
+PKGNAME-main=	${DISTNAME}
+FULLPKGNAME-perl=cyrus-imapd-perl-${V}
 CATEGORIES=	mail
 HOMEPAGE=	http://cyrusimap.web.cmu.edu
 
@@ -47,8 +47,8 @@ CONFIGURE_ARGS=	--with-service-path=${LOCALBASE}/libexec/cyrus-imapd \
 		--with-openssl=/usr \
 		--with-lock=fcntl \
 		--with-com_err=/usr \
-		--with-idle=idled \
 		--with-libwrap=/usr \
+		--enable-idled \
 		--enable-listext \
 		--enable-murder \
 		--enable-nntp \
@@ -79,6 +79,7 @@ CONFIGURE_ARGS+=--with-auth=unix \
 .endif
 
 WANTLIB-main=	${WANTLIB} wrap c pthread
+WANTLIB-perl=	crypto ssl
 
 NO_REGRESS=	Yes
 

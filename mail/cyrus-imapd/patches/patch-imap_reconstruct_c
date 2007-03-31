@@ -1,0 +1,13 @@
+$OpenBSD: patch-imap_reconstruct_c,v 1.1 2007/03/31 09:33:21 ajacoutot Exp $
+--- imap/reconstruct.c.orig	Mon Feb  5 19:41:48 2007
++++ imap/reconstruct.c	Fri Mar 23 15:08:09 2007
+@@ -577,8 +577,7 @@ reconstruct_expunge (char * path, struct mailbox * mai
+ 	    free(expuid);
+ 	    return IMAP_IOERROR;
+    	}
+-	unsigned msgno;
+-	const char *p = index_base + start_offset;
++	p = index_base + start_offset;
+ 
+ 	/* 
+ 	* verify the message files exist - 

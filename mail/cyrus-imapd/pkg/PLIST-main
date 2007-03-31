@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2006/12/14 09:07:56 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2007/03/31 09:33:21 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 @newgroup _cyrus:543
 @newuser _cyrus:543:_cyrus:daemon:Cyrus Account:/var/empty:/sbin/nologin
@@ -9,16 +9,19 @@ bin/nntptest
 bin/pop3test
 bin/sivtest
 bin/smtptest
+bin/synctest
 include/cyrus/
 include/cyrus/acl.h
 include/cyrus/assert.h
 include/cyrus/auth.h
 include/cyrus/bsearch.h
+include/cyrus/byteorder64.h
 include/cyrus/charset.h
 include/cyrus/cyrusdb.h
 include/cyrus/glob.h
 include/cyrus/gmtoff.h
 include/cyrus/hash.h
+include/cyrus/hmac-md5.h
 include/cyrus/imapopts.h
 include/cyrus/imapurl.h
 include/cyrus/imclient.h
@@ -29,6 +32,8 @@ include/cyrus/libcyr_cfg.h
 include/cyrus/lock.h
 include/cyrus/lsort.h
 include/cyrus/map.h
+include/cyrus/md5.h
+include/cyrus/message_uuid.h
 include/cyrus/mkgmtime.h
 include/cyrus/mpool.h
 include/cyrus/nonblock.h
@@ -55,6 +60,7 @@ libexec/cyrus-imapd/ctl_cyrusdb
 libexec/cyrus-imapd/ctl_deliver
 libexec/cyrus-imapd/ctl_mboxlist
 libexec/cyrus-imapd/cvt_cyrusdb
+libexec/cyrus-imapd/cyr_dbtool
 libexec/cyrus-imapd/cyr_expire
 libexec/cyrus-imapd/cyrdump
 libexec/cyrus-imapd/deliver
@@ -81,6 +87,7 @@ libexec/cyrus-imapd/smmapd
 libexec/cyrus-imapd/squatter
 libexec/cyrus-imapd/timsieved
 libexec/cyrus-imapd/tls_prune
+libexec/cyrus-imapd/unexpunge
 @man man/man1/imtest.1
 @man man/man1/lmtptest.1
 @man man/man1/mupdatetest.1
@@ -98,6 +105,7 @@ libexec/cyrus-imapd/tls_prune
 @man man/man8/ctl_deliver.8
 @man man/man8/ctl_mboxlist.8
 @man man/man8/cvt_cyrusdb.8
+@man man/man8/cyr_dbtool.8
 @man man/man8/cyr_expire.8
 @man man/man8/cyrus-fetchnews.8
 @man man/man8/cyrus-idled.8
@@ -110,6 +118,7 @@ libexec/cyrus-imapd/tls_prune
 @comment @man man/man8/imapd.8
 @man man/man8/ipurge.8
 @man man/man8/lmtpd.8
+@man man/man8/make_md5.8
 @comment @man man/man8/master.8
 @man man/man8/mbexamine.8
 @man man/man8/mbpath.8
@@ -121,9 +130,13 @@ libexec/cyrus-imapd/tls_prune
 @man man/man8/rmnews.8
 @man man/man8/smmapd.8
 @man man/man8/squatter.8
+@man man/man8/sync_client.8
+@man man/man8/sync_reset.8
+@man man/man8/sync_server.8
 @man man/man8/syncnews.8
 @man man/man8/timsieved.8
 @man man/man8/tls_prune.8
+@man man/man8/unexpunge.8
 share/doc/cyrus-imapd/
 share/doc/cyrus-imapd/COPYRIGHT
 share/doc/cyrus-imapd/text/
@@ -150,6 +163,7 @@ share/doc/cyrus-imapd/text/install-murder
 share/doc/cyrus-imapd/text/install-netnews
 share/doc/cyrus-imapd/text/install-perf
 share/doc/cyrus-imapd/text/install-prereq
+share/doc/cyrus-imapd/text/install-replication
 share/doc/cyrus-imapd/text/install-sieve
 share/doc/cyrus-imapd/text/install-snmpmon
 share/doc/cyrus-imapd/text/install-testing
@@ -185,6 +199,7 @@ share/examples/cyrus-imapd/tools/
 share/examples/cyrus-imapd/tools/convert-sieve.pl
 share/examples/cyrus-imapd/tools/dohash
 share/examples/cyrus-imapd/tools/masssievec
+share/examples/cyrus-imapd/tools/migrate-metadata
 share/examples/cyrus-imapd/tools/mkimap
 share/examples/cyrus-imapd/tools/mknewsgroups
 @comment share/examples/cyrus-imapd/tools/mupdate-loadgen.pl
