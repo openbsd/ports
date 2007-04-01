@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2006/08/03 13:09:10 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2007/04/01 16:44:19 sturm Exp $
 # $NetBSD: Makefile,v 1.2 1998/07/04 09:19:04 mycroft Exp $
 # $RuOBSD: Makefile,v 1.4 2002/05/18 04:21:36 form Exp $
 
@@ -35,7 +35,7 @@ USE_GMAKE=		Yes
 
 AUTOCONF_VERSION=	2.59
 # doesn't work otherwise
-BUILD_DEPENDS=		::devel/autoconf/${AUTOCONF_VERSION}
+BUILD_DEPENDS=		:autoconf-${AUTOCONF_VERSION}*:devel/autoconf/${AUTOCONF_VERSION}
 CONFIGURE_STYLE=	automake
 CONFIGURE_ARGS=		--without-nas-sound
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

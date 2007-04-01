@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2006/11/01 23:57:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2007/04/01 16:44:19 sturm Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 BROKEN='adjust for types changes'
@@ -32,8 +32,8 @@ MAKE_JAVA?=No
 MAKE_ADA?=No
 
 
-BUILD_DEPENDS=	::devel/autoconf/2.13
-BUILD_DEPENDS+= ::devel/autoconf/2.59
+BUILD_DEPENDS=	:autoconf-2.13*:devel/autoconf/2.13
+BUILD_DEPENDS+= :autoconf-2.59*:devel/autoconf/2.59
 BUILD_DEPENDS+=	::devel/metaauto
 SUBPACKAGE?=
 WANTLIB=c

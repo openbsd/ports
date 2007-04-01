@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/03/20 10:48:52 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/04/01 16:44:19 sturm Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN='adjust for types changes'
@@ -42,7 +42,7 @@ FLAVOR+=c++
 DISTFILES=  ${DISTNAME}.tar.bz2
 SUPDISTFILES=	adastrap-i386-3.3.6-4.tgz:0
 
-BUILD_DEPENDS+= ::devel/autoconf/2.59
+BUILD_DEPENDS+= :autoconf-2.59:devel/autoconf/2.59
 BUILD_DEPENDS+=	::devel/metaauto
 USE_LIBTOOL=	Yes
 

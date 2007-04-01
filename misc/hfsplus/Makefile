@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2006/01/19 10:38:01 aanriot Exp $
+# $OpenBSD: Makefile,v 1.12 2007/04/01 16:44:19 sturm Exp $
 
 COMMENT=	"hfsplus filesystem access tool"
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 
 AUTOCONF_VERSION=	2.59
-BUILD_DEPENDS=	::devel/autoconf/${AUTOCONF_VERSION}
+BUILD_DEPENDS=	:autoconf-${AUTOCONF_VERSION}*:devel/autoconf/${AUTOCONF_VERSION}
 LIB_DEPENDS=	utf8::misc/libutf8 
 
 USE_GMAKE=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/03/22 22:08:54 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2007/04/01 16:44:19 sturm Exp $
 #
 # Credits to Matt Jibson. He did the initial work on this port and many
 # tools it depends on.
@@ -61,7 +61,7 @@ RUN_DEPENDS=	::print/ghostscript/gnu
 
 BUILD_DEPENDS= 	::print/mftrace \
 		::devel/bison \
-		::devel/autoconf/${AUTOCONF_VERSION} \
+		:autoconf-${AUTOCONF_VERSION}*:devel/autoconf/${AUTOCONF_VERSION} \
 		${RUN_DEPENDS}
 
 SUBST_VARS+=	VERSION
