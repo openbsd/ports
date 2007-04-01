@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_autoconf_mk_in,v 1.5 2007/04/01 09:36:15 martynas Exp $
+$OpenBSD: patch-config_autoconf_mk_in,v 1.6 2007/04/01 13:19:58 martynas Exp $
 --- config/autoconf.mk.in.orig	Thu Sep 14 21:07:03 2006
 +++ config/autoconf.mk.in	Wed Mar 28 12:09:46 2007
 @@ -63,7 +63,7 @@ datadir		= @datadir@
@@ -6,7 +6,7 @@ $OpenBSD: patch-config_autoconf_mk_in,v 1.5 2007/04/01 09:36:15 martynas Exp $
  idldir		= @datadir@/idl/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
  
 -mozappdir	= $(libdir)/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
-+mozappdir	= $(prefix)/minimo
++mozappdir	= $(prefix)/share/minimo
  mredir		= $(libdir)/mre/mre-$(MOZ_APP_VERSION)
  mrelibdir	= $(mredir)/lib
  

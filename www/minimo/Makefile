@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2007/04/01 09:36:15 martynas Exp $
+# $OpenBSD: Makefile,v 1.35 2007/04/01 13:19:58 martynas Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
 SHARED_ONLY=	Yes
 
 COMMENT=	"small, simple, and powerful web browser for mobile devices"
 DISTNAME=	minimo-20070320
-SO_VERSION=	4.0
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	www
 MASTER_SITES=	http://mirrors.protection.cx/~jolan/
@@ -28,7 +28,7 @@ LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
 		gdk-x11-2.0.>=600.0,gdk_pixbuf-2.0.>=600.0,gtk-x11-2.0.>=600.0::x11/gtk+2 \
 		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr \
 		nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss
-WANTLIB=	X11 Xext Xft Xrender Xt Xcursor Xfixes Xi Xinerama Xrandr \
+WANTLIB=	X11 Xft Xrender Xt Xau Xdmcp expat \
 		c fontconfig freetype m pthread z \
 		atk-1.0.>=1011.0 glib-2.0.>=600.0 gmodule-2.0.>=600.0 \
 		gobject-2.0.>=600.0 pango-1.0.>=800.0 pangocairo-1.0 \
@@ -85,21 +85,20 @@ INSTALL_STRIP=
 MAKE_ENV=	MOZ_CO_PROJECT=minimo \
 		LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
 		BUILD_OFFICIAL=1 \
-		MOZILLA_OFFICIAL=1 \
-		SO_VERSION=${SO_VERSION}
+		MOZILLA_OFFICIAL=1
 CONFIGURE_ENV=	${MAKE_ENV} \
 		PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig" \
 		topsrcdir=${WRKSRC}
 
 MOB=		${WRKSRC}/dist/bin
-MOZ=		${PREFIX}/minimo
+MOZ=		${PREFIX}/share/minimo
 
 post-extract:
 	@cp ${FILESDIR}/xptc* ${WRKSRC}/xpcom/reflect/xptcall/src/md/unix/
 
 do-install:
 	${INSTALL_DATA_DIR} ${MOZ}
-	${INSTALL_PROGRAM} ${MOB}/minimo ${MOZ}/
+	${INSTALL_PROGRAM} ${MOB}/minimo ${PREFIX}/bin/
 	${INSTALL_DATA_DIR} ${MOZ}/chrome
 	${INSTALL_DATA} ${MOB}/chrome/classic.{jar,manifest} \
 		${MOB}/chrome/en-US.{jar,manifest} \
@@ -137,8 +136,5 @@ do-install:
 		rm -rf locale
 	@cp -f ${WRKSRC}/minimo/customization/all.js ${MOZ}/greprefs/
 	@cat ${WRKSRC}/minimo/customization/ua.css.additions >> ${MOZ}/res/ua.css
-	${INSTALL_SCRIPT} ${FILESDIR}/minimo ${PREFIX}/bin/ && \
-		perl -pi -e 's|!!LOCALBASE!!|${LOCALBASE}|g' \
-			${PREFIX}/bin/minimo
 
 .include <bsd.port.mk>

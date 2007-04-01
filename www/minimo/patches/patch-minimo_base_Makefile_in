@@ -1,0 +1,12 @@
+$OpenBSD: patch-minimo_base_Makefile_in,v 1.1 2007/04/01 13:19:58 martynas Exp $
+--- minimo/base/Makefile.in.orig	Sun Apr  1 13:40:09 2007
++++ minimo/base/Makefile.in	Sun Apr  1 13:35:53 2007
+@@ -42,6 +42,8 @@ VPATH		= @srcdir@
+ 
+ include $(DEPTH)/config/autoconf.mk
+ 
++DEFINES += -DMOZAPPDIR=\"$(mozappdir)\"
++
+ MOZILLA_INTERNAL_API = 1
+ 
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-embedding_base_nsEmbedAPI_cpp,v 1.1 2007/04/01 13:19:58 martynas Exp $
+--- embedding/base/nsEmbedAPI.cpp.orig	Thu Jul 21 16:33:40 2005
++++ embedding/base/nsEmbedAPI.cpp	Sun Apr  1 13:29:27 2007
+@@ -53,7 +53,7 @@ static PRBool             sRegistryInitializedFlag = P
+ static PRUint32           sInitCounter = 0;
+ 
+ #define HACK_AROUND_THREADING_ISSUES
+-//#define HACK_AROUND_NONREENTRANT_INITXPCOM
++#define HACK_AROUND_NONREENTRANT_INITXPCOM
+ 
+ #ifdef HACK_AROUND_NONREENTRANT_INITXPCOM
+ // XXX hack class to clean up XPCOM when this module is unloaded

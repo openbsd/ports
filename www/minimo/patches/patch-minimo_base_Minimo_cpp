@@ -1,0 +1,21 @@
+$OpenBSD: patch-minimo_base_Minimo_cpp,v 1.3 2007/04/01 13:19:58 martynas Exp $
+--- minimo/base/Minimo.cpp.orig	Fri Oct 27 23:30:36 2006
++++ minimo/base/Minimo.cpp	Sun Apr  1 13:38:06 2007
+@@ -34,6 +34,8 @@
+  *
+  * ***** END LICENSE BLOCK ***** */
+ 
++#include <unistd.h>
++
+ #include "MinimoPrivate.h"
+ 
+ #include "nsIFullScreen.h"
+@@ -806,6 +808,8 @@ void UnloadKnownLibs()
+ 
+ int main(int argc, char *argv[])
+ {
++  chdir(MOZAPPDIR);
++
+ #ifdef WINCE
+   CreateListenerWindow();
+ #endif

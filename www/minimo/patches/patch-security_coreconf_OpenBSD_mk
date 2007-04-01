@@ -1,4 +1,4 @@
-$OpenBSD: patch-security_coreconf_OpenBSD_mk,v 1.5 2007/04/01 09:36:15 martynas Exp $
+$OpenBSD: patch-security_coreconf_OpenBSD_mk,v 1.6 2007/04/01 13:19:58 martynas Exp $
 --- security/coreconf/OpenBSD.mk.orig	Sun Apr 25 18:02:17 2004
 +++ security/coreconf/OpenBSD.mk	Thu Mar 22 20:29:45 2007
 @@ -42,7 +42,7 @@ CC			= gcc
@@ -10,15 +10,6 @@ $OpenBSD: patch-security_coreconf_OpenBSD_mk,v 1.5 2007/04/01 09:36:15 martynas 
  ifeq ($(CPU_ARCH),i386)
  OS_REL_CFLAGS		= -Di386
  CPU_ARCH		= x86
-@@ -55,7 +55,7 @@ OS_LIBS			+= -pthread
- DSO_LDOPTS		+= -pthread
- endif
- 
--DLL_SUFFIX		= so.1.0
-+DLL_SUFFIX		= so.${SO_VERSION}
- 
- OS_CFLAGS		= $(DSO_CFLAGS) $(OS_REL_CFLAGS) -ansi -Wall -pipe -DOPENBSD
- 
 @@ -64,7 +64,7 @@ OS_LIBS			= 
  ARCH			= openbsd
  

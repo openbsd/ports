@@ -1,15 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.5 2007/04/01 09:36:15 martynas Exp $
+$OpenBSD: patch-configure_in,v 1.6 2007/04/01 13:19:58 martynas Exp $
 --- configure.in.orig	Sat Oct 28 06:29:25 2006
 +++ configure.in	Sat Nov 18 21:52:21 2006
-@@ -1931,7 +1931,7 @@ case "$target" in
- 	;;
- 
- *-openbsd*)
--    DLL_SUFFIX=".so.1.0"
-+    DLL_SUFFIX=".so.${SO_VERSION}"
-     DSO_CFLAGS=''
-     DSO_PIC_CFLAGS='-fPIC'
-     DSO_LDOPTS='-shared -fPIC'
 @@ -3804,7 +3804,7 @@ _SAVE_LIBS=$LIBS
  CFLAGS="$ZLIB_CFLAGS $CFLAGS"
  LDFLAGS="$ZLIB_LIBS -lz $LDFLAGS"
