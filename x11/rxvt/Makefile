@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2006/12/05 21:23:23 dim Exp $
+# $OpenBSD: Makefile,v 1.37 2007/04/01 05:37:28 steven Exp $
 
 COMMENT-main=	"color, low memory usage, xterm replacement"
 COMMENT-clock=	"analog clock for X11 w/appoint. reminder and mail notif"
@@ -27,6 +27,8 @@ WANTLIB=		X11 Xpm c
 MULTI_PACKAGES=	-main -clock
 
 USE_X11=		Yes
+USE_LIBTOOL=		Yes
+LIBTOOL_FLAGS=		--tag=disable-shared
 CONFIGURE_STYLE= 	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/autoconf
 CONFIGURE_ARGS=		--enable-utmp \

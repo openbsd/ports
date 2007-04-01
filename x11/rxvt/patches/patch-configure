@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure,v 1.1 2007/04/01 05:37:28 steven Exp $
+--- configure.orig	Sun Apr  1 07:30:24 2007
++++ configure	Sun Apr  1 07:31:41 2007
+@@ -12925,7 +12925,6 @@ _ACEOF
+ 
+ case "$host_alias" in
+     *ultrix) ac_cv_func_setsid='no' ;;
+-    *) break;;
+ esac
+ 
+ 
