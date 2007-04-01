@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile,v 1.1 2004/04/05 21:41:46 naddy Exp $
---- Makefile.orig	2004-02-17 16:24:06.000000000 +0100
-+++ Makefile	2004-03-18 18:37:07.000000000 +0100
+$OpenBSD: patch-Makefile,v 1.2 2007/04/01 17:11:16 naddy Exp $
+--- Makefile.orig	Tue Feb 17 16:24:06 2004
++++ Makefile	Sun Apr  1 19:08:14 2007
 @@ -22,8 +22,8 @@
  #
- # $Id: patch-Makefile,v 1.1 2004/04/05 21:41:46 naddy Exp $
+ # $Id: patch-Makefile,v 1.2 2007/04/01 17:11:16 naddy Exp $
  #
 -CC = gcc
 -CFLAGS = -g -Wall
@@ -12,7 +12,7 @@ $OpenBSD: patch-Makefile,v 1.1 2004/04/05 21:41:46 naddy Exp $
  
  OTHER = README CHANGES COPYRIGHTS Makefile Imakefile.lesstif Project.tmpl \
          xmbdfedrc xmbdfed.man
-@@ -46,17 +46,17 @@ OBJS = FGrid.o GEdit.o GEditTB.o GTest.o
+@@ -46,17 +46,17 @@ OBJS = FGrid.o GEdit.o GEditTB.o GTest.o ProgBar.o bdf
  # Uncomment these if you have the FreeType library and want to use it to
  # import OpenType fonts.
  #
@@ -20,7 +20,7 @@ $OpenBSD: patch-Makefile,v 1.1 2004/04/05 21:41:46 naddy Exp $
 -#FTYPE_LIBS = -L/usr/local/lib -lfreetype
 -#FTYPE_DEFS = -DHAVE_FREETYPE
 +FTYPE_INCS = -I${X11BASE}/include/freetype2
-+FTYPE_LIBS = -L${X11BASE}/lib -lfreetype
++FTYPE_LIBS = -L${X11BASE}/lib -lfreetype -lz
 +FTYPE_DEFS = -DHAVE_FREETYPE
  
  #
@@ -36,7 +36,7 @@ $OpenBSD: patch-Makefile,v 1.1 2004/04/05 21:41:46 naddy Exp $
  
  #
  # Specify the various defines needed for HBF fonts.  If you do not have GNU
-@@ -64,7 +64,7 @@ OBJS = FGrid.o GEdit.o GEditTB.o GTest.o
+@@ -64,7 +64,7 @@ OBJS = FGrid.o GEdit.o GEditTB.o GTest.o ProgBar.o bdf
  # files with a ".gz" extension.  If you don't care about HBF fonts, just
  # comment this line out.
  #
@@ -45,7 +45,7 @@ $OpenBSD: patch-Makefile,v 1.1 2004/04/05 21:41:46 naddy Exp $
  
  #
  # Set the defines used for all files except the HBF support.
-@@ -82,9 +82,9 @@ DEFS = -DHAVE_XLIB $(FTYPE_DEFS) $(HBF_D
+@@ -82,9 +82,9 @@ DEFS = -DHAVE_XLIB $(FTYPE_DEFS) $(HBF_DEFS)
  #
  # Uncomment these for Solaris.
  #
@@ -58,7 +58,7 @@ $OpenBSD: patch-Makefile,v 1.1 2004/04/05 21:41:46 naddy Exp $
  
  #
  # Uncomment these for Linux.
-@@ -129,10 +129,14 @@ LIBS = -R/usr/openwin/lib -R/usr/dt/lib 
+@@ -129,10 +129,14 @@ LIBS = -R/usr/openwin/lib -R/usr/dt/lib -L/usr/dt/lib 
  #LIBS = -L/usr/Motif-1.2/lib32 -lXm \
  #       -L/usr/lib/X11 -lXmu -lXt -lXext -lX11 -lSM -lICE $(FTYPE_LIBS)
  
