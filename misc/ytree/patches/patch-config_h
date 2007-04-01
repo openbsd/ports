@@ -1,0 +1,24 @@
+$OpenBSD: patch-config_h,v 1.1 2007/04/01 17:15:20 martynas Exp $
+--- config.h.orig	Fri Mar 30 19:57:57 2007
++++ config.h	Fri Mar 30 19:56:52 2007
+@@ -46,17 +46,13 @@
+ #define DEFAULT_RARLIST    "unrar l"
+ #define DEFAULT_RAREXPAND  "unrar p -c- -INUL"
+ 
+-#define DEFAULT_TAPEDEV    "/dev/rmt0"
++#define DEFAULT_TAPEDEV    "/dev/rst0"
+ 
+ #define DEFAULT_SEARCHCOMMAND	"grep  {}"
+ 
+ 
+-/* Attention! You must use GNU TAR, because only GNU TAR is able to
+- * extract to stdout!
+- */
+-
+-#define DEFAULT_TARLIST    "gtar tvf -"
+-#define DEFAULT_TAREXPAND  "gtar xOPf -"
++#define DEFAULT_TARLIST    "tar tvf -"
++#define DEFAULT_TAREXPAND  "tar xOPf -"
+ #define DEFAULT_RPMLIST    "rpm -q -l --dump -p"
+ #define DEFAULT_RPMEXPAND  "builtin"
+ #define DEFAULT_HEXDUMP    "hd"
