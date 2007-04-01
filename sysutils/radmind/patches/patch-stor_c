@@ -1,7 +1,7 @@
-$OpenBSD: patch-stor_c,v 1.2 2005/01/26 00:33:30 pvalchev Exp $
---- stor.c.orig	Thu Sep 23 13:46:22 2004
-+++ stor.c	Thu Jan 13 08:42:35 2005
-@@ -464,11 +464,13 @@ n_stor_applefile( SNET *sn, char *pathde
+$OpenBSD: patch-stor_c,v 1.3 2007/04/01 07:08:39 steven Exp $
+--- stor.c.orig	Fri Oct  1 17:20:05 2004
++++ stor.c	Sun Apr  1 08:18:32 2007
+@@ -464,11 +464,13 @@ n_stor_applefile( SNET *sn, char *pathdesc, char *path
      struct timeval      	tv;
      struct applefileinfo	afinfo;
      off_t			size;

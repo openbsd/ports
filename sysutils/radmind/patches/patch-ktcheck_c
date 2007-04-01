@@ -1,7 +1,7 @@
-$OpenBSD: patch-ktcheck_c,v 1.1 2005/01/26 00:33:30 pvalchev Exp $
---- ktcheck.c.orig	Thu Jan 20 13:09:09 2005
-+++ ktcheck.c	Thu Jan 20 13:05:02 2005
-@@ -95,7 +95,7 @@ getstat( SNET *sn, char *description, ch
+$OpenBSD: patch-ktcheck_c,v 1.2 2007/04/01 07:08:39 steven Exp $
+--- ktcheck.c.orig	Thu Feb 10 19:22:52 2005
++++ ktcheck.c	Sun Apr  1 08:18:32 2007
+@@ -95,7 +95,7 @@ getstat( SNET *sn, char *description, char *stats ) 
  	fprintf( stderr, "%s: line too long\n", line );
  	return( -1 );
      }
@@ -10,7 +10,7 @@ $OpenBSD: patch-ktcheck_c,v 1.1 2005/01/26 00:33:30 pvalchev Exp $
  
      if ( verbose ) printf( "<<< %s\n", stats );
  
-@@ -253,7 +253,7 @@ check( SNET *sn, char *type, char *file 
+@@ -253,7 +253,7 @@ check( SNET *sn, char *type, char *file )
  	    fprintf( stderr, "%s: too long\n", type );
  	    return( 2 );
  	}
@@ -19,7 +19,7 @@ $OpenBSD: patch-ktcheck_c,v 1.1 2005/01/26 00:33:30 pvalchev Exp $
  
  	file = base_kfile;
  
-@@ -262,7 +262,7 @@ check( SNET *sn, char *type, char *file 
+@@ -262,7 +262,7 @@ check( SNET *sn, char *type, char *file )
  	    fprintf( stderr, "%s: path too long\n", base_kfile );
  	    return( 2 );
  	}

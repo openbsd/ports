@@ -1,6 +1,6 @@
-$OpenBSD: patch-lapply_c,v 1.2 2005/01/26 00:33:30 pvalchev Exp $
---- lapply.c.orig	Thu Dec 16 16:50:35 2004
-+++ lapply.c	Thu Jan 20 12:57:27 2005
+$OpenBSD: patch-lapply_c,v 1.3 2007/04/01 07:08:39 steven Exp $
+--- lapply.c.orig	Thu Dec 16 22:51:34 2004
++++ lapply.c	Sun Apr  1 08:18:32 2007
 @@ -75,7 +75,7 @@ create_node( char *path, char *tline )
      new_node = (struct node *) malloc( sizeof( struct node ));
      new_node->path = strdup( path );
@@ -10,7 +10,7 @@ $OpenBSD: patch-lapply_c,v 1.2 2005/01/26 00:33:30 pvalchev Exp $
  	new_node->doline = 1;
      } else {
  	new_node->doline = 0;
-@@ -126,7 +126,7 @@ do_line( char *tline, int present, struc
+@@ -126,7 +126,7 @@ do_line( char *tline, int present, struct stat *st, SN
  	fprintf( stderr, "line %d: too long\n", linenum );
  	return( 1 );
      } 
@@ -19,7 +19,7 @@ $OpenBSD: patch-lapply_c,v 1.2 2005/01/26 00:33:30 pvalchev Exp $
  
      /* DOWNLOAD */
      if ( *command == '+' ) {
-@@ -135,7 +135,7 @@ do_line( char *tline, int present, struc
+@@ -135,7 +135,7 @@ do_line( char *tline, int present, struct stat *st, SN
  		    linenum, *targv[ 0 ] );
  	    return( 1 );
  	}

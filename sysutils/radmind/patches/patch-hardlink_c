@@ -1,7 +1,7 @@
-$OpenBSD: patch-hardlink_c,v 1.1.1.1 2004/06/26 19:00:48 sturm Exp $
---- hardlink.c.orig	2003-05-20 18:23:11.000000000 -0400
-+++ hardlink.c	2004-06-12 23:03:23.000000000 -0400
-@@ -79,6 +79,7 @@ d_insert( struct devlist **dev_head, str
+$OpenBSD: patch-hardlink_c,v 1.2 2007/04/01 07:08:39 steven Exp $
+--- hardlink.c.orig	Wed May 21 00:23:11 2003
++++ hardlink.c	Sun Apr  1 08:18:32 2007
+@@ -79,6 +79,7 @@ d_insert( struct devlist **dev_head, struct pathinfo *
  i_insert( struct devlist *dev_head, struct pathinfo *pinfo )
  {
      struct inolist	*new, **cur;
@@ -9,7 +9,7 @@ $OpenBSD: patch-hardlink_c,v 1.1.1.1 2004/06/26 19:00:48 sturm Exp $
  
      for ( cur = &dev_head->d_ilist; *cur != NULL; cur = &(*cur)->i_next ) {
  	if ( pinfo->pi_stat.st_ino <= (*cur)->i_ino ) {
-@@ -96,13 +97,14 @@ i_insert( struct devlist *dev_head, stru
+@@ -96,13 +97,14 @@ i_insert( struct devlist *dev_head, struct pathinfo *p
  	exit( 2 );
      }
  

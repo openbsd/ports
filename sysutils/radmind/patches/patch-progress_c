@@ -1,6 +1,6 @@
-$OpenBSD: patch-progress_c,v 1.1 2005/01/26 00:33:30 pvalchev Exp $
---- progress.c.orig	Thu Jan 20 13:07:27 2005
-+++ progress.c	Thu Jan 20 13:08:00 2005
+$OpenBSD: patch-progress_c,v 1.2 2007/04/01 07:08:39 steven Exp $
+--- progress.c.orig	Fri Oct  1 17:20:04 2004
++++ progress.c	Sun Apr  1 08:18:32 2007
 @@ -39,7 +39,7 @@ loadsetsize( FILE *tran )
  
      while ( fgets( tline, LINE_MAX, tran ) != NULL ) {
@@ -19,7 +19,7 @@ $OpenBSD: patch-progress_c,v 1.1 2005/01/26 00:33:30 pvalchev Exp $
  	/* skip empty lines and transcript marker lines */
  	if (( tac = argcargv( tline, &targv )) <= 1 ) {
  	    continue;
-@@ -113,7 +113,7 @@ lcksum_loadsetsize( FILE *tran, char *pr
+@@ -113,7 +113,7 @@ lcksum_loadsetsize( FILE *tran, char *prefix )
  
      while ( fgets( tline, LINE_MAX, tran ) != NULL ) {
  	linenum++;
