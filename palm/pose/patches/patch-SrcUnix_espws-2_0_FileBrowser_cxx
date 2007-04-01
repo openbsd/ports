@@ -1,7 +1,7 @@
-$OpenBSD: patch-SrcUnix_espws-2_0_FileBrowser_cxx,v 1.1.1.1 2006/10/19 16:24:52 mbalmer Exp $
---- SrcUnix/espws-2.0/FileBrowser.cxx.orig	Fri Mar 29 14:11:11 2002
-+++ SrcUnix/espws-2.0/FileBrowser.cxx	Thu Oct 19 17:59:13 2006
-@@ -467,7 +467,7 @@ FileBrowser::load(const char *directory)
+$OpenBSD: patch-SrcUnix_espws-2_0_FileBrowser_cxx,v 1.2 2007/04/01 17:50:25 martynas Exp $
+--- SrcUnix/espws-2.0/FileBrowser.cxx.orig	Fri Mar 29 15:11:11 2002
++++ SrcUnix/espws-2.0/FileBrowser.cxx	Sun Apr  1 17:53:43 2007
+@@ -467,7 +467,7 @@ FileBrowser::load(const char *directory)// I - Directo
  
      num_files = filename_list(filename, &files);
  #else
@@ -10,7 +10,7 @@ $OpenBSD: patch-SrcUnix_espws-2_0_FileBrowser_cxx,v 1.1.1.1 2006/10/19 16:24:52 
  #endif /* WIN32 || __EMX__ */
  
      if (num_files <= 0)
-@@ -480,8 +480,8 @@ FileBrowser::load(const char *directory)
+@@ -480,8 +480,8 @@ FileBrowser::load(const char *directory)// I - Directo
        {
  	sprintf(filename, "%s/%s", directory_, files[i]->d_name);
  

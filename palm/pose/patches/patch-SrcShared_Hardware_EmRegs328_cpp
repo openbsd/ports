@@ -1,7 +1,7 @@
-$OpenBSD: patch-SrcShared_Hardware_EmRegs328_cpp,v 1.1.1.1 2006/10/19 16:24:51 mbalmer Exp $
---- SrcShared/Hardware/EmRegs328.cpp.orig	Fri Mar 29 14:11:18 2002
-+++ SrcShared/Hardware/EmRegs328.cpp	Thu Oct 19 17:26:39 2006
-@@ -97,13 +97,13 @@ static const uint32	ADDRESS_MASK = 0x000
+$OpenBSD: patch-SrcShared_Hardware_EmRegs328_cpp,v 1.2 2007/04/01 17:50:25 martynas Exp $
+--- SrcShared/Hardware/EmRegs328.cpp.orig	Fri Mar 29 15:11:18 2002
++++ SrcShared/Hardware/EmRegs328.cpp	Sun Apr  1 17:53:43 2007
+@@ -97,13 +97,13 @@ static const uint32	ADDRESS_MASK = 0x0000FFF0;
  const HwrM68328Type	kInitial68328RegisterValues =
  {
  	0x0C,		//	Byte		scr;						// $000: System Control Register
@@ -17,7 +17,7 @@ $OpenBSD: patch-SrcShared_Hardware_EmRegs328_cpp,v 1.1.1.1 2006/10/19 16:24:51 m
  
  	0x0000,		//	Word		csAGroupBase;				// $100: Chip Select Group A Base Register
  	0x0000,		//	Word		csBGroupBase;				// $102: Chip Select Group B Base Register
-@@ -136,18 +136,18 @@ const HwrM68328Type	kInitial68328Registe
+@@ -136,18 +136,18 @@ const HwrM68328Type	kInitial68328RegisterValues =
  	0x00000000,	//	DWord		csDSelect3;					// $14C: Group D Chip Select 3 Register
  
  	0x0000,		//	Word		csDebug;					// $150: Chip Select debug register
@@ -40,7 +40,7 @@ $OpenBSD: patch-SrcShared_Hardware_EmRegs328_cpp,v 1.1.1.1 2006/10/19 16:24:51 m
  	0x0000,		//	Word		intControl;					// $302: Interrupt Control Register
  	0x00FF,		//	Word		intMaskHi;					// $304: Interrupt Mask Register/HIGH word
  	0xFFFF,		//	Word		intMaskLo;					// $306: Interrupt Mask Register/LOW word
-@@ -158,36 +158,36 @@ const HwrM68328Type	kInitial68328Registe
+@@ -158,36 +158,36 @@ const HwrM68328Type	kInitial68328RegisterValues =
  	0x0000,		//	Word		intPendingHi;				// $310: Interrupt Pending Register
  	0x0000,		//	Word		intPendingLo;				// $312: Interrupt Pending Register
  
@@ -86,7 +86,7 @@ $OpenBSD: patch-SrcShared_Hardware_EmRegs328_cpp,v 1.1.1.1 2006/10/19 16:24:51 m
  	0x00,		//	Byte		portDIntEdge;				// $41F: Port D IRQ Edge Register
  
  	0x00,		//	Byte		portEDir;					// $420: Port E Direction Register
-@@ -195,51 +195,51 @@ const HwrM68328Type	kInitial68328Registe
+@@ -195,51 +195,51 @@ const HwrM68328Type	kInitial68328RegisterValues =
  	0x80,		//	Byte		portEPullupEn;				// $422: Port E Pull-up Enable
  	0x80,		//	Byte		portESelect;				// $423: Port E Select Register
  
@@ -147,7 +147,7 @@ $OpenBSD: patch-SrcShared_Hardware_EmRegs328_cpp,v 1.1.1.1 2006/10/19 16:24:51 m
  
  	0x0000,		//	Word		tmr1Control;				// $600: Timer 1 Control Register
  	0x0000,		//	Word		tmr1Prescaler;				// $602: Timer 1 Prescaler Register
-@@ -259,16 +259,16 @@ const HwrM68328Type	kInitial68328Registe
+@@ -259,16 +259,16 @@ const HwrM68328Type	kInitial68328RegisterValues =
  	0x0000,		//	Word		wdReference;				// $61A: Watchdog Reference Register
  	0x0000,		//	Word		wdCounter;					// $61C: Watchdog Counter
  
@@ -167,7 +167,7 @@ $OpenBSD: patch-SrcShared_Hardware_EmRegs328_cpp,v 1.1.1.1 2006/10/19 16:24:51 m
  
  	0x0000,		//	Word		uControl;					// $900: Uart Control Register
  	0x003F,		//	Word		uBaud;						// $902: Uart Baud Control Register
-@@ -276,19 +276,19 @@ const HwrM68328Type	kInitial68328Registe
+@@ -276,19 +276,19 @@ const HwrM68328Type	kInitial68328RegisterValues =
  	0x0000,		//	Word		uTransmit;					// $906: Uart Transmit Register
  	0x0000,		//	Word		uMisc;						// $908: Uart Miscellaneous Register
  
@@ -192,7 +192,7 @@ $OpenBSD: patch-SrcShared_Hardware_EmRegs328_cpp,v 1.1.1.1 2006/10/19 16:24:51 m
  	0x7F,		//	Byte		lcdBlinkControl;			// $A1F: Blink Control Register
  	0x00,		//	Byte		lcdPanelControl;			// $A20: Panel Interface Control Register
  	0x00,		//	Byte		lcdPolarity;				// $A21: Polarity Config Register
-@@ -304,12 +304,12 @@ const HwrM68328Type	kInitial68328Registe
+@@ -304,12 +304,12 @@ const HwrM68328Type	kInitial68328RegisterValues =
  	0x3F,		//	Byte		lcdOctetTermCount;			// $A2B: Octet Terminal Count Register
  	0x00,		//	Byte										___filler38;
  	0x00,		//	Byte		lcdPanningOffset;			// $A2D: Panning Offset Register

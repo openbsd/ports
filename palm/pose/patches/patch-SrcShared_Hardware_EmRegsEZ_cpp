@@ -1,7 +1,7 @@
-$OpenBSD: patch-SrcShared_Hardware_EmRegsEZ_cpp,v 1.1.1.1 2006/10/19 16:24:51 mbalmer Exp $
---- SrcShared/Hardware/EmRegsEZ.cpp.orig	Fri Mar 29 14:11:18 2002
-+++ SrcShared/Hardware/EmRegsEZ.cpp	Thu Oct 19 17:26:40 2006
-@@ -59,18 +59,18 @@ static const uint16 gBaseAddressShift = 
+$OpenBSD: patch-SrcShared_Hardware_EmRegsEZ_cpp,v 1.2 2007/04/01 17:50:25 martynas Exp $
+--- SrcShared/Hardware/EmRegsEZ.cpp.orig	Fri Mar 29 15:11:18 2002
++++ SrcShared/Hardware/EmRegsEZ.cpp	Sun Apr  1 17:53:43 2007
+@@ -59,18 +59,18 @@ static const uint16 gBaseAddressShift = 13;	// Shift t
  static const HwrM68EZ328Type	kInitial68EZ328RegisterValues =
  {
  	0x1C,		// Byte		scr;							// $000: System Control Register
@@ -23,7 +23,7 @@ $OpenBSD: patch-SrcShared_Hardware_EmRegsEZ_cpp,v 1.1.1.1 2006/10/19 16:24:51 mb
  
  	0x00E0,		// Word		csASelect;						// $110: Group A Chip Select Register
  	0x0000,		// Word		csBSelect;						// $112: Group B Chip Select Register
-@@ -79,47 +79,47 @@ static const HwrM68EZ328Type	kInitial68E
+@@ -79,47 +79,47 @@ static const HwrM68EZ328Type	kInitial68EZ328RegisterVa
  
  	0x0060,		// Word		emuCS;							// $118: EMU Chip Select Register
  
@@ -80,7 +80,7 @@ $OpenBSD: patch-SrcShared_Hardware_EmRegsEZ_cpp,v 1.1.1.1 2006/10/19 16:24:51 mb
  
  	0x00,		// Byte		portDDir;						// $418: Port D Direction Register
  	0x00,		// Byte		portDData;						// $419: Port D Data Register
-@@ -135,21 +135,21 @@ static const HwrM68EZ328Type	kInitial68E
+@@ -135,21 +135,21 @@ static const HwrM68EZ328Type	kInitial68EZ328RegisterVa
  	0xFF,		// Byte		portEPullupEn;					// $422: Port E Pull-up Enable
  	0xFF,		// Byte		portESelect;					// $423: Port E Select Register
  
@@ -105,7 +105,7 @@ $OpenBSD: patch-SrcShared_Hardware_EmRegsEZ_cpp,v 1.1.1.1 2006/10/19 16:24:51 mb
  
  	0x0020,		// Word		pwmControl;						// $500: PWM Control Register
  	0x00,		// Byte		pwmSampleHi;					// $502: PWM Sample - high byte
-@@ -157,7 +157,7 @@ static const HwrM68EZ328Type	kInitial68E
+@@ -157,7 +157,7 @@ static const HwrM68EZ328Type	kInitial68EZ328RegisterVa
  	0xFE,		// Byte		pwmPeriod;						// $504: PWM Period
  	0x00,		// Byte		pwmCounter;						// $505: PWM Counter
  	
@@ -114,7 +114,7 @@ $OpenBSD: patch-SrcShared_Hardware_EmRegsEZ_cpp,v 1.1.1.1 2006/10/19 16:24:51 mb
  
  	0x0000,		// Word		tmr1Control;					// $600: Timer 1 Control Register
  	0x0000,		// Word		tmr1Prescaler;					// $602: Timer 1 Prescaler Register
-@@ -166,12 +166,12 @@ static const HwrM68EZ328Type	kInitial68E
+@@ -166,12 +166,12 @@ static const HwrM68EZ328Type	kInitial68EZ328RegisterVa
  	0x0000,		// Word		tmr1Counter;					// $608: Timer 1 Counter Register
  	0x0000,		// Word		tmr1Status;						// $60A: Timer 1 Status Register
  
@@ -129,7 +129,7 @@ $OpenBSD: patch-SrcShared_Hardware_EmRegsEZ_cpp,v 1.1.1.1 2006/10/19 16:24:51 mb
  
  	0x0000,		// Word		uControl;						// $900: Uart Control Register
  	0x003F,		// Word		uBaud;							// $902: Uart Baud Control Register
-@@ -180,62 +180,62 @@ static const HwrM68EZ328Type	kInitial68E
+@@ -180,62 +180,62 @@ static const HwrM68EZ328Type	kInitial68EZ328RegisterVa
  	0x0000,		// Word		uMisc;							// $908: Uart Miscellaneous Register
  	0x0000,		// Word		uNonIntPresc;					// $90A: Uart IRDA Non-Integer Prescaler
  

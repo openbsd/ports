@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/20 20:18:38 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2007/04/01 17:50:25 martynas Exp $
 
 ONLY_FOR_ARCHS=		i386
 COMMENT=		"Palm OS Emulator"
 
 VERSION=		3.5
 DISTNAME=		Emulator_Src_${VERSION}
-PKGNAME=		pose-${VERSION}
+PKGNAME=		pose-${VERSION}p0
 CATEGORIES=		palm emulators
 HOMEPAGE=		http://www.palmos.com/
 
@@ -23,7 +23,8 @@ MASTER_SITES=		http://www.palmos.com/dev/tools/emulator/sources/
 DISTFILES=		${DISTNAME:L}.tar.gz
 WRKSRC=			${WRKDIST}/BuildUnix
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf no-autoheader
+AUTOCONF_VERSION=	2.13
 CONFIGURE_ARGS=		--with-fltk=${LOCALBASE} --enable-static-link --with-x
 AUTOMAKE_VERSION=	1.4
 USE_GMAKE=		Yes

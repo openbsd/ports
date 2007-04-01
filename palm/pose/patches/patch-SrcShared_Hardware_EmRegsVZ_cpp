@@ -1,7 +1,7 @@
-$OpenBSD: patch-SrcShared_Hardware_EmRegsVZ_cpp,v 1.1.1.1 2006/10/19 16:24:52 mbalmer Exp $
---- SrcShared/Hardware/EmRegsVZ.cpp.orig	Fri Mar 29 14:11:19 2002
-+++ SrcShared/Hardware/EmRegsVZ.cpp	Thu Oct 19 17:26:40 2006
-@@ -74,7 +74,7 @@ static const HwrM68VZ328Type	kInitial68V
+$OpenBSD: patch-SrcShared_Hardware_EmRegsVZ_cpp,v 1.2 2007/04/01 17:50:25 martynas Exp $
+--- SrcShared/Hardware/EmRegsVZ.cpp.orig	Fri Mar 29 15:11:19 2002
++++ SrcShared/Hardware/EmRegsVZ.cpp	Sun Apr  1 17:53:43 2007
+@@ -74,7 +74,7 @@ static const HwrM68VZ328Type	kInitial68VZ328RegisterVa
  {
  	0x1C,		// UInt8	scr;						// $000: System Control Register
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-SrcShared_Hardware_EmRegsVZ_cpp,v 1.1.1.1 2006/10/19 16:24:52 mb
  
  	0x00,		// UInt8	pcr;						// $003: Peripheral Control Register
  	0x56,		// UInt8	chipID;						// $004: Chip ID Register
-@@ -82,7 +82,7 @@ static const HwrM68VZ328Type	kInitial68V
+@@ -82,7 +82,7 @@ static const HwrM68VZ328Type	kInitial68VZ328RegisterVa
  	0x0000,		// UInt16	swID;						// $006: Software ID Register
  	0x1FFF,		// UInt16	ioDriveControl;				// $008: I/O Drive Control Register
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-SrcShared_Hardware_EmRegsVZ_cpp,v 1.1.1.1 2006/10/19 16:24:52 mb
  
  	0x0000,		// UInt16	csAGroupBase;				// $100: Chip Select Group A Base Register
  	0x0000,		// UInt16	csBGroupBase;				// $102: Chip Select Group B Base Register
-@@ -94,7 +94,7 @@ static const HwrM68VZ328Type	kInitial68V
+@@ -94,7 +94,7 @@ static const HwrM68VZ328Type	kInitial68VZ328RegisterVa
  	0x0000,		// UInt16	csControl1;					// $10A: Chip Select Control Register
  	0x0000,		// UInt16	csControl2;					// $10C: Chip Select Control Register
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-SrcShared_Hardware_EmRegsVZ_cpp,v 1.1.1.1 2006/10/19 16:24:52 mb
  
  	0x00B0,		// UInt16	csASelect;					// $110: Group A Chip Select Register
  	0x0000,		// UInt16	csBSelect;					// $112: Group B Chip Select Register
-@@ -103,54 +103,54 @@ static const HwrM68VZ328Type	kInitial68V
+@@ -103,54 +103,54 @@ static const HwrM68VZ328Type	kInitial68VZ328RegisterVa
  
  	0x0060,		// UInt16	emuCS;						// $118: EMU Chip Select Register
  
@@ -92,7 +92,7 @@ $OpenBSD: patch-SrcShared_Hardware_EmRegsVZ_cpp,v 1.1.1.1 2006/10/19 16:24:52 mb
  
  	0x00,		// UInt8	portDDir;					// $418: Port D Direction Register
  	0x00,		// UInt8	portDData;					// $419: Port D Data Register
-@@ -166,42 +166,42 @@ static const HwrM68VZ328Type	kInitial68V
+@@ -166,42 +166,42 @@ static const HwrM68VZ328Type	kInitial68VZ328RegisterVa
  	0xFF,		// UInt8	portEPullupEn;				// $422: Port E Pull-up Enable
  	0xFF,		// UInt8	portESelect;				// $423: Port E Select Register
  
@@ -141,7 +141,7 @@ $OpenBSD: patch-SrcShared_Hardware_EmRegsVZ_cpp,v 1.1.1.1 2006/10/19 16:24:52 mb
  
  	0x0020,		// UInt16	pwmControl;					// $500: PWM 1 Control Register  (PWM 1 is the same as the single PWM in EZ)
  	0x00,		// UInt8	pwmSampleHi;    			// $502: PWM 1 Sample - high byte
-@@ -209,14 +209,14 @@ static const HwrM68VZ328Type	kInitial68V
+@@ -209,14 +209,14 @@ static const HwrM68VZ328Type	kInitial68VZ328RegisterVa
  	0xFE,		// UInt8	pwmPeriod;					// $504: PWM 1 Period
  	0x00,		// UInt8	pwmCounter;					// $505: PWM 1 Counter
  
@@ -158,7 +158,7 @@ $OpenBSD: patch-SrcShared_Hardware_EmRegsVZ_cpp,v 1.1.1.1 2006/10/19 16:24:52 mb
  
  	0x0000,		// UInt16	tmr1Control;				// $600: Timer 1 Control Register
  	0x0000,		// UInt16	tmr1Prescaler;				// $602: Timer 1 Prescaler Register
-@@ -225,7 +225,7 @@ static const HwrM68VZ328Type	kInitial68V
+@@ -225,7 +225,7 @@ static const HwrM68VZ328Type	kInitial68VZ328RegisterVa
  	0x0000,		// UInt16	tmr1Counter;				// $608: Timer 1 Counter Register
  	0x0000,		// UInt16	tmr1Status;					// $60A: Timer 1 Status Register
  
@@ -167,7 +167,7 @@ $OpenBSD: patch-SrcShared_Hardware_EmRegsVZ_cpp,v 1.1.1.1 2006/10/19 16:24:52 mb
  
  	0x0000,		// UInt16	tmr2Control;				// $610: Timer 2 Control Register
  	0x0000,		// UInt16	tmr2Prescaler;				// $612: Timer 2 Prescaler Register
-@@ -234,7 +234,7 @@ static const HwrM68VZ328Type	kInitial68V
+@@ -234,7 +234,7 @@ static const HwrM68VZ328Type	kInitial68VZ328RegisterVa
  	0x0000,		// UInt16	tmr2Counter;				// $618: Timer 2 Counter Register
  	0x0000,		// UInt16	tmr2Status;					// $61A: Timer 2 Status Register
  
@@ -176,7 +176,7 @@ $OpenBSD: patch-SrcShared_Hardware_EmRegsVZ_cpp,v 1.1.1.1 2006/10/19 16:24:52 mb
  
  	0x0000,		// UInt16	spiRxD;						// $700: SPI Unit 1 Receive Data Register
  	0x0000,		// UInt16	spiTxD;						// $702: SPI Unit 1 Transmit Data Register
-@@ -243,12 +243,12 @@ static const HwrM68VZ328Type	kInitial68V
+@@ -243,12 +243,12 @@ static const HwrM68VZ328Type	kInitial68VZ328RegisterVa
  	0x0000,		// UInt16	spiTest;					// $708: SPI Unit 1 Test Register
  	0x0000,		// UInt16	spiSpc;						// $70A: SPI Unit 1 Sample period counter register
  
@@ -191,7 +191,7 @@ $OpenBSD: patch-SrcShared_Hardware_EmRegsVZ_cpp,v 1.1.1.1 2006/10/19 16:24:52 mb
  
  	0x0000,		// UInt16	uControl;					// $900: Uart 1 Status/Control Register (Uart 1 is the same as the single Uart in EZ)
  	0x003F,		// UInt16	uBaud;						// $902: Uart 1 Baud Control Register
-@@ -257,7 +257,7 @@ static const HwrM68VZ328Type	kInitial68V
+@@ -257,7 +257,7 @@ static const HwrM68VZ328Type	kInitial68VZ328RegisterVa
  	0x0000,		// UInt16	uMisc;						// $908: Uart 1 Miscellaneous Register
  	0x0000,		// UInt16	uNonIntPresc;				// $90A: Uart 1 Non-Integer Prescaler
  
@@ -200,7 +200,7 @@ $OpenBSD: patch-SrcShared_Hardware_EmRegsVZ_cpp,v 1.1.1.1 2006/10/19 16:24:52 mb
  
  	0x0000,		// UInt16	u2Control;					// $910: Uart 2 Status/Control Register
  	0x003F,		// UInt16	u2Baud;						// $912: Uart 2 Baud Control Register
-@@ -267,67 +267,67 @@ static const HwrM68VZ328Type	kInitial68V
+@@ -267,67 +267,67 @@ static const HwrM68VZ328Type	kInitial68VZ328RegisterVa
  	0x0000,		// UInt16	u2NonIntPresc;				// $91A: Uart 2 Non-Integer Prescaler
  	0x0000,		// UInt16	u2FIFOHMark;				// $91C: Uart 2 Half Mark FIFO Register
  
