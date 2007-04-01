@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/02/04 23:00:06 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/04/01 13:16:29 steven Exp $
 
 COMMENT=		"database toolkit for Python"
 
-V=			0.3.4
+V=			0.3.6
 DISTNAME=		SQLAlchemy-${V}
 PKGNAME=		py-sqlalchemy-${V}
 
