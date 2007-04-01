@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2007/03/21 11:24:02 martynas Exp $
+# $OpenBSD: Makefile,v 1.39 2007/04/01 20:43:59 steven Exp $
 
 COMMENT=	"Secure Internet Live Conferencing (SILC) client"
 
@@ -32,6 +32,8 @@ MODULES=	converters/libiconv
 CONFDIR=	${SYSCONFDIR}/silc
 SUBST_VARS=	CONFDIR
 
+USE_LIBTOOL=	Yes
+LIBTOOL_FLAGS=	--tag=disable-shared
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.59
 CONFIGURE_ARGS+= --enable-ipv6 \
@@ -39,6 +41,7 @@ CONFIGURE_ARGS+= --enable-ipv6 \
 		 --with-docdir=${PREFIX}/share/doc/silc \
 		 --with-etcdir=${CONFDIR} \
 		 --with-iconv=${LOCALBASE} \
+		 --without-libtoolfix \
 		 --with-perl=no
 
 .if ${MACHINE_ARCH} != "i386"

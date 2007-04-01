@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_silcutil_silcutf8_c,v 1.1 2006/09/18 05:41:10 ray Exp $
---- lib/silcutil/silcutf8.c.orig	Sun Apr  3 08:20:34 2005
-+++ lib/silcutil/silcutf8.c	Sun Aug 27 15:23:38 2006
-@@ -565,15 +565,19 @@ bool silc_utf8_strncasecmp(const char *s
+$OpenBSD: patch-lib_silcutil_silcutf8_c,v 1.2 2007/04/01 20:43:59 steven Exp $
+--- lib/silcutil/silcutf8.c.orig	Sun Apr  3 14:27:55 2005
++++ lib/silcutil/silcutf8.c	Sun Apr  1 22:30:27 2007
+@@ -565,15 +565,19 @@ bool silc_utf8_strncasecmp(const char *s1, const char 
    if (s1 == s2)
      return TRUE;
  

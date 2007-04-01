@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_silcutil_silcutil_c,v 1.1 2005/07/05 01:40:45 brad Exp $
---- lib/silcutil/silcutil.c.orig	Mon Jul  4 21:19:32 2005
-+++ lib/silcutil/silcutil.c	Mon Jul  4 21:20:00 2005
-@@ -45,7 +45,7 @@ int silc_gets(char *dest, int destlen, c
+$OpenBSD: patch-lib_silcutil_silcutil_c,v 1.2 2007/04/01 20:43:59 steven Exp $
+--- lib/silcutil/silcutil.c.orig	Sat Nov 19 17:26:20 2005
++++ lib/silcutil/silcutil.c	Sun Apr  1 22:42:28 2007
+@@ -45,7 +45,7 @@ int silc_gets(char *dest, int destlen, const char *src
  
      dest[i] = src[start];
  

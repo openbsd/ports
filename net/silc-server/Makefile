@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2007/03/15 20:25:12 deanna Exp $
+# $OpenBSD: Makefile,v 1.31 2007/04/01 20:43:59 steven Exp $
 
 COMMENT=	"Secure Internet Live Conferencing (SILC) server"
 
@@ -37,6 +37,8 @@ PATCH_LIST+=	patch-* operops-*
 CONFDIR=	${SYSCONFDIR}/silcd
 SUBST_VARS=	CONFDIR
 
+USE_LIBTOOL=	Yes
+LIBTOOL_FLAGS=	--tag=disable-shared
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.59
 CONFIGURE_ARGS+= --enable-ipv6 \
@@ -46,7 +48,8 @@ CONFIGURE_ARGS+= --enable-ipv6 \
 		 --with-logsdir=/var/log/silcd \
 		 --with-simdir=${PREFIX}/lib \
 		 --with-silcd-config-file=${CONFDIR}/silcd.conf \
-		 --with-silcd-pid-file=/var/run/silcd.pid
+		 --with-silcd-pid-file=/var/run/silcd.pid \
+		 --without-libtoolfix
 
 .if ${MACHINE_ARCH} != "i386"
 CONFIGURE_ARGS+= --disable-asm
