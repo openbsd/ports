@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/02/14 11:51:07 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2007/04/01 19:43:56 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,11 +18,11 @@ SHARED_LIBS=	csirocsa	0.1	\
 		plplottcltkd	11.0	\
 		tclmatrixd	11.0
 
-PKGNAME-main=	${DISTNAME}p0
-PKGNAME-c++ =	plplot-c++-${VERSION}p0
-PKGNAME-f77=	plplot-f77-${VERSION}p0
-PKGNAME-octave=	plplot-octave-${VERSION}p2
-PKGNAME-tcl=	plplot-tcl-${VERSION}p1
+PKGNAME-main=	${DISTNAME}p1
+PKGNAME-c++ =	plplot-c++-${VERSION}p1
+PKGNAME-f77=	plplot-f77-${VERSION}p1
+PKGNAME-octave=	plplot-octave-${VERSION}p3
+PKGNAME-tcl=	plplot-tcl-${VERSION}p2
 
 CATEGORIES=	math graphics
 
@@ -36,7 +36,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-myWANTLIB=	m freetype
+myWANTLIB=	m z freetype
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=plplot/}
 
@@ -108,11 +108,11 @@ MULTI_PACKAGES+=-octave
 
 MODULES=		converters/libiconv
 
-WANTLIB-main=		${myWANTLIB} X11 c fontconfig z png jpeg
+WANTLIB-main=		${myWANTLIB} X11 Xau Xdmcp expat c fontconfig z png jpeg
 WANTLIB-c++ =		${myWANTLIB}
 WANTLIB-f77+=		${myWANTLIB} g2c
 WANTLIB-octave+=	${myWANTLIB} g2c ncurses readline blas lapack fftw3
-WANTLIB-tcl+=		${myWANTLIB} X11 c
+WANTLIB-tcl+=		${myWANTLIB} X11 Xau Xdmcp c
 
 LIB_DEPENDS-main=	${MODLIBICONV_LIB_DEPENDS} \
 			${myLIB_DEPENDS} \
