@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/03/20 06:43:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2007/04/01 21:13:53 steven Exp $
 
 COMMENT=	"utilities for 'desktop' entries"
 
@@ -20,6 +20,7 @@ MODULES=	devel/gettext
 
 LIB_DEPENDS=	glib-2.0::devel/glib2
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
