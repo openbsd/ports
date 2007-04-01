@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2005/07/17 18:12:37 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2007/04/01 14:46:42 steven Exp $
 
 COMMENT=		"PNG to ASCII compiler and decompiler"
 
 DISTNAME=		sng-1.0.1
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		graphics
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sng/}
 
@@ -23,7 +23,8 @@ USE_GMAKE=		yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-png-inc=${LOCALBASE}/include/libpng \
-			--with-png-lib=${LOCALBASE}/lib
+			--with-png-lib=${LOCALBASE}/lib \
+			--with-rgbtxt=${X11BASE}/share/X11/rgb.txt
 
 NO_REGRESS=		yes
 
