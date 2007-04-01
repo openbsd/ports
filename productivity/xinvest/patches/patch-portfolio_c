@@ -1,7 +1,7 @@
-$OpenBSD: patch-portfolio_c,v 1.1.1.1 2002/05/01 23:19:48 pvalchev Exp $
---- portfolio.c.orig	Tue Mar 19 16:13:28 2002
-+++ portfolio.c	Tue Mar 19 16:13:43 2002
-@@ -29,7 +29,7 @@
+$OpenBSD: patch-portfolio_c,v 1.2 2007/04/01 09:06:40 martynas Exp $
+--- portfolio.c.orig	Sat May  1 21:57:42 2004
++++ portfolio.c	Fri Mar 30 18:29:27 2007
+@@ -36,7 +36,7 @@
  #include <string.h>
  #include <math.h>
  
