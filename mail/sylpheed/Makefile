@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2007/02/11 00:56:57 steven Exp $
+# $OpenBSD: Makefile,v 1.72 2007/04/01 14:33:33 steven Exp $
 
 COMMENT=	"mail/news client in gtk+"
 
@@ -29,7 +29,7 @@ MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v2.3/
 MASTER_SITES0=	${MASTER_SITE_SOURCEFORGE:=sylpheed-claws/}
 
 USE_X11=		Yes
-
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-ssl --enable-ipv6 \
 			--disable-gtkspell --disable-imlib
