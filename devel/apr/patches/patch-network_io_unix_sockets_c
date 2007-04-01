@@ -1,7 +1,22 @@
-$OpenBSD: patch-network_io_unix_sockets_c,v 1.1 2007/03/24 13:46:47 todd Exp $
+$OpenBSD: patch-network_io_unix_sockets_c,v 1.2 2007/04/01 20:03:07 kurt Exp $
 --- network_io/unix/sockets.c.orig	Thu Dec  8 12:24:36 2005
-+++ network_io/unix/sockets.c	Wed Oct  4 20:17:38 2006
-@@ -256,6 +256,15 @@ apr_status_t apr_socket_accept(apr_socke
++++ network_io/unix/sockets.c	Wed Mar 28 15:26:44 2007
+@@ -184,9 +184,11 @@ apr_status_t apr_socket_accept(apr_socket_t **new, apr
+ #endif
+     (*new)->timeout = -1;
+     
+-    (*new)->socketdes = accept(sock->socketdes, 
+-                               (struct sockaddr *)&(*new)->remote_addr->sa,
+-                               &(*new)->remote_addr->salen);
++    do {
++        (*new)->socketdes = accept(sock->socketdes, 
++                                   (struct sockaddr *)&(*new)->remote_addr->sa,
++                                   &(*new)->remote_addr->salen);
++    } while ((*new)->socketdes == -1 && errno == EINTR);
+ 
+     if ((*new)->socketdes < 0) {
+         return errno;
+@@ -256,6 +258,15 @@ apr_status_t apr_socket_accept(apr_socket_t **new, apr
  apr_status_t apr_socket_connect(apr_socket_t *sock, apr_sockaddr_t *sa)
  {
      int rc;        

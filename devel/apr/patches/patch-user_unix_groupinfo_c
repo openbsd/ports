@@ -1,7 +1,7 @@
-$OpenBSD: patch-user_unix_groupinfo_c,v 1.1 2007/03/24 13:46:47 todd Exp $
---- user/unix/groupinfo.c.orig	Wed Aug 24 04:42:42 2005
-+++ user/unix/groupinfo.c	Wed Feb  7 18:14:53 2007
-@@ -35,7 +35,7 @@ APR_DECLARE(apr_status_t) apr_gid_name_g
+$OpenBSD: patch-user_unix_groupinfo_c,v 1.2 2007/04/01 20:03:07 kurt Exp $
+--- user/unix/groupinfo.c.orig	Wed Aug 24 05:42:42 2005
++++ user/unix/groupinfo.c	Wed Mar 28 09:57:24 2007
+@@ -35,7 +35,7 @@ APR_DECLARE(apr_status_t) apr_gid_name_get(char **grou
  
  #if APR_HAS_THREADS && defined(_POSIX_THREAD_SAFE_FUNCTIONS) && defined(HAVE_GETGRGID_R)
      struct group grp;
@@ -10,7 +10,7 @@ $OpenBSD: patch-user_unix_groupinfo_c,v 1.1 2007/03/24 13:46:47 todd Exp $
      apr_status_t rv;
  
      /* See comment in getpwnam_safe on error handling. */
-@@ -63,7 +63,7 @@ APR_DECLARE(apr_status_t) apr_gid_get(ap
+@@ -63,7 +63,7 @@ APR_DECLARE(apr_status_t) apr_gid_get(apr_gid_t *group
  
  #if APR_HAS_THREADS && defined(_POSIX_THREAD_SAFE_FUNCTIONS) && defined(HAVE_GETGRNAM_R)
      struct group grp;

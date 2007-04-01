@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2007/03/24 13:46:47 todd Exp $
---- Makefile.in.orig	Fri Feb  4 05:55:44 2005
-+++ Makefile.in	Thu Feb  8 14:25:50 2007
+$OpenBSD: patch-Makefile_in,v 1.2 2007/04/01 20:03:07 kurt Exp $
+--- Makefile.in.orig	Fri Feb  4 06:55:44 2005
++++ Makefile.in	Wed Mar 28 09:57:24 2007
 @@ -3,6 +3,7 @@ srcdir=@srcdir@
  VPATH=@srcdir@
  top_srcdir=@apr_srcdir@
@@ -9,7 +9,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2007/03/24 13:46:47 todd Exp $
  
  #
  # APR (Apache Portable Runtime) library Makefile.
-@@ -26,9 +27,10 @@ INCLUDES=-I$(INCDIR) -I$(OSDIR) -I$(DEFO
+@@ -26,9 +27,10 @@ INCLUDES=-I$(INCDIR) -I$(OSDIR) -I$(DEFOSDIR) -I$(top_
  CLEAN_SUBDIRS= test
  INSTALL_SUBDIRS=@INSTALL_SUBDIRS@
  
@@ -22,7 +22,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2007/03/24 13:46:47 todd Exp $
  INSTALL = @INSTALL@
  INSTALL_DATA = @INSTALL_DATA@
  
-@@ -75,7 +77,7 @@ install: $(TARGET_LIB) apr-config.out bu
+@@ -75,7 +77,7 @@ install: $(TARGET_LIB) apr-config.out build/apr_rules.
  	done
  	$(LIBTOOL) --mode=install $(INSTALL) -m 755 $(TARGET_LIB) $(DESTDIR)$(libdir)
  	$(INSTALL_DATA) apr.exp $(DESTDIR)$(libdir)/apr.exp
@@ -31,7 +31,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2007/03/24 13:46:47 todd Exp $
  	for f in libtool shlibtool; do \
  	    if test -f $${f}; then $(INSTALL) -m 755 $${f} $(DESTDIR)$(installbuilddir); fi; \
  	done
-@@ -84,7 +86,7 @@ install: $(TARGET_LIB) apr-config.out bu
+@@ -84,7 +86,7 @@ install: $(TARGET_LIB) apr-config.out build/apr_rules.
  	    $(INSTALL_DATA) $(top_srcdir)/build/$${f} $(DESTDIR)$(installbuilddir); \
  	done
  	$(INSTALL_DATA) build/apr_rules.out $(DESTDIR)$(installbuilddir)/apr_rules.mk
