@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2006/01/25 03:59:56 david Exp $
+@comment $OpenBSD: PLIST,v 1.20 2007/04/01 05:58:43 steven Exp $
 @conflict libbt-*
 bin/blackbox
 bin/bsetbg
@@ -22,6 +22,7 @@ include/bt/Texture.hh
 include/bt/Timer.hh
 include/bt/Unicode.hh
 include/bt/Util.hh
+include/bt/XDG.hh
 lib/libbt.a
 lib/libbt.la
 lib/pkgconfig/

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2006/12/16 12:22:35 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2007/04/01 05:58:43 steven Exp $
 
 COMMENT=	"small & pretty window manager for 8 and more bits displays"
 
 DISTNAME=		blackbox-0.70.1
-PKGNAME=		${DISTNAME}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://blackboxwm.sourceforge.net/
@@ -20,6 +20,8 @@ WANTLIB=		X11 Xext Xft Xrender c m fontconfig freetype stdc++
 MODULES=		converters/libiconv
 
 USE_X11=		Yes
+USE_LIBTOOL=		Yes
+LIBTOOL_FLAGS=		--tag=disable-shared
 CONFIGURE_STYLE=	gnu
 
 DOCS=			README README.bsetbg
