@@ -1,17 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2007/03/04 23:37:27 robert Exp $
+# $OpenBSD: Makefile,v 1.34 2007/04/01 09:36:15 martynas Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
 SHARED_ONLY=	Yes
 
 COMMENT=	"small, simple, and powerful web browser for mobile devices"
-DISTNAME=	minimo-20061120
-PKGNAME=	${DISTNAME}p6
+DISTNAME=	minimo-20070320
 SO_VERSION=	4.0
-# NOTE: Must bump minor version if any shlib's are removed from the
-# components dir to avoid pkg_add -r issues.
-.for _lib in freebl3 nssckbi softokn3 nss3 smime3 ssl3
-SHARED_LIBS+=	${_lib} ${SO_VERSION}
-.endfor
 
 CATEGORIES=	www
 MASTER_SITES=	http://mirrors.protection.cx/~jolan/
@@ -32,13 +26,13 @@ BUILD_DEPENDS=	:zip->=2.3:archivers/zip \
 LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
 		png.>=3::graphics/png \
 		gdk-x11-2.0.>=600.0,gdk_pixbuf-2.0.>=600.0,gtk-x11-2.0.>=600.0::x11/gtk+2 \
-		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr
-WANTLIB=	X11 Xext Xft Xrender Xt \
+		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr \
+		nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss
+WANTLIB=	X11 Xext Xft Xrender Xt Xcursor Xfixes Xi Xinerama Xrandr \
 		c fontconfig freetype m pthread z \
 		atk-1.0.>=1011.0 glib-2.0.>=600.0 gmodule-2.0.>=600.0 \
 		gobject-2.0.>=600.0 pango-1.0.>=800.0 pangocairo-1.0 \
-		pangoft2-1.0 cairo glitz
-WANTLIB+=	stdc++
+		pangoft2-1.0 cairo glitz stdc++
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
@@ -56,6 +50,7 @@ CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 		--with-system-png=${LOCALBASE}	\
 		--with-system-zlib=/usr/lib	\
 		--with-system-nspr		\
+		--with-system-nss		\
 		--with-pthreads			\
 		--disable-native-uconv
 
@@ -64,7 +59,7 @@ CONFIGURE_ARGS+=--enable-application=minimo	\
 		--enable-default-toolkit=gtk2	\
 		--enable-xft			\
 		--disable-freetype2		\
-		--enable-optimize=-Os		\
+		--disable-optimize		\
 		--enable-strip			\
 		--disable-debug			\
 		--disable-shared		\
@@ -91,10 +86,10 @@ MAKE_ENV=	MOZ_CO_PROJECT=minimo \
 		LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
 		BUILD_OFFICIAL=1 \
 		MOZILLA_OFFICIAL=1 \
-		SO_VERSION=${SO_VERSION} \
-		NSS_ENABLE_ECC=1
+		SO_VERSION=${SO_VERSION}
 CONFIGURE_ENV=	${MAKE_ENV} \
-		PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig"
+		PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig" \
+		topsrcdir=${WRKSRC}
 
 MOB=		${WRKSRC}/dist/bin
 MOZ=		${PREFIX}/minimo
@@ -104,9 +99,6 @@ post-extract:
 
 do-install:
 	${INSTALL_DATA_DIR} ${MOZ}
-	@cd ${MOB} && ${TAR} -chf - *.so.${SO_VERSION} | \
-		${TAR} -xf - -C ${MOZ}
-	@chmod 444 ${MOZ}/*.so.${SO_VERSION}
 	${INSTALL_PROGRAM} ${MOB}/minimo ${MOZ}/
 	${INSTALL_DATA_DIR} ${MOZ}/chrome
 	${INSTALL_DATA} ${MOB}/chrome/classic.{jar,manifest} \

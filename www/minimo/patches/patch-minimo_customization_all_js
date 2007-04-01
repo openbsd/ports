@@ -1,17 +1,12 @@
-$OpenBSD: patch-minimo_customization_all_js,v 1.1 2007/03/04 23:37:27 robert Exp $
---- minimo/customization/all.js.orig	Sun Mar  4 22:18:13 2007
-+++ minimo/customization/all.js	Sun Mar  4 22:26:50 2007
-@@ -623,11 +623,11 @@ pref("network.autodial-helper.enabled", 
+$OpenBSD: patch-minimo_customization_all_js,v 1.2 2007/04/01 09:36:15 martynas Exp $
+--- minimo/customization/all.js.orig	Fri Feb 16 01:42:42 2007
++++ minimo/customization/all.js	Wed Mar 28 12:08:10 2007
+@@ -623,8 +623,6 @@ pref("network.autodial-helper.enabled", true);
  
  pref("config.wince.overrideHWKeys", false);
  
 -pref("ssr.enabled", true);
-+pref("ssr.enabled", false);
- 
+-
  pref("skey.enabled", true);
  
--pref("browser.startup.homepage", "http://www.meer.net/~dougt/minimo_ce/start.html");
-+pref("browser.startup.homepage", "about:blank");
- 
- pref("snav.enabled", true);
- pref("accessibility.tabfocus", 7);
+ pref("browser.startup.homepage", "chrome://minimo/content/bookmarks/bmview.xhtml");

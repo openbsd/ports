@@ -1,17 +1,9 @@
-$OpenBSD: patch-config_autoconf_mk_in,v 1.4 2006/12/04 09:47:54 jolan Exp $
+$OpenBSD: patch-config_autoconf_mk_in,v 1.5 2007/04/01 09:36:15 martynas Exp $
 --- config/autoconf.mk.in.orig	Thu Sep 14 21:07:03 2006
-+++ config/autoconf.mk.in	Tue Nov 21 11:56:55 2006
-@@ -57,13 +57,13 @@ MOZ_PKG_SPECIAL = @MOZ_PKG_SPECIAL@
- prefix		= @prefix@
- exec_prefix	= @exec_prefix@
- bindir		= @bindir@
--includedir	= @includedir@/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
-+includedir	= $(prefix)/minimo/include
- libdir		= @libdir@
- datadir		= @datadir@
++++ config/autoconf.mk.in	Wed Mar 28 12:09:46 2007
+@@ -63,7 +63,7 @@ datadir		= @datadir@
  mandir		= @mandir@
--idldir		= @datadir@/idl/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
-+idldir		= $(prefix)/minimo/idl
+ idldir		= @datadir@/idl/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
  
 -mozappdir	= $(libdir)/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
 +mozappdir	= $(prefix)/minimo

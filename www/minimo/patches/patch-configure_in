@@ -1,21 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.4 2006/12/04 09:47:54 jolan Exp $
+$OpenBSD: patch-configure_in,v 1.5 2007/04/01 09:36:15 martynas Exp $
 --- configure.in.orig	Sat Oct 28 06:29:25 2006
 +++ configure.in	Sat Nov 18 21:52:21 2006
-@@ -1317,10 +1317,10 @@ dnl Get mozilla version from central mil
- MOZILLA_VERSION=`$PERL $srcdir/config/milestone.pl -topsrcdir $srcdir`
- 
- dnl Get version of various core apps from the version files.
--FIREFOX_VERSION=`cat $topsrcdir/browser/config/version.txt`
--THUNDERBIRD_VERSION=`cat $topsrcdir/mail/config/version.txt`
--SUNBIRD_VERSION=`cat $topsrcdir/calendar/sunbird/config/version.txt`
--SEAMONKEY_VERSION=`cat $topsrcdir/xpfe/bootstrap/version.txt`
-+FIREFOX_VERSION=`cat ./browser/config/version.txt`
-+THUNDERBIRD_VERSION=`cat ./mail/config/version.txt`
-+SUNBIRD_VERSION=`cat ./calendar/sunbird/config/version.txt`
-+SEAMONKEY_VERSION=`cat ./xpfe/bootstrap/version.txt`
- 
- AC_DEFINE_UNQUOTED(MOZILLA_VERSION,"$MOZILLA_VERSION")
- AC_DEFINE_UNQUOTED(MOZILLA_VERSION_U,$MOZILLA_VERSION)
 @@ -1931,7 +1931,7 @@ case "$target" in
  	;;
  
@@ -43,12 +28,3 @@ $OpenBSD: patch-configure_in,v 1.4 2006/12/04 09:47:54 jolan Exp $
      PNG_LIBS="-L${PNG_DIR}/lib ${PNG_LIBS}"
  fi
  
-@@ -4260,7 +4260,7 @@ minimo)
-   ENABLE_TESTS=
-   MINIMO=1
-   MOZ_ACTIVEX_SCRIPTING_SUPPORT=
--  MOZ_APP_VERSION=`cat $topsrcdir/minimo/config/version.txt`
-+  MOZ_APP_VERSION=`cat ./minimo/config/version.txt`
-   MOZ_COMPOSER=
-   MOZ_ENABLE_CANVAS=
-   MOZ_ENABLE_POSTSCRIPT=
