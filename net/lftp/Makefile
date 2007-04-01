@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.64 2006/09/30 12:26:13 kevlo Exp $
+# $OpenBSD: Makefile,v 1.65 2007/04/01 20:13:57 steven Exp $
 
 COMMENT=	"shell-like command line ftp and sftp client"
 
 DISTNAME=	lftp-3.5.4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://lftp.yar.ru/
@@ -22,6 +23,8 @@ EXTRACT_SUFX=	.tar.bz2
 
 LIB_DEPENDS=	expat.>=6::textproc/expat
 
+USE_LIBTOOL=	Yes
+LIBTOOL_FLAGS=	--tag=disable-shared
 CONFIGURE_STYLE= gnu 
 CONFIGURE_ARGS=	--with-openssl \
 		--without-gnutls
