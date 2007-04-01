@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/03/18 09:35:20 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/04/01 11:32:27 steven Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	'qt3 sqlite3 plugin'
@@ -10,7 +10,7 @@ MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
 P=		qt-sqlite3-0.2
 
 DISTNAME=	23011-$P
-PKGNAME=	qt3-sqlite3-0.2
+PKGNAME=	qt3-sqlite3-0.2p0
 
 WRKDIST=	${WRKDIR}/$P
 
@@ -25,6 +25,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_REGRESS=		Yes
+
+SUBST_VARS=		MODQT_PLUGINS
 
 do-configure:
 	cd ${WRKDIST} && qmake
