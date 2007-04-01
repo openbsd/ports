@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2006/06/23 06:37:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2007/04/01 20:17:28 steven Exp $
 
-NOT_FOR_ARCHS=  ${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"ICB plugin for irssi"
 
 DISTNAME=	irssi-icb-0.14
+PKGNAME=	${DISTNAME}p0
 MASTER_SITES=   http://humppa.nl/distfiles/
 
 CATEGORIES=     net
@@ -19,6 +20,8 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
+USE_LIBTOOL=	Yes
+LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --with-irssi=${WRKDIR}/irssi-src
 
