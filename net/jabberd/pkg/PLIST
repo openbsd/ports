@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/06/10 19:56:37 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/04/01 13:12:42 steven Exp $
 @newgroup ${JABBERDGROUP}:533
 @newuser ${JABBERDUSER}:533:${JABBERDGROUP}:daemon:jabberd account:/nonexistent:/bin/sh
 libexec/jabberd/
@@ -16,9 +16,9 @@ libexec/jabberd/sm
 sbin/jabberd
 share/examples/jabberd/
 @sample ${CONFIG_DIR}/
-@group ${JABBERDGROUP}
-@owner ${JABBERDUSER}
 @mode 640
+@owner ${JABBERDUSER}
+@group ${JABBERDGROUP}
 share/examples/jabberd/c2s.xml
 @sample ${CONFIG_DIR}/c2s.xml
 %%mysql%%

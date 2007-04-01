@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2006/11/11 14:38:23 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.29 2007/04/01 13:12:41 steven Exp $
 
 COMMENT=		"jabber server"
 DISTNAME=		jabberd-2.0s11
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		net
 HOMEPAGE=		http://jabberd.jabberstudio.org/2/
 MAINTAINER=		Gerardo Santana Gomez Garrido <gerardo.santana@gmail.com>
@@ -32,6 +32,7 @@ STORAGES=		mysql postgresql db
 FLAVORS=		${STORAGES} ldap
 FLAVOR?=		mysql
 
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--localstatedir=/var \
 			--enable-ssl \
