@@ -1,8 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/01/13 19:40:47 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/04/01 20:55:29 steven Exp $
 bin/gajim
+bin/gajim-remote
 lib/gajim/
+lib/gajim/gtkspell.la
 lib/gajim/gtkspell.so
+lib/gajim/idle.la
 lib/gajim/idle.so
+lib/gajim/trayicon.la
 lib/gajim/trayicon.so
 @man man/man1/gajim-remote.1
 @man man/man1/gajim.1
@@ -504,6 +508,19 @@ share/gajim/data/iconsets/sun/16x16/online.png
 share/gajim/data/iconsets/sun/16x16/opened.png
 share/gajim/data/iconsets/sun/16x16/requested.png
 share/gajim/data/iconsets/sun/16x16/xa.png
+share/gajim/data/iconsets/sun/32x32/
+share/gajim/data/iconsets/sun/32x32/away.png
+share/gajim/data/iconsets/sun/32x32/chat.png
+share/gajim/data/iconsets/sun/32x32/dnd.png
+share/gajim/data/iconsets/sun/32x32/error.png
+share/gajim/data/iconsets/sun/32x32/invisible.png
+share/gajim/data/iconsets/sun/32x32/muc_active.png
+share/gajim/data/iconsets/sun/32x32/muc_inactive.png
+share/gajim/data/iconsets/sun/32x32/not_in_roster.png
+share/gajim/data/iconsets/sun/32x32/offline.png
+share/gajim/data/iconsets/sun/32x32/online.png
+share/gajim/data/iconsets/sun/32x32/requested.png
+share/gajim/data/iconsets/sun/32x32/xa.png
 share/gajim/data/iconsets/sun/48x48/
 share/gajim/data/iconsets/sun/48x48/offline.png
 share/gajim/data/iconsets/sun/48x48/online.png
@@ -513,6 +530,7 @@ share/gajim/data/iconsets/transports/aim/16x16/
 share/gajim/data/iconsets/transports/aim/16x16/away.png
 share/gajim/data/iconsets/transports/aim/16x16/chat.png
 share/gajim/data/iconsets/transports/aim/16x16/dnd.png
+share/gajim/data/iconsets/transports/aim/16x16/not_in_roster.png
 share/gajim/data/iconsets/transports/aim/16x16/offline.png
 share/gajim/data/iconsets/transports/aim/16x16/online.png
 share/gajim/data/iconsets/transports/aim/16x16/xa.png
@@ -520,6 +538,7 @@ share/gajim/data/iconsets/transports/aim/32x32/
 share/gajim/data/iconsets/transports/aim/32x32/away.png
 share/gajim/data/iconsets/transports/aim/32x32/chat.png
 share/gajim/data/iconsets/transports/aim/32x32/dnd.png
+share/gajim/data/iconsets/transports/aim/32x32/not_in_roster.png
 share/gajim/data/iconsets/transports/aim/32x32/offline.png
 share/gajim/data/iconsets/transports/aim/32x32/online.png
 share/gajim/data/iconsets/transports/aim/32x32/xa.png
@@ -532,6 +551,7 @@ share/gajim/data/iconsets/transports/gadu-gadu/16x16/away.png
 share/gajim/data/iconsets/transports/gadu-gadu/16x16/chat.png
 share/gajim/data/iconsets/transports/gadu-gadu/16x16/dnd.png
 share/gajim/data/iconsets/transports/gadu-gadu/16x16/invisible.png
+share/gajim/data/iconsets/transports/gadu-gadu/16x16/not_in_roster.png
 share/gajim/data/iconsets/transports/gadu-gadu/16x16/offline.png
 share/gajim/data/iconsets/transports/gadu-gadu/16x16/online.png
 share/gajim/data/iconsets/transports/gadu-gadu/16x16/xa.png
@@ -540,6 +560,7 @@ share/gajim/data/iconsets/transports/gadu-gadu/32x32/away.png
 share/gajim/data/iconsets/transports/gadu-gadu/32x32/chat.png
 share/gajim/data/iconsets/transports/gadu-gadu/32x32/dnd.png
 share/gajim/data/iconsets/transports/gadu-gadu/32x32/invisible.png
+share/gajim/data/iconsets/transports/gadu-gadu/32x32/not_in_roster.png
 share/gajim/data/iconsets/transports/gadu-gadu/32x32/offline.png
 share/gajim/data/iconsets/transports/gadu-gadu/32x32/online.png
 share/gajim/data/iconsets/transports/gadu-gadu/32x32/xa.png
@@ -551,6 +572,7 @@ share/gajim/data/iconsets/transports/icq/16x16/
 share/gajim/data/iconsets/transports/icq/16x16/away.png
 share/gajim/data/iconsets/transports/icq/16x16/chat.png
 share/gajim/data/iconsets/transports/icq/16x16/dnd.png
+share/gajim/data/iconsets/transports/icq/16x16/not_in_roster.png
 share/gajim/data/iconsets/transports/icq/16x16/offline.png
 share/gajim/data/iconsets/transports/icq/16x16/online.png
 share/gajim/data/iconsets/transports/icq/16x16/xa.png
@@ -558,6 +580,7 @@ share/gajim/data/iconsets/transports/icq/32x32/
 share/gajim/data/iconsets/transports/icq/32x32/away.png
 share/gajim/data/iconsets/transports/icq/32x32/chat.png
 share/gajim/data/iconsets/transports/icq/32x32/dnd.png
+share/gajim/data/iconsets/transports/icq/32x32/not_in_roster.png
 share/gajim/data/iconsets/transports/icq/32x32/offline.png
 share/gajim/data/iconsets/transports/icq/32x32/online.png
 share/gajim/data/iconsets/transports/icq/32x32/xa.png
@@ -569,6 +592,7 @@ share/gajim/data/iconsets/transports/irc/16x16/
 share/gajim/data/iconsets/transports/irc/16x16/away.png
 share/gajim/data/iconsets/transports/irc/16x16/chat.png
 share/gajim/data/iconsets/transports/irc/16x16/dnd.png
+share/gajim/data/iconsets/transports/irc/16x16/not_in_roster.png
 share/gajim/data/iconsets/transports/irc/16x16/offline.png
 share/gajim/data/iconsets/transports/irc/16x16/online.png
 share/gajim/data/iconsets/transports/irc/16x16/xa.png
@@ -576,6 +600,7 @@ share/gajim/data/iconsets/transports/irc/32x32/
 share/gajim/data/iconsets/transports/irc/32x32/away.png
 share/gajim/data/iconsets/transports/irc/32x32/chat.png
 share/gajim/data/iconsets/transports/irc/32x32/dnd.png
+share/gajim/data/iconsets/transports/irc/32x32/not_in_roster.png
 share/gajim/data/iconsets/transports/irc/32x32/offline.png
 share/gajim/data/iconsets/transports/irc/32x32/online.png
 share/gajim/data/iconsets/transports/irc/32x32/xa.png
@@ -584,6 +609,7 @@ share/gajim/data/iconsets/transports/msn/16x16/
 share/gajim/data/iconsets/transports/msn/16x16/away.png
 share/gajim/data/iconsets/transports/msn/16x16/chat.png
 share/gajim/data/iconsets/transports/msn/16x16/dnd.png
+share/gajim/data/iconsets/transports/msn/16x16/not_in_roster.png
 share/gajim/data/iconsets/transports/msn/16x16/offline.png
 share/gajim/data/iconsets/transports/msn/16x16/online.png
 share/gajim/data/iconsets/transports/msn/16x16/xa.png
@@ -591,6 +617,7 @@ share/gajim/data/iconsets/transports/msn/32x32/
 share/gajim/data/iconsets/transports/msn/32x32/away.png
 share/gajim/data/iconsets/transports/msn/32x32/chat.png
 share/gajim/data/iconsets/transports/msn/32x32/dnd.png
+share/gajim/data/iconsets/transports/msn/32x32/not_in_roster.png
 share/gajim/data/iconsets/transports/msn/32x32/offline.png
 share/gajim/data/iconsets/transports/msn/32x32/online.png
 share/gajim/data/iconsets/transports/msn/32x32/xa.png
@@ -617,6 +644,7 @@ share/gajim/data/iconsets/transports/tlen/16x16/
 share/gajim/data/iconsets/transports/tlen/16x16/away.png
 share/gajim/data/iconsets/transports/tlen/16x16/chat.png
 share/gajim/data/iconsets/transports/tlen/16x16/dnd.png
+share/gajim/data/iconsets/transports/tlen/16x16/not_in_roster.png
 share/gajim/data/iconsets/transports/tlen/16x16/offline.png
 share/gajim/data/iconsets/transports/tlen/16x16/online.png
 share/gajim/data/iconsets/transports/tlen/16x16/xa.png
@@ -624,6 +652,7 @@ share/gajim/data/iconsets/transports/tlen/32x32/
 share/gajim/data/iconsets/transports/tlen/32x32/away.png
 share/gajim/data/iconsets/transports/tlen/32x32/chat.png
 share/gajim/data/iconsets/transports/tlen/32x32/dnd.png
+share/gajim/data/iconsets/transports/tlen/32x32/not_in_roster.png
 share/gajim/data/iconsets/transports/tlen/32x32/offline.png
 share/gajim/data/iconsets/transports/tlen/32x32/online.png
 share/gajim/data/iconsets/transports/tlen/32x32/xa.png
@@ -650,6 +679,7 @@ share/gajim/data/iconsets/transports/yahoo/16x16/
 share/gajim/data/iconsets/transports/yahoo/16x16/away.png
 share/gajim/data/iconsets/transports/yahoo/16x16/chat.png
 share/gajim/data/iconsets/transports/yahoo/16x16/dnd.png
+share/gajim/data/iconsets/transports/yahoo/16x16/not_in_roster.png
 share/gajim/data/iconsets/transports/yahoo/16x16/offline.png
 share/gajim/data/iconsets/transports/yahoo/16x16/online.png
 share/gajim/data/iconsets/transports/yahoo/16x16/xa.png
@@ -657,6 +687,7 @@ share/gajim/data/iconsets/transports/yahoo/32x32/
 share/gajim/data/iconsets/transports/yahoo/32x32/away.png
 share/gajim/data/iconsets/transports/yahoo/32x32/chat.png
 share/gajim/data/iconsets/transports/yahoo/32x32/dnd.png
+share/gajim/data/iconsets/transports/yahoo/32x32/not_in_roster.png
 share/gajim/data/iconsets/transports/yahoo/32x32/offline.png
 share/gajim/data/iconsets/transports/yahoo/32x32/online.png
 share/gajim/data/iconsets/transports/yahoo/32x32/xa.png
@@ -829,6 +860,7 @@ share/locale/pt/LC_MESSAGES/gajim.mo
 share/locale/pt_BR/LC_MESSAGES/gajim.mo
 share/locale/ru/LC_MESSAGES/gajim.mo
 share/locale/sk/LC_MESSAGES/gajim.mo
+share/locale/sr/LC_MESSAGES/gajim.mo
 share/locale/sv/LC_MESSAGES/gajim.mo
 share/locale/zh_CN/LC_MESSAGES/gajim.mo
 share/pixmaps/

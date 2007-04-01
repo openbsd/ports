@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2007/03/17 22:14:09 jolan Exp $
+# $OpenBSD: Makefile,v 1.14 2007/04/01 20:55:29 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"jabber client written in pygtk"
 DISTNAME=	gajim-0.11.1
-PKGNAME= ${DISTNAME}
+PKGNAME=	${DISTNAME}p0
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	net x11
 MASTER_SITES=	${HOMEPAGE}downloads/
@@ -25,6 +25,8 @@ CONFIGURE_ARGS=	--enable-gtkspell
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
+LIBTOOL_FLAGS=	--tag=disable-static
 
 MODULES=	devel/gettext
 
