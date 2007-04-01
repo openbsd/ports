@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2007/02/11 00:56:58 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2007/04/01 19:59:40 steven Exp $
 
 CATEGORIES=	x11
 
@@ -22,6 +22,7 @@ LIB_DEPENDS=	dvdcontrol.>=9,msgevents.>=6::x11/ogle \
 		xml2::textproc/libxml \
 
 USE_X11=	Yes
+USE_LIBTOOL=	Yes
 
 FLAVORS=gtk1
 FLAVOR?=
