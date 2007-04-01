@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2007/03/22 22:43:20 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2007/04/01 21:37:27 robert Exp $
 @conflict php4-core-*
 @pkgpath www/php5/core
 @pkgpath www/php5/core,hardened

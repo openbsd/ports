@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.33 2007/03/22 22:43:20 robert Exp $
+# $OpenBSD: Makefile,v 1.34 2007/04/01 21:37:27 robert Exp $
 
-FULLPKGNAME-main=	php5-extensions-${V}
+FULLPKGNAME-main=	php5-extensions-${V}p0
 COMMENT-main=		"informational package about PHP5 extensions"
 
 MULTI_PACKAGES=	-main
@@ -18,7 +18,8 @@ MODULES=		devel/gettext
 CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 			--with-iconv-dir=${LOCALBASE} \
 			--with-iconv=${LOCALBASE} \
-			--disable-dom
+			--disable-dom \
+			--disable-cgi
 
 GRAPHIC_DEPENDS=	jpeg.>=62::graphics/jpeg \
 			png.>=3::graphics/png
@@ -48,7 +49,6 @@ COMMENT-curl=		"curl URL library extensions for php5"
 CONFIGURE_ARGS+=	--with-curl=shared,${LOCALBASE}
 LIB_DEPENDS-curl=	curl.>=2::net/curl
 WANTLIB-curl=		${WANTLIB} crypto ssl z
-FULLPKGNAME-curl=	php5-curl-${V}
 .endif
 
 # dba
@@ -213,6 +213,40 @@ CONFIGURE_ARGS+=        --with-iodbc=shared
 LIB_DEPENDS-odbc=	iodbc.>=2::databases/iodbc
 .endif
 
+# pdo-mysql
+PSEUDO_FLAVORS+=	no_pdo_mysql
+.if ${FLAVOR:L:Mno_pdo_mysql}
+CONFIGURE_ARGS+=	--without-pdo-mysql
+.else
+MULTI_PACKAGES+=	-pdo_mysql
+COMMENT-pdo_mysql=	"PDO mysql database access extensions for php5"
+CONFIGURE_ARGS+=	--with-pdo-mysql=shared,${LOCALBASE}
+LIB_DEPENDS-pdo_mysql=	lib/mysql/mysqlclient.>=10::databases/mysql
+WANTLIB-pdo_mysql=	${WANTLIB} crypto ssl z
+.endif
+
+# pdo-pgsql
+PSEUDO_FLAVORS+=	no_pdo_pgsql
+.if ${FLAVOR:L:Mno_pdo_pgsql}
+CONFIGURE_ARGS+=	--without-pdo-pgsql
+.else
+MULTI_PACKAGES+=	-pdo_pgsql
+COMMENT-pdo_pgsql=	"PDO database access extensions for php5"
+CONFIGURE_ARGS+=        --with-pdo-pgsql=shared,${LOCALBASE}
+LIB_DEPENDS-pdo_pgsql=	pq.>=2:postgresql-client-*:databases/postgresql
+.endif
+
+# pdo-sqlite
+PSEUDO_FLAVORS+=	no_pdo_sqlite
+.if ${FLAVOR:L:Mno_pdo_sqlite}
+CONFIGURE_ARGS+=	--without-pdo-sqlite
+.else
+MULTI_PACKAGES+=	-pdo_sqlite
+COMMENT-pdo_sqlite=	"PDO sqlite database access extensions for php5"
+CONFIGURE_ARGS+=	--with-pdo-sqlite=shared,${LOCALBASE} --enable-sqlite-utf8
+LIB_DEPENDS-pdo_sqlite=	sqlite3.>=8::databases/sqlite3
+.endif
+
 # pgsql
 PSEUDO_FLAVORS+=	no_pgsql
 .if ${FLAVOR:L:Mno_pgsql}
@@ -279,7 +313,6 @@ MULTI_PACKAGES+=	-sybase_ct
 COMMENT-sybase_ct=	"sybase database access extensions for php5"
 CONFIGURE_ARGS+=        --with-sybase-ct=shared,${LOCALBASE}
 LIB_DEPENDS-sybase_ct=	ct::databases/freetds
-FULLPKGNAME-sybase_ct=	php5-sybase_ct-${V}
 .endif
 
 # xml-rpc

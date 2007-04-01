@@ -1,7 +1,7 @@
-$OpenBSD: patch-ext_calendar_calendar_c,v 1.1.1.1 2004/10/02 11:32:37 robert Exp $
---- ext/calendar/calendar.c.orig	Mon Jul 26 23:12:25 2004
-+++ ext/calendar/calendar.c	Mon Jul 26 23:12:43 2004
-@@ -277,7 +277,7 @@
+$OpenBSD: patch-ext_calendar_calendar_c,v 1.2 2007/04/01 21:37:27 robert Exp $
+--- ext/calendar/calendar.c.orig	Mon Jan  1 10:35:48 2007
++++ ext/calendar/calendar.c	Sun Apr  1 13:42:42 2007
+@@ -416,7 +416,7 @@ PHP_FUNCTION(cal_from_jd)
  
  	calendar->from_jd(jd, &year, &month, &day);
  

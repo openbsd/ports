@@ -1,0 +1,7 @@
+$OpenBSD: patch-sapi_cgi_Makefile_frag,v 1.1 2007/04/01 21:37:27 robert Exp $
+--- sapi/cgi/Makefile.frag.orig	Wed Jul  2 03:08:26 2003
++++ sapi/cgi/Makefile.frag	Sun Apr  1 15:18:21 2007
+@@ -1,2 +1,2 @@
+-$(SAPI_CGI_PATH): $(PHP_GLOBAL_OBJS) $(PHP_SAPI_OBJS)
++$(SAPI_CGI_PATH): $(PHP_GLOBAL_OBJS) $(PHP_CGI_OBJS)
+ 	$(BUILD_CGI)

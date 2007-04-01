@@ -1,8 +1,15 @@
-# $OpenBSD: Makefile,v 1.20 2007/03/22 22:43:20 robert Exp $
+# $OpenBSD: Makefile,v 1.21 2007/04/01 21:37:27 robert Exp $
 
-COMMENT=	"server-side HTML-embedded scripting language"
-PKGNAME=	php5-core-${V}
+COMMENT-main=	"server-side HTML-embedded scripting language"
+COMMENT-fastcgi="stand-alone FastCGI version of PHP"
+
+PKGNAME=	php5-core-${V}p0
+PKGNAME-main=	php5-core-${V}p0
+PKGNAME-fastcgi=php5-fastcgi-${V}
+
 DISTFILES=	php-${V}.tar.gz
+
+MULTI_PACKAGES=	-main -fastcgi
 
 CONFIGURE_ARGS+=--with-apxs=/usr/sbin/apxs \
 		--without-mysql \
@@ -26,7 +33,10 @@ CONFIGURE_ARGS+=--with-apxs=/usr/sbin/apxs \
 		--enable-yp \
 		--enable-exif \
 		--without-sqlite \
-		--with-pear=${LOCALBASE}/share/php5
+		--without-pdo-sqlite \
+		--with-pear=${LOCALBASE}/share/php5 \
+		--enable-fastcgi \
+		--enable-force-cgi-redirect
 		
 MODULES=	devel/gettext
 
@@ -56,6 +66,7 @@ post-install:
 		${PREFIX}/${APACHE_MODULE_SUBDIR}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/php5
 	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/cli/php ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/cgi/php ${PREFIX}/bin/php-fastcgi
 	
 .for i in dist recommended
 	@sed -e 's,MODULES_DIR,${MODULES_DIR},' \

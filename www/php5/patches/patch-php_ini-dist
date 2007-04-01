@@ -1,7 +1,7 @@
-$OpenBSD: patch-php_ini-dist,v 1.7 2007/03/22 22:43:20 robert Exp $
+$OpenBSD: patch-php_ini-dist,v 1.8 2007/04/01 21:37:27 robert Exp $
 --- php.ini-dist.orig	Thu Dec 21 14:05:27 2006
-+++ php.ini-dist	Wed Feb 21 23:30:37 2007
-@@ -455,10 +455,7 @@
++++ php.ini-dist	Sun Apr  1 13:42:42 2007
+@@ -455,10 +455,7 @@ default_mimetype = "text/html"
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
  ; UNIX: "/path1:/path2"
@@ -13,7 +13,7 @@ $OpenBSD: patch-php_ini-dist,v 1.7 2007/03/22 22:43:20 robert Exp $
  
  ; The root of the PHP pages, used only if nonempty.
  ; if PHP was not compiled with FORCE_REDIRECT, you SHOULD set doc_root
-@@ -472,7 +469,7 @@
+@@ -472,7 +469,7 @@ doc_root =
  user_dir =
  
  ; Directory in which the loadable extensions (modules) reside.
@@ -22,7 +22,7 @@ $OpenBSD: patch-php_ini-dist,v 1.7 2007/03/22 22:43:20 robert Exp $
  
  ; Whether or not to enable the dl() function.  The dl() function does NOT work
  ; properly in multithreaded servers, such as IIS or Zeus, and is automatically
-@@ -533,7 +530,7 @@
+@@ -533,7 +530,7 @@ upload_max_filesize = 2M
  ;;;;;;;;;;;;;;;;;;
  
  ; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
@@ -31,7 +31,7 @@ $OpenBSD: patch-php_ini-dist,v 1.7 2007/03/22 22:43:20 robert Exp $
  
  ; Whether to allow include/require to open URLs (like http:// or ftp://) as files.
  allow_url_include = Off
-@@ -554,81 +551,6 @@
+@@ -554,81 +551,6 @@ default_socket_timeout = 60
  ; fgets() and file() will work regardless of the source of the file.
  ; auto_detect_line_endings = Off
  
@@ -113,7 +113,7 @@ $OpenBSD: patch-php_ini-dist,v 1.7 2007/03/22 22:43:20 robert Exp $
  ;;;;;;;;;;;;;;;;;;;
  ; Module Settings ;
  ;;;;;;;;;;;;;;;;;;;
-@@ -670,13 +592,6 @@
+@@ -670,13 +592,6 @@ default_socket_timeout = 60
  define_syslog_variables  = Off
  
  [mail function]
@@ -127,7 +127,7 @@ $OpenBSD: patch-php_ini-dist,v 1.7 2007/03/22 22:43:20 robert Exp $
  ; For Unix only.  You may supply arguments as well (default: "sendmail -t -i").
  ;sendmail_path =
  
-@@ -1252,6 +1167,53 @@
+@@ -1252,6 +1167,53 @@ soap.wsdl_cache_dir="/tmp"
  ; instead of original one.
  soap.wsdl_cache_ttl=86400
  
