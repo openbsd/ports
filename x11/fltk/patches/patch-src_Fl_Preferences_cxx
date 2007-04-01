@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Fl_Preferences_cxx,v 1.1 2003/08/28 10:56:02 sturm Exp $
---- src/Fl_Preferences.cxx.orig	2003-08-27 19:52:39.000000000 +0200
-+++ src/Fl_Preferences.cxx	2003-08-27 19:53:41.000000000 +0200
-@@ -663,7 +663,7 @@ Fl_Preferences::RootNode::RootNode( Fl_P
+$OpenBSD: patch-src_Fl_Preferences_cxx,v 1.2 2007/04/01 17:48:42 martynas Exp $
+--- src/Fl_Preferences.cxx.orig	Sun Nov 27 16:45:48 2005
++++ src/Fl_Preferences.cxx	Sun Apr  1 18:27:01 2007
+@@ -673,7 +673,7 @@ Fl_Preferences::RootNode::RootNode( Fl_Preferences *pr
        }
  
      case SYSTEM:
