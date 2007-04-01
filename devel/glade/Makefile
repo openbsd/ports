@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2007/03/15 11:30:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.20 2007/04/01 06:16:08 steven Exp $
 
 COMMENT=		"free user interface builder for GTK+ and GNOME"
 
 DISTNAME=		glade-0.6.4
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		devel
 
 HOMEPAGE=		http://glade.gnome.org/
@@ -28,6 +28,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	--without-bonobo
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \

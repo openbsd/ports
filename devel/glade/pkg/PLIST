@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/14 23:43:55 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2007/04/01 06:16:08 steven Exp $
 bin/glade
 share/glade/
 share/glade/gnome/
@@ -151,8 +151,6 @@ share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/glade.mo
 share/locale/es/LC_MESSAGES/glade.mo
 share/locale/fr/LC_MESSAGES/glade.mo
-share/locale/ga/
-share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/glade.mo
 share/locale/gl/LC_MESSAGES/glade.mo
 share/locale/hu/LC_MESSAGES/glade.mo
