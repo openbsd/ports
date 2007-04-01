@@ -1,7 +1,7 @@
-$OpenBSD: patch-kpilot_lib_pilotAppInfo_h,v 1.1 2007/03/24 12:41:52 ajacoutot Exp $
---- kpilot/lib/pilotAppInfo.h.orig	Sat Mar 24 11:09:11 2007
-+++ kpilot/lib/pilotAppInfo.h	Sat Mar 24 11:13:08 2007
-@@ -136,8 +136,15 @@ protected:
+$OpenBSD: patch-kpilot_lib_pilotAppInfo_h,v 1.2 2007/04/01 10:27:31 espie Exp $
+--- kpilot/lib/pilotAppInfo.h.orig	Mon Jan 15 12:29:07 2007
++++ kpilot/lib/pilotAppInfo.h	Sat Mar 31 15:35:15 2007
+@@ -136,8 +136,15 @@ class KDE_EXPORT PilotAppInfoBase (protected)
  * (again, from pilot-link).
  */
  template <typename appinfo,

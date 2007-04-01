@@ -1,7 +1,7 @@
-$OpenBSD: patch-kpilot_conduits_vcalconduit_vcalRecord_cc,v 1.1 2007/01/28 13:18:51 espie Exp $
---- kpilot/conduits/vcalconduit/vcalRecord.cc.orig	Fri Jan 19 15:57:04 2007
-+++ kpilot/conduits/vcalconduit/vcalRecord.cc	Fri Jan 19 15:59:45 2007
-@@ -584,7 +584,7 @@ void VCalRecord::setCategory(PilotDateEn
+$OpenBSD: patch-kpilot_conduits_vcalconduit_vcalRecord_cc,v 1.2 2007/04/01 10:27:31 espie Exp $
+--- kpilot/conduits/vcalconduit/vcalRecord.cc.orig	Mon Jan 15 12:29:05 2007
++++ kpilot/conduits/vcalconduit/vcalRecord.cc	Sat Mar 31 15:35:15 2007
+@@ -584,7 +584,7 @@ void VCalRecord::setCategory(PilotDateEntry *de, const
  	if (eventCategories.size() < 1)
  	{
  		// This event has no categories.
@@ -10,7 +10,7 @@ $OpenBSD: patch-kpilot_conduits_vcalconduit_vcalRecord_cc,v 1.1 2007/01/28 13:18
  		return;
  	}
  
-@@ -623,6 +623,6 @@ void VCalRecord::setCategory(PilotDateEn
+@@ -623,6 +623,6 @@ void VCalRecord::setCategory(PilotDateEntry *de, const
  		}
  	}
  
