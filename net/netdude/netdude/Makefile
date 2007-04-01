@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/11/13 12:51:14 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/04/01 14:08:32 steven Exp $
 
 COMMENT=	"network traffic visualization and editing tool"
 
@@ -28,6 +28,7 @@ LIB_DEPENDS=	netdude::net/libnetdude/libnetdude \
 WANTLIB=		Xi X11 m c Xext pcap
 
 USE_X11=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc/netdude \
 			--disable-gtk-doc --datadir=${PREFIX}/lib
