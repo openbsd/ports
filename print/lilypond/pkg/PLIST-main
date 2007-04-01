@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/26 11:24:29 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/04/01 22:07:44 kili Exp $
 @pkgpath print/lilypond
 bin/abc2ly
 bin/convert-ly
@@ -49,7 +49,6 @@ share/lilypond/${VERSION}/fonts/otf/emmentaler-18.otf
 share/lilypond/${VERSION}/fonts/otf/emmentaler-20.otf
 share/lilypond/${VERSION}/fonts/otf/emmentaler-23.otf
 share/lilypond/${VERSION}/fonts/otf/emmentaler-26.otf
-share/lilypond/${VERSION}/fonts/otf/fonts.cache-1
 share/lilypond/${VERSION}/fonts/source/
 share/lilypond/${VERSION}/fonts/source/feta-accordion.mf
 share/lilypond/${VERSION}/fonts/source/feta-alphabet.mf
@@ -225,7 +224,6 @@ share/lilypond/${VERSION}/fonts/type1/feta18.pfa
 share/lilypond/${VERSION}/fonts/type1/feta20.pfa
 share/lilypond/${VERSION}/fonts/type1/feta23.pfa
 share/lilypond/${VERSION}/fonts/type1/feta26.pfa
-share/lilypond/${VERSION}/fonts/type1/fonts.cache-1
 share/lilypond/${VERSION}/fonts/type1/parmesan11.pfa
 share/lilypond/${VERSION}/fonts/type1/parmesan13.pfa
 share/lilypond/${VERSION}/fonts/type1/parmesan14.pfa

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/04/01 16:44:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2007/04/01 22:07:44 kili Exp $
 #
 # Credits to Matt Jibson. He did the initial work on this port and many
 # tools it depends on.
@@ -11,7 +11,7 @@ COMMENT-docs=	"LilyPond documentation"
 VERSION=	2.8.8
 DISTNAME=	lilypond-${VERSION}
 DISTNAME-docs=	${DISTNAME}-1.documentation
-PKGNAME-main=	${DISTNAME}
+PKGNAME-main=	${DISTNAME}p0
 PKGNAME-docs=	${DISTNAME:S,-,-docs-,}
 CATEGORIES=	print
 
@@ -52,7 +52,7 @@ PKG_ARCH-docs=		*
 LIB_DEPENDS-docs=
 RUN_DEPENDS-docs=
 
-WANTLIB-main=	c fontconfig freetype m stdc++ X11
+WANTLIB-main=	c expat fontconfig freetype m stdc++ z X11
 MODULES=	devel/gettext lang/python
 LIB_DEPENDS=	guile.>=15,guile-ltdl.>=1::lang/guile \
 		glib-2.0.>=1000,gmodule-2.0.>=1000,gobject-2.0.>=1000::devel/glib2 \

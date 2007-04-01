@@ -1,21 +1,18 @@
-$OpenBSD: patch-mf_GNUmakefile,v 1.1.1.1 2006/10/29 19:27:12 kili Exp $
+$OpenBSD: patch-mf_GNUmakefile,v 1.2 2007/04/01 22:07:44 kili Exp $
 
-# Don't pollute everything with font caches.
+# Don't run fc-cache.
 
---- mf/GNUmakefile.orig	Tue May  9 12:11:16 2006
-+++ mf/GNUmakefile	Sat Jun 10 21:01:00 2006
-@@ -92,8 +92,8 @@ $(outdir)/fonts.cache-1: $(PFA_FILES) $(
- local-install: install-fc-cache
+--- mf/GNUmakefile.orig	Sun Apr  1 21:44:41 2007
++++ mf/GNUmakefile	Sun Apr  1 21:44:22 2007
+@@ -112,14 +112,14 @@ PFA_FILES = $(ALL_FONTS:%=$(outdir)/%.pfa)
  
- install-fc-cache:
--	$(foreach suff, $(INSTALLATION_OUT_SUFFIXES), rm -f $(DESTDIR)$(INSTALLATION_OUT_DIR$(suff))/fonts.cache-1 && ) true
--	fc-cache $(foreach suff, $(INSTALLATION_OUT_SUFFIXES), $(DESTDIR)$(INSTALLATION_OUT_DIR$(suff)))
-+	$(foreach suff, 2 5, rm -f $(DESTDIR)$(INSTALLATION_OUT_DIR$(suff))/fonts.cache-1 && ) true
-+	fc-cache $(foreach suff, 2 5, $(DESTDIR)$(INSTALLATION_OUT_DIR$(suff)))
+ # Make tfm files first, log files last,
+ # so that normally log files aren't made twice
+-ALL_GEN_FILES= $(TFM_FILES) $(TEXTABLES) $(TFM_FILES) $(LOG_FILES) $(ENC_FILES) $(LISP_FILES) $(FETA_LIST_FILES)  $(OTF_TABLES) $(NCSB_OTFS) $(PFA_FILES) $(OTF_FILES) $(SVG_FILES) $(outdir)/fonts.cache-1
++ALL_GEN_FILES= $(TFM_FILES) $(TEXTABLES) $(TFM_FILES) $(LOG_FILES) $(ENC_FILES) $(LISP_FILES) $(FETA_LIST_FILES)  $(OTF_TABLES) $(NCSB_OTFS) $(PFA_FILES) $(OTF_FILES) $(SVG_FILES)
  
- ALL_FONTS = $(FETA_FONTS) $(SAUTER_FONTS)
- PFA_FILES = $(ALL_FONTS:%=$(outdir)/%.pfa)
-@@ -107,7 +107,7 @@ ALL_GEN_FILES= $(TFM_FILES) $(TEXTABLES)
+ #PRE_INSTALL=$(MAKE) "$(ALL_GEN_FILES)"
+ 
  INSTALLATION_DIR=$(local_lilypond_datadir)/fonts/source
  INSTALLATION_FILES=$(MF_FILES) $(AF_FILES)
  
