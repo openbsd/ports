@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_mui_browser_c,v 1.1.1.1 2001/06/20 18:55:24 lebel Exp $
---- lib/mui/browser.c.orig	Fri Aug  7 20:15:07 1998
-+++ lib/mui/browser.c	Wed Jun 20 12:11:38 2001
-@@ -176,7 +176,7 @@ void handletextbox(muiObject *obj, enum 
+$OpenBSD: patch-lib_mui_browser_c,v 1.2 2007/04/02 19:57:48 martynas Exp $
+--- lib/mui/browser.c.orig	Sat Aug  8 02:15:28 1998
++++ lib/mui/browser.c	Mon Apr  2 11:35:06 2007
+@@ -176,7 +176,7 @@ void handletextbox(muiObject *obj, enum muiReturnValue
  	    strncpy(directory, s, slash-s);
  	    directory[slash-s] = 0;
  	} else {

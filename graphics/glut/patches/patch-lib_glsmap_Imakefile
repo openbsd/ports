@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_glsmap_Imakefile,v 1.5 2005/12/26 21:08:52 steven Exp $
+$OpenBSD: patch-lib_glsmap_Imakefile,v 1.6 2007/04/02 19:57:48 martynas Exp $
 --- lib/glsmap/Imakefile.orig	Sat Aug  8 02:20:50 1998
-+++ lib/glsmap/Imakefile	Mon Dec 26 22:04:07 2005
++++ lib/glsmap/Imakefile	Mon Apr  2 11:35:05 2007
 @@ -2,11 +2,11 @@
  /* Copyright (c) Mark J. Kilgard, 1998. */
  
@@ -17,7 +17,7 @@ $OpenBSD: patch-lib_glsmap_Imakefile,v 1.5 2005/12/26 21:08:52 steven Exp $
  SRCS = smap_buildsmap.c smap_context.c smap_create.c smap_destroy.c \
    smap_drawmesh.c smap_flag.c smap_get.c smap_getfunc.c smap_gettexdim.c \
    smap_gettexobj.c smap_getvec.c smap_makemesh.c smap_nearfar.c \
-@@ -19,6 +19,10 @@ OBJS = smap_buildsmap.o smap_context.o s
+@@ -19,6 +19,10 @@ OBJS = smap_buildsmap.o smap_context.o smap_create.o s
    smap_origin.o smap_render.o smap_rvec2st.o smap_set.o smap_setfunc.o \
    smap_setvec.o smap_texdim.o smap_texobj.o
  

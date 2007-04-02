@@ -1,0 +1,20 @@
+$OpenBSD: patch-lib_glut_glut_vidresize_c,v 1.1 2007/04/02 19:57:48 martynas Exp $
+--- lib/glut/glut_vidresize.c.orig	Sat Aug  8 02:15:11 1998
++++ lib/glut/glut_vidresize.c	Mon Apr  2 11:51:49 2007
+@@ -9,6 +9,7 @@
+ 
+ #if !defined(_WIN32)
+ #include <GL/glx.h>
++#undef GLX_SGIX_video_resize
+ #endif
+ 
+ #ifdef __sgi
+@@ -20,7 +21,7 @@
+ /* Grumble.  The IRIX 6.3 and early IRIX 6.4 OpenGL headers
+    support the video resize extension, but failed to define
+    GLX_SGIX_video_resize. */
+-#ifdef GLX_SYNC_FRAME_SGIX
++#if defined(GLX_SYNC_FRAME_SGIX) && !defined(__OpenBSD__)
+ #define GLX_SGIX_video_resize 1
+ #endif
+ 
