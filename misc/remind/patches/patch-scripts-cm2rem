@@ -1,7 +1,7 @@
---- scripts/cm2rem.tcl.orig	Fri Jun 16 17:23:33 2000
-+++ scripts/cm2rem.tcl	Fri Jun 16 17:23:55 2000
+--- scripts/cm2rem.tcl.orig	Fri Feb 18 05:45:38 2000
++++ scripts/cm2rem.tcl	Sat Mar 31 00:13:18 2007
 @@ -16,7 +16,7 @@
- # $Id: patch-scripts-cm2rem,v 1.2 2003/12/27 23:37:18 jose Exp $
+ # $Id: patch-scripts-cm2rem,v 1.3 2007/04/02 19:24:48 martynas Exp $
  
  # the next line restarts using tclsh \
 -exec tclsh "$0" "$@"
