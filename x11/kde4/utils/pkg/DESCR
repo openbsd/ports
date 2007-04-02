@@ -1,0 +1,14 @@
+Various kde utilities
+
+* ark: manager for compressed files and archives
+* kcalc: scientific calculator
+* kcharselect: select special characters from any fonts and put them into
+               the clipboard
+* charselectapplet: dito, but as a Kicker applet
+* kdessh: front end to ssh
+* kdf: like 'df', a graphical free disk space viewer
+* kfloppy: format a floppy disks with this app
+* khexedit: binary file editor
+* kjots: manages several "books" with a subject and notes
+* kregexpeditor: graphical regular expression editor
+* ktimer: execute programs after some time

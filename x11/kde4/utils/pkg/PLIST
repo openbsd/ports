@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/03/24 15:23:20 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/04/02 21:32:22 espie Exp $
 bin/ark
 bin/kcalc
 bin/kcharselect
@@ -18,7 +18,6 @@ include/kmultiformlistbox.h
 include/kmultiformlistboxentry.h
 include/kmultiformlistboxfactory.h
 include/kwidgetstreamer.h
-lib/kde4/
 lib/kde4/kcm_kdf.so
 lib/kde4/kcm_kwallet.so
 lib/kde4/libarkpart.so
@@ -28,14 +27,11 @@ lib/kde4/libkregexpeditorgui.so
 lib/libkdeinit_ark.so
 lib/libkdeinit_kcalc.so
 lib/libkhexeditcore.so
-lib/libkhexeditcore.so.1
-lib/libkhexeditcore.so.1.0.0
+@lib lib/libkhexeditcore.so.${LIBkhexeditcore_VERSION}
 lib/libkhexeditgui.so
-lib/libkhexeditgui.so.1
-lib/libkhexeditgui.so.1.0.0
+@lib lib/libkhexeditgui.so.${LIBkhexeditgui_VERSION}
 lib/libkregexpeditorcommon.so
-lib/libkregexpeditorcommon.so.1
-lib/libkregexpeditorcommon.so.1.0.0
+@lib lib/libkregexpeditorcommon.so.${LIBkregexpeditorcommon_VERSION}
 share/applications/
 share/applications/kde/
 share/applications/kde/KCharSelect.desktop
@@ -54,7 +50,6 @@ share/applications/kde/kwalletmanager.desktop
 share/applications/kde/kwikdisk.desktop
 share/applications/kde/superkaramba.desktop
 share/applications/kde/sweeper.desktop
-share/apps/
 share/apps/ark/
 share/apps/ark/ark_part.rc
 share/apps/ark/ark_part_readonly.rc
@@ -81,7 +76,6 @@ share/apps/kcalc/kcalcui.rc
 share/apps/kcalc/scienceconstants.xml
 share/apps/kcharselect/
 share/apps/kcharselect/kcharselectui.rc
-share/apps/kconf_update/
 share/apps/kconf_update/kcalcrc.upd
 share/apps/kconf_update/kcharselect.upd
 share/apps/kdf/
@@ -163,11 +157,8 @@ share/config.kcfg/ark.kcfg
 share/config.kcfg/kcalc.kcfg
 share/config.kcfg/kgpg.kcfg
 share/config.kcfg/kjots.kcfg
-share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.kde.kgpg.Key.xml
 share/dbus-1/interfaces/org.kde.sweeper.xml
-share/doc/HTML/
-share/doc/HTML/en/
 share/doc/HTML/en/KRegExpEditor/
 share/doc/HTML/en/KRegExpEditor/altn.png
 share/doc/HTML/en/KRegExpEditor/altntool.png
@@ -246,47 +237,23 @@ share/doc/HTML/en/kwallet/password2.png
 share/doc/HTML/en/superkaramba/
 share/doc/HTML/en/superkaramba/index.cache.bz2
 share/doc/HTML/en/superkaramba/index.docbook
-share/icons/
-share/icons/crystalsvg/
-share/icons/crystalsvg/128x128/
-share/icons/crystalsvg/128x128/apps/
 share/icons/crystalsvg/128x128/apps/superkaramba.png
-share/icons/crystalsvg/128x128/mimetypes/
 share/icons/crystalsvg/128x128/mimetypes/superkaramba_theme.png
-share/icons/crystalsvg/16x16/
-share/icons/crystalsvg/16x16/apps/
 share/icons/crystalsvg/16x16/apps/kcmdf.png
 share/icons/crystalsvg/16x16/apps/superkaramba.png
-share/icons/crystalsvg/16x16/mimetypes/
 share/icons/crystalsvg/16x16/mimetypes/superkaramba_theme.png
-share/icons/crystalsvg/22x22/
-share/icons/crystalsvg/22x22/apps/
 share/icons/crystalsvg/22x22/apps/kcmdf.png
 share/icons/crystalsvg/22x22/apps/superkaramba.png
-share/icons/crystalsvg/22x22/mimetypes/
 share/icons/crystalsvg/22x22/mimetypes/superkaramba_theme.png
-share/icons/crystalsvg/32x32/
-share/icons/crystalsvg/32x32/apps/
 share/icons/crystalsvg/32x32/apps/kcmdf.png
 share/icons/crystalsvg/32x32/apps/superkaramba.png
-share/icons/crystalsvg/32x32/mimetypes/
 share/icons/crystalsvg/32x32/mimetypes/superkaramba_theme.png
-share/icons/crystalsvg/48x48/
-share/icons/crystalsvg/48x48/apps/
 share/icons/crystalsvg/48x48/apps/superkaramba.png
-share/icons/crystalsvg/48x48/mimetypes/
 share/icons/crystalsvg/48x48/mimetypes/superkaramba_theme.png
-share/icons/crystalsvg/64x64/
-share/icons/crystalsvg/64x64/apps/
 share/icons/crystalsvg/64x64/apps/superkaramba.png
-share/icons/crystalsvg/64x64/mimetypes/
 share/icons/crystalsvg/64x64/mimetypes/superkaramba_theme.png
-share/icons/crystalsvg/scalable/
-share/icons/crystalsvg/scalable/apps/
 share/icons/crystalsvg/scalable/apps/superkaramba.svgz
-share/icons/crystalsvg/scalable/mimetypes/
 share/icons/crystalsvg/scalable/mimetypes/superkaramba_theme.svgz
-share/icons/hicolor/
 share/icons/hicolor/128x128/
 share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/ark.png
@@ -368,10 +335,7 @@ share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/ark.svgz
 share/icons/hicolor/scalable/apps/kcalc.svgz
-share/mimelnk/
-share/mimelnk/application/
 @comment share/mimelnk/application/x-superkaramba.desktop
-share/services/
 share/services/ark_part.desktop
 share/services/kbytearrayedit.desktop
 share/services/khexedit2part.desktop
