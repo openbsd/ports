@@ -1,0 +1,30 @@
+$OpenBSD: patch-cmake_modules_FindXscreensaver_cmake,v 1.1 2007/04/02 00:39:25 espie Exp $
+--- cmake/modules/FindXscreensaver.cmake.orig	Mon Apr  2 02:15:40 2007
++++ cmake/modules/FindXscreensaver.cmake	Mon Apr  2 02:23:31 2007
+@@ -87,9 +87,17 @@ if( XSCREENSAVER_DIR)
+ endif(XSCREENSAVER_DIR)
+ endif(NOT XSCREENSAVER_DIR)
+ 
++if(NOT XSCREENSAVER_DIR)
++FIND_PATH(XSCREENSAVER_DIR xscreensaver
++	/usr/local/libexec
++)
++if( XSCREENSAVER_DIR)
++        set(XSCREENSAVER_DIR ${XSCREENSAVER_DIR}/xscreensaver/)
++endif(XSCREENSAVER_DIR)
++endif(NOT XSCREENSAVER_DIR)
+ 
+ set(XSCREENSAVER_CONFIG_DIR)
+-FIND_PATH(XSCREENSAVER_CONFIG_DIR config/deco.xml
++FIND_PATH(XSCREENSAVER_CONFIG_DIR config/xdeco.xml
+    ${KDE4_INCLUDE_DIR}
+    /usr/
+    /usr/local/
+@@ -101,6 +109,7 @@ FIND_PATH(XSCREENSAVER_CONFIG_DIR config/deco.xml
+    /usr/share/xscreensaver/
+    /usr/local/kde/
+    /usr/local/xscreensaver/
++   /usr/local/share/xscreensaver/
+    /usr/openwin/lib/xscreensaver/
+    /etc/
+ )

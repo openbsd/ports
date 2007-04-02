@@ -1,0 +1,9 @@
+Accessibility applications for KDE.
+Includes:
+* kmag: a magnifier
+* kmousetool: mouse helper
+* kbstateapplet: keyboard state keeper
+* monochrome icons
+
+kmouth, ksayit and kttsd are not yet compiled.
+

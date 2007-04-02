@@ -1,0 +1,19 @@
+The kdeadmin package contains packages that usually only a system
+administrator might need:
+
+* kcron
+    Editor for the cron command scheduler.
+
+* kfile-plugins
+    Make Konquerer display additional info on about *.dep and *.rpm files.
+
+* kpackage
+    Manager for DEB, RPM and similar software packages.
+
+* kuser
+    An user manager.
+
+* secpolicy
+    A program to display PAM security policies.
+
+Most of this stuff will be useless/non-working on OpenBSD, actually.

@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/03/24 16:59:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/04/02 00:39:25 espie Exp $
 bin/kcron
 bin/kpackage
 bin/kuser
 bin/secpolicy
-lib/kde4/
 lib/kde4/kcm_knetworkconfmodule.so
 lib/kde4/kfile_deb.so
 lib/kde4/kfile_rpm.so
@@ -13,7 +12,6 @@ share/applications/kde/
 share/applications/kde/kcron.desktop
 share/applications/kde/kpackage.desktop
 share/applications/kde/kuser.desktop
-share/apps/
 share/apps/kcron/
 share/apps/kcron/kcronui.rc
 share/apps/knetworkconf/
@@ -94,8 +92,6 @@ share/apps/kuser/pics/group.png
 share/apps/kuser/pics/user.png
 share/config.kcfg/
 share/config.kcfg/kuser.kcfg
-share/doc/HTML/
-share/doc/HTML/en/
 share/doc/HTML/en/kcron/
 share/doc/HTML/en/kcron/index.cache.bz2
 share/doc/HTML/en/kcron/index.docbook
@@ -144,8 +140,6 @@ share/doc/HTML/en/kuser/kuser.png
 share/doc/HTML/en/lilo-config/
 share/doc/HTML/en/lilo-config/index.cache.bz2
 share/doc/HTML/en/lilo-config/index.docbook
-share/icons/
-share/icons/hicolor/
 share/icons/hicolor/128x128/
 share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/kpackage.png
@@ -181,7 +175,6 @@ share/icons/hicolor/64x64/
 share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/kpackage.png
 share/icons/hicolor/64x64/apps/kuser.png
-share/services/
 share/services/kcm_knetworkconfmodule.desktop
 share/services/kfile_deb.desktop
 share/services/kfile_rpm.desktop

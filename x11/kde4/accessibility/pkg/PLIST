@@ -1,13 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/03/24 13:46:58 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/04/02 00:39:25 espie Exp $
 bin/kmag
 bin/kmousetool
-lib/kde4/
 lib/kde4/kbstate_panelapplet.so
-share/applications/
-share/applications/kde/
 share/applications/kde/kmag.desktop
 share/applications/kde/kmousetool.desktop
-share/apps/
 share/apps/kbstateapplet/
 share/apps/kbstateapplet/icons/
 share/apps/kbstateapplet/icons/crystalsvg/
@@ -126,8 +122,6 @@ share/apps/kbstateapplet/icons/crystalsvg/64x64/actions/metakey.png
 share/apps/kbstateapplet/icons/crystalsvg/64x64/actions/shiftkey.png
 share/apps/kbstateapplet/icons/crystalsvg/64x64/actions/superkey.png
 share/apps/kbstateapplet/icons/crystalsvg/64x64/actions/unlatched.png
-share/apps/kicker/
-share/apps/kicker/applets/
 share/apps/kicker/applets/kbstateapplet.desktop
 share/apps/kmag/
 share/apps/kmag/icons/
@@ -167,8 +161,6 @@ share/apps/kmousetool/icons/hicolor/32x32/apps/
 share/apps/kmousetool/icons/hicolor/32x32/apps/kmousetool.png
 share/apps/kmousetool/sounds/
 share/apps/kmousetool/sounds/mousetool_tap.wav
-share/doc/HTML/
-share/doc/HTML/en/
 share/doc/HTML/en/kmag/
 share/doc/HTML/en/kmag/index.cache.bz2
 share/doc/HTML/en/kmag/index.docbook
@@ -204,7 +196,6 @@ share/doc/HTML/en/kttsd/stringreplacer.png
 share/doc/HTML/en/kttsd/talkerchooser.png
 share/doc/HTML/en/kttsd/talkers.png
 share/doc/HTML/en/kttsd/xmltransformer.png
-share/icons/
 share/icons/mono/
 share/icons/mono/128x128/
 share/icons/mono/128x128/actions/
