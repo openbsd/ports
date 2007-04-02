@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/03/24 13:23:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/04/02 13:18:57 espie Exp $
 bin/blinken
 bin/celestrongps
 bin/indiserver
@@ -58,45 +58,32 @@ include/libkiten/historyPtrList.h
 include/libkiten/kitenEdit.h
 include/libkiten/kromajiedit.h
 include/libkiten/wordType.h
-lib/kde4/
 lib/kde4/kfile_drgeo.so
 lib/kde4/kfile_kig.so
 lib/kde4/libkigpart.so
 lib/kde4/libkmplotpart.so
-lib/kde4/plugins/
-lib/kde4/plugins/designer/
 lib/kde4/plugins/designer/kalziumuiwidgets.so
 lib/kde4/plugins/designer/kdeeduwidgets.so
 lib/libSatLib.so
-lib/libSatLib.so.1
-lib/libSatLib.so.1.0.0
+@lib lib/libSatLib.so.${LIBSatLib_VERSION}
 lib/libcompoundviewer.so
-lib/libcompoundviewer.so.4
-lib/libcompoundviewer.so.4.0.0
+@lib lib/libcompoundviewer.so.${LIBcompoundviewer_VERSION}
 lib/libextdate.so
-lib/libextdate.so.4
-lib/libextdate.so.4.0.0
+@lib lib/libextdate.so.${LIBextdate_VERSION}
 lib/libkdeeducore.so
-lib/libkdeeducore.so.4
-lib/libkdeeducore.so.4.0.0
+@lib lib/libkdeeducore.so.${LIBkdeeducore_VERSION}
 lib/libkdeeduplot.so
-lib/libkdeeduplot.so.4
-lib/libkdeeduplot.so.4.0.0
+@lib lib/libkdeeduplot.so.${LIBkdeeduplot_VERSION}
 lib/libkdeeduui.so
-lib/libkdeeduui.so.4
-lib/libkdeeduui.so.4.0.0
+@lib lib/libkdeeduui.so.${LIBkdeeduui_VERSION}
 lib/libkiten.so
-lib/libkiten.so.4
-lib/libkiten.so.4.0.0
+@lib lib/libkiten.so.${LIBkiten_VERSION}
 lib/libkvoctraincore.so
-lib/libkvoctraincore.so.1
-lib/libkvoctraincore.so.1.0.0
+@lib lib/libkvoctraincore.so.${LIBkvoctraincore_VERSION}
 lib/libsbigudrv.so
-lib/libsbigudrv.so.1
-lib/libsbigudrv.so.1.0.0
+@lib lib/libsbigudrv.so.${LIBsbigudrv_VERSION}
 lib/libscience.so
-lib/libscience.so.4
-lib/libscience.so.4.0.0
+@lib lib/libscience.so.${LIBscience_VERSION}
 share/applications/
 share/applications/kde/
 share/applications/kde/blinken.desktop
@@ -117,7 +104,6 @@ share/applications/kde/kturtle.desktop
 share/applications/kde/kvoctrain.desktop
 share/applications/kde/kwordquiz.desktop
 share/applications/kde/radselect.desktop
-share/apps/
 share/apps/blinken/
 share/apps/blinken/README.packagers
 share/apps/blinken/fonts/
@@ -2286,7 +2272,6 @@ share/apps/libkdeedu/data/
 share/apps/libkdeedu/data/elements.xml
 share/apps/libkdeedu/data/isotopes.xml
 share/apps/libkdeedu/data/spectra.xml
-share/config/
 share/config.kcfg/
 share/config.kcfg/blinken.kcfg
 share/config.kcfg/kalzium.kcfg
@@ -2312,13 +2297,10 @@ share/config/kwordquizrc
 share/config/magic/
 share/config/magic/cabri.magic
 share/config/magic/drgeo.magic
-share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.kde.kmplot.KmPlot.xml
 share/dbus-1/interfaces/org.kde.kmplot.MainDlg.xml
 share/dbus-1/interfaces/org.kde.kmplot.Parser.xml
 share/dbus-1/interfaces/org.kde.kmplot.View.xml
-share/doc/HTML/
-share/doc/HTML/en/
 share/doc/HTML/en/blinken/
 share/doc/HTML/en/blinken/blinken1.png
 share/doc/HTML/en/blinken/blinken2.png
@@ -2740,54 +2722,28 @@ share/doc/HTML/en/kwordquiz/kwq-editor.png
 share/doc/HTML/en/kwordquiz/kwq-flashcard.png
 share/doc/HTML/en/kwordquiz/kwq-multiple.png
 share/doc/HTML/en/kwordquiz/kwq-qanda.png
-share/icons/
-share/icons/crystalsvg/
-share/icons/crystalsvg/128x128/
-share/icons/crystalsvg/128x128/apps/
 share/icons/crystalsvg/128x128/apps/kgeography.png
-share/icons/crystalsvg/128x128/mimetypes/
 share/icons/crystalsvg/128x128/mimetypes/kig_doc.png
-share/icons/crystalsvg/16x16/
-share/icons/crystalsvg/16x16/apps/
 share/icons/crystalsvg/16x16/apps/kgeography.png
-share/icons/crystalsvg/16x16/mimetypes/
 share/icons/crystalsvg/16x16/mimetypes/kig_doc.png
-share/icons/crystalsvg/22x22/
-share/icons/crystalsvg/22x22/apps/
 share/icons/crystalsvg/22x22/apps/kgeography.png
-share/icons/crystalsvg/22x22/mimetypes/
 share/icons/crystalsvg/22x22/mimetypes/kig_doc.png
-share/icons/crystalsvg/32x32/
-share/icons/crystalsvg/32x32/actions/
 share/icons/crystalsvg/32x32/actions/kbruch_exercise_common.png
 share/icons/crystalsvg/32x32/actions/kbruch_exercise_compare.png
 share/icons/crystalsvg/32x32/actions/kbruch_exercise_conversion.png
 share/icons/crystalsvg/32x32/actions/kbruch_exercise_factorisation.png
-share/icons/crystalsvg/32x32/apps/
 share/icons/crystalsvg/32x32/apps/kgeography.png
-share/icons/crystalsvg/32x32/mimetypes/
 share/icons/crystalsvg/32x32/mimetypes/kig_doc.png
-share/icons/crystalsvg/48x48/
-share/icons/crystalsvg/48x48/apps/
 share/icons/crystalsvg/48x48/apps/kgeography.png
-share/icons/crystalsvg/48x48/mimetypes/
 share/icons/crystalsvg/48x48/mimetypes/kig_doc.png
-share/icons/crystalsvg/64x64/
-share/icons/crystalsvg/64x64/actions/
 share/icons/crystalsvg/64x64/actions/kbruch_exercise_common.png
 share/icons/crystalsvg/64x64/actions/kbruch_exercise_compare.png
 share/icons/crystalsvg/64x64/actions/kbruch_exercise_conversion.png
 share/icons/crystalsvg/64x64/actions/kbruch_exercise_factorisation.png
-share/icons/crystalsvg/64x64/apps/
 share/icons/crystalsvg/64x64/apps/kgeography.png
-share/icons/crystalsvg/64x64/mimetypes/
 share/icons/crystalsvg/64x64/mimetypes/kig_doc.png
-share/icons/crystalsvg/scalable/
-share/icons/crystalsvg/scalable/apps/
 share/icons/crystalsvg/scalable/apps/kgeography.svgz
-share/icons/crystalsvg/scalable/mimetypes/
 share/icons/crystalsvg/scalable/mimetypes/kig_doc.svgz
-share/icons/hicolor/
 share/icons/hicolor/128x128/
 share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/blinken.png
@@ -2894,8 +2850,6 @@ share/icons/hicolor/scalable/apps/kpercentage.svgz
 share/icons/hicolor/scalable/apps/kstars.svgz
 share/icons/hicolor/scalable/apps/ktouch.svgz
 share/icons/hicolor/scalable/apps/kturtle.svgz
-share/mimelnk/
-share/mimelnk/application/
 share/mimelnk/application/x-cabri.desktop
 share/mimelnk/application/x-drgeo.desktop
 share/mimelnk/application/x-kgeo.desktop
@@ -2903,7 +2857,6 @@ share/mimelnk/application/x-kig.desktop
 share/mimelnk/application/x-kmplot.desktop
 share/mimelnk/application/x-kseg.desktop
 share/mimelnk/application/x-kwordquiz.desktop
-share/services/
 share/services/kfile_drgeo.desktop
 share/services/kfile_kig.desktop
 share/services/kig_part.desktop
