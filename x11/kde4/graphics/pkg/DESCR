@@ -1,0 +1,43 @@
+* kamera
+    Digital camera io_slave for Konqueror. Together gPhoto this allows you
+    to access your camera's picture with the URL kamera:/
+
+* kcoloredit
+    Contains two programs: a color value editor and also a color picker.
+
+* kdvi
+    Program (and embeddable KPart) to display *.DVI files from TeX.
+
+* kfax
+    A program to display raw and tiffed fax images (g3, g3-2d, g4).
+
+* kfaxview
+    An embeddable KPart to display tiffed fax images.
+
+* kfile-plugins
+    Provide meta information for graphic files.
+
+* kghostview
+    Program (and embeddable KPart) to display *.pdf and *.ps
+
+* kiconedit
+    An icon editor.
+
+* kolourpaint
+    An easy-to-use paint program designed for everyday tasks like drawing
+    simple diagrams/logos/icons and editing screenshots.
+                     
+* kpovmodeler
+    Program to enter scenes for the 3D rendering engine PovRay.
+
+* kruler
+    A ruler in inch, centimeter and pixel to check distances on the screen.
+
+* ksnapshot
+    Make snapshots of the screen contents.
+
+* kuickshow
+    Fast and comfortable imageviewer.
+
+* ligature
+    Document Viewing program; supports document in various formats

@@ -1,0 +1,20 @@
+$OpenBSD: patch-cmake_modules_FindFreeType2_cmake,v 1.1 2007/04/02 20:27:52 espie Exp $
+--- cmake/modules/FindFreeType2.cmake.orig	Tue Mar 27 21:12:09 2007
++++ cmake/modules/FindFreeType2.cmake	Tue Mar 27 21:13:11 2007
+@@ -1,7 +1,7 @@
+ # - Try to find FreeType2
+ # Once done this will define:
+ #  FreeType2_FOUND        - system has FreeType2
+-#  FreeType2_INCLUDE_DIR  - incude paths to use FreeType2
++#  FreeType2_INCLUDE_DIR  - include paths to use FreeType2
+ #  FreeType2_LIBRARIES    - Link these to use FreeType2
+ #
+ # TODO: This script should use the program 
+@@ -16,6 +16,7 @@ IF(UNIX)
+   FIND_PATH(FreeType2_INCLUDE_DIR 
+     freetype/config/ftheader.h
+     /usr/include/freetype2
++    /usr/X11R6/include/freetype2
+     )
+ 
+   FIND_LIBRARY(FreeType2_LIBRARIES

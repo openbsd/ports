@@ -1,0 +1,15 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2007/04/02 20:27:52 espie Exp $
+--- CMakeLists.txt.orig	Tue Mar 27 21:26:09 2007
++++ CMakeLists.txt	Tue Mar 27 21:26:14 2007
+@@ -69,9 +69,9 @@ if (SANE_FOUND)
+    #add_subdirectory(kooka)
+ endif (SANE_FOUND)
+ 
+-if (XVIDMODEEXTENSIONS_FOUND)
++if (X11_xf86vmode_FOUND)
+    add_subdirectory(kgamma)
+-endif (XVIDMODEEXTENSIONS_FOUND)
++endif (X11_xf86vmode_FOUND)
+ 
+ if(OPENGL_FOUND AND OPENGL_GLU_FOUND AND FREETYPE_FOUND AND FreeType2_FOUND)
+    add_subdirectory(kpovmodeler)
