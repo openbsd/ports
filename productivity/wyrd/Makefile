@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/26 22:39:31 avsm Exp $
+# $OpenBSD: Makefile,v 1.5 2007/04/02 19:27:43 martynas Exp $
 
 COMMENT=		"curses calendar front-end to remind"
 
-VERSION=		1.3.0
-DISTNAME=		wyrd-${VERSION}
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		wyrd-1.4.1
 CATEGORIES=		productivity
 
 HOMEPAGE=		http://www.eecs.umich.edu/~pelzlpj/wyrd/
-MASTER_SITES=		http://www.eecs.umich.edu/~pelzlpj/wyrd/
+
+MAINTAINER=		Martynas Venckus <martynas@openbsd.org>
+
+MASTER_SITES=		${HOMEPAGE}
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,6 +24,8 @@ USE_GMAKE=		Yes
 EXAMPLE_DIR=		${PREFIX}/share/examples/wyrd
 BUILD_DEPENDS=		::misc/remind
 RUN_DEPENDS=		::misc/remind
+
+NO_REGRESS=		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLE_DIR}
