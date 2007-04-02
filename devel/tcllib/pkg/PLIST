@@ -1,10 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/14 23:44:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/04/02 18:59:46 jasper Exp $
 lib/${TCLLIB}/
+lib/${TCLLIB}/aes/
+lib/${TCLLIB}/aes/aes.tcl
+lib/${TCLLIB}/aes/pkgIndex.tcl
+lib/${TCLLIB}/asn/
+lib/${TCLLIB}/asn/asn.tcl
+lib/${TCLLIB}/asn/pkgIndex.tcl
 lib/${TCLLIB}/base64/
 lib/${TCLLIB}/base64/base64.tcl
+lib/${TCLLIB}/base64/base64c.tcl
 lib/${TCLLIB}/base64/pkgIndex.tcl
 lib/${TCLLIB}/base64/uuencode.tcl
 lib/${TCLLIB}/base64/yencode.tcl
+lib/${TCLLIB}/bee/
+lib/${TCLLIB}/bee/bee.tcl
+lib/${TCLLIB}/bee/pkgIndex.tcl
+lib/${TCLLIB}/bibtex/
+lib/${TCLLIB}/bibtex/bibtex.tcl
+lib/${TCLLIB}/bibtex/pkgIndex.tcl
+lib/${TCLLIB}/blowfish/
+lib/${TCLLIB}/blowfish/blowfish.tcl
+lib/${TCLLIB}/blowfish/pkgIndex.tcl
 lib/${TCLLIB}/cmdline/
 lib/${TCLLIB}/cmdline/cmdline.tcl
 lib/${TCLLIB}/cmdline/pkgIndex.tcl
@@ -27,6 +43,7 @@ lib/${TCLLIB}/crc/
 lib/${TCLLIB}/crc/cksum.tcl
 lib/${TCLLIB}/crc/crc16.tcl
 lib/${TCLLIB}/crc/crc32.tcl
+lib/${TCLLIB}/crc/crcc.tcl
 lib/${TCLLIB}/crc/pkgIndex.tcl
 lib/${TCLLIB}/crc/sum.tcl
 lib/${TCLLIB}/csv/
@@ -35,10 +52,22 @@ lib/${TCLLIB}/csv/pkgIndex.tcl
 lib/${TCLLIB}/des/
 lib/${TCLLIB}/des/des.tcl
 lib/${TCLLIB}/des/pkgIndex.tcl
+lib/${TCLLIB}/des/tcldes.tcl
+lib/${TCLLIB}/des/tcldesjr.tcl
 lib/${TCLLIB}/dns/
 lib/${TCLLIB}/dns/dns.tcl
+lib/${TCLLIB}/dns/ip.tcl
+lib/${TCLLIB}/dns/ipMore.tcl
+lib/${TCLLIB}/dns/ipMoreC.tcl
+lib/${TCLLIB}/dns/msgs/
+lib/${TCLLIB}/dns/msgs/en.msg
 lib/${TCLLIB}/dns/pkgIndex.tcl
 lib/${TCLLIB}/dns/resolv.tcl
+lib/${TCLLIB}/dns/spf.tcl
+lib/${TCLLIB}/docstrip/
+lib/${TCLLIB}/docstrip/docstrip.tcl
+lib/${TCLLIB}/docstrip/docstrip_util.tcl
+lib/${TCLLIB}/docstrip/pkgIndex.tcl
 lib/${TCLLIB}/doctools/
 lib/${TCLLIB}/doctools/api.tcl
 lib/${TCLLIB}/doctools/api_idx.tcl
@@ -62,6 +91,7 @@ lib/${TCLLIB}/doctools/mpformats/_xml.tcl
 lib/${TCLLIB}/doctools/mpformats/c.msg
 lib/${TCLLIB}/doctools/mpformats/de.msg
 lib/${TCLLIB}/doctools/mpformats/en.msg
+lib/${TCLLIB}/doctools/mpformats/fmt.desc
 lib/${TCLLIB}/doctools/mpformats/fmt.html
 lib/${TCLLIB}/doctools/mpformats/fmt.latex
 lib/${TCLLIB}/doctools/mpformats/fmt.list
@@ -70,6 +100,7 @@ lib/${TCLLIB}/doctools/mpformats/fmt.null
 lib/${TCLLIB}/doctools/mpformats/fmt.text
 lib/${TCLLIB}/doctools/mpformats/fmt.tmml
 lib/${TCLLIB}/doctools/mpformats/fmt.wiki
+lib/${TCLLIB}/doctools/mpformats/fr.msg
 lib/${TCLLIB}/doctools/mpformats/idx.html
 lib/${TCLLIB}/doctools/mpformats/idx.nroff
 lib/${TCLLIB}/doctools/mpformats/idx.null
@@ -95,27 +126,79 @@ lib/${TCLLIB}/ftp/pkgIndex.tcl
 lib/${TCLLIB}/ftpd/
 lib/${TCLLIB}/ftpd/ftpd.tcl
 lib/${TCLLIB}/ftpd/pkgIndex.tcl
+lib/${TCLLIB}/fumagic/
+lib/${TCLLIB}/fumagic/cfront.tcl
+lib/${TCLLIB}/fumagic/cgen.tcl
+lib/${TCLLIB}/fumagic/filetypes.tcl
+lib/${TCLLIB}/fumagic/mimetypes.tcl
+lib/${TCLLIB}/fumagic/pkgIndex.tcl
+lib/${TCLLIB}/fumagic/rtcore.tcl
+lib/${TCLLIB}/grammar_fa/
+lib/${TCLLIB}/grammar_fa/dacceptor.tcl
+lib/${TCLLIB}/grammar_fa/dexec.tcl
+lib/${TCLLIB}/grammar_fa/fa.tcl
+lib/${TCLLIB}/grammar_fa/faop.tcl
+lib/${TCLLIB}/grammar_fa/pkgIndex.tcl
+lib/${TCLLIB}/grammar_me/
+lib/${TCLLIB}/grammar_me/me_cpu.tcl
+lib/${TCLLIB}/grammar_me/me_cpucore.tcl
+lib/${TCLLIB}/grammar_me/me_tcl.tcl
+lib/${TCLLIB}/grammar_me/me_util.tcl
+lib/${TCLLIB}/grammar_me/pkgIndex.tcl
+lib/${TCLLIB}/grammar_peg/
+lib/${TCLLIB}/grammar_peg/peg.tcl
+lib/${TCLLIB}/grammar_peg/peg_interp.tcl
+lib/${TCLLIB}/grammar_peg/pkgIndex.tcl
 lib/${TCLLIB}/html/
 lib/${TCLLIB}/html/html.tcl
 lib/${TCLLIB}/html/pkgIndex.tcl
 lib/${TCLLIB}/htmlparse/
 lib/${TCLLIB}/htmlparse/htmlparse.tcl
 lib/${TCLLIB}/htmlparse/pkgIndex.tcl
+lib/${TCLLIB}/http/
+lib/${TCLLIB}/http/autoproxy.tcl
+lib/${TCLLIB}/http/pkgIndex.tcl
+lib/${TCLLIB}/ident/
+lib/${TCLLIB}/ident/ident.tcl
+lib/${TCLLIB}/ident/pkgIndex.tcl
+lib/${TCLLIB}/inifile/
+lib/${TCLLIB}/inifile/ini.tcl
+lib/${TCLLIB}/inifile/pkgIndex.tcl
 lib/${TCLLIB}/irc/
 lib/${TCLLIB}/irc/irc.tcl
 lib/${TCLLIB}/irc/pkgIndex.tcl
 lib/${TCLLIB}/javascript/
 lib/${TCLLIB}/javascript/javascript.tcl
 lib/${TCLLIB}/javascript/pkgIndex.tcl
+lib/${TCLLIB}/jpeg/
+lib/${TCLLIB}/jpeg/jpeg.tcl
+lib/${TCLLIB}/jpeg/pkgIndex.tcl
+lib/${TCLLIB}/ldap/
+lib/${TCLLIB}/ldap/ldap.tcl
+lib/${TCLLIB}/ldap/pkgIndex.tcl
 lib/${TCLLIB}/log/
 lib/${TCLLIB}/log/log.tcl
 lib/${TCLLIB}/log/logger.tcl
+lib/${TCLLIB}/log/loggerAppender.tcl
+lib/${TCLLIB}/log/loggerUtils.tcl
+lib/${TCLLIB}/log/msgs/
+lib/${TCLLIB}/log/msgs/en.msg
 lib/${TCLLIB}/log/pkgIndex.tcl
 lib/${TCLLIB}/math/
+lib/${TCLLIB}/math/bessel.tcl
+lib/${TCLLIB}/math/bigfloat.tcl
+lib/${TCLLIB}/math/bignum.tcl
 lib/${TCLLIB}/math/calculus.tcl
+lib/${TCLLIB}/math/classic_polyns.tcl
 lib/${TCLLIB}/math/combinatorics.tcl
+lib/${TCLLIB}/math/constants.tcl
+lib/${TCLLIB}/math/elliptic.tcl
+lib/${TCLLIB}/math/exponential.tcl
+lib/${TCLLIB}/math/fourier.tcl
 lib/${TCLLIB}/math/fuzzy.tcl
 lib/${TCLLIB}/math/geometry.tcl
+lib/${TCLLIB}/math/interpolate.tcl
+lib/${TCLLIB}/math/linalg.tcl
 lib/${TCLLIB}/math/liststat.tcl
 lib/${TCLLIB}/math/math.tcl
 lib/${TCLLIB}/math/misc.tcl
@@ -123,6 +206,11 @@ lib/${TCLLIB}/math/optimize.tcl
 lib/${TCLLIB}/math/pdf_stat.tcl
 lib/${TCLLIB}/math/pkgIndex.tcl
 lib/${TCLLIB}/math/plotstat.tcl
+lib/${TCLLIB}/math/polynomials.tcl
+lib/${TCLLIB}/math/qcomplex.tcl
+lib/${TCLLIB}/math/rational_funcs.tcl
+lib/${TCLLIB}/math/romannumerals.tcl
+lib/${TCLLIB}/math/special.tcl
 lib/${TCLLIB}/math/statistics.tcl
 lib/${TCLLIB}/math/tclIndex
 lib/${TCLLIB}/md4/
@@ -131,12 +219,21 @@ lib/${TCLLIB}/md4/md4c.tcl
 lib/${TCLLIB}/md4/pkgIndex.tcl
 lib/${TCLLIB}/md5/
 lib/${TCLLIB}/md5/md5.tcl
+lib/${TCLLIB}/md5/md5c.tcl
+lib/${TCLLIB}/md5/md5x.tcl
 lib/${TCLLIB}/md5/pkgIndex.tcl
+lib/${TCLLIB}/md5crypt/
+lib/${TCLLIB}/md5crypt/md5crypt.tcl
+lib/${TCLLIB}/md5crypt/md5cryptc.tcl
+lib/${TCLLIB}/md5crypt/pkgIndex.tcl
 lib/${TCLLIB}/mime/
 lib/${TCLLIB}/mime/mime.tcl
 lib/${TCLLIB}/mime/performance.tcl
 lib/${TCLLIB}/mime/pkgIndex.tcl
 lib/${TCLLIB}/mime/smtp.tcl
+lib/${TCLLIB}/multiplexer/
+lib/${TCLLIB}/multiplexer/multiplexer.tcl
+lib/${TCLLIB}/multiplexer/pkgIndex.tcl
 lib/${TCLLIB}/ncgi/
 lib/${TCLLIB}/ncgi/ncgi.tcl
 lib/${TCLLIB}/ncgi/pkgIndex.tcl
@@ -146,12 +243,56 @@ lib/${TCLLIB}/nntp/pkgIndex.tcl
 lib/${TCLLIB}/ntp/
 lib/${TCLLIB}/ntp/pkgIndex.tcl
 lib/${TCLLIB}/ntp/time.tcl
+lib/${TCLLIB}/page/
+lib/${TCLLIB}/page/analysis_peg_emodes.tcl
+lib/${TCLLIB}/page/analysis_peg_minimize.tcl
+lib/${TCLLIB}/page/analysis_peg_reachable.tcl
+lib/${TCLLIB}/page/analysis_peg_realizable.tcl
+lib/${TCLLIB}/page/gen_peg_canon.tcl
+lib/${TCLLIB}/page/gen_peg_cpkg.tcl
+lib/${TCLLIB}/page/gen_peg_hb.tcl
+lib/${TCLLIB}/page/gen_peg_me.tcl
+lib/${TCLLIB}/page/gen_peg_ser.tcl
+lib/${TCLLIB}/page/gen_tree_text.tcl
+lib/${TCLLIB}/page/parse_lemon.tcl
+lib/${TCLLIB}/page/parse_peg.tcl
+lib/${TCLLIB}/page/parse_peghb.tcl
+lib/${TCLLIB}/page/parse_pegser.tcl
+lib/${TCLLIB}/page/peg_grammar.tcl
+lib/${TCLLIB}/page/pkgIndex.tcl
+lib/${TCLLIB}/page/pluginmgr.tcl
+lib/${TCLLIB}/page/plugins/
+lib/${TCLLIB}/page/plugins/config_peg.tcl
+lib/${TCLLIB}/page/plugins/reader_hb.tcl
+lib/${TCLLIB}/page/plugins/reader_lemon.tcl
+lib/${TCLLIB}/page/plugins/reader_peg.tcl
+lib/${TCLLIB}/page/plugins/reader_ser.tcl
+lib/${TCLLIB}/page/plugins/reader_treeser.tcl
+lib/${TCLLIB}/page/plugins/transform_reachable.tcl
+lib/${TCLLIB}/page/plugins/transform_realizable.tcl
+lib/${TCLLIB}/page/plugins/writer_hb.tcl
+lib/${TCLLIB}/page/plugins/writer_identity.tcl
+lib/${TCLLIB}/page/plugins/writer_me.tcl
+lib/${TCLLIB}/page/plugins/writer_null.tcl
+lib/${TCLLIB}/page/plugins/writer_peg.tcl
+lib/${TCLLIB}/page/plugins/writer_ser.tcl
+lib/${TCLLIB}/page/plugins/writer_tpc.tcl
+lib/${TCLLIB}/page/plugins/writer_tree.tcl
+lib/${TCLLIB}/page/util_flow.tcl
+lib/${TCLLIB}/page/util_norm_lemon.tcl
+lib/${TCLLIB}/page/util_norm_peg.tcl
+lib/${TCLLIB}/page/util_peg.tcl
+lib/${TCLLIB}/page/util_quote.tcl
 lib/${TCLLIB}/pkgIndex.tcl
+lib/${TCLLIB}/pluginmgr/
+lib/${TCLLIB}/pluginmgr/pkgIndex.tcl
+lib/${TCLLIB}/pluginmgr/pluginmgr.tcl
+lib/${TCLLIB}/png/
+lib/${TCLLIB}/png/pkgIndex.tcl
+lib/${TCLLIB}/png/png.tcl
 lib/${TCLLIB}/pop3/
-lib/${TCLLIB}/pop3/clnt.tcl
 lib/${TCLLIB}/pop3/pkgIndex.tcl
 lib/${TCLLIB}/pop3/pop3.tcl
-lib/${TCLLIB}/pop3/srv.tcl
 lib/${TCLLIB}/pop3d/
 lib/${TCLLIB}/pop3d/pkgIndex.tcl
 lib/${TCLLIB}/pop3d/pop3d.tcl
@@ -160,15 +301,38 @@ lib/${TCLLIB}/pop3d/pop3d_udb.tcl
 lib/${TCLLIB}/profiler/
 lib/${TCLLIB}/profiler/pkgIndex.tcl
 lib/${TCLLIB}/profiler/profiler.tcl
+lib/${TCLLIB}/rc4/
+lib/${TCLLIB}/rc4/pkgIndex.tcl
+lib/${TCLLIB}/rc4/rc4.tcl
+lib/${TCLLIB}/rc4/rc4c.tcl
+lib/${TCLLIB}/rcs/
+lib/${TCLLIB}/rcs/pkgIndex.tcl
+lib/${TCLLIB}/rcs/rcs.tcl
 lib/${TCLLIB}/report/
 lib/${TCLLIB}/report/pkgIndex.tcl
 lib/${TCLLIB}/report/report.tcl
+lib/${TCLLIB}/ripemd/
+lib/${TCLLIB}/ripemd/pkgIndex.tcl
+lib/${TCLLIB}/ripemd/ripemd128.tcl
+lib/${TCLLIB}/ripemd/ripemd160.tcl
+lib/${TCLLIB}/sasl/
+lib/${TCLLIB}/sasl/ntlm.tcl
+lib/${TCLLIB}/sasl/pkgIndex.tcl
+lib/${TCLLIB}/sasl/sasl.tcl
 lib/${TCLLIB}/sha1/
 lib/${TCLLIB}/sha1/pkgIndex.tcl
 lib/${TCLLIB}/sha1/sha1.tcl
+lib/${TCLLIB}/sha1/sha1c.tcl
+lib/${TCLLIB}/sha1/sha256.tcl
 lib/${TCLLIB}/smtpd/
 lib/${TCLLIB}/smtpd/pkgIndex.tcl
 lib/${TCLLIB}/smtpd/smtpd.tcl
+lib/${TCLLIB}/snit/
+lib/${TCLLIB}/snit/pkgIndex.tcl
+lib/${TCLLIB}/snit/snit.tcl
+lib/${TCLLIB}/snit/snit2.tcl
+lib/${TCLLIB}/snit/snit83.tcl
+lib/${TCLLIB}/snit/snit_tcl83_utils.tcl
 lib/${TCLLIB}/soundex/
 lib/${TCLLIB}/soundex/pkgIndex.tcl
 lib/${TCLLIB}/soundex/soundex.tcl
@@ -180,18 +344,28 @@ lib/${TCLLIB}/stooop/switched.tcl
 lib/${TCLLIB}/stooop/xifo.tcl
 lib/${TCLLIB}/struct/
 lib/${TCLLIB}/struct/graph.tcl
+lib/${TCLLIB}/struct/graph1.tcl
 lib/${TCLLIB}/struct/list.tcl
 lib/${TCLLIB}/struct/matrix.tcl
+lib/${TCLLIB}/struct/matrix1.tcl
 lib/${TCLLIB}/struct/pkgIndex.tcl
 lib/${TCLLIB}/struct/pool.tcl
 lib/${TCLLIB}/struct/pooltest.tcl
 lib/${TCLLIB}/struct/prioqueue.tcl
 lib/${TCLLIB}/struct/queue.tcl
 lib/${TCLLIB}/struct/record.tcl
+lib/${TCLLIB}/struct/sets.tcl
 lib/${TCLLIB}/struct/skiplist.tcl
 lib/${TCLLIB}/struct/stack.tcl
 lib/${TCLLIB}/struct/struct.tcl
+lib/${TCLLIB}/struct/struct1.tcl
 lib/${TCLLIB}/struct/tree.tcl
+lib/${TCLLIB}/struct/tree1.tcl
+lib/${TCLLIB}/struct/tree_c.tcl
+lib/${TCLLIB}/struct/tree_tcl.tcl
+lib/${TCLLIB}/tar/
+lib/${TCLLIB}/tar/pkgIndex.tcl
+lib/${TCLLIB}/tar/tar.tcl
 lib/${TCLLIB}/textutil/
 lib/${TCLLIB}/textutil/adjust.tcl
 lib/${TCLLIB}/textutil/dehypht.tex
@@ -203,27 +377,59 @@ lib/${TCLLIB}/textutil/split.tcl
 lib/${TCLLIB}/textutil/tabify.tcl
 lib/${TCLLIB}/textutil/textutil.tcl
 lib/${TCLLIB}/textutil/trim.tcl
+lib/${TCLLIB}/tie/
+lib/${TCLLIB}/tie/pkgIndex.tcl
+lib/${TCLLIB}/tie/tie.tcl
+lib/${TCLLIB}/tie/tie_array.tcl
+lib/${TCLLIB}/tie/tie_dsource.tcl
+lib/${TCLLIB}/tie/tie_file.tcl
+lib/${TCLLIB}/tie/tie_log.tcl
+lib/${TCLLIB}/tie/tie_rarray.tcl
+lib/${TCLLIB}/treeql/
+lib/${TCLLIB}/treeql/pkgIndex.tcl
+lib/${TCLLIB}/treeql/treeql.tcl
+lib/${TCLLIB}/treeql/treeql84.tcl
+lib/${TCLLIB}/units/
+lib/${TCLLIB}/units/pkgIndex.tcl
+lib/${TCLLIB}/units/units.tcl
 lib/${TCLLIB}/uri/
 lib/${TCLLIB}/uri/pkgIndex.tcl
 lib/${TCLLIB}/uri/uri.tcl
 lib/${TCLLIB}/uri/urn-scheme.tcl
+lib/${TCLLIB}/uuid/
+lib/${TCLLIB}/uuid/pkgIndex.tcl
+lib/${TCLLIB}/uuid/uuid.tcl
+@man man/mann/aes.n
+@man man/mann/asn.n
+@man man/mann/autoproxy.n
 @man man/mann/base64.n
+@man man/mann/bee.n
+@man man/mann/bibtex.n
+@man man/mann/bigfloat.n
+@man man/mann/bignum.n
+@man man/mann/blowfish.n
 @man man/mann/calculus.n
 @man man/mann/changelog.n
 @man man/mann/cksum.n
 @man man/mann/cmdline.n
 @man man/mann/combinatorics.n
 @man man/mann/comm.n
+@man man/mann/comm_wire.n
+@man man/mann/constants.n
 @man man/mann/control.n
 @man man/mann/counter.n
 @man man/mann/crc16.n
 @man man/mann/crc32.n
 @man man/mann/csv.n
 @man man/mann/cvs.n
+@man man/mann/dacceptor.n
 @man man/mann/des.n
+@man man/mann/dexec.n
 @man man/mann/docidx.n
 @man man/mann/docidx_api.n
 @man man/mann/docidx_fmt.n
+@man man/mann/docstrip.n
+@man man/mann/docstrip_util.n
 @man man/mann/doctoc.n
 @man man/mann/doctoc_api.n
 @man man/mann/doctoc_fmt.n
@@ -232,27 +438,57 @@ lib/${TCLLIB}/uri/urn-scheme.tcl
 @man man/mann/doctools_fmt.n
 @man man/mann/exif.n
 @man man/mann/expander.n
+@man man/mann/fa.n
+@man man/mann/faop.n
+@man man/mann/filetypes.n
 @man man/mann/fileutil.n
+@man man/mann/fourier.n
 @man man/mann/ftp.n
 @man man/mann/ftpd.n
 @man man/mann/fuzzy.n
+@man man/mann/geometry.n
 @man man/mann/graph.n
+@man man/mann/graph1.n
 @man man/mann/html.n
 @man man/mann/htmlparse.n
+@man man/mann/ident.n
+@man man/mann/ini.n
+@man man/mann/interpolate.n
 @man man/mann/irc.n
 @man man/mann/javascript.n
+@man man/mann/jpeg.n
+@man man/mann/ldap.n
+@man man/mann/linalg.n
 @man man/mann/log.n
 @man man/mann/logger.n
+@man man/mann/loggerAppender.n
+@man man/mann/loggerUtils.n
 @man man/mann/math.n
 @man man/mann/matrix.n
+@man man/mann/matrix1.n
 @man man/mann/md4.n
 @man man/mann/md5.n
+@man man/mann/md5crypt.n
+@man man/mann/me_ast.n
+@man man/mann/me_cpu.n
+@man man/mann/me_cpucore.n
+@man man/mann/me_intro.n
+@man man/mann/me_tcl.n
+@man man/mann/me_util.n
+@man man/mann/me_vm.n
 @man man/mann/mime.n
+@man man/mann/mimetypes.n
 @man man/mann/mpexpand.n
+@man man/mann/multiplexer.n
 @man man/mann/ncgi.n
 @man man/mann/nntp.n
 @man man/mann/ntp_time.n
 @man man/mann/optimize.n
+@man man/mann/peg.n
+@man man/mann/peg_interp.n
+@man man/mann/pluginmgr.n
+@man man/mann/png.n
+@man man/mann/polynomials.n
 @man man/mann/pool.n
 @man man/mann/pop3.n
 @man man/mann/pop3d.n
@@ -260,22 +496,42 @@ lib/${TCLLIB}/uri/urn-scheme.tcl
 @man man/mann/pop3d_udb.n
 @man man/mann/prioqueue.n
 @man man/mann/profiler.n
+@man man/mann/qcomplex.n
 @man man/mann/queue.n
+@man man/mann/rational_funcs.n
+@man man/mann/rc4.n
+@man man/mann/rcs.n
 @man man/mann/record.n
 @man man/mann/report.n
+@man man/mann/ripemd128.n
+@man man/mann/ripemd160.n
+@man man/mann/roman.n
+@man man/mann/romberg.n
+@man man/mann/sasl.n
 @man man/mann/sha1.n
 @man man/mann/skiplist.n
 @man man/mann/smtp.n
 @man man/mann/smtpd.n
+@man man/mann/snit.n
+@man man/mann/snitfaq.n
 @man man/mann/soundex.n
+@man man/mann/special.n
 @man man/mann/stack.n
 @man man/mann/statistics.n
 @man man/mann/stooop.n
 @man man/mann/struct_list.n
+@man man/mann/struct_set.n
 @man man/mann/struct_tree.n
+@man man/mann/struct_tree1.n
 @man man/mann/sum.n
+@man man/mann/tar.n
 @man man/mann/tcllib_dns.n
+@man man/mann/tcllib_ip.n
 @man man/mann/textutil.n
+@man man/mann/tie.n
+@man man/mann/treeql.n
+@man man/mann/units.n
 @man man/mann/uri.n
 @man man/mann/uuencode.n
+@man man/mann/uuid.n
 @man man/mann/yencode.n

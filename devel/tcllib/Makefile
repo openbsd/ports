@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/20 18:33:48 bernd Exp $
+# $OpenBSD: Makefile,v 1.7 2007/04/02 18:59:46 jasper Exp $
 
 COMMENT=		"useful routines for Tcl"
 
-DISTNAME=		tcllib-1.4
+DISTNAME=		tcllib-1.8
 CATEGORIES=		devel lang/tcl
 TCLLIB=			tcllib1.4
 
@@ -21,12 +21,12 @@ BUILD_DEPENDS=		::lang/tcl/8.4
 
 CONFIGURE_STYLE= 	gnu dest
 
-do-install:
-			${LOCALBASE}/bin/tclsh8.4 ${WRKSRC}/installer.tcl \
-			    -no-wait -no-examples -no-html -no-gui \
-			    -pkg-path ${PREFIX}/lib/tcllib1.4 \
-			    -nroff-path ${PREFIX}/man/mann
+NO_REGRESS=		Yes
 
-REGRESS_TARGET=		test
+do-install:
+		${LOCALBASE}/bin/tclsh8.4 ${WRKSRC}/installer.tcl \
+		    -no-wait -no-examples -no-html -no-gui -no-apps \
+		    -pkg-path ${PREFIX}/lib/tcllib1.4 \
+		    -nroff-path ${PREFIX}/man/mann
 
 .include <bsd.port.mk>
