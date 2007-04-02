@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2007/04/02 07:12:27 steven Exp $
+@lib lib/liblam.so.${LIBlam_VERSION}
+@lib lib/liblamf77mpi.so.${LIBlamf77mpi_VERSION}
+@lib lib/libmpi.so.${LIBmpi_VERSION}
+@lib lib/libpmpi.so.${LIBpmpi_VERSION}
