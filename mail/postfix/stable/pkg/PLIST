@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2006/07/25 15:39:28 brad Exp $
+@comment $OpenBSD: PLIST,v 1.18 2007/04/02 11:37:43 jakob Exp $
 @conflict postfix-*
 @newgroup _postfix:507
 @newgroup _postdrop:508
@@ -123,7 +123,6 @@ share/doc/postfix/html/BUILTIN_FILTER_README.html
 share/doc/postfix/html/CDB_README.html
 share/doc/postfix/html/CONNECTION_CACHE_README.html
 share/doc/postfix/html/CONTENT_INSPECTION_README.html
-share/doc/postfix/html/CYRUS_README.html
 share/doc/postfix/html/DATABASE_README.html
 share/doc/postfix/html/DB_README.html
 share/doc/postfix/html/DEBUG_README.html
@@ -134,7 +133,6 @@ share/doc/postfix/html/INSTALL.html
 share/doc/postfix/html/IPV6_README.html
 share/doc/postfix/html/LDAP_README.html
 share/doc/postfix/html/LINUX_README.html
-share/doc/postfix/html/LMTP_README.html
 share/doc/postfix/html/LOCAL_RECIPIENT_README.html
 share/doc/postfix/html/MAILDROP_README.html
 share/doc/postfix/html/MILTER_README.html
@@ -144,7 +142,6 @@ share/doc/postfix/html/OVERVIEW.html
 share/doc/postfix/html/PACKAGE_README.html
 share/doc/postfix/html/PCRE_README.html
 share/doc/postfix/html/PGSQL_README.html
-share/doc/postfix/html/QMQP_README.html
 share/doc/postfix/html/QSHAPE_README.html
 share/doc/postfix/html/RESTRICTION_CLASS_README.html
 share/doc/postfix/html/SASL_README.html
@@ -153,9 +150,9 @@ share/doc/postfix/html/SMTPD_ACCESS_README.html
 share/doc/postfix/html/SMTPD_POLICY_README.html
 share/doc/postfix/html/SMTPD_PROXY_README.html
 share/doc/postfix/html/STANDARD_CONFIGURATION_README.html
+share/doc/postfix/html/TLS_LEGACY_README.html
 share/doc/postfix/html/TLS_README.html
 share/doc/postfix/html/TUNING_README.html
-share/doc/postfix/html/ULTRIX_README.html
 share/doc/postfix/html/UUCP_README.html
 share/doc/postfix/html/VERP_README.html
 share/doc/postfix/html/VIRTUAL_README.html
@@ -246,7 +243,6 @@ share/doc/postfix/readme/INSTALL
 share/doc/postfix/readme/IPV6_README
 share/doc/postfix/readme/LDAP_README
 share/doc/postfix/readme/LINUX_README
-share/doc/postfix/readme/LMTP_README
 share/doc/postfix/readme/LOCAL_RECIPIENT_README
 share/doc/postfix/readme/MAILDROP_README
 share/doc/postfix/readme/MILTER_README
@@ -256,7 +252,6 @@ share/doc/postfix/readme/OVERVIEW
 share/doc/postfix/readme/PACKAGE_README
 share/doc/postfix/readme/PCRE_README
 share/doc/postfix/readme/PGSQL_README
-share/doc/postfix/readme/QMQP_README
 share/doc/postfix/readme/QSHAPE_README
 share/doc/postfix/readme/RELEASE_NOTES
 share/doc/postfix/readme/RESTRICTION_CLASS_README
@@ -266,6 +261,7 @@ share/doc/postfix/readme/SMTPD_ACCESS_README
 share/doc/postfix/readme/SMTPD_POLICY_README
 share/doc/postfix/readme/SMTPD_PROXY_README
 share/doc/postfix/readme/STANDARD_CONFIGURATION_README
+share/doc/postfix/readme/TLS_LEGACY_README
 share/doc/postfix/readme/TLS_README
 share/doc/postfix/readme/TUNING_README
 share/doc/postfix/readme/ULTRIX_README

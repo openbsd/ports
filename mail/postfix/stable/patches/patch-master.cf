@@ -1,8 +1,7 @@
-$OpenBSD: patch-master.cf,v 1.12 2007/03/19 23:55:59 ajacoutot Exp $
-
---- conf/master.cf.orig	Sat Mar 18 15:40:01 2006
-+++ conf/master.cf	Tue Mar 20 00:49:39 2007
-@@ -6,41 +6,41 @@
+$OpenBSD: patch-master.cf,v 1.13 2007/04/02 11:37:43 jakob Exp $
+--- conf/master.cf.orig	Wed Jan 31 22:23:56 2007
++++ conf/master.cf	Tue Mar 20 00:53:35 2007
+@@ -6,42 +6,42 @@
  # service type  private unpriv  chroot  wakeup  maxproc command + args
  #               (yes)   (yes)   (yes)   (never) (100)
  # ==========================================================================
@@ -52,9 +51,11 @@ $OpenBSD: patch-master.cf,v 1.12 2007/03/19 23:55:59 ajacoutot Exp $
  #       -o smtp_helo_timeout=5 -o smtp_connect_timeout=5
 -showq     unix  n       -       n       -       -       showq
 -error     unix  -       -       n       -       -       error
+-retry     unix  -       -       n       -       -       error
 -discard   unix  -       -       n       -       -       discard
 +showq     unix  n       -       -       -       -       showq
 +error     unix  -       -       -       -       -       error
++retry     unix  -       -       -       -       -       error
 +discard   unix  -       -       -       -       -       discard
  local     unix  -       n       n       -       -       local
  virtual   unix  -       n       n       -       -       virtual
@@ -67,17 +68,21 @@ $OpenBSD: patch-master.cf,v 1.12 2007/03/19 23:55:59 ajacoutot Exp $
  #
  # ====================================================================
  # Interfaces to non-Postfix software. Be sure to examine the manual
-@@ -60,11 +60,11 @@ maildrop  unix  -       n       n       
+@@ -63,7 +63,7 @@ scache	  unix	-	-	n	-	1	scache
  # The Cyrus deliver program has changed incompatibly, multiple times.
  #
- old-cyrus unix  -       n       n       -       -       pipe
--  flags=R user=cyrus argv=/cyrus/bin/deliver -e -m ${extension} ${user}
-+  flags=R user=_cyrus argv=/cyrus/bin/deliver -e -m ${extension} ${user}
- # Cyrus 2.1.5 (Amos Gouaux)
- # Also specify in main.cf: cyrus_destination_recipient_limit=1
- cyrus     unix  -       n       n       -       -       pipe
--  user=cyrus argv=/cyrus/bin/deliver -e -r ${sender} -m ${extension} ${user}
-+  user=_cyrus argv=/cyrus/bin/deliver -e -r ${sender} -m ${extension} ${user}
+ #old-cyrus unix  -       n       n       -       -       pipe
+-#  flags=R user=cyrus argv=/cyrus/bin/deliver -e -m ${extension} ${user}
++#  flags=R user=_cyrus argv=/cyrus/bin/deliver -e -m ${extension} ${user}
  #
- # See the Postfix UUCP_README file for configuration details.
+ # ====================================================================
+ #
+@@ -71,7 +71,7 @@ scache	  unix	-	-	n	-	1	scache
+ # Also specify in main.cf: cyrus_destination_recipient_limit=1
+ #
+ #cyrus     unix  -       n       n       -       -       pipe
+-#  user=cyrus argv=/cyrus/bin/deliver -e -r ${sender} -m ${extension} ${user}
++#  user=_cyrus argv=/cyrus/bin/deliver -e -r ${sender} -m ${extension} ${user}
+ #
+ # ====================================================================
  #

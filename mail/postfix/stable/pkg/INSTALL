@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.15 2006/07/17 09:15:54 jakob Exp $
+# $OpenBSD: INSTALL,v 1.16 2007/04/02 11:37:43 jakob Exp $
 #
 # Pre/post-installation setup of postfix
 

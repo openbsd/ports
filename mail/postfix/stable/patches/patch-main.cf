@@ -1,5 +1,4 @@
-$OpenBSD: patch-main.cf,v 1.5 2006/07/17 08:52:13 jakob Exp $
-
+$OpenBSD: patch-main.cf,v 1.6 2007/04/02 11:37:43 jakob Exp $
 --- conf/main.cf.orig	Fri Mar 24 21:38:54 2006
 +++ conf/main.cf	Sat Apr  8 18:43:44 2006
 @@ -108,6 +108,9 @@ mail_owner = postfix
