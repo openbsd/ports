@@ -1,0 +1,12 @@
+$OpenBSD: patch-etc_Makefile_in,v 1.1.1.1 2007/04/02 15:35:02 sturm Exp $
+--- etc/Makefile.in.orig	Sat Oct 14 19:33:40 2006
++++ etc/Makefile.in	Sat Oct 14 19:33:58 2006
+@@ -48,7 +48,7 @@ TEXIDIR = $(srcdir)/../texinfo
+ #### Host, target, and site specific Makefile fragments come in here.
+ ###
+ 
+-INFOFILES = standards.info configure.info
++INFOFILES =
+ DVIFILES = standards.dvi configure.dvi
+ 
+ all: info

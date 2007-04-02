@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/02 15:35:02 sturm Exp $
+bin/arm-elf-gdb
+bin/arm-elf-gdbtui
+bin/arm-elf-run
+lib/libarm-elf-sim.a
+@man man/man1/arm-elf-gdb.1
+@man man/man1/arm-elf-gdbtui.1
+@man man/man1/arm-elf-run.1

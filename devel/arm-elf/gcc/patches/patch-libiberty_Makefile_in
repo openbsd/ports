@@ -1,0 +1,12 @@
+$OpenBSD: patch-libiberty_Makefile_in,v 1.1.1.1 2007/04/02 15:35:02 sturm Exp $
+--- libiberty/Makefile.in.orig	Sat Oct 14 18:43:16 2006
++++ libiberty/Makefile.in	Sat Oct 14 18:43:47 2006
+@@ -267,7 +267,7 @@ libiberty.html : $(srcdir)/libiberty.tex
+ @MAINT@	echo stamp > stamp-functions
+ 
+ INSTALL_DEST = @INSTALL_DEST@
+-install: install_to_$(INSTALL_DEST) install-subdir
++install:
+ 
+ install_to_libdir: all
+ 	${mkinstalldirs} $(DESTDIR)$(libdir)$(MULTISUBDIR)

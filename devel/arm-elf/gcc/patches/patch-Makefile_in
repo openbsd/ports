@@ -1,0 +1,303 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/04/02 15:35:02 sturm Exp $
+--- Makefile.in.orig	Sat Oct 14 18:12:49 2006
++++ Makefile.in	Sat Oct 14 18:22:26 2006
+@@ -597,22 +597,7 @@ configure-host: maybe-configure-gcc  \
+     maybe-configure-utils
+ .PHONY: configure-target
+ configure-target:  \
+-    maybe-configure-target-libstdc++-v3 \
+     maybe-configure-target-newlib \
+-    maybe-configure-target-libf2c \
+-    maybe-configure-target-libobjc \
+-    maybe-configure-target-libtermcap \
+-    maybe-configure-target-winsup \
+-    maybe-configure-target-libgloss \
+-    maybe-configure-target-libiberty \
+-    maybe-configure-target-gperf \
+-    maybe-configure-target-examples \
+-    maybe-configure-target-libffi \
+-    maybe-configure-target-libjava \
+-    maybe-configure-target-zlib \
+-    maybe-configure-target-boehm-gc \
+-    maybe-configure-target-qthreads \
+-    maybe-configure-target-rda
+ 
+ # The target built for a native build.
+ .PHONY: all.normal
+@@ -686,22 +671,7 @@ all-host: maybe-all-gcc  \
+     maybe-all-utils
+ .PHONY: all-target
+ all-target:  \
+-    maybe-all-target-libstdc++-v3 \
+     maybe-all-target-newlib \
+-    maybe-all-target-libf2c \
+-    maybe-all-target-libobjc \
+-    maybe-all-target-libtermcap \
+-    maybe-all-target-winsup \
+-    maybe-all-target-libgloss \
+-    maybe-all-target-libiberty \
+-    maybe-all-target-gperf \
+-    maybe-all-target-examples \
+-    maybe-all-target-libffi \
+-    maybe-all-target-libjava \
+-    maybe-all-target-zlib \
+-    maybe-all-target-boehm-gc \
+-    maybe-all-target-qthreads \
+-    maybe-all-target-rda
+ 
+ # Do a target for all the subdirectories.  A ``make do-X'' will do a
+ # ``make X'' in all subdirectories (because, in general, there is a
+@@ -780,22 +750,7 @@ info-host: maybe-info-gcc  \
+ 
+ .PHONY: info-target
+ info-target:  \
+-    maybe-info-target-libstdc++-v3 \
+     maybe-info-target-newlib \
+-    maybe-info-target-libf2c \
+-    maybe-info-target-libobjc \
+-    maybe-info-target-libtermcap \
+-    maybe-info-target-winsup \
+-    maybe-info-target-libgloss \
+-    maybe-info-target-libiberty \
+-    maybe-info-target-gperf \
+-    maybe-info-target-examples \
+-    maybe-info-target-libffi \
+-    maybe-info-target-libjava \
+-    maybe-info-target-zlib \
+-    maybe-info-target-boehm-gc \
+-    maybe-info-target-qthreads \
+-    maybe-info-target-rda
+ 
+ # GCC, the eternal special case
+ .PHONY: maybe-info-gcc info-gcc
+@@ -2656,22 +2611,7 @@ dvi-host: maybe-dvi-gcc  \
+ 
+ .PHONY: dvi-target
+ dvi-target:  \
+-    maybe-dvi-target-libstdc++-v3 \
+     maybe-dvi-target-newlib \
+-    maybe-dvi-target-libf2c \
+-    maybe-dvi-target-libobjc \
+-    maybe-dvi-target-libtermcap \
+-    maybe-dvi-target-winsup \
+-    maybe-dvi-target-libgloss \
+-    maybe-dvi-target-libiberty \
+-    maybe-dvi-target-gperf \
+-    maybe-dvi-target-examples \
+-    maybe-dvi-target-libffi \
+-    maybe-dvi-target-libjava \
+-    maybe-dvi-target-zlib \
+-    maybe-dvi-target-boehm-gc \
+-    maybe-dvi-target-qthreads \
+-    maybe-dvi-target-rda
+ 
+ # GCC, the eternal special case
+ .PHONY: maybe-dvi-gcc dvi-gcc
+@@ -4532,22 +4472,7 @@ TAGS-host: maybe-TAGS-gcc  \
+ 
+ .PHONY: TAGS-target
+ TAGS-target:  \
+-    maybe-TAGS-target-libstdc++-v3 \
+     maybe-TAGS-target-newlib \
+-    maybe-TAGS-target-libf2c \
+-    maybe-TAGS-target-libobjc \
+-    maybe-TAGS-target-libtermcap \
+-    maybe-TAGS-target-winsup \
+-    maybe-TAGS-target-libgloss \
+-    maybe-TAGS-target-libiberty \
+-    maybe-TAGS-target-gperf \
+-    maybe-TAGS-target-examples \
+-    maybe-TAGS-target-libffi \
+-    maybe-TAGS-target-libjava \
+-    maybe-TAGS-target-zlib \
+-    maybe-TAGS-target-boehm-gc \
+-    maybe-TAGS-target-qthreads \
+-    maybe-TAGS-target-rda
+ 
+ # GCC, the eternal special case
+ .PHONY: maybe-TAGS-gcc TAGS-gcc
+@@ -6408,22 +6333,7 @@ install-info-host: maybe-install-info-gc
+ 
+ .PHONY: install-info-target
+ install-info-target:  \
+-    maybe-install-info-target-libstdc++-v3 \
+     maybe-install-info-target-newlib \
+-    maybe-install-info-target-libf2c \
+-    maybe-install-info-target-libobjc \
+-    maybe-install-info-target-libtermcap \
+-    maybe-install-info-target-winsup \
+-    maybe-install-info-target-libgloss \
+-    maybe-install-info-target-libiberty \
+-    maybe-install-info-target-gperf \
+-    maybe-install-info-target-examples \
+-    maybe-install-info-target-libffi \
+-    maybe-install-info-target-libjava \
+-    maybe-install-info-target-zlib \
+-    maybe-install-info-target-boehm-gc \
+-    maybe-install-info-target-qthreads \
+-    maybe-install-info-target-rda
+ 
+ # GCC, the eternal special case
+ .PHONY: maybe-install-info-gcc install-info-gcc
+@@ -8365,22 +8275,7 @@ installcheck-host: maybe-installcheck-gc
+ 
+ .PHONY: installcheck-target
+ installcheck-target:  \
+-    maybe-installcheck-target-libstdc++-v3 \
+     maybe-installcheck-target-newlib \
+-    maybe-installcheck-target-libf2c \
+-    maybe-installcheck-target-libobjc \
+-    maybe-installcheck-target-libtermcap \
+-    maybe-installcheck-target-winsup \
+-    maybe-installcheck-target-libgloss \
+-    maybe-installcheck-target-libiberty \
+-    maybe-installcheck-target-gperf \
+-    maybe-installcheck-target-examples \
+-    maybe-installcheck-target-libffi \
+-    maybe-installcheck-target-libjava \
+-    maybe-installcheck-target-zlib \
+-    maybe-installcheck-target-boehm-gc \
+-    maybe-installcheck-target-qthreads \
+-    maybe-installcheck-target-rda
+ 
+ # GCC, the eternal special case
+ .PHONY: maybe-installcheck-gcc installcheck-gcc
+@@ -10241,22 +10136,7 @@ mostlyclean-host: maybe-mostlyclean-gcc 
+ 
+ .PHONY: mostlyclean-target
+ mostlyclean-target:  \
+-    maybe-mostlyclean-target-libstdc++-v3 \
+     maybe-mostlyclean-target-newlib \
+-    maybe-mostlyclean-target-libf2c \
+-    maybe-mostlyclean-target-libobjc \
+-    maybe-mostlyclean-target-libtermcap \
+-    maybe-mostlyclean-target-winsup \
+-    maybe-mostlyclean-target-libgloss \
+-    maybe-mostlyclean-target-libiberty \
+-    maybe-mostlyclean-target-gperf \
+-    maybe-mostlyclean-target-examples \
+-    maybe-mostlyclean-target-libffi \
+-    maybe-mostlyclean-target-libjava \
+-    maybe-mostlyclean-target-zlib \
+-    maybe-mostlyclean-target-boehm-gc \
+-    maybe-mostlyclean-target-qthreads \
+-    maybe-mostlyclean-target-rda
+ 
+ # GCC, the eternal special case
+ .PHONY: maybe-mostlyclean-gcc mostlyclean-gcc
+@@ -11994,22 +11874,7 @@ clean-host: maybe-clean-gcc  \
+ 
+ .PHONY: clean-target
+ clean-target:  \
+-    maybe-clean-target-libstdc++-v3 \
+     maybe-clean-target-newlib \
+-    maybe-clean-target-libf2c \
+-    maybe-clean-target-libobjc \
+-    maybe-clean-target-libtermcap \
+-    maybe-clean-target-winsup \
+-    maybe-clean-target-libgloss \
+-    maybe-clean-target-libiberty \
+-    maybe-clean-target-gperf \
+-    maybe-clean-target-examples \
+-    maybe-clean-target-libffi \
+-    maybe-clean-target-libjava \
+-    maybe-clean-target-zlib \
+-    maybe-clean-target-boehm-gc \
+-    maybe-clean-target-qthreads \
+-    maybe-clean-target-rda
+ 
+ # GCC, the eternal special case
+ .PHONY: maybe-clean-gcc clean-gcc
+@@ -13761,22 +13626,7 @@ distclean-host: maybe-distclean-gcc  \
+ 
+ .PHONY: distclean-target
+ distclean-target:  \
+-    maybe-distclean-target-libstdc++-v3 \
+     maybe-distclean-target-newlib \
+-    maybe-distclean-target-libf2c \
+-    maybe-distclean-target-libobjc \
+-    maybe-distclean-target-libtermcap \
+-    maybe-distclean-target-winsup \
+-    maybe-distclean-target-libgloss \
+-    maybe-distclean-target-libiberty \
+-    maybe-distclean-target-gperf \
+-    maybe-distclean-target-examples \
+-    maybe-distclean-target-libffi \
+-    maybe-distclean-target-libjava \
+-    maybe-distclean-target-zlib \
+-    maybe-distclean-target-boehm-gc \
+-    maybe-distclean-target-qthreads \
+-    maybe-distclean-target-rda
+ 
+ # GCC, the eternal special case
+ .PHONY: maybe-distclean-gcc distclean-gcc
+@@ -15528,22 +15378,7 @@ maintainer-clean-host: maybe-maintainer-
+ 
+ .PHONY: maintainer-clean-target
+ maintainer-clean-target:  \
+-    maybe-maintainer-clean-target-libstdc++-v3 \
+     maybe-maintainer-clean-target-newlib \
+-    maybe-maintainer-clean-target-libf2c \
+-    maybe-maintainer-clean-target-libobjc \
+-    maybe-maintainer-clean-target-libtermcap \
+-    maybe-maintainer-clean-target-winsup \
+-    maybe-maintainer-clean-target-libgloss \
+-    maybe-maintainer-clean-target-libiberty \
+-    maybe-maintainer-clean-target-gperf \
+-    maybe-maintainer-clean-target-examples \
+-    maybe-maintainer-clean-target-libffi \
+-    maybe-maintainer-clean-target-libjava \
+-    maybe-maintainer-clean-target-zlib \
+-    maybe-maintainer-clean-target-boehm-gc \
+-    maybe-maintainer-clean-target-qthreads \
+-    maybe-maintainer-clean-target-rda
+ 
+ # GCC, the eternal special case
+ .PHONY: maybe-maintainer-clean-gcc maintainer-clean-gcc
+@@ -17348,23 +17183,7 @@ do-check: maybe-check-gcc  \
+     maybe-check-tk \
+     maybe-check-tix \
+     maybe-check-libtermcap \
+-    maybe-check-utils \
+-    maybe-check-target-libstdc++-v3 \
+     maybe-check-target-newlib \
+-    maybe-check-target-libf2c \
+-    maybe-check-target-libobjc \
+-    maybe-check-target-libtermcap \
+-    maybe-check-target-winsup \
+-    maybe-check-target-libgloss \
+-    maybe-check-target-libiberty \
+-    maybe-check-target-gperf \
+-    maybe-check-target-examples \
+-    maybe-check-target-libffi \
+-    maybe-check-target-libjava \
+-    maybe-check-target-zlib \
+-    maybe-check-target-boehm-gc \
+-    maybe-check-target-qthreads \
+-    maybe-check-target-rda
+ 
+ # Automated reporting of test results.
+ 
+@@ -17528,22 +17347,7 @@ install-host: maybe-install-gcc  \
+ 
+ .PHONY: install-target
+ install-target:  \
+-    maybe-install-target-libstdc++-v3 \
+     maybe-install-target-newlib \
+-    maybe-install-target-libf2c \
+-    maybe-install-target-libobjc \
+-    maybe-install-target-libtermcap \
+-    maybe-install-target-winsup \
+-    maybe-install-target-libgloss \
+-    maybe-install-target-libiberty \
+-    maybe-install-target-gperf \
+-    maybe-install-target-examples \
+-    maybe-install-target-libffi \
+-    maybe-install-target-libjava \
+-    maybe-install-target-zlib \
+-    maybe-install-target-boehm-gc \
+-    maybe-install-target-qthreads \
+-    maybe-install-target-rda
+ 
+ uninstall:
+ 	@echo "the uninstall target is not supported in this tree"

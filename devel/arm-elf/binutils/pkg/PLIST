@@ -1,0 +1,51 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/02 15:35:01 sturm Exp $
+arm-elf/
+arm-elf/bin/
+arm-elf/bin/ar
+arm-elf/bin/as
+arm-elf/bin/ld
+arm-elf/bin/nm
+arm-elf/bin/objdump
+arm-elf/bin/ranlib
+arm-elf/bin/strip
+arm-elf/lib/
+arm-elf/lib/ldscripts/
+arm-elf/lib/ldscripts/armelf.x
+arm-elf/lib/ldscripts/armelf.xbn
+arm-elf/lib/ldscripts/armelf.xc
+arm-elf/lib/ldscripts/armelf.xn
+arm-elf/lib/ldscripts/armelf.xr
+arm-elf/lib/ldscripts/armelf.xs
+arm-elf/lib/ldscripts/armelf.xsc
+arm-elf/lib/ldscripts/armelf.xsw
+arm-elf/lib/ldscripts/armelf.xu
+arm-elf/lib/ldscripts/armelf.xw
+bin/arm-elf-addr2line
+bin/arm-elf-ar
+bin/arm-elf-as
+bin/arm-elf-c++filt
+bin/arm-elf-ld
+bin/arm-elf-nm
+bin/arm-elf-objcopy
+bin/arm-elf-objdump
+bin/arm-elf-ranlib
+bin/arm-elf-readelf
+bin/arm-elf-size
+bin/arm-elf-strings
+bin/arm-elf-strip
+@man man/man1/arm-elf-addr2line.1
+@man man/man1/arm-elf-ar.1
+@man man/man1/arm-elf-as.1
+@man man/man1/arm-elf-c++filt.1
+@man man/man1/arm-elf-dlltool.1
+@man man/man1/arm-elf-ld.1
+@man man/man1/arm-elf-nlmconv.1
+@man man/man1/arm-elf-nm.1
+@man man/man1/arm-elf-objcopy.1
+@man man/man1/arm-elf-objdump.1
+@man man/man1/arm-elf-ranlib.1
+@man man/man1/arm-elf-readelf.1
+@man man/man1/arm-elf-size.1
+@man man/man1/arm-elf-strings.1
+@man man/man1/arm-elf-strip.1
+@man man/man1/arm-elf-windres.1

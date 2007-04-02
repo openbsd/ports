@@ -1,0 +1,12 @@
+$OpenBSD: patch-gas_doc_Makefile_in,v 1.1.1.1 2007/04/02 15:35:01 sturm Exp $
+--- gas/doc/Makefile.in.orig	Thu Oct 12 12:49:14 2006
++++ gas/doc/Makefile.in	Thu Oct 12 12:52:02 2006
+@@ -50,7 +50,7 @@ CONFIG_CLEAN_FILES =
+ depcomp =
+ am__depfiles_maybe =
+ SOURCES =
+-INFO_DEPS = $(srcdir)/as.info
++INFO_DEPS =
+ TEXINFO_TEX = $(top_srcdir)/../texinfo/texinfo.tex
+ am__TEXINFO_TEX_DIR = $(top_srcdir)/../texinfo
+ DVIS = as.dvi

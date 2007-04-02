@@ -1,0 +1,12 @@
+$OpenBSD: patch-gdb_doc_Makefile_in,v 1.1.1.1 2007/04/02 15:35:02 sturm Exp $
+--- gdb/doc/Makefile.in.orig	Sat Oct 14 20:33:47 2006
++++ gdb/doc/Makefile.in	Sat Oct 14 20:34:12 2006
+@@ -67,7 +67,7 @@ SET_TEXINPUTS = \
+    TEXINPUTS=${TEXIDIR}:.:$(srcdir):$(READLINE_DIR):$(GDBMI_DIR):$$TEXINPUTS
+ 
+ # Files which should be generated via 'info' and installed by 'install-info'
+-INFO_DEPS = gdb.info gdbint.info stabs.info annotate.info
++INFO_DEPS =
+ 
+ # There may be alternate predefined collections of switches to configure
+ # the GDB manual.  Normally this is not done in synch with the software

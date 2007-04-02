@@ -1,0 +1,84 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/02 15:35:01 sturm Exp $
+arm-elf/
+arm-elf/lib/
+bin/arm-elf-c++
+bin/arm-elf-cpp
+bin/arm-elf-g++
+bin/arm-elf-gcc
+bin/arm-elf-gcc-3.4.5
+bin/arm-elf-gccbug
+bin/arm-elf-gcov
+lib/gcc/
+lib/gcc/arm-elf/
+lib/gcc/arm-elf/3.4.5/
+lib/gcc/arm-elf/3.4.5/crtbegin.o
+lib/gcc/arm-elf/3.4.5/crtend.o
+lib/gcc/arm-elf/3.4.5/crti.o
+lib/gcc/arm-elf/3.4.5/crtn.o
+lib/gcc/arm-elf/3.4.5/include/
+lib/gcc/arm-elf/3.4.5/include/README
+lib/gcc/arm-elf/3.4.5/include/float.h
+lib/gcc/arm-elf/3.4.5/include/iso646.h
+lib/gcc/arm-elf/3.4.5/include/limits.h
+lib/gcc/arm-elf/3.4.5/include/mmintrin.h
+lib/gcc/arm-elf/3.4.5/include/stdarg.h
+lib/gcc/arm-elf/3.4.5/include/stdbool.h
+lib/gcc/arm-elf/3.4.5/include/stddef.h
+lib/gcc/arm-elf/3.4.5/include/syslimits.h
+lib/gcc/arm-elf/3.4.5/include/unwind.h
+lib/gcc/arm-elf/3.4.5/include/varargs.h
+lib/gcc/arm-elf/3.4.5/install-tools/
+lib/gcc/arm-elf/3.4.5/install-tools/gsyslimits.h
+lib/gcc/arm-elf/3.4.5/install-tools/include/
+lib/gcc/arm-elf/3.4.5/install-tools/include/README
+lib/gcc/arm-elf/3.4.5/install-tools/include/float.h
+lib/gcc/arm-elf/3.4.5/install-tools/include/iso646.h
+lib/gcc/arm-elf/3.4.5/install-tools/include/limits.h
+lib/gcc/arm-elf/3.4.5/install-tools/include/mmintrin.h
+lib/gcc/arm-elf/3.4.5/install-tools/include/stdarg.h
+lib/gcc/arm-elf/3.4.5/install-tools/include/stdbool.h
+lib/gcc/arm-elf/3.4.5/install-tools/include/stddef.h
+lib/gcc/arm-elf/3.4.5/install-tools/include/unwind.h
+lib/gcc/arm-elf/3.4.5/install-tools/include/varargs.h
+lib/gcc/arm-elf/3.4.5/install-tools/mkheaders.conf
+lib/gcc/arm-elf/3.4.5/interwork/
+lib/gcc/arm-elf/3.4.5/interwork/crtbegin.o
+lib/gcc/arm-elf/3.4.5/interwork/crtend.o
+lib/gcc/arm-elf/3.4.5/interwork/crti.o
+lib/gcc/arm-elf/3.4.5/interwork/crtn.o
+lib/gcc/arm-elf/3.4.5/interwork/libgcc.a
+lib/gcc/arm-elf/3.4.5/interwork/libgcov.a
+lib/gcc/arm-elf/3.4.5/libgcc.a
+lib/gcc/arm-elf/3.4.5/libgcov.a
+lib/gcc/arm-elf/3.4.5/specs
+lib/gcc/arm-elf/3.4.5/thumb/
+lib/gcc/arm-elf/3.4.5/thumb/crtbegin.o
+lib/gcc/arm-elf/3.4.5/thumb/crtend.o
+lib/gcc/arm-elf/3.4.5/thumb/crti.o
+lib/gcc/arm-elf/3.4.5/thumb/crtn.o
+lib/gcc/arm-elf/3.4.5/thumb/interwork/
+lib/gcc/arm-elf/3.4.5/thumb/interwork/crtbegin.o
+lib/gcc/arm-elf/3.4.5/thumb/interwork/crtend.o
+lib/gcc/arm-elf/3.4.5/thumb/interwork/crti.o
+lib/gcc/arm-elf/3.4.5/thumb/interwork/crtn.o
+lib/gcc/arm-elf/3.4.5/thumb/interwork/libgcc.a
+lib/gcc/arm-elf/3.4.5/thumb/interwork/libgcov.a
+lib/gcc/arm-elf/3.4.5/thumb/libgcc.a
+lib/gcc/arm-elf/3.4.5/thumb/libgcov.a
+libexec/gcc/
+libexec/gcc/arm-elf/
+libexec/gcc/arm-elf/3.4.5/
+libexec/gcc/arm-elf/3.4.5/cc1
+libexec/gcc/arm-elf/3.4.5/cc1plus
+libexec/gcc/arm-elf/3.4.5/collect2
+libexec/gcc/arm-elf/3.4.5/install-tools/
+libexec/gcc/arm-elf/3.4.5/install-tools/fixinc.sh
+libexec/gcc/arm-elf/3.4.5/install-tools/fixincl
+libexec/gcc/arm-elf/3.4.5/install-tools/mkheaders
+@man man/man1/arm-elf-cpp.1
+@man man/man1/arm-elf-g++.1
+@man man/man1/arm-elf-gcc.1
+@man man/man1/arm-elf-gcov.1
+@comment @man man/man7/fsf-funding.7
+@comment @man man/man7/gfdl.7
+@comment @man man/man7/gpl.7

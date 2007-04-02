@@ -1,0 +1,12 @@
+$OpenBSD: patch-etc_Makefile_in,v 1.1.1.1 2007/04/02 15:35:02 sturm Exp $
+--- etc/Makefile.in.orig	Sat Oct 14 20:34:30 2006
++++ etc/Makefile.in	Sat Oct 14 20:35:06 2006
+@@ -52,7 +52,7 @@ INFOFILES = standards.info configure.inf
+ DVIFILES = standards.dvi configure.dvi
+ 
+ all: info
+-install: install-info
++install:
+ 
+ uninstall:
+ 

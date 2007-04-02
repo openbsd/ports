@@ -1,0 +1,12 @@
+$OpenBSD: patch-binutils_doc_Makefile_in,v 1.1.1.1 2007/04/02 15:35:01 sturm Exp $
+--- binutils/doc/Makefile.in.orig	Thu Oct 12 13:16:06 2006
++++ binutils/doc/Makefile.in	Thu Oct 12 13:16:26 2006
+@@ -177,7 +177,7 @@ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 
+ TEXI2DVI = `if test -f $(top_srcdir)/../texinfo/util/texi2dvi; then echo $(top_srcdir)/../texinfo/util/texi2dvi; else echo texi2dvi; fi`
+ TEXINFO_TEX = $(top_srcdir)/../texinfo/texinfo.tex
+-INFO_DEPS = binutils.info
++INFO_DEPS =
+ DVIS = binutils.dvi
+ TEXINFOS = binutils.texi
+ man1dir = $(mandir)/man1
