@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2007/03/26 05:57:30 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.14 2007/04/02 09:27:36 kili Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"DTP program"
 DISTNAME=	scribus-1.3.3.8
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	print
 
 HOMEPAGE=	http://www.scribus.net/
@@ -16,14 +17,14 @@ PERMIT_PACKAGE_FTP?=	Yes
 PERMIT_DISTFILES_CDROM?=Yes
 PERMIT_DISTFILES_FTP?=	Yes
 
-WANTLIB=	ICE SM X11 Xext c freetype gcrypt gnutls gpg-error \
-		m pthread stdc++ z util fontconfig Xau Xdmcp expat
+WANTLIB=	ICE SM X11 Xext c crypto freetype \
+		m pthread stdc++ ssl z util fontconfig Xau Xdmcp expat
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scribus/}
 
 EXTRACT_SUFX=	.tar.bz2
 
-MODULES=	x11/qt3 devel/gettext lang/python
+MODULES=	x11/qt3 converters/libiconv lang/python
 MODQT_MT=	Yes
 
 LIB_DEPENDS=	jpeg::graphics/jpeg \
