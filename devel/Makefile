@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.489 2007/03/26 13:07:54 jolan Exp $
+# $OpenBSD: Makefile,v 1.490 2007/04/02 15:35:51 sturm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -12,6 +12,7 @@
      SUBDIR += apr-util
      SUBDIR += apr-util,mt
      SUBDIR += argtable
+     SUBDIR += arm-elf
      SUBDIR += asp2php
      SUBDIR += asp2php,no_x11
      SUBDIR += astyle
