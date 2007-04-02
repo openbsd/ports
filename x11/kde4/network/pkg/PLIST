@@ -1,13 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/03/22 22:24:32 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/04/02 22:07:12 espie Exp $
 bin/kdict
 bin/knewstickerstub
-@owner root
 @mode u+s
+@owner root
 bin/kppp
 @mode
 @owner
 bin/kppplogview
-lib/kde4/
 lib/kde4/fileshare_propsdlgplugin.so
 lib/kde4/kcm_fileshare.so
 lib/kde4/kcm_lanbrowser.so
@@ -29,8 +28,6 @@ share/applications/kde/kppplogview.desktop
 share/applnk/
 share/applnk/.hidden/
 share/applnk/.hidden/knewstickerstub.desktop
-share/apps/
-share/apps/kconf_update/
 share/apps/kconf_update/knewsticker.upd
 share/apps/kconf_update/knt-0.1-0.2.pl
 share/apps/kdict/
@@ -625,11 +622,8 @@ share/apps/lisa/
 share/apps/lisa/README
 share/apps/remoteview/
 share/apps/remoteview/lan.desktop
-share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.kde.kdict.xml
 share/dbus-1/interfaces/org.kde.kppp.xml
-share/doc/HTML/
-share/doc/HTML/en/
 share/doc/HTML/en/kdict/
 share/doc/HTML/en/kdict/applet.png
 share/doc/HTML/en/kdict/conf.png
@@ -738,8 +732,6 @@ share/doc/HTML/en/lanbrowser/index.docbook
 share/doc/HTML/en/lisa/
 share/doc/HTML/en/lisa/index.cache.bz2
 share/doc/HTML/en/lisa/index.docbook
-share/icons/
-share/icons/hicolor/
 share/icons/hicolor/128x128/
 share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/kdict.png
@@ -770,7 +762,6 @@ share/icons/hicolor/64x64/apps/kppp.png
 share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/kdict.svgz
-share/services/
 share/services/fileshare_propsdlgplugin.desktop
 share/services/kcmkiolan.desktop
 share/services/kcmlisa.desktop

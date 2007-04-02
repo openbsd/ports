@@ -1,0 +1,17 @@
+$OpenBSD: patch-kppp_pppstats_cpp,v 1.1 2007/04/02 22:07:12 espie Exp $
+--- kppp/pppstats.cpp.orig	Mon Apr  2 23:34:00 2007
++++ kppp/pppstats.cpp	Mon Apr  2 23:36:37 2007
+@@ -85,6 +85,13 @@
+ 
+ #endif	/* STREAMS */
+ 
++#if defined __OpenBSD__
++ #include <sys/socket.h>
++ #include <net/if.h>
++ #include <net/if_ppp.h>
++ #include <sys/sockio.h>
++#endif
++ 
+ #include <qtimer.h>
+ #include <kdebug.h>
+ 

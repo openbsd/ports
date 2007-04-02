@@ -1,0 +1,6 @@
+Network-related kde applications.
+* kdict: graphical client for the DICT protocol.
+* knewsticker: RDF newsticker applet
+* kppp: dialer and front end for pppd
+* lanbrowsing: lan browsing kio slave
+* kopete: Instant Messaging client
