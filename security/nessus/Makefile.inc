@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.8 2007/02/13 11:55:01 aanriot Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2007/04/03 13:55:59 aanriot Exp $
 
 V=		2.2.9
 CATEGORIES=	security
 
 HOMEPAGE=	http://www.nessus.org/
-
-MAINTAINER=	Alexandre Anriot <aanriot@openbsd.org>
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes

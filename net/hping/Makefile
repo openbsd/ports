@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.22 2006/05/31 00:08:20 aanriot Exp $
+# $OpenBSD: Makefile,v 1.23 2007/04/03 13:55:22 aanriot Exp $
 
 COMMENT=	"TCP/UDP ping/traceroute tool"
 
 DISTNAME=	hping2.0.0-rc3
-PKGNAME=	hping-2.0.0rc3p0
+PKGNAME=	hping-2.0.0rc3p1
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.hping.org/
-
-MAINTAINER=	Alexandre Anriot <aanriot@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
