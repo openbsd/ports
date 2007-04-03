@@ -1,0 +1,19 @@
+$OpenBSD: patch-kmail_kmheaders_cpp,v 1.1.1.1 2007/04/03 19:44:04 espie Exp $
+--- kmail/kmheaders.cpp.orig	Tue Apr  3 02:26:58 2007
++++ kmail/kmheaders.cpp	Tue Apr  3 02:27:55 2007
+@@ -3,6 +3,7 @@
+ 
+ #include <config.h>
+ 
++#include "kmfolder.h"
+ #include "kmheaders.h"
+ #include "headeritem.h"
+ using KMail::HeaderItem;
+@@ -67,6 +68,7 @@ using namespace KPIM;
+ 
+ #include <stdlib.h>
+ #include <errno.h>
++#include <unistd.h>
+ 
+ #include "textsource.h"
+ 

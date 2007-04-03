@@ -1,0 +1,13 @@
+$OpenBSD: patch-kmail_kmailicalifaceimpl_cpp,v 1.1.1.1 2007/04/03 19:44:04 espie Exp $
+--- kmail/kmailicalifaceimpl.cpp.orig	Tue Apr  3 02:52:05 2007
++++ kmail/kmailicalifaceimpl.cpp	Tue Apr  3 02:52:21 2007
+@@ -36,8 +36,8 @@
+ #include <config.h>
+ #endif
+ 
+-#include "kmailicalifaceimpl.h"
+ #include "kmfolder.h"
++#include "kmailicalifaceimpl.h"
+ #include "kmfoldertree.h"
+ #include "kmfolderdir.h"
+ #include "kmgroupware.h"

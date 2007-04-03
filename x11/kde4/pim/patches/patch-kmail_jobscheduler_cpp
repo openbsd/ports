@@ -1,0 +1,13 @@
+$OpenBSD: patch-kmail_jobscheduler_cpp,v 1.1.1.1 2007/04/03 19:44:04 espie Exp $
+--- kmail/jobscheduler.cpp.orig	Tue Apr  3 11:46:01 2007
++++ kmail/jobscheduler.cpp	Tue Apr  3 11:46:06 2007
+@@ -28,8 +28,8 @@
+ 
+ #include "config.h"
+ 
+-#include "jobscheduler.h"
+ #include "kmfolder.h"
++#include "jobscheduler.h"
+ #include "folderstorage.h"
+ #include "kmfoldermgr.h"
+ #include <kdebug.h>

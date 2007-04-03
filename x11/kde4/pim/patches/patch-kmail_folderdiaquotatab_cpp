@@ -1,0 +1,13 @@
+$OpenBSD: patch-kmail_folderdiaquotatab_cpp,v 1.1.1.1 2007/04/03 19:44:04 espie Exp $
+--- kmail/folderdiaquotatab.cpp.orig	Tue Apr  3 11:51:01 2007
++++ kmail/folderdiaquotatab.cpp	Tue Apr  3 11:51:06 2007
+@@ -30,8 +30,8 @@
+  *  your version.
+  */
+ 
+-#include "folderdiaquotatab.h"
+ #include "kmfolder.h"
++#include "folderdiaquotatab.h"
+ #include "kmfoldertype.h"
+ #include "kmfolderimap.h"
+ #include "kmfoldercachedimap.h"

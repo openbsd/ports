@@ -1,0 +1,13 @@
+$OpenBSD: patch-kmail_expirejob_cpp,v 1.1.1.1 2007/04/03 19:44:04 espie Exp $
+--- kmail/expirejob.cpp.orig	Tue Apr  3 11:40:40 2007
++++ kmail/expirejob.cpp	Tue Apr  3 11:40:49 2007
+@@ -28,8 +28,8 @@
+ 
+ #include "config.h"
+ 
+-#include "expirejob.h"
+ #include "kmfolder.h"
++#include "expirejob.h"
+ #include "globalsettings.h"
+ #include "folderstorage.h"
+ #include "broadcaststatus.h"

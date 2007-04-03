@@ -1,0 +1,13 @@
+$OpenBSD: patch-kmail_klistviewindexedsearchline_cpp,v 1.1.1.1 2007/04/03 19:44:04 espie Exp $
+--- kmail/klistviewindexedsearchline.cpp.orig	Tue Apr  3 02:22:04 2007
++++ kmail/klistviewindexedsearchline.cpp	Tue Apr  3 02:22:10 2007
+@@ -34,8 +34,8 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include "headeritem.h"
+-#include "kmheaders.h"
+ #include "kmfolder.h"
++#include "kmheaders.h"
+ #include "index.h"
+ 
+ using KMail::HeaderListQuickSearch;

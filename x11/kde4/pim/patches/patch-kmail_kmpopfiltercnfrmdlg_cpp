@@ -1,0 +1,13 @@
+$OpenBSD: patch-kmail_kmpopfiltercnfrmdlg_cpp,v 1.1.1.1 2007/04/03 19:44:04 espie Exp $
+--- kmail/kmpopfiltercnfrmdlg.cpp.orig	Tue Apr  3 02:42:55 2007
++++ kmail/kmpopfiltercnfrmdlg.cpp	Tue Apr  3 02:42:59 2007
+@@ -10,8 +10,8 @@
+ 
+ #include <config.h>
+ #include "kmpopfiltercnfrmdlg.h"
+-#include "kmheaders.h"
+ #include "kmfolder.h"
++#include "kmheaders.h"
+ 
+ #include <QLayout>
+ #include <QLabel>

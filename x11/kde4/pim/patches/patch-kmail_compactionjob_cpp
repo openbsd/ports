@@ -1,0 +1,21 @@
+$OpenBSD: patch-kmail_compactionjob_cpp,v 1.1.1.1 2007/04/03 19:44:04 espie Exp $
+--- kmail/compactionjob.cpp.orig	Tue Apr  3 11:43:35 2007
++++ kmail/compactionjob.cpp	Tue Apr  3 11:45:10 2007
+@@ -27,8 +27,8 @@
+  */
+ #include "config.h"
+ 
+-#include "compactionjob.h"
+ #include "kmfolder.h"
++#include "compactionjob.h"
+ #include "broadcaststatus.h"
+ using KPIM::BroadcastStatus;
+ #include "kmfoldermbox.h"
+@@ -43,6 +43,7 @@ using KPIM::BroadcastStatus;
+ 
+ #include <sys/types.h>
+ #include <sys/stat.h>
++#include <unistd.h>
+ #include <errno.h>
+ 
+ using namespace KMail;

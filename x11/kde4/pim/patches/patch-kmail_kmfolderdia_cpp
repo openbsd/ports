@@ -1,0 +1,18 @@
+$OpenBSD: patch-kmail_kmfolderdia_cpp,v 1.1.1.1 2007/04/03 19:44:04 espie Exp $
+--- kmail/kmfolderdia.cpp.orig	Tue Apr  3 02:24:29 2007
++++ kmail/kmfolderdia.cpp	Tue Apr  3 02:24:57 2007
+@@ -32,13 +32,13 @@
+ 
+ #include <config.h>
+ 
++#include "kmfolder.h"
+ #include "kmfolderdia.h"
+ #include "kmacctfolder.h"
+ #include "kmfoldermgr.h"
+ #include <libkpimidentities/identitycombo.h>
+ #include "kmfolderimap.h"
+ #include "kmfoldercachedimap.h"
+-#include "kmfolder.h"
+ #include "kmheaders.h"
+ #include "kmcommands.h"
+ #include "kmfoldertree.h"

@@ -1,0 +1,13 @@
+$OpenBSD: patch-kmail_headeritem_cpp,v 1.1.1.1 2007/04/03 19:44:04 espie Exp $
+--- kmail/headeritem.cpp.orig	Tue Apr  3 02:29:07 2007
++++ kmail/headeritem.cpp	Tue Apr  3 02:29:11 2007
+@@ -29,8 +29,8 @@
+ #include "config.h"
+ #include "headeritem.h"
+ 
+-#include "kmheaders.h"
+ #include "kmfolder.h"
++#include "kmheaders.h"
+ 
+ #include <klocale.h>
+ #include <kio/netaccess.h>

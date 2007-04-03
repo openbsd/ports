@@ -1,0 +1,12 @@
+$OpenBSD: patch-kmail_kmfilteraction_h,v 1.1.1.1 2007/04/03 19:44:04 espie Exp $
+--- kmail/kmfilteraction.h.orig	Tue Apr  3 02:11:10 2007
++++ kmail/kmfilteraction.h	Tue Apr  3 02:11:25 2007
+@@ -398,7 +398,7 @@ class KMFilterActionWithFolder : public KMFilterAction
+       quick test. Eg., actions that have a mail address as parameter
+       shouldn't try real address validation, but only check if the
+       string representation is empty. */
+-  virtual bool isEmpty() const { return (!mFolder && mFolderName.isEmpty()); }
++  virtual bool isEmpty() const { return (!mFolder.isNull() && mFolderName.isEmpty()); }
+ 
+   /** Creates a widget for setting the filter action parameter. Also
+       sets the value of the widget. */

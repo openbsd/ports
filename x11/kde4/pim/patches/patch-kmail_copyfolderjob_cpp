@@ -1,0 +1,16 @@
+$OpenBSD: patch-kmail_copyfolderjob_cpp,v 1.1.1.1 2007/04/03 19:44:04 espie Exp $
+--- kmail/copyfolderjob.cpp.orig	Tue Apr  3 11:52:45 2007
++++ kmail/copyfolderjob.cpp	Tue Apr  3 11:52:51 2007
+@@ -26,11 +26,11 @@
+  *  your version.
+  */
+ 
++#include "kmfolder.h"
+ #include "copyfolderjob.h"
+ #include "folderstorage.h"
+ #include "kmacctcachedimap.h"
+ #include "kmfoldercachedimap.h"
+-#include "kmfolder.h"
+ #include "kmfolderdir.h"
+ #include "kmfoldertype.h"
+ #include "kmfoldermgr.h"

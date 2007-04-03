@@ -1,0 +1,17 @@
+$OpenBSD: patch-kmail_renamejob_cpp,v 1.1.1.1 2007/04/03 19:44:04 espie Exp $
+--- kmail/renamejob.cpp.orig	Tue Apr  3 11:47:05 2007
++++ kmail/renamejob.cpp	Tue Apr  3 11:47:14 2007
+@@ -26,12 +26,12 @@
+  *  your version.
+  */
+ 
++#include "kmfolder.h"
+ #include "renamejob.h"
+ #include "copyfolderjob.h"
+ #include "kmfolderimap.h"
+ #include "kmfoldercachedimap.h"
+ #include "folderstorage.h"
+-#include "kmfolder.h"
+ #include "kmfolderdir.h"
+ #include "kmfoldermgr.h"
+ #include "imapaccountbase.h"

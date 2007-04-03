@@ -1,0 +1,12 @@
+$OpenBSD: patch-kalarm_birthdaydlg_cpp,v 1.1.1.1 2007/04/03 19:44:04 espie Exp $
+--- kalarm/birthdaydlg.cpp.orig	Tue Apr  3 01:53:48 2007
++++ kalarm/birthdaydlg.cpp	Tue Apr  3 01:53:52 2007
+@@ -249,7 +249,7 @@ QList<KAEvent> BirthdayDlg::events() const
+ 	KDateTime todayStart(today, KDateTime::ClockTime);
+ 	int thisYear = today.year();
+ 	int reminder = mReminder->minutes();
+-	BirthdaySortModel* model = static_cast<const BirthdaySortModel*>(indexes[0].model());
++	const BirthdaySortModel* model = static_cast<const BirthdaySortModel*>(indexes[0].model());
+ 	for (int i = 0;  i < count;  ++i)
+ 	{
+ 		BirthdayModel::Data* data = model->rowData(indexes[i]);

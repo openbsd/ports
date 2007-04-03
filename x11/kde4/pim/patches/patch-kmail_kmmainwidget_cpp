@@ -1,0 +1,11 @@
+$OpenBSD: patch-kmail_kmmainwidget_cpp,v 1.1.1.1 2007/04/03 19:44:04 espie Exp $
+--- kmail/kmmainwidget.cpp.orig	Tue Apr  3 02:48:16 2007
++++ kmail/kmmainwidget.cpp	Tue Apr  3 02:48:38 2007
+@@ -56,6 +56,7 @@
+ #include "broadcaststatus.h"
+ using KPIM::BroadcastStatus;
+ #include "kmfoldermgr.h"
++#include "kmfolder.h"
+ #include "kmfolderdia.h"
+ #include "accountmanager.h"
+ using KMail::AccountManager;

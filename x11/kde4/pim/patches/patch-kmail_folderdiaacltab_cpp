@@ -1,0 +1,17 @@
+$OpenBSD: patch-kmail_folderdiaacltab_cpp,v 1.1.1.1 2007/04/03 19:44:04 espie Exp $
+--- kmail/folderdiaacltab.cpp.orig	Tue Apr  3 11:36:09 2007
++++ kmail/folderdiaacltab.cpp	Tue Apr  3 11:36:17 2007
+@@ -32,12 +32,12 @@
+ 
+ #include <config.h>
+ 
++#include "kmfolder.h"
+ #include "folderdiaacltab.h"
+ #include "acljobs.h"
+ #include "kmfolderimap.h"
+ #include "kmfoldercachedimap.h"
+ #include "kmacctcachedimap.h"
+-#include "kmfolder.h"
+ #include "kmfolderdir.h"
+ 
+ #include <addressesdialog.h>
