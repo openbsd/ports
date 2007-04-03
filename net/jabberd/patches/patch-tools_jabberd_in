@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_jabberd_in,v 1.2 2005/05/05 06:56:08 jakob Exp $
---- tools/jabberd.in.orig	Tue Dec  7 18:08:38 2004
-+++ tools/jabberd.in	Wed May  4 10:01:24 2005
-@@ -67,23 +67,23 @@ $SIG{CHLD} = "IGNORE";
+$OpenBSD: patch-tools_jabberd_in,v 1.3 2007/04/03 15:04:32 jasper Exp $
+--- tools/jabberd.in.orig	Wed Jun 22 22:32:05 2005
++++ tools/jabberd.in	Tue Apr  3 17:03:04 2007
+@@ -68,23 +68,23 @@ $SIG{CHLD} = "IGNORE";
  #-----------------------------------------------------------------------------
  $jobs{jabberd}->{prefix}  = "JBRD";
  
@@ -30,7 +30,7 @@ $OpenBSD: patch-tools_jabberd_in,v 1.2 2005/05/05 06:56:08 jakob Exp $
  $jobs{s2s}->{config} = "$config_dir/s2s.xml";
  $jobs{s2s}->{prefix} = "S2S";
  
-@@ -111,7 +111,7 @@ else
+@@ -112,7 +112,7 @@ else
          # Assume that all the commands are in the same directory
          # as the jabberd script. The current configuration file
          # format does not allow specification of pathnames for commands.

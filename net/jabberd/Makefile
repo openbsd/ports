@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2007/04/01 13:12:41 steven Exp $
+# $OpenBSD: Makefile,v 1.30 2007/04/03 15:04:32 jasper Exp $
 
 COMMENT=		"jabber server"
 DISTNAME=		jabberd-2.0s11
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		net
-HOMEPAGE=		http://jabberd.jabberstudio.org/2/
-MAINTAINER=		Gerardo Santana Gomez Garrido <gerardo.santana@gmail.com>
+HOMEPAGE=		http://jabberd2.xiaoka.com/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
