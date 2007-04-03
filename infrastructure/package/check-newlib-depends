@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.22 2007/03/31 15:26:45 espie Exp $
+# $OpenBSD: check-newlib-depends,v 1.23 2007/04/03 10:05:50 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -348,9 +348,14 @@ sub do_pkg
 	# twice read
 	return 0 unless -d $dir;
 	my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
-	my $where = File::Temp::mkdtemp("/tmp/zoinx.XXXXXXXXXX");
-	analyze($plist, $db, $where, $true_package);
-	rmtree($where);
+	if ($opt_B) {
+		print "No temp dir\n";
+		analyze($plist, $db, $opt_B, FakeHandle->new());
+	} else {
+		my $where = File::Temp::mkdtemp("/tmp/zoinx.XXXXXXXXXX");
+		analyze($plist, $db, $where, $true_package);
+		rmtree($where);
+	}
 	$true_package->close();
 	$true_package->wipe_info();
 	$plist->forget();
