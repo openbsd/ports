@@ -1,0 +1,12 @@
+$OpenBSD: patch-kimagemapeditor_kimearea_cpp,v 1.1.1.1 2007/04/03 23:07:24 espie Exp $
+--- kimagemapeditor/kimearea.cpp.orig	Wed Apr  4 00:03:50 2007
++++ kimagemapeditor/kimearea.cpp	Wed Apr  4 00:07:12 2007
+@@ -401,7 +401,7 @@ QRect Area::selectionRect() const {
+ }
+ 
+ void Area::setPenAndBrush(QPainter* p) {
+-  QBrush brush(QBrush(Qt::NoBrush));
++  QBrush brush;
+   if (highlightArea) {
+     QColor back = Qt::white;
+     back.setAlpha(80);

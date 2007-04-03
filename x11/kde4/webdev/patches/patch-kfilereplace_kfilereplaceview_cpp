@@ -1,0 +1,13 @@
+$OpenBSD: patch-kfilereplace_kfilereplaceview_cpp,v 1.1.1.1 2007/04/03 23:07:24 espie Exp $
+--- kfilereplace/kfilereplaceview.cpp.orig	Tue Apr  3 23:44:47 2007
++++ kfilereplace/kfilereplaceview.cpp	Tue Apr  3 23:45:28 2007
+@@ -190,7 +190,8 @@ void KFileReplaceView::slotResultProperties()
+   QString currItem = currentPath();
+   if(! currItem.isEmpty())
+     {
+-      KPropertiesDialog dlg(KUrl(currItem),this);
++      KUrl myurl(currItem);
++      KPropertiesDialog dlg(myurl,this);
+       dlg.exec();
+       m_lviCurrent = 0;
+     }
