@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.52 2006/12/29 13:37:24 jakob Exp $
+# $OpenBSD: Makefile,v 1.53 2007/04/03 14:52:29 ajacoutot Exp $
 
 COMMENT=	"multi-router traffic grapher"
 
 DISTNAME=	mrtg-2.12.2
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	net
 
-MASTER_SITES=	${HOMEPAGE}pub/
+MASTER_SITES=	${HOMEPAGE}pub/old/
 
-HOMEPAGE=	http://people.ee.ethz.ch/~oetiker/webtools/mrtg/
+HOMEPAGE=	http://oss.oetiker.ch/mrtg/
 
 LIB_DEPENDS=	gd.>=18::graphics/gd
 
