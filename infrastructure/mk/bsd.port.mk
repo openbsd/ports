@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.887 2007/03/31 15:36:43 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.888 2007/04/03 10:14:14 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -73,6 +73,7 @@ WRKOBJDIR ?=
 FAKEOBJDIR ?=
 BULK_TARGETS ?=
 BULK_DO ?=
+CHECK_LIB_DEPENDS ?= No
 FORCE_UPDATE ?= No
 # All variables relevant to the port's description
 _ALL_VARIABLES ?= HOMEPAGE DISTNAME BUILD_DEPENDS RUN_DEPENDS \
@@ -1398,8 +1399,9 @@ ${_PACKAGE_COOKIE${_S}}:
       deps=`SUBPACKAGE=${_S} ${MAKE} _print-package-args` && \
 	  if ${SUDO} ${PKG_CMD} `echo "$$deps"|sort -u` ${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}}; then \
 	    mode=`id -u`:`id -g`; ${SUDO} ${CHOWN} $${mode} ${_PACKAGE_COOKIE${_S}}; \
-		if ${_register_plist} ${_PACKAGE_COOKIE${_S}}; then \
-			exit 0; \
+		if ${_register_plist} ${_PACKAGE_COOKIE${_S}} && \
+			${_check_lib_depends} ${_PACKAGE_COOKIE${_S}}; then \
+				exit 0; \
 		fi; \
 	  fi && \
 	  ${SUDO} ${MAKE} _internal-clean=package && \
@@ -1484,7 +1486,7 @@ ${_SYSTRACE_COOKIE}: ${_WRKDIR_COOKIE}
 makesum: fetch-all
 .if !defined(NO_CHECKSUM) && !empty(_CKSUMFILES)
 	@rm -f ${CHECKSUM_FILE}
-	@cd ${DISTDIR} && cksum -a "${_CIPHERS}" ${_CKSUMFILES} >> ${CHECKSUM_FILE}
+	@cd ${DISTDIR} && cksum -b -a "${_CIPHERS}" ${_CKSUMFILES} >> ${CHECKSUM_FILE}
 	@cd ${DISTDIR} && \
 		for file in ${_CKSUMFILES}; do \
 			${_size_fragment} >> ${CHECKSUM_FILE}; \
@@ -1498,7 +1500,7 @@ addsum: fetch-all
 	@touch ${CHECKSUM_FILE}
 	@cd ${DISTDIR} && \
 	 	for cipher in ${_CIPHERS}; do \
-			cksum -a $$cipher ${_CKSUMFILES} >> ${CHECKSUM_FILE}; \
+			cksum -b -a $$cipher ${_CKSUMFILES} >> ${CHECKSUM_FILE}; \
 	    done
 	@cd ${DISTDIR} && \
 		for file in ${_CKSUMFILES}; do \
@@ -2166,6 +2168,11 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 _register_plist =:
 .else
 _register_plist = perl ${PORTSDIR}/infrastructure/package/register-plist ${PLIST_DB}
+.endif
+.if ${CHECK_LIB_DEPENDS:L} == "yes"
+_check_lib_depends =perl ${PORTSDIR}/infrastructure/package/check-newlib-depends -d ${_PKG_REPO} -B ${WRKINST}
+.else
+_check_lib_depends =:
 .endif
 
 CLEAN_PLIST_OUTPUT?=No
