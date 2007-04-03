@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2006/08/03 23:15:58 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2007/04/03 14:54:26 ajacoutot Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -6,13 +6,13 @@ COMMENT=	"system to store and display time-series data"
 
 RRDVERSION=	1.0.49
 DISTNAME=	rrdtool-${RRDVERSION}
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 SHARED_LIBS=	rrd	0.0
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}pub/rrdtool-1.0.x/ \
 		http://ftp.sunet.se/pub/network/monitoring/rrdtool/rrdtool-1.0.x/
 
-HOMEPAGE=	http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/
+HOMEPAGE=	http://oss.oetiker.ch/rrdtool/
 
 MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
