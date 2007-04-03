@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2006/02/19 17:09:32 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/04/03 15:19:52 aanriot Exp $
 @newgroup _honeyd:!546
 @newuser _honeyd:!546:!_honeyd:daemon:honeyd user:/nonexistent:/sbin/nologin
 bin/honeyd
 bin/honeydctl
+bin/honeydstats
 include/honeyd/
 include/honeyd/debug.h
 include/honeyd/hooks.h
@@ -20,6 +21,7 @@ share/honeyd/config.sample
 share/honeyd/nmap.assoc
 share/honeyd/nmap.prints
 share/honeyd/pf.os
+share/honeyd/proxy
 share/honeyd/scripts/
 share/honeyd/scripts/INSTALL.kuang2
 share/honeyd/scripts/README.cmdexe
@@ -41,6 +43,7 @@ share/honeyd/scripts/snmp/linux-2.4.snmp.tpl
 share/honeyd/scripts/snmp/windows2000.snmp.tpl
 share/honeyd/scripts/test.sh
 share/honeyd/scripts/web.sh
+share/honeyd/smtp
 share/honeyd/webserver/
 @owner _honeyd
 @group _honeyd

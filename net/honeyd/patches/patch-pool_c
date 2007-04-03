@@ -1,7 +1,7 @@
-$OpenBSD: patch-pool_c,v 1.1 2005/07/23 14:24:52 aanriot Exp $
---- pool.c.orig	Fri Jul 22 22:36:38 2005
-+++ pool.c	Fri Jul 22 22:37:17 2005
-@@ -92,7 +92,7 @@ pool_alloc_size(struct pool *pool, size_
+$OpenBSD: patch-pool_c,v 1.2 2007/04/03 15:19:52 aanriot Exp $
+--- pool.c.orig	Sat Aug 19 09:10:40 2006
++++ pool.c	Mon Apr  2 00:12:08 2007
+@@ -92,7 +92,7 @@ pool_alloc_size(struct pool *pool, size_t size)
  			/* We want to use the last one as return */
  			if (i < max - 1) {
  				SLIST_INSERT_HEAD(&pool->entries, entry, next);

@@ -1,0 +1,41 @@
+$OpenBSD: patch-nmap_prints,v 1.1 2007/04/03 15:19:52 aanriot Exp $
+--- nmap.prints.orig	Sun Sep 25 00:49:05 2005
++++ nmap.prints	Wed Mar 28 22:47:29 2007
+@@ -662,18 +662,6 @@ T6(DF=N%W=0%ACK=O%Flags=R%Ops=)
+ T7(DF=N%W=0%ACK=S%Flags=AR%Ops=)
+ PU(DF=N%TOS=0%IPLEN=38%RIPTL=15C%RID=E%RIPCK=0%UCK=0%ULEN=134%DAT=E)
+ 
+-Fingerprint IBM OS/400 V4R2M0
+-Class IBM | OS/400 | V4 | general purpose
+-TSeq(Class=TD|RI%gcd=<6%SI=<285DC&>206%IPID=I%TS=U)
+-T1(DF=N%W=8000%ACK=S++%Flags=AS%Ops=M)
+-T2(Resp=Y%DF=N%W=0%ACK=S%Flags=AR%Ops=)
+-T3(Resp=Y%DF=N%W=8000%ACK=S++%Flags=AS%Ops=M)
+-T4(DF=N%W=0%ACK=S%Flags=R%Ops=)
+-T5(DF=N%W=0%ACK=S++%Flags=AR%Ops=)
+-T6(DF=N%W=0%ACK=S%Flags=R%Ops=)
+-T7(DF=N%W=0%ACK=S++%Flags=AR%Ops=)
+-PU(DF=N%TOS=0%IPLEN=38%RIPTL=148%RID=E%RIPCK=E%UCK=E%ULEN=134%DAT=E)
+-
+ Fingerprint IBM OS/400 V4R5M0
+ Class IBM | OS/400 | V4 | general purpose
+ T1(DF=N%W=2000%ACK=S++%Flags=AS%Ops=MNWNNT)
+@@ -11082,18 +11070,6 @@ T5(DF=N%W=0%ACK=S++%Flags=AR%Ops=)
+ T6(DF=N%W=0%ACK=O%Flags=R%Ops=)
+ T7(DF=N%W=0%ACK=S++%Flags=AR%Ops=)
+ PU(DF=N%TOS=0%IPLEN=38%RIPTL=148%RID=E%RIPCK=E%UCK=E%ULEN=134%DAT=E)
+-
+-Fingerprint Microsoft Windows NT 4.0 SP3
+-Class Microsoft | Windows | NT/2K/XP | general purpose
+-TSeq(Class=TD|RI%gcd=<18%SI=<2A00DA&>6B73)
+-T1(DF=Y%W=7FFF|2017%ACK=S++%Flags=AS%Ops=M|MNWNNT)
+-T2(Resp=Y%DF=N%W=0%ACK=S%Flags=AR%Ops=)
+-T3(Resp=Y%DF=Y%W=7FFF|2017%ACK=S++|O%Flags=AS|A%Ops=M|NNT)
+-T4(DF=N%W=0%ACK=O|S%Flags=R%Ops=)
+-T5(DF=N%W=0%ACK=S++%Flags=AR%Ops=)
+-T6(DF=N%W=0%ACK=O|S++%Flags=R%Ops=)
+-T7(DF=N%W=0%ACK=S++%Flags=AR%Ops=)
+-PU(TOS=0%IPLEN=38%RIPTL=148%RID=E%RIPCK=E%UCK=E%ULEN=134%DAT=E)
+ 
+ Fingerprint Microsoft Windows NT 4.0 SP3
+ Class Microsoft | Windows | NT/2K/XP | general purpose

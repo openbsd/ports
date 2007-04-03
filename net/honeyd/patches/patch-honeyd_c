@@ -1,7 +1,7 @@
-$OpenBSD: patch-honeyd_c,v 1.2 2005/10/23 08:16:18 aanriot Exp $
---- honeyd.c.orig	Fri Dec 31 20:13:37 2004
-+++ honeyd.c	Thu Oct 20 11:23:17 2005
-@@ -154,8 +154,8 @@ int                      honeyd_show_inc
+$OpenBSD: patch-honeyd_c,v 1.3 2007/04/03 15:19:52 aanriot Exp $
+--- honeyd.c.orig	Sat Aug 19 09:14:36 2006
++++ honeyd.c	Mon Apr  2 00:12:08 2007
+@@ -161,8 +161,8 @@ int                      honeyd_show_data_dir;
  int                      honeyd_show_version;
  int                      honeyd_show_usage;
  int			 honeyd_debug;
@@ -12,7 +12,20 @@ $OpenBSD: patch-honeyd_c,v 1.2 2005/10/23 08:16:18 aanriot Exp $
  int			 honeyd_needsroot;	/* Need different IDs */
  int			 honeyd_disable_webserver = 0;
  int			 honeyd_disable_update = 0;
-@@ -3085,6 +3085,13 @@ main(int argc, char *argv[])
+@@ -432,12 +432,6 @@ honeyd_init(void)
+ 	/* Record our start time */
+ 	gettimeofday(&honeyd_uptime, NULL);
+ 
+-	/* Find the correct ids for nobody */
+-	if ((pwd = getpwnam("nobody")) != NULL) {
+-		honeyd_uid = pwd->pw_uid;
+-		honeyd_gid = pwd->pw_gid;
+-	}
+-
+ 	/* Initalize ongoing connection state */
+ 	SPLAY_INIT(&tcpcons);
+ 	TAILQ_INIT(&tcplru);
+@@ -3250,6 +3244,13 @@ main(int argc, char *argv[])
  	/* We need reproduceable random numbers for regression testing */
  	if (setrand)
  		rand_set(honeyd_rand, &setrand, sizeof(setrand));

@@ -1,25 +1,48 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2005/07/23 14:24:52 aanriot Exp $
---- Makefile.in.orig	Fri Dec 31 20:13:47 2004
-+++ Makefile.in	Tue Jul  5 18:10:57 2005
-@@ -152,7 +152,7 @@ honeydctl_LDADD = @LIBOBJS@ @EDITLIB@ @L
- honeydctl_INCLUDES = @EDITINC@
- honeydctl_CFLAGS = -O2 -Wall
+$OpenBSD: patch-Makefile_in,v 1.4 2007/04/03 15:19:52 aanriot Exp $
+--- Makefile.in.orig	Sat Aug 19 09:15:55 2006
++++ Makefile.in	Mon Apr  2 11:31:04 2007
+@@ -162,7 +162,7 @@ AUTOMAKE = @AUTOMAKE@
+ AWK = @AWK@
+ CC = @CC@
+ CCDEPMODE = @CCDEPMODE@
+-CFLAGS = -O2 -Wall -g \
++CFLAGS += \
+ 	-DPATH_HONEYDINCLUDE="\"$(honeydincludedir)\"" \
+ 	-DPATH_HONEYDDATA="\"$(honeyddatadir)\"" \
+ 	-DPATH_HONEYDLIB="\"$(honeydlibdir)\"" \
+@@ -358,7 +358,7 @@ honeydstats_LDADD = @LIBOBJS@ @DNETLIB@ @EVENTLIB@ @ZL
+ honeydstats_CPPFLAGS = -I$(top_srcdir)/@DNETCOMPAT@ -I$(top_srcdir)/compat \
+ 	@EVENTINC@ @DNETINC@ @ZINC@ @DNSRESINC@
  
--CFLAGS = -O2 -Wall -g 	-DPATH_HONEYDINCLUDE="\"$(honeydincludedir)\"" 	-DPATH_HONEYDDATA="\"$(honeyddatadir)\"" 	-DPATH_HONEYDLIB="\"$(honeydlibdir)\"" 	-DHONEYD_PLUGINS_DECLARE="$(honeydpluginsdeclare)" 	-DHONEYD_PLUGINS="$(honeydplugins)" 	-DPATH_RRDTOOL="\"$(PATH_RRDTOOL)\""
-+CFLAGS += -Wall 	-DPATH_HONEYDINCLUDE="\"$(honeydincludedir)\"" 	-DPATH_HONEYDDATA="\"$(honeyddatadir)\"" 	-DPATH_HONEYDLIB="\"$(honeydlibdir)\"" 	-DHONEYD_PLUGINS_DECLARE="$(honeydpluginsdeclare)" 	-DHONEYD_PLUGINS="$(honeydplugins)" 	-DPATH_RRDTOOL="\"$(PATH_RRDTOOL)\""
+-honeydstats_CFLAGS = -O0 -Wall
++honeydstats_CFLAGS =
  
+ #
+ # Honeyd control application
+@@ -366,7 +366,7 @@ honeydstats_CFLAGS = -O0 -Wall
+ honeydctl_SOURCES = honeydctl.c
+ honeydctl_LDADD = @LIBOBJS@ @EDITLIB@ @LIBCURSES@
+ honeydctl_CPPFLAGS = @EDITINC@
+-honeydctl_CFLAGS = -O2 -Wall
++honeydctl_CFLAGS =
+ INCLUDES = -I$(top_srcdir)/@DNETCOMPAT@ -I$(top_srcdir)/compat \
+ 	@PYTHONINC@ @EVENTINC@ @PCAPINC@ @DNETINC@ @ZINC@
  
- INCLUDES = -I$(top_srcdir)/@DNETCOMPAT@ -I$(top_srcdir)/compat 	@PYTHONINC@ @EVENTINC@ @PCAPINC@ @DNETINC@ @ZINC@
-@@ -664,9 +664,9 @@ libhoneyd.so: $(LIBHONEYDFILES)
+@@ -381,7 +381,7 @@ smtp_LDADD = @LIBOBJS@ @EVENTLIB@ @DNETLIB@ @PCAPLIB@ 
+ smtp_CPPFLAGS = -I$(top_srcdir)/@DNETCOMPAT@ -I$(top_srcdir)/compat \
+ 	@EVENTINC@ @DNETINC@ @DNSRESINC@ @PCREINC@
  
- install-data-local:
- 	(cd $(top_srcdir) && tar -cf - $(top_srcdir)/webserver) | \
--	(cd $(honeyddatadir) && tar -xf -)
--	find $(honeyddatadir)/webserver -type f | xargs chmod a+r
--	find $(honeyddatadir)/webserver -type d | xargs chmod a+xr
-+	(cd $(DESTDIR)/$(honeyddatadir) && tar -xf -)
-+	find $(DESTDIR)/$(honeyddatadir)/webserver -type f | xargs chmod a+r
-+	find $(DESTDIR)/$(honeyddatadir)/webserver -type d | xargs chmod a+xr
+-smtp_CFLAGS = -O2 -Wall
++smtp_CFLAGS =
+ proxy_SOURCES = subsystems/proxy.c subsystems/proxy.h subsystems/proxy_main.c \
+ 	subsystems/proxy_messages.h subsystems/smtp.c subsystems/smtp.h \
+ 	subsystems/smtp_messages.h atomicio.c \
+@@ -391,7 +391,7 @@ proxy_LDADD = @LIBOBJS@ @EVENTLIB@ @DNETLIB@ @PCAPLIB@
+ proxy_CPPFLAGS = -I$(top_srcdir)/@DNETCOMPAT@ -I$(top_srcdir)/compat \
+ 	@EVENTINC@ @DNETINC@ @DNSRESINC@ @PCREINC@
  
- dist-hook:
- 	./distribute.py $(distdir)/
+-proxy_CFLAGS = -O2 -Wall
++proxy_CFLAGS =
+ 
+ ########################################################################
+ ########################################################################

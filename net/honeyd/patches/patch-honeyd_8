@@ -1,7 +1,7 @@
-$OpenBSD: patch-honeyd_8,v 1.1 2005/10/23 08:16:18 aanriot Exp $
---- honeyd.8.orig	Thu Oct 20 11:23:59 2005
-+++ honeyd.8	Thu Oct 20 11:24:54 2005
-@@ -543,7 +543,7 @@ add template tcp port 80 "sh scripts/web
+$OpenBSD: patch-honeyd_8,v 1.2 2007/04/03 15:19:52 aanriot Exp $
+--- honeyd.8.orig	Mon Feb 27 01:27:54 2006
++++ honeyd.8	Wed Mar 28 22:46:46 2007
+@@ -574,7 +574,7 @@ add template tcp port 80 "sh scripts/web.sh"
  add template tcp port 22 "sh scripts/test.sh $ipsrc $dport"
  add template udp port 53 proxy yournameserver:53
  set template default tcp action reset
