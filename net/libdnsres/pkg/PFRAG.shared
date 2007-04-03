@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/04/03 15:10:17 aanriot Exp $
+@lib lib/libdnsres.so.${LIBdnsres_VERSION}
