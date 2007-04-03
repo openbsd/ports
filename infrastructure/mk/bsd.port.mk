@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.888 2007/04/03 10:14:14 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.889 2007/04/03 13:32:45 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1399,8 +1399,8 @@ ${_PACKAGE_COOKIE${_S}}:
       deps=`SUBPACKAGE=${_S} ${MAKE} _print-package-args` && \
 	  if ${SUDO} ${PKG_CMD} `echo "$$deps"|sort -u` ${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}}; then \
 	    mode=`id -u`:`id -g`; ${SUDO} ${CHOWN} $${mode} ${_PACKAGE_COOKIE${_S}}; \
-		if ${_register_plist} ${_PACKAGE_COOKIE${_S}} && \
-			${_check_lib_depends} ${_PACKAGE_COOKIE${_S}}; then \
+		if ${_check_lib_depends} ${_PACKAGE_COOKIE${_S}} && \
+			${_register_plist} ${_PACKAGE_COOKIE${_S}}; then \
 				exit 0; \
 		fi; \
 	  fi && \
