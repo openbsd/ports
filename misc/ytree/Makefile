@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2007/04/01 17:15:20 martynas Exp $
+# $OpenBSD: Makefile,v 1.8 2007/04/03 18:05:47 martynas Exp $
 # $FreeBSD: ports/misc/ytree/Makefile,v 1.10 2000/04/30 20:15:23 steve Exp $
 
 COMMENT=	"DOS-XTREE(tm) look-a-like file manager"
 
-DISTNAME=	ytree-1.87
+DISTNAME=	ytree-1.89
 CATEGORIES=	misc
 
 HOMEPAGE=	http://www.han.de/~werner/ytree.html
@@ -22,9 +22,9 @@ ALL_TARGET=	ytree
 
 NO_REGRESS=	Yes
 
-CFLAGS+=	-Dopenbsd -DCOLOR_SUPPORT -DHAS_REGEX -DREADLINE_SUPPORT
+CFLAGS+=	-DCOLOR_SUPPORT -DREADLINE_SUPPORT
 LDFLAGS+=	-lcompat -lcurses -lreadline
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
+MAKE_FLAGS+=	CC=${CC} CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/ytree ${PREFIX}/bin
