@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/14 23:44:00 espie Exp $
-${P5SITE}/Test/
-${P5SITE}/Test/Builder/
-${P5SITE}/Test/Builder/Tester/
-${P5SITE}/Test/Builder/Tester.pm
-${P5SITE}/Test/Builder/Tester/Color.pm
-@man man/man3p/Test::Builder::Tester.3p
-@man man/man3p/Test::Builder::Tester::Color.3p
