@@ -30,8 +30,8 @@ do
 		result=`cksum -a $ci <$i`
 		mkdir -p $ci/$result
 		ln -f $i $ci/$result/$file
-#		result=`cksum -a $ci -b <$i`
-#		mkdir -p $ci/$result
-#		ln -f $i $ci/$result/$file
+		result=`cksum -a $ci -b <$i`
+		mkdir -p $ci/$result
+		ln -f $i $ci/$result/$file
 	done
 done

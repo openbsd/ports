@@ -2,7 +2,7 @@
 
 # Sample script to use with fetch-makefile: fetch all distfiles
 
-# $OpenBSD: fetch-all,v 1.5 2007/02/19 20:14:50 naddy Exp $
+# $OpenBSD: fetch-all,v 1.6 2007/04/03 15:37:38 espie Exp $
 #
 # Copyright (c) 2000 Marc Espie.
 # 
@@ -36,19 +36,20 @@ file=`echo $1|sed -e "s,^${DIST_SUBDIR:-.}/,,"`
 dir=`dirname $1`
 check=`basename $1`
 mkdir -p $dir
+oldd=$PWD
 cd $dir
 for site in ${SITES}
 do
 	if ftp ${site}$file
 	then
-		case `cksum -a ${CIPHER} <$check` in
-			${CKSUM}) 
-				echo "Fetch, ok: $@"
-				exit 0;;
-			*) 
-				echo "Fetch, bad checksum: $@ on ${site}"
-				rm -f $1;;
-		esac
+		echo -n "$site: "
+		cd $oldd
+		if echo "${CHECK}" |cksum -c; then
+			exit 0
+		else
+			cd $dir
+			rm -f $1
+		fi
 	fi
 done
 echo "Fetch, no good distfile: $@, notify ${MAINTAINER}"
