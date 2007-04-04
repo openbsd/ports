@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2006/06/06 00:59:48 jolan Exp $
+# $OpenBSD: Makefile,v 1.7 2007/04/04 13:50:19 aanriot Exp $
 
 COMMENT=		"network traffic viewer"
-DISTNAME=		pktstat-1.8.1
+DISTNAME=		pktstat-1.8.3
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.adaptive-enterprises.com.au/~d/software/pktstat/
