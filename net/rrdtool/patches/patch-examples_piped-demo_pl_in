@@ -1,4 +1,4 @@
-OpenBSD$
+$OpenBSD: patch-examples_piped-demo_pl_in,v 1.4 2007/04/04 22:59:39 david Exp $
 --- examples/piped-demo.pl.in.orig	2002-02-26 05:21:25.000000000 -0500
 +++ examples/piped-demo.pl.in	2004-06-08 14:21:03.000000000 -0400
 @@ -16,7 +16,6 @@ $STEP = 300;
