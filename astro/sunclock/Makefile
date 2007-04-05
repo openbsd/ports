@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/04/01 16:04:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2007/04/05 13:36:40 kili Exp $
 
 COMMENT-main=		"display the phase of the Sun on a map of the Earth"
 COMMENT-maps=		"additional maps of the Earth for sunclock"
@@ -11,12 +11,12 @@ CATEGORIES=		astro
 
 HOMEPAGE=		http://frmas.free.fr/li_1.htm
 
-MASTER_SITES=		ftp://ftp.ac-grenoble.fr/ge/geosciences/sunclock/ \
-			ftp://ftp.ac-grenoble.fr/ge/geosciences/sunclock/data_packages/
-SUPDISTFILES=		big_images_270804.tar.bz2 \
-			medium_images_270804.tar.bz2 \
-			e43_color1_sh_16k.jpg \
-			huge.jpg
+MASTER_SITES=		ftp://ftp.ac-grenoble.fr/ge/geosciences/sunclock/
+MASTER_SITES0=		ftp://ftp.ac-grenoble.fr/ge/geosciences/sunclock/data_packages/
+SUPDISTFILES=		big_images_270804.tar.bz2:0 \
+			medium_images_270804.tar.bz2:0 \
+			e43_color1_sh_16k.jpg:0 \
+			huge.jpg:0
 EXTRACT_SUFX=		.tar.bz2
 
 FAKE=			lib
@@ -76,8 +76,10 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/sunclock/i18n
 	${INSTALL_DATA_DIR} ${PREFIX}/share/sunclock/wm_icons/
 	${INSTALL_DATA} ${WRKSRC}/wm_icons/* ${PREFIX}/share/sunclock/wm_icons/
+.if ${MULTI_PACKAGES:M-maps}
 	${INSTALL_DATA} ${WRKSRC}/vmf/*jpg ${PREFIX}/share/sunclock/earthmaps/
 	${INSTALL_DATA} ${WRKSRC}/vmf/*png ${PREFIX}/share/sunclock/earthmaps/
+.endif
 	${INSTALL_DATA} ${WRKSRC}/vmf/*vmf ${PREFIX}/share/sunclock/earthmaps/vmf/
 	${INSTALL_DATA} ${WRKSRC}/i18n/Sunclock.* ${PREFIX}/share/sunclock/i18n/
 
