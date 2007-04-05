@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2007/02/15 11:49:03 biorn Exp $
+# $OpenBSD: Makefile,v 1.114 2007/04/05 16:20:02 kili Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -7,7 +7,7 @@ COMMENT=		"Movie player supporting MPEG, DivX, AVI, ASF, MOV & more"
 
 DISTNAME=		MPlayer-1.0pre8
 DIST_SUBDIR=		mplayer
-PKGNAME=		${DISTNAME:L}p8
+PKGNAME=		${DISTNAME:L}p9
 CATEGORIES=		x11
 EXTRACT_SUFX=		.tar.bz2
 
@@ -38,8 +38,6 @@ SKINVER=	1.7
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SKIN}-${SKINVER}${EXTRACT_SUFX}:0
 
 .include <bsd.own.mk>
-
-MODULES=	converters/libiconv
 
 LIB_DEPENDS=	png::graphics/png \
 		jpeg::graphics/jpeg \
@@ -118,6 +116,7 @@ CONFIGURE_ARGS+=--disable-esd
 .endif
 
 .if ${FLAVOR:L:Mno_x11}
+MODULES=	converters/libiconv
 .  if ${FLAVOR:L:Msdl} || ${FLAVOR:L:Mggi}
 ERRORS+="Fatal: nonsense combination of flavors"
 .  else
@@ -135,10 +134,11 @@ CONFIGURE_ARGS+=--enable-gui \
 USE_X11=	Yes
 LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		mp3lame:lame-*:audio/lame
-WANTLIB+=	GL X11 Xext Xrender Xinerama Xv Xxf86dga Xxf86vm atk-1.0 \
-		cairo freetype fontconfig glib-2.0 gmodule-2.0 \
-		gobject-2.0 glitz intl pango-1.0 pangocairo-1.0 \
+WANTLIB+=	GL X11 Xau Xdmcp Xext Xrender Xinerama Xv Xxf86dga \
+		Xxf86vm atk-1.0 cairo expat freetype fontconfig glib-2.0 \
+		gmodule-2.0 gobject-2.0 glitz pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0
+MODULES=	devel/gettext
 .endif
 
 .if ${FLAVOR:L:Msdl}
