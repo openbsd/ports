@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.889 2007/04/03 13:32:45 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.890 2007/04/05 18:32:26 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -492,7 +492,7 @@ GMAKE ?= gmake
 CHECKSUM_FILE ?= ${.CURDIR}/distinfo
 
 # Don't touch !!! Used for generating checksums.
-_CIPHERS = sha1 rmd160 md5 sha256
+_CIPHERS = sha256 sha1 rmd160 md5
 
 # This is the one you can override
 PREFERRED_CIPHERS ?= ${_CIPHERS}
