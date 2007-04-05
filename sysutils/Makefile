@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2007/04/04 05:51:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.123 2007/04/05 19:23:04 ckuethe Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -36,6 +36,7 @@
      SUBDIR += login_ldap
      SUBDIR += lsof
      SUBDIR += mac-robber
+     SUBDIR += memtester
      SUBDIR += mencal
      SUBDIR += mergemaster
      SUBDIR += modlogan
