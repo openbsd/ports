@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/18 09:30:34 espie Exp $
-share/apps/amor/misatobli/
-share/apps/amor/misatobli/misa-parp.xpm
-share/apps/amor/misatobli/misa-parp2.xpm
-share/apps/amor/misatobli/misa2.xpm
-share/apps/amor/misatobli/misa2mini.xpm
-share/apps/amor/misatoblirc

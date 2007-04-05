@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/18 09:30:34 espie Exp $
-share/apps/amor/naru/
-share/apps/amor/naru/naru_base.xpm
-share/apps/amor/naru/naru_closed.xpm
-share/apps/amor/naru/naru_halfclosed.xpm
-share/apps/amor/naru/naru_mini.xpm
-share/apps/amor/narurc

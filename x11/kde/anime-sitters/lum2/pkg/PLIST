@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/18 09:30:34 espie Exp $
-share/apps/amor/lum/
-share/apps/amor/lum/lum1.xpm
-share/apps/amor/lum/lum_base.xpm
-share/apps/amor/lum/lum_estirada.xpm
-share/apps/amor/lum/lum_eyesup.xpm
-share/apps/amor/lum/lum_left.xpm
-share/apps/amor/lum/lum_medio_estirada.xpm
-share/apps/amor/lumrc

@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/18 09:30:34 espie Exp $
-share/apps/amor/otakuworld/
-share/apps/amor/otakuworld/otaku01.xpm
-share/apps/amor/otakuworld/otaku02.xpm
-share/apps/amor/otakuworld/otaku03.xpm
-share/apps/amor/otakuworld/otaku_mini.xpm
-share/apps/amor/otakuworldrc
