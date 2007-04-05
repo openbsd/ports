@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2006/10/29 22:58:47 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2007/04/05 18:04:23 espie Exp $
 
      SUBDIR+= arts3
      SUBDIR+= libs3
@@ -114,7 +114,6 @@
      SUBDIR+=office-i18n3,uk
      SUBDIR+=office-i18n3,zh_CN
      SUBDIR+=office-i18n3,zh_TW
-#     SUBDIR+= anime-sitters
      SUBDIR+= kdoc3
      SUBDIR+= libs3-doc
      SUBDIR+= okle
