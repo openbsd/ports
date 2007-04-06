@@ -1,6 +1,6 @@
-$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_Mozilla_gtk_org_eclipse_swt_browser_Browser_java,v 1.1 2006/12/13 20:57:16 kurt Exp $
+$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_Mozilla_gtk_org_eclipse_swt_browser_Browser_java,v 1.2 2007/04/06 02:16:21 kurt Exp $
 --- plugins/org.eclipse.swt/Eclipse SWT Mozilla/gtk/org/eclipse/swt/browser/Browser.java.orig	Thu Sep 21 10:57:19 2006
-+++ plugins/org.eclipse.swt/Eclipse SWT Mozilla/gtk/org/eclipse/swt/browser/Browser.java	Tue Dec  5 12:30:21 2006
++++ plugins/org.eclipse.swt/Eclipse SWT Mozilla/gtk/org/eclipse/swt/browser/Browser.java	Thu Apr  5 08:12:50 2007
 @@ -10,16 +10,76 @@
   *******************************************************************************/
  package org.eclipse.swt.browser;
@@ -87,7 +87,7 @@ $OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_Mozilla_gtk_org_eclipse_swt_
  /**
   * Instances of this class implement the browser user interface
   * metaphor.  It allows the user to visualize and navigate through
-@@ -169,46 +229,7 @@ public Browser(Composite parent, int sty
+@@ -169,46 +229,7 @@ public Browser(Composite parent, int style) {
  			}
  		}
  
@@ -135,7 +135,7 @@ $OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_Mozilla_gtk_org_eclipse_swt_
  
  		int /*long*/[] retVal = new int /*long*/[1];
  		nsEmbedString pathString = new nsEmbedString(mozillaPath);
-@@ -218,11 +239,11 @@ public Browser(Composite parent, int sty
+@@ -218,11 +239,11 @@ public Browser(Composite parent, int style) {
  		if (retVal[0] == 0) error(XPCOM.NS_ERROR_NULL_POINTER);
  		
  		nsILocalFile localFile = new nsILocalFile(retVal[0]);
@@ -149,7 +149,7 @@ $OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_Mozilla_gtk_org_eclipse_swt_
  		}
  
  		rc = XPCOM.NS_GetComponentManager(result);
-@@ -283,7 +304,6 @@ public Browser(Composite parent, int sty
+@@ -283,7 +304,6 @@ public Browser(Composite parent, int style) {
  			rc = properties.Get(buffer, nsIFile.NS_IFILE_IID, result);
  			if (rc != XPCOM.NS_OK) error(rc);
  			if (result[0] == 0) error(XPCOM.NS_NOINTERFACE);
@@ -157,7 +157,7 @@ $OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_Mozilla_gtk_org_eclipse_swt_
  
  			nsIFile profileDir = new nsIFile(result[0]);
  			result[0] = 0;
-@@ -305,24 +325,15 @@ public Browser(Composite parent, int sty
+@@ -305,24 +325,15 @@ public Browser(Composite parent, int style) {
  			pathString.dispose(); //
  
  			profileDir = new nsIFile(result[0]);

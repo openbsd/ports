@@ -1,7 +1,7 @@
-$OpenBSD: patch-too_long_XPCOM_properties,v 1.1 2006/12/13 20:57:16 kurt Exp $
---- plugins/org.eclipse.swt.tools/JNI Generation/org/eclipse/swt/tools/internal/org.eclipse.swt.internal.mozilla.XPCOM.properties.orig	Tue Dec  5 11:49:02 2006
-+++ plugins/org.eclipse.swt.tools/JNI Generation/org/eclipse/swt/tools/internal/org.eclipse.swt.internal.mozilla.XPCOM.properties	Tue Dec  5 12:32:13 2006
-@@ -24,16 +24,15 @@ XPCOM_NS_GetComponentManager_0=cast=(nsI
+$OpenBSD: patch-too_long_XPCOM_properties,v 1.2 2007/04/06 02:16:21 kurt Exp $
+--- plugins/org.eclipse.swt.tools/JNI Generation/org/eclipse/swt/tools/internal/org.eclipse.swt.internal.mozilla.XPCOM.properties.orig	Thu Sep 21 10:55:43 2006
++++ plugins/org.eclipse.swt.tools/JNI Generation/org/eclipse/swt/tools/internal/org.eclipse.swt.internal.mozilla.XPCOM.properties	Thu Apr  5 08:12:52 2007
+@@ -24,16 +24,15 @@ XPCOM_NS_GetComponentManager_0=cast=(nsIComponentManag
  XPCOM_NS_GetServiceManager=
  XPCOM_NS_GetServiceManager_0=cast=(nsIServiceManager**)
  

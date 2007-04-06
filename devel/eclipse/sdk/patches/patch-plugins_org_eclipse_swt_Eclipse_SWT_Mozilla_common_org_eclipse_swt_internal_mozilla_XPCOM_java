@@ -1,6 +1,6 @@
-$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_Mozilla_common_org_eclipse_swt_internal_mozilla_XPCOM_java,v 1.1 2006/12/13 20:57:16 kurt Exp $
+$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_Mozilla_common_org_eclipse_swt_internal_mozilla_XPCOM_java,v 1.2 2007/04/06 02:16:21 kurt Exp $
 --- plugins/org.eclipse.swt/Eclipse SWT Mozilla/common/org/eclipse/swt/internal/mozilla/XPCOM.java.orig	Thu Sep 21 10:57:23 2006
-+++ plugins/org.eclipse.swt/Eclipse SWT Mozilla/common/org/eclipse/swt/internal/mozilla/XPCOM.java	Tue Dec  5 12:31:09 2006
++++ plugins/org.eclipse.swt/Eclipse SWT Mozilla/common/org/eclipse/swt/internal/mozilla/XPCOM.java	Thu Apr  5 08:12:50 2007
 @@ -89,6 +89,7 @@ public class XPCOM extends Platform {
  	public static final int NS_ERROR_HTMLPARSER_UNRESOLVEDDTD = 0x804e03f3;
  	public static final int NS_ERROR_FILE_NOT_FOUND = 0x80520012;
@@ -9,7 +9,7 @@ $OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_Mozilla_common_org_eclipse_s
  
  public static final native void memmove(nsID dest, int /*long*/ src, int nbytes);
  public static final native void memmove(int /*long*/ dest, nsID src, int nbytes);
-@@ -103,9 +104,8 @@ public static final native void memmove(
+@@ -103,9 +104,8 @@ public static final native void memmove(int /*long*/ d
  public static final native void memmove(byte[] dest, char[] src, int nbytes);
  public static final native int NS_GetComponentManager(int /*long*/[] result);
  public static final native int NS_GetServiceManager(int /*long*/[] result);

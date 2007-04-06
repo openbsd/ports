@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2007/01/26 14:15:37 kurt Exp $
+# $OpenBSD: Makefile,v 1.31 2007/04/06 02:16:21 kurt Exp $
 
 ONLY_FOR_ARCHS=		amd64 i386
 
@@ -13,7 +13,7 @@ PKGNAME=		eclipse-sdk-${ECLIPSE_VER}
 PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}p1
 PKGNAME-swt=		swt-${ECLIPSE_VER}
 PKGNAME-gnome=		swt-gnome-${ECLIPSE_VER}
-PKGNAME-browser=	swt-browser-${ECLIPSE_VER}p0
+PKGNAME-browser=	swt-browser-${ECLIPSE_VER}p1
 SHARED_LIBS=		swt-atk-gtk-3235	4.0 \
 			swt-awt-gtk-3235	4.0 \
 			swt-gtk-3235		4.0 \

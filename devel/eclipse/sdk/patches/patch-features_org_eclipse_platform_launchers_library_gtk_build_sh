@@ -1,6 +1,6 @@
-$OpenBSD: patch-features_org_eclipse_platform_launchers_library_gtk_build_sh,v 1.2 2006/07/07 01:48:55 kurt Exp $
---- features/org.eclipse.platform.launchers/library/gtk/build.sh.orig	Fri Jun  2 13:32:05 2006
-+++ features/org.eclipse.platform.launchers/library/gtk/build.sh	Tue Jun  6 23:27:22 2006
+$OpenBSD: patch-features_org_eclipse_platform_launchers_library_gtk_build_sh,v 1.3 2007/04/06 02:16:21 kurt Exp $
+--- features/org.eclipse.platform.launchers/library/gtk/build.sh.orig	Thu Sep 21 10:57:25 2006
++++ features/org.eclipse.platform.launchers/library/gtk/build.sh	Thu Apr  5 08:12:49 2007
 @@ -71,6 +71,23 @@ case $OS in
  				;;
  		esac
@@ -25,7 +25,7 @@ $OpenBSD: patch-features_org_eclipse_platform_launchers_library_gtk_build_sh,v 1
  	"SunOS")
  		makefile="make_solaris.mak"
  		defaultOS="solaris"
-@@ -129,11 +146,11 @@ export OUTPUT_DIR PROGRAM_OUTPUT DEFAULT
+@@ -129,11 +146,11 @@ export OUTPUT_DIR PROGRAM_OUTPUT DEFAULT_OS DEFAULT_OS
  # If the OS is supported (a makefile exists)
  if [ "$makefile" != "" ]; then
  	if [ "$extraArgs" != "" ]; then
