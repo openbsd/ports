@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/03/15 11:30:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2007/04/06 05:42:26 steven Exp $
 
 COMMENT=	"XML internationalization tool"
 
 DISTNAME=	getxml-1.0.4
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.gnu.org/software/toutdoux/en/index.html
@@ -20,6 +20,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=toutdoux/}
 LIB_DEPENDS=	xml.>=9::textproc/libxml1 \
 		glib.>=1::devel/glib
 
-CONFIGURE_STYLE=	gnu
+USE_LIBTOOL=	Yes
+CONFIGURE_STYLE=gnu
 
 .include <bsd.port.mk>
