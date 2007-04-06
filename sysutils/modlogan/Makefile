@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2006/08/03 23:55:11 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2007/04/06 06:33:22 steven Exp $
 
 COMMENT=	"modular log analyzer"
 
 DISTNAME=	modlogan-0.8.13
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	sysutils www
 
 HOMEPAGE=	http://jan.kneschke.de/projects/modlogan/
@@ -27,6 +27,7 @@ LIB_DEPENDS=	expat.>=3::textproc/expat \
 		adns.>=1::net/adns \
 		bz2.>=10::archivers/bzip2
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --libdir=${PREFIX}/lib/modlogan
 CONFIGURE_ENV += LOCALBASE="${LOCALBASE}" \
