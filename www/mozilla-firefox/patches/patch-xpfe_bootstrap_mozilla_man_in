@@ -1,6 +1,6 @@
-$OpenBSD: patch-xpfe_bootstrap_mozilla_man_in,v 1.1 2007/02/14 22:44:32 naddy Exp $
+$OpenBSD: patch-xpfe_bootstrap_mozilla_man_in,v 1.2 2007/04/06 14:33:36 martynas Exp $
 --- xpfe/bootstrap/mozilla.man.in.orig	Sun Apr  3 03:07:04 2005
-+++ xpfe/bootstrap/mozilla.man.in	Tue Feb 13 21:38:05 2007
++++ xpfe/bootstrap/mozilla.man.in	Fri Apr  6 17:21:08 2007
 @@ -1,6 +1,6 @@
  .TH @MOZ_APP_NAME@ 1 "March 28, 2005" @MOZ_APP_NAME@ "Linux User's Manual"
  .SH NAME
@@ -9,7 +9,7 @@ $OpenBSD: patch-xpfe_bootstrap_mozilla_man_in,v 1.1 2007/02/14 22:44:32 naddy Ex
  
  .SH SYNOPSIS
  .B @MOZ_APP_NAME@
-@@ -62,9 +62,6 @@ Set height of startup window to \fIvalue
+@@ -62,9 +62,6 @@ Set height of startup window to \fIvalue\fR.
  .B \-h, \-help
  Show summary of options.
  .TP

@@ -1,7 +1,7 @@
-$OpenBSD: patch-gfx_src_psshared_nsCUPSShim_cpp,v 1.1 2006/02/06 08:21:53 wilfried Exp $
---- gfx/src/psshared/nsCUPSShim.cpp.orig	Sun May  8 17:01:20 2005
-+++ gfx/src/psshared/nsCUPSShim.cpp	Thu Jan 12 13:18:31 2006
-@@ -59,7 +59,7 @@ static const int gSymNameCt = sizeof(gSy
+$OpenBSD: patch-gfx_src_psshared_nsCUPSShim_cpp,v 1.2 2007/04/06 14:33:36 martynas Exp $
+--- gfx/src/psshared/nsCUPSShim.cpp.orig	Sun May  8 18:01:20 2005
++++ gfx/src/psshared/nsCUPSShim.cpp	Fri Apr  6 17:21:07 2007
+@@ -59,7 +59,7 @@ static const int gSymNameCt = sizeof(gSymName) / sizeo
  PRBool
  nsCUPSShim::Init()
  {

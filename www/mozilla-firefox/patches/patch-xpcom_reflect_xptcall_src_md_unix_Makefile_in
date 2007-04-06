@@ -1,7 +1,7 @@
-$OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.7 2007/02/26 14:21:26 robert Exp $
---- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	Mon Nov 27 22:29:22 2006
-+++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	Sat Feb 24 15:04:59 2007
-@@ -68,6 +68,12 @@ CPPSRCS		:= xptcinvoke_unixish_x86.cpp x
+$OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.8 2007/04/06 14:33:36 martynas Exp $
+--- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	Tue Nov 28 07:29:22 2006
++++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	Fri Apr  6 17:21:52 2007
+@@ -68,6 +68,12 @@ CPPSRCS		:= xptcinvoke_unixish_x86.cpp xptcstubs_unixi
  endif
  endif
  #
@@ -14,7 +14,7 @@ $OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.7 2007/02/26 1
  # New code for Linux, et. al., with gcc
  # Migrate other platforms here after testing
  #
-@@ -129,6 +135,12 @@ CPPSRCS		:= xptcinvoke_osf1_alpha.cpp xp
+@@ -129,6 +135,12 @@ CPPSRCS		:= xptcinvoke_osf1_alpha.cpp xptcstubs_osf1_a
  ASFILES		:= xptcinvoke_asm_osf1_alpha.s xptcstubs_asm_osf1_alpha.s
  endif
  #
@@ -44,7 +44,7 @@ $OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.7 2007/02/26 1
  
  ######################################################################
  # HPPA
-@@ -278,6 +300,14 @@ ASFILES		:= xptcinvoke_asm_ppc_netbsd.s 
+@@ -278,6 +300,14 @@ ASFILES		:= xptcinvoke_asm_ppc_netbsd.s xptcstubs_asm_
  endif
  
  #

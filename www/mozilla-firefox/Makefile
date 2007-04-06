@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2007/03/27 16:04:37 martynas Exp $
+# $OpenBSD: Makefile,v 1.72 2007/04/06 14:33:36 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -9,7 +9,7 @@ COMMENT-devel=	"devel files for Gecko"
 VER=		2.0.0.3
 DISTNAME=	mozilla
 PKGNAME=	mozilla-firefox-${VER}
-PKGNAME-main=	mozilla-firefox-${VER}
+PKGNAME-main=	mozilla-firefox-${VER}p0
 PKGNAME-devel=	mozilla-firefox-devel-${VER}
 SO_VERSION=	19.0
 # NOTE: Must bump minor version if any shlib's are removed from the
