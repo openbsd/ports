@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2006/06/13 19:27:54 steven Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.7 2007/04/06 10:10:01 ajacoutot Exp $
 lib/dia/libaadl_objects.so
 lib/dia/libbondgraph_objects.so
 lib/dia/libcairo_filter.so
@@ -26,6 +26,7 @@ lib/dia/libshape_filter.so
 lib/dia/libstandard_objects.so
 lib/dia/libsvg_filter.so
 lib/dia/libuml_objects.so
+lib/dia/libvdx_filter.so
 lib/dia/libwpg_filter.so
 lib/dia/libxfig_filter.so
 lib/dia/libxslt_filter.so

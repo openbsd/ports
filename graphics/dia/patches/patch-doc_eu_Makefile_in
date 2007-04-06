@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_eu_Makefile_in,v 1.1 2006/06/13 19:27:54 steven Exp $
---- doc/eu/Makefile.in.orig	Thu May 25 22:49:19 2006
-+++ doc/eu/Makefile.in	Thu Jun  8 12:19:25 2006
-@@ -332,6 +332,7 @@ entities = 
+$OpenBSD: patch-doc_eu_Makefile_in,v 1.2 2007/04/06 10:10:01 ajacoutot Exp $
+--- doc/eu/Makefile.in.orig	Thu Mar 29 11:15:09 2007
++++ doc/eu/Makefile.in	Thu Apr  5 16:43:22 2007
+@@ -338,6 +338,7 @@ entities = 
  # This variable (docdir) specifies where the documents should be installed.
  # This default value should work for most packages.
  @HAVE_GNOME_TRUE@docdir = $(datadir)/gnome/help/$(docname)/$(lang)
@@ -9,7 +9,7 @@ $OpenBSD: patch-doc_eu_Makefile_in,v 1.1 2006/06/13 19:27:54 steven Exp $
  
  # **********  You should not have to edit below this line  **********
  xml_files = $(entities) $(docname).xml
-@@ -587,7 +588,7 @@ install-data-hook-omf:
+@@ -593,7 +594,7 @@ install-data-hook-omf:
  	    $(INSTALL_DATA) $$file.out $(DESTDIR)$(omf_dest_dir)/$$file; \
  	  done; \
  	fi
@@ -18,7 +18,7 @@ $OpenBSD: patch-doc_eu_Makefile_in,v 1.1 2006/06/13 19:27:54 steven Exp $
  
  uninstall-local-omf:
  	-for file in $(srcdir)/*.omf; do \
-@@ -604,7 +605,7 @@ clean-local-omf:
+@@ -610,7 +611,7 @@ clean-local-omf:
  	  done; \
  	fi
  

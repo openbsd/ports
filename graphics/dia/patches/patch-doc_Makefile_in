@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2007/04/06 10:10:01 ajacoutot Exp $
+--- doc/Makefile.in.orig	Thu Apr  5 23:04:49 2007
++++ doc/Makefile.in	Thu Apr  5 23:05:00 2007
+@@ -590,7 +590,7 @@ uninstall-info: uninstall-info-recursive
+ 
+ # a simple rule to symlink en to C
+ install-data-local:
+-	-(cd $(DESTDIR)$(helpdir) && rm -f C && ln -s en C)
++#	-(cd $(DESTDIR)$(helpdir) && rm -f C && ln -s en C)
+ uninstall-local:
+ 	rm -f $(DESTDIR)$(helpdir)/C
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
