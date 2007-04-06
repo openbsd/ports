@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2007/03/19 22:02:38 martynas Exp $
+# $OpenBSD: Makefile,v 1.54 2007/04/06 14:48:57 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
@@ -40,8 +40,7 @@ WANTLIB=	X11 Xext Xft Xrender Xinerama Xt c fontconfig freetype m pthread z \
 		atk-1.0 cairo glib-2.0 gmodule-2.0 gobject-2.0 glitz \
 		jpeg pango-1.0 pangoft2-1.0 pangocairo-1.0 png stdc++
 
-MASTER_SITES=	http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/${VER}/source/ \
-		http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/${VER}/source/
+MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${VER}/source/
 DISTFILES=	thunderbird-${VER}-source.tar.bz2
 
 MODULES=	gettext

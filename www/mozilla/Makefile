@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2007/02/22 00:40:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.118 2007/04/06 14:48:28 martynas Exp $
 
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64 amd64 powerpc
 
@@ -40,8 +40,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://ftp.eu.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla${VER}/source/ \
-		http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla${VER}/source/
+MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla${VER}/source/
 
 VMEM_WARNING=yes
 
