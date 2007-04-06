@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2006/01/09 07:04:58 alek Exp $
+# $OpenBSD: Makefile,v 1.27 2007/04/06 22:21:30 espie Exp $
 
 COMMENT=	"GNU's Ubiquitous Intelligent Language for Extension"
 
 DISTNAME=	guile-1.6.7
-PKGNAME=	$(DISTNAME)p2
+PKGNAME=	$(DISTNAME)p3
 SHARED_LIBS=	guile-ltdl 1.0 \
 		guile-srfi-srfi-13-14-v-1 1.0 \
 		guile-srfi-srfi-4-v-1 1.0 \
@@ -13,8 +13,6 @@ CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU:=guile/}
 
 HOMEPAGE=	http://www.gnu.org/software/guile/
-
-MAINTAINER=	Bruno Rohee <rohee@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

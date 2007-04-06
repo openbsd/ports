@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile,v 1.33 2007/04/06 22:21:30 espie Exp $
 # Original from: Marco S Hyman <marc@OpenBSD.ORG>
 
 COMMENT=	"X11 image display and modification tool"
 
 DISTNAME=	xv-3.10a
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	graphics x11
 
 MASTER_SITES=	ftp://ftp.mirrorservice.org/sites/ftp.cis.upenn.edu/pub/xv/ \
@@ -22,7 +22,6 @@ LIB_DEPENDS=    jpeg.>=62.::graphics/jpeg \
 		png.>=2.::graphics/png
 
 FAKE=		lib
-MAINTAINER=	Bruno Rohee <rohee@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"Must buy license"
 PERMIT_PACKAGE_FTP=	Yes

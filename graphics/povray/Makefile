@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2006/11/04 19:19:15 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2007/04/06 22:21:30 espie Exp $
 
 COMMENT=			"3D image rendering package"
 
 DISTNAME=			povray-3.1g
+PKGNAME=			${DISTNAME}p0
 CATEGORIES=			graphics
 
 HOMEPAGE=			http://www.povray.org
-
-MAINTAINER=			Bruno Rohee <rohee@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=		Perhaps we qualify for commercial distribution
 PERMIT_PACKAGE_FTP=		Yes
