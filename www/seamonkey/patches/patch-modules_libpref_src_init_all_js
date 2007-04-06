@@ -1,7 +1,7 @@
-$OpenBSD: patch-modules_libpref_src_init_all_js,v 1.2 2007/03/26 20:41:37 martynas Exp $
---- modules/libpref/src/init/all.js.orig	Fri Jan  5 03:04:33 2007
-+++ modules/libpref/src/init/all.js	Fri Feb 23 21:41:00 2007
-@@ -1932,33 +1932,33 @@ pref("font.name.monospace.ko", "monospac
+$OpenBSD: patch-modules_libpref_src_init_all_js,v 1.3 2007/04/06 14:39:34 martynas Exp $
+--- modules/libpref/src/init/all.js.orig	Mon Jan  8 03:45:40 2007
++++ modules/libpref/src/init/all.js	Fri Apr  6 17:27:27 2007
+@@ -1932,33 +1932,33 @@ pref("font.name.monospace.ko", "monospace");
  
  // th
  

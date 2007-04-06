@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_xul_templates_src_nsTemplateMatchSet_h,v 1.1 2007/02/22 00:40:59 naddy Exp $
+$OpenBSD: patch-content_xul_templates_src_nsTemplateMatchSet_h,v 1.2 2007/04/06 14:39:34 martynas Exp $
 --- content/xul/templates/src/nsTemplateMatchSet.h.orig	Sun Apr 18 00:52:30 2004
-+++ content/xul/templates/src/nsTemplateMatchSet.h	Mon Feb 19 23:54:24 2007
-@@ -207,7 +207,11 @@ protected:
++++ content/xul/templates/src/nsTemplateMatchSet.h	Fri Apr  6 17:27:27 2007
+@@ -207,7 +207,11 @@ class nsTemplateMatchRefSet (protected)
       * If the set is currently
       */
      struct InlineMatches {
