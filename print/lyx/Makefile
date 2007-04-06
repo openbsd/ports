@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2006/11/27 17:16:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2007/04/06 06:33:03 steven Exp $
 
 COMMENT=	"graphical frontend for LaTeX (nearly WYSIWYG)"
 
 DISTNAME=	lyx-1.4.3
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	print
 
 HOMEPAGE=	http://www.lyx.org/
@@ -32,6 +33,7 @@ LIB_DEPENDS=	aspell::textproc/aspell/core
 
 WANTLIB=	ICE SM X11 c m stdc++ z
 
+USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 USE_X11=	Yes
 

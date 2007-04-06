@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2006/11/27 17:16:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2007/04/06 06:33:03 steven Exp $
 bin/lyx
 bin/lyxclient
 bin/tex2lyx
@@ -9,6 +9,8 @@ share/locale/cs/LC_MESSAGES/lyx.mo
 share/locale/da/LC_MESSAGES/lyx.mo
 share/locale/de/LC_MESSAGES/lyx.mo
 share/locale/es/LC_MESSAGES/lyx.mo
+share/locale/eu/
+share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/lyx.mo
 share/locale/fi/LC_MESSAGES/lyx.mo
 share/locale/fr/LC_MESSAGES/lyx.mo
