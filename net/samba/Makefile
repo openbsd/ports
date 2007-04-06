@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.80 2007/03/29 22:12:06 deanna Exp $
+# $OpenBSD: Makefile,v 1.81 2007/04/06 14:20:35 ajacoutot Exp $
 
 COMMENT-main=	"SMB and CIFS client and server for UNIX"
 COMMENT-docs=	"documentation and examples for samba"
 
 DISTNAME=		samba-3.0.24
-PKGNAME-main=		${DISTNAME}p0
+PKGNAME-main=		${DISTNAME}p1
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 SHARED_LIBS=		smbclient	0.3 \
 			msrpc		0.2
@@ -100,6 +100,11 @@ SAMBA_DOCS=${WRKSRC}/../README \
         ${WRKSRC}/../docs/registry/*.reg
 
 SAMPLE_CONFIG=	${PREFIX}/share/examples/samba/smb.conf.default
+
+pre-configure:
+	@perl -pi -e 's,!!SYSCONFDIR!!,${SYSCONFDIR},g;' \
+		-e 's,!!LOCALBASE!!,${LOCALBASE},g' \
+		${WRKSRC}/../docs/manpages/swat.8
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/samba/pdf

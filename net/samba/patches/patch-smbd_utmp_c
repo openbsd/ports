@@ -1,7 +1,7 @@
-$OpenBSD: patch-smbd_utmp_c,v 1.4 2006/02/02 09:40:43 mbalmer Exp $
+$OpenBSD: patch-smbd_utmp_c,v 1.5 2007/04/06 14:20:35 ajacoutot Exp $
 --- smbd/utmp.c.orig	Fri Feb 25 18:59:26 2005
-+++ smbd/utmp.c	Wed Jun 15 19:36:32 2005
-@@ -245,6 +245,7 @@ static void uw_pathname(pstring fname, c
++++ smbd/utmp.c	Fri Apr  6 14:46:58 2007
+@@ -245,6 +245,7 @@ static void uw_pathname(pstring fname, const char *uw_
  }
  
  #ifndef HAVE_PUTUTLINE
@@ -9,7 +9,7 @@ $OpenBSD: patch-smbd_utmp_c,v 1.4 2006/02/02 09:40:43 mbalmer Exp $
  
  /****************************************************************************
   Update utmp file directly.  No subroutine interface: probably a BSD system.
-@@ -252,8 +253,50 @@ static void uw_pathname(pstring fname, c
+@@ -252,8 +253,50 @@ static void uw_pathname(pstring fname, const char *uw_
  
  static void pututline_my(pstring uname, struct utmp *u, BOOL claim)
  {

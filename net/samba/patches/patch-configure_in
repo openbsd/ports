@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.10 2006/10/03 14:07:10 mbalmer Exp $
---- configure.in.orig	Fri Jul 21 18:22:57 2006
-+++ configure.in	Mon Oct  2 18:38:41 2006
-@@ -1710,6 +1710,7 @@ if test "$enable_shared" = "yes"; then
+$OpenBSD: patch-configure_in,v 1.11 2007/04/06 14:20:35 ajacoutot Exp $
+--- configure.in.orig	Sun Feb  4 19:59:28 2007
++++ configure.in	Fri Apr  6 14:47:46 2007
+@@ -1706,6 +1706,7 @@ if test "$enable_shared" = "yes"; then
  			DYNEXP="-Wl,-Bdynamic"
  			SONAMEFLAG="-Wl,-soname,"
  			PICFLAGS="-fPIC"

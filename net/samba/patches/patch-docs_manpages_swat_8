@@ -32,7 +32,7 @@
  you should add a line like this:
  .PP
 -\fBswat stream tcp nowait.400 root /usr/local/samba/sbin/swat swat\fR
-+\fBswat stream tcp nowait.400 root /usr/local/libexec/swat swat\fR
++\fBswat stream tcp nowait.400 root !!LOCALBASE!!/libexec/swat swat\fR
  .PP
  Once you have edited
  \fI/etc/services\fR
@@ -41,7 +41,7 @@
  This file must contain a mapping of service name (e.g., swat) to service port (e.g., 901) and protocol type (e.g., tcp).
  .TP 3n
 -\fI/usr/local/samba/lib/smb.conf\fR
-+\fI/etc/samba/smb.conf\fR
++\fI!!SYSCONFDIR!!/samba/smb.conf\fR
  This is the default location of the
  \fBsmb.conf\fR(5)
 -server configuration file that swat edits. Other common places that systems install this file are
