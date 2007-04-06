@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2007/04/05 18:20:51 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2007/04/06 01:19:21 naddy Exp $
 
 ONLY_FOR_ARCHS=		i386 m68k sparc
 
@@ -23,10 +23,14 @@ V=			${V-${MACHINE_ARCH}}
 A=			${A-${MACHINE_ARCH}}
 SV=			${SV-${MACHINE_ARCH}}
 S=			${S-${MACHINE_ARCH}}
-DISTFILES=		dnetc${SV}-openbsd-$A${EXTRACT_SUFX}:$S
 
+DISTFILES=
 .for m in ${ONLY_FOR_ARCHS}
+.  if ${MACHINE_ARCH} == "$m"
+DISTFILES+=		dnetc${SV}-openbsd-$A${EXTRACT_SUFX}:$S
+.  else
 SUPDISTFILES+=		dnetc${SV-$m}-openbsd-${A-$m}${EXTRACT_SUFX}:${S-$m}
+.  endif
 MASTER_SITES${S-$m}=	http://http.distributed.net/pub/dcti/v${V-$m}/
 .endfor
 
