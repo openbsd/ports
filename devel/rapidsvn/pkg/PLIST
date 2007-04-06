@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/06 16:00:20 steven Exp $
+%%SHARED%%
+bin/rapidsvn
+include/svncpp/
+include/svncpp/annotate_line.hpp
+include/svncpp/apr.hpp
+include/svncpp/check.hpp
+include/svncpp/client.hpp
+include/svncpp/context.hpp
+include/svncpp/context_listener.hpp
+include/svncpp/datetime.hpp
+include/svncpp/dirent.hpp
+include/svncpp/entry.hpp
+include/svncpp/exception.hpp
+include/svncpp/log_entry.hpp
+include/svncpp/path.hpp
+include/svncpp/pool.hpp
+include/svncpp/property.hpp
+include/svncpp/revision.hpp
+include/svncpp/status.hpp
+include/svncpp/targets.hpp
+include/svncpp/url.hpp
+include/svncpp/wc.hpp
+lib/libsvncpp.a
+lib/libsvncpp.la

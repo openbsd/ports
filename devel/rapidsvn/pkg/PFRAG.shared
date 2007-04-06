@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/04/06 16:00:20 steven Exp $
+@lib lib/libsvncpp.so.${LIBsvncpp_VERSION}
