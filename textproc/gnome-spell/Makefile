@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2007/02/11 00:56:57 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/04/07 14:05:34 steven Exp $
 
 COMMENT=		"a Gnome/Bonobo component for spell checking"
 
 VERSION=		1.0.6
 DISTNAME=		gnome-spell-${VERSION}
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=    		textproc
 
 HOMEPAGE=		http://www.gnome.org/
@@ -34,6 +34,7 @@ LIB_DEPENDS=		aspell.>=15::textproc/aspell/core \
 			gnomeui-2::x11/gnome/libgnomeui
 
 USE_X11=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
