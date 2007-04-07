@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/07/18 17:02:49 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/04/07 15:14:46 steven Exp $
 bin/crank
 @info info/crank.info
 lib/crank/
@@ -20,4 +20,3 @@ share/crank/slft.dat
 share/crank/source.xpm
 share/crank/stop.xpm
 share/crank/trift.dat
-share/doc/crank/
