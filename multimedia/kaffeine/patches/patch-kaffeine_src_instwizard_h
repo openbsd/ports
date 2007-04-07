@@ -1,7 +1,7 @@
-$OpenBSD: patch-kaffeine_src_instwizard_h,v 1.1 2006/10/29 23:36:39 espie Exp $
---- kaffeine/src/instwizard.h.orig	Mon Oct 30 00:03:53 2006
-+++ kaffeine/src/instwizard.h	Mon Oct 30 00:04:01 2006
-@@ -44,6 +44,7 @@ private:
+$OpenBSD: patch-kaffeine_src_instwizard_h,v 1.2 2007/04/07 16:29:15 espie Exp $
+--- kaffeine/src/instwizard.h.orig	Sun Nov 26 20:12:23 2006
++++ kaffeine/src/instwizard.h	Sat Apr  7 17:57:51 2007
+@@ -44,6 +44,7 @@ class InstWizard : private KWizard (private)
  
  	void internalWizard();
  
