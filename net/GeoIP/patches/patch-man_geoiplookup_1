@@ -1,7 +1,7 @@
-$OpenBSD: patch-man_geoiplookup_1,v 1.1.1.1 2003/06/27 14:55:35 naddy Exp $
---- man/geoiplookup.1.orig	Thu Nov 21 07:12:38 2002
-+++ man/geoiplookup.1	Thu Jun 26 00:24:19 2003
-@@ -3,23 +3,22 @@
+$OpenBSD: patch-man_geoiplookup_1,v 1.2 2007/04/07 04:56:35 steven Exp $
+--- man/geoiplookup.1.orig	Sat Apr  7 06:54:00 2007
++++ man/geoiplookup.1	Sat Apr  7 06:55:00 2007
+@@ -3,17 +3,19 @@
  .SH NAME
  geoiplookup - look up country using IP Address or hostname
  .SH SYNOPSIS
@@ -24,6 +24,10 @@ $OpenBSD: patch-man_geoiplookup_1,v 1.1.1.1 2003/06/27 14:55:35 naddy Exp $
  .I Netherlands
  .PP
  .SH OPTIONS
+@@ -21,9 +23,6 @@ will find the Country that 80.60.233.195 originates fr
+ Specify a custom path to a single GeoIP datafile.
+ .IP "-d"
+ Specify a custom directory containing GeoIP datafile(s).  By default geoiplookup looks in DATADIR
 -.IP "-l"
 -By default, geoiplookup returns the ISO 3166 country code.  By specifying this
 -option, geoiplookup prints the long format, namely the full country name.
