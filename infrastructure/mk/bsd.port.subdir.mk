@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.82 2007/03/19 21:32:35 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.83 2007/04/07 09:55:13 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -75,6 +75,11 @@ _SKIPPED =
 _SKIPPED :+= ${_FULLSUBDIR:M$i}
 _FULLSUBDIR := ${_FULLSUBDIR:N$i}
 .endfor
+.if defined(STARTDIR) && !empty(STARTDIR)
+_STARTDIR_SEEN ?= false
+.else
+_STARTDIR_SEEN ?= true
+.endif
 
 TEMPLATES ?= ${PORTSDIR}/infrastructure/templates
 .if defined(PORTSTOP)
@@ -89,12 +94,23 @@ _subdir_fragment = \
 	for i in ${_SKIPPED}; do \
 		eval $${echo_msg} "===\> $$i skipped"; \
 	done; \
+	_STARTDIR_SEEN=${_STARTDIR_SEEN}; \
+	export _STARTDIR_SEEN; \
 	for subdir in ${_FULLSUBDIR}; do \
+		if ! $${_STARTDIR_SEEN}; then \
+			case "${STARTDIR}" in \
+			$$subdir*) \
+				;; \
+			*) \
+				continue;; \
+			esac; \
+		fi; \
 		${_flavor_fragment}; \
 		eval $${echo_msg} "===\> $$subdir"; \
 		if ! (eval $$toset exec ${MAKE} $$target); then \
 			${REPORT_PROBLEM}; \
 		fi; \
+		_STARTDIR_SEEN=true; \
 	done
 
 .for __target in all fetch package fake extract patch configure \
