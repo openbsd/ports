@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2007/03/15 11:30:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.19 2007/04/07 13:40:22 steven Exp $
 
 COMMENT=		"GNOME help browser"
 
 VERSION=		2.6.5
 DISTNAME=		yelp-${VERSION}
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
@@ -37,6 +37,7 @@ LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 			exslt::textproc/libxslt
 
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

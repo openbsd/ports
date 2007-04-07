@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2006/12/16 12:22:35 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2007/04/07 13:40:22 steven Exp $
 
 COMMENT=		"Lightweight GNOME text editor"
 DISTNAME=		gedit-2.8.3
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		editors x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/projects/gedit/
@@ -42,6 +42,8 @@ RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
+LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib -lm -lstdc++ -lintl -liconv"
