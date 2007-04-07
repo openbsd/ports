@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/26 11:10:00 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/04/07 16:18:42 steven Exp $
 @pkgpath ${BASE_PKGPATH}
 bin/sylpheed-claws
 bin/sylpheed-switcher
@@ -30,8 +30,6 @@ share/locale/pl/LC_MESSAGES/sylpheed-claws.mo
 share/locale/pt_BR/LC_MESSAGES/sylpheed-claws.mo
 share/locale/ru/LC_MESSAGES/sylpheed-claws.mo
 share/locale/sk/LC_MESSAGES/sylpheed-claws.mo
-share/locale/sr/
-share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/sylpheed-claws.mo
 share/locale/sv/LC_MESSAGES/sylpheed-claws.mo
 share/locale/zh_CN/LC_MESSAGES/sylpheed-claws.mo

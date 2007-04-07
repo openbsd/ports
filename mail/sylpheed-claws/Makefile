@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2007/03/29 06:10:32 steven Exp $
+# $OpenBSD: Makefile,v 1.24 2007/04/07 16:18:42 steven Exp $
 
 COMMENT-main=		"lightweight GTK+ based mail/news client"
 COMMENT-dillo=		"dillo plugin for sylpheed-claws"
@@ -10,8 +10,8 @@ COMMENT-trayicon=	"system tray icon plugin for sylpheed-claws"
 
 VERSION=		1.9.6
 DISTNAME=		sylpheed-claws-${VERSION}
-PKGNAME=		${DISTNAME}p4
-PKGNAME-main=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
+PKGNAME-main=		${DISTNAME}p5
 THEMEFILE=		sylpheed-iconset-20040929
 CATEGORIES=		mail news x11
 
@@ -38,7 +38,7 @@ WANTLIB=		X11 Xext Xrender crypto \
 			pangoft2-1.0 cairo glitz png z
 
 USE_X11=		Yes
-
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS=		--program-suffix="-claws" \
 			--enable-ipv6 --enable-openssl \
@@ -57,12 +57,12 @@ FLAVOR?=
 MULTI_PACKAGES=		-main -dillo -docs -imageviewer -spamassassin -themes \
 			-trayicon
 
-FULLPKGNAME-dillo=	sylpheed-claws-dillo-${VERSION}p3
+FULLPKGNAME-dillo=	sylpheed-claws-dillo-${VERSION}p4
 FULLPKGNAME-docs=	sylpheed-claws-docs-${VERSION}p3
-FULLPKGNAME-imageviewer=sylpheed-claws-imageviewer-${VERSION}p3
-FULLPKGNAME-spamassassin=sylpheed-claws-spamassassin-${VERSION}p3
+FULLPKGNAME-imageviewer=sylpheed-claws-imageviewer-${VERSION}p4
+FULLPKGNAME-spamassassin=sylpheed-claws-spamassassin-${VERSION}p4
 FULLPKGNAME-themes=	sylpheed-claws-themes-${VERSION}p3
-FULLPKGNAME-trayicon=	sylpheed-claws-trayicon-${VERSION}p4
+FULLPKGNAME-trayicon=	sylpheed-claws-trayicon-${VERSION}p5
 
 RUN_DEPENDS-dillo=	::${BUILD_PKGPATH} \
 			:dillo-*:www/dillo
