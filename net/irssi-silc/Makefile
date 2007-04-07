@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/03/22 19:55:38 martynas Exp $
+# $OpenBSD: Makefile,v 1.2 2007/04/07 20:02:14 martynas Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,7 +10,7 @@ DISTNAME=	irssi-${IRSSI_VERSION}
 DISTFILES=	${DISTNAME}a.tar.gz \
 		silc-plugin-${SILC_VERSION}.tar.gz:0 \
 		silc-client-${SILC_VERSION}.tar.gz:1
-PKGNAME=	irssi-silc-${SILC_VERSION}
+PKGNAME=	irssi-silc-${SILC_VERSION}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://penguin-breeder.org/silc/
@@ -35,13 +35,12 @@ MASTER_SITES1=	http://ftp.silcnet.org/client/sources/ \
 		http://the.wiretapped.net/security/network-security/silc/client/sources/ \
 		ftp://ftp.wiretapped.net/pub/security/network-security/silc/client/sources/
 
-WANTLIB=	c crypto m ncurses perl ssl util
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	glib.>=1.2,gmodule.>=1.2::devel/glib \
-		glib-2.0,gmodule-2.0::devel/glib2
 BUILD_DEPENDS=	:autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION} \
-		:automake-${AUTOMAKE_VERSION}.*:devel/automake/${AUTOMAKE_VERSION}
+		:automake-${AUTOMAKE_VERSION}.*:devel/automake/${AUTOMAKE_VERSION} \
+		::devel/glib \
+		::devel/glib2
 RUN_DEPENDS=	:irssi-0.*:net/irssi \
 		::devel/p5-IO-stringy \
 		::mail/p5-MIME-tools \
@@ -80,6 +79,8 @@ CONFIGURE_ARGS0+= --without-libtoolfix \
 CONFIGURE_ARGS0+= --disable-asm
 .endif
 
+CFLAGS+=	-fPIC -DPIC
+
 CLIENT_DIR=${WRKDIR}/silc-client-${SILC_VERSION}
 PLUGIN_DIR=${WRKDIR}/silc-plugin-${SILC_VERSION}
 
@@ -87,36 +88,42 @@ PATCH_ARGS+= -d ${WRKDIR} --quiet
 PATCH_DIST_ARGS+= -d ${WRKDIR} --quiet
 
 pre-configure:
-	@cd ${CLIENT_DIR} && ${SETENV} ${CONFIGURE_ENV} \
-		./configure ${CONFIGURE_ARGS0}
+	@cd ${CLIENT_DIR} && ${SETENV} CC="${CC}" ac_cv_path_CC="${CC}" \
+		CFLAGS="${CFLAGS:C/ *$//}" CXX="${CXX}" \
+		ac_cv_path_CXX="${CXX}" CXXFLAGS="${CXXFLAGS:C/ *$//}" \
+		${CONFIGURE_ENV} LIBTOOL="${LIBTOOL} --tag=disable-shared" \
+		./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS0}
 
 	# Do NOT use any kind of parallel build system to compile the silc-client!
-	@cd ${CLIENT_DIR}/lib && ${SETENV} ${MAKE_ENV} ${MAKE}
+	@cd ${CLIENT_DIR}/lib && ${SETENV} ${MAKE_ENV} \
+		${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} ${ALL_TARGET} \
+		LIBTOOL="${LIBTOOL} --tag=disable-shared"
 	@cd ${PLUGIN_DIR} && ${SETENV} ${MAKE_ENV} \
 		${SETENV} ${CONFIGURE_ENV} \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		${MAKE} patch IRSSI=${WRKSRC} SILC=${CLIENT_DIR}
+		${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} patch \
+			IRSSI=${WRKSRC} SILC=${CLIENT_DIR}
 
 do-build:
-	@cd ${WRKSRC}/src/perl && \
-		${SETENV} ${MAKE_ENV} ${MAKE}
-	@cd ${WRKSRC}/src/fe-common/silc && \
-		${SETENV} ${MAKE_ENV} ${MAKE}
-	@cd ${WRKSRC}/src/silc/core && \
-		${SETENV} ${MAKE_ENV} ${MAKE}
+	@cd ${WRKSRC}/src/perl && ${SETENV} ${MAKE_ENV} \
+		${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} ${ALL_TARGET}
+	@cd ${WRKSRC}/src/fe-common/silc && ${SETENV} ${MAKE_ENV} \
+		${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} ${ALL_TARGET}
+	@cd ${WRKSRC}/src/silc/core && ${SETENV} ${MAKE_ENV} \
+		${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} ${ALL_TARGET}
 
 do-install:
-	@cd ${WRKSRC}/src/perl/silc && \
-		${MAKE} install
-	@cd ${WRKSRC}/src/fe-common/silc && \
-		${MAKE} install
-	@cd ${WRKSRC}/src/silc/core && \
-		${MAKE} install
-	@cd ${CLIENT_DIR}/apps/irssi/docs/help && \
-		${MAKE} install
+	@cd ${WRKSRC}/src/perl/silc && ${SETENV} ${MAKE_ENV} \
+		${MAKE_PROGRAM} ${FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
+	@cd ${WRKSRC}/src/fe-common/silc && ${SETENV} ${MAKE_ENV} \
+		${MAKE_PROGRAM} ${FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
+	@cd ${WRKSRC}/src/silc/core && ${SETENV} ${MAKE_ENV} \
+		${MAKE_PROGRAM} ${FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
+	@cd ${CLIENT_DIR}/apps/irssi/docs/help && ${SETENV} ${MAKE_ENV} \
+		${MAKE_PROGRAM} ${FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
 
-.for i in la so a
+.for i in la so
 	@mv -f ${PREFIX}/lib/irssi/modules/libfe_common_silc.${i} \
 		${PREFIX}/lib/irssi/modules/libfe_silc.${i}
 .endfor
