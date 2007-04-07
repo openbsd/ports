@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2007/03/15 11:30:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.13 2007/04/07 14:05:04 steven Exp $
 
 COMMENT=		"code editor for GNOME"
 
 DISTNAME=		glimmer-1.2.1
-PKGNAME=		glimmer-1.2.1p3
+PKGNAME=		glimmer-1.2.1p4
 CATEGORIES=		editors x11
 
 HOMEPAGE=		http://glimmer.sourceforge.net/
@@ -30,6 +30,7 @@ LIB_DEPENDS=		gnomeprint.>=16::x11/gnome/print \
 SEPARATE_BUILD=		concurrent
 USE_X11=                Yes
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=        gnu
 CONFIGURE_ARGS+=	--disable-python
