@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/04/06 14:39:33 martynas Exp $
+# $OpenBSD: Makefile,v 1.9 2007/04/07 17:41:12 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
@@ -10,7 +10,7 @@ VER=		1.1.1
 DISTNAME=	seamonkey-${VER}.source
 PKGNAME=	seamonkey-${VER}
 PKGNAME-main=	seamonkey-${VER}p0
-PKGNAME-devel=	seamonkey-devel-${VER}
+PKGNAME-devel=	seamonkey-devel-${VER}p0
 
 SO_VERSION=	10.0
 # NOTE: Must bump minor version if any shlib's are removed from the
