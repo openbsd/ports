@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2006/12/16 12:22:35 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/04/07 14:54:12 steven Exp $
 
 COMMENT=	"extremely lightweight and simple web browser for gnome"
 
 M=		1.4
 V=		1.4.8
 DISTNAME=	epiphany-${V}
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.gnome.org/projects/epiphany/
@@ -46,6 +46,7 @@ WANTLIB=	ORBit-2 ORBitCosNaming-2 art_lgpl_2 atk-1.0 \
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/epiphany \

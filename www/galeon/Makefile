@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2006/12/16 12:22:35 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2007/04/07 14:54:12 steven Exp $
 
 COMMENT=	"GNOME web browser based on gecko"
 
 V=		1.3.21
 DISTNAME=	galeon-${V}
-PKGNAME=	${DISTNAME}p6
+PKGNAME=	${DISTNAME}p7
 CATEGORIES=	www
 
 HOMEPAGE=	http://galeon.sourceforge.net/
@@ -42,6 +42,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/galeon \
 		--disable-schemas-install \

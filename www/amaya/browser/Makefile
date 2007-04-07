@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2006/11/13 12:53:08 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2007/04/07 14:54:12 steven Exp $
 #
 # Many variables moved to ../Makefile.inc
 
@@ -6,7 +6,7 @@ COMMENT=		"test-bed browser/authoring tool of the W3C"
 
 AMAYA_VERSION=		5.1
 DISTNAME=		amaya-src-${AMAYA_VERSION}
-PKGNAME=		amaya-${AMAYA_VERSION}p1
+PKGNAME=		amaya-${AMAYA_VERSION}p2
 
 HOMEPAGE=		http://www.w3.org/Amaya/
 
@@ -45,6 +45,8 @@ WRKBUILD=		${WRKDIR}/Amaya/obj
 WRKDIST=		${WRKDIR}
 
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
+LIBTOOL_FLAGS=		--tag=disable-shared
 AUTOCONF_VERSION=	2.13
 CONFIGURE_STYLE=	autoconf dest
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/../libwww/config
