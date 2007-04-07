@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1 2007/04/07 15:54:06 espie Exp $
+--- configure.ac.orig	Sat Apr  7 17:25:58 2007
++++ configure.ac	Sat Apr  7 17:26:53 2007
+@@ -235,7 +235,7 @@ GST_CHECK_X
+ save_CPPFLAGS="$CPPFLAGS"
+ save_LIBS="$LIBS"
+ CPPFLAGS="$CPPFLAGS $X_CFLAGS"
+-LIBS="$LIBS $X_LIBS"
++LIBS="$LIBS $X_LIBS -lm"
+ GST_CHECK_FEATURE(OPENGL, [Open GL], glsink, [
+   GST_CHECK_LIBHEADER(GL, GL, glTexImage2D,,
+                       GL/gl.h, HAVE_OPENGL="yes", HAVE_OPENGL="no")
