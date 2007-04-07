@@ -1,8 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/03/16 18:26:01 claudio Exp $
-lib/quake2/baseq2/game.so
-lib/quake2/ctf/game.so
-lib/quake2/ref_softsdl.so
-lib/quake2/ref_softx.so
-lib/quake2/snd_oss.so
-lib/quake2/snd_sdl.so
-lib/quake2/snd_solaris.so

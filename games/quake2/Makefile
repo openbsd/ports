@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/03/16 18:26:01 claudio Exp $
+# $OpenBSD: Makefile,v 1.2 2007/04/07 12:13:41 steven Exp $
 
 ONLY_FOR_ARCHS= 	i386
+SHARED_ONLY=		Yes
 
 COMMENT=		"first person shooter"
 
 DISTNAME=		quake2-0.3
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		games
 
 HOMEPAGE=		http://www.quakeforge.net/
@@ -25,17 +27,11 @@ LIB_DEPENDS=		SDL::devel/sdl
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
+USE_LIBTOOL=		Yes
+LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_STYLE=	gnu
 NO_REGRESS=		Yes
 
 CFLAGS+=                -pthread -g
-
-PLUGINS=		ref_softsdl.so ref_softx.so snd_oss.so snd_sdl.so \
-			snd_solaris.so baseq2/game.so ctf/game.so
-
-post-install:
-	(cd ${PREFIX}/lib/quake2; for i in ${PLUGINS}; do \
-		mv $${i}.0.0 $${i}; \
-	done)
 
 .include <bsd.port.mk>
