@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/09/20 15:22:43 aanriot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/04/07 19:44:53 steven Exp $
 
 COMMENT=	"Atmel AVR 8-bit RISC microcontrollers' GNU binutils"
 
 VER=		2.15
 DISTNAME=	binutils-${VER}
-PKGNAME=	avr-binutils-${VER}
+PKGNAME=	avr-binutils-${VER}p0
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.gnu.org/software/binutils/
@@ -19,5 +19,8 @@ WANTLIB=		c
 MASTER_SITES=	${MASTER_SITE_GNU:=binutils/}
 
 CONFIGURE_ARGS+=--enable-commonbfdlib=no
+
+USE_LIBTOOL=	Yes
+LIBTOOL_FLAGS=	--tag=disable-shared
 
 .include <bsd.port.mk>

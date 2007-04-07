@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2005/09/26 08:59:06 aanriot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/04/07 19:44:53 steven Exp $
 
 COMMENT=	"Atmel AVR 8-bit RISC microcontrollers' GNU gdb"
 
 VER=		6.3
 DISTNAME=	gdb-${VER}
-PKGNAME=	avr-gdb-${VER}p0
+PKGNAME=	avr-gdb-${VER}p1
 
 HOMEPAGE=	http://www.gnu.org/software/gdb/gdb.html
 
@@ -18,5 +18,8 @@ WANTLIB=		c m ncurses
 MASTER_SITES=   	${MASTER_SITE_GNU:=gdb/}
 
 REGRESS_DEPENDS=	::devel/dejagnu
+
+USE_LIBTOOL=	Yes
+LIBTOOL_FLAGS=	--tag=disable-shared
 
 .include <bsd.port.mk>
