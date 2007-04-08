@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/08 22:42:00 espie Exp $
+${P5SITE}/Env/
+${P5SITE}/Env/PS1.pm
+${P5SITE}/auto/
+${P5SITE}/auto/Env/
+${P5SITE}/auto/Env/PS1/
+${P5SITE}/auto/Env/PS1/C.al
+${P5SITE}/auto/Env/PS1/D.al
+${P5SITE}/auto/Env/PS1/H.al
+${P5SITE}/auto/Env/PS1/L.al
+${P5SITE}/auto/Env/PS1/P.al
+${P5SITE}/auto/Env/PS1/P_a.al
+${P5SITE}/auto/Env/PS1/P_b.al
+${P5SITE}/auto/Env/PS1/P_t.al
+${P5SITE}/auto/Env/PS1/S.al
+${P5SITE}/auto/Env/PS1/autosplit.ix
+${P5SITE}/auto/Env/PS1/dollar.al
+@man man/man3p/Env::PS1.3p
