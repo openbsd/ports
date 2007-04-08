@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2007/02/17 16:30:11 bernd Exp $
+# $OpenBSD: Makefile,v 1.48 2007/04/08 15:31:01 sturm Exp $
 
 COMMENT=	"library for dynamic creation of images"
 
 DISTNAME=	gd-2.0.34
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	gd	20.34
 CATEGORIES=	graphics
 MASTER_SITES=	${HOMEPAGE}releases/
@@ -14,7 +15,7 @@ LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
 
 MODULES=	converters/libiconv
 
-WANTLIB=	c fontconfig freetype m z
+WANTLIB=	c expat fontconfig freetype m z
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
