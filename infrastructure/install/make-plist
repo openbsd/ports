@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.92 2007/02/07 11:24:23 bernd Exp $
+# $OpenBSD: make-plist,v 1.93 2007/04/08 15:22:49 espie Exp $
 # Copyright (c) 2004-2006 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -527,12 +527,17 @@ sub get_type
 sub resolve_link
 {
 	my $filename = shift;
+	my $level = shift || 0;
 	if (-l $filename) {
 		my $l = readlink($filename); 
+		if ($level++ > 14) {
+			print STDERR "Symlink too deep: $filename\n";
+			return $filename;
+		}
 		if ($l =~ m|^/|) {
-			return $destdir.resolve_link($l);
+			return $destdir.resolve_link($l, $level);
 		} else {
-			return resolve_link(File::Spec->catfile(dirname($filename),$l));
+			return resolve_link(File::Spec->catfile(dirname($filename),$l), $level);
 		}
 	} else {
 		return $filename;
