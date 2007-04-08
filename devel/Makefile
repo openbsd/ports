@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.492 2007/04/06 16:01:05 steven Exp $
+# $OpenBSD: Makefile,v 1.493 2007/04/08 22:44:51 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -285,12 +285,14 @@
      SUBDIR += p5-Devel-StackTrace
      SUBDIR += p5-Devel-Symdump
      SUBDIR += p5-Devel-ptkdb
+     SUBDIR += p5-Env-PS1 
      SUBDIR += p5-Error
      SUBDIR += p5-Event
      SUBDIR += p5-Event-Lib
      SUBDIR += p5-Exception-Class
      SUBDIR += p5-Expect
      SUBDIR += p5-Exporter-Lite
+     SUBDIR += p5-Exporter-Tidy
      SUBDIR += p5-ExtUtils-CBuilder
      SUBDIR += p5-ExtUtils-Depends
      SUBDIR += p5-ExtUtils-ParseXS
@@ -418,6 +420,7 @@
      SUBDIR += p5-Term-Prompt
      SUBDIR += p5-Term-ReadKey
      SUBDIR += p5-Term-ReadLine-Gnu
+     SUBDIR += p5-Term-ReadLine-Zoid 
      SUBDIR += p5-Term-ReadPassword
      SUBDIR += p5-Term-Screen
      SUBDIR += p5-Term-ScreenColor
