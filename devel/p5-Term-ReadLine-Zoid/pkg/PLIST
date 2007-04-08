@@ -1,0 +1,64 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/08 22:43:26 espie Exp $
+${P5SITE}/Term/
+${P5SITE}/Term/ReadLine/
+${P5SITE}/Term/ReadLine/Zoid/
+${P5SITE}/Term/ReadLine/Zoid.pm
+${P5SITE}/Term/ReadLine/Zoid/Base.pm
+${P5SITE}/Term/ReadLine/Zoid/Emacs.pm
+${P5SITE}/Term/ReadLine/Zoid/FileBrowse.pm
+${P5SITE}/Term/ReadLine/Zoid/ISearch.pm
+${P5SITE}/Term/ReadLine/Zoid/ViCommand.pm
+${P5SITE}/auto/
+${P5SITE}/auto/Term/
+${P5SITE}/auto/Term/ReadLine/
+${P5SITE}/auto/Term/ReadLine/Zoid/
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/_do_motion.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/_get_chr.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/_parse_chrs.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/alias.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/ascii.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/autosplit.ix
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/bindchr.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/bindkey.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/bsearch.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/eval.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/fsearch.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/quit.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/set.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/shell.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/testchr.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/vi_B.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/vi_C.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/vi_D.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/vi_E.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/vi_F.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/vi_G.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/vi_J.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/vi_K.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/vi_N.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/vi_P.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/vi_S.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/vi_U.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/vi_V.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/vi_W.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/vi_X.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/vi_Y.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/vi_c_repeat.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/vi_case.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/vi_comment.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/vi_complete.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/vi_cursor.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/vi_home.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/vi_increment.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/vi_macro.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/vi_mini_buffer.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/vi_r.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/vi_repeat.al
+${P5SITE}/auto/Term/ReadLine/Zoid/ViCommand/vi_topic.al
+@man man/man3p/Term::ReadLine::Zoid.3p
+@man man/man3p/Term::ReadLine::Zoid::Base.3p
+@man man/man3p/Term::ReadLine::Zoid::Emacs.3p
+@man man/man3p/Term::ReadLine::Zoid::FileBrowse.3p
+@man man/man3p/Term::ReadLine::Zoid::ISearch.3p
+@man man/man3p/Term::ReadLine::Zoid::ViCommand.3p
