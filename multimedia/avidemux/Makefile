@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2007/02/11 00:56:57 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2007/04/08 17:34:54 ajacoutot Exp $
 
 COMMENT=	"free video editor"
 
 V=		2.3.0
 DISTNAME=	avidemux_${V}
-PKGNAME=	avidemux-${V}p0
+PKGNAME=	avidemux-${V}p1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=avidemux/}
 
@@ -18,10 +18,10 @@ PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
-WANTLIB=	ICE SM freetype c stdc++ Xv ossaudio m X11 Xrender pthread \
+WANTLIB=	freetype c stdc++ Xv ossaudio m X11 Xrender pthread \
 		Xext fontconfig z pango-1.0 pangocairo-1.0 cairo.>=4 \
 		atk-1.0 gmodule-2.0 gthread-2.0 glib-2.0 pangoft2-1.0 \
-		gobject-2.0
+		gobject-2.0 Xau Xdmcp expat
 
 MODULES=	devel/gettext
 
@@ -35,7 +35,8 @@ LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		faac::audio/faac \
 		glitz.>=1::graphics/glitz \
 		ogg.>=5::audio/libogg \
-		png.>=5::graphics/png
+		png.>=5::graphics/png \
+		x264::multimedia/x264
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes

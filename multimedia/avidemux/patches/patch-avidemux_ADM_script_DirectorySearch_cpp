@@ -1,7 +1,7 @@
-$OpenBSD: patch-avidemux_ADM_script_DirectorySearch_cpp,v 1.1 2006/12/06 16:20:30 ajacoutot Exp $
+$OpenBSD: patch-avidemux_ADM_script_DirectorySearch_cpp,v 1.2 2007/04/08 17:34:54 ajacoutot Exp $
 --- avidemux/ADM_script/DirectorySearch.cpp.orig	Sun Oct  8 16:40:42 2006
-+++ avidemux/ADM_script/DirectorySearch.cpp	Sun Dec  3 12:42:59 2006
-@@ -29,7 +29,7 @@ int CDirectorySearch::_findnext(unsigned
++++ avidemux/ADM_script/DirectorySearch.cpp	Sun Apr  8 11:03:46 2007
+@@ -29,7 +29,7 @@ int CDirectorySearch::_findnext(unsigned long int hDir
  	strncpy(pfdData->name,pEntry->d_name,pEntry->d_reclen);
  	// append NULL terminator
  	pfdData->name[pEntry->d_reclen] = '\0';
