@@ -1,7 +1,7 @@
-$OpenBSD: patch-hotspot_build_bsd_makefiles_jvmti_make,v 1.1 2006/04/28 20:56:15 kurt Exp $
---- hotspot/build/bsd/makefiles/jvmti.make.orig	Fri Apr 14 01:27:55 2006
-+++ hotspot/build/bsd/makefiles/jvmti.make	Thu Apr 27 21:26:10 2006
-@@ -40,7 +40,15 @@ JvmtiGenClass = $(JvmtiOutDir)/jvmtiGen.
+$OpenBSD: patch-hotspot_build_bsd_makefiles_jvmti_make,v 1.2 2007/04/08 12:43:06 kurt Exp $
+--- hotspot/build/bsd/makefiles/jvmti.make.orig	Thu Mar 29 20:06:38 2007
++++ hotspot/build/bsd/makefiles/jvmti.make	Thu Mar 29 20:06:41 2007
+@@ -40,7 +40,15 @@ JvmtiGenClass = $(JvmtiOutDir)/jvmtiGen.class
  
  JvmtiGeneratedFiles = $(JvmtiGeneratedNames:%=$(JvmtiOutDir)/%)
  
