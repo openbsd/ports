@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_misc_modules_c,v 1.5 2006/12/23 13:31:31 jolan Exp $
---- src/misc/modules.c.orig	Fri Dec  8 19:12:08 2006
-+++ src/misc/modules.c	Sat Dec 23 03:45:09 2006
+$OpenBSD: patch-src_misc_modules_c,v 1.6 2007/04/08 17:34:20 ajacoutot Exp $
+--- src/misc/modules.c.orig	Sat Dec  9 02:12:08 2006
++++ src/misc/modules.c	Sun Apr  8 10:45:30 2007
 @@ -1589,6 +1589,7 @@ static char * GetWindowsError( void )
   *****************************************************************************/
  static void CacheLoad( vlc_object_t *p_this )
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_misc_modules_c,v 1.5 2006/12/23 13:31:31 jolan Exp $
      char *psz_filename, *psz_homedir;
      FILE *file;
      int i, j, i_size, i_read;
-@@ -1707,6 +1708,7 @@ static void CacheLoad( vlc_object_t *p_t
+@@ -1707,6 +1708,7 @@ static void CacheLoad( vlc_object_t *p_this )
      if( i_cache )
          pp_cache = p_this->p_libvlc->p_module_bank->pp_loaded_cache =
                     malloc( i_cache * sizeof(void *) );
@@ -17,7 +17,7 @@ $OpenBSD: patch-src_misc_modules_c,v 1.5 2006/12/23 13:31:31 jolan Exp $
  
  #define LOAD_IMMEDIATE(a) \
      if( fread( &a, sizeof(char), sizeof(a), file ) != sizeof(a) ) goto error
-@@ -1723,7 +1725,7 @@ static void CacheLoad( vlc_object_t *p_t
+@@ -1723,7 +1725,7 @@ static void CacheLoad( vlc_object_t *p_this )
        } else a = 0; \
      } while(0)
  
@@ -26,7 +26,7 @@ $OpenBSD: patch-src_misc_modules_c,v 1.5 2006/12/23 13:31:31 jolan Exp $
      for( i = 0; i < i_cache; i++ )
      {
          uint16_t i_size;
-@@ -1799,6 +1801,7 @@ static void CacheLoad( vlc_object_t *p_t
+@@ -1799,6 +1801,7 @@ static void CacheLoad( vlc_object_t *p_this )
      p_this->p_libvlc->p_module_bank->i_loaded_cache = 0;
  
      fclose( file );

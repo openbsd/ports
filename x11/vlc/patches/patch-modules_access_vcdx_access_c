@@ -1,7 +1,7 @@
-$OpenBSD: patch-modules_access_vcdx_access_c,v 1.1 2007/01/04 11:30:00 mbalmer Exp $
---- modules/access/vcdx/access.c.orig	Thu Jan  4 00:54:36 2007
-+++ modules/access/vcdx/access.c	Thu Jan  4 00:56:28 2007
-@@ -92,17 +92,17 @@ cdio_log_handler (cdio_log_level_t level
+$OpenBSD: patch-modules_access_vcdx_access_c,v 1.2 2007/04/08 17:34:20 ajacoutot Exp $
+--- modules/access/vcdx/access.c.orig	Sat Dec  9 02:12:16 2006
++++ modules/access/vcdx/access.c	Sun Apr  8 10:45:29 2007
+@@ -92,17 +92,17 @@ cdio_log_handler (cdio_log_level_t level, const char m
    case CDIO_LOG_DEBUG:
    case CDIO_LOG_INFO:
      if (p_vcdplayer->i_debug & INPUT_DBG_CDIO)
@@ -23,7 +23,7 @@ $OpenBSD: patch-modules_access_vcdx_access_c,v 1.1 2007/01/04 11:30:00 mbalmer E
              _("The above message had unknown log level"),
              level);
    }
-@@ -118,14 +118,14 @@ vcd_log_handler (vcd_log_level_t level, 
+@@ -118,14 +118,14 @@ vcd_log_handler (vcd_log_level_t level, const char mes
    case VCD_LOG_DEBUG:
    case VCD_LOG_INFO:
      if (p_vcdplayer->i_debug & INPUT_DBG_VCDINFO)

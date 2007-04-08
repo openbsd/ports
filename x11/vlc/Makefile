@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2007/02/15 17:15:42 steven Exp $
+# $OpenBSD: Makefile,v 1.45 2007/04/08 17:34:20 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"videolan client; multimedia player"
 V=		0.8.6
 DISTNAME=	vlc-${V}
-PKGNAME=	vlc-${V}p2
+PKGNAME=	vlc-${V}p3
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -38,10 +38,11 @@ LIB_DEPENDS=	SDL_image.>=1.3::devel/sdl-image \
 		ebml::textproc/libebml \
 		dvdnav.>=3.0::multimedia/libdvdnav \
                 dvdread.>=3.0::devel/libdvdread \
+		x264::multimedia/x264 \
 		wx_base,wx_base_net,wx_base_odbc,wx_base_xml,wx_gtk2_adv,wx_gtk2_core,wx_gtk2_dbgrid,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_xrc:wxWidgets-gtk2->=2.6.3:x11/wxWidgets
 
 WANTLIB=	ICE SM X11 Xext Xinerama Xv Xxf86vm c freetype m ncurses \
-		ossaudio pthread stdc++ usbhid z \
+		ossaudio pthread stdc++ usbhid z Xau Xdmcp \
 		SDL jpeg tiff faac faad mp3lame ogg vorbis vorbisenc
 
 CONFIGURE_STYLE=autoconf
@@ -99,7 +100,6 @@ CONFIGURE_ARGS+=--disable-pth \
 		--disable-vcd \
 		--disable-quicktime \
 		--disable-dts \
-		--disable-x264 \
 		--disable-glx \
 		--disable-opengl \
 		--disable-hd1000v \

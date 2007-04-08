@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.6 2006/12/23 13:31:31 jolan Exp $
---- configure.ac.orig	Fri Dec  8 19:32:53 2006
-+++ configure.ac	Sat Dec 23 05:28:10 2006
+$OpenBSD: patch-configure_ac,v 1.7 2007/04/08 17:34:20 ajacoutot Exp $
+--- configure.ac.orig	Sat Dec  9 02:32:53 2006
++++ configure.ac	Sun Apr  8 10:45:42 2007
 @@ -210,7 +210,7 @@ case "${target_os}" in
      VLC_ADD_CFLAGS([libvlc],[-x objective-c])
      VLC_ADD_CFLAGS([vlc],[-x objective-c])
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure_ac,v 1.6 2006/12/23 13:31:31 jolan Exp $
          SYS=mingwce
          ;;
      esac
-@@ -664,6 +664,9 @@ if test "${SYS}" != "mingw32" -a "${SYS}
+@@ -664,6 +664,9 @@ if test "${SYS}" != "mingw32" -a "${SYS}" != "mingwce"
  dnl Check for pthreads - borrowed from XMMS
  THREAD_LIB=error
  if test "${THREAD_LIB}" = "error"; then
@@ -29,7 +29,7 @@ $OpenBSD: patch-configure_ac,v 1.6 2006/12/23 13:31:31 jolan Exp $
    AC_CHECK_LIB(pthread,main,THREAD_LIB="-lpthread")
  fi
  if test "${THREAD_LIB}" = "error"; then
-@@ -2675,7 +2678,7 @@ dnl Look for a ffmpeg-config (we are on 
+@@ -2675,7 +2678,7 @@ dnl Look for a ffmpeg-config (we are on debian )
   else
  
  dnl Trying with pkg-config

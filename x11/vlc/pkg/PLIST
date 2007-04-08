@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2006/12/24 01:57:16 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.24 2007/04/08 17:34:20 ajacoutot Exp $
 %%altivec%%
 %%win32%%
 %%x86opt%%
@@ -98,6 +98,7 @@ lib/vlc/codec/libspudec_plugin.so
 lib/vlc/codec/libsubsdec_plugin.so
 lib/vlc/codec/libsvcdsub_plugin.so
 lib/vlc/codec/libvorbis_plugin.so
+lib/vlc/codec/libx264_plugin.so
 lib/vlc/control/
 lib/vlc/control/libgestures_plugin.so
 lib/vlc/control/libhotkeys_plugin.so

@@ -1,7 +1,7 @@
-$OpenBSD: patch-share_Makefile_in,v 1.1 2006/12/23 13:31:31 jolan Exp $
---- share/Makefile.in.orig	Sat Dec 23 04:09:53 2006
-+++ share/Makefile.in	Sat Dec 23 04:40:35 2006
-@@ -805,7 +805,6 @@ skins2/default.vlt: $(skins2_default_vlt
+$OpenBSD: patch-share_Makefile_in,v 1.2 2007/04/08 17:34:20 ajacoutot Exp $
+--- share/Makefile.in.orig	Sat Dec  9 02:34:54 2006
++++ share/Makefile.in	Sun Apr  8 10:45:42 2007
+@@ -805,7 +805,6 @@ skins2/default.vlt: $(skins2_default_vlt_FILES)
  
  skins2/default.vlt:
  	mkdir -p skins2
