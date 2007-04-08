@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1 2006/12/23 17:04:16 naddy Exp $
---- configure.orig	Wed Jun 28 13:55:10 2006
-+++ configure	Wed Jun 28 13:55:27 2006
+$OpenBSD: patch-configure,v 1.2 2007/04/08 17:36:59 naddy Exp $
+--- configure.orig	Sun Jun 25 23:34:41 2006
++++ configure	Sun Apr  8 19:35:46 2007
 @@ -159,7 +159,7 @@ EOF
    do
      if runcmd $CC $CFLAGS_GTK -I$intl_testdir $LDFLAGS_GTK -o testconf testconf.c
@@ -10,3 +10,12 @@ $OpenBSD: patch-configure,v 1.1 2006/12/23 17:04:16 naddy Exp $
        rm -f testconf.c testconf
        return 0
      fi
+@@ -173,7 +173,7 @@ gtk_test()
+   verbose gtk_test
+   if runcmd pkg-config gtk+-2.0
+   then
+-    if runcmd expr `pkg-config --modversion gtk+-2.0` '>=' 2.6.0
++    if runcmd pkg-config --atleast-version 2.6.0 gtk+-2.0
+     then
+       cat > testconf.c << EOF
+       #include <gtk/gtk.h>

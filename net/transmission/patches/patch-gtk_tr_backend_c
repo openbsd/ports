@@ -1,7 +1,7 @@
-$OpenBSD: patch-gtk_tr_backend_c,v 1.1 2006/12/23 17:04:16 naddy Exp $
---- gtk/tr_backend.c.orig	Thu Dec 21 21:11:14 2006
-+++ gtk/tr_backend.c	Thu Dec 21 21:11:59 2006
-@@ -279,14 +279,17 @@ tr_backend_stop_torrents(TrBackend *back
+$OpenBSD: patch-gtk_tr_backend_c,v 1.2 2007/04/08 17:36:59 naddy Exp $
+--- gtk/tr_backend.c.orig	Sun Jun 25 23:34:31 2006
++++ gtk/tr_backend.c	Sun Apr  8 19:34:23 2007
+@@ -279,14 +279,17 @@ tr_backend_stop_torrents(TrBackend *back) {
  gboolean
  tr_backend_torrents_stopped(TrBackend *back) {
    GList *ii, *list;
