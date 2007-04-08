@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.272 2007/03/31 11:59:52 martynas Exp $
+# $OpenBSD: Makefile,v 1.273 2007/04/08 21:22:08 espie Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -170,6 +170,7 @@
      SUBDIR += slock
      SUBDIR += swisswatch
      SUBDIR += tango-icon-theme
+     SUBDIR += tellico
      SUBDIR += terminus-font
      SUBDIR += tk
      SUBDIR += tktable
