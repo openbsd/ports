@@ -1,0 +1,12 @@
+$OpenBSD: patch-qt_Makefile_in,v 1.1 2007/04/08 14:58:04 espie Exp $
+--- qt/Makefile.in.orig	Wed Mar 14 21:37:40 2007
++++ qt/Makefile.in	Sun Apr  8 13:15:24 2007
+@@ -564,7 +564,7 @@ EXTRA_DIST = pref-keyeditformbase.ui  pref-olisteditfo
+ 
+ @APPLET_KDE_TRUE@@QT_TRUE@uim_panelapplet_la_CXXFLAGS = -I@KDE_INCLUDE_DIR@ $(QT_CXXFLAGS)
+ @APPLET_KDE_TRUE@@QT_TRUE@uim_panelapplet_la_LDFLAGS = -avoid-version -module -no-undefined -Wl,--no-undefined -Wl,--allow-shlib-undefined -L@KDE_LIB_DIR@ $(QT_LDFLAGS)
+-@APPLET_KDE_TRUE@@QT_TRUE@uim_panelapplet_la_LIBADD = $(top_builddir)/uim/libuim.la libtoolbarcommon.la  -lkdeui -lkdecore 
++@APPLET_KDE_TRUE@@QT_TRUE@uim_panelapplet_la_LIBADD = $(top_builddir)/uim/libuim.la libtoolbarcommon.la  -lkdeui -lkdecore -Wl,-lc
+ 
+ # Candidate Window
+ @QT_TRUE@uim_candwin_qt_SOURCES = candwin-qt.cpp candwin-qt.h qtgettext.h

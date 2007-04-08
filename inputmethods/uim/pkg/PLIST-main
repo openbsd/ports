@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/21 00:47:28 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/04/08 14:58:04 espie Exp $
 @pkgpath inputmethods/uim
 bin/uim-el-agent
 bin/uim-el-helper-agent
@@ -7,6 +7,17 @@ bin/uim-fep-tick
 bin/uim-module-manager
 bin/uim-sh
 bin/uim-xim
+include/gcroots.h
+include/libgcroots/
+include/sigscheme/
+include/sigscheme/config-old.h
+include/sigscheme/config.h
+include/sigscheme/encoding-dummy.h
+include/sigscheme/global.h
+include/sigscheme/scmint.h
+include/sigscheme/sigscheme.h
+include/sigscheme/storage-common.h
+include/sigscheme/storage-compact.h
 include/uim/
 include/uim/plugin.h
 include/uim/uim-compat-scm.h
@@ -16,12 +27,17 @@ include/uim/uim-im-switcher.h
 include/uim/uim-scm.h
 include/uim/uim-util.h
 include/uim/uim.h
+lib/libgcroots.a
+lib/libgcroots.la
+@lib lib/libgcroots.so.${LIBgcroots_VERSION}
 lib/libuim-custom.a
 lib/libuim-custom.la
 @lib lib/libuim-custom.so.${LIBuim-custom_VERSION}
 lib/libuim.a
 lib/libuim.la
 @lib lib/libuim.so.${LIBuim_VERSION}
+lib/pkgconfig/gcroots.pc
+lib/pkgconfig/sigscheme.pc
 lib/pkgconfig/uim.pc
 lib/uim/
 lib/uim/plugin/
@@ -38,6 +54,23 @@ libexec/uim-helper-server
 @man man/man1/uim-xim.1
 share/applications/
 share/applications/uim.desktop
+share/doc/sigscheme/
+share/doc/sigscheme/design.html
+share/doc/sigscheme/design.txt
+share/doc/sigscheme/gc-protection.html
+share/doc/sigscheme/gc-protection.txt
+share/doc/sigscheme/global-obj.html
+share/doc/sigscheme/global-obj.txt
+share/doc/sigscheme/index.html
+share/doc/sigscheme/index.txt
+share/doc/sigscheme/release.html
+share/doc/sigscheme/release.txt
+share/doc/sigscheme/spec.html
+share/doc/sigscheme/spec.txt
+share/doc/sigscheme/style.html
+share/doc/sigscheme/style.txt
+share/doc/sigscheme/test-c.html
+share/doc/sigscheme/test-c.txt
 share/emacs/site-lisp/uim-el/
 share/emacs/site-lisp/uim-el/uim-candidate.el
 share/emacs/site-lisp/uim-el/uim-debug.el
@@ -113,6 +146,8 @@ share/uim/pixmaps/hangul2.svg
 share/uim/pixmaps/hangul3.png
 share/uim/pixmaps/hangul3.svg
 share/uim/pixmaps/im_subst.svg
+share/uim/pixmaps/im_switcher.png
+share/uim/pixmaps/im_switcher.svg
 share/uim/pixmaps/ipa-x-sampa.png
 share/uim/pixmaps/ipa-x-sampa.svg
 share/uim/pixmaps/ja_azik.png
@@ -167,9 +202,10 @@ share/uim/pixmaps/scim.png
 share/uim/pixmaps/scim.svg
 share/uim/pixmaps/skk.png
 share/uim/pixmaps/skk.svg
-share/uim/pixmaps/switcher-icon.png
 share/uim/pixmaps/tcode.png
 share/uim/pixmaps/tcode.svg
+share/uim/pixmaps/trycode.png
+share/uim/pixmaps/trycode.svg
 share/uim/pixmaps/tutcode.png
 share/uim/pixmaps/tutcode.svg
 share/uim/pixmaps/uim-dict.png
@@ -200,6 +236,7 @@ share/uim/skk.scm
 share/uim/spellcheck-custom.scm
 share/uim/spellcheck.scm
 share/uim/tcode.scm
+share/uim/trycode.scm
 share/uim/tutcode-key-custom.scm
 share/uim/tutcode.scm
 share/uim/uim-db.scm

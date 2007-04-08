@@ -1,4 +1,4 @@
-qt3 input module for uim, the universal input method.
+kde input module for uim, the universal input method.
 In order to use it, you have to put something like
 
 export XMODIFIERS=@im=uim
