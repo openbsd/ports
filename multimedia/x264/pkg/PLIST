@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/08 17:31:01 ajacoutot Exp $
+%%SHARED%%
+bin/x264
+include/x264.h
+lib/libx264.a
+lib/pkgconfig/
+lib/pkgconfig/x264.pc

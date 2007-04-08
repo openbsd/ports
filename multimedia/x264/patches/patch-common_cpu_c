@@ -1,0 +1,12 @@
+$OpenBSD: patch-common_cpu_c,v 1.1.1.1 2007/04/08 17:31:01 ajacoutot Exp $
+--- common/cpu.c.orig	Sun Mar 25 22:45:02 2007
++++ common/cpu.c	Mon Mar 26 17:28:58 2007
+@@ -144,7 +144,7 @@ uint32_t x264_cpu_detect( void )
+     return cpu;
+ }
+ 
+-#elif defined( SYS_LINUX )
++#elif defined SYS_LINUX || defined SYS_OPENBSD
+ #include <signal.h>
+ #include <setjmp.h>
+ static sigjmp_buf jmpbuf;

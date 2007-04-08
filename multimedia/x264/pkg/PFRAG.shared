@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/04/08 17:31:01 ajacoutot Exp $
+@lib lib/libx264.so.${LIBx264_VERSION}

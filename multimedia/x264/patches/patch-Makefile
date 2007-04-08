@@ -1,0 +1,50 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2007/04/08 17:31:01 ajacoutot Exp $
+--- Makefile.orig	Sun Mar 25 22:45:02 2007
++++ Makefile	Sat Apr  7 13:58:39 2007
+@@ -47,6 +47,9 @@ ALTIVECSRC += common/ppc/mc.c common/ppc/pixel.c commo
+               common/ppc/quant.c
+ SRCS += $(ALTIVECSRC)
+ $(ALTIVECSRC:%.c=%.o): CFLAGS += $(ALTIVECFLAGS)
++$(ALTIVECSRC:%.c=%.so): CFLAGS += $(ALTIVECFLAGS)
++common/cpu.o: CFLAGS += $(ALTIVECFLAGS)
++common/cpu.so: CFLAGS += $(ALTIVECFLAGS)
+ endif
+ 
+ # VIS optims
+@@ -60,6 +63,7 @@ SRCS += extras/getopt.c
+ endif
+ 
+ OBJS = $(SRCS:%.c=%.o)
++SOBJS = $(SRCS:%.c=%.so)
+ OBJCLI = $(SRCCLI:%.c=%.o)
+ DEP  = depend
+ 
+@@ -72,8 +76,8 @@ libx264.a: .depend $(OBJS) $(OBJASM)
+ 	ar rc libx264.a $(OBJS) $(OBJASM)
+ 	ranlib libx264.a
+ 
+-$(SONAME): .depend $(OBJS) $(OBJASM)
+-	$(CC) -shared -o $@ $(OBJS) $(OBJASM) -Wl,-soname,$(SONAME) $(LDFLAGS)
++$(SONAME): .depend $(SOBJS) $(OBJASM)
++	$(CC) -shared -o $@ $(SOBJS) $(OBJASM) -Wl,-soname,$(SONAME) $(LDFLAGS)
+ 
+ x264$(EXE): $(OBJCLI) libx264.a 
+ 	$(CC) -o $@ $+ $(LDFLAGS)
+@@ -84,6 +88,9 @@ libx264gtk.a: muxers.o libx264.a
+ checkasm: tools/checkasm.o libx264.a
+ 	$(CC) -o $@ $+ $(LDFLAGS)
+ 
++%.so: %.c
++	$(CC) $(CFLAGS) -fPIC -c -o $@ $<
++
+ common/amd64/*.o: common/amd64/amd64inc.asm
+ common/i386/*.o: common/i386/i386inc.asm
+ %.o: %.asm
+@@ -150,7 +157,6 @@ install: x264 $(SONAME)
+ 	install -m 644 x264.pc $(DESTDIR)$(libdir)/pkgconfig
+ 	install x264 $(DESTDIR)$(bindir)
+ 	ranlib $(DESTDIR)$(libdir)/libx264.a
+-	$(if $(SONAME), ln -sf $(SONAME) $(DESTDIR)$(libdir)/libx264.so)
+ 	$(if $(SONAME), install -m 755 $(SONAME) $(DESTDIR)$(libdir))
+ 
+ install-gtk: libx264gtk.a

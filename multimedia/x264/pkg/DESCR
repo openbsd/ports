@@ -1,0 +1,20 @@
+x264 is a free library for encoding H264/AVC video streams.
+
+This program requires a processor with recent instructions (MMX/SSE for
+i386, AltiVec for powerpc).
+
+Encoder features:
+ * CAVLC/CABAC
+ * Multi-references
+ * Intra: all macroblock types (16x16, 8x8, and 4x4 with all predictions)
+ * Inter P: all partitions (from 16x16 down to 4x4)
+ * Inter B: partitions from 16x16 down to 8x8 (including skip/direct)
+ * Ratecontrol: constant quantizer, single or multipass ABR, optional VBV
+ * Scene cut detection
+ * Adaptive B-frame placement
+ * B-frames as references / arbitrary frame order
+ * 8x8 and 4x4 adaptive spatial transform
+ * Lossless mode
+ * Custom quantization matrices
+ * Parallel encoding of multiple slices
+ * Interlacing
