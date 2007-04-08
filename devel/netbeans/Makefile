@@ -1,8 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/04/02 00:48:32 pvalchev Exp $
-
-.if ${MACHINE_ARCH} == "amd64"
-BROKEN=	"java hangs compiling DDProvider.java"
-.endif
+# $OpenBSD: Makefile,v 1.4 2007/04/08 13:39:13 kurt Exp $
 
 COMMENT=		"NetBeans Java IDE"
 
