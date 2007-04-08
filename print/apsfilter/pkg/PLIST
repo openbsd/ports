@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/11/27 18:33:31 alek Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/04/08 15:19:31 sturm Exp $
 bin/aps2file
 bin/apsfilter-bug
 bin/apspreview
@@ -324,6 +324,7 @@ share/apsfilter/setup/printer-omni
 share/apsfilter/setup/printer-pcl3
 share/apsfilter/setup/printer-ppa
 share/apsfilter/setup/printer-stp
+share/apsfilter/setup/sound
 share/apsfilter/setup/test.ps
 share/apsfilter/template/
 share/apsfilter/template/README

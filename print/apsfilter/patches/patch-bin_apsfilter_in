@@ -1,0 +1,48 @@
+$OpenBSD: patch-bin_apsfilter_in,v 1.1 2007/04/08 15:19:31 sturm Exp $
+--- bin/apsfilter.in.orig	Sun Jul  9 17:54:24 2006
++++ bin/apsfilter.in	Sat Apr  7 18:25:03 2007
+@@ -277,12 +277,14 @@ play_mp3()
+     if [ "$INTERFACE" = "network" ]; then
+ 	cat -
+     else
++	cat > "$APS_TMPDIR/mp3"
+ 	if find_filter mpg123; then
+-	    mpg123 -q -
++	    mpg123 -q "$APS_TMPDIR/mp3"
+ 	else
+ 	    find_filter mpg321 || fatal_filter mpg321
+-	    mpg321 -q -
++	    mpg321 -q "$APS_TMPDIR/mp3"
+ 	fi
++	rm -f "$APS_TMPDIR/mp3"
+     fi
+ }
+ 
+@@ -1339,7 +1341,7 @@ ps_postprocessing()
+ 	cat
+     else
+ 	eval ${PS_BOOK:+psbook -q |} \
+-	    ${PS_NUP:+psnup -q -$PS_NUP ${LANDSCAPE:+$PSNUP_ROTATE} |} \
++	    ${PS_NUP:+psnup -q -p$PAPERSIZE -$PS_NUP ${LANDSCAPE:+$PSNUP_ROTATE} |} \
+ 	    ps_set_duplex ${PS_UTILS:+| $PS_UTILS}
+     fi
+ }
+@@ -1907,15 +1909,9 @@ export PATH
+ # our private temporary directory has mode 711 so that the user can see our
+ # fifo "$APS_TMPDIR/duplex-key" (in case it's needed)
+ : ${TMPDIR:=/tmp}
+-APS_TMPDIR="$TMPDIR/apsfilter$$"
+-rm -rf "$APS_TMPDIR"
+-mkdir -m 711 "$APS_TMPDIR"
+-if [ $? -ne 0 ]; then
+-    # maybe someone tried a denial-of-service attack
+-    find_filter mktemp || fatal_tmpdir
+-    APS_TMPDIR=`mktemp -q -d "$TMPDIR/apsfilter.XXXXXX"` || fatal_tmpdir
+-    chmod 711 "$APS_TMPDIR"
+-fi
++find_filter mktemp || fatal_tmpdir
++APS_TMPDIR=`mktemp -q -d "$TMPDIR/apsfilter.XXXXXX"` || fatal_tmpdir
++chmod 711 "$APS_TMPDIR"
+ echo 0 >"$APS_TMPDIR/rc"
+ 
+ # gs doesn't always remove its temp files; let it use our private

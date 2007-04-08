@@ -1,0 +1,12 @@
+$OpenBSD: patch-SETUP_in,v 1.1 2007/04/08 15:19:31 sturm Exp $
+--- SETUP.in.orig	Sat Apr  7 16:18:36 2007
++++ SETUP.in	Sat Apr  7 16:20:28 2007
+@@ -243,6 +243,8 @@ do_check_gs_version()
+ {
+     GS_VERSION=`gs --version`
+     case $GS_VERSION in
++	8*)
++	    GS_BASE=7.00 ;;
+ 	7*)
+ 	    GS_BASE=7.00 ;;
+ 	6.[5-9]*)
