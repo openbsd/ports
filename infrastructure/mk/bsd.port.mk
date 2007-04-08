@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.890 2007/04/05 18:32:26 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.891 2007/04/08 11:26:39 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1674,7 +1674,7 @@ lib-depends-check:
 
 port-lib-depends-check: ${_FAKE_COOKIE}
 .  for _S in ${MULTI_PACKAGES}
-	@SUBPACKAGE=${_S} ${MAKE} print-plist-with-depends | \
+	@-SUBPACKAGE=${_S} ${MAKE} print-plist-with-depends | \
 	 perl ${PORTSDIR}/infrastructure/package/check-newlib-depends \
 		${_NEWLIB_DEPENDS_FLAGS} -d ${_PKG_REPO} -B ${WRKINST}
 .  endfor
