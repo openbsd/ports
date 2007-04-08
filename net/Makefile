@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.451 2007/04/03 15:16:59 aanriot Exp $
+# $OpenBSD: Makefile,v 1.452 2007/04/08 19:38:25 espie Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -373,6 +373,7 @@
      SUBDIR += xorp
      SUBDIR += xprobe
      SUBDIR += yafc
+     SUBDIR += yaz
      SUBDIR += ysmv7
      SUBDIR += yt
      SUBDIR += ytalk
