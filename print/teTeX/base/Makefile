@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.45 2007/04/01 21:37:49 steven Exp $
+# $OpenBSD: Makefile,v 1.46 2007/04/08 16:33:41 sturm Exp $
 
 COMMENT-main=	"TeX distribution, executables"
 COMMENT-fmt=	"format files"
 
 VERSION=	3.0
 DISTNAME=	tetex-base-${VERSION}
-PKGNAME-main=	teTeX_base-${VERSION}p8
+PKGNAME-main=	teTeX_base-${VERSION}p9
 FULLPKGNAME-fmt=teTeX_base-fmt-${VERSION}p0
 CATEGORIES=	print
 
@@ -57,7 +57,7 @@ USE_X11=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-shared
 LIB_DEPENDS-main+=	t1.>=4::devel/t1lib
-WANTLIB-main+=		ICE SM X11 Xaw Xext Xmu Xp Xpm Xt
+WANTLIB-main+=		ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xp Xpm Xt
 RUN_DEPENDS-main+=	:ghostscript-*:print/ghostscript/gnu
 .endif
 
