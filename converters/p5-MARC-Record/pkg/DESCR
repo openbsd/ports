@@ -1,0 +1,8 @@
+The MAchine Readable Cataloging format was designed by the Library of
+Congress in the late 1960s in order to allow libraries to convert their card
+catalogs into a digital format. The advantages of having computerized card
+catalogs were soon realized, and now MARC is being used by all sorts of
+libraries around the world to provide computerized access to their collections.
+MARC data in transmission format is optimized for processing by computers, so 
+it's not very readable for the normal human. For more about the MARC format,
+visit the Library of Congress at http://www.loc.gov/marc/

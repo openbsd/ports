@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/08 21:58:45 espie Exp $
+bin/marcdump
+bin/marclint
+${P5SITE}/MARC/
+${P5SITE}/MARC/Batch.pm
+${P5SITE}/MARC/Doc/
+${P5SITE}/MARC/Doc/Tutorial.pod
+${P5SITE}/MARC/Field.pm
+${P5SITE}/MARC/File/
+${P5SITE}/MARC/File.pm
+${P5SITE}/MARC/File/MicroLIF.pm
+${P5SITE}/MARC/File/USMARC.pm
+${P5SITE}/MARC/Lint.pm
+${P5SITE}/MARC/Record.pm
+@man man/man1/marcdump.1
+@man man/man1/marclint.1
+@man man/man3p/MARC::Batch.3p
+@man man/man3p/MARC::Doc::Tutorial.3p
+@man man/man3p/MARC::Field.3p
+@man man/man3p/MARC::File.3p
+@man man/man3p/MARC::File::MicroLIF.3p
+@man man/man3p/MARC::File::USMARC.3p
+@man man/man3p/MARC::Lint.3p
+@man man/man3p/MARC::Record.3p
