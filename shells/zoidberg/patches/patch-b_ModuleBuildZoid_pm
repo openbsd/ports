@@ -1,0 +1,12 @@
+$OpenBSD: patch-b_ModuleBuildZoid_pm,v 1.1.1.1 2007/04/08 22:48:15 espie Exp $
+--- b/ModuleBuildZoid.pm.orig	Mon Apr  9 00:29:32 2007
++++ b/ModuleBuildZoid.pm	Mon Apr  9 00:29:45 2007
+@@ -35,7 +35,7 @@ sub MyInit {
+ 		$$s{share} = File::Spec->catpath($vol,
+ 			File::Spec->catdir(@dirs, qw/share zoid/) );
+ 		$$s{doc} = File::Spec->catpath($vol,
+-			File::Spec->catdir(@dirs, qw/doc zoid/) );
++			File::Spec->catdir(@dirs, qw/share doc zoid/) );
+ 		$$s{etc} = File::Spec->catpath($vol,
+ 			File::Spec->catdir(@dirs, 'etc') ); # try relative etc
+ 		$$s{etc} = File::Spec->catpath($vol,
