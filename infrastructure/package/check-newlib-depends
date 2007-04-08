@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.24 2007/04/03 10:13:27 espie Exp $
+# $OpenBSD: check-newlib-depends,v 1.25 2007/04/08 12:36:04 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -370,9 +370,14 @@ sub do_pkg
 sub do_plist
 {
 	my $plist = OpenBSD::PackingList->read(\*STDIN);
-	my $pkgname = $plist->pkgname();
-	print "\n$pkgname:\n";
-	analyze($plist, $db, $opt_B, FakeHandle->new());
+	if (!defined $plist->{name}) {
+		print STDERR "Error reading plist\n";
+		$errors++;
+	} else {
+		my $pkgname = $plist->pkgname();
+		print "\n$pkgname:\n";
+		analyze($plist, $db, $opt_B, FakeHandle->new());
+	}
 }
 
 if (@ARGV == 0 && defined $opt_B) {
