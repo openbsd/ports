@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2007/03/19 12:24:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2007/04/08 18:52:59 ajacoutot Exp $
 
      SUBDIR += avidemux
      SUBDIR += dvdauthor
@@ -20,6 +20,7 @@
      SUBDIR += streamdvd
      SUBDIR += subrip
      SUBDIR += transcode
+     SUBDIR += x264
      SUBDIR += xine-lib
      SUBDIR += xine-ui
      SUBDIR += xvidcore
