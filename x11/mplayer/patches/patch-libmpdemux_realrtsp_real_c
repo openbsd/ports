@@ -1,7 +1,7 @@
-$OpenBSD: patch-libmpdemux_realrtsp_real_c,v 1.2 2007/01/02 09:01:58 robert Exp $
---- libmpdemux/realrtsp/real.c.orig	Mon Jan  1 14:49:12 2007
-+++ libmpdemux/realrtsp/real.c	Mon Jan  1 14:49:37 2007
-@@ -528,7 +528,7 @@ rmff_header_t *real_parse_sdp(char *data
+$OpenBSD: patch-libmpdemux_realrtsp_real_c,v 1.3 2007/04/08 17:33:39 ajacoutot Exp $
+--- libmpdemux/realrtsp/real.c.orig	Sun Jun 11 20:35:46 2006
++++ libmpdemux/realrtsp/real.c	Sun Apr  8 10:17:01 2007
+@@ -528,7 +528,7 @@ rmff_header_t *real_parse_sdp(char *data, char **strea
      int j=0;
      int n;
      char b[64];

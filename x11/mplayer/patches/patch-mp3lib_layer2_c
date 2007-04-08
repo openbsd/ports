@@ -1,7 +1,7 @@
-$OpenBSD: patch-mp3lib_layer2_c,v 1.2 2005/05/09 12:24:38 biorn Exp $
---- mp3lib/layer2.c.orig	Sat Apr 16 00:21:34 2005
-+++ mp3lib/layer2.c	Wed Apr 20 06:35:55 2005
-@@ -294,6 +294,11 @@ static int do_layer2(struct frame *fr,in
+$OpenBSD: patch-mp3lib_layer2_c,v 1.3 2007/04/08 17:33:39 ajacoutot Exp $
+--- mp3lib/layer2.c.orig	Sun Jun 11 20:35:43 2006
++++ mp3lib/layer2.c	Sun Apr  8 10:17:02 2007
+@@ -294,6 +294,11 @@ static int do_layer2(struct frame *fr,int outmode)
    fr->jsbound = (fr->mode == MPG_MD_JOINT_STEREO) ?
       (fr->mode_ext<<2)+4 : fr->II_sblimit;
  

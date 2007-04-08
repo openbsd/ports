@@ -1,6 +1,6 @@
-$OpenBSD: patch-libmpdemux_tvi_bsdbt848_c,v 1.2 2006/07/19 21:40:47 robert Exp $
+$OpenBSD: patch-libmpdemux_tvi_bsdbt848_c,v 1.3 2007/04/08 17:33:39 ajacoutot Exp $
 --- libmpdemux/tvi_bsdbt848.c.orig	Sun Jun 11 20:35:46 2006
-+++ libmpdemux/tvi_bsdbt848.c	Thu Jul  6 00:08:12 2006
++++ libmpdemux/tvi_bsdbt848.c	Sun Apr  8 10:17:02 2007
 @@ -40,9 +40,12 @@
  #include <string.h>
  
@@ -78,7 +78,7 @@ $OpenBSD: patch-libmpdemux_tvi_bsdbt848_c,v 1.2 2006/07/19 21:40:47 robert Exp $
  
  static void processframe(int signal)
  {
-@@ -212,6 +242,19 @@ static int control(priv_t *priv, int cmd
+@@ -212,6 +242,19 @@ static int control(priv_t *priv, int cmd, void *arg)
          return(TVI_CONTROL_TRUE);        
          }
  
@@ -98,7 +98,7 @@ $OpenBSD: patch-libmpdemux_tvi_bsdbt848_c,v 1.2 2006/07/19 21:40:47 robert Exp $
      case TVI_CONTROL_TUN_GET_TUNER:
      case TVI_CONTROL_TUN_SET_TUNER:
  
-@@ -219,23 +262,24 @@ static int control(priv_t *priv, int cmd
+@@ -219,23 +262,24 @@ static int control(priv_t *priv, int cmd, void *arg)
  
      case TVI_CONTROL_SPC_GET_INPUT:
          {
@@ -127,7 +127,7 @@ $OpenBSD: patch-libmpdemux_tvi_bsdbt848_c,v 1.2 2006/07/19 21:40:47 robert Exp $
              return(0);
              }
  
-@@ -261,8 +305,15 @@ static int control(priv_t *priv, int cmd
+@@ -261,8 +305,15 @@ static int control(priv_t *priv, int cmd, void *arg)
      case TVI_CONTROL_AUD_SET_SAMPLERATE:
          {
          int dspspeed = (int)*(void **)arg;
@@ -206,7 +206,7 @@ $OpenBSD: patch-libmpdemux_tvi_bsdbt848_c,v 1.2 2006/07/19 21:40:47 robert Exp $
  priv->dspbytesread = 0;
  priv->dsprate = priv->dspspeed * priv->dspsamplesize/8*(priv->dspstereo+1);
  priv->dspframesize = priv->dspspeed*priv->dspsamplesize/8/priv->fps * 
-@@ -597,6 +673,31 @@ if((priv->dspfd = open (priv->dspdev, O_
+@@ -597,6 +673,31 @@ if((priv->dspfd = open (priv->dspdev, O_RDONLY, 0)) < 
  
  marg = (256 << 16) | 12;
  
@@ -263,7 +263,7 @@ $OpenBSD: patch-libmpdemux_tvi_bsdbt848_c,v 1.2 2006/07/19 21:40:47 robert Exp $
  
  if(priv->videoready == FALSE) return(0);
  
-@@ -680,6 +785,15 @@ if(ioctl(priv->btfd, METEORCAPTUR, &marg
+@@ -680,6 +785,15 @@ if(ioctl(priv->btfd, METEORCAPTUR, &marg) < 0 ) 
  close(priv->btfd);
  close(priv->dspfd);
  
@@ -279,7 +279,7 @@ $OpenBSD: patch-libmpdemux_tvi_bsdbt848_c,v 1.2 2006/07/19 21:40:47 robert Exp $
  priv->dspfd = -1;
  priv->btfd = -1;
  
-@@ -802,13 +916,13 @@ return(priv->dspbytesread * 1.0 / priv->
+@@ -802,13 +916,13 @@ return(priv->dspbytesread * 1.0 / priv->dsprate);
  static int get_audio_framesize(priv_t *priv)
  {
  int bytesavail;
@@ -295,7 +295,7 @@ $OpenBSD: patch-libmpdemux_tvi_bsdbt848_c,v 1.2 2006/07/19 21:40:47 robert Exp $
  if(ioctl(priv->dspfd, AUDIO_GETINFO, &auinf) < 0) 
      {
      perror("AUDIO_GETINFO");
-@@ -827,24 +941,28 @@ if(ioctl(priv->dspfd, FIONREAD, &bytesav
+@@ -827,24 +941,28 @@ if(ioctl(priv->dspfd, FIONREAD, &bytesavail) < 0) 
  /* When mencoder wants audio data, it wants data..
     it won't go do anything else until it gets it :( */
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.12 2006/07/19 21:40:47 robert Exp $
---- Makefile.orig	Sun Jun 11 20:35:47 2006
-+++ Makefile	Thu Jul  6 00:08:11 2006
-@@ -426,7 +426,7 @@ LIBS_MENCODER = libmpcodecs/libmpencoder
+$OpenBSD: patch-Makefile,v 1.13 2007/04/08 17:33:39 ajacoutot Exp $
+--- Makefile.orig	Sun Apr  8 10:17:01 2007
++++ Makefile	Sun Apr  8 10:17:01 2007
+@@ -429,7 +429,7 @@ LIBS_MENCODER = libmpcodecs/libmpencoders.a \
                  $(LIBC_LIB) \
  
  $(PRG_MENCODER): $(MENCODER_DEP)
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile,v 1.12 2006/07/19 21:40:47 robert Exp $
  endif
  
  codecs.conf.h: $(PRG_CFG) etc/codecs.conf
-@@ -485,8 +485,6 @@ ifeq ($(GUI),yes)
+@@ -488,8 +488,6 @@ ifeq ($(GUI),yes)
  	@$(INSTALL) -d $(prefix)/share/applications
  	$(INSTALL) -m 644 etc/mplayer.desktop $(prefix)/share/applications/mplayer.desktop
  endif

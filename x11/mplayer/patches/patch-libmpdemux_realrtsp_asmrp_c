@@ -1,6 +1,6 @@
-$OpenBSD: patch-libmpdemux_realrtsp_asmrp_c,v 1.1 2007/01/02 09:01:58 robert Exp $
---- libmpdemux/realrtsp/asmrp.c.orig	Mon Jan  1 14:46:36 2007
-+++ libmpdemux/realrtsp/asmrp.c	Mon Jan  1 14:47:35 2007
+$OpenBSD: patch-libmpdemux_realrtsp_asmrp_c,v 1.2 2007/04/08 17:33:39 ajacoutot Exp $
+--- libmpdemux/realrtsp/asmrp.c.orig	Sun Jun 11 20:35:46 2006
++++ libmpdemux/realrtsp/asmrp.c	Sun Apr  8 10:17:01 2007
 @@ -40,6 +40,7 @@
  #include <stdlib.h>
  #include <stdio.h>
@@ -9,7 +9,7 @@ $OpenBSD: patch-libmpdemux_realrtsp_asmrp_c,v 1.1 2007/01/02 09:01:58 robert Exp
  
  /*
  #define LOG
-@@ -645,8 +646,10 @@ static int asmrp_eval (asmrp_t *p, int *
+@@ -645,8 +646,10 @@ static int asmrp_eval (asmrp_t *p, int *matches) {
  #ifdef LOG
        printf ("rule #%d is true\n", rule_num);
  #endif
