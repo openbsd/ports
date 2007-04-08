@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: perl.port.mk,v 1.11 2006/06/25 09:45:05 espie Exp $
+# $OpenBSD: perl.port.mk,v 1.12 2007/04/08 16:16:06 espie Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -25,6 +25,7 @@ MODPERL_configure= \
 MODPERL_configure= \
 	arch=`/usr/bin/perl -e 'use Config; print $$Config{archname}, "\n";'`; \
      cd ${WRKSRC}; ${_SYSTRACE_CMD} ${SETENV} ${CONFIGURE_ENV} \
+	 PERL_MM_USE_DEFAULT=Yes \
      /usr/bin/perl Makefile.PL \
      	PREFIX='${PREFIX}' \
 		INSTALLSITELIB='${PREFIX}/libdata/perl5/site_perl' \
