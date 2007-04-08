@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/04/08 19:36:02 espie Exp $
+@lib lib/libyaz.so.${LIByaz_VERSION}
