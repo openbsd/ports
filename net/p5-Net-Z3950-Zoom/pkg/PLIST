@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/08 22:07:15 espie Exp $
+bin/zselect
+${P5ARCH}/
+${P5ARCH}/Net/
+${P5ARCH}/Net/Z3950/
+${P5ARCH}/Net/Z3950.pm
+${P5ARCH}/Net/Z3950/ZOOM.pm
+${P5ARCH}/ZOOM.pm
+${P5ARCH}/ZOOM.pod
+${P5ARCH}/auto/
+${P5ARCH}/auto/Net/
+${P5ARCH}/auto/Net/Z3950/
+${P5ARCH}/auto/Net/Z3950/ZOOM/
+${P5ARCH}/auto/Net/Z3950/ZOOM/ZOOM.bs
+${P5ARCH}/auto/Net/Z3950/ZOOM/ZOOM.so
+@man man/man3p/Net::Z3950::ZOOM.3p
+@man man/man3p/ZOOM.3p

@@ -1,0 +1,20 @@
+This distribution contains three Perl modules for the price of one.
+They all provide facilities for building information retrieval clients
+using the standard Z39.50 and SRW/U protocols, but do so using
+different APIs.
+
+- If you are new to this distribution, then you should use the ZOOM
+  API, and ignore the others.  It is the cleanest, most elegant and
+  intuitive, and most closely follows the letter as well as the spirit
+  of the Abstract ZOOM API as specified at http://zoom.z3950.org/api/
+
+- If you have used the old Net::Z3950 module and have to maintain an
+  application that calls that API, then you will want to use the
+  Net::Z3950 classes provided in this distribution, which provide an
+  API compatible with the old module's implemented on top of the new
+  ZOOM code.
+
+- You should definitely not use the Net::Z3950::ZOOM API, which is not
+  object-oriented, and instead provides the thinnest possible layer on
+  top of the ZOOM-C functions in the YAZ toolkit.  This API exists
+  only in order to have ZOOM API built on top of it.
