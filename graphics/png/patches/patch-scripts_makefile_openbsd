@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_makefile_openbsd,v 1.19 2007/03/15 19:19:23 naddy Exp $
+$OpenBSD: patch-scripts_makefile_openbsd,v 1.20 2007/04/08 15:02:36 naddy Exp $
 --- scripts/makefile.openbsd.orig	Wed Jan 31 14:22:38 2007
-+++ scripts/makefile.openbsd	Sat Feb 10 20:26:09 2007
++++ scripts/makefile.openbsd	Sat Mar 31 20:47:38 2007
 @@ -4,11 +4,12 @@
  # For conditions of distribution and use, see copyright notice in png.h
  
@@ -16,7 +16,7 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.19 2007/03/15 19:19:23 naddy Exp $
  
  LIB=	png
  SRCS=	png.c pngerror.c pnggccrd.c pngget.c pngmem.c pngpread.c \
-@@ -22,24 +23,42 @@ CPPFLAGS+= -I${.CURDIR} -DPNG_NO_MMX_COD
+@@ -22,24 +23,42 @@ CPPFLAGS+= -I${.CURDIR} -DPNG_NO_MMX_CODE -DPNG_USE_PN
  
  NOPROFILE= Yes
  
