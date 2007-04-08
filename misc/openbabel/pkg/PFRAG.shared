@@ -1,9 +1,10 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/01/22 16:32:41 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2007/04/08 10:10:23 ajacoutot Exp $
 @lib lib/libinchi.so.${LIBinchi_VERSION}
 @lib lib/libopenbabel.so.${LIBopenbabel_VERSION}
 lib/openbabel/APIInterface.so
 lib/openbabel/CSRformat.so
 lib/openbabel/PQSformat.so
+lib/openbabel/acrformat.so
 lib/openbabel/alchemyformat.so
 lib/openbabel/amberformat.so
 lib/openbabel/balstformat.so
@@ -11,8 +12,10 @@ lib/openbabel/bgfformat.so
 lib/openbabel/boxformat.so
 lib/openbabel/cacaoformat.so
 lib/openbabel/cacheformat.so
+lib/openbabel/cansmilesformat.so
 lib/openbabel/carformat.so
 lib/openbabel/cccformat.so
+lib/openbabel/cdxmlformat.so
 lib/openbabel/chem3dformat.so
 lib/openbabel/chemdrawcdxformat.so
 lib/openbabel/chemdrawctformat.so
@@ -26,6 +29,7 @@ lib/openbabel/cssrformat.so
 lib/openbabel/dmolformat.so
 lib/openbabel/fastaformat.so
 lib/openbabel/fastsearchformat.so
+lib/openbabel/fchkformat.so
 lib/openbabel/featformat.so
 lib/openbabel/fhformat.so
 lib/openbabel/fingerprintformat.so

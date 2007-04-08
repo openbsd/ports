@@ -1,17 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/22 16:32:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/04/08 10:10:23 ajacoutot Exp $
 %%SHARED%%
 bin/babel
 bin/obchiral
+bin/obenergy
 bin/obfit
-bin/obgen
 bin/obgrep
+bin/obminimize
 bin/obprop
 bin/obrotamer
 bin/obrotate
-bin/obxyz
 bin/roundtrip
-include/inchi/
-include/inchi/inchi_api.h
 include/openbabel-2.0/
 include/openbabel-2.0/openbabel/
 include/openbabel-2.0/openbabel/atom.h
@@ -20,6 +18,7 @@ include/openbabel-2.0/openbabel/base.h
 include/openbabel-2.0/openbabel/bitvec.h
 include/openbabel-2.0/openbabel/bond.h
 include/openbabel-2.0/openbabel/bondtyper.h
+include/openbabel-2.0/openbabel/canon.h
 include/openbabel-2.0/openbabel/chains.h
 include/openbabel-2.0/openbabel/chemdrawcdx.h
 include/openbabel-2.0/openbabel/chiral.h
@@ -29,16 +28,17 @@ include/openbabel-2.0/openbabel/fingerprint.h
 include/openbabel-2.0/openbabel/forcefield.h
 include/openbabel-2.0/openbabel/generic.h
 include/openbabel-2.0/openbabel/grid.h
+include/openbabel-2.0/openbabel/groupcontrib.h
 include/openbabel-2.0/openbabel/inchi_api.h
 include/openbabel-2.0/openbabel/internalcoord.h
 include/openbabel-2.0/openbabel/kinetics.h
+include/openbabel-2.0/openbabel/lineend.h
 include/openbabel-2.0/openbabel/math/
 include/openbabel-2.0/openbabel/math/matrix3x3.h
 include/openbabel-2.0/openbabel/math/vector3.h
 include/openbabel-2.0/openbabel/matrix.h
 include/openbabel-2.0/openbabel/mol.h
 include/openbabel-2.0/openbabel/molchrg.h
-include/openbabel-2.0/openbabel/newlinebuf.h
 include/openbabel-2.0/openbabel/obconversion.h
 include/openbabel-2.0/openbabel/oberror.h
 include/openbabel-2.0/openbabel/obiter.h
@@ -47,6 +47,7 @@ include/openbabel-2.0/openbabel/obutil.h
 include/openbabel-2.0/openbabel/parsmart.h
 include/openbabel-2.0/openbabel/patty.h
 include/openbabel-2.0/openbabel/phmodel.h
+include/openbabel-2.0/openbabel/pluginiter.h
 include/openbabel-2.0/openbabel/rand.h
 include/openbabel-2.0/openbabel/reaction.h
 include/openbabel-2.0/openbabel/residue.h
@@ -66,6 +67,8 @@ lib/openbabel/CSRformat.a
 lib/openbabel/CSRformat.la
 lib/openbabel/PQSformat.a
 lib/openbabel/PQSformat.la
+lib/openbabel/acrformat.a
+lib/openbabel/acrformat.la
 lib/openbabel/alchemyformat.a
 lib/openbabel/alchemyformat.la
 lib/openbabel/amberformat.a
@@ -80,10 +83,14 @@ lib/openbabel/cacaoformat.a
 lib/openbabel/cacaoformat.la
 lib/openbabel/cacheformat.a
 lib/openbabel/cacheformat.la
+lib/openbabel/cansmilesformat.a
+lib/openbabel/cansmilesformat.la
 lib/openbabel/carformat.a
 lib/openbabel/carformat.la
 lib/openbabel/cccformat.a
 lib/openbabel/cccformat.la
+lib/openbabel/cdxmlformat.a
+lib/openbabel/cdxmlformat.la
 lib/openbabel/chem3dformat.a
 lib/openbabel/chem3dformat.la
 lib/openbabel/chemdrawcdxformat.a
@@ -110,6 +117,8 @@ lib/openbabel/fastaformat.a
 lib/openbabel/fastaformat.la
 lib/openbabel/fastsearchformat.a
 lib/openbabel/fastsearchformat.la
+lib/openbabel/fchkformat.a
+lib/openbabel/fchkformat.la
 lib/openbabel/featformat.a
 lib/openbabel/featformat.la
 lib/openbabel/fhformat.a
@@ -203,11 +212,14 @@ share/openbabel/${V}/aromatic.txt
 share/openbabel/${V}/atomtyp.txt
 share/openbabel/${V}/bondtyp.txt
 share/openbabel/${V}/element.txt
+share/openbabel/${V}/ghemical.prm
 share/openbabel/${V}/isotope-small.txt
 share/openbabel/${V}/isotope.txt
-share/openbabel/${V}/mm2.prm
+share/openbabel/${V}/logp.txt
+share/openbabel/${V}/mr.txt
 share/openbabel/${V}/patterns.txt
 share/openbabel/${V}/phmodel.txt
+share/openbabel/${V}/psa.txt
 share/openbabel/${V}/resdata.txt
 share/openbabel/${V}/torlib.txt
 share/openbabel/${V}/types.txt
