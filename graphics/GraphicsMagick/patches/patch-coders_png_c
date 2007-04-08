@@ -1,0 +1,12 @@
+$OpenBSD: patch-coders_png_c,v 1.1 2007/04/08 15:22:50 steven Exp $
+--- coders/png.c.orig	Sun Apr  8 09:52:01 2007
++++ coders/png.c	Sun Apr  8 09:52:16 2007
+@@ -1707,7 +1707,7 @@ static Image *ReadOnePNGImage(MngInfo *mng_info,
+ #endif
+ 
+ #if defined(PNG_USE_PNGGCCRD) && defined(PNG_ASSEMBLER_CODE_SUPPORTED) \
+-&& (PNG_LIBPNG_VER >= 10200)
++&& (PNG_LIBPNG_VER >= 10200) && defined(PNG_MMX_CODE_SUPPORTED)
+   /* Disable thread-unsafe features of pnggccrd */
+   if (png_access_version() >= 10200)
+   {

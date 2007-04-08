@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.5 2007/01/31 14:34:58 bernd Exp $
+$OpenBSD: patch-configure_ac,v 1.6 2007/04/08 15:22:50 steven Exp $
 --- configure.ac.orig	Wed Jan 17 17:30:47 2007
-+++ configure.ac	Tue Jan 23 18:22:46 2007
-@@ -373,9 +373,9 @@ AM_CONDITIONAL(WITH_MODULES, test "$with
++++ configure.ac	Sun Apr  8 09:39:04 2007
+@@ -373,9 +373,9 @@ AM_CONDITIONAL(WITH_MODULES, test "$with_modules" != '
  # Enable building/use of libltdl if we are building shared libraries regardless
  # of whether modules are built or not.
  with_ltdl='no'
