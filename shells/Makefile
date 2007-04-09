@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2007/04/08 22:49:01 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2007/04/09 00:21:51 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/01/03 00:40:55 max Exp $
 #
 
@@ -8,7 +8,7 @@
     SUBDIR += sash
     SUBDIR += scsh
     SUBDIR += tcsh
-    SUBDIR += zoid
+    SUBDIR += zoidberg
     SUBDIR += zsh
 
 .include <bsd.port.subdir.mk>
