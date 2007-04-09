@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.94 2007/01/31 14:34:58 bernd Exp $
+# $OpenBSD: Makefile,v 1.95 2007/04/09 20:47:27 kili Exp $
 
 COMMENT=		"image processing tools"
 
 VER=			6.3.2
 DASHVER=		1
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
-PKGNAME=		ImageMagick-${VER}.${DASHVER}
+PKGNAME=		ImageMagick-${VER}.${DASHVER}p0
 SHARED_LIBS=		Magick++	12.0	\
 			Magick		12.0	\
 			Wand		12.0
@@ -45,6 +45,7 @@ CONFIGURE_ARGS+=	--with-quantum-depth=16 \
 			--without-dot \
 			--without-dps \
 			--without-fpx \
+			--without-gvc \
 			--without-modules \
 			--without-threads \
 			--without-perl \
@@ -70,7 +71,7 @@ RUN_DEPENDS+=		:ghostscript-*:print/ghostscript/gnu
 USE_X11=		Yes
 RUN_DEPENDS+=		:transfig-*:print/transfig
 BUILD_DEPENDS+=		:transfig-*:print/transfig
-WANTLIB+=		ICE SM X11 Xext Xt freetype
+WANTLIB+=		ICE SM X11 Xau Xdmcp Xext Xt expat fontconfig freetype 
 .endif
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S/-${DASHVER}$//}
