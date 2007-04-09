@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2006/11/20 20:54:07 bernd Exp $
+# $OpenBSD: Makefile,v 1.14 2007/04/09 20:50:57 kili Exp $
 # Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
 
@@ -8,9 +8,9 @@ COMMENT-gpsmap=	"reads GPS and Network XML datafiles and plots networks"
 # No wireless capabilities
 NOT_FOR_ARCHS=m68k m88k vax
 
-V=		2006-04-R1
+V=		2007-01-R1b
 DISTNAME=	kismet-${V}
-PKGNAME-main=	kismet-${V:S,-,,g}p0
+PKGNAME-main=	kismet-${V:S,-,,g}
 PKGNAME-gpsmap=	kismet-gpsmap-${V:S,-,,g}
 CATEGORIES=	net security
 
@@ -49,22 +49,21 @@ FLAVOR?=
 
 MULTI_PACKAGES=		-main
 
-WANTLIB-main=		c m ncurses panel pcap stdc++ z
+WANTLIB-main=		c m ncurses panel pcap stdc++
 
 .if !${FLAVOR:L:Mno_gpsmap}
 USE_X11=		Yes
 MULTI_PACKAGES+=	-gpsmap
-WANTLIB-gpsmap=		c m ICE SM freetype Xt pthread Xext X11 z \
-			stdc++ lcms jasper xml2 bz2 jbig jpeg tiff png
+WANTLIB-gpsmap=		c ICE SM X11 Xext Xt bz2 fontconfig freetype \
+			jasper jbig jpeg lcms m png pthread stdc++ \
+			tiff xml2 z
+WANTLIB-main+=		z
 LIB_DEPENDS-gpsmap=	Magick.>=11,Wand.>=11::graphics/ImageMagick \
 			gmp.>=6::devel/gmp \
 			expat.>=4::textproc/expat
 .else
 CONFIGURE_ARGS+=	--disable-gpsmap
 .endif
-
-post-extract:
-	@rm -rf ${WRKSRC}/libpcap-0.9.1-kis
 
 post-configure:
 	@cd ${WRKSRC} && ${GMAKE} depend

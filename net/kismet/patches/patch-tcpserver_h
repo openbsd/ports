@@ -1,0 +1,33 @@
+$OpenBSD: patch-tcpserver_h,v 1.1 2007/04/09 20:50:58 kili Exp $
+
+# Always use int for file descriptors.
+
+--- tcpserver.h.orig	Sun Feb  6 22:32:43 2005
++++ tcpserver.h	Wed Jan 17 23:19:10 2007
+@@ -94,7 +94,7 @@ public:
+ 
+     int Setup(unsigned int in_max_clients, string bind_addr, short int in_port, vector<client_ipblock *> *in_ipb);
+ 
+-    unsigned int MergeSet(fd_set in_set, unsigned int in_max, fd_set *out_set,
++    int MergeSet(fd_set in_set, int in_max, fd_set *out_set,
+ 	    fd_set *outw_set);
+ 
+     int FetchDescriptor() { return serv_fd; }
+@@ -169,7 +169,7 @@ protected:
+     vector<client_ipblock *> *ipblock_vec;
+ 
+     // Socket items
+-    unsigned int serv_fd;
++    int serv_fd;
+     struct sockaddr_in serv_sock;
+ 
+     // Master list of Fd's
+@@ -177,7 +177,7 @@ protected:
+ 
+     fd_set client_fds;
+ 
+-    unsigned int max_fd;
++    int max_fd;
+ 
+     map<int, client_opt *> client_optmap;
+ };

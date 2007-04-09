@@ -1,0 +1,33 @@
+$OpenBSD: patch-tcpstreamer_h,v 1.1 2007/04/09 20:50:58 kili Exp $
+
+# Always use int for file descriptors.
+
+--- tcpstreamer.h.orig	Thu May 26 16:51:45 2005
++++ tcpstreamer.h	Wed Jan 17 23:23:19 2007
+@@ -71,7 +71,7 @@ public:
+ 
+     int Setup(unsigned int in_max_clients, string bind_addr, short int in_port, vector<client_ipblock *> *in_ipb);
+ 
+-    unsigned int MergeSet(fd_set in_set, unsigned int in_max, fd_set *out_set,
++    int MergeSet(fd_set in_set, int in_max, fd_set *out_set,
+ 	    fd_set *outw_set);
+ 
+     int FetchDescriptor() { return serv_fd; }
+@@ -115,7 +115,7 @@ protected:
+     vector<client_ipblock *> *ipblock_vec;
+ 
+     // Socket items
+-    unsigned int serv_fd;
++    int serv_fd;
+     struct sockaddr_in serv_sock;
+ 
+     // Master list of Fd's
+@@ -123,7 +123,7 @@ protected:
+ 
+     fd_set client_fds;
+ 
+-    unsigned int max_fd;
++    int max_fd;
+ 
+ 	GPSD *gpsd;
+ };

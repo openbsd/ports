@@ -1,0 +1,54 @@
+$OpenBSD: patch-tcpserver_cc,v 1.1 2007/04/09 20:50:58 kili Exp $
+
+# Always use int for file descriptors.
+
+--- tcpserver.cc.orig	Mon Nov 13 06:21:20 2006
++++ tcpserver.cc	Wed Jan 17 23:19:53 2007
+@@ -114,9 +114,9 @@ int TcpServer::Setup(unsigned int in_max
+ // Make one useable fd_set from the fd's flagged for system-wide monitoring
+ // and from the fd's flagged locally for clients connecting to us.  This lets
+ // us do 1 big unified select().
+-unsigned int TcpServer::MergeSet(fd_set in_set, unsigned int in_max,
++int TcpServer::MergeSet(fd_set in_set, int in_max,
+                                  fd_set *out_set, fd_set *outw_set) {
+-    unsigned int max;
++    int max;
+ 
+     FD_ZERO(out_set);
+     FD_ZERO(outw_set);
+@@ -128,7 +128,7 @@ unsigned int TcpServer::MergeSet(fd_set 
+         max_fd = max;
+     }
+ 
+-	for (unsigned int x = 0; x <= max; x++) {
++	for (int x = 0; x <= max; x++) {
+ 		if (FD_ISSET(x, &in_set) || FD_ISSET(x, &server_fds)) {
+ 			FD_SET(x, out_set);
+ 		}
+@@ -155,7 +155,7 @@ int TcpServer::Poll(fd_set& in_rset, fd_
+ 
+ // Accept an incoming connection
+ int TcpServer::Accept() {
+-    unsigned int new_fd;
++    int new_fd;
+     struct sockaddr_in client_addr;
+ #ifdef HAVE_SOCKLEN_T
+     socklen_t client_len;
+@@ -325,7 +325,7 @@ int TcpServer::SendToClient(int in_fd, i
+ 
+ int TcpServer::SendToAll(int in_refnum, const void *in_data) {
+     int nsent = 0;
+-    for (unsigned int x = serv_fd; x <= max_fd; x++) {
++    for (int x = serv_fd; x <= max_fd; x++) {
+         if (!FD_ISSET(x, &client_fds))
+             continue;
+ 
+@@ -659,7 +659,7 @@ void TcpServer::DelProtocolClient(int in
+ int TcpServer::FetchNumClients() {
+     int num = 0;
+ 
+-    for (unsigned int x = serv_fd + 1; x <= max_fd; x++) {
++    for (int x = serv_fd + 1; x <= max_fd; x++) {
+         if (FD_ISSET(x, &client_fds))
+             num++;
+     }

@@ -1,6 +1,6 @@
-$OpenBSD: patch-conf_kismet_conf_in,v 1.4 2006/11/01 21:13:19 kili Exp $
---- conf/kismet.conf.in.orig	Mon Aug 15 17:52:16 2005
-+++ conf/kismet.conf.in	Fri Oct 20 13:42:27 2006
+$OpenBSD: patch-conf_kismet_conf_in,v 1.5 2007/04/09 20:50:57 kili Exp $
+--- conf/kismet.conf.in.orig	Sat Jan 13 17:57:59 2007
++++ conf/kismet.conf.in	Tue Jan 16 20:37:15 2007
 @@ -10,7 +10,7 @@ version=2005.06.R1
  servername=Kismet
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-conf_kismet_conf_in,v 1.4 2006/11/01 21:13:19 kili Exp $
  source=none,none,addme
  
  # Comma-separated list of sources to enable.  This is only needed if you defined
-@@ -169,7 +173,7 @@ writeinterval=300
+@@ -175,7 +179,7 @@ writeinterval=300
  # server itself will play sound.  Primarily for headless or automated systems.
  sound=false
  # Path to sound player
@@ -30,7 +30,7 @@ $OpenBSD: patch-conf_kismet_conf_in,v 1.4 2006/11/01 21:13:19 kili Exp $
  # Optional parameters to pass to the player
  # soundopts=--volume=.3
  # New network found
-@@ -223,7 +227,7 @@ metric=false
+@@ -229,7 +233,7 @@ metric=false
  # recent versions of GPSDrive's native support of Kismet.
  waypoints=false
  # GPSDrive waypoint file.  This WILL be truncated.
@@ -39,18 +39,7 @@ $OpenBSD: patch-conf_kismet_conf_in,v 1.4 2006/11/01 21:13:19 kili Exp $
  # Do we want ESSID or BSSID as the waypoint name ?
  waypoint_essid=false
  
-@@ -271,6 +275,10 @@ mangledatalog=true
- #  on, or 'all'
- fuzzycrypt=wtapfile,wlanng,wlanng_legacy,wlanng_avs,hostap,wlanng_wext,ipw2200,ipw2915
- 
-+# Do we do forgiving fuzzy packet decoding?  This lets us handle borked drivers
-+# which don't indicate they're including FCS, and then do.
-+fuzzydecode=wtapfile,radiotap_bsd_a,radiotap_bsd_g,radiotap_bsd_bg,radiotap_bsd_b,pcapfile
-+
- # Do we use network-classifier fuzzy-crypt detection?  This means we expect 
- # packets that are associated with an encrypted network to be encrypted too, 
- # and we process them by the same fuzzy compare. 
-@@ -317,14 +325,14 @@ logdefault=Kismet
+@@ -327,14 +331,14 @@ logdefault=Kismet
  # crypt/Pok-Dec-20-01-1
  # and so on.  The "dump", "crypt", etc, dirs must exist before kismet is run
  # in this case.

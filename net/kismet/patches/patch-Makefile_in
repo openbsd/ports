@@ -1,27 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2006/11/01 21:13:19 kili Exp $
+$OpenBSD: patch-Makefile_in,v 1.4 2007/04/09 20:50:57 kili Exp $
 
-# Partially from upstream SVN, especially the PCAPLNK stuff, but also
-# some other blurb.
+# Don't hard code -O2 -Wall.
 # Use BSD_INSTALL_* macros for installation.
 
---- Makefile.in.orig	Thu Apr 13 00:49:15 2006
-+++ Makefile.in	Fri Oct 20 15:27:49 2006
-@@ -10,12 +10,10 @@ INSTUSR ?= "root"
- 
- ZAURUS = @zaurus@
- 
--PCAPDIR = @pcapdir@
--PCAPLIB = @pcaplib@
--PCAPLNK = @pcaplnk@
--
- THREADL = @threadlib@
- 
-+PCAPLNK	= @pcaplnk@
-+
- HOME	= @srcdir@
- CXX	= @CXX@
- CC	= @CC@
-@@ -23,8 +21,8 @@ LD	= @CXX@
+--- Makefile.in.orig	Fri Dec 15 00:01:06 2006
++++ Makefile.in	Thu Dec 28 11:06:53 2006
+@@ -21,8 +21,8 @@ LD	= @CXX@
  LDFLAGS	= @LDFLAGS@
  LIBS	= @LIBS@
  CLIBS   = @CLIBS@
@@ -32,38 +16,7 @@ $OpenBSD: patch-Makefile_in,v 1.3 2006/11/01 21:13:19 kili Exp $
  CPPFLAGS = @CPPFLAGS@
  SUID	= @suid@
  
-@@ -72,15 +70,15 @@ BUZZER = extra/buzzme/buzzme
- 
- GPSLBUILD=@gpslc@
- GPSLBUILDO=@gpslco@
--ZAURUSBUILD=@zbuild@
-+#ZAURUSBUILD=@zbuild@
- 
- all:	Makefile $(DEPEND) $(PS) $(DRONE) $(NC) $(GPSLBUILD) $(ZAURUSBUILD)
- 
--$(PS):	$(PSO) $(PCAPLIB)
--	$(LD) $(LDFLAGS) -o $(PS) $(PSO) $(PCAPLIB) $(LIBS) $(PCAPLNK)
-+$(PS):	$(PSO)
-+	$(LD) $(LDFLAGS) -o $(PS) $(PSO) $(LIBS) $(PCAPLNK)
- 
--$(DRONE):	$(DRONEO) $(PCAPLIB)
--	$(LD) $(LDFLAGS) -o $(DRONE) $(DRONEO) $(PCAPLIB) $(LIBS) $(PCAPLNK)
-+$(DRONE):	$(DRONEO)
-+	$(LD) $(LDFLAGS) -o $(DRONE) $(DRONEO) $(LIBS) $(PCAPLNK)
- 
- $(NC):	$(NCO)
- 	$(LD) $(LDFLAGS) -o $(NC) $(NCO) $(LIBS) $(CLIBS)
-@@ -99,9 +97,6 @@ $(GPSL):	$(GPSLBUILDO)
- $(BUZZER):	
- 	@( cd extra/buzzme; $(MAKE); ) ; 
- 
--$(PCAPDIR)/libpcap.a:	
--	@( cd $(PCAPDIR); $(MAKE); )
--
- Makefile: Makefile.in configure
- 	@-echo "'Makefile.in' or 'configure' are more current than this Makefile.  You should re-run 'configure'."
- 	
-@@ -130,52 +125,52 @@ checkuiconfig:
+@@ -128,52 +128,52 @@ checkuiconfig:
  	fi
  
  binuserinstall:
@@ -151,7 +104,7 @@ $OpenBSD: patch-Makefile_in,v 1.3 2006/11/01 21:13:19 kili Exp $
  
  	@if test -f $(BIN)/kismet_curses; then \
  		echo "Removing old kismet_curses binary.  The panels frontend is now kismet_client."; \
-@@ -188,22 +183,22 @@ suidinstall: $(PS) $(DRONE) $(NC) $(GPSL
+@@ -186,22 +186,22 @@ suidinstall: $(PS) $(DRONE) $(NC) $(GPSL
  	@if test -f $(ETC)/kismet.conf; then \
  		$(MAKE) -e checkconfig; \
      else \
@@ -180,7 +133,7 @@ $OpenBSD: patch-Makefile_in,v 1.3 2006/11/01 21:13:19 kili Exp $
  		echo "Installed UI config into $(ETC)/kismet_ui.conf."; \
  	fi
  	@echo "Installed kismet into $(BIN)/."
-@@ -221,22 +216,22 @@ install: $(PS) $(DRONE) $(NC) $(GPSLBUIL
+@@ -219,22 +219,22 @@ install: $(PS) $(DRONE) $(NC) $(GPSLBUIL
  	@if test -f $(ETC)/kismet.conf; then \
  		$(MAKE) -e checkconfig; \
      else \
@@ -209,7 +162,7 @@ $OpenBSD: patch-Makefile_in,v 1.3 2006/11/01 21:13:19 kili Exp $
  		echo "Installed UI config into $(ETC)/kismet_ui.conf."; \
  	fi
  	@echo "Installed kismet into $(BIN)/."
-@@ -252,11 +247,11 @@ install: $(PS) $(DRONE) $(NC) $(GPSLBUIL
+@@ -250,11 +250,11 @@ install: $(PS) $(DRONE) $(NC) $(GPSLBUIL
  forceinstall: $(PS)
  	$(MAKE) -e commoninstall
  	$(MAKE) -e binuserinstall
@@ -224,7 +177,7 @@ $OpenBSD: patch-Makefile_in,v 1.3 2006/11/01 21:13:19 kili Exp $
  		echo "Installed UI config into $(ETC)/kismet_ui.conf."; 
  	@echo "Installed kismet into $(BIN)/."
  	@echo "If you have not done so already, read the README file and the FAQ file.  Additional"
-@@ -271,11 +266,11 @@ forceinstall: $(PS)
+@@ -269,11 +269,11 @@ forceinstall: $(PS)
  suidforceinstall: $(PS)
  	$(MAKE) -e commoninstall
  	$(MAKE) -e binsuidinstall
@@ -239,27 +192,7 @@ $OpenBSD: patch-Makefile_in,v 1.3 2006/11/01 21:13:19 kili Exp $
  		echo "Installed UI config into $(ETC)/kismet_ui.conf."; 
  	@echo "Installed kismet into $(BIN)/."
  	@echo "If you have not done so already, read the README file and the FAQ file.  Additional"
-@@ -298,8 +293,7 @@ clean:
- 	@-rm -f $(NC)
- 	@-rm -f $(GPSL)
- 	# @-rm -f $(HOPPER)
--	@-( cd extra/buzzme; $(MAKE) clean )
--	@-( cd $(PCAPDIR); $(MAKE) clean )
-+	# @-( cd extra/buzzme; $(MAKE) clean )
- 
- distclean:
- 	@-$(MAKE) clean
-@@ -315,8 +309,7 @@ distclean:
- #@-rm -f scripts/kismet_monitor
- #@-rm -f scripts/kismet_unmonitor
- 	@-( cd extra/; $(MAKE) distclean )
--	@-( cd extra/buzzme; $(MAKE) distclean )
--	@-( cd $(PCAPDIR); $(MAKE) distclean )
-+	# @-( cd extra/buzzme; $(MAKE) distclean )
- 	@-rm -f Makefile
- 
- arm: $(PS) $(NC) $(ZBUILD)
-@@ -362,13 +355,11 @@ depend:
+@@ -358,13 +358,11 @@ depend:
  	@$(MAKE) $(DEPEND)
  
  $(DEPEND):
