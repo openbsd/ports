@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/29 14:45:36 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/04/09 14:38:08 alek Exp $
 lib/python${MODPY_VERSION}/site-packages/dns/
 lib/python${MODPY_VERSION}/site-packages/dns/__init__.py
 lib/python${MODPY_VERSION}/site-packages/dns/__init__.pyc
@@ -82,6 +82,8 @@ lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/SIG.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/SIG.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/SOA.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/SOA.pyc
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/SPF.py
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/SPF.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/SSHFP.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/SSHFP.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/TXT.py
@@ -97,6 +99,10 @@ lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/IN/AAAA.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/IN/AAAA.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/IN/APL.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/IN/APL.pyc
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/IN/DHCID.py
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/IN/DHCID.pyc
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/IN/IPSECKEY.py
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/IN/IPSECKEY.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/IN/KX.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/IN/KX.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/IN/NAPTR.py
@@ -123,6 +129,8 @@ lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/nsbase.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/nsbase.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/sigbase.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/sigbase.pyc
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/txtbase.py
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/txtbase.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/renderer.py
 lib/python${MODPY_VERSION}/site-packages/dns/renderer.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/resolver.py
@@ -149,7 +157,9 @@ lib/python${MODPY_VERSION}/site-packages/dns/zone.py
 lib/python${MODPY_VERSION}/site-packages/dns/zone.pyc
 share/examples/py-dnspython/
 share/examples/py-dnspython/ddns.py
+share/examples/py-dnspython/e164.py
 share/examples/py-dnspython/mx.py
 share/examples/py-dnspython/name.py
 share/examples/py-dnspython/reverse.py
+share/examples/py-dnspython/reverse_name.py
 share/examples/py-dnspython/xfr.py
