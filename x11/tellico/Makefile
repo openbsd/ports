@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/08 21:21:14 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/04/09 18:43:47 espie Exp $
 
 COMMENT=	'organizer for book/dvd/music collections'
 CATEGORIES=	databases x11
@@ -6,6 +6,7 @@ CATEGORIES=	databases x11
 HOMEPAGE=	http://www.periapsis.org/tellico/
 MASTER_SITES=	${HOMEPAGE}download/
 DISTNAME=	tellico-1.2.10
+PKGNAME=	${DISTNAME}p0
 
 MAINTAINER=		Andreas Bihlmaier <andreas.bihlmaier@gmx.de>
 

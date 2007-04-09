@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_translators_freedbimporter_cpp,v 1.1 2007/04/09 18:43:47 espie Exp $
+--- src/translators/freedbimporter.cpp.orig	Mon Apr  9 20:30:32 2007
++++ src/translators/freedbimporter.cpp	Mon Apr  9 20:30:59 2007
+@@ -517,6 +517,9 @@ QWidget* FreeDBImporter::widget(QWidget* parent_, cons
+   KConfigGroup config(KGlobal::config(), QString::fromLatin1("ImportOptions - FreeDB"));
+   QStringList devices = config.readListEntry("CD-ROM Devices");
+   if(devices.isEmpty()) {
++#if defined(__OpenBSD__)
++    devices += QString::fromLatin1("/dev/rcd0c");
++#endif
+     devices += QString::fromLatin1("/dev/cdrom");
+     devices += QString::fromLatin1("/dev/dvd");
+   }
