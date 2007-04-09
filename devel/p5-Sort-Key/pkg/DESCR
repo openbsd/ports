@@ -1,0 +1,6 @@
+Sort::Key provides a set of functions to sort lists of values by some
+calculated key value.
+
+It is faster (usually much faster) and uses less memory than other
+alternatives implemented around the perl sort function (ST, GRT, etc.).
+
