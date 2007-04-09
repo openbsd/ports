@@ -1,0 +1,7 @@
+Devel::FastProf is a perl per-line profiler. What that means is
+that it can tell you how much time is spent on every line of a perl
+script (the standard Devel::DProf is a per-subroutine profiler).
+
+The former Devel::SmallProf accomplishes the same task, but it is
+much slower. Devel::FastProf is only 5 to 8 times slower than normal
+execution.
