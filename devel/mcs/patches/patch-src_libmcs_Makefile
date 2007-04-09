@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_libmcs_Makefile,v 1.1.1.1 2007/04/09 07:36:35 steven Exp $
+--- src/libmcs/Makefile.orig	Tue Feb 27 14:40:20 2007
++++ src/libmcs/Makefile	Sun Apr  8 10:53:22 2007
+@@ -3,8 +3,7 @@ include ../../mk/init.mk
+ 
+ PICLDFLAGS = $(LIBLDFLAGS)
+ 
+-OBJECTIVE_LIBS = libmcs$(SHARED_SUFFIX)
+-OBJECTIVE_SONAME_SUFFIX = 1
++OBJECTIVE_LIBS = libmcs$(SHARED_SUFFIX).${LIBmcs_VERSION}
+ 
+ LIBADD += $(DYNAMIC_LD_LIBS)
+ 
+@@ -28,8 +27,3 @@ HEADERS = mcs.h mcs_config.h
+ include ../../mk/objective.mk
+ 
+ install-posthook:
+-	@mv ${DESTDIR}/${LIBDIR}/libmcs$(SHARED_SUFFIX) ${DESTDIR}/${LIBDIR}/libmcs$(SHARED_SUFFIX).1.0.0
+-	@ln -sf libmcs$(SHARED_SUFFIX).1.0.0 \
+-		${DESTDIR}/${LIBDIR}/libmcs$(SHARED_SUFFIX).1
+-	@ln -sf libmcs$(SHARED_SUFFIX).1 \
+-		${DESTDIR}/${LIBDIR}/libmcs$(SHARED_SUFFIX)

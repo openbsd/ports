@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/09 07:36:35 steven Exp $
+%%SHARED%%
+bin/mcs-getconfval
+bin/mcs-info
+bin/mcs-query-backends
+bin/mcs-setconfval
+include/libmcs/
+include/libmcs/mcs.h
+include/libmcs/mcs_config.h
+lib/mcs/
+lib/pkgconfig/
+lib/pkgconfig/libmcs.pc
