@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_mysqld_safe_sh,v 1.11 2006/10/14 05:04:54 brad Exp $
---- scripts/mysqld_safe.sh.orig	Wed Oct  4 07:24:11 2006
-+++ scripts/mysqld_safe.sh	Thu Oct 12 05:18:57 2006
+$OpenBSD: patch-scripts_mysqld_safe_sh,v 1.12 2007/04/09 22:43:06 ckuethe Exp $
+--- scripts/mysqld_safe.sh.orig	Mon Mar  5 20:21:13 2007
++++ scripts/mysqld_safe.sh	Sat Mar 31 19:02:39 2007
 @@ -107,72 +107,12 @@ parse_arguments() {
  }
  
@@ -79,17 +79,18 @@ $OpenBSD: patch-scripts_mysqld_safe_sh,v 1.11 2006/10/14 05:04:54 brad Exp $
  niceness=0
  
  # these rely on $DATADIR by default, so we'll set them later on
-@@ -210,7 +150,8 @@ mysql_unix_port_dir=`dirname $safe_mysql
+@@ -210,8 +150,8 @@ mysql_unix_port_dir=`dirname $safe_mysql_unix_port`
  if [ ! -d $mysql_unix_port_dir ]
  then
    mkdir $mysql_unix_port_dir
 -  chown $user $mysql_unix_port_dir
+-  chmod 755 $mysql_unix_port_dir
 +  chown $user:$group $mysql_unix_port_dir
 +  chmod 711 $mysql_unix_port_dir
  fi
  
  # Use the mysqld-max binary by default if the user doesn't specify a binary
-@@ -370,12 +311,6 @@ fi
+@@ -371,12 +311,6 @@ fi
  
  echo "Starting $MYSQLD daemon with databases from $DATADIR"
  
@@ -102,7 +103,7 @@ $OpenBSD: patch-scripts_mysqld_safe_sh,v 1.11 2006/10/14 05:04:54 brad Exp $
  echo "`date +'%y%m%d %H:%M:%S  mysqld started'`" >> $err_log
  while true
  do
-@@ -392,35 +327,6 @@ do
+@@ -393,35 +327,6 @@ do
      break
    fi
  

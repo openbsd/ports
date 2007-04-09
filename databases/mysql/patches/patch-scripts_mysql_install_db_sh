@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.5 2007/01/25 07:41:48 jakob Exp $
---- scripts/mysql_install_db.sh.orig	Tue Jan  9 07:51:08 2007
-+++ scripts/mysql_install_db.sh	Sun Jan 14 22:07:48 2007
-@@ -10,7 +10,8 @@
+$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.6 2007/04/09 22:43:06 ckuethe Exp $
+--- scripts/mysql_install_db.sh.orig	Mon Mar  5 20:21:13 2007
++++ scripts/mysql_install_db.sh	Sat Mar 31 19:01:27 2007
+@@ -22,7 +22,8 @@
  in_rpm=0
  windows=0
  defaults=""
@@ -11,7 +11,7 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.5 2007/01/25 07:41:48 jakob Exp 
  
  case "$1" in
      --no-defaults|--defaults-file=*|--defaults-extra-file=*)
-@@ -40,6 +41,7 @@ parse_arguments() {
+@@ -52,6 +53,7 @@ parse_arguments() {
          # as 'user' (crucial e.g. if log-bin=/some_other_path/
          # where a chown of datadir won't help)
  	 user=`echo "$arg" | sed -e 's/^[^=]*=//'` ;;
@@ -19,7 +19,7 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.5 2007/01/25 07:41:48 jakob Exp 
        --skip-name-resolve) ip_only=1 ;;
        --verbose) verbose=1 ;;
        --rpm) in_rpm=1 ;;
-@@ -197,12 +199,10 @@ fi
+@@ -209,12 +211,10 @@ fi
  
  # Create database directories mysql & test
  
@@ -36,7 +36,7 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.5 2007/01/25 07:41:48 jakob Exp 
  
  if test ! -f $mdata/db.frm
  then
-@@ -246,13 +246,6 @@ then
+@@ -259,13 +259,6 @@ then
        echo ""
      fi
    fi
@@ -50,7 +50,7 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.5 2007/01/25 07:41:48 jakob Exp 
    if test "$windows" -eq 0
    then
    echo "PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER !"
-@@ -270,15 +263,6 @@ then
+@@ -283,15 +276,6 @@ then
      echo "able to use the new GRANT command!"
    fi
    echo
