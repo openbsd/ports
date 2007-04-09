@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.494 2007/04/09 07:37:29 steven Exp $
+# $OpenBSD: Makefile,v 1.495 2007/04/09 22:45:22 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -281,6 +281,7 @@
      SUBDIR += p5-DateTime-Locale
      SUBDIR += p5-DateTime-TimeZone
      SUBDIR += p5-Devel-Cycle
+     SUBDIR += p5-Devel-FastProf
      SUBDIR += p5-Devel-Size
      SUBDIR += p5-Devel-SmallProf
      SUBDIR += p5-Devel-StackTrace
@@ -397,6 +398,7 @@
      SUBDIR += p5-Regexp-Copy
      SUBDIR += p5-Regexp-Shellish
      SUBDIR += p5-Return-Value
+     SUBDIR += p5-Sort-Key
      SUBDIR += p5-SVN-Mirror
      SUBDIR += p5-SVN-Notify
      SUBDIR += p5-SVN-Simple
