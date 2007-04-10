@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.9 2007/03/18 17:19:57 martynas Exp $
-@comment bin/opml2snow
-@comment bin/snow2opml
+@comment $OpenBSD: PLIST,v 1.10 2007/04/10 13:12:43 martynas Exp $
+bin/opml2snow
+bin/snow2opml
 bin/snownews
 bin/snowsync
 man/de/
@@ -12,7 +12,7 @@ man/fr/man1/
 man/it/
 man/it/man1/
 @man man/it/man1/snownews.1
-@comment @man man/man1/opml2snow.1
+@man man/man1/opml2snow.1
 @man man/man1/snownews.1
 man/nl/
 man/nl/man1/

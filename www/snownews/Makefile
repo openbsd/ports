@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2007/03/18 17:19:57 martynas Exp $
+# $OpenBSD: Makefile,v 1.15 2007/04/10 13:12:43 martynas Exp $
 
 COMMENT=	"text mode rss newsreader"
 DISTNAME=	snownews-1.5.7
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	www
 MASTER_SITES=	${HOMEPAGE}download/
 
@@ -21,12 +21,16 @@ NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 
 MODULES=	devel/gettext
-
-LIB_DEPENDS+=	xml2.>=7.10::textproc/libxml
+RUN_DEPENDS=	::textproc/p5-XML-LibXML
+LIB_DEPENDS=	xml2.>=7.10::textproc/libxml
 
 MAKE_ENV+=	EXTRA_CFLAGS="${CFLAGS}"
+MAKE_FLAGS+=	CC="${CC}"
 
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS=	 --prefix=${PREFIX}
+
+post-install:
+	ln -f ${PREFIX}/bin/opml2snow ${PREFIX}/bin/snow2opml
 
 .include <bsd.port.mk>
