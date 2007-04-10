@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/18 16:44:19 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2007/04/10 21:30:39 alek Exp $
 
 COMMENT=	"SPE -- Stani's Python Editor"
 
-DISTNAME=	SPE-0.8.2.a-wx2.6.1.0
-PKGNAME=	spe-0.8.2a
+DISTNAME=	SPE-0.8.3.c-wx2.6.1.0
+PKGNAME=	spe-0.8.3c
 CATEGORIES=	devel
 
 HOMEPAGE=	http://pythonide.stani.be/
 
-MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
+MAINTAINER=	Joerg Zinke <umaxx@oleco.net>
 
 # GPL
 PERMIT_PACKAGE_FTP=	Yes

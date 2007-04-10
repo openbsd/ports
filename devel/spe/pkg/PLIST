@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/18 16:44:19 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/04/10 21:30:39 alek Exp $
 bin/spe
 @comment bin/spe_wininst.py
 lib/python${MODPY_VERSION}/site-packages/_spe/
@@ -22,6 +22,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/__init__.py
 lib/python${MODPY_VERSION}/site-packages/_spe/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/defaults.cfg
 lib/python${MODPY_VERSION}/site-packages/_spe/dialogs/
+lib/python${MODPY_VERSION}/site-packages/_spe/dialogs/RunTerminalDialog.py
+lib/python${MODPY_VERSION}/site-packages/_spe/dialogs/RunTerminalDialog.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/dialogs/__init__.py
 lib/python${MODPY_VERSION}/site-packages/_spe/dialogs/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/dialogs/blancoDialog.wxg
@@ -36,8 +38,6 @@ lib/python${MODPY_VERSION}/site-packages/_spe/dialogs/preferencesDialog.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/dialogs/runDialog.py
 lib/python${MODPY_VERSION}/site-packages/_spe/dialogs/runDialog.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/dialogs/runDialog.wxg
-lib/python${MODPY_VERSION}/site-packages/_spe/dialogs/runTerminalDialog.py
-lib/python${MODPY_VERSION}/site-packages/_spe/dialogs/runTerminalDialog.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/dialogs/runTerminalDialog.wxg
 lib/python${MODPY_VERSION}/site-packages/_spe/dialogs/runWinPdbDialog.py
 lib/python${MODPY_VERSION}/site-packages/_spe/dialogs/runWinPdbDialog.pyc
@@ -200,6 +200,7 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/clipboard.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/clipboard.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/codegen/
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/codegen/cpp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/codegen/lisp_codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/codegen/pl_codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/codegen/py_codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/codegen/xrc_codegen.py
@@ -220,6 +221,7 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/debian/copyright
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/debian/dirs
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/debian/docs
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/debian/files
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/debian/menu
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/debian/rules
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/edit_sizers/
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/edit_sizers/__init__.py
@@ -228,6 +230,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/edit_sizers/edit_s
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/edit_sizers/edit_sizers.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/edit_sizers/gridbag_sizer.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/edit_sizers/gridbag_sizer.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/edit_sizers/lisp_sizers_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/edit_sizers/lisp_sizers_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/edit_sizers/perl_sizers_codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/edit_sizers/perl_sizers_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/edit_sizers/sizers_codegen.py
@@ -356,6 +360,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/bitmap_but
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/bitmap_button/bitmap_button.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/bitmap_button/codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/bitmap_button/codegen.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/bitmap_button/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/bitmap_button/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/bitmap_button/perl_codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/bitmap_button/perl_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/button/
@@ -365,6 +371,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/button/but
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/button/button.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/button/codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/button/codegen.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/button/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/button/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/button/perl_codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/button/perl_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/checkbox/
@@ -374,6 +382,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/checkbox/c
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/checkbox/checkbox.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/checkbox/codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/checkbox/codegen.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/checkbox/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/checkbox/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/checkbox/perl_codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/checkbox/perl_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/choice/
@@ -383,6 +393,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/choice/cho
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/choice/choice.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/choice/codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/choice/codegen.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/choice/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/choice/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/choice/perl_codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/choice/perl_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/combo_box/
@@ -392,6 +404,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/combo_box/
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/combo_box/codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/combo_box/combo_box.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/combo_box/combo_box.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/combo_box/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/combo_box/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/combo_box/perl_codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/combo_box/perl_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/custom_widget/
@@ -401,6 +415,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/custom_wid
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/custom_widget/codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/custom_widget/custom_widget.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/custom_widget/custom_widget.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/custom_widget/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/custom_widget/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/custom_widget/perl_codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/custom_widget/perl_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/dialog/
@@ -410,6 +426,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/dialog/cod
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/dialog/codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/dialog/dialog.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/dialog/dialog.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/dialog/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/dialog/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/dialog/perl_codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/dialog/perl_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/frame/
@@ -419,6 +437,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/frame/code
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/frame/codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/frame/frame.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/frame/frame.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/frame/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/frame/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/frame/perl_codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/frame/perl_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/gauge/
@@ -428,6 +448,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/gauge/code
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/gauge/codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/gauge/gauge.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/gauge/gauge.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/gauge/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/gauge/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/gauge/perl_codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/gauge/perl_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/grid/
@@ -437,6 +459,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/grid/codeg
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/grid/codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/grid/grid.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/grid/grid.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/grid/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/grid/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/grid/perl_codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/grid/perl_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/list_box/
@@ -444,6 +468,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/list_box/_
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/list_box/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/list_box/codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/list_box/codegen.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/list_box/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/list_box/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/list_box/list_box.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/list_box/list_box.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/list_box/perl_codegen.py
@@ -453,6 +479,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/list_ctrl/
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/list_ctrl/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/list_ctrl/codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/list_ctrl/codegen.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/list_ctrl/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/list_ctrl/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/list_ctrl/list_ctrl.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/list_ctrl/list_ctrl.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/list_ctrl/perl_codegen.py
@@ -462,6 +490,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/menubar/__
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/menubar/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/menubar/codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/menubar/codegen.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/menubar/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/menubar/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/menubar/menubar.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/menubar/menubar.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/menubar/perl_codegen.py
@@ -471,6 +501,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/notebook/_
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/notebook/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/notebook/codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/notebook/codegen.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/notebook/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/notebook/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/notebook/notebook.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/notebook/notebook.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/notebook/perl_codegen.py
@@ -480,6 +512,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/panel/__in
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/panel/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/panel/codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/panel/codegen.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/panel/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/panel/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/panel/panel.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/panel/panel.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/panel/perl_codegen.py
@@ -489,6 +523,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/radio_box/
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/radio_box/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/radio_box/codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/radio_box/codegen.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/radio_box/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/radio_box/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/radio_box/perl_codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/radio_box/perl_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/radio_box/radio_box.py
@@ -498,6 +534,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/radio_butt
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/radio_button/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/radio_button/codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/radio_button/codegen.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/radio_button/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/radio_button/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/radio_button/perl_codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/radio_button/perl_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/radio_button/radio_button.py
@@ -507,6 +545,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/slider/__i
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/slider/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/slider/codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/slider/codegen.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/slider/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/slider/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/slider/perl_codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/slider/perl_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/slider/slider.py
@@ -516,6 +556,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/spacer/__i
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/spacer/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/spacer/codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/spacer/codegen.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/spacer/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/spacer/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/spacer/perl_codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/spacer/perl_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/spacer/spacer.py
@@ -525,6 +567,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/spin_butto
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/spin_button/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/spin_button/codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/spin_button/codegen.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/spin_button/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/spin_button/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/spin_button/perl_codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/spin_button/perl_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/spin_button/spin_button.py
@@ -534,6 +578,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/spin_ctrl/
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/spin_ctrl/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/spin_ctrl/codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/spin_ctrl/codegen.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/spin_ctrl/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/spin_ctrl/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/spin_ctrl/perl_codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/spin_ctrl/perl_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/spin_ctrl/spin_ctrl.py
@@ -543,6 +589,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/splitter_w
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/splitter_window/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/splitter_window/codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/splitter_window/codegen.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/splitter_window/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/splitter_window/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/splitter_window/perl_codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/splitter_window/perl_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/splitter_window/splitter_window.py
@@ -552,6 +600,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/static_bit
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/static_bitmap/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/static_bitmap/codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/static_bitmap/codegen.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/static_bitmap/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/static_bitmap/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/static_bitmap/perl_codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/static_bitmap/perl_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/static_bitmap/static_bitmap.py
@@ -561,6 +611,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/static_lin
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/static_line/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/static_line/codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/static_line/codegen.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/static_line/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/static_line/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/static_line/perl_codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/static_line/perl_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/static_line/static_line.py
@@ -570,6 +622,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/static_tex
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/static_text/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/static_text/codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/static_text/codegen.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/static_text/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/static_text/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/static_text/perl_codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/static_text/perl_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/static_text/static_text.py
@@ -579,6 +633,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/text_ctrl/
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/text_ctrl/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/text_ctrl/codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/text_ctrl/codegen.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/text_ctrl/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/text_ctrl/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/text_ctrl/perl_codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/text_ctrl/perl_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/text_ctrl/text_ctrl.py
@@ -588,6 +644,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/toggle_but
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/toggle_button/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/toggle_button/codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/toggle_button/codegen.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/toggle_button/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/toggle_button/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/toggle_button/perl_codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/toggle_button/perl_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/toggle_button/toggle_button.py
@@ -597,6 +655,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/toolbar/__
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/toolbar/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/toolbar/codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/toolbar/codegen.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/toolbar/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/toolbar/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/toolbar/perl_codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/toolbar/perl_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/toolbar/tool.py
@@ -608,6 +668,8 @@ lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/tree_ctrl/
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/tree_ctrl/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/tree_ctrl/codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/tree_ctrl/codegen.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/tree_ctrl/lisp_codegen.py
+lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/tree_ctrl/lisp_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/tree_ctrl/perl_codegen.py
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/tree_ctrl/perl_codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/plugins/wxGlade/widgets/tree_ctrl/tree_ctrl.py
@@ -735,8 +797,12 @@ lib/python${MODPY_VERSION}/site-packages/_spe/sm/scriptutils.py
 lib/python${MODPY_VERSION}/site-packages/_spe/sm/scriptutils.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/sm/spy.py
 lib/python${MODPY_VERSION}/site-packages/_spe/sm/spy.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/sm/thread.py
+lib/python${MODPY_VERSION}/site-packages/_spe/sm/thread.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/sm/uml.py
 lib/python${MODPY_VERSION}/site-packages/_spe/sm/uml.pyc
+lib/python${MODPY_VERSION}/site-packages/_spe/sm/www.py
+lib/python${MODPY_VERSION}/site-packages/_spe/sm/www.pyc
 lib/python${MODPY_VERSION}/site-packages/_spe/sm/wxp/
 lib/python${MODPY_VERSION}/site-packages/_spe/sm/wxp/NotebookCtrl.py
 lib/python${MODPY_VERSION}/site-packages/_spe/sm/wxp/NotebookCtrl.pyc
