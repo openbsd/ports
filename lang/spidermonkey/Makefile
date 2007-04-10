@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/08 23:17:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2007/04/10 13:03:09 martynas Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"Mozilla's C implementation of JavaScript"
 
-V=		1.5
+V=		1.60
 DISTNAME=	js-${V}
-PKGNAME=	spidermonkey-${V}p1
-SHARED_LIBS=	js 1.0
+PKGNAME=	spidermonkey-${V}
+SHARED_LIBS=	js 2.0
 CATEGORIES=     lang
 
 HOMEPAGE=	http://www.mozilla.org/js/spidermonkey/
@@ -32,7 +32,9 @@ WRKSRC=		${WRKDIST}/src
 MAKE_FILE=	Makefile.ref
 MAKE_FLAGS=	SO_SUFFIX=so.${LIBjs_VERSION} \
 		JS_THREADSAFE=YES \
-		XLDFLAGS="-L${LOCALBASE}/lib -pthread"
+		XLDFLAGS="-L${LOCALBASE}/lib -pthread" \
+		CC=${CC} \
+		CCC=${CXX}
 
 CFLAGS+=	-I${LOCALBASE}/include/nspr
 
@@ -47,8 +49,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Linux_All_DBG.OBJ/js ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/Linux_All_DBG.OBJ/libjs.so.${LIBjs_VERSION} ${PREFIX}/lib
 	${INSTALL_DATA_DIR} ${PREFIX}/include/js
-.for i in ${HEADERS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/include/js
-.endfor
+	@cd ${WRKSRC} && \
+		${INSTALL_DATA} ${HEADERS} ${PREFIX}/include/js/
 	
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_config_mk,v 1.1.1.1 2006/10/01 23:02:12 steven Exp $
---- src/config.mk.orig	Sat Nov 15 01:10:55 2003
-+++ src/config.mk	Mon Sep 25 16:40:30 2006
+$OpenBSD: patch-src_config_mk,v 1.2 2007/04/10 13:03:09 martynas Exp $
+--- src/config.mk.orig	Sat Nov 15 02:10:55 2003
++++ src/config.mk	Mon Apr  9 21:26:10 2007
 @@ -90,6 +90,9 @@ endif
  ifeq ($(OS_ARCH),Linux)
  OS_CONFIG      := Linux_All
@@ -11,7 +11,7 @@ $OpenBSD: patch-src_config_mk,v 1.1.1.1 2006/10/01 23:02:12 steven Exp $
  ifeq ($(OS_ARCH),dgux)
  OS_CONFIG      := dgux
  else
-@@ -100,6 +103,7 @@ OS_CONFIG       := $(OS_ARCH)$(OS_OBJTYP
+@@ -100,6 +103,7 @@ OS_CONFIG       := $(OS_ARCH)$(OS_OBJTYPE)$(OS_RELEASE
  endif
  endif
  endif

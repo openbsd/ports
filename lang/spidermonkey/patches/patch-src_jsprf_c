@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_jsprf_c,v 1.1.1.1 2006/10/01 23:02:12 steven Exp $
---- src/jsprf.c.orig	Fri Sep 24 05:31:15 2004
-+++ src/jsprf.c	Mon Sep 25 16:40:31 2006
-@@ -55,7 +55,7 @@
+$OpenBSD: patch-src_jsprf_c,v 1.2 2007/04/10 13:03:09 martynas Exp $
+--- src/jsprf.c.orig	Thu Nov 30 02:34:45 2006
++++ src/jsprf.c	Mon Apr  9 21:26:10 2007
+@@ -57,7 +57,7 @@
  ** and requires array notation.
  */
  #ifdef HAVE_VA_COPY
