@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/25 07:42:58 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/04/10 19:10:54 kurt Exp $
 @conflict jakarta-tomcat-*
 @pkgpath www/jakarta-tomcat/v5
 @pkgpath www/tomcat/v5
@@ -128,7 +128,7 @@ tomcat/server/lib/catalina-cluster.jar
 tomcat/server/lib/catalina-optional.jar
 tomcat/server/lib/catalina-storeconfig.jar
 tomcat/server/lib/catalina.jar
-tomcat/server/lib/commons-modeler.jar
+tomcat/server/lib/commons-modeler-2.0.jar
 tomcat/server/lib/servlets-cgi.renametojar
 tomcat/server/lib/servlets-default.jar
 tomcat/server/lib/servlets-invoker.jar

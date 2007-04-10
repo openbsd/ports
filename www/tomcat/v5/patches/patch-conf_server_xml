@@ -1,7 +1,41 @@
-$OpenBSD: patch-conf_server_xml,v 1.1.1.1 2006/10/25 18:10:18 kurt Exp $
---- conf/server.xml.orig	Mon Jul 31 12:58:18 2006
-+++ conf/server.xml	Mon Jul 31 12:58:40 2006
-@@ -188,7 +188,7 @@
+$OpenBSD: patch-conf_server_xml,v 1.2 2007/04/10 19:10:54 kurt Exp $
+--- conf/server.xml.orig	Mon Mar  5 10:27:07 2007
++++ conf/server.xml	Wed Mar 28 16:27:11 2007
+@@ -74,7 +74,7 @@
+     -->
+ 
+     <!-- Define a non-SSL HTTP/1.1 Connector on port 8080 -->
+-    <Connector port="8080" maxHttpHeaderSize="8192"
++    <Connector address="0.0.0.0" port="8080" maxHttpHeaderSize="8192"
+                maxThreads="150" minSpareThreads="25" maxSpareThreads="75"
+                enableLookups="false" redirectPort="8443" acceptCount="100"
+                connectionTimeout="20000" disableUploadTimeout="true" />
+@@ -91,7 +91,7 @@
+ 
+     <!-- Define a SSL HTTP/1.1 Connector on port 8443 -->
+     <!--
+-    <Connector port="8443" maxHttpHeaderSize="8192"
++    <Connector address="0.0.0.0" port="8443" maxHttpHeaderSize="8192"
+                maxThreads="150" minSpareThreads="25" maxSpareThreads="75"
+                enableLookups="false" disableUploadTimeout="true"
+                acceptCount="100" scheme="https" secure="true"
+@@ -99,13 +99,13 @@
+     -->
+ 
+     <!-- Define an AJP 1.3 Connector on port 8009 -->
+-    <Connector port="8009" 
++    <Connector address="0.0.0.0" port="8009" 
+                enableLookups="false" redirectPort="8443" protocol="AJP/1.3" />
+ 
+     <!-- Define a Proxied HTTP/1.1 Connector on port 8082 -->
+     <!-- See proxy documentation for more information about using this. -->
+     <!--
+-    <Connector port="8082" 
++    <Connector address="0.0.0.0" port="8082" 
+                maxThreads="150" minSpareThreads="25" maxSpareThreads="75"
+                enableLookups="false" acceptCount="100" connectionTimeout="20000"
+                proxyPort="80" disableUploadTimeout="true" />
+@@ -196,7 +196,7 @@
        <!-- Define the default virtual host
             Note: XML Schema validation will not work with Xerces 2.2.
         -->

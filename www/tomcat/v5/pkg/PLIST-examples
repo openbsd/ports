@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST-examples,v 1.1.1.1 2006/10/25 18:10:19 kurt Exp $
+@comment $OpenBSD: PLIST-examples,v 1.2 2007/04/10 19:10:54 kurt Exp $
 @pkgpath www/jakarta-tomcat/v5,-examples
 @owner _tomcat
 @group _tomcat
-@comment webapps/
 webapps/ROOT/
 webapps/ROOT/RELEASE-NOTES.txt
 webapps/ROOT/WEB-INF/
@@ -624,6 +623,13 @@ webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/Member.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/MembershipListener.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/MembershipService.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/MessageListener.html
+webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/authenticator/
+webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/authenticator/ClusterSingleSignOn.html
+webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/authenticator/ClusterSingleSignOnListener.html
+webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/authenticator/SingleSignOnMessage.html
+webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/authenticator/package-frame.html
+webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/authenticator/package-summary.html
+webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/authenticator/package-tree.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/deploy/
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/deploy/FarmWarDeployer.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/deploy/FileChangeListener.html
@@ -1788,6 +1794,7 @@ webapps/tomcat-docs/printer/setup.html
 webapps/tomcat-docs/printer/ssi-howto.html
 webapps/tomcat-docs/printer/ssl-howto.html
 webapps/tomcat-docs/printer/status.html
+webapps/tomcat-docs/printer/virtual-hosting-howto.html
 webapps/tomcat-docs/printer/windows-service-howto.html
 webapps/tomcat-docs/proxy-howto.html
 webapps/tomcat-docs/realm-howto.html
@@ -1906,6 +1913,7 @@ webapps/tomcat-docs/setup.html
 webapps/tomcat-docs/ssi-howto.html
 webapps/tomcat-docs/ssl-howto.html
 webapps/tomcat-docs/status.html
+webapps/tomcat-docs/virtual-hosting-howto.html
 webapps/tomcat-docs/windows-service-howto.html
 webapps/webdav/
 webapps/webdav/WEB-INF/
