@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: find-all-conflicts,v 1.12 2007/02/19 19:50:50 bernd Exp $
+# $OpenBSD: find-all-conflicts,v 1.13 2007/04/10 21:36:26 espie Exp $
 # Copyright (c) 2000-2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -50,9 +50,6 @@ sub register
 	my ($self, $all_conflict, $all_deps, $pkgname) = @_;
 
 	my $file= File::Spec->canonpath($self->fullname());
-	unless (defined $all_conflict->{$file}) {
-		$all_conflict->{$file} = [];
-	}
 	push @{$all_conflict->{$file}}, $pkgname;
 }
 
@@ -61,9 +58,6 @@ sub register
 {
 	my ($self, $all_conflict, $all_deps, $pkgname) = @_;
 	if (defined $self->{def}) {
-		unless (defined $all_deps->{$pkgname}) {
-			$all_deps->{$pkgname} = [];
-		}
 		push @{$all_deps->{$pkgname}}, $self->{def};
 	}
 }
@@ -83,61 +77,66 @@ sub find_a_conflict
 		return 1;
 	}
 	if (defined $deps->{$pkg}) {
-	    for my $dep (@{$deps->{$pkg}}) {
-	    	if (find_a_conflict($conflicts, $deps, $dep, $pkg2)) {
-			return 1;
+		for my $dep (@{$deps->{$pkg}}) {
+		    if (find_a_conflict($conflicts, $deps, $dep, $pkg2)) {
+			    return 1;
+		    }
 		}
-	    }
 	}
 	if (defined $deps->{$pkg2}) {
-	    for my $dep (@{$deps->{$pkg2}}) {
-	    	if (find_a_conflict($conflicts, $deps, $pkg, $dep)) {
-			return 1;
+		for my $dep (@{$deps->{$pkg2}}) {
+			if (find_a_conflict($conflicts, $deps, $pkg, $dep)) {
+				return 1;
+			}
 		}
-	    }
 	}
 	return 0;
 }
 
+sub compute_true_conflicts
+{
+	my ($l, $conflicts, $deps) = @_;
+	# create a list of unconflicting packages.
+	my $l2 = [];
+	for my $pkg (@$l) {
+		my $keepit = 0;
+		for my $pkg2 (@$l) {
+			next if $pkg eq $pkg2;
+			if (!(find_a_conflict($conflicts, $deps, $pkg, $pkg2) ||
+			    find_a_conflict($conflicts, $deps, $pkg2, $pkg))) {
+				$keepit = 1;
+				last;
+			}
+		}
+		if ($keepit) {
+		    push(@$l2, $pkg);
+		}
+	}
+	return $l2;
+}
+
 sub compute_problems
 {
-    my ($h, $conflicts, $deps) = @_;
+	my ($h, $conflicts, $deps) = @_;
 
-    while (my ($key, $l) = each %$h) {
-	    my %s = map {($_, 1)} @$l;
-	    @$l = sort keys %s;
-	    if (@$l > 1) {
-	    	my $hv = join(',', @$l);
+	while (my ($key, $l) = each %$h) {
+		next if @$l == 1;
+		my %s = map {($_, 1)} @$l;
+		@$l = sort keys %s;
+		next if @$l == 1;
+		my $hv = join(',', @$l);
 		if (!defined $cache->{$hv}) {
-			# create a list of unconflicting packages.
-			my $l2 = [];
-			for my $pkg (@$l) {
-				my $keepit = 0;
-			    for my $pkg2 (@$l) {
-			    	next if $pkg eq $pkg2;
-				if (!(find_a_conflict($conflicts, $deps, $pkg, $pkg2) ||
-					find_a_conflict($conflicts, $deps, $pkg2, $pkg))) {
-					$keepit = 1;
-					last;
-				}
-			    }
-			    if ($keepit) {
-				push(@$l2, $pkg);
-			    }
-			}
-			$cache->{$hv} = $l2;
+			$cache->{$hv} = compute_true_conflicts($l, $conflicts, $deps);
 		}
 		my $result = $cache->{$hv};
 		if (@$result != 0) {
-		    my $newkey = join(',', @$result);
-		    if (@$result == 1) {
-			    $newkey.="-> was ".join(',', @$l);
-		    }
-		    $cache2->{$newkey} = [] unless defined($cache2->{$newkey});
-		    push(@{$cache2->{$newkey}}, $key);
+			my $newkey = join(',', @$result);
+			if (@$result == 1) {
+				$newkey.="-> was ".join(',', @$l);
+			}
+			push(@{$cache2->{$newkey}}, $key);
 		}
-	    }
-    }
+	}
 }
 
 my $filehash={};
@@ -205,8 +204,8 @@ print "--------\n" if $opt_v;
 if ($opt_d) {
 	opendir(my $dir, $opt_d);
 	while (my $pkgname = readdir($dir)) {
-	    next if $pkgname eq '.' or $pkgname eq '..';
-	    handle_file("$opt_d/$pkgname");
+		next if $pkgname eq '.' or $pkgname eq '..';
+		handle_file("$opt_d/$pkgname");
     	}
 	closedir($dir);
 } elsif ($opt_p) {
