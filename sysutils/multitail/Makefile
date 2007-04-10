@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2006/06/12 21:07:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2007/04/10 21:01:50 naddy Exp $
 
 COMMENT=	"multi-window tail(1) utility"
 
-VERSION=	4.0.6
+VERSION=	5.0.0
 DISTNAME=	multitail-${VERSION}
 CATEGORIES=	sysutils
 
@@ -23,7 +23,8 @@ NO_REGRESS=	Yes
 
 MAKE_FLAGS=	CC='${CC}' \
 		CFLAGS='${CFLAGS} -DVERSION=\"${VERSION}\" \
-			-DCONFIG_FILE=\"${SYSCONFDIR}/multitail.conf\"'
+			-DCONFIG_FILE=\"${SYSCONFDIR}/multitail.conf\"' \
+		LDFLAGS='-lpanel -lncurses -lutil -lm'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/multitail ${PREFIX}/bin
@@ -33,6 +34,11 @@ do-install:
 		${PREFIX}/share/doc/multitail
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/multitail
 	${INSTALL_DATA} ${WRKSRC}/multitail.conf \
+		${PREFIX}/share/examples/multitail
+	@perl -i -pe \
+		's:/etc/multitail/:${TRUEPREFIX}/share/examples/multitail/:' \
+		${PREFIX}/share/examples/multitail/multitail.conf
+	${INSTALL_DATA} ${WRKSRC}/convert-* ${WRKSRC}/colors-* \
 		${PREFIX}/share/examples/multitail
  
 .include <bsd.port.mk>
