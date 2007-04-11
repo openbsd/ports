@@ -1,0 +1,13 @@
+--- config.h.in.orig	Wed Jan 24 23:41:06 2007
++++ config.h.in	Wed Jan 24 23:41:44 2007
+@@ -89,6 +89,10 @@
+ /* Define to empty if `const' does not conform to ANSI C. */
+ #undef const
+ 
++#if HAVE_SYS_TYPES_H
++#include <sys/types.h>
++#endif
++
+ #if HAVE_SYS_MMAN_H
+ #include <sys/mman.h>
+ #endif
