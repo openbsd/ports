@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2007/04/11 12:54:25 kili Exp $
+share/postgresql/
+share/postgresql/java/
+share/postgresql/java/postgresql.jar

@@ -1,0 +1,13 @@
+$OpenBSD: patch-build_xml,v 1.1.1.1 2007/04/11 12:54:25 kili Exp $
+
+--- build.xml.orig	Wed Nov 29 05:00:15 2006
++++ build.xml	Mon Jan 15 22:29:26 2007
+@@ -406,7 +406,7 @@
+     <fail message="Your version of ant doesn't seem to have the junit task available.  I looked for org.apache.tools.ant.taskdefs.optional.junit.JUnitTask, but I couldn't find it." unless="junit.task" />
+ 
+     <delete file="postgresql-jdbc-tests.debug.txt"/>
+-    <junit>
++    <junit haltonerror="on">
+       <formatter type="brief" usefile="false"/>
+ 
+       <sysproperty key="server" value="${server}" />
