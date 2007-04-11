@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2007/02/19 09:39:48 dlg Exp $
+# $OpenBSD: Makefile,v 1.34 2007/04/11 13:26:36 deanna Exp $
 
 COMMENT-main=	"subversion revision control system"
 COMMENT-perl=	"perl interface to subversion"
 COMMENT-python=	"python interface to subversion"
 COMMENT-ruby=	"ruby interface to subversion"
+COMMENT-ap2=	"apache2 subversion modules"
 
 VERSION=	1.4.3
 DISTNAME=	subversion-${VERSION}
@@ -12,6 +13,7 @@ PKGNAME-main=	${DISTNAME}p1
 PKGNAME-perl=	p5-SVN-${VERSION}
 PKGNAME-python=	py-subversion-${VERSION}
 PKGNAME-ruby=	ruby-subversion-${VERSION}p0
+PKGNAME-ap2=	ap2-subversion-${VERSION}
 
 SO_VERSION=	1.0
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
@@ -35,7 +37,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/tarballs/
 
-PSEUDO_FLAVORS=	no_bindings
+PSEUDO_FLAVORS=	no_bindings no_ap2
 FLAVOR?=
 
 PYTHON_VER=	2.4
@@ -54,6 +56,18 @@ MULTI_PACKAGES=	-main
 
 WANTLIB-main=	${WANTLIB} c crypto m ssl xml2
 RUN_DEPENDS-main= ${MODGETTEXT_RUN_DEPENDS}
+
+.if !${FLAVOR:L:Mno_ap2}
+MULTI_PACKAGES+=	-ap2
+WANTLIB-ap2=		${WANTLIB} iconv aprutil-1 expat
+LIB_DEPENDS-ap2=	${MODGETTEXT_LIB_DEPENDS}
+.  for _lib in svn_delta-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1 \
+	svn_repos-1 svn_subr-1
+LIB_DEPENDS-ap2+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversion,-main
+BUILD_DEPENDS+=		::www/apache-httpd
+RUN_DEPENDS-ap2=	::www/apache-httpd
+.  endfor
+.endif
 
 .if !${FLAVOR:L:Mno_bindings}
 MULTI_PACKAGES+=-perl -python -ruby
@@ -85,7 +99,7 @@ LIB_DEPENDS-ruby+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversio
 .  endfor
 
 MODULES+=	lang/ruby
-BUILD_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
+BUILD_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
 		::devel/swig
 .endif
 
@@ -98,8 +112,6 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--with-apr=${LOCALBASE} \
 		--with-apr-util=${LOCALBASE} \
 		--with-zlib \
-		--without-apache \
-		--without-apxs \
 		--without-jdk
 .if !${FLAVOR:L:Mno_bindings}
 CONFIGURE_ARGS+=--enable-swig-bindings=perl,python,ruby \
@@ -107,6 +119,12 @@ CONFIGURE_ARGS+=--enable-swig-bindings=perl,python,ruby \
 .else
 CONFIGURE_ARGS+=--disable-swig-bindings \
 		--without-swig
+.endif
+
+.if !${FLAVOR:L:Mno_ap2}
+CONFIGURE_ARGS+=--with-apxs=${LOCALBASE}/sbin/apxs2
+.else
+CONFIGURE_ARGS+=--without-apxs
 .endif
 
 REGRESS_DEPENDS=::lang/python/${PYTHON_VER}
