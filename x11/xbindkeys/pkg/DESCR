@@ -1,0 +1,4 @@
+xbindkeys is a program that allows you to launch shell commands
+with your keyboard or mouse under X11.  It links commands to keys
+or mouse buttons using a simple configuration file and is independant
+of the window manager.
