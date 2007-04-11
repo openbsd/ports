@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-clamav,v 1.1.1.1 2007/03/23 17:38:22 deanna Exp $
-lib/claws-mail/plugins/clamav_plugin.a
+@comment $OpenBSD: PLIST-clamav,v 1.2 2007/04/11 20:48:43 deanna Exp $
 lib/claws-mail/plugins/clamav_plugin.la
 lib/claws-mail/plugins/clamav_plugin.so

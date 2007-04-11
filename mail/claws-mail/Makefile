@@ -1,23 +1,20 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/03/23 17:38:22 deanna Exp $
+# $OpenBSD: Makefile,v 1.2 2007/04/11 20:48:43 deanna Exp $
 
 COMMENT-main=		"mail and news client"
 COMMENT-docs=		"documentation"
 COMMENT-bogofilter=	"bogofilter plugin"
 COMMENT-clamav=		"clamav plugin"
 COMMENT-dillo=		"dillo plugin"
-COMMENT-pgp=		"several pgp plugins"
 COMMENT-spamassassin=	"spamassassin plugin"
 
 V=			2.8.1
-DISTNAME=		claws-mail-$V
-PKGNAME=		claws-mail
-PKGNAME-main=		${DISTNAME}
-FULLPKGNAME-docs=		${PKGNAME}-docs-$V
-FULLPKGNAME-bogofilter=		${PKGNAME}-bogofilter-$V
-FULLPKGNAME-clamav=		${PKGNAME}-clamav-$V
-FULLPKGNAME-dillo=		${PKGNAME}-dillo-$V
-FULLPKGNAME-pgp=		${PKGNAME}-pgp-$V
-FULLPKGNAME-spamassassin=	${PKGNAME}-spamassassin-$V
+DISTNAME=		claws-mail-${V}
+PKGNAME-main=			${DISTNAME}p0
+FULLPKGNAME-docs=		claws-mail-docs-${V}p0
+FULLPKGNAME-bogofilter=		claws-mail-bogofilter-${V}p0
+FULLPKGNAME-clamav=		claws-mail-clamav-${V}p0
+FULLPKGNAME-dillo=		claws-mail-dillo-${V}p0
+FULLPKGNAME-spamassassin=	claws-mail-spamassassin-${V}p0
 
 CATEGORIES=		mail news
 
@@ -36,31 +33,28 @@ EXTRACT_SUFX=		.tar.bz2
 
 DIST_SUBDIR=		claws
 
-MULTI_PACKAGES=		-main -docs
-PSEUDO_FLAVORS=		no_bogofilter no_clamav no_dillo no_pgp \
-			no_spamassassin
-FLAVORS=		aspell compface jpilot ldap gnomeprint # gnome
+MULTI_PACKAGES=		-main -docs -bogofilter -clamav -dillo \
+			-spamassassin
+FLAVORS=		jpilot gnomeprint compface ldap
 FLAVOR?=
 
 SHARED_ONLY=		Yes
-RUN_DEPENDS-docs=	::${BUILD_PKGPATH}
 RUN_DEPENDS-bogofilter=	::${BUILD_PKGPATH} \
-			:bogofilter-*:mail/bogofilter 
+			::mail/bogofilter 
 RUN_DEPENDS-clamav=	::${BUILD_PKGPATH}
 RUN_DEPENDS-dillo=	::${BUILD_PKGPATH} \
 			::www/dillo 
-RUN_DEPENDS-pgp=	::${BUILD_PKGPATH}
-RUN_DEPENDS-spamassassin=	::mail/claws-mail \
-				:p5-Mail-SpamAssassin-*:mail/p5-Mail-SpamAssassin 
+RUN_DEPENDS-spamassassin=::${BUILD_PKGPATH} \
+			::mail/p5-Mail-SpamAssassin 
 
 WANTLIB=		X11 Xau Xdmcp Xrender crypto expat fontconfig \
 			freetype m ssl z
 
-WANTLIB-main=		${WANTLIB} ICE SM c pthread
+WANTLIB-main=		${WANTLIB} ICE SM c pthread stdc++
 
 WANTLIB-docs=		
+WANTLIB-clamav=		${WANTLIB} bz2 gmp
 
-MODULES=		devel/gettext
 LIB_DEPENDS=		atk-1.0::devel/atk \
 			cairo::graphics/cairo \
 			gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
@@ -73,105 +67,43 @@ LIB_DEPENDS=		atk-1.0::devel/atk \
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			gthread-2.0::devel/glib2 \
-			startup-notification-1::devel/startup-notification
-LIB_DEPENDS-docs=
+			startup-notification-1::devel/startup-notification \
+			aspell::textproc/aspell/core \
+			gpgme::security/gpgme \
+			gpg-error::security/libgpg-error
 
+LIB_DEPENDS-docs=
+PKG_ARCH-docs=	*
+
+LIB_DEPENDS-clamav=	${LIB_DEPENDS} \
+			clamav::security/clamav \
+			curl::net/curl
+
+MODULES=		devel/gettext
 USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
+LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS+=	--enable-aspell \
+			--enable-bogofilter-plugin \
+			--enable-clamav-plugin \
+			--enable-dillo-viewer-plugin \
+			--enable-pgpcore-plugin \
+			--enable-pgpmime-plugin \
+			--enable-pgpinline-plugin \
+			--enable-spamassassin-plugin
+
 CONFIGURE_ENV+=		OPENSSL_CFLAGS="-I/usr/include/openssl" \
 			OPENSSL_LIBS="-lssl -lcrypto" \
 			CPPFLAGS="-I${X11BASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib"
-
-.if !empty(FLAVOR:L:Mno_bogofilter)
-CONFIGURE_ARGS+=	--disable-bogofilter-plugin
-.else
-MULTI_PACKAGES+=	-bogofilter
-CONFIGURE_ARGS+=	--enable-bogofilter-plugin
-LIB_DEPENDS-bogofilter= ${LIB_DEPENDS}
-.endif
-
-.if !empty(FLAVOR:L:Mno_clamav)
-CONFIGURE_ARGS+=	--disable-clamav-plugin
-.else
-MULTI_PACKAGES+=	-clamav
-CONFIGURE_ARGS+=	--enable-clamav-plugin
-WANTLIB-clamav=		${WANTLIB} bz2 gmp
-LIB_DEPENDS-clamav=	${LIB_DEPENDS} \
-			clamav::security/clamav \
-			curl::net/curl
-.endif
-
-.if !empty(FLAVOR:L:Mno_dillo)
-CONFIGURE_ARGS+=	--disable-dillo-viewer-plugin
-.else
-MULTI_PACKAGES+=	-dillo
-CONFIGURE_ARGS+=	--enable-dillo-viewer-plugin
-WANTLIB-dillo=		${WANTLIB}
-LIB_DEPENDS-dillo=	${LIB_DEPENDS}
-.endif
-
-.if !empty(FLAVOR:L:Mno_pgp)
-CONFIGURE_ARGS+=	--disable-pgpcore-plugin \
-			--disable-pgpmime-plugin \
-			--disable-pgpinline-plugin
-.else
-MULTI_PACKAGES+=	-pgp
-CONFIGURE_ARGS+=	--enable-pgpcore-plugin \
-			--enable-pgpmime-plugin \
-			--enable-pgpinline-plugin
-LIB_DEPENDS-main+=	gpgme::security/gpgme \
-			gpg-error::security/libgpg-error
-WANTLIB-pgp=		${WANTLIB}
-LIB_DEPENDS-pgp=	${LIB_DEPENDS} \
-			gpgme::security/gpgme \
-			gpg-error::security/libgpg-error 
-.endif
-
-.if !empty(FLAVOR:L:Mno_spamassassin)
-CONFIGURE_ARGS+=	--disable-spamassassin-plugin
-.else
-MULTI_PACKAGES+=	-spamassassin
-CONFIGURE_ARGS+=	--enable-spamassassin-plugin
-WANTLIB-spamassassin=	${WANTLIB}
-LIB_DEPENDS-spamassassin=${LIB_DEPENDS}
-.endif
-
-.if ${FLAVOR:L:Maspell}
-CONFIGURE_ARGS+=	--enable-aspell
-WANTLIB-main+=		stdc++	
-LIB_DEPENDS-main+=	aspell::textproc/aspell/core 
-.else
-CONFIGURE_ARGS+=	--disable-aspell
-.endif
-
-.if ${FLAVOR:L:Mcompface}
-PERMIT_PACKAGE_CDROM=   "No Fee"
-PERMIT_DISTFILES_CDROM= "No Fee"
-CONFIGURE_ARGS+=	--enable-compface
-LIB_DEPENDS-main+=	compface.>=1::mail/faces
-.else
-CONFIGURE_ARGS+=	--disable-compface
-.endif
-
-# needs some work
 .if ${FLAVOR:L:Mjpilot}
 CONFIGURE_ARGS+=	--enable-jpilot
 LIB_DEPENDS-main+=	pisock::comms/pilot-link 
 RUN_DEPENDS-main+=	::comms/jpilot
 .else
 CONFIGURE_ARGS+=	--disable-jpilot
-.endif
-
-.if ${FLAVOR:L:Mldap}
-CONFIGURE_ARGS+=	--enable-ldap
-WANTLIB-main+=		
-LIB_DEPENDS-main+=	
-.else
-CONFIGURE_ARGS+=	--disable-ldap
 .endif
 
 .if ${FLAVOR:L:Mgnomeprint}
@@ -184,7 +116,48 @@ LIB_DEPENDS-main+=	gnomecanvas-2::x11/gnome/libgnomecanvas \
 CONFIGURE_ARGS+=	--disable-gnomeprint
 .endif
 
-# gnome
+.if ${FLAVOR:L:Mcompface}
+PERMIT_PACKAGE_CDROM=   "No Fee"
+PERMIT_DISTFILES_CDROM= "No Fee"
+CONFIGURE_ARGS+=       --enable-compface
+LIB_DEPENDS-main+=     compface.>=1::mail/faces
+.else
+CONFIGURE_ARGS+=       --disable-compface
+.endif
+
+.if ${FLAVOR:L:Mldap}
+CONFIGURE_ARGS+=	--enable-ldap
+WANTLIB-main+=		asn1 com_err gssapi krb5
+LIB_DEPENDS-main+=	lber,ldap:openldap-client-*:databases/openldap
+.else
+CONFIGURE_ARGS+=	--disable-ldap
+.endif
+
+TOOLS=		OOo2claws-mail.pl \
+		acroread2claws-mail.pl \
+		calypso_convert.pl \
+		convert_mbox.pl \
+		eud2gc.py \
+		filter_conv.pl filter_conv_new.pl \
+		fix_date.sh \
+		freshmeat_search.pl \
+		gif2xface.pl \
+		google_msgid.pl google_search.pl \
+		kmail2claws-mail.pl kmail2claws-mail_v2.pl \
+		kmail-mailbox2claws-mail.pl \
+		multiwebsearch.pl \
+		nautilus2claws-mail.sh \
+		outlook2claws-mail.pl \
+		sylprint.pl sylprint.rc \
+		tb2claws-mail tbird2claws.py \
+		textviewer.pl textviewer.sh \
+		thunderbird-filters-convertor.pl \
+		update-po \
+		uudec uuooffice \
+		vcard2xml.py \
+		README README.sylprint \
+		kdeservicemenu/install.sh kdeservicemenu/claws-mail-kdeservicemenu.pl \
+		kdeservicemenu/README
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
@@ -195,5 +168,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/claws-mail-64x64.png ${PREFIX}/share/icons/hicolor/64x64/apps/claws-mail.png
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/128x128/apps
 	${INSTALL_DATA} ${WRKSRC}/claws-mail-128x128.png ${PREFIX}/share/icons/hicolor/128x128/apps/claws-mail.png
+	${INSTALL_DATA_DIR} ${PREFIX}/share/claws-mail/tools/kdeservicemenu
+.for i in ${TOOLS}
+	${INSTALL_DATA} ${WRKSRC}/tools/${i} \
+	${PREFIX}/share/claws-mail/tools/${i}
+.endfor
 
 .include <bsd.port.mk>
