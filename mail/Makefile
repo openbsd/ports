@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.178 2007/03/24 09:06:22 steven Exp $
+# $OpenBSD: Makefile,v 1.179 2007/04/11 20:50:17 deanna Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -18,6 +18,7 @@
      SUBDIR += bulk_mailer
      SUBDIR += c-client
      SUBDIR += clamsmtp
+     SUBDIR += claws-mail
      SUBDIR += cmail
      SUBDIR += courier-authlib
      SUBDIR += courier-imap
@@ -73,6 +74,7 @@
      SUBDIR += kbiff
      SUBDIR += kpoppassd
      SUBDIR += ldapvacation
+     SUBDIR += libetpan
      SUBDIR += mail-notification
      SUBDIR += mailcrypt
      SUBDIR += maildrop
