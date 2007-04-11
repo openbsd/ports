@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2007/02/27 20:52:19 david Exp $
+# $OpenBSD: Makefile,v 1.112 2007/04/11 12:55:07 kili Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += architect
@@ -80,6 +80,7 @@
      SUBDIR += pear-DB
      SUBDIR += pgadmin3
      SUBDIR += postgresql
+     SUBDIR += postgresql-jdbc
      SUBDIR += py-cdb
      SUBDIR += py-ldap
      SUBDIR += py-mysql
