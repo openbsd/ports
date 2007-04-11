@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.273 2007/04/08 21:22:08 espie Exp $
+# $OpenBSD: Makefile,v 1.274 2007/04/11 16:20:39 naddy Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -216,6 +216,7 @@
      SUBDIR += xautolock
      SUBDIR += xawtv
      SUBDIR += xbae
+     SUBDIR += xbindkeys
      SUBDIR += xcb
      SUBDIR += xchm
      SUBDIR += xclip
