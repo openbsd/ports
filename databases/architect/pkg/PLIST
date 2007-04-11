@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/13 01:01:34 ian Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/04/11 19:34:09 ian Exp $
 architect/
 architect/architect.jar
 architect/architecthelp.jar
@@ -12,17 +12,18 @@ architect/commons-logging.jar
 architect/commons-pool-1.3.jar
 architect/darwinsys.jar
 architect/forms-1.0.6.jar
-architect/itext-1.4.2.jar
+architect/itext-1.4.8.jar
 architect/jakarta-regexp-1.2.jar
 architect/jcommon-1.0.0.jar
+architect/jdbc/
+architect/jdbc/default_database_types.ini
 architect/jfreechart-1.0.1.jar
 architect/jhall.jar
 architect/jlfgr-1_0.jar
 architect/jsearch.jar
 architect/log4j.jar
 architect/osx_adapter.jar
-architect/sqlpower.jar
+architect/sqlpower_library.jar
 bin/architect
 share/doc/architect/
-share/doc/architect/LICENSE
 share/doc/architect/PowerArchitectUserGuide.pdf

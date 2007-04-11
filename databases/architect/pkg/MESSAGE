@@ -7,3 +7,6 @@ Then, add your Connection to the Project and expand the database
 in the navigator; drag the parts you want to work on into the main
 panel. You can now begin visually inspecting/editing your database.
 Save your Project if you want to resume it later.
+
+Note: If you have used a version prior to 1.0 you may need to 
+re-configure your JDBC drivers and/or connections.
