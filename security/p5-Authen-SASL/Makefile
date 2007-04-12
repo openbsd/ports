@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2007/01/15 17:40:10 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2007/04/12 18:59:36 jasper Exp $
 
 COMMENT=	"perl interface to the SASL auth framework"
 
 MODULES=	cpan
 DISTNAME=	Authen-SASL-2.10
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	security
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Artistic/GPL
 PERMIT_PACKAGE_CDROM=	Yes

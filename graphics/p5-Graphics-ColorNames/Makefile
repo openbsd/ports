@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2006/12/17 20:13:33 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2007/04/12 18:59:36 jasper Exp $
 
 COMMENT=	"defines RGB values for common color names"
 
 DISTNAME=	Graphics-ColorNames-2.0_03
-PKGNAME=	p5-Graphics-ColorNames-2.0.03
+PKGNAME=	p5-Graphics-ColorNames-2.0.03p0
 CATEGORIES=	graphics
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPL/Artistic
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2006/01/04 13:50:25 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/04/12 18:59:36 jasper Exp $
 
 COMMENT=		"Perl shell"
 
 DISTNAME=		psh-1.8
-PKGNAME=		${DISTNAME:S/p/perl/}p0
+PKGNAME=		${DISTNAME:S/p/perl/}p1
 CATEGORIES=		shells
 
 HOMEPAGE=		http://www.focusresearch.com/gregor/sw/psh/
 
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

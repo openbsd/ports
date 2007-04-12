@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/29 08:23:30 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/04/12 18:59:35 jasper Exp $
 
 COMMENT=	"Emulates the sscanf() of the C stdio library"
 
 MODULES=	cpan
 VERSION=	2.1
 DISTNAME=	String-Scanf-${VERSION}
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel perl5
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

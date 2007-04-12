@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/04/23 19:49:03 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/04/12 18:59:36 jasper Exp $
 
 COMMENT=	"configurable analog clock for X11"
 DISTNAME=	xtu-1.3
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11 sysutils
 
 HOMEPAGE=	http://www.core.de/~coto/projects/xtu/
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # BSD license
 PERMIT_PACKAGE_CDROM=	Yes

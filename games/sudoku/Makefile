@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2006/05/30 13:57:19 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/04/12 18:59:36 jasper Exp $
 
 COMMENT=		"console based sudoku"
 
 DISTNAME=		sudoku-1.0.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		games
 
 HOMEPAGE=		http://www.laurasia.com.au/sudoku/
 
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Public Domain
 PERMIT_PACKAGE_CDROM=	Yes

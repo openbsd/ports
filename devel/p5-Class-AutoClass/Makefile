@@ -1,12 +1,13 @@
-#	$OpenBSD: Makefile,v 1.3 2006/11/25 16:32:34 espie Exp $
+#	$OpenBSD: Makefile,v 1.4 2007/04/12 18:59:35 jasper Exp $
 
 COMMENT=	"auto getters/setters for perl"
 
 MODULES=	cpan
 DISTNAME=	Class-AutoClass-0.093
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Artistic licence
 PERMIT_PACKAGE_CDROM=	Yes

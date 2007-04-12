@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2007/01/15 17:40:10 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2007/04/12 18:59:36 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 MODULES=	cpan
 COMMENT=	"implements DSA using OpenSSL"
 DISTNAME=	Crypt-OpenSSL-DSA-0.13
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	security
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 HOMEPAGE=	http://perl-openssl.sourceforge.net/
 

@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.16 2007/01/16 17:52:06 simon Exp $
+# $OpenBSD: Makefile,v 1.17 2007/04/12 18:59:36 jasper Exp $
 
 COMMENT=	"object oriented interface for CGI script applications"
 
 MODULES=	cpan
 DISTNAME=	CGI-XMLApplication-1.1.3
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=    	www
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

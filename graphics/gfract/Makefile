@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2007/01/04 20:19:53 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2007/04/12 18:59:36 jasper Exp $
 
 COMMENT=		"fractal program with GTK interface"
 DISTNAME=		gfract-0.33
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 DISTFILES=		${DISTNAME}.tar.gz \
 			gfract-palettes-0.1.tar.gz
 CATEGORIES=		graphics math
 
 HOMEPAGE=		http://www.oskusoft.com/osku/gfract/
 
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

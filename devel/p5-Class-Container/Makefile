@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2006/11/25 16:32:34 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2007/04/12 18:59:35 jasper Exp $
 
 COMMENT=	"validate method/function parameters"
 
 MODULES=	cpan
 DISTNAME=	Class-Container-0.12
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
