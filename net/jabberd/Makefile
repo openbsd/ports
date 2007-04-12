@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2007/04/03 15:04:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2007/04/12 15:15:18 aanriot Exp $
 
 COMMENT=		"jabber server"
 DISTNAME=		jabberd-2.0s11
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		net
 HOMEPAGE=		http://jabberd2.xiaoka.com/
 
@@ -34,6 +34,7 @@ FLAVOR?=		mysql
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--localstatedir=/var \
+			--enable-debug \
 			--enable-ssl \
 			--disable-idn \
 			--with-extra-include-path="${EXTRA_INCLUDE_PATH}" \
