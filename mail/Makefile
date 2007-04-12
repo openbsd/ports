@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.179 2007/04/11 20:50:17 deanna Exp $
+# $OpenBSD: Makefile,v 1.180 2007/04/12 02:02:16 deanna Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -161,8 +161,6 @@
      SUBDIR += solid-pop3d,apop
      SUBDIR += sylpheed
      SUBDIR += sylpheed,gpgme
-     SUBDIR += sylpheed-claws
-     SUBDIR += sylpheed-claws,pgpmime
      SUBDIR += teapop
      SUBDIR += thunderbird-i18n
      SUBDIR += tkrat
