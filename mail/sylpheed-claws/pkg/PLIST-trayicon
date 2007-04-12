@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST-trayicon,v 1.1 2005/04/12 20:29:26 naddy Exp $
-lib/sylpheed-claws/plugins/trayicon.a
-lib/sylpheed-claws/plugins/trayicon.la
-%%SHARED%%
-share/doc/sylpheed-claws/README.trayicon

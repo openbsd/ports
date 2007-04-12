@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST-imageviewer,v 1.2 2005/04/12 20:29:26 naddy Exp $
-lib/sylpheed-claws/plugins/image_viewer.a
-lib/sylpheed-claws/plugins/image_viewer.la
-%%SHARED%%

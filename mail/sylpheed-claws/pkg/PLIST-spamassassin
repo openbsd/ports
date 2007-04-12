@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST-spamassassin,v 1.2 2005/04/12 20:29:26 naddy Exp $
-lib/sylpheed-claws/plugins/spamassassin.a
-lib/sylpheed-claws/plugins/spamassassin.la
-lib/sylpheed-claws/plugins/spamassassin_gtk.a
-lib/sylpheed-claws/plugins/spamassassin_gtk.la
-%%SHARED%%
-share/doc/sylpheed-claws/README.spamassassin

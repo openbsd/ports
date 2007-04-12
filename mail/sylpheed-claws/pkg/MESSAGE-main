@@ -1,5 +1,0 @@
-
-  If you also have the main package of Sylpheed, and do not want to 
-  remove it, you can use ${PREFIX}/bin/sylpheed-switcher to switch 
-  between the main package and the claws package.
- 
