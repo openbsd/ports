@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/01/04 20:19:53 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/04/12 20:24:30 sturm Exp $
 
 COMMENT=	"Ogg Vorbis and MP3 files tagger"
 
 DISTNAME=	tagtool-0.12.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	audio
 HOMEPAGE=	http://pwp.netcabo.pt/paol/tagtool/
 
@@ -17,8 +17,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 Xext Xrender atk-1.0 c m z stdc++ ogg fontconfig \
-		freetype glib-2.0 gmodule-2.0 glitz png \
+WANTLIB=	X11 Xau Xdmcp Xrender atk-1.0 c m z stdc++ ogg fontconfig \
+		freetype expat glib-2.0 gmodule-2.0 glitz png \
 		gobject-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0 cairo
 
 MODULES=	devel/gettext

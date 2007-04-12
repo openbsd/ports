@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2007/01/13 11:27:56 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/04/12 20:24:30 sturm Exp $
 
 COMMENT=		"Music Management Application"
 
 DISTNAME=		rhythmbox-0.8.8
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		audio
 
 HOMEPAGE=		http://www.rhythmbox.org
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 Xext Xrender \
-			c crypto fontconfig freetype pthread m ssl z \
+WANTLIB=		ICE SM X11 Xau Xdmcp Xrender \
+			c crypto expat fontconfig freetype pthread m ssl z \
 			ORBit-2 ORBitCosNaming-2 art_lgpl_2.>=5 atk-1.0 \
 			audiofile bonobo-2 bonobo-activation.>=4.0 bonoboui-2 \
 			esd.>=2 gconf-2 glade-2.0 jpeg popt xml2 \

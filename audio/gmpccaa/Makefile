@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/03/23 23:43:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2007/04/12 20:24:29 sturm Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	"Amazon cover art provider for gmpc"
 
 VERSION=	0.14.0
 DISTNAME=	gmpc-coveramazon-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
 
 HOMEPAGE=	http://cms.qballcow.nl/index.php?page=Plugins
@@ -18,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://download.sarine.nl/gmpc-${VERSION}/plugins/
 
-WANTLIB=		ICE SM X11 Xext Xrender atk-1.0 cairo fontconfig \
+WANTLIB=		X11 Xau Xdmcp Xrender atk-1.0 cairo expat fontconfig \
 			freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 			gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 			png z

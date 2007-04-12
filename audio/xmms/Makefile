@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2006/11/25 19:04:39 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2007/04/12 20:24:30 sturm Exp $
 
 COMMENT-main=		"Multimedia player for the X Window System"
 COMMENT-esd=		"Esound output plugin for XMMS"
@@ -8,7 +8,7 @@ COMMENT-mp3=		"MP3 input plugin for XMMS"
 
 VERSION=		1.2.10
 DISTNAME=		xmms-${VERSION}
-PKGNAME-main=		xmms-${VERSION}p8
+PKGNAME-main=		xmms-${VERSION}p9
 PKGNAME-esd=		xmms-esd-${VERSION}p5
 PKGNAME-vorbis=		xmms-vorbis-${VERSION}p5
 PKGNAME-mikmod=		xmms-mikmod-${VERSION}p5
@@ -54,7 +54,7 @@ MULTI_PACKAGES+=	-mp3
 PATCH_LIST=	patch-* gcc-*
 .endif
 
-WANTLIB-main=		${WANTLIB} GL ICE c Xxf86vm SM
+WANTLIB-main=		${WANTLIB} GL ICE c Xxf86vm SM Xau Xdmcp
 
 MODULES=		devel/gettext
 RUN_DEPENDS=		:unzip-*:archivers/unzip

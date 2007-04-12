@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2006/11/20 13:07:19 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2007/04/12 20:24:30 sturm Exp $
 
 COMMENT=	"lame ain't an MP3 encoder"
 
 VERSION=	3.96.1
 
 DISTNAME=	lame-${VERSION}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lame/}
 SHARED_LIBS +=	mp3lame              0.1      # .0.1
@@ -45,7 +45,7 @@ USE_X11=		Yes
 CONFIGURE_ARGS+=	--enable-mp3x \
 			--with-gtk-prefix=${LOCALBASE}
 LIB_DEPENDS+=		gtk.>=1.2,gdk.>=1.2::x11/gtk+
-WANTLIB+=		X11 Xext Xi glib gmodule iconv intl
+WANTLIB+=		X11 Xau Xdmcp Xext Xi glib gmodule iconv intl
 .endif
 
 .include <bsd.port.mk>

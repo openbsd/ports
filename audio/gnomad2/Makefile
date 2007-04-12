@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/02/02 14:26:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2007/04/12 20:24:29 sturm Exp $
 
 COMMENT=		"GTK+ music manager for various Creative and Dell audio players"
 
 DISTNAME=		gnomad2-2.8.11
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		audio
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -13,7 +14,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xrender c fontconfig freetype m pthread z \
+WANTLIB=		X11 Xau Xdmcp Xrender c expat fontconfig freetype m \
+			pthread z \
 			gmodule-2.0 atk-1.0 gobject-2.0 glitz png \
 		        pango-1.0 pangocairo-1.0 pangoft2-1.0 cairo
 

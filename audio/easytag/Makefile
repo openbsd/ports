@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2007/03/31 10:21:09 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2007/04/12 20:24:29 sturm Exp $
 
 COMMENT=		"MP3 ID3 tags editor"
 
 DISTNAME=		easytag-0.30
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		audio x11
 HOMEPAGE=		http://easytag.sourceforge.net/
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		glib gmodule ogg X11 Xext Xi c m stdc++ z
+WANTLIB=		glib gmodule ogg X11 Xau Xdmcp Xext Xi c m stdc++ z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=easytag/}
 EXTRACT_SUFX=		.tar.bz2

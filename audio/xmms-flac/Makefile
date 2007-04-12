@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2007/03/28 14:36:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2007/04/12 20:24:30 sturm Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"XMMS input plugin for playing FLAC files"
 
 VERSION=	1.1.2
-PKGNAME=	xmms-flac-${VERSION}p0
+PKGNAME=	xmms-flac-${VERSION}p1
 DISTNAME=	flac-${VERSION}
 CATEGORIES=	audio
 HOMEPAGE=	http://flac.sourceforge.net/
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=flac/}
 
-WANTLIB=	X11 Xext Xi gdk glib gmodule gtk iconv intl m
+WANTLIB=	X11 Xau Xdmcp Xext Xi gdk glib gmodule gtk iconv intl m
 LIB_DEPENDS=	xmms.>=4::audio/xmms \
 		FLAC.>=7::audio/flac
 
