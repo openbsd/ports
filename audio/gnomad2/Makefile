@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/04/12 20:24:29 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2007/04/12 20:52:07 jasper Exp $
 
 COMMENT=		"GTK+ music manager for various Creative and Dell audio players"
 
 DISTNAME=		gnomad2-2.8.11
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		audio
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -24,18 +24,19 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gnomad2/}
 MODULES=		devel/gettext
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \
+			CPPFLAGS="-I${LOCALBASE}/include"
 
 LIB_DEPENDS=		id3tag.>=3::audio/libid3tag \
 			njb::audio/libnjb \
 	                glib-2.0.>=400.2,gthread-2.0.>=400.2::devel/glib2 \
 			mtp::devel/libmtp \
 			usb.>=8::devel/libusb \
+			dbus-1.>=6::x11/dbus \
+			dbus-glib-1.>=2::x11/dbus-glib \
 			gdk_pixbuf-2.0.>=400.3,gdk-x11-2.0.>=400.3,gtk-x11-2.0.>=0.5::x11/gtk+2
 
 BUILD_DEPENDS=		::textproc/intltool \
 			::textproc/p5-XML-Parser
-
-CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ENV+= 	CPPFLAGS="-I${LOCALBASE}/include"
 
 .include <bsd.port.mk>
