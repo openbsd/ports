@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/04/08 13:39:13 kurt Exp $
+# $OpenBSD: Makefile,v 1.5 2007/04/13 14:04:08 kurt Exp $
 
 COMMENT=		"NetBeans Java IDE"
 
@@ -36,7 +36,7 @@ NO_REGRESS=		Yes
 WRKDIST=		${WRKDIR}/netbeans-src
 
 do-build:
-		@cd ${WRKDIST}/nbbuild && exec ${SETENV} ${MAKE_ENV} ant -v \
+		@cd ${WRKDIST}/nbbuild && exec ${SETENV} ${MAKE_ENV} ant -q \
 		-Dant.build.javac.source="1.5" -Dant.build.javac.target="1.5"
 
 do-install:
