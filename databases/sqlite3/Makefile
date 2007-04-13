@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2007/02/02 14:45:53 bernd Exp $
+# $OpenBSD: Makefile,v 1.27 2007/04/13 20:40:51 sturm Exp $
 
 COMMENT-main=	"Embedded SQL implementation"
 COMMENT-tcl=	"TCL bindings for Sqlite3"
 V=		3.3.12
 DISTNAME=	sqlite-${V}
 PKGNAME-main=	sqlite3-${V}
-PKGNAME-tcl=	sqlite3-tcl-${V}
+PKGNAME-tcl=	sqlite3-tcl-${V}p0
 CATEGORIES=	databases
 SHARED_LIBS +=	sqlite3              8.9      # .8.6
 SHARED_LIBS +=	tclsqlite3           8.9      # .8.6
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c ncurses readline
+WANTLIB-main=	c ncurses readline
 
 USE_LIBTOOL=	Yes
 
