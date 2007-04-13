@@ -1,7 +1,7 @@
-$OpenBSD: patch-libavcodec_bitstream_h,v 1.3 2007/04/08 17:33:39 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_bitstream_h,v 1.4 2007/04/13 23:13:21 robert Exp $
 --- libavcodec/bitstream.h.orig	Sun Jun 11 20:35:48 2006
-+++ libavcodec/bitstream.h	Sun Apr  8 10:17:01 2007
-@@ -374,7 +374,7 @@ for examples see get_bits, show_bits, skip_bits, get_v
++++ libavcodec/bitstream.h	Sat Apr 14 00:35:28 2007
+@@ -374,7 +374,7 @@ for examples see get_bits, show_bits, sk
  
  static inline int unaligned32_be(const void *v)
  {

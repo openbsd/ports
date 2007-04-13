@@ -1,7 +1,7 @@
-$OpenBSD: patch-TOOLS_subfont-c_subfont_c,v 1.5 2007/04/08 17:33:39 ajacoutot Exp $
+$OpenBSD: patch-TOOLS_subfont-c_subfont_c,v 1.6 2007/04/13 23:13:21 robert Exp $
 --- TOOLS/subfont-c/subfont.c.orig	Sun Jun 11 20:35:45 2006
-+++ TOOLS/subfont-c/subfont.c	Sun Apr  8 10:17:01 2007
-@@ -831,6 +831,18 @@ unsigned gmatrix(unsigned *m, int r, int w, double con
++++ TOOLS/subfont-c/subfont.c	Sat Apr 14 00:35:28 2007
+@@ -831,6 +831,18 @@ unsigned gmatrix(unsigned *m, int r, int
  }
  
  

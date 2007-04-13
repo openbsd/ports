@@ -1,0 +1,11 @@
+$OpenBSD: patch-loader_dmo_DMO_VideoDecoder_c,v 1.1 2007/04/13 23:13:21 robert Exp $
+--- loader/dmo/DMO_VideoDecoder.c.orig	Sat Apr 14 00:36:45 2007
++++ loader/dmo/DMO_VideoDecoder.c	Sat Apr 14 01:10:30 2007
+@@ -121,6 +121,7 @@ DMO_VideoDecoder * DMO_VideoDecoder_Open
+      
+         this->iv.m_bh = (BITMAPINFOHEADER*)malloc(bihs);
+         memcpy(this->iv.m_bh, format, bihs);
++        this->iv.m_bh->biSize = bihs;
+ 
+         this->iv.m_State = STOP;
+         //this->iv.m_pFrame = 0;
