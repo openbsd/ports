@@ -10,3 +10,4 @@ o PIPELINING support for increased transmission speed
 o IPv6 support
 o support for multiple accounts
 o sendmail compatible interface (command line options and exit codes)
+o support for Internationalized Domain Names (IDN)
