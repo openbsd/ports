@@ -1,0 +1,2 @@
+GRUB needs to be configured and activated before being used. See
+${PREFIX}/share/doc/grub/README.OpenBSD for details.
