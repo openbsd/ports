@@ -9,3 +9,6 @@ similar to e.g. GNU Arch or Monotone (or, in the commercial world,
 BitKeeper). Every GIT working directory is a full-fledged repository
 with full revision tracking capabilities, not dependent on network
 access to a central server.
+
+If you plan to use the "git-cvsimport" command, you must also have
+the cvsps package installed.

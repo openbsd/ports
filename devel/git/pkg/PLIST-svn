@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-svn,v 1.1 2007/04/13 10:19:45 bernd Exp $
+bin/git-svn
+bin/git-svnimport
+@man man/man1/git-svn.1
+@man man/man1/git-svnimport.1

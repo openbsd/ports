@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.7 2007/04/12 09:37:12 bluhm Exp $
+# $OpenBSD: Makefile,v 1.8 2007/04/13 10:19:45 bernd Exp $
 
-COMMENT=		"GIT - Tree History Storage Tool"
+COMMENT-main=		"GIT - Tree History Storage Tool"
+COMMENT-svn=		"GIT - subversion interoperability tools"
 
-V=			1.4.4.4
+V=			1.5.0.5
 DISTNAME=		git-${V}
-PKGNAME=		${DISTNAME}p0
+PKGNAME-main=		${DISTNAME}
+PKGNAME-svn=		git-svn-${V}
 CATEGORIES=		devel
 
 HOMEPAGE=		http://git.or.cz/
 
-MAINTAINER=		matthieu@openbsd.org
+MAINTAINER=		Matthieu Herrb <matthieu@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,39 +23,55 @@ DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
 			git-manpages-${V}${EXTRACT_SUFX} \
 			git-htmldocs-${V}${EXTRACT_SUFX}
 
-WANTLIB=		c crypto iconv z
-
 MASTER_SITES=		http://www.kernel.org/pub/software/scm/git/
 
 TAR=			${LOCALBASE}/bin/gtar
-PYTHON_VER=		2.4
 
 MODULES=		converters/libiconv
 
 BUILD_DEPENDS=		::archivers/gtar \
 			::devel/p5-Error
-RUN_DEPENDS=		::lang/python/${PYTHON_VER} \
-			::x11/tk/8.4 \
-			::net/rsync
-LIB_DEPENDS=		curl.>=3::net/curl \
-			expat.>=4::textproc/expat
 
-MAKE_ENV=		prefix=${PREFIX} \
-			PYTHON_PATH=${LOCALBASE}/bin/python${PYTHON_VER} \
-			CC="${CC}" \
-			CFLAGS="${CFLAGS}"
+MULTI_PACKAGES=		-main -svn
+
+WANTLIB-main=		c crypto z
+RUN_DEPENDS-main=	::x11/tk/8.4 \
+			::net/rsync \
+			::devel/p5-Error \
+			${MODLIBICONV_RUN_DEPENDS}
+LIB_DEPENDS-main=	curl.>=3::net/curl \
+			expat.>=4::textproc/expat \
+			${MODLIBICONV_LIB_DEPENDS}
+
+RUN_DEPENDS-svn=	::${BASE_PKGPATH} \
+			::devel/subversion,-perl \
+			::www/p5-URI \
+			::www/p5-libwww
+LIB_DEPENDS-svn=
+PKG_ARCH-svn=		*
+
+MAKE_ENV=		prefix=${PREFIX} CC="${CC}" CFLAGS="${CFLAGS}"
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
 
-NO_REGRESS=		Yes
+REGRESS_DEPENDS=	:zip-*:archivers/zip
+
+post-extract:
+	@rm -f ${WRKDIR}/man1/git-p4import.1
 
 post-install:
-			cd ${WRKDIR} ; \
-			pax -rw -s,man7/git.7,man1/git.1, man* ${PREFIX}/man
-			${INSTALL_DATA_DIR} ${PREFIX}/share/doc/git
-			cd ${WRKDIR} ; \
-			pax -rw *.html howto/*.html *.txt howto/*.txt \
-			    ${PREFIX}/share/doc/git
+	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp
+	${INSTALL_DATA} ${WRKBUILD}/contrib/emacs/*.el \
+		${PREFIX}/share/emacs/site-lisp
+	cd ${WRKDIR} && \
+		pax -rw -s,man7/git.7,man1/git.1, man* ${PREFIX}/man
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/git
+	cd ${WRKDIR} && \
+		pax -rw *.html howto/*.html *.txt howto/*.txt \
+		${PREFIX}/share/doc/git
+
+do-regress:
+	cd ${WRKSRC}/t && NO_SVN_TESTS=Yes ${MAKE_PROGRAM} TAR=${TAR}
 
 .include <bsd.port.mk>

@@ -1,0 +1,11 @@
+$OpenBSD: patch-git-gui_git-gui_sh,v 1.1 2007/04/13 10:19:45 bernd Exp $
+--- git-gui/git-gui.sh.orig	Tue Apr 10 15:32:04 2007
++++ git-gui/git-gui.sh	Tue Apr 10 15:32:17 2007
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ # Tcl ignores the next line -*- tcl -*- \
+-exec wish "$0" -- "$@"
++exec wish8.4 "$0" -- "$@"
+ 
+ set appvers {@@GITGUI_VERSION@@}
+ set copyright {
