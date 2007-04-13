@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2007/02/11 00:56:57 steven Exp $
+# $OpenBSD: Makefile,v 1.42 2007/04/13 14:50:06 sturm Exp $
 
 COMMENT=	"desktop organizer software for the palm pilot"
 
 DISTNAME=	jpilot-0.99.9
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	comms palm
 
 MASTER_SITES=	${HOMEPAGE}
@@ -18,11 +18,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c crypto m ICE SM X11 Xext Xrender fontconfig freetype png.>=5 \
+WANTLIB=	c crypto m X11 Xau Xdmcp Xrender fontconfig freetype png.>=5 \
 		atk-1.0.>=800.0 gdk_pixbuf-2.0.>=400.14 cairo glitz z \
 		glib-2.0.>=400.8 gmodule-2.0.>=400.8 pangocairo-1.0 \
 		gobject-2.0.>=400.8 pango-1.0.>=600.0 \
-		pangoft2-1.0.>=600.0 pthread
+		pangoft2-1.0.>=600.0 pthread expat
 
 LIB_DEPENDS=	pisock.>=9::comms/pilot-link \
 		gtk-x11-2.0.>=400.13,gdk-x11-2.0.>=400.13,gdk_pixbuf-2.0.>=400.13::x11/gtk+2

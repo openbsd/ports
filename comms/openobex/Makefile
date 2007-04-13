@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2006/10/28 11:19:20 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2007/04/13 14:50:06 sturm Exp $
 
 COMMENT=		"OBEX protocol implementation"
 DISTNAME=		openobex-1.0.1
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 SHARED_LIBS +=	openobex             1.0      # .1.0
 
 CATEGORIES=		comms
@@ -13,7 +13,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=openobex/}
 
