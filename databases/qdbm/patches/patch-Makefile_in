@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.8 2006/11/25 13:23:29 bernd Exp $
---- Makefile.in.orig	Wed Nov  1 07:48:04 2006
-+++ Makefile.in	Sat Nov  4 11:14:47 2006
+$OpenBSD: patch-Makefile_in,v 1.9 2007/04/13 13:10:37 bernd Exp $
+--- Makefile.in.orig	Wed Feb 21 09:44:56 2007
++++ Makefile.in	Sat Apr  7 12:08:16 2007
 @@ -24,7 +24,7 @@ LIBREV = @LIBREV@
  # Targets
  MYHEADS = depot.h curia.h relic.h hovel.h cabin.h villa.h vista.h odeum.h
@@ -21,31 +21,31 @@ $OpenBSD: patch-Makefile_in,v 1.8 2006/11/25 13:23:29 bernd Exp $
  
  # Building binaries
 -CC = @CC@
--CPPFLAGS = -I$(srcdir) -I$(HOME)/include -I/usr/local/include @MYDEFS@ \
+-CPPFLAGS = -I$(srcdir) -I$(MYHEADDIR) -I$(HOME)/include -I/usr/local/include @MYDEFS@ \
 +#CC = @CC@
-+CPPFLAGS += -I$(srcdir) -I${LOCALBASE}/include @MYDEFS@ \
++CPPFLAGS += -I$(srcdir) -I/usr/local/include @MYDEFS@ \
    -D_XOPEN_SOURCE_EXTENDED=1 -D_GNU_SOURCE=1 -D__EXTENSIONS__=1 -D_HPUX_SOURCE=1 \
    -D_POSIX_MAPPED_FILES=1 -D_POSIX_SYNCHRONIZED_IO=1 \
    -DPIC=1 -D_THREAD_SAFE=1 -D_REENTRANT=1 -DNDEBUG
 -CFLAGS = -Wall -pedantic -fPIC -fsigned-char -O3 -fomit-frame-pointer -fforce-addr @MYOPTS@
-+CFLAGS += -Wall -pedantic -fPIC -fsigned-char -fforce-addr @MYOPTS@
++CFLAGS += -Wall -pedantic -fPIC -fsigned-char -fomit-frame-pointer -fforce-addr @MYOPTS@
  LD = @LD@
  LIBS = -lqdbm @LIBS@
--LIBLDFLAGS = -L. -L$(HOME)/lib -L/usr/local/lib @LIBS@
--LDFLAGS = -L. -L$(HOME)/lib -L/usr/local/lib $(LIBS)
--LDENV = LD_RUN_PATH=/lib:/usr/lib:$(HOME)/lib:/usr/local/lib:$(MYLIBDIR)
-+LIBLDFLAGS = -L. -L${LOCALBASE}/lib @LIBS@
-+LDFLAGS = -L. -L${LOCALBASE}/lib $(LIBS)
-+LDENV = LD_RUN_PATH=/lib:/usr/lib:${LOCALBASE}/lib:$(MYLIBDIR)
+-LIBLDFLAGS = -L. -L$(MYLIBDIR) -L$(HOME)/lib -L/usr/local/lib @LIBS@
+-LDFLAGS = -L. -L$(MYLIBDIR) -L$(HOME)/lib -L/usr/local/lib $(LIBS)
+-LDENV = LD_RUN_PATH=/lib:/usr/lib:$(MYLIBDIR):$(HOME)/lib:/usr/local/lib
++LIBLDFLAGS = -L. -L/usr/local/lib @LIBS@
++LDFLAGS = -L. -L/usr/local/lib $(LIBS)
++LDENV = LD_RUN_PATH=/lib:/usr/lib:/usr/local/lib
  AR = @AR@
 -ARFLAGS = rcsv
--RUNENV = LD_LIBRARY_PATH=.:/lib:/usr/lib:$(HOME)/lib:/usr/local/lib
+-RUNENV = LD_LIBRARY_PATH=.:/lib:/usr/lib:$(MYLIBDIR):$(HOME)/lib:/usr/local/lib
 +ARFLAGS = rcv
-+RUNENV = LD_LIBRARY_PATH=.:/lib:/usr/lib:${LOCALBASE}/lib
++RUNENV = LD_LIBRARY_PATH=.:/lib:/usr/lib:/usr/local/lib
  
  
  
-@@ -155,20 +155,20 @@ version :
+@@ -159,20 +159,20 @@ version :
  
  
  install :
@@ -80,7 +80,7 @@ $OpenBSD: patch-Makefile_in,v 1.8 2006/11/25 13:23:29 bernd Exp $
  	@printf '\n'
  	@printf '#================================================================\n'
  	@printf '# Thanks for using QDBM.\n'
-@@ -478,12 +478,12 @@ libqdbm.a : $(MYLIBOBJS)
+@@ -482,12 +482,12 @@ libqdbm.a : $(MYLIBOBJS)
  	$(AR) $(ARFLAGS) $@ $(MYLIBOBJS)
  
  
