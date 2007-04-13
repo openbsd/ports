@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST-gnome,v 1.2 2005/08/16 09:49:51 espie Exp $
+@comment $OpenBSD: PLIST-gnome,v 1.3 2007/04/13 14:30:43 kurt Exp $
 @conflict eclipse-sdk-gtk2-gnome-<=3.0.1
-%%SHARED%%
+@lib lib/libswt-gnome-gtk-3236.so.${LIBswt-gnome-gtk-3236_VERSION}

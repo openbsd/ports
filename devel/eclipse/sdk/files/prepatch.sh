@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: prepatch.sh,v 1.1 2006/11/02 10:59:17 espie Exp $
+# $OpenBSD: prepatch.sh,v 1.2 2007/04/13 14:30:43 kurt Exp $
 # $FreeBSD: ports/java/eclipse/scripts/configure,v 1.2 2004/07/25 08:01:09 nork Exp $
 
 copy_file()
@@ -50,7 +50,8 @@ prepatch()
 	cp -r ${WRKSRC}/$src ${WRKSRC}/$dst
 
 	find ${WRKSRC} -type f -and \
-		\( -name \*.so -or -name \*.so.\* -or -name eclipse \) | xargs rm
+		\( -name lib\*.so -or -name lib\*.so.\* -or -name lib\*.jnilib \
+		-or -name lib\*.sl -or -name lib\*.a -or -name eclipse \) | xargs rm
 }
 
 COPY_LIST="

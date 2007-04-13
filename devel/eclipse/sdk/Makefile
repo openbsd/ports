@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.31 2007/04/06 02:16:21 kurt Exp $
+# $OpenBSD: Makefile,v 1.32 2007/04/13 14:30:43 kurt Exp $
 
+SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
 
 COMMENT-main=		"general-purpose, extensible IDE for Java & other langs"
@@ -7,21 +8,21 @@ COMMENT-swt=		"widget toolkit for Java"
 COMMENT-gnome=		"gnome integration library for swt/eclipse"
 COMMENT-browser=	"HTML Browser Widget library for swt/eclipse"
 
-ECLIPSE_VER=		3.2.1
+ECLIPSE_VER=		3.2.2
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
 PKGNAME=		eclipse-sdk-${ECLIPSE_VER}
-PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}p1
+PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}
 PKGNAME-swt=		swt-${ECLIPSE_VER}
 PKGNAME-gnome=		swt-gnome-${ECLIPSE_VER}
-PKGNAME-browser=	swt-browser-${ECLIPSE_VER}p1
-SHARED_LIBS=		swt-atk-gtk-3235	4.0 \
-			swt-awt-gtk-3235	4.0 \
-			swt-gtk-3235		4.0 \
-			swt-pi-gtk-3235		4.0 \
-			swt-cairo-gtk-3235	4.0 \
-			swt-gnome-gtk-3235	4.0 \
-			swt-mozilla-gtk-3235	4.0 \
-			swt-glx-gtk-3235	4.0
+PKGNAME-browser=	swt-browser-${ECLIPSE_VER}
+SHARED_LIBS=		swt-atk-gtk-3236	4.0 \
+			swt-awt-gtk-3236	4.0 \
+			swt-gtk-3236		4.0 \
+			swt-pi-gtk-3236		4.0 \
+			swt-cairo-gtk-3236	4.0 \
+			swt-gnome-gtk-3236	4.0 \
+			swt-mozilla-gtk-3236	4.0 \
+			swt-glx-gtk-3236	4.0
 
 CATEGORIES=		devel/eclipse java 
 
@@ -48,7 +49,7 @@ MASTER_SITE_ECLIPSE+=	\
 	http://mirror.pacific.net.au/eclipse/eclipse/downloads/drops/ \
 	http://download2.eclipse.org/eclipse/downloads/drops/
  
-MASTER_SITES=		${MASTER_SITE_ECLIPSE:=R-3.2.1-200609210945/}
+MASTER_SITES=		${MASTER_SITE_ECLIPSE:=R-3.2.2-200702121330/}
 EXTRACT_SUFX=		.zip
 
 VMEM_WARNING=		Yes
@@ -69,7 +70,7 @@ RUN_DEPENDS-main=	::java/javaPathHelper \
 			${MODJAVA_RUN_DEPENDS} \
 			:${PKGNAME-swt}:devel/eclipse/sdk,-browser
 LIB_DEPENDS-main=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
-WANTLIB-main=		X11 Xext Xrender c m z fontconfig \
+WANTLIB-main=		X11 Xau Xdmcp Xrender c expat m z fontconfig \
 			freetype atk-1.0 glib-2.0 gmodule-2.0 \
 			gobject-2.0 glitz png iconv intl \
 			pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo
@@ -87,7 +88,7 @@ WANTLIB-browser=	c nspr4 plc4 plds4
 
 MOZILLA_HOME=		${LOCALBASE}/xulrunner
 ECLIPSE_WS=		gtk
-ECLIPSE_BUILD=		3235
+ECLIPSE_BUILD=		3236
 ECLIPSE_OS=		openbsd
 .if ${MACHINE_ARCH} == "i386"
 ECLIPSE_ARCH=		x86
@@ -102,14 +103,14 @@ MAKE_ENV=		ECLIPSE_BUILD=${ECLIPSE_BUILD} \
 			JAVA_HOME=${JAVA_HOME} \
 			MOZILLA_HOME=${MOZILLA_HOME} \
 			CC="${CC}" CXX="${CXX}" \
-			LIBswt_atk_gtk_VERSION=${LIBswt-atk-gtk-3235_VERSION} \
-			LIBswt_awt_gtk_VERSION=${LIBswt-awt-gtk-3235_VERSION} \
-			LIBswt_gtk_VERSION=${LIBswt-gtk-3235_VERSION} \
-			LIBswt_pi_gtk_VERSION=${LIBswt-pi-gtk-3235_VERSION} \
-			LIBswt_cairo_gtk_VERSION=${LIBswt-cairo-gtk-3235_VERSION} \
-			LIBswt_gnome_gtk_VERSION=${LIBswt-gnome-gtk-3235_VERSION} \
-			LIBswt_mozilla_gtk_VERSION=${LIBswt-mozilla-gtk-3235_VERSION} \
-			LIBswt_glx_gtk_VERSION=${LIBswt-glx-gtk-3235_VERSION}
+			LIBswt_atk_gtk_VERSION=${LIBswt-atk-gtk-3236_VERSION} \
+			LIBswt_awt_gtk_VERSION=${LIBswt-awt-gtk-3236_VERSION} \
+			LIBswt_gtk_VERSION=${LIBswt-gtk-3236_VERSION} \
+			LIBswt_pi_gtk_VERSION=${LIBswt-pi-gtk-3236_VERSION} \
+			LIBswt_cairo_gtk_VERSION=${LIBswt-cairo-gtk-3236_VERSION} \
+			LIBswt_gnome_gtk_VERSION=${LIBswt-gnome-gtk-3236_VERSION} \
+			LIBswt_mozilla_gtk_VERSION=${LIBswt-mozilla-gtk-3236_VERSION} \
+			LIBswt_glx_gtk_VERSION=${LIBswt-glx-gtk-3236_VERSION}
 
 FAKE_FLAGS=		${MAKE_ENV}
 

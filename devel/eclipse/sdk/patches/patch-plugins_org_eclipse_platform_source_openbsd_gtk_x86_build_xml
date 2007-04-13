@@ -1,12 +1,12 @@
-$OpenBSD: patch-plugins_org_eclipse_platform_source_openbsd_gtk_x86_build_xml,v 1.5 2006/12/13 20:57:16 kurt Exp $
---- plugins/org.eclipse.platform.source.openbsd.gtk.x86/build.xml.orig	Mon Dec  4 21:12:59 2006
-+++ plugins/org.eclipse.platform.source.openbsd.gtk.x86/build.xml	Mon Dec  4 22:23:01 2006
+$OpenBSD: patch-plugins_org_eclipse_platform_source_openbsd_gtk_x86_build_xml,v 1.6 2007/04/13 14:30:43 kurt Exp $
+--- plugins/org.eclipse.platform.source.openbsd.gtk.x86/build.xml.orig	Fri Apr  6 17:23:27 2007
++++ plugins/org.eclipse.platform.source.openbsd.gtk.x86/build.xml	Fri Apr  6 17:29:41 2007
 @@ -68,7 +68,7 @@
  	<target name="gather.bin.parts" depends="init" if="destination.temp.folder">
- 		<mkdir dir="${destination.temp.folder}/org.eclipse.platform.source.openbsd.gtk.x86_3.2.1.r321_v20060921-MGDh_08KUYM-Bvn"/>
- 		<copy todir="${destination.temp.folder}/org.eclipse.platform.source.openbsd.gtk.x86_3.2.1.r321_v20060921-MGDh_08KUYM-Bvn" failonerror="true" overwrite="false">
+ 		<mkdir dir="${destination.temp.folder}/org.eclipse.platform.source.openbsd.gtk.x86_3.2.2.r322_v20070119-CXMbUe9K_WF26uA"/>
+ 		<copy todir="${destination.temp.folder}/org.eclipse.platform.source.openbsd.gtk.x86_3.2.2.r322_v20070119-CXMbUe9K_WF26uA" failonerror="true" overwrite="false">
 -			<fileset dir="${basedir}" includes="about.html,fragment.xml,src/**,META-INF/"			/>
 +			<fileset dir="${basedir}" includes="about.html,fragment.xml,src/**,META-INF/" excludes="**/*.orig"/>
  		</copy>
- 		<eclipse.versionReplacer path="${destination.temp.folder}/org.eclipse.platform.source.openbsd.gtk.x86_3.2.1.r321_v20060921-MGDh_08KUYM-Bvn" version="3.2.1.r321_v20060921-MGDh_08KUYM-Bvn"/>
+ 		<eclipse.versionReplacer path="${destination.temp.folder}/org.eclipse.platform.source.openbsd.gtk.x86_3.2.2.r322_v20070119-CXMbUe9K_WF26uA" version="3.2.2.r322_v20070119-CXMbUe9K_WF26uA"/>
  	</target>

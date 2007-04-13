@@ -1,15 +1,16 @@
-$OpenBSD: patch-features_org_eclipse_platform_source_feature_xml,v 1.5 2006/12/13 20:57:16 kurt Exp $
---- features/org.eclipse.platform.source/feature.xml.orig	Thu Sep 21 10:55:42 2006
-+++ features/org.eclipse.platform.source/feature.xml	Mon Dec  4 21:33:59 2006
-@@ -23,9 +23,11 @@
- 	<plugin ws="gtk"  os="linux" fragment="true" arch="ppc" download-size="0" install-size="0" id="org.eclipse.platform.source.linux.gtk.ppc" version="3.2.1.r321_v20060921-MGDh_08KUYM-Bvn"/>
- 	<plugin ws="motif"  os="hpux" fragment="true" arch="PA_RISC" download-size="0" install-size="0" id="org.eclipse.platform.source.hpux.motif.PA_RISC" version="3.2.1.r321_v20060921-MGDh_08KUYM-Bvn"/>
- 	<plugin ws="gtk"  os="linux" fragment="true" arch="x86_64" download-size="0" install-size="0" id="org.eclipse.platform.source.linux.gtk.x86_64" version="3.2.1.r321_v20060921-MGDh_08KUYM-Bvn"/>
-+	<plugin ws="gtk"  os="openbsd" fragment="true" arch="x86_64" download-size="0" install-size="0" id="org.eclipse.platform.source.openbsd.gtk.x86_64" version="3.2.1.r321_v20060921-MGDh_08KUYM-Bvn"/>
- 	<plugin ws="gtk"  os="linux" fragment="true" arch="ppc64" download-size="0" install-size="0" id="org.eclipse.platform.source.linux.gtk.ppc64" version="3.2.1.r321_v20060921-MGDh_08KUYM-Bvn"/>
- 	<plugin ws="carbon"  os="macosx" fragment="true" arch="ppc" download-size="0" install-size="0" id="org.eclipse.platform.source.macosx.carbon.ppc" version="3.2.1.r321_v20060921-MGDh_08KUYM-Bvn"/>
- 	<plugin ws="gtk"  os="linux" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.platform.source.linux.gtk.x86" version="3.2.1.r321_v20060921-MGDh_08KUYM-Bvn"/>
-+	<plugin ws="gtk"  os="openbsd" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.platform.source.openbsd.gtk.x86" version="3.2.1.r321_v20060921-MGDh_08KUYM-Bvn"/>
- 	<plugin ws="win32"  os="win32" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.platform.source.win32.win32.x86" version="3.2.1.r321_v20060921-MGDh_08KUYM-Bvn"/>
- 	<plugin ws="motif"  os="linux" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.platform.source.linux.motif.x86" version="3.2.1.r321_v20060921-MGDh_08KUYM-Bvn"/>
+$OpenBSD: patch-features_org_eclipse_platform_source_feature_xml,v 1.6 2007/04/13 14:30:43 kurt Exp $
+--- features/org.eclipse.platform.source/feature.xml.orig	Mon Feb 12 13:45:20 2007
++++ features/org.eclipse.platform.source/feature.xml	Fri Apr  6 17:37:24 2007
+@@ -22,10 +22,10 @@
+ 	<plugin ws="photon"  os="qnx" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.platform.source.qnx.photon.x86" version="3.2.2.r322_v20070119-CXMbUe9K_WF26uA"/>
+ 	<plugin ws="gtk"  os="linux" fragment="true" arch="ppc" download-size="0" install-size="0" id="org.eclipse.platform.source.linux.gtk.ppc" version="3.2.2.r322_v20070119-CXMbUe9K_WF26uA"/>
+ 	<plugin ws="motif"  os="hpux" fragment="true" arch="PA_RISC" download-size="0" install-size="0" id="org.eclipse.platform.source.hpux.motif.PA_RISC" version="3.2.2.r322_v20070119-CXMbUe9K_WF26uA"/>
+-	<plugin ws="gtk"  os="linux" fragment="true" arch="x86_64" download-size="0" install-size="0" id="org.eclipse.platform.source.linux.gtk.x86_64" version="3.2.2.r322_v20070119-CXMbUe9K_WF26uA"/>
++	<plugin ws="gtk"  os="openbsd" fragment="true" arch="x86_64" download-size="0" install-size="0" id="org.eclipse.platform.source.openbsd.gtk.x86_64" version="3.2.2.r322_v20070119-CXMbUe9K_WF26uA"/>
+ 	<plugin ws="gtk"  os="linux" fragment="true" arch="ppc64" download-size="0" install-size="0" id="org.eclipse.platform.source.linux.gtk.ppc64" version="3.2.2.r322_v20070119-CXMbUe9K_WF26uA"/>
+ 	<plugin ws="carbon"  os="macosx" fragment="true" arch="ppc" download-size="0" install-size="0" id="org.eclipse.platform.source.macosx.carbon.ppc" version="3.2.2.r322_v20070119-CXMbUe9K_WF26uA"/>
+-	<plugin ws="gtk"  os="linux" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.platform.source.linux.gtk.x86" version="3.2.2.r322_v20070119-CXMbUe9K_WF26uA"/>
++	<plugin ws="gtk"  os="openbsd" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.platform.source.openbsd.gtk.x86" version="3.2.2.r322_v20070119-CXMbUe9K_WF26uA"/>
+ 	<plugin ws="win32"  os="win32" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.platform.source.win32.win32.x86" version="3.2.2.r322_v20070119-CXMbUe9K_WF26uA"/>
+ 	<plugin ws="motif"  os="linux" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.platform.source.linux.motif.x86" version="3.2.2.r322_v20070119-CXMbUe9K_WF26uA"/>
  </feature>

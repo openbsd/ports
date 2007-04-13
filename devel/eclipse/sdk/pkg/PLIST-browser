@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-browser,v 1.1 2006/12/13 20:57:16 kurt Exp $
+@comment $OpenBSD: PLIST-browser,v 1.2 2007/04/13 14:30:43 kurt Exp $
 @conflict eclipse-sdk-gtk2-mozilla-<=3.0.1
 @pkgpath devel/eclipse/sdk,-mozilla
-%%SHARED%%
+@lib lib/libswt-mozilla-gtk-3236.so.${LIBswt-mozilla-gtk-3236_VERSION}

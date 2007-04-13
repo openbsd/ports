@@ -1,8 +1,12 @@
-$OpenBSD: patch-plugins_org_eclipse_swt_gtk_openbsd_x86_build_xml,v 1.2 2006/07/07 01:48:55 kurt Exp $
---- plugins/org.eclipse.swt.gtk.openbsd.x86/build.xml.orig	Tue Jun  6 22:48:03 2006
-+++ plugins/org.eclipse.swt.gtk.openbsd.x86/build.xml	Wed Jun  7 00:48:26 2006
-@@ -89,7 +89,7 @@
- 			<compilerarg line="-log '${temp.folder}'/@dot.bin${logExtension}" compiler="org.eclipse.jdt.core.JDTCompilerAdapter"/> 
+$OpenBSD: patch-plugins_org_eclipse_swt_gtk_openbsd_x86_build_xml,v 1.3 2007/04/13 14:30:43 kurt Exp $
+--- plugins/org.eclipse.swt.gtk.openbsd.x86/build.xml.orig	Thu Apr 12 09:19:58 2007
++++ plugins/org.eclipse.swt.gtk.openbsd.x86/build.xml	Thu Apr 12 09:32:34 2007
+@@ -86,10 +86,10 @@
+ 			<src path="${plugindir}/Eclipse SWT Program/gnome/"/>
+ 			<src path="${plugindir}/Eclipse SWT Program/gtk/"/>
+ 			<src path="${plugindir}/Eclipse SWT Theme/gtk/"/>
+-			<compilerarg line="-log '${temp.folder}'/@dot.bin${logExtension}" compiler="org.eclipse.jdt.core.JDTCompilerAdapter"/> 
++			<compilerarg line="-nowarn -log '${temp.folder}'/@dot.bin${logExtension}" compiler="org.eclipse.jdt.core.JDTCompilerAdapter"/> 
  		</javac>
          <property name="includes" value=""/>
 -        <property name="excludes" value="**/*.java,**/library/,**/package.htm*"/>

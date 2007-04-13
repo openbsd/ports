@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_Mozilla_common_library_xpcom_cpp,v 1.4 2007/04/06 02:16:21 kurt Exp $
---- plugins/org.eclipse.swt/Eclipse SWT Mozilla/common/library/xpcom.cpp.orig	Thu Sep 21 10:57:23 2006
-+++ plugins/org.eclipse.swt/Eclipse SWT Mozilla/common/library/xpcom.cpp	Thu Apr  5 08:12:50 2007
-@@ -85,14 +85,15 @@ fail:
+$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_Mozilla_common_library_xpcom_cpp,v 1.5 2007/04/13 14:30:43 kurt Exp $
+--- plugins/org.eclipse.swt/Eclipse SWT Mozilla/common/library/xpcom.cpp.orig	Mon Feb 12 13:46:47 2007
++++ plugins/org.eclipse.swt/Eclipse SWT Mozilla/common/library/xpcom.cpp	Fri Apr  6 17:23:40 2007
+@@ -68,14 +68,15 @@ fail:
  }
  #endif
  
@@ -23,7 +23,7 @@ $OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_Mozilla_common_library_xpcom
  	return rc;
  }
  #endif
-@@ -109,18 +110,6 @@ JNIEXPORT jint JNICALL XPCOM_NATIVE(NS_1NewLocalFile)
+@@ -92,18 +93,6 @@ JNIEXPORT jint JNICALL XPCOM_NATIVE(NS_1NewLocalFile)
  fail:
  	if (arg2 && lparg2) env->ReleaseIntArrayElements(arg2, lparg2, 0);
  	XPCOM_NATIVE_EXIT(env, that, NS_1NewLocalFile_FUNC);

@@ -1,7 +1,18 @@
-$OpenBSD: patch-build_xml,v 1.2 2006/07/07 01:48:55 kurt Exp $
---- build.xml.orig	Fri Jun  2 13:32:40 2006
-+++ build.xml	Wed Jun 14 13:54:26 2006
-@@ -80,17 +80,15 @@
+$OpenBSD: patch-build_xml,v 1.3 2007/04/13 14:30:43 kurt Exp $
+--- build.xml.orig	Mon Feb 12 13:46:55 2007
++++ build.xml	Thu Apr 12 12:05:10 2007
+@@ -69,6 +69,10 @@
+ 
+ 		<!-- unzip swt zips -->
+ 		<unzip dest="${swtlibs}">
++			<patternset>
++				<include name="**"/>
++				<exclude name="**/*.orig"/>
++			</patternset>
+ 			<fileset dir="${buildDirectory}/plugins/org.eclipse.rcp.source.${installOs}.${installWs}.${installArch}/src/">
+ 				<include name="org.eclipse.swt.${installWs}.${installOs}.${installArch}_*/*.zip" />
+ 			</fileset>
+@@ -80,17 +84,15 @@
  		<mkdir dir="${swtdir}" />
  		<move todir="${swtdir}/">
  			<fileset dir="${swtlibs}">
@@ -23,12 +34,23 @@ $OpenBSD: patch-build_xml,v 1.2 2006/07/07 01:48:55 kurt Exp $
  		<exec dir="${launcherlibs}/library/${installWs}/" executable="sh" failonerror="true">
  			<arg line="build.sh" />
  		</exec>
-@@ -285,9 +283,10 @@
+@@ -273,7 +275,7 @@
+ 		<condition property="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter">
+ 			<available file="${basedir}/ecj.jar" />
+ 		</condition>
+-		<condition property="compilerArg" value="-enableJavadoc -encoding ISO-8859-1">
++		<condition property="compilerArg" value="-nowarn -enableJavadoc -encoding ISO-8859-1">
+ 			<equals arg1="${build.compiler}" arg2="org.eclipse.jdt.core.JDTCompilerAdapter" />
+ 		</condition>
+ 		<fail message="The Eclipse compiler (ecj.jar) cannot be found.">
+@@ -284,10 +286,11 @@
+ 			</condition>
  		</fail>
  
- 		<property name="compilerArg" value="-encoding ISO-8859-1" />
+-		<property name="compilerArg" value="-encoding ISO-8859-1" />
 -		<property name="javacSource" value="1.3" />
 -		<property name="javacTarget" value="1.2" />
++		<property name="compilerArg" value="-nowarn -encoding ISO-8859-1" />
 +		<property name="javacSource" value="1.5" />
 +		<property name="javacTarget" value="1.5" />
  		<property name="javacDebugInfo" value="true" />
@@ -36,7 +58,7 @@ $OpenBSD: patch-build_xml,v 1.2 2006/07/07 01:48:55 kurt Exp $
  		<property name="javacFailOnError" value="true" />
  
  		<!--required property setting to build bundles in Eclipse 3.x stream builds -->
-@@ -311,7 +310,7 @@
+@@ -311,7 +314,7 @@
  
  		<!--used to add doc plug-ins to result after initial assembly-->
  		<condition property="archive.format" value="tar">

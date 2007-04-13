@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_Mozilla_common_library_xpcom_profile_h,v 1.1 2006/12/13 20:57:16 kurt Exp $
---- plugins/org.eclipse.swt/Eclipse SWT Mozilla/common/library/xpcom_profile.h.orig	Tue Dec  5 11:23:41 2006
-+++ plugins/org.eclipse.swt/Eclipse SWT Mozilla/common/library/xpcom_profile.h	Tue Dec  5 11:24:00 2006
-@@ -32,7 +32,7 @@
+$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_Mozilla_common_library_xpcom_profile_h,v 1.2 2007/04/13 14:30:43 kurt Exp $
+--- plugins/org.eclipse.swt/Eclipse SWT Mozilla/common/library/xpcom_profile.h.orig	Mon Feb 12 13:46:49 2007
++++ plugins/org.eclipse.swt/Eclipse SWT Mozilla/common/library/xpcom_profile.h	Fri Apr  6 17:23:40 2007
+@@ -15,7 +15,7 @@
  #define NDEBUG
  
  #include "nsCOMPtr.h"
