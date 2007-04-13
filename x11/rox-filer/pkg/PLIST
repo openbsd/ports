@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2006/12/07 19:46:54 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2007/04/13 18:45:17 mbalmer Exp $
 bin/rox
 @man man/man1/ROX-Filer.1
 @man man/man1/rox.1
@@ -85,6 +85,7 @@ rox/ROX-Filer/ROX/MIME/mime-application:x-gnumeric.png
 rox/ROX-Filer/ROX/MIME/mime-application:x-gzip.png
 rox/ROX-Filer/ROX/MIME/mime-application:x-gzpostscript.png
 rox/ROX-Filer/ROX/MIME/mime-application:x-jar.png
+rox/ROX-Filer/ROX/MIME/mime-application:x-java-archive.png
 rox/ROX-Filer/ROX/MIME/mime-application:x-java.png
 rox/ROX-Filer/ROX/MIME/mime-application:x-lyx.png
 rox/ROX-Filer/ROX/MIME/mime-application:x-object.png
@@ -145,6 +146,7 @@ rox/ROX-Filer/images/rox-mounted.png
 rox/ROX-Filer/images/rox-select.png
 rox/ROX-Filer/images/rox-show-details.png
 rox/ROX-Filer/images/rox-show-hidden.png
+rox/ROX-Filer/images/rox-symlink.png
 rox/ROX-Filer/images/rox-xattr.png
 rox/ROX-Filer/images/symlink.png
 rox/ROX-Filer/style.css
