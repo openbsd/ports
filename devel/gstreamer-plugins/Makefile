@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2007/01/10 11:30:03 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2007/04/13 19:49:16 naddy Exp $
 
 COMMENT-main=		"GStreamer Streaming-media framework plug-ins."
 
@@ -39,6 +39,7 @@ CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gst-plu
 
 # Disable plugins might try to build that we shouldn't
 #CONFIGURE_ARGS+=	--disable-mpeg2enc
+CONFIGURE_ARGS+=	--disable-x264
 CONFIGURE_ARGS+=	--disable-tests
 
 # do not build the cdaudio plugin, cdparanoia is enough
