@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.16 2006/08/01 22:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2007/04/13 03:58:53 steven Exp $
 
 COMMENT=	"advanced revision control system written in Haskell"
 
 DISTNAME=	darcs-1.0.8
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 HOMEPAGE=	http://www.darcs.net/
 MASTER_SITES=	${HOMEPAGE}
-MAINTAINER=	Jon Olsson <jon@vexed.se>
+MAINTAINER=	Jon Olsson <jon@abc.se>
 
 MODULES=	lang/ghc
 MODGHC_RUNTIME=	No
