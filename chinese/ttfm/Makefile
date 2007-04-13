@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2006/11/13 16:31:07 steven Exp $ 
+# $OpenBSD: Makefile,v 1.17 2007/04/13 14:10:24 sturm Exp $ 
 
 COMMENT=	"big5/gb enhanced truetype font manager"
 
 DISTNAME=       ttfm-0.9.5
-PKGNAME=        zh-${DISTNAME}
+PKGNAME=        zh-${DISTNAME}p0
 CATEGORIES=     chinese 
 
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		c freetype
+WANTLIB=		c freetype z
 
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/ttfm/
 
