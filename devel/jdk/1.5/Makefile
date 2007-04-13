@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.35 2007/04/08 12:43:06 kurt Exp $
+# $OpenBSD: Makefile,v 1.36 2007/04/13 00:29:48 kurt Exp $
 
+SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
 
 COMMENT-main=		"Java2(TM) Standard Edition Dev Kit v${V}"
@@ -7,8 +8,8 @@ COMMENT-jre=		"Java2(TM) Standard Edition Runtime Environment v${V}"
 V=			1.5.0
 DISTNAME=		jdk-1_5_0
 PKGNAME=		jdk-${V}
-PKGNAME-main=		jdk-${V}p29
-PKGNAME-jre=		jre-${V}p29
+PKGNAME-main=		jdk-${V}p30
+PKGNAME-jre=		jre-${V}p30
 
 CATEGORIES=		devel/jdk java
 
@@ -55,7 +56,7 @@ MAKE_ENV=		ALT_MOTIF_DIR="${LOCALBASE}" \
 			LANG="C" \
 			CC="${CC}" \
 			CXX="${CXX}" \
-			DEFAULT_LD_LIBRARY_PATH="/usr/lib:/usr/X11R6/lib:${LOCALBASE}/lib" \
+			DEFAULT_LD_LIBRARY_PATH="/usr/lib:${X11BASE}/lib:${LOCALBASE}/lib" \
 			HOTSPOT_BUILD_JOBS=`sysctl -n hw.ncpu`
 
 # Error message for distfile.

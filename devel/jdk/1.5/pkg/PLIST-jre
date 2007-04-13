@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-jre,v 1.8 2007/02/01 21:00:52 kurt Exp $
+@comment $OpenBSD: PLIST-jre,v 1.9 2007/04/13 00:29:49 kurt Exp $
 @option no-default-conflict
 @conflict jre->=1.5,<1.6
 @pkgpath devel/jdk/1.5,-jre,native_bootstrap
@@ -195,10 +195,12 @@ ${JREHOME}/lib/zi/America/Antigua
 ${JREHOME}/lib/zi/America/Araguaina
 ${JREHOME}/lib/zi/America/Aruba
 ${JREHOME}/lib/zi/America/Asuncion
+${JREHOME}/lib/zi/America/Atikokan
 ${JREHOME}/lib/zi/America/Bahia
 ${JREHOME}/lib/zi/America/Barbados
 ${JREHOME}/lib/zi/America/Belem
 ${JREHOME}/lib/zi/America/Belize
+${JREHOME}/lib/zi/America/Blanc-Sablon
 ${JREHOME}/lib/zi/America/Boa_Vista
 ${JREHOME}/lib/zi/America/Bogota
 ${JREHOME}/lib/zi/America/Boise
@@ -239,21 +241,24 @@ ${JREHOME}/lib/zi/America/Halifax
 ${JREHOME}/lib/zi/America/Havana
 ${JREHOME}/lib/zi/America/Hermosillo
 ${JREHOME}/lib/zi/America/Indiana/
+${JREHOME}/lib/zi/America/Indiana/Indianapolis
 ${JREHOME}/lib/zi/America/Indiana/Knox
 ${JREHOME}/lib/zi/America/Indiana/Marengo
+${JREHOME}/lib/zi/America/Indiana/Petersburg
 ${JREHOME}/lib/zi/America/Indiana/Vevay
-${JREHOME}/lib/zi/America/Indianapolis
+${JREHOME}/lib/zi/America/Indiana/Vincennes
+${JREHOME}/lib/zi/America/Indiana/Winamac
 ${JREHOME}/lib/zi/America/Inuvik
 ${JREHOME}/lib/zi/America/Iqaluit
 ${JREHOME}/lib/zi/America/Jamaica
 ${JREHOME}/lib/zi/America/Jujuy
 ${JREHOME}/lib/zi/America/Juneau
 ${JREHOME}/lib/zi/America/Kentucky/
+${JREHOME}/lib/zi/America/Kentucky/Louisville
 ${JREHOME}/lib/zi/America/Kentucky/Monticello
 ${JREHOME}/lib/zi/America/La_Paz
 ${JREHOME}/lib/zi/America/Lima
 ${JREHOME}/lib/zi/America/Los_Angeles
-${JREHOME}/lib/zi/America/Louisville
 ${JREHOME}/lib/zi/America/Maceio
 ${JREHOME}/lib/zi/America/Managua
 ${JREHOME}/lib/zi/America/Manaus
@@ -264,6 +269,7 @@ ${JREHOME}/lib/zi/America/Menominee
 ${JREHOME}/lib/zi/America/Merida
 ${JREHOME}/lib/zi/America/Mexico_City
 ${JREHOME}/lib/zi/America/Miquelon
+${JREHOME}/lib/zi/America/Moncton
 ${JREHOME}/lib/zi/America/Monterrey
 ${JREHOME}/lib/zi/America/Montevideo
 ${JREHOME}/lib/zi/America/Montreal
@@ -275,6 +281,7 @@ ${JREHOME}/lib/zi/America/Nome
 ${JREHOME}/lib/zi/America/Noronha
 ${JREHOME}/lib/zi/America/North_Dakota/
 ${JREHOME}/lib/zi/America/North_Dakota/Center
+${JREHOME}/lib/zi/America/North_Dakota/New_Salem
 ${JREHOME}/lib/zi/America/Panama
 ${JREHOME}/lib/zi/America/Pangnirtung
 ${JREHOME}/lib/zi/America/Paramaribo
@@ -421,7 +428,10 @@ ${JREHOME}/lib/zi/Australia/Melbourne
 ${JREHOME}/lib/zi/Australia/Perth
 ${JREHOME}/lib/zi/Australia/Sydney
 ${JREHOME}/lib/zi/CET
+${JREHOME}/lib/zi/CST6CDT
 ${JREHOME}/lib/zi/EET
+${JREHOME}/lib/zi/EST
+${JREHOME}/lib/zi/EST5EDT
 ${JREHOME}/lib/zi/Etc/
 ${JREHOME}/lib/zi/Etc/GMT
 ${JREHOME}/lib/zi/Etc/GMT+1
@@ -497,6 +507,7 @@ ${JREHOME}/lib/zi/Europe/Warsaw
 ${JREHOME}/lib/zi/Europe/Zaporozhye
 ${JREHOME}/lib/zi/Europe/Zurich
 ${JREHOME}/lib/zi/GMT
+${JREHOME}/lib/zi/HST
 ${JREHOME}/lib/zi/Indian/
 ${JREHOME}/lib/zi/Indian/Antananarivo
 ${JREHOME}/lib/zi/Indian/Chagos
@@ -510,6 +521,9 @@ ${JREHOME}/lib/zi/Indian/Mauritius
 ${JREHOME}/lib/zi/Indian/Mayotte
 ${JREHOME}/lib/zi/Indian/Reunion
 ${JREHOME}/lib/zi/MET
+${JREHOME}/lib/zi/MST
+${JREHOME}/lib/zi/MST7MDT
+${JREHOME}/lib/zi/PST8PDT
 ${JREHOME}/lib/zi/Pacific/
 ${JREHOME}/lib/zi/Pacific/Apia
 ${JREHOME}/lib/zi/Pacific/Auckland

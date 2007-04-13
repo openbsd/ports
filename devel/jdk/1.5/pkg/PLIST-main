@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2007/02/01 21:00:52 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2007/04/13 00:29:49 kurt Exp $
 @option no-default-conflict
 @conflict jdk->=1.5,<1.6
 @pkgpath devel/jdk/1.5,native_bootstrap
@@ -993,10 +993,12 @@ ${JDKHOME}/jre/lib/zi/America/Antigua
 ${JDKHOME}/jre/lib/zi/America/Araguaina
 ${JDKHOME}/jre/lib/zi/America/Aruba
 ${JDKHOME}/jre/lib/zi/America/Asuncion
+${JDKHOME}/jre/lib/zi/America/Atikokan
 ${JDKHOME}/jre/lib/zi/America/Bahia
 ${JDKHOME}/jre/lib/zi/America/Barbados
 ${JDKHOME}/jre/lib/zi/America/Belem
 ${JDKHOME}/jre/lib/zi/America/Belize
+${JDKHOME}/jre/lib/zi/America/Blanc-Sablon
 ${JDKHOME}/jre/lib/zi/America/Boa_Vista
 ${JDKHOME}/jre/lib/zi/America/Bogota
 ${JDKHOME}/jre/lib/zi/America/Boise
@@ -1037,21 +1039,24 @@ ${JDKHOME}/jre/lib/zi/America/Halifax
 ${JDKHOME}/jre/lib/zi/America/Havana
 ${JDKHOME}/jre/lib/zi/America/Hermosillo
 ${JDKHOME}/jre/lib/zi/America/Indiana/
+${JDKHOME}/jre/lib/zi/America/Indiana/Indianapolis
 ${JDKHOME}/jre/lib/zi/America/Indiana/Knox
 ${JDKHOME}/jre/lib/zi/America/Indiana/Marengo
+${JDKHOME}/jre/lib/zi/America/Indiana/Petersburg
 ${JDKHOME}/jre/lib/zi/America/Indiana/Vevay
-${JDKHOME}/jre/lib/zi/America/Indianapolis
+${JDKHOME}/jre/lib/zi/America/Indiana/Vincennes
+${JDKHOME}/jre/lib/zi/America/Indiana/Winamac
 ${JDKHOME}/jre/lib/zi/America/Inuvik
 ${JDKHOME}/jre/lib/zi/America/Iqaluit
 ${JDKHOME}/jre/lib/zi/America/Jamaica
 ${JDKHOME}/jre/lib/zi/America/Jujuy
 ${JDKHOME}/jre/lib/zi/America/Juneau
 ${JDKHOME}/jre/lib/zi/America/Kentucky/
+${JDKHOME}/jre/lib/zi/America/Kentucky/Louisville
 ${JDKHOME}/jre/lib/zi/America/Kentucky/Monticello
 ${JDKHOME}/jre/lib/zi/America/La_Paz
 ${JDKHOME}/jre/lib/zi/America/Lima
 ${JDKHOME}/jre/lib/zi/America/Los_Angeles
-${JDKHOME}/jre/lib/zi/America/Louisville
 ${JDKHOME}/jre/lib/zi/America/Maceio
 ${JDKHOME}/jre/lib/zi/America/Managua
 ${JDKHOME}/jre/lib/zi/America/Manaus
@@ -1062,6 +1067,7 @@ ${JDKHOME}/jre/lib/zi/America/Menominee
 ${JDKHOME}/jre/lib/zi/America/Merida
 ${JDKHOME}/jre/lib/zi/America/Mexico_City
 ${JDKHOME}/jre/lib/zi/America/Miquelon
+${JDKHOME}/jre/lib/zi/America/Moncton
 ${JDKHOME}/jre/lib/zi/America/Monterrey
 ${JDKHOME}/jre/lib/zi/America/Montevideo
 ${JDKHOME}/jre/lib/zi/America/Montreal
@@ -1073,6 +1079,7 @@ ${JDKHOME}/jre/lib/zi/America/Nome
 ${JDKHOME}/jre/lib/zi/America/Noronha
 ${JDKHOME}/jre/lib/zi/America/North_Dakota/
 ${JDKHOME}/jre/lib/zi/America/North_Dakota/Center
+${JDKHOME}/jre/lib/zi/America/North_Dakota/New_Salem
 ${JDKHOME}/jre/lib/zi/America/Panama
 ${JDKHOME}/jre/lib/zi/America/Pangnirtung
 ${JDKHOME}/jre/lib/zi/America/Paramaribo
@@ -1219,7 +1226,10 @@ ${JDKHOME}/jre/lib/zi/Australia/Melbourne
 ${JDKHOME}/jre/lib/zi/Australia/Perth
 ${JDKHOME}/jre/lib/zi/Australia/Sydney
 ${JDKHOME}/jre/lib/zi/CET
+${JDKHOME}/jre/lib/zi/CST6CDT
 ${JDKHOME}/jre/lib/zi/EET
+${JDKHOME}/jre/lib/zi/EST
+${JDKHOME}/jre/lib/zi/EST5EDT
 ${JDKHOME}/jre/lib/zi/Etc/
 ${JDKHOME}/jre/lib/zi/Etc/GMT
 ${JDKHOME}/jre/lib/zi/Etc/GMT+1
@@ -1295,6 +1305,7 @@ ${JDKHOME}/jre/lib/zi/Europe/Warsaw
 ${JDKHOME}/jre/lib/zi/Europe/Zaporozhye
 ${JDKHOME}/jre/lib/zi/Europe/Zurich
 ${JDKHOME}/jre/lib/zi/GMT
+${JDKHOME}/jre/lib/zi/HST
 ${JDKHOME}/jre/lib/zi/Indian/
 ${JDKHOME}/jre/lib/zi/Indian/Antananarivo
 ${JDKHOME}/jre/lib/zi/Indian/Chagos
@@ -1308,6 +1319,9 @@ ${JDKHOME}/jre/lib/zi/Indian/Mauritius
 ${JDKHOME}/jre/lib/zi/Indian/Mayotte
 ${JDKHOME}/jre/lib/zi/Indian/Reunion
 ${JDKHOME}/jre/lib/zi/MET
+${JDKHOME}/jre/lib/zi/MST
+${JDKHOME}/jre/lib/zi/MST7MDT
+${JDKHOME}/jre/lib/zi/PST8PDT
 ${JDKHOME}/jre/lib/zi/Pacific/
 ${JDKHOME}/jre/lib/zi/Pacific/Apia
 ${JDKHOME}/jre/lib/zi/Pacific/Auckland
