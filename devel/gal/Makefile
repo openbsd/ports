@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2006/10/28 11:19:20 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2007/04/14 21:20:19 sturm Exp $
 
 COMMENT=		"GNOME Application Libs"
 
 DISTNAME=		gal-0.24
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 SHARED_LIBS +=	gal                  24.0     # .24.0
 
 CATEGORIES=    		devel x11/gnome
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 Xext Xi m
+WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xi m
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gal/0.24/}
 EXTRACT_SUFX=		.tar.bz2

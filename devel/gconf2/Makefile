@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2007/02/11 00:56:57 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2007/04/14 21:20:19 sturm Exp $
 
 COMMENT=		"configuration database system for GNOME"
 
 VERSION=		2.10.1
 DISTNAME=		GConf-${VERSION}
-PKGNAME=		gconf2-${VERSION}p3
+PKGNAME=		gconf2-${VERSION}p4
 SHARED_LIBS +=	gconf-2              5.0      # .5.0
 
 CATEGORIES=		devel
@@ -25,7 +25,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 Xrender Xext atk-1.0 c m \
+WANTLIB=		X11 Xau Xdmcp Xrender atk-1.0 c expat m \
 			fontconfig freetype glib-2.0 gmodule-2.0 \
 			gobject-2.0 gthread-2.0 pango-1.0 \
 			pangoft2-1.0 pangocairo-1.0 cairo glitz png \

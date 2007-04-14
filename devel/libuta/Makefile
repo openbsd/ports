@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2006/10/19 00:35:04 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.23 2007/04/14 21:20:19 sturm Exp $
 
 COMMENT=	"graphical user interface library for C++"
 
 DISTNAME=	libuta-0.4.4
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 SHARED_LIBS=		uta 42.0
 MODGNU_SHARED_LIBS=	uta ''
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB=	SDL X11 Xext m mikmod ogg pthread stdc++ usbhid \
+WANTLIB=	SDL X11 Xau Xdmcp Xext m mikmod ogg pthread stdc++ usbhid \
 		vorbis vorbisfile z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libuta/}

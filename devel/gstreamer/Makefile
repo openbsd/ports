@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/01/08 14:34:08 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/04/14 21:20:19 sturm Exp $
 
 COMMENT-main=		"streaming media framework - core"
 COMMENT-frontend=	"streaming media framework - frontend commands"
@@ -9,7 +9,7 @@ SUBST_VARS+=		VERSION
 DISTNAME=		gstreamer-0.8.11
 PKGNAME-main=		${DISTNAME}p2
 
-PKGNAME-frontend=	gstreamer-frontend-0.8.11
+PKGNAME-frontend=	gstreamer-frontend-0.8.11p0
 SHARED_LIBS +=	gstreamer-0.8        5.0      # .5.0
 SHARED_LIBS +=	gstcontrol-0.8       5.0      # .5.0
 
@@ -24,6 +24,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m pthread z
+WANTLIB-frontend=	c iconv intl
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gstreamer/0.8/}
 EXTRACT_SUFX=		.tar.bz2
@@ -36,6 +37,8 @@ BUILD_DEPENDS=		:bison-*:devel/bison
 LIB_DEPENDS=	glib-2.0.>=200.0,gmodule-2.0.>=200.0,gobject-2.0.>=200.0,gthread-2.0.>=200.0::devel/glib2 \
 			popt.>=0.3::devel/popt \
 			xml2.>=6::textproc/libxml
+LIB_DEPENDS-frontend=	glib-2.0.>=200.0::devel/glib2 \
+			popt.>=0.3::devel/popt \
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

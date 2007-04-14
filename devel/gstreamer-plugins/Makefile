@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2007/04/13 19:49:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2007/04/14 21:20:19 sturm Exp $
 
 COMMENT-main=		"GStreamer Streaming-media framework plug-ins."
 
 VERSION=		0.8.11
 PATCHLEVEL=		
 DISTNAME=		gst-plugins-${VERSION}
-PKGNAME-main=		gstreamer-plugins-${VERSION}p11
+PKGNAME-main=		gstreamer-plugins-${VERSION}p12
 SHARED_LIBS=		gstgconf-0.8		1.0 \
 			gstinterfaces-0.8	1.0 \
 			gstmedia-info-0.8	1.0 \
@@ -58,8 +58,8 @@ myWANTLIB=		m z xml2 glib-2.0 \
 myLIB_DEPENDS=		gstreamer-0.8.>=5.0:gstreamer-0.8.*:devel/gstreamer \
 			${MODGETTEXT_LIB_DEPENDS}
 
-WANTLIB-main=		ICE SM X11 Xdamage Xext Xfixes Xrender Xv \
-			fontconfig freetype ossaudio \
+WANTLIB-main=		ICE SM X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xv \
+			expat fontconfig freetype ossaudio \
 			atk-1.0 ORBit-2 \
 			pango-1.0 pangoft2-1.0 pangocairo-1.0 \
 			gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 \
@@ -83,7 +83,7 @@ PLUGINS+=		a52
 PSEUDO_FLAVORS+=	no_${PLUGIN}
 .  if !${FLAVOR:L:Mno_${PLUGIN}} && !${FLAVOR:L:Mminimal}
 MULTI_PACKAGES+=	-${PLUGIN}
-PKGNAME-${PLUGIN}=	gstreamer-${PLUGIN}-${VERSION}${PATCHLEVEL}p11
+PKGNAME-${PLUGIN}=	gstreamer-${PLUGIN}-${VERSION}${PATCHLEVEL}p12
 BASENAME-${PLUGIN}=	gstreamer-${PLUGIN}
 .  endif
 .endfor
@@ -197,7 +197,7 @@ LIB_DEPENDS-mikmod=	mikmod::audio/libmikmod \
 
 # mpeg2dec
 COMMENT-mpeg2=		"GStreamer plugin for playing and encoding MPEG video files"
-WANTLIB-mpeg2=		X11 Xv Xext ${myWANTLIB}
+WANTLIB-mpeg2=		X11 Xau Xdmcp Xext Xv ${myWANTLIB}
 LIB_DEPENDS-mpeg2=	mpeg2::graphics/libmpeg2 \
 			${myLIB_DEPENDS}
 OPTIONS-mpeg2=		mpeg2dec
@@ -216,7 +216,7 @@ LIB_DEPENDS-ogg=	ogg::audio/libogg \
 
 # sdlvideosink
 COMMENT-sdl=		"GStreamer plugin for using SDL to diplay video"
-WANTLIB-sdl=		Xext usbhid X11 ${myWANTLIB}
+WANTLIB-sdl=		X11 Xau Xdmcp Xext usbhid ${myWANTLIB}
 LIB_DEPENDS-sdl=	SDL::devel/sdl \
 			gstinterfaces-0.8.>=1.0::devel/gstreamer-plugins \
 			${myLIB_DEPENDS}

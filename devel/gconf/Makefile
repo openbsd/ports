@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2006/11/11 21:04:27 steven Exp $
+# $OpenBSD: Makefile,v 1.26 2007/04/14 21:20:19 sturm Exp $
 
 COMMENT=		"configuration database system written for GNOME"
 
 DISTNAME=		GConf-1.0.9
-PKGNAME=		${DISTNAME:L}p1
+PKGNAME=		${DISTNAME:L}p2
 SHARED_LIBS +=	gconf-1              1.4      # .1.4
 SHARED_LIBS +=	gconf-gtk-1          1.0      # .1.0
 
@@ -26,7 +26,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		IIOP ORBit ORBitCosNaming ORBitutil \
 			X11 Xext Xi c gdk glib gmodule gtk m \
-			popt wrap z
+			Xau Xdmcp popt wrap z
 
 DEFAULT_GCONF_SOURCE=	xml::/var/db/gconf/gconf.xml.defaults
 

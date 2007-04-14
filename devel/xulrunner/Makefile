@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/02/22 00:40:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2007/04/14 21:20:19 sturm Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -8,7 +8,7 @@ COMMENT-devel=	"devel files for Gecko"
 VER=		1.8.0.4
 DISTNAME=	mozilla
 PKGNAME=	xulrunner-${VER}
-PKGNAME-main=	xulrunner-${VER}p1
+PKGNAME-main=	xulrunner-${VER}p2
 PKGNAME-devel=	xulrunner-devel-${VER}p1
 SO_VERSION=	1.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -48,8 +48,8 @@ LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
                 nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr
 WANTLIB=	c glib-2.0 m pthread stdc++
 
-WANTLIB-main=	${WANTLIB} X11 Xext Xft Xinerama Xrender Xt atk-1.0 cairo \
-		fontconfig freetype glitz gmodule-2.0 gobject-2.0 jpeg \
+WANTLIB-main=	${WANTLIB} X11 Xau Xdmcp Xft Xinerama Xrender Xt atk-1.0 cairo \
+		expat fontconfig freetype glitz gmodule-2.0 gobject-2.0 jpeg \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 png z
 
 LIB_DEPENDS-devel= ${MODGETTEXT_LIB_DEPENDS} IDL-2::devel/libIDL \
