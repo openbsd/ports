@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2006/12/16 12:22:35 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2007/04/14 17:39:56 naddy Exp $
 
 COMMENT-main=		"applets for use with the GNOME panel"
 COMMENT-battstat=	"GNOME applet for monitoring battery level"
@@ -6,7 +6,7 @@ COMMENT-battstat=	"GNOME applet for monitoring battery level"
 VERSION=		2.10.1
 SUBVERS=		p1
 DISTNAME=		gnome-applets-${VERSION}
-PKGNAME-main=		gnome-applets2-${VERSION}p5
+PKGNAME-main=		gnome-applets2-${VERSION}p6
 PKGNAME-battstat=	gnome-applets2-battstat-${VERSION}${SUBVERS}p1
 CATEGORIES=		x11 x11/gnome
 
@@ -39,7 +39,7 @@ RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			panel-applet-2::x11/gnome/panel \
 			gailutil.>=17::x11/gnome/gail \
-			gstinterfaces-0.8.>=1.0::devel/gstreamer-plugins,minimal \
+			gstinterfaces-0.8.>=1.0::devel/gstreamer-plugins \
 			gtop-2.0.>=3.0::devel/libgtop2 \
 			xklavier::x11/gnome/libxklavier
 

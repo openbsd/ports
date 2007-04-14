@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2006/12/16 12:22:35 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2007/04/14 17:39:56 naddy Exp $
 
 COMMENT=		"GNOME control center"
 
 VERSION=		2.10.2
 DISTNAME=		control-center-${VERSION}
-PKGNAME=		control-center2-${VERSION}p2
+PKGNAME=		control-center2-${VERSION}p3
 SHARED_LIBS=		gnome-window-settings 1.0
 CATEGORIES=		x11 x11/gnome
 HOMEPAGE=		http://www.gnome.org/
@@ -17,7 +17,7 @@ MODULES=		devel/gettext
 LIB_DEPENDS=		xklavier::x11/gnome/libxklavier \
 			metacity-private::x11/gnome/metacity \
 			nautilus-extension.>=1::x11/gnome/nautilus \
-			gstinterfaces-0.8.>=1.0::devel/gstreamer-plugins,minimal
+			gstinterfaces-0.8.>=1.0::devel/gstreamer-plugins
 BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS=		::devel/desktop-file-utils
 
