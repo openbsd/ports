@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_libw32dll_dmo_DMO_VideoDecoder_c,v 1.1 2007/04/14 11:57:39 robert Exp $
+--- src/libw32dll/dmo/DMO_VideoDecoder.c.orig	Sat Apr 14 02:03:02 2007
++++ src/libw32dll/dmo/DMO_VideoDecoder.c	Sat Apr 14 02:03:23 2007
+@@ -118,6 +118,7 @@ DMO_VideoDecoder * DMO_VideoDecoder_Open
+      
+         this->iv.m_bh = (BITMAPINFOHEADER*)malloc(bihs);
+         memcpy(this->iv.m_bh, format, bihs);
++        this->iv.m_bh->biSize = bihs;
+ 
+         this->iv.m_State = STOP;
+         //this->iv.m_pFrame = 0;
