@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2007/04/11 12:55:07 kili Exp $
+# $OpenBSD: Makefile,v 1.113 2007/04/14 11:46:00 espie Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += architect
@@ -29,6 +29,7 @@
      SUBDIR += p5-BerkeleyDB
      SUBDIR += p5-Catalyst-Model-CDBI
      SUBDIR += p5-Catalyst-Model-DBIC-Schema
+     SUBDIR += p5-Catalyst-Model-RDBO
      SUBDIR += p5-Class-DBI
      SUBDIR += p5-Class-DBI-AbstractSearch
      SUBDIR += p5-Class-DBI-AsForm
@@ -99,6 +100,7 @@
      SUBDIR += sqlite
      SUBDIR += sqlite3
      SUBDIR += sqlitebrowser
+     SUBDIR += sqliteman
      SUBDIR += sqlports
      SUBDIR += sqsh
      SUBDIR += xmysql
