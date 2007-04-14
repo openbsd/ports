@@ -1,6 +1,6 @@
-$OpenBSD: patch-ltmain_in,v 1.24 2006/10/23 13:55:07 espie Exp $
+$OpenBSD: patch-ltmain_in,v 1.25 2007/04/14 15:58:03 espie Exp $
 --- ltmain.in.orig	Sun Dec 18 22:43:52 2005
-+++ ltmain.in	Sat Oct 21 16:07:13 2006
++++ ltmain.in	Sun Apr  1 23:51:38 2007
 @@ -2073,6 +2073,17 @@ EOF
  	;;
      esac
@@ -89,7 +89,62 @@ $OpenBSD: patch-ltmain_in,v 1.24 2006/10/23 13:55:07 espie Exp $
  	fi
  
  	# Check to see if the archive will have undefined symbols.
-@@ -6257,40 +6282,6 @@ relink_command=\"$relink_command\""
+@@ -5797,6 +5822,10 @@ relink_command=\"$relink_command\""
+       esac
+       install_prog="$install_prog $arg"
+     done
++    case " $install_prog " in
++    *[\\\ /]cp\ *) extra_mode=;;
++    *) extra_mode='-m 644';;
++    esac
+ 
+     if test -z "$install_prog"; then
+       $echo "$modename: you must specify an install program" 1>&2
+@@ -5951,8 +5980,8 @@ relink_command=\"$relink_command\""
+ 	  test -n "$relink_command" && srcname="$realname"T
+ 
+ 	  # Install the shared library and build the symlinks.
+-	  $show "$install_prog $dir/$srcname $destdir/$realname"
+-	  $run eval "$install_prog $dir/$srcname $destdir/$realname" || exit $?
++	  $show "$install_prog $extra_mode $dir/$srcname $destdir/$realname"
++	  $run eval "$install_prog $extra_mode $dir/$srcname $destdir/$realname" || exit $?
+ 	  if test -n "$stripme" && test -n "$striplib"; then
+ 	    $show "$striplib $destdir/$realname"
+ 	    $run eval "$striplib $destdir/$realname" || exit $?
+@@ -5997,8 +6026,8 @@ relink_command=\"$relink_command\""
+ 	# Install the pseudo-library for information purposes.
+ 	name=`$echo "X$file" | $Xsed -e 's%^.*/%%'`
+ 	instname="$dir/$name"i
+-	$show "$install_prog $instname $destdir/$name"
+-	$run eval "$install_prog $instname $destdir/$name" || exit $?
++	$show "$install_prog $extra_mode $instname $destdir/$name"
++	$run eval "$install_prog $extra_mode $instname $destdir/$name" || exit $?
+ 
+ 	# Maybe install the static library, too.
+ 	test -n "$old_library" && staticlibs="$staticlibs $dir/$old_library"
+@@ -6033,8 +6062,8 @@ relink_command=\"$relink_command\""
+ 
+ 	# Install the libtool object if requested.
+ 	if test -n "$destfile"; then
+-	  $show "$install_prog $file $destfile"
+-	  $run eval "$install_prog $file $destfile" || exit $?
++	  $show "$install_prog $extra_mode $file $destfile"
++	  $run eval "$install_prog $extra_mode $file $destfile" || exit $?
+ 	fi
+ 
+ 	# Install the old object if enabled.
+@@ -6042,8 +6071,8 @@ relink_command=\"$relink_command\""
+ 	  # Deduce the name of the old-style object file.
+ 	  staticobj=`$echo "X$file" | $Xsed -e "$lo2o"`
+ 
+-	  $show "$install_prog $staticobj $staticdest"
+-	  $run eval "$install_prog \$staticobj \$staticdest" || exit $?
++	  $show "$install_prog $extra_mode $staticobj $staticdest"
++	  $run eval "$install_prog $extra_mode \$staticobj \$staticdest" || exit $?
+ 	fi
+ 	exit $EXIT_SUCCESS
+ 	;;
+@@ -6257,40 +6286,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit $EXIT_SUCCESS
  

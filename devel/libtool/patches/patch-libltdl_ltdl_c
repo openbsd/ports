@@ -1,7 +1,7 @@
-$OpenBSD: patch-libltdl_ltdl_c,v 1.1 2006/01/07 21:28:41 brad Exp $
---- libltdl/ltdl.c.orig	Sat Jan  7 16:10:47 2006
-+++ libltdl/ltdl.c	Sat Jan  7 16:11:48 2006
-@@ -894,7 +894,7 @@ static	const char	sys_search_path[]	= LT
+$OpenBSD: patch-libltdl_ltdl_c,v 1.2 2007/04/14 15:58:03 espie Exp $
+--- libltdl/ltdl.c.orig	Mon Oct 31 20:44:43 2005
++++ libltdl/ltdl.c	Sat Mar 31 13:33:59 2007
+@@ -894,7 +894,7 @@ static	const char	sys_search_path[]	= LTDL_SYSSEARCHPA
  		(*lt_dlmutex_seterror_func) (errormsg);		\
  	else 	lt_dllast_error = (errormsg);	} LT_STMT_END
  #define LT_DLMUTEX_GETERROR(errormsg)		LT_STMT_START {	\
