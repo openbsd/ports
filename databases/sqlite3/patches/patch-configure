@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2007/02/02 14:45:53 bernd Exp $
---- configure.orig	Fri Feb  2 11:53:04 2007
-+++ configure	Fri Feb  2 11:53:04 2007
-@@ -19876,7 +19876,7 @@ echo "${ECHO_T}file not found" >&6
+$OpenBSD: patch-configure,v 1.2 2007/04/14 19:34:03 steven Exp $
+--- configure.orig	Thu Mar 29 20:39:30 2007
++++ configure	Sat Apr  7 08:04:17 2007
+@@ -19338,7 +19338,7 @@ echo "${ECHO_T}file not found" >&6; }
  
      eval "TCL_STUB_LIB_FILE=\"${TCL_STUB_LIB_FILE}\""
      eval "TCL_STUB_LIB_FLAG=\"${TCL_STUB_LIB_FLAG}\""
