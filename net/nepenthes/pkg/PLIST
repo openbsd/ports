@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/03/17 21:50:11 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/04/15 11:58:25 aanriot Exp $
+@newgroup _nepenthes:584
+@newuser _nepenthes:584:584:daemon:nepenthes user:/nonexistent:/sbin/nologin
 %%SHARED%%
 bin/nepenthes
 lib/nepenthes/
@@ -90,6 +92,24 @@ share/examples/nepenthes/nepenthes.conf
 share/examples/nepenthes/nepenthes.conf.dist
 share/examples/nepenthes/shellcode-generic.conf
 @sample ${SYSCONFDIR}/nepenthes/shellcode-generic.conf
+@owner _nepenthes
+@group _nepenthes
+@sample /var/nepenthes/
+@sample /var/nepenthes/binaries/
+@sample /var/nepenthes/cache/
+@sample /var/nepenthes/cache/nepenthes/
+@sample /var/nepenthes/cache/nepenthes/geolocation/
+@sample /var/nepenthes/cache/nepenthes/signatures/
+@sample /var/nepenthes/hexdumps/
+@sample /var/nepenthes/log/
+@sample /var/nepenthes/spool/
+@sample /var/nepenthes/spool/nepenthes/
+@sample /var/nepenthes/spool/nepenthes/gotek/
+@sample /var/nepenthes/spool/nepenthes/submitpostgres/
+share/examples/nepenthes/shellcode-signatures.sc
+@sample /var/nepenthes/cache/nepenthes/signatures/shellcode-signatures.sc
+@owner
+@group
 share/examples/nepenthes/submit-file.conf
 @sample ${SYSCONFDIR}/nepenthes/submit-file.conf
 share/examples/nepenthes/submit-gotek.conf
@@ -142,17 +162,4 @@ share/examples/nepenthes/vuln-wins.conf
 @sample ${SYSCONFDIR}/nepenthes/vuln-wins.conf
 share/examples/nepenthes/x-2.conf
 @sample ${SYSCONFDIR}/nepenthes/x-2.conf
-@sample /var/nepenthes/
-@sample /var/nepenthes/binaries/
-@sample /var/nepenthes/cache/
-@sample /var/nepenthes/cache/nepenthes/
-@sample /var/nepenthes/cache/nepenthes/geolocation/
-@sample /var/nepenthes/cache/nepenthes/signatures/
-share/examples/nepenthes/shellcode-signatures.sc
-@sample /var/nepenthes/cache/nepenthes/signatures/shellcode-signatures.sc
-@sample /var/nepenthes/hexdumps/
-@sample /var/nepenthes/log/
-@sample /var/nepenthes/spool/
-@sample /var/nepenthes/spool/nepenthes/
-@sample /var/nepenthes/spool/nepenthes/gotek/
 @extraunexec rm -fr /var/nepenthes/

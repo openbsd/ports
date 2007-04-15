@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2007/03/17 21:50:11 jolan Exp $
+# $OpenBSD: Makefile,v 1.9 2007/04/15 11:58:25 aanriot Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	"determine the malware activity on a network"
 
 DISTNAME= 	nepenthes-0.2.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://nepenthes.mwcollect.org/
@@ -32,13 +33,29 @@ FAKE_FLAGS+=	localstatedir='/var/nepenthes' \
 		sysconfdir='${PREFIX}/share/examples'
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include \
+		-I${LOCALBASE}/include/postgresql"
 CONFIGURE_ARGS+=--enable-debug-logging \
 		--disable-mysql \
-		--disable-postgre \
+		--enable-postgre \
 		--disable-capabilities \
 		--localstatedir='/var/nepenthes' \
 		--with-curl-lib=${PREFIX}/lib
+
+FLAVORS=        prelude
+FLAVOR?=
+
+.if ${FLAVOR:L:Mprelude}
+LIB_DEPENDS+=   prelude.>=8::security/prelude/libprelude
+CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include  \
+                -I${LOCALBASE}/include/libprelude/" \
+		LDFLAGS="-L${LOCALBASE}/lib -pthread"
+WANTLIB+=	gcrypt gnutls gpg-error iconv intl pthread
+CONFIGURE_ARGS+=--enable-prelude
+MESSAGE=        ${PKGDIR}/MESSAGE-prelude
+.else
+LIB_DEPENDS+=	pq.>=4::databases/postgresql
+.endif
 
 pre-configure:
 	@perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR}," \

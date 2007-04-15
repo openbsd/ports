@@ -1,0 +1,13 @@
+To start with nepenthes as sensor for prelude, you have to create a
+starting profile, e.g. "nepenthes" by running on the manager side:
+ 
+# prelude-adduser registration-server prelude-manager \
+        --uid=564 --gid=564
+ 
+and on the sensor side:
+ 
+# prelude-adduser register nepenthes "idmef:w" \
+        <manager address> --uid 564 --gid 564
+ 
+Then, fill in ${SYSCONFDIR}/nepenthes/log-prelude.conf if needed, before
+starting nepenthes.
