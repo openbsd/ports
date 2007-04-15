@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.2 2006/07/05 12:06:45 aanriot Exp $
---- configure.orig	Wed Jul  5 13:46:35 2006
-+++ configure	Wed Jul  5 13:47:47 2006
-@@ -29446,9 +29446,9 @@ if test x$with_sqlite3 != xno; then
+$OpenBSD: patch-configure,v 1.3 2007/04/15 11:38:10 aanriot Exp $
+--- configure.orig	Sat Mar 17 15:49:27 2007
++++ configure	Sat Apr  7 18:24:58 2007
+@@ -27838,9 +27838,9 @@ if test x$with_sqlite3 != xno; then
     with_sqlite3=no
  
     for dir in $default_path; do
@@ -14,7 +14,7 @@ $OpenBSD: patch-configure,v 1.2 2006/07/05 12:06:45 aanriot Exp $
  if { as_var=$as_ac_File; eval "test \"\${$as_var+set}\" = set"; }; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-@@ -29456,7 +29456,7 @@ else
+@@ -27848,7 +27848,7 @@ else
    { { echo "$as_me:$LINENO: error: cannot check for file existence when cross compiling" >&5
  echo "$as_me: error: cannot check for file existence when cross compiling" >&2;}
     { (exit 1); exit 1; }; }
