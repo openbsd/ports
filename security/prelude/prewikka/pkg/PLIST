@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/12/30 16:36:09 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/04/15 11:40:48 aanriot Exp $
 bin/prewikka-httpd
 lib/python${MODPY_VERSION}/site-packages/prewikka/
 lib/python${MODPY_VERSION}/site-packages/prewikka/Auth.py
@@ -103,10 +103,14 @@ lib/python${MODPY_VERSION}/site-packages/prewikka/view.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/views/
 lib/python${MODPY_VERSION}/site-packages/prewikka/views/__init__.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/views/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/prewikka/views/alertlisting.py
+lib/python${MODPY_VERSION}/site-packages/prewikka/views/alertlisting.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/views/commands.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/views/commands.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/views/filter.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/views/filter.pyc
+lib/python${MODPY_VERSION}/site-packages/prewikka/views/heartbeatlisting.py
+lib/python${MODPY_VERSION}/site-packages/prewikka/views/heartbeatlisting.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/views/messagedetails.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/views/messagedetails.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/views/messagelisting.py
@@ -131,6 +135,7 @@ share/prewikka/conf/prewikka.conf
 share/prewikka/database/
 share/prewikka/database/mysql-update-0.9.1.sql
 share/prewikka/database/mysql.sql
+share/prewikka/database/mysql2pgsql.sh
 share/prewikka/database/mysql2sqlite.sh
 share/prewikka/database/pgsql-update-0.9.1.sql
 share/prewikka/database/pgsql.sql
