@@ -1,0 +1,51 @@
+<project name="asterisk-java" default="jar" basedir=".">
+
+	<!-- $OpenBSD: build.xml,v 1.1 2007/04/15 23:08:23 ian Exp $ 
+	** OpenBSD_specific Ant build.xml for junit, provided
+	** since the current version of junit-3.8 does
+	** not include a build.xml...
+	-->
+
+	<property name="src" value="."/>
+	<property name="build" value="build"/>
+	<property name="javadoc" value="javadoc"/>
+
+	<property name="deploy.jar" value="junit.jar"/>
+
+	<target name="init">
+		<tstamp/>
+		<mkdir dir="${build}"/>
+	</target>
+
+	<target name="extract" depends="init">
+		<unjar src="src.jar" dest="."/>
+	</target>
+
+	<target name="compile" depends="extract">
+		<javac srcdir="${src}" destdir="${build}" debug="on"/>
+		<copy todir="${build}">
+			<fileset dir="${src}/junit" includes="**/*.gif"/>
+		</copy>
+		<copy todir="${build}/junit/runner/" file="${src}/junit/runner/excluded.properties"/>
+	</target>
+
+	<target name="javadoc" depends="extract">
+		<javadoc 
+			sourcepath="${src}"
+			destdir="${javadoc}"/>
+	</target>
+
+	<target name="jar" depends="compile,javadoc">
+		<jar update="no" jarfile="${deploy.jar}" basedir="${build}"
+			includes="META-INF/*,**/*.class,**/*.gif">
+		</jar>
+	</target>
+
+	<target name="deploy" depends="jar">
+		<copy file="${build}/${deploy.jar}" todir="${deploy.dir}"/>
+	</target>
+
+	<target name="clean">
+		<delete dir="${build}"/>
+	</target>
+</project>

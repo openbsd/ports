@@ -1,21 +1,24 @@
-# $OpenBSD: Makefile,v 1.12 2007/01/16 02:48:02 kurt Exp $
+# $OpenBSD: Makefile,v 1.13 2007/04/15 23:08:22 ian Exp $
 
 COMMENT=	"regression testing utility for use with the Java language"
 
-VERSION=	3.8.1
+VERSION=	3.8.2
 DISTNAME=	junit${VERSION}
-INSTALLDIR=	junit-${VERSION}
-PKGNAME=	${INSTALLDIR}p3
-CATEGORIES=	java
+PKGNAME=	junit-${VERSION}
+INSTALLDIR=	${PKGNAME}
+SUBST_VARS+=	INSTALLDIR
+CATEGORIES=	java devel
 
 HOMEPAGE=	http://www.junit.org/
 
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
+MAINTAINER=		Ian Darwin <ian@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=  Yes
-PERMIT_PACKAGE_FTP=    Yes
-PERMIT_DISTFILES_CDROM=Yes
-PERMIT_DISTFILES_FTP=  Yes
+# Common Public License - v1.0
+# Commercial distribution defend and indemnify clauses
+PERMIT_PACKAGE_CDROM=	No
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	No
+PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=junit/}
 EXTRACT_SUFX=	.zip 
@@ -24,8 +27,16 @@ MODULES=	java
 MODJAVA_VER=	1.3+
 MODJAVA_JRERUN=	yes
 
-NO_BUILD=	Yes
-NO_REGRESS=	Yes
+BUILD_DEPENDS=	:apache-ant-*:devel/apache-ant
+
+MAKE_ENV=	JAVA_HOME=${JAVA_HOME}
+
+post-extract:
+		cp ${FILESDIR}/build.xml ${WRKDIST}
+
+do-build:
+		@cd ${WRKDIST} && exec ${SETENV} ${MAKE_ENV} ant -q \
+		-Dant.build.javac.source="1.3" -Dant.build.javac.target="1.3"
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/java/classes/${INSTALLDIR}
@@ -35,6 +46,8 @@ do-install:
 	cp ${WRKSRC}/*.jar ${PREFIX}/share/java/classes/${INSTALLDIR}
 	cp -R ${WRKSRC}/doc ${PREFIX}/share/java/${INSTALLDIR}
 	cp -R ${WRKSRC}/javadoc ${PREFIX}/share/java/${INSTALLDIR}
-	cp -R ${WRKSRC}/junit ${PREFIX}/share/java/${INSTALLDIR}
+
+do-regress:
+	${JAVA_HOME}/bin/java -cp ${WRKSRC}/build junit.tests.AllTests
 
 .include <bsd.port.mk> 

@@ -1,4 +1,5 @@
-JUnit is a simple framework to write repeatable tests. 
+JUnit is a simple framework to write repeatable tests of Java code,
+and the most widely-used unit testing in Java land (and perhaps the world).
 It is an instance of the xUnit architecture for unit testing frameworks.
 It will help you measure your progress, spot unintended side effects,
 and focus your development efforts.
