@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2007/01/23 11:42:50 aanriot Exp $
---- Makefile.in.orig	Mon Jan  8 14:10:51 2007
-+++ Makefile.in	Sun Jan 21 20:41:05 2007
-@@ -340,7 +340,7 @@ oldincludedir = @oldincludedir@
+$OpenBSD: patch-Makefile_in,v 1.3 2007/04/15 11:37:16 aanriot Exp $
+--- Makefile.in.orig	Fri Mar 30 16:17:46 2007
++++ Makefile.in	Sat Apr  7 18:45:13 2007
+@@ -446,7 +446,7 @@ oldincludedir = @oldincludedir@
  pdfdir = @pdfdir@
  prefix = @prefix@
  prelude_adduser_libs = @prelude_adduser_libs@
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2007/01/23 11:42:50 aanriot Exp $
  prelude_ident_file = @prelude_ident_file@
  prelude_spool_dir = @prelude_spool_dir@
  program_transform_name = @program_transform_name@
-@@ -874,7 +874,6 @@ prelude-config.h: $(top_builddir)/config
+@@ -981,7 +981,6 @@ prelude-config.h: $(top_builddir)/config.h
  # Spool directory for report saving is mode 
  
  install-data-local:

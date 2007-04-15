@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2006/12/30 16:25:51 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/04/15 11:37:16 aanriot Exp $
 @newgroup _prelude:564
 @newuser _prelude:564:564:daemon:Prelude IDS:/var/empty:/sbin/nologin
 %%SHARED%%
@@ -50,6 +50,7 @@ include/libprelude/prelude-thread.h
 include/libprelude/prelude-timer.h
 include/libprelude/prelude.h
 include/libprelude/variable.h
+@comment lib/charset.alias
 lib/libprelude.a
 lib/libprelude.la
 lib/python${MODPY_VERSION}/site-packages/prelude.py
