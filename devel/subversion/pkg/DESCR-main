@@ -16,6 +16,7 @@ the appropriate functionality:
         -perl   Perl bindings to Subversion
         -python Python bindings to Subversion
         -ruby   Ruby bindings to Subversion
+        -ap2    Apache httpd 2 modules for Subversion
 
 Also note that authentication credential caching is disabled by default
 by setting "store-passwords" to "no" in ${SYSCONFDIR}/subversion/config.
