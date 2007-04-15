@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2006/11/18 05:23:39 brad Exp $
+@comment $OpenBSD: PLIST,v 1.8 2007/04/15 08:08:38 grange Exp $
 bin/gxemul
 @man man/man1/gxemul.1
 share/doc/gxemul/
@@ -44,8 +44,6 @@ share/doc/gxemul/20051123-netbsd-prep.png
 share/doc/gxemul/20051123-netbsd-prep_small.png
 share/doc/gxemul/20060218-netbsd-evbarm.png
 share/doc/gxemul/20060218-netbsd-evbarm_small.png
-share/doc/gxemul/20060504-gdb-64bit-mips.png
-share/doc/gxemul/20060504-gdb-64bit-mips_small.png
 share/doc/gxemul/20060623-netbsd-sgimips-3.0.png
 share/doc/gxemul/20060623-netbsd-sgimips-3.0_small.png
 share/doc/gxemul/20060724-netbsd-netwinder-1.png
@@ -60,6 +58,19 @@ share/doc/gxemul/20060814-netbsd-algor-3.0.1.png
 share/doc/gxemul/20060814-netbsd-algor-3.0.1_small.png
 share/doc/gxemul/20061029-netbsd-dreamcast.png
 share/doc/gxemul/20061029-netbsd-dreamcast_small.png
+share/doc/gxemul/20061104-netbsd-dreamcast-real_small.png
+share/doc/gxemul/20070128-netbsd-dreamcast-livecd-1.png
+share/doc/gxemul/20070128-netbsd-dreamcast-livecd-1_small.png
+share/doc/gxemul/20070128-netbsd-dreamcast-livecd-2.png
+share/doc/gxemul/20070128-netbsd-dreamcast-livecd-2_small.png
+share/doc/gxemul/20070224-netbsd-landisk.png
+share/doc/gxemul/20070224-netbsd-landisk_small.png
+share/doc/gxemul/20070308-linux-dreamcast-1.png
+share/doc/gxemul/20070308-linux-dreamcast-1_small.png
+share/doc/gxemul/20070308-linux-dreamcast-2.png
+share/doc/gxemul/20070308-linux-dreamcast-2_small.png
+share/doc/gxemul/20070318-netbsd-macppc.png
+share/doc/gxemul/20070318-netbsd-macppc_small.png
 share/doc/gxemul/configfiles.html
 share/doc/gxemul/debian-1-small.png
 share/doc/gxemul/debian-1.png
@@ -91,8 +102,8 @@ share/doc/gxemul/debian-8-small.png
 share/doc/gxemul/debian-8.png
 share/doc/gxemul/debian-9-small.png
 share/doc/gxemul/debian-9.png
+share/doc/gxemul/dreamcast.html
 share/doc/gxemul/experiments.html
-share/doc/gxemul/gdb_remote.html
 share/doc/gxemul/guestoses.html
 share/doc/gxemul/index.html
 share/doc/gxemul/intro.html
@@ -107,5 +118,6 @@ share/doc/gxemul/simplified_dyntrans.png
 share/doc/gxemul/sprite-20040711.png
 share/doc/gxemul/sprite-20040711_small.png
 share/doc/gxemul/technical.html
+share/doc/gxemul/translation.html
 share/doc/gxemul/ultrix4.5-20040706.png
 share/doc/gxemul/ultrix4.5-20040706_small.png
