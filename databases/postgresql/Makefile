@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2007/04/13 20:40:51 sturm Exp $
+# $OpenBSD: Makefile,v 1.105 2007/04/15 18:26:03 espie Exp $
 
 COMMENT-main=	"PostgreSQL RDBMS (client)"
 COMMENT-server=	"PostgreSQL RDBMS (server)"
@@ -10,7 +10,7 @@ DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}p1
 PKGNAME-server=	postgresql-server-${VERSION}
 PKGNAME-docs=	postgresql-docs-${VERSION}p1
-PKGNAME-contrib=postgresql-contrib-${VERSION}p0
+PKGNAME-contrib=postgresql-contrib-${VERSION}p1
 
 CATEGORIES=	databases
 SHARED_LIBS=	ecpg		6.0 \
@@ -79,7 +79,9 @@ WANTLIB-server=	${WANTLIB} perl
 
 LIB_DEPENDS-server= pq.>=4:postgresql-client-${VERSION}:databases/postgresql
 RUN_DEPENDS-contrib=:postgresql-server-${VERSION}:databases/postgresql,-server
-WANTLIB-contrib=${WANTLIB} pq
+
+LIB_DEPENDS-contrib= pq.>=4:postgresql-client-${VERSION}:databases/postgresql
+
 WANTLIB-docs=
 PKG_ARCH-docs=	*
 
