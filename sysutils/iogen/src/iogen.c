@@ -1,4 +1,4 @@
-/* $OpenBSD: iogen.c,v 1.7 2007/02/28 21:48:12 dlg Exp $ */
+/* $OpenBSD: iogen.c,v 1.8 2007/04/16 17:46:31 marco Exp $ */
 /*
  * Copyright (c) 2005 Marco Peereboom <marco@peereboom.us>
  *
@@ -34,11 +34,15 @@
 
 #define LOGFATAL	0x01
 #define LOGERR		0x02
+#define LOGKILLALL	0x04
 
 #define MINFILESIZE	(262400llu)
 #define MAXFILESIZE	(10737418240llu)
 #define MAXIOSIZE	(10485760llu)
 #define MINIOSIZE	(1llu)
+
+/* protos */
+void			err_log(int, const char *, ...);
 
 /* signal handler flags */
 volatile sig_atomic_t	run = 1;
@@ -107,7 +111,7 @@ killall(void)
 
 	switch (fork()) {
 	case -1:
-		err(1, "could not kill all processes");
+		err_log(LOGERR | LOGFATAL, "could not kill all processes");
 		/* NOTREACHED */
 		break;
 	case 0:
@@ -122,6 +126,29 @@ killall(void)
 		/* NOTREACHED */
 		break;
 	}
+}
+
+void
+err_log(int flags, const char *fmt, ...)
+{
+	va_list			ap;
+	char			buf[256];
+	int			errno_save = errno;
+
+	va_start(ap, fmt);
+	vsnprintf(buf, sizeof buf, fmt, ap);
+	va_end(ap);
+
+	if (flags & LOGERR)
+		snprintf(buf, sizeof buf, "%s: %s", buf, strerror(errno_save));
+
+	syslog(flags & LOGFATAL ? LOG_CRIT : LOG_NOTICE, buf);
+
+	if (flags & LOGKILLALL)
+		killall();
+
+	if (flags & LOGFATAL)
+		exit(1);
 }
 
 int
@@ -292,6 +319,7 @@ show_patterns(void)
 void
 usage(void)
 {
+	fprintf(stderr, "%s version %s\n", __progname, VERSION);
 	fprintf(stderr, "usage: %s [-rk] [-s size] [-b size] [-p percentage] "
 	    "[-d path] [-f path] [-n processes] [-t interval]\n", __progname);
 	fprintf(stderr, "-h this help\n");
@@ -357,26 +385,6 @@ sigalarm(int sig)
 }
 
 void
-err_log(int flags, const char *fmt, ...)
-{
-	va_list			ap;
-	char			buf[256];
-	int			errno_save = errno;
-
-	va_start(ap, fmt);
-	vsnprintf(buf, sizeof buf, fmt, ap);
-	va_end(ap);
-
-	if (flags & LOGERR)
-		snprintf(buf, sizeof buf, "%s: %s", buf, strerror(errno_save));
-
-	syslog(flags & LOGFATAL ? LOG_CRIT : LOG_NOTICE, buf);
-
-	if (flags & LOGFATAL)
-		exit(1);
-}
-
-void
 fill_buffer(char *buffer, size_t size, int pat)
 {
 	long long		i = 0, more = 1;
@@ -386,7 +394,7 @@ fill_buffer(char *buffer, size_t size, int pat)
 
 	memset(&ip, 0, sizeof(ip));
 	if (get_pattern(pat, &ip))
-		err(1, "can't find pattern %d", pat);
+		err_log(LOGFATAL, "can't find pattern %d", pat);
 
 	/* this really should become a regular pattern */
 	if (ip.pattern == IOGEN_PAT_TEXT) {
@@ -403,7 +411,8 @@ fill_buffer(char *buffer, size_t size, int pat)
 			if (p == buffer + size)
 				more = 0;
 			else if (p > buffer + size)
-				err(1, "buffer overflow in fill pattern");
+				err_log(LOGFATAL,
+				    "buffer overflow in fill pattern");
 		}
 		return;
 	}
@@ -423,6 +432,34 @@ get_file_size(char *filename)
 		    "stat failed in proces %i", getpid());
 
 	return (sb.st_size);
+}
+
+void
+save_buffers(void *src, void *dst, off_t len)
+{
+	char    s[MAXPATHLEN];
+	FILE    *sf, *df;
+
+	snprintf(s, sizeof s, "/tmp/dst.%d", getpid());
+	df = fopen(s, "w+");
+	if (!df)
+		err_log(LOGERR | LOGFATAL, "could not open dst");
+
+	snprintf(s, sizeof s, "/tmp/src.%d", getpid());
+	sf = fopen(s, "w+");
+	if (!sf) 
+		err_log(LOGERR| LOGFATAL, "could not open src");
+
+	if (!fwrite(src, io_size, 1, sf))
+		err_log(LOGERR| LOGFATAL, "could not write /tmp/src.%d",
+		    getpid());
+
+	if (!fwrite(dst, io_size, 1, df))
+		err_log(LOGERR| LOGFATAL, "could not write /tmp/dst.%d",
+		    getpid());
+
+	fclose(sf);
+	fclose(df);
 }
 
 int
@@ -445,7 +482,7 @@ run_io(void)
 
 	switch (pid = fork()) {
 	case -1:
-		err(1, "could not fork");
+		err_log(LOGERR | LOGFATAL, "could not fork");
 		/* NOTREACHED */
 		break;
 	case 0:
@@ -458,53 +495,72 @@ run_io(void)
 
 	/* child */
 	if (signal(SIGTERM, sigterm) == SIG_ERR)
-		err(1, "could not install TERM handler in process %i",
+		err_log(LOGERR | LOGFATAL,
+		    "could not install TERM handler in process %i",
 		    getpid());
+
 	if (signal(SIGHUP, sighup) == SIG_ERR)
-		err(1, "could not install HUP handler in process %i",
+		err_log(LOGERR | LOGFATAL,
+		    "could not install HUP handler in process %i",
 		    getpid());
+
 	if (signal(SIGALRM, sigalarm) == SIG_ERR)
-		err(1, "could not install ALARM handler in process %i",
+		err_log(LOGERR | LOGFATAL,
+		    "could not install ALARM handler in process %i",
 		    getpid());
 
 	/* poor mans memory test */
 	src = malloc(io_size);
 	if (!src)
-		err(1, "malloc failed in process %i", getpid());
+		err_log(LOGERR | LOGFATAL, "malloc failed in process %i",
+		    getpid());
+
 	fill_buffer(src, io_size, pattern);
 
 	dst = malloc(io_size);
 	if (!dst)
-		err(1, "malloc failed in process %i", getpid());
+		err_log(LOGERR | LOGFATAL, "malloc failed in process %i",
+		    getpid());
+
 	fill_buffer(dst, io_size, pattern);
 
 	if (memcmp(src, dst, io_size) != 0)
-		errx(1, "source and destination buffer not the same");
+		err_log(LOGFATAL,
+		    "source and destination buffer not the same");
 
 	if (realpath(target_dir, path_buf) == NULL)
-		err(1, "invalid destination path %s", target_dir);
+		err_log(LOGERR | LOGFATAL, "invalid destination path %s",
+		    target_dir);
+
 	rv = snprintf(target_dir, sizeof target_dir, "%s/%s_%i.io",
 	    path_buf, __progname, getpid());
 	if (rv == -1 || rv > sizeof target_dir)
-		err(1, "destination path name invalid or too long");
+		err_log(LOGERR | LOGFATAL,
+		    "destination path name invalid or too long");
+
 	iofile = fopen(target_dir, "w+");
 	if (!iofile)
-		err(1, "could not create io file");
+		err_log(LOGERR | LOGFATAL, "could not create io file");
 
 	if (realpath(result_dir, path_buf) == NULL)
-		err(1, "invalid result path %s", result_dir);
+		err_log(LOGERR | LOGFATAL,
+		    "invalid result path %s", result_dir);
+
 	rv = snprintf(result_dir, sizeof result_dir, "%s/%s_%i.res",
 	    path_buf, __progname, getpid());
 	if (rv == -1 || rv > sizeof result_dir)
-		err(1, "result path name invalid or too long");
+		err_log(LOGERR | LOGFATAL,
+		    "result path name invalid or too long");
+
 	resfile = fopen(result_dir, "w+");
 	if (!resfile)
-		err(1, "could not create res file");
+		err_log(LOGERR | LOGFATAL, "could not create res file");
 
 	for (i = 0; i < 10; i++) {
 		write_block = fwrite(src, io_size, 1, iofile);
 		if (write_block != 1)
-			err(1, "could not write initial file data in %i",
+			err_log(LOGERR | LOGFATAL,
+			    "could not write initial file data in %i",
 			    getpid());
 
 		total += write_block * io_size;
@@ -550,16 +606,18 @@ run_io(void)
 				read_total += io_size - rand_buf;
 			}	
 			else
-				err_log(LOGFATAL | LOGERR,
+				err_log(LOGFATAL | LOGERR | LOGKILLALL,
 				    "could not read from file in process %i",
 				    getpid());
 
 			if (!randomize)
-				if (memcmp(src, dst, io_size) != 0)
-					err_log(LOGFATAL,
-					    "source and destination "
-					    "buffer not the same in process %i",
+				if (memcmp(src, dst, io_size) != 0) {
+					save_buffers(src, dst, io_size);
+					err_log(LOGFATAL | LOGKILLALL,
+					    "data corruption in process %i;"
+					    "buffers saved to /tmp",
 					    getpid());
+					}
 		}
 
 		/* writes */
@@ -585,7 +643,7 @@ run_io(void)
 				write_total += io_size - rand_buf;
 			}
 			else
-				err(LOGFATAL | LOGERR,
+				err_log(LOGFATAL | LOGERR | LOGKILLALL,
 				    "could not write to file in process %i",
 				    getpid());
 		}

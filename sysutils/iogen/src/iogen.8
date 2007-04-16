@@ -1,4 +1,4 @@
-.\" $OpenBSD: iogen.8,v 1.6 2007/02/06 19:25:05 marco Exp $
+.\" $OpenBSD: iogen.8,v 1.7 2007/04/16 17:46:31 marco Exp $
 .\"
 .\" Copyright (c) 2005 Marco Peereboom <marco@peereboom.us>
 .\"
@@ -115,6 +115,9 @@ Whenever an I/O process receives a
 signal, it prints statistical values to
 .Xr stderr 4
 at its earliest convenience.
+.Pp
+Whenever iogen runs into data corruption or a failed read or write it will
+terminate all child processes.
 .Sh EXAMPLES
 Run iogen with all defaults in the current working directory:
 .Pp
