@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/29 08:23:30 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/04/16 19:30:57 espie Exp $
 
 COMMENT= 	"declarative object constructor"
 
 MODULES=	cpan
-DISTNAME=	Object-Declare-0.13
+DISTNAME=	Object-Declare-0.22
 CATEGORIES=	www perl5
 
 # MIT

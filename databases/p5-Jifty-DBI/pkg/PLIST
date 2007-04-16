@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/12 18:02:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/04/16 19:30:58 espie Exp $
 ${P5SITE}/Jifty/
 ${P5SITE}/Jifty/DBI/
 ${P5SITE}/Jifty/DBI.pm
+${P5SITE}/Jifty/DBI/Class/
+${P5SITE}/Jifty/DBI/Class/Trigger.pm
 ${P5SITE}/Jifty/DBI/Collection/
 ${P5SITE}/Jifty/DBI/Collection.pm
 ${P5SITE}/Jifty/DBI/Collection/Union.pm
@@ -11,11 +13,11 @@ ${P5SITE}/Jifty/DBI/Filter/
 ${P5SITE}/Jifty/DBI/Filter.pm
 ${P5SITE}/Jifty/DBI/Filter/Date.pm
 ${P5SITE}/Jifty/DBI/Filter/DateTime.pm
-${P5SITE}/Jifty/DBI/Filter/JiftyRecord.pm
 ${P5SITE}/Jifty/DBI/Filter/SaltHash.pm
 ${P5SITE}/Jifty/DBI/Filter/Storable.pm
 ${P5SITE}/Jifty/DBI/Filter/Time.pm
 ${P5SITE}/Jifty/DBI/Filter/Truncate.pm
+${P5SITE}/Jifty/DBI/Filter/YAML.pm
 ${P5SITE}/Jifty/DBI/Filter/base64.pm
 ${P5SITE}/Jifty/DBI/Filter/utf8.pm
 ${P5SITE}/Jifty/DBI/Handle/
@@ -33,9 +35,11 @@ ${P5SITE}/Jifty/DBI/Record/
 ${P5SITE}/Jifty/DBI/Record.pm
 ${P5SITE}/Jifty/DBI/Record/Cachable.pm
 ${P5SITE}/Jifty/DBI/Record/Memcached.pm
+${P5SITE}/Jifty/DBI/Record/Plugin.pm
 ${P5SITE}/Jifty/DBI/Schema.pm
 ${P5SITE}/Jifty/DBI/SchemaGenerator.pm
 @man man/man3p/Jifty::DBI.3p
+@man man/man3p/Jifty::DBI::Class::Trigger.3p
 @man man/man3p/Jifty::DBI::Collection.3p
 @man man/man3p/Jifty::DBI::Collection::Union.3p
 @man man/man3p/Jifty::DBI::Collection::Unique.3p
@@ -45,6 +49,8 @@ ${P5SITE}/Jifty/DBI/SchemaGenerator.pm
 @man man/man3p/Jifty::DBI::Filter::SaltHash.3p
 @man man/man3p/Jifty::DBI::Filter::Storable.3p
 @man man/man3p/Jifty::DBI::Filter::Time.3p
+@man man/man3p/Jifty::DBI::Filter::Truncate.3p
+@man man/man3p/Jifty::DBI::Filter::YAML.3p
 @man man/man3p/Jifty::DBI::Filter::base64.3p
 @man man/man3p/Jifty::DBI::Filter::utf8.3p
 @man man/man3p/Jifty::DBI::Handle.3p
@@ -60,5 +66,6 @@ ${P5SITE}/Jifty/DBI/SchemaGenerator.pm
 @man man/man3p/Jifty::DBI::Record.3p
 @man man/man3p/Jifty::DBI::Record::Cachable.3p
 @man man/man3p/Jifty::DBI::Record::Memcached.3p
+@man man/man3p/Jifty::DBI::Record::Plugin.3p
 @man man/man3p/Jifty::DBI::Schema.3p
 @man man/man3p/Jifty::DBI::SchemaGenerator.3p
