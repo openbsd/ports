@@ -1,6 +1,6 @@
-$OpenBSD: patch-common_gestfich_cpp,v 1.1.1.1 2007/01/09 16:12:55 steven Exp $
---- common/gestfich.cpp.orig	Fri Jan  5 17:15:56 2007
-+++ common/gestfich.cpp	Fri Jan  5 17:19:33 2007
+$OpenBSD: patch-common_gestfich_cpp,v 1.2 2007/04/16 14:13:14 steven Exp $
+--- common/gestfich.cpp.orig	Mon Apr 16 17:05:39 2007
++++ common/gestfich.cpp	Mon Apr 16 17:05:48 2007
 @@ -37,8 +37,7 @@ static wxString s_HelpPathList[] = {
  	wxT("c:/kicad/help/"),
  	wxT("d:/kicad/help/"),
@@ -11,7 +11,7 @@ $OpenBSD: patch-common_gestfich_cpp,v 1.1.1.1 2007/01/09 16:12:55 steven Exp $
  #endif
  	wxT("end_list")	// End of list symbol, do not change
  };
-@@ -49,8 +48,7 @@ static wxString s_KicadDataPathList[] = 
+@@ -49,8 +48,7 @@ static wxString s_KicadDataPathList[] = {
  	wxT("c:/kicad/"),
  	wxT("d:/kicad/"),
  #else
@@ -21,7 +21,7 @@ $OpenBSD: patch-common_gestfich_cpp,v 1.1.1.1 2007/01/09 16:12:55 steven Exp $
  #endif
  	wxT("end_list")	// End of list symbol, do not change
  };
-@@ -61,9 +59,7 @@ static wxString s_KicadBinaryPathList[] 
+@@ -61,9 +59,7 @@ static wxString s_KicadBinaryPathList[] = {
  	wxT("c:/kicad/winexe/"),
  	wxT("d:/kicad/winexe/"),
  #else

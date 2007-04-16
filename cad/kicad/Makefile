@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/02/11 00:21:11 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/04/16 14:13:14 steven Exp $
 
 COMMENT-main=	"circuit drawing and schematic capture"
 COMMENT-docs=	"documentation for the kicad library of components"
@@ -35,7 +35,7 @@ PKG_ARCH-docs=	*
 LIB_DEPENDS= wx_base,wx_base_net,wx_base_odbc,wx_base_xml,wx_gtk2_adv,wx_gtk2_core,wx_gtk2_dbgrid,wx_gtk2_gl,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_xrc::x11/wxWidgets
 
 DOCDIST=	doc_components-2006-12-08.zip
-PKGDIST=	kicad-${V}.zip
+PKGDIST=	kicad-${V}.tgz
 DISTFILES=	${DISTNAME}.zip ${PKGDIST}:0 ${DOCDIST}:0
 EXTRACT_ONLY=	${DISTNAME}.zip ${PKGDIST}
 DIST_SUBDIR=	kicad
