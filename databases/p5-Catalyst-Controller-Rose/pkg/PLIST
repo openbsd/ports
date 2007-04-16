@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/16 21:20:39 espie Exp $
+${P5SITE}/Catalyst/Controller/
+${P5SITE}/Catalyst/Controller/Rose/
+${P5SITE}/Catalyst/Controller/Rose.pm
+${P5SITE}/Catalyst/Controller/Rose/Autocomplete.pm
+${P5SITE}/Catalyst/Controller/Rose/CRUD.pm
+${P5SITE}/Catalyst/Controller/Rose/EIP.pm
+${P5SITE}/Catalyst/Controller/Rose/Search.pm
+@man man/man3p/Catalyst::Controller::Rose.3p
+@man man/man3p/Catalyst::Controller::Rose::Autocomplete.3p
+@man man/man3p/Catalyst::Controller::Rose::CRUD.3p
+@man man/man3p/Catalyst::Controller::Rose::EIP.3p
+@man man/man3p/Catalyst::Controller::Rose::Search.3p
