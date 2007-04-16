@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.495 2007/04/09 22:45:22 espie Exp $
+# $OpenBSD: Makefile,v 1.496 2007/04/16 21:09:47 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -282,6 +282,7 @@
      SUBDIR += p5-DateTime-TimeZone
      SUBDIR += p5-Devel-Cycle
      SUBDIR += p5-Devel-FastProf
+     SUBDIR += p5-Devel-Leak
      SUBDIR += p5-Devel-Size
      SUBDIR += p5-Devel-SmallProf
      SUBDIR += p5-Devel-StackTrace
@@ -477,6 +478,7 @@
      SUBDIR += p5-VCP-autrijus
      SUBDIR += p5-Want
      SUBDIR += p5-YAML
+     SUBDIR += p5-YAML-Syck
      SUBDIR += p5-capitalization
      SUBDIR += p5-prefork
      SUBDIR += p5-version
