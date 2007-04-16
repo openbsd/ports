@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/16 21:08:35 espie Exp $
+${P5ARCH}/
+${P5ARCH}/JSON/
+${P5ARCH}/JSON/Syck.pm
+${P5ARCH}/YAML/
+${P5ARCH}/YAML/Dumper/
+${P5ARCH}/YAML/Dumper/Syck.pm
+${P5ARCH}/YAML/Loader/
+${P5ARCH}/YAML/Loader/Syck.pm
+${P5ARCH}/YAML/Syck.pm
+${P5ARCH}/YAML/Syck.pod
+${P5ARCH}/auto/
+${P5ARCH}/auto/YAML/
+${P5ARCH}/auto/YAML/Syck/
+${P5ARCH}/auto/YAML/Syck/Syck.bs
+${P5ARCH}/auto/YAML/Syck/Syck.so
+@man man/man3p/JSON::Syck.3p
+@man man/man3p/YAML::Syck.3p
