@@ -1,0 +1,126 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/16 20:46:42 espie Exp $
+${P5SITE}/Rose/HTML/
+${P5SITE}/Rose/HTML/Anchor.pm
+${P5SITE}/Rose/HTML/Form/
+${P5SITE}/Rose/HTML/Form.pm
+@comment ${P5SITE}/Rose/HTML/Form.pm.orig
+${P5SITE}/Rose/HTML/Form/Constants.pm
+${P5SITE}/Rose/HTML/Form/Field/
+${P5SITE}/Rose/HTML/Form/Field.pm
+${P5SITE}/Rose/HTML/Form/Field/Checkbox.pm
+${P5SITE}/Rose/HTML/Form/Field/CheckboxGroup.pm
+${P5SITE}/Rose/HTML/Form/Field/Collection.pm
+${P5SITE}/Rose/HTML/Form/Field/Compound.pm
+${P5SITE}/Rose/HTML/Form/Field/Date.pm
+${P5SITE}/Rose/HTML/Form/Field/DateTime/
+${P5SITE}/Rose/HTML/Form/Field/DateTime.pm
+${P5SITE}/Rose/HTML/Form/Field/DateTime/EndDate.pm
+${P5SITE}/Rose/HTML/Form/Field/DateTime/Range.pm
+${P5SITE}/Rose/HTML/Form/Field/DateTime/Split/
+${P5SITE}/Rose/HTML/Form/Field/DateTime/Split.pm
+${P5SITE}/Rose/HTML/Form/Field/DateTime/Split/MDYHMS.pm
+${P5SITE}/Rose/HTML/Form/Field/DateTime/Split/MonthDayYear.pm
+${P5SITE}/Rose/HTML/Form/Field/DateTime/StartDate.pm
+${P5SITE}/Rose/HTML/Form/Field/Email.pm
+${P5SITE}/Rose/HTML/Form/Field/File.pm
+${P5SITE}/Rose/HTML/Form/Field/Group/
+${P5SITE}/Rose/HTML/Form/Field/Group.pm
+${P5SITE}/Rose/HTML/Form/Field/Group/OnOff.pm
+${P5SITE}/Rose/HTML/Form/Field/Hidden.pm
+${P5SITE}/Rose/HTML/Form/Field/Input.pm
+${P5SITE}/Rose/HTML/Form/Field/Integer.pm
+${P5SITE}/Rose/HTML/Form/Field/OnOff/
+${P5SITE}/Rose/HTML/Form/Field/OnOff.pm
+${P5SITE}/Rose/HTML/Form/Field/OnOff/Checkable.pm
+${P5SITE}/Rose/HTML/Form/Field/OnOff/Selectable.pm
+${P5SITE}/Rose/HTML/Form/Field/Option/
+${P5SITE}/Rose/HTML/Form/Field/Option.pm
+${P5SITE}/Rose/HTML/Form/Field/Option/Container.pm
+${P5SITE}/Rose/HTML/Form/Field/OptionGroup.pm
+${P5SITE}/Rose/HTML/Form/Field/Password.pm
+${P5SITE}/Rose/HTML/Form/Field/PhoneNumber/
+${P5SITE}/Rose/HTML/Form/Field/PhoneNumber/US/
+${P5SITE}/Rose/HTML/Form/Field/PhoneNumber/US.pm
+${P5SITE}/Rose/HTML/Form/Field/PhoneNumber/US/Split.pm
+${P5SITE}/Rose/HTML/Form/Field/PopUpMenu.pm
+${P5SITE}/Rose/HTML/Form/Field/RadioButton.pm
+${P5SITE}/Rose/HTML/Form/Field/RadioButtonGroup.pm
+${P5SITE}/Rose/HTML/Form/Field/Reset.pm
+${P5SITE}/Rose/HTML/Form/Field/SelectBox.pm
+${P5SITE}/Rose/HTML/Form/Field/Set.pm
+${P5SITE}/Rose/HTML/Form/Field/Submit.pm
+${P5SITE}/Rose/HTML/Form/Field/Text.pm
+${P5SITE}/Rose/HTML/Form/Field/TextArea.pm
+${P5SITE}/Rose/HTML/Form/Field/Time/
+${P5SITE}/Rose/HTML/Form/Field/Time.pm
+${P5SITE}/Rose/HTML/Form/Field/Time/Hours.pm
+${P5SITE}/Rose/HTML/Form/Field/Time/Minutes.pm
+${P5SITE}/Rose/HTML/Form/Field/Time/Seconds.pm
+${P5SITE}/Rose/HTML/Form/Field/Time/Split/
+${P5SITE}/Rose/HTML/Form/Field/Time/Split.pm
+${P5SITE}/Rose/HTML/Form/Field/Time/Split/HourMinuteSecond.pm
+${P5SITE}/Rose/HTML/Form/Field/WithContents.pm
+${P5SITE}/Rose/HTML/Image.pm
+${P5SITE}/Rose/HTML/Label.pm
+${P5SITE}/Rose/HTML/Link.pm
+${P5SITE}/Rose/HTML/Object/
+${P5SITE}/Rose/HTML/Object.pm
+${P5SITE}/Rose/HTML/Object/Error/
+${P5SITE}/Rose/HTML/Object/Error.pm
+${P5SITE}/Rose/HTML/Object/Error/Localized.pm
+${P5SITE}/Rose/HTML/Object/Errors.pm
+${P5SITE}/Rose/HTML/Object/Exporter.pm
+${P5SITE}/Rose/HTML/Object/Localized.pm
+${P5SITE}/Rose/HTML/Object/MakeMethods.pm
+${P5SITE}/Rose/HTML/Object/Message/
+${P5SITE}/Rose/HTML/Object/Message.pm
+${P5SITE}/Rose/HTML/Object/Message/Localized.pm
+${P5SITE}/Rose/HTML/Object/Message/Localizer.pm
+${P5SITE}/Rose/HTML/Object/Messages.pm
+${P5SITE}/Rose/HTML/Object/WithContents.pm
+${P5SITE}/Rose/HTML/Objects.pm
+${P5SITE}/Rose/HTML/Script.pm
+${P5SITE}/Rose/HTML/Util.pm
+@man man/man3p/Rose::HTML::Anchor.3p
+@man man/man3p/Rose::HTML::Form.3p
+@man man/man3p/Rose::HTML::Form::Field.3p
+@man man/man3p/Rose::HTML::Form::Field::Checkbox.3p
+@man man/man3p/Rose::HTML::Form::Field::CheckboxGroup.3p
+@man man/man3p/Rose::HTML::Form::Field::Compound.3p
+@man man/man3p/Rose::HTML::Form::Field::Date.3p
+@man man/man3p/Rose::HTML::Form::Field::DateTime.3p
+@man man/man3p/Rose::HTML::Form::Field::DateTime::EndDate.3p
+@man man/man3p/Rose::HTML::Form::Field::DateTime::Range.3p
+@man man/man3p/Rose::HTML::Form::Field::DateTime::Split::MDYHMS.3p
+@man man/man3p/Rose::HTML::Form::Field::DateTime::Split::MonthDayYear.3p
+@man man/man3p/Rose::HTML::Form::Field::DateTime::StartDate.3p
+@man man/man3p/Rose::HTML::Form::Field::Email.3p
+@man man/man3p/Rose::HTML::Form::Field::File.3p
+@man man/man3p/Rose::HTML::Form::Field::Hidden.3p
+@man man/man3p/Rose::HTML::Form::Field::Integer.3p
+@man man/man3p/Rose::HTML::Form::Field::Option.3p
+@man man/man3p/Rose::HTML::Form::Field::OptionGroup.3p
+@man man/man3p/Rose::HTML::Form::Field::Password.3p
+@man man/man3p/Rose::HTML::Form::Field::PhoneNumber::US.3p
+@man man/man3p/Rose::HTML::Form::Field::PhoneNumber::US::Split.3p
+@man man/man3p/Rose::HTML::Form::Field::PopUpMenu.3p
+@man man/man3p/Rose::HTML::Form::Field::RadioButton.3p
+@man man/man3p/Rose::HTML::Form::Field::RadioButtonGroup.3p
+@man man/man3p/Rose::HTML::Form::Field::Reset.3p
+@man man/man3p/Rose::HTML::Form::Field::SelectBox.3p
+@man man/man3p/Rose::HTML::Form::Field::Set.3p
+@man man/man3p/Rose::HTML::Form::Field::Submit.3p
+@man man/man3p/Rose::HTML::Form::Field::Text.3p
+@man man/man3p/Rose::HTML::Form::Field::TextArea.3p
+@man man/man3p/Rose::HTML::Form::Field::Time.3p
+@man man/man3p/Rose::HTML::Form::Field::Time::Hours.3p
+@man man/man3p/Rose::HTML::Form::Field::Time::Minutes.3p
+@man man/man3p/Rose::HTML::Form::Field::Time::Seconds.3p
+@man man/man3p/Rose::HTML::Form::Field::Time::Split::HourMinuteSecond.3p
+@man man/man3p/Rose::HTML::Image.3p
+@man man/man3p/Rose::HTML::Label.3p
+@man man/man3p/Rose::HTML::Link.3p
+@man man/man3p/Rose::HTML::Object.3p
+@man man/man3p/Rose::HTML::Objects.3p
+@man man/man3p/Rose::HTML::Script.3p
+@man man/man3p/Rose::HTML::Util.3p

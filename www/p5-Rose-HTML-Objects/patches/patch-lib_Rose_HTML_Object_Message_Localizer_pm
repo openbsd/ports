@@ -1,0 +1,21 @@
+$OpenBSD: patch-lib_Rose_HTML_Object_Message_Localizer_pm,v 1.1.1.1 2007/04/16 20:46:42 espie Exp $
+--- lib/Rose/HTML/Object/Message/Localizer.pm.orig	Mon Apr 16 22:44:21 2007
++++ lib/Rose/HTML/Object/Message/Localizer.pm	Mon Apr 16 22:44:31 2007
+@@ -3,7 +3,7 @@ package Rose::HTML::Object::Message::Localizer;
+ use strict;
+ 
+ use Carp;
+-use Clone::PP();
++use Clone();
+ use Scalar::Util();
+ 
+ use Rose::HTML::Object::Errors();
+@@ -111,7 +111,7 @@ sub init_locale
+ sub init_messages_class { 'Rose::HTML::Object::Messages' }
+ sub init_errors_class   { 'Rose::HTML::Object::Errors' }
+ 
+-sub clone { Clone::PP::clone(shift) }
++sub clone { Clone::clone(shift) }
+ 
+ sub parent
+ {

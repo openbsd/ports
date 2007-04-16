@@ -1,0 +1,12 @@
+Object-oriented interface to HTML, to use with the Rose framework.
+
+The Rose::HTML::Object::* family of classes represent HTML tags,
+or groups of tags.  These objects  allow HTML to be arbitrarily
+manipulated, then serialized to actual HTML (or XHTML). Currently,
+the process only works in one direction.  Objects cannot be constructed
+from their serialized representations.  In practice, given the
+purpose of these modules, this is not an important limitation.
+
+Any HTML tag can theoretically be represented by a
+Rose::HTML::Object-derived class, but this family of modules was
+originally motivated by a desire to simplify the use of HTML forms.

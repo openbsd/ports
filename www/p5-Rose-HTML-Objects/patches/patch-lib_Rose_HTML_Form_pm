@@ -1,0 +1,30 @@
+$OpenBSD: patch-lib_Rose_HTML_Form_pm,v 1.1.1.1 2007/04/16 20:46:42 espie Exp $
+--- lib/Rose/HTML/Form.pm.orig	Mon Apr 16 22:36:23 2007
++++ lib/Rose/HTML/Form.pm	Mon Apr 16 22:36:40 2007
+@@ -4,7 +4,7 @@ use strict;
+ 
+ use Carp;
+ 
+-use Clone::PP;
++use Clone;
+ use Rose::URI;
+ use Scalar::Util qw(refaddr);
+ use URI::Escape qw(uri_escape);
+@@ -318,7 +318,7 @@ sub params
+     }
+     elsif(@_ % 2 == 0)
+     {
+-      $self->{'params'} = Clone::PP::clone({ @_ });
++      $self->{'params'} = Clone::clone({ @_ });
+     }
+     else
+     {
+@@ -343,7 +343,7 @@ sub params
+   my $want = wantarray;
+   return  unless(defined $want);
+ 
+-  return ($want) ? %{ Clone::PP::clone($self->{'params'}) } : $self->{'params'};
++  return ($want) ? %{ Clone::clone($self->{'params'}) } : $self->{'params'};
+ }
+ 
+ sub param_exists
