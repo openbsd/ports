@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: find-all-conflicts,v 1.14 2007/04/16 14:36:25 espie Exp $
+# $OpenBSD: find-all-conflicts,v 1.15 2007/04/16 15:09:03 espie Exp $
 # Copyright (c) 2000-2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -137,12 +137,18 @@ sub compute_problems
 {
 	my ($h, $conflicts, $deps) = @_;
 
+	my $c = {};
+	my $c2 = {};
+
 	while (my ($key, $l) = each %$h) {
+		if (!defined $c->{$l}) {
+			my %s = map {($_, 1)} @$l;
+			$c->{$l} = [sort keys %s];
+			$c2->{$l} = join(',', @{$c->{$l}});
+		}
+		my $hv = $c2->{$l};
+		$l = $c->{$l};
 		next if @$l == 1;
-		my %s = map {($_, 1)} @$l;
-		@$l = sort keys %s;
-		next if @$l == 1;
-		my $hv = join(',', @$l);
 		if (!defined $cache->{$hv}) {
 			$cache->{$hv} = compute_true_conflicts($l, $conflicts, $deps);
 		}
