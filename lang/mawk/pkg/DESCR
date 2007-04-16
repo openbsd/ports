@@ -1,3 +1,5 @@
+mawk is a new, fast reimplementation of the AWK language.
+
 Version 1.3 implements a new internal design for arrays:
 
 Extensive redesign of array data structures to support large arrays and

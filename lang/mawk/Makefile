@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.17 2006/11/04 19:19:15 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2007/04/16 00:04:32 ian Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1999/01/18 04:50:26 steve Exp $
 
-COMMENT=	"new POSIX awk"
+COMMENT=	"fast POSIX-compliant awk"
 
 DISTNAME=	mawk-1.3.3
+PKGNAME=	${DISTNAME}p0
 DISTFILES=	${DISTNAME:S,-,,}.tar.gz
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
+# GPL V2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
