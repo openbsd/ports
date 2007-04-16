@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/16 20:50:43 espie Exp $
+${P5SITE}/Rose/HTMLx/
+${P5SITE}/Rose/HTMLx/Form/
+${P5SITE}/Rose/HTMLx/Form/Field/
+${P5SITE}/Rose/HTMLx/Form/Field/Autocomplete.pm
+@man man/man3p/Rose::HTMLx::Form::Field::Autocomplete.3p

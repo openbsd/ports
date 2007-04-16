@@ -1,0 +1,7 @@
+This subclass of Rose::HTML::Form::Field::Text is intended to make it easier
+to integrate Ajax autocompletion into your web applications. You define
+a URL where your web application can find suggested values for the field,
+and optionally, a limit on the number of suggestions returned by the server.
+
+This subclass is expected to be used with 
+Catalyst::Controller::Rose::Autocomplete but that is not required.
