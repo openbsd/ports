@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2007/04/14 11:46:00 espie Exp $
+# $OpenBSD: Makefile,v 1.114 2007/04/16 19:40:16 espie Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += architect
@@ -68,6 +68,7 @@
      SUBDIR += p5-Rose-DB-Object
      SUBDIR += p5-Rose-DateTime
      SUBDIR += p5-Rose-Object
+     SUBDIR += p5-Sort-SQL
      SUBDIR += p5-SQL-Abstract
      SUBDIR += p5-SQL-Abstract-Limit
      SUBDIR += p5-SQL-ReservedWords
