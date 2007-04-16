@@ -1,0 +1,12 @@
+Sort::SQL is so simple it almost doesn't deserve to be on CPAN. But since I kept
+finding myself copy/pasting this method into multiple places, I finally figured
+it deserved to live in its own class.
+
+Sort::SQL implements one method: string2array().
+
+Takes a scalar string of the SQL C<ORDER BY> syntax and turns it into
+an array of key/value pair hashrefs.
+
+This method can be used e.g. in Template Toolkit applications, to create
+re-sortable table columns.
+
