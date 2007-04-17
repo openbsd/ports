@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/17 21:34:34 espie Exp $
+${P5SITE}/HTML/
+${P5SITE}/HTML/Summary.pm
+${P5SITE}/Lingua/
+${P5SITE}/Lingua/JA/
+${P5SITE}/Lingua/JA/Jcode.pm
+${P5SITE}/Lingua/JA/Jtruncate.pm
+${P5SITE}/Text/
+${P5SITE}/Text/Sentence.pm
+@man man/man3p/HTML::Summary.3p
+@man man/man3p/Lingua::JA::Jtruncate.3p
+@man man/man3p/Text::Sentence.3p
