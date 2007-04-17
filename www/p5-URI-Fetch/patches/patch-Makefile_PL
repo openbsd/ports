@@ -1,0 +1,19 @@
+$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2007/04/17 23:59:31 espie Exp $
+--- Makefile.PL.orig	Wed Apr 18 01:56:07 2007
++++ Makefile.PL	Wed Apr 18 01:56:20 2007
+@@ -12,6 +12,7 @@ sign(1);
+ 
+ include('ExtUtils::AutoInstall');
+ 
++=pod
+ requires('Class::ErrorHandler');
+ requires('LWP');
+ requires('URI');
+@@ -28,6 +29,7 @@ features(
+         recommends('Cache'),
+     ],
+ );
++=cut
+ 
+ auto_include();
+ auto_install();
