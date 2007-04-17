@@ -1,0 +1,11 @@
+  use File::Finder;
+  ## simulate "-type f"
+  my $all_files = File::Finder->type('f');
+
+  ## any rule can be extended:
+  my $all_files_printer = $all_files->print;
+
+File::Find is great, but constructing the wanted routine can
+sometimes be a pain.  This module provides a wanted-writer, using
+syntax that is directly mappable to the find command's syntax.
+
