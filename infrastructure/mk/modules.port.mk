@@ -1,4 +1,4 @@
-# $OpenBSD: modules.port.mk,v 1.5 2007/02/03 17:09:39 espie Exp $
+# $OpenBSD: modules.port.mk,v 1.6 2007/04/17 15:22:46 espie Exp $
 #
 #  Copyright (c) 2001 Marc Espie
 # 
@@ -29,7 +29,7 @@
 .undef _MODULES_DONE_ON_THIS_ROUND
 .for _m in ${MODULES:L}
 .  if "${_m:M*/*}" != ""
-.    for _d in ${PORTSDIR_PATH:S/:/ /}
+.    for _d in ${PORTSDIR_PATH:S/:/ /g}
 .      if empty(_MODULES_DONE:M${_m}) && exists(${_d}/${_m}/${_m:T}.port.mk)
 .        include "${_d}/${_m}/${_m:T}.port.mk"
 _MODULES_DONE += ${_m}
