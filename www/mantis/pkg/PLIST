@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/11 18:28:27 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/04/17 10:00:26 mbalmer Exp $
 mantis/
 mantis/account_delete.php
 mantis/account_page.php
@@ -332,8 +332,6 @@ mantis/doc/CUSTOMIZATION
 mantis/doc/ChangeLog
 mantis/doc/INSTALL
 mantis/doc/LICENSE
-mantis/doc/README
-mantis/doc/UPGRADING
 mantis/file_download.php
 mantis/graphs/
 mantis/graphs/graph_assigned_to_me.php
@@ -399,12 +397,15 @@ mantis/javascript/dynamic_filters.js
 mantis/javascript/xmlhttprequest.js
 mantis/jump_to_bug.php
 mantis/lang/
+mantis/lang/strings_bulgarian.txt
+mantis/lang/strings_catalan.txt
 mantis/lang/strings_chinese_simplified.txt
 mantis/lang/strings_chinese_simplified_utf8.txt
 mantis/lang/strings_chinese_traditional.txt
 mantis/lang/strings_chinese_traditional_utf8.txt
 mantis/lang/strings_croatian.txt
 mantis/lang/strings_czech.txt
+mantis/lang/strings_czech_utf8.txt
 mantis/lang/strings_danish.txt
 mantis/lang/strings_dutch.txt
 mantis/lang/strings_english.txt
@@ -412,10 +413,12 @@ mantis/lang/strings_estonian.txt
 mantis/lang/strings_finnish.txt
 mantis/lang/strings_french.txt
 mantis/lang/strings_french_canadian.txt
+mantis/lang/strings_french_utf8.txt
 mantis/lang/strings_german.txt
 mantis/lang/strings_hungarian.txt
 mantis/lang/strings_icelandic.txt
 mantis/lang/strings_italian.txt
+mantis/lang/strings_italian_utf8.txt
 mantis/lang/strings_japanese_euc.txt
 mantis/lang/strings_japanese_sjis.txt
 mantis/lang/strings_japanese_utf8.txt
@@ -425,14 +428,17 @@ mantis/lang/strings_latvian.txt
 mantis/lang/strings_lithuanian.txt
 mantis/lang/strings_norwegian.txt
 mantis/lang/strings_polish.txt
+mantis/lang/strings_polish_utf8.txt
 mantis/lang/strings_portuguese_brazil.txt
 mantis/lang/strings_portuguese_standard.txt
 mantis/lang/strings_romanian.txt
 mantis/lang/strings_russian.txt
 mantis/lang/strings_russian_koi8.txt
+mantis/lang/strings_russian_utf8.txt
 mantis/lang/strings_serbian.txt
 mantis/lang/strings_slovak.txt
 mantis/lang/strings_slovene.txt
+mantis/lang/strings_slovene_utf8.txt
 mantis/lang/strings_spanish.txt
 mantis/lang/strings_swedish.txt
 mantis/lang/strings_turkish.txt
@@ -505,8 +511,6 @@ mantis/news_menu_page.php
 mantis/news_rss.php
 mantis/news_update.php
 mantis/news_view_page.php
-mantis/packages/
-mantis/packages/mantis.spec
 mantis/print_all_bug_options_inc.php
 mantis/print_all_bug_options_page.php
 mantis/print_all_bug_options_reset.php
