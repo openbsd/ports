@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/17 23:08:21 espie Exp $
+${P5SITE}/Lingua/EN/
+${P5SITE}/Lingua/EN/Summarize/
+${P5SITE}/Lingua/EN/Summarize.pm
+${P5SITE}/Lingua/EN/Summarize/Filters.pm
+@man man/man3p/Lingua::EN::Filters.3p
+@man man/man3p/Lingua::EN::Summarize.3p
