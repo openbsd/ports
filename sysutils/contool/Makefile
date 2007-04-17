@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.24 2006/11/13 12:51:15 steven Exp $
+# $OpenBSD: Makefile,v 1.25 2007/04/17 23:55:21 ian Exp $
 
 COMMENT=	"console tool for openlook"
 
 DISTNAME=	contool-3.3a
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	sysutils
 
 MASTER_SITES=	ftp://ftp.kfu.com/pub/
 
-MAINTAINER=		Ian Darwin <ian@openbsd.org>
+MAINTAINER=		Giovanni Bechis <g.bechis@snb.it>
 
 PERMIT_PACKAGE_CDROM=	NOFEE
 PERMIT_PACKAGE_FTP=	Yes
