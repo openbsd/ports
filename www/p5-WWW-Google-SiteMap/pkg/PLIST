@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/17 23:23:10 espie Exp $
+${P5SITE}/WWW/
+${P5SITE}/WWW/Google/
+${P5SITE}/WWW/Google/SiteMap/
+${P5SITE}/WWW/Google/SiteMap.pm
+${P5SITE}/WWW/Google/SiteMap/Index.pm
+${P5SITE}/WWW/Google/SiteMap/Ping.pm
+${P5SITE}/WWW/Google/SiteMap/Robot.pm
+${P5SITE}/WWW/Google/SiteMap/URL.pm
+@man man/man3p/WWW::Google::SiteMap.3p
+@man man/man3p/WWW::Google::SiteMap::Index.3p
+@man man/man3p/WWW::Google::SiteMap::Ping.3p
+@man man/man3p/WWW::Google::SiteMap::Robot.3p
+@man man/man3p/WWW::Google::SiteMap::URL.3p

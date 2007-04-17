@@ -1,0 +1,17 @@
+$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2007/04/17 23:23:10 espie Exp $
+--- Makefile.PL.orig	Wed Apr 18 01:21:47 2007
++++ Makefile.PL	Wed Apr 18 01:22:00 2007
+@@ -3,11 +3,13 @@ use inc::Module::Install;
+ name 'WWW-Google-SiteMap';
+ license 'perl';
+ all_from 'lib/WWW/Google/SiteMap.pm';
++=pod
+ requires 'XML::Twig';
+ requires 'IO::File';
+ requires 'Carp';
+ requires 'POSIX';
+ requires 'URI::Escape';
++=cut
+ recommends 'IO::Zlib';
+ recommends 'LWP::UserAgent';
+ recommends 'WWW::Mechanize';
