@@ -1,12 +1,12 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1 2005/10/20 21:45:18 naddy Exp $
---- doc/Makefile.in.orig	Thu Oct 20 21:47:43 2005
-+++ doc/Makefile.in	Thu Oct 20 21:47:57 2005
-@@ -206,7 +206,7 @@ sharedstatedir = @sharedstatedir@
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2007/04/17 19:46:42 naddy Exp $
+--- doc/Makefile.in.orig	Sun Apr 15 02:18:12 2007
++++ doc/Makefile.in	Sun Apr 15 02:18:26 2007
+@@ -290,7 +290,7 @@ sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  info_TEXINFOS = cpio.texi
 -man_MANS = cpio.1 mt.1
 +man_MANS = cpio.1
- EXTRA_DIST = $(man_MANS)
+ EXTRA_DIST = $(man_MANS) gendocs_template
  all: all-am
  

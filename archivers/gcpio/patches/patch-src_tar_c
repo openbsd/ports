@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_tar_c,v 1.1 2005/10/20 21:45:18 naddy Exp $
---- src/tar.c.orig	Thu Oct 20 21:59:27 2005
-+++ src/tar.c	Thu Oct 20 22:06:49 2005
-@@ -107,6 +107,18 @@ to_oct (register long value, register in
+$OpenBSD: patch-src_tar_c,v 1.2 2007/04/17 19:46:42 naddy Exp $
+--- src/tar.c.orig	Wed Sep 27 10:19:44 2006
++++ src/tar.c	Tue Apr 17 21:44:01 2007
+@@ -108,6 +108,18 @@ to_oct (register long value, register int digits, regi
      where[--digits] = '0';
  }
  
@@ -20,7 +20,7 @@ $OpenBSD: patch-src_tar_c,v 1.1 2005/10/20 21:45:18 naddy Exp $
  
  
  /* Compute and return a checksum for TAR_HDR,
-@@ -167,8 +179,8 @@ write_out_tar_header (struct new_cpio_he
+@@ -168,8 +180,8 @@ write_out_tar_header (struct cpio_file_stat *file_hdr,
    to_oct (file_hdr->c_mode & MODE_ALL, 8, tar_hdr->mode);
    to_oct (file_hdr->c_uid, 8, tar_hdr->uid);
    to_oct (file_hdr->c_gid, 8, tar_hdr->gid);

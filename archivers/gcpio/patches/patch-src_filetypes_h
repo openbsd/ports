@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_filetypes_h,v 1.1 2005/10/20 21:45:18 naddy Exp $
---- src/filetypes.h.orig	Fri Nov 21 15:48:13 2003
-+++ src/filetypes.h	Thu Oct 20 21:57:55 2005
-@@ -80,5 +80,3 @@
+$OpenBSD: patch-src_filetypes_h,v 1.2 2007/04/17 19:46:42 naddy Exp $
+--- src/filetypes.h.orig	Thu May 19 11:25:58 2005
++++ src/filetypes.h	Tue Apr 17 21:44:01 2007
+@@ -81,5 +81,3 @@
  #ifndef S_ISLNK
  #define lstat stat
  #endif

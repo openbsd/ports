@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_rtapelib_c,v 1.1 2005/10/20 21:45:18 naddy Exp $
---- lib/rtapelib.c.orig	Thu Oct 20 21:27:56 2005
-+++ lib/rtapelib.c	Thu Oct 20 21:28:26 2005
-@@ -625,7 +625,7 @@ rmt_lseek__ (int handle, off_t offset, i
+$OpenBSD: patch-lib_rtapelib_c,v 1.2 2007/04/17 19:46:42 naddy Exp $
+--- lib/rtapelib.c.orig	Mon Feb 20 10:46:01 2006
++++ lib/rtapelib.c	Tue Apr 17 21:44:01 2007
+@@ -625,7 +625,7 @@ rmt_lseek__ (int handle, off_t offset, int whence)
  {
    char command_buffer[COMMAND_BUFFER_SIZE];
    char operand_buffer[UINTMAX_STRSIZE_BOUND];
@@ -10,7 +10,7 @@ $OpenBSD: patch-lib_rtapelib_c,v 1.1 2005/10/20 21:45:18 naddy Exp $
    char *p = operand_buffer + sizeof operand_buffer;
  
    *--p = 0;
-@@ -667,9 +667,9 @@ rmt_ioctl__ (int handle, int operation, 
+@@ -667,9 +667,9 @@ rmt_ioctl__ (int handle, int operation, char *argument
        {
  	char command_buffer[COMMAND_BUFFER_SIZE];
  	char operand_buffer[UINTMAX_STRSIZE_BOUND];
