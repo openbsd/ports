@@ -1,0 +1,2 @@
+Canonicalizes text to a specified EOL/EOF convention, repairing any 
+'mixed' usages
