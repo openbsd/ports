@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.194 2007/04/08 19:02:32 martynas Exp $
+# $OpenBSD: Makefile,v 1.195 2007/04/18 00:18:35 espie Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -57,6 +57,7 @@
      SUBDIR += openjade
      SUBDIR += ots
      SUBDIR += p5-Blatte
+     SUBDIR += p5-Catalyst-Plugin-Unicode
      SUBDIR += p5-Catalyst-Plugin-Textile
      SUBDIR += p5-Catalyst-View-TT
      SUBDIR += p5-Catalyst-View-TT-ForceUTF8
@@ -65,11 +66,13 @@
      SUBDIR += p5-Email-Find
      SUBDIR += p5-Font-AFM
      SUBDIR += p5-Font-TTF
+     SUBDIR += p5-HTML-Summary
      SUBDIR += p5-LaTeX-TOM
      SUBDIR += p5-LibXML-Common
      SUBDIR += p5-Libxml
      SUBDIR += p5-Lingua-EN-Inflect
      SUBDIR += p5-Lingua-EN-Inflect-Number
+     SUBDIR += p5-Lingua-EN-Summarize
      SUBDIR += p5-Lingua-PT-Stemmer
      SUBDIR += p5-Lingua-Stem
      SUBDIR += p5-Lingua-Stem-Fr

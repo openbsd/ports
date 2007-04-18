@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.496 2007/04/16 21:09:47 espie Exp $
+# $OpenBSD: Makefile,v 1.497 2007/04/18 00:18:35 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -305,6 +305,7 @@
      SUBDIR += p5-File-DesktopEntry
      SUBDIR += p5-File-Find-Rule
      SUBDIR += p5-File-Find-Rule-Filesys-Virtual
+     SUBDIR += p5-File-Finder
      SUBDIR += p5-File-Flat
      SUBDIR += p5-File-HomeDir
      SUBDIR += p5-File-MimeInfo
@@ -457,6 +458,7 @@
      SUBDIR += p5-Test-WWW-Mechanize-Catalyst
      SUBDIR += p5-Test-Warn
      SUBDIR += p5-Test-use-ok
+     SUBDIR += p5-Text-FixEOL
      SUBDIR += p5-Tie-Array-Sorted
      SUBDIR += p5-Tie-CPHash
      SUBDIR += p5-Tie-IxHash
