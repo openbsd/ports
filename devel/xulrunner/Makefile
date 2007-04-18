@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/04/14 21:20:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2007/04/18 18:56:49 kili Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -9,7 +9,7 @@ VER=		1.8.0.4
 DISTNAME=	mozilla
 PKGNAME=	xulrunner-${VER}
 PKGNAME-main=	xulrunner-${VER}p2
-PKGNAME-devel=	xulrunner-devel-${VER}p1
+PKGNAME-devel=	xulrunner-devel-${VER}p2
 SO_VERSION=	1.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
