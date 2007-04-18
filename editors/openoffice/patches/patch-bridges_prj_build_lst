@@ -1,6 +1,6 @@
---- bridges/prj/build.lst.orig.port	Sat Jan 13 00:23:54 2007
-+++ bridges/prj/build.lst	Sat Jan 13 00:24:00 2007
-@@ -20,6 +20,8 @@ br	bridges\source\cpp_uno\cc50_solaris_i
+--- bridges/prj/build.lst.orig.port	Mon Oct 30 03:14:44 2006
++++ bridges/prj/build.lst	Wed Apr 18 03:46:24 2007
+@@ -20,6 +20,8 @@ br	bridges\source\cpp_uno\cc50_solaris_intel			nmake	-
  br	bridges\source\cpp_uno\gcc3_solaris_sparc			nmake	-	u	br_gcc3sogs br_cppuno_shared br_unotypes br_inc NULL
  br	bridges\source\cpp_uno\gcc3_solaris_intel			nmake	-	u	br_gcc3sogi br_cppuno_shared br_unotypes br_inc NULL
  br	bridges\source\cpp_uno\gcc3_netbsd_intel	nmake	-	u	br_gccni br_unotypes br_inc NULL

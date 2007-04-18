@@ -1,7 +1,7 @@
-$OpenBSD: patch-sd_source_ui_dlg_sdtreelb_cxx,v 1.1 2007/03/17 15:27:45 robert Exp $
---- sd/source/ui/dlg/sdtreelb.cxx.orig.port	Wed Feb 14 09:23:21 2007
-+++ sd/source/ui/dlg/sdtreelb.cxx	Wed Feb 14 09:27:43 2007
-@@ -350,17 +350,17 @@ void SdPageObjsTLB::Fill( const SdDrawDo
+$OpenBSD: patch-sd_source_ui_dlg_sdtreelb_cxx,v 1.2 2007/04/18 13:20:48 kurt Exp $
+--- sd/source/ui/dlg/sdtreelb.cxx.orig.port	Fri Jan 19 07:59:12 2007
++++ sd/source/ui/dlg/sdtreelb.cxx	Wed Apr 18 03:46:27 2007
+@@ -350,17 +350,17 @@ void SdPageObjsTLB::Fill( const SdDrawDocument* pInDoc
  	SdPage* 	 pPage = NULL;
  	SvLBoxEntry* pEntry = NULL;
  
@@ -29,7 +29,7 @@ $OpenBSD: patch-sd_source_ui_dlg_sdtreelb_cxx,v 1.1 2007/03/17 15:27:45 robert E
  
  	// first insert all pages including objects
  	USHORT nPage = 0;
-@@ -510,10 +510,10 @@ void SdPageObjsTLB::Fill( const SdDrawDo
+@@ -510,10 +510,10 @@ void SdPageObjsTLB::Fill( const SdDrawDocument* pInDoc
  	mpMedium = pInMedium;
  	maDocName = rDocName;
  
@@ -44,7 +44,7 @@ $OpenBSD: patch-sd_source_ui_dlg_sdtreelb_cxx,v 1.1 2007/03/17 15:27:45 robert E
  
  	// Dokumentnamen einfuegen
  	SvLBoxEntry* pFileEntry = InsertEntry( maDocName,
-@@ -709,12 +709,12 @@ void SdPageObjsTLB::RequestingChilds( Sv
+@@ -709,12 +709,12 @@ void SdPageObjsTLB::RequestingChilds( SvLBoxEntry* pFi
  			SdPage* 	 pPage = NULL;
  			SvLBoxEntry* pPageEntry = NULL;
  

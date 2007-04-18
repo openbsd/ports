@@ -1,7 +1,7 @@
-$OpenBSD: patch-sd_source_ui_dlg_docprev_cxx,v 1.1 2007/03/17 15:27:45 robert Exp $
---- sd/source/ui/dlg/docprev.cxx.orig.port	Wed Jan 17 07:49:24 2007
-+++ sd/source/ui/dlg/docprev.cxx	Fri Feb 16 09:07:27 2007
-@@ -336,7 +336,7 @@ void SdDocPreviewWin::updateViewSettings
+$OpenBSD: patch-sd_source_ui_dlg_docprev_cxx,v 1.2 2007/04/18 13:20:48 kurt Exp $
+--- sd/source/ui/dlg/docprev.cxx.orig.port	Tue Dec 12 12:04:46 2006
++++ sd/source/ui/dlg/docprev.cxx	Wed Apr 18 03:46:27 2007
+@@ -336,7 +336,7 @@ void SdDocPreviewWin::updateViewSettings()
  
  		// Use new StandardCheckVisisbilityRedirector
  		StandardCheckVisisbilityRedirector aRedirector;

@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_office_set_soenv_in,v 1.10 2007/03/17 15:27:45 robert Exp $
---- config_office/set_soenv.in.orig.port	Wed Jan 17 09:39:29 2007
-+++ config_office/set_soenv.in	Wed Jan 17 09:51:17 2007
+$OpenBSD: patch-config_office_set_soenv_in,v 1.11 2007/04/18 13:20:48 kurt Exp $
+--- config_office/set_soenv.in.orig.port	Wed Apr 18 03:46:23 2007
++++ config_office/set_soenv.in	Wed Apr 18 03:46:24 2007
 @@ -368,6 +368,46 @@ elsif ( $platform =~ m/freebsd/ ) 
        $INPATH         = $OUTPATH.$PROEXT;
        $GVERDIR        = $INPATH;
@@ -84,7 +84,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.10 2007/03/17 15:27:45 robert Exp
  {  $PATH              = $cur_dir.
                          $ps.'$SOLARVER'.$ds.'$INPATH'.$BIN.
                          $ps.'$SOLARENV'.$ds.'$OUTPATH'.$BIN.
-@@ -1260,6 +1300,7 @@ elsif ($platform =~ m/linux-gnu|netbasd|
+@@ -1260,6 +1300,7 @@ elsif ($platform =~ m/linux-gnu|netbasd|osf1|irix|aix|
                          $L.'$SOLARENV'.$ds.'$OUTPATH'.$LIB.
                          $L.'$SOLARVER'.$ds.'$INPATH'.$LIB.
                          $L.'$SOLARENV'.$ds.'$OUTPATH'.$LIB.
@@ -92,7 +92,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.10 2007/03/17 15:27:45 robert Exp
                          $L.'$JAVA_HOME'.$LIB64.
                          $L.$JRELIBDIR.
                          $L.$JRETOOLKITDIR.
-@@ -1267,6 +1308,19 @@ elsif ($platform =~ m/linux-gnu|netbasd|
+@@ -1267,6 +1308,19 @@ elsif ($platform =~ m/linux-gnu|netbasd|osf1|irix|aix|
                          $L_STLPORT_LIB.
                          $L.$XLIB;
  }

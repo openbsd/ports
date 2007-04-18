@@ -1,6 +1,6 @@
-$OpenBSD: patch-scp2_source_ooo_file_library_ooo_scp,v 1.6 2007/03/17 15:27:45 robert Exp $
---- scp2/source/ooo/file_library_ooo.scp.orig.port	Wed Jan 17 07:49:17 2007
-+++ scp2/source/ooo/file_library_ooo.scp	Tue Feb  6 23:13:34 2007
+$OpenBSD: patch-scp2_source_ooo_file_library_ooo_scp,v 1.7 2007/04/18 13:20:48 kurt Exp $
+--- scp2/source/ooo/file_library_ooo.scp.orig.port	Tue Jan  2 10:55:30 2007
++++ scp2/source/ooo/file_library_ooo.scp	Wed Apr 18 03:46:27 2007
 @@ -863,6 +863,8 @@ File gid_File_Lib_Freetype
      Styles = (PACKED);
    #if defined (FREEBSD) || defined (NETBSD)
@@ -10,7 +10,7 @@ $OpenBSD: patch-scp2_source_ooo_file_library_ooo_scp,v 1.6 2007/03/17 15:27:45 r
    #else
      Name = "libfreetype.so.6";
    #endif
-@@ -904,7 +906,7 @@ STD_UNO_LIB_FILE_PATCH( gid_File_Lib_Fwl
+@@ -904,7 +906,7 @@ STD_UNO_LIB_FILE_PATCH( gid_File_Lib_Fwl , fwl)
  
  STD_UNO_LIB_FILE_PATCH( gid_File_Lib_Fwm , fwm)
  

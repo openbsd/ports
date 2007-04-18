@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_inc_solar_h,v 1.4 2007/03/17 15:27:45 robert Exp $
---- tools/inc/solar.h.orig.port	Wed Jan 17 07:50:41 2007
-+++ tools/inc/solar.h	Tue Feb  6 23:13:34 2007
-@@ -338,6 +338,7 @@ template<typename T> inline T Abs(T a) {
+$OpenBSD: patch-tools_inc_solar_h,v 1.5 2007/04/18 13:20:48 kurt Exp $
+--- tools/inc/solar.h.orig.port	Wed Nov 22 06:06:38 2006
++++ tools/inc/solar.h	Wed Apr 18 03:46:28 2007
+@@ -338,6 +338,7 @@ template<typename T> inline T Abs(T a) { return (a>=0?
  #define SYSTEM_UNXSOGS		31
  #define SYSTEM_UNXSOGI		32
  #define SYSTEM_UNXMACXI		33
@@ -9,7 +9,7 @@ $OpenBSD: patch-tools_inc_solar_h,v 1.4 2007/03/17 15:27:45 robert Exp $
  
  #if defined WNT
    #define __DLLEXTENSION "mi"
-@@ -409,6 +410,9 @@ template<typename T> inline T Abs(T a) {
+@@ -409,6 +410,9 @@ template<typename T> inline T Abs(T a) { return (a>=0?
  #elif defined MACOSX && defined X86
    #define __DLLEXTENSION "mxi.dylib"
    #define SYSTEM_ID		SYSTEM_UNXMACXI

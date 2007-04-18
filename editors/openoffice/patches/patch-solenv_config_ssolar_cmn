@@ -1,7 +1,7 @@
-$OpenBSD: patch-solenv_config_ssolar_cmn,v 1.4 2007/03/17 15:27:45 robert Exp $
---- solenv/config/ssolar.cmn.orig.port	Wed Jan 17 07:49:47 2007
-+++ solenv/config/ssolar.cmn	Tue Feb  6 23:13:34 2007
-@@ -518,7 +518,7 @@ unxaixp
+$OpenBSD: patch-solenv_config_ssolar_cmn,v 1.5 2007/04/18 13:20:48 kurt Exp $
+--- solenv/config/ssolar.cmn.orig.port	Wed Mar 21 09:12:15 2007
++++ solenv/config/ssolar.cmn	Wed Apr 18 03:46:27 2007
+@@ -519,7 +519,7 @@ unxaixp
  	}
  }
  

@@ -1,6 +1,6 @@
---- sal/osl/unx/file.cxx.orig.port	Mon Jan 22 11:19:27 2007
-+++ sal/osl/unx/file.cxx	Tue Feb  6 23:13:34 2007
-@@ -118,7 +118,7 @@ static const sal_Char* MOUNTTAB="/etc/mn
+--- sal/osl/unx/file.cxx.orig.port	Fri Jan 19 06:43:14 2007
++++ sal/osl/unx/file.cxx	Wed Apr 18 03:46:26 2007
+@@ -118,7 +118,7 @@ static const sal_Char* MOUNTTAB="/etc/mnttab";
  #include <ctype.h>
  static const sal_Char* MOUNTTAB="/etc/mtab";
  
@@ -9,7 +9,7 @@
  #include <sys/param.h>
  #include <sys/ucred.h>
  #include <sys/mount.h>
-@@ -1424,12 +1424,11 @@ oslFileError SAL_CALL osl_syncFile(oslFi
+@@ -1424,12 +1424,11 @@ oslFileError SAL_CALL osl_syncFile(oslFileHandle Handl
  
  #ifdef HAVE_STATFS_H
  
@@ -23,7 +23,7 @@
  
  /* always return true if queried for the properties of
     the file system. If you think this is wrong under any
-@@ -1448,7 +1447,6 @@ oslFileError SAL_CALL osl_syncFile(oslFi
+@@ -1448,7 +1447,6 @@ oslFileError SAL_CALL osl_syncFile(oslFileHandle Handl
  #   define __OSL_STATFS_BLKSIZ(a)    			 ((sal_uInt64)((a).f_bsize))
  #   define __OSL_STATFS_IS_NFS(a)     			 (__OSL_NFS_SUPER_MAGIC == (a).f_type) 
  #   define __OSL_STATFS_IS_SMB(a)     			 (__OSL_SMB_SUPER_MAGIC == (a).f_type) 
@@ -31,7 +31,7 @@
  #	define __OSL_STATFS_IS_CASE_SENSITIVE_FS(a)  ((__OSL_MSDOS_SUPER_MAGIC != (a).f_type) && (__OSL_NTFS_SUPER_MAGIC != (a).f_type))
  #	define __OSL_STATFS_IS_CASE_PRESERVING_FS(a) ((__OSL_MSDOS_SUPER_MAGIC != (a).f_type))
  #endif /* LINUX */
-@@ -1474,7 +1472,6 @@ oslFileError SAL_CALL osl_syncFile(oslFi
+@@ -1474,7 +1472,6 @@ oslFileError SAL_CALL osl_syncFile(oslFileHandle Handl
  #   define __OSL_STATFS_STRUCT        			 struct dummy {int i;}
  #   define __OSL_STATFS_INIT(a)       			 ((void)0)
  #   define __OSL_STATFS(dir, sfs)     		     (1)
@@ -39,7 +39,7 @@
  #	define __OSL_STATFS_IS_CASE_SENSITIVE_FS(a)	 (1)
  #	define __OSL_STATFS_IS_CASE_PRESERVING_FS(a) (1)
  #endif /* HAVE_STATFS_H */
-@@ -1502,10 +1499,6 @@ static oslFileError osl_psz_getVolumeInf
+@@ -1502,10 +1499,6 @@ static oslFileError osl_psz_getVolumeInformation (
      /* FIXME: how to detect the kind of storage (fixed, cdrom, ...) */
  	if (uFieldMask & osl_VolumeInfo_Mask_Attributes)
  	{	
@@ -50,7 +50,7 @@
  	}
  
  	if (uFieldMask & osl_VolumeInfo_Mask_FileSystemCaseHandling)
-@@ -2224,7 +2217,7 @@ int UnicodeToText( char * buffer, size_t
+@@ -2224,7 +2217,7 @@ int UnicodeToText( char * buffer, size_t bufLen, const
  
      if( nInfo & RTL_UNICODETOTEXT_INFO_DESTBUFFERTOSMALL )
      {
@@ -68,7 +68,7 @@
          return 0;
      }
  
-@@ -3404,35 +3397,35 @@ static sal_Bool osl_isFloppyMounted(oslV
+@@ -3404,35 +3397,35 @@ static sal_Bool osl_isFloppyMounted(oslVolumeDeviceHan
   *
   *****************************************************************************/
  
