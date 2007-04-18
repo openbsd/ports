@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/18 00:13:34 espie Exp $
+${P5SITE}/XML/
+${P5SITE}/XML/Atom/
+${P5SITE}/XML/Atom.pm
+${P5SITE}/XML/Atom/Base.pm
+${P5SITE}/XML/Atom/Category.pm
+${P5SITE}/XML/Atom/Client.pm
+${P5SITE}/XML/Atom/Content.pm
+${P5SITE}/XML/Atom/Entry.pm
+${P5SITE}/XML/Atom/ErrorHandler.pm
+${P5SITE}/XML/Atom/Feed.pm
+${P5SITE}/XML/Atom/Link.pm
+${P5SITE}/XML/Atom/Person.pm
+${P5SITE}/XML/Atom/Server.pm
+${P5SITE}/XML/Atom/Thing.pm
+${P5SITE}/XML/Atom/Util.pm
+@man man/man3p/XML::Atom.3p
+@man man/man3p/XML::Atom::Client.3p
+@man man/man3p/XML::Atom::Entry.3p
+@man man/man3p/XML::Atom::Feed.3p
+@man man/man3p/XML::Atom::Person.3p
+@man man/man3p/XML::Atom::Server.3p
+@man man/man3p/XML::Atom::Util.3p
