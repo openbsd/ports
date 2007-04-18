@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/18 00:16:58 espie Exp $
+${P5SITE}/XML/Feed/
+${P5SITE}/XML/Feed.pm
+${P5SITE}/XML/Feed/Atom.pm
+${P5SITE}/XML/Feed/Content.pm
+${P5SITE}/XML/Feed/Entry.pm
+${P5SITE}/XML/Feed/RSS.pm
+@man man/man3p/XML::Feed.3p
+@man man/man3p/XML::Feed::Content.3p
+@man man/man3p/XML::Feed::Entry.3p
