@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/04 21:49:38 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/04/18 21:38:56 simon Exp $
 
 COMMENT= 	"parse and convert to JSON (JavaScript Object Notation)"
 
-DISTNAME=	JSON-1.07
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	JSON-1.10
 CATEGORIES=	converters
 MODULES=	cpan
 

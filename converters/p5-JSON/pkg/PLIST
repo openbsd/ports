@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/13 11:59:28 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/04/18 21:38:56 simon Exp $
 ${P5SITE}/Apache/
 ${P5SITE}/Apache/JSONRPC.pm
 ${P5SITE}/JSON/
 ${P5SITE}/JSON.pm
 ${P5SITE}/JSON/Converter.pm
+${P5SITE}/JSON/PP.pm
 ${P5SITE}/JSON/Parser.pm
 ${P5SITE}/JSONRPC/
 ${P5SITE}/JSONRPC.pm
@@ -12,6 +13,7 @@ ${P5SITE}/JSONRPC/Transport/HTTP.pm
 @man man/man3p/Apache::JSONRPC.3p
 @man man/man3p/JSON.3p
 @man man/man3p/JSON::Converter.3p
+@man man/man3p/JSON::PP.3p
 @man man/man3p/JSON::Parser.3p
 @man man/man3p/JSONRPC.3p
 @man man/man3p/JSONRPC::Transport::HTTP.3p
