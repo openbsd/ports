@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2007/04/18 00:06:49 espie Exp $
+--- Makefile.PL.orig	Wed Apr 18 02:04:58 2007
++++ Makefile.PL	Wed Apr 18 02:05:08 2007
+@@ -12,10 +12,12 @@ sign(1);
+ 
+ include('ExtUtils::AutoInstall');
+ 
++=pod
+ requires('Class::ErrorHandler');
+ requires('LWP');
+ requires('HTML::Parser');
+ requires('URI');
++=cut
+ 
+ auto_include();
+ auto_install();

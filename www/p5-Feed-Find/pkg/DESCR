@@ -1,0 +1,3 @@
+Feed::Find implements feed auto-discovery for finding syndication feeds,
+given a URI. It (currently) passes all of the auto-discovery tests at
+http://diveintomark.org/tests/client/autodiscovery/
