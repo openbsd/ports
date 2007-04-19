@@ -1,0 +1,38 @@
+$OpenBSD: patch-src-plugin_c,v 1.1.1.1 2007/04/19 07:38:37 jasper Exp $
+--- src/plugin.c.orig	Thu Jan 11 23:50:36 2007
++++ src/plugin.c	Mon Apr 16 18:39:38 2007
+@@ -68,6 +68,7 @@ enum {
+ 	SERVERSTATS_MPD_DB_PLAYTIME,
+ 	SERVERSTATS_MPD_DB_ARTISTS,
+ 	SERVERSTATS_MPD_DB_ALBUMS,
++	SERVERSTATS_MPD_DB_SONGS,
+ 	SERVERSTATS_NUM_FIELDS
+ };
+ static GtkTreeRowReference *serverstats_ref = NULL; 
+@@ -185,6 +186,10 @@ static void serverstats_update()
+ 	value = g_strdup_printf("%i", mpd_stats_get_total_albums(connection));
+ 	gtk_label_set_text(GTK_LABEL(serverstats_labels[SERVERSTATS_MPD_DB_ALBUMS]), value);
+ 	g_free(value);
++	/** DB SONGS*/
++	value = g_strdup_printf("%i", mpd_stats_get_total_songs(connection));
++	gtk_label_set_text(GTK_LABEL(serverstats_labels[SERVERSTATS_MPD_DB_SONGS]), value);
++	g_free(value);
+ }
+ 
+ void serverstats_combo_changed(GtkComboBox *box, GtkWidget *pb)
+@@ -391,6 +396,15 @@ static void serverstats_init()
+ 	label = serverstats_labels[SERVERSTATS_MPD_DB_ALBUMS]= gtk_label_new("");
+ 	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
+ 	gtk_table_attach(GTK_TABLE(table),label, 1,2,7,8,GTK_SHRINK|GTK_FILL, GTK_SHRINK|GTK_FILL, 0,0);	
++	/** Mpd Songs */
++	label = gtk_label_new("");
++	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
++	gtk_misc_set_padding(GTK_MISC(label), 12,0);
++	gtk_label_set_markup(GTK_LABEL(label), "<b>Number of songs:</b>");
++	gtk_table_attach(GTK_TABLE(table),label, 0,1,8,9,GTK_SHRINK|GTK_FILL, GTK_SHRINK|GTK_FILL, 0,0);
++	label = serverstats_labels[SERVERSTATS_MPD_DB_SONGS]= gtk_label_new("");
++	gtk_misc_set_alignment(GTK_MISC(label), 0, 0.5);
++	gtk_table_attach(GTK_TABLE(table),label, 1,2,8,9,GTK_SHRINK|GTK_FILL, GTK_SHRINK|GTK_FILL, 0,0);
+ 
+ 	/**
+ 	 * Add table

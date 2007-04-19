@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/19 07:38:37 jasper Exp $
+share/gmpc/plugins/
+share/gmpc/plugins/serverstats/
+share/gmpc/plugins/serverstats/mpd.png
+share/gmpc/plugins/serverstatsplugin.so
