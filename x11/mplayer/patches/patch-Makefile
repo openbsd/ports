@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.14 2007/04/13 23:13:21 robert Exp $
---- Makefile.orig	Sat Apr 14 00:35:28 2007
-+++ Makefile	Sat Apr 14 00:35:28 2007
-@@ -429,7 +429,7 @@ LIBS_MENCODER = libmpcodecs/libmpencoder
+$OpenBSD: patch-Makefile,v 1.15 2007/04/19 08:37:09 ajacoutot Exp $
+--- Makefile.orig	Thu Apr 19 09:41:02 2007
++++ Makefile	Thu Apr 19 09:41:02 2007
+@@ -429,7 +429,7 @@ LIBS_MENCODER = libmpcodecs/libmpencoders.a \
                  $(LIBC_LIB) \
  
  $(PRG_MENCODER): $(MENCODER_DEP)

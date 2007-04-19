@@ -1,7 +1,7 @@
-$OpenBSD: patch-loader_dmo_DMO_VideoDecoder_c,v 1.1 2007/04/13 23:13:21 robert Exp $
---- loader/dmo/DMO_VideoDecoder.c.orig	Sat Apr 14 00:36:45 2007
-+++ loader/dmo/DMO_VideoDecoder.c	Sat Apr 14 01:10:30 2007
-@@ -121,6 +121,7 @@ DMO_VideoDecoder * DMO_VideoDecoder_Open
+$OpenBSD: patch-loader_dmo_DMO_VideoDecoder_c,v 1.2 2007/04/19 08:37:09 ajacoutot Exp $
+--- loader/dmo/DMO_VideoDecoder.c.orig	Sun Jun 11 20:35:46 2006
++++ loader/dmo/DMO_VideoDecoder.c	Thu Apr 19 09:41:04 2007
+@@ -121,6 +121,7 @@ DMO_VideoDecoder * DMO_VideoDecoder_Open(char* dllname
       
          this->iv.m_bh = (BITMAPINFOHEADER*)malloc(bihs);
          memcpy(this->iv.m_bh, format, bihs);

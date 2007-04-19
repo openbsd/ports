@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2007/04/13 23:13:21 robert Exp $
+# $OpenBSD: Makefile,v 1.117 2007/04/19 08:37:09 ajacoutot Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -7,7 +7,7 @@ COMMENT=		"Movie player supporting MPEG, DivX, AVI, ASF, MOV & more"
 
 DISTNAME=		MPlayer-1.0pre8
 DIST_SUBDIR=		mplayer
-PKGNAME=		${DISTNAME:L}p11
+PKGNAME=		${DISTNAME:L}p12
 CATEGORIES=		x11
 EXTRACT_SUFX=		.tar.bz2
 
@@ -50,7 +50,8 @@ LIB_DEPENDS=	png::graphics/png \
 		xvidcore::multimedia/xvidcore \
 		x264::multimedia/x264
 
-BUILD_DEPENDS=	:rtunes->=0.6:audio/rtunes
+BUILD_DEPENDS=	:rtunes->=0.6:audio/rtunes \
+		::net/livemedia
 
 PATCHFILES=     rtunes_ao.diff:1
 
@@ -79,6 +80,7 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--enable-x264 \
 		--with-extraincdir=${LOCALBASE}/include/libpng:${LOCALBASE}/include \
 		--with-extralibdir=${LOCALBASE}/lib \
+		--with-livelibdir=${LOCALBASE}/live \
 		--confdir=${CONFDIR} \
 		--disable-langinfo \
 		--disable-fribidi

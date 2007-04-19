@@ -1,6 +1,6 @@
-$OpenBSD: patch-libmpcodecs_ve_x264_c,v 1.2 2007/04/13 23:13:21 robert Exp $
+$OpenBSD: patch-libmpcodecs_ve_x264_c,v 1.3 2007/04/19 08:37:09 ajacoutot Exp $
 --- libmpcodecs/ve_x264.c.orig	Sun Jun 11 20:35:41 2006
-+++ libmpcodecs/ve_x264.c	Sat Apr 14 00:35:28 2007
++++ libmpcodecs/ve_x264.c	Thu Apr 19 09:41:03 2007
 @@ -208,7 +208,7 @@ m_option_t x264encopts_conf[] = {
  };
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-libmpcodecs_ve_x264_c,v 1.2 2007/04/13 23:13:21 robert Exp $
      int i;
      if (!str) return 0;
      for (i = 0; i < length; i++) {
-@@ -247,8 +247,11 @@ static int config(struct vf_instance_s* 
+@@ -247,8 +247,11 @@ static int config(struct vf_instance_s* vf, int width,
      mod->param.i_deblocking_filter_beta = deblockbeta;
      mod->param.b_cabac = cabac;
  
@@ -23,7 +23,7 @@ $OpenBSD: patch-libmpcodecs_ve_x264_c,v 1.2 2007/04/13 23:13:21 robert Exp $
      if(qp_min > qp_constant)
          qp_min = qp_constant;
      if(qp_max < qp_constant)
-@@ -275,7 +278,7 @@ static int config(struct vf_instance_s* 
+@@ -275,7 +278,7 @@ static int config(struct vf_instance_s* vf, int width,
                     "VBV requires both vbv_maxrate and vbv_bufsize.\n");
              return 0;
          }

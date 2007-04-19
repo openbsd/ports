@@ -1,6 +1,6 @@
-$OpenBSD: patch-mplayer_c,v 1.6 2007/04/13 23:13:21 robert Exp $
+$OpenBSD: patch-mplayer_c,v 1.7 2007/04/19 08:37:09 ajacoutot Exp $
 --- mplayer.c.orig	Sun Jun 11 20:35:47 2006
-+++ mplayer.c	Sat Apr 14 00:35:29 2007
++++ mplayer.c	Thu Apr 19 09:41:04 2007
 @@ -614,7 +614,7 @@ static void exit_sighandler(int x){
          gdb_pid = fork();
          mp_msg(MSGT_CPLAYER, MSGL_INFO, "Forked...\n");
@@ -10,7 +10,7 @@ $OpenBSD: patch-mplayer_c,v 1.6 2007/04/13 23:13:21 robert Exp $
              mp_msg(MSGT_CPLAYER, MSGL_ERR, "Couldn't start gdb\n");
          } else if (gdb_pid < 0) 
            mp_msg(MSGT_CPLAYER, MSGL_ERR, "Couldn't fork\n");
-@@ -4527,7 +4527,7 @@ if (stream->type==STREAMTYPE_DVDNAV && d
+@@ -4527,7 +4527,7 @@ if (stream->type==STREAMTYPE_DVDNAV && dvd_nav_still)
  	{
  #ifdef USE_SUB
  	if (sh_video) {
@@ -19,7 +19,7 @@ $OpenBSD: patch-mplayer_c,v 1.6 2007/04/13 23:13:21 robert Exp $
  	}
  #endif
  	} break;
-@@ -4548,11 +4548,11 @@ if (stream->type==STREAMTYPE_DVDNAV && d
+@@ -4548,11 +4548,11 @@ if (stream->type==STREAMTYPE_DVDNAV && dvd_nav_still)
  
  	case MP_CMD_GET_VO_FULLSCREEN : {
  	if(video_out && vo_config_count)
@@ -33,7 +33,7 @@ $OpenBSD: patch-mplayer_c,v 1.6 2007/04/13 23:13:21 robert Exp $
      } break;
      case MP_CMD_GET_TIME_POS : {
        float pos = 0;
-@@ -4570,7 +4570,7 @@ if (stream->type==STREAMTYPE_DVDNAV && d
+@@ -4570,7 +4570,7 @@ if (stream->type==STREAMTYPE_DVDNAV && dvd_nav_still)
      case MP_CMD_RUN : {
  #ifndef __MINGW32__
          if(!fork()) {

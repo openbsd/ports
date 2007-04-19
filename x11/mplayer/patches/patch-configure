@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure,v 1.40 2007/01/22 15:04:04 espie Exp $
+$OpenBSD: patch-configure,v 1.41 2007/04/19 08:37:09 ajacoutot Exp $
 --- configure.orig	Sun Jun 11 20:35:47 2006
-+++ configure	Mon Jan 15 14:07:33 2007
++++ configure	Thu Apr 19 09:41:27 2007
+@@ -77,7 +77,7 @@ cc_check() {
+ }
+ 
+ cxx_check() {
+-  compile_check $TMPCPP $@ -lstdc++
++  compile_check $TMPCPP $@ -lstdc++ -lm
+ }
+ 
+ tmp_run() {
 @@ -839,6 +839,8 @@ if x86 || x86_64 ; then
    pparam=`echo $exts | sed -e s/k6_mtrr/mtrr/ -e s/cyrix_arr/mtrr/ -e s/centaur_mcr/mtrr/ \
                             -e s/xmm/sse/ -e s/kni/sse/`
