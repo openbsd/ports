@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/02/10 00:54:29 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2007/04/19 16:37:59 simon Exp $
 
 COMMENT= 	"object-oriented database access"
 
 MODULES=	cpan
-DISTNAME=	DBIx-Class-0.07005
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	DBIx-Class-0.07006
 CATEGORIES=	databases devel
 
 # Artistic
@@ -29,6 +28,7 @@ RUN_DEPENDS=	::devel/p5-Class-Data-Accessor \
 
 REGRESS_DEPENDS=::databases/p5-DBD-SQLite \
 		::devel/p5-Class-Inspector \
+		::devel/p5-PadWalker \
 		::devel/p5-Test-Memory-Cycle \
 		::textproc/p5-Text-CSV_XS \
 		::devel/p5-DateTime-Format-MySQL \
