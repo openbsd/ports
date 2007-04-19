@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/19 08:32:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/04/19 21:14:26 ajacoutot Exp $
 
 COMMENT=	"LIVE555 streaming media library"
 
 DISTNAME=	live.2007.02.20
-PKGNAME=	liveMedia-20070220
+PKGNAME=	liveMedia-20070220p0
 CATEGORIES=	net devel
 MASTER_SITES=	http://comstyle.com/source/
 
@@ -24,6 +24,10 @@ CONFIGURE_ARGS=	fixed-openbsd
 WRKDIST=	${WRKDIR}/live
 
 NO_REGRESS=	Yes
+
+.if ${MACHINE_ARCH} == "amd64"
+CFLAGS+=	-fPIC
+.endif
 
 post-extract:
 	@cp -f ${FILESDIR}/config.fixed-openbsd ${WRKSRC}/
