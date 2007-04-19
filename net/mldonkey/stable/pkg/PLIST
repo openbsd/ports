@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/02/02 19:28:52 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2007/04/19 23:04:53 espie Exp $
 bin/mlbt
 bin/mlbt+gui
 bin/mldc
@@ -26,7 +26,7 @@ share/mldonkey/distrib/Todo.txt
 share/mldonkey/distrib/ed2k_links.txt
 share/mldonkey/distrib/ed2k_mozilla/
 share/mldonkey/distrib/ed2k_mozilla/README
-share/mldonkey/distrib/ed2k_mozilla/mldonkey_protocol_handler-1.8.xpi
+share/mldonkey/distrib/ed2k_mozilla/mldonkey_protocol_handler-2.0.xpi
 share/mldonkey/distrib/ed2k_submit/
 share/mldonkey/distrib/ed2k_submit/README.MLdonkeySubmit
 share/mldonkey/distrib/ed2k_submit/ed2k.protocol

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2007/02/02 19:28:52 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2007/04/19 23:04:53 espie Exp $
 
 COMMENT=	'e-donkey client'
 CATEGORIES=	net
@@ -14,14 +14,14 @@ WANTLIB=		X11 Xext Xi c glib gmodule iconv intl m z pthread \
 			freetype png jpeg charset stdc++ fontconfig
 CONFIGURE_STYLE=	autoconf no-autoheader
 AUTOCONF_DIR=		${WRKSRC}/config
-AUTOCONF_VERSION=	2.59
+AUTOCONF_VERSION=	2.61
 #CONFIGURE_ARGS+=	--enable-ocamlver=3.07
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
 HOMEPAGE=	http://mldonkey.sourceforge.net/Main_Page
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mldonkey/}
-DISTNAME=	mldonkey-2.8.2
+DISTNAME=	mldonkey-2.8.4
 PKGNAME=	${DISTNAME}
 EXTRACT_SUFX=	.tar.bz2
 
