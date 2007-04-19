@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2007/04/08 17:34:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2007/04/19 09:22:09 ajacoutot Exp $
 %%altivec%%
 %%win32%%
 %%x86opt%%
@@ -147,6 +147,7 @@ lib/vlc/demux/libxa_plugin.so
 lib/vlc/gui/
 lib/vlc/gui/libncurses_plugin.so
 lib/vlc/gui/libwxwidgets_plugin.so
+lib/vlc/liblive555.a
 lib/vlc/libtheora.a
 lib/vlc/libxvideo.a
 lib/vlc/misc/
