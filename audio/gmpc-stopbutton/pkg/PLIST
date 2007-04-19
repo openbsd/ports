@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/19 15:14:09 jasper Exp $
+share/gmpc/plugins/
+share/gmpc/plugins/libstopbutton.so
