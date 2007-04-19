@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/19 07:29:51 jasper Exp $
+share/gmpc/plugins/
+share/gmpc/plugins/magnatune/
+share/gmpc/plugins/magnatune/magnatune.png
+share/gmpc/plugins/magnatune/xdg-open
+share/gmpc/plugins/magnatuneplugin.so
