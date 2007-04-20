@@ -1,0 +1,10 @@
+p7zip is a port of 7-zip for *nix platforms.
+
+7-zip is a file archiver with a high compression ratio.  
+
+7z	uses plugins to handle archives, excepting rar archives.
+	unRar is available as a subpackage due to licensing.
+7za	is a stand-alone executable, and handles less archive
+	formats than 7z.
+7zr	is a light stand-alone executable that supports only 
+	7z/LZMA/BCJ/BCJ2.

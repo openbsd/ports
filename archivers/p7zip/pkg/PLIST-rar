@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-rar,v 1.1.1.1 2007/04/20 17:50:05 steven Exp $
+lib/p7zip/Codecs/Rar29.so
+lib/p7zip/Formats/Rar.so
+share/doc/p7zip/unRarLicense.txt

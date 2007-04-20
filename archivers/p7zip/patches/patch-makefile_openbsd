@@ -1,0 +1,29 @@
+$OpenBSD: patch-makefile_openbsd,v 1.1.1.1 2007/04/20 17:50:05 steven Exp $
+--- makefile.openbsd.orig	Fri May 19 19:52:42 2006
++++ makefile.openbsd	Mon Apr 16 09:52:33 2007
+@@ -3,17 +3,17 @@
+ # LITTLE_ENDIAN and BIG_ENDIAN are already defined by the system headers
+ #
+ 
+-OPTFLAGS=-O
++MYCFLAGS?=-O
++MYCXXFLAGS?=-O
+ 
+-ALLFLAGS=${OPTFLAGS} -s \
+-        -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE \
+-        -DNDEBUG -D_REENTRANT -DENV_UNIX \
++ALLFLAGS=-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE \
++        -DNDEBUG -D_REENTRANT -DENV_UNIX -fPIC \
+         $(LOCAL_FLAGS)
+-                                                                                                      
+-CXX=g++ $(ALLFLAGS)
+-CC=gcc $(ALLFLAGS)
++
++CXX=$(MYCXX) $(ALLFLAGS) $(MYCXXFLAGS)
++CC=$(MYCC) $(ALLFLAGS) $(MYCFLAGS)
+ LINK_SHARED=-shared
+-                                                                                                      
++
+ LOCAL_LIBS=-lpthread
+ LOCAL_LIBS_DLL=$(LOCAL_LIBS)
+ 
