@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2007/04/13 10:19:45 bernd Exp $
+# $OpenBSD: Makefile,v 1.9 2007/04/20 08:44:40 bernd Exp $
 
 COMMENT-main=		"GIT - Tree History Storage Tool"
 COMMENT-svn=		"GIT - subversion interoperability tools"
 
-V=			1.5.0.5
+V=			1.5.1.1
 DISTNAME=		git-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-svn=		git-svn-${V}
@@ -11,7 +11,7 @@ CATEGORIES=		devel
 
 HOMEPAGE=		http://git.or.cz/
 
-MAINTAINER=		Matthieu Herrb <matthieu@openbsd.org>
+MAINTAINER=		Bernd Ahlers <bernd@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -50,7 +50,8 @@ RUN_DEPENDS-svn=	::${BASE_PKGPATH} \
 LIB_DEPENDS-svn=
 PKG_ARCH-svn=		*
 
-MAKE_ENV=		prefix=${PREFIX} CC="${CC}" CFLAGS="${CFLAGS}"
+MAKE_ENV=		prefix=${PREFIX} CC="${CC}" CFLAGS="${CFLAGS}" V=1 \
+			SYSCONFDIR=${SYSCONFDIR}
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
@@ -72,6 +73,6 @@ post-install:
 		${PREFIX}/share/doc/git
 
 do-regress:
-	cd ${WRKSRC}/t && NO_SVN_TESTS=Yes ${MAKE_PROGRAM} TAR=${TAR}
+	cd ${WRKSRC} && NO_SVN_TESTS=Yes ${MAKE_PROGRAM} TAR=${TAR} test
 
 .include <bsd.port.mk>

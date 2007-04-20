@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.5 2007/04/13 10:19:45 bernd Exp $
---- Makefile.orig	Sun Mar 18 23:08:11 2007
-+++ Makefile	Tue Apr  3 16:01:33 2007
-@@ -121,13 +121,13 @@ uname_P := $(shell sh -c 'uname -p 2>/dev/null || echo
+$OpenBSD: patch-Makefile,v 1.6 2007/04/20 08:44:40 bernd Exp $
+--- Makefile.orig	Thu Apr 12 03:41:44 2007
++++ Makefile	Fri Apr 13 13:16:37 2007
+@@ -123,17 +123,17 @@ uname_P := $(shell sh -c 'uname -p 2>/dev/null || echo
  
  # CFLAGS and LDFLAGS are for the users to override from the command line.
  
@@ -17,7 +17,12 @@ $OpenBSD: patch-Makefile,v 1.5 2007/04/13 10:19:45 bernd Exp $
  bindir = $(prefix)/bin
  gitexecdir = $(bindir)
  template_dir = $(prefix)/share/git-core/templates/
-@@ -151,7 +151,7 @@ GITWEB_SITE_FOOTER =
+-ETC_GITCONFIG = $(prefix)/etc/gitconfig
++ETC_GITCONFIG = $(SYSCONFDIR)/gitconfig
+ # DESTDIR=
+ 
+ # default configuration for gitweb
+@@ -154,7 +154,7 @@ GITWEB_SITE_FOOTER =
  
  export prefix bindir gitexecdir template_dir
  
@@ -26,7 +31,7 @@ $OpenBSD: patch-Makefile,v 1.5 2007/04/13 10:19:45 bernd Exp $
  AR = ar
  TAR = tar
  INSTALL = install
-@@ -393,7 +393,6 @@ ifeq ($(uname_S),FreeBSD)
+@@ -402,7 +402,6 @@ ifeq ($(uname_S),FreeBSD)
  	BASIC_LDFLAGS += -L/usr/local/lib
  endif
  ifeq ($(uname_S),OpenBSD)
@@ -34,7 +39,7 @@ $OpenBSD: patch-Makefile,v 1.5 2007/04/13 10:19:45 bernd Exp $
  	NEEDS_LIBICONV = YesPlease
  	BASIC_CFLAGS += -I/usr/local/include
  	BASIC_LDFLAGS += -L/usr/local/lib
-@@ -473,7 +472,7 @@ ifndef NO_CURL
+@@ -482,7 +481,7 @@ ifndef NO_CURL
  endif
  
  ifndef NO_OPENSSL
@@ -43,3 +48,12 @@ $OpenBSD: patch-Makefile,v 1.5 2007/04/13 10:19:45 bernd Exp $
  	ifdef OPENSSLDIR
  		BASIC_CFLAGS += -I$(OPENSSLDIR)/include
  		OPENSSL_LINK = -L$(OPENSSLDIR)/lib $(CC_LD_DYNPATH)$(OPENSSLDIR)/lib
+@@ -861,7 +860,7 @@ GIT-CFLAGS: .FORCE-GIT-CFLAGS
+ 
+ export NO_SVN_TESTS
+ 
+-test: all test-chmtime$X
++test: test-chmtime$X
+ 	$(MAKE) -C t/ all
+ 
+ test-date$X: test-date.c date.o ctype.o
