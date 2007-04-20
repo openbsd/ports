@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2007/03/18 08:36:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2007/04/20 15:46:43 martynas Exp $
 
 COMMENT=	"perl interface to SSL sockets"
 
-DISTNAME=	IO-Socket-SSL-1.03
+DISTNAME=	IO-Socket-SSL-1.05
 CATEGORIES=	security
-
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
