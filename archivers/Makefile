@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2006/11/12 16:34:33 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2007/04/20 17:50:42 steven Exp $
 
      SUBDIR += arc
      SUBDIR += bzip
@@ -26,6 +26,7 @@
      SUBDIR += p5-Compress-Zlib
      SUBDIR += p5-IO-Zlib
      SUBDIR += p5-PerlIO-gzip
+     SUBDIR += p7zip
      SUBDIR += par1cmdline
      SUBDIR += par2cmdline
      SUBDIR += rar
