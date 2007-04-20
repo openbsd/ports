@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-docs,v 1.1.1.1 2007/03/23 17:38:22 deanna Exp $
+@comment $OpenBSD: PLIST-docs,v 1.2 2007/04/20 05:42:51 steven Exp $
+@pkgpath mail/sylpheed-claws,-docs${FLAVOR_STRING}
 share/doc/claws-mail/
 share/doc/claws-mail/RELEASE_NOTES
 share/doc/claws-mail/manual/

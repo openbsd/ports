@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/04/11 20:48:43 deanna Exp $
+# $OpenBSD: Makefile,v 1.3 2007/04/20 05:42:51 steven Exp $
 
 COMMENT-main=		"mail and news client"
 COMMENT-docs=		"documentation"
@@ -9,12 +9,12 @@ COMMENT-spamassassin=	"spamassassin plugin"
 
 V=			2.8.1
 DISTNAME=		claws-mail-${V}
-PKGNAME-main=			${DISTNAME}p0
-FULLPKGNAME-docs=		claws-mail-docs-${V}p0
-FULLPKGNAME-bogofilter=		claws-mail-bogofilter-${V}p0
-FULLPKGNAME-clamav=		claws-mail-clamav-${V}p0
-FULLPKGNAME-dillo=		claws-mail-dillo-${V}p0
-FULLPKGNAME-spamassassin=	claws-mail-spamassassin-${V}p0
+PKGNAME-main=			${DISTNAME}p1
+FULLPKGNAME-docs=		claws-mail-docs-${V}p1
+FULLPKGNAME-bogofilter=		claws-mail-bogofilter-${V}p1
+FULLPKGNAME-clamav=		claws-mail-clamav-${V}p1
+FULLPKGNAME-dillo=		claws-mail-dillo-${V}p1
+FULLPKGNAME-spamassassin=	claws-mail-spamassassin-${V}p1
 
 CATEGORIES=		mail news
 
@@ -37,6 +37,9 @@ MULTI_PACKAGES=		-main -docs -bogofilter -clamav -dillo \
 			-spamassassin
 FLAVORS=		jpilot gnomeprint compface ldap
 FLAVOR?=
+
+FLAVOR_STRING=		${FLAVOR_EXT:S/-/,/g}
+SUBST_VARS=		FLAVOR_STRING
 
 SHARED_ONLY=		Yes
 RUN_DEPENDS-bogofilter=	::${BUILD_PKGPATH} \
