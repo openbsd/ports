@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2007/04/19 09:22:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2007/04/20 07:21:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,7 +22,6 @@ USE_X11=	Yes
 
 MODULES=	devel/gettext
 
-BUILD_DEPENDS+=	::net/livemedia
 LIB_DEPENDS=	SDL_image.>=1.3::devel/sdl-image \
 		png.>=4.1::graphics/png \
 		id3tag.>=3.0::audio/libid3tag \
@@ -60,6 +59,7 @@ CONFIGURE_ARGS+=--disable-pth \
 		--disable-debug \
 		--disable-release \
 		--without-contrib \
+		--disable-livedotcom \
 		--disable-v4l \
 		--disable-pvr \
 		--disable-vcdx \
@@ -155,9 +155,7 @@ CONFIGURE_ARGS+=--enable-ncurses \
 		--enable-mpc \
 		--enable-wxwidgets \
 		--enable-dvdread \
-		--enable-dvdnav \
-		--enable-live555 \
-		--with-live555-tree=${LOCALBASE}/live
+		--enable-dvdnav
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 
